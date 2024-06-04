@@ -1,0 +1,274 @@
+﻿local var0 = class("SixAnniversaryPage", import("...base.BaseActivityPage"))
+local var1 = 42
+local var2 = {}
+local var3 = 3.5
+local var4 = 1
+local var5 = 5
+local var6 = SCENE.NEWYEAR_BACKHILL_2023
+local var7 = false
+local var8 = "sixth"
+
+function var0.OnInit(arg0)
+	arg0.hideIndex = {}
+	arg0.scrollAble = var7
+
+	local var0 = findTF(arg0._tf, "BtnList")
+
+	if PLATFORM_CODE == PLATFORM_CH then
+		var2 = {
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7
+		}
+	else
+		var2 = {
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7
+		}
+	end
+
+	if PLATFORM_CODE == PLATFORM_CH then
+		arg0.hideIndex = {}
+	elseif PLATFORM_CODE == PLATFORM_CHT then
+		arg0.hideIndex = {
+			2,
+			3,
+			5
+		}
+	else
+		arg0.hideIndex = {
+			2,
+			5
+		}
+	end
+
+	local var1 = getProxy(ActivityProxy):getActivityById(ActivityConst.SIX_SIGN_ACT_ID)
+
+	if not var1 or not var1:isShow() then
+		table.insert(arg0.hideIndex, 4)
+	end
+
+	arg0:findUI()
+end
+
+function var0.findUI(arg0)
+	arg0.paintBackTF = arg0:findTF("Paints/PaintBack")
+	arg0.paintFrontTF = arg0:findTF("Paints/PaintFront")
+	arg0.skinShopBtn = arg0:findTF("BtnShop")
+	arg0.btnContainer = arg0:findTF("BtnList/Viewport/Content")
+
+	local var0 = arg0.btnContainer.childCount / 3
+
+	arg0.btnList1 = {}
+
+	for iter0 = 0, var0 - 1 do
+		arg0.btnList1[iter0 + 1] = arg0.btnContainer:GetChild(iter0)
+	end
+
+	arg0.btnList2 = {}
+
+	for iter1 = var0, 2 * var0 - 1 do
+		arg0.btnList2[#arg0.btnList2 + 1] = arg0.btnContainer:GetChild(iter1)
+	end
+
+	arg0.btnList3 = {}
+
+	for iter2 = var0 * 2, 3 * var0 - 1 do
+		arg0.btnList3[#arg0.btnList3 + 1] = arg0.btnContainer:GetChild(iter2)
+	end
+
+	for iter3 = 1, var0 * 3 do
+		if table.contains(arg0.hideIndex, (iter3 - 1) % var5 + 1) or not arg0.scrollAble and iter3 > var5 then
+			setActive(arg0.btnContainer:GetChild(iter3 - 1), false)
+		end
+	end
+
+	arg0.gridLayoutGroupCom = GetComponent(arg0.btnContainer, "GridLayoutGroup")
+end
+
+function var0.initData(arg0)
+	arg0.displayDatas = arg0.activity:getConfig("config_client").display_link
+
+	local var0 = {}
+
+	if arg0.displayDatas and #arg0.displayDatas then
+		for iter0 = 1, #arg0.displayDatas do
+			local var1 = arg0.displayDatas[iter0]
+			local var2 = var1[1]
+			local var3 = var1[2]
+
+			if var3 and var3 ~= 0 then
+				local var4 = pg.shop_template[var3].time
+				local var5, var6 = pg.TimeMgr.GetInstance():inTime(var4)
+
+				if not var5 then
+					table.insert(var0, var2)
+				end
+			end
+		end
+	end
+
+	if var0 and #var0 > 0 then
+		for iter1 = #var2, 1, -1 do
+			local var7 = var2[iter1]
+
+			if table.contains(var0, var7) then
+				table.remove(var2, iter1)
+			end
+		end
+	end
+
+	arg0.paintCount = #var2
+	arg0.curPaintIndex = math.random(1, #var2)
+	arg0.paintSwitchTime = var4
+	arg0.paintStaticTime = var3
+	arg0.paintStaticCountValue = 0
+	arg0.paintPathPrefix = "clutter/"
+	arg0.paintNamePrefix = var8
+	arg0.btnCount = arg0.btnContainer.childCount / 3
+	arg0.btnSpeed = 50
+	arg0.btnSizeX = arg0.gridLayoutGroupCom.cellSize.x
+	arg0.btnMarginX = arg0.gridLayoutGroupCom.spacing.x
+	arg0.moveLength = (arg0.btnCount - #arg0.hideIndex) * (arg0.btnSizeX + arg0.btnMarginX)
+	arg0.startAnchoredPosX = arg0.btnContainer.anchoredPosition.x
+end
+
+function var0.switchNextPaint(arg0)
+	arg0.frameTimer:Stop()
+
+	local var0 = arg0.curPaintIndex % arg0.paintCount + 1
+	local var1 = arg0.paintNamePrefix .. var2[var0]
+	local var2 = arg0.paintPathPrefix .. var1
+	local var3 = nil or LoadSprite(var2, var1)
+
+	setImageSprite(arg0.paintBackTF, var3)
+	LeanTween.value(go(arg0.paintFrontTF), 1, 0, arg0.paintSwitchTime):setOnUpdate(System.Action_float(function(arg0)
+		setImageAlpha(arg0.paintFrontTF, arg0)
+		setImageAlpha(arg0.paintBackTF, 1 - arg0)
+	end)):setOnComplete(System.Action(function()
+		setImageFromImage(arg0.paintFrontTF, arg0.paintBackTF)
+		setImageAlpha(arg0.paintFrontTF, 1)
+		setImageAlpha(arg0.paintBackTF, 0)
+
+		arg0.curPaintIndex = var0
+
+		arg0.frameTimer:Start()
+	end))
+end
+
+function var0.OnFirstFlush(arg0)
+	arg0:initData()
+	onButton(arg0, arg0.skinShopBtn, function()
+		arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
+	end)
+	arg0:initPaint()
+	arg0:initBtnList(arg0.btnList1)
+	arg0:initBtnList(arg0.btnList2)
+	arg0:initBtnList(arg0.btnList3)
+	arg0:initTimer()
+end
+
+function var0.initPaint(arg0)
+	local var0 = (arg0.curPaintIndex - 1) % arg0.paintCount + 1
+	local var1 = arg0.paintNamePrefix .. var2[var0]
+	local var2 = arg0.paintPathPrefix .. var1
+
+	setImageSprite(arg0.paintFrontTF, LoadSprite(var2, var1))
+
+	local var3 = arg0.paintNamePrefix .. var2[var0]
+	local var4 = arg0.paintPathPrefix .. var3
+
+	setImageSprite(arg0.paintBackTF, LoadSprite(var4, var3))
+end
+
+function var0.initBtnList(arg0, arg1)
+	for iter0 = 1, #arg1 do
+		arg0:initBtnEvent(arg1[iter0], iter0)
+	end
+end
+
+function var0.initBtnEvent(arg0, arg1, arg2)
+	if arg2 == 1 then
+		onButton(arg0, arg1, function()
+			arg0:emit(ActivityMediator.GO_PRAY_POOL)
+		end, SFX_PANEL)
+	elseif arg2 == 2 then
+		onButton(arg0, arg1, function()
+			arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CHARGE, {
+				wrap = ChargeScene.TYPE_DIAMOND
+			})
+		end, SFX_PANEL)
+	elseif arg2 == 3 then
+		onButton(arg0, arg1, function()
+			arg0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.ACTIVITY_TYPE_RETURN_AWARD_ID6)
+		end, SFX_PANEL)
+	elseif arg2 == 4 then
+		onButton(arg0, arg1, function()
+			arg0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.SIX_SIGN_ACT_ID)
+		end, SFX_PANEL)
+	elseif arg2 == 5 then
+		onButton(arg0, arg1, function()
+			arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SUMMARY)
+		end, SFX_PANEL)
+	end
+end
+
+function var0.initTimer(arg0)
+	local var0 = 0.0166666666666667
+
+	arg0.paintStaticCountValue = 0
+	arg0.frameTimer = Timer.New(function()
+		arg0.paintStaticCountValue = arg0.paintStaticCountValue + var0
+
+		if arg0.paintStaticCountValue >= arg0.paintStaticTime then
+			arg0.paintStaticCountValue = 0
+
+			arg0:switchNextPaint()
+		end
+	end, var0, -1, false)
+
+	arg0.frameTimer:Start()
+
+	if arg0.scrollAble then
+		arg0.frameTimer2 = Timer.New(function()
+			local var0 = arg0.btnContainer.anchoredPosition.x - arg0.btnSpeed * var0
+
+			if arg0.startAnchoredPosX - var0 >= arg0.moveLength then
+				var0 = arg0.btnContainer.anchoredPosition.x + arg0.moveLength
+			end
+
+			arg0.btnContainer.anchoredPosition = Vector3(var0, 0, 0)
+		end, var0, -1, false)
+
+		arg0.frameTimer2:Start()
+	end
+end
+
+function var0.OnDestroy(arg0)
+	if LeanTween.isTweening(go(arg0.paintFrontTF)) then
+		LeanTween.cancel(go(arg0.paintFrontTF))
+	end
+
+	if arg0.frameTimer then
+		arg0.frameTimer:Stop()
+
+		arg0.frameTimer = nil
+	end
+
+	if arg0.frameTimer2 then
+		arg0.frameTimer2:Stop()
+
+		arg0.frameTimer2 = nil
+	end
+end
+
+return var0

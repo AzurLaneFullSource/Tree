@@ -1,0 +1,35 @@
+﻿local var0 = class("SecondAnniversaryCollectPage", import("...base.BaseActivityPage"))
+
+function var0.OnInit(arg0)
+	arg0.bg = arg0:findTF("AD")
+	arg0.btnContainer = arg0:findTF("BtnList")
+	arg0.btn1 = arg0:findTF("1", arg0.btnContainer)
+	arg0.btn2 = arg0:findTF("2", arg0.btnContainer)
+	arg0.btn3 = arg0:findTF("3", arg0.btnContainer)
+	arg0.btn4 = arg0:findTF("4", arg0.btnContainer)
+	arg0.btn5 = arg0:findTF("5", arg0.btnContainer)
+	arg0.btn6 = arg0:findTF("6", arg0.btnContainer)
+end
+
+function var0.OnFirstFlush(arg0)
+	onButton(arg0, arg0.btn1, function()
+		arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
+	end, SFX_PANEL)
+	onButton(arg0, arg0.btn2, function()
+		arg0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.ACTIVITY_TYPE_RETURN_AWARD_ID2)
+	end, SFX_PANEL)
+	onButton(arg0, arg0.btn3, function()
+		arg0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.YIDALI_MAIN_ID)
+	end, SFX_PANEL)
+	onButton(arg0, arg0.btn4, function()
+		arg0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.ANNIVERSARY_LOGIN_ID)
+	end, SFX_PANEL)
+	onButton(arg0, arg0.btn5, function()
+		arg0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.CARDPAIR_ZQ)
+	end, SFX_PANEL)
+	onButton(arg0, arg0.btn6, function()
+		arg0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.DACHAOLIFU_SKIN)
+	end, SFX_PANEL)
+end
+
+return var0

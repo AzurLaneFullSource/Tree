@@ -1,0 +1,1 @@
+﻿require("Framework.toLua.tolua")
