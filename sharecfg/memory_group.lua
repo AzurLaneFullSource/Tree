@@ -188,6 +188,7 @@ pg.memory_group = setmetatable({
 		288,
 		289,
 		290,
+		291,
 		501,
 		502,
 		503,
@@ -4492,6 +4493,17 @@ pg.base.memory_group = {
 		title = "A Tale From the Sylvan Garden",
 		memories = {
 			3651
+		}
+	},
+	[291] = {
+		id = 291,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5364,
+		title = "A Leisurely Trip to Jade Seas",
+		memories = {
+			3661
 		}
 	},
 	[501] = {

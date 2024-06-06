@@ -103,7 +103,7 @@ function var0.register(arg0)
 			skinId = var1,
 			live2d = var2,
 			tbId = var3,
-			propose = arg0.viewComponent.bgView.propose
+			propose = var0.propose
 		})
 	end)
 	arg0:bind(var0.OPEN_MAIL, function(arg0)

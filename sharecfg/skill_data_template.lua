@@ -327,6 +327,7 @@ pg.skill_data_template = setmetatable({
 		60570,
 		60580,
 		60590,
+		60600,
 		7000,
 		9010,
 		9020,
@@ -2156,8 +2157,8 @@ pg.skill_data_template = setmetatable({
 		801250,
 		801261,
 		801262,
-		801263,
-		801264,
+		801265,
+		801267,
 		901010,
 		901020,
 		902010,
@@ -12129,6 +12130,20 @@ pg.base.skill_data_template = {
 		type = 0,
 		max_level = 0,
 		desc = "A curious machine that periodically emits a strange sound during battle.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60600] = {
+		desc_get = "",
+		name = "Twin 80mm Type 98 High-Angle Gun Mount",
+		id = 60600,
+		type = 0,
+		max_level = 0,
+		desc = "When equipped by a Sakura Empire Vanguard ship: increases this ship's FP by 5.0%. When this ship fires her AA guns: halves this FP buff for 3s.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -138756,10 +138771,10 @@ pg.base.skill_data_template = {
 		desc_get_add = {},
 		desc_add = {}
 	},
-	[801263] = {
+	[801265] = {
 		desc_get = "",
 		name = "Cinders of Hope - Foch",
-		id = 801263,
+		id = 801265,
 		type = 3,
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 9 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
@@ -138772,10 +138787,10 @@ pg.base.skill_data_template = {
 		desc_get_add = {},
 		desc_add = {}
 	},
-	[801264] = {
+	[801267] = {
 		desc_get = "",
 		name = "Cinders of Hope - Foch",
-		id = 801264,
+		id = 801267,
 		type = 3,
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 6 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",

@@ -1,7 +1,7 @@
 ﻿pg = pg or {}
 pg.activity_link_button = {
 	{
-		param = "5360",
+		param = "5364",
 		name = "event_all",
 		type = 3,
 		text_pic = "text_event_all",

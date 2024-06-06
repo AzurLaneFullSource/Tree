@@ -13978,22 +13978,22 @@ pg.base.furniture_data_template = {
 			},
 			{
 				{
-					-8,
+					-8.5,
 					101
 				},
 				{
-					128,
-					172
+					120,
+					155
 				},
 				"ap/danke_mask",
 				{
-					-28,
-					67
+					-1,
+					1
 				}
 			},
 			{
-				0,
-				-113.4
+				-6.9,
+				-99.3
 			}
 		},
 		animator = {
@@ -20852,8 +20852,8 @@ pg.base.furniture_data_template = {
 			},
 			{
 				{
-					7.6,
-					36.48
+					-5.7,
+					35.9
 				},
 				{
 					100,
@@ -20872,7 +20872,7 @@ pg.base.furniture_data_template = {
 		},
 		followBone = {
 			"char",
-			-1
+			1
 		},
 		interAction_group = {}
 	},
@@ -44477,11 +44477,11 @@ pg.base.furniture_data_template = {
 			},
 			{
 				{
-					-7.7,
-					102
+					-4.3,
+					105.3
 				},
 				{
-					180,
+					178,
 					247
 				},
 				"yl/kafeiji_shadow"
@@ -57124,8 +57124,8 @@ pg.base.furniture_data_template = {
 						-3
 					},
 					{
-						256,
-						147
+						278,
+						169
 					},
 					"halloween2/kenghl2_mask"
 				}
@@ -57746,7 +57746,7 @@ pg.base.furniture_data_template = {
 				"wash",
 				{
 					3,
-					-118.31
+					-113.5
 				},
 				{
 					1,
@@ -57756,8 +57756,8 @@ pg.base.furniture_data_template = {
 				0,
 				{
 					{
-						-3.8,
-						50
+						1,
+						53.9
 					},
 					{
 						251,
@@ -58816,12 +58816,12 @@ pg.base.furniture_data_template = {
 				0,
 				{
 					{
-						0,
+						3.3,
 						0
 					},
 					{
-						238,
-						363
+						230,
+						358
 					},
 					"christmas2/shoupiaocs2_mask"
 				}
@@ -64302,8 +64302,8 @@ pg.base.furniture_data_template = {
 			{
 				"wash",
 				{
-					-6.53,
-					-113.84
+					-4.5,
+					-100.9
 				},
 				{
 					1,
@@ -68326,26 +68326,50 @@ pg.base.furniture_data_template = {
 			{
 				"wash",
 				{
-					13,
-					24
+					-1,
+					-94.2
 				},
 				{
 					-1,
 					1
 				},
-				"rainday/xuerd_using"
+				"rainday/xuerd_using",
+				0,
+				{
+					{
+						10.2,
+						120
+					},
+					{
+						320,
+						256
+					},
+					"rainday/xuerd_mask"
+				}
 			},
 			{
 				"wash",
 				{
-					-87,
-					-28
+					-1,
+					-94.2
 				},
 				{
 					1,
 					1
 				},
-				"rainday/xuerd_using2"
+				"rainday/xuerd_using2",
+				0,
+				{
+					{
+						-89.1,
+						70.9
+					},
+					{
+						320,
+						256
+					},
+					"rainday/xuerd_mask"
+				}
 			}
 		},
 		can_trigger = {
@@ -68527,7 +68551,7 @@ pg.base.furniture_data_template = {
 				"sit",
 				{
 					0,
-					-52
+					-36.2
 				},
 				{
 					1,
@@ -71542,8 +71566,8 @@ pg.base.furniture_data_template = {
 			{
 				"sleep",
 				{
-					-11,
-					-17
+					14.8,
+					6.2
 				},
 				{
 					1,
@@ -104241,7 +104265,7 @@ pg.base.furniture_data_template = {
 				"stand2",
 				{
 					0,
-					-147
+					-123.2
 				},
 				{
 					-1,
@@ -104255,7 +104279,7 @@ pg.base.furniture_data_template = {
 						122
 					},
 					{
-						320,
+						315,
 						300
 					},
 					"ydl2/13ydl2_mask"
@@ -109639,8 +109663,8 @@ pg.base.furniture_data_template = {
 			{
 				"wash",
 				{
-					-72.1,
-					-94.2
+					-72.7,
+					-79.3
 				},
 				{
 					1,
@@ -109654,7 +109678,7 @@ pg.base.furniture_data_template = {
 						35.36
 					},
 					{
-						411,
+						408,
 						270
 					},
 					"glt/huglt_mask"
@@ -109674,11 +109698,11 @@ pg.base.furniture_data_template = {
 				0,
 				{
 					{
-						-1.6,
-						35.36
+						-6.2,
+						36.34
 					},
 					{
-						411,
+						408,
 						270
 					},
 					"glt/huglt_mask"
@@ -111175,8 +111199,8 @@ pg.base.furniture_data_template = {
 			},
 			{
 				{
-					-2,
-					45
+					3.6,
+					19
 				},
 				{
 					100,
@@ -111185,8 +111209,8 @@ pg.base.furniture_data_template = {
 				"glt/diwangglt_mask"
 			},
 			{
-				0,
-				0
+				1.7,
+				-18.6
 			},
 			{
 				1,
@@ -111260,12 +111284,12 @@ pg.base.furniture_data_template = {
 			},
 			{
 				{
-					1.1,
-					-10
+					1.2,
+					4.2
 				},
 				{
-					100,
-					80
+					60,
+					60
 				},
 				"glt/diwangglt_mask"
 			},
@@ -114802,8 +114826,8 @@ pg.base.furniture_data_template = {
 						37.2
 					},
 					{
-						320.3,
-						360.6
+						320,
+						288
 					},
 					"xxg/guancaichuangxxg_mask"
 				}
@@ -115211,7 +115235,7 @@ pg.base.furniture_data_template = {
 				"wash",
 				{
 					-48.4,
-					-96.4
+					-83
 				},
 				{
 					1,
@@ -117376,7 +117400,7 @@ pg.base.furniture_data_template = {
 			},
 			{
 				{
-					1.1,
+					-11.4,
 					-1.6
 				},
 				{
@@ -136398,7 +136422,7 @@ pg.base.furniture_data_template = {
 					},
 					{
 						884,
-						440
+						435
 					},
 					"sl/wenquansl_mask"
 				}
