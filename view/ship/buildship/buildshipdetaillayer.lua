@@ -52,9 +52,11 @@ function var0.init(arg0)
 	arg0.noneBg = arg0:findTF("none_bg")
 	arg0.allLaunch = arg0:findTF("all_launch")
 	arg0.aniBgTF = arg0:findTF("aniBg")
+	arg0.autoLockShipToggle = arg0:findTF("autolockship/Toggle"):GetComponent(typeof(Toggle))
 	arg0.canvasgroup = GetOrAddComponent(arg0._tf, typeof(CanvasGroup))
 
 	setText(arg0:findTF("title/text"), i18n("build_detail_intro"))
+	setText(arg0:findTF("autolockship/Text"), i18n("lock_new_ship"))
 end
 
 function var0.updatePlayer(arg0, arg1)
@@ -114,6 +116,19 @@ function var0.didEnter(arg0)
 			id = var0.effect_args[1]
 		}, 9, "build_ship_quickly_buy_tool")
 	end)
+
+	local var1 = pg.settings_other_template[22]
+	local var2 = getProxy(PlayerProxy):getRawData():GetCommonFlag(_G[var1.name])
+
+	if var1.default == 1 then
+		var2 = not var2
+	end
+
+	arg0.autoLockShipToggle.isOn = var2 or false
+
+	onToggle(arg0, go(arg0.autoLockShipToggle), function(arg0)
+		arg0:ChangeAutoLockShip(var1, arg0)
+	end, SFX_PANEL)
 end
 
 function var0.onBackPressed(arg0)
@@ -386,6 +401,26 @@ function var0.stopCV(arg0)
 	end
 
 	arg0.voiceContent = nil
+end
+
+function var0.ChangeAutoLockShip(arg0, arg1, arg2)
+	local var0 = _G[arg1.name]
+	local var1 = getProxy(PlayerProxy):getRawData():GetCommonFlag(var0)
+	local var2 = not arg2
+
+	if arg1.default == 1 then
+		var2 = arg2
+	end
+
+	if var2 then
+		pg.m02:sendNotification(GAME.CANCEL_COMMON_FLAG, {
+			flagID = var0
+		})
+	else
+		pg.m02:sendNotification(GAME.COMMON_FLAG, {
+			flagID = var0
+		})
+	end
 end
 
 return var0

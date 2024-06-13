@@ -12,6 +12,10 @@ function var3.Ctor(arg0, arg1)
 	var3.super.Ctor(arg0, arg1)
 end
 
+function var3.Repeater(arg0)
+	return arg0._keepRestCount
+end
+
 function var3.SetArgs(arg0, arg1, arg2)
 	local var0 = arg0._tempData.arg_list
 
@@ -25,6 +29,7 @@ function var3.SetArgs(arg0, arg1, arg2)
 	arg0._interrupt = arg0._tempData.arg_list.interrupt
 	arg0._iconType = arg0._tempData.arg_list.iconType or 1
 	arg0._gunnerBonus = var0.gunnerBonus
+	arg0._keepRestCount = var0.keep
 
 	arg0:ResetCount()
 
@@ -167,9 +172,17 @@ function var3.GetCountType(arg0)
 end
 
 function var3.GetCountProgress(arg0)
-	return arg0._count / arg0._countTarget
+	local var0 = arg0._hpCountTarget or arg0._countTarget
+
+	return arg0._count / var0
 end
 
 function var3.ResetCount(arg0)
 	arg0._count = 0
+end
+
+function var3.ConsumeCount(arg0)
+	local var0 = arg0._hpCountTarget or arg0._countTarget
+
+	arg0._count = math.max(arg0._count - var0)
 end

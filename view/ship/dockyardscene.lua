@@ -1865,9 +1865,46 @@ end
 
 function var0.checkDestroyShips(arg0, arg1, arg2)
 	local var0 = {}
-	local var1, var2 = ShipCalcHelper.GetEliteAndHightLevelShips(arg1)
 
-	if #var1 > 0 or #var2 > 0 then
+	if PlayerPrefs.GetInt("RetireProtect", 1) == 0 then
+		local var1 = {}
+
+		for iter0, iter1 in pairs(arg1) do
+			local var2 = 0
+
+			for iter2, iter3 in pairs(arg1) do
+				if iter3:getGroupId() == iter1:getGroupId() then
+					var2 = var2 + 1
+				end
+			end
+
+			if #getProxy(BayProxy):findShipsByGroup(iter1:getGroupId()) == var2 then
+				local var3 = false
+
+				for iter4, iter5 in pairs(var1) do
+					if iter5:getGroupId() == iter1:getGroupId() then
+						var3 = true
+
+						break
+					end
+				end
+
+				if not var3 then
+					table.insert(var1, iter1)
+				end
+			end
+		end
+
+		if #var1 > 0 then
+			table.insert(var0, function(arg0)
+				arg0.destroyConfirmWindow:ExecuteAction("ShowOneShipProtect", var1, arg0)
+			end)
+		end
+	end
+
+	local var4, var5 = ShipCalcHelper.GetEliteAndHightLevelShips(arg1)
+
+	if #var4 > 0 or #var5 > 0 then
 		table.insert(var0, function(arg0)
 			local var0 = false
 
@@ -1877,17 +1914,17 @@ function var0.checkDestroyShips(arg0, arg1, arg2)
 				})[4]
 			end
 
-			arg0.destroyConfirmWindow:ExecuteAction("Show", var1, var2, var0, arg0)
+			arg0.destroyConfirmWindow:ExecuteAction("Show", var4, var5, var0, arg0)
 		end)
 	end
 
-	local var3 = underscore.filter(arg1, function(arg0)
+	local var6 = underscore.filter(arg1, function(arg0)
 		return arg0:getFlag("inElite")
 	end)
 
-	if #var3 > 0 then
+	if #var6 > 0 then
 		table.insert(var0, function(arg0)
-			arg0.destroyConfirmWindow:ExecuteAction("ShowEliteTag", var3, arg0)
+			arg0.destroyConfirmWindow:ExecuteAction("ShowEliteTag", var6, arg0)
 		end)
 	end
 

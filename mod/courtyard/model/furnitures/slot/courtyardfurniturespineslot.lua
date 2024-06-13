@@ -175,24 +175,46 @@ end
 function var0.GetActions(arg0)
 	local var0
 	local var1
+	local var2
 
 	if arg0.preheatAction and type(arg0.preheatAction) == "string" then
-		var0 = arg0.preheatAction
+		var0, var2 = arg0.preheatAction, false
 	elseif arg0.preheatAction and type(arg0.preheatAction) == "table" then
-		var0, var1 = arg0.preheatAction[1], arg0.preheatAction[2]
+		local var3 = {}
+
+		if type(arg0.preheatAction[1]) == "table" then
+			for iter0, iter1 in ipairs(arg0.preheatAction[1]) do
+				table.insert(var3, iter1)
+			end
+		else
+			table.insert(var3, arg0.preheatAction[1])
+		end
+
+		local var4 = 1
+		local var5 = arg0:GetOwner()
+
+		if isa(var5, CourtYardFurniture) then
+			var4 = #var5:GetUsingSlots()
+		end
+
+		var0, var1, var2 = var3[var4], arg0.preheatAction[2], arg0.preheatAction[3]
 	end
 
-	local var2
-	local var3
-	local var4
+	local var6
+	local var7
+	local var8
 
 	if arg0.strategyType == var4 then
-		var2, var3, var4 = var5(arg0)
+		var6, var7, var8 = var5(arg0)
 	else
-		var2, var3, var4 = var6(arg0)
+		var6, var7, var8 = var6(arg0)
 	end
 
-	return var2, var3, var4, var0, var1, arg0.tailAction
+	if var2 then
+		var8[0] = true
+	end
+
+	return var6, var7, var8, var0, var1, arg0.tailAction
 end
 
 function var0.OnAwake(arg0)

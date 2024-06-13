@@ -141,17 +141,23 @@ function var6.GetType(arg0)
 end
 
 function var6.Fire(arg0)
-	arg0._host:TriggerBuff(var0.Battle.BattleConst.BuffEffectType.ON_ALL_IN_STRIKE_STEADY, {})
+	if arg0._host:IsCease() then
+		return false
+	else
+		arg0._host:TriggerBuff(var0.Battle.BattleConst.BuffEffectType.ON_ALL_IN_STRIKE_STEADY, {})
 
-	for iter0, iter1 in ipairs(arg0._hiveList) do
-		iter1:SingleFire()
+		for iter0, iter1 in ipairs(arg0._hiveList) do
+			iter1:SingleFire()
+		end
+
+		arg0._skill:Cast(arg0._host)
+		arg0._host:StrikeExpose()
+		arg0._host:StateChange(var0.Battle.UnitState.STATE_ATTACK, "attack")
+		arg0:DispatchEvent(var0.Event.New(var3.MANUAL_WEAPON_FIRE, {}))
+		arg0._host:TriggerBuff(var0.Battle.BattleConst.BuffEffectType.ON_ALL_IN_STRIKE, {})
 	end
 
-	arg0._skill:Cast(arg0._host)
-	arg0._host:StrikeExpose()
-	arg0._host:StateChange(var0.Battle.UnitState.STATE_ATTACK, "attack")
-	arg0:DispatchEvent(var0.Event.New(var3.MANUAL_WEAPON_FIRE, {}))
-	arg0._host:TriggerBuff(var0.Battle.BattleConst.BuffEffectType.ON_ALL_IN_STRIKE, {})
+	return true
 end
 
 function var6.TriggerBuffOnReady(arg0)

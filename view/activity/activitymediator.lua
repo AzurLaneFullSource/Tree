@@ -567,10 +567,10 @@ function var0.initNotificationHandleDic(arg0)
 			local var0 = arg1:getBody()
 
 			arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var0.awards, function()
-				local var0 = getProxy(ActivityProxy):getActivityById(ActivityConst.UR_EXCHANGE_MOGADOR_ID)
+				local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_UR_EXCHANGE)
 
 				if var0 and not var0:isShow() then
-					arg0.viewComponent:removeActivity(ActivityConst.UR_EXCHANGE_MOGADOR_ID)
+					arg0.viewComponent:removeActivity(var0.id)
 				end
 
 				arg0.viewComponent:updateTaskLayers()

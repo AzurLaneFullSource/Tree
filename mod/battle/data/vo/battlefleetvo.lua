@@ -864,17 +864,20 @@ function var8.QuickTagChrageWeapon(arg0, arg1)
 		return
 	end
 
-	local var0 = arg0._chargeWeaponVO:GetCurrentWeapon()
+	local var0
+	local var1 = arg0._chargeWeaponVO:GetCurrentWeapon()
 
-	if var0 ~= nil and var0:GetCurrentState() == var0.STATE_READY then
-		var0:QuickTag()
+	if var1 ~= nil and var1:GetCurrentState() == var1.STATE_READY then
+		var1:QuickTag()
 
-		if #var0:GetLockList() <= 0 then
-			var0:CancelQuickTag()
+		if #var1:GetLockList() <= 0 then
+			var1:CancelQuickTag()
 		else
-			arg0:fireChargeWeapon(var0, arg1)
+			var0 = arg0:fireChargeWeapon(var1, arg1)
 		end
 	end
+
+	return var0
 end
 
 function var8.fireChargeWeapon(arg0, arg1, arg2, arg3)
@@ -908,19 +911,23 @@ function var8.UnleashAllInStrike(arg0)
 		return
 	end
 
-	local var0 = arg0._airAssistVO:GetCurrentWeapon()
+	local var0
+	local var1 = arg0._airAssistVO:GetCurrentWeapon()
 
-	if var0 and var0:GetCurrentState() == var0.STATE_READY then
-		local var1 = var0:GetHost()
+	if var1 and var1:GetCurrentState() == var1.STATE_READY then
+		local var2 = var1:GetHost()
 
-		if arg0._IFF == var5.FRIENDLY_CODE and var1:IsMainFleetUnit() then
-			arg0._airAssistVO:PlayCutIn(var1, 1)
+		if arg0._IFF == var5.FRIENDLY_CODE and var2:IsMainFleetUnit() then
+			arg0._airAssistVO:PlayCutIn(var2, 1)
 		end
 
-		var0:CLSBullet()
-		var0:DispatchBlink()
-		var0:Fire()
+		var1:CLSBullet()
+		var1:DispatchBlink()
+
+		var0 = var1:Fire()
 	end
+
+	return var0
 end
 
 function var8.CastTorpedo(arg0)
@@ -930,8 +937,7 @@ function var8.CastTorpedo(arg0)
 
 	local var0 = arg0._torpedoWeaponVO:GetCurrentWeapon()
 
-	if var0 ~= nil and var0:GetCurrentState() == var0.STATE_READY then
-		var0:Prepar()
+	if var0 ~= nil and var0:GetCurrentState() == var0.STATE_READY and var0:Prepar() then
 		arg0:FleetBuffTrigger(var4.BuffEffectType.ON_TORPEDO_BUTTON_PUSH)
 	end
 end
@@ -963,11 +969,14 @@ function var8.QuickCastTorpedo(arg0)
 		return
 	end
 
-	local var0 = arg0._torpedoWeaponVO:GetCurrentWeapon()
+	local var0
+	local var1 = arg0._torpedoWeaponVO:GetCurrentWeapon()
 
-	if var0 ~= nil and var0:GetCurrentState() == var0.STATE_READY then
-		var0:Fire(true)
+	if var1 ~= nil and var1:GetCurrentState() == var1.STATE_READY then
+		var0 = var1:Fire(true)
 	end
+
+	return var0
 end
 
 function var8.RemoveManunalTorpedo(arg0, arg1, arg2)

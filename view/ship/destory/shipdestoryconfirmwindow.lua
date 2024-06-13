@@ -73,6 +73,60 @@ function var0.Confirm(arg0)
 	end
 end
 
+function var0.ShowOneShipProtect(arg0, arg1, arg2)
+	var0.super.Show(arg0)
+	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+
+	arg0.key = nil
+	arg0.ships = arg1
+
+	arg0:SetCallBack(arg2)
+	setText(arg0.title, i18n("unique_ship_tip1"))
+
+	arg0.key = math.random(100000, 999999)
+
+	setText(arg0.urLabel, i18n("unique_ship_tip2", arg0.key))
+	setActive(arg0.urLabel, true)
+	setActive(arg0.urInput, true)
+	setActive(arg0.urOverflowLabel, false)
+	mergeSort(arg0.ships, CompareFuncs({
+		function(arg0)
+			return -arg0.level
+		end,
+		function(arg0)
+			return -arg0:getRarity()
+		end
+	}, true))
+
+	if #arg0.ships > 5 then
+		setActive(arg0._tf:Find("window/content/ships"), true)
+		setActive(arg0._tf:Find("window/content/ships_single"), false)
+
+		local var0 = arg0._tf:Find("window/content/ships/content"):GetComponent("LScrollRect")
+
+		function var0.onUpdateItem(arg0, arg1)
+			updateShip(tf(arg1), arg0.ships[arg0 + 1])
+		end
+
+		onNextTick(function()
+			var0:SetTotalCount(#arg0.ships)
+		end)
+	else
+		setActive(arg0._tf:Find("window/content/ships"), false)
+		setActive(arg0._tf:Find("window/content/ships_single"), true)
+
+		local var1 = arg0._tf:Find("window/content/ships_single")
+		local var2 = UIItemList.New(var1, var1:Find("IconTpl"))
+
+		var2:make(function(arg0, arg1, arg2)
+			if arg0 == UIItemList.EventUpdate then
+				updateShip(arg2, arg0.ships[arg1 + 1])
+			end
+		end)
+		var2:align(#arg0.ships)
+	end
+end
+
 function var0.Show(arg0, arg1, arg2, arg3, arg4)
 	var0.super.Show(arg0)
 	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)

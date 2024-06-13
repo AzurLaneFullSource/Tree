@@ -458,8 +458,14 @@ end
 
 function var0.showExitTip(arg0, arg1)
 	local var0 = arg0._shipVO:GetLockState()
+	local var1 = pg.settings_other_template[22]
+	local var2 = getProxy(PlayerProxy):getRawData():GetCommonFlag(_G[var1.name])
 
-	if arg0._shipVO.virgin and var0 == Ship.LOCK_STATE_UNLOCK then
+	if var1.default == 1 then
+		var2 = not var2
+	end
+
+	if arg0._shipVO.virgin and var0 == Ship.LOCK_STATE_UNLOCK and not var2 then
 		if arg0.effectObj then
 			setActive(arg0.effectObj, false)
 		end
@@ -846,7 +852,7 @@ function var0.playOpening(arg0, arg1)
 
 	local var1 = "star_level_unlock_anim_" .. var0
 
-	if checkABExist("ui/skinunlockanim/" .. var1) then
+	if PathMgr.FileExists(PathMgr.getAssetBundle("ui/skinunlockanim/" .. var1)) then
 		pg.CpkPlayMgr.GetInstance():PlayCpkMovie(function()
 			return
 		end, function()

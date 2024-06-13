@@ -23,7 +23,7 @@ function var1.SetArgs(arg0, arg1, arg2)
 	arg0._number = 0
 end
 
-function var1.UpdateAttr(arg0, arg1)
+function var1.calcBloodRageNumber(arg0, arg1)
 	local var0 = arg1:GetHPRate()
 
 	if var0 > arg0._threshold then
@@ -35,10 +35,15 @@ function var1.UpdateAttr(arg0, arg1)
 			arg0._number = math.min(arg0._number, arg0._attrBound)
 		end
 	end
-
-	var1.super.UpdateAttr(arg0, arg1)
 end
 
 function var1.doOnHPRatioUpdate(arg0, arg1, arg2)
+	arg0:calcBloodRageNumber(arg1)
+	arg0:UpdateAttr(arg1)
+end
+
+function var1.onRemove(arg0, arg1, arg2)
+	arg0._number = 0
+
 	arg0:UpdateAttr(arg1)
 end

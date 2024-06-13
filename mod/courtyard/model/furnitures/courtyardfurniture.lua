@@ -497,6 +497,10 @@ function var0.StartInteraction(arg0, arg1)
 	arg0:DispatchEvent(CourtYardEvent.FURNITURE_START_INTERACTION, arg1)
 end
 
+function var0.OnPreheatActionEnd(arg0)
+	return
+end
+
 function var0.UpdateInteraction(arg0, ...)
 	arg0:DispatchEvent(CourtYardEvent.FURNITURE_UPDATE_INTERACTION, ...)
 end

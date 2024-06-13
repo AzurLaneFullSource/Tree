@@ -8,6 +8,7 @@ function var0.Ctor(arg0, arg1, arg2)
 	var0.super.Ctor(arg0, arg1, arg2)
 
 	arg0.moveState = var1
+	arg0.playPreheatAction = false
 end
 
 function var0.IsCar(arg0)
@@ -141,19 +142,62 @@ function var0.ChangeMoveState(arg0, arg1)
 	arg0.moveState = arg1
 end
 
-function var0.StartInteraction(arg0, arg1)
-	var0.super.StartInteraction(arg0, arg1)
+function var0.IsSpineSlotAndExistPreheatAction(arg0, arg1)
+	if not isa(arg1, CourtYardFurnitureSpineSlot) then
+		return false
+	end
 
-	if arg0:IsMoveableSlot(arg1) then
+	return arg1.preheatAction ~= nil
+end
+
+function var0.StartInteraction(arg0, arg1)
+	if arg0:IsSpineSlotAndExistPreheatAction(arg1) then
+		arg0.playPreheatAction = true
+
+		arg0:_ChangeState(CourtYardFurniture.STATE_INTERACT)
+		arg0:DispatchEvent(CourtYardEvent.FURNITURE_START_INTERACTION, arg1)
+		arg0:Idle()
+	else
+		var0.super.StartInteraction(arg0, arg1)
+
+		if arg0:IsMoveableSlot(arg1) then
+			arg0:ChangeMoveState(var2)
+		end
+	end
+end
+
+function var0.OnPreheatActionEnd(arg0, arg1)
+	if arg0:IsSpineSlotAndExistPreheatAction(arg1) then
+		arg0.playPreheatAction = false
+
 		arg0:ChangeMoveState(var2)
 	end
 end
 
-function var0.ClearInteraction(arg0, arg1)
-	var0.super.ClearInteraction(arg0, arg1)
+function var0.CanInterAction(arg0)
+	if arg0.playPreheatAction then
+		return false
+	end
 
-	if arg0:IsMoveableSlot(arg1) then
-		arg0:Idle()
+	return var0.super.CanInterAction(arg0)
+end
+
+function var0.ClearInteraction(arg0, arg1)
+	if arg0:IsSpineSlotAndExistPreheatAction(arg1) then
+		if #_.select(arg0.slots, function(arg0)
+			return arg0.id ~= arg1.id and arg0:IsUsing()
+		end) == 0 then
+			arg0:_ChangeState(CourtYardFurniture.STATE_IDLE)
+			arg0:Idle()
+		end
+
+		arg0:DispatchEvent(CourtYardEvent.FURNITURE_STOP_INTERACTION, arg1)
+	else
+		var0.super.ClearInteraction(arg0, arg1)
+
+		if arg0:IsMoveableSlot(arg1) then
+			arg0:Idle()
+		end
 	end
 end
 
@@ -198,6 +242,8 @@ end
 function var0.Dispose(arg0)
 	var0.super.Dispose(arg0)
 	arg0:RemoveTimer()
+
+	arg0.playPreheatAction = false
 end
 
 return var0

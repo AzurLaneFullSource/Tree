@@ -3306,7 +3306,7 @@ pg.activity_shop_extra = {
 		end_by_maintenance = 0,
 		commodity_type = 7,
 		id = 117,
-		order = 10,
+		order = 201,
 		time = {
 			{
 				{
@@ -3380,7 +3380,7 @@ pg.activity_shop_extra = {
 		end_by_maintenance = 0,
 		commodity_type = 7,
 		id = 119,
-		order = 9,
+		order = 201,
 		time = {
 			{
 				{
@@ -3412,7 +3412,7 @@ pg.activity_shop_extra = {
 		commodity_type = 7,
 		activity = 7017,
 		commodity_id = 601102,
-		order = 10,
+		order = 201,
 		id = 120,
 		num = 1,
 		num_limit = 1,
@@ -3437,8 +3437,8 @@ pg.activity_shop_extra = {
 			{
 				{
 					2024,
-					6,
-					30
+					7,
+					31
 				},
 				{
 					23,
@@ -3457,7 +3457,7 @@ pg.activity_shop_extra = {
 		end_by_maintenance = 1,
 		commodity_type = 7,
 		id = 121,
-		order = 5,
+		order = 201,
 		time = {
 			{
 				{

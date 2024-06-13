@@ -108,6 +108,10 @@ function var0.StartInteraction(arg0, arg1, arg2)
 	end
 end
 
+function var0.OnPreheatActionEnd(arg0)
+	return
+end
+
 function var0.UpdateInteraction(arg0, ...)
 	arg0:DispatchEvent(CourtYardEvent.SHIP_UPDATE_INTERACTION, ...)
 end

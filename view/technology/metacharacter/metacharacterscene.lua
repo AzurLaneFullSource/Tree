@@ -136,6 +136,8 @@ function var0.findUI(arg0)
 	arg0.backBtn = arg0:findTF("top/back", var3)
 	arg0.helpBtn = arg0:findTF("top/help", var3)
 	arg0.toggleBtnsTF = arg0:findTF("left/Btns", var3)
+	arg0.toggleGroupSC = GetComponent(arg0.toggleBtnsTF, "ToggleGroup")
+	arg0.toggleGroupSC.allowSwitchOff = true
 	arg0.toggleList[1] = arg0:findTF("Energy", arg0.toggleBtnsTF)
 	arg0.toggleList[2] = arg0:findTF("Tactics", arg0.toggleBtnsTF)
 	arg0.toggleList[3] = arg0:findTF("Repair", arg0.toggleBtnsTF)
@@ -930,14 +932,13 @@ function var0.enterMenuPage(arg0, arg1)
 	setActive(arg0.hidePanel, not arg1)
 	setActive(arg0.indexBtn, not arg1)
 	setActive(arg0.toggleBtnsTF, arg1)
+
+	arg0.toggleGroupSC.allowSwitchOff = not arg1
 end
 
 function var0.switchPage(arg0, arg1)
 	if not arg0.curPageIndex then
-		if arg1 == 1 then
-			setActive(arg0.toggleBtnsTF, true)
-		end
-
+		setActive(arg0.toggleBtnsTF, true)
 		triggerToggle(arg0.toggleList[arg1], true)
 	end
 end

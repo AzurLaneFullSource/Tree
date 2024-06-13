@@ -704,7 +704,8 @@ function var9.generateAttachBuffList(arg0)
 		local var2 = {
 			buff_id = iter1.buff_id,
 			level = iter1.buff_level,
-			rant = iter1.rant
+			rant = iter1.rant,
+			hit_ignore = iter1.hit_ignore
 		}
 
 		table.insert(var0, var2)

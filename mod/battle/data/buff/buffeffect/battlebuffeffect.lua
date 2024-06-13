@@ -765,8 +765,15 @@ end
 function var3.onBattleBuffCount(arg0, arg1, arg2, arg3)
 	local var0 = arg3.buffFX
 
-	if var0:GetCountType() == arg0._countType and arg0:onTrigger(arg1, arg2) ~= "overheat" then
-		var0:ResetCount()
+	if var0:GetCountType() == arg0._countType then
+		if var0:Repeater() then
+			while var0:GetCountProgress() >= 1 do
+				arg0:onTrigger(arg1, arg2)
+				var0:ConsumeCount()
+			end
+		elseif arg0:onTrigger(arg1, arg2) ~= "overheat" then
+			var0:ResetCount()
+		end
 	end
 end
 

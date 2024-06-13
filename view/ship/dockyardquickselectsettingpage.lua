@@ -10,61 +10,85 @@ end
 
 function var0.InitUI(arg0)
 	setText(findTF(arg0._tf, "window/top/bg/obtain/title"), i18n("retire_title"))
+	setText(findTF(arg0._tf, "window/notifications/options/notify_tpl_0/Text"), i18n("unique_ship_retire_protect"))
 
-	local var0 = {
+	local var0 = findTF(arg0._tf, "window/notifications/options/notify_tpl_0")
+	local var1 = findTF(var0, "on")
+	local var2 = findTF(var0, "off")
+
+	onToggle(arg0, var1, function(arg0)
+		local var0 = var1:GetComponent(typeof(Toggle))
+
+		if arg0 then
+			arg0.settingChanged = true
+
+			PlayerPrefs.SetInt("RetireProtect", 0)
+		end
+	end)
+	onToggle(arg0, var2, function(arg0)
+		local var0 = var2:GetComponent(typeof(Toggle))
+
+		if arg0 then
+			arg0.settingChanged = true
+
+			PlayerPrefs.SetInt("RetireProtect", 1)
+		end
+	end)
+
+	local var3 = {
 		findTF(arg0._tf, "window/notifications/options/notify_tpl_1"),
 		findTF(arg0._tf, "window/notifications/options/notify_tpl_2"),
 		findTF(arg0._tf, "window/notifications/options/notify_tpl_3")
 	}
-	local var1 = {
+	local var4 = {
 		sr = 4,
 		n = 2,
 		empty = 0,
 		r = 3
 	}
-	local var2 = {}
+	local var5 = {}
 
-	for iter0 = 1, #var0 do
-		var2[iter0] = {}
+	for iter0 = 1, #var3 do
+		var5[iter0] = {}
 
-		for iter1, iter2 in pairs(var1) do
-			var2[iter0][iter1] = findTF(var0[iter0], iter1)
+		for iter1, iter2 in pairs(var4) do
+			var5[iter0][iter1] = findTF(var3[iter0], iter1)
 		end
 	end
 
-	for iter3 = 1, #var0 do
-		for iter4, iter5 in pairs(var1) do
-			onToggle(arg0, var2[iter3][iter4], function(arg0)
-				local var0 = var2[iter3][iter4]:GetComponent(typeof(Toggle))
+	for iter3 = 1, #var3 do
+		for iter4, iter5 in pairs(var4) do
+			onToggle(arg0, var5[iter3][iter4], function(arg0)
+				local var0 = var5[iter3][iter4]:GetComponent(typeof(Toggle))
 
 				if arg0 then
 					arg0.settingChanged = true
 
 					PlayerPrefs.SetInt("QuickSelectRarity" .. iter3, iter5)
 				elseif not var0.group:AnyTogglesOn() then
-					triggerToggle(var2[iter3].empty, true)
+					triggerToggle(var5[iter3].empty, true)
 				end
 			end)
 		end
 	end
 
-	local var3 = findTF(arg0._tf, "window/notifications/options/notify_tpl_4")
+	local var6 = findTF(arg0._tf, "window/notifications/options/notify_tpl_4")
 
-	onToggle(arg0, findTF(var3, "keep_all"), function(arg0)
+	onToggle(arg0, findTF(var6, "keep_all"), function(arg0)
 		if arg0 then
 			arg0.settingChanged = true
 
 			PlayerPrefs.SetString("QuickSelectWhenHasAtLeastOneMaxstar", "KeepAll")
 		end
 	end)
-	onToggle(arg0, findTF(var3, "keep_one"), function(arg0)
+	onToggle(arg0, findTF(var6, "keep_one"), function(arg0)
 		if arg0 then
 			arg0.settingChanged = true
 
 			PlayerPrefs.SetString("QuickSelectWhenHasAtLeastOneMaxstar", "KeepOne")
 		end
 	end)
-	onToggle(arg0, findTF(var3, "keep_none"), function(arg0)
+	onToggle(arg0, findTF(var6, "keep_none"), function(arg0)
 		if arg0 then
 			arg0.settingChanged = true
 
@@ -72,23 +96,23 @@ function var0.InitUI(arg0)
 		end
 	end)
 
-	local var4 = findTF(arg0._tf, "window/notifications/options/notify_tpl_5")
+	local var7 = findTF(arg0._tf, "window/notifications/options/notify_tpl_5")
 
-	onToggle(arg0, findTF(var4, "keep_all"), function(arg0)
+	onToggle(arg0, findTF(var7, "keep_all"), function(arg0)
 		if arg0 then
 			arg0.settingChanged = true
 
 			PlayerPrefs.SetString("QuickSelectWithoutMaxstar", "KeepAll")
 		end
 	end)
-	onToggle(arg0, findTF(var4, "keep_needed"), function(arg0)
+	onToggle(arg0, findTF(var7, "keep_needed"), function(arg0)
 		if arg0 then
 			arg0.settingChanged = true
 
 			PlayerPrefs.SetString("QuickSelectWithoutMaxstar", "KeepNeeded")
 		end
 	end)
-	onToggle(arg0, findTF(var4, "keep_none"), function(arg0)
+	onToggle(arg0, findTF(var7, "keep_none"), function(arg0)
 		if arg0 then
 			arg0.settingChanged = true
 
@@ -105,40 +129,47 @@ function var0.InitUI(arg0)
 		})
 	end, SFX_CONFIRM)
 
-	local var5 = PlayerPrefs.GetString("QuickSelectWhenHasAtLeastOneMaxstar", "KeepNone")
-	local var6 = PlayerPrefs.GetString("QuickSelectWithoutMaxstar", "KeepAll")
+	local var8 = PlayerPrefs.GetInt("RetireProtect", 1)
+	local var9 = PlayerPrefs.GetString("QuickSelectWhenHasAtLeastOneMaxstar", "KeepNone")
+	local var10 = PlayerPrefs.GetString("QuickSelectWithoutMaxstar", "KeepAll")
 
-	if var5 == "KeepAll" then
-		triggerToggle(findTF(var3, "keep_all"), true)
-	elseif var5 == "KeepOne" then
-		triggerToggle(findTF(var3, "keep_one"), true)
-	elseif var5 == "KeepNone" then
-		triggerToggle(findTF(var3, "keep_none"), true)
+	if var8 == 0 then
+		triggerToggle(var1, true)
+	elseif var8 == 1 then
+		triggerToggle(var2, true)
 	end
 
-	if var6 == "KeepAll" then
-		triggerToggle(findTF(var4, "keep_all"), true)
-	elseif var6 == "KeepNeeded" then
-		triggerToggle(findTF(var4, "keep_needed"), true)
-	elseif var6 == "KeepNone" then
-		triggerToggle(findTF(var4, "keep_none"), true)
+	if var9 == "KeepAll" then
+		triggerToggle(findTF(var6, "keep_all"), true)
+	elseif var9 == "KeepOne" then
+		triggerToggle(findTF(var6, "keep_one"), true)
+	elseif var9 == "KeepNone" then
+		triggerToggle(findTF(var6, "keep_none"), true)
+	end
+
+	if var10 == "KeepAll" then
+		triggerToggle(findTF(var7, "keep_all"), true)
+	elseif var10 == "KeepNeeded" then
+		triggerToggle(findTF(var7, "keep_needed"), true)
+	elseif var10 == "KeepNone" then
+		triggerToggle(findTF(var7, "keep_none"), true)
 	end
 
 	setText(findTF(arg0._tf, "window/notifications/options/notify_tpl_4/Text"), i18n("retire_1"))
 	setText(findTF(arg0._tf, "window/notifications/options/notify_tpl_5/Text"), i18n("retire_2"))
 
-	local var7 = {
+	local var11 = {
 		PlayerPrefs.GetInt("QuickSelectRarity1", 3),
 		PlayerPrefs.GetInt("QuickSelectRarity2", 4),
 		PlayerPrefs.GetInt("QuickSelectRarity3", 2)
 	}
 
-	for iter6 = 1, #var0 do
-		setText(findTF(var0[iter6], "Text"), i18n("retire_rarity", iter6))
+	for iter6 = 1, #var3 do
+		setText(findTF(var3[iter6], "Text"), i18n("retire_rarity", iter6))
 
-		for iter7, iter8 in pairs(var1) do
-			if iter8 == var7[iter6] then
-				triggerToggle(var2[iter6][iter7], true)
+		for iter7, iter8 in pairs(var4) do
+			if iter8 == var11[iter6] then
+				triggerToggle(var5[iter6][iter7], true)
 			end
 		end
 	end

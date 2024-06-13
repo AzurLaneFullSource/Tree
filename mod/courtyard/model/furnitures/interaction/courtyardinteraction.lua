@@ -33,10 +33,10 @@ function var0.DoPreheatStep(arg0, arg1, arg2)
 	if arg1 then
 		arg0.preheatProcess = true
 
-		arg0.host:GetOwner():UpdateInteraction(arg0:PackData(arg1))
+		arg0.host:GetOwner():UpdateInteraction(arg0:PackData(arg1, true))
 
 		if arg2 then
-			arg0.host:GetUser():UpdateInteraction(arg0:PackData(arg2))
+			arg0.host:GetUser():UpdateInteraction(arg0:PackData(arg2, true))
 		end
 	else
 		arg0:DoStep()
@@ -75,7 +75,7 @@ function var0.DoTailStep(arg0)
 	arg0.host:GetOwner():UpdateInteraction(arg0:PackData(arg0.tailAction))
 end
 
-function var0.PackData(arg0, arg1)
+function var0.PackData(arg0, arg1, arg2)
 	local var0 = arg0.index / arg0.total
 
 	return {
@@ -85,12 +85,14 @@ function var0.PackData(arg0, arg1)
 		progress = var0,
 		total = arg0.total,
 		index = arg0.index,
-		isReset = arg0.isReset
+		isReset = arg0.isReset,
+		block = arg2
 	}
 end
 
 function var0.StepEnd(arg0, arg1)
 	if arg0.preheatProcess then
+		arg0:OnPreheatDone()
 		arg0:DoStep()
 	else
 		if arg0.index == 0 then
@@ -101,6 +103,10 @@ function var0.StepEnd(arg0, arg1)
 
 		arg0:OnStepEnd()
 	end
+end
+
+function var0.OnPreheatDone(arg0)
+	arg0.host:GetOwner():OnPreheatActionEnd(arg0.host)
 end
 
 function var0.AllStepEnd(arg0)

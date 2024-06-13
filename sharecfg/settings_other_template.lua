@@ -189,6 +189,15 @@ pg.settings_other_template = {
 		title = "Show L2D Reset Button",
 		desc = "When toggled ON, a L2D reset button will appear on the main menu."
 	},
+	{
+		default = 0,
+		name = "LOCK_NEW_SHIP",
+		type = 1,
+		alignment = 0,
+		id = 22,
+		title = "Automatically Lock New Characters",
+		desc = "When enabled, shipgirls who are newly-acquired for the first time will automatically be locked."
+	},
 	all = {
 		1,
 		2,
@@ -210,6 +219,7 @@ pg.settings_other_template = {
 		18,
 		19,
 		20,
-		21
+		21,
+		22
 	}
 }

@@ -128,7 +128,7 @@ function var4.Fire(arg0, arg1)
 
 	arg0._strikeMode = false
 
-	var4.super.Fire(arg0)
+	return var4.super.Fire(arg0)
 end
 
 function var4.DoAttack(arg0, arg1)

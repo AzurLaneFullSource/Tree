@@ -285,6 +285,7 @@ pg.memory_group = setmetatable({
 		596,
 		597,
 		598,
+		599,
 		1000,
 		1001,
 		1002
@@ -6149,6 +6150,23 @@ pg.base.memory_group = {
 			3535,
 			3536,
 			3537
+		}
+	},
+	[599] = {
+		id = 599,
+		subtype = 0,
+		icon = "title_chara_aijier",
+		type = 3,
+		link_event = 0,
+		title = "Lord of Raging Seas",
+		memories = {
+			3671,
+			3672,
+			3673,
+			3674,
+			3675,
+			3676,
+			3677
 		}
 	},
 	[1000] = {

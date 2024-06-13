@@ -29,21 +29,15 @@ end
 
 function var3.Update(arg0)
 	if arg0._active then
-		if not arg0._torpedoVO:IsOverLoad() then
-			arg0._fleetVO:QuickCastTorpedo()
-
+		if not arg0._torpedoVO:IsOverLoad() and arg0._fleetVO:QuickCastTorpedo() then
 			return
 		end
 
-		if not arg0._AAVO:IsOverLoad() then
-			arg0._fleetVO:UnleashAllInStrike()
-
+		if not arg0._AAVO:IsOverLoad() and arg0._fleetVO:UnleashAllInStrike() then
 			return
 		end
 
-		if not arg0._chargeVO:IsOverLoad() then
-			arg0._fleetVO:QuickTagChrageWeapon(arg0._isPlayFocus)
-
+		if not arg0._chargeVO:IsOverLoad() and arg0._fleetVO:QuickTagChrageWeapon(arg0._isPlayFocus) then
 			return
 		end
 	end
