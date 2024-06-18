@@ -1,158 +1,158 @@
-﻿local var0 = class("BattleExperimentResultLayer", import(".BattleContributionResultLayer"))
+﻿local var0_0 = class("BattleExperimentResultLayer", import(".BattleContributionResultLayer"))
 
-function var0.setPoint(arg0)
-	arg0._contributionPoint = 0
+function var0_0.setPoint(arg0_1)
+	arg0_1._contributionPoint = 0
 end
 
-function var0.skip(arg0)
-	for iter0, iter1 in ipairs(arg0._delayLeanList) do
-		LeanTween.cancel(iter1)
+function var0_0.skip(arg0_2)
+	for iter0_2, iter1_2 in ipairs(arg0_2._delayLeanList) do
+		LeanTween.cancel(iter1_2)
 	end
 
-	if arg0._stateFlag == var0.STATE_RANK_ANIMA then
+	if arg0_2._stateFlag == var0_0.STATE_RANK_ANIMA then
 		-- block empty
-	elseif arg0._stateFlag == var0.STATE_REPORT then
-		local var0 = arg0._conditionContainer.childCount
+	elseif arg0_2._stateFlag == var0_0.STATE_REPORT then
+		local var0_2 = arg0_2._conditionContainer.childCount
 
-		while var0 > 0 do
-			SetActive(arg0._conditionContainer:GetChild(var0 - 1), true)
+		while var0_2 > 0 do
+			SetActive(arg0_2._conditionContainer:GetChild(var0_2 - 1), true)
 
-			var0 = var0 - 1
+			var0_2 = var0_2 - 1
 		end
 
-		SetActive(arg0:findTF("jieuan01/tips", arg0._bg), true)
+		SetActive(arg0_2:findTF("jieuan01/tips", arg0_2._bg), true)
 
-		arg0._stateFlag = var0.STATE_REPORTED
-	elseif arg0._stateFlag == var0.STATE_REPORTED then
-		arg0:displayBG()
-		SetActive(arg0:findTF("jieuan01/tips", arg0._bg), false)
+		arg0_2._stateFlag = var0_0.STATE_REPORTED
+	elseif arg0_2._stateFlag == var0_0.STATE_REPORTED then
+		arg0_2:displayBG()
+		SetActive(arg0_2:findTF("jieuan01/tips", arg0_2._bg), false)
 	end
 end
 
-function var0.displayBG(arg0)
-	local var0 = rtf(arg0._grade)
+function var0_0.displayBG(arg0_3)
+	local var0_3 = rtf(arg0_3._grade)
 
-	LeanTween.moveX(rtf(arg0._conditions), 1300, var0.DURATION_MOVE)
-	LeanTween.scale(arg0._grade, Vector3(0.6, 0.6, 0), var0.DURATION_MOVE)
-	LeanTween.moveLocal(go(var0), arg0._gradeUpperLeftPos, var0.DURATION_MOVE):setOnComplete(System.Action(function()
-		arg0:displayShips()
-		arg0:showRightBottomPanel()
-		triggerButton(arg0._statisticsBtn)
-		arg0:skipAtkAnima(arg0._atkContainerNext)
-		arg0:skipAtkAnima(arg0._atkContainer)
-		setActive(arg0._statisticsBtn, false)
+	LeanTween.moveX(rtf(arg0_3._conditions), 1300, var0_0.DURATION_MOVE)
+	LeanTween.scale(arg0_3._grade, Vector3(0.6, 0.6, 0), var0_0.DURATION_MOVE)
+	LeanTween.moveLocal(go(var0_3), arg0_3._gradeUpperLeftPos, var0_0.DURATION_MOVE):setOnComplete(System.Action(function()
+		arg0_3:displayShips()
+		arg0_3:showRightBottomPanel()
+		triggerButton(arg0_3._statisticsBtn)
+		arg0_3:skipAtkAnima(arg0_3._atkContainerNext)
+		arg0_3:skipAtkAnima(arg0_3._atkContainer)
+		setActive(arg0_3._statisticsBtn, false)
 
-		arg0._stateFlag = var0.STATE_DISPLAY
+		arg0_3._stateFlag = var0_0.STATE_DISPLAY
 	end))
-	setActive(arg0:findTF("jieuan01/Bomb", arg0._bg), false)
+	setActive(arg0_3:findTF("jieuan01/Bomb", arg0_3._bg), false)
 end
 
-function var0.closeStatistics(arg0)
+function var0_0.closeStatistics(arg0_5)
 	return
 end
 
-function var0.displayShips(arg0)
-	arg0._expTFs = {}
-	arg0._nameTxts = {}
-	arg0._initExp = {}
-	arg0._skipExp = {}
-	arg0._subSkipExp = {}
-	arg0._subCardAnimaFuncList = {}
+function var0_0.displayShips(arg0_6)
+	arg0_6._expTFs = {}
+	arg0_6._nameTxts = {}
+	arg0_6._initExp = {}
+	arg0_6._skipExp = {}
+	arg0_6._subSkipExp = {}
+	arg0_6._subCardAnimaFuncList = {}
 
-	local var0 = {}
-	local var1 = arg0.shipVOs
+	local var0_6 = {}
+	local var1_6 = arg0_6.shipVOs
 
-	for iter0, iter1 in ipairs(var1) do
-		var0[iter1.id] = iter1
+	for iter0_6, iter1_6 in ipairs(var1_6) do
+		var0_6[iter1_6.id] = iter1_6
 	end
 
-	local var2 = arg0.contextData.statistics
+	local var2_6 = arg0_6.contextData.statistics
 
-	for iter2, iter3 in ipairs(var1) do
-		if var2[iter3.id] then
-			var2[iter3.id].vo = iter3
+	for iter2_6, iter3_6 in ipairs(var1_6) do
+		if var2_6[iter3_6.id] then
+			var2_6[iter3_6.id].vo = iter3_6
 		end
 	end
 
-	local var3 = arg0.contextData.oldMainShips
-	local var4 = 0
+	local var3_6 = arg0_6.contextData.oldMainShips
+	local var4_6 = 0
 
-	for iter4, iter5 in ipairs(var3) do
-		local var5 = var2[iter5.id]
+	for iter4_6, iter5_6 in ipairs(var3_6) do
+		local var5_6 = var2_6[iter5_6.id]
 
-		if var5 and var4 < var5.output then
-			arg0.mvpShipVO = iter5
-			var4 = var5.output
+		if var5_6 and var4_6 < var5_6.output then
+			arg0_6.mvpShipVO = iter5_6
+			var4_6 = var5_6.output
 		end
 	end
 
-	arg0._atkFuncs = {}
-	arg0._commonAtkTplList = {}
-	arg0._subAtkTplList = {}
+	arg0_6._atkFuncs = {}
+	arg0_6._commonAtkTplList = {}
+	arg0_6._subAtkTplList = {}
 
-	local var6
-	local var7
+	local var6_6
+	local var7_6
 
-	SetActive(arg0._atkToggle, #var3 > 6)
+	SetActive(arg0_6._atkToggle, #var3_6 > 6)
 
-	if #var3 > 6 then
-		onToggle(arg0, arg0._atkToggle, function(arg0)
-			SetActive(arg0._atkContainer, arg0)
-			SetActive(arg0._atkContainerNext, not arg0)
+	if #var3_6 > 6 then
+		onToggle(arg0_6, arg0_6._atkToggle, function(arg0_7)
+			SetActive(arg0_6._atkContainer, arg0_7)
+			SetActive(arg0_6._atkContainerNext, not arg0_7)
 
-			if arg0 then
-				arg0:skipAtkAnima(arg0._atkContainerNext)
+			if arg0_7 then
+				arg0_6:skipAtkAnima(arg0_6._atkContainerNext)
 			else
-				arg0:skipAtkAnima(arg0._atkContainer)
+				arg0_6:skipAtkAnima(arg0_6._atkContainer)
 			end
 		end, SFX_PANEL)
 	end
 
-	local var8 = {}
-	local var9 = {}
+	local var8_6 = {}
+	local var9_6 = {}
 
-	for iter6, iter7 in ipairs(var3) do
-		local var10 = var0[iter7.id]
+	for iter6_6, iter7_6 in ipairs(var3_6) do
+		local var10_6 = var0_6[iter7_6.id]
 
-		if var2[iter7.id] then
-			local var11 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter7.configId).type
-			local var12 = table.contains(TeamType.SubShipType, var11)
-			local var13
-			local var14
-			local var15 = 0
-			local var16
+		if var2_6[iter7_6.id] then
+			local var11_6 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter7_6.configId).type
+			local var12_6 = table.contains(TeamType.SubShipType, var11_6)
+			local var13_6
+			local var14_6
+			local var15_6 = 0
+			local var16_6
 
-			if iter6 > 6 then
-				var14 = arg0._atkContainerNext
-				var16 = 7
+			if iter6_6 > 6 then
+				var14_6 = arg0_6._atkContainerNext
+				var16_6 = 7
 			else
-				var14 = arg0._atkContainer
-				var16 = 1
+				var14_6 = arg0_6._atkContainer
+				var16_6 = 1
 			end
 
-			local var17 = cloneTplTo(arg0._atkTpl, var14)
-			local var18 = var17.localPosition
+			local var17_6 = cloneTplTo(arg0_6._atkTpl, var14_6)
+			local var18_6 = var17_6.localPosition
 
-			var18.x = var18.x + (iter6 - var16) * 74
-			var18.y = var18.y + (iter6 - var16) * -124
-			var17.localPosition = var18
+			var18_6.x = var18_6.x + (iter6_6 - var16_6) * 74
+			var18_6.y = var18_6.y + (iter6_6 - var16_6) * -124
+			var17_6.localPosition = var18_6
 
-			local var19 = arg0:findTF("result/mask/icon", var17)
-			local var20 = arg0:findTF("result/type", var17)
+			local var19_6 = arg0_6:findTF("result/mask/icon", var17_6)
+			local var20_6 = arg0_6:findTF("result/type", var17_6)
 
-			var19:GetComponent(typeof(Image)).sprite = LoadSprite("herohrzicon/" .. iter7:getPainting())
+			var19_6:GetComponent(typeof(Image)).sprite = LoadSprite("herohrzicon/" .. iter7_6:getPainting())
 
-			local var21 = var2[iter7.id].output / var4
-			local var22 = GetSpriteFromAtlas("shiptype", shipType2print(iter7:getShipType()))
+			local var21_6 = var2_6[iter7_6.id].output / var4_6
+			local var22_6 = GetSpriteFromAtlas("shiptype", shipType2print(iter7_6:getShipType()))
 
-			setImageSprite(var20, var22, true)
-			arg0:setAtkAnima(var17, var14, var21, var4, arg0.mvpShipVO == iter7, var2[iter7.id].output, var2[iter7.id].kill_count)
+			setImageSprite(var20_6, var22_6, true)
+			arg0_6:setAtkAnima(var17_6, var14_6, var21_6, var4_6, arg0_6.mvpShipVO == iter7_6, var2_6[iter7_6.id].output, var2_6[iter7_6.id].kill_count)
 
-			if iter7.id == var2._flagShipID then
-				arg0.flagShipVO = iter7
+			if iter7_6.id == var2_6._flagShipID then
+				arg0_6.flagShipVO = iter7_6
 			end
 		end
 	end
 end
 
-return var0
+return var0_0

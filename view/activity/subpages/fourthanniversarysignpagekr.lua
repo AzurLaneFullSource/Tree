@@ -1,45 +1,45 @@
-﻿local var0 = class("FourthAnniversarySignPageKR", import(".TemplatePage.LoginTemplatePage"))
+﻿local var0_0 = class("FourthAnniversarySignPageKR", import(".TemplatePage.LoginTemplatePage"))
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("AD")
-	arg0.item = arg0:findTF("item", arg0.bg)
-	arg0.items = arg0:findTF("mask/items", arg0.bg)
-	arg0.itemList = UIItemList.New(arg0.items, arg0.item)
-	arg0.initItems = {}
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.item = arg0_1:findTF("item", arg0_1.bg)
+	arg0_1.items = arg0_1:findTF("mask/items", arg0_1.bg)
+	arg0_1.itemList = UIItemList.New(arg0_1.items, arg0_1.item)
+	arg0_1.initItems = {}
 end
 
-function var0.OnFirstFlush(arg0)
-	setActive(arg0.item, false)
-	arg0.itemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			if not table.contains(arg0.initItems, arg1) then
-				local var0 = arg0:findTF("item", arg2)
-				local var1 = arg0.config.front_drops[arg1 + 1]
-				local var2 = {
-					type = var1[1],
-					id = var1[2],
-					count = var1[3]
+function var0_0.OnFirstFlush(arg0_2)
+	setActive(arg0_2.item, false)
+	arg0_2.itemList:make(function(arg0_3, arg1_3, arg2_3)
+		if arg0_3 == UIItemList.EventUpdate then
+			if not table.contains(arg0_2.initItems, arg1_3) then
+				local var0_3 = arg0_2:findTF("item", arg2_3)
+				local var1_3 = arg0_2.config.front_drops[arg1_3 + 1]
+				local var2_3 = {
+					type = var1_3[1],
+					id = var1_3[2],
+					count = var1_3[3]
 				}
 
-				updateDrop(var0, var2)
-				onButton(arg0, arg2, function()
-					arg0:emit(BaseUI.ON_DROP, var2)
+				updateDrop(var0_3, var2_3)
+				onButton(arg0_2, arg2_3, function()
+					arg0_2:emit(BaseUI.ON_DROP, var2_3)
 				end, SFX_PANEL)
-				table.insert(arg0.initItems, arg1)
+				table.insert(arg0_2.initItems, arg1_3)
 			end
 
-			local var3 = arg0:findTF("got", arg2)
+			local var3_3 = arg0_2:findTF("got", arg2_3)
 
-			setActive(var3, arg1 < arg0.nday)
+			setActive(var3_3, arg1_3 < arg0_2.nday)
 		end
 	end)
 end
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
-	eachChild(arg0.items, function(arg0)
+function var0_0.OnUpdateFlush(arg0_5)
+	var0_0.super.OnUpdateFlush(arg0_5)
+	eachChild(arg0_5.items, function(arg0_6)
 		return
 	end)
 end
 
-return var0
+return var0_0

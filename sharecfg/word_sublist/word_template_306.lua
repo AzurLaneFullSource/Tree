@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_306 = {}
+var0_0.word_template_306 = {}
 
-local var1 = var0.word_template_306
+local var1_0 = var0_0.word_template_306
 
 function temp()
-	var1.邪 = {
+	var1_0.邪 = {
 		挡 = {
 			this = true
 		},
@@ -109,7 +109,7 @@ end
 temp()
 
 function temp()
-	var1.鞋 = {
+	var1_0.鞋 = {
 		崇 = {
 			拜 = {
 				this = true
@@ -121,7 +121,7 @@ end
 temp()
 
 function temp()
-	var1.写 = {
+	var1_0.写 = {
 		真 = {
 			this = true
 		}
@@ -131,7 +131,7 @@ end
 temp()
 
 function temp()
-	var1.寫 = {
+	var1_0.寫 = {
 		真 = {
 			this = true
 		}
@@ -141,7 +141,7 @@ end
 temp()
 
 function temp()
-	var1.谢 = {
+	var1_0.谢 = {
 		伏 = {
 			瞻 = {
 				this = true
@@ -163,7 +163,7 @@ end
 temp()
 
 function temp()
-	var1.辛 = {
+	var1_0.辛 = {
 		灝 = {
 			年 = {
 				this = true
@@ -197,7 +197,7 @@ end
 temp()
 
 function temp()
-	var1.新 = {
+	var1_0.新 = {
 		版 = {
 			三 = {
 				字 = {

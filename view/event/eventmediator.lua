@@ -1,219 +1,219 @@
 ﻿EventConst = require("view/event/EventConst")
 
-local var0 = class("EventMediator", import("..base.ContextMediator"))
+local var0_0 = class("EventMediator", import("..base.ContextMediator"))
 
-function var0.register(arg0)
-	arg0:bind(EventConst.EVEN_USE_PREV_FORMATION, function(arg0, arg1, arg2)
-		local var0 = getProxy(EventProxy)
-		local var1 = getProxy(BayProxy)
-		local var2 = var1:getData()
-		local var3 = {}
-		local var4 = false
-		local var5 = false
+function var0_0.register(arg0_1)
+	arg0_1:bind(EventConst.EVEN_USE_PREV_FORMATION, function(arg0_2, arg1_2, arg2_2)
+		local var0_2 = getProxy(EventProxy)
+		local var1_2 = getProxy(BayProxy)
+		local var2_2 = var1_2:getData()
+		local var3_2 = {}
+		local var4_2 = false
+		local var5_2 = false
 
-		local function var6(arg0)
-			for iter0, iter1 in ipairs(arg2) do
-				local var0 = arg0[iter1]
+		local function var6_2(arg0_3)
+			for iter0_3, iter1_3 in ipairs(arg2_2) do
+				local var0_3 = arg0_3[iter1_3]
 
-				if var0 then
-					local var1, var2 = ShipStatus.ShipStatusConflict("inEvent", var0)
+				if var0_3 then
+					local var1_3, var2_3 = ShipStatus.ShipStatusConflict("inEvent", var0_3)
 
-					if var1 == ShipStatus.STATE_CHANGE_FAIL then
-						var4 = true
-					elseif var1 == ShipStatus.STATE_CHANGE_CHECK then
-						var5 = true
+					if var1_3 == ShipStatus.STATE_CHANGE_FAIL then
+						var4_2 = true
+					elseif var1_3 == ShipStatus.STATE_CHANGE_CHECK then
+						var5_2 = true
 					else
-						table.insert(var3, iter1)
+						table.insert(var3_2, iter1_3)
 					end
 				end
 			end
 
-			if var4 then
+			if var4_2 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("collect_tip"))
 			end
 
-			if var5 then
+			if var5_2 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("collect_tip2"))
 			end
 
-			var0.selectedEvent = arg1
-			var0.selectedEvent.shipIds = var3
+			var0_2.selectedEvent = arg1_2
+			var0_2.selectedEvent.shipIds = var3_2
 
-			arg0:updateEventList(true)
+			arg0_1:updateEventList(true)
 
-			var0.selectedEvent = nil
+			var0_2.selectedEvent = nil
 		end
 
-		local var7 = var1:getRawData()
+		local var7_2 = var1_2:getRawData()
 
-		var6(var7)
+		var6_2(var7_2)
 	end)
-	arg0:bind(EventConst.EVENT_LIST_UPDATE, function(arg0)
-		arg0:updateEventList(true)
+	arg0_1:bind(EventConst.EVENT_LIST_UPDATE, function(arg0_4)
+		arg0_1:updateEventList(true)
 	end)
-	arg0:bind(EventConst.EVENT_OPEN_DOCK, function(arg0, arg1)
-		local var0 = getProxy(BayProxy):getRawData()
-		local var1 = {}
+	arg0_1:bind(EventConst.EVENT_OPEN_DOCK, function(arg0_5, arg1_5)
+		local var0_5 = getProxy(BayProxy):getRawData()
+		local var1_5 = {}
 
-		for iter0, iter1 in pairs(var0) do
-			if not table.contains(arg1.template.ship_type, iter1:getShipType()) or iter1:isActivityNpc() then
-				table.insert(var1, iter0)
+		for iter0_5, iter1_5 in pairs(var0_5) do
+			if not table.contains(arg1_5.template.ship_type, iter1_5:getShipType()) or iter1_5:isActivityNpc() then
+				table.insert(var1_5, iter0_5)
 			end
 		end
 
-		local var2 = getProxy(EventProxy)
+		local var2_5 = getProxy(EventProxy)
 
-		var2.selectedEvent = arg1
+		var2_5.selectedEvent = arg1_5
 
-		local var3, var4, var5 = arg0:getDockCallbackFuncs()
+		local var3_5, var4_5, var5_5 = arg0_1:getDockCallbackFuncs()
 
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 			selectedMax = 6,
 			useBlackBlock = true,
 			selectedMin = 1,
-			ignoredIds = var1,
-			selectedIds = var2.selectedEvent and var2.selectedEvent.shipIds or {},
-			onShip = var3,
-			confirmSelect = var4,
-			onSelected = var5,
+			ignoredIds = var1_5,
+			selectedIds = var2_5.selectedEvent and var2_5.selectedEvent.shipIds or {},
+			onShip = var3_5,
+			confirmSelect = var4_5,
+			onSelected = var5_5,
 			leftTopInfo = i18n("word_operation"),
 			hideTagFlags = ShipStatus.TAG_HIDE_EVENT,
 			blockTagFlags = ShipStatus.TAG_BLOCK_EVENT
 		})
 	end)
-	arg0:bind(EventConst.EVENT_FLUSH_NIGHT, function(arg0)
-		arg0:sendNotification(GAME.EVENT_FLUSH_NIGHT)
+	arg0_1:bind(EventConst.EVENT_FLUSH_NIGHT, function(arg0_6)
+		arg0_1:sendNotification(GAME.EVENT_FLUSH_NIGHT)
 	end)
-	arg0:bind(EventConst.EVENT_START, function(arg0, arg1)
-		arg0:sendNotification(GAME.EVENT_START, {
-			id = arg1.id,
-			shipIds = arg1.shipIds
+	arg0_1:bind(EventConst.EVENT_START, function(arg0_7, arg1_7)
+		arg0_1:sendNotification(GAME.EVENT_START, {
+			id = arg1_7.id,
+			shipIds = arg1_7.shipIds
 		})
 	end)
-	arg0:bind(EventConst.EVENT_GIVEUP, function(arg0, arg1)
+	arg0_1:bind(EventConst.EVENT_GIVEUP, function(arg0_8, arg1_8)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("event_confirm_giveup"),
 			onYes = function()
-				arg0:sendNotification(GAME.EVENT_GIVEUP, {
-					id = arg1.id
+				arg0_1:sendNotification(GAME.EVENT_GIVEUP, {
+					id = arg1_8.id
 				})
 			end
 		})
 	end)
-	arg0:bind(EventConst.EVENT_FINISH, function(arg0, arg1)
-		arg0:sendNotification(GAME.EVENT_FINISH, {
-			id = arg1.id
+	arg0_1:bind(EventConst.EVENT_FINISH, function(arg0_10, arg1_10)
+		arg0_1:sendNotification(GAME.EVENT_FINISH, {
+			id = arg1_10.id
 		})
 	end)
-	arg0:bind(EventConst.EVENT_RECOMMEND, function(arg0, arg1)
-		local var0 = getProxy(EventProxy)
+	arg0_1:bind(EventConst.EVENT_RECOMMEND, function(arg0_11, arg1_11)
+		local var0_11 = getProxy(EventProxy)
 
-		var0.selectedEvent = arg1
+		var0_11.selectedEvent = arg1_11
 
-		getProxy(EventProxy):fillRecommendShip(arg1)
-		arg0:updateEventList(true, true)
+		getProxy(EventProxy):fillRecommendShip(arg1_11)
+		arg0_1:updateEventList(true, true)
 
-		var0.selectedEvent = nil
+		var0_11.selectedEvent = nil
 
-		if not arg1:reachNum() then
+		if not arg1_11:reachNum() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("event_recommend_fail"))
 		end
 	end)
-	arg0:bind(EventConst.EVENT_RECOMMEND_LEVEL1, function(arg0, arg1)
-		local var0 = getProxy(EventProxy)
+	arg0_1:bind(EventConst.EVENT_RECOMMEND_LEVEL1, function(arg0_12, arg1_12)
+		local var0_12 = getProxy(EventProxy)
 
-		var0.selectedEvent = arg1
+		var0_12.selectedEvent = arg1_12
 
-		getProxy(EventProxy):fillRecommendShipLV1(arg1)
-		arg0:updateEventList(true, true)
+		getProxy(EventProxy):fillRecommendShipLV1(arg1_12)
+		arg0_1:updateEventList(true, true)
 
-		var0.selectedEvent = nil
+		var0_12.selectedEvent = nil
 
-		if not arg1:reachNum() then
+		if not arg1_12:reachNum() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("event_recommend_fail"))
 		end
 	end)
-	arg0:updateEventList(false)
+	arg0_1:updateEventList(false)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_13)
 	return {
 		GAME.EVENT_LIST_UPDATE,
 		GAME.EVENT_SHOW_AWARDS
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_14, arg1_14)
+	local var0_14 = arg1_14:getName()
+	local var1_14 = arg1_14:getBody()
 
-	if var0 == GAME.EVENT_LIST_UPDATE then
-		arg0:updateEventList(true)
-	elseif var0 == GAME.EVENT_SHOW_AWARDS then
-		local var2
+	if var0_14 == GAME.EVENT_LIST_UPDATE then
+		arg0_14:updateEventList(true)
+	elseif var0_14 == GAME.EVENT_SHOW_AWARDS then
+		local var2_14
 
-		var2 = coroutine.wrap(function()
-			if #var1.oldShips > 0 then
-				arg0.viewComponent:emit(BaseUI.ON_SHIP_EXP, {
-					title = pg.collection_template[var1.eventId].title,
-					oldShips = var1.oldShips,
-					newShips = var1.newShips,
-					isCri = var1.isCri
-				}, var2)
+		var2_14 = coroutine.wrap(function()
+			if #var1_14.oldShips > 0 then
+				arg0_14.viewComponent:emit(BaseUI.ON_SHIP_EXP, {
+					title = pg.collection_template[var1_14.eventId].title,
+					oldShips = var1_14.oldShips,
+					newShips = var1_14.newShips,
+					isCri = var1_14.isCri
+				}, var2_14)
 				coroutine.yield()
 			end
 
-			arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1.awards)
+			arg0_14.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_14.awards)
 		end)
 
-		var2()
+		var2_14()
 	end
 end
 
-function var0.updateEventList(arg0, arg1, arg2)
-	local var0 = getProxy(BayProxy)
-	local var1 = getProxy(EventProxy)
+function var0_0.updateEventList(arg0_16, arg1_16, arg2_16)
+	local var0_16 = getProxy(BayProxy)
+	local var1_16 = getProxy(EventProxy)
 
-	var1.virgin = false
+	var1_16.virgin = false
 
-	local var2 = var1.eventList
+	local var2_16 = var1_16.eventList
 
-	table.sort(var2, function(arg0, arg1)
-		if arg0.state ~= arg1.state then
-			return arg0.state > arg1.state
-		elseif arg0.template.type ~= arg1.template.type then
-			return arg0.template.type > arg1.template.type
-		elseif arg0.template.lv ~= arg1.template.lv then
-			return arg0.template.lv > arg1.template.lv
+	table.sort(var2_16, function(arg0_17, arg1_17)
+		if arg0_17.state ~= arg1_17.state then
+			return arg0_17.state > arg1_17.state
+		elseif arg0_17.template.type ~= arg1_17.template.type then
+			return arg0_17.template.type > arg1_17.template.type
+		elseif arg0_17.template.lv ~= arg1_17.template.lv then
+			return arg0_17.template.lv > arg1_17.template.lv
 		else
-			return arg0.id > arg1.id
+			return arg0_17.id > arg1_17.id
 		end
 	end)
 
-	for iter0, iter1 in ipairs(var2) do
-		iter1.ships = {}
+	for iter0_16, iter1_16 in ipairs(var2_16) do
+		iter1_16.ships = {}
 
-		if iter1.state == EventInfo.StateNone and iter1 ~= var1.selectedEvent then
-			iter1.shipIds = {}
+		if iter1_16.state == EventInfo.StateNone and iter1_16 ~= var1_16.selectedEvent then
+			iter1_16.shipIds = {}
 		else
-			for iter2 = #iter1.shipIds, 1, -1 do
-				local var3 = var0:getShipById(iter1.shipIds[iter2])
+			for iter2_16 = #iter1_16.shipIds, 1, -1 do
+				local var3_16 = var0_16:getShipById(iter1_16.shipIds[iter2_16])
 
-				if var3 then
-					table.insert(iter1.ships, 1, var3)
+				if var3_16 then
+					table.insert(iter1_16.ships, 1, var3_16)
 				else
-					table.remove(iter1.shipIds, iter2)
+					table.remove(iter1_16.shipIds, iter2_16)
 				end
 			end
 		end
 	end
 
-	var1.busyFleetNums = var1:countBusyFleetNums()
+	var1_16.busyFleetNums = var1_16:countBusyFleetNums()
 
-	arg0.viewComponent:updateAll(var1, arg1, arg2)
+	arg0_16.viewComponent:updateAll(var1_16, arg1_16, arg2_16)
 
-	if getProxy(SettingsProxy):ShouldShowEventActHelp() and _.any(var2, function(arg0)
-		return arg0:IsActivityType()
+	if getProxy(SettingsProxy):ShouldShowEventActHelp() and _.any(var2_16, function(arg0_18)
+		return arg0_18:IsActivityType()
 	end) then
 		getProxy(SettingsProxy):MarkEventActHelpFlag()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
@@ -223,20 +223,20 @@ function var0.updateEventList(arg0, arg1, arg2)
 	end
 end
 
-function var0.getDockCallbackFuncs(arg0)
-	local function var0(arg0, arg1, arg2)
-		local var0, var1 = ShipStatus.ShipStatusCheck("inEvent", arg0, arg1)
+function var0_0.getDockCallbackFuncs(arg0_19)
+	local function var0_19(arg0_20, arg1_20, arg2_20)
+		local var0_20, var1_20 = ShipStatus.ShipStatusCheck("inEvent", arg0_20, arg1_20)
 
-		if not var0 then
-			return var0, var1
+		if not var0_20 then
+			return var0_20, var1_20
 		end
 
-		local var2 = getProxy(BayProxy)
+		local var2_20 = getProxy(BayProxy)
 
-		for iter0, iter1 in ipairs(arg2) do
-			local var3 = var2:getShipById(iter1)
+		for iter0_20, iter1_20 in ipairs(arg2_20) do
+			local var3_20 = var2_20:getShipById(iter1_20)
 
-			if arg0:isSameKind(var3) then
+			if arg0_20:isSameKind(var3_20) then
 				return false, i18n("ship_formationMediator_changeNameError_sameShip")
 			end
 		end
@@ -244,15 +244,15 @@ function var0.getDockCallbackFuncs(arg0)
 		return true
 	end
 
-	local function var1(arg0, arg1, arg2)
-		arg1()
+	local function var1_19(arg0_21, arg1_21, arg2_21)
+		arg1_21()
 	end
 
-	local function var2(arg0)
-		getProxy(EventProxy).selectedEvent.shipIds = arg0
+	local function var2_19(arg0_22)
+		getProxy(EventProxy).selectedEvent.shipIds = arg0_22
 	end
 
-	return var0, var1, var2
+	return var0_19, var1_19, var2_19
 end
 
-return var0
+return var0_0

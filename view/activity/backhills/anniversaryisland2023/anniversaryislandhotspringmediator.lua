@@ -1,132 +1,132 @@
-﻿local var0 = class("AnniversaryIslandHotSpringMediator", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringMediator"))
+﻿local var0_0 = class("AnniversaryIslandHotSpringMediator", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringMediator"))
 
-function var0.register(arg0)
-	arg0:bind(var0.OPEN_CHUANWU, function(arg0, arg1, arg2)
-		arg0:OnSelShips(arg1, arg2)
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.OPEN_CHUANWU, function(arg0_2, arg1_2, arg2_2)
+		arg0_1:OnSelShips(arg1_2, arg2_2)
 	end)
 
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2)
+	local var0_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2)
 
-	arg0.activity = var0
+	arg0_1.activity = var0_1
 
-	arg0.viewComponent:SetActivity(var0)
-	arg0:bind(var0.OPEN_INFO, function()
-		arg0:addSubLayers(Context.New({
+	arg0_1.viewComponent:SetActivity(var0_1)
+	arg0_1:bind(var0_0.OPEN_INFO, function()
+		arg0_1:addSubLayers(Context.New({
 			mediator = AnniversaryIslandSpringShipSelectMediator,
 			viewComponent = AnniversaryIslandSpringShipSelectLayer,
 			data = {
-				actId = var0.id
+				actId = var0_1.id
 			}
 		}))
 	end)
 end
 
-function var0.OnSelected(arg0, arg1, arg2, arg3)
-	local var0 = Clone(arg0.activity:GetShipIds())
+function var0_0.OnSelected(arg0_4, arg1_4, arg2_4, arg3_4)
+	local var0_4 = Clone(arg0_4.activity:GetShipIds())
 
-	_.each(_.range(arg0.activity:GetSlotCount()), function(arg0)
-		var0[arg0] = var0[arg0] or 0
+	_.each(_.range(arg0_4.activity:GetSlotCount()), function(arg0_5)
+		var0_4[arg0_5] = var0_4[arg0_5] or 0
 	end)
 
-	if arg2 == nil or #arg2 == 0 then
-		if var0[arg1] > 0 then
-			arg0:sendNotification(GAME.ACTIVITY_OPERATION, {
-				activity_id = arg0.activity.id,
+	if arg2_4 == nil or #arg2_4 == 0 then
+		if var0_4[arg1_4] > 0 then
+			arg0_4:sendNotification(GAME.ACTIVITY_OPERATION, {
+				activity_id = arg0_4.activity.id,
 				cmd = Spring2Activity.OPERATION_SETSHIP,
 				kvargs1 = {
 					{
 						value = 0,
-						key = arg1
+						key = arg1_4
 					}
 				}
 			})
 		end
 
-		existCall(arg3)
+		existCall(arg3_4)
 
 		return
 	end
 
-	local var1 = _.filter(arg2, function(arg0)
-		return not table.contains(var0, arg0)
+	local var1_4 = _.filter(arg2_4, function(arg0_6)
+		return not table.contains(var0_4, arg0_6)
 	end)
 
-	table.Foreach(var0, function(arg0, arg1)
-		if arg1 == 0 or table.contains(arg2, arg1) then
+	table.Foreach(var0_4, function(arg0_7, arg1_7)
+		if arg1_7 == 0 or table.contains(arg2_4, arg1_7) then
 			return
 		end
 
-		var0[arg0] = 0
+		var0_4[arg0_7] = 0
 	end)
 
-	if #var1 == 1 and var0[arg1] == 0 then
-		var0[arg1] = var1[1]
+	if #var1_4 == 1 and var0_4[arg1_4] == 0 then
+		var0_4[arg1_4] = var1_4[1]
 	else
-		local var2 = 0
+		local var2_4 = 0
 
-		_.each(var1, function(arg0)
-			while var2 <= #var0 do
-				var2 = var2 + 1
+		_.each(var1_4, function(arg0_8)
+			while var2_4 <= #var0_4 do
+				var2_4 = var2_4 + 1
 
-				if var0[var2] == 0 then
+				if var0_4[var2_4] == 0 then
 					break
 				end
 			end
 
-			var0[var2] = arg0
+			var0_4[var2_4] = arg0_8
 		end)
 	end
 
-	local var3 = {}
-	local var4 = arg0.activity:GetShipIds()
+	local var3_4 = {}
+	local var4_4 = arg0_4.activity:GetShipIds()
 
-	table.Foreach(var0, function(arg0, arg1)
-		if (var4[arg0] or 0) ~= arg1 then
-			table.insert(var3, {
-				key = arg0,
-				value = arg1
+	table.Foreach(var0_4, function(arg0_9, arg1_9)
+		if (var4_4[arg0_9] or 0) ~= arg1_9 then
+			table.insert(var3_4, {
+				key = arg0_9,
+				value = arg1_9
 			})
 		end
 	end)
 
-	if #var3 > 0 then
-		arg0:sendNotification(GAME.ACTIVITY_OPERATION, {
-			activity_id = arg0.activity.id,
+	if #var3_4 > 0 then
+		arg0_4:sendNotification(GAME.ACTIVITY_OPERATION, {
+			activity_id = arg0_4.activity.id,
 			cmd = Spring2Activity.OPERATION_SETSHIP,
-			kvargs1 = var3
+			kvargs1 = var3_4
 		})
 	end
 
-	arg3()
+	arg3_4()
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_10)
 	return {
 		PlayerProxy.UPDATED,
 		ActivityProxy.ACTIVITY_UPDATED,
 		ActivityProxy.ACTIVITY_SHOW_AWARDS,
-		var0.OPEN_CHUANWU
+		var0_0.OPEN_CHUANWU
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_11, arg1_11)
+	local var0_11 = arg1_11:getName()
+	local var1_11 = arg1_11:getBody()
 
-	if var0 == nil then
+	if var0_11 == nil then
 		-- block empty
-	elseif var0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
-		arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1.awards, var1.callback)
-	elseif var0 == ActivityProxy.ACTIVITY_UPDATED then
-		if var1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_HOTSPRING_2 then
-			arg0.activity = var1
+	elseif var0_11 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
+		arg0_11.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_11.awards, var1_11.callback)
+	elseif var0_11 == ActivityProxy.ACTIVITY_UPDATED then
+		if var1_11:getConfig("type") == ActivityConst.ACTIVITY_TYPE_HOTSPRING_2 then
+			arg0_11.activity = var1_11
 
-			arg0.viewComponent:SetActivity(var1)
-			arg0.viewComponent:UpdateView()
+			arg0_11.viewComponent:SetActivity(var1_11)
+			arg0_11.viewComponent:UpdateView()
 		end
-	elseif var0 == var0.OPEN_CHUANWU then
-		arg0.viewComponent:emit(var0.OPEN_CHUANWU, unpack(var1))
+	elseif var0_11 == var0_0.OPEN_CHUANWU then
+		arg0_11.viewComponent:emit(var0_0.OPEN_CHUANWU, unpack(var1_11))
 	end
 end
 
-return var0
+return var0_0

@@ -1,5 +1,5 @@
-﻿local var0 = class("TargetItem", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
-local var1 = {
+﻿local var0_0 = class("TargetItem", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
+local var1_0 = {
 	hp1 = "4",
 	speed = "3",
 	power = "2",
@@ -8,29 +8,29 @@ local var1 = {
 	hp2 = "5"
 }
 
-function var0.InitUI(arg0, arg1)
-	arg0.type = arg1.type
+function var0_0.InitUI(arg0_1, arg1_1)
+	arg0_1.type = arg1_1.type
 
-	arg0._tf:Find("Image"):GetComponent(typeof(Animator)):Play(var1[arg0.type])
-	setActive(arg0._tf:Find("Burn"), false)
-	arg0._tf:Find("Burn"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-		arg0:Destroy(false)
+	arg0_1._tf:Find("Image"):GetComponent(typeof(Animator)):Play(var1_0[arg0_1.type])
+	setActive(arg0_1._tf:Find("Burn"), false)
+	arg0_1._tf:Find("Burn"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		arg0_1:Destroy(false)
 	end)
-	eachChild(arg0._tf:Find("front"), function(arg0)
-		arg0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-			setActive(arg0, false)
+	eachChild(arg0_1._tf:Find("front"), function(arg0_3)
+		arg0_3:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+			setActive(arg0_3, false)
 		end)
-		setActive(arg0, arg0.name == arg1.drop)
+		setActive(arg0_3, arg0_3.name == arg1_1.drop)
 	end)
 end
 
-function var0.InitRegister(arg0, arg1)
-	arg0:Register("move", function(arg0)
-		if isa(arg0, MoveRyza) then
-			arg0:AddItem(arg0.type)
-			arg0:Destroy()
+function var0_0.InitRegister(arg0_5, arg1_5)
+	arg0_5:Register("move", function(arg0_6)
+		if isa(arg0_6, MoveRyza) then
+			arg0_6:AddItem(arg0_5.type)
+			arg0_5:Destroy()
 		else
-			arg0:Destroy(false)
+			arg0_5:Destroy(false)
 		end
 	end, {
 		{
@@ -38,10 +38,10 @@ function var0.InitRegister(arg0, arg1)
 			0
 		}
 	})
-	arg0:Register("burn", function()
-		arg0:DeregisterAll()
-		setActive(arg0._tf:Find("Image"), false)
-		setActive(arg0._tf:Find("Burn"), true)
+	arg0_5:Register("burn", function()
+		arg0_5:DeregisterAll()
+		setActive(arg0_5._tf:Find("Image"), false)
+		setActive(arg0_5._tf:Find("Burn"), true)
 	end, {
 		{
 			0,
@@ -50,4 +50,4 @@ function var0.InitRegister(arg0, arg1)
 	})
 end
 
-return var0
+return var0_0

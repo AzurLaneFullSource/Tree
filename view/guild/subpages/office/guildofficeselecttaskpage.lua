@@ -1,63 +1,63 @@
-﻿local var0 = class("GuildOfficeSelectTaskPage", import("...base.GuildBasePage"))
+﻿local var0_0 = class("GuildOfficeSelectTaskPage", import("...base.GuildBasePage"))
 
-function var0.getTargetUI(arg0)
+function var0_0.getTargetUI(arg0_1)
 	return "GuildTaskSelectBluePage", "GuildTaskSelectRedPage"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.uilist = UIItemList.New(arg0:findTF("frame/bg/scrollrect/content"), arg0:findTF("frame/bg/scrollrect/content/tpl"))
-	arg0.closeBtn = arg0._tf:Find("frame/title/close")
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.uilist = UIItemList.New(arg0_2:findTF("frame/bg/scrollrect/content"), arg0_2:findTF("frame/bg/scrollrect/content/tpl"))
+	arg0_2.closeBtn = arg0_2._tf:Find("frame/title/close")
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0._tf, function()
-		arg0:Close()
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:Close()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.closeBtn, function()
-		arg0:Close()
+	onButton(arg0_3, arg0_3.closeBtn, function()
+		arg0_3:Close()
 	end, SFX_PANEL)
 end
 
-function var0.Show(arg0, arg1, arg2)
-	arg0.guild = arg1
-	arg0.isAdmin = arg2
+function var0_0.Show(arg0_6, arg1_6, arg2_6)
+	arg0_6.guild = arg1_6
+	arg0_6.isAdmin = arg2_6
 
-	setActive(arg0._tf, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
-	arg0._tf:SetAsLastSibling()
-	arg0:Update()
+	setActive(arg0_6._tf, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_6._tf)
+	arg0_6._tf:SetAsLastSibling()
+	arg0_6:Update()
 end
 
-function var0.Update(arg0)
-	local var0 = arg0.guild:getSelectableWeeklyTasks()
+function var0_0.Update(arg0_7)
+	local var0_7 = arg0_7.guild:getSelectableWeeklyTasks()
 
-	arg0.uilist:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = GuildTaskCard.New(arg2)
-			local var1 = var0[arg1 + 1]
+	arg0_7.uilist:make(function(arg0_8, arg1_8, arg2_8)
+		if arg0_8 == UIItemList.EventUpdate then
+			local var0_8 = GuildTaskCard.New(arg2_8)
+			local var1_8 = var0_7[arg1_8 + 1]
 
-			onButton(arg0, var0.acceptBtn, function()
+			onButton(arg0_7, var0_8.acceptBtn, function()
 				pg.MsgboxMgr:GetInstance():ShowMsgBox({
-					content = i18n("guild_task_selecte_tip", var1:getConfig("name")),
+					content = i18n("guild_task_selecte_tip", var1_8:getConfig("name")),
 					onYes = function()
-						arg0:emit(GuildOfficeMediator.ON_SELECT_TASK, var0.task.id)
-						arg0:Close()
+						arg0_7:emit(GuildOfficeMediator.ON_SELECT_TASK, var0_8.task.id)
+						arg0_7:Close()
 					end
 				})
 			end, SFX_PANEL)
-			var0:Update(var1)
+			var0_8:Update(var1_8)
 		end
 	end)
-	arg0.uilist:align(#var0)
+	arg0_7.uilist:align(#var0_7)
 end
 
-function var0.Close(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, arg0._parentTf)
-	setActive(arg0._tf, false)
+function var0_0.Close(arg0_11)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_11._tf, arg0_11._parentTf)
+	setActive(arg0_11._tf, false)
 end
 
-function var0.OnDestroy(arg0)
-	arg0:Close()
+function var0_0.OnDestroy(arg0_12)
+	arg0_12:Close()
 end
 
-return var0
+return var0_0

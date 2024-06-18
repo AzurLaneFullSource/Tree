@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_274 = {}
+var0_0.word_template_274 = {}
 
-local var1 = var0.word_template_274
+local var1_0 = var0_0.word_template_274
 
 function temp()
-	var1.抬 = {
+	var1_0.抬 = {
 		抬 = {
 			女 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.臺 = {
+	var1_0.臺 = {
 		盟 = {
 			this = true
 		},
@@ -107,7 +107,7 @@ end
 temp()
 
 function temp()
-	var1.鮐 = {
+	var1_0.鮐 = {
 		this = {
 			this = true
 		}
@@ -117,7 +117,7 @@ end
 temp()
 
 function temp()
-	var1.太 = {
+	var1_0.太 = {
 		比 = {
 			力 = {
 				克 = {
@@ -259,7 +259,7 @@ end
 temp()
 
 function temp()
-	var1.泰 = {
+	var1_0.泰 = {
 		国 = {
 			超 = {
 				强 = {
@@ -376,7 +376,7 @@ end
 temp()
 
 function temp()
-	var1.贪 = {
+	var1_0.贪 = {
 		财 = {
 			好 = {
 				色 = {
@@ -561,7 +561,7 @@ end
 temp()
 
 function temp()
-	var1.貪 = {
+	var1_0.貪 = {
 		汙 = {
 			腐 = {
 				敗 = {

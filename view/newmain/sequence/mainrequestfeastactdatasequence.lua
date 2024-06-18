@@ -1,7 +1,7 @@
-﻿local var0 = class("MainRequestFeastActDataSequence")
+﻿local var0_0 = class("MainRequestFeastActDataSequence")
 
-function var0.Execute(arg0, arg1)
-	getProxy(FeastProxy):RequestData(arg1)
+function var0_0.Execute(arg0_1, arg1_1)
+	getProxy(FeastProxy):RequestData(arg1_1)
 end
 
-return var0
+return var0_0

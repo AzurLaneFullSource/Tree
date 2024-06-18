@@ -1,308 +1,308 @@
-﻿local var0 = class("WorldBossScene", import("...base.BaseUI"))
+﻿local var0_0 = class("WorldBossScene", import("...base.BaseUI"))
 
-var0.PAGE_ENTRANCE = 0
-var0.PAGE_CHALLENGE = 1
-var0.PAGE_CURRENT = 2
-var0.PAGE_ARCHIVES_CHALLENGE = 3
-var0.PAGE_ARCHIVES = 4
-var0.PAGE_ARCHIVES_LIST = 5
-var0.ON_SWITCH = "WorldBossScene:ON_SWITCH"
-var0.ON_QUIT_ARCHIVES_LIST = "WorldBossScene:ON_QUIT_ARCHIVES_LIST"
-var0.Listeners = {
+var0_0.PAGE_ENTRANCE = 0
+var0_0.PAGE_CHALLENGE = 1
+var0_0.PAGE_CURRENT = 2
+var0_0.PAGE_ARCHIVES_CHALLENGE = 3
+var0_0.PAGE_ARCHIVES = 4
+var0_0.PAGE_ARCHIVES_LIST = 5
+var0_0.ON_SWITCH = "WorldBossScene:ON_SWITCH"
+var0_0.ON_QUIT_ARCHIVES_LIST = "WorldBossScene:ON_QUIT_ARCHIVES_LIST"
+var0_0.Listeners = {
 	onBossUpdated = "OnBossUpdated"
 }
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "WorldBossUI"
 end
 
-function var0.SetBossProxy(arg0, arg1, arg2)
-	assert(not arg0.bossProxy)
+function var0_0.SetBossProxy(arg0_2, arg1_2, arg2_2)
+	assert(not arg0_2.bossProxy)
 
-	arg0.bossProxy = arg1
-	arg0.metaCharacterProxy = arg2
-	arg0.boss = arg0.bossProxy:GetBoss()
-	arg0.entrancePage = WorldBossEntrancePage.New(arg0.pagesTF, arg0.event, arg0.contextData)
+	arg0_2.bossProxy = arg1_2
+	arg0_2.metaCharacterProxy = arg2_2
+	arg0_2.boss = arg0_2.bossProxy:GetBoss()
+	arg0_2.entrancePage = WorldBossEntrancePage.New(arg0_2.pagesTF, arg0_2.event, arg0_2.contextData)
 
-	arg0.entrancePage:Setup(arg0.bossProxy)
+	arg0_2.entrancePage:Setup(arg0_2.bossProxy)
 
-	arg0.challengeCurrentBossPage = CurrentWorldBossChallengePage.New(arg0.pagesTF, arg0.event, arg0.contextData)
+	arg0_2.challengeCurrentBossPage = CurrentWorldBossChallengePage.New(arg0_2.pagesTF, arg0_2.event, arg0_2.contextData)
 
-	arg0.challengeCurrentBossPage:Setup(arg0.bossProxy)
+	arg0_2.challengeCurrentBossPage:Setup(arg0_2.bossProxy)
 
-	arg0.currentEmptyPage = CurrentWorldBossEmptyPage.New(arg0.pagesTF, arg0.event)
+	arg0_2.currentEmptyPage = CurrentWorldBossEmptyPage.New(arg0_2.pagesTF, arg0_2.event)
 
-	arg0.currentEmptyPage:Setup(arg0.bossProxy)
+	arg0_2.currentEmptyPage:Setup(arg0_2.bossProxy)
 
-	arg0.currentBossDetailPage = CurrentWorldBossDetailPage.New(arg0.pagesTF, arg0.event)
+	arg0_2.currentBossDetailPage = CurrentWorldBossDetailPage.New(arg0_2.pagesTF, arg0_2.event)
 
-	arg0.currentBossDetailPage:Setup(arg0.bossProxy)
+	arg0_2.currentBossDetailPage:Setup(arg0_2.bossProxy)
 
-	arg0.challengeArchivesBossPage = ArchivesWorldBossChallengePage.New(arg0.pagesTF, arg0.event, arg0.contextData)
+	arg0_2.challengeArchivesBossPage = ArchivesWorldBossChallengePage.New(arg0_2.pagesTF, arg0_2.event, arg0_2.contextData)
 
-	arg0.challengeArchivesBossPage:Setup(arg0.bossProxy)
+	arg0_2.challengeArchivesBossPage:Setup(arg0_2.bossProxy)
 
-	arg0.archivesListPage = ArchivesWorldBossListPage.New(arg0.pagesTF, arg0.event)
+	arg0_2.archivesListPage = ArchivesWorldBossListPage.New(arg0_2.pagesTF, arg0_2.event)
 
-	arg0.archivesListPage:Setup(arg0.bossProxy)
+	arg0_2.archivesListPage:Setup(arg0_2.bossProxy)
 
-	arg0.archivesEmptyPage = ArchivesWorldBossEmptyPage.New(arg0.pagesTF, arg0.event)
+	arg0_2.archivesEmptyPage = ArchivesWorldBossEmptyPage.New(arg0_2.pagesTF, arg0_2.event)
 
-	arg0.archivesEmptyPage:Setup(arg0.bossProxy)
+	arg0_2.archivesEmptyPage:Setup(arg0_2.bossProxy)
 
-	arg0.archivesDetailPage = ArchivesWorldBossDetailPage.New(arg0.pagesTF, arg0.event)
+	arg0_2.archivesDetailPage = ArchivesWorldBossDetailPage.New(arg0_2.pagesTF, arg0_2.event)
 
-	arg0.archivesDetailPage:Setup(arg0.bossProxy)
+	arg0_2.archivesDetailPage:Setup(arg0_2.bossProxy)
 
-	arg0.formationPreviewPage = WorldBossFormationPreViewPage.New(arg0.pagesTF, arg0.event)
+	arg0_2.formationPreviewPage = WorldBossFormationPreViewPage.New(arg0_2.pagesTF, arg0_2.event)
 
-	arg0.bossProxy:AddListener(WorldBossProxy.EventBossUpdated, arg0.onBossUpdated)
+	arg0_2.bossProxy:AddListener(WorldBossProxy.EventBossUpdated, arg0_2.onBossUpdated)
 end
 
-function var0.AddListeners(arg0)
-	arg0:bind(var0.ON_SWITCH, function(arg0, arg1)
-		arg0:SwitchPage(arg1)
+function var0_0.AddListeners(arg0_3)
+	arg0_3:bind(var0_0.ON_SWITCH, function(arg0_4, arg1_4)
+		arg0_3:SwitchPage(arg1_4)
 	end)
-	arg0:bind(var0.ON_QUIT_ARCHIVES_LIST, function()
-		arg0:OnBack()
+	arg0_3:bind(var0_0.ON_QUIT_ARCHIVES_LIST, function()
+		arg0_3:OnBack()
 	end)
 end
 
-function var0.RemoveListeners(arg0)
-	arg0.bossProxy:RemoveListener(WorldBossProxy.EventBossUpdated, arg0.onBossUpdated)
+function var0_0.RemoveListeners(arg0_6)
+	arg0_6.bossProxy:RemoveListener(WorldBossProxy.EventBossUpdated, arg0_6.onBossUpdated)
 end
 
-function var0.OnBossUpdated(arg0)
-	arg0.boss = arg0.bossProxy:GetBoss()
+function var0_0.OnBossUpdated(arg0_7)
+	arg0_7.boss = arg0_7.bossProxy:GetBoss()
 
-	if arg0.page == arg0.currentBossDetailPage or arg0.page == arg0.archivesDetailPage or arg0.page == arg0.currentEmptyPage or arg0.page == arg0.archivesEmptyPage then
-		arg0:SwitchPage(var0.PAGE_ENTRANCE)
+	if arg0_7.page == arg0_7.currentBossDetailPage or arg0_7.page == arg0_7.archivesDetailPage or arg0_7.page == arg0_7.currentEmptyPage or arg0_7.page == arg0_7.archivesEmptyPage then
+		arg0_7:SwitchPage(var0_0.PAGE_ENTRANCE)
 	end
 end
 
-function var0.OnShowFormationPreview(arg0, arg1)
-	arg0.formationPreviewPage:ExecuteAction("Show", arg1)
+function var0_0.OnShowFormationPreview(arg0_8, arg1_8)
+	arg0_8.formationPreviewPage:ExecuteAction("Show", arg1_8)
 end
 
-function var0.OnRemoveLayers(arg0)
-	if arg0.currentBossDetailPage and arg0.currentBossDetailPage:GetLoaded() and arg0.currentBossDetailPage:isShowing() then
-		arg0.currentBossDetailPage:TryPlayGuide()
+function var0_0.OnRemoveLayers(arg0_9)
+	if arg0_9.currentBossDetailPage and arg0_9.currentBossDetailPage:GetLoaded() and arg0_9.currentBossDetailPage:isShowing() then
+		arg0_9.currentBossDetailPage:TryPlayGuide()
 	end
 end
 
-function var0.OnAutoBattleResult(arg0, arg1)
-	if arg0.archivesDetailPage and arg0.archivesDetailPage:isShowing() then
-		arg0.archivesDetailPage:OnAutoBattleResult(arg1)
+function var0_0.OnAutoBattleResult(arg0_10, arg1_10)
+	if arg0_10.archivesDetailPage and arg0_10.archivesDetailPage:isShowing() then
+		arg0_10.archivesDetailPage:OnAutoBattleResult(arg1_10)
 	end
 end
 
-function var0.OnAutoBattleStart(arg0, arg1)
-	if arg0.archivesDetailPage and arg0.archivesDetailPage:isShowing() then
-		arg0.archivesDetailPage:OnAutoBattleStart(arg1)
+function var0_0.OnAutoBattleStart(arg0_11, arg1_11)
+	if arg0_11.archivesDetailPage and arg0_11.archivesDetailPage:isShowing() then
+		arg0_11.archivesDetailPage:OnAutoBattleStart(arg1_11)
 	end
 end
 
-function var0.OnSwitchArchives(arg0)
-	if arg0.archivesListPage and arg0.archivesListPage:GetLoaded() and arg0.archivesListPage:isShowing() then
-		arg0.archivesListPage:OnSwitchArchives()
+function var0_0.OnSwitchArchives(arg0_12)
+	if arg0_12.archivesListPage and arg0_12.archivesListPage:GetLoaded() and arg0_12.archivesListPage:isShowing() then
+		arg0_12.archivesListPage:OnSwitchArchives()
 	end
 end
 
-function var0.OnGetMetaAwards(arg0)
-	if arg0.archivesListPage and arg0.archivesListPage:GetLoaded() and arg0.archivesListPage:isShowing() then
-		arg0.archivesListPage:OnGetMetaAwards()
+function var0_0.OnGetMetaAwards(arg0_13)
+	if arg0_13.archivesListPage and arg0_13.archivesListPage:GetLoaded() and arg0_13.archivesListPage:isShowing() then
+		arg0_13.archivesListPage:OnGetMetaAwards()
 	end
 end
 
-function var0.getAwardDone(arg0)
-	if arg0.page == arg0.challengeCurrentBossPage then
-		arg0.challengeCurrentBossPage:ExecuteAction("CloseGetPage")
+function var0_0.getAwardDone(arg0_14)
+	if arg0_14.page == arg0_14.challengeCurrentBossPage then
+		arg0_14.challengeCurrentBossPage:ExecuteAction("CloseGetPage")
 	end
 
-	if (arg0.page == arg0.currentEmptyPage or arg0.page == arg0.currentBossDetailPage) and arg0.page:GetLoaded() then
-		arg0.page.metaWorldbossBtn:Update()
+	if (arg0_14.page == arg0_14.currentEmptyPage or arg0_14.page == arg0_14.currentBossDetailPage) and arg0_14.page:GetLoaded() then
+		arg0_14.page.metaWorldbossBtn:Update()
 	end
 end
 
-function var0.init(arg0)
-	for iter0, iter1 in pairs(var0.Listeners) do
-		arg0[iter0] = function(...)
-			var0[iter1](arg0, ...)
+function var0_0.init(arg0_15)
+	for iter0_15, iter1_15 in pairs(var0_0.Listeners) do
+		arg0_15[iter0_15] = function(...)
+			var0_0[iter1_15](arg0_15, ...)
 		end
 	end
 
-	arg0.backBtn = arg0:findTF("back_btn")
-	arg0.pagesTF = arg0:findTF("pages")
+	arg0_15.backBtn = arg0_15:findTF("back_btn")
+	arg0_15.pagesTF = arg0_15:findTF("pages")
 
-	arg0:AddListeners()
+	arg0_15:AddListeners()
 end
 
-function var0.didEnter(arg0)
-	arg0.pageStack = {}
+function var0_0.didEnter(arg0_17)
+	arg0_17.pageStack = {}
 
-	onButton(arg0, arg0.backBtn, function()
-		arg0:OnBack()
+	onButton(arg0_17, arg0_17.backBtn, function()
+		arg0_17:OnBack()
 	end, SOUND_BACK)
-	arg0:emit(WorldBossMediator.ON_FETCH_BOSS)
+	arg0_17:emit(WorldBossMediator.ON_FETCH_BOSS)
 end
 
-function var0.OnBack(arg0)
-	if #arg0.pageStack <= 1 then
-		arg0:emit(var0.ON_BACK)
+function var0_0.OnBack(arg0_19)
+	if #arg0_19.pageStack <= 1 then
+		arg0_19:emit(var0_0.ON_BACK)
 
 		return
 	end
 
-	table.remove(arg0.pageStack, #arg0.pageStack)
+	table.remove(arg0_19.pageStack, #arg0_19.pageStack)
 
-	local var0 = arg0.pageStack[#arg0.pageStack]
+	local var0_19 = arg0_19.pageStack[#arg0_19.pageStack]
 
-	arg0:_SwitchPage(var0)
+	arg0_19:_SwitchPage(var0_19)
 end
 
-function var0.SwitchPage(arg0, arg1)
-	arg0:_SwitchPage(arg1)
+function var0_0.SwitchPage(arg0_20, arg1_20)
+	arg0_20:_SwitchPage(arg1_20)
 
-	if #arg0.pageStack > 1 and arg0.pageStack[#arg0.pageStack - 1] == arg1 then
-		table.remove(arg0.pageStack, #arg0.pageStack)
+	if #arg0_20.pageStack > 1 and arg0_20.pageStack[#arg0_20.pageStack - 1] == arg1_20 then
+		table.remove(arg0_20.pageStack, #arg0_20.pageStack)
 	else
-		table.insert(arg0.pageStack, arg1)
+		table.insert(arg0_20.pageStack, arg1_20)
 	end
 end
 
-function var0.GetTargetPageType(arg0, arg1, arg2)
-	if arg1 == var0.PAGE_CHALLENGE then
-		return arg0.challengeCurrentBossPage
-	elseif arg1 == var0.PAGE_ARCHIVES_CHALLENGE then
-		return arg0.challengeArchivesBossPage
-	elseif arg1 == var0.PAGE_ENTRANCE then
-		return arg0.entrancePage
-	elseif arg1 == var0.PAGE_CURRENT then
-		if arg0.boss and arg2 then
-			return arg0.currentBossDetailPage
+function var0_0.GetTargetPageType(arg0_21, arg1_21, arg2_21)
+	if arg1_21 == var0_0.PAGE_CHALLENGE then
+		return arg0_21.challengeCurrentBossPage
+	elseif arg1_21 == var0_0.PAGE_ARCHIVES_CHALLENGE then
+		return arg0_21.challengeArchivesBossPage
+	elseif arg1_21 == var0_0.PAGE_ENTRANCE then
+		return arg0_21.entrancePage
+	elseif arg1_21 == var0_0.PAGE_CURRENT then
+		if arg0_21.boss and arg2_21 then
+			return arg0_21.currentBossDetailPage
 		else
-			return arg0.currentEmptyPage
+			return arg0_21.currentEmptyPage
 		end
-	elseif arg1 == var0.PAGE_ARCHIVES then
-		if arg0.boss and not arg2 then
-			return arg0.archivesDetailPage
+	elseif arg1_21 == var0_0.PAGE_ARCHIVES then
+		if arg0_21.boss and not arg2_21 then
+			return arg0_21.archivesDetailPage
 		else
-			return arg0.archivesEmptyPage
+			return arg0_21.archivesEmptyPage
 		end
-	elseif arg1 == var0.PAGE_ARCHIVES_LIST then
-		return arg0.archivesListPage
+	elseif arg1_21 == var0_0.PAGE_ARCHIVES_LIST then
+		return arg0_21.archivesListPage
 	end
 end
 
-function var0._SwitchPage(arg0, arg1)
-	if arg0.page then
-		arg0.page:ExecuteAction("Hide")
+function var0_0._SwitchPage(arg0_22, arg1_22)
+	if arg0_22.page then
+		arg0_22.page:ExecuteAction("Hide")
 	end
 
-	local var0 = false
+	local var0_22 = false
 
-	if arg0.boss then
-		var0 = WorldBossConst._IsCurrBoss(arg0.boss)
+	if arg0_22.boss then
+		var0_22 = WorldBossConst._IsCurrBoss(arg0_22.boss)
 	end
 
-	if arg1 == var0.PAGE_ENTRANCE and arg0.boss then
-		arg1 = var0 and var0.PAGE_CURRENT or var0.PAGE_ARCHIVES
+	if arg1_22 == var0_0.PAGE_ENTRANCE and arg0_22.boss then
+		arg1_22 = var0_22 and var0_0.PAGE_CURRENT or var0_0.PAGE_ARCHIVES
 	end
 
-	if LOCK_WORLDBOSS_ARCHIVES and (arg1 == var0.PAGE_ENTRANCE or arg1 > var0.PAGE_CURRENT) then
-		arg1 = var0.PAGE_CURRENT
+	if LOCK_WORLDBOSS_ARCHIVES and (arg1_22 == var0_0.PAGE_ENTRANCE or arg1_22 > var0_0.PAGE_CURRENT) then
+		arg1_22 = var0_0.PAGE_CURRENT
 	end
 
-	arg0.page = arg0:GetTargetPageType(arg1, var0)
+	arg0_22.page = arg0_22:GetTargetPageType(arg1_22, var0_22)
 
-	arg0.page:ExecuteAction("Update")
+	arg0_22.page:ExecuteAction("Update")
 
-	arg0.pageType = arg1
+	arg0_22.pageType = arg1_22
 
-	setActive(arg0.backBtn, arg0.pageType ~= var0.PAGE_ENTRANCE and arg0.pageType ~= var0.PAGE_ARCHIVES_LIST)
-	arg0:LoadEffect(arg1)
+	setActive(arg0_22.backBtn, arg0_22.pageType ~= var0_0.PAGE_ENTRANCE and arg0_22.pageType ~= var0_0.PAGE_ARCHIVES_LIST)
+	arg0_22:LoadEffect(arg1_22)
 end
 
-function var0.LoadEffect(arg0, arg1)
-	local var0 = arg1 == var0.PAGE_CURRENT and arg0.boss or arg1 == var0.PAGE_CHALLENGE and arg0.bossProxy:ExistCacheBoss()
+function var0_0.LoadEffect(arg0_23, arg1_23)
+	local var0_23 = arg1_23 == var0_0.PAGE_CURRENT and arg0_23.boss or arg1_23 == var0_0.PAGE_CHALLENGE and arg0_23.bossProxy:ExistCacheBoss()
 
-	if var0 and not arg0.fireEffect then
+	if var0_23 and not arg0_23.fireEffect then
 		pg.UIMgr.GetInstance():LoadingOn()
-		PoolMgr.GetInstance():GetUI("gondouBoss_huoxing", true, function(arg0)
+		PoolMgr.GetInstance():GetUI("gondouBoss_huoxing", true, function(arg0_24)
 			pg.UIMgr.GetInstance():LoadingOff()
 
-			arg0.fireEffect = arg0
+			arg0_23.fireEffect = arg0_24
 
-			setParent(arg0.fireEffect, arg0._tf)
-			setActive(arg0.fireEffect, true)
+			setParent(arg0_23.fireEffect, arg0_23._tf)
+			setActive(arg0_23.fireEffect, true)
 		end)
-	elseif arg0.fireEffect then
-		setActive(arg0.fireEffect, var0)
+	elseif arg0_23.fireEffect then
+		setActive(arg0_23.fireEffect, var0_23)
 	end
 end
 
-function var0.willExit(arg0)
-	if arg0.fireEffect then
-		PoolMgr.GetInstance():ReturnUI("gondouBoss_huoxing", arg0.fireEffect)
+function var0_0.willExit(arg0_25)
+	if arg0_25.fireEffect then
+		PoolMgr.GetInstance():ReturnUI("gondouBoss_huoxing", arg0_25.fireEffect)
 	end
 
-	if arg0.bossProxy then
-		arg0:RemoveListeners()
+	if arg0_25.bossProxy then
+		arg0_25:RemoveListeners()
 	end
 
-	if arg0.challengeCurrentBossPage then
-		arg0.challengeCurrentBossPage:Destroy()
+	if arg0_25.challengeCurrentBossPage then
+		arg0_25.challengeCurrentBossPage:Destroy()
 
-		arg0.challengeCurrentBossPage = nil
+		arg0_25.challengeCurrentBossPage = nil
 	end
 
-	if arg0.currentEmptyPage then
-		arg0.currentEmptyPage:Destroy()
+	if arg0_25.currentEmptyPage then
+		arg0_25.currentEmptyPage:Destroy()
 
-		arg0.currentEmptyPage = nil
+		arg0_25.currentEmptyPage = nil
 	end
 
-	if arg0.currentBossDetailPage then
-		arg0.currentBossDetailPage:Destroy()
+	if arg0_25.currentBossDetailPage then
+		arg0_25.currentBossDetailPage:Destroy()
 
-		arg0.currentBossDetailPage = nil
+		arg0_25.currentBossDetailPage = nil
 	end
 
-	if arg0.formationPreviewPage then
-		arg0.formationPreviewPage:Destroy()
+	if arg0_25.formationPreviewPage then
+		arg0_25.formationPreviewPage:Destroy()
 
-		arg0.formationPreviewPage = nil
+		arg0_25.formationPreviewPage = nil
 	end
 
-	if arg0.archivesListPage then
-		arg0.archivesListPage:Destroy()
+	if arg0_25.archivesListPage then
+		arg0_25.archivesListPage:Destroy()
 
-		arg0.archivesListPage = nil
+		arg0_25.archivesListPage = nil
 	end
 
-	if arg0.archivesDetailPage then
-		arg0.archivesDetailPage:Destroy()
+	if arg0_25.archivesDetailPage then
+		arg0_25.archivesDetailPage:Destroy()
 
-		arg0.archivesDetailPage = nil
+		arg0_25.archivesDetailPage = nil
 	end
 
-	if arg0.entrancePage then
-		arg0.entrancePage:Destroy()
+	if arg0_25.entrancePage then
+		arg0_25.entrancePage:Destroy()
 
-		arg0.entrancePage = nil
+		arg0_25.entrancePage = nil
 	end
 
-	if arg0.archivesEmptyPage then
-		arg0.archivesEmptyPage:Destroy()
+	if arg0_25.archivesEmptyPage then
+		arg0_25.archivesEmptyPage:Destroy()
 
-		arg0.archivesEmptyPage = nil
+		arg0_25.archivesEmptyPage = nil
 	end
 
-	if arg0.challengeArchivesBossPage then
-		arg0.challengeArchivesBossPage:Destroy()
+	if arg0_25.challengeArchivesBossPage then
+		arg0_25.challengeArchivesBossPage:Destroy()
 
-		arg0.challengeArchivesBossPage = nil
+		arg0_25.challengeArchivesBossPage = nil
 	end
 end
 
-return var0
+return var0_0

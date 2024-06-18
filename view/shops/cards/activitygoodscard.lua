@@ -1,224 +1,224 @@
-﻿local var0 = class("ActivityGoodsCard", import(".BaseGoodsCard"))
+﻿local var0_0 = class("ActivityGoodsCard", import(".BaseGoodsCard"))
 
-var0.Color = {}
-var0.DefaultColor = {
+var0_0.Color = {}
+var0_0.DefaultColor = {
 	0.874509803921569,
 	0.929411764705882,
 	1
 }
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0.go = arg1
-	arg0.tr = tf(arg1)
-	arg0.itemTF = findTF(arg0.tr, "item")
-	arg0.nameTxt = findTF(arg0.tr, "item/name_mask/name")
-	arg0.resIconTF = findTF(arg0.tr, "item/consume/contain/icon"):GetComponent(typeof(Image))
-	arg0.mask = arg0.tr:Find("mask")
-	arg0.selloutTag = arg0.tr:Find("mask/tag/sellout_tag")
-	arg0.sellEndTag = arg0.tr:Find("mask/tag/sellend_tag")
+	arg0_1.go = arg1_1
+	arg0_1.tr = tf(arg1_1)
+	arg0_1.itemTF = findTF(arg0_1.tr, "item")
+	arg0_1.nameTxt = findTF(arg0_1.tr, "item/name_mask/name")
+	arg0_1.resIconTF = findTF(arg0_1.tr, "item/consume/contain/icon"):GetComponent(typeof(Image))
+	arg0_1.mask = arg0_1.tr:Find("mask")
+	arg0_1.selloutTag = arg0_1.tr:Find("mask/tag/sellout_tag")
+	arg0_1.sellEndTag = arg0_1.tr:Find("mask/tag/sellend_tag")
 
-	setActive(arg0.sellEndTag, false)
+	setActive(arg0_1.sellEndTag, false)
 
-	arg0.unexchangeTag = arg0.tr:Find("mask/tag/unexchange_tag")
-	arg0.countTF = findTF(arg0.tr, "item/consume/contain/Text"):GetComponent(typeof(Text))
-	arg0.discountTF = findTF(arg0.tr, "item/discount")
+	arg0_1.unexchangeTag = arg0_1.tr:Find("mask/tag/unexchange_tag")
+	arg0_1.countTF = findTF(arg0_1.tr, "item/consume/contain/Text"):GetComponent(typeof(Text))
+	arg0_1.discountTF = findTF(arg0_1.tr, "item/discount")
 
-	setActive(arg0.discountTF, false)
+	setActive(arg0_1.discountTF, false)
 
-	arg0.limitTimeSellTF = findTF(arg0.tr, "item/limit_time_sell")
+	arg0_1.limitTimeSellTF = findTF(arg0_1.tr, "item/limit_time_sell")
 
-	setActive(arg0.limitTimeSellTF, false)
+	setActive(arg0_1.limitTimeSellTF, false)
 
-	arg0.limitCountTF = findTF(arg0.tr, "item/count_contain/count"):GetComponent(typeof(Text))
-	arg0.limitCountLabelTF = findTF(arg0.tr, "item/count_contain/label"):GetComponent(typeof(Text))
-	arg0.limitCountLabelTF.text = i18n("activity_shop_exchange_count")
-	arg0.tagImg = arg0.tr:Find("mask/tag"):GetComponent(typeof(Image))
-	arg0.limitPassTag = arg0.tr:Find("mask/tag/pass_tag")
+	arg0_1.limitCountTF = findTF(arg0_1.tr, "item/count_contain/count"):GetComponent(typeof(Text))
+	arg0_1.limitCountLabelTF = findTF(arg0_1.tr, "item/count_contain/label"):GetComponent(typeof(Text))
+	arg0_1.limitCountLabelTF.text = i18n("activity_shop_exchange_count")
+	arg0_1.tagImg = arg0_1.tr:Find("mask/tag"):GetComponent(typeof(Image))
+	arg0_1.limitPassTag = arg0_1.tr:Find("mask/tag/pass_tag")
 end
 
-function var0.update(arg0, arg1, arg2, arg3, arg4)
-	arg0.goodsVO = arg1
+function var0_0.update(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2)
+	arg0_2.goodsVO = arg1_2
 
-	local var0 = arg0.goodsVO:CheckCntLimit()
-	local var1 = var0 and not arg0.goodsVO:CheckArgLimit()
+	local var0_2 = arg0_2.goodsVO:CheckCntLimit()
+	local var1_2 = var0_2 and not arg0_2.goodsVO:CheckArgLimit()
 
-	setActive(arg0.mask, not var0 or var1)
-	setActive(arg0.selloutTag, not var0)
+	setActive(arg0_2.mask, not var0_2 or var1_2)
+	setActive(arg0_2.selloutTag, not var0_2)
 
-	if arg0.limitPassTag then
-		setActive(arg0.limitPassTag, false)
+	if arg0_2.limitPassTag then
+		setActive(arg0_2.limitPassTag, false)
 	end
 
-	removeOnButton(arg0.mask)
+	removeOnButton(arg0_2.mask)
 
-	if var1 then
-		local var2, var3, var4 = arg0.goodsVO:CheckArgLimit()
+	if var1_2 then
+		local var2_2, var3_2, var4_2 = arg0_2.goodsVO:CheckArgLimit()
 
-		if var3 == "pass" then
-			setActive(arg0.limitPassTag, true)
-			setText(findTF(arg0.limitPassTag, "Text"), i18n("eventshop_unlock_info", var4))
-			onButton(arg0, arg0.mask, function()
-				pg.TipsMgr.GetInstance():ShowTips(i18n("eventshop_unlock_hint", var4))
+		if var3_2 == "pass" then
+			setActive(arg0_2.limitPassTag, true)
+			setText(findTF(arg0_2.limitPassTag, "Text"), i18n("eventshop_unlock_info", var4_2))
+			onButton(arg0_2, arg0_2.mask, function()
+				pg.TipsMgr.GetInstance():ShowTips(i18n("eventshop_unlock_hint", var4_2))
 			end, SFX_PANEL)
-		elseif var3 == 1 or var3 == 2 then
-			setText(arg0.unexchangeTag, var4)
+		elseif var3_2 == 1 or var3_2 == 2 then
+			setText(arg0_2.unexchangeTag, var4_2)
 
-			local var5 = ""
+			local var5_2 = ""
 
-			if var3 == 1 then
-				var5 = "LIMIT"
+			if var3_2 == 1 then
+				var5_2 = "LIMIT"
 			end
 
-			if var3 == 2 then
-				var5 = "LOCK"
+			if var3_2 == 2 then
+				var5_2 = "LOCK"
 			end
 
-			setText(arg0.unexchangeTag:Find("sellout_tag_en"), var5)
-			setActive(arg0.unexchangeTag, true)
+			setText(arg0_2.unexchangeTag:Find("sellout_tag_en"), var5_2)
+			setActive(arg0_2.unexchangeTag, true)
 		end
 	end
 
-	local var6 = Drop.New({
-		type = arg1:getConfig("commodity_type"),
-		id = arg1:getConfig("commodity_id"),
-		count = arg1:getConfig("num")
+	local var6_2 = Drop.New({
+		type = arg1_2:getConfig("commodity_type"),
+		id = arg1_2:getConfig("commodity_id"),
+		count = arg1_2:getConfig("num")
 	})
 
-	updateDrop(arg0.itemTF, var6)
-	setActive(arg0.limitTimeSellTF, false)
+	updateDrop(arg0_2.itemTF, var6_2)
+	setActive(arg0_2.limitTimeSellTF, false)
 
-	if var0 then
-		local var7, var8, var9 = arg0.goodsVO:CheckTimeLimit()
+	if var0_2 then
+		local var7_2, var8_2, var9_2 = arg0_2.goodsVO:CheckTimeLimit()
 
-		setActive(arg0.limitTimeSellTF, var7 and var8)
+		setActive(arg0_2.limitTimeSellTF, var7_2 and var8_2)
 
-		if var7 and not var8 then
-			setActive(arg0.mask, true)
-			setActive(arg0.sellEndTag, true)
-			removeOnButton(arg0.mask)
-			onButton(arg0, arg0.mask, function()
-				if var9 then
-					pg.TipsMgr.GetInstance():ShowTips(i18n("tip_build_ticket_exchange_expired", var6:getName()))
+		if var7_2 and not var8_2 then
+			setActive(arg0_2.mask, true)
+			setActive(arg0_2.sellEndTag, true)
+			removeOnButton(arg0_2.mask)
+			onButton(arg0_2, arg0_2.mask, function()
+				if var9_2 then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("tip_build_ticket_exchange_expired", var6_2:getName()))
 				end
 			end, SFX_PANEL)
 		end
 	end
 
 	GetSpriteFromAtlasAsync(Drop.New({
-		type = arg1:getConfig("resource_category"),
-		id = arg1:getConfig("resource_type")
-	}):getIcon(), "", function(arg0)
-		arg0.resIconTF.sprite = arg0
+		type = arg1_2:getConfig("resource_category"),
+		id = arg1_2:getConfig("resource_type")
+	}):getIcon(), "", function(arg0_5)
+		arg0_2.resIconTF.sprite = arg0_5
 	end)
 
-	arg0.countTF.text = arg1:getConfig("resource_num")
+	arg0_2.countTF.text = arg1_2:getConfig("resource_num")
 
-	local var10 = var6:getName() or "??"
+	local var10_2 = var6_2:getName() or "??"
 
-	if string.match(var10, "(%d+)") then
-		setText(arg0.nameTxt, shortenString(var10, 5))
+	if string.match(var10_2, "(%d+)") then
+		setText(arg0_2.nameTxt, shortenString(var10_2, 5))
 	else
-		setText(arg0.nameTxt, shortenString(var10, 6))
+		setText(arg0_2.nameTxt, shortenString(var10_2, 6))
 	end
 
-	local var11 = arg1:getConfig("num_limit")
+	local var11_2 = arg1_2:getConfig("num_limit")
 
-	if var11 == 0 then
-		arg0.limitCountTF.text = i18n("common_no_limit")
+	if var11_2 == 0 then
+		arg0_2.limitCountTF.text = i18n("common_no_limit")
 	else
-		local var12 = arg1:GetPurchasableCnt()
+		local var12_2 = arg1_2:GetPurchasableCnt()
 
-		arg0.limitCountTF.text = math.max(var12, 0) .. "/" .. var11
+		arg0_2.limitCountTF.text = math.max(var12_2, 0) .. "/" .. var11_2
 	end
 
-	local var13 = var0.Color[arg2] or var0.DefaultColor
+	local var13_2 = var0_0.Color[arg2_2] or var0_0.DefaultColor
 
-	arg0.limitCountTF.color = arg3 or Color.New(unpack(var13))
-	arg0.limitCountLabelTF.color = arg3 or Color.New(unpack(var13))
-	arg4 = arg4 or Color.New(0, 0, 0, 1)
+	arg0_2.limitCountTF.color = arg3_2 or Color.New(unpack(var13_2))
+	arg0_2.limitCountLabelTF.color = arg3_2 or Color.New(unpack(var13_2))
+	arg4_2 = arg4_2 or Color.New(0, 0, 0, 1)
 
-	if GetComponent(arg0.limitCountTF, typeof(Outline)) then
-		setOutlineColor(arg0.limitCountTF, arg4)
+	if GetComponent(arg0_2.limitCountTF, typeof(Outline)) then
+		setOutlineColor(arg0_2.limitCountTF, arg4_2)
 	end
 
-	if GetComponent(arg0.limitCountLabelTF, typeof(Outline)) then
-		setOutlineColor(arg0.limitCountLabelTF, arg4)
+	if GetComponent(arg0_2.limitCountLabelTF, typeof(Outline)) then
+		setOutlineColor(arg0_2.limitCountLabelTF, arg4_2)
 	end
 end
 
-function var0.setAsLastSibling(arg0)
-	arg0.tr:SetAsLastSibling()
+function var0_0.setAsLastSibling(arg0_6)
+	arg0_6.tr:SetAsLastSibling()
 end
 
-function var0.StaticUpdate(arg0, arg1, arg2, arg3)
-	local var0 = tf(arg0)
-	local var1 = findTF(var0, "item")
-	local var2 = findTF(var0, "item/name_mask/name")
-	local var3 = findTF(var0, "item/consume/contain/icon"):GetComponent(typeof(Image))
-	local var4 = var0:Find("mask")
-	local var5 = var0:Find("mask/tag/sellout_tag")
-	local var6 = findTF(var0, "item/consume/contain/Text"):GetComponent(typeof(Text))
-	local var7 = findTF(var0, "item/discount")
+function var0_0.StaticUpdate(arg0_7, arg1_7, arg2_7, arg3_7)
+	local var0_7 = tf(arg0_7)
+	local var1_7 = findTF(var0_7, "item")
+	local var2_7 = findTF(var0_7, "item/name_mask/name")
+	local var3_7 = findTF(var0_7, "item/consume/contain/icon"):GetComponent(typeof(Image))
+	local var4_7 = var0_7:Find("mask")
+	local var5_7 = var0_7:Find("mask/tag/sellout_tag")
+	local var6_7 = findTF(var0_7, "item/consume/contain/Text"):GetComponent(typeof(Text))
+	local var7_7 = findTF(var0_7, "item/discount")
 
-	setActive(var7, false)
+	setActive(var7_7, false)
 
-	local var8 = findTF(var0, "item/count_contain/count"):GetComponent(typeof(Text))
-	local var9 = findTF(var0, "item/count_contain/label"):GetComponent(typeof(Text))
-	local var10, var11 = arg1:canPurchase()
+	local var8_7 = findTF(var0_7, "item/count_contain/count"):GetComponent(typeof(Text))
+	local var9_7 = findTF(var0_7, "item/count_contain/label"):GetComponent(typeof(Text))
+	local var10_7, var11_7 = arg1_7:canPurchase()
 
-	setActive(var4, not var10)
-	setActive(var5, not var10)
+	setActive(var4_7, not var10_7)
+	setActive(var5_7, not var10_7)
 
-	local var12 = Drop.New({
-		type = arg1:getConfig("commodity_type"),
-		id = arg1:getConfig("commodity_id"),
-		count = arg1:getConfig("num")
+	local var12_7 = Drop.New({
+		type = arg1_7:getConfig("commodity_type"),
+		id = arg1_7:getConfig("commodity_id"),
+		count = arg1_7:getConfig("num")
 	})
 
-	updateDrop(var1, var12)
+	updateDrop(var1_7, var12_7)
 
-	local var13 = var12:getConfig("name") or "??"
+	local var13_7 = var12_7:getConfig("name") or "??"
 
-	var6.text = arg1:getConfig("resource_num")
+	var6_7.text = arg1_7:getConfig("resource_num")
 
-	if string.match(var13, "(%d+)") then
-		setText(var2, shortenString(var13, 5))
+	if string.match(var13_7, "(%d+)") then
+		setText(var2_7, shortenString(var13_7, 5))
 	else
-		setText(var2, shortenString(var13, 6))
+		setText(var2_7, shortenString(var13_7, 6))
 	end
 
-	var3.sprite = GetSpriteFromAtlas(Drop.New({
-		type = arg1:getConfig("resource_category"),
-		id = arg1:getConfig("resource_type")
+	var3_7.sprite = GetSpriteFromAtlas(Drop.New({
+		type = arg1_7:getConfig("resource_category"),
+		id = arg1_7:getConfig("resource_type")
 	}):getIcon(), "")
 
-	if arg1:getConfig("num_limit") == 0 then
-		var8.text = i18n("common_no_limit")
+	if arg1_7:getConfig("num_limit") == 0 then
+		var8_7.text = i18n("common_no_limit")
 	else
-		local var14 = arg1:getConfig("num_limit")
+		local var14_7 = arg1_7:getConfig("num_limit")
 
-		if var12.type == DROP_TYPE_SKIN and not var10 then
-			var8.text = "0/" .. var14
+		if var12_7.type == DROP_TYPE_SKIN and not var10_7 then
+			var8_7.text = "0/" .. var14_7
 		else
-			var8.text = var14 - arg1.buyCount .. "/" .. var14
+			var8_7.text = var14_7 - arg1_7.buyCount .. "/" .. var14_7
 		end
 	end
 
-	local var15 = var0.Color[arg2] or var0.DefaultColor
+	local var15_7 = var0_0.Color[arg2_7] or var0_0.DefaultColor
 
-	var8.color = arg3 or Color.New(var15[1], var15[2], var15[3], 1)
-	var9.color = arg3 or Color.New(var15[1], var15[2], var15[3], 1)
+	var8_7.color = arg3_7 or Color.New(var15_7[1], var15_7[2], var15_7[3], 1)
+	var9_7.color = arg3_7 or Color.New(var15_7[1], var15_7[2], var15_7[3], 1)
 
-	if arg1:getConfig("num_limit") >= 99 then
-		var9.text = i18n("shop_label_unlimt_cnt")
-		var8.text = ""
+	if arg1_7:getConfig("num_limit") >= 99 then
+		var9_7.text = i18n("shop_label_unlimt_cnt")
+		var8_7.text = ""
 	end
 end
 
-function var0.OnDispose(arg0)
-	arg0.goodsVO = nil
+function var0_0.OnDispose(arg0_8)
+	arg0_8.goodsVO = nil
 end
 
-return var0
+return var0_0

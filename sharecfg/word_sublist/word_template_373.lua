@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_373 = {}
+var0_0.word_template_373 = {}
 
-local var1 = var0.word_template_373
+local var1_0 = var0_0.word_template_373
 
 function temp()
-	var1.旧 = {
+	var1_0.旧 = {
 		金 = {
 			山 = {
 				唐 = {
@@ -35,7 +35,7 @@ end
 temp()
 
 function temp()
-	var1.兒 = {
+	var1_0.兒 = {
 		童 = {
 			節 = {
 				後 = {
@@ -53,7 +53,7 @@ end
 temp()
 
 function temp()
-	var1.己 = {
+	var1_0.己 = {
 		巳 = {
 			年 = {
 				this = true
@@ -65,7 +65,7 @@ end
 temp()
 
 function temp()
-	var1.娛 = {
+	var1_0.娛 = {
 		樂 = {
 			圈 = {
 				血 = {
@@ -83,7 +83,7 @@ end
 temp()
 
 function temp()
-	var1.缾 = {
+	var1_0.缾 = {
 		反 = {
 			鹿 = {
 				死 = {
@@ -97,7 +97,7 @@ end
 temp()
 
 function temp()
-	var1.瓶 = {
+	var1_0.瓶 = {
 		反 = {
 			鹿 = {
 				死 = {
@@ -118,7 +118,7 @@ end
 temp()
 
 function temp()
-	var1["7"] = {
+	var1_0["7"] = {
 		["4"] = {
 			的 = {
 				一 = {

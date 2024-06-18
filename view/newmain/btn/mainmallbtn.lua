@@ -1,25 +1,25 @@
-﻿local var0 = class("MainMallBtn", import(".MainBaseBtn"))
+﻿local var0_0 = class("MainMallBtn", import(".MainBaseBtn"))
 
-function var0.Ctor(arg0, arg1, arg2, arg3)
-	var0.super.Ctor(arg0, arg1, arg3)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	var0_0.super.Ctor(arg0_1, arg1_1, arg3_1)
 
-	arg0.sellTag = findTF(arg2, "sell")
-	arg0.skinTag = findTF(arg2, "skin")
-	arg0.mallTip = findTF(arg2, "tip")
+	arg0_1.sellTag = findTF(arg2_1, "sell")
+	arg0_1.skinTag = findTF(arg2_1, "skin")
+	arg0_1.mallTip = findTF(arg2_1, "tip")
 end
 
-function var0.OnClick(arg0)
-	arg0:OpenMall()
+function var0_0.OnClick(arg0_2)
+	arg0_2:OpenMall()
 end
 
-function var0.OpenMall(arg0)
-	arg0:emit(NewMainMediator.GO_SCENE, SCENE.CHARGE_MENU)
+function var0_0.OpenMall(arg0_3)
+	arg0_3:emit(NewMainMediator.GO_SCENE, SCENE.CHARGE_MENU)
 
-	local var0 = isActive(arg0.sellTag) or isActive(arg0.skinTag) or isActive(arg0.mallTip)
+	local var0_3 = isActive(arg0_3.sellTag) or isActive(arg0_3.skinTag) or isActive(arg0_3.mallTip)
 
-	pg.m02:sendNotification(GAME.TRACK, TrackConst.GetTrackData(TrackConst.SYSTEM_SHOP, TrackConst.ACTION_ENTER_MAIN, var0))
+	pg.m02:sendNotification(GAME.TRACK, TrackConst.GetTrackData(TrackConst.SYSTEM_SHOP, TrackConst.ACTION_ENTER_MAIN, var0_3))
 	PlayerPrefs.SetInt("Tec_Ship_Gift_Enter_Tag", 1)
 	PlayerPrefs.Save()
 end
 
-return var0
+return var0_0

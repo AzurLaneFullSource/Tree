@@ -1,47 +1,47 @@
-﻿local var0 = class("UpgradeCommanderCommand", pm.SimpleCommand)
+﻿local var0_0 = class("UpgradeCommanderCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.id
-	local var2 = var0.materialIds
-	local var3 = var0.skillId
-	local var4 = getProxy(CommanderProxy)
-	local var5 = var4:getCommanderById(var1)
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.id
+	local var2_1 = var0_1.materialIds
+	local var3_1 = var0_1.skillId
+	local var4_1 = getProxy(CommanderProxy)
+	local var5_1 = var4_1:getCommanderById(var1_1)
 
-	if not var5 then
+	if not var5_1 then
 		return
 	end
 
-	local var6 = var5:getSkill(var3)
+	local var6_1 = var5_1:getSkill(var3_1)
 
-	if not var6 then
+	if not var6_1 then
 		return
 	end
 
-	if var5:isMaxLevel() and var6:isMaxLevel() then
+	if var5_1:isMaxLevel() and var6_1:isMaxLevel() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("commander_can_not_be_upgrade"))
 
 		return
 	end
 
-	local var7 = getProxy(FleetProxy):getCommandersInFleet()
+	local var7_1 = getProxy(FleetProxy):getCommandersInFleet()
 
-	if _.any(var2, function(arg0)
-		return table.contains(var7, arg0)
+	if _.any(var2_1, function(arg0_2)
+		return table.contains(var7_1, arg0_2)
 	end) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("commander_anyone_is_in_fleet"))
 
 		return
 	end
 
-	local var8 = getProxy(ChapterProxy):getActiveChapter()
+	local var8_1 = getProxy(ChapterProxy):getActiveChapter()
 
-	if var8 then
-		_.each(var8.fleets, function(arg0)
-			local var0 = arg0:getCommanders()
+	if var8_1 then
+		_.each(var8_1.fleets, function(arg0_3)
+			local var0_3 = arg0_3:getCommanders()
 
-			if _.any(_.values(var0), function(arg0)
-				return arg0.id == var1
+			if _.any(_.values(var0_3), function(arg0_4)
+				return arg0_4.id == var1_1
 			end) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("commander_is_in_battle"))
 
@@ -50,82 +50,82 @@ function var0.execute(arg0, arg1)
 		end)
 	end
 
-	local var9 = 0
-	local var10 = 0
-	local var11 = CommanderCatUtil.CalcCommanderConsume(var2)
+	local var9_1 = 0
+	local var10_1 = 0
+	local var11_1 = CommanderCatUtil.CalcCommanderConsume(var2_1)
 
-	for iter0, iter1 in ipairs(var2) do
-		local var12 = var4:getCommanderById(iter1)
+	for iter0_1, iter1_1 in ipairs(var2_1) do
+		local var12_1 = var4_1:getCommanderById(iter1_1)
 
-		if not var12 or var1 == iter1 then
+		if not var12_1 or var1_1 == iter1_1 then
 			return
 		end
 
-		var9 = var9 + var12:getDestoryedSkillExp(var5.groupId)
-		var10 = var10 + var12:getDestoryedExp(var5.groupId)
+		var9_1 = var9_1 + var12_1:getDestoryedSkillExp(var5_1.groupId)
+		var10_1 = var10_1 + var12_1:getDestoryedExp(var5_1.groupId)
 	end
 
-	local var13 = math.floor(var10)
-	local var14 = math.floor(var9)
-	local var15 = getProxy(PlayerProxy)
-	local var16 = var15:getData()
+	local var13_1 = math.floor(var10_1)
+	local var14_1 = math.floor(var9_1)
+	local var15_1 = getProxy(PlayerProxy)
+	local var16_1 = var15_1:getData()
 
-	if var11 > var16.gold then
+	if var11_1 > var16_1.gold then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(25008, {
-		targetid = var1,
-		materialid = var2
-	}, 25009, function(arg0)
-		if arg0.result == 0 then
-			local var0 = Clone(var5)
+		targetid = var1_1,
+		materialid = var2_1
+	}, 25009, function(arg0_5)
+		if arg0_5.result == 0 then
+			local var0_5 = Clone(var5_1)
 
-			var5:addExp(var13)
-			var6:addExp(var14)
-			var16:consume({
-				gold = var11
+			var5_1:addExp(var13_1)
+			var6_1:addExp(var14_1)
+			var16_1:consume({
+				gold = var11_1
 			})
-			var15:updatePlayer(var16)
-			var4:updateCommander(var5)
-			arg0:sendNotification(GAME.COMMANDER_UPGRADE_DONE, {
-				commander = var5,
-				oldCommander = var0
+			var15_1:updatePlayer(var16_1)
+			var4_1:updateCommander(var5_1)
+			arg0_1:sendNotification(GAME.COMMANDER_UPGRADE_DONE, {
+				commander = var5_1,
+				oldCommander = var0_5
 			})
 
-			for iter0, iter1 in ipairs(var2) do
-				var4:removeCommanderById(iter1)
-				arg0:clearHardChapterCommanders(iter1)
-				arg0:clearActivityCommanders(iter1)
+			for iter0_5, iter1_5 in ipairs(var2_1) do
+				var4_1:removeCommanderById(iter1_5)
+				arg0_1:clearHardChapterCommanders(iter1_5)
+				arg0_1:clearActivityCommanders(iter1_5)
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_play_erro", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_play_erro", arg0_5.result))
 		end
 	end)
 end
 
-function var0.clearHardChapterCommanders(arg0, arg1)
-	local var0 = getProxy(ChapterProxy)
-	local var1 = var0:getRawData()
+function var0_0.clearHardChapterCommanders(arg0_6, arg1_6)
+	local var0_6 = getProxy(ChapterProxy)
+	local var1_6 = var0_6:getRawData()
 
-	for iter0, iter1 in pairs(var1) do
-		local var2 = iter1:getEliteFleetCommanders()
+	for iter0_6, iter1_6 in pairs(var1_6) do
+		local var2_6 = iter1_6:getEliteFleetCommanders()
 
-		for iter2, iter3 in pairs(var2) do
-			for iter4, iter5 in pairs(iter3) do
-				if iter5 == arg1 then
-					iter1:updateCommander(iter2, iter4, nil)
-					var0:updateChapter(iter1)
+		for iter2_6, iter3_6 in pairs(var2_6) do
+			for iter4_6, iter5_6 in pairs(iter3_6) do
+				if iter5_6 == arg1_6 then
+					iter1_6:updateCommander(iter2_6, iter4_6, nil)
+					var0_6:updateChapter(iter1_6)
 				end
 			end
 		end
 	end
 end
 
-function var0.clearActivityCommanders(arg0, arg1)
-	getProxy(FleetProxy):removeActivityFleetCommander(arg1)
+function var0_0.clearActivityCommanders(arg0_7, arg1_7)
+	getProxy(FleetProxy):removeActivityFleetCommander(arg1_7)
 end
 
-return var0
+return var0_0

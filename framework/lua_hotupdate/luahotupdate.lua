@@ -1,295 +1,295 @@
-﻿local var0 = {}
+﻿local var0_0 = {}
 
-function var0.FailNotify(...)
-	if var0.NotifyFunc then
-		var0.NotifyFunc(...)
+function var0_0.FailNotify(...)
+	if var0_0.NotifyFunc then
+		var0_0.NotifyFunc(...)
 	end
 end
 
-function var0.DebugNofity(...)
-	if var0.DebugNofityFunc then
-		var0.DebugNofityFunc(...)
+function var0_0.DebugNofity(...)
+	if var0_0.DebugNofityFunc then
+		var0_0.DebugNofityFunc(...)
 	end
 end
 
-local function var1()
+local function var1_0()
 	return FileTool.GetCurrentDirectiory() .. "\\"
 end
 
-local function var2(arg0)
-	arg0 = arg0:gsub("/", "\\")
+local function var2_0(arg0_4)
+	arg0_4 = arg0_4:gsub("/", "\\")
 
-	if arg0:find(":") == nil then
-		arg0 = var1() .. arg0
+	if arg0_4:find(":") == nil then
+		arg0_4 = var1_0() .. arg0_4
 	end
 
-	local var0 = #arg0
+	local var0_4 = #arg0_4
 
-	if arg0:sub(var0, var0) == "\\" then
-		arg0 = arg0:sub(1, var0 - 1)
+	if arg0_4:sub(var0_4, var0_4) == "\\" then
+		arg0_4 = arg0_4:sub(1, var0_4 - 1)
 	end
 
-	local var1 = {}
+	local var1_4 = {}
 
-	for iter0 in arg0:gmatch("[^\\]+") do
-		if iter0 == ".." and #var1 ~= 0 then
-			table.remove(var1)
-		elseif iter0 ~= "." then
-			table.insert(var1, iter0)
+	for iter0_4 in arg0_4:gmatch("[^\\]+") do
+		if iter0_4 == ".." and #var1_4 ~= 0 then
+			table.remove(var1_4)
+		elseif iter0_4 ~= "." then
+			table.insert(var1_4, iter0_4)
 		end
 	end
 
-	return table.concat(var1, "\\")
+	return table.concat(var1_4, "\\")
 end
 
-function var0.InitFileMap(arg0)
-	for iter0, iter1 in pairs(arg0) do
-		iter1 = var2(iter1)
+function var0_0.InitFileMap(arg0_5)
+	for iter0_5, iter1_5 in pairs(arg0_5) do
+		iter1_5 = var2_0(iter1_5)
 
-		var0.NotifyFunc("root path: " .. iter1)
+		var0_0.NotifyFunc("root path: " .. iter1_5)
 
-		local var0 = FileTool.GetAllFiles(iter1)
+		local var0_5 = FileTool.GetAllFiles(iter1_5)
 
-		print("count " .. var0.Count)
+		print("count " .. var0_5.Count)
 
-		for iter2 = 0, var0.Count - 1 do
-			local var1 = var0:get_Item(iter2)
-			local var2 = string.match(var1, ".*\\(.[_a-zA-Z][_a-zA-Z0-9]*)%.lua")
+		for iter2_5 = 0, var0_5.Count - 1 do
+			local var1_5 = var0_5:get_Item(iter2_5)
+			local var2_5 = string.match(var1_5, ".*\\(.[_a-zA-Z][_a-zA-Z0-9]*)%.lua")
 
-			if var2 ~= nil then
-				if var0.FileMap[var2] == nil then
-					var0.FileMap[var2] = {}
+			if var2_5 ~= nil then
+				if var0_0.FileMap[var2_5] == nil then
+					var0_0.FileMap[var2_5] = {}
 				end
 
-				local var3 = string.sub(var1, #iter1 + 2, #var1 - 4)
-				local var4 = string.gsub(var3, "\\", ".")
+				local var3_5 = string.sub(var1_5, #iter1_5 + 2, #var1_5 - 4)
+				local var4_5 = string.gsub(var3_5, "\\", ".")
 
-				var0.LuaPathToSysPath[var4] = SysPath
+				var0_0.LuaPathToSysPath[var4_5] = SysPath
 
-				table.insert(var0.FileMap[var2], {
-					SysPath = var1,
-					LuaPath = var4
+				table.insert(var0_0.FileMap[var2_5], {
+					SysPath = var1_5,
+					LuaPath = var4_5
 				})
 			end
 		end
 
-		var0.NotifyFunc("load module count: " .. table.getn(var0.FileMap))
+		var0_0.NotifyFunc("load module count: " .. table.getn(var0_0.FileMap))
 	end
 end
 
-function var0.InitFakeTable()
-	local var0 = {}
+function var0_0.InitFakeTable()
+	local var0_6 = {}
 
-	var0.Meta = var0
+	var0_0.Meta = var0_6
 
-	local function var1()
-		return setmetatable({}, var0)
+	local function var1_6()
+		return setmetatable({}, var0_6)
 	end
 
-	local function var2()
+	local function var2_6()
 		return
 	end
 
-	local function var3()
-		return var2
+	local function var3_6()
+		return var2_6
 	end
 
-	local function var4(arg0, arg1)
-		var0.MetaMap[arg0] = arg1
+	local function var4_6(arg0_10, arg1_10)
+		var0_0.MetaMap[arg0_10] = arg1_10
 
-		return arg0
+		return arg0_10
 	end
 
-	local function var5(arg0)
-		if not var0.RequireMap[arg0] then
-			local var0 = var1()
+	local function var5_6(arg0_11)
+		if not var0_0.RequireMap[arg0_11] then
+			local var0_11 = var1_6()
 
-			var0.RequireMap[arg0] = var0
+			var0_0.RequireMap[arg0_11] = var0_11
 		end
 
-		return var0.RequireMap[arg0]
+		return var0_0.RequireMap[arg0_11]
 	end
 
-	function var0.__index(arg0, arg1)
-		if arg1 == "setmetatable" then
-			return var4
-		elseif arg1 == "pairs" or arg1 == "ipairs" then
-			return var3
-		elseif arg1 == "next" then
-			return var2
-		elseif arg1 == "require" then
-			return var5
+	function var0_6.__index(arg0_12, arg1_12)
+		if arg1_12 == "setmetatable" then
+			return var4_6
+		elseif arg1_12 == "pairs" or arg1_12 == "ipairs" then
+			return var3_6
+		elseif arg1_12 == "next" then
+			return var2_6
+		elseif arg1_12 == "require" then
+			return var5_6
 		else
-			local var0 = var1()
+			local var0_12 = var1_6()
 
-			rawset(arg0, arg1, var0)
+			rawset(arg0_12, arg1_12, var0_12)
 
-			return var0
+			return var0_12
 		end
 	end
 
-	function var0.__newindex(arg0, arg1, arg2)
-		rawset(arg0, arg1, arg2)
+	function var0_6.__newindex(arg0_13, arg1_13, arg2_13)
+		rawset(arg0_13, arg1_13, arg2_13)
 	end
 
-	function var0.__call()
-		return var1(), var1(), var1()
+	function var0_6.__call()
+		return var1_6(), var1_6(), var1_6()
 	end
 
-	function var0.__add()
-		return var0.__call()
+	function var0_6.__add()
+		return var0_6.__call()
 	end
 
-	function var0.__sub()
-		return var0.__call()
+	function var0_6.__sub()
+		return var0_6.__call()
 	end
 
-	function var0.__mul()
-		return var0.__call()
+	function var0_6.__mul()
+		return var0_6.__call()
 	end
 
-	function var0.__div()
-		return var0.__call()
+	function var0_6.__div()
+		return var0_6.__call()
 	end
 
-	function var0.__mod()
-		return var0.__call()
+	function var0_6.__mod()
+		return var0_6.__call()
 	end
 
-	function var0.__pow()
-		return var0.__call()
+	function var0_6.__pow()
+		return var0_6.__call()
 	end
 
-	function var0.__unm()
-		return var0.__call()
+	function var0_6.__unm()
+		return var0_6.__call()
 	end
 
-	function var0.__concat()
-		return var0.__call()
+	function var0_6.__concat()
+		return var0_6.__call()
 	end
 
-	function var0.__eq()
-		return var0.__call()
+	function var0_6.__eq()
+		return var0_6.__call()
 	end
 
-	function var0.__lt()
-		return var0.__call()
+	function var0_6.__lt()
+		return var0_6.__call()
 	end
 
-	function var0.__le()
-		return var0.__call()
+	function var0_6.__le()
+		return var0_6.__call()
 	end
 
-	function var0.__len()
-		return var0.__call()
+	function var0_6.__len()
+		return var0_6.__call()
 	end
 
-	return var1
+	return var1_6
 end
 
-function var0.InitProtection()
-	var0.Protection = {}
-	var0.Protection[setmetatable] = true
-	var0.Protection[pairs] = true
-	var0.Protection[ipairs] = true
-	var0.Protection[next] = true
-	var0.Protection[require] = true
-	var0.Protection[var0] = true
-	var0.Protection[var0.Meta] = true
-	var0.Protection[math] = true
-	var0.Protection[string] = true
-	var0.Protection[table] = true
+function var0_0.InitProtection()
+	var0_0.Protection = {}
+	var0_0.Protection[setmetatable] = true
+	var0_0.Protection[pairs] = true
+	var0_0.Protection[ipairs] = true
+	var0_0.Protection[next] = true
+	var0_0.Protection[require] = true
+	var0_0.Protection[var0_0] = true
+	var0_0.Protection[var0_0.Meta] = true
+	var0_0.Protection[math] = true
+	var0_0.Protection[string] = true
+	var0_0.Protection[table] = true
 end
 
-function var0.AddFileFromHUList()
-	package.loaded[var0.UpdateListFile] = nil
+function var0_0.AddFileFromHUList()
+	package.loaded[var0_0.UpdateListFile] = nil
 
-	local var0 = require(var0.UpdateListFile)
+	local var0_28 = require(var0_0.UpdateListFile)
 
-	var0.ALL = false
-	var0.HUMap = {}
+	var0_0.ALL = false
+	var0_0.HUMap = {}
 
-	for iter0, iter1 in pairs(var0) do
-		if iter1 == "_ALL_" then
-			var0.ALL = true
+	for iter0_28, iter1_28 in pairs(var0_28) do
+		if iter1_28 == "_ALL_" then
+			var0_0.ALL = true
 
-			for iter2, iter3 in pairs(var0.FileMap) do
-				for iter4, iter5 in pairs(iter3) do
-					var0.HUMap[iter5.LuaPath] = iter5.SysPath
+			for iter2_28, iter3_28 in pairs(var0_0.FileMap) do
+				for iter4_28, iter5_28 in pairs(iter3_28) do
+					var0_0.HUMap[iter5_28.LuaPath] = iter5_28.SysPath
 				end
 			end
 
 			return
 		end
 
-		if var0.FileMap[iter1] then
-			for iter6, iter7 in pairs(var0.FileMap[iter1]) do
-				var0.HUMap[iter7.LuaPath] = iter7.SysPath
+		if var0_0.FileMap[iter1_28] then
+			for iter6_28, iter7_28 in pairs(var0_0.FileMap[iter1_28]) do
+				var0_0.HUMap[iter7_28.LuaPath] = iter7_28.SysPath
 			end
 		else
-			var0.FailNotify("HotUpdate can't not find " .. iter1)
+			var0_0.FailNotify("HotUpdate can't not find " .. iter1_28)
 		end
 	end
 end
 
-function var0.ErrorHandle(arg0)
-	var0.FailNotify("HotUpdate Error\n" .. tostring(arg0))
+function var0_0.ErrorHandle(arg0_29)
+	var0_0.FailNotify("HotUpdate Error\n" .. tostring(arg0_29))
 
-	var0.ErrorHappen = true
+	var0_0.ErrorHappen = true
 end
 
-function var0.BuildNewCode(arg0, arg1)
-	io.input(arg0)
+function var0_0.BuildNewCode(arg0_30, arg1_30)
+	io.input(arg0_30)
 
-	local var0 = io.read("*all")
+	local var0_30 = io.read("*all")
 
-	if var0.ALL and var0.OldCode[arg0] == nil then
-		var0.OldCode[arg0] = var0
+	if var0_0.ALL and var0_0.OldCode[arg0_30] == nil then
+		var0_0.OldCode[arg0_30] = var0_30
 
 		io.input():close()
 
 		return
 	end
 
-	if var0.OldCode[arg0] == var0 then
+	if var0_0.OldCode[arg0_30] == var0_30 then
 		io.input():close()
 
 		return false
 	end
 
 	io.input():close()
-	io.input(arg0)
+	io.input(arg0_30)
 
-	local var1 = ("--[[" .. arg1 .. "]] ") .. var0
+	local var1_30 = ("--[[" .. arg1_30 .. "]] ") .. var0_30
 
 	io.input():close()
 
-	local var2 = loadstring(var1)
+	local var2_30 = loadstring(var1_30)
 
-	if not var2 then
-		var0.FailNotify(arg0 .. " has syntax error.")
+	if not var2_30 then
+		var0_0.FailNotify(arg0_30 .. " has syntax error.")
 		collectgarbage("collect")
 
 		return false
 	else
-		var0.FakeENV = var0.FakeT()
-		var0.MetaMap = {}
-		var0.RequireMap = {}
+		var0_0.FakeENV = var0_0.FakeT()
+		var0_0.MetaMap = {}
+		var0_0.RequireMap = {}
 
-		setfenv(var2, var0.FakeENV)
+		setfenv(var2_30, var0_0.FakeENV)
 
-		local var3
+		local var3_30
 
-		var0.ErrorHappen = false
+		var0_0.ErrorHappen = false
 
 		xpcall(function()
-			var3 = var2()
-		end, var0.ErrorHandle)
+			var3_30 = var2_30()
+		end, var0_0.ErrorHandle)
 
-		if not var0.ErrorHappen then
-			var0.OldCode[arg0] = var0
+		if not var0_0.ErrorHappen then
+			var0_0.OldCode[arg0_30] = var0_30
 
-			return true, var3
+			return true, var3_30
 		else
 			collectgarbage("collect")
 
@@ -298,307 +298,307 @@ function var0.BuildNewCode(arg0, arg1)
 	end
 end
 
-function var0.Travel_G()
-	local var0 = {
-		[var0] = true
+function var0_0.Travel_G()
+	local var0_32 = {
+		[var0_0] = true
 	}
 
-	local function var1(arg0)
-		if type(arg0) ~= "function" and type(arg0) ~= "table" or var0[arg0] or var0.Protection[arg0] then
+	local function var1_32(arg0_33)
+		if type(arg0_33) ~= "function" and type(arg0_33) ~= "table" or var0_32[arg0_33] or var0_0.Protection[arg0_33] then
 			return
 		end
 
-		var0[arg0] = true
+		var0_32[arg0_33] = true
 
-		if type(arg0) == "function" then
-			for iter0 = 1, math.huge do
-				local var0, var1 = debug.getupvalue(arg0, iter0)
+		if type(arg0_33) == "function" then
+			for iter0_33 = 1, math.huge do
+				local var0_33, var1_33 = debug.getupvalue(arg0_33, iter0_33)
 
-				if not var0 then
+				if not var0_33 then
 					break
 				end
 
-				if type(var1) == "function" then
-					for iter1, iter2 in ipairs(var0.ChangedFuncList) do
-						if var1 == iter2[1] then
-							debug.setupvalue(arg0, iter0, iter2[2])
+				if type(var1_33) == "function" then
+					for iter1_33, iter2_33 in ipairs(var0_0.ChangedFuncList) do
+						if var1_33 == iter2_33[1] then
+							debug.setupvalue(arg0_33, iter0_33, iter2_33[2])
 						end
 					end
 				end
 
-				var1(var1)
+				var1_32(var1_33)
 			end
-		elseif type(arg0) == "table" then
-			var1(debug.getmetatable(arg0))
+		elseif type(arg0_33) == "table" then
+			var1_32(debug.getmetatable(arg0_33))
 
-			local var2 = {}
+			local var2_33 = {}
 
-			for iter3, iter4 in pairs(arg0) do
-				var1(iter3)
-				var1(iter4)
+			for iter3_33, iter4_33 in pairs(arg0_33) do
+				var1_32(iter3_33)
+				var1_32(iter4_33)
 
-				if type(iter4) == "function" then
-					for iter5, iter6 in ipairs(var0.ChangedFuncList) do
-						if iter4 == iter6[1] then
-							arg0[iter3] = iter6[2]
+				if type(iter4_33) == "function" then
+					for iter5_33, iter6_33 in ipairs(var0_0.ChangedFuncList) do
+						if iter4_33 == iter6_33[1] then
+							arg0_33[iter3_33] = iter6_33[2]
 						end
 					end
 				end
 
-				if type(iter3) == "function" then
-					for iter7, iter8 in ipairs(var0.ChangedFuncList) do
-						if iter3 == iter8[1] then
-							var2[#var2 + 1] = iter7
+				if type(iter3_33) == "function" then
+					for iter7_33, iter8_33 in ipairs(var0_0.ChangedFuncList) do
+						if iter3_33 == iter8_33[1] then
+							var2_33[#var2_33 + 1] = iter7_33
 						end
 					end
 				end
 			end
 
-			for iter9, iter10 in ipairs(var2) do
-				local var3 = var0.ChangedFuncList[iter10]
+			for iter9_33, iter10_33 in ipairs(var2_33) do
+				local var3_33 = var0_0.ChangedFuncList[iter10_33]
 
-				arg0[var3[2]] = arg0[var3[1]]
-				arg0[var3[1]] = nil
+				arg0_33[var3_33[2]] = arg0_33[var3_33[1]]
+				arg0_33[var3_33[1]] = nil
 			end
 		end
 	end
 
-	var1(_G)
+	var1_32(_G)
 
-	local var2 = debug.getregistry()
+	local var2_32 = debug.getregistry()
 
-	for iter0, iter1 in ipairs(var0.ChangedFuncList) do
-		for iter2, iter3 in pairs(var2) do
-			if iter3 == iter1[1] then
-				var2[iter2] = iter1[2]
+	for iter0_32, iter1_32 in ipairs(var0_0.ChangedFuncList) do
+		for iter2_32, iter3_32 in pairs(var2_32) do
+			if iter3_32 == iter1_32[1] then
+				var2_32[iter2_32] = iter1_32[2]
 			end
 		end
 	end
 
-	for iter4, iter5 in ipairs(var0.ChangedFuncList) do
-		if iter5[3] == "HUDebug" then
-			iter5[4]:HUDebug()
+	for iter4_32, iter5_32 in ipairs(var0_0.ChangedFuncList) do
+		if iter5_32[3] == "HUDebug" then
+			iter5_32[4]:HUDebug()
 		end
 	end
 end
 
-function var0.ReplaceOld(arg0, arg1, arg2, arg3, arg4)
-	if type(arg0) == type(arg1) then
-		if type(arg1) == "table" then
-			var0.UpdateAllFunction(arg0, arg1, arg2, arg3, "")
-		elseif type(arg1) == "function" then
-			var0.UpdateOneFunction(arg0, arg1, arg2, nil, arg3, "")
+function var0_0.ReplaceOld(arg0_34, arg1_34, arg2_34, arg3_34, arg4_34)
+	if type(arg0_34) == type(arg1_34) then
+		if type(arg1_34) == "table" then
+			var0_0.UpdateAllFunction(arg0_34, arg1_34, arg2_34, arg3_34, "")
+		elseif type(arg1_34) == "function" then
+			var0_0.UpdateOneFunction(arg0_34, arg1_34, arg2_34, nil, arg3_34, "")
 		end
 	end
 end
 
-function var0.HotUpdateCode(arg0, arg1)
-	local var0 = package.loaded[arg0]
+function var0_0.HotUpdateCode(arg0_35, arg1_35)
+	local var0_35 = package.loaded[arg0_35]
 
-	if var0 ~= nil then
-		var0.VisitedSig = {}
-		var0.ChangedFuncList = {}
+	if var0_35 ~= nil then
+		var0_0.VisitedSig = {}
+		var0_0.ChangedFuncList = {}
 
-		local var1, var2 = var0.BuildNewCode(arg1, arg0)
+		local var1_35, var2_35 = var0_0.BuildNewCode(arg1_35, arg0_35)
 
-		if var1 then
-			var0.NotifyFunc("update module " .. arg0)
-			var0.ReplaceOld(var0, var2, arg0, "Main", "")
+		if var1_35 then
+			var0_0.NotifyFunc("update module " .. arg0_35)
+			var0_0.ReplaceOld(var0_35, var2_35, arg0_35, "Main", "")
 
-			for iter0, iter1 in pairs(var0.RequireMap) do
-				local var3 = package.loaded[iter0]
+			for iter0_35, iter1_35 in pairs(var0_0.RequireMap) do
+				local var3_35 = package.loaded[iter0_35]
 
-				var0.ReplaceOld(var3, iter1, iter0, "Main_require", "")
+				var0_0.ReplaceOld(var3_35, iter1_35, iter0_35, "Main_require", "")
 			end
 
-			setmetatable(var0.FakeENV, nil)
-			var0.UpdateAllFunction(var0.ENV, var0.FakeENV, " ENV ", "Main", "")
+			setmetatable(var0_0.FakeENV, nil)
+			var0_0.UpdateAllFunction(var0_0.ENV, var0_0.FakeENV, " ENV ", "Main", "")
 
-			if #var0.ChangedFuncList > 0 then
-				var0.Travel_G()
+			if #var0_0.ChangedFuncList > 0 then
+				var0_0.Travel_G()
 			end
 
 			collectgarbage("collect")
 		end
-	elseif var0.OldCode[arg1] == nil then
-		io.input(arg1)
+	elseif var0_0.OldCode[arg1_35] == nil then
+		io.input(arg1_35)
 
-		var0.OldCode[arg1] = io.read("*all")
+		var0_0.OldCode[arg1_35] = io.read("*all")
 
 		io.input():close()
 	end
 end
 
-function var0.ResetENV(arg0, arg1, arg2, arg3)
-	local var0 = {}
+function var0_0.ResetENV(arg0_36, arg1_36, arg2_36, arg3_36)
+	local var0_36 = {}
 
-	local function var1(arg0, arg1)
-		if not arg0 or var0[arg0] then
+	local function var1_36(arg0_37, arg1_37)
+		if not arg0_37 or var0_36[arg0_37] then
 			return
 		end
 
-		var0[arg0] = true
+		var0_36[arg0_37] = true
 
-		if type(arg0) == "function" then
-			var0.DebugNofity(arg3 .. "HU.ResetENV", arg1, "  from:" .. arg2)
+		if type(arg0_37) == "function" then
+			var0_0.DebugNofity(arg3_36 .. "HU.ResetENV", arg1_37, "  from:" .. arg2_36)
 			xpcall(function()
-				setfenv(arg0, var0.ENV)
-			end, var0.FailNotify)
-		elseif type(arg0) == "table" then
-			var0.DebugNofity(arg3 .. "HU.ResetENV", arg1, "  from:" .. arg2)
+				setfenv(arg0_37, var0_0.ENV)
+			end, var0_0.FailNotify)
+		elseif type(arg0_37) == "table" then
+			var0_0.DebugNofity(arg3_36 .. "HU.ResetENV", arg1_37, "  from:" .. arg2_36)
 
-			for iter0, iter1 in pairs(arg0) do
-				var1(iter0, tostring(iter0) .. "__key", " HU.ResetENV ", arg3 .. "    ")
-				var1(iter1, tostring(iter0), " HU.ResetENV ", arg3 .. "    ")
+			for iter0_37, iter1_37 in pairs(arg0_37) do
+				var1_36(iter0_37, tostring(iter0_37) .. "__key", " HU.ResetENV ", arg3_36 .. "    ")
+				var1_36(iter1_37, tostring(iter0_37), " HU.ResetENV ", arg3_36 .. "    ")
 			end
 		end
 	end
 
-	var1(arg0, arg1)
+	var1_36(arg0_36, arg1_36)
 end
 
-function var0.UpdateUpvalue(arg0, arg1, arg2, arg3, arg4)
-	var0.DebugNofity(arg4 .. "HU.UpdateUpvalue", arg2, "  from:" .. arg3)
+function var0_0.UpdateUpvalue(arg0_39, arg1_39, arg2_39, arg3_39, arg4_39)
+	var0_0.DebugNofity(arg4_39 .. "HU.UpdateUpvalue", arg2_39, "  from:" .. arg3_39)
 
-	local var0 = {}
-	local var1 = {}
+	local var0_39 = {}
+	local var1_39 = {}
 
-	for iter0 = 1, math.huge do
-		local var2, var3 = debug.getupvalue(arg0, iter0)
+	for iter0_39 = 1, math.huge do
+		local var2_39, var3_39 = debug.getupvalue(arg0_39, iter0_39)
 
-		if not var2 then
+		if not var2_39 then
 			break
 		end
 
-		var0[var2] = var3
-		var1[var2] = true
+		var0_39[var2_39] = var3_39
+		var1_39[var2_39] = true
 	end
 
-	for iter1 = 1, math.huge do
-		local var4, var5 = debug.getupvalue(arg1, iter1)
+	for iter1_39 = 1, math.huge do
+		local var4_39, var5_39 = debug.getupvalue(arg1_39, iter1_39)
 
-		if not var4 then
+		if not var4_39 then
 			break
 		end
 
-		if var1[var4] then
-			local var6 = var0[var4]
+		if var1_39[var4_39] then
+			local var6_39 = var0_39[var4_39]
 
-			if type(var6) ~= type(var5) then
-				debug.setupvalue(arg1, iter1, var6)
-			elseif type(var6) == "function" then
-				var0.UpdateOneFunction(var6, var5, var4, nil, "HU.UpdateUpvalue", arg4 .. "    ")
-			elseif type(var6) == "table" then
-				var0.UpdateAllFunction(var6, var5, var4, "HU.UpdateUpvalue", arg4 .. "    ")
-				debug.setupvalue(arg1, iter1, var6)
+			if type(var6_39) ~= type(var5_39) then
+				debug.setupvalue(arg1_39, iter1_39, var6_39)
+			elseif type(var6_39) == "function" then
+				var0_0.UpdateOneFunction(var6_39, var5_39, var4_39, nil, "HU.UpdateUpvalue", arg4_39 .. "    ")
+			elseif type(var6_39) == "table" then
+				var0_0.UpdateAllFunction(var6_39, var5_39, var4_39, "HU.UpdateUpvalue", arg4_39 .. "    ")
+				debug.setupvalue(arg1_39, iter1_39, var6_39)
 			else
-				debug.setupvalue(arg1, iter1, var6)
+				debug.setupvalue(arg1_39, iter1_39, var6_39)
 			end
 		else
-			var0.ResetENV(var5, var4, "HU.UpdateUpvalue", arg4 .. "    ")
+			var0_0.ResetENV(var5_39, var4_39, "HU.UpdateUpvalue", arg4_39 .. "    ")
 		end
 	end
 end
 
-function var0.UpdateOneFunction(arg0, arg1, arg2, arg3, arg4, arg5)
-	if var0.Protection[arg0] or var0.Protection[arg1] then
+function var0_0.UpdateOneFunction(arg0_40, arg1_40, arg2_40, arg3_40, arg4_40, arg5_40)
+	if var0_0.Protection[arg0_40] or var0_0.Protection[arg1_40] then
 		return
 	end
 
-	if arg0 == arg1 then
+	if arg0_40 == arg1_40 then
 		return
 	end
 
-	local var0 = tostring(arg0) .. tostring(arg1)
+	local var0_40 = tostring(arg0_40) .. tostring(arg1_40)
 
-	if var0.VisitedSig[var0] then
+	if var0_0.VisitedSig[var0_40] then
 		return
 	end
 
-	var0.VisitedSig[var0] = true
+	var0_0.VisitedSig[var0_40] = true
 
-	var0.DebugNofity(arg5 .. "HU.UpdateOneFunction " .. arg2 .. "  from:" .. arg4)
+	var0_0.DebugNofity(arg5_40 .. "HU.UpdateOneFunction " .. arg2_40 .. "  from:" .. arg4_40)
 
-	if pcall(debug.setfenv, arg1, getfenv(arg0)) then
-		var0.UpdateUpvalue(arg0, arg1, arg2, "HU.UpdateOneFunction", arg5 .. "    ")
+	if pcall(debug.setfenv, arg1_40, getfenv(arg0_40)) then
+		var0_0.UpdateUpvalue(arg0_40, arg1_40, arg2_40, "HU.UpdateOneFunction", arg5_40 .. "    ")
 
-		var0.ChangedFuncList[#var0.ChangedFuncList + 1] = {
-			arg0,
-			arg1,
-			arg2,
-			arg3
+		var0_0.ChangedFuncList[#var0_0.ChangedFuncList + 1] = {
+			arg0_40,
+			arg1_40,
+			arg2_40,
+			arg3_40
 		}
 	end
 end
 
-function var0.UpdateAllFunction(arg0, arg1, arg2, arg3, arg4)
-	if var0.Protection[arg0] or var0.Protection[arg1] then
+function var0_0.UpdateAllFunction(arg0_41, arg1_41, arg2_41, arg3_41, arg4_41)
+	if var0_0.Protection[arg0_41] or var0_0.Protection[arg1_41] then
 		return
 	end
 
-	if arg0 == arg1 then
+	if arg0_41 == arg1_41 then
 		return
 	end
 
-	local var0 = tostring(arg0) .. tostring(arg1)
+	local var0_41 = tostring(arg0_41) .. tostring(arg1_41)
 
-	if var0.VisitedSig[var0] then
+	if var0_0.VisitedSig[var0_41] then
 		return
 	end
 
-	var0.VisitedSig[var0] = true
+	var0_0.VisitedSig[var0_41] = true
 
-	var0.DebugNofity(arg4 .. "HU.UpdateAllFunction " .. arg2 .. "  from:" .. arg3)
+	var0_0.DebugNofity(arg4_41 .. "HU.UpdateAllFunction " .. arg2_41 .. "  from:" .. arg3_41)
 
-	for iter0, iter1 in pairs(arg1) do
-		local var1 = arg0[iter0]
+	for iter0_41, iter1_41 in pairs(arg1_41) do
+		local var1_41 = arg0_41[iter0_41]
 
-		if type(iter1) == type(var1) then
-			if type(iter1) == "function" then
-				var0.UpdateOneFunction(var1, iter1, iter0, arg0, "HU.UpdateAllFunction", arg4 .. "    ")
-			elseif type(iter1) == "table" then
-				var0.UpdateAllFunction(var1, iter1, iter0, "HU.UpdateAllFunction", arg4 .. "    ")
+		if type(iter1_41) == type(var1_41) then
+			if type(iter1_41) == "function" then
+				var0_0.UpdateOneFunction(var1_41, iter1_41, iter0_41, arg0_41, "HU.UpdateAllFunction", arg4_41 .. "    ")
+			elseif type(iter1_41) == "table" then
+				var0_0.UpdateAllFunction(var1_41, iter1_41, iter0_41, "HU.UpdateAllFunction", arg4_41 .. "    ")
 			end
-		elseif var1 == nil and type(iter1) == "function" and pcall(setfenv, iter1, var0.ENV) then
-			arg0[iter0] = iter1
+		elseif var1_41 == nil and type(iter1_41) == "function" and pcall(setfenv, iter1_41, var0_0.ENV) then
+			arg0_41[iter0_41] = iter1_41
 		end
 	end
 
-	local var2 = debug.getmetatable(arg0)
-	local var3 = var0.MetaMap[arg1]
+	local var2_41 = debug.getmetatable(arg0_41)
+	local var3_41 = var0_0.MetaMap[arg1_41]
 
-	if type(var2) == "table" and type(var3) == "table" then
-		var0.UpdateAllFunction(var2, var3, arg2 .. "'s Meta", "HU.UpdateAllFunction", arg4 .. "    ")
+	if type(var2_41) == "table" and type(var3_41) == "table" then
+		var0_0.UpdateAllFunction(var2_41, var3_41, arg2_41 .. "'s Meta", "HU.UpdateAllFunction", arg4_41 .. "    ")
 	end
 end
 
-function var0.Init(arg0, arg1, arg2, arg3)
-	var0.UpdateListFile = arg0
-	var0.HUMap = {}
-	var0.FileMap = {}
-	var0.NotifyFunc = arg2
-	var0.OldCode = {}
-	var0.ChangedFuncList = {}
-	var0.VisitedSig = {}
-	var0.FakeENV = nil
-	var0.ENV = arg3 or _G
-	var0.LuaPathToSysPath = {}
+function var0_0.Init(arg0_42, arg1_42, arg2_42, arg3_42)
+	var0_0.UpdateListFile = arg0_42
+	var0_0.HUMap = {}
+	var0_0.FileMap = {}
+	var0_0.NotifyFunc = arg2_42
+	var0_0.OldCode = {}
+	var0_0.ChangedFuncList = {}
+	var0_0.VisitedSig = {}
+	var0_0.FakeENV = nil
+	var0_0.ENV = arg3_42 or _G
+	var0_0.LuaPathToSysPath = {}
 
-	var0.InitFileMap(arg1)
+	var0_0.InitFileMap(arg1_42)
 
-	var0.FakeT = var0.InitFakeTable()
+	var0_0.FakeT = var0_0.InitFakeTable()
 
-	var0.InitProtection()
+	var0_0.InitProtection()
 
-	var0.ALL = false
+	var0_0.ALL = false
 end
 
-function var0.Update()
-	var0.AddFileFromHUList()
+function var0_0.Update()
+	var0_0.AddFileFromHUList()
 
-	for iter0, iter1 in pairs(var0.HUMap) do
-		var0.HotUpdateCode(iter0, iter1)
+	for iter0_43, iter1_43 in pairs(var0_0.HUMap) do
+		var0_0.HotUpdateCode(iter0_43, iter1_43)
 	end
 end
 
-return var0
+return var0_0

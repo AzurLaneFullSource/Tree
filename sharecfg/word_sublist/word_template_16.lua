@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_16 = {}
+var0_0.word_template_16 = {}
 
-local var1 = var0.word_template_16
+local var1_0 = var0_0.word_template_16
 
 function temp()
-	var1.ロ = {
+	var1_0.ロ = {
 		ー = {
 			シ = {
 				ョ = {
@@ -23,7 +23,7 @@ end
 temp()
 
 function temp()
-	var1.わ = {
+	var1_0.わ = {
 		き = {
 			が = {
 				this = true
@@ -35,7 +35,7 @@ end
 temp()
 
 function temp()
-	var1.阿 = {
+	var1_0.阿 = {
 		片 = {
 			this = true
 		},
@@ -472,7 +472,7 @@ end
 temp()
 
 function temp()
-	var1.愛 = {
+	var1_0.愛 = {
 		液 = {
 			this = true,
 			橫 = {
@@ -532,7 +532,7 @@ end
 temp()
 
 function temp()
-	var1.慰 = {
+	var1_0.慰 = {
 		安 = {
 			["?"] = {
 				this = true
@@ -555,7 +555,7 @@ end
 temp()
 
 function temp()
-	var1.淫 = {
+	var1_0.淫 = {
 		this = {
 			this = true
 		},
@@ -1457,7 +1457,7 @@ end
 temp()
 
 function temp()
-	var1.隠 = {
+	var1_0.隠 = {
 		坊 = {
 			this = true
 		}

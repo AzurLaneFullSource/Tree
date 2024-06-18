@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_169 = {}
+var0_0.word_template_169 = {}
 
-local var1 = var0.word_template_169
+local var1_0 = var0_0.word_template_169
 
 function temp()
-	var1.咳 = {
+	var1_0.咳 = {
 		你 = {
 			妈 = {
 				的 = {
@@ -28,7 +28,7 @@ end
 temp()
 
 function temp()
-	var1.可 = {
+	var1_0.可 = {
 		查 = {
 			this = true
 		},
@@ -193,7 +193,7 @@ end
 temp()
 
 function temp()
-	var1.渴 = {
+	var1_0.渴 = {
 		望 = {
 			一 = {
 				夜 = {
@@ -209,7 +209,7 @@ end
 temp()
 
 function temp()
-	var1.克 = {
+	var1_0.克 = {
 		萊 = {
 			恩 = {
 				this = true
@@ -307,7 +307,7 @@ end
 temp()
 
 function temp()
-	var1.刻 = {
+	var1_0.刻 = {
 		章 = {
 			this = true
 		}
@@ -317,7 +317,7 @@ end
 temp()
 
 function temp()
-	var1.客 = {
+	var1_0.客 = {
 		服 = {
 			this = true,
 			q = {
@@ -354,7 +354,7 @@ end
 temp()
 
 function temp()
-	var1.课 = {
+	var1_0.课 = {
 		长 = {
 			岛 = {
 				耕 = {

@@ -1,41 +1,41 @@
-﻿local var0 = class("NewSubRoutineResultGradePage", import("..NewBattleResultGradePage"))
+﻿local var0_0 = class("NewSubRoutineResultGradePage", import("..NewBattleResultGradePage"))
 
-function var0.GetGetObjectives(arg0)
-	local var0 = arg0.contextData
-	local var1 = {}
-	local var2 = var0.statistics.subRunResult
-	local var3 = i18n("battle_result_base_score")
+function var0_0.GetGetObjectives(arg0_1)
+	local var0_1 = arg0_1.contextData
+	local var1_1 = {}
+	local var2_1 = var0_1.statistics.subRunResult
+	local var3_1 = i18n("battle_result_base_score")
 
-	table.insert(var1, {
+	table.insert(var1_1, {
 		icon = "check_mark",
-		text = setColorStr(var3, "#FFFFFFFF"),
-		value = setColorStr("+" .. var2.basePoint, COLOR_BLUE)
+		text = setColorStr(var3_1, "#FFFFFFFF"),
+		value = setColorStr("+" .. var2_1.basePoint, COLOR_BLUE)
 	})
 
-	local var4 = i18n("battle_result_dead_score", var2.deadCount)
+	local var4_1 = i18n("battle_result_dead_score", var2_1.deadCount)
 
-	table.insert(var1, {
+	table.insert(var1_1, {
 		icon = "check_mark",
-		text = setColorStr(var4, "#FFFFFFFF"),
-		value = setColorStr("-" .. var2.losePoint, COLOR_BLUE)
+		text = setColorStr(var4_1, "#FFFFFFFF"),
+		value = setColorStr("-" .. var2_1.losePoint, COLOR_BLUE)
 	})
 
-	local var5 = i18n("battle_result_score", var2.score)
+	local var5_1 = i18n("battle_result_score", var2_1.score)
 
-	table.insert(var1, {
+	table.insert(var1_1, {
 		icon = "check_mark",
-		text = setColorStr(var5, "#FFFFFFFF"),
-		value = setColorStr("+" .. var2.point, COLOR_BLUE)
+		text = setColorStr(var5_1, "#FFFFFFFF"),
+		value = setColorStr("+" .. var2_1.point, COLOR_BLUE)
 	})
 
-	local var6 = i18n("battle_result_score_total")
+	local var6_1 = i18n("battle_result_score_total")
 
-	table.insert(var1, {
-		text = setColorStr(var6, "#FFFFFFFF"),
-		value = setColorStr(var2.total, COLOR_YELLOW)
+	table.insert(var1_1, {
+		text = setColorStr(var6_1, "#FFFFFFFF"),
+		value = setColorStr(var2_1.total, COLOR_YELLOW)
 	})
 
-	return var1
+	return var1_1
 end
 
-return var0
+return var0_0

@@ -1,36 +1,36 @@
-﻿local var0 = class("CombatLoadMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("CombatLoadMediator", import("..base.ContextMediator"))
 
-var0.FINISH = "CombatLoadMediator:FINISH"
+var0_0.FINISH = "CombatLoadMediator:FINISH"
 
-function var0.register(arg0)
-	arg0:bind(var0.FINISH, function(arg0, arg1)
-		arg0.contextData.loadObs = arg1
-		arg0.contextData.prePause = arg0._prePauseBattle
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.FINISH, function(arg0_2, arg1_2)
+		arg0_1.contextData.loadObs = arg1_2
+		arg0_1.contextData.prePause = arg0_1._prePauseBattle
 
-		arg0:sendNotification(GAME.CHANGE_SCENE, SCENE.BATTLE, arg0.contextData)
+		arg0_1:sendNotification(GAME.CHANGE_SCENE, SCENE.BATTLE, arg0_1.contextData)
 	end)
 end
 
-function var0.remove(arg0)
+function var0_0.remove(arg0_3)
 	return
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_4)
 	return {
 		GAME.PAUSE_BATTLE,
 		GAME.STOP_BATTLE_LOADING
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_5, arg1_5)
+	local var0_5 = arg1_5:getName()
+	local var1_5 = arg1_5:getBody()
 
-	if var0 == GAME.PAUSE_BATTLE then
-		arg0._prePauseBattle = true
-	elseif var0 == GAME.STOP_BATTLE_LOADING then
+	if var0_5 == GAME.PAUSE_BATTLE then
+		arg0_5._prePauseBattle = true
+	elseif var0_5 == GAME.STOP_BATTLE_LOADING then
 		ys.Battle.BattleResourceManager.GetInstance():Clear()
 	end
 end
 
-return var0
+return var0_0

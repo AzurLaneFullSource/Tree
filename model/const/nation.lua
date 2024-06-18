@@ -1,34 +1,34 @@
-﻿local var0 = class("Nation")
+﻿local var0_0 = class("Nation")
 
-var0.CM = 0
-var0.US = 1
-var0.EN = 2
-var0.JP = 3
-var0.DE = 4
-var0.CN = 5
-var0.ITA = 6
-var0.SN = 7
-var0.FF = 8
-var0.MNF = 9
-var0.FR = 10
-var0.MOT = 96
-var0.META = 97
-var0.BURIN = 98
-var0.SIRE = 99
-var0.LINK = 100
-var0.IDOL_LINK = 107
+var0_0.CM = 0
+var0_0.US = 1
+var0_0.EN = 2
+var0_0.JP = 3
+var0_0.DE = 4
+var0_0.CN = 5
+var0_0.ITA = 6
+var0_0.SN = 7
+var0_0.FF = 8
+var0_0.MNF = 9
+var0_0.FR = 10
+var0_0.MOT = 96
+var0_0.META = 97
+var0_0.BURIN = 98
+var0_0.SIRE = 99
+var0_0.LINK = 100
+var0_0.IDOL_LINK = 107
 
-function var0.IsLinkType(arg0)
-	return arg0 > var0.LINK
+function var0_0.IsLinkType(arg0_1)
+	return arg0_1 > var0_0.LINK
 end
 
-function var0.IsMeta(arg0)
-	return arg0 == var0.META
+function var0_0.IsMeta(arg0_2)
+	return arg0_2 == var0_0.META
 end
 
-function var0.Nation2Print(arg0)
-	if not var0.prints then
-		var0.prints = {
+function var0_0.Nation2Print(arg0_3)
+	if not var0_0.prints then
+		var0_0.prints = {
 			[0] = "cm",
 			"us",
 			"en",
@@ -57,12 +57,12 @@ function var0.Nation2Print(arg0)
 		}
 	end
 
-	return var0.prints[arg0]
+	return var0_0.prints[arg0_3]
 end
 
-function var0.Nation2Side(arg0)
-	if not var0.side then
-		var0.side = {
+function var0_0.Nation2Side(arg0_4)
+	if not var0_0.side then
+		var0_0.side = {
 			[0] = "West",
 			"West",
 			"West",
@@ -90,12 +90,12 @@ function var0.Nation2Side(arg0)
 		}
 	end
 
-	return var0.side[arg0]
+	return var0_0.side[arg0_4]
 end
 
-function var0.Nation2BG(arg0)
-	if not var0.bg then
-		var0.bg = {
+function var0_0.Nation2BG(arg0_5)
+	if not var0_0.bg then
+		var0_0.bg = {
 			[0] = "bg/bg_church",
 			"bg/bg_church",
 			"bg/bg_church",
@@ -123,12 +123,12 @@ function var0.Nation2BG(arg0)
 		}
 	end
 
-	return var0.bg[arg0]
+	return var0_0.bg[arg0_5]
 end
 
-function var0.Nation2Name(arg0)
-	if not var0.nationName then
-		var0.nationName = {
+function var0_0.Nation2Name(arg0_6)
+	if not var0_0.nationName then
+		var0_0.nationName = {
 			[0] = i18n("word_shipNation_other"),
 			i18n("word_shipNation_baiYing"),
 			i18n("word_shipNation_huangJia"),
@@ -156,12 +156,12 @@ function var0.Nation2Name(arg0)
 		}
 	end
 
-	return var0.nationName[arg0]
+	return var0_0.nationName[arg0_6]
 end
 
-function var0.Nation2facionName(arg0)
-	if not var0.facionName then
-		var0.facionName = {
+function var0_0.Nation2facionName(arg0_7)
+	if not var0_0.facionName then
+		var0_0.facionName = {
 			[0] = i18n("guild_faction_unknown"),
 			i18n("guild_faction_blhx"),
 			i18n("guild_faction_blhx"),
@@ -189,7 +189,7 @@ function var0.Nation2facionName(arg0)
 		}
 	end
 
-	return var0.facionName[arg0]
+	return var0_0.facionName[arg0_7]
 end
 
-return var0
+return var0_0

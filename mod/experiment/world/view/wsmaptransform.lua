@@ -1,65 +1,65 @@
-﻿local var0 = class("WSMapTransform", import(".WSMapObject"))
+﻿local var0_0 = class("WSMapTransform", import(".WSMapObject"))
 
-var0.Fields = {
+var0_0.Fields = {
 	transform = "userdata",
 	isMoving = "boolean",
 	modelOrder = "number"
 }
 
-function var0.Dispose(arg0)
-	arg0:ClearModelOrder()
-	arg0:Clear()
+function var0_0.Dispose(arg0_1)
+	arg0_1:ClearModelOrder()
+	arg0_1:Clear()
 end
 
-function var0.SetModelOrder(arg0, arg1, arg2)
-	assert(arg0.transform)
+function var0_0.SetModelOrder(arg0_2, arg1_2, arg2_2)
+	assert(arg0_2.transform)
 
-	if not GetComponent(arg0.transform, typeof(Canvas)) then
-		setCanvasOverrideSorting(arg0.transform, true)
+	if not GetComponent(arg0_2.transform, typeof(Canvas)) then
+		setCanvasOverrideSorting(arg0_2.transform, true)
 	end
 
-	local var0 = 0
+	local var0_2 = 0
 
-	if arg0.modelOrder then
-		var0 = var0 - arg0.modelOrder
+	if arg0_2.modelOrder then
+		var0_2 = var0_2 - arg0_2.modelOrder
 	end
 
-	arg0.modelOrder = arg1 + defaultValue(arg2, 0) * 10
+	arg0_2.modelOrder = arg1_2 + defaultValue(arg2_2, 0) * 10
 
-	local var1 = var0 + arg0.modelOrder
+	local var1_2 = var0_2 + arg0_2.modelOrder
 
-	if var1 ~= 0 then
-		WorldConst.ArrayEffectOrder(arg0.transform, var1)
-	end
-end
-
-function var0.ClearModelOrder(arg0)
-	assert(arg0.transform)
-	arg0:UnloadModel()
-
-	if arg0.modelOrder then
-		WorldConst.ArrayEffectOrder(arg0.transform, -arg0.modelOrder)
-
-		arg0.modelOrder = nil
+	if var1_2 ~= 0 then
+		WorldConst.ArrayEffectOrder(arg0_2.transform, var1_2)
 	end
 end
 
-function var0.LoadModel(arg0, arg1, arg2, arg3, arg4, arg5)
-	var0.super.LoadModel(arg0, arg1, arg2, arg3, arg4, function()
-		if arg0.modelOrder then
-			WorldConst.ArrayEffectOrder(arg0.model, arg0.modelOrder)
+function var0_0.ClearModelOrder(arg0_3)
+	assert(arg0_3.transform)
+	arg0_3:UnloadModel()
+
+	if arg0_3.modelOrder then
+		WorldConst.ArrayEffectOrder(arg0_3.transform, -arg0_3.modelOrder)
+
+		arg0_3.modelOrder = nil
+	end
+end
+
+function var0_0.LoadModel(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, arg5_4)
+	var0_0.super.LoadModel(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, function()
+		if arg0_4.modelOrder then
+			WorldConst.ArrayEffectOrder(arg0_4.model, arg0_4.modelOrder)
 		end
 
-		return existCall(arg5)
+		return existCall(arg5_4)
 	end)
 end
 
-function var0.UnloadModel(arg0)
-	if arg0.modelOrder and arg0.model then
-		WorldConst.ArrayEffectOrder(arg0.model, -arg0.modelOrder)
+function var0_0.UnloadModel(arg0_6)
+	if arg0_6.modelOrder and arg0_6.model then
+		WorldConst.ArrayEffectOrder(arg0_6.model, -arg0_6.modelOrder)
 	end
 
-	var0.super.UnloadModel(arg0)
+	var0_0.super.UnloadModel(arg0_6)
 end
 
-return var0
+return var0_0

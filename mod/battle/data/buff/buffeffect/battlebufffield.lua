@@ -1,45 +1,45 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("BattleBuffField", var0.Battle.BattleBuffEffect)
+local var0_0 = ys
+local var1_0 = class("BattleBuffField", var0_0.Battle.BattleBuffEffect)
 
-var0.Battle.BattleBuffField = var1
-var1.__name = "BattleBuffField"
+var0_0.Battle.BattleBuffField = var1_0
+var1_0.__name = "BattleBuffField"
 
-local var2 = var0.Battle.BattleConst
+local var2_0 = var0_0.Battle.BattleConst
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	arg0._level = arg2:GetLv()
-	arg0._caster = arg2:GetCaster()
+function var1_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	arg0_2._level = arg2_2:GetLv()
+	arg0_2._caster = arg2_2:GetCaster()
 
-	local var0 = arg0._tempData.arg_list
+	local var0_2 = arg0_2._tempData.arg_list
 
-	arg0._auraBuffID = var0.buff_id
-	arg0._target = var0.target
-	arg0._check_target = var0.check_target or "TargetNull"
-	arg0._isUpdateAura = var0.FAura
+	arg0_2._auraBuffID = var0_2.buff_id
+	arg0_2._target = var0_2.target
+	arg0_2._check_target = var0_2.check_target or "TargetNull"
+	arg0_2._isUpdateAura = var0_2.FAura
 
-	local var1 = true
-	local var2 = type(arg0._target)
+	local var1_2 = true
+	local var2_2 = type(arg0_2._target)
 
-	if var2 == "string" and arg0._target == "TargetAllHarm" or var2 == "table" and table.contains(arg0._target, "TargetAllHarm") or var2 == "string" and arg0._target == "TargetAllFoe" or var2 == "table" and table.contains(arg0._target, "TargetAllFoe") then
-		var1 = false
+	if var2_2 == "string" and arg0_2._target == "TargetAllHarm" or var2_2 == "table" and table.contains(arg0_2._target, "TargetAllHarm") or var2_2 == "string" and arg0_2._target == "TargetAllFoe" or var2_2 == "table" and table.contains(arg0_2._target, "TargetAllFoe") then
+		var1_2 = false
 	end
 
-	local function var3(arg0)
-		for iter0, iter1 in ipairs(arg0) do
-			if iter1.Active then
-				local var0 = arg0:getTargetList(arg1, arg0._target, arg0._tempData.arg_list)
+	local function var3_2(arg0_3)
+		for iter0_3, iter1_3 in ipairs(arg0_3) do
+			if iter1_3.Active then
+				local var0_3 = arg0_2:getTargetList(arg1_2, arg0_2._target, arg0_2._tempData.arg_list)
 
-				for iter2, iter3 in ipairs(var0) do
-					if iter3:GetUniqueID() == iter1.UID then
-						local var1 = var0.Battle.BattleBuffUnit.New(arg0._auraBuffID, arg0._level, arg0._caster)
+				for iter2_3, iter3_3 in ipairs(var0_3) do
+					if iter3_3:GetUniqueID() == iter1_3.UID then
+						local var1_3 = var0_0.Battle.BattleBuffUnit.New(arg0_2._auraBuffID, arg0_2._level, arg0_2._caster)
 
-						iter3:AddBuff(var1)
+						iter3_3:AddBuff(var1_3)
 
 						break
 					end
@@ -48,13 +48,13 @@ function var1.SetArgs(arg0, arg1, arg2)
 		end
 	end
 
-	local function var4(arg0)
-		if arg0.Active then
-			local var0 = arg0:getTargetList(arg1, arg0._target, arg0._tempData.arg_list)
+	local function var4_2(arg0_4)
+		if arg0_4.Active then
+			local var0_4 = arg0_2:getTargetList(arg1_2, arg0_2._target, arg0_2._tempData.arg_list)
 
-			for iter0, iter1 in ipairs(var0) do
-				if iter1:GetUniqueID() == arg0.UID then
-					iter1:RemoveBuff(arg0._auraBuffID)
+			for iter0_4, iter1_4 in ipairs(var0_4) do
+				if iter1_4:GetUniqueID() == arg0_4.UID then
+					iter1_4:RemoveBuff(arg0_2._auraBuffID)
 
 					break
 				end
@@ -62,21 +62,21 @@ function var1.SetArgs(arg0, arg1, arg2)
 		end
 	end
 
-	local var5 = arg0._isUpdateAura and var4 or nil
-	local var6 = arg0._isUpdateAura and true or false
-	local var7 = var0.Battle.BattleDataProxy.GetInstance()
-	local var8, var9, var10, var11 = var7:GetFieldBound()
-	local var12 = Vector3((var10 + var11) * 0.5, 0, (var8 + var9) * 0.5)
-	local var13 = math.abs(var11 - var10)
-	local var14 = math.abs(var8 - var9)
+	local var5_2 = arg0_2._isUpdateAura and var4_2 or nil
+	local var6_2 = arg0_2._isUpdateAura and true or false
+	local var7_2 = var0_0.Battle.BattleDataProxy.GetInstance()
+	local var8_2, var9_2, var10_2, var11_2 = var7_2:GetFieldBound()
+	local var12_2 = Vector3((var10_2 + var11_2) * 0.5, 0, (var8_2 + var9_2) * 0.5)
+	local var13_2 = math.abs(var11_2 - var10_2)
+	local var14_2 = math.abs(var8_2 - var9_2)
 
-	arg0._aura = var7:SpawnLastingCubeArea(var2.AOEField.SURFACE, arg1:GetIFF(), var12, var13, var14, 0, var3, var4, var1, nil, var5, var6)
+	arg0_2._aura = var7_2:SpawnLastingCubeArea(var2_0.AOEField.SURFACE, arg1_2:GetIFF(), var12_2, var13_2, var14_2, 0, var3_2, var4_2, var1_2, nil, var5_2, var6_2)
 end
 
-function var1.Clear(arg0)
-	arg0._aura:SetActiveFlag(false)
+function var1_0.Clear(arg0_5)
+	arg0_5._aura:SetActiveFlag(false)
 
-	arg0._aura = nil
+	arg0_5._aura = nil
 
-	var1.super.Clear(arg0)
+	var1_0.super.Clear(arg0_5)
 end

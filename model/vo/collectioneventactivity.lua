@@ -1,47 +1,47 @@
-﻿local var0 = class("CollectionEventActivity", import(".Activity"))
+﻿local var0_0 = class("CollectionEventActivity", import(".Activity"))
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0.collections = {}
+	arg0_1.collections = {}
 
-	for iter0, iter1 in ipairs(arg1.collection_list) do
-		local var0 = EventInfo.New(iter1)
+	for iter0_1, iter1_1 in ipairs(arg1_1.collection_list) do
+		local var0_1 = EventInfo.New(iter1_1)
 
-		var0:SetActivityId(arg0.id)
-		table.insert(arg0.collections, var0)
+		var0_1:SetActivityId(arg0_1.id)
+		table.insert(arg0_1.collections, var0_1)
 	end
 
-	local var1 = arg0:getConfig("config_data")
-	local var2 = arg0:getDayIndex()
+	local var1_1 = arg0_1:getConfig("config_data")
+	local var2_1 = arg0_1:getDayIndex()
 
-	print("collection==============================", var2)
+	print("collection==============================", var2_1)
 
-	if #arg0.collections == 0 and var2 > 0 and var2 <= #var1 then
-		local var3 = var1[var2]
+	if #arg0_1.collections == 0 and var2_1 > 0 and var2_1 <= #var1_1 then
+		local var3_1 = var1_1[var2_1]
 
-		if not table.contains(arg0.data1_list, var3) then
-			table.insert(arg0.collections, EventInfo.New({
+		if not table.contains(arg0_1.data1_list, var3_1) then
+			table.insert(arg0_1.collections, EventInfo.New({
 				finish_time = 0,
 				over_time = 0,
-				id = var3,
+				id = var3_1,
 				ship_id_list = {},
-				activity_id = arg0.id
+				activity_id = arg0_1.id
 			}))
 		end
 	end
 end
 
-function var0.getDayIndex(arg0)
-	local var0 = arg0.data1
-	local var1 = pg.TimeMgr.GetInstance()
-	local var2 = var1:GetServerTime()
+function var0_0.getDayIndex(arg0_2)
+	local var0_2 = arg0_2.data1
+	local var1_2 = pg.TimeMgr.GetInstance()
+	local var2_2 = var1_2:GetServerTime()
 
-	return var1:DiffDay(var0, var2) + 1
+	return var1_2:DiffDay(var0_2, var2_2) + 1
 end
 
-function var0.GetCollectionList(arg0)
-	return arg0.collections
+function var0_0.GetCollectionList(arg0_3)
+	return arg0_3.collections
 end
 
-return var0
+return var0_0

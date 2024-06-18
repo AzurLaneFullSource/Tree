@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_285 = {}
+var0_0.word_template_285 = {}
 
-local var1 = var0.word_template_285
+local var1_0 = var0_0.word_template_285
 
 function temp()
-	var1.推 = {
+	var1_0.推 = {
 		翻 = {
 			共 = {
 				产 = {
@@ -167,7 +167,7 @@ end
 temp()
 
 function temp()
-	var1.腿 = {
+	var1_0.腿 = {
 		张 = {
 			开 = {
 				this = true
@@ -179,7 +179,7 @@ end
 temp()
 
 function temp()
-	var1.褪 = {
+	var1_0.褪 = {
 		出 = {
 			this = true
 		},
@@ -195,7 +195,7 @@ end
 temp()
 
 function temp()
-	var1.吞 = {
+	var1_0.吞 = {
 		精 = {
 			this = true,
 			骚 = {
@@ -232,7 +232,7 @@ end
 temp()
 
 function temp()
-	var1.臀 = {
+	var1_0.臀 = {
 		部 = {
 			油 = {
 				压 = {
@@ -261,7 +261,7 @@ end
 temp()
 
 function temp()
-	var1.托 = {
+	var1_0.托 = {
 		福 = {
 			代 = {
 				考 = {
@@ -280,7 +280,7 @@ end
 temp()
 
 function temp()
-	var1.脫 = {
+	var1_0.脫 = {
 		內 = {
 			褲 = {
 				this = true

@@ -1,46 +1,46 @@
-﻿local var0 = class("BattleRewardRerformResultLayer", import(".BattleResultLayer"))
+﻿local var0_0 = class("BattleRewardRerformResultLayer", import(".BattleResultLayer"))
 
-function var0.didEnter(arg0)
-	local var0 = arg0.contextData.stageId
-	local var1 = pg.expedition_data_template[var0]
+function var0_0.didEnter(arg0_1)
+	local var0_1 = arg0_1.contextData.stageId
+	local var1_1 = pg.expedition_data_template[var0_1]
 
-	setText(arg0._levelText, var1.name)
+	setText(arg0_1._levelText, var1_1.name)
 
-	local var2 = rtf(arg0._grade)
+	local var2_1 = rtf(arg0_1._grade)
 
-	arg0._gradeUpperLeftPos = var2.localPosition
-	var2.localPosition = Vector3(0, 25, 0)
+	arg0_1._gradeUpperLeftPos = var2_1.localPosition
+	var2_1.localPosition = Vector3(0, 25, 0)
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_1._tf)
 
-	arg0._grade.transform.localScale = Vector3(1.5, 1.5, 0)
+	arg0_1._grade.transform.localScale = Vector3(1.5, 1.5, 0)
 
-	LeanTween.scale(arg0._grade, Vector3(0.88, 0.88, 1), var0.DURATION_WIN_SCALE):setOnComplete(System.Action(function()
-		SetActive(arg0._levelText, true)
-		arg0:rankAnimaFinish()
+	LeanTween.scale(arg0_1._grade, Vector3(0.88, 0.88, 1), var0_0.DURATION_WIN_SCALE):setOnComplete(System.Action(function()
+		SetActive(arg0_1._levelText, true)
+		arg0_1:rankAnimaFinish()
 	end))
 
-	arg0._tf:GetComponent(typeof(Image)).color = Color.New(0, 0, 0, 0.5)
-	arg0._stateFlag = BattleResultLayer.STATE_RANK_ANIMA
+	arg0_1._tf:GetComponent(typeof(Image)).color = Color.New(0, 0, 0, 0.5)
+	arg0_1._stateFlag = BattleResultLayer.STATE_RANK_ANIMA
 
-	onButton(arg0, arg0._skipBtn, function()
-		arg0:skip()
+	onButton(arg0_1, arg0_1._skipBtn, function()
+		arg0_1:skip()
 	end, SFX_CONFIRM)
 end
 
-function var0.skip(arg0)
-	if arg0._stateFlag == BattleResultLayer.STATE_REPORTED then
-		arg0:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE)
+function var0_0.skip(arg0_4)
+	if arg0_4._stateFlag == BattleResultLayer.STATE_REPORTED then
+		arg0_4:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE)
 	end
 end
 
-function var0.onBackPressed(arg0)
-	triggerButton(arg0._skipBtn)
+function var0_0.onBackPressed(arg0_5)
+	triggerButton(arg0_5._skipBtn)
 end
 
-function var0.willExit(arg0)
-	LeanTween.cancel(go(arg0._tf))
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+function var0_0.willExit(arg0_6)
+	LeanTween.cancel(go(arg0_6._tf))
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_6._tf)
 end
 
-return var0
+return var0_0

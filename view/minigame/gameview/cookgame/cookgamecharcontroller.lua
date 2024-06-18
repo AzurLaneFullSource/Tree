@@ -1,229 +1,229 @@
-﻿local var0 = class("CookGameCharController")
+﻿local var0_0 = class("CookGameCharController")
 
-function var0.Ctor(arg0, arg1, arg2, arg3)
-	arg0._sceneContainer = arg1
-	arg0._scene = findTF(arg0._sceneContainer, "scene")
-	arg0._tpl = findTF(arg1, "scene_background/charTpl")
-	arg0._cakeTpl = findTF(arg1, "scene_background/cakeTpl")
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	arg0_1._sceneContainer = arg1_1
+	arg0_1._scene = findTF(arg0_1._sceneContainer, "scene")
+	arg0_1._tpl = findTF(arg1_1, "scene_background/charTpl")
+	arg0_1._cakeTpl = findTF(arg1_1, "scene_background/cakeTpl")
 
-	setActive(arg0._cakeTpl, false)
-	setActive(arg0._tpl, false)
+	setActive(arg0_1._cakeTpl, false)
+	setActive(arg0_1._tpl, false)
 
-	arg0._gameData = arg2
-	arg0._event = arg3
-	arg0.playerChar = CookGameChar.New(tf(instantiate(arg0._tpl)), arg0._gameData, arg0._event)
+	arg0_1._gameData = arg2_1
+	arg0_1._event = arg3_1
+	arg0_1.playerChar = CookGameChar.New(tf(instantiate(arg0_1._tpl)), arg0_1._gameData, arg0_1._event)
 
-	arg0.playerChar:isPlayer(true)
+	arg0_1.playerChar:isPlayer(true)
 
-	arg0.partnerChar = CookGameChar.New(tf(instantiate(arg0._tpl)), arg0._gameData, arg0._event)
+	arg0_1.partnerChar = CookGameChar.New(tf(instantiate(arg0_1._tpl)), arg0_1._gameData, arg0_1._event)
 
-	arg0.partnerChar:isPartner(true)
+	arg0_1.partnerChar:isPartner(true)
 
-	arg0.partnerPet = CookGameChar.New(tf(instantiate(arg0._tpl)), arg0._gameData, arg0._event)
+	arg0_1.partnerPet = CookGameChar.New(tf(instantiate(arg0_1._tpl)), arg0_1._gameData, arg0_1._event)
 
-	arg0.partnerPet:isPartner(true)
+	arg0_1.partnerPet:isPartner(true)
 
-	arg0.enemy1Char = CookGameChar.New(tf(instantiate(arg0._tpl)), arg0._gameData, arg0._event)
-	arg0.enemy2Char = CookGameChar.New(tf(instantiate(arg0._tpl)), arg0._gameData, arg0._event)
-	arg0.enemyPet = CookGameChar.New(tf(instantiate(arg0._tpl)), arg0._gameData, arg0._event)
+	arg0_1.enemy1Char = CookGameChar.New(tf(instantiate(arg0_1._tpl)), arg0_1._gameData, arg0_1._event)
+	arg0_1.enemy2Char = CookGameChar.New(tf(instantiate(arg0_1._tpl)), arg0_1._gameData, arg0_1._event)
+	arg0_1.enemyPet = CookGameChar.New(tf(instantiate(arg0_1._tpl)), arg0_1._gameData, arg0_1._event)
 
-	arg0.playerChar:setParent(arg0._sceneContainer, CookGameConst.char_instiate_data[CookGameConst.player_char])
-	arg0.partnerChar:setParent(arg0._sceneContainer, CookGameConst.char_instiate_data[CookGameConst.parter_char])
-	arg0.partnerPet:setParent(arg0._sceneContainer, CookGameConst.char_instiate_data[CookGameConst.parter_pet])
-	arg0.enemy1Char:setParent(arg0._sceneContainer, CookGameConst.char_instiate_data[CookGameConst.enemy1_char])
-	arg0.enemy2Char:setParent(arg0._sceneContainer, CookGameConst.char_instiate_data[CookGameConst.enemy2_char])
-	arg0.enemyPet:setParent(arg0._sceneContainer, CookGameConst.char_instiate_data[CookGameConst.enemy_pet])
-	arg0.enemy1Char:isPartner(false)
-	arg0.enemy2Char:isPartner(false)
-	arg0.enemyPet:isPartner(false)
+	arg0_1.playerChar:setParent(arg0_1._sceneContainer, CookGameConst.char_instiate_data[CookGameConst.player_char])
+	arg0_1.partnerChar:setParent(arg0_1._sceneContainer, CookGameConst.char_instiate_data[CookGameConst.parter_char])
+	arg0_1.partnerPet:setParent(arg0_1._sceneContainer, CookGameConst.char_instiate_data[CookGameConst.parter_pet])
+	arg0_1.enemy1Char:setParent(arg0_1._sceneContainer, CookGameConst.char_instiate_data[CookGameConst.enemy1_char])
+	arg0_1.enemy2Char:setParent(arg0_1._sceneContainer, CookGameConst.char_instiate_data[CookGameConst.enemy2_char])
+	arg0_1.enemyPet:setParent(arg0_1._sceneContainer, CookGameConst.char_instiate_data[CookGameConst.enemy_pet])
+	arg0_1.enemy1Char:isPartner(false)
+	arg0_1.enemy2Char:isPartner(false)
+	arg0_1.enemyPet:isPartner(false)
 
-	arg0.chars = {
-		arg0.playerChar,
-		arg0.partnerChar,
-		arg0.enemy1Char,
-		arg0.enemy2Char,
-		arg0.partnerPet,
-		arg0.enemyPet
+	arg0_1.chars = {
+		arg0_1.playerChar,
+		arg0_1.partnerChar,
+		arg0_1.enemy1Char,
+		arg0_1.enemy2Char,
+		arg0_1.partnerPet,
+		arg0_1.enemyPet
 	}
-	arg0._playerBox = findTF(arg0._sceneContainer, "scene_background/playerBox")
+	arg0_1._playerBox = findTF(arg0_1._sceneContainer, "scene_background/playerBox")
 
-	if not arg0.uiCam then
-		arg0.uiCam = GameObject.Find("UICamera"):GetComponent("Camera")
+	if not arg0_1.uiCam then
+		arg0_1.uiCam = GameObject.Find("UICamera"):GetComponent("Camera")
 	end
 
-	arg0._playerCollider = findTF(arg0._playerBox, "collider")
-	arg0._playerColliderEvenet = GetComponent(arg0._playerCollider, typeof(EventTriggerListener))
+	arg0_1._playerCollider = findTF(arg0_1._playerBox, "collider")
+	arg0_1._playerColliderEvenet = GetComponent(arg0_1._playerCollider, typeof(EventTriggerListener))
 
-	arg0._playerColliderEvenet:AddPointDownFunc(function(arg0, arg1)
-		local var0 = arg0.uiCam:ScreenToWorldPoint(arg1.pressPosition)
-		local var1 = arg0._scene:InverseTransformPoint(var0)
+	arg0_1._playerColliderEvenet:AddPointDownFunc(function(arg0_2, arg1_2)
+		local var0_2 = arg0_1.uiCam:ScreenToWorldPoint(arg1_2.pressPosition)
+		local var1_2 = arg0_1._scene:InverseTransformPoint(var0_2)
 
-		arg0.playerChar:clearCake()
-		arg0.playerChar:clearJudge()
-		arg0.playerChar:setTargetPos(var1, nil)
+		arg0_1.playerChar:clearCake()
+		arg0_1.playerChar:clearJudge()
+		arg0_1.playerChar:setTargetPos(var1_2, nil)
 	end)
 
-	arg0.playerCakes = {}
+	arg0_1.playerCakes = {}
 
-	for iter0 = 1, arg0._gameData.cake_num do
-		local var0 = iter0
-		local var1 = findTF(arg0._playerBox, "table/cake/" .. iter0)
-		local var2 = findTF(var1, "pos")
-		local var3 = GetComponent(findTF(var1, "collider"), typeof(EventTriggerListener))
+	for iter0_1 = 1, arg0_1._gameData.cake_num do
+		local var0_1 = iter0_1
+		local var1_1 = findTF(arg0_1._playerBox, "table/cake/" .. iter0_1)
+		local var2_1 = findTF(var1_1, "pos")
+		local var3_1 = GetComponent(findTF(var1_1, "collider"), typeof(EventTriggerListener))
 
-		var3:AddPointDownFunc(function(arg0, arg1)
-			arg0:onPickupCake(arg0.playerChar, var0, arg0.playerCakes, true)
+		var3_1:AddPointDownFunc(function(arg0_3, arg1_3)
+			arg0_1:onPickupCake(arg0_1.playerChar, var0_1, arg0_1.playerCakes, true)
 		end)
-		table.insert(arg0.playerCakes, {
-			tf = var1,
-			pos = var2,
-			id = var0,
-			event = var3
+		table.insert(arg0_1.playerCakes, {
+			tf = var1_1,
+			pos = var2_1,
+			id = var0_1,
+			event = var3_1
 		})
 	end
 
-	arg0.enemyCakes = {}
-	arg0._enemyBox = findTF(arg0._sceneContainer, "scene_background/enemyBox")
+	arg0_1.enemyCakes = {}
+	arg0_1._enemyBox = findTF(arg0_1._sceneContainer, "scene_background/enemyBox")
 
-	for iter1 = 1, arg0._gameData.cake_num do
-		local var4 = iter1
-		local var5 = findTF(arg0._enemyBox, "table/cake/" .. iter1)
-		local var6 = findTF(var5, "pos")
+	for iter1_1 = 1, arg0_1._gameData.cake_num do
+		local var4_1 = iter1_1
+		local var5_1 = findTF(arg0_1._enemyBox, "table/cake/" .. iter1_1)
+		local var6_1 = findTF(var5_1, "pos")
 
-		table.insert(arg0.enemyCakes, {
-			tf = var5,
-			pos = var6,
-			id = var4,
-			event = arg3
+		table.insert(arg0_1.enemyCakes, {
+			tf = var5_1,
+			pos = var6_1,
+			id = var4_1,
+			event = arg3_1
 		})
 	end
 
-	arg0.acCakes = {}
+	arg0_1.acCakes = {}
 end
 
-function var0.changeSpeed(arg0, arg1)
-	for iter0 = 1, #arg0.chars do
-		arg0.chars[iter0]:changeSpeed(arg1)
+function var0_0.changeSpeed(arg0_4, arg1_4)
+	for iter0_4 = 1, #arg0_4.chars do
+		arg0_4.chars[iter0_4]:changeSpeed(arg1_4)
 	end
 end
 
-function var0.onPickupCake(arg0, arg1, arg2, arg3, arg4)
-	if arg1:isActiving() then
+function var0_0.onPickupCake(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5)
+	if arg1_5:isActiving() then
 		return
 	end
 
-	for iter0 = 1, #arg3 do
-		local var0 = arg3[iter0]
-		local var1 = var0.tf
+	for iter0_5 = 1, #arg3_5 do
+		local var0_5 = arg3_5[iter0_5]
+		local var1_5 = var0_5.tf
 
-		if var0.id == arg2 then
-			local var2 = findTF(var0.tf, "pos")
+		if var0_5.id == arg2_5 then
+			local var2_5 = findTF(var0_5.tf, "pos")
 
-			var0.cakePos = arg0._scene:InverseTransformPoint(var2.position)
+			var0_5.cakePos = arg0_5._scene:InverseTransformPoint(var2_5.position)
 
-			arg1:setCake(var0)
+			arg1_5:setCake(var0_5)
 
-			if arg4 then
-				setActive(findTF(var1, "select"), true)
+			if arg4_5 then
+				setActive(findTF(var1_5, "select"), true)
 			end
 		else
-			setActive(findTF(var1, "select"), false)
+			setActive(findTF(var1_5, "select"), false)
 		end
 	end
 end
 
-function var0.readyStart(arg0)
-	arg0.playerChar:setData(arg0:createCharData(arg0._gameData.playerChar))
-	arg0.partnerChar:setData(arg0:createCharData(arg0._gameData.partnerChar))
+function var0_0.readyStart(arg0_6)
+	arg0_6.playerChar:setData(arg0_6:createCharData(arg0_6._gameData.playerChar))
+	arg0_6.partnerChar:setData(arg0_6:createCharData(arg0_6._gameData.partnerChar))
 
-	if arg0._gameData.partnerPet then
-		arg0.partnerPet:setData(arg0:createCharData(arg0._gameData.partnerPet))
+	if arg0_6._gameData.partnerPet then
+		arg0_6.partnerPet:setData(arg0_6:createCharData(arg0_6._gameData.partnerPet))
 	else
-		arg0.partnerPet:setData(nil)
+		arg0_6.partnerPet:setData(nil)
 	end
 
-	arg0.enemy1Char:setData(arg0:createCharData(arg0._gameData.enemy1Char))
-	arg0.enemy2Char:setData(arg0:createCharData(arg0._gameData.enemy2Char))
+	arg0_6.enemy1Char:setData(arg0_6:createCharData(arg0_6._gameData.enemy1Char))
+	arg0_6.enemy2Char:setData(arg0_6:createCharData(arg0_6._gameData.enemy2Char))
 
-	if arg0._gameData.enemyPet then
-		arg0.enemyPet:setData(arg0:createCharData(arg0._gameData.enemyPet))
+	if arg0_6._gameData.enemyPet then
+		arg0_6.enemyPet:setData(arg0_6:createCharData(arg0_6._gameData.enemyPet))
 	else
-		arg0.enemyPet:setData(nil)
+		arg0_6.enemyPet:setData(nil)
 	end
 
-	arg0.playerChar:readyStart()
-	arg0.partnerChar:readyStart()
-	arg0.partnerPet:readyStart()
-	arg0.enemy1Char:readyStart()
-	arg0.enemy2Char:readyStart()
-	arg0.enemyPet:readyStart()
+	arg0_6.playerChar:readyStart()
+	arg0_6.partnerChar:readyStart()
+	arg0_6.partnerPet:readyStart()
+	arg0_6.enemy1Char:readyStart()
+	arg0_6.enemy2Char:readyStart()
+	arg0_6.enemyPet:readyStart()
 
-	arg0.sceneTfs = nil
+	arg0_6.sceneTfs = nil
 end
 
-function var0.start(arg0)
+function var0_0.start(arg0_7)
 	return
 end
 
-function var0.step(arg0, arg1)
-	for iter0 = 1, #arg0.chars do
-		local var0 = arg0.chars[iter0]
+function var0_0.step(arg0_8, arg1_8)
+	for iter0_8 = 1, #arg0_8.chars do
+		local var0_8 = arg0_8.chars[iter0_8]
 
-		if var0:getCharActive() then
-			local var1 = var0:getTargetPos()
-			local var2 = var0:getVelocity()
+		if var0_8:getCharActive() then
+			local var1_8 = var0_8:getTargetPos()
+			local var2_8 = var0_8:getVelocity()
 
-			if var1 then
-				local var3 = var0:getPos()
+			if var1_8 then
+				local var3_8 = var0_8:getPos()
 
-				if not var2 then
-					if math.abs(var1.y - var3.y) ~= 0 then
-						local var4 = math.atan(math.abs(var1.y - var3.y) / math.abs(var1.x - var3.x))
-						local var5 = var1.x > var3.x and 1 or -1
-						local var6 = var1.y > var3.y and 1 or -1
-						local var7 = math.cos(var4) * var5
-						local var8 = math.sin(var4) * var6
+				if not var2_8 then
+					if math.abs(var1_8.y - var3_8.y) ~= 0 then
+						local var4_8 = math.atan(math.abs(var1_8.y - var3_8.y) / math.abs(var1_8.x - var3_8.x))
+						local var5_8 = var1_8.x > var3_8.x and 1 or -1
+						local var6_8 = var1_8.y > var3_8.y and 1 or -1
+						local var7_8 = math.cos(var4_8) * var5_8
+						local var8_8 = math.sin(var4_8) * var6_8
 
-						var0:setVelocity(var7, var8, var4)
+						var0_8:setVelocity(var7_8, var8_8, var4_8)
 					else
-						var0:stopMove()
+						var0_8:stopMove()
 					end
 				end
-			elseif var0:getJudgeData() then
-				var0:setTargetPos(var0:getJudgeData().targetPos)
-			elseif var0:getCake() then
-				var0:setTargetPos(var0:getCake().cakePos)
+			elseif var0_8:getJudgeData() then
+				var0_8:setTargetPos(var0_8:getJudgeData().targetPos)
+			elseif var0_8:getCake() then
+				var0_8:setTargetPos(var0_8:getCake().cakePos)
 			end
 
-			var0:step(arg1)
+			var0_8:step(arg1_8)
 		end
 	end
 
-	if not arg0.sceneTfs then
-		arg0.sceneTfs = {}
+	if not arg0_8.sceneTfs then
+		arg0_8.sceneTfs = {}
 
-		local var9 = {}
-		local var10 = arg0._scene.childCount
+		local var9_8 = {}
+		local var10_8 = arg0_8._scene.childCount
 
-		arg0.judgeNum = 0
+		arg0_8.judgeNum = 0
 
-		for iter1 = 0, var10 - 1 do
-			local var11 = arg0._scene:GetChild(iter1)
+		for iter1_8 = 0, var10_8 - 1 do
+			local var11_8 = arg0_8._scene:GetChild(iter1_8)
 
-			if string.match(var11.name, "judge") then
-				arg0.judgeNum = arg0.judgeNum + 1
+			if string.match(var11_8.name, "judge") then
+				arg0_8.judgeNum = arg0_8.judgeNum + 1
 
-				table.insert(var9, var11)
+				table.insert(var9_8, var11_8)
 			else
-				table.insert(arg0.sceneTfs, {
-					tf = var11,
-					offset = arg0:getTfOffset(var11.name)
+				table.insert(arg0_8.sceneTfs, {
+					tf = var11_8,
+					offset = arg0_8:getTfOffset(var11_8.name)
 				})
 			end
 		end
 
-		table.sort(var9, function(arg0, arg1)
-			if arg0.anchoredPosition.y > arg1.anchoredPosition.y then
+		table.sort(var9_8, function(arg0_9, arg1_9)
+			if arg0_9.anchoredPosition.y > arg1_9.anchoredPosition.y then
 				return true
 			else
 				return false
@@ -231,377 +231,377 @@ function var0.step(arg0, arg1)
 		end)
 	end
 
-	table.sort(arg0.sceneTfs, function(arg0, arg1)
-		local var0 = arg0.tf.anchoredPosition
-		local var1 = arg0.offset and arg0.offset or Vector2(0, 0)
-		local var2 = arg1.tf.anchoredPosition
-		local var3 = arg1.offset and arg1.offset or Vector2(0, 0)
+	table.sort(arg0_8.sceneTfs, function(arg0_10, arg1_10)
+		local var0_10 = arg0_10.tf.anchoredPosition
+		local var1_10 = arg0_10.offset and arg0_10.offset or Vector2(0, 0)
+		local var2_10 = arg1_10.tf.anchoredPosition
+		local var3_10 = arg1_10.offset and arg1_10.offset or Vector2(0, 0)
 
-		if var0.y + var1.y > var2.y + var3.y then
+		if var0_10.y + var1_10.y > var2_10.y + var3_10.y then
 			return true
 		else
 			return false
 		end
 	end)
 
-	for iter2 = 1, #arg0.sceneTfs do
-		arg0.sceneTfs[iter2].tf:SetSiblingIndex(iter2 - 1 + arg0.judgeNum)
+	for iter2_8 = 1, #arg0_8.sceneTfs do
+		arg0_8.sceneTfs[iter2_8].tf:SetSiblingIndex(iter2_8 - 1 + arg0_8.judgeNum)
 	end
 
-	if not arg0._judges then
-		arg0._judges = arg0._gameData.judges
+	if not arg0_8._judges then
+		arg0_8._judges = arg0_8._gameData.judges
 	end
 
-	local var12 = arg0:getFillterWanted({
-		arg0.partnerChar
+	local var12_8 = arg0_8:getFillterWanted({
+		arg0_8.partnerChar
 	})
-	local var13 = arg0:getFillterWanted({
-		arg0.playerChar,
-		arg0.partnerPet
+	local var13_8 = arg0_8:getFillterWanted({
+		arg0_8.playerChar,
+		arg0_8.partnerPet
 	})
-	local var14 = arg0:getFillterWanted({
-		arg0.playerChar,
-		arg0.partnerPet
+	local var14_8 = arg0_8:getFillterWanted({
+		arg0_8.playerChar,
+		arg0_8.partnerPet
 	})
-	local var15 = arg0:getFillterWanted({
-		arg0.enemy2Char,
-		arg0.enemyPet
+	local var15_8 = arg0_8:getFillterWanted({
+		arg0_8.enemy2Char,
+		arg0_8.enemyPet
 	})
-	local var16 = arg0:getFillterWanted({
-		arg0.enemy1Char,
-		arg0.enemyPet
+	local var16_8 = arg0_8:getFillterWanted({
+		arg0_8.enemy1Char,
+		arg0_8.enemyPet
 	})
-	local var17 = arg0:getFillterWanted({
-		arg0.enemy1Char,
-		arg0.enemy2Char
+	local var17_8 = arg0_8:getFillterWanted({
+		arg0_8.enemy1Char,
+		arg0_8.enemy2Char
 	})
 
 	if CookGameConst.player_use_ai then
-		arg0:setCharAction(arg0.playerChar, var13, arg0.playerCakes)
+		arg0_8:setCharAction(arg0_8.playerChar, var13_8, arg0_8.playerCakes)
 	end
 
-	arg0:setCharAction(arg0.partnerChar, var12, arg0.playerCakes)
-	arg0:setCharAction(arg0.partnerPet, var14, arg0.playerCakes)
+	arg0_8:setCharAction(arg0_8.partnerChar, var12_8, arg0_8.playerCakes)
+	arg0_8:setCharAction(arg0_8.partnerPet, var14_8, arg0_8.playerCakes)
 
-	if arg0._gameData.gameTime and arg0._gameData.gameTime > 0 then
-		arg0:setCharAction(arg0.enemy1Char, var15, arg0.enemyCakes)
-		arg0:setCharAction(arg0.enemy2Char, var16, arg0.enemyCakes)
-		arg0:setCharAction(arg0.enemyPet, var17, arg0.enemyCakes)
+	if arg0_8._gameData.gameTime and arg0_8._gameData.gameTime > 0 then
+		arg0_8:setCharAction(arg0_8.enemy1Char, var15_8, arg0_8.enemyCakes)
+		arg0_8:setCharAction(arg0_8.enemy2Char, var16_8, arg0_8.enemyCakes)
+		arg0_8:setCharAction(arg0_8.enemyPet, var17_8, arg0_8.enemyCakes)
 	end
 
-	for iter3 = #arg0.acCakes, 1, -1 do
-		local var18 = arg0.acCakes[iter3].tf
-		local var19 = arg0.acCakes[iter3].tf.anchoredPosition
-		local var20 = arg0.acCakes[iter3].targetPos
-		local var21 = math.atan(math.abs(var20.y - var19.y) / math.abs(var20.x - var19.x))
-		local var22 = var20.x > var19.x and 1 or -1
-		local var23 = var20.y > var19.y and 1 or -1
-		local var24 = math.cos(var21) * var22 * 600 * arg1
-		local var25 = math.sin(var21) * var23 * 600 * arg1
-		local var26 = Vector2(var19.x + var24, var19.y + var25)
-		local var27 = arg0.acCakes[iter3].tf.anchoredPosition
+	for iter3_8 = #arg0_8.acCakes, 1, -1 do
+		local var18_8 = arg0_8.acCakes[iter3_8].tf
+		local var19_8 = arg0_8.acCakes[iter3_8].tf.anchoredPosition
+		local var20_8 = arg0_8.acCakes[iter3_8].targetPos
+		local var21_8 = math.atan(math.abs(var20_8.y - var19_8.y) / math.abs(var20_8.x - var19_8.x))
+		local var22_8 = var20_8.x > var19_8.x and 1 or -1
+		local var23_8 = var20_8.y > var19_8.y and 1 or -1
+		local var24_8 = math.cos(var21_8) * var22_8 * 600 * arg1_8
+		local var25_8 = math.sin(var21_8) * var23_8 * 600 * arg1_8
+		local var26_8 = Vector2(var19_8.x + var24_8, var19_8.y + var25_8)
+		local var27_8 = arg0_8.acCakes[iter3_8].tf.anchoredPosition
 
-		if var19.x < var20.x and var26.x < var20.x then
-			var27.x = var26.x
-		elseif var19.x > var20.x and var26.x > var20.x then
-			var27.x = var26.x
+		if var19_8.x < var20_8.x and var26_8.x < var20_8.x then
+			var27_8.x = var26_8.x
+		elseif var19_8.x > var20_8.x and var26_8.x > var20_8.x then
+			var27_8.x = var26_8.x
 		else
-			var27.x = var20.x
+			var27_8.x = var20_8.x
 		end
 
-		if var19.y < var20.y and var26.y < var20.y then
-			var27.y = var26.y
-		elseif var19.y > var20.y and var26.y > var20.y then
-			var27.y = var26.y
+		if var19_8.y < var20_8.y and var26_8.y < var20_8.y then
+			var27_8.y = var26_8.y
+		elseif var19_8.y > var20_8.y and var26_8.y > var20_8.y then
+			var27_8.y = var26_8.y
 		else
-			var27.y = var20.y
+			var27_8.y = var20_8.y
 		end
 
-		arg0.acCakes[iter3].tf.anchoredPosition = var27
+		arg0_8.acCakes[iter3_8].tf.anchoredPosition = var27_8
 
-		if math.abs(var27.y - var20.y) < 3 and math.abs(var27.x - var20.x) < 3 then
-			local var28 = table.remove(arg0.acCakes, iter3)
+		if math.abs(var27_8.y - var20_8.y) < 3 and math.abs(var27_8.x - var20_8.x) < 3 then
+			local var28_8 = table.remove(arg0_8.acCakes, iter3_8)
 
-			if var28.callback then
-				var28.callback()
+			if var28_8.callback then
+				var28_8.callback()
 			end
 
-			Destroy(var28.tf)
+			Destroy(var28_8.tf)
 
-			local var29
+			local var29_8
 		end
 	end
 end
 
-function var0.getTfOffset(arg0, arg1)
-	for iter0 = 1, #arg0.chars do
-		if arg0.chars[iter0]:getTf().name == arg1 then
-			return arg0.chars[iter0]:getOffset()
+function var0_0.getTfOffset(arg0_11, arg1_11)
+	for iter0_11 = 1, #arg0_11.chars do
+		if arg0_11.chars[iter0_11]:getTf().name == arg1_11 then
+			return arg0_11.chars[iter0_11]:getOffset()
 		end
 	end
 
 	return Vector2(0, 0)
 end
 
-function var0.getFillterWanted(arg0, arg1)
-	local var0 = {}
+function var0_0.getFillterWanted(arg0_12, arg1_12)
+	local var0_12 = {}
 
-	for iter0, iter1 in ipairs(arg1) do
-		if iter1:getCharActive() then
-			local var1 = iter1:getJudge()
+	for iter0_12, iter1_12 in ipairs(arg1_12) do
+		if iter1_12:getCharActive() then
+			local var1_12 = iter1_12:getJudge()
 
-			for iter2 = 1, #arg0._judges do
-				local var2 = arg0._judges[iter2]
+			for iter2_12 = 1, #arg0_12._judges do
+				local var2_12 = arg0_12._judges[iter2_12]
 
-				if (not var1 or var2 ~= var1) and not var2:isInServe() and not var2:isInTrigger() and var2:getWantedCake() then
-					table.insert(var0, var2:getWantedCake())
+				if (not var1_12 or var2_12 ~= var1_12) and not var2_12:isInServe() and not var2_12:isInTrigger() and var2_12:getWantedCake() then
+					table.insert(var0_12, var2_12:getWantedCake())
 				end
 			end
 		end
 	end
 
-	return var0
+	return var0_12
 end
 
-function var0.setCharAction(arg0, arg1, arg2, arg3)
-	if not arg1:getCharActive() then
+function var0_0.setCharAction(arg0_13, arg1_13, arg2_13, arg3_13)
+	if not arg1_13:getCharActive() then
 		return
 	end
 
-	if arg1:isActiving() then
+	if arg1_13:isActiving() then
 		return
 	end
 
-	local var0 = arg1:getCakeIds()
-	local var1 = arg1:isFullCakes()
+	local var0_13 = arg1_13:getCakeIds()
+	local var1_13 = arg1_13:isFullCakes()
 
-	if #var0 > 0 then
-		if arg1:getCake() then
+	if #var0_13 > 0 then
+		if arg1_13:getCake() then
 			return
-		elseif arg1:getJudge() then
-			local var2 = arg1:getJudge()
+		elseif arg1_13:getJudge() then
+			local var2_13 = arg1_13:getJudge()
 
-			if var2:isInTrigger() and var2:isInServe() then
-				arg1:clearJudge()
-				arg1:stopMove()
+			if var2_13:isInTrigger() and var2_13:isInServe() then
+				arg1_13:clearJudge()
+				arg1_13:stopMove()
 			end
 
 			return
-		elseif not var1 and arg1:getPickupFull() then
-			local var3 = arg2[math.random(1, #arg2)]
+		elseif not var1_13 and arg1_13:getPickupFull() then
+			local var3_13 = arg2_13[math.random(1, #arg2_13)]
 
-			arg0:onPickupCake(arg1, var3, arg3, false)
+			arg0_13:onPickupCake(arg1_13, var3_13, arg3_13, false)
 
 			return
 		end
 
-		local var4 = {}
+		local var4_13 = {}
 
-		for iter0 = 1, #arg0._judges do
-			local var5 = arg0._judges[iter0]
+		for iter0_13 = 1, #arg0_13._judges do
+			local var5_13 = arg0_13._judges[iter0_13]
 
-			if not var5:isInTrigger() and not var5:isInServe() then
-				if table.contains(var0, var5:getWantedCake()) then
-					table.insert(var4, var5)
-				elseif arg1:getId() == 7 then
-					table.insert(var4, var5)
+			if not var5_13:isInTrigger() and not var5_13:isInServe() then
+				if table.contains(var0_13, var5_13:getWantedCake()) then
+					table.insert(var4_13, var5_13)
+				elseif arg1_13:getId() == 7 then
+					table.insert(var4_13, var5_13)
 				end
 			end
 		end
 
-		if #var4 == 0 then
-			if not arg1:getCake() then
-				local var6 = arg2[math.random(1, #arg2)]
+		if #var4_13 == 0 then
+			if not arg1_13:getCake() then
+				local var6_13 = arg2_13[math.random(1, #arg2_13)]
 
-				arg0:onPickupCake(arg1, var6, arg3, false)
+				arg0_13:onPickupCake(arg1_13, var6_13, arg3_13, false)
 			end
 		else
-			local var7 = var4[math.random(1, #var4)]
+			local var7_13 = var4_13[math.random(1, #var4_13)]
 
-			arg0:setJudgeAction(var7, arg1, function()
+			arg0_13:setJudgeAction(var7_13, arg1_13, function()
 				return
 			end)
 		end
-	elseif not arg1:getCake() then
-		if arg1:getDoubleAble() and #var0 == 0 then
-			arg1:setPickupFull(true)
+	elseif not arg1_13:getCake() then
+		if arg1_13:getDoubleAble() and #var0_13 == 0 then
+			arg1_13:setPickupFull(true)
 		end
 
-		if arg2 == nil then
+		if arg2_13 == nil then
 			return
 		end
 
-		local var8 = arg2[math.random(1, #arg2)]
+		local var8_13 = arg2_13[math.random(1, #arg2_13)]
 
-		arg0:onPickupCake(arg1, var8, arg3, false)
+		arg0_13:onPickupCake(arg1_13, var8_13, arg3_13, false)
 	end
 end
 
-function var0.createCharData(arg0, arg1)
-	if not arg0.charDic then
-		arg0.charDic = {}
+function var0_0.createCharData(arg0_15, arg1_15)
+	if not arg0_15.charDic then
+		arg0_15.charDic = {}
 	end
 
-	if arg0.charDic[arg1] then
-		return Clone(arg0.charDic[arg1])
+	if arg0_15.charDic[arg1_15] then
+		return Clone(arg0_15.charDic[arg1_15])
 	end
 
-	local var0 = arg0:getBattleData(arg1)
-	local var1 = {}
-	local var2 = {}
-	local var3 = var0.double_able
-	local var4 = var0.speed_able
-	local var5 = arg0._gameData.cake_num
-	local var6 = var0.name
+	local var0_15 = arg0_15:getBattleData(arg1_15)
+	local var1_15 = {}
+	local var2_15 = {}
+	local var3_15 = var0_15.double_able
+	local var4_15 = var0_15.speed_able
+	local var5_15 = arg0_15._gameData.cake_num
+	local var6_15 = var0_15.name
 
-	if var3 then
-		for iter0 = 0, var5 do
-			for iter1 = 0, var5 do
-				local var7
+	if var3_15 then
+		for iter0_15 = 0, var5_15 do
+			for iter1_15 = 0, var5_15 do
+				local var7_15
 
-				if iter0 == 0 and iter1 == 0 or iter0 ~= 0 then
-					var7 = var6 .. "_L" .. iter0 .. "_R" .. iter1
+				if iter0_15 == 0 and iter1_15 == 0 or iter0_15 ~= 0 then
+					var7_15 = var6_15 .. "_L" .. iter0_15 .. "_R" .. iter1_15
 				end
 
-				if var7 then
-					local var8 = ResourceMgr.Inst:getAssetSync(arg0._gameData.char_path .. "/" .. var6, var7, typeof(RuntimeAnimatorController), false, false)
+				if var7_15 then
+					local var8_15 = ResourceMgr.Inst:getAssetSync(arg0_15._gameData.char_path .. "/" .. var6_15, var7_15, typeof(RuntimeAnimatorController), false, false)
 
-					table.insert(var2, {
-						runtimeAnimator = var8,
-						name = var7
+					table.insert(var2_15, {
+						runtimeAnimator = var8_15,
+						name = var7_15
 					})
 				end
 			end
 		end
-	elseif var4 then
-		for iter2 = 0, var5 do
-			for iter3 = 0, arg0._gameData.speed_num do
-				local var9 = var6 .. "_L" .. iter2 .. "_" .. iter3
-				local var10 = ResourceMgr.Inst:getAssetSync(arg0._gameData.char_path .. "/" .. var6, var9, typeof(RuntimeAnimatorController), false, false)
+	elseif var4_15 then
+		for iter2_15 = 0, var5_15 do
+			for iter3_15 = 0, arg0_15._gameData.speed_num do
+				local var9_15 = var6_15 .. "_L" .. iter2_15 .. "_" .. iter3_15
+				local var10_15 = ResourceMgr.Inst:getAssetSync(arg0_15._gameData.char_path .. "/" .. var6_15, var9_15, typeof(RuntimeAnimatorController), false, false)
 
-				table.insert(var2, {
-					runtimeAnimator = var10,
-					name = var9
+				table.insert(var2_15, {
+					runtimeAnimator = var10_15,
+					name = var9_15
 				})
 			end
 		end
 	else
-		for iter4 = 0, var5 do
-			local var11 = var6 .. "_L" .. iter4
-			local var12 = ResourceMgr.Inst:getAssetSync(arg0._gameData.char_path .. "/" .. var6, var11, typeof(RuntimeAnimatorController), false, false)
+		for iter4_15 = 0, var5_15 do
+			local var11_15 = var6_15 .. "_L" .. iter4_15
+			local var12_15 = ResourceMgr.Inst:getAssetSync(arg0_15._gameData.char_path .. "/" .. var6_15, var11_15, typeof(RuntimeAnimatorController), false, false)
 
-			table.insert(var2, {
-				runtimeAnimator = var12,
-				name = var11
+			table.insert(var2_15, {
+				runtimeAnimator = var12_15,
+				name = var11_15
 			})
 		end
 	end
 
-	var1.battleData = var0
-	var1.animDatas = var2
-	arg0.charDic[arg1] = var1
+	var1_15.battleData = var0_15
+	var1_15.animDatas = var2_15
+	arg0_15.charDic[arg1_15] = var1_15
 
-	return Clone(arg0.charDic[arg1])
+	return Clone(arg0_15.charDic[arg1_15])
 end
 
-function var0.createAcCake(arg0, arg1)
-	if not arg0.acCakes then
-		arg0.acCakes = {}
+function var0_0.createAcCake(arg0_16, arg1_16)
+	if not arg0_16.acCakes then
+		arg0_16.acCakes = {}
 	end
 
-	local var0 = arg1.cakeId
-	local var1 = arg1.startPos
-	local var2 = arg1.targetPos
-	local var3 = arg1.callback
-	local var4 = tf(instantiate(arg0._cakeTpl))
+	local var0_16 = arg1_16.cakeId
+	local var1_16 = arg1_16.startPos
+	local var2_16 = arg1_16.targetPos
+	local var3_16 = arg1_16.callback
+	local var4_16 = tf(instantiate(arg0_16._cakeTpl))
 
-	GetSpriteFromAtlasAsync(arg0._gameData.path, "cake_" .. var0, function(arg0)
-		setImageSprite(findTF(var4, "img"), arg0, true)
+	GetSpriteFromAtlasAsync(arg0_16._gameData.path, "cake_" .. var0_16, function(arg0_17)
+		setImageSprite(findTF(var4_16, "img"), arg0_17, true)
 	end)
-	SetParent(var4, arg0._scene)
-	setActive(var4, true)
+	SetParent(var4_16, arg0_16._scene)
+	setActive(var4_16, true)
 
-	var4.anchoredPosition = var1
+	var4_16.anchoredPosition = var1_16
 
-	local var5 = {
-		tf = var4,
-		targetPos = var2,
-		callback = var3
+	local var5_16 = {
+		tf = var4_16,
+		targetPos = var2_16,
+		callback = var3_16
 	}
 
-	table.insert(arg0.acCakes, var5)
+	table.insert(arg0_16.acCakes, var5_16)
 end
 
-function var0.clearAcCake(arg0)
-	if arg0.acCakes then
-		for iter0 = 1, #arg0.acCakes do
-			local var0 = arg0.acCakes[iter0].tf
+function var0_0.clearAcCake(arg0_18)
+	if arg0_18.acCakes then
+		for iter0_18 = 1, #arg0_18.acCakes do
+			local var0_18 = arg0_18.acCakes[iter0_18].tf
 
-			Destroy(var0)
+			Destroy(var0_18)
 		end
 	end
 
-	arg0.acCakes = {}
+	arg0_18.acCakes = {}
 end
 
-function var0.getBattleData(arg0, arg1)
-	for iter0 = 1, #CookGameConst.char_battle_data do
-		if CookGameConst.char_battle_data[iter0].id == arg1 then
-			return Clone(CookGameConst.char_battle_data[iter0])
+function var0_0.getBattleData(arg0_19, arg1_19)
+	for iter0_19 = 1, #CookGameConst.char_battle_data do
+		if CookGameConst.char_battle_data[iter0_19].id == arg1_19 then
+			return Clone(CookGameConst.char_battle_data[iter0_19])
 		end
 	end
 
 	return nil
 end
 
-function var0.setJudgeAction(arg0, arg1, arg2, arg3)
-	arg2 = arg2 or arg0.playerChar
+function var0_0.setJudgeAction(arg0_20, arg1_20, arg2_20, arg3_20)
+	arg2_20 = arg2_20 or arg0_20.playerChar
 
-	if #arg2:getCakeIds() > 0 then
-		local var0 = arg1:getTf()
-		local var1 = arg1:getIndex()
-		local var2 = arg2:getPos()
-		local var3 = arg1:getPos()
-		local var4
+	if #arg2_20:getCakeIds() > 0 then
+		local var0_20 = arg1_20:getTf()
+		local var1_20 = arg1_20:getIndex()
+		local var2_20 = arg2_20:getPos()
+		local var3_20 = arg1_20:getPos()
+		local var4_20
 
-		if var2.x < var3.x then
-			local var5 = arg1:getLeftTf()
+		if var2_20.x < var3_20.x then
+			local var5_20 = arg1_20:getLeftTf()
 
-			var4 = arg0._scene:InverseTransformPoint(var5.position)
+			var4_20 = arg0_20._scene:InverseTransformPoint(var5_20.position)
 		else
-			local var6 = arg1:getRightTf()
+			local var6_20 = arg1_20:getRightTf()
 
-			var4 = arg0._scene:InverseTransformPoint(var6.position)
+			var4_20 = arg0_20._scene:InverseTransformPoint(var6_20.position)
 		end
 
-		local var7 = {
-			judge = arg1,
-			judgeIndex = var1,
-			targetPos = var4,
-			tf = var0,
-			acPos = var2
+		local var7_20 = {
+			judge = arg1_20,
+			judgeIndex = var1_20,
+			targetPos = var4_20,
+			tf = var0_20,
+			acPos = var2_20
 		}
 
-		arg2:setJudge(var7)
+		arg2_20:setJudge(var7_20)
 
-		if arg3 then
-			arg3(true)
+		if arg3_20 then
+			arg3_20(true)
 		end
-	elseif arg3 then
-		arg3(false)
+	elseif arg3_20 then
+		arg3_20(false)
 	end
 end
 
-function var0.clear(arg0)
-	arg0.playerChar:clear()
-	arg0.partnerChar:clear()
-	arg0.enemy1Char:clear()
-	arg0.enemy2Char:clear()
-	arg0:clearAcCake()
+function var0_0.clear(arg0_21)
+	arg0_21.playerChar:clear()
+	arg0_21.partnerChar:clear()
+	arg0_21.enemy1Char:clear()
+	arg0_21.enemy2Char:clear()
+	arg0_21:clearAcCake()
 end
 
-function var0.destroy(arg0)
+function var0_0.destroy(arg0_22)
 	return
 end
 
-return var0
+return var0_0

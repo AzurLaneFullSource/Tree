@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_312 = {}
+var0_0.word_template_312 = {}
 
-local var1 = var0.word_template_312
+local var1_0 = var0_0.word_template_312
 
 function temp()
-	var1.澩 = {
+	var1_0.澩 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.雪 = {
+	var1_0.雪 = {
 		地 = {
 			之 = {
 				虎 = {
@@ -81,7 +81,7 @@ end
 temp()
 
 function temp()
-	var1.血 = {
+	var1_0.血 = {
 		案 = {
 			this = true
 		},
@@ -214,7 +214,7 @@ end
 temp()
 
 function temp()
-	var1.寻 = {
+	var1_0.寻 = {
 		寂 = {
 			寞 = {
 				男 = {
@@ -284,7 +284,7 @@ end
 temp()
 
 function temp()
-	var1.巡 = {
+	var1_0.巡 = {
 		查 = {
 			this = true
 		}
@@ -294,7 +294,7 @@ end
 temp()
 
 function temp()
-	var1.循 = {
+	var1_0.循 = {
 		环 = {
 			电 = {
 				子 = {
@@ -317,7 +317,7 @@ end
 temp()
 
 function temp()
-	var1.迅 = {
+	var1_0.迅 = {
 		雷 = {
 			三 = {
 				级 = {

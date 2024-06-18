@@ -1,49 +1,49 @@
-﻿local var0 = class("WorldDetailMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("WorldDetailMediator", import("..base.ContextMediator"))
 
-var0.OnShipInfo = "WorldDetailMediator:OnShipInfo"
-var0.OnCmdSkill = "WorldDetailMediator.OnCmdSkill"
+var0_0.OnShipInfo = "WorldDetailMediator:OnShipInfo"
+var0_0.OnCmdSkill = "WorldDetailMediator.OnCmdSkill"
 
-function var0.register(arg0)
-	arg0:bind(var0.OnShipInfo, function(arg0, arg1, arg2)
-		local var0 = WorldConst.FetchWorldShip(arg1)
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.OnShipInfo, function(arg0_2, arg1_2, arg2_2)
+		local var0_2 = WorldConst.FetchWorldShip(arg1_2)
 
-		arg0.contextData.fleetId = var0.fleetId
-		arg0.contextData.toggle = arg2
+		arg0_1.contextData.fleetId = var0_2.fleetId
+		arg0_1.contextData.toggle = arg2_2
 
-		local var1 = nowWorld():GetFleet(var0.fleetId):GetShipVOs(true)
+		local var1_2 = nowWorld():GetFleet(var0_2.fleetId):GetShipVOs(true)
 
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
-			shipId = var0.id,
-			shipVOs = var1
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
+			shipId = var0_2.id,
+			shipVOs = var1_2
 		})
 	end)
-	arg0:bind(var0.OnCmdSkill, function(arg0, arg1)
-		arg0:addSubLayers(Context.New({
+	arg0_1:bind(var0_0.OnCmdSkill, function(arg0_3, arg1_3)
+		arg0_1:addSubLayers(Context.New({
 			mediator = CommanderSkillMediator,
 			viewComponent = CommanderSkillLayer,
 			data = {
 				isWorld = true,
-				skill = arg1
+				skill = arg1_3
 			}
 		}))
 	end)
-	arg0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
-	arg0.viewComponent:setFleets(nowWorld():GetFleets())
+	arg0_1.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
+	arg0_1.viewComponent:setFleets(nowWorld():GetFleets())
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_4)
 	return {
 		PlayerProxy.UPDATED
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_5, arg1_5)
+	local var0_5 = arg1_5:getName()
+	local var1_5 = arg1_5:getBody()
 
-	if var0 == PlayerProxy.UPDATED then
-		arg0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
+	if var0_5 == PlayerProxy.UPDATED then
+		arg0_5.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
 	end
 end
 
-return var0
+return var0_0

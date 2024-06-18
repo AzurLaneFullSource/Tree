@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_310 = {}
+var0_0.word_template_310 = {}
 
-local var1 = var0.word_template_310
+local var1_0 = var0_0.word_template_310
 
 function temp()
-	var1.徐 = {
+	var1_0.徐 = {
 		邦 = {
 			泰 = {
 				this = true
@@ -169,7 +169,7 @@ end
 temp()
 
 function temp()
-	var1.许 = {
+	var1_0.许 = {
 		达 = {
 			哲 = {
 				this = true
@@ -219,7 +219,7 @@ end
 temp()
 
 function temp()
-	var1.续 = {
+	var1_0.续 = {
 		命 = {
 			this = true
 		},
@@ -253,7 +253,7 @@ end
 temp()
 
 function temp()
-	var1.宣 = {
+	var1_0.宣 = {
 		传 = {
 			联 = {
 				播 = {
@@ -267,7 +267,7 @@ end
 temp()
 
 function temp()
-	var1.諼 = {
+	var1_0.諼 = {
 		this = {
 			this = true
 		}
@@ -277,7 +277,7 @@ end
 temp()
 
 function temp()
-	var1.玄 = {
+	var1_0.玄 = {
 		叶 = {
 			光 = {
 				一 = {
@@ -293,7 +293,7 @@ end
 temp()
 
 function temp()
-	var1.悬 = {
+	var1_0.悬 = {
 		赏 = {
 			兼 = {
 				职 = {

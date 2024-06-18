@@ -1,40 +1,40 @@
-﻿local var0 = class("FushunSchedule")
+﻿local var0_0 = class("FushunSchedule")
 
-function var0.Ctor(arg0)
-	arg0.time = 0
-	arg0.schedules = {}
+function var0_0.Ctor(arg0_1)
+	arg0_1.time = 0
+	arg0_1.schedules = {}
 end
 
-function var0.Update(arg0)
-	for iter0 = #arg0.schedules, 1, -1 do
-		local var0 = arg0.schedules[iter0]
+function var0_0.Update(arg0_2)
+	for iter0_2 = #arg0_2.schedules, 1, -1 do
+		local var0_2 = arg0_2.schedules[iter0_2]
 
-		if arg0.time - var0.nowtime >= var0.targetTime then
-			var0.callback()
+		if arg0_2.time - var0_2.nowtime >= var0_2.targetTime then
+			var0_2.callback()
 
-			var0.count = var0.count - 1
-			var0.nowtime = arg0.time
+			var0_2.count = var0_2.count - 1
+			var0_2.nowtime = arg0_2.time
 
-			if var0.count == 0 then
-				table.remove(arg0.schedules, iter0)
+			if var0_2.count == 0 then
+				table.remove(arg0_2.schedules, iter0_2)
 			end
 		end
 	end
 
-	arg0.time = arg0.time + Time.deltaTime
+	arg0_2.time = arg0_2.time + Time.deltaTime
 end
 
-function var0.AddSchedule(arg0, arg1, arg2, arg3)
-	table.insert(arg0.schedules, {
-		targetTime = arg1,
-		count = arg2,
-		callback = arg3,
-		nowtime = arg0.time
+function var0_0.AddSchedule(arg0_3, arg1_3, arg2_3, arg3_3)
+	table.insert(arg0_3.schedules, {
+		targetTime = arg1_3,
+		count = arg2_3,
+		callback = arg3_3,
+		nowtime = arg0_3.time
 	})
 end
 
-function var0.Dispose(arg0)
-	arg0.schedules = nil
+function var0_0.Dispose(arg0_4)
+	arg0_4.schedules = nil
 end
 
-return var0
+return var0_0

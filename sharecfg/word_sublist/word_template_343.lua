@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_343 = {}
+var0_0.word_template_343 = {}
 
-local var1 = var0.word_template_343
+local var1_0 = var0_0.word_template_343
 
 function temp()
-	var1.招 = {
+	var1_0.招 = {
 		鶏 = {
 			this = true
 		},
@@ -169,7 +169,7 @@ end
 temp()
 
 function temp()
-	var1.昭 = {
+	var1_0.昭 = {
 		妃 = {
 			艳 = {
 				史 = {
@@ -183,7 +183,7 @@ end
 temp()
 
 function temp()
-	var1.找 = {
+	var1_0.找 = {
 		伴 = {
 			侣 = {
 				this = true
@@ -306,7 +306,7 @@ end
 temp()
 
 function temp()
-	var1.赵 = {
+	var1_0.赵 = {
 		海 = {
 			青 = {
 				this = true
@@ -524,7 +524,7 @@ end
 temp()
 
 function temp()
-	var1.照 = {
+	var1_0.照 = {
 		逼 = {
 			一 = {
 				["?"] = {
@@ -609,7 +609,7 @@ end
 temp()
 
 function temp()
-	var1.折 = {
+	var1_0.折 = {
 		原 = {
 			美 = {
 				香 = {
@@ -628,7 +628,7 @@ end
 temp()
 
 function temp()
-	var1.这 = {
+	var1_0.这 = {
 		帮 = {
 			骚 = {
 				货 = {

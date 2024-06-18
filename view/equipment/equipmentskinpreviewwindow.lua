@@ -1,23 +1,23 @@
-﻿local var0 = class("EquipmentSkinPreviewWindow", import("view.ship.ShipPreviewLayer"))
+﻿local var0_0 = class("EquipmentSkinPreviewWindow", import("view.ship.ShipPreviewLayer"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "EquipSkinPreviewUI"
 end
 
-function var0.init(arg0)
-	arg0.buttonList = arg0._tf:Find("left_panel/Buttons")
-	arg0.hitToggle = arg0.buttonList:Find("HitEffect")
-	arg0.spawnToggle = arg0.buttonList:Find("SpawnEffect")
+function var0_0.init(arg0_2)
+	arg0_2.buttonList = arg0_2._tf:Find("left_panel/Buttons")
+	arg0_2.hitToggle = arg0_2.buttonList:Find("HitEffect")
+	arg0_2.spawnToggle = arg0_2.buttonList:Find("SpawnEffect")
 
-	var0.super.init(arg0)
-	setText(arg0.hitToggle:Find("Text"), i18n("hit_preview"))
-	setText(arg0.spawnToggle:Find("Text"), i18n("shoot_preview"))
+	var0_0.super.init(arg0_2)
+	setText(arg0_2.hitToggle:Find("Text"), i18n("hit_preview"))
+	setText(arg0_2.spawnToggle:Find("Text"), i18n("shoot_preview"))
 end
 
-function var0.didEnter(arg0)
-	local var0 = pg.equip_skin_template[arg0.equipSkinId]
-	local var1 = var0.hit_fx_name ~= ""
-	local var2 = {
+function var0_0.didEnter(arg0_3)
+	local var0_3 = pg.equip_skin_template[arg0_3.equipSkinId]
+	local var1_3 = var0_3.hit_fx_name ~= ""
+	local var2_3 = {
 		EquipType.CannonQuZhu,
 		EquipType.CannonQingXun,
 		EquipType.CannonZhongXun,
@@ -25,67 +25,67 @@ function var0.didEnter(arg0)
 		EquipType.SubmarineTorpedo
 	}
 
-	var1 = var1 and _.any(var0.equip_type, function(arg0)
-		return table.contains(var2, arg0)
+	var1_3 = var1_3 and _.any(var0_3.equip_type, function(arg0_4)
+		return table.contains(var2_3, arg0_4)
 	end)
 
-	setActive(arg0.hitToggle, var1)
+	setActive(arg0_3.hitToggle, var1_3)
 
-	if var1 then
-		arg0.contextData.hitEffect = defaultValue(arg0.contextData.hitEffect, true)
+	if var1_3 then
+		arg0_3.contextData.hitEffect = defaultValue(arg0_3.contextData.hitEffect, true)
 
-		triggerToggle(arg0.hitToggle, arg0.contextData.hitEffect)
-		onToggle(arg0, arg0.hitToggle, function(arg0)
-			arg0.contextData.hitEffect = arg0
+		triggerToggle(arg0_3.hitToggle, arg0_3.contextData.hitEffect)
+		onToggle(arg0_3, arg0_3.hitToggle, function(arg0_5)
+			arg0_3.contextData.hitEffect = arg0_5
 
-			arg0:RefreshFXMode()
+			arg0_3:RefreshFXMode()
 		end)
 	else
-		arg0.contextData.hitEffect = defaultValue(arg0.contextData.hitEffect, false)
+		arg0_3.contextData.hitEffect = defaultValue(arg0_3.contextData.hitEffect, false)
 	end
 
-	local var3 = var0.fire_fx_name ~= ""
+	local var3_3 = var0_3.fire_fx_name ~= ""
 
-	setActive(arg0.spawnToggle, var3)
+	setActive(arg0_3.spawnToggle, var3_3)
 
-	if var3 then
-		arg0.contextData.spawnEffect = defaultValue(arg0.contextData.spawnEffect, true)
+	if var3_3 then
+		arg0_3.contextData.spawnEffect = defaultValue(arg0_3.contextData.spawnEffect, true)
 
-		triggerToggle(arg0.spawnToggle, arg0.contextData.spawnEffect)
-		onToggle(arg0, arg0.spawnToggle, function(arg0)
-			arg0.contextData.spawnEffect = arg0
+		triggerToggle(arg0_3.spawnToggle, arg0_3.contextData.spawnEffect)
+		onToggle(arg0_3, arg0_3.spawnToggle, function(arg0_6)
+			arg0_3.contextData.spawnEffect = arg0_6
 
-			arg0:RefreshFXMode()
+			arg0_3:RefreshFXMode()
 		end)
 	else
-		arg0.contextData.spawnEffect = defaultValue(arg0.contextData.spawnEffect, true)
+		arg0_3.contextData.spawnEffect = defaultValue(arg0_3.contextData.spawnEffect, true)
 	end
 
-	var0.super.didEnter(arg0)
+	var0_0.super.didEnter(arg0_3)
 end
 
-function var0.RefreshFXMode(arg0)
-	if not arg0.previewer then
+function var0_0.RefreshFXMode(arg0_7)
+	if not arg0_7.previewer then
 		return
 	end
 
-	arg0.previewer:SetFXMode(arg0.contextData.spawnEffect, arg0.contextData.hitEffect)
-	arg0.previewer:onWeaponUpdate()
+	arg0_7.previewer:SetFXMode(arg0_7.contextData.spawnEffect, arg0_7.contextData.hitEffect)
+	arg0_7.previewer:onWeaponUpdate()
 end
 
-function var0.showBarrage(arg0)
-	var0.super.showBarrage(arg0)
-	arg0.previewer:SetFXMode(arg0.contextData.spawnEffect, arg0.contextData.hitEffect)
+function var0_0.showBarrage(arg0_8)
+	var0_0.super.showBarrage(arg0_8)
+	arg0_8.previewer:SetFXMode(arg0_8.contextData.spawnEffect, arg0_8.contextData.hitEffect)
 end
 
-function var0.playLoadingAni(arg0)
-	var0.super.playLoadingAni(arg0)
-	setActive(arg0.buttonList, false)
+function var0_0.playLoadingAni(arg0_9)
+	var0_0.super.playLoadingAni(arg0_9)
+	setActive(arg0_9.buttonList, false)
 end
 
-function var0.stopLoadingAni(arg0)
-	var0.super.stopLoadingAni(arg0)
-	setActive(arg0.buttonList, true)
+function var0_0.stopLoadingAni(arg0_10)
+	var0_0.super.stopLoadingAni(arg0_10)
+	setActive(arg0_10.buttonList, true)
 end
 
-return var0
+return var0_0

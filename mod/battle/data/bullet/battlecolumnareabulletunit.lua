@@ -1,36 +1,36 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleBulletEvent
-local var2 = var0.Battle.BattleFormulas
-local var3 = Vector3.up
-local var4 = var0.Battle.BattleVariable
-local var5 = var0.Battle.BattleConfig
-local var6 = var0.Battle.BattleConst
-local var7 = var0.Battle.BattleTargetChoise
-local var8 = class("BattleColumnAreaBulletUnit", var0.Battle.BattleAreaBulletUnit)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleBulletEvent
+local var2_0 = var0_0.Battle.BattleFormulas
+local var3_0 = Vector3.up
+local var4_0 = var0_0.Battle.BattleVariable
+local var5_0 = var0_0.Battle.BattleConfig
+local var6_0 = var0_0.Battle.BattleConst
+local var7_0 = var0_0.Battle.BattleTargetChoise
+local var8_0 = class("BattleColumnAreaBulletUnit", var0_0.Battle.BattleAreaBulletUnit)
 
-var8.__name = "BattleColumnAreaBulletUnit"
-var0.Battle.BattleColumnAreaBulletUnit = var8
-var8.AreaType = var6.AreaType.COLUMN
+var8_0.__name = "BattleColumnAreaBulletUnit"
+var0_0.Battle.BattleColumnAreaBulletUnit = var8_0
+var8_0.AreaType = var6_0.AreaType.COLUMN
 
-function var8.InitCldComponent(arg0)
-	local var0 = arg0:GetTemplate().cld_box
-	local var1 = arg0:GetTemplate().cld_offset
+function var8_0.InitCldComponent(arg0_1)
+	local var0_1 = arg0_1:GetTemplate().cld_box
+	local var1_1 = arg0_1:GetTemplate().cld_offset
 
-	arg0._cldComponent = var0.Battle.BattleColumnCldComponent.New(var0[1], var0[3])
+	arg0_1._cldComponent = var0_0.Battle.BattleColumnCldComponent.New(var0_1[1], var0_1[3])
 
-	local var2 = {
-		type = var6.CldType.AOE,
-		UID = arg0:GetUniqueID(),
-		IFF = arg0:GetIFF()
+	local var2_1 = {
+		type = var6_0.CldType.AOE,
+		UID = arg0_1:GetUniqueID(),
+		IFF = arg0_1:GetIFF()
 	}
 
-	arg0._cldComponent:SetCldData(var2)
+	arg0_1._cldComponent:SetCldData(var2_1)
 end
 
-function var8.GetBoxSize(arg0)
-	local var0 = arg0._cldComponent:GetCldBoxSize()
+function var8_0.GetBoxSize(arg0_2)
+	local var0_2 = arg0_2._cldComponent:GetCldBoxSize()
 
-	return Vector3(var0.range, var0.range, var0.tickness)
+	return Vector3(var0_2.range, var0_2.range, var0_2.tickness)
 end

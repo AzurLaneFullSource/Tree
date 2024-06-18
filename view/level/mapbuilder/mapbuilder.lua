@@ -1,185 +1,185 @@
-﻿local var0 = class("MapBuilder", import("view.base.BaseSubView"))
+﻿local var0_0 = class("MapBuilder", import("view.base.BaseSubView"))
 
-var0.TYPENORMAL = 1
-var0.TYPEESCORT = 2
-var0.TYPESHINANO = 3
-var0.TYPESKIRMISH = 4
-var0.TYPEBISMARCK = 5
-var0.TYPESSSS = 6
-var0.TYPEATELIER = 7
-var0.TYPESENRANKAGURA = 8
+var0_0.TYPENORMAL = 1
+var0_0.TYPEESCORT = 2
+var0_0.TYPESHINANO = 3
+var0_0.TYPESKIRMISH = 4
+var0_0.TYPEBISMARCK = 5
+var0_0.TYPESSSS = 6
+var0_0.TYPEATELIER = 7
+var0_0.TYPESENRANKAGURA = 8
 
-function var0.Ctor(arg0, arg1, arg2)
-	var0.super.Ctor(arg0, arg1, arg2.event, arg2.contextData)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var0_0.super.Ctor(arg0_1, arg1_1, arg2_1.event, arg2_1.contextData)
 
-	arg0.sceneParent = arg2
-	arg0.map = arg1:Find("maps")
-	arg0.float = arg1:Find("float")
-	arg0.tweens = {}
-	arg0.mapWidth = 1920
-	arg0.mapHeight = 1440
-	arg0.buffer = setmetatable({}, {
-		__index = function(arg0, arg1)
-			return function(arg0, ...)
-				if arg1 == "UpdateMapItems" and underscore.any(arg0._funcQueue, function(arg0)
-					return arg0.funcName == arg1
+	arg0_1.sceneParent = arg2_1
+	arg0_1.map = arg1_1:Find("maps")
+	arg0_1.float = arg1_1:Find("float")
+	arg0_1.tweens = {}
+	arg0_1.mapWidth = 1920
+	arg0_1.mapHeight = 1440
+	arg0_1.buffer = setmetatable({}, {
+		__index = function(arg0_2, arg1_2)
+			return function(arg0_3, ...)
+				if arg1_2 == "UpdateMapItems" and underscore.any(arg0_1._funcQueue, function(arg0_4)
+					return arg0_4.funcName == arg1_2
 				end) then
 					return
 				end
 
-				arg0:ActionInvoke(arg1, ...)
+				arg0_1:ActionInvoke(arg1_2, ...)
 			end
 		end,
 		__newindex = function()
 			errorMsg("Cant write Data in ActionInvoke buffer")
 		end
 	})
-	arg0.isFrozen = nil
+	arg0_1.isFrozen = nil
 
-	arg0:bind(LevelUIConst.ON_FROZEN, function()
-		arg0.isFrozen = true
+	arg0_1:bind(LevelUIConst.ON_FROZEN, function()
+		arg0_1.isFrozen = true
 	end)
-	arg0:bind(LevelUIConst.ON_UNFROZEN, function()
-		arg0.isFrozen = nil
+	arg0_1:bind(LevelUIConst.ON_UNFROZEN, function()
+		arg0_1.isFrozen = nil
 	end)
 end
 
-function var0.Load(arg0)
-	if arg0._state ~= var0.STATES.NONE then
+function var0_0.Load(arg0_8)
+	if arg0_8._state ~= var0_0.STATES.NONE then
 		return
 	end
 
-	arg0._state = var0.STATES.LOADING
+	arg0_8._state = var0_0.STATES.LOADING
 
 	pg.UIMgr.GetInstance():LoadingOn()
 
-	local var0 = PoolMgr.GetInstance()
-	local var1
+	local var0_8 = PoolMgr.GetInstance()
+	local var1_8
 
 	parallelAsync({
-		function(arg0)
-			var0:GetUI(arg0:getUIName(), true, function(arg0)
-				if arg0._state == var0.STATES.DESTROY then
+		function(arg0_9)
+			var0_8:GetUI(arg0_8:getUIName(), true, function(arg0_10)
+				if arg0_8._state == var0_0.STATES.DESTROY then
 					pg.UIMgr.GetInstance():LoadingOff()
-					var0:ReturnUI(arg0:getUIName(), arg0)
+					var0_8:ReturnUI(arg0_8:getUIName(), arg0_10)
 				else
-					var1 = arg0
+					var1_8 = arg0_10
 
-					arg0()
+					arg0_9()
 				end
 			end)
 		end,
-		function(arg0)
-			arg0:preload(arg0)
+		function(arg0_11)
+			arg0_8:preload(arg0_11)
 		end
 	}, function()
-		arg0:Loaded(var1)
-		arg0:Init()
+		arg0_8:Loaded(var1_8)
+		arg0_8:Init()
 	end)
 end
 
-function var0.preload(arg0, arg1)
-	arg1()
+function var0_0.preload(arg0_13, arg1_13)
+	arg1_13()
 end
 
-function var0.isfrozen(arg0)
-	return arg0.isFrozen
+function var0_0.isfrozen(arg0_14)
+	return arg0_14.isFrozen
 end
 
-function var0.DoFunction(arg0, arg1)
-	arg1()
+function var0_0.DoFunction(arg0_15, arg1_15)
+	arg1_15()
 end
 
-function var0.InvokeParent(arg0, arg1, ...)
-	local var0 = arg0.sceneParent[arg1]
+function var0_0.InvokeParent(arg0_16, arg1_16, ...)
+	local var0_16 = arg0_16.sceneParent[arg1_16]
 
-	if var0 then
-		return var0(arg0.sceneParent, ...)
+	if var0_16 then
+		return var0_16(arg0_16.sceneParent, ...)
 	end
 end
 
-function var0.GetType(arg0)
+function var0_0.GetType(arg0_17)
 	return 0
 end
 
-function var0.OnLoaded(arg0)
-	arg0._tf:SetParent(arg0.float, false)
+function var0_0.OnLoaded(arg0_18)
+	arg0_18._tf:SetParent(arg0_18.float, false)
 end
 
-function var0.Destroy(arg0)
-	if arg0._state == var0.STATES.INITED then
-		arg0:Hide()
+function var0_0.Destroy(arg0_19)
+	if arg0_19._state == var0_0.STATES.INITED then
+		arg0_19:Hide()
 	end
 
-	var0.super.Destroy(arg0)
+	var0_0.super.Destroy(arg0_19)
 end
 
-function var0.OnDestroy(arg0)
-	arg0.tweens = nil
+function var0_0.OnDestroy(arg0_20)
+	arg0_20.tweens = nil
 end
 
-function var0.Show(arg0)
-	setActive(arg0._tf, true)
-	arg0:OnShow()
+function var0_0.Show(arg0_21)
+	setActive(arg0_21._tf, true)
+	arg0_21:OnShow()
 end
 
-function var0.Hide(arg0)
-	arg0:OnHide()
-	setActive(arg0._tf, false)
+function var0_0.Hide(arg0_22)
+	arg0_22:OnHide()
+	setActive(arg0_22._tf, false)
 end
 
-function var0.OnShow(arg0)
+function var0_0.OnShow(arg0_23)
 	return
 end
 
-function var0.OnHide(arg0)
-	for iter0, iter1 in pairs(arg0.tweens) do
-		LeanTween.cancel(iter1)
+function var0_0.OnHide(arg0_24)
+	for iter0_24, iter1_24 in pairs(arg0_24.tweens) do
+		LeanTween.cancel(iter1_24)
 	end
 
-	arg0.tweens = {}
+	arg0_24.tweens = {}
 end
 
-function var0.ShowButtons(arg0)
+function var0_0.ShowButtons(arg0_25)
 	return
 end
 
-function var0.HideButtons(arg0)
+function var0_0.HideButtons(arg0_26)
 	return
 end
 
-function var0.Update(arg0, arg1)
-	arg0.data = arg1
+function var0_0.Update(arg0_27, arg1_27)
+	arg0_27.data = arg1_27
 end
 
-function var0.UpdateButtons(arg0)
+function var0_0.UpdateButtons(arg0_28)
 	return
 end
 
-function var0.PostUpdateMap(arg0, arg1)
+function var0_0.PostUpdateMap(arg0_29, arg1_29)
 	return
 end
 
-function var0.UpdateMapItems(arg0)
+function var0_0.UpdateMapItems(arg0_30)
 	return
 end
 
-function var0.RecordTween(arg0, arg1, arg2)
-	arg0.tweens[arg1] = arg2
+function var0_0.RecordTween(arg0_31, arg1_31, arg2_31)
+	arg0_31.tweens[arg1_31] = arg2_31
 end
 
-function var0.DeleteTween(arg0, arg1)
-	local var0 = arg0.tweens[arg1]
+function var0_0.DeleteTween(arg0_32, arg1_32)
+	local var0_32 = arg0_32.tweens[arg1_32]
 
-	if var0 then
-		LeanTween.cancel(var0)
+	if var0_32 then
+		LeanTween.cancel(var0_32)
 
-		arg0.tweens[arg1] = nil
+		arg0_32.tweens[arg1_32] = nil
 	end
 end
 
-function var0.TryOpenChapter(arg0, arg1)
+function var0_0.TryOpenChapter(arg0_33, arg1_33)
 	assert(false)
 end
 
-return var0
+return var0_0

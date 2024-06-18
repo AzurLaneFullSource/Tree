@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_321 = {}
+var0_0.word_template_321 = {}
 
-local var1 = var0.word_template_321
+local var1_0 = var0_0.word_template_321
 
 function temp()
-	var1.伊 = {
+	var1_0.伊 = {
 		波 = {
 			拉 = {
 				病 = {
@@ -122,7 +122,7 @@ end
 temp()
 
 function temp()
-	var1.医 = {
+	var1_0.医 = {
 		保 = {
 			卡 = {
 				套 = {
@@ -218,7 +218,7 @@ end
 temp()
 
 function temp()
-	var1.依 = {
+	var1_0.依 = {
 		明 = {
 			巴 = {
 				海 = {
@@ -271,7 +271,7 @@ end
 temp()
 
 function temp()
-	var1.壹 = {
+	var1_0.壹 = {
 		y = {
 			e = {
 				情 = {
@@ -2478,7 +2478,7 @@ end
 temp()
 
 function temp()
-	var1.遗 = {
+	var1_0.遗 = {
 		精 = {
 			this = true
 		},
@@ -2537,7 +2537,7 @@ end
 temp()
 
 function temp()
-	var1.遺 = {
+	var1_0.遺 = {
 		精 = {
 			this = true
 		}
@@ -2547,7 +2547,7 @@ end
 temp()
 
 function temp()
-	var1.乙 = {
+	var1_0.乙 = {
 		环 = {
 			利 = {
 				定 = {

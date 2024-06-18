@@ -1,348 +1,348 @@
-﻿local var0 = class("CourtYardFurnitureModule", import("..CourtYardPlaceableModule"))
+﻿local var0_0 = class("CourtYardFurnitureModule", import("..CourtYardPlaceableModule"))
 
-function var0.Ctor(arg0, arg1, arg2)
-	var0.super.Ctor(arg0, arg1, arg2)
-	arg0:AddListener(CourtYardEvent.FURNITURE_POSITION_CHANGE, arg0.OnPositionUpdate)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var0_0.super.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1:AddListener(CourtYardEvent.FURNITURE_POSITION_CHANGE, arg0_1.OnPositionUpdate)
 end
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
-	pg.ViewUtils.SetLayer(arg0._tf, Layer.UI)
+function var0_0.OnInit(arg0_2)
+	var0_0.super.OnInit(arg0_2)
+	pg.ViewUtils.SetLayer(arg0_2._tf, Layer.UI)
 
-	arg0.model = arg0._tf:Find("icon")
-	arg0.masksTF = arg0._tf:Find("masks")
-	arg0.masks = {}
-	arg0.isMultiMask = arg0:GetData():IsMultiMask()
+	arg0_2.model = arg0_2._tf:Find("icon")
+	arg0_2.masksTF = arg0_2._tf:Find("masks")
+	arg0_2.masks = {}
+	arg0_2.isMultiMask = arg0_2:GetData():IsMultiMask()
 
-	for iter0, iter1 in pairs(arg0:GetData():GetMaskNames()) do
-		local var0 = arg0.masksTF:Find("icon_front_" .. iter0)
+	for iter0_2, iter1_2 in pairs(arg0_2:GetData():GetMaskNames()) do
+		local var0_2 = arg0_2.masksTF:Find("icon_front_" .. iter0_2)
 
-		if arg0.isMultiMask then
-			setParent(var0, arg0.interactionTF)
+		if arg0_2.isMultiMask then
+			setParent(var0_2, arg0_2.interactionTF)
 		end
 
-		arg0.masks[iter0] = var0
+		arg0_2.masks[iter0_2] = var0_2
 	end
 
-	arg0.archMask = arg0.masksTF:Find("icon_front_arch")
-	arg0.bodyMasks = {}
+	arg0_2.archMask = arg0_2.masksTF:Find("icon_front_arch")
+	arg0_2.bodyMasks = {}
 
-	for iter2, iter3 in pairs(arg0.data:GetBodyMasks()) do
-		arg0.bodyMasks[iter2] = arg0.interactionTF:Find("body_mask" .. iter2)
+	for iter2_2, iter3_2 in pairs(arg0_2.data:GetBodyMasks()) do
+		arg0_2.bodyMasks[iter2_2] = arg0_2.interactionTF:Find("body_mask" .. iter2_2)
 	end
 
-	arg0.animators = {}
+	arg0_2.animators = {}
 
-	for iter4, iter5 in pairs(arg0.data:GetAnimators()) do
-		local var1 = arg0.data:GetAnimatorMask() and arg0.interactionTF:Find("animtor_mask") or arg0.interactionTF
+	for iter4_2, iter5_2 in pairs(arg0_2.data:GetAnimators()) do
+		local var1_2 = arg0_2.data:GetAnimatorMask() and arg0_2.interactionTF:Find("animtor_mask") or arg0_2.interactionTF
 
-		arg0.animators[iter5.key] = var1:Find("Animator" .. iter5.key)
+		arg0_2.animators[iter5_2.key] = var1_2:Find("Animator" .. iter5_2.key)
 	end
 
-	local var2 = arg0:GetData().selectedFlag
+	local var2_2 = arg0_2:GetData().selectedFlag
 
-	arg0:InitAttachment(var2)
+	arg0_2:InitAttachment(var2_2)
 
-	if not var2 then
-		arg0:EnableTrigger(false)
+	if not var2_2 then
+		arg0_2:EnableTrigger(false)
 	end
 
-	if arg0.data:IsSpine() then
-		arg0.animator = CourtYardFurnitureAnimatorAgent.New(arg0)
+	if arg0_2.data:IsSpine() then
+		arg0_2.animator = CourtYardFurnitureAnimatorAgent.New(arg0_2)
 	end
 
-	arg0.effectContainer = arg0._tf
-	arg0.effectAgent = CourtYardEffectAgent.New(arg0)
+	arg0_2.effectContainer = arg0_2._tf
+	arg0_2.effectAgent = CourtYardEffectAgent.New(arg0_2)
 end
 
-function var0.CreateWhenStoreyInit(arg0)
-	var0.super.CreateWhenStoreyInit(arg0)
-	arg0:BlocksRaycasts(false)
+function var0_0.CreateWhenStoreyInit(arg0_3)
+	var0_0.super.CreateWhenStoreyInit(arg0_3)
+	arg0_3:BlocksRaycasts(false)
 end
 
-function var0.BlocksRaycasts(arg0, arg1)
-	local var0 = arg0.data:CanClickWhenExitEditMode()
-	local var1 = #arg0.data:GetUsingSlots() > 0
+function var0_0.BlocksRaycasts(arg0_4, arg1_4)
+	local var0_4 = arg0_4.data:CanClickWhenExitEditMode()
+	local var1_4 = #arg0_4.data:GetUsingSlots() > 0
 
-	if var0 or var1 and arg1 == false then
+	if var0_4 or var1_4 and arg1_4 == false then
 		return
 	end
 
-	arg0.cg.blocksRaycasts = arg1
+	arg0_4.cg.blocksRaycasts = arg1_4
 end
 
-function var0.GetSpine(arg0)
-	if arg0.animator then
-		return arg0.animator.spineAnimUI.gameObject.transform
+function var0_0.GetSpine(arg0_5)
+	if arg0_5.animator then
+		return arg0_5.animator.spineAnimUI.gameObject.transform
 	end
 end
 
-function var0.GetCenterPoint(arg0)
-	local var0 = arg0:GetParentTF():InverseTransformPoint(arg0._tf.position)
-	local var1 = Vector2(var0.x, var0.y)
-	local var2 = arg0._tf.sizeDelta
-	local var3 = Vector2(0.5, 0.5) - arg0._tf.pivot
-	local var4 = arg0._tf.localScale.x
-	local var5 = var1 + Vector2(var4 * var2.x * var3.x, var2.y * var3.y)
+function var0_0.GetCenterPoint(arg0_6)
+	local var0_6 = arg0_6:GetParentTF():InverseTransformPoint(arg0_6._tf.position)
+	local var1_6 = Vector2(var0_6.x, var0_6.y)
+	local var2_6 = arg0_6._tf.sizeDelta
+	local var3_6 = Vector2(0.5, 0.5) - arg0_6._tf.pivot
+	local var4_6 = arg0_6._tf.localScale.x
+	local var5_6 = var1_6 + Vector2(var4_6 * var2_6.x * var3_6.x, var2_6.y * var3_6.y)
 
-	return Vector3(var5.x, var5.y, 0)
+	return Vector3(var5_6.x, var5_6.y, 0)
 end
 
-function var0.GetSpinePoint(arg0)
-	local var0 = arg0:GetParentTF():InverseTransformPoint(arg0._tf:Find("spine_icon/spine").position)
+function var0_0.GetSpinePoint(arg0_7)
+	local var0_7 = arg0_7:GetParentTF():InverseTransformPoint(arg0_7._tf:Find("spine_icon/spine").position)
 
-	return Vector3(var0.x, var0.y, 0)
+	return Vector3(var0_7.x, var0_7.y, 0)
 end
 
-function var0.GetBodyMask(arg0, arg1)
-	return arg0.bodyMasks[arg1]
+function var0_0.GetBodyMask(arg0_8, arg1_8)
+	return arg0_8.bodyMasks[arg1_8]
 end
 
-function var0.GetAnimator(arg0, arg1)
-	return arg0.animators[arg1]
+function var0_0.GetAnimator(arg0_9, arg1_9)
+	return arg0_9.animators[arg1_9]
 end
 
-function var0.AddListeners(arg0)
-	arg0:AddListener(CourtYardEvent.FURNITURE_OP_FLAG_CHANGE, arg0.EnableTrigger)
-	arg0:AddListener(CourtYardEvent.ROTATE_FURNITURE, arg0.OnDirChange)
-	arg0:AddListener(CourtYardEvent.FURNITURE_STATE_CHANGE, arg0.OnStateChange)
-	arg0:AddListener(CourtYardEvent.FURNITURE_WILL_INTERACTION, arg0.OnWillInterAction)
-	arg0:AddListener(CourtYardEvent.FURNITURE_START_INTERACTION, arg0.OnStartInterAction)
-	arg0:AddListener(CourtYardEvent.FURNITURE_UPDATE_INTERACTION, arg0.OnUpdateInteraction)
-	arg0:AddListener(CourtYardEvent.FURNITURE_STOP_INTERACTION, arg0.OnStopInterAction)
-	arg0:AddListener(CourtYardEvent.FURNITURE_MOVE, arg0.OnMove)
-	arg0:AddListener(CourtYardEvent.FURNITURE_STOP_MOVE, arg0.OnStopMove)
+function var0_0.AddListeners(arg0_10)
+	arg0_10:AddListener(CourtYardEvent.FURNITURE_OP_FLAG_CHANGE, arg0_10.EnableTrigger)
+	arg0_10:AddListener(CourtYardEvent.ROTATE_FURNITURE, arg0_10.OnDirChange)
+	arg0_10:AddListener(CourtYardEvent.FURNITURE_STATE_CHANGE, arg0_10.OnStateChange)
+	arg0_10:AddListener(CourtYardEvent.FURNITURE_WILL_INTERACTION, arg0_10.OnWillInterAction)
+	arg0_10:AddListener(CourtYardEvent.FURNITURE_START_INTERACTION, arg0_10.OnStartInterAction)
+	arg0_10:AddListener(CourtYardEvent.FURNITURE_UPDATE_INTERACTION, arg0_10.OnUpdateInteraction)
+	arg0_10:AddListener(CourtYardEvent.FURNITURE_STOP_INTERACTION, arg0_10.OnStopInterAction)
+	arg0_10:AddListener(CourtYardEvent.FURNITURE_MOVE, arg0_10.OnMove)
+	arg0_10:AddListener(CourtYardEvent.FURNITURE_STOP_MOVE, arg0_10.OnStopMove)
 end
 
-function var0.RemoveListeners(arg0)
-	arg0:RemoveListener(CourtYardEvent.FURNITURE_OP_FLAG_CHANGE, arg0.EnableTrigger)
-	arg0:RemoveListener(CourtYardEvent.ROTATE_FURNITURE, arg0.OnDirChange)
-	arg0:RemoveListener(CourtYardEvent.FURNITURE_STATE_CHANGE, arg0.OnStateChange)
-	arg0:RemoveListener(CourtYardEvent.FURNITURE_WILL_INTERACTION, arg0.OnWillInterAction)
-	arg0:RemoveListener(CourtYardEvent.FURNITURE_START_INTERACTION, arg0.OnStartInterAction)
-	arg0:RemoveListener(CourtYardEvent.FURNITURE_UPDATE_INTERACTION, arg0.OnUpdateInteraction)
-	arg0:RemoveListener(CourtYardEvent.FURNITURE_STOP_INTERACTION, arg0.OnStopInterAction)
-	arg0:RemoveListener(CourtYardEvent.FURNITURE_MOVE, arg0.OnMove)
-	arg0:RemoveListener(CourtYardEvent.FURNITURE_STOP_MOVE, arg0.OnStopMove)
+function var0_0.RemoveListeners(arg0_11)
+	arg0_11:RemoveListener(CourtYardEvent.FURNITURE_OP_FLAG_CHANGE, arg0_11.EnableTrigger)
+	arg0_11:RemoveListener(CourtYardEvent.ROTATE_FURNITURE, arg0_11.OnDirChange)
+	arg0_11:RemoveListener(CourtYardEvent.FURNITURE_STATE_CHANGE, arg0_11.OnStateChange)
+	arg0_11:RemoveListener(CourtYardEvent.FURNITURE_WILL_INTERACTION, arg0_11.OnWillInterAction)
+	arg0_11:RemoveListener(CourtYardEvent.FURNITURE_START_INTERACTION, arg0_11.OnStartInterAction)
+	arg0_11:RemoveListener(CourtYardEvent.FURNITURE_UPDATE_INTERACTION, arg0_11.OnUpdateInteraction)
+	arg0_11:RemoveListener(CourtYardEvent.FURNITURE_STOP_INTERACTION, arg0_11.OnStopInterAction)
+	arg0_11:RemoveListener(CourtYardEvent.FURNITURE_MOVE, arg0_11.OnMove)
+	arg0_11:RemoveListener(CourtYardEvent.FURNITURE_STOP_MOVE, arg0_11.OnStopMove)
 end
 
-function var0.EnableTrigger(arg0, arg1)
-	arg0.dragAgent:Enable(arg1)
+function var0_0.EnableTrigger(arg0_12, arg1_12)
+	arg0_12.dragAgent:Enable(arg1_12)
 end
 
-function var0.InitAttachment(arg0, arg1)
-	onButton(arg0, arg0._tf, function()
-		arg0:Emit("SelectFurniture", arg0.data.id)
+function var0_0.InitAttachment(arg0_13, arg1_13)
+	onButton(arg0_13, arg0_13._tf, function()
+		arg0_13:Emit("SelectFurniture", arg0_13.data.id)
 	end, SFX_PANEL)
 
-	if arg1 then
-		triggerButton(arg0._tf)
+	if arg1_13 then
+		triggerButton(arg0_13._tf)
 	end
 end
 
-function var0.OnBeginDrag(arg0)
-	arg0:Emit("BeginDragFurniture", arg0.data.id)
+function var0_0.OnBeginDrag(arg0_15)
+	arg0_15:Emit("BeginDragFurniture", arg0_15.data.id)
 end
 
-function var0.OnDragging(arg0, arg1)
-	arg0:Emit("DragingFurniture", arg0.data.id, arg1)
+function var0_0.OnDragging(arg0_16, arg1_16)
+	arg0_16:Emit("DragingFurniture", arg0_16.data.id, arg1_16)
 end
 
-function var0.OnDragEnd(arg0, arg1)
-	arg0:Emit("DragFurnitureEnd", arg0.data.id, arg1)
+function var0_0.OnDragEnd(arg0_17, arg1_17)
+	arg0_17:Emit("DragFurnitureEnd", arg0_17.data.id, arg1_17)
 end
 
-function var0.OnPositionUpdate(arg0, arg1, arg2)
-	arg0:UpdatePosition(arg1, arg2)
+function var0_0.OnPositionUpdate(arg0_18, arg1_18, arg2_18)
+	arg0_18:UpdatePosition(arg1_18, arg2_18)
 end
 
-function var0.OnDirChange(arg0, arg1)
-	arg0._tf.localScale = Vector3(arg1 == 1 and 1 or -1, 1, 1)
+function var0_0.OnDirChange(arg0_19, arg1_19)
+	arg0_19._tf.localScale = Vector3(arg1_19 == 1 and 1 or -1, 1, 1)
 end
 
-function var0.OnWillInterAction(arg0, arg1)
-	if arg0.isMultiMask then
-		for iter0, iter1 in pairs(arg0.masks) do
-			iter1:SetAsLastSibling()
+function var0_0.OnWillInterAction(arg0_20, arg1_20)
+	if arg0_20.isMultiMask then
+		for iter0_20, iter1_20 in pairs(arg0_20.masks) do
+			iter1_20:SetAsLastSibling()
 		end
 	end
 end
 
-function var0.OnStartInterAction(arg0, arg1)
-	local var0 = arg1:GetUsingAnimator()
+function var0_0.OnStartInterAction(arg0_21, arg1_21)
+	local var0_21 = arg1_21:GetUsingAnimator()
 
-	if var0 then
-		setActive(arg0:GetAnimator(var0.key), true)
+	if var0_21 then
+		setActive(arg0_21:GetAnimator(var0_21.key), true)
 	end
 
-	local var1 = arg1:GetSkew()
+	local var1_21 = arg1_21:GetSkew()
 
-	if var1 ~= Vector3.zero then
-		arg0._tf.localPosition = var1
+	if var1_21 ~= Vector3.zero then
+		arg0_21._tf.localPosition = var1_21
 	end
 
-	for iter0, iter1 in pairs(arg0.masks) do
-		setActive(iter1, true)
+	for iter0_21, iter1_21 in pairs(arg0_21.masks) do
+		setActive(iter1_21, true)
 	end
 
-	if arg0.isMultiMask then
-		for iter2, iter3 in pairs(arg0.masks) do
-			iter3:SetSiblingIndex(1 + 2 * (iter2 - 1))
+	if arg0_21.isMultiMask then
+		for iter2_21, iter3_21 in pairs(arg0_21.masks) do
+			iter3_21:SetSiblingIndex(1 + 2 * (iter2_21 - 1))
 		end
 	end
 end
 
-function var0.OnUpdateInteraction(arg0, arg1)
-	if arg0.animator then
-		arg0.animator:PlayInteractioAnim(arg1.action)
+function var0_0.OnUpdateInteraction(arg0_22, arg1_22)
+	if arg0_22.animator then
+		arg0_22.animator:PlayInteractioAnim(arg1_22.action)
 	end
 
-	local var0 = arg0:GetBodyMask(arg1.slot.id)
+	local var0_22 = arg0_22:GetBodyMask(arg1_22.slot.id)
 
-	if var0 then
-		var0:GetComponent(typeof(Image)).enabled = not arg1.closeBodyMask
+	if var0_22 then
+		var0_22:GetComponent(typeof(Image)).enabled = not arg1_22.closeBodyMask
 	end
 
-	local var1 = arg1.slot:GetUsingAnimator()
+	local var1_22 = arg1_22.slot:GetUsingAnimator()
 
-	if arg1.isReset and var1 then
-		local var2 = arg0:GetAnimator(var1.key)
+	if arg1_22.isReset and var1_22 then
+		local var2_22 = arg0_22:GetAnimator(var1_22.key)
 
-		setActive(var2, false)
-		setActive(var2, true)
+		setActive(var2_22, false)
+		setActive(var2_22, true)
 	end
 
-	if arg1.block then
-		arg0.cg.blocksRaycasts = false
+	if arg1_22.block then
+		arg0_22.cg.blocksRaycasts = false
 	end
 end
 
-function var0.OnStopInterAction(arg0, arg1)
-	local var0 = arg1:GetUsingAnimator()
+function var0_0.OnStopInterAction(arg0_23, arg1_23)
+	local var0_23 = arg1_23:GetUsingAnimator()
 
-	if var0 then
-		local var1 = arg0:GetAnimator(var0.key)
+	if var0_23 then
+		local var1_23 = arg0_23:GetAnimator(var0_23.key)
 
-		var1.localScale = Vector3.one
-		var1.localEulerAngles = Vector3.zero
+		var1_23.localScale = Vector3.one
+		var1_23.localEulerAngles = Vector3.zero
 
-		setActive(var1, false)
+		setActive(var1_23, false)
 	end
 
-	local var2 = arg0:GetBodyMask(arg1.id)
+	local var2_23 = arg0_23:GetBodyMask(arg1_23.id)
 
-	if var2 then
-		var2.localScale = Vector3.one
-		var2.localEulerAngles = Vector3.zero
+	if var2_23 then
+		var2_23.localScale = Vector3.one
+		var2_23.localEulerAngles = Vector3.zero
 	end
 
-	if arg0:GetData():AnySlotIsUsing() and table.getCount(arg0.masks) >= 1 then
+	if arg0_23:GetData():AnySlotIsUsing() and table.getCount(arg0_23.masks) >= 1 then
 		-- block empty
 	else
-		for iter0, iter1 in pairs(arg0.masks) do
-			setActive(iter1, false)
+		for iter0_23, iter1_23 in pairs(arg0_23.masks) do
+			setActive(iter1_23, false)
 		end
 	end
 end
 
-function var0.OnAnimtionFinish(arg0, arg1)
-	arg0.cg.blocksRaycasts = true
+function var0_0.OnAnimtionFinish(arg0_24, arg1_24)
+	arg0_24.cg.blocksRaycasts = true
 
-	arg0:Emit("FurnitureAnimtionFinish", arg0.data.id, arg1)
+	arg0_24:Emit("FurnitureAnimtionFinish", arg0_24.data.id, arg1_24)
 end
 
-function var0.OnStateChange(arg0, arg1)
-	if arg1 == CourtYardFurniture.STATE_PLAY_MUSIC then
-		arg0:AddMusicEffect()
-	elseif arg1 == CourtYardFurniture.STATE_IDLE then
-		arg0:StopMusicEffect()
+function var0_0.OnStateChange(arg0_25, arg1_25)
+	if arg1_25 == CourtYardFurniture.STATE_PLAY_MUSIC then
+		arg0_25:AddMusicEffect()
+	elseif arg1_25 == CourtYardFurniture.STATE_IDLE then
+		arg0_25:StopMusicEffect()
 	end
 
-	if arg0.animator then
-		arg0.animator:SetState(arg1)
-	end
-end
-
-function var0.AddMusicEffect(arg0)
-	local var0 = arg0.data:GetMusicData()
-
-	if var0 and var0.effect then
-		arg0.effectAgent:EnableEffect(var0.effect)
+	if arg0_25.animator then
+		arg0_25.animator:SetState(arg1_25)
 	end
 end
 
-function var0.StopMusicEffect(arg0)
-	local var0 = arg0.data:GetMusicData()
+function var0_0.AddMusicEffect(arg0_26)
+	local var0_26 = arg0_26.data:GetMusicData()
 
-	if var0 and var0.effect then
-		arg0.effectAgent:DisableEffect(var0.effect)
+	if var0_26 and var0_26.effect then
+		arg0_26.effectAgent:EnableEffect(var0_26.effect)
 	end
 end
 
-function var0.OnMove(arg0, arg1)
-	local var0 = CourtYardCalcUtil.Map2Local(arg1)
-	local var1 = arg0.data:GetMoveTime()
-	local var2 = Vector3(var0.x, var0.y, 0)
-	local var3 = CourtYardCalcUtil.TrPosition2LocalPos(arg0:GetParentTF(), arg0._tf.parent, var2)
+function var0_0.StopMusicEffect(arg0_27)
+	local var0_27 = arg0_27.data:GetMusicData()
 
-	LeanTween.moveLocal(arg0._go, var3, var1)
-end
-
-function var0.OnStopMove(arg0)
-	if LeanTween.isTweening(arg0._go) then
-		LeanTween.cancel(arg0._go)
+	if var0_27 and var0_27.effect then
+		arg0_27.effectAgent:DisableEffect(var0_27.effect)
 	end
 end
 
-function var0.OnDispose(arg0)
-	var0.super.OnDispose(arg0)
+function var0_0.OnMove(arg0_28, arg1_28)
+	local var0_28 = CourtYardCalcUtil.Map2Local(arg1_28)
+	local var1_28 = arg0_28.data:GetMoveTime()
+	local var2_28 = Vector3(var0_28.x, var0_28.y, 0)
+	local var3_28 = CourtYardCalcUtil.TrPosition2LocalPos(arg0_28:GetParentTF(), arg0_28._tf.parent, var2_28)
 
-	if not IsNil(arg0.model) then
-		Object.Destroy(arg0.model.gameObject)
-	end
-
-	for iter0, iter1 in pairs(arg0.masks) do
-		Object.Destroy(iter1.gameObject)
-	end
-
-	arg0.masks = nil
-
-	for iter2, iter3 in pairs(arg0.animators) do
-		Object.Destroy(iter3.gameObject)
-	end
-
-	arg0.animators = nil
-
-	if not IsNil(arg0.archMask) then
-		Object.Destroy(arg0.archMask.gameObject)
-	end
-
-	arg0.archMask = nil
-
-	if arg0.animator then
-		arg0.animator:Dispose()
-
-		arg0.animator = nil
-	end
-
-	arg0.effectAgent:Dispose()
-
-	arg0.effectAgent = nil
-
-	for iter4, iter5 in pairs(arg0.bodyMasks) do
-		Object.Destroy(iter5.gameObject)
-	end
-
-	arg0.bodyMasks = nil
-	arg0.cg.blocksRaycasts = true
-
-	Object.Destroy(arg0._tf:GetComponent(typeof(ButtonEventExtend)))
-	Object.Destroy(arg0._tf:GetComponent(typeof(Button)))
+	LeanTween.moveLocal(arg0_28._go, var3_28, var1_28)
 end
 
-function var0.OnDestroy(arg0)
-	arg0:RemoveListener(CourtYardEvent.FURNITURE_POSITION_CHANGE, arg0.OnPositionUpdate)
-	arg0:GetView().poolMgr:GetFurniturePool():Enqueue(arg0._go)
+function var0_0.OnStopMove(arg0_29)
+	if LeanTween.isTweening(arg0_29._go) then
+		LeanTween.cancel(arg0_29._go)
+	end
 end
 
-return var0
+function var0_0.OnDispose(arg0_30)
+	var0_0.super.OnDispose(arg0_30)
+
+	if not IsNil(arg0_30.model) then
+		Object.Destroy(arg0_30.model.gameObject)
+	end
+
+	for iter0_30, iter1_30 in pairs(arg0_30.masks) do
+		Object.Destroy(iter1_30.gameObject)
+	end
+
+	arg0_30.masks = nil
+
+	for iter2_30, iter3_30 in pairs(arg0_30.animators) do
+		Object.Destroy(iter3_30.gameObject)
+	end
+
+	arg0_30.animators = nil
+
+	if not IsNil(arg0_30.archMask) then
+		Object.Destroy(arg0_30.archMask.gameObject)
+	end
+
+	arg0_30.archMask = nil
+
+	if arg0_30.animator then
+		arg0_30.animator:Dispose()
+
+		arg0_30.animator = nil
+	end
+
+	arg0_30.effectAgent:Dispose()
+
+	arg0_30.effectAgent = nil
+
+	for iter4_30, iter5_30 in pairs(arg0_30.bodyMasks) do
+		Object.Destroy(iter5_30.gameObject)
+	end
+
+	arg0_30.bodyMasks = nil
+	arg0_30.cg.blocksRaycasts = true
+
+	Object.Destroy(arg0_30._tf:GetComponent(typeof(ButtonEventExtend)))
+	Object.Destroy(arg0_30._tf:GetComponent(typeof(Button)))
+end
+
+function var0_0.OnDestroy(arg0_31)
+	arg0_31:RemoveListener(CourtYardEvent.FURNITURE_POSITION_CHANGE, arg0_31.OnPositionUpdate)
+	arg0_31:GetView().poolMgr:GetFurniturePool():Enqueue(arg0_31._go)
+end
+
+return var0_0

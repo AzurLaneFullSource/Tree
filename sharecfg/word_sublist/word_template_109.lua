@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_109 = {}
+var0_0.word_template_109 = {}
 
-local var1 = var0.word_template_109
+local var1_0 = var0_0.word_template_109
 
 function temp()
-	var1.个 = {
+	var1_0.个 = {
 		农 = {
 			村 = {
 				退 = {
@@ -63,7 +63,7 @@ end
 temp()
 
 function temp()
-	var1.各 = {
+	var1_0.各 = {
 		类 = {
 			米 = {
 				要 = {
@@ -122,7 +122,7 @@ end
 temp()
 
 function temp()
-	var1.给 = {
+	var1_0.给 = {
 		你 = {
 			的 = {
 				精 = {
@@ -196,7 +196,7 @@ end
 temp()
 
 function temp()
-	var1.給 = {
+	var1_0.給 = {
 		你 = {
 			爽 = {
 				this = true
@@ -208,7 +208,7 @@ end
 temp()
 
 function temp()
-	var1.根 = {
+	var1_0.根 = {
 		本 = {
 			不 = {
 				带 = {
@@ -259,7 +259,7 @@ end
 temp()
 
 function temp()
-	var1.跟 = {
+	var1_0.跟 = {
 		到 = {
 			涛 = {
 				哥 = {
@@ -340,7 +340,7 @@ end
 temp()
 
 function temp()
-	var1.耿 = {
+	var1_0.耿 = {
 		惠 = {
 			昌 = {
 				this = true

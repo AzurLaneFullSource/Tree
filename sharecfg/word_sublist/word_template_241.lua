@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_241 = {}
+var0_0.word_template_241 = {}
 
-local var1 = var0.word_template_241
+local var1_0 = var0_0.word_template_241
 
 function temp()
-	var1.慶 = {
+	var1_0.慶 = {
 		紅 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.親 = {
+	var1_0.親 = {
 		美 = {
 			this = true
 		},
@@ -35,7 +35,7 @@ end
 temp()
 
 function temp()
-	var1.邛 = {
+	var1_0.邛 = {
 		this = {
 			this = true
 		}
@@ -45,7 +45,7 @@ end
 temp()
 
 function temp()
-	var1.穷 = {
+	var1_0.穷 = {
 		逼 = {
 			this = true
 		},
@@ -62,7 +62,7 @@ end
 temp()
 
 function temp()
-	var1.筇 = {
+	var1_0.筇 = {
 		this = {
 			this = true
 		}
@@ -72,7 +72,7 @@ end
 temp()
 
 function temp()
-	var1.蛩 = {
+	var1_0.蛩 = {
 		鼽 = {
 			this = true
 		}
@@ -82,7 +82,7 @@ end
 temp()
 
 function temp()
-	var1.跫 = {
+	var1_0.跫 = {
 		this = {
 			this = true
 		}

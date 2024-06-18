@@ -1,14 +1,14 @@
-﻿local var0 = type
-local var1 = string.sub
-local var2 = string.byte
-local var3 = string.format
-local var4 = string.match
-local var5 = string.gmatch
-local var6 = string.gsub
-local var7 = string.lower
-local var8 = string.rep
-local var9 = require("bit").tohex
-local var10 = {
+﻿local var0_0 = type
+local var1_0 = string.sub
+local var2_0 = string.byte
+local var3_0 = string.format
+local var4_0 = string.match
+local var5_0 = string.gmatch
+local var6_0 = string.gsub
+local var7_0 = string.lower
+local var8_0 = string.rep
+local var9_0 = require("bit").tohex
+local var10_0 = {
 	[0] = "addBmr",
 	"addVmr",
 	"addBrm",
@@ -267,9 +267,9 @@ local var10 = {
 	"incd!Vm"
 }
 
-assert(#var10 == 255)
+assert(#var10_0 == 255)
 
-local var11 = setmetatable({
+local var11_0 = setmetatable({
 	[96] = false,
 	[69] = "rex*rb",
 	[130] = false,
@@ -312,9 +312,9 @@ local var11 = setmetatable({
 	[31] = false,
 	[67] = "rex*xb"
 }, {
-	__index = var10
+	__index = var10_0
 })
-local var12 = {
+local var12_0 = {
 	[0] = "sldt!Dmp",
 	"sgdt!Ump",
 	"larVrm",
@@ -573,9 +573,9 @@ local var12 = {
 	"ud"
 }
 
-assert(var12[255] == "ud")
+assert(var12_0[255] == "ud")
 
-local var13 = {
+local var13_0 = {
 	["38"] = {
 		[0] = "pshufbPrvm",
 		"phaddwPrvm",
@@ -931,7 +931,7 @@ local var13 = {
 		[240] = "||| rorxVrmu"
 	}
 }
-local var14 = {
+local var14_0 = {
 	[217] = "vmmcall",
 	[194] = "vmlaunch",
 	[222] = "skinit",
@@ -949,7 +949,7 @@ local var14 = {
 	[216] = "vmrun",
 	[249] = "rdtscp"
 }
-local var15 = {
+local var15_0 = {
 	[0] = "faddFm",
 	"fmulFm",
 	"fcomFm",
@@ -1127,9 +1127,9 @@ local var15 = {
 	"fcomipFf"
 }
 
-assert(var15[126] == "fcomipFf")
+assert(var15_0[126] == "fcomipFf")
 
-local var16 = {
+local var16_0 = {
 	arith = {
 		"add",
 		"or",
@@ -1279,7 +1279,7 @@ local var16 = {
 		"prefetcht2"
 	}
 }
-local var17 = {
+local var17_0 = {
 	B = {
 		"al",
 		"cl",
@@ -1425,7 +1425,7 @@ local var17 = {
 		"ymm15"
 	}
 }
-local var18 = {
+local var18_0 = {
 	"es",
 	"cs",
 	"ss",
@@ -1435,7 +1435,7 @@ local var18 = {
 	"segr6",
 	"segr7"
 }
-local var19 = {
+local var19_0 = {
 	D = 4,
 	M = 8,
 	Y = 32,
@@ -1444,7 +1444,7 @@ local var19 = {
 	X = 16,
 	B = 1
 }
-local var20 = {
+local var20_0 = {
 	G = "qword",
 	F = "dword",
 	M = "qword",
@@ -1456,898 +1456,898 @@ local var20 = {
 	B = "byte"
 }
 
-local function var21(arg0, arg1, arg2)
-	local var0 = arg0.code
-	local var1 = arg0.pos
-	local var2 = ""
-	local var3 = arg0.hexdump
+local function var21_0(arg0_1, arg1_1, arg2_1)
+	local var0_1 = arg0_1.code
+	local var1_1 = arg0_1.pos
+	local var2_1 = ""
+	local var3_1 = arg0_1.hexdump
 
-	if var3 > 0 then
-		for iter0 = arg0.start, var1 - 1 do
-			var2 = var2 .. var3("%02X", var2(var0, iter0, iter0))
+	if var3_1 > 0 then
+		for iter0_1 = arg0_1.start, var1_1 - 1 do
+			var2_1 = var2_1 .. var3_0("%02X", var2_0(var0_1, iter0_1, iter0_1))
 		end
 
-		if var3 < #var2 then
-			var2 = var1(var2, 1, var3) .. ". "
+		if var3_1 < #var2_1 then
+			var2_1 = var1_0(var2_1, 1, var3_1) .. ". "
 		else
-			var2 = var2 .. var8(" ", var3 - #var2 + 2)
+			var2_1 = var2_1 .. var8_0(" ", var3_1 - #var2_1 + 2)
 		end
 	end
 
-	if arg2 then
-		arg1 = arg1 .. " " .. arg2
+	if arg2_1 then
+		arg1_1 = arg1_1 .. " " .. arg2_1
 	end
 
-	if arg0.o16 then
-		arg1 = "o16 " .. arg1
-		arg0.o16 = false
+	if arg0_1.o16 then
+		arg1_1 = "o16 " .. arg1_1
+		arg0_1.o16 = false
 	end
 
-	if arg0.a32 then
-		arg1 = "a32 " .. arg1
-		arg0.a32 = false
+	if arg0_1.a32 then
+		arg1_1 = "a32 " .. arg1_1
+		arg0_1.a32 = false
 	end
 
-	if arg0.rep then
-		arg1 = arg0.rep .. " " .. arg1
-		arg0.rep = false
+	if arg0_1.rep then
+		arg1_1 = arg0_1.rep .. " " .. arg1_1
+		arg0_1.rep = false
 	end
 
-	if arg0.rex then
-		local var4 = (arg0.rexw and "w" or "") .. (arg0.rexr and "r" or "") .. (arg0.rexx and "x" or "") .. (arg0.rexb and "b" or "") .. (arg0.vexl and "l" or "")
+	if arg0_1.rex then
+		local var4_1 = (arg0_1.rexw and "w" or "") .. (arg0_1.rexr and "r" or "") .. (arg0_1.rexx and "x" or "") .. (arg0_1.rexb and "b" or "") .. (arg0_1.vexl and "l" or "")
 
-		if arg0.vexv and arg0.vexv ~= 0 then
-			var4 = var4 .. "v" .. arg0.vexv
+		if arg0_1.vexv and arg0_1.vexv ~= 0 then
+			var4_1 = var4_1 .. "v" .. arg0_1.vexv
 		end
 
-		if var4 ~= "" then
-			arg1 = arg0.rex .. "." .. var4 .. " " .. var6(arg1, "^ ", "")
-		elseif arg0.rex == "vex" then
-			arg1 = var6("v" .. arg1, "^v ", "")
+		if var4_1 ~= "" then
+			arg1_1 = arg0_1.rex .. "." .. var4_1 .. " " .. var6_0(arg1_1, "^ ", "")
+		elseif arg0_1.rex == "vex" then
+			arg1_1 = var6_0("v" .. arg1_1, "^v ", "")
 		end
 
-		arg0.rexw = false
-		arg0.rexr = false
-		arg0.rexx = false
-		arg0.rexb = false
-		arg0.rex = false
-		arg0.vexl = false
-		arg0.vexv = false
+		arg0_1.rexw = false
+		arg0_1.rexr = false
+		arg0_1.rexx = false
+		arg0_1.rexb = false
+		arg0_1.rex = false
+		arg0_1.vexl = false
+		arg0_1.vexv = false
 	end
 
-	if arg0.seg then
-		local var5, var6 = var6(arg1, "%[", "[" .. arg0.seg .. ":")
+	if arg0_1.seg then
+		local var5_1, var6_1 = var6_0(arg1_1, "%[", "[" .. arg0_1.seg .. ":")
 
-		if var6 == 0 then
-			arg1 = arg0.seg .. " " .. arg1
+		if var6_1 == 0 then
+			arg1_1 = arg0_1.seg .. " " .. arg1_1
 		else
-			arg1 = var5
+			arg1_1 = var5_1
 		end
 
-		arg0.seg = false
+		arg0_1.seg = false
 	end
 
-	if arg0.lock then
-		arg1 = "lock " .. arg1
-		arg0.lock = false
+	if arg0_1.lock then
+		arg1_1 = "lock " .. arg1_1
+		arg0_1.lock = false
 	end
 
-	local var7 = arg0.imm
+	local var7_1 = arg0_1.imm
 
-	if var7 then
-		local var8 = arg0.symtab[var7]
+	if var7_1 then
+		local var8_1 = arg0_1.symtab[var7_1]
 
-		if var8 then
-			arg1 = arg1 .. "\t->" .. var8
+		if var8_1 then
+			arg1_1 = arg1_1 .. "\t->" .. var8_1
 		end
 	end
 
-	arg0.out(var3("%08x  %s%s\n", arg0.addr + arg0.start, var2, arg1))
+	arg0_1.out(var3_0("%08x  %s%s\n", arg0_1.addr + arg0_1.start, var2_1, arg1_1))
 
-	arg0.mrm = false
-	arg0.vexv = false
-	arg0.start = var1
-	arg0.imm = nil
+	arg0_1.mrm = false
+	arg0_1.vexv = false
+	arg0_1.start = var1_1
+	arg0_1.imm = nil
 end
 
-local function var22(arg0)
-	arg0.o16 = false
-	arg0.seg = false
-	arg0.lock = false
-	arg0.rep = false
-	arg0.rexw = false
-	arg0.rexr = false
-	arg0.rexx = false
-	arg0.rexb = false
-	arg0.rex = false
-	arg0.a32 = false
-	arg0.vexl = false
+local function var22_0(arg0_2)
+	arg0_2.o16 = false
+	arg0_2.seg = false
+	arg0_2.lock = false
+	arg0_2.rep = false
+	arg0_2.rexw = false
+	arg0_2.rexr = false
+	arg0_2.rexx = false
+	arg0_2.rexb = false
+	arg0_2.rex = false
+	arg0_2.a32 = false
+	arg0_2.vexl = false
 end
 
-local function var23(arg0)
-	arg0.pos = arg0.stop + 1
+local function var23_0(arg0_3)
+	arg0_3.pos = arg0_3.stop + 1
 
-	var22(arg0)
+	var22_0(arg0_3)
 
-	return var21(arg0, "(incomplete)")
+	return var21_0(arg0_3, "(incomplete)")
 end
 
-local function var24(arg0)
-	var22(arg0)
+local function var24_0(arg0_4)
+	var22_0(arg0_4)
 
-	return var21(arg0, "(unknown)")
+	return var21_0(arg0_4, "(unknown)")
 end
 
-local function var25(arg0, arg1, arg2)
-	if arg1 + arg2 - 1 > arg0.stop then
-		return var23(arg0)
+local function var25_0(arg0_5, arg1_5, arg2_5)
+	if arg1_5 + arg2_5 - 1 > arg0_5.stop then
+		return var23_0(arg0_5)
 	end
 
-	local var0 = arg0.code
+	local var0_5 = arg0_5.code
 
-	if arg2 == 1 then
-		return (var2(var0, arg1, arg1))
-	elseif arg2 == 2 then
-		local var1, var2 = var2(var0, arg1, arg1 + 1)
+	if arg2_5 == 1 then
+		return (var2_0(var0_5, arg1_5, arg1_5))
+	elseif arg2_5 == 2 then
+		local var1_5, var2_5 = var2_0(var0_5, arg1_5, arg1_5 + 1)
 
-		return var1 + var2 * 256
+		return var1_5 + var2_5 * 256
 	else
-		local var3, var4, var5, var6 = var2(var0, arg1, arg1 + 3)
-		local var7 = var3 + var4 * 256 + var5 * 65536 + var6 * 16777216
+		local var3_5, var4_5, var5_5, var6_5 = var2_0(var0_5, arg1_5, arg1_5 + 3)
+		local var7_5 = var3_5 + var4_5 * 256 + var5_5 * 65536 + var6_5 * 16777216
 
-		arg0.imm = var7
+		arg0_5.imm = var7_5
 
-		return var7
+		return var7_5
 	end
 end
 
-local function var26(arg0, arg1, arg2)
-	local var0
-	local var1
-	local var2
-	local var3
-	local var4
-	local var5
-	local var6
-	local var7
-	local var8
-	local var9 = arg0.code
-	local var10 = arg0.pos
-	local var11 = arg0.stop
-	local var12 = arg0.vexl
+local function var26_0(arg0_6, arg1_6, arg2_6)
+	local var0_6
+	local var1_6
+	local var2_6
+	local var3_6
+	local var4_6
+	local var5_6
+	local var6_6
+	local var7_6
+	local var8_6
+	local var9_6 = arg0_6.code
+	local var10_6 = arg0_6.pos
+	local var11_6 = arg0_6.stop
+	local var12_6 = arg0_6.vexl
 
-	for iter0 in var5(arg2, ".") do
-		local var13
+	for iter0_6 in var5_0(arg2_6, ".") do
+		local var13_6
 
-		if iter0 == "V" or iter0 == "U" then
-			if arg0.rexw then
-				var2 = "Q"
-				arg0.rexw = false
-			elseif arg0.o16 then
-				var2 = "W"
-				arg0.o16 = false
+		if iter0_6 == "V" or iter0_6 == "U" then
+			if arg0_6.rexw then
+				var2_6 = "Q"
+				arg0_6.rexw = false
+			elseif arg0_6.o16 then
+				var2_6 = "W"
+				arg0_6.o16 = false
 			else
-				var2 = iter0 == "U" and arg0.x64 and "Q" or "D"
+				var2_6 = iter0_6 == "U" and arg0_6.x64 and "Q" or "D"
 			end
 
-			var1 = var17[var2]
-		elseif iter0 == "T" then
-			if arg0.rexw then
-				var2 = "Q"
-				arg0.rexw = false
+			var1_6 = var17_0[var2_6]
+		elseif iter0_6 == "T" then
+			if arg0_6.rexw then
+				var2_6 = "Q"
+				arg0_6.rexw = false
 			else
-				var2 = "D"
+				var2_6 = "D"
 			end
 
-			var1 = var17[var2]
-		elseif iter0 == "B" then
-			var2 = "B"
-			var1 = arg0.rex and var17.B64 or var17.B
-		elseif var4(iter0, "[WDQMXYFG]") then
-			var2 = iter0
+			var1_6 = var17_0[var2_6]
+		elseif iter0_6 == "B" then
+			var2_6 = "B"
+			var1_6 = arg0_6.rex and var17_0.B64 or var17_0.B
+		elseif var4_0(iter0_6, "[WDQMXYFG]") then
+			var2_6 = iter0_6
 
-			if var2 == "X" and var12 then
-				var2 = "Y"
-				arg0.vexl = false
+			if var2_6 == "X" and var12_6 then
+				var2_6 = "Y"
+				arg0_6.vexl = false
 			end
 
-			var1 = var17[var2]
-		elseif iter0 == "P" then
-			var2 = arg0.o16 and "X" or "M"
-			arg0.o16 = false
+			var1_6 = var17_0[var2_6]
+		elseif iter0_6 == "P" then
+			var2_6 = arg0_6.o16 and "X" or "M"
+			arg0_6.o16 = false
 
-			if var2 == "X" and var12 then
-				var2 = "Y"
-				arg0.vexl = false
+			if var2_6 == "X" and var12_6 then
+				var2_6 = "Y"
+				arg0_6.vexl = false
 			end
 
-			var1 = var17[var2]
-		elseif iter0 == "S" then
-			arg1 = arg1 .. var7(var2)
-		elseif iter0 == "s" then
-			local var14 = var25(arg0, var10, 1)
+			var1_6 = var17_0[var2_6]
+		elseif iter0_6 == "S" then
+			arg1_6 = arg1_6 .. var7_0(var2_6)
+		elseif iter0_6 == "s" then
+			local var14_6 = var25_0(arg0_6, var10_6, 1)
 
-			if not var14 then
+			if not var14_6 then
 				return
 			end
 
-			var13 = var14 <= 127 and var3("+0x%02x", var14) or var3("-0x%02x", 256 - var14)
-			var10 = var10 + 1
-		elseif iter0 == "u" then
-			local var15 = var25(arg0, var10, 1)
+			var13_6 = var14_6 <= 127 and var3_0("+0x%02x", var14_6) or var3_0("-0x%02x", 256 - var14_6)
+			var10_6 = var10_6 + 1
+		elseif iter0_6 == "u" then
+			local var15_6 = var25_0(arg0_6, var10_6, 1)
 
-			if not var15 then
+			if not var15_6 then
 				return
 			end
 
-			var13 = var3("0x%02x", var15)
-			var10 = var10 + 1
-		elseif iter0 == "b" then
-			local var16 = var25(arg0, var10, 1)
+			var13_6 = var3_0("0x%02x", var15_6)
+			var10_6 = var10_6 + 1
+		elseif iter0_6 == "b" then
+			local var16_6 = var25_0(arg0_6, var10_6, 1)
 
-			if not var16 then
+			if not var16_6 then
 				return
 			end
 
-			var13 = var1[var16 / 16 + 1]
-			var10 = var10 + 1
-		elseif iter0 == "w" then
-			local var17 = var25(arg0, var10, 2)
+			var13_6 = var1_6[var16_6 / 16 + 1]
+			var10_6 = var10_6 + 1
+		elseif iter0_6 == "w" then
+			local var17_6 = var25_0(arg0_6, var10_6, 2)
 
-			if not var17 then
+			if not var17_6 then
 				return
 			end
 
-			var13 = var3("0x%x", var17)
-			var10 = var10 + 2
-		elseif iter0 == "o" then
-			if arg0.x64 then
-				local var18 = var25(arg0, var10, 4)
+			var13_6 = var3_0("0x%x", var17_6)
+			var10_6 = var10_6 + 2
+		elseif iter0_6 == "o" then
+			if arg0_6.x64 then
+				local var18_6 = var25_0(arg0_6, var10_6, 4)
 
-				if not var18 then
+				if not var18_6 then
 					return
 				end
 
-				local var19 = var25(arg0, var10 + 4, 4)
+				local var19_6 = var25_0(arg0_6, var10_6 + 4, 4)
 
-				if not var19 then
+				if not var19_6 then
 					return
 				end
 
-				var13 = var3("[0x%08x%08x]", var19, var18)
-				var10 = var10 + 8
+				var13_6 = var3_0("[0x%08x%08x]", var19_6, var18_6)
+				var10_6 = var10_6 + 8
 			else
-				local var20 = var25(arg0, var10, 4)
+				local var20_6 = var25_0(arg0_6, var10_6, 4)
 
-				if not var20 then
+				if not var20_6 then
 					return
 				end
 
-				var13 = var3("[0x%08x]", var20)
-				var10 = var10 + 4
+				var13_6 = var3_0("[0x%08x]", var20_6)
+				var10_6 = var10_6 + 4
 			end
-		elseif iter0 == "i" or iter0 == "I" then
-			local var21 = var19[var2]
+		elseif iter0_6 == "i" or iter0_6 == "I" then
+			local var21_6 = var19_0[var2_6]
 
-			if var21 == 8 and arg0.x64 and iter0 == "I" then
-				local var22 = var25(arg0, var10, 4)
+			if var21_6 == 8 and arg0_6.x64 and iter0_6 == "I" then
+				local var22_6 = var25_0(arg0_6, var10_6, 4)
 
-				if not var22 then
+				if not var22_6 then
 					return
 				end
 
-				local var23 = var25(arg0, var10 + 4, 4)
+				local var23_6 = var25_0(arg0_6, var10_6 + 4, 4)
 
-				if not var23 then
+				if not var23_6 then
 					return
 				end
 
-				var13 = var3("0x%08x%08x", var23, var22)
+				var13_6 = var3_0("0x%08x%08x", var23_6, var22_6)
 			else
-				if var21 == 8 then
-					var21 = 4
+				if var21_6 == 8 then
+					var21_6 = 4
 				end
 
-				local var24 = var25(arg0, var10, var21)
+				local var24_6 = var25_0(arg0_6, var10_6, var21_6)
 
-				if not var24 then
+				if not var24_6 then
 					return
 				end
 
-				if var2 == "Q" and (var24 < 0 or var24 > 2147483647) then
-					var24 = 4294967296 - var24
-					var13 = var3(var24 > 65535 and "-0x%08x" or "-0x%x", var24)
+				if var2_6 == "Q" and (var24_6 < 0 or var24_6 > 2147483647) then
+					var24_6 = 4294967296 - var24_6
+					var13_6 = var3_0(var24_6 > 65535 and "-0x%08x" or "-0x%x", var24_6)
 				else
-					var13 = var3(var24 > 65535 and "0x%08x" or "0x%x", var24)
+					var13_6 = var3_0(var24_6 > 65535 and "0x%08x" or "0x%x", var24_6)
 				end
 			end
 
-			var10 = var10 + var21
-		elseif iter0 == "j" then
-			local var25 = var19[var2]
+			var10_6 = var10_6 + var21_6
+		elseif iter0_6 == "j" then
+			local var25_6 = var19_0[var2_6]
 
-			if var25 == 8 then
-				var25 = 4
+			if var25_6 == 8 then
+				var25_6 = 4
 			end
 
-			local var26 = var25(arg0, var10, var25)
+			local var26_6 = var25_0(arg0_6, var10_6, var25_6)
 
-			if not var26 then
+			if not var26_6 then
 				return
 			end
 
-			if var2 == "B" and var26 > 127 then
-				var26 = var26 - 256
-			elseif var26 > 2147483647 then
-				var26 = var26 - 4294967296
+			if var2_6 == "B" and var26_6 > 127 then
+				var26_6 = var26_6 - 256
+			elseif var26_6 > 2147483647 then
+				var26_6 = var26_6 - 4294967296
 			end
 
-			var10 = var10 + var25
+			var10_6 = var10_6 + var25_6
 
-			local var27 = var26 + var10 + arg0.addr
+			local var27_6 = var26_6 + var10_6 + arg0_6.addr
 
-			if var27 > 4294967295 and not arg0.x64 then
-				var27 = var27 - 4294967296
+			if var27_6 > 4294967295 and not arg0_6.x64 then
+				var27_6 = var27_6 - 4294967296
 			end
 
-			arg0.imm = var27
+			arg0_6.imm = var27_6
 
-			if var2 == "W" then
-				var13 = var3("word 0x%04x", var27 % 65536)
-			elseif arg0.x64 then
-				local var28 = var27 % 16777216
+			if var2_6 == "W" then
+				var13_6 = var3_0("word 0x%04x", var27_6 % 65536)
+			elseif arg0_6.x64 then
+				local var28_6 = var27_6 % 16777216
 
-				var13 = var3("0x%02x%06x", (var27 - var28) / 16777216, var28)
+				var13_6 = var3_0("0x%02x%06x", (var27_6 - var28_6) / 16777216, var28_6)
 			else
-				var13 = "0x" .. var9(var27)
+				var13_6 = "0x" .. var9_0(var27_6)
 			end
-		elseif iter0 == "R" then
-			local var29 = var2(var9, var10 - 1, var10 - 1) % 8
+		elseif iter0_6 == "R" then
+			local var29_6 = var2_0(var9_6, var10_6 - 1, var10_6 - 1) % 8
 
-			if arg0.rexb then
-				var29 = var29 + 8
-				arg0.rexb = false
+			if arg0_6.rexb then
+				var29_6 = var29_6 + 8
+				arg0_6.rexb = false
 			end
 
-			var13 = var1[var29 + 1]
-		elseif iter0 == "a" then
-			var13 = var1[1]
-		elseif iter0 == "c" then
-			var13 = "cl"
-		elseif iter0 == "d" then
-			var13 = "dx"
-		elseif iter0 == "1" then
-			var13 = "1"
+			var13_6 = var1_6[var29_6 + 1]
+		elseif iter0_6 == "a" then
+			var13_6 = var1_6[1]
+		elseif iter0_6 == "c" then
+			var13_6 = "cl"
+		elseif iter0_6 == "d" then
+			var13_6 = "dx"
+		elseif iter0_6 == "1" then
+			var13_6 = "1"
 		else
-			if not var3 then
-				var3 = arg0.mrm
+			if not var3_6 then
+				var3_6 = arg0_6.mrm
 
-				if not var3 then
-					if var11 < var10 then
-						return var23(arg0)
+				if not var3_6 then
+					if var11_6 < var10_6 then
+						return var23_0(arg0_6)
 					end
 
-					var3 = var2(var9, var10, var10)
-					var10 = var10 + 1
+					var3_6 = var2_0(var9_6, var10_6, var10_6)
+					var10_6 = var10_6 + 1
 				end
 
-				var5 = var3 % 8
-				var3 = (var3 - var5) / 8
-				var4 = var3 % 8
-				var3 = (var3 - var4) / 8
-				var8 = ""
+				var5_6 = var3_6 % 8
+				var3_6 = (var3_6 - var5_6) / 8
+				var4_6 = var3_6 % 8
+				var3_6 = (var3_6 - var4_6) / 8
+				var8_6 = ""
 
-				if var3 < 3 then
-					if var5 == 4 then
-						if var11 < var10 then
-							return var23(arg0)
+				if var3_6 < 3 then
+					if var5_6 == 4 then
+						if var11_6 < var10_6 then
+							return var23_0(arg0_6)
 						end
 
-						var6 = var2(var9, var10, var10)
-						var10 = var10 + 1
-						var5 = var6 % 8
-						var6 = (var6 - var5) / 8
-						var7 = var6 % 8
-						var6 = (var6 - var7) / 8
+						var6_6 = var2_0(var9_6, var10_6, var10_6)
+						var10_6 = var10_6 + 1
+						var5_6 = var6_6 % 8
+						var6_6 = (var6_6 - var5_6) / 8
+						var7_6 = var6_6 % 8
+						var6_6 = (var6_6 - var7_6) / 8
 
-						if arg0.rexx then
-							var7 = var7 + 8
-							arg0.rexx = false
+						if arg0_6.rexx then
+							var7_6 = var7_6 + 8
+							arg0_6.rexx = false
 						end
 
-						if var7 == 4 then
-							var7 = nil
+						if var7_6 == 4 then
+							var7_6 = nil
 						end
 					end
 
-					if var3 > 0 or var5 == 5 then
-						local var30 = var3
+					if var3_6 > 0 or var5_6 == 5 then
+						local var30_6 = var3_6
 
-						if var30 ~= 1 then
-							var30 = 4
+						if var30_6 ~= 1 then
+							var30_6 = 4
 						end
 
-						local var31 = var25(arg0, var10, var30)
+						local var31_6 = var25_0(arg0_6, var10_6, var30_6)
 
-						if not var31 then
+						if not var31_6 then
 							return
 						end
 
-						if var3 == 0 then
-							var5 = nil
+						if var3_6 == 0 then
+							var5_6 = nil
 						end
 
-						if var5 or var7 or not var6 and arg0.x64 and not arg0.a32 then
-							if var30 == 1 and var31 > 127 then
-								var8 = var3("-0x%x", 256 - var31)
-							elseif var31 >= 0 and var31 <= 2147483647 then
-								var8 = var3("+0x%x", var31)
+						if var5_6 or var7_6 or not var6_6 and arg0_6.x64 and not arg0_6.a32 then
+							if var30_6 == 1 and var31_6 > 127 then
+								var8_6 = var3_0("-0x%x", 256 - var31_6)
+							elseif var31_6 >= 0 and var31_6 <= 2147483647 then
+								var8_6 = var3_0("+0x%x", var31_6)
 							else
-								var8 = var3("-0x%x", 4294967296 - var31)
+								var8_6 = var3_0("-0x%x", 4294967296 - var31_6)
 							end
 						else
-							var8 = var3(arg0.x64 and not arg0.a32 and (not (var31 >= 0) or not (var31 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var31)
+							var8_6 = var3_0(arg0_6.x64 and not arg0_6.a32 and (not (var31_6 >= 0) or not (var31_6 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var31_6)
 						end
 
-						var10 = var10 + var30
+						var10_6 = var10_6 + var30_6
 					end
 				end
 
-				if var5 and arg0.rexb then
-					var5 = var5 + 8
-					arg0.rexb = false
+				if var5_6 and arg0_6.rexb then
+					var5_6 = var5_6 + 8
+					arg0_6.rexb = false
 				end
 
-				if arg0.rexr then
-					var4 = var4 + 8
-					arg0.rexr = false
+				if arg0_6.rexr then
+					var4_6 = var4_6 + 8
+					arg0_6.rexr = false
 				end
 			end
 
-			if iter0 == "m" then
-				if var3 == 3 then
-					var13 = var1[var5 + 1]
+			if iter0_6 == "m" then
+				if var3_6 == 3 then
+					var13_6 = var1_6[var5_6 + 1]
 				else
-					local var32 = arg0.a32 and var17.D or arg0.aregs
-					local var33 = ""
-					local var34 = ""
+					local var32_6 = arg0_6.a32 and var17_0.D or arg0_6.aregs
+					local var33_6 = ""
+					local var34_6 = ""
 
-					if var5 then
-						var33 = var32[var5 + 1]
-					elseif not var6 and arg0.x64 and not arg0.a32 then
-						var33 = "rip"
+					if var5_6 then
+						var33_6 = var32_6[var5_6 + 1]
+					elseif not var6_6 and arg0_6.x64 and not arg0_6.a32 then
+						var33_6 = "rip"
 					end
 
-					arg0.a32 = false
+					arg0_6.a32 = false
 
-					if var7 then
-						if var5 then
-							var33 = var33 .. "+"
+					if var7_6 then
+						if var5_6 then
+							var33_6 = var33_6 .. "+"
 						end
 
-						var34 = var32[var7 + 1]
+						var34_6 = var32_6[var7_6 + 1]
 
-						if var6 > 0 then
-							var34 = var34 .. "*" .. 2^var6
+						if var6_6 > 0 then
+							var34_6 = var34_6 .. "*" .. 2^var6_6
 						end
 					end
 
-					var13 = var3("[%s%s%s]", var33, var34, var8)
+					var13_6 = var3_0("[%s%s%s]", var33_6, var34_6, var8_6)
 				end
 
-				if var3 < 3 and (not var4(arg2, "[aRrgp]") or var4(arg2, "t")) then
-					var13 = var20[var2] .. " " .. var13
+				if var3_6 < 3 and (not var4_0(arg2_6, "[aRrgp]") or var4_0(arg2_6, "t")) then
+					var13_6 = var20_0[var2_6] .. " " .. var13_6
 				end
-			elseif iter0 == "r" then
-				var13 = var1[var4 + 1]
-			elseif iter0 == "g" then
-				var13 = var18[var4 + 1]
-			elseif iter0 == "p" then
+			elseif iter0_6 == "r" then
+				var13_6 = var1_6[var4_6 + 1]
+			elseif iter0_6 == "g" then
+				var13_6 = var18_0[var4_6 + 1]
+			elseif iter0_6 == "p" then
 				-- block empty
-			elseif iter0 == "f" then
-				var13 = "st" .. var5
-			elseif iter0 == "x" then
-				if var4 == 0 and arg0.lock and not arg0.x64 then
-					var13 = "CR8"
-					arg0.lock = false
+			elseif iter0_6 == "f" then
+				var13_6 = "st" .. var5_6
+			elseif iter0_6 == "x" then
+				if var4_6 == 0 and arg0_6.lock and not arg0_6.x64 then
+					var13_6 = "CR8"
+					arg0_6.lock = false
 				else
-					var13 = "CR" .. var4
+					var13_6 = "CR" .. var4_6
 				end
-			elseif iter0 == "v" then
-				if arg0.vexv then
-					var13 = var1[arg0.vexv + 1]
-					arg0.vexv = false
+			elseif iter0_6 == "v" then
+				if arg0_6.vexv then
+					var13_6 = var1_6[arg0_6.vexv + 1]
+					arg0_6.vexv = false
 				end
-			elseif iter0 == "y" then
-				var13 = "DR" .. var4
-			elseif iter0 == "z" then
-				var13 = "TR" .. var4
-			elseif iter0 == "l" then
-				var12 = false
-			elseif iter0 == "t" then
+			elseif iter0_6 == "y" then
+				var13_6 = "DR" .. var4_6
+			elseif iter0_6 == "z" then
+				var13_6 = "TR" .. var4_6
+			elseif iter0_6 == "l" then
+				var12_6 = false
+			elseif iter0_6 == "t" then
 				-- block empty
 			else
-				error("bad pattern `" .. arg2 .. "'")
+				error("bad pattern `" .. arg2_6 .. "'")
 			end
 		end
 
-		if var13 then
-			var0 = var0 and var0 .. ", " .. var13 or var13
+		if var13_6 then
+			var0_6 = var0_6 and var0_6 .. ", " .. var13_6 or var13_6
 		end
 	end
 
-	arg0.pos = var10
+	arg0_6.pos = var10_6
 
-	return var21(arg0, arg1, var0)
+	return var21_0(arg0_6, arg1_6, var0_6)
 end
 
-local var27
+local var27_0
 
-local function var28(arg0)
-	local var0 = arg0.mrm
+local function var28_0(arg0_7)
+	local var0_7 = arg0_7.mrm
 
-	if not var0 then
-		local var1 = arg0.pos
+	if not var0_7 then
+		local var1_7 = arg0_7.pos
 
-		if var1 > arg0.stop then
+		if var1_7 > arg0_7.stop then
 			return nil
 		end
 
-		var0 = var2(arg0.code, var1, var1)
-		arg0.pos = var1 + 1
-		arg0.mrm = var0
+		var0_7 = var2_0(arg0_7.code, var1_7, var1_7)
+		arg0_7.pos = var1_7 + 1
+		arg0_7.mrm = var0_7
 	end
 
-	return var0
+	return var0_7
 end
 
-local function var29(arg0, arg1, arg2)
-	if not arg1 then
-		return var24(arg0)
+local function var29_0(arg0_8, arg1_8, arg2_8)
+	if not arg1_8 then
+		return var24_0(arg0_8)
 	end
 
-	if var4(arg1, "%|") then
-		local var0
+	if var4_0(arg1_8, "%|") then
+		local var0_8
 
-		if arg0.rep then
-			var0 = arg0.rep == "rep" and "%|([^%|]*)" or "%|[^%|]*%|[^%|]*%|([^%|]*)"
-			arg0.rep = false
-		elseif arg0.o16 then
-			var0 = "%|[^%|]*%|([^%|]*)"
-			arg0.o16 = false
+		if arg0_8.rep then
+			var0_8 = arg0_8.rep == "rep" and "%|([^%|]*)" or "%|[^%|]*%|[^%|]*%|([^%|]*)"
+			arg0_8.rep = false
+		elseif arg0_8.o16 then
+			var0_8 = "%|[^%|]*%|([^%|]*)"
+			arg0_8.o16 = false
 		else
-			var0 = "^[^%|]*"
+			var0_8 = "^[^%|]*"
 		end
 
-		arg1 = var4(arg1, var0)
+		arg1_8 = var4_0(arg1_8, var0_8)
 
-		if not arg1 then
-			return var24(arg0)
-		end
-	end
-
-	if var4(arg1, "%$") then
-		local var1 = var28(arg0)
-
-		if not var1 then
-			return var23(arg0)
-		end
-
-		arg1 = var4(arg1, var1 >= 192 and "^[^%$]*" or "%$(.*)")
-
-		if arg1 == "" then
-			return var24(arg0)
+		if not arg1_8 then
+			return var24_0(arg0_8)
 		end
 	end
 
-	if arg1 == "" then
-		return var24(arg0)
+	if var4_0(arg1_8, "%$") then
+		local var1_8 = var28_0(arg0_8)
+
+		if not var1_8 then
+			return var23_0(arg0_8)
+		end
+
+		arg1_8 = var4_0(arg1_8, var1_8 >= 192 and "^[^%$]*" or "%$(.*)")
+
+		if arg1_8 == "" then
+			return var24_0(arg0_8)
+		end
 	end
 
-	local var2, var3 = var4(arg1, "^([a-z0-9 ]*)(.*)")
-
-	if var3 == "" and arg2 then
-		var3 = arg2
+	if arg1_8 == "" then
+		return var24_0(arg0_8)
 	end
 
-	return var27[var1(var3, 1, 1)](arg0, var2, var3)
+	local var2_8, var3_8 = var4_0(arg1_8, "^([a-z0-9 ]*)(.*)")
+
+	if var3_8 == "" and arg2_8 then
+		var3_8 = arg2_8
+	end
+
+	return var27_0[var1_0(var3_8, 1, 1)](arg0_8, var2_8, var3_8)
 end
 
-local function var30(arg0, arg1)
-	local var0 = arg0.pos
-	local var1 = arg1[var2(arg0.code, var0, var0)]
+local function var30_0(arg0_9, arg1_9)
+	local var0_9 = arg0_9.pos
+	local var1_9 = arg1_9[var2_0(arg0_9.code, var0_9, var0_9)]
 
-	arg0.pos = var0 + 1
+	arg0_9.pos = var0_9 + 1
 
-	return var29(arg0, var1)
+	return var29_0(arg0_9, var1_9)
 end
 
-var27 = {
-	[""] = function(arg0, arg1, arg2)
-		return var21(arg0, arg1)
+var27_0 = {
+	[""] = function(arg0_10, arg1_10, arg2_10)
+		return var21_0(arg0_10, arg1_10)
 	end,
-	B = var26,
-	W = var26,
-	D = var26,
-	Q = var26,
-	V = var26,
-	U = var26,
-	T = var26,
-	M = var26,
-	X = var26,
-	P = var26,
-	F = var26,
-	G = var26,
-	Y = var26,
-	[":"] = function(arg0, arg1, arg2)
-		arg0[arg2 == ":" and arg1 or var1(arg2, 2)] = arg1
+	B = var26_0,
+	W = var26_0,
+	D = var26_0,
+	Q = var26_0,
+	V = var26_0,
+	U = var26_0,
+	T = var26_0,
+	M = var26_0,
+	X = var26_0,
+	P = var26_0,
+	F = var26_0,
+	G = var26_0,
+	Y = var26_0,
+	[":"] = function(arg0_11, arg1_11, arg2_11)
+		arg0_11[arg2_11 == ":" and arg1_11 or var1_0(arg2_11, 2)] = arg1_11
 
-		if arg0.pos - arg0.start > 5 then
-			return var24(arg0)
+		if arg0_11.pos - arg0_11.start > 5 then
+			return var24_0(arg0_11)
 		end
 	end,
-	["*"] = function(arg0, arg1, arg2)
-		return var27[arg1](arg0, arg1, var1(arg2, 2))
+	["*"] = function(arg0_12, arg1_12, arg2_12)
+		return var27_0[arg1_12](arg0_12, arg1_12, var1_0(arg2_12, 2))
 	end,
-	["!"] = function(arg0, arg1, arg2)
-		local var0 = var28(arg0)
+	["!"] = function(arg0_13, arg1_13, arg2_13)
+		local var0_13 = var28_0(arg0_13)
 
-		if not var0 then
-			return var23(arg0)
+		if not var0_13 then
+			return var23_0(arg0_13)
 		end
 
-		return var29(arg0, var16[arg1][(var0 - var0 % 8) / 8 % 8 + 1], var1(arg2, 2))
+		return var29_0(arg0_13, var16_0[arg1_13][(var0_13 - var0_13 % 8) / 8 % 8 + 1], var1_0(arg2_13, 2))
 	end,
-	sz = function(arg0, arg1, arg2)
-		if arg0.o16 then
-			arg0.o16 = false
+	sz = function(arg0_14, arg1_14, arg2_14)
+		if arg0_14.o16 then
+			arg0_14.o16 = false
 		else
-			arg2 = var4(arg2, ",(.*)")
+			arg2_14 = var4_0(arg2_14, ",(.*)")
 
-			if arg0.rexw then
-				local var0 = var4(arg2, ",(.*)")
+			if arg0_14.rexw then
+				local var0_14 = var4_0(arg2_14, ",(.*)")
 
-				if var0 then
-					arg2 = var0
-					arg0.rexw = false
+				if var0_14 then
+					arg2_14 = var0_14
+					arg0_14.rexw = false
 				end
 			end
 		end
 
-		arg2 = var4(arg2, "^[^,]*")
+		arg2_14 = var4_0(arg2_14, "^[^,]*")
 
-		return var29(arg0, arg2)
+		return var29_0(arg0_14, arg2_14)
 	end,
-	opc2 = function(arg0, arg1, arg2)
-		return var30(arg0, var12)
+	opc2 = function(arg0_15, arg1_15, arg2_15)
+		return var30_0(arg0_15, var12_0)
 	end,
-	opc3 = function(arg0, arg1, arg2)
-		return var30(arg0, var13[arg2])
+	opc3 = function(arg0_16, arg1_16, arg2_16)
+		return var30_0(arg0_16, var13_0[arg2_16])
 	end,
-	vm = function(arg0, arg1, arg2)
-		return var29(arg0, var14[arg0.mrm])
+	vm = function(arg0_17, arg1_17, arg2_17)
+		return var29_0(arg0_17, var14_0[arg0_17.mrm])
 	end,
-	fp = function(arg0, arg1, arg2)
-		local var0 = var28(arg0)
+	fp = function(arg0_18, arg1_18, arg2_18)
+		local var0_18 = var28_0(arg0_18)
 
-		if not var0 then
-			return var23(arg0)
+		if not var0_18 then
+			return var23_0(arg0_18)
 		end
 
-		local var1 = var0 % 8
-		local var2 = arg2 * 8 + (var0 - var1) / 8 % 8
+		local var1_18 = var0_18 % 8
+		local var2_18 = arg2_18 * 8 + (var0_18 - var1_18) / 8 % 8
 
-		if var0 >= 192 then
-			var2 = var2 + 64
+		if var0_18 >= 192 then
+			var2_18 = var2_18 + 64
 		end
 
-		local var3 = var15[var2]
+		local var3_18 = var15_0[var2_18]
 
-		if var0(var3) == "table" then
-			var3 = var3[var1 + 1]
+		if var0_0(var3_18) == "table" then
+			var3_18 = var3_18[var1_18 + 1]
 		end
 
-		return var29(arg0, var3)
+		return var29_0(arg0_18, var3_18)
 	end,
-	rex = function(arg0, arg1, arg2)
-		if arg0.rex then
-			return var24(arg0)
+	rex = function(arg0_19, arg1_19, arg2_19)
+		if arg0_19.rex then
+			return var24_0(arg0_19)
 		end
 
-		for iter0 in var5(arg2, ".") do
-			arg0["rex" .. iter0] = true
+		for iter0_19 in var5_0(arg2_19, ".") do
+			arg0_19["rex" .. iter0_19] = true
 		end
 
-		arg0.rex = "rex"
+		arg0_19.rex = "rex"
 	end,
-	vex = function(arg0, arg1, arg2)
-		if arg0.rex then
-			return var24(arg0)
+	vex = function(arg0_20, arg1_20, arg2_20)
+		if arg0_20.rex then
+			return var24_0(arg0_20)
 		end
 
-		arg0.rex = "vex"
+		arg0_20.rex = "vex"
 
-		local var0 = arg0.pos
+		local var0_20 = arg0_20.pos
 
-		if arg0.mrm then
-			arg0.mrm = nil
-			var0 = var0 - 1
+		if arg0_20.mrm then
+			arg0_20.mrm = nil
+			var0_20 = var0_20 - 1
 		end
 
-		local var1 = var2(arg0.code, var0, var0)
+		local var1_20 = var2_0(arg0_20.code, var0_20, var0_20)
 
-		if not var1 then
-			return var23(arg0)
+		if not var1_20 then
+			return var23_0(arg0_20)
 		end
 
-		local var2 = var0 + 1
+		local var2_20 = var0_20 + 1
 
-		if var1 < 128 then
-			arg0.rexr = true
+		if var1_20 < 128 then
+			arg0_20.rexr = true
 		end
 
-		local var3 = 1
+		local var3_20 = 1
 
-		if arg2 == "3" then
-			var3 = var1 % 32
-			var1 = (var1 - var3) / 32
+		if arg2_20 == "3" then
+			var3_20 = var1_20 % 32
+			var1_20 = (var1_20 - var3_20) / 32
 
-			local var4 = var1 % 2
+			local var4_20 = var1_20 % 2
 
-			var1 = (var1 - var4) / 2
+			var1_20 = (var1_20 - var4_20) / 2
 
-			if var4 == 0 then
-				arg0.rexb = true
+			if var4_20 == 0 then
+				arg0_20.rexb = true
 			end
 
-			if var1 % 2 == 0 then
-				arg0.rexx = true
+			if var1_20 % 2 == 0 then
+				arg0_20.rexx = true
 			end
 
-			var1 = var2(arg0.code, var2, var2)
+			var1_20 = var2_0(arg0_20.code, var2_20, var2_20)
 
-			if not var1 then
-				return var23(arg0)
+			if not var1_20 then
+				return var23_0(arg0_20)
 			end
 
-			var2 = var2 + 1
+			var2_20 = var2_20 + 1
 
-			if var1 >= 128 then
-				arg0.rexw = true
+			if var1_20 >= 128 then
+				arg0_20.rexw = true
 			end
 		end
 
-		arg0.pos = var2
+		arg0_20.pos = var2_20
 
-		local var5
+		local var5_20
 
-		if var3 == 1 then
-			var5 = var12
-		elseif var3 == 2 then
-			var5 = var13["38"]
-		elseif var3 == 3 then
-			var5 = var13["3a"]
+		if var3_20 == 1 then
+			var5_20 = var12_0
+		elseif var3_20 == 2 then
+			var5_20 = var13_0["38"]
+		elseif var3_20 == 3 then
+			var5_20 = var13_0["3a"]
 		else
-			return var24(arg0)
+			return var24_0(arg0_20)
 		end
 
-		local var6 = var1 % 4
-		local var7 = (var1 - var6) / 4
+		local var6_20 = var1_20 % 4
+		local var7_20 = (var1_20 - var6_20) / 4
 
-		if var6 == 1 then
-			arg0.o16 = "o16"
-		elseif var6 == 2 then
-			arg0.rep = "rep"
-		elseif var6 == 3 then
-			arg0.rep = "repne"
+		if var6_20 == 1 then
+			arg0_20.o16 = "o16"
+		elseif var6_20 == 2 then
+			arg0_20.rep = "rep"
+		elseif var6_20 == 3 then
+			arg0_20.rep = "repne"
 		end
 
-		local var8 = var7 % 2
-		local var9 = (var7 - var8) / 2
+		local var8_20 = var7_20 % 2
+		local var9_20 = (var7_20 - var8_20) / 2
 
-		if var8 ~= 0 then
-			arg0.vexl = true
+		if var8_20 ~= 0 then
+			arg0_20.vexl = true
 		end
 
-		arg0.vexv = (-1 - var9) % 16
+		arg0_20.vexv = (-1 - var9_20) % 16
 
-		return var30(arg0, var5)
+		return var30_0(arg0_20, var5_20)
 	end,
-	nop = function(arg0, arg1, arg2)
-		return var29(arg0, arg0.rex and arg2 or "nop")
+	nop = function(arg0_21, arg1_21, arg2_21)
+		return var29_0(arg0_21, arg0_21.rex and arg2_21 or "nop")
 	end,
-	emms = function(arg0, arg1, arg2)
-		if arg0.rex ~= "vex" then
-			return var21(arg0, "emms")
-		elseif arg0.vexl then
-			arg0.vexl = false
+	emms = function(arg0_22, arg1_22, arg2_22)
+		if arg0_22.rex ~= "vex" then
+			return var21_0(arg0_22, "emms")
+		elseif arg0_22.vexl then
+			arg0_22.vexl = false
 
-			return var21(arg0, "zeroall")
+			return var21_0(arg0_22, "zeroall")
 		else
-			return var21(arg0, "zeroupper")
+			return var21_0(arg0_22, "zeroupper")
 		end
 	end
 }
 
-local function var31(arg0, arg1, arg2)
-	arg1 = arg1 or 0
+local function var31_0(arg0_23, arg1_23, arg2_23)
+	arg1_23 = arg1_23 or 0
 
-	local var0 = arg2 and arg1 + arg2 or #arg0.code
+	local var0_23 = arg2_23 and arg1_23 + arg2_23 or #arg0_23.code
 
-	arg1 = arg1 + 1
-	arg0.start = arg1
-	arg0.pos = arg1
-	arg0.stop = var0
-	arg0.imm = nil
-	arg0.mrm = false
+	arg1_23 = arg1_23 + 1
+	arg0_23.start = arg1_23
+	arg0_23.pos = arg1_23
+	arg0_23.stop = var0_23
+	arg0_23.imm = nil
+	arg0_23.mrm = false
 
-	var22(arg0)
+	var22_0(arg0_23)
 
-	while var0 >= arg0.pos do
-		var30(arg0, arg0.map1)
+	while var0_23 >= arg0_23.pos do
+		var30_0(arg0_23, arg0_23.map1)
 	end
 
-	if arg0.pos ~= arg0.start then
-		var23(arg0)
+	if arg0_23.pos ~= arg0_23.start then
+		var23_0(arg0_23)
 	end
 end
 
-local function var32(arg0, arg1, arg2)
-	local var0 = {
-		code = arg0,
-		addr = (arg1 or 0) - 1,
-		out = arg2 or io.write,
+local function var32_0(arg0_24, arg1_24, arg2_24)
+	local var0_24 = {
+		code = arg0_24,
+		addr = (arg1_24 or 0) - 1,
+		out = arg2_24 or io.write,
 		symtab = {},
-		disass = var31
+		disass = var31_0
 	}
 
-	var0.hexdump = 16
-	var0.x64 = false
-	var0.map1 = var10
-	var0.aregs = var17.D
+	var0_24.hexdump = 16
+	var0_24.x64 = false
+	var0_24.map1 = var10_0
+	var0_24.aregs = var17_0.D
 
-	return var0
+	return var0_24
 end
 
-local function var33(arg0, arg1, arg2)
-	local var0 = var32(arg0, arg1, arg2)
+local function var33_0(arg0_25, arg1_25, arg2_25)
+	local var0_25 = var32_0(arg0_25, arg1_25, arg2_25)
 
-	var0.x64 = true
-	var0.map1 = var11
-	var0.aregs = var17.Q
+	var0_25.x64 = true
+	var0_25.map1 = var11_0
+	var0_25.aregs = var17_0.Q
 
-	return var0
+	return var0_25
 end
 
-local function var34(arg0, arg1, arg2)
-	var32(arg0, arg1, arg2):disass()
+local function var34_0(arg0_26, arg1_26, arg2_26)
+	var32_0(arg0_26, arg1_26, arg2_26):disass()
 end
 
-local function var35(arg0, arg1, arg2)
-	var33(arg0, arg1, arg2):disass()
+local function var35_0(arg0_27, arg1_27, arg2_27)
+	var33_0(arg0_27, arg1_27, arg2_27):disass()
 end
 
-local function var36(arg0)
-	if arg0 < 8 then
-		return var17.D[arg0 + 1]
+local function var36_0(arg0_28)
+	if arg0_28 < 8 then
+		return var17_0.D[arg0_28 + 1]
 	end
 
-	return var17.X[arg0 - 7]
+	return var17_0.X[arg0_28 - 7]
 end
 
-local function var37(arg0)
-	if arg0 < 16 then
-		return var17.Q[arg0 + 1]
+local function var37_0(arg0_29)
+	if arg0_29 < 16 then
+		return var17_0.Q[arg0_29 + 1]
 	end
 
-	return var17.X[arg0 - 15]
+	return var17_0.X[arg0_29 - 15]
 end
 
 return {
-	create = var32,
-	create64 = var33,
-	disass = var34,
-	disass64 = var35,
-	regname = var36,
-	regname64 = var37
+	create = var32_0,
+	create64 = var33_0,
+	disass = var34_0,
+	disass64 = var35_0,
+	regname = var36_0,
+	regname64 = var37_0
 }

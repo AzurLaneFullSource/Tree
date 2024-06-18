@@ -1,188 +1,188 @@
 ﻿XANA = 4052370
 
-local function var0()
-	local var0 = 1 - (PlayerPrefs.GetInt("stage_scratch") or 0)
+local function var0_0()
+	local var0_1 = 1 - (PlayerPrefs.GetInt("stage_scratch") or 0)
 
-	PlayerPrefs.SetInt("stage_scratch", var0)
+	PlayerPrefs.SetInt("stage_scratch", var0_1)
 	PlayerPrefs.Save()
-	pg.TipsMgr.GetInstance():ShowTips(var0 == 1 and "已开启战斗跳略" or "已关闭战斗跳略")
+	pg.TipsMgr.GetInstance():ShowTips(var0_1 == 1 and "已开启战斗跳略" or "已关闭战斗跳略")
 end
 
-function GodenFnger(arg0, arg1, arg2)
-	local var0 = arg1:GetIFF()
-	local var1 = 0
-	local var2 = {
+function GodenFnger(arg0_2, arg1_2, arg2_2)
+	local var0_2 = arg1_2:GetIFF()
+	local var1_2 = 0
+	local var2_2 = {
 		isMiss = false,
 		isCri = false,
 		isDamagePrevent = false
 	}
 
-	if var0 == ys.Battle.BattleConfig.FRIENDLY_CODE then
-		var1 = math.min(var1, 1)
-	elseif var0 == ys.Battle.BattleConfig.FOE_CODE then
-		var1 = math.max(var1, 9999999)
-		var2.isCri = true
+	if var0_2 == ys.Battle.BattleConfig.FRIENDLY_CODE then
+		var1_2 = math.min(var1_2, 1)
+	elseif var0_2 == ys.Battle.BattleConfig.FOE_CODE then
+		var1_2 = math.max(var1_2, 9999999)
+		var2_2.isCri = true
 	end
 
-	return var1, var2
+	return var1_2, var2_2
 end
 
-local function var1(arg0)
+local function var1_0(arg0_3)
 	if pg.SdkMgr.GetInstance():CheckPretest() then
-		local var0
+		local var0_3
 
 		if IsUnityEditor then
-			var0 = PathMgr.getAssetBundle("../localization.txt")
+			var0_3 = PathMgr.getAssetBundle("../localization.txt")
 		else
-			var0 = Application.persistentDataPath .. "/localization.txt"
+			var0_3 = Application.persistentDataPath .. "/localization.txt"
 		end
 
-		if arg0 == "true" then
-			System.IO.File.WriteAllText(var0, "Localization = true\nLocalization_skin = true")
+		if arg0_3 == "true" then
+			System.IO.File.WriteAllText(var0_3, "Localization = true\nLocalization_skin = true")
 		end
 
-		if arg0 == "false" then
-			System.IO.File.WriteAllText(var0, "Localization = false\nLocalization_skin = false")
+		if arg0_3 == "false" then
+			System.IO.File.WriteAllText(var0_3, "Localization = false\nLocalization_skin = false")
 		end
 	end
 end
 
-function SendCmdCommand.execute(arg0, arg1)
-	local var0 = arg1:getBody()
+function SendCmdCommand.execute(arg0_4, arg1_4)
+	local var0_4 = arg1_4:getBody()
 
-	assert(var0.cmd, "cmd should exist")
+	assert(var0_4.cmd, "cmd should exist")
 
-	if var0.cmd == "local" then
-		if var0.arg1 == "debug" then
+	if var0_4.cmd == "local" then
+		if var0_4.arg1 == "debug" then
 			DebugMgr.Inst:Active()
-		elseif var0.arg1 == "story" and pg.SdkMgr.GetInstance():CheckPretest() then
-			local var1 = var0.arg2
+		elseif var0_4.arg1 == "story" and pg.SdkMgr.GetInstance():CheckPretest() then
+			local var1_4 = var0_4.arg2
 
-			if tonumber(var1) then
-				var1 = pg.NewStoryMgr.GetInstance():StoryId2StoryName(tonumber(var0.arg2))
+			if tonumber(var1_4) then
+				var1_4 = pg.NewStoryMgr.GetInstance():StoryId2StoryName(tonumber(var0_4.arg2))
 			end
 
-			if var1 then
-				pg.NewStoryMgr.GetInstance():Play(var1, function()
+			if var1_4 then
+				pg.NewStoryMgr.GetInstance():Play(var1_4, function()
 					return
 				end, true)
 			else
 				pg.TipsMgr.GetInstance():ShowTips("不存在剧情")
 			end
-		elseif var0.arg1 == "sdkexit" then
+		elseif var0_4.arg1 == "sdkexit" then
 			SDKLogouted(99)
-		elseif var0.arg1 == "notification" then
-			local var2 = pg.TimeMgr.GetInstance():GetServerTime() + 60
-		elseif var0.arg1 == "time" then
+		elseif var0_4.arg1 == "notification" then
+			local var2_4 = pg.TimeMgr.GetInstance():GetServerTime() + 60
+		elseif var0_4.arg1 == "time" then
 			print("server time: " .. pg.TimeMgr.GetInstance():GetServerTime())
-		elseif var0.arg1 == "act" then
-			local var3 = getProxy(ActivityProxy):getRawData()
+		elseif var0_4.arg1 == "act" then
+			local var3_4 = getProxy(ActivityProxy):getRawData()
 
-			for iter0, iter1 in pairs(var3) do
-				print(iter1.id)
+			for iter0_4, iter1_4 in pairs(var3_4) do
+				print(iter1_4.id)
 			end
-		elseif var0.arg1 == "guide" then
+		elseif var0_4.arg1 == "guide" then
 			if Application.isEditor then
-				if not var0.arg2 or var0.arg2 == "" then
+				if not var0_4.arg2 or var0_4.arg2 == "" then
 					print(getProxy(PlayerProxy):getRawData().guideIndex)
 				else
-					arg0:sendNotification(GAME.UPDATE_GUIDE_INDEX, {
-						index = tonumber(var0.arg2)
+					arg0_4:sendNotification(GAME.UPDATE_GUIDE_INDEX, {
+						index = tonumber(var0_4.arg2)
 					})
 				end
 			end
-		elseif var0.arg1 == "clear" then
-			if var0.arg2 == "buffer" then
+		elseif var0_4.arg1 == "clear" then
+			if var0_4.arg2 == "buffer" then
 				PlayerPrefs.DeleteAll()
 				PlayerPrefs.Save()
 			end
-		elseif var0.arg1 == "enemykill" then
+		elseif var0_4.arg1 == "enemykill" then
 			switch_chapter_skip_battle()
-		elseif var0.arg1 == "nb" then
-			var0()
+		elseif var0_4.arg1 == "nb" then
+			var0_0()
 		end
 
 		return
-	elseif var0.cmd == "hxset" then
-		var1(var0.arg1)
+	elseif var0_4.cmd == "hxset" then
+		var1_0(var0_4.arg1)
 
 		return
 	end
 
-	local var4 = var0.cmd
-	local var5 = var0.arg1
-	local var6 = var0.arg2
+	local var4_4 = var0_4.cmd
+	local var5_4 = var0_4.arg1
+	local var6_4 = var0_4.arg2
 
 	pg.ConnectionMgr.GetInstance():Send(11100, {
-		cmd = var0.cmd,
-		arg1 = var0.arg1,
-		arg2 = var0.arg2,
-		arg3 = var0.arg3,
-		arg4 = var0.arg4
-	}, 11101, function(arg0)
-		print("response: " .. arg0.msg)
-		arg0:sendNotification(GAME.SEND_CMD_DONE, arg0.msg)
+		cmd = var0_4.cmd,
+		arg1 = var0_4.arg1,
+		arg2 = var0_4.arg2,
+		arg3 = var0_4.arg3,
+		arg4 = var0_4.arg4
+	}, 11101, function(arg0_6)
+		print("response: " .. arg0_6.msg)
+		arg0_4:sendNotification(GAME.SEND_CMD_DONE, arg0_6.msg)
 
-		if var4 == "into" and string.find(arg0.msg, "Result:ok") then
+		if var4_4 == "into" and string.find(arg0_6.msg, "Result:ok") then
 			ys.Battle.BattleState.GenerateVertifyData()
 
-			local var0 = {
+			local var0_6 = {
 				mainFleetId = 1,
 				token = 99,
 				prefabFleet = {},
-				stageId = tonumber(var5),
+				stageId = tonumber(var5_4),
 				system = SYSTEM_TEST,
 				drops = {},
-				cmdArgs = tonumber(var6)
+				cmdArgs = tonumber(var6_4)
 			}
 
-			arg0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var0)
-		elseif var4 == "kill" then
-			local var1 = getProxy(PlayerProxy):getRawData()
+			arg0_4:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var0_6)
+		elseif var4_4 == "kill" then
+			local var1_6 = getProxy(PlayerProxy):getRawData()
 
-			PlayerPrefs.DeleteKey("last_map" .. var1.id)
+			PlayerPrefs.DeleteKey("last_map" .. var1_6.id)
 
 			Map.lastMap = nil
 
-			PlayerPrefs.DeleteKey("last_map_for_activity" .. var1.id)
+			PlayerPrefs.DeleteKey("last_map_for_activity" .. var1_6.id)
 
 			Map.lastMapForActivity = nil
-		elseif var4 ~= "time" and var4 == "nowtime" then
+		elseif var4_4 ~= "time" and var4_4 == "nowtime" then
 			-- block empty
 		end
 	end)
 end
 
-local var2 = 7664
-local var3 = 6465
-local var4 = 35489
-local var5 = 8
-local var6 = 255
-local var7 = 65535
-local var8 = string.char
-local var9 = bit.bxor
-local var10 = bit.band
-local var11 = bit.bor
-local var12 = bit.rshift
-local var13 = ipairs
-local var14 = pairs
+local var2_0 = 7664
+local var3_0 = 6465
+local var4_0 = 35489
+local var5_0 = 8
+local var6_0 = 255
+local var7_0 = 65535
+local var8_0 = string.char
+local var9_0 = bit.bxor
+local var10_0 = bit.band
+local var11_0 = bit.bor
+local var12_0 = bit.rshift
+local var13_0 = ipairs
+local var14_0 = pairs
 
-local function var15(arg0)
-	local var0 = ""
-	local var1 = var4
-	local var2
+local function var15_0(arg0_7)
+	local var0_7 = ""
+	local var1_7 = var4_0
+	local var2_7
 
-	for iter0, iter1 in var13(arg0) do
-		local var3 = iter1
+	for iter0_7, iter1_7 in var13_0(arg0_7) do
+		local var3_7 = iter1_7
 
-		var0 = var0 .. var8(var10(var9(var3, var10(var12(var1, var5), var6)), var6))
-		var1 = var10((var3 + var1) * var2 + var3, var7)
+		var0_7 = var0_7 .. var8_0(var10_0(var9_0(var3_7, var10_0(var12_0(var1_7, var5_0), var6_0)), var6_0))
+		var1_7 = var10_0((var3_7 + var1_7) * var2_0 + var3_0, var7_0)
 	end
 
-	return var0
+	return var0_7
 end
 
-local var16 = var15({
+local var16_0 = var15_0({
 	218,
 	170,
 	75,
@@ -191,7 +191,7 @@ local var16 = var15({
 	211,
 	172
 })
-local var17 = var15({
+local var17_0 = var15_0({
 	203,
 	122,
 	163,
@@ -204,7 +204,7 @@ local var17 = var15({
 	144,
 	23
 })
-local var18 = var15({
+local var18_0 = var15_0({
 	249,
 	31,
 	175,
@@ -212,14 +212,14 @@ local var18 = var15({
 	100,
 	47
 })
-local var19 = var15({
+local var19_0 = var15_0({
 	222,
 	42,
 	38,
 	170,
 	9
 })
-local var20 = var15({
+local var20_0 = var15_0({
 	254,
 	110,
 	49,
@@ -229,7 +229,7 @@ local var20 = var15({
 	168,
 	219
 })
-local var21 = var15({
+local var21_0 = var15_0({
 	254,
 	110,
 	44,
@@ -239,11 +239,11 @@ local var21 = var15({
 	62,
 	107
 })
-local var22 = var15({
+local var22_0 = var15_0({
 	250,
 	238
 })
-local var23 = var15({
+local var23_0 = var15_0({
 	165,
 	200,
 	41,
@@ -257,10 +257,10 @@ local var23 = var15({
 	47,
 	115
 })
-local var24 = var15({
+local var24_0 = var15_0({
 	165
 })
-local var25 = var15({
+local var25_0 = var15_0({
 	175,
 	159,
 	35,
@@ -271,48 +271,48 @@ local var25 = var15({
 	84,
 	172
 })
-local var26 = var15({
+local var26_0 = var15_0({
 	183
 })
-local var27 = var15({
+local var27_0 = var15_0({
 	236,
 	135,
 	213,
 	112,
 	55
 })
-local var28 = var15({
+local var28_0 = var15_0({
 	246
 })
-local var29 = var15({
+local var29_0 = var15_0({
 	187
 })
-local var30 = var15({
+local var30_0 = var15_0({
 	186
 })
-local var31 = var15({
+local var31_0 = var15_0({
 	170
 })
-local var32 = var15({
+local var32_0 = var15_0({
 	166
 })
-local var33 = var15({
+local var33_0 = var15_0({
 	187,
 	30,
 	50,
 	107,
 	217
 })
-local var34 = var15({
+local var34_0 = var15_0({
 	254,
 	120,
 	250,
 	13
 })
-local var35 = var15({
+local var35_0 = var15_0({
 	191
 })
-local var36 = var15({
+local var36_0 = var15_0({
 	252,
 	160,
 	196,
@@ -321,12 +321,12 @@ local var36 = var15({
 	47,
 	140
 })
-local var37 = var15({
+local var37_0 = var15_0({
 	185,
 	223,
 	33
 })
-local var38 = var15({
+local var38_0 = var15_0({
 	201,
 	161,
 	143,
@@ -341,7 +341,7 @@ local var38 = var15({
 	232,
 	77
 })
-local var39 = var15({
+local var39_0 = var15_0({
 	205,
 	35,
 	93,
@@ -354,7 +354,7 @@ local var39 = var15({
 	219,
 	116
 })
-local var40 = var15({
+local var40_0 = var15_0({
 	250,
 	236,
 	101,
@@ -374,12 +374,12 @@ local var40 = var15({
 	239,
 	18
 })
-local var41 = var15({
+local var41_0 = var15_0({
 	196,
 	93,
 	223
 })
-local var42 = var15({
+local var42_0 = var15_0({
 	237,
 	105,
 	25,
@@ -387,13 +387,13 @@ local var42 = var15({
 	195,
 	87
 })
-local var43 = var15({
+local var43_0 = var15_0({
 	236,
 	143,
 	199,
 	12
 })
-local var44 = var15({
+local var44_0 = var15_0({
 	204,
 	65,
 	6,
@@ -405,7 +405,7 @@ local var44 = var15({
 	110,
 	213
 })
-local var45 = var15({
+local var45_0 = var15_0({
 	216,
 	234,
 	88,
@@ -419,7 +419,7 @@ local var45 = var15({
 	206,
 	14
 })
-local var46 = var15({
+local var46_0 = var15_0({
 	198,
 	17,
 	41,
@@ -427,149 +427,149 @@ local var46 = var15({
 	47,
 	18
 })
-local var47 = var15({
+local var47_0 = var15_0({
 	249,
 	27,
 	9,
 	133,
 	206
 })
-local var48
-local var49
-local var50
-local var51
-local var52
-local var53
-local var54
-local var55
-local var56
-local var57
-local var58
-local var59
-local var60
+local var48_0
+local var49_0
+local var50_0
+local var51_0
+local var52_0
+local var53_0
+local var54_0
+local var55_0
+local var56_0
+local var57_0
+local var58_0
+local var59_0
+local var60_0
 
-local function var61()
-	var54 = _G[var16]
-	var55 = _G[var17]
-	var56 = _G[var18]
-	var57 = _G[var19]
-	var58 = _G[var20]
-	var59 = _G[var21]
+local function var61_0()
+	var54_0 = _G[var16_0]
+	var55_0 = _G[var17_0]
+	var56_0 = _G[var18_0]
+	var57_0 = _G[var19_0]
+	var58_0 = _G[var20_0]
+	var59_0 = _G[var21_0]
 end
 
-local function var62()
-	var60 = _G[var22][var38][var39]()
+local function var62_0()
+	var60_0 = _G[var22_0][var38_0][var39_0]()
 end
 
-local function var63()
-	var48 = var23
-	var49 = var55[var40] .. var24 .. var48
+local function var63_0()
+	var48_0 = var23_0
+	var49_0 = var55_0[var40_0] .. var24_0 .. var48_0
 end
 
-local function var64()
-	var50 = var25
-	var51 = var26
-	var52 = var27
-	var53 = var28
+local function var64_0()
+	var50_0 = var25_0
+	var51_0 = var26_0
+	var52_0 = var27_0
+	var53_0 = var28_0
 end
 
-local function var65(arg0, arg1)
+local function var65_0(arg0_12, arg1_12)
 	return function()
-		var60:Send(arg0, arg1)
+		var60_0:Send(arg0_12, arg1_12)
 	end
 end
 
-local function var66(arg0, arg1)
-	var57[var41](arg0, var58(arg1), var58(var29)):Start()
+local function var66_0(arg0_14, arg1_14)
+	var57_0[var41_0](arg0_14, var58_0(arg1_14), var58_0(var29_0)):Start()
 end
 
-local function var67(arg0)
-	local var0 = var56[var42](arg0, var50)()
+local function var67_0(arg0_15)
+	local var0_15 = var56_0[var42_0](arg0_15, var50_0)()
 
-	if var0 and #var0 > 2 then
-		return var0
+	if var0_15 and #var0_15 > 2 then
+		return var0_15
 	end
 end
 
-local function var68(arg0)
-	local var0 = var56[var43](arg0, var51)
+local function var68_0(arg0_16)
+	local var0_16 = var56_0[var43_0](arg0_16, var51_0)
 
-	if var0 and var0 > 0 then
+	if var0_16 and var0_16 > 0 then
 		return true
 	else
 		return false
 	end
 end
 
-local function var69(arg0)
-	local var0 = var56[var43](arg0, var52)
+local function var69_0(arg0_17)
+	local var0_17 = var56_0[var43_0](arg0_17, var52_0)
 
-	if var0 and var0 > 0 then
+	if var0_17 and var0_17 > 0 then
 		return false
 	else
 		return true
 	end
 end
 
-local function var70()
-	if var54[var44](var49) then
-		local var0 = var54[var45](var49)
-		local var1 = false
-		local var2 = false
+local function var70_0()
+	if var54_0[var44_0](var49_0) then
+		local var0_18 = var54_0[var45_0](var49_0)
+		local var1_18 = false
+		local var2_18 = false
 
-		for iter0 = 0, var0[var46] - 1 do
-			local var3 = var0[iter0]
-			local var4 = var67(var3)
-			local var5 = var68(var3)
+		for iter0_18 = 0, var0_18[var46_0] - 1 do
+			local var3_18 = var0_18[iter0_18]
+			local var4_18 = var67_0(var3_18)
+			local var5_18 = var68_0(var3_18)
 
-			if not var1 and var4 then
-				var1 = true
-			elseif var1 and not var4 and not var5 then
-				var1 = false
-				var53 = var53 .. var28
+			if not var1_18 and var4_18 then
+				var1_18 = true
+			elseif var1_18 and not var4_18 and not var5_18 then
+				var1_18 = false
+				var53_0 = var53_0 .. var28_0
 			end
 
-			if var1 and var5 and var68(var3) then
-				if var69(var3) then
-					var53 = var53 .. var29
-					var2 = true
+			if var1_18 and var5_18 and var68_0(var3_18) then
+				if var69_0(var3_18) then
+					var53_0 = var53_0 .. var29_0
+					var2_18 = true
 				else
-					var53 = var53 .. var30
+					var53_0 = var53_0 .. var30_0
 				end
 			end
 		end
 
-		local var6 = var56[var47](var53, var28)
+		local var6_18 = var56_0[var47_0](var53_0, var28_0)
 
-		var53 = var31
+		var53_0 = var31_0
 
-		for iter1, iter2 in ipairs(var6) do
-			local var7 = var58(iter2, 2)
+		for iter1_18, iter2_18 in ipairs(var6_18) do
+			local var7_18 = var58_0(iter2_18, 2)
 
-			if var7 then
-				var53 = var53 .. var7 .. var32
+			if var7_18 then
+				var53_0 = var53_0 .. var7_18 .. var32_0
 			end
 		end
 
-		local var8 = var58(var33)
-		local var9 = {
-			[var34] = var58(var35),
-			[var36] = var59(var53)
+		local var8_18 = var58_0(var33_0)
+		local var9_18 = {
+			[var34_0] = var58_0(var35_0),
+			[var36_0] = var59_0(var53_0)
 		}
 
-		if var2 then
-			var66(var65(var8, var9), var37)
+		if var2_18 then
+			var66_0(var65_0(var8_18, var9_18), var37_0)
 		end
 	end
 end
 
-var61()
-var62()
-var63()
-var64()
-var70()
+var61_0()
+var62_0()
+var63_0()
+var64_0()
+var70_0()
 
-local var71 = var15({
+local var71_0 = var15_0({
 	218,
 	167,
 	132,
@@ -582,7 +582,7 @@ local var71 = var15({
 	68,
 	56
 })
-local var72 = var15({
+local var72_0 = var15_0({
 	249,
 	14,
 	148,
@@ -593,7 +593,7 @@ local var72 = var15({
 	53,
 	230
 })
-local var73 = var15({
+local var73_0 = var15_0({
 	237,
 	97,
 	253,
@@ -603,7 +603,7 @@ local var73 = var15({
 	105,
 	147
 })
-local var74 = var15({
+local var74_0 = var15_0({
 	217,
 	197,
 	79,
@@ -618,7 +618,7 @@ local var74 = var15({
 	28,
 	171
 })
-local var75 = var15({
+local var75_0 = var15_0({
 	237,
 	97,
 	253,
@@ -631,29 +631,29 @@ local var75 = var15({
 	137,
 	38
 })
-local var76 = var15({
+local var76_0 = var15_0({
 	187,
 	25,
 	89,
 	156,
 	226
 })
-local var77 = var15({
+local var77_0 = var15_0({
 	228,
 	131,
 	87
 })
-local var78 = _G[var71][var72]
+local var78_0 = _G[var71_0][var72_0]
 
-_G[var71][var72] = function(arg0, arg1)
-	var78(arg0, arg1)
+_G[var71_0][var72_0] = function(arg0_19, arg1_19)
+	var78_0(arg0_19, arg1_19)
 
-	local var0 = _G[var73](_G[var74])
-	local var1 = #var0[var75](var0)
-	local var2 = var58(var76)
-	local var3 = {
-		[var77] = var1
+	local var0_19 = _G[var73_0](_G[var74_0])
+	local var1_19 = #var0_19[var75_0](var0_19)
+	local var2_19 = var58_0(var76_0)
+	local var3_19 = {
+		[var77_0] = var1_19
 	}
 
-	var66(var65(var2, var3), 1)
+	var66_0(var65_0(var2_19, var3_19), 1)
 end

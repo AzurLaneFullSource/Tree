@@ -1,32 +1,32 @@
-﻿local var0 = class("JapanV2frameRePage", import(".TemplatePage.NewFrameTemplatePage"))
+﻿local var0_0 = class("JapanV2frameRePage", import(".TemplatePage.NewFrameTemplatePage"))
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
+function var0_0.OnInit(arg0_1)
+	var0_0.super.OnInit(arg0_1)
 
-	arg0.gotTag = arg0:findTF("AD/switcher/phase2/got")
+	arg0_1.gotTag = arg0_1:findTF("AD/switcher/phase2/got")
 end
 
-function var0.OnUpdateFlush(arg0)
-	local var0 = arg0.activity.data1
-	local var1 = arg0.avatarConfig.target
+function var0_0.OnUpdateFlush(arg0_2)
+	local var0_2 = arg0_2.activity.data1
+	local var1_2 = arg0_2.avatarConfig.target
 
-	var0 = var1 < var0 and var1 or var0
+	var0_2 = var1_2 < var0_2 and var1_2 or var0_2
 
-	local var2 = var0 / var1
+	local var2_2 = var0_2 / var1_2
 
-	setText(arg0.cur, var2 >= 1 and setColorStr(var0, "#487CFFFF") or var0)
-	setText(arg0.target, "/" .. var1)
-	setFillAmount(arg0.bar, var2)
+	setText(arg0_2.cur, var2_2 >= 1 and setColorStr(var0_2, "#487CFFFF") or var0_2)
+	setText(arg0_2.target, "/" .. var1_2)
+	setFillAmount(arg0_2.bar, var2_2)
 
-	local var3 = var1 <= var0
-	local var4 = arg0.activity.data2 >= 1
+	local var3_2 = var1_2 <= var0_2
+	local var4_2 = arg0_2.activity.data2 >= 1
 
-	setActive(arg0.battleBtn, arg0.inPhase2 and not var3)
-	setActive(arg0.getBtn, arg0.inPhase2 and not var4 and var3)
-	setActive(arg0.gotBtn, arg0.inPhase2 and var4)
-	setActive(arg0.gotTag, arg0.inPhase2 and var4)
-	setActive(arg0.cur, not var4)
-	setActive(arg0.target, not var4)
+	setActive(arg0_2.battleBtn, arg0_2.inPhase2 and not var3_2)
+	setActive(arg0_2.getBtn, arg0_2.inPhase2 and not var4_2 and var3_2)
+	setActive(arg0_2.gotBtn, arg0_2.inPhase2 and var4_2)
+	setActive(arg0_2.gotTag, arg0_2.inPhase2 and var4_2)
+	setActive(arg0_2.cur, not var4_2)
+	setActive(arg0_2.target, not var4_2)
 end
 
-return var0
+return var0_0

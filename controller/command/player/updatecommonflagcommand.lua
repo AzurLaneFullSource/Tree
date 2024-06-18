@@ -1,20 +1,20 @@
-﻿local var0 = class("UpdateCommonFlagCommand", pm.SimpleCommand)
+﻿local var0_0 = class("UpdateCommonFlagCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody().flagID
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody().flagID
 
 	pg.ConnectionMgr.GetInstance():Send(11019, {
-		flag_id = var0
-	}, 11020, function(arg0)
-		local var0 = getProxy(PlayerProxy)
+		flag_id = var0_1
+	}, 11020, function(arg0_2)
+		local var0_2 = getProxy(PlayerProxy)
 
-		if var0 then
-			local var1 = var0:getData()
+		if var0_2 then
+			local var1_2 = var0_2:getData()
 
-			var1:UpdateCommonFlag(var0)
-			var0:updatePlayer(var1)
+			var1_2:UpdateCommonFlag(var0_1)
+			var0_2:updatePlayer(var1_2)
 		end
 	end)
 end
 
-return var0
+return var0_0

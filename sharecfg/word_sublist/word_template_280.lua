@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_280 = {}
+var0_0.word_template_280 = {}
 
-local var1 = var0.word_template_280
+local var1_0 = var0_0.word_template_280
 
 function temp()
-	var1.调 = {
+	var1_0.调 = {
 		教 = {
 			this = true,
 			虐 = {
@@ -58,7 +58,7 @@ end
 temp()
 
 function temp()
-	var1.齠 = {
+	var1_0.齠 = {
 		this = {
 			this = true
 		}
@@ -68,7 +68,7 @@ end
 temp()
 
 function temp()
-	var1.鰷 = {
+	var1_0.鰷 = {
 		this = {
 			this = true
 		}
@@ -78,7 +78,7 @@ end
 temp()
 
 function temp()
-	var1.跳 = {
+	var1_0.跳 = {
 		大 = {
 			神 = {
 				this = true
@@ -110,7 +110,7 @@ end
 temp()
 
 function temp()
-	var1.铁 = {
+	var1_0.铁 = {
 		凝 = {
 			this = true
 		},
@@ -182,7 +182,7 @@ end
 temp()
 
 function temp()
-	var1.厅 = {
+	var1_0.厅 = {
 		房 = {
 			公 = {
 				主 = {
@@ -196,7 +196,7 @@ end
 temp()
 
 function temp()
-	var1.听 = {
+	var1_0.听 = {
 		到 = {
 			吹 = {
 				捧 = {

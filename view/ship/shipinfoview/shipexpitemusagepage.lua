@@ -1,346 +1,346 @@
-﻿local var0 = class("ShipExpItemUsagePage", import("...base.BaseSubView"))
+﻿local var0_0 = class("ShipExpItemUsagePage", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ShipExpItemUsagePage"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.backBtn = arg0:findTF("frame/top/btnBack")
-	arg0.confirmBtn = arg0:findTF("frame/buttons/confirm")
-	arg0.recomBtn = arg0:findTF("frame/buttons/recom")
-	arg0.clearBtn = arg0:findTF("frame/buttons/clear")
-	arg0.levelTxt = arg0:findTF("frame/content/level/Text"):GetComponent(typeof(Text))
-	arg0.expTxt = arg0:findTF("frame/content/level/exp"):GetComponent(typeof(Text))
-	arg0.currentProgress = arg0:findTF("frame/content/level/y"):GetComponent(typeof(Slider))
-	arg0.tipProgress = arg0:findTF("frame/content/level/w"):GetComponent(typeof(Slider))
-	arg0.previewProgress = arg0:findTF("frame/content/level/g"):GetComponent(typeof(Slider))
-	arg0.itemIds = arg0:GetAllItemIDs()
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.backBtn = arg0_2:findTF("frame/top/btnBack")
+	arg0_2.confirmBtn = arg0_2:findTF("frame/buttons/confirm")
+	arg0_2.recomBtn = arg0_2:findTF("frame/buttons/recom")
+	arg0_2.clearBtn = arg0_2:findTF("frame/buttons/clear")
+	arg0_2.levelTxt = arg0_2:findTF("frame/content/level/Text"):GetComponent(typeof(Text))
+	arg0_2.expTxt = arg0_2:findTF("frame/content/level/exp"):GetComponent(typeof(Text))
+	arg0_2.currentProgress = arg0_2:findTF("frame/content/level/y"):GetComponent(typeof(Slider))
+	arg0_2.tipProgress = arg0_2:findTF("frame/content/level/w"):GetComponent(typeof(Slider))
+	arg0_2.previewProgress = arg0_2:findTF("frame/content/level/g"):GetComponent(typeof(Slider))
+	arg0_2.itemIds = arg0_2:GetAllItemIDs()
 
-	local var0 = #arg0.itemIds <= 3
+	local var0_2 = #arg0_2.itemIds <= 3
 
-	if var0 then
-		arg0.uiItemList = UIItemList.New(arg0:findTF("frame/content/items"), arg0:findTF("frame/content/items/tpl"))
+	if var0_2 then
+		arg0_2.uiItemList = UIItemList.New(arg0_2:findTF("frame/content/items"), arg0_2:findTF("frame/content/items/tpl"))
 	else
-		arg0.uiItemList = UIItemList.New(arg0:findTF("frame/content/scrollrect/content"), arg0:findTF("frame/content/items/tpl"))
+		arg0_2.uiItemList = UIItemList.New(arg0_2:findTF("frame/content/scrollrect/content"), arg0_2:findTF("frame/content/items/tpl"))
 	end
 
-	setActive(arg0:findTF("frame/content/items"), var0)
-	setActive(arg0:findTF("frame/content/scrollrect"), not var0)
-	setText(arg0:findTF("frame/top/bg/infomation/title"), i18n("ship_exp_item_title"))
-	setText(arg0:findTF("frame/content/label"), i18n("coures_level_tip"))
-	setText(arg0.confirmBtn:Find("pic"), i18n("ship_exp_item_label_confirm"))
-	setText(arg0.recomBtn:Find("pic"), i18n("ship_exp_item_label_recom"))
-	setText(arg0.clearBtn:Find("pic"), i18n("ship_exp_item_label_clear"))
+	setActive(arg0_2:findTF("frame/content/items"), var0_2)
+	setActive(arg0_2:findTF("frame/content/scrollrect"), not var0_2)
+	setText(arg0_2:findTF("frame/top/bg/infomation/title"), i18n("ship_exp_item_title"))
+	setText(arg0_2:findTF("frame/content/label"), i18n("coures_level_tip"))
+	setText(arg0_2.confirmBtn:Find("pic"), i18n("ship_exp_item_label_confirm"))
+	setText(arg0_2.recomBtn:Find("pic"), i18n("ship_exp_item_label_recom"))
+	setText(arg0_2.clearBtn:Find("pic"), i18n("ship_exp_item_label_clear"))
 end
 
-function var0.OnInit(arg0)
-	arg0.cards = {}
+function var0_0.OnInit(arg0_3)
+	arg0_3.cards = {}
 
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:Hide()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.backBtn, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3.backBtn, function()
+		arg0_3:Hide()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.recomBtn, function()
-		triggerButton(arg0.clearBtn)
+	onButton(arg0_3, arg0_3.recomBtn, function()
+		triggerButton(arg0_3.clearBtn)
 
-		local var0 = arg0:Recommand()
+		local var0_6 = arg0_3:Recommand()
 
-		for iter0, iter1 in pairs(arg0.cards) do
-			iter1.value = var0[iter1.item.id] or 0
+		for iter0_6, iter1_6 in pairs(arg0_3.cards) do
+			iter1_6.value = var0_6[iter1_6.item.id] or 0
 
-			iter1:UpdateValue()
+			iter1_6:UpdateValue()
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0.clearBtn, function()
-		for iter0, iter1 in pairs(arg0.cards) do
-			iter1.value = 0
+	onButton(arg0_3, arg0_3.clearBtn, function()
+		for iter0_7, iter1_7 in pairs(arg0_3.cards) do
+			iter1_7.value = 0
 
-			iter1:UpdateValue()
+			iter1_7:UpdateValue()
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0.confirmBtn, function()
-		if _.all(_.values(arg0.itemCnts), function(arg0)
-			return arg0 == 0
+	onButton(arg0_3, arg0_3.confirmBtn, function()
+		if _.all(_.values(arg0_3.itemCnts), function(arg0_9)
+			return arg0_9 == 0
 		end) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_remould_no_material"))
 
 			return
 		end
 
-		local function var0(arg0)
-			arg0:emit(ShipMainMediator.ON_ADD_SHIP_EXP, arg0.shipVO.id, arg0.itemCnts)
+		local function var0_8(arg0_10)
+			arg0_3:emit(ShipMainMediator.ON_ADD_SHIP_EXP, arg0_3.shipVO.id, arg0_3.itemCnts)
 
-			if arg0 then
-				arg0:Hide()
+			if arg0_10 then
+				arg0_3:Hide()
 			else
-				arg0:Flush(arg0.shipVO)
+				arg0_3:Flush(arg0_3.shipVO)
 			end
 		end
 
-		local var1 = arg0:GetAdditionExp()
-		local var2 = Clone(arg0.shipVO)
-		local var3 = var2:getMaxLevel()
+		local var1_8 = arg0_3:GetAdditionExp()
+		local var2_8 = Clone(arg0_3.shipVO)
+		local var3_8 = var2_8:getMaxLevel()
 
-		var2.exp = var2.exp + var1
+		var2_8.exp = var2_8.exp + var1_8
 
-		local var4 = false
+		local var4_8 = false
 
-		while var2:canLevelUp() do
-			var2.exp = var2.exp - var2:getLevelExpConfig().exp_interval
-			var2.level = math.min(var2.level + 1, var3)
-			var4 = true
+		while var2_8:canLevelUp() do
+			var2_8.exp = var2_8.exp - var2_8:getLevelExpConfig().exp_interval
+			var2_8.level = math.min(var2_8.level + 1, var3_8)
+			var4_8 = true
 		end
 
-		local var5 = var2.maxLevel <= var2.level
+		local var5_8 = var2_8.maxLevel <= var2_8.level
 
-		if var4 and (var2.maxLevel == var2.level and var2.exp > 0 or var2.maxLevel < var2.level) then
+		if var4_8 and (var2_8.maxLevel == var2_8.level and var2_8.exp > 0 or var2_8.maxLevel < var2_8.level) then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("coures_exp_overflow_tip", var2.exp),
+				content = i18n("coures_exp_overflow_tip", var2_8.exp),
 				onYes = function()
-					var0(var5)
+					var0_8(var5_8)
 				end
 			})
 		else
-			var0(var5)
+			var0_8(var5_8)
 		end
 	end, SFX_PANEL)
-	arg0.uiItemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg0.itemIds[arg1 + 1]
+	arg0_3.uiItemList:make(function(arg0_12, arg1_12, arg2_12)
+		if arg0_12 == UIItemList.EventUpdate then
+			local var0_12 = arg0_3.itemIds[arg1_12 + 1]
 
-			arg0:UpdateItemPanel(var0, arg2)
+			arg0_3:UpdateItemPanel(var0_12, arg2_12)
 		end
 	end)
 end
 
-function var0.GetItem(arg0, arg1)
-	return getProxy(BagProxy):getItemById(arg1) or Drop.New({
+function var0_0.GetItem(arg0_13, arg1_13)
+	return getProxy(BagProxy):getItemById(arg1_13) or Drop.New({
 		count = 0,
 		type = DROP_TYPE_ITEM,
-		id = arg1
+		id = arg1_13
 	})
 end
 
-function var0.Recommand(arg0)
-	local var0 = {}
-	local var1 = Clone(arg0.shipVO)
-	local var2 = underscore.map(arg0:GetAllItemIDs(), function(arg0)
-		return arg0:GetItem(arg0)
+function var0_0.Recommand(arg0_14)
+	local var0_14 = {}
+	local var1_14 = Clone(arg0_14.shipVO)
+	local var2_14 = underscore.map(arg0_14:GetAllItemIDs(), function(arg0_15)
+		return arg0_14:GetItem(arg0_15)
 	end)
 
-	table.sort(var2, CompareFuncs({
-		function(arg0)
-			return -arg0.id
+	table.sort(var2_14, CompareFuncs({
+		function(arg0_16)
+			return -arg0_16.id
 		end
 	}))
 
-	for iter0, iter1 in ipairs(var2) do
-		var0[iter1.id] = 0
+	for iter0_14, iter1_14 in ipairs(var2_14) do
+		var0_14[iter1_14.id] = 0
 
-		local var3 = iter1:getConfig("usage_arg")
-		local var4 = iter0 < #var2 and var2[iter0 + 1]:getConfig("usage_arg") or 0
+		local var3_14 = iter1_14:getConfig("usage_arg")
+		local var4_14 = iter0_14 < #var2_14 and var2_14[iter0_14 + 1]:getConfig("usage_arg") or 0
 
-		for iter2 = 1, iter1.count do
-			if iter0 ~= #var2 and arg0:PreCalcExpOverFlow(var1, tonumber(var3), tonumber(var4)) then
+		for iter2_14 = 1, iter1_14.count do
+			if iter0_14 ~= #var2_14 and arg0_14:PreCalcExpOverFlow(var1_14, tonumber(var3_14), tonumber(var4_14)) then
 				break
 			else
-				var1:addExp(tonumber(var3))
+				var1_14:addExp(tonumber(var3_14))
 
-				var0[iter1.id] = var0[iter1.id] + 1
+				var0_14[iter1_14.id] = var0_14[iter1_14.id] + 1
 
-				if var1.maxLevel == var1.level then
-					return var0
+				if var1_14.maxLevel == var1_14.level then
+					return var0_14
 				end
 			end
 		end
 	end
 
-	return var0
+	return var0_14
 end
 
-function var0.PreCalcExpOverFlow(arg0, arg1, arg2, arg3)
-	local var0 = arg1.exp
-	local var1 = arg1.level
+function var0_0.PreCalcExpOverFlow(arg0_17, arg1_17, arg2_17, arg3_17)
+	local var0_17 = arg1_17.exp
+	local var1_17 = arg1_17.level
 
-	arg1.exp = arg1.exp + arg2
+	arg1_17.exp = arg1_17.exp + arg2_17
 
-	local var2 = arg1:getMaxLevel()
+	local var2_17 = arg1_17:getMaxLevel()
 
-	while arg1:canLevelUp() do
-		arg1.exp = arg1.exp - arg1:getLevelExpConfig().exp_interval
-		arg1.level = math.min(arg1.level + 1, var2)
+	while arg1_17:canLevelUp() do
+		arg1_17.exp = arg1_17.exp - arg1_17:getLevelExpConfig().exp_interval
+		arg1_17.level = math.min(arg1_17.level + 1, var2_17)
 	end
 
-	local var3 = var2 <= arg1.level and arg3 < arg1.exp
+	local var3_17 = var2_17 <= arg1_17.level and arg3_17 < arg1_17.exp
 
-	arg1.exp = var0
-	arg1.level = var1
+	arg1_17.exp = var0_17
+	arg1_17.level = var1_17
 
-	return var3
+	return var3_17
 end
 
-function var0.GetAllItemIDs(arg0)
-	local var0 = pg.gameset.ship_exp_books.description
-	local var1 = {}
+function var0_0.GetAllItemIDs(arg0_18)
+	local var0_18 = pg.gameset.ship_exp_books.description
+	local var1_18 = {}
 
-	for iter0, iter1 in ipairs(var0) do
-		if Item.getConfigData(iter1) then
-			table.insert(var1, iter1)
+	for iter0_18, iter1_18 in ipairs(var0_18) do
+		if Item.getConfigData(iter1_18) then
+			table.insert(var1_18, iter1_18)
 		end
 	end
 
-	return var1
+	return var1_18
 end
 
-function var0.Show(arg0, arg1)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, false, {
+function var0_0.Show(arg0_19, arg1_19)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_19._tf, false, {
 		weight = LayerWeightConst.BASE_LAYER + 2
 	})
-	var0.super.Show(arg0)
-	arg0:Flush(arg1)
+	var0_0.super.Show(arg0_19)
+	arg0_19:Flush(arg1_19)
 end
 
-function var0.Flush(arg0, arg1)
-	arg0.itemCnts = {}
-	arg0.shipVO = arg1
+function var0_0.Flush(arg0_20, arg1_20)
+	arg0_20.itemCnts = {}
+	arg0_20.shipVO = arg1_20
 
-	arg0:InitItems()
-	arg0:UpdateLevelInfo()
+	arg0_20:InitItems()
+	arg0_20:UpdateLevelInfo()
 end
 
-function var0.Hide(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, arg0._parentTf)
-	var0.super.Hide(arg0)
+function var0_0.Hide(arg0_21)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_21._tf, arg0_21._parentTf)
+	var0_0.super.Hide(arg0_21)
 end
 
-function var0.InitItems(arg0)
-	table.sort(arg0.itemIds, function(arg0, arg1)
-		return arg0 < arg1
+function var0_0.InitItems(arg0_22)
+	table.sort(arg0_22.itemIds, function(arg0_23, arg1_23)
+		return arg0_23 < arg1_23
 	end)
-	arg0.uiItemList:align(#arg0.itemIds)
+	arg0_22.uiItemList:align(#arg0_22.itemIds)
 end
 
-function var0.UpdateItemPanel(arg0, arg1, arg2)
-	local var0 = arg0.cards[arg2]
+function var0_0.UpdateItemPanel(arg0_24, arg1_24, arg2_24)
+	local var0_24 = arg0_24.cards[arg2_24]
 
-	if not var0 then
-		var0 = ShipExpItemUsageCard.New(arg2)
+	if not var0_24 then
+		var0_24 = ShipExpItemUsageCard.New(arg2_24)
 
-		var0:SetCallBack(function(arg0, arg1, arg2, arg3)
-			arg0:OnAddItem(arg0, arg1, arg2, arg3)
+		var0_24:SetCallBack(function(arg0_25, arg1_25, arg2_25, arg3_25)
+			arg0_24:OnAddItem(arg0_25, arg1_25, arg2_25, arg3_25)
 		end)
 
-		arg0.cards[arg2] = var0
+		arg0_24.cards[arg2_24] = var0_24
 	end
 
-	var0:Update(arg1)
+	var0_24:Update(arg1_24)
 end
 
-function var0.OnAddItem(arg0, arg1, arg2, arg3, arg4)
-	if arg0.shipVO.maxLevel == arg0.shipVO.level then
-		arg1:ForceUpdateValue(arg0.itemCnts[arg2])
+function var0_0.OnAddItem(arg0_26, arg1_26, arg2_26, arg3_26, arg4_26)
+	if arg0_26.shipVO.maxLevel == arg0_26.shipVO.level then
+		arg1_26:ForceUpdateValue(arg0_26.itemCnts[arg2_26])
 		pg.TipsMgr.GetInstance():ShowTips(i18n("coures_tip_exceeded_lv"))
 
 		return
 	end
 
-	local var0 = Clone(arg0.shipVO)
-	local var1 = 0
+	local var0_26 = Clone(arg0_26.shipVO)
+	local var1_26 = 0
 
-	for iter0, iter1 in pairs(arg0.itemCnts) do
-		if iter0 ~= arg2 then
-			local var2 = Item.getConfigData(iter0).usage_arg
+	for iter0_26, iter1_26 in pairs(arg0_26.itemCnts) do
+		if iter0_26 ~= arg2_26 then
+			local var2_26 = Item.getConfigData(iter0_26).usage_arg
 
-			var1 = var1 + tonumber(var2) * iter1
+			var1_26 = var1_26 + tonumber(var2_26) * iter1_26
 		end
 	end
 
-	var0:addExp(var1)
+	var0_26:addExp(var1_26)
 
-	local var3 = Item.getConfigData(arg2).usage_arg
-	local var4 = 0
+	local var3_26 = Item.getConfigData(arg2_26).usage_arg
+	local var4_26 = 0
 
-	if arg4 then
-		var4 = arg3
-	elseif var0.level ~= var0.maxLevel then
-		for iter2 = 1, arg3 do
-			var0:addExp(tonumber(var3))
+	if arg4_26 then
+		var4_26 = arg3_26
+	elseif var0_26.level ~= var0_26.maxLevel then
+		for iter2_26 = 1, arg3_26 do
+			var0_26:addExp(tonumber(var3_26))
 
-			var4 = var4 + 1
+			var4_26 = var4_26 + 1
 
-			if var0.maxLevel == var0.level then
+			if var0_26.maxLevel == var0_26.level then
 				break
 			end
 		end
 	end
 
-	if arg3 > (arg0.itemCnts[arg2] or 0) then
-		var4 = math.max(arg0.itemCnts[arg2] or 0, var4)
+	if arg3_26 > (arg0_26.itemCnts[arg2_26] or 0) then
+		var4_26 = math.max(arg0_26.itemCnts[arg2_26] or 0, var4_26)
 	end
 
-	if arg3 ~= var4 then
-		arg1:ForceUpdateValue(var4)
+	if arg3_26 ~= var4_26 then
+		arg1_26:ForceUpdateValue(var4_26)
 
-		arg3 = var4
+		arg3_26 = var4_26
 	end
 
-	arg0.itemCnts[arg2] = arg3
+	arg0_26.itemCnts[arg2_26] = arg3_26
 
-	arg0:UpdateLevelInfo()
+	arg0_26:UpdateLevelInfo()
 end
 
-function var0.GetTempShipVO(arg0, arg1, arg2)
-	if arg2 > 0 then
-		local var0 = Clone(arg1)
+function var0_0.GetTempShipVO(arg0_27, arg1_27, arg2_27)
+	if arg2_27 > 0 then
+		local var0_27 = Clone(arg1_27)
 
-		var0:addExp(arg2)
+		var0_27:addExp(arg2_27)
 
-		return var0
+		return var0_27
 	end
 
-	return arg1
+	return arg1_27
 end
 
-function var0.GetAdditionExp(arg0)
-	local var0 = 0
+function var0_0.GetAdditionExp(arg0_28)
+	local var0_28 = 0
 
-	for iter0, iter1 in pairs(arg0.itemCnts) do
-		local var1 = Item.getConfigData(iter0).usage_arg
+	for iter0_28, iter1_28 in pairs(arg0_28.itemCnts) do
+		local var1_28 = Item.getConfigData(iter0_28).usage_arg
 
-		var0 = var0 + tonumber(var1) * iter1
+		var0_28 = var0_28 + tonumber(var1_28) * iter1_28
 	end
 
-	return var0
+	return var0_28
 end
 
-function var0.UpdateLevelInfo(arg0)
-	local var0 = arg0.shipVO
-	local var1 = arg0:GetAdditionExp()
-	local var2 = arg0:GetTempShipVO(var0, var1)
-	local var3 = var2.level - var0.level
-	local var4 = var3 <= 0 and (var1 > 0 and "+0" or "") or "<color=" .. COLOR_GREEN .. ">+" .. var3 .. "</color>"
+function var0_0.UpdateLevelInfo(arg0_29)
+	local var0_29 = arg0_29.shipVO
+	local var1_29 = arg0_29:GetAdditionExp()
+	local var2_29 = arg0_29:GetTempShipVO(var0_29, var1_29)
+	local var3_29 = var2_29.level - var0_29.level
+	local var4_29 = var3_29 <= 0 and (var1_29 > 0 and "+0" or "") or "<color=" .. COLOR_GREEN .. ">+" .. var3_29 .. "</color>"
 
-	arg0.levelTxt.text = var0.level .. var4
+	arg0_29.levelTxt.text = var0_29.level .. var4_29
 
-	local var5 = var0:getLevelExpConfig().exp_interval
+	local var5_29 = var0_29:getLevelExpConfig().exp_interval
 
-	arg0.expTxt.text = string.format("%d<color=%s>(+%d)</color>/%d", var0.exp, COLOR_GREEN, var1, var5)
+	arg0_29.expTxt.text = string.format("%d<color=%s>(+%d)</color>/%d", var0_29.exp, COLOR_GREEN, var1_29, var5_29)
 
-	local var6 = var0.exp / var5
+	local var6_29 = var0_29.exp / var5_29
 
-	arg0.currentProgress.value = var6
-	arg0.tipProgress.value = var1 <= 0 and var6 or var6 + 0.003
-	arg0.previewProgress.value = var1 <= 0 and 0 or var3 >= 1 and 1 or var2.exp / var5
+	arg0_29.currentProgress.value = var6_29
+	arg0_29.tipProgress.value = var1_29 <= 0 and var6_29 or var6_29 + 0.003
+	arg0_29.previewProgress.value = var1_29 <= 0 and 0 or var3_29 >= 1 and 1 or var2_29.exp / var5_29
 end
 
-function var0.OnDestroy(arg0)
-	for iter0, iter1 in pairs(arg0.cards) do
-		iter1:Dispose()
+function var0_0.OnDestroy(arg0_30)
+	for iter0_30, iter1_30 in pairs(arg0_30.cards) do
+		iter1_30:Dispose()
 	end
 
-	arg0.cards = nil
+	arg0_30.cards = nil
 end
 
-return var0
+return var0_0

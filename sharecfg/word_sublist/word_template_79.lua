@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_79 = {}
+var0_0.word_template_79 = {}
 
-local var1 = var0.word_template_79
+local var1_0 = var0_0.word_template_79
 
 function temp()
-	var1.荡 = {
+	var1_0.荡 = {
 		妇 = {
 			this = true
 		},
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.蕩 = {
+	var1_0.蕩 = {
 		婦 = {
 			this = true
 		},
@@ -43,7 +43,7 @@ end
 temp()
 
 function temp()
-	var1.导 = {
+	var1_0.导 = {
 		爆 = {
 			索 = {
 				this = true
@@ -58,7 +58,7 @@ end
 temp()
 
 function temp()
-	var1.岛 = {
+	var1_0.岛 = {
 		田 = {
 			沙 = {
 				罗 = {
@@ -79,7 +79,7 @@ end
 temp()
 
 function temp()
-	var1.捣 = {
+	var1_0.捣 = {
 		玉 = {
 			台 = {
 				this = true
@@ -91,7 +91,7 @@ end
 temp()
 
 function temp()
-	var1.倒 = {
+	var1_0.倒 = {
 		插 = {
 			莲 = {
 				式 = {
@@ -207,7 +207,7 @@ end
 temp()
 
 function temp()
-	var1.導 = {
+	var1_0.導 = {
 		彈 = {
 			this = true
 		},

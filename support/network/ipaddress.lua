@@ -1,12 +1,12 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.IPAddress = class("IPAddress")
+var0_0.IPAddress = class("IPAddress")
 
-local var1 = var0.IPAddress
-local var2 = "https://www.azurlane.tw/getip"
-local var3 = {
+local var1_0 = var0_0.IPAddress
+local var2_0 = "https://www.azurlane.tw/getip"
+local var3_0 = {
 	{
 		"202.39.128.0",
 		"202.39.255.255"
@@ -109,102 +109,102 @@ local var3 = {
 	}
 }
 
-function var1.Ctor(arg0)
-	arg0:ConvertIPRange()
+function var1_0.Ctor(arg0_1)
+	arg0_1:ConvertIPRange()
 
-	arg0.requestUrl = var2
+	arg0_1.requestUrl = var2_0
 
 	if not IsUnityEditor then
-		VersionMgr.Inst:WebRequest(arg0.requestUrl, function(arg0, arg1)
-			arg0.exportIP = arg1
-			arg0.isSpecialIP = arg0:CheckExportIP()
+		VersionMgr.Inst:WebRequest(arg0_1.requestUrl, function(arg0_2, arg1_2)
+			arg0_1.exportIP = arg1_2
+			arg0_1.isSpecialIP = arg0_1:CheckExportIP()
 		end)
 	end
 end
 
-function var1.IsIPString(arg0, arg1)
-	if type(arg1) ~= "string" then
+function var1_0.IsIPString(arg0_3, arg1_3)
+	if type(arg1_3) ~= "string" then
 		return false
 	end
 
-	local var0 = string.len(arg1)
+	local var0_3 = string.len(arg1_3)
 
-	if var0 < 7 or var0 > 15 then
+	if var0_3 < 7 or var0_3 > 15 then
 		return false
 	end
 
-	local var1 = string.find(arg1, "%p", 1)
-	local var2 = 0
+	local var1_3 = string.find(arg1_3, "%p", 1)
+	local var2_3 = 0
 
-	while var1 ~= nil do
-		if string.sub(arg1, var1, var1) ~= "." then
+	while var1_3 ~= nil do
+		if string.sub(arg1_3, var1_3, var1_3) ~= "." then
 			return false
 		end
 
-		var2 = var2 + 1
-		var1 = string.find(arg1, "%p", var1 + 1)
+		var2_3 = var2_3 + 1
+		var1_3 = string.find(arg1_3, "%p", var1_3 + 1)
 
-		if var2 > 3 then
-			return false
-		end
-	end
-
-	if var2 ~= 3 then
-		return false
-	end
-
-	local var3 = {}
-
-	for iter0 in string.gmatch(arg1, "%d+") do
-		var3[#var3 + 1] = iter0
-
-		local var4 = tonumber(iter0)
-
-		if var4 == nil or var4 > 255 then
+		if var2_3 > 3 then
 			return false
 		end
 	end
 
-	if #var3 ~= 4 then
+	if var2_3 ~= 3 then
+		return false
+	end
+
+	local var3_3 = {}
+
+	for iter0_3 in string.gmatch(arg1_3, "%d+") do
+		var3_3[#var3_3 + 1] = iter0_3
+
+		local var4_3 = tonumber(iter0_3)
+
+		if var4_3 == nil or var4_3 > 255 then
+			return false
+		end
+	end
+
+	if #var3_3 ~= 4 then
 		return false
 	end
 
 	return true
 end
 
-function var1.IP2Int(arg0, arg1)
-	local var0 = 0
-	local var1, var2, var3, var4 = arg1:match("(%d+)%.(%d+)%.(%d+)%.(%d+)")
+function var1_0.IP2Int(arg0_4, arg1_4)
+	local var0_4 = 0
+	local var1_4, var2_4, var3_4, var4_4 = arg1_4:match("(%d+)%.(%d+)%.(%d+)%.(%d+)")
 
-	return 16777216 * var1 + 65536 * var2 + 256 * var3 + var4
+	return 16777216 * var1_4 + 65536 * var2_4 + 256 * var3_4 + var4_4
 end
 
-function var1.ConvertIPRange(arg0)
-	arg0.IPRangeIntList = {}
+function var1_0.ConvertIPRange(arg0_5)
+	arg0_5.IPRangeIntList = {}
 
-	for iter0, iter1 in ipairs(var3) do
-		local var0 = {}
-		local var1 = arg0:IP2Int(iter1[1])
+	for iter0_5, iter1_5 in ipairs(var3_0) do
+		local var0_5 = {}
+		local var1_5 = arg0_5:IP2Int(iter1_5[1])
 
-		table.insert(var0, var1)
+		table.insert(var0_5, var1_5)
 
-		local var2 = arg0:IP2Int(iter1[2])
+		local var2_5 = arg0_5:IP2Int(iter1_5[2])
 
-		table.insert(var0, var2)
-		assert(var1 < var2, "ip range is illegal" .. iter1[1] .. "-" .. iter1[2])
-		table.insert(arg0.IPRangeIntList, var0)
+		table.insert(var0_5, var2_5)
+		assert(var1_5 < var2_5, "ip range is illegal" .. iter1_5[1] .. "-" .. iter1_5[2])
+		table.insert(arg0_5.IPRangeIntList, var0_5)
 	end
 end
 
-function var1.CheckExportIP(arg0)
-	if not arg0.exportIP or not arg0:IsIPString(arg0.exportIP) then
+function var1_0.CheckExportIP(arg0_6)
+	if not arg0_6.exportIP or not arg0_6:IsIPString(arg0_6.exportIP) then
 		return false
 	end
 
-	local var0 = arg0:IP2Int(arg0.exportIP)
+	local var0_6 = arg0_6:IP2Int(arg0_6.exportIP)
 
-	for iter0, iter1 in ipairs(arg0.IPRangeIntList) do
-		if var0 >= iter1[1] and var0 <= iter1[2] then
+	for iter0_6, iter1_6 in ipairs(arg0_6.IPRangeIntList) do
+		if var0_6 >= iter1_6[1] and var0_6 <= iter1_6[2] then
 			return true
 		end
 	end
@@ -212,18 +212,18 @@ function var1.CheckExportIP(arg0)
 	return false
 end
 
-function var1.GetExportIPString(arg0)
-	return arg0.exportIP
+function var1_0.GetExportIPString(arg0_7)
+	return arg0_7.exportIP
 end
 
-function var1.GetLocalIP(arg0)
-	local var0 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.Network"), "player")
+function var1_0.GetLocalIP(arg0_8)
+	local var0_8 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.Network"), "player")
 
-	arg0.localIP = ReflectionHelp.RefGetProperty(typeof("UnityEngine.NetworkPlayer"), "ipAddress", var0)
+	arg0_8.localIP = ReflectionHelp.RefGetProperty(typeof("UnityEngine.NetworkPlayer"), "ipAddress", var0_8)
 
-	return arg0.localIP
+	return arg0_8.localIP
 end
 
-function var1.IsSpecialIP(arg0)
-	return arg0.isSpecialIP
+function var1_0.IsSpecialIP(arg0_9)
+	return arg0_9.isSpecialIP
 end

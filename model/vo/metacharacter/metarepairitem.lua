@@ -1,38 +1,38 @@
-﻿local var0 = class("MetaRepairItem", import("..BaseVO"))
+﻿local var0_0 = class("MetaRepairItem", import("..BaseVO"))
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_1)
 	return pg.ship_meta_repair
 end
 
-function var0.Ctor(arg0, arg1)
-	arg0.id = arg1.id
-	arg0.configId = arg0.id
-	arg0.itemId = arg0:getConfig("item_id")
-	arg0.totalCnt = arg0:getConfig("item_num")
-	arg0.repairExp = arg0:getConfig("repair_exp")
+function var0_0.Ctor(arg0_2, arg1_2)
+	arg0_2.id = arg1_2.id
+	arg0_2.configId = arg0_2.id
+	arg0_2.itemId = arg0_2:getConfig("item_id")
+	arg0_2.totalCnt = arg0_2:getConfig("item_num")
+	arg0_2.repairExp = arg0_2:getConfig("repair_exp")
 
-	local var0 = arg0:getConfig("effect_attr")
+	local var0_2 = arg0_2:getConfig("effect_attr")
 
-	arg0.addition = {
-		attr = var0[1],
-		value = var0[2]
+	arg0_2.addition = {
+		attr = var0_2[1],
+		value = var0_2[2]
 	}
 end
 
-function var0.getItemId(arg0)
-	return arg0.itemId
+function var0_0.getItemId(arg0_3)
+	return arg0_3.itemId
 end
 
-function var0.getTotalCnt(arg0)
-	return arg0.totalCnt or 0
+function var0_0.getTotalCnt(arg0_4)
+	return arg0_4.totalCnt or 0
 end
 
-function var0.getRepairExp(arg0)
-	return arg0.repairExp
+function var0_0.getRepairExp(arg0_5)
+	return arg0_5.repairExp
 end
 
-function var0.getAdditionValue(arg0)
-	return arg0.addition.value
+function var0_0.getAdditionValue(arg0_6)
+	return arg0_6.addition.value
 end
 
-return var0
+return var0_0

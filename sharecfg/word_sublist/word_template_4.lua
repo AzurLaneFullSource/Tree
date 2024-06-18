@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_4 = {}
+var0_0.word_template_4 = {}
 
-local var1 = var0.word_template_4
+local var1_0 = var0_0.word_template_4
 
 function temp()
-	var1.ｓ = {
+	var1_0.ｓ = {
 		ｅ = {
 			ｘ = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.t = {
+	var1_0.t = {
 		i = {
 			t = {
 				s = {
@@ -623,7 +623,7 @@ end
 temp()
 
 function temp()
-	var1.v = {
+	var1_0.v = {
 		a = {
 			g = {
 				i = {
@@ -731,7 +731,7 @@ end
 temp()
 
 function temp()
-	var1.w = {
+	var1_0.w = {
 		a = {
 			n = {
 				k = {
@@ -1225,7 +1225,7 @@ end
 temp()
 
 function temp()
-	var1.A = {
+	var1_0.A = {
 		n = {
 			j = {
 				i = {
@@ -1318,7 +1318,7 @@ end
 temp()
 
 function temp()
-	var1.P = {
+	var1_0.P = {
 		a = {
 			n = {
 				t = {
@@ -1533,7 +1533,7 @@ end
 temp()
 
 function temp()
-	var1.K = {
+	var1_0.K = {
 		o = {
 			p = {
 				e = {

@@ -1,51 +1,51 @@
-﻿local var0 = class("FuncBuffer")
+﻿local var0_0 = class("FuncBuffer")
 
-function var0.Ctor(arg0)
-	arg0.buffers = {}
-	arg0.notifier = false
+function var0_0.Ctor(arg0_1)
+	arg0_1.buffers = {}
+	arg0_1.notifier = false
 end
 
-function var0.SetNotifier(arg0, arg1)
-	arg0.notifier = defaultValue(arg1, false)
+function var0_0.SetNotifier(arg0_2, arg1_2)
+	arg0_2.notifier = defaultValue(arg1_2, false)
 end
 
-function var0.IsEmpty(arg0)
-	return #arg0.buffers <= 0
+function var0_0.IsEmpty(arg0_3)
+	return #arg0_3.buffers <= 0
 end
 
-function var0.Pop(arg0)
-	return table.remove(arg0.buffers, 1)
+function var0_0.Pop(arg0_4)
+	return table.remove(arg0_4.buffers, 1)
 end
 
-function var0.Push(arg0, arg1, ...)
-	table.insert(arg0.buffers, {
-		funcName = arg1,
+function var0_0.Push(arg0_5, arg1_5, ...)
+	table.insert(arg0_5.buffers, {
+		funcName = arg1_5,
 		params = {
 			...
 		},
 		paramLength = select("#", ...)
 	})
-	arg0:ExcuteAll()
+	arg0_5:ExcuteAll()
 end
 
-function var0.ExcuteAll(arg0)
-	if arg0.notifier then
-		while not arg0:IsEmpty() do
-			local var0 = arg0:Pop()
+function var0_0.ExcuteAll(arg0_6)
+	if arg0_6.notifier then
+		while not arg0_6:IsEmpty() do
+			local var0_6 = arg0_6:Pop()
 
-			arg0.notifier[var0.funcName](arg0.notifier, unpack(var0.params, 1, var0.paramLength))
+			arg0_6.notifier[var0_6.funcName](arg0_6.notifier, unpack(var0_6.params, 1, var0_6.paramLength))
 		end
 	end
 end
 
-function var0.Clear(arg0)
-	table.clear(arg0.buffers)
+function var0_0.Clear(arg0_7)
+	table.clear(arg0_7.buffers)
 end
 
-function var0.__index(arg0, arg1)
-	return rawget(arg0, arg1) or var0[arg1] or function(arg0, ...)
-		arg0:Push(arg1, ...)
+function var0_0.__index(arg0_8, arg1_8)
+	return rawget(arg0_8, arg1_8) or var0_0[arg1_8] or function(arg0_9, ...)
+		arg0_8:Push(arg1_8, ...)
 	end
 end
 
-return var0
+return var0_0

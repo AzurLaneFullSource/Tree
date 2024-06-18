@@ -1,81 +1,81 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleEvent
-local var2 = var0.Battle.BattleFormulas
-local var3 = var0.Battle.BattleConst
-local var4 = var0.Battle.BattleConfig
-local var5 = var0.Battle.BattleDataFunction
-local var6 = var0.Battle.BattleAttr
-local var7 = var0.Battle.BattleVariable
-local var8 = class("BattleRepeaterAntiAirUnit", var0.Battle.BattleWeaponUnit)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleEvent
+local var2_0 = var0_0.Battle.BattleFormulas
+local var3_0 = var0_0.Battle.BattleConst
+local var4_0 = var0_0.Battle.BattleConfig
+local var5_0 = var0_0.Battle.BattleDataFunction
+local var6_0 = var0_0.Battle.BattleAttr
+local var7_0 = var0_0.Battle.BattleVariable
+local var8_0 = class("BattleRepeaterAntiAirUnit", var0_0.Battle.BattleWeaponUnit)
 
-var0.Battle.BattleRepeaterAntiAirUnit = var8
-var8.__name = "BattleRepeaterAntiAirUnit"
+var0_0.Battle.BattleRepeaterAntiAirUnit = var8_0
+var8_0.__name = "BattleRepeaterAntiAirUnit"
 
-function var8.Ctor(arg0)
-	var8.super.Ctor(arg0)
+function var8_0.Ctor(arg0_1)
+	var8_0.super.Ctor(arg0_1)
 
-	arg0._dataProxy = var0.Battle.BattleDataProxy.GetInstance()
+	arg0_1._dataProxy = var0_0.Battle.BattleDataProxy.GetInstance()
 end
 
-function var8.FilterTarget(arg0)
-	local var0 = arg0._dataProxy:GetAircraftList()
-	local var1 = {}
-	local var2 = arg0._host:GetIFF()
-	local var3 = 1
+function var8_0.FilterTarget(arg0_2)
+	local var0_2 = arg0_2._dataProxy:GetAircraftList()
+	local var1_2 = {}
+	local var2_2 = arg0_2._host:GetIFF()
+	local var3_2 = 1
 
-	for iter0, iter1 in pairs(var0) do
-		if iter1:GetIFF() ~= var2 and iter1:IsVisitable() then
-			var1[var3] = iter1
-			var3 = var3 + 1
+	for iter0_2, iter1_2 in pairs(var0_2) do
+		if iter1_2:GetIFF() ~= var2_2 and iter1_2:IsVisitable() then
+			var1_2[var3_2] = iter1_2
+			var3_2 = var3_2 + 1
 		end
 	end
 
-	return var1
+	return var1_2
 end
 
-function var8.Fire(arg0)
-	local function var0(arg0)
-		if not arg0._dataProxy then
+function var8_0.Fire(arg0_3)
+	local function var0_3(arg0_4)
+		if not arg0_3._dataProxy then
 			return
 		end
 
-		local var0 = {}
-		local var1 = arg0._dataProxy:GetAircraftList()
+		local var0_4 = {}
+		local var1_4 = arg0_3._dataProxy:GetAircraftList()
 
-		for iter0, iter1 in ipairs(arg0) do
-			if iter1.Active then
-				local var2 = var1[iter1.UID]
+		for iter0_4, iter1_4 in ipairs(arg0_4) do
+			if iter1_4.Active then
+				local var2_4 = var1_4[iter1_4.UID]
 
-				if var2 and var2:IsVisitable() then
-					var0[#var0 + 1] = var2
+				if var2_4 and var2_4:IsVisitable() then
+					var0_4[#var0_4 + 1] = var2_4
 				end
 			end
 		end
 
-		local var3 = var2.CalculateRepaterAnitiAirTotalDamage(arg0)
+		local var3_4 = var2_0.CalculateRepaterAnitiAirTotalDamage(arg0_3)
 
-		while var3 > 0 and #var0 > 0 do
-			local var4 = math.random(#var0)
-			local var5 = var0[var4]
-			local var6 = var5:GetMaxHP()
+		while var3_4 > 0 and #var0_4 > 0 do
+			local var4_4 = math.random(#var0_4)
+			local var5_4 = var0_4[var4_4]
+			local var6_4 = var5_4:GetMaxHP()
 
-			var3 = var3 - (var6 + math.random(var4.AnitAirRepeaterConfig.lower_range, var4.AnitAirRepeaterConfig.upper_range))
+			var3_4 = var3_4 - (var6_4 + math.random(var4_0.AnitAirRepeaterConfig.lower_range, var4_0.AnitAirRepeaterConfig.upper_range))
 
-			if var3 < 0 then
-				var6 = var6 + var3
+			if var3_4 < 0 then
+				var6_4 = var6_4 + var3_4
 			end
 
-			if not var2.RollRepeaterHitDice(arg0, var5) then
-				table.remove(var0, var4)
-				arg0._dataProxy:HandleDirectDamage(var5, var6, arg0:GetHost())
+			if not var2_0.RollRepeaterHitDice(arg0_3, var5_4) then
+				table.remove(var0_4, var4_4)
+				arg0_3._dataProxy:HandleDirectDamage(var5_4, var6_4, arg0_3:GetHost())
 			end
 		end
 	end
 
-	arg0._dataProxy:SpawnColumnArea(var3.AOEField.AIR, arg0._host:GetIFF(), arg0._host:GetPosition(), arg0._tmpData.range * 2, -1, var0)
-	arg0:EnterCoolDown()
-	arg0._host:PlayFX(arg0._tmpData.fire_fx, true)
-	var0.Battle.PlayBattleSFX(arg0._tmpData.fire_sfx)
+	arg0_3._dataProxy:SpawnColumnArea(var3_0.AOEField.AIR, arg0_3._host:GetIFF(), arg0_3._host:GetPosition(), arg0_3._tmpData.range * 2, -1, var0_3)
+	arg0_3:EnterCoolDown()
+	arg0_3._host:PlayFX(arg0_3._tmpData.fire_fx, true)
+	var0_0.Battle.PlayBattleSFX(arg0_3._tmpData.fire_sfx)
 end

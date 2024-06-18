@@ -1,72 +1,72 @@
-﻿local var0 = class("MapEventStoryObstacleCellView", import("view.level.cell.StaticCellView"))
+﻿local var0_0 = class("MapEventStoryObstacleCellView", import("view.level.cell.StaticCellView"))
 
-function var0.GetOrder(arg0)
+function var0_0.GetOrder(arg0_1)
 	return ChapterConst.CellPriorityAttachment
 end
 
-function var0.Update(arg0)
-	local var0 = arg0.info
+function var0_0.Update(arg0_2)
+	local var0_2 = arg0_2.info
 
-	if IsNil(arg0.go) then
-		local var1 = var0.row
-		local var2 = var0.column
-		local var3 = "story_" .. var1 .. "_" .. var2 .. "_" .. var0.attachmentId
+	if IsNil(arg0_2.go) then
+		local var1_2 = var0_2.row
+		local var2_2 = var0_2.column
+		local var3_2 = "story_" .. var1_2 .. "_" .. var2_2 .. "_" .. var0_2.attachmentId
 
-		arg0:PrepareBase(var3)
+		arg0_2:PrepareBase(var3_2)
 	end
 
-	local var4 = pg.map_event_template[var0.attachmentId].icon
-	local var5
+	local var4_2 = pg.map_event_template[var0_2.attachmentId].icon
+	local var5_2
 
-	var5 = var4 and #var4 > 0 and var4 .. "_2" or nil
+	var5_2 = var4_2 and #var4_2 > 0 and var4_2 .. "_2" or nil
 
-	local var6 = ItemCell.TransformItemAsset(arg0.chapter, var5)
+	local var6_2 = ItemCell.TransformItemAsset(arg0_2.chapter, var5_2)
 
-	if arg0.assetName ~= var6 then
-		if var6 == nil then
-			arg0:GetLoader():ClearRequest("ItemAsset")
+	if arg0_2.assetName ~= var6_2 then
+		if var6_2 == nil then
+			arg0_2:GetLoader():ClearRequest("ItemAsset")
 
-			arg0.assetName = var6
+			arg0_2.assetName = var6_2
 		else
-			arg0:GetLoader():GetPrefab("ui/" .. var6, var6, function(arg0)
-				setParent(arg0, arg0.tf)
-				arg0:ResetCanvasOrder()
+			arg0_2:GetLoader():GetPrefab("ui/" .. var6_2, var6_2, function(arg0_3)
+				setParent(arg0_3, arg0_2.tf)
+				arg0_2:ResetCanvasOrder()
 
-				arg0.assetName = var6
+				arg0_2.assetName = var6_2
 			end, "ItemAsset")
 		end
 	end
 
-	local var7 = var0.flag == ChapterConst.CellFlagTriggerActive
-	local var8 = pg.map_event_template[var0.attachmentId]
+	local var7_2 = var0_2.flag == ChapterConst.CellFlagTriggerActive
+	local var8_2 = pg.map_event_template[var0_2.attachmentId]
 
-	if not var7 and var8 and var8.animation and not arg0.disappearAnim then
-		local var9 = var8.animation
+	if not var7_2 and var8_2 and var8_2.animation and not arg0_2.disappearAnim then
+		local var9_2 = var8_2.animation
 
-		if var9 and #var9 > 0 then
-			arg0:GetLoader():GetPrefab("ui/" .. var9, var9, function(arg0)
-				setParent(arg0.transform, arg0.tf, false)
-				arg0:ResetCanvasOrder()
+		if var9_2 and #var9_2 > 0 then
+			arg0_2:GetLoader():GetPrefab("ui/" .. var9_2, var9_2, function(arg0_4)
+				setParent(arg0_4.transform, arg0_2.tf, false)
+				arg0_2:ResetCanvasOrder()
 
-				local var0 = arg0:GetComponent(typeof(ParticleSystemEvent))
+				local var0_4 = arg0_4:GetComponent(typeof(ParticleSystemEvent))
 
-				if not IsNil(var0) then
-					var0:SetEndEvent(function()
-						arg0:GetLoader():ClearRequest("DisapperAnim")
+				if not IsNil(var0_4) then
+					var0_4:SetEndEvent(function()
+						arg0_2:GetLoader():ClearRequest("DisapperAnim")
 
-						arg0.playingAnim = false
+						arg0_2.playingAnim = false
 
-						arg0:Update()
+						arg0_2:Update()
 					end)
 				end
 			end, "DisapperAnim")
 
-			arg0.disappearAnim = true
-			arg0.playingAnim = true
+			arg0_2.disappearAnim = true
+			arg0_2.playingAnim = true
 		end
 	end
 
-	setActive(arg0.tf, var7 or arg0.playingAnim)
+	setActive(arg0_2.tf, var7_2 or arg0_2.playingAnim)
 end
 
-return var0
+return var0_0

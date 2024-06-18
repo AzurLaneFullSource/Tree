@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_239 = {}
+var0_0.word_template_239 = {}
 
-local var1 = var0.word_template_239
+local var1_0 = var0_0.word_template_239
 
 function temp()
-	var1.沁 = {
+	var1_0.沁 = {
 		园 = {
 			春 = {
 				房 = {
@@ -40,7 +40,7 @@ end
 temp()
 
 function temp()
-	var1.唚 = {
+	var1_0.唚 = {
 		this = {
 			this = true
 		}
@@ -50,7 +50,7 @@ end
 temp()
 
 function temp()
-	var1.青 = {
+	var1_0.青 = {
 		藏 = {
 			達 = {
 				賴 = {
@@ -231,7 +231,7 @@ end
 temp()
 
 function temp()
-	var1.轻 = {
+	var1_0.轻 = {
 		插 = {
 			this = true
 		},
@@ -304,7 +304,7 @@ end
 temp()
 
 function temp()
-	var1.氢 = {
+	var1_0.氢 = {
 		弹 = {
 			this = true
 		},
@@ -341,7 +341,7 @@ end
 temp()
 
 function temp()
-	var1.卿 = {
+	var1_0.卿 = {
 		本 = {
 			佳 = {
 				人 = {
@@ -355,7 +355,7 @@ end
 temp()
 
 function temp()
-	var1.氫 = {
+	var1_0.氫 = {
 		彈 = {
 			this = true
 		}

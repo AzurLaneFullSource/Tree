@@ -1,6 +1,6 @@
-﻿local var0 = class("WSMapOut", import("...BaseEntity"))
+﻿local var0_0 = class("WSMapOut", import("...BaseEntity"))
 
-var0.Fields = {
+var0_0.Fields = {
 	map = "table",
 	transform = "userdata",
 	emotion = "string",
@@ -8,115 +8,115 @@ var0.Fields = {
 	emotionTFs = "table",
 	fleet = "table"
 }
-var0.Listeners = {
+var0_0.Listeners = {
 	onUpdateSelectedFleet = "OnUpdateSelectedFleet",
 	onUpdateFleetEmotion = "OnUpdateFleetEmotion"
 }
 
-function var0.Build(arg0)
+function var0_0.Build(arg0_1)
 	return
 end
 
-function var0.Setup(arg0)
-	pg.DelegateInfo.New(arg0)
+function var0_0.Setup(arg0_2)
+	pg.DelegateInfo.New(arg0_2)
 
-	arg0.emotionTFs = {}
+	arg0_2.emotionTFs = {}
 end
 
-function var0.Dispose(arg0)
-	arg0:RemoveFleetListener(arg0.fleet)
-	arg0:RemoveMapListener()
+function var0_0.Dispose(arg0_3)
+	arg0_3:RemoveFleetListener(arg0_3.fleet)
+	arg0_3:RemoveMapListener()
 
-	local var0 = PoolMgr.GetInstance()
+	local var0_3 = PoolMgr.GetInstance()
 
-	for iter0, iter1 in pairs(arg0.emotionTFs) do
-		var0:ReturnUI(iter0, go(iter1))
+	for iter0_3, iter1_3 in pairs(arg0_3.emotionTFs) do
+		var0_3:ReturnUI(iter0_3, go(iter1_3))
 	end
 
-	pg.DelegateInfo.Dispose(arg0)
-	arg0:Clear()
+	pg.DelegateInfo.Dispose(arg0_3)
+	arg0_3:Clear()
 end
 
-function var0.UpdateMap(arg0, arg1)
-	if arg0.map ~= arg1 or arg0.gid ~= arg1.gid then
-		arg0:RemoveMapListener()
+function var0_0.UpdateMap(arg0_4, arg1_4)
+	if arg0_4.map ~= arg1_4 or arg0_4.gid ~= arg1_4.gid then
+		arg0_4:RemoveMapListener()
 
-		arg0.map = arg1
-		arg0.gid = arg1.gid
+		arg0_4.map = arg1_4
+		arg0_4.gid = arg1_4.gid
 
-		arg0:AddMapListener()
-		arg0:OnUpdateSelectedFleet()
-	end
-end
-
-function var0.AddMapListener(arg0)
-	if arg0.map then
-		arg0.map:AddListener(WorldMap.EventUpdateFIndex, arg0.onUpdateSelectedFleet)
+		arg0_4:AddMapListener()
+		arg0_4:OnUpdateSelectedFleet()
 	end
 end
 
-function var0.RemoveMapListener(arg0)
-	if arg0.map then
-		arg0.map:RemoveListener(WorldMap.EventUpdateFIndex, arg0.onUpdateSelectedFleet)
+function var0_0.AddMapListener(arg0_5)
+	if arg0_5.map then
+		arg0_5.map:AddListener(WorldMap.EventUpdateFIndex, arg0_5.onUpdateSelectedFleet)
 	end
 end
 
-function var0.AddFleetListener(arg0, arg1)
-	if arg1 then
-		arg1:AddListener(WorldMapFleet.EventUpdateLocation, arg0.onUpdateFleetEmotion)
+function var0_0.RemoveMapListener(arg0_6)
+	if arg0_6.map then
+		arg0_6.map:RemoveListener(WorldMap.EventUpdateFIndex, arg0_6.onUpdateSelectedFleet)
 	end
 end
 
-function var0.RemoveFleetListener(arg0, arg1)
-	if arg1 then
-		arg1:RemoveListener(WorldMapFleet.EventUpdateLocation, arg0.onUpdateFleetEmotion)
+function var0_0.AddFleetListener(arg0_7, arg1_7)
+	if arg1_7 then
+		arg1_7:AddListener(WorldMapFleet.EventUpdateLocation, arg0_7.onUpdateFleetEmotion)
 	end
 end
 
-function var0.OnUpdateSelectedFleet(arg0)
-	local var0 = arg0.map:GetFleet()
-
-	if arg0.fleet ~= var0 then
-		arg0:RemoveFleetListener(arg0.fleet)
-
-		arg0.fleet = var0
-
-		arg0:AddFleetListener(arg0.fleet)
+function var0_0.RemoveFleetListener(arg0_8, arg1_8)
+	if arg1_8 then
+		arg1_8:RemoveListener(WorldMapFleet.EventUpdateLocation, arg0_8.onUpdateFleetEmotion)
 	end
-
-	arg0:OnUpdateFleetEmotion()
 end
 
-function var0.OnUpdateFleetEmotion(arg0)
-	if not arg0.map.active then
+function var0_0.OnUpdateSelectedFleet(arg0_9)
+	local var0_9 = arg0_9.map:GetFleet()
+
+	if arg0_9.fleet ~= var0_9 then
+		arg0_9:RemoveFleetListener(arg0_9.fleet)
+
+		arg0_9.fleet = var0_9
+
+		arg0_9:AddFleetListener(arg0_9.fleet)
+	end
+
+	arg0_9:OnUpdateFleetEmotion()
+end
+
+function var0_0.OnUpdateFleetEmotion(arg0_10)
+	if not arg0_10.map.active then
 		return
 	end
 
-	local var0 = arg0.map:GetCell(arg0.fleet.row, arg0.fleet.column):GetEmotion()
-	local var1
+	local var0_10 = arg0_10.map:GetCell(arg0_10.fleet.row, arg0_10.fleet.column):GetEmotion()
+	local var1_10
 
-	if arg0.emotion ~= var0 then
-		local var2 = PoolMgr.GetInstance()
-		local var3 = {}
+	if arg0_10.emotion ~= var0_10 then
+		local var2_10 = PoolMgr.GetInstance()
+		local var3_10 = {}
 
-		if arg0.emotion and arg0.emotionTFs[arg0.emotion] then
-			setActive(arg0.emotionTFs[arg0.emotion], false)
+		if arg0_10.emotion and arg0_10.emotionTFs[arg0_10.emotion] then
+			setActive(arg0_10.emotionTFs[arg0_10.emotion], false)
 		end
 
-		arg0.emotion = var0
+		arg0_10.emotion = var0_10
 
-		if var0 then
-			if arg0.emotionTFs[var0] then
-				setActive(arg0.emotionTFs[arg0.emotion], true)
+		if var0_10 then
+			if arg0_10.emotionTFs[var0_10] then
+				setActive(arg0_10.emotionTFs[arg0_10.emotion], true)
 			else
-				var2:GetUI(var0, true, function(arg0)
-					if arg0.emotion == var0 then
-						setParent(arg0, arg0.transform)
-						setActive(arg0, true)
+				var2_10:GetUI(var0_10, true, function(arg0_11)
+					if arg0_10.emotion == var0_10 then
+						setParent(arg0_11, arg0_10.transform)
+						setActive(arg0_11, true)
 
-						arg0.emotionTFs[var0] = tf(arg0)
+						arg0_10.emotionTFs[var0_10] = tf(arg0_11)
 					else
-						var2:ReturnUI(var0, arg0)
+						var2_10:ReturnUI(var0_10, arg0_11)
 					end
 				end)
 			end
@@ -124,4 +124,4 @@ function var0.OnUpdateFleetEmotion(arg0)
 	end
 end
 
-return var0
+return var0_0

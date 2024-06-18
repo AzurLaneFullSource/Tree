@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_238 = {}
+var0_0.word_template_238 = {}
 
-local var1 = var0.word_template_238
+local var1_0 = var0_0.word_template_238
 
 function temp()
-	var1.竊 = {
+	var1_0.竊 = {
 		听 = {
 			器 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.钦 = {
+	var1_0.钦 = {
 		点 = {
 			凤 = {
 				妃 = {
@@ -45,7 +45,7 @@ end
 temp()
 
 function temp()
-	var1.侵 = {
+	var1_0.侵 = {
 		入 = {
 			她 = {
 				的 = {
@@ -84,7 +84,7 @@ end
 temp()
 
 function temp()
-	var1.亲 = {
+	var1_0.亲 = {
 		j = {
 			j = {
 				this = true
@@ -214,7 +214,7 @@ end
 temp()
 
 function temp()
-	var1.秦 = {
+	var1_0.秦 = {
 		光 = {
 			荣 = {
 				this = true
@@ -345,7 +345,7 @@ end
 temp()
 
 function temp()
-	var1.禽 = {
+	var1_0.禽 = {
 		獸 = {
 			this = true
 		}
@@ -355,7 +355,7 @@ end
 temp()
 
 function temp()
-	var1.勤 = {
+	var1_0.勤 = {
 		劳 = {
 			的 = {
 				双 = {

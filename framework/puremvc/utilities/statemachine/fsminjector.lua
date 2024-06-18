@@ -1,58 +1,58 @@
-﻿local var0 = import("...patterns.observer.Notifier")
-local var1 = class("FSMInjector", var0)
-local var2 = import(".StateMachine")
-local var3 = import(".State")
+﻿local var0_0 = import("...patterns.observer.Notifier")
+local var1_0 = class("FSMInjector", var0_0)
+local var2_0 = import(".StateMachine")
+local var3_0 = import(".State")
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1)
 
-	arg0.fsm = arg1
+	arg0_1.fsm = arg1_1
 end
 
-function var1.inject(arg0)
-	local var0 = var2.New()
-	local var1 = arg0:getStates()
+function var1_0.inject(arg0_2)
+	local var0_2 = var2_0.New()
+	local var1_2 = arg0_2:getStates()
 
-	for iter0, iter1 in ipairs(var1) do
-		var0:registerState(iter1, arg0:isInitial(iter1.name))
+	for iter0_2, iter1_2 in ipairs(var1_2) do
+		var0_2:registerState(iter1_2, arg0_2:isInitial(iter1_2.name))
 	end
 
-	arg0.facade:registerMediator(var0)
+	arg0_2.facade:registerMediator(var0_2)
 end
 
-function var1.getStates(arg0)
-	if arg0.stateList == nil then
-		arg0.stateList = {}
+function var1_0.getStates(arg0_3)
+	if arg0_3.stateList == nil then
+		arg0_3.stateList = {}
 
-		local var0 = arg0.fsm.state or {}
+		local var0_3 = arg0_3.fsm.state or {}
 
-		for iter0, iter1 in ipairs(var0) do
-			local var1 = arg0:createState(iter1)
+		for iter0_3, iter1_3 in ipairs(var0_3) do
+			local var1_3 = arg0_3:createState(iter1_3)
 
-			table.insert(arg0.stateList, var1)
+			table.insert(arg0_3.stateList, var1_3)
 		end
 	end
 
-	return arg0.stateList
+	return arg0_3.stateList
 end
 
-function var1.createState(arg0, arg1)
-	local var0 = arg1["@name"]
-	local var1 = arg1["@entering"]
-	local var2 = arg1["@exiting"]
-	local var3 = arg1["@changed"]
-	local var4 = var3.New(var0, var1, var2, var3)
-	local var5 = arg1.transition or {}
+function var1_0.createState(arg0_4, arg1_4)
+	local var0_4 = arg1_4["@name"]
+	local var1_4 = arg1_4["@entering"]
+	local var2_4 = arg1_4["@exiting"]
+	local var3_4 = arg1_4["@changed"]
+	local var4_4 = var3_0.New(var0_4, var1_4, var2_4, var3_4)
+	local var5_4 = arg1_4.transition or {}
 
-	for iter0, iter1 in ipairs(var5) do
-		var4:defineTrans(iter1["@action"], iter1["@target"])
+	for iter0_4, iter1_4 in ipairs(var5_4) do
+		var4_4:defineTrans(iter1_4["@action"], iter1_4["@target"])
 	end
 
-	return var4
+	return var4_4
 end
 
-function var1.isInitial(arg0, arg1)
-	return arg1 == arg0.fsm["@initial"]
+function var1_0.isInitial(arg0_5, arg1_5)
+	return arg1_5 == arg0_5.fsm["@initial"]
 end
 
-return var1
+return var1_0

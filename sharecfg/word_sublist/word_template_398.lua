@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_398 = {}
+var0_0.word_template_398 = {}
 
-local var1 = var0.word_template_398
+local var1_0 = var0_0.word_template_398
 
 function temp()
-	var1.具 = {
+	var1_0.具 = {
 		有 = {
 			强 = {
 				大 = {
@@ -43,7 +43,7 @@ end
 temp()
 
 function temp()
-	var1.涉 = {
+	var1_0.涉 = {
 		及 = {
 			师 = {
 				this = true
@@ -55,7 +55,7 @@ end
 temp()
 
 function temp()
-	var1.糊 = {
+	var1_0.糊 = {
 		药 = {
 			梆 = {
 				this = true
@@ -67,7 +67,7 @@ end
 temp()
 
 function temp()
-	var1.彡 = {
+	var1_0.彡 = {
 		工 = {
 			泽 = {
 				this = true
@@ -107,7 +107,7 @@ end
 temp()
 
 function temp()
-	var1.茪 = {
+	var1_0.茪 = {
 		淀 = {
 			部 = {
 				this = true
@@ -119,7 +119,7 @@ end
 temp()
 
 function temp()
-	var1.浙 = {
+	var1_0.浙 = {
 		江 = {
 			象 = {
 				棋 = {
@@ -153,7 +153,7 @@ end
 temp()
 
 function temp()
-	var1.飒 = {
+	var1_0.飒 = {
 		隔 = {
 			耳 = {
 				王 = {

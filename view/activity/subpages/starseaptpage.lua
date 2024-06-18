@@ -1,43 +1,43 @@
-﻿local var0 = class("StarSeaPtPage", import(".TemplatePage.PtTemplatePage"))
-local var1 = "#CCB5FF"
+﻿local var0_0 = class("StarSeaPtPage", import(".TemplatePage.PtTemplatePage"))
+local var1_0 = "#CCB5FF"
 
-function var0.OnUpdateFlush(arg0)
-	local var0 = arg0.ptData:getTargetLevel()
-	local var1 = arg0.activity:getConfig("config_client").story
+function var0_0.OnUpdateFlush(arg0_1)
+	local var0_1 = arg0_1.ptData:getTargetLevel()
+	local var1_1 = arg0_1.activity:getConfig("config_client").story
 
-	if checkExist(var1, {
-		var0
+	if checkExist(var1_1, {
+		var0_1
 	}, {
 		1
 	}) then
-		pg.NewStoryMgr.GetInstance():Play(var1[var0][1])
+		pg.NewStoryMgr.GetInstance():Play(var1_1[var0_1][1])
 	end
 
-	if arg0.step then
-		local var2, var3, var4 = arg0.ptData:GetLevelProgress()
+	if arg0_1.step then
+		local var2_1, var3_1, var4_1 = arg0_1.ptData:GetLevelProgress()
 
-		setText(arg0.step, setColorStr(var2, var1) .. "/" .. var3)
+		setText(arg0_1.step, setColorStr(var2_1, var1_0) .. "/" .. var3_1)
 	end
 
-	local var5, var6, var7 = arg0.ptData:GetResProgress()
+	local var5_1, var6_1, var7_1 = arg0_1.ptData:GetResProgress()
 
-	setText(arg0.progress, (var7 >= 1 and setColorStr(var5, var1) or var5) .. "/" .. var6)
-	setSlider(arg0.slider, 0, 1, var7)
+	setText(arg0_1.progress, (var7_1 >= 1 and setColorStr(var5_1, var1_0) or var5_1) .. "/" .. var6_1)
+	setSlider(arg0_1.slider, 0, 1, var7_1)
 
-	local var8 = arg0.ptData:CanGetAward()
-	local var9 = arg0.ptData:CanGetNextAward()
-	local var10 = arg0.ptData:CanGetMorePt()
+	local var8_1 = arg0_1.ptData:CanGetAward()
+	local var9_1 = arg0_1.ptData:CanGetNextAward()
+	local var10_1 = arg0_1.ptData:CanGetMorePt()
 
-	setActive(arg0.battleBtn, var10 and not var8 and var9)
-	setActive(arg0.getBtn, var8)
-	setActive(arg0.gotBtn, not var9)
+	setActive(arg0_1.battleBtn, var10_1 and not var8_1 and var9_1)
+	setActive(arg0_1.getBtn, var8_1)
+	setActive(arg0_1.gotBtn, not var9_1)
 
-	local var11 = arg0.ptData:GetAward()
+	local var11_1 = arg0_1.ptData:GetAward()
 
-	updateDrop(arg0.awardTF, var11)
-	onButton(arg0, arg0.awardTF, function()
-		arg0:emit(BaseUI.ON_DROP, var11)
+	updateDrop(arg0_1.awardTF, var11_1)
+	onButton(arg0_1, arg0_1.awardTF, function()
+		arg0_1:emit(BaseUI.ON_DROP, var11_1)
 	end, SFX_PANEL)
 end
 
-return var0
+return var0_0

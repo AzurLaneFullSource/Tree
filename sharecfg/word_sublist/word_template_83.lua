@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_83 = {}
+var0_0.word_template_83 = {}
 
-local var1 = var0.word_template_83
+local var1_0 = var0_0.word_template_83
 
 function temp()
-	var1.第 = {
+	var1_0.第 = {
 		二 = {
 			十 = {
 				七 = {
@@ -193,7 +193,7 @@ end
 temp()
 
 function temp()
-	var1.蒂 = {
+	var1_0.蒂 = {
 		巴 = {
 			因 = {
 				this = true
@@ -208,7 +208,7 @@ end
 temp()
 
 function temp()
-	var1.缔 = {
+	var1_0.缔 = {
 		顺 = {
 			this = true
 		}
@@ -218,7 +218,7 @@ end
 temp()
 
 function temp()
-	var1.颠 = {
+	var1_0.颠 = {
 		覆 = {
 			共 = {
 				党 = {
@@ -304,7 +304,7 @@ end
 temp()
 
 function temp()
-	var1.巅 = {
+	var1_0.巅 = {
 		峰 = {
 			三 = {
 				国 = {
@@ -318,7 +318,7 @@ end
 temp()
 
 function temp()
-	var1.癫 = {
+	var1_0.癫 = {
 		马 = {
 			女 = {
 				郎 = {
@@ -332,7 +332,7 @@ end
 temp()
 
 function temp()
-	var1.点 = {
+	var1_0.点 = {
 		击 = {
 			进 = {
 				入 = {

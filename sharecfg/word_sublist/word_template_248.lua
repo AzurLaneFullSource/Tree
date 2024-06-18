@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_248 = {}
+var0_0.word_template_248 = {}
 
-local var1 = var0.word_template_248
+local var1_0 = var0_0.word_template_248
 
 function temp()
-	var1.仍 = {
+	var1_0.仍 = {
 		张 = {
 			纸 = {
 				就 = {
@@ -35,7 +35,7 @@ end
 temp()
 
 function temp()
-	var1.容 = {
+	var1_0.容 = {
 		貌 = {
 			像 = {
 				政 = {
@@ -59,7 +59,7 @@ end
 temp()
 
 function temp()
-	var1.溶 = {
+	var1_0.溶 = {
 		尸 = {
 			奇 = {
 				案 = {
@@ -80,7 +80,7 @@ end
 temp()
 
 function temp()
-	var1.柔 = {
+	var1_0.柔 = {
 		阴 = {
 			术 = {
 				this = true
@@ -97,7 +97,7 @@ end
 temp()
 
 function temp()
-	var1.揉 = {
+	var1_0.揉 = {
 		擦 = {
 			this = true
 		},
@@ -133,7 +133,7 @@ end
 temp()
 
 function temp()
-	var1.如 = {
+	var1_0.如 = {
 		暗 = {
 			娼 = {
 				this = true
@@ -236,7 +236,7 @@ end
 temp()
 
 function temp()
-	var1.濡 = {
+	var1_0.濡 = {
 		穴 = {
 			this = true
 		}

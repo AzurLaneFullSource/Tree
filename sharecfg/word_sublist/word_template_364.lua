@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_364 = {}
+var0_0.word_template_364 = {}
 
-local var1 = var0.word_template_364
+local var1_0 = var0_0.word_template_364
 
 function temp()
-	var1.咗 = {
+	var1_0.咗 = {
 		囵 = {
 			熗 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.捌 = {
+	var1_0.捌 = {
 		玖 = {
 			["6"] = {
 				["4"] = {
@@ -648,7 +648,7 @@ end
 temp()
 
 function temp()
-	var1["8"] = {
+	var1_0["8"] = {
 		["9"] = {
 			this = true,
 			六 = {
@@ -1607,7 +1607,7 @@ end
 temp()
 
 function temp()
-	var1.⑧ = {
+	var1_0.⑧ = {
 		["9"] = {
 			["6"] = {
 				["4"] = {
@@ -2017,7 +2017,7 @@ end
 temp()
 
 function temp()
-	var1["["] = {
+	var1_0["["] = {
 		T = {
 			t = {
 				["]"] = {
@@ -2208,7 +2208,7 @@ end
 temp()
 
 function temp()
-	var1["1"] = {
+	var1_0["1"] = {
 		["9"] = {
 			["8"] = {
 				["9"] = {
@@ -4985,7 +4985,7 @@ end
 temp()
 
 function temp()
-	var1.柳 = {
+	var1_0.柳 = {
 		丝 = {
 			this = true,
 			事 = {

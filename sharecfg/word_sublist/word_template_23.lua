@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_23 = {}
+var0_0.word_template_23 = {}
 
-local var1 = var0.word_template_23
+local var1_0 = var0_0.word_template_23
 
 function temp()
-	var1.刷 = {
+	var1_0.刷 = {
 		this = {
 			this = true
 		},
@@ -79,7 +79,7 @@ end
 temp()
 
 function temp()
-	var1.殺 = {
+	var1_0.殺 = {
 		す = {
 			this = true
 		},
@@ -114,7 +114,7 @@ end
 temp()
 
 function temp()
-	var1.三 = {
+	var1_0.三 = {
 		国 = {
 			人 = {
 				this = true
@@ -1215,7 +1215,7 @@ end
 temp()
 
 function temp()
-	var1.子 = {
+	var1_0.子 = {
 		校 = {
 			this = true
 		},
@@ -1284,7 +1284,7 @@ end
 temp()
 
 function temp()
-	var1.指 = {
+	var1_0.指 = {
 		マ = {
 			ン = {
 				this = true
@@ -1432,7 +1432,7 @@ end
 temp()
 
 function temp()
-	var1.支 = {
+	var1_0.支 = {
 		那 = {
 			this = true,
 			蕎 = {
@@ -1623,7 +1623,7 @@ end
 temp()
 
 function temp()
-	var1.死 = {
+	var1_0.死 = {
 		ね = {
 			this = true
 		},

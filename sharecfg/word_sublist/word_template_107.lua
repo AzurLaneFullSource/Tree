@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_107 = {}
+var0_0.word_template_107 = {}
 
-local var1 = var0.word_template_107
+local var1_0 = var0_0.word_template_107
 
 function temp()
-	var1.港 = {
+	var1_0.港 = {
 		["3"] = {
 			["8"] = {
 				式 = {
@@ -71,7 +71,7 @@ end
 temp()
 
 function temp()
-	var1.羔 = {
+	var1_0.羔 = {
 		羊 = {
 			大 = {
 				律 = {
@@ -87,7 +87,7 @@ end
 temp()
 
 function temp()
-	var1.睪 = {
+	var1_0.睪 = {
 		丸 = {
 			this = true
 		}
@@ -97,7 +97,7 @@ end
 temp()
 
 function temp()
-	var1.睾 = {
+	var1_0.睾 = {
 		this = {
 			this = true
 		},
@@ -110,7 +110,7 @@ end
 temp()
 
 function temp()
-	var1.膏 = {
+	var1_0.膏 = {
 		药 = {
 			旗 = {
 				this = true
@@ -127,7 +127,7 @@ end
 temp()
 
 function temp()
-	var1.搞 = {
+	var1_0.搞 = {
 		得 = {
 			鸡 = {
 				巴 = {
@@ -216,7 +216,7 @@ end
 temp()
 
 function temp()
-	var1.戈 = {
+	var1_0.戈 = {
 		瑞 = {
 			this = true,
 			爾 = {

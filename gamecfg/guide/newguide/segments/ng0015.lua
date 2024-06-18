@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"点击help按钮查看每日任务帮助！"
 }
 
@@ -12,7 +12,7 @@ return {
 				mode = 1,
 				posY = -63.794,
 				posX = -663,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/ChallengeMainUI(Clone)/ForNorth/Award/HelpBtn"

@@ -1,52 +1,52 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.VigilantAntiSubState = class("VigilantAntiSubState", var0.Battle.IAntiSubState)
-var0.Battle.VigilantAntiSubState.__name = "VigilantAntiSubState"
+var0_0.Battle.VigilantAntiSubState = class("VigilantAntiSubState", var0_0.Battle.IAntiSubState)
+var0_0.Battle.VigilantAntiSubState.__name = "VigilantAntiSubState"
 
-local var1 = var0.Battle.VigilantAntiSubState
+local var1_0 = var0_0.Battle.VigilantAntiSubState
 
-function var1.Ctor(arg0)
-	var1.super.Ctor(arg0)
+function var1_0.Ctor(arg0_1)
+	var1_0.super.Ctor(arg0_1)
 end
 
-function var1.OnVigilantEngage(arg0, arg1)
+function var1_0.OnVigilantEngage(arg0_2, arg1_2)
 	return
 end
 
-function var1.OnMineExplode(arg0, arg1)
+function var1_0.OnMineExplode(arg0_3, arg1_3)
 	return
 end
 
-function var1.OnSubmarinFloat(arg0, arg1)
+function var1_0.OnSubmarinFloat(arg0_4, arg1_4)
 	return
 end
 
-function var1.OnHateChain(arg0, arg1)
-	arg1:OnEngageState(true)
+function var1_0.OnHateChain(arg0_5, arg1_5)
+	arg1_5:OnEngageState(true)
 end
 
-function var1.ToPreLevel(arg0, arg1)
-	arg1:OnSuspiciousState()
+function var1_0.ToPreLevel(arg0_6, arg1_6)
+	arg1_6:OnSuspiciousState()
 end
 
-function var1.GetWeaponUseable(arg0)
+function var1_0.GetWeaponUseable(arg0_7)
 	return {}
 end
 
-function var1.CanDecay(arg0)
+function var1_0.CanDecay(arg0_8)
 	return true
 end
 
-function var1.GetWarnMark(arg0)
+function var1_0.GetWarnMark(arg0_9)
 	return 2
 end
 
-function var1.GetMeterSpeed(arg0)
+function var1_0.GetMeterSpeed(arg0_10)
 	return 1.3
 end
 
-function var1.DecayDuration(arg0)
+function var1_0.DecayDuration(arg0_11)
 	return 2
 end

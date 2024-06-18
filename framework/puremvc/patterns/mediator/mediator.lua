@@ -1,39 +1,39 @@
-﻿local var0 = import("..observer.Notifier")
-local var1 = class("Mediator", var0)
+﻿local var0_0 = import("..observer.Notifier")
+local var1_0 = class("Mediator", var0_0)
 
-function var1.Ctor(arg0, arg1, arg2)
-	arg0.mediatorName = arg1 or arg0.__cname or var1.NAME
-	arg0.viewComponent = arg2
+function var1_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.mediatorName = arg1_1 or arg0_1.__cname or var1_0.NAME
+	arg0_1.viewComponent = arg2_1
 end
 
-var1.NAME = "Mediator"
+var1_0.NAME = "Mediator"
 
-function var1.getMediatorName(arg0)
-	return arg0.mediatorName
+function var1_0.getMediatorName(arg0_2)
+	return arg0_2.mediatorName
 end
 
-function var1.setViewComponent(arg0, arg1)
-	arg0.viewComponent = arg1
+function var1_0.setViewComponent(arg0_3, arg1_3)
+	arg0_3.viewComponent = arg1_3
 end
 
-function var1.getViewComponent(arg0)
-	return arg0.viewComponent
+function var1_0.getViewComponent(arg0_4)
+	return arg0_4.viewComponent
 end
 
-function var1.listNotificationInterests(arg0)
+function var1_0.listNotificationInterests(arg0_5)
 	return {}
 end
 
-function var1.handleNotification(arg0, arg1)
+function var1_0.handleNotification(arg0_6, arg1_6)
 	return
 end
 
-function var1.onRegister(arg0)
+function var1_0.onRegister(arg0_7)
 	return
 end
 
-function var1.onRemove(arg0)
+function var1_0.onRemove(arg0_8)
 	return
 end
 
-return var1
+return var1_0

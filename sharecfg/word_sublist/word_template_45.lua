@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_45 = {}
+var0_0.word_template_45 = {}
 
-local var1 = var0.word_template_45
+local var1_0 = var0_0.word_template_45
 
 function temp()
-	var1.辦 = {
+	var1_0.辦 = {
 		譪 = {
 			this = true
 		},
@@ -42,7 +42,7 @@ end
 temp()
 
 function temp()
-	var1.瓣 = {
+	var1_0.瓣 = {
 		證 = {
 			this = true
 		}
@@ -52,7 +52,7 @@ end
 temp()
 
 function temp()
-	var1.帮 = {
+	var1_0.帮 = {
 		人 = {
 			报 = {
 				仇 = {
@@ -66,7 +66,7 @@ end
 temp()
 
 function temp()
-	var1.浜 = {
+	var1_0.浜 = {
 		田 = {
 			渚 = {
 				this = true
@@ -78,7 +78,7 @@ end
 temp()
 
 function temp()
-	var1.傍 = {
+	var1_0.傍 = {
 		着 = {
 			一 = {
 				位 = {
@@ -104,7 +104,7 @@ end
 temp()
 
 function temp()
-	var1.薄 = {
+	var1_0.薄 = {
 		谷 = {
 			开 = {
 				来 = {
@@ -185,7 +185,7 @@ end
 temp()
 
 function temp()
-	var1.保 = {
+	var1_0.保 = {
 		单 = {
 			机 = {
 				this = true

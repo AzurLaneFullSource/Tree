@@ -1,89 +1,89 @@
-﻿local var0 = class("NewOrleansMapPage", import("...base.BaseActivityPage"))
+﻿local var0_0 = class("NewOrleansMapPage", import("...base.BaseActivityPage"))
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("AD")
-	arg0.item = arg0:findTF("item", arg0.bg)
-	arg0.itemMask = arg0:findTF("icon_mask", arg0.item)
-	arg0.gotaskBtn = arg0:findTF("gotask", arg0.bg)
-	arg0.gobattleBtn = arg0:findTF("gobattle", arg0.bg)
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.item = arg0_1:findTF("item", arg0_1.bg)
+	arg0_1.itemMask = arg0_1:findTF("icon_mask", arg0_1.item)
+	arg0_1.gotaskBtn = arg0_1:findTF("gotask", arg0_1.bg)
+	arg0_1.gobattleBtn = arg0_1:findTF("gobattle", arg0_1.bg)
 end
 
-function var0.OnDataSetting(arg0)
-	local var0 = arg0.activity:getConfig("config_data")
+function var0_0.OnDataSetting(arg0_2)
+	local var0_2 = arg0_2.activity:getConfig("config_data")
 
-	arg0.taskIDList = _.flatten(var0)
-	arg0.taskProxy = getProxy(TaskProxy)
+	arg0_2.taskIDList = _.flatten(var0_2)
+	arg0_2.taskProxy = getProxy(TaskProxy)
 end
 
-function var0.OnFirstFlush(arg0)
-	onButton(arg0, arg0.gobattleBtn, function()
-		local var0 = getProxy(ActivityProxy):getActivityById(pg.activity_const.NEW_ORLEANS_Map_BATTLE.act_id)
+function var0_0.OnFirstFlush(arg0_3)
+	onButton(arg0_3, arg0_3.gobattleBtn, function()
+		local var0_4 = getProxy(ActivityProxy):getActivityById(pg.activity_const.NEW_ORLEANS_Map_BATTLE.act_id)
 
-		if not var0 or var0:isEnd() then
+		if not var0_4 or var0_4:isEnd() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
 
 			return
 		end
 
-		arg0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+		arg0_3:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.gotaskBtn, function()
-		local var0 = getProxy(ActivityProxy):getActivityById(pg.activity_const.NEW_ORLEANS_Map_BATTLE.act_id)
+	onButton(arg0_3, arg0_3.gotaskBtn, function()
+		local var0_5 = getProxy(ActivityProxy):getActivityById(pg.activity_const.NEW_ORLEANS_Map_BATTLE.act_id)
 
-		if not var0 or var0:isEnd() then
+		if not var0_5 or var0_5:isEnd() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
 
 			return
 		end
 
-		arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
+		arg0_3:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
 			page = "activity"
 		})
 	end)
 end
 
-function var0.OnUpdateFlush(arg0)
-	local var0 = arg0:findCurTaskIndex()
-	local var1 = arg0.taskIDList[var0]
-	local var2 = arg0.taskProxy:getTaskVO(var1)
+function var0_0.OnUpdateFlush(arg0_6)
+	local var0_6 = arg0_6:findCurTaskIndex()
+	local var1_6 = arg0_6.taskIDList[var0_6]
+	local var2_6 = arg0_6.taskProxy:getTaskVO(var1_6)
 
-	arg0.curTaskVO = var2
+	arg0_6.curTaskVO = var2_6
 
-	local var3 = var2:getConfig("award_display")[1]
-	local var4 = {
-		type = var3[1],
-		id = var3[2],
-		count = var3[3]
+	local var3_6 = var2_6:getConfig("award_display")[1]
+	local var4_6 = {
+		type = var3_6[1],
+		id = var3_6[2],
+		count = var3_6[3]
 	}
 
-	updateDrop(arg0.item, var4)
-	onButton(arg0, arg0.item, function()
-		arg0:emit(BaseUI.ON_DROP, var4)
+	updateDrop(arg0_6.item, var4_6)
+	onButton(arg0_6, arg0_6.item, function()
+		arg0_6:emit(BaseUI.ON_DROP, var4_6)
 	end, SFX_PANEL)
 
-	local var5 = var2:getTaskStatus()
+	local var5_6 = var2_6:getTaskStatus()
 
-	setActive(arg0.itemMask, var5 == 2)
+	setActive(arg0_6.itemMask, var5_6 == 2)
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_8)
 	return
 end
 
-function var0.findCurTaskIndex(arg0)
-	local var0
+function var0_0.findCurTaskIndex(arg0_9)
+	local var0_9
 
-	for iter0, iter1 in ipairs(arg0.taskIDList) do
-		if arg0.taskProxy:getTaskVO(iter1):getTaskStatus() <= 1 then
-			var0 = iter0
+	for iter0_9, iter1_9 in ipairs(arg0_9.taskIDList) do
+		if arg0_9.taskProxy:getTaskVO(iter1_9):getTaskStatus() <= 1 then
+			var0_9 = iter0_9
 
 			break
-		elseif iter0 == #arg0.taskIDList then
-			var0 = iter0
+		elseif iter0_9 == #arg0_9.taskIDList then
+			var0_9 = iter0_9
 		end
 	end
 
-	return var0
+	return var0_9
 end
 
-return var0
+return var0_0

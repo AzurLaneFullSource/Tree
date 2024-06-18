@@ -1,74 +1,74 @@
-﻿local var0 = class("EquipmentTransformMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("EquipmentTransformMediator", import("view.base.ContextMediator"))
 
-var0.TRANSFORM_EQUIP = "transform equip"
-var0.UPDATE_NEW_FLAG = "UPDATE NEW FLAG"
-var0.OPEN_TRANSFORM_TREE = "OPEN TRANSFORM TREE"
-var0.SELECT_TRANSFORM_FROM_STOREHOUSE = "SELECT_TRANSFORM_FROM_STOREHOUSE"
-var0.OPEN_LAYER = "OPEN_LAYER"
+var0_0.TRANSFORM_EQUIP = "transform equip"
+var0_0.UPDATE_NEW_FLAG = "UPDATE NEW FLAG"
+var0_0.OPEN_TRANSFORM_TREE = "OPEN TRANSFORM TREE"
+var0_0.SELECT_TRANSFORM_FROM_STOREHOUSE = "SELECT_TRANSFORM_FROM_STOREHOUSE"
+var0_0.OPEN_LAYER = "OPEN_LAYER"
 
-function var0.register(arg0)
-	arg0:BindEvent()
+function var0_0.register(arg0_1)
+	arg0_1:BindEvent()
 
-	arg0.env = {}
+	arg0_1.env = {}
 
-	arg0:getViewComponent():SetEnv(arg0.env)
+	arg0_1:getViewComponent():SetEnv(arg0_1.env)
 
-	arg0.env.tracebackHelper = getProxy(EquipmentProxy):GetWeakEquipsDict()
+	arg0_1.env.tracebackHelper = getProxy(EquipmentProxy):GetWeakEquipsDict()
 
-	arg0:getViewComponent():UpdatePlayer(getProxy(PlayerProxy):getData())
+	arg0_1:getViewComponent():UpdatePlayer(getProxy(PlayerProxy):getData())
 end
 
-function var0.BindEvent(arg0)
-	arg0:bind(var0.TRANSFORM_EQUIP, function(arg0, arg1, arg2)
-		arg0:sendNotification(GAME.TRANSFORM_EQUIPMENT, {
-			candicate = arg1,
+function var0_0.BindEvent(arg0_2)
+	arg0_2:bind(var0_0.TRANSFORM_EQUIP, function(arg0_3, arg1_3, arg2_3)
+		arg0_2:sendNotification(GAME.TRANSFORM_EQUIPMENT, {
+			candicate = arg1_3,
 			formulaIds = {
-				arg2
+				arg2_3
 			}
 		})
 	end)
-	arg0:bind(var0.UPDATE_NEW_FLAG, function(arg0, arg1)
-		arg0:sendNotification(var0.UPDATE_NEW_FLAG, arg1)
+	arg0_2:bind(var0_0.UPDATE_NEW_FLAG, function(arg0_4, arg1_4)
+		arg0_2:sendNotification(var0_0.UPDATE_NEW_FLAG, arg1_4)
 	end)
-	arg0:bind(var0.OPEN_TRANSFORM_TREE, function(arg0, arg1)
-		arg0:getViewComponent():closeView()
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.EQUIPMENT_TRANSFORM, {
-			targetEquipId = arg1,
+	arg0_2:bind(var0_0.OPEN_TRANSFORM_TREE, function(arg0_5, arg1_5)
+		arg0_2:getViewComponent():closeView()
+		arg0_2:sendNotification(GAME.GO_SCENE, SCENE.EQUIPMENT_TRANSFORM, {
+			targetEquipId = arg1_5,
 			mode = EquipmentTransformTreeScene.MODE_HIDESIDE
 		})
 	end)
-	arg0:bind(var0.SELECT_TRANSFORM_FROM_STOREHOUSE, function(arg0, arg1)
-		local var0 = arg0.env.tracebackHelper:GetEquipmentTransformCandicates(arg1)
+	arg0_2:bind(var0_0.SELECT_TRANSFORM_FROM_STOREHOUSE, function(arg0_6, arg1_6)
+		local var0_6 = arg0_2.env.tracebackHelper:GetEquipmentTransformCandicates(arg1_6)
 
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.SELECT_TRANSFORM_EQUIPMENT, {
+		arg0_2:sendNotification(GAME.GO_SCENE, SCENE.SELECT_TRANSFORM_EQUIPMENT, {
 			warp = StoreHouseConst.WARP_TO_WEAPON,
-			sourceVOs = var0,
-			onSelect = function(arg0)
-				if arg0.type == DROP_TYPE_ITEM and arg0.template.count < arg0.composeCfg.material_num then
-					pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_upgrade_feedback_lack_of_fragment", arg0.template:getConfig("name")))
+			sourceVOs = var0_6,
+			onSelect = function(arg0_7)
+				if arg0_7.type == DROP_TYPE_ITEM and arg0_7.template.count < arg0_7.composeCfg.material_num then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_upgrade_feedback_lack_of_fragment", arg0_7.template:getConfig("name")))
 
 					return false
-				elseif arg0.type == DROP_TYPE_EQUIP and arg0.template.count <= 0 then
-					pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", arg0.template:getConfig("name")))
+				elseif arg0_7.type == DROP_TYPE_EQUIP and arg0_7.template.count <= 0 then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", arg0_7.template:getConfig("name")))
 
 					return false
 				end
 
 				return true
 			end,
-			onConfirm = function(arg0)
-				arg0.contextData.sourceEquipmentInstance = arg0[1] or arg0.contextData.sourceEquipmentInstance
+			onConfirm = function(arg0_8)
+				arg0_2.contextData.sourceEquipmentInstance = arg0_8[1] or arg0_2.contextData.sourceEquipmentInstance
 
 				return true
 			end
 		})
 	end)
-	arg0:bind(var0.OPEN_LAYER, function(arg0, ...)
-		arg0:addSubLayers(...)
+	arg0_2:bind(var0_0.OPEN_LAYER, function(arg0_9, ...)
+		arg0_2:addSubLayers(...)
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_10)
 	return {
 		GAME.TRANSFORM_EQUIPMENT_DONE,
 		GAME.TRANSFORM_EQUIPMENT_FAIL,
@@ -80,52 +80,52 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_11, arg1_11)
+	local var0_11 = arg1_11:getName()
+	local var1_11 = arg1_11:getBody()
 
-	if var0 == PlayerProxy.UPDATED then
-		arg0:getViewComponent():UpdatePlayer(var1)
-	elseif var0 == BagProxy.ITEM_UPDATED then
-		arg0:getViewComponent():UpdatePage()
-	elseif var0 == EquipmentProxy.EQUIPMENT_UPDATED then
-		if arg0.contextData.sourceEquipmentInstance then
-			local var2 = var1.count == 0
-			local var3 = arg0.contextData.sourceEquipmentInstance
+	if var0_11 == PlayerProxy.UPDATED then
+		arg0_11:getViewComponent():UpdatePlayer(var1_11)
+	elseif var0_11 == BagProxy.ITEM_UPDATED then
+		arg0_11:getViewComponent():UpdatePage()
+	elseif var0_11 == EquipmentProxy.EQUIPMENT_UPDATED then
+		if arg0_11.contextData.sourceEquipmentInstance then
+			local var2_11 = var1_11.count == 0
+			local var3_11 = arg0_11.contextData.sourceEquipmentInstance
 
-			if var2 and var3.type == DROP_TYPE_EQUIP and EquipmentProxy.SameEquip(var1, var3.template) then
-				arg0.contextData.sourceEquipmentInstance = nil
+			if var2_11 and var3_11.type == DROP_TYPE_EQUIP and EquipmentProxy.SameEquip(var1_11, var3_11.template) then
+				arg0_11.contextData.sourceEquipmentInstance = nil
 			end
 		end
 
-		local var4 = arg0:getViewComponent()
+		local var4_11 = arg0_11:getViewComponent()
 
-		var4:UpdateSourceEquipmentPaths()
-		var4:UpdateSourceInfo()
-		var4:UpdateTargetInfo()
-	elseif var0 == GAME.UNEQUIP_FROM_SHIP_DONE or var0 == GAME.EQUIP_TO_SHIP_DONE then
-		local var5 = arg0.contextData.sourceEquipmentInstance
+		var4_11:UpdateSourceEquipmentPaths()
+		var4_11:UpdateSourceInfo()
+		var4_11:UpdateTargetInfo()
+	elseif var0_11 == GAME.UNEQUIP_FROM_SHIP_DONE or var0_11 == GAME.EQUIP_TO_SHIP_DONE then
+		local var5_11 = arg0_11.contextData.sourceEquipmentInstance
 
-		if var5 and var5.type == DROP_TYPE_EQUIP then
-			local var6 = var1:getEquip(var5.template.shipPos)
+		if var5_11 and var5_11.type == DROP_TYPE_EQUIP then
+			local var6_11 = var1_11:getEquip(var5_11.template.shipPos)
 
-			if var5.template.shipId == var1.id and (not var6 or var6.id ~= var5.id) then
-				arg0.contextData.sourceEquipmentInstance = nil
+			if var5_11.template.shipId == var1_11.id and (not var6_11 or var6_11.id ~= var5_11.id) then
+				arg0_11.contextData.sourceEquipmentInstance = nil
 			end
 		end
 
-		local var7 = arg0:getViewComponent()
+		local var7_11 = arg0_11:getViewComponent()
 
-		var7:UpdateSourceEquipmentPaths()
-		var7:UpdateSourceInfo()
-		var7:UpdateTargetInfo()
-	elseif var0 == GAME.TRANSFORM_EQUIPMENT_DONE then
-		arg0.contextData.sourceEquipmentInstance = nil
+		var7_11:UpdateSourceEquipmentPaths()
+		var7_11:UpdateSourceInfo()
+		var7_11:UpdateTargetInfo()
+	elseif var0_11 == GAME.TRANSFORM_EQUIPMENT_DONE then
+		arg0_11.contextData.sourceEquipmentInstance = nil
 
-		arg0:getViewComponent():UpdatePage()
-	elseif var0 == GAME.TRANSFORM_EQUIPMENT_FAIL then
-		arg0:getViewComponent():UpdatePage()
+		arg0_11:getViewComponent():UpdatePage()
+	elseif var0_11 == GAME.TRANSFORM_EQUIPMENT_FAIL then
+		arg0_11:getViewComponent():UpdatePage()
 	end
 end
 
-return var0
+return var0_0

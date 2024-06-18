@@ -1,48 +1,48 @@
-﻿local var0 = class("SelfRefreshRedDotNode", import(".RedDotNode"))
+﻿local var0_0 = class("SelfRefreshRedDotNode", import(".RedDotNode"))
 
-function var0.Init(arg0)
-	var0.super.Init(arg0)
-	arg0:AddTimer()
+function var0_0.Init(arg0_1)
+	var0_0.super.Init(arg0_1)
+	arg0_1:AddTimer()
 end
 
-function var0.AddTimer(arg0)
-	arg0:RemoveTimer()
+function var0_0.AddTimer(arg0_2)
+	arg0_2:RemoveTimer()
 
-	arg0.timer = Timer.New(function()
-		arg0:Check()
+	arg0_2.timer = Timer.New(function()
+		arg0_2:Check()
 	end, 10, -1)
 
-	arg0.timer:Start()
+	arg0_2.timer:Start()
 end
 
-function var0.Check(arg0)
-	for iter0, iter1 in ipairs(arg0.types) do
-		pg.RedDotMgr.GetInstance():NotifyAll(iter1)
+function var0_0.Check(arg0_4)
+	for iter0_4, iter1_4 in ipairs(arg0_4.types) do
+		pg.RedDotMgr.GetInstance():NotifyAll(iter1_4)
 	end
 end
 
-function var0.RemoveTimer(arg0)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var0_0.RemoveTimer(arg0_5)
+	if arg0_5.timer then
+		arg0_5.timer:Stop()
 
-		arg0.timer = nil
+		arg0_5.timer = nil
 	end
 end
 
-function var0.Remove(arg0)
-	arg0:RemoveTimer()
+function var0_0.Remove(arg0_6)
+	arg0_6:RemoveTimer()
 end
 
-function var0.Resume(arg0)
-	if arg0.timer then
-		arg0.timer:Resume()
+function var0_0.Resume(arg0_7)
+	if arg0_7.timer then
+		arg0_7.timer:Resume()
 	end
 end
 
-function var0.Puase(arg0)
-	if arg0.timer then
-		arg0.timer:Pause()
+function var0_0.Puase(arg0_8)
+	if arg0_8.timer then
+		arg0_8.timer:Pause()
 	end
 end
 
-return var0
+return var0_0

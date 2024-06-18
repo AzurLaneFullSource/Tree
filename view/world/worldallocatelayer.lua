@@ -1,6 +1,6 @@
-﻿local var0 = class("WorldAllocateLayer", import("..base.BaseUI"))
+﻿local var0_0 = class("WorldAllocateLayer", import("..base.BaseUI"))
 
-var0.TeamNum = {
+var0_0.TeamNum = {
 	"FIRST",
 	"SECOND",
 	"THIRD",
@@ -9,496 +9,496 @@ var0.TeamNum = {
 	"SIXTH"
 }
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "WorldAllocateUI"
 end
 
-function var0.init(arg0)
-	arg0._selectedShipList = {}
-	arg0._shipTFList = {}
-	arg0._shipVOList = {}
-	arg0.cancelBtn = arg0:findTF("actions/cancel_button")
-	arg0.confirmBtn = arg0:findTF("actions/compose_button")
-	arg0.itemTF = arg0:findTF("item")
-	arg0.nameTF = arg0:findTF("item/name_container/name")
-	arg0.descTF = arg0:findTF("item/desc")
-	arg0.fleetInfo = arg0:findTF("fleet_info")
+function var0_0.init(arg0_2)
+	arg0_2._selectedShipList = {}
+	arg0_2._shipTFList = {}
+	arg0_2._shipVOList = {}
+	arg0_2.cancelBtn = arg0_2:findTF("actions/cancel_button")
+	arg0_2.confirmBtn = arg0_2:findTF("actions/compose_button")
+	arg0_2.itemTF = arg0_2:findTF("item")
+	arg0_2.nameTF = arg0_2:findTF("item/name_container/name")
+	arg0_2.descTF = arg0_2:findTF("item/desc")
+	arg0_2.fleetInfo = arg0_2:findTF("fleet_info")
 
-	setText(arg0.fleetInfo:Find("top/Text"), i18n("world_ship_repair"))
+	setText(arg0_2.fleetInfo:Find("top/Text"), i18n("world_ship_repair"))
 
-	arg0.shipTpl = arg0:getTpl("fleet_info/shiptpl")
-	arg0.emptyTpl = arg0:getTpl("fleet_info/emptytpl")
-	arg0.shipsContainer = arg0:findTF("fleet_info/contain")
-	arg0.descLabel = arg0:findTF("fleet_info/top/Text")
+	arg0_2.shipTpl = arg0_2:getTpl("fleet_info/shiptpl")
+	arg0_2.emptyTpl = arg0_2:getTpl("fleet_info/emptytpl")
+	arg0_2.shipsContainer = arg0_2:findTF("fleet_info/contain")
+	arg0_2.descLabel = arg0_2:findTF("fleet_info/top/Text")
 
-	setText(arg0.fleetInfo:Find("tip/Text"), i18n("world_battle_damage"))
+	setText(arg0_2.fleetInfo:Find("tip/Text"), i18n("world_battle_damage"))
 
-	arg0.countLabel = arg0:findTF("count")
-	arg0.quotaTxt = arg0:findTF("count/value")
-	arg0.btnFleet = arg0:findTF("fleets/selected")
-	arg0.fleetToggleMask = arg0:findTF("fleets/list_mask")
-	arg0.fleetToggleList = arg0.fleetToggleMask:Find("list")
+	arg0_2.countLabel = arg0_2:findTF("count")
+	arg0_2.quotaTxt = arg0_2:findTF("count/value")
+	arg0_2.btnFleet = arg0_2:findTF("fleets/selected")
+	arg0_2.fleetToggleMask = arg0_2:findTF("fleets/list_mask")
+	arg0_2.fleetToggleList = arg0_2.fleetToggleMask:Find("list")
 
-	onButton(arg0, arg0.cancelBtn, function()
-		arg0:closeView()
+	onButton(arg0_2, arg0_2.cancelBtn, function()
+		arg0_2:closeView()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.confirmBtn, function()
-		if arg0.itemVO.count == 0 then
+	onButton(arg0_2, arg0_2.confirmBtn, function()
+		if arg0_2.itemVO.count == 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 			return
 		end
 
-		local function var0()
-			local var0 = {}
+		local function var0_4()
+			local var0_5 = {}
 
-			arg0._preSelectedList = {}
+			arg0_2._preSelectedList = {}
 
-			for iter0, iter1 in ipairs(arg0._selectedShipList) do
-				var0[#var0 + 1] = iter1.id
-				arg0._preSelectedList[iter1.id] = true
+			for iter0_5, iter1_5 in ipairs(arg0_2._selectedShipList) do
+				var0_5[#var0_5 + 1] = iter1_5.id
+				arg0_2._preSelectedList[iter1_5.id] = true
 			end
 
-			arg0.confirmCallback(arg0.itemVO.configId, var0)
+			arg0_2.confirmCallback(arg0_2.itemVO.configId, var0_5)
 		end
 
-		if #arg0._selectedShipList > 0 then
-			local var1 = false
-			local var2 = arg0.itemVO:getWorldItemType()
+		if #arg0_2._selectedShipList > 0 then
+			local var1_4 = false
+			local var2_4 = arg0_2.itemVO:getWorldItemType()
 
-			if var2 == WorldItem.UsageBuff then
-				local var3 = arg0.itemVO:getItemBuffID()
+			if var2_4 == WorldItem.UsageBuff then
+				local var3_4 = arg0_2.itemVO:getItemBuffID()
 
-				var1 = _.any(arg0._selectedShipList, function(arg0)
-					return arg0:IsBuffMax()
+				var1_4 = _.any(arg0_2._selectedShipList, function(arg0_6)
+					return arg0_6:IsBuffMax()
 				end)
-			elseif var2 == WorldItem.UsageHPRegenerate or var2 == WorldItem.UsageHPRegenerateValue then
-				var1 = _.any(arg0._selectedShipList, function(arg0)
-					return arg0:IsHpFull()
+			elseif var2_4 == WorldItem.UsageHPRegenerate or var2_4 == WorldItem.UsageHPRegenerateValue then
+				var1_4 = _.any(arg0_2._selectedShipList, function(arg0_7)
+					return arg0_7:IsHpFull()
 				end)
 			end
 
-			if var1 then
+			if var1_4 then
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("world_ship_healthy"),
-					onYes = var0
+					onYes = var0_4
 				})
 			else
-				var0()
+				var0_4()
 			end
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0.fleetToggleMask, function()
-		arg0:showOrHideToggleMask(false)
+	onButton(arg0_2, arg0_2.fleetToggleMask, function()
+		arg0_2:showOrHideToggleMask(false)
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.btnFleet, function()
-		arg0:showOrHideToggleMask(true)
+	onButton(arg0_2, arg0_2.btnFleet, function()
+		arg0_2:showOrHideToggleMask(true)
 	end, SFX_PANEL)
-	onButton(arg0, arg0._tf:Find("item/reset_btn"), function()
-		assert(arg0.contextData.onResetInfo, "without reset info callback")
-		arg0.contextData.onResetInfo(Drop.New({
+	onButton(arg0_2, arg0_2._tf:Find("item/reset_btn"), function()
+		assert(arg0_2.contextData.onResetInfo, "without reset info callback")
+		arg0_2.contextData.onResetInfo(Drop.New({
 			count = 1,
 			type = DROP_TYPE_WORLD_ITEM,
-			id = arg0.itemVO.id
+			id = arg0_2.itemVO.id
 		}))
 	end)
 end
 
-function var0.didEnter(arg0)
-	arg0:updateToggleList(arg0.fleetList, arg0.contextData.fleetIndex or 1)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, false)
+function var0_0.didEnter(arg0_11)
+	arg0_11:updateToggleList(arg0_11.fleetList, arg0_11.contextData.fleetIndex or 1)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_11._tf, false)
 end
 
-function var0.showOrHideToggleMask(arg0, arg1)
-	setActive(arg0.fleetToggleMask, arg1)
-	arg0:tweenTabArrow(not arg1)
+function var0_0.showOrHideToggleMask(arg0_12, arg1_12)
+	setActive(arg0_12.fleetToggleMask, arg1_12)
+	arg0_12:tweenTabArrow(not arg1_12)
 end
 
-function var0.setFleets(arg0, arg1, arg2)
-	arg0.fleetList = arg1
+function var0_0.setFleets(arg0_13, arg1_13, arg2_13)
+	arg0_13.fleetList = arg1_13
 end
 
-function var0.setConfirmCallback(arg0, arg1)
-	arg0.confirmCallback = arg1
+function var0_0.setConfirmCallback(arg0_14, arg1_14)
+	arg0_14.confirmCallback = arg1_14
 end
 
-function var0.setItem(arg0, arg1)
-	arg0.itemVO = arg1
+function var0_0.setItem(arg0_15, arg1_15)
+	arg0_15.itemVO = arg1_15
 
-	updateDrop(arg0.itemTF, Drop.New({
+	updateDrop(arg0_15.itemTF, Drop.New({
 		type = DROP_TYPE_WORLD_ITEM,
-		id = arg1.id,
-		count = arg1.count
+		id = arg1_15.id,
+		count = arg1_15.count
 	}))
-	setText(arg0.nameTF, arg1:getConfig("name"))
-	setText(arg0.descTF, arg1:getConfig("display"))
+	setText(arg0_15.nameTF, arg1_15:getConfig("name"))
+	setText(arg0_15.descTF, arg1_15:getConfig("display"))
 
-	arg0.quota = arg0.itemVO:getItemQuota()
+	arg0_15.quota = arg0_15.itemVO:getItemQuota()
 
-	arg0:updateQuota()
+	arg0_15:updateQuota()
 end
 
-function var0.updateQuota(arg0)
-	setText(arg0.quotaTxt, #arg0._selectedShipList .. "/" .. arg0.quota)
-	setActive(arg0.countLabel, true)
+function var0_0.updateQuota(arg0_16)
+	setText(arg0_16.quotaTxt, #arg0_16._selectedShipList .. "/" .. arg0_16.quota)
+	setActive(arg0_16.countLabel, true)
 end
 
-function var0.flush(arg0, arg1)
-	if arg1.id ~= arg0.itemVO.id then
+function var0_0.flush(arg0_17, arg1_17)
+	if arg1_17.id ~= arg0_17.itemVO.id then
 		return
 	end
 
-	arg0:setItem(arg0.itemVO)
+	arg0_17:setItem(arg0_17.itemVO)
 
-	local var0 = arg0.itemVO:getWorldItemType()
+	local var0_17 = arg0_17.itemVO:getWorldItemType()
 
-	if var0 == WorldItem.UsageBuff then
-		arg0:OnUpdateShipBuff()
-	elseif var0 == WorldItem.UsageHPRegenerate or var0 == WorldItem.UsageHPRegenerateValue then
-		arg0:OnUpdateShipHP()
+	if var0_17 == WorldItem.UsageBuff then
+		arg0_17:OnUpdateShipBuff()
+	elseif var0_17 == WorldItem.UsageHPRegenerate or var0_17 == WorldItem.UsageHPRegenerateValue then
+		arg0_17:OnUpdateShipHP()
 	end
 end
 
-function var0.updateToggleList(arg0, arg1, arg2)
-	setActive(arg0.fleetToggleList, true)
+function var0_0.updateToggleList(arg0_18, arg1_18, arg2_18)
+	setActive(arg0_18.fleetToggleList, true)
 
-	local var0
+	local var0_18
 
-	for iter0 = 1, arg0.fleetToggleList.childCount do
-		local var1 = arg0.fleetToggleList:GetChild(arg0.fleetToggleList.childCount - iter0)
+	for iter0_18 = 1, arg0_18.fleetToggleList.childCount do
+		local var1_18 = arg0_18.fleetToggleList:GetChild(arg0_18.fleetToggleList.childCount - iter0_18)
 
-		setActive(var1, arg1[iter0])
+		setActive(var1_18, arg1_18[iter0_18])
 
-		if arg1[iter0] then
-			setActive(var1:Find("lock"), false)
-			setText(var1:Find("on/mask/text"), i18n("world_fleetName" .. iter0))
-			setText(var1:Find("on/mask/en"), var0.TeamNum[iter0] .. " FLEET")
-			setText(var1:Find("on/mask/number"), iter0)
-			setText(var1:Find("off/mask/text"), i18n("world_fleetName" .. iter0))
-			setText(var1:Find("off/mask/en"), var0.TeamNum[iter0] .. " FLEET")
-			setText(var1:Find("off/mask/number"), iter0)
-			onToggle(arg0, var1, function(arg0)
-				if arg0 then
-					arg0:showOrHideToggleMask(false)
-					arg0:setFleet(arg1[iter0].id)
-					arg0:updateQuota()
+		if arg1_18[iter0_18] then
+			setActive(var1_18:Find("lock"), false)
+			setText(var1_18:Find("on/mask/text"), i18n("world_fleetName" .. iter0_18))
+			setText(var1_18:Find("on/mask/en"), var0_0.TeamNum[iter0_18] .. " FLEET")
+			setText(var1_18:Find("on/mask/number"), iter0_18)
+			setText(var1_18:Find("off/mask/text"), i18n("world_fleetName" .. iter0_18))
+			setText(var1_18:Find("off/mask/en"), var0_0.TeamNum[iter0_18] .. " FLEET")
+			setText(var1_18:Find("off/mask/number"), iter0_18)
+			onToggle(arg0_18, var1_18, function(arg0_19)
+				if arg0_19 then
+					arg0_18:showOrHideToggleMask(false)
+					arg0_18:setFleet(arg1_18[iter0_18].id)
+					arg0_18:updateQuota()
 				end
 			end, SFX_UI_TAG)
 
-			if arg1[iter0].id == arg2 then
-				var0 = var1
+			if arg1_18[iter0_18].id == arg2_18 then
+				var0_18 = var1_18
 			end
 		end
 	end
 
-	if var0 then
-		triggerToggle(var0, true)
+	if var0_18 then
+		triggerToggle(var0_18, true)
 	end
 end
 
-function var0.updateFleetButton(arg0, arg1)
-	setText(arg0.btnFleet:Find("fleet/CnFleet"), i18n("world_fleetName" .. arg1))
-	setText(arg0.btnFleet:Find("fleet/enFleet"), var0.TeamNum[arg1] .. " FLEET")
-	setText(arg0.btnFleet:Find("fleet/num"), arg1)
+function var0_0.updateFleetButton(arg0_20, arg1_20)
+	setText(arg0_20.btnFleet:Find("fleet/CnFleet"), i18n("world_fleetName" .. arg1_20))
+	setText(arg0_20.btnFleet:Find("fleet/enFleet"), var0_0.TeamNum[arg1_20] .. " FLEET")
+	setText(arg0_20.btnFleet:Find("fleet/num"), arg1_20)
 end
 
-function var0.tweenTabArrow(arg0, arg1)
-	local var0 = arg0.btnFleet:Find("arr")
+function var0_0.tweenTabArrow(arg0_21, arg1_21)
+	local var0_21 = arg0_21.btnFleet:Find("arr")
 
-	setActive(var0, arg1)
+	setActive(var0_21, arg1_21)
 
-	if arg1 then
-		LeanTween.moveLocalY(go(var0), var0.localPosition.y + 8, 0.8):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(-1)
+	if arg1_21 then
+		LeanTween.moveLocalY(go(var0_21), var0_21.localPosition.y + 8, 0.8):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(-1)
 	else
-		LeanTween.cancel(go(var0))
+		LeanTween.cancel(go(var0_21))
 
-		local var1 = var0.localPosition
+		local var1_21 = var0_21.localPosition
 
-		var1.y = 80
-		var0.localPosition = var1
+		var1_21.y = 80
+		var0_21.localPosition = var1_21
 	end
 end
 
-function var0.setFleet(arg0, arg1)
-	arg0:updateFleetButton(arg1)
+function var0_0.setFleet(arg0_22, arg1_22)
+	arg0_22:updateFleetButton(arg1_22)
 
-	local var0 = arg0.itemVO:getWorldItemType()
+	local var0_22 = arg0_22.itemVO:getWorldItemType()
 
-	for iter0, iter1 in pairs(arg0._shipTFList) do
-		local var1 = iter1:Find("buff/bg/levelup(Clone)")
+	for iter0_22, iter1_22 in pairs(arg0_22._shipTFList) do
+		local var1_22 = iter1_22:Find("buff/bg/levelup(Clone)")
 
-		if not IsNil(var1) then
-			PoolMgr.GetInstance():ReturnUI("levelup", var1)
+		if not IsNil(var1_22) then
+			PoolMgr.GetInstance():ReturnUI("levelup", var1_22)
 		end
 	end
 
-	removeAllChildren(arg0.shipsContainer)
+	removeAllChildren(arg0_22.shipsContainer)
 
-	arg0.currentFleetIndex = arg1
-	arg0._selectedShipList = {}
-	arg0._shipTFList = {}
+	arg0_22.currentFleetIndex = arg1_22
+	arg0_22._selectedShipList = {}
+	arg0_22._shipTFList = {}
 
-	local var2 = arg0.fleetList[arg0.currentFleetIndex]:GetShips(true)
-	local var3 = underscore.map(var2, function(arg0)
-		return WorldConst.FetchShipVO(arg0.id)
+	local var2_22 = arg0_22.fleetList[arg0_22.currentFleetIndex]:GetShips(true)
+	local var3_22 = underscore.map(var2_22, function(arg0_23)
+		return WorldConst.FetchShipVO(arg0_23.id)
 	end)
-	local var4 = arg0.quota
+	local var4_22 = arg0_22.quota
 
-	for iter2 = 1, 6 do
-		local var5 = var2[iter2]
-		local var6 = var3[iter2]
+	for iter2_22 = 1, 6 do
+		local var5_22 = var2_22[iter2_22]
+		local var6_22 = var3_22[iter2_22]
 
-		if var2[iter2] then
-			local var7 = cloneTplTo(arg0.shipTpl, arg0.shipsContainer)
+		if var2_22[iter2_22] then
+			local var7_22 = cloneTplTo(arg0_22.shipTpl, arg0_22.shipsContainer)
 
-			arg0._shipTFList[var5.id] = var7
-			arg0._shipVOList[var6.id] = var6
+			arg0_22._shipTFList[var5_22.id] = var7_22
+			arg0_22._shipVOList[var6_22.id] = var6_22
 
-			updateShip(var7, var6, {
+			updateShip(var7_22, var6_22, {
 				initStar = true
 			})
 
-			local var8 = false
+			local var8_22 = false
 
-			if var0 == WorldItem.UsageBuff then
-				var8 = arg0:initBuff(var7, var5)
-			elseif var0 == WorldItem.UsageHPRegenerate or var0 == WorldItem.UsageHPRegenerateValue then
-				var8 = arg0:initHP(var7, var5)
+			if var0_22 == WorldItem.UsageBuff then
+				var8_22 = arg0_22:initBuff(var7_22, var5_22)
+			elseif var0_22 == WorldItem.UsageHPRegenerate or var0_22 == WorldItem.UsageHPRegenerateValue then
+				var8_22 = arg0_22:initHP(var7_22, var5_22)
 			end
 
-			if var4 > 0 and var8 then
-				triggerButton(var7)
+			if var4_22 > 0 and var8_22 then
+				triggerButton(var7_22)
 
-				var4 = var4 - 1
+				var4_22 = var4_22 - 1
 			end
 		else
-			local var9 = cloneTplTo(arg0.emptyTpl, arg0.shipsContainer)
+			local var9_22 = cloneTplTo(arg0_22.emptyTpl, arg0_22.shipsContainer)
 		end
 	end
 
-	setActive(arg0.fleetInfo:Find("tip"), underscore.any(var2, function(arg0)
-		return arg0:IsBroken()
+	setActive(arg0_22.fleetInfo:Find("tip"), underscore.any(var2_22, function(arg0_24)
+		return arg0_24:IsBroken()
 	end))
 end
 
-function var0.OnUpdateShipHP(arg0)
-	local var0 = arg0.fleetList[arg0.currentFleetIndex]
-	local var1 = arg0.itemVO:getItemBuffID()
+function var0_0.OnUpdateShipHP(arg0_25)
+	local var0_25 = arg0_25.fleetList[arg0_25.currentFleetIndex]
+	local var1_25 = arg0_25.itemVO:getItemBuffID()
 
-	for iter0, iter1 in pairs(arg0._shipTFList) do
-		if arg0._preSelectedList[iter0] then
-			local var2 = var0:GetShip(iter0)
-			local var3 = iter1:Find("hp")
-			local var4 = var3:Find("progress_bg/bar")
+	for iter0_25, iter1_25 in pairs(arg0_25._shipTFList) do
+		if arg0_25._preSelectedList[iter0_25] then
+			local var2_25 = var0_25:GetShip(iter0_25)
+			local var3_25 = iter1_25:Find("hp")
+			local var4_25 = var3_25:Find("progress_bg/bar")
 
-			setImageColor(var4, var2:IsHpSafe() and Color.New(0.615686274509804, 0.917647058823529, 0.235294117647059) or Color.New(0.615686274509804, 0.917647058823529, 0.235294117647059))
+			setImageColor(var4_25, var2_25:IsHpSafe() and Color.New(0.615686274509804, 0.917647058823529, 0.235294117647059) or Color.New(0.615686274509804, 0.917647058823529, 0.235294117647059))
 
-			local var5 = var4:GetComponent(typeof(Image)).fillAmount
-			local var6 = var2.hpRant / 10000
+			local var5_25 = var4_25:GetComponent(typeof(Image)).fillAmount
+			local var6_25 = var2_25.hpRant / 10000
 
-			if var5 < var6 then
-				LeanTween.value(go(var4), var5, var6, var6 - var5):setOnUpdate(System.Action_float(function(arg0)
-					var4:GetComponent(typeof(Image)).fillAmount = arg0
+			if var5_25 < var6_25 then
+				LeanTween.value(go(var4_25), var5_25, var6_25, var6_25 - var5_25):setOnUpdate(System.Action_float(function(arg0_26)
+					var4_25:GetComponent(typeof(Image)).fillAmount = arg0_26
 				end))
 			end
 
-			setActive(var3:Find("broken"), var2:IsBroken())
+			setActive(var3_25:Find("broken"), var2_25:IsBroken())
 
-			if var2:IsHpFull() then
-				triggerButton(iter1)
+			if var2_25:IsHpFull() then
+				triggerButton(iter1_25)
 			else
-				arg0:updateSelectShipHP(iter1, true, var2)
+				arg0_25:updateSelectShipHP(iter1_25, true, var2_25)
 			end
 		end
 	end
 
-	arg0._preSelectedList = nil
+	arg0_25._preSelectedList = nil
 end
 
-function var0.OnUpdateShipBuff(arg0)
-	local var0 = arg0.fleetList[arg0.currentFleetIndex]
-	local var1 = arg0.itemVO:getItemBuffID()
+function var0_0.OnUpdateShipBuff(arg0_27)
+	local var0_27 = arg0_27.fleetList[arg0_27.currentFleetIndex]
+	local var1_27 = arg0_27.itemVO:getItemBuffID()
 
-	for iter0, iter1 in pairs(arg0._shipTFList) do
-		if arg0._preSelectedList[iter0] then
-			local var2 = iter1:Find("buff/value")
-			local var3 = var0:GetShip(iter0)
-			local var4 = var3:GetBuff(var1):GetFloor()
-			local var5 = var3:IsBuffMax(var1)
+	for iter0_27, iter1_27 in pairs(arg0_27._shipTFList) do
+		if arg0_27._preSelectedList[iter0_27] then
+			local var2_27 = iter1_27:Find("buff/value")
+			local var3_27 = var0_27:GetShip(iter0_27)
+			local var4_27 = var3_27:GetBuff(var1_27):GetFloor()
+			local var5_27 = var3_27:IsBuffMax(var1_27)
 
-			setText(var2, var5 and "Lv.MAX" or "Lv." .. var4)
+			setText(var2_27, var5_27 and "Lv.MAX" or "Lv." .. var4_27)
 
-			if var5 then
-				triggerButton(iter1)
+			if var5_27 then
+				triggerButton(iter1_27)
 			else
-				arg0:updateSelectShipBuff(iter1, true)
+				arg0_27:updateSelectShipBuff(iter1_27, true)
 			end
 
-			local var6 = iter1:Find("buff/bg/levelup(Clone)")
+			local var6_27 = iter1_27:Find("buff/bg/levelup(Clone)")
 
-			if IsNil(var6) then
-				PoolMgr.GetInstance():GetUI("levelup", true, function(arg0)
-					if IsNil(arg0._tf) then
-						PoolMgr.GetInstance():ReturnUI("levelup", arg0)
+			if IsNil(var6_27) then
+				PoolMgr.GetInstance():GetUI("levelup", true, function(arg0_28)
+					if IsNil(arg0_27._tf) then
+						PoolMgr.GetInstance():ReturnUI("levelup", arg0_28)
 					else
-						setParent(arg0, iter1:Find("buff/bg"))
-						setActive(arg0, false)
-						setActive(arg0, true)
+						setParent(arg0_28, iter1_27:Find("buff/bg"))
+						setActive(arg0_28, false)
+						setActive(arg0_28, true)
 					end
 				end)
 			else
-				setActive(var6, false)
-				setActive(var6, true)
+				setActive(var6_27, false)
+				setActive(var6_27, true)
 			end
 		end
 	end
 
-	arg0._preSelectedList = nil
+	arg0_27._preSelectedList = nil
 end
 
-function var0.updateSelectShipHP(arg0, arg1, arg2, arg3)
-	setActive(arg1:Find("selected"), arg2)
+function var0_0.updateSelectShipHP(arg0_29, arg1_29, arg2_29, arg3_29)
+	setActive(arg1_29:Find("selected"), arg2_29)
 
-	local var0 = arg1:Find("hp/progress_bg/bar_preview")
+	local var0_29 = arg1_29:Find("hp/progress_bg/bar_preview")
 
-	setActive(var0, arg2)
+	setActive(var0_29, arg2_29)
 
-	local var1 = arg1:Find("hp/hp_text")
+	local var1_29 = arg1_29:Find("hp/hp_text")
 
-	setActive(var1, arg2)
+	setActive(var1_29, arg2_29)
 
-	if arg2 then
-		local var2 = WPool:Get(WorldMapShip)
+	if arg2_29 then
+		local var2_29 = WPool:Get(WorldMapShip)
 
-		var2.id = arg3.id
-		var2.hpRant = arg3.hpRant
-		var2.buffs = arg3.buffs
+		var2_29.id = arg3_29.id
+		var2_29.hpRant = arg3_29.hpRant
+		var2_29.buffs = arg3_29.buffs
 
-		local var3 = arg0.itemVO:getWorldItemType()
+		local var3_29 = arg0_29.itemVO:getWorldItemType()
 
-		if var3 == WorldItem.UsageHPRegenerate then
-			var2:Regenerate(arg0.itemVO:getItemRegenerate())
-		elseif var3 == WorldItem.UsageHPRegenerateValue then
-			var2:RegenerateValue(arg0.itemVO:getItemRegenerate())
+		if var3_29 == WorldItem.UsageHPRegenerate then
+			var2_29:Regenerate(arg0_29.itemVO:getItemRegenerate())
+		elseif var3_29 == WorldItem.UsageHPRegenerateValue then
+			var2_29:RegenerateValue(arg0_29.itemVO:getItemRegenerate())
 		else
-			assert(false, "world item type error:" .. arg0.itemVO.id)
+			assert(false, "world item type error:" .. arg0_29.itemVO.id)
 		end
 
-		setImageColor(var0, var2:IsHpSafe() and Color.New(0.615686274509804, 0.917647058823529, 0.235294117647059, 0.6) or Color.New(0.925490196078431, 0, 0, 0.6))
+		setImageColor(var0_29, var2_29:IsHpSafe() and Color.New(0.615686274509804, 0.917647058823529, 0.235294117647059, 0.6) or Color.New(0.925490196078431, 0, 0, 0.6))
 
-		var0:GetComponent(typeof(Image)).fillAmount = var2.hpRant / 10000
+		var0_29:GetComponent(typeof(Image)).fillAmount = var2_29.hpRant / 10000
 
-		setText(var1, math.floor(arg3.hpRant / 100) .. "%" .. setColorStr("->" .. math.floor(var2.hpRant / 100) .. "%", COLOR_GREEN))
-		WPool:Return(var2)
+		setText(var1_29, math.floor(arg3_29.hpRant / 100) .. "%" .. setColorStr("->" .. math.floor(var2_29.hpRant / 100) .. "%", COLOR_GREEN))
+		WPool:Return(var2_29)
 	end
 end
 
-function var0.updateSelectShipBuff(arg0, arg1, arg2)
-	setActive(arg1:Find("selected"), arg2)
+function var0_0.updateSelectShipBuff(arg0_30, arg1_30, arg2_30)
+	setActive(arg1_30:Find("selected"), arg2_30)
 end
 
-function var0.initHP(arg0, arg1, arg2)
-	local var0 = arg1:Find("buff")
-	local var1 = arg1:Find("hp")
+function var0_0.initHP(arg0_31, arg1_31, arg2_31)
+	local var0_31 = arg1_31:Find("buff")
+	local var1_31 = arg1_31:Find("hp")
 
-	setActive(var1, true)
-	setActive(var0, false)
-	arg0:updateSelectShipHP(arg1, false)
+	setActive(var1_31, true)
+	setActive(var0_31, false)
+	arg0_31:updateSelectShipHP(arg1_31, false)
 
-	local var2 = var1:Find("progress_bg/bar")
+	local var2_31 = var1_31:Find("progress_bg/bar")
 
-	setImageColor(var2, arg2:IsHpSafe() and Color.New(0.615686274509804, 0.917647058823529, 0.235294117647059) or Color.New(0.925490196078431, 0, 0))
+	setImageColor(var2_31, arg2_31:IsHpSafe() and Color.New(0.615686274509804, 0.917647058823529, 0.235294117647059) or Color.New(0.925490196078431, 0, 0))
 
-	var2:GetComponent(typeof(Image)).fillAmount = arg2.hpRant / 10000
+	var2_31:GetComponent(typeof(Image)).fillAmount = arg2_31.hpRant / 10000
 
-	setActive(var1:Find("broken"), arg2:IsBroken())
-	onButton(arg0, arg1, function()
-		if table.contains(arg0._selectedShipList, arg2) then
-			if #arg0._selectedShipList <= 0 then
+	setActive(var1_31:Find("broken"), arg2_31:IsBroken())
+	onButton(arg0_31, arg1_31, function()
+		if table.contains(arg0_31._selectedShipList, arg2_31) then
+			if #arg0_31._selectedShipList <= 0 then
 				return
 			end
 
-			arg0:updateSelectShipHP(arg1, false)
+			arg0_31:updateSelectShipHP(arg1_31, false)
 
-			for iter0, iter1 in ipairs(arg0._selectedShipList) do
-				if iter1 == arg2 then
-					table.remove(arg0._selectedShipList, iter0)
+			for iter0_32, iter1_32 in ipairs(arg0_31._selectedShipList) do
+				if iter1_32 == arg2_31 then
+					table.remove(arg0_31._selectedShipList, iter0_32)
 
 					break
 				end
 			end
 		else
-			while #arg0._selectedShipList >= arg0.quota do
-				local var0 = arg0._shipTFList[arg0._selectedShipList[1].id]
+			while #arg0_31._selectedShipList >= arg0_31.quota do
+				local var0_32 = arg0_31._shipTFList[arg0_31._selectedShipList[1].id]
 
-				arg0:updateSelectShipHP(var0, false)
-				table.remove(arg0._selectedShipList, 1)
+				arg0_31:updateSelectShipHP(var0_32, false)
+				table.remove(arg0_31._selectedShipList, 1)
 			end
 
-			arg0:updateSelectShipHP(arg1, true, arg2)
-			table.insert(arg0._selectedShipList, arg2)
+			arg0_31:updateSelectShipHP(arg1_31, true, arg2_31)
+			table.insert(arg0_31._selectedShipList, arg2_31)
 		end
 
-		arg0:updateQuota()
+		arg0_31:updateQuota()
 	end)
 
-	return not arg2:IsHpFull()
+	return not arg2_31:IsHpFull()
 end
 
-function var0.initBuff(arg0, arg1, arg2)
-	local var0 = arg1:Find("hp")
-	local var1 = arg1:Find("buff")
-	local var2 = var1:Find("icon")
-	local var3 = var1:Find("value")
+function var0_0.initBuff(arg0_33, arg1_33, arg2_33)
+	local var0_33 = arg1_33:Find("hp")
+	local var1_33 = arg1_33:Find("buff")
+	local var2_33 = var1_33:Find("icon")
+	local var3_33 = var1_33:Find("value")
 
-	setActive(var0, false)
-	setActive(var1, true)
-	arg0:updateSelectShipBuff(arg1, false)
+	setActive(var0_33, false)
+	setActive(var1_33, true)
+	arg0_33:updateSelectShipBuff(arg1_33, false)
 
-	local var4 = arg0.itemVO:getItemBuffID()
-	local var5 = WorldBuff.GetTemplate(var4).buff_attr[1]
+	local var4_33 = arg0_33.itemVO:getItemBuffID()
+	local var5_33 = WorldBuff.GetTemplate(var4_33).buff_attr[1]
 
-	GetImageSpriteFromAtlasAsync("attricon", var5, var2)
+	GetImageSpriteFromAtlasAsync("attricon", var5_33, var2_33)
 
-	local var6 = arg2:GetBuff(var4):GetFloor()
-	local var7 = arg2:IsBuffMax(var4)
-	local var8 = arg0._shipVOList[arg2.id]:getBaseProperties()[var5] > 0
+	local var6_33 = arg2_33:GetBuff(var4_33):GetFloor()
+	local var7_33 = arg2_33:IsBuffMax(var4_33)
+	local var8_33 = arg0_33._shipVOList[arg2_33.id]:getBaseProperties()[var5_33] > 0
 
-	setText(var3, not var8 and "Lv.-" or var7 and "Lv.MAX" or "Lv." .. var6)
-	onButton(arg0, arg1, function()
-		if table.contains(arg0._selectedShipList, arg2) then
-			if #arg0._selectedShipList <= 0 then
+	setText(var3_33, not var8_33 and "Lv.-" or var7_33 and "Lv.MAX" or "Lv." .. var6_33)
+	onButton(arg0_33, arg1_33, function()
+		if table.contains(arg0_33._selectedShipList, arg2_33) then
+			if #arg0_33._selectedShipList <= 0 then
 				return
 			end
 
-			for iter0, iter1 in ipairs(arg0._selectedShipList) do
-				if iter1 == arg2 then
-					table.remove(arg0._selectedShipList, iter0)
+			for iter0_34, iter1_34 in ipairs(arg0_33._selectedShipList) do
+				if iter1_34 == arg2_33 then
+					table.remove(arg0_33._selectedShipList, iter0_34)
 
 					break
 				end
 			end
 
-			arg0:updateSelectShipBuff(arg1, false)
+			arg0_33:updateSelectShipBuff(arg1_33, false)
 		else
-			if #arg0._selectedShipList >= arg0.quota then
+			if #arg0_33._selectedShipList >= arg0_33.quota then
 				return
 			end
 
-			arg0:updateSelectShipBuff(arg1, true)
-			table.insert(arg0._selectedShipList, arg2)
+			arg0_33:updateSelectShipBuff(arg1_33, true)
+			table.insert(arg0_33._selectedShipList, arg2_33)
 		end
 
-		arg0:updateQuota()
+		arg0_33:updateQuota()
 	end)
 
-	return var8 and not var7
+	return var8_33 and not var7_33
 end
 
-function var0.willExit(arg0)
-	setParent(arg0.shipTpl, arg0.fleetInfo, false)
-	setParent(arg0.emptyTpl, arg0.fleetInfo, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+function var0_0.willExit(arg0_35)
+	setParent(arg0_35.shipTpl, arg0_35.fleetInfo, false)
+	setParent(arg0_35.emptyTpl, arg0_35.fleetInfo, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_35._tf)
 end
 
-return var0
+return var0_0

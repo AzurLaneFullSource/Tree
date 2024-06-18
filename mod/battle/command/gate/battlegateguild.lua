@@ -1,147 +1,147 @@
-﻿local var0 = class("BattleGateGuild")
+﻿local var0_0 = class("BattleGateGuild")
 
-ys.Battle.BattleGateGuild = var0
-var0.__name = "BattleGateGuild"
+ys.Battle.BattleGateGuild = var0_0
+var0_0.__name = "BattleGateGuild"
 
-function var0.Entrance(arg0, arg1)
-	local var0 = pg.guildset.use_oil.key_value
-	local var1 = getProxy(PlayerProxy):getRawData()
+function var0_0.Entrance(arg0_1, arg1_1)
+	local var0_1 = pg.guildset.use_oil.key_value
+	local var1_1 = getProxy(PlayerProxy):getRawData()
 
-	if var0 > var1.oil then
+	if var0_1 > var1_1.oil then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 		return
 	end
 
-	local var2 = var0.GetGuildBossMission()
-	local var3 = var2:GetMyShipIds()
-	local var4 = var2:GetShipsSplitByUserID()
-	local var5 = {}
+	local var2_1 = var0_0.GetGuildBossMission()
+	local var3_1 = var2_1:GetMyShipIds()
+	local var4_1 = var2_1:GetShipsSplitByUserID()
+	local var5_1 = {}
 
-	for iter0, iter1 in ipairs(var4) do
-		table.insert(var5, {
-			ship_id = iter1.shipID,
-			user_id = iter1.userID
+	for iter0_1, iter1_1 in ipairs(var4_1) do
+		table.insert(var5_1, {
+			ship_id = iter1_1.shipID,
+			user_id = iter1_1.userID
 		})
 	end
 
-	local var6 = var2:GetStageID()
+	local var6_1 = var2_1:GetStageID()
 
-	local function var7(arg0)
-		local var0 = {
+	local function var7_1(arg0_2)
+		local var0_2 = {
 			prefabFleet = {},
-			bossId = var2.id,
-			actId = var2.id,
-			stageId = var6,
+			bossId = var2_1.id,
+			actId = var2_1.id,
+			stageId = var6_1,
 			system = SYSTEM_GUILD,
-			token = arg0.key
+			token = arg0_2.key
 		}
-		local var1 = getProxy(GuildProxy)
-		local var2 = var1:getData()
-		local var3 = pg.guildset.operation_boss_guild_active.key_value
+		local var1_2 = getProxy(GuildProxy)
+		local var2_2 = var1_2:getData()
+		local var3_2 = pg.guildset.operation_boss_guild_active.key_value
 
-		var2:getMemberById(var1.id):AddLiveness(var3)
-		var1:updateGuild(var2)
-		arg1:sendNotification(GAME.BEGIN_STAGE_DONE, var0)
+		var2_2:getMemberById(var1_1.id):AddLiveness(var3_2)
+		var1_2:updateGuild(var2_2)
+		arg1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var0_2)
 	end
 
-	local function var8(arg0)
-		arg1:RequestFailStandardProcess(arg0)
+	local function var8_1(arg0_3)
+		arg1_1:RequestFailStandardProcess(arg0_3)
 	end
 
-	BeginStageCommand.SendRequest(SYSTEM_GUILD, var3, {
-		var6
-	}, var7, var8, var5)
+	BeginStageCommand.SendRequest(SYSTEM_GUILD, var3_1, {
+		var6_1
+	}, var7_1, var8_1, var5_1)
 end
 
-function var0.Exit(arg0, arg1)
-	local var0 = getProxy(FleetProxy)
-	local var1 = arg0.statistics._battleScore
-	local var2 = pg.guildset.use_oil.key_value
-	local var3 = {}
-	local var4 = var0.GetGuildBossMission()
-	local var5 = var4:GetMainFleet()
-	local var6 = {}
+function var0_0.Exit(arg0_4, arg1_4)
+	local var0_4 = getProxy(FleetProxy)
+	local var1_4 = arg0_4.statistics._battleScore
+	local var2_4 = pg.guildset.use_oil.key_value
+	local var3_4 = {}
+	local var4_4 = var0_0.GetGuildBossMission()
+	local var5_4 = var4_4:GetMainFleet()
+	local var6_4 = {}
 
-	for iter0, iter1 in pairs(var5:getCommanders()) do
-		table.insert(var6, iter1.id)
+	for iter0_4, iter1_4 in pairs(var5_4:getCommanders()) do
+		table.insert(var6_4, iter1_4.id)
 	end
 
-	local var7 = var5:GetShips()
+	local var7_4 = var5_4:GetShips()
 
-	for iter2, iter3 in ipairs(var7) do
-		table.insert(var3, iter3.ship)
+	for iter2_4, iter3_4 in ipairs(var7_4) do
+		table.insert(var3_4, iter3_4.ship)
 	end
 
-	if arg0.statistics.submarineAid then
-		local var8 = var4:GetSubFleet()
+	if arg0_4.statistics.submarineAid then
+		local var8_4 = var4_4:GetSubFleet()
 
-		if var8 then
-			local var9 = var8:GetShips()
+		if var8_4 then
+			local var9_4 = var8_4:GetShips()
 
-			for iter4, iter5 in ipairs(var9) do
-				local var10 = iter5.ship
+			for iter4_4, iter5_4 in ipairs(var9_4) do
+				local var10_4 = iter5_4.ship
 
-				if arg0.statistics[var10.id] then
-					table.insert(var3, var10)
+				if arg0_4.statistics[var10_4.id] then
+					table.insert(var3_4, var10_4)
 				end
 			end
 
-			for iter6, iter7 in pairs(var8:getCommanders()) do
-				table.insert(var6, iter7.id)
+			for iter6_4, iter7_4 in pairs(var8_4:getCommanders()) do
+				table.insert(var6_4, iter7_4.id)
 			end
 		else
 			originalPrint("finish stage error: can not find submarin fleet.")
 		end
 	end
 
-	local var11 = 0
-	local var12 = 0
+	local var11_4 = 0
+	local var12_4 = 0
 
-	for iter8, iter9 in ipairs(var3) do
-		local var13 = arg0.statistics[iter9.id]
+	for iter8_4, iter9_4 in ipairs(var3_4) do
+		local var13_4 = arg0_4.statistics[iter9_4.id]
 
-		if var11 < var13.output then
-			var12 = iter9.id
-			var11 = var13.output
+		if var11_4 < var13_4.output then
+			var12_4 = iter9_4.id
+			var11_4 = var13_4.output
 		end
 	end
 
-	local var14 = var0.GeneralPackage(arg0, var3)
+	local var14_4 = var0_0.GeneralPackage(arg0_4, var3_4)
 
-	var14.commander_id_list = var6
+	var14_4.commander_id_list = var6_4
 
-	local function var15(arg0)
-		arg0.statistics.mvpShipID = var12
+	local function var15_4(arg0_5)
+		arg0_4.statistics.mvpShipID = var12_4
 
-		local var0, var1 = arg1:GeneralLoot(arg0)
-		local var2 = var1 > ys.Battle.BattleConst.BattleScore.C
-		local var3 = arg1.GenerateCommanderExp(arg0, var5, var4:GetSubFleet())
+		local var0_5, var1_5 = arg1_4:GeneralLoot(arg0_5)
+		local var2_5 = var1_4 > ys.Battle.BattleConst.BattleScore.C
+		local var3_5 = arg1_4.GenerateCommanderExp(arg0_5, var5_4, var4_4:GetSubFleet())
 
-		var0.GeneralPlayerCosume(SYSTEM_GUILD, var2, var2, arg0.player_exp, exFlag)
+		var0_0.GeneralPlayerCosume(SYSTEM_GUILD, var2_5, var2_4, arg0_5.player_exp, exFlag)
 
-		local var4 = {
+		local var4_5 = {
 			system = SYSTEM_GUILD,
-			statistics = arg0.statistics,
-			score = var1,
-			drops = var0,
-			commanderExps = var3,
-			result = arg0.result,
-			extraDrops = var1
+			statistics = arg0_4.statistics,
+			score = var1_4,
+			drops = var0_5,
+			commanderExps = var3_5,
+			result = arg0_5.result,
+			extraDrops = var1_5
 		}
 
-		var0.UpdateGuildBossMission()
-		arg1:sendNotification(GAME.FINISH_STAGE_DONE, var4)
+		var0_0.UpdateGuildBossMission()
+		arg1_4:sendNotification(GAME.FINISH_STAGE_DONE, var4_5)
 	end
 
-	var0.SendRequest(arg1, var14, var15)
+	var0_0.SendRequest(arg1_4, var14_4, var15_4)
 end
 
-function var0.SendRequest(arg0, arg1, arg2)
-	pg.ConnectionMgr.GetInstance():Send(40003, arg1, 40004, function(arg0)
-		if arg0.result == 0 or arg0.result == 1030 then
-			arg2(arg0)
-		elseif arg0.result == 20 then
+function var0_0.SendRequest(arg0_6, arg1_6, arg2_6)
+	pg.ConnectionMgr.GetInstance():Send(40003, arg1_6, 40004, function(arg0_7)
+		if arg0_7.result == 0 or arg0_7.result == 1030 then
+			arg2_6(arg0_7)
+		elseif arg0_7.result == 20 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = true,
 				content = i18n("guild_battle_result_boss_is_death"),
@@ -149,117 +149,117 @@ function var0.SendRequest(arg0, arg1, arg2)
 					pg.m02:sendNotification(GAME.QUIT_BATTLE)
 				end
 			})
-		elseif arg0.result == 4 then
+		elseif arg0_7.result == 4 then
 			pg.m02:sendNotification(GAME.QUIT_BATTLE)
 		else
-			arg0:RequestFailStandardProcess(arg0)
+			arg0_6:RequestFailStandardProcess(arg0_7)
 		end
 	end)
 end
 
-function var0.GetGuildBossMission()
-	local var0 = getProxy(GuildProxy):getData():GetActiveEvent()
+function var0_0.GetGuildBossMission()
+	local var0_9 = getProxy(GuildProxy):getData():GetActiveEvent()
 
-	assert(var0)
+	assert(var0_9)
 
-	local var1 = var0:GetBossMission()
+	local var1_9 = var0_9:GetBossMission()
 
-	assert(var1)
+	assert(var1_9)
 
-	return var1
+	return var1_9
 end
 
-function var0.UpdateGuildBossMission()
-	local var0 = getProxy(GuildProxy)
-	local var1 = var0:getData()
-	local var2 = var1:GetActiveEvent()
+function var0_0.UpdateGuildBossMission()
+	local var0_10 = getProxy(GuildProxy)
+	local var1_10 = var0_10:getData()
+	local var2_10 = var1_10:GetActiveEvent()
 
-	assert(var2)
+	assert(var2_10)
 
-	local var3 = var2:GetBossMission()
+	local var3_10 = var2_10:GetBossMission()
 
-	assert(var3)
-	var3:ReduceDailyCnt()
-	var0:ResetBossRankTime()
-	var0:ResetRefreshBossTime()
-	var0:updateGuild(var1)
+	assert(var3_10)
+	var3_10:ReduceDailyCnt()
+	var0_10:ResetBossRankTime()
+	var0_10:ResetRefreshBossTime()
+	var0_10:updateGuild(var1_10)
 end
 
-function var0.GeneralPlayerCosume(arg0, arg1, arg2, arg3, arg4)
-	local var0 = getProxy(PlayerProxy)
-	local var1 = var0:getData()
+function var0_0.GeneralPlayerCosume(arg0_11, arg1_11, arg2_11, arg3_11, arg4_11)
+	local var0_11 = getProxy(PlayerProxy)
+	local var1_11 = var0_11:getData()
 
-	var1:addExp(arg3)
-	var1:consume({
+	var1_11:addExp(arg3_11)
+	var1_11:consume({
 		gold = 0,
-		oil = arg2
+		oil = arg2_11
 	})
-	var0:updatePlayer(var1)
+	var0_11:updatePlayer(var1_11)
 end
 
-function var0.GeneralPackage(arg0, arg1)
-	local var0 = 0
-	local var1 = {}
-	local var2 = {}
-	local var3 = arg0.system
-	local var4 = arg0.stageId
-	local var5 = arg0.statistics._battleScore
-	local var6 = var3 + var4 + var5
-	local var7 = getProxy(PlayerProxy):getRawData().id
+function var0_0.GeneralPackage(arg0_12, arg1_12)
+	local var0_12 = 0
+	local var1_12 = {}
+	local var2_12 = {}
+	local var3_12 = arg0_12.system
+	local var4_12 = arg0_12.stageId
+	local var5_12 = arg0_12.statistics._battleScore
+	local var6_12 = var3_12 + var4_12 + var5_12
+	local var7_12 = getProxy(PlayerProxy):getRawData().id
 
-	for iter0, iter1 in ipairs(arg1) do
-		local var8 = arg0.statistics[iter1.id]
+	for iter0_12, iter1_12 in ipairs(arg1_12) do
+		local var8_12 = arg0_12.statistics[iter1_12.id]
 
-		if var8 then
-			local var9 = GuildAssaultFleet.GetRealId(var8.id)
-			local var10 = GuildAssaultFleet.GetUserId(var8.id)
-			local var11 = math.floor(var8.bp)
-			local var12 = math.floor(var8.output)
-			local var13 = math.floor(var8.damage)
-			local var14 = math.floor(var8.maxDamageOnce)
-			local var15 = math.floor(var8.gearScore)
-			local var16 = var10 ~= var7 and var2 or var1
+		if var8_12 then
+			local var9_12 = GuildAssaultFleet.GetRealId(var8_12.id)
+			local var10_12 = GuildAssaultFleet.GetUserId(var8_12.id)
+			local var11_12 = math.floor(var8_12.bp)
+			local var12_12 = math.floor(var8_12.output)
+			local var13_12 = math.floor(var8_12.damage)
+			local var14_12 = math.floor(var8_12.maxDamageOnce)
+			local var15_12 = math.floor(var8_12.gearScore)
+			local var16_12 = var10_12 ~= var7_12 and var2_12 or var1_12
 
-			table.insert(var16, {
-				ship_id = var9,
-				hp_rest = var11,
-				damage_cause = var12,
-				damage_caused = var13,
-				max_damage_once = var14,
-				ship_gear_score = var15
+			table.insert(var16_12, {
+				ship_id = var9_12,
+				hp_rest = var11_12,
+				damage_cause = var12_12,
+				damage_caused = var13_12,
+				max_damage_once = var14_12,
+				ship_gear_score = var15_12
 			})
 
-			var6 = var6 + var9 + var11 + var12 + var14
-			var0 = var0 + iter1:getShipCombatPower()
+			var6_12 = var6_12 + var9_12 + var11_12 + var12_12 + var14_12
+			var0_12 = var0_12 + iter1_12:getShipCombatPower()
 		end
 	end
 
-	local var17, var18 = GetBattleCheckResult(var6, arg0.token, arg0.statistics._totalTime)
-	local var19 = {}
+	local var17_12, var18_12 = GetBattleCheckResult(var6_12, arg0_12.token, arg0_12.statistics._totalTime)
+	local var19_12 = {}
 
-	for iter2, iter3 in ipairs(arg0.statistics._enemyInfoList) do
-		table.insert(var19, {
-			enemy_id = iter3.id,
-			damage_taken = iter3.damage,
-			total_hp = iter3.totalHp
+	for iter2_12, iter3_12 in ipairs(arg0_12.statistics._enemyInfoList) do
+		table.insert(var19_12, {
+			enemy_id = iter3_12.id,
+			damage_taken = iter3_12.damage,
+			total_hp = iter3_12.totalHp
 		})
 	end
 
 	return {
-		system = var3,
-		data = var4,
-		score = var5,
-		key = var17,
-		statistics = var1,
-		otherstatistics = var2,
-		kill_id_list = arg0.statistics.kill_id_list,
-		total_time = arg0.statistics._totalTime,
-		bot_percentage = arg0.statistics._botPercentage,
-		extra_param = var0,
-		file_check = var18,
-		enemy_info = var19,
+		system = var3_12,
+		data = var4_12,
+		score = var5_12,
+		key = var17_12,
+		statistics = var1_12,
+		otherstatistics = var2_12,
+		kill_id_list = arg0_12.statistics.kill_id_list,
+		total_time = arg0_12.statistics._totalTime,
+		bot_percentage = arg0_12.statistics._botPercentage,
+		extra_param = var0_12,
+		file_check = var18_12,
+		enemy_info = var19_12,
 		data2 = {}
 	}
 end
 
-return var0
+return var0_0

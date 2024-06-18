@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_47 = {}
+var0_0.word_template_47 = {}
 
-local var1 = var0.word_template_47
+local var1_0 = var0_0.word_template_47
 
 function temp()
-	var1.貝 = {
+	var1_0.貝 = {
 		尤 = {
 			爾 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.背 = {
+	var1_0.背 = {
 		德 = {
 			处 = {
 				女 = {
@@ -86,7 +86,7 @@ end
 temp()
 
 function temp()
-	var1.倍 = {
+	var1_0.倍 = {
 		他 = {
 			罗 = {
 				定 = {
@@ -100,7 +100,7 @@ end
 temp()
 
 function temp()
-	var1.被 = {
+	var1_0.被 = {
 		保 = {
 			安 = {
 				狂 = {
@@ -248,7 +248,7 @@ end
 temp()
 
 function temp()
-	var1.鞴 = {
+	var1_0.鞴 = {
 		this = {
 			this = true
 		}
@@ -258,7 +258,7 @@ end
 temp()
 
 function temp()
-	var1.鐾 = {
+	var1_0.鐾 = {
 		this = {
 			this = true
 		}
@@ -268,7 +268,7 @@ end
 temp()
 
 function temp()
-	var1.奔 = {
+	var1_0.奔 = {
 		驰 = {
 			到 = {
 				处 = {

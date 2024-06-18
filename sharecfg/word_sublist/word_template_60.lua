@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_60 = {}
+var0_0.word_template_60 = {}
 
-local var1 = var0.word_template_60
+local var1_0 = var0_0.word_template_60
 
 function temp()
-	var1.孱 = {
+	var1_0.孱 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.廛 = {
+	var1_0.廛 = {
 		this = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.潺 = {
+	var1_0.潺 = {
 		潺 = {
 			圣 = {
 				水 = {
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.纏 = {
+	var1_0.纏 = {
 		棉 = {
 			辦 = {
 				公 = {
@@ -61,7 +61,7 @@ end
 temp()
 
 function temp()
-	var1.产 = {
+	var1_0.产 = {
 		权 = {
 			局 = {
 				this = true
@@ -76,7 +76,7 @@ end
 temp()
 
 function temp()
-	var1.铲 = {
+	var1_0.铲 = {
 		车 = {
 			事 = {
 				件 = {
@@ -107,7 +107,7 @@ end
 temp()
 
 function temp()
-	var1.産 = {
+	var1_0.産 = {
 		谠 = {
 			this = true
 		}

@@ -1,17 +1,17 @@
-﻿local var0 = class("BlackFridayWithManualSignPageInCH", import(".BlackFridayWithManualSignPage"))
+﻿local var0_0 = class("BlackFridayWithManualSignPageInCH", import(".BlackFridayWithManualSignPage"))
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
-	setText(arg0._tf:Find("AD/signMask/Image/Text"), i18n("challenge_end_tip"))
+function var0_0.OnInit(arg0_1)
+	var0_0.super.OnInit(arg0_1)
+	setText(arg0_1._tf:Find("AD/signMask/Image/Text"), i18n("challenge_end_tip"))
 end
 
-function var0.FlushSignBtn(arg0)
-	var0.super.FlushSignBtn(arg0)
+function var0_0.FlushSignBtn(arg0_2)
+	var0_0.super.FlushSignBtn(arg0_2)
 
-	local var0 = getProxy(ActivityProxy):getActivityById(arg0.signInActId)
-	local var1 = not var0 or var0:isEnd()
+	local var0_2 = getProxy(ActivityProxy):getActivityById(arg0_2.signInActId)
+	local var1_2 = not var0_2 or var0_2:isEnd()
 
-	setActive(arg0._tf:Find("AD/signMask"), var1)
+	setActive(arg0_2._tf:Find("AD/signMask"), var1_2)
 end
 
-return var0
+return var0_0

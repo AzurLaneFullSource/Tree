@@ -1,7 +1,7 @@
-﻿local var0 = class("MainIconView4Mellow", import("...theme_classic.view.MainIconView"))
+﻿local var0_0 = class("MainIconView4Mellow", import("...theme_classic.view.MainIconView"))
 
-function var0.GetDirection(arg0)
+function var0_0.GetDirection(arg0_1)
 	return Vector2.zero
 end
 
-return var0
+return var0_0

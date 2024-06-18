@@ -1,80 +1,80 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = Vector3.up
-local var2 = class("AutoPilotHiveRelativeCircle", var0.Battle.IPilot)
+local var0_0 = ys
+local var1_0 = Vector3.up
+local var2_0 = class("AutoPilotHiveRelativeCircle", var0_0.Battle.IPilot)
 
-var0.Battle.AutoPilotHiveRelativeCircle = var2
-var2.__name = "AutoPilotHiveRelativeCircle"
+var0_0.Battle.AutoPilotHiveRelativeCircle = var2_0
+var2_0.__name = "AutoPilotHiveRelativeCircle"
 
-function var2.Ctor(arg0, ...)
-	var2.super.Ctor(arg0, ...)
+function var2_0.Ctor(arg0_1, ...)
+	var2_0.super.Ctor(arg0_1, ...)
 end
 
-function var2.SetParameter(arg0, arg1, arg2)
-	var2.super.SetParameter(arg0, arg1, arg2)
+function var2_0.SetParameter(arg0_2, arg1_2, arg2_2)
+	var2_0.super.SetParameter(arg0_2, arg1_2, arg2_2)
 
-	arg0._radius = arg1.radius
+	arg0_2._radius = arg1_2.radius
 
-	if arg1.antiClockWise == true then
-		arg0.GetDirection = var2._antiClockWise
+	if arg1_2.antiClockWise == true then
+		arg0_2.GetDirection = var2_0._antiClockWise
 	else
-		arg0.GetDirection = var2._clockWise
-	end
-end
-
-function var2._clockWise(arg0, arg1)
-	if arg0:IsExpired() then
-		arg0:Finish()
-
-		return Vector3.zero
-	end
-
-	local var0 = arg0._pilot:GetHiveUnit()
-
-	if not var0:IsAlive() then
-		arg0._pilot:OnHiveUnitDead()
-
-		return Vector3.zero
-	end
-
-	local var1 = var0:GetPosition()
-
-	if (arg1 - var1).magnitude > arg0._radius then
-		return (var1 - arg1).normalized
-	else
-		local var2 = (var1 - arg1).normalized
-		local var3 = -var2.z
-		local var4 = var2.x
-
-		return Vector3(var3, 0, var4)
+		arg0_2.GetDirection = var2_0._clockWise
 	end
 end
 
-function var2._antiClockWise(arg0, arg1)
-	if arg0._duration > 0 and pg.TimeMgr.GetInstance():GetCombatTime() - arg0._startTime > arg0._duration then
-		arg0:Finish()
+function var2_0._clockWise(arg0_3, arg1_3)
+	if arg0_3:IsExpired() then
+		arg0_3:Finish()
 
 		return Vector3.zero
 	end
 
-	local var0 = arg0._pilot:GetHiveUnit()
+	local var0_3 = arg0_3._pilot:GetHiveUnit()
 
-	if not var0:IsAlive() then
-		arg0._pilot:OnHiveUnitDead()
+	if not var0_3:IsAlive() then
+		arg0_3._pilot:OnHiveUnitDead()
 
 		return Vector3.zero
 	end
 
-	local var1 = var0:GetPosition()
+	local var1_3 = var0_3:GetPosition()
 
-	if (arg1 - var1).magnitude > arg0._radius then
-		return (var1 - arg1).normalized
+	if (arg1_3 - var1_3).magnitude > arg0_3._radius then
+		return (var1_3 - arg1_3).normalized
 	else
-		local var2 = (var1 - arg1).normalized
-		local var3 = var2.z
-		local var4 = -var2.x
+		local var2_3 = (var1_3 - arg1_3).normalized
+		local var3_3 = -var2_3.z
+		local var4_3 = var2_3.x
 
-		return Vector3(var3, 0, var4)
+		return Vector3(var3_3, 0, var4_3)
+	end
+end
+
+function var2_0._antiClockWise(arg0_4, arg1_4)
+	if arg0_4._duration > 0 and pg.TimeMgr.GetInstance():GetCombatTime() - arg0_4._startTime > arg0_4._duration then
+		arg0_4:Finish()
+
+		return Vector3.zero
+	end
+
+	local var0_4 = arg0_4._pilot:GetHiveUnit()
+
+	if not var0_4:IsAlive() then
+		arg0_4._pilot:OnHiveUnitDead()
+
+		return Vector3.zero
+	end
+
+	local var1_4 = var0_4:GetPosition()
+
+	if (arg1_4 - var1_4).magnitude > arg0_4._radius then
+		return (var1_4 - arg1_4).normalized
+	else
+		local var2_4 = (var1_4 - arg1_4).normalized
+		local var3_4 = var2_4.z
+		local var4_4 = -var2_4.x
+
+		return Vector3(var3_4, 0, var4_4)
 	end
 end

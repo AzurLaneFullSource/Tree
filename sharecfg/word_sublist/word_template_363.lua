@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_363 = {}
+var0_0.word_template_363 = {}
 
-local var1 = var0.word_template_363
+local var1_0 = var0_0.word_template_363
 
 function temp()
-	var1.左 = {
+	var1_0.左 = {
 		啡 = {
 			诺 = {
 				this = true
@@ -71,7 +71,7 @@ end
 temp()
 
 function temp()
-	var1.佐 = {
+	var1_0.佐 = {
 		井 = {
 			仁 = {
 				美 = {
@@ -104,7 +104,7 @@ end
 temp()
 
 function temp()
-	var1.作 = {
+	var1_0.作 = {
 		["."] = {
 			弊 = {
 				["."] = {
@@ -234,7 +234,7 @@ end
 temp()
 
 function temp()
-	var1.坐 = {
+	var1_0.坐 = {
 		火 = {
 			車 = {
 				出 = {
@@ -310,7 +310,7 @@ end
 temp()
 
 function temp()
-	var1.阼 = {
+	var1_0.阼 = {
 		this = {
 			this = true
 		}
@@ -320,7 +320,7 @@ end
 temp()
 
 function temp()
-	var1.祚 = {
+	var1_0.祚 = {
 		this = {
 			this = true
 		}
@@ -330,7 +330,7 @@ end
 temp()
 
 function temp()
-	var1.做 = {
+	var1_0.做 = {
 		a = {
 			i = {
 				this = true

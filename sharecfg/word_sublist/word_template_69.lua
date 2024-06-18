@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_69 = {}
+var0_0.word_template_69 = {}
 
-local var1 = var0.word_template_69
+local var1_0 = var0_0.word_template_69
 
 function temp()
-	var1.雏 = {
+	var1_0.雏 = {
 		形 = {
 			明 = {
 				子 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.褚 = {
+	var1_0.褚 = {
 		益 = {
 			民 = {
 				this = true
@@ -65,7 +65,7 @@ end
 temp()
 
 function temp()
-	var1.处 = {
+	var1_0.处 = {
 		处 = {
 			性 = {
 				骚 = {
@@ -177,7 +177,7 @@ end
 temp()
 
 function temp()
-	var1.處 = {
+	var1_0.處 = {
 		女 = {
 			開 = {
 				包 = {
@@ -194,7 +194,7 @@ end
 temp()
 
 function temp()
-	var1.触 = {
+	var1_0.触 = {
 		电 = {
 			精 = {
 				生 = {
@@ -208,7 +208,7 @@ end
 temp()
 
 function temp()
-	var1.搋 = {
+	var1_0.搋 = {
 		this = {
 			this = true
 		}
@@ -218,7 +218,7 @@ end
 temp()
 
 function temp()
-	var1.川 = {
+	var1_0.川 = {
 		村 = {
 			千 = {
 				里 = {

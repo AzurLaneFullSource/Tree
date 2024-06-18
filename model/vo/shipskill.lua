@@ -1,109 +1,109 @@
-﻿local var0 = class("ShipSkill", import(".BaseVO"))
+﻿local var0_0 = class("ShipSkill", import(".BaseVO"))
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0.id = arg1.skill_id or arg1.id
-	arg0.configId = arg0.id
-	arg0.level = arg1.skill_lv or arg1.lv or arg1.level
-	arg0.exp = arg1.skill_exp or arg1.exp
-	arg0.maxLevel = arg0:getConfig("max_level")
-	arg0.buff = require("GameCfg.buff.buff_" .. arg0.id)
-	arg0.shipId = arg2
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.id = arg1_1.skill_id or arg1_1.id
+	arg0_1.configId = arg0_1.id
+	arg0_1.level = arg1_1.skill_lv or arg1_1.lv or arg1_1.level
+	arg0_1.exp = arg1_1.skill_exp or arg1_1.exp
+	arg0_1.maxLevel = arg0_1:getConfig("max_level")
+	arg0_1.buff = require("GameCfg.buff.buff_" .. arg0_1.id)
+	arg0_1.shipId = arg2_1
 end
 
-function var0.AddExp(arg0, arg1)
-	if arg0:IsMaxLevel() then
+function var0_0.AddExp(arg0_2, arg1_2)
+	if arg0_2:IsMaxLevel() then
 		return
 	end
 
-	local var0 = arg0:GetMaxLevel()
-	local var1 = arg1 + arg0.exp
-	local var2 = arg0.level
+	local var0_2 = arg0_2:GetMaxLevel()
+	local var1_2 = arg1_2 + arg0_2.exp
+	local var2_2 = arg0_2.level
 
-	while var1 >= pg.skill_need_exp[var2].exp do
-		var1 = var1 - pg.skill_need_exp[var2].exp
-		var2 = var2 + 1
+	while var1_2 >= pg.skill_need_exp[var2_2].exp do
+		var1_2 = var1_2 - pg.skill_need_exp[var2_2].exp
+		var2_2 = var2_2 + 1
 
-		if var2 == var0 then
-			var1 = 0
+		if var2_2 == var0_2 then
+			var1_2 = 0
 
 			break
 		end
 	end
 
-	arg0.level = var2
-	arg0.exp = var1
+	arg0_2.level = var2_2
+	arg0_2.exp = var1_2
 end
 
-function var0.GetExp(arg0)
-	return arg0.exp
+function var0_0.GetExp(arg0_3)
+	return arg0_3.exp
 end
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_4)
 	return pg.skill_data_template
 end
 
-function var0.GetMaxLevel(arg0)
-	return arg0.maxLevel
+function var0_0.GetMaxLevel(arg0_5)
+	return arg0_5.maxLevel
 end
 
-function var0.WillReachMaxLevel(arg0)
-	return arg0.level == arg0.maxLevel - 1
+function var0_0.WillReachMaxLevel(arg0_6)
+	return arg0_6.level == arg0_6.maxLevel - 1
 end
 
-function var0.IsMaxLevel(arg0)
-	return arg0.maxLevel <= arg0.level
+function var0_0.IsMaxLevel(arg0_7)
+	return arg0_7.maxLevel <= arg0_7.level
 end
 
-function var0.GetNextLevelExp(arg0)
-	return getConfigFromLevel1(pg.skill_need_exp, arg0.level).exp
+function var0_0.GetNextLevelExp(arg0_8)
+	return getConfigFromLevel1(pg.skill_need_exp, arg0_8.level).exp
 end
 
-function var0.StaticGetNextLevelExp(arg0)
-	return getConfigFromLevel1(pg.skill_need_exp, arg0).exp
+function var0_0.StaticGetNextLevelExp(arg0_9)
+	return getConfigFromLevel1(pg.skill_need_exp, arg0_9).exp
 end
 
-function var0.GetName(arg0)
-	local var0 = arg0:GetDisplayId()
+function var0_0.GetName(arg0_10)
+	local var0_10 = arg0_10:GetDisplayId()
 
-	return getSkillName(var0)
+	return getSkillName(var0_10)
 end
 
-function var0.GetDesc(arg0)
-	local var0 = arg0:GetDisplayId()
+function var0_0.GetDesc(arg0_11)
+	local var0_11 = arg0_11:GetDisplayId()
 
-	return getSkillDesc(var0, arg0.level)
+	return getSkillDesc(var0_11, arg0_11.level)
 end
 
-function var0.GetTacticsDesc(arg0)
-	local var0 = arg0:GetDisplayId()
+function var0_0.GetTacticsDesc(arg0_12)
+	local var0_12 = arg0_12:GetDisplayId()
 
-	return Student.getSkillDesc(var0, arg0.level)
+	return Student.getSkillDesc(var0_12, arg0_12.level)
 end
 
-function var0.GetIcon(arg0)
-	local var0 = arg0:GetDisplayId()
+function var0_0.GetIcon(arg0_13)
+	local var0_13 = arg0_13:GetDisplayId()
 
-	if var0 ~= arg0.id then
-		return require("GameCfg.buff.buff_" .. var0).icon
+	if var0_13 ~= arg0_13.id then
+		return require("GameCfg.buff.buff_" .. var0_13).icon
 	else
-		return arg0.buff.icon
+		return arg0_13.buff.icon
 	end
 end
 
-function var0.GetColorType(arg0)
-	local var0 = arg0:GetDisplayId()
+function var0_0.GetColorType(arg0_14)
+	local var0_14 = arg0_14:GetDisplayId()
 
-	if var0 ~= arg0.id then
-		return var0.bindConfigTable()[var0].type
+	if var0_14 ~= arg0_14.id then
+		return var0_0.bindConfigTable()[var0_14].type
 	else
-		return arg0:getConfig("type")
+		return arg0_14:getConfig("type")
 	end
 end
 
-function var0.GetDisplayId(arg0)
-	local var0 = getProxy(BayProxy):RawGetShipById(arg0.shipId)
+function var0_0.GetDisplayId(arg0_15)
+	local var0_15 = getProxy(BayProxy):RawGetShipById(arg0_15.shipId)
 
-	return var0 and var0:RemapSkillId(arg0.id) or arg0.id
+	return var0_15 and var0_15:RemapSkillId(arg0_15.id) or arg0_15.id
 end
 
-return var0
+return var0_0

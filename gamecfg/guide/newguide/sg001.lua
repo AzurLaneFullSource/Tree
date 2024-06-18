@@ -103,16 +103,16 @@
 				1,
 				40004
 			},
-			func = function(arg0, arg1)
-				if arg0 == "NewMainScene" then
+			func = function(arg0_2, arg1_2)
+				if arg0_2 == "NewMainScene" then
 					return pg.SeriesGuideMgr.CODES.MAINUI, 7
-				elseif arg0 == "LevelScene" then
-					if not arg1 then
+				elseif arg0_2 == "LevelScene" then
+					if not arg1_2 then
 						return pg.SeriesGuideMgr.CODES.CONDITION, 7
-					elseif arg1 then
-						if arg1.score > 1 then
+					elseif arg1_2 then
+						if arg1_2.score > 1 then
 							return pg.SeriesGuideMgr.CODES.CONDITION, 9
-						elseif arg1.total_time >= 180 then
+						elseif arg1_2.total_time >= 180 then
 							return pg.SeriesGuideMgr.CODES.CONDITION, 7
 						else
 							return pg.SeriesGuideMgr.CODES.CONDITION, 4
@@ -196,8 +196,8 @@
 			arg = {
 				2
 			},
-			func = function(arg0)
-				if arg0:getEquip(2) then
+			func = function(arg0_3)
+				if arg0_3:getEquip(2) then
 					return pg.SeriesGuideMgr.CODES.MAINUI, 15
 				end
 
@@ -253,11 +253,11 @@
 			}
 		},
 		getSegment = function()
-			local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1)
-			local var1 = var0 and not var0:isEnd()
+			local var0_4 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1)
+			local var1_4 = var0_4 and not var0_4:isEnd()
 
 			if not BuildShipScene.projectName then
-				if var1 then
+				if var1_4 then
 					return 1
 				else
 					return 2
@@ -371,16 +371,16 @@
 				1,
 				40004
 			},
-			func = function(arg0, arg1)
-				if arg0 == "NewMainScene" then
+			func = function(arg0_6, arg1_6)
+				if arg0_6 == "NewMainScene" then
 					return pg.SeriesGuideMgr.CODES.MAINUI, 24
-				elseif arg0 == "LevelScene" then
-					if not arg1 then
+				elseif arg0_6 == "LevelScene" then
+					if not arg1_6 then
 						return pg.SeriesGuideMgr.CODES.CONDITION, 24
-					elseif arg1 then
-						if arg1.score > 1 then
+					elseif arg1_6 then
+						if arg1_6.score > 1 then
 							return pg.SeriesGuideMgr.CODES.CONDITION, 26
-						elseif arg1.total_time >= 180 then
+						elseif arg1_6.total_time >= 180 then
 							return pg.SeriesGuideMgr.CODES.CONDITION, 24
 						else
 							return pg.SeriesGuideMgr.CODES.CONDITION, 20
@@ -427,16 +427,16 @@
 				1,
 				40004
 			},
-			func = function(arg0, arg1)
-				if arg0 == "NewMainScene" then
+			func = function(arg0_7, arg1_7)
+				if arg0_7 == "NewMainScene" then
 					return pg.SeriesGuideMgr.CODES.MAINUI, 27
-				elseif arg0 == "LevelScene" then
-					if not arg1 then
+				elseif arg0_7 == "LevelScene" then
+					if not arg1_7 then
 						return pg.SeriesGuideMgr.CODES.CONDITION, 27
-					elseif arg1 then
-						if arg1.score > 1 then
+					elseif arg1_7 then
+						if arg1_7.score > 1 then
 							return pg.SeriesGuideMgr.CODES.CONDITION, 29
-						elseif arg1.total_time >= 180 then
+						elseif arg1_7.total_time >= 180 then
 							return pg.SeriesGuideMgr.CODES.CONDITION, 27
 						else
 							return pg.SeriesGuideMgr.CODES.CONDITION, 20

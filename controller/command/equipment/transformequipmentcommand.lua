@@ -1,359 +1,359 @@
-﻿local var0 = class("TransformEquipmentCommand", pm.SimpleCommand)
+﻿local var0_0 = class("TransformEquipmentCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.candicate
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.candicate
 
 	seriesAsync({
-		function(arg0)
-			if var1.type == DROP_TYPE_ITEM then
+		function(arg0_2)
+			if var1_1.type == DROP_TYPE_ITEM then
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("equipment_upgrade_feedback_compose_tip"),
-					onYes = arg0
+					onYes = arg0_2
 				})
 
 				return
-			elseif var1.type == DROP_TYPE_EQUIP and var1.template.shipId ~= nil then
-				local var0 = var1.template.shipId
-				local var1 = getProxy(BayProxy):getShipById(var0)
-				local var2, var3 = ShipStatus.ShipStatusCheck("onModify", var1)
+			elseif var1_1.type == DROP_TYPE_EQUIP and var1_1.template.shipId ~= nil then
+				local var0_2 = var1_1.template.shipId
+				local var1_2 = getProxy(BayProxy):getShipById(var0_2)
+				local var2_2, var3_2 = ShipStatus.ShipStatusCheck("onModify", var1_2)
 
-				if not var2 then
-					pg.TipsMgr.GetInstance():ShowTips(var3)
+				if not var2_2 then
+					pg.TipsMgr.GetInstance():ShowTips(var3_2)
 
 					return
 				end
 
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					content = i18n("equipment_upgrade_feedback_equipment_consume", var1:getName(), var1.template:getConfig("name")),
-					onYes = arg0
+					content = i18n("equipment_upgrade_feedback_equipment_consume", var1_2:getName(), var1_1.template:getConfig("name")),
+					onYes = arg0_2
 				})
 
 				return
 			end
 
-			arg0()
+			arg0_2()
 		end,
-		function(arg0)
-			if var1.type == DROP_TYPE_EQUIP then
-				return arg0({
-					shipId = var1.template.shipId,
-					pos = var1.template.shipPos,
-					equipmentId = var1.template.id,
-					formulaIds = var0.formulaIds
+		function(arg0_3)
+			if var1_1.type == DROP_TYPE_EQUIP then
+				return arg0_3({
+					shipId = var1_1.template.shipId,
+					pos = var1_1.template.shipPos,
+					equipmentId = var1_1.template.id,
+					formulaIds = var0_1.formulaIds
 				})
 			end
 
-			local var0 = var1.composeCfg.id
-			local var1 = 1
-			local var2 = getProxy(BagProxy)
-			local var3 = getProxy(PlayerProxy)
-			local var4 = var3:getData()
-			local var5 = pg.compose_data_template[var0]
-			local var6 = getProxy(EquipmentProxy)
-			local var7 = var6:getCapacity()
+			local var0_3 = var1_1.composeCfg.id
+			local var1_3 = 1
+			local var2_3 = getProxy(BagProxy)
+			local var3_3 = getProxy(PlayerProxy)
+			local var4_3 = var3_3:getData()
+			local var5_3 = pg.compose_data_template[var0_3]
+			local var6_3 = getProxy(EquipmentProxy)
+			local var7_3 = var6_3:getCapacity()
 
-			if var4:getMaxEquipmentBag() < var7 + var1 then
+			if var4_3:getMaxEquipmentBag() < var7_3 + var1_3 then
 				NoPosMsgBox(i18n("switch_to_shop_tip_noPos"), openDestroyEquip, gotoChargeScene)
 
 				return
 			end
 
-			if var4.gold < var5.gold_num * var1 then
+			if var4_3.gold < var5_3.gold_num * var1_3 then
 				GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
 					{
 						59001,
-						var5.gold_num * var1 - var4.gold,
-						var5.gold_num * var1
+						var5_3.gold_num * var1_3 - var4_3.gold,
+						var5_3.gold_num * var1_3
 					}
 				})
 
 				return
 			end
 
-			local var8 = var2:getItemById(var5.material_id)
+			local var8_3 = var2_3:getItemById(var5_3.material_id)
 
-			if not var8 or var8.count < var5.material_num * var1 then
+			if not var8_3 or var8_3.count < var5_3.material_num * var1_3 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("word_materal_no_enough"))
 
 				return
 			end
 
 			pg.ConnectionMgr.GetInstance():Send(14006, {
-				id = var0,
-				num = var1
-			}, 14007, function(arg0)
-				if arg0.result == 0 then
-					var6:addEquipmentById(var5.equip_id, var1)
-					var4:consume({
-						gold = var5.gold_num * var1
+				id = var0_3,
+				num = var1_3
+			}, 14007, function(arg0_4)
+				if arg0_4.result == 0 then
+					var6_3:addEquipmentById(var5_3.equip_id, var1_3)
+					var4_3:consume({
+						gold = var5_3.gold_num * var1_3
 					})
-					var3:updatePlayer(var4)
-					var2:removeItemById(var5.material_id, var5.material_num * var1)
-					arg0:sendNotification(GAME.COMPOSITE_EQUIPMENT_DONE, {
+					var3_3:updatePlayer(var4_3)
+					var2_3:removeItemById(var5_3.material_id, var5_3.material_num * var1_3)
+					arg0_1:sendNotification(GAME.COMPOSITE_EQUIPMENT_DONE, {
 						equipment = Equipment.New({
-							id = var5.equip_id
+							id = var5_3.equip_id
 						}),
-						count = var1,
-						composeId = var0
+						count = var1_3,
+						composeId = var0_3
 					})
-					arg0({
-						equipmentId = var5.equip_id,
-						formulaIds = var0.formulaIds
+					arg0_3({
+						equipmentId = var5_3.equip_id,
+						formulaIds = var0_1.formulaIds
 					})
 				else
-					pg.TipsMgr.GetInstance():ShowTips(errorTip("equipment_compositeEquipment", arg0.result))
+					pg.TipsMgr.GetInstance():ShowTips(errorTip("equipment_compositeEquipment", arg0_4.result))
 				end
 			end)
 		end,
-		function(arg0, arg1)
-			arg0:ExecuteEquipTransform(arg1)
+		function(arg0_5, arg1_5)
+			arg0_1:ExecuteEquipTransform(arg1_5)
 		end
 	})
 end
 
-function var0.ExecuteEquipTransform(arg0, arg1)
-	local var0 = arg1.shipId
-	local var1 = var0
-	local var2 = arg1.pos
-	local var3 = arg1.equipmentId
-	local var4 = arg1.formulaIds
-	local var5
+function var0_0.ExecuteEquipTransform(arg0_6, arg1_6)
+	local var0_6 = arg1_6.shipId
+	local var1_6 = var0_6
+	local var2_6 = arg1_6.pos
+	local var3_6 = arg1_6.equipmentId
+	local var4_6 = arg1_6.formulaIds
+	local var5_6
 
-	if var0 then
-		var5 = getProxy(BayProxy):getShipById(var0):getEquip(var2)
+	if var0_6 then
+		var5_6 = getProxy(BayProxy):getShipById(var0_6):getEquip(var2_6)
 
-		assert(var5, "can not find equipment at ship.")
+		assert(var5_6, "can not find equipment at ship.")
 
-		var3 = var5.id
-	elseif var3 ~= 0 then
-		var5 = getProxy(EquipmentProxy):getEquipmentById(var3)
+		var3_6 = var5_6.id
+	elseif var3_6 ~= 0 then
+		var5_6 = getProxy(EquipmentProxy):getEquipmentById(var3_6)
 
-		assert(var5, "can not find equipment: " .. var3)
+		assert(var5_6, "can not find equipment: " .. var3_6)
 
-		var3 = var5.id
+		var3_6 = var5_6.id
 	end
 
-	local var6, var7 = EquipmentTransformUtil.CheckEquipmentFormulasSucceed(var4, var3)
+	local var6_6, var7_6 = EquipmentTransformUtil.CheckEquipmentFormulasSucceed(var4_6, var3_6)
 
-	if not var6 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", var7))
+	if not var6_6 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", var7_6))
 
 		return
 	end
 
-	local var8 = {}
-	local var9 = {}
+	local var8_6 = {}
+	local var9_6 = {}
 
-	local function var10()
-		local var0 = getProxy(BagProxy)
-		local var1 = getProxy(PlayerProxy)
+	local function var10_6()
+		local var0_7 = getProxy(BagProxy)
+		local var1_7 = getProxy(PlayerProxy)
 
-		for iter0, iter1 in pairs(var8) do
-			if iter0 == "gold" then
-				local var2 = var1:getData()
-				local var3 = {
-					gold = math.abs(iter1)
+		for iter0_7, iter1_7 in pairs(var8_6) do
+			if iter0_7 == "gold" then
+				local var2_7 = var1_7:getData()
+				local var3_7 = {
+					gold = math.abs(iter1_7)
 				}
 
-				if iter1 > 0 then
-					var2:consume(var3)
-					var1:updatePlayer(var2)
-				elseif iter1 < 0 then
-					var2:addResources(var3)
-					var1:updatePlayer(var2)
+				if iter1_7 > 0 then
+					var2_7:consume(var3_7)
+					var1_7:updatePlayer(var2_7)
+				elseif iter1_7 < 0 then
+					var2_7:addResources(var3_7)
+					var1_7:updatePlayer(var2_7)
 				end
-			elseif iter1 > 0 then
-				var0:removeItemById(iter0, iter1)
-			elseif iter1 < 0 then
-				var0:addItemById(iter0, -iter1)
+			elseif iter1_7 > 0 then
+				var0_7:removeItemById(iter0_7, iter1_7)
+			elseif iter1_7 < 0 then
+				var0_7:addItemById(iter0_7, -iter1_7)
 			end
 		end
 
-		table.clear(var8)
+		table.clear(var8_6)
 	end
 
-	local var11 = var3
+	local var11_6 = var3_6
 
-	local function var12()
-		var10()
+	local function var12_6()
+		var10_6()
 
-		local var0 = getProxy(BayProxy)
-		local var1 = getProxy(EquipmentProxy)
-		local var2
-		local var3
+		local var0_8 = getProxy(BayProxy)
+		local var1_8 = getProxy(EquipmentProxy)
+		local var2_8
+		local var3_8
 
-		if var0 then
-			var2 = var0:getShipById(var0)
-			var3 = var2:getEquip(var2)
+		if var0_6 then
+			var2_8 = var0_8:getShipById(var0_6)
+			var3_8 = var2_8:getEquip(var2_6)
 		else
-			var3 = var1:getEquipmentById(var3)
+			var3_8 = var1_8:getEquipmentById(var3_6)
 		end
 
-		assert(var3, "Cant Get Equip " .. (var0 and "Ship " .. var0 .. " Pos " .. var2 or "ID " .. var3))
+		assert(var3_8, "Cant Get Equip " .. (var0_6 and "Ship " .. var0_6 .. " Pos " .. var2_6 or "ID " .. var3_6))
 
-		local var4 = var3:MigrateTo(var11)
+		local var4_8 = var3_8:MigrateTo(var11_6)
 
-		if var2 then
-			if not var2:isForbiddenAtPos(var4, var2) then
-				var2:updateEquip(var2, var4)
-				var0:updateShip(var2)
+		if var2_8 then
+			if not var2_8:isForbiddenAtPos(var4_8, var2_6) then
+				var2_8:updateEquip(var2_6, var4_8)
+				var0_8:updateShip(var2_8)
 			else
-				var2:updateEquip(var2, nil)
-				var0:updateShip(var2)
+				var2_8:updateEquip(var2_6, nil)
+				var0_8:updateShip(var2_8)
 
-				var0 = nil
+				var0_6 = nil
 
-				var1:addEquipment(var4)
+				var1_8:addEquipment(var4_8)
 			end
 		else
-			var1:removeEquipmentById(var3.id, 1)
-			var1:addEquipmentById(var4.id, 1)
+			var1_8:removeEquipmentById(var3_8.id, 1)
+			var1_8:addEquipmentById(var4_8.id, 1)
 		end
 
-		return var2, var3, var4
+		return var2_8, var3_8, var4_8
 	end
 
-	local var13 = var5
-	local var14
-	local var15
-	local var16
+	local var13_6 = var5_6
+	local var14_6
+	local var15_6
+	local var16_6
 
-	table.SerialIpairsAsync(var4, function(arg0, arg1, arg2)
+	table.SerialIpairsAsync(var4_6, function(arg0_9, arg1_9, arg2_9)
 		seriesAsync({
-			function(arg0)
-				local var0 = var0 and 14013 or 14015
-				local var1 = var0 and 14014 or 14016
-				local var2 = var0 and {
-					ship_id = var0,
-					pos = var2,
-					upgrade_id = arg1
+			function(arg0_10)
+				local var0_10 = var0_6 and 14013 or 14015
+				local var1_10 = var0_6 and 14014 or 14016
+				local var2_10 = var0_6 and {
+					ship_id = var0_6,
+					pos = var2_6,
+					upgrade_id = arg1_9
 				} or {
-					equip_id = var11,
-					upgrade_id = arg1
+					equip_id = var11_6,
+					upgrade_id = arg1_9
 				}
 
-				pg.ConnectionMgr.GetInstance():Send(var0, var2, var1, arg0)
+				pg.ConnectionMgr.GetInstance():Send(var0_10, var2_10, var1_10, arg0_10)
 			end,
-			function(arg0, arg1)
-				if arg1.result == 0 then
-					local var0 = pg.equip_upgrade_data[arg1]
-					local var1 = var0.material_consume
+			function(arg0_11, arg1_11)
+				if arg1_11.result == 0 then
+					local var0_11 = pg.equip_upgrade_data[arg1_9]
+					local var1_11 = var0_11.material_consume
 
-					for iter0, iter1 in ipairs(var1) do
-						local var2 = iter1[1]
-						local var3 = iter1[2]
+					for iter0_11, iter1_11 in ipairs(var1_11) do
+						local var2_11 = iter1_11[1]
+						local var3_11 = iter1_11[2]
 
-						var8[var2] = (var8[var2] or 0) + var3
+						var8_6[var2_11] = (var8_6[var2_11] or 0) + var3_11
 					end
 
-					var8.gold = (var8.gold or 0) + var0.coin_consume
+					var8_6.gold = (var8_6.gold or 0) + var0_11.coin_consume
 
-					local var4 = Equipment.GetRevertRewardsStatic(var11)
+					local var4_11 = Equipment.GetRevertRewardsStatic(var11_6)
 
-					for iter2, iter3 in pairs(var4) do
-						if iter2 ~= "gold" then
-							var8[iter2] = (var8[iter2] or 0) - iter3
-							var9[iter2] = (var9[iter2] or 0) + iter3
+					for iter2_11, iter3_11 in pairs(var4_11) do
+						if iter2_11 ~= "gold" then
+							var8_6[iter2_11] = (var8_6[iter2_11] or 0) - iter3_11
+							var9_6[iter2_11] = (var9_6[iter2_11] or 0) + iter3_11
 						end
 					end
 
-					assert(Equipment.CanInBag(var11), "Missing equip_data_template ID: " .. (var11 or "NIL"))
+					assert(Equipment.CanInBag(var11_6), "Missing equip_data_template ID: " .. (var11_6 or "NIL"))
 
-					if Equipment.CanInBag(var11) then
-						local var5 = Equipment.getConfigData(var11).destory_gold or 0
+					if Equipment.CanInBag(var11_6) then
+						local var5_11 = Equipment.getConfigData(var11_6).destory_gold or 0
 
-						var8.gold = (var8.gold or 0) - var5
-						var9.gold = (var9.gold or 0) + var5
+						var8_6.gold = (var8_6.gold or 0) - var5_11
+						var9_6.gold = (var9_6.gold or 0) + var5_11
 					end
 
-					var3 = var11
-					var11 = var0.target_id
-					var14, var15, var16 = var12()
+					var3_6 = var11_6
+					var11_6 = var0_11.target_id
+					var14_6, var15_6, var16_6 = var12_6()
 
-					arg2()
+					arg2_9()
 				else
-					pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg1.result] .. arg1.result)
-					arg0:sendNotification(GAME.TRANSFORM_EQUIPMENT_FAIL)
+					pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg1_11.result] .. arg1_11.result)
+					arg0_6:sendNotification(GAME.TRANSFORM_EQUIPMENT_FAIL)
 				end
 			end
 		})
 	end, function()
-		if not var0 and var1 then
-			local var0 = getProxy(BayProxy):getShipById(var1)
+		if not var0_6 and var1_6 then
+			local var0_12 = getProxy(BayProxy):getShipById(var1_6)
 
-			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_upgrade_equipped_unavailable", var0:getName(), var16:getConfig("name")))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_upgrade_equipped_unavailable", var0_12:getName(), var16_6:getConfig("name")))
 		end
 
-		local var1 = {
-			ship = var14,
-			equip = var15,
-			newEquip = var16
+		local var1_12 = {
+			ship = var14_6,
+			equip = var15_6,
+			newEquip = var16_6
 		}
 
-		arg0:sendNotification(GAME.TRANSFORM_EQUIPMENT_DONE, var1)
+		arg0_6:sendNotification(GAME.TRANSFORM_EQUIPMENT_DONE, var1_12)
 		LoadContextCommand.LoadLayerOnTopContext(Context.New({
 			mediator = EquipmentTransformInfoMediator,
 			viewComponent = EquipmentTransformInfoLayer,
 			data = {
-				equipVO = var13
+				equipVO = var13_6
 			},
 			onRemoved = function()
-				local var0 = getProxy(ContextProxy):getCurrentContext()
-				local var1 = var0:getContextByMediator(EquipmentInfoMediator)
+				local var0_13 = getProxy(ContextProxy):getCurrentContext()
+				local var1_13 = var0_13:getContextByMediator(EquipmentInfoMediator)
 
-				if var1 then
-					pg.m02:retrieveMediator(var1.mediator.__cname):getViewComponent():closeView()
+				if var1_13 then
+					pg.m02:retrieveMediator(var1_13.mediator.__cname):getViewComponent():closeView()
 				end
 
-				local var2 = pg.m02:retrieveMediator(var0.mediator.__cname):getViewComponent()
+				local var2_13 = pg.m02:retrieveMediator(var0_13.mediator.__cname):getViewComponent()
 
 				seriesAsync({
-					function(arg0)
-						var2:emit(BaseUI.ON_ACHIEVE, {
+					function(arg0_14)
+						var2_13:emit(BaseUI.ON_ACHIEVE, {
 							{
 								count = 1,
-								id = var16 and var16.id or 0,
+								id = var16_6 and var16_6.id or 0,
 								type = DROP_TYPE_EQUIP
 							}
-						}, arg0)
+						}, arg0_14)
 					end,
-					function(arg0)
-						onNextTick(arg0)
+					function(arg0_15)
+						onNextTick(arg0_15)
 					end,
-					function(arg0)
-						if not next(var9) then
-							arg0()
+					function(arg0_16)
+						if not next(var9_6) then
+							arg0_16()
 
 							return
 						end
 
-						local var0 = {}
+						local var0_16 = {}
 
-						for iter0, iter1 in pairs(var9) do
-							if iter0 == "gold" then
-								table.insert(var0, {
+						for iter0_16, iter1_16 in pairs(var9_6) do
+							if iter0_16 == "gold" then
+								table.insert(var0_16, {
 									type = DROP_TYPE_RESOURCE,
-									id = res2id(iter0),
-									count = iter1
+									id = res2id(iter0_16),
+									count = iter1_16
 								})
 							else
-								table.insert(var0, {
+								table.insert(var0_16, {
 									type = DROP_TYPE_ITEM,
-									id = iter0,
-									count = iter1
+									id = iter0_16,
+									count = iter1_16
 								})
 							end
 						end
 
-						var2:emit(BaseUI.ON_AWARD, {
-							items = var0,
+						var2_13:emit(BaseUI.ON_AWARD, {
+							items = var0_16,
 							title = AwardInfoLayer.TITLE.REVERT,
-							removeFunc = arg0
+							removeFunc = arg0_16
 						})
 					end,
-					function(arg0)
-						arg0:sendNotification(GAME.TRANSFORM_EQUIPMENT_AWARD_FINISHED, var1)
+					function(arg0_17)
+						arg0_6:sendNotification(GAME.TRANSFORM_EQUIPMENT_AWARD_FINISHED, var1_12)
 					end
 				})
 			end
@@ -361,4 +361,4 @@ function var0.ExecuteEquipTransform(arg0, arg1)
 	end)
 end
 
-return var0
+return var0_0

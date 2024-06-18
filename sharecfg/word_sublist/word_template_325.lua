@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_325 = {}
+var0_0.word_template_325 = {}
 
-local var1 = var0.word_template_325
+local var1_0 = var0_0.word_template_325
 
 function temp()
-	var1.欽 = {
+	var1_0.欽 = {
 		本 = {
 			立 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.銀 = {
+	var1_0.銀 = {
 		民 = {
 			吧 = {
 				this = true
@@ -31,7 +31,7 @@ end
 temp()
 
 function temp()
-	var1.尹 = {
+	var1_0.尹 = {
 		晋 = {
 			华 = {
 				this = true
@@ -53,7 +53,7 @@ end
 temp()
 
 function temp()
-	var1.引 = {
+	var1_0.引 = {
 		導 = {
 			this = true
 		},
@@ -120,7 +120,7 @@ end
 temp()
 
 function temp()
-	var1.隐 = {
+	var1_0.隐 = {
 		蔽 = {
 			执 = {
 				法 = {
@@ -196,7 +196,7 @@ end
 temp()
 
 function temp()
-	var1.隱 = {
+	var1_0.隱 = {
 		窩 = {
 			窩 = {
 				this = true
@@ -226,7 +226,7 @@ end
 temp()
 
 function temp()
-	var1.印 = {
+	var1_0.印 = {
 		度 = {
 			爱 = {
 				藏 = {

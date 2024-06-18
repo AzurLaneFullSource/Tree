@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_163 = {}
+var0_0.word_template_163 = {}
 
-local var1 = var0.word_template_163
+local var1_0 = var0_0.word_template_163
 
 function temp()
-	var1.橘 = {
+	var1_0.橘 = {
 		未 = {
 			稀 = {
 				this = true
@@ -45,7 +45,7 @@ end
 temp()
 
 function temp()
-	var1.举 = {
+	var1_0.举 = {
 		杯 = {
 			一 = {
 				口 = {
@@ -112,7 +112,7 @@ end
 temp()
 
 function temp()
-	var1.齟 = {
+	var1_0.齟 = {
 		this = {
 			this = true
 		}
@@ -122,7 +122,7 @@ end
 temp()
 
 function temp()
-	var1.巨 = {
+	var1_0.巨 = {
 		棒 = {
 			出 = {
 				击 = {
@@ -257,7 +257,7 @@ end
 temp()
 
 function temp()
-	var1.拒 = {
+	var1_0.拒 = {
 		绝 = {
 			洗 = {
 				脑 = {
@@ -280,7 +280,7 @@ end
 temp()
 
 function temp()
-	var1.苣 = {
+	var1_0.苣 = {
 		this = {
 			this = true
 		}
@@ -290,7 +290,7 @@ end
 temp()
 
 function temp()
-	var1.聚 = {
+	var1_0.聚 = {
 		宝 = {
 			箱 = {
 				this = true

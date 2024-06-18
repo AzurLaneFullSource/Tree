@@ -1,95 +1,95 @@
-﻿local var0 = class("CourtyardSpineFurnitureState")
+﻿local var0_0 = class("CourtyardSpineFurnitureState")
 
-function var0.Ctor(arg0, arg1, arg2, arg3, arg4, arg5)
-	arg0._tf = arg1.transform
-	arg0.rectTF = arg2
-	arg0.rootTF = arg0._tf.parent
-	arg0.furnitureSpineStateSkeletonGraphic = arg0._tf:GetComponent("Spine.Unity.SkeletonGraphic")
-	arg0.furnitureSpineStateAnim = arg0._tf:GetComponent(typeof(Animation))
-	arg0.selectedMat = arg3
-	arg0.canPlaceMat = arg4
-	arg0.cantPlaceMat = arg5
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1, arg5_1)
+	arg0_1._tf = arg1_1.transform
+	arg0_1.rectTF = arg2_1
+	arg0_1.rootTF = arg0_1._tf.parent
+	arg0_1.furnitureSpineStateSkeletonGraphic = arg0_1._tf:GetComponent("Spine.Unity.SkeletonGraphic")
+	arg0_1.furnitureSpineStateAnim = arg0_1._tf:GetComponent(typeof(Animation))
+	arg0_1.selectedMat = arg3_1
+	arg0_1.canPlaceMat = arg4_1
+	arg0_1.cantPlaceMat = arg5_1
 end
 
-function var0.Init(arg0, arg1, arg2)
+function var0_0.Init(arg0_2, arg1_2, arg2_2)
 	pg.UIMgr.GetInstance():LoadingOn(false)
-	setActive(arg0._tf, false)
-	ResourceMgr.Inst:getAssetAsync("sfurniture/" .. arg2:GetFirstSlot():GetName(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0)
+	setActive(arg0_2._tf, false)
+	ResourceMgr.Inst:getAssetAsync("sfurniture/" .. arg2_2:GetFirstSlot():GetName(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_3)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		if arg0.exited then
+		if arg0_2.exited then
 			return
 		end
 
-		arg0._tf.pivot = arg0.transform.pivot
-		arg0._tf.sizeDelta = arg0.transform.sizeDelta
-		arg0._tf.localPosition = arg1:GetSpinePoint()
-		arg0.furnitureSpineStateSkeletonGraphic.skeletonDataAsset = arg0.transform:Find("spine"):GetComponent("Spine.Unity.SkeletonGraphic").skeletonDataAsset
+		arg0_2._tf.pivot = arg0_3.transform.pivot
+		arg0_2._tf.sizeDelta = arg0_3.transform.sizeDelta
+		arg0_2._tf.localPosition = arg1_2:GetSpinePoint()
+		arg0_2.furnitureSpineStateSkeletonGraphic.skeletonDataAsset = arg0_3.transform:Find("spine"):GetComponent("Spine.Unity.SkeletonGraphic").skeletonDataAsset
 
-		arg0.furnitureSpineStateSkeletonGraphic:Initialize(true)
-		setActive(arg0._tf, true)
+		arg0_2.furnitureSpineStateSkeletonGraphic:Initialize(true)
+		setActive(arg0_2._tf, true)
 
-		arg0.furnitureSpineStateAnimUI = GetOrAddComponent(arg0._tf, typeof(SpineAnimUI))
+		arg0_2.furnitureSpineStateAnimUI = GetOrAddComponent(arg0_2._tf, typeof(SpineAnimUI))
 
-		arg0:OnUpdateScale(arg1)
-		arg0:OnReset(arg1)
+		arg0_2:OnUpdateScale(arg1_2)
+		arg0_2:OnReset(arg1_2)
 	end), true, true)
 end
 
-function var0.OnInit(arg0, arg1, arg2)
-	arg0:Init(arg1, arg2)
-	setParent(arg0._tf, arg0.rectTF)
+function var0_0.OnInit(arg0_4, arg1_4, arg2_4)
+	arg0_4:Init(arg1_4, arg2_4)
+	setParent(arg0_4._tf, arg0_4.rectTF)
 end
 
-function var0.OnUpdateScale(arg0, arg1)
-	local var0 = CourtYardCalcUtil.GetSign(arg1._tf.localScale.x)
+function var0_0.OnUpdateScale(arg0_5, arg1_5)
+	local var0_5 = CourtYardCalcUtil.GetSign(arg1_5._tf.localScale.x)
 
-	arg0._tf.localScale = Vector3(var0, 1, 1)
+	arg0_5._tf.localScale = Vector3(var0_5, 1, 1)
 end
 
-function var0.OnUpdate(arg0, arg1)
-	arg0._tf.localPosition = arg1:GetSpinePoint()
+function var0_0.OnUpdate(arg0_6, arg1_6)
+	arg0_6._tf.localPosition = arg1_6:GetSpinePoint()
 end
 
-function var0.OnCantPlace(arg0)
-	if arg0.furnitureSpineStateSkeletonGraphic.material ~= arg0.cantPlaceMat then
-		arg0.furnitureSpineStateSkeletonGraphic.material = arg0.cantPlaceMat
+function var0_0.OnCantPlace(arg0_7)
+	if arg0_7.furnitureSpineStateSkeletonGraphic.material ~= arg0_7.cantPlaceMat then
+		arg0_7.furnitureSpineStateSkeletonGraphic.material = arg0_7.cantPlaceMat
 
-		arg0.furnitureSpineStateAnim:Play("anim_courtyard_spinered")
+		arg0_7.furnitureSpineStateAnim:Play("anim_courtyard_spinered")
 	end
 end
 
-function var0.OnCanPlace(arg0)
-	if arg0.furnitureSpineStateSkeletonGraphic.material ~= arg0.canPlaceMat then
-		arg0.furnitureSpineStateSkeletonGraphic.material = arg0.canPlaceMat
+function var0_0.OnCanPlace(arg0_8)
+	if arg0_8.furnitureSpineStateSkeletonGraphic.material ~= arg0_8.canPlaceMat then
+		arg0_8.furnitureSpineStateSkeletonGraphic.material = arg0_8.canPlaceMat
 
-		arg0.furnitureSpineStateAnim:Play("anim_courtyard_spinegreen")
+		arg0_8.furnitureSpineStateAnim:Play("anim_courtyard_spinegreen")
 	end
 end
 
-function var0.OnReset(arg0, arg1)
-	if arg0.furnitureSpineStateSkeletonGraphic.material ~= arg0.selectedMat then
-		arg0.furnitureSpineStateSkeletonGraphic.material = arg0.selectedMat
+function var0_0.OnReset(arg0_9, arg1_9)
+	if arg0_9.furnitureSpineStateSkeletonGraphic.material ~= arg0_9.selectedMat then
+		arg0_9.furnitureSpineStateSkeletonGraphic.material = arg0_9.selectedMat
 
-		arg0.furnitureSpineStateAnim:Play("anim_courtyard_spinewhite")
+		arg0_9.furnitureSpineStateAnim:Play("anim_courtyard_spinewhite")
 	end
 
-	local var0 = arg1.animator:GetNormalAnimationName()
+	local var0_9 = arg1_9.animator:GetNormalAnimationName()
 
-	if var0 then
-		arg1.animator:RestartAnimation(var0)
-		arg0.furnitureSpineStateAnimUI:SetAction(var0, 0)
+	if var0_9 then
+		arg1_9.animator:RestartAnimation(var0_9)
+		arg0_9.furnitureSpineStateAnimUI:SetAction(var0_9, 0)
 	end
 end
 
-function var0.OnClear(arg0)
-	if arg0.furnitureSpineStateAnimUI then
-		Object.Destroy(arg0.furnitureSpineStateAnimUI)
+function var0_0.OnClear(arg0_10)
+	if arg0_10.furnitureSpineStateAnimUI then
+		Object.Destroy(arg0_10.furnitureSpineStateAnimUI)
 
-		arg0.furnitureSpineStateAnimUI = nil
+		arg0_10.furnitureSpineStateAnimUI = nil
 	end
 
-	setParent(arg0._tf, arg0.rootTF)
+	setParent(arg0_10._tf, arg0_10.rootTF)
 end
 
-return var0
+return var0_0

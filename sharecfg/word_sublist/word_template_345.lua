@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_345 = {}
+var0_0.word_template_345 = {}
 
-local var1 = var0.word_template_345
+local var1_0 = var0_0.word_template_345
 
 function temp()
-	var1.振 = {
+	var1_0.振 = {
 		蛋 = {
 			this = true
 		},
@@ -24,7 +24,7 @@ end
 temp()
 
 function temp()
-	var1.赈 = {
+	var1_0.赈 = {
 		灾 = {
 			晚 = {
 				会 = {
@@ -42,7 +42,7 @@ end
 temp()
 
 function temp()
-	var1.震 = {
+	var1_0.震 = {
 		棒 = {
 			this = true
 		},
@@ -82,7 +82,7 @@ end
 temp()
 
 function temp()
-	var1.镇 = {
+	var1_0.镇 = {
 		压 = {
 			this = true,
 			八 = {
@@ -116,7 +116,7 @@ end
 temp()
 
 function temp()
-	var1.鎮 = {
+	var1_0.鎮 = {
 		壓 = {
 			this = true
 		}
@@ -126,7 +126,7 @@ end
 temp()
 
 function temp()
-	var1.爭 = {
+	var1_0.爭 = {
 		鳴 = {
 			論 = {
 				壇 = {
@@ -140,7 +140,7 @@ end
 temp()
 
 function temp()
-	var1.正 = {
+	var1_0.正 = {
 		大 = {
 			光 = {
 				明 = {

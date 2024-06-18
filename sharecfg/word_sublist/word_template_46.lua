@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_46 = {}
+var0_0.word_template_46 = {}
 
-local var1 = var0.word_template_46
+local var1_0 = var0_0.word_template_46
 
 function temp()
-	var1.鸨 = {
+	var1_0.鸨 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.寶 = {
+	var1_0.寶 = {
 		馬 = {
 			娛 = {
 				樂 = {
@@ -40,7 +40,7 @@ end
 temp()
 
 function temp()
-	var1.报 = {
+	var1_0.报 = {
 		仇 = {
 			收 = {
 				帐 = {
@@ -59,7 +59,7 @@ end
 temp()
 
 function temp()
-	var1.鲍 = {
+	var1_0.鲍 = {
 		戈 = {
 			this = true
 		},
@@ -85,7 +85,7 @@ end
 temp()
 
 function temp()
-	var1.暴 = {
+	var1_0.暴 = {
 		打 = {
 			this = true
 		},
@@ -329,7 +329,7 @@ end
 temp()
 
 function temp()
-	var1.鮑 = {
+	var1_0.鮑 = {
 		戈 = {
 			this = true
 		},
@@ -353,7 +353,7 @@ end
 temp()
 
 function temp()
-	var1.贝 = {
+	var1_0.贝 = {
 		壳 = {
 			网 = {
 				this = true

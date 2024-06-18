@@ -1,279 +1,279 @@
-﻿local var0 = class("AttireAchievementPanel", import("...base.BaseSubView"))
+﻿local var0_0 = class("AttireAchievementPanel", import("...base.BaseSubView"))
 
-local function var1(arg0)
-	local var0 = {}
+local function var1_0(arg0_1)
+	local var0_1 = {}
 
-	local function var1(arg0)
-		arg0._go = arg0
-		arg0.info = findTF(arg0._go, "info")
-		arg0.empty = findTF(arg0._go, "empty")
-		arg0.icon = findTF(arg0._go, "info/icon")
-		arg0.selected = findTF(arg0._go, "info/selected")
-		arg0.nameTxt = findTF(arg0._go, "info/label/Text")
-		arg0.tags = {
-			findTF(arg0._go, "info/tags/new"),
-			findTF(arg0._go, "info/tags/e")
+	local function var1_1(arg0_2)
+		arg0_2._go = arg0_1
+		arg0_2.info = findTF(arg0_2._go, "info")
+		arg0_2.empty = findTF(arg0_2._go, "empty")
+		arg0_2.icon = findTF(arg0_2._go, "info/icon")
+		arg0_2.selected = findTF(arg0_2._go, "info/selected")
+		arg0_2.nameTxt = findTF(arg0_2._go, "info/label/Text")
+		arg0_2.tags = {
+			findTF(arg0_2._go, "info/tags/new"),
+			findTF(arg0_2._go, "info/tags/e")
 		}
-		arg0.print5 = findTF(arg0._go, "prints/line5")
-		arg0.print6 = findTF(arg0._go, "prints/line6")
+		arg0_2.print5 = findTF(arg0_2._go, "prints/line5")
+		arg0_2.print6 = findTF(arg0_2._go, "prints/line6")
 	end
 
-	function var0.Update(arg0, arg1, arg2, arg3)
-		arg0.trophy = arg1
+	function var0_1.Update(arg0_3, arg1_3, arg2_3, arg3_3)
+		arg0_3.trophy = arg1_3
 
-		if arg0.trophy then
-			LoadImageSpriteAsync("medal/" .. arg1:getConfig("icon"), arg0.icon, true)
-			setText(arg0.nameTxt, arg1:getConfig("name"))
-			setActive(arg0.tags[1], arg1:isNew())
-			arg0:UpdateSelected(arg2)
+		if arg0_3.trophy then
+			LoadImageSpriteAsync("medal/" .. arg1_3:getConfig("icon"), arg0_3.icon, true)
+			setText(arg0_3.nameTxt, arg1_3:getConfig("name"))
+			setActive(arg0_3.tags[1], arg1_3:isNew())
+			arg0_3:UpdateSelected(arg2_3)
 		end
 
-		setActive(arg0.print5, not arg3)
-		setActive(arg0.print6, not arg3)
-		setActive(arg0.info, arg0.trophy)
-		setActive(arg0.empty, not arg0.trophy)
+		setActive(arg0_3.print5, not arg3_3)
+		setActive(arg0_3.print6, not arg3_3)
+		setActive(arg0_3.info, arg0_3.trophy)
+		setActive(arg0_3.empty, not arg0_3.trophy)
 	end
 
-	function var0.UpdateSelected(arg0, arg1)
-		setActive(arg0.selected, arg1)
-		setActive(arg0.tags[2], arg1)
+	function var0_1.UpdateSelected(arg0_4, arg1_4)
+		setActive(arg0_4.selected, arg1_4)
+		setActive(arg0_4.tags[2], arg1_4)
 	end
 
-	var1(var0)
+	var1_1(var0_1)
 
-	return var0
+	return var0_1
 end
 
-local function var2(arg0)
-	local var0 = {}
+local function var2_0(arg0_5)
+	local var0_5 = {}
 
-	local function var1(arg0)
-		arg0._tf = arg0
-		arg0.uiList = UIItemList.New(arg0._tf:Find("list"), arg0._tf:Find("list/tpl"))
+	local function var1_5(arg0_6)
+		arg0_6._tf = arg0_5
+		arg0_6.uiList = UIItemList.New(arg0_6._tf:Find("list"), arg0_6._tf:Find("list/tpl"))
 	end
 
-	function var0.Update(arg0, arg1)
-		arg0.uiList:make(function(arg0, arg1, arg2)
-			if arg0 == UIItemList.EventUpdate then
-				local var0 = arg1[arg1 + 1]
-				local var1 = Trophy.New({
-					id = var0
+	function var0_5.Update(arg0_7, arg1_7)
+		arg0_7.uiList:make(function(arg0_8, arg1_8, arg2_8)
+			if arg0_8 == UIItemList.EventUpdate then
+				local var0_8 = arg1_7[arg1_8 + 1]
+				local var1_8 = Trophy.New({
+					id = var0_8
 				})
-				local var2 = findTF(arg2, "icon")
+				local var2_8 = findTF(arg2_8, "icon")
 
-				LoadImageSpriteAsync("medal/s_" .. var1:getConfig("icon"), var2, true)
+				LoadImageSpriteAsync("medal/s_" .. var1_8:getConfig("icon"), var2_8, true)
 			end
 		end)
-		arg0.uiList:align(#arg1)
+		arg0_7.uiList:align(#arg1_7)
 	end
 
-	function var0.Dispose(arg0)
+	function var0_5.Dispose(arg0_9)
 		return
 	end
 
-	var1(var0)
+	var1_5(var0_5)
 
-	return var0
+	return var0_5
 end
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_10)
 	return "AttireAchievementUI"
 end
 
-function var0.OnInit(arg0)
-	arg0.listPanel = arg0:findTF("list_panel")
-	arg0.scolrect = arg0:findTF("scrollrect", arg0.listPanel):GetComponent("LScrollRect")
-	arg0.totalCount = arg0:findTF("total_count/Text"):GetComponent(typeof(Text))
-	arg0.selectedTxt = arg0.listPanel:Find("selected_bg/Text"):GetComponent(typeof(Text))
-	arg0.toggle = arg0.listPanel:Find("toggle")
+function var0_0.OnInit(arg0_11)
+	arg0_11.listPanel = arg0_11:findTF("list_panel")
+	arg0_11.scolrect = arg0_11:findTF("scrollrect", arg0_11.listPanel):GetComponent("LScrollRect")
+	arg0_11.totalCount = arg0_11:findTF("total_count/Text"):GetComponent(typeof(Text))
+	arg0_11.selectedTxt = arg0_11.listPanel:Find("selected_bg/Text"):GetComponent(typeof(Text))
+	arg0_11.toggle = arg0_11.listPanel:Find("toggle")
 
-	function arg0.scolrect.onInitItem(arg0)
-		arg0:OnInitItem(arg0)
+	function arg0_11.scolrect.onInitItem(arg0_12)
+		arg0_11:OnInitItem(arg0_12)
 	end
 
-	function arg0.scolrect.onUpdateItem(arg0, arg1)
-		arg0:OnUpdateItem(arg0, arg1)
+	function arg0_11.scolrect.onUpdateItem(arg0_13, arg1_13)
+		arg0_11:OnUpdateItem(arg0_13, arg1_13)
 	end
 
-	arg0.confirmBtn = arg0:findTF("list_panel/confirm")
+	arg0_11.confirmBtn = arg0_11:findTF("list_panel/confirm")
 
-	onButton(arg0, arg0.confirmBtn, function()
-		if #arg0.contextData.selectedMedalList == 0 and #arg0.playerVO.displayTrophyList == 0 then
+	onButton(arg0_11, arg0_11.confirmBtn, function()
+		if #arg0_11.contextData.selectedMedalList == 0 and #arg0_11.playerVO.displayTrophyList == 0 then
 			return
 		end
 
-		if #arg0.contextData.selectedMedalList == #arg0.playerVO.displayTrophyList and _.all(arg0.contextData.selectedMedalList, function(arg0)
-			return table.contains(arg0.playerVO.displayTrophyList, arg0)
+		if #arg0_11.contextData.selectedMedalList == #arg0_11.playerVO.displayTrophyList and _.all(arg0_11.contextData.selectedMedalList, function(arg0_15)
+			return table.contains(arg0_11.playerVO.displayTrophyList, arg0_15)
 		end) then
 			return
 		end
 
-		arg0.event:emit(AttireMediator.ON_CHANGE_MEDAL_DISPLAY, arg0.contextData.selectedMedalList)
+		arg0_11.event:emit(AttireMediator.ON_CHANGE_MEDAL_DISPLAY, arg0_11.contextData.selectedMedalList)
 	end, SFX_PANEL)
 
-	arg0.descPanel = var2(arg0:findTF("desc_panel"))
-	arg0.selectMaxLevel = true
+	arg0_11.descPanel = var2_0(arg0_11:findTF("desc_panel"))
+	arg0_11.selectMaxLevel = true
 
-	onToggle(arg0, arg0.toggle, function(arg0)
-		arg0.selectMaxLevel = arg0
+	onToggle(arg0_11, arg0_11.toggle, function(arg0_16)
+		arg0_11.selectMaxLevel = arg0_16
 
-		arg0:Filter()
+		arg0_11:Filter()
 	end)
 
-	arg0.cards = {}
-	arg0.emptyPage = BaseEmptyListPage.New(arg0.listPanel, arg0.event)
+	arg0_11.cards = {}
+	arg0_11.emptyPage = BaseEmptyListPage.New(arg0_11.listPanel, arg0_11.event)
 end
 
-function var0.UpdateselectedTxt(arg0)
-	local var0 = arg0.contextData.selectedMedalList or {}
+function var0_0.UpdateselectedTxt(arg0_17)
+	local var0_17 = arg0_17.contextData.selectedMedalList or {}
 
-	arg0.selectedTxt.text = #var0 .. "/5"
+	arg0_17.selectedTxt.text = #var0_17 .. "/5"
 end
 
-function var0.OnInitItem(arg0, arg1)
-	local var0 = var1(arg1)
+function var0_0.OnInitItem(arg0_18, arg1_18)
+	local var0_18 = var1_0(arg1_18)
 
-	arg0.cards[arg1] = var0
+	arg0_18.cards[arg1_18] = var0_18
 
-	onButton(arg0, var0._go, function()
-		if not var0.trophy then
+	onButton(arg0_18, var0_18._go, function()
+		if not var0_18.trophy then
 			return
 		end
 
-		local var0 = arg0.contextData.selectedMedalList or {}
+		local var0_19 = arg0_18.contextData.selectedMedalList or {}
 
-		if #var0 < 5 and not table.contains(var0, var0.trophy.id) then
-			table.insert(var0, var0.trophy.id)
-			var0:UpdateSelected(true)
+		if #var0_19 < 5 and not table.contains(var0_19, var0_18.trophy.id) then
+			table.insert(var0_19, var0_18.trophy.id)
+			var0_18:UpdateSelected(true)
 		else
-			for iter0, iter1 in ipairs(var0) do
-				if iter1 == var0.trophy.id then
-					table.remove(var0, iter0)
-					var0:UpdateSelected(false)
+			for iter0_19, iter1_19 in ipairs(var0_19) do
+				if iter1_19 == var0_18.trophy.id then
+					table.remove(var0_19, iter0_19)
+					var0_18:UpdateSelected(false)
 
 					break
 				end
 			end
 		end
 
-		arg0.contextData.selectedMedalList = var0
+		arg0_18.contextData.selectedMedalList = var0_19
 
-		arg0.descPanel:Update(arg0.contextData.selectedMedalList)
-		arg0:UpdateselectedTxt()
+		arg0_18.descPanel:Update(arg0_18.contextData.selectedMedalList)
+		arg0_18:UpdateselectedTxt()
 	end, SFX_PANEL)
 end
 
-function var0.OnUpdateItem(arg0, arg1, arg2)
-	local var0 = arg0.cards[arg2]
+function var0_0.OnUpdateItem(arg0_20, arg1_20, arg2_20)
+	local var0_20 = arg0_20.cards[arg2_20]
 
-	if not var0 then
-		arg0:OnInitItem(arg2)
+	if not var0_20 then
+		arg0_20:OnInitItem(arg2_20)
 
-		var0 = arg0.cards[arg2]
+		var0_20 = arg0_20.cards[arg2_20]
 	end
 
-	local var1 = arg0.displayVOs[arg1 + 1]
-	local var2 = arg1 < arg0.scolrect.content:GetComponent(typeof(GridLayoutGroup)).constraintCount
+	local var1_20 = arg0_20.displayVOs[arg1_20 + 1]
+	local var2_20 = arg1_20 < arg0_20.scolrect.content:GetComponent(typeof(GridLayoutGroup)).constraintCount
 
-	if var1 then
-		local var3 = table.contains(arg0.contextData.selectedMedalList, var1.id)
+	if var1_20 then
+		local var3_20 = table.contains(arg0_20.contextData.selectedMedalList, var1_20.id)
 
-		var0:Update(var1, var3, var2)
+		var0_20:Update(var1_20, var3_20, var2_20)
 	else
-		var0:Update(var1, false, var2)
+		var0_20:Update(var1_20, false, var2_20)
 	end
 end
 
-function var0.Update(arg0, arg1, arg2)
-	arg0.playerVO = arg2
-	arg0.trophys = arg1.trophys
-	arg0.contextData.selectedMedalList = Clone(arg0.playerVO.displayTrophyList) or {}
+function var0_0.Update(arg0_21, arg1_21, arg2_21)
+	arg0_21.playerVO = arg2_21
+	arg0_21.trophys = arg1_21.trophys
+	arg0_21.contextData.selectedMedalList = Clone(arg0_21.playerVO.displayTrophyList) or {}
 
-	arg0.descPanel:Update(arg0.contextData.selectedMedalList)
-	arg0:UpdateselectedTxt()
-	arg0:Filter()
+	arg0_21.descPanel:Update(arg0_21.contextData.selectedMedalList)
+	arg0_21:UpdateselectedTxt()
+	arg0_21:Filter()
 
-	arg0.totalCount.text = arg0:getTotalCnt()
+	arg0_21.totalCount.text = arg0_21:getTotalCnt()
 
-	local var0 = arg0:getTotalCnt()
+	local var0_21 = arg0_21:getTotalCnt()
 
-	if var0 <= 0 then
-		arg0.emptyPage:ExecuteAction("ShowOrHide", true)
-		arg0.emptyPage:ExecuteAction("SetEmptyText", i18n("decoration_medal_placeholder"))
-		arg0.emptyPage:ExecuteAction("SetPosY", {
+	if var0_21 <= 0 then
+		arg0_21.emptyPage:ExecuteAction("ShowOrHide", true)
+		arg0_21.emptyPage:ExecuteAction("SetEmptyText", i18n("decoration_medal_placeholder"))
+		arg0_21.emptyPage:ExecuteAction("SetPosY", {
 			x = 0,
 			y = 22
 		})
-		setActive(arg0:findTF("scrollrect", arg0.listPanel), false)
-	elseif var0 > 0 and arg0.emptyPage:GetLoaded() then
-		arg0.emptyPage:ExecuteAction("ShowOrHide", false)
-		setActive(arg0:findTF("scrollrect", arg0.listPanel), true)
+		setActive(arg0_21:findTF("scrollrect", arg0_21.listPanel), false)
+	elseif var0_21 > 0 and arg0_21.emptyPage:GetLoaded() then
+		arg0_21.emptyPage:ExecuteAction("ShowOrHide", false)
+		setActive(arg0_21:findTF("scrollrect", arg0_21.listPanel), true)
 	end
 end
 
-function var0.getTotalCnt(arg0)
-	local var0 = 0
+function var0_0.getTotalCnt(arg0_22)
+	local var0_22 = 0
 
-	for iter0, iter1 in pairs(arg0.trophys) do
-		if iter1:isClaimed() and not iter1:isHide() then
-			var0 = var0 + 1
+	for iter0_22, iter1_22 in pairs(arg0_22.trophys) do
+		if iter1_22:isClaimed() and not iter1_22:isHide() then
+			var0_22 = var0_22 + 1
 		end
 	end
 
-	return var0
+	return var0_22
 end
 
-function var0.Filter(arg0)
-	arg0.displayVOs = {}
+function var0_0.Filter(arg0_23)
+	arg0_23.displayVOs = {}
 
-	local function var0(arg0)
-		local var0 = arg0.trophys[arg0:getConfig("next")]
+	local function var0_23(arg0_24)
+		local var0_24 = arg0_23.trophys[arg0_24:getConfig("next")]
 
-		return var0 and var0:isClaimed() and not var0:isHide()
+		return var0_24 and var0_24:isClaimed() and not var0_24:isHide()
 	end
 
-	for iter0, iter1 in pairs(arg0.trophys) do
-		if iter1:isClaimed() and not iter1:isHide() and (not arg0.selectMaxLevel or arg0.selectMaxLevel and not var0(iter1)) then
-			table.insert(arg0.displayVOs, iter1)
+	for iter0_23, iter1_23 in pairs(arg0_23.trophys) do
+		if iter1_23:isClaimed() and not iter1_23:isHide() and (not arg0_23.selectMaxLevel or arg0_23.selectMaxLevel and not var0_23(iter1_23)) then
+			table.insert(arg0_23.displayVOs, iter1_23)
 		end
 	end
 
-	table.sort(arg0.displayVOs, function(arg0, arg1)
-		return arg0.id < arg1.id
+	table.sort(arg0_23.displayVOs, function(arg0_25, arg1_25)
+		return arg0_25.id < arg1_25.id
 	end)
 
-	local var1 = arg0.scolrect.content:GetComponent(typeof(GridLayoutGroup)).constraintCount
-	local var2 = var1 - #arg0.displayVOs % var1
+	local var1_23 = arg0_23.scolrect.content:GetComponent(typeof(GridLayoutGroup)).constraintCount
+	local var2_23 = var1_23 - #arg0_23.displayVOs % var1_23
 
-	if var2 == var1 then
-		var2 = 0
+	if var2_23 == var1_23 then
+		var2_23 = 0
 	end
 
-	local var3 = var1 * arg0:GetColumn()
+	local var3_23 = var1_23 * arg0_23:GetColumn()
 
-	if var3 > #arg0.displayVOs then
-		var2 = var3 - #arg0.displayVOs
+	if var3_23 > #arg0_23.displayVOs then
+		var2_23 = var3_23 - #arg0_23.displayVOs
 	end
 
-	for iter2 = 1, var2 do
-		table.insert(arg0.displayVOs, false)
+	for iter2_23 = 1, var2_23 do
+		table.insert(arg0_23.displayVOs, false)
 	end
 
-	arg0.scolrect:SetTotalCount(#arg0.displayVOs, -1)
+	arg0_23.scolrect:SetTotalCount(#arg0_23.displayVOs, -1)
 end
 
-function var0.GetColumn(arg0)
+function var0_0.GetColumn(arg0_26)
 	return 2
 end
 
-function var0.OnDestroy(arg0)
-	arg0.descPanel:Dispose()
+function var0_0.OnDestroy(arg0_27)
+	arg0_27.descPanel:Dispose()
 
-	if arg0.emptyPage then
-		arg0.emptyPage:Destroy()
+	if arg0_27.emptyPage then
+		arg0_27.emptyPage:Destroy()
 
-		arg0.emptyPage = nil
+		arg0_27.emptyPage = nil
 	end
 end
 
-return var0
+return var0_0

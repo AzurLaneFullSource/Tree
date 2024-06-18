@@ -1,45 +1,45 @@
-﻿local var0 = class("MaoxiV4TaskPage", import(".TemplatePage.SkinTemplatePage"))
+﻿local var0_0 = class("MaoxiV4TaskPage", import(".TemplatePage.SkinTemplatePage"))
 
-function var0.OnUpdateFlush(arg0)
-	arg0.nday = arg0.activity.data3
+function var0_0.OnUpdateFlush(arg0_1)
+	arg0_1.nday = arg0_1.activity.data3
 
-	local var0 = arg0.activity:getConfig("config_client").firstStory
+	local var0_1 = arg0_1.activity:getConfig("config_client").firstStory
 
-	if var0 then
-		playStory(var0)
+	if var0_1 then
+		playStory(var0_1)
 	end
 
-	arg0:PlayStory()
+	arg0_1:PlayStory()
 
-	if arg0.dayTF then
-		setText(arg0.dayTF, tostring(arg0.nday))
+	if arg0_1.dayTF then
+		setText(arg0_1.dayTF, tostring(arg0_1.nday))
 	end
 
-	arg0.uilist:align(#arg0.taskGroup[arg0.nday])
+	arg0_1.uilist:align(#arg0_1.taskGroup[arg0_1.nday])
 end
 
-function var0.PlayStory(arg0)
-	local var0 = arg0.activity:getConfig("config_client").story
-	local var1 = arg0.nday - 1
+function var0_0.PlayStory(arg0_2)
+	local var0_2 = arg0_2.activity:getConfig("config_client").story
+	local var1_2 = arg0_2.nday - 1
 
-	if arg0.nday == 7 then
-		local var2 = arg0.taskGroup[arg0.nday][1]
-		local var3 = arg0.taskGroup[arg0.nday][2]
-		local var4 = arg0.taskProxy:getTaskById(var2) or arg0.taskProxy:getFinishTaskById(var2)
-		local var5 = arg0.taskProxy:getTaskById(var3) or arg0.taskProxy:getFinishTaskById(var3)
+	if arg0_2.nday == 7 then
+		local var2_2 = arg0_2.taskGroup[arg0_2.nday][1]
+		local var3_2 = arg0_2.taskGroup[arg0_2.nday][2]
+		local var4_2 = arg0_2.taskProxy:getTaskById(var2_2) or arg0_2.taskProxy:getFinishTaskById(var2_2)
+		local var5_2 = arg0_2.taskProxy:getTaskById(var3_2) or arg0_2.taskProxy:getFinishTaskById(var3_2)
 
-		if var4:getTaskStatus() == 2 and var5:getTaskStatus() == 2 then
-			var1 = var1 + 1
+		if var4_2:getTaskStatus() == 2 and var5_2:getTaskStatus() == 2 then
+			var1_2 = var1_2 + 1
 		end
 	end
 
-	if checkExist(var0, {
-		var1
+	if checkExist(var0_2, {
+		var1_2
 	}, {
 		1
 	}) then
-		pg.NewStoryMgr.GetInstance():Play(var0[var1][1])
+		pg.NewStoryMgr.GetInstance():Play(var0_2[var1_2][1])
 	end
 end
 
-return var0
+return var0_0

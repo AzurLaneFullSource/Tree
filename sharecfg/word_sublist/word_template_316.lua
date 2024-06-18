@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_316 = {}
+var0_0.word_template_316 = {}
 
-local var1 = var0.word_template_316
+local var1_0 = var0_0.word_template_316
 
 function temp()
-	var1.鹽 = {
+	var1_0.鹽 = {
 		酸 = {
 			羟 = {
 				亞 = {
@@ -30,7 +30,7 @@ end
 temp()
 
 function temp()
-	var1.眼 = {
+	var1_0.眼 = {
 		镜 = {
 			妹 = {
 				媚 = {
@@ -51,7 +51,7 @@ end
 temp()
 
 function temp()
-	var1.艳 = {
+	var1_0.艳 = {
 		福 = {
 			难 = {
 				挡 = {
@@ -217,7 +217,7 @@ end
 temp()
 
 function temp()
-	var1.验 = {
+	var1_0.验 = {
 		钞 = {
 			机 = {
 				包 = {
@@ -242,7 +242,7 @@ end
 temp()
 
 function temp()
-	var1.燕 = {
+	var1_0.燕 = {
 		玲 = {
 			论 = {
 				坛 = {
@@ -269,7 +269,7 @@ end
 temp()
 
 function temp()
-	var1.艶 = {
+	var1_0.艶 = {
 		母 = {
 			黑 = {
 				愛 = {
@@ -283,7 +283,7 @@ end
 temp()
 
 function temp()
-	var1.讞 = {
+	var1_0.讞 = {
 		this = {
 			this = true
 		}

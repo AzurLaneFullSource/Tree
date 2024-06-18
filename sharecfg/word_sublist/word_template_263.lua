@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_263 = {}
+var0_0.word_template_263 = {}
 
-local var1 = var0.word_template_263
+local var1_0 = var0_0.word_template_263
 
 function temp()
-	var1.世 = {
+	var1_0.世 = {
 		博 = {
 			this = true,
 			耗 = {
@@ -302,7 +302,7 @@ end
 temp()
 
 function temp()
-	var1.仕 = {
+	var1_0.仕 = {
 		途 = {
 			风 = {
 				流 = {
@@ -316,7 +316,7 @@ end
 temp()
 
 function temp()
-	var1.市 = {
+	var1_0.市 = {
 		府 = {
 			办 = {
 				强 = {
@@ -457,7 +457,7 @@ end
 temp()
 
 function temp()
-	var1.势 = {
+	var1_0.势 = {
 		力 = {
 			的 = {
 				狗 = {
@@ -471,7 +471,7 @@ end
 temp()
 
 function temp()
-	var1.事 = {
+	var1_0.事 = {
 		实 = {
 			独 = {
 				立 = {
@@ -509,7 +509,7 @@ end
 temp()
 
 function temp()
-	var1.侍 = {
+	var1_0.侍 = {
 		從 = {
 			貝 = {
 				赫 = {
@@ -534,7 +534,7 @@ end
 temp()
 
 function temp()
-	var1.试 = {
+	var1_0.试 = {
 		嫖 = {
 			一 = {
 				个 = {

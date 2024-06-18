@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_311 = {}
+var0_0.word_template_311 = {}
 
-local var1 = var0.word_template_311
+local var1_0 = var0_0.word_template_311
 
 function temp()
-	var1.旋 = {
+	var1_0.旋 = {
 		风 = {
 			花 = {
 				this = true
@@ -24,7 +24,7 @@ end
 temp()
 
 function temp()
-	var1.选 = {
+	var1_0.选 = {
 		霸 = {
 			就 = {
 				是 = {
@@ -79,7 +79,7 @@ end
 temp()
 
 function temp()
-	var1.選 = {
+	var1_0.選 = {
 		個 = {
 			學 = {
 				校 = {
@@ -99,7 +99,7 @@ end
 temp()
 
 function temp()
-	var1.薛 = {
+	var1_0.薛 = {
 		偉 = {
 			this = true
 		},
@@ -120,7 +120,7 @@ end
 temp()
 
 function temp()
-	var1.穴 = {
+	var1_0.穴 = {
 		this = {
 			this = true
 		},
@@ -165,7 +165,7 @@ end
 temp()
 
 function temp()
-	var1.学 = {
+	var1_0.学 = {
 		潮 = {
 			this = true,
 			暴 = {
@@ -405,7 +405,7 @@ end
 temp()
 
 function temp()
-	var1.學 = {
+	var1_0.學 = {
 		潮 = {
 			this = true
 		},

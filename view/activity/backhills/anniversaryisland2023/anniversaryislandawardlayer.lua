@@ -1,52 +1,52 @@
-﻿local var0 = class("AnniversaryIslandAwardLayer", import("view.base.BaseUI"))
+﻿local var0_0 = class("AnniversaryIslandAwardLayer", import("view.base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "AnniversaryIslandAwardUI"
 end
 
-function var0.init(arg0)
-	arg0.window = arg0._tf:Find("Window")
+function var0_0.init(arg0_2)
+	arg0_2.window = arg0_2._tf:Find("Window")
 
-	setText(arg0.window:Find("Text"), i18n("expedition_award_tip"))
+	setText(arg0_2.window:Find("Text"), i18n("expedition_award_tip"))
 
-	arg0.loader = AutoLoader.New()
+	arg0_2.loader = AutoLoader.New()
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0.window:Find("Receive"), function()
-		arg0:onBackPressed()
+function var0_0.didEnter(arg0_3)
+	onButton(arg0_3, arg0_3.window:Find("Receive"), function()
+		arg0_3:onBackPressed()
 	end, SFX_PANEL)
-	onButton(arg0, arg0._tf:Find("BG"), function()
-		arg0:onBackPressed()
+	onButton(arg0_3, arg0_3._tf:Find("BG"), function()
+		arg0_3:onBackPressed()
 	end)
 
-	arg0.awards = _.select(arg0.contextData.items or {}, function(arg0)
-		return arg0.type ~= DROP_TYPE_ICON_FRAME and arg0.type ~= DROP_TYPE_CHAT_FRAME
+	arg0_3.awards = _.select(arg0_3.contextData.items or {}, function(arg0_6)
+		return arg0_6.type ~= DROP_TYPE_ICON_FRAME and arg0_6.type ~= DROP_TYPE_CHAT_FRAME
 	end)
 
-	local var0 = UIItemList
+	local var0_3 = UIItemList
 
-	var0.StaticAlign(arg0.window:Find("Materials"), arg0.window:Find("Materials"):GetChild(0), #arg0.awards, function(arg0, arg1, arg2)
-		if arg0 ~= var0.EventUpdate then
+	var0_3.StaticAlign(arg0_3.window:Find("Materials"), arg0_3.window:Find("Materials"):GetChild(0), #arg0_3.awards, function(arg0_7, arg1_7, arg2_7)
+		if arg0_7 ~= var0_3.EventUpdate then
 			return
 		end
 
-		local var0 = arg0.awards[arg1 + 1]
+		local var0_7 = arg0_3.awards[arg1_7 + 1]
 
-		AnniversaryIslandComposite2023Scene.UpdateActivityDrop(arg0, arg2:Find("Icon"), var0)
-		onButton(arg0, arg2:Find("Icon"), function()
-			arg0:emit(var0.ON_DROP, var0)
+		AnniversaryIslandComposite2023Scene.UpdateActivityDrop(arg0_3, arg2_7:Find("Icon"), var0_7)
+		onButton(arg0_3, arg2_7:Find("Icon"), function()
+			arg0_3:emit(var0_0.ON_DROP, var0_7)
 		end)
-		setText(arg2:Find("Text"), var0.count)
+		setText(arg2_7:Find("Text"), var0_7.count)
 	end)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, false, {
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, false, {
 		weight = LayerWeightConst.THIRD_LAYER
 	})
 end
 
-function var0.willExit(arg0)
-	arg0.loader:Clear()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+function var0_0.willExit(arg0_9)
+	arg0_9.loader:Clear()
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_9._tf)
 end
 
-return var0
+return var0_0

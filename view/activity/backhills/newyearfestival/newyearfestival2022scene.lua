@@ -1,342 +1,342 @@
-﻿local var0 = class("NewYearFestival2022Scene", import("..TemplateMV.BackHillTemplate"))
+﻿local var0_0 = class("NewYearFestival2022Scene", import("..TemplateMV.BackHillTemplate"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "NewyearFestival2022UI"
 end
 
-var0.edge2area = {
+var0_0.edge2area = {
 	default = "_middle"
 }
-var0.Buildings = {
+var0_0.Buildings = {
 	[18] = "ironbloodmaid",
 	[17] = "royalmaid"
 }
 
-function var0.init(arg0)
-	var0.super.init(arg0)
+function var0_0.init(arg0_2)
+	var0_0.super.init(arg0_2)
 
-	arg0.top = arg0:findTF("top")
-	arg0._map = arg0:findTF("map")
+	arg0_2.top = arg0_2:findTF("top")
+	arg0_2._map = arg0_2:findTF("map")
 
-	for iter0 = 0, arg0._map.childCount - 1 do
-		local var0 = arg0._map:GetChild(iter0)
-		local var1 = go(var0).name
+	for iter0_2 = 0, arg0_2._map.childCount - 1 do
+		local var0_2 = arg0_2._map:GetChild(iter0_2)
+		local var1_2 = go(var0_2).name
 
-		arg0["map_" .. var1] = var0
+		arg0_2["map_" .. var1_2] = var0_2
 	end
 
-	arg0._middle = arg0:findTF("middle")
-	arg0._shipTpl = arg0._map:Find("ship")
-	arg0._upper = arg0:findTF("upper")
+	arg0_2._middle = arg0_2:findTF("middle")
+	arg0_2._shipTpl = arg0_2._map:Find("ship")
+	arg0_2._upper = arg0_2:findTF("upper")
 
-	for iter1 = 0, arg0._upper.childCount - 1 do
-		local var2 = arg0._upper:GetChild(iter1)
-		local var3 = go(var2).name
+	for iter1_2 = 0, arg0_2._upper.childCount - 1 do
+		local var2_2 = arg0_2._upper:GetChild(iter1_2)
+		local var3_2 = go(var2_2).name
 
-		arg0["upper_" .. var3] = var2
+		arg0_2["upper_" .. var3_2] = var2_2
 	end
 
-	arg0.containers = {
-		arg0.map_middle
+	arg0_2.containers = {
+		arg0_2.map_middle
 	}
-	arg0.usableTxt = arg0.top:Find("usable_count/text"):GetComponent(typeof(Text))
-	arg0.materialTxt = arg0.top:Find("material/text"):GetComponent(typeof(Text))
-	arg0.btnPlayFirework = arg0.top:Find("playFirework")
-	arg0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.NewyearFestival2022Graph"))
+	arg0_2.usableTxt = arg0_2.top:Find("usable_count/text"):GetComponent(typeof(Text))
+	arg0_2.materialTxt = arg0_2.top:Find("material/text"):GetComponent(typeof(Text))
+	arg0_2.btnPlayFirework = arg0_2.top:Find("playFirework")
+	arg0_2.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.NewyearFestival2022Graph"))
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0:findTF("top/back"), function()
-		arg0:emit(var0.ON_BACK)
+function var0_0.didEnter(arg0_3)
+	onButton(arg0_3, arg0_3:findTF("top/back"), function()
+		arg0_3:emit(var0_0.ON_BACK)
 	end, SFX_CANCEL)
-	onButton(arg0, arg0:findTF("top/home"), function()
-		arg0:emit(var0.ON_HOME)
+	onButton(arg0_3, arg0_3:findTF("top/home"), function()
+		arg0_3:emit(var0_0.ON_HOME)
 	end, SFX_PANEL)
-	onButton(arg0, arg0:findTF("top/help"), function()
+	onButton(arg0_3, arg0_3:findTF("top/help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_xinnian2022_feast.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.btnPlayFirework, function()
-		local var0 = getProxy(MiniGameProxy):GetMiniGameData(36):GetRuntimeData("elements")
+	onButton(arg0_3, arg0_3.btnPlayFirework, function()
+		local var0_7 = getProxy(MiniGameProxy):GetMiniGameData(36):GetRuntimeData("elements")
 
-		if not var0 or not (#var0 >= 4) or var0[4] ~= SummerFeastScene.GetCurrentDay() then
+		if not var0_7 or not (#var0_7 >= 4) or var0_7[4] ~= SummerFeastScene.GetCurrentDay() then
 			return
 		end
 
-		arg0:PlayFirework(var0)
-		setActive(arg0.btnPlayFirework, false)
+		arg0_3:PlayFirework(var0_7)
+		setActive(arg0_3.btnPlayFirework, false)
 	end)
-	arg0:InitStudents(ActivityConst.MINIGAME_CURLING, 3, 3)
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "qiyuanwu", function()
+	arg0_3:InitStudents(ActivityConst.MINIGAME_CURLING, 3, 3)
+	arg0_3:InitFacilityCross(arg0_3._map, arg0_3._upper, "qiyuanwu", function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 34)
 	end)
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "bingqiu", function()
+	arg0_3:InitFacilityCross(arg0_3._map, arg0_3._upper, "bingqiu", function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 33)
 	end)
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "yanhua", function()
+	arg0_3:InitFacilityCross(arg0_3._map, arg0_3._upper, "yanhua", function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 36)
 	end)
 
-	for iter0, iter1 in pairs(arg0.Buildings) do
-		arg0:InitFacilityCross(arg0._map, arg0._upper, iter1, function()
-			arg0:emit(BackHillMediatorTemplate.GO_SUBLAYER, Context.New({
+	for iter0_3, iter1_3 in pairs(arg0_3.Buildings) do
+		arg0_3:InitFacilityCross(arg0_3._map, arg0_3._upper, iter1_3, function()
+			arg0_3:emit(BackHillMediatorTemplate.GO_SUBLAYER, Context.New({
 				mediator = BuildingUpgradeMediator,
 				viewComponent = BuildingCafeUpgradeLayer,
 				data = {
-					buildingID = iter0
+					buildingID = iter0_3
 				}
 			}))
 		end)
 	end
 
-	arg0:BindItemSkinShop()
-	arg0:BindItemBuildShip()
-	arg0:RegisterDataResponse()
-	arg0:UpdateView()
+	arg0_3:BindItemSkinShop()
+	arg0_3:BindItemBuildShip()
+	arg0_3:RegisterDataResponse()
+	arg0_3:UpdateView()
 end
 
-function var0.RegisterDataResponse(arg0)
-	arg0.Respones = ResponsableTree.CreateShell({})
+function var0_0.RegisterDataResponse(arg0_12)
+	arg0_12.Respones = ResponsableTree.CreateShell({})
 
-	arg0.Respones:SetRawData("view", arg0)
+	arg0_12.Respones:SetRawData("view", arg0_12)
 
-	local var0 = _.values(arg0.Buildings)
+	local var0_12 = _.values(arg0_12.Buildings)
 
-	for iter0, iter1 in ipairs(var0) do
-		arg0.Respones:AddRawListener({
+	for iter0_12, iter1_12 in ipairs(var0_12) do
+		arg0_12.Respones:AddRawListener({
 			"view",
-			iter1
-		}, function(arg0, arg1)
-			if not arg1 then
+			iter1_12
+		}, function(arg0_13, arg1_13)
+			if not arg1_13 then
 				return
 			end
 
-			arg0.loader:GetSpriteQuiet("ui/NewyearFestival2022UI_atlas", iter1 .. arg1, arg0["map_" .. iter1], true)
+			arg0_13.loader:GetSpriteQuiet("ui/NewyearFestival2022UI_atlas", iter1_12 .. arg1_13, arg0_13["map_" .. iter1_12], true)
 
-			local var0 = arg0["upper_" .. iter1]
+			local var0_13 = arg0_13["upper_" .. iter1_12]
 
-			if not var0 or IsNil(var0:Find("level")) then
+			if not var0_13 or IsNil(var0_13:Find("level")) then
 				return
 			end
 
-			setText(var0:Find("level"), arg1)
+			setText(var0_13:Find("level"), arg1_13)
 		end)
 	end
 
-	local var1 = {
+	local var1_12 = {
 		"bingqiu",
 		"qiyuanwu",
 		"yanhua"
 	}
 
-	table.insertto(var1, var0)
+	table.insertto(var1_12, var0_12)
 
-	for iter2, iter3 in ipairs(var1) do
-		arg0.Respones:AddRawListener({
+	for iter2_12, iter3_12 in ipairs(var1_12) do
+		arg0_12.Respones:AddRawListener({
 			"view",
-			iter3 .. "Tip"
-		}, function(arg0, arg1)
-			local var0 = arg0["upper_" .. iter3]
+			iter3_12 .. "Tip"
+		}, function(arg0_14, arg1_14)
+			local var0_14 = arg0_14["upper_" .. iter3_12]
 
-			if not var0 or IsNil(var0:Find("tip")) then
+			if not var0_14 or IsNil(var0_14:Find("tip")) then
 				return
 			end
 
-			setActive(var0:Find("tip"), arg1)
+			setActive(var0_14:Find("tip"), arg1_14)
 		end)
 	end
 
-	arg0.Respones:AddRawListener({
+	arg0_12.Respones:AddRawListener({
 		"view",
 		"shrineCount"
-	}, function(arg0, arg1)
-		arg0.usableTxt.text = arg1
+	}, function(arg0_15, arg1_15)
+		arg0_15.usableTxt.text = arg1_15
 	end)
-	arg0.Respones:AddRawListener({
+	arg0_12.Respones:AddRawListener({
 		"view",
 		"materialCount"
-	}, function(arg0, arg1)
-		arg0.materialTxt.text = arg1
+	}, function(arg0_16, arg1_16)
+		arg0_16.materialTxt.text = arg1_16
 	end)
 end
 
-function var0.UpdateView(arg0)
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF)
+function var0_0.UpdateView(arg0_17)
+	local var0_17 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF)
 
-	for iter0, iter1 in pairs(arg0.Buildings) do
-		arg0.Respones[iter1] = var0.data1KeyValueList[2][iter0] or 1
-		arg0.Respones[iter1 .. "Tip"] = arg0:UpdateBuildingTip(var0, iter0)
+	for iter0_17, iter1_17 in pairs(arg0_17.Buildings) do
+		arg0_17.Respones[iter1_17] = var0_17.data1KeyValueList[2][iter0_17] or 1
+		arg0_17.Respones[iter1_17 .. "Tip"] = arg0_17:UpdateBuildingTip(var0_17, iter0_17)
 	end
 
 	;(function()
-		local var0 = var0.data1KeyValueList[2][17] or 1
-		local var1 = var0.data1KeyValueList[2][18] or 1
-		local var2 = pg.activity_event_building[17]
-		local var3 = var2.material[1][1][2]
-		local var4 = var0.data1KeyValueList[1][var3] or 0
-		local var5 = #var2.buff
+		local var0_18 = var0_17.data1KeyValueList[2][17] or 1
+		local var1_18 = var0_17.data1KeyValueList[2][18] or 1
+		local var2_18 = pg.activity_event_building[17]
+		local var3_18 = var2_18.material[1][1][2]
+		local var4_18 = var0_17.data1KeyValueList[1][var3_18] or 0
+		local var5_18 = #var2_18.buff
 
-		arg0.Respones.royalmaidTip = var0 < var5 and var4 >= var2.material[var0][1][3] and var0 <= var1
-		arg0.Respones.ironbloodmaidTip = var1 < var5 and var4 >= var2.material[var1][1][3] and var1 <= var0
+		arg0_17.Respones.royalmaidTip = var0_18 < var5_18 and var4_18 >= var2_18.material[var0_18][1][3] and var0_18 <= var1_18
+		arg0_17.Respones.ironbloodmaidTip = var1_18 < var5_18 and var4_18 >= var2_18.material[var1_18][1][3] and var1_18 <= var0_18
 	end)()
 
-	local var1 = next(var0.data1KeyValueList[1])
+	local var1_17 = next(var0_17.data1KeyValueList[1])
 
-	arg0.Respones.materialCount = var0.data1KeyValueList[1][var1] or 0
+	arg0_17.Respones.materialCount = var0_17.data1KeyValueList[1][var1_17] or 0
 
-	local var2 = getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_5)
-	local var3 = var2 and var2:GetRuntimeData("count") or 0
+	local var2_17 = getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_5)
+	local var3_17 = var2_17 and var2_17:GetRuntimeData("count") or 0
 
-	arg0.Respones.shrineCount = var3
-	arg0.Respones.bingqiuTip = var0.IsMiniActNeedTip(ActivityConst.MINIGAME_CURLING)
-	arg0.Respones.yanhuaTip = var0.IsMiniActNeedTip(ActivityConst.MINIGAME_FIREWORK_2022)
-	arg0.Respones.qiyuanwuTip = Shrine2022View.IsNeedShowTipWithoutActivityFinalReward()
+	arg0_17.Respones.shrineCount = var3_17
+	arg0_17.Respones.bingqiuTip = var0_0.IsMiniActNeedTip(ActivityConst.MINIGAME_CURLING)
+	arg0_17.Respones.yanhuaTip = var0_0.IsMiniActNeedTip(ActivityConst.MINIGAME_FIREWORK_2022)
+	arg0_17.Respones.qiyuanwuTip = Shrine2022View.IsNeedShowTipWithoutActivityFinalReward()
 
-	local var4 = getProxy(MiniGameProxy):GetMiniGameData(36):GetRuntimeData("elements")
-	local var5 = var4 and #var4 >= 4 and var4[4] == SummerFeastScene.GetCurrentDay()
+	local var4_17 = getProxy(MiniGameProxy):GetMiniGameData(36):GetRuntimeData("elements")
+	local var5_17 = var4_17 and #var4_17 >= 4 and var4_17[4] == SummerFeastScene.GetCurrentDay()
 
-	setActive(arg0.btnPlayFirework, var5 and not tobool(arg0.loader:GetRequestPackage("Firework")))
-	arg0:TryPlayStory()
+	setActive(arg0_17.btnPlayFirework, var5_17 and not tobool(arg0_17.loader:GetRequestPackage("Firework")))
+	arg0_17:TryPlayStory()
 end
 
-function var0.TryPlayStory(arg0)
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF)
-	local var1 = var0.data1KeyValueList[2][17] or 1
-	local var2 = var0.data1KeyValueList[2][18] or 1
-	local var3 = var0:getConfig("config_client").story
-	local var4 = pg.NewStoryMgr.GetInstance()
+function var0_0.TryPlayStory(arg0_19)
+	local var0_19 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF)
+	local var1_19 = var0_19.data1KeyValueList[2][17] or 1
+	local var2_19 = var0_19.data1KeyValueList[2][18] or 1
+	local var3_19 = var0_19:getConfig("config_client").story
+	local var4_19 = pg.NewStoryMgr.GetInstance()
 
-	table.Foreach(var3, function(arg0, arg1)
-		local var0 = false
-		local var1 = math.floor((arg0 - 1) / 3) + 2
+	table.Foreach(var3_19, function(arg0_20, arg1_20)
+		local var0_20 = false
+		local var1_20 = math.floor((arg0_20 - 1) / 3) + 2
 
-		if arg0 % 3 == 1 then
-			var1 = var1 - 1
-			var0 = var1 <= var1 and var1 <= var2
-		elseif arg0 % 3 == 2 then
-			var0 = var1 <= var2
-		elseif arg0 % 3 == 0 then
-			var0 = var1 <= var1
+		if arg0_20 % 3 == 1 then
+			var1_20 = var1_20 - 1
+			var0_20 = var1_20 <= var1_19 and var1_20 <= var2_19
+		elseif arg0_20 % 3 == 2 then
+			var0_20 = var1_20 <= var2_19
+		elseif arg0_20 % 3 == 0 then
+			var0_20 = var1_20 <= var1_19
 		end
 
-		if var0 then
-			var4:Play(arg1[1])
+		if var0_20 then
+			var4_19:Play(arg1_20[1])
 		end
 	end)
 end
 
-function var0.willExit(arg0)
-	arg0:clearStudents()
-	arg0:ClearEffectFirework()
-	var0.super.willExit(arg0)
+function var0_0.willExit(arg0_21)
+	arg0_21:clearStudents()
+	arg0_21:ClearEffectFirework()
+	var0_0.super.willExit(arg0_21)
 end
 
-function var0.PlayFirework(arg0, arg1)
-	arg1 = arg1 or {
+function var0_0.PlayFirework(arg0_22, arg1_22)
+	arg1_22 = arg1_22 or {
 		0,
 		0,
 		0
 	}
 
-	local var0 = UnityEngine.ParticleSystem.MinMaxGradient.New
+	local var0_22 = UnityEngine.ParticleSystem.MinMaxGradient.New
 
-	arg0.loader:GetPrefab("ui/firework", "", function(arg0)
-		local var0 = SummerFeastScene.Elements
+	arg0_22.loader:GetPrefab("ui/firework", "", function(arg0_23)
+		local var0_23 = SummerFeastScene.Elements
 
-		tf(arg0):Find("Fire"):GetComponent("ParticleSystem").main.startColor = var0(SummerFeastScene.TransformColor(var0[arg1[1]].color))
-		tf(arg0):Find("Fire/par_small"):GetComponent("ParticleSystem").main.startColor = var0(SummerFeastScene.TransformColor(var0[arg1[2]].color))
-		tf(arg0):Find("Fire/par_small/par_big"):GetComponent("ParticleSystem").main.startColor = var0(SummerFeastScene.TransformColor(var0[arg1[3]].color))
+		tf(arg0_23):Find("Fire"):GetComponent("ParticleSystem").main.startColor = var0_22(SummerFeastScene.TransformColor(var0_23[arg1_22[1]].color))
+		tf(arg0_23):Find("Fire/par_small"):GetComponent("ParticleSystem").main.startColor = var0_22(SummerFeastScene.TransformColor(var0_23[arg1_22[2]].color))
+		tf(arg0_23):Find("Fire/par_small/par_big"):GetComponent("ParticleSystem").main.startColor = var0_22(SummerFeastScene.TransformColor(var0_23[arg1_22[3]].color))
 
-		setParent(arg0, arg0._map)
+		setParent(arg0_23, arg0_22._map)
 
-		arg0.transform.localPosition = Vector2(663, 50)
-		arg0.transform.localScale = Vector3(0.7, 0.7, 0.7)
+		arg0_23.transform.localPosition = Vector2(663, 50)
+		arg0_23.transform.localScale = Vector3(0.7, 0.7, 0.7)
 
-		pg.ViewUtils.SetSortingOrder(arg0, -1)
-		arg0:PlaySE()
+		pg.ViewUtils.SetSortingOrder(arg0_23, -1)
+		arg0_22:PlaySE()
 	end, "Firework")
 
-	arg0.fireworkTimer = Timer.New(function()
-		arg0.loader:GetPrefab("ui/firework", "", function(arg0)
-			local var0 = SummerFeastScene.Elements
+	arg0_22.fireworkTimer = Timer.New(function()
+		arg0_22.loader:GetPrefab("ui/firework", "", function(arg0_25)
+			local var0_25 = SummerFeastScene.Elements
 
-			tf(arg0):Find("Fire"):GetComponent("ParticleSystem").main.startColor = var0(SummerFeastScene.TransformColor(var0[arg1[1]].color))
-			tf(arg0):Find("Fire/par_small"):GetComponent("ParticleSystem").main.startColor = var0(SummerFeastScene.TransformColor(var0[arg1[2]].color))
-			tf(arg0):Find("Fire/par_small/par_big"):GetComponent("ParticleSystem").main.startColor = var0(SummerFeastScene.TransformColor(var0[arg1[3]].color))
+			tf(arg0_25):Find("Fire"):GetComponent("ParticleSystem").main.startColor = var0_22(SummerFeastScene.TransformColor(var0_25[arg1_22[1]].color))
+			tf(arg0_25):Find("Fire/par_small"):GetComponent("ParticleSystem").main.startColor = var0_22(SummerFeastScene.TransformColor(var0_25[arg1_22[2]].color))
+			tf(arg0_25):Find("Fire/par_small/par_big"):GetComponent("ParticleSystem").main.startColor = var0_22(SummerFeastScene.TransformColor(var0_25[arg1_22[3]].color))
 
-			setParent(arg0, arg0._map)
+			setParent(arg0_25, arg0_22._map)
 
-			arg0.transform.localPosition = Vector2(123, 110)
-			arg0.transform.localScale = Vector3(1.2, 1.2, 1.2)
+			arg0_25.transform.localPosition = Vector2(123, 110)
+			arg0_25.transform.localScale = Vector3(1.2, 1.2, 1.2)
 		end, "Firework2")
 	end, 2)
 
-	arg0.fireworkTimer:Start()
+	arg0_22.fireworkTimer:Start()
 
-	arg0.fireworkTimer2 = Timer.New(function()
-		arg0.loader:GetPrefab("ui/firework", "", function(arg0)
-			local var0 = SummerFeastScene.Elements
+	arg0_22.fireworkTimer2 = Timer.New(function()
+		arg0_22.loader:GetPrefab("ui/firework", "", function(arg0_27)
+			local var0_27 = SummerFeastScene.Elements
 
-			tf(arg0):Find("Fire"):GetComponent("ParticleSystem").main.startColor = var0(SummerFeastScene.TransformColor(var0[arg1[1]].color))
-			tf(arg0):Find("Fire/par_small"):GetComponent("ParticleSystem").main.startColor = var0(SummerFeastScene.TransformColor(var0[arg1[2]].color))
-			tf(arg0):Find("Fire/par_small/par_big"):GetComponent("ParticleSystem").main.startColor = var0(SummerFeastScene.TransformColor(var0[arg1[3]].color))
+			tf(arg0_27):Find("Fire"):GetComponent("ParticleSystem").main.startColor = var0_22(SummerFeastScene.TransformColor(var0_27[arg1_22[1]].color))
+			tf(arg0_27):Find("Fire/par_small"):GetComponent("ParticleSystem").main.startColor = var0_22(SummerFeastScene.TransformColor(var0_27[arg1_22[2]].color))
+			tf(arg0_27):Find("Fire/par_small/par_big"):GetComponent("ParticleSystem").main.startColor = var0_22(SummerFeastScene.TransformColor(var0_27[arg1_22[3]].color))
 
-			setParent(arg0, arg0._map)
+			setParent(arg0_27, arg0_22._map)
 
-			arg0.transform.localPosition = Vector2(-465, -90)
+			arg0_27.transform.localPosition = Vector2(-465, -90)
 		end, "Firework3")
 	end, 3)
 
-	arg0.fireworkTimer2:Start()
+	arg0_22.fireworkTimer2:Start()
 end
 
-function var0.ClearEffectFirework(arg0)
-	arg0:StopSE()
-	arg0.loader:ClearRequest("Firework")
-	arg0.loader:ClearRequest("Firework2")
-	arg0.loader:ClearRequest("Firework3")
+function var0_0.ClearEffectFirework(arg0_28)
+	arg0_28:StopSE()
+	arg0_28.loader:ClearRequest("Firework")
+	arg0_28.loader:ClearRequest("Firework2")
+	arg0_28.loader:ClearRequest("Firework3")
 
-	if arg0.fireworkTimer then
-		arg0.fireworkTimer:Stop()
+	if arg0_28.fireworkTimer then
+		arg0_28.fireworkTimer:Stop()
 
-		arg0.fireworkTimer = nil
+		arg0_28.fireworkTimer = nil
 	end
 
-	if arg0.fireworkTimer2 then
-		arg0.fireworkTimer2:Stop()
+	if arg0_28.fireworkTimer2 then
+		arg0_28.fireworkTimer2:Stop()
 
-		arg0.fireworkTimer2 = nil
+		arg0_28.fireworkTimer2 = nil
 	end
 end
 
-function var0.PlaySE(arg0)
-	if arg0.SETimer then
+function var0_0.PlaySE(arg0_29)
+	if arg0_29.SETimer then
 		return
 	end
 
-	arg0.SECount = 10
-	arg0.SETimer = Timer.New(function()
-		arg0.SECount = arg0.SECount - 1
+	arg0_29.SECount = 10
+	arg0_29.SETimer = Timer.New(function()
+		arg0_29.SECount = arg0_29.SECount - 1
 
-		if arg0.SECount <= 0 then
-			arg0.SECount = math.random(5, 20)
+		if arg0_29.SECount <= 0 then
+			arg0_29.SECount = math.random(5, 20)
 
 			pg.CriMgr.GetInstance():PlaySE_V3("battle-firework")
 		end
 	end, 0.1, -1)
 
-	arg0.SETimer:Start()
+	arg0_29.SETimer:Start()
 end
 
-function var0.StopSE(arg0)
-	if arg0.SETimer then
+function var0_0.StopSE(arg0_31)
+	if arg0_31.SETimer then
 		pg.CriMgr.GetInstance():StopSEBattle_V3()
-		arg0.SETimer:Stop()
+		arg0_31.SETimer:Stop()
 
-		arg0.SETimer = nil
+		arg0_31.SETimer = nil
 	end
 end
 
-return var0
+return var0_0

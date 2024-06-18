@@ -1,65 +1,65 @@
 ﻿ChargeConst = {}
 
-local var0 = ChargeConst
+local var0_0 = ChargeConst
 
-function var0.getBuyCount(arg0, arg1)
-	if not arg0 then
+function var0_0.getBuyCount(arg0_1, arg1_1)
+	if not arg0_1 then
 		return 0
 	end
 
-	local var0 = arg0[arg1]
+	local var0_1 = arg0_1[arg1_1]
 
-	return var0 and var0.buyCount or 0
+	return var0_1 and var0_1.buyCount or 0
 end
 
-function var0.getGroupLimit(arg0, arg1)
-	if not arg0 then
+function var0_0.getGroupLimit(arg0_2, arg1_2)
+	if not arg0_2 then
 		return 0
 	end
 
-	for iter0, iter1 in ipairs(arg0) do
-		if iter1.shop_id == arg1 then
-			return iter1.pay_count
+	for iter0_2, iter1_2 in ipairs(arg0_2) do
+		if iter1_2.shop_id == arg1_2 then
+			return iter1_2.pay_count
 		end
 	end
 
 	return 0
 end
 
-function var0.getGoodsLimitInfo(arg0)
-	local var0
-	local var1
-	local var2
-	local var3 = pg.shop_template[arg0]
+function var0_0.getGoodsLimitInfo(arg0_3)
+	local var0_3
+	local var1_3
+	local var2_3
+	local var3_3 = pg.shop_template[arg0_3]
 
-	if var3 then
-		local var4 = var3.limit_args[1]
+	if var3_3 then
+		local var4_3 = var3_3.limit_args[1]
 
-		if type(var4) == "table" then
-			for iter0, iter1 in ipairs(var3.limit_args) do
-				local var5 = iter1[1]
+		if type(var4_3) == "table" then
+			for iter0_3, iter1_3 in ipairs(var3_3.limit_args) do
+				local var5_3 = iter1_3[1]
 
-				if var5 == "level" then
-					var0 = iter1[2]
-				elseif var5 == "count" then
-					var1 = iter1[2]
-					var2 = iter1[3]
+				if var5_3 == "level" then
+					var0_3 = iter1_3[2]
+				elseif var5_3 == "count" then
+					var1_3 = iter1_3[2]
+					var2_3 = iter1_3[3]
 				end
 			end
-		elseif type(var4) == "string" then
-			if var4 == "level" then
-				var0 = var3.limit_args[2]
-			elseif var4 == "count" then
-				var1 = var3.limit_args[2]
-				var2 = var3.limit_args[3]
+		elseif type(var4_3) == "string" then
+			if var4_3 == "level" then
+				var0_3 = var3_3.limit_args[2]
+			elseif var4_3 == "count" then
+				var1_3 = var3_3.limit_args[2]
+				var2_3 = var3_3.limit_args[3]
 			end
 		end
 	end
 
-	return var0, var1, var2
+	return var0_3, var1_3, var2_3
 end
 
-function var0.isNeedSetBirth()
+function var0_0.isNeedSetBirth()
 	if PLATFORM_CODE == PLATFORM_JP and pg.SdkMgr.GetInstance():GetIsPlatform() and not pg.SdkMgr.GetInstance():GetIsBirthSet() then
 		return true
 	end
@@ -67,4 +67,4 @@ function var0.isNeedSetBirth()
 	return false
 end
 
-return var0
+return var0_0

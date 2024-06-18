@@ -1,37 +1,37 @@
-﻿local var0 = class("AnniversaryIslandSpringTaskSubmitWindowMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("AnniversaryIslandSpringTaskSubmitWindowMediator", import("view.base.ContextMediator"))
 
-function var0.register(arg0)
-	arg0:bind(AnniversaryIslandSpringTask2023Mediator.SUBMIT_TASK, function(arg0)
-		arg0:sendNotification(AnniversaryIslandSpringTask2023Mediator.SUBMIT_TASK, arg0.contextData.task)
+function var0_0.register(arg0_1)
+	arg0_1:bind(AnniversaryIslandSpringTask2023Mediator.SUBMIT_TASK, function(arg0_2)
+		arg0_1:sendNotification(AnniversaryIslandSpringTask2023Mediator.SUBMIT_TASK, arg0_1.contextData.task)
 	end)
-	arg0:bind(WorkBenchItemDetailMediator.SHOW_DETAIL, function(arg0, arg1)
-		arg0:addSubLayers(Context.New({
+	arg0_1:bind(WorkBenchItemDetailMediator.SHOW_DETAIL, function(arg0_3, arg1_3)
+		arg0_1:addSubLayers(Context.New({
 			mediator = WorkBenchItemDetailMediator,
 			viewComponent = WorkBenchItemDetailLayer,
 			data = {
-				material = arg1
+				material = arg1_3
 			}
 		}))
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_4)
 	return {
 		GAME.SUBMIT_AVATAR_TASK_DONE
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_5, arg1_5)
+	local var0_5 = arg1_5:getName()
+	local var1_5 = arg1_5:getBody()
 
-	if var0 == GAME.SUBMIT_AVATAR_TASK_DONE then
-		arg0.viewComponent:closeView()
+	if var0_5 == GAME.SUBMIT_AVATAR_TASK_DONE then
+		arg0_5.viewComponent:closeView()
 	end
 end
 
-function var0.remove(arg0)
+function var0_0.remove(arg0_6)
 	return
 end
 
-return var0
+return var0_0

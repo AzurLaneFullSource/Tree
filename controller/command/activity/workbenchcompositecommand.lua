@@ -1,48 +1,48 @@
-﻿local var0 = class("WorkBenchCompositeCommand", pm.SimpleCommand)
+﻿local var0_0 = class("WorkBenchCompositeCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1.body
-	local var1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORKBENCH)
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1.body
+	local var1_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORKBENCH)
 
-	if not var1 or var1:isEnd() then
+	if not var1_1 or var1_1:isEnd() then
 		return
 	end
 
-	local var2 = var1.id
-	local var3 = var0.formulaId
-	local var4 = var0.repeats
-	local var5 = WorkBenchFormula.New({
-		configId = var3
+	local var2_1 = var1_1.id
+	local var3_1 = var0_1.formulaId
+	local var4_1 = var0_1.repeats
+	local var5_1 = WorkBenchFormula.New({
+		configId = var3_1
 	})
 
-	var5:BuildFromActivity()
+	var5_1:BuildFromActivity()
 
-	local var6 = var5:GetMaterials()
+	local var6_1 = var5_1:GetMaterials()
 
 	if not (function()
-		if not var5:IsUnlock() then
+		if not var5_1:IsUnlock() then
 			return
 		end
 
-		local var0 = var5:GetMaxLimit()
-		local var1 = var5:GetUsedCount()
+		local var0_2 = var5_1:GetMaxLimit()
+		local var1_2 = var5_1:GetUsedCount()
 
-		if var4 <= 0 then
+		if var4_1 <= 0 then
 			return
 		end
 
-		if var0 > 0 and var4 > var0 - var1 then
+		if var0_2 > 0 and var4_1 > var0_2 - var1_2 then
 			return
 		end
 
-		local var2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
+		local var2_2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
 
-		if not _.all(var6, function(arg0)
-			assert(arg0[1] > DROP_TYPE_USE_ACTIVITY_DROP)
+		if not _.all(var6_1, function(arg0_3)
+			assert(arg0_3[1] > DROP_TYPE_USE_ACTIVITY_DROP)
 
-			local var0 = arg0[2]
+			local var0_3 = arg0_3[2]
 
-			return arg0[3] * var4 <= var2:getVitemNumber(var0)
+			return arg0_3[3] * var4_1 <= var2_2:getVitemNumber(var0_3)
 		end) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("workbench_tips2"))
 
@@ -56,32 +56,32 @@ function var0.execute(arg0, arg1)
 
 	pg.ConnectionMgr.GetInstance():Send(11202, {
 		cmd = 1,
-		activity_id = var2,
-		arg1 = var3,
-		arg2 = var4,
+		activity_id = var2_1,
+		arg1 = var3_1,
+		arg2 = var4_1,
 		arg_list = {}
-	}, 11203, function(arg0)
-		if arg0.result == 0 then
-			local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
+	}, 11203, function(arg0_4)
+		if arg0_4.result == 0 then
+			local var0_4 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
 
-			_.each(var6, function(arg0)
-				local var0 = arg0[2]
-				local var1 = arg0[3] * var4
+			_.each(var6_1, function(arg0_5)
+				local var0_5 = arg0_5[2]
+				local var1_5 = arg0_5[3] * var4_1
 
-				var0:subVitemNumber(var0, var1)
+				var0_4:subVitemNumber(var0_5, var1_5)
 			end)
-			getProxy(ActivityProxy):updateActivity(var0)
+			getProxy(ActivityProxy):updateActivity(var0_4)
 
-			local var1 = PlayerConst.GetTranAwards(var0, arg0)
-			local var2 = getProxy(ActivityProxy):getActivityById(var2)
+			local var1_4 = PlayerConst.GetTranAwards(var0_1, arg0_4)
+			local var2_4 = getProxy(ActivityProxy):getActivityById(var2_1)
 
-			var2:AddFormulaUseCount(var3, var4)
-			getProxy(ActivityProxy):updateActivity(var2)
-			arg0:sendNotification(GAME.WORKBENCH_COMPOSITE_DONE, var1)
+			var2_4:AddFormulaUseCount(var3_1, var4_1)
+			getProxy(ActivityProxy):updateActivity(var2_4)
+			arg0_1:sendNotification(GAME.WORKBENCH_COMPOSITE_DONE, var1_4)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0_4.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

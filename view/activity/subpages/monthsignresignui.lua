@@ -1,79 +1,79 @@
-﻿local var0 = class("MonthSignReSignUI", import("...base.BaseSubView"))
+﻿local var0_0 = class("MonthSignReSignUI", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "MonthSignReSignUI"
 end
 
-function var0.OnInit(arg0)
-	arg0:InitUI()
-	setActive(arg0._tf, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+function var0_0.OnInit(arg0_2)
+	arg0_2:InitUI()
+	setActive(arg0_2._tf, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
 end
 
-function var0.InitUI(arg0)
-	arg0.destroyBonusList = arg0._tf:Find("frame/bg/scrollview/list")
-	arg0.itemTpl = arg0.destroyBonusList:Find("item_tpl")
+function var0_0.InitUI(arg0_3)
+	arg0_3.destroyBonusList = arg0_3._tf:Find("frame/bg/scrollview/list")
+	arg0_3.itemTpl = arg0_3.destroyBonusList:Find("item_tpl")
 
-	setText(arg0:findTF("frame/title_text/Text"), i18n("month_sign_resign"))
-	onButton(arg0, arg0:findTF("frame/top/btnBack"), function()
-		arg0:Destroy()
+	setText(arg0_3:findTF("frame/title_text/Text"), i18n("month_sign_resign"))
+	onButton(arg0_3, arg0_3:findTF("frame/top/btnBack"), function()
+		arg0_3:Destroy()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0:findTF("frame/actions/confirm_btn"), function()
-		arg0:Destroy()
+	onButton(arg0_3, arg0_3:findTF("frame/actions/confirm_btn"), function()
+		arg0_3:Destroy()
 	end, SFX_UI_EQUIPMENT_RESOLVE)
 end
 
-function var0.setAwardShow(arg0, arg1, arg2)
-	arg0.awards = arg1
-	arg0.callback = arg2
+function var0_0.setAwardShow(arg0_6, arg1_6, arg2_6)
+	arg0_6.awards = arg1_6
+	arg0_6.callback = arg2_6
 
-	arg0:displayAwards()
+	arg0_6:displayAwards()
 end
 
-function var0.OnDestroy(arg0)
-	arg0.selectedIds = nil
+function var0_0.OnDestroy(arg0_7)
+	arg0_7.selectedIds = nil
 
-	if arg0.callback then
-		arg0.callback()
+	if arg0_7.callback then
+		arg0_7.callback()
 
-		arg0.callback = nil
+		arg0_7.callback = nil
 	end
 
-	arg0.awards = nil
+	arg0_7.awards = nil
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, arg0._parentTf)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_7._tf, arg0_7._parentTf)
 end
 
-function var0.displayAwards(arg0)
-	assert(#arg0.awards ~= 0, "items数量不能为0")
-	removeAllChildren(arg0.destroyBonusList)
+function var0_0.displayAwards(arg0_8)
+	assert(#arg0_8.awards ~= 0, "items数量不能为0")
+	removeAllChildren(arg0_8.destroyBonusList)
 
-	for iter0 = 1, #arg0.awards do
-		local var0 = cloneTplTo(arg0.itemTpl, arg0.destroyBonusList):Find("bg")
-		local var1 = arg0.awards[iter0]
+	for iter0_8 = 1, #arg0_8.awards do
+		local var0_8 = cloneTplTo(arg0_8.itemTpl, arg0_8.destroyBonusList):Find("bg")
+		local var1_8 = arg0_8.awards[iter0_8]
 
-		updateDrop(tf(var0), var1, {
+		updateDrop(tf(var0_8), var1_8, {
 			fromAwardLayer = true
 		})
-		setActive(findTF(var0, "bonus"), var1.riraty)
+		setActive(findTF(var0_8, "bonus"), var1_8.riraty)
 
-		local var2 = findTF(var0, "name")
-		local var3 = findTF(var0, "name_mask")
+		local var2_8 = findTF(var0_8, "name")
+		local var3_8 = findTF(var0_8, "name_mask")
 
-		setActive(var2, false)
-		setActive(var3, true)
+		setActive(var2_8, false)
+		setActive(var3_8, true)
 
-		local var4 = var1.name or getText(var2)
+		local var4_8 = var1_8.name or getText(var2_8)
 
-		setScrollText(findTF(var0, "name_mask/name"), var4)
-		onButton(arg0, var0, function()
-			if arg0.inAniming then
+		setScrollText(findTF(var0_8, "name_mask/name"), var4_8)
+		onButton(arg0_8, var0_8, function()
+			if arg0_8.inAniming then
 				return
 			end
 
-			arg0:emit(BaseUI.ON_DROP, var1)
+			arg0_8:emit(BaseUI.ON_DROP, var1_8)
 		end, SFX_PANEL)
 	end
 end
 
-return var0
+return var0_0

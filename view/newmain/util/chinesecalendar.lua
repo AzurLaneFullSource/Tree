@@ -1,7 +1,7 @@
-﻿local var0 = class("ChineseCalendar")
-local var1 = 1901
-local var2 = 199
-local var3 = {
+﻿local var0_0 = class("ChineseCalendar")
+local var1_0 = 1901
+local var2_0 = 199
+local var3_0 = {
 	306771,
 	677704,
 	5580477,
@@ -203,8 +203,8 @@ local var3 = {
 	2986677
 }
 
-function var0.DayOfSolarYear(arg0, arg1, arg2)
-	local var0, var1 = {
+function var0_0.DayOfSolarYear(arg0_1, arg1_1, arg2_1)
+	local var0_1, var1_1 = {
 		1,
 		32,
 		60,
@@ -232,129 +232,129 @@ function var0.DayOfSolarYear(arg0, arg1, arg2)
 		336
 	}
 
-	if arg0 % 4 == 0 then
-		if arg0 % 100 ~= 0 then
-			var0 = var1
+	if arg0_1 % 4 == 0 then
+		if arg0_1 % 100 ~= 0 then
+			var0_1 = var1_1
 		end
 
-		if arg0 % 400 == 0 then
-			var0 = var1
+		if arg0_1 % 400 == 0 then
+			var0_1 = var1_1
 		end
 	end
 
-	return var0[arg1] + arg2 - 1
+	return var0_1[arg1_1] + arg2_1 - 1
 end
 
-function var0.CalDate(arg0, arg1, arg2)
-	local var0 = {
+function var0_0.CalDate(arg0_2, arg1_2, arg2_2)
+	local var0_2 = {
 		day = 0,
 		month = 0,
 		leap = false,
-		year = arg0
+		year = arg0_2
 	}
 
-	if arg0 <= var1 or arg0 > var1 + var2 - 1 then
-		return var0
+	if arg0_2 <= var1_0 or arg0_2 > var1_0 + var2_0 - 1 then
+		return var0_2
 	end
 
-	local var1 = arg0 - var1 + 1
-	local var2 = bit.rshift(bit.band(var3[var1], 96), 5)
-	local var3 = bit.band(var3[var1], 31)
-	local var4 = var0.DayOfSolarYear(arg0, arg1, arg2)
-	local var5 = var4 - var0.DayOfSolarYear(arg0, var2, var3) + 1
+	local var1_2 = arg0_2 - var1_0 + 1
+	local var2_2 = bit.rshift(bit.band(var3_0[var1_2], 96), 5)
+	local var3_2 = bit.band(var3_0[var1_2], 31)
+	local var4_2 = var0_0.DayOfSolarYear(arg0_2, arg1_2, arg2_2)
+	local var5_2 = var4_2 - var0_0.DayOfSolarYear(arg0_2, var2_2, var3_2) + 1
 
-	if var5 <= 0 then
-		var1 = var1 - 1
-		var0.year = var0.year - 1
+	if var5_2 <= 0 then
+		var1_2 = var1_2 - 1
+		var0_2.year = var0_2.year - 1
 
-		if var1 <= 0 then
-			return var0
+		if var1_2 <= 0 then
+			return var0_2
 		end
 
-		local var6 = bit.rshift(bit.band(var3[var1], 96), 5)
-		local var7 = bit.band(var3[var1], 31)
-		local var8 = var0.DayOfSolarYear(var0.year, var6, var7)
+		local var6_2 = bit.rshift(bit.band(var3_0[var1_2], 96), 5)
+		local var7_2 = bit.band(var3_0[var1_2], 31)
+		local var8_2 = var0_0.DayOfSolarYear(var0_2.year, var6_2, var7_2)
 
-		var5 = var4 + var0.DayOfSolarYear(var0.year, 12, 31) - var8 + 1
+		var5_2 = var4_2 + var0_0.DayOfSolarYear(var0_2.year, 12, 31) - var8_2 + 1
 	end
 
-	local var9 = 1
+	local var9_2 = 1
 
-	while var9 <= 13 do
-		local var10 = 29
+	while var9_2 <= 13 do
+		local var10_2 = 29
 
-		if bit.band(bit.rshift(var3[var1], 6 + var9), 1) == 1 then
-			var10 = 30
+		if bit.band(bit.rshift(var3_0[var1_2], 6 + var9_2), 1) == 1 then
+			var10_2 = 30
 		end
 
-		if var5 <= var10 then
+		if var5_2 <= var10_2 then
 			break
 		else
-			var5 = var5 - var10
+			var5_2 = var5_2 - var10_2
 		end
 
-		var9 = var9 + 1
+		var9_2 = var9_2 + 1
 	end
 
-	var0.day = var5
+	var0_2.day = var5_2
 
-	local var11 = bit.band(bit.rshift(var3[var1], 20), 15)
+	local var11_2 = bit.band(bit.rshift(var3_0[var1_2], 20), 15)
 
-	if var11 > 0 and var11 < var9 then
-		var9 = var9 - 1
+	if var11_2 > 0 and var11_2 < var9_2 then
+		var9_2 = var9_2 - 1
 
-		if var9 == var11 then
-			var0.leap = true
+		if var9_2 == var11_2 then
+			var0_2.leap = true
 		end
 	end
 
-	assert(var11 <= 12)
+	assert(var11_2 <= 12)
 
-	var0.month = var9
+	var0_2.month = var9_2
 
-	return var0
+	return var0_2
 end
 
-function var0.IsNewYear(arg0, arg1, arg2)
-	return arg1 == 1 and arg2 == 1
+function var0_0.IsNewYear(arg0_3, arg1_3, arg2_3)
+	return arg1_3 == 1 and arg2_3 == 1
 end
 
-function var0.IsLunarNewYear(arg0, arg1, arg2)
-	local var0 = var0.CalDate(arg0, arg1, arg2 + 1)
+function var0_0.IsLunarNewYear(arg0_4, arg1_4, arg2_4)
+	local var0_4 = var0_0.CalDate(arg0_4, arg1_4, arg2_4 + 1)
 
-	return var0.month == 1 and var0.day == 1
+	return var0_4.month == 1 and var0_4.day == 1
 end
 
-function var0.IsValentineDay(arg0, arg1, arg2)
-	return arg1 == 2 and arg2 == 14
+function var0_0.IsValentineDay(arg0_5, arg1_5, arg2_5)
+	return arg1_5 == 2 and arg2_5 == 14
 end
 
-function var0.IsMidAutumnFestival(arg0, arg1, arg2)
-	local var0 = var0.CalDate(arg0, arg1, arg2)
+function var0_0.IsMidAutumnFestival(arg0_6, arg1_6, arg2_6)
+	local var0_6 = var0_0.CalDate(arg0_6, arg1_6, arg2_6)
 
-	return var0.month == 8 and var0.day == 15
+	return var0_6.month == 8 and var0_6.day == 15
 end
 
-function var0.AllHallowsDay(arg0, arg1, arg2)
-	return arg1 == 10 and arg2 == 31
+function var0_0.AllHallowsDay(arg0_7, arg1_7, arg2_7)
+	return arg1_7 == 10 and arg2_7 == 31
 end
 
-function var0.IsChristmas(arg0, arg1, arg2)
-	return arg1 == 12 and arg2 == 25
+function var0_0.IsChristmas(arg0_8, arg1_8, arg2_8)
+	return arg1_8 == 12 and arg2_8 == 25
 end
 
-function var0.GetCurrYearMonthDay(arg0)
-	local var0 = pg.TimeMgr.GetInstance():STimeDescC(arg0, "%Y.%m.%d")
-	local var1 = string.split(var0, ".")
-	local var2 = tonumber(var1[1])
-	local var3 = tonumber(var1[2])
-	local var4 = tonumber(var1[3])
+function var0_0.GetCurrYearMonthDay(arg0_9)
+	local var0_9 = pg.TimeMgr.GetInstance():STimeDescC(arg0_9, "%Y.%m.%d")
+	local var1_9 = string.split(var0_9, ".")
+	local var2_9 = tonumber(var1_9[1])
+	local var3_9 = tonumber(var1_9[2])
+	local var4_9 = tonumber(var1_9[3])
 
-	return var2, var3, var4
+	return var2_9, var3_9, var4_9
 end
 
-function var0.AnySpecialDay(arg0, arg1, arg2)
-	return var0.IsNewYear(arg0, arg1, arg2) or var0.IsLunarNewYear(arg0, arg1, arg2) or var0.IsValentineDay(arg0, arg1, arg2) or var0.IsMidAutumnFestival(arg0, arg1, arg2) or var0.AllHallowsDay(arg0, arg1, arg2) or var0.IsChristmas(arg0, arg1, arg2)
+function var0_0.AnySpecialDay(arg0_10, arg1_10, arg2_10)
+	return var0_0.IsNewYear(arg0_10, arg1_10, arg2_10) or var0_0.IsLunarNewYear(arg0_10, arg1_10, arg2_10) or var0_0.IsValentineDay(arg0_10, arg1_10, arg2_10) or var0_0.IsMidAutumnFestival(arg0_10, arg1_10, arg2_10) or var0_0.AllHallowsDay(arg0_10, arg1_10, arg2_10) or var0_0.IsChristmas(arg0_10, arg1_10, arg2_10)
 end
 
-return var0
+return var0_0

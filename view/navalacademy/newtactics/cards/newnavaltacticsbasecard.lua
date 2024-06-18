@@ -1,70 +1,70 @@
-﻿local var0 = class("NewNavalTacticsBaseCard")
+﻿local var0_0 = class("NewNavalTacticsBaseCard")
 
-function var0.Ctor(arg0, arg1, arg2)
-	pg.DelegateInfo.New(arg0)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	pg.DelegateInfo.New(arg0_1)
 
-	arg0.event = arg2
-	arg0._tf = arg1
-	arg0._go = arg1.gameObject
+	arg0_1.event = arg2_1
+	arg0_1._tf = arg1_1
+	arg0_1._go = arg1_1.gameObject
 
-	arg0:OnInit()
+	arg0_1:OnInit()
 end
 
-function var0.emit(arg0, ...)
-	if arg0.event then
-		arg0.event:emit(...)
+function var0_0.emit(arg0_2, ...)
+	if arg0_2.event then
+		arg0_2.event:emit(...)
 	end
 end
 
-function var0.UpdatePosition(arg0, arg1)
-	local var0 = -493
-	local var1 = 0
-	local var2 = arg0._tf.sizeDelta.x
-	local var3 = arg0._tf.anchoredPosition3D
-	local var4 = var0 + (arg1 - 1) * (var2 + var1)
+function var0_0.UpdatePosition(arg0_3, arg1_3)
+	local var0_3 = -493
+	local var1_3 = 0
+	local var2_3 = arg0_3._tf.sizeDelta.x
+	local var3_3 = arg0_3._tf.anchoredPosition3D
+	local var4_3 = var0_3 + (arg1_3 - 1) * (var2_3 + var1_3)
 
-	arg0._tf.anchoredPosition3D = Vector3(var4, var3.y, 0)
+	arg0_3._tf.anchoredPosition3D = Vector3(var4_3, var3_3.y, 0)
 end
 
-function var0.Update(arg0, arg1, arg2)
-	arg0.index = arg1
+function var0_0.Update(arg0_4, arg1_4, arg2_4)
+	arg0_4.index = arg1_4
 
-	arg0:UpdatePosition(arg1)
-	arg0:OnUpdate(arg2)
+	arg0_4:UpdatePosition(arg1_4)
+	arg0_4:OnUpdate(arg2_4)
 end
 
-function var0.Enable(arg0)
-	setActive(arg0._go, true)
+function var0_0.Enable(arg0_5)
+	setActive(arg0_5._go, true)
 end
 
-function var0.Disable(arg0)
-	setActive(arg0._go, false)
+function var0_0.Disable(arg0_6)
+	setActive(arg0_6._go, false)
 end
 
-function var0.Dispose(arg0)
-	pg.DelegateInfo.Dispose(arg0)
-	Object.Destroy(arg0._go)
-	arg0:OnDispose()
+function var0_0.Dispose(arg0_7)
+	pg.DelegateInfo.Dispose(arg0_7)
+	Object.Destroy(arg0_7._go)
+	arg0_7:OnDispose()
 end
 
-function var0.Clone(arg0)
-	local var0 = Object.Instantiate(arg0._go, arg0._tf.parent)
+function var0_0.Clone(arg0_8)
+	local var0_8 = Object.Instantiate(arg0_8._go, arg0_8._tf.parent)
 
-	assert(var0)
+	assert(var0_8)
 
-	return _G[arg0.__cname].New(var0.transform, arg0.event)
+	return _G[arg0_8.__cname].New(var0_8.transform, arg0_8.event)
 end
 
-function var0.OnInit(arg0)
+function var0_0.OnInit(arg0_9)
 	return
 end
 
-function var0.OnUpdate(arg0, arg1)
+function var0_0.OnUpdate(arg0_10, arg1_10)
 	return
 end
 
-function var0.OnDispose(arg0)
+function var0_0.OnDispose(arg0_11)
 	return
 end
 
-return var0
+return var0_0

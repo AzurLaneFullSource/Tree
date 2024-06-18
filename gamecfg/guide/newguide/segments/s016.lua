@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Head back to the main screen."
 }
 
@@ -12,7 +12,7 @@ return {
 				mode = 2,
 				posY = 223.26,
 				posX = -136.21,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/blur_panel/adapt/top/back_btn",

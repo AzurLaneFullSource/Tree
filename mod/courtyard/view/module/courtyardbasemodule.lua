@@ -1,104 +1,104 @@
-﻿local var0 = class("CourtYardBaseModule")
-local var1 = 0
-local var2 = 1
-local var3 = 2
+﻿local var0_0 = class("CourtYardBaseModule")
+local var1_0 = 0
+local var2_0 = 1
+local var3_0 = 2
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0.state = var1
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.state = var1_0
 
-	pg.DelegateInfo.New(arg0)
+	pg.DelegateInfo.New(arg0_1)
 
-	arg0._go = arg2
-	arg0._tf = arg2.transform
-	arg0.data = arg1
-	arg0.callbacks = {}
+	arg0_1._go = arg2_1
+	arg0_1._tf = arg2_1.transform
+	arg0_1.data = arg1_1
+	arg0_1.callbacks = {}
 
-	arg0:Init()
+	arg0_1:Init()
 end
 
-function var0.Init(arg0)
-	if arg0.state == var1 then
-		arg0.state = var2
+function var0_0.Init(arg0_2)
+	if arg0_2.state == var1_0 then
+		arg0_2.state = var2_0
 
-		arg0:OnInit()
-		arg0:AddListeners()
+		arg0_2:OnInit()
+		arg0_2:AddListeners()
 	end
 end
 
-function var0.IsInit(arg0)
-	return arg0.state == var2
+function var0_0.IsInit(arg0_3)
+	return arg0_3.state == var2_0
 end
 
-function var0.AddListener(arg0, arg1, arg2)
-	local function var0(arg0, arg1, ...)
-		arg2(arg0, ...)
+function var0_0.AddListener(arg0_4, arg1_4, arg2_4)
+	local function var0_4(arg0_5, arg1_5, ...)
+		arg2_4(arg0_4, ...)
 	end
 
-	arg0.callbacks[arg2] = var0
+	arg0_4.callbacks[arg2_4] = var0_4
 
-	arg0.data:AddListener(arg1, var0)
+	arg0_4.data:AddListener(arg1_4, var0_4)
 end
 
-function var0.RemoveListener(arg0, arg1, arg2)
-	local var0 = arg0.callbacks[arg2]
+function var0_0.RemoveListener(arg0_6, arg1_6, arg2_6)
+	local var0_6 = arg0_6.callbacks[arg2_6]
 
-	if var0 then
-		arg0.data:RemoveListener(arg1, var0)
+	if var0_6 then
+		arg0_6.data:RemoveListener(arg1_6, var0_6)
 
-		arg0.callbacks[var0] = nil
+		arg0_6.callbacks[var0_6] = nil
 	end
 end
 
-function var0.GetController(arg0)
-	return arg0.data:GetHost()
+function var0_0.GetController(arg0_7)
+	return arg0_7.data:GetHost()
 end
 
-function var0.GetView(arg0)
-	return arg0:GetController():GetBridge():GetView()
+function var0_0.GetView(arg0_8)
+	return arg0_8:GetController():GetBridge():GetView()
 end
 
-function var0.Emit(arg0, arg1, ...)
-	arg0:GetController():Receive(arg1, ...)
+function var0_0.Emit(arg0_9, arg1_9, ...)
+	arg0_9:GetController():Receive(arg1_9, ...)
 end
 
-function var0.Dispose(arg0)
-	pg.DelegateInfo.Dispose(arg0)
+function var0_0.Dispose(arg0_10)
+	pg.DelegateInfo.Dispose(arg0_10)
 
-	if arg0.state == var2 then
-		arg0:RemoveListeners()
-		arg0:OnDispose()
+	if arg0_10.state == var2_0 then
+		arg0_10:RemoveListeners()
+		arg0_10:OnDispose()
 	end
 
-	arg0.state = var3
+	arg0_10.state = var3_0
 
-	arg0:OnDestroy()
+	arg0_10:OnDestroy()
 
-	arg0._go = nil
-	arg0.callbacks = nil
+	arg0_10._go = nil
+	arg0_10.callbacks = nil
 end
 
-function var0.IsExit(arg0)
-	return arg0.state == var3 or IsNil(arg0._go) or IsNil(arg0._tf)
+function var0_0.IsExit(arg0_11)
+	return arg0_11.state == var3_0 or IsNil(arg0_11._go) or IsNil(arg0_11._tf)
 end
 
-function var0.OnInit(arg0)
+function var0_0.OnInit(arg0_12)
 	return
 end
 
-function var0.AddListeners(arg0)
+function var0_0.AddListeners(arg0_13)
 	return
 end
 
-function var0.RemoveListeners(arg0)
+function var0_0.RemoveListeners(arg0_14)
 	return
 end
 
-function var0.OnDispose(arg0)
+function var0_0.OnDispose(arg0_15)
 	return
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_16)
 	return
 end
 
-return var0
+return var0_0

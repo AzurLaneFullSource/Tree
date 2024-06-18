@@ -1,137 +1,137 @@
-﻿local var0 = class("SailBoatItemControl")
-local var1
+﻿local var0_0 = class("SailBoatItemControl")
+local var1_0
 
-function var0.Ctor(arg0, arg1, arg2)
-	var1 = SailBoatGameVo
-	arg0._tf = arg1
-	arg0._event = arg2
-	arg0._items = {}
-	arg0._itemsPool = {}
-	arg0._content = findTF(arg0._tf, "scene/content")
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var1_0 = SailBoatGameVo
+	arg0_1._tf = arg1_1
+	arg0_1._event = arg2_1
+	arg0_1._items = {}
+	arg0_1._itemsPool = {}
+	arg0_1._content = findTF(arg0_1._tf, "scene/content")
 end
 
-function var0.start(arg0)
-	arg0:clear()
+function var0_0.start(arg0_2)
+	arg0_2:clear()
 
-	arg0._rules = {}
+	arg0_2._rules = {}
 
-	local var0 = var1.GetRoundData().item_rule
+	local var0_2 = var1_0.GetRoundData().item_rule
 
-	for iter0 = 1, #var0 do
-		local var1 = SailBoatGameConst.item_rule[var0[iter0]]
+	for iter0_2 = 1, #var0_2 do
+		local var1_2 = SailBoatGameConst.item_rule[var0_2[iter0_2]]
 
-		table.insert(arg0._rules, {
+		table.insert(arg0_2._rules, {
 			time = 0,
-			data = var1
+			data = var1_2
 		})
 	end
 
-	var1.SetGameItems(arg0._items)
+	var1_0.SetGameItems(arg0_2._items)
 end
 
-function var0.step(arg0, arg1)
-	local var0 = var1.gameTime
+function var0_0.step(arg0_3, arg1_3)
+	local var0_3 = var1_0.gameTime
 
-	for iter0 = 1, #arg0._rules do
-		local var1 = arg0._rules[iter0]
-		local var2 = var1.data.create_time
+	for iter0_3 = 1, #arg0_3._rules do
+		local var1_3 = arg0_3._rules[iter0_3]
+		local var2_3 = var1_3.data.create_time
 
-		if var0 > var2[1] and var0 < var2[2] and var1.time and var1.time >= 0 then
-			var1.time = var1.time - arg1
+		if var0_3 > var2_3[1] and var0_3 < var2_3[2] and var1_3.time and var1_3.time >= 0 then
+			var1_3.time = var1_3.time - arg1_3
 
-			if var1.time <= 0 then
-				var1.time = math.random(var1.data.time[1], var1.data.time[2])
+			if var1_3.time <= 0 then
+				var1_3.time = math.random(var1_3.data.time[1], var1_3.data.time[2])
 
-				arg0:applyRule(var1)
+				arg0_3:applyRule(var1_3)
 			end
 		end
 	end
 
-	for iter1 = #arg0._items, 1, -1 do
-		local var3 = arg0._items[iter1]
+	for iter1_3 = #arg0_3._items, 1, -1 do
+		local var3_3 = arg0_3._items[iter1_3]
 
-		var3:step(arg1)
+		var3_3:step(arg1_3)
 
-		if var3:getRemoveFlag() then
-			table.remove(arg0._items, iter1)
-			arg0:returnItem(var3)
+		if var3_3:getRemoveFlag() then
+			table.remove(arg0_3._items, iter1_3)
+			arg0_3:returnItem(var3_3)
 		end
 	end
 
-	for iter2 = #arg0._rules, 1, -1 do
-		local var4 = arg0._rules[iter2].data
+	for iter2_3 = #arg0_3._rules, 1, -1 do
+		local var4_3 = arg0_3._rules[iter2_3].data
 
-		if var1.gameTime <= var4.create_time[1] then
-			table.remove(arg0._rules, iter2)
+		if var1_0.gameTime <= var4_3.create_time[1] then
+			table.remove(arg0_3._rules, iter2_3)
 		end
 	end
 end
 
-function var0.dispose(arg0)
+function var0_0.dispose(arg0_4)
 	return
 end
 
-function var0.applyRule(arg0, arg1)
-	local var0 = arg1.data
-	local var1 = var0.items
-	local var2 = var0.screen_pos_x
-	local var3 = var0.screen_pos_y
-	local var4 = var1[math.random(1, #var1)]
-	local var5 = var1.GetRangePos(var2, var3)
+function var0_0.applyRule(arg0_5, arg1_5)
+	local var0_5 = arg1_5.data
+	local var1_5 = var0_5.items
+	local var2_5 = var0_5.screen_pos_x
+	local var3_5 = var0_5.screen_pos_y
+	local var4_5 = var1_5[math.random(1, #var1_5)]
+	local var5_5 = var1_0.GetRangePos(var2_5, var3_5)
 
-	if var5 then
-		local var6 = arg0:getOrCreateItem(var4, var5)
+	if var5_5 then
+		local var6_5 = arg0_5:getOrCreateItem(var4_5, var5_5)
 
-		table.insert(arg0._items, var6)
+		table.insert(arg0_5._items, var6_5)
 	end
 end
 
-function var0.getOrCreateItem(arg0, arg1, arg2)
-	local var0
+function var0_0.getOrCreateItem(arg0_6, arg1_6, arg2_6)
+	local var0_6
 
-	if #arg0._itemsPool > 0 then
-		for iter0 = 1, #arg0._itemsPool do
-			if arg0._itemsPool[iter0]:getId() == arg1 then
-				var0 = table.remove(arg0._itemsPool, 1)
+	if #arg0_6._itemsPool > 0 then
+		for iter0_6 = 1, #arg0_6._itemsPool do
+			if arg0_6._itemsPool[iter0_6]:getId() == arg1_6 then
+				var0_6 = table.remove(arg0_6._itemsPool, 1)
 
 				break
 			end
 		end
 	end
 
-	if not var0 then
-		local var1 = SailBoatGameConst.game_item[arg1]
-		local var2 = var1.GetGameItemTf(var1.tpl)
+	if not var0_6 then
+		local var1_6 = SailBoatGameConst.game_item[arg1_6]
+		local var2_6 = var1_0.GetGameItemTf(var1_6.tpl)
 
-		var0 = SailBoatItem.New(var2, arg0._event)
+		var0_6 = SailBoatItem.New(var2_6, arg0_6._event)
 
-		var0:setData(var1)
-		var0:setContent(arg0._content)
+		var0_6:setData(var1_6)
+		var0_6:setContent(arg0_6._content)
 	end
 
-	var0:start()
+	var0_6:start()
 
-	if arg2 then
-		var0:setPosition(arg2)
+	if arg2_6 then
+		var0_6:setPosition(arg2_6)
 	end
 
-	return var0
+	return var0_6
 end
 
-function var0.returnItem(arg0, arg1)
-	arg1:clear()
-	table.insert(arg0._itemsPool, arg1)
+function var0_0.returnItem(arg0_7, arg1_7)
+	arg1_7:clear()
+	table.insert(arg0_7._itemsPool, arg1_7)
 end
 
-function var0.clear(arg0)
-	for iter0 = #arg0._items, 1, -1 do
-		local var0 = table.remove(arg0._items, iter0)
+function var0_0.clear(arg0_8)
+	for iter0_8 = #arg0_8._items, 1, -1 do
+		local var0_8 = table.remove(arg0_8._items, iter0_8)
 
-		var0:clear()
-		table.insert(arg0._itemsPool, var0)
+		var0_8:clear()
+		table.insert(arg0_8._itemsPool, var0_8)
 	end
 
-	arg0._rules = {}
+	arg0_8._rules = {}
 end
 
-return var0
+return var0_0

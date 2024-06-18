@@ -1,386 +1,386 @@
-﻿local var0 = class("ShipFashionView", import("...base.BaseSubView"))
+﻿local var0_0 = class("ShipFashionView", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ShipFashionView"
 end
 
-function var0.OnInit(arg0)
-	arg0:InitFashion()
+function var0_0.OnInit(arg0_2)
+	arg0_2:InitFashion()
 end
 
-function var0.InitFashion(arg0)
-	arg0.mainPanel = arg0._parentTf.parent
-	arg0.stylePanel = arg0._tf
-	arg0.styleScroll = arg0:findTF("style_scroll", arg0.stylePanel)
-	arg0.styleContainer = arg0:findTF("view_port", arg0.styleScroll)
-	arg0.styleCard = arg0._tf:GetComponent(typeof(ItemList)).prefabItem[0]
-	arg0.hideObjToggleTF = findTF(arg0._tf, "btns/hideObjToggle")
+function var0_0.InitFashion(arg0_3)
+	arg0_3.mainPanel = arg0_3._parentTf.parent
+	arg0_3.stylePanel = arg0_3._tf
+	arg0_3.styleScroll = arg0_3:findTF("style_scroll", arg0_3.stylePanel)
+	arg0_3.styleContainer = arg0_3:findTF("view_port", arg0_3.styleScroll)
+	arg0_3.styleCard = arg0_3._tf:GetComponent(typeof(ItemList)).prefabItem[0]
+	arg0_3.hideObjToggleTF = findTF(arg0_3._tf, "btns/hideObjToggle")
 
-	setActive(arg0.hideObjToggleTF, false)
+	setActive(arg0_3.hideObjToggleTF, false)
 
-	arg0.hideObjToggle = GetComponent(arg0.hideObjToggleTF, typeof(Toggle))
+	arg0_3.hideObjToggle = GetComponent(arg0_3.hideObjToggleTF, typeof(Toggle))
 
-	setText(findTF(arg0.hideObjToggleTF, "Label"), i18n("paint_hide_other_obj_tip"))
+	setText(findTF(arg0_3.hideObjToggleTF, "Label"), i18n("paint_hide_other_obj_tip"))
 
-	arg0.shareBtn = findTF(arg0._tf, "share_btn")
+	arg0_3.shareBtn = findTF(arg0_3._tf, "share_btn")
 
-	setActive(arg0.stylePanel, true)
-	setActive(arg0.styleCard, false)
+	setActive(arg0_3.stylePanel, true)
+	setActive(arg0_3.styleCard, false)
 
-	arg0.fashionSkins = {}
-	arg0.fashionCellMap = {}
-	arg0.fashionGroup = 0
-	arg0.fashionSkinId = 0
-	arg0.onSelected = false
-	arg0.isShareSkinFlag = false
+	arg0_3.fashionSkins = {}
+	arg0_3.fashionCellMap = {}
+	arg0_3.fashionGroup = 0
+	arg0_3.fashionSkinId = 0
+	arg0_3.onSelected = false
+	arg0_3.isShareSkinFlag = false
 
-	arg0:RegisterShareToggle()
-	arg0:bind(ShipMainMediator.ON_NEXTSHIP_PREPARE, function(arg0, arg1)
-		if arg0.isShareSkinFlag and arg1 and #arg0:GetShareSkins(arg1) <= 0 then
-			arg0.isShareSkinFlag = false
+	arg0_3:RegisterShareToggle()
+	arg0_3:bind(ShipMainMediator.ON_NEXTSHIP_PREPARE, function(arg0_4, arg1_4)
+		if arg0_3.isShareSkinFlag and arg1_4 and #arg0_3:GetShareSkins(arg1_4) <= 0 then
+			arg0_3.isShareSkinFlag = false
 		end
 	end)
 end
 
-function var0.SetShareData(arg0, arg1)
-	arg0.shareData = arg1
+function var0_0.SetShareData(arg0_5, arg1_5)
+	arg0_5.shareData = arg1_5
 end
 
-function var0.GetShipVO(arg0)
-	if arg0.shareData and arg0.shareData.shipVO then
-		return arg0.shareData.shipVO
+function var0_0.GetShipVO(arg0_6)
+	if arg0_6.shareData and arg0_6.shareData.shipVO then
+		return arg0_6.shareData.shipVO
 	end
 
 	return nil
 end
 
-function var0.SetSkinList(arg0, arg1)
-	arg0.skinList = arg1
+function var0_0.SetSkinList(arg0_7, arg1_7)
+	arg0_7.skinList = arg1_7
 end
 
-function var0.UpdateUI(arg0)
-	triggerToggle(arg0.shareBtn, arg0.isShareSkinFlag)
+function var0_0.UpdateUI(arg0_8)
+	triggerToggle(arg0_8.shareBtn, arg0_8.isShareSkinFlag)
 
-	local var0 = arg0:GetShareSkins(arg0:GetShipVO())
+	local var0_8 = arg0_8:GetShareSkins(arg0_8:GetShipVO())
 
-	setActive(arg0.shareBtn, #var0 > 0)
+	setActive(arg0_8.shareBtn, #var0_8 > 0)
 end
 
-function var0.OnSelected(arg0, arg1)
-	local var0 = pg.UIMgr.GetInstance()
+function var0_0.OnSelected(arg0_9, arg1_9)
+	local var0_9 = pg.UIMgr.GetInstance()
 
-	if arg1 then
-		var0:OverlayPanelPB(arg0._parentTf, {
+	if arg1_9 then
+		var0_9:OverlayPanelPB(arg0_9._parentTf, {
 			pbList = {
-				arg0.stylePanel:Find("style_desc"),
-				arg0.stylePanel:Find("frame")
+				arg0_9.stylePanel:Find("style_desc"),
+				arg0_9.stylePanel:Find("frame")
 			},
 			groupName = LayerWeightConst.GROUP_SHIPINFOUI,
 			overlayType = LayerWeightConst.OVERLAY_UI_ADAPT
 		})
 	else
-		var0:UnOverlayPanel(arg0._parentTf, arg0.mainPanel)
+		var0_9:UnOverlayPanel(arg0_9._parentTf, arg0_9.mainPanel)
 	end
 
-	arg0.onSelected = arg1
+	arg0_9.onSelected = arg1_9
 end
 
-function var0.GetShareSkins(arg0, arg1)
-	local var0 = getProxy(ShipSkinProxy):GetShareSkinsForShip(arg1)
+function var0_0.GetShareSkins(arg0_10, arg1_10)
+	local var0_10 = getProxy(ShipSkinProxy):GetShareSkinsForShip(arg1_10)
 
-	return (_.map(var0, function(arg0)
-		return pg.ship_skin_template[arg0.id]
+	return (_.map(var0_10, function(arg0_11)
+		return pg.ship_skin_template[arg0_11.id]
 	end))
 end
 
-function var0.UpdateAllFashion(arg0, arg1)
-	local var0 = arg0:GetShipVO()
-	local var1 = var0.groupId
+function var0_0.UpdateAllFashion(arg0_12, arg1_12)
+	local var0_12 = arg0_12:GetShipVO()
+	local var1_12 = var0_12.groupId
 
-	arg0.fashionSkins = arg0.isShareSkinFlag and arg0:GetShareSkins(var0) or arg0.shareData:GetGroupSkinList(var1)
+	arg0_12.fashionSkins = arg0_12.isShareSkinFlag and arg0_12:GetShareSkins(var0_12) or arg0_12.shareData:GetGroupSkinList(var1_12)
 
-	if arg0.fashionGroup ~= var1 or arg1 then
-		arg0.fashionGroup = var1
+	if arg0_12.fashionGroup ~= var1_12 or arg1_12 then
+		arg0_12.fashionGroup = var1_12
 
-		arg0:ResetFashion()
+		arg0_12:ResetFashion()
 
-		for iter0 = arg0.styleContainer.childCount, #arg0.fashionSkins - 1 do
-			cloneTplTo(arg0.styleCard, arg0.styleContainer)
+		for iter0_12 = arg0_12.styleContainer.childCount, #arg0_12.fashionSkins - 1 do
+			cloneTplTo(arg0_12.styleCard, arg0_12.styleContainer)
 		end
 
-		for iter1 = #arg0.fashionSkins, arg0.styleContainer.childCount - 1 do
-			local var2 = arg0.styleContainer:GetChild(iter1)
+		for iter1_12 = #arg0_12.fashionSkins, arg0_12.styleContainer.childCount - 1 do
+			local var2_12 = arg0_12.styleContainer:GetChild(iter1_12)
 
-			if arg0.fashionCellMap[var2] then
-				arg0.fashionCellMap[var2]:clear()
+			if arg0_12.fashionCellMap[var2_12] then
+				arg0_12.fashionCellMap[var2_12]:clear()
 			end
 
-			setActive(var2, false)
+			setActive(var2_12, false)
 		end
 
-		for iter2, iter3 in ipairs(arg0.fashionSkins) do
-			local var3 = arg0.fashionSkins[iter2]
-			local var4 = arg0.styleContainer:GetChild(iter2 - 1)
-			local var5 = arg0.fashionCellMap[var4]
+		for iter2_12, iter3_12 in ipairs(arg0_12.fashionSkins) do
+			local var3_12 = arg0_12.fashionSkins[iter2_12]
+			local var4_12 = arg0_12.styleContainer:GetChild(iter2_12 - 1)
+			local var5_12 = arg0_12.fashionCellMap[var4_12]
 
-			if not var5 then
-				var5 = ShipSkinCard.New(var4.gameObject)
-				arg0.fashionCellMap[var4] = var5
+			if not var5_12 then
+				var5_12 = ShipSkinCard.New(var4_12.gameObject)
+				arg0_12.fashionCellMap[var4_12] = var5_12
 			end
 
-			local var6 = arg0:GetShipVO():getRemouldSkinId() == var3.id and arg0:GetShipVO():isRemoulded()
-			local var7 = arg0:GetShipVO():proposeSkinOwned(var3) or table.contains(arg0.skinList, var3.id) or var6 or var3.skin_type == ShipSkin.SKIN_TYPE_OLD
+			local var6_12 = arg0_12:GetShipVO():getRemouldSkinId() == var3_12.id and arg0_12:GetShipVO():isRemoulded()
+			local var7_12 = arg0_12:GetShipVO():proposeSkinOwned(var3_12) or table.contains(arg0_12.skinList, var3_12.id) or var6_12 or var3_12.skin_type == ShipSkin.SKIN_TYPE_OLD
 
-			var5:updateData(arg0:GetShipVO(), var3, var7)
-			var5:updateUsing(arg0:GetShipVO().skinId == var3.id)
-			onButton(arg0, var4, function()
+			var5_12:updateData(arg0_12:GetShipVO(), var3_12, var7_12)
+			var5_12:updateUsing(arg0_12:GetShipVO().skinId == var3_12.id)
+			onButton(arg0_12, var4_12, function()
 				if ShipViewConst.currentPage ~= ShipViewConst.PAGE.FASHION then
 					return
 				end
 
-				arg0.clickCellTime = Time.realtimeSinceStartup
-				arg0.fashionSkinId = var3.id
+				arg0_12.clickCellTime = Time.realtimeSinceStartup
+				arg0_12.fashionSkinId = var3_12.id
 
-				arg0:UpdateFashionDetail(var3)
-				arg0:emit(ShipViewConst.LOAD_PAINTING, var3.painting)
-				arg0:emit(ShipViewConst.LOAD_PAINTING_BG, arg0:GetShipVO():rarity2bgPrintForGet(), arg0:GetShipVO():isBluePrintShip(), arg0:GetShipVO():isMetaShip())
+				arg0_12:UpdateFashionDetail(var3_12)
+				arg0_12:emit(ShipViewConst.LOAD_PAINTING, var3_12.painting)
+				arg0_12:emit(ShipViewConst.LOAD_PAINTING_BG, arg0_12:GetShipVO():rarity2bgPrintForGet(), arg0_12:GetShipVO():isBluePrintShip(), arg0_12:GetShipVO():isMetaShip())
 
-				for iter0, iter1 in ipairs(arg0.fashionSkins) do
-					local var0 = arg0.styleContainer:GetChild(iter0 - 1)
-					local var1 = arg0.fashionCellMap[var0]
+				for iter0_13, iter1_13 in ipairs(arg0_12.fashionSkins) do
+					local var0_13 = arg0_12.styleContainer:GetChild(iter0_13 - 1)
+					local var1_13 = arg0_12.fashionCellMap[var0_13]
 
-					var1:updateSelected(iter1.id == arg0.fashionSkinId)
-					var1:updateUsing(arg0:GetShipVO().skinId == iter1.id)
+					var1_13:updateSelected(iter1_13.id == arg0_12.fashionSkinId)
+					var1_13:updateUsing(arg0_12:GetShipVO().skinId == iter1_13.id)
 				end
 
-				local var2 = checkABExist("painting/" .. var5.paintingName .. "_n")
+				local var2_13 = checkABExist("painting/" .. var5_12.paintingName .. "_n")
 
-				setActive(arg0.hideObjToggle, var2)
+				setActive(arg0_12.hideObjToggle, var2_13)
 
-				if var2 then
-					arg0.hideObjToggle.isOn = PlayerPrefs.GetInt("paint_hide_other_obj_" .. var5.paintingName, 0) ~= 0
+				if var2_13 then
+					arg0_12.hideObjToggle.isOn = PlayerPrefs.GetInt("paint_hide_other_obj_" .. var5_12.paintingName, 0) ~= 0
 
-					onToggle(arg0, arg0.hideObjToggleTF, function(arg0)
-						PlayerPrefs.SetInt("paint_hide_other_obj_" .. var5.paintingName, arg0 and 1 or 0)
-						var5:flushSkin()
-						arg0:emit(ShipViewConst.LOAD_PAINTING, var5.paintingName, true)
+					onToggle(arg0_12, arg0_12.hideObjToggleTF, function(arg0_14)
+						PlayerPrefs.SetInt("paint_hide_other_obj_" .. var5_12.paintingName, arg0_14 and 1 or 0)
+						var5_12:flushSkin()
+						arg0_12:emit(ShipViewConst.LOAD_PAINTING, var5_12.paintingName, true)
 					end, SFX_PANEL)
 				end
 			end)
-			setActive(var4, true)
+			setActive(var4_12, true)
 		end
 	else
-		for iter4, iter5 in ipairs(arg0.fashionSkins) do
-			local var8 = arg0.styleContainer:GetChild(iter4 - 1)
-			local var9 = arg0.fashionCellMap[var8]
-			local var10 = arg0:GetShipVO():getRemouldSkinId() == iter5.id and arg0:GetShipVO():isRemoulded()
-			local var11 = arg0:GetShipVO():proposeSkinOwned(iter5) or table.contains(arg0.skinList, iter5.id) or var10 or iter5.skin_type == ShipSkin.SKIN_TYPE_OLD
+		for iter4_12, iter5_12 in ipairs(arg0_12.fashionSkins) do
+			local var8_12 = arg0_12.styleContainer:GetChild(iter4_12 - 1)
+			local var9_12 = arg0_12.fashionCellMap[var8_12]
+			local var10_12 = arg0_12:GetShipVO():getRemouldSkinId() == iter5_12.id and arg0_12:GetShipVO():isRemoulded()
+			local var11_12 = arg0_12:GetShipVO():proposeSkinOwned(iter5_12) or table.contains(arg0_12.skinList, iter5_12.id) or var10_12 or iter5_12.skin_type == ShipSkin.SKIN_TYPE_OLD
 
-			var9:updateData(arg0:GetShipVO(), iter5, var11)
+			var9_12:updateData(arg0_12:GetShipVO(), iter5_12, var11_12)
 		end
 	end
 
-	arg0.fashionSkinId = arg0:GetShipVO().skinId
+	arg0_12.fashionSkinId = arg0_12:GetShipVO().skinId
 
-	local var12 = arg0.styleContainer:GetChild(0)
+	local var12_12 = arg0_12.styleContainer:GetChild(0)
 
-	for iter6, iter7 in ipairs(arg0.fashionSkins) do
-		if iter7.id == arg0.fashionSkinId then
-			var12 = arg0.styleContainer:GetChild(iter6 - 1)
+	for iter6_12, iter7_12 in ipairs(arg0_12.fashionSkins) do
+		if iter7_12.id == arg0_12.fashionSkinId then
+			var12_12 = arg0_12.styleContainer:GetChild(iter6_12 - 1)
 
 			break
 		end
 	end
 
-	triggerButton(var12)
+	triggerButton(var12_12)
 end
 
-function var0.UpdateFashion(arg0, arg1)
-	if ShipViewConst.currentPage ~= ShipViewConst.PAGE.FASHION or not arg0.shareData:HasFashion() then
+function var0_0.UpdateFashion(arg0_15, arg1_15)
+	if ShipViewConst.currentPage ~= ShipViewConst.PAGE.FASHION or not arg0_15.shareData:HasFashion() then
 		return
 	end
 
-	arg0:UpdateAllFashion(arg1)
+	arg0_15:UpdateAllFashion(arg1_15)
 end
 
-function var0.ResetFashion(arg0)
-	arg0.fashionSkinId = 0
+function var0_0.ResetFashion(arg0_16)
+	arg0_16.fashionSkinId = 0
 end
 
-function var0.UpdateFashionDetail(arg0, arg1)
-	local var0 = arg0.fashionDetailWrapper
+function var0_0.UpdateFashionDetail(arg0_17, arg1_17)
+	local var0_17 = arg0_17.fashionDetailWrapper
 
-	if not var0 then
-		var0 = {
-			name = findTF(arg0.stylePanel, "style_desc/name_bg/name"),
-			descTxt = findTF(arg0.stylePanel, "style_desc/desc_frame/desc/Text"),
-			character = findTF(arg0.stylePanel, "style_desc/character"),
-			confirm = findTF(arg0.stylePanel, "confirm_button"),
-			cancel = findTF(arg0.stylePanel, "cancel_button")
+	if not var0_17 then
+		var0_17 = {
+			name = findTF(arg0_17.stylePanel, "style_desc/name_bg/name"),
+			descTxt = findTF(arg0_17.stylePanel, "style_desc/desc_frame/desc/Text"),
+			character = findTF(arg0_17.stylePanel, "style_desc/character"),
+			confirm = findTF(arg0_17.stylePanel, "confirm_button"),
+			cancel = findTF(arg0_17.stylePanel, "cancel_button")
 		}
-		var0.diamond = findTF(var0.confirm, "diamond")
-		var0.using = findTF(var0.confirm, "using")
-		var0.experience = findTF(var0.confirm, "experience")
-		var0.change = findTF(var0.confirm, "change")
-		var0.buy = findTF(var0.confirm, "buy")
-		var0.activity = findTF(var0.confirm, "activity")
-		var0.cantbuy = findTF(var0.confirm, "cantbuy")
-		var0.prefab = "unknown"
-		arg0.fashionDetailWrapper = var0
+		var0_17.diamond = findTF(var0_17.confirm, "diamond")
+		var0_17.using = findTF(var0_17.confirm, "using")
+		var0_17.experience = findTF(var0_17.confirm, "experience")
+		var0_17.change = findTF(var0_17.confirm, "change")
+		var0_17.buy = findTF(var0_17.confirm, "buy")
+		var0_17.activity = findTF(var0_17.confirm, "activity")
+		var0_17.cantbuy = findTF(var0_17.confirm, "cantbuy")
+		var0_17.prefab = "unknown"
+		arg0_17.fashionDetailWrapper = var0_17
 	end
 
-	setText(var0.name, arg1.name)
-	setText(var0.descTxt, SwitchSpecialChar(arg1.desc, true))
+	setText(var0_17.name, arg1_17.name)
+	setText(var0_17.descTxt, SwitchSpecialChar(arg1_17.desc, true))
 
-	local var1 = var0.descTxt:GetComponent(typeof(Text))
+	local var1_17 = var0_17.descTxt:GetComponent(typeof(Text))
 
-	if #var1.text > 50 then
-		var1.alignment = TextAnchor.MiddleLeft
+	if #var1_17.text > 50 then
+		var1_17.alignment = TextAnchor.MiddleLeft
 	else
-		var1.alignment = TextAnchor.MiddleCenter
+		var1_17.alignment = TextAnchor.MiddleCenter
 	end
 
-	if var0.prefab ~= arg1.prefab then
-		local var2 = var0.character:Find(var0.prefab)
+	if var0_17.prefab ~= arg1_17.prefab then
+		local var2_17 = var0_17.character:Find(var0_17.prefab)
 
-		if not IsNil(var2) then
-			PoolMgr.GetInstance():ReturnSpineChar(var0.prefab, var2.gameObject)
+		if not IsNil(var2_17) then
+			PoolMgr.GetInstance():ReturnSpineChar(var0_17.prefab, var2_17.gameObject)
 		end
 
-		var0.prefab = arg1.prefab
+		var0_17.prefab = arg1_17.prefab
 
-		local var3 = var0.prefab
+		local var3_17 = var0_17.prefab
 
-		PoolMgr.GetInstance():GetSpineChar(var3, true, function(arg0)
-			if var0.prefab ~= var3 then
-				PoolMgr.GetInstance():ReturnSpineChar(var3, arg0)
+		PoolMgr.GetInstance():GetSpineChar(var3_17, true, function(arg0_18)
+			if var0_17.prefab ~= var3_17 then
+				PoolMgr.GetInstance():ReturnSpineChar(var3_17, arg0_18)
 			else
-				arg0.name = var3
-				arg0.transform.localPosition = Vector3.zero
-				arg0.transform.localScale = Vector3(0.5, 0.5, 1)
+				arg0_18.name = var3_17
+				arg0_18.transform.localPosition = Vector3.zero
+				arg0_18.transform.localScale = Vector3(0.5, 0.5, 1)
 
-				arg0.transform:SetParent(var0.character, false)
-				arg0:GetComponent(typeof(SpineAnimUI)):SetAction(arg1.show_skin or "stand", 0)
+				arg0_18.transform:SetParent(var0_17.character, false)
+				arg0_18:GetComponent(typeof(SpineAnimUI)):SetAction(arg1_17.show_skin or "stand", 0)
 			end
 		end)
 	end
 
-	local var4 = arg0:GetShipVO():getRemouldSkinId() == arg1.id and arg0:GetShipVO():isRemoulded()
-	local var5 = (arg0:GetShipVO():proposeSkinOwned(arg1) or table.contains(arg0.skinList, arg1.id) or var4) and 1 or 0
-	local var6 = arg1.shop_id > 0 and pg.shop_template[arg1.shop_id] or nil
-	local var7 = var6 and not pg.TimeMgr.GetInstance():inTime(var6.time)
-	local var8 = arg1.id == arg0:GetShipVO().skinId
-	local var9 = arg1.id == arg0:GetShipVO():getConfig("skin_id") or var5 >= 1 or arg1.skin_type == ShipSkin.SKIN_TYPE_OLD
-	local var10 = getProxy(ShipSkinProxy):getSkinById(arg1.id)
-	local var11 = getProxy(ShipSkinProxy):InForbiddenSkinListAndShow(arg1.id)
-	local var12 = var8 and var10 and var10:isExpireType()
+	local var4_17 = arg0_17:GetShipVO():getRemouldSkinId() == arg1_17.id and arg0_17:GetShipVO():isRemoulded()
+	local var5_17 = (arg0_17:GetShipVO():proposeSkinOwned(arg1_17) or table.contains(arg0_17.skinList, arg1_17.id) or var4_17) and 1 or 0
+	local var6_17 = arg1_17.shop_id > 0 and pg.shop_template[arg1_17.shop_id] or nil
+	local var7_17 = var6_17 and not pg.TimeMgr.GetInstance():inTime(var6_17.time)
+	local var8_17 = arg1_17.id == arg0_17:GetShipVO().skinId
+	local var9_17 = arg1_17.id == arg0_17:GetShipVO():getConfig("skin_id") or var5_17 >= 1 or arg1_17.skin_type == ShipSkin.SKIN_TYPE_OLD
+	local var10_17 = getProxy(ShipSkinProxy):getSkinById(arg1_17.id)
+	local var11_17 = getProxy(ShipSkinProxy):InForbiddenSkinListAndShow(arg1_17.id)
+	local var12_17 = var8_17 and var10_17 and var10_17:isExpireType()
 
-	setActive(var0.using, false)
-	setActive(var0.change, false)
-	setActive(var0.buy, false)
-	setActive(var0.experience, false)
+	setActive(var0_17.using, false)
+	setActive(var0_17.change, false)
+	setActive(var0_17.buy, false)
+	setActive(var0_17.experience, false)
 
-	if var12 then
-		setGray(var0.confirm, false)
-		setActive(var0.experience, true)
-	elseif var8 then
-		setGray(var0.confirm, false)
-		setActive(var0.using, true)
-	elseif var9 and ShipSkin.IsShareSkin(arg0:GetShipVO(), arg1.id) and not ShipSkin.CanUseShareSkinForShip(arg0:GetShipVO(), arg1.id) then
-		setActive(var0.change, true)
-		setGray(var0.confirm, true)
-	elseif var9 then
-		setActive(var0.change, true)
-	elseif var6 then
-		setActive(var0.buy, true)
-		setGray(var0.confirm, var7 or var11)
+	if var12_17 then
+		setGray(var0_17.confirm, false)
+		setActive(var0_17.experience, true)
+	elseif var8_17 then
+		setGray(var0_17.confirm, false)
+		setActive(var0_17.using, true)
+	elseif var9_17 and ShipSkin.IsShareSkin(arg0_17:GetShipVO(), arg1_17.id) and not ShipSkin.CanUseShareSkinForShip(arg0_17:GetShipVO(), arg1_17.id) then
+		setActive(var0_17.change, true)
+		setGray(var0_17.confirm, true)
+	elseif var9_17 then
+		setActive(var0_17.change, true)
+	elseif var6_17 then
+		setActive(var0_17.buy, true)
+		setGray(var0_17.confirm, var7_17 or var11_17)
 	else
-		setActive(var0.change, true)
-		setGray(var0.confirm, true)
+		setActive(var0_17.change, true)
+		setGray(var0_17.confirm, true)
 	end
 
-	onButton(arg0, var0.confirm, function()
-		if var8 then
+	onButton(arg0_17, var0_17.confirm, function()
+		if var8_17 then
 			-- block empty
-		elseif var9 then
-			if ShipSkin.IsShareSkin(arg0:GetShipVO(), arg1.id) and not ShipSkin.CanUseShareSkinForShip(arg0:GetShipVO(), arg1.id) then
+		elseif var9_17 then
+			if ShipSkin.IsShareSkin(arg0_17:GetShipVO(), arg1_17.id) and not ShipSkin.CanUseShareSkinForShip(arg0_17:GetShipVO(), arg1_17.id) then
 				-- block empty
 			else
-				arg0:emit(ShipMainMediator.CHANGE_SKIN, arg0:GetShipVO().id, arg1.id == arg0:GetShipVO():getConfig("skin_id") and 0 or arg1.id)
+				arg0_17:emit(ShipMainMediator.CHANGE_SKIN, arg0_17:GetShipVO().id, arg1_17.id == arg0_17:GetShipVO():getConfig("skin_id") and 0 or arg1_17.id)
 			end
-		elseif var6 then
-			if var7 or var11 then
+		elseif var6_17 then
+			if var7_17 or var11_17 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_skin_out_of_stock"))
 			else
-				local var0 = Goods.Create({
-					shop_id = var6.id
+				local var0_19 = Goods.Create({
+					shop_id = var6_17.id
 				}, Goods.TYPE_SKIN)
 
-				if var0:isDisCount() and var0:IsItemDiscountType() then
-					arg0:emit(ShipMainMediator.BUY_ITEM_BY_ACT, var6.id, 1)
+				if var0_19:isDisCount() and var0_19:IsItemDiscountType() then
+					arg0_17:emit(ShipMainMediator.BUY_ITEM_BY_ACT, var6_17.id, 1)
 				else
-					local var1 = var0:GetPrice()
-					local var2 = i18n("text_buy_fashion_tip", var1, arg1.name)
+					local var1_19 = var0_19:GetPrice()
+					local var2_19 = i18n("text_buy_fashion_tip", var1_19, arg1_17.name)
 
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
-						content = var2,
+						content = var2_19,
 						onYes = function()
-							arg0:emit(ShipMainMediator.BUY_ITEM, var6.id, 1)
+							arg0_17:emit(ShipMainMediator.BUY_ITEM, var6_17.id, 1)
 						end
 					})
 				end
 			end
 		end
 	end)
-	onButton(arg0, var0.cancel, function()
-		if arg0.clickCellTime and Time.realtimeSinceStartup - arg0.clickCellTime <= 0.35 then
+	onButton(arg0_17, var0_17.cancel, function()
+		if arg0_17.clickCellTime and Time.realtimeSinceStartup - arg0_17.clickCellTime <= 0.35 then
 			return
 		end
 
-		arg0:SilentTriggerToggleFalse()
-		arg0:emit(ShipViewConst.SWITCH_TO_PAGE, ShipViewConst.PAGE.DETAIL)
+		arg0_17:SilentTriggerToggleFalse()
+		arg0_17:emit(ShipViewConst.SWITCH_TO_PAGE, ShipViewConst.PAGE.DETAIL)
 	end)
 end
 
-function var0.SilentTriggerToggleFalse(arg0)
-	arg0.fashionGroup = false
-	arg0.isShareSkinFlag = false
+function var0_0.SilentTriggerToggleFalse(arg0_22)
+	arg0_22.fashionGroup = false
+	arg0_22.isShareSkinFlag = false
 
-	removeOnToggle(arg0.shareBtn)
-	triggerToggle(arg0.shareBtn, false)
-	arg0:RegisterShareToggle()
+	removeOnToggle(arg0_22.shareBtn)
+	triggerToggle(arg0_22.shareBtn, false)
+	arg0_22:RegisterShareToggle()
 end
 
-function var0.RegisterShareToggle(arg0)
-	onToggle(arg0, arg0.shareBtn, function(arg0)
-		arg0.fashionGroup = false
-		arg0.isShareSkinFlag = arg0
+function var0_0.RegisterShareToggle(arg0_23)
+	onToggle(arg0_23, arg0_23.shareBtn, function(arg0_24)
+		arg0_23.fashionGroup = false
+		arg0_23.isShareSkinFlag = arg0_24
 
-		arg0:UpdateFashion()
+		arg0_23:UpdateFashion()
 	end, SFX_PANEL)
 end
 
-function var0.OnDestroy(arg0)
-	if arg0.fashionDetailWrapper then
-		local var0 = arg0.fashionDetailWrapper
-		local var1 = var0.character:Find(var0.prefab)
+function var0_0.OnDestroy(arg0_25)
+	if arg0_25.fashionDetailWrapper then
+		local var0_25 = arg0_25.fashionDetailWrapper
+		local var1_25 = var0_25.character:Find(var0_25.prefab)
 
-		if not IsNil(var1) then
-			PoolMgr.GetInstance():ReturnSpineChar(var0.prefab, var1.gameObject)
+		if not IsNil(var1_25) then
+			PoolMgr.GetInstance():ReturnSpineChar(var0_25.prefab, var1_25.gameObject)
 		end
 	end
 
-	arg0.fashionDetailWrapper = nil
+	arg0_25.fashionDetailWrapper = nil
 
-	for iter0, iter1 in pairs(arg0.fashionCellMap) do
-		iter1:clear()
+	for iter0_25, iter1_25 in pairs(arg0_25.fashionCellMap) do
+		iter1_25:clear()
 	end
 
-	arg0.fashionCellMap = {}
-	arg0.fashionSkins = {}
-	arg0.fashionGroup = 0
-	arg0.fashionSkinId = 0
-	arg0.shareData = nil
+	arg0_25.fashionCellMap = {}
+	arg0_25.fashionSkins = {}
+	arg0_25.fashionGroup = 0
+	arg0_25.fashionSkinId = 0
+	arg0_25.shareData = nil
 end
 
-return var0
+return var0_0

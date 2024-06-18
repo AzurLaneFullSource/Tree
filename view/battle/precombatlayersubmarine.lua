@@ -1,264 +1,264 @@
-﻿local var0 = class("PreCombatLayerSubmarine", import(".PreCombatLayer"))
-local var1 = import("..ship.FormationUI")
+﻿local var0_0 = class("PreCombatLayerSubmarine", import(".PreCombatLayer"))
+local var1_0 = import("..ship.FormationUI")
 
-var0.FORM_EDIT = "EDIT"
-var0.FORM_PREVIEW = "PREVIEW"
+var0_0.FORM_EDIT = "EDIT"
+var0_0.FORM_PREVIEW = "PREVIEW"
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "PreCombatUI"
 end
 
-function var0.init(arg0)
-	arg0:CommonInit()
+function var0_0.init(arg0_2)
+	arg0_2:CommonInit()
 
-	local var0 = arg0:findTF("middle")
-	local var1 = var0:Find("mask/grid_bg")
+	local var0_2 = arg0_2:findTF("middle")
+	local var1_2 = var0_2:Find("mask/grid_bg")
 
-	SetActive(var1, false)
-	SetActive(var0:Find("gear_score/main"), false)
-	SetActive(var0:Find("gear_score/vanguard"), false)
-	SetActive(var0:Find("gear_score/submarine"), true)
+	SetActive(var1_2, false)
+	SetActive(var0_2:Find("gear_score/main"), false)
+	SetActive(var0_2:Find("gear_score/vanguard"), false)
+	SetActive(var0_2:Find("gear_score/submarine"), true)
 
-	arg0._subBg = var0:Find("mask/bg_sub")
-	arg0._subFrame = var0:Find("mask/GridFrame")
+	arg0_2._subBg = var0_2:Find("mask/bg_sub")
+	arg0_2._subFrame = var0_2:Find("mask/GridFrame")
 
-	SetActive(arg0._subBg, true)
+	SetActive(arg0_2._subBg, true)
 
-	arg0._formationLogic = BaseFormation.New(arg0._tf, arg0._heroContainer, arg0._heroInfo, arg0._gridTFs)
+	arg0_2._formationLogic = BaseFormation.New(arg0_2._tf, arg0_2._heroContainer, arg0_2._heroInfo, arg0_2._gridTFs)
 
-	arg0:Register()
+	arg0_2:Register()
 end
 
-function var0.SetFleets(arg0, arg1)
-	local var0 = _.filter(_.values(arg1), function(arg0)
-		return arg0:getFleetType() == FleetType.Submarine
+function var0_0.SetFleets(arg0_3, arg1_3)
+	local var0_3 = _.filter(_.values(arg1_3), function(arg0_4)
+		return arg0_4:getFleetType() == FleetType.Submarine
 	end)
 
-	arg0._fleetVOs = {}
-	arg0._fleetIDList = {}
+	arg0_3._fleetVOs = {}
+	arg0_3._fleetIDList = {}
 
-	local var1 = 0
+	local var1_3 = 0
 
-	_.each(var0, function(arg0)
-		if #arg0.ships > 0 then
-			arg0._fleetVOs[arg0.id] = arg0
+	_.each(var0_3, function(arg0_5)
+		if #arg0_5.ships > 0 then
+			arg0_3._fleetVOs[arg0_5.id] = arg0_5
 
-			table.insert(arg0._fleetIDList, arg0.id)
+			table.insert(arg0_3._fleetIDList, arg0_5.id)
 
-			var1 = var1 + 1
+			var1_3 = var1_3 + 1
 		end
 	end)
 
-	if var1 == 0 then
-		arg0._fleetVOs[11] = var0[1]
+	if var1_3 == 0 then
+		arg0_3._fleetVOs[11] = var0_3[1]
 
-		table.insert(arg0._fleetIDList, 11)
+		table.insert(arg0_3._fleetIDList, 11)
 	else
-		table.sort(arg0._fleetIDList, function(arg0, arg1)
-			return arg0 < arg1
+		table.sort(arg0_3._fleetIDList, function(arg0_6, arg1_6)
+			return arg0_6 < arg1_6
 		end)
 	end
 end
 
-function var0.SetCurrentFleet(arg0, arg1)
-	arg1 = arg1 or arg0._fleetIDList[1]
-	arg0._currentFleetVO = arg0._fleetVOs[arg1]
+function var0_0.SetCurrentFleet(arg0_7, arg1_7)
+	arg1_7 = arg1_7 or arg0_7._fleetIDList[1]
+	arg0_7._currentFleetVO = arg0_7._fleetVOs[arg1_7]
 
-	arg0._formationLogic:SetFleetVO(arg0._currentFleetVO)
+	arg0_7._formationLogic:SetFleetVO(arg0_7._currentFleetVO)
 end
 
-function var0.UpdateFleetView(arg0, arg1)
-	arg0:displayFleetInfo()
-	arg0._formationLogic:UpdateGridVisibility()
-	arg0._formationLogic:ResetGrid(TeamType.Submarine, arg0._currentForm ~= var0.FORM_EDIT)
+function var0_0.UpdateFleetView(arg0_8, arg1_8)
+	arg0_8:displayFleetInfo()
+	arg0_8._formationLogic:UpdateGridVisibility()
+	arg0_8._formationLogic:ResetGrid(TeamType.Submarine, arg0_8._currentForm ~= var0_0.FORM_EDIT)
 
-	if arg1 then
-		arg0._formationLogic:LoadAllCharacter()
+	if arg1_8 then
+		arg0_8._formationLogic:LoadAllCharacter()
 	else
-		arg0._formationLogic:SetAllCharacterPos()
+		arg0_8._formationLogic:SetAllCharacterPos()
 	end
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0._backBtn, function()
-		local var0 = {}
+function var0_0.didEnter(arg0_9)
+	onButton(arg0_9, arg0_9._backBtn, function()
+		local var0_10 = {}
 
-		if arg0._currentForm == var0.FORM_EDIT then
-			table.insert(var0, function(arg0)
+		if arg0_9._currentForm == var0_0.FORM_EDIT then
+			table.insert(var0_10, function(arg0_11)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					zIndex = -100,
 					hideNo = false,
 					content = i18n("battle_preCombatLayer_save_confirm"),
 					onYes = function()
-						arg0:emit(PreCombatMediator.ON_COMMIT_EDIT, function()
+						arg0_9:emit(PreCombatMediator.ON_COMMIT_EDIT, function()
 							pg.TipsMgr.GetInstance():ShowTips(i18n("battle_preCombatLayer_save_success"))
-							arg0()
+							arg0_11()
 						end)
 					end,
 					onNo = function()
-						arg0:emit(PreCombatMediator.ON_ABORT_EDIT)
-						arg0()
+						arg0_9:emit(PreCombatMediator.ON_ABORT_EDIT)
+						arg0_11()
 					end
 				})
 			end)
 		end
 
-		seriesAsync(var0, function()
-			GetOrAddComponent(arg0._tf, typeof(CanvasGroup)).interactable = false
+		seriesAsync(var0_10, function()
+			GetOrAddComponent(arg0_9._tf, typeof(CanvasGroup)).interactable = false
 
-			arg0:uiExitAnimating()
+			arg0_9:uiExitAnimating()
 			LeanTween.delayedCall(0.3, System.Action(function()
-				arg0:emit(var0.ON_CLOSE)
+				arg0_9:emit(var0_0.ON_CLOSE)
 			end))
 		end)
 	end, SFX_CANCEL)
-	onButton(arg0, arg0._startBtn, function()
-		local var0 = {}
+	onButton(arg0_9, arg0_9._startBtn, function()
+		local var0_17 = {}
 
-		if arg0._currentForm == var0.FORM_EDIT then
-			table.insert(var0, function(arg0)
+		if arg0_9._currentForm == var0_0.FORM_EDIT then
+			table.insert(var0_17, function(arg0_18)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					zIndex = -100,
 					hideNo = false,
 					content = i18n("battle_preCombatLayer_save_march"),
 					onYes = function()
-						arg0:emit(PreCombatMediator.ON_COMMIT_EDIT, function()
+						arg0_9:emit(PreCombatMediator.ON_COMMIT_EDIT, function()
 							pg.TipsMgr.GetInstance():ShowTips(i18n("battle_preCombatLayer_save_success"))
-							arg0()
+							arg0_18()
 						end)
 					end
 				})
 			end)
 		end
 
-		seriesAsync(var0, function()
-			arg0:emit(PreCombatMediator.ON_START, arg0._currentFleetVO.id)
+		seriesAsync(var0_17, function()
+			arg0_9:emit(PreCombatMediator.ON_START, arg0_9._currentFleetVO.id)
 		end)
 	end, SFX_UI_WEIGHANCHOR)
-	onButton(arg0, arg0._nextPage, function()
-		local var0 = arg0:getNextFleetID()
+	onButton(arg0_9, arg0_9._nextPage, function()
+		local var0_22 = arg0_9:getNextFleetID()
 
-		if var0 then
-			arg0:emit(PreCombatMediator.ON_CHANGE_FLEET, var0, true)
+		if var0_22 then
+			arg0_9:emit(PreCombatMediator.ON_CHANGE_FLEET, var0_22, true)
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0._prevPage, function()
-		local var0 = arg0:getPrevFleetID()
+	onButton(arg0_9, arg0_9._prevPage, function()
+		local var0_23 = arg0_9:getPrevFleetID()
 
-		if var0 then
-			arg0:emit(PreCombatMediator.ON_CHANGE_FLEET, var0, true)
+		if var0_23 then
+			arg0_9:emit(PreCombatMediator.ON_CHANGE_FLEET, var0_23, true)
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0._checkBtn, function()
-		if arg0._currentForm == var0.FORM_EDIT then
-			arg0:emit(PreCombatMediator.ON_COMMIT_EDIT, function()
+	onButton(arg0_9, arg0_9._checkBtn, function()
+		if arg0_9._currentForm == var0_0.FORM_EDIT then
+			arg0_9:emit(PreCombatMediator.ON_COMMIT_EDIT, function()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("battle_preCombatLayer_save_success"))
-				arg0._formationLogic:SwitchToPreviewMode()
+				arg0_9._formationLogic:SwitchToPreviewMode()
 			end)
-		elseif arg0._currentForm == var0.FORM_PREVIEW then
-			arg0._formationLogic:SwitchToDisplayMode()
+		elseif arg0_9._currentForm == var0_0.FORM_PREVIEW then
+			arg0_9._formationLogic:SwitchToDisplayMode()
 		else
 			assert("currentForm error")
 		end
 	end, SFX_PANEL)
 
-	arg0._currentForm = arg0.contextData.form
-	arg0.contextData.form = nil
+	arg0_9._currentForm = arg0_9.contextData.form
+	arg0_9.contextData.form = nil
 
-	arg0:UpdateFleetView(true)
+	arg0_9:UpdateFleetView(true)
 
-	if arg0._currentForm == var0.FORM_EDIT then
-		arg0._formationLogic:SwitchToDisplayMode()
+	if arg0_9._currentForm == var0_0.FORM_EDIT then
+		arg0_9._formationLogic:SwitchToDisplayMode()
 	else
-		arg0._formationLogic:SwitchToPreviewMode()
+		arg0_9._formationLogic:SwitchToPreviewMode()
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
-	setActive(arg0._autoToggle, false)
-	setActive(arg0._autoSubToggle, false)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_9._tf)
+	setActive(arg0_9._autoToggle, false)
+	setActive(arg0_9._autoSubToggle, false)
 	onNextTick(function()
-		arg0:uiStartAnimating()
+		arg0_9:uiStartAnimating()
 	end)
 
-	if arg0._currentForm == var0.FORM_PREVIEW and arg0.contextData.system == SYSTEM_DUEL and #arg0._currentFleetVO.mainShips <= 0 then
-		triggerButton(arg0._checkBtn)
+	if arg0_9._currentForm == var0_0.FORM_PREVIEW and arg0_9.contextData.system == SYSTEM_DUEL and #arg0_9._currentFleetVO.mainShips <= 0 then
+		triggerButton(arg0_9._checkBtn)
 	end
 end
 
-function var0.getNextFleetID(arg0)
-	local var0
+function var0_0.getNextFleetID(arg0_27)
+	local var0_27
 
-	for iter0, iter1 in ipairs(arg0._fleetIDList) do
-		if iter1 == arg0._currentFleetVO.id then
-			var0 = iter0
+	for iter0_27, iter1_27 in ipairs(arg0_27._fleetIDList) do
+		if iter1_27 == arg0_27._currentFleetVO.id then
+			var0_27 = iter0_27
 
 			break
 		end
 	end
 
-	return arg0._fleetIDList[var0 + 1]
+	return arg0_27._fleetIDList[var0_27 + 1]
 end
 
-function var0.getPrevFleetID(arg0)
-	local var0
+function var0_0.getPrevFleetID(arg0_28)
+	local var0_28
 
-	for iter0, iter1 in ipairs(arg0._fleetIDList) do
-		if iter1 == arg0._currentFleetVO.id then
-			var0 = iter0
+	for iter0_28, iter1_28 in ipairs(arg0_28._fleetIDList) do
+		if iter1_28 == arg0_28._currentFleetVO.id then
+			var0_28 = iter0_28
 
 			break
 		end
 	end
 
-	return arg0._fleetIDList[var0 - 1]
+	return arg0_28._fleetIDList[var0_28 - 1]
 end
 
-function var0.displayFleetInfo(arg0)
-	local var0 = arg0._currentFleetVO:GetPropertiesSum()
-	local var1 = arg0._currentFleetVO:GetGearScoreSum(TeamType.Submarine)
-	local var2 = arg0._currentFleetVO:GetCostSum()
+function var0_0.displayFleetInfo(arg0_29)
+	local var0_29 = arg0_29._currentFleetVO:GetPropertiesSum()
+	local var1_29 = arg0_29._currentFleetVO:GetGearScoreSum(TeamType.Submarine)
+	local var2_29 = arg0_29._currentFleetVO:GetCostSum()
 
-	setActive(arg0._popup, true)
-	var1.tweenNumText(arg0._costText, var2.oil)
-	var1.tweenNumText(arg0._subGS, var1)
-	setText(arg0._fleetNameText, var1.defaultFleetName(arg0._currentFleetVO))
-	setText(arg0._fleetNumText, arg0._currentFleetVO.id - 10)
+	setActive(arg0_29._popup, true)
+	var1_0.tweenNumText(arg0_29._costText, var2_29.oil)
+	var1_0.tweenNumText(arg0_29._subGS, var1_29)
+	setText(arg0_29._fleetNameText, var1_0.defaultFleetName(arg0_29._currentFleetVO))
+	setText(arg0_29._fleetNumText, arg0_29._currentFleetVO.id - 10)
 end
 
-function var0.SetFleetStepper(arg0)
-	if arg0._currentForm == var0.FORM_EDIT then
-		SetActive(arg0._nextPage, false)
-		SetActive(arg0._prevPage, false)
+function var0_0.SetFleetStepper(arg0_30)
+	if arg0_30._currentForm == var0_0.FORM_EDIT then
+		SetActive(arg0_30._nextPage, false)
+		SetActive(arg0_30._prevPage, false)
 	else
-		setActive(arg0._nextPage, arg0:getNextFleetID() ~= nil)
-		setActive(arg0._prevPage, arg0:getPrevFleetID() ~= nil)
+		setActive(arg0_30._nextPage, arg0_30:getNextFleetID() ~= nil)
+		setActive(arg0_30._prevPage, arg0_30:getPrevFleetID() ~= nil)
 	end
 end
 
-function var0.willExit(arg0)
-	if arg0.eventTriggers then
-		for iter0, iter1 in pairs(arg0.eventTriggers) do
-			ClearEventTrigger(iter0)
+function var0_0.willExit(arg0_31)
+	if arg0_31.eventTriggers then
+		for iter0_31, iter1_31 in pairs(arg0_31.eventTriggers) do
+			ClearEventTrigger(iter0_31)
 		end
 
-		arg0.eventTriggers = nil
+		arg0_31.eventTriggers = nil
 	end
 
-	arg0._formationLogic:Destroy()
+	arg0_31._formationLogic:Destroy()
 
-	arg0._formationLogic = nil
+	arg0_31._formationLogic = nil
 
-	if arg0.tweens then
-		cancelTweens(arg0.tweens)
+	if arg0_31.tweens then
+		cancelTweens(arg0_31.tweens)
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_31._tf)
 
-	if arg0._resPanel then
-		arg0._resPanel:exit()
+	if arg0_31._resPanel then
+		arg0_31._resPanel:exit()
 
-		arg0._resPanel = nil
+		arg0_31._resPanel = nil
 	end
 end
 
-return var0
+return var0_0

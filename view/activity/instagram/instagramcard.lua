@@ -1,88 +1,88 @@
-﻿local var0 = class("InstagramCard")
+﻿local var0_0 = class("InstagramCard")
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0.view = arg2
-	arg0._go = arg1
-	arg0._tf = tf(arg1)
-	arg0.iconTF = arg0._tf:Find("head/icon")
-	arg0.nameTxt = arg0._tf:Find("name")
-	arg0.txt = arg0._tf:Find("Text")
-	arg0.like = arg0._tf:Find("like/Text")
-	arg0.tip = arg0._tf:Find("head/tip")
-	arg0.image = arg0._tf:Find("image"):GetComponent(typeof(RawImage))
-	arg0.loading = false
-	arg0.needRefresh = false
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.view = arg2_1
+	arg0_1._go = arg1_1
+	arg0_1._tf = tf(arg1_1)
+	arg0_1.iconTF = arg0_1._tf:Find("head/icon")
+	arg0_1.nameTxt = arg0_1._tf:Find("name")
+	arg0_1.txt = arg0_1._tf:Find("Text")
+	arg0_1.like = arg0_1._tf:Find("like/Text")
+	arg0_1.tip = arg0_1._tf:Find("head/tip")
+	arg0_1.image = arg0_1._tf:Find("image"):GetComponent(typeof(RawImage))
+	arg0_1.loading = false
+	arg0_1.needRefresh = false
 end
 
-function var0.Update(arg0, arg1, arg2)
-	arg0.instagram = arg1
-	arg2 = defaultValue(arg2, true)
+function var0_0.Update(arg0_2, arg1_2, arg2_2)
+	arg0_2.instagram = arg1_2
+	arg2_2 = defaultValue(arg2_2, true)
 
-	setImageSprite(arg0.iconTF, LoadSprite("qicon/" .. arg1:GetIcon()), false)
-	setText(arg0.nameTxt, arg1:GetName())
-	arg0:LoadImage()
-	setText(arg0.txt, arg1:GetContent())
-	setText(arg0.like, arg1:GetLikeCnt())
-	arg0:RemoveTimer()
+	setImageSprite(arg0_2.iconTF, LoadSprite("qicon/" .. arg1_2:GetIcon()), false)
+	setText(arg0_2.nameTxt, arg1_2:GetName())
+	arg0_2:LoadImage()
+	setText(arg0_2.txt, arg1_2:GetContent())
+	setText(arg0_2.like, arg1_2:GetLikeCnt())
+	arg0_2:RemoveTimer()
 
-	if arg2 then
-		arg0:AddCommentTimer(arg1)
+	if arg2_2 then
+		arg0_2:AddCommentTimer(arg1_2)
 	end
 
-	setActive(arg0.tip, arg1:ShouldShowTip())
+	setActive(arg0_2.tip, arg1_2:ShouldShowTip())
 end
 
-function var0.LoadImage(arg0)
-	if arg0.loading then
-		arg0.needRefresh = true
+function var0_0.LoadImage(arg0_3)
+	if arg0_3.loading then
+		arg0_3.needRefresh = true
 
 		return
 	end
 
-	arg0.loading = true
+	arg0_3.loading = true
 
-	arg0.view:SetImageByUrl(arg0.instagram:GetImage(), arg0.image, function()
-		arg0.loading = false
+	arg0_3.view:SetImageByUrl(arg0_3.instagram:GetImage(), arg0_3.image, function()
+		arg0_3.loading = false
 
-		if arg0.needRefresh then
-			arg0.needRefresh = false
+		if arg0_3.needRefresh then
+			arg0_3.needRefresh = false
 
-			arg0:LoadImage()
+			arg0_3:LoadImage()
 		end
 	end)
 end
 
-function var0.AddCommentTimer(arg0, arg1)
-	local var0 = arg1:GetFastestRefreshTime()
+function var0_0.AddCommentTimer(arg0_5, arg1_5)
+	local var0_5 = arg1_5:GetFastestRefreshTime()
 
-	if var0 then
-		local var1 = var0 - pg.TimeMgr.GetInstance():GetServerTime()
+	if var0_5 then
+		local var1_5 = var0_5 - pg.TimeMgr.GetInstance():GetServerTime()
 
-		if var1 <= 0 then
-			arg0.view:emit(InstagramMediator.ON_COMMENT_LIST_UPDATE, arg1.id)
+		if var1_5 <= 0 then
+			arg0_5.view:emit(InstagramMediator.ON_COMMENT_LIST_UPDATE, arg1_5.id)
 		else
-			arg0.timer = Timer.New(function()
-				arg0.view:emit(InstagramMediator.ON_COMMENT_LIST_UPDATE, arg1.id)
-			end, var1, 1)
+			arg0_5.timer = Timer.New(function()
+				arg0_5.view:emit(InstagramMediator.ON_COMMENT_LIST_UPDATE, arg1_5.id)
+			end, var1_5, 1)
 
-			arg0.timer:Start()
+			arg0_5.timer:Start()
 		end
 	end
 end
 
-function var0.RemoveTimer(arg0)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var0_0.RemoveTimer(arg0_7)
+	if arg0_7.timer then
+		arg0_7.timer:Stop()
 
-		arg0.timer = nil
+		arg0_7.timer = nil
 	end
 end
 
-function var0.Dispose(arg0)
-	arg0:RemoveTimer()
+function var0_0.Dispose(arg0_8)
+	arg0_8:RemoveTimer()
 
-	arg0.loading = false
-	arg0.needRefresh = false
+	arg0_8.loading = false
+	arg0_8.needRefresh = false
 end
 
-return var0
+return var0_0

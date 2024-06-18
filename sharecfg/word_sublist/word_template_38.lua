@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_38 = {}
+var0_0.word_template_38 = {}
 
-local var1 = var0.word_template_38
+local var1_0 = var0_0.word_template_38
 
 function temp()
-	var1.肅 = {
+	var1_0.肅 = {
 		清 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.腋 = {
+	var1_0.腋 = {
 		臭 = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.膣 = {
+	var1_0.膣 = {
 		this = {
 			this = true
 		},
@@ -49,7 +49,7 @@ end
 temp()
 
 function temp()
-	var1.舐 = {
+	var1_0.舐 = {
 		this = {
 			this = true
 		},
@@ -67,7 +67,7 @@ end
 temp()
 
 function temp()
-	var1.賣 = {
+	var1_0.賣 = {
 		淫 = {
 			this = true
 		},
@@ -98,7 +98,7 @@ end
 temp()
 
 function temp()
-	var1.趙 = {
+	var1_0.趙 = {
 		紫 = {
 			陽 = {
 				this = true
@@ -146,7 +146,7 @@ end
 temp()
 
 function temp()
-	var1.魏 = {
+	var1_0.魏 = {
 		京 = {
 			生 = {
 				this = true

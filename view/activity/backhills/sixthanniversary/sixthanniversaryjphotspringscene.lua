@@ -1,16 +1,16 @@
-﻿local var0 = class("SixthAnniversaryJPHotSpringScene", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringScene"))
+﻿local var0_0 = class("SixthAnniversaryJPHotSpringScene", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringScene"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "SixthAnniversaryJPHotSpringUI"
 end
 
-function var0.init(arg0)
-	var0.super.init(arg0)
+function var0_0.init(arg0_2)
+	var0_0.super.init(arg0_2)
 end
 
-function var0.didEnter(arg0)
-	var0.super.didEnter(arg0)
-	onButton(arg0, arg0._tf:Find("Top/Help"), function()
+function var0_0.didEnter(arg0_3)
+	var0_0.super.didEnter(arg0_3)
+	onButton(arg0_3, arg0_3._tf:Find("Top/Help"), function()
 		MsgboxMediator.ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.hotspring_help.tip,
@@ -22,11 +22,11 @@ function var0.didEnter(arg0)
 			}
 		})
 	end, SFX_PANEL)
-	setImageSprite(arg0.top:Find("Ticket/Icon"), LoadSprite("props/wenquanshoupai", "wenquanshoupai"))
+	setImageSprite(arg0_3.top:Find("Ticket/Icon"), LoadSprite("props/wenquanshoupai", "wenquanshoupai"))
 end
 
-function var0.willExit(arg0)
-	var0.super.willExit(arg0)
+function var0_0.willExit(arg0_5)
+	var0_0.super.willExit(arg0_5)
 end
 
-return var0
+return var0_0

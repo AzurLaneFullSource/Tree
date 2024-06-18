@@ -1,42 +1,42 @@
-﻿local var0 = class("FileDownloadPanel", import(".MsgboxSubPanel"))
+﻿local var0_0 = class("FileDownloadPanel", import(".MsgboxSubPanel"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "FileDownloadBox"
 end
 
-function var0.OnInit(arg0)
-	arg0:findUI()
-	arg0:addListener()
+function var0_0.OnInit(arg0_2)
+	arg0_2:findUI()
+	arg0_2:addListener()
 end
 
-function var0.UpdateView(arg0, arg1)
-	local var0 = arg1.onYes
+function var0_0.UpdateView(arg0_3, arg1_3)
+	local var0_3 = arg1_3.onYes
 
-	function arg1.onYes()
-		pg.FileDownloadMgr.GetInstance():SetRemind(arg0.curStopValue)
-		var0()
+	function arg1_3.onYes()
+		pg.FileDownloadMgr.GetInstance():SetRemind(arg0_3.curStopValue)
+		var0_3()
 	end
 
-	arg0:PreRefresh(arg1)
-	setText(arg0.contextText, arg1.content)
+	arg0_3:PreRefresh(arg1_3)
+	setText(arg0_3.contextText, arg1_3.content)
 
-	rtf(arg0.viewParent._window).sizeDelta = Vector2.New(1000, 638)
+	rtf(arg0_3.viewParent._window).sizeDelta = Vector2.New(1000, 638)
 
-	arg0:PostRefresh(arg1)
+	arg0_3:PostRefresh(arg1_3)
 end
 
-function var0.findUI(arg0)
-	arg0.contextText = arg0:findTF("Context")
-	arg0.toggleTF = arg0:findTF("Toggle")
-	arg0.tickTF = arg0:findTF("Tip/TickBG/Tick", arg0.toggleTF)
+function var0_0.findUI(arg0_5)
+	arg0_5.contextText = arg0_5:findTF("Context")
+	arg0_5.toggleTF = arg0_5:findTF("Toggle")
+	arg0_5.tickTF = arg0_5:findTF("Tip/TickBG/Tick", arg0_5.toggleTF)
 end
 
-function var0.addListener(arg0)
-	arg0.curStopValue = false
+function var0_0.addListener(arg0_6)
+	arg0_6.curStopValue = false
 
-	onToggle(arg0, arg0.toggleTF, function(arg0)
-		arg0.curStopValue = arg0
+	onToggle(arg0_6, arg0_6.toggleTF, function(arg0_7)
+		arg0_6.curStopValue = arg0_7
 	end, SFX_CONFIRM, SFX_CANCEL)
 end
 
-return var0
+return var0_0

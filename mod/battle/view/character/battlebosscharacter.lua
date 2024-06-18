@@ -1,462 +1,462 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleUnitEvent
-local var2 = class("BattleBossCharacter", var0.Battle.BattleEnemyCharacter)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleUnitEvent
+local var2_0 = class("BattleBossCharacter", var0_0.Battle.BattleEnemyCharacter)
 
-var0.Battle.BattleBossCharacter = var2
-var2.__name = "BattleBossCharacter"
+var0_0.Battle.BattleBossCharacter = var2_0
+var2_0.__name = "BattleBossCharacter"
 
-function var2.Ctor(arg0)
-	var2.super.Ctor(arg0)
+function var2_0.Ctor(arg0_1)
+	var2_0.super.Ctor(arg0_1)
 end
 
-function var2.Dispose(arg0)
-	if not arg0._chargeTimer.paused then
-		arg0._chargeTimer:Stop()
+function var2_0.Dispose(arg0_2)
+	if not arg0_2._chargeTimer.paused then
+		arg0_2._chargeTimer:Stop()
 	end
 
-	if arg0._castClock then
-		arg0._castClock:Dispose()
+	if arg0_2._castClock then
+		arg0_2._castClock:Dispose()
 
-		arg0._castClock = nil
+		arg0_2._castClock = nil
 	end
 
-	if arg0._aimBiarBar then
-		local var0 = arg0._aimBiarBar:GetGO()
+	if arg0_2._aimBiarBar then
+		local var0_2 = arg0_2._aimBiarBar:GetGO()
 
-		arg0._factory:GetHPBarPool():DestroyObj(var0)
-		arg0._aimBiarBar:Dispose()
+		arg0_2._factory:GetHPBarPool():DestroyObj(var0_2)
+		arg0_2._aimBiarBar:Dispose()
 
-		arg0._aimBiarBar = nil
+		arg0_2._aimBiarBar = nil
 	end
 
-	LeanTween.cancel(arg0._HPBar)
-	var2.super.Dispose(arg0)
+	LeanTween.cancel(arg0_2._HPBar)
+	var2_0.super.Dispose(arg0_2)
 end
 
-function var2.Update(arg0)
-	var2.super.Update(arg0)
-	arg0:UpdateCastClockPosition()
+function var2_0.Update(arg0_3)
+	var2_0.super.Update(arg0_3)
+	arg0_3:UpdateCastClockPosition()
 
-	if arg0._armor then
-		arg0:UpdateCastClock()
+	if arg0_3._armor then
+		arg0_3:UpdateCastClock()
 	end
 
-	arg0:UpdateBarrierClockPosition()
+	arg0_3:UpdateBarrierClockPosition()
 
-	if arg0._barrier then
-		arg0:updateBarrierClock()
+	if arg0_3._barrier then
+		arg0_3:updateBarrierClock()
 	end
 end
 
-function var2.UpdateVigilantBarPosition(arg0)
-	local var0 = arg0._referenceVector + arg0._hpBarOffset
+function var2_0.UpdateVigilantBarPosition(arg0_4)
+	local var0_4 = arg0_4._referenceVector + arg0_4._hpBarOffset
 
-	arg0._vigilantBar:UpdateVigilantBarPosition(var0)
+	arg0_4._vigilantBar:UpdateVigilantBarPosition(var0_4)
 end
 
-function var2.RegisterWeaponListener(arg0, arg1)
-	var2.super.RegisterWeaponListener(arg0, arg1)
-	arg1:RegisterEventListener(arg0, var1.WEAPON_INTERRUPT, arg0.onWeaponInterrupted)
+function var2_0.RegisterWeaponListener(arg0_5, arg1_5)
+	var2_0.super.RegisterWeaponListener(arg0_5, arg1_5)
+	arg1_5:RegisterEventListener(arg0_5, var1_0.WEAPON_INTERRUPT, arg0_5.onWeaponInterrupted)
 end
 
-function var2.UnregisterWeaponListener(arg0, arg1)
-	var2.super.UnregisterWeaponListener(arg0, arg1)
-	arg1:UnregisterEventListener(arg0, var1.WEAPON_INTERRUPT)
+function var2_0.UnregisterWeaponListener(arg0_6, arg1_6)
+	var2_0.super.UnregisterWeaponListener(arg0_6, arg1_6)
+	arg1_6:UnregisterEventListener(arg0_6, var1_0.WEAPON_INTERRUPT)
 end
 
-function var2.AddHPBar(arg0, arg1, arg2)
-	arg0._HPBar = arg1
-	arg0._HPBarTf = arg1.transform
+function var2_0.AddHPBar(arg0_7, arg1_7, arg2_7)
+	arg0_7._HPBar = arg1_7
+	arg0_7._HPBarTf = arg1_7.transform
 
-	arg1:SetActive(true)
-	arg0._unitData:RegisterEventListener(arg0, var1.UPDATE_HP, arg0.OnUpdateHP)
+	arg1_7:SetActive(true)
+	arg0_7._unitData:RegisterEventListener(arg0_7, var1_0.UPDATE_HP, arg0_7.OnUpdateHP)
 
-	arg0._HPBarCountText = arg0._HPBarTf:Find("HPBarCount"):GetComponent(typeof(Text))
-	arg0._activeVernier = arg2
+	arg0_7._HPBarCountText = arg0_7._HPBarTf:Find("HPBarCount"):GetComponent(typeof(Text))
+	arg0_7._activeVernier = arg2_7
 
-	arg0:SetTemplateInfo()
-	arg0:initBarComponent()
-	arg0:SetHPBarCountText(arg0._HPBarTotalCount)
+	arg0_7:SetTemplateInfo()
+	arg0_7:initBarComponent()
+	arg0_7:SetHPBarCountText(arg0_7._HPBarTotalCount)
 
-	arg0._cacheHP = arg0._unitData:GetMaxHP()
+	arg0_7._cacheHP = arg0_7._unitData:GetMaxHP()
 
-	arg0:UpdateHpBar()
-	arg0:initBarrierBar()
+	arg0_7:UpdateHpBar()
+	arg0_7:initBarrierBar()
 end
 
-function var2.SetTemplateInfo(arg0)
-	local var0 = arg0._unitData:GetTemplate()
-	local var1 = ""
+function var2_0.SetTemplateInfo(arg0_8)
+	local var0_8 = arg0_8._unitData:GetTemplate()
+	local var1_8 = ""
 
-	if var0 then
-		var1 = var0.name
+	if var0_8 then
+		var1_8 = var0_8.name
 	end
 
-	changeToScrollText(arg0._HPBarTf:Find("BossName"), var1)
+	changeToScrollText(arg0_8._HPBarTf:Find("BossName"), var1_8)
 
-	arg0._HPBarTf:Find("BossLv"):GetComponent(typeof(Text)).text = "Lv." .. arg0._unitData:GetLevel()
+	arg0_8._HPBarTf:Find("BossLv"):GetComponent(typeof(Text)).text = "Lv." .. arg0_8._unitData:GetLevel()
 
-	local var2 = pg.enemy_data_by_type[var0.type].type
-	local var3 = GetSpriteFromAtlas("shiptype", shipType2Battleprint(var2))
+	local var2_8 = pg.enemy_data_by_type[var0_8.type].type
+	local var3_8 = GetSpriteFromAtlas("shiptype", shipType2Battleprint(var2_8))
 
-	setImageSprite(arg0._HPBarTf:Find("BossIcon/typeIcon/icon"), var3, true)
+	setImageSprite(arg0_8._HPBarTf:Find("BossIcon/typeIcon/icon"), var3_8, true)
 
-	local var4 = var0.Battle.BattleResourceManager.GetInstance():GetCharacterSquareIcon(arg0._bossIcon)
+	local var4_8 = var0_0.Battle.BattleResourceManager.GetInstance():GetCharacterSquareIcon(arg0_8._bossIcon)
 
-	setImageSprite(findTF(arg0._HPBarTf, "BossIcon/icon"), var4)
+	setImageSprite(findTF(arg0_8._HPBarTf, "BossIcon/icon"), var4_8)
 
-	arg0._armorBar = arg0._HPBarTf:Find("ArmorBar")
-	arg0._armorProgress = arg0._HPBarTf:Find("ArmorBar/armorProgress"):GetComponent(typeof(Image))
+	arg0_8._armorBar = arg0_8._HPBarTf:Find("ArmorBar")
+	arg0_8._armorProgress = arg0_8._HPBarTf:Find("ArmorBar/armorProgress"):GetComponent(typeof(Image))
 
-	SetActive(arg0._armorBar, false)
+	SetActive(arg0_8._armorBar, false)
 
-	arg0._barrierBar = arg0._HPBarTf:Find("ShieldBar")
-	arg0._barrierProgress = arg0._barrierBar:Find("shieldProgress"):GetComponent(typeof(Image))
+	arg0_8._barrierBar = arg0_8._HPBarTf:Find("ShieldBar")
+	arg0_8._barrierProgress = arg0_8._barrierBar:Find("shieldProgress"):GetComponent(typeof(Image))
 
-	SetActive(arg0._barrierBar, false)
+	SetActive(arg0_8._barrierBar, false)
 end
 
-function var2.SetBossData(arg0, arg1)
-	arg0._bossBarInfoList = {}
-	arg0._HPBarTotalCount = arg1.hpBarNum or 1
-	arg0._hideBarNum = arg1.hideBarNum
-	arg0._bossIcon = arg0:GetUnitData():GetTemplate().icon
-	arg0._bossIndex = arg1.bossCount
+function var2_0.SetBossData(arg0_9, arg1_9)
+	arg0_9._bossBarInfoList = {}
+	arg0_9._HPBarTotalCount = arg1_9.hpBarNum or 1
+	arg0_9._hideBarNum = arg1_9.hideBarNum
+	arg0_9._bossIcon = arg0_9:GetUnitData():GetTemplate().icon
+	arg0_9._bossIndex = arg1_9.bossCount
 end
 
-function var2.GetBossIndex(arg0)
-	return arg0._bossIndex
+function var2_0.GetBossIndex(arg0_10)
+	return arg0_10._bossIndex
 end
 
-function var2.initBarComponent(arg0)
-	arg0._stepHP = arg0:GetUnitData():GetMaxHP() / arg0._HPBarTotalCount
+function var2_0.initBarComponent(arg0_11)
+	arg0_11._stepHP = arg0_11:GetUnitData():GetMaxHP() / arg0_11._HPBarTotalCount
 
-	local var0 = 1
+	local var0_11 = 1
 
-	arg0._resTotalCount = 5
-	arg0._bossBarInfoList = {}
+	arg0_11._resTotalCount = 5
+	arg0_11._bossBarInfoList = {}
 
-	while var0 <= arg0._resTotalCount do
-		local var1 = {}
-		local var2 = "bloodBarContainer/hp_" .. var0
-		local var3 = var2 .. "_delta"
-		local var4 = arg0._HPBarTf:Find(var2)
-		local var5 = arg0._HPBarTf:Find(var3)
+	while var0_11 <= arg0_11._resTotalCount do
+		local var1_11 = {}
+		local var2_11 = "bloodBarContainer/hp_" .. var0_11
+		local var3_11 = var2_11 .. "_delta"
+		local var4_11 = arg0_11._HPBarTf:Find(var2_11)
+		local var5_11 = arg0_11._HPBarTf:Find(var3_11)
 
-		var1.progressImage = var4:GetComponent(typeof(Image))
-		var1.deltaImage = var5:GetComponent(typeof(Image))
-		var1.progressTF = var4.transform
-		var1.deltaTF = var5.transform
-		var1.progressImage.fillAmount = 1
-		var1.deltaImage.fillAmount = 1
-		arg0._bossBarInfoList[var0] = var1
-		var0 = var0 + 1
+		var1_11.progressImage = var4_11:GetComponent(typeof(Image))
+		var1_11.deltaImage = var5_11:GetComponent(typeof(Image))
+		var1_11.progressTF = var4_11.transform
+		var1_11.deltaTF = var5_11.transform
+		var1_11.progressImage.fillAmount = 1
+		var1_11.deltaImage.fillAmount = 1
+		arg0_11._bossBarInfoList[var0_11] = var1_11
+		var0_11 = var0_11 + 1
 	end
 
-	arg0._topBarIndex = arg0._HPBarTf.childCount - 1
-	arg0._currentFmod = math.fmod(arg0._HPBarTotalCount, arg0._resTotalCount)
+	arg0_11._topBarIndex = arg0_11._HPBarTf.childCount - 1
+	arg0_11._currentFmod = math.fmod(arg0_11._HPBarTotalCount, arg0_11._resTotalCount)
 
-	if arg0._currentFmod == 0 then
-		arg0._currentFmod = arg0._resTotalCount
+	if arg0_11._currentFmod == 0 then
+		arg0_11._currentFmod = arg0_11._resTotalCount
 	end
 
-	if arg0._HPBarTotalCount < 5 then
-		local var6 = arg0._resTotalCount
+	if arg0_11._HPBarTotalCount < 5 then
+		local var6_11 = arg0_11._resTotalCount
 
-		while var6 > arg0._HPBarTotalCount do
-			local var7 = "bloodBarContainer/hp_" .. var6
+		while var6_11 > arg0_11._HPBarTotalCount do
+			local var7_11 = "bloodBarContainer/hp_" .. var6_11
 
-			SetActive(arg0._HPBarTf:Find(var7), false)
-			SetActive(arg0._HPBarTf:Find(var7 .. "_delta"), false)
+			SetActive(arg0_11._HPBarTf:Find(var7_11), false)
+			SetActive(arg0_11._HPBarTf:Find(var7_11 .. "_delta"), false)
 
-			var6 = var6 - 1
+			var6_11 = var6_11 - 1
 		end
 	else
-		local var8 = arg0._resTotalCount
+		local var8_11 = arg0_11._resTotalCount
 
-		while var8 > arg0._currentFmod do
-			local var9 = "bloodBarContainer/hp_" .. var8
+		while var8_11 > arg0_11._currentFmod do
+			local var9_11 = "bloodBarContainer/hp_" .. var8_11
 
-			arg0._HPBarTf:Find(var9).transform:SetSiblingIndex(0)
-			arg0._HPBarTf:Find(var9 .. "_delta").transform:SetSiblingIndex(0)
+			arg0_11._HPBarTf:Find(var9_11).transform:SetSiblingIndex(0)
+			arg0_11._HPBarTf:Find(var9_11 .. "_delta").transform:SetSiblingIndex(0)
 
-			var8 = var8 - 1
+			var8_11 = var8_11 - 1
 		end
 	end
 
-	if arg0._activeVernier then
-		arg0._vernier = arg0._HPBarTf:Find("vernier/tag")
+	if arg0_11._activeVernier then
+		arg0_11._vernier = arg0_11._HPBarTf:Find("vernier/tag")
 
-		SetActive(arg0._HPBarTf:Find("vernier"), arg0._activeVernier)
+		SetActive(arg0_11._HPBarTf:Find("vernier"), arg0_11._activeVernier)
 	end
 
-	arg0._chargeTimer = Timer.New(function()
-		arg0._currentTween = arg0:generateTween()
+	arg0_11._chargeTimer = Timer.New(function()
+		arg0_11._currentTween = arg0_11:generateTween()
 	end, 1)
 end
 
-function var2.UpdateHpBar(arg0)
-	local var0 = arg0._unitData:GetCurrentHP()
+function var2_0.UpdateHpBar(arg0_13)
+	local var0_13 = arg0_13._unitData:GetCurrentHP()
 
-	if arg0._cacheHP == var0 then
+	if arg0_13._cacheHP == var0_13 then
 		return
 	end
 
-	if not arg0._chargeTimer.paused then
-		arg0._chargeTimer:Stop()
-		arg0._chargeTimer:Stop()
-		arg0._chargeTimer:Reset()
+	if not arg0_13._chargeTimer.paused then
+		arg0_13._chargeTimer:Stop()
+		arg0_13._chargeTimer:Stop()
+		arg0_13._chargeTimer:Reset()
 	end
 
-	local var1, var2, var3 = arg0:GetCurrentFmod()
+	local var1_13, var2_13, var3_13 = arg0_13:GetCurrentFmod()
 
-	arg0:SortBar(var1, var3)
+	arg0_13:SortBar(var1_13, var3_13)
 
-	arg0._currentFmod = var1
-	arg0._currentDivision = var3
+	arg0_13._currentFmod = var1_13
+	arg0_13._currentDivision = var3_13
 
-	if var0 < arg0._cacheHP then
-		if arg0._currentDivision ~= var3 then
-			LeanTween.cancel(arg0._HPBar)
+	if var0_13 < arg0_13._cacheHP then
+		if arg0_13._currentDivision ~= var3_13 then
+			LeanTween.cancel(arg0_13._HPBar)
 		end
 
-		arg0._chargeTimer:Start()
+		arg0_13._chargeTimer:Start()
 	end
 
-	arg0._bossBarInfoList[var1].progressImage.fillAmount = var2
+	arg0_13._bossBarInfoList[var1_13].progressImage.fillAmount = var2_13
 
-	if arg0._activeVernier then
-		arg0._vernier.anchorMin = Vector2(currentRate, 0.5)
-		arg0._vernier.anchorMax = Vector2(currentRate, 0.5)
+	if arg0_13._activeVernier then
+		arg0_13._vernier.anchorMin = Vector2(currentRate, 0.5)
+		arg0_13._vernier.anchorMax = Vector2(currentRate, 0.5)
 	end
 
-	arg0:SetHPBarCountText(var3)
+	arg0_13:SetHPBarCountText(var3_13)
 
-	arg0._cacheHP = var0
+	arg0_13._cacheHP = var0_13
 end
 
-function var2.generateTween(arg0)
-	local var0 = arg0._bossBarInfoList[arg0._currentFmod]
-	local var1 = var0.deltaImage
-	local var2 = var0.progressImage.fillAmount
+function var2_0.generateTween(arg0_14)
+	local var0_14 = arg0_14._bossBarInfoList[arg0_14._currentFmod]
+	local var1_14 = var0_14.deltaImage
+	local var2_14 = var0_14.progressImage.fillAmount
 
 	duration = duration or 0.7
 
-	return (LeanTween.value(go(arg0._HPBar), var1.fillAmount, var2, 0.7):setOnUpdate(System.Action_float(function(arg0)
-		var1.fillAmount = arg0
+	return (LeanTween.value(go(arg0_14._HPBar), var1_14.fillAmount, var2_14, 0.7):setOnUpdate(System.Action_float(function(arg0_15)
+		var1_14.fillAmount = arg0_15
 	end)))
 end
 
-function var2.GetCurrentFmod(arg0)
-	local var0 = arg0._unitData:GetCurrentHP()
-	local var1, var2 = math.modf(var0 / arg0._stepHP)
-	local var3 = var1 + 1
-	local var4 = math.fmod(var3, arg0._resTotalCount)
+function var2_0.GetCurrentFmod(arg0_16)
+	local var0_16 = arg0_16._unitData:GetCurrentHP()
+	local var1_16, var2_16 = math.modf(var0_16 / arg0_16._stepHP)
+	local var3_16 = var1_16 + 1
+	local var4_16 = math.fmod(var3_16, arg0_16._resTotalCount)
 
-	if var4 == 0 then
-		var4 = 5
+	if var4_16 == 0 then
+		var4_16 = 5
 	end
 
-	return var4, var2, var3
+	return var4_16, var2_16, var3_16
 end
 
-function var2.SortBar(arg0, arg1, arg2)
-	if arg1 == arg0._currentFmod then
+function var2_0.SortBar(arg0_17, arg1_17, arg2_17)
+	if arg1_17 == arg0_17._currentFmod then
 		return
-	elseif arg1 > arg0._currentFmod then
-		local var0 = arg0._currentFmod
+	elseif arg1_17 > arg0_17._currentFmod then
+		local var0_17 = arg0_17._currentFmod
 
-		arg0._bossBarInfoList[var0].progressImage.fillAmount = 1
-		arg0._bossBarInfoList[var0].deltaImage.fillAmount = 1
+		arg0_17._bossBarInfoList[var0_17].progressImage.fillAmount = 1
+		arg0_17._bossBarInfoList[var0_17].deltaImage.fillAmount = 1
 
-		while var0 < arg1 do
-			var0 = var0 + 1
+		while var0_17 < arg1_17 do
+			var0_17 = var0_17 + 1
 
-			local var1 = arg0._bossBarInfoList[var0]
+			local var1_17 = arg0_17._bossBarInfoList[var0_17]
 
-			var1.deltaTF:SetSiblingIndex(arg0._topBarIndex)
-			var1.progressTF:SetSiblingIndex(arg0._topBarIndex)
-			SetActive(var1.progressImage, true)
-			SetActive(var1.deltaImage, true)
+			var1_17.deltaTF:SetSiblingIndex(arg0_17._topBarIndex)
+			var1_17.progressTF:SetSiblingIndex(arg0_17._topBarIndex)
+			SetActive(var1_17.progressImage, true)
+			SetActive(var1_17.deltaImage, true)
 		end
-	elseif arg1 < arg0._currentFmod then
-		local var2 = arg0._currentFmod
+	elseif arg1_17 < arg0_17._currentFmod then
+		local var2_17 = arg0_17._currentFmod
 
-		while arg1 < var2 do
-			local var3 = arg0._bossBarInfoList[var2]
+		while arg1_17 < var2_17 do
+			local var3_17 = arg0_17._bossBarInfoList[var2_17]
 
-			var3.progressImage.fillAmount = 1
-			var3.deltaImage.fillAmount = 1
+			var3_17.progressImage.fillAmount = 1
+			var3_17.deltaImage.fillAmount = 1
 
-			var3.progressTF:SetSiblingIndex(0)
-			var3.deltaTF:SetSiblingIndex(0)
+			var3_17.progressTF:SetSiblingIndex(0)
+			var3_17.deltaTF:SetSiblingIndex(0)
 
-			if arg2 < arg0._resTotalCount then
-				SetActive(var3.progressImage, false)
-				SetActive(var3.deltaImage, false)
+			if arg2_17 < arg0_17._resTotalCount then
+				SetActive(var3_17.progressImage, false)
+				SetActive(var3_17.deltaImage, false)
 			end
 
-			var2 = var2 - 1
+			var2_17 = var2_17 - 1
 		end
 	end
 end
 
-function var2.SetHPBarCountText(arg0, arg1)
-	if arg0._hideBarNum then
-		arg0._HPBarCountText.text = "X??"
+function var2_0.SetHPBarCountText(arg0_18, arg1_18)
+	if arg0_18._hideBarNum then
+		arg0_18._HPBarCountText.text = "X??"
 	else
-		arg0._HPBarCountText.text = "X " .. arg1
+		arg0_18._HPBarCountText.text = "X " .. arg1_18
 	end
 end
 
-function var2.UpdateHPBarPosition(arg0)
-	if arg0._normalHPTF and not arg0._hideHP then
-		arg0._hpBarPos:Copy(arg0._referenceVector):Add(arg0._hpBarOffset)
+function var2_0.UpdateHPBarPosition(arg0_19)
+	if arg0_19._normalHPTF and not arg0_19._hideHP then
+		arg0_19._hpBarPos:Copy(arg0_19._referenceVector):Add(arg0_19._hpBarOffset)
 
-		arg0._normalHPTF.position = arg0._hpBarPos
+		arg0_19._normalHPTF.position = arg0_19._hpBarPos
 	end
 end
 
-function var2.onWeaponPreCast(arg0, arg1)
-	var2.super.onWeaponPreCast(arg0, arg1)
+function var2_0.onWeaponPreCast(arg0_20, arg1_20)
+	var2_0.super.onWeaponPreCast(arg0_20, arg1_20)
 
-	local var0 = arg1.Data
-	local var1 = var0.armor
+	local var0_20 = arg1_20.Data
+	local var1_20 = var0_20.armor
 
-	arg0:initArmorBar(var0.armor)
+	arg0_20:initArmorBar(var0_20.armor)
 
-	if var1 and var1 ~= 0 then
-		arg0:initCastClock(var0.time, arg1.Dispatcher)
+	if var1_20 and var1_20 ~= 0 then
+		arg0_20:initCastClock(var0_20.time, arg1_20.Dispatcher)
 	end
 end
 
-function var2.onWeaponPrecastFinish(arg0, arg1)
-	var2.super.onWeaponPrecastFinish(arg0, arg1)
+function var2_0.onWeaponPrecastFinish(arg0_21, arg1_21)
+	var2_0.super.onWeaponPrecastFinish(arg0_21, arg1_21)
 
-	local var0 = arg1.Data.armor
-	local var1 = arg1.Dispatcher
+	local var0_21 = arg1_21.Data.armor
+	local var1_21 = arg1_21.Dispatcher
 
-	if arg0._castClock:GetCastingWeapon() == var1 and var0 and var0 ~= 0 then
-		if arg0._armor <= 0 then
-			arg0._castClock:Interrupt(true)
+	if arg0_21._castClock:GetCastingWeapon() == var1_21 and var0_21 and var0_21 ~= 0 then
+		if arg0_21._armor <= 0 then
+			arg0_21._castClock:Interrupt(true)
 		else
-			arg0._castClock:Interrupt(false)
+			arg0_21._castClock:Interrupt(false)
 		end
 
-		arg0._armor = nil
+		arg0_21._armor = nil
 
-		SetActive(arg0._armorBar, false)
+		SetActive(arg0_21._armorBar, false)
 	end
 end
 
-function var2.onWeaponInterrupted(arg0, arg1)
-	arg0._unitData:StateChange(var0.Battle.UnitState.STATE_INTERRUPT)
+function var2_0.onWeaponInterrupted(arg0_22, arg1_22)
+	arg0_22._unitData:StateChange(var0_0.Battle.UnitState.STATE_INTERRUPT)
 end
 
-function var2.initArmorBar(arg0, arg1)
-	if arg1 and arg1 ~= 0 then
-		arg0._armor = arg1
-		arg0._totalArmor = arg1
+function var2_0.initArmorBar(arg0_23, arg1_23)
+	if arg1_23 and arg1_23 ~= 0 then
+		arg0_23._armor = arg1_23
+		arg0_23._totalArmor = arg1_23
 
-		arg0:updateWeaponArmor()
-		SetActive(arg0._armorBar, true)
+		arg0_23:updateWeaponArmor()
+		SetActive(arg0_23._armorBar, true)
 	end
 end
 
-function var2.OnUpdateHP(arg0, arg1)
-	local var0 = arg1.Data.preShieldHP
+function var2_0.OnUpdateHP(arg0_24, arg1_24)
+	local var0_24 = arg1_24.Data.preShieldHP
 
-	if arg0._barrier and var0 < 0 then
-		arg0._barrier = arg0._barrier + var0
+	if arg0_24._barrier and var0_24 < 0 then
+		arg0_24._barrier = arg0_24._barrier + var0_24
 
-		arg0:updateBarrierBar()
+		arg0_24:updateBarrierBar()
 	end
 
-	var2.super.OnUpdateHP(arg0, arg1)
+	var2_0.super.OnUpdateHP(arg0_24, arg1_24)
 
-	local var1 = arg1.Data.dHP
+	local var1_24 = arg1_24.Data.dHP
 
-	if arg0._armor and var1 < 0 then
-		arg0._armor = arg0._armor + var1
+	if arg0_24._armor and var1_24 < 0 then
+		arg0_24._armor = arg0_24._armor + var1_24
 
-		arg0:updateWeaponArmor()
+		arg0_24:updateWeaponArmor()
 	end
 end
 
-function var2.updateWeaponArmor(arg0)
-	arg0._armorProgress.fillAmount = arg0._armor / arg0._totalArmor
+function var2_0.updateWeaponArmor(arg0_25)
+	arg0_25._armorProgress.fillAmount = arg0_25._armor / arg0_25._totalArmor
 end
 
-function var2.initCastClock(arg0, arg1, arg2)
-	arg0._castClock:Casting(arg1, arg2)
+function var2_0.initCastClock(arg0_26, arg1_26, arg2_26)
+	arg0_26._castClock:Casting(arg1_26, arg2_26)
 
-	arg0._castFinishTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg1
-	arg0._castDuration = arg1
+	arg0_26._castFinishTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg1_26
+	arg0_26._castDuration = arg1_26
 end
 
-function var2.UpdateCastClock(arg0)
-	arg0._castClock:UpdateCastClock()
+function var2_0.UpdateCastClock(arg0_27)
+	arg0_27._castClock:UpdateCastClock()
 end
 
-function var2.updateComponentDiveInvisible(arg0)
-	var2.super.updateComponentDiveInvisible(arg0)
-	SetActive(arg0._HPBarTf, true)
+function var2_0.updateComponentDiveInvisible(arg0_28)
+	var2_0.super.updateComponentDiveInvisible(arg0_28)
+	SetActive(arg0_28._HPBarTf, true)
 end
 
-function var2.updateComponentVisible(arg0)
-	var2.super.updateComponentVisible(arg0)
-	SetActive(arg0._HPBarTf, true)
+function var2_0.updateComponentVisible(arg0_29)
+	var2_0.super.updateComponentVisible(arg0_29)
+	SetActive(arg0_29._HPBarTf, true)
 end
 
-function var2.initBarrierBar(arg0)
-	arg0._unitData:RegisterEventListener(arg0, var1.BARRIER_STATE_CHANGE, arg0.onBarrierStateChange)
+function var2_0.initBarrierBar(arg0_30)
+	arg0_30._unitData:RegisterEventListener(arg0_30, var1_0.BARRIER_STATE_CHANGE, arg0_30.onBarrierStateChange)
 end
 
-function var2.onBarrierStateChange(arg0, arg1)
-	local var0 = arg1.Data.barrierDurability
-	local var1 = arg1.Data.barrierDuration
+function var2_0.onBarrierStateChange(arg0_31, arg1_31)
+	local var0_31 = arg1_31.Data.barrierDurability
+	local var1_31 = arg1_31.Data.barrierDuration
 
-	SetActive(arg0._barrierBar, var0 > 0)
+	SetActive(arg0_31._barrierBar, var0_31 > 0)
 
-	if var0 > 0 then
-		arg0._totalBarrier = var0
-		arg0._barrier = var0
+	if var0_31 > 0 then
+		arg0_31._totalBarrier = var0_31
+		arg0_31._barrier = var0_31
 
-		arg0:initBarrierClock(var1)
-		arg0:updateBarrierBar()
-		arg0:updateBarrierClock()
+		arg0_31:initBarrierClock(var1_31)
+		arg0_31:updateBarrierBar()
+		arg0_31:updateBarrierClock()
 	else
-		arg0._barrier = nil
-		arg0._totalBarrier = nil
+		arg0_31._barrier = nil
+		arg0_31._totalBarrier = nil
 
-		arg0._barrierClock:Interrupt()
+		arg0_31._barrierClock:Interrupt()
 	end
 end
 
-function var2.updateBarrierBar(arg0)
-	arg0._barrierProgress.fillAmount = arg0._barrier / arg0._totalBarrier
+function var2_0.updateBarrierBar(arg0_32)
+	arg0_32._barrierProgress.fillAmount = arg0_32._barrier / arg0_32._totalBarrier
 end
 
-function var2.updateBarrierClock(arg0)
-	arg0._barrierClock:UpdateBarrierClockProgress()
+function var2_0.updateBarrierClock(arg0_33)
+	arg0_33._barrierClock:UpdateBarrierClockProgress()
 end
 
-function var2.initBarrierClock(arg0, arg1)
-	arg0._barrierClock:Shielding(arg1)
+function var2_0.initBarrierClock(arg0_34, arg1_34)
+	arg0_34._barrierClock:Shielding(arg1_34)
 end
 
-function var2.AddAimBiasBar(arg0, arg1)
-	arg0._normalHPTF = arg1
-	arg0._aimBiarBarTF = arg1:Find("biasBar")
-	arg0._aimBiarBar = var0.Battle.BattleAimbiasBar.New(arg0._aimBiarBarTF)
+function var2_0.AddAimBiasBar(arg0_35, arg1_35)
+	arg0_35._normalHPTF = arg1_35
+	arg0_35._aimBiarBarTF = arg1_35:Find("biasBar")
+	arg0_35._aimBiarBar = var0_0.Battle.BattleAimbiasBar.New(arg0_35._aimBiarBarTF)
 
-	arg0._aimBiarBar:ConfigAimBias(arg0._unitData:GetAimBias())
-	arg0._aimBiarBar:UpdateAimBiasProgress()
+	arg0_35._aimBiarBar:ConfigAimBias(arg0_35._unitData:GetAimBias())
+	arg0_35._aimBiarBar:UpdateAimBiasProgress()
 end
 
-function var2.AddModel(arg0, arg1)
-	var2.super.AddModel(arg0, arg1)
-	arg0:UpdatePosition()
+function var2_0.AddModel(arg0_36, arg1_36)
+	var2_0.super.AddModel(arg0_36, arg1_36)
+	arg0_36:UpdatePosition()
 end

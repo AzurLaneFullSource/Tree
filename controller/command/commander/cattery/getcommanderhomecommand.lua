@@ -1,36 +1,36 @@
-﻿local var0 = class("GetCommanderHomeCommand", pm.SimpleCommand)
+﻿local var0_0 = class("GetCommanderHomeCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = getProxy(CommanderProxy)
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = getProxy(CommanderProxy)
 
-	if var1:GetCommanderHome() then
+	if var1_1:GetCommanderHome() then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(25026, {
 		type = 0
-	}, 25027, function(arg0)
-		local var0 = CommanderHome.New(arg0)
+	}, 25027, function(arg0_2)
+		local var0_2 = CommanderHome.New(arg0_2)
 
-		var1:AddCommanderHome(var0)
+		var1_1:AddCommanderHome(var0_2)
 
-		for iter0, iter1 in ipairs(arg0.slots) do
-			if iter1.commander_id ~= 0 and iter1.commander_level and iter1.commander_level ~= 0 and iter1.commander_exp then
-				arg0:UpdateCommanderLevelAndExp(iter1.commander_id, iter1.commander_level, iter1.commander_exp)
+		for iter0_2, iter1_2 in ipairs(arg0_2.slots) do
+			if iter1_2.commander_id ~= 0 and iter1_2.commander_level and iter1_2.commander_level ~= 0 and iter1_2.commander_exp then
+				arg0_1:UpdateCommanderLevelAndExp(iter1_2.commander_id, iter1_2.commander_level, iter1_2.commander_exp)
 			end
 		end
 	end)
 end
 
-function var0.UpdateCommanderLevelAndExp(arg0, arg1, arg2, arg3)
-	local var0 = getProxy(CommanderProxy)
-	local var1 = var0:getCommanderById(arg1)
+function var0_0.UpdateCommanderLevelAndExp(arg0_3, arg1_3, arg2_3, arg3_3)
+	local var0_3 = getProxy(CommanderProxy)
+	local var1_3 = var0_3:getCommanderById(arg1_3)
 
-	if var1 then
-		var1:UpdateLevelAndExp(arg2, arg3)
-		var0:updateCommander(var1)
+	if var1_3 then
+		var1_3:UpdateLevelAndExp(arg2_3, arg3_3)
+		var0_3:updateCommander(var1_3)
 	end
 end
 
-return var0
+return var0_0

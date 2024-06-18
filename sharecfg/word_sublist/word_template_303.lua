@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_303 = {}
+var0_0.word_template_303 = {}
 
-local var1 = var0.word_template_303
+local var1_0 = var0_0.word_template_303
 
 function temp()
-	var1.獻 = {
+	var1_0.獻 = {
 		祭 = {
 			的 = {
 				圖 = {
@@ -23,7 +23,7 @@ end
 temp()
 
 function temp()
-	var1.乡 = {
+	var1_0.乡 = {
 		巴 = {
 			佬 = {
 				this = true
@@ -62,7 +62,7 @@ end
 temp()
 
 function temp()
-	var1.相 = {
+	var1_0.相 = {
 		奸 = {
 			this = true
 		},
@@ -136,7 +136,7 @@ end
 temp()
 
 function temp()
-	var1.香 = {
+	var1_0.香 = {
 		港 = {
 			this = true,
 			不 = {
@@ -531,7 +531,7 @@ end
 temp()
 
 function temp()
-	var1.祥 = {
+	var1_0.祥 = {
 		萨 = {
 			仁 = {
 				波 = {
@@ -547,7 +547,7 @@ end
 temp()
 
 function temp()
-	var1.享 = {
+	var1_0.享 = {
 		乐 = {
 			淫 = {
 				逸 = {
@@ -561,7 +561,7 @@ end
 temp()
 
 function temp()
-	var1.想 = {
+	var1_0.想 = {
 		干 = {
 			你 = {
 				this = true

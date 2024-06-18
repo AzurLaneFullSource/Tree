@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_354 = {}
+var0_0.word_template_354 = {}
 
-local var1 = var0.word_template_354
+local var1_0 = var0_0.word_template_354
 
 function temp()
-	var1.抓 = {
+	var1_0.抓 = {
 		捕 = {
 			访 = {
 				民 = {
@@ -36,7 +36,7 @@ end
 temp()
 
 function temp()
-	var1.专 = {
+	var1_0.专 = {
 		访 = {
 			赵 = {
 				紫 = {
@@ -613,7 +613,7 @@ end
 temp()
 
 function temp()
-	var1.砖 = {
+	var1_0.砖 = {
 		衡 = {
 			扒 = {
 				户 = {
@@ -627,7 +627,7 @@ end
 temp()
 
 function temp()
-	var1.颛 = {
+	var1_0.颛 = {
 		this = {
 			this = true
 		}
@@ -637,7 +637,7 @@ end
 temp()
 
 function temp()
-	var1.顓 = {
+	var1_0.顓 = {
 		this = {
 			this = true
 		}
@@ -647,7 +647,7 @@ end
 temp()
 
 function temp()
-	var1.转 = {
+	var1_0.转 = {
 		发 = {
 			给 = {
 				["1"] = {
@@ -749,7 +749,7 @@ end
 temp()
 
 function temp()
-	var1.赚 = {
+	var1_0.赚 = {
 		钱 = {
 			网 = {
 				站 = {

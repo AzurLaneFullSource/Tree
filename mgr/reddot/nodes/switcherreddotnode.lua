@@ -1,20 +1,20 @@
-﻿local var0 = class("SwitcherRedDotNode", import(".RedDotNode"))
+﻿local var0_0 = class("SwitcherRedDotNode", import(".RedDotNode"))
 
-function var0.Ctor(arg0, arg1, arg2, arg3)
-	local var0 = arg1:Find(arg3 and "on" or "off")
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	local var0_1 = arg1_1:Find(arg3_1 and "on" or "off")
 
-	var0.super.Ctor(arg0, var0, arg2)
+	var0_0.super.Ctor(arg0_1, var0_1, arg2_1)
 
-	arg0.toggle = arg1:GetComponent(typeof(Toggle))
-	arg0.isOn = arg3
+	arg0_1.toggle = arg1_1:GetComponent(typeof(Toggle))
+	arg0_1.isOn = arg3_1
 end
 
-function var0.SetData(arg0, arg1)
-	if IsNil(arg0.gameObject) then
+function var0_0.SetData(arg0_2, arg1_2)
+	if IsNil(arg0_2.gameObject) then
 		return
 	end
 
-	setActive(arg0.gameObject, arg1 and arg0.toggle.isOn ~= arg0.isOn)
+	setActive(arg0_2.gameObject, arg1_2 and arg0_2.toggle.isOn ~= arg0_2.isOn)
 end
 
-return var0
+return var0_0

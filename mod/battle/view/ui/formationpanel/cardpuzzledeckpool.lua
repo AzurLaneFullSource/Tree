@@ -1,43 +1,43 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConfig
-local var2 = var0.Battle.BattleCardPuzzleEvent
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConfig
+local var2_0 = var0_0.Battle.BattleCardPuzzleEvent
 
-var0.Battle.CardPuzzleDeckPool = class("CardPuzzleDeckPool")
+var0_0.Battle.CardPuzzleDeckPool = class("CardPuzzleDeckPool")
 
-local var3 = var0.Battle.CardPuzzleDeckPool
+local var3_0 = var0_0.Battle.CardPuzzleDeckPool
 
-var3.__name = "CardPuzzleDeckPool"
+var3_0.__name = "CardPuzzleDeckPool"
 
-function var3.Ctor(arg0, arg1)
-	arg0._go = arg1
+function var3_0.Ctor(arg0_1, arg1_1)
+	arg0_1._go = arg1_1
 
-	arg0:init()
+	arg0_1:init()
 end
 
-function var3.SetCardPuzzleComponent(arg0, arg1)
-	arg0._cardPuzzleInfo = arg1
-	arg0._deck = arg0._cardPuzzleInfo:GetDeck()
+function var3_0.SetCardPuzzleComponent(arg0_2, arg1_2)
+	arg0_2._cardPuzzleInfo = arg1_2
+	arg0_2._deck = arg0_2._cardPuzzleInfo:GetDeck()
 
-	arg0._deck:RegisterEventListener(arg0, var2.UPDATE_CARDS, arg0.onUpdateDeckCard)
-	arg0:onUpdateDeckCard()
+	arg0_2._deck:RegisterEventListener(arg0_2, var2_0.UPDATE_CARDS, arg0_2.onUpdateDeckCard)
+	arg0_2:onUpdateDeckCard()
 end
 
-function var3.onUpdateDeckCard(arg0, arg1)
-	setText(arg0._deckCountLabel, arg0._deck:GetLength())
+function var3_0.onUpdateDeckCard(arg0_3, arg1_3)
+	setText(arg0_3._deckCountLabel, arg0_3._deck:GetLength())
 end
 
-function var3.init(arg0)
-	var0.EventListener.AttachEventListener(arg0)
+function var3_0.init(arg0_4)
+	var0_0.EventListener.AttachEventListener(arg0_4)
 
-	arg0._tf = arg0._go.transform
-	arg0._deckCountLabel = arg0._tf:Find("count/text")
+	arg0_4._tf = arg0_4._go.transform
+	arg0_4._deckCountLabel = arg0_4._tf:Find("count/text")
 
-	setText(arg0._tf:Find("label"), i18n("card_puzzle_deck"))
+	setText(arg0_4._tf:Find("label"), i18n("card_puzzle_deck"))
 end
 
-function var3.Dispose(arg0)
-	arg0._deckCountLabel = nil
-	arg0._tf = nil
+function var3_0.Dispose(arg0_5)
+	arg0_5._deckCountLabel = nil
+	arg0_5._tf = nil
 end

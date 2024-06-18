@@ -1,77 +1,77 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("BattleBuffAntiSubVigilance", var0.Battle.BattleBuffEffect)
+local var0_0 = ys
+local var1_0 = class("BattleBuffAntiSubVigilance", var0_0.Battle.BattleBuffEffect)
 
-var0.Battle.BattleBuffAntiSubVigilance = var1
-var1.__name = "BattleBuffAntiSubVigilance"
+var0_0.Battle.BattleBuffAntiSubVigilance = var1_0
+var1_0.__name = "BattleBuffAntiSubVigilance"
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	local var0 = arg0._tempData.arg_list
+function var1_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	local var0_2 = arg0_2._tempData.arg_list
 
-	arg0._vigilantRange = var0.vigilanceRange
-	arg0._sonarRange = var0.sonarRange
-	arg0._sonarFrequency = var0.sonarFrequency
+	arg0_2._vigilantRange = var0_2.vigilanceRange
+	arg0_2._sonarRange = var0_2.sonarRange
+	arg0_2._sonarFrequency = var0_2.sonarFrequency
 end
 
-function var1.onAttach(arg0, arg1)
-	arg0._vigilantUnit = arg1
-	arg0._vigilantState = arg1:InitAntiSubState(arg0._sonarRange, arg0._sonarFrequency)
+function var1_0.onAttach(arg0_3, arg1_3)
+	arg0_3._vigilantUnit = arg1_3
+	arg0_3._vigilantState = arg1_3:InitAntiSubState(arg0_3._sonarRange, arg0_3._sonarFrequency)
 
-	local var0 = arg0:getTargetList(arg0._vigilantUnit, "TargetHarmNearest", {
+	local var0_3 = arg0_3:getTargetList(arg0_3._vigilantUnit, "TargetHarmNearest", {
 		range = 200
 	})
 
-	arg0._vigilantState:InitCheck(#var0)
+	arg0_3._vigilantState:InitCheck(#var0_3)
 
-	arg0._sonarCheckTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
+	arg0_3._sonarCheckTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
 end
 
-function var1.onUpdate(arg0)
-	if #arg0:getTargetList(arg0._vigilantUnit, "TargetHarmNearest", {
-		range = arg0._vigilantRange
+function var1_0.onUpdate(arg0_4)
+	if #arg0_4:getTargetList(arg0_4._vigilantUnit, "TargetHarmNearest", {
+		range = arg0_4._vigilantRange
 	}) > 0 then
-		arg0._vigilantState:VigilantAreaEngage()
+		arg0_4._vigilantState:VigilantAreaEngage()
 	end
 
-	local var0 = #arg0:getTargetList(arg0._vigilantUnit, "TargetHarmNearest", {
+	local var0_4 = #arg0_4:getTargetList(arg0_4._vigilantUnit, "TargetHarmNearest", {
 		range = 200
 	})
-	local var1 = #arg0:getTargetList(arg0._vigilantUnit, {
+	local var1_4 = #arg0_4:getTargetList(arg0_4._vigilantUnit, {
 		"TargetAllFoe",
 		"TargetHarmNearest",
 		"TargetDiveState"
 	}, {
-		range = arg0._sonarRange
+		range = arg0_4._sonarRange
 	})
 
-	arg0._vigilantState:Update(var0, var1)
+	arg0_4._vigilantState:Update(var0_4, var1_4)
 
-	local var2 = pg.TimeMgr.GetInstance():GetCombatTime()
+	local var2_4 = pg.TimeMgr.GetInstance():GetCombatTime()
 
-	if var2 - arg0._sonarCheckTimeStamp >= arg0._sonarFrequency then
-		arg0._vigilantState:SonarDetect(var1)
+	if var2_4 - arg0_4._sonarCheckTimeStamp >= arg0_4._sonarFrequency then
+		arg0_4._vigilantState:SonarDetect(var1_4)
 
-		arg0._sonarCheckTimeStamp = var2
+		arg0_4._sonarCheckTimeStamp = var2_4
 	end
 end
 
-function var1.onAntiSubHateChain(arg0)
-	arg0._vigilantState:HateChain()
+function var1_0.onAntiSubHateChain(arg0_5)
+	arg0_5._vigilantState:HateChain()
 end
 
-function var1.onFriendlyShipDying(arg0, arg1, arg2, arg3)
-	arg0._vigilantState:MineExplode()
+function var1_0.onFriendlyShipDying(arg0_6, arg1_6, arg2_6, arg3_6)
+	arg0_6._vigilantState:MineExplode()
 end
 
-function var1.onSubmarinFreeDive(arg0, arg1, arg2, arg3)
+function var1_0.onSubmarinFreeDive(arg0_7, arg1_7, arg2_7, arg3_7)
 	return
 end
 
-function var1.onSubmarinFreeFloat(arg0, arg1, arg2, arg3)
-	arg0._vigilantState:SubmarineFloat()
+function var1_0.onSubmarinFreeFloat(arg0_8, arg1_8, arg2_8, arg3_8)
+	arg0_8._vigilantState:SubmarineFloat()
 end

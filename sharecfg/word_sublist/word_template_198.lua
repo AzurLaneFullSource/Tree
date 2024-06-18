@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_198 = {}
+var0_0.word_template_198 = {}
 
-local var1 = var0.word_template_198
+local var1_0 = var0_0.word_template_198
 
 function temp()
-	var1.呂 = {
+	var1_0.呂 = {
 		京 = {
 			花 = {
 				this = true
@@ -24,7 +24,7 @@ end
 temp()
 
 function temp()
-	var1.旅 = {
+	var1_0.旅 = {
 		馆 = {
 			自 = {
 				拍 = {
@@ -55,7 +55,7 @@ end
 temp()
 
 function temp()
-	var1.铝 = {
+	var1_0.铝 = {
 		厂 = {
 			污 = {
 				染 = {
@@ -69,7 +69,7 @@ end
 temp()
 
 function temp()
-	var1.绿 = {
+	var1_0.绿 = {
 		b = {
 			a = {
 				r = {
@@ -140,7 +140,7 @@ end
 temp()
 
 function temp()
-	var1.氯 = {
+	var1_0.氯 = {
 		氨 = {
 			铜 = {
 				this = true
@@ -215,7 +215,7 @@ end
 temp()
 
 function temp()
-	var1.鋝 = {
+	var1_0.鋝 = {
 		this = {
 			this = true
 		}
@@ -225,7 +225,7 @@ end
 temp()
 
 function temp()
-	var1.妈 = {
+	var1_0.妈 = {
 		this = {
 			this = true
 		},

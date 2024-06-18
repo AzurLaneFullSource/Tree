@@ -1,152 +1,152 @@
-﻿local var0 = class("WinConditionDisplayPanel", BaseSubView)
+﻿local var0_0 = class("WinConditionDisplayPanel", BaseSubView)
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "WinConditionDisplayPanel"
 end
 
-function var0.OnInit(arg0)
-	arg0.listTF = arg0._tf:Find("window/bg/awards/awardList")
-	arg0.closeBtn = arg0._tf:Find("window/top/btnBack")
-	arg0.winCondtitle = arg0:findTF("window/bg/winCond/title/text")
+function var0_0.OnInit(arg0_2)
+	arg0_2.listTF = arg0_2._tf:Find("window/bg/awards/awardList")
+	arg0_2.closeBtn = arg0_2._tf:Find("window/top/btnBack")
+	arg0_2.winCondtitle = arg0_2:findTF("window/bg/winCond/title/text")
 
-	setText(arg0.winCondtitle, i18n("text_win_condition"))
+	setText(arg0_2.winCondtitle, i18n("text_win_condition"))
 
-	arg0.winCondDesc = arg0:findTF("window/bg/winCond/desc")
-	arg0.loseCondtitle = arg0:findTF("window/bg/loseCond/title/text")
+	arg0_2.winCondDesc = arg0_2:findTF("window/bg/winCond/desc")
+	arg0_2.loseCondtitle = arg0_2:findTF("window/bg/loseCond/title/text")
 
-	setText(arg0.loseCondtitle, i18n("text_lose_condition"))
+	setText(arg0_2.loseCondtitle, i18n("text_lose_condition"))
 
-	arg0.loseCondDesc = arg0:findTF("window/bg/loseCond/desc")
-	arg0.rewardList = arg0:findTF("window/bg/awards")
-	arg0.rewardtip = arg0:findTF("text", arg0.rewardList)
+	arg0_2.loseCondDesc = arg0_2:findTF("window/bg/loseCond/desc")
+	arg0_2.rewardList = arg0_2:findTF("window/bg/awards")
+	arg0_2.rewardtip = arg0_2:findTF("text", arg0_2.rewardList)
 
-	setText(arg0.rewardtip, i18n("desc_defense_reward"))
+	setText(arg0_2.rewardtip, i18n("desc_defense_reward"))
 
-	arg0.rewardWord = arg0:findTF("desc", arg0.rewardList)
+	arg0_2.rewardWord = arg0_2:findTF("desc", arg0_2.rewardList)
 
-	setText(arg0.rewardWord, i18n("word_reward"))
+	setText(arg0_2.rewardWord, i18n("word_reward"))
 
-	arg0.rewardCond = arg0:findTF("cond", arg0.rewardList)
+	arg0_2.rewardCond = arg0_2:findTF("cond", arg0_2.rewardList)
 
-	setText(arg0.rewardCond, i18n("text_rest_HP"))
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+	setText(arg0_2.rewardCond, i18n("text_rest_HP"))
+	onButton(arg0_2, arg0_2._tf, function()
+		arg0_2:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.closeBtn, function()
-		arg0:Hide()
+	onButton(arg0_2, arg0_2.closeBtn, function()
+		arg0_2:Hide()
 	end, SFX_PANEL)
 end
 
-local var1 = {
+local var1_0 = {
 	"s",
 	"a",
 	"b"
 }
 
-function var0.UpdateList(arg0, arg1, arg2, arg3, arg4)
-	local var0
+function var0_0.UpdateList(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5)
+	local var0_5
 
-	if #arg3 == 3 then
-		arg0.listTF:GetChild(1).gameObject:SetActive(true)
-		arg0.listTF:GetChild(2).gameObject:SetActive(true)
-		arg0.listTF:GetChild(3).gameObject:SetActive(true)
+	if #arg3_5 == 3 then
+		arg0_5.listTF:GetChild(1).gameObject:SetActive(true)
+		arg0_5.listTF:GetChild(2).gameObject:SetActive(true)
+		arg0_5.listTF:GetChild(3).gameObject:SetActive(true)
 
-		var0 = {
+		var0_5 = {
 			3,
 			2,
 			1
 		}
-	elseif #arg3 == 2 then
-		arg0.listTF:GetChild(1).gameObject:SetActive(true)
-		arg0.listTF:GetChild(2).gameObject:SetActive(false)
-		arg0.listTF:GetChild(3).gameObject:SetActive(true)
+	elseif #arg3_5 == 2 then
+		arg0_5.listTF:GetChild(1).gameObject:SetActive(true)
+		arg0_5.listTF:GetChild(2).gameObject:SetActive(false)
+		arg0_5.listTF:GetChild(3).gameObject:SetActive(true)
 
-		var0 = {
+		var0_5 = {
 			3,
 			1
 		}
-	elseif #arg3 == 1 then
-		arg0.listTF:GetChild(1).gameObject:SetActive(false)
-		arg0.listTF:GetChild(2).gameObject:SetActive(true)
-		arg0.listTF:GetChild(3).gameObject:SetActive(false)
+	elseif #arg3_5 == 1 then
+		arg0_5.listTF:GetChild(1).gameObject:SetActive(false)
+		arg0_5.listTF:GetChild(2).gameObject:SetActive(true)
+		arg0_5.listTF:GetChild(3).gameObject:SetActive(false)
 
-		var0 = {
+		var0_5 = {
 			2
 		}
 	end
 
-	local var1 = false
+	local var1_5 = false
 
-	for iter0 = 1, #arg3 do
-		local var2 = arg0.listTF:GetChild(var0[iter0])
-		local var3 = tostring(arg2[iter0] - 1)
+	for iter0_5 = 1, #arg3_5 do
+		local var2_5 = arg0_5.listTF:GetChild(var0_5[iter0_5])
+		local var3_5 = tostring(arg2_5[iter0_5] - 1)
 
-		if arg2[iter0] - 1 ~= arg2[iter0 + 1] then
-			var3 = tostring(arg2[iter0 + 1]) .. "-" .. var3
+		if arg2_5[iter0_5] - 1 ~= arg2_5[iter0_5 + 1] then
+			var3_5 = tostring(arg2_5[iter0_5 + 1]) .. "-" .. var3_5
 		end
 
-		setText(var2:Find("text"), var3)
+		setText(var2_5:Find("text"), var3_5)
 
-		local var4 = arg3[iter0]
+		local var4_5 = arg3_5[iter0_5]
 
-		updateDrop(var2:Find("award"), var4, {
+		updateDrop(var2_5:Find("award"), var4_5, {
 			hideName = true
 		})
-		onButton(arg0, var2:Find("award"), function()
-			arg0:emit(BaseUI.ON_DROP, var4)
+		onButton(arg0_5, var2_5:Find("award"), function()
+			arg0_5:emit(BaseUI.ON_DROP, var4_5)
 		end, SFX_PANEL)
 
-		local var5 = not var1 and arg4 >= arg2[iter0 + 1]
+		local var5_5 = not var1_5 and arg4_5 >= arg2_5[iter0_5 + 1]
 
-		var1 = var1 or arg4 >= arg2[iter0 + 1]
+		var1_5 = var1_5 or arg4_5 >= arg2_5[iter0_5 + 1]
 
-		setActive(var2:Find("mask"), not var5)
+		setActive(var2_5:Find("mask"), not var5_5)
 	end
 end
 
-function var0.Enter(arg0, arg1)
-	setText(arg0.winCondDesc, i18n(arg1:getConfig("win_condition_display")))
-	setText(arg0.loseCondDesc, i18n(arg1:getConfig("lose_condition_display")))
+function var0_0.Enter(arg0_7, arg1_7)
+	setText(arg0_7.winCondDesc, i18n(arg1_7:getConfig("win_condition_display")))
+	setText(arg0_7.loseCondDesc, i18n(arg1_7:getConfig("lose_condition_display")))
 
-	local var0 = arg1:getPlayType() == ChapterConst.TypeDefence
+	local var0_7 = arg1_7:getPlayType() == ChapterConst.TypeDefence
 
-	setActive(arg0.rewardList, var0)
+	setActive(arg0_7.rewardList, var0_7)
 
-	if var0 then
-		arg0:UpdateRewardList(arg1)
+	if var0_7 then
+		arg0_7:UpdateRewardList(arg1_7)
 	end
 
-	arg0:Show()
+	arg0_7:Show()
 	Canvas.ForceUpdateCanvases()
 end
 
-function var0.UpdateRewardList(arg0, arg1)
-	local var0 = arg1.id
-	local var1 = pg.chapter_defense[var0]
+function var0_0.UpdateRewardList(arg0_8, arg1_8)
+	local var0_8 = arg1_8.id
+	local var1_8 = pg.chapter_defense[var0_8]
 
-	if not var1 then
+	if not var1_8 then
 		return
 	end
 
-	local var2 = Clone(var1.score)
+	local var2_8 = Clone(var1_8.score)
 
-	table.insert(var2, 1, var1.port_hp + 1)
+	table.insert(var2_8, 1, var1_8.port_hp + 1)
 
-	local var3 = {}
+	local var3_8 = {}
 
-	for iter0, iter1 in ipairs(var1) do
-		local var4 = var1["evaluation_display_" .. iter1]
+	for iter0_8, iter1_8 in ipairs(var1_0) do
+		local var4_8 = var1_8["evaluation_display_" .. iter1_8]
 
-		if #var4 > 0 then
-			table.insert(var3, {
-				type = var4[1],
-				id = var4[2],
-				count = var4[3]
+		if #var4_8 > 0 then
+			table.insert(var3_8, {
+				type = var4_8[1],
+				id = var4_8[2],
+				count = var4_8[3]
 			})
 		end
 	end
 
-	arg0:UpdateList(var1, var2, var3, arg1.BaseHP)
+	arg0_8:UpdateList(var1_8, var2_8, var3_8, arg1_8.BaseHP)
 end
 
-return var0
+return var0_0

@@ -1,198 +1,198 @@
-﻿local var0 = class("NavalTacticsMetaSkillsView", import("...base.BaseSubView"))
+﻿local var0_0 = class("NavalTacticsMetaSkillsView", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "NavalTacticsMetaSkillsPanel"
 end
 
-function var0.OnInit(arg0)
-	arg0:initUITip()
-	arg0:initUI()
-	arg0:addListener()
-	arg0:updateSkillList()
-	triggerToggle(arg0.skillToggleList[1], true)
-	arg0:Show()
+function var0_0.OnInit(arg0_2)
+	arg0_2:initUITip()
+	arg0_2:initUI()
+	arg0_2:addListener()
+	arg0_2:updateSkillList()
+	triggerToggle(arg0_2.skillToggleList[1], true)
+	arg0_2:Show()
 end
 
-function var0.Show(arg0)
-	var0.super.Show(arg0)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, false, {
+function var0_0.Show(arg0_3)
+	var0_0.super.Show(arg0_3)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, false, {
 		weight = LayerWeightConst.BASE_LAYER
 	})
 end
 
-function var0.Hide(arg0)
-	var0.super.Hide(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, pg.UIMgr.GetInstance().UIMain)
+function var0_0.Hide(arg0_4)
+	var0_0.super.Hide(arg0_4)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_4._tf, pg.UIMgr.GetInstance().UIMain)
 end
 
-function var0.OnDestroy(arg0)
-	arg0:Hide()
+function var0_0.OnDestroy(arg0_5)
+	arg0_5:Hide()
 end
 
-function var0.setData(arg0, arg1, arg2)
-	arg0.metaShipID = arg1 or arg0.metaShipID
-	arg0.metaShipVO = getProxy(BayProxy):getShipById(arg0.metaShipID)
-	arg0.closeCB = arg2 or arg0.closeCB
-	arg0.metaProxy = getProxy(MetaCharacterProxy)
-	arg0.metaTacticsInfo = arg0.metaProxy:getMetaTacticsInfoByShipID(arg0.metaShipVO.id)
-	arg0.selectSkillID = arg0.selectSkillID or nil
+function var0_0.setData(arg0_6, arg1_6, arg2_6)
+	arg0_6.metaShipID = arg1_6 or arg0_6.metaShipID
+	arg0_6.metaShipVO = getProxy(BayProxy):getShipById(arg0_6.metaShipID)
+	arg0_6.closeCB = arg2_6 or arg0_6.closeCB
+	arg0_6.metaProxy = getProxy(MetaCharacterProxy)
+	arg0_6.metaTacticsInfo = arg0_6.metaProxy:getMetaTacticsInfoByShipID(arg0_6.metaShipVO.id)
+	arg0_6.selectSkillID = arg0_6.selectSkillID or nil
 end
 
-function var0.initUITip(arg0)
-	local var0 = arg0:findTF("frame/bg/title_bg/title")
-	local var1 = arg0:findTF("frame/buttons/detail_btn/Image")
-	local var2 = arg0:findTF("frame/buttons/unlock_btn/Image")
-	local var3 = arg0:findTF("frame/buttons/switch_btn/Image")
+function var0_0.initUITip(arg0_7)
+	local var0_7 = arg0_7:findTF("frame/bg/title_bg/title")
+	local var1_7 = arg0_7:findTF("frame/buttons/detail_btn/Image")
+	local var2_7 = arg0_7:findTF("frame/buttons/unlock_btn/Image")
+	local var3_7 = arg0_7:findTF("frame/buttons/switch_btn/Image")
 
-	setText(var1, i18n("meta_tactics_detail"))
-	setText(var2, i18n("meta_tactics_unlock"))
-	setText(var3, i18n("meta_tactics_switch"))
+	setText(var1_7, i18n("meta_tactics_detail"))
+	setText(var2_7, i18n("meta_tactics_unlock"))
+	setText(var3_7, i18n("meta_tactics_switch"))
 end
 
-function var0.initUI(arg0)
-	arg0.bg = arg0:findTF("print")
+function var0_0.initUI(arg0_8)
+	arg0_8.bg = arg0_8:findTF("print")
 
-	local var0 = arg0:findTF("frame")
+	local var0_8 = arg0_8:findTF("frame")
 
-	arg0.skillTpl = arg0:findTF("skilltpl", var0)
-	arg0.skillContainer = arg0:findTF("skill_contain/content", var0)
+	arg0_8.skillTpl = arg0_8:findTF("skilltpl", var0_8)
+	arg0_8.skillContainer = arg0_8:findTF("skill_contain/content", var0_8)
 
-	local var1 = arg0:findTF("buttons", var0)
+	local var1_8 = arg0_8:findTF("buttons", var0_8)
 
-	arg0.detailBtn = arg0:findTF("detail_btn", var1)
-	arg0.unlockBtn = arg0:findTF("unlock_btn", var1)
-	arg0.switchBtn = arg0:findTF("switch_btn", var1)
-	arg0.skillUIItemList = UIItemList.New(arg0.skillContainer, arg0.skillTpl)
+	arg0_8.detailBtn = arg0_8:findTF("detail_btn", var1_8)
+	arg0_8.unlockBtn = arg0_8:findTF("unlock_btn", var1_8)
+	arg0_8.switchBtn = arg0_8:findTF("switch_btn", var1_8)
+	arg0_8.skillUIItemList = UIItemList.New(arg0_8.skillContainer, arg0_8.skillTpl)
 end
 
-function var0.addListener(arg0)
-	onButton(arg0, arg0.bg, function()
-		arg0:Hide()
+function var0_0.addListener(arg0_9)
+	onButton(arg0_9, arg0_9.bg, function()
+		arg0_9:Hide()
 
-		if arg0.closeCB then
-			arg0.closeCB()
+		if arg0_9.closeCB then
+			arg0_9.closeCB()
 		else
-			arg0:Destroy()
+			arg0_9:Destroy()
 		end
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.detailBtn, function()
+	onButton(arg0_9, arg0_9.detailBtn, function()
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.METACHARACTER, {
 			autoOpenTactics = true,
-			autoOpenShipConfigID = arg0.metaShipVO.configId
+			autoOpenShipConfigID = arg0_9.metaShipVO.configId
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.unlockBtn, function()
+	onButton(arg0_9, arg0_9.unlockBtn, function()
 		pg.MsgboxMgr:GetInstance():ShowMsgBox({
 			hideYes = true,
 			hideNo = true,
 			type = MSGBOX_TYPE_META_SKILL_UNLOCK,
-			metaShipVO = arg0.metaShipVO,
-			skillID = arg0.selectSkillID
+			metaShipVO = arg0_9.metaShipVO,
+			skillID = arg0_9.selectSkillID
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.switchBtn, function()
+	onButton(arg0_9, arg0_9.switchBtn, function()
 		pg.m02:sendNotification(GAME.TACTICS_META_SWITCH_SKILL, {
-			shipID = arg0.metaShipVO.id,
-			skillID = arg0.selectSkillID
+			shipID = arg0_9.metaShipVO.id,
+			skillID = arg0_9.selectSkillID
 		})
 	end, SFX_PANEL)
 end
 
-function var0.updateSkillTF(arg0, arg1, arg2)
-	local var0 = arg0:findTF("frame", arg1)
-	local var1 = arg0:findTF("skillInfo", var0)
-	local var2 = arg0:findTF("empty", var0)
-	local var3 = arg0:findTF("mask", var0)
-	local var4 = arg0:findTF("icon", var1)
-	local var5 = arg0:findTF("descView/Viewport/desc", var1)
-	local var6 = arg0:findTF("next_contain/label", var1)
-	local var7 = arg0:findTF("next_contain/Text", var1)
-	local var8 = arg0:findTF("name_contain/name", var1)
-	local var9 = arg0:findTF("name_contain/level_contain/Text", var1)
-	local var10 = arg0:findTF("Tag/learing", var0)
-	local var11 = arg0:findTF("Tag/unlockable", var0)
-	local var12 = arg0.metaShipVO:getMetaSkillLevelBySkillID(arg2)
-	local var13 = getSkillConfig(arg2)
-	local var14 = arg2 == arg0.metaTacticsInfo.curSkillID
-	local var15 = var12 > 0
+function var0_0.updateSkillTF(arg0_14, arg1_14, arg2_14)
+	local var0_14 = arg0_14:findTF("frame", arg1_14)
+	local var1_14 = arg0_14:findTF("skillInfo", var0_14)
+	local var2_14 = arg0_14:findTF("empty", var0_14)
+	local var3_14 = arg0_14:findTF("mask", var0_14)
+	local var4_14 = arg0_14:findTF("icon", var1_14)
+	local var5_14 = arg0_14:findTF("descView/Viewport/desc", var1_14)
+	local var6_14 = arg0_14:findTF("next_contain/label", var1_14)
+	local var7_14 = arg0_14:findTF("next_contain/Text", var1_14)
+	local var8_14 = arg0_14:findTF("name_contain/name", var1_14)
+	local var9_14 = arg0_14:findTF("name_contain/level_contain/Text", var1_14)
+	local var10_14 = arg0_14:findTF("Tag/learing", var0_14)
+	local var11_14 = arg0_14:findTF("Tag/unlockable", var0_14)
+	local var12_14 = arg0_14.metaShipVO:getMetaSkillLevelBySkillID(arg2_14)
+	local var13_14 = getSkillConfig(arg2_14)
+	local var14_14 = arg2_14 == arg0_14.metaTacticsInfo.curSkillID
+	local var15_14 = var12_14 > 0
 
-	setImageSprite(var4, LoadSprite("skillicon/" .. var13.icon))
-	setText(var5, getSkillDesc(arg2, var15 and var12 or 1))
-	setText(var8, getSkillName(var13.id))
-	setText(var9, var12)
+	setImageSprite(var4_14, LoadSprite("skillicon/" .. var13_14.icon))
+	setText(var5_14, getSkillDesc(arg2_14, var15_14 and var12_14 or 1))
+	setText(var8_14, getSkillName(var13_14.id))
+	setText(var9_14, var12_14)
 
-	local var16 = arg0.metaTacticsInfo:getSkillExp(arg2)
-	local var17 = var12 >= pg.skill_data_template[arg2].max_level
+	local var16_14 = arg0_14.metaTacticsInfo:getSkillExp(arg2_14)
+	local var17_14 = var12_14 >= pg.skill_data_template[arg2_14].max_level
 
-	if not var17 then
-		if var15 then
-			local var18 = MetaCharacterConst.getMetaSkillTacticsConfig(arg2, var12).need_exp
+	if not var17_14 then
+		if var15_14 then
+			local var18_14 = MetaCharacterConst.getMetaSkillTacticsConfig(arg2_14, var12_14).need_exp
 
-			setText(var7, setColorStr(var16, COLOR_GREEN) .. "/" .. var18)
-			setActive(var6, true)
-			setActive(var7, true)
+			setText(var7_14, setColorStr(var16_14, COLOR_GREEN) .. "/" .. var18_14)
+			setActive(var6_14, true)
+			setActive(var7_14, true)
 		else
-			setActive(var6, false)
-			setActive(var7, false)
+			setActive(var6_14, false)
+			setActive(var7_14, false)
 		end
 	else
-		setText(var7, "Max")
+		setText(var7_14, "Max")
 	end
 
-	setActive(var10, var14 and not var17)
-	setActive(var11, not var15)
-	setActive(var3, not var15)
-	onToggle(arg0, arg1, function(arg0)
-		if arg0 then
-			arg0.selectSkillID = arg2
+	setActive(var10_14, var14_14 and not var17_14)
+	setActive(var11_14, not var15_14)
+	setActive(var3_14, not var15_14)
+	onToggle(arg0_14, arg1_14, function(arg0_15)
+		if arg0_15 then
+			arg0_14.selectSkillID = arg2_14
 
-			arg0:updateButtons(arg0.selectSkillID)
+			arg0_14:updateButtons(arg0_14.selectSkillID)
 		end
 	end, SFX_PANEL)
 end
 
-function var0.updateSkillList(arg0)
-	local var0 = MetaCharacterConst.getTacticsSkillIDListByShipConfigID(arg0.metaShipVO.configId)
+function var0_0.updateSkillList(arg0_16)
+	local var0_16 = MetaCharacterConst.getTacticsSkillIDListByShipConfigID(arg0_16.metaShipVO.configId)
 
-	arg0.skillUIItemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			arg1 = arg1 + 1
-			arg0.skillToggleList = arg0.skillToggleList or {}
-			arg0.skillToggleList[arg1] = arg2
+	arg0_16.skillUIItemList:make(function(arg0_17, arg1_17, arg2_17)
+		if arg0_17 == UIItemList.EventUpdate then
+			arg1_17 = arg1_17 + 1
+			arg0_16.skillToggleList = arg0_16.skillToggleList or {}
+			arg0_16.skillToggleList[arg1_17] = arg2_17
 
-			local var0 = var0[arg1]
+			local var0_17 = var0_16[arg1_17]
 
-			arg0:updateSkillTF(arg2, var0)
+			arg0_16:updateSkillTF(arg2_17, var0_17)
 		end
 	end)
-	arg0.skillUIItemList:align(#var0)
+	arg0_16.skillUIItemList:align(#var0_16)
 end
 
-function var0.updateButtons(arg0, arg1)
-	local var0 = arg1 or arg0.selectSkillID
-	local var1 = var0 == arg0.metaTacticsInfo.curSkillID
-	local var2 = arg0.metaShipVO:getMetaSkillLevelBySkillID(var0) > 0
-	local var3 = arg0.metaShipVO:isSkillLevelMax(var0)
+function var0_0.updateButtons(arg0_18, arg1_18)
+	local var0_18 = arg1_18 or arg0_18.selectSkillID
+	local var1_18 = var0_18 == arg0_18.metaTacticsInfo.curSkillID
+	local var2_18 = arg0_18.metaShipVO:getMetaSkillLevelBySkillID(var0_18) > 0
+	local var3_18 = arg0_18.metaShipVO:isSkillLevelMax(var0_18)
 
-	if var1 or var3 then
-		setActive(arg0.detailBtn, true)
-		setActive(arg0.unlockBtn, false)
-		setActive(arg0.switchBtn, false)
-	elseif not var2 then
-		setActive(arg0.detailBtn, true)
-		setActive(arg0.unlockBtn, true)
-		setActive(arg0.switchBtn, false)
-	elseif var2 and not var1 then
-		setActive(arg0.detailBtn, true)
-		setActive(arg0.unlockBtn, false)
-		setActive(arg0.switchBtn, true)
+	if var1_18 or var3_18 then
+		setActive(arg0_18.detailBtn, true)
+		setActive(arg0_18.unlockBtn, false)
+		setActive(arg0_18.switchBtn, false)
+	elseif not var2_18 then
+		setActive(arg0_18.detailBtn, true)
+		setActive(arg0_18.unlockBtn, true)
+		setActive(arg0_18.switchBtn, false)
+	elseif var2_18 and not var1_18 then
+		setActive(arg0_18.detailBtn, true)
+		setActive(arg0_18.unlockBtn, false)
+		setActive(arg0_18.switchBtn, true)
 	end
 end
 
-function var0.reUpdate(arg0, arg1, arg2)
-	arg0:setData(arg1, arg2)
-	arg0:updateSkillList()
-	arg0:updateButtons()
+function var0_0.reUpdate(arg0_19, arg1_19, arg2_19)
+	arg0_19:setData(arg1_19, arg2_19)
+	arg0_19:updateSkillList()
+	arg0_19:updateButtons()
 end
 
-return var0
+return var0_0

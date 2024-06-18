@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_380 = {}
+var0_0.word_template_380 = {}
 
-local var1 = var0.word_template_380
+local var1_0 = var0_0.word_template_380
 
 function temp()
-	var1.柠 = {
+	var1_0.柠 = {
 		檬 = {
 			A = {
 				V = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.液 = {
+	var1_0.液 = {
 		液 = {
 			酱 = {
 				this = true
@@ -33,7 +33,7 @@ end
 temp()
 
 function temp()
-	var1.泑 = {
+	var1_0.泑 = {
 		女 = {
 			网 = {
 				站 = {
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.囗 = {
+	var1_0.囗 = {
 		交 = {
 			深 = {
 				喉 = {
@@ -61,7 +61,7 @@ end
 temp()
 
 function temp()
-	var1.宅 = {
+	var1_0.宅 = {
 		男 = {
 			妓 = {
 				校 = {
@@ -75,7 +75,7 @@ end
 temp()
 
 function temp()
-	var1.涩 = {
+	var1_0.涩 = {
 		社 = {
 			区 = {
 				this = true
@@ -94,7 +94,7 @@ end
 temp()
 
 function temp()
-	var1.Ｇ = {
+	var1_0.Ｇ = {
 		八 = {
 			this = true
 		},

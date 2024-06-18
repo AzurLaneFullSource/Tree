@@ -1,71 +1,71 @@
-﻿local var0 = class("CreateGuildCommand", pm.SimpleCommand)
+﻿local var0_0 = class("CreateGuildCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0:getName()
-	local var2 = pg.gameset.create_guild_cost.key_value
-	local var3 = getProxy(PlayerProxy)
-	local var4 = var3:getData()
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1:getName()
+	local var2_1 = pg.gameset.create_guild_cost.key_value
+	local var3_1 = getProxy(PlayerProxy)
+	local var4_1 = var3_1:getData()
 
-	if var2 > var4:getTotalGem() then
+	if var2_1 > var4_1:getTotalGem() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_create_error_nomoney"))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(60001, {
-		faction = var0:getFaction(),
-		policy = var0:getPolicy(),
-		name = var1,
-		manifesto = var0:getManifesto()
-	}, 60002, function(arg0)
-		if arg0.result == 0 then
-			local var0 = Guild.New({
-				base = var0
+		faction = var0_1:getFaction(),
+		policy = var0_1:getPolicy(),
+		name = var1_1,
+		manifesto = var0_1:getManifesto()
+	}, 60002, function(arg0_2)
+		if arg0_2.result == 0 then
+			local var0_2 = Guild.New({
+				base = var0_1
 			})
 
-			var0:setId(arg0.id)
+			var0_2:setId(arg0_2.id)
 
-			local var1 = getProxy(GuildProxy)
-			local var2 = GuildMember.New({
+			local var1_2 = getProxy(GuildProxy)
+			local var2_2 = GuildMember.New({
 				online = 1,
 				liveness = 0,
-				id = var4.id,
-				name = var4.name,
-				lv = var4.level,
-				adv = var4.manifesto,
+				id = var4_1.id,
+				name = var4_1.name,
+				lv = var4_1.level,
+				adv = var4_1.manifesto,
 				display = {
-					icon = var4.icon,
-					character = var4.character,
-					icon_theme = var4.iconTheme,
-					transform_flag = var4.transformFlag,
-					skin = var4.skinId,
-					marry_flag = var4.proposeTime
+					icon = var4_1.icon,
+					character = var4_1.character,
+					icon_theme = var4_1.iconTheme,
+					transform_flag = var4_1.transformFlag,
+					skin = var4_1.skinId,
+					marry_flag = var4_1.proposeTime
 				},
 				join_time = pg.TimeMgr.GetInstance():GetServerTime()
 			})
 
-			var2:setDuty(GuildConst.DUTY_COMMANDER)
-			var0:addMember(var2)
+			var2_2:setDuty(GuildConst.DUTY_COMMANDER)
+			var0_2:addMember(var2_2)
 
-			local var3 = pg.guildset.guild_tech_default.key_value
+			local var3_2 = pg.guildset.guild_tech_default.key_value
 
-			var0:StartTech(var3)
-			var1:addGuild(var0)
-			var4:consume({
-				gem = var2
+			var0_2:StartTech(var3_2)
+			var1_2:addGuild(var0_2)
+			var4_1:consume({
+				gem = var2_1
 			})
-			var3:updatePlayer(var4)
-			arg0:sendNotification(GAME.HANDLE_GUILD_AND_PUBLIC_GUILD_TECH)
-			arg0:sendNotification(GAME.CREATE_GUILD_DONE)
-			arg0:sendNotification(GAME.GUILD_GET_USER_INFO)
+			var3_1:updatePlayer(var4_1)
+			arg0_1:sendNotification(GAME.HANDLE_GUILD_AND_PUBLIC_GUILD_TECH)
+			arg0_1:sendNotification(GAME.CREATE_GUILD_DONE)
+			arg0_1:sendNotification(GAME.GUILD_GET_USER_INFO)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_create_sucess"))
-		elseif arg0.result == 2015 then
+		elseif arg0_2.result == 2015 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_name_invaild"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("guild_create_error", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("guild_create_error", arg0_2.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

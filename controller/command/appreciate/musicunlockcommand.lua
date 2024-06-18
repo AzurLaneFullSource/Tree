@@ -1,23 +1,23 @@
-﻿local var0 = class("MusicUnlockCommand", pm.SimpleCommand)
+﻿local var0_0 = class("MusicUnlockCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.musicID
-	local var2 = var0.unlockCBFunc
-	local var3 = getProxy(AppreciateProxy)
-	local var4 = getProxy(BagProxy)
-	local var5 = getProxy(PlayerProxy)
-	local var6 = var5:getData()
-	local var7 = var3:getMusicUnlockMaterialByID(var1)
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.musicID
+	local var2_1 = var0_1.unlockCBFunc
+	local var3_1 = getProxy(AppreciateProxy)
+	local var4_1 = getProxy(BagProxy)
+	local var5_1 = getProxy(PlayerProxy)
+	local var6_1 = var5_1:getData()
+	local var7_1 = var3_1:getMusicUnlockMaterialByID(var1_1)
 
-	for iter0, iter1 in pairs(var7) do
-		if iter1.type == DROP_TYPE_RESOURCE then
-			if var6:getResById(iter1.id) < iter1.count then
+	for iter0_1, iter1_1 in pairs(var7_1) do
+		if iter1_1.type == DROP_TYPE_RESOURCE then
+			if var6_1:getResById(iter1_1.id) < iter1_1.count then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 				return
 			end
-		elseif iter1.type == DROP_TYPE_ITEM and var4:getItemCountById(iter1.id) < iter1.count then
+		elseif iter1_1.type == DROP_TYPE_ITEM and var4_1:getItemCountById(iter1_1.id) < iter1_1.count then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 			return
@@ -25,31 +25,31 @@ function var0.execute(arg0, arg1)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(17503, {
-		id = var1
-	}, 17504, function(arg0)
-		if arg0.result == 0 then
-			var3:addMusicIDToUnlockList(var1)
+		id = var1_1
+	}, 17504, function(arg0_2)
+		if arg0_2.result == 0 then
+			var3_1:addMusicIDToUnlockList(var1_1)
 
-			local var0 = var3:getMusicUnlockMaterialByID(var1)
+			local var0_2 = var3_1:getMusicUnlockMaterialByID(var1_1)
 
-			for iter0, iter1 in pairs(var0) do
-				if iter1.type == DROP_TYPE_RESOURCE then
-					var6:consume({
-						[id2res(iter1.id)] = iter1.count
+			for iter0_2, iter1_2 in pairs(var0_2) do
+				if iter1_2.type == DROP_TYPE_RESOURCE then
+					var6_1:consume({
+						[id2res(iter1_2.id)] = iter1_2.count
 					})
-					var5:updatePlayer(var6)
-				elseif iter1.type == DROP_TYPE_ITEM then
-					var4:removeItemById(iter1.id, iter1.count)
+					var5_1:updatePlayer(var6_1)
+				elseif iter1_2.type == DROP_TYPE_ITEM then
+					var4_1:removeItemById(iter1_2.id, iter1_2.count)
 				end
 			end
 
-			if var2 then
-				var2()
+			if var2_1 then
+				var2_1()
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips("UnLock Fail, Code:" .. tostring(arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips("UnLock Fail, Code:" .. tostring(arg0_2.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

@@ -1,152 +1,152 @@
-﻿local var0 = class("EducateCharGroupPage", import("view.base.BaseEventLogic"))
+﻿local var0_0 = class("EducateCharGroupPage", import("view.base.BaseEventLogic"))
 
-function var0.Ctor(arg0, arg1, arg2, arg3)
-	pg.DelegateInfo.New(arg0)
-	var0.super.Ctor(arg0, arg2)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	pg.DelegateInfo.New(arg0_1)
+	var0_0.super.Ctor(arg0_1, arg2_1)
 
-	arg0.contextData = arg3
-	arg0.tf = arg1
-	arg0.go = arg1.gameObject
-	arg0.confirmBtn = findTF(arg1, "confirm_btn")
-	arg0.cancelBtn = findTF(arg1, "cancel_btn")
-	arg0.uiItemList = UIItemList.New(findTF(arg1, "main/list"), findTF(arg1, "main/list/tpl"))
-	arg0.profileBtn = findTF(arg1, "left/icon")
-	arg0.animation = arg1:GetComponent(typeof(Animation))
-	arg0.dftAniEvent = arg1:GetComponent(typeof(DftAniEvent))
-	arg0.timers = {}
+	arg0_1.contextData = arg3_1
+	arg0_1.tf = arg1_1
+	arg0_1.go = arg1_1.gameObject
+	arg0_1.confirmBtn = findTF(arg1_1, "confirm_btn")
+	arg0_1.cancelBtn = findTF(arg1_1, "cancel_btn")
+	arg0_1.uiItemList = UIItemList.New(findTF(arg1_1, "main/list"), findTF(arg1_1, "main/list/tpl"))
+	arg0_1.profileBtn = findTF(arg1_1, "left/icon")
+	arg0_1.animation = arg1_1:GetComponent(typeof(Animation))
+	arg0_1.dftAniEvent = arg1_1:GetComponent(typeof(DftAniEvent))
+	arg0_1.timers = {}
 
-	arg0:RegisterEvent()
+	arg0_1:RegisterEvent()
 end
 
-function var0.RegisterEvent(arg0)
-	onButton(arg0, arg0.profileBtn, function()
-		arg0:emit(EducateCharDockMediator.GO_PROFILE)
+function var0_0.RegisterEvent(arg0_2)
+	onButton(arg0_2, arg0_2.profileBtn, function()
+		arg0_2:emit(EducateCharDockMediator.GO_PROFILE)
 	end, SFX_PANEL)
-	arg0:bind(EducateCharDockScene.MSG_CLEAR_TIP, function(arg0, arg1)
-		arg0:FlushList(arg0.selectedId)
+	arg0_2:bind(EducateCharDockScene.MSG_CLEAR_TIP, function(arg0_4, arg1_4)
+		arg0_2:FlushList(arg0_2.selectedId)
 	end)
 end
 
-function var0.Update(arg0)
-	arg0:InitList()
+function var0_0.Update(arg0_5)
+	arg0_5:InitList()
 end
 
-function var0.Show(arg0)
-	setActive(arg0.tf, true)
+function var0_0.Show(arg0_6)
+	setActive(arg0_6.tf, true)
 end
 
-function var0.Hide(arg0)
-	setActive(arg0.tf, false)
-	arg0:RemoveAllTimer()
+function var0_0.Hide(arg0_7)
+	setActive(arg0_7.tf, false)
+	arg0_7:RemoveAllTimer()
 end
 
-function var0.GetSelectedId(arg0)
+function var0_0.GetSelectedId(arg0_8)
 	return getProxy(PlayerProxy):getRawData():GetEducateCharacter()
 end
 
-function var0.InitList(arg0)
-	arg0.cards = {}
-	arg0.selectedId = arg0:GetSelectedId()
+function var0_0.InitList(arg0_9)
+	arg0_9.cards = {}
+	arg0_9.selectedId = arg0_9:GetSelectedId()
 
-	local var0 = getProxy(EducateProxy):GetEducateGroupList()
+	local var0_9 = getProxy(EducateProxy):GetEducateGroupList()
 
-	table.sort(var0, function(arg0, arg1)
-		return arg0:GetSortWeight() < arg1:GetSortWeight()
+	table.sort(var0_9, function(arg0_10, arg1_10)
+		return arg0_10:GetSortWeight() < arg1_10:GetSortWeight()
 	end)
-	arg0:RemoveAllTimer()
-	arg0.uiItemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = var0[arg1 + 1]
+	arg0_9:RemoveAllTimer()
+	arg0_9.uiItemList:make(function(arg0_11, arg1_11, arg2_11)
+		if arg0_11 == UIItemList.EventUpdate then
+			local var0_11 = var0_9[arg1_11 + 1]
 
-			arg0:InitCard(arg2, var0, arg1)
-			arg0:UpdateCard(arg2, var0)
+			arg0_9:InitCard(arg2_11, var0_11, arg1_11)
+			arg0_9:UpdateCard(arg2_11, var0_11)
 
-			arg0.cards[arg2] = var0
+			arg0_9.cards[arg2_11] = var0_11
 		end
 	end)
-	arg0.uiItemList:align(#var0)
+	arg0_9.uiItemList:align(#var0_9)
 end
 
-function var0.FlushList(arg0, arg1)
-	arg0.selectedId = arg1
+function var0_0.FlushList(arg0_12, arg1_12)
+	arg0_12.selectedId = arg1_12
 
-	for iter0, iter1 in pairs(arg0.cards) do
-		arg0:UpdateCard(iter0, iter1)
+	for iter0_12, iter1_12 in pairs(arg0_12.cards) do
+		arg0_12:UpdateCard(iter0_12, iter1_12)
 	end
 end
 
-function var0.InitCard(arg0, arg1, arg2, arg3)
-	local var0 = arg1:Find("anim_root")
-	local var1 = var0:Find("label/Text"):GetComponent(typeof(Image))
+function var0_0.InitCard(arg0_13, arg1_13, arg2_13, arg3_13)
+	local var0_13 = arg1_13:Find("anim_root")
+	local var1_13 = var0_13:Find("label/Text"):GetComponent(typeof(Image))
 
-	var1.sprite = GetSpriteFromAtlas("ui/EducateDockUI_atlas", arg2:GetSpriteName())
+	var1_13.sprite = GetSpriteFromAtlas("ui/EducateDockUI_atlas", arg2_13:GetSpriteName())
 
-	var1:SetNativeSize()
+	var1_13:SetNativeSize()
 
-	local var2 = arg2:GetShowPainting()
+	local var2_13 = arg2_13:GetShowPainting()
 
-	setPaintingPrefab(var0:Find("mask/painting"), var2, "tb2")
-	onButton(arg0, var0, function()
-		if arg0.doAnim then
+	setPaintingPrefab(var0_13:Find("mask/painting"), var2_13, "tb2")
+	onButton(arg0_13, var0_13, function()
+		if arg0_13.doAnim then
 			return
 		end
 
-		if arg2:IsLock() then
+		if arg2_13:IsLock() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("secretary_special_lock_tip"))
 
 			return
 		end
 
-		arg0.doAnim = true
+		arg0_13.doAnim = true
 
-		arg0.dftAniEvent:SetEndEvent(function(arg0)
-			arg0.doAnim = nil
+		arg0_13.dftAniEvent:SetEndEvent(function(arg0_15)
+			arg0_13.doAnim = nil
 
-			arg0.dftAniEvent:SetEndEvent(nil)
-			arg0:emit(EducateCharDockScene.ON_SELECT, arg2, arg0.selectedId)
+			arg0_13.dftAniEvent:SetEndEvent(nil)
+			arg0_13:emit(EducateCharDockScene.ON_SELECT, arg2_13, arg0_13.selectedId)
 		end)
-		arg0.animation:Play("anim_educate_chardock_grouppage_out")
+		arg0_13.animation:Play("anim_educate_chardock_grouppage_out")
 	end, SFX_PANEL)
-	setActive(var0, false)
+	setActive(var0_13, false)
 
-	arg0.timers[arg3] = Timer.New(function()
-		setActive(var0, true)
-		var0:GetComponent(typeof(Animation)):Play("anim_educate_chardock_tpl")
-	end, math.max(1e-05, arg3 * 0.066), 1)
+	arg0_13.timers[arg3_13] = Timer.New(function()
+		setActive(var0_13, true)
+		var0_13:GetComponent(typeof(Animation)):Play("anim_educate_chardock_tpl")
+	end, math.max(1e-05, arg3_13 * 0.066), 1)
 
-	arg0.timers[arg3]:Start()
+	arg0_13.timers[arg3_13]:Start()
 end
 
-function var0.UpdateCard(arg0, arg1, arg2)
-	local var0 = arg1:Find("anim_root")
+function var0_0.UpdateCard(arg0_17, arg1_17, arg2_17)
+	local var0_17 = arg1_17:Find("anim_root")
 
-	setActive(var0:Find("lock"), arg2:IsLock())
-	setActive(var0:Find("mark"), arg2:IsSelected(arg0.selectedId))
-	setText(var0:Find("lock/desc/Text"), arg2:GetUnlockDesc())
-	setActive(var0:Find("tip"), arg2:ShouldTip())
+	setActive(var0_17:Find("lock"), arg2_17:IsLock())
+	setActive(var0_17:Find("mark"), arg2_17:IsSelected(arg0_17.selectedId))
+	setText(var0_17:Find("lock/desc/Text"), arg2_17:GetUnlockDesc())
+	setActive(var0_17:Find("tip"), arg2_17:ShouldTip())
 end
 
-function var0.RemoveAllTimer(arg0)
-	for iter0, iter1 in pairs(arg0.timers) do
-		iter1:Stop()
+function var0_0.RemoveAllTimer(arg0_18)
+	for iter0_18, iter1_18 in pairs(arg0_18.timers) do
+		iter1_18:Stop()
 
-		iter1 = nil
+		iter1_18 = nil
 	end
 
-	arg0.timers = {}
+	arg0_18.timers = {}
 end
 
-function var0.Destroy(arg0)
-	for iter0, iter1 in pairs(arg0.cards or {}) do
-		local var0 = iter0:Find("mask/painting")
-		local var1 = iter1:GetShowPainting()
+function var0_0.Destroy(arg0_19)
+	for iter0_19, iter1_19 in pairs(arg0_19.cards or {}) do
+		local var0_19 = iter0_19:Find("mask/painting")
+		local var1_19 = iter1_19:GetShowPainting()
 
-		retPaintingPrefab(var0, var1)
+		retPaintingPrefab(var0_19, var1_19)
 	end
 
-	pg.DelegateInfo.Dispose(arg0)
-	arg0.dftAniEvent:SetEndEvent(nil)
-	arg0:RemoveAllTimer()
+	pg.DelegateInfo.Dispose(arg0_19)
+	arg0_19.dftAniEvent:SetEndEvent(nil)
+	arg0_19:RemoveAllTimer()
 end
 
-return var0
+return var0_0

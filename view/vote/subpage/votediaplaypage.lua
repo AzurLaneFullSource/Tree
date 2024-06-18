@@ -1,147 +1,147 @@
-﻿local var0 = class("VoteDiaplayPage", import("...base.BaseSubView"))
+﻿local var0_0 = class("VoteDiaplayPage", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "VoteDisplay"
 end
 
-function var0.OnInit(arg0)
-	arg0.paitingTF = findTF(arg0._tf, "painting")
-	arg0.numberTxt = findTF(arg0._tf, "filter_bg/Text"):GetComponent(typeof(Text))
-	arg0.nameTxt = findTF(arg0._tf, "frame/bg/name"):GetComponent(typeof(Text))
-	arg0.enNameTxt = findTF(arg0._tf, "frame/bg/en_name"):GetComponent(typeof(Text))
-	arg0.descTxt = findTF(arg0._tf, "frame/bg/scroll/desc"):GetComponent(typeof(Text))
-	arg0.valueInput = findTF(arg0._tf, "frame/bg/InputField"):GetComponent(typeof(InputField))
-	arg0.addBtn = findTF(arg0._tf, "frame/bg/add")
-	arg0.miunsBtn = findTF(arg0._tf, "frame/bg/miuns")
-	arg0.maxBtn = findTF(arg0._tf, "frame/bg/max")
-	arg0.submitBtn = findTF(arg0._tf, "frame/bg/submit")
-	arg0.rankTxt = findTF(arg0._tf, "frame/bg/rank"):GetComponent(typeof(Text))
-	arg0.votesTxt = findTF(arg0._tf, "frame/bg/votes"):GetComponent(typeof(Text))
-	arg0.shiptypeTxt = findTF(arg0._tf, "frame/bg/shiptype"):GetComponent(typeof(Text))
-	arg0.nationImg = findTF(arg0._tf, "frame/bg/nation"):GetComponent(typeof(Image))
-	arg0.bg1 = findTF(arg0._tf, "frame/bg/bg1")
-	arg0.bg2 = findTF(arg0._tf, "frame/bg/bg2")
+function var0_0.OnInit(arg0_2)
+	arg0_2.paitingTF = findTF(arg0_2._tf, "painting")
+	arg0_2.numberTxt = findTF(arg0_2._tf, "filter_bg/Text"):GetComponent(typeof(Text))
+	arg0_2.nameTxt = findTF(arg0_2._tf, "frame/bg/name"):GetComponent(typeof(Text))
+	arg0_2.enNameTxt = findTF(arg0_2._tf, "frame/bg/en_name"):GetComponent(typeof(Text))
+	arg0_2.descTxt = findTF(arg0_2._tf, "frame/bg/scroll/desc"):GetComponent(typeof(Text))
+	arg0_2.valueInput = findTF(arg0_2._tf, "frame/bg/InputField"):GetComponent(typeof(InputField))
+	arg0_2.addBtn = findTF(arg0_2._tf, "frame/bg/add")
+	arg0_2.miunsBtn = findTF(arg0_2._tf, "frame/bg/miuns")
+	arg0_2.maxBtn = findTF(arg0_2._tf, "frame/bg/max")
+	arg0_2.submitBtn = findTF(arg0_2._tf, "frame/bg/submit")
+	arg0_2.rankTxt = findTF(arg0_2._tf, "frame/bg/rank"):GetComponent(typeof(Text))
+	arg0_2.votesTxt = findTF(arg0_2._tf, "frame/bg/votes"):GetComponent(typeof(Text))
+	arg0_2.shiptypeTxt = findTF(arg0_2._tf, "frame/bg/shiptype"):GetComponent(typeof(Text))
+	arg0_2.nationImg = findTF(arg0_2._tf, "frame/bg/nation"):GetComponent(typeof(Image))
+	arg0_2.bg1 = findTF(arg0_2._tf, "frame/bg/bg1")
+	arg0_2.bg2 = findTF(arg0_2._tf, "frame/bg/bg2")
 end
 
-function var0.Open(arg0, arg1, arg2, arg3, arg4, arg5)
-	arg0.callback = arg5
+function var0_0.Open(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3, arg5_3)
+	arg0_3.callback = arg5_3
 
-	assert(arg0.callback)
+	assert(arg0_3.callback)
 
-	arg0.maxValue = arg3
-	arg0.rank = arg2
-	arg0.value = 1
+	arg0_3.maxValue = arg3_3
+	arg0_3.rank = arg2_3
+	arg0_3.value = 1
 
-	setActive(arg0.bg1, not arg4)
-	setActive(arg0.bg2, arg4)
+	setActive(arg0_3.bg1, not arg4_3)
+	setActive(arg0_3.bg2, arg4_3)
 
-	arg0.votes = arg4 or "-"
+	arg0_3.votes = arg4_3 or "-"
 
-	setActive(arg0._tf, true)
+	setActive(arg0_3._tf, true)
 
-	arg0.numberTxt.text = "X" .. arg3
+	arg0_3.numberTxt.text = "X" .. arg3_3
 
-	if arg1 ~= arg0.voteShip then
-		arg0.voteShip = arg1
+	if arg1_3 ~= arg0_3.voteShip then
+		arg0_3.voteShip = arg1_3
 
-		arg0:Update(arg1)
+		arg0_3:Update(arg1_3)
 	end
 
-	onInputEndEdit(arg0, go(arg0.valueInput), function()
-		local var0 = getInputText(go(arg0.valueInput))
-		local var1 = tonumber(var0)
+	onInputEndEdit(arg0_3, go(arg0_3.valueInput), function()
+		local var0_4 = getInputText(go(arg0_3.valueInput))
+		local var1_4 = tonumber(var0_4)
 
-		if var1 < 1 then
-			arg0.value = 1
-		elseif var1 > arg0.maxValue then
-			arg0.value = math.max(1, arg0.maxValue)
+		if var1_4 < 1 then
+			arg0_3.value = 1
+		elseif var1_4 > arg0_3.maxValue then
+			arg0_3.value = math.max(1, arg0_3.maxValue)
 		else
-			arg0.value = var1
+			arg0_3.value = var1_4
 		end
 
-		arg0:UpdateCnt()
+		arg0_3:UpdateCnt()
 	end)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
 end
 
-function var0.UpdateCnt(arg0)
-	arg0.valueInput.text = arg0.value
+function var0_0.UpdateCnt(arg0_5)
+	arg0_5.valueInput.text = arg0_5.value
 end
 
-function var0.Update(arg0, arg1)
-	arg0.nameTxt.text = arg1:getShipName()
-	arg0.enNameTxt.text = arg1:getEnName()
-	arg0.descTxt.text = arg1:GetDesc()
-	arg0.votesTxt.text = arg0.votes
-	arg0.rankTxt.text = arg0.rank
-	arg0.shiptypeTxt.text = arg1:getShipTypeName()
+function var0_0.Update(arg0_6, arg1_6)
+	arg0_6.nameTxt.text = arg1_6:getShipName()
+	arg0_6.enNameTxt.text = arg1_6:getEnName()
+	arg0_6.descTxt.text = arg1_6:GetDesc()
+	arg0_6.votesTxt.text = arg0_6.votes
+	arg0_6.rankTxt.text = arg0_6.rank
+	arg0_6.shiptypeTxt.text = arg1_6:getShipTypeName()
 
-	local var0 = arg1:getNationality()
-	local var1
+	local var0_6 = arg1_6:getNationality()
+	local var1_6
 
-	if var0 then
-		var1 = LoadSprite("prints/" .. nation2print(var0) .. "_0")
+	if var0_6 then
+		var1_6 = LoadSprite("prints/" .. nation2print(var0_6) .. "_0")
 	else
-		var1 = GetSpriteFromAtlas("ui/VoteUI_atlas", "nation")
+		var1_6 = GetSpriteFromAtlas("ui/VoteUI_atlas", "nation")
 	end
 
-	arg0.nationImg.sprite = var1
+	arg0_6.nationImg.sprite = var1_6
 
-	arg0:UpdateCnt()
-	onButton(arg0, arg0._tf, function()
-		arg0:Close()
+	arg0_6:UpdateCnt()
+	onButton(arg0_6, arg0_6._tf, function()
+		arg0_6:Close()
 	end)
-	onButton(arg0, arg0.addBtn, function()
-		if arg0.value >= arg0.maxValue then
+	onButton(arg0_6, arg0_6.addBtn, function()
+		if arg0_6.value >= arg0_6.maxValue then
 			return
 		end
 
-		arg0.value = arg0.value + 1
+		arg0_6.value = arg0_6.value + 1
 
-		arg0:UpdateCnt()
+		arg0_6:UpdateCnt()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.miunsBtn, function()
-		if arg0.value == 1 then
+	onButton(arg0_6, arg0_6.miunsBtn, function()
+		if arg0_6.value == 1 then
 			return
 		end
 
-		arg0.value = arg0.value - 1
+		arg0_6.value = arg0_6.value - 1
 
-		arg0:UpdateCnt()
+		arg0_6:UpdateCnt()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.maxBtn, function()
-		if arg0.maxValue == 0 then
+	onButton(arg0_6, arg0_6.maxBtn, function()
+		if arg0_6.maxValue == 0 then
 			return
 		end
 
-		arg0.value = arg0.maxValue
+		arg0_6.value = arg0_6.maxValue
 
-		arg0:UpdateCnt()
+		arg0_6:UpdateCnt()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.submitBtn, function()
-		arg0.callback(arg0.value)
-		arg0:Close()
+	onButton(arg0_6, arg0_6.submitBtn, function()
+		arg0_6.callback(arg0_6.value)
+		arg0_6:Close()
 	end, SFX_PANEL)
 
-	arg0.paintingName = arg1:getPainting()
+	arg0_6.paintingName = arg1_6:getPainting()
 
-	LoadPaintingPrefabAsync(arg0.paitingTF, arg0.paintingName, arg0.paintingName, "jiesuan")
+	LoadPaintingPrefabAsync(arg0_6.paitingTF, arg0_6.paintingName, arg0_6.paintingName, "jiesuan")
 end
 
-function var0.Close(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, arg0._parent)
-	setActive(arg0._tf, false)
-	retPaintingPrefab(arg0.paitingTF, arg0.paintingName)
+function var0_0.Close(arg0_12)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_12._tf, arg0_12._parent)
+	setActive(arg0_12._tf, false)
+	retPaintingPrefab(arg0_12.paitingTF, arg0_12.paintingName)
 
-	arg0.callback = nil
-	arg0.maxValue = 0
-	arg0.rank = 0
-	arg0.value = 1
-	arg0.voteShip = nil
+	arg0_12.callback = nil
+	arg0_12.maxValue = 0
+	arg0_12.rank = 0
+	arg0_12.value = 1
+	arg0_12.voteShip = nil
 end
 
-function var0.OnDestroy(arg0)
-	arg0:Close()
+function var0_0.OnDestroy(arg0_13)
+	arg0_13:Close()
 end
 
-return var0
+return var0_0

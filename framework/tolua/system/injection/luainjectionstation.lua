@@ -1,87 +1,87 @@
-﻿local var0 = pcall
-local var1 = pairs
-local var2 = error
-local var3 = rawset
-local var4 = rawget
-local var5 = string
-local var6 = tolua_tag
-local var7 = getmetatable
-local var8
-local var9 = require("Framework.tolua.System.Injection.InjectionBridgeInfo")
+﻿local var0_0 = pcall
+local var1_0 = pairs
+local var2_0 = error
+local var3_0 = rawset
+local var4_0 = rawget
+local var5_0 = string
+local var6_0 = tolua_tag
+local var7_0 = getmetatable
+local var8_0
+local var9_0 = require("Framework.tolua.System.Injection.InjectionBridgeInfo")
 
-local function var10(arg0)
-	local var0 = var7(arg0)
+local function var10_0(arg0_1)
+	local var0_1 = var7_0(arg0_1)
 
-	if var4(var0, var6) ~= 1 then
-		var2("Can't Inject")
+	if var4_0(var0_1, var6_0) ~= 1 then
+		var2_0("Can't Inject")
 	end
 
-	return var0
+	return var0_1
 end
 
-local function var11()
-	if var8 == nil then
-		var8 = LuaInterface.LuaInjectionStation
+local function var11_0()
+	if var8_0 == nil then
+		var8_0 = LuaInterface.LuaInjectionStation
 	end
 end
 
-local function var12(arg0, arg1)
-	local var0 = arg0.__index
-	local var1 = {}
+local function var12_0(arg0_3, arg1_3)
+	local var0_3 = arg0_3.__index
+	local var1_3 = {}
 
-	for iter0, iter1 in var1(arg1) do
-		local var2, var3 = iter1()
+	for iter0_3, iter1_3 in var1_0(arg1_3) do
+		local var2_3, var3_3 = iter1_3()
 
-		if var3 == LuaInterface.InjectType.Replace or var3 == LuaInterface.InjectType.ReplaceWithPostInvokeBase or var3 == LuaInterface.InjectType.ReplaceWithPreInvokeBase then
-			var3(var1, iter0, var2)
+		if var3_3 == LuaInterface.InjectType.Replace or var3_3 == LuaInterface.InjectType.ReplaceWithPostInvokeBase or var3_3 == LuaInterface.InjectType.ReplaceWithPreInvokeBase then
+			var3_0(var1_3, iter0_3, var2_3)
 		end
 	end
 
-	function arg0.__index(arg0, arg1)
-		local var0 = var4(var1, arg1)
+	function arg0_3.__index(arg0_4, arg1_4)
+		local var0_4 = var4_0(var1_3, arg1_4)
 
-		if var0 ~= nil then
-			return var0
+		if var0_4 ~= nil then
+			return var0_4
 		end
 
-		local var1, var2 = var0(var0, arg0, arg1)
+		local var1_4, var2_4 = var0_0(var0_3, arg0_4, arg1_4)
 
-		if var1 then
-			return var2
+		if var1_4 then
+			return var2_4
 		else
-			var2(var2)
+			var2_0(var2_4)
 
 			return nil
 		end
 	end
 end
 
-function InjectByModule(arg0, arg1)
-	local var0 = var10(arg0)
-	local var1 = var0[".name"]
+function InjectByModule(arg0_5, arg1_5)
+	local var0_5 = var10_0(arg0_5)
+	local var1_5 = var0_5[".name"]
 
-	InjectByName(var1, arg1)
-	var12(var0, arg1)
+	InjectByName(var1_5, arg1_5)
+	var12_0(var0_5, arg1_5)
 end
 
-function InjectByName(arg0, arg1)
-	var11()
+function InjectByName(arg0_6, arg1_6)
+	var11_0()
 
-	local var0 = var4(var9, arg0)
+	local var0_6 = var4_0(var9_0, arg0_6)
 
-	if var0 == nil then
-		var2(var5.format("Module %s Can't Inject", arg0))
+	if var0_6 == nil then
+		var2_0(var5_0.format("Module %s Can't Inject", arg0_6))
 	end
 
-	for iter0, iter1 in var1(arg1) do
-		local var1, var2 = iter1()
-		local var3 = var4(var0, iter0)
+	for iter0_6, iter1_6 in var1_0(arg1_6) do
+		local var1_6, var2_6 = iter1_6()
+		local var3_6 = var4_0(var0_6, iter0_6)
 
-		if var3 == nil then
-			var2(var5.format("Function %s Doesn't Exist In Module %s", iter0, arg0))
+		if var3_6 == nil then
+			var2_0(var5_0.format("Function %s Doesn't Exist In Module %s", iter0_6, arg0_6))
 		end
 
-		var8.CacheInjectFunction(var3, var2:ToInt(), var1)
+		var8_0.CacheInjectFunction(var3_6, var2_6:ToInt(), var1_6)
 	end
 end
 

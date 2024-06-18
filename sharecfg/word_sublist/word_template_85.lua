@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_85 = {}
+var0_0.word_template_85 = {}
 
-local var1 = var0.word_template_85
+local var1_0 = var0_0.word_template_85
 
 function temp()
-	var1.吊 = {
+	var1_0.吊 = {
 		死 = {
 			鬼 = {
 				打 = {
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.钓 = {
+	var1_0.钓 = {
 		鱼 = {
 			岛 = {
 				this = true,
@@ -85,7 +85,7 @@ end
 temp()
 
 function temp()
-	var1.釣 = {
+	var1_0.釣 = {
 		魚 = {
 			島 = {
 				this = true
@@ -97,7 +97,7 @@ end
 temp()
 
 function temp()
-	var1.調 = {
+	var1_0.調 = {
 		教 = {
 			this = true,
 			虐 = {
@@ -112,7 +112,7 @@ end
 temp()
 
 function temp()
-	var1.爹 = {
+	var1_0.爹 = {
 		this = {
 			this = true
 		},
@@ -139,7 +139,7 @@ end
 temp()
 
 function temp()
-	var1.蝶 = {
+	var1_0.蝶 = {
 		舞 = {
 			按 = {
 				摩 = {
@@ -153,7 +153,7 @@ end
 temp()
 
 function temp()
-	var1.丁 = {
+	var1_0.丁 = {
 		丙 = {
 			诺 = {
 				啡 = {

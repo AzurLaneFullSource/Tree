@@ -1,236 +1,236 @@
-﻿local var0 = rawget
-local var1 = setmetatable
-local var2 = type
-local var3 = Vector3
-local var4 = var3.zero
-local var5 = {
-	center = var3.zero,
-	extents = var3.zero
+﻿local var0_0 = rawget
+local var1_0 = setmetatable
+local var2_0 = type
+local var3_0 = Vector3
+local var4_0 = var3_0.zero
+local var5_0 = {
+	center = var3_0.zero,
+	extents = var3_0.zero
 }
-local var6 = tolua.initget(var5)
+local var6_0 = tolua.initget(var5_0)
 
-function var5.__index(arg0, arg1)
-	local var0 = var0(var5, arg1)
+function var5_0.__index(arg0_1, arg1_1)
+	local var0_1 = var0_0(var5_0, arg1_1)
 
-	if var0 == nil then
-		var0 = var0(var6, arg1)
+	if var0_1 == nil then
+		var0_1 = var0_0(var6_0, arg1_1)
 
-		if var0 ~= nil then
-			return var0(arg0)
+		if var0_1 ~= nil then
+			return var0_1(arg0_1)
 		end
 	end
 
-	return var0
+	return var0_1
 end
 
-function var5.__call(arg0, arg1, arg2)
-	return var1({
-		center = arg1,
-		extents = arg2 * 0.5
-	}, var5)
+function var5_0.__call(arg0_2, arg1_2, arg2_2)
+	return var1_0({
+		center = arg1_2,
+		extents = arg2_2 * 0.5
+	}, var5_0)
 end
 
-function var5.New(arg0, arg1)
-	return var1({
-		center = arg0,
-		extents = arg1 * 0.5
-	}, var5)
+function var5_0.New(arg0_3, arg1_3)
+	return var1_0({
+		center = arg0_3,
+		extents = arg1_3 * 0.5
+	}, var5_0)
 end
 
-function var5.Get(arg0)
-	local var0 = arg0:GetSize()
+function var5_0.Get(arg0_4)
+	local var0_4 = arg0_4:GetSize()
 
-	return arg0.center, var0
+	return arg0_4.center, var0_4
 end
 
-function var5.GetSize(arg0)
-	return arg0.extents * 2
+function var5_0.GetSize(arg0_5)
+	return arg0_5.extents * 2
 end
 
-function var5.SetSize(arg0, arg1)
-	arg0.extents = arg1 * 0.5
+function var5_0.SetSize(arg0_6, arg1_6)
+	arg0_6.extents = arg1_6 * 0.5
 end
 
-function var5.GetMin(arg0)
-	return arg0.center - arg0.extents
+function var5_0.GetMin(arg0_7)
+	return arg0_7.center - arg0_7.extents
 end
 
-function var5.SetMin(arg0, arg1)
-	arg0:SetMinMax(arg1, arg0:GetMax())
+function var5_0.SetMin(arg0_8, arg1_8)
+	arg0_8:SetMinMax(arg1_8, arg0_8:GetMax())
 end
 
-function var5.GetMax(arg0)
-	return arg0.center + arg0.extents
+function var5_0.GetMax(arg0_9)
+	return arg0_9.center + arg0_9.extents
 end
 
-function var5.SetMax(arg0, arg1)
-	arg0:SetMinMax(arg0:GetMin(), arg1)
+function var5_0.SetMax(arg0_10, arg1_10)
+	arg0_10:SetMinMax(arg0_10:GetMin(), arg1_10)
 end
 
-function var5.SetMinMax(arg0, arg1, arg2)
-	arg0.extents = (arg2 - arg1) * 0.5
-	arg0.center = arg1 + arg0.extents
+function var5_0.SetMinMax(arg0_11, arg1_11, arg2_11)
+	arg0_11.extents = (arg2_11 - arg1_11) * 0.5
+	arg0_11.center = arg1_11 + arg0_11.extents
 end
 
-function var5.Encapsulate(arg0, arg1)
-	arg0:SetMinMax(var3.Min(arg0:GetMin(), arg1), var3.Max(arg0:GetMax(), arg1))
+function var5_0.Encapsulate(arg0_12, arg1_12)
+	arg0_12:SetMinMax(var3_0.Min(arg0_12:GetMin(), arg1_12), var3_0.Max(arg0_12:GetMax(), arg1_12))
 end
 
-function var5.Expand(arg0, arg1)
-	if var2(arg1) == "number" then
-		arg1 = arg1 * 0.5
+function var5_0.Expand(arg0_13, arg1_13)
+	if var2_0(arg1_13) == "number" then
+		arg1_13 = arg1_13 * 0.5
 
-		arg0.extents:Add(var3.New(arg1, arg1, arg1))
+		arg0_13.extents:Add(var3_0.New(arg1_13, arg1_13, arg1_13))
 	else
-		arg0.extents:Add(arg1 * 0.5)
+		arg0_13.extents:Add(arg1_13 * 0.5)
 	end
 end
 
-function var5.Intersects(arg0, arg1)
-	local var0 = arg0:GetMin()
-	local var1 = arg0:GetMax()
-	local var2 = arg1:GetMin()
-	local var3 = arg1:GetMax()
+function var5_0.Intersects(arg0_14, arg1_14)
+	local var0_14 = arg0_14:GetMin()
+	local var1_14 = arg0_14:GetMax()
+	local var2_14 = arg1_14:GetMin()
+	local var3_14 = arg1_14:GetMax()
 
-	return var0.x <= var3.x and var1.x >= var2.x and var0.y <= var3.y and var1.y >= var2.y and var0.z <= var3.z and var1.z >= var2.z
+	return var0_14.x <= var3_14.x and var1_14.x >= var2_14.x and var0_14.y <= var3_14.y and var1_14.y >= var2_14.y and var0_14.z <= var3_14.z and var1_14.z >= var2_14.z
 end
 
-function var5.Contains(arg0, arg1)
-	local var0 = arg0:GetMin()
-	local var1 = arg0:GetMax()
+function var5_0.Contains(arg0_15, arg1_15)
+	local var0_15 = arg0_15:GetMin()
+	local var1_15 = arg0_15:GetMax()
 
-	if arg1.x < var0.x or arg1.y < var0.y or arg1.z < var0.z or arg1.x > var1.x or arg1.y > var1.y or arg1.z > var1.z then
+	if arg1_15.x < var0_15.x or arg1_15.y < var0_15.y or arg1_15.z < var0_15.z or arg1_15.x > var1_15.x or arg1_15.y > var1_15.y or arg1_15.z > var1_15.z then
 		return false
 	end
 
 	return true
 end
 
-function var5.IntersectRay(arg0, arg1)
-	local var0 = -Mathf.Infinity
-	local var1 = Mathf.Infinity
-	local var2
-	local var3
-	local var4
-	local var5 = arg0:GetCenter() - arg1:GetOrigin()
-	local var6 = {
-		var5.x,
-		var5.y,
-		var5.z
+function var5_0.IntersectRay(arg0_16, arg1_16)
+	local var0_16 = -Mathf.Infinity
+	local var1_16 = Mathf.Infinity
+	local var2_16
+	local var3_16
+	local var4_16
+	local var5_16 = arg0_16:GetCenter() - arg1_16:GetOrigin()
+	local var6_16 = {
+		var5_16.x,
+		var5_16.y,
+		var5_16.z
 	}
-	local var7 = arg0.extents
-	local var8 = {
-		var7.x,
-		var7.y,
-		var7.z
+	local var7_16 = arg0_16.extents
+	local var8_16 = {
+		var7_16.x,
+		var7_16.y,
+		var7_16.z
 	}
-	local var9 = arg1:GetDirection()
-	local var10 = {
-		var9.x,
-		var9.y,
-		var9.z
+	local var9_16 = arg1_16:GetDirection()
+	local var10_16 = {
+		var9_16.x,
+		var9_16.y,
+		var9_16.z
 	}
 
-	for iter0 = 1, 3 do
-		local var11 = 1 / var10[iter0]
-		local var12 = (var6[iter0] + var8[iter0]) * var11
-		local var13 = (var6[iter0] - var8[iter0]) * var11
+	for iter0_16 = 1, 3 do
+		local var11_16 = 1 / var10_16[iter0_16]
+		local var12_16 = (var6_16[iter0_16] + var8_16[iter0_16]) * var11_16
+		local var13_16 = (var6_16[iter0_16] - var8_16[iter0_16]) * var11_16
 
-		if var12 < var13 then
-			if var0 < var12 then
-				var0 = var12
+		if var12_16 < var13_16 then
+			if var0_16 < var12_16 then
+				var0_16 = var12_16
 			end
 
-			if var13 < var1 then
-				var1 = var13
+			if var13_16 < var1_16 then
+				var1_16 = var13_16
 			end
 
-			if var1 < var0 then
+			if var1_16 < var0_16 then
 				return false
 			end
 
-			if var1 < 0 then
+			if var1_16 < 0 then
 				return false
 			end
 		else
-			if var0 < var13 then
-				var0 = var13
+			if var0_16 < var13_16 then
+				var0_16 = var13_16
 			end
 
-			if var12 < var1 then
-				var1 = var12
+			if var12_16 < var1_16 then
+				var1_16 = var12_16
 			end
 
-			if var1 < var0 then
+			if var1_16 < var0_16 then
 				return false
 			end
 
-			if var1 < 0 then
+			if var1_16 < 0 then
 				return false
 			end
 		end
 	end
 
-	return true, var0
+	return true, var0_16
 end
 
-function var5.ClosestPoint(arg0, arg1)
-	local var0 = arg1 - arg0:GetCenter()
-	local var1 = {
-		var0.x,
-		var0.y,
-		var0.z
+function var5_0.ClosestPoint(arg0_17, arg1_17)
+	local var0_17 = arg1_17 - arg0_17:GetCenter()
+	local var1_17 = {
+		var0_17.x,
+		var0_17.y,
+		var0_17.z
 	}
-	local var2 = arg0.extents
-	local var3 = {
-		var2.x,
-		var2.y,
-		var2.z
+	local var2_17 = arg0_17.extents
+	local var3_17 = {
+		var2_17.x,
+		var2_17.y,
+		var2_17.z
 	}
-	local var4 = 0
-	local var5
+	local var4_17 = 0
+	local var5_17
 
-	for iter0 = 1, 3 do
-		if var1[iter0] < -var3[iter0] then
-			local var6 = var1[iter0] + var3[iter0]
+	for iter0_17 = 1, 3 do
+		if var1_17[iter0_17] < -var3_17[iter0_17] then
+			local var6_17 = var1_17[iter0_17] + var3_17[iter0_17]
 
-			var4 = var4 + var6 * var6
-			var1[iter0] = -var3[iter0]
-		elseif var1[iter0] > var3[iter0] then
-			local var7 = var1[iter0] - var3[iter0]
+			var4_17 = var4_17 + var6_17 * var6_17
+			var1_17[iter0_17] = -var3_17[iter0_17]
+		elseif var1_17[iter0_17] > var3_17[iter0_17] then
+			local var7_17 = var1_17[iter0_17] - var3_17[iter0_17]
 
-			var4 = var4 + var7 * var7
-			var1[iter0] = var3[iter0]
+			var4_17 = var4_17 + var7_17 * var7_17
+			var1_17[iter0_17] = var3_17[iter0_17]
 		end
 	end
 
-	if var4 == 0 then
+	if var4_17 == 0 then
 		return rkPoint, 0
 	else
-		outPoint = var1 + arg0:GetCenter()
+		outPoint = var1_17 + arg0_17:GetCenter()
 
-		return outPoint, var4
+		return outPoint, var4_17
 	end
 end
 
-function var5.Destroy(arg0)
-	arg0.center = nil
-	arg0.size = nil
+function var5_0.Destroy(arg0_18)
+	arg0_18.center = nil
+	arg0_18.size = nil
 end
 
-function var5.__tostring(arg0)
-	return string.format("Center: %s, Extents %s", tostring(arg0.center), tostring(arg0.extents))
+function var5_0.__tostring(arg0_19)
+	return string.format("Center: %s, Extents %s", tostring(arg0_19.center), tostring(arg0_19.extents))
 end
 
-function var5.__eq(arg0, arg1)
-	return arg0.center == arg1.center and arg0.extents == arg1.extents
+function var5_0.__eq(arg0_20, arg1_20)
+	return arg0_20.center == arg1_20.center and arg0_20.extents == arg1_20.extents
 end
 
-var6.size = var5.GetSize
-var6.min = var5.GetMin
-var6.max = var5.GetMax
-UnityEngine.Bounds = var5
+var6_0.size = var5_0.GetSize
+var6_0.min = var5_0.GetMin
+var6_0.max = var5_0.GetMax
+UnityEngine.Bounds = var5_0
 
-var1(var5, var5)
+var1_0(var5_0, var5_0)
 
-return var5
+return var5_0

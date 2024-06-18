@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_81 = {}
+var0_0.word_template_81 = {}
 
-local var1 = var0.word_template_81
+local var1_0 = var0_0.word_template_81
 
 function temp()
-	var1.德 = {
+	var1_0.德 = {
 		版 = {
 			P = {
 				P = {
@@ -61,7 +61,7 @@ end
 temp()
 
 function temp()
-	var1.灯 = {
+	var1_0.灯 = {
 		月 = {
 			缘 = {
 				this = true
@@ -73,7 +73,7 @@ end
 temp()
 
 function temp()
-	var1.登 = {
+	var1_0.登 = {
 		輝 = {
 			this = true
 		},
@@ -117,7 +117,7 @@ end
 temp()
 
 function temp()
-	var1.等 = {
+	var1_0.等 = {
 		你 = {
 			插 = {
 				this = true
@@ -139,7 +139,7 @@ end
 temp()
 
 function temp()
-	var1.邓 = {
+	var1_0.邓 = {
 		矮 = {
 			this = true,
 			人 = {
@@ -319,7 +319,7 @@ end
 temp()
 
 function temp()
-	var1.鄧 = {
+	var1_0.鄧 = {
 		小 = {
 			平 = {
 				this = true,
@@ -368,7 +368,7 @@ end
 temp()
 
 function temp()
-	var1.滴 = {
+	var1_0.滴 = {
 		蜡 = {
 			this = true
 		}

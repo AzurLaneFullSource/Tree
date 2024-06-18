@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_88 = {}
+var0_0.word_template_88 = {}
 
-local var1 = var0.word_template_88
+local var1_0 = var0_0.word_template_88
 
 function temp()
-	var1.洞 = {
+	var1_0.洞 = {
 		口 = {
 			县 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.動 = {
+	var1_0.動 = {
 		亂 = {
 			this = true
 		},
@@ -36,7 +36,7 @@ end
 temp()
 
 function temp()
-	var1.都 = {
+	var1_0.都 = {
 		改 = {
 			当 = {
 				公 = {
@@ -122,7 +122,7 @@ end
 temp()
 
 function temp()
-	var1.斗 = {
+	var1_0.斗 = {
 		地 = {
 			主 = {
 				刷 = {
@@ -140,7 +140,7 @@ end
 temp()
 
 function temp()
-	var1.逗 = {
+	var1_0.逗 = {
 		逗 = {
 			小 = {
 				胡 = {
@@ -166,7 +166,7 @@ end
 temp()
 
 function temp()
-	var1.鬥 = {
+	var1_0.鬥 = {
 		士 = {
 			哈 = {
 				夫 = {
@@ -189,7 +189,7 @@ end
 temp()
 
 function temp()
-	var1.独 = {
+	var1_0.独 = {
 		立 = {
 			this = true,
 			建 = {

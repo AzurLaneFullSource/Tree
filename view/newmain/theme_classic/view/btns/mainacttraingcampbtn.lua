@@ -1,36 +1,36 @@
-﻿local var0 = class("MainActTraingCampBtn", import(".MainBaseSpcailActBtn"))
+﻿local var0_0 = class("MainActTraingCampBtn", import(".MainBaseSpcailActBtn"))
 
-function var0.GetContainer(arg0)
-	return arg0.root.parent:Find("link_top/layout")
+function var0_0.GetContainer(arg0_1)
+	return arg0_1.root.parent:Find("link_top/layout")
 end
 
-function var0.InShowTime(arg0)
-	local var0 = TrainingCampScene.isNormalActOn()
-	local var1 = TrainingCampScene.isTecActOn()
+function var0_0.InShowTime(arg0_2)
+	local var0_2 = TrainingCampScene.isNormalActOn()
+	local var1_2 = TrainingCampScene.isTecActOn()
 
-	return var0 or var1
+	return var0_2 or var1_2
 end
 
-function var0.GetUIName(arg0)
+function var0_0.GetUIName(arg0_3)
 	return "MainUIRecruitBtn"
 end
 
-function var0.OnClick(arg0)
-	arg0.event:emit(NewMainMediator.GO_SCENE, SCENE.TRAININGCAMP)
+function var0_0.OnClick(arg0_4)
+	arg0_4.event:emit(NewMainMediator.GO_SCENE, SCENE.TRAININGCAMP)
 end
 
-function var0.OnRegister(arg0)
-	arg0.redDot = EffectRedDotNode.New(arg0._tf, {
+function var0_0.OnRegister(arg0_5)
+	arg0_5.redDot = EffectRedDotNode.New(arg0_5._tf, {
 		pg.RedDotMgr.TYPES.ACT_NEWBIE
 	})
 
-	pg.redDotHelper:AddNode(arg0.redDot)
+	pg.redDotHelper:AddNode(arg0_5.redDot)
 end
 
-function var0.OnClear(arg0)
-	if arg0.redDot then
-		pg.redDotHelper:RemoveNode(arg0.redDot)
+function var0_0.OnClear(arg0_6)
+	if arg0_6.redDot then
+		pg.redDotHelper:RemoveNode(arg0_6.redDot)
 	end
 end
 
-return var0
+return var0_0

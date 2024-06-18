@@ -1,113 +1,113 @@
-﻿local var0 = class("SpWeaponDesignLayer", import("view.base.BaseUI"))
+﻿local var0_0 = class("SpWeaponDesignLayer", import("view.base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "SpWeaponDesignUI"
 end
 
-function var0.SetCraftList(arg0, arg1)
-	arg0.craftList = arg1
+function var0_0.SetCraftList(arg0_2, arg1_2)
+	arg0_2.craftList = arg1_2
 end
 
-function var0.SetSpWeapons(arg0, arg1)
-	assert(arg0.craftList)
+function var0_0.SetSpWeapons(arg0_3, arg1_3)
+	assert(arg0_3.craftList)
 
-	if arg0.craftList then
-		_.each(arg0.craftList, function(arg0)
-			arg0.owned = arg0:IsUnique() and table.Find(arg1, function(arg0, arg1)
-				return arg1:GetOriginID() == arg0:GetConfigID()
+	if arg0_3.craftList then
+		_.each(arg0_3.craftList, function(arg0_4)
+			arg0_4.owned = arg0_4:IsUnique() and table.Find(arg1_3, function(arg0_5, arg1_5)
+				return arg1_5:GetOriginID() == arg0_4:GetConfigID()
 			end) and true or false
 		end)
 	end
 end
 
-function var0.setItems(arg0, arg1)
-	arg0.itemVOs = arg1
+function var0_0.setItems(arg0_6, arg1_6)
+	arg0_6.itemVOs = arg1_6
 end
 
-function var0.setPlayer(arg0, arg1)
-	arg0.player = arg1
+function var0_0.setPlayer(arg0_7, arg1_7)
+	arg0_7.player = arg1_7
 end
 
-function var0.init(arg0)
-	arg0.designScrollView = arg0:findTF("equipment_scrollview")
-	arg0.equipmentTpl = arg0:findTF("Template")
+function var0_0.init(arg0_8)
+	arg0_8.designScrollView = arg0_8:findTF("equipment_scrollview")
+	arg0_8.equipmentTpl = arg0_8:findTF("Template")
 
-	setActive(arg0.equipmentTpl, false)
+	setActive(arg0_8.equipmentTpl, false)
 
-	arg0.equipmentContainer = arg0:findTF("equipment_grid", arg0.designScrollView)
+	arg0_8.equipmentContainer = arg0_8:findTF("equipment_grid", arg0_8.designScrollView)
 
-	local var0
+	local var0_8
 
 	if NotchAdapt.CheckNotchRatio == 2 or not getProxy(SettingsProxy):CheckLargeScreen() then
-		var0 = arg0.designScrollView.rect.width > 2000
+		var0_8 = arg0_8.designScrollView.rect.width > 2000
 	else
-		var0 = NotchAdapt.CheckNotchRatio >= 2
+		var0_8 = NotchAdapt.CheckNotchRatio >= 2
 	end
 
-	arg0.equipmentContainer:GetComponent(typeof(GridLayoutGroup)).constraintCount = var0 and 8 or 7
-	arg0.top = arg0:findTF("top")
-	arg0.toggleOwned = arg0:findTF("toggle_owned")
-	arg0.sortBtn = arg0:findTF("sort_button", arg0.top)
-	arg0.indexBtn = arg0:findTF("index_button", arg0.top)
-	arg0.decBtn = arg0:findTF("dec_btn", arg0.sortBtn)
-	arg0.sortImgAsc = arg0:findTF("desc", arg0.decBtn)
-	arg0.sortImgDec = arg0:findTF("asc", arg0.decBtn)
-	arg0.indexPanel = arg0:findTF("index")
-	arg0.tagContainer = arg0:findTF("adapt/mask/panel", arg0.indexPanel)
-	arg0.tagTpl = arg0:findTF("tpl", arg0.tagContainer)
-	arg0.listEmptyTF = arg0:findTF("empty")
+	arg0_8.equipmentContainer:GetComponent(typeof(GridLayoutGroup)).constraintCount = var0_8 and 8 or 7
+	arg0_8.top = arg0_8:findTF("top")
+	arg0_8.toggleOwned = arg0_8:findTF("toggle_owned")
+	arg0_8.sortBtn = arg0_8:findTF("sort_button", arg0_8.top)
+	arg0_8.indexBtn = arg0_8:findTF("index_button", arg0_8.top)
+	arg0_8.decBtn = arg0_8:findTF("dec_btn", arg0_8.sortBtn)
+	arg0_8.sortImgAsc = arg0_8:findTF("desc", arg0_8.decBtn)
+	arg0_8.sortImgDec = arg0_8:findTF("asc", arg0_8.decBtn)
+	arg0_8.indexPanel = arg0_8:findTF("index")
+	arg0_8.tagContainer = arg0_8:findTF("adapt/mask/panel", arg0_8.indexPanel)
+	arg0_8.tagTpl = arg0_8:findTF("tpl", arg0_8.tagContainer)
+	arg0_8.listEmptyTF = arg0_8:findTF("empty")
 
-	setActive(arg0.listEmptyTF, false)
+	setActive(arg0_8.listEmptyTF, false)
 
-	arg0.listEmptyTxt = arg0:findTF("Text", arg0.listEmptyTF)
+	arg0_8.listEmptyTxt = arg0_8:findTF("Text", arg0_8.listEmptyTF)
 
-	setText(arg0.listEmptyTxt, i18n("list_empty_tip_equipmentdesignui"))
-	pg.UIMgr.GetInstance():OverlayPanel(arg0.indexPanel, {
+	setText(arg0_8.listEmptyTxt, i18n("list_empty_tip_equipmentdesignui"))
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_8.indexPanel, {
 		groupName = LayerWeightConst.GROUP_EQUIPMENTSCENE
 	})
 end
 
-function var0.SetParentTF(arg0, arg1)
-	arg0.parentTF = arg1
-	arg0.equipmentView = arg0:findTF("equipment_scrollview", arg0.parentTF)
+function var0_0.SetParentTF(arg0_9, arg1_9)
+	arg0_9.parentTF = arg1_9
+	arg0_9.equipmentView = arg0_9:findTF("equipment_scrollview", arg0_9.parentTF)
 
-	setActive(arg0.equipmentView, false)
+	setActive(arg0_9.equipmentView, false)
 end
 
-function var0.SetTopContainer(arg0, arg1)
-	arg0.topPanel = arg1
+function var0_0.SetTopContainer(arg0_10, arg1_10)
+	arg0_10.topPanel = arg1_10
 end
 
-function var0.SetTopItems(arg0, arg1)
-	arg0.topItems = arg1
+function var0_0.SetTopItems(arg0_11, arg1_11)
+	arg0_11.topItems = arg1_11
 end
 
-local var1 = {
+local var1_0 = {
 	"sort_rarity"
 }
 
-function var0.didEnter(arg0)
-	setParent(arg0._tf, arg0.parentTF)
+function var0_0.didEnter(arg0_12)
+	setParent(arg0_12._tf, arg0_12.parentTF)
 
-	local var0 = arg0.equipmentView:GetSiblingIndex()
+	local var0_12 = arg0_12.equipmentView:GetSiblingIndex()
 
-	arg0._tf:SetSiblingIndex(var0)
+	arg0_12._tf:SetSiblingIndex(var0_12)
 
-	arg0.contextData.indexDatas = arg0.contextData.indexDatas or {}
-	arg0.contextData.index = arg0.contextData.index or 1
+	arg0_12.contextData.indexDatas = arg0_12.contextData.indexDatas or {}
+	arg0_12.contextData.index = arg0_12.contextData.index or 1
 
-	setParent(arg0.top, arg0.topPanel)
-	setParent(arg0.toggleOwned, arg0.topItems:Find("adapt/bottom_back"))
-	arg0:initDesigns()
-	onToggle(arg0, arg0.sortBtn, function(arg0)
-		setActive(arg0.indexPanel, arg0)
+	setParent(arg0_12.top, arg0_12.topPanel)
+	setParent(arg0_12.toggleOwned, arg0_12.topItems:Find("adapt/bottom_back"))
+	arg0_12:initDesigns()
+	onToggle(arg0_12, arg0_12.sortBtn, function(arg0_13)
+		setActive(arg0_12.indexPanel, arg0_13)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.indexPanel, function()
-		triggerToggle(arg0.sortBtn, false)
+	onButton(arg0_12, arg0_12.indexPanel, function()
+		triggerToggle(arg0_12.sortBtn, false)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.indexBtn, function()
-		local var0 = {
-			indexDatas = Clone(arg0.contextData.indexDatas),
+	onButton(arg0_12, arg0_12.indexBtn, function()
+		local var0_15 = {
+			indexDatas = Clone(arg0_12.contextData.indexDatas),
 			customPanels = {
 				typeIndex = {
 					mode = CustomIndexLayer.Mode.OR,
@@ -138,182 +138,182 @@ function var0.didEnter(arg0)
 					}
 				}
 			},
-			callback = function(arg0)
-				if not isActive(arg0._tf) then
+			callback = function(arg0_16)
+				if not isActive(arg0_12._tf) then
 					return
 				end
 
-				arg0.contextData.indexDatas.typeIndex = arg0.typeIndex
-				arg0.contextData.indexDatas.rarityIndex = arg0.rarityIndex
+				arg0_12.contextData.indexDatas.typeIndex = arg0_16.typeIndex
+				arg0_12.contextData.indexDatas.rarityIndex = arg0_16.rarityIndex
 
-				arg0:filter()
+				arg0_12:filter()
 			end
 		}
 
-		arg0:emit(SpWeaponDesignMediator.OPEN_EQUIPMENTDESIGN_INDEX, var0)
+		arg0_12:emit(SpWeaponDesignMediator.OPEN_EQUIPMENTDESIGN_INDEX, var0_15)
 	end, SFX_PANEL)
 
-	arg0.contextData.showOwned = defaultValue(arg0.contextData.showOwned, false)
+	arg0_12.contextData.showOwned = defaultValue(arg0_12.contextData.showOwned, false)
 
-	triggerToggle(arg0.toggleOwned, arg0.contextData.showOwned)
-	onToggle(arg0, arg0.toggleOwned, function(arg0)
-		arg0.contextData.showOwned = arg0
+	triggerToggle(arg0_12.toggleOwned, arg0_12.contextData.showOwned)
+	onToggle(arg0_12, arg0_12.toggleOwned, function(arg0_17)
+		arg0_12.contextData.showOwned = arg0_17
 
-		arg0:filter()
+		arg0_12:filter()
 	end)
-	arg0:initTags()
+	arg0_12:initTags()
 end
 
-function var0.isDefaultStatus(arg0)
-	return (not arg0.contextData.indexDatas.typeIndex or arg0.contextData.indexDatas.typeIndex == IndexConst.SpWeaponTypeAll) and (not arg0.contextData.indexDatas.rarityIndex or arg0.contextData.indexDatas.rarityIndex == IndexConst.SpWeaponRarityAll)
+function var0_0.isDefaultStatus(arg0_18)
+	return (not arg0_18.contextData.indexDatas.typeIndex or arg0_18.contextData.indexDatas.typeIndex == IndexConst.SpWeaponTypeAll) and (not arg0_18.contextData.indexDatas.rarityIndex or arg0_18.contextData.indexDatas.rarityIndex == IndexConst.SpWeaponRarityAll)
 end
 
-function var0.initTags(arg0)
-	onButton(arg0, arg0.decBtn, function()
-		arg0.contextData.asc = not arg0.contextData.asc
+function var0_0.initTags(arg0_19)
+	onButton(arg0_19, arg0_19.decBtn, function()
+		arg0_19.contextData.asc = not arg0_19.contextData.asc
 
-		arg0:filter()
+		arg0_19:filter()
 	end)
 
-	arg0.tagTFs = {}
+	arg0_19.tagTFs = {}
 
-	eachChild(arg0.tagContainer, function(arg0)
-		setActive(arg0, false)
+	eachChild(arg0_19.tagContainer, function(arg0_21)
+		setActive(arg0_21, false)
 	end)
 
-	for iter0, iter1 in ipairs(var1) do
-		local var0 = iter0 <= arg0.tagContainer.childCount and arg0.tagContainer:GetChild(iter0 - 1) or cloneTplTo(arg0.tagTpl, arg0.tagContainer)
+	for iter0_19, iter1_19 in ipairs(var1_0) do
+		local var0_19 = iter0_19 <= arg0_19.tagContainer.childCount and arg0_19.tagContainer:GetChild(iter0_19 - 1) or cloneTplTo(arg0_19.tagTpl, arg0_19.tagContainer)
 
-		setActive(var0, true)
-		setImageSprite(findTF(var0, "Image"), GetSpriteFromAtlas("ui/equipmentdesignui_atlas", iter1))
-		onToggle(arg0, var0, function(arg0)
-			if arg0 then
-				arg0.contextData.index = iter0
+		setActive(var0_19, true)
+		setImageSprite(findTF(var0_19, "Image"), GetSpriteFromAtlas("ui/equipmentdesignui_atlas", iter1_19))
+		onToggle(arg0_19, var0_19, function(arg0_22)
+			if arg0_22 then
+				arg0_19.contextData.index = iter0_19
 
-				arg0:filter()
+				arg0_19:filter()
 			end
 
-			triggerButton(arg0.indexPanel)
+			triggerButton(arg0_19.indexPanel)
 		end, SFX_PANEL)
-		table.insert(arg0.tagTFs, var0)
+		table.insert(arg0_19.tagTFs, var0_19)
 	end
 
-	triggerToggle(arg0.tagTFs[arg0.contextData.index], true)
+	triggerToggle(arg0_19.tagTFs[arg0_19.contextData.index], true)
 end
 
-function var0.initDesigns(arg0)
-	arg0.scollRect = arg0.designScrollView:GetComponent("LScrollRect")
-	arg0.scollRect.decelerationRate = 0.07
+function var0_0.initDesigns(arg0_23)
+	arg0_23.scollRect = arg0_23.designScrollView:GetComponent("LScrollRect")
+	arg0_23.scollRect.decelerationRate = 0.07
 
-	function arg0.scollRect.onInitItem(arg0)
-		arg0:initDesign(arg0)
+	function arg0_23.scollRect.onInitItem(arg0_24)
+		arg0_23:initDesign(arg0_24)
 	end
 
-	function arg0.scollRect.onUpdateItem(arg0, arg1)
-		arg0:updateDesign(arg0, arg1)
+	function arg0_23.scollRect.onUpdateItem(arg0_25, arg1_25)
+		arg0_23:updateDesign(arg0_25, arg1_25)
 	end
 
-	function arg0.scollRect.onReturnItem(arg0, arg1)
-		arg0:returnDesign(arg0, arg1)
+	function arg0_23.scollRect.onReturnItem(arg0_26, arg1_26)
+		arg0_23:returnDesign(arg0_26, arg1_26)
 	end
 
-	arg0.desgins = {}
+	arg0_23.desgins = {}
 end
 
-function var0.initDesign(arg0, arg1)
-	local var0 = SpWeaponItemView.New(arg1)
+function var0_0.initDesign(arg0_27, arg1_27)
+	local var0_27 = SpWeaponItemView.New(arg1_27)
 
-	onButton(arg0, var0.go, function()
-		arg0:emit(SpWeaponDesignMediator.ON_COMPOSITE, var0.spWeaponVO:GetConfigID())
+	onButton(arg0_27, var0_27.go, function()
+		arg0_27:emit(SpWeaponDesignMediator.ON_COMPOSITE, var0_27.spWeaponVO:GetConfigID())
 	end)
 
-	arg0.desgins[arg1] = var0
+	arg0_27.desgins[arg1_27] = var0_27
 end
 
-function var0.updateDesign(arg0, arg1, arg2)
-	local var0 = arg0.desgins[arg2]
+function var0_0.updateDesign(arg0_29, arg1_29, arg2_29)
+	local var0_29 = arg0_29.desgins[arg2_29]
 
-	if not var0 then
-		arg0:initDesign(arg2)
+	if not var0_29 then
+		arg0_29:initDesign(arg2_29)
 
-		var0 = arg0.desgins[arg2]
+		var0_29 = arg0_29.desgins[arg2_29]
 	end
 
-	local var1 = arg0.filterCraftList[arg1 + 1]
+	local var1_29 = arg0_29.filterCraftList[arg1_29 + 1]
 
-	var0:update(var1)
+	var0_29:update(var1_29)
 end
 
-function var0.returnDesign(arg0, arg1, arg2)
-	if arg0.exited then
+function var0_0.returnDesign(arg0_30, arg1_30, arg2_30)
+	if arg0_30.exited then
 		return
 	end
 
-	local var0 = arg0.desgins[arg2]
+	local var0_30 = arg0_30.desgins[arg2_30]
 
-	if var0 then
-		var0:clear()
+	if var0_30 then
+		var0_30:clear()
 	end
 end
 
-function var0.getDesignVO(arg0, arg1)
-	return arg1
+function var0_0.getDesignVO(arg0_31, arg1_31)
+	return arg1_31
 end
 
-local var2 = require("view.equipment.SpWeaponSortCfg")
+local var2_0 = require("view.equipment.SpWeaponSortCfg")
 
-function var0.filter(arg0)
-	local var0 = arg0:isDefaultStatus() and "shaixuan_off" or "shaixuan_on"
+function var0_0.filter(arg0_32)
+	local var0_32 = arg0_32:isDefaultStatus() and "shaixuan_off" or "shaixuan_on"
 
-	GetSpriteFromAtlasAsync("ui/share/index_atlas", var0, function(arg0)
-		setImageSprite(arg0.indexBtn, arg0, true)
+	GetSpriteFromAtlasAsync("ui/share/index_atlas", var0_32, function(arg0_33)
+		setImageSprite(arg0_32.indexBtn, arg0_33, true)
 	end)
 
-	local var1 = {}
+	local var1_32 = {}
 
-	for iter0, iter1 in pairs(arg0.craftList) do
-		if IndexConst.filterSpWeaponByType(iter1, arg0.contextData.indexDatas.typeIndex) and IndexConst.filterSpWeaponByRarity(iter1, arg0.contextData.indexDatas.rarityIndex) and (arg0.contextData.showOwned or not iter1.owned) then
-			table.insert(var1, iter1)
+	for iter0_32, iter1_32 in pairs(arg0_32.craftList) do
+		if IndexConst.filterSpWeaponByType(iter1_32, arg0_32.contextData.indexDatas.typeIndex) and IndexConst.filterSpWeaponByRarity(iter1_32, arg0_32.contextData.indexDatas.rarityIndex) and (arg0_32.contextData.showOwned or not iter1_32.owned) then
+			table.insert(var1_32, iter1_32)
 		end
 	end
 
-	local var2 = arg0.contextData.asc
-	local var3 = arg0.contextData.index or 1
+	local var2_32 = arg0_32.contextData.asc
+	local var3_32 = arg0_32.contextData.index or 1
 
-	table.sort(var1, CompareFuncs(var2.sortFunc(var2.sort[1], var2)))
+	table.sort(var1_32, CompareFuncs(var2_0.sortFunc(var2_0.sort[1], var2_32)))
 
-	arg0.filterCraftList = var1
+	arg0_32.filterCraftList = var1_32
 
-	arg0:UpdateCraftList()
+	arg0_32:UpdateCraftList()
 
-	local var4 = GetSpriteFromAtlas("ui/equipmentdesignui_atlas", var1[var3])
+	local var4_32 = GetSpriteFromAtlas("ui/equipmentdesignui_atlas", var1_0[var3_32])
 
-	setImageSprite(arg0:findTF("Image", arg0.sortBtn), var4)
-	setActive(arg0.sortImgAsc, arg0.contextData.asc)
-	setActive(arg0.sortImgDec, not arg0.contextData.asc)
+	setImageSprite(arg0_32:findTF("Image", arg0_32.sortBtn), var4_32)
+	setActive(arg0_32.sortImgAsc, arg0_32.contextData.asc)
+	setActive(arg0_32.sortImgDec, not arg0_32.contextData.asc)
 end
 
-function var0.UpdateCraftList(arg0)
-	arg0.scollRect:SetTotalCount(#arg0.filterCraftList)
-	setActive(arg0.listEmptyTF, #arg0.filterCraftList <= 0)
+function var0_0.UpdateCraftList(arg0_34)
+	arg0_34.scollRect:SetTotalCount(#arg0_34.filterCraftList)
+	setActive(arg0_34.listEmptyTF, #arg0_34.filterCraftList <= 0)
 	Canvas.ForceUpdateCanvases()
 end
 
-function var0.onBackPressed(arg0)
-	if isActive(arg0.indexPanel) then
-		triggerButton(arg0.indexPanel)
+function var0_0.onBackPressed(arg0_35)
+	if isActive(arg0_35.indexPanel) then
+		triggerButton(arg0_35.indexPanel)
 
 		return
 	end
 
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-	arg0:emit(var0.ON_BACK)
+	arg0_35:emit(var0_0.ON_BACK)
 end
 
-function var0.willExit(arg0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0.indexPanel, arg0._tf)
-	setParent(arg0.toggleOwned, arg0._tf)
-	setParent(arg0.top, arg0._tf)
+function var0_0.willExit(arg0_36)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_36.indexPanel, arg0_36._tf)
+	setParent(arg0_36.toggleOwned, arg0_36._tf)
+	setParent(arg0_36.top, arg0_36._tf)
 end
 
-return var0
+return var0_0

@@ -1,50 +1,50 @@
 ﻿ys = ys or {}
 
-local var0 = class("ISeqNode")
+local var0_0 = class("ISeqNode")
 
-ys.ISeqNode = var0
-var0.Finish = false
-var0._init = false
-var0._data = nil
-var0._cfg = nil
+ys.ISeqNode = var0_0
+var0_0.Finish = false
+var0_0._init = false
+var0_0._data = nil
+var0_0._cfg = nil
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0._data = arg1
-	arg0._cfg = arg2
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1._data = arg1_1
+	arg0_1._cfg = arg2_1
 end
 
-function var0.UpdateNode(arg0)
-	if arg0.Finish then
+function var0_0.UpdateNode(arg0_2)
+	if arg0_2.Finish then
 		return
 	end
 
-	if not arg0._init then
-		arg0._init = true
+	if not arg0_2._init then
+		arg0_2._init = true
 
-		arg0:Init()
+		arg0_2:Init()
 	end
 
-	if arg0.Finish then
+	if arg0_2.Finish then
 		return
 	end
 
-	arg0:Update()
+	arg0_2:Update()
 end
 
-function var0.Init(arg0)
+function var0_0.Init(arg0_3)
 	return
 end
 
-function var0.Update(arg0)
+function var0_0.Update(arg0_4)
 	return
 end
 
-function var0.Dispose(arg0)
-	arg0.Finish = true
+function var0_0.Dispose(arg0_5)
+	arg0_5.Finish = true
 
-	arg0:Clear()
+	arg0_5:Clear()
 end
 
-function var0.Clear(arg0)
+function var0_0.Clear(arg0_6)
 	return
 end

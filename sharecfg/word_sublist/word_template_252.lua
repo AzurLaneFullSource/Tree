@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_252 = {}
+var0_0.word_template_252 = {}
 
-local var1 = var0.word_template_252
+local var1_0 = var0_0.word_template_252
 
 function temp()
-	var1.搔 = {
+	var1_0.搔 = {
 		b = {
 			this = true
 		},
@@ -23,7 +23,7 @@ end
 temp()
 
 function temp()
-	var1.骚 = {
+	var1_0.骚 = {
 		this = {
 			this = true
 		},
@@ -163,7 +163,7 @@ end
 temp()
 
 function temp()
-	var1.騷 = {
+	var1_0.騷 = {
 		B = {
 			this = true,
 			熟 = {
@@ -278,7 +278,7 @@ end
 temp()
 
 function temp()
-	var1.扫 = {
+	var1_0.扫 = {
 		黄 = {
 			打 = {
 				非 = {
@@ -301,7 +301,7 @@ end
 temp()
 
 function temp()
-	var1.嫂 = {
+	var1_0.嫂 = {
 		子 = {
 			说 = {
 				你 = {
@@ -321,7 +321,7 @@ end
 temp()
 
 function temp()
-	var1.色 = {
+	var1_0.色 = {
 		["9"] = {
 			["7"] = {
 				爱 = {
@@ -758,7 +758,7 @@ end
 temp()
 
 function temp()
-	var1.森 = {
+	var1_0.森 = {
 		川 = {
 			萌 = {
 				this = true

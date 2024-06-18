@@ -1,65 +1,65 @@
-﻿local var0 = class("SnapshotItem")
+﻿local var0_0 = class("SnapshotItem")
 
-var0.NAME_COLOR = {
+var0_0.NAME_COLOR = {
 	"#FFFFFFFF",
 	"#5A9BFFFF"
 }
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0.go = arg1
-	arg0.selected = arg2
-	arg0.tr = arg1.transform
-	arg0.btn = arg1:GetComponent("Button")
-	arg0.nameTF = findTF(arg0.tr, "Text")
-	arg0.nameTxt = arg0.nameTF:GetComponent("Text")
-	arg0.unselectGo = findTF(arg0.tr, "unselect").gameObject
-	arg0.selectedGo = findTF(arg0.tr, "selected").gameObject
-	arg0.info = nil
-	arg0.id = -1
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.go = arg1_1
+	arg0_1.selected = arg2_1
+	arg0_1.tr = arg1_1.transform
+	arg0_1.btn = arg1_1:GetComponent("Button")
+	arg0_1.nameTF = findTF(arg0_1.tr, "Text")
+	arg0_1.nameTxt = arg0_1.nameTF:GetComponent("Text")
+	arg0_1.unselectGo = findTF(arg0_1.tr, "unselect").gameObject
+	arg0_1.selectedGo = findTF(arg0_1.tr, "selected").gameObject
+	arg0_1.info = nil
+	arg0_1.id = -1
 
-	arg0.selectedGo:SetActive(false)
+	arg0_1.selectedGo:SetActive(false)
 end
 
-function var0.Update(arg0, arg1)
-	arg0.info = arg1
-	arg0.id = arg1.id
+function var0_0.Update(arg0_2, arg1_2)
+	arg0_2.info = arg1_2
+	arg0_2.id = arg1_2.id
 
-	arg0:flush()
+	arg0_2:flush()
 end
 
-function var0.UpdateSelected(arg0, arg1)
-	arg0.selected = arg1
+function var0_0.UpdateSelected(arg0_3, arg1_3)
+	arg0_3.selected = arg1_3
 
-	arg0.unselectGo:SetActive(not arg0.selected)
-	arg0.selectedGo:SetActive(arg0.selected)
+	arg0_3.unselectGo:SetActive(not arg0_3.selected)
+	arg0_3.selectedGo:SetActive(arg0_3.selected)
 
-	if arg0.selected then
-		arg0.nameTxt.text = setColorStr(arg0.info.name, arg0.NAME_COLOR[2])
+	if arg0_3.selected then
+		arg0_3.nameTxt.text = setColorStr(arg0_3.info.name, arg0_3.NAME_COLOR[2])
 	else
-		arg0.nameTxt.text = setColorStr(arg0.info.name, arg0.NAME_COLOR[1])
+		arg0_3.nameTxt.text = setColorStr(arg0_3.info.name, arg0_3.NAME_COLOR[1])
 	end
 end
 
-function var0.HasInfo(arg0)
-	return arg0.info ~= nil
+function var0_0.HasInfo(arg0_4)
+	return arg0_4.info ~= nil
 end
 
-function var0.GetID(arg0)
-	return arg0.id
+function var0_0.GetID(arg0_5)
+	return arg0_5.id
 end
 
-function var0.flush(arg0)
-	arg0.nameTxt.text = arg0.info.name
+function var0_0.flush(arg0_6)
+	arg0_6.nameTxt.text = arg0_6.info.name
 end
 
-function var0.SetEulerAngle(arg0, arg1)
-	local var0 = rtf(arg0.nameTF).eulerAngles
+function var0_0.SetEulerAngle(arg0_7, arg1_7)
+	local var0_7 = rtf(arg0_7.nameTF).eulerAngles
 
-	rtf(arg0.nameTF).eulerAngles = Vector3(0, 0, arg1)
+	rtf(arg0_7.nameTF).eulerAngles = Vector3(0, 0, arg1_7)
 end
 
-function var0.RotateUI(arg0, arg1, arg2)
-	LeanTween.rotateZ(go(arg0.nameTF), arg1, arg2)
+function var0_0.RotateUI(arg0_8, arg1_8, arg2_8)
+	LeanTween.rotateZ(go(arg0_8.nameTF), arg1_8, arg2_8)
 end
 
-return var0
+return var0_0

@@ -1,12 +1,12 @@
-﻿local var0 = class("CourtYardStoreyPreviewModule", import(".CourtYardStoreyModule"))
+﻿local var0_0 = class("CourtYardStoreyPreviewModule", import(".CourtYardStoreyModule"))
 
-function var0.Ctor(arg0, arg1, arg2)
-	var0.super.Ctor(arg0, arg1, arg2)
-	arg0.bgmAgent:Clear()
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var0_0.super.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.bgmAgent:Clear()
 end
 
-function var0.EnableZoom(arg0, arg1)
-	arg0.zoomAgent.enabled = false
+function var0_0.EnableZoom(arg0_2, arg1_2)
+	arg0_2.zoomAgent.enabled = false
 end
 
-return var0
+return var0_0

@@ -1,156 +1,156 @@
-﻿local var0 = class("NewProbabilitySkinShopScene", import(".NewSkinShopScene"))
+﻿local var0_0 = class("NewProbabilitySkinShopScene", import(".NewSkinShopScene"))
 
-function var0.ResUISettings(arg0)
+function var0_0.ResUISettings(arg0_1)
 	return false
 end
 
-function var0.init(arg0)
-	var0.super.init(arg0)
+function var0_0.init(arg0_2)
+	var0_0.super.init(arg0_2)
 
-	arg0.contextData.mode = NewSkinShopScene.MODE_OVERVIEW
-	arg0.commodity = arg0:GetCommodity(arg0.contextData.commodityId)
-	arg0.itemView = NewProbabilitySkinShopView.New(arg0._tf:Find("overlay"), arg0.event)
-	arg0.chargeTipWindow = ChargeTipWindow.New(arg0._tf, arg0.event)
+	arg0_2.contextData.mode = NewSkinShopScene.MODE_OVERVIEW
+	arg0_2.commodity = arg0_2:GetCommodity(arg0_2.contextData.commodityId)
+	arg0_2.itemView = NewProbabilitySkinShopView.New(arg0_2._tf:Find("overlay"), arg0_2.event)
+	arg0_2.chargeTipWindow = ChargeTipWindow.New(arg0_2._tf, arg0_2.event)
 end
 
-function var0.GetCommodity(arg0, arg1)
-	local var0 = Goods.Create({
-		shop_id = arg1
+function var0_0.GetCommodity(arg0_3, arg1_3)
+	local var0_3 = Goods.Create({
+		shop_id = arg1_3
 	}, Goods.TYPE_CHARGE)
-	local var1 = getProxy(ShopsProxy):getChargedList() or {}
-	local var2 = ChargeConst.getBuyCount(var1, var0.id)
+	local var1_3 = getProxy(ShopsProxy):getChargedList() or {}
+	local var2_3 = ChargeConst.getBuyCount(var1_3, var0_3.id)
 
-	var0:updateBuyCount(var2)
+	var0_3:updateBuyCount(var2_3)
 
-	return var0
+	return var0_3
 end
 
-function var0.OnChargeSuccess(arg0, arg1)
-	local var0 = arg0:GetCommodity(arg1)
+function var0_0.OnChargeSuccess(arg0_4, arg1_4)
+	local var0_4 = arg0_4:GetCommodity(arg1_4)
 
-	arg0.commodity = var0
+	arg0_4.commodity = var0_4
 
-	arg0.chargeTipWindow:ExecuteAction("Show", var0)
+	arg0_4.chargeTipWindow:ExecuteAction("Show", var0_4)
 
-	if arg0.itemView and arg0.itemView:GetLoaded() then
-		arg0.itemView:Flush(var0)
+	if arg0_4.itemView and arg0_4.itemView:GetLoaded() then
+		arg0_4.itemView:Flush(var0_4)
 	end
 end
 
-function var0.didEnter(arg0)
-	var0.super.didEnter(arg0)
-	setActive(arg0.atlasBtn, false)
-	setActive(arg0:findTF("overlay/left/mask"), false)
+function var0_0.didEnter(arg0_5)
+	var0_0.super.didEnter(arg0_5)
+	setActive(arg0_5.atlasBtn, false)
+	setActive(arg0_5:findTF("overlay/left/mask"), false)
 
-	local var0 = arg0:findTF("overlay/bottom")
-	local var1 = var0.sizeDelta.x - 160
-	local var2 = rtf(arg0.scrollrect.gameObject)
+	local var0_5 = arg0_5:findTF("overlay/bottom")
+	local var1_5 = var0_5.sizeDelta.x - 160
+	local var2_5 = rtf(arg0_5.scrollrect.gameObject)
 
-	var2.sizeDelta = Vector2(var1, var0.sizeDelta.y)
+	var2_5.sizeDelta = Vector2(var1_5, var0_5.sizeDelta.y)
 
-	setAnchoredPosition(var2, {
+	setAnchoredPosition(var2_5, {
 		x = 0
 	})
-	setAnchoredPosition(arg0.prevBtn, {
+	setAnchoredPosition(arg0_5.prevBtn, {
 		x = 32
 	})
-	setActive(arg0:findTF("overlay/right/price"), false)
-	setActive(arg0.live2dFilter, false)
-	setActive(arg0.changeBtn, false)
+	setActive(arg0_5:findTF("overlay/right/price"), false)
+	setActive(arg0_5.live2dFilter, false)
+	setActive(arg0_5.changeBtn, false)
 end
 
-function var0.UpdateCouponBtn(arg0)
-	arg0.couponTr.localScale = Vector3(0, 0, 0)
+function var0_0.UpdateCouponBtn(arg0_6)
+	arg0_6.couponTr.localScale = Vector3(0, 0, 0)
 end
 
-function var0.UpdateVoucherBtn(arg0)
-	arg0.voucherTr.localScale = Vector3(0, 0, 0)
+function var0_0.UpdateVoucherBtn(arg0_7)
+	arg0_7.voucherTr.localScale = Vector3(0, 0, 0)
 end
 
-function var0.UpdateTitle(arg0, arg1)
-	arg0.title.sprite = GetSpriteFromAtlas("ui/SkinShopUI_atlas", "probabilityshop")
+function var0_0.UpdateTitle(arg0_8, arg1_8)
+	arg0_8.title.sprite = GetSpriteFromAtlas("ui/SkinShopUI_atlas", "probabilityshop")
 
-	arg0.title:SetNativeSize()
-	setAnchoredPosition(arg0.title.gameObject, {
+	arg0_8.title:SetNativeSize()
+	setAnchoredPosition(arg0_8.title.gameObject, {
 		x = 363
 	})
-	setActive(arg0.titleEn.gameObject, false)
+	setActive(arg0_8.titleEn.gameObject, false)
 end
 
-function var0.GetAllCommodity(arg0)
-	local var0 = arg0.commodity:GetSkinProbability()
+function var0_0.GetAllCommodity(arg0_9)
+	local var0_9 = arg0_9.commodity:GetSkinProbability()
 
-	return getProxy(ShipSkinProxy):GetProbabilitySkins(var0)
+	return getProxy(ShipSkinProxy):GetProbabilitySkins(var0_9)
 end
 
-function var0.GetSkinProbability(arg0)
-	local var0 = arg0.commodity:GetSkinProbability()
+function var0_0.GetSkinProbability(arg0_10)
+	local var0_10 = arg0_10.commodity:GetSkinProbability()
 
-	return getProxy(ShipSkinProxy):GetSkinProbabilitys(var0)
+	return getProxy(ShipSkinProxy):GetSkinProbabilitys(var0_10)
 end
 
-function var0.GetSkinClassify(arg0, arg1, arg2)
+function var0_0.GetSkinClassify(arg0_11, arg1_11, arg2_11)
 	return {
 		NewSkinShopScene.PAGE_ALL
 	}
 end
 
-function var0.IsType(arg0, arg1, arg2)
+function var0_0.IsType(arg0_12, arg1_12, arg2_12)
 	return true
 end
 
-function var0.UpdateCommodities(arg0, arg1, arg2, arg3)
-	arg0.skinProbabilityList = arg0:GetSkinProbability()
+function var0_0.UpdateCommodities(arg0_13, arg1_13, arg2_13, arg3_13)
+	arg0_13.skinProbabilityList = arg0_13:GetSkinProbability()
 
 	seriesAsync({
-		function(arg0)
-			var0.super.UpdateCommodities(arg0, arg1, arg2, arg0)
+		function(arg0_14)
+			var0_0.super.UpdateCommodities(arg0_13, arg1_13, arg2_13, arg0_14)
 		end,
-		function(arg0)
-			arg0:FlushItemView(arg0)
+		function(arg0_15)
+			arg0_13:FlushItemView(arg0_15)
 		end
-	}, arg3)
+	}, arg3_13)
 end
 
-function var0.FlushItemView(arg0, arg1)
-	arg0.itemView:ExecuteAction("Show", arg0.commodity)
-	arg1()
+function var0_0.FlushItemView(arg0_16, arg1_16)
+	arg0_16.itemView:ExecuteAction("Show", arg0_16.commodity)
+	arg1_16()
 end
 
-function var0.OnUpdateItem(arg0, arg1, arg2)
-	var0.super.OnUpdateItem(arg0, arg1, arg2)
+function var0_0.OnUpdateItem(arg0_17, arg1_17, arg2_17)
+	var0_0.super.OnUpdateItem(arg0_17, arg1_17, arg2_17)
 
-	local var0 = arg0.cards[arg2]
-	local var1 = var0.commodity.buyCount == 0
+	local var0_17 = arg0_17.cards[arg2_17]
+	local var1_17 = var0_17.commodity.buyCount == 0
 
-	setActive(var0.tagImg, not var1)
-	setActive(var0.tagEnImg, false)
-	setActive(var0.discountTag, false)
-	setActive(var0.timelimitTag, false)
+	setActive(var0_17.tagImg, not var1_17)
+	setActive(var0_17.tagEnImg, false)
+	setActive(var0_17.discountTag, false)
+	setActive(var0_17.timelimitTag, false)
 
-	if not var1 then
-		var0.tagImg.sprite = GetSpriteFromAtlas("ui/SkinShopUI_atlas", "tag_yigoumai")
+	if not var1_17 then
+		var0_17.tagImg.sprite = GetSpriteFromAtlas("ui/SkinShopUI_atlas", "tag_yigoumai")
 	end
 
-	local var2 = arg0.skinProbabilityList[var0.commodity:getSkinId()] or 0
+	local var2_17 = arg0_17.skinProbabilityList[var0_17.commodity:getSkinId()] or 0
 
-	var0.txt.text = " " .. string.format("%0.1f", var2 / 100) .. "%"
+	var0_17.txt.text = " " .. string.format("%0.1f", var2_17 / 100) .. "%"
 end
 
-function var0.willExit(arg0)
-	if arg0.itemView then
-		arg0.itemView:Destroy()
+function var0_0.willExit(arg0_18)
+	if arg0_18.itemView then
+		arg0_18.itemView:Destroy()
 
-		arg0.itemView = nil
+		arg0_18.itemView = nil
 	end
 
-	if arg0.chargeTipWindow then
-		arg0.chargeTipWindow:Destroy()
+	if arg0_18.chargeTipWindow then
+		arg0_18.chargeTipWindow:Destroy()
 
-		arg0.chargeTipWindow = nil
+		arg0_18.chargeTipWindow = nil
 	end
 
 	Input.multiTouchEnabled = true
 end
 
-return var0
+return var0_0

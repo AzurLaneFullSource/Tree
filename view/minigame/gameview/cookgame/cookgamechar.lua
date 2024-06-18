@@ -1,927 +1,927 @@
-﻿local var0 = class("CookGameChar")
-local var1 = 20
-local var2 = 3
+﻿local var0_0 = class("CookGameChar")
+local var1_0 = 20
+local var2_0 = 3
 
-function var0.Ctor(arg0, arg1, arg2, arg3)
-	arg0._tf = arg1
-	arg0._gameData = arg2
-	arg0._event = arg3
-	arg0._animTf = findTF(arg0._tf, "mask/anim")
-	arg0._animator = GetComponent(findTF(arg0._tf, "mask/anim"), typeof(Animator))
-	arg0._animImage = GetComponent(findTF(arg0._tf, "mask/anim"), typeof(Image))
-	arg0._dftEvent = GetComponent(findTF(arg0._tf, "mask/anim"), typeof(DftAniEvent))
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	arg0_1._tf = arg1_1
+	arg0_1._gameData = arg2_1
+	arg0_1._event = arg3_1
+	arg0_1._animTf = findTF(arg0_1._tf, "mask/anim")
+	arg0_1._animator = GetComponent(findTF(arg0_1._tf, "mask/anim"), typeof(Animator))
+	arg0_1._animImage = GetComponent(findTF(arg0_1._tf, "mask/anim"), typeof(Image))
+	arg0_1._dftEvent = GetComponent(findTF(arg0_1._tf, "mask/anim"), typeof(DftAniEvent))
 
-	arg0._dftEvent:SetStartEvent(function(arg0)
-		if arg0._serveFunc then
-			arg0._serveFunc()
+	arg0_1._dftEvent:SetStartEvent(function(arg0_2)
+		if arg0_1._serveFunc then
+			arg0_1._serveFunc()
 
-			arg0._serveFunc = nil
+			arg0_1._serveFunc = nil
 
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(CookGameConst.sound_serve)
 		end
 	end)
-	arg0._dftEvent:SetEndEvent(function(arg0)
-		arg0:endEventHandle()
+	arg0_1._dftEvent:SetEndEvent(function(arg0_3)
+		arg0_1:endEventHandle()
 	end)
 end
 
-function var0.endEventHandle(arg0)
-	if arg0.activing then
-		arg0.activing = false
-		arg0.activingTime = nil
+function var0_0.endEventHandle(arg0_4)
+	if arg0_4.activing then
+		arg0_4.activing = false
+		arg0_4.activingTime = nil
 	end
 
-	if arg0.timeToEventHandle and arg0.timeToEventHandle > 0 then
-		arg0.timeToEventHandle = nil
+	if arg0_4.timeToEventHandle and arg0_4.timeToEventHandle > 0 then
+		arg0_4.timeToEventHandle = nil
 	end
 
-	if arg0._serveSpeed then
-		if arg0.directX == -1 then
-			setActive(findTF(arg0._tf, "effectW"), false)
-			setActive(findTF(arg0._tf, "effectW"), true)
+	if arg0_4._serveSpeed then
+		if arg0_4.directX == -1 then
+			setActive(findTF(arg0_4._tf, "effectW"), false)
+			setActive(findTF(arg0_4._tf, "effectW"), true)
 		else
-			setActive(findTF(arg0._tf, "effectE"), false)
-			setActive(findTF(arg0._tf, "effectE"), true)
+			setActive(findTF(arg0_4._tf, "effectE"), false)
+			setActive(findTF(arg0_4._tf, "effectE"), true)
 		end
 
-		arg0._serveSpeed = false
+		arg0_4._serveSpeed = false
 	end
 
-	if arg0._serveFresh then
-		arg0._serveFresh = false
-		arg0.cakeNum = arg0.cakeNum - 1
+	if arg0_4._serveFresh then
+		arg0_4._serveFresh = false
+		arg0_4.cakeNum = arg0_4.cakeNum - 1
 
-		if arg0.cakeNum < 0 then
-			arg0.cakeNum = 0
+		if arg0_4.cakeNum < 0 then
+			arg0_4.cakeNum = 0
 		end
 
-		arg0:clearJudge()
-		arg0:updateCharAniamtor()
-		arg0:updateAnimatorParame()
-	elseif arg0.sendExtend then
-		arg0.sendExtend = false
+		arg0_4:clearJudge()
+		arg0_4:updateCharAniamtor()
+		arg0_4:updateAnimatorParame()
+	elseif arg0_4.sendExtend then
+		arg0_4.sendExtend = false
 
-		arg0._event:emit(CookGameView.EXTEND_EVENT)
+		arg0_4._event:emit(CookGameView.EXTEND_EVENT)
 	end
 
-	arg0:setTrigger("clear", true)
+	arg0_4:setTrigger("clear", true)
 
-	arg0.clearing = true
+	arg0_4.clearing = true
 end
 
-function var0.changeSpeed(arg0, arg1)
-	arg0._animator.speed = arg1
+function var0_0.changeSpeed(arg0_5, arg1_5)
+	arg0_5._animator.speed = arg1_5
 end
 
-function var0.setData(arg0, arg1)
-	if not arg1 then
-		arg0:setCharActive(false)
+function var0_0.setData(arg0_6, arg1_6)
+	if not arg1_6 then
+		arg0_6:setCharActive(false)
 
 		return
 	end
 
-	arg0:setCharActive(true)
+	arg0_6:setCharActive(true)
 
-	arg0._charData = arg1
-	arg0._doubleAble = arg1.battleData.double_able
-	arg0._speedAble = arg1.battleData.speed_able
-	arg0._speedMax = arg1.battleData.speed_max
-	arg0._acAble = arg1.battleData.ac_able
-	arg0._skills = arg1.battleData.skills
-	arg0._baseSpeed = arg1.battleData.base_speed
-	arg0._scoreAdded = arg1.battleData.score_added
-	arg0._name = arg1.battleData.name
-	arg0._animDatas = arg1.animDatas
-	arg0._randomScore = arg1.battleData.random_score
-	arg0._doubleIndex = 1
-	arg0._offset = arg1.battleData.offset or Vector2(0, 0)
-	arg0.extendFlag = false
+	arg0_6._charData = arg1_6
+	arg0_6._doubleAble = arg1_6.battleData.double_able
+	arg0_6._speedAble = arg1_6.battleData.speed_able
+	arg0_6._speedMax = arg1_6.battleData.speed_max
+	arg0_6._acAble = arg1_6.battleData.ac_able
+	arg0_6._skills = arg1_6.battleData.skills
+	arg0_6._baseSpeed = arg1_6.battleData.base_speed
+	arg0_6._scoreAdded = arg1_6.battleData.score_added
+	arg0_6._name = arg1_6.battleData.name
+	arg0_6._animDatas = arg1_6.animDatas
+	arg0_6._randomScore = arg1_6.battleData.random_score
+	arg0_6._doubleIndex = 1
+	arg0_6._offset = arg1_6.battleData.offset or Vector2(0, 0)
+	arg0_6.extendFlag = false
 
-	if arg0._charData.battleData.extend and (arg0._isPlayer or arg0._isPartner) then
-		arg0.extendFlag = true
+	if arg0_6._charData.battleData.extend and (arg0_6._isPlayer or arg0_6._isPartner) then
+		arg0_6.extendFlag = true
 	end
 end
 
-function var0.readyStart(arg0)
-	arg0:clear()
+function var0_0.readyStart(arg0_7)
+	arg0_7:clear()
 
-	if arg0._isActive then
-		arg0:updateCharAniamtor()
+	if arg0_7._isActive then
+		arg0_7:updateCharAniamtor()
 	end
 end
 
-function var0.start(arg0)
+function var0_0.start(arg0_8)
 	return
 end
 
-function var0.step(arg0, arg1)
-	arg0.deltaTime = arg1
+function var0_0.step(arg0_9, arg1_9)
+	arg0_9.deltaTime = arg1_9
 
-	if arg0._velocity then
-		arg0:move()
+	if arg0_9._velocity then
+		arg0_9:move()
 	end
 
-	if arg0.timeToEventHandle then
-		arg0.timeToEventHandle = arg0.timeToEventHandle - arg1
+	if arg0_9.timeToEventHandle then
+		arg0_9.timeToEventHandle = arg0_9.timeToEventHandle - arg1_9
 
-		if arg0.timeToEventHandle <= 0 then
-			arg0.timeToEventHandle = nil
+		if arg0_9.timeToEventHandle <= 0 then
+			arg0_9.timeToEventHandle = nil
 
-			arg0:endEventHandle()
+			arg0_9:endEventHandle()
 		end
 	end
 
-	if arg0.activingTime and arg0.activingTime > 0 then
-		arg0.activingTime = arg0.activingTime - arg0.deltaTime
+	if arg0_9.activingTime and arg0_9.activingTime > 0 then
+		arg0_9.activingTime = arg0_9.activingTime - arg0_9.deltaTime
 
-		if arg0.activingTime <= 0 then
-			arg0.activingTime = 0
+		if arg0_9.activingTime <= 0 then
+			arg0_9.activingTime = 0
 
-			if arg0.activing then
-				arg0.activing = false
+			if arg0_9.activing then
+				arg0_9.activing = false
 
-				if arg0._serveFresh then
-					arg0._serveFresh = false
-					arg0.cakeNum = arg0.cakeNum - 1
+				if arg0_9._serveFresh then
+					arg0_9._serveFresh = false
+					arg0_9.cakeNum = arg0_9.cakeNum - 1
 
-					if arg0.cakeNum < 0 then
-						arg0.cakeNum = 0
+					if arg0_9.cakeNum < 0 then
+						arg0_9.cakeNum = 0
 					end
 
-					arg0:clearJudge()
-					arg0:updateCharAniamtor()
-					arg0:updateAnimatorParame()
+					arg0_9:clearJudge()
+					arg0_9:updateCharAniamtor()
+					arg0_9:updateAnimatorParame()
 				end
 
-				arg0:setTrigger("clear", true)
+				arg0_9:setTrigger("clear", true)
 			end
 		end
 	end
 
-	if arg0._gameData.gameTime < arg0._gameData.time_up and arg0.extendFlag then
-		arg0:extend()
+	if arg0_9._gameData.gameTime < arg0_9._gameData.time_up and arg0_9.extendFlag then
+		arg0_9:extend()
 	end
 
-	arg0.clearing = false
+	arg0_9.clearing = false
 end
 
-function var0.updateCharAniamtor(arg0)
-	local var0 = arg0:getAnimatorName(arg0._name, arg0.leftCakeId, arg0.rightCakeId, arg0.speedNum, arg0._doubleAble, arg0._speedAble)
+function var0_0.updateCharAniamtor(arg0_10)
+	local var0_10 = arg0_10:getAnimatorName(arg0_10._name, arg0_10.leftCakeId, arg0_10.rightCakeId, arg0_10.speedNum, arg0_10._doubleAble, arg0_10._speedAble)
 
-	if arg0._activeAniamtorName ~= var0 then
-		arg0.chacheSprite = arg0._animImage.sprite
+	if arg0_10._activeAniamtorName ~= var0_10 then
+		arg0_10.chacheSprite = arg0_10._animImage.sprite
 
-		local var1
+		local var1_10
 
-		for iter0 = 1, #arg0._animDatas do
-			local var2 = arg0._animDatas[iter0]
+		for iter0_10 = 1, #arg0_10._animDatas do
+			local var2_10 = arg0_10._animDatas[iter0_10]
 
-			if var2.name == var0 then
-				var1 = var2.runtimeAnimator
+			if var2_10.name == var0_10 then
+				var1_10 = var2_10.runtimeAnimator
 			end
 		end
 
-		if var1 then
-			arg0._activeAniamtorName = var0
-			arg0._animator.runtimeAnimatorController = var1
+		if var1_10 then
+			arg0_10._activeAniamtorName = var0_10
+			arg0_10._animator.runtimeAnimatorController = var1_10
 
-			setActive(arg0._animTf, false)
+			setActive(arg0_10._animTf, false)
 
-			if arg0.chacheSprite then
-				arg0._animImage.sprite = arg0.chacheSprite
+			if arg0_10.chacheSprite then
+				arg0_10._animImage.sprite = arg0_10.chacheSprite
 			end
 
-			setActive(arg0._animTf, true)
+			setActive(arg0_10._animTf, true)
 		else
-			print("警告 找不到aniamtor ：" .. var0)
+			print("警告 找不到aniamtor ：" .. var0_10)
 		end
 	end
 end
 
-function var0.getAnimatorName(arg0, arg1, arg2, arg3, arg4, arg5, arg6)
-	local var0
+function var0_0.getAnimatorName(arg0_11, arg1_11, arg2_11, arg3_11, arg4_11, arg5_11, arg6_11)
+	local var0_11
 
-	if arg5 then
-		var0 = arg1 .. "_L" .. arg2 .. "_R" .. arg3
-	elseif arg6 then
-		var0 = arg1 .. "_" .. "L" .. arg2 .. "_" .. arg4
+	if arg5_11 then
+		var0_11 = arg1_11 .. "_L" .. arg2_11 .. "_R" .. arg3_11
+	elseif arg6_11 then
+		var0_11 = arg1_11 .. "_" .. "L" .. arg2_11 .. "_" .. arg4_11
 	else
-		var0 = arg1 .. "_" .. "L" .. arg2
+		var0_11 = arg1_11 .. "_" .. "L" .. arg2_11
 	end
 
-	return var0
+	return var0_11
 end
 
-function var0.setCake(arg0, arg1)
-	arg0._cakeData = arg1
+function var0_0.setCake(arg0_12, arg1_12)
+	arg0_12._cakeData = arg1_12
 
-	arg0:clearJudge()
-	arg0:clearTargetPos()
+	arg0_12:clearJudge()
+	arg0_12:clearTargetPos()
 end
 
-function var0.getCake(arg0)
-	return arg0._cakeData
+function var0_0.getCake(arg0_13)
+	return arg0_13._cakeData
 end
 
-function var0.clearCake(arg0)
-	if arg0._cakeData then
-		setActive(findTF(arg0._cakeData.tf, "select"), false)
+function var0_0.clearCake(arg0_14)
+	if arg0_14._cakeData then
+		setActive(findTF(arg0_14._cakeData.tf, "select"), false)
 
-		arg0._cakeData = nil
-	end
-end
-
-function var0.setJudge(arg0, arg1)
-	arg0._judgeData = arg1
-
-	arg0:clearCake()
-	arg0:clearTargetPos()
-end
-
-function var0.clearJudge(arg0)
-	if arg0._judgeData then
-		setActive(findTF(arg0._judgeData.tf, "select"), false)
-
-		arg0._judgeData = nil
+		arg0_14._cakeData = nil
 	end
 end
 
-function var0.getJudgeData(arg0)
-	return arg0._judgeData
+function var0_0.setJudge(arg0_15, arg1_15)
+	arg0_15._judgeData = arg1_15
+
+	arg0_15:clearCake()
+	arg0_15:clearTargetPos()
 end
 
-function var0.setTargetPos(arg0, arg1)
-	arg0._targetPos = arg1
+function var0_0.clearJudge(arg0_16)
+	if arg0_16._judgeData then
+		setActive(findTF(arg0_16._judgeData.tf, "select"), false)
 
-	arg0:clearVelocity()
+		arg0_16._judgeData = nil
+	end
 end
 
-function var0.stopMove(arg0)
-	arg0:clearTargetPos()
-	arg0:clearVelocity()
-	arg0:updateAnimatorParame()
+function var0_0.getJudgeData(arg0_17)
+	return arg0_17._judgeData
+end
 
-	if not arg0.activing then
-		if arg0._cakeData then
-			arg0:pickupCake()
-		elseif arg0._judgeData then
-			arg0:readyServeCake()
+function var0_0.setTargetPos(arg0_18, arg1_18)
+	arg0_18._targetPos = arg1_18
+
+	arg0_18:clearVelocity()
+end
+
+function var0_0.stopMove(arg0_19)
+	arg0_19:clearTargetPos()
+	arg0_19:clearVelocity()
+	arg0_19:updateAnimatorParame()
+
+	if not arg0_19.activing then
+		if arg0_19._cakeData then
+			arg0_19:pickupCake()
+		elseif arg0_19._judgeData then
+			arg0_19:readyServeCake()
 		end
 	else
-		arg0:clearCake()
-		arg0:clearJudge()
+		arg0_19:clearCake()
+		arg0_19:clearJudge()
 	end
 end
 
-function var0.getJudge(arg0)
-	if arg0._judgeData then
-		return arg0._judgeData.judge
+function var0_0.getJudge(arg0_20)
+	if arg0_20._judgeData then
+		return arg0_20._judgeData.judge
 	end
 
 	return nil
 end
 
-function var0.pickupCake(arg0)
-	if arg0._cakeData then
-		local var0 = arg0._cakeData.id
-		local var1 = arg0._cakeData.tf
+function var0_0.pickupCake(arg0_21)
+	if arg0_21._cakeData then
+		local var0_21 = arg0_21._cakeData.id
+		local var1_21 = arg0_21._cakeData.tf
 
-		if arg0._tf.parent:InverseTransformPoint(var1.position).x < arg0._tf.anchoredPosition.x then
-			arg0.directX = -1
-			arg0.directY = -1
+		if arg0_21._tf.parent:InverseTransformPoint(var1_21.position).x < arg0_21._tf.anchoredPosition.x then
+			arg0_21.directX = -1
+			arg0_21.directY = -1
 		else
-			arg0.directX = 1
-			arg0.directY = -1
+			arg0_21.directX = 1
+			arg0_21.directY = -1
 		end
 
-		if arg0._doubleAble then
-			if arg0.cakeNum == 0 then
-				arg0.leftCakeId = var0
-				arg0.rightCakeId = 0
-				arg0.cakeNum = 1
-				arg0.useL = true
-				arg0.useR = false
-			elseif arg0.cakeNum == 1 then
-				arg0.cakeNum = 2
-				arg0.rightCakeId = var0
-				arg0.useL = false
-				arg0.useR = true
-			elseif arg0.cakeNum == 2 then
-				if arg0._doubleIndex % 2 == 0 then
-					arg0.leftCakeId = var0
-					arg0.useL = true
-					arg0.useR = false
+		if arg0_21._doubleAble then
+			if arg0_21.cakeNum == 0 then
+				arg0_21.leftCakeId = var0_21
+				arg0_21.rightCakeId = 0
+				arg0_21.cakeNum = 1
+				arg0_21.useL = true
+				arg0_21.useR = false
+			elseif arg0_21.cakeNum == 1 then
+				arg0_21.cakeNum = 2
+				arg0_21.rightCakeId = var0_21
+				arg0_21.useL = false
+				arg0_21.useR = true
+			elseif arg0_21.cakeNum == 2 then
+				if arg0_21._doubleIndex % 2 == 0 then
+					arg0_21.leftCakeId = var0_21
+					arg0_21.useL = true
+					arg0_21.useR = false
 				else
-					arg0.rightCakeId = var0
-					arg0.useL = false
-					arg0.useR = true
+					arg0_21.rightCakeId = var0_21
+					arg0_21.useL = false
+					arg0_21.useR = true
 				end
 
-				arg0._doubleIndex = arg0._doubleIndex + 1
+				arg0_21._doubleIndex = arg0_21._doubleIndex + 1
 			end
 		else
-			arg0.leftCakeId = var0
-			arg0.cakeNum = 1
+			arg0_21.leftCakeId = var0_21
+			arg0_21.cakeNum = 1
 		end
 
-		if arg0._pickupFull and arg0:isFullCakes() then
-			arg0:setPickupFull(false)
+		if arg0_21._pickupFull and arg0_21:isFullCakes() then
+			arg0_21:setPickupFull(false)
 		end
 
-		arg0:updateCharAniamtor()
-		arg0:updateAnimatorParame()
-		arg0:clearCake()
-		arg0:pickup()
+		arg0_21:updateCharAniamtor()
+		arg0_21:updateAnimatorParame()
+		arg0_21:clearCake()
+		arg0_21:pickup()
 	end
 end
 
-function var0.readyServeCake(arg0)
-	local var0 = arg0._judgeData.judge
+function var0_0.readyServeCake(arg0_22)
+	local var0_22 = arg0_22._judgeData.judge
 
-	if var0:isInServe() or var0:isInTrigger() or arg0.cakeNum == 0 then
-		arg0:clearJudge()
+	if var0_22:isInServe() or var0_22:isInTrigger() or arg0_22.cakeNum == 0 then
+		arg0_22:clearJudge()
 
 		return
 	end
 
-	local var1 = arg0._judgeData.tf
+	local var1_22 = arg0_22._judgeData.tf
 
-	if arg0._tf.parent:InverseTransformPoint(var1.position).x < arg0._tf.anchoredPosition.x then
-		arg0.directX = -1
-		arg0.directY = -1
+	if arg0_22._tf.parent:InverseTransformPoint(var1_22.position).x < arg0_22._tf.anchoredPosition.x then
+		arg0_22.directX = -1
+		arg0_22.directY = -1
 	else
-		arg0.directX = 1
-		arg0.directY = -1
+		arg0_22.directX = 1
+		arg0_22.directY = -1
 	end
 
-	local var2 = var0:getWantedCake()
-	local var3 = arg0.leftCakeId
+	local var2_22 = var0_22:getWantedCake()
+	local var3_22 = arg0_22.leftCakeId
 
-	arg0.serveRight = false
+	arg0_22.serveRight = false
 
-	if arg0._doubleAble then
-		if arg0.leftCakeId == var2 then
-			arg0.useL = true
-			arg0.useR = false
-			var3 = arg0.leftCakeId
-			arg0.leftCakeId = arg0.rightCakeId
-			arg0.rightCakeId = 0
-			arg0.serveRight = true
-		elseif arg0.rightCakeId == var2 then
-			arg0.useL = false
-			arg0.useR = true
-			var3 = arg0.rightCakeId
-			arg0.rightCakeId = 0
-			arg0.serveRight = true
+	if arg0_22._doubleAble then
+		if arg0_22.leftCakeId == var2_22 then
+			arg0_22.useL = true
+			arg0_22.useR = false
+			var3_22 = arg0_22.leftCakeId
+			arg0_22.leftCakeId = arg0_22.rightCakeId
+			arg0_22.rightCakeId = 0
+			arg0_22.serveRight = true
+		elseif arg0_22.rightCakeId == var2_22 then
+			arg0_22.useL = false
+			arg0_22.useR = true
+			var3_22 = arg0_22.rightCakeId
+			arg0_22.rightCakeId = 0
+			arg0_22.serveRight = true
 		else
-			arg0.useL = true
-			arg0.useR = false
-			var3 = arg0.leftCakeId
-			arg0.leftCakeId = arg0.rightCakeId
-			arg0.rightCakeId = 0
+			arg0_22.useL = true
+			arg0_22.useR = false
+			var3_22 = arg0_22.leftCakeId
+			arg0_22.leftCakeId = arg0_22.rightCakeId
+			arg0_22.rightCakeId = 0
 		end
 
-		if var3 == var2 then
-			arg0.rightCakeIndex = arg0.rightCakeIndex + 1
+		if var3_22 == var2_22 then
+			arg0_22.rightCakeIndex = arg0_22.rightCakeIndex + 1
 		end
-	elseif arg0._speedAble then
-		if var2 == arg0.leftCakeId then
-			if arg0.speedNum < arg0._speedMax then
-				arg0.speedNum = arg0.speedNum + 1
+	elseif arg0_22._speedAble then
+		if var2_22 == arg0_22.leftCakeId then
+			if arg0_22.speedNum < arg0_22._speedMax then
+				arg0_22.speedNum = arg0_22.speedNum + 1
 			end
 
-			arg0.serveRight = true
-			arg0.serveWrong = false
+			arg0_22.serveRight = true
+			arg0_22.serveWrong = false
 		else
-			arg0.serveRight = false
-			arg0.serveWrong = true
-			arg0.speedNum = 0
+			arg0_22.serveRight = false
+			arg0_22.serveWrong = true
+			arg0_22.speedNum = 0
 		end
 
-		arg0.directX = -1 * arg0.directX
-		arg0.leftCakeId = 0
-	elseif arg0._scoreAdded or arg0._randomScore then
-		if var2 == arg0.leftCakeId then
-			arg0.serveRight = true
-			arg0.serveWrong = false
+		arg0_22.directX = -1 * arg0_22.directX
+		arg0_22.leftCakeId = 0
+	elseif arg0_22._scoreAdded or arg0_22._randomScore then
+		if var2_22 == arg0_22.leftCakeId then
+			arg0_22.serveRight = true
+			arg0_22.serveWrong = false
 		else
-			arg0.serveRight = false
-			arg0.serveWrong = true
+			arg0_22.serveRight = false
+			arg0_22.serveWrong = true
 		end
 
-		arg0.leftCakeId = 0
+		arg0_22.leftCakeId = 0
 	else
-		if var2 == arg0.leftCakeId then
-			arg0.serveRight = true
+		if var2_22 == arg0_22.leftCakeId then
+			arg0_22.serveRight = true
 		end
 
-		arg0.leftCakeId = 0
+		arg0_22.leftCakeId = 0
 	end
 
-	if not arg0.serveRight and arg0._charData.battleData.cake_allow then
-		arg0.serveRight = true
+	if not arg0_22.serveRight and arg0_22._charData.battleData.cake_allow then
+		arg0_22.serveRight = true
 	end
 
-	if not arg0._charData.battleData.weight then
-		local var4 = 0
+	if not arg0_22._charData.battleData.weight then
+		local var4_22 = 0
 	end
 
-	local var5 = var0:getPuzzleCamp()
+	local var5_22 = var0_22:getPuzzleCamp()
 
-	arg0.puzzleDouble = false
-	arg0.puzzleReject = false
+	arg0_22.puzzleDouble = false
+	arg0_22.puzzleReject = false
 
-	if var5 then
-		if arg0._camp == var5 then
-			arg0.serveRight = true
-			arg0.puzzleDouble = true
-			arg0.serveWrong = false
+	if var5_22 then
+		if arg0_22._camp == var5_22 then
+			arg0_22.serveRight = true
+			arg0_22.puzzleDouble = true
+			arg0_22.serveWrong = false
 		else
-			arg0.serveRight = false
-			arg0.serveWrong = true
-			arg0.puzzleReject = true
+			arg0_22.serveRight = false
+			arg0_22.serveWrong = true
+			arg0_22.puzzleReject = true
 		end
 	end
 
-	if arg0._speedAble and arg0.serveRight then
-		arg0._serveSpeed = true
+	if arg0_22._speedAble and arg0_22.serveRight then
+		arg0_22._serveSpeed = true
 
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(CookGameConst.sound_speed_up)
 	end
 
-	if arg0.serveRight then
-		arg0.rightCakeIndex = arg0.rightCakeIndex + 1
-		arg0.seriesRightIndex = arg0.seriesRightIndex + 1
+	if arg0_22.serveRight then
+		arg0_22.rightCakeIndex = arg0_22.rightCakeIndex + 1
+		arg0_22.seriesRightIndex = arg0_22.seriesRightIndex + 1
 
-		if arg0.seriesRightIndex > CookGameConst.added_max then
-			arg0.seriesRightIndex = CookGameConst.added_max
+		if arg0_22.seriesRightIndex > CookGameConst.added_max then
+			arg0_22.seriesRightIndex = CookGameConst.added_max
 		end
 	else
-		arg0.seriesRightIndex = 0
+		arg0_22.seriesRightIndex = 0
 	end
 
-	arg0.triggerPuzzle = false
+	arg0_22.triggerPuzzle = false
 
-	if arg0._charData.battleData.puzzle and arg0.serveRight then
-		arg0.triggerPuzzle = math.random(1, 100) <= CookGameConst.puzzle_rate
+	if arg0_22._charData.battleData.puzzle and arg0_22.serveRight then
+		arg0_22.triggerPuzzle = math.random(1, 100) <= CookGameConst.puzzle_rate
 	end
 
-	arg0:checkEffectInServe()
+	arg0_22:checkEffectInServe()
 
-	arg0.serveCakeId = var3
-	arg0._serveFresh = true
+	arg0_22.serveCakeId = var3_22
+	arg0_22._serveFresh = true
 
-	local var6 = {
-		parameter = arg0:getParameter(),
-		battleData = arg0._charData.battleData,
-		judgeData = arg0._judgeData
+	local var6_22 = {
+		parameter = arg0_22:getParameter(),
+		battleData = arg0_22._charData.battleData,
+		judgeData = arg0_22._judgeData
 	}
 
-	var0:readyServe(var6)
+	var0_22:readyServe(var6_22)
 
-	if arg0._acAble then
-		local var7 = arg0:getAcCakeData(var0)
+	if arg0_22._acAble then
+		local var7_22 = arg0_22:getAcCakeData(var0_22)
 
-		function arg0._serveFunc()
-			arg0._event:emit(CookGameView.AC_CAKE_EVENT, var7)
+		function arg0_22._serveFunc()
+			arg0_22._event:emit(CookGameView.AC_CAKE_EVENT, var7_22)
 		end
 
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(CookGameConst.sound_ac)
 	else
-		function arg0._serveFunc()
-			var0:serve()
+		function arg0_22._serveFunc()
+			var0_22:serve()
 		end
 	end
 
-	arg0:updateAnimatorParame()
-	arg0:startServeCake()
+	arg0_22:updateAnimatorParame()
+	arg0_22:startServeCake()
 end
 
-function var0.getAcCakeData(arg0, arg1)
-	local var0 = arg1:getAcTargetTf()
-	local var1 = arg0._tf.parent:InverseTransformPoint(var0.position)
+function var0_0.getAcCakeData(arg0_25, arg1_25)
+	local var0_25 = arg1_25:getAcTargetTf()
+	local var1_25 = arg0_25._tf.parent:InverseTransformPoint(var0_25.position)
 
-	if arg0.serveRight then
-		var1.y = var1.y
+	if arg0_25.serveRight then
+		var1_25.y = var1_25.y
 	else
-		var1.y = var1.y + 50
+		var1_25.y = var1_25.y + 50
 	end
 
-	local var2
+	local var2_25
 
-	if arg0.directX == 1 then
-		var2 = arg0._tf.parent:InverseTransformPoint(findTF(arg0._tf, "acR").position)
+	if arg0_25.directX == 1 then
+		var2_25 = arg0_25._tf.parent:InverseTransformPoint(findTF(arg0_25._tf, "acR").position)
 	else
-		var2 = arg0._tf.parent:InverseTransformPoint(findTF(arg0._tf, "acL").position)
+		var2_25 = arg0_25._tf.parent:InverseTransformPoint(findTF(arg0_25._tf, "acL").position)
 	end
 
-	local function var3()
-		arg1:serve()
+	local function var3_25()
+		arg1_25:serve()
 	end
 
 	return {
-		cakeId = arg0.serveCakeId,
-		startPos = var2,
-		targetPos = var1,
-		callback = var3
+		cakeId = arg0_25.serveCakeId,
+		startPos = var2_25,
+		targetPos = var1_25,
+		callback = var3_25
 	}
 end
 
-function var0.getParameter(arg0)
-	local var0 = arg0._charData.battleData.weight or 0
+function var0_0.getParameter(arg0_27)
+	local var0_27 = arg0_27._charData.battleData.weight or 0
 
 	return {
-		cakeId = arg0.serveCakeId,
-		right_index = arg0.rightCakeIndex,
-		series_right_index = arg0.seriesRightIndex,
-		camp = arg0._camp,
-		puzzle_double = arg0.puzzleDouble,
-		puzzleReject = arg0.puzzleReject,
-		puzzle = arg0.triggerPuzzle,
-		weight = var0,
-		right_flag = arg0.serveRight
+		cakeId = arg0_27.serveCakeId,
+		right_index = arg0_27.rightCakeIndex,
+		series_right_index = arg0_27.seriesRightIndex,
+		camp = arg0_27._camp,
+		puzzle_double = arg0_27.puzzleDouble,
+		puzzleReject = arg0_27.puzzleReject,
+		puzzle = arg0_27.triggerPuzzle,
+		weight = var0_27,
+		right_flag = arg0_27.serveRight
 	}
 end
 
-function var0.checkEffectInServe(arg0)
-	local var0 = arg0._charData.battleData.effect
-	local var1
-	local var2 = Vector3(1, 1, 1)
+function var0_0.checkEffectInServe(arg0_28)
+	local var0_28 = arg0_28._charData.battleData.effect
+	local var1_28
+	local var2_28 = Vector3(1, 1, 1)
 
-	if arg0._scoreAdded and arg0.serveRight then
-		local var3
+	if arg0_28._scoreAdded and arg0_28.serveRight then
+		local var3_28
 
-		if arg0.seriesRightIndex == 0 then
-			var3 = 1
-		elseif arg0.seriesRightIndex > #var0 then
-			var3 = #var0
+		if arg0_28.seriesRightIndex == 0 then
+			var3_28 = 1
+		elseif arg0_28.seriesRightIndex > #var0_28 then
+			var3_28 = #var0_28
 		else
-			var3 = arg0.seriesRightIndex
+			var3_28 = arg0_28.seriesRightIndex
 		end
 
-		var1 = var0[var3]
-	elseif arg0.triggerPuzzle then
-		var1 = var0[1]
+		var1_28 = var0_28[var3_28]
+	elseif arg0_28.triggerPuzzle then
+		var1_28 = var0_28[1]
 
-		if arg0._isPartner or arg0._isPlayer then
-			var2 = Vector3(1, 1, 1)
+		if arg0_28._isPartner or arg0_28._isPlayer then
+			var2_28 = Vector3(1, 1, 1)
 		else
-			var2 = Vector3(-1, 1, 1)
+			var2_28 = Vector3(-1, 1, 1)
 		end
 	end
 
-	if not arg0._effectContent then
-		arg0._effectContent = findTF(arg0._tf, "effect")
+	if not arg0_28._effectContent then
+		arg0_28._effectContent = findTF(arg0_28._tf, "effect")
 	end
 
-	if var1 then
-		local var4 = findTF(arg0._effectContent, var1)
-		local var5 = findTF(var4, "anim")
-		local var6 = GetComponent(var5, typeof(DftAniEvent))
+	if var1_28 then
+		local var4_28 = findTF(arg0_28._effectContent, var1_28)
+		local var5_28 = findTF(var4_28, "anim")
+		local var6_28 = GetComponent(var5_28, typeof(DftAniEvent))
 
-		var4.localScale = var2
+		var4_28.localScale = var2_28
 
-		var6:SetEndEvent(function(arg0)
-			setActive(var4, false)
+		var6_28:SetEndEvent(function(arg0_29)
+			setActive(var4_28, false)
 		end)
-		setActive(var4, true)
+		setActive(var4_28, true)
 	end
 end
 
-function var0.getId(arg0)
-	return arg0._charData.battleData.id
+function var0_0.getId(arg0_30)
+	return arg0_30._charData.battleData.id
 end
 
-function var0.getDoubleAble(arg0)
-	return arg0._doubleAble
+function var0_0.getDoubleAble(arg0_31)
+	return arg0_31._doubleAble
 end
 
-function var0.setPetFlag(arg0, arg1)
-	arg0._isPet = arg1
+function var0_0.setPetFlag(arg0_32, arg1_32)
+	arg0_32._isPet = arg1_32
 end
 
-function var0.getpetFlag(arg0)
-	return arg0._isPet
+function var0_0.getpetFlag(arg0_33)
+	return arg0_33._isPet
 end
 
-function var0.setCharActive(arg0, arg1)
-	arg0._isActive = arg1
+function var0_0.setCharActive(arg0_34, arg1_34)
+	arg0_34._isActive = arg1_34
 
-	setActive(arg0._tf, arg0._isActive)
+	setActive(arg0_34._tf, arg0_34._isActive)
 end
 
-function var0.getCharActive(arg0)
-	return arg0._isActive
+function var0_0.getCharActive(arg0_35)
+	return arg0_35._isActive
 end
 
-function var0.isFullCakes(arg0)
-	if arg0._doubleAble and arg0.cakeNum == 2 then
+function var0_0.isFullCakes(arg0_36)
+	if arg0_36._doubleAble and arg0_36.cakeNum == 2 then
 		return true
-	elseif not arg0._doubleAble and arg0.cakeNum == 1 then
+	elseif not arg0_36._doubleAble and arg0_36.cakeNum == 1 then
 		return true
 	end
 
 	return false
 end
 
-function var0.getPickupFull(arg0)
-	return arg0._pickupFull
+function var0_0.getPickupFull(arg0_37)
+	return arg0_37._pickupFull
 end
 
-function var0.setPickupFull(arg0, arg1)
-	arg0._pickupFull = arg1
+function var0_0.setPickupFull(arg0_38, arg1_38)
+	arg0_38._pickupFull = arg1_38
 end
 
-function var0.getTargetPos(arg0)
-	return arg0._targetPos
+function var0_0.getTargetPos(arg0_39)
+	return arg0_39._targetPos
 end
 
-function var0.clearTargetPos(arg0)
-	arg0._targetPos = nil
+function var0_0.clearTargetPos(arg0_40)
+	arg0_40._targetPos = nil
 end
 
-function var0.setVelocity(arg0, arg1, arg2, arg3)
-	arg0._velocity = Vector2(arg1 * arg0._baseSpeed * (1 + arg0.speedNum / 3), arg2 * arg0._baseSpeed * (1 + arg0.speedNum / 3))
+function var0_0.setVelocity(arg0_41, arg1_41, arg2_41, arg3_41)
+	arg0_41._velocity = Vector2(arg1_41 * arg0_41._baseSpeed * (1 + arg0_41.speedNum / 3), arg2_41 * arg0_41._baseSpeed * (1 + arg0_41.speedNum / 3))
 
-	if not arg0._isPlayer and not arg0._isPartner then
-		arg0._velocity = Vector2(arg0._velocity.x * 0.9, arg0._velocity.y * 0.9)
+	if not arg0_41._isPlayer and not arg0_41._isPartner then
+		arg0_41._velocity = Vector2(arg0_41._velocity.x * 0.9, arg0_41._velocity.y * 0.9)
 	end
 
-	local var0 = math.rad2Deg * arg3
-	local var1 = arg1 > 0 and 1 or -1
-	local var2 = arg2 > 0 and 1 or -1
+	local var0_41 = math.rad2Deg * arg3_41
+	local var1_41 = arg1_41 > 0 and 1 or -1
+	local var2_41 = arg2_41 > 0 and 1 or -1
 
-	if math.abs(var0) <= var1 then
-		var2 = 0
-	elseif var0 > var1 and 90 - math.abs(var0) <= var1 then
-		var1 = 0
+	if math.abs(var0_41) <= var1_0 then
+		var2_41 = 0
+	elseif var0_41 > var1_0 and 90 - math.abs(var0_41) <= var1_0 then
+		var1_41 = 0
 	end
 
-	arg0.directX = var1
-	arg0.directY = var2
-	arg0.run = true
-	arg0.idle = false
+	arg0_41.directX = var1_41
+	arg0_41.directY = var2_41
+	arg0_41.run = true
+	arg0_41.idle = false
 
-	arg0:updateAnimatorParame()
+	arg0_41:updateAnimatorParame()
 end
 
-function var0.updateAnimatorParame(arg0)
-	arg0:setInteger("x", arg0.directX)
-	arg0:setInteger("y", arg0.directY)
-	arg0:setBool("run", arg0.run)
-	arg0:setBool("idle", arg0.idle)
-	arg0:setInteger("num", arg0.cakeNum)
+function var0_0.updateAnimatorParame(arg0_42)
+	arg0_42:setInteger("x", arg0_42.directX)
+	arg0_42:setInteger("y", arg0_42.directY)
+	arg0_42:setBool("run", arg0_42.run)
+	arg0_42:setBool("idle", arg0_42.idle)
+	arg0_42:setInteger("num", arg0_42.cakeNum)
 
-	if arg0._doubleAble then
-		arg0:setBool("L", arg0.useL)
-		arg0:setBool("R", arg0.useR)
+	if arg0_42._doubleAble then
+		arg0_42:setBool("L", arg0_42.useL)
+		arg0_42:setBool("R", arg0_42.useR)
 	end
 
-	if arg0._speedAble then
-		arg0:setInteger("speed_lv", arg0.speedNum)
-		arg0:setTrigger("serve_right", arg0.serveRight)
-		arg0:setTrigger("serve_wrong", arg0.serveWrong)
+	if arg0_42._speedAble then
+		arg0_42:setInteger("speed_lv", arg0_42.speedNum)
+		arg0_42:setTrigger("serve_right", arg0_42.serveRight)
+		arg0_42:setTrigger("serve_wrong", arg0_42.serveWrong)
 	end
 
-	if arg0._randomScore then
-		arg0:setTrigger("serve_right", arg0.serveRight)
-		arg0:setTrigger("serve_wrong", arg0.serveWrong)
+	if arg0_42._randomScore then
+		arg0_42:setTrigger("serve_right", arg0_42.serveRight)
+		arg0_42:setTrigger("serve_wrong", arg0_42.serveWrong)
 	end
 
-	if arg0._scoreAdded then
-		arg0:setTrigger("serve_right", arg0.serveRight == true)
-		arg0:setTrigger("serve_wrong", arg0.serveWrong == true)
-		arg0:setBool("server_a", arg0.seriesRightIndex <= 2)
-		arg0:setBool("server_b", arg0.seriesRightIndex > 2)
+	if arg0_42._scoreAdded then
+		arg0_42:setTrigger("serve_right", arg0_42.serveRight == true)
+		arg0_42:setTrigger("serve_wrong", arg0_42.serveWrong == true)
+		arg0_42:setBool("server_a", arg0_42.seriesRightIndex <= 2)
+		arg0_42:setBool("server_b", arg0_42.seriesRightIndex > 2)
 	end
 end
 
-function var0.getVelocity(arg0)
-	return arg0._velocity
+function var0_0.getVelocity(arg0_43)
+	return arg0_43._velocity
 end
 
-function var0.clearVelocity(arg0)
-	arg0._velocity = nil
-	arg0.run = false
-	arg0.idle = true
+function var0_0.clearVelocity(arg0_44)
+	arg0_44._velocity = nil
+	arg0_44.run = false
+	arg0_44.idle = true
 end
 
-function var0.move(arg0)
-	if arg0:isActiving() then
+function var0_0.move(arg0_45)
+	if arg0_45:isActiving() then
 		return
 	end
 
-	if arg0._velocity then
-		if arg0._targetPos then
-			local var0 = arg0:getPos()
-			local var1 = arg0._targetPos.x - var0.x >= 0 and 1 or -1
-			local var2 = arg0._targetPos.y - var0.y >= 0 and 1 or -1
-			local var3 = arg0:getPos()
+	if arg0_45._velocity then
+		if arg0_45._targetPos then
+			local var0_45 = arg0_45:getPos()
+			local var1_45 = arg0_45._targetPos.x - var0_45.x >= 0 and 1 or -1
+			local var2_45 = arg0_45._targetPos.y - var0_45.y >= 0 and 1 or -1
+			local var3_45 = arg0_45:getPos()
 
-			var3.x = var3.x + arg0._velocity.x * arg0.deltaTime
-			var3.y = var3.y + arg0._velocity.y * arg0.deltaTime
+			var3_45.x = var3_45.x + arg0_45._velocity.x * arg0_45.deltaTime
+			var3_45.y = var3_45.y + arg0_45._velocity.y * arg0_45.deltaTime
 
-			local var4 = arg0._targetPos.x - var3.x >= 0 and 1 or -1
-			local var5 = arg0._targetPos.y - var3.y >= 0 and 1 or -1
-			local var6 = arg0:getPos()
+			local var4_45 = arg0_45._targetPos.x - var3_45.x >= 0 and 1 or -1
+			local var5_45 = arg0_45._targetPos.y - var3_45.y >= 0 and 1 or -1
+			local var6_45 = arg0_45:getPos()
 
-			if var1 == var4 then
-				var6.x = var6.x + arg0._velocity.x * arg0.deltaTime
+			if var1_45 == var4_45 then
+				var6_45.x = var6_45.x + arg0_45._velocity.x * arg0_45.deltaTime
 			else
-				var6.x = arg0._targetPos.x
+				var6_45.x = arg0_45._targetPos.x
 			end
 
-			if var2 == var5 then
-				var6.y = var6.y + arg0._velocity.y * arg0.deltaTime
+			if var2_45 == var5_45 then
+				var6_45.y = var6_45.y + arg0_45._velocity.y * arg0_45.deltaTime
 			else
-				var6.y = arg0._targetPos.y
+				var6_45.y = arg0_45._targetPos.y
 			end
 
-			if arg0._acAble and arg0._judgeData and math.sqrt(math.pow(arg0._targetPos.x - var6.x, 2) + math.pow(arg0._targetPos.y - var6.y, 2)) <= CookGameConst.ac_dictance then
-				arg0:stopMove()
-				arg0:clearJudge()
+			if arg0_45._acAble and arg0_45._judgeData and math.sqrt(math.pow(arg0_45._targetPos.x - var6_45.x, 2) + math.pow(arg0_45._targetPos.y - var6_45.y, 2)) <= CookGameConst.ac_dictance then
+				arg0_45:stopMove()
+				arg0_45:clearJudge()
 
 				return
 			end
 
-			arg0._tf.anchoredPosition = var6
+			arg0_45._tf.anchoredPosition = var6_45
 
-			if var1 ~= var4 and var1 ~= var4 then
-				arg0:stopMove()
-			elseif math.abs(arg0._targetPos.x - var6.x) < 5 and math.abs(arg0._targetPos.y - var6.y) < 5 then
-				arg0:stopMove()
+			if var1_45 ~= var4_45 and var1_45 ~= var4_45 then
+				arg0_45:stopMove()
+			elseif math.abs(arg0_45._targetPos.x - var6_45.x) < 5 and math.abs(arg0_45._targetPos.y - var6_45.y) < 5 then
+				arg0_45:stopMove()
 			end
 		else
-			local var7 = arg0:getPos()
-			local var8 = arg0._tf.anchoredPosition
+			local var7_45 = arg0_45:getPos()
+			local var8_45 = arg0_45._tf.anchoredPosition
 
-			var8.x = var8.x + arg0._velocity.x * arg0.deltaTime
-			var8.y = var8.y + arg0._velocity.y * arg0.deltaTime
-			arg0._tf.anchoredPosition = var8
+			var8_45.x = var8_45.x + arg0_45._velocity.x * arg0_45.deltaTime
+			var8_45.y = var8_45.y + arg0_45._velocity.y * arg0_45.deltaTime
+			arg0_45._tf.anchoredPosition = var8_45
 		end
 	end
 end
 
-function var0.extend(arg0)
-	if not arg0.activing and not arg0.clearing then
-		arg0.extendFlag = false
-		arg0.activing = true
-		arg0.sendExtend = true
+function var0_0.extend(arg0_46)
+	if not arg0_46.activing and not arg0_46.clearing then
+		arg0_46.extendFlag = false
+		arg0_46.activing = true
+		arg0_46.sendExtend = true
 
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(CookGameConst.sound_marcopolo_skill)
-		arg0:setTrigger("Extend", true)
+		arg0_46:setTrigger("Extend", true)
 
-		arg0.timeToEventHandle = var2
+		arg0_46.timeToEventHandle = var2_0
 	end
 end
 
-function var0.isActiving(arg0)
-	return arg0.activing
+function var0_0.isActiving(arg0_47)
+	return arg0_47.activing
 end
 
-function var0.getPos(arg0)
-	return arg0._tf.anchoredPosition
+function var0_0.getPos(arg0_48)
+	return arg0_48._tf.anchoredPosition
 end
 
-function var0.startServeCake(arg0)
-	if arg0.activing then
+function var0_0.startServeCake(arg0_49)
+	if arg0_49.activing then
 		return
 	end
 
-	arg0.activing = true
-	arg0.activingTime = 3
+	arg0_49.activing = true
+	arg0_49.activingTime = 3
 
-	arg0:setTrigger("server", true)
+	arg0_49:setTrigger("server", true)
 end
 
-function var0.pickup(arg0)
-	if arg0.activing then
+function var0_0.pickup(arg0_50)
+	if arg0_50.activing then
 		return
 	end
 
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(CookGameConst.sound_pickup)
-	arg0:setTrigger("pickup", true)
+	arg0_50:setTrigger("pickup", true)
 
-	arg0.activing = true
+	arg0_50.activing = true
 end
 
-function var0.setParent(arg0, arg1, arg2)
-	local var0 = findTF(arg1, arg2.parent)
+function var0_0.setParent(arg0_51, arg1_51, arg2_51)
+	local var0_51 = findTF(arg1_51, arg2_51.parent)
 
-	arg0._tf.anchoredPosition = arg2.init_pos
-	arg0._tf.name = arg2.tf_name
+	arg0_51._tf.anchoredPosition = arg2_51.init_pos
+	arg0_51._tf.name = arg2_51.tf_name
 
-	setParent(arg0._tf, var0)
-	setActive(arg0._tf, true)
+	setParent(arg0_51._tf, var0_51)
+	setActive(arg0_51._tf, true)
 
-	arg0.initPos = arg2.init_pos
-	arg0._bound = findTF(arg1, "scene_background/" .. arg2.bound)
+	arg0_51.initPos = arg2_51.init_pos
+	arg0_51._bound = findTF(arg1_51, "scene_background/" .. arg2_51.bound)
 end
 
-function var0.getTf(arg0)
-	return arg0._tf
+function var0_0.getTf(arg0_52)
+	return arg0_52._tf
 end
 
-function var0.getOffset(arg0)
-	return arg0._offset
+function var0_0.getOffset(arg0_53)
+	return arg0_53._offset
 end
 
-function var0.getCakeIds(arg0)
-	local var0 = {}
+function var0_0.getCakeIds(arg0_54)
+	local var0_54 = {}
 
-	if arg0.leftCakeId > 0 then
-		table.insert(var0, arg0.leftCakeId)
+	if arg0_54.leftCakeId > 0 then
+		table.insert(var0_54, arg0_54.leftCakeId)
 	end
 
-	if arg0.rightCakeId > 0 then
-		table.insert(var0, arg0.rightCakeId)
+	if arg0_54.rightCakeId > 0 then
+		table.insert(var0_54, arg0_54.rightCakeId)
 	end
 
-	return var0
+	return var0_54
 end
 
-function var0.isPlayer(arg0, arg1)
-	setActive(findTF(arg0._tf, "player"), arg1)
+function var0_0.isPlayer(arg0_55, arg1_55)
+	setActive(findTF(arg0_55._tf, "player"), arg1_55)
 
-	arg0._isPlayer = arg1
+	arg0_55._isPlayer = arg1_55
 
-	if arg0._isPlayer then
-		arg0._camp = CookGameConst.camp_player
+	if arg0_55._isPlayer then
+		arg0_55._camp = CookGameConst.camp_player
 	else
-		arg0._camp = CookGameConst.camp_enemy
+		arg0_55._camp = CookGameConst.camp_enemy
 	end
 end
 
-function var0.isPartner(arg0, arg1)
-	arg0._isPartner = arg1
+function var0_0.isPartner(arg0_56, arg1_56)
+	arg0_56._isPartner = arg1_56
 
-	if arg0._isPartner then
-		arg0._camp = CookGameConst.camp_player
+	if arg0_56._isPartner then
+		arg0_56._camp = CookGameConst.camp_player
 	else
-		arg0._camp = CookGameConst.camp_enemy
+		arg0_56._camp = CookGameConst.camp_enemy
 	end
 end
 
-function var0.getCamp(arg0)
-	return arg0._camp
+function var0_0.getCamp(arg0_57)
+	return arg0_57._camp
 end
 
-function var0.setBool(arg0, arg1, arg2)
-	arg0._animator:SetBool(arg1, arg2)
+function var0_0.setBool(arg0_58, arg1_58, arg2_58)
+	arg0_58._animator:SetBool(arg1_58, arg2_58)
 end
 
-function var0.setTrigger(arg0, arg1, arg2)
-	if arg2 then
-		arg0._animator:SetTrigger(arg1)
+function var0_0.setTrigger(arg0_59, arg1_59, arg2_59)
+	if arg2_59 then
+		arg0_59._animator:SetTrigger(arg1_59)
 	else
-		arg0._animator:ResetTrigger(arg1)
+		arg0_59._animator:ResetTrigger(arg1_59)
 	end
 end
 
-function var0.setInteger(arg0, arg1, arg2)
-	arg0._animator:SetInteger(arg1, arg2)
+function var0_0.setInteger(arg0_60, arg1_60, arg2_60)
+	arg0_60._animator:SetInteger(arg1_60, arg2_60)
 end
 
-function var0.clear(arg0)
-	arg0.leftCakeId = 0
-	arg0.rightCakeId = 0
-	arg0._serveSpeed = false
-	arg0.cakeNum = 0
-	arg0.speedNum = 1
-	arg0._speedRate = 1
-	arg0.directX = 0
-	arg0.directY = -1
-	arg0.activing = false
-	arg0.scoreAdded = false
-	arg0._tf.anchoredPosition = arg0.initPos
-	arg0.useL = true
-	arg0.useR = false
-	arg0.rightCakeIndex = 0
-	arg0.seriesRightIndex = 0
+function var0_0.clear(arg0_61)
+	arg0_61.leftCakeId = 0
+	arg0_61.rightCakeId = 0
+	arg0_61._serveSpeed = false
+	arg0_61.cakeNum = 0
+	arg0_61.speedNum = 1
+	arg0_61._speedRate = 1
+	arg0_61.directX = 0
+	arg0_61.directY = -1
+	arg0_61.activing = false
+	arg0_61.scoreAdded = false
+	arg0_61._tf.anchoredPosition = arg0_61.initPos
+	arg0_61.useL = true
+	arg0_61.useR = false
+	arg0_61.rightCakeIndex = 0
+	arg0_61.seriesRightIndex = 0
 
-	arg0:clearCake()
-	arg0:clearJudge()
-	arg0:clearTargetPos()
-	arg0:clearVelocity()
-	setActive(findTF(arg0._tf, "effectW"), false)
-	setActive(findTF(arg0._tf, "effectE"), false)
+	arg0_61:clearCake()
+	arg0_61:clearJudge()
+	arg0_61:clearTargetPos()
+	arg0_61:clearVelocity()
+	setActive(findTF(arg0_61._tf, "effectW"), false)
+	setActive(findTF(arg0_61._tf, "effectE"), false)
 
-	if arg0._animator and arg0._animator.runtimeAnimatorController then
-		arg0:setInteger("x", 0)
-		arg0:setInteger("y", -1)
-		arg0:setInteger("num", 0)
-		arg0:setBool("idle", true)
-		arg0:setBool("run", false)
-		arg0:setBool("L", false)
-		arg0:setBool("R", false)
-		arg0:setTrigger("server", false)
-		arg0:setTrigger("pickup", false)
-		arg0:setTrigger("serve_right", false)
-		arg0:setTrigger("serve_wrong", false)
-		arg0:setInteger("speed_lv", 0)
+	if arg0_61._animator and arg0_61._animator.runtimeAnimatorController then
+		arg0_61:setInteger("x", 0)
+		arg0_61:setInteger("y", -1)
+		arg0_61:setInteger("num", 0)
+		arg0_61:setBool("idle", true)
+		arg0_61:setBool("run", false)
+		arg0_61:setBool("L", false)
+		arg0_61:setBool("R", false)
+		arg0_61:setTrigger("server", false)
+		arg0_61:setTrigger("pickup", false)
+		arg0_61:setTrigger("serve_right", false)
+		arg0_61:setTrigger("serve_wrong", false)
+		arg0_61:setInteger("speed_lv", 0)
 	end
 
-	arg0._pickupFull = false
+	arg0_61._pickupFull = false
 end
 
-return var0
+return var0_0

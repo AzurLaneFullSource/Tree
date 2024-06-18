@@ -1,368 +1,368 @@
-﻿local var0 = class("RacingMiniGameController")
+﻿local var0_0 = class("RacingMiniGameController")
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0.binder = arg1
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.binder = arg1_1
 
-	arg0:InitTimer()
-	arg0:InitGameUI(arg2)
+	arg0_1:InitTimer()
+	arg0_1:InitGameUI(arg2_1)
 end
 
-local function var1(arg0, arg1)
-	local var0 = arg0:GetComponentsInChildren(typeof(Animator), true)
+local function var1_0(arg0_2, arg1_2)
+	local var0_2 = arg0_2:GetComponentsInChildren(typeof(Animator), true)
 
-	for iter0 = 0, var0.Length - 1 do
-		var0[iter0].speed = arg1
+	for iter0_2 = 0, var0_2.Length - 1 do
+		var0_2[iter0_2].speed = arg1_2
 	end
 end
 
-local function var2(arg0, arg1)
-	local var0 = arg0:GetComponentsInChildren(typeof(SpineAnimUI), true)
+local function var2_0(arg0_3, arg1_3)
+	local var0_3 = arg0_3:GetComponentsInChildren(typeof(SpineAnimUI), true)
 
-	for iter0 = 0, var0.Length - 1 do
-		if IsNil(var0[iter0]) then
+	for iter0_3 = 0, var0_3.Length - 1 do
+		if IsNil(var0_3[iter0_3]) then
 			-- block empty
-		elseif arg1 then
-			var0[iter0]:Pause()
+		elseif arg1_3 then
+			var0_3[iter0_3]:Pause()
 		else
-			var0[iter0]:Resume()
+			var0_3[iter0_3]:Resume()
 		end
 	end
 end
 
-function var0.InitTimer(arg0)
-	arg0.timer = Timer.New(function()
-		arg0:OnTimer(RacingMiniGameConfig.TIME_INTERVAL)
+function var0_0.InitTimer(arg0_4)
+	arg0_4.timer = Timer.New(function()
+		arg0_4:OnTimer(RacingMiniGameConfig.TIME_INTERVAL)
 	end, RacingMiniGameConfig.TIME_INTERVAL, -1)
 
-	if IsUnityEditor and not arg0.handle then
-		arg0.handle = UpdateBeat:CreateListener(function()
+	if IsUnityEditor and not arg0_4.handle then
+		arg0_4.handle = UpdateBeat:CreateListener(function()
 			if Input.GetKeyDown(KeyCode.W) then
-				arg0.up = true
+				arg0_4.up = true
 			end
 
 			if Input.GetKeyUp(KeyCode.W) then
-				arg0.up = false
+				arg0_4.up = false
 			end
 
 			if Input.GetKeyDown(KeyCode.S) then
-				arg0.down = true
+				arg0_4.down = true
 			end
 
 			if Input.GetKeyUp(KeyCode.S) then
-				arg0.down = false
+				arg0_4.down = false
 			end
 
 			if Input.GetKeyDown(KeyCode.Space) then
-				arg0.boost = true
+				arg0_4.boost = true
 			end
 
 			if Input.GetKeyUp(KeyCode.Space) then
-				arg0.boost = false
+				arg0_4.boost = false
 			end
-		end, arg0)
+		end, arg0_4)
 
-		UpdateBeat:AddListener(arg0.handle)
+		UpdateBeat:AddListener(arg0_4.handle)
 	end
 end
 
-function var0.InitGameUI(arg0, arg1)
-	arg0.rtViewport = arg1:Find("Viewport")
-	arg0.bgSingleSize = arg0.rtViewport.rect.width
-	arg0.rtBgContent = arg0.rtViewport:Find("BgContent")
-	arg0.rtMainContent = arg0.rtViewport:Find("MainContent")
-	arg0.singleHeight = arg0.rtMainContent.rect.height / 3
-	arg0.rtRes = arg1:Find("Resource")
-	arg0.rtController = arg1:Find("Controller")
+function var0_0.InitGameUI(arg0_7, arg1_7)
+	arg0_7.rtViewport = arg1_7:Find("Viewport")
+	arg0_7.bgSingleSize = arg0_7.rtViewport.rect.width
+	arg0_7.rtBgContent = arg0_7.rtViewport:Find("BgContent")
+	arg0_7.rtMainContent = arg0_7.rtViewport:Find("MainContent")
+	arg0_7.singleHeight = arg0_7.rtMainContent.rect.height / 3
+	arg0_7.rtRes = arg1_7:Find("Resource")
+	arg0_7.rtController = arg1_7:Find("Controller")
 
-	for iter0, iter1 in ipairs({
+	for iter0_7, iter1_7 in ipairs({
 		"up",
 		"down",
 		"boost"
 	}) do
-		local var0 = GetOrAddComponent(arg0.rtController:Find("bottom/btn_" .. iter1), typeof(EventTriggerListener))
+		local var0_7 = GetOrAddComponent(arg0_7.rtController:Find("bottom/btn_" .. iter1_7), typeof(EventTriggerListener))
 
-		var0:AddPointDownFunc(function()
-			arg0[iter1] = true
+		var0_7:AddPointDownFunc(function()
+			arg0_7[iter1_7] = true
 		end)
-		var0:AddPointUpFunc(function()
-			arg0[iter1] = false
+		var0_7:AddPointUpFunc(function()
+			arg0_7[iter1_7] = false
 		end)
 	end
 
 	if RacingMiniGameConfig.BOOST_BUTTON_TYPE_CHANGE then
-		RemoveComponent(arg0.rtController:Find("bottom/btn_boost"), typeof(EventTriggerListener))
-		onButton(arg0.binder, arg0.rtController:Find("bottom/btn_boost"), function()
-			if not arg0.target.isBlock then
-				local var0 = RacingMiniGameConfig.M_LIST
-				local var1 = RacingMiniGameConfig.S_LIST
+		RemoveComponent(arg0_7.rtController:Find("bottom/btn_boost"), typeof(EventTriggerListener))
+		onButton(arg0_7.binder, arg0_7.rtController:Find("bottom/btn_boost"), function()
+			if not arg0_7.target.isBlock then
+				local var0_10 = RacingMiniGameConfig.M_LIST
+				local var1_10 = RacingMiniGameConfig.S_LIST
 
-				arg0.enginePower = math.clamp(arg0.enginePower + RacingMiniGameConfig.BOOST_RATE[2], var0[1], var0[#var0])
+				arg0_7.enginePower = math.clamp(arg0_7.enginePower + RacingMiniGameConfig.BOOST_RATE[2], var0_10[1], var0_10[#var0_10])
 
-				if arg0.target.state == "base" then
-					arg0.target:Show("accel")
+				if arg0_7.target.state == "base" then
+					arg0_7.target:Show("accel")
 				end
 			end
 		end)
 	end
 
-	arg0.rtTime = arg0.rtController:Find("top/time")
+	arg0_7.rtTime = arg0_7.rtController:Find("top/time")
 
-	setText(arg0.rtTime:Find("Text/plus"), "+" .. RacingMiniGameConfig.ITEM_ADD_TIME .. "s")
-	arg0.rtTime:Find("Text/plus"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-		setActive(arg0.rtTime:Find("Text/plus"), false)
+	setText(arg0_7.rtTime:Find("Text/plus"), "+" .. RacingMiniGameConfig.ITEM_ADD_TIME .. "s")
+	arg0_7.rtTime:Find("Text/plus"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		setActive(arg0_7.rtTime:Find("Text/plus"), false)
 	end)
 
-	arg0.rtDis = arg0.rtController:Find("top/dis")
-	arg0.rtPower = arg0.rtController:Find("bottom/speed")
-	arg0.rtFriend = arg0.rtController:Find("top/friend")
-	arg0.queue = {}
+	arg0_7.rtDis = arg0_7.rtController:Find("top/dis")
+	arg0_7.rtPower = arg0_7.rtController:Find("bottom/speed")
+	arg0_7.rtFriend = arg0_7.rtController:Find("top/friend")
+	arg0_7.queue = {}
 end
 
-function var0.ResetGame(arg0)
-	arg0.timeCount = 0
-	arg0.timeAll = RacingMiniGameConfig.ALL_TIME
+function var0_0.ResetGame(arg0_12)
+	arg0_12.timeCount = 0
+	arg0_12.timeAll = RacingMiniGameConfig.ALL_TIME
 
-	if arg0.target then
-		arg0.target:Clear()
+	if arg0_12.target then
+		arg0_12.target:Clear()
 
-		arg0.target = nil
+		arg0_12.target = nil
 	end
 
-	while #arg0.queue > 0 do
-		arg0.queue[#arg0.queue]:Clear()
+	while #arg0_12.queue > 0 do
+		arg0_12.queue[#arg0_12.queue]:Clear()
 	end
 
-	arg0.enginePower = 0
-	arg0.chargeDis = 0
-	arg0.disCount = 0
-	arg0.rateDic = {}
-	arg0.itemCountDic = {}
+	arg0_12.enginePower = 0
+	arg0_12.chargeDis = 0
+	arg0_12.disCount = 0
+	arg0_12.rateDic = {}
+	arg0_12.itemCountDic = {}
 end
 
-function var0.ReadyGame(arg0, arg1)
-	local var0 = getProxy(PlayerProxy):getRawData()
+function var0_0.ReadyGame(arg0_13, arg1_13)
+	local var0_13 = getProxy(PlayerProxy):getRawData()
 
-	arg0.rankData = underscore.filter(arg1, function(arg0)
-		return arg0.player_id ~= var0.id
+	arg0_13.rankData = underscore.filter(arg1_13, function(arg0_14)
+		return arg0_14.player_id ~= var0_13.id
 	end)
 
-	table.sort(arg0.rankData, CompareFuncs({
-		function(arg0)
-			return arg0.score
+	table.sort(arg0_13.rankData, CompareFuncs({
+		function(arg0_15)
+			return arg0_15.score
 		end
 	}))
 
-	arg0.target = RacingMiniNameSpace.Motorcycle.New(cloneTplTo(arg0.rtRes:Find("qiye_minigame"), arg0.rtMainContent:Find(-2)), NewPos(0, 0), arg0)
+	arg0_13.target = RacingMiniNameSpace.Motorcycle.New(cloneTplTo(arg0_13.rtRes:Find("qiye_minigame"), arg0_13.rtMainContent:Find(-2)), NewPos(0, 0), arg0_13)
 
-	table.insert(arg0.queue, RacingMiniNameSpace.StartMark.New(cloneTplTo(arg0.rtRes:Find("start_mark"), arg0.rtMainContent:Find(-2)), NewPos(550, 0), arg0))
-	arg0:UpdateDisplay()
+	table.insert(arg0_13.queue, RacingMiniNameSpace.StartMark.New(cloneTplTo(arg0_13.rtRes:Find("start_mark"), arg0_13.rtMainContent:Find(-2)), NewPos(550, 0), arg0_13))
+	arg0_13:UpdateDisplay()
 	onNextTick(function()
-		arg0:PauseGame()
+		arg0_13:PauseGame()
 	end)
 end
 
-function var0.StartGame(arg0)
-	arg0.isStart = true
+function var0_0.StartGame(arg0_17)
+	arg0_17.isStart = true
 
-	arg0:ResumeGame()
+	arg0_17:ResumeGame()
 end
 
-function var0.EndGame(arg0, arg1)
-	arg0.isStart = false
+function var0_0.EndGame(arg0_18, arg1_18)
+	arg0_18.isStart = false
 
-	arg0:PauseGame()
+	arg0_18:PauseGame()
 
-	arg0.result = arg1 or 0
-	arg0.point = arg0.disCount / 20
-	arg0.point = arg0.point - arg0.point % 0.01
+	arg0_18.result = arg1_18 or 0
+	arg0_18.point = arg0_18.disCount / 20
+	arg0_18.point = arg0_18.point - arg0_18.point % 0.01
 
-	arg0.binder:openUI("result")
+	arg0_18.binder:openUI("result")
 end
 
-function var0.ResumeGame(arg0)
-	arg0.isPause = false
+function var0_0.ResumeGame(arg0_19)
+	arg0_19.isPause = false
 
-	arg0.timer:Start()
-	var1(arg0.rtViewport, 1)
-	var2(arg0.rtViewport, false)
+	arg0_19.timer:Start()
+	var1_0(arg0_19.rtViewport, 1)
+	var2_0(arg0_19.rtViewport, false)
 end
 
-function var0.PauseGame(arg0)
-	arg0.isPause = true
+function var0_0.PauseGame(arg0_20)
+	arg0_20.isPause = true
 
-	arg0.timer:Stop()
-	var1(arg0.rtViewport, 0)
-	var2(arg0.rtViewport, true)
+	arg0_20.timer:Stop()
+	var1_0(arg0_20.rtViewport, 0)
+	var2_0(arg0_20.rtViewport, true)
 end
 
-local function var3(arg0, arg1)
-	local var0 = arg1.pos - arg0.pos
-	local var1 = {}
+local function var3_0(arg0_21, arg1_21)
+	local var0_21 = arg1_21.pos - arg0_21.pos
+	local var1_21 = {}
 
-	for iter0 = 1, 2 do
-		var1[iter0] = {}
-		var1[iter0][1] = arg0.colliderSize[iter0][1] - arg1.colliderSize[iter0][2]
-		var1[iter0][2] = arg0.colliderSize[iter0][2] - arg1.colliderSize[iter0][1]
+	for iter0_21 = 1, 2 do
+		var1_21[iter0_21] = {}
+		var1_21[iter0_21][1] = arg0_21.colliderSize[iter0_21][1] - arg1_21.colliderSize[iter0_21][2]
+		var1_21[iter0_21][2] = arg0_21.colliderSize[iter0_21][2] - arg1_21.colliderSize[iter0_21][1]
 	end
 
-	return var1[1][1] < var0.x and var0.x < var1[1][2] and var1[2][1] < var0.y and var0.y < var1[2][2]
+	return var1_21[1][1] < var0_21.x and var0_21.x < var1_21[1][2] and var1_21[2][1] < var0_21.y and var0_21.y < var1_21[2][2]
 end
 
-function var0.OnTimer(arg0, arg1)
-	arg0.timeCount = arg0.timeCount + arg1
+function var0_0.OnTimer(arg0_22, arg1_22)
+	arg0_22.timeCount = arg0_22.timeCount + arg1_22
 
-	if arg0.timeCount > arg0.timeAll then
-		arg0:EndGame(1)
+	if arg0_22.timeCount > arg0_22.timeAll then
+		arg0_22:EndGame(1)
 
 		return
 	end
 
-	if arg0.target.invincibleTime then
-		arg0.target:UpdateInvincibility(arg1)
+	if arg0_22.target.invincibleTime then
+		arg0_22.target:UpdateInvincibility(arg1_22)
 	end
 
-	local var0 = NewPos(0, 0)
-	local var1 = arg0:GetSpeed(RacingMiniGameConfig.BOOST_RATE[not arg0.target.isBlock and arg0.boost and 2 or 1] * arg1)
+	local var0_22 = NewPos(0, 0)
+	local var1_22 = arg0_22:GetSpeed(RacingMiniGameConfig.BOOST_RATE[not arg0_22.target.isBlock and arg0_22.boost and 2 or 1] * arg1_22)
 
-	var0.x = var1 * arg1
+	var0_22.x = var1_22 * arg1_22
 
-	if not arg0.target.isBlock then
-		if var1 > 0 then
-			if arg0.up then
-				var0.y = var0.y + 1
+	if not arg0_22.target.isBlock then
+		if var1_22 > 0 then
+			if arg0_22.up then
+				var0_22.y = var0_22.y + 1
 			end
 
-			if arg0.down then
-				var0.y = var0.y - 1
+			if arg0_22.down then
+				var0_22.y = var0_22.y - 1
 			end
 
-			var0.y = var0.y * arg0.singleHeight / RacingMiniGameConfig.Y_COVER_TIME * (arg0.target.isVertigo and RacingMiniGameConfig.Y_OBSTACLE_REDUCE or 1) * arg1
+			var0_22.y = var0_22.y * arg0_22.singleHeight / RacingMiniGameConfig.Y_COVER_TIME * (arg0_22.target.isVertigo and RacingMiniGameConfig.Y_OBSTACLE_REDUCE or 1) * arg1_22
 
-			if arg0.target.state == "base" and arg0.boost then
-				arg0.target:Show("accel")
+			if arg0_22.target.state == "base" and arg0_22.boost then
+				arg0_22.target:Show("accel")
 			end
-		elseif not arg0.target.isVertigo and arg0.target.state ~= "base" then
-			arg0.target:Show("base")
+		elseif not arg0_22.target.isVertigo and arg0_22.target.state ~= "base" then
+			arg0_22.target:Show("base")
 		end
 	end
 
-	arg0.target:UpdatePos(var0 * NewPos(0, 1), arg0.singleHeight)
-	setParent(arg0.target.rt, arg0.rtMainContent:Find(math.clamp(math.floor((arg0.target.pos.y + arg0.singleHeight) * 3 / 2 / arg0.singleHeight) - 1, -1, 1) - 1))
+	arg0_22.target:UpdatePos(var0_22 * NewPos(0, 1), arg0_22.singleHeight)
+	setParent(arg0_22.target.rt, arg0_22.rtMainContent:Find(math.clamp(math.floor((arg0_22.target.pos.y + arg0_22.singleHeight) * 3 / 2 / arg0_22.singleHeight) - 1, -1, 1) - 1))
 
-	local var2 = 1
+	local var2_22 = 1
 
-	while var2 <= #arg0.queue do
-		local var3 = arg0.queue[var2]
+	while var2_22 <= #arg0_22.queue do
+		local var3_22 = arg0_22.queue[var2_22]
 
-		var3:UpdatePos(var0 * NewPos(-1, 0))
+		var3_22:UpdatePos(var0_22 * NewPos(-1, 0))
 
-		if not var3.isTriggered and var3.colliderSize and var3(var3, arg0.target) then
-			var3:Trigger(arg0.target)
+		if not var3_22.isTriggered and var3_22.colliderSize and var3_0(var3_22, arg0_22.target) then
+			var3_22:Trigger(arg0_22.target)
 		end
 
-		if var3.pos.x < -arg0.bgSingleSize then
-			var3:Clear()
+		if var3_22.pos.x < -arg0_22.bgSingleSize then
+			var3_22:Clear()
 		else
-			var2 = var2 + 1
+			var2_22 = var2_22 + 1
 		end
 	end
 
-	local var4 = arg0.rtBgContent.anchoredPosition.x - var0.x
+	local var4_22 = arg0_22.rtBgContent.anchoredPosition.x - var0_22.x
 
-	if var4 < -arg0.bgSingleSize / 2 then
-		var4 = var4 + arg0.bgSingleSize
+	if var4_22 < -arg0_22.bgSingleSize / 2 then
+		var4_22 = var4_22 + arg0_22.bgSingleSize
 	end
 
-	setAnchoredPosition(arg0.rtBgContent, {
-		x = var4
+	setAnchoredPosition(arg0_22.rtBgContent, {
+		x = var4_22
 	})
 
-	arg0.chargeDis = arg0.chargeDis - var0.x
+	arg0_22.chargeDis = arg0_22.chargeDis - var0_22.x
 
-	if arg0.chargeDis <= 0 then
-		arg0:CreateNewObject()
+	if arg0_22.chargeDis <= 0 then
+		arg0_22:CreateNewObject()
 	end
 
-	arg0.disCount = arg0.disCount + var0.x
+	arg0_22.disCount = arg0_22.disCount + var0_22.x
 
-	arg0:UpdateDisplay()
+	arg0_22:UpdateDisplay()
 end
 
-function var0.UpdateDisplay(arg0)
-	local var0 = arg0.timeAll - arg0.timeCount
+function var0_0.UpdateDisplay(arg0_23)
+	local var0_23 = arg0_23.timeAll - arg0_23.timeCount
 
-	setText(arg0.rtTime:Find("Text"), string.format("%02d:%02ds", math.floor(var0), math.floor((var0 - math.floor(var0)) * 100)))
+	setText(arg0_23.rtTime:Find("Text"), string.format("%02d:%02ds", math.floor(var0_23), math.floor((var0_23 - math.floor(var0_23)) * 100)))
 
-	local var1 = arg0.disCount / 20
+	local var1_23 = arg0_23.disCount / 20
 
-	setText(arg0.rtDis, string.format("%.2fm", var1 - var1 % 0.01))
+	setText(arg0_23.rtDis, string.format("%.2fm", var1_23 - var1_23 % 0.01))
 
-	local var2 = RacingMiniGameConfig.BUOY_POWER_LIST
-	local var3 = RacingMiniGameConfig.BUOY_POS_LIST
-	local var4
+	local var2_23 = RacingMiniGameConfig.BUOY_POWER_LIST
+	local var3_23 = RacingMiniGameConfig.BUOY_POS_LIST
+	local var4_23
 
-	for iter0, iter1 in ipairs(var2) do
-		if iter1 >= arg0.enginePower then
-			var4 = iter0
+	for iter0_23, iter1_23 in ipairs(var2_23) do
+		if iter1_23 >= arg0_23.enginePower then
+			var4_23 = iter0_23
 
 			break
 		end
 	end
 
-	setAnchoredPosition(arg0.rtPower:Find("range/buoy"), {
-		x = var4 > 1 and var3[var4 - 1] + (arg0.enginePower - var2[var4 - 1]) / (var2[var4] - var2[var4 - 1]) * (var3[var4] - var3[var4 - 1]) or 0
+	setAnchoredPosition(arg0_23.rtPower:Find("range/buoy"), {
+		x = var4_23 > 1 and var3_23[var4_23 - 1] + (arg0_23.enginePower - var2_23[var4_23 - 1]) / (var2_23[var4_23] - var2_23[var4_23 - 1]) * (var3_23[var4_23] - var3_23[var4_23 - 1]) or 0
 	})
 
-	if arg0.target.isVertigo then
-		var4 = 1
+	if arg0_23.target.isVertigo then
+		var4_23 = 1
 	end
 
-	for iter2, iter3 in ipairs(arg0.target.effectList) do
-		setActive(iter3, var4 - 1 == iter2)
+	for iter2_23, iter3_23 in ipairs(arg0_23.target.effectList) do
+		setActive(iter3_23, var4_23 - 1 == iter2_23)
 	end
 
-	local var5 = RacingMiniGameConfig.FRIEND_DIS_LIST
+	local var5_23 = RacingMiniGameConfig.FRIEND_DIS_LIST
 
-	arg0.friendIndex = defaultValue(arg0.friendIndex, 1)
+	arg0_23.friendIndex = defaultValue(arg0_23.friendIndex, 1)
 
-	while arg0.friendIndex < #var5 and var5[arg0.friendIndex + 1] < arg0.disCount / 20 do
-		arg0.friendIndex = arg0.friendIndex + 1
-		arg0.friendDirty = true
+	while arg0_23.friendIndex < #var5_23 and var5_23[arg0_23.friendIndex + 1] < arg0_23.disCount / 20 do
+		arg0_23.friendIndex = arg0_23.friendIndex + 1
+		arg0_23.friendDirty = true
 	end
 
-	if arg0.friendDirty then
-		arg0.friendDirty = false
+	if arg0_23.friendDirty then
+		arg0_23.friendDirty = false
 
-		while #arg0.rankData > 0 and arg0.rankData[1].score / 100 < var5[arg0.friendIndex] do
-			table.remove(arg0.rankData, 1)
+		while #arg0_23.rankData > 0 and arg0_23.rankData[1].score / 100 < var5_23[arg0_23.friendIndex] do
+			table.remove(arg0_23.rankData, 1)
 		end
 
-		local var6
+		local var6_23
 
-		for iter4, iter5 in ipairs(arg0.rankData) do
-			if arg0.friendIndex == #var5 or iter5.score / 100 < var5[arg0.friendIndex + 1] then
-				var6 = iter4
+		for iter4_23, iter5_23 in ipairs(arg0_23.rankData) do
+			if arg0_23.friendIndex == #var5_23 or iter5_23.score / 100 < var5_23[arg0_23.friendIndex + 1] then
+				var6_23 = iter4_23
 			else
 				break
 			end
 		end
 
-		setActive(arg0.rtFriend, var6)
+		setActive(arg0_23.rtFriend, var6_23)
 
-		if var6 then
-			arg0.friendInfo = arg0.rankData[math.random(var6)]
+		if var6_23 then
+			arg0_23.friendInfo = arg0_23.rankData[math.random(var6_23)]
 		else
-			arg0.friendInfo = nil
+			arg0_23.friendInfo = nil
 		end
 
-		if arg0.friendInfo then
-			setText(arg0.rtFriend:Find("Text"), arg0.friendInfo.name)
-			setText(arg0.rtFriend:Find("point"), string.format("%.2fm", arg0.friendInfo.score / 100))
+		if arg0_23.friendInfo then
+			setText(arg0_23.rtFriend:Find("Text"), arg0_23.friendInfo.name)
+			setText(arg0_23.rtFriend:Find("point"), string.format("%.2fm", arg0_23.friendInfo.score / 100))
 		end
 	end
 end
 
-local var4 = {
+local var4_0 = {
 	TrafficCone = "roadblocks",
 	Mire = "mire",
 	Roadblock = "roadblocks",
@@ -372,121 +372,121 @@ local var4 = {
 	Invincibility = "invincibility"
 }
 
-function var0.CreateNewObject(arg0)
-	local var0
+function var0_0.CreateNewObject(arg0_24)
+	local var0_24
 
-	for iter0, iter1 in ipairs(RacingMiniGameConfig.FIELD_CONFIG) do
-		if arg0.timeCount < iter1.time then
+	for iter0_24, iter1_24 in ipairs(RacingMiniGameConfig.FIELD_CONFIG) do
+		if arg0_24.timeCount < iter1_24.time then
 			break
 		else
-			var0 = iter1
+			var0_24 = iter1_24
 		end
 	end
 
-	local var1 = {}
-	local var2 = 0
+	local var1_24 = {}
+	local var2_24 = 0
 
-	for iter2 = -1, 1 do
-		arg0.rateDic[iter2] = defaultValue(arg0.rateDic[iter2], 0)
+	for iter2_24 = -1, 1 do
+		arg0_24.rateDic[iter2_24] = defaultValue(arg0_24.rateDic[iter2_24], 0)
 
-		local var3 = math.random() / (2 - iter2)
-		local var4
+		local var3_24 = math.random() / (2 - iter2_24)
+		local var4_24
 
-		if var3 < arg0.rateDic[iter2] then
-			var2 = var2 + 1
-			var1[iter2] = true
+		if var3_24 < arg0_24.rateDic[iter2_24] then
+			var2_24 = var2_24 + 1
+			var1_24[iter2_24] = true
 		else
-			var1[iter2] = false
+			var1_24[iter2_24] = false
 		end
 	end
 
-	if var2 == 3 then
-		var1[math.random(3) - 2] = false
+	if var2_24 == 3 then
+		var1_24[math.random(3) - 2] = false
 	end
 
-	for iter3 = -1, 1 do
-		if var1[iter3] then
-			classCfg = var0.obstacle_distribution
+	for iter3_24 = -1, 1 do
+		if var1_24[iter3_24] then
+			classCfg = var0_24.obstacle_distribution
 		else
-			classCfg = var0.item_distribution
+			classCfg = var0_24.item_distribution
 		end
 
 		rate = math.random()
 
-		local var5 = 0
-		local var6 = 0
+		local var5_24 = 0
+		local var6_24 = 0
 
-		for iter4, iter5 in ipairs(classCfg) do
-			var6 = var6 + iter5[2]
+		for iter4_24, iter5_24 in ipairs(classCfg) do
+			var6_24 = var6_24 + iter5_24[2]
 		end
 
-		local var7
+		local var7_24
 
-		for iter6, iter7 in ipairs(classCfg) do
-			var5 = var5 + iter7[2]
+		for iter6_24, iter7_24 in ipairs(classCfg) do
+			var5_24 = var5_24 + iter7_24[2]
 
-			if var5 > rate * var6 then
-				var7 = iter7[1]
+			if var5_24 > rate * var6_24 then
+				var7_24 = iter7_24[1]
 
 				break
 			end
 		end
 
-		if var7 and superof(RacingMiniNameSpace[var7], RacingMiniNameSpace.Item) then
-			if defaultValue(arg0.itemCountDic[var7], 0) < defaultValue(var0.item_create_limit[var7], 0) then
-				arg0.itemCountDic[var7] = defaultValue(arg0.itemCountDic[var7], 0) + 1
+		if var7_24 and superof(RacingMiniNameSpace[var7_24], RacingMiniNameSpace.Item) then
+			if defaultValue(arg0_24.itemCountDic[var7_24], 0) < defaultValue(var0_24.item_create_limit[var7_24], 0) then
+				arg0_24.itemCountDic[var7_24] = defaultValue(arg0_24.itemCountDic[var7_24], 0) + 1
 			else
-				var7 = nil
+				var7_24 = nil
 			end
 		end
 
-		if var7 then
-			local var8 = RacingMiniNameSpace[var7].New(cloneTplTo(arg0.rtRes:Find(var4[var7]), arg0.rtMainContent:Find(iter3)), NewPos(arg0.bgSingleSize * 1.5 + arg0.chargeDis, iter3 * arg0.singleHeight), arg0)
+		if var7_24 then
+			local var8_24 = RacingMiniNameSpace[var7_24].New(cloneTplTo(arg0_24.rtRes:Find(var4_0[var7_24]), arg0_24.rtMainContent:Find(iter3_24)), NewPos(arg0_24.bgSingleSize * 1.5 + arg0_24.chargeDis, iter3_24 * arg0_24.singleHeight), arg0_24)
 
-			table.insert(arg0.queue, var8)
+			table.insert(arg0_24.queue, var8_24)
 
-			arg0.rateDic[iter3] = arg0.rateDic[iter3] * var0.continue_reduce
+			arg0_24.rateDic[iter3_24] = arg0_24.rateDic[iter3_24] * var0_24.continue_reduce
 		else
-			arg0.rateDic[iter3] = arg0.rateDic[iter3] + var0.bye_plus
+			arg0_24.rateDic[iter3_24] = arg0_24.rateDic[iter3_24] + var0_24.bye_plus
 		end
 	end
 
-	arg0.chargeDis = arg0.chargeDis + var0.recharge_dis
+	arg0_24.chargeDis = arg0_24.chargeDis + var0_24.recharge_dis
 end
 
-function var0.GetSpeed(arg0, arg1)
-	local var0
-	local var1 = RacingMiniGameConfig.M_LIST
-	local var2 = RacingMiniGameConfig.S_LIST
+function var0_0.GetSpeed(arg0_25, arg1_25)
+	local var0_25
+	local var1_25 = RacingMiniGameConfig.M_LIST
+	local var2_25 = RacingMiniGameConfig.S_LIST
 
-	for iter0 = 1, #var1 - 1 do
-		if var1[iter0 + 1] > arg0.enginePower then
-			var0 = var2[iter0] + (arg0.enginePower - var1[iter0]) / (var1[iter0 + 1] - var1[iter0]) * (var2[iter0 + 1] - var2[iter0])
+	for iter0_25 = 1, #var1_25 - 1 do
+		if var1_25[iter0_25 + 1] > arg0_25.enginePower then
+			var0_25 = var2_25[iter0_25] + (arg0_25.enginePower - var1_25[iter0_25]) / (var1_25[iter0_25 + 1] - var1_25[iter0_25]) * (var2_25[iter0_25 + 1] - var2_25[iter0_25])
 
 			break
 		end
 	end
 
-	var0 = var0 or var2[#var2]
-	arg0.enginePower = math.clamp(arg0.enginePower + arg1, var1[1], var1[#var1])
+	var0_25 = var0_25 or var2_25[#var2_25]
+	arg0_25.enginePower = math.clamp(arg0_25.enginePower + arg1_25, var1_25[1], var1_25[#var1_25])
 
-	return var0 * 10
+	return var0_25 * 10
 end
 
-function var0.AddTime(arg0, arg1)
-	arg0.timeAll = arg0.timeAll + arg1
+function var0_0.AddTime(arg0_26, arg1_26)
+	arg0_26.timeAll = arg0_26.timeAll + arg1_26
 
-	setActive(arg0.rtTime:Find("Text/plus"), true)
+	setActive(arg0_26.rtTime:Find("Text/plus"), true)
 end
 
-function var0.SetEnginePower(arg0, arg1)
-	arg0.enginePower = math.min(arg0.enginePower, arg1)
+function var0_0.SetEnginePower(arg0_27, arg1_27)
+	arg0_27.enginePower = math.min(arg0_27.enginePower, arg1_27)
 end
 
-function var0.willExit(arg0)
-	if arg0.handle then
-		UpdateBeat:RemoveListener(arg0.handle)
+function var0_0.willExit(arg0_28)
+	if arg0_28.handle then
+		UpdateBeat:RemoveListener(arg0_28.handle)
 	end
 end
 
-return var0
+return var0_0

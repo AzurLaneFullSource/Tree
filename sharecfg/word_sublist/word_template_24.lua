@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_24 = {}
+var0_0.word_template_24 = {}
 
-local var1 = var0.word_template_24
+local var1_0 = var0_0.word_template_24
 
 function temp()
-	var1.歯 = {
+	var1_0.歯 = {
 		科 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.自 = {
+	var1_0.自 = {
 		動 = {
 			相 = {
 				互 = {
@@ -579,7 +579,7 @@ end
 temp()
 
 function temp()
-	var1.射 = {
+	var1_0.射 = {
 		精 = {
 			this = true,
 			大 = {
@@ -734,7 +734,7 @@ end
 temp()
 
 function temp()
-	var1.社 = {
+	var1_0.社 = {
 		會 = {
 			this = true,
 			主 = {
@@ -830,7 +830,7 @@ end
 temp()
 
 function temp()
-	var1.謝 = {
+	var1_0.謝 = {
 		礼 = {
 			this = true
 		},
@@ -860,7 +860,7 @@ end
 temp()
 
 function temp()
-	var1.手 = {
+	var1_0.手 = {
 		淫 = {
 			this = true,
 			无 = {
@@ -1203,7 +1203,7 @@ end
 temp()
 
 function temp()
-	var1.出 = {
+	var1_0.出 = {
 		会 = {
 			this = true
 		},

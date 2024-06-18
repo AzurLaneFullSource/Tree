@@ -1,67 +1,67 @@
-﻿local var0 = class("BaseReactor")
+﻿local var0_0 = class("BaseReactor")
 
-function var0.Ctor(arg0, arg1, arg2, arg3)
-	arg0.responder = arg3
-	arg0._tf = arg2
-	arg0.callDic = {}
-	arg0.rangeDic = {}
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	arg0_1.responder = arg3_1
+	arg0_1._tf = arg2_1
+	arg0_1.callDic = {}
+	arg0_1.rangeDic = {}
 
-	arg0:Init(arg1)
-	arg0.responder:CreateCall(arg0)
+	arg0_1:Init(arg1_1)
+	arg0_1.responder:CreateCall(arg0_1)
 end
 
-function var0.Init(arg0, arg1)
+function var0_0.Init(arg0_2, arg1_2)
 	return
 end
 
-function var0.Register(arg0, arg1, arg2, arg3)
-	assert(arg3)
+function var0_0.Register(arg0_3, arg1_3, arg2_3, arg3_3)
+	assert(arg3_3)
 
-	arg0.callDic[arg1] = arg2
-	arg0.rangeDic[arg1] = underscore.map(arg3, function(arg0)
-		return NewPos(unpack(arg0))
+	arg0_3.callDic[arg1_3] = arg2_3
+	arg0_3.rangeDic[arg1_3] = underscore.map(arg3_3, function(arg0_4)
+		return NewPos(unpack(arg0_4))
 	end)
 
-	arg0.responder:AddListener(arg1, arg0, arg0.rangeDic[arg1])
+	arg0_3.responder:AddListener(arg1_3, arg0_3, arg0_3.rangeDic[arg1_3])
 end
 
-function var0.Deregister(arg0, arg1)
-	arg0.responder:RemoveListener(arg1, arg0, arg0.rangeDic[arg1])
+function var0_0.Deregister(arg0_5, arg1_5)
+	arg0_5.responder:RemoveListener(arg1_5, arg0_5, arg0_5.rangeDic[arg1_5])
 
-	arg0.callDic[arg1] = nil
-	arg0.rangeDic[arg1] = nil
+	arg0_5.callDic[arg1_5] = nil
+	arg0_5.rangeDic[arg1_5] = nil
 end
 
-function var0.DeregisterAll(arg0)
-	for iter0, iter1 in pairs(arg0.callDic) do
-		arg0:Deregister(iter0)
+function var0_0.DeregisterAll(arg0_6)
+	for iter0_6, iter1_6 in pairs(arg0_6.callDic) do
+		arg0_6:Deregister(iter0_6)
 	end
 end
 
-function var0.Calling(arg0, arg1, arg2, arg3)
-	arg0.responder:EventCall(arg1, arg2, arg0, arg3)
+function var0_0.Calling(arg0_7, arg1_7, arg2_7, arg3_7)
+	arg0_7.responder:EventCall(arg1_7, arg2_7, arg0_7, arg3_7)
 end
 
-function var0.React(arg0, arg1, arg2)
-	if not arg0.callDic[arg1] then
+function var0_0.React(arg0_8, arg1_8, arg2_8)
+	if not arg0_8.callDic[arg1_8] then
 		return
 	end
 
-	arg0.callDic[arg1](unpack(arg2))
+	arg0_8.callDic[arg1_8](unpack(arg2_8))
 end
 
-function var0.Destroy(arg0, arg1)
-	arg0:DeregisterAll()
+function var0_0.Destroy(arg0_9, arg1_9)
+	arg0_9:DeregisterAll()
 
-	local var0 = defaultValue(arg1, true) and RyzaMiniGameConfig.GetDestroyPoint(arg0) or 0
+	local var0_9 = defaultValue(arg1_9, true) and RyzaMiniGameConfig.GetDestroyPoint(arg0_9) or 0
 
-	arg0.responder:DestroyCall(arg0, var0)
+	arg0_9.responder:DestroyCall(arg0_9, var0_9)
 
-	arg0.responder = nil
-	arg0.callDic = nil
-	arg0.rangeDic = nil
+	arg0_9.responder = nil
+	arg0_9.callDic = nil
+	arg0_9.rangeDic = nil
 
-	Destroy(arg0._tf)
+	Destroy(arg0_9._tf)
 end
 
-return var0
+return var0_0

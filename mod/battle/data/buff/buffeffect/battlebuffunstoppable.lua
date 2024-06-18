@@ -1,19 +1,19 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("BattleBuffUnstoppable", var0.Battle.BattleBuffEffect)
+local var0_0 = ys
+local var1_0 = class("BattleBuffUnstoppable", var0_0.Battle.BattleBuffEffect)
 
-var0.Battle.BattleBuffUnstoppable = var1
-var1.__name = "BattleBuffUnstoppable"
+var0_0.Battle.BattleBuffUnstoppable = var1_0
+var1_0.__name = "BattleBuffUnstoppable"
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.onAttach(arg0, arg1, arg2)
-	arg1:ActiveUnstoppable(true)
+function var1_0.onAttach(arg0_2, arg1_2, arg2_2)
+	arg1_2:ActiveUnstoppable(true)
 end
 
-function var1.onRemove(arg0, arg1, arg2)
-	arg1:ActiveUnstoppable(false)
+function var1_0.onRemove(arg0_3, arg1_3, arg2_3)
+	arg1_3:ActiveUnstoppable(false)
 end

@@ -1,8 +1,8 @@
-﻿local var0 = class("BattleGate")
+﻿local var0_0 = class("BattleGate")
 
-ys.Battle.BattleGate = var0
-var0.__name = "BattleGate"
-var0.Gates = {
+ys.Battle.BattleGate = var0_0
+var0_0.__name = "BattleGate"
+var0_0.Gates = {
 	[SYSTEM_PROLOGUE] = ys.Battle.BattleGatePrologue,
 	[SYSTEM_PERFORM] = ys.Battle.BattleGatePerform,
 	[SYSTEM_SIMULATION] = ys.Battle.BattleGateSimulation,
@@ -31,4 +31,4 @@ var0.Gates = {
 	[SYSTEM_BOSS_SINGLE] = ys.Battle.BattleGateBossSingle
 }
 
-return var0
+return var0_0

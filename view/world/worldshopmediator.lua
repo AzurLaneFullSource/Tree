@@ -1,38 +1,38 @@
-﻿local var0 = class("WorldShopMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("WorldShopMediator", import("view.base.ContextMediator"))
 
-var0.BUY_ITEM = "WorldShopMediator:BUY_ITEM"
+var0_0.BUY_ITEM = "WorldShopMediator:BUY_ITEM"
 
-function var0.register(arg0)
-	arg0:bind(var0.BUY_ITEM, function(arg0, arg1, arg2)
-		arg0:sendNotification(GAME.SHOPPING, {
-			id = arg1,
-			count = arg2
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.BUY_ITEM, function(arg0_2, arg1_2, arg2_2)
+		arg0_1:sendNotification(GAME.SHOPPING, {
+			id = arg1_2,
+			count = arg2_2
 		})
 	end)
 
-	local var0 = getProxy(PlayerProxy)
+	local var0_1 = getProxy(PlayerProxy)
 
-	arg0.viewComponent:setPlayer(var0:getRawData())
+	arg0_1.viewComponent:setPlayer(var0_1:getRawData())
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_3)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.SHOPPING_DONE
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_4, arg1_4)
+	local var0_4 = arg1_4:getName()
+	local var1_4 = arg1_4:getBody()
 
-	if var0 == PlayerProxy.UPDATED then
-		arg0.viewComponent:setPlayer(var1)
-	elseif var0 == GAME.SHOPPING_DONE and #var1.awards > 0 then
-		arg0.viewComponent:emit(BaseUI.ON_AWARD, {
-			items = var1.awards
+	if var0_4 == PlayerProxy.UPDATED then
+		arg0_4.viewComponent:setPlayer(var1_4)
+	elseif var0_4 == GAME.SHOPPING_DONE and #var1_4.awards > 0 then
+		arg0_4.viewComponent:emit(BaseUI.ON_AWARD, {
+			items = var1_4.awards
 		})
 	end
 end
 
-return var0
+return var0_0

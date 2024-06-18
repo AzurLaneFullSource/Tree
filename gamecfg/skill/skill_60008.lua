@@ -16,25 +16,25 @@
 			},
 			targetAniEffect = {
 				effect = "aim",
-				posFun = function(arg0, arg1, arg2)
-					arg2 = math.min(1, arg2 / 40)
+				posFun = function(arg0_1, arg1_1, arg2_1)
+					arg2_1 = math.min(1, arg2_1 / 40)
 
-					local var0 = arg0.x - arg1.x
-					local var1 = var0 * (1 - arg2)
-					local var2 = 1 * arg2
-					local var3 = arg0.z - arg1.z + var0 * (1 - arg2) * arg2
+					local var0_1 = arg0_1.x - arg1_1.x
+					local var1_1 = var0_1 * (1 - arg2_1)
+					local var2_1 = 1 * arg2_1
+					local var3_1 = arg0_1.z - arg1_1.z + var0_1 * (1 - arg2_1) * arg2_1
 
-					if arg2 >= 1 then
-						var3 = 0
-					elseif arg2 >= 0.8 then
-						var3 = var3 * (-4 * arg2 + 4)
-					elseif arg2 >= 0.5 then
-						var3 = var3 * arg2
+					if arg2_1 >= 1 then
+						var3_1 = 0
+					elseif arg2_1 >= 0.8 then
+						var3_1 = var3_1 * (-4 * arg2_1 + 4)
+					elseif arg2_1 >= 0.5 then
+						var3_1 = var3_1 * arg2_1
 					else
-						var3 = var3 * (1 - arg2)
+						var3_1 = var3_1 * (1 - arg2_1)
 					end
 
-					return Vector3(var1, var2, var3)
+					return Vector3(var1_1, var2_1, var3_1)
 				end
 			}
 		}

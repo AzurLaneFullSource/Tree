@@ -1,194 +1,194 @@
-﻿local var0 = class("BossSingleActivity", import("model.vo.Activity"))
+﻿local var0_0 = class("BossSingleActivity", import("model.vo.Activity"))
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0.enemyData = {}
+	arg0_1.enemyData = {}
 
-	for iter0, iter1 in ipairs(arg0:GetEnemyIds()) do
-		local var0 = BossSingleEnemyData.New({
-			id = iter1,
-			index = iter0
+	for iter0_1, iter1_1 in ipairs(arg0_1:GetEnemyIds()) do
+		local var0_1 = BossSingleEnemyData.New({
+			id = iter1_1,
+			index = iter0_1
 		})
 
-		arg0.enemyData[iter1] = var0
+		arg0_1.enemyData[iter1_1] = var0_1
 	end
 end
 
-function var0.GetEnemyDatas(arg0)
-	return arg0.enemyData
+function var0_0.GetEnemyDatas(arg0_2)
+	return arg0_2.enemyData
 end
 
-function var0.GetEnemyDataById(arg0, arg1)
-	return arg0.enemyData[arg1]
+function var0_0.GetEnemyDataById(arg0_3, arg1_3)
+	return arg0_3.enemyData[arg1_3]
 end
 
-function var0.GetEnemyDataByStageId(arg0, arg1)
-	for iter0, iter1 in pairs(arg0.enemyData) do
-		if iter1:GetExpeditionId() == arg1 then
-			return iter1
+function var0_0.GetEnemyDataByStageId(arg0_4, arg1_4)
+	for iter0_4, iter1_4 in pairs(arg0_4.enemyData) do
+		if iter1_4:GetExpeditionId() == arg1_4 then
+			return iter1_4
 		end
 	end
 end
 
-function var0.GetEnemyDataByFleetIdx(arg0, arg1)
-	for iter0, iter1 in pairs(arg0.enemyData) do
-		if iter1:GetFleetIdx() == arg1 then
-			return iter1
+function var0_0.GetEnemyDataByFleetIdx(arg0_5, arg1_5)
+	for iter0_5, iter1_5 in pairs(arg0_5.enemyData) do
+		if iter1_5:GetFleetIdx() == arg1_5 then
+			return iter1_5
 		end
 	end
 end
 
-function var0.GetEnemyDataByType(arg0, arg1)
-	for iter0, iter1 in pairs(arg0.enemyData) do
-		if iter1:GetType() == arg1 then
-			return iter1
+function var0_0.GetEnemyDataByType(arg0_6, arg1_6)
+	for iter0_6, iter1_6 in pairs(arg0_6.enemyData) do
+		if iter1_6:GetType() == arg1_6 then
+			return iter1_6
 		end
 	end
 end
 
-function var0.GetCommonEnemyDatas(arg0)
-	local var0 = {}
+function var0_0.GetCommonEnemyDatas(arg0_7)
+	local var0_7 = {}
 
-	for iter0, iter1 in pairs(arg0.enemyData) do
-		if iter1:GetType() == BossSingleEnemyData.TYPE.EAST or iter1:GetType() == BossSingleEnemyData.TYPE.NORMAL or iter1:GetType() == BossSingleEnemyData.TYPE.HARD then
-			table.insert(var0, iter1)
+	for iter0_7, iter1_7 in pairs(arg0_7.enemyData) do
+		if iter1_7:GetType() == BossSingleEnemyData.TYPE.EAST or iter1_7:GetType() == BossSingleEnemyData.TYPE.NORMAL or iter1_7:GetType() == BossSingleEnemyData.TYPE.HARD then
+			table.insert(var0_7, iter1_7)
 		end
 	end
 
-	return var0
+	return var0_7
 end
 
-function var0.GetStageIDs(arg0)
-	local var0 = {}
+function var0_0.GetStageIDs(arg0_8)
+	local var0_8 = {}
 
-	for iter0, iter1 in pairs(arg0.enemyData) do
-		var0[iter1:GetFleetIdx()] = iter1:GetExpeditionId()
+	for iter0_8, iter1_8 in pairs(arg0_8.enemyData) do
+		var0_8[iter1_8:GetFleetIdx()] = iter1_8:GetExpeditionId()
 	end
 
-	return var0
+	return var0_8
 end
 
-function var0.GetOilLimits(arg0)
-	local var0 = {}
+function var0_0.GetOilLimits(arg0_9)
+	local var0_9 = {}
 
-	for iter0, iter1 in pairs(arg0.enemyData) do
-		var0[iter1:GetFleetIdx()] = iter1:GetOilLimit()
+	for iter0_9, iter1_9 in pairs(arg0_9.enemyData) do
+		var0_9[iter1_9:GetFleetIdx()] = iter1_9:GetOilLimit()
 	end
 
-	return var0
+	return var0_9
 end
 
-function var0.GetEnemyIds(arg0)
-	return arg0:getConfig("config_data")
+function var0_0.GetEnemyIds(arg0_10)
+	return arg0_10:getConfig("config_data")
 end
 
-function var0.GetDailyCounts(arg0)
-	return arg0.data1_list
+function var0_0.GetDailyCounts(arg0_11)
+	return arg0_11.data1_list
 end
 
-function var0.AddDailyCount(arg0, arg1)
-	if not arg0:IsCountLimit(arg1) then
+function var0_0.AddDailyCount(arg0_12, arg1_12)
+	if not arg0_12:IsCountLimit(arg1_12) then
 		return
 	end
 
-	local var0 = arg0.enemyData[arg1]:GetFleetIdx()
+	local var0_12 = arg0_12.enemyData[arg1_12]:GetFleetIdx()
 
-	arg0:GetDailyCounts()[var0] = (arg0:GetDailyCounts()[var0] or 0) + 1
+	arg0_12:GetDailyCounts()[var0_12] = (arg0_12:GetDailyCounts()[var0_12] or 0) + 1
 end
 
-function var0.GetPassStages(arg0)
-	return arg0.data2_list
+function var0_0.GetPassStages(arg0_13)
+	return arg0_13.data2_list
 end
 
-function var0.AddPassStage(arg0, arg1)
-	if arg0:HasPassStage(arg1) then
+function var0_0.AddPassStage(arg0_14, arg1_14)
+	if arg0_14:HasPassStage(arg1_14) then
 		return
 	end
 
-	table.insert(arg0:GetPassStages(), arg1)
+	table.insert(arg0_14:GetPassStages(), arg1_14)
 end
 
-function var0.HasPassStage(arg0, arg1)
-	return table.contains(arg0:GetPassStages(), arg1)
+function var0_0.HasPassStage(arg0_15, arg1_15)
+	return table.contains(arg0_15:GetPassStages(), arg1_15)
 end
 
-function var0.IsUnlockByEnemyId(arg0, arg1)
-	if not arg0.enemyData[arg1] then
+function var0_0.IsUnlockByEnemyId(arg0_16, arg1_16)
+	if not arg0_16.enemyData[arg1_16] then
 		return false
 	end
 
-	local var0 = arg0.enemyData[arg1]:GetPreChapterId()
+	local var0_16 = arg0_16.enemyData[arg1_16]:GetPreChapterId()
 
-	return var0 == 0 or arg0:HasPassStage(arg0.enemyData[var0]:GetExpeditionId())
+	return var0_16 == 0 or arg0_16:HasPassStage(arg0_16.enemyData[var0_16]:GetExpeditionId())
 end
 
-function var0.IsCountLimit(arg0, arg1)
-	if not arg0.enemyData[arg1] then
+function var0_0.IsCountLimit(arg0_17, arg1_17)
+	if not arg0_17.enemyData[arg1_17] then
 		return false
 	end
 
-	return arg0.enemyData[arg1]:GetCount() > 0
+	return arg0_17.enemyData[arg1_17]:GetCount() > 0
 end
 
-function var0.GetCounts(arg0, arg1)
-	local var0 = arg0.enemyData[arg1]
+function var0_0.GetCounts(arg0_18, arg1_18)
+	local var0_18 = arg0_18.enemyData[arg1_18]
 
-	if not var0 then
+	if not var0_18 then
 		return
 	end
 
-	local var1 = var0:GetFleetIdx()
+	local var1_18 = var0_18:GetFleetIdx()
 
-	return var0:GetCount() - arg0:GetDailyCounts()[var1], var0:GetCount()
+	return var0_18:GetCount() - arg0_18:GetDailyCounts()[var1_18], var0_18:GetCount()
 end
 
-function var0.CheckEntranceByIdx(arg0, arg1)
-	local var0 = arg0:GetEnemyDataByFleetIdx(arg1)
+function var0_0.CheckEntranceByIdx(arg0_19, arg1_19)
+	local var0_19 = arg0_19:GetEnemyDataByFleetIdx(arg1_19)
 
-	if not var0 then
-		return false, "not exist enemy data, index: " .. arg1
+	if not var0_19 then
+		return false, "not exist enemy data, index: " .. arg1_19
 	end
 
-	if not var0:InTime() then
+	if not var0_19:InTime() then
 		return false, i18n("common_activity_end")
 	end
 
-	if not arg0:IsUnlockByEnemyId(var0.id) then
+	if not arg0_19:IsUnlockByEnemyId(var0_19.id) then
 		return false, i18n("adventure_unlock_tip")
 	end
 
 	return true
 end
 
-function var0.CheckCntByIdx(arg0, arg1)
-	local var0 = arg0:GetEnemyDataByFleetIdx(arg1)
+function var0_0.CheckCntByIdx(arg0_20, arg1_20)
+	local var0_20 = arg0_20:GetEnemyDataByFleetIdx(arg1_20)
 
-	if not var0 then
-		return false, "not exist enemy data, index: " .. arg1
+	if not var0_20 then
+		return false, "not exist enemy data, index: " .. arg1_20
 	end
 
-	if arg0:IsCountLimit(var0.id) and arg0:GetCounts(var0.id) <= 0 then
+	if arg0_20:IsCountLimit(var0_20.id) and arg0_20:GetCounts(var0_20.id) <= 0 then
 		return false, i18n("sp_no_quota")
 	end
 
 	return true
 end
 
-function var0.GetBuffIdsByStageId(arg0, arg1)
-	local var0 = getProxy(ActivityProxy):getActivityById(arg0:getConfig("config_id"))
+function var0_0.GetBuffIdsByStageId(arg0_21, arg1_21)
+	local var0_21 = getProxy(ActivityProxy):getActivityById(arg0_21:getConfig("config_id"))
 
-	if not var0 or var0:isEnd() then
+	if not var0_21 or var0_21:isEnd() then
 		return {}
 	end
 
-	if not arg0:GetEnemyDataByStageId(arg1):IsGuardianEffective() then
+	if not arg0_21:GetEnemyDataByStageId(arg1_21):IsGuardianEffective() then
 		return {}
 	end
 
-	return _.map(var0.data2_list, function(arg0)
-		return pg.guardian_template[arg0].buff
+	return _.map(var0_21.data2_list, function(arg0_22)
+		return pg.guardian_template[arg0_22].buff
 	end)
 end
 
-return var0
+return var0_0

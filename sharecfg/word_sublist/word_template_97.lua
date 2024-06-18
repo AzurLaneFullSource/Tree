@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_97 = {}
+var0_0.word_template_97 = {}
 
-local var1 = var0.word_template_97
+local var1_0 = var0_0.word_template_97
 
 function temp()
-	var1.肥 = {
+	var1_0.肥 = {
 		逼 = {
 			this = true
 		},
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.匪 = {
+	var1_0.匪 = {
 		警 = {
 			this = true
 		},
@@ -56,7 +56,7 @@ end
 temp()
 
 function temp()
-	var1.诽 = {
+	var1_0.诽 = {
 		谤 = {
 			大 = {
 				法 = {
@@ -70,7 +70,7 @@ end
 temp()
 
 function temp()
-	var1.废 = {
+	var1_0.废 = {
 		物 = {
 			this = true
 		},
@@ -105,7 +105,7 @@ end
 temp()
 
 function temp()
-	var1.費 = {
+	var1_0.費 = {
 		鴻 = {
 			泰 = {
 				this = true
@@ -122,7 +122,7 @@ end
 temp()
 
 function temp()
-	var1.芬 = {
+	var1_0.芬 = {
 		太 = {
 			尼 = {
 				this = true
@@ -134,7 +134,7 @@ end
 temp()
 
 function temp()
-	var1.粉 = {
+	var1_0.粉 = {
 		屄 = {
 			this = true
 		},

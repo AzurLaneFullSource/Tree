@@ -1,39 +1,39 @@
-﻿local var0 = class("AnniversaryIslandBuildingUpgrade2023WindowMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("AnniversaryIslandBuildingUpgrade2023WindowMediator", import("view.base.ContextMediator"))
 
-var0.ACTIVITY_OPERATION = "ACTIVITY_OPERATION"
+var0_0.ACTIVITY_OPERATION = "ACTIVITY_OPERATION"
 
-function var0.register(arg0)
-	arg0:bind(var0.ACTIVITY_OPERATION, function(arg0, arg1)
-		arg0:sendNotification(GAME.ACTIVITY_OPERATION, arg1)
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.ACTIVITY_OPERATION, function(arg0_2, arg1_2)
+		arg0_1:sendNotification(GAME.ACTIVITY_OPERATION, arg1_2)
 	end)
-	arg0:bind(WorkBenchItemDetailMediator.SHOW_DETAIL, function(arg0, arg1)
-		arg0:addSubLayers(Context.New({
+	arg0_1:bind(WorkBenchItemDetailMediator.SHOW_DETAIL, function(arg0_3, arg1_3)
+		arg0_1:addSubLayers(Context.New({
 			mediator = WorkBenchItemDetailMediator,
 			viewComponent = WorkBenchItemDetailLayer,
 			data = {
-				material = arg1
+				material = arg1_3
 			}
 		}))
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_4)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_5, arg1_5)
+	local var0_5 = arg1_5:getName()
+	local var1_5 = arg1_5:getBody()
 
-	if var0 == ActivityProxy.ACTIVITY_UPDATED and var1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
-		arg0.viewComponent:UpdateView()
+	if var0_5 == ActivityProxy.ACTIVITY_UPDATED and var1_5:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
+		arg0_5.viewComponent:UpdateView()
 	end
 end
 
-function var0.remove(arg0)
+function var0_0.remove(arg0_6)
 	return
 end
 
-return var0
+return var0_0

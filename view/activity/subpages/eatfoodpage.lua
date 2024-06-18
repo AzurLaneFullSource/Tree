@@ -1,98 +1,98 @@
-﻿local var0 = class("EatFoodPage", import("...base.BaseActivityPage"))
-local var1 = 35
-local var2 = 31
+﻿local var0_0 = class("EatFoodPage", import("...base.BaseActivityPage"))
+local var1_0 = 35
+local var2_0 = 31
 
-function var0.OnInit(arg0)
-	arg0.icons = {
-		arg0:findTF("AD/bg/npc1"),
-		arg0:findTF("AD/bg/npc2"),
-		arg0:findTF("AD/bg/npc3"),
-		arg0:findTF("AD/bg/npc4"),
-		arg0:findTF("AD/bg/npc5"),
-		arg0:findTF("AD/bg/npc6"),
-		arg0:findTF("AD/bg/npc7")
+function var0_0.OnInit(arg0_1)
+	arg0_1.icons = {
+		arg0_1:findTF("AD/bg/npc1"),
+		arg0_1:findTF("AD/bg/npc2"),
+		arg0_1:findTF("AD/bg/npc3"),
+		arg0_1:findTF("AD/bg/npc4"),
+		arg0_1:findTF("AD/bg/npc5"),
+		arg0_1:findTF("AD/bg/npc6"),
+		arg0_1:findTF("AD/bg/npc7")
 	}
-	arg0.locks = {
-		arg0:findTF("AD/bg/lock1"),
-		arg0:findTF("AD/bg/lock2"),
-		arg0:findTF("AD/bg/lock3"),
-		arg0:findTF("AD/bg/lock4"),
-		arg0:findTF("AD/bg/lock5"),
-		arg0:findTF("AD/bg/lock6"),
-		arg0:findTF("AD/bg/lock7")
+	arg0_1.locks = {
+		arg0_1:findTF("AD/bg/lock1"),
+		arg0_1:findTF("AD/bg/lock2"),
+		arg0_1:findTF("AD/bg/lock3"),
+		arg0_1:findTF("AD/bg/lock4"),
+		arg0_1:findTF("AD/bg/lock5"),
+		arg0_1:findTF("AD/bg/lock6"),
+		arg0_1:findTF("AD/bg/lock7")
 	}
-	arg0.helpBtn = arg0:findTF("AD/help")
-	arg0.goBtn = arg0:findTF("AD/go")
+	arg0_1.helpBtn = arg0_1:findTF("AD/help")
+	arg0_1.goBtn = arg0_1:findTF("AD/go")
 
-	local var0 = pg.mini_game_hub[var1].reward_display
-	local var1 = Drop.Create(var0)
-	local var2 = arg0:findTF("AD/btnFinalAward")
+	local var0_1 = pg.mini_game_hub[var1_0].reward_display
+	local var1_1 = Drop.Create(var0_1)
+	local var2_1 = arg0_1:findTF("AD/btnFinalAward")
 
-	onButton(arg0, var2, function()
-		arg0:emit(BaseUI.ON_DROP, var1)
+	onButton(arg0_1, var2_1, function()
+		arg0_1:emit(BaseUI.ON_DROP, var1_1)
 	end, SFX_PANEL)
 end
 
-function var0.SetData(arg0)
-	local var0 = getProxy(MiniGameProxy):GetHubByHubId(var1)
+function var0_0.SetData(arg0_3)
+	local var0_3 = getProxy(MiniGameProxy):GetHubByHubId(var1_0)
 
-	arg0.data = var0
-	arg0.ultimate = var0.ultimate
-	arg0.usedtime = var0.usedtime
-	arg0.count = var0.count
+	arg0_3.data = var0_3
+	arg0_3.ultimate = var0_3.ultimate
+	arg0_3.usedtime = var0_3.usedtime
+	arg0_3.count = var0_3.count
 end
 
-function var0.OnFirstFlush(arg0)
-	arg0:SetData()
-	onButton(arg0, arg0.goBtn, function()
-		pg.m02:sendNotification(GAME.GO_MINI_GAME, var2)
+function var0_0.OnFirstFlush(arg0_4)
+	arg0_4:SetData()
+	onButton(arg0_4, arg0_4.goBtn, function()
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, var2_0)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_4, arg0_4.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.eatgame_tips.tip
 		})
 	end, SFX_PANEL)
-	arg0:UpdateSigned()
-	arg0:CheckGet()
+	arg0_4:UpdateSigned()
+	arg0_4:CheckGet()
 end
 
-function var0.UpdateSigned(arg0)
-	local var0 = arg0.data:getConfig("reward_need")
-	local var1 = arg0.usedtime
-	local var2
+function var0_0.UpdateSigned(arg0_7)
+	local var0_7 = arg0_7.data:getConfig("reward_need")
+	local var1_7 = arg0_7.usedtime
+	local var2_7
 
-	var2 = arg0.ultimate == 0
+	var2_7 = arg0_7.ultimate == 0
 
-	local var3 = var1 + arg0.count
+	local var3_7 = var1_7 + arg0_7.count
 
-	for iter0, iter1 in ipairs(arg0.icons) do
-		local var4 = iter0 <= var1
-		local var5 = iter0 <= var3
+	for iter0_7, iter1_7 in ipairs(arg0_7.icons) do
+		local var4_7 = iter0_7 <= var1_7
+		local var5_7 = iter0_7 <= var3_7
 
-		setActive(arg0.icons[iter0], false)
-		setActive(arg0.locks[iter0], false)
+		setActive(arg0_7.icons[iter0_7], false)
+		setActive(arg0_7.locks[iter0_7], false)
 
-		if var4 then
-			setActive(arg0.icons[iter0], var4)
-		elseif not var5 then
-			setActive(arg0.locks[iter0], not var5)
+		if var4_7 then
+			setActive(arg0_7.icons[iter0_7], var4_7)
+		elseif not var5_7 then
+			setActive(arg0_7.locks[iter0_7], not var5_7)
 		end
 	end
 end
 
-function var0.CheckGet(arg0)
-	if arg0.ultimate == 0 then
-		if arg0.data:getConfig("reward_need") > arg0.usedtime then
+function var0_0.CheckGet(arg0_8)
+	if arg0_8.ultimate == 0 then
+		if arg0_8.data:getConfig("reward_need") > arg0_8.usedtime then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = var1,
+			hubid = var1_0,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
 	end
 end
 
-return var0
+return var0_0

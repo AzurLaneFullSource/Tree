@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Commander, welcome to Azur Lane! Let’s report to boot camp, now!"
 }
 
@@ -12,7 +12,7 @@ return {
 				mode = 1,
 				posY = 172,
 				posX = -337,
-				text = var0[1]
+				text = var0_0[1]
 			}
 		},
 		{

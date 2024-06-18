@@ -1,150 +1,150 @@
-﻿local var0 = class("NewNavalTacticsUnlockSlotPage", import("....base.BaseSubView"))
+﻿local var0_0 = class("NewNavalTacticsUnlockSlotPage", import("....base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "NewNavalTacticsUnlockSlotPage"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.contentTxt = arg0:findTF("content/Text"):GetComponent(typeof(Text))
-	arg0.discountDateTxt = arg0:findTF("content/discountDate"):GetComponent(typeof(Text))
-	arg0.discountTxt = arg0:findTF("content/discountInfo/Text"):GetComponent(typeof(Text))
-	arg0.confirmBtn = arg0:findTF("content/confirm_btn")
-	arg0.cancelBtn = arg0:findTF("content/cancel_btn")
-	arg0.closeBtn = arg0:findTF("content/btnBack")
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.contentTxt = arg0_2:findTF("content/Text"):GetComponent(typeof(Text))
+	arg0_2.discountDateTxt = arg0_2:findTF("content/discountDate"):GetComponent(typeof(Text))
+	arg0_2.discountTxt = arg0_2:findTF("content/discountInfo/Text"):GetComponent(typeof(Text))
+	arg0_2.confirmBtn = arg0_2:findTF("content/confirm_btn")
+	arg0_2.cancelBtn = arg0_2:findTF("content/cancel_btn")
+	arg0_2.closeBtn = arg0_2:findTF("content/btnBack")
 
-	setText(arg0.confirmBtn:Find("pic"), i18n("word_ok"))
-	setText(arg0.cancelBtn:Find("pic"), i18n("word_cancel"))
+	setText(arg0_2.confirmBtn:Find("pic"), i18n("word_ok"))
+	setText(arg0_2.cancelBtn:Find("pic"), i18n("word_cancel"))
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0.confirmBtn, function()
-		if arg0.callback then
-			arg0.callback()
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3.confirmBtn, function()
+		if arg0_3.callback then
+			arg0_3.callback()
 		end
 
-		arg0:Hide()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.cancelBtn, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3.cancelBtn, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.closeBtn, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3.closeBtn, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
 end
 
-function var0.Show(arg0, arg1, arg2)
-	var0.super.Show(arg0)
+function var0_0.Show(arg0_8, arg1_8, arg2_8)
+	var0_0.super.Show(arg0_8)
 
-	arg0.callback = arg2
+	arg0_8.callback = arg2_8
 
-	local var0 = CommonCommodity.New({
-		id = arg1
+	local var0_8 = CommonCommodity.New({
+		id = arg1_8
 	}, Goods.TYPE_SHOPSTREET)
 
-	arg0:Flush(var0)
+	arg0_8:Flush(var0_8)
 
-	arg0.commodity = var0
+	arg0_8.commodity = var0_8
 end
 
-function var0.Flush(arg0, arg1)
-	arg0:RemoveTimer()
+function var0_0.Flush(arg0_9, arg1_9)
+	arg0_9:RemoveTimer()
 
-	local var0 = arg1:isDisCount()
+	local var0_9 = arg1_9:isDisCount()
 
-	if var0 then
-		arg0:UpdateDiscountView(arg1)
+	if var0_9 then
+		arg0_9:UpdateDiscountView(arg1_9)
 	else
-		local var1 = arg1:GetPrice()
+		local var1_9 = arg1_9:GetPrice()
 
-		arg0.contentTxt.text = i18n("open_skill_pos", var1)
+		arg0_9.contentTxt.text = i18n("open_skill_pos", var1_9)
 	end
 
-	setActive(arg0.discountDateTxt.gameObject, var0)
-	setActive(arg0.discountTxt.gameObject.transform.parent, var0)
+	setActive(arg0_9.discountDateTxt.gameObject, var0_9)
+	setActive(arg0_9.discountTxt.gameObject.transform.parent, var0_9)
 end
 
-function var0.UpdateDiscountView(arg0, arg1)
-	local var0, var1 = arg1:GetPrice()
-	local var2 = arg1:GetDiscountEndTime()
+function var0_0.UpdateDiscountView(arg0_10, arg1_10)
+	local var0_10, var1_10 = arg1_10:GetPrice()
+	local var2_10 = arg1_10:GetDiscountEndTime()
 
-	arg0:AddTimer(var2)
+	arg0_10:AddTimer(var2_10)
 
-	arg0.discountTxt.text = var1 .. "%"
+	arg0_10.discountTxt.text = var1_10 .. "%"
 
-	local var3 = arg1:getConfig("resource_num")
+	local var3_10 = arg1_10:getConfig("resource_num")
 
-	arg0.contentTxt.text = i18n("open_skill_pos_discount", var3, var0)
+	arg0_10.contentTxt.text = i18n("open_skill_pos_discount", var3_10, var0_10)
 
 	onNextTick(function()
-		local var0 = arg0.contentTxt.gameObject.transform
-		local var1 = var0:GetChild(var0.childCount - 1)
+		local var0_11 = arg0_10.contentTxt.gameObject.transform
+		local var1_11 = var0_11:GetChild(var0_11.childCount - 1)
 
-		if not IsNil(var1) then
-			setAnchoredPosition(var1, {
-				y = var1.anchoredPosition.y + 15
+		if not IsNil(var1_11) then
+			setAnchoredPosition(var1_11, {
+				y = var1_11.anchoredPosition.y + 15
 			})
 		end
 	end)
 end
 
-function var0.AddTimer(arg0, arg1)
-	arg0.timer = Timer.New(function()
-		local var0 = pg.TimeMgr.GetInstance():GetServerTime()
-		local var1 = arg1 - var0
+function var0_0.AddTimer(arg0_12, arg1_12)
+	arg0_12.timer = Timer.New(function()
+		local var0_13 = pg.TimeMgr.GetInstance():GetServerTime()
+		local var1_13 = arg1_12 - var0_13
 
-		if var1 <= 0 then
-			arg0.discountDateTxt.text = ""
+		if var1_13 <= 0 then
+			arg0_12.discountDateTxt.text = ""
 
-			arg0:Flush(arg0.commodity)
+			arg0_12:Flush(arg0_12.commodity)
 		else
-			local var2 = i18n("discount_time", arg0:WarpDateTip(var1) .. i18n("word_date"))
+			local var2_13 = i18n("discount_time", arg0_12:WarpDateTip(var1_13) .. i18n("word_date"))
 
-			if var2 ~= arg0.str then
-				arg0.discountDateTxt.text = var2
-				arg0.str = var2
+			if var2_13 ~= arg0_12.str then
+				arg0_12.discountDateTxt.text = var2_13
+				arg0_12.str = var2_13
 			end
 		end
 	end, 1, -1)
 
-	arg0.timer:Start()
-	arg0.timer.func()
+	arg0_12.timer:Start()
+	arg0_12.timer.func()
 end
 
-function var0.WarpDateTip(arg0, arg1)
-	local var0 = ""
+function var0_0.WarpDateTip(arg0_14, arg1_14)
+	local var0_14 = ""
 
-	if arg1 >= 86400 then
-		var0 = math.floor(arg1 / 86400)
-	elseif arg1 >= 3600 then
-		var0 = math.floor(arg1 / 3600)
+	if arg1_14 >= 86400 then
+		var0_14 = math.floor(arg1_14 / 86400)
+	elseif arg1_14 >= 3600 then
+		var0_14 = math.floor(arg1_14 / 3600)
 	else
-		var0 = math.floor(arg1 / 60)
+		var0_14 = math.floor(arg1_14 / 60)
 	end
 
-	return var0
+	return var0_14
 end
 
-function var0.RemoveTimer(arg0)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var0_0.RemoveTimer(arg0_15)
+	if arg0_15.timer then
+		arg0_15.timer:Stop()
 
-		arg0.timer = nil
+		arg0_15.timer = nil
 	end
 end
 
-function var0.Hide(arg0)
-	arg0:RemoveTimer()
-	var0.super.Hide(arg0)
+function var0_0.Hide(arg0_16)
+	arg0_16:RemoveTimer()
+	var0_0.super.Hide(arg0_16)
 
-	arg0.callback = nil
-	arg0.commodity = nil
+	arg0_16.callback = nil
+	arg0_16.commodity = nil
 end
 
-function var0.OnDestroy(arg0)
-	arg0:Hide()
+function var0_0.OnDestroy(arg0_17)
+	arg0_17:Hide()
 end
 
-return var0
+return var0_0

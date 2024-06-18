@@ -1,191 +1,191 @@
-﻿local var0 = _G
-local var1 = require("string")
-local var2 = require("math")
-local var3 = require("socket.core")
-local var4 = var3
+﻿local var0_0 = _G
+local var1_0 = require("string")
+local var2_0 = require("math")
+local var3_0 = require("socket.core")
+local var4_0 = var3_0
 
-function var4.connect4(arg0, arg1, arg2, arg3)
-	return var3.connect(arg0, arg1, arg2, arg3, "inet")
+function var4_0.connect4(arg0_1, arg1_1, arg2_1, arg3_1)
+	return var3_0.connect(arg0_1, arg1_1, arg2_1, arg3_1, "inet")
 end
 
-function var4.connect6(arg0, arg1, arg2, arg3)
-	return var3.connect(arg0, arg1, arg2, arg3, "inet6")
+function var4_0.connect6(arg0_2, arg1_2, arg2_2, arg3_2)
+	return var3_0.connect(arg0_2, arg1_2, arg2_2, arg3_2, "inet6")
 end
 
-function var4.bind(arg0, arg1, arg2)
-	if arg0 == "*" then
-		arg0 = "0.0.0.0"
+function var4_0.bind(arg0_3, arg1_3, arg2_3)
+	if arg0_3 == "*" then
+		arg0_3 = "0.0.0.0"
 	end
 
-	local var0, var1 = var3.dns.getaddrinfo(arg0)
+	local var0_3, var1_3 = var3_0.dns.getaddrinfo(arg0_3)
 
-	if not var0 then
-		return nil, var1
+	if not var0_3 then
+		return nil, var1_3
 	end
 
-	local var2
-	local var3
-	local var4 = "no info on address"
+	local var2_3
+	local var3_3
+	local var4_3 = "no info on address"
 
-	for iter0, iter1 in var0.ipairs(var0) do
-		if iter1.family == "inet" then
-			var2, var4 = var3.tcp4()
+	for iter0_3, iter1_3 in var0_0.ipairs(var0_3) do
+		if iter1_3.family == "inet" then
+			var2_3, var4_3 = var3_0.tcp4()
 		else
-			var2, var4 = var3.tcp6()
+			var2_3, var4_3 = var3_0.tcp6()
 		end
 
-		if not var2 then
-			return nil, var4
+		if not var2_3 then
+			return nil, var4_3
 		end
 
-		var2:setoption("reuseaddr", true)
+		var2_3:setoption("reuseaddr", true)
 
-		local var5, var6 = var2:bind(iter1.addr, arg1)
+		local var5_3, var6_3 = var2_3:bind(iter1_3.addr, arg1_3)
 
-		var4 = var6
+		var4_3 = var6_3
 
-		if not var5 then
-			var2:close()
+		if not var5_3 then
+			var2_3:close()
 		else
-			local var7, var8 = var2:listen(arg2)
+			local var7_3, var8_3 = var2_3:listen(arg2_3)
 
-			var4 = var8
+			var4_3 = var8_3
 
-			if not var7 then
-				var2:close()
+			if not var7_3 then
+				var2_3:close()
 			else
-				return var2
+				return var2_3
 			end
 		end
 	end
 
-	return nil, var4
+	return nil, var4_3
 end
 
-var4.try = var4.newtry()
+var4_0.try = var4_0.newtry()
 
-function var4.choose(arg0)
-	return function(arg0, arg1, arg2)
-		if var0.type(arg0) ~= "string" then
-			arg0, arg1, arg2 = "default", arg0, arg1
+function var4_0.choose(arg0_4)
+	return function(arg0_5, arg1_5, arg2_5)
+		if var0_0.type(arg0_5) ~= "string" then
+			arg0_5, arg1_5, arg2_5 = "default", arg0_5, arg1_5
 		end
 
-		local var0 = arg0[arg0 or "nil"]
+		local var0_5 = arg0_4[arg0_5 or "nil"]
 
-		if not var0 then
-			var0.error("unknown key (" .. var0.tostring(arg0) .. ")", 3)
+		if not var0_5 then
+			var0_0.error("unknown key (" .. var0_0.tostring(arg0_5) .. ")", 3)
 		else
-			return var0(arg1, arg2)
+			return var0_5(arg1_5, arg2_5)
 		end
 	end
 end
 
-local var5 = {}
-local var6 = {}
+local var5_0 = {}
+local var6_0 = {}
 
-var4.sourcet = var5
-var4.sinkt = var6
-var4.BLOCKSIZE = 2048
-var6["close-when-done"] = function(arg0)
-	return var0.setmetatable({
+var4_0.sourcet = var5_0
+var4_0.sinkt = var6_0
+var4_0.BLOCKSIZE = 2048
+var6_0["close-when-done"] = function(arg0_6)
+	return var0_0.setmetatable({
 		getfd = function()
-			return arg0:getfd()
+			return arg0_6:getfd()
 		end,
 		dirty = function()
-			return arg0:dirty()
+			return arg0_6:dirty()
 		end
 	}, {
-		__call = function(arg0, arg1, arg2)
-			if not arg1 then
-				arg0:close()
+		__call = function(arg0_9, arg1_9, arg2_9)
+			if not arg1_9 then
+				arg0_6:close()
 
 				return 1
 			else
-				return arg0:send(arg1)
+				return arg0_6:send(arg1_9)
 			end
 		end
 	})
 end
-var6["keep-open"] = function(arg0)
-	return var0.setmetatable({
+var6_0["keep-open"] = function(arg0_10)
+	return var0_0.setmetatable({
 		getfd = function()
-			return arg0:getfd()
+			return arg0_10:getfd()
 		end,
 		dirty = function()
-			return arg0:dirty()
+			return arg0_10:dirty()
 		end
 	}, {
-		__call = function(arg0, arg1, arg2)
-			if arg1 then
-				return arg0:send(arg1)
+		__call = function(arg0_13, arg1_13, arg2_13)
+			if arg1_13 then
+				return arg0_10:send(arg1_13)
 			else
 				return 1
 			end
 		end
 	})
 end
-var6.default = var6["keep-open"]
-var4.sink = var4.choose(var6)
-var5["by-length"] = function(arg0, arg1)
-	return var0.setmetatable({
+var6_0.default = var6_0["keep-open"]
+var4_0.sink = var4_0.choose(var6_0)
+var5_0["by-length"] = function(arg0_14, arg1_14)
+	return var0_0.setmetatable({
 		getfd = function()
-			return arg0:getfd()
+			return arg0_14:getfd()
 		end,
 		dirty = function()
-			return arg0:dirty()
+			return arg0_14:dirty()
 		end
 	}, {
 		__call = function()
-			if arg1 <= 0 then
+			if arg1_14 <= 0 then
 				return nil
 			end
 
-			local var0 = var2.min(var3.BLOCKSIZE, arg1)
-			local var1, var2 = arg0:receive(var0)
+			local var0_17 = var2_0.min(var3_0.BLOCKSIZE, arg1_14)
+			local var1_17, var2_17 = arg0_14:receive(var0_17)
 
-			if var2 then
-				return nil, var2
+			if var2_17 then
+				return nil, var2_17
 			end
 
-			arg1 = arg1 - var1.len(var1)
+			arg1_14 = arg1_14 - var1_0.len(var1_17)
 
-			return var1
+			return var1_17
 		end
 	})
 end
-var5["until-closed"] = function(arg0)
-	local var0
+var5_0["until-closed"] = function(arg0_18)
+	local var0_18
 
-	return var0.setmetatable({
+	return var0_0.setmetatable({
 		getfd = function()
-			return arg0:getfd()
+			return arg0_18:getfd()
 		end,
 		dirty = function()
-			return arg0:dirty()
+			return arg0_18:dirty()
 		end
 	}, {
 		__call = function()
-			if var0 then
+			if var0_18 then
 				return nil
 			end
 
-			local var0, var1, var2 = arg0:receive(var3.BLOCKSIZE)
+			local var0_21, var1_21, var2_21 = arg0_18:receive(var3_0.BLOCKSIZE)
 
-			if not var1 then
-				return var0
-			elseif var1 == "closed" then
-				arg0:close()
+			if not var1_21 then
+				return var0_21
+			elseif var1_21 == "closed" then
+				arg0_18:close()
 
-				var0 = 1
+				var0_18 = 1
 
-				return var2
+				return var2_21
 			else
-				return nil, var1
+				return nil, var1_21
 			end
 		end
 	})
 end
-var5.default = var5["until-closed"]
-var4.source = var4.choose(var5)
+var5_0.default = var5_0["until-closed"]
+var4_0.source = var4_0.choose(var5_0)
 
-return var4
+return var4_0

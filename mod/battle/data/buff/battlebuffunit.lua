@@ -1,13 +1,13 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleBuffEvent
-local var2 = var0.Battle.BattleConst.BuffEffectType
-local var3 = class("BattleBuffUnit")
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleBuffEvent
+local var2_0 = var0_0.Battle.BattleConst.BuffEffectType
+local var3_0 = class("BattleBuffUnit")
 
-var0.Battle.BattleBuffUnit = var3
-var3.__name = "BattleBuffUnit"
-var3.DEFAULT_ANI_FX_CONFIG = {
+var0_0.Battle.BattleBuffUnit = var3_0
+var3_0.__name = "BattleBuffUnit"
+var3_0.DEFAULT_ANI_FX_CONFIG = {
 	effect = "jineng",
 	offset = {
 		0,
@@ -16,200 +16,200 @@ var3.DEFAULT_ANI_FX_CONFIG = {
 	}
 }
 
-function var3.Ctor(arg0, arg1, arg2, arg3)
-	arg2 = arg2 or 1
-	arg0._id = arg1
+function var3_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	arg2_1 = arg2_1 or 1
+	arg0_1._id = arg1_1
 
-	arg0:SetTemplate(arg1, arg2)
+	arg0_1:SetTemplate(arg1_1, arg2_1)
 
-	arg0._time = arg0._tempData.time
-	arg0._RemoveTime = 0
-	arg0._effectList = {}
-	arg0._triggerSearchTable = {}
-	arg0._level = arg2
-	arg0._caster = arg3
+	arg0_1._time = arg0_1._tempData.time
+	arg0_1._RemoveTime = 0
+	arg0_1._effectList = {}
+	arg0_1._triggerSearchTable = {}
+	arg0_1._level = arg2_1
+	arg0_1._caster = arg3_1
 
-	for iter0, iter1 in ipairs(arg0._tempData.effect_list) do
-		local var0 = var0.Battle[iter1.type].New(iter1)
+	for iter0_1, iter1_1 in ipairs(arg0_1._tempData.effect_list) do
+		local var0_1 = var0_0.Battle[iter1_1.type].New(iter1_1)
 
-		arg0._effectList[iter0] = var0
+		arg0_1._effectList[iter0_1] = var0_1
 
-		local var1 = iter1.trigger
+		local var1_1 = iter1_1.trigger
 
-		for iter2, iter3 in ipairs(var1) do
-			local var2 = arg0._triggerSearchTable[iter3]
+		for iter2_1, iter3_1 in ipairs(var1_1) do
+			local var2_1 = arg0_1._triggerSearchTable[iter3_1]
 
-			if var2 == nil then
-				var2 = {}
-				arg0._triggerSearchTable[iter3] = var2
+			if var2_1 == nil then
+				var2_1 = {}
+				arg0_1._triggerSearchTable[iter3_1] = var2_1
 			end
 
-			var2[#var2 + 1] = var0
+			var2_1[#var2_1 + 1] = var0_1
 		end
 	end
 end
 
-function var3.SetTemplate(arg0, arg1, arg2)
-	arg0._tempData = var0.Battle.BattleDataFunction.GetBuffTemplate(arg1, arg2)
+function var3_0.SetTemplate(arg0_2, arg1_2, arg2_2)
+	arg0_2._tempData = var0_0.Battle.BattleDataFunction.GetBuffTemplate(arg1_2, arg2_2)
 end
 
-function var3.Attach(arg0, arg1)
-	arg0._owner = arg1
-	arg0._stack = 1
+function var3_0.Attach(arg0_3, arg1_3)
+	arg0_3._owner = arg1_3
+	arg0_3._stack = 1
 
-	arg0:SetArgs(arg1)
-	arg0:onTrigger(var2.ON_ATTACH, arg1)
-	arg0:SetRemoveTime()
+	arg0_3:SetArgs(arg1_3)
+	arg0_3:onTrigger(var2_0.ON_ATTACH, arg1_3)
+	arg0_3:SetRemoveTime()
 end
 
-function var3.Stack(arg0, arg1)
-	arg0._stack = math.min(arg0._stack + 1, arg0._tempData.stack)
+function var3_0.Stack(arg0_4, arg1_4)
+	arg0_4._stack = math.min(arg0_4._stack + 1, arg0_4._tempData.stack)
 
-	arg0:onTrigger(var2.ON_STACK, arg1)
-	arg0:SetRemoveTime()
+	arg0_4:onTrigger(var2_0.ON_STACK, arg1_4)
+	arg0_4:SetRemoveTime()
 end
 
-function var3.SetOrb(arg0, arg1, arg2)
-	for iter0, iter1 in ipairs(arg0._effectList) do
-		iter1:SetOrb(arg0, arg1, arg2)
+function var3_0.SetOrb(arg0_5, arg1_5, arg2_5)
+	for iter0_5, iter1_5 in ipairs(arg0_5._effectList) do
+		iter1_5:SetOrb(arg0_5, arg1_5, arg2_5)
 	end
 end
 
-function var3.SetOrbDuration(arg0, arg1)
-	arg0._time = arg1 + arg0._time
+function var3_0.SetOrbDuration(arg0_6, arg1_6)
+	arg0_6._time = arg1_6 + arg0_6._time
 end
 
-function var3.SetOrbLevel(arg0, arg1)
-	arg0._level = arg1
+function var3_0.SetOrbLevel(arg0_7, arg1_7)
+	arg0_7._level = arg1_7
 end
 
-function var3.SetCommander(arg0, arg1)
-	arg0._commander = arg1
+function var3_0.SetCommander(arg0_8, arg1_8)
+	arg0_8._commander = arg1_8
 
-	for iter0, iter1 in ipairs(arg0._effectList) do
-		iter1:SetCommander(arg1)
+	for iter0_8, iter1_8 in ipairs(arg0_8._effectList) do
+		iter1_8:SetCommander(arg1_8)
 	end
 end
 
-function var3.GetEffectList(arg0)
-	return arg0._effectList
+function var3_0.GetEffectList(arg0_9)
+	return arg0_9._effectList
 end
 
-function var3.GetCommander(arg0)
-	return arg0._commander
+function var3_0.GetCommander(arg0_10)
+	return arg0_10._commander
 end
 
-function var3.UpdateStack(arg0, arg1, arg2)
-	if arg0._stack == arg2 then
+function var3_0.UpdateStack(arg0_11, arg1_11, arg2_11)
+	if arg0_11._stack == arg2_11 then
 		return
 	end
 
-	arg0._stack = math.min(arg2, arg0._tempData.stack)
+	arg0_11._stack = math.min(arg2_11, arg0_11._tempData.stack)
 
-	arg0:onTrigger(var2.ON_STACK, arg1)
-	arg0:SetRemoveTime()
+	arg0_11:onTrigger(var2_0.ON_STACK, arg1_11)
+	arg0_11:SetRemoveTime()
 
-	local var0 = {
-		unit_id = arg1:GetUniqueID(),
-		buff_id = arg0._id,
-		stack_count = arg0._stack
+	local var0_11 = {
+		unit_id = arg1_11:GetUniqueID(),
+		buff_id = arg0_11._id,
+		stack_count = arg0_11._stack
 	}
 
-	arg1:DispatchEvent(var0.Event.New(var1.BUFF_STACK, var0))
+	arg1_11:DispatchEvent(var0_0.Event.New(var1_0.BUFF_STACK, var0_11))
 end
 
-function var3.Remove(arg0, arg1)
-	local var0 = arg0._owner
-	local var1 = arg0._id
-	local var2 = {
-		unit_id = var0:GetUniqueID(),
-		buff_id = var1
+function var3_0.Remove(arg0_12, arg1_12)
+	local var0_12 = arg0_12._owner
+	local var1_12 = arg0_12._id
+	local var2_12 = {
+		unit_id = var0_12:GetUniqueID(),
+		buff_id = var1_12
 	}
 
-	var0:DispatchEvent(var0.Event.New(var1.BUFF_REMOVE, var2))
-	arg0:onTrigger(var2.ON_REMOVE, var0)
-	arg0:Clear()
+	var0_12:DispatchEvent(var0_0.Event.New(var1_0.BUFF_REMOVE, var2_12))
+	arg0_12:onTrigger(var2_0.ON_REMOVE, var0_12)
+	arg0_12:Clear()
 
-	var0:GetBuffList()[var1] = nil
+	var0_12:GetBuffList()[var1_12] = nil
 end
 
-function var3.Update(arg0, arg1, arg2)
-	if arg0:IsTimeToRemove(arg2) then
-		arg0:Remove(arg2)
+function var3_0.Update(arg0_13, arg1_13, arg2_13)
+	if arg0_13:IsTimeToRemove(arg2_13) then
+		arg0_13:Remove(arg2_13)
 	else
-		arg0:onTrigger(var2.ON_UPDATE, arg1, {
-			timeStamp = arg2
+		arg0_13:onTrigger(var2_0.ON_UPDATE, arg1_13, {
+			timeStamp = arg2_13
 		})
 	end
 end
 
-function var3.SetArgs(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0._effectList) do
-		iter1:SetCaster(arg0._caster)
-		iter1:SetArgs(arg1, arg0)
+function var3_0.SetArgs(arg0_14, arg1_14)
+	for iter0_14, iter1_14 in ipairs(arg0_14._effectList) do
+		iter1_14:SetCaster(arg0_14._caster)
+		iter1_14:SetArgs(arg1_14, arg0_14)
 	end
 end
 
-function var3.Trigger(arg0, arg1, arg2)
-	local var0 = arg0:GetBuffList() or {}
-	local var1 = {}
+function var3_0.Trigger(arg0_15, arg1_15, arg2_15)
+	local var0_15 = arg0_15:GetBuffList() or {}
+	local var1_15 = {}
 
-	for iter0, iter1 in pairs(var0) do
-		local var2 = iter1._triggerSearchTable[arg1]
+	for iter0_15, iter1_15 in pairs(var0_15) do
+		local var2_15 = iter1_15._triggerSearchTable[arg1_15]
 
-		if var2 ~= nil and #var2 > 0 then
-			var1[#var1 + 1] = iter1
+		if var2_15 ~= nil and #var2_15 > 0 then
+			var1_15[#var1_15 + 1] = iter1_15
 		end
 	end
 
-	for iter2, iter3 in ipairs(var1) do
-		iter3:onTrigger(arg1, arg0, arg2)
+	for iter2_15, iter3_15 in ipairs(var1_15) do
+		iter3_15:onTrigger(arg1_15, arg0_15, arg2_15)
 	end
 end
 
-function var3.DisptachSkillFloat(arg0, arg1, arg2, arg3)
-	if arg3.trigger == nil or table.contains(arg3.trigger, arg2) then
-		local var0
+function var3_0.DisptachSkillFloat(arg0_16, arg1_16, arg2_16, arg3_16)
+	if arg3_16.trigger == nil or table.contains(arg3_16.trigger, arg2_16) then
+		local var0_16
 
-		if arg3.painting and type(arg3.painting) == "string" then
-			var0 = arg3
+		if arg3_16.painting and type(arg3_16.painting) == "string" then
+			var0_16 = arg3_16
 		end
 
-		local var1 = getSkillName(arg3.displayID or arg0._id)
+		local var1_16 = getSkillName(arg3_16.displayID or arg0_16._id)
 
-		arg1:DispatchSkillFloat(var1, nil, var0)
+		arg1_16:DispatchSkillFloat(var1_16, nil, var0_16)
 
-		local var2
+		local var2_16
 
-		if arg3.castCV ~= false then
-			var2 = arg3.castCV or "skill"
+		if arg3_16.castCV ~= false then
+			var2_16 = arg3_16.castCV or "skill"
 		end
 
-		local var3 = type(var2)
+		local var3_16 = type(var2_16)
 
-		if var3 == "string" then
-			arg1:DispatchVoice(var2)
-		elseif var3 == "table" then
-			local var4, var5, var6 = ShipWordHelper.GetWordAndCV(var2.skinID, var2.key)
+		if var3_16 == "string" then
+			arg1_16:DispatchVoice(var2_16)
+		elseif var3_16 == "table" then
+			local var4_16, var5_16, var6_16 = ShipWordHelper.GetWordAndCV(var2_16.skinID, var2_16.key)
 
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var5)
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var5_16)
 		end
 
-		local var7 = arg3.aniEffect or var3.DEFAULT_ANI_FX_CONFIG
-		local var8 = {
-			effect = var7.effect,
-			offset = var7.offset
+		local var7_16 = arg3_16.aniEffect or var3_0.DEFAULT_ANI_FX_CONFIG
+		local var8_16 = {
+			effect = var7_16.effect,
+			offset = var7_16.offset
 		}
 
-		arg1:DispatchEvent(var0.Event.New(var0.Battle.BattleUnitEvent.ADD_EFFECT, var8))
+		arg1_16:DispatchEvent(var0_0.Event.New(var0_0.Battle.BattleUnitEvent.ADD_EFFECT, var8_16))
 	end
 end
 
-function var3.IsSubmarineSpecial(arg0)
-	local var0 = arg0._triggerSearchTable[var0.Battle.BattleConst.BuffEffectType.ON_SUBMARINE_FREE_SPECIAL] or {}
+function var3_0.IsSubmarineSpecial(arg0_17)
+	local var0_17 = arg0_17._triggerSearchTable[var0_0.Battle.BattleConst.BuffEffectType.ON_SUBMARINE_FREE_SPECIAL] or {}
 
-	for iter0, iter1 in ipairs(var0) do
-		if iter1:HaveQuota() then
+	for iter0_17, iter1_17 in ipairs(var0_17) do
+		if iter1_17:HaveQuota() then
 			return true
 		end
 	end
@@ -217,112 +217,112 @@ function var3.IsSubmarineSpecial(arg0)
 	return false
 end
 
-function var3.onTrigger(arg0, arg1, arg2, arg3)
-	local var0 = arg0._triggerSearchTable[arg1]
+function var3_0.onTrigger(arg0_18, arg1_18, arg2_18, arg3_18)
+	local var0_18 = arg0_18._triggerSearchTable[arg1_18]
 
-	if var0 == nil or #var0 == 0 then
+	if var0_18 == nil or #var0_18 == 0 then
 		return
 	end
 
-	for iter0, iter1 in ipairs(var0) do
-		assert(type(iter1[arg1]) == "function", "buff效果的触发名字和触发函数不相符,buff id:>>" .. arg0._id .. "<<, trigger:>>" .. arg1 .. "<<")
+	for iter0_18, iter1_18 in ipairs(var0_18) do
+		assert(type(iter1_18[arg1_18]) == "function", "buff效果的触发名字和触发函数不相符,buff id:>>" .. arg0_18._id .. "<<, trigger:>>" .. arg1_18 .. "<<")
 
-		if iter1:HaveQuota() and iter1:IsActive() then
-			iter1:NotActive()
-			iter1:Trigger(arg1, arg2, arg0, arg3)
+		if iter1_18:HaveQuota() and iter1_18:IsActive() then
+			iter1_18:NotActive()
+			iter1_18:Trigger(arg1_18, arg2_18, arg0_18, arg3_18)
 
-			local var1 = iter1:GetPopConfig()
+			local var1_18 = iter1_18:GetPopConfig()
 
-			if var1 then
-				arg0:DisptachSkillFloat(arg2, arg1, var1)
+			if var1_18 then
+				arg0_18:DisptachSkillFloat(arg2_18, arg1_18, var1_18)
 			end
 
-			iter1:SetActive()
+			iter1_18:SetActive()
 		end
 
-		if arg0._isCancel then
+		if arg0_18._isCancel then
 			break
 		end
 	end
 
-	if arg0._isCancel then
-		arg0._isCancel = nil
+	if arg0_18._isCancel then
+		arg0_18._isCancel = nil
 
-		arg0:Remove()
+		arg0_18:Remove()
 	end
 end
 
-function var3.SetRemoveTime(arg0)
-	local var0 = pg.TimeMgr.GetInstance():GetCombatTime()
+function var3_0.SetRemoveTime(arg0_19)
+	local var0_19 = pg.TimeMgr.GetInstance():GetCombatTime()
 
-	arg0._buffStartTimeStamp = var0
-	arg0._RemoveTime = var0 + arg0._time
-	arg0._cancelTime = nil
+	arg0_19._buffStartTimeStamp = var0_19
+	arg0_19._RemoveTime = var0_19 + arg0_19._time
+	arg0_19._cancelTime = nil
 end
 
-function var3.IsTimeToRemove(arg0, arg1)
-	if arg0._isCancel then
+function var3_0.IsTimeToRemove(arg0_20, arg1_20)
+	if arg0_20._isCancel then
 		return true
-	elseif arg0._cancelTime and arg1 >= arg0._cancelTime then
+	elseif arg0_20._cancelTime and arg1_20 >= arg0_20._cancelTime then
 		return true
-	elseif arg0._time == 0 then
+	elseif arg0_20._time == 0 then
 		return false
 	else
-		return arg1 >= arg0._RemoveTime
+		return arg1_20 >= arg0_20._RemoveTime
 	end
 end
 
-function var3.GetBuffLifeTime(arg0)
-	return arg0._time
+function var3_0.GetBuffLifeTime(arg0_21)
+	return arg0_21._time
 end
 
-function var3.GetBuffStartTime(arg0)
-	return arg0._buffStartTimeStamp
+function var3_0.GetBuffStartTime(arg0_22)
+	return arg0_22._buffStartTimeStamp
 end
 
-function var3.Interrupt(arg0)
-	for iter0, iter1 in ipairs(arg0._effectList) do
-		iter1:Interrupt()
+function var3_0.Interrupt(arg0_23)
+	for iter0_23, iter1_23 in ipairs(arg0_23._effectList) do
+		iter1_23:Interrupt()
 	end
 end
 
-function var3.Clear(arg0)
-	for iter0, iter1 in ipairs(arg0._effectList) do
-		iter1:Clear()
+function var3_0.Clear(arg0_24)
+	for iter0_24, iter1_24 in ipairs(arg0_24._effectList) do
+		iter1_24:Clear()
 	end
 end
 
-function var3.GetID(arg0)
-	return arg0._id
+function var3_0.GetID(arg0_25)
+	return arg0_25._id
 end
 
-function var3.GetCaster(arg0)
-	return arg0._caster
+function var3_0.GetCaster(arg0_26)
+	return arg0_26._caster
 end
 
-function var3.GetLv(arg0)
-	return arg0._level or 1
+function var3_0.GetLv(arg0_27)
+	return arg0_27._level or 1
 end
 
-function var3.GetDuration(arg0)
-	return arg0._time
+function var3_0.GetDuration(arg0_28)
+	return arg0_28._time
 end
 
-function var3.GetStack(arg0)
-	return arg0._stack or 1
+function var3_0.GetStack(arg0_29)
+	return arg0_29._stack or 1
 end
 
-function var3.SetToCancel(arg0, arg1)
-	if arg1 then
-		if not arg0._cancelTime then
-			arg0._cancelTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg1
+function var3_0.SetToCancel(arg0_30, arg1_30)
+	if arg1_30 then
+		if not arg0_30._cancelTime then
+			arg0_30._cancelTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg1_30
 		end
 	else
-		arg0._isCancel = true
+		arg0_30._isCancel = true
 	end
 end
 
-function var3.Dispose(arg0)
-	arg0._triggerSearchTable = nil
-	arg0._commander = nil
+function var3_0.Dispose(arg0_31)
+	arg0_31._triggerSearchTable = nil
+	arg0_31._commander = nil
 end

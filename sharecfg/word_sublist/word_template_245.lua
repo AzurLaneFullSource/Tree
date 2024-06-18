@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_245 = {}
+var0_0.word_template_245 = {}
 
-local var1 = var0.word_template_245
+local var1_0 = var0_0.word_template_245
 
 function temp()
-	var1.娶 = {
+	var1_0.娶 = {
 		不 = {
 			起 = {
 				没 = {
@@ -34,7 +34,7 @@ end
 temp()
 
 function temp()
-	var1.去 = {
+	var1_0.去 = {
 		旅 = {
 			遊 = {
 				暴 = {
@@ -106,7 +106,7 @@ end
 temp()
 
 function temp()
-	var1.闃 = {
+	var1_0.闃 = {
 		this = {
 			this = true
 		}
@@ -116,7 +116,7 @@ end
 temp()
 
 function temp()
-	var1.棬 = {
+	var1_0.棬 = {
 		this = {
 			this = true
 		}
@@ -126,7 +126,7 @@ end
 temp()
 
 function temp()
-	var1.权 = {
+	var1_0.权 = {
 		利 = {
 			是 = {
 				黑 = {
@@ -179,7 +179,7 @@ end
 temp()
 
 function temp()
-	var1.全 = {
+	var1_0.全 = {
 		部 = {
 			都 = {
 				是 = {
@@ -832,7 +832,7 @@ end
 temp()
 
 function temp()
-	var1.泉 = {
+	var1_0.泉 = {
 		师 = {
 			婊 = {
 				子 = {

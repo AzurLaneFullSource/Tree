@@ -19,7 +19,10 @@
 			},
 			arg_list = {
 				skill_id = 1010091,
-				target = "TargetSelf"
+				target = "TargetSelf",
+				index = {
+					1
+				}
 			}
 		}
 	},

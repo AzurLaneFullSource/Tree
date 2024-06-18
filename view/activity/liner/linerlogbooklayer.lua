@@ -1,143 +1,143 @@
-﻿local var0 = class("LinerLogBookLayer", import("view.base.BaseUI"))
+﻿local var0_0 = class("LinerLogBookLayer", import("view.base.BaseUI"))
 
-var0.PAGE_SCHEDULE = 1
-var0.PAGE_ROOM = 2
-var0.PAGE_EVENT = 3
+var0_0.PAGE_SCHEDULE = 1
+var0_0.PAGE_ROOM = 2
+var0_0.PAGE_EVENT = 3
 
-local var1 = {
+local var1_0 = {
 	"liner_log_schedule_title",
 	"liner_log_room_title",
 	"liner_log_event_title"
 }
-local var2 = var0.PAGE_SCHEDULE
+local var2_0 = var0_0.PAGE_SCHEDULE
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "LinerLogBookUI"
 end
 
-function var0.init(arg0)
-	arg0.anim = arg0._tf:GetComponent(typeof(Animation))
-	arg0.animEvent = arg0._tf:GetComponent(typeof(DftAniEvent))
+function var0_0.init(arg0_2)
+	arg0_2.anim = arg0_2._tf:GetComponent(typeof(Animation))
+	arg0_2.animEvent = arg0_2._tf:GetComponent(typeof(DftAniEvent))
 
-	arg0.animEvent:SetEndEvent(function()
-		arg0:emit(var0.ON_CLOSE)
+	arg0_2.animEvent:SetEndEvent(function()
+		arg0_2:emit(var0_0.ON_CLOSE)
 	end)
 
-	arg0.togglesTF = arg0:findTF("frame/toggles")
+	arg0_2.togglesTF = arg0_2:findTF("frame/toggles")
 
-	local var0 = arg0:findTF("frame/pages")
+	local var0_2 = arg0_2:findTF("frame/pages")
 
-	arg0.schedulePage = LinerLogSchedulePage.New(var0, arg0)
-	arg0.roomPage = LinerLogRoomPage.New(var0, arg0)
-	arg0.eventPage = LinerLogEventPage.New(var0, arg0)
-	arg0.pages = {
-		[var0.PAGE_SCHEDULE] = arg0.schedulePage,
-		[var0.PAGE_ROOM] = arg0.roomPage,
-		[var0.PAGE_EVENT] = arg0.eventPage
+	arg0_2.schedulePage = LinerLogSchedulePage.New(var0_2, arg0_2)
+	arg0_2.roomPage = LinerLogRoomPage.New(var0_2, arg0_2)
+	arg0_2.eventPage = LinerLogEventPage.New(var0_2, arg0_2)
+	arg0_2.pages = {
+		[var0_0.PAGE_SCHEDULE] = arg0_2.schedulePage,
+		[var0_0.PAGE_ROOM] = arg0_2.roomPage,
+		[var0_0.PAGE_EVENT] = arg0_2.eventPage
 	}
-	arg0.reasoningPage = LinerReasoningPage.New(arg0:findTF("pages"), arg0)
+	arg0_2.reasoningPage = LinerReasoningPage.New(arg0_2:findTF("pages"), arg0_2)
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0:findTF("frame/close"), function()
-		arg0:onBackPressed()
+function var0_0.didEnter(arg0_4)
+	onButton(arg0_4, arg0_4:findTF("frame/close"), function()
+		arg0_4:onBackPressed()
 	end, SFX_PANEL)
-	onButton(arg0, arg0:findTF("mask"), function()
-		arg0:onBackPressed()
+	onButton(arg0_4, arg0_4:findTF("mask"), function()
+		arg0_4:onBackPressed()
 	end, SFX_PANEL)
-	eachChild(arg0.togglesTF, function(arg0)
-		setText(arg0:findTF("Text", arg0), i18n(var1[tonumber(arg0.name)]))
-		onButton(arg0, arg0, function()
-			local var0 = tonumber(arg0.name)
+	eachChild(arg0_4.togglesTF, function(arg0_7)
+		setText(arg0_4:findTF("Text", arg0_7), i18n(var1_0[tonumber(arg0_7.name)]))
+		onButton(arg0_4, arg0_7, function()
+			local var0_8 = tonumber(arg0_7.name)
 
-			if var0 == var0.PAGE_EVENT and not LinerLogEventPage.IsUnlcok() then
+			if var0_8 == var0_0.PAGE_EVENT and not LinerLogEventPage.IsUnlcok() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("liner_event_lock"))
 			else
-				if arg0.curPageIdx and arg0.curPageIdx == var0 then
+				if arg0_4.curPageIdx and arg0_4.curPageIdx == var0_8 then
 					return
 				end
 
-				arg0.curPageIdx = var0
+				arg0_4.curPageIdx = var0_8
 
-				arg0:SwitchPage()
-				arg0:SetAsLastSibling()
-				arg0:UpdateToggles()
+				arg0_4:SwitchPage()
+				arg0_7:SetAsLastSibling()
+				arg0_4:UpdateToggles()
 			end
 		end)
 	end)
 
-	local var0 = arg0.contextData.page or var2
+	local var0_4 = arg0_4.contextData.page or var2_0
 
-	triggerButton(arg0:findTF(tostring(var0), arg0.togglesTF), true)
-	arg0:UpdateTips()
+	triggerButton(arg0_4:findTF(tostring(var0_4), arg0_4.togglesTF), true)
+	arg0_4:UpdateTips()
 end
 
-function var0.UpdateToggles(arg0)
-	setActive(arg0:findTF("3/lock", arg0.togglesTF), not LinerLogEventPage.IsUnlcok())
-	eachChild(arg0.togglesTF, function(arg0)
-		setActive(arg0:findTF("selected", arg0), tonumber(arg0.name) == arg0.curPageIdx)
+function var0_0.UpdateToggles(arg0_9)
+	setActive(arg0_9:findTF("3/lock", arg0_9.togglesTF), not LinerLogEventPage.IsUnlcok())
+	eachChild(arg0_9.togglesTF, function(arg0_10)
+		setActive(arg0_9:findTF("selected", arg0_10), tonumber(arg0_10.name) == arg0_9.curPageIdx)
 	end)
 end
 
-function var0.SwitchPage(arg0)
-	for iter0, iter1 in pairs(arg0.pages) do
-		if iter0 == arg0.curPageIdx then
-			iter1:ExecuteAction("FlushPage")
+function var0_0.SwitchPage(arg0_11)
+	for iter0_11, iter1_11 in pairs(arg0_11.pages) do
+		if iter0_11 == arg0_11.curPageIdx then
+			iter1_11:ExecuteAction("FlushPage")
 
-			arg0.curPage = iter1
+			arg0_11.curPage = iter1_11
 		else
-			iter1:ExecuteAction("Hide")
+			iter1_11:ExecuteAction("Hide")
 		end
 	end
 end
 
-function var0.UpdateView(arg0)
-	for iter0, iter1 in pairs(arg0.pages) do
-		iter1:ExecuteAction("UpdateActivity")
+function var0_0.UpdateView(arg0_12)
+	for iter0_12, iter1_12 in pairs(arg0_12.pages) do
+		iter1_12:ExecuteAction("UpdateActivity")
 	end
 
-	arg0.curPage:ExecuteAction("FlushPage")
-	arg0:UpdateTips()
+	arg0_12.curPage:ExecuteAction("FlushPage")
+	arg0_12:UpdateTips()
 end
 
-function var0.UpdateTips(arg0)
-	eachChild(arg0.togglesTF, function(arg0)
-		local var0 = tonumber(arg0.name)
+function var0_0.UpdateTips(arg0_13)
+	eachChild(arg0_13.togglesTF, function(arg0_14)
+		local var0_14 = tonumber(arg0_14.name)
 
-		setActive(arg0:findTF("tip", arg0), arg0.pages[var0].IsTip())
+		setActive(arg0_13:findTF("tip", arg0_14), arg0_13.pages[var0_14].IsTip())
 	end)
 end
 
-function var0.OnStartReasoning(arg0, arg1, arg2)
-	arg0.reasoningPage:ExecuteAction("ShowOptions", arg1, arg2)
+function var0_0.OnStartReasoning(arg0_15, arg1_15, arg2_15)
+	arg0_15.reasoningPage:ExecuteAction("ShowOptions", arg1_15, arg2_15)
 end
 
-function var0.onBackPressed(arg0)
-	arg0.anim:Play("anim_liner_logbook_out")
+function var0_0.onBackPressed(arg0_16)
+	arg0_16.anim:Play("anim_liner_logbook_out")
 end
 
-function var0.willExit(arg0)
-	arg0.animEvent:SetEndEvent(nil)
+function var0_0.willExit(arg0_17)
+	arg0_17.animEvent:SetEndEvent(nil)
 
-	for iter0, iter1 in pairs(arg0.pages) do
-		iter1:Destroy()
+	for iter0_17, iter1_17 in pairs(arg0_17.pages) do
+		iter1_17:Destroy()
 
-		iter1 = nil
+		iter1_17 = nil
 	end
 
-	arg0.reasoningPage:Destroy()
+	arg0_17.reasoningPage:Destroy()
 
-	arg0.reasoningPage = nil
+	arg0_17.reasoningPage = nil
 
-	if arg0.contextData.onExit then
-		arg0.contextData.onExit()
+	if arg0_17.contextData.onExit then
+		arg0_17.contextData.onExit()
 
-		arg0.contextData.onExit = nil
+		arg0_17.contextData.onExit = nil
 	end
 end
 
-function var0.IsTip()
+function var0_0.IsTip()
 	return LinerLogSchedulePage.IsTip() or LinerLogRoomPage.IsTip() or LinerLogEventPage.IsTip()
 end
 
-return var0
+return var0_0

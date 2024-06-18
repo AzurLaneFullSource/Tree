@@ -1,34 +1,34 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.ShareMgr = singletonClass("ShareMgr")
+var0_0.ShareMgr = singletonClass("ShareMgr")
 
-local var1 = var0.ShareMgr
+local var1_0 = var0_0.ShareMgr
 
-var1.TypeAdmira = 1
-var1.TypeShipProfile = 2
-var1.TypeNewShip = 3
-var1.TypeBackyard = 4
-var1.TypeNewSkin = 5
-var1.TypeSummary = 6
-var1.TypePhoto = 7
-var1.TypeReflux = 8
-var1.TypeCommander = 9
-var1.TypeColoring = 10
-var1.TypeChallenge = 11
-var1.TypeInstagram = 12
-var1.TypePizzahut = 13
-var1.TypeSecondSummary = 14
-var1.TypePoraisMedals = 15
-var1.TypeIcecream = 16
-var1.TypeValentineQte = 17
-var1.TypeBossRushEX = 18
-var1.TypeTWCelebrationShare = 5000
-var1.TypeCardTower = 17
-var1.PANEL_TYPE_BLACK = 1
-var1.PANEL_TYPE_PINK = 2
-var1.ANCHORS_TYPE = {
+var1_0.TypeAdmira = 1
+var1_0.TypeShipProfile = 2
+var1_0.TypeNewShip = 3
+var1_0.TypeBackyard = 4
+var1_0.TypeNewSkin = 5
+var1_0.TypeSummary = 6
+var1_0.TypePhoto = 7
+var1_0.TypeReflux = 8
+var1_0.TypeCommander = 9
+var1_0.TypeColoring = 10
+var1_0.TypeChallenge = 11
+var1_0.TypeInstagram = 12
+var1_0.TypePizzahut = 13
+var1_0.TypeSecondSummary = 14
+var1_0.TypePoraisMedals = 15
+var1_0.TypeIcecream = 16
+var1_0.TypeValentineQte = 17
+var1_0.TypeBossRushEX = 18
+var1_0.TypeTWCelebrationShare = 5000
+var1_0.TypeCardTower = 17
+var1_0.PANEL_TYPE_BLACK = 1
+var1_0.PANEL_TYPE_PINK = 2
+var1_0.ANCHORS_TYPE = {
 	{
 		0,
 		0,
@@ -61,34 +61,34 @@ var1.ANCHORS_TYPE = {
 	}
 }
 
-function var1.Init(arg0)
-	PoolMgr.GetInstance():GetUI("ShareUI", false, function(arg0)
-		arg0.go = arg0
+function var1_0.Init(arg0_1)
+	PoolMgr.GetInstance():GetUI("ShareUI", false, function(arg0_2)
+		arg0_1.go = arg0_2
 
-		arg0.go:SetActive(false)
+		arg0_1.go:SetActive(false)
 
-		arg0.tr = arg0.transform
-		arg0.panelBlack = arg0.tr:Find("panel")
-		arg0.panelPink = arg0.tr:Find("panel_pink")
-		arg0.deckTF = arg0.tr:Find("deck")
+		arg0_1.tr = arg0_2.transform
+		arg0_1.panelBlack = arg0_1.tr:Find("panel")
+		arg0_1.panelPink = arg0_1.tr:Find("panel_pink")
+		arg0_1.deckTF = arg0_1.tr:Find("deck")
 
-		setActive(arg0.panelBlack, false)
-		setActive(arg0.panelPink, false)
+		setActive(arg0_1.panelBlack, false)
+		setActive(arg0_1.panelPink, false)
 
-		arg0.logo = arg0.tr:Find("deck/logo")
+		arg0_1.logo = arg0_1.tr:Find("deck/logo")
 
-		GetComponent(arg0.logo, "Image"):SetNativeSize()
+		GetComponent(arg0_1.logo, "Image"):SetNativeSize()
 	end)
 
-	arg0.screenshot = Application.persistentDataPath .. "/screen_scratch/last_picture_for_share.jpg"
-	arg0.cacheComps = {}
-	arg0.cacheShowComps = {}
-	arg0.cacheMoveComps = {}
+	arg0_1.screenshot = Application.persistentDataPath .. "/screen_scratch/last_picture_for_share.jpg"
+	arg0_1.cacheComps = {}
+	arg0_1.cacheShowComps = {}
+	arg0_1.cacheMoveComps = {}
 end
 
-function var1.Share(arg0, arg1, arg2, arg3)
+function var1_0.Share(arg0_3, arg1_3, arg2_3, arg3_3)
 	if PLATFORM_CODE == PLATFORM_CHT and not CheckPermissionGranted(ANDROID_WRITE_EXTERNAL_PERMISSION) then
-		var0.MsgboxMgr.GetInstance():ShowMsgBox({
+		var0_0.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n1("指揮官，碧藍航線需要存儲權限才能分享是否打開？"),
 			onYes = function()
 				ApplyPermission({
@@ -100,221 +100,221 @@ function var1.Share(arg0, arg1, arg2, arg3)
 		return
 	end
 
-	local var0 = LuaHelper.GetCHPackageType()
+	local var0_3 = LuaHelper.GetCHPackageType()
 
-	if not IsUnityEditor and PLATFORM_CODE == PLATFORM_CH and var0 ~= PACKAGE_TYPE_BILI then
-		var0.TipsMgr.GetInstance():ShowTips("指挥官，当前平台不支持分享功能哦")
+	if not IsUnityEditor and PLATFORM_CODE == PLATFORM_CH and var0_3 ~= PACKAGE_TYPE_BILI then
+		var0_0.TipsMgr.GetInstance():ShowTips("指挥官，当前平台不支持分享功能哦")
 
 		return
 	end
 
-	if IsNil(arg0.go) then
-		arg0:Init()
+	if IsNil(arg0_3.go) then
+		arg0_3:Init()
 	end
 
-	arg2 = arg2 or var1.PANEL_TYPE_BLACK
+	arg2_3 = arg2_3 or var1_0.PANEL_TYPE_BLACK
 
-	if arg2 == var1.PANEL_TYPE_BLACK then
-		arg0.panel = arg0.panelBlack
-	elseif arg2 == var1.PANEL_TYPE_PINK then
-		arg0.panel = arg0.panelPink
+	if arg2_3 == var1_0.PANEL_TYPE_BLACK then
+		arg0_3.panel = arg0_3.panelBlack
+	elseif arg2_3 == var1_0.PANEL_TYPE_PINK then
+		arg0_3.panel = arg0_3.panelPink
 	end
 
-	setActive(arg0.panelBlack, arg2 == var1.PANEL_TYPE_BLACK)
-	setActive(arg0.panelPink, arg2 == var1.PANEL_TYPE_PINK)
+	setActive(arg0_3.panelBlack, arg2_3 == var1_0.PANEL_TYPE_BLACK)
+	setActive(arg0_3.panelPink, arg2_3 == var1_0.PANEL_TYPE_PINK)
 
-	local var1 = var0.share_template[arg1]
+	local var1_3 = var0_0.share_template[arg1_3]
 
-	assert(var1, "share_template not exist: " .. arg1)
+	assert(var1_3, "share_template not exist: " .. arg1_3)
 
-	local var2 = getProxy(PlayerProxy):getRawData()
-	local var3 = getProxy(UserProxy):getRawData()
-	local var4 = getProxy(ServerProxy):getRawData()[var3 and var3.server or 0]
-	local var5 = var2 and var2.name or ""
-	local var6 = var4 and var4.name or ""
-	local var7 = arg0.deckTF
-	local var8 = arg0.ANCHORS_TYPE[var1.deck] or {
+	local var2_3 = getProxy(PlayerProxy):getRawData()
+	local var3_3 = getProxy(UserProxy):getRawData()
+	local var4_3 = getProxy(ServerProxy):getRawData()[var3_3 and var3_3.server or 0]
+	local var5_3 = var2_3 and var2_3.name or ""
+	local var6_3 = var4_3 and var4_3.name or ""
+	local var7_3 = arg0_3.deckTF
+	local var8_3 = arg0_3.ANCHORS_TYPE[var1_3.deck] or {
 		0.5,
 		0.5,
 		0.5,
 		0.5
 	}
 
-	var7.anchorMin = Vector2(var8[1], var8[2])
-	var7.anchorMax = Vector2(var8[3], var8[4])
+	var7_3.anchorMin = Vector2(var8_3[1], var8_3[2])
+	var7_3.anchorMax = Vector2(var8_3[3], var8_3[4])
 
-	setText(var7:Find("name/value"), var5)
-	setText(var7:Find("server/value"), var6)
-	setText(var7:Find("lv/value"), var2.level)
+	setText(var7_3:Find("name/value"), var5_3)
+	setText(var7_3:Find("server/value"), var6_3)
+	setText(var7_3:Find("lv/value"), var2_3.level)
 
 	if PLATFORM_CODE == PLATFORM_CHT or PLATFORM_CODE == PLATFORM_CH then
-		setActive(var7:Find("code_bg"), true)
+		setActive(var7_3:Find("code_bg"), true)
 	else
-		setActive(var7:Find("code_bg"), false)
+		setActive(var7_3:Find("code_bg"), false)
 	end
 
-	local var9 = GameObject.Find(var1.camera):GetComponent(typeof(Camera))
-	local var10 = var9.transform:GetChild(0)
+	local var9_3 = GameObject.Find(var1_3.camera):GetComponent(typeof(Camera))
+	local var10_3 = var9_3.transform:GetChild(0)
 
-	var7.anchoredPosition3D = Vector3(var1.qrcode_location[1], var1.qrcode_location[2], -100)
-	var7.anchoredPosition = Vector2(var1.qrcode_location[1], var1.qrcode_location[2])
+	var7_3.anchoredPosition3D = Vector3(var1_3.qrcode_location[1], var1_3.qrcode_location[2], -100)
+	var7_3.anchoredPosition = Vector2(var1_3.qrcode_location[1], var1_3.qrcode_location[2])
 
-	_.each(var1.hidden_comps, function(arg0)
-		local var0 = GameObject.Find(arg0)
+	_.each(var1_3.hidden_comps, function(arg0_5)
+		local var0_5 = GameObject.Find(arg0_5)
 
-		if not IsNil(var0) and var0.activeSelf then
-			table.insert(arg0.cacheComps, var0)
-			var0:SetActive(false)
+		if not IsNil(var0_5) and var0_5.activeSelf then
+			table.insert(arg0_3.cacheComps, var0_5)
+			var0_5:SetActive(false)
 		end
 	end)
-	_.each(var1.show_comps, function(arg0)
-		local var0 = GameObject.Find(arg0)
+	_.each(var1_3.show_comps, function(arg0_6)
+		local var0_6 = GameObject.Find(arg0_6)
 
-		if not IsNil(var0) and not var0.activeSelf then
-			table.insert(arg0.cacheShowComps, var0)
-			var0:SetActive(true)
+		if not IsNil(var0_6) and not var0_6.activeSelf then
+			table.insert(arg0_3.cacheShowComps, var0_6)
+			var0_6:SetActive(true)
 		end
 	end)
-	_.each(var1.move_comps, function(arg0)
-		local var0 = GameObject.Find(arg0.path)
+	_.each(var1_3.move_comps, function(arg0_7)
+		local var0_7 = GameObject.Find(arg0_7.path)
 
-		if not IsNil(var0) then
-			local var1 = var0.transform.anchoredPosition.x
-			local var2 = var0.transform.anchoredPosition.y
-			local var3 = arg0.x
-			local var4 = arg0.y
+		if not IsNil(var0_7) then
+			local var1_7 = var0_7.transform.anchoredPosition.x
+			local var2_7 = var0_7.transform.anchoredPosition.y
+			local var3_7 = arg0_7.x
+			local var4_7 = arg0_7.y
 
-			table.insert(arg0.cacheMoveComps, {
-				var0,
-				var1,
-				var2
+			table.insert(arg0_3.cacheMoveComps, {
+				var0_7,
+				var1_7,
+				var2_7
 			})
-			setAnchoredPosition(var0, {
-				x = var3,
-				y = var4
+			setAnchoredPosition(var0_7, {
+				x = var3_7,
+				y = var4_7
 			})
 		end
 	end)
-	SetParent(var7, var10, false)
-	var7:SetAsLastSibling()
+	SetParent(var7_3, var10_3, false)
+	var7_3:SetAsLastSibling()
 
-	local var11 = ScreenShooter.New(Screen.width, Screen.height, TextureFormat.ARGB32)
+	local var11_3 = ScreenShooter.New(Screen.width, Screen.height, TextureFormat.ARGB32)
 
-	if (PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US) and var0.SdkMgr.GetInstance():GetIsPlatform() then
-		local var12 = arg0:TakeTexture(arg1, var11, var9)
+	if (PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US) and var0_0.SdkMgr.GetInstance():GetIsPlatform() then
+		local var12_3 = arg0_3:TakeTexture(arg1_3, var11_3, var9_3)
 
-		var0.SdkMgr.GetInstance():GameShare(var1.description, var12)
-		var0.UIMgr.GetInstance():LoadingOn()
+		var0_0.SdkMgr.GetInstance():GameShare(var1_3.description, var12_3)
+		var0_0.UIMgr.GetInstance():LoadingOn()
 		onDelayTick(function()
-			var0.UIMgr.GetInstance():LoadingOff()
+			var0_0.UIMgr.GetInstance():LoadingOff()
 		end, 2)
 	elseif PLATFORM_CODE == PLATFORM_CHT then
-		arg0:TakePhoto(arg1, var11, var9)
-		var0.SdkMgr.GetInstance():ShareImg(arg0.screenshot, function()
+		arg0_3:TakePhoto(arg1_3, var11_3, var9_3)
+		var0_0.SdkMgr.GetInstance():ShareImg(arg0_3.screenshot, function()
 			return
 		end)
-	elseif PLATFORM_CODE == PLATFORM_CH and var0 == PACKAGE_TYPE_BILI then
-		if arg0:TakePhoto(arg1, var11, var9) then
-			var0.SdkMgr.GetInstance():GameShare(var1.description, arg0.screenshot)
+	elseif PLATFORM_CODE == PLATFORM_CH and var0_3 == PACKAGE_TYPE_BILI then
+		if arg0_3:TakePhoto(arg1_3, var11_3, var9_3) then
+			var0_0.SdkMgr.GetInstance():GameShare(var1_3.description, arg0_3.screenshot)
 		end
-	elseif arg0:TakePhoto(arg1, var11, var9) then
-		print("截图位置: " .. arg0.screenshot)
-		arg0:Show(var1, arg3)
+	elseif arg0_3:TakePhoto(arg1_3, var11_3, var9_3) then
+		print("截图位置: " .. arg0_3.screenshot)
+		arg0_3:Show(var1_3, arg3_3)
 	elseif PLATFORM_CODE == PLATFORM_CHT then
-		var0.TipsMgr.GetInstance():ShowTips("截圖失敗")
+		var0_0.TipsMgr.GetInstance():ShowTips("截圖失敗")
 	else
-		var0.TipsMgr.GetInstance():ShowTips("截图失败")
+		var0_0.TipsMgr.GetInstance():ShowTips("截图失败")
 	end
 
-	SetParent(var7, arg0.tr, false)
-	_.each(arg0.cacheComps, function(arg0)
-		arg0:SetActive(true)
+	SetParent(var7_3, arg0_3.tr, false)
+	_.each(arg0_3.cacheComps, function(arg0_10)
+		arg0_10:SetActive(true)
 	end)
 
-	arg0.cacheComps = {}
+	arg0_3.cacheComps = {}
 
-	_.each(arg0.cacheShowComps, function(arg0)
-		arg0:SetActive(false)
+	_.each(arg0_3.cacheShowComps, function(arg0_11)
+		arg0_11:SetActive(false)
 	end)
 
-	arg0.cacheShowComps = {}
+	arg0_3.cacheShowComps = {}
 
-	_.each(arg0.cacheMoveComps, function(arg0)
-		setAnchoredPosition(arg0[1], {
-			x = arg0[2],
-			y = arg0[3]
+	_.each(arg0_3.cacheMoveComps, function(arg0_12)
+		setAnchoredPosition(arg0_12[1], {
+			x = arg0_12[2],
+			y = arg0_12[3]
 		})
 	end)
 
-	arg0.cacheMoveComps = {}
+	arg0_3.cacheMoveComps = {}
 end
 
-function var1.TakeTexture(arg0, arg1, arg2, arg3)
-	if arg1 == var1.TypeValentineQte then
-		local var0 = System.Collections.Generic.List_UnityEngine_Camera()
-		local var1 = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
-		local var2 = GameObject.Find("OverlayCamera"):GetComponent(typeof(Camera))
+function var1_0.TakeTexture(arg0_13, arg1_13, arg2_13, arg3_13)
+	if arg1_13 == var1_0.TypeValentineQte then
+		local var0_13 = System.Collections.Generic.List_UnityEngine_Camera()
+		local var1_13 = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
+		local var2_13 = GameObject.Find("OverlayCamera"):GetComponent(typeof(Camera))
 
-		var0:Add(var1)
-		var0:Add(var2)
+		var0_13:Add(var1_13)
+		var0_13:Add(var2_13)
 
-		local var3 = arg2:TakePhotoMultiCam(var0)
+		local var3_13 = arg2_13:TakePhotoMultiCam(var0_13)
 
-		return (arg2:EncodeToJPG(var3))
+		return (arg2_13:EncodeToJPG(var3_13))
 	else
-		local var4 = arg2:TakePhoto(arg3)
+		local var4_13 = arg2_13:TakePhoto(arg3_13)
 
-		return (arg2:EncodeToJPG(var4))
+		return (arg2_13:EncodeToJPG(var4_13))
 	end
 end
 
-function var1.TakePhoto(arg0, arg1, arg2, arg3)
-	if arg1 == var1.TypeValentineQte then
-		local var0 = System.Collections.Generic.List_UnityEngine_Camera()
-		local var1 = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
-		local var2 = GameObject.Find("OverlayCamera"):GetComponent(typeof(Camera))
+function var1_0.TakePhoto(arg0_14, arg1_14, arg2_14, arg3_14)
+	if arg1_14 == var1_0.TypeValentineQte then
+		local var0_14 = System.Collections.Generic.List_UnityEngine_Camera()
+		local var1_14 = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
+		local var2_14 = GameObject.Find("OverlayCamera"):GetComponent(typeof(Camera))
 
-		var0:Add(var1)
-		var0:Add(var2)
+		var0_14:Add(var1_14)
+		var0_14:Add(var2_14)
 
-		return arg2:TakeMultiCam(var0, arg0.screenshot)
+		return arg2_14:TakeMultiCam(var0_14, arg0_14.screenshot)
 	else
-		return arg2:Take(arg3, arg0.screenshot)
+		return arg2_14:Take(arg3_14, arg0_14.screenshot)
 	end
 end
 
-function var1.Show(arg0, arg1, arg2)
-	arg0.go:SetActive(true)
-	var0.UIMgr.GetInstance():BlurPanel(arg0.panel, true, arg2)
-	var0.DelegateInfo.New(arg0)
+function var1_0.Show(arg0_15, arg1_15, arg2_15)
+	arg0_15.go:SetActive(true)
+	var0_0.UIMgr.GetInstance():BlurPanel(arg0_15.panel, true, arg2_15)
+	var0_0.DelegateInfo.New(arg0_15)
 
-	local var0 = function()
-		arg0.go:SetActive(false)
-		var0.UIMgr.GetInstance():UnblurPanel(arg0.panel, arg0.tr)
-		PoolMgr.GetInstance():ReturnUI("ShareUI", arg0.go)
-		var0.DelegateInfo.Dispose(arg0)
+	local function var0_15()
+		arg0_15.go:SetActive(false)
+		var0_0.UIMgr.GetInstance():UnblurPanel(arg0_15.panel, arg0_15.tr)
+		PoolMgr.GetInstance():ReturnUI("ShareUI", arg0_15.go)
+		var0_0.DelegateInfo.Dispose(arg0_15)
 
-		arg0.go = nil
-		arg0.tr = nil
-		arg0.panel = nil
+		arg0_15.go = nil
+		arg0_15.tr = nil
+		arg0_15.panel = nil
 	end
 
-	onButton(arg0, arg0.panel:Find("main/top/btnBack"), var0)
-	onButton(arg0, arg0.panel:Find("main/buttons/weibo"), function()
-		var0()
+	onButton(arg0_15, arg0_15.panel:Find("main/top/btnBack"), var0_15)
+	onButton(arg0_15, arg0_15.panel:Find("main/buttons/weibo"), function()
+		var0_15()
 	end)
-	onButton(arg0, arg0.panel:Find("main/buttons/weixin"), function()
-		var0()
+	onButton(arg0_15, arg0_15.panel:Find("main/buttons/weixin"), function()
+		var0_15()
 	end)
 
 	if PLATFORM_CODE == PLATFORM_KR then
-		onButton(arg0, arg0.panel:Find("main/buttons/facebook"), function()
-			var0.SdkMgr.GetInstance():ShareImg(arg0.screenshot, function(arg0, arg1)
-				if arg0 and arg1 == 0 then
-					var0.TipsMgr.GetInstance():ShowTips(i18n("share_success"))
+		onButton(arg0_15, arg0_15.panel:Find("main/buttons/facebook"), function()
+			var0_0.SdkMgr.GetInstance():ShareImg(arg0_15.screenshot, function(arg0_20, arg1_20)
+				if arg0_20 and arg1_20 == 0 then
+					var0_0.TipsMgr.GetInstance():ShowTips(i18n("share_success"))
 				end
 			end)
-			var0()
+			var0_15()
 		end)
 	end
 end

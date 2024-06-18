@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_296 = {}
+var0_0.word_template_296 = {}
 
-local var1 = var0.word_template_296
+local var1_0 = var0_0.word_template_296
 
 function temp()
-	var1.妩 = {
+	var1_0.妩 = {
 		媚 = {
 			挑 = {
 				逗 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.武 = {
+	var1_0.武 = {
 		大 = {
 			郎 = {
 				站 = {
@@ -240,7 +240,7 @@ end
 temp()
 
 function temp()
-	var1.舞 = {
+	var1_0.舞 = {
 		島 = {
 			美 = {
 				穂 = {
@@ -263,7 +263,7 @@ end
 temp()
 
 function temp()
-	var1.嫵 = {
+	var1_0.嫵 = {
 		媚 = {
 			挑 = {
 				逗 = {
@@ -277,7 +277,7 @@ end
 temp()
 
 function temp()
-	var1.勿 = {
+	var1_0.勿 = {
 		忘 = {
 			this = true,
 			["6"] = {
@@ -326,7 +326,7 @@ end
 temp()
 
 function temp()
-	var1.物 = {
+	var1_0.物 = {
 		价 = {
 			犹 = {
 				如 = {
@@ -379,7 +379,7 @@ end
 temp()
 
 function temp()
-	var1.西 = {
+	var1_0.西 = {
 		j = {
 			i = {
 				n = {

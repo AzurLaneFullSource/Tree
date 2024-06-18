@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Are you the new Commander? Welcome to the world of Azur Lane. I'll be your teacher!!",
 	"First, let's build a new ship.",
 	"How about trying to build a <color=#ffde38>light ship</color> first?",
@@ -16,7 +16,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[1]
+				text = var0_0[1]
 			}
 		},
 		{
@@ -26,7 +26,7 @@ return {
 				mode = 2,
 				posY = -152.6,
 				posX = 215.2,
-				text = var0[2]
+				text = var0_0[2]
 			},
 			ui = {
 				pathIndex = -1,
@@ -54,7 +54,7 @@ return {
 				mode = 1,
 				posY = -46.82,
 				posX = -126.5,
-				text = var0[3]
+				text = var0_0[3]
 			},
 			ui = {
 				pathIndex = -1,
@@ -81,7 +81,7 @@ return {
 				mode = 1,
 				posY = -11.13,
 				posX = 301.54,
-				text = var0[4]
+				text = var0_0[4]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/BuildShipUI(Clone)/BuildShipPoolsPageUI(Clone)/gallery/start_btn",
@@ -102,7 +102,7 @@ return {
 				mode = 1,
 				posY = 65.31,
 				posX = 103.3,
-				text = var0[5]
+				text = var0_0[5]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/BuildShipMsgBoxUI(Clone)/window/btns/confirm_btn",

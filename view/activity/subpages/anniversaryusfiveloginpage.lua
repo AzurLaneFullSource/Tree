@@ -1,33 +1,33 @@
-﻿local var0 = class("AnniversaryUSFiveLoginPage", import(".TemplatePage.LoginTemplatePage"))
+﻿local var0_0 = class("AnniversaryUSFiveLoginPage", import(".TemplatePage.LoginTemplatePage"))
 
-function var0.OnFirstFlush(arg0)
-	setActive(arg0.item, false)
-	arg0.itemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg0:findTF("item", arg2)
-			local var1 = arg0.config.front_drops[arg1 + 1]
-			local var2 = {
-				type = var1[1],
-				id = var1[2],
-				count = var1[3]
+function var0_0.OnFirstFlush(arg0_1)
+	setActive(arg0_1.item, false)
+	arg0_1.itemList:make(function(arg0_2, arg1_2, arg2_2)
+		if arg0_2 == UIItemList.EventUpdate then
+			local var0_2 = arg0_1:findTF("item", arg2_2)
+			local var1_2 = arg0_1.config.front_drops[arg1_2 + 1]
+			local var2_2 = {
+				type = var1_2[1],
+				id = var1_2[2],
+				count = var1_2[3]
 			}
 
-			updateDrop(var0, var2)
-			onButton(arg0, arg2, function()
-				arg0:emit(BaseUI.ON_DROP, var2)
+			updateDrop(var0_2, var2_2)
+			onButton(arg0_1, arg2_2, function()
+				arg0_1:emit(BaseUI.ON_DROP, var2_2)
 			end, SFX_PANEL)
 
-			local var3 = arg0:findTF("got", arg2)
+			local var3_2 = arg0_1:findTF("got", arg2_2)
 
-			setActive(var3, arg1 < arg0.nday)
+			setActive(var3_2, arg1_2 < arg0_1.nday)
 
-			local var4 = arg0:findTF("day/Text", arg2)
+			local var4_2 = arg0_1:findTF("day/Text", arg2_2)
 
-			if not IsNil(var4) then
-				setText(var4, arg1 < arg0.nday and i18n("word_status_inEventFinished") or i18n("which_day_2", arg1 + 1))
+			if not IsNil(var4_2) then
+				setText(var4_2, arg1_2 < arg0_1.nday and i18n("word_status_inEventFinished") or i18n("which_day_2", arg1_2 + 1))
 			end
 		end
 	end)
 end
 
-return var0
+return var0_0

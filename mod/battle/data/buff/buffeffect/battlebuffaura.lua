@@ -1,55 +1,55 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("BattleBuffAura", var0.Battle.BattleBuffEffect)
+local var0_0 = ys
+local var1_0 = class("BattleBuffAura", var0_0.Battle.BattleBuffEffect)
 
-var0.Battle.BattleBuffAura = var1
-var1.__name = "BattleBuffAura"
+var0_0.Battle.BattleBuffAura = var1_0
+var1_0.__name = "BattleBuffAura"
 
-local var2 = var0.Battle.BattleConst
-local var3 = var0.Battle.BattleConfig
+local var2_0 = var0_0.Battle.BattleConst
+local var3_0 = var0_0.Battle.BattleConfig
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	arg0._buffLevel = arg2:GetLv()
+function var1_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	arg0_2._buffLevel = arg2_2:GetLv()
 
-	local var0 = arg0._tempData.arg_list
+	local var0_2 = arg0_2._tempData.arg_list
 
-	arg0._auraRange = var0.cld_data.box.range
-	arg0._buffID = var0.buff_id
-	arg0._friendly = var0.friendly_fire or false
+	arg0_2._auraRange = var0_2.cld_data.box.range
+	arg0_2._buffID = var0_2.buff_id
+	arg0_2._friendly = var0_2.friendly_fire or false
 
-	local var1, var2, var3 = arg0:getAreaCldFunc(arg1)
+	local var1_2, var2_2, var3_2 = arg0_2:getAreaCldFunc(arg1_2)
 
-	arg0._aura = var0.Battle.BattleDataProxy.GetInstance():SpawnLastingColumnArea(var2.AOEField.SURFACE, arg1:GetIFF(), arg1:GetPosition(), arg0._auraRange, 0, var1, var2, arg0._friendly, nil, var3, false)
-	arg0._angle = var0.cld_data.angle
+	arg0_2._aura = var0_0.Battle.BattleDataProxy.GetInstance():SpawnLastingColumnArea(var2_0.AOEField.SURFACE, arg1_2:GetIFF(), arg1_2:GetPosition(), arg0_2._auraRange, 0, var1_2, var2_2, arg0_2._friendly, nil, var3_2, false)
+	arg0_2._angle = var0_2.cld_data.angle
 
-	if arg0._angle then
-		arg0._aura:SetSectorAngle(arg0._angle, arg1:GetDirection())
+	if arg0_2._angle then
+		arg0_2._aura:SetSectorAngle(arg0_2._angle, arg1_2:GetDirection())
 	end
 
-	local var4 = var0.Battle.BattleAOEMobilizedComponent.New(arg0._aura)
+	local var4_2 = var0_0.Battle.BattleAOEMobilizedComponent.New(arg0_2._aura)
 
-	var4:SetReferenceUnit(arg1)
-	var4:ConfigData(var4.FOLLOW)
+	var4_2:SetReferenceUnit(arg1_2)
+	var4_2:ConfigData(var4_2.FOLLOW)
 end
 
-function var1.getAreaCldFunc(arg0, arg1)
-	local var0 = function(arg0)
-		local var0 = arg0:getTargetList(arg1, {
+function var1_0.getAreaCldFunc(arg0_3, arg1_3)
+	local function var0_3(arg0_4)
+		local var0_4 = arg0_3:getTargetList(arg1_3, {
 			"TargetEntityUnit"
 		})
 
-		for iter0, iter1 in ipairs(arg0) do
-			if iter1.Active then
-				for iter2, iter3 in ipairs(var0) do
-					if iter3:GetUniqueID() == iter1.UID then
-						local var1 = var0.Battle.BattleBuffUnit.New(arg0._buffID, arg0._buffLevel, arg0._caster)
+		for iter0_4, iter1_4 in ipairs(arg0_4) do
+			if iter1_4.Active then
+				for iter2_4, iter3_4 in ipairs(var0_4) do
+					if iter3_4:GetUniqueID() == iter1_4.UID then
+						local var1_4 = var0_0.Battle.BattleBuffUnit.New(arg0_3._buffID, arg0_3._buffLevel, arg0_3._caster)
 
-						iter3:AddBuff(var1, true)
+						iter3_4:AddBuff(var1_4, true)
 
 						break
 					end
@@ -58,15 +58,15 @@ function var1.getAreaCldFunc(arg0, arg1)
 		end
 	end
 
-	local function var1(arg0)
-		if arg0.Active then
-			local var0 = arg0:getTargetList(arg1, {
+	local function var1_3(arg0_5)
+		if arg0_5.Active then
+			local var0_5 = arg0_3:getTargetList(arg1_3, {
 				"TargetEntityUnit"
 			})
 
-			for iter0, iter1 in ipairs(var0) do
-				if iter1:GetUniqueID() == arg0.UID then
-					iter1:RemoveBuff(arg0._buffID, true)
+			for iter0_5, iter1_5 in ipairs(var0_5) do
+				if iter1_5:GetUniqueID() == arg0_5.UID then
+					iter1_5:RemoveBuff(arg0_3._buffID, true)
 
 					break
 				end
@@ -74,15 +74,15 @@ function var1.getAreaCldFunc(arg0, arg1)
 		end
 	end
 
-	local function var2(arg0)
-		if arg0.Active then
-			local var0 = arg0:getTargetList(arg1, {
+	local function var2_3(arg0_6)
+		if arg0_6.Active then
+			local var0_6 = arg0_3:getTargetList(arg1_3, {
 				"TargetEntityUnit"
 			})
 
-			for iter0, iter1 in ipairs(var0) do
-				if iter1:GetUniqueID() == arg0.UID then
-					iter1:RemoveBuff(arg0._buffID, true)
+			for iter0_6, iter1_6 in ipairs(var0_6) do
+				if iter1_6:GetUniqueID() == arg0_6.UID then
+					iter1_6:RemoveBuff(arg0_3._buffID, true)
 
 					break
 				end
@@ -90,13 +90,13 @@ function var1.getAreaCldFunc(arg0, arg1)
 		end
 	end
 
-	return var0, var1, var2
+	return var0_3, var1_3, var2_3
 end
 
-function var1.Clear(arg0)
-	arg0._aura:SetActiveFlag(false)
+function var1_0.Clear(arg0_7)
+	arg0_7._aura:SetActiveFlag(false)
 
-	arg0._aura = nil
+	arg0_7._aura = nil
 
-	var1.super.Clear(arg0)
+	var1_0.super.Clear(arg0_7)
 end

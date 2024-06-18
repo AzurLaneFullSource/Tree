@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_36 = {}
+var0_0.word_template_36 = {}
 
-local var1 = var0.word_template_36
+local var1_0 = var0_0.word_template_36
 
 function temp()
-	var1.裏 = {
+	var1_0.裏 = {
 		ビ = {
 			デ = {
 				オ = {
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.陵 = {
+	var1_0.陵 = {
 		辱 = {
 			this = true
 		}
@@ -57,7 +57,7 @@ end
 temp()
 
 function temp()
-	var1.露 = {
+	var1_0.露 = {
 		出 = {
 			this = true,
 			龟 = {
@@ -116,7 +116,7 @@ end
 temp()
 
 function temp()
-	var1.老 = {
+	var1_0.老 = {
 		害 = {
 			this = true
 		},
@@ -554,7 +554,7 @@ end
 temp()
 
 function temp()
-	var1.六 = {
+	var1_0.六 = {
 		合 = {
 			彩 = {
 				this = true,
@@ -1569,7 +1569,7 @@ end
 temp()
 
 function temp()
-	var1.倭 = {
+	var1_0.倭 = {
 		人 = {
 			this = true
 		},
@@ -1585,7 +1585,7 @@ end
 temp()
 
 function temp()
-	var1.和 = {
+	var1_0.和 = {
 		平 = {
 			演 = {
 				變 = {

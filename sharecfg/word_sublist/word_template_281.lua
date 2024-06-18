@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_281 = {}
+var0_0.word_template_281 = {}
 
-local var1 = var0.word_template_281
+local var1_0 = var0_0.word_template_281
 
 function temp()
-	var1.聽 = {
+	var1_0.聽 = {
 		牌 = {
 			器 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.庭 = {
+	var1_0.庭 = {
 		锋 = {
 			不 = {
 				堪 = {
@@ -52,7 +52,7 @@ end
 temp()
 
 function temp()
-	var1.停 = {
+	var1_0.停 = {
 		机 = {
 			如 = {
 				何 = {
@@ -84,7 +84,7 @@ end
 temp()
 
 function temp()
-	var1.婷 = {
+	var1_0.婷 = {
 		婷 = {
 			激 = {
 				情 = {
@@ -104,7 +104,7 @@ end
 temp()
 
 function temp()
-	var1.挺 = {
+	var1_0.挺 = {
 		起 = {
 			古 = {
 				巨 = {
@@ -138,7 +138,7 @@ end
 temp()
 
 function temp()
-	var1.通 = {
+	var1_0.通 = {
 		奸 = {
 			this = true
 		},
@@ -354,7 +354,7 @@ end
 temp()
 
 function temp()
-	var1.同 = {
+	var1_0.同 = {
 		城 = {
 			一 = {
 				夜 = {

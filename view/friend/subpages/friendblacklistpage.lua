@@ -1,91 +1,91 @@
-﻿local var0 = class("FriendBlackListPage", import("...base.BaseSubView"))
+﻿local var0_0 = class("FriendBlackListPage", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "FriendBlackListUI"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.blackListPanel = arg0:findTF("blacklist_panel")
-	arg0.blacklistTopTF = arg0:findTF("blacklist_view_top")
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.blackListPanel = arg0_2:findTF("blacklist_panel")
+	arg0_2.blacklistTopTF = arg0_2:findTF("blacklist_view_top")
 end
 
-function var0.OnInit(arg0)
+function var0_0.OnInit(arg0_3)
 	return
 end
 
-function var0.UpdateData(arg0, arg1)
-	arg0.blackVOs = arg1.blackVOs
+function var0_0.UpdateData(arg0_4, arg1_4)
+	arg0_4.blackVOs = arg1_4.blackVOs
 
-	if not arg0.isInit then
-		arg0.isInit = true
+	if not arg0_4.isInit then
+		arg0_4.isInit = true
 
-		arg0:initBlackList()
+		arg0_4:initBlackList()
 
-		if not arg0.blackVOs then
-			arg0:emit(FriendMediator.GET_BLACK_LIST)
+		if not arg0_4.blackVOs then
+			arg0_4:emit(FriendMediator.GET_BLACK_LIST)
 		else
-			arg0:sortBlackList()
+			arg0_4:sortBlackList()
 		end
 	else
-		arg0.blackVOs = arg0.blackVOs or {}
+		arg0_4.blackVOs = arg0_4.blackVOs or {}
 
-		arg0:sortBlackList()
+		arg0_4:sortBlackList()
 	end
 end
 
-function var0.initBlackList(arg0)
-	arg0.blackItems = {}
-	arg0.blackRect = arg0.blackListPanel:Find("mask/view"):GetComponent("LScrollRect")
+function var0_0.initBlackList(arg0_5)
+	arg0_5.blackItems = {}
+	arg0_5.blackRect = arg0_5.blackListPanel:Find("mask/view"):GetComponent("LScrollRect")
 
-	function arg0.blackRect.onInitItem(arg0)
-		arg0:onInitItem(arg0)
+	function arg0_5.blackRect.onInitItem(arg0_6)
+		arg0_5:onInitItem(arg0_6)
 	end
 
-	function arg0.blackRect.onUpdateItem(arg0, arg1)
-		arg0:onUpdateItem(arg0, arg1)
+	function arg0_5.blackRect.onUpdateItem(arg0_7, arg1_7)
+		arg0_5:onUpdateItem(arg0_7, arg1_7)
 	end
 end
 
-function var0.onInitItem(arg0, arg1)
-	local var0 = FriendBlackListCard.New(arg1)
+function var0_0.onInitItem(arg0_8, arg1_8)
+	local var0_8 = FriendBlackListCard.New(arg1_8)
 
-	onButton(arg0, var0.btn, function()
+	onButton(arg0_8, var0_8.btn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("firend_relieve_blacklist_tip", var0.friendVO.name),
+			content = i18n("firend_relieve_blacklist_tip", var0_8.friendVO.name),
 			onYes = function()
-				arg0:emit(FriendMediator.RELIEVE_BLACKLIST, var0.friendVO.id)
+				arg0_8:emit(FriendMediator.RELIEVE_BLACKLIST, var0_8.friendVO.id)
 			end
 		})
 	end)
 
-	arg0.blackItems[arg1] = var0
+	arg0_8.blackItems[arg1_8] = var0_8
 end
 
-function var0.onUpdateItem(arg0, arg1, arg2)
-	local var0 = arg0.blackItems[arg2]
+function var0_0.onUpdateItem(arg0_11, arg1_11, arg2_11)
+	local var0_11 = arg0_11.blackItems[arg2_11]
 
-	if not var0 then
-		arg0:onInitItem(arg2)
+	if not var0_11 then
+		arg0_11:onInitItem(arg2_11)
 
-		var0 = arg0.blackItems[arg2]
+		var0_11 = arg0_11.blackItems[arg2_11]
 	end
 
-	local var1 = arg0.blackVOs[arg1 + 1]
+	local var1_11 = arg0_11.blackVOs[arg1_11 + 1]
 
-	var0:update(var1)
+	var0_11:update(var1_11)
 end
 
-function var0.sortBlackList(arg0)
-	table.sort(arg0.blackVOs, function(arg0, arg1)
-		return arg0.id < arg1.id
+function var0_0.sortBlackList(arg0_12)
+	table.sort(arg0_12.blackVOs, function(arg0_13, arg1_13)
+		return arg0_13.id < arg1_13.id
 	end)
-	arg0.blackRect:SetTotalCount(#arg0.blackVOs, -1)
+	arg0_12.blackRect:SetTotalCount(#arg0_12.blackVOs, -1)
 end
 
-function var0.OnDestroy(arg0)
-	for iter0, iter1 in pairs(arg0.blackItems or {}) do
-		iter1:dispose()
+function var0_0.OnDestroy(arg0_14)
+	for iter0_14, iter1_14 in pairs(arg0_14.blackItems or {}) do
+		iter1_14:dispose()
 	end
 end
 
-return var0
+return var0_0

@@ -1,147 +1,147 @@
-﻿local var0 = class("WorldAssignedItemView", import("..base.BaseSubView"))
+﻿local var0_0 = class("WorldAssignedItemView", import("..base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "StoreHouseItemAssignedView"
 end
 
-function var0.OnInit(arg0)
-	local var0 = arg0._tf:Find("operate")
+function var0_0.OnInit(arg0_2)
+	local var0_2 = arg0_2._tf:Find("operate")
 
-	arg0.ulist = UIItemList.New(var0:Find("got/bottom/list"), var0:Find("got/bottom/list/tpl"))
-	arg0.confirmBtn = var0:Find("action/confirm")
+	arg0_2.ulist = UIItemList.New(var0_2:Find("got/bottom/list"), var0_2:Find("got/bottom/list/tpl"))
+	arg0_2.confirmBtn = var0_2:Find("action/confirm")
 
-	setText(arg0.confirmBtn, i18n("text_confirm"))
+	setText(arg0_2.confirmBtn, i18n("text_confirm"))
 
-	arg0.cancelBtn = var0:Find("action/cancel")
+	arg0_2.cancelBtn = var0_2:Find("action/cancel")
 
-	setText(arg0.cancelBtn, i18n("text_cancel"))
+	setText(arg0_2.cancelBtn, i18n("text_cancel"))
 
-	arg0.rightArr = var0:Find("calc/value_bg/add")
-	arg0.leftArr = var0:Find("calc/value_bg/mius")
-	arg0.maxBtn = var0:Find("calc/max")
-	arg0.valueText = var0:Find("calc/value_bg/Text")
-	arg0.itemTF = var0:Find("item/left/IconTpl")
-	arg0.nameTF = arg0:findTF("item/display_panel/name_container/name")
-	arg0.descTF = arg0:findTF("item/display_panel/desc/Text")
+	arg0_2.rightArr = var0_2:Find("calc/value_bg/add")
+	arg0_2.leftArr = var0_2:Find("calc/value_bg/mius")
+	arg0_2.maxBtn = var0_2:Find("calc/max")
+	arg0_2.valueText = var0_2:Find("calc/value_bg/Text")
+	arg0_2.itemTF = var0_2:Find("item/left/IconTpl")
+	arg0_2.nameTF = arg0_2:findTF("item/display_panel/name_container/name")
+	arg0_2.descTF = arg0_2:findTF("item/display_panel/desc/Text")
 
-	onButton(arg0, arg0._tf:Find("bg"), function()
-		arg0:Hide()
+	onButton(arg0_2, arg0_2._tf:Find("bg"), function()
+		arg0_2:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.cancelBtn, function()
-		arg0:Hide()
+	onButton(arg0_2, arg0_2.cancelBtn, function()
+		arg0_2:Hide()
 	end, SFX_PANEL)
-	pressPersistTrigger(arg0.rightArr, 0.5, function(arg0)
-		if not arg0.itemVO then
-			arg0()
+	pressPersistTrigger(arg0_2.rightArr, 0.5, function(arg0_5)
+		if not arg0_2.itemVO then
+			arg0_5()
 
 			return
 		end
 
-		arg0.count = math.min(arg0.count + 1, arg0.itemVO.count)
+		arg0_2.count = math.min(arg0_2.count + 1, arg0_2.itemVO.count)
 
-		arg0:updateValue()
+		arg0_2:updateValue()
 	end, nil, true, true, 0.1, SFX_PANEL)
-	pressPersistTrigger(arg0.leftArr, 0.5, function(arg0)
-		if not arg0.itemVO then
-			arg0()
+	pressPersistTrigger(arg0_2.leftArr, 0.5, function(arg0_6)
+		if not arg0_2.itemVO then
+			arg0_6()
 
 			return
 		end
 
-		arg0.count = math.max(arg0.count - 1, 1)
+		arg0_2.count = math.max(arg0_2.count - 1, 1)
 
-		arg0:updateValue()
+		arg0_2:updateValue()
 	end, nil, true, true, 0.1, SFX_PANEL)
-	onButton(arg0, arg0.maxBtn, function()
-		if not arg0.itemVO then
+	onButton(arg0_2, arg0_2.maxBtn, function()
+		if not arg0_2.itemVO then
 			return
 		end
 
-		arg0.count = arg0.itemVO.count
+		arg0_2.count = arg0_2.itemVO.count
 
-		arg0:updateValue()
+		arg0_2:updateValue()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.confirmBtn, function()
-		if not arg0.selectedIndex or not arg0.itemVO or arg0.count <= 0 then
+	onButton(arg0_2, arg0_2.confirmBtn, function()
+		if not arg0_2.selectedIndex or not arg0_2.itemVO or arg0_2.count <= 0 then
 			return
 		end
 
-		arg0:emit(WorldInventoryMediator.OnUseItem, arg0.itemVO.id, arg0.count, arg0.itemVO:getConfig("usage_arg")[arg0.selectedIndex])
-		arg0:Hide()
+		arg0_2:emit(WorldInventoryMediator.OnUseItem, arg0_2.itemVO.id, arg0_2.count, arg0_2.itemVO:getConfig("usage_arg")[arg0_2.selectedIndex])
+		arg0_2:Hide()
 	end, SFX_PANEL)
 end
 
-function var0.Show(arg0)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
-	setActive(arg0._tf, true)
+function var0_0.Show(arg0_9)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_9._tf)
+	setActive(arg0_9._tf, true)
 end
 
-function var0.Hide(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, arg0._parentTf)
-	setActive(arg0._tf, false)
+function var0_0.Hide(arg0_10)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_10._tf, arg0_10._parentTf)
+	setActive(arg0_10._tf, false)
 end
 
-function var0.updateValue(arg0)
-	setText(arg0.valueText, arg0.count)
-	arg0.ulist:each(function(arg0, arg1)
-		if not isActive(arg1) then
+function var0_0.updateValue(arg0_11)
+	setText(arg0_11.valueText, arg0_11.count)
+	arg0_11.ulist:each(function(arg0_12, arg1_12)
+		if not isActive(arg1_12) then
 			return
 		end
 
-		setText(arg1:Find("item/bg/icon_bg/count"), arg0.count)
+		setText(arg1_12:Find("item/bg/icon_bg/count"), arg0_11.count)
 	end)
 end
 
-function var0.update(arg0, arg1)
-	arg0.count = 1
-	arg0.selectedIndex = nil
-	arg0.selectedItem = nil
-	arg0.itemVO = arg1
-	arg0.displayDrops = underscore.map(arg1:getConfig("usage_arg"), function(arg0)
+function var0_0.update(arg0_13, arg1_13)
+	arg0_13.count = 1
+	arg0_13.selectedIndex = nil
+	arg0_13.selectedItem = nil
+	arg0_13.itemVO = arg1_13
+	arg0_13.displayDrops = underscore.map(arg1_13:getConfig("usage_arg"), function(arg0_14)
 		return {
-			type = arg0[1],
-			id = arg0[2],
-			count = arg0[3]
+			type = arg0_14[1],
+			id = arg0_14[2],
+			count = arg0_14[3]
 		}
 	end)
 
-	arg0.ulist:make(function(arg0, arg1, arg2)
-		arg1 = arg1 + 1
+	arg0_13.ulist:make(function(arg0_15, arg1_15, arg2_15)
+		arg1_15 = arg1_15 + 1
 
-		if arg0 == UIItemList.EventUpdate then
-			updateDrop(arg2:Find("item/bg"), arg0.displayDrops[arg1])
+		if arg0_15 == UIItemList.EventUpdate then
+			updateDrop(arg2_15:Find("item/bg"), arg0_13.displayDrops[arg1_15])
 
-			local var0 = arg2:Find("item/bg/icon_bg/count")
+			local var0_15 = arg2_15:Find("item/bg/icon_bg/count")
 
-			onToggle(arg0, arg2, function(arg0)
-				if arg0 then
-					arg0.selectedIndex = arg1
-					arg0.selectedItem = arg2
+			onToggle(arg0_13, arg2_15, function(arg0_16)
+				if arg0_16 then
+					arg0_13.selectedIndex = arg1_15
+					arg0_13.selectedItem = arg2_15
 				end
 			end, SFX_PANEL)
-			setScrollText(arg2:Find("name_bg/Text"), arg0.displayDrops[arg1]:getConfig("name"))
+			setScrollText(arg2_15:Find("name_bg/Text"), arg0_13.displayDrops[arg1_15]:getConfig("name"))
 
-			arg0.selectedItem = arg0.selectedItem or arg2
+			arg0_13.selectedItem = arg0_13.selectedItem or arg2_15
 		end
 	end)
-	arg0.ulist:align(#arg0.displayDrops)
-	triggerToggle(arg0.selectedItem, true)
-	arg0:updateValue()
+	arg0_13.ulist:align(#arg0_13.displayDrops)
+	triggerToggle(arg0_13.selectedItem, true)
+	arg0_13:updateValue()
 
-	local var0 = {
-		type = arg1.type,
-		id = arg1.id,
-		count = arg1.count
+	local var0_13 = {
+		type = arg1_13.type,
+		id = arg1_13.id,
+		count = arg1_13.count
 	}
 
-	updateDrop(arg0.itemTF:Find("left/IconTpl"), setmetatable({
+	updateDrop(arg0_13.itemTF:Find("left/IconTpl"), setmetatable({
 		count = 0
 	}, {
-		__index = var0
+		__index = var0_13
 	}))
-	UpdateOwnDisplay(arg0.itemTF:Find("left/own"), var0)
-	setText(arg0.nameTF, arg1:getConfig("name"))
-	setText(arg0.descTF, arg1:getConfig("display"))
+	UpdateOwnDisplay(arg0_13.itemTF:Find("left/own"), var0_13)
+	setText(arg0_13.nameTF, arg1_13:getConfig("name"))
+	setText(arg0_13.descTF, arg1_13:getConfig("display"))
 end
 
-return var0
+return var0_0

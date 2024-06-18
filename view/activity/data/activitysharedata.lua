@@ -1,15 +1,15 @@
-﻿local var0 = class("ActivityShareData")
+﻿local var0_0 = class("ActivityShareData")
 
-function var0.Ctor(arg0)
+function var0_0.Ctor(arg0_1)
 	return
 end
 
-function var0.SetPlayer(arg0, arg1)
-	arg0.player = arg1
+function var0_0.SetPlayer(arg0_2, arg1_2)
+	arg0_2.player = arg1_2
 end
 
-function var0.SetFlagShip(arg0, arg1)
-	arg0.flagShip = arg1
+function var0_0.SetFlagShip(arg0_3, arg1_3)
+	arg0_3.flagShip = arg1_3
 end
 
-return var0
+return var0_0

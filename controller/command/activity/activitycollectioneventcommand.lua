@@ -1,119 +1,119 @@
-﻿local var0 = class("ActivityCollectionEventCommand", pm.SimpleCommand)
+﻿local var0_0 = class("ActivityCollectionEventCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.arg1
-	local var2 = var0.onConfirm
-	local var3 = var0.callBack
-	local var4 = getProxy(EventProxy)
-	local var5 = getProxy(ActivityProxy)
-	local var6 = var5:getActivityByType(ActivityConst.ACTIVITY_TYPE_COLLECTION_EVENT)
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.arg1
+	local var2_1 = var0_1.onConfirm
+	local var3_1 = var0_1.callBack
+	local var4_1 = getProxy(EventProxy)
+	local var5_1 = getProxy(ActivityProxy)
+	local var6_1 = var5_1:getActivityByType(ActivityConst.ACTIVITY_TYPE_COLLECTION_EVENT)
 
-	if not var6 or var6:isEnd() then
+	if not var6_1 or var6_1:isEnd() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(11202, {
-		activity_id = var6.id,
-		cmd = var0.cmd,
-		arg1 = var0.arg1,
-		arg2 = var0.arg2,
-		arg_list = var0.arg_list
-	}, 11203, function(arg0)
-		if arg0.result == 0 then
-			if var0.cmd == ActivityConst.COLLETION_EVENT_OP_JOIN then
-				EventStartCommand.OnStart(var1)
+		activity_id = var6_1.id,
+		cmd = var0_1.cmd,
+		arg1 = var0_1.arg1,
+		arg2 = var0_1.arg2,
+		arg_list = var0_1.arg_list
+	}, 11203, function(arg0_2)
+		if arg0_2.result == 0 then
+			if var0_1.cmd == ActivityConst.COLLETION_EVENT_OP_JOIN then
+				EventStartCommand.OnStart(var1_1)
 
-				if var3 then
-					var3()
+				if var3_1 then
+					var3_1()
 				end
 
-				if var2 then
-					var2()
+				if var2_1 then
+					var2_1()
 				end
-			elseif var0.cmd == ActivityConst.COLLETION_EVENT_OP_SUBMIT then
-				table.insert(var6.data1_list, var1)
-				var5:updateActivity(var6)
+			elseif var0_1.cmd == ActivityConst.COLLETION_EVENT_OP_SUBMIT then
+				table.insert(var6_1.data1_list, var1_1)
+				var5_1:updateActivity(var6_1)
 
-				local var0 = {}
-				local var1 = var6:getConfig("config_data")
-				local var2 = table.indexof(var1, var1)
+				local var0_2 = {}
+				local var1_2 = var6_1:getConfig("config_data")
+				local var2_2 = table.indexof(var1_2, var1_1)
 
-				assert(var2)
+				assert(var2_2)
 
-				local var3 = var6:getDayIndex()
+				local var3_2 = var6_1:getDayIndex()
 
-				if var2 < var3 and var3 <= #var1 then
-					local var4 = var1[var3]
+				if var2_2 < var3_2 and var3_2 <= #var1_2 then
+					local var4_2 = var1_2[var3_2]
 
-					table.insert(var0, {
+					table.insert(var0_2, {
 						finish_time = 0,
 						over_time = 0,
-						id = var4,
+						id = var4_2,
 						ship_id_list = {},
-						activity_id = var6.id
+						activity_id = var6_1.id
 					})
 				end
 
-				EventFinishCommand.OnFinish(var1, {
-					exp = arg0.number[1],
-					drop_list = arg0.award_list,
-					new_collection = var0,
-					is_cri = arg0.number[2]
-				}, var2)
+				EventFinishCommand.OnFinish(var1_1, {
+					exp = arg0_2.number[1],
+					drop_list = arg0_2.award_list,
+					new_collection = var0_2,
+					is_cri = arg0_2.number[2]
+				}, var2_1)
 
-				if var3 then
-					var3()
+				if var3_1 then
+					var3_1()
 				end
-			elseif var0.cmd == ActivityConst.COLLETION_EVENT_OP_GIVE_UP then
-				EventGiveUpCommand.OnCancel(var1)
+			elseif var0_1.cmd == ActivityConst.COLLETION_EVENT_OP_GIVE_UP then
+				EventGiveUpCommand.OnCancel(var1_1)
 
-				local var5 = {}
-				local var6 = var6:getConfig("config_data")
-				local var7 = table.indexof(var6, var1)
+				local var5_2 = {}
+				local var6_2 = var6_1:getConfig("config_data")
+				local var7_2 = table.indexof(var6_2, var1_1)
 
-				assert(var7)
+				assert(var7_2)
 
-				local var8 = var6:getDayIndex()
+				local var8_2 = var6_1:getDayIndex()
 
-				if var7 < var8 and var8 <= #var6 then
-					local var9 = var6[var8]
+				if var7_2 < var8_2 and var8_2 <= #var6_2 then
+					local var9_2 = var6_2[var8_2]
 
-					table.insert(var5, {
+					table.insert(var5_2, {
 						finish_time = 0,
 						over_time = 0,
-						id = var9,
+						id = var9_2,
 						ship_id_list = {},
-						activity_id = var6.id
+						activity_id = var6_1.id
 					})
 				end
 
-				if #var5 > 0 then
-					local var10, var11 = var4:findInfoById(var1)
+				if #var5_2 > 0 then
+					local var10_2, var11_2 = var4_1:findInfoById(var1_1)
 
-					table.remove(var4.eventList, var11)
+					table.remove(var4_1.eventList, var11_2)
 
-					for iter0, iter1 in ipairs(var5) do
-						table.insert(var4.eventList, EventInfo.New(iter1))
+					for iter0_2, iter1_2 in ipairs(var5_2) do
+						table.insert(var4_1.eventList, EventInfo.New(iter1_2))
 					end
 				end
 
-				if var3 then
-					var3()
+				if var3_1 then
+					var3_1()
 				end
 
-				if var2 then
-					var2()
+				if var2_1 then
+					var2_1()
 				end
 
 				pg.m02:sendNotification(GAME.EVENT_LIST_UPDATE)
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0.result] .. arg0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)
 		end
 	end)
 end
 
-return var0
+return var0_0

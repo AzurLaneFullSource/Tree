@@ -1,25 +1,25 @@
-﻿local var0 = class("TriggerTaskCommand", pm.SimpleCommand)
+﻿local var0_0 = class("TriggerTaskCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = arg1:getType()
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = arg1_1:getType()
 
 	pg.ConnectionMgr.GetInstance():Send(20007, {
-		id = var0
-	}, 20008, function(arg0)
-		if arg0.result == 0 then
+		id = var0_1
+	}, 20008, function(arg0_2)
+		if arg0_2.result == 0 then
 			getProxy(TaskProxy):addTask(Task.New({
-				id = var0
+				id = var0_1
 			}))
-			arg0:sendNotification(GAME.TRIGGER_TASK_DONE)
+			arg0_1:sendNotification(GAME.TRIGGER_TASK_DONE)
 
-			if var1 then
-				var1(true)
+			if var1_1 then
+				var1_1(true)
 			end
-		elseif var1 then
-			var1(false)
+		elseif var1_1 then
+			var1_1(false)
 		end
 	end)
 end
 
-return var0
+return var0_0

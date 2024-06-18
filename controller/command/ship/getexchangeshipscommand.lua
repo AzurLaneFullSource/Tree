@@ -1,28 +1,28 @@
-﻿local var0 = class("GetExchangeShipsCommand", pm.SimpleCommand)
+﻿local var0_0 = class("GetExchangeShipsCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody().time
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody().time
 
 	pg.ConnectionMgr.GetInstance():Send(16100, {
-		time = var0
-	}, 16101, function(arg0)
-		local var0 = getProxy(BuildShipProxy)
-		local var1 = {}
+		time = var0_1
+	}, 16101, function(arg0_2)
+		local var0_2 = getProxy(BuildShipProxy)
+		local var1_2 = {}
 
-		for iter0, iter1 in ipairs(arg0.ship_id_list) do
-			table.insert(var1, {
+		for iter0_2, iter1_2 in ipairs(arg0_2.ship_id_list) do
+			table.insert(var1_2, {
 				isFetched = false,
-				id = iter1
+				id = iter1_2
 			})
 		end
 
-		for iter2, iter3 in ipairs(arg0.fetched_index_list) do
-			var1[iter3].isFetched = true
+		for iter2_2, iter3_2 in ipairs(arg0_2.fetched_index_list) do
+			var1_2[iter3_2].isFetched = true
 		end
 
-		var0:updateExchangeList(arg0.flag_ship_flash_time, arg0.flash_time, var1)
-		arg0:sendNotification(GAME.GET_EXCHANGE_SHIPS_DONE)
+		var0_2:updateExchangeList(arg0_2.flag_ship_flash_time, arg0_2.flash_time, var1_2)
+		arg0_1:sendNotification(GAME.GET_EXCHANGE_SHIPS_DONE)
 	end)
 end
 
-return var0
+return var0_0

@@ -1,85 +1,85 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConfig
-local var2 = var0.Battle.BattleVariable
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConfig
+local var2_0 = var0_0.Battle.BattleVariable
 
-var0.Battle.BattleManualWeaponAutoBot = class("BattleManualWeaponAutoBot")
-var0.Battle.BattleManualWeaponAutoBot.__name = "BattleManualWeaponAutoBot"
+var0_0.Battle.BattleManualWeaponAutoBot = class("BattleManualWeaponAutoBot")
+var0_0.Battle.BattleManualWeaponAutoBot.__name = "BattleManualWeaponAutoBot"
 
-local var3 = var0.Battle.BattleManualWeaponAutoBot
+local var3_0 = var0_0.Battle.BattleManualWeaponAutoBot
 
-function var3.Ctor(arg0, arg1)
-	var0.EventListener.AttachEventListener(arg0)
+function var3_0.Ctor(arg0_1, arg1_1)
+	var0_0.EventListener.AttachEventListener(arg0_1)
 
-	arg0._fleetVO = arg1
+	arg0_1._fleetVO = arg1_1
 
-	arg0:init(arg1)
+	arg0_1:init(arg1_1)
 end
 
-function var3.init(arg0)
-	arg0._active = false
-	arg0._isPlayFocus = true
-	arg0._chargeVO = arg0._fleetVO:GetChargeWeaponVO()
-	arg0._torpedoVO = arg0._fleetVO:GetTorpedoWeaponVO()
-	arg0._AAVO = arg0._fleetVO:GetAirAssistVO()
-	arg0._totalTime = 0
-	arg0._lastActiveTimeStamp = nil
+function var3_0.init(arg0_2)
+	arg0_2._active = false
+	arg0_2._isPlayFocus = true
+	arg0_2._chargeVO = arg0_2._fleetVO:GetChargeWeaponVO()
+	arg0_2._torpedoVO = arg0_2._fleetVO:GetTorpedoWeaponVO()
+	arg0_2._AAVO = arg0_2._fleetVO:GetAirAssistVO()
+	arg0_2._totalTime = 0
+	arg0_2._lastActiveTimeStamp = nil
 end
 
-function var3.Update(arg0)
-	if arg0._active then
-		if not arg0._torpedoVO:IsOverLoad() and arg0._fleetVO:QuickCastTorpedo() then
+function var3_0.Update(arg0_3)
+	if arg0_3._active then
+		if not arg0_3._torpedoVO:IsOverLoad() and arg0_3._fleetVO:QuickCastTorpedo() then
 			return
 		end
 
-		if not arg0._AAVO:IsOverLoad() and arg0._fleetVO:UnleashAllInStrike() then
+		if not arg0_3._AAVO:IsOverLoad() and arg0_3._fleetVO:UnleashAllInStrike() then
 			return
 		end
 
-		if not arg0._chargeVO:IsOverLoad() and arg0._fleetVO:QuickTagChrageWeapon(arg0._isPlayFocus) then
+		if not arg0_3._chargeVO:IsOverLoad() and arg0_3._fleetVO:QuickTagChrageWeapon(arg0_3._isPlayFocus) then
 			return
 		end
 	end
 end
 
-function var3.IsActive(arg0)
-	return arg0._active
+function var3_0.IsActive(arg0_4)
+	return arg0_4._active
 end
 
-function var3.SetActive(arg0, arg1, arg2)
-	if arg0._active ~= arg1 and arg1 == true then
-		arg0._lastActiveTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
-	elseif arg0._active ~= arg1 and arg1 == false and arg0._lastActiveTimeStamp ~= nil then
-		local var0 = pg.TimeMgr.GetInstance():GetCombatTime()
+function var3_0.SetActive(arg0_5, arg1_5, arg2_5)
+	if arg0_5._active ~= arg1_5 and arg1_5 == true then
+		arg0_5._lastActiveTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
+	elseif arg0_5._active ~= arg1_5 and arg1_5 == false and arg0_5._lastActiveTimeStamp ~= nil then
+		local var0_5 = pg.TimeMgr.GetInstance():GetCombatTime()
 
-		arg0._totalTime = arg0._totalTime + (var0 - arg0._lastActiveTimeStamp)
-		arg0._lastActiveTimeStamp = nil
+		arg0_5._totalTime = arg0_5._totalTime + (var0_5 - arg0_5._lastActiveTimeStamp)
+		arg0_5._lastActiveTimeStamp = nil
 	end
 
-	arg0._fleetVO:AutoBotUpdated(arg1)
+	arg0_5._fleetVO:AutoBotUpdated(arg1_5)
 
-	arg0._active = arg1
-	arg0._isPlayFocus = arg2
+	arg0_5._active = arg1_5
+	arg0_5._isPlayFocus = arg2_5
 end
 
-function var3.GetTotalActiveDuration(arg0)
-	if arg0._lastActiveTimeStamp then
-		local var0 = pg.TimeMgr.GetInstance():GetCombatTime()
+function var3_0.GetTotalActiveDuration(arg0_6)
+	if arg0_6._lastActiveTimeStamp then
+		local var0_6 = pg.TimeMgr.GetInstance():GetCombatTime()
 
-		arg0._totalTime = arg0._totalTime + (var0 - arg0._lastActiveTimeStamp)
-		arg0._lastActiveTimeStamp = nil
+		arg0_6._totalTime = arg0_6._totalTime + (var0_6 - arg0_6._lastActiveTimeStamp)
+		arg0_6._lastActiveTimeStamp = nil
 	end
 
-	return arg0._totalTime
+	return arg0_6._totalTime
 end
 
-function var3.Dispose(arg0)
-	arg0._chargeVO = nil
-	arg0._torpedoVO = nil
-	arg0._AAVO = nil
-	arg0._dataProxy = nil
-	arg0._uiMediator = nil
+function var3_0.Dispose(arg0_7)
+	arg0_7._chargeVO = nil
+	arg0_7._torpedoVO = nil
+	arg0_7._AAVO = nil
+	arg0_7._dataProxy = nil
+	arg0_7._uiMediator = nil
 
-	var0.EventListener.DetachEventListener(arg0)
+	var0_0.EventListener.DetachEventListener(arg0_7)
 end

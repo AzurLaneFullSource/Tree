@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	Points = {
 		{
 			x = -439.4111,
@@ -53,7 +53,7 @@
 	}
 }
 
-var0.Points[5].outRandom = true
-var0.Points[5].isBan = true
+var0_0.Points[5].outRandom = true
+var0_0.Points[5].isBan = true
 
-return var0
+return var0_0

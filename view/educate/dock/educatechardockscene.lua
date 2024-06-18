@@ -1,75 +1,75 @@
-﻿local var0 = class("EducateCharDockScene", import("view.base.BaseUI"))
+﻿local var0_0 = class("EducateCharDockScene", import("view.base.BaseUI"))
 
-var0.ON_CLOSE_VIEW = "EducateCharDockScene.ON_CLOSE_VIEW"
-var0.ON_SELECT = "EducateCharDockScene.ON_SELECT"
-var0.ON_CONFIRM = "EducateCharDockScene.ON_CONFIRM"
-var0.MSG_CLEAR_TIP = "EducateCharDockScene.MSG_CLEAR_TIP"
+var0_0.ON_CLOSE_VIEW = "EducateCharDockScene.ON_CLOSE_VIEW"
+var0_0.ON_SELECT = "EducateCharDockScene.ON_SELECT"
+var0_0.ON_CONFIRM = "EducateCharDockScene.ON_CONFIRM"
+var0_0.MSG_CLEAR_TIP = "EducateCharDockScene.MSG_CLEAR_TIP"
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "EducateCharDockUI"
 end
 
-function var0.init(arg0)
-	arg0.backBtn = arg0:findTF("adapt/top/back")
-	arg0.homeBtn = arg0:findTF("adapt/top/home")
-	arg0.selectPage = EducateCharSelectPage.New(arg0._tf:Find("adapt/pages"), arg0.event)
-	arg0.groupPage = EducateCharGroupPage.New(arg0._tf:Find("adapt/pages/groupPage"), arg0.event, arg0.contextData)
+function var0_0.init(arg0_2)
+	arg0_2.backBtn = arg0_2:findTF("adapt/top/back")
+	arg0_2.homeBtn = arg0_2:findTF("adapt/top/home")
+	arg0_2.selectPage = EducateCharSelectPage.New(arg0_2._tf:Find("adapt/pages"), arg0_2.event)
+	arg0_2.groupPage = EducateCharGroupPage.New(arg0_2._tf:Find("adapt/pages/groupPage"), arg0_2.event, arg0_2.contextData)
 end
 
-function var0.didEnter(arg0)
-	arg0.groupPage:Update()
-	onButton(arg0, arg0.backBtn, function()
-		if arg0.selectPage and arg0.selectPage:GetLoaded() and arg0.selectPage:isShowing() then
-			arg0.selectPage:Back(function()
-				arg0.groupPage:Show()
-				arg0.selectPage:Hide()
+function var0_0.didEnter(arg0_3)
+	arg0_3.groupPage:Update()
+	onButton(arg0_3, arg0_3.backBtn, function()
+		if arg0_3.selectPage and arg0_3.selectPage:GetLoaded() and arg0_3.selectPage:isShowing() then
+			arg0_3.selectPage:Back(function()
+				arg0_3.groupPage:Show()
+				arg0_3.selectPage:Hide()
 			end)
 
 			return
 		end
 
-		arg0:closeView()
+		arg0_3:closeView()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.homeBtn, function()
-		arg0:emit(var0.ON_HOME)
+	onButton(arg0_3, arg0_3.homeBtn, function()
+		arg0_3:emit(var0_0.ON_HOME)
 	end, SFX_PANEL)
-	arg0:bind(var0.ON_CLOSE_VIEW, function()
-		arg0:closeView()
+	arg0_3:bind(var0_0.ON_CLOSE_VIEW, function()
+		arg0_3:closeView()
 	end)
-	arg0:bind(var0.ON_SELECT, function(arg0, arg1, arg2)
-		arg0.groupPage:Hide()
-		arg0.selectPage:ExecuteAction("Update", arg1, arg2)
+	arg0_3:bind(var0_0.ON_SELECT, function(arg0_8, arg1_8, arg2_8)
+		arg0_3.groupPage:Hide()
+		arg0_3.selectPage:ExecuteAction("Update", arg1_8, arg2_8)
 	end)
-	arg0:bind(var0.ON_CONFIRM, function(arg0, arg1)
-		arg0.groupPage:Show()
-		arg0.selectPage:Hide()
-		arg0.groupPage:FlushList(arg1)
-		arg0:emit(EducateCharDockMediator.ON_SELECTED, arg1)
+	arg0_3:bind(var0_0.ON_CONFIRM, function(arg0_9, arg1_9)
+		arg0_3.groupPage:Show()
+		arg0_3.selectPage:Hide()
+		arg0_3.groupPage:FlushList(arg1_9)
+		arg0_3:emit(EducateCharDockMediator.ON_SELECTED, arg1_9)
 	end)
 end
 
-function var0.onBackPressed(arg0)
-	if arg0.selectPage and arg0.selectPage:GetLoaded() and arg0.selectPage:isShowing() then
-		triggerButton(arg0.backBtn)
+function var0_0.onBackPressed(arg0_10)
+	if arg0_10.selectPage and arg0_10.selectPage:GetLoaded() and arg0_10.selectPage:isShowing() then
+		triggerButton(arg0_10.backBtn)
 
 		return
 	end
 
-	var0.super.onBackPressed(arg0)
+	var0_0.super.onBackPressed(arg0_10)
 end
 
-function var0.willExit(arg0)
-	if arg0.selectPage then
-		arg0.selectPage:Destroy()
+function var0_0.willExit(arg0_11)
+	if arg0_11.selectPage then
+		arg0_11.selectPage:Destroy()
 
-		arg0.selectPage = nil
+		arg0_11.selectPage = nil
 	end
 
-	if arg0.groupPage then
-		arg0.groupPage:Destroy()
+	if arg0_11.groupPage then
+		arg0_11.groupPage:Destroy()
 
-		arg0.groupPage = nil
+		arg0_11.groupPage = nil
 	end
 end
 
-return var0
+return var0_0

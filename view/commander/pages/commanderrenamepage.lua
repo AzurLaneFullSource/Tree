@@ -1,58 +1,58 @@
-﻿local var0 = class("CommanderRenamePage", import("...base.BaseSubView"))
+﻿local var0_0 = class("CommanderRenamePage", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "CommandeRenameUI"
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0._tf:Find("frame/close_btn"), function()
-		arg0:Hide()
+function var0_0.OnInit(arg0_2)
+	onButton(arg0_2, arg0_2._tf:Find("frame/close_btn"), function()
+		arg0_2:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+	onButton(arg0_2, arg0_2._tf, function()
+		arg0_2:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0._tf:Find("frame/cancel_btn"), function()
-		arg0:Hide()
+	onButton(arg0_2, arg0_2._tf:Find("frame/cancel_btn"), function()
+		arg0_2:Hide()
 	end, SFX_PANEL)
 
-	arg0.input = findTF(arg0._tf, "frame/bg/content/input")
-	arg0.confirmBtn = arg0._tf:Find("frame/confirm_btn")
+	arg0_2.input = findTF(arg0_2._tf, "frame/bg/content/input")
+	arg0_2.confirmBtn = arg0_2._tf:Find("frame/confirm_btn")
 
-	setText(arg0:findTF("frame/bg/content/label"), i18n("commander_rename_tip"))
+	setText(arg0_2:findTF("frame/bg/content/label"), i18n("commander_rename_tip"))
 end
 
-function var0.Show(arg0, arg1)
-	arg0.isShowMsgBox = true
+function var0_0.Show(arg0_6, arg1_6)
+	arg0_6.isShowMsgBox = true
 
-	setActive(arg0._tf, true)
-	arg0._tf:SetAsLastSibling()
-	setInputText(arg0.input, "")
-	onButton(arg0, arg0.confirmBtn, function()
-		local var0 = getInputText(arg0.input)
+	setActive(arg0_6._tf, true)
+	arg0_6._tf:SetAsLastSibling()
+	setInputText(arg0_6.input, "")
+	onButton(arg0_6, arg0_6.confirmBtn, function()
+		local var0_7 = getInputText(arg0_6.input)
 
-		if not var0 or var0 == "" then
+		if not var0_7 or var0_7 == "" then
 			return
 		end
 
-		arg0:emit(CommanderCatMediator.RENAME, arg1.id, var0)
-		arg0:Hide()
+		arg0_6:emit(CommanderCatMediator.RENAME, arg1_6.id, var0_7)
+		arg0_6:Hide()
 	end, SFX_PANEL)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, false, {
+	pg.UIMgr.GetInstance():BlurPanel(arg0_6._tf, false, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 end
 
-function var0.Hide(arg0)
-	arg0.isShowMsgBox = nil
+function var0_0.Hide(arg0_8)
+	arg0_8.isShowMsgBox = nil
 
-	setActive(arg0._tf, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, arg0._parentTf)
+	setActive(arg0_8._tf, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_8._tf, arg0_8._parentTf)
 end
 
-function var0.OnDestroy(arg0)
-	if arg0.isShowMsgBox then
-		arg0:Hide()
+function var0_0.OnDestroy(arg0_9)
+	if arg0_9.isShowMsgBox then
+		arg0_9:Hide()
 	end
 end
 
-return var0
+return var0_0

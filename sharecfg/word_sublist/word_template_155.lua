@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_155 = {}
+var0_0.word_template_155 = {}
 
-local var1 = var0.word_template_155
+local var1_0 = var0_0.word_template_155
 
 function temp()
-	var1.借 = {
+	var1_0.借 = {
 		你 = {
 			一 = {
 				床 = {
@@ -34,7 +34,7 @@ end
 temp()
 
 function temp()
-	var1.斤 = {
+	var1_0.斤 = {
 		平 = {
 			this = true
 		}
@@ -44,7 +44,7 @@ end
 temp()
 
 function temp()
-	var1.今 = {
+	var1_0.今 = {
 		后 = {
 			打 = {
 				炮 = {
@@ -236,7 +236,7 @@ end
 temp()
 
 function temp()
-	var1.金 = {
+	var1_0.金 = {
 		伯 = {
 			帆 = {
 				this = true
@@ -730,7 +730,7 @@ end
 temp()
 
 function temp()
-	var1.津 = {
+	var1_0.津 = {
 		品 = {
 			this = true
 		}
@@ -740,7 +740,7 @@ end
 temp()
 
 function temp()
-	var1.筋 = {
+	var1_0.筋 = {
 		肉 = {
 			勃 = {
 				起 = {
@@ -768,7 +768,7 @@ end
 temp()
 
 function temp()
-	var1.仅 = {
+	var1_0.仅 = {
 		凭 = {
 			this = true
 		}

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_387 = {}
+var0_0.word_template_387 = {}
 
-local var1 = var0.word_template_387
+local var1_0 = var0_0.word_template_387
 
 function temp()
-	var1.娜 = {
+	var1_0.娜 = {
 		奥 = {
 			米 = {
 				["\\"] = {
@@ -35,7 +35,7 @@ end
 temp()
 
 function temp()
-	var1.粪 = {
+	var1_0.粪 = {
 		坑 = {
 			先 = {
 				生 = {
@@ -64,7 +64,7 @@ end
 temp()
 
 function temp()
-	var1.宽 = {
+	var1_0.宽 = {
 		衣 = {
 			帝 = {
 				座 = {
@@ -212,7 +212,7 @@ end
 temp()
 
 function temp()
-	var1.Ⅱ = {
+	var1_0.Ⅱ = {
 		Ⅹ = {
 			大 = {
 				this = true
@@ -247,7 +247,7 @@ end
 temp()
 
 function temp()
-	var1.芃 = {
+	var1_0.芃 = {
 		李 = {
 			圆 = {
 				this = true
@@ -259,7 +259,7 @@ end
 temp()
 
 function temp()
-	var1.壬 = {
+	var1_0.壬 = {
 		皿 = {
 			大 = {
 				会 = {
@@ -275,7 +275,7 @@ end
 temp()
 
 function temp()
-	var1.怛 = {
+	var1_0.怛 = {
 		籁 = {
 			喇 = {
 				嘛 = {

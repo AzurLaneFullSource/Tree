@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_187 = {}
+var0_0.word_template_187 = {}
 
-local var1 = var0.word_template_187
+local var1_0 = var0_0.word_template_187
 
 function temp()
-	var1.两 = {
+	var1_0.两 = {
 		岸 = {
 			才 = {
 				子 = {
@@ -438,7 +438,7 @@ end
 temp()
 
 function temp()
-	var1.兩 = {
+	var1_0.兩 = {
 		岸 = {
 			關 = {
 				係 = {
@@ -495,7 +495,7 @@ end
 temp()
 
 function temp()
-	var1.亮 = {
+	var1_0.亮 = {
 		屄 = {
 			this = true
 		},
@@ -520,7 +520,7 @@ end
 temp()
 
 function temp()
-	var1.靓 = {
+	var1_0.靓 = {
 		妹 = {
 			兼 = {
 				职 = {
@@ -540,7 +540,7 @@ end
 temp()
 
 function temp()
-	var1.撩 = {
+	var1_0.撩 = {
 		起 = {
 			裙 = {
 				子 = {
@@ -560,7 +560,7 @@ end
 temp()
 
 function temp()
-	var1.料 = {
+	var1_0.料 = {
 		理 = {
 			店 = {
 				this = true
@@ -572,7 +572,7 @@ end
 temp()
 
 function temp()
-	var1.廖 = {
+	var1_0.廖 = {
 		錫 = {
 			龍 = {
 				this = true

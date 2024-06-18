@@ -1,131 +1,131 @@
-﻿local var0 = class("CardPairsCard")
+﻿local var0_0 = class("CardPairsCard")
 
-var0.CARD_STATE_BACK = 0
-var0.CARD_STATE_FRONT = 1
-var0.CARD_STATE_HIDE = 2
-var0.ANI_TIME = 0.5
+var0_0.CARD_STATE_BACK = 0
+var0_0.CARD_STATE_FRONT = 1
+var0_0.CARD_STATE_HIDE = 2
+var0_0.ANI_TIME = 0.5
 
-function var0.Ctor(arg0, arg1, arg2, arg3, arg4, arg5, arg6)
-	pg.DelegateInfo.New(arg0)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1, arg5_1, arg6_1)
+	pg.DelegateInfo.New(arg0_1)
 
-	arg0.cardTf = arg1
-	arg0.pics = arg2
-	arg0.img = findTF(arg0.cardTf, "img")
-	arg0.back = findTF(arg0.cardTf, "back")
-	arg0.front = findTF(arg0.cardTf, "front")
-	arg0.clearSign = findTF(arg0.cardTf, "gray")
-	arg0.outline = GetComponent(arg0.front, typeof(Outline))
+	arg0_1.cardTf = arg1_1
+	arg0_1.pics = arg2_1
+	arg0_1.img = findTF(arg0_1.cardTf, "img")
+	arg0_1.back = findTF(arg0_1.cardTf, "back")
+	arg0_1.front = findTF(arg0_1.cardTf, "front")
+	arg0_1.clearSign = findTF(arg0_1.cardTf, "gray")
+	arg0_1.outline = GetComponent(arg0_1.front, typeof(Outline))
 
-	arg0:setOutline(false)
+	arg0_1:setOutline(false)
 
-	arg0.cardState = arg0.CARD_STATE_BACK
-	arg0.canClick = true
-	arg0.enable = true
-	arg0.aniCallBack = arg6
-	arg0.aniStartCallBak = arg5
+	arg0_1.cardState = arg0_1.CARD_STATE_BACK
+	arg0_1.canClick = true
+	arg0_1.enable = true
+	arg0_1.aniCallBack = arg6_1
+	arg0_1.aniStartCallBak = arg5_1
 
-	arg0:initCard(arg3)
-	onButton(arg0, arg0.cardTf, function()
-		arg4(arg0)
+	arg0_1:initCard(arg3_1)
+	onButton(arg0_1, arg0_1.cardTf, function()
+		arg4_1(arg0_1)
 	end)
 end
 
-function var0.getCardIndex(arg0)
-	return arg0.cardIndex
+function var0_0.getCardIndex(arg0_3)
+	return arg0_3.cardIndex
 end
 
-function var0.setEnable(arg0, arg1)
-	arg0.enable = arg1
+function var0_0.setEnable(arg0_4, arg1_4)
+	arg0_4.enable = arg1_4
 end
 
-function var0.setClear(arg0)
-	setActive(arg0.clearSign, true)
-	arg0:setOutline(false)
+function var0_0.setClear(arg0_5)
+	setActive(arg0_5.clearSign, true)
+	arg0_5:setOutline(false)
 
-	arg0.canClick = false
+	arg0_5.canClick = false
 end
 
-function var0.setOutline(arg0, arg1)
-	arg0.outline.enabled = arg1
+function var0_0.setOutline(arg0_6, arg1_6)
+	arg0_6.outline.enabled = arg1_6
 end
 
-function var0.initCard(arg0, arg1)
-	arg0.cardIndex = arg1
+function var0_0.initCard(arg0_7, arg1_7)
+	arg0_7.cardIndex = arg1_7
 
-	arg0:setSpriteTo(findTF(arg0.pics, "pic" .. arg1), arg0.img, false)
-	setActive(arg0.clearSign, false)
-	arg0:showBack()
+	arg0_7:setSpriteTo(findTF(arg0_7.pics, "pic" .. arg1_7), arg0_7.img, false)
+	setActive(arg0_7.clearSign, false)
+	arg0_7:showBack()
 
-	arg0.canClick = true
+	arg0_7.canClick = true
 end
 
-function var0.showBack(arg0)
-	setActive(arg0.back, true)
-	setActive(arg0.front, false)
-	setActive(arg0.img, false)
+function var0_0.showBack(arg0_8)
+	setActive(arg0_8.back, true)
+	setActive(arg0_8.front, false)
+	setActive(arg0_8.img, false)
 
-	arg0.cardState = arg0.CARD_STATE_BACK
+	arg0_8.cardState = arg0_8.CARD_STATE_BACK
 
-	arg0:setOutline(false)
+	arg0_8:setOutline(false)
 end
 
-function var0.showFront(arg0)
-	setActive(arg0.back, false)
-	setActive(arg0.front, true)
-	setActive(arg0.img, true)
+function var0_0.showFront(arg0_9)
+	setActive(arg0_9.back, false)
+	setActive(arg0_9.front, true)
+	setActive(arg0_9.img, true)
 
-	arg0.cardState = arg0.CARD_STATE_FRONT
+	arg0_9.cardState = arg0_9.CARD_STATE_FRONT
 end
 
-function var0.aniShowBack(arg0, arg1, arg2, arg3)
-	arg0.canClick = false
+function var0_0.aniShowBack(arg0_10, arg1_10, arg2_10, arg3_10)
+	arg0_10.canClick = false
 
-	if arg1 then
-		arg0:showBack()
+	if arg1_10 then
+		arg0_10:showBack()
 	else
-		arg0:showFront()
+		arg0_10:showFront()
 	end
 
-	if not arg2 then
-		arg0.aniStartCallBak(arg0, arg1)
+	if not arg2_10 then
+		arg0_10.aniStartCallBak(arg0_10, arg1_10)
 	end
 
-	arg0.cardTf.localScale = Vector3(1, 1, 1)
+	arg0_10.cardTf.localScale = Vector3(1, 1, 1)
 
-	LeanTween.scale(go(arg0.cardTf), Vector3(0, 1, 1), arg0.ANI_TIME):setDelay(defaultValue(arg3, 0)):setOnComplete(System.Action(function()
-		if arg1 then
-			arg0:showFront()
+	LeanTween.scale(go(arg0_10.cardTf), Vector3(0, 1, 1), arg0_10.ANI_TIME):setDelay(defaultValue(arg3_10, 0)):setOnComplete(System.Action(function()
+		if arg1_10 then
+			arg0_10:showFront()
 		else
-			arg0:showBack()
+			arg0_10:showBack()
 		end
 
-		LeanTween.scale(go(arg0.cardTf), Vector3(1, 1, 1), arg0.ANI_TIME):setOnComplete(System.Action(function()
-			arg0.canClick = true
+		LeanTween.scale(go(arg0_10.cardTf), Vector3(1, 1, 1), arg0_10.ANI_TIME):setOnComplete(System.Action(function()
+			arg0_10.canClick = true
 
-			if not arg2 then
-				arg0.aniCallBack(arg0, arg1)
+			if not arg2_10 then
+				arg0_10.aniCallBack(arg0_10, arg1_10)
 			end
 		end))
 	end))
 end
 
-function var0.setSpriteTo(arg0, arg1, arg2, arg3)
-	local var0 = arg2:GetComponent(typeof(Image))
+function var0_0.setSpriteTo(arg0_13, arg1_13, arg2_13, arg3_13)
+	local var0_13 = arg2_13:GetComponent(typeof(Image))
 
-	var0.sprite = arg1:GetComponent(typeof(Image)).sprite
+	var0_13.sprite = arg1_13:GetComponent(typeof(Image)).sprite
 
-	if arg3 then
-		var0:SetNativeSize()
+	if arg3_13 then
+		var0_13:SetNativeSize()
 	end
 end
 
-function var0.clear(arg0)
-	LeanTween.cancel(go(arg0.cardTf))
+function var0_0.clear(arg0_14)
+	LeanTween.cancel(go(arg0_14.cardTf))
 end
 
-function var0.destroy(arg0)
-	pg.DelegateInfo.Dispose(arg0)
-	LeanTween.cancel(go(arg0.cardTf))
+function var0_0.destroy(arg0_15)
+	pg.DelegateInfo.Dispose(arg0_15)
+	LeanTween.cancel(go(arg0_15.cardTf))
 end
 
-return var0
+return var0_0

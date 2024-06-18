@@ -1,119 +1,119 @@
-﻿local var0 = class("CommanderHomeLevelInfoPage", import("...base.BaseSubView"))
+﻿local var0_0 = class("CommanderHomeLevelInfoPage", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "CommanderHomeLevelUI"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.close = arg0:findTF("bg/frame/close_btn")
-	arg0.scrollrect = arg0:findTF("bg/frame/scrollrect"):GetComponent("LScrollRect")
-	arg0.levelTxt = arg0:findTF("bg/frame/level/Text"):GetComponent(typeof(Text))
-	arg0.descPanel = arg0:findTF("desc_panel")
-	arg0.descLevelTxt = arg0.descPanel:Find("frame/level"):GetComponent(typeof(Text))
-	arg0.descTxt = arg0.descPanel:Find("frame/Text"):GetComponent(typeof(Text))
-	arg0.expTxt = arg0:findTF("bg/frame/level/exp"):GetComponent(typeof(Text))
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.close = arg0_2:findTF("bg/frame/close_btn")
+	arg0_2.scrollrect = arg0_2:findTF("bg/frame/scrollrect"):GetComponent("LScrollRect")
+	arg0_2.levelTxt = arg0_2:findTF("bg/frame/level/Text"):GetComponent(typeof(Text))
+	arg0_2.descPanel = arg0_2:findTF("desc_panel")
+	arg0_2.descLevelTxt = arg0_2.descPanel:Find("frame/level"):GetComponent(typeof(Text))
+	arg0_2.descTxt = arg0_2.descPanel:Find("frame/Text"):GetComponent(typeof(Text))
+	arg0_2.expTxt = arg0_2:findTF("bg/frame/level/exp"):GetComponent(typeof(Text))
 
-	setText(arg0:findTF("bg/frame/level/label"), i18n("commander_home_level_label"))
+	setText(arg0_2:findTF("bg/frame/level/label"), i18n("commander_home_level_label"))
 end
 
-function var0.OnInit(arg0)
-	arg0.cards = {}
+function var0_0.OnInit(arg0_3)
+	arg0_3.cards = {}
 
-	function arg0.scrollrect.onInitItem(arg0)
-		arg0:OnInitItem(arg0)
+	function arg0_3.scrollrect.onInitItem(arg0_4)
+		arg0_3:OnInitItem(arg0_4)
 	end
 
-	function arg0.scrollrect.onUpdateItem(arg0, arg1)
-		arg0:OnUpdateItem(arg0, arg1)
+	function arg0_3.scrollrect.onUpdateItem(arg0_5, arg1_5)
+		arg0_3:OnUpdateItem(arg0_5, arg1_5)
 	end
 
-	onButton(arg0, arg0.descPanel, function()
-		arg0:CloseDescWindow()
+	onButton(arg0_3, arg0_3.descPanel, function()
+		arg0_3:CloseDescWindow()
 	end, SFX_PANEL)
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.close, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3.close, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
 end
 
-function var0.OnInitItem(arg0, arg1)
-	local var0 = CommanderHomeLevelCard.New(arg1, arg0)
+function var0_0.OnInitItem(arg0_9, arg1_9)
+	local var0_9 = CommanderHomeLevelCard.New(arg1_9, arg0_9)
 
-	arg0.cards[arg1] = var0
+	arg0_9.cards[arg1_9] = var0_9
 end
 
-function var0.OnUpdateItem(arg0, arg1, arg2)
-	local var0 = arg0.cards[arg2]
+function var0_0.OnUpdateItem(arg0_10, arg1_10, arg2_10)
+	local var0_10 = arg0_10.cards[arg2_10]
 
-	if not var0 then
-		arg0:OnInitItem(arg2)
+	if not var0_10 then
+		arg0_10:OnInitItem(arg2_10)
 
-		var0 = arg0.cards[arg2]
+		var0_10 = arg0_10.cards[arg2_10]
 	end
 
-	local var1 = arg0.displays[arg1 + 1]
+	local var1_10 = arg0_10.displays[arg1_10 + 1]
 
-	var0:Update(arg0.home, var1)
+	var0_10:Update(arg0_10.home, var1_10)
 end
 
-function var0.Show(arg0, arg1)
-	var0.super.Show(arg0)
+function var0_0.Show(arg0_11, arg1_11)
+	var0_0.super.Show(arg0_11)
 
-	arg0.home = arg1
+	arg0_11.home = arg1_11
 
-	arg0:InitMainView()
+	arg0_11:InitMainView()
 end
 
-function var0.InitMainView(arg0)
-	local var0 = arg0.home
+function var0_0.InitMainView(arg0_12)
+	local var0_12 = arg0_12.home
 
-	arg0.levelTxt.text = "LV." .. var0:GetLevel()
+	arg0_12.levelTxt.text = "LV." .. var0_12:GetLevel()
 
-	if var0:IsMaxLevel() then
-		arg0.expTxt.text = "EXP MAX"
+	if var0_12:IsMaxLevel() then
+		arg0_12.expTxt.text = "EXP MAX"
 	else
-		arg0.expTxt.text = "EXP " .. var0.exp .. "/" .. var0:GetNextLevelExp()
+		arg0_12.expTxt.text = "EXP " .. var0_12.exp .. "/" .. var0_12:GetNextLevelExp()
 	end
 
-	local var1 = var0:GetAllLevel()
+	local var1_12 = var0_12:GetAllLevel()
 
-	arg0.displays = {}
+	arg0_12.displays = {}
 
-	local var2 = var0:bindConfigTable()
+	local var2_12 = var0_12:bindConfigTable()
 
-	for iter0, iter1 in ipairs(var1) do
-		local var3 = var2[iter1]
-		local var4 = var0:GetTargetExpForLevel(iter1)
+	for iter0_12, iter1_12 in ipairs(var1_12) do
+		local var3_12 = var2_12[iter1_12]
+		local var4_12 = var0_12:GetTargetExpForLevel(iter1_12)
 
-		table.insert(arg0.displays, {
-			level = var3.level,
-			totalExp = var4,
-			tail = iter0 == #var1,
-			exp = var3.home_exp,
-			desc = var2[iter1].desc
+		table.insert(arg0_12.displays, {
+			level = var3_12.level,
+			totalExp = var4_12,
+			tail = iter0_12 == #var1_12,
+			exp = var3_12.home_exp,
+			desc = var2_12[iter1_12].desc
 		})
 	end
 
-	arg0.scrollrect:SetTotalCount(#arg0.displays)
+	arg0_12.scrollrect:SetTotalCount(#arg0_12.displays)
 end
 
-function var0.ShowDescWindow(arg0, arg1, arg2)
-	setActive(arg0.descPanel, true)
+function var0_0.ShowDescWindow(arg0_13, arg1_13, arg2_13)
+	setActive(arg0_13.descPanel, true)
 
-	arg0.descTxt.text = arg1
-	arg0.descLevelTxt.text = "LV." .. arg2
+	arg0_13.descTxt.text = arg1_13
+	arg0_13.descLevelTxt.text = "LV." .. arg2_13
 end
 
-function var0.CloseDescWindow(arg0)
-	setActive(arg0.descPanel, false)
+function var0_0.CloseDescWindow(arg0_14)
+	setActive(arg0_14.descPanel, false)
 end
 
-function var0.OnDestroy(arg0)
-	for iter0, iter1 in pairs(arg0.cards) do
-		iter1:Dispose()
+function var0_0.OnDestroy(arg0_15)
+	for iter0_15, iter1_15 in pairs(arg0_15.cards) do
+		iter1_15:Dispose()
 	end
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_213 = {}
+var0_0.word_template_213 = {}
 
-local var1 = var0.word_template_213
+local var1_0 = var0_0.word_template_213
 
 function temp()
-	var1.挠 = {
+	var1_0.挠 = {
 		着 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.脑 = {
+	var1_0.脑 = {
 		残 = {
 			教 = {
 				育 = {
@@ -61,7 +61,7 @@ end
 temp()
 
 function temp()
-	var1.嫐 = {
+	var1_0.嫐 = {
 		屄 = {
 			this = true
 		}
@@ -71,7 +71,7 @@ end
 temp()
 
 function temp()
-	var1.闹 = {
+	var1_0.闹 = {
 		罢 = {
 			工 = {
 				this = true
@@ -89,7 +89,7 @@ end
 temp()
 
 function temp()
-	var1.鬧 = {
+	var1_0.鬧 = {
 		事 = {
 			this = true
 		}
@@ -99,7 +99,7 @@ end
 temp()
 
 function temp()
-	var1.內 = {
+	var1_0.內 = {
 		褲 = {
 			this = true
 		},
@@ -120,7 +120,7 @@ end
 temp()
 
 function temp()
-	var1.内 = {
+	var1_0.内 = {
 		裤 = {
 			this = true,
 			奇 = {

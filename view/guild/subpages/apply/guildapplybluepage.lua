@@ -1,7 +1,7 @@
-﻿local var0 = class("GuildApplyBluePage", import(".GuildApplyRedPage"))
+﻿local var0_0 = class("GuildApplyBluePage", import(".GuildApplyRedPage"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "GuildApplyBlueUI"
 end
 
-return var0
+return var0_0

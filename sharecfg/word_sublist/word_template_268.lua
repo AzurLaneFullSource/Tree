@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_268 = {}
+var0_0.word_template_268 = {}
 
-local var1 = var0.word_template_268
+local var1_0 = var0_0.word_template_268
 
 function temp()
-	var1.税 = {
+	var1_0.税 = {
 		票 = {
 			this = true
 		},
@@ -25,7 +25,7 @@ end
 temp()
 
 function temp()
-	var1.睡 = {
+	var1_0.睡 = {
 		别 = {
 			人 = {
 				女 = {
@@ -81,7 +81,7 @@ end
 temp()
 
 function temp()
-	var1.吮 = {
+	var1_0.吮 = {
 		吸 = {
 			this = true
 		}
@@ -91,7 +91,7 @@ end
 temp()
 
 function temp()
-	var1.顺 = {
+	var1_0.顺 = {
 		义 = {
 			["4"] = {
 				s = {
@@ -137,7 +137,7 @@ end
 temp()
 
 function temp()
-	var1.说 = {
+	var1_0.说 = {
 		股 = {
 			票 = {
 				是 = {
@@ -209,7 +209,7 @@ end
 temp()
 
 function temp()
-	var1.碩 = {
+	var1_0.碩 = {
 		士 = {
 			學 = {
 				位 = {
@@ -229,7 +229,7 @@ end
 temp()
 
 function temp()
-	var1.司 = {
+	var1_0.司 = {
 		法 = {
 			部 = {
 				this = true

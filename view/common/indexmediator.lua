@@ -1,31 +1,31 @@
-﻿local var0 = class("IndexMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("IndexMediator", import("..base.ContextMediator"))
 
-function var0.register(arg0)
-	assert(arg0.contextData.display)
+function var0_0.register(arg0_1)
+	assert(arg0_1.contextData.display)
 
-	if arg0.contextData.display.sort then
-		assert(arg0.contextData.sort)
+	if arg0_1.contextData.display.sort then
+		assert(arg0_1.contextData.sort)
 	end
 
-	if arg0.contextData.display.index then
-		assert(arg0.contextData.index)
+	if arg0_1.contextData.display.index then
+		assert(arg0_1.contextData.index)
 	end
 
-	if arg0.contextData.display.camp then
-		assert(arg0.contextData.camp)
+	if arg0_1.contextData.display.camp then
+		assert(arg0_1.contextData.camp)
 	end
 
-	if arg0.contextData.display.rarity then
-		assert(arg0.contextData.rarity)
+	if arg0_1.contextData.display.rarity then
+		assert(arg0_1.contextData.rarity)
 	end
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_2)
 	return {}
 end
 
-function var0.handleNotification(arg0, arg1)
+function var0_0.handleNotification(arg0_3, arg1_3)
 	return
 end
 
-return var0
+return var0_0

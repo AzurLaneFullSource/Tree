@@ -1,25 +1,25 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleClearWave = class("BattleClearWave", var0.Battle.BattleWaveInfo)
-var0.Battle.BattleClearWave.__name = "BattleClearWave"
+var0_0.Battle.BattleClearWave = class("BattleClearWave", var0_0.Battle.BattleWaveInfo)
+var0_0.Battle.BattleClearWave.__name = "BattleClearWave"
 
-local var1 = var0.Battle.BattleClearWave
+local var1_0 = var0_0.Battle.BattleClearWave
 
-function var1.Ctor(arg0)
-	var1.super.Ctor(arg0)
+function var1_0.Ctor(arg0_1)
+	var1_0.super.Ctor(arg0_1)
 end
 
-function var1.DoWave(arg0)
-	var1.super.DoWave(arg0)
+function var1_0.DoWave(arg0_2)
+	var1_0.super.DoWave(arg0_2)
 
-	local var0 = var0.Battle.BattleState.GetInstance()
-	local var1 = var0:GetProxyByName(var0.Battle.BattleDataProxy.__name)
-	local var2 = var0:GetMediatorByName(var0.Battle.BattleSceneMediator.__name)
+	local var0_2 = var0_0.Battle.BattleState.GetInstance()
+	local var1_2 = var0_2:GetProxyByName(var0_0.Battle.BattleDataProxy.__name)
+	local var2_2 = var0_2:GetMediatorByName(var0_0.Battle.BattleSceneMediator.__name)
 
-	var1:KillAllAircraft()
-	var1:KillSubmarineByIFF(var0.Battle.BattleConfig.FOE_CODE)
-	var2:AllBulletNeutralize()
-	arg0:doPass()
+	var1_2:KillAllAircraft()
+	var1_2:KillSubmarineByIFF(var0_0.Battle.BattleConfig.FOE_CODE)
+	var2_2:AllBulletNeutralize()
+	arg0_2:doPass()
 end

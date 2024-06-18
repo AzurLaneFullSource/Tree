@@ -1,59 +1,59 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleDataFunction
-local var2 = var0.Battle.BattleConst
-local var3 = var0.Battle.BattleFormulas
-local var4 = var0.Battle.BattleAttr
-local var5 = var0.Battle.BattleConfig
-local var6 = var0.Battle.BattleUnitEvent
-local var7 = var0.Battle.UnitState
-local var8 = class("BattleMinionUnit", var0.Battle.BattleEnemyUnit)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleDataFunction
+local var2_0 = var0_0.Battle.BattleConst
+local var3_0 = var0_0.Battle.BattleFormulas
+local var4_0 = var0_0.Battle.BattleAttr
+local var5_0 = var0_0.Battle.BattleConfig
+local var6_0 = var0_0.Battle.BattleUnitEvent
+local var7_0 = var0_0.Battle.UnitState
+local var8_0 = class("BattleMinionUnit", var0_0.Battle.BattleEnemyUnit)
 
-var0.Battle.BattleMinionUnit = var8
-var8.__name = "BattleMinionUnit"
+var0_0.Battle.BattleMinionUnit = var8_0
+var8_0.__name = "BattleMinionUnit"
 
-function var8.Ctor(arg0, arg1, arg2)
-	var8.super.Ctor(arg0, arg1, arg2)
+function var8_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var8_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 end
 
-function var8.GetUnitType(arg0)
-	return var2.UnitType.MINION_UNIT
+function var8_0.GetUnitType(arg0_2)
+	return var2_0.UnitType.MINION_UNIT
 end
 
-function var8.SetMaster(arg0, arg1)
-	arg0._master = arg1
+function var8_0.SetMaster(arg0_3, arg1_3)
+	arg0_3._master = arg1_3
 end
 
-function var8.InheritMasterAttr(arg0)
-	var4.SetMinionAttr(arg0)
-	var4.InitDOTAttr(arg0._attr, arg0._tmpData)
-	arg0:setStandardLabelTag()
+function var8_0.InheritMasterAttr(arg0_4)
+	var4_0.SetMinionAttr(arg0_4)
+	var4_0.InitDOTAttr(arg0_4._attr, arg0_4._tmpData)
+	arg0_4:setStandardLabelTag()
 end
 
-function var8.SetTemplate(arg0, arg1, arg2)
-	arg0._tmpID = arg1
-	arg0._tmpData = var1.GetMonsterTmpDataFromID(arg0._tmpID)
+function var8_0.SetTemplate(arg0_5, arg1_5, arg2_5)
+	arg0_5._tmpID = arg1_5
+	arg0_5._tmpData = var1_0.GetMonsterTmpDataFromID(arg0_5._tmpID)
 
-	arg0:configWeaponQueueParallel()
-	arg0:InitCldComponent()
+	arg0_5:configWeaponQueueParallel()
+	arg0_5:InitCldComponent()
 end
 
-function var8.IsShowHPBar(arg0)
+function var8_0.IsShowHPBar(arg0_6)
 	return false
 end
 
-function var8.GetMaster(arg0)
-	return arg0._master
+function var8_0.GetMaster(arg0_7)
+	return arg0_7._master
 end
 
-function var8.DispatchVoice(arg0)
+function var8_0.DispatchVoice(arg0_8)
 	return
 end
 
-function var8.Retreat(arg0)
-	var8.super.Retreat(arg0)
-	arg0:SetDeathReason(var2.UnitDeathReason.LEAVE)
-	arg0:DeacActionClear()
-	arg0._battleProxy:KillUnit(arg0:GetUniqueID())
+function var8_0.Retreat(arg0_9)
+	var8_0.super.Retreat(arg0_9)
+	arg0_9:SetDeathReason(var2_0.UnitDeathReason.LEAVE)
+	arg0_9:DeacActionClear()
+	arg0_9._battleProxy:KillUnit(arg0_9:GetUniqueID())
 end

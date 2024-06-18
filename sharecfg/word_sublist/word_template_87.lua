@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_87 = {}
+var0_0.word_template_87 = {}
 
-local var1 = var0.word_template_87
+local var1_0 = var0_0.word_template_87
 
 function temp()
-	var1.丢 = {
+	var1_0.丢 = {
 		你 = {
 			老 = {
 				母 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.东 = {
+	var1_0.东 = {
 		北 = {
 			x = {
 				x = {
@@ -352,7 +352,7 @@ end
 temp()
 
 function temp()
-	var1.冬 = {
+	var1_0.冬 = {
 		季 = {
 			热 = {
 				this = true
@@ -385,7 +385,7 @@ end
 temp()
 
 function temp()
-	var1.東 = {
+	var1_0.東 = {
 		北 = {
 			x = {
 				x = {
@@ -543,7 +543,7 @@ end
 temp()
 
 function temp()
-	var1.董 = {
+	var1_0.董 = {
 		存 = {
 			瑞 = {
 				是 = {
@@ -599,7 +599,7 @@ end
 temp()
 
 function temp()
-	var1.懂 = {
+	var1_0.懂 = {
 		文 = {
 			华 = {
 				this = true
@@ -611,7 +611,7 @@ end
 temp()
 
 function temp()
-	var1.动 = {
+	var1_0.动 = {
 		乱 = {
 			this = true,
 			分 = {

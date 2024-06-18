@@ -1,67 +1,67 @@
-﻿local var0 = class("BossRushStoryNode", import("model.vo.BaseVO"))
+﻿local var0_0 = class("BossRushStoryNode", import("model.vo.BaseVO"))
 
-var0.TRIGGER_TYPE = {
+var0_0.TRIGGER_TYPE = {
 	PT_GOT = 1,
 	STORY_READED = 3,
 	SERIES_PASSED = 2
 }
-var0.NODE_TYPE = {
+var0_0.NODE_TYPE = {
 	EVENT = 2,
 	NORMAL = 1,
 	BATTLE = 3
 }
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_1)
 	return pg.activity_series_enemy_story
 end
 
-function var0.Ctor(arg0, arg1, ...)
-	var0.super.Ctor(arg0, arg1, ...)
+function var0_0.Ctor(arg0_2, arg1_2, ...)
+	var0_0.super.Ctor(arg0_2, arg1_2, ...)
 
-	arg0.configId = arg0.id
+	arg0_2.configId = arg0_2.id
 end
 
-function var0.GetTriggers(arg0)
-	local function var0(arg0)
-		if type(arg0) ~= "table" then
+function var0_0.GetTriggers(arg0_3)
+	local function var0_3(arg0_4)
+		if type(arg0_4) ~= "table" then
 			return {}
 		end
 
-		return arg0
+		return arg0_4
 	end
 
-	local var1 = var0(arg0:getConfig("trigger_type"))
-	local var2 = var0(arg0:getConfig("trigger_value"))
-	local var3 = {}
+	local var1_3 = var0_3(arg0_3:getConfig("trigger_type"))
+	local var2_3 = var0_3(arg0_3:getConfig("trigger_value"))
+	local var3_3 = {}
 
-	table.Foreach(var1, function(arg0, arg1)
-		var3[arg0] = {
-			type = var1[arg0],
-			value = var2[arg0]
+	table.Foreach(var1_3, function(arg0_5, arg1_5)
+		var3_3[arg0_5] = {
+			type = var1_3[arg0_5],
+			value = var2_3[arg0_5]
 		}
 	end)
 
-	return var3
+	return var3_3
 end
 
-function var0.GetType(arg0)
-	return arg0:getConfig("type")
+function var0_0.GetType(arg0_6)
+	return arg0_6:getConfig("type")
 end
 
-function var0.GetName(arg0)
-	return arg0:getConfig("name")
+function var0_0.GetName(arg0_7)
+	return arg0_7:getConfig("name")
 end
 
-function var0.GetIconName(arg0)
-	return arg0:getConfig("icon")
+function var0_0.GetIconName(arg0_8)
+	return arg0_8:getConfig("icon")
 end
 
-function var0.GetStory(arg0)
-	return arg0:getConfig("story")
+function var0_0.GetStory(arg0_9)
+	return arg0_9:getConfig("story")
 end
 
-function var0.GetActiveLink(arg0)
-	return arg0:getConfig("line")
+function var0_0.GetActiveLink(arg0_10)
+	return arg0_10:getConfig("line")
 end
 
-return var0
+return var0_0

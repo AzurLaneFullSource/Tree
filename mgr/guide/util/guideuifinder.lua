@@ -1,82 +1,82 @@
-﻿local var0 = class("GuideUIFinder")
+﻿local var0_0 = class("GuideUIFinder")
 
-function var0.Ctor(arg0, arg1)
-	arg0.queue = {}
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.queue = {}
 end
 
-function var0.Search(arg0, arg1)
-	table.insert(arg0.queue, arg1)
+function var0_0.Search(arg0_2, arg1_2)
+	table.insert(arg0_2.queue, arg1_2)
 
-	if #arg0.queue == 1 then
-		arg0:Start()
+	if #arg0_2.queue == 1 then
+		arg0_2:Start()
 	end
 end
 
-function var0.Start(arg0)
-	if #arg0.queue <= 0 then
+function var0_0.Start(arg0_3)
+	if #arg0_3.queue <= 0 then
 		return
 	end
 
-	local var0 = arg0.queue[1]
+	local var0_3 = arg0_3.queue[1]
 
-	arg0:Clear()
+	arg0_3:Clear()
 
-	local function var1()
-		table.remove(arg0.queue, 1)
-		arg0:Start()
+	local function var1_3()
+		table.remove(arg0_3.queue, 1)
+		arg0_3:Start()
 	end
 
-	if (var0.delay or 0) > 0 then
-		arg0.delayTimer = Timer.New(function()
-			arg0:AddSearchTimer(var0, var1)
-		end, var0.delay)
+	if (var0_3.delay or 0) > 0 then
+		arg0_3.delayTimer = Timer.New(function()
+			arg0_3:AddSearchTimer(var0_3, var1_3)
+		end, var0_3.delay)
 
-		arg0.delayTimer:Start()
+		arg0_3.delayTimer:Start()
 	else
-		arg0:AddSearchTimer(var0, var1)
+		arg0_3:AddSearchTimer(var0_3, var1_3)
 	end
 end
 
-local function var1(arg0, arg1)
-	local var0 = {}
+local function var1_0(arg0_6, arg1_6)
+	local var0_6 = {}
 
-	for iter0 = 0, arg0.childCount - 1 do
-		local var1 = arg0:GetChild(iter0)
-		local var2 = var1:GetComponent(typeof(LayoutElement))
+	for iter0_6 = 0, arg0_6.childCount - 1 do
+		local var1_6 = arg0_6:GetChild(iter0_6)
+		local var2_6 = var1_6:GetComponent(typeof(LayoutElement))
 
-		if not IsNil(var1) and go(var1).activeInHierarchy and (not var2 or not var2.ignoreLayout) then
-			table.insert(var0, var1)
+		if not IsNil(var1_6) and go(var1_6).activeInHierarchy and (not var2_6 or not var2_6.ignoreLayout) then
+			table.insert(var0_6, var1_6)
 		end
 	end
 
-	return arg1 and var0[arg1 + 1] or var0[#var0]
+	return arg1_6 and var0_6[arg1_6 + 1] or var0_6[#var0_6]
 end
 
-local function var2(arg0)
-	local var0 = GameObject.Find(arg0.path)
+local function var2_0(arg0_7)
+	local var0_7 = GameObject.Find(arg0_7.path)
 
-	if var0 and arg0.childIndex and arg0.childIndex == "#" then
-		return var1(var0.transform)
-	elseif var0 and arg0.childIndex and arg0.childIndex == -999 then
-		return var1(var0.transform, 0)
-	elseif var0 and arg0.childIndex and arg0.childIndex >= 0 then
-		return var1(var0.transform, arg0.childIndex)
-	elseif var0 then
-		return var0.transform
+	if var0_7 and arg0_7.childIndex and arg0_7.childIndex == "#" then
+		return var1_0(var0_7.transform)
+	elseif var0_7 and arg0_7.childIndex and arg0_7.childIndex == -999 then
+		return var1_0(var0_7.transform, 0)
+	elseif var0_7 and arg0_7.childIndex and arg0_7.childIndex >= 0 then
+		return var1_0(var0_7.transform, arg0_7.childIndex)
+	elseif var0_7 then
+		return var0_7.transform
 	end
 
 	return nil
 end
 
-local function var3(arg0)
-	local var0 = var2(arg0)
+local function var3_0(arg0_8)
+	local var0_8 = var2_0(arg0_8)
 
-	if var0 ~= nil then
-		for iter0, iter1 in ipairs(arg0.conditionData) do
-			local var1 = var0:Find(iter1)
+	if var0_8 ~= nil then
+		for iter0_8, iter1_8 in ipairs(arg0_8.conditionData) do
+			local var1_8 = var0_8:Find(iter1_8)
 
-			if var1 then
-				return var1
+			if var1_8 then
+				return var1_8
 			end
 		end
 	end
@@ -84,69 +84,69 @@ local function var3(arg0)
 	return nil
 end
 
-local function var4(arg0)
-	local var0
+local function var4_0(arg0_9)
+	local var0_9
 
-	if arg0.conditionData then
-		var0 = var3(arg0)
+	if arg0_9.conditionData then
+		var0_9 = var3_0(arg0_9)
 	else
-		var0 = var2(arg0)
+		var0_9 = var2_0(arg0_9)
 	end
 
-	if var0 then
-		return var0
+	if var0_9 then
+		return var0_9
 	end
 
 	return nil
 end
 
-function var0.AddSearchTimer(arg0, arg1, arg2)
-	local var0 = 20
+function var0_0.AddSearchTimer(arg0_10, arg1_10, arg2_10)
+	local var0_10 = 20
 
-	arg0.timer = Timer.New(function()
-		var0 = var0 - 1
+	arg0_10.timer = Timer.New(function()
+		var0_10 = var0_10 - 1
 
-		if var0 <= 0 then
-			arg0:Clear()
-			arg2()
-			print("should exist ui node : " .. arg1.path)
-			arg1.callback(nil)
+		if var0_10 <= 0 then
+			arg0_10:Clear()
+			arg2_10()
+			print("should exist ui node : " .. arg1_10.path)
+			arg1_10.callback(nil)
 
 			return
 		end
 
-		local var0 = var4(arg1)
+		local var0_11 = var4_0(arg1_10)
 
-		if var0 then
-			arg0:Clear()
-			arg2()
-			arg1.callback(var0)
+		if var0_11 then
+			arg0_10:Clear()
+			arg2_10()
+			arg1_10.callback(var0_11)
 		end
 	end, 0.5, -1)
 
-	arg0.timer:Start()
-	arg0.timer.func()
+	arg0_10.timer:Start()
+	arg0_10.timer.func()
 end
 
-function var0.SearchWithoutDelay(arg0, arg1)
-	local var0 = var2(arg1)
+function var0_0.SearchWithoutDelay(arg0_12, arg1_12)
+	local var0_12 = var2_0(arg1_12)
 
-	arg0:Clear()
-	arg1.callback(var0)
+	arg0_12:Clear()
+	arg1_12.callback(var0_12)
 end
 
-function var0.Clear(arg0)
-	if arg0.delayTimer then
-		arg0.delayTimer:Stop()
+function var0_0.Clear(arg0_13)
+	if arg0_13.delayTimer then
+		arg0_13.delayTimer:Stop()
 
-		arg0.delayTimer = nil
+		arg0_13.delayTimer = nil
 	end
 
-	if arg0.timer then
-		arg0.timer:Stop()
+	if arg0_13.timer then
+		arg0_13.timer:Stop()
 
-		arg0.timer = nil
+		arg0_13.timer = nil
 	end
 end
 
-return var0
+return var0_0

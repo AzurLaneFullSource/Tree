@@ -1,22 +1,22 @@
-﻿local var0 = class("CardPuzzleRelicView")
+﻿local var0_0 = class("CardPuzzleRelicView")
 
-function var0.Ctor(arg0, arg1)
-	arg0._tf = tf(arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1._tf = tf(arg1_1)
 end
 
-function var0.SetData(arg0, arg1)
-	arg0.data = arg1
+function var0_0.SetData(arg0_2, arg1_2)
+	arg0_2.data = arg1_2
 end
 
-function var0.UpdateView(arg0)
-	setImageSprite(arg0._tf:Find("Icon"), LoadSprite(arg0.data:GetIconPath(), ""), true)
-	setText(arg0._tf:Find("Name"), arg0.data:GetName())
-	setText(arg0._tf:Find("Detail"), arg0.data:GetDesc())
-	TweenItemAlphaAndWhite(go(arg0._tf))
+function var0_0.UpdateView(arg0_3)
+	setImageSprite(arg0_3._tf:Find("Icon"), LoadSprite(arg0_3.data:GetIconPath(), ""), true)
+	setText(arg0_3._tf:Find("Name"), arg0_3.data:GetName())
+	setText(arg0_3._tf:Find("Detail"), arg0_3.data:GetDesc())
+	TweenItemAlphaAndWhite(go(arg0_3._tf))
 end
 
-function var0.Clear(arg0)
-	ClearTweenItemAlphaAndWhite(go(arg0._tf))
+function var0_0.Clear(arg0_4)
+	ClearTweenItemAlphaAndWhite(go(arg0_4._tf))
 end
 
-return var0
+return var0_0

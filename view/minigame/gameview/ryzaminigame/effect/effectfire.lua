@@ -1,86 +1,86 @@
-﻿local var0 = class("EffectFire", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
+﻿local var0_0 = class("EffectFire", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
 
-function var0.GetBaseOrder(arg0)
+function var0_0.GetBaseOrder(arg0_1)
 	return "floor"
 end
 
-local var1 = {
+local var1_0 = {
 	"S",
 	"E",
 	"N",
 	"W"
 }
 
-function var0.InitUI(arg0, arg1)
-	arg0.power = arg1.power
+function var0_0.InitUI(arg0_2, arg1_2)
+	arg0_2.power = arg1_2.power
 
-	eachChild(arg0._tf, function(arg0)
-		setActive(arg0, arg0.name == "C")
+	eachChild(arg0_2._tf, function(arg0_3)
+		setActive(arg0_3, arg0_3.name == "C")
 	end)
 
-	local var0 = arg0._tf:Find("C/Image"):GetComponent(typeof(DftAniEvent))
+	local var0_2 = arg0_2._tf:Find("C/Image"):GetComponent(typeof(DftAniEvent))
 
-	var0:SetTriggerEvent(function()
-		arg0.triggerCount = defaultValue(arg0.triggerCount, 0) + 1
+	var0_2:SetTriggerEvent(function()
+		arg0_2.triggerCount = defaultValue(arg0_2.triggerCount, 0) + 1
 
-		switch(arg0.triggerCount, {
+		switch(arg0_2.triggerCount, {
 			function()
-				local var0, var1, var2 = arg0.responder:GetCrossFire(arg0.pos, arg0.power)
+				local var0_5, var1_5, var2_5 = arg0_2.responder:GetCrossFire(arg0_2.pos, arg0_2.power)
 
-				for iter0, iter1 in ipairs(var0) do
-					local var3 = arg0._tf:Find(var1[iter0])
+				for iter0_5, iter1_5 in ipairs(var0_5) do
+					local var3_5 = arg0_2._tf:Find(var1_0[iter0_5])
 
-					for iter2 = var3.childCount + 1, iter1 do
-						local var4 = cloneTplTo(var3:Find("7"), var3, iter2)
+					for iter2_5 = var3_5.childCount + 1, iter1_5 do
+						local var4_5 = cloneTplTo(var3_5:Find("7"), var3_5, iter2_5)
 
-						if iter0 < 3 then
-							var4:SetAsLastSibling()
+						if iter0_5 < 3 then
+							var4_5:SetAsLastSibling()
 						end
 					end
 
-					local var5 = var3.childCount
+					local var5_5 = var3_5.childCount
 
-					for iter3 = 1, var5 do
-						setActive(var3:Find(iter3), iter3 <= iter1)
+					for iter3_5 = 1, var5_5 do
+						setActive(var3_5:Find(iter3_5), iter3_5 <= iter1_5)
 					end
 
-					setActive(var3, true)
+					setActive(var3_5, true)
 				end
 
-				arg0:Calling("burn", {}, var1)
+				arg0_2:Calling("burn", {}, var1_5)
 
-				arg0.lenList = var0
+				arg0_2.lenList = var0_5
 
-				arg0:Register("move", function(arg0)
-					arg0:Calling("burn", {}, arg0)
-				end, var1)
+				arg0_2:Register("move", function(arg0_6)
+					arg0_2:Calling("burn", {}, arg0_6)
+				end, var1_5)
 
-				for iter4, iter5 in pairs(var2) do
-					arg0:Calling("block", {
-						iter5[2]
-					}, iter5[1])
+				for iter4_5, iter5_5 in pairs(var2_5) do
+					arg0_2:Calling("block", {
+						iter5_5[2]
+					}, iter5_5[1])
 				end
 			end,
 			function()
-				arg0.lenList = nil
+				arg0_2.lenList = nil
 
-				arg0:Deregister("move")
+				arg0_2:Deregister("move")
 			end
 		})
 	end)
-	var0:SetEndEvent(function()
-		arg0:Destroy()
+	var0_2:SetEndEvent(function()
+		arg0_2:Destroy()
 	end)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-ryza-minigame-bomb")
 end
 
-function var0.GetCollideRange(arg0)
-	if arg0.lenList then
+function var0_0.GetCollideRange(arg0_9)
+	if arg0_9.lenList then
 		return {
 			{
 				{
-					-0.5 - arg0.lenList[4],
-					0.5 + arg0.lenList[2]
+					-0.5 - arg0_9.lenList[4],
+					0.5 + arg0_9.lenList[2]
 				},
 				{
 					-0.5,
@@ -93,8 +93,8 @@ function var0.GetCollideRange(arg0)
 					0.5
 				},
 				{
-					-0.5 - arg0.lenList[3],
-					0.5 + arg0.lenList[1]
+					-0.5 - arg0_9.lenList[3],
+					0.5 + arg0_9.lenList[1]
 				}
 			}
 		}
@@ -103,4 +103,4 @@ function var0.GetCollideRange(arg0)
 	end
 end
 
-return var0
+return var0_0

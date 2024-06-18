@@ -35,12 +35,12 @@
 						}
 					}
 				},
-				centerPosFun = function(arg0)
-					local var0 = arg0 * 3
+				centerPosFun = function(arg0_1)
+					local var0_1 = arg0_1 * 3
 
 					return Vector3(3, 0.75, 0)
 				end,
-				rotationFun = function(arg0)
+				rotationFun = function(arg0_2)
 					return Vector3(0, 0, 0)
 				end
 			}

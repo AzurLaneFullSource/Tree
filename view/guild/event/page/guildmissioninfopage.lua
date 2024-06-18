@@ -1,457 +1,457 @@
-﻿local var0 = class("GuildMissionInfoPage", import(".GuildEventBasePage"))
-local var1 = 10001
+﻿local var0_0 = class("GuildMissionInfoPage", import(".GuildEventBasePage"))
+local var1_0 = 10001
 
-function var0.AttrCnt2Desc(arg0, arg1)
-	local var0 = pg.attribute_info_by_type[arg0]
-	local var1 = arg1.value >= arg1.goal and COLOR_GREEN or COLOR_RED
+function var0_0.AttrCnt2Desc(arg0_1, arg1_1)
+	local var0_1 = pg.attribute_info_by_type[arg0_1]
+	local var1_1 = arg1_1.value >= arg1_1.goal and COLOR_GREEN or COLOR_RED
 
-	return i18n("guild_event_info_desc1", var0.condition, arg1.total, var1, arg1.value, arg1.goal)
+	return i18n("guild_event_info_desc1", var0_1.condition, arg1_1.total, var1_1, arg1_1.value, arg1_1.goal)
 end
 
-function var0.AttrAcc2Desc(arg0, arg1)
-	local var0 = pg.attribute_info_by_type[arg0]
+function var0_0.AttrAcc2Desc(arg0_2, arg1_2)
+	local var0_2 = pg.attribute_info_by_type[arg0_2]
 
-	assert(var0, arg0)
+	assert(var0_2, arg0_2)
 
-	local var1
+	local var1_2
 
-	if arg1.op == 1 then
-		var1 = arg1.value >= arg1.goal and COLOR_GREEN or COLOR_RED
-	elseif arg1.op == 2 then
-		var1 = arg1.value <= arg1.goal and COLOR_GREEN or COLOR_RED
+	if arg1_2.op == 1 then
+		var1_2 = arg1_2.value >= arg1_2.goal and COLOR_GREEN or COLOR_RED
+	elseif arg1_2.op == 2 then
+		var1_2 = arg1_2.value <= arg1_2.goal and COLOR_GREEN or COLOR_RED
 	end
 
-	assert(var1)
+	assert(var1_2)
 
-	return i18n("guild_event_info_desc2", var0.condition, var1, arg1.value, arg1.goal)
+	return i18n("guild_event_info_desc2", var0_2.condition, var1_2, arg1_2.value, arg1_2.goal)
 end
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_3)
 	return "GuildMissionInfoPage"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.closeBtn = arg0:findTF("top/close")
-	arg0.sea = arg0:findTF("sea"):GetComponent(typeof(RawImage))
-	arg0.titleTxt = arg0:findTF("top/title/Text"):GetComponent(typeof(Text))
-	arg0.logBtn = arg0:findTF("bottom/log_btn")
-	arg0.formationBtn = arg0:findTF("bottom/formationBtn")
-	arg0.doingBtn = arg0:findTF("bottom/doing_btn")
-	arg0.helpBtn = arg0:findTF("bottom/help")
-	arg0.logPanel = arg0:findTF("log_panel")
-	arg0.logList = UIItemList.New(arg0.logPanel:Find("scrollrect/content"), arg0.logPanel:Find("scrollrect/content/tpl"))
-	arg0.peopleCnt = arg0:findTF("bottom/cnt/Text"):GetComponent(typeof(Text))
-	arg0.effectCnt = arg0:findTF("bottom/effect/Text"):GetComponent(typeof(Text))
+function var0_0.OnLoaded(arg0_4)
+	arg0_4.closeBtn = arg0_4:findTF("top/close")
+	arg0_4.sea = arg0_4:findTF("sea"):GetComponent(typeof(RawImage))
+	arg0_4.titleTxt = arg0_4:findTF("top/title/Text"):GetComponent(typeof(Text))
+	arg0_4.logBtn = arg0_4:findTF("bottom/log_btn")
+	arg0_4.formationBtn = arg0_4:findTF("bottom/formationBtn")
+	arg0_4.doingBtn = arg0_4:findTF("bottom/doing_btn")
+	arg0_4.helpBtn = arg0_4:findTF("bottom/help")
+	arg0_4.logPanel = arg0_4:findTF("log_panel")
+	arg0_4.logList = UIItemList.New(arg0_4.logPanel:Find("scrollrect/content"), arg0_4.logPanel:Find("scrollrect/content/tpl"))
+	arg0_4.peopleCnt = arg0_4:findTF("bottom/cnt/Text"):GetComponent(typeof(Text))
+	arg0_4.effectCnt = arg0_4:findTF("bottom/effect/Text"):GetComponent(typeof(Text))
 
-	setText(arg0:findTF("bottom/cnt"), i18n("guild_join_member_cnt"))
-	setText(arg0:findTF("bottom/effect"), i18n("guild_total_effect"))
+	setText(arg0_4:findTF("bottom/cnt"), i18n("guild_join_member_cnt"))
+	setText(arg0_4:findTF("bottom/effect"), i18n("guild_total_effect"))
 
-	arg0.areaTxt = arg0:findTF("top/title/Text/target/area"):GetComponent(typeof(Text))
-	arg0.goalTxt = arg0:findTF("top/title/Text/target/goal"):GetComponent(typeof(Text))
-	arg0.timeTxt = arg0:findTF("bottom/progress/time/Text"):GetComponent(typeof(Text))
-	arg0.nodesUIlist = UIItemList.New(arg0:findTF("bottom/progress/nodes"), arg0:findTF("bottom/progress/nodes/tpl"))
-	arg0.progress = arg0:findTF("bottom/progress")
-	arg0.nodeLength = arg0.progress.rect.width
-	arg0.healTF = arg0:findTF("resources/heal")
-	arg0.nameTF = arg0:findTF("resources/name")
+	arg0_4.areaTxt = arg0_4:findTF("top/title/Text/target/area"):GetComponent(typeof(Text))
+	arg0_4.goalTxt = arg0_4:findTF("top/title/Text/target/goal"):GetComponent(typeof(Text))
+	arg0_4.timeTxt = arg0_4:findTF("bottom/progress/time/Text"):GetComponent(typeof(Text))
+	arg0_4.nodesUIlist = UIItemList.New(arg0_4:findTF("bottom/progress/nodes"), arg0_4:findTF("bottom/progress/nodes/tpl"))
+	arg0_4.progress = arg0_4:findTF("bottom/progress")
+	arg0_4.nodeLength = arg0_4.progress.rect.width
+	arg0_4.healTF = arg0_4:findTF("resources/heal")
+	arg0_4.nameTF = arg0_4:findTF("resources/name")
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0.closeBtn, function()
-		arg0.contextData.mission = nil
+function var0_0.OnInit(arg0_5)
+	onButton(arg0_5, arg0_5.closeBtn, function()
+		arg0_5.contextData.mission = nil
 
-		arg0:Hide()
+		arg0_5:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_5, arg0_5.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.guild_mission_info_tip.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.logBtn, function()
-		if arg0.isShowLogPanel then
-			arg0:ShowOrHideLogPanel(false)
+	onButton(arg0_5, arg0_5.logBtn, function()
+		if arg0_5.isShowLogPanel then
+			arg0_5:ShowOrHideLogPanel(false)
 		else
-			arg0:ShowOrHideLogPanel(true)
+			arg0_5:ShowOrHideLogPanel(true)
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0.logPanel, function()
-		arg0:ShowOrHideLogPanel(false)
+	onButton(arg0_5, arg0_5.logPanel, function()
+		arg0_5:ShowOrHideLogPanel(false)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.formationBtn, function()
-		if arg0.mission:IsFinish() then
+	onButton(arg0_5, arg0_5.formationBtn, function()
+		if arg0_5.mission:IsFinish() then
 			pg.TipsMgr:GetInstance():ShowTips(i18n("guild_event_is_finish"))
 
 			return
 		end
 
-		arg0:emit(GuildEventLayer.OPEN_MISSION_FORAMTION, arg0.mission)
+		arg0_5:emit(GuildEventLayer.OPEN_MISSION_FORAMTION, arg0_5.mission)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.doingBtn, function()
-		triggerButton(arg0.formationBtn)
+	onButton(arg0_5, arg0_5.doingBtn, function()
+		triggerButton(arg0_5.formationBtn)
 	end, SFX_PANEL)
 end
 
-function var0.OnRefreshMission(arg0, arg1)
-	arg0:Flush(arg1)
+function var0_0.OnRefreshMission(arg0_12, arg1_12)
+	arg0_12:Flush(arg1_12)
 end
 
-function var0.OnShow(arg0)
-	local var0 = arg0.extraData.mission
+function var0_0.OnShow(arg0_13)
+	local var0_13 = arg0_13.extraData.mission
 
-	arg0:Flush(var0)
-	arg0:EnterFormation()
-	arg0:AddOtherShipMoveTimer()
+	arg0_13:Flush(var0_13)
+	arg0_13:EnterFormation()
+	arg0_13:AddOtherShipMoveTimer()
 end
 
-function var0.Flush(arg0, arg1)
-	arg0.mission = arg1
+function var0_0.Flush(arg0_14, arg1_14)
+	arg0_14.mission = arg1_14
 
-	arg0:InitBattleSea()
-	arg0:InitView()
-	arg0:AddRefreshProgressTimer()
+	arg0_14:InitBattleSea()
+	arg0_14:InitView()
+	arg0_14:AddRefreshProgressTimer()
 end
 
-function var0.EnterFormation(arg0)
-	if arg0.contextData.missionShips then
-		triggerButton(arg0.formationBtn)
+function var0_0.EnterFormation(arg0_15)
+	if arg0_15.contextData.missionShips then
+		triggerButton(arg0_15.formationBtn)
 	end
 end
 
-function var0.InitView(arg0)
-	local var0 = arg0.mission
-	local var1 = arg0.guild
+function var0_0.InitView(arg0_16)
+	local var0_16 = arg0_16.mission
+	local var1_16 = arg0_16.guild
 
-	arg0.titleTxt.text = var0:GetName()
-	arg0.peopleCnt.text = var0:GetJoinMemberCnt() .. "/" .. var1.memberCount .. i18n("guild_word_people")
-	arg0.effectCnt.text = var0:GetEfficiency() .. "(" .. var0:GetMyEffect() .. ")"
+	arg0_16.titleTxt.text = var0_16:GetName()
+	arg0_16.peopleCnt.text = var0_16:GetJoinMemberCnt() .. "/" .. var1_16.memberCount .. i18n("guild_word_people")
+	arg0_16.effectCnt.text = var0_16:GetEfficiency() .. "(" .. var0_16:GetMyEffect() .. ")"
 
-	local var2 = var0:GetNations()
-	local var3 = _.map(var2, function(arg0)
-		local var0 = var0:GetShipsByNation(arg0)
-		local var1 = Nation.Nation2Name(arg0)
+	local var2_16 = var0_16:GetNations()
+	local var3_16 = _.map(var2_16, function(arg0_17)
+		local var0_17 = var0_16:GetShipsByNation(arg0_17)
+		local var1_17 = Nation.Nation2Name(arg0_17)
 
-		return i18n("guild_event_info_desc3", var1, #var0)
+		return i18n("guild_event_info_desc3", var1_17, #var0_17)
 	end)
 
-	arg0.areaTxt.text = i18n("guild_word_battle_area") .. table.concat(var3, " 、")
+	arg0_16.areaTxt.text = i18n("guild_word_battle_area") .. table.concat(var3_16, " 、")
 
-	local var4 = var0.GetBattleTarget(var0)
-	local var5 = table.concat(var4, " 、")
+	local var4_16 = var0_0.GetBattleTarget(var0_16)
+	local var5_16 = table.concat(var4_16, " 、")
 
-	if var5 ~= "" then
-		arg0.goalTxt.text = i18n("guild_wrod_battle_target") .. var5
+	if var5_16 ~= "" then
+		arg0_16.goalTxt.text = i18n("guild_wrod_battle_target") .. var5_16
 	end
 
-	setActive(arg0.goalTxt.gameObject, var5 ~= "")
-	arg0:UpdateNodes()
-	arg0:UpdateFormationBtn()
+	setActive(arg0_16.goalTxt.gameObject, var5_16 ~= "")
+	arg0_16:UpdateNodes()
+	arg0_16:UpdateFormationBtn()
 end
 
-function var0.UpdateFormationBtn(arg0)
-	local var0 = arg0.mission:CanFormation()
+function var0_0.UpdateFormationBtn(arg0_18)
+	local var0_18 = arg0_18.mission:CanFormation()
 
-	setActive(arg0.formationBtn, var0)
-	setActive(arg0.doingBtn, not var0)
+	setActive(arg0_18.formationBtn, var0_18)
+	setActive(arg0_18.doingBtn, not var0_18)
 end
 
-function var0.GetBattleTarget(arg0)
-	local var0 = arg0:GetAttrCntAcc()
-	local var1 = arg0:GetAttrAcc()
-	local var2 = {}
+function var0_0.GetBattleTarget(arg0_19)
+	local var0_19 = arg0_19:GetAttrCntAcc()
+	local var1_19 = arg0_19:GetAttrAcc()
+	local var2_19 = {}
 
-	for iter0, iter1 in pairs(var0) do
-		table.insert(var2, var0.AttrCnt2Desc(iter0, iter1))
+	for iter0_19, iter1_19 in pairs(var0_19) do
+		table.insert(var2_19, var0_0.AttrCnt2Desc(iter0_19, iter1_19))
 	end
 
-	for iter2, iter3 in pairs(var1) do
-		table.insert(var2, var0.AttrAcc2Desc(iter2, iter3))
+	for iter2_19, iter3_19 in pairs(var1_19) do
+		table.insert(var2_19, var0_0.AttrAcc2Desc(iter2_19, iter3_19))
 	end
 
-	return var2
+	return var2_19
 end
 
-function var0.UpdateNodes(arg0)
-	arg0.nodes = {}
+function var0_0.UpdateNodes(arg0_20)
+	arg0_20.nodes = {}
 
-	local var0 = arg0.mission
-	local var1 = var0:GetNodes()
-	local var2 = 1
+	local var0_20 = arg0_20.mission
+	local var1_20 = var0_20:GetNodes()
+	local var2_20 = 1
 
-	if not var0:IsFinish() then
-		arg0.nodesUIlist:make(function(arg0, arg1, arg2)
-			if arg0 == UIItemList.EventUpdate then
-				local var0 = var1[arg1 + 1]
-				local var1 = var0:GetPosition()
-				local var2 = arg0.nodeLength * (var1 / 100)
+	if not var0_20:IsFinish() then
+		arg0_20.nodesUIlist:make(function(arg0_21, arg1_21, arg2_21)
+			if arg0_21 == UIItemList.EventUpdate then
+				local var0_21 = var1_20[arg1_21 + 1]
+				local var1_21 = var0_21:GetPosition()
+				local var2_21 = arg0_20.nodeLength * (var1_21 / 100)
 
-				arg2:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/GuildMissionInfoUI_atlas", var1)
+				arg2_21:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/GuildMissionInfoUI_atlas", var1_21)
 
-				setAnchoredPosition(arg2, {
-					x = var2
+				setAnchoredPosition(arg2_21, {
+					x = var2_21
 				})
 
-				local var3 = var0:GetIcon()
+				local var3_21 = var0_21:GetIcon()
 
-				arg2:Find("item"):GetComponent(typeof(Image)).sprite = LoadSprite("GuildNode/" .. var3)
+				arg2_21:Find("item"):GetComponent(typeof(Image)).sprite = LoadSprite("GuildNode/" .. var3_21)
 
-				table.insert(arg0.nodes, arg2)
+				table.insert(arg0_20.nodes, arg2_21)
 			end
 		end)
-		arg0.nodesUIlist:align(#var1)
+		arg0_20.nodesUIlist:align(#var1_20)
 
-		var2 = var0:GetProgress()
+		var2_20 = var0_20:GetProgress()
 	end
 
-	setSlider(arg0.progress, 0, 100, var2 * 100)
+	setSlider(arg0_20.progress, 0, 100, var2_20 * 100)
 end
 
-function var0.InitBattleSea(arg0)
-	if arg0.loading then
+function var0_0.InitBattleSea(arg0_22)
+	if arg0_22.loading then
 		return
 	end
 
-	arg0.loading = true
+	arg0_22.loading = true
 
-	local var0 = {}
+	local var0_22 = {}
 
-	if not arg0.battleView then
-		arg0.battleView = GuildMissionBattleView.New(arg0.sea)
+	if not arg0_22.battleView then
+		arg0_22.battleView = GuildMissionBattleView.New(arg0_22.sea)
 
-		arg0.battleView:configUI(arg0.healTF, arg0.nameTF)
-		table.insert(var0, function(arg0)
-			arg0.battleView:load(var1, arg0)
+		arg0_22.battleView:configUI(arg0_22.healTF, arg0_22.nameTF)
+		table.insert(var0_22, function(arg0_23)
+			arg0_22.battleView:load(var1_0, arg0_23)
 		end)
 	end
 
-	local var1 = arg0.mission:GetMyFlagShip()
-	local var2
-	local var3 = {}
-	local var4 = ""
+	local var1_22 = arg0_22.mission:GetMyFlagShip()
+	local var2_22
+	local var3_22 = {}
+	local var4_22 = ""
 
-	if var1 then
-		var2 = getProxy(BayProxy):getShipById(var1) or Ship.New({
+	if var1_22 then
+		var2_22 = getProxy(BayProxy):getShipById(var1_22) or Ship.New({
 			id = 9999,
 			configId = 101171
 		})
 
-		local var5 = math.floor(var2.configId / 10)
+		local var5_22 = math.floor(var2_22.configId / 10)
 
-		for iter0 = 1, 4 do
-			local var6 = pg.ship_data_breakout[tonumber(var5 .. iter0)]
-			local var7 = var6 and var6.weapon_ids or {}
+		for iter0_22 = 1, 4 do
+			local var6_22 = pg.ship_data_breakout[tonumber(var5_22 .. iter0_22)]
+			local var7_22 = var6_22 and var6_22.weapon_ids or {}
 
-			for iter1, iter2 in ipairs(var7) do
-				if not table.contains(var3, iter2) then
-					table.insert(var3, iter2)
+			for iter1_22, iter2_22 in ipairs(var7_22) do
+				if not table.contains(var3_22, iter2_22) then
+					table.insert(var3_22, iter2_22)
 				end
 			end
 		end
 
-		var4 = getProxy(PlayerProxy):getRawData().name
+		var4_22 = getProxy(PlayerProxy):getRawData().name
 	end
 
-	table.insert(var0, function(arg0)
-		arg0.battleView:LoadShip(var2, var3, var4, function()
-			if var2 then
-				arg0:CheckNodesState()
+	table.insert(var0_22, function(arg0_24)
+		arg0_22.battleView:LoadShip(var2_22, var3_22, var4_22, function()
+			if var2_22 then
+				arg0_22:CheckNodesState()
 			end
 
-			arg0()
+			arg0_24()
 		end)
 	end)
-	seriesAsync(var0, function()
-		arg0.loading = false
+	seriesAsync(var0_22, function()
+		arg0_22.loading = false
 	end)
 end
 
-function var0.AddOtherShipMoveTimer(arg0)
-	local function var0(arg0)
-		local var0 = {}
-		local var1 = arg0.mission:GetOtherShips()
+function var0_0.AddOtherShipMoveTimer(arg0_27)
+	local function var0_27(arg0_28)
+		local var0_28 = {}
+		local var1_28 = arg0_27.mission:GetOtherShips()
 
-		if #var1 == 0 then
-			return var0
+		if #var1_28 == 0 then
+			return var0_28
 		end
 
-		if arg0 >= #var1 then
-			return var1
+		if arg0_28 >= #var1_28 then
+			return var1_28
 		end
 
-		shuffle(var1)
+		shuffle(var1_28)
 
-		for iter0 = 1, arg0 do
-			table.insert(var0, var1[iter0])
+		for iter0_28 = 1, arg0_28 do
+			table.insert(var0_28, var1_28[iter0_28])
 		end
 
-		return var0
+		return var0_28
 	end
 
-	local var1
+	local var1_27
 
-	local function var2()
-		if arg0.timer then
-			arg0.timer:Stop()
+	local function var2_27()
+		if arg0_27.timer then
+			arg0_27.timer:Stop()
 
-			arg0.timer = nil
+			arg0_27.timer = nil
 		end
 
-		local var0 = math.random(30, 150)
+		local var0_29 = math.random(30, 150)
 
-		arg0.timer = Timer.New(function()
-			local var0 = math.random(1, 2)
-			local var1 = var0(var0)
+		arg0_27.timer = Timer.New(function()
+			local var0_30 = math.random(1, 2)
+			local var1_30 = var0_27(var0_30)
 
-			arg0.battleView:PlayOtherShipAnim(var1, var2)
-		end, var0, 1)
+			arg0_27.battleView:PlayOtherShipAnim(var1_30, var2_27)
+		end, var0_29, 1)
 
-		arg0.timer:Start()
+		arg0_27.timer:Start()
 	end
 
-	var2()
+	var2_27()
 end
 
-function var0.CheckNodesState(arg0)
-	local function var0(arg0)
-		if arg0:IsItemType() then
-			arg0.battleView:PlayItemAnim()
-		elseif arg0:IsBattleType() then
-			arg0.battleView:PlayAttackAnim()
+function var0_0.CheckNodesState(arg0_31)
+	local function var0_31(arg0_32)
+		if arg0_32:IsItemType() then
+			arg0_31.battleView:PlayItemAnim()
+		elseif arg0_32:IsBattleType() then
+			arg0_31.battleView:PlayAttackAnim()
 		end
 	end
 
-	local var1 = arg0.mission
-	local var2 = var1:GetNewestSuccessNode()
+	local var1_31 = arg0_31.mission
+	local var2_31 = var1_31:GetNewestSuccessNode()
 
-	if var2 then
-		local var3 = var1:GetNodeAnimPosistion()
-		local var4 = var2:GetPosition()
+	if var2_31 then
+		local var3_31 = var1_31:GetNodeAnimPosistion()
+		local var4_31 = var2_31:GetPosition()
 
-		if var3 < var4 then
-			var0(var2)
-			arg0:emit(GuildEventMediator.ON_UPDATE_NODE_ANIM_FLAG, var1.id, var4)
+		if var3_31 < var4_31 then
+			var0_31(var2_31)
+			arg0_31:emit(GuildEventMediator.ON_UPDATE_NODE_ANIM_FLAG, var1_31.id, var4_31)
 		end
 	end
 end
 
-function var0.AddRefreshProgressTimer(arg0)
-	arg0:RemoveCdTimer()
-	arg0:RemoveRefreshTimer()
+function var0_0.AddRefreshProgressTimer(arg0_33)
+	arg0_33:RemoveCdTimer()
+	arg0_33:RemoveRefreshTimer()
 
-	local var0 = arg0.mission
-	local var1 = var0:GetTotalTimeCost()
-	local var2 = not var0:IsFinish() and var1 > 0
+	local var0_33 = arg0_33.mission
+	local var1_33 = var0_33:GetTotalTimeCost()
+	local var2_33 = not var0_33:IsFinish() and var1_33 > 0
 
-	if var2 then
-		assert(var1 > 900, var1)
+	if var2_33 then
+		assert(var1_33 > 900, var1_33)
 
-		local var3 = var1 * 0.01
+		local var3_33 = var1_33 * 0.01
 
-		arg0.refreshTimer = Timer.New(function()
-			arg0:RemoveRefreshTimer()
-			arg0:emit(GuildEventMediator.FORCE_REFRESH_MISSION, var0.id)
-		end, var3, 1)
+		arg0_33.refreshTimer = Timer.New(function()
+			arg0_33:RemoveRefreshTimer()
+			arg0_33:emit(GuildEventMediator.FORCE_REFRESH_MISSION, var0_33.id)
+		end, var3_33, 1)
 
-		arg0.refreshTimer:Start()
+		arg0_33.refreshTimer:Start()
 
-		local var4 = var0:GetRemainingTime()
+		local var4_33 = var0_33:GetRemainingTime()
 
-		if var4 > 0 then
-			arg0.cdTimer = Timer.New(function()
-				var4 = var4 - 1
+		if var4_33 > 0 then
+			arg0_33.cdTimer = Timer.New(function()
+				var4_33 = var4_33 - 1
 
-				if var4 <= 0 then
-					arg0:RemoveCdTimer()
-					setActive(arg0.timeTxt.gameObject.transform.parent, false)
+				if var4_33 <= 0 then
+					arg0_33:RemoveCdTimer()
+					setActive(arg0_33.timeTxt.gameObject.transform.parent, false)
 				else
-					arg0.timeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var4)
+					arg0_33.timeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var4_33)
 				end
 			end, 1, -1)
 
-			arg0.cdTimer:Start()
-			arg0.cdTimer.func()
+			arg0_33.cdTimer:Start()
+			arg0_33.cdTimer.func()
 		else
-			setActive(arg0.timeTxt.gameObject.transform.parent, false)
+			setActive(arg0_33.timeTxt.gameObject.transform.parent, false)
 		end
 	end
 
-	setActive(arg0.timeTxt.gameObject.transform.parent, var2)
+	setActive(arg0_33.timeTxt.gameObject.transform.parent, var2_33)
 end
 
-function var0.RemoveCdTimer(arg0)
-	if arg0.cdTimer then
-		arg0.cdTimer:Stop()
+function var0_0.RemoveCdTimer(arg0_36)
+	if arg0_36.cdTimer then
+		arg0_36.cdTimer:Stop()
 
-		arg0.cdTimer = nil
+		arg0_36.cdTimer = nil
 	end
 end
 
-function var0.ShowOrHideLogPanel(arg0, arg1, arg2)
-	arg2 = arg2 or 0.3
+function var0_0.ShowOrHideLogPanel(arg0_37, arg1_37, arg2_37)
+	arg2_37 = arg2_37 or 0.3
 
-	if LeanTween.isTweening(arg0.logPanel) then
+	if LeanTween.isTweening(arg0_37.logPanel) then
 		return
 	end
 
-	local var0 = arg0.logPanel.rect.width + 300
-	local var1 = arg1 and var0 or 0
-	local var2 = arg1 and 0 or var0
+	local var0_37 = arg0_37.logPanel.rect.width + 300
+	local var1_37 = arg1_37 and var0_37 or 0
+	local var2_37 = arg1_37 and 0 or var0_37
 
-	LeanTween.value(arg0.logPanel.gameObject, var1, var2, arg2):setOnUpdate(System.Action_float(function(arg0)
-		setAnchoredPosition(arg0.logPanel, {
-			x = arg0
+	LeanTween.value(arg0_37.logPanel.gameObject, var1_37, var2_37, arg2_37):setOnUpdate(System.Action_float(function(arg0_38)
+		setAnchoredPosition(arg0_37.logPanel, {
+			x = arg0_38
 		})
 	end)):setOnComplete(System.Action(function()
-		if not arg1 then
-			setActive(arg0.logPanel, false)
+		if not arg1_37 then
+			setActive(arg0_37.logPanel, false)
 		end
 	end))
 
-	arg0.isShowLogPanel = arg1
+	arg0_37.isShowLogPanel = arg1_37
 
-	if arg1 then
-		setActive(arg0.logPanel, true)
-		arg0:InitLogs()
+	if arg1_37 then
+		setActive(arg0_37.logPanel, true)
+		arg0_37:InitLogs()
 	end
 end
 
-function var0.InitLogs(arg0)
-	local var0 = arg0.mission:GetLogs()
+function var0_0.InitLogs(arg0_40)
+	local var0_40 = arg0_40.mission:GetLogs()
 
-	arg0.logList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			setText(arg2, var0[arg1 + 1])
+	arg0_40.logList:make(function(arg0_41, arg1_41, arg2_41)
+		if arg0_41 == UIItemList.EventUpdate then
+			setText(arg2_41, var0_40[arg1_41 + 1])
 		end
 	end)
-	arg0.logList:align(#var0)
+	arg0_40.logList:align(#var0_40)
 end
 
-function var0.RemoveRefreshTimer(arg0)
-	if arg0.refreshTimer then
-		arg0.refreshTimer:Stop()
+function var0_0.RemoveRefreshTimer(arg0_42)
+	if arg0_42.refreshTimer then
+		arg0_42.refreshTimer:Stop()
 
 		refreshTimer = nil
 	end
 end
 
-function var0.Hide(arg0)
-	arg0:ShowOrHideLogPanel(false, 0)
-	var0.super.Hide(arg0)
+function var0_0.Hide(arg0_43)
+	arg0_43:ShowOrHideLogPanel(false, 0)
+	var0_0.super.Hide(arg0_43)
 
-	if arg0.battleView then
-		arg0.battleView:clear()
+	if arg0_43.battleView then
+		arg0_43.battleView:clear()
 
-		arg0.battleView = nil
+		arg0_43.battleView = nil
 	end
 
-	if arg0.timer then
-		arg0.timer:Stop()
+	if arg0_43.timer then
+		arg0_43.timer:Stop()
 
-		arg0.timer = nil
+		arg0_43.timer = nil
 	end
 
-	arg0:RemoveRefreshTimer()
-	arg0:RemoveCdTimer()
+	arg0_43:RemoveRefreshTimer()
+	arg0_43:RemoveCdTimer()
 end
 
-return var0
+return var0_0

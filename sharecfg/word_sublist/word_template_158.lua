@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_158 = {}
+var0_0.word_template_158 = {}
 
-local var1 = var0.word_template_158
+local var1_0 = var0_0.word_template_158
 
 function temp()
-	var1.禁 = {
+	var1_0.禁 = {
 		断 = {
 			之 = {
 				血 = {
@@ -188,7 +188,7 @@ end
 temp()
 
 function temp()
-	var1.噤 = {
+	var1_0.噤 = {
 		评 = {
 			this = true
 		}
@@ -198,7 +198,7 @@ end
 temp()
 
 function temp()
-	var1.燼 = {
+	var1_0.燼 = {
 		萍 = {
 			this = true
 		}
@@ -208,7 +208,7 @@ end
 temp()
 
 function temp()
-	var1.茎 = {
+	var1_0.茎 = {
 		大 = {
 			物 = {
 				勃 = {
@@ -235,7 +235,7 @@ end
 temp()
 
 function temp()
-	var1.京 = {
+	var1_0.京 = {
 		城 = {
 			血 = {
 				案 = {
@@ -293,7 +293,7 @@ end
 temp()
 
 function temp()
-	var1.经 = {
+	var1_0.经 = {
 		常 = {
 			被 = {
 				城 = {
@@ -436,7 +436,7 @@ end
 temp()
 
 function temp()
-	var1.荊 = {
+	var1_0.荊 = {
 		棘 = {
 			護 = {
 				衛 = {

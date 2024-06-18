@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_259 = {}
+var0_0.word_template_259 = {}
 
-local var1 = var0.word_template_259
+local var1_0 = var0_0.word_template_259
 
 function temp()
-	var1.声 = {
+	var1_0.声 = {
 		优 = {
 			this = true
 		},
@@ -30,7 +30,7 @@ end
 temp()
 
 function temp()
-	var1.澠 = {
+	var1_0.澠 = {
 		this = {
 			this = true
 		}
@@ -40,7 +40,7 @@ end
 temp()
 
 function temp()
-	var1.省 = {
+	var1_0.省 = {
 		港 = {
 			流 = {
 				莺 = {
@@ -54,7 +54,7 @@ end
 temp()
 
 function temp()
-	var1.圣 = {
+	var1_0.圣 = {
 		堡 = {
 			罗 = {
 				世 = {
@@ -177,7 +177,7 @@ end
 temp()
 
 function temp()
-	var1.盛 = {
+	var1_0.盛 = {
 		華 = {
 			仁 = {
 				this = true
@@ -212,7 +212,7 @@ end
 temp()
 
 function temp()
-	var1.聖 = {
+	var1_0.聖 = {
 		母 = {
 			this = true
 		},
@@ -237,7 +237,7 @@ end
 temp()
 
 function temp()
-	var1.失 = {
+	var1_0.失 = {
 		去 = {
 			了 = {
 				原 = {

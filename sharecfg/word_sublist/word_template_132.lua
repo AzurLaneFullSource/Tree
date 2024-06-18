@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_132 = {}
+var0_0.word_template_132 = {}
 
-local var1 = var0.word_template_132
+local var1_0 = var0_0.word_template_132
 
 function temp()
-	var1.欢 = {
+	var1_0.欢 = {
 		欢 = {
 			娱 = {
 				乐 = {
@@ -59,7 +59,7 @@ end
 temp()
 
 function temp()
-	var1.歡 = {
+	var1_0.歡 = {
 		歡 = {
 			娛 = {
 				樂 = {
@@ -86,7 +86,7 @@ end
 temp()
 
 function temp()
-	var1.环 = {
+	var1_0.环 = {
 		已 = {
 			酮 = {
 				盐 = {
@@ -104,7 +104,7 @@ end
 temp()
 
 function temp()
-	var1.鍰 = {
+	var1_0.鍰 = {
 		this = {
 			this = true
 		}
@@ -114,7 +114,7 @@ end
 temp()
 
 function temp()
-	var1.幻 = {
+	var1_0.幻 = {
 		梦 = {
 			神 = {
 				话 = {
@@ -142,7 +142,7 @@ end
 temp()
 
 function temp()
-	var1.换 = {
+	var1_0.换 = {
 		妻 = {
 			this = true,
 			大 = {
@@ -178,7 +178,7 @@ end
 temp()
 
 function temp()
-	var1.荒 = {
+	var1_0.荒 = {
 		井 = {
 			美 = {
 				惠 = {

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_55 = {}
+var0_0.word_template_55 = {}
 
-local var1 = var0.word_template_55
+local var1_0 = var0_0.word_template_55
 
 function temp()
-	var1.才 = {
+	var1_0.才 = {
 		能 = {
 			有 = {
 				新 = {
@@ -49,7 +49,7 @@ end
 temp()
 
 function temp()
-	var1.财 = {
+	var1_0.财 = {
 		富 = {
 			第 = {
 				六 = {
@@ -119,7 +119,7 @@ end
 temp()
 
 function temp()
-	var1.裁 = {
+	var1_0.裁 = {
 		判 = {
 			女 = {
 				教 = {
@@ -140,7 +140,7 @@ end
 temp()
 
 function temp()
-	var1.采 = {
+	var1_0.采 = {
 		花 = {
 			堂 = {
 				this = true
@@ -171,7 +171,7 @@ end
 temp()
 
 function temp()
-	var1.採 = {
+	var1_0.採 = {
 		花 = {
 			堂 = {
 				this = true
@@ -183,7 +183,7 @@ end
 temp()
 
 function temp()
-	var1.彩 = {
+	var1_0.彩 = {
 		虹 = {
 			剑 = {
 				this = true
@@ -251,7 +251,7 @@ end
 temp()
 
 function temp()
-	var1.踩 = {
+	var1_0.踩 = {
 		踏 = {
 			佛 = {
 				像 = {

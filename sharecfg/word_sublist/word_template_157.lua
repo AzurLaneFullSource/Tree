@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_157 = {}
+var0_0.word_template_157 = {}
 
-local var1 = var0.word_template_157
+local var1_0 = var0_0.word_template_157
 
 function temp()
-	var1.近 = {
+	var1_0.近 = {
 		看 = {
 			原 = {
 				来 = {
@@ -117,7 +117,7 @@ end
 temp()
 
 function temp()
-	var1.劲 = {
+	var1_0.劲 = {
 		得 = {
 			力 = {
 				this = true
@@ -150,7 +150,7 @@ end
 temp()
 
 function temp()
-	var1.晋 = {
+	var1_0.晋 = {
 		平 = {
 			this = true
 		}
@@ -160,7 +160,7 @@ end
 temp()
 
 function temp()
-	var1.烬 = {
+	var1_0.烬 = {
 		平 = {
 			this = true
 		},
@@ -179,7 +179,7 @@ end
 temp()
 
 function temp()
-	var1.浸 = {
+	var1_0.浸 = {
 		坪 = {
 			this = true
 		}
@@ -189,7 +189,7 @@ end
 temp()
 
 function temp()
-	var1.進 = {
+	var1_0.進 = {
 		京 = {
 			诉 = {
 				冤 = {
@@ -231,7 +231,7 @@ end
 temp()
 
 function temp()
-	var1.靳 = {
+	var1_0.靳 = {
 		平 = {
 			this = true
 		}

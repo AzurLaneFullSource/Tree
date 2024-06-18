@@ -1,58 +1,58 @@
-﻿local var0 = class("ContinuousOperationMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("ContinuousOperationMediator", import("view.base.ContextMediator"))
 
-var0.CONTINUE_OPERATION = "ContinuousOperationMediator:CONTINUE_OPERATION"
-var0.ON_REENTER = "ContinuousOperationMediator:ON_REENTER"
+var0_0.CONTINUE_OPERATION = "ContinuousOperationMediator:CONTINUE_OPERATION"
+var0_0.ON_REENTER = "ContinuousOperationMediator:ON_REENTER"
 
-function var0.register(arg0)
-	arg0:bind(GAME.PAUSE_BATTLE, function()
-		arg0:sendNotification(GAME.PAUSE_BATTLE)
+function var0_0.register(arg0_1)
+	arg0_1:bind(GAME.PAUSE_BATTLE, function()
+		arg0_1:sendNotification(GAME.PAUSE_BATTLE)
 	end)
-	arg0:bind(var0.ON_REENTER, function()
-		arg0:sendNotification(var0.ON_REENTER, {
-			autoFlag = arg0.contextData.autoFlag
+	arg0_1:bind(var0_0.ON_REENTER, function()
+		arg0_1:sendNotification(var0_0.ON_REENTER, {
+			autoFlag = arg0_1.contextData.autoFlag
 		})
 	end)
-	arg0:bind(BattleMediator.HIDE_ALL_BUTTONS, function(arg0, arg1)
-		arg0:sendNotification(BattleMediator.HIDE_ALL_BUTTONS, arg1)
+	arg0_1:bind(BattleMediator.HIDE_ALL_BUTTONS, function(arg0_4, arg1_4)
+		arg0_1:sendNotification(BattleMediator.HIDE_ALL_BUTTONS, arg1_4)
 
-		if not arg1 then
-			local var0 = ys.Battle.BattleState.GetInstance()
+		if not arg1_4 then
+			local var0_4 = ys.Battle.BattleState.GetInstance()
 
-			if not var0.IsAutoBotActive(SYSTEM_ACT_BOSS) then
+			if not var0_4.IsAutoBotActive(SYSTEM_ACT_BOSS) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("multiple_sorties_auto_on"))
-				arg0:sendNotification(GAME.AUTO_BOT, {
+				arg0_1:sendNotification(GAME.AUTO_BOT, {
 					isActiveBot = false
 				})
-				arg0:sendNotification(GAME.AUTO_SUB, {
+				arg0_1:sendNotification(GAME.AUTO_SUB, {
 					isActiveSub = false
 				})
-				var0:ActiveBot(var0.IsAutoBotActive(SYSTEM_ACT_BOSS))
+				var0_4:ActiveBot(var0_4.IsAutoBotActive(SYSTEM_ACT_BOSS))
 			end
 		end
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_5)
 	return {
 		NewBattleResultMediator.ON_ENTER_BATTLE_RESULT,
 		NewBattleResultMediator.ON_COMPLETE_BATTLE_RESULT
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_6, arg1_6)
+	local var0_6 = arg1_6:getName()
+	local var1_6 = arg1_6:getBody()
 
-	if var0 == NewBattleResultMediator.ON_ENTER_BATTLE_RESULT then
-		arg0:sendNotification(NewBattleResultMediator.SET_SKIP_FLAG, true)
-		arg0.viewComponent:OnEnterBattleResult()
-	elseif var0 == NewBattleResultMediator.ON_COMPLETE_BATTLE_RESULT then
-		arg0.viewComponent:AnimatingSlider()
+	if var0_6 == NewBattleResultMediator.ON_ENTER_BATTLE_RESULT then
+		arg0_6:sendNotification(NewBattleResultMediator.SET_SKIP_FLAG, true)
+		arg0_6.viewComponent:OnEnterBattleResult()
+	elseif var0_6 == NewBattleResultMediator.ON_COMPLETE_BATTLE_RESULT then
+		arg0_6.viewComponent:AnimatingSlider()
 	end
 end
 
-function var0.remove(arg0)
+function var0_0.remove(arg0_7)
 	return
 end
 
-return var0
+return var0_0

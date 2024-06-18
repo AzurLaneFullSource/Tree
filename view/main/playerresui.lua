@@ -1,190 +1,190 @@
-﻿local var0 = class("PlayerResUI", pm.Mediator)
+﻿local var0_0 = class("PlayerResUI", pm.Mediator)
 
-var0.GO_MALL = "PlayerResUI:GO_MALL"
-var0.CHANGE_TOUCH_ABLE = "PlayerResUI:CHANGE_TOUCH_ABLE"
-var0.HIDE = "PlayerResUI:HIDE"
-var0.SHOW = "PlayerResUI:SHOW"
+var0_0.GO_MALL = "PlayerResUI:GO_MALL"
+var0_0.CHANGE_TOUCH_ABLE = "PlayerResUI:CHANGE_TOUCH_ABLE"
+var0_0.HIDE = "PlayerResUI:HIDE"
+var0_0.SHOW = "PlayerResUI:SHOW"
 
-local var1 = 1
-local var2 = 2
-local var3 = 3
-local var4 = 4
+local var1_0 = 1
+local var2_0 = 2
+local var3_0 = 3
+local var4_0 = 4
 
-var0.TYPE_OIL = 2
-var0.TYPE_GOLD = 4
-var0.TYPE_GEM = 8
-var0.TYPE_ALL = bit.bor(2, 4, 8)
-var0.DEFAULT_MODE = {
-	showType = var0.TYPE_ALL
+var0_0.TYPE_OIL = 2
+var0_0.TYPE_GOLD = 4
+var0_0.TYPE_GEM = 8
+var0_0.TYPE_ALL = bit.bor(2, 4, 8)
+var0_0.DEFAULT_MODE = {
+	showType = var0_0.TYPE_ALL
 }
 
-function var0.Ctor(arg0)
-	var0.super.Ctor(arg0)
-	pg.DelegateInfo.New(arg0)
-	pg.m02:registerMediator(arg0)
+function var0_0.Ctor(arg0_1)
+	var0_0.super.Ctor(arg0_1)
+	pg.DelegateInfo.New(arg0_1)
+	pg.m02:registerMediator(arg0_1)
 
-	arg0.state = var1
-	arg0.settingsStack = {}
+	arg0_1.state = var1_0
+	arg0_1.settingsStack = {}
 end
 
-function var0.GetPlayer(arg0)
+function var0_0.GetPlayer(arg0_2)
 	return getProxy(PlayerProxy):getRawData()
 end
 
-function var0.IsLoaded(arg0)
-	return arg0.state > var2
+function var0_0.IsLoaded(arg0_3)
+	return arg0_3.state > var2_0
 end
 
-function var0.IsEnable(arg0)
-	return arg0.state == var4
+function var0_0.IsEnable(arg0_4)
+	return arg0_4.state == var4_0
 end
 
-function var0.Load(arg0, arg1)
-	if arg0.state ~= var1 then
+function var0_0.Load(arg0_5, arg1_5)
+	if arg0_5.state ~= var1_0 then
 		return
 	end
 
-	arg0.state = var2
+	arg0_5.state = var2_0
 
-	PoolMgr.GetInstance():GetUI("ResPanel", true, arg1)
+	PoolMgr.GetInstance():GetUI("ResPanel", true, arg1_5)
 end
 
-function var0.Init(arg0, arg1)
-	arg0._go = arg1
-	arg0.oilAddBtn = findTF(arg0._go, "oil")
-	arg0.goldAddBtn = findTF(arg0._go, "gold")
-	arg0.gemAddBtn = findTF(arg0._go, "gem")
-	arg0.goldMax = findTF(arg0._go, "gold/gold_max_value"):GetComponent(typeof(Text))
-	arg0.goldValue = findTF(arg0._go, "gold/gold_value"):GetComponent(typeof(Text))
-	arg0.oilMax = findTF(arg0._go, "oil/oil_max_value"):GetComponent(typeof(Text))
-	arg0.oilValue = findTF(arg0._go, "oil/oil_value"):GetComponent(typeof(Text))
-	arg0.gemValue = findTF(arg0._go, "gem/gem_value"):GetComponent(typeof(Text))
-	arg0.animation = arg0._go:GetComponent(typeof(Animation))
-	arg0.gemPos = arg0.gemAddBtn.anchoredPosition
-	arg0.oilPos = arg0.oilAddBtn.anchoredPosition
-	arg0.foldableHelper = MainFoldableHelper.New(arg0._go.transform, Vector2(0, 1))
+function var0_0.Init(arg0_6, arg1_6)
+	arg0_6._go = arg1_6
+	arg0_6.oilAddBtn = findTF(arg0_6._go, "oil")
+	arg0_6.goldAddBtn = findTF(arg0_6._go, "gold")
+	arg0_6.gemAddBtn = findTF(arg0_6._go, "gem")
+	arg0_6.goldMax = findTF(arg0_6._go, "gold/gold_max_value"):GetComponent(typeof(Text))
+	arg0_6.goldValue = findTF(arg0_6._go, "gold/gold_value"):GetComponent(typeof(Text))
+	arg0_6.oilMax = findTF(arg0_6._go, "oil/oil_max_value"):GetComponent(typeof(Text))
+	arg0_6.oilValue = findTF(arg0_6._go, "oil/oil_value"):GetComponent(typeof(Text))
+	arg0_6.gemValue = findTF(arg0_6._go, "gem/gem_value"):GetComponent(typeof(Text))
+	arg0_6.animation = arg0_6._go:GetComponent(typeof(Animation))
+	arg0_6.gemPos = arg0_6.gemAddBtn.anchoredPosition
+	arg0_6.oilPos = arg0_6.oilAddBtn.anchoredPosition
+	arg0_6.foldableHelper = MainFoldableHelper.New(arg0_6._go.transform, Vector2(0, 1))
 
-	onButton(arg0, arg0.goldAddBtn, function()
-		arg0:ClickGold()
+	onButton(arg0_6, arg0_6.goldAddBtn, function()
+		arg0_6:ClickGold()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.oilAddBtn, function()
-		arg0:ClickOil()
+	onButton(arg0_6, arg0_6.oilAddBtn, function()
+		arg0_6:ClickOil()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.gemAddBtn, function()
-		arg0:ClickGem()
+	onButton(arg0_6, arg0_6.gemAddBtn, function()
+		arg0_6:ClickGem()
 	end, SFX_PANEL)
 
-	arg0.position = tf(arg0._go).anchoredPosition
+	arg0_6.position = tf(arg0_6._go).anchoredPosition
 
-	setActive(arg0._go, true)
+	setActive(arg0_6._go, true)
 end
 
-function var0.SetActive(arg0, arg1)
-	if arg1.active then
-		table.insert(arg0.settingsStack, arg1)
-		arg0:Enable(arg1)
+function var0_0.SetActive(arg0_10, arg1_10)
+	if arg1_10.active then
+		table.insert(arg0_10.settingsStack, arg1_10)
+		arg0_10:Enable(arg1_10)
 	else
-		if arg1.clear then
-			arg0.settingsStack = {}
+		if arg1_10.clear then
+			arg0_10.settingsStack = {}
 		else
-			table.remove(arg0.settingsStack)
+			table.remove(arg0_10.settingsStack)
 		end
 
-		arg0:Disable()
+		arg0_10:Disable()
 	end
 end
 
-function var0.Enable(arg0, arg1)
-	if not arg0:IsLoaded() then
-		arg0:Load(function(arg0)
-			arg0._tf = arg0.transform
-			arg0.state = var4
+function var0_0.Enable(arg0_11, arg1_11)
+	if not arg0_11:IsLoaded() then
+		arg0_11:Load(function(arg0_12)
+			arg0_11._tf = arg0_12.transform
+			arg0_11.state = var4_0
 
-			arg0:Init(arg0._tf:Find("frame").gameObject)
-			arg0:CustomSetting(arg1)
-			arg0:Flush()
+			arg0_11:Init(arg0_11._tf:Find("frame").gameObject)
+			arg0_11:CustomSetting(arg1_11)
+			arg0_11:Flush()
 		end)
-	elseif arg0.state == var4 then
-		arg0:CustomSetting(arg1)
+	elseif arg0_11.state == var4_0 then
+		arg0_11:CustomSetting(arg1_11)
 	else
-		arg0.state = var4
+		arg0_11.state = var4_0
 
-		arg0:CustomSetting(arg1)
-		setActive(arg0._go, true)
+		arg0_11:CustomSetting(arg1_11)
+		setActive(arg0_11._go, true)
 
-		if arg0:IsDirty() then
-			arg0:Flush()
+		if arg0_11:IsDirty() then
+			arg0_11:Flush()
 		end
 	end
 end
 
-function var0.Disable(arg0)
+function var0_0.Disable(arg0_13)
 	if pg.goldExchangeMgr then
 		pg.goldExchangeMgr:exit()
 
 		pg.goldExchangeMgr = nil
 	end
 
-	if #arg0.settingsStack > 0 then
-		local var0 = arg0.settingsStack[#arg0.settingsStack]
+	if #arg0_13.settingsStack > 0 then
+		local var0_13 = arg0_13.settingsStack[#arg0_13.settingsStack]
 
-		var0.anim = false
+		var0_13.anim = false
 
-		arg0:Enable(var0)
-	elseif arg0:IsLoaded() then
-		if arg0:IsLoaded() then
-			setActive(arg0._go, false)
+		arg0_13:Enable(var0_13)
+	elseif arg0_13:IsLoaded() then
+		if arg0_13:IsLoaded() then
+			setActive(arg0_13._go, false)
 		end
 
-		arg0.state = var3
+		arg0_13.state = var3_0
 	end
 end
 
-function var0.CustomSetting(arg0, arg1)
-	local var0 = arg1.showType
+function var0_0.CustomSetting(arg0_14, arg1_14)
+	local var0_14 = arg1_14.showType
 
-	setActive(arg0.oilAddBtn, bit.band(var0, var0.TYPE_OIL) > 0)
-	setActive(arg0.goldAddBtn, bit.band(var0, var0.TYPE_GOLD) > 0)
-	setActive(arg0.gemAddBtn, bit.band(var0, var0.TYPE_GEM) > 0)
-	arg0._go.transform:SetAsLastSibling()
+	setActive(arg0_14.oilAddBtn, bit.band(var0_14, var0_0.TYPE_OIL) > 0)
+	setActive(arg0_14.goldAddBtn, bit.band(var0_14, var0_0.TYPE_GOLD) > 0)
+	setActive(arg0_14.gemAddBtn, bit.band(var0_14, var0_0.TYPE_GEM) > 0)
+	arg0_14._go.transform:SetAsLastSibling()
 
-	if arg1.anim then
-		arg0:DoAnimation()
+	if arg1_14.anim then
+		arg0_14:DoAnimation()
 	end
 
-	local var1 = arg1.gemOffsetX or 0
+	local var1_14 = arg1_14.gemOffsetX or 0
 
-	arg0.gemAddBtn.anchoredPosition3D = Vector3(arg0.gemPos.x + var1, arg0.gemPos.y, 1)
-	arg0.oilAddBtn.anchoredPosition3D = Vector3(arg0.oilPos.x + var1, arg0.oilPos.y, 1)
+	arg0_14.gemAddBtn.anchoredPosition3D = Vector3(arg0_14.gemPos.x + var1_14, arg0_14.gemPos.y, 1)
+	arg0_14.oilAddBtn.anchoredPosition3D = Vector3(arg0_14.oilPos.x + var1_14, arg0_14.oilPos.y, 1)
 
 	NotchAdapt.AdjustUI()
-	setCanvasOverrideSorting(arg0._tf, tobool(arg1.canvasOrder))
+	setCanvasOverrideSorting(arg0_14._tf, tobool(arg1_14.canvasOrder))
 
-	if arg1.canvasOrder then
-		GetComponent(arg0._tf, typeof(Canvas)).sortingOrder = arg1.canvasOrder
+	if arg1_14.canvasOrder then
+		GetComponent(arg0_14._tf, typeof(Canvas)).sortingOrder = arg1_14.canvasOrder
 	end
 
-	pg.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_OVERLAY_FOREVER, arg0._tf, {
-		weight = arg1.weight,
-		groupName = arg1.groupName
+	pg.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_OVERLAY_FOREVER, arg0_14._tf, {
+		weight = arg1_14.weight,
+		groupName = arg1_14.groupName
 	})
 end
 
-function var0.DoAnimation(arg0)
-	arg0.foldableHelper:Fold(true, 0)
-	arg0.foldableHelper:Fold(false, 0.5)
+function var0_0.DoAnimation(arg0_15)
+	arg0_15.foldableHelper:Fold(true, 0)
+	arg0_15.foldableHelper:Fold(false, 0.5)
 end
 
-function var0.ClickGem(arg0)
-	local var0 = arg0:GetPlayer()
+function var0_0.ClickGem(arg0_16)
+	local var0_16 = arg0_16:GetPlayer()
 
-	local function var1()
+	local function var1_16()
 		if not pg.m02:hasMediator(ChargeMediator.__cname) then
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
 				wrap = ChargeScene.TYPE_DIAMOND
 			})
 		else
-			pg.m02:sendNotification(var0.GO_MALL)
+			pg.m02:sendNotification(var0_0.GO_MALL)
 		end
 	end
 
@@ -192,57 +192,57 @@ function var0.ClickGem(arg0)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			fontSize = 23,
 			yesText = "text_buy",
-			content = i18n("word_diamond_tip", var0:getFreeGem(), var0:getChargeGem(), var0:getTotalGem()),
-			onYes = var1,
+			content = i18n("word_diamond_tip", var0_16:getFreeGem(), var0_16:getChargeGem(), var0_16:getTotalGem()),
+			onYes = var1_16,
 			alignment = TextAnchor.UpperLeft,
 			weight = LayerWeightConst.TOP_LAYER
 		})
 	else
-		var1()
+		var1_16()
 	end
 end
 
-function var0.ClickGold(arg0)
+function var0_0.ClickGold(arg0_18)
 	if not pg.goldExchangeMgr then
 		pg.goldExchangeMgr = GoldExchangeView.New()
 	end
 end
 
-function var0.ClickOil(arg0)
-	local var0 = arg0:GetPlayer()
-	local var1 = pg.shop_template
-	local var2 = ShoppingStreet.getRiseShopId(ShopArgs.BuyOil, var0.buyOilCount)
+function var0_0.ClickOil(arg0_19)
+	local var0_19 = arg0_19:GetPlayer()
+	local var1_19 = pg.shop_template
+	local var2_19 = ShoppingStreet.getRiseShopId(ShopArgs.BuyOil, var0_19.buyOilCount)
 
-	if not var2 then
+	if not var2_19 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_today_buy_limit"))
 
 		return
 	end
 
-	local var3 = pg.shop_template[var2]
-	local var4 = var3.num
+	local var3_19 = pg.shop_template[var2_19]
+	local var4_19 = var3_19.num
 
-	if var3.num == -1 and var3.genre == ShopArgs.BuyOil then
-		var4 = ShopArgs.getOilByLevel(var0.level)
+	if var3_19.num == -1 and var3_19.genre == ShopArgs.BuyOil then
+		var4_19 = ShopArgs.getOilByLevel(var0_19.level)
 	end
 
-	if pg.gameset.buy_oil_limit.key_value > var0.buyOilCount then
+	if pg.gameset.buy_oil_limit.key_value > var0_19.buyOilCount then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_SINGLE_ITEM,
 			windowSize = {
 				y = 570
 			},
-			content = i18n("oil_buy_tip", var3.resource_num, var4, var0.buyOilCount),
+			content = i18n("oil_buy_tip", var3_19.resource_num, var4_19, var0_19.buyOilCount),
 			drop = {
 				id = 2,
 				type = DROP_TYPE_RESOURCE,
-				count = var4
+				count = var4_19
 			},
 			onYes = function()
 				pg.m02:sendNotification(GAME.SHOPPING, {
 					isQuickShopping = true,
 					count = 1,
-					id = var2
+					id = var2_19
 				})
 			end,
 			weight = LayerWeightConst.TOP_LAYER
@@ -261,89 +261,89 @@ function var0.ClickOil(arg0)
 	end
 end
 
-function var0.Flush(arg0)
-	local var0 = arg0:GetPlayer()
+function var0_0.Flush(arg0_21)
+	local var0_21 = arg0_21:GetPlayer()
 
-	var0.StaticFlush(var0, arg0.goldMax, arg0.goldValue, arg0.oilMax, arg0.oilValue, arg0.gemValue)
-	arg0:SetDirty(false)
+	var0_0.StaticFlush(var0_21, arg0_21.goldMax, arg0_21.goldValue, arg0_21.oilMax, arg0_21.oilValue, arg0_21.gemValue)
+	arg0_21:SetDirty(false)
 end
 
-function var0.StaticFlush(arg0, arg1, arg2, arg3, arg4, arg5)
-	local var0 = arg0:getLevelMaxGold()
-	local var1 = arg0:getLevelMaxOil()
+function var0_0.StaticFlush(arg0_22, arg1_22, arg2_22, arg3_22, arg4_22, arg5_22)
+	local var0_22 = arg0_22:getLevelMaxGold()
+	local var1_22 = arg0_22:getLevelMaxOil()
 
-	arg1.text = "MAX: " .. var0
-	arg2.text = arg0.gold
-	arg3.text = "MAX: " .. var1
-	arg4.text = arg0.oil
-	arg5.text = arg0:getTotalGem()
+	arg1_22.text = "MAX: " .. var0_22
+	arg2_22.text = arg0_22.gold
+	arg3_22.text = "MAX: " .. var1_22
+	arg4_22.text = arg0_22.oil
+	arg5_22.text = arg0_22:getTotalGem()
 end
 
-function var0.Dispose(arg0)
-	pg.DelegateInfo.Dispose(arg0)
-	arg0:Disable()
-	pg.m02:removeMediator(arg0.__cname)
-	PoolMgr.GetInstance():ReturnUI("ResPanel", arg0._go)
+function var0_0.Dispose(arg0_23)
+	pg.DelegateInfo.Dispose(arg0_23)
+	arg0_23:Disable()
+	pg.m02:removeMediator(arg0_23.__cname)
+	PoolMgr.GetInstance():ReturnUI("ResPanel", arg0_23._go)
 
-	arg0.state = var1
+	arg0_23.state = var1_0
 end
 
-function var0.SetDirty(arg0, arg1)
-	arg0.dirty = arg1
+function var0_0.SetDirty(arg0_24, arg1_24)
+	arg0_24.dirty = arg1_24
 end
 
-function var0.IsDirty(arg0)
-	return arg0.dirty
+function var0_0.IsDirty(arg0_25)
+	return arg0_25.dirty
 end
 
-function var0.Fold(arg0, arg1, arg2)
-	if not arg0:IsLoaded() then
+function var0_0.Fold(arg0_26, arg1_26, arg2_26)
+	if not arg0_26:IsLoaded() then
 		return
 	end
 
-	arg0.foldableHelper:Fold(arg1, arg2)
+	arg0_26.foldableHelper:Fold(arg1_26, arg2_26)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_27)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.GUILD_GET_USER_INFO_DONE,
 		GAME.GET_PUBLIC_GUILD_USER_DATA_DONE,
 		PlayerResUI.CHANGE_TOUCH_ABLE,
-		var0.HIDE,
-		var0.SHOW
+		var0_0.HIDE,
+		var0_0.SHOW
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
+function var0_0.handleNotification(arg0_28, arg1_28)
+	local var0_28 = arg1_28:getName()
 
-	if var0 == PlayerResUI.CHANGE_TOUCH_ABLE then
-		local var1 = arg1:getBody()
-		local var2 = GetComponent(tf(arg0._go), typeof(CanvasGroup))
+	if var0_28 == PlayerResUI.CHANGE_TOUCH_ABLE then
+		local var1_28 = arg1_28:getBody()
+		local var2_28 = GetComponent(tf(arg0_28._go), typeof(CanvasGroup))
 
-		var2.interactable = var1
-		var2.blocksRaycasts = var1
-
-		return
-	end
-
-	arg0:updateResPanel(var0)
-end
-
-function var0.updateResPanel(arg0, arg1)
-	if not arg0:IsEnable() then
-		arg0:SetDirty(true)
+		var2_28.interactable = var1_28
+		var2_28.blocksRaycasts = var1_28
 
 		return
 	end
 
-	if arg1 == PlayerProxy.UPDATED or arg1 == GAME.GUILD_GET_USER_INFO_DONE or arg1 == GAME.GET_PUBLIC_GUILD_USER_DATA_DONE then
-		arg0:Flush()
+	arg0_28:updateResPanel(var0_28)
+end
+
+function var0_0.updateResPanel(arg0_29, arg1_29)
+	if not arg0_29:IsEnable() then
+		arg0_29:SetDirty(true)
+
+		return
+	end
+
+	if arg1_29 == PlayerProxy.UPDATED or arg1_29 == GAME.GUILD_GET_USER_INFO_DONE or arg1_29 == GAME.GET_PUBLIC_GUILD_USER_DATA_DONE then
+		arg0_29:Flush()
 	end
 end
 
-function var0.checkBackPressed(arg0)
+function var0_0.checkBackPressed(arg0_30)
 	if pg.goldExchangeMgr then
 		pg.goldExchangeMgr:exit()
 
@@ -355,4 +355,4 @@ function var0.checkBackPressed(arg0)
 	end
 end
 
-return var0
+return var0_0

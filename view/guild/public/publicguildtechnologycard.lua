@@ -1,67 +1,67 @@
-﻿local var0 = class("PublicGuildTechnologyCard", import("..cards.GuildTechnologyCard"))
+﻿local var0_0 = class("PublicGuildTechnologyCard", import("..cards.GuildTechnologyCard"))
 
-function var0.Update(arg0, arg1)
-	local var0 = arg1.group.id
-	local var1 = arg1.group
-	local var2 = arg1:getConfig("name")
+function var0_0.Update(arg0_1, arg1_1)
+	local var0_1 = arg1_1.group.id
+	local var1_1 = arg1_1.group
+	local var2_1 = arg1_1:getConfig("name")
 
-	arg0.titleImg.text = var2
-	arg0.iconImag.sprite = GetSpriteFromAtlas("GuildTechnology", var0)
+	arg0_1.titleImg.text = var2_1
+	arg0_1.iconImag.sprite = GetSpriteFromAtlas("GuildTechnology", var0_1)
 
-	local var3 = arg1:GetMaxLevel()
-	local var4 = arg1:GetLevel()
+	local var3_1 = arg1_1:GetMaxLevel()
+	local var4_1 = arg1_1:GetLevel()
 
-	if arg1:IsGuildMember() then
-		arg0.levelTxt.text = "Lv." .. var4
+	if arg1_1:IsGuildMember() then
+		arg0_1.levelTxt.text = "Lv." .. var4_1
 	else
-		arg0.levelTxt.text = "Lv." .. var4 .. "/" .. var3
+		arg0_1.levelTxt.text = "Lv." .. var4_1 .. "/" .. var3_1
 	end
 
-	arg0.descTxt.text = arg1:GetDesc()
+	arg0_1.descTxt.text = arg1_1:GetDesc()
 
-	setActive(arg0.maxTF, var3 <= var4)
-	setActive(arg0.upgradeTF, var4 < var3)
+	setActive(arg0_1.maxTF, var3_1 <= var4_1)
+	setActive(arg0_1.upgradeTF, var4_1 < var3_1)
 
-	local var5 = true
+	local var5_1 = true
 
-	removeOnButton(arg0._tf)
+	removeOnButton(arg0_1._tf)
 
-	if var4 < var3 then
-		local var6, var7 = arg1:GetConsume()
+	if var4_1 < var3_1 then
+		local var6_1, var7_1 = arg1_1:GetConsume()
 
-		arg0.guildResTxt.text = var6
-		arg0.goldResTxt.text = var7
+		arg0_1.guildResTxt.text = var6_1
+		arg0_1.goldResTxt.text = var7_1
 
-		onButton(arg0, arg0._tf, function()
-			if var4 >= var3 then
+		onButton(arg0_1, arg0_1._tf, function()
+			if var4_1 >= var3_1 then
 				return
 			end
 
 			pg.MsgboxMgr:GetInstance():ShowMsgBox({
-				content = i18n("guild_tech_consume_tip", var6, var7, var2),
+				content = i18n("guild_tech_consume_tip", var6_1, var7_1, var2_1),
 				onYes = function()
-					arg0.view:emit(PublicGuildMainMediator.UPGRADE_TECH, var0)
+					arg0_1.view:emit(PublicGuildMainMediator.UPGRADE_TECH, var0_1)
 				end
 			})
 		end, SFX_PANEL)
 	end
 
-	setActive(arg0.guildRes, var5)
-	setActive(arg0.goldRes, var5)
-	setActive(arg0.upgradeBtn, var5)
-	setActive(arg0.livnessTF, not var5)
+	setActive(arg0_1.guildRes, var5_1)
+	setActive(arg0_1.goldRes, var5_1)
+	setActive(arg0_1.upgradeBtn, var5_1)
+	setActive(arg0_1.livnessTF, not var5_1)
 
-	local var8 = true
+	local var8_1 = true
 
-	setActive(arg0.breakoutSlider.gameObject, var8)
+	setActive(arg0_1.breakoutSlider.gameObject, var8_1)
 
-	if var8 then
-		local var9 = var1:GetTargetProgress()
-		local var10 = var1:GetProgress()
+	if var8_1 then
+		local var9_1 = var1_1:GetTargetProgress()
+		local var10_1 = var1_1:GetProgress()
 
-		arg0.breakoutSlider.value = var10 / var9
-		arg0.breakoutTxt.text = var10 .. "/" .. var9
+		arg0_1.breakoutSlider.value = var10_1 / var9_1
+		arg0_1.breakoutTxt.text = var10_1 .. "/" .. var9_1
 	end
 end
 
-return var0
+return var0_0

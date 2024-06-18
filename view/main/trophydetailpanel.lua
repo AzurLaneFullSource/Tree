@@ -1,130 +1,130 @@
-﻿local var0 = class("TrophyDetailPanel")
+﻿local var0_0 = class("TrophyDetailPanel")
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0._go = arg1
-	arg0._tf = arg1.transform
-	arg0._parent = arg2
-	arg0.UIMgr = pg.UIMgr.GetInstance()
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1._go = arg1_1
+	arg0_1._tf = arg1_1.transform
+	arg0_1._parent = arg2_1
+	arg0_1.UIMgr = pg.UIMgr.GetInstance()
 
-	pg.DelegateInfo.New(arg0)
+	pg.DelegateInfo.New(arg0_1)
 
-	arg0._medalIcon = findTF(arg0._tf, "center/medalBG/icon")
-	arg0._nameLabel = findTF(arg0._tf, "center/name")
-	arg0._timeStamp = findTF(arg0._tf, "center/timeStamp/Text"):GetComponent(typeof(Text))
-	arg0._desc = findTF(arg0._tf, "center/desc/Text"):GetComponent(typeof(Text))
-	arg0._progressBar = findTF(arg0._tf, "center/progress_bar/progress")
-	arg0._rank = findTF(arg0._tf, "center/rank/Text"):GetComponent(typeof(Text))
-	arg0._lock = findTF(arg0._tf, "center/medalBG/lock")
-	arg0._conditionList = findTF(arg0._tf, "center/conditions/container")
-	arg0._conditionTpl = findTF(arg0._tf, "center/conditions/condition_tpl")
+	arg0_1._medalIcon = findTF(arg0_1._tf, "center/medalBG/icon")
+	arg0_1._nameLabel = findTF(arg0_1._tf, "center/name")
+	arg0_1._timeStamp = findTF(arg0_1._tf, "center/timeStamp/Text"):GetComponent(typeof(Text))
+	arg0_1._desc = findTF(arg0_1._tf, "center/desc/Text"):GetComponent(typeof(Text))
+	arg0_1._progressBar = findTF(arg0_1._tf, "center/progress_bar/progress")
+	arg0_1._rank = findTF(arg0_1._tf, "center/rank/Text"):GetComponent(typeof(Text))
+	arg0_1._lock = findTF(arg0_1._tf, "center/medalBG/lock")
+	arg0_1._conditionList = findTF(arg0_1._tf, "center/conditions/container")
+	arg0_1._conditionTpl = findTF(arg0_1._tf, "center/conditions/condition_tpl")
 
-	onButton(arg0, arg0._go, function()
-		arg0:SetActive(false)
+	onButton(arg0_1, arg0_1._go, function()
+		arg0_1:SetActive(false)
 	end, SFX_CANCEL)
 
-	arg0._stepper = findTF(arg0._tf, "center/stepper")
-	arg0._preTrophyBtn = findTF(arg0._stepper, "pre")
-	arg0._postTrophyBtn = findTF(arg0._stepper, "post")
-	arg0._pageText = findTF(arg0._stepper, "page")
-	arg0._backTipsText = findTF(arg0._tf, "center/backTips/GameObject (1)")
+	arg0_1._stepper = findTF(arg0_1._tf, "center/stepper")
+	arg0_1._preTrophyBtn = findTF(arg0_1._stepper, "pre")
+	arg0_1._postTrophyBtn = findTF(arg0_1._stepper, "post")
+	arg0_1._pageText = findTF(arg0_1._stepper, "page")
+	arg0_1._backTipsText = findTF(arg0_1._tf, "center/backTips/GameObject (1)")
 
-	setText(arg0._backTipsText, i18n("world_collection_back"))
-	onButton(arg0, arg0._postTrophyBtn, function()
-		local var0 = arg0._trophyGroup:getPostTrophy(arg0._trophy)
+	setText(arg0_1._backTipsText, i18n("world_collection_back"))
+	onButton(arg0_1, arg0_1._postTrophyBtn, function()
+		local var0_3 = arg0_1._trophyGroup:getPostTrophy(arg0_1._trophy)
 
-		arg0:UpdateTrophy(var0)
+		arg0_1:UpdateTrophy(var0_3)
 	end)
-	onButton(arg0, arg0._preTrophyBtn, function()
-		local var0 = arg0._trophyGroup:getPreTrophy(arg0._trophy)
+	onButton(arg0_1, arg0_1._preTrophyBtn, function()
+		local var0_4 = arg0_1._trophyGroup:getPreTrophy(arg0_1._trophy)
 
-		arg0:UpdateTrophy(var0)
+		arg0_1:UpdateTrophy(var0_4)
 	end)
 
-	arg0._active = false
+	arg0_1._active = false
 end
 
-function var0.SetTrophyGroup(arg0, arg1)
-	arg0._trophyGroup = arg1
+function var0_0.SetTrophyGroup(arg0_5, arg1_5)
+	arg0_5._trophyGroup = arg1_5
 end
 
-function var0.UpdateTrophy(arg0, arg1)
-	if arg1 == nil then
+function var0_0.UpdateTrophy(arg0_6, arg1_6)
+	if arg1_6 == nil then
 		return
 	end
 
-	arg0._trophy = arg1
-	arg0._rank.text = arg1:getConfig("rank")
-	arg0._desc.text = arg1:getConfig("desc")
+	arg0_6._trophy = arg1_6
+	arg0_6._rank.text = arg1_6:getConfig("rank")
+	arg0_6._desc.text = arg1_6:getConfig("desc")
 
-	if arg1:isClaimed() then
-		local var0 = pg.TimeMgr.GetInstance():STimeDescS(arg1.timestamp, "*t")
+	if arg1_6:isClaimed() then
+		local var0_6 = pg.TimeMgr.GetInstance():STimeDescS(arg1_6.timestamp, "*t")
 
-		arg0._timeStamp.text = var0.year .. "/" .. var0.month .. "/" .. var0.day
+		arg0_6._timeStamp.text = var0_6.year .. "/" .. var0_6.month .. "/" .. var0_6.day
 	else
-		arg0._timeStamp.text = "-"
+		arg0_6._timeStamp.text = "-"
 	end
 
-	removeAllChildren(arg0._conditionList)
-	LoadImageSpriteAsync("medal/" .. arg1:getConfig("icon"), arg0._medalIcon, true)
-	SetActive(arg0._lock, not arg1:isClaimed())
-	LoadImageSpriteAsync("medal/" .. arg1:getConfig("label"), arg0._nameLabel, true)
+	removeAllChildren(arg0_6._conditionList)
+	LoadImageSpriteAsync("medal/" .. arg1_6:getConfig("icon"), arg0_6._medalIcon, true)
+	SetActive(arg0_6._lock, not arg1_6:isClaimed())
+	LoadImageSpriteAsync("medal/" .. arg1_6:getConfig("label"), arg0_6._nameLabel, true)
 
-	local function var1(arg0, arg1)
-		setText(findTF(arg0, "desc"), arg1:getConfig("condition"))
+	local function var1_6(arg0_7, arg1_7)
+		setText(findTF(arg0_7, "desc"), arg1_7:getConfig("condition"))
 
-		local var0, var1 = arg1:getProgress()
+		local var0_7, var1_7 = arg1_7:getProgress()
 
-		if arg1:getTargetType() == Trophy.INTAMACT_TYPE then
-			setText(findTF(arg0, "progress"), arg1:isDummy() and "" or "[" .. math.modf(var0 / 100) .. "/" .. math.modf(var1 / 100) .. "]")
+		if arg1_7:getTargetType() == Trophy.INTAMACT_TYPE then
+			setText(findTF(arg0_7, "progress"), arg1_7:isDummy() and "" or "[" .. math.modf(var0_7 / 100) .. "/" .. math.modf(var1_7 / 100) .. "]")
 		else
-			setText(findTF(arg0, "progress"), arg1:isDummy() and "" or "[" .. var0 .. "/" .. var1 .. "]")
+			setText(findTF(arg0_7, "progress"), arg1_7:isDummy() and "" or "[" .. var0_7 .. "/" .. var1_7 .. "]")
 		end
 	end
 
-	if not arg1:isComplexTrophy() then
-		local var2 = cloneTplTo(arg0._conditionTpl, arg0._conditionList)
+	if not arg1_6:isComplexTrophy() then
+		local var2_6 = cloneTplTo(arg0_6._conditionTpl, arg0_6._conditionList)
 
-		var1(var2, arg1)
+		var1_6(var2_6, arg1_6)
 	else
-		for iter0, iter1 in pairs(arg1:getSubTrophy()) do
-			local var3 = cloneTplTo(arg0._conditionTpl, arg0._conditionList)
+		for iter0_6, iter1_6 in pairs(arg1_6:getSubTrophy()) do
+			local var3_6 = cloneTplTo(arg0_6._conditionTpl, arg0_6._conditionList)
 
-			var1(var3, iter1)
+			var1_6(var3_6, iter1_6)
 		end
 	end
 
-	arg0._progressBar:GetComponent(typeof(Image)).fillAmount = arg1:getProgressRate()
+	arg0_6._progressBar:GetComponent(typeof(Image)).fillAmount = arg1_6:getProgressRate()
 
-	arg0:updateStepper(arg1)
+	arg0_6:updateStepper(arg1_6)
 end
 
-function var0.updateStepper(arg0, arg1)
-	local var0 = arg0._trophyGroup:getTrophyIndex(arg0._trophy)
-	local var1 = arg0._trophyGroup:getTrophyCount()
+function var0_0.updateStepper(arg0_8, arg1_8)
+	local var0_8 = arg0_8._trophyGroup:getTrophyIndex(arg0_8._trophy)
+	local var1_8 = arg0_8._trophyGroup:getTrophyCount()
 
-	setText(arg0._pageText, var0 .. "/" .. var1)
+	setText(arg0_8._pageText, var0_8 .. "/" .. var1_8)
 end
 
-function var0.SetActive(arg0, arg1)
-	SetActive(arg0._go, arg1)
+function var0_0.SetActive(arg0_9, arg1_9)
+	SetActive(arg0_9._go, arg1_9)
 
-	arg0._active = arg1
+	arg0_9._active = arg1_9
 
-	if arg1 then
-		pg.UIMgr.GetInstance():BlurPanel(arg0._go, false, {
+	if arg1_9 then
+		pg.UIMgr.GetInstance():BlurPanel(arg0_9._go, false, {
 			weight = LayerWeightConst.SECOND_LAYER
 		})
 	else
-		pg.UIMgr.GetInstance():UnblurPanel(arg0._go, arg0._parent)
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_9._go, arg0_9._parent)
 	end
 end
 
-function var0.IsActive(arg0)
-	return arg0._active
+function var0_0.IsActive(arg0_10)
+	return arg0_10._active
 end
 
-function var0.Dispose(arg0)
-	pg.DelegateInfo.Dispose(arg0)
+function var0_0.Dispose(arg0_11)
+	pg.DelegateInfo.Dispose(arg0_11)
 end
 
-return var0
+return var0_0

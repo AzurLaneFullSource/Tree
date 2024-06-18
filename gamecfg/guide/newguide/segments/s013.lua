@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Let's check out your <color=#ff7d36>storage</color>.",
 	"Tap <color=#ff7d36>to select tech pack</color>.",
 	"Tap <color=#ff7d36>use</color> to open the tech pack."
@@ -14,7 +14,7 @@ return {
 				mode = 2,
 				posY = -50.56,
 				posX = -163.2,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				pathIndex = -1,
@@ -42,7 +42,7 @@ return {
 				mode = 2,
 				posY = 65,
 				posX = -93.8,
-				text = var0[2]
+				text = var0_0[2]
 			},
 			spriteui = {
 				path = "UICamera/Canvas/UIMain/StoreHouseUI(Clone)/item_scrollview/item_grid",
@@ -68,7 +68,7 @@ return {
 				mode = 2,
 				posY = -252,
 				posX = -393,
-				text = var0[3]
+				text = var0_0[3]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/ItemInfoUI(Clone)/window/actions/use_button",

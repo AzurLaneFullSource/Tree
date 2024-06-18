@@ -1,43 +1,43 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("BattleDrops")
+local var0_0 = ys
+local var1_0 = class("BattleDrops")
 
-var0.Battle.BattleDrops = var1
-var1.__name = "BattleDrops"
+var0_0.Battle.BattleDrops = var1_0
+var1_0.__name = "BattleDrops"
 
-function var1.Ctor(arg0, arg1)
-	var0.EventDispatcher.AttachEventDispatcher(arg0)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var0_0.EventDispatcher.AttachEventDispatcher(arg0_1)
 
-	arg0._dropList = arg1
-	arg0._resourceCount = 0
-	arg0._itemCount = 0
+	arg0_1._dropList = arg1_1
+	arg0_1._resourceCount = 0
+	arg0_1._itemCount = 0
 end
 
-function var1.CreateDrops(arg0, arg1)
-	local var0 = {}
-	local var1 = arg0._dropList[arg1]
+function var1_0.CreateDrops(arg0_2, arg1_2)
+	local var0_2 = {}
+	local var1_2 = arg0_2._dropList[arg1_2]
 
-	if var1 ~= nil and #var1 > 0 then
-		var0 = var1[#var1]
-		var1[#var1] = nil
+	if var1_2 ~= nil and #var1_2 > 0 then
+		var0_2 = var1_2[#var1_2]
+		var1_2[#var1_2] = nil
 	end
 
-	if var0.resourceCount ~= nil then
-		arg0._resourceCount = arg0._resourceCount + var0.resourceCount
+	if var0_2.resourceCount ~= nil then
+		arg0_2._resourceCount = arg0_2._resourceCount + var0_2.resourceCount
 	end
 
-	if var0.itemCount ~= nil then
-		arg0._itemCount = arg0._itemCount + var0.itemCount
+	if var0_2.itemCount ~= nil then
+		arg0_2._itemCount = arg0_2._itemCount + var0_2.itemCount
 	end
 
-	return var0
+	return var0_2
 end
 
-function var1.GetDropped(arg0)
-	return arg0._resourceCount, arg0._itemCount
+function var1_0.GetDropped(arg0_3)
+	return arg0_3._resourceCount, arg0_3._itemCount
 end
 
-function var1.Dispose(arg0)
-	var0.EventDispatcher.DetachEventDispatcher(arg0)
+function var1_0.Dispose(arg0_4)
+	var0_0.EventDispatcher.DetachEventDispatcher(arg0_4)
 end

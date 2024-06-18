@@ -1,8 +1,8 @@
-﻿local var0 = class("JapanV2framePage", import(".TemplatePage.FrameTemplatePage"))
+﻿local var0_0 = class("JapanV2framePage", import(".TemplatePage.FrameTemplatePage"))
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
-	setActive(arg0.gotBtn, false)
+function var0_0.OnUpdateFlush(arg0_1)
+	var0_0.super.OnUpdateFlush(arg0_1)
+	setActive(arg0_1.gotBtn, false)
 end
 
-return var0
+return var0_0

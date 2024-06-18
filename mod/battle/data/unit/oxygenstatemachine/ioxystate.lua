@@ -1,48 +1,48 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.IOxyState = class("IOxyState")
-var0.Battle.IOxyState.__name = "IOxyState"
+var0_0.Battle.IOxyState = class("IOxyState")
+var0_0.Battle.IOxyState.__name = "IOxyState"
 
-local var1 = var0.Battle.IOxyState
+local var1_0 = var0_0.Battle.IOxyState
 
-function var1.Ctor(arg0)
+function var1_0.Ctor(arg0_1)
 	return
 end
 
-function var1.GetWeaponUseableList(arg0)
+function var1_0.GetWeaponUseableList(arg0_2)
 	return nil
 end
 
-function var1.UpdateCldData(arg0, arg1, arg2)
+function var1_0.UpdateCldData(arg0_3, arg1_3, arg2_3)
 	return
 end
 
-function var1.GetDiveState(arg0)
+function var1_0.GetDiveState(arg0_4)
 	return nil
 end
 
-function var1.GetBubbleFlag(arg0)
+function var1_0.GetBubbleFlag(arg0_5)
 	return nil
 end
 
-function var1.IsVisible(arg0)
+function var1_0.IsVisible(arg0_6)
 	return true
 end
 
-function var1.DoUpdateOxy(arg0)
+function var1_0.DoUpdateOxy(arg0_7)
 	return
 end
 
-function var1.GetBarVisible(arg0)
+function var1_0.GetBarVisible(arg0_8)
 	return nil
 end
 
-function var1.RunMode(arg0)
+function var1_0.RunMode(arg0_9)
 	return nil
 end
 
-function var1.UpdateDive(arg0)
+function var1_0.UpdateDive(arg0_10)
 	return nil
 end

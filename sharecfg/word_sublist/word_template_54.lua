@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_54 = {}
+var0_0.word_template_54 = {}
 
-local var1 = var0.word_template_54
+local var1_0 = var0_0.word_template_54
 
 function temp()
-	var1.勃 = {
+	var1_0.勃 = {
 		朗 = {
 			宁 = {
 				微 = {
@@ -25,7 +25,7 @@ end
 temp()
 
 function temp()
-	var1.博 = {
+	var1_0.博 = {
 		彩 = {
 			this = true,
 			公 = {
@@ -125,7 +125,7 @@ end
 temp()
 
 function temp()
-	var1.补 = {
+	var1_0.补 = {
 		习 = {
 			班 = {
 				姻 = {
@@ -146,7 +146,7 @@ end
 temp()
 
 function temp()
-	var1.布 = {
+	var1_0.布 = {
 		莱 = {
 			尔 = {
 				this = true
@@ -238,7 +238,7 @@ end
 temp()
 
 function temp()
-	var1.步 = {
+	var1_0.步 = {
 		q = {
 			i = {
 				a = {
@@ -333,7 +333,7 @@ end
 temp()
 
 function temp()
-	var1.部 = {
+	var1_0.部 = {
 		长 = {
 			大 = {
 				难 = {
@@ -347,7 +347,7 @@ end
 temp()
 
 function temp()
-	var1.猜 = {
+	var1_0.猜 = {
 		号 = {
 			this = true
 		}

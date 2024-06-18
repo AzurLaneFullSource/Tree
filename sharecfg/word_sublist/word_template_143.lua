@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_143 = {}
+var0_0.word_template_143 = {}
 
-local var1 = var0.word_template_143
+local var1_0 = var0_0.word_template_143
 
 function temp()
-	var1.鲚 = {
+	var1_0.鲚 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.鱭 = {
+	var1_0.鱭 = {
 		this = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.加 = {
+	var1_0.加 = {
 		分 = {
 			器 = {
 				this = true
@@ -170,7 +170,7 @@ end
 temp()
 
 function temp()
-	var1.佳 = {
+	var1_0.佳 = {
 		静 = {
 			安 = {
 				定 = {
@@ -198,7 +198,7 @@ end
 temp()
 
 function temp()
-	var1.葭 = {
+	var1_0.葭 = {
 		this = {
 			this = true
 		}
@@ -208,7 +208,7 @@ end
 temp()
 
 function temp()
-	var1.嘉 = {
+	var1_0.嘉 = {
 		门 = {
 			洋 = {
 				子 = {
@@ -222,7 +222,7 @@ end
 temp()
 
 function temp()
-	var1.夹 = {
+	var1_0.夹 = {
 		吸 = {
 			器 = {
 				this = true

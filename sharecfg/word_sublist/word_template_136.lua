@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_136 = {}
+var0_0.word_template_136 = {}
 
-local var1 = var0.word_template_136
+local var1_0 = var0_0.word_template_136
 
 function temp()
-	var1.混 = {
+	var1_0.混 = {
 		[" "] = {
 			沌 = {
 				决 = {
@@ -63,7 +63,7 @@ end
 temp()
 
 function temp()
-	var1.溷 = {
+	var1_0.溷 = {
 		this = {
 			this = true
 		}
@@ -73,7 +73,7 @@ end
 temp()
 
 function temp()
-	var1.耠 = {
+	var1_0.耠 = {
 		this = {
 			this = true
 		}
@@ -83,7 +83,7 @@ end
 temp()
 
 function temp()
-	var1.锪 = {
+	var1_0.锪 = {
 		this = {
 			this = true
 		}
@@ -93,7 +93,7 @@ end
 temp()
 
 function temp()
-	var1.劐 = {
+	var1_0.劐 = {
 		this = {
 			this = true
 		}
@@ -103,7 +103,7 @@ end
 temp()
 
 function temp()
-	var1.鍃 = {
+	var1_0.鍃 = {
 		this = {
 			this = true
 		}
@@ -113,7 +113,7 @@ end
 temp()
 
 function temp()
-	var1.活 = {
+	var1_0.活 = {
 		动 = {
 			管 = {
 				理 = {

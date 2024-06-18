@@ -1,100 +1,100 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleTorpedoBulletFactory = singletonClass("BattleTorpedoBulletFactory", var0.Battle.BattleBulletFactory)
-var0.Battle.BattleTorpedoBulletFactory.__name = "BattleTorpedoBulletFactory"
+var0_0.Battle.BattleTorpedoBulletFactory = singletonClass("BattleTorpedoBulletFactory", var0_0.Battle.BattleBulletFactory)
+var0_0.Battle.BattleTorpedoBulletFactory.__name = "BattleTorpedoBulletFactory"
 
-local var1 = var0.Battle.BattleTorpedoBulletFactory
+local var1_0 = var0_0.Battle.BattleTorpedoBulletFactory
 
-function var1.Ctor(arg0)
-	var1.super.Ctor(arg0)
+function var1_0.Ctor(arg0_1)
+	var1_0.super.Ctor(arg0_1)
 end
 
-function var1.MakeBullet(arg0)
-	return var0.Battle.BattleTorpedoBullet.New()
+function var1_0.MakeBullet(arg0_2)
+	return var0_0.Battle.BattleTorpedoBullet.New()
 end
 
-function var1.onBulletHitFunc(arg0, arg1, arg2)
-	local var0 = arg0:GetBulletData():GetTemplate().hit_type
-	local var1 = var1.GetDataProxy()
-	local var2 = arg0:GetBulletData()
-	local var3 = var2:GetTemplate()
+function var1_0.onBulletHitFunc(arg0_3, arg1_3, arg2_3)
+	local var0_3 = arg0_3:GetBulletData():GetTemplate().hit_type
+	local var1_3 = var1_0.GetDataProxy()
+	local var2_3 = arg0_3:GetBulletData()
+	local var3_3 = var2_3:GetTemplate()
 
-	var0.Battle.PlayBattleSFX(var2:GetHitSFX())
+	var0_0.Battle.PlayBattleSFX(var2_3:GetHitSFX())
 
-	local var4 = {
-		_bullet = var2,
-		equipIndex = var2:GetWeapon():GetEquipmentIndex(),
-		bulletTag = var2:GetExtraTag()
+	local var4_3 = {
+		_bullet = var2_3,
+		equipIndex = var2_3:GetWeapon():GetEquipmentIndex(),
+		bulletTag = var2_3:GetExtraTag()
 	}
 
-	var2:BuffTrigger(var0.Battle.BattleConst.BuffEffectType.ON_TORPEDO_BULLET_BANG, var4)
+	var2_3:BuffTrigger(var0_0.Battle.BattleConst.BuffEffectType.ON_TORPEDO_BULLET_BANG, var4_3)
 
-	local var5 = var2:GetDiveFilter()
-	local var6
+	local var5_3 = var2_3:GetDiveFilter()
+	local var6_3
 
-	local function var7(arg0)
-		local var0 = var0.decay
+	local function var7_3(arg0_4)
+		local var0_4 = var0_3.decay
 
-		if var0 then
-			var6:UpdateDistanceInfo()
+		if var0_4 then
+			var6_3:UpdateDistanceInfo()
 		end
 
-		for iter0, iter1 in ipairs(arg0) do
-			if iter1.Active then
-				local var1 = iter1.UID
-				local var2 = 0
+		for iter0_4, iter1_4 in ipairs(arg0_4) do
+			if iter1_4.Active then
+				local var1_4 = iter1_4.UID
+				local var2_4 = 0
 
-				if var0 then
-					var2 = var6:GetDistance(var1) / (var0.range * 0.5) * var0
+				if var0_4 then
+					var2_4 = var6_3:GetDistance(var1_4) / (var0_3.range * 0.5) * var0_4
 				end
 
-				local var3 = var1:GetSceneMediator():GetCharacter(var1):GetUnitData()
+				local var3_4 = var1_0:GetSceneMediator():GetCharacter(var1_4):GetUnitData()
 
-				var1:HandleDamage(var2, var3, var2)
+				var1_3:HandleDamage(var2_3, var3_4, var2_4)
 			end
 		end
 	end
 
-	if var0.range then
-		var6 = var1:SpawnColumnArea(var2:GetEffectField(), var2:GetIFF(), pg.Tool.FilterY(arg0:GetPosition():Clone()), var0.range, var0.time, var7)
+	if var0_3.range then
+		var6_3 = var1_3:SpawnColumnArea(var2_3:GetEffectField(), var2_3:GetIFF(), pg.Tool.FilterY(arg0_3:GetPosition():Clone()), var0_3.range, var0_3.time, var7_3)
 	else
-		var6 = var1:SpawnCubeArea(var2:GetEffectField(), var2:GetIFF(), pg.Tool.FilterY(arg0:GetPosition():Clone()), var0.width, var0.height, var0.time, var7)
+		var6_3 = var1_3:SpawnCubeArea(var2_3:GetEffectField(), var2_3:GetIFF(), pg.Tool.FilterY(arg0_3:GetPosition():Clone()), var0_3.width, var0_3.height, var0_3.time, var7_3)
 	end
 
-	var6:SetDiveFilter(var5)
+	var6_3:SetDiveFilter(var5_3)
 
-	local var8, var9 = var1.GetFXPool():GetFX(arg0:GetFXID())
-	local var10 = arg0:GetTf().localPosition
+	local var8_3, var9_3 = var1_0.GetFXPool():GetFX(arg0_3:GetFXID())
+	local var10_3 = arg0_3:GetTf().localPosition
 
-	pg.EffectMgr.GetInstance():PlayBattleEffect(var8, var9:Add(var10), true)
+	pg.EffectMgr.GetInstance():PlayBattleEffect(var8_3, var9_3:Add(var10_3), true)
 
-	if var2:GetPierceCount() <= 0 then
-		var1:RemoveBulletUnit(var2:GetUniqueID())
+	if var2_3:GetPierceCount() <= 0 then
+		var1_3:RemoveBulletUnit(var2_3:GetUniqueID())
 	end
 end
 
-function var1.onBulletMissFunc(arg0)
-	var1.onBulletHitFunc(arg0)
+function var1_0.onBulletMissFunc(arg0_5)
+	var1_0.onBulletHitFunc(arg0_5)
 end
 
-function var1.MakeModel(arg0, arg1, arg2)
-	local var0 = arg1:GetBulletData()
-	local var1 = var0:GetTemplate()
-	local var2 = arg0:GetDataProxy()
+function var1_0.MakeModel(arg0_6, arg1_6, arg2_6)
+	local var0_6 = arg1_6:GetBulletData()
+	local var1_6 = var0_6:GetTemplate()
+	local var2_6 = arg0_6:GetDataProxy()
 
-	if not arg0:GetBulletPool():InstBullet(arg1:GetModleID(), function(arg0)
-		arg1:AddModel(arg0)
+	if not arg0_6:GetBulletPool():InstBullet(arg1_6:GetModleID(), function(arg0_7)
+		arg1_6:AddModel(arg0_7)
 	end) then
-		arg1:AddTempModel(arg0:GetTempGOPool():GetObject())
+		arg1_6:AddTempModel(arg0_6:GetTempGOPool():GetObject())
 	end
 
-	arg1:SetSpawn(arg2)
-	arg1:SetFXFunc(arg0.onBulletHitFunc, arg0.onBulletMissFunc)
-	arg0:GetSceneMediator():AddBullet(arg1)
+	arg1_6:SetSpawn(arg2_6)
+	arg1_6:SetFXFunc(arg0_6.onBulletHitFunc, arg0_6.onBulletMissFunc)
+	arg0_6:GetSceneMediator():AddBullet(arg1_6)
 
-	if var0:GetIFF() ~= var2:GetFriendlyCode() and var1.alert_fx ~= "" then
-		arg1:MakeAlert(arg0:GetFXPool():GetFX(var1.alert_fx))
+	if var0_6:GetIFF() ~= var2_6:GetFriendlyCode() and var1_6.alert_fx ~= "" then
+		arg1_6:MakeAlert(arg0_6:GetFXPool():GetFX(var1_6.alert_fx))
 	end
 end

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_185 = {}
+var0_0.word_template_185 = {}
 
-local var1 = var0.word_template_185
+local var1_0 = var0_0.word_template_185
 
 function temp()
-	var1.連 = {
+	var1_0.連 = {
 		方 = {
 			瑀 = {
 				this = true
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.联 = {
+	var1_0.联 = {
 		大 = {
 			this = true
 		},
@@ -114,7 +114,7 @@ end
 temp()
 
 function temp()
-	var1.蓮 = {
+	var1_0.蓮 = {
 		花 = {
 			逼 = {
 				this = true
@@ -126,7 +126,7 @@ end
 temp()
 
 function temp()
-	var1.廉 = {
+	var1_0.廉 = {
 		政 = {
 			大 = {
 				論 = {
@@ -154,7 +154,7 @@ end
 temp()
 
 function temp()
-	var1.奩 = {
+	var1_0.奩 = {
 		this = {
 			this = true
 		}
@@ -164,7 +164,7 @@ end
 temp()
 
 function temp()
-	var1.聯 = {
+	var1_0.聯 = {
 		繫 = {
 			this = true
 		},
@@ -177,7 +177,7 @@ end
 temp()
 
 function temp()
-	var1.臁 = {
+	var1_0.臁 = {
 		this = {
 			this = true
 		}

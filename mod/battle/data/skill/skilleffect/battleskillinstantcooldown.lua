@@ -1,35 +1,35 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("BattleSkillInstantCoolDown", var0.Battle.BattleSkillEffect)
+local var0_0 = ys
+local var1_0 = class("BattleSkillInstantCoolDown", var0_0.Battle.BattleSkillEffect)
 
-var0.Battle.BattleSkillInstantCoolDown = var1
-var1.__name = "BattleSkillInstantCoolDown"
+var0_0.Battle.BattleSkillInstantCoolDown = var1_0
+var1_0.__name = "BattleSkillInstantCoolDown"
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1, lv)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1, lv)
 
-	arg0._weaponType = arg0._tempData.arg_list.weaponType
+	arg0_1._weaponType = arg0_1._tempData.arg_list.weaponType
 end
 
-function var1.DoDataEffect(arg0, arg1, arg2)
-	local var0 = arg0:_GetWeapon(arg1)
+function var1_0.DoDataEffect(arg0_2, arg1_2, arg2_2)
+	local var0_2 = arg0_2:_GetWeapon(arg1_2)
 
-	if var0 then
-		var0:QuickCoolDown()
+	if var0_2 then
+		var0_2:QuickCoolDown()
 	end
 end
 
-function var1.DoDataEffectWithoutTarget(arg0, arg1)
-	arg0:DoDataEffect(arg1, nil)
+function var1_0.DoDataEffectWithoutTarget(arg0_3, arg1_3)
+	arg0_3:DoDataEffect(arg1_3, nil)
 end
 
-function var1._GetWeapon(arg0, arg1)
-	local var0
+function var1_0._GetWeapon(arg0_4, arg1_4)
+	local var0_4
 
-	if arg0._weaponType == "AirAssist" then
-		var0 = arg1:GetAirAssistQueue():GetQueueHead()
+	if arg0_4._weaponType == "AirAssist" then
+		var0_4 = arg1_4:GetAirAssistQueue():GetQueueHead()
 	end
 
-	return var0
+	return var0_4
 end

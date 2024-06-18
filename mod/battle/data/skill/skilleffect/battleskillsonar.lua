@@ -1,23 +1,23 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleDataFunction
-local var2 = class("BattleSkillSonar", var0.Battle.BattleSkillEffect)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleDataFunction
+local var2_0 = class("BattleSkillSonar", var0_0.Battle.BattleSkillEffect)
 
-var0.Battle.BattleSkillSonar = var2
-var2.__name = "BattleSkillSonar"
+var0_0.Battle.BattleSkillSonar = var2_0
+var2_0.__name = "BattleSkillSonar"
 
-function var2.Ctor(arg0, arg1)
-	var2.super.Ctor(arg0, arg1, lv)
+function var2_0.Ctor(arg0_1, arg1_1)
+	var2_0.super.Ctor(arg0_1, arg1_1, lv)
 
-	arg0._range = arg0._tempData.arg_list.range
-	arg0._duration = arg0._tempData.arg_list.duration
+	arg0_1._range = arg0_1._tempData.arg_list.range
+	arg0_1._duration = arg0_1._tempData.arg_list.duration
 end
 
-function var2.DoDataEffect(arg0, arg1)
-	arg1:GetFleetVO():AppendIndieSonar(arg0._range, arg0._duration)
+function var2_0.DoDataEffect(arg0_2, arg1_2)
+	arg1_2:GetFleetVO():AppendIndieSonar(arg0_2._range, arg0_2._duration)
 end
 
-function var2.DataEffectWithoutTarget(arg0, arg1)
-	arg1:GetFleetVO():AppendIndieSonar(arg0._range, arg0._duration)
+function var2_0.DataEffectWithoutTarget(arg0_3, arg1_3)
+	arg1_3:GetFleetVO():AppendIndieSonar(arg0_3._range, arg0_3._duration)
 end

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_27 = {}
+var0_0.word_template_27 = {}
 
-local var1 = var0.word_template_27
+local var1_0 = var0_0.word_template_27
 
 function temp()
-	var1.接 = {
+	var1_0.接 = {
 		写 = {
 			this = true
 		},
@@ -39,7 +39,7 @@ end
 temp()
 
 function temp()
-	var1.占 = {
+	var1_0.占 = {
 		["?"] = {
 			this = true
 		},
@@ -75,7 +75,7 @@ end
 temp()
 
 function temp()
-	var1.賎 = {
+	var1_0.賎 = {
 		民 = {
 			this = true
 		}
@@ -85,7 +85,7 @@ end
 temp()
 
 function temp()
-	var1.鮮 = {
+	var1_0.鮮 = {
 		人 = {
 			this = true
 		},
@@ -98,7 +98,7 @@ end
 temp()
 
 function temp()
-	var1.操 = {
+	var1_0.操 = {
 		this = {
 			this = true
 		},
@@ -491,7 +491,7 @@ end
 temp()
 
 function temp()
-	var1.走 = {
+	var1_0.走 = {
 		私 = {
 			this = true,
 			车 = {
@@ -612,7 +612,7 @@ end
 temp()
 
 function temp()
-	var1.即 = {
+	var1_0.即 = {
 		金 = {
 			this = true
 		},

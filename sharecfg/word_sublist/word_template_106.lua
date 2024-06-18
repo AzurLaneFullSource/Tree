@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_106 = {}
+var0_0.word_template_106 = {}
 
-local var1 = var0.word_template_106
+local var1_0 = var0_0.word_template_106
 
 function temp()
-	var1.刚 = {
+	var1_0.刚 = {
 		出 = {
 			来 = {
 				做 = {
@@ -73,7 +73,7 @@ end
 temp()
 
 function temp()
-	var1.肛 = {
+	var1_0.肛 = {
 		this = {
 			this = true
 		},
@@ -148,7 +148,7 @@ end
 temp()
 
 function temp()
-	var1.岡 = {
+	var1_0.岡 = {
 		村 = {
 			寧 = {
 				次 = {
@@ -177,7 +177,7 @@ end
 temp()
 
 function temp()
-	var1.钢 = {
+	var1_0.钢 = {
 		笔 = {
 			摄 = {
 				像 = {
@@ -251,7 +251,7 @@ end
 temp()
 
 function temp()
-	var1.剛 = {
+	var1_0.剛 = {
 		比 = {
 			this = true,
 			樣 = {
@@ -266,7 +266,7 @@ end
 temp()
 
 function temp()
-	var1.崗 = {
+	var1_0.崗 = {
 		哨 = {
 			士 = {
 				兵 = {
@@ -280,7 +280,7 @@ end
 temp()
 
 function temp()
-	var1.鋼 = {
+	var1_0.鋼 = {
 		珠 = {
 			槍 = {
 				出 = {

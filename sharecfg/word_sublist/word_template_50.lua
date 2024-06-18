@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_50 = {}
+var0_0.word_template_50 = {}
 
-local var1 = var0.word_template_50
+local var1_0 = var0_0.word_template_50
 
 function temp()
-	var1.蹕 = {
+	var1_0.蹕 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.臂 = {
+	var1_0.臂 = {
 		推 = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.边 = {
+	var1_0.边 = {
 		抚 = {
 			摸 = {
 				边 = {
@@ -43,7 +43,7 @@ end
 temp()
 
 function temp()
-	var1.鞭 = {
+	var1_0.鞭 = {
 		走 = {
 			鞭 = {
 				爱 = {
@@ -57,7 +57,7 @@ end
 temp()
 
 function temp()
-	var1.苄 = {
+	var1_0.苄 = {
 		吗 = {
 			啡 = {
 				this = true
@@ -74,7 +74,7 @@ end
 temp()
 
 function temp()
-	var1.变 = {
+	var1_0.变 = {
 		牌 = {
 			道 = {
 				具 = {
@@ -117,7 +117,7 @@ end
 temp()
 
 function temp()
-	var1.辩 = {
+	var1_0.辩 = {
 		證 = {
 			this = true
 		}

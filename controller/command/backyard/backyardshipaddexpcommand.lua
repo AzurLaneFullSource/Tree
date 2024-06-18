@@ -1,35 +1,35 @@
-﻿local var0 = class("BackYardShipAddExpCommand", pm.SimpleCommand)
+﻿local var0_0 = class("BackYardShipAddExpCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = getProxy(DormProxy):getBackYardShips()
-	local var2 = getProxy(BayProxy)
-	local var3 = {}
-	local var4 = {}
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = getProxy(DormProxy):getBackYardShips()
+	local var2_1 = getProxy(BayProxy)
+	local var3_1 = {}
+	local var4_1 = {}
 
-	for iter0, iter1 in pairs(var1) do
-		if iter1.state == Ship.STATE_TRAIN then
-			local var5 = var2:getShipById(iter1.id)
-			local var6 = Clone(var5)
+	for iter0_1, iter1_1 in pairs(var1_1) do
+		if iter1_1.state == Ship.STATE_TRAIN then
+			local var5_1 = var2_1:getShipById(iter1_1.id)
+			local var6_1 = Clone(var5_1)
 
-			if var5.level ~= var5:getMaxLevel() then
-				var5:addExp(var0)
-				var2:updateShip(var5)
-				arg0:sendNotification(GAME.BACKYARD_SHIP_EXP_ADDED, {
-					id = var5.id,
-					exp = var0
+			if var5_1.level ~= var5_1:getMaxLevel() then
+				var5_1:addExp(var0_1)
+				var2_1:updateShip(var5_1)
+				arg0_1:sendNotification(GAME.BACKYARD_SHIP_EXP_ADDED, {
+					id = var5_1.id,
+					exp = var0_1
 				})
 			end
 
-			var3[var5.id] = var5
-			var4[var5.id] = var6
+			var3_1[var5_1.id] = var5_1
+			var4_1[var5_1.id] = var6_1
 		end
 	end
 
-	arg0:sendNotification(DormProxy.SHIPS_EXP_ADDED, {
-		oldShips = var4,
-		newShips = var3
+	arg0_1:sendNotification(DormProxy.SHIPS_EXP_ADDED, {
+		oldShips = var4_1,
+		newShips = var3_1
 	})
 end
 
-return var0
+return var0_0

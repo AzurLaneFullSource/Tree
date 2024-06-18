@@ -1,120 +1,120 @@
-﻿local var0 = class("SnackResultView", import("...base.BaseSubView"))
+﻿local var0_0 = class("SnackResultView", import("...base.BaseSubView"))
 
-var0.EXTable = {
+var0_0.EXTable = {
 	[0] = 0,
 	1,
 	2,
 	5
 }
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "SnackResult"
 end
 
-function var0.OnInit(arg0)
-	arg0:initUI()
-	arg0:updateView()
-	arg0:Show()
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+function var0_0.OnInit(arg0_2)
+	arg0_2:initUI()
+	arg0_2:updateView()
+	arg0_2:Show()
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
 end
 
-function var0.OnDestroy(arg0)
-	arg0.lockBackPress = false
+function var0_0.OnDestroy(arg0_3)
+	arg0_3.lockBackPress = false
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_3._tf)
 end
 
-function var0.initUI(arg0)
-	local var0 = arg0:findTF("Content")
+function var0_0.initUI(arg0_4)
+	local var0_4 = arg0_4:findTF("Content")
 
-	arg0.timeText = arg0:findTF("Tip/Time/TimeText", var0)
-	arg0.scoreText = arg0:findTF("Tip/Score/ScoreText", var0)
-	arg0.snackTpl = arg0:findTF("SnackTpl", var0)
-	arg0.orderListContainer = arg0:findTF("Order/OrderList", var0)
-	arg0.orderList = UIItemList.New(arg0.orderListContainer, arg0.snackTpl)
-	arg0.selectedListContainer = arg0:findTF("Select/SelectList", var0)
-	arg0.selectedList = UIItemList.New(arg0.selectedListContainer, arg0.snackTpl)
-	arg0.submitBtn = arg0:findTF("Buttons/SubmitBtn", var0)
-	arg0.continueBtn = arg0:findTF("Buttons/ContinueBtn", var0)
+	arg0_4.timeText = arg0_4:findTF("Tip/Time/TimeText", var0_4)
+	arg0_4.scoreText = arg0_4:findTF("Tip/Score/ScoreText", var0_4)
+	arg0_4.snackTpl = arg0_4:findTF("SnackTpl", var0_4)
+	arg0_4.orderListContainer = arg0_4:findTF("Order/OrderList", var0_4)
+	arg0_4.orderList = UIItemList.New(arg0_4.orderListContainer, arg0_4.snackTpl)
+	arg0_4.selectedListContainer = arg0_4:findTF("Select/SelectList", var0_4)
+	arg0_4.selectedList = UIItemList.New(arg0_4.selectedListContainer, arg0_4.snackTpl)
+	arg0_4.submitBtn = arg0_4:findTF("Buttons/SubmitBtn", var0_4)
+	arg0_4.continueBtn = arg0_4:findTF("Buttons/ContinueBtn", var0_4)
 
-	onButton(arg0, arg0.submitBtn, function()
-		local var0 = arg0:calculateLevel()
+	onButton(arg0_4, arg0_4.submitBtn, function()
+		local var0_5 = arg0_4:calculateLevel()
 
-		arg0.contextData.onSubmit(var0)
-		arg0:Destroy()
+		arg0_4.contextData.onSubmit(var0_5)
+		arg0_4:Destroy()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.continueBtn, function()
-		arg0.contextData.onContinue()
-		arg0:Destroy()
+	onButton(arg0_4, arg0_4.continueBtn, function()
+		arg0_4.contextData.onContinue()
+		arg0_4:Destroy()
 	end)
 end
 
-function var0.updateView(arg0)
-	local var0 = arg0:calculateEXValue()
+function var0_0.updateView(arg0_7)
+	local var0_7 = arg0_7:calculateEXValue()
 
-	if arg0.contextData.countTime > 0 then
-		setText(arg0.timeText, arg0.contextData.countTime .. "s   + " .. setColorStr(var0 .. "s", "#3068E6FF"))
+	if arg0_7.contextData.countTime > 0 then
+		setText(arg0_7.timeText, arg0_7.contextData.countTime .. "s   + " .. setColorStr(var0_7 .. "s", "#3068E6FF"))
 	else
-		setText(arg0.timeText, arg0.contextData.countTime .. "s")
+		setText(arg0_7.timeText, arg0_7.contextData.countTime .. "s")
 	end
 
-	setText(arg0.scoreText, arg0.contextData.score .. "   + " .. setColorStr(var0, "#3068E6FF"))
-	arg0.orderList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg0.contextData.orderIDList[arg1 + 1]
-			local var1 = arg0:findTF("SnackImg", arg2)
+	setText(arg0_7.scoreText, arg0_7.contextData.score .. "   + " .. setColorStr(var0_7, "#3068E6FF"))
+	arg0_7.orderList:make(function(arg0_8, arg1_8, arg2_8)
+		if arg0_8 == UIItemList.EventUpdate then
+			local var0_8 = arg0_7.contextData.orderIDList[arg1_8 + 1]
+			local var1_8 = arg0_7:findTF("SnackImg", arg2_8)
 
-			setImageSprite(var1, GetSpriteFromAtlas("ui/snackui_atlas", "snack_" .. var0))
+			setImageSprite(var1_8, GetSpriteFromAtlas("ui/snackui_atlas", "snack_" .. var0_8))
 		end
 	end)
-	arg0.orderList:align(#arg0.contextData.orderIDList)
-	arg0.selectedList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg0.contextData.selectedIDList[arg1 + 1]
-			local var1 = arg0:findTF("SnackImg", arg2)
+	arg0_7.orderList:align(#arg0_7.contextData.orderIDList)
+	arg0_7.selectedList:make(function(arg0_9, arg1_9, arg2_9)
+		if arg0_9 == UIItemList.EventUpdate then
+			local var0_9 = arg0_7.contextData.selectedIDList[arg1_9 + 1]
+			local var1_9 = arg0_7:findTF("SnackImg", arg2_9)
 
-			setImageSprite(var1, GetSpriteFromAtlas("ui/snackui_atlas", "snack_" .. var0))
+			setImageSprite(var1_9, GetSpriteFromAtlas("ui/snackui_atlas", "snack_" .. var0_9))
 
-			local var2 = arg0.contextData.orderIDList[arg1 + 1]
-			local var3 = arg0:findTF("ErrorImg", arg2)
-			local var4 = arg0:findTF("CorrectImg", arg2)
+			local var2_9 = arg0_7.contextData.orderIDList[arg1_9 + 1]
+			local var3_9 = arg0_7:findTF("ErrorImg", arg2_9)
+			local var4_9 = arg0_7:findTF("CorrectImg", arg2_9)
 
-			setActive(var4, var0 == var2)
-			setActive(var3, var0 ~= var2)
+			setActive(var4_9, var0_9 == var2_9)
+			setActive(var3_9, var0_9 ~= var2_9)
 		end
 	end)
-	arg0.selectedList:align(#arg0.contextData.selectedIDList)
+	arg0_7.selectedList:align(#arg0_7.contextData.selectedIDList)
 
-	if arg0.contextData.countTime == 0 then
-		setActive(arg0.continueBtn, false)
+	if arg0_7.contextData.countTime == 0 then
+		setActive(arg0_7.continueBtn, false)
 	end
 
-	arg0.contextData.countTime = arg0.contextData.countTime + var0
-	arg0.contextData.score = arg0.contextData.score + var0
+	arg0_7.contextData.countTime = arg0_7.contextData.countTime + var0_7
+	arg0_7.contextData.score = arg0_7.contextData.score + var0_7
 end
 
-function var0.calculateEXValue(arg0)
-	local var0 = 0
+function var0_0.calculateEXValue(arg0_10)
+	local var0_10 = 0
 
-	for iter0, iter1 in ipairs(arg0.contextData.selectedIDList) do
-		if arg0.contextData.orderIDList[iter0] == iter1 then
-			var0 = var0 + 1
+	for iter0_10, iter1_10 in ipairs(arg0_10.contextData.selectedIDList) do
+		if arg0_10.contextData.orderIDList[iter0_10] == iter1_10 then
+			var0_10 = var0_10 + 1
 		end
 	end
 
-	return arg0.contextData.correctNumToEXValue[var0]
+	return arg0_10.contextData.correctNumToEXValue[var0_10]
 end
 
-function var0.calculateLevel(arg0)
-	if arg0.contextData.score >= arg0.contextData.scoreLevel[4] then
+function var0_0.calculateLevel(arg0_11)
+	if arg0_11.contextData.score >= arg0_11.contextData.scoreLevel[4] then
 		return 1
-	elseif arg0.contextData.score >= arg0.contextData.scoreLevel[3] then
+	elseif arg0_11.contextData.score >= arg0_11.contextData.scoreLevel[3] then
 		return 2
-	elseif arg0.contextData.score >= arg0.contextData.scoreLevel[2] then
+	elseif arg0_11.contextData.score >= arg0_11.contextData.scoreLevel[2] then
 		return 3
-	elseif arg0.contextData.score >= arg0.contextData.scoreLevel[1] then
+	elseif arg0_11.contextData.score >= arg0_11.contextData.scoreLevel[1] then
 		return 4
 	end
 end
 
-return var0
+return var0_0

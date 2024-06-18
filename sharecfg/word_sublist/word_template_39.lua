@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_39 = {}
+var0_0.word_template_39 = {}
 
-local var1 = var0.word_template_39
+local var1_0 = var0_0.word_template_39
 
 function temp()
-	var1.精 = {
+	var1_0.精 = {
 		液 = {
 			this = true,
 			四 = {
@@ -255,7 +255,7 @@ end
 temp()
 
 function temp()
-	var1.X = {
+	var1_0.X = {
 		i = {
 			J = {
 				i = {
@@ -379,7 +379,7 @@ end
 temp()
 
 function temp()
-	var1["6"] = {
+	var1_0["6"] = {
 		月 = {
 			["4"] = {
 				日 = {
@@ -958,7 +958,7 @@ end
 temp()
 
 function temp()
-	var1.啊 = {
+	var1_0.啊 = {
 		扁 = {
 			涛 = {
 				哥 = {
@@ -977,7 +977,7 @@ end
 temp()
 
 function temp()
-	var1.哎 = {
+	var1_0.哎 = {
 		吔 = {
 			女 = {
 				朋 = {
@@ -993,7 +993,7 @@ end
 temp()
 
 function temp()
-	var1.哀 = {
+	var1_0.哀 = {
 		淫 = {
 			隶 = {
 				娘 = {
@@ -1013,7 +1013,7 @@ end
 temp()
 
 function temp()
-	var1.埃 = {
+	var1_0.埃 = {
 		裏 = {
 			克 = {
 				蘇 = {

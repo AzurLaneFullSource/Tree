@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_119 = {}
+var0_0.word_template_119 = {}
 
-local var1 = var0.word_template_119
+local var1_0 = var0_0.word_template_119
 
 function temp()
-	var1.緄 = {
+	var1_0.緄 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.鯀 = {
+	var1_0.鯀 = {
 		this = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.棍 = {
+	var1_0.棍 = {
 		王 = {
 			巴 = {
 				大 = {
@@ -43,7 +43,7 @@ end
 temp()
 
 function temp()
-	var1.郭 = {
+	var1_0.郭 = {
 		伯 = {
 			雄 = {
 				this = true
@@ -284,7 +284,7 @@ end
 temp()
 
 function temp()
-	var1.國 = {
+	var1_0.國 = {
 		產 = {
 			A = {
 				V = {
@@ -372,7 +372,7 @@ end
 temp()
 
 function temp()
-	var1.虢 = {
+	var1_0.虢 = {
 		this = {
 			this = true
 		}
@@ -382,7 +382,7 @@ end
 temp()
 
 function temp()
-	var1.馘 = {
+	var1_0.馘 = {
 		this = {
 			this = true
 		}

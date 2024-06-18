@@ -1,221 +1,221 @@
-﻿local var0 = class("BackYardFurniturePage", import(".BackYardShopBasePage"))
-local var1 = Furniture.INDEX_TO_SHOP_TYPE
+﻿local var0_0 = class("BackYardFurniturePage", import(".BackYardShopBasePage"))
+local var1_0 = Furniture.INDEX_TO_SHOP_TYPE
 
-table.insert(var1, 1, {})
+table.insert(var1_0, 1, {})
 
-local function var2(arg0)
-	return var1[arg0]
+local function var2_0(arg0_1)
+	return var1_0[arg0_1]
 end
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_2)
 	return "BackYardFurniturePage"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.scrollRect = arg0:findTF("adpter/frame/bg"):GetComponent("LScrollRect")
-	arg0.searchInput = arg0:findTF("adpter/search")
-	arg0.searchClear = arg0:findTF("adpter/search/clear")
-	arg0.filterBtn = arg0:findTF("adpter/filter")
-	arg0.filterBtnTxt = arg0.filterBtn:Find("Text"):GetComponent(typeof(Text))
-	arg0.filterBtnTxt.text = i18n("word_default")
-	arg0.orderBtn = arg0:findTF("adpter/order")
-	arg0.orderBtnIcon = arg0.orderBtn:Find("icon")
-	arg0.orderBtnTxt = arg0.orderBtn:Find("Text"):GetComponent(typeof(Text))
+function var0_0.OnLoaded(arg0_3)
+	arg0_3.scrollRect = arg0_3:findTF("adpter/frame/bg"):GetComponent("LScrollRect")
+	arg0_3.searchInput = arg0_3:findTF("adpter/search")
+	arg0_3.searchClear = arg0_3:findTF("adpter/search/clear")
+	arg0_3.filterBtn = arg0_3:findTF("adpter/filter")
+	arg0_3.filterBtnTxt = arg0_3.filterBtn:Find("Text"):GetComponent(typeof(Text))
+	arg0_3.filterBtnTxt.text = i18n("word_default")
+	arg0_3.orderBtn = arg0_3:findTF("adpter/order")
+	arg0_3.orderBtnIcon = arg0_3.orderBtn:Find("icon")
+	arg0_3.orderBtnTxt = arg0_3.orderBtn:Find("Text"):GetComponent(typeof(Text))
 
-	setText(arg0.searchInput:Find("Placeholder"), i18n("courtyard_label_search_holder"))
+	setText(arg0_3.searchInput:Find("Placeholder"), i18n("courtyard_label_search_holder"))
 end
 
-function var0.OnInit(arg0)
-	arg0.cards = {}
+function var0_0.OnInit(arg0_4)
+	arg0_4.cards = {}
 
-	function arg0.scrollRect.onInitItem(arg0)
-		arg0:OnInitItem(arg0)
+	function arg0_4.scrollRect.onInitItem(arg0_5)
+		arg0_4:OnInitItem(arg0_5)
 	end
 
-	function arg0.scrollRect.onUpdateItem(arg0, arg1)
-		arg0:OnUpdateItem(arg0, arg1)
+	function arg0_4.scrollRect.onUpdateItem(arg0_6, arg1_6)
+		arg0_4:OnUpdateItem(arg0_6, arg1_6)
 	end
 
-	onInputChanged(arg0, arg0.searchInput, function()
-		local var0 = getInputText(arg0.searchInput)
+	onInputChanged(arg0_4, arg0_4.searchInput, function()
+		local var0_7 = getInputText(arg0_4.searchInput)
 
-		setActive(arg0.searchClear, var0 ~= "")
-		arg0:OnSearchKeyChange()
+		setActive(arg0_4.searchClear, var0_7 ~= "")
+		arg0_4:OnSearchKeyChange()
 	end)
-	onButton(arg0, arg0.searchClear, function()
-		setInputText(arg0.searchInput, "")
+	onButton(arg0_4, arg0_4.searchClear, function()
+		setInputText(arg0_4.searchInput, "")
 	end, SFX_PANEL)
 
-	arg0.orderMode = BackYardDecorationFilterPanel.ORDER_MODE_DASC
-	arg0.orderBtnIcon.localScale = Vector3(1, -1, 1)
+	arg0_4.orderMode = BackYardDecorationFilterPanel.ORDER_MODE_DASC
+	arg0_4.orderBtnIcon.localScale = Vector3(1, -1, 1)
 
-	local function var0(arg0)
-		local var0 = ""
+	local function var0_4(arg0_9)
+		local var0_9 = ""
 
-		if arg0 == BackYardDecorationFilterPanel.ORDER_MODE_ASC then
-			var0 = i18n("word_asc")
-		elseif arg0 == BackYardDecorationFilterPanel.ORDER_MODE_DASC then
-			var0 = i18n("word_desc")
+		if arg0_9 == BackYardDecorationFilterPanel.ORDER_MODE_ASC then
+			var0_9 = i18n("word_asc")
+		elseif arg0_9 == BackYardDecorationFilterPanel.ORDER_MODE_DASC then
+			var0_9 = i18n("word_desc")
 		end
 
-		arg0.orderBtnTxt.text = var0
+		arg0_4.orderBtnTxt.text = var0_9
 	end
 
-	onToggle(arg0, arg0.orderBtn, function(arg0)
-		arg0.orderMode = arg0 and BackYardDecorationFilterPanel.ORDER_MODE_ASC or BackYardDecorationFilterPanel.ORDER_MODE_DASC
+	onToggle(arg0_4, arg0_4.orderBtn, function(arg0_10)
+		arg0_4.orderMode = arg0_10 and BackYardDecorationFilterPanel.ORDER_MODE_ASC or BackYardDecorationFilterPanel.ORDER_MODE_DASC
 
-		var0(arg0.orderMode)
-		arg0:UpdateFliterData()
-		arg0.contextData.filterPanel:Sort()
-		arg0:OnFilterDone()
+		var0_4(arg0_4.orderMode)
+		arg0_4:UpdateFliterData()
+		arg0_4.contextData.filterPanel:Sort()
+		arg0_4:OnFilterDone()
 
-		arg0.orderBtnIcon.localScale = Vector3(1, arg0 and 1 or -1, 1)
+		arg0_4.orderBtnIcon.localScale = Vector3(1, arg0_10 and 1 or -1, 1)
 	end, SFX_PANEL)
-	var0(arg0.orderMode)
+	var0_4(arg0_4.orderMode)
 
-	function arg0.contextData.filterPanel.confirmFunc()
-		local var0 = arg0.contextData.filterPanel.sortTxt
+	function arg0_4.contextData.filterPanel.confirmFunc()
+		local var0_11 = arg0_4.contextData.filterPanel.sortTxt
 
-		arg0.filterBtnTxt.text = var0
+		arg0_4.filterBtnTxt.text = var0_11
 
-		arg0:OnFilterDone()
+		arg0_4:OnFilterDone()
 	end
 
-	onButton(arg0, arg0.filterBtn, function()
-		arg0.contextData.filterPanel:setFilterData(arg0:GetData())
-		arg0.contextData.filterPanel:ExecuteAction("Show")
+	onButton(arg0_4, arg0_4.filterBtn, function()
+		arg0_4.contextData.filterPanel:setFilterData(arg0_4:GetData())
+		arg0_4.contextData.filterPanel:ExecuteAction("Show")
 	end, SFX_PANEL)
-	arg0:UpdateFliterData()
+	arg0_4:UpdateFliterData()
 end
 
-function var0.UpdateFliterData(arg0)
-	arg0.contextData.filterPanel:updateOrderMode(arg0.orderMode)
+function var0_0.UpdateFliterData(arg0_13)
+	arg0_13.contextData.filterPanel:updateOrderMode(arg0_13.orderMode)
 end
 
-function var0.OnFilterDone(arg0)
-	arg0.displays = arg0.contextData.filterPanel:GetFilterData()
+function var0_0.OnFilterDone(arg0_14)
+	arg0_14.displays = arg0_14.contextData.filterPanel:GetFilterData()
 
-	arg0.scrollRect:SetTotalCount(#arg0.displays)
+	arg0_14.scrollRect:SetTotalCount(#arg0_14.displays)
 end
 
-function var0.OnDisplayUpdated(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0.displays) do
-		if iter1.id == arg1.id then
-			arg0.displays[iter0] = arg1
+function var0_0.OnDisplayUpdated(arg0_15, arg1_15)
+	for iter0_15, iter1_15 in ipairs(arg0_15.displays) do
+		if iter1_15.id == arg1_15.id then
+			arg0_15.displays[iter0_15] = arg1_15
 
 			break
 		end
 	end
 end
 
-function var0.OnCardUpdated(arg0, arg1)
-	for iter0, iter1 in pairs(arg0.cards) do
-		if iter1.furniture.id == arg1.id then
-			iter1:Update(arg1)
+function var0_0.OnCardUpdated(arg0_16, arg1_16)
+	for iter0_16, iter1_16 in pairs(arg0_16.cards) do
+		if iter1_16.furniture.id == arg1_16.id then
+			iter1_16:Update(arg1_16)
 
 			break
 		end
 	end
 end
 
-function var0.OnDormUpdated(arg0)
-	arg0:UpdateFliterData()
+function var0_0.OnDormUpdated(arg0_17)
+	arg0_17:UpdateFliterData()
 end
 
-function var0.OnSetUp(arg0)
-	arg0:InitFurnitureList()
+function var0_0.OnSetUp(arg0_18)
+	arg0_18:InitFurnitureList()
 end
 
-function var0.OnSearchKeyChange(arg0)
-	arg0:InitFurnitureList()
+function var0_0.OnSearchKeyChange(arg0_19)
+	arg0_19:InitFurnitureList()
 end
 
-function var0.InitFurnitureList(arg0)
-	local var0 = arg0:GetData()
+function var0_0.InitFurnitureList(arg0_20)
+	local var0_20 = arg0_20:GetData()
 
-	arg0.contextData.filterPanel:setFilterData(var0)
-	arg0.contextData.filterPanel:filter()
-	arg0:OnFilterDone()
+	arg0_20.contextData.filterPanel:setFilterData(var0_20)
+	arg0_20.contextData.filterPanel:filter()
+	arg0_20:OnFilterDone()
 end
 
-function var0.GetData(arg0)
-	local var0 = {}
-	local var1 = arg0.dorm:GetPurchasedFurnitures()
+function var0_0.GetData(arg0_21)
+	local var0_21 = {}
+	local var1_21 = arg0_21.dorm:GetPurchasedFurnitures()
 
-	local function var2(arg0)
-		local var0 = var1[arg0.id]
+	local function var2_21(arg0_22)
+		local var0_22 = var1_21[arg0_22.id]
 
-		return pg.furniture_shop_template[arg0.id] and not arg0:isNotForSale() and (not arg0:isForActivity() or not not var0) and not not arg0:inTime()
+		return pg.furniture_shop_template[arg0_22.id] and not arg0_22:isNotForSale() and (not arg0_22:isForActivity() or not not var0_22) and not not arg0_22:inTime()
 	end
 
-	local function var3(arg0)
-		local var0 = getInputText(arg0.searchInput)
+	local function var3_21(arg0_23)
+		local var0_23 = getInputText(arg0_21.searchInput)
 
-		if not var0 or var0 == "" then
+		if not var0_23 or var0_23 == "" then
 			return true
 		else
-			return arg0:isMatchSearchKey(var0)
+			return arg0_23:isMatchSearchKey(var0_23)
 		end
 	end
 
-	local function var4(arg0)
-		local var0 = var1[arg0] or Furniture.New({
-			id = arg0
+	local function var4_21(arg0_24)
+		local var0_24 = var1_21[arg0_24] or Furniture.New({
+			id = arg0_24
 		})
 
-		if var2(var0) and var3(var0) then
-			table.insert(var0, var0)
+		if var2_21(var0_24) and var3_21(var0_24) then
+			table.insert(var0_21, var0_24)
 		end
 	end
 
-	if arg0.pageType == 5 then
-		for iter0, iter1 in ipairs(pg.furniture_data_template.get_id_list_by_tag[7]) do
-			var4(iter1)
+	if arg0_21.pageType == 5 then
+		for iter0_21, iter1_21 in ipairs(pg.furniture_data_template.get_id_list_by_tag[7]) do
+			var4_21(iter1_21)
 		end
 	else
-		local var5 = var2(arg0.pageType)
-		local var6 = pg.furniture_data_template.get_id_list_by_type
+		local var5_21 = var2_0(arg0_21.pageType)
+		local var6_21 = pg.furniture_data_template.get_id_list_by_type
 
-		for iter2, iter3 in ipairs(var5) do
-			for iter4, iter5 in ipairs(var6[iter3] or {}) do
-				var4(iter5)
+		for iter2_21, iter3_21 in ipairs(var5_21) do
+			for iter4_21, iter5_21 in ipairs(var6_21[iter3_21] or {}) do
+				var4_21(iter5_21)
 			end
 		end
 	end
 
-	return var0
+	return var0_21
 end
 
-function var0.OnInitItem(arg0, arg1)
-	local var0 = BackYardFurnitureCard.New(arg1)
+function var0_0.OnInitItem(arg0_25, arg1_25)
+	local var0_25 = BackYardFurnitureCard.New(arg1_25)
 
-	onButton(arg0, var0._go, function()
-		if var0.furniture:canPurchase() then
-			arg0.contextData.furnitureMsgBox:ExecuteAction("SetUp", var0.furniture, arg0.dorm, arg0.player)
+	onButton(arg0_25, var0_25._go, function()
+		if var0_25.furniture:canPurchase() then
+			arg0_25.contextData.furnitureMsgBox:ExecuteAction("SetUp", var0_25.furniture, arg0_25.dorm, arg0_25.player)
 		end
 	end, SFX_PANEL)
 
-	arg0.cards[arg1] = var0
+	arg0_25.cards[arg1_25] = var0_25
 end
 
-function var0.OnUpdateItem(arg0, arg1, arg2)
-	local var0 = arg0.cards[arg2]
+function var0_0.OnUpdateItem(arg0_27, arg1_27, arg2_27)
+	local var0_27 = arg0_27.cards[arg2_27]
 
-	if not var0 then
-		arg0:OnInitItem(arg2)
+	if not var0_27 then
+		arg0_27:OnInitItem(arg2_27)
 
-		var0 = arg0.cards[arg2]
+		var0_27 = arg0_27.cards[arg2_27]
 	end
 
-	local var1 = arg0.displays[arg1 + 1]
+	local var1_27 = arg0_27.displays[arg1_27 + 1]
 
-	var0:Update(var1)
+	var0_27:Update(var1_27)
 end
 
-function var0.OnDestroy(arg0)
-	for iter0, iter1 in pairs(arg0.cards) do
-		iter1:Clear()
+function var0_0.OnDestroy(arg0_28)
+	for iter0_28, iter1_28 in pairs(arg0_28.cards) do
+		iter1_28:Clear()
 	end
 end
 
-return var0
+return var0_0

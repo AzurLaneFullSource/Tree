@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_358 = {}
+var0_0.word_template_358 = {}
 
-local var1 = var0.word_template_358
+local var1_0 = var0_0.word_template_358
 
 function temp()
-	var1.資 = {
+	var1_0.資 = {
 		本 = {
 			主 = {
 				義 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.髭 = {
+	var1_0.髭 = {
 		this = {
 			this = true
 		}
@@ -31,7 +31,7 @@ end
 temp()
 
 function temp()
-	var1.鲻 = {
+	var1_0.鲻 = {
 		this = {
 			this = true
 		}
@@ -41,7 +41,7 @@ end
 temp()
 
 function temp()
-	var1.鯔 = {
+	var1_0.鯔 = {
 		this = {
 			this = true
 		}
@@ -51,7 +51,7 @@ end
 temp()
 
 function temp()
-	var1.秭 = {
+	var1_0.秭 = {
 		this = {
 			this = true
 		}
@@ -61,7 +61,7 @@ end
 temp()
 
 function temp()
-	var1.訾 = {
+	var1_0.訾 = {
 		this = {
 			this = true
 		}
@@ -71,7 +71,7 @@ end
 temp()
 
 function temp()
-	var1.宗 = {
+	var1_0.宗 = {
 		教 = {
 			this = true,
 			歧 = {

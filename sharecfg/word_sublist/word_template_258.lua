@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_258 = {}
+var0_0.word_template_258 = {}
 
-local var1 = var0.word_template_258
+local var1_0 = var0_0.word_template_258
 
 function temp()
-	var1.审 = {
+	var1_0.审 = {
 		查 = {
 			this = true
 		},
@@ -57,7 +57,7 @@ end
 temp()
 
 function temp()
-	var1.諗 = {
+	var1_0.諗 = {
 		this = {
 			this = true
 		}
@@ -67,7 +67,7 @@ end
 temp()
 
 function temp()
-	var1.審 = {
+	var1_0.審 = {
 		查 = {
 			this = true
 		}
@@ -77,7 +77,7 @@ end
 temp()
 
 function temp()
-	var1.肾 = {
+	var1_0.肾 = {
 		功 = {
 			能 = {
 				保 = {
@@ -108,7 +108,7 @@ end
 temp()
 
 function temp()
-	var1.腎 = {
+	var1_0.腎 = {
 		部 = {
 			橫 = {
 				交 = {
@@ -124,7 +124,7 @@ end
 temp()
 
 function temp()
-	var1.升 = {
+	var1_0.升 = {
 		水 = {
 			美 = {
 				奈 = {
@@ -143,7 +143,7 @@ end
 temp()
 
 function temp()
-	var1.生 = {
+	var1_0.生 = {
 		不 = {
 			起 = {
 				剖 = {

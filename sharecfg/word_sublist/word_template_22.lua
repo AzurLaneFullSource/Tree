@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_22 = {}
+var0_0.word_template_22 = {}
 
-local var1 = var0.word_template_22
+local var1_0 = var0_0.word_template_22
 
 function temp()
-	var1.交 = {
+	var1_0.交 = {
 		際 = {
 			this = true
 		},
@@ -171,7 +171,7 @@ end
 temp()
 
 function temp()
-	var1.工 = {
+	var1_0.工 = {
 		作 = {
 			員 = {
 				this = true
@@ -849,7 +849,7 @@ end
 temp()
 
 function temp()
-	var1.高 = {
+	var1_0.高 = {
 		額 = {
 			this = true
 		},
@@ -1588,7 +1588,7 @@ end
 temp()
 
 function temp()
-	var1.合 = {
+	var1_0.合 = {
 		法 = {
 			this = true,
 			土 = {
@@ -1670,7 +1670,7 @@ end
 temp()
 
 function temp()
-	var1.告 = {
+	var1_0.告 = {
 		ら = {
 			れ = {
 				レ = {
@@ -1693,7 +1693,7 @@ end
 temp()
 
 function temp()
-	var1.国 = {
+	var1_0.国 = {
 		服 = {
 			this = true,
 			第 = {
@@ -2447,7 +2447,7 @@ end
 temp()
 
 function temp()
-	var1.在 = {
+	var1_0.在 = {
 		宅 = {
 			this = true
 		},

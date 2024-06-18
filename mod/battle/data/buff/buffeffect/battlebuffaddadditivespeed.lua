@@ -1,59 +1,59 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConfig
-local var2 = class("BattleBuffAddAdditiveSpeed", var0.Battle.BattleBuffEffect)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConfig
+local var2_0 = class("BattleBuffAddAdditiveSpeed", var0_0.Battle.BattleBuffEffect)
 
-var0.Battle.BattleBuffAddAdditiveSpeed = var2
-var2.__name = "BattleBuffAddAdditiveSpeed"
+var0_0.Battle.BattleBuffAddAdditiveSpeed = var2_0
+var2_0.__name = "BattleBuffAddAdditiveSpeed"
 
-function var2.Ctor(arg0, arg1)
-	var2.super.Ctor(arg0, arg1)
+function var2_0.Ctor(arg0_1, arg1_1)
+	var2_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var2.SetArgs(arg0, arg1, arg2)
-	arg0._singularity = arg0._tempData.arg_list.singularity or {
+function var2_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	arg0_2._singularity = arg0_2._tempData.arg_list.singularity or {
 		x = 0,
 		z = 0
 	}
-	arg0._casterGravity = arg0._tempData.arg_list.gravitationalCaster
-	arg0._force = arg0._tempData.arg_list.force
-	arg0._forceScalteRate = arg0._tempData.arg_list.scale_rate
+	arg0_2._casterGravity = arg0_2._tempData.arg_list.gravitationalCaster
+	arg0_2._force = arg0_2._tempData.arg_list.force
+	arg0_2._forceScalteRate = arg0_2._tempData.arg_list.scale_rate
 
-	if not arg0._casterGravity then
-		arg0._staticSingularity = Vector3.New(arg0._singularity.x, 0, arg0._singularity.z)
+	if not arg0_2._casterGravity then
+		arg0_2._staticSingularity = Vector3.New(arg0_2._singularity.x, 0, arg0_2._singularity.z)
 	else
-		local var0 = arg2:GetCaster():GetIFF()
+		local var0_2 = arg2_2:GetCaster():GetIFF()
 
-		arg0._singularityOffset = Vector3.New(arg0._singularity.x * var0, 0, arg0._singularity.z)
+		arg0_2._singularityOffset = Vector3.New(arg0_2._singularity.x * var0_2, 0, arg0_2._singularity.z)
 	end
 end
 
-function var2.onUpdate(arg0, arg1, arg2)
-	local var0
+function var2_0.onUpdate(arg0_3, arg1_3, arg2_3)
+	local var0_3
 
-	if arg0._casterGravity then
-		var0 = arg2:GetCaster():GetPosition() + arg0._singularityOffset
+	if arg0_3._casterGravity then
+		var0_3 = arg2_3:GetCaster():GetPosition() + arg0_3._singularityOffset
 	else
-		var0 = arg0._staticSingularity
+		var0_3 = arg0_3._staticSingularity
 	end
 
-	local var1 = pg.Tool.FilterY(var0 - arg1:GetPosition())
-	local var2 = var1.normalized
-	local var3 = arg0._force
-	local var4 = var1.magnitude
+	local var1_3 = pg.Tool.FilterY(var0_3 - arg1_3:GetPosition())
+	local var2_3 = var1_3.normalized
+	local var3_3 = arg0_3._force
+	local var4_3 = var1_3.magnitude
 
-	if var4 < 2 then
-		var3 = 1e-08
-	elseif arg0._forceScalteRate then
-		var3 = math.min(var4, 1 / var4 * var3)
+	if var4_3 < 2 then
+		var3_3 = 1e-08
+	elseif arg0_3._forceScalteRate then
+		var3_3 = math.min(var4_3, 1 / var4_3 * var3_3)
 	end
 
-	local var5 = var2 * var3
+	local var5_3 = var2_3 * var3_3
 
-	arg1:SetAdditiveSpeed(var5)
+	arg1_3:SetAdditiveSpeed(var5_3)
 end
 
-function var2.onRemove(arg0, arg1, arg2)
-	arg1:RemoveAdditiveSpeed()
+function var2_0.onRemove(arg0_4, arg1_4, arg2_4)
+	arg1_4:RemoveAdditiveSpeed()
 end

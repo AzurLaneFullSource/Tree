@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_340 = {}
+var0_0.word_template_340 = {}
 
-local var1 = var0.word_template_340
+local var1_0 = var0_0.word_template_340
 
 function temp()
-	var1.賊 = {
+	var1_0.賊 = {
 		民 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.怎 = {
+	var1_0.怎 = {
 		么 = {
 			看 = {
 				和 = {
@@ -37,7 +37,7 @@ end
 temp()
 
 function temp()
-	var1.譖 = {
+	var1_0.譖 = {
 		this = {
 			this = true
 		}
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.增 = {
+	var1_0.增 = {
 		大 = {
 			宝 = {
 				this = true
@@ -67,7 +67,7 @@ end
 temp()
 
 function temp()
-	var1.扎 = {
+	var1_0.扎 = {
 		卡 = {
 			维 = {
 				this = true,
@@ -102,7 +102,7 @@ end
 temp()
 
 function temp()
-	var1.渣 = {
+	var1_0.渣 = {
 		波 = {
 			波 = {
 				this = true
@@ -114,7 +114,7 @@ end
 temp()
 
 function temp()
-	var1.炸 = {
+	var1_0.炸 = {
 		弹 = {
 			this = true,
 			包 = {

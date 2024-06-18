@@ -1,30 +1,30 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleSkillHeal = class("BattleSkillHeal", var0.Battle.BattleSkillEffect)
-var0.Battle.BattleSkillHeal.__name = "BattleSkillHeal"
+var0_0.Battle.BattleSkillHeal = class("BattleSkillHeal", var0_0.Battle.BattleSkillEffect)
+var0_0.Battle.BattleSkillHeal.__name = "BattleSkillHeal"
 
-function var0.Battle.BattleSkillHeal.Ctor(arg0, arg1)
-	var0.Battle.BattleSkillHeal.super.Ctor(arg0, arg1, lv)
+function var0_0.Battle.BattleSkillHeal.Ctor(arg0_1, arg1_1)
+	var0_0.Battle.BattleSkillHeal.super.Ctor(arg0_1, arg1_1, lv)
 
-	arg0._number = arg0._tempData.arg_list.number or 0
-	arg0._maxHPRatio = arg0._tempData.arg_list.maxHPRatio or 0
-	arg0._incorruptible = arg0._tempData.arg_list.incorrupt
+	arg0_1._number = arg0_1._tempData.arg_list.number or 0
+	arg0_1._maxHPRatio = arg0_1._tempData.arg_list.maxHPRatio or 0
+	arg0_1._incorruptible = arg0_1._tempData.arg_list.incorrupt
 end
 
-function var0.Battle.BattleSkillHeal.DoDataEffect(arg0, arg1, arg2)
-	local var0 = arg1:GetAttrByName("healingEnhancement") + 1
-	local var1 = var0.Battle.BattleFormulas.HealFixer(var0.Battle.BattleDataProxy.GetInstance():GetInitData().battleType, arg2:GetAttr())
-	local var2 = math.floor(arg0._number * var1)
-	local var3 = arg1:GetAttrByName("healingRate")
-	local var4 = math.max(0, math.floor((arg2:GetMaxHP() * arg0._maxHPRatio + var2) * var0 * var3))
-	local var5 = {
+function var0_0.Battle.BattleSkillHeal.DoDataEffect(arg0_2, arg1_2, arg2_2)
+	local var0_2 = arg1_2:GetAttrByName("healingEnhancement") + 1
+	local var1_2 = var0_0.Battle.BattleFormulas.HealFixer(var0_0.Battle.BattleDataProxy.GetInstance():GetInitData().battleType, arg2_2:GetAttr())
+	local var2_2 = math.floor(arg0_2._number * var1_2)
+	local var3_2 = arg1_2:GetAttrByName("healingRate")
+	local var4_2 = math.max(0, math.floor((arg2_2:GetMaxHP() * arg0_2._maxHPRatio + var2_2) * var0_2 * var3_2))
+	local var5_2 = {
 		isMiss = false,
 		isCri = false,
 		isHeal = true,
-		incorrupt = arg0._incorruptible
+		incorrupt = arg0_2._incorruptible
 	}
 
-	arg2:UpdateHP(var4, var5)
+	arg2_2:UpdateHP(var4_2, var5_2)
 end

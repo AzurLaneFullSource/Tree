@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_329 = {}
+var0_0.word_template_329 = {}
 
-local var1 = var0.word_template_329
+local var1_0 = var0_0.word_template_329
 
 function temp()
-	var1.尤 = {
+	var1_0.尤 = {
 		比 = {
 			亞 = {
 				this = true
@@ -83,7 +83,7 @@ end
 temp()
 
 function temp()
-	var1.由 = {
+	var1_0.由 = {
 		喜 = {
 			貴 = {
 				this = true
@@ -95,7 +95,7 @@ end
 temp()
 
 function temp()
-	var1.邮 = {
+	var1_0.邮 = {
 		政 = {
 			局 = {
 				this = true
@@ -107,7 +107,7 @@ end
 temp()
 
 function temp()
-	var1.铀 = {
+	var1_0.铀 = {
 		this = {
 			this = true
 		},
@@ -124,7 +124,7 @@ end
 temp()
 
 function temp()
-	var1.游 = {
+	var1_0.游 = {
 		蕩 = {
 			的 = {
 				僵 = {
@@ -245,7 +245,7 @@ end
 temp()
 
 function temp()
-	var1.鈾 = {
+	var1_0.鈾 = {
 		this = {
 			this = true
 		}
@@ -255,7 +255,7 @@ end
 temp()
 
 function temp()
-	var1.有 = {
+	var1_0.有 = {
 		偿 = {
 			捐 = {
 				肾 = {

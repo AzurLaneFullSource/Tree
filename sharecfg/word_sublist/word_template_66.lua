@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_66 = {}
+var0_0.word_template_66 = {}
 
-local var1 = var0.word_template_66
+local var1_0 = var0_0.word_template_66
 
 function temp()
-	var1.癡 = {
+	var1_0.癡 = {
 		乳 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.迟 = {
+	var1_0.迟 = {
 		浩 = {
 			田 = {
 				this = true
@@ -37,7 +37,7 @@ end
 temp()
 
 function temp()
-	var1.持 = {
+	var1_0.持 = {
 		不 = {
 			同 = {
 				政 = {
@@ -91,7 +91,7 @@ end
 temp()
 
 function temp()
-	var1.遲 = {
+	var1_0.遲 = {
 		鈍 = {
 			的 = {
 				圖 = {
@@ -107,7 +107,7 @@ end
 temp()
 
 function temp()
-	var1.耻 = {
+	var1_0.耻 = {
 		行 = {
 			之 = {
 				鬼 = {
@@ -137,7 +137,7 @@ end
 temp()
 
 function temp()
-	var1.恥 = {
+	var1_0.恥 = {
 		辱 = {
 			輪 = {
 				奸 = {
@@ -158,7 +158,7 @@ end
 temp()
 
 function temp()
-	var1.翅 = {
+	var1_0.翅 = {
 		臀 = {
 			浪 = {
 				妹 = {

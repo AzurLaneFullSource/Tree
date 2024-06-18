@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_337 = {}
+var0_0.word_template_337 = {}
 
-local var1 = var0.word_template_337
+local var1_0 = var0_0.word_template_337
 
 function temp()
-	var1.运 = {
+	var1_0.运 = {
 		动 = {
 			枪 = {
 				this = true
@@ -76,7 +76,7 @@ end
 temp()
 
 function temp()
-	var1.韞 = {
+	var1_0.韞 = {
 		this = {
 			this = true
 		}
@@ -86,7 +86,7 @@ end
 temp()
 
 function temp()
-	var1.杂 = {
+	var1_0.杂 = {
 		种 = {
 			this = true
 		}
@@ -96,7 +96,7 @@ end
 temp()
 
 function temp()
-	var1.砸 = {
+	var1_0.砸 = {
 		警 = {
 			车 = {
 				this = true
@@ -137,7 +137,7 @@ end
 temp()
 
 function temp()
-	var1.雜 = {
+	var1_0.雜 = {
 		種 = {
 			this = true
 		}
@@ -147,7 +147,7 @@ end
 temp()
 
 function temp()
-	var1.再 = {
+	var1_0.再 = {
 		奸 = {
 			this = true
 		},
@@ -226,7 +226,7 @@ end
 temp()
 
 function temp()
-	var1.咱 = {
+	var1_0.咱 = {
 		们 = {
 			长 = {
 				征 = {

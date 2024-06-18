@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Let's head to the <color=#ff7d36>Dock</color>.",
 	"Select one of your girls and tap to view her details.",
 	"Tap <color=#ff7d36>gear</color> to see what gear she currently has equipped.",
@@ -18,7 +18,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				pathIndex = -1,
@@ -49,7 +49,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = -5.18,
-				text = var0[2]
+				text = var0_0[2]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/DockyardUI(Clone)/main/ship_container/ships",
@@ -80,7 +80,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[3]
+				text = var0_0[3]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/blur_panel/adapt/left_length/frame/root/equpiment_toggle",
@@ -100,7 +100,7 @@ return {
 				mode = 2,
 				posY = -140,
 				posX = 6,
-				text = var0[4]
+				text = var0_0[4]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/equipment_r_container(Adapt)/equipment_r_container/equipment_r/equipment/equipment_r2",
@@ -118,7 +118,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 265.7,
-				text = var0[5]
+				text = var0_0[5]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/EquipmentInfoUI(Clone)/default/actions/action_button_2",
@@ -139,7 +139,7 @@ return {
 				mode = 2,
 				posY = 226,
 				posX = 479,
-				text = var0[6]
+				text = var0_0[6]
 			}
 		},
 		{
@@ -149,7 +149,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[7]
+				text = var0_0[7]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/EquipUpgradeUI(Clone)/main/panel/material_panel/start_btn",

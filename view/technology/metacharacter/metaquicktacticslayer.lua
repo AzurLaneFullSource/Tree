@@ -1,444 +1,444 @@
-﻿local var0 = class("MetaQuickTacticsLayer", import("...base.BaseUI"))
+﻿local var0_0 = class("MetaQuickTacticsLayer", import("...base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "MetaQuickTacticsUI"
 end
 
-function var0.init(arg0)
-	arg0:initUITextTips()
-	arg0:initData()
-	arg0:initUI()
-	arg0:addListener()
-	arg0:overlayPanel(true)
+function var0_0.init(arg0_2)
+	arg0_2:initUITextTips()
+	arg0_2:initData()
+	arg0_2:initUI()
+	arg0_2:addListener()
+	arg0_2:overlayPanel(true)
 end
 
-function var0.didEnter(arg0)
-	arg0:initSkillInfoPanel()
-	arg0:initUIItemList()
+function var0_0.didEnter(arg0_3)
+	arg0_3:initSkillInfoPanel()
+	arg0_3:initUIItemList()
 end
 
-function var0.willExit(arg0)
-	arg0:overlayPanel(false)
+function var0_0.willExit(arg0_4)
+	arg0_4:overlayPanel(false)
 end
 
-function var0.onBackPressed(arg0)
-	arg0:closeView()
+function var0_0.onBackPressed(arg0_5)
+	arg0_5:closeView()
 end
 
-function var0.initUITextTips(arg0)
-	local var0 = arg0:findTF("Content/SkillInfo/UseTip")
+function var0_0.initUITextTips(arg0_6)
+	local var0_6 = arg0_6:findTF("Content/SkillInfo/UseTip")
 
-	setText(var0, i18n("metaskill_up"))
+	setText(var0_6, i18n("metaskill_up"))
 end
 
-function var0.initData(arg0)
-	arg0.metaProxy = getProxy(MetaCharacterProxy)
-	arg0.bagProxy = getProxy(BagProxy)
-	arg0.bayProxy = getProxy(BayProxy)
-	arg0.shipID = arg0.contextData.shipID
-	arg0.skillID = arg0.contextData.skillID
-	arg0.bookIDList = pg.item_data_statistics.get_id_list_by_type[Item.METALESSON_TYPE]
-	arg0.useCountDict = {}
-	arg0.maxCountDict = {}
-	arg0.useCountTextDict = {}
+function var0_0.initData(arg0_7)
+	arg0_7.metaProxy = getProxy(MetaCharacterProxy)
+	arg0_7.bagProxy = getProxy(BagProxy)
+	arg0_7.bayProxy = getProxy(BayProxy)
+	arg0_7.shipID = arg0_7.contextData.shipID
+	arg0_7.skillID = arg0_7.contextData.skillID
+	arg0_7.bookIDList = pg.item_data_statistics.get_id_list_by_type[Item.METALESSON_TYPE]
+	arg0_7.useCountDict = {}
+	arg0_7.maxCountDict = {}
+	arg0_7.useCountTextDict = {}
 
-	arg0:resetUseData()
+	arg0_7:resetUseData()
 
-	arg0.colorDict = {
+	arg0_7.colorDict = {
 		[ItemRarity.Blue] = "#70D4FAFF",
 		[ItemRarity.Purple] = "#C380FBFF",
 		[ItemRarity.Gold] = "#FFCC4DFF"
 	}
-	arg0.expDict = {}
+	arg0_7.expDict = {}
 
-	for iter0, iter1 in ipairs(arg0.bookIDList) do
-		arg0.expDict[iter1] = tonumber(Item.getConfigData(iter1).usage_arg)
+	for iter0_7, iter1_7 in ipairs(arg0_7.bookIDList) do
+		arg0_7.expDict[iter1_7] = tonumber(Item.getConfigData(iter1_7).usage_arg)
 	end
 end
 
-function var0.initUI(arg0)
-	arg0.bg = arg0:findTF("BG")
-	arg0.tpl = arg0:findTF("TacticsTpl")
+function var0_0.initUI(arg0_8)
+	arg0_8.bg = arg0_8:findTF("BG")
+	arg0_8.tpl = arg0_8:findTF("TacticsTpl")
 
-	local var0 = arg0:findTF("Content")
+	local var0_8 = arg0_8:findTF("Content")
 
-	arg0.closeBtn = arg0:findTF("Title/CloseBtn", var0)
+	arg0_8.closeBtn = arg0_8:findTF("Title/CloseBtn", var0_8)
 
-	local var1 = arg0:findTF("SkillInfo", var0)
-	local var2 = arg0:findTF("Skill", var1)
+	local var1_8 = arg0_8:findTF("SkillInfo", var0_8)
+	local var2_8 = arg0_8:findTF("Skill", var1_8)
 
-	arg0.skillNameText = arg0:findTF("Name", var2)
-	arg0.skillLevelText = arg0:findTF("LevelNum", var2)
-	arg0.skillLevelUpText = arg0:findTF("LevelUp", var2)
+	arg0_8.skillNameText = arg0_8:findTF("Name", var2_8)
+	arg0_8.skillLevelText = arg0_8:findTF("LevelNum", var2_8)
+	arg0_8.skillLevelUpText = arg0_8:findTF("LevelUp", var2_8)
 
-	local var3 = arg0:findTF("Exp", var1)
+	local var3_8 = arg0_8:findTF("Exp", var1_8)
 
-	arg0.curExpText = arg0:findTF("CurExp", var3)
-	arg0.addExpText = arg0:findTF("AddExp", var3)
-	arg0.totalExpText = arg0:findTF("TotalExp", var3)
-	arg0.progressBar = arg0:findTF("Slider", var1)
-	arg0.containerTF = arg0:findTF("Container", var0)
+	arg0_8.curExpText = arg0_8:findTF("CurExp", var3_8)
+	arg0_8.addExpText = arg0_8:findTF("AddExp", var3_8)
+	arg0_8.totalExpText = arg0_8:findTF("TotalExp", var3_8)
+	arg0_8.progressBar = arg0_8:findTF("Slider", var1_8)
+	arg0_8.containerTF = arg0_8:findTF("Container", var0_8)
 
-	local var4 = arg0:findTF("Action", var0)
+	local var4_8 = arg0_8:findTF("Action", var0_8)
 
-	arg0.clearBtn = arg0:findTF("ClearBtn", var4)
-	arg0.onestepBtn = arg0:findTF("OneStepBtn", var4)
-	arg0.confirmBtn = arg0:findTF("ConfirmBtn", var4)
+	arg0_8.clearBtn = arg0_8:findTF("ClearBtn", var4_8)
+	arg0_8.onestepBtn = arg0_8:findTF("OneStepBtn", var4_8)
+	arg0_8.confirmBtn = arg0_8:findTF("ConfirmBtn", var4_8)
 end
 
-function var0.addListener(arg0)
-	local function var0()
-		arg0:closeView()
+function var0_0.addListener(arg0_9)
+	local function var0_9()
+		arg0_9:closeView()
 	end
 
-	onButton(arg0, arg0.bg, var0, SFX_PANEL)
-	onButton(arg0, arg0.closeBtn, var0, SFX_PANEL)
-	onButton(arg0, arg0.clearBtn, function()
-		arg0:resetUseData()
-		arg0:updateAfterModifyUseCount()
+	onButton(arg0_9, arg0_9.bg, var0_9, SFX_PANEL)
+	onButton(arg0_9, arg0_9.closeBtn, var0_9, SFX_PANEL)
+	onButton(arg0_9, arg0_9.clearBtn, function()
+		arg0_9:resetUseData()
+		arg0_9:updateAfterModifyUseCount()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.onestepBtn, function()
-		arg0:oneStep()
-		arg0:updateAfterModifyUseCount()
+	onButton(arg0_9, arg0_9.onestepBtn, function()
+		arg0_9:oneStep()
+		arg0_9:updateAfterModifyUseCount()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.confirmBtn, function()
-		local var0 = 0
+	onButton(arg0_9, arg0_9.confirmBtn, function()
+		local var0_13 = 0
 
-		for iter0, iter1 in ipairs(arg0.bookIDList) do
-			var0 = var0 + arg0.useCountDict[iter1]
+		for iter0_13, iter1_13 in ipairs(arg0_9.bookIDList) do
+			var0_13 = var0_13 + arg0_9.useCountDict[iter1_13]
 		end
 
-		if var0 <= 0 then
+		if var0_13 <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("word_materal_no_enough"))
 		else
-			local var1, var2 = arg0:preCalcExpOverFlow(0, 0)
+			local var1_13, var2_13 = arg0_9:preCalcExpOverFlow(0, 0)
 
-			if var1 then
-				arg0:emit(MetaQuickTacticsMediator.OPEN_OVERFLOW_LAYER, arg0.shipID, arg0.skillID, arg0.useCountDict, var2)
+			if var1_13 then
+				arg0_9:emit(MetaQuickTacticsMediator.OPEN_OVERFLOW_LAYER, arg0_9.shipID, arg0_9.skillID, arg0_9.useCountDict, var2_13)
 			else
-				arg0:emit(MetaQuickTacticsMediator.USE_TACTICS_BOOK, arg0.shipID, arg0.skillID, arg0.useCountDict)
+				arg0_9:emit(MetaQuickTacticsMediator.USE_TACTICS_BOOK, arg0_9.shipID, arg0_9.skillID, arg0_9.useCountDict)
 			end
 		end
 	end, SFX_PANEL)
 end
 
-function var0.overlayPanel(arg0, arg1)
-	if arg1 and arg0._tf then
-		pg.UIMgr.GetInstance():OverlayPanel(arg0._tf, {
+function var0_0.overlayPanel(arg0_14, arg1_14)
+	if arg1_14 and arg0_14._tf then
+		pg.UIMgr.GetInstance():OverlayPanel(arg0_14._tf, {
 			groupName = LayerWeightConst.GROUP_META,
 			weight = LayerWeightConst.BASE_LAYER
 		})
-	elseif arg0._tf then
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg0._tf)
+	elseif arg0_14._tf then
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_14._tf)
 	end
 end
 
-function var0.initSkillInfoPanel(arg0)
-	local var0 = arg0.skillID
-	local var1 = arg0.bayProxy:getShipById(arg0.shipID):getMetaSkillLevelBySkillID(var0)
-	local var2 = getSkillConfig(var0)
-	local var3 = getSkillName(var2.id)
+function var0_0.initSkillInfoPanel(arg0_15)
+	local var0_15 = arg0_15.skillID
+	local var1_15 = arg0_15.bayProxy:getShipById(arg0_15.shipID):getMetaSkillLevelBySkillID(var0_15)
+	local var2_15 = getSkillConfig(var0_15)
+	local var3_15 = getSkillName(var2_15.id)
 
-	setText(arg0.skillNameText, var3)
-	setText(arg0.skillLevelText, "LEVEL:" .. var1)
-	setText(arg0.skillLevelUpText, "")
+	setText(arg0_15.skillNameText, var3_15)
+	setText(arg0_15.skillLevelText, "LEVEL:" .. var1_15)
+	setText(arg0_15.skillLevelUpText, "")
 
-	local var4 = arg0.metaProxy:getMetaTacticsInfoByShipID(arg0.shipID):getSkillExp(var0)
-	local var5 = MetaCharacterConst.getMetaSkillTacticsConfig(var0, var1).need_exp
+	local var4_15 = arg0_15.metaProxy:getMetaTacticsInfoByShipID(arg0_15.shipID):getSkillExp(var0_15)
+	local var5_15 = MetaCharacterConst.getMetaSkillTacticsConfig(var0_15, var1_15).need_exp
 
-	setText(arg0.curExpText, var4)
-	setText(arg0.totalExpText, var5)
-	setText(arg0.addExpText, "[+0]")
-	setSlider(arg0.progressBar, 0, var5, var4)
+	setText(arg0_15.curExpText, var4_15)
+	setText(arg0_15.totalExpText, var5_15)
+	setText(arg0_15.addExpText, "[+0]")
+	setSlider(arg0_15.progressBar, 0, var5_15, var4_15)
 end
 
-function var0.initUIItemList(arg0)
-	arg0.uiitemList = UIItemList.New(arg0.containerTF, arg0.tpl)
+function var0_0.initUIItemList(arg0_16)
+	arg0_16.uiitemList = UIItemList.New(arg0_16.containerTF, arg0_16.tpl)
 
-	arg0.uiitemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			arg1 = arg1 + 1
+	arg0_16.uiitemList:make(function(arg0_17, arg1_17, arg2_17)
+		if arg0_17 == UIItemList.EventUpdate then
+			arg1_17 = arg1_17 + 1
 
-			arg0:updateTpl(arg1, arg2)
+			arg0_16:updateTpl(arg1_17, arg2_17)
 		end
 	end)
-	arg0.uiitemList:align(#arg0.bookIDList)
+	arg0_16.uiitemList:align(#arg0_16.bookIDList)
 end
 
-function var0.updateUIItemList(arg0)
-	arg0.uiitemList:align(#arg0.bookIDList)
+function var0_0.updateUIItemList(arg0_18)
+	arg0_18.uiitemList:align(#arg0_18.bookIDList)
 end
 
-function var0.updateTpl(arg0, arg1, arg2)
-	local var0 = arg0:findTF("IconTpl", arg2)
-	local var1 = arg0:findTF("Name", arg2)
-	local var2 = arg0:findTF("MinusTenBtn", arg2)
-	local var3 = arg0:findTF("AddTenBtn", arg2)
-	local var4 = arg0:findTF("MinusBtn", arg2)
-	local var5 = arg0:findTF("AddBtn", arg2)
-	local var6 = arg0:findTF("TextBG/UseNum", arg2)
-	local var7 = arg0.bookIDList[arg1]
-	local var8 = arg0:getBookItem(var7)
-	local var9 = arg0.bagProxy:getItemCountById(var7)
+function var0_0.updateTpl(arg0_19, arg1_19, arg2_19)
+	local var0_19 = arg0_19:findTF("IconTpl", arg2_19)
+	local var1_19 = arg0_19:findTF("Name", arg2_19)
+	local var2_19 = arg0_19:findTF("MinusTenBtn", arg2_19)
+	local var3_19 = arg0_19:findTF("AddTenBtn", arg2_19)
+	local var4_19 = arg0_19:findTF("MinusBtn", arg2_19)
+	local var5_19 = arg0_19:findTF("AddBtn", arg2_19)
+	local var6_19 = arg0_19:findTF("TextBG/UseNum", arg2_19)
+	local var7_19 = arg0_19.bookIDList[arg1_19]
+	local var8_19 = arg0_19:getBookItem(var7_19)
+	local var9_19 = arg0_19.bagProxy:getItemCountById(var7_19)
 
-	if var9 == 0 then
-		var9 = "0"
+	if var9_19 == 0 then
+		var9_19 = "0"
 	end
 
-	local var10 = Drop.New({
-		id = var7,
+	local var10_19 = Drop.New({
+		id = var7_19,
 		type = DROP_TYPE_ITEM,
-		count = var9
+		count = var9_19
 	})
 
-	updateDrop(var0, var10)
+	updateDrop(var0_19, var10_19)
 
-	local var11 = var8:getConfig("name")
-	local var12 = var8:getConfig("rarity")
-	local var13 = setColorStr(var11, arg0.colorDict[var12])
+	local var11_19 = var8_19:getConfig("name")
+	local var12_19 = var8_19:getConfig("rarity")
+	local var13_19 = setColorStr(var11_19, arg0_19.colorDict[var12_19])
 
-	setText(var1, var13)
+	setText(var1_19, var13_19)
 
-	arg0.useCountTextDict[var7] = var6
+	arg0_19.useCountTextDict[var7_19] = var6_19
 
-	onButton(arg0, var2, function()
-		arg0:tryModifyUseCount(var7, -10)
-		arg0:updateAfterModifyUseCount()
+	onButton(arg0_19, var2_19, function()
+		arg0_19:tryModifyUseCount(var7_19, -10)
+		arg0_19:updateAfterModifyUseCount()
 	end, SFX_PANEL)
-	onButton(arg0, var3, function()
-		if not arg0:isMaxLevel() and not arg0:isCanUpMax() then
-			arg0:tryModifyUseCount(var7, 10)
-			arg0:updateAfterModifyUseCount()
+	onButton(arg0_19, var3_19, function()
+		if not arg0_19:isMaxLevel() and not arg0_19:isCanUpMax() then
+			arg0_19:tryModifyUseCount(var7_19, 10)
+			arg0_19:updateAfterModifyUseCount()
 		end
 	end, SFX_PANEL)
-	onButton(arg0, var4, function()
-		arg0:tryModifyUseCount(var7, -1)
-		arg0:updateAfterModifyUseCount()
+	onButton(arg0_19, var4_19, function()
+		arg0_19:tryModifyUseCount(var7_19, -1)
+		arg0_19:updateAfterModifyUseCount()
 	end, SFX_PANEL)
-	onButton(arg0, var5, function()
-		if not arg0:isMaxLevel() and not arg0:isCanUpMax() then
-			arg0:tryModifyUseCount(var7, 1)
-			arg0:updateAfterModifyUseCount()
+	onButton(arg0_19, var5_19, function()
+		if not arg0_19:isMaxLevel() and not arg0_19:isCanUpMax() then
+			arg0_19:tryModifyUseCount(var7_19, 1)
+			arg0_19:updateAfterModifyUseCount()
 		end
 	end, SFX_PANEL)
 end
 
-function var0.updateAfterModifyUseCount(arg0)
-	for iter0, iter1 in ipairs(arg0.bookIDList) do
-		local var0 = arg0.useCountTextDict[iter1]
-		local var1 = arg0.useCountDict[iter1]
+function var0_0.updateAfterModifyUseCount(arg0_24)
+	for iter0_24, iter1_24 in ipairs(arg0_24.bookIDList) do
+		local var0_24 = arg0_24.useCountTextDict[iter1_24]
+		local var1_24 = arg0_24.useCountDict[iter1_24]
 
-		setText(var0, var1)
+		setText(var0_24, var1_24)
 	end
 
-	local var2 = arg0.shipID
-	local var3 = arg0.skillID
-	local var4 = arg0.bayProxy:getShipById(var2):getMetaSkillLevelBySkillID(var3)
-	local var5 = arg0:calcAwardExp()
-	local var6 = arg0:calcLevelWithAwardExp(var5) - var4
+	local var2_24 = arg0_24.shipID
+	local var3_24 = arg0_24.skillID
+	local var4_24 = arg0_24.bayProxy:getShipById(var2_24):getMetaSkillLevelBySkillID(var3_24)
+	local var5_24 = arg0_24:calcAwardExp()
+	local var6_24 = arg0_24:calcLevelWithAwardExp(var5_24) - var4_24
 
-	if var6 > 0 then
-		setText(arg0.skillLevelUpText, "+" .. var6)
+	if var6_24 > 0 then
+		setText(arg0_24.skillLevelUpText, "+" .. var6_24)
 	else
-		setText(arg0.skillLevelUpText, "")
+		setText(arg0_24.skillLevelUpText, "")
 	end
 
-	setText(arg0.addExpText, string.format("[+%d]", var5))
+	setText(arg0_24.addExpText, string.format("[+%d]", var5_24))
 
-	local var7 = MetaCharacterConst.getMetaSkillTacticsConfig(var3, var4)
+	local var7_24 = MetaCharacterConst.getMetaSkillTacticsConfig(var3_24, var4_24)
 
-	if var7 then
-		local var8 = var7.need_exp
-		local var9 = arg0.metaProxy:getMetaTacticsInfoByShipID(var2):getSkillExp(var3)
+	if var7_24 then
+		local var8_24 = var7_24.need_exp
+		local var9_24 = arg0_24.metaProxy:getMetaTacticsInfoByShipID(var2_24):getSkillExp(var3_24)
 
-		setText(arg0.curExpText, var9)
-		setText(arg0.totalExpText, var8)
-		setSlider(arg0.progressBar, 0, var8, var9 + var5)
+		setText(arg0_24.curExpText, var9_24)
+		setText(arg0_24.totalExpText, var8_24)
+		setSlider(arg0_24.progressBar, 0, var8_24, var9_24 + var5_24)
 	end
 end
 
-function var0.updateAfterUse(arg0)
-	local var0 = arg0.shipID
-	local var1 = arg0.skillID
-	local var2 = arg0.bayProxy:getShipById(var0):getMetaSkillLevelBySkillID(var1)
+function var0_0.updateAfterUse(arg0_25)
+	local var0_25 = arg0_25.shipID
+	local var1_25 = arg0_25.skillID
+	local var2_25 = arg0_25.bayProxy:getShipById(var0_25):getMetaSkillLevelBySkillID(var1_25)
 
-	setText(arg0.skillLevelText, "LEVEL:" .. var2)
+	setText(arg0_25.skillLevelText, "LEVEL:" .. var2_25)
 
-	if arg0:isMaxLevel() then
-		setText(arg0.curExpText, "MAX")
-		setSlider(arg0.progressBar, 0, 1, 1)
+	if arg0_25:isMaxLevel() then
+		setText(arg0_25.curExpText, "MAX")
+		setSlider(arg0_25.progressBar, 0, 1, 1)
 	end
 
-	arg0:updateUIItemList()
+	arg0_25:updateUIItemList()
 end
 
-function var0.getBookItem(arg0, arg1)
-	return arg0.bagProxy:getItemById(arg1) or Drop.New({
+function var0_0.getBookItem(arg0_26, arg1_26)
+	return arg0_26.bagProxy:getItemById(arg1_26) or Drop.New({
 		count = 0,
 		type = DROP_TYPE_ITEM,
-		id = arg1
+		id = arg1_26
 	})
 end
 
-function var0.resetUseData(arg0)
-	arg0.useCountDict = arg0.useCountDict or {}
-	arg0.maxCountDict = arg0.maxCountDict or {}
+function var0_0.resetUseData(arg0_27)
+	arg0_27.useCountDict = arg0_27.useCountDict or {}
+	arg0_27.maxCountDict = arg0_27.maxCountDict or {}
 
-	for iter0, iter1 in ipairs(arg0.bookIDList) do
-		arg0.useCountDict[iter1] = 0
-		arg0.maxCountDict[iter1] = arg0.bagProxy:getItemCountById(iter1)
+	for iter0_27, iter1_27 in ipairs(arg0_27.bookIDList) do
+		arg0_27.useCountDict[iter1_27] = 0
+		arg0_27.maxCountDict[iter1_27] = arg0_27.bagProxy:getItemCountById(iter1_27)
 	end
 end
 
-function var0.tryModifyUseCount(arg0, arg1, arg2)
-	local var0 = arg0.maxCountDict[arg1]
-	local var1 = arg0.useCountDict[arg1]
+function var0_0.tryModifyUseCount(arg0_28, arg1_28, arg2_28)
+	local var0_28 = arg0_28.maxCountDict[arg1_28]
+	local var1_28 = arg0_28.useCountDict[arg1_28]
 
-	if var0 <= 0 then
+	if var0_28 <= 0 then
 		return
 	end
 
-	if arg2 < 0 then
-		local var2 = math.clamp(var1 + arg2, 0, var0)
+	if arg2_28 < 0 then
+		local var2_28 = math.clamp(var1_28 + arg2_28, 0, var0_28)
 
-		arg0.useCountDict[arg1] = var2
+		arg0_28.useCountDict[arg1_28] = var2_28
 	else
-		local var3 = math.min(var0, arg2)
-		local var4 = arg0.expDict[arg1]
-		local var5 = 0
+		local var3_28 = math.min(var0_28, arg2_28)
+		local var4_28 = arg0_28.expDict[arg1_28]
+		local var5_28 = 0
 
-		for iter0 = 0, var3 do
-			local var6 = var5 * var4
+		for iter0_28 = 0, var3_28 do
+			local var6_28 = var5_28 * var4_28
 
-			if not arg0:preCalcExpOverFlow(var6, 0) then
-				var5 = iter0
+			if not arg0_28:preCalcExpOverFlow(var6_28, 0) then
+				var5_28 = iter0_28
 
-				if var3 <= var5 or var0 <= var1 + var5 then
+				if var3_28 <= var5_28 or var0_28 <= var1_28 + var5_28 then
 					break
 				end
 			end
 		end
 
-		arg0.useCountDict[arg1] = var1 + var5
+		arg0_28.useCountDict[arg1_28] = var1_28 + var5_28
 	end
 end
 
-function var0.getLevelTotalExp(arg0, arg1)
-	local var0 = arg0.skillID
-	local var1 = arg0.bayProxy:getShipById(arg0.shipID)
-	local var2 = pg.skill_data_template[var0].max_level
-	local var3 = pg.ship_meta_skilltask.get_id_list_by_skill_ID[var0]
-	local var4 = 0
+function var0_0.getLevelTotalExp(arg0_29, arg1_29)
+	local var0_29 = arg0_29.skillID
+	local var1_29 = arg0_29.bayProxy:getShipById(arg0_29.shipID)
+	local var2_29 = pg.skill_data_template[var0_29].max_level
+	local var3_29 = pg.ship_meta_skilltask.get_id_list_by_skill_ID[var0_29]
+	local var4_29 = 0
 
-	for iter0, iter1 in ipairs(var3) do
-		local var5 = pg.ship_meta_skilltask[iter1]
-		local var6 = var5.level
-		local var7 = var5.need_exp
+	for iter0_29, iter1_29 in ipairs(var3_29) do
+		local var5_29 = pg.ship_meta_skilltask[iter1_29]
+		local var6_29 = var5_29.level
+		local var7_29 = var5_29.need_exp
 
-		if var6 < arg1 then
-			var4 = var4 + var7
+		if var6_29 < arg1_29 then
+			var4_29 = var4_29 + var7_29
 		end
 	end
 
-	return var4
+	return var4_29
 end
 
-function var0.getCurLevelExp(arg0)
-	local var0 = arg0.skillID
-	local var1 = arg0.bayProxy:getShipById(arg0.shipID):getMetaSkillLevelBySkillID(var0)
-	local var2 = arg0.metaProxy:getMetaTacticsInfoByShipID(arg0.shipID):getSkillExp(var0)
+function var0_0.getCurLevelExp(arg0_30)
+	local var0_30 = arg0_30.skillID
+	local var1_30 = arg0_30.bayProxy:getShipById(arg0_30.shipID):getMetaSkillLevelBySkillID(var0_30)
+	local var2_30 = arg0_30.metaProxy:getMetaTacticsInfoByShipID(arg0_30.shipID):getSkillExp(var0_30)
 
-	return arg0:getLevelTotalExp(var1) + var2
+	return arg0_30:getLevelTotalExp(var1_30) + var2_30
 end
 
-function var0.calcAwardExp(arg0)
-	local var0 = 0
+function var0_0.calcAwardExp(arg0_31)
+	local var0_31 = 0
 
-	for iter0, iter1 in ipairs(arg0.bookIDList) do
-		var0 = var0 + arg0.useCountDict[iter1] * arg0.expDict[iter1]
+	for iter0_31, iter1_31 in ipairs(arg0_31.bookIDList) do
+		var0_31 = var0_31 + arg0_31.useCountDict[iter1_31] * arg0_31.expDict[iter1_31]
 	end
 
-	return var0
+	return var0_31
 end
 
-function var0.calcLevelWithAwardExp(arg0, arg1)
-	local var0 = arg0:getCurLevelExp() + arg1
-	local var1 = arg0.skillID
-	local var2 = pg.ship_meta_skilltask.get_id_list_by_skill_ID[var1]
-	local var3 = 1
+function var0_0.calcLevelWithAwardExp(arg0_32, arg1_32)
+	local var0_32 = arg0_32:getCurLevelExp() + arg1_32
+	local var1_32 = arg0_32.skillID
+	local var2_32 = pg.ship_meta_skilltask.get_id_list_by_skill_ID[var1_32]
+	local var3_32 = 1
 
-	for iter0, iter1 in ipairs(var2) do
-		local var4 = pg.ship_meta_skilltask[iter1].need_exp
+	for iter0_32, iter1_32 in ipairs(var2_32) do
+		local var4_32 = pg.ship_meta_skilltask[iter1_32].need_exp
 
-		if var4 <= var0 then
-			var0 = var0 - var4
-			var3 = var3 + 1
+		if var4_32 <= var0_32 then
+			var0_32 = var0_32 - var4_32
+			var3_32 = var3_32 + 1
 		else
 			break
 		end
 	end
 
-	return var3
+	return var3_32
 end
 
-function var0.isCanUpMax(arg0)
-	local var0 = arg0.skillID
-	local var1 = pg.skill_data_template[var0].max_level
+function var0_0.isCanUpMax(arg0_33)
+	local var0_33 = arg0_33.skillID
+	local var1_33 = pg.skill_data_template[var0_33].max_level
 
-	return arg0:getLevelTotalExp(var1) <= arg0:getCurLevelExp() + arg0:calcAwardExp()
+	return arg0_33:getLevelTotalExp(var1_33) <= arg0_33:getCurLevelExp() + arg0_33:calcAwardExp()
 end
 
-function var0.preCalcExpOverFlow(arg0, arg1, arg2)
-	local var0 = arg0.skillID
-	local var1 = pg.skill_data_template[var0].max_level
-	local var2 = arg0:getLevelTotalExp(var1) - arg0:getCurLevelExp()
-	local var3 = arg0:calcAwardExp()
-	local var4 = false
-	local var5
-	local var6 = var3 + arg1
+function var0_0.preCalcExpOverFlow(arg0_34, arg1_34, arg2_34)
+	local var0_34 = arg0_34.skillID
+	local var1_34 = pg.skill_data_template[var0_34].max_level
+	local var2_34 = arg0_34:getLevelTotalExp(var1_34) - arg0_34:getCurLevelExp()
+	local var3_34 = arg0_34:calcAwardExp()
+	local var4_34 = false
+	local var5_34
+	local var6_34 = var3_34 + arg1_34
 
-	if var2 <= var6 then
-		var5 = var6 - var2
+	if var2_34 <= var6_34 then
+		var5_34 = var6_34 - var2_34
 
-		if arg2 <= var5 then
-			var4 = true
+		if arg2_34 <= var5_34 then
+			var4_34 = true
 		end
 	end
 
-	return var4, var5
+	return var4_34, var5_34
 end
 
-function var0.oneStep(arg0)
-	if arg0:isMaxLevel() then
+function var0_0.oneStep(arg0_35)
+	if arg0_35:isMaxLevel() then
 		return
 	end
 
-	arg0:resetUseData()
+	arg0_35:resetUseData()
 
-	local var0 = {}
+	local var0_35 = {}
 
-	for iter0, iter1 in ipairs(arg0.bookIDList) do
-		if arg0:getBookItem(iter1).count > 0 then
-			table.insert(var0, iter1)
+	for iter0_35, iter1_35 in ipairs(arg0_35.bookIDList) do
+		if arg0_35:getBookItem(iter1_35).count > 0 then
+			table.insert(var0_35, iter1_35)
 		end
 	end
 
-	table.sort(var0, function(arg0, arg1)
-		return arg1 < arg0
+	table.sort(var0_35, function(arg0_36, arg1_36)
+		return arg1_36 < arg0_36
 	end)
 
-	for iter2, iter3 in ipairs(var0) do
-		local var1 = arg0:getBookItem(iter3)
-		local var2 = arg0.expDict[iter3]
-		local var3 = iter2 + 1 > #var0 and 0 or arg0.expDict[var0[iter2 + 1]]
+	for iter2_35, iter3_35 in ipairs(var0_35) do
+		local var1_35 = arg0_35:getBookItem(iter3_35)
+		local var2_35 = arg0_35.expDict[iter3_35]
+		local var3_35 = iter2_35 + 1 > #var0_35 and 0 or arg0_35.expDict[var0_35[iter2_35 + 1]]
 
-		for iter4 = 1, var1.count do
-			if iter2 < #var0 and arg0:preCalcExpOverFlow(var2, var3) then
+		for iter4_35 = 1, var1_35.count do
+			if iter2_35 < #var0_35 and arg0_35:preCalcExpOverFlow(var2_35, var3_35) then
 				break
 			else
-				arg0.useCountDict[iter3] = arg0.useCountDict[iter3] + 1
+				arg0_35.useCountDict[iter3_35] = arg0_35.useCountDict[iter3_35] + 1
 
-				if arg0:isCanUpMax() then
+				if arg0_35:isCanUpMax() then
 					return
 				end
 			end
@@ -446,11 +446,11 @@ function var0.oneStep(arg0)
 	end
 end
 
-function var0.isMaxLevel(arg0)
-	local var0 = arg0.skillID
-	local var1 = arg0.shipID
+function var0_0.isMaxLevel(arg0_37)
+	local var0_37 = arg0_37.skillID
+	local var1_37 = arg0_37.shipID
 
-	return arg0.bayProxy:getShipById(var1):isSkillLevelMax(var0)
+	return arg0_37.bayProxy:getShipById(var1_37):isSkillLevelMax(var0_37)
 end
 
-return var0
+return var0_0

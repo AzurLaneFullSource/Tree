@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_160 = {}
+var0_0.word_template_160 = {}
 
-local var1 = var0.word_template_160
+local var1_0 = var0_0.word_template_160
 
 function temp()
-	var1.頸 = {
+	var1_0.頸 = {
 		瓶 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.警 = {
+	var1_0.警 = {
 		察 = {
 			this = true,
 			暴 = {
@@ -263,7 +263,7 @@ end
 temp()
 
 function temp()
-	var1.净 = {
+	var1_0.净 = {
 		瓶 = {
 			this = true
 		},
@@ -282,7 +282,7 @@ end
 temp()
 
 function temp()
-	var1.竟 = {
+	var1_0.竟 = {
 		贫 = {
 			this = true
 		}
@@ -292,7 +292,7 @@ end
 temp()
 
 function temp()
-	var1.敬 = {
+	var1_0.敬 = {
 		国 = {
 			神 = {
 				社 = {
@@ -309,7 +309,7 @@ end
 temp()
 
 function temp()
-	var1.靖 = {
+	var1_0.靖 = {
 		国 = {
 			神 = {
 				社 = {
@@ -347,7 +347,7 @@ end
 temp()
 
 function temp()
-	var1.静 = {
+	var1_0.静 = {
 		平 = {
 			this = true
 		},

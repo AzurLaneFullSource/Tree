@@ -1,88 +1,88 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConfig
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConfig
 
-var0.Battle.CardPuzzleHandCardButton = class("CardPuzzleHandCardButton")
+var0_0.Battle.CardPuzzleHandCardButton = class("CardPuzzleHandCardButton")
 
-local var2 = var0.Battle.CardPuzzleHandCardButton
+local var2_0 = var0_0.Battle.CardPuzzleHandCardButton
 
-var2.__name = "CardPuzzleHandCardButton"
+var2_0.__name = "CardPuzzleHandCardButton"
 
-function var2.Ctor(arg0, arg1)
-	arg0._go = arg1
+function var2_0.Ctor(arg0_1, arg1_1)
+	arg0_1._go = arg1_1
 
-	arg0:init()
+	arg0_1:init()
 end
 
-function var2.SetCardInfo(arg0, arg1)
-	arg0._cardInfo = arg1
+function var2_0.SetCardInfo(arg0_2, arg1_2)
+	arg0_2._cardInfo = arg1_2
 
-	arg0:updateCardView()
+	arg0_2:updateCardView()
 end
 
-function var2.UpdateTotalCost(arg0)
-	if arg0._cardInfo then
-		setText(arg0._costTxt, arg0._cardInfo:GetTotalCost())
+function var2_0.UpdateTotalCost(arg0_3)
+	if arg0_3._cardInfo then
+		setText(arg0_3._costTxt, arg0_3._cardInfo:GetTotalCost())
 	end
 end
 
-function var2.ConfigCallback(arg0, arg1)
-	arg0._callback = arg1
+function var2_0.ConfigCallback(arg0_4, arg1_4)
+	arg0_4._callback = arg1_4
 end
 
-function var2.init(arg0)
-	arg0._btnTF = arg0._go.transform
-	arg0._icon = arg0._btnTF:Find("skill_icon/unfill")
-	arg0._costTxt = arg0._btnTF:Find("cost/cost_label")
-	arg0._cardName = arg0._btnTF:Find("name")
-	arg0._cardType = arg0._btnTF:Find("icon_bg")
-	arg0._cardTypeList = {}
+function var2_0.init(arg0_5)
+	arg0_5._btnTF = arg0_5._go.transform
+	arg0_5._icon = arg0_5._btnTF:Find("skill_icon/unfill")
+	arg0_5._costTxt = arg0_5._btnTF:Find("cost/cost_label")
+	arg0_5._cardName = arg0_5._btnTF:Find("name")
+	arg0_5._cardType = arg0_5._btnTF:Find("icon_bg")
+	arg0_5._cardTypeList = {}
 
-	for iter0 = 1, 3 do
-		table.insert(arg0._cardTypeList, arg0._cardType:Find("card_type_" .. iter0))
+	for iter0_5 = 1, 3 do
+		table.insert(arg0_5._cardTypeList, arg0_5._cardType:Find("card_type_" .. iter0_5))
 	end
 
-	arg0._cardRarity = arg0._btnTF:Find("bg")
-	arg0._cardRarityList = {}
+	arg0_5._cardRarity = arg0_5._btnTF:Find("bg")
+	arg0_5._cardRarityList = {}
 
-	for iter1 = 0, 4 do
-		table.insert(arg0._cardRarityList, arg0._cardRarity:Find("rarity_" .. iter1))
+	for iter1_5 = 0, 4 do
+		table.insert(arg0_5._cardRarityList, arg0_5._cardRarity:Find("rarity_" .. iter1_5))
 	end
 
-	arg0._tag = arg0._btnTF:Find("tag")
+	arg0_5._tag = arg0_5._btnTF:Find("tag")
 
-	GetComponent(arg0._btnTF, "EventTriggerListener"):AddPointUpFunc(function()
-		if arg0._cardInfo then
-			arg0._callback(arg0._cardInfo)
+	GetComponent(arg0_5._btnTF, "EventTriggerListener"):AddPointUpFunc(function()
+		if arg0_5._cardInfo then
+			arg0_5._callback(arg0_5._cardInfo)
 		end
 	end)
 end
 
-function var2.updateCardView(arg0)
-	if arg0._cardInfo then
-		setActive(arg0._btnTF, true)
-		setText(arg0._costTxt, arg0._cardInfo:GetTotalCost())
-		setText(arg0._cardName, arg0._cardInfo:GetCardTemplate().name)
-		setText(arg0._tag, "词缀功能TODO")
+function var2_0.updateCardView(arg0_7)
+	if arg0_7._cardInfo then
+		setActive(arg0_7._btnTF, true)
+		setText(arg0_7._costTxt, arg0_7._cardInfo:GetTotalCost())
+		setText(arg0_7._cardName, arg0_7._cardInfo:GetCardTemplate().name)
+		setText(arg0_7._tag, "词缀功能TODO")
 
-		local var0 = arg0._cardInfo:GetRarity()
-		local var1 = arg0._cardInfo:GetCardType()
+		local var0_7 = arg0_7._cardInfo:GetRarity()
+		local var1_7 = arg0_7._cardInfo:GetCardType()
 
-		for iter0, iter1 in ipairs(arg0._cardRarityList) do
-			setActive(iter1, iter0 == var0 + 1)
+		for iter0_7, iter1_7 in ipairs(arg0_7._cardRarityList) do
+			setActive(iter1_7, iter0_7 == var0_7 + 1)
 		end
 
-		for iter2, iter3 in ipairs(arg0._cardTypeList) do
-			setActive(iter3, iter2 == var1)
+		for iter2_7, iter3_7 in ipairs(arg0_7._cardTypeList) do
+			setActive(iter3_7, iter2_7 == var1_7)
 		end
 
-		GetImageSpriteFromAtlasAsync("skillicon/" .. arg0._cardInfo:GetIconID(), "", arg0._icon)
+		GetImageSpriteFromAtlasAsync("skillicon/" .. arg0_7._cardInfo:GetIconID(), "", arg0_7._icon)
 	else
-		setActive(arg0._btnTF, false)
+		setActive(arg0_7._btnTF, false)
 	end
 end
 
-function var2.Dispose(arg0)
+function var2_0.Dispose(arg0_8)
 	return
 end

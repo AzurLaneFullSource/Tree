@@ -1,12 +1,12 @@
-﻿local var0 = class("FireworkFactoryView", import("..BaseMiniGameView"))
-local var1 = Mathf
+﻿local var0_0 = class("FireworkFactoryView", import("..BaseMiniGameView"))
+local var1_0 = Mathf
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "FireworkFactoryUI"
 end
 
-local var2 = 50
-local var3 = {
+local var2_0 = 50
+local var3_0 = {
 	{
 		color = "FFD26FFF",
 		name = "na"
@@ -32,265 +32,265 @@ local var3 = {
 		name = "cu"
 	}
 }
-local var4 = {
+local var4_0 = {
 	"s",
 	"a",
 	"b",
 	"c"
 }
 
-function var0.TransformColor(arg0)
-	local var0 = tonumber(string.sub(arg0, 1, 2), 16)
-	local var1 = tonumber(string.sub(arg0, 3, 4), 16)
-	local var2 = tonumber(string.sub(arg0, 5, 6), 16)
+function var0_0.TransformColor(arg0_2)
+	local var0_2 = tonumber(string.sub(arg0_2, 1, 2), 16)
+	local var1_2 = tonumber(string.sub(arg0_2, 3, 4), 16)
+	local var2_2 = tonumber(string.sub(arg0_2, 5, 6), 16)
 
-	return Color.New(var0 / 255, var1 / 255, var2 / 255)
+	return Color.New(var0_2 / 255, var1_2 / 255, var2_2 / 255)
 end
 
-function var0.init(arg0)
-	arg0.top = arg0:findTF("top")
-	arg0.plate = arg0:findTF("plate")
-	arg0.storage = arg0:findTF("storage")
-	arg0.dispenseView = arg0:findTF("top/dispenseView")
+function var0_0.init(arg0_3)
+	arg0_3.top = arg0_3:findTF("top")
+	arg0_3.plate = arg0_3:findTF("plate")
+	arg0_3.storage = arg0_3:findTF("storage")
+	arg0_3.dispenseView = arg0_3:findTF("top/dispenseView")
 
-	setActive(arg0.dispenseView, false)
+	setActive(arg0_3.dispenseView, false)
 
-	arg0.resultWindow = arg0:findTF("top/resultwindow")
+	arg0_3.resultWindow = arg0_3:findTF("top/resultwindow")
 
-	setActive(arg0.resultWindow, false)
+	setActive(arg0_3.resultWindow, false)
 
-	arg0.btn_back = arg0.top:Find("noAdaptPanel/back")
-	arg0.btn_help = arg0.top:Find("noAdaptPanel/title/help")
-	arg0.timesText = arg0.top:Find("times/text")
-	arg0.ballPlate = arg0.plate:Find("ball_plate")
-	arg0.plateRings = {}
+	arg0_3.btn_back = arg0_3.top:Find("noAdaptPanel/back")
+	arg0_3.btn_help = arg0_3.top:Find("noAdaptPanel/title/help")
+	arg0_3.timesText = arg0_3.top:Find("times/text")
+	arg0_3.ballPlate = arg0_3.plate:Find("ball_plate")
+	arg0_3.plateRings = {}
 
-	for iter0 = 1, 3 do
-		table.insert(arg0.plateRings, arg0.ballPlate:GetChild(iter0))
+	for iter0_3 = 1, 3 do
+		table.insert(arg0_3.plateRings, arg0_3.ballPlate:GetChild(iter0_3))
 	end
 
-	arg0.btn_load = arg0.plate:Find("btn_load")
-	arg0.ballSelectPanel = arg0.plate:Find("panel/layout")
-	arg0.ballSelects = CustomIndexLayer.Clone2Full(arg0.ballSelectPanel, 3)
-	arg0.ballSelectStatus = {
+	arg0_3.btn_load = arg0_3.plate:Find("btn_load")
+	arg0_3.ballSelectPanel = arg0_3.plate:Find("panel/layout")
+	arg0_3.ballSelects = CustomIndexLayer.Clone2Full(arg0_3.ballSelectPanel, 3)
+	arg0_3.ballSelectStatus = {
 		0,
 		0,
 		0
 	}
-	arg0.lastSelectedBall = nil
-	arg0.ballStoragePanel = arg0.storage:Find("house/layout")
-	arg0.ballStorages = CustomIndexLayer.Clone2Full(arg0.ballStoragePanel, 6)
-	arg0.screen_mask = arg0:findTF("mask")
-	arg0.btn_next = arg0:findTF("Button")
-	arg0.btn_next_text = arg0.btn_next:Find("Image")
-	arg0.desc_dispense = arg0.dispenseView:Find("intro/Scroll View/Viewport/text")
+	arg0_3.lastSelectedBall = nil
+	arg0_3.ballStoragePanel = arg0_3.storage:Find("house/layout")
+	arg0_3.ballStorages = CustomIndexLayer.Clone2Full(arg0_3.ballStoragePanel, 6)
+	arg0_3.screen_mask = arg0_3:findTF("mask")
+	arg0_3.btn_next = arg0_3:findTF("Button")
+	arg0_3.btn_next_text = arg0_3.btn_next:Find("Image")
+	arg0_3.desc_dispense = arg0_3.dispenseView:Find("intro/Scroll View/Viewport/text")
 
-	setText(arg0.desc_dispense, i18n("help_firework_produce"))
+	setText(arg0_3.desc_dispense, i18n("help_firework_produce"))
 
-	arg0.btn_dispenseBG = arg0.dispenseView:Find("bg")
-	arg0.btn_hammer = arg0.dispenseView:Find("container/Button")
-	arg0.btn_hammer_text = arg0.btn_hammer:Find("text")
-	arg0.slider_powder = arg0.dispenseView:Find("container/Slider/Fill Area"):GetComponent("Slider")
-	arg0.slider_progress = arg0.dispenseView:Find("progress/Slider"):GetComponent("Slider")
-	arg0.slider_progress_bg = arg0.dispenseView:Find("progress/Slider/Background/progressdi")
-	arg0.slider_bubble = arg0.dispenseView:Find("container/Slider/Fill Area/Fill/handler/bubble")
-	arg0.slider_bubble_text = arg0.slider_bubble:Find("text")
-	arg0.progress_width = arg0.dispenseView:Find("progress/Slider/Handle Slide Area").rect.width
-	arg0.progress_sub_mark_1 = arg0.dispenseView:Find("progress/Slider/Handle Slide Area/submark1")
-	arg0.progress_sub_mark_2 = arg0.dispenseView:Find("progress/Slider/Handle Slide Area/submark2")
-	arg0.progress_dis = {}
+	arg0_3.btn_dispenseBG = arg0_3.dispenseView:Find("bg")
+	arg0_3.btn_hammer = arg0_3.dispenseView:Find("container/Button")
+	arg0_3.btn_hammer_text = arg0_3.btn_hammer:Find("text")
+	arg0_3.slider_powder = arg0_3.dispenseView:Find("container/Slider/Fill Area"):GetComponent("Slider")
+	arg0_3.slider_progress = arg0_3.dispenseView:Find("progress/Slider"):GetComponent("Slider")
+	arg0_3.slider_progress_bg = arg0_3.dispenseView:Find("progress/Slider/Background/progressdi")
+	arg0_3.slider_bubble = arg0_3.dispenseView:Find("container/Slider/Fill Area/Fill/handler/bubble")
+	arg0_3.slider_bubble_text = arg0_3.slider_bubble:Find("text")
+	arg0_3.progress_width = arg0_3.dispenseView:Find("progress/Slider/Handle Slide Area").rect.width
+	arg0_3.progress_sub_mark_1 = arg0_3.dispenseView:Find("progress/Slider/Handle Slide Area/submark1")
+	arg0_3.progress_sub_mark_2 = arg0_3.dispenseView:Find("progress/Slider/Handle Slide Area/submark2")
+	arg0_3.progress_dis = {}
 
-	for iter1 = 0, arg0.slider_progress_bg.childCount - 1 do
-		table.insert(arg0.progress_dis, arg0.slider_progress_bg:GetChild(iter1))
+	for iter1_3 = 0, arg0_3.slider_progress_bg.childCount - 1 do
+		table.insert(arg0_3.progress_dis, arg0_3.slider_progress_bg:GetChild(iter1_3))
 	end
 
-	arg0.result_digits = {}
+	arg0_3.result_digits = {}
 
-	pg.PoolMgr.GetInstance():GetPrefab("ui/light01", "", true, function(arg0)
-		tf(arg0):SetParent(arg0.dispenseView, false)
-		arg0:SetActive(false)
+	pg.PoolMgr.GetInstance():GetPrefab("ui/light01", "", true, function(arg0_4)
+		tf(arg0_4):SetParent(arg0_3.dispenseView, false)
+		arg0_4:SetActive(false)
 
-		arg0.effect_light = arg0
+		arg0_3.effect_light = arg0_4
 	end)
 
-	arg0.result_bg = arg0.resultWindow:Find("bg")
-	arg0.result_desc = arg0.resultWindow:Find("window/Text")
+	arg0_3.result_bg = arg0_3.resultWindow:Find("bg")
+	arg0_3.result_desc = arg0_3.resultWindow:Find("window/Text")
 
-	setText(arg0.result_desc, i18n("result_firework_produce"))
+	setText(arg0_3.result_desc, i18n("result_firework_produce"))
 
-	arg0.btn_result_confirm = arg0.resultWindow:Find("window/button")
-	arg0.result_pingjia = arg0.resultWindow:Find("window/pingjia"):GetComponent("Image")
-	arg0.flagStart = false
-	arg0.flagDispense = false
-	arg0.progressDispense = 0
+	arg0_3.btn_result_confirm = arg0_3.resultWindow:Find("window/button")
+	arg0_3.result_pingjia = arg0_3.resultWindow:Find("window/pingjia"):GetComponent("Image")
+	arg0_3.flagStart = false
+	arg0_3.flagDispense = false
+	arg0_3.progressDispense = 0
 end
 
-function var0.SetSprite(arg0, arg1, arg2)
-	local var0 = arg1:GetComponent("Image")
+function var0_0.SetSprite(arg0_5, arg1_5, arg2_5)
+	local var0_5 = arg1_5:GetComponent("Image")
 
-	arg0:SetImageSprite(var0, arg2)
+	arg0_5:SetImageSprite(var0_5, arg2_5)
 end
 
-function var0.SetImageSprite(arg0, arg1, arg2)
-	pg.PoolMgr.GetInstance():GetSprite("ui/fireworkfactoryui_atlas", arg2, false, function(arg0)
-		arg1.sprite = arg0
+function var0_0.SetImageSprite(arg0_6, arg1_6, arg2_6)
+	pg.PoolMgr.GetInstance():GetSprite("ui/fireworkfactoryui_atlas", arg2_6, false, function(arg0_7)
+		arg1_6.sprite = arg0_7
 	end)
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0.btn_back, function()
-		if arg0.flagDispense then
-			arg0:ExitDispenseView()
-		elseif arg0:CheckpowderDispensed() and arg0.flagStart then
+function var0_0.didEnter(arg0_8)
+	onButton(arg0_8, arg0_8.btn_back, function()
+		if arg0_8.flagDispense then
+			arg0_8:ExitDispenseView()
+		elseif arg0_8:CheckpowderDispensed() and arg0_8.flagStart then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("tips_firework_exit"),
 				onYes = function()
-					arg0:emit(var0.ON_BACK_PRESSED)
+					arg0_8:emit(var0_0.ON_BACK_PRESSED)
 				end
 			})
 		else
-			arg0:emit(var0.ON_BACK)
+			arg0_8:emit(var0_0.ON_BACK)
 		end
 	end)
-	onButton(arg0, arg0.btn_dispenseBG, function()
-		arg0:ExitDispenseView()
+	onButton(arg0_8, arg0_8.btn_dispenseBG, function()
+		arg0_8:ExitDispenseView()
 	end)
-	onButton(arg0, arg0.btn_help, function()
+	onButton(arg0_8, arg0_8.btn_help, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_xinnian2022_firework.tip
 		})
 	end)
-	onButton(arg0, arg0.btn_next, function()
-		if not arg0.flagStart then
-			arg0.flagStart = true
+	onButton(arg0_8, arg0_8.btn_next, function()
+		if not arg0_8.flagStart then
+			arg0_8.flagStart = true
 
-			arg0:UpdateNextBtn()
-		elseif arg0:CheckballLoaded() then
-			arg0:EnterDispenseView()
+			arg0_8:UpdateNextBtn()
+		elseif arg0_8:CheckballLoaded() then
+			arg0_8:EnterDispenseView()
 		end
 	end)
-	onButton(arg0, arg0.btn_hammer, function()
-		local var0 = arg0.progressDispense
+	onButton(arg0_8, arg0_8.btn_hammer, function()
+		local var0_14 = arg0_8.progressDispense
 
-		if var0 == 0 then
-			arg0:ResetHammerAnim()
-			arg0:FindNextPowderProgress()
-			arg0:UpdateContainer()
-		elseif var0 == 1 then
-			arg0.result_digits[1] = arg0.slider_powder.value * 100
+		if var0_14 == 0 then
+			arg0_8:ResetHammerAnim()
+			arg0_8:FindNextPowderProgress()
+			arg0_8:UpdateContainer()
+		elseif var0_14 == 1 then
+			arg0_8.result_digits[1] = arg0_8.slider_powder.value * 100
 
-			arg0:FindandStopProgress()
-			arg0:UpdateContainer()
-		elseif var0 == 2 then
-			arg0.result_digits[2] = arg0.slider_powder.value * 100
+			arg0_8:FindandStopProgress()
+			arg0_8:UpdateContainer()
+		elseif var0_14 == 2 then
+			arg0_8.result_digits[2] = arg0_8.slider_powder.value * 100
 
-			arg0:FindandStopProgress()
-			arg0:UpdateContainer()
-		elseif var0 == 3 then
-			arg0.result_digits[3] = arg0.slider_powder.value * 100
+			arg0_8:FindandStopProgress()
+			arg0_8:UpdateContainer()
+		elseif var0_14 == 3 then
+			arg0_8.result_digits[3] = arg0_8.slider_powder.value * 100
 
-			arg0:FindandStopProgress()
-			arg0:UpdateContainer()
+			arg0_8:FindandStopProgress()
+			arg0_8:UpdateContainer()
 		end
 	end)
-	onButton(arg0, arg0.btn_result_confirm, function()
-		arg0:ShowResult()
+	onButton(arg0_8, arg0_8.btn_result_confirm, function()
+		arg0_8:ShowResult()
 	end)
-	onButton(arg0, arg0.result_bg, function()
-		arg0:ShowResult()
+	onButton(arg0_8, arg0_8.result_bg, function()
+		arg0_8:ShowResult()
 	end)
 
-	for iter0 = 1, #arg0.ballStorages do
-		local var0 = arg0.ballStorages[iter0]
+	for iter0_8 = 1, #arg0_8.ballStorages do
+		local var0_8 = arg0_8.ballStorages[iter0_8]
 
-		arg0:UpdateBall(var0, iter0)
-		onButton(arg0, var0:Find("mask"), function()
-			if not arg0.lastSelectedBall or arg0.lastSelectedBall <= 0 then
+		arg0_8:UpdateBall(var0_8, iter0_8)
+		onButton(arg0_8, var0_8:Find("mask"), function()
+			if not arg0_8.lastSelectedBall or arg0_8.lastSelectedBall <= 0 then
 				return
 			end
 
-			arg0.ballSelectStatus[arg0.lastSelectedBall] = iter0
+			arg0_8.ballSelectStatus[arg0_8.lastSelectedBall] = iter0_8
 
-			arg0:UpdateRing(arg0.lastSelectedBall, iter0)
-			arg0:UpdateBall(arg0.ballSelects[arg0.lastSelectedBall]:Find("ball"), iter0)
-			arg0:UdpateSelectedBall(arg0.lastSelectedBall + 1)
-			arg0:UpdateNextBtn()
+			arg0_8:UpdateRing(arg0_8.lastSelectedBall, iter0_8)
+			arg0_8:UpdateBall(arg0_8.ballSelects[arg0_8.lastSelectedBall]:Find("ball"), iter0_8)
+			arg0_8:UdpateSelectedBall(arg0_8.lastSelectedBall + 1)
+			arg0_8:UpdateNextBtn()
 		end)
 	end
 
-	for iter1 = 1, #arg0.ballSelects do
-		local var1 = arg0.ballSelects[iter1]
+	for iter1_8 = 1, #arg0_8.ballSelects do
+		local var1_8 = arg0_8.ballSelects[iter1_8]
 
-		arg0:UpdateBall(var1:Find("ball"), 0)
-		arg0:UpdateRing(iter1, 0)
-		onButton(arg0, var1:Find("mask"), function()
-			arg0.ballSelectStatus[iter1] = 0
+		arg0_8:UpdateBall(var1_8:Find("ball"), 0)
+		arg0_8:UpdateRing(iter1_8, 0)
+		onButton(arg0_8, var1_8:Find("mask"), function()
+			arg0_8.ballSelectStatus[iter1_8] = 0
 
-			arg0:UpdateBall(arg0.ballSelects[iter1]:Find("ball"), 0)
-			arg0:UpdateRing(iter1, 0)
-			arg0:UdpateSelectedBall(iter1)
-			arg0:UpdateNextBtn()
+			arg0_8:UpdateBall(arg0_8.ballSelects[iter1_8]:Find("ball"), 0)
+			arg0_8:UpdateRing(iter1_8, 0)
+			arg0_8:UdpateSelectedBall(iter1_8)
+			arg0_8:UpdateNextBtn()
 		end)
 	end
 
-	arg0:ResetView()
-	pg.UIMgr.GetInstance():OverlayPanel(arg0.top, {
+	arg0_8:ResetView()
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_8.top, {
 		groupName = LayerWeightConst.GROUP_FIREWORK_PRODUCE
 	})
 
-	local var2 = arg0:GetMGData():GetSimpleValue("score_reference")
-	local var3 = {}
+	local var2_8 = arg0_8:GetMGData():GetSimpleValue("score_reference")
+	local var3_8 = {}
 
-	var3[1] = 0
+	var3_8[1] = 0
 
-	for iter2, iter3 in ipairs(var2) do
-		var3[#var2 - iter2 + 2] = iter3[1]
-		var3[#var2 + iter2 + 1] = iter3[2]
+	for iter2_8, iter3_8 in ipairs(var2_8) do
+		var3_8[#var2_8 - iter2_8 + 2] = iter3_8[1]
+		var3_8[#var2_8 + iter2_8 + 1] = iter3_8[2]
 	end
 
-	var3[#var3] = 300
+	var3_8[#var3_8] = 300
 
-	for iter4 = 1, #var3 - 1 do
-		local var4 = var3[iter4] / 300
-		local var5 = var3[iter4 + 1] / 300
+	for iter4_8 = 1, #var3_8 - 1 do
+		local var4_8 = var3_8[iter4_8] / 300
+		local var5_8 = var3_8[iter4_8 + 1] / 300
 
-		arg0.progress_dis[iter4].anchorMin = Vector2(var4, 0)
-		arg0.progress_dis[iter4].anchorMax = Vector2(var5, 1)
-		arg0.progress_dis[iter4].sizeDelta = Vector2.zero
+		arg0_8.progress_dis[iter4_8].anchorMin = Vector2(var4_8, 0)
+		arg0_8.progress_dis[iter4_8].anchorMax = Vector2(var5_8, 1)
+		arg0_8.progress_dis[iter4_8].sizeDelta = Vector2.zero
 	end
 end
 
-function var0.UpdateNextBtn(arg0)
-	if not arg0.flagStart then
-		local var0 = "dispense_ready"
-		local var1 = arg0:GetMGData():GetRuntimeData("elements")
+function var0_0.UpdateNextBtn(arg0_19)
+	if not arg0_19.flagStart then
+		local var0_19 = "dispense_ready"
+		local var1_19 = arg0_19:GetMGData():GetRuntimeData("elements")
 
-		if var1 and #var1 > 3 and var1[4] == SummerFeastScene.GetCurrentDay() then
-			var0 = "dispense_retry"
+		if var1_19 and #var1_19 > 3 and var1_19[4] == SummerFeastScene.GetCurrentDay() then
+			var0_19 = "dispense_retry"
 		end
 
-		arg0:SetSprite(arg0.btn_next_text, var0)
+		arg0_19:SetSprite(arg0_19.btn_next_text, var0_19)
 	else
-		arg0:SetSprite(arg0.btn_next_text, "dispense_confirm")
+		arg0_19:SetSprite(arg0_19.btn_next_text, "dispense_confirm")
 	end
 
-	setActive(arg0.screen_mask, not arg0.flagStart)
+	setActive(arg0_19.screen_mask, not arg0_19.flagStart)
 
-	local var2 = not arg0.flagStart or arg0:CheckballLoaded()
+	local var2_19 = not arg0_19.flagStart or arg0_19:CheckballLoaded()
 
-	setButtonEnabled(arg0.btn_next, var2)
+	setButtonEnabled(arg0_19.btn_next, var2_19)
 end
 
-function var0.UpdateDispenseBtn(arg0)
-	local var0 = arg0:CheckpowderDispensed()
+function var0_0.UpdateDispenseBtn(arg0_20)
+	local var0_20 = arg0_20:CheckpowderDispensed()
 
-	arg0:SetImageSprite(arg0.btn_load_img, var0 and "btn_loadcompleted" or "btn_load")
-	arg0:SetSprite(arg0.btn_load_text, var0 and "load_completed" or "load_ready")
-	setButtonEnabled(arg0.btn_load, not var0)
+	arg0_20:SetImageSprite(arg0_20.btn_load_img, var0_20 and "btn_loadcompleted" or "btn_load")
+	arg0_20:SetSprite(arg0_20.btn_load_text, var0_20 and "load_completed" or "load_ready")
+	setButtonEnabled(arg0_20.btn_load, not var0_20)
 end
 
-local var5 = {
+local var5_0 = {
 	"start",
 	"first_time",
 	"second_time",
@@ -298,394 +298,394 @@ local var5 = {
 	"finish_time"
 }
 
-function var0.FindandStopProgress(arg0)
-	arg0:StopHammerAnim()
-	setButtonEnabled(arg0.btn_hammer, false)
-	setButtonEnabled(arg0.btn_dispenseBG, false)
-	setText(arg0.slider_bubble_text, math.ceil(arg0.result_digits[#arg0.result_digits]) .. "%")
-	setActive(arg0.slider_bubble, true)
-	setActive(arg0.effect_light, true)
+function var0_0.FindandStopProgress(arg0_21)
+	arg0_21:StopHammerAnim()
+	setButtonEnabled(arg0_21.btn_hammer, false)
+	setButtonEnabled(arg0_21.btn_dispenseBG, false)
+	setText(arg0_21.slider_bubble_text, math.ceil(arg0_21.result_digits[#arg0_21.result_digits]) .. "%")
+	setActive(arg0_21.slider_bubble, true)
+	setActive(arg0_21.effect_light, true)
 
-	arg0.progressDispense = #arg0.result_digits >= 3 and 4 or 0
+	arg0_21.progressDispense = #arg0_21.result_digits >= 3 and 4 or 0
 
-	local var0 = 0
+	local var0_21 = 0
 
-	for iter0 = 1, 3 do
-		local var1 = arg0.result_digits[iter0]
+	for iter0_21 = 1, 3 do
+		local var1_21 = arg0_21.result_digits[iter0_21]
 
-		if var1 then
-			var0 = var0 + var1
+		if var1_21 then
+			var0_21 = var0_21 + var1_21
 		end
 	end
 
-	local var2 = 0
+	local var2_21 = 0
 
-	for iter1 = 1, #arg0.result_digits - 1 do
-		local var3 = arg0.result_digits[iter1]
+	for iter1_21 = 1, #arg0_21.result_digits - 1 do
+		local var3_21 = arg0_21.result_digits[iter1_21]
 
-		if var3 then
-			var2 = var2 + var3
+		if var3_21 then
+			var2_21 = var2_21 + var3_21
 
-			if iter1 == 1 then
-				setActive(arg0.progress_sub_mark_1, true)
+			if iter1_21 == 1 then
+				setActive(arg0_21.progress_sub_mark_1, true)
 
-				local var4 = Vector2(arg0.progress_width * var2 / 300, 27)
+				local var4_21 = Vector2(arg0_21.progress_width * var2_21 / 300, 27)
 
-				arg0.progress_sub_mark_1.anchoredPosition = var4
-			elseif iter1 == 2 then
-				setActive(arg0.progress_sub_mark_2, true)
+				arg0_21.progress_sub_mark_1.anchoredPosition = var4_21
+			elseif iter1_21 == 2 then
+				setActive(arg0_21.progress_sub_mark_2, true)
 
-				local var5 = Vector2(arg0.progress_width * var2 / 300, 27)
+				local var5_21 = Vector2(arg0_21.progress_width * var2_21 / 300, 27)
 
-				arg0.progress_sub_mark_2.anchoredPosition = var5
+				arg0_21.progress_sub_mark_2.anchoredPosition = var5_21
 			end
 		end
 	end
 
-	local var6 = arg0.slider_bubble.transform.position
-	local var7 = arg0.slider_progress.transform.position
-	local var8 = arg0.slider_progress.value
+	local var6_21 = arg0_21.slider_bubble.transform.position
+	local var7_21 = arg0_21.slider_progress.transform.position
+	local var8_21 = arg0_21.slider_progress.value
 
-	arg0.progressAnim = LeanTween.value(arg0.slider_progress.gameObject, 0, 1, 1.5):setEase(LeanTweenType.linear):setOnUpdate(System.Action_float(function(arg0)
-		arg0.slider_progress.value = var1.Lerp(var8, var0 / 300, arg0)
+	arg0_21.progressAnim = LeanTween.value(arg0_21.slider_progress.gameObject, 0, 1, 1.5):setEase(LeanTweenType.linear):setOnUpdate(System.Action_float(function(arg0_22)
+		arg0_21.slider_progress.value = var1_0.Lerp(var8_21, var0_21 / 300, arg0_22)
 
-		if arg0.effect_light then
-			arg0.effect_light.transform.position = Vector3.Lerp(var6, var7, arg0 * 3) - Vector3(0, 0, 2)
+		if arg0_21.effect_light then
+			arg0_21.effect_light.transform.position = Vector3.Lerp(var6_21, var7_21, arg0_22 * 3) - Vector3(0, 0, 2)
 
-			if arg0 * 3 > 1 then
-				setActive(arg0.effect_light, false)
+			if arg0_22 * 3 > 1 then
+				setActive(arg0_21.effect_light, false)
 			end
 		end
 	end)):setOnComplete(System.Action(function()
-		setButtonEnabled(arg0.btn_hammer, true)
-		setButtonEnabled(arg0.btn_dispenseBG, true)
+		setButtonEnabled(arg0_21.btn_hammer, true)
+		setButtonEnabled(arg0_21.btn_dispenseBG, true)
 
-		if arg0.progressDispense > 3 then
-			arg0:FindNextPowderProgress()
+		if arg0_21.progressDispense > 3 then
+			arg0_21:FindNextPowderProgress()
 		end
 	end))
 end
 
-function var0.FindNextPowderProgress(arg0)
-	arg0.progressDispense = #arg0.result_digits + 1
+function var0_0.FindNextPowderProgress(arg0_24)
+	arg0_24.progressDispense = #arg0_24.result_digits + 1
 
-	if arg0.progressDispense > 3 then
-		arg0:StopHammerAnim()
-		setButtonEnabled(arg0.btn_hammer, false)
-		arg0:ShowResultWindow()
+	if arg0_24.progressDispense > 3 then
+		arg0_24:StopHammerAnim()
+		setButtonEnabled(arg0_24.btn_hammer, false)
+		arg0_24:ShowResultWindow()
 	end
 end
 
-function var0.ShowResultWindow(arg0)
-	if #arg0.result_digits < 3 then
+function var0_0.ShowResultWindow(arg0_25)
+	if #arg0_25.result_digits < 3 then
 		return
 	end
 
-	setActive(arg0.resultWindow, true)
+	setActive(arg0_25.resultWindow, true)
 
-	local var0 = arg0:GetMGData():GetSimpleValue("score_reference")
-	local var1 = 0
+	local var0_25 = arg0_25:GetMGData():GetSimpleValue("score_reference")
+	local var1_25 = 0
 
-	for iter0 = 1, 3 do
-		var1 = var1 + arg0.result_digits[iter0]
+	for iter0_25 = 1, 3 do
+		var1_25 = var1_25 + arg0_25.result_digits[iter0_25]
 	end
 
-	local var2 = 4
+	local var2_25 = 4
 
-	for iter1, iter2 in ipairs(var0) do
-		if var1 >= iter2[1] and var1 <= iter2[2] then
-			var2 = iter1
+	for iter1_25, iter2_25 in ipairs(var0_25) do
+		if var1_25 >= iter2_25[1] and var1_25 <= iter2_25[2] then
+			var2_25 = iter1_25
 
 			break
 		end
 	end
 
-	if var2 <= 0 then
+	if var2_25 <= 0 then
 		return
 	end
 
-	arg0:SetImageSprite(arg0.result_pingjia, var4[var2])
+	arg0_25:SetImageSprite(arg0_25.result_pingjia, var4_0[var2_25])
 end
 
-function var0.ShowResult(arg0)
-	if arg0:GetMGHubData().count <= 0 then
-		arg0:AfterResult()
+function var0_0.ShowResult(arg0_26)
+	if arg0_26:GetMGHubData().count <= 0 then
+		arg0_26:AfterResult()
 	else
-		arg0:GetReward()
+		arg0_26:GetReward()
 	end
 
-	setActive(arg0.resultWindow, false)
+	setActive(arg0_26.resultWindow, false)
 end
 
-function var0.OnGetAwardDone(arg0, arg1)
-	local var0 = arg0:GetMGHubData()
-	local var1 = var0.ultimate == 0 and var0.usedtime >= var0:getConfig("reward_need")
+function var0_0.OnGetAwardDone(arg0_27, arg1_27)
+	local var0_27 = arg0_27:GetMGHubData()
+	local var1_27 = var0_27.ultimate == 0 and var0_27.usedtime >= var0_27:getConfig("reward_need")
 
-	if arg1.cmd == MiniGameOPCommand.CMD_COMPLETE and var1 then
+	if arg1_27.cmd == MiniGameOPCommand.CMD_COMPLETE and var1_27 then
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = var0.id,
+			hubid = var0_27.id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
-	elseif arg1.cmd == MiniGameOPCommand.CMD_ULTIMATE then
-		arg0:AfterResult()
+	elseif arg1_27.cmd == MiniGameOPCommand.CMD_ULTIMATE then
+		arg0_27:AfterResult()
 	else
-		arg0:AfterResult()
+		arg0_27:AfterResult()
 	end
 end
 
-function var0.AfterResult(arg0)
-	local var0 = SummerFeastScene.GetCurrentDay()
-	local var1 = Clone(arg0.ballSelectStatus)
+function var0_0.AfterResult(arg0_28)
+	local var0_28 = SummerFeastScene.GetCurrentDay()
+	local var1_28 = Clone(arg0_28.ballSelectStatus)
 
-	table.insert(var1, var0)
-	arg0:StoreDataToServer(var1)
+	table.insert(var1_28, var0_28)
+	arg0_28:StoreDataToServer(var1_28)
 	onNextTick(function()
-		arg0:emit(var0.ON_BACK)
+		arg0_28:emit(var0_0.ON_BACK)
 	end)
 end
 
-function var0.reset(arg0)
-	arg0:ExitDispenseView()
+function var0_0.reset(arg0_30)
+	arg0_30:ExitDispenseView()
 
-	arg0.flagStart = false
-	arg0.flagDispense = false
-	arg0.progressDispense = 0
-	arg0.result_digits = {}
+	arg0_30.flagStart = false
+	arg0_30.flagDispense = false
+	arg0_30.progressDispense = 0
+	arg0_30.result_digits = {}
 
-	arg0:ResetView()
-	arg0:UpdateNextBtn()
+	arg0_30:ResetView()
+	arg0_30:UpdateNextBtn()
 end
 
-function var0.GetReward(arg0)
-	if #arg0.result_digits < 3 then
+function var0_0.GetReward(arg0_31)
+	if #arg0_31.result_digits < 3 then
 		return
 	end
 
-	local var0 = arg0:GetMGData():GetSimpleValue("score_reference")
-	local var1 = 0
+	local var0_31 = arg0_31:GetMGData():GetSimpleValue("score_reference")
+	local var1_31 = 0
 
-	for iter0 = 1, 3 do
-		var1 = var1 + arg0.result_digits[iter0]
+	for iter0_31 = 1, 3 do
+		var1_31 = var1_31 + arg0_31.result_digits[iter0_31]
 	end
 
-	local var2 = 4
+	local var2_31 = 4
 
-	for iter1, iter2 in ipairs(var0) do
-		if var1 >= iter2[1] and var1 <= iter2[2] then
-			var2 = iter1
+	for iter1_31, iter2_31 in ipairs(var0_31) do
+		if var1_31 >= iter2_31[1] and var1_31 <= iter2_31[2] then
+			var2_31 = iter1_31
 
 			break
 		end
 	end
 
-	if var2 <= 0 then
+	if var2_31 <= 0 then
 		return
 	end
 
-	arg0:SendSuccess(var2)
+	arg0_31:SendSuccess(var2_31)
 end
 
-function var0.ResetHammerAnim(arg0)
-	if arg0.hammerAnim then
-		arg0:StopHammerAnim()
+function var0_0.ResetHammerAnim(arg0_32)
+	if arg0_32.hammerAnim then
+		arg0_32:StopHammerAnim()
 	end
 
-	setActive(arg0.slider_bubble, false)
+	setActive(arg0_32.slider_bubble, false)
 
-	local var0 = (arg0:GetMGData():GetSimpleValue("roundTime") or var2) / 100
+	local var0_32 = (arg0_32:GetMGData():GetSimpleValue("roundTime") or var2_0) / 100
 
-	arg0.hammerAnim = LeanTween.value(arg0.slider_powder.gameObject, 0, 1, var0 * 2):setEase(LeanTweenType.linear):setLoopPingPong():setOnUpdate(System.Action_float(function(arg0)
-		arg0.slider_powder.value = arg0
+	arg0_32.hammerAnim = LeanTween.value(arg0_32.slider_powder.gameObject, 0, 1, var0_32 * 2):setEase(LeanTweenType.linear):setLoopPingPong():setOnUpdate(System.Action_float(function(arg0_33)
+		arg0_32.slider_powder.value = arg0_33
 	end))
 end
 
-function var0.StopHammerAnim(arg0)
-	if not arg0.hammerAnim then
+function var0_0.StopHammerAnim(arg0_34)
+	if not arg0_34.hammerAnim then
 		return
 	end
 
-	LeanTween.cancel(arg0.hammerAnim.uniqueId)
+	LeanTween.cancel(arg0_34.hammerAnim.uniqueId)
 
-	arg0.hammerAnim = nil
+	arg0_34.hammerAnim = nil
 end
 
-function var0.UpdateContainer(arg0)
-	arg0:SetSprite(arg0.btn_hammer_text, var5[arg0.progressDispense + 1])
+function var0_0.UpdateContainer(arg0_35)
+	arg0_35:SetSprite(arg0_35.btn_hammer_text, var5_0[arg0_35.progressDispense + 1])
 
-	local var0 = 0
-	local var1 = true
+	local var0_35 = 0
+	local var1_35 = true
 
-	for iter0 = 1, 3 do
-		local var2 = arg0.result_digits[iter0]
+	for iter0_35 = 1, 3 do
+		local var2_35 = arg0_35.result_digits[iter0_35]
 
-		var1 = var1 and var2 ~= nil
+		var1_35 = var1_35 and var2_35 ~= nil
 
-		if var2 then
-			var0 = var0 + var2
+		if var2_35 then
+			var0_35 = var0_35 + var2_35
 		end
 	end
 
-	arg0.slider_progress.value = var0 / 300
+	arg0_35.slider_progress.value = var0_35 / 300
 end
 
-function var0.StopProgressAnim(arg0)
-	if not arg0.progressAnim then
+function var0_0.StopProgressAnim(arg0_36)
+	if not arg0_36.progressAnim then
 		return
 	end
 
-	LeanTween.cancel(arg0.progressAnim.uniqueId)
+	LeanTween.cancel(arg0_36.progressAnim.uniqueId)
 
-	arg0.progressAnim = nil
+	arg0_36.progressAnim = nil
 end
 
-function var0.CheckballLoaded(arg0)
-	return _.all(arg0.ballSelectStatus, function(arg0)
-		return arg0 > 0
+function var0_0.CheckballLoaded(arg0_37)
+	return _.all(arg0_37.ballSelectStatus, function(arg0_38)
+		return arg0_38 > 0
 	end)
 end
 
-function var0.CheckpowderDispensed(arg0)
-	return #arg0.result_digits >= 3
+function var0_0.CheckpowderDispensed(arg0_39)
+	return #arg0_39.result_digits >= 3
 end
 
-function var0.UpdateBall(arg0, arg1, arg2)
-	setActive(arg1, arg2 > 0)
+function var0_0.UpdateBall(arg0_40, arg1_40, arg2_40)
+	setActive(arg1_40, arg2_40 > 0)
 
-	if arg2 <= 0 then
+	if arg2_40 <= 0 then
 		return
 	end
 
-	arg1:GetComponent("Image").color = arg0.TransformColor(var3[arg2].color)
+	arg1_40:GetComponent("Image").color = arg0_40.TransformColor(var3_0[arg2_40].color)
 
-	arg0:SetSprite(arg1:Find("symbol"), var3[arg2].name)
+	arg0_40:SetSprite(arg1_40:Find("symbol"), var3_0[arg2_40].name)
 end
 
-function var0.UpdateRing(arg0, arg1, arg2)
-	if arg1 <= 0 or arg1 > 3 then
+function var0_0.UpdateRing(arg0_41, arg1_41, arg2_41)
+	if arg1_41 <= 0 or arg1_41 > 3 then
 		return
 	end
 
-	local var0 = arg0.plateRings[arg1]
+	local var0_41 = arg0_41.plateRings[arg1_41]
 
-	setActive(var0, arg2 > 0)
+	setActive(var0_41, arg2_41 > 0)
 
-	if arg2 <= 0 then
+	if arg2_41 <= 0 then
 		return
 	end
 
-	var0:GetComponent("Image").color = arg0.TransformColor(var3[arg2].color)
+	var0_41:GetComponent("Image").color = arg0_41.TransformColor(var3_0[arg2_41].color)
 end
 
-function var0.ResetView(arg0)
-	_.each(arg0.plateRings, function(arg0)
-		setActive(arg0, false)
+function var0_0.ResetView(arg0_42)
+	_.each(arg0_42.plateRings, function(arg0_43)
+		setActive(arg0_43, false)
 	end)
-	_.each(arg0.ballSelects, function(arg0)
-		setActive(arg0:Find("ball"), false)
-		setActive(arg0:Find("selected"), false)
+	_.each(arg0_42.ballSelects, function(arg0_44)
+		setActive(arg0_44:Find("ball"), false)
+		setActive(arg0_44:Find("selected"), false)
 	end)
 
-	local var0 = arg0:GetMGHubData()
+	local var0_42 = arg0_42:GetMGHubData()
 
-	setText(arg0.timesText, var0.count)
+	setText(arg0_42.timesText, var0_42.count)
 
-	local var1 = arg0:GetMGData():GetRuntimeData("elements")
+	local var1_42 = arg0_42:GetMGData():GetRuntimeData("elements")
 
-	if var1 and #var1 > 3 and var1[4] == SummerFeastScene.GetCurrentDay() then
-		for iter0 = 1, 3 do
-			local var2 = var1[iter0]
+	if var1_42 and #var1_42 > 3 and var1_42[4] == SummerFeastScene.GetCurrentDay() then
+		for iter0_42 = 1, 3 do
+			local var2_42 = var1_42[iter0_42]
 
-			arg0.ballSelectStatus[iter0] = var2
+			arg0_42.ballSelectStatus[iter0_42] = var2_42
 
-			if var2 > 0 then
-				arg0:UpdateRing(iter0, var2)
+			if var2_42 > 0 then
+				arg0_42:UpdateRing(iter0_42, var2_42)
 
-				local var3 = arg0.ballSelects[iter0]:Find("ball")
+				local var3_42 = arg0_42.ballSelects[iter0_42]:Find("ball")
 
-				arg0:UpdateBall(var3, var2)
+				arg0_42:UpdateBall(var3_42, var2_42)
 			end
 		end
 	end
 
-	arg0:UdpateSelectedBall(1)
-	arg0:UpdateNextBtn()
-	setActive(arg0.slider_bubble, false)
-	setActive(arg0.progress_sub_mark_1, false)
-	setActive(arg0.progress_sub_mark_2, false)
+	arg0_42:UdpateSelectedBall(1)
+	arg0_42:UpdateNextBtn()
+	setActive(arg0_42.slider_bubble, false)
+	setActive(arg0_42.progress_sub_mark_1, false)
+	setActive(arg0_42.progress_sub_mark_2, false)
 end
 
-function var0.UdpateSelectedBall(arg0, arg1)
-	if arg1 <= 0 or arg1 > 3 then
+function var0_0.UdpateSelectedBall(arg0_45, arg1_45)
+	if arg1_45 <= 0 or arg1_45 > 3 then
 		return
 	end
 
-	if arg0.lastSelectedBall then
-		if arg0.lastSelectedBall == arg1 then
+	if arg0_45.lastSelectedBall then
+		if arg0_45.lastSelectedBall == arg1_45 then
 			return
 		end
 
-		setActive(arg0.ballSelects[arg0.lastSelectedBall]:Find("selected"), false)
+		setActive(arg0_45.ballSelects[arg0_45.lastSelectedBall]:Find("selected"), false)
 	end
 
-	setActive(arg0.ballSelects[arg1]:Find("selected"), true)
+	setActive(arg0_45.ballSelects[arg1_45]:Find("selected"), true)
 
-	arg0.lastSelectedBall = arg1
+	arg0_45.lastSelectedBall = arg1_45
 end
 
-function var0.EnterDispenseView(arg0)
-	setActive(arg0.dispenseView, true)
+function var0_0.EnterDispenseView(arg0_46)
+	setActive(arg0_46.dispenseView, true)
 
-	arg0.flagDispense = true
-	arg0.progressDispense = #arg0.result_digits >= 3 and 4 or 0
+	arg0_46.flagDispense = true
+	arg0_46.progressDispense = #arg0_46.result_digits >= 3 and 4 or 0
 
-	arg0:UpdateContainer()
+	arg0_46:UpdateContainer()
 
-	arg0.slider_powder.value = 0
+	arg0_46.slider_powder.value = 0
 end
 
-function var0.ExitDispenseView(arg0)
-	if not arg0.flagDispense then
+function var0_0.ExitDispenseView(arg0_47)
+	if not arg0_47.flagDispense then
 		return
 	end
 
-	arg0:UpdateNextBtn()
-	arg0:StopHammerAnim()
-	arg0:StopProgressAnim()
+	arg0_47:UpdateNextBtn()
+	arg0_47:StopHammerAnim()
+	arg0_47:StopProgressAnim()
 
-	arg0.progressDispense = 0
+	arg0_47.progressDispense = 0
 
-	setActive(arg0.dispenseView, false)
-	setButtonEnabled(arg0.btn_hammer, true)
+	setActive(arg0_47.dispenseView, false)
+	setButtonEnabled(arg0_47.btn_hammer, true)
 
-	local var0 = arg0:GetMGHubData()
+	local var0_47 = arg0_47:GetMGHubData()
 
-	setText(arg0.timesText, var0.count)
-	setActive(arg0.slider_bubble, false)
+	setText(arg0_47.timesText, var0_47.count)
+	setActive(arg0_47.slider_bubble, false)
 
-	if arg0.effect_light then
-		setActive(arg0.effect_light, false)
+	if arg0_47.effect_light then
+		setActive(arg0_47.effect_light, false)
 	end
 
-	arg0.flagDispense = false
+	arg0_47.flagDispense = false
 end
 
-function var0.willExit(arg0)
-	arg0:ExitDispenseView()
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0.top, arg0._tf)
+function var0_0.willExit(arg0_48)
+	arg0_48:ExitDispenseView()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_48.top, arg0_48._tf)
 
-	if arg0.effect_light then
-		pg.PoolMgr.GetInstance():ReturnPrefab("ui/light01", "", arg0.effect_light)
+	if arg0_48.effect_light then
+		pg.PoolMgr.GetInstance():ReturnPrefab("ui/light01", "", arg0_48.effect_light)
 	end
 
 	pg.PoolMgr.GetInstance():DestroyPrefab("ui/light01", "")
 	pg.PoolMgr.GetInstance():DestroySprite("ui/fireworkfactoryui_atlas")
 
-	if arg0.OPTimer then
-		arg0.OPTimer:Stop()
+	if arg0_48.OPTimer then
+		arg0_48.OPTimer:Stop()
 
-		arg0.OPTimer = nil
+		arg0_48.OPTimer = nil
 	end
 end
 
-return var0
+return var0_0

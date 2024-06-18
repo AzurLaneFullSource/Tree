@@ -1,82 +1,82 @@
-﻿local var0 = class("GuildDynamicFurniture")
+﻿local var0_0 = class("GuildDynamicFurniture")
 
-var0.INTERACTION_MODE_SIT = 1
+var0_0.INTERACTION_MODE_SIT = 1
 
-function var0.Ctor(arg0, arg1)
-	arg0._go = arg1.go
-	arg0._tf = GetOrAddComponent(arg1.go, typeof(RectTransform))
-	arg0.size = arg1.size
-	arg0.path = arg1.path
-	arg0.offset = arg1.offset
-	arg0.mode = arg1.mode
-	arg0.interactionDir = arg1.interactionDir or 1
-	arg0.interactionPosition = arg1.interactionPosition
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1._go = arg1_1.go
+	arg0_1._tf = GetOrAddComponent(arg1_1.go, typeof(RectTransform))
+	arg0_1.size = arg1_1.size
+	arg0_1.path = arg1_1.path
+	arg0_1.offset = arg1_1.offset
+	arg0_1.mode = arg1_1.mode
+	arg0_1.interactionDir = arg1_1.interactionDir or 1
+	arg0_1.interactionPosition = arg1_1.interactionPosition
 
-	arg0:SetPosition(arg1.grid)
+	arg0_1:SetPosition(arg1_1.grid)
 
-	arg0.islock = false
+	arg0_1.islock = false
 end
 
-function var0.SetPosition(arg0, arg1)
-	local var0 = arg1:GetLocalPosition()
+function var0_0.SetPosition(arg0_2, arg1_2)
+	local var0_2 = arg1_2:GetLocalPosition()
 
-	arg0._tf.localPosition = Vector3(var0.x + arg0.offset.x, var0.y + arg0.offset.y, 0)
-	arg0.grid = arg1
+	arg0_2._tf.localPosition = Vector3(var0_2.x + arg0_2.offset.x, var0_2.y + arg0_2.offset.y, 0)
+	arg0_2.grid = arg1_2
 
-	local var1 = arg0:GetOccupyGrid()
+	local var1_2 = arg0_2:GetOccupyGrid()
 
-	for iter0, iter1 in ipairs(var1) do
-		iter1:Lock()
+	for iter0_2, iter1_2 in ipairs(var1_2) do
+		iter1_2:Lock()
 	end
 end
 
-function var0.GetOccupyGrid(arg0)
-	local var0 = {}
-	local var1 = arg0.grid.position
+function var0_0.GetOccupyGrid(arg0_3)
+	local var0_3 = {}
+	local var1_3 = arg0_3.grid.position
 
-	for iter0 = 0, arg0.size.x - 1 do
-		for iter1 = 0, arg0.size.y - 1 do
-			local var2 = var1.x
-			local var3 = var1.y
-			local var4 = arg0.path[var2 + iter0][var3 + iter1]
+	for iter0_3 = 0, arg0_3.size.x - 1 do
+		for iter1_3 = 0, arg0_3.size.y - 1 do
+			local var2_3 = var1_3.x
+			local var3_3 = var1_3.y
+			local var4_3 = arg0_3.path[var2_3 + iter0_3][var3_3 + iter1_3]
 
-			table.insert(var0, var4)
+			table.insert(var0_3, var4_3)
 		end
 	end
 
-	return var0
+	return var0_3
 end
 
-function var0.Lock(arg0)
-	arg0.islock = true
+function var0_0.Lock(arg0_4)
+	arg0_4.islock = true
 end
 
-function var0.Unlock(arg0)
-	arg0.islock = false
+function var0_0.Unlock(arg0_5)
+	arg0_5.islock = false
 end
 
-function var0.BeLock(arg0)
-	return arg0.islock == true
+function var0_0.BeLock(arg0_6)
+	return arg0_6.islock == true
 end
 
-function var0.GetInterActionPos(arg0)
-	return arg0.interactionPosition
+function var0_0.GetInterActionPos(arg0_7)
+	return arg0_7.interactionPosition
 end
 
-function var0.GetInterActionMode(arg0)
-	return arg0.mode
+function var0_0.GetInterActionMode(arg0_8)
+	return arg0_8.mode
 end
 
-function var0.SetAsLastSibling(arg0)
-	arg0._tf:SetAsLastSibling()
+function var0_0.SetAsLastSibling(arg0_9)
+	arg0_9._tf:SetAsLastSibling()
 end
 
-function var0.GetInteractionDir(arg0)
-	return arg0.interactionDir
+function var0_0.GetInteractionDir(arg0_10)
+	return arg0_10.interactionDir
 end
 
-function var0.Dispose(arg0)
+function var0_0.Dispose(arg0_11)
 	return
 end
 
-return var0
+return var0_0

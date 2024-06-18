@@ -1,23 +1,23 @@
-﻿local var0 = class("BuildingBuffActivity", import("model.vo.Activity"))
+﻿local var0_0 = class("BuildingBuffActivity", import("model.vo.Activity"))
 
-function var0.GetBuildingConfigTable(arg0, arg1)
-	return pg.activity_event_building[arg1]
+function var0_0.GetBuildingConfigTable(arg0_1, arg1_1)
+	return pg.activity_event_building[arg1_1]
 end
 
-function var0.GetBuildingLevel(arg0, arg1)
-	return arg0.data1KeyValueList[2][arg1] or 1
+function var0_0.GetBuildingLevel(arg0_2, arg1_2)
+	return arg0_2.data1KeyValueList[2][arg1_2] or 1
 end
 
-function var0.SetBuildingLevel(arg0, arg1, arg2)
-	arg0.data1KeyValueList[2][arg1] = arg2
+function var0_0.SetBuildingLevel(arg0_3, arg1_3, arg2_3)
+	arg0_3.data1KeyValueList[2][arg1_3] = arg2_3
 end
 
-function var0.GetBuildingIds(arg0)
-	return arg0:getConfig("config_data")
+function var0_0.GetBuildingIds(arg0_4)
+	return arg0_4:getConfig("config_data")
 end
 
-function var0.GetMaterialCount(arg0, arg1)
-	return arg0.data1KeyValueList[1][arg1] or 0
+function var0_0.GetMaterialCount(arg0_5, arg1_5)
+	return arg0_5.data1KeyValueList[1][arg1_5] or 0
 end
 
-return var0
+return var0_0

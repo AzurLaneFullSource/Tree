@@ -1,90 +1,90 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConst
-local var2 = pg.effect_offset
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConst
+local var2_0 = pg.effect_offset
 
-var0.Battle.BattleShelterData = class("BattleShelterData")
-var0.Battle.BattleShelterData.__name = "BattleShelterData"
+var0_0.Battle.BattleShelterData = class("BattleShelterData")
+var0_0.Battle.BattleShelterData.__name = "BattleShelterData"
 
-local var3 = var0.Battle.BattleShelterData
+local var3_0 = var0_0.Battle.BattleShelterData
 
-function var3.Ctor(arg0, arg1)
-	arg0._id = arg1
+function var3_0.Ctor(arg0_1, arg1_1)
+	arg0_1._id = arg1_1
 end
 
-function var3.SetIFF(arg0, arg1)
-	arg0._IFF = arg1
+function var3_0.SetIFF(arg0_2, arg1_2)
+	arg0_2._IFF = arg1_2
 end
 
-function var3.SetArgs(arg0, arg1, arg2, arg3, arg4, arg5)
-	arg0._duration = arg2
-	arg0._bulletType = var0.Battle.BattleConst.BulletType.CANNON
-	arg0._count = arg1
-	arg0._effect = arg5
-	arg0._doWhenHit = "intercept"
+function var3_0.SetArgs(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3, arg5_3)
+	arg0_3._duration = arg2_3
+	arg0_3._bulletType = var0_0.Battle.BattleConst.BulletType.CANNON
+	arg0_3._count = arg1_3
+	arg0_3._effect = arg5_3
+	arg0_3._doWhenHit = "intercept"
 
-	local function var0(arg0)
-		if arg0:GetType() == arg0._bulletType and arg0:IsWallActive() then
-			arg0:DoWhenHit(arg0)
+	local function var0_3(arg0_4)
+		if arg0_4:GetType() == arg0_3._bulletType and arg0_3:IsWallActive() then
+			arg0_3:DoWhenHit(arg0_4)
 		end
 
-		return arg0._count > 0
+		return arg0_3._count > 0
 	end
 
-	local var1 = {
+	local var1_3 = {
 		0,
 		0,
 		0
 	}
 
-	arg0._wall = var0.Battle.BattleDataProxy.GetInstance():SpawnWall(arg0, var0, arg3, var1)
-	arg0._centerPos = arg4
+	arg0_3._wall = var0_0.Battle.BattleDataProxy.GetInstance():SpawnWall(arg0_3, var0_3, arg3_3, var1_3)
+	arg0_3._centerPos = arg4_3
 end
 
-function var3.SetStartTimeStamp(arg0, arg1)
-	arg0._startTimeStamp = arg1
+function var3_0.SetStartTimeStamp(arg0_5, arg1_5)
+	arg0_5._startTimeStamp = arg1_5
 end
 
-function var3.Update(arg0, arg1)
-	if arg1 - arg0._startTimeStamp > arg0._duration then
-		arg0._startTimeStamp = nil
+function var3_0.Update(arg0_6, arg1_6)
+	if arg1_6 - arg0_6._startTimeStamp > arg0_6._duration then
+		arg0_6._startTimeStamp = nil
 	end
 end
 
-function var3.DoWhenHit(arg0, arg1)
-	if arg0._doWhenHit == "intercept" then
-		arg1:Intercepted()
-		var0.Battle.BattleDataProxy.GetInstance():RemoveBulletUnit(arg1:GetUniqueID())
+function var3_0.DoWhenHit(arg0_7, arg1_7)
+	if arg0_7._doWhenHit == "intercept" then
+		arg1_7:Intercepted()
+		var0_0.Battle.BattleDataProxy.GetInstance():RemoveBulletUnit(arg1_7:GetUniqueID())
 
-		arg0._count = arg0._count - 1
-	elseif arg0._doWhenHit == "reflect" and arg0:GetIFF() ~= arg1:GetIFF() then
-		arg1:Reflected()
+		arg0_7._count = arg0_7._count - 1
+	elseif arg0_7._doWhenHit == "reflect" and arg0_7:GetIFF() ~= arg1_7:GetIFF() then
+		arg1_7:Reflected()
 
-		arg0._count = arg0._count - 1
+		arg0_7._count = arg0_7._count - 1
 	end
 end
 
-function var3.GetUniqueID(arg0)
-	return arg0._id
+function var3_0.GetUniqueID(arg0_8)
+	return arg0_8._id
 end
 
-function var3.GetIFF(arg0)
-	return arg0._IFF
+function var3_0.GetIFF(arg0_9)
+	return arg0_9._IFF
 end
 
-function var3.GetFXID(arg0)
-	return arg0._effect
+function var3_0.GetFXID(arg0_10)
+	return arg0_10._effect
 end
 
-function var3.GetPosition(arg0)
-	return arg0._centerPos
+function var3_0.GetPosition(arg0_11)
+	return arg0_11._centerPos
 end
 
-function var3.Deactive(arg0)
-	var0.Battle.BattleDataProxy.GetInstance():RemoveWall(arg0._wall:GetUniqueID())
+function var3_0.Deactive(arg0_12)
+	var0_0.Battle.BattleDataProxy.GetInstance():RemoveWall(arg0_12._wall:GetUniqueID())
 end
 
-function var3.IsWallActive(arg0)
-	return arg0._count > 0 and arg0._startTimeStamp
+function var3_0.IsWallActive(arg0_13)
+	return arg0_13._count > 0 and arg0_13._startTimeStamp
 end

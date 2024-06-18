@@ -1,47 +1,47 @@
-﻿local var0 = class("SwichSkinMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("SwichSkinMediator", import("..base.ContextMediator"))
 
-var0.CHANGE_SKIN = "SwichSkinMediator:CHANGE_SKIN"
-var0.BUY_ITEM = "SwichSkinMediator:BUY_ITEM"
-var0.UPDATE_SKINCONFIG = "SwichSkinMediator:UPDATE_SKINCONFIG"
-var0.BUY_ITEM_BY_ACT = "SwichSkinMediator:BUY_ITEM_BY_ACT"
+var0_0.CHANGE_SKIN = "SwichSkinMediator:CHANGE_SKIN"
+var0_0.BUY_ITEM = "SwichSkinMediator:BUY_ITEM"
+var0_0.UPDATE_SKINCONFIG = "SwichSkinMediator:UPDATE_SKINCONFIG"
+var0_0.BUY_ITEM_BY_ACT = "SwichSkinMediator:BUY_ITEM_BY_ACT"
 
-function var0.register(arg0)
-	arg0.shipVO = arg0.contextData.shipVO
+function var0_0.register(arg0_1)
+	arg0_1.shipVO = arg0_1.contextData.shipVO
 
-	if arg0.shipVO then
-		arg0.viewComponent:setShip(arg0.shipVO)
+	if arg0_1.shipVO then
+		arg0_1.viewComponent:setShip(arg0_1.shipVO)
 
-		local var0 = getProxy(ShipSkinProxy):getSkinList()
+		local var0_1 = getProxy(ShipSkinProxy):getSkinList()
 
-		arg0.viewComponent:setSkinList(var0)
+		arg0_1.viewComponent:setSkinList(var0_1)
 	end
 
-	arg0:bind(var0.BUY_ITEM_BY_ACT, function(arg0, arg1, arg2)
-		arg0:sendNotification(GAME.SKIN_COUPON_SHOPPING, {
-			shopId = arg1,
-			cnt = arg2
+	arg0_1:bind(var0_0.BUY_ITEM_BY_ACT, function(arg0_2, arg1_2, arg2_2)
+		arg0_1:sendNotification(GAME.SKIN_COUPON_SHOPPING, {
+			shopId = arg1_2,
+			cnt = arg2_2
 		})
 	end)
-	arg0:bind(var0.CHANGE_SKIN, function(arg0, arg1, arg2)
-		arg0:sendNotification(GAME.SET_SHIP_SKIN, {
-			shipId = arg1,
-			skinId = arg2
+	arg0_1:bind(var0_0.CHANGE_SKIN, function(arg0_3, arg1_3, arg2_3)
+		arg0_1:sendNotification(GAME.SET_SHIP_SKIN, {
+			shipId = arg1_3,
+			skinId = arg2_3
 		})
 	end)
-	arg0:bind(var0.BUY_ITEM, function(arg0, arg1, arg2)
-		arg0:sendNotification(GAME.SKIN_SHOPPIGN, {
-			id = arg1,
-			count = arg2
+	arg0_1:bind(var0_0.BUY_ITEM, function(arg0_4, arg1_4, arg2_4)
+		arg0_1:sendNotification(GAME.SKIN_SHOPPIGN, {
+			id = arg1_4,
+			count = arg2_4
 		})
 	end)
-	arg0:bind(var0.UPDATE_SKINCONFIG, function(arg0, arg1)
-		arg0:sendNotification(GAME.UPDATE_SKINCONFIG, {
-			skinId = arg1
+	arg0_1:bind(var0_0.UPDATE_SKINCONFIG, function(arg0_5, arg1_5)
+		arg0_1:sendNotification(GAME.UPDATE_SKINCONFIG, {
+			skinId = arg1_5
 		})
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_6)
 	return {
 		ShipSkinProxy.SHIP_SKINS_UPDATE,
 		GAME.SKIN_SHOPPIGN_DONE,
@@ -50,35 +50,35 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_7, arg1_7)
+	local var0_7 = arg1_7:getName()
+	local var1_7 = arg1_7:getBody()
 
-	if var0 == GAME.SKIN_SHOPPIGN_DONE or var0 == GAME.SKIN_COUPON_SHOPPING_DONE then
-		local var2 = pg.shop_template[var1.id]
+	if var0_7 == GAME.SKIN_SHOPPIGN_DONE or var0_7 == GAME.SKIN_COUPON_SHOPPING_DONE then
+		local var2_7 = pg.shop_template[var1_7.id]
 
-		if var2 and var2.genre == ShopArgs.SkinShop then
-			arg0:addSubLayers(Context.New({
+		if var2_7 and var2_7.genre == ShopArgs.SkinShop then
+			arg0_7:addSubLayers(Context.New({
 				mediator = NewSkinMediator,
 				viewComponent = NewSkinLayer,
 				data = {
-					skinId = var2.effect_args[1]
+					skinId = var2_7.effect_args[1]
 				}
 			}))
 		end
-	elseif var0 == ShipSkinProxy.SHIP_SKINS_UPDATE then
-		local var3 = getProxy(ShipSkinProxy):getSkinList()
+	elseif var0_7 == ShipSkinProxy.SHIP_SKINS_UPDATE then
+		local var3_7 = getProxy(ShipSkinProxy):getSkinList()
 
-		arg0.viewComponent:setSkinList(var3)
-		arg0.viewComponent:openSelectSkinPanel()
-	elseif var0 == BayProxy.SHIP_UPDATED and var1.id == arg0.shipVO.id then
-		arg0.viewComponent:setShip(var1)
+		arg0_7.viewComponent:setSkinList(var3_7)
+		arg0_7.viewComponent:openSelectSkinPanel()
+	elseif var0_7 == BayProxy.SHIP_UPDATED and var1_7.id == arg0_7.shipVO.id then
+		arg0_7.viewComponent:setShip(var1_7)
 
-		local var4 = getProxy(ShipSkinProxy):getSkinList()
+		local var4_7 = getProxy(ShipSkinProxy):getSkinList()
 
-		arg0.viewComponent:setSkinList(var4)
-		arg0.viewComponent:openSelectSkinPanel()
+		arg0_7.viewComponent:setSkinList(var4_7)
+		arg0_7.viewComponent:openSelectSkinPanel()
 	end
 end
 
-return var0
+return var0_0

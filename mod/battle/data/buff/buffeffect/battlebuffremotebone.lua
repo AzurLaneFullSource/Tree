@@ -1,25 +1,25 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("BattleBuffRemoteBone", var0.Battle.BattleBuffEffect)
+local var0_0 = ys
+local var1_0 = class("BattleBuffRemoteBone", var0_0.Battle.BattleBuffEffect)
 
-var0.Battle.BattleBuffRemoteBone = var1
-var1.__name = "BattleBuffRemoteBone"
+var0_0.Battle.BattleBuffRemoteBone = var1_0
+var1_0.__name = "BattleBuffRemoteBone"
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	arg0._group = arg2:GetID()
-	arg0._targetChoice = arg0._tempData.arg_list.bone_target
-	arg0._bone = arg0._tempData.arg_list.bone_name
+function var1_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	arg0_2._group = arg2_2:GetID()
+	arg0_2._targetChoice = arg0_2._tempData.arg_list.bone_target
+	arg0_2._bone = arg0_2._tempData.arg_list.bone_name
 end
 
-function var1.onAttach(arg0, arg1, arg2)
-	arg1:SetRemoteBoundBone(arg0._group, arg0._bone, arg0._targetChoice)
+function var1_0.onAttach(arg0_3, arg1_3, arg2_3)
+	arg1_3:SetRemoteBoundBone(arg0_3._group, arg0_3._bone, arg0_3._targetChoice)
 end
 
-function var1.onRemove(arg0, arg1, arg2)
-	arg1:RemoveRemoteBoundBone(arg0._group)
+function var1_0.onRemove(arg0_4, arg1_4, arg2_4)
+	arg1_4:RemoveRemoteBoundBone(arg0_4._group)
 end

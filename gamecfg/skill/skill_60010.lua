@@ -19,8 +19,8 @@
 			casterAniEffect = {
 				time = 1,
 				effect = "feijiyingzi",
-				posFun = function(arg0, arg1, arg2)
-					return Vector3(-100, 0, arg1.z) - arg0
+				posFun = function(arg0_1, arg1_1, arg2_1)
+					return Vector3(-100, 0, arg1_1.z) - arg0_1
 				end
 			}
 		},

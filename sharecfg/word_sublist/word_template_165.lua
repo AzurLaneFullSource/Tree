@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_165 = {}
+var0_0.word_template_165 = {}
 
-local var1 = var0.word_template_165
+local var1_0 = var0_0.word_template_165
 
 function temp()
-	var1.鄄 = {
+	var1_0.鄄 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.撅 = {
+	var1_0.撅 = {
 		起 = {
 			大 = {
 				白 = {
@@ -33,7 +33,7 @@ end
 temp()
 
 function temp()
-	var1.绝 = {
+	var1_0.绝 = {
 		地 = {
 			武 = {
 				士 = {
@@ -236,7 +236,7 @@ end
 temp()
 
 function temp()
-	var1.絕 = {
+	var1_0.絕 = {
 		望 = {
 			之 = {
 				地 = {
@@ -257,7 +257,7 @@ end
 temp()
 
 function temp()
-	var1.谲 = {
+	var1_0.谲 = {
 		this = {
 			this = true
 		}
@@ -267,7 +267,7 @@ end
 temp()
 
 function temp()
-	var1.譎 = {
+	var1_0.譎 = {
 		this = {
 			this = true
 		}
@@ -277,7 +277,7 @@ end
 temp()
 
 function temp()
-	var1.爝 = {
+	var1_0.爝 = {
 		this = {
 			this = true
 		}

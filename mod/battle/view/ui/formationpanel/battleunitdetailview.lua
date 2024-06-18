@@ -1,19 +1,19 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleAttr
-local var2 = var0.Battle.BattleDataFunction
-local var3 = var0.Battle.BattleConst
-local var4 = var0.Battle.BattleUnitEvent
-local var5 = var0.Battle.BattleConst.EquipmentType
-local var6 = class("BattleUnitDetailView")
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleAttr
+local var2_0 = var0_0.Battle.BattleDataFunction
+local var3_0 = var0_0.Battle.BattleConst
+local var4_0 = var0_0.Battle.BattleUnitEvent
+local var5_0 = var0_0.Battle.BattleConst.EquipmentType
+local var6_0 = class("BattleUnitDetailView")
 
-var0.Battle.BattleUnitDetailView = var6
-var6.__name = "BattleUnitDetailView"
-var6.DefaultActive = {}
-var6.EnemyMarkList = {}
-var6.HIGH_LIGHT_BUFF = {}
-var6.PrimalAttr = {
+var0_0.Battle.BattleUnitDetailView = var6_0
+var6_0.__name = "BattleUnitDetailView"
+var6_0.DefaultActive = {}
+var6_0.EnemyMarkList = {}
+var6_0.HIGH_LIGHT_BUFF = {}
+var6_0.PrimalAttr = {
 	"cannonPower",
 	"torpedoPower",
 	"airPower",
@@ -24,7 +24,7 @@ var6.PrimalAttr = {
 	"attackRating",
 	"velocity"
 }
-var6.BaseEnhancement = {
+var6_0.BaseEnhancement = {
 	damageRatioByCannon = "damage/damageRatioByCannon",
 	injureRatioByBulletTorpedo = "injure/injureRatioByBulletTorpedo",
 	damageRatioByBulletTorpedo = "damage/damageRatioByBulletTorpedo",
@@ -34,500 +34,500 @@ var6.BaseEnhancement = {
 	injureRatioByAir = "injure/injureRatioByAir",
 	damageRatioByAir = "damage/damageRatioByAir"
 }
-var6.SecondaryAttrListener = {}
+var6_0.SecondaryAttrListener = {}
 
-function var6.Ctor(arg0)
-	pg.DelegateInfo.New(arg0)
+function var6_0.Ctor(arg0_1)
+	pg.DelegateInfo.New(arg0_1)
 end
 
-function var6.SetUnit(arg0, arg1)
-	var0.EventListener.AttachEventListener(arg0)
+function var6_0.SetUnit(arg0_2, arg1_2)
+	var0_0.EventListener.AttachEventListener(arg0_2)
 
-	arg0._unit = arg1
+	arg0_2._unit = arg1_2
 
-	if arg0._unit:GetUnitType() == var3.UnitType.PLAYER_UNIT then
-		local var0 = var0.Battle.BattleResourceManager.GetInstance():GetCharacterQIcon(arg0._unit:GetTemplate().painting)
+	if arg0_2._unit:GetUnitType() == var3_0.UnitType.PLAYER_UNIT then
+		local var0_2 = var0_0.Battle.BattleResourceManager.GetInstance():GetCharacterQIcon(arg0_2._unit:GetTemplate().painting)
 
-		setImageSprite(arg0._icon, var0)
+		setImageSprite(arg0_2._icon, var0_2)
 
-		for iter0 = 1, arg0._unit:GetTemplate().star do
-			local var1 = cloneTplTo(arg0._starTpl, arg0._stars)
+		for iter0_2 = 1, arg0_2._unit:GetTemplate().star do
+			local var1_2 = cloneTplTo(arg0_2._starTpl, arg0_2._stars)
 
-			setActive(var1, true)
+			setActive(var1_2, true)
 		end
 	end
 
-	setText(arg0._templateID, arg0._unit:GetTemplate().id)
-	setText(arg0._name, arg0._unit:GetTemplate().name)
-	setText(arg0._lv, arg0._unit:GetAttrByName("level"))
+	setText(arg0_2._templateID, arg0_2._unit:GetTemplate().id)
+	setText(arg0_2._name, arg0_2._unit:GetTemplate().name)
+	setText(arg0_2._lv, arg0_2._unit:GetAttrByName("level"))
 
-	arg0._preAttrList = {}
+	arg0_2._preAttrList = {}
 
-	for iter1, iter2 in ipairs(var6.PrimalAttr) do
-		local var2 = var1.GetBase(arg0._unit, iter2)
+	for iter1_2, iter2_2 in ipairs(var6_0.PrimalAttr) do
+		local var2_2 = var1_0.GetBase(arg0_2._unit, iter2_2)
 
-		setText(arg0._attrView:Find(iter2 .. "/base"), var2)
+		setText(arg0_2._attrView:Find(iter2_2 .. "/base"), var2_2)
 
-		arg0._preAttrList[iter2] = var2
+		arg0_2._preAttrList[iter2_2] = var2_2
 	end
 
-	arg0._baseEhcList = {}
+	arg0_2._baseEhcList = {}
 
-	for iter3, iter4 in pairs(var6.BaseEnhancement) do
-		arg0._baseEhcList[iter3] = 0
+	for iter3_2, iter4_2 in pairs(var6_0.BaseEnhancement) do
+		arg0_2._baseEhcList[iter3_2] = 0
 	end
 
-	arg0._secondaryAttrList = {}
-	arg0._buffList = {}
-	arg0._aaList = {}
-	arg0._weaponList = {}
-	arg0._skillList = {}
+	arg0_2._secondaryAttrList = {}
+	arg0_2._buffList = {}
+	arg0_2._aaList = {}
+	arg0_2._weaponList = {}
+	arg0_2._skillList = {}
 
-	arg0:updateWeaponList()
+	arg0_2:updateWeaponList()
 end
 
-function var6.Update(arg0)
-	for iter0, iter1 in ipairs(var6.PrimalAttr) do
-		arg0:updatePrimalAttr(iter1)
+function var6_0.Update(arg0_3)
+	for iter0_3, iter1_3 in ipairs(var6_0.PrimalAttr) do
+		arg0_3:updatePrimalAttr(iter1_3)
 	end
 
-	for iter2, iter3 in pairs(var6.BaseEnhancement) do
-		arg0:updateBaseEnhancement(iter2, iter3)
+	for iter2_3, iter3_3 in pairs(var6_0.BaseEnhancement) do
+		arg0_3:updateBaseEnhancement(iter2_3, iter3_3)
 	end
 
-	local var0 = arg0._unit:GetAttr()
+	local var0_3 = arg0_3._unit:GetAttr()
 
-	for iter4, iter5 in pairs(var0) do
-		if string.find(iter4, "DMG_TAG_EHC_") or string.find(iter4, "DMG_FROM_TAG_") or table.contains(var6.SecondaryAttrListener, iter4) then
-			arg0:updateSecondaryAttr(iter4, iter5)
+	for iter4_3, iter5_3 in pairs(var0_3) do
+		if string.find(iter4_3, "DMG_TAG_EHC_") or string.find(iter4_3, "DMG_FROM_TAG_") or table.contains(var6_0.SecondaryAttrListener, iter4_3) then
+			arg0_3:updateSecondaryAttr(iter4_3, iter5_3)
 		end
 	end
 
-	arg0:updateHP()
-	arg0:updateBuffList()
-	arg0:updateWeaponProgress()
-	arg0:updateSkillList()
+	arg0_3:updateHP()
+	arg0_3:updateBuffList()
+	arg0_3:updateWeaponProgress()
+	arg0_3:updateSkillList()
 end
 
-function var6.ConfigSkin(arg0, arg1)
-	arg0._go = arg1
+function var6_0.ConfigSkin(arg0_4, arg1_4)
+	arg0_4._go = arg1_4
 
-	local var0 = arg1.transform
+	local var0_4 = arg1_4.transform
 
-	arg0._tf = var0
-	arg0._iconView = var0:Find("icon")
-	arg0._icon = arg0._iconView:Find("icon")
-	arg0._stars = arg0._iconView:Find("stars")
-	arg0._starTpl = arg0._stars:Find("star_tpl")
-	arg0._templateView = var0:Find("template")
-	arg0._templateID = arg0._templateView:Find("template/text")
-	arg0._name = arg0._templateView:Find("name/text")
-	arg0._lv = arg0._templateView:Find("level/text")
-	arg0._totalHP = arg0._templateView:Find("totalHP/text")
-	arg0._currentHP = arg0._templateView:Find("currentHP/text")
-	arg0._shield = arg0._templateView:Find("shield/text")
-	arg0._attrView = var0:Find("attr_panels/primal_attr")
-	arg0._baseEnhanceView = var0:Find("attr_panels/basic_ehc")
-	arg0._secondaryAttrView = var0:Find("attr_panels/tag_ehc")
-	arg0._secondaryAttrContainer = arg0._secondaryAttrView:Find("tag_container")
-	arg0._secondaryAttrTpl = arg0._secondaryAttrView:Find("tag_attr_tpl")
-	arg0._buffView = var0:Find("attr_panels/buff")
-	arg0._buffContainer = arg0._buffView:Find("buff_container")
-	arg0._buffTpl = arg0._buffView:Find("buff_tpl")
-	arg0._weaponView = var0:Find("panel_container/weapon_panels")
-	arg0._weaponContainer = arg0._weaponView:Find("weapon_container")
-	arg0._weaponTpl = arg0._weaponView:Find("weapon_tpl")
-	arg0._skillView = var0:Find("panel_container/skill_panel")
-	arg0._skillContainer = arg0._skillView:Find("skill_container")
-	arg0._skillTpl = arg0._skillView:Find("skill_tpl")
+	arg0_4._tf = var0_4
+	arg0_4._iconView = var0_4:Find("icon")
+	arg0_4._icon = arg0_4._iconView:Find("icon")
+	arg0_4._stars = arg0_4._iconView:Find("stars")
+	arg0_4._starTpl = arg0_4._stars:Find("star_tpl")
+	arg0_4._templateView = var0_4:Find("template")
+	arg0_4._templateID = arg0_4._templateView:Find("template/text")
+	arg0_4._name = arg0_4._templateView:Find("name/text")
+	arg0_4._lv = arg0_4._templateView:Find("level/text")
+	arg0_4._totalHP = arg0_4._templateView:Find("totalHP/text")
+	arg0_4._currentHP = arg0_4._templateView:Find("currentHP/text")
+	arg0_4._shield = arg0_4._templateView:Find("shield/text")
+	arg0_4._attrView = var0_4:Find("attr_panels/primal_attr")
+	arg0_4._baseEnhanceView = var0_4:Find("attr_panels/basic_ehc")
+	arg0_4._secondaryAttrView = var0_4:Find("attr_panels/tag_ehc")
+	arg0_4._secondaryAttrContainer = arg0_4._secondaryAttrView:Find("tag_container")
+	arg0_4._secondaryAttrTpl = arg0_4._secondaryAttrView:Find("tag_attr_tpl")
+	arg0_4._buffView = var0_4:Find("attr_panels/buff")
+	arg0_4._buffContainer = arg0_4._buffView:Find("buff_container")
+	arg0_4._buffTpl = arg0_4._buffView:Find("buff_tpl")
+	arg0_4._weaponView = var0_4:Find("panel_container/weapon_panels")
+	arg0_4._weaponContainer = arg0_4._weaponView:Find("weapon_container")
+	arg0_4._weaponTpl = arg0_4._weaponView:Find("weapon_tpl")
+	arg0_4._skillView = var0_4:Find("panel_container/skill_panel")
+	arg0_4._skillContainer = arg0_4._skillView:Find("skill_container")
+	arg0_4._skillTpl = arg0_4._skillView:Find("skill_tpl")
 
-	SetActive(arg0._go, true)
+	SetActive(arg0_4._go, true)
 
-	for iter0, iter1 in ipairs(var6.DefaultActive) do
-		SetActive(var0:Find(iter1), true)
+	for iter0_4, iter1_4 in ipairs(var6_0.DefaultActive) do
+		SetActive(var0_4:Find(iter1_4), true)
 	end
 end
 
-function var6.updateHP(arg0)
-	local var0, var1 = arg0._unit:GetHP()
-	local var2 = arg0._unit:GetHPRate()
+function var6_0.updateHP(arg0_5)
+	local var0_5, var1_5 = arg0_5._unit:GetHP()
+	local var2_5 = arg0_5._unit:GetHPRate()
 
-	setText(arg0._totalHP, var1)
-	setText(arg0._currentHP, var0)
+	setText(arg0_5._totalHP, var1_5)
+	setText(arg0_5._currentHP, var0_5)
 
-	local var3 = arg0._unit:GetBuffList()
-	local var4 = 0
+	local var3_5 = arg0_5._unit:GetBuffList()
+	local var4_5 = 0
 
-	for iter0, iter1 in pairs(var3) do
-		for iter2, iter3 in ipairs(iter1:GetEffectList()) do
-			if iter3.__name == "BattleBuffShield" or iter3.__name == "BattleBuffRecordShield" then
-				var4 = var4 + math.max(0, iter3:GetEffectAttachData())
+	for iter0_5, iter1_5 in pairs(var3_5) do
+		for iter2_5, iter3_5 in ipairs(iter1_5:GetEffectList()) do
+			if iter3_5.__name == "BattleBuffShield" or iter3_5.__name == "BattleBuffRecordShield" then
+				var4_5 = var4_5 + math.max(0, iter3_5:GetEffectAttachData())
 			end
 		end
 	end
 
-	setText(arg0._shield, var4)
+	setText(arg0_5._shield, var4_5)
 end
 
-function var6.updatePrimalAttr(arg0, arg1)
-	local var0 = arg0._unit:GetAttrByName(arg1)
+function var6_0.updatePrimalAttr(arg0_6, arg1_6)
+	local var0_6 = arg0_6._unit:GetAttrByName(arg1_6)
 
-	setText(arg0._attrView:Find(arg1 .. "/current"), var0)
+	setText(arg0_6._attrView:Find(arg1_6 .. "/current"), var0_6)
 
-	local var1 = var0 - arg0._preAttrList[arg1]
+	local var1_6 = var0_6 - arg0_6._preAttrList[arg1_6]
 
-	if var1 ~= 0 then
-		local var2 = arg0._attrView:Find(arg1 .. "/change")
+	if var1_6 ~= 0 then
+		local var2_6 = arg0_6._attrView:Find(arg1_6 .. "/change")
 
-		var6.setDeltaText(var2, var1)
+		var6_0.setDeltaText(var2_6, var1_6)
 
-		arg0._preAttrList[arg1] = var0
+		arg0_6._preAttrList[arg1_6] = var0_6
 	end
 
-	local var3 = var0 - var1.GetBase(arg0._unit, arg1)
+	local var3_6 = var0_6 - var1_0.GetBase(arg0_6._unit, arg1_6)
 
-	if var3 ~= 0 then
-		local var4 = arg0._attrView:Find(arg1 .. "/delta")
+	if var3_6 ~= 0 then
+		local var4_6 = arg0_6._attrView:Find(arg1_6 .. "/delta")
 
-		var6.setDeltaText(var4, var3)
-	end
-end
-
-function var6.updateBaseEnhancement(arg0, arg1, arg2)
-	local var0 = arg0._baseEnhanceView:Find(arg2)
-	local var1 = arg0._unit:GetAttrByName(arg1)
-	local var2 = var1 - arg0._baseEhcList[arg1]
-
-	setText(var0:Find("current"), var1)
-
-	if var2 ~= 0 then
-		var6.setDeltaText(var0:Find("change"), var2)
+		var6_0.setDeltaText(var4_6, var3_6)
 	end
 end
 
-function var6.updateSecondaryAttr(arg0, arg1, arg2)
-	if not arg0._secondaryAttrList[arg1] then
-		local var0 = cloneTplTo(arg0._secondaryAttrTpl, arg0._secondaryAttrContainer)
+function var6_0.updateBaseEnhancement(arg0_7, arg1_7, arg2_7)
+	local var0_7 = arg0_7._baseEnhanceView:Find(arg2_7)
+	local var1_7 = arg0_7._unit:GetAttrByName(arg1_7)
+	local var2_7 = var1_7 - arg0_7._baseEhcList[arg1_7]
+
+	setText(var0_7:Find("current"), var1_7)
+
+	if var2_7 ~= 0 then
+		var6_0.setDeltaText(var0_7:Find("change"), var2_7)
+	end
+end
+
+function var6_0.updateSecondaryAttr(arg0_8, arg1_8, arg2_8)
+	if not arg0_8._secondaryAttrList[arg1_8] then
+		local var0_8 = cloneTplTo(arg0_8._secondaryAttrTpl, arg0_8._secondaryAttrContainer)
 
 		Canvas.ForceUpdateCanvases()
-		setText(var0:Find("tag_name"), arg1)
-		setActive(var0, true)
+		setText(var0_8:Find("tag_name"), arg1_8)
+		setActive(var0_8, true)
 
-		local var1 = {
+		local var1_8 = {
 			value = 0,
-			tf = var0
+			tf = var0_8
 		}
 
-		arg0._secondaryAttrList[arg1] = var1
+		arg0_8._secondaryAttrList[arg1_8] = var1_8
 	end
 
-	local var2 = arg0._secondaryAttrList[arg1].tf
-	local var3 = arg0._unit:GetAttrByName(arg1)
-	local var4 = arg0._secondaryAttrList[arg1].value
+	local var2_8 = arg0_8._secondaryAttrList[arg1_8].tf
+	local var3_8 = arg0_8._unit:GetAttrByName(arg1_8)
+	local var4_8 = arg0_8._secondaryAttrList[arg1_8].value
 
-	if var4 ~= arg2 then
-		setText(var2:Find("current"), arg2)
+	if var4_8 ~= arg2_8 then
+		setText(var2_8:Find("current"), arg2_8)
 
-		local var5 = var3 - var4
+		local var5_8 = var3_8 - var4_8
 
-		var6.setDeltaText(var2:Find("delta"), var5)
+		var6_0.setDeltaText(var2_8:Find("delta"), var5_8)
 	end
 end
 
-function var6.updateBuffList(arg0)
-	local var0 = arg0._unit:GetBuffList()
+function var6_0.updateBuffList(arg0_9)
+	local var0_9 = arg0_9._unit:GetBuffList()
 
-	for iter0, iter1 in pairs(arg0._buffList) do
-		if not var0[iter0] then
-			GameObject.Destroy(iter1.gameObject)
+	for iter0_9, iter1_9 in pairs(arg0_9._buffList) do
+		if not var0_9[iter0_9] then
+			GameObject.Destroy(iter1_9.gameObject)
 
-			arg0._buffList[iter0] = nil
+			arg0_9._buffList[iter0_9] = nil
 		end
 	end
 
-	for iter2, iter3 in pairs(var0) do
-		if not arg0._buffList[iter2] then
-			arg0:addBuff(iter2, iter3)
+	for iter2_9, iter3_9 in pairs(var0_9) do
+		if not arg0_9._buffList[iter2_9] then
+			arg0_9:addBuff(iter2_9, iter3_9)
 		else
-			local var1 = arg0._buffList[iter2]
+			local var1_9 = arg0_9._buffList[iter2_9]
 
-			if iter3._stack > 1 then
-				local var2 = var1:Find("buff_stack")
+			if iter3_9._stack > 1 then
+				local var2_9 = var1_9:Find("buff_stack")
 
-				setActive(var2, true)
-				setText(var2, "x" .. iter3._stack)
+				setActive(var2_9, true)
+				setText(var2_9, "x" .. iter3_9._stack)
 			end
 		end
 	end
 
-	for iter4, iter5 in pairs(var0) do
-		local var3 = iter5:GetEffectList()
+	for iter4_9, iter5_9 in pairs(var0_9) do
+		local var3_9 = iter5_9:GetEffectList()
 
-		for iter6, iter7 in ipairs(var3) do
-			if iter7.__name == var0.Battle.BattleBuffCastSkill.__name and (not arg0._skillList[iter7._skill_id] or not table.contains(arg0._skillList[iter7._skill_id].effectList, iter7)) then
-				arg0:addSkillCaster(iter7)
+		for iter6_9, iter7_9 in ipairs(var3_9) do
+			if iter7_9.__name == var0_0.Battle.BattleBuffCastSkill.__name and (not arg0_9._skillList[iter7_9._skill_id] or not table.contains(arg0_9._skillList[iter7_9._skill_id].effectList, iter7_9)) then
+				arg0_9:addSkillCaster(iter7_9)
 			end
 		end
 	end
 end
 
-function var6.updateWeaponList(arg0)
-	local var0 = arg0._unit:GetAirAssistList()
+function var6_0.updateWeaponList(arg0_10)
+	local var0_10 = arg0_10._unit:GetAirAssistList()
 
-	if var0 then
-		for iter0, iter1 in ipairs(var0) do
-			local var1 = cloneTplTo(arg0._weaponTpl, arg0._weaponContainer)
+	if var0_10 then
+		for iter0_10, iter1_10 in ipairs(var0_10) do
+			local var1_10 = cloneTplTo(arg0_10._weaponTpl, arg0_10._weaponContainer)
 
 			Canvas.ForceUpdateCanvases()
 
-			local var2 = var1:Find("common/icon")
+			local var2_10 = var1_10:Find("common/icon")
 
-			GetImageSpriteFromAtlasAsync("skillicon/2130", "", var2)
-			setText(var1:Find("common/index"), "空袭")
-			setText(var1:Find("common/templateID"), iter1:GetStrikeSkillID())
+			GetImageSpriteFromAtlasAsync("skillicon/2130", "", var2_10)
+			setText(var1_10:Find("common/index"), "空袭")
+			setText(var1_10:Find("common/templateID"), iter1_10:GetStrikeSkillID())
 
-			arg0._aaList[iter1] = var1
+			arg0_10._aaList[iter1_10] = var1_10
 		end
 	end
 
-	local var3 = arg0._unit:GetAllWeapon()
+	local var3_10 = arg0_10._unit:GetAllWeapon()
 
-	for iter2, iter3 in ipairs(var3) do
-		local var4 = iter3:GetType()
+	for iter2_10, iter3_10 in ipairs(var3_10) do
+		local var4_10 = iter3_10:GetType()
 
-		if var4 ~= var5.STRIKE_AIRCRAFT and var4 ~= var5.FLEET_ANTI_AIR then
-			local var5 = cloneTplTo(arg0._weaponTpl, arg0._weaponContainer)
+		if var4_10 ~= var5_0.STRIKE_AIRCRAFT and var4_10 ~= var5_0.FLEET_ANTI_AIR then
+			local var5_10 = cloneTplTo(arg0_10._weaponTpl, arg0_10._weaponContainer)
 
 			Canvas.ForceUpdateCanvases()
-			setText(var5:Find("common/index"), iter3:GetEquipmentIndex())
-			setText(var5:Find("common/templateID"), iter3:GetTemplateData().id)
+			setText(var5_10:Find("common/index"), iter3_10:GetEquipmentIndex())
+			setText(var5_10:Find("common/templateID"), iter3_10:GetTemplateData().id)
 
-			local var6 = iter3:GetSrcEquipmentID()
-			local var7 = var5:Find("common/icon")
+			local var6_10 = iter3_10:GetSrcEquipmentID()
+			local var7_10 = var5_10:Find("common/icon")
 
-			if var6 then
-				local var8 = var2.GetWeaponDataFromID(var6).icon
+			if var6_10 then
+				local var8_10 = var2_0.GetWeaponDataFromID(var6_10).icon
 
-				GetImageSpriteFromAtlasAsync("equips/" .. var8, "", var7)
+				GetImageSpriteFromAtlasAsync("equips/" .. var8_10, "", var7_10)
 			else
-				setActive(var7, false)
+				setActive(var7_10, false)
 			end
 
-			arg0._weaponList[iter3] = {
-				tf = var5,
+			arg0_10._weaponList[iter3_10] = {
+				tf = var5_10,
 				data = {}
 			}
 
-			onToggle(arg0, var5:Find("common/sector"), function(arg0)
-				arg0._unit:ActiveWeaponSectorView(iter3, arg0)
+			onToggle(arg0_10, var5_10:Find("common/sector"), function(arg0_11)
+				arg0_10._unit:ActiveWeaponSectorView(iter3_10, arg0_11)
 			end)
-			arg0:updateBulletAttrBuff(iter3)
+			arg0_10:updateBulletAttrBuff(iter3_10)
 		end
 	end
 
-	local var9 = arg0._unit:GetFleetRangeAAWeapon()
+	local var9_10 = arg0_10._unit:GetFleetRangeAAWeapon()
 
-	if var9 then
-		local var10 = cloneTplTo(arg0._weaponTpl, arg0._weaponContainer)
+	if var9_10 then
+		local var10_10 = cloneTplTo(arg0_10._weaponTpl, arg0_10._weaponContainer)
 
 		Canvas.ForceUpdateCanvases()
 
-		local var11 = var10:Find("common/icon")
+		local var11_10 = var10_10:Find("common/icon")
 
-		GetImageSpriteFromAtlasAsync("skillicon/2130", "", var11)
-		setText(var10:Find("common/index"), "远程防空")
-		setText(var10:Find("common/templateID"), "N/A")
-		onToggle(arg0, var10:Find("common/sector"), function(arg0)
-			arg0._unit:ActiveWeaponSectorView(var9, arg0)
+		GetImageSpriteFromAtlasAsync("skillicon/2130", "", var11_10)
+		setText(var10_10:Find("common/index"), "远程防空")
+		setText(var10_10:Find("common/templateID"), "N/A")
+		onToggle(arg0_10, var10_10:Find("common/sector"), function(arg0_12)
+			arg0_10._unit:ActiveWeaponSectorView(var9_10, arg0_12)
 		end)
 	end
 end
 
-function var6.updateWeaponProgress(arg0)
-	for iter0, iter1 in pairs(arg0._weaponList) do
-		local var0 = iter1.tf
-		local var1 = iter0:GetReloadRate()
+function var6_0.updateWeaponProgress(arg0_13)
+	for iter0_13, iter1_13 in pairs(arg0_13._weaponList) do
+		local var0_13 = iter1_13.tf
+		local var1_13 = iter0_13:GetReloadRate()
 
-		arg0.updateBarProgress(var0, var1)
-		setText(var0:Find("sum/damageSum"), iter0:GetDamageSUM())
-		setText(var0:Find("sum/CTRate"), string.format("%.2f", iter0:GetCTRate() * 100) .. "%")
-		setText(var0:Find("sum/ACCRate"), string.format("%.2f", iter0:GetACCRate() * 100) .. "%")
-		arg0:updateBulletAttrBuff(iter0)
+		arg0_13.updateBarProgress(var0_13, var1_13)
+		setText(var0_13:Find("sum/damageSum"), iter0_13:GetDamageSUM())
+		setText(var0_13:Find("sum/CTRate"), string.format("%.2f", iter0_13:GetCTRate() * 100) .. "%")
+		setText(var0_13:Find("sum/ACCRate"), string.format("%.2f", iter0_13:GetACCRate() * 100) .. "%")
+		arg0_13:updateBulletAttrBuff(iter0_13)
 	end
 
-	for iter2, iter3 in pairs(arg0._aaList) do
-		local var2 = iter2:GetReloadRate()
+	for iter2_13, iter3_13 in pairs(arg0_13._aaList) do
+		local var2_13 = iter2_13:GetReloadRate()
 
-		arg0.updateBarProgress(iter3, var2)
+		arg0_13.updateBarProgress(iter3_13, var2_13)
 
-		local var3, var4 = iter2:GetDamageSUM()
+		local var3_13, var4_13 = iter2_13:GetDamageSUM()
 
-		setText(iter3:Find("sum/damageSum"), var3 .. " + " .. var4)
+		setText(iter3_13:Find("sum/damageSum"), var3_13 .. " + " .. var4_13)
 	end
 end
 
-function var6.updateBarProgress(arg0, arg1)
-	local var0 = arg0:Find("common/reload_progress/blood"):GetComponent(typeof(Image))
+function var6_0.updateBarProgress(arg0_14, arg1_14)
+	local var0_14 = arg0_14:Find("common/reload_progress/blood"):GetComponent(typeof(Image))
 
-	var0.fillAmount = 1 - arg1
+	var0_14.fillAmount = 1 - arg1_14
 
-	if arg1 == 0 then
-		var0.color = Color.green
+	if arg1_14 == 0 then
+		var0_14.color = Color.green
 	else
-		var0.color = Color.red
+		var0_14.color = Color.red
 	end
 end
 
-function var6.updateBulletAttrBuff(arg0, arg1)
-	local var0 = arg0._weaponList[arg1]
-	local var1 = var0.tf
-	local var2 = var0.data
-	local var3 = var1:Find("weapon_attr_tpl")
-	local var4 = var1:Find("weapon_attr_container")
-	local var5 = {}
+function var6_0.updateBulletAttrBuff(arg0_15, arg1_15)
+	local var0_15 = arg0_15._weaponList[arg1_15]
+	local var1_15 = var0_15.tf
+	local var2_15 = var0_15.data
+	local var3_15 = var1_15:Find("weapon_attr_tpl")
+	local var4_15 = var1_15:Find("weapon_attr_container")
+	local var5_15 = {}
 
-	for iter0, iter1 in pairs(var2) do
-		var5[iter0] = true
+	for iter0_15, iter1_15 in pairs(var2_15) do
+		var5_15[iter0_15] = true
 	end
 
-	for iter2, iter3 in pairs(arg0._unit:GetBuffList()) do
-		for iter4, iter5 in ipairs(iter3:GetEffectList()) do
-			if iter5.__name == var0.Battle.BattleBuffAddBulletAttr.__name then
-				local var6 = arg1:GetEquipmentIndex()
+	for iter2_15, iter3_15 in pairs(arg0_15._unit:GetBuffList()) do
+		for iter4_15, iter5_15 in ipairs(iter3_15:GetEffectList()) do
+			if iter5_15.__name == var0_0.Battle.BattleBuffAddBulletAttr.__name then
+				local var6_15 = arg1_15:GetEquipmentIndex()
 
-				if iter5:equipIndexRequire(var6) then
-					local var7 = var2[iter5]
+				if iter5_15:equipIndexRequire(var6_15) then
+					local var7_15 = var2_15[iter5_15]
 
-					if not var7 then
-						var7 = cloneTplTo(var3, var4)
+					if not var7_15 then
+						var7_15 = cloneTplTo(var3_15, var4_15)
 
-						setText(var7:Find("tag_name"), iter5._attr)
-						setText(var7:Find("src_buff"), iter3:GetID())
+						setText(var7_15:Find("tag_name"), iter5_15._attr)
+						setText(var7_15:Find("src_buff"), iter3_15:GetID())
 						Canvas.ForceUpdateCanvases()
 
-						var7:Find("src_buff"):GetComponent(typeof(Text)).color = Color.green
-						var2[iter5] = var7
+						var7_15:Find("src_buff"):GetComponent(typeof(Text)).color = Color.green
+						var2_15[iter5_15] = var7_15
 					end
 
-					setText(var7:Find("current"), iter5._number)
+					setText(var7_15:Find("current"), iter5_15._number)
 
-					var5[iter5] = false
+					var5_15[iter5_15] = false
 				end
 			end
 		end
 	end
 
-	for iter6, iter7 in pairs(var5) do
-		if iter7 then
-			local var8 = var2[iter6]
+	for iter6_15, iter7_15 in pairs(var5_15) do
+		if iter7_15 then
+			local var8_15 = var2_15[iter6_15]
 
-			SetActive(var8:Find("expire"), true)
+			SetActive(var8_15:Find("expire"), true)
 		end
 	end
 end
 
-function var6.addBuff(arg0, arg1, arg2)
-	local var0 = cloneTplTo(arg0._buffTpl, arg0._buffContainer)
+function var6_0.addBuff(arg0_16, arg1_16, arg2_16)
+	local var0_16 = cloneTplTo(arg0_16._buffTpl, arg0_16._buffContainer)
 
 	Canvas.ForceUpdateCanvases()
-	setText(var0:Find("buff_id"), "buff_" .. arg1)
+	setText(var0_16:Find("buff_id"), "buff_" .. arg1_16)
 
-	if table.contains(var6.HIGH_LIGHT_BUFF, arg1) then
-		local var1 = var0:Find("high_light")
+	if table.contains(var6_0.HIGH_LIGHT_BUFF, arg1_16) then
+		local var1_16 = var0_16:Find("high_light")
 
-		setActive(var1, true)
+		setActive(var1_16, true)
 	end
 
-	if arg2._stack > 1 then
-		local var2 = var0:Find("buff_stack")
+	if arg2_16._stack > 1 then
+		local var2_16 = var0_16:Find("buff_stack")
 
-		setActive(var2, true)
-		setText(var2, "x" .. arg2._stack)
+		setActive(var2_16, true)
+		setText(var2_16, "x" .. arg2_16._stack)
 	end
 
-	setActive(var0, true)
+	setActive(var0_16, true)
 
-	arg0._buffList[arg1] = var0
+	arg0_16._buffList[arg1_16] = var0_16
 end
 
-function var6.addSkillCaster(arg0, arg1)
-	local var0 = arg1._skill_id
-	local var1 = arg1._srcBuff:GetLv()
+function var6_0.addSkillCaster(arg0_17, arg1_17)
+	local var0_17 = arg1_17._skill_id
+	local var1_17 = arg1_17._srcBuff:GetLv()
 
-	if not var0.Battle.BattleSkillUnit.IsFireSkill(var0, var1) then
+	if not var0_0.Battle.BattleSkillUnit.IsFireSkill(var0_17, var1_17) then
 		return
 	end
 
-	local var2 = arg0._skillList[var0]
+	local var2_17 = arg0_17._skillList[var0_17]
 
-	if not var2 then
-		local var3 = cloneTplTo(arg0._skillTpl, arg0._skillContainer)
-		local var4 = var3:Find("common")
+	if not var2_17 then
+		local var3_17 = cloneTplTo(arg0_17._skillTpl, arg0_17._skillContainer)
+		local var4_17 = var3_17:Find("common")
 
-		setText(var4:Find("skillID"), arg1._skill_id)
+		setText(var4_17:Find("skillID"), arg1_17._skill_id)
 
-		local var5 = var3:Find("common/icon")
-		local var6 = arg1._srcBuff._tempData.icon or 10120
+		local var5_17 = var3_17:Find("common/icon")
+		local var6_17 = arg1_17._srcBuff._tempData.icon or 10120
 
-		GetImageSpriteFromAtlasAsync("skillicon/" .. var6, "", var5)
+		GetImageSpriteFromAtlasAsync("skillicon/" .. var6_17, "", var5_17)
 		Canvas.ForceUpdateCanvases()
 
-		var2 = {
-			tf = var3,
+		var2_17 = {
+			tf = var3_17,
 			effectList = {}
 		}
-		arg0._skillList[var0] = var2
+		arg0_17._skillList[var0_17] = var2_17
 	end
 
-	table.insert(var2.effectList, arg1)
-	arg0:updateCastEffectTpl(var0)
+	table.insert(var2_17.effectList, arg1_17)
+	arg0_17:updateCastEffectTpl(var0_17)
 end
 
-function var6.updateSkillList(arg0)
-	for iter0, iter1 in pairs(arg0._skillList) do
-		arg0:updateCastEffectTpl(iter0)
+function var6_0.updateSkillList(arg0_18)
+	for iter0_18, iter1_18 in pairs(arg0_18._skillList) do
+		arg0_18:updateCastEffectTpl(iter0_18)
 	end
 end
 
-function var6.updateCastEffectTpl(arg0, arg1)
-	local var0 = arg0._skillList[arg1]
-	local var1 = var0.tf
-	local var2 = var0.effectList
-	local var3 = 0
-	local var4 = 0
+function var6_0.updateCastEffectTpl(arg0_19, arg1_19)
+	local var0_19 = arg0_19._skillList[arg1_19]
+	local var1_19 = var0_19.tf
+	local var2_19 = var0_19.effectList
+	local var3_19 = 0
+	local var4_19 = 0
 
-	for iter0, iter1 in ipairs(var2) do
-		var3 = var3 + iter1:GetCastCount()
-		var4 = var4 + iter1:GetSkillFireDamageSum()
+	for iter0_19, iter1_19 in ipairs(var2_19) do
+		var3_19 = var3_19 + iter1_19:GetCastCount()
+		var4_19 = var4_19 + iter1_19:GetSkillFireDamageSum()
 	end
 
-	local var5 = var1:Find("common")
+	local var5_19 = var1_19:Find("common")
 
-	setText(var5:Find("count"), var3)
-	setText(var5:Find("damageSum"), var4)
+	setText(var5_19:Find("count"), var3_19)
+	setText(var5_19:Find("damageSum"), var4_19)
 end
 
-function var6.Dispose(arg0)
-	pg.DelegateInfo.Dispose(arg0)
+function var6_0.Dispose(arg0_20)
+	pg.DelegateInfo.Dispose(arg0_20)
 
-	arg0._unit = nil
-	arg0._secondaryAttrList = nil
-	arg0._buffList = nil
-	arg0._weaponList = nil
+	arg0_20._unit = nil
+	arg0_20._secondaryAttrList = nil
+	arg0_20._buffList = nil
+	arg0_20._weaponList = nil
 
-	GameObject.Destroy(arg0._go)
-	var0.EventListener.DetachEventListener(arg0)
+	GameObject.Destroy(arg0_20._go)
+	var0_0.EventListener.DetachEventListener(arg0_20)
 end
 
-function var6.setDeltaText(arg0, arg1)
-	setText(arg0, arg1)
+function var6_0.setDeltaText(arg0_21, arg1_21)
+	setText(arg0_21, arg1_21)
 
-	local var0 = arg1 > 0 and Color.green or Color.red
+	local var0_21 = arg1_21 > 0 and Color.green or Color.red
 
-	arg0:GetComponent(typeof(Text)).color = var0
+	arg0_21:GetComponent(typeof(Text)).color = var0_21
 end
 
-var6.WeaponForger = {}
-var6.BulletForger = {}
-var6.BarrageForger = {}
-var6.AircraftForger = {}
+var6_0.WeaponForger = {}
+var6_0.BulletForger = {}
+var6_0.BarrageForger = {}
+var6_0.AircraftForger = {}

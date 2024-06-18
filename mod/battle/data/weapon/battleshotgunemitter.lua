@@ -1,39 +1,39 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConst
-local var2 = math
-local var3 = class("BattleShotgunEmitter", var0.Battle.BattleBulletEmitter)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConst
+local var2_0 = math
+local var3_0 = class("BattleShotgunEmitter", var0_0.Battle.BattleBulletEmitter)
 
-var0.Battle.BattleShotgunEmitter = var3
-var3.__name = "BattleShotgunEmitter"
+var0_0.Battle.BattleShotgunEmitter = var3_0
+var3_0.__name = "BattleShotgunEmitter"
 
-function var3.Ctor(arg0, arg1, arg2, arg3)
-	var0.Battle.BattleShotgunEmitter.super.Ctor(arg0, arg1, arg2, arg3)
+function var3_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	var0_0.Battle.BattleShotgunEmitter.super.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 
-	arg0.PrimalIteration = arg0._nonDelayPrimalIteration
+	arg0_1.PrimalIteration = arg0_1._nonDelayPrimalIteration
 end
 
-function var3.Fire(arg0, arg1, arg2, arg3)
-	arg0._angleRange = arg3
+function var3_0.Fire(arg0_2, arg1_2, arg2_2, arg3_2)
+	arg0_2._angleRange = arg3_2
 
-	var0.Battle.BattleShotgunEmitter.super.Fire(arg0, arg1, arg2)
+	var0_0.Battle.BattleShotgunEmitter.super.Fire(arg0_2, arg1_2, arg2_2)
 end
 
-function var3.GenerateBullet(arg0)
-	local var0 = arg0._convertedDirBarrage[arg0._primalCounter]
-	local var1 = var0.OffsetX
+function var3_0.GenerateBullet(arg0_3)
+	local var0_3 = arg0_3._convertedDirBarrage[arg0_3._primalCounter]
+	local var1_3 = var0_3.OffsetX
 
-	arg0._delay = var0.Delay
+	arg0_3._delay = var0_3.Delay
 
-	local var2
+	local var2_3
 
-	if arg0._isRandomAngle then
-		var2 = (var2.random() - 0.5) * var2.random(arg0._angleRange) - arg0._angleRange / 2
+	if arg0_3._isRandomAngle then
+		var2_3 = (var2_0.random() - 0.5) * var2_0.random(arg0_3._angleRange) - arg0_3._angleRange / 2
 	else
-		var2 = var2.random(arg0._angleRange) - arg0._angleRange / 2
+		var2_3 = var2_0.random(arg0_3._angleRange) - arg0_3._angleRange / 2
 	end
 
-	arg0._spawnFunc(var1, var0.OffsetZ, var2, arg0._offsetPriority, arg0._target, arg0._primalCounter)
-	arg0:Interation()
+	arg0_3._spawnFunc(var1_3, var0_3.OffsetZ, var2_3, arg0_3._offsetPriority, arg0_3._target, arg0_3._primalCounter)
+	arg0_3:Interation()
 end

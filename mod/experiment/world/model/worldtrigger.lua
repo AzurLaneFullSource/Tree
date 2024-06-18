@@ -1,6 +1,6 @@
-﻿local var0 = class("WorldTrigger", import("...BaseEntity"))
+﻿local var0_0 = class("WorldTrigger", import("...BaseEntity"))
 
-var0.Fields = {
+var0_0.Fields = {
 	config = "table",
 	progress = "number",
 	id = "number",
@@ -8,24 +8,24 @@ var0.Fields = {
 	desc = "string"
 }
 
-function var0.Setup(arg0, arg1)
-	arg0.id = arg1
+function var0_0.Setup(arg0_1, arg1_1)
+	arg0_1.id = arg1_1
 end
 
-function var0.GetProgress(arg0)
-	return arg0.progress
+function var0_0.GetProgress(arg0_2)
+	return arg0_2.progress
 end
 
-function var0.GetMaxProgress(arg0)
-	return arg0.maxProgress
+function var0_0.GetMaxProgress(arg0_3)
+	return arg0_3.maxProgress
 end
 
-function var0.GetDesc(arg0)
-	return string.format("%s(%s/%s)", arg0.desc, arg0.progress, arg0.maxProgress)
+function var0_0.GetDesc(arg0_4)
+	return string.format("%s(%s/%s)", arg0_4.desc, arg0_4.progress, arg0_4.maxProgress)
 end
 
-function var0.IsAchieved(arg0)
-	return arg0:GetProgress() >= arg0:GetMaxProgress()
+function var0_0.IsAchieved(arg0_5)
+	return arg0_5:GetProgress() >= arg0_5:GetMaxProgress()
 end
 
-return var0
+return var0_0

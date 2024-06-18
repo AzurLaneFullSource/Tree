@@ -1,11 +1,11 @@
-﻿local var0 = class("CardPuzzleGift", BaseVO)
+﻿local var0_0 = class("CardPuzzleGift", BaseVO)
 
-var0.TYPE = {
+var0_0.TYPE = {
 	GLOBAL = 1,
 	USABLE = 3,
 	BATTLE = 2
 }
-var0.EFFECT_TYPE = {
+var0_0.EFFECT_TYPE = {
 	COIN_BONUS = 5,
 	GLOBAL_ATTRIBUTE_BONUS = 1,
 	ROGUE_DROP_BONUS = 3,
@@ -13,83 +13,83 @@ var0.EFFECT_TYPE = {
 	BATTLE_BUFF = 2
 }
 
-function var0.CreateByNetData(arg0)
-	local var0 = {}
+function var0_0.CreateByNetData(arg0_1)
+	local var0_1 = {}
 
-	for iter0 = 1, arg0.num do
-		table.insert(var0, var0.New({
-			configId = arg0.id
+	for iter0_1 = 1, arg0_1.num do
+		table.insert(var0_1, var0_0.New({
+			configId = arg0_1.id
 		}))
 	end
 
-	return var0
+	return var0_1
 end
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_2)
 	return pg.puzzle_relics_template
 end
 
-function var0.GetIconPath(arg0)
-	return "roguegifts/" .. arg0:getConfig("icon")
+function var0_0.GetIconPath(arg0_3)
+	return "roguegifts/" .. arg0_3:getConfig("icon")
 end
 
-function var0.GetConfigId(arg0)
-	return arg0.configId
+function var0_0.GetConfigId(arg0_4)
+	return arg0_4.configId
 end
 
-function var0.GetName(arg0)
-	return arg0:getConfig("name")
+function var0_0.GetName(arg0_5)
+	return arg0_5:getConfig("name")
 end
 
-function var0.GetType(arg0)
-	return arg0:getConfig("type")
+function var0_0.GetType(arg0_6)
+	return arg0_6:getConfig("type")
 end
 
-function var0.GetDesc(arg0)
-	return arg0:getConfig("desc")
+function var0_0.GetDesc(arg0_7)
+	return arg0_7:getConfig("desc")
 end
 
-function var0.GetRarity(arg0)
-	return arg0:getConfig("rarity")
+function var0_0.GetRarity(arg0_8)
+	return arg0_8:getConfig("rarity")
 end
 
-function var0.GetEffects(arg0)
-	local var0 = arg0:getConfig("arg_list")
+function var0_0.GetEffects(arg0_9)
+	local var0_9 = arg0_9:getConfig("arg_list")
 
-	return _.map(var0, function(arg0)
-		local var0 = pg.puzzle_relics_effect[arg0]
+	return _.map(var0_9, function(arg0_10)
+		local var0_10 = pg.puzzle_relics_effect[arg0_10]
 
-		assert(var0)
+		assert(var0_10)
 
-		return var0
+		return var0_10
 	end)
 end
 
-function var0.GetAttributeBonus(arg0, arg1)
-	local var0 = {}
+function var0_0.GetAttributeBonus(arg0_11, arg1_11)
+	local var0_11 = {}
 
-	if arg0:GetType() ~= var0.TYPE.GLOBAL then
-		return var0
+	if arg0_11:GetType() ~= var0_0.TYPE.GLOBAL then
+		return var0_11
 	end
 
-	for iter0, iter1 in ipairs(arg0:GetEffects()) do
-		if iter1.type == var0.EFFECT_TYPE.GLOBAL_ATTRIBUTE_BONUS then
-			for iter2, iter3 in ipairs(iter1.arg_list) do
-				local var1 = iter3[1]
-				local var2 = iter3[2]
-				local var3 = iter3[3]
+	for iter0_11, iter1_11 in ipairs(arg0_11:GetEffects()) do
+		if iter1_11.type == var0_0.EFFECT_TYPE.GLOBAL_ATTRIBUTE_BONUS then
+			for iter2_11, iter3_11 in ipairs(iter1_11.arg_list) do
+				local var1_11 = iter3_11[1]
+				local var2_11 = iter3_11[2]
+				local var3_11 = iter3_11[3]
 
-				if table.contains(var1, arg1:getShipType()) then
-					table.insert(var0, {
-						type = CardPuzzleShip.PROPERTIES[var2],
-						value = var3
+				if table.contains(var1_11, arg1_11:getShipType()) then
+					table.insert(var0_11, {
+						type = CardPuzzleShip.PROPERTIES[var2_11],
+						value = var3_11
 					})
 				end
 			end
 		end
 	end
 
-	return var0
+	return var0_11
 end
 
-return var0
+return var0_0

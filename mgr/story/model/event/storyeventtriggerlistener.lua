@@ -1,56 +1,56 @@
-﻿local var0 = class("StoryEventTriggerListener", pm.Mediator)
+﻿local var0_0 = class("StoryEventTriggerListener", pm.Mediator)
 
-function var0.Ctor(arg0, arg1)
-	arg0.eventList = arg1
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.eventList = arg1_1
 
-	var0.super.Ctor(arg0)
-	pg.m02:registerMediator(arg0)
+	var0_0.super.Ctor(arg0_1)
+	pg.m02:registerMediator(arg0_1)
 
-	arg0.caches = {}
+	arg0_1.caches = {}
 end
 
-function var0.listNotificationInterests(arg0)
-	return arg0.eventList
+function var0_0.listNotificationInterests(arg0_2)
+	return arg0_2.eventList
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_3, arg1_3)
+	local var0_3 = arg1_3:getName()
+	local var1_3 = arg1_3:getBody()
 
-	print(var0, var1)
+	print(var0_3, var1_3)
 
-	arg0.caches[var0] = {
-		var1
+	arg0_3.caches[var0_3] = {
+		var1_3
 	}
 end
 
-function var0.Clear(arg0)
-	arg0.caches = {}
+function var0_0.Clear(arg0_4)
+	arg0_4.caches = {}
 end
 
-function var0.ExistCache(arg0, arg1)
-	return arg0.caches[arg1] ~= nil
+function var0_0.ExistCache(arg0_5, arg1_5)
+	return arg0_5.caches[arg1_5] ~= nil
 end
 
-function var0.ExistArg(arg0, arg1)
-	return arg0.caches[arg1][1] ~= nil
+function var0_0.ExistArg(arg0_6, arg1_6)
+	return arg0_6.caches[arg1_6][1] ~= nil
 end
 
-function var0.GetArg(arg0, arg1)
-	if not arg0:ExistCache(arg1) then
+function var0_0.GetArg(arg0_7, arg1_7)
+	if not arg0_7:ExistCache(arg1_7) then
 		return nil
 	end
 
-	if not arg0:ExistArg(arg1) then
+	if not arg0_7:ExistArg(arg1_7) then
 		return nil
 	end
 
-	return arg0.caches[arg1][1]
+	return arg0_7.caches[arg1_7][1]
 end
 
-function var0.Dispose(arg0)
-	arg0:Clear()
-	pg.m02:removeMediator(arg0.__cname)
+function var0_0.Dispose(arg0_8)
+	arg0_8:Clear()
+	pg.m02:removeMediator(arg0_8.__cname)
 end
 
-return var0
+return var0_0

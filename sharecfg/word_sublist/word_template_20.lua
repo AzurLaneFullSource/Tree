@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_20 = {}
+var0_0.word_template_20 = {}
 
-local var1 = var0.word_template_20
+local var1_0 = var0_0.word_template_20
 
 function temp()
-	var1.逆 = {
+	var1_0.逆 = {
 		援 = {
 			this = true
 		},
@@ -26,7 +26,7 @@ end
 temp()
 
 function temp()
-	var1.競 = {
+	var1_0.競 = {
 		馬 = {
 			this = true
 		}
@@ -36,7 +36,7 @@ end
 temp()
 
 function temp()
-	var1.強 = {
+	var1_0.強 = {
 		姦 = {
 			this = true,
 			處 = {
@@ -85,7 +85,7 @@ end
 temp()
 
 function temp()
-	var1.矯 = {
+	var1_0.矯 = {
 		正 = {
 			this = true
 		},
@@ -106,7 +106,7 @@ end
 temp()
 
 function temp()
-	var1.驚 = {
+	var1_0.驚 = {
 		異 = {
 			this = true
 		},
@@ -119,7 +119,7 @@ end
 temp()
 
 function temp()
-	var1.九 = {
+	var1_0.九 = {
 		評 = {
 			this = true,
 			論 = {
@@ -467,7 +467,7 @@ end
 temp()
 
 function temp()
-	var1.携 = {
+	var1_0.携 = {
 		帯 = {
 			サ = {
 				イ = {

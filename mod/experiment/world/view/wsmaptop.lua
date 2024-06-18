@@ -1,6 +1,6 @@
-﻿local var0 = class("WSMapTop", import("...BaseEntity"))
+﻿local var0_0 = class("WSMapTop", import("...BaseEntity"))
 
-var0.Fields = {
+var0_0.Fields = {
 	map = "table",
 	btnBack = "userdata",
 	rtGlobalBuffs = "userdata",
@@ -25,48 +25,48 @@ var0.Fields = {
 	fleetBuffs = "table",
 	rtMoveLimit = "userdata"
 }
-var0.Listeners = {
+var0_0.Listeners = {
 	onUpdateFleetBuff = "OnUpdateFleetBuff",
 	onUpdateGlobalBuff = "OnUpdateGlobalBuff",
 	onUpdateCmdSkill = "OnUpdateCmdSkill",
 	onUpdateSelectedFleet = "OnUpdateSelectedFleet"
 }
 
-function var0.Setup(arg0)
-	local var0 = nowWorld()
+function var0_0.Setup(arg0_1)
+	local var0_1 = nowWorld()
 
-	var0:AddListener(World.EventUpdateGlobalBuff, arg0.onUpdateGlobalBuff)
-	var0:GetAtlas():AddListener(WorldAtlas.EventUpdateActiveMap, arg0.onUpdateFleetBuff)
-	pg.DelegateInfo.New(arg0)
-	arg0:Init()
+	var0_1:AddListener(World.EventUpdateGlobalBuff, arg0_1.onUpdateGlobalBuff)
+	var0_1:GetAtlas():AddListener(WorldAtlas.EventUpdateActiveMap, arg0_1.onUpdateFleetBuff)
+	pg.DelegateInfo.New(arg0_1)
+	arg0_1:Init()
 end
 
-function var0.Dispose(arg0)
-	local var0 = nowWorld()
+function var0_0.Dispose(arg0_2)
+	local var0_2 = nowWorld()
 
-	var0:RemoveListener(World.EventUpdateGlobalBuff, arg0.onUpdateGlobalBuff)
-	var0:GetAtlas():RemoveListener(WorldAtlas.EventUpdateActiveMap, arg0.onUpdateFleetBuff)
-	arg0:RemoveFleetListener(arg0.fleet)
-	arg0:RemoveMapListener()
-	pg.DelegateInfo.Dispose(arg0)
-	arg0:Clear()
+	var0_2:RemoveListener(World.EventUpdateGlobalBuff, arg0_2.onUpdateGlobalBuff)
+	var0_2:GetAtlas():RemoveListener(WorldAtlas.EventUpdateActiveMap, arg0_2.onUpdateFleetBuff)
+	arg0_2:RemoveFleetListener(arg0_2.fleet)
+	arg0_2:RemoveMapListener()
+	pg.DelegateInfo.Dispose(arg0_2)
+	arg0_2:Clear()
 end
 
-local function var1(arg0, arg1)
-	if arg1.config.icon and #arg1.config.icon > 0 then
-		GetImageSpriteFromAtlasAsync("world/buff/" .. arg1.config.icon, "", arg0:Find("icon"))
+local function var1_0(arg0_3, arg1_3)
+	if arg1_3.config.icon and #arg1_3.config.icon > 0 then
+		GetImageSpriteFromAtlasAsync("world/buff/" .. arg1_3.config.icon, "", arg0_3:Find("icon"))
 	else
-		clearImageSprite(arg0:Find("icon"))
+		clearImageSprite(arg0_3:Find("icon"))
 	end
 
-	setText(arg0:Find("floor"), arg1:GetFloor())
-	setActive(arg0:Find("floor"), arg1.config.buff_maxfloor > 1)
+	setText(arg0_3:Find("floor"), arg1_3:GetFloor())
+	setActive(arg0_3:Find("floor"), arg1_3.config.buff_maxfloor > 1)
 
-	local var0 = arg1:GetLost()
+	local var0_3 = arg1_3:GetLost()
 
-	setText(arg0:Find("lost"), var0)
-	setActive(arg0:Find("lost"), var0)
-	onButton(self, arg0, function()
+	setText(arg0_3:Find("lost"), var0_3)
+	setActive(arg0_3:Find("lost"), var0_3)
+	onButton(self, arg0_3, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
 			content = "",
@@ -75,200 +75,200 @@ local function var1(arg0, arg1)
 			drop = Drop.New({
 				isWorldBuff = true,
 				type = DROP_TYPE_STRATEGY,
-				id = arg1.id
+				id = arg1_3.id
 			})
 		})
 	end, SFX_PANEL)
 end
 
-function var0.Init(arg0)
-	local var0 = arg0.transform
+function var0_0.Init(arg0_5)
+	local var0_5 = arg0_5.transform
 
-	arg0.btnBack = var0:Find("back_button")
-	arg0.rtMapName = var0:Find("title/name")
-	arg0.rtTime = var0:Find("title/time")
-	arg0.rtResource = var0:Find("resources")
-	arg0.rtGlobalBuffs = var0:Find("features/status_field/global_buffs")
-	arg0.rtMoveLimit = var0:Find("features/status_field/move_limit")
-	arg0.rtPoisonRate = var0:Find("features/status_field/poison_rate")
-	arg0.rtFleetBuffs = var0:Find("features/fleet_field/fleet_buffs")
-	arg0.rtCmdSkills = var0:Find("features/fleet_field/cmd_skills")
+	arg0_5.btnBack = var0_5:Find("back_button")
+	arg0_5.rtMapName = var0_5:Find("title/name")
+	arg0_5.rtTime = var0_5:Find("title/time")
+	arg0_5.rtResource = var0_5:Find("resources")
+	arg0_5.rtGlobalBuffs = var0_5:Find("features/status_field/global_buffs")
+	arg0_5.rtMoveLimit = var0_5:Find("features/status_field/move_limit")
+	arg0_5.rtPoisonRate = var0_5:Find("features/status_field/poison_rate")
+	arg0_5.rtFleetBuffs = var0_5:Find("features/fleet_field/fleet_buffs")
+	arg0_5.rtCmdSkills = var0_5:Find("features/fleet_field/cmd_skills")
 
-	setText(arg0.rtMapName, "")
-	setText(arg0.rtTime, "")
+	setText(arg0_5.rtMapName, "")
+	setText(arg0_5.rtTime, "")
 
-	arg0.globalBuffItemList = UIItemList.New(arg0.rtGlobalBuffs, arg0.rtGlobalBuffs:GetChild(0))
+	arg0_5.globalBuffItemList = UIItemList.New(arg0_5.rtGlobalBuffs, arg0_5.rtGlobalBuffs:GetChild(0))
 
-	arg0.globalBuffItemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			var1(arg2, arg0.globalBuffs[arg1 + 1])
+	arg0_5.globalBuffItemList:make(function(arg0_6, arg1_6, arg2_6)
+		if arg0_6 == UIItemList.EventUpdate then
+			var1_0(arg2_6, arg0_5.globalBuffs[arg1_6 + 1])
 		end
 	end)
 
-	arg0.fleetBuffItemList = UIItemList.New(arg0.rtFleetBuffs, arg0.rtFleetBuffs:GetChild(0))
+	arg0_5.fleetBuffItemList = UIItemList.New(arg0_5.rtFleetBuffs, arg0_5.rtFleetBuffs:GetChild(0))
 
-	arg0.fleetBuffItemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			var1(arg2, arg0.fleetBuffs[arg1 + 1])
+	arg0_5.fleetBuffItemList:make(function(arg0_7, arg1_7, arg2_7)
+		if arg0_7 == UIItemList.EventUpdate then
+			var1_0(arg2_7, arg0_5.fleetBuffs[arg1_7 + 1])
 		end
 	end)
 
-	arg0.cmdSkillItemList = UIItemList.New(arg0.rtCmdSkills, arg0.rtCmdSkills:GetChild(0))
+	arg0_5.cmdSkillItemList = UIItemList.New(arg0_5.rtCmdSkills, arg0_5.rtCmdSkills:GetChild(0))
 
-	arg0.cmdSkillItemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg0.cmdSkills[arg1 + 1]
+	arg0_5.cmdSkillItemList:make(function(arg0_8, arg1_8, arg2_8)
+		if arg0_8 == UIItemList.EventUpdate then
+			local var0_8 = arg0_5.cmdSkills[arg1_8 + 1]
 
-			GetImageSpriteFromAtlasAsync("commanderskillicon/" .. var0:getConfig("icon"), "", arg2:Find("icon"))
-			setText(arg2:Find("floor"), "Lv." .. var0:getConfig("lv"))
-			setActive(arg2:Find("floor"), true)
-			setActive(arg2:Find("lost"), false)
-			onButton(arg0, arg2, function()
-				arg0.cmdSkillFunc(var0)
+			GetImageSpriteFromAtlasAsync("commanderskillicon/" .. var0_8:getConfig("icon"), "", arg2_8:Find("icon"))
+			setText(arg2_8:Find("floor"), "Lv." .. var0_8:getConfig("lv"))
+			setActive(arg2_8:Find("floor"), true)
+			setActive(arg2_8:Find("lost"), false)
+			onButton(arg0_5, arg2_8, function()
+				arg0_5.cmdSkillFunc(var0_8)
 			end, SFX_PANEL)
 		end
 	end)
 end
 
-function var0.Update(arg0, arg1, arg2)
-	if arg0.entrance ~= arg1 or arg0.map ~= arg2 or arg0.gid ~= arg2.gid then
-		arg0:RemoveMapListener()
+function var0_0.Update(arg0_10, arg1_10, arg2_10)
+	if arg0_10.entrance ~= arg1_10 or arg0_10.map ~= arg2_10 or arg0_10.gid ~= arg2_10.gid then
+		arg0_10:RemoveMapListener()
 
-		arg0.entrance = arg1
-		arg0.map = arg2
-		arg0.gid = arg2.gid
+		arg0_10.entrance = arg1_10
+		arg0_10.map = arg2_10
+		arg0_10.gid = arg2_10.gid
 
-		arg0:AddMapListener()
-		arg0:OnUpdateMap()
-		arg0:OnUpdateSelectedFleet()
-		arg0:OnUpdateGlobalBuff()
-		arg0:OnUpdatePoison()
-		arg0:OnUpdateMoveLimit()
+		arg0_10:AddMapListener()
+		arg0_10:OnUpdateMap()
+		arg0_10:OnUpdateSelectedFleet()
+		arg0_10:OnUpdateGlobalBuff()
+		arg0_10:OnUpdatePoison()
+		arg0_10:OnUpdateMoveLimit()
 	end
 end
 
-function var0.AddMapListener(arg0)
-	if arg0.map then
-		arg0.map:AddListener(WorldMap.EventUpdateFIndex, arg0.onUpdateSelectedFleet)
+function var0_0.AddMapListener(arg0_11)
+	if arg0_11.map then
+		arg0_11.map:AddListener(WorldMap.EventUpdateFIndex, arg0_11.onUpdateSelectedFleet)
 	end
 end
 
-function var0.RemoveMapListener(arg0)
-	if arg0.map then
-		arg0.map:RemoveListener(WorldMap.EventUpdateFIndex, arg0.onUpdateSelectedFleet)
+function var0_0.RemoveMapListener(arg0_12)
+	if arg0_12.map then
+		arg0_12.map:RemoveListener(WorldMap.EventUpdateFIndex, arg0_12.onUpdateSelectedFleet)
 	end
 end
 
-function var0.AddFleetListener(arg0, arg1)
-	if arg1 then
-		arg1:AddListener(WorldMapFleet.EventUpdateBuff, arg0.onUpdateFleetBuff)
-		arg1:AddListener(WorldMapFleet.EventUpdateDamageLevel, arg0.onUpdateFleetBuff)
-		arg1:AddListener(WorldMapFleet.EventUpdateCatSalvage, arg0.onUpdateCmdSkill)
+function var0_0.AddFleetListener(arg0_13, arg1_13)
+	if arg1_13 then
+		arg1_13:AddListener(WorldMapFleet.EventUpdateBuff, arg0_13.onUpdateFleetBuff)
+		arg1_13:AddListener(WorldMapFleet.EventUpdateDamageLevel, arg0_13.onUpdateFleetBuff)
+		arg1_13:AddListener(WorldMapFleet.EventUpdateCatSalvage, arg0_13.onUpdateCmdSkill)
 	end
 end
 
-function var0.RemoveFleetListener(arg0, arg1)
-	if arg1 then
-		arg1:RemoveListener(WorldMapFleet.EventUpdateBuff, arg0.onUpdateFleetBuff)
-		arg1:RemoveListener(WorldMapFleet.EventUpdateDamageLevel, arg0.onUpdateFleetBuff)
-		arg1:RemoveListener(WorldMapFleet.EventUpdateCatSalvage, arg0.onUpdateCmdSkill)
+function var0_0.RemoveFleetListener(arg0_14, arg1_14)
+	if arg1_14 then
+		arg1_14:RemoveListener(WorldMapFleet.EventUpdateBuff, arg0_14.onUpdateFleetBuff)
+		arg1_14:RemoveListener(WorldMapFleet.EventUpdateDamageLevel, arg0_14.onUpdateFleetBuff)
+		arg1_14:RemoveListener(WorldMapFleet.EventUpdateCatSalvage, arg0_14.onUpdateCmdSkill)
 	end
 end
 
-function var0.OnUpdateMap(arg0)
-	setText(arg0.rtMapName, arg0.map:GetName(arg0.entrance))
+function var0_0.OnUpdateMap(arg0_15)
+	setText(arg0_15.rtMapName, arg0_15.map:GetName(arg0_15.entrance))
 end
 
-function var0.OnUpdateSelectedFleet(arg0)
-	local var0 = arg0.map:GetFleet()
+function var0_0.OnUpdateSelectedFleet(arg0_16)
+	local var0_16 = arg0_16.map:GetFleet()
 
-	if arg0.fleet ~= var0 then
-		arg0:RemoveFleetListener(arg0.fleet)
+	if arg0_16.fleet ~= var0_16 then
+		arg0_16:RemoveFleetListener(arg0_16.fleet)
 
-		arg0.fleet = var0
+		arg0_16.fleet = var0_16
 
-		arg0:AddFleetListener(arg0.fleet)
-		arg0:OnUpdateFleetBuff()
-		arg0:OnUpdateCmdSkill()
+		arg0_16:AddFleetListener(arg0_16.fleet)
+		arg0_16:OnUpdateFleetBuff()
+		arg0_16:OnUpdateCmdSkill()
 	end
 end
 
-function var0.OnUpdateGlobalBuff(arg0)
-	arg0.globalBuffs = nowWorld():GetWorldMapBuffs()
+function var0_0.OnUpdateGlobalBuff(arg0_17)
+	arg0_17.globalBuffs = nowWorld():GetWorldMapBuffs()
 
-	arg0.globalBuffItemList:align(#arg0.globalBuffs)
+	arg0_17.globalBuffItemList:align(#arg0_17.globalBuffs)
 end
 
-function var0.OnUpdateMoveLimit(arg0)
-	local var0 = not arg0.map:IsUnlockFleetMode()
+function var0_0.OnUpdateMoveLimit(arg0_18)
+	local var0_18 = not arg0_18.map:IsUnlockFleetMode()
 
-	setActive(arg0.rtMoveLimit, var0)
+	setActive(arg0_18.rtMoveLimit, var0_18)
 
-	if var0 then
-		local var1 = WorldBuff.New()
+	if var0_18 then
+		local var1_18 = WorldBuff.New()
 
-		var1:Setup({
+		var1_18:Setup({
 			floor = 0,
 			id = WorldConst.MoveLimitBuffId
 		})
-		var1(arg0.rtMoveLimit, var1)
+		var1_0(arg0_18.rtMoveLimit, var1_18)
 	end
 end
 
-function var0.OnUpdatePoison(arg0)
-	local var0, var1 = arg0.map:GetEventPoisonRate()
+function var0_0.OnUpdatePoison(arg0_19)
+	local var0_19, var1_19 = arg0_19.map:GetEventPoisonRate()
 
-	setActive(arg0.rtPoisonRate, var1 > 0)
+	setActive(arg0_19.rtPoisonRate, var1_19 > 0)
 
-	if var1 > 0 then
-		local var2 = calcFloor(var0 / var1 * 100)
-		local var3 = Clone(pg.gameset.world_sairen_infection.description)
+	if var1_19 > 0 then
+		local var2_19 = calcFloor(var0_19 / var1_19 * 100)
+		local var3_19 = Clone(pg.gameset.world_sairen_infection.description)
 
-		table.insert(var3, 1, 0)
-		table.insert(var3, 999)
-		eachChild(arg0.rtPoisonRate:Find("bg/ring"), function(arg0)
-			local var0 = arg0:GetSiblingIndex() + 1
+		table.insert(var3_19, 1, 0)
+		table.insert(var3_19, 999)
+		eachChild(arg0_19.rtPoisonRate:Find("bg/ring"), function(arg0_20)
+			local var0_20 = arg0_20:GetSiblingIndex() + 1
 
-			if var2 >= var3[var0] and var2 < var3[var0 + 1] then
-				setActive(arg0, true)
+			if var2_19 >= var3_19[var0_20] and var2_19 < var3_19[var0_20 + 1] then
+				setActive(arg0_20, true)
 
-				arg0:GetComponent(typeof(Image)).fillAmount = var2 / 100
+				arg0_20:GetComponent(typeof(Image)).fillAmount = var2_19 / 100
 			else
-				setActive(arg0, false)
+				setActive(arg0_20, false)
 			end
 
-			setText(arg0.rtPoisonRate:Find("bg/Text"), var2 .. "%")
+			setText(arg0_19.rtPoisonRate:Find("bg/Text"), var2_19 .. "%")
 		end)
-		onButton(arg0, arg0.rtPoisonRate, function()
-			arg0.poisonFunc(var2)
+		onButton(arg0_19, arg0_19.rtPoisonRate, function()
+			arg0_19.poisonFunc(var2_19)
 		end, SFX_PANEL)
 	end
 end
 
-function var0.OnUpdateFleetBuff(arg0)
-	arg0.fleetBuffs = arg0.fleet:GetBuffList()
+function var0_0.OnUpdateFleetBuff(arg0_22)
+	arg0_22.fleetBuffs = arg0_22.fleet:GetBuffList()
 
-	local var0 = arg0.fleet:GetDamageBuff()
+	local var0_22 = arg0_22.fleet:GetDamageBuff()
 
-	if var0 then
-		table.insert(arg0.fleetBuffs, 1, var0)
+	if var0_22 then
+		table.insert(arg0_22.fleetBuffs, 1, var0_22)
 	end
 
-	arg0.fleetBuffItemList:align(#arg0.fleetBuffs)
-	setActive(arg0.rtFleetBuffs, #arg0.fleetBuffs > 0)
+	arg0_22.fleetBuffItemList:align(#arg0_22.fleetBuffs)
+	setActive(arg0_22.rtFleetBuffs, #arg0_22.fleetBuffs > 0)
 end
 
-function var0.OnUpdateCmdSkill(arg0)
-	if arg0.fleet:IsCatSalvage() then
-		arg0.cmdSkills = {}
+function var0_0.OnUpdateCmdSkill(arg0_23)
+	if arg0_23.fleet:IsCatSalvage() then
+		arg0_23.cmdSkills = {}
 	else
-		arg0.cmdSkills = _.map(_.values(arg0.fleet:getCommanders()), function(arg0)
-			return arg0:getSkills()[1]
+		arg0_23.cmdSkills = _.map(_.values(arg0_23.fleet:getCommanders()), function(arg0_24)
+			return arg0_24:getSkills()[1]
 		end)
 	end
 
-	arg0.cmdSkillItemList:align(#arg0.cmdSkills)
-	setActive(arg0.rtCmdSkills, #arg0.cmdSkills > 0)
+	arg0_23.cmdSkillItemList:align(#arg0_23.cmdSkills)
+	setActive(arg0_23.rtCmdSkills, #arg0_23.cmdSkills > 0)
 end
 
-return var0
+return var0_0

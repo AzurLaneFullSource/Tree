@@ -1,92 +1,92 @@
-﻿local var0 = class("MainFoldableHelper")
+﻿local var0_0 = class("MainFoldableHelper")
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0._tf = arg1
-	arg0.foldPosition = arg0:InitFoldPositions(arg2)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1._tf = arg1_1
+	arg0_1.foldPosition = arg0_1:InitFoldPositions(arg2_1)
 end
 
-function var0.IsInit(arg0)
-	return arg0._tf ~= nil
+function var0_0.IsInit(arg0_2)
+	return arg0_2._tf ~= nil
 end
 
-function var0.InitFoldPositions(arg0, arg1)
-	if not arg0:IsInit() then
+function var0_0.InitFoldPositions(arg0_3, arg1_3)
+	if not arg0_3:IsInit() then
 		return nil
 	end
 
-	local var0 = arg0._tf.anchoredPosition
-	local var1 = 1500
-	local var2 = 200
-	local var3 = var0.x
-	local var4 = 0
-	local var5 = var0.y
-	local var6 = 0
+	local var0_3 = arg0_3._tf.anchoredPosition
+	local var1_3 = 1500
+	local var2_3 = 200
+	local var3_3 = var0_3.x
+	local var4_3 = 0
+	local var5_3 = var0_3.y
+	local var6_3 = 0
 
-	if arg1.x > 0 then
-		var4 = var0.x + var1
-	elseif arg1.x < 0 then
-		var4 = var0.x - var1
+	if arg1_3.x > 0 then
+		var4_3 = var0_3.x + var1_3
+	elseif arg1_3.x < 0 then
+		var4_3 = var0_3.x - var1_3
 	end
 
-	if arg1.y > 0 then
-		var6 = var0.y + var2
-	elseif arg1.y < 0 then
-		var6 = var0.y - var2
+	if arg1_3.y > 0 then
+		var6_3 = var0_3.y + var2_3
+	elseif arg1_3.y < 0 then
+		var6_3 = var0_3.y - var2_3
 	end
 
-	return Vector4(var3, var4, var5, var6)
+	return Vector4(var3_3, var4_3, var5_3, var6_3)
 end
 
-function var0.Fold(arg0, arg1, arg2)
-	if not arg0:IsInit() then
+function var0_0.Fold(arg0_4, arg1_4, arg2_4)
+	if not arg0_4:IsInit() then
 		return
 	end
 
-	LeanTween.cancel(arg0._tf.gameObject)
+	LeanTween.cancel(arg0_4._tf.gameObject)
 
-	local var0 = arg0.foldPosition
+	local var0_4 = arg0_4.foldPosition
 
-	if var0.y ~= 0 then
-		local var1 = arg1 and Vector2(var0.x, var0.y) or Vector2(var0.y, var0.x)
+	if var0_4.y ~= 0 then
+		local var1_4 = arg1_4 and Vector2(var0_4.x, var0_4.y) or Vector2(var0_4.y, var0_4.x)
 
-		arg0:LeanTweenValue(var1, arg2, true)
+		arg0_4:LeanTweenValue(var1_4, arg2_4, true)
 	end
 
-	if var0.w ~= 0 then
-		local var2 = arg1 and Vector2(var0.z, var0.w) or Vector2(var0.w, var0.z)
+	if var0_4.w ~= 0 then
+		local var2_4 = arg1_4 and Vector2(var0_4.z, var0_4.w) or Vector2(var0_4.w, var0_4.z)
 
-		arg0:LeanTweenValue(var2, arg2, false)
+		arg0_4:LeanTweenValue(var2_4, arg2_4, false)
 	end
 end
 
-function var0.LeanTweenValue(arg0, arg1, arg2, arg3)
-	local function var0(arg0)
-		if arg3 then
-			setAnchoredPosition(arg0._tf.gameObject, {
-				x = arg0
+function var0_0.LeanTweenValue(arg0_5, arg1_5, arg2_5, arg3_5)
+	local function var0_5(arg0_6)
+		if arg3_5 then
+			setAnchoredPosition(arg0_5._tf.gameObject, {
+				x = arg0_6
 			})
 		else
-			setAnchoredPosition(arg0._tf.gameObject, {
-				y = arg0
+			setAnchoredPosition(arg0_5._tf.gameObject, {
+				y = arg0_6
 			})
 		end
 	end
 
-	if arg2 <= 0 then
-		var0(arg1.y)
+	if arg2_5 <= 0 then
+		var0_5(arg1_5.y)
 
 		return
 	end
 
-	LeanTween.value(arg0._tf.gameObject, arg1.x, arg1.y, arg2):setOnUpdate(System.Action_float(var0)):setEase(LeanTweenType.easeInOutExpo)
+	LeanTween.value(arg0_5._tf.gameObject, arg1_5.x, arg1_5.y, arg2_5):setOnUpdate(System.Action_float(var0_5)):setEase(LeanTweenType.easeInOutExpo)
 end
 
-function var0.Dispose(arg0)
-	if not arg0:IsInit() then
+function var0_0.Dispose(arg0_7)
+	if not arg0_7:IsInit() then
 		return nil
 	end
 
-	LeanTween.cancel(arg0._tf.gameObject)
+	LeanTween.cancel(arg0_7._tf.gameObject)
 end
 
-return var0
+return var0_0

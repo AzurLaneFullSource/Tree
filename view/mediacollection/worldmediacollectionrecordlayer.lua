@@ -1,129 +1,129 @@
-﻿local var0 = class("WorldMediaCollectionRecordLayer", import(".WorldMediaCollectionTemplateLayer"))
+﻿local var0_0 = class("WorldMediaCollectionRecordLayer", import(".WorldMediaCollectionTemplateLayer"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "WorldMediaCollectionRecordUI"
 end
 
-function var0.OnInit(arg0)
-	arg0._top = arg0:findTF("Top")
-	arg0.memoryMask = arg0:findTF("StoryMask", arg0._top)
+function var0_0.OnInit(arg0_2)
+	arg0_2._top = arg0_2:findTF("Top")
+	arg0_2.memoryMask = arg0_2:findTF("StoryMask", arg0_2._top)
 end
 
-function var0.OnSelected(arg0)
-	var0.super.OnSelected(arg0)
+function var0_0.OnSelected(arg0_3)
+	var0_0.super.OnSelected(arg0_3)
 
-	if arg0.contextData.recordGroup then
-		arg0:ShowRecordGroup(arg0.contextData.recordGroup)
+	if arg0_3.contextData.recordGroup then
+		arg0_3:ShowRecordGroup(arg0_3.contextData.recordGroup)
 	else
-		arg0:OpenGroupLayer()
+		arg0_3:OpenGroupLayer()
 	end
 end
 
-function var0.Backward(arg0)
-	if not arg0.contextData.recordGroup then
+function var0_0.Backward(arg0_4)
+	if not arg0_4.contextData.recordGroup then
 		return
 	end
 
-	arg0.contextData.recordGroup = nil
+	arg0_4.contextData.recordGroup = nil
 
-	arg0:OpenGroupLayer()
+	arg0_4:OpenGroupLayer()
 
 	return true
 end
 
-function var0.OnBackward(arg0)
-	return arg0:Backward()
+function var0_0.OnBackward(arg0_5)
+	return arg0_5:Backward()
 end
 
-function var0.OnReselected(arg0)
-	arg0:Backward()
+function var0_0.OnReselected(arg0_6)
+	arg0_6:Backward()
 end
 
-function var0.OnDeselected(arg0)
-	arg0.contextData.recordGroup = nil
+function var0_0.OnDeselected(arg0_7)
+	arg0_7.contextData.recordGroup = nil
 
-	var0.super.OnDeselected(arg0)
+	var0_0.super.OnDeselected(arg0_7)
 end
 
-function var0.Hide(arg0)
-	arg0:HideDetailLayer()
-	arg0:HideGroupLayer()
-	var0.super.Hide(arg0)
+function var0_0.Hide(arg0_8)
+	arg0_8:HideDetailLayer()
+	arg0_8:HideGroupLayer()
+	var0_0.super.Hide(arg0_8)
 end
 
-function var0.GetDetailLayer(arg0)
-	if not arg0.detailUI then
-		arg0.detailUI = WorldMediaCollectionRecordDetailLayer.New(arg0, arg0._tf, arg0.event, arg0.contextData)
+function var0_0.GetDetailLayer(arg0_9)
+	if not arg0_9.detailUI then
+		arg0_9.detailUI = WorldMediaCollectionRecordDetailLayer.New(arg0_9, arg0_9._tf, arg0_9.event, arg0_9.contextData)
 
-		arg0.detailUI:Load()
-		arg0.detailUI:SetStoryMask(arg0.memoryMask)
+		arg0_9.detailUI:Load()
+		arg0_9.detailUI:SetStoryMask(arg0_9.memoryMask)
 	end
 
-	return arg0.detailUI
+	return arg0_9.detailUI
 end
 
-function var0.ShowRecordGroup(arg0, arg1)
-	local var0 = arg0:GetDetailLayer()
+function var0_0.ShowRecordGroup(arg0_10, arg1_10)
+	local var0_10 = arg0_10:GetDetailLayer()
 
-	var0.buffer:Show()
-	var0.buffer:ShowRecordGroup(arg1)
-	arg0:HideGroupLayer()
+	var0_10.buffer:Show()
+	var0_10.buffer:ShowRecordGroup(arg1_10)
+	arg0_10:HideGroupLayer()
 end
 
-function var0.HideDetailLayer(arg0)
-	if not arg0.detailUI then
+function var0_0.HideDetailLayer(arg0_11)
+	if not arg0_11.detailUI then
 		return
 	end
 
-	arg0.detailUI.buffer:Hide()
+	arg0_11.detailUI.buffer:Hide()
 end
 
-function var0.CloseDetailLayer(arg0)
-	if arg0.detailUI then
-		arg0.detailUI:Destroy()
+function var0_0.CloseDetailLayer(arg0_12)
+	if arg0_12.detailUI then
+		arg0_12.detailUI:Destroy()
 
-		arg0.detailUI = nil
+		arg0_12.detailUI = nil
 	end
 end
 
-function var0.OpenGroupLayer(arg0)
-	local var0 = arg0:GetGroupLayer()
+function var0_0.OpenGroupLayer(arg0_13)
+	local var0_13 = arg0_13:GetGroupLayer()
 
-	var0.buffer:Show()
-	var0.buffer:RecordFilter()
-	arg0:HideDetailLayer()
+	var0_13.buffer:Show()
+	var0_13.buffer:RecordFilter()
+	arg0_13:HideDetailLayer()
 end
 
-function var0.GetGroupLayer(arg0)
-	if not arg0.groupUI then
-		arg0.groupUI = WorldMediaCollectionRecordGroupLayer.New(arg0, arg0._tf, arg0.event, arg0.contextData)
+function var0_0.GetGroupLayer(arg0_14)
+	if not arg0_14.groupUI then
+		arg0_14.groupUI = WorldMediaCollectionRecordGroupLayer.New(arg0_14, arg0_14._tf, arg0_14.event, arg0_14.contextData)
 
-		arg0.groupUI:Load()
+		arg0_14.groupUI:Load()
 	end
 
-	return arg0.groupUI
+	return arg0_14.groupUI
 end
 
-function var0.HideGroupLayer(arg0)
-	if not arg0.groupUI then
+function var0_0.HideGroupLayer(arg0_15)
+	if not arg0_15.groupUI then
 		return
 	end
 
-	arg0.groupUI.buffer:Hide()
+	arg0_15.groupUI.buffer:Hide()
 end
 
-function var0.CloseGroupLayer(arg0)
-	if arg0.groupUI then
-		arg0.groupUI:Destroy()
+function var0_0.CloseGroupLayer(arg0_16)
+	if arg0_16.groupUI then
+		arg0_16.groupUI:Destroy()
 
-		arg0.groupUI = nil
+		arg0_16.groupUI = nil
 	end
 end
 
-function var0.OnDestroy(arg0)
-	arg0:CloseDetailLayer()
-	arg0:CloseGroupLayer()
-	var0.super.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_17)
+	arg0_17:CloseDetailLayer()
+	arg0_17:CloseGroupLayer()
+	var0_0.super.OnDestroy(arg0_17)
 end
 
-return var0
+return var0_0

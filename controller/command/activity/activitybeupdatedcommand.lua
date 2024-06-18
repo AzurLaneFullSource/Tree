@@ -1,43 +1,43 @@
-﻿local var0 = class("ActivityBeUpdatedCommand", pm.SimpleCommand)
+﻿local var0_0 = class("ActivityBeUpdatedCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.activity
-	local var2 = var0.isInit
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.activity
+	local var2_1 = var0_1.isInit
 
-	if var1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_INSTAGRAM then
-		if var1:CanBeActivated() then
-			getProxy(ActivityProxy):AddInstagramTimer(var1.id)
+	if var1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_INSTAGRAM then
+		if var1_1:CanBeActivated() then
+			getProxy(ActivityProxy):AddInstagramTimer(var1_1.id)
 		end
-	elseif not var2 and var1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF and arg0:IsLinkVoteAct(var1) then
-		local var3 = ActivityPtData.New(var1)
+	elseif not var2_1 and var1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF and arg0_1:IsLinkVoteAct(var1_1) then
+		local var3_1 = ActivityPtData.New(var1_1)
 
-		if var3:CanGetAward() then
-			local var4 = var3:GetCurrTarget()
+		if var3_1:CanGetAward() then
+			local var4_1 = var3_1:GetCurrTarget()
 
-			arg0:sendNotification(GAME.ACT_NEW_PT, {
+			arg0_1:sendNotification(GAME.ACT_NEW_PT, {
 				cmd = 4,
-				activity_id = var3:GetId(),
-				arg1 = var4
+				activity_id = var3_1:GetId(),
+				arg1 = var4_1
 			})
 		end
-	elseif var2 and var1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_COLLECTION_EVENT then
-		local var5 = var1:GetCollectionList()
+	elseif var2_1 and var1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_COLLECTION_EVENT then
+		local var5_1 = var1_1:GetCollectionList()
 
-		getProxy(EventProxy):AddActivityEvents(var5, var1.id)
+		getProxy(EventProxy):AddActivityEvents(var5_1, var1_1.id)
 	end
 end
 
-function var0.IsLinkVoteAct(arg0, arg1)
-	local var0 = getProxy(ActivityProxy):getActivityById(ActivityConst.VOTE_ENTRANCE_ACT_ID)
+function var0_0.IsLinkVoteAct(arg0_2, arg1_2)
+	local var0_2 = getProxy(ActivityProxy):getActivityById(ActivityConst.VOTE_ENTRANCE_ACT_ID)
 
-	if var0 and not var0:isEnd() then
-		local var1 = var0:getConfig("config_client")[1]
+	if var0_2 and not var0_2:isEnd() then
+		local var1_2 = var0_2:getConfig("config_client")[1]
 
-		return arg1.id == var1
+		return arg1_2.id == var1_2
 	end
 
 	return false
 end
 
-return var0
+return var0_0

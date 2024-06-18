@@ -1,938 +1,938 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleBulletEvent
-local var2 = var0.Battle.BattleFormulas
-local var3 = Vector3.up
-local var4 = var0.Battle.BattleVariable
-local var5 = var0.Battle.BattleConfig
-local var6 = var0.Battle.BattleTargetChoise
-local var7 = 1 / var0.Battle.BattleConfig.viewFPS
-local var8 = var0.Battle.BattleConst
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleBulletEvent
+local var2_0 = var0_0.Battle.BattleFormulas
+local var3_0 = Vector3.up
+local var4_0 = var0_0.Battle.BattleVariable
+local var5_0 = var0_0.Battle.BattleConfig
+local var6_0 = var0_0.Battle.BattleTargetChoise
+local var7_0 = 1 / var0_0.Battle.BattleConfig.viewFPS
+local var8_0 = var0_0.Battle.BattleConst
 
-var0.Battle.BattleBulletUnit = class("BattleBulletUnit")
-var0.Battle.BattleBulletUnit.__name = "BattleBulletUnit"
+var0_0.Battle.BattleBulletUnit = class("BattleBulletUnit")
+var0_0.Battle.BattleBulletUnit.__name = "BattleBulletUnit"
 
-local var9 = var0.Battle.BattleBulletUnit
+local var9_0 = var0_0.Battle.BattleBulletUnit
 
-var9.ACC_INTERVAL = var5.calcInterval
-var9.TRACKER_ANGLE = math.cos(math.deg2Rad * 10)
-var9.MIRROR_RES = "_mirror"
+var9_0.ACC_INTERVAL = var5_0.calcInterval
+var9_0.TRACKER_ANGLE = math.cos(math.deg2Rad * 10)
+var9_0.MIRROR_RES = "_mirror"
 
-function var9.doAccelerate(arg0, arg1)
-	local var0, var1 = arg0:GetAcceleration(arg1)
+function var9_0.doAccelerate(arg0_1, arg1_1)
+	local var0_1, var1_1 = arg0_1:GetAcceleration(arg1_1)
 
-	if var0 == 0 and var1 == 0 then
+	if var0_1 == 0 and var1_1 == 0 then
 		return
 	end
 
-	if var0 < 0 and arg0._speedLength + var0 < 0 then
-		arg0:reverseAcceleration()
+	if var0_1 < 0 and arg0_1._speedLength + var0_1 < 0 then
+		arg0_1:reverseAcceleration()
 	end
 
-	arg0._speed:Set(arg0._speed.x + arg0._speedNormal.x * var0 + arg0._speedCross.x * var1, arg0._speed.y + arg0._speedNormal.y * var0 + arg0._speedCross.y * var1, arg0._speed.z + arg0._speedNormal.z * var0 + arg0._speedCross.z * var1)
+	arg0_1._speed:Set(arg0_1._speed.x + arg0_1._speedNormal.x * var0_1 + arg0_1._speedCross.x * var1_1, arg0_1._speed.y + arg0_1._speedNormal.y * var0_1 + arg0_1._speedCross.y * var1_1, arg0_1._speed.z + arg0_1._speedNormal.z * var0_1 + arg0_1._speedCross.z * var1_1)
 
-	arg0._speedLength = arg0._speed:Magnitude()
+	arg0_1._speedLength = arg0_1._speed:Magnitude()
 
-	if arg0._speedLength ~= 0 then
-		arg0._speedNormal:Copy(arg0._speed):Div(arg0._speedLength)
+	if arg0_1._speedLength ~= 0 then
+		arg0_1._speedNormal:Copy(arg0_1._speed):Div(arg0_1._speedLength)
 	end
 
-	arg0._speedCross:Copy(arg0._speedNormal):Cross2(var3)
+	arg0_1._speedCross:Copy(arg0_1._speedNormal):Cross2(var3_0)
 end
 
-function var9.doTrack(arg0)
-	if arg0:getTrackingTarget() == nil then
-		local var0 = var6.TargetHarmNearest(arg0)[1]
+function var9_0.doTrack(arg0_2)
+	if arg0_2:getTrackingTarget() == nil then
+		local var0_2 = var6_0.TargetHarmNearest(arg0_2)[1]
 
-		if var0 ~= nil and arg0:GetDistance(var0) <= arg0._trackRange then
-			arg0:setTrackingTarget(var0)
+		if var0_2 ~= nil and arg0_2:GetDistance(var0_2) <= arg0_2._trackRange then
+			arg0_2:setTrackingTarget(var0_2)
 		end
 	end
 
-	local var1 = arg0:getTrackingTarget()
+	local var1_2 = arg0_2:getTrackingTarget()
 
-	if var1 == nil or var1 == -1 then
+	if var1_2 == nil or var1_2 == -1 then
 		return
-	elseif not var1:IsAlive() then
-		arg0:setTrackingTarget(-1)
-
-		return
-	elseif arg0:GetDistance(var1) > arg0._trackRange then
-		arg0:setTrackingTarget(-1)
+	elseif not var1_2:IsAlive() then
+		arg0_2:setTrackingTarget(-1)
 
 		return
-	end
+	elseif arg0_2:GetDistance(var1_2) > arg0_2._trackRange then
+		arg0_2:setTrackingTarget(-1)
 
-	local var2 = var1:GetBeenAimedPosition()
-
-	if not var2 then
 		return
 	end
 
-	local var3 = var2 - arg0:GetPosition()
+	local var2_2 = var1_2:GetBeenAimedPosition()
 
-	var3:SetNormalize()
-
-	local var4 = Vector3.Normalize(arg0._speed)
-	local var5 = Vector3.Dot(var4, var3)
-	local var6 = var4.z * var3.x - var4.x * var3.z
-
-	if var5 >= var9.TRACKER_ANGLE then
+	if not var2_2 then
 		return
 	end
 
-	local var7 = arg0:GetSpeedRatio()
-	local var8 = math.cos(arg0._cosAngularSpeed * var7)
-	local var9 = math.sin(arg0._sinAngularSpeed * var7)
-	local var10 = var5
-	local var11 = var6
+	local var3_2 = var2_2 - arg0_2:GetPosition()
 
-	if var5 < var8 then
-		var10 = var8
-		var11 = var9 * (var11 >= 0 and 1 or -1)
+	var3_2:SetNormalize()
+
+	local var4_2 = Vector3.Normalize(arg0_2._speed)
+	local var5_2 = Vector3.Dot(var4_2, var3_2)
+	local var6_2 = var4_2.z * var3_2.x - var4_2.x * var3_2.z
+
+	if var5_2 >= var9_0.TRACKER_ANGLE then
+		return
 	end
 
-	local var12 = arg0._speed.x * var10 + arg0._speed.z * var11
-	local var13 = arg0._speed.z * var10 - arg0._speed.x * var11
+	local var7_2 = arg0_2:GetSpeedRatio()
+	local var8_2 = math.cos(arg0_2._cosAngularSpeed * var7_2)
+	local var9_2 = math.sin(arg0_2._sinAngularSpeed * var7_2)
+	local var10_2 = var5_2
+	local var11_2 = var6_2
 
-	arg0._speed:Set(var12, 0, var13)
+	if var5_2 < var8_2 then
+		var10_2 = var8_2
+		var11_2 = var9_2 * (var11_2 >= 0 and 1 or -1)
+	end
+
+	local var12_2 = arg0_2._speed.x * var10_2 + arg0_2._speed.z * var11_2
+	local var13_2 = arg0_2._speed.z * var10_2 - arg0_2._speed.x * var11_2
+
+	arg0_2._speed:Set(var12_2, 0, var13_2)
 end
 
-function var9.doOrbit(arg0)
-	local var0 = pg.Tool.FilterY(arg0._weapon:GetPosition())
-	local var1 = pg.Tool.FilterY(arg0:GetPosition())
-	local var2 = (var1 - var0).magnitude
-	local var3 = (var0 - var1).normalized
-	local var4
+function var9_0.doOrbit(arg0_3)
+	local var0_3 = pg.Tool.FilterY(arg0_3._weapon:GetPosition())
+	local var1_3 = pg.Tool.FilterY(arg0_3:GetPosition())
+	local var2_3 = (var1_3 - var0_3).magnitude
+	local var3_3 = (var0_3 - var1_3).normalized
+	local var4_3
 
-	if var2 > 10 then
-		var4 = (var3 + arg0._speed.normalized).normalized
+	if var2_3 > 10 then
+		var4_3 = (var3_3 + arg0_3._speed.normalized).normalized
 	else
-		var4 = (Vector3(-var3.z, 0, var3.x) + arg0._speed.normalized).normalized
+		var4_3 = (Vector3(-var3_3.z, 0, var3_3.x) + arg0_3._speed.normalized).normalized
 	end
 
-	arg0._speed = var4
+	arg0_3._speed = var4_3
 end
 
-function var9.RotateY(arg0, arg1)
-	local var0 = math.cos(arg1)
-	local var1 = math.sin(arg1)
+function var9_0.RotateY(arg0_4, arg1_4)
+	local var0_4 = math.cos(arg1_4)
+	local var1_4 = math.sin(arg1_4)
 
-	return Vector3(arg0.x * var0 + arg0.z * var1, arg0.y, arg0.z * var0 - arg0.x * var1)
+	return Vector3(arg0_4.x * var0_4 + arg0_4.z * var1_4, arg0_4.y, arg0_4.z * var0_4 - arg0_4.x * var1_4)
 end
 
-function var9.doCircle(arg0)
-	if not arg0._originPos then
+function var9_0.doCircle(arg0_5)
+	if not arg0_5._originPos then
 		return
 	end
 
-	local var0 = arg0:GetSpeedRatio() * (1 + var0.Battle.BattleAttr.GetCurrent(arg0, "bulletSpeedRatio"))
-	local var1 = pg.Tool.FilterY(arg0._position - arg0._originPos)
-	local var2 = arg0._convertedVelocity
-	local var3 = var1:Magnitude()
-	local var4 = var3 - arg0._centripetalSpeed * var0 * arg0._inverseFlag
+	local var0_5 = arg0_5:GetSpeedRatio() * (1 + var0_0.Battle.BattleAttr.GetCurrent(arg0_5, "bulletSpeedRatio"))
+	local var1_5 = pg.Tool.FilterY(arg0_5._position - arg0_5._originPos)
+	local var2_5 = arg0_5._convertedVelocity
+	local var3_5 = var1_5:Magnitude()
+	local var4_5 = var3_5 - arg0_5._centripetalSpeed * var0_5 * arg0_5._inverseFlag
 
-	arg0._inverseFlag = var4 < 0 and -arg0._inverseFlag or arg0._inverseFlag
+	arg0_5._inverseFlag = var4_5 < 0 and -arg0_5._inverseFlag or arg0_5._inverseFlag
 
-	if var3 <= 1e-05 then
+	if var3_5 <= 1e-05 then
 		return
 	end
 
-	local var5 = arg0._circleAntiClockwise
-	local var6 = var2 / var3 * (var5 and 1 or -1) * var0
+	local var5_5 = arg0_5._circleAntiClockwise
+	local var6_5 = var2_5 / var3_5 * (var5_5 and 1 or -1) * var0_5
 
-	arg0._speed = arg0.RotateY(var1, var6):Mul(var4 / var3):Sub(var1)
+	arg0_5._speed = arg0_5.RotateY(var1_5, var6_5):Mul(var4_5 / var3_5):Sub(var1_5)
 end
 
-function var9.doNothing(arg0)
-	if arg0._gravity ~= 0 then
-		arg0._verticalSpeed = arg0._verticalSpeed + arg0._gravity * arg0:GetSpeedRatio()
+function var9_0.doNothing(arg0_6)
+	if arg0_6._gravity ~= 0 then
+		arg0_6._verticalSpeed = arg0_6._verticalSpeed + arg0_6._gravity * arg0_6:GetSpeedRatio()
 	end
 end
 
-function var9.Ctor(arg0, arg1, arg2)
-	var0.EventDispatcher.AttachEventDispatcher(arg0)
+function var9_0.Ctor(arg0_7, arg1_7, arg2_7)
+	var0_0.EventDispatcher.AttachEventDispatcher(arg0_7)
 
-	arg0._battleProxy = var0.Battle.BattleDataProxy.GetInstance()
-	arg0._uniqueID = arg1
-	arg0._speedExemptKey = "bullet_" .. arg1
-	arg0._IFF = arg2
-	arg0._collidedList = {}
-	arg0._speed = Vector3.zero
-	arg0._exist = true
-	arg0._timeStamp = 0
-	arg0._dmgEnhanceRate = 1
-	arg0._frame = 0
-	arg0._reachDestFlag = false
-	arg0._verticalSpeed = 0
-	arg0._damageList = {}
+	arg0_7._battleProxy = var0_0.Battle.BattleDataProxy.GetInstance()
+	arg0_7._uniqueID = arg1_7
+	arg0_7._speedExemptKey = "bullet_" .. arg1_7
+	arg0_7._IFF = arg2_7
+	arg0_7._collidedList = {}
+	arg0_7._speed = Vector3.zero
+	arg0_7._exist = true
+	arg0_7._timeStamp = 0
+	arg0_7._dmgEnhanceRate = 1
+	arg0_7._frame = 0
+	arg0_7._reachDestFlag = false
+	arg0_7._verticalSpeed = 0
+	arg0_7._damageList = {}
 end
 
-function var9.Update(arg0, arg1)
-	local var0 = arg0:GetSpeedRatio()
+function var9_0.Update(arg0_8, arg1_8)
+	local var0_8 = arg0_8:GetSpeedRatio()
 
-	arg0:updateSpeed(arg1)
-	arg0:updateBarrageTransform(arg1)
-	arg0._position:Set(arg0._position.x + arg0._speed.x * var0, arg0._position.y + arg0._speed.y * var0, arg0._position.z + arg0._speed.z * var0)
+	arg0_8:updateSpeed(arg1_8)
+	arg0_8:updateBarrageTransform(arg1_8)
+	arg0_8._position:Set(arg0_8._position.x + arg0_8._speed.x * var0_8, arg0_8._position.y + arg0_8._speed.y * var0_8, arg0_8._position.z + arg0_8._speed.z * var0_8)
 
-	arg0._position.y = arg0._position.y + arg0._verticalSpeed * var0
+	arg0_8._position.y = arg0_8._position.y + arg0_8._verticalSpeed * var0_8
 
-	if arg0._gravity == 0 then
-		arg0._reachDestFlag = Vector3.SqrDistance(arg0._spawnPos, arg0._position) > arg0._sqrRange
+	if arg0_8._gravity == 0 then
+		arg0_8._reachDestFlag = Vector3.SqrDistance(arg0_8._spawnPos, arg0_8._position) > arg0_8._sqrRange
 	else
-		if arg0._fieldSwitchHeight ~= 0 and arg0._position.y <= arg0._fieldSwitchHeight then
-			arg0._field = var8.BulletField.SURFACE
+		if arg0_8._fieldSwitchHeight ~= 0 and arg0_8._position.y <= arg0_8._fieldSwitchHeight then
+			arg0_8._field = var8_0.BulletField.SURFACE
 		end
 
-		arg0._reachDestFlag = arg0._position.y <= var5.BombDetonateHeight
+		arg0_8._reachDestFlag = arg0_8._position.y <= var5_0.BombDetonateHeight
 	end
 end
 
-function var9.ActiveCldBox(arg0)
-	arg0._cldComponent:SetActive(true)
+function var9_0.ActiveCldBox(arg0_9)
+	arg0_9._cldComponent:SetActive(true)
 end
 
-function var9.DeactiveCldBox(arg0)
-	arg0._cldComponent:SetActive(false)
+function var9_0.DeactiveCldBox(arg0_10)
+	arg0_10._cldComponent:SetActive(false)
 end
 
-function var9.SetStartTimeStamp(arg0, arg1)
-	arg0._timeStamp = arg1
+function var9_0.SetStartTimeStamp(arg0_11, arg1_11)
+	arg0_11._timeStamp = arg1_11
 end
 
-function var9.Hit(arg0, arg1, arg2)
-	arg0._collidedList[arg1] = true
+function var9_0.Hit(arg0_12, arg1_12, arg2_12)
+	arg0_12._collidedList[arg1_12] = true
 
-	local var0 = {
-		UID = arg1,
-		type = arg2
+	local var0_12 = {
+		UID = arg1_12,
+		type = arg2_12
 	}
 
-	arg0:DispatchEvent(var0.Event.New(var1.HIT, var0))
+	arg0_12:DispatchEvent(var0_0.Event.New(var1_0.HIT, var0_12))
 end
 
-function var9.Intercepted(arg0)
-	arg0:DispatchEvent(var0.Event.New(var1.INTERCEPTED, {}))
+function var9_0.Intercepted(arg0_13)
+	arg0_13:DispatchEvent(var0_0.Event.New(var1_0.INTERCEPTED, {}))
 end
 
-function var9.Reflected(arg0)
-	arg0._speed.x = -arg0._speed.x
+function var9_0.Reflected(arg0_14)
+	arg0_14._speed.x = -arg0_14._speed.x
 end
 
-function var9.ResetVelocity(arg0, arg1)
-	local var0 = arg0._tempData
-	local var1 = arg0:GetTemplate().extra_param
+function var9_0.ResetVelocity(arg0_15, arg1_15)
+	local var0_15 = arg0_15._tempData
+	local var1_15 = arg0_15:GetTemplate().extra_param
 
-	if not arg1 then
-		arg1 = var0.velocity
+	if not arg1_15 then
+		arg1_15 = var0_15.velocity
 
-		if var1.velocity_offset then
-			arg1 = math.random(arg1 - var1.velocity_offset, arg1 + var1.velocity_offset)
-		elseif var1.velocity_offsetF then
-			arg1 = arg1 + math.random() * 2 * var1.velocity_offsetF - var1.velocity_offsetF
+		if var1_15.velocity_offset then
+			arg1_15 = math.random(arg1_15 - var1_15.velocity_offset, arg1_15 + var1_15.velocity_offset)
+		elseif var1_15.velocity_offsetF then
+			arg1_15 = arg1_15 + math.random() * 2 * var1_15.velocity_offsetF - var1_15.velocity_offsetF
 		end
 	end
 
-	arg0._velocity = arg1
-	arg0._convertedVelocity = var2.ConvertBulletSpeed(arg0._velocity)
+	arg0_15._velocity = arg1_15
+	arg0_15._convertedVelocity = var2_0.ConvertBulletSpeed(arg0_15._velocity)
 end
 
-function var9.SetTemplateData(arg0, arg1)
-	arg0._tempData = setmetatable({}, {
-		__index = arg1
+function var9_0.SetTemplateData(arg0_16, arg1_16)
+	arg0_16._tempData = setmetatable({}, {
+		__index = arg1_16
 	})
 
-	local var0 = arg0:GetTemplate().extra_param
+	local var0_16 = arg0_16:GetTemplate().extra_param
 
-	arg0:SetModleID(arg1.modle_ID, var9.ORIGNAL_RES)
-	arg0:SetSFXID(arg0._tempData.hit_sfx, arg0._tempData.miss_sfx)
-	arg0:ResetVelocity()
+	arg0_16:SetModleID(arg1_16.modle_ID, var9_0.ORIGNAL_RES)
+	arg0_16:SetSFXID(arg0_16._tempData.hit_sfx, arg0_16._tempData.miss_sfx)
+	arg0_16:ResetVelocity()
 
-	arg0._pierceCount = arg1.pierce_count
+	arg0_16._pierceCount = arg1_16.pierce_count
 
-	arg0:FixRange()
-	arg0:InitCldComponent()
+	arg0_16:FixRange()
+	arg0_16:InitCldComponent()
 
-	arg0._accTable = Clone(arg0._tempData.acceleration)
+	arg0_16._accTable = Clone(arg0_16._tempData.acceleration)
 
-	table.sort(arg0._accTable, function(arg0, arg1)
-		return arg0.t < arg1.t
+	table.sort(arg0_16._accTable, function(arg0_17, arg1_17)
+		return arg0_17.t < arg1_17.t
 	end)
 
-	arg0._field = arg1.effect_type
-	arg0._gravity = var0.gravity or 0
-	arg0._fieldSwitchHeight = var0.effectSwitchHeight or 0
-	arg0._ignoreShield = arg0._tempData.extra_param.ignoreShield == true
-	arg0._autoRotate = arg0._tempData.extra_param.dontRotate ~= true
+	arg0_16._field = arg1_16.effect_type
+	arg0_16._gravity = var0_16.gravity or 0
+	arg0_16._fieldSwitchHeight = var0_16.effectSwitchHeight or 0
+	arg0_16._ignoreShield = arg0_16._tempData.extra_param.ignoreShield == true
+	arg0_16._autoRotate = arg0_16._tempData.extra_param.dontRotate ~= true
 
-	arg0:SetDiverFilter()
+	arg0_16:SetDiverFilter()
 end
 
-function var9.GetModleID(arg0)
-	local var0 = arg0:GetTemplate().extra_param
-	local var1
+function var9_0.GetModleID(arg0_18)
+	local var0_18 = arg0_18:GetTemplate().extra_param
+	local var1_18
 
-	if arg0._IFF == var5.FOE_CODE then
-		if arg0._mirrorSkin == var9.MIRROR_SKIN_RES then
-			var1 = arg0._modleID .. var9.MIRROR_RES
-		elseif arg0._mirrorSkin == var9.ORIGNAL_RES and var0.mirror == true then
-			var1 = arg0._modleID .. var9.MIRROR_RES
+	if arg0_18._IFF == var5_0.FOE_CODE then
+		if arg0_18._mirrorSkin == var9_0.MIRROR_SKIN_RES then
+			var1_18 = arg0_18._modleID .. var9_0.MIRROR_RES
+		elseif arg0_18._mirrorSkin == var9_0.ORIGNAL_RES and var0_18.mirror == true then
+			var1_18 = arg0_18._modleID .. var9_0.MIRROR_RES
 		else
-			var1 = arg0._modleID
+			var1_18 = arg0_18._modleID
 		end
 	else
-		var1 = arg0._modleID
+		var1_18 = arg0_18._modleID
 	end
 
-	return var1
+	return var1_18
 end
 
-var9.ORIGNAL_RES = -1
-var9.SKIN_RES = 0
-var9.MIRROR_SKIN_RES = 1
+var9_0.ORIGNAL_RES = -1
+var9_0.SKIN_RES = 0
+var9_0.MIRROR_SKIN_RES = 1
 
-function var9.SetModleID(arg0, arg1, arg2, arg3)
-	arg0._modleID = arg1
-	arg0._mirrorSkin = arg2
+function var9_0.SetModleID(arg0_19, arg1_19, arg2_19, arg3_19)
+	arg0_19._modleID = arg1_19
+	arg0_19._mirrorSkin = arg2_19
 
-	if arg3 and arg3 ~= "" then
-		arg0._tempData.hit_fx = arg3
-	end
-end
-
-function var9.SetSFXID(arg0, arg1, arg2)
-	if arg1 then
-		arg0._hitSFX = arg1
-	end
-
-	if arg2 then
-		arg0._missSFX = arg2
+	if arg3_19 and arg3_19 ~= "" then
+		arg0_19._tempData.hit_fx = arg3_19
 	end
 end
 
-function var9.SetShiftInfo(arg0, arg1, arg2)
-	local var0 = 0
-	local var1 = 0
-	local var2 = arg0:GetTemplate().extra_param
-
-	if var2.randomLaunchOffsetX then
-		var0 = math.random() * var2.randomLaunchOffsetX * 2 - var2.randomLaunchOffsetX
+function var9_0.SetSFXID(arg0_20, arg1_20, arg2_20)
+	if arg1_20 then
+		arg0_20._hitSFX = arg1_20
 	end
 
-	if var2.randomLaunchOffsetZ then
-		var1 = math.random() * var2.randomLaunchOffsetZ * 2 - var2.randomLaunchOffsetZ
+	if arg2_20 then
+		arg0_20._missSFX = arg2_20
 	end
-
-	arg0._offsetX = arg1 + var0
-	arg0._offsetZ = arg2 + var1
 end
 
-function var9.SetRotateInfo(arg0, arg1, arg2, arg3)
-	arg0._targetPos = arg1
-	arg0._baseAngle = arg2
-	arg0._barrageAngle = arg3
+function var9_0.SetShiftInfo(arg0_21, arg1_21, arg2_21)
+	local var0_21 = 0
+	local var1_21 = 0
+	local var2_21 = arg0_21:GetTemplate().extra_param
 
-	local var0 = arg0._barrageAngle % 360
+	if var2_21.randomLaunchOffsetX then
+		var0_21 = math.random() * var2_21.randomLaunchOffsetX * 2 - var2_21.randomLaunchOffsetX
+	end
 
-	if var0 > 0 and var0 < 180 then
-		for iter0, iter1 in ipairs(arg0._accTable) do
-			if iter1.flip then
-				iter1.v = iter1.v * -1
+	if var2_21.randomLaunchOffsetZ then
+		var1_21 = math.random() * var2_21.randomLaunchOffsetZ * 2 - var2_21.randomLaunchOffsetZ
+	end
+
+	arg0_21._offsetX = arg1_21 + var0_21
+	arg0_21._offsetZ = arg2_21 + var1_21
+end
+
+function var9_0.SetRotateInfo(arg0_22, arg1_22, arg2_22, arg3_22)
+	arg0_22._targetPos = arg1_22
+	arg0_22._baseAngle = arg2_22
+	arg0_22._barrageAngle = arg3_22
+
+	local var0_22 = arg0_22._barrageAngle % 360
+
+	if var0_22 > 0 and var0_22 < 180 then
+		for iter0_22, iter1_22 in ipairs(arg0_22._accTable) do
+			if iter1_22.flip then
+				iter1_22.v = iter1_22.v * -1
 			end
 		end
 	end
 end
 
-function var9.SetBarrageTransformTempate(arg0, arg1)
-	if #arg1 > 0 then
-		arg0._barrageTransData = arg1
+function var9_0.SetBarrageTransformTempate(arg0_23, arg1_23)
+	if #arg1_23 > 0 then
+		arg0_23._barrageTransData = arg1_23
 	end
 end
 
-function var9.SetAttr(arg0, arg1)
-	var0.Battle.BattleAttr.SetAttr(arg0, arg1)
+function var9_0.SetAttr(arg0_24, arg1_24)
+	var0_0.Battle.BattleAttr.SetAttr(arg0_24, arg1_24)
 end
 
-function var9.GetAttr(arg0)
-	return var0.Battle.BattleAttr.GetAttr(arg0)
+function var9_0.GetAttr(arg0_25)
+	return var0_0.Battle.BattleAttr.GetAttr(arg0_25)
 end
 
-function var9.SetStandHostAttr(arg0, arg1)
-	arg0._standUnit = {}
+function var9_0.SetStandHostAttr(arg0_26, arg1_26)
+	arg0_26._standUnit = {}
 
-	var0.Battle.BattleAttr.SetAttr(arg0._standUnit, arg1)
+	var0_0.Battle.BattleAttr.SetAttr(arg0_26._standUnit, arg1_26)
 end
 
-function var9.GetWeaponHostAttr(arg0)
-	if arg0._standUnit then
-		return var0.Battle.BattleAttr.GetAttr(arg0._standUnit)
+function var9_0.GetWeaponHostAttr(arg0_27)
+	if arg0_27._standUnit then
+		return var0_0.Battle.BattleAttr.GetAttr(arg0_27._standUnit)
 	else
-		return arg0:GetAttr()
+		return arg0_27:GetAttr()
 	end
 end
 
-function var9.GetWeaponAtkAttr(arg0)
-	local var0 = arg0:GetWeaponHostAttr()
-	local var1
-	local var2 = arg0._weapon:GetAtkAttrTrasnform(var0)
+function var9_0.GetWeaponAtkAttr(arg0_28)
+	local var0_28 = arg0_28:GetWeaponHostAttr()
+	local var1_28
+	local var2_28 = arg0_28._weapon:GetAtkAttrTrasnform(var0_28)
 
-	if var2 then
-		var1 = var2
+	if var2_28 then
+		var1_28 = var2_28
 	else
-		local var3 = arg0:GetWeaponTempData().attack_attribute
+		local var3_28 = arg0_28:GetWeaponTempData().attack_attribute
 
-		var1 = var0.Battle.BattleAttr.GetAtkAttrByType(var0, var3)
+		var1_28 = var0_0.Battle.BattleAttr.GetAtkAttrByType(var0_28, var3_28)
 	end
 
-	return var1
+	return var1_28
 end
 
-function var9.GetWeaponCardPuzzleEnhance(arg0)
-	return arg0._weapon:GetCardPuzzleDamageEnhance()
+function var9_0.GetWeaponCardPuzzleEnhance(arg0_29)
+	return arg0_29._weapon:GetCardPuzzleDamageEnhance()
 end
 
-function var9.SetDamageEnhance(arg0, arg1)
-	arg0._dmgEnhanceRate = arg1
+function var9_0.SetDamageEnhance(arg0_30, arg1_30)
+	arg0_30._dmgEnhanceRate = arg1_30
 end
 
-function var9.GetDamageEnhance(arg0)
-	return arg0._dmgEnhanceRate
+function var9_0.GetDamageEnhance(arg0_31)
+	return arg0_31._dmgEnhanceRate
 end
 
-function var9.GetAttrByName(arg0, arg1)
-	return var0.Battle.BattleAttr.GetCurrent(arg0, arg1)
+function var9_0.GetAttrByName(arg0_32, arg1_32)
+	return var0_0.Battle.BattleAttr.GetCurrent(arg0_32, arg1_32)
 end
 
-function var9.GetVerticalSpeed(arg0)
-	return arg0._verticalSpeed
+function var9_0.GetVerticalSpeed(arg0_33)
+	return arg0_33._verticalSpeed
 end
 
-function var9.IsGravitate(arg0)
-	return arg0._gravity ~= 0
+function var9_0.IsGravitate(arg0_34)
+	return arg0_34._gravity ~= 0
 end
 
-function var9.SetBuffTrigger(arg0, arg1)
-	arg0._host = arg1
-	arg0._buffTriggerFun = {}
+function var9_0.SetBuffTrigger(arg0_35, arg1_35)
+	arg0_35._host = arg1_35
+	arg0_35._buffTriggerFun = {}
 end
 
-function var9.SetBuffFun(arg0, arg1, arg2)
-	local var0 = arg0._buffTriggerFun[arg1] or {}
+function var9_0.SetBuffFun(arg0_36, arg1_36, arg2_36)
+	local var0_36 = arg0_36._buffTriggerFun[arg1_36] or {}
 
-	var0[#var0 + 1] = arg2
-	arg0._buffTriggerFun[arg1] = var0
+	var0_36[#var0_36 + 1] = arg2_36
+	arg0_36._buffTriggerFun[arg1_36] = var0_36
 end
 
-function var9.BuffTrigger(arg0, arg1, arg2)
-	local var0 = arg0._host
+function var9_0.BuffTrigger(arg0_37, arg1_37, arg2_37)
+	local var0_37 = arg0_37._host
 
-	if var0 and var0:IsAlive() then
-		arg0._host:TriggerBuff(arg1, arg2)
+	if var0_37 and var0_37:IsAlive() then
+		arg0_37._host:TriggerBuff(arg1_37, arg2_37)
 
-		local var1 = arg0._buffTriggerFun[arg1]
+		local var1_37 = arg0_37._buffTriggerFun[arg1_37]
 
-		if var1 then
-			for iter0, iter1 in ipairs(var1) do
-				iter1(arg0._host, arg2)
+		if var1_37 then
+			for iter0_37, iter1_37 in ipairs(var1_37) do
+				iter1_37(arg0_37._host, arg2_37)
 			end
 		end
 	end
 end
 
-function var9.SetIsCld(arg0, arg1)
-	arg0._needCld = arg1
+function var9_0.SetIsCld(arg0_38, arg1_38)
+	arg0_38._needCld = arg1_38
 end
 
-function var9.GetIsCld(arg0)
-	return arg0._needCld
+function var9_0.GetIsCld(arg0_39)
+	return arg0_39._needCld
 end
 
-function var9.IsIngoreCld(arg0)
-	return arg0._tempData.extra_param.ingoreCld
+function var9_0.IsIngoreCld(arg0_40)
+	return arg0_40._tempData.extra_param.ingoreCld
 end
 
-function var9.IsFragile(arg0)
-	return arg0._tempData.extra_param.fragile
+function var9_0.IsFragile(arg0_41)
+	return arg0_41._tempData.extra_param.fragile
 end
 
-function var9.IsIndiscriminate(arg0)
-	return arg0._tempData.extra_param.indiscriminate
+function var9_0.IsIndiscriminate(arg0_42)
+	return arg0_42._tempData.extra_param.indiscriminate
 end
 
-function var9.GetExtraTag(arg0)
-	return arg0._tempData.extra_param.tag
+function var9_0.GetExtraTag(arg0_43)
+	return arg0_43._tempData.extra_param.tag
 end
 
-function var9.AppendDamageUnit(arg0, arg1)
-	arg0._damageList[#arg0._damageList + 1] = arg1
+function var9_0.AppendDamageUnit(arg0_44, arg1_44)
+	arg0_44._damageList[#arg0_44._damageList + 1] = arg1_44
 end
 
-function var9.DamageUnitListWriteback(arg0)
-	arg0._weapon:UpdateCombo(arg0._damageList)
+function var9_0.DamageUnitListWriteback(arg0_45)
+	arg0_45._weapon:UpdateCombo(arg0_45._damageList)
 end
 
-function var9.HasAcceleration(arg0)
-	return #arg0._accTable ~= 0
+function var9_0.HasAcceleration(arg0_46)
+	return #arg0_46._accTable ~= 0
 end
 
-function var9.IsTracker(arg0)
-	return arg0._accTable.tracker
+function var9_0.IsTracker(arg0_47)
+	return arg0_47._accTable.tracker
 end
 
-function var9.IsOrbit(arg0)
-	return arg0._accTable.orbit
+function var9_0.IsOrbit(arg0_48)
+	return arg0_48._accTable.orbit
 end
 
-function var9.IsCircle(arg0)
-	return arg0._accTable.circle
+function var9_0.IsCircle(arg0_49)
+	return arg0_49._accTable.circle
 end
 
-function var9.GetAcceleration(arg0, arg1)
-	arg0._lastAccTime = arg0._lastAccTime or arg0._timeStamp
+function var9_0.GetAcceleration(arg0_50, arg1_50)
+	arg0_50._lastAccTime = arg0_50._lastAccTime or arg0_50._timeStamp
 
-	local var0 = math.modf((arg1 - arg0._lastAccTime) / var9.ACC_INTERVAL)
+	local var0_50 = math.modf((arg1_50 - arg0_50._lastAccTime) / var9_0.ACC_INTERVAL)
 
-	arg0._lastAccTime = arg0._lastAccTime + var9.ACC_INTERVAL * var0
+	arg0_50._lastAccTime = arg0_50._lastAccTime + var9_0.ACC_INTERVAL * var0_50
 
-	local var1 = arg1 - arg0._timeStamp
-	local var2 = #arg0._accTable
+	local var1_50 = arg1_50 - arg0_50._timeStamp
+	local var2_50 = #arg0_50._accTable
 
-	while var2 > 0 do
-		local var3 = arg0._accTable[var2]
+	while var2_50 > 0 do
+		local var3_50 = arg0_50._accTable[var2_50]
 
-		if var1 + var9.ACC_INTERVAL < var3.t then
-			var2 = var2 - 1
+		if var1_50 + var9_0.ACC_INTERVAL < var3_50.t then
+			var2_50 = var2_50 - 1
 		else
-			return var3.u * var0, var3.v * var0
+			return var3_50.u * var0_50, var3_50.v * var0_50
 		end
 	end
 
 	return 0, 0
 end
 
-function var9.reverseAcceleration(arg0)
-	for iter0, iter1 in ipairs(arg0._accTable) do
-		iter1.u = iter1.u * -1
+function var9_0.reverseAcceleration(arg0_51)
+	for iter0_51, iter1_51 in ipairs(arg0_51._accTable) do
+		iter1_51.u = iter1_51.u * -1
 	end
 end
 
-function var9.GetDistance(arg0, arg1)
-	local var0 = arg0._battleProxy.FrameIndex
+function var9_0.GetDistance(arg0_52, arg1_52)
+	local var0_52 = arg0_52._battleProxy.FrameIndex
 
-	if arg0._frame ~= var0 then
-		arg0._distanceBackup = {}
-		arg0._frame = var0
+	if arg0_52._frame ~= var0_52 then
+		arg0_52._distanceBackup = {}
+		arg0_52._frame = var0_52
 	end
 
-	local var1 = arg0._distanceBackup[arg1]
+	local var1_52 = arg0_52._distanceBackup[arg1_52]
 
-	if var1 == nil then
-		var1 = Vector3.Distance(arg0:GetPosition(), arg1:GetPosition())
-		arg0._distanceBackup[arg1] = var1
+	if var1_52 == nil then
+		var1_52 = Vector3.Distance(arg0_52:GetPosition(), arg1_52:GetPosition())
+		arg0_52._distanceBackup[arg1_52] = var1_52
 
-		arg1:backupDistance(arg0, var1)
+		arg1_52:backupDistance(arg0_52, var1_52)
 	end
 
-	return var1
+	return var1_52
 end
 
-function var9.backupDistance(arg0, arg1, arg2)
-	local var0 = arg0._battleProxy.FrameIndex
+function var9_0.backupDistance(arg0_53, arg1_53, arg2_53)
+	local var0_53 = arg0_53._battleProxy.FrameIndex
 
-	if arg0._frame ~= var0 then
-		arg0._distanceBackup = {}
-		arg0._frame = var0
+	if arg0_53._frame ~= var0_53 then
+		arg0_53._distanceBackup = {}
+		arg0_53._frame = var0_53
 	end
 
-	arg0._distanceBackup[arg1] = arg2
+	arg0_53._distanceBackup[arg1_53] = arg2_53
 end
 
-function var9.getTrackingTarget(arg0)
-	return arg0._tarckingTarget
+function var9_0.getTrackingTarget(arg0_54)
+	return arg0_54._tarckingTarget
 end
 
-function var9.setTrackingTarget(arg0, arg1)
-	arg0._tarckingTarget = arg1
+function var9_0.setTrackingTarget(arg0_55, arg1_55)
+	arg0_55._tarckingTarget = arg1_55
 end
 
-function var9.SetWeapon(arg0, arg1)
-	arg0._weapon = arg1
+function var9_0.SetWeapon(arg0_56, arg1_56)
+	arg0_56._weapon = arg1_56
 
-	if arg1 then
-		arg0._correctedDMG = arg0._weapon:GetCorrectedDMG()
+	if arg1_56 then
+		arg0_56._correctedDMG = arg0_56._weapon:GetCorrectedDMG()
 	end
 end
 
-function var9.GetWeapon(arg0)
-	return arg0._weapon
+function var9_0.GetWeapon(arg0_57)
+	return arg0_57._weapon
 end
 
-function var9.GetCorrectedDMG(arg0)
-	return arg0._correctedDMG
+function var9_0.GetCorrectedDMG(arg0_58)
+	return arg0_58._correctedDMG
 end
 
-function var9.OverrideCorrectedDMG(arg0, arg1)
-	arg0._correctedDMG = var2.WeaponDamagePreCorrection(arg0._weapon, arg1)
+function var9_0.OverrideCorrectedDMG(arg0_59, arg1_59)
+	arg0_59._correctedDMG = var2_0.WeaponDamagePreCorrection(arg0_59._weapon, arg1_59)
 end
 
-function var9.GetWeaponTempData(arg0)
-	return arg0._weapon:GetTemplateData()
+function var9_0.GetWeaponTempData(arg0_60)
+	return arg0_60._weapon:GetTemplateData()
 end
 
-function var9.GetPosition(arg0)
-	return arg0._position or Vector3.zero
+function var9_0.GetPosition(arg0_61)
+	return arg0_61._position or Vector3.zero
 end
 
-function var9.SetSpawnPosition(arg0, arg1)
-	arg0._spawnPos = arg1
-	arg0._position = arg1:Clone()
+function var9_0.SetSpawnPosition(arg0_62, arg1_62)
+	arg0_62._spawnPos = arg1_62
+	arg0_62._position = arg1_62:Clone()
 
-	if arg0._gravity ~= 0 then
-		local var0 = math.atan2(arg0._speed.x, arg0._speed.z)
+	if arg0_62._gravity ~= 0 then
+		local var0_62 = math.atan2(arg0_62._speed.x, arg0_62._speed.z)
 
-		if var0 == 0 then
-			arg0._verticalSpeed = 0
+		if var0_62 == 0 then
+			arg0_62._verticalSpeed = 0
 		else
-			local var1 = Vector3(math.cos(var0) * 60, math.sin(var0) * 60)
-			local var2 = 60 / arg0._convertedVelocity
+			local var1_62 = Vector3(math.cos(var0_62) * 60, math.sin(var0_62) * 60)
+			local var2_62 = 60 / arg0_62._convertedVelocity
 
-			arg0._verticalSpeed = -0.5 * arg0._gravity * var2
+			arg0_62._verticalSpeed = -0.5 * arg0_62._gravity * var2_62
 		end
 	end
 end
 
-function var9.GetSpawnPosition(arg0)
-	return arg0._spawnPos
+function var9_0.GetSpawnPosition(arg0_63)
+	return arg0_63._spawnPos
 end
 
-function var9.GetTemplate(arg0)
-	return arg0._tempData
+function var9_0.GetTemplate(arg0_64)
+	return arg0_64._tempData
 end
 
-function var9.GetType(arg0)
-	return arg0._tempData.type
+function var9_0.GetType(arg0_65)
+	return arg0_65._tempData.type
 end
 
-function var9.GetHitSFX(arg0)
-	return arg0._hitSFX
+function var9_0.GetHitSFX(arg0_66)
+	return arg0_66._hitSFX
 end
 
-function var9.GetMissSFX(arg0)
-	return arg0._missSFX
+function var9_0.GetMissSFX(arg0_67)
+	return arg0_67._missSFX
 end
 
-function var9.GetOutBound(arg0)
-	return arg0._tempData.out_bound
+function var9_0.GetOutBound(arg0_68)
+	return arg0_68._tempData.out_bound
 end
 
-function var9.GetUniqueID(arg0)
-	return arg0._uniqueID
+function var9_0.GetUniqueID(arg0_69)
+	return arg0_69._uniqueID
 end
 
-function var9.GetOffset(arg0)
-	return arg0._offsetX, arg0._offsetZ, arg0._isOffsetPriority
+function var9_0.GetOffset(arg0_70)
+	return arg0_70._offsetX, arg0_70._offsetZ, arg0_70._isOffsetPriority
 end
 
-function var9.GetRotateInfo(arg0)
-	return arg0._targetPos, arg0._baseAngle, arg0._barrageAngle
+function var9_0.GetRotateInfo(arg0_71)
+	return arg0_71._targetPos, arg0_71._baseAngle, arg0_71._barrageAngle
 end
 
-function var9.IsOutRange(arg0)
-	return arg0._reachDestFlag
+function var9_0.IsOutRange(arg0_72)
+	return arg0_72._reachDestFlag
 end
 
-function var9.SetYAngle(arg0, arg1)
-	arg0._yAngle = arg1
+function var9_0.SetYAngle(arg0_73, arg1_73)
+	arg0_73._yAngle = arg1_73
 end
 
-function var9.SetOffsetPriority(arg0, arg1)
-	arg0._isOffsetPriority = arg1 or false
+function var9_0.SetOffsetPriority(arg0_74, arg1_74)
+	arg0_74._isOffsetPriority = arg1_74 or false
 end
 
-function var9.GetOffsetPriority(arg0)
-	return arg0._isOffsetPriority
+function var9_0.GetOffsetPriority(arg0_75)
+	return arg0_75._isOffsetPriority
 end
 
-function var9.GetYAngle(arg0)
-	return arg0._yAngle
+function var9_0.GetYAngle(arg0_76)
+	return arg0_76._yAngle
 end
 
-function var9.GetCurrentYAngle(arg0)
-	local var0 = Vector3.Normalize(arg0._speed)
-	local var1 = math.acos(var0.x) / math.deg2Rad
+function var9_0.GetCurrentYAngle(arg0_77)
+	local var0_77 = Vector3.Normalize(arg0_77._speed)
+	local var1_77 = math.acos(var0_77.x) / math.deg2Rad
 
-	if var0.z < 0 then
-		var1 = 360 - var1
+	if var0_77.z < 0 then
+		var1_77 = 360 - var1_77
 	end
 
-	return var1
+	return var1_77
 end
 
-function var9.GetIFF(arg0)
-	return arg0._IFF
+function var9_0.GetIFF(arg0_78)
+	return arg0_78._IFF
 end
 
-function var9.GetHost(arg0)
-	return arg0._host
+function var9_0.GetHost(arg0_79)
+	return arg0_79._host
 end
 
-function var9.GetPierceCount(arg0)
-	return arg0._pierceCount
+function var9_0.GetPierceCount(arg0_80)
+	return arg0_80._pierceCount
 end
 
-function var9.AppendAttachBuff(arg0, arg1)
-	arg0._attachBuffList = arg0._attachBuffList or arg0:generateAttachBuffList()
+function var9_0.AppendAttachBuff(arg0_81, arg1_81)
+	arg0_81._attachBuffList = arg0_81._attachBuffList or arg0_81:generateAttachBuffList()
 
-	table.insert(arg0._attachBuffList, arg1)
+	table.insert(arg0_81._attachBuffList, arg1_81)
 end
 
-function var9.GetAttachBuff(arg0)
-	arg0._attachBuffList = arg0._attachBuffList or arg0:generateAttachBuffList()
+function var9_0.GetAttachBuff(arg0_82)
+	arg0_82._attachBuffList = arg0_82._attachBuffList or arg0_82:generateAttachBuffList()
 
-	return arg0._attachBuffList
+	return arg0_82._attachBuffList
 end
 
-function var9.generateAttachBuffList(arg0)
-	local var0 = {}
+function var9_0.generateAttachBuffList(arg0_83)
+	local var0_83 = {}
 
-	if not arg0:GetTemplate().attach_buff then
-		local var1 = {}
+	if not arg0_83:GetTemplate().attach_buff then
+		local var1_83 = {}
 	end
 
-	for iter0, iter1 in ipairs(arg0:GetTemplate().attach_buff) do
-		local var2 = {
-			buff_id = iter1.buff_id,
-			level = iter1.buff_level,
-			rant = iter1.rant,
-			hit_ignore = iter1.hit_ignore
+	for iter0_83, iter1_83 in ipairs(arg0_83:GetTemplate().attach_buff) do
+		local var2_83 = {
+			buff_id = iter1_83.buff_id,
+			level = iter1_83.buff_level,
+			rant = iter1_83.rant,
+			hit_ignore = iter1_83.hit_ignore
 		}
 
-		table.insert(var0, var2)
+		table.insert(var0_83, var2_83)
 	end
 
-	return var0
+	return var0_83
 end
 
-function var9.GetEffectField(arg0)
-	return arg0._field
+function var9_0.GetEffectField(arg0_84)
+	return arg0_84._field
 end
 
-function var9.SetDiverFilter(arg0, arg1)
-	if arg1 == nil then
-		arg0._diveFilter = arg0._tempData.extra_param.diveFilter or {
+function var9_0.SetDiverFilter(arg0_85, arg1_85)
+	if arg1_85 == nil then
+		arg0_85._diveFilter = arg0_85._tempData.extra_param.diveFilter or {
 			2
 		}
 	else
-		arg0._diveFilter = arg1
+		arg0_85._diveFilter = arg1_85
 	end
 end
 
-function var9.GetDiveFilter(arg0)
-	return arg0._diveFilter
+function var9_0.GetDiveFilter(arg0_86)
+	return arg0_86._diveFilter
 end
 
-function var9.GetVelocity(arg0)
-	return arg0._velocity
+function var9_0.GetVelocity(arg0_87)
+	return arg0_87._velocity
 end
 
-function var9.GetConvertedVelocity(arg0)
-	return arg0._convertedVelocity
+function var9_0.GetConvertedVelocity(arg0_88)
+	return arg0_88._convertedVelocity
 end
 
-function var9.GetSpeedExemptKey(arg0)
-	return arg0._speedExemptKey
+function var9_0.GetSpeedExemptKey(arg0_89)
+	return arg0_89._speedExemptKey
 end
 
-function var9.IsCollided(arg0, arg1)
-	return arg0._collidedList[arg1]
+function var9_0.IsCollided(arg0_90, arg1_90)
+	return arg0_90._collidedList[arg1_90]
 end
 
-function var9.GetExist(arg0)
-	return arg0._exist
+function var9_0.GetExist(arg0_91)
+	return arg0_91._exist
 end
 
-function var9.SetExist(arg0, arg1)
-	arg0._exist = arg1
+function var9_0.SetExist(arg0_92, arg1_92)
+	arg0_92._exist = arg1_92
 end
 
-function var9.GetIgnoreShield(arg0)
-	return arg0._ignoreShield
+function var9_0.GetIgnoreShield(arg0_93)
+	return arg0_93._ignoreShield
 end
 
-function var9.SetIgnoreShield(arg0, arg1)
-	arg0._ignoreShield = arg1
+function var9_0.SetIgnoreShield(arg0_94, arg1_94)
+	arg0_94._ignoreShield = arg1_94
 end
 
-function var9.IsAutoRotate(arg0)
-	return arg0._autoRotate
+function var9_0.IsAutoRotate(arg0_95)
+	return arg0_95._autoRotate
 end
 
-function var9.Dispose(arg0)
-	arg0._dataProxy = nil
+function var9_0.Dispose(arg0_96)
+	arg0_96._dataProxy = nil
 
-	var0.EventDispatcher.DetachEventDispatcher(arg0)
+	var0_0.EventDispatcher.DetachEventDispatcher(arg0_96)
 end
 
-function var9.InitCldComponent(arg0)
-	local var0 = arg0:GetTemplate().cld_box
-	local var1 = arg0:GetTemplate().cld_offset
-	local var2 = var1[1]
+function var9_0.InitCldComponent(arg0_97)
+	local var0_97 = arg0_97:GetTemplate().cld_box
+	local var1_97 = arg0_97:GetTemplate().cld_offset
+	local var2_97 = var1_97[1]
 
-	if arg0:GetIFF() == var5.FOE_CODE then
-		var2 = var2 * -1
+	if arg0_97:GetIFF() == var5_0.FOE_CODE then
+		var2_97 = var2_97 * -1
 	end
 
-	arg0._cldComponent = var0.Battle.BattleCubeCldComponent.New(var0[1], var0[2], var0[3], var2, var1[3])
+	arg0_97._cldComponent = var0_0.Battle.BattleCubeCldComponent.New(var0_97[1], var0_97[2], var0_97[3], var2_97, var1_97[3])
 
-	local var3 = {
-		type = var8.CldType.BULLET,
-		IFF = arg0:GetIFF(),
-		UID = arg0:GetUniqueID()
+	local var3_97 = {
+		type = var8_0.CldType.BULLET,
+		IFF = arg0_97:GetIFF(),
+		UID = arg0_97:GetUniqueID()
 	}
 
-	arg0._cldComponent:SetCldData(var3)
+	arg0_97._cldComponent:SetCldData(var3_97)
 end
 
-function var9.ResetCldSurface(arg0)
-	local var0 = arg0:GetDiveFilter()
+function var9_0.ResetCldSurface(arg0_98)
+	local var0_98 = arg0_98:GetDiveFilter()
 
-	if var0 and #var0 == 0 then
-		arg0:GetCldData().Surface = var8.OXY_STATE.DIVE
+	if var0_98 and #var0_98 == 0 then
+		arg0_98:GetCldData().Surface = var8_0.OXY_STATE.DIVE
 	else
-		arg0:GetCldData().Surface = var8.OXY_STATE.FLOAT
+		arg0_98:GetCldData().Surface = var8_0.OXY_STATE.FLOAT
 	end
 end
 
-function var9.GetBoxSize(arg0)
-	return arg0._cldComponent:GetCldBoxSize()
+function var9_0.GetBoxSize(arg0_99)
+	return arg0_99._cldComponent:GetCldBoxSize()
 end
 
-function var9.GetCldBox(arg0)
-	return arg0._cldComponent:GetCldBox(arg0:GetPosition())
+function var9_0.GetCldBox(arg0_100)
+	return arg0_100._cldComponent:GetCldBox(arg0_100:GetPosition())
 end
 
-function var9.GetCldData(arg0)
-	return arg0._cldComponent:GetCldData()
+function var9_0.GetCldData(arg0_101)
+	return arg0_101._cldComponent:GetCldData()
 end
 
-function var9.GetSpeed(arg0)
-	return arg0._speed
+function var9_0.GetSpeed(arg0_102)
+	return arg0_102._speed
 end
 
-function var9.GetSpeedRatio(arg0)
-	return var4.GetSpeedRatio(arg0._speedExemptKey, arg0._IFF)
+function var9_0.GetSpeedRatio(arg0_103)
+	return var4_0.GetSpeedRatio(arg0_103._speedExemptKey, arg0_103._IFF)
 end
 
-function var9.InitSpeed(arg0, arg1)
-	if arg0._yAngle == nil then
-		arg0._yAngle = (arg1 or arg0._baseAngle) + arg0._barrageAngle
+function var9_0.InitSpeed(arg0_104, arg1_104)
+	if arg0_104._yAngle == nil then
+		arg0_104._yAngle = (arg1_104 or arg0_104._baseAngle) + arg0_104._barrageAngle
 	end
 
-	arg0:calcSpeed()
+	arg0_104:calcSpeed()
 
-	if arg0:HasAcceleration() then
-		arg0._speedLength = arg0._speed:Magnitude()
+	if arg0_104:HasAcceleration() then
+		arg0_104._speedLength = arg0_104._speed:Magnitude()
 
-		local var0 = math.deg2Rad * arg0._yAngle
+		local var0_104 = math.deg2Rad * arg0_104._yAngle
 
-		arg0._speedNormal = Vector3(math.cos(var0), 0, math.sin(var0))
-		arg0._speedCross = Vector3.Cross(arg0._speedNormal, var3)
-		arg0.updateSpeed = var9.doAccelerate
-	elseif arg0:IsTracker() then
-		local var1 = arg0._accTable.tracker
+		arg0_104._speedNormal = Vector3(math.cos(var0_104), 0, math.sin(var0_104))
+		arg0_104._speedCross = Vector3.Cross(arg0_104._speedNormal, var3_0)
+		arg0_104.updateSpeed = var9_0.doAccelerate
+	elseif arg0_104:IsTracker() then
+		local var1_104 = arg0_104._accTable.tracker
 
-		arg0._trackRange = var1.range
-		arg0._cosAngularSpeed = math.deg2Rad * var1.angular
-		arg0._sinAngularSpeed = math.deg2Rad * var1.angular
-		arg0._negativeCosAngularSpeed = math.deg2Rad * var1.angular * -1
-		arg0._negativeSinAngularSpeed = math.deg2Rad * var1.angular * -1
-		arg0.updateSpeed = var9.doTrack
-	elseif arg0:IsCircle() then
-		local var2 = arg0._accTable.circle
+		arg0_104._trackRange = var1_104.range
+		arg0_104._cosAngularSpeed = math.deg2Rad * var1_104.angular
+		arg0_104._sinAngularSpeed = math.deg2Rad * var1_104.angular
+		arg0_104._negativeCosAngularSpeed = math.deg2Rad * var1_104.angular * -1
+		arg0_104._negativeSinAngularSpeed = math.deg2Rad * var1_104.angular * -1
+		arg0_104.updateSpeed = var9_0.doTrack
+	elseif arg0_104:IsCircle() then
+		local var2_104 = arg0_104._accTable.circle
 
-		arg0._originPos = var2.center or arg0._targetPos
-		arg0._circleAntiClockwise = tobool(var2.antiClockWise)
-		arg0._centripetalSpeed = (var2.centripetalSpeed or 0) * var7
-		arg0._inverseFlag = 1
-		arg0.updateSpeed = var9.doCircle
+		arg0_104._originPos = var2_104.center or arg0_104._targetPos
+		arg0_104._circleAntiClockwise = tobool(var2_104.antiClockWise)
+		arg0_104._centripetalSpeed = (var2_104.centripetalSpeed or 0) * var7_0
+		arg0_104._inverseFlag = 1
+		arg0_104.updateSpeed = var9_0.doCircle
 	else
-		arg0.updateSpeed = var9.doNothing
+		arg0_104.updateSpeed = var9_0.doNothing
 	end
 end
 
-function var9.calcSpeed(arg0)
-	local var0 = 1 + var0.Battle.BattleAttr.GetCurrent(arg0, "bulletSpeedRatio")
-	local var1 = arg0._velocity * var0
-	local var2 = var2.ConvertBulletSpeed(var1)
-	local var3 = math.deg2Rad * arg0._yAngle
+function var9_0.calcSpeed(arg0_105)
+	local var0_105 = 1 + var0_0.Battle.BattleAttr.GetCurrent(arg0_105, "bulletSpeedRatio")
+	local var1_105 = arg0_105._velocity * var0_105
+	local var2_105 = var2_0.ConvertBulletSpeed(var1_105)
+	local var3_105 = math.deg2Rad * arg0_105._yAngle
 
-	arg0._speed = Vector3(var2 * math.cos(var3), 0, var2 * math.sin(var3))
+	arg0_105._speed = Vector3(var2_105 * math.cos(var3_105), 0, var2_105 * math.sin(var3_105))
 end
 
-function var9.updateBarrageTransform(arg0, arg1)
-	if not arg0._barrageTransData or #arg0._barrageTransData == 0 then
+function var9_0.updateBarrageTransform(arg0_106, arg1_106)
+	if not arg0_106._barrageTransData or #arg0_106._barrageTransData == 0 then
 		return
 	end
 
-	local var0 = arg1 - arg0._timeStamp
-	local var1 = arg0._barrageTransData[1]
+	local var0_106 = arg1_106 - arg0_106._timeStamp
+	local var1_106 = arg0_106._barrageTransData[1]
 
-	if var0 >= var1.transStartDelay then
-		if var1.transAimAngle then
-			arg0._yAngle = var1.transAimAngle
+	if var0_106 >= var1_106.transStartDelay then
+		if var1_106.transAimAngle then
+			arg0_106._yAngle = var1_106.transAimAngle
 		else
-			arg0._yAngle = math.rad2Deg * math.atan2(var1.transAimPosZ - arg0._position.z, var1.transAimPosX - arg0._position.x)
+			arg0_106._yAngle = math.rad2Deg * math.atan2(var1_106.transAimPosZ - arg0_106._position.z, var1_106.transAimPosX - arg0_106._position.x)
 		end
 
-		arg0:calcSpeed()
-		table.remove(arg0._barrageTransData, 1)
+		arg0_106:calcSpeed()
+		table.remove(arg0_106._barrageTransData, 1)
 
-		local var2 = arg0._barrageTransData[1]
+		local var2_106 = arg0_106._barrageTransData[1]
 
-		if var2 then
-			var2.transStartDelay = var2.transStartDelay + var1.transStartDelay
+		if var2_106 then
+			var2_106.transStartDelay = var2_106.transStartDelay + var1_106.transStartDelay
 		end
 	end
 end
 
-function var9.GetCurrentDistance(arg0)
-	return Vector3.Distance(arg0._spawnPos, arg0._position)
+function var9_0.GetCurrentDistance(arg0_107)
+	return Vector3.Distance(arg0_107._spawnPos, arg0_107._position)
 end
 
-function var9.SetOutRangeCallback(arg0, arg1)
-	arg0._outRangeFunc = arg1
+function var9_0.SetOutRangeCallback(arg0_108, arg1_108)
+	arg0_108._outRangeFunc = arg1_108
 end
 
-function var9.OutRange(arg0)
-	arg0:DispatchEvent(var0.Event.New(var1.OUT_RANGE, {}))
-	arg0._outRangeFunc(arg0)
+function var9_0.OutRange(arg0_109)
+	arg0_109:DispatchEvent(var0_0.Event.New(var1_0.OUT_RANGE, {}))
+	arg0_109._outRangeFunc(arg0_109)
 end
 
-function var9.FixRange(arg0, arg1, arg2)
-	arg1 = arg1 or arg0._tempData.range
-	arg2 = arg2 or 0
+function var9_0.FixRange(arg0_110, arg1_110, arg2_110)
+	arg1_110 = arg1_110 or arg0_110._tempData.range
+	arg2_110 = arg2_110 or 0
 
-	local var0 = arg0._tempData.range_offset
+	local var0_110 = arg0_110._tempData.range_offset
 
-	if var0 == 0 then
-		arg0._range = arg1
+	if var0_110 == 0 then
+		arg0_110._range = arg1_110
 	else
-		arg0._range = arg1 + var0 * (math.random() - 0.5)
+		arg0_110._range = arg1_110 + var0_110 * (math.random() - 0.5)
 	end
 
-	arg0._range = math.max(0, arg0._range + arg2)
-	arg0._sqrRange = arg0._range * arg0._range
+	arg0_110._range = math.max(0, arg0_110._range + arg2_110)
+	arg0_110._sqrRange = arg0_110._range * arg0_110._range
 end
 
-function var9.ImmuneBombCLS(arg0)
-	return arg0:GetTemplate().extra_param.ignoreB
+function var9_0.ImmuneBombCLS(arg0_111)
+	return arg0_111:GetTemplate().extra_param.ignoreB
 end
 
-function var9.ImmuneCLS(arg0)
-	return arg0._immuneCLS
+function var9_0.ImmuneCLS(arg0_112)
+	return arg0_112._immuneCLS
 end
 
-function var9.SetImmuneCLS(arg0, arg1)
-	arg0._immuneCLS = arg1
+function var9_0.SetImmuneCLS(arg0_113, arg1_113)
+	arg0_113._immuneCLS = arg1_113
 end

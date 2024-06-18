@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Close Reward Menu",
 	"Head back to the main screen."
 }
@@ -14,7 +14,7 @@ return {
 				mode = 2,
 				posY = -341,
 				posX = 431,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			spriteui = {
 				defaultName = "white_dot",
@@ -41,7 +41,7 @@ return {
 				mode = 2,
 				posY = 223.26,
 				posX = -136.21,
-				text = var0[2]
+				text = var0_0[2]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/blur_panel/adapt/top/back_btn",

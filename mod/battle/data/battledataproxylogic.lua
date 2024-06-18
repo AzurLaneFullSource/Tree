@@ -1,447 +1,447 @@
-﻿local var0 = ys.Battle.BattleDataProxy
-local var1 = ys.Battle.BattleEvent
-local var2 = ys.Battle.BattleFormulas
-local var3 = ys.Battle.BattleConst
-local var4 = ys.Battle.BattleConfig
-local var5 = ys.Battle.BattleDataFunction
-local var6 = ys.Battle.BattleAttr
-local var7 = ys.Battle.BattleVariable
+﻿local var0_0 = ys.Battle.BattleDataProxy
+local var1_0 = ys.Battle.BattleEvent
+local var2_0 = ys.Battle.BattleFormulas
+local var3_0 = ys.Battle.BattleConst
+local var4_0 = ys.Battle.BattleConfig
+local var5_0 = ys.Battle.BattleDataFunction
+local var6_0 = ys.Battle.BattleAttr
+local var7_0 = ys.Battle.BattleVariable
 
-function var0.SetupCalculateDamage(arg0, arg1)
-	arg0._calculateDamage = arg1 or var2.CreateContextCalculateDamage()
+function var0_0.SetupCalculateDamage(arg0_1, arg1_1)
+	arg0_1._calculateDamage = arg1_1 or var2_0.CreateContextCalculateDamage()
 end
 
-function var0.SetupDamageKamikazeAir(arg0, arg1)
-	arg0._calculateDamageKamikazeAir = arg1 or var2.CalculateDamageFromAircraftToMainShip
+function var0_0.SetupDamageKamikazeAir(arg0_2, arg1_2)
+	arg0_2._calculateDamageKamikazeAir = arg1_2 or var2_0.CalculateDamageFromAircraftToMainShip
 end
 
-function var0.SetupDamageKamikazeShip(arg0, arg1)
-	arg0._calculateDamageKamikazeShip = arg1 or var2.CalculateDamageFromShipToMainShip
+function var0_0.SetupDamageKamikazeShip(arg0_3, arg1_3)
+	arg0_3._calculateDamageKamikazeShip = arg1_3 or var2_0.CalculateDamageFromShipToMainShip
 end
 
-function var0.SetupDamageCrush(arg0, arg1)
-	arg0._calculateDamageCrush = arg1 or var2.CalculateCrashDamage
+function var0_0.SetupDamageCrush(arg0_4, arg1_4)
+	arg0_4._calculateDamageCrush = arg1_4 or var2_0.CalculateCrashDamage
 end
 
-function var0.ClearFormulas(arg0)
-	arg0._calculateDamage = nil
-	arg0._calculateDamageKamikazeAir = nil
-	arg0._calculateDamageKamikazeShip = nil
-	arg0._calculateDamageCrush = nil
+function var0_0.ClearFormulas(arg0_5)
+	arg0_5._calculateDamage = nil
+	arg0_5._calculateDamageKamikazeAir = nil
+	arg0_5._calculateDamageKamikazeShip = nil
+	arg0_5._calculateDamageCrush = nil
 end
 
-function var0.HandleBulletHit(arg0, arg1, arg2)
-	if not arg2 then
+function var0_0.HandleBulletHit(arg0_6, arg1_6, arg2_6)
+	if not arg2_6 then
 		assert(false, "HandleBulletHit, but no vehicleData")
 
 		return false
-	elseif not arg1 then
+	elseif not arg1_6 then
 		assert(false, "HandleBulletHit, but no bulletData")
 
 		return false
 	end
 
-	if var6.IsSpirit(arg2) then
+	if var6_0.IsSpirit(arg2_6) then
 		return false
 	end
 
-	if arg1:IsCollided(arg2:GetUniqueID()) == true then
+	if arg1_6:IsCollided(arg2_6:GetUniqueID()) == true then
 		return
 	end
 
-	arg1:Hit(arg2:GetUniqueID(), arg2:GetUnitType())
+	arg1_6:Hit(arg2_6:GetUniqueID(), arg2_6:GetUnitType())
 
-	local var0 = {
-		_bullet = arg1,
-		equipIndex = arg1:GetWeapon():GetEquipmentIndex(),
-		bulletTag = arg1:GetExtraTag()
+	local var0_6 = {
+		_bullet = arg1_6,
+		equipIndex = arg1_6:GetWeapon():GetEquipmentIndex(),
+		bulletTag = arg1_6:GetExtraTag()
 	}
 
-	arg1:BuffTrigger(ys.Battle.BattleConst.BuffEffectType.ON_BULLET_COLLIDE, var0)
+	arg1_6:BuffTrigger(ys.Battle.BattleConst.BuffEffectType.ON_BULLET_COLLIDE, var0_6)
 
-	if arg2:GetUnitType() == var3.UnitType.PLAYER_UNIT and arg2:GetIFF() == var4.FRIENDLY_CODE then
-		ys.Battle.BattleCameraUtil.GetInstance():StartShake(pg.shake_template[var3.ShakeType.HIT])
+	if arg2_6:GetUnitType() == var3_0.UnitType.PLAYER_UNIT and arg2_6:GetIFF() == var4_0.FRIENDLY_CODE then
+		ys.Battle.BattleCameraUtil.GetInstance():StartShake(pg.shake_template[var3_0.ShakeType.HIT])
 	end
 
 	return true
 end
 
-function var0.HandleDamage(arg0, arg1, arg2, arg3, arg4)
-	if arg2:GetIFF() == var4.FOE_CODE and arg2:IsShowHPBar() then
-		arg0:DispatchEvent(ys.Event.New(var1.HIT_ENEMY, arg2))
+function var0_0.HandleDamage(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
+	if arg2_7:GetIFF() == var4_0.FOE_CODE and arg2_7:IsShowHPBar() then
+		arg0_7:DispatchEvent(ys.Event.New(var1_0.HIT_ENEMY, arg2_7))
 	end
 
-	local var0 = arg1:GetWeapon()
-	local var1 = arg1:GetWeaponHostAttr()
-	local var2 = arg1:GetExtraTag()
-	local var3 = var0:GetTemplateData()
-	local var4 = {
-		weaponType = var3.attack_attribute,
-		bulletType = arg1:GetType(),
-		bulletTag = var2
+	local var0_7 = arg1_7:GetWeapon()
+	local var1_7 = arg1_7:GetWeaponHostAttr()
+	local var2_7 = arg1_7:GetExtraTag()
+	local var3_7 = var0_7:GetTemplateData()
+	local var4_7 = {
+		weaponType = var3_7.attack_attribute,
+		bulletType = arg1_7:GetType(),
+		bulletTag = var2_7
 	}
 
-	arg2:TriggerBuff(var3.BuffEffectType.ON_BULLET_HIT_BEFORE, var4)
+	arg2_7:TriggerBuff(var3_0.BuffEffectType.ON_BULLET_HIT_BEFORE, var4_7)
 
-	if var6.IsInvincible(arg2) then
+	if var6_0.IsInvincible(arg2_7) then
 		return
 	end
 
-	local var5, var6, var7 = arg0._calculateDamage(arg1, arg2, arg3, arg4)
-	local var8 = var6.isMiss
-	local var9 = var6.isCri
-	local var10 = var6.damageAttr
+	local var5_7, var6_7, var7_7 = arg0_7._calculateDamage(arg1_7, arg2_7, arg3_7, arg4_7)
+	local var8_7 = var6_7.isMiss
+	local var9_7 = var6_7.isCri
+	local var10_7 = var6_7.damageAttr
 
-	arg1:AppendDamageUnit(arg2:GetUniqueID())
+	arg1_7:AppendDamageUnit(arg2_7:GetUniqueID())
 
-	local var11 = var3.type
-	local var12 = var0:GetEquipmentIndex()
-	local var13 = {
-		target = arg2,
-		damage = var5,
-		weaponType = var11,
-		equipIndex = var12,
-		bulletTag = var2
+	local var11_7 = var3_7.type
+	local var12_7 = var0_7:GetEquipmentIndex()
+	local var13_7 = {
+		target = arg2_7,
+		damage = var5_7,
+		weaponType = var11_7,
+		equipIndex = var12_7,
+		bulletTag = var2_7
 	}
-	local var14 = {
+	local var14_7 = {
 		isHeal = false,
-		isMiss = var8,
-		isCri = var9,
-		attr = var10,
-		font = var7,
-		cldPos = arg1:GetPosition(),
-		srcID = var1.battleUID
+		isMiss = var8_7,
+		isCri = var9_7,
+		attr = var10_7,
+		font = var7_7,
+		cldPos = arg1_7:GetPosition(),
+		srcID = var1_7.battleUID
 	}
 
-	arg1:GetWeapon():WeaponStatistics(var5, var9, var8)
+	arg1_7:GetWeapon():WeaponStatistics(var5_7, var9_7, var8_7)
 
-	local var15 = arg2:UpdateHP(var5 * -1, var14)
+	local var15_7 = arg2_7:UpdateHP(var5_7 * -1, var14_7)
 
-	arg0:DamageStatistics(var1.id, arg2:GetAttrByName("id"), -var15)
+	arg0_7:DamageStatistics(var1_7.id, arg2_7:GetAttrByName("id"), -var15_7)
 
-	if not var8 and arg1:GetWeaponTempData().type ~= var3.EquipmentType.ANTI_AIR then
-		arg1:BuffTrigger(ys.Battle.BattleConst.BuffEffectType.ON_BULLET_HIT, var13)
+	if not var8_7 and arg1_7:GetWeaponTempData().type ~= var3_0.EquipmentType.ANTI_AIR then
+		arg1_7:BuffTrigger(ys.Battle.BattleConst.BuffEffectType.ON_BULLET_HIT, var13_7)
 
-		local var16 = arg1:GetHost()
+		local var16_7 = arg1_7:GetHost()
 
-		if var16 and var16:IsAlive() and var16:GetUnitType() ~= ys.Battle.BattleConst.UnitType.AIRFIGHTER_UNIT then
-			if table.contains(var3.AircraftUnitType, var16:GetUnitType()) then
-				var16 = var16:GetMotherUnit()
+		if var16_7 and var16_7:IsAlive() and var16_7:GetUnitType() ~= ys.Battle.BattleConst.UnitType.AIRFIGHTER_UNIT then
+			if table.contains(var3_0.AircraftUnitType, var16_7:GetUnitType()) then
+				var16_7 = var16_7:GetMotherUnit()
 			end
 
-			local var17 = var16:GetIFF()
+			local var17_7 = var16_7:GetIFF()
 
-			for iter0, iter1 in pairs(arg0._unitList) do
-				if iter1:GetIFF() == var17 and iter1 ~= var16 then
-					iter1:TriggerBuff(ys.Battle.BattleConst.BuffEffectType.ON_TEAMMATE_BULLET_HIT, var13)
+			for iter0_7, iter1_7 in pairs(arg0_7._unitList) do
+				if iter1_7:GetIFF() == var17_7 and iter1_7 ~= var16_7 then
+					iter1_7:TriggerBuff(ys.Battle.BattleConst.BuffEffectType.ON_TEAMMATE_BULLET_HIT, var13_7)
 				end
 			end
 		end
 	end
 
-	local var18 = arg2:GetUnitType()
-	local var19 = true
+	local var18_7 = arg2_7:GetUnitType()
+	local var19_7 = true
 
-	if var18 ~= var3.UnitType.AIRCRAFT_UNIT and var18 ~= var3.UnitType.AIRFIGHTER_UNIT and var18 ~= var3.UnitType.FUNNEL_UNIT and var18 ~= var3.UnitType.UAV_UNIT then
-		var19 = false
+	if var18_7 ~= var3_0.UnitType.AIRCRAFT_UNIT and var18_7 ~= var3_0.UnitType.AIRFIGHTER_UNIT and var18_7 ~= var3_0.UnitType.FUNNEL_UNIT and var18_7 ~= var3_0.UnitType.UAV_UNIT then
+		var19_7 = false
 	end
 
-	if arg2:IsAlive() then
-		if not var19 then
-			for iter2, iter3 in ipairs(arg1:GetAttachBuff()) do
-				if iter3.hit_ignore or not var8 then
-					var0.HandleBuffPlacer(iter3, arg1, arg2)
+	if arg2_7:IsAlive() then
+		if not var19_7 then
+			for iter2_7, iter3_7 in ipairs(arg1_7:GetAttachBuff()) do
+				if iter3_7.hit_ignore or not var8_7 then
+					var0_0.HandleBuffPlacer(iter3_7, arg1_7, arg2_7)
 				end
 			end
 		end
 
-		if not var8 then
-			arg2:TriggerBuff(var3.BuffEffectType.ON_BE_HIT, var4)
+		if not var8_7 then
+			arg2_7:TriggerBuff(var3_0.BuffEffectType.ON_BE_HIT, var4_7)
 		end
 	else
-		arg1:BuffTrigger(ys.Battle.BattleConst.BuffEffectType.ON_BULLET_KILL, {
-			unit = arg2,
-			killer = arg1
+		arg1_7:BuffTrigger(ys.Battle.BattleConst.BuffEffectType.ON_BULLET_KILL, {
+			unit = arg2_7,
+			killer = arg1_7
 		})
-		arg0:obituary(arg2, var19, arg1)
-		arg0:KillCountStatistics(var1.id, arg2:GetAttrByName("id"))
+		arg0_7:obituary(arg2_7, var19_7, arg1_7)
+		arg0_7:KillCountStatistics(var1_7.id, arg2_7:GetAttrByName("id"))
 	end
 
-	return var8, var9
+	return var8_7, var9_7
 end
 
-function var0.HandleMeteoDamage(arg0, arg1, arg2)
-	local var0 = var2.GetMeteoDamageRatio(#arg2)
+function var0_0.HandleMeteoDamage(arg0_8, arg1_8, arg2_8)
+	local var0_8 = var2_0.GetMeteoDamageRatio(#arg2_8)
 
-	for iter0, iter1 in ipairs(arg2) do
-		arg0:HandleDamage(arg1, iter1, nil, var0[iter0])
+	for iter0_8, iter1_8 in ipairs(arg2_8) do
+		arg0_8:HandleDamage(arg1_8, iter1_8, nil, var0_8[iter0_8])
 	end
 end
 
-function var0.HandleDirectDamage(arg0, arg1, arg2, arg3, arg4)
-	local var0
+function var0_0.HandleDirectDamage(arg0_9, arg1_9, arg2_9, arg3_9, arg4_9)
+	local var0_9
 
-	if arg3 then
-		var0 = arg3:GetAttrByName("id")
+	if arg3_9 then
+		var0_9 = arg3_9:GetAttrByName("id")
 	end
 
-	local var1 = {
+	local var1_9 = {
 		isMiss = false,
 		isCri = false,
 		isHeal = false,
-		damageReason = arg4,
-		srcID = var0
+		damageReason = arg4_9,
+		srcID = var0_9
 	}
-	local var2 = arg1:GetAttrByName("id")
-	local var3 = arg1:UpdateHP(arg2 * -1, var1)
-	local var4 = arg1:IsAlive()
+	local var2_9 = arg1_9:GetAttrByName("id")
+	local var3_9 = arg1_9:UpdateHP(arg2_9 * -1, var1_9)
+	local var4_9 = arg1_9:IsAlive()
 
-	if arg3 then
-		arg0:DamageStatistics(var0, var2, -var3)
+	if arg3_9 then
+		arg0_9:DamageStatistics(var0_9, var2_9, -var3_9)
 
-		if not var4 then
-			arg0:KillCountStatistics(var0, var2)
+		if not var4_9 then
+			arg0_9:KillCountStatistics(var0_9, var2_9)
 		end
 	end
 
-	if not var4 then
-		local var5 = arg1:GetUnitType()
-		local var6 = true
+	if not var4_9 then
+		local var5_9 = arg1_9:GetUnitType()
+		local var6_9 = true
 
-		if var5 ~= var3.UnitType.AIRCRAFT_UNIT and var5 ~= var3.UnitType.AIRFIGHTER_UNIT and var5 ~= var3.UnitType.FUNNEL_UNIT and var5 ~= var3.UnitType.UAV_UNIT then
-			var6 = false
+		if var5_9 ~= var3_0.UnitType.AIRCRAFT_UNIT and var5_9 ~= var3_0.UnitType.AIRFIGHTER_UNIT and var5_9 ~= var3_0.UnitType.FUNNEL_UNIT and var5_9 ~= var3_0.UnitType.UAV_UNIT then
+			var6_9 = false
 		end
 
-		arg0:obituary(arg1, var6, arg3)
+		arg0_9:obituary(arg1_9, var6_9, arg3_9)
 	end
 end
 
-function var0.obituary(arg0, arg1, arg2, arg3)
-	for iter0, iter1 in pairs(arg0._unitList) do
-		if iter1 ~= arg1 then
-			if iter1:GetIFF() == arg1:GetIFF() then
-				if arg2 then
-					iter1:TriggerBuff(var3.BuffEffectType.ON_FRIENDLY_AIRCRAFT_DYING, {
-						unit = arg1,
-						killer = arg3
+function var0_0.obituary(arg0_10, arg1_10, arg2_10, arg3_10)
+	for iter0_10, iter1_10 in pairs(arg0_10._unitList) do
+		if iter1_10 ~= arg1_10 then
+			if iter1_10:GetIFF() == arg1_10:GetIFF() then
+				if arg2_10 then
+					iter1_10:TriggerBuff(var3_0.BuffEffectType.ON_FRIENDLY_AIRCRAFT_DYING, {
+						unit = arg1_10,
+						killer = arg3_10
 					})
-				elseif not arg1:GetWorldDeathMark() then
-					iter1:TriggerBuff(var3.BuffEffectType.ON_FRIENDLY_SHIP_DYING, {
-						unit = arg1,
-						killer = arg3
+				elseif not arg1_10:GetWorldDeathMark() then
+					iter1_10:TriggerBuff(var3_0.BuffEffectType.ON_FRIENDLY_SHIP_DYING, {
+						unit = arg1_10,
+						killer = arg3_10
 					})
 				end
-			elseif arg2 then
-				iter1:TriggerBuff(var3.BuffEffectType.ON_FOE_AIRCRAFT_DYING, {
-					unit = arg1,
-					killer = arg3
+			elseif arg2_10 then
+				iter1_10:TriggerBuff(var3_0.BuffEffectType.ON_FOE_AIRCRAFT_DYING, {
+					unit = arg1_10,
+					killer = arg3_10
 				})
 			else
-				iter1:TriggerBuff(var3.BuffEffectType.ON_FOE_DYING, {
-					unit = arg1,
-					killer = arg3
+				iter1_10:TriggerBuff(var3_0.BuffEffectType.ON_FOE_DYING, {
+					unit = arg1_10,
+					killer = arg3_10
 				})
 			end
 		end
 	end
 end
 
-function var0.HandleAircraftMissDamage(arg0, arg1, arg2)
-	if arg2 == nil then
+function var0_0.HandleAircraftMissDamage(arg0_11, arg1_11, arg2_11)
+	if arg2_11 == nil then
 		return
 	end
 
-	local var0 = arg2:GetCloakList()
+	local var0_11 = arg2_11:GetCloakList()
 
-	for iter0, iter1 in ipairs(var0) do
-		iter1:CloakExpose(arg0._airExpose)
+	for iter0_11, iter1_11 in ipairs(var0_11) do
+		iter1_11:CloakExpose(arg0_11._airExpose)
 	end
 
-	local var1 = arg1:GetPosition()
-	local var2 = arg2:NearestUnitByType(var1, ShipType.CloakShipTypeList)
+	local var1_11 = arg1_11:GetPosition()
+	local var2_11 = arg2_11:NearestUnitByType(var1_11, ShipType.CloakShipTypeList)
 
-	if var2 then
-		var2:CloakExpose(arg0._airExposeEX)
+	if var2_11 then
+		var2_11:CloakExpose(arg0_11._airExposeEX)
 	end
 
-	local var3 = arg2:RandomMainVictim({
+	local var3_11 = arg2_11:RandomMainVictim({
 		"immuneDirectHit"
 	})
 
-	if var3 then
-		local var4 = arg0._calculateDamageKamikazeAir(arg1, var3)
+	if var3_11 then
+		local var4_11 = arg0_11._calculateDamageKamikazeAir(arg1_11, var3_11)
 
-		var3:TriggerBuff(var3.BuffEffectType.ON_BE_HIT, {})
-		arg0:HandleDirectDamage(var3, var4, arg1)
+		var3_11:TriggerBuff(var3_0.BuffEffectType.ON_BE_HIT, {})
+		arg0_11:HandleDirectDamage(var3_11, var4_11, arg1_11)
 	end
 end
 
-function var0.HandleShipMissDamage(arg0, arg1, arg2)
-	if arg2 == nil then
+function var0_0.HandleShipMissDamage(arg0_12, arg1_12, arg2_12)
+	if arg2_12 == nil then
 		return
 	end
 
-	local var0 = arg2:GetCloakList()
+	local var0_12 = arg2_12:GetCloakList()
 
-	for iter0, iter1 in ipairs(var0) do
-		iter1:CloakExpose(arg0._shipExpose)
+	for iter0_12, iter1_12 in ipairs(var0_12) do
+		iter1_12:CloakExpose(arg0_12._shipExpose)
 	end
 
-	local var1 = arg1:GetPosition()
-	local var2 = arg2:NearestUnitByType(var1, ShipType.CloakShipTypeList)
+	local var1_12 = arg1_12:GetPosition()
+	local var2_12 = arg2_12:NearestUnitByType(var1_12, ShipType.CloakShipTypeList)
 
-	if var2 then
-		var2:CloakExpose(arg0._shipExposeEX)
+	if var2_12 then
+		var2_12:CloakExpose(arg0_12._shipExposeEX)
 	end
 
-	local var3 = arg2:RandomMainVictim({
+	local var3_12 = arg2_12:RandomMainVictim({
 		"immuneDirectHit"
 	})
 
-	if var3 then
-		local var4 = arg1:GetTemplate().type
+	if var3_12 then
+		local var4_12 = arg1_12:GetTemplate().type
 
-		if table.contains(TeamType.SubShipType, var4) then
-			local var5 = var2.CalculateDamageFromSubmarinToMainShip(arg1, var3)
+		if table.contains(TeamType.SubShipType, var4_12) then
+			local var5_12 = var2_0.CalculateDamageFromSubmarinToMainShip(arg1_12, var3_12)
 
-			var3:TriggerBuff(var3.BuffEffectType.ON_BE_HIT, {})
-			arg0:HandleDirectDamage(var3, var5, arg1)
+			var3_12:TriggerBuff(var3_0.BuffEffectType.ON_BE_HIT, {})
+			arg0_12:HandleDirectDamage(var3_12, var5_12, arg1_12)
 
-			if var3:IsAlive() and var2.RollSubmarineDualDice(arg1) then
-				local var6 = var2.CalculateDamageFromSubmarinToMainShip(arg1, var3)
+			if var3_12:IsAlive() and var2_0.RollSubmarineDualDice(arg1_12) then
+				local var6_12 = var2_0.CalculateDamageFromSubmarinToMainShip(arg1_12, var3_12)
 
-				var3:TriggerBuff(var3.BuffEffectType.ON_BE_HIT, {})
-				arg0:HandleDirectDamage(var3, var6, arg1)
+				var3_12:TriggerBuff(var3_0.BuffEffectType.ON_BE_HIT, {})
+				arg0_12:HandleDirectDamage(var3_12, var6_12, arg1_12)
 			end
 		else
-			local var7 = arg0._calculateDamageKamikazeShip(arg1, var3)
+			local var7_12 = arg0_12._calculateDamageKamikazeShip(arg1_12, var3_12)
 
-			var3:TriggerBuff(var3.BuffEffectType.ON_BE_HIT, {})
-			arg0:HandleDirectDamage(var3, var7, arg1)
+			var3_12:TriggerBuff(var3_0.BuffEffectType.ON_BE_HIT, {})
+			arg0_12:HandleDirectDamage(var3_12, var7_12, arg1_12)
 		end
 	end
 end
 
-function var0.HandleCrashDamage(arg0, arg1, arg2)
-	local var0, var1 = arg0._calculateDamageCrush(arg1, arg2)
+function var0_0.HandleCrashDamage(arg0_13, arg1_13, arg2_13)
+	local var0_13, var1_13 = arg0_13._calculateDamageCrush(arg1_13, arg2_13)
 
-	arg0:HandleDirectDamage(arg1, var0, arg2, var3.UnitDeathReason.CRUSH)
-	arg0:HandleDirectDamage(arg2, var1, arg1, var3.UnitDeathReason.CRUSH)
+	arg0_13:HandleDirectDamage(arg1_13, var0_13, arg2_13, var3_0.UnitDeathReason.CRUSH)
+	arg0_13:HandleDirectDamage(arg2_13, var1_13, arg1_13, var3_0.UnitDeathReason.CRUSH)
 end
 
-function var0.HandleBuffPlacer(arg0, arg1, arg2)
-	local var0 = var5.GetBuffTemplate(arg0.buff_id).effect_list
-	local var1 = false
+function var0_0.HandleBuffPlacer(arg0_14, arg1_14, arg2_14)
+	local var0_14 = var5_0.GetBuffTemplate(arg0_14.buff_id).effect_list
+	local var1_14 = false
 
-	if var0[1].type == "BattleBuffDOT" then
-		if var2.CaclulateDOTPlace(arg0.rant, var0[1], arg1, arg2) then
-			var1 = true
+	if var0_14[1].type == "BattleBuffDOT" then
+		if var2_0.CaclulateDOTPlace(arg0_14.rant, var0_14[1], arg1_14, arg2_14) then
+			var1_14 = true
 		end
-	elseif var2.IsHappen(arg0.rant or 10000) then
-		var1 = true
+	elseif var2_0.IsHappen(arg0_14.rant or 10000) then
+		var1_14 = true
 	end
 
-	if var1 then
-		local var2 = ys.Battle.BattleBuffUnit.New(arg0.buff_id, arg0.level, arg1)
+	if var1_14 then
+		local var2_14 = ys.Battle.BattleBuffUnit.New(arg0_14.buff_id, arg0_14.level, arg1_14)
 
-		var2:SetOrb(arg1, arg0.level)
-		arg2:AddBuff(var2)
+		var2_14:SetOrb(arg1_14, arg0_14.level)
+		arg2_14:AddBuff(var2_14)
 	end
 end
 
-function var0.HandleDOTPlace(arg0, arg1, arg2)
-	local var0 = arg0.arg_list
-	local var1 = var4.DOT_CONFIG[var0.dotType]
-	local var2 = arg1:GetAttrByName(var1.hit)
+function var0_0.HandleDOTPlace(arg0_15, arg1_15, arg2_15)
+	local var0_15 = arg0_15.arg_list
+	local var1_15 = var4_0.DOT_CONFIG[var0_15.dotType]
+	local var2_15 = arg1_15:GetAttrByName(var1_15.hit)
 
-	if var2.IsHappen(var0.ACC + arg1:GetAttrByName(var1.hit) - arg2:GetAttrByName(var1.resist)) then
+	if var2_0.IsHappen(var0_15.ACC + arg1_15:GetAttrByName(var1_15.hit) - arg2_15:GetAttrByName(var1_15.resist)) then
 		return true
 	end
 
 	return false
 end
 
-function var0.HandleShipCrashDamageList(arg0, arg1, arg2)
-	local var0 = arg1:GetHostileCldList()
+function var0_0.HandleShipCrashDamageList(arg0_16, arg1_16, arg2_16)
+	local var0_16 = arg1_16:GetHostileCldList()
 
-	for iter0, iter1 in pairs(var0) do
-		if not table.contains(arg2, iter0) then
-			arg1:RemoveHostileCld(iter0)
+	for iter0_16, iter1_16 in pairs(var0_16) do
+		if not table.contains(arg2_16, iter0_16) then
+			arg1_16:RemoveHostileCld(iter0_16)
 		end
 	end
 
-	for iter2, iter3 in ipairs(arg2) do
-		if var0[iter3] == nil then
-			local var1
+	for iter2_16, iter3_16 in ipairs(arg2_16) do
+		if var0_16[iter3_16] == nil then
+			local var1_16
 
-			local function var2()
-				arg0:HandleCrashDamage(arg0._unitList[iter3], arg1)
+			local function var2_16()
+				arg0_16:HandleCrashDamage(arg0_16._unitList[iter3_16], arg1_16)
 			end
 
-			local var3 = pg.TimeMgr.GetInstance():AddBattleTimer("shipCld", nil, var4.SHIP_CLD_INTERVAL, var2, true)
+			local var3_16 = pg.TimeMgr.GetInstance():AddBattleTimer("shipCld", nil, var4_0.SHIP_CLD_INTERVAL, var2_16, true)
 
-			arg1:AppendHostileCld(iter3, var3)
-			var2()
+			arg1_16:AppendHostileCld(iter3_16, var3_16)
+			var2_16()
 
-			if not arg1:IsAlive() then
+			if not arg1_16:IsAlive() then
 				break
 			end
 		end
 	end
 end
 
-function var0.HandleShipCrashDecelerate(arg0, arg1, arg2)
-	if arg2 == 0 and arg1:IsCrash() then
-		arg1:SetCrash(false)
-	elseif arg2 > 0 and not arg1:IsCrash() then
-		arg1:SetCrash(true)
+function var0_0.HandleShipCrashDecelerate(arg0_18, arg1_18, arg2_18)
+	if arg2_18 == 0 and arg1_18:IsCrash() then
+		arg1_18:SetCrash(false)
+	elseif arg2_18 > 0 and not arg1_18:IsCrash() then
+		arg1_18:SetCrash(true)
 	end
 end
 
-function var0.HandleWallHitByBullet(arg0, arg1, arg2)
-	return (arg1:GetCldFunc()(arg2))
+function var0_0.HandleWallHitByBullet(arg0_19, arg1_19, arg2_19)
+	return (arg1_19:GetCldFunc()(arg2_19))
 end
 
-function var0.HandleWallHitByShip(arg0, arg1, arg2)
-	arg1:GetCldFunc()(arg2)
+function var0_0.HandleWallHitByShip(arg0_20, arg1_20, arg2_20)
+	arg1_20:GetCldFunc()(arg2_20)
 end
 
-function var0.HandleWallDamage(arg0, arg1, arg2)
-	if arg2:GetIFF() == var4.FOE_CODE and arg2:IsShowHPBar() then
-		arg0:DispatchEvent(ys.Event.New(var1.HIT_ENEMY, arg2))
+function var0_0.HandleWallDamage(arg0_21, arg1_21, arg2_21)
+	if arg2_21:GetIFF() == var4_0.FOE_CODE and arg2_21:IsShowHPBar() then
+		arg0_21:DispatchEvent(ys.Event.New(var1_0.HIT_ENEMY, arg2_21))
 	end
 
-	local var0 = var6.GetCurrent(arg1, "id")
+	local var0_21 = var6_0.GetCurrent(arg1_21, "id")
 
-	if var6.IsInvincible(arg2) then
+	if var6_0.IsInvincible(arg2_21) then
 		return
 	end
 
-	local var1, var2, var3 = arg0._calculateDamage(arg1, arg2)
-	local var4 = var2.isMiss
-	local var5 = var2.isCri
-	local var6 = var2.damageAttr
-	local var7 = {
+	local var1_21, var2_21, var3_21 = arg0_21._calculateDamage(arg1_21, arg2_21)
+	local var4_21 = var2_21.isMiss
+	local var5_21 = var2_21.isCri
+	local var6_21 = var2_21.damageAttr
+	local var7_21 = {
 		isHeal = false,
-		isMiss = var4,
-		isCri = var5,
-		attr = var6,
-		font = var3,
-		cldPos = arg1:GetPosition(),
-		srcID = var0
+		isMiss = var4_21,
+		isCri = var5_21,
+		attr = var6_21,
+		font = var3_21,
+		cldPos = arg1_21:GetPosition(),
+		srcID = var0_21
 	}
-	local var8 = arg2:UpdateHP(var1 * -1, var7)
+	local var8_21 = arg2_21:UpdateHP(var1_21 * -1, var7_21)
 
-	arg0:DamageStatistics(var0, arg2:GetAttrByName("id"), -var8)
+	arg0_21:DamageStatistics(var0_21, arg2_21:GetAttrByName("id"), -var8_21)
 
-	if arg2:IsAlive() then
-		if not var4 then
-			arg2:TriggerBuff(var3.BuffEffectType.ON_BE_HIT, {})
+	if arg2_21:IsAlive() then
+		if not var4_21 then
+			arg2_21:TriggerBuff(var3_0.BuffEffectType.ON_BE_HIT, {})
 		end
 	else
-		arg0:obituary(arg2, false, arg1)
-		arg0:KillCountStatistics(var0, arg2:GetAttrByName("id"))
+		arg0_21:obituary(arg2_21, false, arg1_21)
+		arg0_21:KillCountStatistics(var0_21, arg2_21:GetAttrByName("id"))
 	end
 
-	return var4, var5
+	return var4_21, var5_21
 end

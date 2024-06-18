@@ -1,93 +1,93 @@
-﻿local var0 = class("BaseMiniGameMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("BaseMiniGameMediator", import("..base.ContextMediator"))
 
-var0.MINI_GAME_SUCCESS = "BaseMiniGameMediator:MINI_GAME_SUCCESS"
-var0.MINI_GAME_FAILURE = "BaseMiniGameMediator:MINI_GAME_FAILURE"
-var0.MINI_GAME_OPERATOR = "BaseMiniGameMediator:MINI_GAME_OPERATOR"
-var0.OPEN_SUB_LAYER = "BaseMiniGameMediator:OPEN_SUB_LAYER"
-var0.MINI_GAME_COIN = "BaseMiniGameMediator:MINI_GAME_COIN"
-var0.COIN_WINDOW_CHANGE = "BaseMiniGameMediator:COIN_WINDOW_CHANGE"
-var0.GAME_FINISH_TRACKING = "BaseMiniGameMediator:GAME_FINISH_TRACKING"
+var0_0.MINI_GAME_SUCCESS = "BaseMiniGameMediator:MINI_GAME_SUCCESS"
+var0_0.MINI_GAME_FAILURE = "BaseMiniGameMediator:MINI_GAME_FAILURE"
+var0_0.MINI_GAME_OPERATOR = "BaseMiniGameMediator:MINI_GAME_OPERATOR"
+var0_0.OPEN_SUB_LAYER = "BaseMiniGameMediator:OPEN_SUB_LAYER"
+var0_0.MINI_GAME_COIN = "BaseMiniGameMediator:MINI_GAME_COIN"
+var0_0.COIN_WINDOW_CHANGE = "BaseMiniGameMediator:COIN_WINDOW_CHANGE"
+var0_0.GAME_FINISH_TRACKING = "BaseMiniGameMediator:GAME_FINISH_TRACKING"
 
-function var0.register(arg0)
-	arg0.miniGameId = arg0.contextData.miniGameId
-	arg0.miniGameProxy = getProxy(MiniGameProxy)
+function var0_0.register(arg0_1)
+	arg0_1.miniGameId = arg0_1.contextData.miniGameId
+	arg0_1.miniGameProxy = getProxy(MiniGameProxy)
 
-	local var0 = arg0.miniGameProxy:GetHubByGameId(arg0.miniGameId)
-	local var1 = arg0.miniGameProxy:GetMiniGameData(arg0.miniGameId)
+	local var0_1 = arg0_1.miniGameProxy:GetHubByGameId(arg0_1.miniGameId)
+	local var1_1 = arg0_1.miniGameProxy:GetMiniGameData(arg0_1.miniGameId)
 
-	arg0.viewComponent:SetMGData(var1)
-	arg0.viewComponent:SetMGHubData(var0)
-	arg0.miniGameProxy:RequestInitData(arg0.miniGameId)
+	arg0_1.viewComponent:SetMGData(var1_1)
+	arg0_1.viewComponent:SetMGHubData(var0_1)
+	arg0_1.miniGameProxy:RequestInitData(arg0_1.miniGameId)
 
-	arg0.gameRoomId = pg.mini_game[arg0.miniGameId].game_room
+	arg0_1.gameRoomId = pg.mini_game[arg0_1.miniGameId].game_room
 
-	if arg0.gameRoomId and arg0.gameRoomId > 0 then
-		arg0.gameRoomData = pg.game_room_template[arg0.gameRoomId]
-		arg0.gameRoonCoinCount = 0
+	if arg0_1.gameRoomId and arg0_1.gameRoomId > 0 then
+		arg0_1.gameRoomData = pg.game_room_template[arg0_1.gameRoomId]
+		arg0_1.gameRoonCoinCount = 0
 
-		arg0.viewComponent:setGameRoomData(arg0.gameRoomData)
+		arg0_1.viewComponent:setGameRoomData(arg0_1.gameRoomData)
 	end
 
-	arg0:bind(BaseMiniGameMediator.MINI_GAME_SUCCESS, function(arg0, ...)
-		arg0:OnMiniGameSuccess(...)
+	arg0_1:bind(BaseMiniGameMediator.MINI_GAME_SUCCESS, function(arg0_2, ...)
+		arg0_1:OnMiniGameSuccess(...)
 	end)
-	arg0:bind(BaseMiniGameMediator.MINI_GAME_FAILURE, function(arg0, ...)
-		arg0:OnMiniGameFailure(...)
+	arg0_1:bind(BaseMiniGameMediator.MINI_GAME_FAILURE, function(arg0_3, ...)
+		arg0_1:OnMiniGameFailure(...)
 	end)
-	arg0:bind(BaseMiniGameMediator.MINI_GAME_OPERATOR, function(arg0, ...)
-		arg0:OnMiniGameOPeration(...)
+	arg0_1:bind(BaseMiniGameMediator.MINI_GAME_OPERATOR, function(arg0_4, ...)
+		arg0_1:OnMiniGameOPeration(...)
 	end)
-	arg0:bind(BaseMiniGameMediator.OPEN_SUB_LAYER, function(arg0, arg1)
-		local var0 = Context.New(arg1)
+	arg0_1:bind(BaseMiniGameMediator.OPEN_SUB_LAYER, function(arg0_5, arg1_5)
+		local var0_5 = Context.New(arg1_5)
 
-		arg0:addSubLayers(var0)
+		arg0_1:addSubLayers(var0_5)
 	end)
-	arg0:bind(BaseMiniGameMediator.MINI_GAME_COIN, function(arg0, ...)
-		arg0:loadCoinLayer()
+	arg0_1:bind(BaseMiniGameMediator.MINI_GAME_COIN, function(arg0_6, ...)
+		arg0_1:loadCoinLayer()
 	end)
-	arg0:bind(BaseMiniGameMediator.COIN_WINDOW_CHANGE, function(arg0, arg1)
-		arg0:sendNotification(GameRoomCoinMediator.CHANGE_VISIBLE, arg1)
+	arg0_1:bind(BaseMiniGameMediator.COIN_WINDOW_CHANGE, function(arg0_7, arg1_7)
+		arg0_1:sendNotification(GameRoomCoinMediator.CHANGE_VISIBLE, arg1_7)
 	end)
-	arg0:bind(BaseMiniGameMediator.GAME_FINISH_TRACKING, function(arg0, arg1)
-		arg0:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = arg1.hub_id,
+	arg0_1:bind(BaseMiniGameMediator.GAME_FINISH_TRACKING, function(arg0_8, arg1_8)
+		arg0_1:sendNotification(GAME.SEND_MINI_GAME_OP, {
+			hubid = arg1_8.hub_id,
 			cmd = MiniGameOPCommand.CMD_PLAY,
 			args1 = {
-				arg1.game_id,
-				arg1.isComplete
+				arg1_8.game_id,
+				arg1_8.isComplete
 			}
 		})
 	end)
 end
 
-function var0.onUIAvalible(arg0)
-	if arg0.gameRoomData and arg0.gameRoomData.add_base > 0 then
-		arg0:loadCoinLayer()
+function var0_0.onUIAvalible(arg0_9)
+	if arg0_9.gameRoomData and arg0_9.gameRoomData.add_base > 0 then
+		arg0_9:loadCoinLayer()
 	end
 end
 
-function var0.loadCoinLayer(arg0)
-	arg0.viewComponent:setCoinLayer()
-	arg0:addSubLayers(Context.New({
+function var0_0.loadCoinLayer(arg0_10)
+	arg0_10.viewComponent:setCoinLayer()
+	arg0_10:addSubLayers(Context.New({
 		mediator = GameRoomCoinMediator,
 		viewComponent = GameRoomCoinLayer,
-		data = arg0.gameRoomData
+		data = arg0_10.gameRoomData
 	}))
 end
 
-function var0.OnMiniGameOPeration(arg0, ...)
+function var0_0.OnMiniGameOPeration(arg0_11, ...)
 	return
 end
 
-function var0.OnMiniGameSuccess(arg0, ...)
+function var0_0.OnMiniGameSuccess(arg0_12, ...)
 	return
 end
 
-function var0.OnMiniGameFailure(arg0, ...)
+function var0_0.OnMiniGameFailure(arg0_13, ...)
 	return
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_14)
 	return {
 		MiniGameProxy.ON_HUB_DATA_UPDATE,
 		GAME.SEND_MINI_GAME_OP_DONE,
@@ -99,49 +99,49 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_15, arg1_15)
+	local var0_15 = arg1_15:getName()
+	local var1_15 = arg1_15:getBody()
 
-	if var0 == MiniGameProxy.ON_HUB_DATA_UPDATE then
-		arg0.viewComponent:SetMGHubData(var1)
-	elseif var0 == GAME.SEND_MINI_GAME_OP_DONE then
-		local var2 = {
-			function(arg0)
-				local var0 = var1.awards
+	if var0_15 == MiniGameProxy.ON_HUB_DATA_UPDATE then
+		arg0_15.viewComponent:SetMGHubData(var1_15)
+	elseif var0_15 == GAME.SEND_MINI_GAME_OP_DONE then
+		local var2_15 = {
+			function(arg0_16)
+				local var0_16 = var1_15.awards
 
-				if #var0 > 0 then
-					arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var0, arg0)
+				if #var0_16 > 0 then
+					arg0_15.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_16, arg0_16)
 				else
-					arg0()
+					arg0_16()
 				end
 			end,
-			function(arg0)
-				arg0.viewComponent:OnGetAwardDone(var1)
-				arg0()
+			function(arg0_17)
+				arg0_15.viewComponent:OnGetAwardDone(var1_15)
+				arg0_17()
 			end
 		}
 
-		seriesAsync(var2)
-		arg0.viewComponent:OnSendMiniGameOPDone(var1)
-	elseif var0 == GAME.MODIFY_MINI_GAME_DATA_DONE then
-		arg0.viewComponent:OnModifyMiniGameDataDone(var1)
-	elseif var0 == GAME.ON_APPLICATION_PAUSE then
-		arg0.viewComponent:OnApplicationPaused(var1)
-	elseif var0 == GAME.GAME_COIN_COUNT_CHANGE then
-		arg0.gameRoonCoinCount = var1
-	elseif var0 == GAME.GAME_ROOM_AWARD_DONE then
-		if #var1 > 0 then
-			arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1)
-			arg0.viewComponent:OnGetAwardDone(var1)
+		seriesAsync(var2_15)
+		arg0_15.viewComponent:OnSendMiniGameOPDone(var1_15)
+	elseif var0_15 == GAME.MODIFY_MINI_GAME_DATA_DONE then
+		arg0_15.viewComponent:OnModifyMiniGameDataDone(var1_15)
+	elseif var0_15 == GAME.ON_APPLICATION_PAUSE then
+		arg0_15.viewComponent:OnApplicationPaused(var1_15)
+	elseif var0_15 == GAME.GAME_COIN_COUNT_CHANGE then
+		arg0_15.gameRoonCoinCount = var1_15
+	elseif var0_15 == GAME.GAME_ROOM_AWARD_DONE then
+		if #var1_15 > 0 then
+			arg0_15.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_15)
+			arg0_15.viewComponent:OnGetAwardDone(var1_15)
 		end
-	elseif var0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
+	elseif var0_15 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
 		if getProxy(ContextProxy):getContextByMediator(ActivityMediator) then
 			return
 		end
 
-		arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1.awards, var1.callback)
+		arg0_15.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_15.awards, var1_15.callback)
 	end
 end
 
-return var0
+return var0_0

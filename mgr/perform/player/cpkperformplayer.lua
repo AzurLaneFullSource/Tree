@@ -1,138 +1,138 @@
-﻿local var0 = class("CpkPerformPlayer", import(".BasePerformPlayer"))
+﻿local var0_0 = class("CpkPerformPlayer", import(".BasePerformPlayer"))
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0.bgTF = arg0:findTF("bg", arg0._tf)
-	arg0.nameTF = arg0:findTF("name", arg0.bgTF)
-	arg0.sliderTF = arg0:findTF("slider", arg0.bgTF)
-	arg0.cpkParentTF = arg0:findTF("cpk", arg0.bgTF)
-	arg0.cpkCoverTF = arg0:findTF("cpk_cover", arg0.bgTF)
-	arg0.frameRate = Application.targetFrameRate or 60
+	arg0_1.bgTF = arg0_1:findTF("bg", arg0_1._tf)
+	arg0_1.nameTF = arg0_1:findTF("name", arg0_1.bgTF)
+	arg0_1.sliderTF = arg0_1:findTF("slider", arg0_1.bgTF)
+	arg0_1.cpkParentTF = arg0_1:findTF("cpk", arg0_1.bgTF)
+	arg0_1.cpkCoverTF = arg0_1:findTF("cpk_cover", arg0_1.bgTF)
+	arg0_1.frameRate = Application.targetFrameRate or 60
 
-	local var0 = pg.child_data[1]
+	local var0_1 = pg.child_data[1]
 
-	arg0.maxStage = #var0.stage
-	arg0.personalityIds = var0.attr_2_list
+	arg0_1.maxStage = #var0_1.stage
+	arg0_1.personalityIds = var0_1.attr_2_list
 end
 
-function var0.getCpkName(arg0, arg1)
-	local var0 = getProxy(EducateProxy):GetCharData():GetStage()
+function var0_0.getCpkName(arg0_2, arg1_2)
+	local var0_2 = getProxy(EducateProxy):GetCharData():GetStage()
 
-	if var0 < arg0.maxStage then
-		return arg1[var0]
-	elseif var0 == arg0.maxStage then
-		local var1 = getProxy(EducateProxy):GetPersonalityId()
-		local var2 = table.indexof(arg0.personalityIds, var1)
+	if var0_2 < arg0_2.maxStage then
+		return arg1_2[var0_2]
+	elseif var0_2 == arg0_2.maxStage then
+		local var1_2 = getProxy(EducateProxy):GetPersonalityId()
+		local var2_2 = table.indexof(arg0_2.personalityIds, var1_2)
 
-		return arg1[var0][var2]
+		return arg1_2[var0_2][var2_2]
 	end
 
 	return ""
 end
 
-function var0.Play(arg0, arg1, arg2, arg3)
-	arg0:Show()
+function var0_0.Play(arg0_3, arg1_3, arg2_3, arg3_3)
+	arg0_3:Show()
 
-	if arg3 then
-		setText(arg0.nameTF, arg3)
+	if arg3_3 then
+		setText(arg0_3.nameTF, arg3_3)
 	end
 
-	setActive(arg0.bgTF, not IsNil(arg0.cpkTF))
+	setActive(arg0_3.bgTF, not IsNil(arg0_3.cpkTF))
 
-	local var0 = arg0:getCpkName(arg1.param[1]) or ""
-	local var1 = arg1.param[2] or 3
+	local var0_3 = arg0_3:getCpkName(arg1_3.param[1]) or ""
+	local var1_3 = arg1_3.param[2] or 3
 
-	if checkABExist("educateanim/" .. var0) then
-		ResourceMgr.Inst:getAssetAsync("educateanim/" .. var0, var0, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0)
-			local var0 = Object.Instantiate(arg0, arg0.cpkParentTF)
+	if checkABExist("educateanim/" .. var0_3) then
+		ResourceMgr.Inst:getAssetAsync("educateanim/" .. var0_3, var0_3, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_4)
+			local var0_4 = Object.Instantiate(arg0_4, arg0_3.cpkParentTF)
 
-			setActive(arg0.bgTF, true)
+			setActive(arg0_3.bgTF, true)
 
-			arg0.player = var0.transform:Find("usm"):GetComponent(typeof(CriManaCpkUI))
-			arg0.time = var1
+			arg0_3.player = var0_4.transform:Find("usm"):GetComponent(typeof(CriManaCpkUI))
+			arg0_3.time = var1_3
 
-			local var1 = arg0.cpkTF
+			local var1_4 = arg0_3.cpkTF
 
-			arg0.cpkTF = var0
+			arg0_3.cpkTF = var0_4
 
-			arg0.player:SetPlayEndHandler(function()
-				if arg2 then
-					arg2()
+			arg0_3.player:SetPlayEndHandler(function()
+				if arg2_3 then
+					arg2_3()
 				end
 
-				arg0:onCpkEnd()
+				arg0_3:onCpkEnd()
 			end)
 
-			if arg0._anim then
-				arg0._anim:Play()
+			if arg0_3._anim then
+				arg0_3._anim:Play()
 			end
 
-			arg0.player:SetMaxFrameDrop(CriManaMovieMaterial.MaxFrameDrop.Infinite)
-			arg0.player:SetCpkTotalTimeCallback(function(arg0)
-				arg0.time = arg0
+			arg0_3.player:SetMaxFrameDrop(CriManaMovieMaterial.MaxFrameDrop.Infinite)
+			arg0_3.player:SetCpkTotalTimeCallback(function(arg0_6)
+				arg0_3.time = arg0_6
 
-				arg0:onCpkStart(arg0)
+				arg0_3:onCpkStart(arg0_6)
 			end)
-			arg0.player:PlayerManualUpdate()
-			arg0.player:PlayCpk()
+			arg0_3.player:PlayerManualUpdate()
+			arg0_3.player:PlayCpk()
 
-			if not IsNil(var1) then
-				Destroy(var1)
+			if not IsNil(var1_4) then
+				Destroy(var1_4)
 			end
 		end), true, true)
-	elseif arg2 then
-		arg2()
+	elseif arg2_3 then
+		arg2_3()
 	end
 end
 
-function var0.onCpkStart(arg0, arg1)
-	setSlider(arg0.sliderTF, 0, 1, 0)
+function var0_0.onCpkStart(arg0_7, arg1_7)
+	setSlider(arg0_7.sliderTF, 0, 1, 0)
 
-	arg0.playingTime = 0
-	arg0.timer = Timer.New(function()
-		arg0.playingTime = arg0.playingTime + 1 / arg0.frameRate
+	arg0_7.playingTime = 0
+	arg0_7.timer = Timer.New(function()
+		arg0_7.playingTime = arg0_7.playingTime + 1 / arg0_7.frameRate
 
-		setSlider(arg0.sliderTF, 0, 1, arg0.playingTime / arg1)
-	end, 1 / arg0.frameRate, -1)
+		setSlider(arg0_7.sliderTF, 0, 1, arg0_7.playingTime / arg1_7)
+	end, 1 / arg0_7.frameRate, -1)
 
-	arg0.timer:Start()
+	arg0_7.timer:Start()
 end
 
-function var0.onCpkEnd(arg0)
-	setSlider(arg0.sliderTF, 0, 1, 1)
+function var0_0.onCpkEnd(arg0_9)
+	setSlider(arg0_9.sliderTF, 0, 1, 1)
 
-	if arg0.timer ~= nil then
-		arg0.timer:Stop()
+	if arg0_9.timer ~= nil then
+		arg0_9.timer:Stop()
 
-		arg0.timer = nil
+		arg0_9.timer = nil
 	end
 end
 
-function var0.SetUIParam(arg0, arg1)
-	setAnchoredPosition(arg0.sliderTF, arg1.sliderPos)
-	setAnchoredPosition(arg0.cpkParentTF, arg1.cpkPos)
-	setAnchoredPosition(arg0.cpkCoverTF, arg1.cpkCoverPos)
+function var0_0.SetUIParam(arg0_10, arg1_10)
+	setAnchoredPosition(arg0_10.sliderTF, arg1_10.sliderPos)
+	setAnchoredPosition(arg0_10.cpkParentTF, arg1_10.cpkPos)
+	setAnchoredPosition(arg0_10.cpkCoverTF, arg1_10.cpkCoverPos)
 
-	GetComponent(arg0.bgTF, typeof(Image)).enabled = arg1.showCpkBg
+	GetComponent(arg0_10.bgTF, typeof(Image)).enabled = arg1_10.showCpkBg
 end
 
-function var0.Clear(arg0)
-	if not IsNil(arg0.cpkTF) then
-		Destroy(arg0.cpkTF)
+function var0_0.Clear(arg0_11)
+	if not IsNil(arg0_11.cpkTF) then
+		Destroy(arg0_11.cpkTF)
 	end
 
-	if arg0.timer ~= nil then
-		arg0.timer:Stop()
+	if arg0_11.timer ~= nil then
+		arg0_11.timer:Stop()
 
-		arg0.timer = nil
+		arg0_11.timer = nil
 	end
 
-	arg0.player = nil
+	arg0_11.player = nil
 
-	setText(arg0.nameTF, "")
-	arg0:Hide()
+	setText(arg0_11.nameTF, "")
+	arg0_11:Hide()
 	gcAll()
 end
 
-return var0
+return var0_0

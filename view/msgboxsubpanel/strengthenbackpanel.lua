@@ -1,6 +1,6 @@
-﻿local var0 = class("StrengthenBackPanel", import(".MsgboxSubPanel"))
+﻿local var0_0 = class("StrengthenBackPanel", import(".MsgboxSubPanel"))
 
-var0.ConfigData = {
+var0_0.ConfigData = {
 	equipID = 96000,
 	btnTxt = "text_forward",
 	isOpen = true,
@@ -8,33 +8,33 @@ var0.ConfigData = {
 	content = "equipment_info_change_strengthen"
 }
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "StrengthenBackBox"
 end
 
-function var0.UpdateView(arg0, arg1)
-	arg0:PreRefresh(arg1)
+function var0_0.UpdateView(arg0_2, arg1_2)
+	arg0_2:PreRefresh(arg1_2)
 
-	rtf(arg0.viewParent._window).sizeDelta = Vector2.New(1000, 638)
+	rtf(arg0_2.viewParent._window).sizeDelta = Vector2.New(1000, 638)
 
-	local var0 = arg0:findTF("info_view/Viewport/Content/Text", arg0._tf)
-	local var1 = Equipment.getConfigData(var0.ConfigData.equipID).name
+	local var0_2 = arg0_2:findTF("info_view/Viewport/Content/Text", arg0_2._tf)
+	local var1_2 = Equipment.getConfigData(var0_0.ConfigData.equipID).name
 
-	setText(var0, i18n(var0.ConfigData.content, var1))
+	setText(var0_2, i18n(var0_0.ConfigData.content, var1_2))
 
-	local var2 = arg0:findTF("button_container/custom_button_1(Clone)/pic", arg0._tf.parent)
+	local var2_2 = arg0_2:findTF("button_container/custom_button_1(Clone)/pic", arg0_2._tf.parent)
 
-	setText(var2, i18n(var0.ConfigData.btnTxt))
+	setText(var2_2, i18n(var0_0.ConfigData.btnTxt))
 
-	local var3 = arg0:findTF("icon_bg/icon", arg0._tf)
+	local var3_2 = arg0_2:findTF("icon_bg/icon", arg0_2._tf)
 
-	setImageSprite(var3, LoadSprite(var0.ConfigData.icon))
+	setImageSprite(var3_2, LoadSprite(var0_0.ConfigData.icon))
 
-	if arg1.windowSize then
-		arg0._tf.parent.sizeDelta = Vector2(arg1.windowSize.x, arg1.windowSize.y)
+	if arg1_2.windowSize then
+		arg0_2._tf.parent.sizeDelta = Vector2(arg1_2.windowSize.x, arg1_2.windowSize.y)
 	end
 
-	arg0:PostRefresh(arg1)
+	arg0_2:PostRefresh(arg1_2)
 end
 
-return var0
+return var0_0

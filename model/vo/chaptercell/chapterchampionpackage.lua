@@ -1,93 +1,93 @@
-﻿local var0 = class("ChapterChampionPackage")
-local var1 = {
+﻿local var0_0 = class("ChapterChampionPackage")
+local var1_0 = {
 	[ChapterConst.AttachOni] = import(".ChapterChampionOni"),
 	[ChapterConst.AttachChampion] = import(".ChapterChampionNormal")
 }
 
-function var0.Ctor(arg0, arg1)
-	local var0 = arg0:RebuildData(arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	local var0_1 = arg0_1:RebuildData(arg1_1)
 
-	arg0.idList = {}
+	arg0_1.idList = {}
 
-	if arg1.extra_id then
-		for iter0, iter1 in ipairs(arg1.extra_id) do
-			arg0.idList[iter0] = iter1
+	if arg1_1.extra_id then
+		for iter0_1, iter1_1 in ipairs(arg1_1.extra_id) do
+			arg0_1.idList[iter0_1] = iter1_1
 		end
 	end
 
-	arg0.currentChampion = var1[var0.attachment].New(var0)
-	arg0.trait = ChapterConst.TraitNone
-	arg0.rotation = Quaternion.identity
+	arg0_1.currentChampion = var1_0[var0_1.attachment].New(var0_1)
+	arg0_1.trait = ChapterConst.TraitNone
+	arg0_1.rotation = Quaternion.identity
 
-	rawset(arg0, "_init", true)
+	rawset(arg0_1, "_init", true)
 end
 
-function var0.RebuildData(arg0, arg1)
-	local var0 = {
-		id = arg1.item_id,
+function var0_0.RebuildData(arg0_2, arg1_2)
+	local var0_2 = {
+		id = arg1_2.item_id,
 		pos = {}
 	}
 
-	var0.pos.row = arg1.pos.row
-	var0.pos.column = arg1.pos.column
-	var0.attachment = arg1.item_type
-	var0.flag = arg1.item_flag
-	var0.data = arg1.item_data
+	var0_2.pos.row = arg1_2.pos.row
+	var0_2.pos.column = arg1_2.pos.column
+	var0_2.attachment = arg1_2.item_type
+	var0_2.flag = arg1_2.item_flag
+	var0_2.data = arg1_2.item_data
 
-	return var0
+	return var0_2
 end
 
-function var0.__index(arg0, arg1)
-	local var0 = var0[arg1]
+function var0_0.__index(arg0_3, arg1_3)
+	local var0_3 = var0_0[arg1_3]
 
-	if not var0 then
-		local var1 = rawget(arg0, "currentChampion")
+	if not var0_3 then
+		local var1_3 = rawget(arg0_3, "currentChampion")
 
-		if var1 then
-			var0 = var1[arg1]
+		if var1_3 then
+			var0_3 = var1_3[arg1_3]
 		end
 	end
 
-	return var0
+	return var0_3
 end
 
-function var0.__newindex(arg0, arg1, arg2)
-	if not rawget(arg0, "_init") then
-		rawset(arg0, arg1, arg2)
+function var0_0.__newindex(arg0_4, arg1_4, arg2_4)
+	if not rawget(arg0_4, "_init") then
+		rawset(arg0_4, arg1_4, arg2_4)
 
 		return
 	end
 
-	local var0 = rawget(arg0, "currentChampion")
+	local var0_4 = rawget(arg0_4, "currentChampion")
 
-	if var0 then
-		var0[arg1] = arg2
+	if var0_4 then
+		var0_4[arg1_4] = arg2_4
 	end
 end
 
-function var0.Iter(arg0)
-	if #arg0.idList <= 0 then
-		arg0.flag = ChapterConst.CellFlagDisabled
+function var0_0.Iter(arg0_5)
+	if #arg0_5.idList <= 0 then
+		arg0_5.flag = ChapterConst.CellFlagDisabled
 
 		return
 	end
 
-	local var0 = table.remove(arg0.idList, 1)
-	local var1 = setmetatable({
+	local var0_5 = table.remove(arg0_5.idList, 1)
+	local var1_5 = setmetatable({
 		data = 0,
-		id = var0,
-		pos = arg0.currentChampion
-	}, arg0.currentChampion)
+		id = var0_5,
+		pos = arg0_5.currentChampion
+	}, arg0_5.currentChampion)
 
-	arg0.currentChampion = var1[var1.attachment].New(var1)
+	arg0_5.currentChampion = var1_0[var1_5.attachment].New(var1_5)
 end
 
-function var0.GetLastID(arg0)
-	if #arg0.idList > 0 then
-		return arg0.idList[#arg0.idList]
+function var0_0.GetLastID(arg0_6)
+	if #arg0_6.idList > 0 then
+		return arg0_6.idList[#arg0_6.idList]
 	else
-		return arg0.currentChampion.id
+		return arg0_6.currentChampion.id
 	end
 end
 
-return var0
+return var0_0

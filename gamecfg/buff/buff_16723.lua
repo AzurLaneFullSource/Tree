@@ -25,10 +25,10 @@
 						}
 					}
 				},
-				centerPosFun = function(arg0)
+				centerPosFun = function(arg0_1)
 					return Vector3(3, 1.5, 0.5)
 				end,
-				rotationFun = function(arg0)
+				rotationFun = function(arg0_2)
 					return Vector3(0, 192, 0)
 				end
 			}
@@ -82,10 +82,10 @@
 							}
 						}
 					},
-					centerPosFun = function(arg0)
+					centerPosFun = function(arg0_3)
 						return Vector3(3, 1.5, 0.5)
 					end,
-					rotationFun = function(arg0)
+					rotationFun = function(arg0_4)
 						return Vector3(0, 192, 0)
 					end
 				}
@@ -140,10 +140,10 @@
 							}
 						}
 					},
-					centerPosFun = function(arg0)
+					centerPosFun = function(arg0_5)
 						return Vector3(3, 1.5, 0.5)
 					end,
-					rotationFun = function(arg0)
+					rotationFun = function(arg0_6)
 						return Vector3(0, 192, 0)
 					end
 				}
@@ -198,10 +198,10 @@
 							}
 						}
 					},
-					centerPosFun = function(arg0)
+					centerPosFun = function(arg0_7)
 						return Vector3(3, 1.5, 0.5)
 					end,
-					rotationFun = function(arg0)
+					rotationFun = function(arg0_8)
 						return Vector3(0, 192, 0)
 					end
 				}
@@ -256,10 +256,10 @@
 							}
 						}
 					},
-					centerPosFun = function(arg0)
+					centerPosFun = function(arg0_9)
 						return Vector3(3, 1.5, 0.5)
 					end,
-					rotationFun = function(arg0)
+					rotationFun = function(arg0_10)
 						return Vector3(0, 192, 0)
 					end
 				}
@@ -314,10 +314,10 @@
 							}
 						}
 					},
-					centerPosFun = function(arg0)
+					centerPosFun = function(arg0_11)
 						return Vector3(3, 1.5, 0.5)
 					end,
-					rotationFun = function(arg0)
+					rotationFun = function(arg0_12)
 						return Vector3(0, 192, 0)
 					end
 				}
@@ -372,10 +372,10 @@
 							}
 						}
 					},
-					centerPosFun = function(arg0)
+					centerPosFun = function(arg0_13)
 						return Vector3(3, 1.5, 0.5)
 					end,
-					rotationFun = function(arg0)
+					rotationFun = function(arg0_14)
 						return Vector3(0, 192, 0)
 					end
 				}
@@ -430,10 +430,10 @@
 							}
 						}
 					},
-					centerPosFun = function(arg0)
+					centerPosFun = function(arg0_15)
 						return Vector3(3, 1.5, 0.5)
 					end,
-					rotationFun = function(arg0)
+					rotationFun = function(arg0_16)
 						return Vector3(0, 192, 0)
 					end
 				}
@@ -488,10 +488,10 @@
 							}
 						}
 					},
-					centerPosFun = function(arg0)
+					centerPosFun = function(arg0_17)
 						return Vector3(3, 1.5, 0.5)
 					end,
-					rotationFun = function(arg0)
+					rotationFun = function(arg0_18)
 						return Vector3(0, 192, 0)
 					end
 				}
@@ -546,10 +546,10 @@
 							}
 						}
 					},
-					centerPosFun = function(arg0)
+					centerPosFun = function(arg0_19)
 						return Vector3(3, 1.5, 0.5)
 					end,
-					rotationFun = function(arg0)
+					rotationFun = function(arg0_20)
 						return Vector3(0, 192, 0)
 					end
 				}
@@ -604,10 +604,10 @@
 							}
 						}
 					},
-					centerPosFun = function(arg0)
+					centerPosFun = function(arg0_21)
 						return Vector3(3, 1.5, 0.5)
 					end,
-					rotationFun = function(arg0)
+					rotationFun = function(arg0_22)
 						return Vector3(0, 192, 0)
 					end
 				}

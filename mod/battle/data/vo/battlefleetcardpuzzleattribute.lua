@@ -1,74 +1,74 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleUnitEvent
-local var2 = var0.Battle.BattleEvent
-local var3 = var0.Battle.BattleCardPuzzleEvent
-local var4 = var0.Battle.BattleFormulas
-local var5 = var0.Battle.BattleConst
-local var6 = var0.Battle.BattleConfig
-local var7 = var0.Battle.BattleCardPuzzleConfig
-local var8 = var0.Battle.BattleAttr
-local var9 = var0.Battle.BattleDataFunction
-local var10 = var0.Battle.BattleAttr
-local var11 = class("BattleFleetCardPuzzleAttribute")
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleUnitEvent
+local var2_0 = var0_0.Battle.BattleEvent
+local var3_0 = var0_0.Battle.BattleCardPuzzleEvent
+local var4_0 = var0_0.Battle.BattleFormulas
+local var5_0 = var0_0.Battle.BattleConst
+local var6_0 = var0_0.Battle.BattleConfig
+local var7_0 = var0_0.Battle.BattleCardPuzzleConfig
+local var8_0 = var0_0.Battle.BattleAttr
+local var9_0 = var0_0.Battle.BattleDataFunction
+local var10_0 = var0_0.Battle.BattleAttr
+local var11_0 = class("BattleFleetCardPuzzleAttribute")
 
-var0.Battle.BattleFleetCardPuzzleAttribute = var11
-var11.__name = "BattleFleetCardPuzzleAttribute"
+var0_0.Battle.BattleFleetCardPuzzleAttribute = var11_0
+var11_0.__name = "BattleFleetCardPuzzleAttribute"
 
-function var11.Ctor(arg0, arg1)
-	arg0:init()
+function var11_0.Ctor(arg0_1, arg1_1)
+	arg0_1:init()
 
-	arg0._client = arg1
+	arg0_1._client = arg1_1
 end
 
-function var11.init(arg0)
-	arg0._buffAttr = {}
-	arg0._attrList = {}
-	arg0._clampList = {}
+function var11_0.init(arg0_2)
+	arg0_2._buffAttr = {}
+	arg0_2._attrList = {}
+	arg0_2._clampList = {}
 end
 
-function var11.AddBaseAttr(arg0, arg1, arg2)
-	arg0._attrList[arg1] = math.max(0, arg2 + (arg0._attrList[arg1] or 0))
-	arg0._attrList[arg1] = arg0:checkClamp(arg1)
+function var11_0.AddBaseAttr(arg0_3, arg1_3, arg2_3)
+	arg0_3._attrList[arg1_3] = math.max(0, arg2_3 + (arg0_3._attrList[arg1_3] or 0))
+	arg0_3._attrList[arg1_3] = arg0_3:checkClamp(arg1_3)
 
-	arg0._client:DispatchUpdateAttr(arg1)
-	arg0:specificAttrUpdate(arg1)
+	arg0_3._client:DispatchUpdateAttr(arg1_3)
+	arg0_3:specificAttrUpdate(arg1_3)
 end
 
-function var11.SetAttr(arg0, arg1, arg2)
-	arg0._attrList[arg1] = arg2
-	arg0._attrList[arg1] = arg0:checkClamp(arg1)
+function var11_0.SetAttr(arg0_4, arg1_4, arg2_4)
+	arg0_4._attrList[arg1_4] = arg2_4
+	arg0_4._attrList[arg1_4] = arg0_4:checkClamp(arg1_4)
 
-	arg0._client:DispatchUpdateAttr(arg1)
-	arg0:specificAttrUpdate(arg1)
+	arg0_4._client:DispatchUpdateAttr(arg1_4)
+	arg0_4:specificAttrUpdate(arg1_4)
 end
 
-function var11.specificAttrUpdate(arg0, arg1)
-	if arg1 == "BaseEnergyBoostRate" or arg1 == "BaseEnergyBoostExtra" then
-		arg0._client:FlushHandOverheat()
+function var11_0.specificAttrUpdate(arg0_5, arg1_5)
+	if arg1_5 == "BaseEnergyBoostRate" or arg1_5 == "BaseEnergyBoostExtra" then
+		arg0_5._client:FlushHandOverheat()
 	end
 end
 
-function var11.checkClamp(arg0, arg1)
-	if arg0._attrList[arg1] == nil then
+function var11_0.checkClamp(arg0_6, arg1_6)
+	if arg0_6._attrList[arg1_6] == nil then
 		return
 	end
 
-	local var0 = arg0._attrList[arg1]
-	local var1 = var7.FleetAttrClamp[arg1]
+	local var0_6 = arg0_6._attrList[arg1_6]
+	local var1_6 = var7_0.FleetAttrClamp[arg1_6]
 
-	if var1 then
-		local var2 = arg0._attrList[var1.max]
-		local var3 = arg0._attrList[var1.min] or 0
+	if var1_6 then
+		local var2_6 = arg0_6._attrList[var1_6.max]
+		local var3_6 = arg0_6._attrList[var1_6.min] or 0
 
-		var0 = math.max(var0, var3)
-		var0 = var2 and math.min(var0, var2) or var0
+		var0_6 = math.max(var0_6, var3_6)
+		var0_6 = var2_6 and math.min(var0_6, var2_6) or var0_6
 	end
 
-	return var0
+	return var0_6
 end
 
-function var11.GetCurrent(arg0, arg1)
-	return arg0._attrList[arg1] or 0
+function var11_0.GetCurrent(arg0_7, arg1_7)
+	return arg0_7._attrList[arg1_7] or 0
 end

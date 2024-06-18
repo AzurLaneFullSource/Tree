@@ -1,34 +1,34 @@
-﻿local var0 = class("ChuixuePTRePage", import(".TemplatePage.PtTemplatePage"))
+﻿local var0_0 = class("ChuixuePTRePage", import(".TemplatePage.PtTemplatePage"))
 
-function var0.OnFirstFlush(arg0)
-	var0.super.OnFirstFlush(arg0)
+function var0_0.OnFirstFlush(arg0_1)
+	var0_0.super.OnFirstFlush(arg0_1)
 
-	var0.scrolltext = arg0:findTF("name", arg0.awardTF)
+	var0_0.scrolltext = arg0_1:findTF("name", arg0_1.awardTF)
 
-	onButton(arg0, arg0.battleBtn, function()
-		arg0:emit(ActivityMediator.GO_SHOPS_LAYER_STEEET, {
+	onButton(arg0_1, arg0_1.battleBtn, function()
+		arg0_1:emit(ActivityMediator.GO_SHOPS_LAYER_STEEET, {
 			warp = NewShopsScene.TYPE_SHOP_STREET
 		})
 	end)
 end
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
-	arg0:SetAwardName()
+function var0_0.OnUpdateFlush(arg0_3)
+	var0_0.super.OnUpdateFlush(arg0_3)
+	arg0_3:SetAwardName()
 
-	local var0, var1, var2 = arg0.ptData:GetResProgress()
+	local var0_3, var1_3, var2_3 = arg0_3.ptData:GetResProgress()
 
-	setText(arg0.progress, (var2 >= 1 and setColorStr(var0, "#A2A2A2FF") or var0) .. "/" .. var1)
+	setText(arg0_3.progress, (var2_3 >= 1 and setColorStr(var0_3, "#A2A2A2FF") or var0_3) .. "/" .. var1_3)
 end
 
-function var0.SetAwardName(arg0)
-	local var0 = arg0.ptData:GetAward()
+function var0_0.SetAwardName(arg0_4)
+	local var0_4 = arg0_4.ptData:GetAward()
 
-	if Item.getConfigData(var0.id) then
-		changeToScrollText(var0.scrolltext, var0:getName())
+	if Item.getConfigData(var0_4.id) then
+		changeToScrollText(var0_0.scrolltext, var0_4:getName())
 	else
-		setActive(arg0:findTF("name", arg0.awardTF), false)
+		setActive(arg0_4:findTF("name", arg0_4.awardTF), false)
 	end
 end
 
-return var0
+return var0_0

@@ -1,46 +1,46 @@
-﻿local var0 = class("GuildGoods", import("..BaseVO"))
+﻿local var0_0 = class("GuildGoods", import("..BaseVO"))
 
-function var0.Ctor(arg0, arg1)
-	arg0.configId = arg1.id
-	arg0.count = arg1.count
-	arg0.index = arg1.index
-	arg0.id = arg0.configId .. "_" .. arg0.index
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.configId = arg1_1.id
+	arg0_1.count = arg1_1.count
+	arg0_1.index = arg1_1.index
+	arg0_1.id = arg0_1.configId .. "_" .. arg0_1.index
 end
 
-function var0.UpdateCnt(arg0, arg1)
-	arg0.count = arg0.count - arg1
+function var0_0.UpdateCnt(arg0_2, arg1_2)
+	arg0_2.count = arg0_2.count - arg1_2
 end
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_3)
 	return pg.guild_store
 end
 
-function var0.CanPurchase(arg0)
-	return arg0.count > 0
+function var0_0.CanPurchase(arg0_4)
+	return arg0_4.count > 0
 end
 
-function var0.GetPrice(arg0)
-	return arg0:getConfig("price")
+function var0_0.GetPrice(arg0_5)
+	return arg0_5:getConfig("price")
 end
 
-function var0.Selectable(arg0)
-	return arg0:getConfig("goods_type") == 2
+function var0_0.Selectable(arg0_6)
+	return arg0_6:getConfig("goods_type") == 2
 end
 
-function var0.GetFirstDropId(arg0)
-	return arg0:getConfig("goods")
+function var0_0.GetFirstDropId(arg0_7)
+	return arg0_7:getConfig("goods")
 end
 
-function var0.GetMaxCnt(arg0)
-	return arg0.count
+function var0_0.GetMaxCnt(arg0_8)
+	return arg0_8.count
 end
 
-function var0.CanPurchaseCnt(arg0, arg1)
-	return arg1 <= arg0.count
+function var0_0.CanPurchaseCnt(arg0_9, arg1_9)
+	return arg1_9 <= arg0_9.count
 end
 
-function var0.GetLimit(arg0)
-	return arg0:getConfig("goods_purchase_limit")
+function var0_0.GetLimit(arg0_10)
+	return arg0_10:getConfig("goods_purchase_limit")
 end
 
-return var0
+return var0_0

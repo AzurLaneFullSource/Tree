@@ -1,40 +1,40 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleMainFleetCharacterFactory = singletonClass("BattleMainFleetCharacterFactory", var0.Battle.BattlePlayerCharacterFactory)
-var0.Battle.BattleMainFleetCharacterFactory.__name = "BattleMainFleetCharacterFactory"
+var0_0.Battle.BattleMainFleetCharacterFactory = singletonClass("BattleMainFleetCharacterFactory", var0_0.Battle.BattlePlayerCharacterFactory)
+var0_0.Battle.BattleMainFleetCharacterFactory.__name = "BattleMainFleetCharacterFactory"
 
-local var1 = var0.Battle.BattleMainFleetCharacterFactory
+local var1_0 = var0_0.Battle.BattleMainFleetCharacterFactory
 
-function var1.Ctor(arg0)
-	var1.super.Ctor(arg0)
+function var1_0.Ctor(arg0_1)
+	var1_0.super.Ctor(arg0_1)
 
-	arg0.ARROW_BAR_NAME = "EnemyArrowContainer/MainArrow"
+	arg0_1.ARROW_BAR_NAME = "EnemyArrowContainer/MainArrow"
 end
 
-function var1.MakeCharacter(arg0)
-	return var0.Battle.BattleMainFleetCharacter.New()
+function var1_0.MakeCharacter(arg0_2)
+	return var0_0.Battle.BattleMainFleetCharacter.New()
 end
 
-function var1.MakeModel(arg0, arg1, arg2)
-	local var0 = function(arg0)
-		arg1:AddModel(arg0)
+function var1_0.MakeModel(arg0_3, arg1_3, arg2_3)
+	local function var0_3(arg0_4)
+		arg1_3:AddModel(arg0_4)
 
-		local var0 = arg0:GetSceneMediator()
+		local var0_4 = arg0_3:GetSceneMediator()
 
-		arg1:CameraOrthogonal(var0.Battle.BattleCameraUtil.GetInstance():GetCamera())
-		var0:AddPlayerCharacter(arg1)
-		arg0:MakeUIComponentContainer(arg1)
-		arg0:MakeFXContainer(arg1)
-		arg0:MakePopNumPool(arg1)
-		arg0:MakeBloodBar(arg1)
-		arg0:MakeWaveFX(arg1)
-		arg0:MakeSmokeFX(arg1)
-		arg0:MakeArrowBar(arg1)
+		arg1_3:CameraOrthogonal(var0_0.Battle.BattleCameraUtil.GetInstance():GetCamera())
+		var0_4:AddPlayerCharacter(arg1_3)
+		arg0_3:MakeUIComponentContainer(arg1_3)
+		arg0_3:MakeFXContainer(arg1_3)
+		arg0_3:MakePopNumPool(arg1_3)
+		arg0_3:MakeBloodBar(arg1_3)
+		arg0_3:MakeWaveFX(arg1_3)
+		arg0_3:MakeSmokeFX(arg1_3)
+		arg0_3:MakeArrowBar(arg1_3)
 	end
 
-	arg0:GetCharacterPool():InstCharacter(arg1:GetModleID(), function(arg0)
-		var0(arg0)
+	arg0_3:GetCharacterPool():InstCharacter(arg1_3:GetModleID(), function(arg0_5)
+		var0_3(arg0_5)
 	end)
 end

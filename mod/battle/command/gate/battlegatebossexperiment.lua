@@ -1,35 +1,35 @@
-﻿local var0 = class("BattleGateBossExperiment")
+﻿local var0_0 = class("BattleGateBossExperiment")
 
-ys.Battle.BattleGateBossExperiment = var0
-var0.__name = "BattleGateBossExperiment"
+ys.Battle.BattleGateBossExperiment = var0_0
+var0_0.__name = "BattleGateBossExperiment"
 
-function var0.Entrance(arg0, arg1)
-	local var0 = arg0.actId
-	local var1 = arg0.mainFleetId
-	local var2 = arg0.stageId
-	local var3 = pg.expedition_data_template[var2].dungeon_id
-	local var4 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(var3).fleet_prefab
-	local var5 = {
-		mainFleetId = var1,
-		actId = var0,
-		prefabFleet = var4,
-		stageId = var2,
+function var0_0.Entrance(arg0_1, arg1_1)
+	local var0_1 = arg0_1.actId
+	local var1_1 = arg0_1.mainFleetId
+	local var2_1 = arg0_1.stageId
+	local var3_1 = pg.expedition_data_template[var2_1].dungeon_id
+	local var4_1 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(var3_1).fleet_prefab
+	local var5_1 = {
+		mainFleetId = var1_1,
+		actId = var0_1,
+		prefabFleet = var4_1,
+		stageId = var2_1,
 		system = SYSTEM_BOSS_EXPERIMENT
 	}
 
-	arg1:sendNotification(GAME.BEGIN_STAGE_DONE, var5)
+	arg1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var5_1)
 end
 
-function var0.Exit(arg0, arg1)
-	local var0 = ys.Battle.BattleConst.BattleScore.S
-	local var1 = {
+function var0_0.Exit(arg0_2, arg1_2)
+	local var0_2 = ys.Battle.BattleConst.BattleScore.S
+	local var1_2 = {
 		system = SYSTEM_BOSS_EXPERIMENT,
-		statistics = arg0.statistics,
-		score = var0,
+		statistics = arg0_2.statistics,
+		score = var0_2,
 		commanderExps = {}
 	}
 
-	arg1:sendNotification(GAME.FINISH_STAGE_DONE, var1)
+	arg1_2:sendNotification(GAME.FINISH_STAGE_DONE, var1_2)
 end
 
-return var0
+return var0_0

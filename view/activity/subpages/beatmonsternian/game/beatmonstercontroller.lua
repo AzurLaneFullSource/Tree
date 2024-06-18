@@ -1,207 +1,207 @@
-﻿local var0 = class("BeatMonsterController")
+﻿local var0_0 = class("BeatMonsterController")
 
-function var0.Ctor(arg0)
-	arg0.mediator = BeatMonsterMeidator.New(arg0)
-	arg0.model = BeatMonsterModel.New(arg0)
+function var0_0.Ctor(arg0_1)
+	arg0_1.mediator = BeatMonsterMeidator.New(arg0_1)
+	arg0_1.model = BeatMonsterModel.New(arg0_1)
 end
 
-function var0.SetUp(arg0, arg1, arg2)
+function var0_0.SetUp(arg0_2, arg1_2, arg2_2)
 	seriesAsync({
-		function(arg0)
-			arg0.OnDisenabelUIEvent = arg2
+		function(arg0_3)
+			arg0_2.OnDisenabelUIEvent = arg2_2
 
-			arg0:InitStage(arg1)
+			arg0_2:InitStage(arg1_2)
 
-			local var0 = arg0.model:GetPlayableStory()
+			local var0_3 = arg0_2.model:GetPlayableStory()
 
-			if not var0 then
-				arg0()
+			if not var0_3 then
+				arg0_3()
 
 				return
 			end
 
-			arg0.mediator:PlayStory(var0, arg0)
+			arg0_2.mediator:PlayStory(var0_3, arg0_3)
 		end,
-		function(arg0)
-			if arg1.hp > 0 then
-				arg0.mediator:DoCurtainUp(arg0)
+		function(arg0_4)
+			if arg1_2.hp > 0 then
+				arg0_2.mediator:DoCurtainUp(arg0_4)
 			else
-				arg0()
+				arg0_4()
 			end
 		end,
-		function(arg0)
-			arg0.mediator:OnInited()
+		function(arg0_5)
+			arg0_2.mediator:OnInited()
 		end
 	})
 end
 
-function var0.NetData(arg0, arg1)
-	arg0.model:UpdateData(arg1)
-	arg0.mediator:OnMonsterHpUpdate(arg0.model.mosterNian.hp)
-	arg0.mediator:OnAttackCntUpdate(arg0.model.attackCnt, arg0.isFake or arg0.model.mosterNian.hp <= 0)
+function var0_0.NetData(arg0_6, arg1_6)
+	arg0_6.model:UpdateData(arg1_6)
+	arg0_6.mediator:OnMonsterHpUpdate(arg0_6.model.mosterNian.hp)
+	arg0_6.mediator:OnAttackCntUpdate(arg0_6.model.attackCnt, arg0_6.isFake or arg0_6.model.mosterNian.hp <= 0)
 end
 
-function var0.InitStage(arg0, arg1)
-	arg0.model:AddMonsterNian(arg1.hp, arg1.maxHp)
-	arg0.model:AddFuShun()
+function var0_0.InitStage(arg0_7, arg1_7)
+	arg0_7.model:AddMonsterNian(arg1_7.hp, arg1_7.maxHp)
+	arg0_7.model:AddFuShun()
 
-	local var0 = arg0.model.mosterNian.hp
-	local var1 = arg0.model.mosterNian.maxHp
+	local var0_7 = arg0_7.model.mosterNian.hp
+	local var1_7 = arg0_7.model.mosterNian.maxHp
 
-	arg0.mediator:OnAddMonsterNian(var0, var1)
-	arg0.mediator:OnAddFuShun(var0)
-	arg0.model:SetAttackCnt(arg1.leftCount)
-	arg0.mediator:OnAttackCntUpdate(arg0.model.attackCnt, arg0.isFake or arg0.model.mosterNian.hp <= 0)
-	arg0.model:SetStorys(arg1.storys)
+	arg0_7.mediator:OnAddMonsterNian(var0_7, var1_7)
+	arg0_7.mediator:OnAddFuShun(var0_7)
+	arg0_7.model:SetAttackCnt(arg1_7.leftCount)
+	arg0_7.mediator:OnAttackCntUpdate(arg0_7.model.attackCnt, arg0_7.isFake or arg0_7.model.mosterNian.hp <= 0)
+	arg0_7.model:SetStorys(arg1_7.storys)
 end
 
-function var0.Input(arg0, arg1)
-	if arg0.isOnAction then
+function var0_0.Input(arg0_8, arg1_8)
+	if arg0_8.isOnAction then
 		return
 	end
 
-	arg0:RemoveInputTimer()
-	arg0:UpdateActionStr(arg1)
+	arg0_8:RemoveInputTimer()
+	arg0_8:UpdateActionStr(arg1_8)
 
-	local var0 = arg0.model:IsMatchAction()
-	local var1 = var0 and 0.5 or BeatMonsterNianConst.INPUT_TIME
+	local var0_8 = arg0_8.model:IsMatchAction()
+	local var1_8 = var0_8 and 0.5 or BeatMonsterNianConst.INPUT_TIME
 
-	if var0 then
-		arg0.OnDisenabelUIEvent(true)
+	if var0_8 then
+		arg0_8.OnDisenabelUIEvent(true)
 
-		arg0.isOnAction = true
+		arg0_8.isOnAction = true
 	end
 
-	arg0.inputTimer = Timer.New(function()
-		local var0 = arg0.model:GetMatchAction()
-		local var1 = arg0.model:GetMonsterAction()
+	arg0_8.inputTimer = Timer.New(function()
+		local var0_9 = arg0_8.model:GetMatchAction()
+		local var1_9 = arg0_8.model:GetMonsterAction()
 
-		arg0:UpdateActionStr("")
+		arg0_8:UpdateActionStr("")
 
-		if var0 then
-			arg0:StartAction(var0, var1)
+		if var0_8 then
+			arg0_8:StartAction(var0_9, var1_9)
 		end
-	end, var1, 1)
+	end, var1_8, 1)
 
-	arg0.inputTimer:Start()
+	arg0_8.inputTimer:Start()
 end
 
-function var0.StartAction(arg0, arg1, arg2)
-	arg0:RemoveAnimationTimer()
+function var0_0.StartAction(arg0_10, arg1_10, arg2_10)
+	arg0_10:RemoveAnimationTimer()
 
-	local var0
+	local var0_10
 
 	seriesAsync({
-		function(arg0)
-			arg0:SendRequestToServer(function(arg0)
-				var0 = arg0
+		function(arg0_11)
+			arg0_10:SendRequestToServer(function(arg0_12)
+				var0_10 = arg0_12
 
-				arg0()
+				arg0_11()
 			end)
 		end,
-		function(arg0)
-			arg0.mediator:OnChangeFuShunAction(arg1)
-			arg0.mediator:OnChangeNianAction(arg2)
+		function(arg0_13)
+			arg0_10.mediator:OnChangeFuShunAction(arg1_10)
+			arg0_10.mediator:OnChangeNianAction(arg2_10)
 
-			arg0.animationTimer = Timer.New(arg0, 2, 1)
+			arg0_10.animationTimer = Timer.New(arg0_13, 2, 1)
 
-			arg0.animationTimer:Start()
+			arg0_10.animationTimer:Start()
 		end,
-		function(arg0)
-			local var0 = arg0.model.mosterNian.hp
-			local var1 = arg0.model.mosterNian.maxHp
+		function(arg0_14)
+			local var0_14 = arg0_10.model.mosterNian.hp
+			local var1_14 = arg0_10.model.mosterNian.maxHp
 
-			arg0.mediator:OnUIHpUpdate(var0, var1, arg0)
+			arg0_10.mediator:OnUIHpUpdate(var0_14, var1_14, arg0_14)
 		end,
-		function(arg0)
-			local var0 = arg0.model:GetPlayableStory()
+		function(arg0_15)
+			local var0_15 = arg0_10.model:GetPlayableStory()
 
-			if not var0 then
-				arg0()
+			if not var0_15 then
+				arg0_15()
 
 				return
 			end
 
-			arg0.mediator:PlayStory(var0, arg0)
+			arg0_10.mediator:PlayStory(var0_15, arg0_15)
 		end,
-		function(arg0)
-			if not var0 or #var0 == 0 then
-				arg0()
+		function(arg0_16)
+			if not var0_10 or #var0_10 == 0 then
+				arg0_16()
 
 				return
 			end
 
-			arg0.mediator:DisplayAwards(var0, arg0)
+			arg0_10.mediator:DisplayAwards(var0_10, arg0_16)
 		end,
-		function(arg0)
-			arg0.isOnAction = false
+		function(arg0_17)
+			arg0_10.isOnAction = false
 
-			arg0.OnDisenabelUIEvent(false)
+			arg0_10.OnDisenabelUIEvent(false)
 		end
 	})
 end
 
-function var0.SendRequestToServer(arg0, arg1)
-	if arg0.isFake then
-		arg0:NetData({
-			hp = arg0.model:RandomDamage(),
-			maxHp = arg0.model:GetMonsterMaxHp(),
-			leftCount = arg0.model:GetAttackCount() - 1,
+function var0_0.SendRequestToServer(arg0_18, arg1_18)
+	if arg0_18.isFake then
+		arg0_18:NetData({
+			hp = arg0_18.model:RandomDamage(),
+			maxHp = arg0_18.model:GetMonsterMaxHp(),
+			leftCount = arg0_18.model:GetAttackCount() - 1,
 			storys = {}
 		})
-		arg1()
+		arg1_18()
 	else
 		pg.m02:sendNotification(GAME.ACT_BEAT_MONSTER_NIAN, {
 			cmd = 1,
 			activity_id = ActivityConst.BEAT_MONSTER_NIAN_2020,
-			callback = arg1
+			callback = arg1_18
 		})
 	end
 end
 
-function var0.UpdateActionStr(arg0, arg1)
-	arg0.model:UpdateActionStr(arg1)
+function var0_0.UpdateActionStr(arg0_19, arg1_19)
+	arg0_19.model:UpdateActionStr(arg1_19)
 
-	local var0 = arg0.model:GetActionStr()
+	local var0_19 = arg0_19.model:GetActionStr()
 
-	arg0.mediator:OnInputChange(var0)
+	arg0_19.mediator:OnInputChange(var0_19)
 end
 
-function var0.RemoveInputTimer(arg0)
-	if arg0.inputTimer then
-		arg0.inputTimer:Stop()
+function var0_0.RemoveInputTimer(arg0_20)
+	if arg0_20.inputTimer then
+		arg0_20.inputTimer:Stop()
 
-		arg0.inputTimer = nil
+		arg0_20.inputTimer = nil
 	end
 end
 
-function var0.RemoveAnimationTimer(arg0)
-	if arg0.animationTimer then
-		arg0.animationTimer:Stop()
+function var0_0.RemoveAnimationTimer(arg0_21)
+	if arg0_21.animationTimer then
+		arg0_21.animationTimer:Stop()
 
-		arg0.animationTimer = nil
+		arg0_21.animationTimer = nil
 	end
 end
 
-function var0.ReStartGame(arg0)
-	arg0.isFake = true
+function var0_0.ReStartGame(arg0_22)
+	arg0_22.isFake = true
 
-	arg0:NetData({
+	arg0_22:NetData({
 		hp = 10,
 		leftCount = 10,
 		maxHp = 10,
 		storys = {}
 	})
-	arg0.mediator:OnUIHpUpdate(10, 10)
+	arg0_22.mediator:OnUIHpUpdate(10, 10)
 end
 
-function var0.Dispose(arg0)
-	arg0:RemoveAnimationTimer()
-	arg0:RemoveInputTimer()
-	arg0.mediator:Dispose()
-	arg0.model:Dispose()
+function var0_0.Dispose(arg0_23)
+	arg0_23:RemoveAnimationTimer()
+	arg0_23:RemoveInputTimer()
+	arg0_23.mediator:Dispose()
+	arg0_23.model:Dispose()
 
-	arg0.OnDisenabelUIEvent = nil
+	arg0_23.OnDisenabelUIEvent = nil
 end
 
-return var0
+return var0_0

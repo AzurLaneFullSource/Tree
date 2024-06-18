@@ -1,24 +1,24 @@
-﻿local var0 = class("MainChapterTimeUpSequence")
+﻿local var0_0 = class("MainChapterTimeUpSequence")
 
-function var0.Execute(arg0, arg1)
-	local var0 = getProxy(ChapterProxy)
+function var0_0.Execute(arg0_1, arg1_1)
+	local var0_1 = getProxy(ChapterProxy)
 
-	var0:checkRemasterInfomation()
+	var0_1:checkRemasterInfomation()
 
-	local var1 = var0:getActiveChapter()
-	local var2 = var1 and var0:getMapById(var1:getConfig("map"))
+	local var1_1 = var0_1:getActiveChapter()
+	local var2_1 = var1_1 and var0_1:getMapById(var1_1:getConfig("map"))
 
-	if var1 and (not var1:inWartime() or not var2:isRemaster() and not var1:inActTime()) then
+	if var1_1 and (not var1_1:inWartime() or not var2_1:isRemaster() and not var1_1:inActTime()) then
 		ChapterOpCommand.PrepareChapterRetreat(function()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_chapter_timeout"))
 
-			if arg1 then
-				arg1()
+			if arg1_1 then
+				arg1_1()
 			end
 		end)
-	elseif arg1 then
-		arg1()
+	elseif arg1_1 then
+		arg1_1()
 	end
 end
 
-return var0
+return var0_0

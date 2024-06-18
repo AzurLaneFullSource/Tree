@@ -1,114 +1,114 @@
-﻿local var0 = class("IdolMasterStageScene", import("..TemplateMV.BackHillTemplate"))
+﻿local var0_0 = class("IdolMasterStageScene", import("..TemplateMV.BackHillTemplate"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "IdolMasterStageUI"
 end
 
-var0.edge2area = {
+var0_0.edge2area = {
 	default = "map_middle"
 }
 
-function var0.init(arg0)
-	arg0.top = arg0:findTF("top")
-	arg0._map = arg0:findTF("map")
+function var0_0.init(arg0_2)
+	arg0_2.top = arg0_2:findTF("top")
+	arg0_2._map = arg0_2:findTF("map")
 
-	for iter0 = 0, arg0._map.childCount - 1 do
-		local var0 = arg0._map:GetChild(iter0)
-		local var1 = go(var0).name
+	for iter0_2 = 0, arg0_2._map.childCount - 1 do
+		local var0_2 = arg0_2._map:GetChild(iter0_2)
+		local var1_2 = go(var0_2).name
 
-		arg0["map_" .. var1] = var0
+		arg0_2["map_" .. var1_2] = var0_2
 	end
 
-	arg0._shipTpl = arg0._map:Find("ship")
-	arg0._upper = arg0:findTF("upper")
+	arg0_2._shipTpl = arg0_2._map:Find("ship")
+	arg0_2._upper = arg0_2:findTF("upper")
 
-	for iter1 = 0, arg0._upper.childCount - 1 do
-		local var2 = arg0._upper:GetChild(iter1)
-		local var3 = go(var2).name
+	for iter1_2 = 0, arg0_2._upper.childCount - 1 do
+		local var2_2 = arg0_2._upper:GetChild(iter1_2)
+		local var3_2 = go(var2_2).name
 
-		arg0["upper_" .. var3] = var2
+		arg0_2["upper_" .. var3_2] = var2_2
 	end
 
-	arg0.containers = {
-		arg0.map_middle
+	arg0_2.containers = {
+		arg0_2.map_middle
 	}
-	arg0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.IdolMasterStageGraph"))
-	arg0.loader = AutoLoader.New()
+	arg0_2.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.IdolMasterStageGraph"))
+	arg0_2.loader = AutoLoader.New()
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0:findTF("top/return_btn"), function()
-		arg0:emit(var0.ON_BACK)
+function var0_0.didEnter(arg0_3)
+	onButton(arg0_3, arg0_3:findTF("top/return_btn"), function()
+		arg0_3:emit(var0_0.ON_BACK)
 	end)
-	onButton(arg0, arg0:findTF("top/return_main_btn"), function()
-		arg0:emit(var0.ON_HOME)
+	onButton(arg0_3, arg0_3:findTF("top/return_main_btn"), function()
+		arg0_3:emit(var0_0.ON_HOME)
 	end)
-	onButton(arg0, arg0:findTF("top/help_btn"), function()
+	onButton(arg0_3, arg0_3:findTF("top/help_btn"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.idolmaster_main.tip
 		})
 	end)
 
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
+	local var0_3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
 
-	arg0:InitStudents(var0 and var0.id, 2, 3)
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "jiujiuwoshouhui", function()
+	arg0_3:InitStudents(var0_3 and var0_3.id, 2, 3)
+	arg0_3:InitFacilityCross(arg0_3._map, arg0_3._upper, "jiujiuwoshouhui", function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 24)
 	end)
 
-	local var1 = getProxy(ActivityProxy):getActivityById(ActivityConst.IDOL_MASTER_PT_ID)
+	local var1_3 = getProxy(ActivityProxy):getActivityById(ActivityConst.IDOL_MASTER_PT_ID)
 
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "leijijiangli", function()
-		arg0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ACTIVITY, {
-			id = var1 and var1.id
+	arg0_3:InitFacilityCross(arg0_3._map, arg0_3._upper, "leijijiangli", function()
+		arg0_3:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ACTIVITY, {
+			id = var1_3 and var1_3.id
 		})
 	end)
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "jinianzhang", function()
-		arg0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.IDOLMASTER_MEDAL_COLLECTION_SCENE)
+	arg0_3:InitFacilityCross(arg0_3._map, arg0_3._upper, "jinianzhang", function()
+		arg0_3:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.IDOLMASTER_MEDAL_COLLECTION_SCENE)
 	end)
-	arg0:BindItemActivityShop()
-	arg0:BindItemSkinShop()
-	arg0:BindItemBuildShip()
-	arg0:BindItemBattle()
-	arg0:UpdateView()
+	arg0_3:BindItemActivityShop()
+	arg0_3:BindItemSkinShop()
+	arg0_3:BindItemBuildShip()
+	arg0_3:BindItemBattle()
+	arg0_3:UpdateView()
 end
 
-function var0.UpdateView(arg0)
-	local var0 = getProxy(ActivityProxy)
-	local var1
-	local var2 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
-	local var3 = getProxy(MiniGameProxy)
-	local var4 = var2 and var3:GetHubByHubId(var2:getConfig("config_id"))
-	local var5 = var4 and var4.count > 0
+function var0_0.UpdateView(arg0_10)
+	local var0_10 = getProxy(ActivityProxy)
+	local var1_10
+	local var2_10 = var0_10:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
+	local var3_10 = getProxy(MiniGameProxy)
+	local var4_10 = var2_10 and var3_10:GetHubByHubId(var2_10:getConfig("config_id"))
+	local var5_10 = var4_10 and var4_10.count > 0
 
-	var5 = var5 or var4.usedtime >= var4:getConfig("reward_need") and var4.ultimate == 0
+	var5_10 = var5_10 or var4_10.usedtime >= var4_10:getConfig("reward_need") and var4_10.ultimate == 0
 
-	local var6 = arg0.upper_jiujiuwoshouhui:Find("tip")
+	local var6_10 = arg0_10.upper_jiujiuwoshouhui:Find("tip")
 
-	setActive(var6, var5)
+	setActive(var6_10, var5_10)
 
-	local var7 = var0:getActivityById(ActivityConst.IDOL_MASTER_PT_ID)
-	local var8 = arg0.upper_leijijiangli:Find("tip")
-	local var9 = var7 and var7:readyToAchieve()
+	local var7_10 = var0_10:getActivityById(ActivityConst.IDOL_MASTER_PT_ID)
+	local var8_10 = arg0_10.upper_leijijiangli:Find("tip")
+	local var9_10 = var7_10 and var7_10:readyToAchieve()
 
-	setActive(var8, var9)
+	setActive(var8_10, var9_10)
 
-	local var10 = arg0.upper_jinianzhang:Find("tip")
-	local var11 = var0.MedalTip()
+	local var10_10 = arg0_10.upper_jinianzhang:Find("tip")
+	local var11_10 = var0_0.MedalTip()
 
-	setActive(var10, var11)
+	setActive(var10_10, var11_10)
 end
 
-function var0.MedalTip()
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA)
+function var0_0.MedalTip()
+	local var0_11 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA)
 
-	return Activity.IsActivityReady(var0)
+	return Activity.IsActivityReady(var0_11)
 end
 
-function var0.willExit(arg0)
-	arg0:clearStudents()
-	var0.super.willExit(arg0)
+function var0_0.willExit(arg0_12)
+	arg0_12:clearStudents()
+	var0_0.super.willExit(arg0_12)
 end
 
-return var0
+return var0_0

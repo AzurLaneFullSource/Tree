@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_56 = {}
+var0_0.word_template_56 = {}
 
-local var1 = var0.word_template_56
+local var1_0 = var0_0.word_template_56
 
 function temp()
-	var1.菜 = {
+	var1_0.菜 = {
 		逼 = {
 			this = true
 		},
@@ -20,7 +20,7 @@ end
 temp()
 
 function temp()
-	var1.蔡 = {
+	var1_0.蔡 = {
 		崇 = {
 			国 = {
 				this = true
@@ -77,7 +77,7 @@ end
 temp()
 
 function temp()
-	var1.参 = {
+	var1_0.参 = {
 		事 = {
 			室 = {
 				this = true
@@ -154,7 +154,7 @@ end
 temp()
 
 function temp()
-	var1.残 = {
+	var1_0.残 = {
 		暴 = {
 			狠 = {
 				毒 = {
@@ -233,7 +233,7 @@ end
 temp()
 
 function temp()
-	var1.惨 = {
+	var1_0.惨 = {
 		案 = {
 			this = true
 		}
@@ -243,7 +243,7 @@ end
 temp()
 
 function temp()
-	var1.黪 = {
+	var1_0.黪 = {
 		this = {
 			this = true
 		}
@@ -253,7 +253,7 @@ end
 temp()
 
 function temp()
-	var1.黲 = {
+	var1_0.黲 = {
 		this = {
 			this = true
 		}

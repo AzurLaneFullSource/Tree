@@ -1,6 +1,6 @@
-﻿local var0 = class("WSAtlasBottom", import("...BaseEntity"))
+﻿local var0_0 = class("WSAtlasBottom", import("...BaseEntity"))
 
-var0.Fields = {
+var0_0.Fields = {
 	rtBg = "userdata",
 	transform = "userdata",
 	btnBoss = "userdata",
@@ -13,73 +13,73 @@ var0.Fields = {
 	btnShop = "userdata",
 	btnDailyTask = "userdata"
 }
-var0.EventUpdateScale = "WSAtlasBottom.EventUpdateScale"
+var0_0.EventUpdateScale = "WSAtlasBottom.EventUpdateScale"
 
-function var0.Setup(arg0)
-	pg.DelegateInfo.New(arg0)
-	arg0:Init()
+function var0_0.Setup(arg0_1)
+	pg.DelegateInfo.New(arg0_1)
+	arg0_1:Init()
 end
 
-function var0.Dispose(arg0)
-	pg.DelegateInfo.Dispose(arg0)
-	arg0:Clear()
+function var0_0.Dispose(arg0_2)
+	pg.DelegateInfo.Dispose(arg0_2)
+	arg0_2:Clear()
 end
 
-function var0.Init(arg0)
-	local var0 = arg0.transform
+function var0_0.Init(arg0_3)
+	local var0_3 = arg0_3.transform
 
-	arg0.rtBg = var0:Find("bg")
-	arg0.rtButton = var0:Find("button")
-	arg0.btnBoss = arg0.rtButton:Find("btn_boss")
-	arg0.btnShop = arg0.rtButton:Find("btn_shop")
-	arg0.btnOverview = arg0.rtButton:Find("btn_overview")
-	arg0.btnCollection = arg0.rtButton:Find("btn_collection")
-	arg0.btnDailyTask = arg0.rtButton:Find("btn_daily")
-	arg0.comSilder = var0:Find("scale/Slider"):GetComponent("Slider")
-	arg0.comSilder.interactable = CAMERA_MOVE_OPEN
+	arg0_3.rtBg = var0_3:Find("bg")
+	arg0_3.rtButton = var0_3:Find("button")
+	arg0_3.btnBoss = arg0_3.rtButton:Find("btn_boss")
+	arg0_3.btnShop = arg0_3.rtButton:Find("btn_shop")
+	arg0_3.btnOverview = arg0_3.rtButton:Find("btn_overview")
+	arg0_3.btnCollection = arg0_3.rtButton:Find("btn_collection")
+	arg0_3.btnDailyTask = arg0_3.rtButton:Find("btn_daily")
+	arg0_3.comSilder = var0_3:Find("scale/Slider"):GetComponent("Slider")
+	arg0_3.comSilder.interactable = CAMERA_MOVE_OPEN
 
 	if CAMERA_MOVE_OPEN then
-		arg0.comSilder.onValueChanged:AddListener(function(arg0)
-			arg0:DispatchEvent(var0.EventUpdateScale, arg0)
+		arg0_3.comSilder.onValueChanged:AddListener(function(arg0_4)
+			arg0_3:DispatchEvent(var0_0.EventUpdateScale, arg0_4)
 		end)
 	end
 end
 
-function var0.UpdateScale(arg0, arg1, arg2, arg3)
-	if arg2 then
-		local var0 = arg0.comSilder.value
+function var0_0.UpdateScale(arg0_5, arg1_5, arg2_5, arg3_5)
+	if arg2_5 then
+		local var0_5 = arg0_5.comSilder.value
 
-		setImageAlpha(arg0.btnOverview, var0)
-		setActive(arg0.btnOverview, true)
+		setImageAlpha(arg0_5.btnOverview, var0_5)
+		setActive(arg0_5.btnOverview, true)
 
-		arg0.twId = LeanTween.value(go(arg0.comSilder), var0, arg1, WSAtlasWorld.baseDuration):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function(arg0)
-			arg0.comSilder.value = arg0
+		arg0_5.twId = LeanTween.value(go(arg0_5.comSilder), var0_5, arg1_5, WSAtlasWorld.baseDuration):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function(arg0_6)
+			arg0_5.comSilder.value = arg0_6
 
-			setImageAlpha(arg0.btnOverview, arg0)
+			setImageAlpha(arg0_5.btnOverview, arg0_6)
 		end)):setOnComplete(System.Action(function()
-			setActive(arg0.btnOverview, arg1 == 1)
+			setActive(arg0_5.btnOverview, arg1_5 == 1)
 
-			return existCall(arg3)
+			return existCall(arg3_5)
 		end)).uniqueId
 
-		arg0.wsTimer:AddTween(arg0.twId)
+		arg0_5.wsTimer:AddTween(arg0_5.twId)
 	else
-		setImageAlpha(arg0.btnOverview, arg1)
-		setActive(arg0.btnOverview, arg1 == 1)
+		setImageAlpha(arg0_5.btnOverview, arg1_5)
+		setActive(arg0_5.btnOverview, arg1_5 == 1)
 
-		arg0.comSilder.value = arg1
+		arg0_5.comSilder.value = arg1_5
 
-		return existCall(arg3)
+		return existCall(arg3_5)
 	end
 end
 
-function var0.CheckIsTweening(arg0)
-	return arg0.twId and LeanTween.isTweening(arg0.twId)
+function var0_0.CheckIsTweening(arg0_8)
+	return arg0_8.twId and LeanTween.isTweening(arg0_8.twId)
 end
 
-function var0.SetOverSize(arg0, arg1)
-	arg0.rtBg.offsetMin = Vector2(arg1, arg0.rtBg.offsetMin.y)
-	arg0.rtBg.offsetMax = Vector2(-arg1, arg0.rtBg.offsetMax.y)
+function var0_0.SetOverSize(arg0_9, arg1_9)
+	arg0_9.rtBg.offsetMin = Vector2(arg1_9, arg0_9.rtBg.offsetMin.y)
+	arg0_9.rtBg.offsetMax = Vector2(-arg1_9, arg0_9.rtBg.offsetMax.y)
 end
 
-return var0
+return var0_0

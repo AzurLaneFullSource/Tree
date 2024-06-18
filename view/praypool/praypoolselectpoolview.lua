@@ -1,84 +1,84 @@
-﻿local var0 = class("PrayPoolSelectPoolView", import("..base.BaseSubView"))
+﻿local var0_0 = class("PrayPoolSelectPoolView", import("..base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "PrayPoolSelectPoolView"
 end
 
-function var0.OnInit(arg0)
-	arg0:initData()
-	arg0:initUI()
-	arg0:updateUI()
+function var0_0.OnInit(arg0_2)
+	arg0_2:initData()
+	arg0_2:initUI()
+	arg0_2:updateUI()
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_3)
 	return
 end
 
-function var0.OnBackPress(arg0)
+function var0_0.OnBackPress(arg0_4)
 	return
 end
 
-function var0.initData(arg0)
-	arg0.prayProxy = getProxy(PrayProxy)
-	arg0.poolToggleList = {}
-	arg0.selectedPoolType = nil
+function var0_0.initData(arg0_5)
+	arg0_5.prayProxy = getProxy(PrayProxy)
+	arg0_5.poolToggleList = {}
+	arg0_5.selectedPoolType = nil
 end
 
-function var0.initUI(arg0)
-	arg0.poolListContainer = arg0:findTF("PoolList")
-	arg0.poolTpl = arg0:findTF("PoolTpl")
-	arg0.preBtn = arg0:findTF("PreBtn")
-	arg0.nextBtn = arg0:findTF("NextBtn")
-	arg0.nextBtnCom = GetComponent(arg0.nextBtn, "Button")
-	arg0.poolList = UIItemList.New(arg0.poolListContainer, arg0.poolTpl)
+function var0_0.initUI(arg0_6)
+	arg0_6.poolListContainer = arg0_6:findTF("PoolList")
+	arg0_6.poolTpl = arg0_6:findTF("PoolTpl")
+	arg0_6.preBtn = arg0_6:findTF("PreBtn")
+	arg0_6.nextBtn = arg0_6:findTF("NextBtn")
+	arg0_6.nextBtnCom = GetComponent(arg0_6.nextBtn, "Button")
+	arg0_6.poolList = UIItemList.New(arg0_6.poolListContainer, arg0_6.poolTpl)
 
-	arg0.poolList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg1 + 1
-			local var1 = arg0:findTF("PoolImg", arg2)
+	arg0_6.poolList:make(function(arg0_7, arg1_7, arg2_7)
+		if arg0_7 == UIItemList.EventUpdate then
+			local var0_7 = arg1_7 + 1
+			local var1_7 = arg0_6:findTF("PoolImg", arg2_7)
 
-			setImageSprite(var1, GetSpriteFromAtlas("ui/prayselectpoolpage_atlas", "pool" .. var0))
-			onToggle(arg0, arg2, function(arg0)
-				if arg0 then
-					arg0.nextBtnCom.interactable = true
-					arg0.selectedPoolType = var0
+			setImageSprite(var1_7, GetSpriteFromAtlas("ui/prayselectpoolpage_atlas", "pool" .. var0_7))
+			onToggle(arg0_6, arg2_7, function(arg0_8)
+				if arg0_8 then
+					arg0_6.nextBtnCom.interactable = true
+					arg0_6.selectedPoolType = var0_7
 
-					arg0.prayProxy:setSelectedPoolNum(var0)
+					arg0_6.prayProxy:setSelectedPoolNum(var0_7)
 				else
-					arg0.nextBtnCom.interactable = false
-					arg0.selectedPoolType = nil
+					arg0_6.nextBtnCom.interactable = false
+					arg0_6.selectedPoolType = nil
 
-					arg0.prayProxy:setSelectedPoolNum(nil)
+					arg0_6.prayProxy:setSelectedPoolNum(nil)
 				end
 			end, SFX_PANEL)
 
-			arg0.poolToggleList[var0] = arg2
+			arg0_6.poolToggleList[var0_7] = arg2_7
 		end
 	end)
-	arg0.poolList:align(#pg.activity_ship_create.all)
+	arg0_6.poolList:align(#pg.activity_ship_create.all)
 
-	arg0.nextBtnCom.interactable = false
+	arg0_6.nextBtnCom.interactable = false
 
-	onButton(arg0, arg0.preBtn, function()
-		arg0.prayProxy:updatePageState(PrayProxy.STATE_HOME)
-		arg0:emit(PrayPoolConst.SWITCH_TO_HOME_PAGE, PrayProxy.STATE_HOME)
+	onButton(arg0_6, arg0_6.preBtn, function()
+		arg0_6.prayProxy:updatePageState(PrayProxy.STATE_HOME)
+		arg0_6:emit(PrayPoolConst.SWITCH_TO_HOME_PAGE, PrayProxy.STATE_HOME)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.nextBtn, function()
-		arg0.prayProxy:updateSelectedPool(arg0.selectedPoolType)
-		arg0.prayProxy:updatePageState(PrayProxy.STAGE_SELECT_SHIP)
-		arg0:emit(PrayPoolConst.SWITCH_TO_SELECT_SHIP_PAGE, PrayProxy.STAGE_SELECT_SHIP)
+	onButton(arg0_6, arg0_6.nextBtn, function()
+		arg0_6.prayProxy:updateSelectedPool(arg0_6.selectedPoolType)
+		arg0_6.prayProxy:updatePageState(PrayProxy.STAGE_SELECT_SHIP)
+		arg0_6:emit(PrayPoolConst.SWITCH_TO_SELECT_SHIP_PAGE, PrayProxy.STAGE_SELECT_SHIP)
 	end, SFX_PANEL)
-	arg0:Show()
+	arg0_6:Show()
 end
 
-function var0.updateUI(arg0)
-	local var0 = arg0.prayProxy:getSelectedPoolType()
+function var0_0.updateUI(arg0_11)
+	local var0_11 = arg0_11.prayProxy:getSelectedPoolType()
 
-	if var0 then
-		triggerToggle(arg0.poolToggleList[var0], true)
+	if var0_11 then
+		triggerToggle(arg0_11.poolToggleList[var0_11], true)
 	else
 		return
 	end
 end
 
-return var0
+return var0_0

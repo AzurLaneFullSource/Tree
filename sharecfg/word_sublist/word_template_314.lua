@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_314 = {}
+var0_0.word_template_314 = {}
 
-local var1 = var0.word_template_314
+local var1_0 = var0_0.word_template_314
 
 function temp()
-	var1.亞 = {
+	var1_0.亞 = {
 		歷 = {
 			山 = {
 				大 = {
@@ -61,7 +61,7 @@ end
 temp()
 
 function temp()
-	var1.胭 = {
+	var1_0.胭 = {
 		脂 = {
 			口 = {
 				红 = {
@@ -79,7 +79,7 @@ end
 temp()
 
 function temp()
-	var1.烟 = {
+	var1_0.烟 = {
 		草 = {
 			this = true,
 			局 = {
@@ -117,7 +117,7 @@ end
 temp()
 
 function temp()
-	var1.閹 = {
+	var1_0.閹 = {
 		狗 = {
 			this = true
 		}
@@ -127,7 +127,7 @@ end
 temp()
 
 function temp()
-	var1.延 = {
+	var1_0.延 = {
 		时 = {
 			胶 = {
 				囊 = {
@@ -170,7 +170,7 @@ end
 temp()
 
 function temp()
-	var1.严 = {
+	var1_0.严 = {
 		方 = {
 			军 = {
 				this = true
@@ -227,7 +227,7 @@ end
 temp()
 
 function temp()
-	var1.訁 = {
+	var1_0.訁 = {
 		this = {
 			this = true
 		}

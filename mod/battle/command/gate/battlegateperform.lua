@@ -1,86 +1,86 @@
-﻿local var0 = class("BattleGatePerform")
+﻿local var0_0 = class("BattleGatePerform")
 
-ys.Battle.BattleGatePerform = var0
-var0.__name = "BattleGatePerform"
+ys.Battle.BattleGatePerform = var0_0
+var0_0.__name = "BattleGatePerform"
 
-function var0.Entrance(arg0, arg1)
-	local var0 = arg0.stageId
+function var0_0.Entrance(arg0_1, arg1_1)
+	local var0_1 = arg0_1.stageId
 
-	print(var0)
+	print(var0_1)
 
-	local var1 = pg.expedition_data_template[var0].dungeon_id
-	local var2 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(var1).fleet_prefab or {}
-	local var3 = {}
+	local var1_1 = pg.expedition_data_template[var0_1].dungeon_id
+	local var2_1 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(var1_1).fleet_prefab or {}
+	local var3_1 = {}
 
-	if arg0.mainFleetId then
-		local var4 = getProxy(BayProxy)
-		local var5 = getProxy(FleetProxy)
+	if arg0_1.mainFleetId then
+		local var4_1 = getProxy(BayProxy)
+		local var5_1 = getProxy(FleetProxy)
 
-		if not arg1.LegalFleet(arg0.mainFleetId) then
+		if not arg1_1.LegalFleet(arg0_1.mainFleetId) then
 			return
 		end
 
-		local var6 = var5:getFleetById(arg0.mainFleetId)
-		local var7 = var4:getSortShipsByFleet(var6)
+		local var6_1 = var5_1:getFleetById(arg0_1.mainFleetId)
+		local var7_1 = var4_1:getSortShipsByFleet(var6_1)
 
-		for iter0, iter1 in ipairs(var7) do
-			var3[#var3 + 1] = iter1.id
+		for iter0_1, iter1_1 in ipairs(var7_1) do
+			var3_1[#var3_1 + 1] = iter1_1.id
 		end
 	end
 
-	local var8 = {
-		stageId = var0,
+	local var8_1 = {
+		stageId = var0_1,
 		system = SYSTEM_PERFORM,
-		memory = arg0.memory,
-		exitCallback = arg0.exitCallback,
-		prefabFleet = var2,
-		mainFleetId = arg0.mainFleetId
+		memory = arg0_1.memory,
+		exitCallback = arg0_1.exitCallback,
+		prefabFleet = var2_1,
+		mainFleetId = arg0_1.mainFleetId
 	}
 
-	if arg0.memory then
-		arg1:sendNotification(GAME.BEGIN_STAGE_DONE, var8)
+	if arg0_1.memory then
+		arg1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var8_1)
 	else
-		local function var9(arg0)
-			arg1:sendNotification(GAME.STORY_UPDATE, {
-				storyId = tostring(var0)
+		local function var9_1(arg0_2)
+			arg1_1:sendNotification(GAME.STORY_UPDATE, {
+				storyId = tostring(var0_1)
 			})
 
-			var8.token = arg0.key
+			var8_1.token = arg0_2.key
 
-			arg1:sendNotification(GAME.BEGIN_STAGE_DONE, var8)
+			arg1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var8_1)
 		end
 
-		local function var10(arg0)
-			arg1:RequestFailStandardProcess(arg0)
+		local function var10_1(arg0_3)
+			arg1_1:RequestFailStandardProcess(arg0_3)
 		end
 
-		BeginStageCommand.SendRequest(SYSTEM_PERFORM, var3, {
-			var0
-		}, var9, var10)
+		BeginStageCommand.SendRequest(SYSTEM_PERFORM, var3_1, {
+			var0_1
+		}, var9_1, var10_1)
 	end
 end
 
-function var0.Exit(arg0, arg1)
-	if arg0.memory then
-		arg1:sendNotification(GAME.FINISH_STAGE_DONE, {
+function var0_0.Exit(arg0_4, arg1_4)
+	if arg0_4.memory then
+		arg1_4:sendNotification(GAME.FINISH_STAGE_DONE, {
 			system = SYSTEM_PERFORM
 		})
 	else
-		local var0 = arg1.GeneralPackage(arg0, {})
+		local var0_4 = arg1_4.GeneralPackage(arg0_4, {})
 
-		local function var1(arg0)
-			arg1:sendNotification(GAME.FINISH_STAGE_DONE, {
+		local function var1_4(arg0_5)
+			arg1_4:sendNotification(GAME.FINISH_STAGE_DONE, {
 				system = SYSTEM_PERFORM,
-				exitCallback = arg0.exitCallback
+				exitCallback = arg0_4.exitCallback
 			})
 		end
 
-		local function var2(arg0)
-			arg1:RequestFailStandardProcess(arg0)
+		local function var2_4(arg0_6)
+			arg1_4:RequestFailStandardProcess(arg0_6)
 		end
 
-		arg1:SendRequest(var0, var1, var2)
+		arg1_4:SendRequest(var0_4, var1_4, var2_4)
 	end
 end
 
-return var0
+return var0_0

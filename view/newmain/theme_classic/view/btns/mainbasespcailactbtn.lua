@@ -1,114 +1,114 @@
-﻿local var0 = class("MainBaseSpcailActBtn")
+﻿local var0_0 = class("MainBaseSpcailActBtn")
 
-function var0.Ctor(arg0, arg1, arg2)
-	pg.DelegateInfo.New(arg0)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	pg.DelegateInfo.New(arg0_1)
 
-	arg0.root = arg1
-	arg0.event = arg2
-	arg0.isloading = false
+	arg0_1.root = arg1_1
+	arg0_1.event = arg2_1
+	arg0_1.isloading = false
 end
 
-function var0.Init(arg0, arg1)
-	arg0.isScale = arg1
+function var0_0.Init(arg0_2, arg1_2)
+	arg0_2.isScale = arg1_2
 
-	if arg0.isloading then
+	if arg0_2.isloading then
 		return
 	end
 
-	if not arg0._tf then
-		arg0.isloading = true
+	if not arg0_2._tf then
+		arg0_2.isloading = true
 
-		ResourceMgr.Inst:getAssetAsync("ui/" .. arg0:GetUIName(), "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0)
-			arg0.isloading = false
+		ResourceMgr.Inst:getAssetAsync("ui/" .. arg0_2:GetUIName(), "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_3)
+			arg0_2.isloading = false
 
-			if arg0.exited then
+			if arg0_2.exited then
 				return
 			end
 
-			arg0._tf = Object.Instantiate(arg0, arg0:GetContainer()).transform
+			arg0_2._tf = Object.Instantiate(arg0_3, arg0_2:GetContainer()).transform
 
-			arg0:OnRegister()
-			arg0:OnInit()
-			onButton(arg0, arg0._tf, function()
-				arg0:OnClick()
+			arg0_2:OnRegister()
+			arg0_2:OnInit()
+			onButton(arg0_2, arg0_2._tf, function()
+				arg0_2:OnClick()
 			end, SFX_MAIN)
 
-			if arg0.shouldHide then
-				setActive(arg0._tf, false)
+			if arg0_2.shouldHide then
+				setActive(arg0_2._tf, false)
 			end
 		end), true, true)
 	else
-		arg0:OnInit()
+		arg0_2:OnInit()
 	end
 
-	arg0:CheckHide()
+	arg0_2:CheckHide()
 end
 
-function var0.Clear(arg0)
-	if not IsNil(arg0._tf) then
-		Destroy(arg0._tf.gameObject)
+function var0_0.Clear(arg0_5)
+	if not IsNil(arg0_5._tf) then
+		Destroy(arg0_5._tf.gameObject)
 
-		arg0._tf = nil
+		arg0_5._tf = nil
 
-		arg0:OnClear()
+		arg0_5:OnClear()
 	end
 end
 
-function var0.Dispose(arg0)
-	arg0.exited = true
+function var0_0.Dispose(arg0_6)
+	arg0_6.exited = true
 
-	pg.DelegateInfo.Dispose(arg0)
-	arg0:Clear()
+	pg.DelegateInfo.Dispose(arg0_6)
+	arg0_6:Clear()
 end
 
-function var0.Refresh(arg0)
-	arg0:CheckHide()
+function var0_0.Refresh(arg0_7)
+	arg0_7:CheckHide()
 end
 
-function var0.CheckHide(arg0)
-	if arg0.shouldHide and not IsNil(arg0._tf) then
-		setActive(arg0._tf, true)
+function var0_0.CheckHide(arg0_8)
+	if arg0_8.shouldHide and not IsNil(arg0_8._tf) then
+		setActive(arg0_8._tf, true)
 	end
 
-	arg0.shouldHide = false
+	arg0_8.shouldHide = false
 end
 
-function var0.Disable(arg0)
-	arg0.shouldHide = true
+function var0_0.Disable(arg0_9)
+	arg0_9.shouldHide = true
 
-	arg0:OnDisable()
+	arg0_9:OnDisable()
 end
 
-function var0.GetContainer(arg0)
+function var0_0.GetContainer(arg0_10)
 	assert(false, "overview me !!!")
 end
 
-function var0.InShowTime(arg0)
+function var0_0.InShowTime(arg0_11)
 	assert(false, "overview me !!!")
 end
 
-function var0.GetUIName(arg0)
+function var0_0.GetUIName(arg0_12)
 	return
 end
 
-function var0.OnClick(arg0)
+function var0_0.OnClick(arg0_13)
 	return
 end
 
-function var0.OnRegister(arg0)
+function var0_0.OnRegister(arg0_14)
 	return
 end
 
-function var0.OnInit(arg0)
+function var0_0.OnInit(arg0_15)
 	return
 end
 
-function var0.OnClear(arg0)
+function var0_0.OnClear(arg0_16)
 	return
 end
 
-function var0.OnDisable(arg0)
+function var0_0.OnDisable(arg0_17)
 	return
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_389 = {}
+var0_0.word_template_389 = {}
 
-local var1 = var0.word_template_389
+local var1_0 = var0_0.word_template_389
 
 function temp()
-	var1.形 = {
+	var1_0.形 = {
 		左 = {
 			实 = {
 				右 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.泥 = {
+	var1_0.泥 = {
 		哥 = {
 			this = true
 		},
@@ -50,7 +50,7 @@ end
 temp()
 
 function temp()
-	var1["0"] = {
+	var1_0["0"] = {
 		["2"] = {
 			世 = {
 				界 = {
@@ -133,7 +133,7 @@ end
 temp()
 
 function temp()
-	var1.锂 = {
+	var1_0.锂 = {
 		磕 = {
 			枪 = {
 				this = true
@@ -145,7 +145,7 @@ end
 temp()
 
 function temp()
-	var1.杰 = {
+	var1_0.杰 = {
 		拉 = {
 			德 = {
 				["\\"] = {
@@ -193,7 +193,7 @@ end
 temp()
 
 function temp()
-	var1.苷 = {
+	var1_0.苷 = {
 		蒽 = {
 			this = true
 		}
@@ -203,7 +203,7 @@ end
 temp()
 
 function temp()
-	var1.征 = {
+	var1_0.征 = {
 		伐 = {
 			高 = {
 				句 = {

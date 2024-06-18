@@ -1,10 +1,10 @@
-﻿local var0 = class("NewBulletinBoardLayer", import("..base.BaseUI"))
+﻿local var0_0 = class("NewBulletinBoardLayer", import("..base.BaseUI"))
 
-var0.CONTENT_TYPE = {
+var0_0.CONTENT_TYPE = {
 	BANNER = "BANNER",
 	RICHTEXT = "RITCHTEXT"
 }
-var0.ICON_NAME = {
+var0_0.ICON_NAME = {
 	"activity_common",
 	"activity_summary",
 	"activity_time_limit",
@@ -15,457 +15,457 @@ var0.ICON_NAME = {
 	"skin_new",
 	"system_common"
 }
-var0.MAIN_TAB_GAMETIP = {
+var0_0.MAIN_TAB_GAMETIP = {
 	"Announcements_Event_Notice",
 	"Announcements_System_Notice",
 	"Announcements_News"
 }
-var0.TITLE_IMAGE_HEIGHT_DEFAULT = 231
-var0.TITLE_IMAGE_HEIGHT_FULL = 734
+var0_0.TITLE_IMAGE_HEIGHT_DEFAULT = 231
+var0_0.TITLE_IMAGE_HEIGHT_FULL = 734
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "NewBulletinBoardUI"
 end
 
-function var0.init(arg0)
-	arg0._closeBtn = arg0:findTF("bg/close_btn")
-	arg0._mainTabContainer = arg0:findTF("bg/notice_list")
-	arg0._subTabGroup = arg0:findTF("bg/title_list/viewport/content"):GetComponent(typeof(ToggleGroup))
-	arg0._subTabContainer = arg0:findTF("bg/title_list/viewport/content")
-	arg0._tabTpl = arg0:findTF("bg/title_list/tab_btn_tpl")
+function var0_0.init(arg0_2)
+	arg0_2._closeBtn = arg0_2:findTF("bg/close_btn")
+	arg0_2._mainTabContainer = arg0_2:findTF("bg/notice_list")
+	arg0_2._subTabGroup = arg0_2:findTF("bg/title_list/viewport/content"):GetComponent(typeof(ToggleGroup))
+	arg0_2._subTabContainer = arg0_2:findTF("bg/title_list/viewport/content")
+	arg0_2._tabTpl = arg0_2:findTF("bg/title_list/tab_btn_tpl")
 
-	SetActive(arg0._tabTpl, false)
+	SetActive(arg0_2._tabTpl, false)
 
-	arg0._subTabList = {}
-	arg0._detailTitleImg = arg0:findTF("bg/content_view/viewport/content/title_img")
-	arg0._detailTitleImgLayoutElement = arg0._detailTitleImg:GetComponent(typeof(LayoutElement))
-	arg0._detailTitle = arg0:findTF("bg/content_view/viewport/content/title")
-	arg0._detailTitleTxt = arg0:findTF("bg/content_view/viewport/content/title/title_txt/mask/scroll_txt")
-	arg0._detailTimeTxt = arg0:findTF("bg/content_view/viewport/content/title/time_txt")
-	arg0._detailLine = arg0:findTF("bg/content_view/viewport/content/line")
-	arg0._contentContainer = arg0:findTF("bg/content_view/viewport/content/content_container")
-	arg0._contentTxtTpl = arg0:findTF("bg/content_view/viewport/content/content_txt")
+	arg0_2._subTabList = {}
+	arg0_2._detailTitleImg = arg0_2:findTF("bg/content_view/viewport/content/title_img")
+	arg0_2._detailTitleImgLayoutElement = arg0_2._detailTitleImg:GetComponent(typeof(LayoutElement))
+	arg0_2._detailTitle = arg0_2:findTF("bg/content_view/viewport/content/title")
+	arg0_2._detailTitleTxt = arg0_2:findTF("bg/content_view/viewport/content/title/title_txt/mask/scroll_txt")
+	arg0_2._detailTimeTxt = arg0_2:findTF("bg/content_view/viewport/content/title/time_txt")
+	arg0_2._detailLine = arg0_2:findTF("bg/content_view/viewport/content/line")
+	arg0_2._contentContainer = arg0_2:findTF("bg/content_view/viewport/content/content_container")
+	arg0_2._contentTxtTpl = arg0_2:findTF("bg/content_view/viewport/content/content_txt")
 
-	setActive(arg0._contentTxtTpl, false)
+	setActive(arg0_2._contentTxtTpl, false)
 
-	arg0._contentBannerTpl = arg0:findTF("bg/content_view/viewport/content/content_banner")
+	arg0_2._contentBannerTpl = arg0_2:findTF("bg/content_view/viewport/content/content_banner")
 
-	setActive(arg0._contentBannerTpl, false)
+	setActive(arg0_2._contentBannerTpl, false)
 
-	arg0._scrollRect = arg0:findTF("bg/content_view"):GetComponent(typeof(ScrollRect))
-	arg0._dontshow = arg0:findTF("bg/dont_show")
-	arg0._stopRemind = arg0:findTF("bg/dont_show/bottom")
-	arg0._subTabAnims = {}
-	arg0._mainAnim = arg0._tf:GetComponent(typeof(Animation))
-	arg0._bgAnim = arg0:findTF("bg"):GetComponent(typeof(Animation))
-	arg0._contentAnim = arg0:findTF("bg/content_view"):GetComponent(typeof(Animation))
+	arg0_2._scrollRect = arg0_2:findTF("bg/content_view"):GetComponent(typeof(ScrollRect))
+	arg0_2._dontshow = arg0_2:findTF("bg/dont_show")
+	arg0_2._stopRemind = arg0_2:findTF("bg/dont_show/bottom")
+	arg0_2._subTabAnims = {}
+	arg0_2._mainAnim = arg0_2._tf:GetComponent(typeof(Animation))
+	arg0_2._bgAnim = arg0_2:findTF("bg"):GetComponent(typeof(Animation))
+	arg0_2._contentAnim = arg0_2:findTF("bg/content_view"):GetComponent(typeof(Animation))
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, false, {
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, false, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 
-	arg0._loadingFlag = {}
-	arg0._contentList = {}
-	arg0.noticeKeys = {}
-	arg0.noticeVersions = {}
-	arg0._noticeDic = {
+	arg0_2._loadingFlag = {}
+	arg0_2._contentList = {}
+	arg0_2.noticeKeys = {}
+	arg0_2.noticeVersions = {}
+	arg0_2._noticeDic = {
 		{},
 		{},
 		{}
 	}
-	arg0._redDic = {
+	arg0_2._redDic = {
 		{},
 		{},
 		{}
 	}
-	arg0.LTList = {}
+	arg0_2.LTList = {}
 end
 
-function var0.didEnter(arg0)
-	arg0._mainAnim:Play("anim_BulletinBoard_in")
-	onButton(arg0, arg0._closeBtn, function()
-		arg0._mainAnim:Play("anim_BulletinBoard_out")
+function var0_0.didEnter(arg0_3)
+	arg0_3._mainAnim:Play("anim_BulletinBoard_in")
+	onButton(arg0_3, arg0_3._closeBtn, function()
+		arg0_3._mainAnim:Play("anim_BulletinBoard_out")
 		LeanTween.delayedCall(0.2, System.Action(function()
-			arg0:emit(var0.ON_CLOSE)
+			arg0_3:emit(var0_0.ON_CLOSE)
 		end))
 	end, SOUND_BACK)
-	onToggle(arg0, arg0._stopRemind, function(arg0)
-		arg0:emit(NewBulletinBoardMediator.SET_STOP_REMIND, arg0)
+	onToggle(arg0_3, arg0_3._stopRemind, function(arg0_6)
+		arg0_3:emit(NewBulletinBoardMediator.SET_STOP_REMIND, arg0_6)
 	end)
 
-	local var0 = getProxy(ServerNoticeProxy):getStopRemind()
+	local var0_3 = getProxy(ServerNoticeProxy):getStopRemind()
 
-	triggerToggle(arg0._stopRemind, var0)
-	setText(arg0._dontshow, i18n("Announcements_Donotshow"))
-	LeanTween.rotateAroundLocal(rtf(arg0._detailTitleImg:Find("loading/Image")), Vector3(0, 0, -1), 360, 5):setLoopClamp()
+	triggerToggle(arg0_3._stopRemind, var0_3)
+	setText(arg0_3._dontshow, i18n("Announcements_Donotshow"))
+	LeanTween.rotateAroundLocal(rtf(arg0_3._detailTitleImg:Find("loading/Image")), Vector3(0, 0, -1), 360, 5):setLoopClamp()
 end
 
-function var0.updateRed(arg0)
-	for iter0 = 1, 3 do
-		local var0 = false
+function var0_0.updateRed(arg0_7)
+	for iter0_7 = 1, 3 do
+		local var0_7 = false
 
-		for iter1, iter2 in pairs(arg0._noticeDic[iter0]) do
-			arg0._redDic[iter0][iter1] = PlayerPrefs.HasKey(iter2.code)
+		for iter1_7, iter2_7 in pairs(arg0_7._noticeDic[iter0_7]) do
+			arg0_7._redDic[iter0_7][iter1_7] = PlayerPrefs.HasKey(iter2_7.code)
 
-			if not arg0._redDic[iter0][iter1] then
-				var0 = true
+			if not arg0_7._redDic[iter0_7][iter1_7] then
+				var0_7 = true
 			end
 		end
 
-		setActive(arg0._mainTabContainer:GetChild(iter0 - 1):Find("Text/red"), var0)
+		setActive(arg0_7._mainTabContainer:GetChild(iter0_7 - 1):Find("Text/red"), var0_7)
 	end
 
-	for iter3 = 1, #arg0._subTabList do
-		setActive(arg0._subTabList[iter3]:Find("red"), not arg0._redDic[arg0.currentMainTab][iter3])
+	for iter3_7 = 1, #arg0_7._subTabList do
+		setActive(arg0_7._subTabList[iter3_7]:Find("red"), not arg0_7._redDic[arg0_7.currentMainTab][iter3_7])
 	end
 end
 
-function var0.checkNotice(arg0, arg1)
-	return arg1.type and arg1.type > 0 and arg1.type < 4 and (arg1.paramType == nil or arg1.paramType == 1 and type(arg1.param) == "string" or arg1.paramType == 2 and type(arg1.param) == "string" or arg1.paramType == 3 and type(arg1.param) == "number")
+function var0_0.checkNotice(arg0_8, arg1_8)
+	return arg1_8.type and arg1_8.type > 0 and arg1_8.type < 4 and (arg1_8.paramType == nil or arg1_8.paramType == 1 and type(arg1_8.param) == "string" or arg1_8.paramType == 2 and type(arg1_8.param) == "string" or arg1_8.paramType == 3 and type(arg1_8.param) == "number")
 end
 
-function var0.initNotices(arg0, arg1)
-	arg0.defaultMainTab = arg0.contextData.defaultMainTab
-	arg0.defaultSubTab = arg0.contextData.defaultSubTab
+function var0_0.initNotices(arg0_9, arg1_9)
+	arg0_9.defaultMainTab = arg0_9.contextData.defaultMainTab
+	arg0_9.defaultSubTab = arg0_9.contextData.defaultSubTab
 
-	for iter0, iter1 in pairs(arg1) do
-		local var0 = string.match(iter1.titleImage, "<config.*/>")
-		local var1 = Clone(iter1)
-		local var2 = var0 and string.match(var0, "link%s*=%s*([^%s]+)") or nil
-		local var3 = var0 and tonumber(string.match(var0, "type%s*=%s*(%d+)")) or nil
-		local var4
+	for iter0_9, iter1_9 in pairs(arg1_9) do
+		local var0_9 = string.match(iter1_9.titleImage, "<config.*/>")
+		local var1_9 = Clone(iter1_9)
+		local var2_9 = var0_9 and string.match(var0_9, "link%s*=%s*([^%s]+)") or nil
+		local var3_9 = var0_9 and tonumber(string.match(var0_9, "type%s*=%s*(%d+)")) or nil
+		local var4_9
 
-		if var3 then
-			if var3 == 1 then
-				var4 = string.match(var0, "param%s*=%s*'(.*)'")
-			elseif var3 == 2 then
-				var4 = string.match(var0, "param%s*=%s*'(.*)'")
-			elseif var3 == 3 then
-				var4 = string.match(var0, "param%s*=%s*(%d+)")
-				var4 = var4 and tonumber(var4) or var4
+		if var3_9 then
+			if var3_9 == 1 then
+				var4_9 = string.match(var0_9, "param%s*=%s*'(.*)'")
+			elseif var3_9 == 2 then
+				var4_9 = string.match(var0_9, "param%s*=%s*'(.*)'")
+			elseif var3_9 == 3 then
+				var4_9 = string.match(var0_9, "param%s*=%s*(%d+)")
+				var4_9 = var4_9 and tonumber(var4_9) or var4_9
 			end
 		end
 
-		var1.param = var4
-		var1.link = var2
-		var1.paramType = var3
-		var1.titleImage = var0 and string.gsub(var1.titleImage, var0, "") or var1.titleImage
-		var1.code = var1:prefKey()
+		var1_9.param = var4_9
+		var1_9.link = var2_9
+		var1_9.paramType = var3_9
+		var1_9.titleImage = var0_9 and string.gsub(var1_9.titleImage, var0_9, "") or var1_9.titleImage
+		var1_9.code = var1_9:prefKey()
 
-		if arg0:checkNotice(var1) then
-			table.insert(arg0._noticeDic[var1.type], var1)
-			table.insert(arg0._redDic[var1.type], PlayerPrefs.HasKey(var1.code))
+		if arg0_9:checkNotice(var1_9) then
+			table.insert(arg0_9._noticeDic[var1_9.type], var1_9)
+			table.insert(arg0_9._redDic[var1_9.type], PlayerPrefs.HasKey(var1_9.code))
 		else
-			Debugger.LogWarning("公告配置错误  id = " .. var1.id)
+			Debugger.LogWarning("公告配置错误  id = " .. var1_9.id)
 		end
 	end
 
-	for iter2 = 1, 3 do
-		local var5 = arg0._mainTabContainer:GetChild(iter2 - 1)
-		local var6 = var5:Find("selected"):GetComponent(typeof(Animation))
+	for iter2_9 = 1, 3 do
+		local var5_9 = arg0_9._mainTabContainer:GetChild(iter2_9 - 1)
+		local var6_9 = var5_9:Find("selected"):GetComponent(typeof(Animation))
 
-		setText(var5:Find("Text"), i18n(var0.MAIN_TAB_GAMETIP[iter2]))
-		onToggle(arg0, var5, function(arg0)
-			if arg0 then
-				if arg0.currentMainTab and arg0.currentMainTab == iter2 then
+		setText(var5_9:Find("Text"), i18n(var0_0.MAIN_TAB_GAMETIP[iter2_9]))
+		onToggle(arg0_9, var5_9, function(arg0_10)
+			if arg0_10 then
+				if arg0_9.currentMainTab and arg0_9.currentMainTab == iter2_9 then
 					return
 				end
 
-				if arg0.currentMainTab then
-					var6:Play(arg0.currentMainTab > iter2 and "anim_BB_toptitle_R_in" or "anim_BB_toptitle_L_in")
-					arg0._bgAnim:Play(arg0.currentMainTab > iter2 and "anim_BulletinBoard_Rin_change" or "anim_BulletinBoard_Lin_change")
+				if arg0_9.currentMainTab then
+					var6_9:Play(arg0_9.currentMainTab > iter2_9 and "anim_BB_toptitle_R_in" or "anim_BB_toptitle_L_in")
+					arg0_9._bgAnim:Play(arg0_9.currentMainTab > iter2_9 and "anim_BulletinBoard_Rin_change" or "anim_BulletinBoard_Lin_change")
 				end
 
-				arg0.currentMainTab = iter2
-				arg0.defaultSubTab = arg0.tempSubTab
-				arg0.tempSubTab = nil
+				arg0_9.currentMainTab = iter2_9
+				arg0_9.defaultSubTab = arg0_9.tempSubTab
+				arg0_9.tempSubTab = nil
 
-				arg0:setNotices(arg0._noticeDic[iter2])
+				arg0_9:setNotices(arg0_9._noticeDic[iter2_9])
 			end
 		end)
 
-		if #arg0._noticeDic[iter2] == 0 then
-			setActive(var5, false)
+		if #arg0_9._noticeDic[iter2_9] == 0 then
+			setActive(var5_9, false)
 		else
-			arg0.defaultMainTab = arg0.defaultMainTab or iter2
+			arg0_9.defaultMainTab = arg0_9.defaultMainTab or iter2_9
 		end
 	end
 
-	if arg0.defaultMainTab then
-		arg0.tempSubTab = arg0.defaultSubTab
+	if arg0_9.defaultMainTab then
+		arg0_9.tempSubTab = arg0_9.defaultSubTab
 
-		triggerToggle(arg0._mainTabContainer:GetChild(arg0.defaultMainTab - 1), true)
+		triggerToggle(arg0_9._mainTabContainer:GetChild(arg0_9.defaultMainTab - 1), true)
 	end
 end
 
-function var0.setNotices(arg0, arg1)
-	arg0:clearTab()
+function var0_0.setNotices(arg0_11, arg1_11)
+	arg0_11:clearTab()
 
-	for iter0, iter1 in pairs(arg1) do
-		table.insert(arg0.noticeKeys, tostring(iter1.id))
-		table.insert(arg0.noticeVersions, iter1.version)
+	for iter0_11, iter1_11 in pairs(arg1_11) do
+		table.insert(arg0_11.noticeKeys, tostring(iter1_11.id))
+		table.insert(arg0_11.noticeVersions, iter1_11.version)
 
-		local var0 = cloneTplTo(arg0._tabTpl, arg0._subTabContainer)
+		local var0_11 = cloneTplTo(arg0_11._tabTpl, arg0_11._subTabContainer)
 
-		SetActive(var0, true)
-		table.insert(arg0._subTabList, var0)
-		table.insert(arg0._subTabAnims, var0:Find("select_state"):GetComponent(typeof(Animation)))
-		setScrollText(var0:Find("common_state/mask/Text"), iter1.btnTitle)
-		setScrollText(var0:Find("select_state/mask/Text"), iter1.btnTitle)
-		GetSpriteFromAtlasAsync("ui/newbulletinboardui_atlas", var0.ICON_NAME[iter1.icon], function(arg0)
-			setImageSprite(var0:Find("common_state/icon"), arg0)
+		SetActive(var0_11, true)
+		table.insert(arg0_11._subTabList, var0_11)
+		table.insert(arg0_11._subTabAnims, var0_11:Find("select_state"):GetComponent(typeof(Animation)))
+		setScrollText(var0_11:Find("common_state/mask/Text"), iter1_11.btnTitle)
+		setScrollText(var0_11:Find("select_state/mask/Text"), iter1_11.btnTitle)
+		GetSpriteFromAtlasAsync("ui/newbulletinboardui_atlas", var0_0.ICON_NAME[iter1_11.icon], function(arg0_12)
+			setImageSprite(var0_11:Find("common_state/icon"), arg0_12)
 		end)
-		GetSpriteFromAtlasAsync("ui/newbulletinboardui_atlas", var0.ICON_NAME[iter1.icon] .. "_selected", function(arg0)
-			setImageSprite(var0:Find("select_state/icon"), arg0)
+		GetSpriteFromAtlasAsync("ui/newbulletinboardui_atlas", var0_0.ICON_NAME[iter1_11.icon] .. "_selected", function(arg0_13)
+			setImageSprite(var0_11:Find("select_state/icon"), arg0_13)
 		end)
-		onToggle(arg0, var0, function(arg0)
-			if arg0 then
-				setActive(var0:Find("select_state"), true)
+		onToggle(arg0_11, var0_11, function(arg0_14)
+			if arg0_14 then
+				setActive(var0_11:Find("select_state"), true)
 
-				if arg0.currentSubTab and arg0.currentSubTab == iter0 then
+				if arg0_11.currentSubTab and arg0_11.currentSubTab == iter0_11 then
 					return
 				end
 
-				if arg0.currentSubTab then
-					local var0 = arg0.currentSubTab
+				if arg0_11.currentSubTab then
+					local var0_14 = arg0_11.currentSubTab
 
-					arg0._subTabAnims[iter0]:Play(var0 > iter0 and "anim_BB_lefttitle_B_in" or "anim_BB_lefttitle_T_in")
-					arg0._subTabAnims[var0]:Play(var0 > iter0 and "anim_BB_lefttitle_T_out" or "anim_BB_lefttitle_B_out")
+					arg0_11._subTabAnims[iter0_11]:Play(var0_14 > iter0_11 and "anim_BB_lefttitle_B_in" or "anim_BB_lefttitle_T_in")
+					arg0_11._subTabAnims[var0_14]:Play(var0_14 > iter0_11 and "anim_BB_lefttitle_T_out" or "anim_BB_lefttitle_B_out")
 
-					arg0.subTabLT = LeanTween.delayedCall(0.26, System.Action(function()
-						setActive(arg0._subTabList[var0]:Find("select_state"), false)
+					arg0_11.subTabLT = LeanTween.delayedCall(0.26, System.Action(function()
+						setActive(arg0_11._subTabList[var0_14]:Find("select_state"), false)
 					end)).uniqueId
 
-					arg0._contentAnim:Play(var0 > iter0 and "anim_BB_view_B_in" or "anim_BB_view_T_in")
+					arg0_11._contentAnim:Play(var0_14 > iter0_11 and "anim_BB_view_B_in" or "anim_BB_view_T_in")
 				end
 
-				arg0.currentSubTab = iter0
+				arg0_11.currentSubTab = iter0_11
 
-				PlayerPrefs.SetInt(arg0._noticeDic[arg0.currentMainTab][iter0].code, 0)
-				arg0:updateRed()
-				arg0:setNoticeDetail(iter1)
+				PlayerPrefs.SetInt(arg0_11._noticeDic[arg0_11.currentMainTab][iter0_11].code, 0)
+				arg0_11:updateRed()
+				arg0_11:setNoticeDetail(iter1_11)
 			end
 		end, SFX_PANEL)
 	end
 
-	arg0.defaultSubTab = arg0.defaultSubTab or 1
+	arg0_11.defaultSubTab = arg0_11.defaultSubTab or 1
 
-	triggerToggle(arg0._subTabList[arg0.defaultSubTab], true)
-	BulletinBoardMgr.Inst:ClearCache(arg0.noticeKeys, arg0.noticeVersions)
+	triggerToggle(arg0_11._subTabList[arg0_11.defaultSubTab], true)
+	BulletinBoardMgr.Inst:ClearCache(arg0_11.noticeKeys, arg0_11.noticeVersions)
 end
 
-function var0.setImage(arg0, arg1, arg2, arg3, arg4)
-	local var0 = arg4:Find("img"):GetComponent(typeof(Image))
-	local var1 = arg4:Find("loading")
+function var0_0.setImage(arg0_16, arg1_16, arg2_16, arg3_16, arg4_16)
+	local var0_16 = arg4_16:Find("img"):GetComponent(typeof(Image))
+	local var1_16 = arg4_16:Find("loading")
 
-	var0.color = Color.New(0, 0, 0, 0.4)
+	var0_16.color = Color.New(0, 0, 0, 0.4)
 
-	setActive(var1, true)
+	setActive(var1_16, true)
 
-	arg0._loadingFlag[arg3] = true
+	arg0_16._loadingFlag[arg3_16] = true
 
-	BulletinBoardMgr.Inst:GetSprite(arg1, arg2, arg3, UnityEngine.Events.UnityAction_UnityEngine_Sprite(function(arg0)
-		if arg0._loadingFlag == nil then
+	BulletinBoardMgr.Inst:GetSprite(arg1_16, arg2_16, arg3_16, UnityEngine.Events.UnityAction_UnityEngine_Sprite(function(arg0_17)
+		if arg0_16._loadingFlag == nil then
 			return
 		end
 
-		arg0._loadingFlag[arg3] = nil
+		arg0_16._loadingFlag[arg3_16] = nil
 
-		if arg0 ~= nil and not IsNil(arg4) then
-			setImageSprite(var0, arg0, false)
+		if arg0_17 ~= nil and not IsNil(arg4_16) then
+			setImageSprite(var0_16, arg0_17, false)
 
-			var0.color = Color.New(1, 1, 1)
+			var0_16.color = Color.New(1, 1, 1)
 
-			setActive(var1, false)
+			setActive(var1_16, false)
 		end
 	end))
 end
 
-function var0.setNoticeDetail(arg0, arg1)
-	local function var0(arg0)
-		local var0 = cloneTplTo(arg0._contentBannerTpl, arg0._contentContainer)
+function var0_0.setNoticeDetail(arg0_18, arg1_18)
+	local function var0_18(arg0_19)
+		local var0_19 = cloneTplTo(arg0_18._contentBannerTpl, arg0_18._contentContainer)
 
-		table.insert(arg0._contentList, var0)
-		arg0:setImage(arg1.id, arg1.version, arg0, var0, true, nil)
+		table.insert(arg0_18._contentList, var0_19)
+		arg0_18:setImage(arg1_18.id, arg1_18.version, arg0_19, var0_19, true, nil)
 	end
 
-	local function var1(arg0)
-		local var0 = cloneTplTo(arg0._contentTxtTpl, arg0._contentContainer)
+	local function var1_18(arg0_20)
+		local var0_20 = cloneTplTo(arg0_18._contentTxtTpl, arg0_18._contentContainer)
 
-		table.insert(arg0._contentList, var0)
-		setText(var0, SwitchSpecialChar(arg0, true))
-		var0:GetComponent("RichText"):AddListener(function(arg0, arg1)
-			if arg0 == "url" then
-				Application.OpenURL(arg1)
+		table.insert(arg0_18._contentList, var0_20)
+		setText(var0_20, SwitchSpecialChar(arg0_20, true))
+		var0_20:GetComponent("RichText"):AddListener(function(arg0_21, arg1_21)
+			if arg0_21 == "url" then
+				Application.OpenURL(arg1_21)
 			end
 		end)
 	end
 
-	arg0:clearLoadingPic()
-	arg0:clearLeanTween()
-	arg0:clearContent()
+	arg0_18:clearLoadingPic()
+	arg0_18:clearLeanTween()
+	arg0_18:clearContent()
 
-	if arg1.paramType or arg1.link then
-		setActive(arg0._detailTitle, false)
-		setActive(arg0._detailLine, false)
-		setActive(arg0._contentContainer, false)
+	if arg1_18.paramType or arg1_18.link then
+		setActive(arg0_18._detailTitle, false)
+		setActive(arg0_18._detailLine, false)
+		setActive(arg0_18._contentContainer, false)
 
-		arg0._detailTitleImgLayoutElement.preferredHeight = var0.TITLE_IMAGE_HEIGHT_FULL
+		arg0_18._detailTitleImgLayoutElement.preferredHeight = var0_0.TITLE_IMAGE_HEIGHT_FULL
 
-		arg0:setImage(arg1.id, arg1.version, arg1.titleImage, arg0._detailTitleImg)
-		onButton(arg0, arg0._detailTitleImg, function()
-			if arg1.link then
-				if arg1.link == "activity" then
-					arg0:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.ACTIVITY)
-				elseif arg1.link == "build" then
-					arg0:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.GETBOAT)
-				elseif arg1.link == "furniture" then
-					arg0:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.COURTYARD, {
+		arg0_18:setImage(arg1_18.id, arg1_18.version, arg1_18.titleImage, arg0_18._detailTitleImg)
+		onButton(arg0_18, arg0_18._detailTitleImg, function()
+			if arg1_18.link then
+				if arg1_18.link == "activity" then
+					arg0_18:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.ACTIVITY)
+				elseif arg1_18.link == "build" then
+					arg0_18:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.GETBOAT)
+				elseif arg1_18.link == "furniture" then
+					arg0_18:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.COURTYARD, {
 						OpenShop = true
 					})
-				elseif arg1.link == "skin" then
-					arg0:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.SKINSHOP)
-				elseif arg1.link == "shop" then
-					arg0:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.SHOP)
-				elseif arg1.link == "dewenjun" then
-					arg0:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.OTHERWORLD_MAP, {
+				elseif arg1_18.link == "skin" then
+					arg0_18:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.SKINSHOP)
+				elseif arg1_18.link == "shop" then
+					arg0_18:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.SHOP)
+				elseif arg1_18.link == "dewenjun" then
+					arg0_18:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.OTHERWORLD_MAP, {
 						openTerminal = true,
 						terminalPage = OtherworldTerminalLayer.PAGE_ADVENTURE
 					})
 				else
-					Application.OpenURL(arg1.link)
-					arg0:emit(NewBulletinBoardMediator.TRACK_OPEN_URL, arg1.track)
+					Application.OpenURL(arg1_18.link)
+					arg0_18:emit(NewBulletinBoardMediator.TRACK_OPEN_URL, arg1_18.track)
 				end
 			end
 
-			if arg1.paramType then
-				if arg1.paramType == 1 then
-					Application.OpenURL(arg1.param)
-					arg0:emit(NewBulletinBoardMediator.TRACK_OPEN_URL, arg1.track)
-				elseif arg1.paramType == 2 then
-					arg0:emit(NewBulletinBoardMediator.GO_SCENE, arg1.param)
-				elseif arg1.paramType == 3 then
-					arg0:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.ACTIVITY, {
-						id = arg1.param
+			if arg1_18.paramType then
+				if arg1_18.paramType == 1 then
+					Application.OpenURL(arg1_18.param)
+					arg0_18:emit(NewBulletinBoardMediator.TRACK_OPEN_URL, arg1_18.track)
+				elseif arg1_18.paramType == 2 then
+					arg0_18:emit(NewBulletinBoardMediator.GO_SCENE, arg1_18.param)
+				elseif arg1_18.paramType == 3 then
+					arg0_18:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.ACTIVITY, {
+						id = arg1_18.param
 					})
 				end
 			end
 
-			arg0.contextData.defaultMainTab = arg0.currentMainTab
-			arg0.contextData.defaultSubTab = arg0.currentSubTab
+			arg0_18.contextData.defaultMainTab = arg0_18.currentMainTab
+			arg0_18.contextData.defaultSubTab = arg0_18.currentSubTab
 		end, SFX_PANEL)
 	else
-		setActive(arg0._detailTitle, true)
-		setActive(arg0._detailLine, true)
-		setActive(arg0._contentContainer, true)
-		setScrollText(arg0._detailTitleTxt, arg1.pageTitle)
-		setText(arg0._detailTimeTxt, arg1.timeDes)
+		setActive(arg0_18._detailTitle, true)
+		setActive(arg0_18._detailLine, true)
+		setActive(arg0_18._contentContainer, true)
+		setScrollText(arg0_18._detailTitleTxt, arg1_18.pageTitle)
+		setText(arg0_18._detailTimeTxt, arg1_18.timeDes)
 
-		arg0._detailTitleImgLayoutElement.preferredHeight = var0.TITLE_IMAGE_HEIGHT_DEFAULT
+		arg0_18._detailTitleImgLayoutElement.preferredHeight = var0_0.TITLE_IMAGE_HEIGHT_DEFAULT
 
-		arg0:setImage(arg1.id, arg1.version, arg1.titleImage, arg0._detailTitleImg)
-		removeOnButton(arg0._detailTitleImg)
+		arg0_18:setImage(arg1_18.id, arg1_18.version, arg1_18.titleImage, arg0_18._detailTitleImg)
+		removeOnButton(arg0_18._detailTitleImg)
 
-		arg0._contentInfo = {}
+		arg0_18._contentInfo = {}
 
-		local var2 = 1
+		local var2_18 = 1
 
-		for iter0 in string.gmatch(arg1.content, "<banner>%S-</banner>") do
-			local var3, var4 = string.find(iter0, "<banner>")
-			local var5, var6 = string.find(iter0, "</banner>")
-			local var7 = string.sub(iter0, var4 + 1, var5 - 1)
-			local var8, var9 = string.find(arg1.content, iter0, var2, true)
+		for iter0_18 in string.gmatch(arg1_18.content, "<banner>%S-</banner>") do
+			local var3_18, var4_18 = string.find(iter0_18, "<banner>")
+			local var5_18, var6_18 = string.find(iter0_18, "</banner>")
+			local var7_18 = string.sub(iter0_18, var4_18 + 1, var5_18 - 1)
+			local var8_18, var9_18 = string.find(arg1_18.content, iter0_18, var2_18, true)
 
-			if var8 ~= nil then
-				local var10 = string.sub(arg1.content, var2, var8 - 1)
+			if var8_18 ~= nil then
+				local var10_18 = string.sub(arg1_18.content, var2_18, var8_18 - 1)
 
-				if #var10 > 0 then
-					table.insert(arg0._contentInfo, {
-						type = var0.CONTENT_TYPE.RICHTEXT,
-						text = var10
+				if #var10_18 > 0 then
+					table.insert(arg0_18._contentInfo, {
+						type = var0_0.CONTENT_TYPE.RICHTEXT,
+						text = var10_18
 					})
 				end
 			end
 
-			table.insert(arg0._contentInfo, {
-				type = var0.CONTENT_TYPE.BANNER,
-				text = var7
+			table.insert(arg0_18._contentInfo, {
+				type = var0_0.CONTENT_TYPE.BANNER,
+				text = var7_18
 			})
 
-			var2 = var9 + 1
+			var2_18 = var9_18 + 1
 		end
 
-		if var2 < #arg1.content then
-			table.insert(arg0._contentInfo, {
-				type = var0.CONTENT_TYPE.RICHTEXT,
-				text = string.sub(arg1.content, var2, #arg1.content)
+		if var2_18 < #arg1_18.content then
+			table.insert(arg0_18._contentInfo, {
+				type = var0_0.CONTENT_TYPE.RICHTEXT,
+				text = string.sub(arg1_18.content, var2_18, #arg1_18.content)
 			})
 		end
 
-		for iter1, iter2 in pairs(arg0._contentInfo) do
-			if iter2.type == var0.CONTENT_TYPE.RICHTEXT then
-				var1(iter2.text)
-			elseif iter2.type == var0.CONTENT_TYPE.BANNER then
-				var0(iter2.text)
+		for iter1_18, iter2_18 in pairs(arg0_18._contentInfo) do
+			if iter2_18.type == var0_0.CONTENT_TYPE.RICHTEXT then
+				var1_18(iter2_18.text)
+			elseif iter2_18.type == var0_0.CONTENT_TYPE.BANNER then
+				var0_18(iter2_18.text)
 			end
 		end
 
-		arg0:bannerRotate()
+		arg0_18:bannerRotate()
 	end
 end
 
-function var0.bannerRotate(arg0)
-	for iter0, iter1 in pairs(arg0._contentList) do
-		local var0 = iter1:Find("loading/Image")
+function var0_0.bannerRotate(arg0_23)
+	for iter0_23, iter1_23 in pairs(arg0_23._contentList) do
+		local var0_23 = iter1_23:Find("loading/Image")
 
-		if var0 then
-			table.insert(arg0.LTList, LeanTween.rotateAroundLocal(rtf(var0), Vector3(0, 0, -1), 360, 5):setLoopClamp().uniqueId)
+		if var0_23 then
+			table.insert(arg0_23.LTList, LeanTween.rotateAroundLocal(rtf(var0_23), Vector3(0, 0, -1), 360, 5):setLoopClamp().uniqueId)
 		end
 	end
 end
 
-function var0.clearLeanTween(arg0)
-	for iter0, iter1 in pairs(arg0.LTList or {}) do
-		LeanTween.cancel(iter1)
+function var0_0.clearLeanTween(arg0_24)
+	for iter0_24, iter1_24 in pairs(arg0_24.LTList or {}) do
+		LeanTween.cancel(iter1_24)
 	end
 end
 
-function var0.clearContent(arg0)
-	for iter0, iter1 in pairs(arg0._contentList) do
-		Destroy(iter1)
+function var0_0.clearContent(arg0_25)
+	for iter0_25, iter1_25 in pairs(arg0_25._contentList) do
+		Destroy(iter1_25)
 	end
 
-	arg0._contentList = {}
+	arg0_25._contentList = {}
 end
 
-function var0.clearTab(arg0)
-	if arg0.subTabLT then
-		LeanTween.cancel(arg0.subTabLT)
+function var0_0.clearTab(arg0_26)
+	if arg0_26.subTabLT then
+		LeanTween.cancel(arg0_26.subTabLT)
 
-		arg0.subTabLT = nil
+		arg0_26.subTabLT = nil
 	end
 
-	arg0.currentSubTab = nil
+	arg0_26.currentSubTab = nil
 
-	for iter0, iter1 in pairs(arg0._subTabList) do
-		Destroy(iter1)
+	for iter0_26, iter1_26 in pairs(arg0_26._subTabList) do
+		Destroy(iter1_26)
 	end
 
-	arg0._subTabList = {}
-	arg0._subTabAnims = {}
+	arg0_26._subTabList = {}
+	arg0_26._subTabAnims = {}
 end
 
-function var0.clearLoadingPic(arg0)
-	for iter0, iter1 in pairs(arg0._loadingFlag) do
-		BulletinBoardMgr.Inst:StopLoader(iter0)
+function var0_0.clearLoadingPic(arg0_27)
+	for iter0_27, iter1_27 in pairs(arg0_27._loadingFlag) do
+		BulletinBoardMgr.Inst:StopLoader(iter0_27)
 
-		arg0._loadingFlag[iter0] = nil
+		arg0_27._loadingFlag[iter0_27] = nil
 	end
 end
 
-function var0.willExit(arg0)
-	arg0:clearLoadingPic()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+function var0_0.willExit(arg0_28)
+	arg0_28:clearLoadingPic()
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_28._tf)
 end
 
-return var0
+return var0_0

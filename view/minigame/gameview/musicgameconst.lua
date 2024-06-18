@@ -1,6 +1,6 @@
-﻿local var0 = class("MusicGameConst")
+﻿local var0_0 = class("MusicGameConst")
 
-var0.music_game_data = {
+var0_0.music_game_data = {
 	{
 		bg = 1,
 		pu = "06",
@@ -157,13 +157,13 @@ var0.music_game_data = {
 	}
 }
 
-function var0.getRandomBand()
-	local var0 = math.random(1, #MusicGameConst.random_band)
+function var0_0.getRandomBand()
+	local var0_1 = math.random(1, #MusicGameConst.random_band)
 
-	return MusicGameConst.random_band[var0]
+	return MusicGameConst.random_band[var0_1]
 end
 
-var0.painting_const_key = {
+var0_0.painting_const_key = {
 	jiasikenie_idolns = "jiasikenie_idol",
 	kelifulan_idolns = "kelifulan_idol",
 	ougen_idol_n = "ougen_idol",
@@ -184,7 +184,7 @@ var0.painting_const_key = {
 	guanghui_idol_n = "guanghui_idol",
 	chicheng_idolns = "chicheng_idol"
 }
-var0.random_band = {
+var0_0.random_band = {
 	{
 		bg = 4,
 		light = false,
@@ -251,7 +251,7 @@ var0.random_band = {
 		}
 	}
 }
-var0.music_all_ship = {
+var0_0.music_all_ship = {
 	"chicheng_idol",
 	"xiefeierde_idol",
 	"jiasikenie_idol",
@@ -266,7 +266,7 @@ var0.music_all_ship = {
 	"tashigan_idol",
 	"daqinghuayu_idol"
 }
-var0.music_all_painting = {
+var0_0.music_all_painting = {
 	"chicheng_idolns",
 	"xiefeierde_idolns",
 	"jiasikenie_idolns",
@@ -282,4 +282,4 @@ var0.music_all_painting = {
 	"tashigan_idol_n"
 }
 
-return var0
+return var0_0

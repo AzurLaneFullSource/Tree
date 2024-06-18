@@ -1,287 +1,287 @@
-﻿local var0 = class("PipeGamePopUI")
-local var1
+﻿local var0_0 = class("PipeGamePopUI")
+local var1_0
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0._tf = arg1
-	arg0._event = arg2
-	var1 = PipeGameVo
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1._tf = arg1_1
+	arg0_1._event = arg2_1
+	var1_0 = PipeGameVo
 
-	arg0:initCountUI()
-	arg0:initLeavelUI()
-	arg0:initPauseUI()
-	arg0:initSettlementUI()
-	arg0:initRankUI()
+	arg0_1:initCountUI()
+	arg0_1:initLeavelUI()
+	arg0_1:initPauseUI()
+	arg0_1:initSettlementUI()
+	arg0_1:initRankUI()
 end
 
-function var0.initCountUI(arg0)
-	arg0.countUI = findTF(arg0._tf, "pop/CountUI")
-	arg0.countAnimator = GetComponent(findTF(arg0.countUI, "count"), typeof(Animator))
-	arg0.countDft = GetOrAddComponent(findTF(arg0.countUI, "count"), typeof(DftAniEvent))
+function var0_0.initCountUI(arg0_2)
+	arg0_2.countUI = findTF(arg0_2._tf, "pop/CountUI")
+	arg0_2.countAnimator = GetComponent(findTF(arg0_2.countUI, "count"), typeof(Animator))
+	arg0_2.countDft = GetOrAddComponent(findTF(arg0_2.countUI, "count"), typeof(DftAniEvent))
 
-	arg0.countDft:SetTriggerEvent(function()
+	arg0_2.countDft:SetTriggerEvent(function()
 		return
 	end)
-	arg0.countDft:SetEndEvent(function()
-		arg0._event:emit(PipeGameEvent.COUNT_DOWN)
+	arg0_2.countDft:SetEndEvent(function()
+		arg0_2._event:emit(PipeGameEvent.COUNT_DOWN)
 	end)
 end
 
-function var0.initLeavelUI(arg0)
-	arg0.leaveUI = findTF(arg0._tf, "pop/LeaveUI")
+function var0_0.initLeavelUI(arg0_5)
+	arg0_5.leaveUI = findTF(arg0_5._tf, "pop/LeaveUI")
 
-	GetComponent(findTF(arg0.leaveUI, "ad/desc"), typeof(Image)):SetNativeSize()
-	setActive(arg0.leaveUI, false)
-	onButton(arg0._event, findTF(arg0.leaveUI, "ad/btnOk"), function()
-		arg0:resumeGame()
-		arg0._event:emit(PipeGameEvent.LEVEL_GAME, true)
+	GetComponent(findTF(arg0_5.leaveUI, "ad/desc"), typeof(Image)):SetNativeSize()
+	setActive(arg0_5.leaveUI, false)
+	onButton(arg0_5._event, findTF(arg0_5.leaveUI, "ad/btnOk"), function()
+		arg0_5:resumeGame()
+		arg0_5._event:emit(PipeGameEvent.LEVEL_GAME, true)
 	end, SFX_CANCEL)
-	onButton(arg0._event, findTF(arg0.leaveUI, "ad/btnCancel"), function()
-		arg0:resumeGame()
-		arg0._event:emit(PipeGameEvent.LEVEL_GAME, false)
-	end, SFX_CANCEL)
-end
-
-function var0.initPauseUI(arg0)
-	arg0.pauseUI = findTF(arg0._tf, "pop/pauseUI")
-
-	setActive(arg0.pauseUI, false)
-	GetComponent(findTF(arg0.pauseUI, "ad/desc"), typeof(Image)):SetNativeSize()
-	onButton(arg0._event, findTF(arg0.pauseUI, "ad/btnOk"), function()
-		arg0:resumeGame()
-		arg0._event:emit(PipeGameEvent.PAUSE_GAME, false)
+	onButton(arg0_5._event, findTF(arg0_5.leaveUI, "ad/btnCancel"), function()
+		arg0_5:resumeGame()
+		arg0_5._event:emit(PipeGameEvent.LEVEL_GAME, false)
 	end, SFX_CANCEL)
 end
 
-function var0.initSettlementUI(arg0)
-	arg0.settlementUI = findTF(arg0._tf, "pop/SettleMentUI")
+function var0_0.initPauseUI(arg0_8)
+	arg0_8.pauseUI = findTF(arg0_8._tf, "pop/pauseUI")
 
-	GetComponent(findTF(arg0.settlementUI, "ad/HighImg"), typeof(Image)):SetNativeSize()
-	GetComponent(findTF(arg0.settlementUI, "ad/CurImg"), typeof(Image)):SetNativeSize()
-	setActive(arg0.settlementUI, false)
-	onButton(arg0._event, findTF(arg0.settlementUI, "ad/btnOver"), function()
-		arg0:clearUI()
-		arg0._event:emit(PipeGameEvent.BACK_MENU)
+	setActive(arg0_8.pauseUI, false)
+	GetComponent(findTF(arg0_8.pauseUI, "ad/desc"), typeof(Image)):SetNativeSize()
+	onButton(arg0_8._event, findTF(arg0_8.pauseUI, "ad/btnOk"), function()
+		arg0_8:resumeGame()
+		arg0_8._event:emit(PipeGameEvent.PAUSE_GAME, false)
 	end, SFX_CANCEL)
 end
 
-function var0.initRankUI(arg0)
-	arg0.rankUI = findTF(arg0._tf, "pop/RankUI")
+function var0_0.initSettlementUI(arg0_10)
+	arg0_10.settlementUI = findTF(arg0_10._tf, "pop/SettleMentUI")
 
-	arg0:showRank(false)
-	GetComponent(findTF(arg0.rankUI, "ad/img/score"), typeof(Image)):SetNativeSize()
-	GetComponent(findTF(arg0.rankUI, "ad/img/time"), typeof(Image)):SetNativeSize()
-
-	arg0._rankImg = findTF(arg0.rankUI, "ad/img")
-	arg0._rankBtnClose = findTF(arg0.rankUI, "ad/btnClose")
-	arg0._rankContent = findTF(arg0.rankUI, "ad/list/content")
-	arg0._rankItemTpl = findTF(arg0.rankUI, "ad/list/content/itemTpl")
-	arg0._rankEmpty = findTF(arg0.rankUI, "ad/empty")
-	arg0._rankDesc = findTF(arg0.rankUI, "ad/desc")
-	arg0._rankItems = {}
-
-	setActive(arg0._rankItemTpl, false)
-	onButton(arg0._event, findTF(arg0.rankUI, "ad/close"), function()
-		arg0:showRank(false)
+	GetComponent(findTF(arg0_10.settlementUI, "ad/HighImg"), typeof(Image)):SetNativeSize()
+	GetComponent(findTF(arg0_10.settlementUI, "ad/CurImg"), typeof(Image)):SetNativeSize()
+	setActive(arg0_10.settlementUI, false)
+	onButton(arg0_10._event, findTF(arg0_10.settlementUI, "ad/btnOver"), function()
+		arg0_10:clearUI()
+		arg0_10._event:emit(PipeGameEvent.BACK_MENU)
 	end, SFX_CANCEL)
-	onButton(arg0._event, arg0._rankBtnClose, function()
-		arg0:showRank(false)
-	end, SFX_CANCEL)
-	setText(arg0._rankDesc, i18n(var1.rank_tip))
-	arg0:getRankData()
 end
 
-function var0.getRankData(arg0)
+function var0_0.initRankUI(arg0_12)
+	arg0_12.rankUI = findTF(arg0_12._tf, "pop/RankUI")
+
+	arg0_12:showRank(false)
+	GetComponent(findTF(arg0_12.rankUI, "ad/img/score"), typeof(Image)):SetNativeSize()
+	GetComponent(findTF(arg0_12.rankUI, "ad/img/time"), typeof(Image)):SetNativeSize()
+
+	arg0_12._rankImg = findTF(arg0_12.rankUI, "ad/img")
+	arg0_12._rankBtnClose = findTF(arg0_12.rankUI, "ad/btnClose")
+	arg0_12._rankContent = findTF(arg0_12.rankUI, "ad/list/content")
+	arg0_12._rankItemTpl = findTF(arg0_12.rankUI, "ad/list/content/itemTpl")
+	arg0_12._rankEmpty = findTF(arg0_12.rankUI, "ad/empty")
+	arg0_12._rankDesc = findTF(arg0_12.rankUI, "ad/desc")
+	arg0_12._rankItems = {}
+
+	setActive(arg0_12._rankItemTpl, false)
+	onButton(arg0_12._event, findTF(arg0_12.rankUI, "ad/close"), function()
+		arg0_12:showRank(false)
+	end, SFX_CANCEL)
+	onButton(arg0_12._event, arg0_12._rankBtnClose, function()
+		arg0_12:showRank(false)
+	end, SFX_CANCEL)
+	setText(arg0_12._rankDesc, i18n(var1_0.rank_tip))
+	arg0_12:getRankData()
+end
+
+function var0_0.getRankData(arg0_15)
 	pg.m02:sendNotification(GAME.MINI_GAME_FRIEND_RANK, {
-		id = var1.game_id,
-		callback = function(arg0)
-			local var0 = {}
+		id = var1_0.game_id,
+		callback = function(arg0_16)
+			local var0_16 = {}
 
-			for iter0 = 1, #arg0 do
-				local var1 = {}
+			for iter0_16 = 1, #arg0_16 do
+				local var1_16 = {}
 
-				for iter1, iter2 in pairs(arg0[iter0]) do
-					var1[iter1] = iter2
+				for iter1_16, iter2_16 in pairs(arg0_16[iter0_16]) do
+					var1_16[iter1_16] = iter2_16
 				end
 
-				table.insert(var0, var1)
+				table.insert(var0_16, var1_16)
 			end
 
-			table.sort(var0, function(arg0, arg1)
-				if arg0.score ~= arg1.score then
-					return arg0.score > arg1.score
-				elseif arg0.time_data ~= arg1.time_data then
-					return arg0.time_data > arg1.time_data
+			table.sort(var0_16, function(arg0_17, arg1_17)
+				if arg0_17.score ~= arg1_17.score then
+					return arg0_17.score > arg1_17.score
+				elseif arg0_17.time_data ~= arg1_17.time_data then
+					return arg0_17.time_data > arg1_17.time_data
 				else
-					return arg0.player_id < arg1.player_id
+					return arg0_17.player_id < arg1_17.player_id
 				end
 			end)
-			arg0:updateRankData(var0)
+			arg0_15:updateRankData(var0_16)
 		end
 	})
 end
 
-function var0.updateRankData(arg0, arg1)
-	for iter0 = 1, #arg1 do
-		local var0
+function var0_0.updateRankData(arg0_18, arg1_18)
+	for iter0_18 = 1, #arg1_18 do
+		local var0_18
 
-		if iter0 > #arg0._rankItems then
-			local var1 = tf(instantiate(arg0._rankItemTpl))
+		if iter0_18 > #arg0_18._rankItems then
+			local var1_18 = tf(instantiate(arg0_18._rankItemTpl))
 
-			setActive(var1, false)
-			setParent(var1, arg0._rankContent)
-			table.insert(arg0._rankItems, var1)
+			setActive(var1_18, false)
+			setParent(var1_18, arg0_18._rankContent)
+			table.insert(arg0_18._rankItems, var1_18)
 		end
 
-		local var2 = arg0._rankItems[iter0]
+		local var2_18 = arg0_18._rankItems[iter0_18]
 
-		arg0:setRankItemData(var2, arg1[iter0], iter0)
-		setActive(var2, true)
+		arg0_18:setRankItemData(var2_18, arg1_18[iter0_18], iter0_18)
+		setActive(var2_18, true)
 	end
 
-	for iter1 = #arg1 + 1, #arg0._rankItems do
-		setActive(arg0._rankItems, false)
+	for iter1_18 = #arg1_18 + 1, #arg0_18._rankItems do
+		setActive(arg0_18._rankItems, false)
 	end
 
-	setActive(arg0._rankEmpty, #arg1 == 0)
-	setActive(arg0._rankImg, #arg1 > 0)
+	setActive(arg0_18._rankEmpty, #arg1_18 == 0)
+	setActive(arg0_18._rankImg, #arg1_18 > 0)
 end
 
-function var0.setRankItemData(arg0, arg1, arg2, arg3)
-	local var0 = arg2.name
-	local var1 = arg2.player_id
-	local var2 = arg2.position
-	local var3 = arg2.score
-	local var4 = arg2.time_data
-	local var5 = getProxy(PlayerProxy):isSelf(var1)
+function var0_0.setRankItemData(arg0_19, arg1_19, arg2_19, arg3_19)
+	local var0_19 = arg2_19.name
+	local var1_19 = arg2_19.player_id
+	local var2_19 = arg2_19.position
+	local var3_19 = arg2_19.score
+	local var4_19 = arg2_19.time_data
+	local var5_19 = getProxy(PlayerProxy):isSelf(var1_19)
 
-	setText(findTF(arg1, "nameText"), var0)
-	arg0:setChildVisible(findTF(arg1, "bg"), false)
-	arg0:setChildVisible(findTF(arg1, "rank"), false)
+	setText(findTF(arg1_19, "nameText"), var0_19)
+	arg0_19:setChildVisible(findTF(arg1_19, "bg"), false)
+	arg0_19:setChildVisible(findTF(arg1_19, "rank"), false)
 
-	if arg3 <= 3 then
-		setActive(findTF(arg1, "bg/" .. arg3), true)
-		setActive(findTF(arg1, "rank/" .. arg3), true)
-	elseif var5 then
-		setActive(findTF(arg1, "bg/me"), true)
-		setActive(findTF(arg1, "rank/count"), true)
+	if arg3_19 <= 3 then
+		setActive(findTF(arg1_19, "bg/" .. arg3_19), true)
+		setActive(findTF(arg1_19, "rank/" .. arg3_19), true)
+	elseif var5_19 then
+		setActive(findTF(arg1_19, "bg/me"), true)
+		setActive(findTF(arg1_19, "rank/count"), true)
 	else
-		setActive(findTF(arg1, "bg/other"), true)
-		setActive(findTF(arg1, "rank/count"), true)
+		setActive(findTF(arg1_19, "bg/other"), true)
+		setActive(findTF(arg1_19, "rank/count"), true)
 	end
 
-	setText(findTF(arg1, "rank/count"), tostring(arg3))
-	setText(findTF(arg1, "score"), tostring(var3))
-	setText(findTF(arg1, "time"), tostring(var4))
-	setActive(findTF(arg1, "imgMy"), var5)
+	setText(findTF(arg1_19, "rank/count"), tostring(arg3_19))
+	setText(findTF(arg1_19, "score"), tostring(var3_19))
+	setText(findTF(arg1_19, "time"), tostring(var4_19))
+	setActive(findTF(arg1_19, "imgMy"), var5_19)
 end
 
-function var0.setChildVisible(arg0, arg1, arg2)
-	for iter0 = 1, arg1.childCount do
-		local var0 = arg1:GetChild(iter0 - 1)
+function var0_0.setChildVisible(arg0_20, arg1_20, arg2_20)
+	for iter0_20 = 1, arg1_20.childCount do
+		local var0_20 = arg1_20:GetChild(iter0_20 - 1)
 
-		setActive(var0, arg2)
+		setActive(var0_20, arg2_20)
 	end
 end
 
-function var0.showRank(arg0, arg1)
-	if arg1 then
-		arg0:getRankData()
+function var0_0.showRank(arg0_21, arg1_21)
+	if arg1_21 then
+		arg0_21:getRankData()
 	end
 
-	setActive(arg0.rankUI, arg1)
+	setActive(arg0_21.rankUI, arg1_21)
 end
 
-function var0.updateSettlementUI(arg0)
-	GetComponent(findTF(arg0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
+function var0_0.updateSettlementUI(arg0_22)
+	GetComponent(findTF(arg0_22.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-	local var0 = var1.scoreNum
-	local var1 = math.floor(var1.gameDragTime)
-	local var2 = getProxy(MiniGameProxy):GetHighScore(var1.game_id)
-	local var3 = var2 and #var2 > 0 and var2[1] or 0
-	local var4 = var2 and #var2 > 1 and var2[2] or 0
+	local var0_22 = var1_0.scoreNum
+	local var1_22 = math.floor(var1_0.gameDragTime)
+	local var2_22 = getProxy(MiniGameProxy):GetHighScore(var1_0.game_id)
+	local var3_22 = var2_22 and #var2_22 > 0 and var2_22[1] or 0
+	local var4_22 = var2_22 and #var2_22 > 1 and var2_22[2] or 0
 
-	setActive(findTF(arg0.settlementUI, "ad/new"), var3 < var0)
+	setActive(findTF(arg0_22.settlementUI, "ad/new"), var3_22 < var0_22)
 
-	if var0 > 0 and var3 < var0 then
-		arg0._event:emit(PipeGameEvent.STORE_SERVER, {
-			var0,
-			var1
+	if var0_22 > 0 and var3_22 < var0_22 then
+		arg0_22._event:emit(PipeGameEvent.STORE_SERVER, {
+			var0_22,
+			var1_22
 		})
-	elseif var0 > 0 and var0 == var3 and var4 < var1 then
-		arg0._event:emit(PipeGameEvent.STORE_SERVER, {
-			var0,
-			var1
+	elseif var0_22 > 0 and var0_22 == var3_22 and var4_22 < var1_22 then
+		arg0_22._event:emit(PipeGameEvent.STORE_SERVER, {
+			var0_22,
+			var1_22
 		})
 	end
 
-	local var5 = findTF(arg0.settlementUI, "ad/highText")
-	local var6 = findTF(arg0.settlementUI, "ad/currentText")
+	local var5_22 = findTF(arg0_22.settlementUI, "ad/highText")
+	local var6_22 = findTF(arg0_22.settlementUI, "ad/currentText")
 
-	setText(var6, var0)
-	setText(var5, var1)
-	arg0._event:emit(PipeGameEvent.SUBMIT_GAME_SUCCESS)
+	setText(var6_22, var0_22)
+	setText(var5_22, var1_22)
+	arg0_22._event:emit(PipeGameEvent.SUBMIT_GAME_SUCCESS)
 end
 
-function var0.backPressed(arg0)
-	if isActive(arg0.pauseUI) then
-		arg0:resumeGame()
-		arg0._event:emit(PipeGameEvent.PAUSE_GAME, false)
-	elseif isActive(arg0.leaveUI) then
-		arg0:resumeGame()
-		arg0._event:emit(PipeGameEvent.LEVEL_GAME, false)
-	elseif not isActive(arg0.pauseUI) and not isActive(arg0.pauseUI) then
-		if not var1.startSettlement then
-			arg0:popPauseUI()
-			arg0._event:emit(PipeGameEvent.PAUSE_GAME, true)
+function var0_0.backPressed(arg0_23)
+	if isActive(arg0_23.pauseUI) then
+		arg0_23:resumeGame()
+		arg0_23._event:emit(PipeGameEvent.PAUSE_GAME, false)
+	elseif isActive(arg0_23.leaveUI) then
+		arg0_23:resumeGame()
+		arg0_23._event:emit(PipeGameEvent.LEVEL_GAME, false)
+	elseif not isActive(arg0_23.pauseUI) and not isActive(arg0_23.pauseUI) then
+		if not var1_0.startSettlement then
+			arg0_23:popPauseUI()
+			arg0_23._event:emit(PipeGameEvent.PAUSE_GAME, true)
 		end
 	else
-		arg0:resumeGame()
+		arg0_23:resumeGame()
 	end
 end
 
-function var0.resumeGame(arg0)
-	setActive(arg0.leaveUI, false)
-	setActive(arg0.pauseUI, false)
+function var0_0.resumeGame(arg0_24)
+	setActive(arg0_24.leaveUI, false)
+	setActive(arg0_24.pauseUI, false)
 end
 
-function var0.popLeaveUI(arg0)
-	if isActive(arg0.pauseUI) then
-		setActive(arg0.pauseUI, false)
+function var0_0.popLeaveUI(arg0_25)
+	if isActive(arg0_25.pauseUI) then
+		setActive(arg0_25.pauseUI, false)
 	end
 
-	setActive(arg0.leaveUI, true)
+	setActive(arg0_25.leaveUI, true)
 end
 
-function var0.popPauseUI(arg0)
-	if isActive(arg0.leaveUI) then
-		setActive(arg0.leaveUI, false)
+function var0_0.popPauseUI(arg0_26)
+	if isActive(arg0_26.leaveUI) then
+		setActive(arg0_26.leaveUI, false)
 	end
 
-	setActive(arg0.pauseUI, true)
+	setActive(arg0_26.pauseUI, true)
 end
 
-function var0.updateGameUI(arg0, arg1)
-	setText(arg0.scoreTf, arg1.scoreNum)
-	setText(arg0.gameTimeS, math.ceil(arg1.gameTime))
+function var0_0.updateGameUI(arg0_27, arg1_27)
+	setText(arg0_27.scoreTf, arg1_27.scoreNum)
+	setText(arg0_27.gameTimeS, math.ceil(arg1_27.gameTime))
 end
 
-function var0.readyStart(arg0)
-	arg0:popCountUI(true)
-	arg0.countAnimator:Play("count")
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var1.SFX_COUNT_DOWN)
+function var0_0.readyStart(arg0_28)
+	arg0_28:popCountUI(true)
+	arg0_28.countAnimator:Play("count")
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var1_0.SFX_COUNT_DOWN)
 end
 
-function var0.popCountUI(arg0, arg1)
-	setActive(arg0.countUI, arg1)
+function var0_0.popCountUI(arg0_29, arg1_29)
+	setActive(arg0_29.countUI, arg1_29)
 end
 
-function var0.popSettlementUI(arg0, arg1)
-	setActive(arg0.settlementUI, arg1)
+function var0_0.popSettlementUI(arg0_30, arg1_30)
+	setActive(arg0_30.settlementUI, arg1_30)
 end
 
-function var0.clearUI(arg0)
-	setActive(arg0.settlementUI, false)
-	setActive(arg0.countUI, false)
+function var0_0.clearUI(arg0_31)
+	setActive(arg0_31.settlementUI, false)
+	setActive(arg0_31.countUI, false)
 end
 
-return var0
+return var0_0

@@ -1,113 +1,113 @@
-﻿local var0 = class("EquipmentSkinMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("EquipmentSkinMediator", import("..base.ContextMediator"))
 
-var0.ON_EQUIP = "EquipmentSkinMediator:ON_EQUIP"
-var0.ON_UNEQUIP = "EquipmentSkinMediator:ON_UNEQUIP"
-var0.ON_SELECT = "EquipmentSkinMediator:ON_SELECT"
-var0.ON_PREVIEW = "EquipmentSkinMediator:ON_PREVIEW"
-var0.ON_EQUIP_FORM_SHIP = "EquipmentSkinMediator:ON_EQUIP_FORM_SHIP"
+var0_0.ON_EQUIP = "EquipmentSkinMediator:ON_EQUIP"
+var0_0.ON_UNEQUIP = "EquipmentSkinMediator:ON_UNEQUIP"
+var0_0.ON_SELECT = "EquipmentSkinMediator:ON_SELECT"
+var0_0.ON_PREVIEW = "EquipmentSkinMediator:ON_PREVIEW"
+var0_0.ON_EQUIP_FORM_SHIP = "EquipmentSkinMediator:ON_EQUIP_FORM_SHIP"
 
-function var0.register(arg0)
-	arg0:bind(var0.ON_EQUIP, function(arg0)
-		arg0:sendNotification(EquipmentMediator.NO_UPDATE)
-		arg0:sendNotification(GAME.EQUIP_EQUIPMENTSKIN_TO_SHIP, {
-			shipId = arg0.contextData.shipId,
-			pos = arg0.contextData.pos,
-			equipmentSkinId = arg0.contextData.skinId
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.ON_EQUIP, function(arg0_2)
+		arg0_1:sendNotification(EquipmentMediator.NO_UPDATE)
+		arg0_1:sendNotification(GAME.EQUIP_EQUIPMENTSKIN_TO_SHIP, {
+			shipId = arg0_1.contextData.shipId,
+			pos = arg0_1.contextData.pos,
+			equipmentSkinId = arg0_1.contextData.skinId
 		})
 	end)
-	arg0:bind(var0.ON_EQUIP_FORM_SHIP, function(arg0)
-		if not arg0.contextData.oldShipInfo then
+	arg0_1:bind(var0_0.ON_EQUIP_FORM_SHIP, function(arg0_3)
+		if not arg0_1.contextData.oldShipInfo then
 			return
 		end
 
-		local var0 = arg0.contextData.oldShipInfo.id
-		local var1, var2 = ShipStatus.ShipStatusCheck("onModify", getProxy(BayProxy):getShipById(var0))
+		local var0_3 = arg0_1.contextData.oldShipInfo.id
+		local var1_3, var2_3 = ShipStatus.ShipStatusCheck("onModify", getProxy(BayProxy):getShipById(var0_3))
 
-		if not var1 then
-			pg.TipsMgr.GetInstance():ShowTips(var2)
+		if not var1_3 then
+			pg.TipsMgr.GetInstance():ShowTips(var2_3)
 
 			return
 		end
 
-		local var3 = arg0.contextData.oldShipInfo
+		local var3_3 = arg0_1.contextData.oldShipInfo
 
-		assert(var3.id, "old ship id is nil")
-		assert(var3.pos, "old ship pos is nil")
-		assert(arg0.contextData.shipId, "new ship id nil")
-		assert(arg0.contextData.pos, "new ship id nil")
-		arg0:sendNotification(EquipmentMediator.NO_UPDATE)
-		arg0:sendNotification(GAME.EQUIP_EQUIPMENTSKIN_FROM_SHIP, {
-			oldShipId = var3.id,
-			oldShipPos = var3.pos,
-			newShipId = arg0.contextData.shipId,
-			newShipPos = arg0.contextData.pos
+		assert(var3_3.id, "old ship id is nil")
+		assert(var3_3.pos, "old ship pos is nil")
+		assert(arg0_1.contextData.shipId, "new ship id nil")
+		assert(arg0_1.contextData.pos, "new ship id nil")
+		arg0_1:sendNotification(EquipmentMediator.NO_UPDATE)
+		arg0_1:sendNotification(GAME.EQUIP_EQUIPMENTSKIN_FROM_SHIP, {
+			oldShipId = var3_3.id,
+			oldShipPos = var3_3.pos,
+			newShipId = arg0_1.contextData.shipId,
+			newShipPos = arg0_1.contextData.pos
 		})
 	end)
-	arg0:bind(var0.ON_UNEQUIP, function(arg0)
-		arg0:sendNotification(GAME.EQUIP_EQUIPMENTSKIN_TO_SHIP, {
+	arg0_1:bind(var0_0.ON_UNEQUIP, function(arg0_4)
+		arg0_1:sendNotification(GAME.EQUIP_EQUIPMENTSKIN_TO_SHIP, {
 			equipmentSkinId = 0,
-			shipId = arg0.contextData.shipId,
-			pos = arg0.contextData.pos
+			shipId = arg0_1.contextData.shipId,
+			pos = arg0_1.contextData.pos
 		})
 	end)
 
-	if arg0.contextData.shipId then
-		local var0 = getProxy(BayProxy):getShipById(arg0.contextData.shipId)
+	if arg0_1.contextData.shipId then
+		local var0_1 = getProxy(BayProxy):getShipById(arg0_1.contextData.shipId)
 
-		arg0.viewComponent:setShip(var0)
-		arg0:bind(var0.ON_SELECT, function(arg0, arg1)
-			local var0 = ShipMainMediator:getEquipmentSkins(var0, arg1)
+		arg0_1.viewComponent:setShip(var0_1)
+		arg0_1:bind(var0_0.ON_SELECT, function(arg0_5, arg1_5)
+			local var0_5 = ShipMainMediator:getEquipmentSkins(var0_1, arg1_5)
 
-			arg0:sendNotification(GAME.GO_SCENE, SCENE.EQUIPSCENE, {
-				equipmentVOs = var0,
-				shipId = arg0.contextData.shipId,
-				pos = arg1,
+			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.EQUIPSCENE, {
+				equipmentVOs = var0_5,
+				shipId = arg0_1.contextData.shipId,
+				pos = arg1_5,
 				warp = StoreHouseConst.WARP_TO_WEAPON,
 				mode = StoreHouseConst.SKIN
 			})
 		end)
 	end
 
-	arg0:bind(var0.ON_PREVIEW, function(arg0, arg1)
-		local var0 = pg.equip_skin_template[arg1]
-		local var1 = Ship.New({
-			id = var0.ship_config_id,
-			configId = var0.ship_config_id,
-			skin_id = var0.ship_skin_id
+	arg0_1:bind(var0_0.ON_PREVIEW, function(arg0_6, arg1_6)
+		local var0_6 = pg.equip_skin_template[arg1_6]
+		local var1_6 = Ship.New({
+			id = var0_6.ship_config_id,
+			configId = var0_6.ship_config_id,
+			skin_id = var0_6.ship_skin_id
 		})
-		local var2 = {}
+		local var2_6 = {}
 
-		if var0.ship_skin_id ~= 0 then
-			var2 = {
+		if var0_6.ship_skin_id ~= 0 then
+			var2_6 = {
 				equipSkinId = 0,
-				shipVO = var1,
+				shipVO = var1_6,
 				weaponIds = {},
-				weight = arg0.contextData.weight and arg0.contextData.weight + 1
+				weight = arg0_1.contextData.weight and arg0_1.contextData.weight + 1
 			}
 		else
-			var2 = {
-				shipVO = var1,
-				weaponIds = Clone(var0.weapon_ids),
-				equipSkinId = arg1,
-				weight = arg0.contextData.weight and arg0.contextData.weight + 1
+			var2_6 = {
+				shipVO = var1_6,
+				weaponIds = Clone(var0_6.weapon_ids),
+				equipSkinId = arg1_6,
+				weight = arg0_1.contextData.weight and arg0_1.contextData.weight + 1
 			}
 		end
 
-		arg0:addSubLayers(Context.New({
+		arg0_1:addSubLayers(Context.New({
 			viewComponent = EquipmentSkinPreviewWindow,
 			mediator = ShipPreviewMediator,
-			data = var2
+			data = var2_6
 		}))
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_7)
 	return {}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_8, arg1_8)
+	local var0_8 = arg1_8:getName()
+	local var1_8 = arg1_8:getBody()
 end
 
-return var0
+return var0_0

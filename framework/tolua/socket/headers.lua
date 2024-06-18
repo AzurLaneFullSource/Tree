@@ -1,10 +1,10 @@
-﻿local var0 = require("socket")
+﻿local var0_0 = require("socket")
 
-var0.headers = {}
+var0_0.headers = {}
 
-local var1 = var0.headers
+local var1_0 = var0_0.headers
 
-var1.canonic = {
+var1_0.canonic = {
 	["last-attempt-date"] = "Last-Attempt-Date",
 	received = "Received",
 	authorization = "Authorization",
@@ -98,4 +98,4 @@ var1.canonic = {
 	server = "Server"
 }
 
-return var1
+return var1_0

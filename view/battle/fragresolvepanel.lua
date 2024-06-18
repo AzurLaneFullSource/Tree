@@ -1,326 +1,326 @@
-﻿local var0 = class("FragResolvePanel", BaseSubPanel)
+﻿local var0_0 = class("FragResolvePanel", BaseSubPanel)
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "FragResolveUI"
 end
 
-local var1 = {
+local var1_0 = {
 	"control",
 	"resolve"
 }
 
-function var0.OnInit(arg0)
-	arg0.bagProxy = getProxy(BagProxy)
-	arg0.technologyProxy = getProxy(TechnologyProxy)
-	arg0.toggles = {}
+function var0_0.OnInit(arg0_2)
+	arg0_2.bagProxy = getProxy(BagProxy)
+	arg0_2.technologyProxy = getProxy(TechnologyProxy)
+	arg0_2.toggles = {}
 
-	for iter0, iter1 in ipairs(var1) do
-		arg0[iter1 .. "Panel"] = arg0._tf:Find(iter1)
+	for iter0_2, iter1_2 in ipairs(var1_0) do
+		arg0_2[iter1_2 .. "Panel"] = arg0_2._tf:Find(iter1_2)
 
-		local var0 = arg0._tf:Find("toggle_controll/" .. iter1)
+		local var0_2 = arg0_2._tf:Find("toggle_controll/" .. iter1_2)
 
-		arg0.toggles[iter1] = var0
+		arg0_2.toggles[iter1_2] = var0_2
 
-		onToggle(arg0, var0, function(arg0)
-			arg0["Reset" .. iter1](arg0)
+		onToggle(arg0_2, var0_2, function(arg0_3)
+			arg0_2["Reset" .. iter1_2](arg0_2)
 		end, SFX_PANEL)
 	end
 
-	onButton(arg0, arg0._tf:Find("bg"), function()
-		arg0:Back()
+	onButton(arg0_2, arg0_2._tf:Find("bg"), function()
+		arg0_2:Back()
 	end, SFX_PANEL)
 
-	local var1 = arg0.controlPanel:Find("got/empty/Text")
+	local var1_2 = arg0_2.controlPanel:Find("got/empty/Text")
 
-	setText(arg0.controlPanel:Find("allMax/txt"), i18n("onebutton_max_tip"))
+	setText(arg0_2.controlPanel:Find("allMax/txt"), i18n("onebutton_max_tip"))
 
-	local var2 = arg0._tf:Find("control/condition/text")
-	local var3 = arg0.resolvePanel:Find("cancel_button/label")
+	local var2_2 = arg0_2._tf:Find("control/condition/text")
+	local var3_2 = arg0_2.resolvePanel:Find("cancel_button/label")
 
 	if PLATFORM_CODE == PLATFORM_US then
-		setTextEN(var2, i18n("fenjie_lantu_tip"))
-		setTextEN(var1, i18n("fragresolve_empty_tip"))
+		setTextEN(var2_2, i18n("fenjie_lantu_tip"))
+		setTextEN(var1_2, i18n("fragresolve_empty_tip"))
 	else
-		setText(var2, i18n("fenjie_lantu_tip"))
-		setText(var1, i18n("fragresolve_empty_tip"))
+		setText(var2_2, i18n("fenjie_lantu_tip"))
+		setText(var1_2, i18n("fragresolve_empty_tip"))
 	end
 
-	setText(var3, i18n("msgbox_text_cancel"))
+	setText(var3_2, i18n("msgbox_text_cancel"))
 
-	local var4 = getProxy(PlayerProxy):getData()
+	local var4_2 = getProxy(PlayerProxy):getData()
 
-	var0.keepFateTog = arg0._tf:Find("control/condition/keep_tog")
+	var0_0.keepFateTog = arg0_2._tf:Find("control/condition/keep_tog")
 
-	setText(arg0:findTF("label", arg0.keepFateTog), i18n("keep_fate_tip"))
+	setText(arg0_2:findTF("label", arg0_2.keepFateTog), i18n("keep_fate_tip"))
 
-	local var5 = GetComponent(arg0.keepFateTog, typeof(Toggle))
+	local var5_2 = GetComponent(arg0_2.keepFateTog, typeof(Toggle))
 
-	var0.keepFateState = not var4:GetCommonFlag(SHOW_DONT_KEEP_FATE_ITEM)
-	var5.isOn = var0.keepFateState
+	var0_0.keepFateState = not var4_2:GetCommonFlag(SHOW_DONT_KEEP_FATE_ITEM)
+	var5_2.isOn = var0_0.keepFateState
 
-	onToggle(arg0, arg0.keepFateTog, function(arg0)
-		var0.keepFateState = arg0
+	onToggle(arg0_2, arg0_2.keepFateTog, function(arg0_5)
+		var0_0.keepFateState = arg0_5
 
-		arg0:emit(NewShopsMediator.SET_PLAYER_FLAG, SHOW_DONT_KEEP_FATE_ITEM, not arg0)
-		arg0:Trigger("control")
+		arg0_2:emit(NewShopsMediator.SET_PLAYER_FLAG, SHOW_DONT_KEEP_FATE_ITEM, not arg0_5)
+		arg0_2:Trigger("control")
 	end)
-	arg0:Trigger("control")
+	arg0_2:Trigger("control")
 end
 
-function var0.OnShow(arg0)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+function var0_0.OnShow(arg0_6)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_6._tf)
 end
 
-function var0.OnHide(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+function var0_0.OnHide(arg0_7)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_7._tf)
 end
 
-function var0.Reset(arg0)
-	if arg0.resolveItems then
-		table.clear(arg0.resolveItems)
+function var0_0.Reset(arg0_8)
+	if arg0_8.resolveItems then
+		table.clear(arg0_8.resolveItems)
 	end
 end
 
-function var0.Resetcontrol(arg0)
-	arg0.blueprintItems = arg0.GetAllBluePrintStrengthenItems()
+function var0_0.Resetcontrol(arg0_9)
+	arg0_9.blueprintItems = arg0_9.GetAllBluePrintStrengthenItems()
 
-	local var0 = arg0.blueprintItems
-	local var1 = arg0.controlPanel
-	local var2 = var1:Find("got/empty")
-	local var3 = var1:Find("got/list")
+	local var0_9 = arg0_9.blueprintItems
+	local var1_9 = arg0_9.controlPanel
+	local var2_9 = var1_9:Find("got/empty")
+	local var3_9 = var1_9:Find("got/list")
 
-	setActive(var2, #var0 <= 0)
-	setActive(var3, #var0 > 0)
+	setActive(var2_9, #var0_9 <= 0)
+	setActive(var3_9, #var0_9 > 0)
 
-	if #var0 <= 0 then
-		arg0:Updatecontrol()
+	if #var0_9 <= 0 then
+		arg0_9:Updatecontrol()
 
 		return
 	end
 
-	local var4 = {}
+	local var4_9 = {}
 
-	for iter0, iter1 in ipairs(arg0.resolveItems or {}) do
-		var4[iter1.id] = iter1
+	for iter0_9, iter1_9 in ipairs(arg0_9.resolveItems or {}) do
+		var4_9[iter1_9.id] = iter1_9
 	end
 
-	UIItemList.StaticAlign(var3, var3:Find("item"), #var0, function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = var0[arg1 + 1]
+	UIItemList.StaticAlign(var3_9, var3_9:Find("item"), #var0_9, function(arg0_10, arg1_10, arg2_10)
+		if arg0_10 == UIItemList.EventUpdate then
+			local var0_10 = var0_9[arg1_10 + 1]
 
-			updateDrop(arg2:Find("icon"), var0)
+			updateDrop(arg2_10:Find("icon"), var0_10)
 
-			var0.curCount = math.clamp(var4[var0.id] and var4[var0.id].curCount or 0, 0, var0.maxCount)
+			var0_10.curCount = math.clamp(var4_9[var0_10.id] and var4_9[var0_10.id].curCount or 0, 0, var0_10.maxCount)
 
-			onButton(arg0, arg2:Find("icon/icon_bg"), function()
-				arg0:emit(BaseUI.ON_DROP, var0)
+			onButton(arg0_9, arg2_10:Find("icon/icon_bg"), function()
+				arg0_9:emit(BaseUI.ON_DROP, var0_10)
 			end, SFX_PANEL)
 
-			local var1 = arg2:Find("count")
+			local var1_10 = arg2_10:Find("count")
 
-			onButton(arg0, var1:Find("max"), function()
-				if var0.curCount ~= var0.maxCount then
-					var0.curCount = var0.maxCount
+			onButton(arg0_9, var1_10:Find("max"), function()
+				if var0_10.curCount ~= var0_10.maxCount then
+					var0_10.curCount = var0_10.maxCount
 
-					arg0:Updatecontrol()
+					arg0_9:Updatecontrol()
 				end
 			end)
-			pressPersistTrigger(var1:Find("number_panel/left"), 0.5, function(arg0)
-				if var0.curCount <= 0 then
-					arg0()
+			pressPersistTrigger(var1_10:Find("number_panel/left"), 0.5, function(arg0_13)
+				if var0_10.curCount <= 0 then
+					arg0_13()
 
 					return
 				end
 
-				var0.curCount = var0.curCount - 1
+				var0_10.curCount = var0_10.curCount - 1
 
-				arg0:Updatecontrol()
+				arg0_9:Updatecontrol()
 			end, nil, true, true, 0.1, SFX_PANEL)
-			pressPersistTrigger(var1:Find("number_panel/right"), 0.5, function(arg0)
-				if var0.curCount >= var0.maxCount then
-					arg0()
+			pressPersistTrigger(var1_10:Find("number_panel/right"), 0.5, function(arg0_14)
+				if var0_10.curCount >= var0_10.maxCount then
+					arg0_14()
 
 					return
 				end
 
-				var0.curCount = var0.curCount + 1
+				var0_10.curCount = var0_10.curCount + 1
 
-				arg0:Updatecontrol()
+				arg0_9:Updatecontrol()
 			end, nil, true, true, 0.1, SFX_PANEL)
 		end
 	end)
-	onButton(arg0, var1:Find("button_1"), function()
-		local var0 = {}
+	onButton(arg0_9, var1_9:Find("button_1"), function()
+		local var0_15 = {}
 
-		for iter0, iter1 in ipairs(arg0.blueprintItems) do
-			if iter1.curCount > 0 then
-				local var1 = Clone(iter1)
+		for iter0_15, iter1_15 in ipairs(arg0_9.blueprintItems) do
+			if iter1_15.curCount > 0 then
+				local var1_15 = Clone(iter1_15)
 
-				var1.count = iter1.curCount
+				var1_15.count = iter1_15.curCount
 
-				table.insert(var0, var1)
+				table.insert(var0_15, var1_15)
 			end
 		end
 
-		if #var0 > 0 then
-			arg0.resolveItems = var0
+		if #var0_15 > 0 then
+			arg0_9.resolveItems = var0_15
 
-			triggerToggle(arg0.toggles.resolve, true)
+			triggerToggle(arg0_9.toggles.resolve, true)
 		end
 	end, SFX_PANEL)
-	onButton(arg0, var1:Find("allMax"), function()
-		for iter0 = 1, #var0 do
-			local var0 = var0[iter0]
+	onButton(arg0_9, var1_9:Find("allMax"), function()
+		for iter0_16 = 1, #var0_9 do
+			local var0_16 = var0_9[iter0_16]
 
-			if var0.curCount ~= var0.maxCount then
-				var0.curCount = var0.maxCount
+			if var0_16.curCount ~= var0_16.maxCount then
+				var0_16.curCount = var0_16.maxCount
 			end
 
-			arg0:Updatecontrol()
+			arg0_9:Updatecontrol()
 		end
 	end, SFX_PANEL)
-	arg0:Updatecontrol()
+	arg0_9:Updatecontrol()
 end
 
-function var0.Updatecontrol(arg0)
-	local var0 = arg0.controlPanel
-	local var1 = var0:Find("got/list")
-	local var2 = arg0.blueprintItems
-	local var3 = 0
+function var0_0.Updatecontrol(arg0_17)
+	local var0_17 = arg0_17.controlPanel
+	local var1_17 = var0_17:Find("got/list")
+	local var2_17 = arg0_17.blueprintItems
+	local var3_17 = 0
 
-	UIItemList.StaticAlign(var1, var1:Find("item"), #var2, function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = var2[arg1 + 1]
-			local var1 = arg2:Find("count")
+	UIItemList.StaticAlign(var1_17, var1_17:Find("item"), #var2_17, function(arg0_18, arg1_18, arg2_18)
+		if arg0_18 == UIItemList.EventUpdate then
+			local var0_18 = var2_17[arg1_18 + 1]
+			local var1_18 = arg2_18:Find("count")
 
-			setText(var1:Find("number_panel/value"), var0.curCount)
+			setText(var1_18:Find("number_panel/value"), var0_18.curCount)
 
-			var3 = var3 + var0.curCount
+			var3_17 = var3_17 + var0_18.curCount
 		end
 	end)
 
-	local var4 = var0:Find("button_1")
+	local var4_17 = var0_17:Find("button_1")
 
-	setButtonEnabled(var4, var3 > 0)
-	setGray(var4, var3 <= 0)
+	setButtonEnabled(var4_17, var3_17 > 0)
+	setGray(var4_17, var3_17 <= 0)
 
-	local var5 = var0:Find("allMax")
+	local var5_17 = var0_17:Find("allMax")
 
-	setGray(var5, not var2 or #var2 == 0)
-	setButtonEnabled(var5, var2 and #var2 > 0)
+	setGray(var5_17, not var2_17 or #var2_17 == 0)
+	setButtonEnabled(var5_17, var2_17 and #var2_17 > 0)
 end
 
-function var0.Resetresolve(arg0)
-	local var0 = arg0.resolvePanel
-	local var1 = var0:Find("preview/got/list")
-	local var2 = var0:Find("result/got/list")
-	local var3 = arg0.resolveItems
+function var0_0.Resetresolve(arg0_19)
+	local var0_19 = arg0_19.resolvePanel
+	local var1_19 = var0_19:Find("preview/got/list")
+	local var2_19 = var0_19:Find("result/got/list")
+	local var3_19 = arg0_19.resolveItems
 
-	UIItemList.StaticAlign(var1, var1:Find("item"), #var3, function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = var3[arg1 + 1]
+	UIItemList.StaticAlign(var1_19, var1_19:Find("item"), #var3_19, function(arg0_20, arg1_20, arg2_20)
+		if arg0_20 == UIItemList.EventUpdate then
+			local var0_20 = var3_19[arg1_20 + 1]
 
-			updateDrop(arg2:Find("icon"), var0)
-			onButton(arg0, arg2:Find("icon/icon_bg"), function()
-				arg0:emit(BaseUI.ON_DROP, var0)
+			updateDrop(arg2_20:Find("icon"), var0_20)
+			onButton(arg0_19, arg2_20:Find("icon/icon_bg"), function()
+				arg0_19:emit(BaseUI.ON_DROP, var0_20)
 			end, SFX_PANEL)
-			setText(arg2:Find("name_panel/name"), var0:getConfig("name"))
-			setText(arg2:Find("name_panel/number"), "x " .. var0.curCount)
+			setText(arg2_20:Find("name_panel/name"), var0_20:getConfig("name"))
+			setText(arg2_20:Find("name_panel/number"), "x " .. var0_20.curCount)
 		end
 	end)
 
-	local var4 = {}
-	local var5 = {}
+	local var4_19 = {}
+	local var5_19 = {}
 
-	for iter0, iter1 in pairs(var3) do
-		local var6 = iter1
-		local var7 = Item.getConfigData(var6.id)
+	for iter0_19, iter1_19 in pairs(var3_19) do
+		local var6_19 = iter1_19
+		local var7_19 = Item.getConfigData(var6_19.id)
 
-		assert(var7, "Can't find the price " .. var6.id)
+		assert(var7_19, "Can't find the price " .. var6_19.id)
 
-		local var8 = (var4[var7.price[1]] or 0) + var7.price[2] * var6.count
+		local var8_19 = (var4_19[var7_19.price[1]] or 0) + var7_19.price[2] * var6_19.count
 
-		var4[var7.price[1]] = var8
+		var4_19[var7_19.price[1]] = var8_19
 	end
 
-	for iter2, iter3 in pairs(var4) do
-		table.insert(var5, {
+	for iter2_19, iter3_19 in pairs(var4_19) do
+		table.insert(var5_19, {
 			type = DROP_TYPE_RESOURCE,
-			id = iter2,
-			count = iter3
+			id = iter2_19,
+			count = iter3_19
 		})
 	end
 
-	UIItemList.StaticAlign(var2, var2:Find("item"), #var5, function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = var5[arg1 + 1]
+	UIItemList.StaticAlign(var2_19, var2_19:Find("item"), #var5_19, function(arg0_22, arg1_22, arg2_22)
+		if arg0_22 == UIItemList.EventUpdate then
+			local var0_22 = var5_19[arg1_22 + 1]
 
-			updateDrop(arg2:Find("icon"), var0)
-			onButton(arg0, arg2:Find("icon/icon_bg"), function()
-				arg0:emit(BaseUI.ON_DROP, var0)
+			updateDrop(arg2_22:Find("icon"), var0_22)
+			onButton(arg0_19, arg2_22:Find("icon/icon_bg"), function()
+				arg0_19:emit(BaseUI.ON_DROP, var0_22)
 			end, SFX_PANEL)
-			setText(arg2:Find("name_panel/name"), var0:getConfig("name"))
-			setText(arg2:Find("name_panel/number"), "x " .. var0.count)
+			setText(arg2_22:Find("name_panel/name"), var0_22:getConfig("name"))
+			setText(arg2_22:Find("name_panel/number"), "x " .. var0_22.count)
 		end
 	end)
-	onButton(arg0, var0:Find("cancel_button"), function()
-		arg0:Back()
+	onButton(arg0_19, var0_19:Find("cancel_button"), function()
+		arg0_19:Back()
 	end)
-	onButton(arg0, var0:Find("destroy_button"), function()
-		arg0:emit(NewShopsMediator.SELL_BLUEPRINT, arg0.resolveItems)
+	onButton(arg0_19, var0_19:Find("destroy_button"), function()
+		arg0_19:emit(NewShopsMediator.SELL_BLUEPRINT, arg0_19.resolveItems)
 	end)
 end
 
-function var0.GetAllBluePrintStrengthenItems()
-	local var0 = {}
-	local var1 = getProxy(TechnologyProxy)
-	local var2 = getProxy(BagProxy)
-	local var3 = pg.ship_data_blueprint
+function var0_0.GetAllBluePrintStrengthenItems()
+	local var0_26 = {}
+	local var1_26 = getProxy(TechnologyProxy)
+	local var2_26 = getProxy(BagProxy)
+	local var3_26 = pg.ship_data_blueprint
 
-	for iter0, iter1 in ipairs(var3.all) do
-		local var4 = var3[iter1]
+	for iter0_26, iter1_26 in ipairs(var3_26.all) do
+		local var4_26 = var3_26[iter1_26]
 
-		if var1:getBluePrintById(iter1):isMaxLevel() then
-			local var5 = var4.strengthen_item
-			local var6 = var2:getItemById(var5)
+		if var1_26:getBluePrintById(iter1_26):isMaxLevel() then
+			local var5_26 = var4_26.strengthen_item
+			local var6_26 = var2_26:getItemById(var5_26)
 
-			if var6 then
-				local var7 = var1:getBluePrintById(var1:GetBlueprint4Item(var5))
-				local var8 = var6.count
+			if var6_26 then
+				local var7_26 = var1_26:getBluePrintById(var1_26:GetBlueprint4Item(var5_26))
+				local var8_26 = var6_26.count
 
-				if var6 and var6.count > 0 and var0.keepFateState then
-					var8 = var6.count - var7:getFateMaxLeftOver()
-					var8 = var8 < 0 and 0 or var8
+				if var6_26 and var6_26.count > 0 and var0_0.keepFateState then
+					var8_26 = var6_26.count - var7_26:getFateMaxLeftOver()
+					var8_26 = var8_26 < 0 and 0 or var8_26
 				end
 
-				table.insert(var0, Drop.New({
-					id = var6.id,
+				table.insert(var0_26, Drop.New({
+					id = var6_26.id,
 					type = DROP_TYPE_ITEM,
-					count = var6.count,
-					maxCount = var8
+					count = var6_26.count,
+					maxCount = var8_26
 				}))
 			end
 		end
 	end
 
-	return var0
+	return var0_26
 end
 
-function var0.Trigger(arg0, arg1)
-	local var0 = arg0.toggles[arg1]
+function var0_0.Trigger(arg0_27, arg1_27)
+	local var0_27 = arg0_27.toggles[arg1_27]
 
-	if var0 then
-		arg0.buffer:Show()
-		triggerToggle(var0, true)
+	if var0_27 then
+		arg0_27.buffer:Show()
+		triggerToggle(var0_27, true)
 	end
 end
 
-function var0.Back(arg0)
-	if getToggleState(arg0.toggles.resolve) then
-		triggerToggle(arg0.toggles.control, true)
-	elseif getToggleState(arg0.toggles.control) then
-		arg0:Hide()
+function var0_0.Back(arg0_28)
+	if getToggleState(arg0_28.toggles.resolve) then
+		triggerToggle(arg0_28.toggles.control, true)
+	elseif getToggleState(arg0_28.toggles.control) then
+		arg0_28:Hide()
 	end
 end
 
-return var0
+return var0_0

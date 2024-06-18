@@ -1,171 +1,171 @@
-﻿local var0 = class("BackYardApplyThemeTemplateCommand", pm.SimpleCommand)
+﻿local var0_0 = class("BackYardApplyThemeTemplateCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.template
-	local var2 = var0.callback
-	local var3 = getProxy(DormProxy)
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.template
+	local var2_1 = var0_1.callback
+	local var3_1 = getProxy(DormProxy)
 
-	local function var4(arg0, arg1)
-		if #arg0 == 0 then
+	local function var4_1(arg0_2, arg1_2)
+		if #arg0_2 == 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_theme_template_list_is_empty"))
 
 			return
 		end
 
-		local var0 = {}
+		local var0_2 = {}
 
-		for iter0, iter1 in ipairs(arg0) do
-			var0[iter1.id] = iter1
+		for iter0_2, iter1_2 in ipairs(arg0_2) do
+			var0_2[iter1_2.id] = iter1_2
 		end
 
-		local var1 = {}
+		local var1_2 = {}
 
-		for iter2, iter3 in pairs(var0) do
-			var1[iter3.id] = iter3:ToSaveData()
+		for iter2_2, iter3_2 in pairs(var0_2) do
+			var1_2[iter3_2.id] = iter3_2:ToSaveData()
 		end
 
 		pg.m02:sendNotification(GAME.PUT_FURNITURE, {
-			furnsPos = var1,
-			floor = arg1,
-			callback = function(arg0, arg1)
-				if arg0 then
-					arg0:sendNotification(GAME.BACKYARD_APPLY_THEME_TEMPLATE_DONE)
+			furnsPos = var1_2,
+			floor = arg1_2,
+			callback = function(arg0_3, arg1_3)
+				if arg0_3 then
+					arg0_1:sendNotification(GAME.BACKYARD_APPLY_THEME_TEMPLATE_DONE)
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_apply_theme_template_erro"))
-					print(arg1)
+					print(arg1_3)
 				end
 			end
 		})
 	end
 
-	local var5 = 1
-	local var6 = var0.GetAllFloorFurnitures()
-	local var7 = var1:IsOccupyed(var6, 1)
-	local var8 = {}
+	local var5_1 = 1
+	local var6_1 = var0_0.GetAllFloorFurnitures()
+	local var7_1 = var1_1:IsOccupyed(var6_1, 1)
+	local var8_1 = {}
 
-	if var7 then
-		var8 = var1:GetUsableFurnituresForFloor(var6, var5)
+	if var7_1 then
+		var8_1 = var1_1:GetUsableFurnituresForFloor(var6_1, var5_1)
 	else
-		local var9 = var1:GetAllFurniture()
+		local var9_1 = var1_1:GetAllFurniture()
 
-		for iter0, iter1 in pairs(var9) do
-			table.insert(var8, iter1)
+		for iter0_1, iter1_1 in pairs(var9_1) do
+			table.insert(var8_1, iter1_1)
 		end
 	end
 
-	var0.WarpList(var8)
-	var4(var8, var5)
+	var0_0.WarpList(var8_1)
+	var4_1(var8_1, var5_1)
 
-	if var2 then
-		var2(not var7, var8)
+	if var2_1 then
+		var2_1(not var7_1, var8_1)
 	end
 end
 
-function var0.GetAllFloorFurnitures()
-	local function var0(arg0, arg1)
-		local var0 = getProxy(DormProxy):getRawData():GetTheme(arg0)
-		local var1 = {}
+function var0_0.GetAllFloorFurnitures()
+	local function var0_4(arg0_5, arg1_5)
+		local var0_5 = getProxy(DormProxy):getRawData():GetTheme(arg0_5)
+		local var1_5 = {}
 
-		if var0 then
-			var1 = var0:GetAllFurniture()
+		if var0_5 then
+			var1_5 = var0_5:GetAllFurniture()
 		end
 
-		for iter0, iter1 in pairs(var1) do
-			arg1[iter1.id] = iter1
+		for iter0_5, iter1_5 in pairs(var1_5) do
+			arg1_5[iter1_5.id] = iter1_5
 		end
 	end
 
-	local var1 = {}
+	local var1_4 = {}
 
-	var0(1, var1)
-	var0(2, var1)
+	var0_4(1, var1_4)
+	var0_4(2, var1_4)
 
-	return var1
+	return var1_4
 end
 
-function var0.WarpList(arg0)
-	local var0 = getProxy(DormProxy):getRawData()
-	local var1 = var0:GetMapSize()
-	local var2 = var1.x
-	local var3 = var1.y
-	local var4 = var1.z
-	local var5 = var1.w
+function var0_0.WarpList(arg0_6)
+	local var0_6 = getProxy(DormProxy):getRawData()
+	local var1_6 = var0_6:GetMapSize()
+	local var2_6 = var1_6.x
+	local var3_6 = var1_6.y
+	local var4_6 = var1_6.z
+	local var5_6 = var1_6.w
 
-	local function var6(arg0)
-		assert(arg0.position, arg0.id)
+	local function var6_6(arg0_7)
+		assert(arg0_7.position, arg0_7.id)
 
-		return not arg0:isPaper() and (arg0.position.x < var2 or arg0.position.y < var3)
+		return not arg0_7:isPaper() and (arg0_7.position.x < var2_6 or arg0_7.position.y < var3_6)
 	end
 
-	local var7 = var0.level
-	local var8 = var0:GetPurchasedFurnitures()
+	local var7_6 = var0_6.level
+	local var8_6 = var0_6:GetPurchasedFurnitures()
 
-	for iter0 = #arg0, 1, -1 do
-		local var9 = arg0[iter0]
+	for iter0_6 = #arg0_6, 1, -1 do
+		local var9_6 = arg0_6[iter0_6]
 
-		if not var9.position or not var8[var9.configId] or var6(var9) then
-			table.remove(arg0, iter0)
+		if not var9_6.position or not var8_6[var9_6.configId] or var6_6(var9_6) then
+			table.remove(arg0_6, iter0_6)
 		end
 	end
 
-	table.sort(arg0, function(arg0, arg1)
-		if #arg0.child == #arg1.child then
-			return arg0.parent > arg1.parent
+	table.sort(arg0_6, function(arg0_8, arg1_8)
+		if #arg0_8.child == #arg1_8.child then
+			return arg0_8.parent > arg1_8.parent
 		else
-			return #arg0.child > #arg1.child
+			return #arg0_8.child > #arg1_8.child
 		end
 	end)
 
-	local var10 = {}
+	local var10_6 = {}
 
-	for iter1, iter2 in ipairs(arg0) do
-		var10[iter2.id] = iter2
+	for iter1_6, iter2_6 in ipairs(arg0_6) do
+		var10_6[iter2_6.id] = iter2_6
 	end
 
-	local var11 = {}
-	local var12 = {}
-	local var13 = var0:GetMapSize()
+	local var11_6 = {}
+	local var12_6 = {}
+	local var13_6 = var0_6:GetMapSize()
 
-	for iter3, iter4 in ipairs(arg0) do
-		local var14, var15 = CourtYardRawDataChecker.CheckFurnitrue(iter4, var10, var13)
+	for iter3_6, iter4_6 in ipairs(arg0_6) do
+		local var14_6, var15_6 = CourtYardRawDataChecker.CheckFurnitrue(iter4_6, var10_6, var13_6)
 
-		if not var14 and not table.contains(var11, iter4.id) then
-			for iter5, iter6 in pairs(iter4.child or {}) do
-				table.insert(var11, iter5)
+		if not var14_6 and not table.contains(var11_6, iter4_6.id) then
+			for iter5_6, iter6_6 in pairs(iter4_6.child or {}) do
+				table.insert(var11_6, iter5_6)
 			end
 
-			if iter4.parent ~= 0 then
-				if not var12[iter4.parent] then
-					var12[iter4.parent] = {}
+			if iter4_6.parent ~= 0 then
+				if not var12_6[iter4_6.parent] then
+					var12_6[iter4_6.parent] = {}
 				end
 
-				table.insert(var12[iter4.parent], iter4.id)
+				table.insert(var12_6[iter4_6.parent], iter4_6.id)
 			end
 
-			table.insert(var11, iter4.id)
+			table.insert(var11_6, iter4_6.id)
 		end
 	end
 
-	for iter7 = #arg0, 1, -1 do
-		local var16 = arg0[iter7]
+	for iter7_6 = #arg0_6, 1, -1 do
+		local var16_6 = arg0_6[iter7_6]
 
-		if table.contains(var11, var16.id) then
-			table.remove(arg0, iter7)
+		if table.contains(var11_6, var16_6.id) then
+			table.remove(arg0_6, iter7_6)
 		else
-			local var17 = var12[var16.id]
+			local var17_6 = var12_6[var16_6.id]
 
-			if var17 then
-				for iter8, iter9 in pairs(var16.child or {}) do
-					if table.contains(var17, iter8) then
-						var16.child[iter8] = nil
+			if var17_6 then
+				for iter8_6, iter9_6 in pairs(var16_6.child or {}) do
+					if table.contains(var17_6, iter8_6) then
+						var16_6.child[iter8_6] = nil
 					end
 				end
 			end
 		end
 	end
 
-	GetCanBePutFurnituresForThemeCommand.SortListForPut(arg0)
+	GetCanBePutFurnituresForThemeCommand.SortListForPut(arg0_6)
 end
 
-return var0
+return var0_0

@@ -1,176 +1,176 @@
-﻿local var0 = class("EquipDestoryConfirmWindow", import("view.base.BaseSubView"))
+﻿local var0_0 = class("EquipDestoryConfirmWindow", import("view.base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "DestoryConfirmWindow"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.closeBtn = arg0:findTF("window/top/btnBack")
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.closeBtn = arg0_2:findTF("window/top/btnBack")
 
-	setActive(arg0:findTF("window/top/bg/infomation/title_en"), PLATFORM_CODE ~= PLATFORM_US)
-	setText(arg0:findTF("window/top/bg/infomation/title"), i18n("title_info"))
+	setActive(arg0_2:findTF("window/top/bg/infomation/title_en"), PLATFORM_CODE ~= PLATFORM_US)
+	setText(arg0_2:findTF("window/top/bg/infomation/title"), i18n("title_info"))
 
-	arg0.cancelBtn = arg0:findTF("window/cancel_btn")
-	arg0.confirmBtn = arg0:findTF("window/confirm_btn")
+	arg0_2.cancelBtn = arg0_2:findTF("window/cancel_btn")
+	arg0_2.confirmBtn = arg0_2:findTF("window/confirm_btn")
 
-	setText(findTF(arg0.confirmBtn, "pic"), i18n("destroy_confirm_access"))
-	setText(findTF(arg0.cancelBtn, "pic"), i18n("destroy_confirm_cancel"))
+	setText(findTF(arg0_2.confirmBtn, "pic"), i18n("destroy_confirm_access"))
+	setText(findTF(arg0_2.cancelBtn, "pic"), i18n("destroy_confirm_cancel"))
 
-	arg0.title = arg0:findTF("window/content/Text")
-	arg0.label = arg0:findTF("window/content/desc/label")
+	arg0_2.title = arg0_2:findTF("window/content/Text")
+	arg0_2.label = arg0_2:findTF("window/content/desc/label")
 
-	setText(arg0.label, i18n("destory_ship_before_tip"))
+	setText(arg0_2.label, i18n("destory_ship_before_tip"))
 
-	arg0.urLabel = arg0:findTF("window/content/desc/label1")
-	arg0.urInput = arg0:findTF("window/content/desc/InputField")
-	arg0.urOverflowLabel = arg0:findTF("window/content/desc/label2")
+	arg0_2.urLabel = arg0_2:findTF("window/content/desc/label1")
+	arg0_2.urInput = arg0_2:findTF("window/content/desc/InputField")
+	arg0_2.urOverflowLabel = arg0_2:findTF("window/content/desc/label2")
 
-	setText(arg0.urOverflowLabel, i18n("destory_ur_pt_overflowa"))
+	setText(arg0_2.urOverflowLabel, i18n("destory_ur_pt_overflowa"))
 
-	local var0 = arg0:findTF("Placeholder", arg0.urInput)
+	local var0_2 = arg0_2:findTF("Placeholder", arg0_2.urInput)
 
-	setText(var0, i18n("box_ship_del_click"))
+	setText(var0_2, i18n("box_ship_del_click"))
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0.cancelBtn, function()
-		arg0:Hide()
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3.cancelBtn, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.confirmBtn, function()
-		arg0:Confirm()
+	onButton(arg0_3, arg0_3.confirmBtn, function()
+		arg0_3:Confirm()
 	end, SFX_PANEL)
-	onButton(arg0, arg0._tf:Find("bg"), function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3._tf:Find("bg"), function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.closeBtn, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3.closeBtn, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
 end
 
-function var0.SetCallBack(arg0, arg1)
-	arg0.callback = arg1
+function var0_0.SetCallBack(arg0_8, arg1_8)
+	arg0_8.callback = arg1_8
 end
 
-function var0.Confirm(arg0)
-	if arg0.key then
-		local var0 = getInputText(arg0.urInput)
+function var0_0.Confirm(arg0_9)
+	if arg0_9.key then
+		local var0_9 = getInputText(arg0_9.urInput)
 
-		if arg0.key ~= tonumber(var0) then
+		if arg0_9.key ~= tonumber(var0_9) then
 			pg.TipsMgr:GetInstance():ShowTips(i18n("destory_ship_input_erro"))
 
 			return
 		end
 
-		local var1 = arg0.callback
+		local var1_9 = arg0_9.callback
 
-		arg0:Hide()
-		existCall(var1)
+		arg0_9:Hide()
+		existCall(var1_9)
 	else
-		local var2 = arg0.callback
+		local var2_9 = arg0_9.callback
 
-		arg0:Hide()
-		existCall(var2)
+		arg0_9:Hide()
+		existCall(var2_9)
 	end
 end
 
-function var0.Show(arg0, arg1, arg2)
-	var0.super.Show(arg0)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+function var0_0.Show(arg0_10, arg1_10, arg2_10)
+	var0_0.super.Show(arg0_10)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_10._tf)
 
-	arg0.key = nil
-	arg0.equips = arg1
+	arg0_10.key = nil
+	arg0_10.equips = arg1_10
 
-	arg0:SetCallBack(arg2)
-	arg0:Updatelayout()
-	arg0:UpdateEquips()
+	arg0_10:SetCallBack(arg2_10)
+	arg0_10:Updatelayout()
+	arg0_10:UpdateEquips()
 end
 
-function var0.Updatelayout(arg0)
-	local var0 = {}
+function var0_0.Updatelayout(arg0_11)
+	local var0_11 = {}
 
-	if underscore.any(arg0.equips, function(arg0)
-		return arg0:getConfig("rarity") >= 4
+	if underscore.any(arg0_11.equips, function(arg0_12)
+		return arg0_12:getConfig("rarity") >= 4
 	end) then
-		table.insert(var0, i18n("destroy_high_rarity_tip"))
+		table.insert(var0_11, i18n("destroy_high_rarity_tip"))
 	end
 
-	if underscore.any(arg0.equips, function(arg0)
-		return arg0:getConfig("level") > 1
+	if underscore.any(arg0_11.equips, function(arg0_13)
+		return arg0_13:getConfig("level") > 1
 	end) then
-		table.insert(var0, i18n("destroy_high_intensify_tip", ""))
+		table.insert(var0_11, i18n("destroy_high_intensify_tip", ""))
 	end
 
-	setText(arg0.title, i18n("destroy_eliteequipment_tip", table.concat(var0, ",")))
+	setText(arg0_11.title, i18n("destroy_eliteequipment_tip", table.concat(var0_11, ",")))
 
-	local var1 = underscore.any(arg0.equips, function(arg0)
-		return arg0:isImportance()
+	local var1_11 = underscore.any(arg0_11.equips, function(arg0_14)
+		return arg0_14:isImportance()
 	end)
 
-	if var1 and not arg0.key then
-		arg0.key = math.random(100000, 999999)
+	if var1_11 and not arg0_11.key then
+		arg0_11.key = math.random(100000, 999999)
 
-		setText(arg0.urLabel, i18n("destroy_equip_rarity_tip", arg0.key))
+		setText(arg0_11.urLabel, i18n("destroy_equip_rarity_tip", arg0_11.key))
 	else
-		setText(arg0.urLabel, "")
+		setText(arg0_11.urLabel, "")
 	end
 
-	setActive(arg0.urOverflowLabel, false)
-	setActive(arg0.urLabel, var1)
-	setActive(arg0.urInput, var1)
+	setActive(arg0_11.urOverflowLabel, false)
+	setActive(arg0_11.urLabel, var1_11)
+	setActive(arg0_11.urInput, var1_11)
 end
 
-function var0.UpdateEquips(arg0)
-	mergeSort(arg0.equips, CompareFuncs({
-		function(arg0)
-			return -arg0:getConfig("rarity")
+function var0_0.UpdateEquips(arg0_15)
+	mergeSort(arg0_15.equips, CompareFuncs({
+		function(arg0_16)
+			return -arg0_16:getConfig("rarity")
 		end,
-		function(arg0)
-			return -arg0:getConfig("level")
+		function(arg0_17)
+			return -arg0_17:getConfig("level")
 		end
 	}, true))
 
-	if #arg0.equips > 5 then
-		setActive(arg0._tf:Find("window/content/ships"), true)
-		setActive(arg0._tf:Find("window/content/ships_single"), false)
+	if #arg0_15.equips > 5 then
+		setActive(arg0_15._tf:Find("window/content/ships"), true)
+		setActive(arg0_15._tf:Find("window/content/ships_single"), false)
 
-		local var0 = arg0._tf:Find("window/content/ships/content"):GetComponent("LScrollRect")
+		local var0_15 = arg0_15._tf:Find("window/content/ships/content"):GetComponent("LScrollRect")
 
-		function var0.onUpdateItem(arg0, arg1)
-			updateEquipment(tf(arg1), arg0.equips[arg0 + 1])
+		function var0_15.onUpdateItem(arg0_18, arg1_18)
+			updateEquipment(tf(arg1_18), arg0_15.equips[arg0_18 + 1])
 		end
 
 		onNextTick(function()
-			var0:SetTotalCount(#arg0.equips)
+			var0_15:SetTotalCount(#arg0_15.equips)
 		end)
 	else
-		local var1 = arg0._tf:Find("window/content/ships_single")
-		local var2 = UIItemList.New(var1, var1:Find("IconTpl"))
+		local var1_15 = arg0_15._tf:Find("window/content/ships_single")
+		local var2_15 = UIItemList.New(var1_15, var1_15:Find("IconTpl"))
 
-		setActive(arg0._tf:Find("window/content/ships"), false)
-		setActive(arg0._tf:Find("window/content/ships_single"), true)
-		var2:make(function(arg0, arg1, arg2)
-			if arg0 == UIItemList.EventUpdate then
-				updateEquipment(arg2, arg0.equips[arg1 + 1])
+		setActive(arg0_15._tf:Find("window/content/ships"), false)
+		setActive(arg0_15._tf:Find("window/content/ships_single"), true)
+		var2_15:make(function(arg0_20, arg1_20, arg2_20)
+			if arg0_20 == UIItemList.EventUpdate then
+				updateEquipment(arg2_20, arg0_15.equips[arg1_20 + 1])
 			end
 		end)
-		var2:align(#arg0.equips)
+		var2_15:align(#arg0_15.equips)
 	end
 end
 
-function var0.Hide(arg0)
-	var0.super.Hide(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, arg0._parentTf)
+function var0_0.Hide(arg0_21)
+	var0_0.super.Hide(arg0_21)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_21._tf, arg0_21._parentTf)
 
-	arg0.key = nil
-	arg0.callback = nil
+	arg0_21.key = nil
+	arg0_21.callback = nil
 
-	setInputText(arg0.urInput, "")
+	setInputText(arg0_21.urInput, "")
 end
 
-function var0.OnDestroy(arg0)
-	if arg0:isShowing() then
-		arg0:Hide()
+function var0_0.OnDestroy(arg0_22)
+	if arg0_22:isShowing() then
+		arg0_22:Hide()
 	end
 end
 
-return var0
+return var0_0

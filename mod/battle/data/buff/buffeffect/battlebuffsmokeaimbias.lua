@@ -1,74 +1,74 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleDataFunction
-local var2 = var0.Battle.BattleConfig
-local var3 = var0.Battle.BattleAttr
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleDataFunction
+local var2_0 = var0_0.Battle.BattleConfig
+local var3_0 = var0_0.Battle.BattleAttr
 
-var0.Battle.BattleBuffSmokeAimBias = class("BattleBuffSmokeAimBias", var0.Battle.BattleBuffEffect)
-var0.Battle.BattleBuffSmokeAimBias.__name = "BattleBuffSmokeAimBias"
+var0_0.Battle.BattleBuffSmokeAimBias = class("BattleBuffSmokeAimBias", var0_0.Battle.BattleBuffEffect)
+var0_0.Battle.BattleBuffSmokeAimBias.__name = "BattleBuffSmokeAimBias"
 
-local var4 = var0.Battle.BattleBuffSmokeAimBias
-local var5 = var0.Battle.BattleAttr
+local var4_0 = var0_0.Battle.BattleBuffSmokeAimBias
+local var5_0 = var0_0.Battle.BattleAttr
 
-var4.ATTR_SMOKE = "smoke_aim_bias"
+var4_0.ATTR_SMOKE = "smoke_aim_bias"
 
-function var4.Ctor(arg0, arg1)
-	var4.super.Ctor(arg0, arg1)
+function var4_0.Ctor(arg0_1, arg1_1)
+	var4_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var4.SetArgs(arg0, arg1, arg2)
+function var4_0.SetArgs(arg0_2, arg1_2, arg2_2)
 	return
 end
 
-function var4.onAttach(arg0, arg1, arg2)
-	var5.SetCurrent(arg1, var4.ATTR_SMOKE, 1)
-	var1.AttachSmoke(arg1)
+function var4_0.onAttach(arg0_3, arg1_3, arg2_3)
+	var5_0.SetCurrent(arg1_3, var4_0.ATTR_SMOKE, 1)
+	var1_0.AttachSmoke(arg1_3)
 
 	if BATTLE_ENEMY_AIMBIAS_RANGE then
-		var0.Battle.BattleDataProxy.GetInstance():DispatchEvent(var0.Event.New(var0.Battle.BattleEvent.ADD_AIM_BIAS, {
-			aimBias = arg1:GetAimBias()
+		var0_0.Battle.BattleDataProxy.GetInstance():DispatchEvent(var0_0.Event.New(var0_0.Battle.BattleEvent.ADD_AIM_BIAS, {
+			aimBias = arg1_3:GetAimBias()
 		}))
 	end
 end
 
-function var4.onUpdate(arg0, arg1, arg2, arg3)
-	local var0 = {
-		[var2.FRIENDLY_CODE] = 0,
-		[var2.FOE_CODE] = 0
+function var4_0.onUpdate(arg0_4, arg1_4, arg2_4, arg3_4)
+	local var0_4 = {
+		[var2_0.FRIENDLY_CODE] = 0,
+		[var2_0.FOE_CODE] = 0
 	}
-	local var1 = {
-		[var2.FRIENDLY_CODE] = 0,
-		[var2.FOE_CODE] = 0
+	local var1_4 = {
+		[var2_0.FRIENDLY_CODE] = 0,
+		[var2_0.FOE_CODE] = 0
 	}
-	local var2 = var0.Battle.BattleDataProxy.GetInstance():GetUnitList()
+	local var2_4 = var0_0.Battle.BattleDataProxy.GetInstance():GetUnitList()
 
-	for iter0, iter1 in pairs(var2) do
-		local var3 = iter1:GetIFF()
-		local var4 = var0[var3]
-		local var5 = var3.GetCurrent(iter1, "attackRating")
-		local var6 = var3.GetCurrent(iter1, "aimBiasExtraACC")
+	for iter0_4, iter1_4 in pairs(var2_4) do
+		local var3_4 = iter1_4:GetIFF()
+		local var4_4 = var0_4[var3_4]
+		local var5_4 = var3_0.GetCurrent(iter1_4, "attackRating")
+		local var6_4 = var3_0.GetCurrent(iter1_4, "aimBiasExtraACC")
 
-		var0[var3] = math.max(var4, var5)
-		var1[var3] = var1[var3] + var6
+		var0_4[var3_4] = math.max(var4_4, var5_4)
+		var1_4[var3_4] = var1_4[var3_4] + var6_4
 	end
 
-	local var7 = arg1:GetAimBias()
+	local var7_4 = arg1_4:GetAimBias()
 
-	var7:SetDecayFactor(var0[var2.FRIENDLY_CODE], var1[var2.FRIENDLY_CODE])
+	var7_4:SetDecayFactor(var0_4[var2_0.FRIENDLY_CODE], var1_4[var2_0.FRIENDLY_CODE])
 
-	local var8 = arg3.timeStamp
+	local var8_4 = arg3_4.timeStamp
 
-	var7:Update(var8)
+	var7_4:Update(var8_4)
 end
 
-function var4.onRemove(arg0, arg1, arg2)
+function var4_0.onRemove(arg0_5, arg1_5, arg2_5)
 	if BATTLE_ENEMY_AIMBIAS_RANGE then
-		var0.Battle.BattleDataProxy.GetInstance():DispatchEvent(var0.Event.New(var0.Battle.BattleEvent.REMOVE_AIM_BIAS, {
-			aimBias = arg1:GetAimBias()
+		var0_0.Battle.BattleDataProxy.GetInstance():DispatchEvent(var0_0.Event.New(var0_0.Battle.BattleEvent.REMOVE_AIM_BIAS, {
+			aimBias = arg1_5:GetAimBias()
 		}))
 	end
 
-	var5.SetCurrent(arg1, var4.ATTR_SMOKE, 0)
-	arg1:ExitSmokeArea()
+	var5_0.SetCurrent(arg1_5, var4_0.ATTR_SMOKE, 0)
+	arg1_5:ExitSmokeArea()
 end

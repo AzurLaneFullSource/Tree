@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_113 = {}
+var0_0.word_template_113 = {}
 
-local var1 = var0.word_template_113
+local var1_0 = var0_0.word_template_113
 
 function temp()
-	var1.辜 = {
+	var1_0.辜 = {
 		胜 = {
 			阻 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.毂 = {
+	var1_0.毂 = {
 		this = {
 			this = true
 		}
@@ -29,7 +29,7 @@ end
 temp()
 
 function temp()
-	var1.箍 = {
+	var1_0.箍 = {
 		身 = {
 			箍 = {
 				勢 = {
@@ -56,7 +56,7 @@ end
 temp()
 
 function temp()
-	var1.轂 = {
+	var1_0.轂 = {
 		this = {
 			this = true
 		}
@@ -66,7 +66,7 @@ end
 temp()
 
 function temp()
-	var1.古 = {
+	var1_0.古 = {
 		庵 = {
 			春 = {
 				色 = {
@@ -158,7 +158,7 @@ end
 temp()
 
 function temp()
-	var1.汩 = {
+	var1_0.汩 = {
 		this = {
 			this = true
 		}
@@ -168,7 +168,7 @@ end
 temp()
 
 function temp()
-	var1.股 = {
+	var1_0.股 = {
 		股 = {
 			滑 = {
 				滑 = {

@@ -1,60 +1,60 @@
-﻿local var0 = class("SystemTimeUtil")
+﻿local var0_0 = class("SystemTimeUtil")
 
-function var0.Ctor(arg0)
+function var0_0.Ctor(arg0_1)
 	return
 end
 
-function var0.SetUp(arg0, arg1)
-	arg0.callback = arg1
+function var0_0.SetUp(arg0_2, arg1_2)
+	arg0_2.callback = arg1_2
 
-	arg0:Flush()
+	arg0_2:Flush()
 end
 
-function var0.Flush(arg0)
-	local var0 = pg.TimeMgr.GetInstance():GetServerHour()
-	local var1 = var0 < 12 and "AM" or "PM"
-	local var2 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("%M", true)
+function var0_0.Flush(arg0_3)
+	local var0_3 = pg.TimeMgr.GetInstance():GetServerHour()
+	local var1_3 = var0_3 < 12 and "AM" or "PM"
+	local var2_3 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("%M", true)
 
-	if arg0.callback then
-		arg0.callback(var0, var2, var1)
+	if arg0_3.callback then
+		arg0_3.callback(var0_3, var2_3, var1_3)
 	end
 
-	local var3 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var4 = arg0:GetSecondsToNextMinute(var3)
+	local var3_3 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var4_3 = arg0_3:GetSecondsToNextMinute(var3_3)
 
-	arg0:AddTimer(var4)
+	arg0_3:AddTimer(var4_3)
 end
 
-function var0.GetSecondsToNextMinute(arg0, arg1)
-	local var0 = math.ceil(arg1 / 60) * 60 - arg1
+function var0_0.GetSecondsToNextMinute(arg0_4, arg1_4)
+	local var0_4 = math.ceil(arg1_4 / 60) * 60 - arg1_4
 
-	if var0 <= 0 then
+	if var0_4 <= 0 then
 		return 60
 	end
 
-	return var0
+	return var0_4
 end
 
-function var0.AddTimer(arg0, arg1)
-	arg0:RemoveTimer()
+function var0_0.AddTimer(arg0_5, arg1_5)
+	arg0_5:RemoveTimer()
 
-	arg0.timer = Timer.New(function()
-		arg0:Flush()
-	end, arg1, 1)
+	arg0_5.timer = Timer.New(function()
+		arg0_5:Flush()
+	end, arg1_5, 1)
 
-	arg0.timer:Start()
+	arg0_5.timer:Start()
 end
 
-function var0.RemoveTimer(arg0)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var0_0.RemoveTimer(arg0_7)
+	if arg0_7.timer then
+		arg0_7.timer:Stop()
 
-		arg0.timer = nil
+		arg0_7.timer = nil
 	end
 end
 
-function var0.Dispose(arg0)
-	arg0:RemoveTimer()
+function var0_0.Dispose(arg0_8)
+	arg0_8:RemoveTimer()
 end
 
-return var0
+return var0_0

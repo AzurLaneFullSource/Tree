@@ -1,155 +1,155 @@
-﻿local var0 = _G
-local var1 = require("string")
-local var2 = require("socket")
-local var3 = require("ltn12")
+﻿local var0_0 = _G
+local var1_0 = require("string")
+local var2_0 = require("socket")
+local var3_0 = require("ltn12")
 
-var2.tp = {}
+var2_0.tp = {}
 
-local var4 = var2.tp
+local var4_0 = var2_0.tp
 
-var4.TIMEOUT = 60
+var4_0.TIMEOUT = 60
 
-local function var5(arg0)
-	local var0
-	local var1
-	local var2
-	local var3, var4 = arg0:receive()
-	local var5 = var3
+local function var5_0(arg0_1)
+	local var0_1
+	local var1_1
+	local var2_1
+	local var3_1, var4_1 = arg0_1:receive()
+	local var5_1 = var3_1
 
-	if var4 then
-		return nil, var4
+	if var4_1 then
+		return nil, var4_1
 	end
 
-	local var6, var7 = var2.skip(2, var1.find(var3, "^(%d%d%d)(.?)"))
+	local var6_1, var7_1 = var2_0.skip(2, var1_0.find(var3_1, "^(%d%d%d)(.?)"))
 
-	if not var6 then
+	if not var6_1 then
 		return nil, "invalid server reply"
 	end
 
-	if var7 == "-" then
+	if var7_1 == "-" then
 		repeat
-			local var8, var9 = arg0:receive()
+			local var8_1, var9_1 = arg0_1:receive()
 
-			if var9 then
-				return nil, var9
+			if var9_1 then
+				return nil, var9_1
 			end
 
-			local var10, var11 = var2.skip(2, var1.find(var8, "^(%d%d%d)(.?)"))
+			local var10_1, var11_1 = var2_0.skip(2, var1_0.find(var8_1, "^(%d%d%d)(.?)"))
 
-			var5 = var5 .. "\n" .. var8
-		until var6 == var10 and var11 == " "
+			var5_1 = var5_1 .. "\n" .. var8_1
+		until var6_1 == var10_1 and var11_1 == " "
 	end
 
-	return var6, var5
+	return var6_1, var5_1
 end
 
-local var6 = {
+local var6_0 = {
 	__index = {}
 }
 
-function var6.__index.getpeername(arg0)
-	return arg0.c:getpeername()
+function var6_0.__index.getpeername(arg0_2)
+	return arg0_2.c:getpeername()
 end
 
-function var6.__index.getsockname(arg0)
-	return arg0.c:getpeername()
+function var6_0.__index.getsockname(arg0_3)
+	return arg0_3.c:getpeername()
 end
 
-function var6.__index.check(arg0, arg1)
-	local var0, var1 = var5(arg0.c)
+function var6_0.__index.check(arg0_4, arg1_4)
+	local var0_4, var1_4 = var5_0(arg0_4.c)
 
-	if not var0 then
-		return nil, var1
+	if not var0_4 then
+		return nil, var1_4
 	end
 
-	if var0.type(arg1) ~= "function" then
-		if var0.type(arg1) == "table" then
-			for iter0, iter1 in var0.ipairs(arg1) do
-				if var1.find(var0, iter1) then
-					return var0.tonumber(var0), var1
+	if var0_0.type(arg1_4) ~= "function" then
+		if var0_0.type(arg1_4) == "table" then
+			for iter0_4, iter1_4 in var0_0.ipairs(arg1_4) do
+				if var1_0.find(var0_4, iter1_4) then
+					return var0_0.tonumber(var0_4), var1_4
 				end
 			end
 
-			return nil, var1
-		elseif var1.find(var0, arg1) then
-			return var0.tonumber(var0), var1
+			return nil, var1_4
+		elseif var1_0.find(var0_4, arg1_4) then
+			return var0_0.tonumber(var0_4), var1_4
 		else
-			return nil, var1
+			return nil, var1_4
 		end
 	else
-		return arg1(var0.tonumber(var0), var1)
+		return arg1_4(var0_0.tonumber(var0_4), var1_4)
 	end
 end
 
-function var6.__index.command(arg0, arg1, arg2)
-	arg1 = var1.upper(arg1)
+function var6_0.__index.command(arg0_5, arg1_5, arg2_5)
+	arg1_5 = var1_0.upper(arg1_5)
 
-	if arg2 then
-		return arg0.c:send(arg1 .. " " .. arg2 .. "\r\n")
+	if arg2_5 then
+		return arg0_5.c:send(arg1_5 .. " " .. arg2_5 .. "\r\n")
 	else
-		return arg0.c:send(arg1 .. "\r\n")
+		return arg0_5.c:send(arg1_5 .. "\r\n")
 	end
 end
 
-function var6.__index.sink(arg0, arg1, arg2)
-	local var0, var1 = arg0.c:receive(arg2)
+function var6_0.__index.sink(arg0_6, arg1_6, arg2_6)
+	local var0_6, var1_6 = arg0_6.c:receive(arg2_6)
 
-	return arg1(var0, var1)
+	return arg1_6(var0_6, var1_6)
 end
 
-function var6.__index.send(arg0, arg1)
-	return arg0.c:send(arg1)
+function var6_0.__index.send(arg0_7, arg1_7)
+	return arg0_7.c:send(arg1_7)
 end
 
-function var6.__index.receive(arg0, arg1)
-	return arg0.c:receive(arg1)
+function var6_0.__index.receive(arg0_8, arg1_8)
+	return arg0_8.c:receive(arg1_8)
 end
 
-function var6.__index.getfd(arg0)
-	return arg0.c:getfd()
+function var6_0.__index.getfd(arg0_9)
+	return arg0_9.c:getfd()
 end
 
-function var6.__index.dirty(arg0)
-	return arg0.c:dirty()
+function var6_0.__index.dirty(arg0_10)
+	return arg0_10.c:dirty()
 end
 
-function var6.__index.getcontrol(arg0)
-	return arg0.c
+function var6_0.__index.getcontrol(arg0_11)
+	return arg0_11.c
 end
 
-function var6.__index.source(arg0, arg1, arg2)
-	local var0 = var2.sink("keep-open", arg0.c)
-	local var1, var2 = var3.pump.all(arg1, var0, arg2 or var3.pump.step)
+function var6_0.__index.source(arg0_12, arg1_12, arg2_12)
+	local var0_12 = var2_0.sink("keep-open", arg0_12.c)
+	local var1_12, var2_12 = var3_0.pump.all(arg1_12, var0_12, arg2_12 or var3_0.pump.step)
 
-	return var1, var2
+	return var1_12, var2_12
 end
 
-function var6.__index.close(arg0)
-	arg0.c:close()
+function var6_0.__index.close(arg0_13)
+	arg0_13.c:close()
 
 	return 1
 end
 
-function var4.connect(arg0, arg1, arg2, arg3)
-	local var0, var1 = (arg3 or var2.tcp)()
+function var4_0.connect(arg0_14, arg1_14, arg2_14, arg3_14)
+	local var0_14, var1_14 = (arg3_14 or var2_0.tcp)()
 
-	if not var0 then
-		return nil, var1
+	if not var0_14 then
+		return nil, var1_14
 	end
 
-	var0:settimeout(arg2 or var4.TIMEOUT)
+	var0_14:settimeout(arg2_14 or var4_0.TIMEOUT)
 
-	local var2, var3 = var0:connect(arg0, arg1)
+	local var2_14, var3_14 = var0_14:connect(arg0_14, arg1_14)
 
-	if not var2 then
-		var0:close()
+	if not var2_14 then
+		var0_14:close()
 
-		return nil, var3
+		return nil, var3_14
 	end
 
-	return var0.setmetatable({
-		c = var0
-	}, var6)
+	return var0_0.setmetatable({
+		c = var0_14
+	}, var6_0)
 end
 
-return var4
+return var4_0

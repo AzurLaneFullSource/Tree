@@ -1,18 +1,18 @@
-﻿local var0 = class("EffectBullet", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
+﻿local var0_0 = class("EffectBullet", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
 
-function var0.GetBaseOrder(arg0)
-	if arg0.mark == "N" then
-		return var0.super.GetBaseOrder(arg0)
+function var0_0.GetBaseOrder(arg0_1)
+	if arg0_1.mark == "N" then
+		return var0_0.super.GetBaseOrder(arg0_1)
 	else
 		return 500
 	end
 end
 
-function var0.InTimeRiver(arg0)
+function var0_0.InTimeRiver(arg0_2)
 	return true
 end
 
-local var1 = {
+local var1_0 = {
 	S = {
 		0,
 		1
@@ -31,67 +31,67 @@ local var1 = {
 	}
 }
 
-function var0.InitUI(arg0, arg1)
-	arg0.mark = arg1.mark
+function var0_0.InitUI(arg0_3, arg1_3)
+	arg0_3.mark = arg1_3.mark
 
-	arg0._tf:Find("Image"):GetComponent(typeof(Animator)):Play("Bullet_" .. arg0.mark)
+	arg0_3._tf:Find("Image"):GetComponent(typeof(Animator)):Play("Bullet_" .. arg0_3.mark)
 
-	arg0.dir = NewPos(unpack(var1[arg0.mark]))
+	arg0_3.dir = NewPos(unpack(var1_0[arg0_3.mark]))
 end
 
-function var0.GetSpeedDis(arg0)
+function var0_0.GetSpeedDis(arg0_4)
 	return 2
 end
 
-function var0.TimeUpdate(arg0, arg1)
-	local var0 = arg0.dir * arg0:GetSpeedDis() * arg1
+function var0_0.TimeUpdate(arg0_5, arg1_5)
+	local var0_5 = arg0_5.dir * arg0_5:GetSpeedDis() * arg1_5
 
-	if not arg0.responder:InRange(arg0.realPos + var0) then
-		arg0:Destroy()
+	if not arg0_5.responder:InRange(arg0_5.realPos + var0_5) then
+		arg0_5:Destroy()
 
 		return
 	end
 
-	arg0:MoveUpdate(var0)
-	arg0:TimeTrigger(arg1)
+	arg0_5:MoveUpdate(var0_5)
+	arg0_5:TimeTrigger(arg1_5)
 end
 
-function var0.MoveUpdate(arg0, arg1)
-	if arg1.x == 0 and arg1.y == 0 then
-		return arg1
+function var0_0.MoveUpdate(arg0_6, arg1_6)
+	if arg1_6.x == 0 and arg1_6.y == 0 then
+		return arg1_6
 	end
 
-	arg0.realPos = arg0.realPos + arg1
+	arg0_6.realPos = arg0_6.realPos + arg1_6
 
-	arg0:UpdatePosition()
+	arg0_6:UpdatePosition()
 
-	local var0 = arg0.realPos - arg0.pos + arg1
+	local var0_6 = arg0_6.realPos - arg0_6.pos + arg1_6
 
-	if math.abs(var0.x) >= 0.5 or math.abs(var0.y) >= 0.5 then
-		var0.x = math.abs(var0.x) < 0.5 and 0 or var0.x < 0 and -1 or 1
-		var0.y = math.abs(var0.y) < 0.5 and 0 or var0.y < 0 and -1 or 1
+	if math.abs(var0_6.x) >= 0.5 or math.abs(var0_6.y) >= 0.5 then
+		var0_6.x = math.abs(var0_6.x) < 0.5 and 0 or var0_6.x < 0 and -1 or 1
+		var0_6.y = math.abs(var0_6.y) < 0.5 and 0 or var0_6.y < 0 and -1 or 1
 
-		arg0:UpdatePos(arg0.pos + var0)
+		arg0_6:UpdatePos(arg0_6.pos + var0_6)
 	end
 end
 
-function var0.UpdatePos(arg0, arg1)
-	arg0.responder:UpdatePos(arg0, arg1)
-	var0.super.UpdatePos(arg0, arg1)
+function var0_0.UpdatePos(arg0_7, arg1_7)
+	arg0_7.responder:UpdatePos(arg0_7, arg1_7)
+	var0_0.super.UpdatePos(arg0_7, arg1_7)
 end
 
-function var0.TimeTrigger(arg0, arg1)
-	if arg0.responder:CollideRyza(arg0) then
-		arg0:Calling("hit", {
+function var0_0.TimeTrigger(arg0_8, arg1_8)
+	if arg0_8.responder:CollideRyza(arg0_8) then
+		arg0_8:Calling("hit", {
 			1,
-			arg0.realPos
+			arg0_8.realPos
 		}, MoveRyza)
-		arg0:Destroy()
+		arg0_8:Destroy()
 	end
 end
 
-function var0.GetCollideRange(arg0)
-	local var0 = {
+function var0_0.GetCollideRange(arg0_9)
+	local var0_9 = {
 		{
 			-0.1875,
 			0.1875
@@ -102,23 +102,23 @@ function var0.GetCollideRange(arg0)
 		}
 	}
 
-	if arg0.dir.x < 0 then
-		var0[1] = {
+	if arg0_9.dir.x < 0 then
+		var0_9[1] = {
 			-0.5,
 			0.25
 		}
-	elseif arg0.dir.x > 0 then
-		var0[1] = {
+	elseif arg0_9.dir.x > 0 then
+		var0_9[1] = {
 			-0.25,
 			0.5
 		}
-	elseif arg0.dir.y < 0 then
-		var0[2] = {
+	elseif arg0_9.dir.y < 0 then
+		var0_9[2] = {
 			-0.5,
 			0.25
 		}
-	elseif arg0.dir.y > 0 then
-		var0[1] = {
+	elseif arg0_9.dir.y > 0 then
+		var0_9[1] = {
 			-0.25,
 			0.5
 		}
@@ -127,8 +127,8 @@ function var0.GetCollideRange(arg0)
 	end
 
 	return {
-		var0
+		var0_9
 	}
 end
 
-return var0
+return var0_0

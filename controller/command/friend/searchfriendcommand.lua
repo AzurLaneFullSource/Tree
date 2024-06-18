@@ -1,53 +1,53 @@
-﻿local var0 = class("SearchFriendCommand", pm.SimpleCommand)
+﻿local var0_0 = class("SearchFriendCommand", pm.SimpleCommand)
 
-var0.SEARCH_TYPE_LIST = 1
-var0.SEARCH_TYPE_RESUME = 2
-var0.SEARCH_TYPE_FRIEND = 3
+var0_0.SEARCH_TYPE_LIST = 1
+var0_0.SEARCH_TYPE_RESUME = 2
+var0_0.SEARCH_TYPE_FRIEND = 3
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.type
-	local var2 = var0.keyword
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.type
+	local var2_1 = var0_1.keyword
 
-	var2 = var2 and string.gsub(var2, "^%s*(.-)%s*$", "%1")
+	var2_1 = var2_1 and string.gsub(var2_1, "^%s*(.-)%s*$", "%1")
 
-	local var3
-	local var4 = tonumber(var2) and 0 or 1
+	local var3_1
+	local var4_1 = tonumber(var2_1) and 0 or 1
 
-	if var1 == var0.SEARCH_TYPE_LIST then
+	if var1_1 == var0_0.SEARCH_TYPE_LIST then
 		pg.ConnectionMgr.GetInstance():Send(50014, {
 			type = 0
-		}, 50015, function(arg0)
-			local var0 = {}
+		}, 50015, function(arg0_2)
+			local var0_2 = {}
 
-			for iter0, iter1 in ipairs(arg0.player_list) do
-				table.insert(var0, Friend.New(iter1))
+			for iter0_2, iter1_2 in ipairs(arg0_2.player_list) do
+				table.insert(var0_2, Friend.New(iter1_2))
 			end
 
-			arg0:sendNotification(GAME.FRIEND_SEARCH_DONE, {
-				type = var1,
-				list = var0
+			arg0_1:sendNotification(GAME.FRIEND_SEARCH_DONE, {
+				type = var1_1,
+				list = var0_2
 			})
 		end)
-	elseif var1 == var0.SEARCH_TYPE_RESUME or var1 == var0.SEARCH_TYPE_FRIEND then
+	elseif var1_1 == var0_0.SEARCH_TYPE_RESUME or var1_1 == var0_0.SEARCH_TYPE_FRIEND then
 		pg.ConnectionMgr.GetInstance():Send(50001, {
-			type = var4,
-			keyword = tostring(var2)
-		}, 50002, function(arg0)
-			local var0 = {}
+			type = var4_1,
+			keyword = tostring(var2_1)
+		}, 50002, function(arg0_3)
+			local var0_3 = {}
 
-			if arg0.result == 0 then
-				table.insert(var0, Friend.New(arg0.player))
+			if arg0_3.result == 0 then
+				table.insert(var0_3, Friend.New(arg0_3.player))
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("friend_searchFriend_noPlayer"))
 			end
 
-			arg0:sendNotification(GAME.FRIEND_SEARCH_DONE, {
-				type = var1,
-				list = var0
+			arg0_1:sendNotification(GAME.FRIEND_SEARCH_DONE, {
+				type = var1_1,
+				list = var0_3
 			})
 		end)
 	end
 end
 
-return var0
+return var0_0

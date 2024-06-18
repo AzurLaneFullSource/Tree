@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_309 = {}
+var0_0.word_template_309 = {}
 
-local var1 = var0.word_template_309
+local var1_0 = var0_0.word_template_309
 
 function temp()
-	var1.羞 = {
+	var1_0.羞 = {
 		耻 = {
 			母 = {
 				this = true
@@ -44,7 +44,7 @@ end
 temp()
 
 function temp()
-	var1.秀 = {
+	var1_0.秀 = {
 		舞 = {
 			表 = {
 				演 = {
@@ -65,7 +65,7 @@ end
 temp()
 
 function temp()
-	var1.须 = {
+	var1_0.须 = {
 		藤 = {
 			温 = {
 				子 = {
@@ -79,7 +79,7 @@ end
 temp()
 
 function temp()
-	var1.虚 = {
+	var1_0.虚 = {
 		拟 = {
 			["5"] = {
 				["1"] = {
@@ -126,7 +126,7 @@ end
 temp()
 
 function temp()
-	var1.虛 = {
+	var1_0.虛 = {
 		弱 = {
 			圖 = {
 				騰 = {
@@ -151,7 +151,7 @@ end
 temp()
 
 function temp()
-	var1.頊 = {
+	var1_0.頊 = {
 		this = {
 			this = true
 		}
@@ -161,7 +161,7 @@ end
 temp()
 
 function temp()
-	var1.需 = {
+	var1_0.需 = {
 		要 = {
 			假 = {
 				币 = {

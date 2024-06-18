@@ -1,210 +1,210 @@
-﻿local var0 = class("WorldBossInfoAndRankPanel", import("view.base.BaseSubView"))
+﻿local var0_0 = class("WorldBossInfoAndRankPanel", import("view.base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "WorldBossInfoAndRankUI"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.toggleRank = arg0:findTF("rank")
-	arg0.toggleInfo = arg0:findTF("info")
-	arg0.myRankTF = arg0:findTF("rank_panel/tpl")
-	arg0.rankList = UIItemList.New(arg0:findTF("rank_panel/list"), arg0.myRankTF)
-	arg0.maxRankCnt = pg.gameset.joint_boss_fighter_max.key_value
-	arg0.rankCnt1 = arg0:findTF("rank_panel/cnt/Text"):GetComponent(typeof(Text))
-	arg0.rankTF = arg0:findTF("rank_panel")
-	arg0.maskTF = arg0:findTF("rank_panel/mask")
-	arg0.maskTxt = arg0:findTF("rank_panel/mask/Text"):GetComponent(typeof(Text))
-	arg0.infoTitle = arg0:findTF("info_panel/title/Text"):GetComponent(typeof(Text))
-	arg0.infoSkillList = UIItemList.New(arg0:findTF("info_panel/scrollrect/content"), arg0:findTF("info_panel/scrollrect/content/tpl"))
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.toggleRank = arg0_2:findTF("rank")
+	arg0_2.toggleInfo = arg0_2:findTF("info")
+	arg0_2.myRankTF = arg0_2:findTF("rank_panel/tpl")
+	arg0_2.rankList = UIItemList.New(arg0_2:findTF("rank_panel/list"), arg0_2.myRankTF)
+	arg0_2.maxRankCnt = pg.gameset.joint_boss_fighter_max.key_value
+	arg0_2.rankCnt1 = arg0_2:findTF("rank_panel/cnt/Text"):GetComponent(typeof(Text))
+	arg0_2.rankTF = arg0_2:findTF("rank_panel")
+	arg0_2.maskTF = arg0_2:findTF("rank_panel/mask")
+	arg0_2.maskTxt = arg0_2:findTF("rank_panel/mask/Text"):GetComponent(typeof(Text))
+	arg0_2.infoTitle = arg0_2:findTF("info_panel/title/Text"):GetComponent(typeof(Text))
+	arg0_2.infoSkillList = UIItemList.New(arg0_2:findTF("info_panel/scrollrect/content"), arg0_2:findTF("info_panel/scrollrect/content/tpl"))
 end
 
-function var0.SetCallback(arg0, arg1, arg2)
-	arg0.callback = arg1
-	arg0.flushRankCallback = arg2
+function var0_0.SetCallback(arg0_3, arg1_3, arg2_3)
+	arg0_3.callback = arg1_3
+	arg0_3.flushRankCallback = arg2_3
 end
 
-function var0.OnInit(arg0)
-	arg0._tf:SetSiblingIndex(2)
-	onToggle(arg0, arg0.toggleInfo, function(arg0)
-		if arg0 then
-			arg0:ResetInfoLayout()
+function var0_0.OnInit(arg0_4)
+	arg0_4._tf:SetSiblingIndex(2)
+	onToggle(arg0_4, arg0_4.toggleInfo, function(arg0_5)
+		if arg0_5 then
+			arg0_4:ResetInfoLayout()
 		end
 	end)
 end
 
-function var0.Flush(arg0, arg1, arg2)
-	arg0.boss = arg1
-	arg0.proxy = arg2
+function var0_0.Flush(arg0_6, arg1_6, arg2_6)
+	arg0_6.boss = arg1_6
+	arg0_6.proxy = arg2_6
 
-	arg0:FlushRank()
-	arg0:FlushInfo()
+	arg0_6:FlushRank()
+	arg0_6:FlushInfo()
 
-	if not arg0.boss:IsFullHp() then
-		triggerToggle(arg0.toggleRank, true)
+	if not arg0_6.boss:IsFullHp() then
+		triggerToggle(arg0_6.toggleRank, true)
 	else
-		triggerToggle(arg0.toggleInfo, true)
-		arg0:ResetInfoLayout()
+		triggerToggle(arg0_6.toggleInfo, true)
+		arg0_6:ResetInfoLayout()
 	end
 end
 
-function var0.FlushInfo(arg0)
-	arg0.infoTitle.text = arg0.boss.config.name
+function var0_0.FlushInfo(arg0_7)
+	arg0_7.infoTitle.text = arg0_7.boss.config.name
 
-	local var0 = arg0.boss.config.description
+	local var0_7 = arg0_7.boss.config.description
 
-	arg0.infoSkillList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = var0[arg1 + 1]
-			local var1 = var0[1]
-			local var2 = var0[2]
+	arg0_7.infoSkillList:make(function(arg0_8, arg1_8, arg2_8)
+		if arg0_8 == UIItemList.EventUpdate then
+			local var0_8 = var0_7[arg1_8 + 1]
+			local var1_8 = var0_8[1]
+			local var2_8 = var0_8[2]
 
-			arg2:Find("color"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/WorldBossUI_atlas", "color_" .. var2)
+			arg2_8:Find("color"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/WorldBossUI_atlas", "color_" .. var2_8)
 
-			local var3 = arg2:Find("color/Text")
+			local var3_8 = arg2_8:Find("color/Text")
 
-			setText(var3, var1)
+			setText(var3_8, var1_8)
 		end
 	end)
-	arg0.infoSkillList:align(#var0)
+	arg0_7.infoSkillList:align(#var0_7)
 end
 
-function var0.ResetInfoLayout(arg0)
-	local var0 = 28
-	local var1 = arg0.boss.config.description
+function var0_0.ResetInfoLayout(arg0_9)
+	local var0_9 = 28
+	local var1_9 = arg0_9.boss.config.description
 
 	onNextTick(function()
-		if arg0.exited then
+		if arg0_9.exited then
 			return
 		end
 
-		arg0.infoSkillList:each(function(arg0, arg1)
-			local var0 = var1[arg0 + 1][3]
-			local var1 = arg1:Find("color/Text")
-			local var2 = "　"
-			local var3, var4 = math.modf(var1.sizeDelta.x / var0)
-			local var5 = math.ceil(var0 * var4)
+		arg0_9.infoSkillList:each(function(arg0_11, arg1_11)
+			local var0_11 = var1_9[arg0_11 + 1][3]
+			local var1_11 = arg1_11:Find("color/Text")
+			local var2_11 = "　"
+			local var3_11, var4_11 = math.modf(var1_11.sizeDelta.x / var0_9)
+			local var5_11 = math.ceil(var0_9 * var4_11)
 
-			for iter0 = 1, var3 do
-				var2 = var2 .. "　"
+			for iter0_11 = 1, var3_11 do
+				var2_11 = var2_11 .. "　"
 			end
 
-			if var4 > 0 then
-				var2 = var2 .. "<size=" .. var5 .. ">　</size>"
+			if var4_11 > 0 then
+				var2_11 = var2_11 .. "<size=" .. var5_11 .. ">　</size>"
 			end
 
-			setText(arg1:Find("Text"), var2 .. var0)
+			setText(arg1_11:Find("Text"), var2_11 .. var0_11)
 		end)
 	end)
 end
 
-function var0.FlushRank(arg0)
-	local var0 = arg0.boss
+function var0_0.FlushRank(arg0_12)
+	local var0_12 = arg0_12.boss
 
-	if not var0 then
+	if not var0_12 then
 		return
 	end
 
-	local var1 = arg0.proxy:GetRank(var0.id)
-	local var2 = 0
+	local var1_12 = arg0_12.proxy:GetRank(var0_12.id)
+	local var2_12 = 0
 
-	if not var1 then
-		arg0:emit(WorldBossMediator.ON_RANK_LIST, var0.id)
+	if not var1_12 then
+		arg0_12:emit(WorldBossMediator.ON_RANK_LIST, var0_12.id)
 	else
-		arg0.rankList:make(function(arg0, arg1, arg2)
-			if arg0 == UIItemList.EventUpdate then
-				local var0 = var1[arg1 + 1]
+		arg0_12.rankList:make(function(arg0_13, arg1_13, arg2_13)
+			if arg0_13 == UIItemList.EventUpdate then
+				local var0_13 = var1_12[arg1_13 + 1]
 
-				arg0:UpdateRankTF(arg2, var0, arg1 + 1)
+				arg0_12:UpdateRankTF(arg2_13, var0_13, arg1_13 + 1)
 			end
 		end)
-		arg0.rankList:align(math.min(#var1, 3))
-		arg0:UpdateSelfRank(var1)
+		arg0_12.rankList:align(math.min(#var1_12, 3))
+		arg0_12:UpdateSelfRank(var1_12)
 
-		var2 = #var1
+		var2_12 = #var1_12
 	end
 
-	arg0.rankCnt1.text = var2 .. "<color=#A2A2A2>/" .. arg0.maxRankCnt .. "</color>"
+	arg0_12.rankCnt1.text = var2_12 .. "<color=#A2A2A2>/" .. arg0_12.maxRankCnt .. "</color>"
 
-	if arg0.flushRankCallback then
-		arg0.flushRankCallback(var2, arg0.maxRankCnt)
+	if arg0_12.flushRankCallback then
+		arg0_12.flushRankCallback(var2_12, arg0_12.maxRankCnt)
 	end
 
-	arg0:AddWaitResultTimer()
+	arg0_12:AddWaitResultTimer()
 end
 
-function var0.AddWaitResultTimer(arg0)
-	arg0:RemoveWaitTimer()
+function var0_0.AddWaitResultTimer(arg0_14)
+	arg0_14:RemoveWaitTimer()
 
-	local var0 = arg0.boss
-	local var1 = var0:ShouldWaitForResult()
+	local var0_14 = arg0_14.boss
+	local var1_14 = var0_14:ShouldWaitForResult()
 
-	setActive(arg0.maskTF, var1)
+	setActive(arg0_14.maskTF, var1_14)
 
-	if var1 then
-		local var2 = var0:GetWaitForResultTime()
+	if var1_14 then
+		local var2_14 = var0_14:GetWaitForResultTime()
 
-		arg0.waitTimer = Timer.New(function()
-			local var0 = pg.TimeMgr.GetInstance():GetServerTime()
-			local var1 = var2 - var0
+		arg0_14.waitTimer = Timer.New(function()
+			local var0_15 = pg.TimeMgr.GetInstance():GetServerTime()
+			local var1_15 = var2_14 - var0_15
 
-			if var1 < 0 then
-				arg0:AddWaitResultTimer()
+			if var1_15 < 0 then
+				arg0_14:AddWaitResultTimer()
 
-				if arg0.callback then
-					arg0.callback(false)
+				if arg0_14.callback then
+					arg0_14.callback(false)
 				end
 			else
-				arg0.maskTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var1)
+				arg0_14.maskTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var1_15)
 			end
 		end, 1, -1)
 
-		arg0.waitTimer:Start()
+		arg0_14.waitTimer:Start()
 
-		if arg0.callback then
-			arg0.callback(true)
+		if arg0_14.callback then
+			arg0_14.callback(true)
 		end
 	end
 end
 
-function var0.RemoveWaitTimer(arg0)
-	if arg0.waitTimer then
-		arg0.waitTimer:Stop()
+function var0_0.RemoveWaitTimer(arg0_16)
+	if arg0_16.waitTimer then
+		arg0_16.waitTimer:Stop()
 
-		arg0.waitTimer = nil
+		arg0_16.waitTimer = nil
 	end
 end
 
-function var0.UpdateRankTF(arg0, arg1, arg2, arg3)
-	setText(arg1:Find("name"), arg2.name)
-	setText(arg1:Find("value/Text"), arg2.damage)
-	setText(arg1:Find("number"), arg2.number or arg3)
-	setActive(arg1:Find("value/view"), not arg2.isSelf)
-	onButton(arg0, arg1:Find("value/view"), function()
-		local var0 = arg0.boss
+function var0_0.UpdateRankTF(arg0_17, arg1_17, arg2_17, arg3_17)
+	setText(arg1_17:Find("name"), arg2_17.name)
+	setText(arg1_17:Find("value/Text"), arg2_17.damage)
+	setText(arg1_17:Find("number"), arg2_17.number or arg3_17)
+	setActive(arg1_17:Find("value/view"), not arg2_17.isSelf)
+	onButton(arg0_17, arg1_17:Find("value/view"), function()
+		local var0_18 = arg0_17.boss
 
-		arg0:emit(WorldBossMediator.FETCH_RANK_FORMATION, arg2.id, var0.id)
+		arg0_17:emit(WorldBossMediator.FETCH_RANK_FORMATION, arg2_17.id, var0_18.id)
 	end, SFX_PANEL)
 end
 
-function var0.UpdateSelfRank(arg0, arg1)
-	local var0
+function var0_0.UpdateSelfRank(arg0_19, arg1_19)
+	local var0_19
 
-	for iter0, iter1 in ipairs(arg1) do
-		if iter1.isSelf then
-			var0 = iter1
-			var0.number = iter0
+	for iter0_19, iter1_19 in ipairs(arg1_19) do
+		if iter1_19.isSelf then
+			var0_19 = iter1_19
+			var0_19.number = iter0_19
 
 			break
 		end
 	end
 
-	if var0 then
-		arg0:UpdateRankTF(arg0.myRankTF, var0)
+	if var0_19 then
+		arg0_19:UpdateRankTF(arg0_19.myRankTF, var0_19)
 	end
 end
 
-function var0.OnDestroy(arg0)
-	arg0:RemoveWaitTimer()
+function var0_0.OnDestroy(arg0_20)
+	arg0_20:RemoveWaitTimer()
 end
 
-return var0
+return var0_0

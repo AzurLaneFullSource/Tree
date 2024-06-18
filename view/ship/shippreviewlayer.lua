@@ -1,91 +1,91 @@
-﻿local var0 = class("ShipPreviewLayer", import("..base.BaseUI"))
-local var1 = 12
-local var2 = 3
-local var3 = Vector3(0, 1, 40)
+﻿local var0_0 = class("ShipPreviewLayer", import("..base.BaseUI"))
+local var1_0 = 12
+local var2_0 = 3
+local var3_0 = Vector3(0, 1, 40)
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ShipPreviewUI"
 end
 
-function var0.init(arg0)
-	arg0.UIMgr = pg.UIMgr.GetInstance()
+function var0_0.init(arg0_2)
+	arg0_2.UIMgr = pg.UIMgr.GetInstance()
 
-	arg0.UIMgr:BlurPanel(arg0._tf, false, arg0.contextData.weight and {
-		weight = arg0.contextData.weight
+	arg0_2.UIMgr:BlurPanel(arg0_2._tf, false, arg0_2.contextData.weight and {
+		weight = arg0_2.contextData.weight
 	} or {})
 
-	arg0.UIMain = arg0.UIMgr.UIMain
-	arg0.seaCameraGO = GameObject.Find("BarrageCamera")
-	arg0.leftPanel = arg0:findTF("left_panel")
-	arg0.sea = arg0:findTF("sea", arg0.leftPanel)
-	arg0.seaCamera = arg0.seaCameraGO:GetComponent("Camera")
-	arg0.seaCamera.enabled = true
-	arg0.rawImage = arg0.sea:GetComponent("RawImage")
+	arg0_2.UIMain = arg0_2.UIMgr.UIMain
+	arg0_2.seaCameraGO = GameObject.Find("BarrageCamera")
+	arg0_2.leftPanel = arg0_2:findTF("left_panel")
+	arg0_2.sea = arg0_2:findTF("sea", arg0_2.leftPanel)
+	arg0_2.seaCamera = arg0_2.seaCameraGO:GetComponent("Camera")
+	arg0_2.seaCamera.enabled = true
+	arg0_2.rawImage = arg0_2.sea:GetComponent("RawImage")
 
-	setActive(arg0.rawImage, false)
+	setActive(arg0_2.rawImage, false)
 
-	arg0.seaCamera.targetTexture = arg0.rawImage.texture
-	arg0.healTF = arg0:findTF("resources/heal")
-	arg0.healTF.transform.localPosition = Vector3(-360, 50, 40)
+	arg0_2.seaCamera.targetTexture = arg0_2.rawImage.texture
+	arg0_2.healTF = arg0_2:findTF("resources/heal")
+	arg0_2.healTF.transform.localPosition = Vector3(-360, 50, 40)
 
-	setActive(arg0.healTF, false)
-	arg0.healTF:GetComponent("DftAniEvent"):SetEndEvent(function()
-		setActive(arg0.healTF, false)
-		setText(arg0.healTF:Find("text"), "")
+	setActive(arg0_2.healTF, false)
+	arg0_2.healTF:GetComponent("DftAniEvent"):SetEndEvent(function()
+		setActive(arg0_2.healTF, false)
+		setText(arg0_2.healTF:Find("text"), "")
 	end)
 
-	arg0.seaLoading = arg0:findTF("bg/loading", arg0.leftPanel)
+	arg0_2.seaLoading = arg0_2:findTF("bg/loading", arg0_2.leftPanel)
 
-	arg0:playLoadingAni()
+	arg0_2:playLoadingAni()
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0.seaLoading, function()
-		if not arg0.previewer then
-			arg0:showBarrage()
+function var0_0.didEnter(arg0_4)
+	onButton(arg0_4, arg0_4.seaLoading, function()
+		if not arg0_4.previewer then
+			arg0_4:showBarrage()
 		end
 	end)
-	onButton(arg0, arg0._tf, function()
-		arg0:emit(var0.ON_CLOSE)
+	onButton(arg0_4, arg0_4._tf, function()
+		arg0_4:emit(var0_0.ON_CLOSE)
 	end)
 end
 
-function var0.setShip(arg0, arg1, arg2, arg3)
-	arg0.shipVO = arg1
-	arg0.weaponIds = arg2
-	arg0.equipSkinId = arg3
+function var0_0.setShip(arg0_7, arg1_7, arg2_7, arg3_7)
+	arg0_7.shipVO = arg1_7
+	arg0_7.weaponIds = arg2_7
+	arg0_7.equipSkinId = arg3_7
 end
 
-function var0.showBarrage(arg0)
-	arg0.previewer = WeaponPreviewer.New(arg0.rawImage)
+function var0_0.showBarrage(arg0_8)
+	arg0_8.previewer = WeaponPreviewer.New(arg0_8.rawImage)
 
-	arg0.previewer:configUI(arg0.healTF)
-	arg0.previewer:setDisplayWeapon(arg0.weaponIds, arg0.equipSkinId, true)
-	arg0.previewer:load(40000, arg0.shipVO, arg0.weaponIds, function()
-		arg0:stopLoadingAni()
+	arg0_8.previewer:configUI(arg0_8.healTF)
+	arg0_8.previewer:setDisplayWeapon(arg0_8.weaponIds, arg0_8.equipSkinId, true)
+	arg0_8.previewer:load(40000, arg0_8.shipVO, arg0_8.weaponIds, function()
+		arg0_8:stopLoadingAni()
 	end)
 end
 
-function var0.getWaponIdsById(arg0, arg1)
-	return arg0.ship_data_breakout[arg1].weapon_ids
+function var0_0.getWaponIdsById(arg0_10, arg1_10)
+	return arg0_10.ship_data_breakout[arg1_10].weapon_ids
 end
 
-function var0.playLoadingAni(arg0)
-	setActive(arg0.seaLoading, true)
+function var0_0.playLoadingAni(arg0_11)
+	setActive(arg0_11.seaLoading, true)
 end
 
-function var0.stopLoadingAni(arg0)
-	setActive(arg0.seaLoading, false)
+function var0_0.stopLoadingAni(arg0_12)
+	setActive(arg0_12.seaLoading, false)
 end
 
-function var0.willExit(arg0)
-	arg0.UIMgr:UnblurPanel(arg0._tf, arg0.UIMain)
+function var0_0.willExit(arg0_13)
+	arg0_13.UIMgr:UnblurPanel(arg0_13._tf, arg0_13.UIMain)
 
-	if arg0.previewer then
-		arg0.previewer:clear()
+	if arg0_13.previewer then
+		arg0_13.previewer:clear()
 
-		arg0.previewer = nil
+		arg0_13.previewer = nil
 	end
 end
 
-return var0
+return var0_0

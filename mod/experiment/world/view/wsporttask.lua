@@ -1,6 +1,6 @@
-﻿local var0 = class("WSPortTask", import("...BaseEntity"))
+﻿local var0_0 = class("WSPortTask", import("...BaseEntity"))
 
-var0.Fields = {
+var0_0.Fields = {
 	btnOnGoing = "userdata",
 	txDesc = "userdata",
 	onDrop = "function",
@@ -18,76 +18,76 @@ var0.Fields = {
 	rfAwardPanle = "userdata",
 	rfItemTpl = "userdata"
 }
-var0.Listeners = {
+var0_0.Listeners = {
 	onTaskUpdate = "OnTaskUpdate"
 }
 
-function var0.Build(arg0, arg1)
-	pg.DelegateInfo.New(arg0)
-	arg0:Init(arg1)
+function var0_0.Build(arg0_1, arg1_1)
+	pg.DelegateInfo.New(arg0_1)
+	arg0_1:Init(arg1_1)
 end
 
-function var0.Dispose(arg0)
-	pg.DelegateInfo.Dispose(arg0)
-	arg0:Clear()
+function var0_0.Dispose(arg0_2)
+	pg.DelegateInfo.Dispose(arg0_2)
+	arg0_2:Clear()
 end
 
-function var0.Init(arg0, arg1)
-	arg0.transform = arg1
-	arg0.rtType = arg1:Find("type")
-	arg0.rtRarity = arg1:Find("rarity")
-	arg0.rtName = arg1:Find("name")
-	arg0.txDesc = arg1:Find("desc")
-	arg0.btnInactive = arg1:Find("button/inactive")
-	arg0.btnOnGoing = arg1:Find("button/ongoing")
-	arg0.btnFinished = arg1:Find("button/finished")
-	arg0.progress = arg1:Find("name/slider")
-	arg0.txProgress = arg1:Find("name/slider_progress")
-	arg0.rfAwardPanle = arg1:Find("award_panel/content")
-	arg0.rfItemTpl = arg1:Find("item_tpl")
+function var0_0.Init(arg0_3, arg1_3)
+	arg0_3.transform = arg1_3
+	arg0_3.rtType = arg1_3:Find("type")
+	arg0_3.rtRarity = arg1_3:Find("rarity")
+	arg0_3.rtName = arg1_3:Find("name")
+	arg0_3.txDesc = arg1_3:Find("desc")
+	arg0_3.btnInactive = arg1_3:Find("button/inactive")
+	arg0_3.btnOnGoing = arg1_3:Find("button/ongoing")
+	arg0_3.btnFinished = arg1_3:Find("button/finished")
+	arg0_3.progress = arg1_3:Find("name/slider")
+	arg0_3.txProgress = arg1_3:Find("name/slider_progress")
+	arg0_3.rfAwardPanle = arg1_3:Find("award_panel/content")
+	arg0_3.rfItemTpl = arg1_3:Find("item_tpl")
 end
 
-function var0.Setup(arg0, arg1)
-	arg0.task = arg1
+function var0_0.Setup(arg0_4, arg1_4)
+	arg0_4.task = arg1_4
 
-	arg0:OnTaskUpdate()
+	arg0_4:OnTaskUpdate()
 end
 
-function var0.OnTaskUpdate(arg0)
-	setImageColor(arg0.rtName, arg0.task.config.type == 5 and Color(0.0588235294117647, 0.0784313725490196, 0.109803921568627, 0.3) or Color(0.545098039215686, 0.596078431372549, 0.819607843137255, 0.3))
-	setText(arg0.rtName:Find("Text"), arg0.task.config.name)
-	setText(arg0.txDesc, arg0.task.config.description)
-	GetImageSpriteFromAtlasAsync("ui/worldportui_atlas", pg.WorldToastMgr.Type2PictrueName[arg0.task.config.type], arg0.rtType, true)
-	GetImageSpriteFromAtlasAsync("ui/worldportui_atlas", "rarity_" .. arg0.task.config.rank, arg0.rtRarity, true)
+function var0_0.OnTaskUpdate(arg0_5)
+	setImageColor(arg0_5.rtName, arg0_5.task.config.type == 5 and Color(0.0588235294117647, 0.0784313725490196, 0.109803921568627, 0.3) or Color(0.545098039215686, 0.596078431372549, 0.819607843137255, 0.3))
+	setText(arg0_5.rtName:Find("Text"), arg0_5.task.config.name)
+	setText(arg0_5.txDesc, arg0_5.task.config.description)
+	GetImageSpriteFromAtlasAsync("ui/worldportui_atlas", pg.WorldToastMgr.Type2PictrueName[arg0_5.task.config.type], arg0_5.rtType, true)
+	GetImageSpriteFromAtlasAsync("ui/worldportui_atlas", "rarity_" .. arg0_5.task.config.rank, arg0_5.rtRarity, true)
 
-	local var0 = arg0.task.config.show
+	local var0_5 = arg0_5.task.config.show
 
-	removeAllChildren(arg0.rfAwardPanle)
+	removeAllChildren(arg0_5.rfAwardPanle)
 
-	for iter0, iter1 in ipairs(var0) do
-		local var1 = cloneTplTo(arg0.rfItemTpl, arg0.rfAwardPanle)
-		local var2 = {
-			type = iter1[1],
-			id = iter1[2],
-			count = iter1[3]
+	for iter0_5, iter1_5 in ipairs(var0_5) do
+		local var1_5 = cloneTplTo(arg0_5.rfItemTpl, arg0_5.rfAwardPanle)
+		local var2_5 = {
+			type = iter1_5[1],
+			id = iter1_5[2],
+			count = iter1_5[3]
 		}
 
-		updateDrop(var1, var2)
-		onButton(arg0, var1, function()
-			arg0.onDrop(var2)
+		updateDrop(var1_5, var2_5)
+		onButton(arg0_5, var1_5, function()
+			arg0_5.onDrop(var2_5)
 		end, SFX_PANEL)
-		setActive(var1, true)
+		setActive(var1_5, true)
 	end
 
-	setActive(arg0.rfItemTpl, false)
+	setActive(arg0_5.rfItemTpl, false)
 
-	local var3 = arg0.task:getState()
+	local var3_5 = arg0_5.task:getState()
 
-	setActive(arg0.btnInactive, var3 == WorldTask.STATE_INACTIVE)
-	setActive(arg0.btnOnGoing, var3 == WorldTask.STATE_ONGOING)
-	setActive(arg0.btnFinished, var3 == WorldTask.STATE_FINISHED)
-	setActive(arg0.txProgress, false)
-	setActive(arg0.progress, false)
+	setActive(arg0_5.btnInactive, var3_5 == WorldTask.STATE_INACTIVE)
+	setActive(arg0_5.btnOnGoing, var3_5 == WorldTask.STATE_ONGOING)
+	setActive(arg0_5.btnFinished, var3_5 == WorldTask.STATE_FINISHED)
+	setActive(arg0_5.txProgress, false)
+	setActive(arg0_5.progress, false)
 end
 
-return var0
+return var0_0

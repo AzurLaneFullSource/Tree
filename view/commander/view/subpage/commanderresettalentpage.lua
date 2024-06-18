@@ -1,121 +1,121 @@
-﻿local var0 = class("CommanderResetTalentPage", import("view.base.BaseSubView"))
+﻿local var0_0 = class("CommanderResetTalentPage", import("view.base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "CommanderCatResetTalentUI"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.resetCancelBtn = arg0:findTF("bg/frame/cancel_btn")
-	arg0.resetConfirmBtn = arg0:findTF("bg/frame/confirm_btn")
-	arg0.resetCloseBtn = arg0:findTF("bg/frame/close_btn")
-	arg0.resetGoldTxt = arg0:findTF("bg/frame/bg/tip/texts/Text"):GetComponent(typeof(Text))
-	arg0.resetPointTxt = arg0:findTF("bg/frame/bg/tip/texts1/Text"):GetComponent(typeof(Text))
-	arg0.resetList = UIItemList.New(arg0:findTF("bg/frame/bg/talents/content"), arg0:findTF("bg/frame/bg/talents/content/talent_tpl"))
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.resetCancelBtn = arg0_2:findTF("bg/frame/cancel_btn")
+	arg0_2.resetConfirmBtn = arg0_2:findTF("bg/frame/confirm_btn")
+	arg0_2.resetCloseBtn = arg0_2:findTF("bg/frame/close_btn")
+	arg0_2.resetGoldTxt = arg0_2:findTF("bg/frame/bg/tip/texts/Text"):GetComponent(typeof(Text))
+	arg0_2.resetPointTxt = arg0_2:findTF("bg/frame/bg/tip/texts1/Text"):GetComponent(typeof(Text))
+	arg0_2.resetList = UIItemList.New(arg0_2:findTF("bg/frame/bg/talents/content"), arg0_2:findTF("bg/frame/bg/talents/content/talent_tpl"))
 
-	local var0 = i18n("commander_choice_talent_reset")
-	local var1 = string.split(var0, "$1")
-	local var2 = string.split(var1[2], "\t")
-	local var3 = string.split(var2[2], "$2")
+	local var0_2 = i18n("commander_choice_talent_reset")
+	local var1_2 = string.split(var0_2, "$1")
+	local var2_2 = string.split(var1_2[2], "\t")
+	local var3_2 = string.split(var2_2[2], "$2")
 
-	setText(arg0:findTF("bg/frame/bg/tip/texts/label"), var1[1] .. " ")
-	setText(arg0:findTF("bg/frame/bg/tip/texts/label1"), " " .. var2[1])
-	setText(arg0:findTF("bg/frame/bg/tip/texts1/label"), var3[1] .. " ")
-	setText(arg0:findTF("bg/frame/bg/tip/texts1/label1"), " " .. var3[2])
+	setText(arg0_2:findTF("bg/frame/bg/tip/texts/label"), var1_2[1] .. " ")
+	setText(arg0_2:findTF("bg/frame/bg/tip/texts/label1"), " " .. var2_2[1])
+	setText(arg0_2:findTF("bg/frame/bg/tip/texts1/label"), var3_2[1] .. " ")
+	setText(arg0_2:findTF("bg/frame/bg/tip/texts1/label1"), " " .. var3_2[2])
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.resetCloseBtn, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3.resetCloseBtn, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.resetCancelBtn, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3.resetCancelBtn, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.resetConfirmBtn, function()
-		if arg0.commanderVO then
-			local var0 = getProxy(PlayerProxy):getRawData()
+	onButton(arg0_3, arg0_3.resetConfirmBtn, function()
+		if arg0_3.commanderVO then
+			local var0_7 = getProxy(PlayerProxy):getRawData()
 
-			if var0.gold < arg0.total then
+			if var0_7.gold < arg0_3.total then
 				GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
 					{
 						59001,
-						arg0.total - var0.gold,
-						arg0.total
+						arg0_3.total - var0_7.gold,
+						arg0_3.total
 					}
 				})
 
 				return
 			end
 
-			arg0.contextData.msgBox:ExecuteAction("Show", {
+			arg0_3.contextData.msgBox:ExecuteAction("Show", {
 				content = i18n("commander_reset_talent_tip"),
 				onYes = function()
-					arg0:emit(CommanderCatMediator.RESET_TALENT, arg0.commanderVO.id)
-					arg0:Hide()
+					arg0_3:emit(CommanderCatMediator.RESET_TALENT, arg0_3.commanderVO.id)
+					arg0_3:Hide()
 				end
 			})
 		end
 	end, SFX_PANEL)
 end
 
-function var0.Show(arg0, arg1)
-	var0.super.Show(arg0)
-	arg0._tf:SetAsLastSibling()
+function var0_0.Show(arg0_9, arg1_9)
+	var0_0.super.Show(arg0_9)
+	arg0_9._tf:SetAsLastSibling()
 
-	arg0.commanderVO = arg1
+	arg0_9.commanderVO = arg1_9
 
-	arg0:Flush()
+	arg0_9:Flush()
 end
 
-function var0.Flush(arg0)
-	local var0 = arg0.commanderVO
-	local var1 = var0:getTalentOrigins()
+function var0_0.Flush(arg0_10)
+	local var0_10 = arg0_10.commanderVO
+	local var1_10 = var0_10:getTalentOrigins()
 
-	arg0.resetList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			arg0:UpdateTalentCard(arg2, var1[arg1 + 1])
+	arg0_10.resetList:make(function(arg0_11, arg1_11, arg2_11)
+		if arg0_11 == UIItemList.EventUpdate then
+			arg0_10:UpdateTalentCard(arg2_11, var1_10[arg1_11 + 1])
 		end
 	end)
-	arg0.resetList:align(#var1)
+	arg0_10.resetList:align(#var1_10)
 
-	local var2 = getProxy(PlayerProxy):getRawData()
+	local var2_10 = getProxy(PlayerProxy):getRawData()
 
-	arg0.total = var0:getResetTalentConsume()
-	arg0.resetGoldTxt.text = var2.gold < arg0.total and "<color=" .. COLOR_RED .. ">" .. arg0.total .. "</color>" or arg0.total
-	arg0.resetPointTxt.text = var0:getTotalPoint()
-	GetComponent(arg0.resetGoldTxt, typeof(Outline)).enabled = var2.gold >= arg0.total
+	arg0_10.total = var0_10:getResetTalentConsume()
+	arg0_10.resetGoldTxt.text = var2_10.gold < arg0_10.total and "<color=" .. COLOR_RED .. ">" .. arg0_10.total .. "</color>" or arg0_10.total
+	arg0_10.resetPointTxt.text = var0_10:getTotalPoint()
+	GetComponent(arg0_10.resetGoldTxt, typeof(Outline)).enabled = var2_10.gold >= arg0_10.total
 end
 
-function var0.UpdateTalentCard(arg0, arg1, arg2)
-	local var0 = arg1:Find("unlock")
-	local var1 = arg1:Find("lock")
+function var0_0.UpdateTalentCard(arg0_12, arg1_12, arg2_12)
+	local var0_12 = arg1_12:Find("unlock")
+	local var1_12 = arg1_12:Find("lock")
 
-	if arg2 then
-		GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. arg2:getConfig("icon"), "", var0:Find("icon"))
+	if arg2_12 then
+		GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. arg2_12:getConfig("icon"), "", var0_12:Find("icon"))
 
-		local var2 = var0:Find("tree_btn")
+		local var2_12 = var0_12:Find("tree_btn")
 
-		if var2 then
-			onButton(arg0, var2, function()
-				arg0.contextData.treePanel:ExecuteAction("Show", arg2)
+		if var2_12 then
+			onButton(arg0_12, var2_12, function()
+				arg0_12.contextData.treePanel:ExecuteAction("Show", arg2_12)
 			end, SFX_PANEL)
 		end
 
-		setText(var0:Find("name_bg/Text"), arg2:getConfig("name"))
-		setScrollText(var0:Find("desc/Text"), arg2:getConfig("desc"))
+		setText(var0_12:Find("name_bg/Text"), arg2_12:getConfig("name"))
+		setScrollText(var0_12:Find("desc/Text"), arg2_12:getConfig("desc"))
 	end
 
-	setActive(var0, arg2)
+	setActive(var0_12, arg2_12)
 
-	if var1 then
-		setActive(var1, not arg2)
+	if var1_12 then
+		setActive(var1_12, not arg2_12)
 	end
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_14)
 	return
 end
 
-return var0
+return var0_0

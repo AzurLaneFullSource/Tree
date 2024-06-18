@@ -1,53 +1,53 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleFormulas
-local var2 = class("BattleGravitationBulletUnit", var0.Battle.BattleBulletUnit)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleFormulas
+local var2_0 = class("BattleGravitationBulletUnit", var0_0.Battle.BattleBulletUnit)
 
-var0.Battle.BattleGravitationBulletUnit = var2
-var2.__name = "BattleGravitationBulletUnit"
+var0_0.Battle.BattleGravitationBulletUnit = var2_0
+var2_0.__name = "BattleGravitationBulletUnit"
 
-function var2.Ctor(arg0, arg1, arg2)
-	var2.super.Ctor(arg0, arg1, arg2)
+function var2_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var2_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 end
 
-function var2.Update(arg0, arg1)
-	if arg0._pierceCount > 0 then
-		var2.super.Update(arg0, arg1)
+function var2_0.Update(arg0_2, arg1_2)
+	if arg0_2._pierceCount > 0 then
+		var2_0.super.Update(arg0_2, arg1_2)
 	end
 end
 
-function var2.SetTemplateData(arg0, arg1)
-	var2.super.SetTemplateData(arg0, arg1)
+function var2_0.SetTemplateData(arg0_3, arg1_3)
+	var2_0.super.SetTemplateData(arg0_3, arg1_3)
 
-	arg0._hitInterval = arg1.hit_type.interval or 0.2
+	arg0_3._hitInterval = arg1_3.hit_type.interval or 0.2
 end
 
-function var2.GetExplodePostion(arg0)
-	return arg0._explodePos
+function var2_0.GetExplodePostion(arg0_4)
+	return arg0_4._explodePos
 end
 
-function var2.SetExplodePosition(arg0, arg1)
-	arg0._explodePos = arg1
+function var2_0.SetExplodePosition(arg0_5, arg1_5)
+	arg0_5._explodePos = arg1_5
 end
 
-function var2.DealDamage(arg0)
-	arg0._nextDamageTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg0._hitInterval
+function var2_0.DealDamage(arg0_6)
+	arg0_6._nextDamageTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg0_6._hitInterval
 end
 
-function var2.CanDealDamage(arg0)
-	if not arg0._nextDamageTime then
-		arg0._nextDamageTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg0._tempData.extra_param.alert_duration
+function var2_0.CanDealDamage(arg0_7)
+	if not arg0_7._nextDamageTime then
+		arg0_7._nextDamageTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg0_7._tempData.extra_param.alert_duration
 
 		return false
 	else
-		return arg0._nextDamageTime < pg.TimeMgr.GetInstance():GetCombatTime()
+		return arg0_7._nextDamageTime < pg.TimeMgr.GetInstance():GetCombatTime()
 	end
 end
 
-function var2.Hit(arg0, arg1, arg2)
-	var2.super.Hit(arg0, arg1, arg2)
+function var2_0.Hit(arg0_8, arg1_8, arg2_8)
+	var2_0.super.Hit(arg0_8, arg1_8, arg2_8)
 
-	arg0._pierceCount = arg0._pierceCount - 1
-	arg0._position.y = 100
+	arg0_8._pierceCount = arg0_8._pierceCount - 1
+	arg0_8._position.y = 100
 end

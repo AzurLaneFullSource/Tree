@@ -1,7 +1,7 @@
-﻿local var0 = class("MainSequenceView")
+﻿local var0_0 = class("MainSequenceView")
 
-function var0.Ctor(arg0)
-	arg0.sequence = {
+function var0_0.Ctor(arg0_1)
+	arg0_1.sequence = {
 		MainRefundSequence.New(),
 		MainForcePlayerNameModificationSequence.New(),
 		MainRequestVoteInfoSequence.New(),
@@ -34,55 +34,55 @@ function var0.Ctor(arg0)
 	}
 end
 
-function var0.MapSequence(arg0, arg1)
-	local var0 = {}
+function var0_0.MapSequence(arg0_2, arg1_2)
+	local var0_2 = {}
 
-	for iter0, iter1 in ipairs(arg1) do
-		table.insert(var0, function(arg0)
-			if arg0._exited then
+	for iter0_2, iter1_2 in ipairs(arg1_2) do
+		table.insert(var0_2, function(arg0_3)
+			if arg0_2._exited then
 				return
 			end
 
-			iter1:Execute(arg0)
+			iter1_2:Execute(arg0_3)
 		end)
 	end
 
-	return var0
+	return var0_2
 end
 
-function var0.Execute(arg0, arg1)
+function var0_0.Execute(arg0_4, arg1_4)
 	if not pg.SeriesGuideMgr.GetInstance():isEnd() then
-		arg1()
+		arg1_4()
 
 		return
 	end
 
-	if not arg0.executable then
-		arg0.executable = arg0:MapSequence(arg0.sequence)
+	if not arg0_4.executable then
+		arg0_4.executable = arg0_4:MapSequence(arg0_4.sequence)
 	end
 
-	seriesAsync(arg0.executable, arg1)
+	seriesAsync(arg0_4.executable, arg1_4)
 end
 
-function var0.Disable(arg0)
-	for iter0, iter1 in ipairs(arg0.sequence) do
-		if iter1.Clear ~= nil then
-			iter1:Clear()
+function var0_0.Disable(arg0_5)
+	for iter0_5, iter1_5 in ipairs(arg0_5.sequence) do
+		if iter1_5.Clear ~= nil then
+			iter1_5:Clear()
 		end
 	end
 end
 
-function var0.Dispose(arg0)
-	arg0._exited = true
+function var0_0.Dispose(arg0_6)
+	arg0_6._exited = true
 
-	for iter0, iter1 in ipairs(arg0.sequence) do
-		if iter1.Dispose ~= nil then
-			iter1:Dispose()
+	for iter0_6, iter1_6 in ipairs(arg0_6.sequence) do
+		if iter1_6.Dispose ~= nil then
+			iter1_6:Dispose()
 		end
 	end
 
-	arg0.sequence = nil
-	arg0.executable = nil
+	arg0_6.sequence = nil
+	arg0_6.executable = nil
 end
 
-return var0
+return var0_0

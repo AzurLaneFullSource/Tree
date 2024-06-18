@@ -1,41 +1,41 @@
-﻿local var0 = class("ReforgeSpWeaponCommand", pm.SimpleCommand)
+﻿local var0_0 = class("ReforgeSpWeaponCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.uid or 0
-	local var2 = var0.shipId or 0
-	local var3 = getProxy(BagProxy)
-	local var4 = getProxy(PlayerProxy)
-	local var5 = 0
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.uid or 0
+	local var2_1 = var0_1.shipId or 0
+	local var3_1 = getProxy(BagProxy)
+	local var4_1 = getProxy(PlayerProxy)
+	local var5_1 = 0
 
 	if not (function()
-		local var0, var1 = EquipmentProxy.StaticGetSpWeapon(var2, var1)
-		local var2 = var0:GetAttributeOptions()
+		local var0_2, var1_2 = EquipmentProxy.StaticGetSpWeapon(var2_1, var1_1)
+		local var2_2 = var0_2:GetAttributeOptions()
 
-		if not _.all(var2, function(arg0)
-			return arg0 == 0
+		if not _.all(var2_2, function(arg0_3)
+			return arg0_3 == 0
 		end) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("spweapon_tip_attr_modify"))
 
 			return
 		end
 
-		local var3 = var3:getRawData()
-		local var4 = var4:getData()
-		local var5 = var0:GetUpgradeConfig()
+		local var3_2 = var3_1:getRawData()
+		local var4_2 = var4_1:getData()
+		local var5_2 = var0_2:GetUpgradeConfig()
 
-		if not _.all(var5.reset_use_item, function(arg0)
-			return arg0[2] <= (var3[arg0[1]] and var3[arg0[1]].count or 0)
+		if not _.all(var5_2.reset_use_item, function(arg0_4)
+			return arg0_4[2] <= (var3_2[arg0_4[1]] and var3_2[arg0_4[1]].count or 0)
 		end) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("spweapon_tip_materal_no_enough"))
 
 			return
 		end
 
-		local var6 = var0:GetBaseAttributes()
-		local var7 = var0:GetAttributesRange()
+		local var6_2 = var0_2:GetBaseAttributes()
+		local var7_2 = var0_2:GetAttributesRange()
 
-		if table.equal(var6, var7) then
+		if table.equal(var6_2, var7_2) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("spweapon_tip_transform_attrmax"))
 
 			return
@@ -47,34 +47,34 @@ function var0.execute(arg0, arg1)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(14205, {
-		ship_id = var2,
-		spweapon_id = var1
-	}, 14206, function(arg0)
-		if arg0.result == 0 then
-			local var0, var1 = EquipmentProxy.StaticGetSpWeapon(var2, var1)
+		ship_id = var2_1,
+		spweapon_id = var1_1
+	}, 14206, function(arg0_5)
+		if arg0_5.result == 0 then
+			local var0_5, var1_5 = EquipmentProxy.StaticGetSpWeapon(var2_1, var1_1)
 
-			var0:SetAttributeOptions({
-				arg0.attr_temp_1,
-				arg0.attr_temp_2
+			var0_5:SetAttributeOptions({
+				arg0_5.attr_temp_1,
+				arg0_5.attr_temp_2
 			})
 
-			if var1 then
-				var1:UpdateSpWeapon(var0)
-				getProxy(BayProxy):updateShip(var1)
+			if var1_5 then
+				var1_5:UpdateSpWeapon(var0_5)
+				getProxy(BayProxy):updateShip(var1_5)
 			else
-				getProxy(EquipmentProxy):AddSpWeapon(var0)
+				getProxy(EquipmentProxy):AddSpWeapon(var0_5)
 			end
 
-			local var2 = var0:GetUpgradeConfig()
+			local var2_5 = var0_5:GetUpgradeConfig()
 
-			_.each(var2.reset_use_item, function(arg0)
-				var3:removeItemById(arg0[1], arg0[2])
+			_.each(var2_5.reset_use_item, function(arg0_6)
+				var3_1:removeItemById(arg0_6[1], arg0_6[2])
 			end)
-			arg0:sendNotification(GAME.REFORGE_SPWEAPON_DONE, var0)
+			arg0_1:sendNotification(GAME.REFORGE_SPWEAPON_DONE, var0_5)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("common", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("common", arg0_5.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

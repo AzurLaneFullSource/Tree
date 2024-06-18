@@ -1,41 +1,41 @@
-﻿local var0 = class("GuildGetReportRankCommand", pm.SimpleCommand)
+﻿local var0_0 = class("GuildGetReportRankCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody().id
-	local var1 = getProxy(GuildProxy)
-	local var2 = var1:GetReportRankList(var0)
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody().id
+	local var1_1 = getProxy(GuildProxy)
+	local var2_1 = var1_1:GetReportRankList(var0_1)
 
-	if var2 then
-		arg0:sendNotification(GAME.GET_GUILD_REPORT_RANK_DONE, {
-			ranks = var2
+	if var2_1 then
+		arg0_1:sendNotification(GAME.GET_GUILD_REPORT_RANK_DONE, {
+			ranks = var2_1
 		})
 	else
 		pg.ConnectionMgr.GetInstance():Send(61037, {
-			id = var0
-		}, 61038, function(arg0)
-			local var0 = var1:getRawData()
-			local var1 = {}
+			id = var0_1
+		}, 61038, function(arg0_2)
+			local var0_2 = var1_1:getRawData()
+			local var1_2 = {}
 
-			for iter0, iter1 in ipairs(arg0.list) do
-				local var2 = var0:getMemberById(iter1.user_id)
+			for iter0_2, iter1_2 in ipairs(arg0_2.list) do
+				local var2_2 = var0_2:getMemberById(iter1_2.user_id)
 
-				if var2 then
-					table.insert(var1, {
-						name = var2.name,
-						damage = iter1.damage
+				if var2_2 then
+					table.insert(var1_2, {
+						name = var2_2.name,
+						damage = iter1_2.damage
 					})
 				end
 			end
 
-			table.sort(var1, function(arg0, arg1)
-				return arg0.damage > arg1.damage
+			table.sort(var1_2, function(arg0_3, arg1_3)
+				return arg0_3.damage > arg1_3.damage
 			end)
-			var1:SetReportRankList(var0, var1)
-			arg0:sendNotification(GAME.GET_GUILD_REPORT_RANK_DONE, {
-				ranks = var1
+			var1_1:SetReportRankList(var0_1, var1_2)
+			arg0_1:sendNotification(GAME.GET_GUILD_REPORT_RANK_DONE, {
+				ranks = var1_2
 			})
 		end)
 	end
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_393 = {}
+var0_0.word_template_393 = {}
 
-local var1 = var0.word_template_393
+local var1_0 = var0_0.word_template_393
 
 function temp()
-	var1.撸 = {
+	var1_0.撸 = {
 		管 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.庐 = {
+	var1_0.庐 = {
 		山 = {
 			会 = {
 				议 = {
@@ -31,7 +31,7 @@ end
 temp()
 
 function temp()
-	var1.捕 = {
+	var1_0.捕 = {
 		鼠 = {
 			理 = {
 				论 = {
@@ -45,7 +45,7 @@ end
 temp()
 
 function temp()
-	var1.溜 = {
+	var1_0.溜 = {
 		贺 = {
 			this = true
 		}
@@ -55,7 +55,7 @@ end
 temp()
 
 function temp()
-	var1.粽 = {
+	var1_0.粽 = {
 		鲤 = {
 			this = true
 		},
@@ -86,7 +86,7 @@ end
 temp()
 
 function temp()
-	var1.约 = {
+	var1_0.约 = {
 		德 = {
 			尔 = {
 				凳 = {
@@ -103,7 +103,7 @@ end
 temp()
 
 function temp()
-	var1.氘 = {
+	var1_0.氘 = {
 		熵 = {
 			飞 = {
 				this = true

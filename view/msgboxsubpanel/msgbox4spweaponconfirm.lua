@@ -1,47 +1,47 @@
-﻿local var0 = class("Msgbox4SpweaponConfirm", import(".MsgboxSubPanel"))
+﻿local var0_0 = class("Msgbox4SpweaponConfirm", import(".MsgboxSubPanel"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "Msgbox4SpweaponConfirm"
 end
 
-function var0.OnRefresh(arg0, arg1)
-	local var0 = arg1.op
+function var0_0.OnRefresh(arg0_2, arg1_2)
+	local var0_2 = arg1_2.op
 
-	if var0 == SpWeapon.CONFIRM_OP_DISCARD then
-		setText(arg0._tf:Find("Desc"), i18n("spweapon_ui_change_attr_text1"))
-		setText(arg0._tf:Find("Tip"), i18n("spweapon_ui_change_attr_text2"))
+	if var0_2 == SpWeapon.CONFIRM_OP_DISCARD then
+		setText(arg0_2._tf:Find("Desc"), i18n("spweapon_ui_change_attr_text1"))
+		setText(arg0_2._tf:Find("Tip"), i18n("spweapon_ui_change_attr_text2"))
 
-		local var1 = arg1.attrs[1]
+		local var1_2 = arg1_2.attrs[1]
 
-		setText(arg0._tf:Find("Desc (1)/Attr"), var1[1])
-		setText(arg0._tf:Find("Desc (1)/Value1"), setColorStr(var1[2], "#ffde38"))
-		setText(arg0._tf:Find("Desc (1)/Value2"), setColorStr(var1[3], COLOR_GREY))
-		setText(arg0._tf:Find("Desc (1)/Symbol"), "")
+		setText(arg0_2._tf:Find("Desc (1)/Attr"), var1_2[1])
+		setText(arg0_2._tf:Find("Desc (1)/Value1"), setColorStr(var1_2[2], "#ffde38"))
+		setText(arg0_2._tf:Find("Desc (1)/Value2"), setColorStr(var1_2[3], COLOR_GREY))
+		setText(arg0_2._tf:Find("Desc (1)/Symbol"), "")
 
-		local var2 = arg1.attrs[2]
+		local var2_2 = arg1_2.attrs[2]
 
-		setText(arg0._tf:Find("Desc (2)/Attr"), var2[1])
-		setText(arg0._tf:Find("Desc (2)/Value1"), setColorStr(var2[2], "#ffde38"))
-		setText(arg0._tf:Find("Desc (2)/Value2"), setColorStr(var2[3], COLOR_GREY))
-		setText(arg0._tf:Find("Desc (2)/Symbol"), "")
-	elseif var0 == SpWeapon.CONFIRM_OP_EXCHANGE then
-		setText(arg0._tf:Find("Desc"), i18n("spweapon_ui_keep_attr_text1"))
-		setText(arg0._tf:Find("Tip"), i18n("spweapon_ui_keep_attr_text2"))
+		setText(arg0_2._tf:Find("Desc (2)/Attr"), var2_2[1])
+		setText(arg0_2._tf:Find("Desc (2)/Value1"), setColorStr(var2_2[2], "#ffde38"))
+		setText(arg0_2._tf:Find("Desc (2)/Value2"), setColorStr(var2_2[3], COLOR_GREY))
+		setText(arg0_2._tf:Find("Desc (2)/Symbol"), "")
+	elseif var0_2 == SpWeapon.CONFIRM_OP_EXCHANGE then
+		setText(arg0_2._tf:Find("Desc"), i18n("spweapon_ui_keep_attr_text1"))
+		setText(arg0_2._tf:Find("Tip"), i18n("spweapon_ui_keep_attr_text2"))
 
-		local var3 = arg1.attrs[1]
+		local var3_2 = arg1_2.attrs[1]
 
-		setText(arg0._tf:Find("Desc (1)/Attr"), var3[1])
-		setText(arg0._tf:Find("Desc (1)/Value1"), var3[2])
-		setText(arg0._tf:Find("Desc (1)/Value2"), setColorStr(var3[3], "#92fc63"))
-		setText(arg0._tf:Find("Desc (1)/Symbol"), ">")
+		setText(arg0_2._tf:Find("Desc (1)/Attr"), var3_2[1])
+		setText(arg0_2._tf:Find("Desc (1)/Value1"), var3_2[2])
+		setText(arg0_2._tf:Find("Desc (1)/Value2"), setColorStr(var3_2[3], "#92fc63"))
+		setText(arg0_2._tf:Find("Desc (1)/Symbol"), ">")
 
-		local var4 = arg1.attrs[2]
+		local var4_2 = arg1_2.attrs[2]
 
-		setText(arg0._tf:Find("Desc (2)/Attr"), var4[1])
-		setText(arg0._tf:Find("Desc (2)/Value1"), var4[2])
-		setText(arg0._tf:Find("Desc (2)/Value2"), setColorStr(var4[3], "#92fc63"))
-		setText(arg0._tf:Find("Desc (2)/Symbol"), ">")
+		setText(arg0_2._tf:Find("Desc (2)/Attr"), var4_2[1])
+		setText(arg0_2._tf:Find("Desc (2)/Value1"), var4_2[2])
+		setText(arg0_2._tf:Find("Desc (2)/Value2"), setColorStr(var4_2[3], "#92fc63"))
+		setText(arg0_2._tf:Find("Desc (2)/Symbol"), ">")
 	end
 end
 
-return var0
+return var0_0

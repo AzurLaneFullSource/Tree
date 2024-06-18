@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_168 = {}
+var0_0.word_template_168 = {}
 
-local var1 = var0.word_template_168
+local var1_0 = var0_0.word_template_168
 
 function temp()
-	var1.扛 = {
+	var1_0.扛 = {
 		麦 = {
 			郎 = {
 				this = true,
@@ -37,7 +37,7 @@ end
 temp()
 
 function temp()
-	var1.抗 = {
+	var1_0.抗 = {
 		日 = {
 			this = true,
 			游 = {
@@ -198,7 +198,7 @@ end
 temp()
 
 function temp()
-	var1.考 = {
+	var1_0.考 = {
 		察 = {
 			失 = {
 				踪 = {
@@ -296,7 +296,7 @@ end
 temp()
 
 function temp()
-	var1.靠 = {
+	var1_0.靠 = {
 		this = {
 			this = true
 		},
@@ -401,7 +401,7 @@ end
 temp()
 
 function temp()
-	var1.柯 = {
+	var1_0.柯 = {
 		賜 = {
 			海 = {
 				this = true
@@ -471,7 +471,7 @@ end
 temp()
 
 function temp()
-	var1.科 = {
+	var1_0.科 = {
 		干 = {
 			部 = {
 				贪 = {
@@ -571,7 +571,7 @@ end
 temp()
 
 function temp()
-	var1.嗑 = {
+	var1_0.嗑 = {
 		药 = {
 			this = true
 		},

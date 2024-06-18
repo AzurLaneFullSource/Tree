@@ -1,97 +1,97 @@
-﻿local var0 = class("LanternRiddlesController")
+﻿local var0_0 = class("LanternRiddlesController")
 
-function var0.Ctor(arg0)
-	arg0.model = LanternRiddlesModel.New(arg0)
-	arg0.view = LanternRiddlesView.New(arg0)
+function var0_0.Ctor(arg0_1)
+	arg0_1.model = LanternRiddlesModel.New(arg0_1)
+	arg0_1.view = LanternRiddlesView.New(arg0_1)
 end
 
-function var0.SetCallBack(arg0, arg1, arg2, arg3, arg4)
-	arg0.exitCallback = arg1
-	arg0.onHome = arg2
-	arg0.onSuccess = arg3
-	arg0.onSaveData = arg4
+function var0_0.SetCallBack(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2)
+	arg0_2.exitCallback = arg1_2
+	arg0_2.onHome = arg2_2
+	arg0_2.onSuccess = arg3_2
+	arg0_2.onSaveData = arg4_2
 end
 
-function var0.SetUp(arg0, arg1)
-	arg0.model:UpdateData(arg1)
+function var0_0.SetUp(arg0_3, arg1_3)
+	arg0_3.model:UpdateData(arg1_3)
 
-	local var0 = arg0.model:GetQuestiones()
+	local var0_3 = arg0_3.model:GetQuestiones()
 
-	arg0.view:UpdateDay(arg0.model.finishCount)
-	arg0.view:InitLanternRiddles(var0)
+	arg0_3.view:UpdateDay(arg0_3.model.finishCount)
+	arg0_3.view:InitLanternRiddles(var0_3)
 end
 
-function var0.SelectAnswer(arg0, arg1, arg2)
-	local var0 = false
+function var0_0.SelectAnswer(arg0_4, arg1_4, arg2_4)
+	local var0_4 = false
 
-	if arg0.model:IsRight(arg1, arg2) then
-		var0 = true
+	if arg0_4.model:IsRight(arg1_4, arg2_4) then
+		var0_4 = true
 
-		arg0.model:UpdateRightAnswerFlag(arg1)
+		arg0_4.model:UpdateRightAnswerFlag(arg1_4)
 
-		if arg0.onSuccess then
-			arg0.onSuccess()
+		if arg0_4.onSuccess then
+			arg0_4.onSuccess()
 		end
 
-		arg0.view:UpdateDay(arg0.model.finishCount)
+		arg0_4.view:UpdateDay(arg0_4.model.finishCount)
 
-		if arg0.model.unlockCount <= 0 then
-			arg0.view:RefreshLanterRiddles(arg0.model.questiones)
+		if arg0_4.model.unlockCount <= 0 then
+			arg0_4.view:RefreshLanterRiddles(arg0_4.model.questiones)
 		end
 	else
-		arg0.model:UpdateWrongAnswerFlag(arg1, arg2)
+		arg0_4.model:UpdateWrongAnswerFlag(arg1_4, arg2_4)
 	end
 
-	if arg0.onSaveData then
-		arg0.onSaveData()
+	if arg0_4.onSaveData then
+		arg0_4.onSaveData()
 	end
 
-	local var1 = arg0.model:GetQuestion(arg1)
+	local var1_4 = arg0_4.model:GetQuestion(arg1_4)
 
-	arg0.view:OnUpdateAnswer(var1, arg2, var0)
+	arg0_4.view:OnUpdateAnswer(var1_4, arg2_4, var0_4)
 end
 
-function var0.GetLockTime(arg0)
-	return arg0.model:GetLockTime()
+function var0_0.GetLockTime(arg0_5)
+	return arg0_5.model:GetLockTime()
 end
 
-function var0.ExitGame(arg0)
-	if arg0.exitCallback then
-		arg0.exitCallback()
-	end
-end
-
-function var0.ExitGameAndGoHome(arg0)
-	if arg0.onHome then
-		arg0.onHome()
+function var0_0.ExitGame(arg0_6)
+	if arg0_6.exitCallback then
+		arg0_6.exitCallback()
 	end
 end
 
-function var0.GetSaveData(arg0)
-	local var0 = {}
+function var0_0.ExitGameAndGoHome(arg0_7)
+	if arg0_7.onHome then
+		arg0_7.onHome()
+	end
+end
 
-	for iter0, iter1 in ipairs(arg0.model.questiones) do
-		table.insert(var0, iter1.nextTime)
+function var0_0.GetSaveData(arg0_8)
+	local var0_8 = {}
+
+	for iter0_8, iter1_8 in ipairs(arg0_8.model.questiones) do
+		table.insert(var0_8, iter1_8.nextTime)
 	end
 
-	table.insert(var0, arg0.model.lockTime)
+	table.insert(var0_8, arg0_8.model.lockTime)
 
-	local var1 = arg0.model.finishCount
+	local var1_8 = arg0_8.model.finishCount
 
-	for iter2, iter3 in ipairs(arg0.model.finishList) do
-		if var1 > 0 then
-			table.insert(var0, iter3)
+	for iter2_8, iter3_8 in ipairs(arg0_8.model.finishList) do
+		if var1_8 > 0 then
+			table.insert(var0_8, iter3_8)
 
-			var1 = var1 - 1
+			var1_8 = var1_8 - 1
 		end
 	end
 
-	return var0
+	return var0_8
 end
 
-function var0.Dispose(arg0)
-	arg0.model:Dispose()
-	arg0.view:Dispose()
+function var0_0.Dispose(arg0_9)
+	arg0_9.model:Dispose()
+	arg0_9.view:Dispose()
 end
 
-return var0
+return var0_0

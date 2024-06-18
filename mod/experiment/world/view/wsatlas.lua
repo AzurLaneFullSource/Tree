@@ -1,6 +1,6 @@
-﻿local var0 = class("WSAtlas", import("...BaseEntity"))
+﻿local var0_0 = class("WSAtlas", import("...BaseEntity"))
 
-var0.Fields = {
+var0_0.Fields = {
 	transform = "userdata",
 	atlas = "table",
 	tfMapSelect = "userdata",
@@ -16,262 +16,262 @@ var0.Fields = {
 	tfActiveMark = "userdata",
 	selectEntrance = "table"
 }
-var0.Listeners = {
+var0_0.Listeners = {
 	onUpdateActiveEntrance = "OnUpdateActiveEntrance",
 	onUpdatePressingAward = "OnUpdatePressingAward",
 	onUpdateProgress = "OnUpdateProgress"
 }
-var0.spriteBaseSize = Vector2(2048, 1347)
+var0_0.spriteBaseSize = Vector2(2048, 1347)
 
-function var0.Setup(arg0)
-	pg.DelegateInfo.New(arg0)
-	arg0:Init()
+function var0_0.Setup(arg0_1)
+	pg.DelegateInfo.New(arg0_1)
+	arg0_1:Init()
 end
 
-function var0.Dispose(arg0)
-	pg.DelegateInfo.Dispose(arg0)
-	arg0:RemoveAtlasListener()
-	arg0:UpdateStaticMark()
-	arg0:ActiveSelect(arg0.selectEntrance, false)
+function var0_0.Dispose(arg0_2)
+	pg.DelegateInfo.Dispose(arg0_2)
+	arg0_2:RemoveAtlasListener()
+	arg0_2:UpdateStaticMark()
+	arg0_2:ActiveSelect(arg0_2.selectEntrance, false)
 
-	if arg0.tfActiveMark then
-		arg0:DestroyActiveMark()
+	if arg0_2.tfActiveMark then
+		arg0_2:DestroyActiveMark()
 	end
 
-	eachChild(arg0.tfMapScene:Find("lock_layer"), function(arg0)
-		arg0:RemoveExtraMarkPrefab(arg0)
+	eachChild(arg0_2.tfMapScene:Find("lock_layer"), function(arg0_3)
+		arg0_2:RemoveExtraMarkPrefab(arg0_3)
 	end)
-	arg0:ReturnScene()
-	arg0:Clear()
+	arg0_2:ReturnScene()
+	arg0_2:Clear()
 end
 
-function var0.Init(arg0)
-	arg0.staticEntranceDic = {}
+function var0_0.Init(arg0_4)
+	arg0_4.staticEntranceDic = {}
 end
 
-function var0.UpdateAtlas(arg0, arg1)
-	if arg0.atlas ~= arg1 then
-		arg0:RemoveAtlasListener()
+function var0_0.UpdateAtlas(arg0_5, arg1_5)
+	if arg0_5.atlas ~= arg1_5 then
+		arg0_5:RemoveAtlasListener()
 
-		arg0.atlas = arg1
+		arg0_5.atlas = arg1_5
 
-		arg0:AddAtlasListener()
-		arg0:UpdateModelMask()
-		arg0:OnUpdateActiveEntrance(nil, nil, arg0.atlas:GetActiveEntrance())
-		arg0:OnUpdatePressingAward()
+		arg0_5:AddAtlasListener()
+		arg0_5:UpdateModelMask()
+		arg0_5:OnUpdateActiveEntrance(nil, nil, arg0_5.atlas:GetActiveEntrance())
+		arg0_5:OnUpdatePressingAward()
 	end
 end
 
-function var0.AddAtlasListener(arg0)
-	if arg0.atlas then
-		arg0.atlas:AddListener(WorldAtlas.EventUpdateProgress, arg0.onUpdateProgress)
-		arg0.atlas:AddListener(WorldAtlas.EventUpdateActiveEntrance, arg0.onUpdateActiveEntrance)
-		arg0.atlas:AddListener(WorldAtlas.EventAddPressingEntrance, arg0.onUpdatePressingAward)
+function var0_0.AddAtlasListener(arg0_6)
+	if arg0_6.atlas then
+		arg0_6.atlas:AddListener(WorldAtlas.EventUpdateProgress, arg0_6.onUpdateProgress)
+		arg0_6.atlas:AddListener(WorldAtlas.EventUpdateActiveEntrance, arg0_6.onUpdateActiveEntrance)
+		arg0_6.atlas:AddListener(WorldAtlas.EventAddPressingEntrance, arg0_6.onUpdatePressingAward)
 	end
 end
 
-function var0.RemoveAtlasListener(arg0)
-	if arg0.atlas then
-		arg0.atlas:RemoveListener(WorldAtlas.EventUpdateProgress, arg0.onUpdateProgress)
-		arg0.atlas:RemoveListener(WorldAtlas.EventUpdateActiveEntrance, arg0.onUpdateActiveEntrance)
-		arg0.atlas:RemoveListener(WorldAtlas.EventAddPressingEntrance, arg0.onUpdatePressingAward)
+function var0_0.RemoveAtlasListener(arg0_7)
+	if arg0_7.atlas then
+		arg0_7.atlas:RemoveListener(WorldAtlas.EventUpdateProgress, arg0_7.onUpdateProgress)
+		arg0_7.atlas:RemoveListener(WorldAtlas.EventUpdateActiveEntrance, arg0_7.onUpdateActiveEntrance)
+		arg0_7.atlas:RemoveListener(WorldAtlas.EventAddPressingEntrance, arg0_7.onUpdatePressingAward)
 	end
 end
 
-function var0.LoadScene(arg0, arg1)
+function var0_0.LoadScene(arg0_8, arg1_8)
 	assert(false, "overwrite by subclass")
 end
 
-function var0.ReturnScene(arg0)
+function var0_0.ReturnScene(arg0_9)
 	assert(false, "overwrite by subclass")
 end
 
-function var0.ShowOrHide(arg0, arg1)
-	setActive(arg0.transform, arg1)
+function var0_0.ShowOrHide(arg0_10, arg1_10)
+	setActive(arg0_10.transform, arg1_10)
 end
 
-function var0.GetMapScreenPos(arg0, arg1)
-	return arg0.cmPointer:GetMapScreenPos(arg1)
+function var0_0.GetMapScreenPos(arg0_11, arg1_11)
+	return arg0_11.cmPointer:GetMapScreenPos(arg1_11)
 end
 
-function var0.UpdateSelect(arg0, arg1)
-	arg0:ActiveSelect(arg0.selectEntrance, false)
-	arg0:ActiveSelect(arg1, true)
+function var0_0.UpdateSelect(arg0_12, arg1_12)
+	arg0_12:ActiveSelect(arg0_12.selectEntrance, false)
+	arg0_12:ActiveSelect(arg1_12, true)
 end
 
-function var0.ActiveSelect(arg0, arg1, arg2)
-	arg0.selectEntrance = arg2 and arg1 or nil
+function var0_0.ActiveSelect(arg0_13, arg1_13, arg2_13)
+	arg0_13.selectEntrance = arg2_13 and arg1_13 or nil
 
-	if not arg1 or arg0.staticEntranceDic[arg1.id] then
+	if not arg1_13 or arg0_13.staticEntranceDic[arg1_13.id] then
 		return
 	end
 
-	if arg1:HasPort() then
+	if arg1_13:HasPort() then
 		-- block empty
 	else
-		setActive(arg0.tfMapSelect:Find("A" .. arg1:GetColormaskUniqueID() .. "_2"), arg2)
+		setActive(arg0_13.tfMapSelect:Find("A" .. arg1_13:GetColormaskUniqueID() .. "_2"), arg2_13)
 	end
 end
 
-function var0.ActiveStatic(arg0, arg1, arg2)
-	arg0.staticEntranceDic[arg1.id] = arg2
+function var0_0.ActiveStatic(arg0_14, arg1_14, arg2_14)
+	arg0_14.staticEntranceDic[arg1_14.id] = arg2_14
 
-	if arg1 == arg0.selectEntrance then
+	if arg1_14 == arg0_14.selectEntrance then
 		return
 	end
 
-	if arg1:HasPort() then
+	if arg1_14:HasPort() then
 		-- block empty
 	else
-		local var0 = arg0.tfMapSelect:Find("A" .. arg1:GetColormaskUniqueID() .. "_2")
+		local var0_14 = arg0_14.tfMapSelect:Find("A" .. arg1_14:GetColormaskUniqueID() .. "_2")
 
-		LeanTween.cancel(go(var0))
+		LeanTween.cancel(go(var0_14))
 
-		local var1 = var0:GetComponent("SpriteRenderer").color
+		local var1_14 = var0_14:GetComponent("SpriteRenderer").color
 
-		var1.a = arg2 and 0 or 1
-		var0:GetComponent("SpriteRenderer").color = var1
+		var1_14.a = arg2_14 and 0 or 1
+		var0_14:GetComponent("SpriteRenderer").color = var1_14
 
-		if arg2 then
-			setActive(var0, true)
-			LeanTween.alpha(go(var0), 0.75, 1):setFrom(0):setLoopPingPong()
+		if arg2_14 then
+			setActive(var0_14, true)
+			LeanTween.alpha(go(var0_14), 0.75, 1):setFrom(0):setLoopPingPong()
 		else
-			setActive(var0, arg0.selectEntrance == arg1)
+			setActive(var0_14, arg0_14.selectEntrance == arg1_14)
 		end
 	end
 end
 
-var0.pressingMaskColor = Color.New(0.0274509803921569, 0.274509803921569, 0.549019607843137, 0.501960784313725)
-var0.openMaskColor = Color.New(0, 0, 0, 0)
-var0.lockMaskColor = Color.New(0, 0, 0, 0.4)
+var0_0.pressingMaskColor = Color.New(0.0274509803921569, 0.274509803921569, 0.549019607843137, 0.501960784313725)
+var0_0.openMaskColor = Color.New(0, 0, 0, 0)
+var0_0.lockMaskColor = Color.New(0, 0, 0, 0.4)
 
-function var0.UpdateModelMask(arg0)
-	for iter0, iter1 in pairs(arg0.atlas.entranceDic) do
-		arg0:UpdateEntranceMask(iter1)
+function var0_0.UpdateModelMask(arg0_15)
+	for iter0_15, iter1_15 in pairs(arg0_15.atlas.entranceDic) do
+		arg0_15:UpdateEntranceMask(iter1_15)
 	end
 end
 
-function var0.UpdateEntranceMask(arg0, arg1)
-	if arg1:HasPort() then
+function var0_0.UpdateEntranceMask(arg0_16, arg1_16)
+	if arg1_16:HasPort() then
 		-- block empty
 	else
-		local var0 = arg0.tfMapScene:Find("lock_layer/A" .. arg1:GetColormaskUniqueID()):GetComponent("SpriteRenderer")
+		local var0_16 = arg0_16.tfMapScene:Find("lock_layer/A" .. arg1_16:GetColormaskUniqueID()):GetComponent("SpriteRenderer")
 
-		if arg1:IsPressing() then
-			var0.color = var0.pressingMaskColor
-			var0.material = arg0.addSprite
-		elseif arg0.atlas.transportDic[arg1.id] and arg1:IsOpen() then
-			var0.color = var0.openMaskColor
-			var0.material = arg0.defaultSprite
+		if arg1_16:IsPressing() then
+			var0_16.color = var0_0.pressingMaskColor
+			var0_16.material = arg0_16.addSprite
+		elseif arg0_16.atlas.transportDic[arg1_16.id] and arg1_16:IsOpen() then
+			var0_16.color = var0_0.openMaskColor
+			var0_16.material = arg0_16.defaultSprite
 		else
-			var0.color = var0.lockMaskColor
-			var0.material = arg0.defaultSprite
+			var0_16.color = var0_0.lockMaskColor
+			var0_16.material = arg0_16.defaultSprite
 		end
 	end
 end
 
-function var0.SetSairenMarkActive(arg0, arg1, arg2)
-	arg0:DoUpdatExtraMark(arg1, "dsj_srgr", arg2, function(arg0)
-		if arg2 then
-			arg0:GetComponent("SpriteRenderer").sprite = arg1:GetComponent("SpriteRenderer").sprite
+function var0_0.SetSairenMarkActive(arg0_17, arg1_17, arg2_17)
+	arg0_17:DoUpdatExtraMark(arg1_17, "dsj_srgr", arg2_17, function(arg0_18)
+		if arg2_17 then
+			arg0_18:GetComponent("SpriteRenderer").sprite = arg1_17:GetComponent("SpriteRenderer").sprite
 		end
 	end)
 end
 
-function var0.OnUpdateProgress(arg0, arg1, arg2, arg3)
-	for iter0 in pairs(arg3) do
-		local var0 = arg0.atlas:GetEntrance(iter0)
+function var0_0.OnUpdateProgress(arg0_19, arg1_19, arg2_19, arg3_19)
+	for iter0_19 in pairs(arg3_19) do
+		local var0_19 = arg0_19.atlas:GetEntrance(iter0_19)
 
-		arg0:UpdateEntranceMask(var0)
+		arg0_19:UpdateEntranceMask(var0_19)
 	end
 
-	arg0:UpdateCenterEffectDisplay()
+	arg0_19:UpdateCenterEffectDisplay()
 end
 
-function var0.BuildActiveMark(arg0)
-	arg0.tfActiveMark = tf(GameObject.New())
-	arg0.tfActiveMark.gameObject.layer = Layer.UI
-	arg0.tfActiveMark.name = "active_mark"
+function var0_0.BuildActiveMark(arg0_20)
+	arg0_20.tfActiveMark = tf(GameObject.New())
+	arg0_20.tfActiveMark.gameObject.layer = Layer.UI
+	arg0_20.tfActiveMark.name = "active_mark"
 
-	arg0.tfActiveMark:SetParent(arg0.tfSpriteScene, false)
-	setActive(arg0.tfActiveMark, false)
+	arg0_20.tfActiveMark:SetParent(arg0_20.tfSpriteScene, false)
+	setActive(arg0_20.tfActiveMark, false)
 end
 
-function var0.DestroyActiveMark(arg0)
-	arg0:RemoveExtraMarkPrefab(arg0.tfActiveMark)
-	Destroy(arg0.tfActiveMark)
+function var0_0.DestroyActiveMark(arg0_21)
+	arg0_21:RemoveExtraMarkPrefab(arg0_21.tfActiveMark)
+	Destroy(arg0_21.tfActiveMark)
 end
 
-function var0.LoadExtraMarkPrefab(arg0, arg1, arg2, arg3)
-	local var0 = PoolMgr.GetInstance()
+function var0_0.LoadExtraMarkPrefab(arg0_22, arg1_22, arg2_22, arg3_22)
+	local var0_22 = PoolMgr.GetInstance()
 
-	var0:GetPrefab("world/mark/" .. arg2, arg2, true, function(arg0)
-		if IsNil(arg1) then
-			var0:ReturnPrefab("world/mark/" .. arg2, arg2, arg0, true)
+	var0_22:GetPrefab("world/mark/" .. arg2_22, arg2_22, true, function(arg0_23)
+		if IsNil(arg1_22) then
+			var0_22:ReturnPrefab("world/mark/" .. arg2_22, arg2_22, arg0_23, true)
 		else
-			arg0.name = arg2
+			arg0_23.name = arg2_22
 
-			tf(arg0):SetParent(arg1, false)
-			setActive(arg0, true)
-			existCall(arg3, tf(arg0))
+			tf(arg0_23):SetParent(arg1_22, false)
+			setActive(arg0_23, true)
+			existCall(arg3_22, tf(arg0_23))
 		end
 	end)
 end
 
-function var0.RemoveExtraMarkPrefab(arg0, arg1)
-	local var0 = PoolMgr.GetInstance()
+function var0_0.RemoveExtraMarkPrefab(arg0_24, arg1_24)
+	local var0_24 = PoolMgr.GetInstance()
 
-	eachChild(arg1, function(arg0)
-		var0:ReturnPrefab("world/mark/" .. arg0.name, arg0.name, go(arg0), true)
+	eachChild(arg1_24, function(arg0_25)
+		var0_24:ReturnPrefab("world/mark/" .. arg0_25.name, arg0_25.name, go(arg0_25), true)
 	end)
 end
 
-function var0.DoUpdatExtraMark(arg0, arg1, arg2, arg3, arg4)
-	local var0 = arg1:Find(arg2)
+function var0_0.DoUpdatExtraMark(arg0_26, arg1_26, arg2_26, arg3_26, arg4_26)
+	local var0_26 = arg1_26:Find(arg2_26)
 
-	if var0 then
-		setActive(var0, arg3)
-		existCall(arg4, var0)
-	elseif arg3 then
-		arg0:LoadExtraMarkPrefab(arg1, arg2, arg4)
+	if var0_26 then
+		setActive(var0_26, arg3_26)
+		existCall(arg4_26, var0_26)
+	elseif arg3_26 then
+		arg0_26:LoadExtraMarkPrefab(arg1_26, arg2_26, arg4_26)
 	end
 end
 
-function var0.OnUpdateActiveEntrance(arg0, arg1, arg2, arg3)
-	if arg3 then
-		arg0.tfActiveMark.localPosition = WorldConst.CalcModelPosition(arg3, arg0.spriteBaseSize)
+function var0_0.OnUpdateActiveEntrance(arg0_27, arg1_27, arg2_27, arg3_27)
+	if arg3_27 then
+		arg0_27.tfActiveMark.localPosition = WorldConst.CalcModelPosition(arg3_27, arg0_27.spriteBaseSize)
 	end
 
-	setActive(arg0.tfActiveMark, arg3)
+	setActive(arg0_27.tfActiveMark, arg3_27)
 end
 
-function var0.UpdateStaticMark(arg0, arg1)
-	for iter0, iter1 in pairs(arg0.staticEntranceDic) do
-		arg0:ActiveStatic(arg0.atlas:GetEntrance(iter0), false)
+function var0_0.UpdateStaticMark(arg0_28, arg1_28)
+	for iter0_28, iter1_28 in pairs(arg0_28.staticEntranceDic) do
+		arg0_28:ActiveStatic(arg0_28.atlas:GetEntrance(iter0_28), false)
 	end
 
-	for iter2, iter3 in pairs(arg1 or {}) do
-		if iter3 then
-			arg0:ActiveStatic(arg0.atlas:GetEntrance(iter2), true)
+	for iter2_28, iter3_28 in pairs(arg1_28 or {}) do
+		if iter3_28 then
+			arg0_28:ActiveStatic(arg0_28.atlas:GetEntrance(iter2_28), true)
 		end
 	end
 end
 
-function var0.OnUpdatePressingAward(arg0, arg1, arg2, arg3)
-	arg3 = arg3 or arg0.atlas.transportDic
+function var0_0.OnUpdatePressingAward(arg0_29, arg1_29, arg2_29, arg3_29)
+	arg3_29 = arg3_29 or arg0_29.atlas.transportDic
 
-	for iter0, iter1 in pairs(arg3) do
-		if iter1 then
-			arg0:UpdateEntranceMask(arg0.atlas:GetEntrance(iter0))
+	for iter0_29, iter1_29 in pairs(arg3_29) do
+		if iter1_29 then
+			arg0_29:UpdateEntranceMask(arg0_29.atlas:GetEntrance(iter0_29))
 		end
 	end
 end
 
-function var0.UpdateCenterEffectDisplay(arg0)
-	local var0 = nowWorld():CheckAreaUnlock(5)
+function var0_0.UpdateCenterEffectDisplay(arg0_30)
+	local var0_30 = nowWorld():CheckAreaUnlock(5)
 
-	setActive(arg0.tfEntity:Find("decolation_layer/DSJ_xuanwo"), not var0)
-	setActive(arg0.tfEntity:Find("decolation_layer/DSJ_xuanwo_jianhua"), var0)
+	setActive(arg0_30.tfEntity:Find("decolation_layer/DSJ_xuanwo"), not var0_30)
+	setActive(arg0_30.tfEntity:Find("decolation_layer/DSJ_xuanwo_jianhua"), var0_30)
 end
 
-return var0
+return var0_0

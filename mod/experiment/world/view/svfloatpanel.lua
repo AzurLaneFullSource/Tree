@@ -1,177 +1,177 @@
-﻿local var0 = class("SVFloatPanel", import("view.base.BaseSubView"))
+﻿local var0_0 = class("SVFloatPanel", import("view.base.BaseSubView"))
 
-var0.ShowView = "SVFloatPanel.ShowView"
-var0.HideView = "SVFloatPanel.HideView"
-var0.ReturnCall = "SVFloatPanel.ReturnCall"
+var0_0.ShowView = "SVFloatPanel.ShowView"
+var0_0.HideView = "SVFloatPanel.HideView"
+var0_0.ReturnCall = "SVFloatPanel.ReturnCall"
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "SVFloatPanel"
 end
 
-function var0.OnLoaded(arg0)
+function var0_0.OnLoaded(arg0_2)
 	return
 end
 
-function var0.OnInit(arg0)
-	arg0.rtBasePoint = arg0._tf:Find("point")
-	arg0.rtInfoPanel = arg0.rtBasePoint:Find("line/bg")
-	arg0.rtMarking = arg0.rtInfoPanel:Find("icon/marking")
-	arg0.rtRes = arg0._tf:Find("res")
-	arg0.awardItemList = UIItemList.New(arg0.rtInfoPanel:Find("pressing_award"), arg0.rtInfoPanel:Find("pressing_award/award_tpl"))
+function var0_0.OnInit(arg0_3)
+	arg0_3.rtBasePoint = arg0_3._tf:Find("point")
+	arg0_3.rtInfoPanel = arg0_3.rtBasePoint:Find("line/bg")
+	arg0_3.rtMarking = arg0_3.rtInfoPanel:Find("icon/marking")
+	arg0_3.rtRes = arg0_3._tf:Find("res")
+	arg0_3.awardItemList = UIItemList.New(arg0_3.rtInfoPanel:Find("pressing_award"), arg0_3.rtInfoPanel:Find("pressing_award/award_tpl"))
 
-	arg0.awardItemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg0.awardConfig[arg1 + 1]
-			local var1 = {
-				type = var0[1],
-				id = var0[2],
-				count = var0[3]
+	arg0_3.awardItemList:make(function(arg0_4, arg1_4, arg2_4)
+		if arg0_4 == UIItemList.EventUpdate then
+			local var0_4 = arg0_3.awardConfig[arg1_4 + 1]
+			local var1_4 = {
+				type = var0_4[1],
+				id = var0_4[2],
+				count = var0_4[3]
 			}
 
-			updateDrop(arg2:Find("IconTpl"), var1)
-			onButton(arg0, arg2:Find("IconTpl"), function()
-				arg0:emit(BaseUI.ON_DROP, var1)
+			updateDrop(arg2_4:Find("IconTpl"), var1_4)
+			onButton(arg0_3, arg2_4:Find("IconTpl"), function()
+				arg0_3:emit(BaseUI.ON_DROP, var1_4)
 			end, SFX_PANEL)
 
-			local var2 = arg0.mapList[arg0.destIndex]
+			local var2_4 = arg0_3.mapList[arg0_3.destIndex]
 
-			setActive(arg2:Find("is_pressing"), var2.isPressing)
-			setActive(arg2:Find("IconTpl"), not var2.isPressing)
+			setActive(arg2_4:Find("is_pressing"), var2_4.isPressing)
+			setActive(arg2_4:Find("IconTpl"), not var2_4.isPressing)
 		end
 	end)
 
-	arg0.btnBack = arg0.rtInfoPanel:Find("back")
+	arg0_3.btnBack = arg0_3.rtInfoPanel:Find("back")
 
-	onButton(arg0, arg0.btnBack, function()
-		arg0:emit(WorldScene.SceneOp, "OpSetInMap", true)
+	onButton(arg0_3, arg0_3.btnBack, function()
+		arg0_3:emit(WorldScene.SceneOp, "OpSetInMap", true)
 	end, SFX_CONFIRM)
 
-	arg0.btnEnter = arg0.rtInfoPanel:Find("enter")
+	arg0_3.btnEnter = arg0_3.rtInfoPanel:Find("enter")
 
-	onButton(arg0, arg0.btnEnter, function()
-		local var0 = {}
-		local var1 = arg0.mapList[arg0.destIndex]
+	onButton(arg0_3, arg0_3.btnEnter, function()
+		local var0_7 = {}
+		local var1_7 = arg0_3.mapList[arg0_3.destIndex]
 
-		if WorldConst.HasDangerConfirm(var1.config.entrance_ui) then
-			table.insert(var0, function(arg0)
-				arg0:emit(WorldScene.SceneOp, "OpCall", function(arg0)
-					arg0()
+		if WorldConst.HasDangerConfirm(var1_7.config.entrance_ui) then
+			table.insert(var0_7, function(arg0_8)
+				arg0_3:emit(WorldScene.SceneOp, "OpCall", function(arg0_9)
+					arg0_9()
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
 						content = i18n("world_map_dangerous_confirm"),
-						onYes = arg0
+						onYes = arg0_8
 					})
 				end)
 			end)
 		end
 
-		seriesAsync(var0, function()
-			local var0 = nowWorld().staminaMgr
+		seriesAsync(var0_7, function()
+			local var0_10 = nowWorld().staminaMgr
 
-			if not var1.isCost and var1.config.enter_cost > var0:GetTotalStamina() then
-				var0:Show()
+			if not var1_7.isCost and var1_7.config.enter_cost > var0_10:GetTotalStamina() then
+				var0_10:Show()
 			else
-				arg0:emit(WorldScene.SceneOp, "OpTransport", arg0.entrance, var1)
+				arg0_3:emit(WorldScene.SceneOp, "OpTransport", arg0_3.entrance, var1_7)
 			end
 		end)
 	end, SFX_CONFIRM)
 
-	arg0.btnLock = arg0.rtInfoPanel:Find("lock")
-	arg0.btnReturn = arg0.rtInfoPanel:Find("return")
+	arg0_3.btnLock = arg0_3.rtInfoPanel:Find("lock")
+	arg0_3.btnReturn = arg0_3.rtInfoPanel:Find("return")
 
-	onButton(arg0, arg0.btnReturn, function()
-		arg0:emit(var0.ReturnCall, arg0.entrance)
+	onButton(arg0_3, arg0_3.btnReturn, function()
+		arg0_3:emit(var0_0.ReturnCall, arg0_3.entrance)
 	end, SFX_CONFIRM)
 
-	arg0.btnSwitch = arg0.rtInfoPanel:Find("switch")
+	arg0_3.btnSwitch = arg0_3.rtInfoPanel:Find("switch")
 
-	onButton(arg0, arg0.btnSwitch, function()
-		if arg0.isTweening then
+	onButton(arg0_3, arg0_3.btnSwitch, function()
+		if arg0_3.isTweening then
 			return
 		end
 
-		arg0:ShowToggleMask()
+		arg0_3:ShowToggleMask()
 	end, SFX_PANEL)
 
-	arg0.rtSelectMask = arg0._tf:Find("select_mask")
+	arg0_3.rtSelectMask = arg0_3._tf:Find("select_mask")
 
-	onButton(arg0, arg0.rtSelectMask:Find("bg"), function()
-		if arg0.isTweening then
+	onButton(arg0_3, arg0_3.rtSelectMask:Find("bg"), function()
+		if arg0_3.isTweening then
 			return
 		end
 
-		arg0:HideToggleMask()
+		arg0_3:HideToggleMask()
 	end, SFX_PANEL)
 
-	arg0.rtMaskMarking = arg0.rtSelectMask:Find("marking")
-	arg0.rtToggles = arg0.rtMaskMarking:Find("toggles")
-	arg0.toggleItemList = UIItemList.New(arg0.rtToggles, arg0.rtToggles:Find("toggle"))
+	arg0_3.rtMaskMarking = arg0_3.rtSelectMask:Find("marking")
+	arg0_3.rtToggles = arg0_3.rtMaskMarking:Find("toggles")
+	arg0_3.toggleItemList = UIItemList.New(arg0_3.rtToggles, arg0_3.rtToggles:Find("toggle"))
 
-	arg0.toggleItemList:make(function(arg0, arg1, arg2)
-		arg1 = arg1 + 1
+	arg0_3.toggleItemList:make(function(arg0_14, arg1_14, arg2_14)
+		arg1_14 = arg1_14 + 1
 
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg0.mapList[arg1]
-			local var1, var2 = World.ReplacementMapType(arg0.entrance, var0)
+		if arg0_14 == UIItemList.EventUpdate then
+			local var0_14 = arg0_3.mapList[arg1_14]
+			local var1_14, var2_14 = World.ReplacementMapType(arg0_3.entrance, var0_14)
 
-			setText(arg2:Find("Text"), var2)
-			onToggle(arg0, arg2, function(arg0)
-				if arg0 then
-					arg0:HideToggleMask()
+			setText(arg2_14:Find("Text"), var2_14)
+			onToggle(arg0_3, arg2_14, function(arg0_15)
+				if arg0_15 then
+					arg0_3:HideToggleMask()
 
-					arg0.destIndex = arg1
+					arg0_3.destIndex = arg1_14
 
-					arg0:UpdatePanel()
+					arg0_3:UpdatePanel()
 				end
 			end, SFX_PANEL)
-			triggerToggle(arg2, false)
+			triggerToggle(arg2_14, false)
 		end
 	end)
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_16)
 	return
 end
 
-function var0.Show(arg0)
-	setActive(arg0._tf, true)
+function var0_0.Show(arg0_17)
+	setActive(arg0_17._tf, true)
 end
 
-function var0.Hide(arg0)
-	setActive(arg0._tf, false)
+function var0_0.Hide(arg0_18)
+	setActive(arg0_18._tf, false)
 end
 
-function var0.Setup(arg0, arg1, arg2, arg3, arg4)
-	arg0.entrance = arg1
+function var0_0.Setup(arg0_19, arg1_19, arg2_19, arg3_19, arg4_19)
+	arg0_19.entrance = arg1_19
 
-	local var0 = arg4:GetMapScreenPos(Vector2(arg1.config.area_pos[1], arg1.config.area_pos[2]))
+	local var0_19 = arg4_19:GetMapScreenPos(Vector2(arg1_19.config.area_pos[1], arg1_19.config.area_pos[2]))
 
-	setAnchoredPosition(arg0.rtBasePoint, arg0._tf:InverseTransformPoint(GameObject.Find("OverlayCamera"):GetComponent(typeof(Camera)):ScreenToWorldPoint(var0)))
+	setAnchoredPosition(arg0_19.rtBasePoint, arg0_19._tf:InverseTransformPoint(GameObject.Find("OverlayCamera"):GetComponent(typeof(Camera)):ScreenToWorldPoint(var0_19)))
 
-	arg0.mapList = nowWorld():EntranceToReplacementMapList(arg1)
+	arg0_19.mapList = nowWorld():EntranceToReplacementMapList(arg1_19)
 
-	local function var1()
-		if arg2 then
-			for iter0, iter1 in ipairs(arg0.mapList) do
-				if iter1.id == arg2 then
-					return iter0
+	local function var1_19()
+		if arg2_19 then
+			for iter0_20, iter1_20 in ipairs(arg0_19.mapList) do
+				if iter1_20.id == arg2_19 then
+					return iter0_20
 				end
 			end
 		end
 
-		if arg3 then
-			for iter2, iter3 in ipairs(arg3) do
-				for iter4, iter5 in ipairs(arg0.mapList) do
-					if iter3 == World.ReplacementMapType(arg1, iter5) then
-						return iter4
+		if arg3_19 then
+			for iter2_20, iter3_20 in ipairs(arg3_19) do
+				for iter4_20, iter5_20 in ipairs(arg0_19.mapList) do
+					if iter3_20 == World.ReplacementMapType(arg1_19, iter5_20) then
+						return iter4_20
 					end
 				end
 			end
 		end
 
-		if arg1.active then
-			for iter6, iter7 in ipairs(arg0.mapList) do
-				if iter7.active then
-					return iter6
+		if arg1_19.active then
+			for iter6_20, iter7_20 in ipairs(arg0_19.mapList) do
+				if iter7_20.active then
+					return iter6_20
 				end
 			end
 		end
@@ -179,130 +179,130 @@ function var0.Setup(arg0, arg1, arg2, arg3, arg4)
 		return 1
 	end
 
-	arg0.toggleItemList:align(#arg0.mapList)
-	triggerToggle(arg0.rtToggles:GetChild(var1() - 1), true)
+	arg0_19.toggleItemList:align(#arg0_19.mapList)
+	triggerToggle(arg0_19.rtToggles:GetChild(var1_19() - 1), true)
 end
 
-function var0.setColorfulImage(arg0, arg1, arg2, arg3)
-	arg3 = defaultValue(arg3, true)
+function var0_0.setColorfulImage(arg0_21, arg1_21, arg2_21, arg3_21)
+	arg3_21 = defaultValue(arg3_21, true)
 
-	setImageSprite(arg1, getImageSprite(arg0.rtRes:Find(arg1.name .. "/" .. arg2)), arg3)
+	setImageSprite(arg1_21, getImageSprite(arg0_21.rtRes:Find(arg1_21.name .. "/" .. arg2_21)), arg3_21)
 end
 
-function var0.UpdatePanel(arg0)
-	local var0 = nowWorld()
-	local var1 = arg0.mapList[arg0.destIndex]
-	local var2, var3 = World.ReplacementMapType(arg0.entrance, var1)
-	local var4 = var2 == "complete_chapter" and "safe" or WorldConst.GetMapIconState(var1.config.entrance_ui)
-	local var5 = var1:IsMapOpen()
+function var0_0.UpdatePanel(arg0_22)
+	local var0_22 = nowWorld()
+	local var1_22 = arg0_22.mapList[arg0_22.destIndex]
+	local var2_22, var3_22 = World.ReplacementMapType(arg0_22.entrance, var1_22)
+	local var4_22 = var2_22 == "complete_chapter" and "safe" or WorldConst.GetMapIconState(var1_22.config.entrance_ui)
+	local var5_22 = var1_22:IsMapOpen()
 
-	arg0:setColorfulImage(arg0.rtBasePoint, var4)
-	arg0:setColorfulImage(arg0.rtInfoPanel, var4, false)
+	arg0_22:setColorfulImage(arg0_22.rtBasePoint, var4_22)
+	arg0_22:setColorfulImage(arg0_22.rtInfoPanel, var4_22, false)
 
-	local var6 = GetSpriteFromAtlas("world/mapicon/" .. var1.config.entrance_mapicon, "")
+	local var6_22 = GetSpriteFromAtlas("world/mapicon/" .. var1_22.config.entrance_mapicon, "")
 
-	setImageSprite(arg0.rtInfoPanel:Find("icon"), var6)
-	arg0:setColorfulImage(arg0.btnBack, var4)
-	arg0:setColorfulImage(arg0.btnEnter, var4)
-	arg0:setColorfulImage(arg0.rtMarking, var4)
-	arg0:setColorfulImage(arg0.rtMarking:Find("mark_bg"), var4)
-	arg0:setColorfulImage(arg0.rtMaskMarking, var4)
-	arg0:setColorfulImage(arg0.rtMaskMarking:Find("mark_bg"), var4)
-	setText(arg0.rtMarking:Find("Text"), var3)
-	setText(arg0.rtMaskMarking:Find("Text"), var3)
-	setActive(arg0.rtInfoPanel:Find("sairen"), var2 == "sairen_chapter")
-	setText(arg0.rtInfoPanel:Find("sairen/Text"), i18n("area_yaosai_2"))
-	setText(arg0.rtInfoPanel:Find("danger_text"), var5 and var1:GetDanger() or "?")
-	changeToScrollText(arg0.rtInfoPanel:Find("title/name"), var1:GetName(arg0.entrance))
+	setImageSprite(arg0_22.rtInfoPanel:Find("icon"), var6_22)
+	arg0_22:setColorfulImage(arg0_22.btnBack, var4_22)
+	arg0_22:setColorfulImage(arg0_22.btnEnter, var4_22)
+	arg0_22:setColorfulImage(arg0_22.rtMarking, var4_22)
+	arg0_22:setColorfulImage(arg0_22.rtMarking:Find("mark_bg"), var4_22)
+	arg0_22:setColorfulImage(arg0_22.rtMaskMarking, var4_22)
+	arg0_22:setColorfulImage(arg0_22.rtMaskMarking:Find("mark_bg"), var4_22)
+	setText(arg0_22.rtMarking:Find("Text"), var3_22)
+	setText(arg0_22.rtMaskMarking:Find("Text"), var3_22)
+	setActive(arg0_22.rtInfoPanel:Find("sairen"), var2_22 == "sairen_chapter")
+	setText(arg0_22.rtInfoPanel:Find("sairen/Text"), i18n("area_yaosai_2"))
+	setText(arg0_22.rtInfoPanel:Find("danger_text"), var5_22 and var1_22:GetDanger() or "?")
+	changeToScrollText(arg0_22.rtInfoPanel:Find("title/name"), var1_22:GetName(arg0_22.entrance))
 
-	local var7, var8, var9 = var0:CountAchievements(arg0.entrance)
+	local var7_22, var8_22, var9_22 = var0_22:CountAchievements(arg0_22.entrance)
 
-	setText(arg0.rtInfoPanel:Find("title/achievement/number"), var7 + var8 .. "/" .. var9)
+	setText(arg0_22.rtInfoPanel:Find("title/achievement/number"), var7_22 + var8_22 .. "/" .. var9_22)
 
-	local var10 = var0:GetPressingAward(var1.id)
+	local var10_22 = var0_22:GetPressingAward(var1_22.id)
 
-	setActive(arg0.rtInfoPanel:Find("pressing_award"), var10 and var10.flag)
+	setActive(arg0_22.rtInfoPanel:Find("pressing_award"), var10_22 and var10_22.flag)
 
-	if var10 and var10.flag then
-		arg0.awardConfig = pg.world_event_complete[var10.id].tips_icon
+	if var10_22 and var10_22.flag then
+		arg0_22.awardConfig = pg.world_event_complete[var10_22.id].tips_icon
 
-		arg0.awardItemList:align(#arg0.awardConfig)
+		arg0_22.awardItemList:align(#arg0_22.awardConfig)
 	end
 
-	arg0:UpdateCost()
+	arg0_22:UpdateCost()
 
-	local var11 = nowWorld():GetAtlas()
-	local var12 = var11:GetActiveMap()
-	local var13, var14 = var12:CkeckTransport()
-	local var15 = false
+	local var11_22 = nowWorld():GetAtlas()
+	local var12_22 = var11_22:GetActiveMap()
+	local var13_22, var14_22 = var12_22:CkeckTransport()
+	local var15_22 = false
 
-	setActive(arg0.btnBack, not var15 and var11:GetActiveEntrance() == arg0.entrance and var12 == var1)
+	setActive(arg0_22.btnBack, not var15_22 and var11_22:GetActiveEntrance() == arg0_22.entrance and var12_22 == var1_22)
 
-	var15 = var15 or isActive(arg0.btnBack)
+	var15_22 = var15_22 or isActive(arg0_22.btnBack)
 
-	setActive(arg0.btnEnter, not var15 and var13 and var5 and var11.transportDic[arg0.entrance.id])
+	setActive(arg0_22.btnEnter, not var15_22 and var13_22 and var5_22 and var11_22.transportDic[arg0_22.entrance.id])
 
-	var15 = var15 or isActive(arg0.btnEnter)
+	var15_22 = var15_22 or isActive(arg0_22.btnEnter)
 
-	setText(arg0.btnLock:Find("Text"), var5 and i18n("world_map_locked_border") or i18n("world_map_locked_stage"))
-	setActive(arg0.btnLock, not var15 and var13)
+	setText(arg0_22.btnLock:Find("Text"), var5_22 and i18n("world_map_locked_border") or i18n("world_map_locked_stage"))
+	setActive(arg0_22.btnLock, not var15_22 and var13_22)
 
-	var15 = var15 or isActive(arg0.btnLock)
+	var15_22 = var15_22 or isActive(arg0_22.btnLock)
 
-	setActive(arg0.btnReturn, not var15)
+	setActive(arg0_22.btnReturn, not var15_22)
 
-	local var16
+	local var16_22
 
-	var16 = var15 or isActive(arg0.btnReturn)
+	var16_22 = var15_22 or isActive(arg0_22.btnReturn)
 end
 
-function var0.UpdateCost(arg0)
-	local var0 = arg0.mapList[arg0.destIndex]
-	local var1 = arg0.btnEnter:Find("cost")
+function var0_0.UpdateCost(arg0_23)
+	local var0_23 = arg0_23.mapList[arg0_23.destIndex]
+	local var1_23 = arg0_23.btnEnter:Find("cost")
 
-	setActive(var1, not var0.isCost)
+	setActive(var1_23, not var0_23.isCost)
 
-	local var2 = nowWorld().staminaMgr:GetTotalStamina()
-	local var3 = var0.config.enter_cost
+	local var2_23 = nowWorld().staminaMgr:GetTotalStamina()
+	local var3_23 = var0_23.config.enter_cost
 
-	setText(var1:Find("Text"), setColorStr(var2, var2 < var3 and COLOR_RED or COLOR_GREEN) .. "/" .. var3)
+	setText(var1_23:Find("Text"), setColorStr(var2_23, var2_23 < var3_23 and COLOR_RED or COLOR_GREEN) .. "/" .. var3_23)
 end
 
-function var0.ShowToggleMask(arg0)
-	arg0.isTweening = true
+function var0_0.ShowToggleMask(arg0_24)
+	arg0_24.isTweening = true
 
-	setActive(arg0.rtMarking, false)
-	setActive(arg0.rtSelectMask, true)
-	setActive(arg0.rtToggles, false)
+	setActive(arg0_24.rtMarking, false)
+	setActive(arg0_24.rtSelectMask, true)
+	setActive(arg0_24.rtToggles, false)
 
-	arg0.rtMaskMarking.position = arg0.rtMarking.position
+	arg0_24.rtMaskMarking.position = arg0_24.rtMarking.position
 
-	LeanTween.moveY(arg0.rtMaskMarking, arg0.rtMaskMarking.anchoredPosition.y + 150, 0.2):setOnComplete(System.Action(function()
-		setActive(arg0.rtToggles, true)
+	LeanTween.moveY(arg0_24.rtMaskMarking, arg0_24.rtMaskMarking.anchoredPosition.y + 150, 0.2):setOnComplete(System.Action(function()
+		setActive(arg0_24.rtToggles, true)
 
-		arg0.isTweening = false
+		arg0_24.isTweening = false
 	end))
-	setActive(arg0.btnSwitch, false)
+	setActive(arg0_24.btnSwitch, false)
 end
 
-function var0.HideToggleMask(arg0)
-	arg0.isTweening = true
+function var0_0.HideToggleMask(arg0_26)
+	arg0_26.isTweening = true
 
-	setActive(arg0.rtToggles, false)
+	setActive(arg0_26.rtToggles, false)
 
-	arg0.rtMaskMarking.position = arg0.rtMarking.position
+	arg0_26.rtMaskMarking.position = arg0_26.rtMarking.position
 
-	setAnchoredPosition(arg0.rtMaskMarking, {
-		y = arg0.rtMaskMarking.anchoredPosition.y + 150
+	setAnchoredPosition(arg0_26.rtMaskMarking, {
+		y = arg0_26.rtMaskMarking.anchoredPosition.y + 150
 	})
-	LeanTween.moveY(arg0.rtMaskMarking, arg0.rtMaskMarking.anchoredPosition.y - 150, 0.2):setOnComplete(System.Action(function()
-		setActive(arg0.rtSelectMask, false)
-		setActive(arg0.rtMarking, true)
+	LeanTween.moveY(arg0_26.rtMaskMarking, arg0_26.rtMaskMarking.anchoredPosition.y - 150, 0.2):setOnComplete(System.Action(function()
+		setActive(arg0_26.rtSelectMask, false)
+		setActive(arg0_26.rtMarking, true)
 
-		arg0.isTweening = false
+		arg0_26.isTweening = false
 
-		setActive(arg0.btnSwitch, #arg0.mapList > 1)
+		setActive(arg0_26.btnSwitch, #arg0_26.mapList > 1)
 	end))
 end
 
-return var0
+return var0_0

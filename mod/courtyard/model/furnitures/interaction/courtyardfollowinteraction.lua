@@ -1,9 +1,9 @@
-﻿local var0 = class("CourtYardFollowInteraction", import(".CourtYardInteraction"))
+﻿local var0_0 = class("CourtYardFollowInteraction", import(".CourtYardInteraction"))
 
-function var0.OnStepEnd(arg0)
-	if arg0:IsCompleteOwnerStep() then
-		arg0:DoStep()
+function var0_0.OnStepEnd(arg0_1)
+	if arg0_1:IsCompleteOwnerStep() then
+		arg0_1:DoStep()
 	end
 end
 
-return var0
+return var0_0

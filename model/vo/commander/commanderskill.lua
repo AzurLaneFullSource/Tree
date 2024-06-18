@@ -1,82 +1,82 @@
-﻿local var0 = class("CommanderSkill", import("..BaseVO"))
+﻿local var0_0 = class("CommanderSkill", import("..BaseVO"))
 
-function var0.Ctor(arg0, arg1)
-	arg0.id = arg1.id
-	arg0.configId = arg0.id
-	arg0.exp = arg1.exp
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.id = arg1_1.id
+	arg0_1.configId = arg0_1.id
+	arg0_1.exp = arg1_1.exp
 end
 
-function var0.getExp(arg0)
-	return arg0.exp
+function var0_0.getExp(arg0_2)
+	return arg0_2.exp
 end
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_3)
 	return pg.commander_skill_template
 end
 
-function var0.getLevel(arg0)
-	return arg0:getConfig("lv")
+function var0_0.getLevel(arg0_4)
+	return arg0_4:getConfig("lv")
 end
 
-function var0.isMaxLevel(arg0)
-	return arg0:getConfig("next_id") == 0
+function var0_0.isMaxLevel(arg0_5)
+	return arg0_5:getConfig("next_id") == 0
 end
 
-function var0.getNextLevelExp(arg0)
-	return arg0:getConfig("exp")
+function var0_0.getNextLevelExp(arg0_6)
+	return arg0_6:getConfig("exp")
 end
 
-function var0.addExp(arg0, arg1)
-	arg0.exp = arg0.exp + arg1
+function var0_0.addExp(arg0_7, arg1_7)
+	arg0_7.exp = arg0_7.exp + arg1_7
 
-	while arg0:canLevelUp() do
-		arg0.exp = arg0.exp - arg0:getNextLevelExp()
-		arg0.id = arg0:getConfig("next_id")
-		arg0.configId = arg0.id
+	while arg0_7:canLevelUp() do
+		arg0_7.exp = arg0_7.exp - arg0_7:getNextLevelExp()
+		arg0_7.id = arg0_7:getConfig("next_id")
+		arg0_7.configId = arg0_7.id
 	end
 end
 
-function var0.canLevelUp(arg0)
-	return arg0:getNextLevelExp() <= arg0.exp and not arg0:isMaxLevel()
+function var0_0.canLevelUp(arg0_8)
+	return arg0_8:getNextLevelExp() <= arg0_8.exp and not arg0_8:isMaxLevel()
 end
 
-function var0.getTacticSkill(arg0)
-	return arg0:getConfig("effect_tactic")
+function var0_0.getTacticSkill(arg0_9)
+	return arg0_9:getConfig("effect_tactic")
 end
 
-function var0.GetTacticSkillForWorld(arg0)
-	return arg0:getConfig("effect_tactic_world")
+function var0_0.GetTacticSkillForWorld(arg0_10)
+	return arg0_10:getConfig("effect_tactic_world")
 end
 
-function var0.GetSkillGroup(arg0)
-	local var0 = {}
-	local var1 = arg0:getConfig("prev_id")
+function var0_0.GetSkillGroup(arg0_11)
+	local var0_11 = {}
+	local var1_11 = arg0_11:getConfig("prev_id")
 
-	while var1 and var1 ~= 0 do
-		local var2 = pg.commander_skill_template[var1]
+	while var1_11 and var1_11 ~= 0 do
+		local var2_11 = pg.commander_skill_template[var1_11]
 
-		table.insert(var0, var2)
+		table.insert(var0_11, var2_11)
 
-		var1 = var2.prev_id
+		var1_11 = var2_11.prev_id
 	end
 
-	table.insert(var0, pg.commander_skill_template[arg0.configId])
+	table.insert(var0_11, pg.commander_skill_template[arg0_11.configId])
 
-	local var3 = arg0:getConfig("next_id")
+	local var3_11 = arg0_11:getConfig("next_id")
 
-	while var3 and var3 ~= 0 do
-		local var4 = pg.commander_skill_template[var3]
+	while var3_11 and var3_11 ~= 0 do
+		local var4_11 = pg.commander_skill_template[var3_11]
 
-		table.insert(var0, var4)
+		table.insert(var0_11, var4_11)
 
-		var3 = var4.next_id
+		var3_11 = var4_11.next_id
 	end
 
-	table.sort(var0, function(arg0, arg1)
-		return arg0.lv < arg1.lv
+	table.sort(var0_11, function(arg0_12, arg1_12)
+		return arg0_12.lv < arg1_12.lv
 	end)
 
-	return var0
+	return var0_11
 end
 
-return var0
+return var0_0

@@ -1,154 +1,154 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConfig
-local var2 = var0.Battle.BattleAttr
-local var3 = var1.AntiAirConfig
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConfig
+local var2_0 = var0_0.Battle.BattleAttr
+local var3_0 = var1_0.AntiAirConfig
 
-var0.Battle.BattleAntiAirWeaponVO = class("BattleAntiAirWeaponVO", var0.Battle.BattlePlayerWeaponVO)
-var0.Battle.BattleAntiAirWeaponVO.__name = "BattleAntiAirWeaponVO"
+var0_0.Battle.BattleAntiAirWeaponVO = class("BattleAntiAirWeaponVO", var0_0.Battle.BattlePlayerWeaponVO)
+var0_0.Battle.BattleAntiAirWeaponVO.__name = "BattleAntiAirWeaponVO"
 
-local var4 = var0.Battle.BattleAntiAirWeaponVO
+local var4_0 = var0_0.Battle.BattleAntiAirWeaponVO
 
-function var4.Ctor(arg0, arg1)
-	var4.super.Ctor(arg0, arg1)
+function var4_0.Ctor(arg0_1, arg1_1)
+	var4_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0._restoreDenominator = var3.const_A
+	arg0_1._restoreDenominator = var3_0.const_A
 
-	arg0:ResetCost()
+	arg0_1:ResetCost()
 
-	arg0._restoreInterval = var3.Restore_Interval
+	arg0_1._restoreInterval = var3_0.Restore_Interval
 end
 
-function var4.SetBattleFleetVO(arg0, arg1)
-	arg0._battleFleetVO = arg1
+function var4_0.SetBattleFleetVO(arg0_2, arg1_2)
+	arg0_2._battleFleetVO = arg1_2
 end
 
-function var4.AppendWeapon(arg0, arg1)
-	var4.super.AppendWeapon(arg0, arg1)
-	arg1:SetTotalDurabilityInfo(arg0)
+function var4_0.AppendWeapon(arg0_3, arg1_3)
+	var4_0.super.AppendWeapon(arg0_3, arg1_3)
+	arg1_3:SetTotalDurabilityInfo(arg0_3)
 end
 
-function var4.RemoveWeapon(arg0, arg1)
-	local var0 = arg0.deleteElementFromArray(arg1, arg0._weaponList)
+function var4_0.RemoveWeapon(arg0_4, arg1_4)
+	local var0_4 = arg0_4.deleteElementFromArray(arg1_4, arg0_4._weaponList)
 
-	arg0._total = arg0._total - 1
-	arg0._count = arg0._count - 1
+	arg0_4._total = arg0_4._total - 1
+	arg0_4._count = arg0_4._count - 1
 
-	return var0
+	return var0_4
 end
 
-function var4.SetMax(arg0, arg1)
-	if arg1 > arg0._max then
-		arg0._current = arg0._current + (arg1 - arg0._max)
+function var4_0.SetMax(arg0_5, arg1_5)
+	if arg1_5 > arg0_5._max then
+		arg0_5._current = arg0_5._current + (arg1_5 - arg0_5._max)
 	end
 
-	var4.super.SetMax(arg0, arg1)
+	var4_0.super.SetMax(arg0_5, arg1_5)
 
-	if arg0._current > arg0._max then
-		arg0._current = arg0._max
+	if arg0_5._current > arg0_5._max then
+		arg0_5._current = arg0_5._max
 	end
 end
 
-function var4.SetAverageReload(arg0, arg1)
-	arg0._fleetReload = arg1
+function var4_0.SetAverageReload(arg0_6, arg1_6)
+	arg0_6._fleetReload = arg1_6
 end
 
-function var4.GetMaxRange(arg0)
-	local var0 = arg0._battleFleetVO:GetScoutList()
-	local var1 = 0
-	local var2 = #var0
+function var4_0.GetMaxRange(arg0_7)
+	local var0_7 = arg0_7._battleFleetVO:GetScoutList()
+	local var1_7 = 0
+	local var2_7 = #var0_7
 
-	if var2 > 0 then
-		local var3
+	if var2_7 > 0 then
+		local var3_7
 
-		for iter0 = 1, var2 do
-			if #var0[iter0]:GetAntiAirWeapon() > 0 then
-				var3 = var0[iter0]
+		for iter0_7 = 1, var2_7 do
+			if #var0_7[iter0_7]:GetAntiAirWeapon() > 0 then
+				var3_7 = var0_7[iter0_7]
 
 				break
 			end
 		end
 
-		if var3 then
-			local var4 = var3:GetAntiAirWeapon()
+		if var3_7 then
+			local var4_7 = var3_7:GetAntiAirWeapon()
 
-			for iter1, iter2 in ipairs(var4) do
-				var1 = math.max(var1, iter2:GetTemplateData().range)
+			for iter1_7, iter2_7 in ipairs(var4_7) do
+				var1_7 = math.max(var1_7, iter2_7:GetTemplateData().range)
 			end
 		end
 	end
 
-	return var1
+	return var1_7
 end
 
-function var4.SetActive(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0._weaponList) do
-		iter1:SetActive(arg1)
+function var4_0.SetActive(arg0_8, arg1_8)
+	for iter0_8, iter1_8 in ipairs(arg0_8._weaponList) do
+		iter1_8:SetActive(arg1_8)
 	end
 end
 
-function var4.Restore(arg0)
-	arg0._current = arg0._current + arg0._fleetReload / arg0._restoreDenominator
+function var4_0.Restore(arg0_9)
+	arg0_9._current = arg0_9._current + arg0_9._fleetReload / arg0_9._restoreDenominator
 
-	arg0:checkRestorState()
+	arg0_9:checkRestorState()
 end
 
-function var4.RestoreRate(arg0, arg1)
-	arg0._current = arg0._current + arg0._max * arg1
+function var4_0.RestoreRate(arg0_10, arg1_10)
+	arg0_10._current = arg0_10._current + arg0_10._max * arg1_10
 
-	arg0:checkRestorState()
+	arg0_10:checkRestorState()
 end
 
-function var4.checkRestorState(arg0)
-	if arg0._current >= arg0._max then
-		arg0._current = arg0._max
-		arg0._restoreDenominator = var3.const_A
-		arg0._isOverLoad = false
+function var4_0.checkRestorState(arg0_11)
+	if arg0_11._current >= arg0_11._max then
+		arg0_11._current = arg0_11._max
+		arg0_11._restoreDenominator = var3_0.const_A
+		arg0_11._isOverLoad = false
 
-		arg0:RemoveRestoreTimer()
-		arg0:DispatchOverLoadChange()
+		arg0_11:RemoveRestoreTimer()
+		arg0_11:DispatchOverLoadChange()
 	end
 end
 
-function var4.Consume(arg0)
-	arg0:RemoveRestoreTimer()
+function var4_0.Consume(arg0_12)
+	arg0_12:RemoveRestoreTimer()
 
-	arg0._current = arg0._current - arg0._consumeNormal
+	arg0_12._current = arg0_12._current - arg0_12._consumeNormal
 
-	if arg0._current <= 0 then
-		arg0._current = 0
-		arg0._restoreDenominator = var3.const_B
-		arg0._isOverLoad = true
+	if arg0_12._current <= 0 then
+		arg0_12._current = 0
+		arg0_12._restoreDenominator = var3_0.const_B
+		arg0_12._isOverLoad = true
 
-		arg0:DispatchOverLoadChange()
+		arg0_12:DispatchOverLoadChange()
 	end
 end
 
-function var4.ResetCost(arg0, arg1)
-	arg0._consumeNormal = arg1 or var3.const_N
+function var4_0.ResetCost(arg0_13, arg1_13)
+	arg0_13._consumeNormal = arg1_13 or var3_0.const_N
 end
 
-function var4.AddRestoreTimer(arg0)
-	if arg0._restoreTimer or arg0._current >= arg0._max then
+function var4_0.AddRestoreTimer(arg0_14)
+	if arg0_14._restoreTimer or arg0_14._current >= arg0_14._max then
 		return
 	end
 
-	local function var0()
-		arg0:Restore()
+	local function var0_14()
+		arg0_14:Restore()
 	end
 
-	arg0._restoreTimer = pg.TimeMgr.GetInstance():AddBattleTimer("AARestoreTimer", -1, arg0._restoreInterval, var0, true)
+	arg0_14._restoreTimer = pg.TimeMgr.GetInstance():AddBattleTimer("AARestoreTimer", -1, arg0_14._restoreInterval, var0_14, true)
 end
 
-function var4.RemoveRestoreTimer(arg0)
-	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0._restoreTimer)
+function var4_0.RemoveRestoreTimer(arg0_16)
+	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_16._restoreTimer)
 
-	arg0._restoreTimer = nil
+	arg0_16._restoreTimer = nil
 end
 
-function var4.Dispose(arg0)
-	arg0._battleFleetVO = nil
+function var4_0.Dispose(arg0_17)
+	arg0_17._battleFleetVO = nil
 
-	var4.super.Dispose(arg0)
+	var4_0.super.Dispose(arg0_17)
 end

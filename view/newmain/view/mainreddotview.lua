@@ -1,55 +1,55 @@
-﻿local var0 = class("MainReddotView")
+﻿local var0_0 = class("MainReddotView")
 
-function var0.Ctor(arg0)
-	arg0.listener = {}
-	arg0.redDotMgr = pg.RedDotMgr.GetInstance()
-	arg0.nodes = {}
+function var0_0.Ctor(arg0_1)
+	arg0_1.listener = {}
+	arg0_1.redDotMgr = pg.RedDotMgr.GetInstance()
+	arg0_1.nodes = {}
 end
 
-function var0.Init(arg0, arg1)
-	for iter0, iter1 in ipairs(arg1) do
-		table.insert(arg0.nodes, iter1)
+function var0_0.Init(arg0_2, arg1_2)
+	for iter0_2, iter1_2 in ipairs(arg1_2) do
+		table.insert(arg0_2.nodes, iter1_2)
 	end
 
-	arg0.redDotMgr:RegisterRedDotNodes(arg0.nodes)
+	arg0_2.redDotMgr:RegisterRedDotNodes(arg0_2.nodes)
 end
 
-function var0.AddNode(arg0, arg1)
-	table.insert(arg0.nodes, arg1)
-	arg0.redDotMgr:RegisterRedDotNode(arg1)
-	arg1:RefreshSelf()
+function var0_0.AddNode(arg0_3, arg1_3)
+	table.insert(arg0_3.nodes, arg1_3)
+	arg0_3.redDotMgr:RegisterRedDotNode(arg1_3)
+	arg1_3:RefreshSelf()
 end
 
-function var0.RemoveNode(arg0, arg1)
-	table.removebyvalue(arg0.nodes, arg1)
-	arg0.redDotMgr:UnRegisterRedDotNode(arg1)
+function var0_0.RemoveNode(arg0_4, arg1_4)
+	table.removebyvalue(arg0_4.nodes, arg1_4)
+	arg0_4.redDotMgr:UnRegisterRedDotNode(arg1_4)
 end
 
-function var0.Refresh(arg0)
-	for iter0, iter1 in ipairs(arg0.nodes) do
-		if iter1.Resume then
-			iter1:Resume()
+function var0_0.Refresh(arg0_5)
+	for iter0_5, iter1_5 in ipairs(arg0_5.nodes) do
+		if iter1_5.Resume then
+			iter1_5:Resume()
 		end
 	end
 
-	arg0:_Refresh()
+	arg0_5:_Refresh()
 end
 
-function var0._Refresh(arg0)
-	arg0.redDotMgr:_NotifyAll()
+function var0_0._Refresh(arg0_6)
+	arg0_6.redDotMgr:_NotifyAll()
 end
 
-function var0.Disable(arg0)
-	for iter0, iter1 in ipairs(arg0.nodes) do
-		if iter1.Puase then
-			iter1:Puase()
+function var0_0.Disable(arg0_7)
+	for iter0_7, iter1_7 in ipairs(arg0_7.nodes) do
+		if iter1_7.Puase then
+			iter1_7:Puase()
 		end
 	end
 end
 
-function var0.GetNotifyType(arg0)
-	if not arg0.listener or #arg0.listener == 0 then
-		arg0.listener = {
+function var0_0.GetNotifyType(arg0_8)
+	if not arg0_8.listener or #arg0_8.listener == 0 then
+		arg0_8.listener = {
 			[pg.RedDotMgr.TYPES.ATTIRE] = {
 				GAME.EDUCATE_GET_ENDINGS_DONE
 			},
@@ -106,29 +106,29 @@ function var0.GetNotifyType(arg0)
 		}
 	end
 
-	return arg0.listener
+	return arg0_8.listener
 end
 
-function var0.Notify(arg0, arg1)
-	for iter0, iter1 in pairs(arg0:GetNotifyType()) do
-		for iter2, iter3 in ipairs(iter1) do
-			if iter3 == arg1 then
-				arg0.redDotMgr:NotifyAll(iter0)
+function var0_0.Notify(arg0_9, arg1_9)
+	for iter0_9, iter1_9 in pairs(arg0_9:GetNotifyType()) do
+		for iter2_9, iter3_9 in ipairs(iter1_9) do
+			if iter3_9 == arg1_9 then
+				arg0_9.redDotMgr:NotifyAll(iter0_9)
 			end
 		end
 	end
 end
 
-function var0.Clear(arg0)
-	arg0.redDotMgr:UnRegisterRedDotNodes(arg0.nodes)
+function var0_0.Clear(arg0_10)
+	arg0_10.redDotMgr:UnRegisterRedDotNodes(arg0_10.nodes)
 
-	arg0.nodes = {}
+	arg0_10.nodes = {}
 end
 
-function var0.Dispose(arg0)
-	arg0:Clear()
+function var0_0.Dispose(arg0_11)
+	arg0_11:Clear()
 
-	arg0.listener = nil
+	arg0_11.listener = nil
 end
 
-return var0
+return var0_0

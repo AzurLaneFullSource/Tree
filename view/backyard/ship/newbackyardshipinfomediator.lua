@@ -1,140 +1,140 @@
-﻿local var0 = class("NewBackYardShipInfoMediator", import("...base.ContextMediator"))
+﻿local var0_0 = class("NewBackYardShipInfoMediator", import("...base.ContextMediator"))
 
-var0.EXTEND = "NewBackYardShipInfoMediator:EXTEND"
-var0.OPEN_CHUANWU = "NewBackYardShipInfoMediator:OPEN_CHUANWU"
-var0.UPDATE_SHIPS = "NewBackYardShipInfoMediator:UPDATE_SHIPS"
-var0.LOOG_PRESS_SHIP = "NewBackYardShipInfoMediator:LOOG_PRESS_SHIP"
+var0_0.EXTEND = "NewBackYardShipInfoMediator:EXTEND"
+var0_0.OPEN_CHUANWU = "NewBackYardShipInfoMediator:OPEN_CHUANWU"
+var0_0.UPDATE_SHIPS = "NewBackYardShipInfoMediator:UPDATE_SHIPS"
+var0_0.LOOG_PRESS_SHIP = "NewBackYardShipInfoMediator:LOOG_PRESS_SHIP"
 
-function var0.register(arg0)
-	arg0:bind(var0.EXTEND, function(arg0, arg1)
-		arg0:sendNotification(GAME.SHOPPING, {
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.EXTEND, function(arg0_2, arg1_2)
+		arg0_1:sendNotification(GAME.SHOPPING, {
 			count = 1,
-			id = arg1
+			id = arg1_2
 		})
 	end)
-	arg0:bind(var0.LOOG_PRESS_SHIP, function(arg0, arg1, arg2)
-		arg0.contextData.type = arg1
+	arg0_1:bind(var0_0.LOOG_PRESS_SHIP, function(arg0_3, arg1_3, arg2_3)
+		arg0_1.contextData.type = arg1_3
 
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
-			shipId = arg2.id
+			shipId = arg2_3.id
 		})
 	end)
-	arg0:bind(var0.OPEN_CHUANWU, function(arg0, arg1, arg2)
-		arg0.contextData.type = arg1
+	arg0_1:bind(var0_0.OPEN_CHUANWU, function(arg0_4, arg1_4, arg2_4)
+		arg0_1.contextData.type = arg1_4
 
-		arg0:OnSelShips(arg1, arg2)
+		arg0_1:OnSelShips(arg1_4, arg2_4)
 	end)
 end
 
-function var0.OnSelShips(arg0, arg1, arg2)
-	local var0 = getProxy(DormProxy):getRawData()
-	local var1, var2, var3 = arg0:GetSelectedShips(var0, arg1, arg2)
-	local var4 = {
+function var0_0.OnSelShips(arg0_5, arg1_5, arg2_5)
+	local var0_5 = getProxy(DormProxy):getRawData()
+	local var1_5, var2_5, var3_5 = arg0_5:GetSelectedShips(var0_5, arg1_5, arg2_5)
+	local var4_5 = {
 		callbackQuit = true,
-		selectedMax = arg0:GetMaxSel(var0, arg1),
-		quitTeam = arg2 ~= nil,
+		selectedMax = arg0_5:GetMaxSel(var0_5, arg1_5),
+		quitTeam = arg2_5 ~= nil,
 		ignoredIds = pg.ShipFlagMgr.GetInstance():FilterShips({
 			isActivityNpc = true
 		}),
-		selectedIds = var3,
-		preView = arg0.viewComponent.__cname,
+		selectedIds = var3_5,
+		preView = arg0_5.viewComponent.__cname,
 		hideTagFlags = ShipStatus.TAG_HIDE_BACKYARD,
 		blockTagFlags = ShipStatus.TAG_BLOCK_BACKYARD,
-		onShip = function(arg0, arg1, arg2)
-			return arg0:OnShip(var2, arg0, arg1, arg2)
+		onShip = function(arg0_6, arg1_6, arg2_6)
+			return arg0_5:OnShip(var2_5, arg0_6, arg1_6, arg2_6)
 		end,
-		onSelected = function(arg0, arg1)
-			arg0:OnSelected(arg1, arg2, arg0, function()
-				arg0:sendNotification(var0.UPDATE_SHIPS)
-				arg1()
+		onSelected = function(arg0_7, arg1_7)
+			arg0_5:OnSelected(arg1_5, arg2_5, arg0_7, function()
+				arg0_5:sendNotification(var0_0.UPDATE_SHIPS)
+				arg1_7()
 			end)
 		end,
 		priorEquipUpShipIDList = {}
 	}
 
-	for iter0, iter1 in pairs(var1) do
-		table.insert(var4.priorEquipUpShipIDList, iter1)
+	for iter0_5, iter1_5 in pairs(var1_5) do
+		table.insert(var4_5.priorEquipUpShipIDList, iter1_5)
 	end
 
-	for iter2, iter3 in pairs(var2) do
-		table.insert(var4.priorEquipUpShipIDList, iter3)
+	for iter2_5, iter3_5 in pairs(var2_5) do
+		table.insert(var4_5.priorEquipUpShipIDList, iter3_5)
 	end
 
-	var4.leftTopWithFrameInfo = i18n("backyard_longpress_ship_tip")
-	var4.isLayer = true
-	var4.energyDisplay = true
+	var4_5.leftTopWithFrameInfo = i18n("backyard_longpress_ship_tip")
+	var4_5.isLayer = true
+	var4_5.energyDisplay = true
 
-	arg0:addSubLayers(Context.New({
+	arg0_5:addSubLayers(Context.New({
 		viewComponent = DockyardScene,
 		mediator = DockyardMediator,
-		data = var4
+		data = var4_5
 	}))
 end
 
-function var0.GetMaxSel(arg0, arg1, arg2)
-	local var0 = 0
+function var0_0.GetMaxSel(arg0_9, arg1_9, arg2_9)
+	local var0_9 = 0
 
-	if arg2 == Ship.STATE_TRAIN then
-		var0 = arg1.exp_pos
-	elseif arg2 == Ship.STATE_REST then
-		var0 = arg1.rest_pos
+	if arg2_9 == Ship.STATE_TRAIN then
+		var0_9 = arg1_9.exp_pos
+	elseif arg2_9 == Ship.STATE_REST then
+		var0_9 = arg1_9.rest_pos
 	end
 
-	return var0
+	return var0_9
 end
 
-function var0.GetSelectedShips(arg0, arg1, arg2, arg3)
-	local var0 = arg3 and arg3.id or -1
-	local var1 = {}
-	local var2 = {}
-	local var3 = {}
+function var0_0.GetSelectedShips(arg0_10, arg1_10, arg2_10, arg3_10)
+	local var0_10 = arg3_10 and arg3_10.id or -1
+	local var1_10 = {}
+	local var2_10 = {}
+	local var3_10 = {}
 
-	for iter0, iter1 in ipairs(arg1.shipIds) do
-		local var4 = getProxy(BayProxy):RawGetShipById(iter1)
+	for iter0_10, iter1_10 in ipairs(arg1_10.shipIds) do
+		local var4_10 = getProxy(BayProxy):RawGetShipById(iter1_10)
 
-		if var4.state == arg2 then
-			table.insert(var1, var4.id)
+		if var4_10.state == arg2_10 then
+			table.insert(var1_10, var4_10.id)
 
-			if var4.id ~= var0 then
-				table.insert(var3, var4.id)
+			if var4_10.id ~= var0_10 then
+				table.insert(var3_10, var4_10.id)
 			end
 		else
-			table.insert(var2, var4.id)
+			table.insert(var2_10, var4_10.id)
 		end
 	end
 
-	return var1, var2, var3
+	return var1_10, var2_10, var3_10
 end
 
-function var0.OnShip(arg0, arg1, arg2, arg3, arg4)
-	if #arg4 > arg0.contextData.MaxRsetPos then
+function var0_0.OnShip(arg0_11, arg1_11, arg2_11, arg3_11, arg4_11)
+	if #arg4_11 > arg0_11.contextData.MaxRsetPos then
 		return false, i18n("backyard_no_pos_for_ship")
 	end
 
-	if table.contains(arg1, arg2.id) then
+	if table.contains(arg1_11, arg2_11.id) then
 		return false, i18n("backyard_backyardShipInfoMediator_shipState_rest")
 	end
 
-	local var0, var1 = ShipStatus.ShipStatusCheck("inBackyard", arg2, function(arg0)
-		arg3()
+	local var0_11, var1_11 = ShipStatus.ShipStatusCheck("inBackyard", arg2_11, function(arg0_12)
+		arg3_11()
 	end)
 
-	return var0, var1
+	return var0_11, var1_11
 end
 
-function var0.OnSelected(arg0, arg1, arg2, arg3, arg4)
-	local var0 = getProxy(DormProxy):getRawData():GetStateShipsById(arg1)
+function var0_0.OnSelected(arg0_13, arg1_13, arg2_13, arg3_13, arg4_13)
+	local var0_13 = getProxy(DormProxy):getRawData():GetStateShipsById(arg1_13)
 
 	pg.UIMgr.GetInstance():LoadingOn()
 
-	if arg3 == nil or #arg3 == 0 then
-		if arg2 then
-			arg0:sendNotification(GAME.EXIT_SHIP, {
-				shipId = arg2.id,
-				callback = arg4
+	if arg3_13 == nil or #arg3_13 == 0 then
+		if arg2_13 then
+			arg0_13:sendNotification(GAME.EXIT_SHIP, {
+				shipId = arg2_13.id,
+				callback = arg4_13
 			})
 		else
-			arg4()
+			arg4_13()
 		end
 
 		pg.UIMgr.GetInstance():LoadingOff()
@@ -142,74 +142,74 @@ function var0.OnSelected(arg0, arg1, arg2, arg3, arg4)
 		return
 	end
 
-	local var1 = {}
+	local var1_13 = {}
 
-	for iter0, iter1 in pairs(var0) do
-		if not table.contains(arg3, iter0) then
-			table.insert(var1, function(arg0)
-				arg0:sendNotification(GAME.EXIT_SHIP, {
-					shipId = iter0,
-					callback = arg0
+	for iter0_13, iter1_13 in pairs(var0_13) do
+		if not table.contains(arg3_13, iter0_13) then
+			table.insert(var1_13, function(arg0_14)
+				arg0_13:sendNotification(GAME.EXIT_SHIP, {
+					shipId = iter0_13,
+					callback = arg0_14
 				})
 			end)
 		end
 	end
 
-	arg0.contextData.shipIdToAdd = {}
+	arg0_13.contextData.shipIdToAdd = {}
 
-	for iter2, iter3 in ipairs(arg3) do
-		if not var0[iter3] then
-			local var2 = arg1 == Ship.STATE_TRAIN and 1 or 2
+	for iter2_13, iter3_13 in ipairs(arg3_13) do
+		if not var0_13[iter3_13] then
+			local var2_13 = arg1_13 == Ship.STATE_TRAIN and 1 or 2
 
-			table.insert(arg0.contextData.shipIdToAdd, {
-				iter3,
-				var2
+			table.insert(arg0_13.contextData.shipIdToAdd, {
+				iter3_13,
+				var2_13
 			})
 		end
 	end
 
-	if arg0.contextData.shipIdToAdd and #arg0.contextData.shipIdToAdd > 0 then
-		for iter4, iter5 in ipairs(arg0.contextData.shipIdToAdd) do
-			table.insert(var1, function(arg0)
-				arg0:sendNotification(GAME.ADD_SHIP, {
-					id = iter5[1],
-					type = iter5[2],
-					callBack = arg0
+	if arg0_13.contextData.shipIdToAdd and #arg0_13.contextData.shipIdToAdd > 0 then
+		for iter4_13, iter5_13 in ipairs(arg0_13.contextData.shipIdToAdd) do
+			table.insert(var1_13, function(arg0_15)
+				arg0_13:sendNotification(GAME.ADD_SHIP, {
+					id = iter5_13[1],
+					type = iter5_13[2],
+					callBack = arg0_15
 				})
 			end)
 		end
 	end
 
-	if #var1 > 0 then
-		seriesAsync(var1, function()
-			arg0.contextData.shipIdToAdd = nil
+	if #var1_13 > 0 then
+		seriesAsync(var1_13, function()
+			arg0_13.contextData.shipIdToAdd = nil
 
 			pg.UIMgr.GetInstance():LoadingOff()
-			arg4()
+			arg4_13()
 		end)
 	else
 		pg.UIMgr.GetInstance():LoadingOff()
-		arg4()
+		arg4_13()
 	end
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_17)
 	return {
 		GAME.EXTEND_BACKYARD_DONE,
-		var0.UPDATE_SHIPS
+		var0_0.UPDATE_SHIPS
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_18, arg1_18)
+	local var0_18 = arg1_18:getName()
+	local var1_18 = arg1_18:getBody()
 
-	if var0 == GAME.EXTEND_BACKYARD_DONE then
+	if var0_18 == GAME.EXTEND_BACKYARD_DONE then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardShipInfoMediator_ok_unlock"))
-		arg0.viewComponent:UpdateSlots()
-	elseif var0 == var0.UPDATE_SHIPS then
-		arg0.viewComponent:UpdateSlots()
+		arg0_18.viewComponent:UpdateSlots()
+	elseif var0_18 == var0_0.UPDATE_SHIPS then
+		arg0_18.viewComponent:UpdateSlots()
 	end
 end
 
-return var0
+return var0_0

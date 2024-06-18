@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_276 = {}
+var0_0.word_template_276 = {}
 
-local var1 = var0.word_template_276
+local var1_0 = var0_0.word_template_276
 
 function temp()
-	var1.躺 = {
+	var1_0.躺 = {
 		在 = {
 			床 = {
 				上 = {
@@ -73,7 +73,7 @@ end
 temp()
 
 function temp()
-	var1.涛 = {
+	var1_0.涛 = {
 		哥 = {
 			操 = {
 				怕 = {
@@ -123,7 +123,7 @@ end
 temp()
 
 function temp()
-	var1.掏 = {
+	var1_0.掏 = {
 		弄 = {
 			this = true
 		}
@@ -133,7 +133,7 @@ end
 temp()
 
 function temp()
-	var1.滔 = {
+	var1_0.滔 = {
 		天 = {
 			大 = {
 				罪 = {
@@ -153,7 +153,7 @@ end
 temp()
 
 function temp()
-	var1.匋 = {
+	var1_0.匋 = {
 		宏 = {
 			this = true
 		}
@@ -163,7 +163,7 @@ end
 temp()
 
 function temp()
-	var1.逃 = {
+	var1_0.逃 = {
 		离 = {
 			中 = {
 				国 = {
@@ -184,7 +184,7 @@ end
 temp()
 
 function temp()
-	var1.桃 = {
+	var1_0.桃 = {
 		花 = {
 			江 = {
 				黑 = {

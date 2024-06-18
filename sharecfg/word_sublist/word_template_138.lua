@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_138 = {}
+var0_0.word_template_138 = {}
 
-local var1 = var0.word_template_138
+local var1_0 = var0_0.word_template_138
 
 function temp()
-	var1.矶 = {
+	var1_0.矶 = {
 		山 = {
 			沙 = {
 				耶 = {
@@ -28,7 +28,7 @@ end
 temp()
 
 function temp()
-	var1.鸡 = {
+	var1_0.鸡 = {
 		８ = {
 			this = true
 		},
@@ -175,7 +175,7 @@ end
 temp()
 
 function temp()
-	var1.姬 = {
+	var1_0.姬 = {
 		勝 = {
 			德 = {
 				this = true
@@ -195,7 +195,7 @@ end
 temp()
 
 function temp()
-	var1.基 = {
+	var1_0.基 = {
 		地 = {
 			组 = {
 				织 = {
@@ -248,7 +248,7 @@ end
 temp()
 
 function temp()
-	var1.赍 = {
+	var1_0.赍 = {
 		this = {
 			this = true
 		}
@@ -258,7 +258,7 @@ end
 temp()
 
 function temp()
-	var1.賫 = {
+	var1_0.賫 = {
 		this = {
 			this = true
 		}
@@ -268,7 +268,7 @@ end
 temp()
 
 function temp()
-	var1.機 = {
+	var1_0.機 = {
 		["8"] = {
 			this = true
 		},

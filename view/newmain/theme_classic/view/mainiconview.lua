@@ -1,82 +1,82 @@
-﻿local var0 = class("MainIconView", import("...base.MainBaseView"))
-local var1 = 1
-local var2 = 2
+﻿local var0_0 = class("MainIconView", import("...base.MainBaseView"))
+local var1_0 = 1
+local var2_0 = 2
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1, nil)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1, nil)
 
-	arg0._tf = arg1
-	arg0._go = arg1.gameObject
-	arg0.iconList = {
-		[var1] = MainSpineIcon.New(arg1),
-		[var2] = MainEducateCharIcon.New(arg1)
+	arg0_1._tf = arg1_1
+	arg0_1._go = arg1_1.gameObject
+	arg0_1.iconList = {
+		[var1_0] = MainSpineIcon.New(arg1_1),
+		[var2_0] = MainEducateCharIcon.New(arg1_1)
 	}
 end
 
-function var0.GetIconType(arg0, arg1)
-	if isa(arg1, VirtualEducateCharShip) then
-		return var2
+function var0_0.GetIconType(arg0_2, arg1_2)
+	if isa(arg1_2, VirtualEducateCharShip) then
+		return var2_0
 	else
-		return var1
+		return var1_0
 	end
 end
 
-function var0.Init(arg0, arg1)
-	arg0.ship = arg1
+function var0_0.Init(arg0_3, arg1_3)
+	arg0_3.ship = arg1_3
 
-	local var0 = arg0:GetIconType(arg1)
+	local var0_3 = arg0_3:GetIconType(arg1_3)
 
-	if arg0.iconInstance then
-		arg0.iconInstance:Unload()
+	if arg0_3.iconInstance then
+		arg0_3.iconInstance:Unload()
 
-		arg0.iconInstance = nil
+		arg0_3.iconInstance = nil
 	end
 
-	arg0.iconInstance = arg0.iconList[var0]
+	arg0_3.iconInstance = arg0_3.iconList[var0_3]
 
-	arg0.iconInstance:Load(arg1:getPrefab())
+	arg0_3.iconInstance:Load(arg1_3:getPrefab())
 end
 
-function var0.Refresh(arg0, arg1)
-	local var0 = arg1:getPrefab()
-	local var1 = arg0:GetIconType(arg1)
+function var0_0.Refresh(arg0_4, arg1_4)
+	local var0_4 = arg1_4:getPrefab()
+	local var1_4 = arg0_4:GetIconType(arg1_4)
 
-	if arg0.iconList[var1] ~= arg0.iconInstance or arg0.name ~= var0 then
-		arg0:Init(arg1)
-	elseif arg0.iconInstance then
-		arg0.iconInstance:Resume()
+	if arg0_4.iconList[var1_4] ~= arg0_4.iconInstance or arg0_4.name ~= var0_4 then
+		arg0_4:Init(arg1_4)
+	elseif arg0_4.iconInstance then
+		arg0_4.iconInstance:Resume()
 	end
 
-	arg0.ship = arg1
+	arg0_4.ship = arg1_4
 end
 
-function var0.Disable(arg0)
-	if arg0.iconInstance then
-		arg0.iconInstance:Pause()
+function var0_0.Disable(arg0_5)
+	if arg0_5.iconInstance then
+		arg0_5.iconInstance:Pause()
 	end
 end
 
-function var0.IsLoading(arg0)
-	if arg0.iconInstance then
-		return arg0.iconInstance:IsLoading()
+function var0_0.IsLoading(arg0_6)
+	if arg0_6.iconInstance then
+		return arg0_6.iconInstance:IsLoading()
 	end
 
 	return false
 end
 
-function var0.GetDirection(arg0)
+function var0_0.GetDirection(arg0_7)
 	return Vector2(0, 1)
 end
 
-function var0.Dispose(arg0)
-	var0.super.Dispose(arg0)
+function var0_0.Dispose(arg0_8)
+	var0_0.super.Dispose(arg0_8)
 
-	for iter0, iter1 in ipairs(arg0.iconList) do
-		iter1:Dispose()
+	for iter0_8, iter1_8 in ipairs(arg0_8.iconList) do
+		iter1_8:Dispose()
 	end
 
-	arg0.iconList = nil
-	arg0.iconInstance = nil
+	arg0_8.iconList = nil
+	arg0_8.iconInstance = nil
 end
 
-return var0
+return var0_0

@@ -1,11 +1,11 @@
-﻿local var0 = class("BeatMonsterNianConst")
+﻿local var0_0 = class("BeatMonsterNianConst")
 
-var0.INPUT_TIME = 3
-var0.ACTION_NAME_L = "L"
-var0.ACTION_NAME_R = "R"
-var0.ACTION_NAME_A = "A"
-var0.ACTION_NAME_B = "B"
-var0.MotionCombinations = {
+var0_0.INPUT_TIME = 3
+var0_0.ACTION_NAME_L = "L"
+var0_0.ACTION_NAME_R = "R"
+var0_0.ACTION_NAME_A = "A"
+var0_0.ACTION_NAME_B = "B"
+var0_0.MotionCombinations = {
 	BLB = "isAttack7",
 	BRA = "isAttack6",
 	ARA = "isAttack6",
@@ -40,16 +40,16 @@ var0.MotionCombinations = {
 	RRB = "isAttack5"
 }
 
-function var0.MatchAction(arg0)
-	return var0.MotionCombinations[arg0] ~= nil
+function var0_0.MatchAction(arg0_1)
+	return var0_0.MotionCombinations[arg0_1] ~= nil
 end
 
-function var0.GetMatchAction(arg0)
-	return var0.MotionCombinations[arg0]
+function var0_0.GetMatchAction(arg0_2)
+	return var0_0.MotionCombinations[arg0_2]
 end
 
-function var0.GetMonsterAction(arg0)
+function var0_0.GetMonsterAction(arg0_3)
 	return "isAttack"
 end
 
-return var0
+return var0_0

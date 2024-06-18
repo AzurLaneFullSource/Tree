@@ -1,72 +1,72 @@
-﻿local var0 = class("CurlingGamePage", import("...base.BaseActivityPage"))
+﻿local var0_0 = class("CurlingGamePage", import("...base.BaseActivityPage"))
 
-function var0.OnInit(arg0)
-	arg0.progressTpl = arg0:findTF("ProgressTpl")
-	arg0.progressTplContainer = arg0:findTF("ProgressList")
-	arg0.progressUIItemList = UIItemList.New(arg0.progressTplContainer, arg0.progressTpl)
-	arg0.goBtn = arg0:findTF("GoBtn")
+function var0_0.OnInit(arg0_1)
+	arg0_1.progressTpl = arg0_1:findTF("ProgressTpl")
+	arg0_1.progressTplContainer = arg0_1:findTF("ProgressList")
+	arg0_1.progressUIItemList = UIItemList.New(arg0_1.progressTplContainer, arg0_1.progressTpl)
+	arg0_1.goBtn = arg0_1:findTF("GoBtn")
 end
 
-function var0.OnDataSetting(arg0)
-	local var0 = arg0.activity:getConfig("config_id")
-	local var1 = getProxy(MiniGameProxy):GetHubByHubId(var0)
+function var0_0.OnDataSetting(arg0_2)
+	local var0_2 = arg0_2.activity:getConfig("config_id")
+	local var1_2 = getProxy(MiniGameProxy):GetHubByHubId(var0_2)
 
-	arg0.needCount = var1:getConfig("reward_need")
-	arg0.leftCount = var1.count
-	arg0.playedCount = var1.usedtime
-	arg0.isGotAward = var1.ultimate > 0
-	arg0.curDay = arg0.leftCount + arg0.playedCount
+	arg0_2.needCount = var1_2:getConfig("reward_need")
+	arg0_2.leftCount = var1_2.count
+	arg0_2.playedCount = var1_2.usedtime
+	arg0_2.isGotAward = var1_2.ultimate > 0
+	arg0_2.curDay = arg0_2.leftCount + arg0_2.playedCount
 end
 
-function var0.OnFirstFlush(arg0)
-	arg0.progressUIItemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			arg1 = arg1 + 1
+function var0_0.OnFirstFlush(arg0_3)
+	arg0_3.progressUIItemList:make(function(arg0_4, arg1_4, arg2_4)
+		if arg0_4 == UIItemList.EventUpdate then
+			arg1_4 = arg1_4 + 1
 
-			local var0 = arg0:findTF("Unlocked", arg2)
-			local var1 = arg0:findTF("Finished", arg2)
-			local var2 = arg0:findTF("Current", arg2)
+			local var0_4 = arg0_3:findTF("Unlocked", arg2_4)
+			local var1_4 = arg0_3:findTF("Finished", arg2_4)
+			local var2_4 = arg0_3:findTF("Current", arg2_4)
 
-			setActive(var2, arg1 == arg0.playedCount)
+			setActive(var2_4, arg1_4 == arg0_3.playedCount)
 
-			if arg1 <= arg0.curDay then
-				setActive(var0, arg1 > arg0.playedCount)
-				setActive(var1, arg1 <= arg0.playedCount and arg1 ~= arg0.needCount)
+			if arg1_4 <= arg0_3.curDay then
+				setActive(var0_4, arg1_4 > arg0_3.playedCount)
+				setActive(var1_4, arg1_4 <= arg0_3.playedCount and arg1_4 ~= arg0_3.needCount)
 			else
-				setActive(var0, false)
-				setActive(var1, false)
+				setActive(var0_4, false)
+				setActive(var1_4, false)
 			end
 		end
 	end)
-	arg0.progressUIItemList:align(arg0.needCount)
-	onButton(arg0, arg0.goBtn, function()
+	arg0_3.progressUIItemList:align(arg0_3.needCount)
+	onButton(arg0_3, arg0_3.goBtn, function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 33)
 	end, SFX_PANEL)
-	arg0:tryGetFinalAward()
+	arg0_3:tryGetFinalAward()
 end
 
-function var0.OnUpdateFlush(arg0)
+function var0_0.OnUpdateFlush(arg0_6)
 	return
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_7)
 	return
 end
 
-function var0.tryGetFinalAward(arg0)
-	local var0 = arg0.activity:getConfig("config_id")
-	local var1 = getProxy(MiniGameProxy):GetHubByHubId(var0)
-	local var2 = var1.usedtime
-	local var3 = var1:getConfig("reward_need")
-	local var4 = var1.ultimate > 0
+function var0_0.tryGetFinalAward(arg0_8)
+	local var0_8 = arg0_8.activity:getConfig("config_id")
+	local var1_8 = getProxy(MiniGameProxy):GetHubByHubId(var0_8)
+	local var2_8 = var1_8.usedtime
+	local var3_8 = var1_8:getConfig("reward_need")
+	local var4_8 = var1_8.ultimate > 0
 
-	if var3 <= var2 and not var4 then
+	if var3_8 <= var2_8 and not var4_8 then
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = var1.id,
+			hubid = var1_8.id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
 	end
 end
 
-return var0
+return var0_0

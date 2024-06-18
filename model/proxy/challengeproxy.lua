@@ -1,101 +1,101 @@
-﻿local var0 = class("ChallengeProxy", import(".NetProxy"))
+﻿local var0_0 = class("ChallengeProxy", import(".NetProxy"))
 
-var0.MODE_CASUAL = 0
-var0.MODE_INFINITE = 1
+var0_0.MODE_CASUAL = 0
+var0_0.MODE_INFINITE = 1
 
-function var0.register(arg0)
-	arg0._curMode = var0.MODE_CASUAL
-	arg0._challengeInfo = nil
-	arg0._userChallengeList = {}
+function var0_0.register(arg0_1)
+	arg0_1._curMode = var0_0.MODE_CASUAL
+	arg0_1._challengeInfo = nil
+	arg0_1._userChallengeList = {}
 
-	arg0:on(24010, function(arg0)
-		arg0:updateCombatScore(arg0.score)
+	arg0_1:on(24010, function(arg0_2)
+		arg0_1:updateCombatScore(arg0_2.score)
 	end)
 end
 
-function var0.userSeaonExpire(arg0, arg1)
-	if arg0._challengeInfo:getSeasonID() ~= arg0._userChallengeList[arg1]:getSeasonID() then
+function var0_0.userSeaonExpire(arg0_3, arg1_3)
+	if arg0_3._challengeInfo:getSeasonID() ~= arg0_3._userChallengeList[arg1_3]:getSeasonID() then
 		return true
 	else
 		return false
 	end
 end
 
-function var0.updateCombatScore(arg0, arg1)
-	arg0:getUserChallengeInfo(arg0._curMode):updateCombatScore(arg1)
+function var0_0.updateCombatScore(arg0_4, arg1_4)
+	arg0_4:getUserChallengeInfo(arg0_4._curMode):updateCombatScore(arg1_4)
 end
 
-function var0.updateSeasonChallenge(arg0, arg1)
-	if not arg0._challengeInfo then
-		arg0._challengeInfo = ChallengeInfo.New(arg1)
+function var0_0.updateSeasonChallenge(arg0_5, arg1_5)
+	if not arg0_5._challengeInfo then
+		arg0_5._challengeInfo = ChallengeInfo.New(arg1_5)
 	else
-		arg0._challengeInfo:UpdateChallengeInfo(arg1)
+		arg0_5._challengeInfo:UpdateChallengeInfo(arg1_5)
 	end
 end
 
-function var0.updateCurrentChallenge(arg0, arg1)
-	local var0 = arg1.mode
-	local var1 = arg0._userChallengeList[var0]
+function var0_0.updateCurrentChallenge(arg0_6, arg1_6)
+	local var0_6 = arg1_6.mode
+	local var1_6 = arg0_6._userChallengeList[var0_6]
 
-	if var1 == nil then
-		arg0._userChallengeList[var0] = UserChallengeInfo.New(arg1)
+	if var1_6 == nil then
+		arg0_6._userChallengeList[var0_6] = UserChallengeInfo.New(arg1_6)
 	else
-		var1:UpdateChallengeInfo(arg1)
+		var1_6:UpdateChallengeInfo(arg1_6)
 	end
 end
 
-function var0.GetCurrentChallenge(arg0, arg1)
-	return arg0._userChallengeList
+function var0_0.GetCurrentChallenge(arg0_7, arg1_7)
+	return arg0_7._userChallengeList
 end
 
-function var0.getCurMode(arg0)
-	return arg0._curMode
+function var0_0.getCurMode(arg0_8)
+	return arg0_8._curMode
 end
 
-function var0.setCurMode(arg0, arg1)
-	if arg1 == var0.MODE_CASUAL then
-		arg0._curMode = var0.MODE_CASUAL
-	elseif arg1 == var0.MODE_INFINITE then
-		arg0._curMode = var0.MODE_INFINITE
+function var0_0.setCurMode(arg0_9, arg1_9)
+	if arg1_9 == var0_0.MODE_CASUAL then
+		arg0_9._curMode = var0_0.MODE_CASUAL
+	elseif arg1_9 == var0_0.MODE_INFINITE then
+		arg0_9._curMode = var0_0.MODE_INFINITE
 	else
 		assert(false, "challenge mode undefined")
 	end
 end
 
-function var0.getChallengeInfo(arg0)
-	return arg0._challengeInfo
+function var0_0.getChallengeInfo(arg0_10)
+	return arg0_10._challengeInfo
 end
 
-function var0.getUserChallengeInfoList(arg0)
-	return arg0._userChallengeList
+function var0_0.getUserChallengeInfoList(arg0_11)
+	return arg0_11._userChallengeList
 end
 
-function var0.getUserChallengeInfo(arg0, arg1)
-	return arg0._userChallengeList[arg1]
+function var0_0.getUserChallengeInfo(arg0_12, arg1_12)
+	return arg0_12._userChallengeList[arg1_12]
 end
 
-function var0.WriteBackOnExitBattleResult(arg0, arg1, arg2)
-	local var0 = arg0:getUserChallengeInfo(arg2)
+function var0_0.WriteBackOnExitBattleResult(arg0_13, arg1_13, arg2_13)
+	local var0_13 = arg0_13:getUserChallengeInfo(arg2_13)
 
-	if arg1 < ys.Battle.BattleConst.BattleScore.S then
-		arg0:sendNotification(GAME.CHALLENGE2_RESET, {
-			mode = arg2
+	if arg1_13 < ys.Battle.BattleConst.BattleScore.S then
+		arg0_13:sendNotification(GAME.CHALLENGE2_RESET, {
+			mode = arg2_13
 		})
 	else
-		local var1 = var0:IsFinish()
+		local var1_13 = var0_13:IsFinish()
 
-		var0:updateLevelForward()
+		var0_13:updateLevelForward()
 
-		if var0:getMode() == ChallengeProxy.MODE_INFINITE and var1 then
-			var0:setInfiniteDungeonIDListByLevel()
+		if var0_13:getMode() == ChallengeProxy.MODE_INFINITE and var1_13 then
+			var0_13:setInfiniteDungeonIDListByLevel()
 		end
 	end
 
-	local var2 = arg0:getChallengeInfo()
+	local var2_13 = arg0_13:getChallengeInfo()
 
-	if not arg0:userSeaonExpire(var0:getMode()) then
-		var2:checkRecord(var0)
+	if not arg0_13:userSeaonExpire(var0_13:getMode()) then
+		var2_13:checkRecord(var0_13)
 	end
 end
 
-return var0
+return var0_0

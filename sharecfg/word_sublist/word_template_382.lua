@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_382 = {}
+var0_0.word_template_382 = {}
 
-local var1 = var0.word_template_382
+local var1_0 = var0_0.word_template_382
 
 function temp()
-	var1.羣 = {
+	var1_0.羣 = {
 		P = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.隂 = {
+	var1_0.隂 = {
 		b = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.灋 = {
+	var1_0.灋 = {
 		["\\"] = {
 			輪 = {
 				this = true
@@ -44,7 +44,7 @@ end
 temp()
 
 function temp()
-	var1.韃 = {
+	var1_0.韃 = {
 		子 = {
 			this = true
 		}
@@ -54,7 +54,7 @@ end
 temp()
 
 function temp()
-	var1.z = {
+	var1_0.z = {
 		t = {
 			验 = {
 				证 = {
@@ -225,7 +225,7 @@ end
 temp()
 
 function temp()
-	var1.喫 = {
+	var1_0.喫 = {
 		中 = {
 			國 = {
 				的 = {
@@ -241,7 +241,7 @@ end
 temp()
 
 function temp()
-	var1.潤 = {
+	var1_0.潤 = {
 		之 = {
 			this = true
 		}

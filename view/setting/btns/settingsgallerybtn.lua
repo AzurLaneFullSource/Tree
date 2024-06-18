@@ -1,65 +1,65 @@
-﻿local var0 = class("SettingsGalleryBtn", import(".SettingsDownloadableBtn"))
+﻿local var0_0 = class("SettingsGalleryBtn", import(".SettingsDownloadableBtn"))
 
-function var0.GetDownloadGroup(arg0)
+function var0_0.GetDownloadGroup(arg0_1)
 	return "GALLERY_PIC"
 end
 
-function var0.GetLocaltion(arg0, arg1, arg2)
-	local var0 = ""
+function var0_0.GetLocaltion(arg0_2, arg1_2, arg2_2)
+	local var0_2 = ""
 
-	if arg1 == DownloadState.None then
-		if arg2 == 1 then
-			var0 = i18n("word_soundfiles_download_title")
-		elseif arg2 == 2 then
-			var0 = i18n("word_soundfiles_download")
+	if arg1_2 == DownloadState.None then
+		if arg2_2 == 1 then
+			var0_2 = i18n("word_soundfiles_download_title")
+		elseif arg2_2 == 2 then
+			var0_2 = i18n("word_soundfiles_download")
 		end
-	elseif arg1 == DownloadState.Checking then
-		if arg2 == 1 then
-			var0 = i18n("word_soundfiles_checking_title")
-		elseif arg2 == 2 then
-			var0 = i18n("word_soundfiles_checking")
+	elseif arg1_2 == DownloadState.Checking then
+		if arg2_2 == 1 then
+			var0_2 = i18n("word_soundfiles_checking_title")
+		elseif arg2_2 == 2 then
+			var0_2 = i18n("word_soundfiles_checking")
 		end
-	elseif arg1 == DownloadState.CheckToUpdate then
-		if arg2 == 1 then
-			var0 = i18n("word_soundfiles_checkend_title")
-		elseif arg2 == 2 then
-			var0 = i18n("word_soundfiles_checkend")
+	elseif arg1_2 == DownloadState.CheckToUpdate then
+		if arg2_2 == 1 then
+			var0_2 = i18n("word_soundfiles_checkend_title")
+		elseif arg2_2 == 2 then
+			var0_2 = i18n("word_soundfiles_checkend")
 		end
-	elseif arg1 == DownloadState.CheckOver then
-		if arg2 == 1 then
-			var0 = i18n("word_soundfiles_checkend_title")
-		elseif arg2 == 2 then
-			var0 = i18n("word_soundfiles_noneedupdate")
+	elseif arg1_2 == DownloadState.CheckOver then
+		if arg2_2 == 1 then
+			var0_2 = i18n("word_soundfiles_checkend_title")
+		elseif arg2_2 == 2 then
+			var0_2 = i18n("word_soundfiles_noneedupdate")
 		end
-	elseif arg1 == DownloadState.CheckFailure then
-		if arg2 == 1 then
-			var0 = i18n("word_soundfiles_checkfailed")
-		elseif arg2 == 2 then
-			var0 = i18n("word_soundfiles_retry")
+	elseif arg1_2 == DownloadState.CheckFailure then
+		if arg2_2 == 1 then
+			var0_2 = i18n("word_soundfiles_checkfailed")
+		elseif arg2_2 == 2 then
+			var0_2 = i18n("word_soundfiles_retry")
 		end
-	elseif arg1 == DownloadState.Updating then
-		if arg2 == 1 then
-			var0 = i18n("word_soundfiles_update")
+	elseif arg1_2 == DownloadState.Updating then
+		if arg2_2 == 1 then
+			var0_2 = i18n("word_soundfiles_update")
 		end
-	elseif arg1 == DownloadState.UpdateSuccess then
-		if arg2 == 1 then
-			var0 = i18n("word_soundfiles_update_end_title")
-		elseif arg2 == 2 then
-			var0 = i18n("word_soundfiles_update_end")
+	elseif arg1_2 == DownloadState.UpdateSuccess then
+		if arg2_2 == 1 then
+			var0_2 = i18n("word_soundfiles_update_end_title")
+		elseif arg2_2 == 2 then
+			var0_2 = i18n("word_soundfiles_update_end")
 		end
-	elseif arg1 == DownloadState.UpdateFailure then
-		if arg2 == 1 then
-			var0 = i18n("word_soundfiles_update_failed")
-		elseif arg2 == 2 then
-			var0 = i18n("word_soundfiles_update_retry")
+	elseif arg1_2 == DownloadState.UpdateFailure then
+		if arg2_2 == 1 then
+			var0_2 = i18n("word_soundfiles_update_failed")
+		elseif arg2_2 == 2 then
+			var0_2 = i18n("word_soundfiles_update_retry")
 		end
 	end
 
-	return var0
+	return var0_2
 end
 
-function var0.GetTitle(arg0)
+function var0_0.GetTitle(arg0_3)
 	return i18n("setting_resdownload_title_gallery")
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_146 = {}
+var0_0.word_template_146 = {}
 
-local var1 = var0.word_template_146
+local var1_0 = var0_0.word_template_146
 
 function temp()
-	var1.监 = {
+	var1_0.监 = {
 		督 = {
 			this = true
 		},
@@ -70,7 +70,7 @@ end
 temp()
 
 function temp()
-	var1.兼 = {
+	var1_0.兼 = {
 		职 = {
 			m = {
 				m = {
@@ -186,7 +186,7 @@ end
 temp()
 
 function temp()
-	var1.菅 = {
+	var1_0.菅 = {
 		野 = {
 			亚 = {
 				梨 = {
@@ -217,7 +217,7 @@ end
 temp()
 
 function temp()
-	var1.湔 = {
+	var1_0.湔 = {
 		this = {
 			this = true
 		}
@@ -227,7 +227,7 @@ end
 temp()
 
 function temp()
-	var1.搛 = {
+	var1_0.搛 = {
 		this = {
 			this = true
 		}
@@ -237,7 +237,7 @@ end
 temp()
 
 function temp()
-	var1.蒹 = {
+	var1_0.蒹 = {
 		职 = {
 			美 = {
 				女 = {
@@ -251,7 +251,7 @@ end
 temp()
 
 function temp()
-	var1.監 = {
+	var1_0.監 = {
 		督 = {
 			this = true
 		},

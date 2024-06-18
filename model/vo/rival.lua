@@ -1,79 +1,79 @@
-﻿local var0 = class("Rival", import(".PlayerAttire"))
+﻿local var0_0 = class("Rival", import(".PlayerAttire"))
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0.id = arg1.id
-	arg0.level = arg1.level
-	arg0.name = arg1.name
-	arg0.score = arg1.score or 0
-	arg0.rank = arg1.rank
-	arg0.vanguardShips = {}
-	arg0.mainShips = {}
+	arg0_1.id = arg1_1.id
+	arg0_1.level = arg1_1.level
+	arg0_1.name = arg1_1.name
+	arg0_1.score = arg1_1.score or 0
+	arg0_1.rank = arg1_1.rank
+	arg0_1.vanguardShips = {}
+	arg0_1.mainShips = {}
 
-	local function var0(arg0)
-		if arg0:getTeamType() == TeamType.Vanguard then
-			table.insert(arg0.vanguardShips, arg0)
-		elseif arg0:getTeamType() == TeamType.Main then
-			table.insert(arg0.mainShips, arg0)
+	local function var0_1(arg0_2)
+		if arg0_2:getTeamType() == TeamType.Vanguard then
+			table.insert(arg0_1.vanguardShips, arg0_2)
+		elseif arg0_2:getTeamType() == TeamType.Main then
+			table.insert(arg0_1.mainShips, arg0_2)
 		end
 	end
 
-	for iter0, iter1 in ipairs(arg1.vanguard_ship_list) do
-		local var1 = RivalShip.New(iter1)
+	for iter0_1, iter1_1 in ipairs(arg1_1.vanguard_ship_list) do
+		local var1_1 = RivalShip.New(iter1_1)
 
-		var1.isRival = true
+		var1_1.isRival = true
 
-		var0(var1)
+		var0_1(var1_1)
 	end
 
-	for iter2, iter3 in ipairs(arg1.main_ship_list) do
-		local var2 = RivalShip.New(iter3)
+	for iter2_1, iter3_1 in ipairs(arg1_1.main_ship_list) do
+		local var2_1 = RivalShip.New(iter3_1)
 
-		var2.isRival = true
+		var2_1.isRival = true
 
-		var0(var2)
+		var0_1(var2_1)
 	end
 
-	arg0.score = arg0.score + SeasonInfo.INIT_POINT
+	arg0_1.score = arg0_1.score + SeasonInfo.INIT_POINT
 end
 
-function var0.getPainting(arg0)
-	local var0 = pg.ship_skin_template[arg0.skinId]
+function var0_0.getPainting(arg0_3)
+	local var0_3 = pg.ship_skin_template[arg0_3.skinId]
 
-	return var0 and var0.painting or "unknown"
+	return var0_3 and var0_3.painting or "unknown"
 end
 
-function var0.getShips(arg0)
-	local var0 = {}
+function var0_0.getShips(arg0_4)
+	local var0_4 = {}
 
-	for iter0, iter1 in ipairs(arg0.vanguardShips) do
-		table.insert(var0, iter1)
+	for iter0_4, iter1_4 in ipairs(arg0_4.vanguardShips) do
+		table.insert(var0_4, iter1_4)
 	end
 
-	for iter2, iter3 in ipairs(arg0.mainShips) do
-		table.insert(var0, iter3)
+	for iter2_4, iter3_4 in ipairs(arg0_4.mainShips) do
+		table.insert(var0_4, iter3_4)
 	end
 
-	return var0
+	return var0_4
 end
 
-function var0.GetGearScoreSum(arg0, arg1)
-	local var0
+function var0_0.GetGearScoreSum(arg0_5, arg1_5)
+	local var0_5
 
-	if arg1 == "main" then
-		var0 = arg0.mainShips
-	elseif arg1 == "vanguard" then
-		var0 = arg0.vanguardShips
+	if arg1_5 == "main" then
+		var0_5 = arg0_5.mainShips
+	elseif arg1_5 == "vanguard" then
+		var0_5 = arg0_5.vanguardShips
 	end
 
-	local var1 = 0
+	local var1_5 = 0
 
-	for iter0, iter1 in ipairs(var0) do
-		var1 = var1 + iter1:getShipCombatPower()
+	for iter0_5, iter1_5 in ipairs(var0_5) do
+		var1_5 = var1_5 + iter1_5:getShipCombatPower()
 	end
 
-	return var1
+	return var1_5
 end
 
-return var0
+return var0_0

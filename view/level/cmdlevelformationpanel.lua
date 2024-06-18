@@ -1,153 +1,153 @@
-﻿local var0 = class("CmdLevelFormationPanel", import("..base.BasePanel"))
+﻿local var0_0 = class("CmdLevelFormationPanel", import("..base.BasePanel"))
 
-function var0.init(arg0)
-	arg0.descPanel = arg0:findTF("desc")
-	arg0.descFrameTF = arg0:findTF("desc/frame")
-	arg0.descPos1 = arg0:findTF("commander1/frame/info", arg0.descFrameTF)
-	arg0.descPos2 = arg0:findTF("commander2/frame/info", arg0.descFrameTF)
-	arg0.skillTFPos1 = arg0:findTF("commander1/skill_info", arg0.descFrameTF)
-	arg0.skillTFPos2 = arg0:findTF("commander2/skill_info", arg0.descFrameTF)
-	arg0.abilitysTF = UIItemList.New(arg0:findTF("atttr_panel/abilitys/mask/content", arg0.descFrameTF), arg0:findTF("atttr_panel/abilitys/mask/content/attr", arg0.descFrameTF))
-	arg0.talentsTF = UIItemList.New(arg0:findTF("atttr_panel/talents/mask/content", arg0.descFrameTF), arg0:findTF("atttr_panel/talents/mask/content/attr", arg0.descFrameTF))
-	arg0.abilityArr = arg0:findTF("desc/frame/atttr_panel/abilitys/arr")
-	arg0.talentsArr = arg0:findTF("desc/frame/atttr_panel/talents/arr")
-	arg0.animtion = arg0.descPanel:GetComponent("Animation")
-	arg0.animtionEvent = arg0:findTF("desc"):GetComponent(typeof(DftAniEvent))
+function var0_0.init(arg0_1)
+	arg0_1.descPanel = arg0_1:findTF("desc")
+	arg0_1.descFrameTF = arg0_1:findTF("desc/frame")
+	arg0_1.descPos1 = arg0_1:findTF("commander1/frame/info", arg0_1.descFrameTF)
+	arg0_1.descPos2 = arg0_1:findTF("commander2/frame/info", arg0_1.descFrameTF)
+	arg0_1.skillTFPos1 = arg0_1:findTF("commander1/skill_info", arg0_1.descFrameTF)
+	arg0_1.skillTFPos2 = arg0_1:findTF("commander2/skill_info", arg0_1.descFrameTF)
+	arg0_1.abilitysTF = UIItemList.New(arg0_1:findTF("atttr_panel/abilitys/mask/content", arg0_1.descFrameTF), arg0_1:findTF("atttr_panel/abilitys/mask/content/attr", arg0_1.descFrameTF))
+	arg0_1.talentsTF = UIItemList.New(arg0_1:findTF("atttr_panel/talents/mask/content", arg0_1.descFrameTF), arg0_1:findTF("atttr_panel/talents/mask/content/attr", arg0_1.descFrameTF))
+	arg0_1.abilityArr = arg0_1:findTF("desc/frame/atttr_panel/abilitys/arr")
+	arg0_1.talentsArr = arg0_1:findTF("desc/frame/atttr_panel/talents/arr")
+	arg0_1.animtion = arg0_1.descPanel:GetComponent("Animation")
+	arg0_1.animtionEvent = arg0_1:findTF("desc"):GetComponent(typeof(DftAniEvent))
 end
 
-function var0.update(arg0, arg1, arg2)
-	arg0.callback = arg2
+function var0_0.update(arg0_2, arg1_2, arg2_2)
+	arg0_2.callback = arg2_2
 
-	assert(arg1)
+	assert(arg1_2)
 
-	arg0.fleet = arg1
+	arg0_2.fleet = arg1_2
 
-	arg0:updateDesc()
+	arg0_2:updateDesc()
 end
 
-function var0.attach(arg0, arg1)
-	var0.super.attach(arg0, arg1)
-	setActive(arg0._go, false)
-	onButton(arg0, arg0._tf, function()
-		arg0:close()
+function var0_0.attach(arg0_3, arg1_3)
+	var0_0.super.attach(arg0_3, arg1_3)
+	setActive(arg0_3._go, false)
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:close()
 	end, SFX_PANEL)
 end
 
-function var0.playAnim(arg0, arg1)
-	arg0.animtion:Play(arg1)
+function var0_0.playAnim(arg0_5, arg1_5)
+	arg0_5.animtion:Play(arg1_5)
 end
 
-function var0.open(arg0)
-	arg0:playAnim("cmdopen")
-	setActive(arg0._go, true)
-	setParent(arg0._go, pg.UIMgr.GetInstance().OverlayMain)
-	arg0._tf:SetAsLastSibling()
+function var0_0.open(arg0_6)
+	arg0_6:playAnim("cmdopen")
+	setActive(arg0_6._go, true)
+	setParent(arg0_6._go, pg.UIMgr.GetInstance().OverlayMain)
+	arg0_6._tf:SetAsLastSibling()
 end
 
-function var0.close(arg0)
-	arg0:playAnim("cmdclose")
-	setActive(arg0._go, false)
+function var0_0.close(arg0_7)
+	arg0_7:playAnim("cmdclose")
+	setActive(arg0_7._go, false)
 end
 
-function var0.updateDesc(arg0)
-	local var0 = arg0.fleet:getCommanders()
+function var0_0.updateDesc(arg0_8)
+	local var0_8 = arg0_8.fleet:getCommanders()
 
-	for iter0 = 1, CommanderConst.MAX_FORMATION_POS do
-		local var1 = var0[iter0]
+	for iter0_8 = 1, CommanderConst.MAX_FORMATION_POS do
+		local var1_8 = var0_8[iter0_8]
 
-		arg0:updateCommander(arg0["descPos" .. iter0], iter0, var1)
-		arg0:updateSkillTF(var1, arg0["skillTFPos" .. iter0])
+		arg0_8:updateCommander(arg0_8["descPos" .. iter0_8], iter0_8, var1_8)
+		arg0_8:updateSkillTF(var1_8, arg0_8["skillTFPos" .. iter0_8])
 	end
 
-	arg0:updateAdditions()
+	arg0_8:updateAdditions()
 end
 
-function var0.updateAdditions(arg0)
-	local var0 = arg0.fleet
-	local var1 = _.values(var0:getCommandersTalentDesc())
-	local var2, var3 = var0:getCommandersAddition()
+function var0_0.updateAdditions(arg0_9)
+	local var0_9 = arg0_9.fleet
+	local var1_9 = _.values(var0_9:getCommandersTalentDesc())
+	local var2_9, var3_9 = var0_9:getCommandersAddition()
 
-	arg0.abilitysTF:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = var2[arg1 + 1]
+	arg0_9.abilitysTF:make(function(arg0_10, arg1_10, arg2_10)
+		if arg0_10 == UIItemList.EventUpdate then
+			local var0_10 = var2_9[arg1_10 + 1]
 
-			setText(arg2:Find("name"), AttributeType.Type2Name(var0.attrName))
-			setText(arg2:Find("Text"), string.format("%0.3f", var0.value) .. "%")
-			GetImageSpriteFromAtlasAsync("attricon", var0.attrName, arg2:Find("icon"), false)
-			setActive(arg2:Find("bg"), arg1 % 2 ~= 0)
+			setText(arg2_10:Find("name"), AttributeType.Type2Name(var0_10.attrName))
+			setText(arg2_10:Find("Text"), string.format("%0.3f", var0_10.value) .. "%")
+			GetImageSpriteFromAtlasAsync("attricon", var0_10.attrName, arg2_10:Find("icon"), false)
+			setActive(arg2_10:Find("bg"), arg1_10 % 2 ~= 0)
 		end
 	end)
-	arg0.abilitysTF:align(#var2)
-	setActive(arg0.abilityArr, #var2 > 4)
-	arg0.talentsTF:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = var1[arg1 + 1]
+	arg0_9.abilitysTF:align(#var2_9)
+	setActive(arg0_9.abilityArr, #var2_9 > 4)
+	arg0_9.talentsTF:make(function(arg0_11, arg1_11, arg2_11)
+		if arg0_11 == UIItemList.EventUpdate then
+			local var0_11 = var1_9[arg1_11 + 1]
 
-			setScrollText(findTF(arg2, "name_mask/name"), var0.name)
+			setScrollText(findTF(arg2_11, "name_mask/name"), var0_11.name)
 
-			local var1 = var0.type == CommanderConst.TALENT_ADDITION_RATIO and "%" or ""
+			local var1_11 = var0_11.type == CommanderConst.TALENT_ADDITION_RATIO and "%" or ""
 
-			setText(arg2:Find("Text"), var0.value .. var1)
-			setActive(arg2:Find("bg"), arg1 % 2 ~= 0)
+			setText(arg2_11:Find("Text"), var0_11.value .. var1_11)
+			setActive(arg2_11:Find("bg"), arg1_11 % 2 ~= 0)
 		end
 	end)
-	arg0.talentsTF:align(#var1)
-	setActive(arg0.talentsArr, #var1 > 4)
+	arg0_9.talentsTF:align(#var1_9)
+	setActive(arg0_9.talentsArr, #var1_9 > 4)
 end
 
-function var0.updateSkillTF(arg0, arg1, arg2)
-	setActive(arg2, arg1)
+function var0_0.updateSkillTF(arg0_12, arg1_12, arg2_12)
+	setActive(arg2_12, arg1_12)
 
-	if arg1 then
-		local var0 = arg1:getSkills()[1]
+	if arg1_12 then
+		local var0_12 = arg1_12:getSkills()[1]
 
-		GetImageSpriteFromAtlasAsync("CommanderSkillIcon/" .. var0:getConfig("icon"), "", arg2:Find("icon"))
-		setText(arg2:Find("level"), "Lv." .. var0:getLevel())
+		GetImageSpriteFromAtlasAsync("CommanderSkillIcon/" .. var0_12:getConfig("icon"), "", arg2_12:Find("icon"))
+		setText(arg2_12:Find("level"), "Lv." .. var0_12:getLevel())
 	end
 end
 
-function var0.updateCommander(arg0, arg1, arg2, arg3)
-	local var0 = arg1:Find("add")
-	local var1 = arg1:Find("info")
+function var0_0.updateCommander(arg0_13, arg1_13, arg2_13, arg3_13)
+	local var0_13 = arg1_13:Find("add")
+	local var1_13 = arg1_13:Find("info")
 
-	if arg3 then
-		local var2 = arg1:Find("info/mask/icon")
-		local var3 = arg1:Find("info/frame")
+	if arg3_13 then
+		local var2_13 = arg1_13:Find("info/mask/icon")
+		local var3_13 = arg1_13:Find("info/frame")
 
-		GetImageSpriteFromAtlasAsync("CommanderHrz/" .. arg3:getPainting(), "", var2)
+		GetImageSpriteFromAtlasAsync("CommanderHrz/" .. arg3_13:getPainting(), "", var2_13)
 
-		local var4 = arg1:Find("info/name")
+		local var4_13 = arg1_13:Find("info/name")
 
-		if var4 then
-			setText(var4, arg3:getName())
+		if var4_13 then
+			setText(var4_13, arg3_13:getName())
 		end
 
-		local var5 = Commander.rarity2Frame(arg3:getRarity())
+		local var5_13 = Commander.rarity2Frame(arg3_13:getRarity())
 
-		setImageSprite(var3, GetSpriteFromAtlas("weaponframes", "commander_" .. var5))
+		setImageSprite(var3_13, GetSpriteFromAtlas("weaponframes", "commander_" .. var5_13))
 	end
 
-	onButton(arg0, var1, function()
-		if arg0.callback then
-			arg0.callback(arg2)
+	onButton(arg0_13, var1_13, function()
+		if arg0_13.callback then
+			arg0_13.callback(arg2_13)
 		end
 	end, SFX_PANEL)
-	onButton(arg0, var0, function()
-		if arg0.callback then
-			arg0.callback(arg2)
+	onButton(arg0_13, var0_13, function()
+		if arg0_13.callback then
+			arg0_13.callback(arg2_13)
 		end
 	end, SFX_PANEL)
-	setActive(var0, not arg3)
-	setActive(var1, arg3)
+	setActive(var0_13, not arg3_13)
+	setActive(var1_13, arg3_13)
 end
 
-function var0.enable(arg0, arg1)
-	setActive(arg0._go, arg1)
+function var0_0.enable(arg0_16, arg1_16)
+	setActive(arg0_16._go, arg1_16)
 end
 
-function var0.clear(arg0)
-	setActive(arg0._go, false)
-	setParent(arg0._go, arg0.parent.topPanel)
+function var0_0.clear(arg0_17)
+	setActive(arg0_17._go, false)
+	setParent(arg0_17._go, arg0_17.parent.topPanel)
 end
 
-return var0
+return var0_0

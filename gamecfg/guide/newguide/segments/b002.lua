@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Your flagship's <color=#ff7d36>Aerial Support</color> is ready.",
 	"Clear the battlefield! Get ready for <color=#ff7d36>air support</color>!",
 	"Witness the power of our fighters! Use them when you need a leg up. They can also <color=#ff7d36>destroy enemy barrages</color>!"
@@ -23,7 +23,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[1]
+				text = var0_0[1]
 			}
 		},
 		{
@@ -36,7 +36,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[2]
+				text = var0_0[2]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/CombatUI(Clone)/Weapon_button_container/Skill_3/ActCtl",
@@ -55,7 +55,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[3]
+				text = var0_0[3]
 			}
 		}
 	}

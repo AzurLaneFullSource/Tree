@@ -1,31 +1,31 @@
-﻿local var0 = class("ShipType")
+﻿local var0_0 = class("ShipType")
 
-var0.QuZhu = 1
-var0.QingXun = 2
-var0.ZhongXun = 3
-var0.ZhanXun = 4
-var0.ZhanLie = 5
-var0.QingHang = 6
-var0.ZhengHang = 7
-var0.QianTing = 8
-var0.HangXun = 9
-var0.HangZhan = 10
-var0.LeiXun = 11
-var0.WeiXiu = 12
-var0.ZhongPao = 13
-var0.QianMu = 17
-var0.ChaoXun = 18
-var0.Yunshu = 19
-var0.DaoQuV = 20
-var0.DaoQuM = 21
-var0.FengFanS = 22
-var0.FengFanV = 23
-var0.FengFanM = 24
-var0.YuLeiTing = 14
-var0.JinBi = 15
-var0.ZiBao = 16
-var0.WeiZhi = 25
-var0.AllShipType = {
+var0_0.QuZhu = 1
+var0_0.QingXun = 2
+var0_0.ZhongXun = 3
+var0_0.ZhanXun = 4
+var0_0.ZhanLie = 5
+var0_0.QingHang = 6
+var0_0.ZhengHang = 7
+var0_0.QianTing = 8
+var0_0.HangXun = 9
+var0_0.HangZhan = 10
+var0_0.LeiXun = 11
+var0_0.WeiXiu = 12
+var0_0.ZhongPao = 13
+var0_0.QianMu = 17
+var0_0.ChaoXun = 18
+var0_0.Yunshu = 19
+var0_0.DaoQuV = 20
+var0_0.DaoQuM = 21
+var0_0.FengFanS = 22
+var0_0.FengFanV = 23
+var0_0.FengFanM = 24
+var0_0.YuLeiTing = 14
+var0_0.JinBi = 15
+var0_0.ZiBao = 16
+var0_0.WeiZhi = 25
+var0_0.AllShipType = {
 	1,
 	2,
 	3,
@@ -46,24 +46,24 @@ var0.AllShipType = {
 	23,
 	24
 }
-var0.SpecificTypeTable = {
+var0_0.SpecificTypeTable = {
 	auxiliary = "AUX",
 	gunner = "GNR",
 	torpedo = "TORP"
 }
-var0.SpecificTableTips = {
+var0_0.SpecificTableTips = {
 	GNR = "breakout_tip_ultimatebonus_gunner",
 	TORP = "breakout_tip_ultimatebonus_torpedo",
 	AUX = "breakout_tip_ultimatebonus_aux"
 }
 
-function var0.Type2Name(arg0)
-	return pg.ship_data_by_type[arg0].type_name
+function var0_0.Type2Name(arg0_1)
+	return pg.ship_data_by_type[arg0_1].type_name
 end
 
-function var0.Type2Print(arg0)
-	if not var0.prints then
-		var0.prints = {
+function var0_0.Type2Print(arg0_2)
+	if not var0_0.prints then
+		var0_0.prints = {
 			"quzhu",
 			"qingxun",
 			"zhongxun",
@@ -92,12 +92,12 @@ function var0.Type2Print(arg0)
 		}
 	end
 
-	return var0.prints[arg0]
+	return var0_0.prints[arg0_2]
 end
 
-function var0.Type2BattlePrint(arg0)
-	if not var0.bprints then
-		var0.bprints = {
+function var0_0.Type2BattlePrint(arg0_3)
+	if not var0_0.bprints then
+		var0_0.bprints = {
 			"battle_quzhu",
 			"battle_qingxun",
 			"battle_zhongxun",
@@ -126,12 +126,12 @@ function var0.Type2BattlePrint(arg0)
 		}
 	end
 
-	return var0.bprints[arg0]
+	return var0_0.bprints[arg0_3]
 end
 
-function var0.Type2CNLabel(arg0)
-	if not var0.cnLabel then
-		var0.cnLabel = {
+function var0_0.Type2CNLabel(arg0_4)
+	if not var0_0.cnLabel then
+		var0_0.cnLabel = {
 			"label_1",
 			"label_2",
 			"label_3",
@@ -160,52 +160,52 @@ function var0.Type2CNLabel(arg0)
 		}
 	end
 
-	return var0.cnLabel[arg0]
+	return var0_0.cnLabel[arg0_4]
 end
 
-var0.BundleBattleShip = "zhan"
-var0.BundleAircraftCarrier = "hang"
-var0.BundleSubmarine = "qian"
-var0.BundleLargeCrusier = "zhong"
-var0.BundleAntiSubmarine = "fanqian"
-var0.BundleList = {
+var0_0.BundleBattleShip = "zhan"
+var0_0.BundleAircraftCarrier = "hang"
+var0_0.BundleSubmarine = "qian"
+var0_0.BundleLargeCrusier = "zhong"
+var0_0.BundleAntiSubmarine = "fanqian"
+var0_0.BundleList = {
 	zhan = {
-		var0.ZhanXun,
-		var0.ZhanLie
+		var0_0.ZhanXun,
+		var0_0.ZhanLie
 	},
 	hang = {
-		var0.QingHang,
-		var0.ZhengHang
+		var0_0.QingHang,
+		var0_0.ZhengHang
 	},
 	qian = {
-		var0.QianTing,
-		var0.QianMu,
-		var0.FengFanS
+		var0_0.QianTing,
+		var0_0.QianMu,
+		var0_0.FengFanS
 	},
 	zhong = {
-		var0.ZhongXun,
-		var0.ChaoXun
+		var0_0.ZhongXun,
+		var0_0.ChaoXun
 	},
 	fanqian = {
-		var0.QuZhu,
-		var0.QingXun,
-		var0.DaoQuV
+		var0_0.QuZhu,
+		var0_0.QingXun,
+		var0_0.DaoQuV
 	},
 	quzhu = {
-		var0.QuZhu,
-		var0.DaoQuM,
-		var0.DaoQuV
+		var0_0.QuZhu,
+		var0_0.DaoQuM,
+		var0_0.DaoQuV
 	},
 	fengfan = {
-		var0.FengFanS,
-		var0.FengFanV,
-		var0.FengFanM
+		var0_0.FengFanS,
+		var0_0.FengFanV,
+		var0_0.FengFanM
 	}
 }
 
-function var0.BundleType2CNLabel(arg0)
-	if not var0.bundleLabel then
-		var0.bundleLabel = {
+function var0_0.BundleType2CNLabel(arg0_5)
+	if not var0_0.bundleLabel then
+		var0_0.bundleLabel = {
 			zhong = "label_13",
 			qian = "label_8",
 			zhan = "label_11",
@@ -215,49 +215,49 @@ function var0.BundleType2CNLabel(arg0)
 		}
 	end
 
-	return var0.bundleLabel[arg0]
+	return var0_0.bundleLabel[arg0_5]
 end
 
-function var0.ContainInLimitBundle(arg0, arg1)
-	if type(arg0) == "string" then
-		for iter0, iter1 in ipairs(var0.BundleList[arg0]) do
-			if iter1 == arg1 then
+function var0_0.ContainInLimitBundle(arg0_6, arg1_6)
+	if type(arg0_6) == "string" then
+		for iter0_6, iter1_6 in ipairs(var0_0.BundleList[arg0_6]) do
+			if iter1_6 == arg1_6 then
 				return true
 			end
 		end
-	elseif type(arg0) == "number" then
-		return arg0 == 0 or arg1 == arg0
+	elseif type(arg0_6) == "number" then
+		return arg0_6 == 0 or arg1_6 == arg0_6
 	end
 
 	return false
 end
 
-var0.CloakShipTypeList = {
-	var0.QingHang,
-	var0.ZhengHang,
-	var0.DaoQuM
+var0_0.CloakShipTypeList = {
+	var0_0.QingHang,
+	var0_0.ZhengHang,
+	var0_0.DaoQuM
 }
 
-function var0.CloakShipType(arg0)
-	return table.contains(var0.CloakShipTypeList, arg0)
+function var0_0.CloakShipType(arg0_7)
+	return table.contains(var0_0.CloakShipTypeList, arg0_7)
 end
 
-var0.QuZhuShipType = {}
+var0_0.QuZhuShipType = {}
 
-for iter0, iter1 in ipairs(var0.BundleList.quzhu) do
-	var0.QuZhuShipType[iter1] = true
+for iter0_0, iter1_0 in ipairs(var0_0.BundleList.quzhu) do
+	var0_0.QuZhuShipType[iter1_0] = true
 end
 
-function var0.IsTypeQuZhu(arg0)
-	return var0.QuZhuShipType[arg0]
+function var0_0.IsTypeQuZhu(arg0_8)
+	return var0_0.QuZhuShipType[arg0_8]
 end
 
-function var0.FilterOverQuZhuType(arg0)
-	local var0 = false
+function var0_0.FilterOverQuZhuType(arg0_9)
+	local var0_9 = false
 
-	return underscore.filter(arg0, function(arg0)
-		if not var0 or not var0.IsTypeQuZhu(arg0) then
-			var0 = var0 or var0.IsTypeQuZhu(arg0)
+	return underscore.filter(arg0_9, function(arg0_10)
+		if not var0_9 or not var0_0.IsTypeQuZhu(arg0_10) then
+			var0_9 = var0_9 or var0_0.IsTypeQuZhu(arg0_10)
 
 			return true
 		else
@@ -266,22 +266,22 @@ function var0.FilterOverQuZhuType(arg0)
 	end)
 end
 
-var0.FengFanType = {}
+var0_0.FengFanType = {}
 
-for iter2, iter3 in ipairs(var0.BundleList.fengfan) do
-	var0.FengFanType[iter3] = true
+for iter2_0, iter3_0 in ipairs(var0_0.BundleList.fengfan) do
+	var0_0.FengFanType[iter3_0] = true
 end
 
-function var0.IsTypeFengFan(arg0)
-	return var0.FengFanType[arg0]
+function var0_0.IsTypeFengFan(arg0_11)
+	return var0_0.FengFanType[arg0_11]
 end
 
-function var0.FilterOverFengFanType(arg0)
-	local var0 = false
+function var0_0.FilterOverFengFanType(arg0_12)
+	local var0_12 = false
 
-	return underscore.filter(arg0, function(arg0)
-		if not var0 or not var0.IsTypeFengFan(arg0) then
-			var0 = var0 or var0.IsTypeFengFan(arg0)
+	return underscore.filter(arg0_12, function(arg0_13)
+		if not var0_12 or not var0_0.IsTypeFengFan(arg0_13) then
+			var0_12 = var0_12 or var0_0.IsTypeFengFan(arg0_13)
 
 			return true
 		else
@@ -290,25 +290,25 @@ function var0.FilterOverFengFanType(arg0)
 	end)
 end
 
-function var0.MergeFengFanType(arg0, arg1, arg2)
-	local var0 = var0.BundleList.fengfan[1]
+function var0_0.MergeFengFanType(arg0_14, arg1_14, arg2_14)
+	local var0_14 = var0_0.BundleList.fengfan[1]
 
-	if underscore.all(var0.BundleList.fengfan, function(arg0)
-		return arg1[var0] == arg1[arg0] and arg2[var0] == arg2[arg0]
+	if underscore.all(var0_0.BundleList.fengfan, function(arg0_15)
+		return arg1_14[var0_14] == arg1_14[arg0_15] and arg2_14[var0_14] == arg2_14[arg0_15]
 	end) then
-		local var1 = table.indexof(arg0, var0)
+		local var1_14 = table.indexof(arg0_14, var0_14)
 
-		arg0 = underscore.filter(arg0, function(arg0)
-			return not table.contains(var0.BundleList.fengfan, arg0)
+		arg0_14 = underscore.filter(arg0_14, function(arg0_16)
+			return not table.contains(var0_0.BundleList.fengfan, arg0_16)
 		end)
 
-		table.insert(arg0, var1, "fengfan")
+		table.insert(arg0_14, var1_14, "fengfan")
 
-		arg1.fengfan = arg1[var0]
-		arg2.fengfan = arg2[var0]
+		arg1_14.fengfan = arg1_14[var0_14]
+		arg2_14.fengfan = arg2_14[var0_14]
 	end
 
-	return arg0
+	return arg0_14
 end
 
-return var0
+return var0_0

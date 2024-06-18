@@ -1,39 +1,39 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConfig
-local var2 = var0.Battle.BattleVariable
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConfig
+local var2_0 = var0_0.Battle.BattleVariable
 
-var0.Battle.BattleCameraFocusChar = class("BattleCameraFocusChar")
-var0.Battle.BattleCameraFocusChar.__name = "BattleCameraFocusChar"
+var0_0.Battle.BattleCameraFocusChar = class("BattleCameraFocusChar")
+var0_0.Battle.BattleCameraFocusChar.__name = "BattleCameraFocusChar"
 
-local var3 = var0.Battle.BattleCameraFocusChar
+local var3_0 = var0_0.Battle.BattleCameraFocusChar
 
-function var3.Ctor(arg0)
-	arg0._point = Vector3.zero
+function var3_0.Ctor(arg0_1)
+	arg0_1._point = Vector3.zero
 end
 
-function var3.SetUnit(arg0, arg1)
-	arg0._unit = arg1
+function var3_0.SetUnit(arg0_2, arg1_2)
+	arg0_2._unit = arg1_2
 end
 
-function var3.GetCameraPos(arg0)
-	local var0 = arg0._unit:GetPosition()
+function var3_0.GetCameraPos(arg0_3)
+	local var0_3 = arg0_3._unit:GetPosition()
 
-	arg0._point:Set(var0.x, var0.y, var0.z)
+	arg0_3._point:Set(var0_3.x, var0_3.y, var0_3.z)
 
-	arg0._point.y = arg0._point.y + var2.CameraFocusHeight
-	arg0._point.z = arg0._point.z - arg0._point.y / var2._camera_radian_x_tan
+	arg0_3._point.y = arg0_3._point.y + var2_0.CameraFocusHeight
+	arg0_3._point.z = arg0_3._point.z - arg0_3._point.y / var2_0._camera_radian_x_tan
 
-	if arg0._unit:GetIFF() == var1.FOE_CODE then
-		arg0._point.x = arg0._point.x + 7
+	if arg0_3._unit:GetIFF() == var1_0.FOE_CODE then
+		arg0_3._point.x = arg0_3._point.x + 7
 	else
-		arg0._point.x = arg0._point.x - 7
+		arg0_3._point.x = arg0_3._point.x - 7
 	end
 
-	return arg0._point
+	return arg0_3._point
 end
 
-function var3.Dispose(arg0)
-	arg0._unit = nil
+function var3_0.Dispose(arg0_4)
+	arg0_4._unit = nil
 end

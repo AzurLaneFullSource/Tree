@@ -1,6 +1,6 @@
-﻿local var0 = class("LoginSceneConst")
+﻿local var0_0 = class("LoginSceneConst")
 
-var0.DEFINE = {
+var0_0.DEFINE = {
 	ACCOUNT_BTN = 10,
 	TRANSCODE_ALERT_VIEW = 5,
 	REGISTER_PANEL_VIEW = 2,
@@ -13,7 +13,7 @@ var0.DEFINE = {
 	YOSTAR_ALERT_VIEW = 6,
 	LOGIN_PANEL_VIEW = 1
 }
-var0.SWITCH_SUB_VIEW = "switch_sub_view"
-var0.CLEAR_REGISTER_VIEW = "clear_register_view"
+var0_0.SWITCH_SUB_VIEW = "switch_sub_view"
+var0_0.CLEAR_REGISTER_VIEW = "clear_register_view"
 
-return var0
+return var0_0

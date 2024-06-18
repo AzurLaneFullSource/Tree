@@ -1,123 +1,123 @@
-﻿local var0 = class("GuildMemberListPage", import("...base.GuildBasePage"))
+﻿local var0_0 = class("GuildMemberListPage", import("...base.GuildBasePage"))
 
-function var0.getTargetUI(arg0)
+function var0_0.getTargetUI(arg0_1)
 	return "GuildMemberListBlueUI", "GuildMemberListRedUI"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.rectView = arg0:findTF("scroll")
-	arg0.rectRect = arg0.rectView:GetComponent("LScrollRect")
-	arg0.rankBtn = arg0:findTF("rank")
-	arg0.blurBg = arg0:findTF("blur_bg", arg0._tf)
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.rectView = arg0_2:findTF("scroll")
+	arg0_2.rectRect = arg0_2.rectView:GetComponent("LScrollRect")
+	arg0_2.rankBtn = arg0_2:findTF("rank")
+	arg0_2.blurBg = arg0_2:findTF("blur_bg", arg0_2._tf)
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0.rankBtn, function()
-		arg0.contextData.rankPage:ExecuteAction("Flush", arg0.ranks)
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3.rankBtn, function()
+		arg0_3.contextData.rankPage:ExecuteAction("Flush", arg0_3.ranks)
 	end, SFX_PANEL)
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0._tf, {
+	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_3._tf, {
 		pbList = {
-			arg0.blurBg
+			arg0_3.blurBg
 		},
 		overlayType = LayerWeightConst.OVERLAY_UI_ADAPT
 	})
 
-	arg0.items = {}
+	arg0_3.items = {}
 
-	function arg0.rectRect.onInitItem(arg0)
-		arg0:OnInitItem(arg0)
+	function arg0_3.rectRect.onInitItem(arg0_5)
+		arg0_3:OnInitItem(arg0_5)
 	end
 
-	function arg0.rectRect.onUpdateItem(arg0, arg1)
-		arg0:OnUpdateItem(arg0, arg1)
+	function arg0_3.rectRect.onUpdateItem(arg0_6, arg1_6)
+		arg0_3:OnUpdateItem(arg0_6, arg1_6)
 	end
 end
 
-function var0.SetUp(arg0, arg1, arg2, arg3)
-	arg0:Show()
-	arg0:Flush(arg1, arg2, arg3)
+function var0_0.SetUp(arg0_7, arg1_7, arg2_7, arg3_7)
+	arg0_7:Show()
+	arg0_7:Flush(arg1_7, arg2_7, arg3_7)
 end
 
-function var0.Flush(arg0, arg1, arg2, arg3)
-	arg0.ranks = arg3
-	arg0.memberVOs = arg2
-	arg0.guildVO = arg1
+function var0_0.Flush(arg0_8, arg1_8, arg2_8, arg3_8)
+	arg0_8.ranks = arg3_8
+	arg0_8.memberVOs = arg2_8
+	arg0_8.guildVO = arg1_8
 
-	arg0:SetTotalCount()
+	arg0_8:SetTotalCount()
 end
 
-function var0.SetTotalCount(arg0)
-	table.sort(arg0.memberVOs, function(arg0, arg1)
-		if arg0.duty ~= arg1.duty then
-			return arg0.duty < arg1.duty
+function var0_0.SetTotalCount(arg0_9)
+	table.sort(arg0_9.memberVOs, function(arg0_10, arg1_10)
+		if arg0_10.duty ~= arg1_10.duty then
+			return arg0_10.duty < arg1_10.duty
 		else
-			return arg0.liveness > arg1.liveness
+			return arg0_10.liveness > arg1_10.liveness
 		end
 	end)
-	arg0.rectRect:SetTotalCount(#arg0.memberVOs, 0)
+	arg0_9.rectRect:SetTotalCount(#arg0_9.memberVOs, 0)
 end
 
-function var0.OnInitItem(arg0, arg1)
-	local var0 = GuildMemberCard.New(arg1)
+function var0_0.OnInitItem(arg0_11, arg1_11)
+	local var0_11 = GuildMemberCard.New(arg1_11)
 
-	onButton(arg0, var0.tf, function()
-		if arg0.selected == var0 then
+	onButton(arg0_11, var0_11.tf, function()
+		if arg0_11.selected == var0_11 then
 			return
 		end
 
-		if arg0.selected then
-			arg0.selected:SetSelected(false)
+		if arg0_11.selected then
+			arg0_11.selected:SetSelected(false)
 		end
 
-		arg0.selected = var0
+		arg0_11.selected = var0_11
 
-		arg0.selected:SetSelected(true)
+		arg0_11.selected:SetSelected(true)
 
-		arg0.selectedId = var0.memberVO.id
+		arg0_11.selectedId = var0_11.memberVO.id
 
-		if arg0.OnClickMember then
-			arg0.OnClickMember(var0.memberVO)
+		if arg0_11.OnClickMember then
+			arg0_11.OnClickMember(var0_11.memberVO)
 		end
 	end, SFX_PANEL)
 
-	arg0.items[arg1] = var0
+	arg0_11.items[arg1_11] = var0_11
 end
 
-function var0.OnUpdateItem(arg0, arg1, arg2)
-	local var0 = arg0.items[arg2]
+function var0_0.OnUpdateItem(arg0_13, arg1_13, arg2_13)
+	local var0_13 = arg0_13.items[arg2_13]
 
-	if not var0 then
-		arg0:OnInitItem(arg2)
+	if not var0_13 then
+		arg0_13:OnInitItem(arg2_13)
 
-		var0 = arg0.items[arg2]
+		var0_13 = arg0_13.items[arg2_13]
 	end
 
-	local var1 = arg0.memberVOs[arg1 + 1]
+	local var1_13 = arg0_13.memberVOs[arg1_13 + 1]
 
-	var0:Update(var1, arg0.guildVO)
-	var0:SetSelected(arg0.selectedId and arg0.selectedId == var1.id)
+	var0_13:Update(var1_13, arg0_13.guildVO)
+	var0_13:SetSelected(arg0_13.selectedId and arg0_13.selectedId == var1_13.id)
 
-	if not arg0.selected and arg1 == 0 then
-		triggerButton(var0.tf)
+	if not arg0_13.selected and arg1_13 == 0 then
+		triggerButton(var0_13.tf)
 	end
 end
 
-function var0.TriggerFirstCard(arg0)
-	for iter0, iter1 in pairs(arg0.items) do
-		if iter1.memberVO.id == arg0.memberVOs[1].id then
-			triggerButton(iter1.tf)
+function var0_0.TriggerFirstCard(arg0_14)
+	for iter0_14, iter1_14 in pairs(arg0_14.items) do
+		if iter1_14.memberVO.id == arg0_14.memberVOs[1].id then
+			triggerButton(iter1_14.tf)
 
 			break
 		end
 	end
 end
 
-function var0.OnDestroy(arg0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0._tf, arg0._parentTf)
+function var0_0.OnDestroy(arg0_15)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_15._tf, arg0_15._parentTf)
 
-	for iter0, iter1 in pairs(arg0.items) do
-		iter1:Dispose()
+	for iter0_15, iter1_15 in pairs(arg0_15.items) do
+		iter1_15:Dispose()
 	end
 end
 
-return var0
+return var0_0

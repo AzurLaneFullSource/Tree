@@ -1,6 +1,6 @@
-﻿local var0 = class("WorldStaminaManager", import("...BaseEntity"))
+﻿local var0_0 = class("WorldStaminaManager", import("...BaseEntity"))
 
-var0.Fields = {
+var0_0.Fields = {
 	staminaExchangeTimes = "number",
 	staminaLastRecoverTime = "number",
 	staminaExtra = "number",
@@ -10,180 +10,180 @@ var0.Fields = {
 	stamina = "number",
 	UIMain = "userdata"
 }
-var0.EventUpdateStamina = "WorldStaminaManager.EventUpdateStamina"
+var0_0.EventUpdateStamina = "WorldStaminaManager.EventUpdateStamina"
 
-function var0.Build(arg0)
-	pg.DelegateInfo.New(arg0)
+function var0_0.Build(arg0_1)
+	pg.DelegateInfo.New(arg0_1)
 
-	arg0.UIMain = pg.UIMgr.GetInstance().OverlayMain
+	arg0_1.UIMain = pg.UIMgr.GetInstance().OverlayMain
 
-	local var0 = PoolMgr.GetInstance()
+	local var0_1 = PoolMgr.GetInstance()
 
-	var0:GetUI("WorldStaminaRecoverUI", true, function(arg0)
-		if not arg0.UIMain then
-			var0:ReturnUI("WorldStaminaRecoverUI", arg0)
+	var0_1:GetUI("WorldStaminaRecoverUI", true, function(arg0_2)
+		if not arg0_1.UIMain then
+			var0_1:ReturnUI("WorldStaminaRecoverUI", arg0_2)
 		else
-			arg0.transform = tf(arg0)
+			arg0_1.transform = tf(arg0_2)
 
-			setParent(arg0.transform, arg0.UIMain, false)
-			setActive(arg0.transform, false)
-			onButton(arg0, arg0.transform:Find("bg"), function()
-				arg0:Hide()
+			setParent(arg0_1.transform, arg0_1.UIMain, false)
+			setActive(arg0_1.transform, false)
+			onButton(arg0_1, arg0_1.transform:Find("bg"), function()
+				arg0_1:Hide()
 			end, SFX_CANCEL)
-			onButton(arg0, arg0.transform:Find("window/top/btnBack"), function()
-				arg0:Hide()
+			onButton(arg0_1, arg0_1.transform:Find("window/top/btnBack"), function()
+				arg0_1:Hide()
 			end, SFX_CANCEL)
-			onButton(arg0, arg0.transform:Find("window/button_container/custom_button_2"), function()
-				arg0:Hide()
+			onButton(arg0_1, arg0_1.transform:Find("window/button_container/custom_button_2"), function()
+				arg0_1:Hide()
 			end, SFX_CANCEL)
 		end
 	end)
 end
 
-function var0.Setup(arg0, arg1)
-	arg0.stamina = arg1[1]
-	arg0.staminaExtra = arg1[2]
-	arg0.staminaLastRecoverTime = arg1[3]
-	arg0.staminaExchangeTimes = arg1[4]
+function var0_0.Setup(arg0_6, arg1_6)
+	arg0_6.stamina = arg1_6[1]
+	arg0_6.staminaExtra = arg1_6[2]
+	arg0_6.staminaLastRecoverTime = arg1_6[3]
+	arg0_6.staminaExchangeTimes = arg1_6[4]
 
-	if not arg0.updateTimer then
-		arg0.updateTimer = Timer.New(function()
-			arg0:UpdateStamina()
+	if not arg0_6.updateTimer then
+		arg0_6.updateTimer = Timer.New(function()
+			arg0_6:UpdateStamina()
 		end, 1, -1)
 
-		arg0.updateTimer:Start()
-		arg0.updateTimer.func()
+		arg0_6.updateTimer:Start()
+		arg0_6.updateTimer.func()
 	end
 end
 
-function var0.Dispose(arg0)
-	pg.DelegateInfo.Dispose(arg0)
+function var0_0.Dispose(arg0_8)
+	pg.DelegateInfo.Dispose(arg0_8)
 
-	if arg0.updateTimer then
-		arg0.updateTimer:Stop()
+	if arg0_8.updateTimer then
+		arg0_8.updateTimer:Stop()
 	end
 
-	if arg0.transform then
-		PoolMgr.GetInstance():ReturnUI("WorldStaminaRecoverUI", go(arg0.transform))
+	if arg0_8.transform then
+		PoolMgr.GetInstance():ReturnUI("WorldStaminaRecoverUI", go(arg0_8.transform))
 	end
 
-	arg0:Clear()
+	arg0_8:Clear()
 end
 
-function var0.Reset(arg0)
-	arg0.stamina = arg0:GetMaxStamina()
+function var0_0.Reset(arg0_9)
+	arg0_9.stamina = arg0_9:GetMaxStamina()
 end
 
-function var0.ChangeStamina(arg0, arg1, arg2)
-	arg0.stamina = arg1
-	arg0.staminaExtra = arg2
+function var0_0.ChangeStamina(arg0_10, arg1_10, arg2_10)
+	arg0_10.stamina = arg1_10
+	arg0_10.staminaExtra = arg2_10
 
-	arg0:DispatchEvent(var0.EventUpdateStamina)
+	arg0_10:DispatchEvent(var0_0.EventUpdateStamina)
 end
 
-function var0.UpdateStamina(arg0)
-	local var0 = pg.gameset.world_movepower_recovery_interval.key_value
-	local var1 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var2 = math.floor((var1 - arg0.staminaLastRecoverTime) / var0)
+function var0_0.UpdateStamina(arg0_11)
+	local var0_11 = pg.gameset.world_movepower_recovery_interval.key_value
+	local var1_11 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var2_11 = math.floor((var1_11 - arg0_11.staminaLastRecoverTime) / var0_11)
 
-	if var2 > 0 then
-		arg0.staminaLastRecoverTime = arg0.staminaLastRecoverTime + var2 * var0
+	if var2_11 > 0 then
+		arg0_11.staminaLastRecoverTime = arg0_11.staminaLastRecoverTime + var2_11 * var0_11
 
-		if arg0.stamina < arg0:GetMaxStamina() then
-			arg0.stamina = math.min(arg0.stamina + var2, arg0:GetMaxStamina())
+		if arg0_11.stamina < arg0_11:GetMaxStamina() then
+			arg0_11.stamina = math.min(arg0_11.stamina + var2_11, arg0_11:GetMaxStamina())
 
-			arg0:DispatchEvent(var0.EventUpdateStamina)
+			arg0_11:DispatchEvent(var0_0.EventUpdateStamina)
 		end
 	end
 end
 
-function var0.CheckUpdateShow(arg0)
-	if arg0:IsShowing() then
-		arg0:Show()
+function var0_0.CheckUpdateShow(arg0_12)
+	if arg0_12:IsShowing() then
+		arg0_12:Show()
 	end
 end
 
-function var0.Show(arg0)
-	local var0 = arg0.transform:Find("window/world_stamina_panel")
-	local var1 = pg.gameset.world_movepower_recovery_interval.key_value
-	local var2 = string.format("%.2d:%.2d:%.2d", math.floor(var1 / 3600), math.floor(var1 % 3600 / 60), var1 % 60)
+function var0_0.Show(arg0_13)
+	local var0_13 = arg0_13.transform:Find("window/world_stamina_panel")
+	local var1_13 = pg.gameset.world_movepower_recovery_interval.key_value
+	local var2_13 = string.format("%.2d:%.2d:%.2d", math.floor(var1_13 / 3600), math.floor(var1_13 % 3600 / 60), var1_13 % 60)
 
-	setText(var0:Find("content/tip_bg/tip"), i18n("world_stamina_recover", var2))
-	setText(var0:Find("content/tip_bg/stamina/value"), arg0:GetTotalStamina())
+	setText(var0_13:Find("content/tip_bg/tip"), i18n("world_stamina_recover", var2_13))
+	setText(var0_13:Find("content/tip_bg/stamina/value"), arg0_13:GetTotalStamina())
 
-	local var3 = var0:Find("content/item_list")
-	local var4 = var0:Find("item")
+	local var3_13 = var0_13:Find("content/item_list")
+	local var4_13 = var0_13:Find("item")
 
-	setActive(var4, false)
+	setActive(var4_13, false)
 
-	local var5 = arg0.transform:Find("window/button_container/custom_button_1")
+	local var5_13 = arg0_13.transform:Find("window/button_container/custom_button_1")
 
-	removeAllChildren(var3)
+	removeAllChildren(var3_13)
 
-	local var6 = arg0:GetExchangeItems()
+	local var6_13 = arg0_13:GetExchangeItems()
 
-	for iter0, iter1 in ipairs(var6) do
-		local var7 = cloneTplTo(var4, var3)
+	for iter0_13, iter1_13 in ipairs(var6_13) do
+		local var7_13 = cloneTplTo(var4_13, var3_13)
 
-		updateDrop(var7:Find("IconTpl"), iter1.drop)
-		setText(var7:Find("IconTpl/icon_bg/count"), iter1.drop.count and iter1.drop.count or "")
-		setText(var7:Find("name/Text"), shortenString(getText(var7:Find("IconTpl/name")), 5))
-		onToggle(arg0, var7, function(arg0)
-			if arg0 then
-				arg0.preSelectIndex = iter0
+		updateDrop(var7_13:Find("IconTpl"), iter1_13.drop)
+		setText(var7_13:Find("IconTpl/icon_bg/count"), iter1_13.drop.count and iter1_13.drop.count or "")
+		setText(var7_13:Find("name/Text"), shortenString(getText(var7_13:Find("IconTpl/name")), 5))
+		onToggle(arg0_13, var7_13, function(arg0_14)
+			if arg0_14 then
+				arg0_13.preSelectIndex = iter0_13
 
-				if iter0 > 1 then
-					setText(var0:Find("content/Text"), i18n("world_stamina_text2", iter1.name, iter1.stamina))
-					onButton(arg0, var5, function()
-						if iter1.drop.count == 0 then
+				if iter0_13 > 1 then
+					setText(var0_13:Find("content/Text"), i18n("world_stamina_text2", iter1_13.name, iter1_13.stamina))
+					onButton(arg0_13, var5_13, function()
+						if iter1_13.drop.count == 0 then
 							pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 						else
-							local var0 = nowWorld()
-							local var1 = {}
-							local var2 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d")
+							local var0_15 = nowWorld()
+							local var1_15 = {}
+							local var2_15 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d")
 
-							if var0:CheckResetProgress() and PlayerPrefs.GetString("world_stamina_reset_tip", "") ~= var2 and var0:GetResetWaitingTime() < 259200 and arg0:GetTotalStamina() + iter1.stamina > arg0:GetMaxStamina() then
-								PlayerPrefs.SetString("world_stamina_reset_tip", var2)
-								table.insert(var1, function(arg0)
+							if var0_15:CheckResetProgress() and PlayerPrefs.GetString("world_stamina_reset_tip", "") ~= var2_15 and var0_15:GetResetWaitingTime() < 259200 and arg0_13:GetTotalStamina() + iter1_13.stamina > arg0_13:GetMaxStamina() then
+								PlayerPrefs.SetString("world_stamina_reset_tip", var2_15)
+								table.insert(var1_15, function(arg0_16)
 									pg.MsgboxMgr.GetInstance():ShowMsgBox({
-										content = i18n("world_stamina_resetwarning", arg0:GetMaxStamina()),
-										onYes = arg0
+										content = i18n("world_stamina_resetwarning", arg0_13:GetMaxStamina()),
+										onYes = arg0_16
 									})
 								end)
 							end
 
-							seriesAsync(var1, function()
+							seriesAsync(var1_15, function()
 								pg.m02:sendNotification(GAME.WORLD_ITEM_USE, {
 									count = 1,
-									itemID = iter1.drop.id,
+									itemID = iter1_13.drop.id,
 									args = {}
 								})
 							end)
 						end
 					end, SFX_CONFIRM)
-				elseif iter0 == 1 then
-					setText(var0:Find("content/Text"), i18n("world_stamina_text", iter1.cost, iter1.stamina, iter1.times, iter1.limit))
-					onButton(arg0, var5, function()
-						if iter1.drop.count < iter1.cost then
+				elseif iter0_13 == 1 then
+					setText(var0_13:Find("content/Text"), i18n("world_stamina_text", iter1_13.cost, iter1_13.stamina, iter1_13.times, iter1_13.limit))
+					onButton(arg0_13, var5_13, function()
+						if iter1_13.drop.count < iter1_13.cost then
 							pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_oil"))
-						elseif iter1.times == 0 then
+						elseif iter1_13.times == 0 then
 							pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 						else
-							local var0 = nowWorld()
-							local var1 = {}
-							local var2 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d")
+							local var0_18 = nowWorld()
+							local var1_18 = {}
+							local var2_18 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d")
 
-							if var0:CheckResetProgress() and PlayerPrefs.GetString("world_stamina_reset_tip", "") ~= var2 and var0:GetResetWaitingTime() < 259200 and arg0:GetTotalStamina() + iter1.stamina > arg0:GetMaxStamina() then
-								PlayerPrefs.SetString("world_stamina_reset_tip", var2)
-								table.insert(var1, function(arg0)
+							if var0_18:CheckResetProgress() and PlayerPrefs.GetString("world_stamina_reset_tip", "") ~= var2_18 and var0_18:GetResetWaitingTime() < 259200 and arg0_13:GetTotalStamina() + iter1_13.stamina > arg0_13:GetMaxStamina() then
+								PlayerPrefs.SetString("world_stamina_reset_tip", var2_18)
+								table.insert(var1_18, function(arg0_19)
 									pg.MsgboxMgr.GetInstance():ShowMsgBox({
-										content = i18n("world_stamina_resetwarning", arg0:GetMaxStamina()),
-										onYes = arg0
+										content = i18n("world_stamina_resetwarning", arg0_13:GetMaxStamina()),
+										onYes = arg0_19
 									})
 								end)
 							end
 
-							seriesAsync(var1, function()
+							seriesAsync(var1_18, function()
 								pg.m02:sendNotification(GAME.WORLD_STAMINA_EXCHANGE)
 							end)
 						end
@@ -193,130 +193,130 @@ function var0.Show(arg0)
 		end, SFX_PANEL)
 	end
 
-	if arg0.preSelectIndex then
-		triggerToggle(var3:GetChild(arg0.preSelectIndex - 1), true)
+	if arg0_13.preSelectIndex then
+		triggerToggle(var3_13:GetChild(arg0_13.preSelectIndex - 1), true)
 	else
-		local var8 = 1
+		local var8_13 = 1
 
-		for iter2 = 2, #var6 do
-			if var6[iter2].drop.count > 0 then
-				var8 = iter2
+		for iter2_13 = 2, #var6_13 do
+			if var6_13[iter2_13].drop.count > 0 then
+				var8_13 = iter2_13
 
 				break
 			end
 		end
 
-		triggerToggle(var3:GetChild(var8 - 1), true)
+		triggerToggle(var3_13:GetChild(var8_13 - 1), true)
 	end
 
-	setActive(arg0.transform, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0.transform, false)
+	setActive(arg0_13.transform, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_13.transform, false)
 end
 
-function var0.Hide(arg0)
-	arg0.preSelectIndex = nil
+function var0_0.Hide(arg0_21)
+	arg0_21.preSelectIndex = nil
 
-	setActive(arg0.transform, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0.transform, arg0.UIMain)
+	setActive(arg0_21.transform, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_21.transform, arg0_21.UIMain)
 end
 
-function var0.IsShowing(arg0)
-	return arg0.transform and isActive(arg0.transform) or false
+function var0_0.IsShowing(arg0_22)
+	return arg0_22.transform and isActive(arg0_22.transform) or false
 end
 
-function var0.GetStamina(arg0)
-	return arg0.stamina
+function var0_0.GetStamina(arg0_23)
+	return arg0_23.stamina
 end
 
-function var0.GetMaxStamina(arg0)
+function var0_0.GetMaxStamina(arg0_24)
 	return pg.gameset.world_movepower_maxvalue.key_value
 end
 
-function var0.GetExtraStamina(arg0)
-	return arg0.staminaExtra
+function var0_0.GetExtraStamina(arg0_25)
+	return arg0_25.staminaExtra
 end
 
-function var0.GetTotalStamina(arg0)
-	return arg0:GetStamina() + arg0:GetExtraStamina()
+function var0_0.GetTotalStamina(arg0_26)
+	return arg0_26:GetStamina() + arg0_26:GetExtraStamina()
 end
 
-function var0.GetStepStaminaCost(arg0)
+function var0_0.GetStepStaminaCost(arg0_27)
 	return pg.gameset.world_cell_cost_movepower.key_value
 end
 
-function var0.GetMaxMoveStep(arg0)
-	return math.floor(arg0:GetTotalStamina() / arg0:GetStepStaminaCost())
+function var0_0.GetMaxMoveStep(arg0_28)
+	return math.floor(arg0_28:GetTotalStamina() / arg0_28:GetStepStaminaCost())
 end
 
-function var0.ConsumeStamina(arg0, arg1)
-	arg0.staminaExtra = arg0.staminaExtra - arg1
+function var0_0.ConsumeStamina(arg0_29, arg1_29)
+	arg0_29.staminaExtra = arg0_29.staminaExtra - arg1_29
 
-	if arg0.staminaExtra < 0 then
-		arg0.stamina = arg0.stamina + arg0.staminaExtra
-		arg0.staminaExtra = 0
+	if arg0_29.staminaExtra < 0 then
+		arg0_29.stamina = arg0_29.stamina + arg0_29.staminaExtra
+		arg0_29.staminaExtra = 0
 	end
 
-	assert(arg0.stamina >= 0, "out of stamina.")
-	arg0:DispatchEvent(var0.EventUpdateStamina)
+	assert(arg0_29.stamina >= 0, "out of stamina.")
+	arg0_29:DispatchEvent(var0_0.EventUpdateStamina)
 end
 
-function var0.GetExchangeData(arg0)
-	local var0 = pg.gameset.world_supply_value.description
-	local var1 = pg.gameset.world_supply_price.description
-	local var2 = var0[math.min(#var0, arg0.staminaExchangeTimes + 1)]
-	local var3 = var1[math.min(#var1, arg0.staminaExchangeTimes + 1)]
+function var0_0.GetExchangeData(arg0_30)
+	local var0_30 = pg.gameset.world_supply_value.description
+	local var1_30 = pg.gameset.world_supply_price.description
+	local var2_30 = var0_30[math.min(#var0_30, arg0_30.staminaExchangeTimes + 1)]
+	local var3_30 = var1_30[math.min(#var1_30, arg0_30.staminaExchangeTimes + 1)]
 
-	return var2[1], var3[3], #var1 - arg0.staminaExchangeTimes, #var1
+	return var2_30[1], var3_30[3], #var1_30 - arg0_30.staminaExchangeTimes, #var1_30
 end
 
-function var0.GetExchangeItems(arg0)
-	local var0 = nowWorld():GetInventoryProxy()
-	local var1, var2, var3, var4 = arg0:GetExchangeData()
-	local var5 = {
+function var0_0.GetExchangeItems(arg0_31)
+	local var0_31 = nowWorld():GetInventoryProxy()
+	local var1_31, var2_31, var3_31, var4_31 = arg0_31:GetExchangeData()
+	local var5_31 = {
 		{
 			drop = Drop.New({
 				id = PlayerConst.ResOil,
 				type = DROP_TYPE_RESOURCE,
 				count = getProxy(PlayerProxy):getRawData().oil
 			}),
-			cost = var2,
-			stamina = var1,
-			times = var3,
-			limit = var4
+			cost = var2_31,
+			stamina = var1_31,
+			times = var3_31,
+			limit = var4_31
 		}
 	}
 
-	for iter0, iter1 in ipairs(pg.gameset.world_supply_itemlist.description) do
-		local var6 = Drop.New({
+	for iter0_31, iter1_31 in ipairs(pg.gameset.world_supply_itemlist.description) do
+		local var6_31 = Drop.New({
 			type = DROP_TYPE_WORLD_ITEM,
-			id = iter1,
-			count = var0:GetItemCount(iter1)
+			id = iter1_31,
+			count = var0_31:GetItemCount(iter1_31)
 		})
 
-		table.insert(var5, {
+		table.insert(var5_31, {
 			cost = 1,
-			drop = var6,
-			name = var6:getConfig("name"),
-			stamina = var6:getSubClass():getItemStaminaRecover()
+			drop = var6_31,
+			name = var6_31:getConfig("name"),
+			stamina = var6_31:getSubClass():getItemStaminaRecover()
 		})
 	end
 
-	return var5
+	return var5_31
 end
 
-function var0.ExchangeStamina(arg0, arg1, arg2)
-	arg0.stamina = arg0.stamina + arg1
+function var0_0.ExchangeStamina(arg0_32, arg1_32, arg2_32)
+	arg0_32.stamina = arg0_32.stamina + arg1_32
 
-	if arg2 then
-		arg0.staminaExchangeTimes = arg0.staminaExchangeTimes + 1
+	if arg2_32 then
+		arg0_32.staminaExchangeTimes = arg0_32.staminaExchangeTimes + 1
 	end
 
-	arg0:DispatchEvent(var0.EventUpdateStamina)
-	arg0:CheckUpdateShow()
+	arg0_32:DispatchEvent(var0_0.EventUpdateStamina)
+	arg0_32:CheckUpdateShow()
 end
 
-function var0.GetDisplayStanima(arg0)
-	return arg0:GetTotalStamina()
+function var0_0.GetDisplayStanima(arg0_33)
+	return arg0_33:GetTotalStamina()
 end
 
-return var0
+return var0_0

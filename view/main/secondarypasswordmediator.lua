@@ -1,37 +1,37 @@
-﻿local var0 = class("SecondaryPasswordMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("SecondaryPasswordMediator", import("view.base.ContextMediator"))
 
-var0.CONFIRM_PASSWORD = "SecondaryPasswordMediator:CONFIRM_PASSWORD"
-var0.SET_PASSWORD = "SecondaryPasswordMediator:SET_PASSWORD"
-var0.CANCEL_OPERATION = "SecondaryPasswordMediator:CANCEL_OPERATION"
+var0_0.CONFIRM_PASSWORD = "SecondaryPasswordMediator:CONFIRM_PASSWORD"
+var0_0.SET_PASSWORD = "SecondaryPasswordMediator:SET_PASSWORD"
+var0_0.CANCEL_OPERATION = "SecondaryPasswordMediator:CANCEL_OPERATION"
 
-function var0.register(arg0)
-	arg0:bind(var0.CONFIRM_PASSWORD, function(arg0, arg1)
-		if arg0.contextData.type == pg.SecondaryPWDMgr.CHANGE_SETTING or arg0.contextData.type == pg.SecondaryPWDMgr.CLOSE_PASSWORD then
-			arg0:sendNotification(GAME.SET_PASSWORD_SETTINGS, {
-				pwd = arg1,
-				settings = arg0.contextData.settings
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.CONFIRM_PASSWORD, function(arg0_2, arg1_2)
+		if arg0_1.contextData.type == pg.SecondaryPWDMgr.CHANGE_SETTING or arg0_1.contextData.type == pg.SecondaryPWDMgr.CLOSE_PASSWORD then
+			arg0_1:sendNotification(GAME.SET_PASSWORD_SETTINGS, {
+				pwd = arg1_2,
+				settings = arg0_1.contextData.settings
 			})
 		else
-			arg0:sendNotification(GAME.CONFIRM_PASSWORD, {
-				pwd = arg1
+			arg0_1:sendNotification(GAME.CONFIRM_PASSWORD, {
+				pwd = arg1_2
 			})
 		end
 	end)
-	arg0:bind(var0.SET_PASSWORD, function(arg0, arg1, arg2)
-		arg2 = var0.ClipUnicodeStr(arg2, 20)
+	arg0_1:bind(var0_0.SET_PASSWORD, function(arg0_3, arg1_3, arg2_3)
+		arg2_3 = var0_0.ClipUnicodeStr(arg2_3, 20)
 
-		arg0:sendNotification(GAME.SET_PASSWORD, {
-			pwd = arg1,
-			tip = arg2,
-			settings = arg0.contextData.settings
+		arg0_1:sendNotification(GAME.SET_PASSWORD, {
+			pwd = arg1_3,
+			tip = arg2_3,
+			settings = arg0_1.contextData.settings
 		})
 	end)
-	arg0:bind(var0.CANCEL_OPERATION, function()
-		arg0:sendNotification(GAME.CANCEL_LIMITED_OPERATION)
+	arg0_1:bind(var0_0.CANCEL_OPERATION, function()
+		arg0_1:sendNotification(GAME.CANCEL_LIMITED_OPERATION)
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_5)
 	return {
 		GAME.CONFIRM_PASSWORD_DONE,
 		GAME.SET_PASSWORD_SETTINGS_DONE,
@@ -40,92 +40,92 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
-	local var2 = getProxy(SecondaryPWDProxy)
-	local var3 = var2:getRawData()
+function var0_0.handleNotification(arg0_6, arg1_6)
+	local var0_6 = arg1_6:getName()
+	local var1_6 = arg1_6:getBody()
+	local var2_6 = getProxy(SecondaryPWDProxy)
+	local var3_6 = var2_6:getRawData()
 
-	if var0 == GAME.FETCH_PASSWORD_STATE_DONE then
-		if not var2:GetPermissionState() then
-			arg0:sendNotification(GAME.CANCEL_LIMITED_OPERATION)
+	if var0_6 == GAME.FETCH_PASSWORD_STATE_DONE then
+		if not var2_6:GetPermissionState() then
+			arg0_6:sendNotification(GAME.CANCEL_LIMITED_OPERATION)
 
-			local var4 = {
+			local var4_6 = {
 				mode = "showresttime",
 				title = "warning",
 				hideNo = true,
 				type = MSGBOX_TYPE_SECONDPWD,
 				onPreShow = function()
-					arg0.viewComponent:emit(BaseUI.ON_CLOSE)
+					arg0_6.viewComponent:emit(BaseUI.ON_CLOSE)
 				end
 			}
 
-			pg.MsgboxMgr.GetInstance():ShowMsgBox(var4)
+			pg.MsgboxMgr.GetInstance():ShowMsgBox(var4_6)
 		end
-	elseif var0 == GAME.CONFIRM_PASSWORD_DONE or var0 == GAME.SET_PASSWORD_SETTINGS_DONE then
-		local var5 = var1.result
+	elseif var0_6 == GAME.CONFIRM_PASSWORD_DONE or var0_6 == GAME.SET_PASSWORD_SETTINGS_DONE then
+		local var5_6 = var1_6.result
 
-		if var5 > 0 then
-			if var5 == 9 then
-				var3.fail_count = var3.fail_count + 1
+		if var5_6 > 0 then
+			if var5_6 == 9 then
+				var3_6.fail_count = var3_6.fail_count + 1
 
-				if var3.fail_count >= 5 then
-					arg0:sendNotification(GAME.FETCH_PASSWORD_STATE)
+				if var3_6.fail_count >= 5 then
+					arg0_6:sendNotification(GAME.FETCH_PASSWORD_STATE)
 				else
-					pg.TipsMgr.GetInstance():ShowTips(string.format(i18n("secondarypassword_incorrectpwd_error"), 5 - var3.fail_count))
+					pg.TipsMgr.GetInstance():ShowTips(string.format(i18n("secondarypassword_incorrectpwd_error"), 5 - var3_6.fail_count))
 				end
-			elseif var5 == 40 or var5 == 1 then
-				arg0:sendNotification(GAME.FETCH_PASSWORD_STATE)
+			elseif var5_6 == 40 or var5_6 == 1 then
+				arg0_6:sendNotification(GAME.FETCH_PASSWORD_STATE)
 			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("", var5))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("", var5_6))
 			end
 
-			arg0.viewComponent:UpdateView()
-			arg0.viewComponent:ClearInputs()
+			arg0_6.viewComponent:UpdateView()
+			arg0_6.viewComponent:ClearInputs()
 		else
-			arg0:CloseAndCallback()
+			arg0_6:CloseAndCallback()
 		end
-	elseif var0 == GAME.SET_PASSWORD_DONE then
-		local var6 = var1.result
+	elseif var0_6 == GAME.SET_PASSWORD_DONE then
+		local var6_6 = var1_6.result
 
-		if var6 > 0 then
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", var6))
-			arg0:sendNotification(GAME.FETCH_PASSWORD_STATE)
+		if var6_6 > 0 then
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", var6_6))
+			arg0_6:sendNotification(GAME.FETCH_PASSWORD_STATE)
 		else
-			arg0:CloseAndCallback()
+			arg0_6:CloseAndCallback()
 		end
 	end
 end
 
-function var0.CloseAndCallback(arg0)
-	local var0 = arg0.contextData.callback
+function var0_0.CloseAndCallback(arg0_8)
+	local var0_8 = arg0_8.contextData.callback
 
-	arg0.viewComponent:emit(BaseUI.ON_CLOSE)
+	arg0_8.viewComponent:emit(BaseUI.ON_CLOSE)
 
-	if var0 then
-		var0()
+	if var0_8 then
+		var0_8()
 	end
 end
 
-function var0.ClipUnicodeStr(arg0, arg1)
-	local var0, var1 = utf8_to_unicode(arg0)
+function var0_0.ClipUnicodeStr(arg0_9, arg1_9)
+	local var0_9, var1_9 = utf8_to_unicode(arg0_9)
 
-	if arg1 < var1 then
-		local var2 = string.sub(var0, 1, -7)
-		local var3, var4 = utf8_to_unicode(unicode_to_utf8(var2))
+	if arg1_9 < var1_9 then
+		local var2_9 = string.sub(var0_9, 1, -7)
+		local var3_9, var4_9 = utf8_to_unicode(unicode_to_utf8(var2_9))
 
-		while arg1 < var4 - 1 do
-			var2 = string.sub(var2, 1, -7)
+		while arg1_9 < var4_9 - 1 do
+			var2_9 = string.sub(var2_9, 1, -7)
 
-			local var5
+			local var5_9
 
-			var5, var4 = utf8_to_unicode(unicode_to_utf8(var2))
+			var5_9, var4_9 = utf8_to_unicode(unicode_to_utf8(var2_9))
 		end
 
-		return string.sub(unicode_to_utf8(var2), 1, -2)
+		return string.sub(unicode_to_utf8(var2_9), 1, -2)
 	end
 
-	return arg0
+	return arg0_9
 end
 
-return var0
+return var0_0

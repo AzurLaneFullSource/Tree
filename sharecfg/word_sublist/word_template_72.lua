@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_72 = {}
+var0_0.word_template_72 = {}
 
-local var1 = var0.word_template_72
+local var1_0 = var0_0.word_template_72
 
 function temp()
-	var1.刺 = {
+	var1_0.刺 = {
 		胡 = {
 			事 = {
 				件 = {
@@ -45,7 +45,7 @@ end
 temp()
 
 function temp()
-	var1.从 = {
+	var1_0.从 = {
 		火 = {
 			腿 = {
 				里 = {
@@ -108,7 +108,7 @@ end
 temp()
 
 function temp()
-	var1.從 = {
+	var1_0.從 = {
 		火 = {
 			鍋 = {
 				裡 = {
@@ -159,7 +159,7 @@ end
 temp()
 
 function temp()
-	var1.辏 = {
+	var1_0.辏 = {
 		this = {
 			this = true
 		}
@@ -169,7 +169,7 @@ end
 temp()
 
 function temp()
-	var1.輳 = {
+	var1_0.輳 = {
 		this = {
 			this = true
 		}
@@ -179,7 +179,7 @@ end
 temp()
 
 function temp()
-	var1.粗 = {
+	var1_0.粗 = {
 		暴 = {
 			执 = {
 				法 = {
@@ -226,7 +226,7 @@ end
 temp()
 
 function temp()
-	var1.殂 = {
+	var1_0.殂 = {
 		this = {
 			this = true
 		}

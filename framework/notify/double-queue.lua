@@ -1,78 +1,78 @@
-﻿local var0 = setmetatable
-local var1 = {}
-local var2 = {}
-local var3 = {
-	__index = var2
+﻿local var0_0 = setmetatable
+local var1_0 = {}
+local var2_0 = {}
+local var3_0 = {
+	__index = var2_0
 }
 
-function var1.New()
-	return var0({
+function var1_0.New()
+	return var0_0({
 		first = 1,
 		last = 0,
 		data = {},
 		data_position = {}
-	}, var3)
+	}, var3_0)
 end
 
-local function var4(arg0)
-	while arg0.first <= arg0.last do
-		if arg0.data[arg0.first] then
+local function var4_0(arg0_2)
+	while arg0_2.first <= arg0_2.last do
+		if arg0_2.data[arg0_2.first] then
 			return true
 		end
 
-		arg0.first = arg0.first + 1
+		arg0_2.first = arg0_2.first + 1
 	end
 end
 
-function var2.is_empty(arg0)
-	return arg0.first > arg0.last
+function var2_0.is_empty(arg0_3)
+	return arg0_3.first > arg0_3.last
 end
 
-function var2.push_front(arg0, arg1)
-	if arg0.data_position[arg1] then
+function var2_0.push_front(arg0_4, arg1_4)
+	if arg0_4.data_position[arg1_4] then
 		return
 	end
 
-	arg0.first = arg0.first - 1
-	arg0.data[arg0.first] = arg1
-	arg0.data_position[arg1] = arg0.first
+	arg0_4.first = arg0_4.first - 1
+	arg0_4.data[arg0_4.first] = arg1_4
+	arg0_4.data_position[arg1_4] = arg0_4.first
 end
 
-function var2.push_back(arg0, arg1)
-	if arg0.data_position[arg1] then
+function var2_0.push_back(arg0_5, arg1_5)
+	if arg0_5.data_position[arg1_5] then
 		return
 	end
 
-	arg0.last = arg0.last + 1
-	arg0.data[arg0.last] = arg1
-	arg0.data_position[arg1] = arg0.last
+	arg0_5.last = arg0_5.last + 1
+	arg0_5.data[arg0_5.last] = arg1_5
+	arg0_5.data_position[arg1_5] = arg0_5.last
 end
 
-function var2.get_iterator(arg0)
-	local var0 = arg0.first
+function var2_0.get_iterator(arg0_6)
+	local var0_6 = arg0_6.first
 
 	return function()
-		while var0 <= arg0.last do
-			local var0 = arg0.data[var0]
+		while var0_6 <= arg0_6.last do
+			local var0_7 = arg0_6.data[var0_6]
 
-			var0 = var0 + 1
+			var0_6 = var0_6 + 1
 
-			if var0 then
-				return var0
+			if var0_7 then
+				return var0_7
 			end
 		end
 	end
 end
 
-function var2.remove(arg0, arg1)
-	if not arg0.data_position[arg1] then
+function var2_0.remove(arg0_8, arg1_8)
+	if not arg0_8.data_position[arg1_8] then
 		return
 	end
 
-	arg0.data[arg0.data_position[arg1]] = nil
-	arg0.data_position[arg1] = nil
+	arg0_8.data[arg0_8.data_position[arg1_8]] = nil
+	arg0_8.data_position[arg1_8] = nil
 
-	var4(arg0)
+	var4_0(arg0_8)
 end
 
-return var1
+return var1_0

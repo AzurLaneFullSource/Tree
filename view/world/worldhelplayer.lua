@@ -1,220 +1,220 @@
-﻿local var0 = class("WorldHelpLayer", import("view.base.BaseUI"))
+﻿local var0_0 = class("WorldHelpLayer", import("view.base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "WorldHelpUI"
 end
 
-function var0.init(arg0)
-	arg0.rtTitle = arg0._tf:Find("title")
-	arg0.btnBack = arg0.rtTitle:Find("btn_back")
+function var0_0.init(arg0_2)
+	arg0_2.rtTitle = arg0_2._tf:Find("title")
+	arg0_2.btnBack = arg0_2.rtTitle:Find("btn_back")
 
-	onButton(arg0, arg0.btnBack, function()
-		arg0:closeView()
+	onButton(arg0_2, arg0_2.btnBack, function()
+		arg0_2:closeView()
 	end, SFX_CANCEL)
 
-	arg0.groupList = UIItemList.New(arg0.rtTitle:Find("toggles"), arg0.rtTitle:Find("toggles/toggle"))
+	arg0_2.groupList = UIItemList.New(arg0_2.rtTitle:Find("toggles"), arg0_2.rtTitle:Find("toggles/toggle"))
 
-	arg0.groupList:make(function(arg0, arg1, arg2)
-		arg1 = arg1 + 1
+	arg0_2.groupList:make(function(arg0_4, arg1_4, arg2_4)
+		arg1_4 = arg1_4 + 1
 
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg0.titles[arg1]
+		if arg0_4 == UIItemList.EventUpdate then
+			local var0_4 = arg0_2.titles[arg1_4]
 
-			setText(arg2:Find("Text"), pg.world_help_data[var0].name)
-			onToggle(arg0, arg2, function(arg0)
-				if arg0 then
-					if arg0.curGroupId ~= var0 then
-						arg0:toggleAnim(arg2, true)
-						arg0:setCurGroup(var0)
+			setText(arg2_4:Find("Text"), pg.world_help_data[var0_4].name)
+			onToggle(arg0_2, arg2_4, function(arg0_5)
+				if arg0_5 then
+					if arg0_2.curGroupId ~= var0_4 then
+						arg0_2:toggleAnim(arg2_4, true)
+						arg0_2:setCurGroup(var0_4)
 					end
 				else
-					arg0:toggleAnim(arg2, false)
+					arg0_2:toggleAnim(arg2_4, false)
 				end
 			end, SFX_PANEL)
 		end
 	end)
 
-	arg0.rtMain = arg0._tf:Find("main")
-	arg0.rtScroll = arg0.rtMain:Find("Scroll")
+	arg0_2.rtMain = arg0_2._tf:Find("main")
+	arg0_2.rtScroll = arg0_2.rtMain:Find("Scroll")
 
-	onButton(arg0, arg0.rtMain:Find("left"), function()
-		if LeanTween.isTweening(go(arg0.rtScroll)) then
+	onButton(arg0_2, arg0_2.rtMain:Find("left"), function()
+		if LeanTween.isTweening(go(arg0_2.rtScroll)) then
 			return
 		end
 
-		if arg0.curPageIndex > 1 then
-			local var0 = {}
+		if arg0_2.curPageIndex > 1 then
+			local var0_6 = {}
 
-			table.insert(var0, function(arg0)
-				arg0:pageAnim(false, arg0)
+			table.insert(var0_6, function(arg0_7)
+				arg0_2:pageAnim(false, arg0_7)
 			end)
-			table.insert(var0, function(arg0)
-				arg0:setCurPage(arg0.curPageIndex - 1)
-				arg0()
+			table.insert(var0_6, function(arg0_8)
+				arg0_2:setCurPage(arg0_2.curPageIndex - 1)
+				arg0_8()
 			end)
-			table.insert(var0, function(arg0)
-				arg0:pageAnim(true, arg0)
+			table.insert(var0_6, function(arg0_9)
+				arg0_2:pageAnim(true, arg0_9)
 			end)
-			seriesAsync(var0, function()
+			seriesAsync(var0_6, function()
 				return
 			end)
 		end
 	end)
-	onButton(arg0, arg0.rtMain:Find("right"), function()
-		if LeanTween.isTweening(go(arg0.rtScroll)) then
+	onButton(arg0_2, arg0_2.rtMain:Find("right"), function()
+		if LeanTween.isTweening(go(arg0_2.rtScroll)) then
 			return
 		end
 
-		if arg0.curPageIndex < #arg0.pageList then
-			local var0 = {}
+		if arg0_2.curPageIndex < #arg0_2.pageList then
+			local var0_11 = {}
 
-			table.insert(var0, function(arg0)
-				arg0:pageAnim(false, arg0)
+			table.insert(var0_11, function(arg0_12)
+				arg0_2:pageAnim(false, arg0_12)
 			end)
-			table.insert(var0, function(arg0)
-				arg0:setCurPage(arg0.curPageIndex + 1)
-				arg0()
+			table.insert(var0_11, function(arg0_13)
+				arg0_2:setCurPage(arg0_2.curPageIndex + 1)
+				arg0_13()
 			end)
-			table.insert(var0, function(arg0)
-				arg0:pageAnim(true, arg0)
+			table.insert(var0_11, function(arg0_14)
+				arg0_2:pageAnim(true, arg0_14)
 			end)
-			seriesAsync(var0, function()
+			seriesAsync(var0_11, function()
 				return
 			end)
 		end
 	end)
 end
 
-function var0.setCurGroup(arg0, arg1)
-	local var0 = {}
+function var0_0.setCurGroup(arg0_16, arg1_16)
+	local var0_16 = {}
 
-	if arg0.curGroupId then
-		table.insert(var0, function(arg0)
-			arg0:pageAnim(false, arg0)
+	if arg0_16.curGroupId then
+		table.insert(var0_16, function(arg0_17)
+			arg0_16:pageAnim(false, arg0_17)
 		end)
 	end
 
-	arg0.curGroupId = arg1
+	arg0_16.curGroupId = arg1_16
 
-	table.insert(var0, function(arg0)
-		local var0 = pg.world_help_data[arg0.curGroupId]
+	table.insert(var0_16, function(arg0_18)
+		local var0_18 = pg.world_help_data[arg0_16.curGroupId]
 
-		arg0.pageList = {}
+		arg0_16.pageList = {}
 
-		local var1 = nowWorld():GetProgress()
+		local var1_18 = nowWorld():GetProgress()
 
-		for iter0, iter1 in ipairs(var0.stage_help) do
-			if var1 >= iter1[1] then
-				table.insert(arg0.pageList, {
-					id = iter0,
-					path = iter1[2]
+		for iter0_18, iter1_18 in ipairs(var0_18.stage_help) do
+			if var1_18 >= iter1_18[1] then
+				table.insert(arg0_16.pageList, {
+					id = iter0_18,
+					path = iter1_18[2]
 				})
 			end
 		end
 
-		if #arg0.pageList > 0 then
-			arg0:setCurPage(1)
+		if #arg0_16.pageList > 0 then
+			arg0_16:setCurPage(1)
 		end
 
-		arg0()
+		arg0_18()
 	end)
-	seriesAsync(var0, function()
-		arg0:pageAnim(true)
+	seriesAsync(var0_16, function()
+		arg0_16:pageAnim(true)
 	end)
 end
 
-function var0.setCurPage(arg0, arg1)
-	arg0.curPageIndex = arg1
+function var0_0.setCurPage(arg0_20, arg1_20)
+	arg0_20.curPageIndex = arg1_20
 
-	setText(arg0.rtMain:Find("page/Text"), arg0.curPageIndex .. "/" .. #arg0.pageList)
+	setText(arg0_20.rtMain:Find("page/Text"), arg0_20.curPageIndex .. "/" .. #arg0_20.pageList)
 
-	local var0 = arg0.rtScroll:Find("Card")
+	local var0_20 = arg0_20.rtScroll:Find("Card")
 
-	setImageAlpha(var0:Find("Image"), 0)
-	GetSpriteFromAtlasAsync(arg0.pageList[arg1].path, "", function(arg0)
-		if arg0.curPageIndex == arg1 then
-			setImageSprite(var0:Find("Image"), arg0)
-			setImageAlpha(var0:Find("Image"), 1)
+	setImageAlpha(var0_20:Find("Image"), 0)
+	GetSpriteFromAtlasAsync(arg0_20.pageList[arg1_20].path, "", function(arg0_21)
+		if arg0_20.curPageIndex == arg1_20 then
+			setImageSprite(var0_20:Find("Image"), arg0_21)
+			setImageAlpha(var0_20:Find("Image"), 1)
 		end
 	end)
 end
 
-function var0.getPageIndex(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0.pageList) do
-		if iter1.id == arg1 then
-			return iter0
+function var0_0.getPageIndex(arg0_22, arg1_22)
+	for iter0_22, iter1_22 in ipairs(arg0_22.pageList) do
+		if iter1_22.id == arg1_22 then
+			return iter0_22
 		end
 	end
 
 	return 1
 end
 
-function var0.pageAnim(arg0, arg1, arg2)
-	LeanTween.cancel(go(arg0.rtScroll))
+function var0_0.pageAnim(arg0_23, arg1_23, arg2_23)
+	LeanTween.cancel(go(arg0_23.rtScroll))
 
-	local var0 = GetOrAddComponent(arg0.rtScroll, "CanvasGroup")
+	local var0_23 = GetOrAddComponent(arg0_23.rtScroll, "CanvasGroup")
 
-	var0.alpha = arg1 and 0 or 1
+	var0_23.alpha = arg1_23 and 0 or 1
 
-	LeanTween.alphaCanvas(var0, arg1 and 1 or 0, 0.3):setOnComplete(System.Action(function()
-		return existCall(arg2)
+	LeanTween.alphaCanvas(var0_23, arg1_23 and 1 or 0, 0.3):setOnComplete(System.Action(function()
+		return existCall(arg2_23)
 	end))
 end
 
-function var0.toggleAnim(arg0, arg1, arg2)
-	LeanTween.cancel(arg1.gameObject)
+function var0_0.toggleAnim(arg0_25, arg1_25, arg2_25)
+	LeanTween.cancel(arg1_25.gameObject)
 
-	local var0 = GetComponent(arg1, typeof(LayoutElement))
+	local var0_25 = GetComponent(arg1_25, typeof(LayoutElement))
 
-	if arg2 then
-		LeanTween.value(arg1.gameObject, var0.preferredWidth, 238, 0.15):setOnUpdate(System.Action_float(function(arg0)
-			var0.preferredWidth = arg0
+	if arg2_25 then
+		LeanTween.value(arg1_25.gameObject, var0_25.preferredWidth, 238, 0.15):setOnUpdate(System.Action_float(function(arg0_26)
+			var0_25.preferredWidth = arg0_26
 		end)):setOnComplete(System.Action(function()
-			setActive(arg1:Find("selected"), arg2)
+			setActive(arg1_25:Find("selected"), arg2_25)
 		end))
 	else
-		setActive(arg1:Find("selected"), arg2)
-		LeanTween.value(arg1.gameObject, var0.preferredWidth, 176, 0.15):setOnUpdate(System.Action_float(function(arg0)
-			var0.preferredWidth = arg0
+		setActive(arg1_25:Find("selected"), arg2_25)
+		LeanTween.value(arg1_25.gameObject, var0_25.preferredWidth, 176, 0.15):setOnUpdate(System.Action_float(function(arg0_28)
+			var0_25.preferredWidth = arg0_28
 		end))
 	end
 end
 
-function var0.didEnter(arg0)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0._tf)
+function var0_0.didEnter(arg0_29)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_29._tf)
 
-	local var0
+	local var0_29
 
-	arg0.titles = {}
+	arg0_29.titles = {}
 
-	local var1 = nowWorld():GetProgress()
+	local var1_29 = nowWorld():GetProgress()
 
-	for iter0, iter1 in ipairs(pg.world_help_data.all) do
-		if var1 >= pg.world_help_data[iter1].stage then
-			table.insert(arg0.titles, iter1)
+	for iter0_29, iter1_29 in ipairs(pg.world_help_data.all) do
+		if var1_29 >= pg.world_help_data[iter1_29].stage then
+			table.insert(arg0_29.titles, iter1_29)
 
-			if arg0.contextData.titleId == iter1 then
-				var0 = #arg0.titles
+			if arg0_29.contextData.titleId == iter1_29 then
+				var0_29 = #arg0_29.titles
 			end
 		end
 	end
 
-	arg0.groupList:align(#arg0.titles)
-	setActive(arg0.rtScroll, #arg0.titles > 0)
+	arg0_29.groupList:align(#arg0_29.titles)
+	setActive(arg0_29.rtScroll, #arg0_29.titles > 0)
 
-	if #arg0.titles > 0 then
-		if var0 then
-			triggerToggle(arg0.groupList.container:GetChild(var0 - 1), true)
-			arg0:setCurPage(arg0:getPageIndex(arg0.contextData.pageId))
+	if #arg0_29.titles > 0 then
+		if var0_29 then
+			triggerToggle(arg0_29.groupList.container:GetChild(var0_29 - 1), true)
+			arg0_29:setCurPage(arg0_29:getPageIndex(arg0_29.contextData.pageId))
 		else
-			triggerToggle(arg0.groupList.container:GetChild(0), true)
+			triggerToggle(arg0_29.groupList.container:GetChild(0), true)
 		end
 	end
 end
 
-function var0.willExit(arg0)
-	LeanTween.cancel(go(arg0.rtScroll))
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0._tf)
+function var0_0.willExit(arg0_30)
+	LeanTween.cancel(go(arg0_30.rtScroll))
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_30._tf)
 end
 
-return var0
+return var0_0

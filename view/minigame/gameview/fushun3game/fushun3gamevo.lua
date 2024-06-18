@@ -1,32 +1,32 @@
-﻿local var0 = class("Fushun3GameVo")
+﻿local var0_0 = class("Fushun3GameVo")
 
-var0.TimeType = Fushun3GameConst.day_type
-var0.TimeFlag = true
+var0_0.TimeType = Fushun3GameConst.day_type
+var0_0.TimeFlag = true
 
-function var0.ChangeTimeType(arg0)
-	var0.TimeType = arg0
+function var0_0.ChangeTimeType(arg0_1)
+	var0_0.TimeType = arg0_1
 
-	local var0 = (var0.TimeType == Fushun3GameConst.day_type or var0.TimeType == Fushun3GameConst.sunset_type) and true or false
+	local var0_1 = (var0_0.TimeType == Fushun3GameConst.day_type or var0_0.TimeType == Fushun3GameConst.sunset_type) and true or false
 
-	var0.SetTimeFlag(var0)
+	var0_0.SetTimeFlag(var0_1)
 end
 
-function var0.GetTimeTypeData()
-	return Clone(Fushun3GameConst.time_data[var0.TimeType])
+function var0_0.GetTimeTypeData()
+	return Clone(Fushun3GameConst.time_data[var0_0.TimeType])
 end
 
-function var0.SetTimeFlag(arg0)
-	var0.TimeFlag = arg0
+function var0_0.SetTimeFlag(arg0_3)
+	var0_0.TimeFlag = arg0_3
 end
 
-function var0.GetTimeFlag()
-	return var0.TimeFlag
+function var0_0.GetTimeFlag()
+	return var0_0.TimeFlag
 end
 
-function var0.Clear()
-	if var0.TypeType == Fushun3GameConst.sunset_type then
-		var0.ChangeTimeType(Fushun3GameConst.day_type)
+function var0_0.Clear()
+	if var0_0.TypeType == Fushun3GameConst.sunset_type then
+		var0_0.ChangeTimeType(Fushun3GameConst.day_type)
 	end
 end
 
-return var0
+return var0_0

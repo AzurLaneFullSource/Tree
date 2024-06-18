@@ -21,8 +21,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg0, arg1, arg2)
-						return Vector3(-100, 0, arg1.z) - arg0
+					posFun = function(arg0_1, arg1_1, arg2_1)
+						return Vector3(-100, 0, arg1_1.z) - arg0_1
 					end
 				}
 			},
@@ -51,8 +51,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg0, arg1, arg2)
-						return Vector3(-100, 0, arg1.z) - arg0
+					posFun = function(arg0_2, arg1_2, arg2_2)
+						return Vector3(-100, 0, arg1_2.z) - arg0_2
 					end
 				}
 			},
@@ -81,8 +81,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg0, arg1, arg2)
-						return Vector3(-100, 0, arg1.z) - arg0
+					posFun = function(arg0_3, arg1_3, arg2_3)
+						return Vector3(-100, 0, arg1_3.z) - arg0_3
 					end
 				}
 			},
@@ -111,8 +111,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg0, arg1, arg2)
-						return Vector3(-100, 0, arg1.z) - arg0
+					posFun = function(arg0_4, arg1_4, arg2_4)
+						return Vector3(-100, 0, arg1_4.z) - arg0_4
 					end
 				}
 			},
@@ -141,8 +141,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg0, arg1, arg2)
-						return Vector3(-100, 0, arg1.z) - arg0
+					posFun = function(arg0_5, arg1_5, arg2_5)
+						return Vector3(-100, 0, arg1_5.z) - arg0_5
 					end
 				}
 			},
@@ -171,8 +171,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg0, arg1, arg2)
-						return Vector3(-100, 0, arg1.z) - arg0
+					posFun = function(arg0_6, arg1_6, arg2_6)
+						return Vector3(-100, 0, arg1_6.z) - arg0_6
 					end
 				}
 			},
@@ -201,8 +201,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg0, arg1, arg2)
-						return Vector3(-100, 0, arg1.z) - arg0
+					posFun = function(arg0_7, arg1_7, arg2_7)
+						return Vector3(-100, 0, arg1_7.z) - arg0_7
 					end
 				}
 			},
@@ -231,8 +231,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg0, arg1, arg2)
-						return Vector3(-100, 0, arg1.z) - arg0
+					posFun = function(arg0_8, arg1_8, arg2_8)
+						return Vector3(-100, 0, arg1_8.z) - arg0_8
 					end
 				}
 			},
@@ -261,8 +261,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg0, arg1, arg2)
-						return Vector3(-100, 0, arg1.z) - arg0
+					posFun = function(arg0_9, arg1_9, arg2_9)
+						return Vector3(-100, 0, arg1_9.z) - arg0_9
 					end
 				}
 			},
@@ -291,8 +291,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg0, arg1, arg2)
-						return Vector3(-100, 0, arg1.z) - arg0
+					posFun = function(arg0_10, arg1_10, arg2_10)
+						return Vector3(-100, 0, arg1_10.z) - arg0_10
 					end
 				}
 			},

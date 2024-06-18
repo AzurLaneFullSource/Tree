@@ -1,45 +1,45 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleUnitEvent
-local var2 = var0.Battle.BattleEvent
-local var3 = var0.Battle.BattleCardPuzzleEvent
-local var4 = var0.Battle.BattleFormulas
-local var5 = var0.Battle.BattleConst
-local var6 = var0.Battle.BattleConfig
-local var7 = var0.Battle.BattleAttr
-local var8 = var0.Battle.BattleDataFunction
-local var9 = var0.Battle.BattleAttr
-local var10 = class("BattleFleetCardPuzzleDeck")
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleUnitEvent
+local var2_0 = var0_0.Battle.BattleEvent
+local var3_0 = var0_0.Battle.BattleCardPuzzleEvent
+local var4_0 = var0_0.Battle.BattleFormulas
+local var5_0 = var0_0.Battle.BattleConst
+local var6_0 = var0_0.Battle.BattleConfig
+local var7_0 = var0_0.Battle.BattleAttr
+local var8_0 = var0_0.Battle.BattleDataFunction
+local var9_0 = var0_0.Battle.BattleAttr
+local var10_0 = class("BattleFleetCardPuzzleDeck")
 
-var0.Battle.BattleFleetCardPuzzleDeck = var10
-var10.__name = "BattleFleetCardPuzzleDeck"
-var10.OP_ADD_TO = "add"
-var10.OP_SHUFFLE_TO = "shuffle"
-var10.NOT_INIT_SHUFFLE = 0
+var0_0.Battle.BattleFleetCardPuzzleDeck = var10_0
+var10_0.__name = "BattleFleetCardPuzzleDeck"
+var10_0.OP_ADD_TO = "add"
+var10_0.OP_SHUFFLE_TO = "shuffle"
+var10_0.NOT_INIT_SHUFFLE = 0
 
-function var10.Ctor(arg0, arg1, arg2)
-	arg0._cardPuzzleComponent = arg1
-	arg0._indexID = arg2
+function var10_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1._cardPuzzleComponent = arg1_1
+	arg0_1._indexID = arg2_1
 
-	arg0:init()
+	arg0_1:init()
 end
 
-function var10.GetIndexID(arg0)
-	return arg0._indexID
+function var10_0.GetIndexID(arg0_2)
+	return arg0_2._indexID
 end
 
-function var10.Dispose(arg0)
+function var10_0.Dispose(arg0_3)
 	return
 end
 
-function var10.GetCardList(arg0)
-	return arg0._cardList
+function var10_0.GetCardList(arg0_4)
+	return arg0_4._cardList
 end
 
-function var10.init(arg0)
-	arg0._cardList = {}
+function var10_0.init(arg0_5)
+	arg0_5._cardList = {}
 
-	var0.EventDispatcher.AttachEventDispatcher(arg0)
-	var0.Battle.BattleFleetCardPuzzleCardManageComponent.AttachCardManager(arg0)
+	var0_0.EventDispatcher.AttachEventDispatcher(arg0_5)
+	var0_0.Battle.BattleFleetCardPuzzleCardManageComponent.AttachCardManager(arg0_5)
 end

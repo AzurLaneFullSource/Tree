@@ -1,103 +1,103 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleFormulas
-local var2 = var0.Battle.BattleConfig
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleFormulas
+local var2_0 = var0_0.Battle.BattleConfig
 
-var0.Battle.RandomStrategy = class("RandomStrategy", var0.Battle.BattleJoyStickBotBaseStrategy)
+var0_0.Battle.RandomStrategy = class("RandomStrategy", var0_0.Battle.BattleJoyStickBotBaseStrategy)
 
-local var3 = var0.Battle.RandomStrategy
+local var3_0 = var0_0.Battle.RandomStrategy
 
-var3.__name = "RandomStrategy"
-var3.STOP_DURATION_MAX = 20
-var3.STOP_DURATION_MIN = 10
-var3.MOVE_DURATION_MAX = 60
-var3.MOVE_DURATION_MIN = 20
+var3_0.__name = "RandomStrategy"
+var3_0.STOP_DURATION_MAX = 20
+var3_0.STOP_DURATION_MIN = 10
+var3_0.MOVE_DURATION_MAX = 60
+var3_0.MOVE_DURATION_MIN = 20
 
-function var3.Ctor(arg0, arg1)
-	var3.super.Ctor(arg0, arg1)
+function var3_0.Ctor(arg0_1, arg1_1)
+	var3_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0._stopCount = 0
-	arg0._moveCount = 0
-	arg0._speed = Vector3.zero
-	arg0._speedCross = Vector3.zero
+	arg0_1._stopCount = 0
+	arg0_1._moveCount = 0
+	arg0_1._speed = Vector3.zero
+	arg0_1._speedCross = Vector3.zero
 end
 
-function var3.GetStrategyType(arg0)
-	return var0.Battle.BattleJoyStickAutoBot.RANDOM
+function var3_0.GetStrategyType(arg0_2)
+	return var0_0.Battle.BattleJoyStickAutoBot.RANDOM
 end
 
-function var3.Input(arg0, arg1, arg2)
-	var3.super.Input(arg0, arg1, arg2)
-	arg0:shiftTick(0, 10)
+function var3_0.Input(arg0_3, arg1_3, arg2_3)
+	var3_0.super.Input(arg0_3, arg1_3, arg2_3)
+	arg0_3:shiftTick(0, 10)
 end
 
-local var4 = Vector3.up
+local var4_0 = Vector3.up
 
-function var3._moveTick(arg0)
-	if arg0._moveCount <= 0 then
-		arg0:shiftTick(-1)
+function var3_0._moveTick(arg0_4)
+	if arg0_4._moveCount <= 0 then
+		arg0_4:shiftTick(-1)
 	else
-		arg0._moveCount = arg0._moveCount - 1
+		arg0_4._moveCount = arg0_4._moveCount - 1
 
-		local var0 = arg0._speed:Magnitude()
+		local var0_4 = arg0_4._speed:Magnitude()
 
-		arg0._speedCross = arg0._speedCross:Copy(var4):Cross2(arg0._speed):Mul(arg0._crossAcc / var0)
-		arg0._speed = arg0._speed:Add(arg0._speedCross)
-		arg0._hrz = arg0._speed.x
-		arg0._vtc = arg0._speed.z
+		arg0_4._speedCross = arg0_4._speedCross:Copy(var4_0):Cross2(arg0_4._speed):Mul(arg0_4._crossAcc / var0_4)
+		arg0_4._speed = arg0_4._speed:Add(arg0_4._speedCross)
+		arg0_4._hrz = arg0_4._speed.x
+		arg0_4._vtc = arg0_4._speed.z
 	end
 end
 
-function var3._stopTick(arg0)
-	if arg0._stopCount <= 0 then
-		arg0:shiftTick(0, 10)
+function var3_0._stopTick(arg0_5)
+	if arg0_5._stopCount <= 0 then
+		arg0_5:shiftTick(0, 10)
 	else
-		arg0._stopCount = arg0._stopCount - 1
+		arg0_5._stopCount = arg0_5._stopCount - 1
 	end
 end
 
-function var3.shiftTick(arg0, arg1, arg2)
-	arg0._stopWeight = arg1 or arg0._stopWeight
-	arg0._moveWeight = arg2 or arg0._moveWeight
+function var3_0.shiftTick(arg0_6, arg1_6, arg2_6)
+	arg0_6._stopWeight = arg1_6 or arg0_6._stopWeight
+	arg0_6._moveWeight = arg2_6 or arg0_6._moveWeight
 
-	if math.random(arg0._stopWeight, arg0._moveWeight) >= 0 then
-		arg0._moveWeight = arg0._moveWeight - 1
-		arg0._moveCount = math.random(var3.MOVE_DURATION_MIN, var3.MOVE_DURATION_MAX)
-		arg0._targetPoint = arg0:generateTargetPoint()
+	if math.random(arg0_6._stopWeight, arg0_6._moveWeight) >= 0 then
+		arg0_6._moveWeight = arg0_6._moveWeight - 1
+		arg0_6._moveCount = math.random(var3_0.MOVE_DURATION_MIN, var3_0.MOVE_DURATION_MAX)
+		arg0_6._targetPoint = arg0_6:generateTargetPoint()
 
-		local var0 = arg0._motionVO:GetPos()
-		local var1, var2 = arg0.getDirection(var0, arg0._targetPoint)
+		local var0_6 = arg0_6._motionVO:GetPos()
+		local var1_6, var2_6 = arg0_6.getDirection(var0_6, arg0_6._targetPoint)
 
-		arg0._speed.x = var1
-		arg0._speed.z = var2
-		arg0._crossAcc = math.random(-100, 100) / 10000
-		arg0.analysis = arg0._moveTick
+		arg0_6._speed.x = var1_6
+		arg0_6._speed.z = var2_6
+		arg0_6._crossAcc = math.random(-100, 100) / 10000
+		arg0_6.analysis = arg0_6._moveTick
 	else
-		arg0._stopCount = math.random(var3.STOP_DURATION_MIN, var3.STOP_DURATION_MAX)
-		arg0.analysis = var3._stopTick
-		arg0._hrz = 0
-		arg0._vtc = 0
+		arg0_6._stopCount = math.random(var3_0.STOP_DURATION_MIN, var3_0.STOP_DURATION_MAX)
+		arg0_6.analysis = var3_0._stopTick
+		arg0_6._hrz = 0
+		arg0_6._vtc = 0
 	end
 end
 
-function var3.generateTargetPoint(arg0)
-	local var0 = arg0._fleetVO:GetLeaderPersonality()
-	local var1 = var0.front_rate
-	local var2 = var0.rear_rate
+function var3_0.generateTargetPoint(arg0_7)
+	local var0_7 = arg0_7._fleetVO:GetLeaderPersonality()
+	local var1_7 = var0_7.front_rate
+	local var2_7 = var0_7.rear_rate
 
-	if arg0._fleetVO:GetIFF() == var2.FRIENDLY_CODE then
-		var1 = 1 - var1
-		var2 = 1 - var2
+	if arg0_7._fleetVO:GetIFF() == var2_0.FRIENDLY_CODE then
+		var1_7 = 1 - var1_7
+		var2_7 = 1 - var2_7
 	end
 
-	local var3 = arg0._totalWidth * var1 + arg0._leftBound
-	local var4 = arg0._totalWidth * var2 + arg0._leftBound
-	local var5 = arg0._totalHeight * var0.upper_rate + arg0._lowerBound
-	local var6 = arg0._totalHeight * var0.lower_rate + arg0._lowerBound
-	local var7
-	local var8 = math.random(var4, var3)
-	local var9 = math.random(var6, var5)
+	local var3_7 = arg0_7._totalWidth * var1_7 + arg0_7._leftBound
+	local var4_7 = arg0_7._totalWidth * var2_7 + arg0_7._leftBound
+	local var5_7 = arg0_7._totalHeight * var0_7.upper_rate + arg0_7._lowerBound
+	local var6_7 = arg0_7._totalHeight * var0_7.lower_rate + arg0_7._lowerBound
+	local var7_7
+	local var8_7 = math.random(var4_7, var3_7)
+	local var9_7 = math.random(var6_7, var5_7)
 
-	return (Vector3(var8, 0, var9))
+	return (Vector3(var8_7, 0, var9_7))
 end

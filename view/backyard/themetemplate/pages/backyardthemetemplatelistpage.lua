@@ -1,383 +1,383 @@
-﻿local var0 = class("BackYardThemeTemplateListPage", import("...Shop.pages.BackYardThemePage"))
+﻿local var0_0 = class("BackYardThemeTemplateListPage", import("...Shop.pages.BackYardThemePage"))
 
-var0.nextClickRefreshTime = 0
+var0_0.nextClickRefreshTime = 0
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "BackYardThemeTemplateThemePage"
 end
 
-function var0.LoadDetail(arg0)
-	setActive(arg0:findTF("adpter/descript"), false)
+function var0_0.LoadDetail(arg0_2)
+	setActive(arg0_2:findTF("adpter/descript"), false)
 end
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
+function var0_0.OnInit(arg0_3)
+	var0_0.super.OnInit(arg0_3)
 
-	arg0.tipBg = arg0:findTF("tip")
-	arg0.tips = {
-		arg0:findTF("tip1"),
-		arg0:findTF("tip2"),
-		arg0:findTF("tip3")
+	arg0_3.tipBg = arg0_3:findTF("tip")
+	arg0_3.tips = {
+		arg0_3:findTF("tip1"),
+		arg0_3:findTF("tip2"),
+		arg0_3:findTF("tip3")
 	}
-	arg0.goBtn = arg0:findTF("go_btn")
-	arg0.helpBtn = arg0:findTF("adpter/help")
-	arg0.rawImage = arg0:findTF("preview_raw"):GetComponent(typeof(RawImage))
-	arg0.listRect = arg0:findTF("list/frame")
-	arg0.refreshBtns = arg0:findTF("adpter/refresh_btns")
-	arg0.btns = {
-		[5] = arg0.refreshBtns:Find("random"),
-		[3] = arg0.refreshBtns:Find("hot"),
-		[2] = arg0.refreshBtns:Find("new")
+	arg0_3.goBtn = arg0_3:findTF("go_btn")
+	arg0_3.helpBtn = arg0_3:findTF("adpter/help")
+	arg0_3.rawImage = arg0_3:findTF("preview_raw"):GetComponent(typeof(RawImage))
+	arg0_3.listRect = arg0_3:findTF("list/frame")
+	arg0_3.refreshBtns = arg0_3:findTF("adpter/refresh_btns")
+	arg0_3.btns = {
+		[5] = arg0_3.refreshBtns:Find("random"),
+		[3] = arg0_3.refreshBtns:Find("hot"),
+		[2] = arg0_3.refreshBtns:Find("new")
 	}
 
-	setText(arg0.refreshBtns:Find("random/Text"), i18n("word_random"))
-	setText(arg0.refreshBtns:Find("random/sel/Text"), i18n("word_random"))
-	setText(arg0.refreshBtns:Find("hot/Text"), i18n("word_hot"))
-	setText(arg0.refreshBtns:Find("hot/sel/Text"), i18n("word_hot"))
-	setText(arg0.refreshBtns:Find("new/Text"), i18n("word_new"))
-	setText(arg0.refreshBtns:Find("new/sel/Text"), i18n("word_new"))
+	setText(arg0_3.refreshBtns:Find("random/Text"), i18n("word_random"))
+	setText(arg0_3.refreshBtns:Find("random/sel/Text"), i18n("word_random"))
+	setText(arg0_3.refreshBtns:Find("hot/Text"), i18n("word_hot"))
+	setText(arg0_3.refreshBtns:Find("hot/sel/Text"), i18n("word_hot"))
+	setText(arg0_3.refreshBtns:Find("new/Text"), i18n("word_new"))
+	setText(arg0_3.refreshBtns:Find("new/sel/Text"), i18n("word_new"))
 
-	for iter0, iter1 in pairs(arg0.btns) do
-		onButton(arg0, iter1, function()
-			if arg0:CanClickRefBtn(iter0) then
-				if arg0.selectedRefBtn then
-					setActive(arg0.selectedRefBtn:Find("sel"), false)
-					setActive(arg0.selectedRefBtn:Find("Text"), true)
+	for iter0_3, iter1_3 in pairs(arg0_3.btns) do
+		onButton(arg0_3, iter1_3, function()
+			if arg0_3:CanClickRefBtn(iter0_3) then
+				if arg0_3.selectedRefBtn then
+					setActive(arg0_3.selectedRefBtn:Find("sel"), false)
+					setActive(arg0_3.selectedRefBtn:Find("Text"), true)
 				end
 
-				setActive(iter1:Find("sel"), true)
-				setActive(iter1:Find("Text"), false)
-				arg0:SwitchPage(iter0, 1)
+				setActive(iter1_3:Find("sel"), true)
+				setActive(iter1_3:Find("Text"), false)
+				arg0_3:SwitchPage(iter0_3, 1)
 
-				arg0.selectedRefBtn = iter1
+				arg0_3.selectedRefBtn = iter1_3
 			end
 		end, SFX_PANEL)
 	end
 
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_3, arg0_3.helpBtn, function()
 		_backYardThemeTemplateMsgbox:ShowHelp({
 			helps = pg.gametip.backyard_theme_template_shop_tip.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.goBtn, function()
-		arg0:emit(NewBackYardThemeTemplateMediator.GO_DECORATION)
+	onButton(arg0_3, arg0_3.goBtn, function()
+		arg0_3:emit(NewBackYardThemeTemplateMediator.GO_DECORATION)
 	end, SFX_PANEL)
-	arg0.scrollRect.onValueChanged:RemoveAllListeners()
+	arg0_3.scrollRect.onValueChanged:RemoveAllListeners()
 
-	arg0.arrLeftBtnShop = arg0:findTF("list/frame/zuobian_shop")
-	arg0.arrRightBtnShop = arg0:findTF("list/frame/youbian_shop")
+	arg0_3.arrLeftBtnShop = arg0_3:findTF("list/frame/zuobian_shop")
+	arg0_3.arrRightBtnShop = arg0_3:findTF("list/frame/youbian_shop")
 
-	onButton(arg0, arg0.arrLeftBtnShop, function()
-		if arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-			local var0 = getProxy(DormProxy).PAGE
-			local var1 = getProxy(DormProxy).TYPE
+	onButton(arg0_3, arg0_3.arrLeftBtnShop, function()
+		if arg0_3.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+			local var0_7 = getProxy(DormProxy).PAGE
+			local var1_7 = getProxy(DormProxy).TYPE
 
-			if var0 > 1 then
-				arg0:SwitchPage(var1, var0 - 1, true)
+			if var0_7 > 1 then
+				arg0_3:SwitchPage(var1_7, var0_7 - 1, true)
 			end
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0.arrRightBtnShop, function()
-		if arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+	onButton(arg0_3, arg0_3.arrRightBtnShop, function()
+		if arg0_3.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
 			getProxy(DormProxy).ClickPage = true
 
-			local var0 = getProxy(DormProxy).PAGE
-			local var1 = getProxy(DormProxy).TYPE
+			local var0_8 = getProxy(DormProxy).PAGE
+			local var1_8 = getProxy(DormProxy).TYPE
 
-			arg0:SwitchPage(var1, var0 + 1, true)
+			arg0_3:SwitchPage(var1_8, var0_8 + 1, true)
 		end
 	end, SFX_PANEL)
 
-	local function var0()
-		if arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-			local var0 = BackYardConst.ThemeSortIndex2ServerIndex(arg0.sortIndex, arg0.asc)
+	local function var0_3()
+		if arg0_3.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+			local var0_9 = BackYardConst.ThemeSortIndex2ServerIndex(arg0_3.sortIndex, arg0_3.asc)
 
-			arg0:emit(NewBackYardThemeTemplateMediator.ON_GET_SPCAIL_TYPE_TEMPLATE, var0)
+			arg0_3:emit(NewBackYardThemeTemplateMediator.ON_GET_SPCAIL_TYPE_TEMPLATE, var0_9)
 		else
-			arg0:SetTotalCount()
+			arg0_3:SetTotalCount()
 		end
 	end
 
-	arg0.descPages = BackYardThemeTemplateDescPage.New(arg0._tf, arg0.event, arg0.contextData)
+	arg0_3.descPages = BackYardThemeTemplateDescPage.New(arg0_3._tf, arg0_3.event, arg0_3.contextData)
 
-	function arg0.descPages.OnSortChange(arg0)
-		arg0.asc = arg0
+	function arg0_3.descPages.OnSortChange(arg0_10)
+		arg0_3.asc = arg0_10
 
-		var0()
+		var0_3()
 	end
 
-	arg0.contextData.infoPage = BackYardThemeTemplateInfoPage.New(arg0._parentTf, arg0.event, arg0.contextData)
-	arg0.contextData.furnitureMsgBox = BackYardFurnitureMsgBoxPage.New(arg0._parentTf, arg0.event, arg0.contextData)
-	arg0.contextData.themeMsgBox = BackYardThemeTemplatePurchaseMsgbox.New(arg0._parentTf, arg0.event, arg0.contextData)
+	arg0_3.contextData.infoPage = BackYardThemeTemplateInfoPage.New(arg0_3._parentTf, arg0_3.event, arg0_3.contextData)
+	arg0_3.contextData.furnitureMsgBox = BackYardFurnitureMsgBoxPage.New(arg0_3._parentTf, arg0_3.event, arg0_3.contextData)
+	arg0_3.contextData.themeMsgBox = BackYardThemeTemplatePurchaseMsgbox.New(arg0_3._parentTf, arg0_3.event, arg0_3.contextData)
 
-	setText(arg0.goBtn:Find("Text"), i18n("courtyard_label_go"))
-	setText(arg0:findTF("tip1"), i18n("courtyard_label_empty_template_list"))
-	setText(arg0:findTF("tip2"), i18n("courtyard_label_empty_custom_template_list"))
-	setText(arg0:findTF("tip3"), i18n("courtyard_label_empty_collection_list"))
+	setText(arg0_3.goBtn:Find("Text"), i18n("courtyard_label_go"))
+	setText(arg0_3:findTF("tip1"), i18n("courtyard_label_empty_template_list"))
+	setText(arg0_3:findTF("tip2"), i18n("courtyard_label_empty_custom_template_list"))
+	setText(arg0_3:findTF("tip3"), i18n("courtyard_label_empty_collection_list"))
 end
 
-function var0.InitInput(arg0)
-	onInputChanged(arg0, arg0.searchInput, function()
-		local var0 = getInputText(arg0.searchInput)
+function var0_0.InitInput(arg0_11)
+	onInputChanged(arg0_11, arg0_11.searchInput, function()
+		local var0_12 = getInputText(arg0_11.searchInput)
 
-		setActive(arg0.searchClear, var0 ~= "")
+		setActive(arg0_11.searchClear, var0_12 ~= "")
 	end)
-	onInputEndEdit(arg0, arg0.searchInput, function()
-		arg0:OnSearchKeyChange()
+	onInputEndEdit(arg0_11, arg0_11.searchInput, function()
+		arg0_11:OnSearchKeyChange()
 	end)
 end
 
-function var0.UpdateArr(arg0)
-	if arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		local var0 = getProxy(DormProxy).PAGE
-		local var1 = getProxy(DormProxy).TYPE
-		local var2 = getProxy(DormProxy).lastPages[var1]
-		local var3 = getProxy(DormProxy).ClickPage
+function var0_0.UpdateArr(arg0_14)
+	if arg0_14.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		local var0_14 = getProxy(DormProxy).PAGE
+		local var1_14 = getProxy(DormProxy).TYPE
+		local var2_14 = getProxy(DormProxy).lastPages[var1_14]
+		local var3_14 = getProxy(DormProxy).ClickPage
 
-		setActive(arg0.arrLeftBtnShop, var0 > 1)
-		setActive(arg0.arrRightBtnShop, var0 < var2 or not var3)
-	elseif arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
-		setActive(arg0.arrLeftBtnShop, false)
-		setActive(arg0.arrRightBtnShop, false)
+		setActive(arg0_14.arrLeftBtnShop, var0_14 > 1)
+		setActive(arg0_14.arrRightBtnShop, var0_14 < var2_14 or not var3_14)
+	elseif arg0_14.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
+		setActive(arg0_14.arrLeftBtnShop, false)
+		setActive(arg0_14.arrRightBtnShop, false)
 	else
-		setActive(arg0.arrLeftBtnShop, false)
-		setActive(arg0.arrRightBtnShop, false)
+		setActive(arg0_14.arrLeftBtnShop, false)
+		setActive(arg0_14.arrRightBtnShop, false)
 	end
 end
 
-function var0.CanClickRefBtn(arg0, arg1)
-	local var0 = getProxy(DormProxy).TYPE
-	local var1 = pg.TimeMgr.GetInstance():GetServerTime()
+function var0_0.CanClickRefBtn(arg0_15, arg1_15)
+	local var0_15 = getProxy(DormProxy).TYPE
+	local var1_15 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	if var1 < var0.nextClickRefreshTime then
-		local var2 = math.ceil(var0.nextClickRefreshTime - var1)
+	if var1_15 < var0_0.nextClickRefreshTime then
+		local var2_15 = math.ceil(var0_0.nextClickRefreshTime - var1_15)
 
-		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shop_refresh_frequently", var2))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shop_refresh_frequently", var2_15))
 
 		return false
 	end
 
-	if var0 == arg1 and arg1 ~= 5 then
+	if var0_15 == arg1_15 and arg1_15 ~= 5 then
 		return false
 	end
 
 	return true
 end
 
-function var0.SwitchPage(arg0, arg1, arg2, arg3)
-	local var0 = getProxy(DormProxy).TYPE
-	local var1 = arg0.timeType
+function var0_0.SwitchPage(arg0_16, arg1_16, arg2_16, arg3_16)
+	local var0_16 = getProxy(DormProxy).TYPE
+	local var1_16 = arg0_16.timeType
 
-	if var0 ~= arg1 or arg3 then
-		arg0:emit(NewBackYardThemeTemplateMediator.ON_REFRESH, arg1, arg2, var1, arg3)
+	if var0_16 ~= arg1_16 or arg3_16 then
+		arg0_16:emit(NewBackYardThemeTemplateMediator.ON_REFRESH, arg1_16, arg2_16, var1_16, arg3_16)
 
-		if not arg3 then
-			local var2 = pg.TimeMgr.GetInstance():GetServerTime()
+		if not arg3_16 then
+			local var2_16 = pg.TimeMgr.GetInstance():GetServerTime()
 
-			var0.nextClickRefreshTime = BackYardConst.MANUAL_REFRESH_THEME_TEMPLATE_TIME + var2
+			var0_0.nextClickRefreshTime = BackYardConst.MANUAL_REFRESH_THEME_TEMPLATE_TIME + var2_16
 		end
 	end
 end
 
-function var0.UpdateDorm(arg0, arg1)
-	arg0.dorm = arg1
+function var0_0.UpdateDorm(arg0_17, arg1_17)
+	arg0_17.dorm = arg1_17
 
-	if arg0.contextData.infoPage:GetLoaded() and arg0.contextData.infoPage:isShowing() then
-		arg0.contextData.infoPage:ExecuteAction("DormUpdated", arg1)
+	if arg0_17.contextData.infoPage:GetLoaded() and arg0_17.contextData.infoPage:isShowing() then
+		arg0_17.contextData.infoPage:ExecuteAction("DormUpdated", arg1_17)
 	end
 
-	if arg0.descPages:GetLoaded() then
-		arg0.descPages:ExecuteAction("UpdateDorm", arg1)
-	end
-end
-
-function var0.PlayerUpdated(arg0, arg1)
-	arg0.player = arg1
-
-	if arg0.contextData.infoPage:GetLoaded() and arg0.contextData.infoPage:isShowing() then
-		arg0.contextData.infoPage:ExecuteAction("OnPlayerUpdated", arg1)
-	end
-
-	if arg0.descPages:GetLoaded() then
-		arg0.descPages:ExecuteAction("PlayerUpdated", arg1)
+	if arg0_17.descPages:GetLoaded() then
+		arg0_17.descPages:ExecuteAction("UpdateDorm", arg1_17)
 	end
 end
 
-function var0.FurnituresUpdated(arg0, arg1)
-	if arg0.contextData.infoPage:GetLoaded() and arg0.contextData.infoPage:isShowing() then
-		arg0.contextData.infoPage:ExecuteAction("FurnituresUpdated", arg1)
+function var0_0.PlayerUpdated(arg0_18, arg1_18)
+	arg0_18.player = arg1_18
+
+	if arg0_18.contextData.infoPage:GetLoaded() and arg0_18.contextData.infoPage:isShowing() then
+		arg0_18.contextData.infoPage:ExecuteAction("OnPlayerUpdated", arg1_18)
+	end
+
+	if arg0_18.descPages:GetLoaded() then
+		arg0_18.descPages:ExecuteAction("PlayerUpdated", arg1_18)
 	end
 end
 
-function var0.ThemeTemplateUpdate(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0.list) do
-		if iter1.id == arg1.id then
-			arg0.list[iter0] = arg1
+function var0_0.FurnituresUpdated(arg0_19, arg1_19)
+	if arg0_19.contextData.infoPage:GetLoaded() and arg0_19.contextData.infoPage:isShowing() then
+		arg0_19.contextData.infoPage:ExecuteAction("FurnituresUpdated", arg1_19)
+	end
+end
+
+function var0_0.ThemeTemplateUpdate(arg0_20, arg1_20)
+	for iter0_20, iter1_20 in ipairs(arg0_20.list) do
+		if iter1_20.id == arg1_20.id then
+			arg0_20.list[iter0_20] = arg1_20
 
 			break
 		end
 	end
 
-	for iter2, iter3 in pairs(arg0.cards) do
-		if iter3.template.id == arg1.id then
-			iter3:Update(arg1)
+	for iter2_20, iter3_20 in pairs(arg0_20.cards) do
+		if iter3_20.template.id == arg1_20.id then
+			iter3_20:Update(arg1_20)
 		end
 	end
 
-	if arg0.descPages:GetLoaded() then
-		arg0.descPages:ThemeTemplateUpdate(arg1)
+	if arg0_20.descPages:GetLoaded() then
+		arg0_20.descPages:ThemeTemplateUpdate(arg1_20)
 	end
 end
 
-function var0.ThemeTemplatesUpdate(arg0, arg1)
-	arg0:Flush(arg1)
+function var0_0.ThemeTemplatesUpdate(arg0_21, arg1_21)
+	arg0_21:Flush(arg1_21)
 end
 
-function var0.OnSearchKeyChange(arg0)
-	local var0 = getInputText(arg0.searchInput)
+function var0_0.OnSearchKeyChange(arg0_22)
+	local var0_22 = getInputText(arg0_22.searchInput)
 
-	arg0:emit(NewBackYardThemeTemplateMediator.ON_SEARCH, arg0.pageType, var0)
+	arg0_22:emit(NewBackYardThemeTemplateMediator.ON_SEARCH, arg0_22.pageType, var0_22)
 end
 
-function var0.ShopSearchKeyChange(arg0, arg1)
-	arg0.searchTemplate = arg1
+function var0_0.ShopSearchKeyChange(arg0_23, arg1_23)
+	arg0_23.searchTemplate = arg1_23
 
-	arg0:InitThemeList()
+	arg0_23:InitThemeList()
 
-	for iter0, iter1 in pairs(arg0.cards) do
-		if iter1.themeVO.id == arg1.id then
-			triggerButton(iter1._tf)
+	for iter0_23, iter1_23 in pairs(arg0_23.cards) do
+		if iter1_23.themeVO.id == arg1_23.id then
+			triggerButton(iter1_23._tf)
 
 			break
 		end
 	end
 end
 
-function var0.OnSearchKeyEditEnd(arg0)
-	local var0 = getInputText(arg0.searchInput)
+function var0_0.OnSearchKeyEditEnd(arg0_24)
+	local var0_24 = getInputText(arg0_24.searchInput)
 
-	if not var0 or var0 == "" then
-		arg0:emit(NewBackYardThemeTemplateMediator.ON_SEARCH, arg0.pageType, var0)
+	if not var0_24 or var0_24 == "" then
+		arg0_24:emit(NewBackYardThemeTemplateMediator.ON_SEARCH, arg0_24.pageType, var0_24)
 	end
 end
 
-function var0.ClearShopSearchKey(arg0)
-	arg0.searchTemplate = nil
+function var0_0.ClearShopSearchKey(arg0_25)
+	arg0_25.searchTemplate = nil
 
-	arg0:InitThemeList()
-	arg0:ForceActiveFirstCard()
+	arg0_25:InitThemeList()
+	arg0_25:ForceActiveFirstCard()
 end
 
-function var0.DeleteCustomThemeTemplate(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0.list) do
-		if iter1.id == arg1 then
-			table.remove(arg0.list, iter0)
+function var0_0.DeleteCustomThemeTemplate(arg0_26, arg1_26)
+	for iter0_26, iter1_26 in ipairs(arg0_26.list) do
+		if iter1_26.id == arg1_26 then
+			table.remove(arg0_26.list, iter0_26)
 
 			break
 		end
 	end
 
-	arg0:InitThemeList()
-	arg0:ForceActiveFirstCard()
+	arg0_26:InitThemeList()
+	arg0_26:ForceActiveFirstCard()
 end
 
-function var0.DeleteCollectionThemeTemplate(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0.list) do
-		if iter1.id == arg1 then
-			table.remove(arg0.list, iter0)
+function var0_0.DeleteCollectionThemeTemplate(arg0_27, arg1_27)
+	for iter0_27, iter1_27 in ipairs(arg0_27.list) do
+		if iter1_27.id == arg1_27 then
+			table.remove(arg0_27.list, iter0_27)
 
 			break
 		end
 	end
 
-	arg0:InitThemeList()
-	arg0:ForceActiveFirstCard()
+	arg0_27:InitThemeList()
+	arg0_27:ForceActiveFirstCard()
 end
 
-function var0.AddCollectionThemeTemplate(arg0, arg1)
-	table.insert(arg0.list, arg1)
-	arg0:InitThemeList()
+function var0_0.AddCollectionThemeTemplate(arg0_28, arg1_28)
+	table.insert(arg0_28.list, arg1_28)
+	arg0_28:InitThemeList()
 end
 
-function var0.DeleteShopThemeTemplate(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0.list) do
-		if iter1.id == arg1 then
-			table.remove(arg0.list, iter0)
+function var0_0.DeleteShopThemeTemplate(arg0_29, arg1_29)
+	for iter0_29, iter1_29 in ipairs(arg0_29.list) do
+		if iter1_29.id == arg1_29 then
+			table.remove(arg0_29.list, iter0_29)
 
 			break
 		end
 	end
 
-	arg0:InitThemeList()
-	arg0:ForceActiveFirstCard()
+	arg0_29:InitThemeList()
+	arg0_29:ForceActiveFirstCard()
 end
 
-function var0.ThemeTemplatesErro(arg0)
-	arg0:UpdateArr()
+function var0_0.ThemeTemplatesErro(arg0_30)
+	arg0_30:UpdateArr()
 end
 
-function var0.GetData(arg0)
-	if arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		table.sort(arg0.list, function(arg0, arg1)
-			return arg0.sortIndex < arg1.sortIndex
+function var0_0.GetData(arg0_31)
+	if arg0_31.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		table.sort(arg0_31.list, function(arg0_32, arg1_32)
+			return arg0_32.sortIndex < arg1_32.sortIndex
 		end)
 	else
-		local var0
-		local var1
+		local var0_31
+		local var1_31
 
-		if arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
-			local var2, var3 = BackYardConst.ServerIndex2ThemeSortIndex(getProxy(DormProxy).TYPE)
+		if arg0_31.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
+			local var2_31, var3_31 = BackYardConst.ServerIndex2ThemeSortIndex(getProxy(DormProxy).TYPE)
 		else
-			local var4 = defaultValue(arg0.sortIndex, 1)
-			local var5 = defaultValue(arg0.asc, true)
+			local var4_31 = defaultValue(arg0_31.sortIndex, 1)
+			local var5_31 = defaultValue(arg0_31.asc, true)
 		end
 	end
 
-	return arg0.list
+	return arg0_31.list
 end
 
-function var0.OnDormUpdated(arg0)
+function var0_0.OnDormUpdated(arg0_33)
 	return
 end
 
-function var0.OnPlayerUpdated(arg0)
+function var0_0.OnPlayerUpdated(arg0_34)
 	return
 end
 
-function var0.BlurView(arg0)
+function var0_0.BlurView(arg0_35)
 	return
 end
 
-function var0.UnBlurView(arg0)
+function var0_0.UnBlurView(arg0_36)
 	return
 end
 
-function var0.SetUp(arg0, arg1, arg2, arg3, arg4)
-	arg0.searchTemplate = nil
-	arg0.searchKey = ""
-	arg0.pageType = arg1
-	arg0.dorm = arg3
-	arg0.player = arg4
+function var0_0.SetUp(arg0_37, arg1_37, arg2_37, arg3_37, arg4_37)
+	arg0_37.searchTemplate = nil
+	arg0_37.searchKey = ""
+	arg0_37.pageType = arg1_37
+	arg0_37.dorm = arg3_37
+	arg0_37.player = arg4_37
 
-	arg0:Flush(arg2)
+	arg0_37:Flush(arg2_37)
 
-	if arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		local var0 = getProxy(DormProxy).TYPE
-		local var1 = getProxy(DormProxy).PAGE
+	if arg0_37.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		local var0_37 = getProxy(DormProxy).TYPE
+		local var1_37 = getProxy(DormProxy).PAGE
 
-		setActive(arg0.btns[var0]:Find("sel"), true)
+		setActive(arg0_37.btns[var0_37]:Find("sel"), true)
 
-		arg0.selectedRefBtn = arg0.btns[var0]
+		arg0_37.selectedRefBtn = arg0_37.btns[var0_37]
 
 		if getProxy(DormProxy):NeedRefreshThemeTemplateShop() then
-			arg0:SwitchPage(var0, var1, true)
+			arg0_37:SwitchPage(var0_37, var1_37, true)
 		end
 	end
 
-	setActive(arg0.refreshBtns, arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP)
-	setActive(arg0.searchInput.gameObject, arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP)
+	setActive(arg0_37.refreshBtns, arg0_37.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP)
+	setActive(arg0_37.searchInput.gameObject, arg0_37.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP)
 
-	if arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION and getProxy(DormProxy):NeedCollectionTip() then
+	if arg0_37.pageType == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION and getProxy(DormProxy):NeedCollectionTip() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("BackYard_collection_be_delete_tip"))
 	end
 
@@ -385,155 +385,155 @@ function var0.SetUp(arg0, arg1, arg2, arg3, arg4)
 		-- block empty
 	end
 
-	if arg0.pageType ~= BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		for iter0, iter1 in pairs(arg0.btns) do
-			setActive(iter1:Find("sel"), false)
-			setActive(iter1:Find("Text"), true)
+	if arg0_37.pageType ~= BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		for iter0_37, iter1_37 in pairs(arg0_37.btns) do
+			setActive(iter1_37:Find("sel"), false)
+			setActive(iter1_37:Find("Text"), true)
 		end
 	end
 end
 
-function var0.Flush(arg0, arg1)
-	arg0:Show()
+function var0_0.Flush(arg0_38, arg1_38)
+	arg0_38:Show()
 
-	arg0.list = arg1 or {}
+	arg0_38.list = arg1_38 or {}
 
-	arg0:InitThemeList()
-	arg0:UpdateArr()
+	arg0_38:InitThemeList()
+	arg0_38:UpdateArr()
 
-	arg0.card = nil
+	arg0_38.card = nil
 
 	onNextTick(function()
-		arg0:ForceActiveFirstCard()
+		arg0_38:ForceActiveFirstCard()
 	end)
 end
 
-function var0.InitThemeList(arg0)
-	setActive(arg0.rawImage.gameObject, false)
-	arg0:SetTotalCount()
+function var0_0.InitThemeList(arg0_40)
+	setActive(arg0_40.rawImage.gameObject, false)
+	arg0_40:SetTotalCount()
 end
 
-function var0.SetTotalCount(arg0)
-	arg0.disPlays = {}
+function var0_0.SetTotalCount(arg0_41)
+	arg0_41.disPlays = {}
 
-	local var0 = arg0:GetData()
+	local var0_41 = arg0_41:GetData()
 
-	if arg0.searchTemplate then
-		table.insert(arg0.disPlays, arg0.searchTemplate)
+	if arg0_41.searchTemplate then
+		table.insert(arg0_41.disPlays, arg0_41.searchTemplate)
 	else
-		for iter0, iter1 in ipairs(var0) do
-			if iter1:MatchSearchKey(arg0.searchKey) then
-				table.insert(arg0.disPlays, iter1)
+		for iter0_41, iter1_41 in ipairs(var0_41) do
+			if iter1_41:MatchSearchKey(arg0_41.searchKey) then
+				table.insert(arg0_41.disPlays, iter1_41)
 			end
 		end
 	end
 
-	arg0.scrollRect:SetTotalCount(#arg0.disPlays)
+	arg0_41.scrollRect:SetTotalCount(#arg0_41.disPlays)
 end
 
-function var0.ForceActiveFirstCard(arg0)
-	local var0 = #arg0.disPlays == 0
+function var0_0.ForceActiveFirstCard(arg0_42)
+	local var0_42 = #arg0_42.disPlays == 0
 
-	setActive(arg0.tipBg, var0)
+	setActive(arg0_42.tipBg, var0_42)
 
-	local var1 = GetOrAddComponent(arg0.listRect, typeof(CanvasGroup))
+	local var1_42 = GetOrAddComponent(arg0_42.listRect, typeof(CanvasGroup))
 
-	var1.alpha = var0 and 0 or 1
-	var1.blocksRaycasts = not var0
+	var1_42.alpha = var0_42 and 0 or 1
+	var1_42.blocksRaycasts = not var0_42
 
-	_.each(arg0.tips, function(arg0)
-		setActive(arg0, arg0.gameObject.name == "tip" .. tostring(arg0.pageType) and #arg0.disPlays == 0)
+	_.each(arg0_42.tips, function(arg0_43)
+		setActive(arg0_43, arg0_43.gameObject.name == "tip" .. tostring(arg0_42.pageType) and #arg0_42.disPlays == 0)
 	end)
-	setActive(arg0.goBtn, arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM and #arg0.disPlays == 0)
+	setActive(arg0_42.goBtn, arg0_42.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM and #arg0_42.disPlays == 0)
 
-	if #arg0.disPlays == 0 then
-		arg0.descPages:ExecuteAction("Hide")
+	if #arg0_42.disPlays == 0 then
+		arg0_42.descPages:ExecuteAction("Hide")
 
 		return
 	end
 
-	local var2 = arg0.disPlays[1]
+	local var2_42 = arg0_42.disPlays[1]
 
-	for iter0, iter1 in pairs(arg0.cards) do
-		if var2.id == iter1.template.id then
-			triggerButton(iter1._tf)
+	for iter0_42, iter1_42 in pairs(arg0_42.cards) do
+		if var2_42.id == iter1_42.template.id then
+			triggerButton(iter1_42._tf)
 
 			break
 		end
 	end
 end
 
-function var0.NoSelected(arg0)
+function var0_0.NoSelected(arg0_44)
 	return false
 end
 
-function var0.CreateCard(arg0, arg1)
-	return (BackYardThemeTemplateCard.New(arg1))
+function var0_0.CreateCard(arg0_45, arg1_45)
+	return (BackYardThemeTemplateCard.New(arg1_45))
 end
 
-function var0.OnUpdateCard(arg0, arg1, arg2)
-	var0.super.OnUpdateCard(arg0, arg1, arg2)
+function var0_0.OnUpdateCard(arg0_46, arg1_46, arg2_46)
+	var0_0.super.OnUpdateCard(arg0_46, arg1_46, arg2_46)
 
-	local var0 = arg0.cards[arg2]
+	local var0_46 = arg0_46.cards[arg2_46]
 
-	if var0.template:ShouldFetch() then
-		arg0:emit(NewBackYardThemeTemplateMediator.ON_GET_THEMPLATE_DATA, var0.template.id, function(arg0)
-			var0:FlushData(arg0)
+	if var0_46.template:ShouldFetch() then
+		arg0_46:emit(NewBackYardThemeTemplateMediator.ON_GET_THEMPLATE_DATA, var0_46.template.id, function(arg0_47)
+			var0_46:FlushData(arg0_47)
 		end)
 	end
 end
 
-function var0.OnCardClick(arg0, arg1)
-	if arg1.template == arg0.card then
+function var0_0.OnCardClick(arg0_48, arg1_48)
+	if arg1_48.template == arg0_48.card then
 		return
 	end
 
-	if arg0.descPages:GetLoaded() then
-		arg0.descPages:Hide()
+	if arg0_48.descPages:GetLoaded() then
+		arg0_48.descPages:Hide()
 	end
 
-	setActive(arg0.rawImage.gameObject, false)
+	setActive(arg0_48.rawImage.gameObject, false)
 
-	local function var0(arg0)
-		local var0 = arg0:GetImageMd5()
+	local function var0_48(arg0_49)
+		local var0_49 = arg0_49:GetImageMd5()
 
-		BackYardThemeTempalteUtil.GetTexture(arg0:GetTextureName(), var0, function(arg0)
-			if not IsNil(arg0.rawImage) and arg0 then
-				arg0.rawImage.texture = arg0
+		BackYardThemeTempalteUtil.GetTexture(arg0_49:GetTextureName(), var0_49, function(arg0_50)
+			if not IsNil(arg0_48.rawImage) and arg0_50 then
+				arg0_48.rawImage.texture = arg0_50
 
-				setActive(arg0.rawImage.gameObject, true)
-				arg0.rawImage:SetNativeSize()
+				setActive(arg0_48.rawImage.gameObject, true)
+				arg0_48.rawImage:SetNativeSize()
 			end
 		end)
-		arg0.descPages:ExecuteAction("SetUp", arg0.pageType, arg1.template, arg0.dorm, arg0.player)
+		arg0_48.descPages:ExecuteAction("SetUp", arg0_48.pageType, arg1_48.template, arg0_48.dorm, arg0_48.player)
 	end
 
-	if arg1.template:ShouldFetch() then
-		arg0:emit(NewBackYardThemeTemplateMediator.ON_GET_THEMPLATE_DATA, arg1.template.id, function(arg0)
-			var0(arg1.template)
+	if arg1_48.template:ShouldFetch() then
+		arg0_48:emit(NewBackYardThemeTemplateMediator.ON_GET_THEMPLATE_DATA, arg1_48.template.id, function(arg0_51)
+			var0_48(arg1_48.template)
 		end)
 	else
-		var0(arg1.template)
+		var0_48(arg1_48.template)
 	end
 
-	arg0.card = arg1.template
+	arg0_48.card = arg1_48.template
 end
 
-function var0.OnDestroy(arg0)
-	var0.super.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_52)
+	var0_0.super.OnDestroy(arg0_52)
 
-	arg0.descPages.OnSortChange = nil
+	arg0_52.descPages.OnSortChange = nil
 
-	arg0.descPages:Destroy()
-	arg0.contextData.infoPage:Destroy()
-	arg0.contextData.furnitureMsgBox:Destroy()
-	arg0.contextData.themeMsgBox:Destroy()
+	arg0_52.descPages:Destroy()
+	arg0_52.contextData.infoPage:Destroy()
+	arg0_52.contextData.furnitureMsgBox:Destroy()
+	arg0_52.contextData.themeMsgBox:Destroy()
 
-	if not IsNil(arg0.rawImage.texture) then
-		Object.Destroy(arg0.rawImage.texture)
+	if not IsNil(arg0_52.rawImage.texture) then
+		Object.Destroy(arg0_52.rawImage.texture)
 
-		arg0.rawImage.texture = nil
+		arg0_52.rawImage.texture = nil
 	end
 end
 
-return var0
+return var0_0

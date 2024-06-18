@@ -1,65 +1,65 @@
-﻿local var0 = class("CourtYardBGAgent", import(".CourtYardAgent"))
+﻿local var0_0 = class("CourtYardBGAgent", import(".CourtYardAgent"))
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0.prefab = nil
+	arg0_1.prefab = nil
 end
 
-function var0.Switch(arg0, arg1, arg2)
-	if not arg2 then
+function var0_0.Switch(arg0_2, arg1_2, arg2_2)
+	if not arg2_2 then
 		return
 	end
 
-	local var0 = arg0.prefab and arg0.prefab.name or ""
+	local var0_2 = arg0_2.prefab and arg0_2.prefab.name or ""
 
-	if arg1 and var0 ~= arg2 then
-		arg0:LoadBG(arg2)
-	elseif arg1 and var0 == arg2 then
+	if arg1_2 and var0_2 ~= arg2_2 then
+		arg0_2:LoadBG(arg2_2)
+	elseif arg1_2 and var0_2 == arg2_2 then
 		-- block empty
-	elseif not arg1 and var0 == arg2 then
-		arg0:Clear()
+	elseif not arg1_2 and var0_2 == arg2_2 then
+		arg0_2:Clear()
 	else
 		assert(false)
 	end
 end
 
-function var0.LoadBG(arg0, arg1)
-	PoolMgr.GetInstance():GetPrefab("BackyardBG/" .. arg1, arg1, true, function(arg0)
-		if arg0.exited then
-			PoolMgr.GetInstance():ReturnPrefab("BackyardBG/" .. arg1, arg1, arg0)
+function var0_0.LoadBG(arg0_3, arg1_3)
+	PoolMgr.GetInstance():GetPrefab("BackyardBG/" .. arg1_3, arg1_3, true, function(arg0_4)
+		if arg0_3.exited then
+			PoolMgr.GetInstance():ReturnPrefab("BackyardBG/" .. arg1_3, arg1_3, arg0_4)
 		end
 
-		arg0.name = arg1
+		arg0_4.name = arg1_3
 
-		setParent(arg0, arg0._tf)
-		arg0.transform:SetAsFirstSibling()
-		setActive(arg0, true)
+		setParent(arg0_4, arg0_3._tf)
+		arg0_4.transform:SetAsFirstSibling()
+		setActive(arg0_4, true)
 
-		arg0.prefab = arg0
+		arg0_3.prefab = arg0_4
 	end)
 end
 
-function var0.Clear(arg0)
-	if arg0.prefab then
-		local var0 = arg0.prefab.name
+function var0_0.Clear(arg0_5)
+	if arg0_5.prefab then
+		local var0_5 = arg0_5.prefab.name
 
-		PoolMgr.GetInstance():ReturnPrefab("BackyardBG/" .. var0, var0, arg0.prefab)
+		PoolMgr.GetInstance():ReturnPrefab("BackyardBG/" .. var0_5, var0_5, arg0_5.prefab)
 
-		arg0.prefab = nil
+		arg0_5.prefab = nil
 	end
 end
 
-function var0.ClearByName(arg0, arg1)
-	if arg0.prefab and arg0.prefab.name == arg1 then
-		arg0:Clear()
+function var0_0.ClearByName(arg0_6, arg1_6)
+	if arg0_6.prefab and arg0_6.prefab.name == arg1_6 then
+		arg0_6:Clear()
 	end
 end
 
-function var0.Dispose(arg0)
-	arg0:Clear(true)
+function var0_0.Dispose(arg0_7)
+	arg0_7:Clear(true)
 
-	arg0.exited = true
+	arg0_7.exited = true
 end
 
-return var0
+return var0_0

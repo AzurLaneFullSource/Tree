@@ -1,110 +1,110 @@
-﻿local var0 = class("SculptureMsgBoxPage", import("view.base.BaseSubView"))
+﻿local var0_0 = class("SculptureMsgBoxPage", import("view.base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "SculptureMsgboxUI"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.contentTxt = arg0:findTF("frame/Text"):GetComponent(typeof(Text))
-	arg0.nextBtn = arg0:findTF("frame/btn")
-	arg0.confirmBtn = arg0:findTF("frame/btn_confrim")
-	arg0.consumeTr = arg0:findTF("frame/consume")
-	arg0.consumeTxt = arg0:findTF("frame/consume/Text"):GetComponent(typeof(Text))
-	arg0.consumeIcon = arg0:findTF("frame/consume/icon"):GetComponent(typeof(Image))
-	arg0.role = arg0:findTF("frame/role"):GetComponent(typeof(Image))
-	arg0.title = arg0:findTF("frame/title/Text"):GetComponent(typeof(Image))
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.contentTxt = arg0_2:findTF("frame/Text"):GetComponent(typeof(Text))
+	arg0_2.nextBtn = arg0_2:findTF("frame/btn")
+	arg0_2.confirmBtn = arg0_2:findTF("frame/btn_confrim")
+	arg0_2.consumeTr = arg0_2:findTF("frame/consume")
+	arg0_2.consumeTxt = arg0_2:findTF("frame/consume/Text"):GetComponent(typeof(Text))
+	arg0_2.consumeIcon = arg0_2:findTF("frame/consume/icon"):GetComponent(typeof(Image))
+	arg0_2.role = arg0_2:findTF("frame/role"):GetComponent(typeof(Image))
+	arg0_2.title = arg0_2:findTF("frame/title/Text"):GetComponent(typeof(Image))
 
-	setText(arg0:findTF("frame/tip"), i18n("sculpture_close_tip"))
+	setText(arg0_2:findTF("frame/tip"), i18n("sculpture_close_tip"))
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0.confirmBtn, function()
-		if arg0.settings.onYes then
-			arg0.settings.onYes()
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3.confirmBtn, function()
+		if arg0_3.settings.onYes then
+			arg0_3.settings.onYes()
 		end
 
-		arg0:Hide()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.nextBtn, function()
-		if arg0.settings.onYes then
-			arg0.settings.onYes()
+	onButton(arg0_3, arg0_3.nextBtn, function()
+		if arg0_3.settings.onYes then
+			arg0_3.settings.onYes()
 		end
 
-		arg0:Hide()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
 end
 
-function var0.Show(arg0, arg1)
-	var0.super.Show(arg0)
+function var0_0.Show(arg0_7, arg1_7)
+	var0_0.super.Show(arg0_7)
 
-	arg0.settings = arg1
-	arg0.contentTxt.text = HXSet.hxLan(arg1.content)
+	arg0_7.settings = arg1_7
+	arg0_7.contentTxt.text = HXSet.hxLan(arg1_7.content)
 
-	setActive(arg0.consumeTr, arg1.consume)
+	setActive(arg0_7.consumeTr, arg1_7.consume)
 
-	if arg1.consume then
-		arg0.consumeTxt.text = arg1.consume
+	if arg1_7.consume then
+		arg0_7.consumeTxt.text = arg1_7.consume
 
-		local var0 = arg1.consumeId
-		local var1 = pg.activity_workbench_item[var0]
+		local var0_7 = arg1_7.consumeId
+		local var1_7 = pg.activity_workbench_item[var0_7]
 
-		arg0.consumeIcon.sprite = LoadSprite("props/" .. var1.icon)
-		rtf(arg0.consumeIcon.gameObject).sizeDelta = Vector2(60, 60)
+		arg0_7.consumeIcon.sprite = LoadSprite("props/" .. var1_7.icon)
+		rtf(arg0_7.consumeIcon.gameObject).sizeDelta = Vector2(60, 60)
 	else
-		rtf(arg0.consumeIcon.gameObject).sizeDelta = Vector2(0, 0)
+		rtf(arg0_7.consumeIcon.gameObject).sizeDelta = Vector2(0, 0)
 	end
 
-	if arg1.iconName then
-		arg0:LoadChar(arg1.iconName)
+	if arg1_7.iconName then
+		arg0_7:LoadChar(arg1_7.iconName)
 	else
-		arg0:ClearChar()
+		arg0_7:ClearChar()
 	end
 
-	if arg1.title then
-		arg0.title.sprite = GetSpriteFromAtlas("ui/SculptureUI_atlas", arg1.title)
+	if arg1_7.title then
+		arg0_7.title.sprite = GetSpriteFromAtlas("ui/SculptureUI_atlas", arg1_7.title)
 	else
-		arg0.title.sprite = GetSpriteFromAtlas("ui/SculptureUI_atlas", "item_title")
+		arg0_7.title.sprite = GetSpriteFromAtlas("ui/SculptureUI_atlas", "item_title")
 	end
 
-	arg0.title:SetNativeSize()
-	setActive(arg0.nextBtn, arg1.nextBtn)
-	setActive(arg0.confirmBtn, not arg1.nextBtn)
+	arg0_7.title:SetNativeSize()
+	setActive(arg0_7.nextBtn, arg1_7.nextBtn)
+	setActive(arg0_7.confirmBtn, not arg1_7.nextBtn)
 end
 
-function var0.LoadChar(arg0, arg1)
-	if arg0.charName == arg1 then
+function var0_0.LoadChar(arg0_8, arg1_8)
+	if arg0_8.charName == arg1_8 then
 		return
 	end
 
-	arg0:ClearChar()
-	PoolMgr.GetInstance():GetSpineChar("takegift_" .. arg1, true, function(arg0)
-		arg0.transform:SetParent(arg0.role.gameObject.transform.parent)
+	arg0_8:ClearChar()
+	PoolMgr.GetInstance():GetSpineChar("takegift_" .. arg1_8, true, function(arg0_9)
+		arg0_9.transform:SetParent(arg0_8.role.gameObject.transform.parent)
 
-		arg0.transform.localScale = Vector3(0.8, 0.8, 0)
-		arg0.transform.localPosition = Vector3(550, -300, 0)
+		arg0_9.transform.localScale = Vector3(0.8, 0.8, 0)
+		arg0_9.transform.localPosition = Vector3(550, -300, 0)
 
-		arg0:GetComponent(typeof(SpineAnimUI)):SetAction("gift_wait_" .. arg1, 0)
+		arg0_9:GetComponent(typeof(SpineAnimUI)):SetAction("gift_wait_" .. arg1_8, 0)
 
-		arg0.charGo = arg0
+		arg0_8.charGo = arg0_9
 	end)
 
-	arg0.charName = arg1
+	arg0_8.charName = arg1_8
 end
 
-function var0.ClearChar(arg0)
-	if arg0.charName and arg0.charGo then
-		PoolMgr.GetInstance():ReturnSpineChar(arg0.charName, arg0.charGo)
+function var0_0.ClearChar(arg0_10)
+	if arg0_10.charName and arg0_10.charGo then
+		PoolMgr.GetInstance():ReturnSpineChar(arg0_10.charName, arg0_10.charGo)
 
-		arg0.charName = nil
-		arg0.charGo = nil
+		arg0_10.charName = nil
+		arg0_10.charGo = nil
 	end
 end
 
-function var0.OnDestroy(arg0)
-	arg0:ClearChar()
+function var0_0.OnDestroy(arg0_11)
+	arg0_11:ClearChar()
 end
 
-return var0
+return var0_0

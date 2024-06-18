@@ -1,8 +1,8 @@
-﻿local var0 = class("TechnologyScene", import("..base.BaseUI"))
+﻿local var0_0 = class("TechnologyScene", import("..base.BaseUI"))
 
-var0.PageBase = 1
-var0.PageQueue = 2
-var0.rarityColor = {
+var0_0.PageBase = 1
+var0_0.PageQueue = 2
+var0_0.rarityColor = {
 	["1"] = {
 		"#4B7BC6FF",
 		{
@@ -41,247 +41,247 @@ var0.rarityColor = {
 	}
 }
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "TechnologyUI"
 end
 
-function var0.onBackPressed(arg0)
-	if arg0.contextData.selectedIndex then
-		arg0:cancelSelected()
+function var0_0.onBackPressed(arg0_2)
+	if arg0_2.contextData.selectedIndex then
+		arg0_2:cancelSelected()
 
 		return
 	end
 
-	if arg0.contextData.page == var0.PageQueue then
-		arg0:setPage(var0.PageBase)
+	if arg0_2.contextData.page == var0_0.PageQueue then
+		arg0_2:setPage(var0_0.PageBase)
 
 		return
 	end
 
-	var0.super.onBackPressed(arg0)
+	var0_0.super.onBackPressed(arg0_2)
 end
 
-function var0.ResUISettings(arg0)
+function var0_0.ResUISettings(arg0_3)
 	return true
 end
 
-function var0.setTechnologys(arg0, arg1, arg2)
-	arg0.technologyVOs = arg1
-	arg0.technologyQueue = arg2
+function var0_0.setTechnologys(arg0_4, arg1_4, arg2_4)
+	arg0_4.technologyVOs = arg1_4
+	arg0_4.technologyQueue = arg2_4
 end
 
-function var0.setRefreshFlag(arg0, arg1)
-	arg0.flag = arg1
+function var0_0.setRefreshFlag(arg0_5, arg1_5)
+	arg0_5.flag = arg1_5
 end
 
-function var0.setPlayer(arg0, arg1)
-	arg0.player = arg1
+function var0_0.setPlayer(arg0_6, arg1_6)
+	arg0_6.player = arg1_6
 end
 
-function var0.init(arg0)
-	arg0.backBtn = arg0._tf:Find("blur_panel/adapt/top/back")
-	arg0.basePage = arg0._tf:Find("main/base_page")
-	arg0.srcollView = arg0.basePage:Find("srcoll_rect/content")
-	arg0.srcollViewCG = arg0.srcollView:GetComponent(typeof(CanvasGroup))
-	arg0.helpBtn = arg0.basePage:Find("help_btn")
-	arg0.refreshBtn = arg0.basePage:Find("refresh_btn")
+function var0_0.init(arg0_7)
+	arg0_7.backBtn = arg0_7._tf:Find("blur_panel/adapt/top/back")
+	arg0_7.basePage = arg0_7._tf:Find("main/base_page")
+	arg0_7.srcollView = arg0_7.basePage:Find("srcoll_rect/content")
+	arg0_7.srcollViewCG = arg0_7.srcollView:GetComponent(typeof(CanvasGroup))
+	arg0_7.helpBtn = arg0_7.basePage:Find("help_btn")
+	arg0_7.refreshBtn = arg0_7.basePage:Find("refresh_btn")
 
-	setText(arg0.refreshBtn:Find("Text"), i18n("technology_daily_refresh"))
+	setText(arg0_7.refreshBtn:Find("Text"), i18n("technology_daily_refresh"))
 
-	arg0.settingsBtn = arg0.basePage:Find("settings_btn")
-	arg0.selectetPanel = arg0.basePage:Find("selecte_panel")
+	arg0_7.settingsBtn = arg0_7.basePage:Find("settings_btn")
+	arg0_7.selectetPanel = arg0_7.basePage:Find("selecte_panel")
 
-	setActive(arg0.selectetPanel, false)
-	setText(arg0.selectetPanel:Find("consume_panel/bg/label/Text"), i18n("technology_consume"))
-	setText(arg0.selectetPanel:Find("consume_panel/bg/task_panel/label/Text"), i18n("technology_request"))
+	setActive(arg0_7.selectetPanel, false)
+	setText(arg0_7.selectetPanel:Find("consume_panel/bg/label/Text"), i18n("technology_consume"))
+	setText(arg0_7.selectetPanel:Find("consume_panel/bg/task_panel/label/Text"), i18n("technology_request"))
 
-	arg0.arrLeftBtn = arg0.selectetPanel:Find("left_arr_btn")
-	arg0.arrRightBtn = arg0.selectetPanel:Find("right_arr_btn")
-	arg0.technologyTpl = arg0.selectetPanel:Find("technology_card")
-	arg0.descTxt = arg0.selectetPanel:Find("desc/bg/Text"):GetComponent(typeof(Text))
-	arg0.timerTxt = arg0.selectetPanel:Find("timer/bg/Text"):GetComponent(typeof(Text))
-	arg0.itemContainer = arg0.selectetPanel:Find("consume_panel/bg/container")
-	arg0.itemTpl = arg0:findTF("item_tpl", arg0.itemContainer)
-	arg0.emptyTF = arg0.selectetPanel:Find("consume_panel/bg/empty")
-	arg0.taskPanel = arg0.selectetPanel:Find("consume_panel/bg/task_panel")
-	arg0.taskSlider = arg0.taskPanel:Find("slider"):GetComponent(typeof(Slider))
-	arg0.taskDesc = arg0.taskPanel:Find("slider/Text"):GetComponent(typeof(Text))
-	arg0.descBG = arg0.selectetPanel:Find("desc/bg"):GetComponent(typeof(Image))
-	arg0.queuePage = arg0._tf:Find("main/queue_page")
-	arg0.queueView = arg0.queuePage:Find("queue_rect/content")
+	arg0_7.arrLeftBtn = arg0_7.selectetPanel:Find("left_arr_btn")
+	arg0_7.arrRightBtn = arg0_7.selectetPanel:Find("right_arr_btn")
+	arg0_7.technologyTpl = arg0_7.selectetPanel:Find("technology_card")
+	arg0_7.descTxt = arg0_7.selectetPanel:Find("desc/bg/Text"):GetComponent(typeof(Text))
+	arg0_7.timerTxt = arg0_7.selectetPanel:Find("timer/bg/Text"):GetComponent(typeof(Text))
+	arg0_7.itemContainer = arg0_7.selectetPanel:Find("consume_panel/bg/container")
+	arg0_7.itemTpl = arg0_7:findTF("item_tpl", arg0_7.itemContainer)
+	arg0_7.emptyTF = arg0_7.selectetPanel:Find("consume_panel/bg/empty")
+	arg0_7.taskPanel = arg0_7.selectetPanel:Find("consume_panel/bg/task_panel")
+	arg0_7.taskSlider = arg0_7.taskPanel:Find("slider"):GetComponent(typeof(Slider))
+	arg0_7.taskDesc = arg0_7.taskPanel:Find("slider/Text"):GetComponent(typeof(Text))
+	arg0_7.descBG = arg0_7.selectetPanel:Find("desc/bg"):GetComponent(typeof(Image))
+	arg0_7.queuePage = arg0_7._tf:Find("main/queue_page")
+	arg0_7.queueView = arg0_7.queuePage:Find("queue_rect/content")
 
-	local var0 = arg0._tf:Find("blur_panel/adapt/right")
+	local var0_7 = arg0_7._tf:Find("blur_panel/adapt/right")
 
-	arg0.btnAwardQueue = var0:Find("btn_award")
+	arg0_7.btnAwardQueue = var0_7:Find("btn_award")
 
-	setText(arg0.btnAwardQueue:Find("Text"), i18n("technology_queue_getaward"))
+	setText(arg0_7.btnAwardQueue:Find("Text"), i18n("technology_queue_getaward"))
 
-	arg0.btnAwardQueueDisable = var0:Find("btn_award_disable")
+	arg0_7.btnAwardQueueDisable = var0_7:Find("btn_award_disable")
 
-	setText(arg0.btnAwardQueueDisable:Find("Text"), i18n("technology_queue_getaward"))
+	setText(arg0_7.btnAwardQueueDisable:Find("Text"), i18n("technology_queue_getaward"))
 
-	arg0.btnQueue = arg0._tf:Find("blur_panel/adapt/left/btn_queue")
-	arg0.cardtimer = {}
-	arg0.queueTimer = {}
-	arg0.queueCardTimer = {}
+	arg0_7.btnQueue = arg0_7._tf:Find("blur_panel/adapt/left/btn_queue")
+	arg0_7.cardtimer = {}
+	arg0_7.queueTimer = {}
+	arg0_7.queueCardTimer = {}
 end
 
-function var0.updateSettingsBtn(arg0)
-	local var0 = arg0:findTF("RedPoint", arg0.settingsBtn)
-	local var1 = arg0:findTF("TipText", arg0.settingsBtn)
+function var0_0.updateSettingsBtn(arg0_8)
+	local var0_8 = arg0_8:findTF("RedPoint", arg0_8.settingsBtn)
+	local var1_8 = arg0_8:findTF("TipText", arg0_8.settingsBtn)
 
-	setText(var1, i18n("tec_settings_btn_word"))
+	setText(var1_8, i18n("tec_settings_btn_word"))
 
-	local var2 = arg0:findTF("TargetCatchup", arg0.settingsBtn)
-	local var3 = arg0:findTF("Selected", var2)
-	local var4 = arg0:findTF("ActCatchup", arg0.settingsBtn)
+	local var2_8 = arg0_8:findTF("TargetCatchup", arg0_8.settingsBtn)
+	local var3_8 = arg0_8:findTF("Selected", var2_8)
+	local var4_8 = arg0_8:findTF("ActCatchup", arg0_8.settingsBtn)
 
-	arg0:updateSettingBtnVersion()
+	arg0_8:updateSettingBtnVersion()
 
-	local var5 = false
-	local var6 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BLUEPRINT_CATCHUP)
+	local var5_8 = false
+	local var6_8 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BLUEPRINT_CATCHUP)
 
-	if var6 and not var6:isEnd() then
-		local var7 = var6.data1
-		local var8 = var6:getConfig("config_id")
-		local var9 = pg.activity_event_blueprint_catchup[var8].char_choice
-		local var10 = pg.activity_event_blueprint_catchup[var8].obtain_max
+	if var6_8 and not var6_8:isEnd() then
+		local var7_8 = var6_8.data1
+		local var8_8 = var6_8:getConfig("config_id")
+		local var9_8 = pg.activity_event_blueprint_catchup[var8_8].char_choice
+		local var10_8 = pg.activity_event_blueprint_catchup[var8_8].obtain_max
 
-		if var7 < var10 then
-			local var11 = arg0:findTF("Selected/CharImg", var4)
+		if var7_8 < var10_8 then
+			local var11_8 = arg0_8:findTF("Selected/CharImg", var4_8)
 
-			setImageSprite(var11, LoadSprite("TecCatchup/QChar" .. var9, tostring(var9)))
+			setImageSprite(var11_8, LoadSprite("TecCatchup/QChar" .. var9_8, tostring(var9_8)))
 
-			local var12 = arg0:findTF("Selected/ProgressText", var4)
+			local var12_8 = arg0_8:findTF("Selected/ProgressText", var4_8)
 
-			setText(var12, var7 .. "/" .. var10)
+			setText(var12_8, var7_8 .. "/" .. var10_8)
 
-			local var13 = var6.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
+			local var13_8 = var6_8.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
 
-			if arg0.actCatchupTimer then
-				arg0.actCatchupTimer:Stop()
+			if arg0_8.actCatchupTimer then
+				arg0_8.actCatchupTimer:Stop()
 
-				arg0.actCatchupTimer = nil
+				arg0_8.actCatchupTimer = nil
 			end
 
-			local var14 = arg0:findTF("TimeLeft/Day", var4)
-			local var15 = arg0:findTF("TimeLeft/Hour", var4)
-			local var16 = arg0:findTF("TimeLeft/Min", var4)
-			local var17 = arg0:findTF("TimeLeft/NumText", var4)
+			local var14_8 = arg0_8:findTF("TimeLeft/Day", var4_8)
+			local var15_8 = arg0_8:findTF("TimeLeft/Hour", var4_8)
+			local var16_8 = arg0_8:findTF("TimeLeft/Min", var4_8)
+			local var17_8 = arg0_8:findTF("TimeLeft/NumText", var4_8)
 
-			local function var18()
-				local var0, var1, var2, var3 = pg.TimeMgr.GetInstance():parseTimeFrom(var13)
+			local function var18_8()
+				local var0_9, var1_9, var2_9, var3_9 = pg.TimeMgr.GetInstance():parseTimeFrom(var13_8)
 
-				var13 = var13 - 1
+				var13_8 = var13_8 - 1
 
-				if var0 >= 1 then
-					setActive(var14, true)
-					setActive(var15, false)
-					setActive(var16, false)
-					setText(var17, var0)
-				elseif var0 <= 0 and var1 > 0 then
-					setActive(var14, false)
-					setActive(var15, true)
-					setActive(var16, false)
-					setText(var17, var1)
-				elseif var0 <= 0 and var1 <= 0 and (var2 > 0 or var3 > 0) then
-					setActive(var14, false)
-					setActive(var15, false)
-					setActive(var16, true)
-					setText(var17, math.max(var2, 1))
-				elseif var0 <= 0 and var1 <= 0 and var2 <= 0 and var3 <= 0 and arg0.actCatchupTimer then
-					arg0.actCatchupTimer:Stop()
+				if var0_9 >= 1 then
+					setActive(var14_8, true)
+					setActive(var15_8, false)
+					setActive(var16_8, false)
+					setText(var17_8, var0_9)
+				elseif var0_9 <= 0 and var1_9 > 0 then
+					setActive(var14_8, false)
+					setActive(var15_8, true)
+					setActive(var16_8, false)
+					setText(var17_8, var1_9)
+				elseif var0_9 <= 0 and var1_9 <= 0 and (var2_9 > 0 or var3_9 > 0) then
+					setActive(var14_8, false)
+					setActive(var15_8, false)
+					setActive(var16_8, true)
+					setText(var17_8, math.max(var2_9, 1))
+				elseif var0_9 <= 0 and var1_9 <= 0 and var2_9 <= 0 and var3_9 <= 0 and arg0_8.actCatchupTimer then
+					arg0_8.actCatchupTimer:Stop()
 
-					arg0.actCatchupTimer = nil
+					arg0_8.actCatchupTimer = nil
 
-					setActive(var4, false)
+					setActive(var4_8, false)
 				end
 			end
 
-			arg0.actCatchupTimer = Timer.New(var18, 1, -1, 1)
+			arg0_8.actCatchupTimer = Timer.New(var18_8, 1, -1, 1)
 
-			arg0.actCatchupTimer:Start()
-			arg0.actCatchupTimer.func()
+			arg0_8.actCatchupTimer:Start()
+			arg0_8.actCatchupTimer.func()
 
-			var5 = true
+			var5_8 = true
 		end
 	end
 
-	setActive(var4, var5)
-	setActive(var2, true)
+	setActive(var4_8, var5_8)
+	setActive(var2_8, true)
 
-	local var19 = getProxy(TechnologyProxy)
-	local var20 = var19:isOpenTargetCatchup()
-	local var21 = var19:isOnCatchup()
+	local var19_8 = getProxy(TechnologyProxy)
+	local var20_8 = var19_8:isOpenTargetCatchup()
+	local var21_8 = var19_8:isOnCatchup()
 
-	if var20 then
-		if not var21 then
-			setActive(var3, false)
-			setActive(var0, true)
+	if var20_8 then
+		if not var21_8 then
+			setActive(var3_8, false)
+			setActive(var0_8, true)
 		else
-			local var22 = var19:getCurCatchupTecInfo()
-			local var23 = var22.tecID
-			local var24 = var22.groupID
-			local var25 = var22.printNum
-			local var26 = var19:getCatchupData(var23):isUr(var24) and pg.technology_catchup_template[var23].obtain_max_per_ur or pg.technology_catchup_template[var23].obtain_max
+			local var22_8 = var19_8:getCurCatchupTecInfo()
+			local var23_8 = var22_8.tecID
+			local var24_8 = var22_8.groupID
+			local var25_8 = var22_8.printNum
+			local var26_8 = var19_8:getCatchupData(var23_8):isUr(var24_8) and pg.technology_catchup_template[var23_8].obtain_max_per_ur or pg.technology_catchup_template[var23_8].obtain_max
 
-			if var26 <= var25 then
-				setActive(var3, false)
-				setActive(var0, false)
+			if var26_8 <= var25_8 then
+				setActive(var3_8, false)
+				setActive(var0_8, false)
 			else
-				setActive(var3, true)
-				setActive(var0, false)
+				setActive(var3_8, true)
+				setActive(var0_8, false)
 
-				local var27 = arg0:findTF("CharImg", var3)
+				local var27_8 = arg0_8:findTF("CharImg", var3_8)
 
-				setImageSprite(var27, LoadSprite("TecCatchup/QChar" .. var24, tostring(var24)))
+				setImageSprite(var27_8, LoadSprite("TecCatchup/QChar" .. var24_8, tostring(var24_8)))
 
-				local var28 = arg0:findTF("ProgressText", var3)
+				local var28_8 = arg0_8:findTF("ProgressText", var3_8)
 
-				setText(var28, var25 .. "/" .. var26)
+				setText(var28_8, var25_8 .. "/" .. var26_8)
 			end
 		end
 	else
-		setActive(var3, false)
-		setActive(var0, false)
+		setActive(var3_8, false)
+		setActive(var0_8, false)
 	end
 end
 
-function var0.updateSettingBtnVersion(arg0)
-	local var0 = getProxy(TechnologyProxy):getTendency(2)
-	local var1 = arg0.settingsBtn:Find("tag")
+function var0_0.updateSettingBtnVersion(arg0_10)
+	local var0_10 = getProxy(TechnologyProxy):getTendency(2)
+	local var1_10 = arg0_10.settingsBtn:Find("tag")
 
-	setActive(var1, var0 > 0)
+	setActive(var1_10, var0_10 > 0)
 
-	if var0 > 0 then
-		GetImageSpriteFromAtlasAsync("technologycard", "version_" .. var0, var1:Find("Image"), true)
+	if var0_10 > 0 then
+		GetImageSpriteFromAtlasAsync("technologycard", "version_" .. var0_10, var1_10:Find("Image"), true)
 	end
 end
 
-function var0.setPage(arg0, arg1)
-	arg0.contextData.page = arg1
+function var0_0.setPage(arg0_11, arg1_11)
+	arg0_11.contextData.page = arg1_11
 
-	setActive(arg0.basePage, arg1 == var0.PageBase)
-	setActive(arg0.queuePage, arg1 == var0.PageQueue)
-	setActive(arg0._tf:Find("blur_panel/adapt/top/title"), arg1 == var0.PageBase)
-	setActive(arg0._tf:Find("blur_panel/adapt/left"), arg1 == var0.PageBase)
-	setActive(arg0._tf:Find("blur_panel/adapt/top/title_queue"), arg1 == var0.PageQueue)
-	setActive(arg0._tf:Find("blur_panel/adapt/right"), arg1 == var0.PageQueue)
+	setActive(arg0_11.basePage, arg1_11 == var0_0.PageBase)
+	setActive(arg0_11.queuePage, arg1_11 == var0_0.PageQueue)
+	setActive(arg0_11._tf:Find("blur_panel/adapt/top/title"), arg1_11 == var0_0.PageBase)
+	setActive(arg0_11._tf:Find("blur_panel/adapt/left"), arg1_11 == var0_0.PageBase)
+	setActive(arg0_11._tf:Find("blur_panel/adapt/top/title_queue"), arg1_11 == var0_0.PageQueue)
+	setActive(arg0_11._tf:Find("blur_panel/adapt/right"), arg1_11 == var0_0.PageQueue)
 
-	if arg1 == var0.PageBase then
-		for iter0, iter1 in ipairs(arg0.technologyVOs) do
-			if iter1:isActivate() then
-				if arg0.enhancelTimer then
-					arg0.enhancelTimer:Stop()
+	if arg1_11 == var0_0.PageBase then
+		for iter0_11, iter1_11 in ipairs(arg0_11.technologyVOs) do
+			if iter1_11:isActivate() then
+				if arg0_11.enhancelTimer then
+					arg0_11.enhancelTimer:Stop()
 				end
 
-				arg0.enhancelTimer = Timer.New(function()
-					arg0.srcollView:GetComponent("EnhancelScrollView"):SetHorizontalTargetItemIndex(arg0.technologyCards[iter0]:GetComponent("EnhanceItem").scrollViewItemIndex)
+				arg0_11.enhancelTimer = Timer.New(function()
+					arg0_11.srcollView:GetComponent("EnhancelScrollView"):SetHorizontalTargetItemIndex(arg0_11.technologyCards[iter0_11]:GetComponent("EnhanceItem").scrollViewItemIndex)
 
-					arg0.enhancelTimer = nil
+					arg0_11.enhancelTimer = nil
 				end, 0.35, 1)
 
-				arg0.enhancelTimer:Start()
+				arg0_11.enhancelTimer:Start()
 
 				break
 			end
@@ -289,17 +289,17 @@ function var0.setPage(arg0, arg1)
 	end
 end
 
-function var0.didEnter(arg0)
-	arg0:initTechnologys()
-	arg0:initQueue()
-	arg0:setPage(arg0.contextData.page or var0.PageBase)
-	onButton(arg0, arg0.helpBtn, function()
+function var0_0.didEnter(arg0_13)
+	arg0_13:initTechnologys()
+	arg0_13:initQueue()
+	arg0_13:setPage(arg0_13.contextData.page or var0_0.PageBase)
+	onButton(arg0_13, arg0_13.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.technology_help_text.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.refreshBtn, function()
+	onButton(arg0_13, arg0_13.refreshBtn, function()
 		if tobool(getProxy(TechnologyProxy):getActivateTechnology()) then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("technology_canot_refresh")
@@ -311,560 +311,560 @@ function var0.didEnter(arg0)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("technology_refresh_tip"),
 			onYes = function()
-				arg0:emit(TechnologyMediator.ON_REFRESH)
+				arg0_13:emit(TechnologyMediator.ON_REFRESH)
 			end
 		})
 	end, SFX_PANEL)
 
-	local var0 = getProxy(TechnologyProxy):getConfigMaxVersion()
+	local var0_13 = getProxy(TechnologyProxy):getConfigMaxVersion()
 
-	onButton(arg0, arg0.settingsBtn, function()
-		arg0:emit(TechnologyMediator.ON_CLICK_SETTINGS_BTN)
+	onButton(arg0_13, arg0_13.settingsBtn, function()
+		arg0_13:emit(TechnologyMediator.ON_CLICK_SETTINGS_BTN)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.backBtn, function()
-		arg0:onBackPressed()
+	onButton(arg0_13, arg0_13.backBtn, function()
+		arg0_13:onBackPressed()
 	end, SOUND_BACK)
-	onButton(arg0, arg0.selectetPanel, function()
-		arg0:cancelSelected()
+	onButton(arg0_13, arg0_13.selectetPanel, function()
+		arg0_13:cancelSelected()
 	end, SFX_PANEL)
-	arg0:updateRefreshBtn(arg0.flag)
-	arg0:updateSettingsBtn()
+	arg0_13:updateRefreshBtn(arg0_13.flag)
+	arg0_13:updateSettingsBtn()
 end
 
-function var0.initTechnologys(arg0)
-	arg0.technologyCards = {}
-	arg0.lastButtonListener = arg0.lastButtonListener or {}
+function var0_0.initTechnologys(arg0_20)
+	arg0_20.technologyCards = {}
+	arg0_20.lastButtonListener = arg0_20.lastButtonListener or {}
 
-	if not arg0.itemList then
-		arg0.itemList = UIItemList.New(arg0.srcollView, arg0.srcollView:GetChild(0))
+	if not arg0_20.itemList then
+		arg0_20.itemList = UIItemList.New(arg0_20.srcollView, arg0_20.srcollView:GetChild(0))
 
-		arg0.itemList:make(function(arg0, arg1, arg2)
-			arg1 = arg1 + 1
+		arg0_20.itemList:make(function(arg0_21, arg1_21, arg2_21)
+			arg1_21 = arg1_21 + 1
 
-			if arg0 == UIItemList.EventUpdate then
-				arg2.name = arg1
-				arg0.technologyCards[arg1] = arg2
+			if arg0_21 == UIItemList.EventUpdate then
+				arg2_21.name = arg1_21
+				arg0_20.technologyCards[arg1_21] = arg2_21
 
-				arg0:updateTechnologyTF(arg2, arg1, "base")
+				arg0_20:updateTechnologyTF(arg2_21, arg1_21, "base")
 
-				local var0 = GetOrAddComponent(arg2, typeof(Button)).onClick
+				local var0_21 = GetOrAddComponent(arg2_21, typeof(Button)).onClick
 
-				if arg0.lastButtonListener[arg2] then
-					var0:RemoveListener(arg0.lastButtonListener[arg2])
+				if arg0_20.lastButtonListener[arg2_21] then
+					var0_21:RemoveListener(arg0_20.lastButtonListener[arg2_21])
 				end
 
-				arg0.lastButtonListener[arg2] = function()
+				arg0_20.lastButtonListener[arg2_21] = function()
 					pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_PANEL)
 
-					if arg0.technologyVOs[arg1]:isCompleted() then
-						arg0:emit(TechnologyMediator.ON_FINISHED, {
-							id = arg0.technologyVOs[arg1].id,
-							pool_id = arg0.technologyVOs[arg1].poolId
+					if arg0_20.technologyVOs[arg1_21]:isCompleted() then
+						arg0_20:emit(TechnologyMediator.ON_FINISHED, {
+							id = arg0_20.technologyVOs[arg1_21].id,
+							pool_id = arg0_20.technologyVOs[arg1_21].poolId
 						})
 					else
-						arg0:onSelected(arg2, arg1)
+						arg0_20:onSelected(arg2_21, arg1_21)
 					end
 				end
 
-				var0:AddListener(arg0.lastButtonListener[arg2])
+				var0_21:AddListener(arg0_20.lastButtonListener[arg2_21])
 			end
 		end)
 	end
 
-	arg0.itemList:align(#arg0.technologyVOs)
-	setActive(arg0.srcollView, true)
+	arg0_20.itemList:align(#arg0_20.technologyVOs)
+	setActive(arg0_20.srcollView, true)
 end
 
-function var0.initQueue(arg0)
-	if not arg0.queueItemList then
-		arg0.queueItemList = UIItemList.New(arg0.btnQueue, arg0.btnQueue:GetChild(0))
+function var0_0.initQueue(arg0_23)
+	if not arg0_23.queueItemList then
+		arg0_23.queueItemList = UIItemList.New(arg0_23.btnQueue, arg0_23.btnQueue:GetChild(0))
 
-		arg0.queueItemList:make(function(arg0, arg1, arg2)
-			arg1 = arg1 + 1
+		arg0_23.queueItemList:make(function(arg0_24, arg1_24, arg2_24)
+			arg1_24 = arg1_24 + 1
 
-			if arg0 == UIItemList.EventUpdate then
-				arg2.name = arg1
+			if arg0_24 == UIItemList.EventUpdate then
+				arg2_24.name = arg1_24
 
-				if arg0.queueTimer[arg1] then
-					arg0.queueTimer[arg1]:Stop()
+				if arg0_23.queueTimer[arg1_24] then
+					arg0_23.queueTimer[arg1_24]:Stop()
 
-					arg0.queueTimer[arg1] = nil
+					arg0_23.queueTimer[arg1_24] = nil
 				end
 
-				local var0 = {}
-				local var1 = arg0.technologyQueue[arg1]
+				local var0_24 = {}
+				local var1_24 = arg0_23.technologyQueue[arg1_24]
 
-				if not var1 then
-					var0.empty = true
+				if not var1_24 then
+					var0_24.empty = true
 				else
-					local var2 = pg.TimeMgr.GetInstance():GetServerTime()
-					local var3 = var1.time
-					local var4 = var1:getConfig("time")
+					local var2_24 = pg.TimeMgr.GetInstance():GetServerTime()
+					local var3_24 = var1_24.time
+					local var4_24 = var1_24:getConfig("time")
 
-					if var2 < var3 - var4 then
-						var0.waiting = true
-					elseif var2 < var3 then
-						var0.doing = true
-						arg0.queueTimer[arg1] = Timer.New(function()
-							local var0 = pg.TimeMgr.GetInstance():GetServerTime()
+					if var2_24 < var3_24 - var4_24 then
+						var0_24.waiting = true
+					elseif var2_24 < var3_24 then
+						var0_24.doing = true
+						arg0_23.queueTimer[arg1_24] = Timer.New(function()
+							local var0_25 = pg.TimeMgr.GetInstance():GetServerTime()
 
-							if var0 < var3 then
-								setSlider(arg2:Find("doing"), 0, var4, var4 - var3 + var0)
+							if var0_25 < var3_24 then
+								setSlider(arg2_24:Find("doing"), 0, var4_24, var4_24 - var3_24 + var0_25)
 							else
-								arg0:updateQueueChange()
+								arg0_23:updateQueueChange()
 							end
 						end, 1, -1)
 
-						arg0.queueTimer[arg1]:Start()
-						arg0.queueTimer[arg1].func()
+						arg0_23.queueTimer[arg1_24]:Start()
+						arg0_23.queueTimer[arg1_24].func()
 					else
-						var0.complete = true
+						var0_24.complete = true
 					end
 				end
 
-				eachChild(arg2, function(arg0)
-					setActive(arg0, var0[arg0.name])
+				eachChild(arg2_24, function(arg0_26)
+					setActive(arg0_26, var0_24[arg0_26.name])
 				end)
 			end
 		end)
 	end
 
-	arg0.queueItemList:align(TechnologyConst.QUEUE_TOTAL_COUNT)
-	onButton(arg0, arg0.btnQueue, function()
-		arg0:setPage(var0.PageQueue)
+	arg0_23.queueItemList:align(TechnologyConst.QUEUE_TOTAL_COUNT)
+	onButton(arg0_23, arg0_23.btnQueue, function()
+		arg0_23:setPage(var0_0.PageQueue)
 	end, SFX_PANEL)
 
-	if not arg0.queueCardItemList then
-		arg0.queueCardItemList = UIItemList.New(arg0.queueView, arg0.queueView:GetChild(0))
+	if not arg0_23.queueCardItemList then
+		arg0_23.queueCardItemList = UIItemList.New(arg0_23.queueView, arg0_23.queueView:GetChild(0))
 
-		arg0.queueCardItemList:make(function(arg0, arg1, arg2)
-			arg1 = arg1 + 1
+		arg0_23.queueCardItemList:make(function(arg0_28, arg1_28, arg2_28)
+			arg1_28 = arg1_28 + 1
 
-			if arg0 == UIItemList.EventUpdate then
-				arg2.name = arg1
+			if arg0_28 == UIItemList.EventUpdate then
+				arg2_28.name = arg1_28
 
-				arg0:updateTechnologyTF(arg2, arg1, "queue")
+				arg0_23:updateTechnologyTF(arg2_28, arg1_28, "queue")
 			end
 		end)
 	end
 
-	arg0.queueCardItemList:align(TechnologyConst.QUEUE_TOTAL_COUNT)
-	onButton(arg0, arg0.btnAwardQueue, function()
-		if arg0.technologyQueue[1] and arg0.technologyQueue[1]:isCompleted() then
-			arg0:emit(TechnologyMediator.ON_FINISH_QUEUE)
+	arg0_23.queueCardItemList:align(TechnologyConst.QUEUE_TOTAL_COUNT)
+	onButton(arg0_23, arg0_23.btnAwardQueue, function()
+		if arg0_23.technologyQueue[1] and arg0_23.technologyQueue[1]:isCompleted() then
+			arg0_23:emit(TechnologyMediator.ON_FINISH_QUEUE)
 		end
 	end, SFX_CONFIRM)
-	setActive(arg0.btnAwardQueue, arg0.technologyQueue[1] and arg0.technologyQueue[1]:isCompleted())
-	setActive(arg0.btnAwardQueueDisable, not isActive(arg0.btnAwardQueue))
+	setActive(arg0_23.btnAwardQueue, arg0_23.technologyQueue[1] and arg0_23.technologyQueue[1]:isCompleted())
+	setActive(arg0_23.btnAwardQueueDisable, not isActive(arg0_23.btnAwardQueue))
 end
 
-function var0.updateRefreshBtn(arg0, arg1)
-	setButtonEnabled(arg0.refreshBtn, arg1 == 0)
+function var0_0.updateRefreshBtn(arg0_30, arg1_30)
+	setButtonEnabled(arg0_30.refreshBtn, arg1_30 == 0)
 end
 
-function var0.onSelected(arg0, arg1, arg2)
-	if not arg2 then
+function var0_0.onSelected(arg0_31, arg1_31, arg2_31)
+	if not arg2_31 then
 		return
 	end
 
-	if not arg0.technologyVOs[arg2] then
+	if not arg0_31.technologyVOs[arg2_31] then
 		return
 	end
 
-	arg0.contextData.selectedIndex = arg2
+	arg0_31.contextData.selectedIndex = arg2_31
 
-	arg0:updateTechnologyTF(arg0.technologyTpl, arg2, "desc")
+	arg0_31:updateTechnologyTF(arg0_31.technologyTpl, arg2_31, "desc")
 
-	arg0.srcollViewCG.alpha = 0.3
+	arg0_31.srcollViewCG.alpha = 0.3
 
-	setActive(arg1, false)
-	setActive(arg0.selectetPanel, true)
+	setActive(arg1_31, false)
+	setActive(arg0_31.selectetPanel, true)
 
-	local var0 = {}
+	local var0_31 = {}
 
-	eachChild(arg0.srcollView, function(arg0)
-		var0[tonumber(arg0.name)] = arg0
+	eachChild(arg0_31.srcollView, function(arg0_32)
+		var0_31[tonumber(arg0_32.name)] = arg0_32
 	end)
 
-	local function var1(arg0, arg1)
-		local var0 = {}
-		local var1 = arg0
-		local var2 = var0[arg0].localPosition.x
+	local function var1_31(arg0_33, arg1_33)
+		local var0_33 = {}
+		local var1_33 = arg0_33
+		local var2_33 = var0_31[arg0_33].localPosition.x
 
-		for iter0, iter1 in ipairs(var0) do
-			var0[iter0] = var0[iter0].localPosition.x - var2
+		for iter0_33, iter1_33 in ipairs(var0_31) do
+			var0_33[iter0_33] = var0_31[iter0_33].localPosition.x - var2_33
 		end
 
-		for iter2, iter3 in ipairs(var0) do
-			if iter3 ~= 0 and (var0[var1] == 0 or arg1 and (iter3 > 0 and var0[var1] > 0 and iter3 > var0[var1] or iter3 < 0 and (var0[var1] > 0 or iter3 > var0[var1])) or not arg1 and (iter3 < 0 and var0[var1] < 0 and iter3 < var0[var1] or iter3 > 0 and (var0[var1] < 0 or iter3 < var0[var1]))) then
-				var1 = iter2
+		for iter2_33, iter3_33 in ipairs(var0_33) do
+			if iter3_33 ~= 0 and (var0_33[var1_33] == 0 or arg1_33 and (iter3_33 > 0 and var0_33[var1_33] > 0 and iter3_33 > var0_33[var1_33] or iter3_33 < 0 and (var0_33[var1_33] > 0 or iter3_33 > var0_33[var1_33])) or not arg1_33 and (iter3_33 < 0 and var0_33[var1_33] < 0 and iter3_33 < var0_33[var1_33] or iter3_33 > 0 and (var0_33[var1_33] < 0 or iter3_33 < var0_33[var1_33]))) then
+				var1_33 = iter2_33
 			end
 		end
 
-		return var0[var1]
+		return var0_31[var1_33]
 	end
 
-	onButton(arg0, arg0.arrLeftBtn, function()
-		if arg0.inAnim then
+	onButton(arg0_31, arg0_31.arrLeftBtn, function()
+		if arg0_31.inAnim then
 			return
 		end
 
-		arg0:cancelSelected()
-		triggerButton(var1(arg2, true))
+		arg0_31:cancelSelected()
+		triggerButton(var1_31(arg2_31, true))
 	end, SFX_PANEL)
-	onButton(arg0, arg0.arrRightBtn, function()
-		if arg0.inAnim then
+	onButton(arg0_31, arg0_31.arrRightBtn, function()
+		if arg0_31.inAnim then
 			return
 		end
 
-		arg0:cancelSelected()
-		triggerButton(var1(arg2, false))
+		arg0_31:cancelSelected()
+		triggerButton(var1_31(arg2_31, false))
 	end, SFX_PANEL)
 end
 
-function var0.cancelSelected(arg0)
-	if not arg0.technologyVOs[arg0.contextData.selectedIndex or 0] then
+function var0_0.cancelSelected(arg0_36)
+	if not arg0_36.technologyVOs[arg0_36.contextData.selectedIndex or 0] then
 		return
 	end
 
-	local var0 = arg0.technologyCards[arg0.contextData.selectedIndex]
+	local var0_36 = arg0_36.technologyCards[arg0_36.contextData.selectedIndex]
 
-	arg0.contextData.selectedIndex = nil
+	arg0_36.contextData.selectedIndex = nil
 
-	setActive(var0, true)
-	removeOnButton(arg0.arrLeftBtn)
-	removeOnButton(arg0.arrRightBtn)
-	setActive(arg0.selectetPanel, false)
+	setActive(var0_36, true)
+	removeOnButton(arg0_36.arrLeftBtn)
+	removeOnButton(arg0_36.arrRightBtn)
+	setActive(arg0_36.selectetPanel, false)
 
-	arg0.srcollViewCG.alpha = 1
-	arg0.inAnim = true
+	arg0_36.srcollViewCG.alpha = 1
+	arg0_36.inAnim = true
 
-	if arg0.timer then
-		arg0.timer:Stop()
+	if arg0_36.timer then
+		arg0_36.timer:Stop()
 
-		arg0.timer = nil
+		arg0_36.timer = nil
 	end
 
-	arg0.timer = Timer.New(function()
-		arg0.inAnim = nil
+	arg0_36.timer = Timer.New(function()
+		arg0_36.inAnim = nil
 	end, 0.2, 1)
 
-	arg0.timer:Start()
+	arg0_36.timer:Start()
 
-	if arg0.extraTimer then
-		arg0.extraTimer:Stop()
+	if arg0_36.extraTimer then
+		arg0_36.extraTimer:Stop()
 
-		arg0.extraTimer = nil
+		arg0_36.extraTimer = nil
 	end
 end
 
-function var0.updateTechnology(arg0, arg1)
-	local var0
+function var0_0.updateTechnology(arg0_38, arg1_38)
+	local var0_38
 
-	for iter0, iter1 in ipairs(arg0.technologyVOs) do
-		if iter1.id == arg1.id then
-			arg0.technologyVOs[iter0] = arg1
-			var0 = iter0
+	for iter0_38, iter1_38 in ipairs(arg0_38.technologyVOs) do
+		if iter1_38.id == arg1_38.id then
+			arg0_38.technologyVOs[iter0_38] = arg1_38
+			var0_38 = iter0_38
 
 			break
 		end
 	end
 
-	local var1 = arg0.technologyCards[var0]
+	local var1_38 = arg0_38.technologyCards[var0_38]
 
-	arg0:updateTechnologyTF(var1, var0, "base")
+	arg0_38:updateTechnologyTF(var1_38, var0_38, "base")
 
-	if arg0.contextData.selectedIndex and arg0.technologyVOs[arg0.contextData.selectedIndex].id == arg1.id then
-		arg0:updateTechnologyTF(arg0.technologyTpl, var0, "desc")
+	if arg0_38.contextData.selectedIndex and arg0_38.technologyVOs[arg0_38.contextData.selectedIndex].id == arg1_38.id then
+		arg0_38:updateTechnologyTF(arg0_38.technologyTpl, var0_38, "desc")
 	end
 end
 
-function var0.updateQueueChange(arg0)
-	arg0.queueItemList:align(#arg0.technologyQueue)
-	arg0.queueCardItemList:align(TechnologyConst.QUEUE_TOTAL_COUNT)
-	setActive(arg0.btnAwardQueue, arg0.technologyQueue[1] and arg0.technologyQueue[1]:isCompleted())
-	setActive(arg0.btnAwardQueueDisable, not isActive(arg0.btnAwardQueue))
+function var0_0.updateQueueChange(arg0_39)
+	arg0_39.queueItemList:align(#arg0_39.technologyQueue)
+	arg0_39.queueCardItemList:align(TechnologyConst.QUEUE_TOTAL_COUNT)
+	setActive(arg0_39.btnAwardQueue, arg0_39.technologyQueue[1] and arg0_39.technologyQueue[1]:isCompleted())
+	setActive(arg0_39.btnAwardQueueDisable, not isActive(arg0_39.btnAwardQueue))
 
-	local var0 = getProxy(TechnologyProxy):getActivateTechnology()
+	local var0_39 = getProxy(TechnologyProxy):getActivateTechnology()
 
-	if var0 then
-		arg0:updateTechnology(var0)
+	if var0_39 then
+		arg0_39:updateTechnology(var0_39)
 	end
 end
 
-function var0.updateTechnologyTF(arg0, arg1, arg2, arg3)
-	local var0
+function var0_0.updateTechnologyTF(arg0_40, arg1_40, arg2_40, arg3_40)
+	local var0_40
 
-	if arg3 == "queue" then
-		var0 = arg0.technologyQueue[arg2]
+	if arg3_40 == "queue" then
+		var0_40 = arg0_40.technologyQueue[arg2_40]
 
-		local var1 = not tobool(var0)
+		local var1_40 = not tobool(var0_40)
 
-		setActive(arg1:Find("frame"), not var1)
-		setActive(arg1:Find("empty"), var1)
+		setActive(arg1_40:Find("frame"), not var1_40)
+		setActive(arg1_40:Find("empty"), var1_40)
 
-		if var1 then
+		if var1_40 then
 			return
 		end
 	else
-		var0 = arg0.technologyVOs[arg2]
+		var0_40 = arg0_40.technologyVOs[arg2_40]
 	end
 
-	arg0:updateInfo(arg1, var0, arg3)
-	arg0:updateInfoVersionPickUp(arg1, var0)
+	arg0_40:updateInfo(arg1_40, var0_40, arg3_40)
+	arg0_40:updateInfoVersionPickUp(arg1_40, var0_40)
 
-	local var2 = var0:getConfig("time")
-	local var3 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var4 = var0.time
+	local var2_40 = var0_40:getConfig("time")
+	local var3_40 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var4_40 = var0_40.time
 
-	switch(arg3, {
+	switch(arg3_40, {
 		base = function()
-			if arg0.cardtimer[arg2] then
-				arg0.cardtimer[arg2]:Stop()
+			if arg0_40.cardtimer[arg2_40] then
+				arg0_40.cardtimer[arg2_40]:Stop()
 
-				arg0.cardtimer[arg2] = nil
+				arg0_40.cardtimer[arg2_40] = nil
 			end
 
-			local var0 = arg1:Find("frame/marks/time")
-			local var1 = arg1:Find("frame/marks/Text")
-			local var2 = var0.rarityColor[var0:getConfig("bg")]
+			local var0_41 = arg1_40:Find("frame/marks/time")
+			local var1_41 = arg1_40:Find("frame/marks/Text")
+			local var2_41 = var0_0.rarityColor[var0_40:getConfig("bg")]
 
-			GetComponent(var0, "Shadow").effectColor = Color.New(unpack(var2[2]))
+			GetComponent(var0_41, "Shadow").effectColor = Color.New(unpack(var2_41[2]))
 
-			local var3 = {}
+			local var3_41 = {}
 
-			if var4 <= 0 then
-				var3.blue = true
+			if var4_40 <= 0 then
+				var3_41.blue = true
 
-				setText(var1, setColorStr(i18n("technology_detail"), var2[1]))
-				setText(var0, pg.TimeMgr.GetInstance():DescCDTime(var0:getConfig("time")))
-			elseif var3 < var4 - var2 then
-				var3.blue = true
+				setText(var1_41, setColorStr(i18n("technology_detail"), var2_41[1]))
+				setText(var0_41, pg.TimeMgr.GetInstance():DescCDTime(var0_40:getConfig("time")))
+			elseif var3_40 < var4_40 - var2_40 then
+				var3_41.blue = true
 
-				setText(var1, setColorStr(i18n("technology_queue_waiting"), var2[1]))
-				setText(var0, pg.TimeMgr.GetInstance():DescCDTime(var0:getConfig("time")))
+				setText(var1_41, setColorStr(i18n("technology_queue_waiting"), var2_41[1]))
+				setText(var0_41, pg.TimeMgr.GetInstance():DescCDTime(var0_40:getConfig("time")))
 
-				arg0.cardtimer[arg2] = Timer.New(function()
-					arg0:updateTechnology(var0)
-				end, var4 - var2 - var3)
+				arg0_40.cardtimer[arg2_40] = Timer.New(function()
+					arg0_40:updateTechnology(var0_40)
+				end, var4_40 - var2_40 - var3_40)
 
-				arg0.cardtimer[arg2]:Start()
-			elseif var3 < var4 then
-				var3.blue = true
+				arg0_40.cardtimer[arg2_40]:Start()
+			elseif var3_40 < var4_40 then
+				var3_41.blue = true
 
-				setText(var1, setColorStr(i18n("technology_queue_processing"), var2[1]))
+				setText(var1_41, setColorStr(i18n("technology_queue_processing"), var2_41[1]))
 
-				arg0.cardtimer[arg2] = Timer.New(function()
-					local var0 = var0.time
-					local var1 = pg.TimeMgr.GetInstance():GetServerTime()
+				arg0_40.cardtimer[arg2_40] = Timer.New(function()
+					local var0_43 = var0_40.time
+					local var1_43 = pg.TimeMgr.GetInstance():GetServerTime()
 
-					if var1 < var0 then
-						setText(var0, pg.TimeMgr.GetInstance():DescCDTime(var0 - var1))
+					if var1_43 < var0_43 then
+						setText(var0_41, pg.TimeMgr.GetInstance():DescCDTime(var0_43 - var1_43))
 					else
-						arg0:updateTechnology(var0)
+						arg0_40:updateTechnology(var0_40)
 					end
 				end, 1, -1)
 
-				arg0.cardtimer[arg2]:Start()
-				arg0.cardtimer[arg2].func()
+				arg0_40.cardtimer[arg2_40]:Start()
+				arg0_40.cardtimer[arg2_40].func()
 			else
-				var3.green = true
+				var3_41.green = true
 
-				if var0:isCompleted() then
-					setText(var1, setColorStr(i18n("technology_queue_complete"), var2[1]))
+				if var0_40:isCompleted() then
+					setText(var1_41, setColorStr(i18n("technology_queue_complete"), var2_41[1]))
 				else
-					setText(var1, setColorStr(i18n("technology_mission_unfinish"), var2[1]))
+					setText(var1_41, setColorStr(i18n("technology_mission_unfinish"), var2_41[1]))
 				end
 
-				setText(var0, "00:00:00")
+				setText(var0_41, "00:00:00")
 			end
 
-			eachChild(arg1:Find("frame/marks/line"), function(arg0)
-				setActive(arg0, var3[arg0.name])
+			eachChild(arg1_40:Find("frame/marks/line"), function(arg0_44)
+				setActive(arg0_44, var3_41[arg0_44.name])
 			end)
 		end,
 		queue = function()
-			if arg0.queueCardTimer[arg2] then
-				arg0.queueCardTimer[arg2]:Stop()
+			if arg0_40.queueCardTimer[arg2_40] then
+				arg0_40.queueCardTimer[arg2_40]:Stop()
 
-				arg0.queueCardTimer[arg2] = nil
+				arg0_40.queueCardTimer[arg2_40] = nil
 			end
 
-			local var0 = arg1:Find("frame/marks/time")
-			local var1 = arg1:Find("frame/marks/Text")
-			local var2 = var0.rarityColor[var0:getConfig("bg")]
+			local var0_45 = arg1_40:Find("frame/marks/time")
+			local var1_45 = arg1_40:Find("frame/marks/Text")
+			local var2_45 = var0_0.rarityColor[var0_40:getConfig("bg")]
 
-			GetComponent(var0, "Shadow").effectColor = Color.New(unpack(var2[2]))
+			GetComponent(var0_45, "Shadow").effectColor = Color.New(unpack(var2_45[2]))
 
-			local var3 = {}
+			local var3_45 = {}
 
-			if var4 <= 0 then
+			if var4_40 <= 0 then
 				assert(false, "error queue")
-			elseif var3 < var4 - var2 then
-				var3.blue = true
+			elseif var3_40 < var4_40 - var2_40 then
+				var3_45.blue = true
 
-				setText(var1, setColorStr(i18n("technology_queue_waiting"), var2[1]))
-				setText(var0, pg.TimeMgr.GetInstance():DescCDTime(var0:getConfig("time")))
-			elseif var3 < var4 then
-				var3.blue = true
+				setText(var1_45, setColorStr(i18n("technology_queue_waiting"), var2_45[1]))
+				setText(var0_45, pg.TimeMgr.GetInstance():DescCDTime(var0_40:getConfig("time")))
+			elseif var3_40 < var4_40 then
+				var3_45.blue = true
 
-				setText(var1, setColorStr(i18n("technology_queue_processing"), var2[1]))
+				setText(var1_45, setColorStr(i18n("technology_queue_processing"), var2_45[1]))
 
-				arg0.queueCardTimer[arg2] = Timer.New(function()
-					local var0 = var0.time
-					local var1 = pg.TimeMgr.GetInstance():GetServerTime()
+				arg0_40.queueCardTimer[arg2_40] = Timer.New(function()
+					local var0_46 = var0_40.time
+					local var1_46 = pg.TimeMgr.GetInstance():GetServerTime()
 
-					if var1 < var0 then
-						setText(var0, pg.TimeMgr.GetInstance():DescCDTime(var0 - var1))
+					if var1_46 < var0_46 then
+						setText(var0_45, pg.TimeMgr.GetInstance():DescCDTime(var0_46 - var1_46))
 					end
 				end, 1, -1)
 
-				arg0.queueCardTimer[arg2]:Start()
-				arg0.queueCardTimer[arg2].func()
+				arg0_40.queueCardTimer[arg2_40]:Start()
+				arg0_40.queueCardTimer[arg2_40].func()
 			else
-				var3.green = true
+				var3_45.green = true
 
-				setText(var1, setColorStr(i18n("technology_queue_complete"), var2[1]))
-				setText(var0, "00:00:00")
+				setText(var1_45, setColorStr(i18n("technology_queue_complete"), var2_45[1]))
+				setText(var0_45, "00:00:00")
 			end
 
-			eachChild(arg1:Find("frame/marks/line"), function(arg0)
-				setActive(arg0, var3[arg0.name])
+			eachChild(arg1_40:Find("frame/marks/line"), function(arg0_47)
+				setActive(arg0_47, var3_45[arg0_47.name])
 			end)
-			setActive(arg1:Find("frame/mask"), var4 > 0 and var3 < var4 - var2)
+			setActive(arg1_40:Find("frame/mask"), var4_40 > 0 and var3_40 < var4_40 - var2_40)
 		end,
 		desc = function()
-			arg0.descTxt.text = var0:getConfig("desc")
-			arg0.descBG.sprite = GetSpriteFromAtlas("ui/TechnologyUI_atlas", var0:getConfig("rarity"))
+			arg0_40.descTxt.text = var0_40:getConfig("desc")
+			arg0_40.descBG.sprite = GetSpriteFromAtlas("ui/TechnologyUI_atlas", var0_40:getConfig("rarity"))
 
-			local var0 = var0:getConfig("consume")
-			local var1 = UIItemList.New(arg0.itemContainer, arg0.itemTpl)
+			local var0_48 = var0_40:getConfig("consume")
+			local var1_48 = UIItemList.New(arg0_40.itemContainer, arg0_40.itemTpl)
 
-			var1:make(function(arg0, arg1, arg2)
-				arg1 = arg1 + 1
+			var1_48:make(function(arg0_49, arg1_49, arg2_49)
+				arg1_49 = arg1_49 + 1
 
-				if arg0 == UIItemList.EventUpdate then
-					arg0:updateItem(arg2, var0, var0[arg1])
-					setActive(arg2:Find("check"), var0:isActivate())
-					setActive(arg2:Find("icon_bg/count"), not var0:isActivate())
+				if arg0_49 == UIItemList.EventUpdate then
+					arg0_40:updateItem(arg2_49, var0_40, var0_48[arg1_49])
+					setActive(arg2_49:Find("check"), var0_40:isActivate())
+					setActive(arg2_49:Find("icon_bg/count"), not var0_40:isActivate())
 				end
 			end)
-			var1:align(#var0)
-			setActive(arg0.emptyTF, not var0 or #var0 <= 0)
+			var1_48:align(#var0_48)
+			setActive(arg0_40.emptyTF, not var0_48 or #var0_48 <= 0)
 
-			local var2 = var0:getConfig("condition")
+			local var2_48 = var0_40:getConfig("condition")
 
-			if var2 > 0 then
-				local var3 = getProxy(TaskProxy):getTaskById(var2) or Task.New({
-					id = var2
+			if var2_48 > 0 then
+				local var3_48 = getProxy(TaskProxy):getTaskById(var2_48) or Task.New({
+					id = var2_48
 				})
 
-				arg0.taskSlider.value = var3.progress / var3:getConfig("target_num")
-				arg0.taskDesc.text = var3:getConfig("desc") .. "(" .. var3.progress .. "/" .. var3:getConfig("target_num") .. ")"
+				arg0_40.taskSlider.value = var3_48.progress / var3_48:getConfig("target_num")
+				arg0_40.taskDesc.text = var3_48:getConfig("desc") .. "(" .. var3_48.progress .. "/" .. var3_48:getConfig("target_num") .. ")"
 			else
-				arg0.taskDesc.text = i18n("technology_task_none_tip")
-				arg0.taskSlider.value = 0
+				arg0_40.taskDesc.text = i18n("technology_task_none_tip")
+				arg0_40.taskSlider.value = 0
 			end
 
-			if arg0.extraTimer then
-				arg0.extraTimer:Stop()
+			if arg0_40.extraTimer then
+				arg0_40.extraTimer:Stop()
 
-				arg0.extraTimer = nil
+				arg0_40.extraTimer = nil
 			end
 
-			local var4 = {}
+			local var4_48 = {}
 
-			if var4 <= 0 then
-				var4.start_btn = true
-				arg0.timerTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var2)
-			elseif var3 < var4 - var2 then
-				var4.stop_btn = true
-				var4.join_btn = var0:finishCondition()
-				var4.lock_join_btn = not var4.join_btn
-				arg0.timerTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var2)
-			elseif var3 < var4 then
-				var4.stop_btn = true
-				var4.join_btn = var0:finishCondition()
-				var4.lock_join_btn = not var4.join_btn
-				arg0.extraTimer = Timer.New(function()
-					local var0 = pg.TimeMgr.GetInstance():GetServerTime()
+			if var4_40 <= 0 then
+				var4_48.start_btn = true
+				arg0_40.timerTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var2_40)
+			elseif var3_40 < var4_40 - var2_40 then
+				var4_48.stop_btn = true
+				var4_48.join_btn = var0_40:finishCondition()
+				var4_48.lock_join_btn = not var4_48.join_btn
+				arg0_40.timerTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var2_40)
+			elseif var3_40 < var4_40 then
+				var4_48.stop_btn = true
+				var4_48.join_btn = var0_40:finishCondition()
+				var4_48.lock_join_btn = not var4_48.join_btn
+				arg0_40.extraTimer = Timer.New(function()
+					local var0_50 = pg.TimeMgr.GetInstance():GetServerTime()
 
-					if var0 < var4 then
-						arg0.timerTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var4 - var0)
+					if var0_50 < var4_40 then
+						arg0_40.timerTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var4_40 - var0_50)
 					end
 				end, 1, -1)
 
-				arg0.extraTimer:Start()
-				arg0.extraTimer.func()
+				arg0_40.extraTimer:Start()
+				arg0_40.extraTimer.func()
 			else
-				if var0:isCompleted() then
-					var4.finish_btn = true
+				if var0_40:isCompleted() then
+					var4_48.finish_btn = true
 				else
-					var4.stop_btn = true
-					var4.lock_join_btn = true
+					var4_48.stop_btn = true
+					var4_48.lock_join_btn = true
 				end
 
-				arg0.timerTxt.text = "00:00:00"
+				arg0_40.timerTxt.text = "00:00:00"
 			end
 
-			eachChild(arg1:Find("frame/btns"), function(arg0)
-				setActive(arg0, var4[arg0.name])
+			eachChild(arg1_40:Find("frame/btns"), function(arg0_51)
+				setActive(arg0_51, var4_48[arg0_51.name])
 			end)
 
-			local var5 = arg1:Find("frame/btns/start_btn")
+			local var5_48 = arg1_40:Find("frame/btns/start_btn")
 
-			onButton(arg0, var5, function()
+			onButton(arg0_40, var5_48, function()
 				if getProxy(TechnologyProxy):getActivateTechnology() then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("technology_is_actived"))
 
 					return
 				end
 
-				local var0 = var0:getConfig("consume")
+				local var0_52 = var0_40:getConfig("consume")
 
-				if #var0 > 0 then
-					local var1 = getDropInfo(var0)
+				if #var0_52 > 0 then
+					local var1_52 = getDropInfo(var0_52)
 
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
-						content = i18n("technology_task_build_tip", var1),
+						content = i18n("technology_task_build_tip", var1_52),
 						onYes = function()
-							arg0:emit(TechnologyMediator.ON_START, {
-								id = var0.id,
-								pool_id = var0.poolId
+							arg0_40:emit(TechnologyMediator.ON_START, {
+								id = var0_40.id,
+								pool_id = var0_40.poolId
 							})
 						end
 					})
 				else
-					arg0:emit(TechnologyMediator.ON_START, {
-						id = var0.id,
-						pool_id = var0.poolId
+					arg0_40:emit(TechnologyMediator.ON_START, {
+						id = var0_40.id,
+						pool_id = var0_40.poolId
 					})
 				end
 			end, SFX_PANEL)
-			setButtonEnabled(var5, var0:hasResToStart())
+			setButtonEnabled(var5_48, var0_40:hasResToStart())
 
-			local var6 = arg1:Find("frame/btns/stop_btn")
+			local var6_48 = arg1_40:Find("frame/btns/stop_btn")
 
-			onButton(arg0, var6, function()
-				if not var0:isActivate() then
+			onButton(arg0_40, var6_48, function()
+				if not var0_40:isActivate() then
 					return
 				end
 
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("technology_stop_tip"),
 					onYes = function()
-						arg0:emit(TechnologyMediator.ON_STOP, {
-							id = var0.id,
-							pool_id = var0.poolId
+						arg0_40:emit(TechnologyMediator.ON_STOP, {
+							id = var0_40.id,
+							pool_id = var0_40.poolId
 						})
 					end
 				})
 			end, SFX_PANEL)
 
-			local var7 = arg1:Find("frame/btns/join_btn")
+			local var7_48 = arg1_40:Find("frame/btns/join_btn")
 
-			onButton(arg0, var7, function()
-				if #arg0.technologyQueue == TechnologyConst.QUEUE_TOTAL_COUNT then
+			onButton(arg0_40, var7_48, function()
+				if #arg0_40.technologyQueue == TechnologyConst.QUEUE_TOTAL_COUNT then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("technology_queue_full"))
 
 					return
@@ -873,193 +873,193 @@ function var0.updateTechnologyTF(arg0, arg1, arg2, arg3)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("technology_queue_in_doublecheck"),
 					onYes = function()
-						arg0:emit(TechnologyMediator.ON_JOIN_QUEUE, {
-							id = var0.id,
-							pool_id = var0.poolId
+						arg0_40:emit(TechnologyMediator.ON_JOIN_QUEUE, {
+							id = var0_40.id,
+							pool_id = var0_40.poolId
 						})
 					end
 				})
 			end, SFX_PANEL)
 
-			local var8 = arg1:Find("frame/btns/lock_join_btn")
+			local var8_48 = arg1_40:Find("frame/btns/lock_join_btn")
 
-			onButton(arg0, var8, function()
+			onButton(arg0_40, var8_48, function()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("technology_queue_in_mission_incomplete"))
 			end, SFX_PANEL)
 
-			local var9 = arg1:Find("frame/btns/finish_btn")
+			local var9_48 = arg1_40:Find("frame/btns/finish_btn")
 
-			onButton(arg0, var9, function()
-				arg0:emit(TechnologyMediator.ON_FINISHED, {
-					id = var0.id,
-					pool_id = var0.poolId
+			onButton(arg0_40, var9_48, function()
+				arg0_40:emit(TechnologyMediator.ON_FINISHED, {
+					id = var0_40.id,
+					pool_id = var0_40.poolId
 				})
 			end, SFX_PANEL)
 		end
 	})
 end
 
-function var0.dfs(arg0, arg1, arg2)
-	if arg1.name ~= "item_tpl" then
-		for iter0 = 1, arg1.childCount do
-			arg0:dfs(arg1:GetChild(iter0 - 1), arg2)
+function var0_0.dfs(arg0_60, arg1_60, arg2_60)
+	if arg1_60.name ~= "item_tpl" then
+		for iter0_60 = 1, arg1_60.childCount do
+			arg0_60:dfs(arg1_60:GetChild(iter0_60 - 1), arg2_60)
 		end
 	else
-		arg2(arg1)
+		arg2_60(arg1_60)
 	end
 end
 
-local var1 = {
+local var1_0 = {
 	tag_red = "F15F34FF",
 	tag_blue = "2541E3FF"
 }
 
-function var0.updateInfo(arg0, arg1, arg2, arg3)
-	setImageSprite(arg1:Find("frame"), GetSpriteFromAtlas("technologycard", arg2:getConfig("bg") .. (arg3 == "desc" and "_l" or "")))
-	setImageSprite(arg1:Find("frame/icon_mask/icon"), GetSpriteFromAtlas("technologyshipicon/" .. arg2:getConfig("bg_icon"), arg2:getConfig("bg_icon")), true)
-	setImageSprite(arg1:Find("frame/top/label"), GetSpriteFromAtlas("technologycard", arg2:getConfig("label")))
-	setImageSprite(arg1:Find("frame/top/label/text"), GetSpriteFromAtlas("technologycard", arg2:getConfig("label_color")), true)
-	setImageSprite(arg1:Find("frame/top/label/version"), GetSpriteFromAtlas("technologycard", "version_" .. arg2:getConfig("blueprint_version")), true)
-	setImageColor(arg1:Find("frame/top/pick_up"), Color.NewHex(var1[arg2:getConfig("label")]))
-	setText(arg1:Find("frame/name_bg/Text"), arg2:getConfig("name"))
-	setText(arg1:Find("frame/sub_name"), arg2:getConfig("sub_name") or "")
+function var0_0.updateInfo(arg0_61, arg1_61, arg2_61, arg3_61)
+	setImageSprite(arg1_61:Find("frame"), GetSpriteFromAtlas("technologycard", arg2_61:getConfig("bg") .. (arg3_61 == "desc" and "_l" or "")))
+	setImageSprite(arg1_61:Find("frame/icon_mask/icon"), GetSpriteFromAtlas("technologyshipicon/" .. arg2_61:getConfig("bg_icon"), arg2_61:getConfig("bg_icon")), true)
+	setImageSprite(arg1_61:Find("frame/top/label"), GetSpriteFromAtlas("technologycard", arg2_61:getConfig("label")))
+	setImageSprite(arg1_61:Find("frame/top/label/text"), GetSpriteFromAtlas("technologycard", arg2_61:getConfig("label_color")), true)
+	setImageSprite(arg1_61:Find("frame/top/label/version"), GetSpriteFromAtlas("technologycard", "version_" .. arg2_61:getConfig("blueprint_version")), true)
+	setImageColor(arg1_61:Find("frame/top/pick_up"), Color.NewHex(var1_0[arg2_61:getConfig("label")]))
+	setText(arg1_61:Find("frame/name_bg/Text"), arg2_61:getConfig("name"))
+	setText(arg1_61:Find("frame/sub_name"), arg2_61:getConfig("sub_name") or "")
 
-	local var0 = arg2:getConfig("drop_client")
-	local var1 = arg1:Find("frame/item_container")
-	local var2 = 0
+	local var0_61 = arg2_61:getConfig("drop_client")
+	local var1_61 = arg1_61:Find("frame/item_container")
+	local var2_61 = 0
 
-	arg0:dfs(var1, function(arg0)
-		var2 = var2 + 1
+	arg0_61:dfs(var1_61, function(arg0_62)
+		var2_61 = var2_61 + 1
 
-		setActive(arg0, var2 <= #var0)
+		setActive(arg0_62, var2_61 <= #var0_61)
 
-		if var2 <= #var0 then
-			arg0:updateItem(arg0, arg2, var0[var2])
+		if var2_61 <= #var0_61 then
+			arg0_61:updateItem(arg0_62, arg2_61, var0_61[var2_61])
 		end
 	end)
-	switch(arg3, {
+	switch(arg3_61, {
 		desc = function()
 			return
 		end
 	}, function()
-		setActive(var1:GetChild(1), #var0 > 2)
+		setActive(var1_61:GetChild(1), #var0_61 > 2)
 
-		var1:GetChild(0):GetComponent("HorizontalLayoutGroup").padding.right = #var0 == 4 and 25 or 0
-		var1:GetChild(1):GetComponent("HorizontalLayoutGroup").padding.left = #var0 == 4 and 25 or 0
+		var1_61:GetChild(0):GetComponent("HorizontalLayoutGroup").padding.right = #var0_61 == 4 and 25 or 0
+		var1_61:GetChild(1):GetComponent("HorizontalLayoutGroup").padding.left = #var0_61 == 4 and 25 or 0
 	end)
 end
 
-function var0.updateInfoVersionPickUp(arg0, arg1, arg2)
-	local var0 = getProxy(TechnologyProxy):getTendency(2)
+function var0_0.updateInfoVersionPickUp(arg0_65, arg1_65, arg2_65)
+	local var0_65 = getProxy(TechnologyProxy):getTendency(2)
 
-	setActive(arg1:Find("frame/top/pick_up"), var0 == arg2:getConfig("blueprint_version"))
+	setActive(arg1_65:Find("frame/top/pick_up"), var0_65 == arg2_65:getConfig("blueprint_version"))
 end
 
-function var0.updateItem(arg0, arg1, arg2, arg3)
-	local var0 = Drop.Create(arg3)
+function var0_0.updateItem(arg0_66, arg1_66, arg2_66, arg3_66)
+	local var0_66 = Drop.Create(arg3_66)
 
-	updateDrop(arg1, setmetatable({
+	updateDrop(arg1_66, setmetatable({
 		count = 0
 	}, {
-		__index = var0
+		__index = var0_66
 	}))
 
-	local var1 = arg0:findTF("icon_bg/count", arg1)
+	local var1_66 = arg0_66:findTF("icon_bg/count", arg1_66)
 
-	if not IsNil(var1) then
-		setColorCount(var1, var0:getOwnedCount(), var0.count)
+	if not IsNil(var1_66) then
+		setColorCount(var1_66, var0_66:getOwnedCount(), var0_66.count)
 	end
 
-	onButton(arg0, arg1, function()
-		local var0 = var0:getConfig("display_icon") or {}
+	onButton(arg0_66, arg1_66, function()
+		local var0_67 = var0_66:getConfig("display_icon") or {}
 
-		if #var0 > 0 then
-			local var1 = {
+		if #var0_67 > 0 then
+			local var1_67 = {
 				type = MSGBOX_TYPE_ITEM_BOX,
-				items = _.map(var0, function(arg0)
+				items = _.map(var0_67, function(arg0_68)
 					return {
-						type = arg0[1],
-						id = arg0[2]
+						type = arg0_68[1],
+						id = arg0_68[2]
 					}
 				end),
-				content = var0:getConfig("display")
+				content = var0_66:getConfig("display")
 			}
 
-			function var1.itemFunc(arg0)
-				arg0:emit(var0.ON_DROP, arg0, function()
-					pg.MsgboxMgr.GetInstance():ShowMsgBox(var1)
+			function var1_67.itemFunc(arg0_69)
+				arg0_66:emit(var0_0.ON_DROP, arg0_69, function()
+					pg.MsgboxMgr.GetInstance():ShowMsgBox(var1_67)
 				end)
 			end
 
-			pg.MsgboxMgr.GetInstance():ShowMsgBox(var1)
+			pg.MsgboxMgr.GetInstance():ShowMsgBox(var1_67)
 		else
-			arg0:emit(var0.ON_DROP, var0)
+			arg0_66:emit(var0_0.ON_DROP, var0_66)
 		end
 	end, SFX_PANEL)
 end
 
-function var0.updatePickUpVersionChange(arg0)
-	arg0:updateSettingBtnVersion()
+function var0_0.updatePickUpVersionChange(arg0_71)
+	arg0_71:updateSettingBtnVersion()
 
-	for iter0, iter1 in ipairs(arg0.technologyCards) do
-		arg0:updateInfoVersionPickUp(iter1, arg0.technologyVOs[iter0])
+	for iter0_71, iter1_71 in ipairs(arg0_71.technologyCards) do
+		arg0_71:updateInfoVersionPickUp(iter1_71, arg0_71.technologyVOs[iter0_71])
 	end
 
-	for iter2, iter3 in ipairs(arg0.technologyQueue) do
-		arg0:updateInfoVersionPickUp(arg0.queueCardItemList.container:GetChild(iter2 - 1), iter3)
-	end
-end
-
-function var0.clearTimer(arg0, ...)
-	if arg0.timer then
-		arg0.timer:Stop()
-
-		arg0.timer = nil
-	end
-
-	if arg0.extraTimer then
-		arg0.extraTimer:Stop()
-
-		arg0.extraTimer = nil
-	end
-
-	if arg0.enhancelTimer then
-		arg0.enhancelTimer:Stop()
-
-		arg0.enhancelTimer = nil
-	end
-
-	for iter0, iter1 in pairs(arg0.cardtimer) do
-		iter1:Stop()
-	end
-
-	arg0.cardtimer = {}
-
-	for iter2, iter3 in pairs(arg0.queueTimer) do
-		iter3:Stop()
-	end
-
-	arg0.queueTimer = {}
-
-	for iter4, iter5 in pairs(arg0.queueCardTimer) do
-		iter5:Stop()
-	end
-
-	arg0.queueCardTimer = {}
-
-	if arg0.actCatchupTimer then
-		arg0.actCatchupTimer:Stop()
-
-		arg0.actCatchupTimer = nil
+	for iter2_71, iter3_71 in ipairs(arg0_71.technologyQueue) do
+		arg0_71:updateInfoVersionPickUp(arg0_71.queueCardItemList.container:GetChild(iter2_71 - 1), iter3_71)
 	end
 end
 
-function var0.willExit(arg0)
-	arg0:clearTimer()
+function var0_0.clearTimer(arg0_72, ...)
+	if arg0_72.timer then
+		arg0_72.timer:Stop()
 
-	arg0.cardtimer = nil
-	arg0.queueTimer = nil
-	arg0.queueCardTimer = nil
+		arg0_72.timer = nil
+	end
+
+	if arg0_72.extraTimer then
+		arg0_72.extraTimer:Stop()
+
+		arg0_72.extraTimer = nil
+	end
+
+	if arg0_72.enhancelTimer then
+		arg0_72.enhancelTimer:Stop()
+
+		arg0_72.enhancelTimer = nil
+	end
+
+	for iter0_72, iter1_72 in pairs(arg0_72.cardtimer) do
+		iter1_72:Stop()
+	end
+
+	arg0_72.cardtimer = {}
+
+	for iter2_72, iter3_72 in pairs(arg0_72.queueTimer) do
+		iter3_72:Stop()
+	end
+
+	arg0_72.queueTimer = {}
+
+	for iter4_72, iter5_72 in pairs(arg0_72.queueCardTimer) do
+		iter5_72:Stop()
+	end
+
+	arg0_72.queueCardTimer = {}
+
+	if arg0_72.actCatchupTimer then
+		arg0_72.actCatchupTimer:Stop()
+
+		arg0_72.actCatchupTimer = nil
+	end
 end
 
-return var0
+function var0_0.willExit(arg0_73)
+	arg0_73:clearTimer()
+
+	arg0_73.cardtimer = nil
+	arg0_73.queueTimer = nil
+	arg0_73.queueCardTimer = nil
+end
+
+return var0_0

@@ -1,11 +1,11 @@
-﻿local var0 = class("PublicGuildTechnology", import("..GuildTechnology"))
+﻿local var0_0 = class("PublicGuildTechnology", import("..GuildTechnology"))
 
-function var0.GetConsume(arg0)
-	local var0 = arg0:getConfig("contribution_consume")
-	local var1 = arg0:getConfig("gold_consume")
-	local var2 = arg0:getConfig("contribution_multiple")
+function var0_0.GetConsume(arg0_1)
+	local var0_1 = arg0_1:getConfig("contribution_consume")
+	local var1_1 = arg0_1:getConfig("gold_consume")
+	local var2_1 = arg0_1:getConfig("contribution_multiple")
 
-	return var0 * var2, var1 * var2
+	return var0_1 * var2_1, var1_1 * var2_1
 end
 
-return var0
+return var0_0

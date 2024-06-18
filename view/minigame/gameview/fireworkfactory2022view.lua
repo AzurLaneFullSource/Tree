@@ -1,12 +1,12 @@
-﻿local var0 = class("FireworkFactory2022View", import(".FireworkFactoryView"))
+﻿local var0_0 = class("FireworkFactory2022View", import(".FireworkFactoryView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "FireworkFactory2022UI"
 end
 
-function var0.didEnter(arg0)
-	var0.super.didEnter(arg0)
-	onButton(arg0, arg0.btn_help, function()
+function var0_0.didEnter(arg0_2)
+	var0_0.super.didEnter(arg0_2)
+	onButton(arg0_2, arg0_2.btn_help, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_xinnian2022_firework.tip
@@ -14,4 +14,4 @@ function var0.didEnter(arg0)
 	end)
 end
 
-return var0
+return var0_0

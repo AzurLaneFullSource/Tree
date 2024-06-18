@@ -1,43 +1,43 @@
-﻿local var0 = class("ObjectRockB", import("view.miniGame.gameView.RyzaMiniGame.object.ObjectBreakable"))
+﻿local var0_0 = class("ObjectRockB", import("view.miniGame.gameView.RyzaMiniGame.object.ObjectBreakable"))
 
-function var0.FirePassability(arg0)
-	return arg0.isWater and 2 or 1
+function var0_0.FirePassability(arg0_1)
+	return arg0_1.isWater and 2 or 1
 end
 
-function var0.InTimeRiver(arg0)
+function var0_0.InTimeRiver(arg0_2)
 	return true
 end
 
-function var0.InitUI(arg0, arg1)
-	local var0 = arg0._tf:Find("Image")
+function var0_0.InitUI(arg0_3, arg1_3)
+	local var0_3 = arg0_3._tf:Find("Image")
 
-	arg0.comAnimator = arg0._tf:Find("Image"):GetComponent(typeof(Animator))
+	arg0_3.comAnimator = arg0_3._tf:Find("Image"):GetComponent(typeof(Animator))
 
-	local var1 = var0:GetComponent(typeof(DftAniEvent))
+	local var1_3 = var0_3:GetComponent(typeof(DftAniEvent))
 
-	var1:SetTriggerEvent(function()
-		arg0.waterTime = arg1.waterTime or 4
+	var1_3:SetTriggerEvent(function()
+		arg0_3.waterTime = arg1_3.waterTime or 4
 	end)
-	var1:SetEndEvent(function()
-		arg0:Destroy()
+	var1_3:SetEndEvent(function()
+		arg0_3:Destroy()
 	end)
 
-	arg0.waterTime = 0
+	arg0_3.waterTime = 0
 end
 
-function var0.Break(arg0)
-	arg0:DeregisterAll()
-	arg0.comAnimator:Play("B2")
+function var0_0.Break(arg0_6)
+	arg0_6:DeregisterAll()
+	arg0_6.comAnimator:Play("B2")
 end
 
-function var0.TimeUpdate(arg0, arg1)
-	if arg0.waterTime > 0 then
-		arg0.waterTime = arg0.waterTime - arg1
+function var0_0.TimeUpdate(arg0_7, arg1_7)
+	if arg0_7.waterTime > 0 then
+		arg0_7.waterTime = arg0_7.waterTime - arg1_7
 
-		if arg0.waterTime <= 0 then
-			arg0.comAnimator:Play("B4")
+		if arg0_7.waterTime <= 0 then
+			arg0_7.comAnimator:Play("B4")
 		end
 	end
 end
 
-return var0
+return var0_0

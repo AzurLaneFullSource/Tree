@@ -1,12 +1,12 @@
-﻿local var0 = class("BattleGateDuel")
+﻿local var0_0 = class("BattleGateDuel")
 
-ys.Battle.BattleGateDuel = var0
-var0.__name = "BattleGateDuel"
+ys.Battle.BattleGateDuel = var0_0
+var0_0.__name = "BattleGateDuel"
 
-function var0.Entrance(arg0, arg1)
-	local var0 = arg0.mainFleetId
+function var0_0.Entrance(arg0_1, arg1_1)
+	local var0_1 = arg0_1.mainFleetId
 
-	if not arg1.LegalFleet(arg0.mainFleetId) then
+	if not arg1_1.LegalFleet(arg0_1.mainFleetId) then
 		return
 	end
 
@@ -16,130 +16,130 @@ function var0.Entrance(arg0, arg1)
 		return
 	end
 
-	local var1 = getProxy(PlayerProxy)
-	local var2 = getProxy(BayProxy)
-	local var3 = getProxy(FleetProxy)
-	local var4
-	local var5
-	local var6 = arg0.rivalId
-	local var7 = getProxy(MilitaryExerciseProxy):getRivalById(var6)
-	local var8 = pg.battle_cost_template[SYSTEM_DUEL]
-	local var9 = var8.oil_cost > 0
-	local var10 = {}
-	local var11 = 0
-	local var12 = 0
-	local var13 = 0
-	local var14 = 0
-	local var15 = var3:getFleetById(var0)
-	local var16 = var2:getSortShipsByFleet(var15)
+	local var1_1 = getProxy(PlayerProxy)
+	local var2_1 = getProxy(BayProxy)
+	local var3_1 = getProxy(FleetProxy)
+	local var4_1
+	local var5_1
+	local var6_1 = arg0_1.rivalId
+	local var7_1 = getProxy(MilitaryExerciseProxy):getRivalById(var6_1)
+	local var8_1 = pg.battle_cost_template[SYSTEM_DUEL]
+	local var9_1 = var8_1.oil_cost > 0
+	local var10_1 = {}
+	local var11_1 = 0
+	local var12_1 = 0
+	local var13_1 = 0
+	local var14_1 = 0
+	local var15_1 = var3_1:getFleetById(var0_1)
+	local var16_1 = var2_1:getSortShipsByFleet(var15_1)
 
-	for iter0, iter1 in ipairs(var16) do
-		var10[#var10 + 1] = iter1.id
+	for iter0_1, iter1_1 in ipairs(var16_1) do
+		var10_1[#var10_1 + 1] = iter1_1.id
 	end
 
-	local var17 = var1:getData()
+	local var17_1 = var1_1:getData()
 
-	if var9 and var14 > var17.oil then
+	if var9_1 and var14_1 > var17_1.oil then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 		return
 	end
 
-	local var18 = 0
+	local var18_1 = 0
 
-	for iter2, iter3 in ipairs(var7.mainShips) do
-		var18 = var18 + iter3.level
+	for iter2_1, iter3_1 in ipairs(var7_1.mainShips) do
+		var18_1 = var18_1 + iter3_1.level
 	end
 
-	for iter4, iter5 in ipairs(var7.vanguardShips) do
-		var18 = var18 + iter5.level
+	for iter4_1, iter5_1 in ipairs(var7_1.vanguardShips) do
+		var18_1 = var18_1 + iter5_1.level
 	end
 
-	RivalLevelVertiry = var18
+	RivalLevelVertiry = var18_1
 
-	arg1.ShipVertify()
+	arg1_1.ShipVertify()
 
-	local function var19(arg0)
-		if var9 then
-			var17:consume({
+	local function var19_1(arg0_2)
+		if var9_1 then
+			var17_1:consume({
 				gold = 0,
-				oil = var12
+				oil = var12_1
 			})
 		end
 
-		if var8.enter_energy_cost > 0 then
-			local var0 = pg.gameset.battle_consume_energy.key_value
+		if var8_1.enter_energy_cost > 0 then
+			local var0_2 = pg.gameset.battle_consume_energy.key_value
 
-			for iter0, iter1 in ipairs(var16) do
-				iter1:cosumeEnergy(var0)
-				var2:updateShip(iter1)
+			for iter0_2, iter1_2 in ipairs(var16_1) do
+				iter1_2:cosumeEnergy(var0_2)
+				var2_1:updateShip(iter1_2)
 			end
 		end
 
-		local var1 = ys.Battle.BattleConfig.ARENA_LIST
-		local var2 = var1[math.random(#var1)]
+		local var1_2 = ys.Battle.BattleConfig.ARENA_LIST
+		local var2_2 = var1_2[math.random(#var1_2)]
 
-		var1:updatePlayer(var17)
+		var1_1:updatePlayer(var17_1)
 
-		local var3 = {
-			mainFleetId = var0,
+		local var3_2 = {
+			mainFleetId = var0_1,
 			prefabFleet = {},
-			stageId = var2,
+			stageId = var2_2,
 			system = SYSTEM_DUEL,
-			rivalId = var6,
-			token = arg0.key,
+			rivalId = var6_1,
+			token = arg0_2.key,
 			mode = mode
 		}
 
-		arg1:sendNotification(GAME.BEGIN_STAGE_DONE, var3)
+		arg1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var3_2)
 	end
 
-	local function var20(arg0)
-		arg1:RequestFailStandardProcess(arg0)
+	local function var20_1(arg0_3)
+		arg1_1:RequestFailStandardProcess(arg0_3)
 	end
 
-	BeginStageCommand.SendRequest(SYSTEM_DUEL, var10, {
-		var6
-	}, var19, var20)
+	BeginStageCommand.SendRequest(SYSTEM_DUEL, var10_1, {
+		var6_1
+	}, var19_1, var20_1)
 end
 
-function var0.Exit(arg0, arg1)
-	local var0 = pg.battle_cost_template[SYSTEM_DUEL]
-	local var1 = getProxy(FleetProxy)
-	local var2 = getProxy(BayProxy)
-	local var3 = arg0.statistics._battleScore
-	local var4 = 0
-	local var5 = {}
-	local var6 = var1:getFleetById(arg0.mainFleetId)
-	local var7 = var2:getSortShipsByFleet(var6)
-	local var8 = var6:getEndCost().oil
-	local var9 = arg1.GeneralPackage(arg0, var7)
+function var0_0.Exit(arg0_4, arg1_4)
+	local var0_4 = pg.battle_cost_template[SYSTEM_DUEL]
+	local var1_4 = getProxy(FleetProxy)
+	local var2_4 = getProxy(BayProxy)
+	local var3_4 = arg0_4.statistics._battleScore
+	local var4_4 = 0
+	local var5_4 = {}
+	local var6_4 = var1_4:getFleetById(arg0_4.mainFleetId)
+	local var7_4 = var2_4:getSortShipsByFleet(var6_4)
+	local var8_4 = var6_4:getEndCost().oil
+	local var9_4 = arg1_4.GeneralPackage(arg0_4, var7_4)
 
-	local function var10(arg0)
-		arg1.addShipsExp(arg0.ship_exp_list, arg0.statistics, false)
+	local function var10_4(arg0_5)
+		arg1_4.addShipsExp(arg0_5.ship_exp_list, arg0_4.statistics, false)
 
-		arg0.statistics.mvpShipID = arg0.mvp
+		arg0_4.statistics.mvpShipID = arg0_5.mvp
 
-		local var0, var1 = arg1:GeneralLoot(arg0)
-		local var2 = var3 > ys.Battle.BattleConst.BattleScore.C
+		local var0_5, var1_5 = arg1_4:GeneralLoot(arg0_5)
+		local var2_5 = var3_4 > ys.Battle.BattleConst.BattleScore.C
 
-		arg1.GeneralPlayerCosume(SYSTEM_DUEL, var2, var8, arg0.player_exp, exFlag)
+		arg1_4.GeneralPlayerCosume(SYSTEM_DUEL, var2_5, var8_4, arg0_5.player_exp, exFlag)
 		getProxy(MilitaryExerciseProxy):reduceExerciseCount()
 
-		local var3 = {
+		local var3_5 = {
 			system = SYSTEM_DUEL,
-			statistics = arg0.statistics,
-			score = var3,
-			drops = var0,
+			statistics = arg0_4.statistics,
+			score = var3_4,
+			drops = var0_5,
 			commanderExps = {},
-			result = arg0.result,
-			extraDrops = var1
+			result = arg0_5.result,
+			extraDrops = var1_5
 		}
 
-		arg1:sendNotification(GAME.FINISH_STAGE_DONE, var3)
+		arg1_4:sendNotification(GAME.FINISH_STAGE_DONE, var3_5)
 	end
 
-	arg1:SendRequest(var9, var10)
+	arg1_4:SendRequest(var9_4, var10_4)
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_388 = {}
+var0_0.word_template_388 = {}
 
-local var1 = var0.word_template_388
+local var1_0 = var0_0.word_template_388
 
 function temp()
-	var1.澎 = {
+	var1_0.澎 = {
 		帥 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.岣 = {
+	var1_0.岣 = {
 		黎 = {
 			过 = {
 				甲 = {
@@ -37,7 +37,7 @@ end
 temp()
 
 function temp()
-	var1.典 = {
+	var1_0.典 = {
 		中 = {
 			典 = {
 				之 = {
@@ -59,7 +59,7 @@ end
 temp()
 
 function temp()
-	var1["("] = {
+	var1_0["("] = {
 		王 = {
 			新 = {
 				亭 = {
@@ -1707,7 +1707,7 @@ end
 temp()
 
 function temp()
-	var1.g = {
+	var1_0.g = {
 		e = {
 			命 = {
 				this = true
@@ -1816,7 +1816,7 @@ end
 temp()
 
 function temp()
-	var1.端 = {
+	var1_0.端 = {
 		午 = {
 			节 = {
 				前 = {
@@ -1884,7 +1884,7 @@ end
 temp()
 
 function temp()
-	var1.岭 = {
+	var1_0.岭 = {
 		南 = {
 			一 = {
 				叶 = {

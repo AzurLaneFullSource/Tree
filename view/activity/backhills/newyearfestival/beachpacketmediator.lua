@@ -1,23 +1,23 @@
-﻿local var0 = class("BeachPacketMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("BeachPacketMediator", import("view.base.ContextMediator"))
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_1)
 	return {
 		ActivityProxy.ACTIVITY_SHOW_RED_PACKET_AWARDS,
 		ActivityProxy.ACTIVITY_UPDATED
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_2, arg1_2)
+	local var0_2 = arg1_2:getName()
+	local var1_2 = arg1_2:getBody()
 
-	if var0 == ActivityProxy.ACTIVITY_SHOW_RED_PACKET_AWARDS then
-		arg0.viewComponent:playAni(function()
-			arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1.awards, var1.callback)
+	if var0_2 == ActivityProxy.ACTIVITY_SHOW_RED_PACKET_AWARDS then
+		arg0_2.viewComponent:playAni(function()
+			arg0_2.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_2.awards, var1_2.callback)
 		end)
-	elseif var0 == ActivityProxy.ACTIVITY_UPDATED and var1.id == arg0.viewComponent.activityID then
-		arg0.viewComponent:onSubmitFinished()
+	elseif var0_2 == ActivityProxy.ACTIVITY_UPDATED and var1_2.id == arg0_2.viewComponent.activityID then
+		arg0_2.viewComponent:onSubmitFinished()
 	end
 end
 
-return var0
+return var0_0

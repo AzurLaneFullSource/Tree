@@ -1,39 +1,39 @@
-﻿local var0 = class("ChatMsg", import(".BaseVO"))
+﻿local var0_0 = class("ChatMsg", import(".BaseVO"))
 
-function var0.Ctor(arg0, arg1, arg2)
-	assert(arg1, "type should be clarified.")
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	assert(arg1_1, "type should be clarified.")
 
-	arg0.type = arg1
-	arg0.timestamp = arg2.timestamp
-	arg0.content = arg2.content
-	arg0.emojiId = arg2.emojiId
-	arg0.player = arg2.player
+	arg0_1.type = arg1_1
+	arg0_1.timestamp = arg2_1.timestamp
+	arg0_1.content = arg2_1.content
+	arg0_1.emojiId = arg2_1.emojiId
+	arg0_1.player = arg2_1.player
 
-	if arg0.player then
-		arg0.playerId = arg0.player.id
+	if arg0_1.player then
+		arg0_1.playerId = arg0_1.player.id
 	end
 
-	arg0.unread = arg2.unread or 0
-	arg0.id = arg2.id
-	arg0.args = arg2.args
-	arg0.uniqueId = arg2.uniqueId
-	arg0.needBanRichText = true
+	arg0_1.unread = arg2_1.unread or 0
+	arg0_1.id = arg2_1.id
+	arg0_1.args = arg2_1.args
+	arg0_1.uniqueId = arg2_1.uniqueId
+	arg0_1.needBanRichText = true
 
-	if arg2.richText then
-		arg0.needBanRichText = false
+	if arg2_1.richText then
+		arg0_1.needBanRichText = false
 	end
 end
 
-function var0.IsPublic(arg0)
-	return arg0.id ~= nil
+function var0_0.IsPublic(arg0_2)
+	return arg0_2.id ~= nil
 end
 
-function var0.IsWorldBossNotify(arg0)
-	return arg0.id == 4
+function var0_0.IsWorldBossNotify(arg0_3)
+	return arg0_3.id == 4
 end
 
-function var0.IsSame(arg0, arg1)
-	return arg0.uniqueId == arg1
+function var0_0.IsSame(arg0_4, arg1_4)
+	return arg0_4.uniqueId == arg1_4
 end
 
-return var0
+return var0_0

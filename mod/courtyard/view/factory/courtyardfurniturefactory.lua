@@ -1,77 +1,77 @@
-﻿local var0 = class("CourtYardFurnitureFactory")
+﻿local var0_0 = class("CourtYardFurnitureFactory")
 
-function var0.Ctor(arg0, arg1)
-	arg0.poolMgr = arg1
-	arg0.caches = {}
-	arg0.jobs = {}
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.poolMgr = arg1_1
+	arg0_1.caches = {}
+	arg0_1.jobs = {}
 
-	local function var0()
-		arg0:OnJobFinish()
+	local function var0_1()
+		arg0_1:OnJobFinish()
 	end
 
-	local var1 = CourtYardFurnitureJob.New(arg0.poolMgr, var0)
+	local var1_1 = CourtYardFurnitureJob.New(arg0_1.poolMgr, var0_1)
 
-	table.insert(arg0.jobs, var1)
+	table.insert(arg0_1.jobs, var1_1)
 end
 
-function var0.Make(arg0, arg1)
-	local var0 = arg0.poolMgr:GetFurniturePool():Dequeue()
-	local var1
+function var0_0.Make(arg0_3, arg1_3)
+	local var0_3 = arg0_3.poolMgr:GetFurniturePool():Dequeue()
+	local var1_3
 
-	if isa(arg1, CourtYardCanPutFurniture) then
-		var1 = CourtYardCanPutFurnitureModule.New(arg1, var0)
+	if isa(arg1_3, CourtYardCanPutFurniture) then
+		var1_3 = CourtYardCanPutFurnitureModule.New(arg1_3, var0_3)
 	else
-		var1 = CourtYardFurnitureModule.New(arg1, var0)
+		var1_3 = CourtYardFurnitureModule.New(arg1_3, var0_3)
 	end
 
-	table.insert(arg0.caches, {
-		arg1,
-		var1
+	table.insert(arg0_3.caches, {
+		arg1_3,
+		var1_3
 	})
 
-	if #arg0.caches == 1 then
-		local var2 = arg0:GetIdleJob()
+	if #arg0_3.caches == 1 then
+		local var2_3 = arg0_3:GetIdleJob()
 
-		if var2 then
-			var2:Work(var1, arg1)
+		if var2_3 then
+			var2_3:Work(var1_3, arg1_3)
 		end
 	end
 
-	return var1
+	return var1_3
 end
 
-function var0.GetIdleJob(arg0)
-	for iter0, iter1 in ipairs(arg0.jobs) do
-		if not iter1:IsWorking() then
-			return iter1
+function var0_0.GetIdleJob(arg0_4)
+	for iter0_4, iter1_4 in ipairs(arg0_4.jobs) do
+		if not iter1_4:IsWorking() then
+			return iter1_4
 		end
 	end
 end
 
-function var0.OnJobFinish(arg0)
-	table.remove(arg0.caches, 1)
+function var0_0.OnJobFinish(arg0_5)
+	table.remove(arg0_5.caches, 1)
 
-	if #arg0.caches > 0 then
-		local var0 = arg0:GetIdleJob()
+	if #arg0_5.caches > 0 then
+		local var0_5 = arg0_5:GetIdleJob()
 
-		assert(var0)
+		assert(var0_5)
 
-		local var1 = arg0.caches[1]
-		local var2 = var1[1]
-		local var3 = var1[2]
+		local var1_5 = arg0_5.caches[1]
+		local var2_5 = var1_5[1]
+		local var3_5 = var1_5[2]
 
-		var0:Work(var3, var2)
+		var0_5:Work(var3_5, var2_5)
 	end
 end
 
-function var0.Dispose(arg0)
-	arg0.caches = nil
+function var0_0.Dispose(arg0_6)
+	arg0_6.caches = nil
 
-	for iter0, iter1 in pairs(arg0.jobs) do
-		iter1:Stop()
+	for iter0_6, iter1_6 in pairs(arg0_6.jobs) do
+		iter1_6:Stop()
 	end
 
-	arg0.jobs = nil
+	arg0_6.jobs = nil
 end
 
-return var0
+return var0_0

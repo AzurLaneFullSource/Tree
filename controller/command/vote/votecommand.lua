@@ -1,35 +1,35 @@
-﻿local var0 = class("VoteCommand", pm.SimpleCommand)
+﻿local var0_0 = class("VoteCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.voteId
-	local var2 = var0.gid
-	local var3 = var0.count
-	local var4 = getProxy(VoteProxy)
-	local var5 = var4:GetVoteActivityByConfigId(var1)
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.voteId
+	local var2_1 = var0_1.gid
+	local var3_1 = var0_1.count
+	local var4_1 = getProxy(VoteProxy)
+	local var5_1 = var4_1:GetVoteActivityByConfigId(var1_1)
 
-	if not var5 or var5:isEnd() then
+	if not var5_1 or var5_1:isEnd() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 		return
 	end
 
-	local var6 = var5.id
-	local var7 = var4:RawGetVoteGroupByConfigId(var1)
+	local var6_1 = var5_1.id
+	local var7_1 = var4_1:RawGetVoteGroupByConfigId(var1_1)
 
-	if not var7 then
+	if not var7_1 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 		return
 	end
 
-	if not var7:IsOpening() then
+	if not var7_1:IsOpening() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 		return
 	end
 
-	if var3 > var4:GetVotesByConfigId(var1) then
+	if var3_1 > var4_1:GetVotesByConfigId(var1_1) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("vote_not_enough"))
 
 		return
@@ -37,29 +37,29 @@ function var0.execute(arg0, arg1)
 
 	pg.ConnectionMgr.GetInstance():Send(11202, {
 		cmd = 1,
-		activity_id = var6,
-		arg1 = var1,
-		arg2 = var2,
-		arg3 = var3,
+		activity_id = var6_1,
+		arg1 = var1_1,
+		arg2 = var2_1,
+		arg3 = var3_1,
 		arg_list = {}
-	}, 11203, function(arg0)
-		if arg0.result == 0 then
-			local var0 = PlayerConst.addTranDrop(arg0.award_list)
-			local var1 = getProxy(ActivityProxy)
-			local var2 = var1:getActivityById(var6)
+	}, 11203, function(arg0_2)
+		if arg0_2.result == 0 then
+			local var0_2 = PlayerConst.addTranDrop(arg0_2.award_list)
+			local var1_2 = getProxy(ActivityProxy)
+			local var2_2 = var1_2:getActivityById(var6_1)
 
-			var2.data1 = var2.data1 - var3
-			var2.data2 = var2.data2 + var3
+			var2_2.data1 = var2_2.data1 - var3_1
+			var2_2.data2 = var2_2.data2 + var3_1
 
-			var1:updateActivity(var2)
-			var7:UpdateVoteCnt(var2, var3)
-			arg0:sendNotification(GAME.ON_NEW_VOTE_DONE, {
-				awards = var0
+			var1_2:updateActivity(var2_2)
+			var7_1:UpdateVoteCnt(var2_1, var3_1)
+			arg0_1:sendNotification(GAME.ON_NEW_VOTE_DONE, {
+				awards = var0_2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0.result])
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result])
 		end
 	end)
 end
 
-return var0
+return var0_0

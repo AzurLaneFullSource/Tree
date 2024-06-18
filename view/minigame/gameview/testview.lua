@@ -1,27 +1,27 @@
-﻿local var0 = class("TestView", import("..BaseMiniGameView"))
+﻿local var0_0 = class("TestView", import("..BaseMiniGameView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "MailBoxUI2"
 end
 
-function var0.init(arg0)
+function var0_0.init(arg0_2)
 	print("初始化")
 
-	arg0._closeBtn = arg0:findTF("main/top/btnBack")
-	arg0._btn1 = arg0:findTF("main/delete_all_button")
-	arg0._btn2 = arg0:findTF("main/get_all_button")
+	arg0_2._closeBtn = arg0_2:findTF("main/top/btnBack")
+	arg0_2._btn1 = arg0_2:findTF("main/delete_all_button")
+	arg0_2._btn2 = arg0_2:findTF("main/get_all_button")
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0._closeBtn, function()
-		arg0:emit(var0.ON_BACK)
+function var0_0.didEnter(arg0_3)
+	onButton(arg0_3, arg0_3._closeBtn, function()
+		arg0_3:emit(var0_0.ON_BACK)
 	end)
-	onButton(arg0, arg0._btn1, function()
-		arg0:SendSuccess(1)
+	onButton(arg0_3, arg0_3._btn1, function()
+		arg0_3:SendSuccess(1)
 	end)
-	onButton(arg0, arg0._btn2, function()
-		arg0:SendFailure(1)
+	onButton(arg0_3, arg0_3._btn2, function()
+		arg0_3:SendFailure(1)
 	end)
 end
 
-return var0
+return var0_0

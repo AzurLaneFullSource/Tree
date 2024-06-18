@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Ah, you were defeated! Tap confirm to exit the stage.",
 	"Commander, please Tap <color=#ffde38>Attack</color>",
 	"Choose campaign",
@@ -16,7 +16,7 @@ return {
 				mode = 1,
 				posY = 147.8,
 				posX = 328.7,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/Msgbox(Clone)/window/button_container/custom_button_1(Clone)",
@@ -40,7 +40,7 @@ return {
 				mode = 1,
 				posY = -42,
 				posX = 243,
-				text = var0[2]
+				text = var0_0[2]
 			},
 			ui = {
 				pathIndex = -1,
@@ -71,7 +71,7 @@ return {
 				mode = 1,
 				posY = -50,
 				posX = 250,
-				text = var0[3]
+				text = var0_0[3]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/LevelMainScene(Clone)/entrance/enters/enter_main",
@@ -96,7 +96,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[4]
+				text = var0_0[4]
 			},
 			ui = {
 				delay = 1.8,
@@ -132,7 +132,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[5]
+				text = var0_0[5]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/LevelFleetSelectView(Clone)/panel/Fixed/start_button",

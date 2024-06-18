@@ -1,60 +1,60 @@
-﻿local var0 = class("RepairPanel", import("..base.BasePanel"))
+﻿local var0_0 = class("RepairPanel", import("..base.BasePanel"))
 
-function var0.init(arg0)
-	var0.super.init(arg0)
+function var0_0.init(arg0_1)
+	var0_0.super.init(arg0_1)
 
-	arg0.desc = arg0:findTF("window/desc")
-	arg0.descFree = arg0:findTF("window/text_free")
-	arg0.descCharge = arg0:findTF("window/text_charge")
-	arg0.free = arg0:findTF("window/text_free/time")
-	arg0.charge = arg0:findTF("window/text_charge/time")
-	arg0.diamond = arg0:findTF("window/diamond")
-	arg0.cost = findTF(arg0.diamond, "cost")
-	arg0.cancel = arg0:findTF("window/actions/cancel_button")
-	arg0.confirm = arg0:findTF("window/actions/use_button")
-	arg0.back = arg0:findTF("top/btnBack")
-	arg0.onConfirm = nil
-	arg0.onCancel = nil
+	arg0_1.desc = arg0_1:findTF("window/desc")
+	arg0_1.descFree = arg0_1:findTF("window/text_free")
+	arg0_1.descCharge = arg0_1:findTF("window/text_charge")
+	arg0_1.free = arg0_1:findTF("window/text_free/time")
+	arg0_1.charge = arg0_1:findTF("window/text_charge/time")
+	arg0_1.diamond = arg0_1:findTF("window/diamond")
+	arg0_1.cost = findTF(arg0_1.diamond, "cost")
+	arg0_1.cancel = arg0_1:findTF("window/actions/cancel_button")
+	arg0_1.confirm = arg0_1:findTF("window/actions/use_button")
+	arg0_1.back = arg0_1:findTF("top/btnBack")
+	arg0_1.onConfirm = nil
+	arg0_1.onCancel = nil
 end
 
-function var0.set(arg0, arg1, arg2, arg3, arg4)
-	arg0.repairTimes = arg1
-	arg0.freeTimes = arg2
-	arg0.chargeTimes = arg3
-	arg0.chargeDiamond = arg4
+function var0_0.set(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2)
+	arg0_2.repairTimes = arg1_2
+	arg0_2.freeTimes = arg2_2
+	arg0_2.chargeTimes = arg3_2
+	arg0_2.chargeDiamond = arg4_2
 
-	local var0 = arg0.freeTimes - math.min(arg0.repairTimes, arg0.freeTimes)
-	local var1 = arg0.chargeTimes - (arg0.repairTimes - (arg0.freeTimes - var0))
+	local var0_2 = arg0_2.freeTimes - math.min(arg0_2.repairTimes, arg0_2.freeTimes)
+	local var1_2 = arg0_2.chargeTimes - (arg0_2.repairTimes - (arg0_2.freeTimes - var0_2))
 
-	setText(arg0.free, var0 .. "/" .. arg0.freeTimes)
-	setText(arg0.charge, var1 .. "/" .. arg0.chargeTimes)
-	setText(arg0.cost, arg0.chargeDiamond)
-	setActive(arg0.descFree, var0 > 0)
-	setActive(arg0.descCharge, var0 <= 0)
-	setText(arg0.desc, i18n("battle_repair_special_tip"))
-	setText(arg0.descFree, i18n("battle_repair_normal_name"))
-	setText(arg0.descCharge, i18n("battle_repair_special_name"))
+	setText(arg0_2.free, var0_2 .. "/" .. arg0_2.freeTimes)
+	setText(arg0_2.charge, var1_2 .. "/" .. arg0_2.chargeTimes)
+	setText(arg0_2.cost, arg0_2.chargeDiamond)
+	setActive(arg0_2.descFree, var0_2 > 0)
+	setActive(arg0_2.descCharge, var0_2 <= 0)
+	setText(arg0_2.desc, i18n("battle_repair_special_tip"))
+	setText(arg0_2.descFree, i18n("battle_repair_normal_name"))
+	setText(arg0_2.descCharge, i18n("battle_repair_special_name"))
 
-	local var2 = arg0.repairTimes < arg0.freeTimes + arg0.chargeTimes
+	local var2_2 = arg0_2.repairTimes < arg0_2.freeTimes + arg0_2.chargeTimes
 
-	setActive(arg0.diamond, var2 and arg0.repairTimes >= arg0.freeTimes)
-	setButtonEnabled(arg0.confirm, var2)
-	setGray(arg0.confirm, not var2, true)
-	onButton(arg0, arg0.back, function()
-		if arg0.onCancel then
-			arg0.onCancel()
+	setActive(arg0_2.diamond, var2_2 and arg0_2.repairTimes >= arg0_2.freeTimes)
+	setButtonEnabled(arg0_2.confirm, var2_2)
+	setGray(arg0_2.confirm, not var2_2, true)
+	onButton(arg0_2, arg0_2.back, function()
+		if arg0_2.onCancel then
+			arg0_2.onCancel()
 		end
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.cancel, function()
-		if arg0.onCancel then
-			arg0.onCancel()
+	onButton(arg0_2, arg0_2.cancel, function()
+		if arg0_2.onCancel then
+			arg0_2.onCancel()
 		end
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.confirm, function()
-		if arg0.onConfirm then
-			arg0.onConfirm()
+	onButton(arg0_2, arg0_2.confirm, function()
+		if arg0_2.onConfirm then
+			arg0_2.onConfirm()
 		end
 	end, SFX_CONFIRM)
 end
 
-return var0
+return var0_0

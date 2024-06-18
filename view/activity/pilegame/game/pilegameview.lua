@@ -1,438 +1,438 @@
-﻿local var0 = class("PileGameView")
+﻿local var0_0 = class("PileGameView")
 
-function var0.Ctor(arg0, arg1)
-	arg0.controller = arg1
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.controller = arg1_1
 end
 
-function var0.SetUI(arg0, arg1)
-	pg.DelegateInfo.New(arg0)
+function var0_0.SetUI(arg0_2, arg1_2)
+	pg.DelegateInfo.New(arg0_2)
 
-	arg0._go = arg1
-	arg0._tf = tf(arg1)
-	arg0.bg = arg0._tf:Find("AD")
-	arg0.curtainTF = arg0._tf:Find("AD/curtain")
-	arg0.countDown = arg0.curtainTF:Find("Text"):GetComponent(typeof(Text))
-	arg0.itemTpl = arg0._tf:Find("AD/item")
-	arg0.groundTpl = arg0._tf:Find("AD/ground")
-	arg0.gameContainer = arg0._tf:Find("AD/game")
-	arg0.itemsContainer = arg0._tf:Find("AD/game/items")
-	arg0.scoreTxt = arg0._tf:Find("AD/score_panel/Text"):GetComponent(typeof(Text))
-	arg0.heats = {
-		arg0._tf:Find("AD/score_panel/heart1"),
-		arg0._tf:Find("AD/score_panel/heart2"),
-		arg0._tf:Find("AD/score_panel/heart3")
+	arg0_2._go = arg1_2
+	arg0_2._tf = tf(arg1_2)
+	arg0_2.bg = arg0_2._tf:Find("AD")
+	arg0_2.curtainTF = arg0_2._tf:Find("AD/curtain")
+	arg0_2.countDown = arg0_2.curtainTF:Find("Text"):GetComponent(typeof(Text))
+	arg0_2.itemTpl = arg0_2._tf:Find("AD/item")
+	arg0_2.groundTpl = arg0_2._tf:Find("AD/ground")
+	arg0_2.gameContainer = arg0_2._tf:Find("AD/game")
+	arg0_2.itemsContainer = arg0_2._tf:Find("AD/game/items")
+	arg0_2.scoreTxt = arg0_2._tf:Find("AD/score_panel/Text"):GetComponent(typeof(Text))
+	arg0_2.heats = {
+		arg0_2._tf:Find("AD/score_panel/heart1"),
+		arg0_2._tf:Find("AD/score_panel/heart2"),
+		arg0_2._tf:Find("AD/score_panel/heart3")
 	}
-	arg0.manjuuAnim = arg0._tf:Find("AD/npc/manjuu"):GetComponent(typeof(Animator))
-	arg0.anikiAnim = arg0._tf:Find("AD/npc/aniki"):GetComponent(typeof(Animator))
-	arg0.manjuuPilot = arg0._tf:Find("AD/npc/manjuu_pilot")
-	arg0.backBtn = arg0._tf:Find("AD/back")
-	arg0.exitPanel = arg0._tf:Find("AD/exit_panel")
-	arg0.exitPanelConfirmBtn = arg0.exitPanel:Find("frame/confirm")
-	arg0.exitPanelCancelBtn = arg0.exitPanel:Find("frame/cancel")
-	arg0.resultPanel = arg0._tf:Find("AD/result")
-	arg0.endGameBtn = arg0.resultPanel:Find("frame/endGame")
-	arg0.finalScoreTxt = arg0.resultPanel:Find("frame/score/Text"):GetComponent(typeof(Text))
-	arg0.highestScoreText = arg0.resultPanel:Find("frame/highestscore/Text"):GetComponent(typeof(Text))
-	arg0.itemIndexTF = arg0._tf:Find("AD/score_panel/index/target")
-	arg0.overviewPanel = arg0._tf:Find("overview")
-	arg0.startBtn = arg0._tf:Find("overview/start")
-	arg0.helpBtn = arg0._tf:Find("overview/help")
-	arg0.deathLine = arg0._tf:Find("death_line")
-	arg0.safeLine = arg0._tf:Find("safe_line")
-	arg0.itemCollider = arg0._tf:Find("item_collider")
-	arg0.items = {}
-	arg0.bgMgr = PileGameBgMgr.New(arg0._tf:Find("AD/bgs"))
+	arg0_2.manjuuAnim = arg0_2._tf:Find("AD/npc/manjuu"):GetComponent(typeof(Animator))
+	arg0_2.anikiAnim = arg0_2._tf:Find("AD/npc/aniki"):GetComponent(typeof(Animator))
+	arg0_2.manjuuPilot = arg0_2._tf:Find("AD/npc/manjuu_pilot")
+	arg0_2.backBtn = arg0_2._tf:Find("AD/back")
+	arg0_2.exitPanel = arg0_2._tf:Find("AD/exit_panel")
+	arg0_2.exitPanelConfirmBtn = arg0_2.exitPanel:Find("frame/confirm")
+	arg0_2.exitPanelCancelBtn = arg0_2.exitPanel:Find("frame/cancel")
+	arg0_2.resultPanel = arg0_2._tf:Find("AD/result")
+	arg0_2.endGameBtn = arg0_2.resultPanel:Find("frame/endGame")
+	arg0_2.finalScoreTxt = arg0_2.resultPanel:Find("frame/score/Text"):GetComponent(typeof(Text))
+	arg0_2.highestScoreText = arg0_2.resultPanel:Find("frame/highestscore/Text"):GetComponent(typeof(Text))
+	arg0_2.itemIndexTF = arg0_2._tf:Find("AD/score_panel/index/target")
+	arg0_2.overviewPanel = arg0_2._tf:Find("overview")
+	arg0_2.startBtn = arg0_2._tf:Find("overview/start")
+	arg0_2.helpBtn = arg0_2._tf:Find("overview/help")
+	arg0_2.deathLine = arg0_2._tf:Find("death_line")
+	arg0_2.safeLine = arg0_2._tf:Find("safe_line")
+	arg0_2.itemCollider = arg0_2._tf:Find("item_collider")
+	arg0_2.items = {}
+	arg0_2.bgMgr = PileGameBgMgr.New(arg0_2._tf:Find("AD/bgs"))
 end
 
-function var0.OnEnterGame(arg0, arg1)
-	arg0.viewData = arg1
-	arg0.gameHelpTip = arg0.viewData.tip and arg0.viewData.tip or nil
+function var0_0.OnEnterGame(arg0_3, arg1_3)
+	arg0_3.viewData = arg1_3
+	arg0_3.gameHelpTip = arg0_3.viewData.tip and arg0_3.viewData.tip or nil
 
-	setActive(arg0.overviewPanel, true)
-	setActive(arg0.bg, false)
-	onButton(arg0, arg0.startBtn, function()
-		arg0.controller:StartGame()
+	setActive(arg0_3.overviewPanel, true)
+	setActive(arg0_3.bg, false)
+	onButton(arg0_3, arg0_3.startBtn, function()
+		arg0_3.controller:StartGame()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_3, arg0_3.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = arg0.gameHelpTip or pg.gametip.pile_game_notice.tip
+			helps = arg0_3.gameHelpTip or pg.gametip.pile_game_notice.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.backBtn, function()
-		arg0:ShowExitMsg()
+	onButton(arg0_3, arg0_3.backBtn, function()
+		arg0_3:ShowExitMsg()
 	end, SFX_PANEL)
 end
 
-function var0.ShowExitMsg(arg0)
-	pg.UIMgr.GetInstance():BlurPanel(arg0.exitPanel)
-	setActive(arg0.exitPanel, true)
+function var0_0.ShowExitMsg(arg0_7)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_7.exitPanel)
+	setActive(arg0_7.exitPanel, true)
 
-	local function var0()
-		setActive(arg0.exitPanel, false)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0.exitPanel, arg0.bg)
+	local function var0_7()
+		setActive(arg0_7.exitPanel, false)
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_7.exitPanel, arg0_7.bg)
 	end
 
-	onButton(arg0, arg0.exitPanelCancelBtn, var0, SFX_PANEL)
-	onButton(arg0, arg0.exitPanelConfirmBtn, function()
-		var0()
-		arg0.controller:OnEndGame(false)
+	onButton(arg0_7, arg0_7.exitPanelCancelBtn, var0_7, SFX_PANEL)
+	onButton(arg0_7, arg0_7.exitPanelConfirmBtn, function()
+		var0_7()
+		arg0_7.controller:OnEndGame(false)
 	end, SFX_PANEL)
 end
 
-function var0.DoCurtain(arg0, arg1)
+function var0_0.DoCurtain(arg0_10, arg1_10)
 	seriesAsync({
-		function(arg0)
-			arg0.bgMgr:Init(arg0)
+		function(arg0_11)
+			arg0_10.bgMgr:Init(arg0_11)
 		end,
-		function(arg0)
-			setActive(arg0.overviewPanel, false)
-			setActive(arg0.bg, true)
-			setActive(arg0.curtainTF, true)
-			setAnchoredPosition(arg0.anikiAnim.gameObject, {
+		function(arg0_12)
+			setActive(arg0_10.overviewPanel, false)
+			setActive(arg0_10.bg, true)
+			setActive(arg0_10.curtainTF, true)
+			setAnchoredPosition(arg0_10.anikiAnim.gameObject, {
 				x = -177,
 				y = 158
 			})
 
-			local var0 = 4
+			local var0_12 = 4
 
-			arg0.timer = Timer.New(function()
-				var0 = var0 - 1
+			arg0_10.timer = Timer.New(function()
+				var0_12 = var0_12 - 1
 
-				if var0 == 3 then
+				if var0_12 == 3 then
 					pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_STEP_PILE_COUNTDOWN)
 				end
 
-				arg0.countDown.text = var0
+				arg0_10.countDown.text = var0_12
 
-				if var0 == 0 then
-					setActive(arg0.curtainTF, false)
-					arg0()
+				if var0_12 == 0 then
+					setActive(arg0_10.curtainTF, false)
+					arg0_12()
 				end
 			end, 1, 4)
 
-			arg0.timer:Start()
-			arg0.timer.func()
+			arg0_10.timer:Start()
+			arg0_10.timer.func()
 		end
-	}, arg1)
+	}, arg1_10)
 end
 
-function var0.UpdateScore(arg0, arg1, arg2)
-	arg0.scoreTxt.text = arg1
+function var0_0.UpdateScore(arg0_14, arg1_14, arg2_14)
+	arg0_14.scoreTxt.text = arg1_14
 
-	local var0 = false
+	local var0_14 = false
 
-	if arg1 > 0 and arg1 % PileGameConst.LEVEL_TO_HAPPY_ANIM == 0 then
-		arg0.manjuuAnim:SetTrigger("happy")
-		arg0.anikiAnim:SetTrigger("nice")
+	if arg1_14 > 0 and arg1_14 % PileGameConst.LEVEL_TO_HAPPY_ANIM == 0 then
+		arg0_14.manjuuAnim:SetTrigger("happy")
+		arg0_14.anikiAnim:SetTrigger("nice")
 
-		var0 = true
+		var0_14 = true
 	end
 
-	local var1 = arg0.items[arg2]
+	local var1_14 = arg0_14.items[arg2_14]
 
-	if var1 and var0 then
-		var1:Find("anim"):GetComponent(typeof(Animator)):SetTrigger("win")
-	elseif var1 then
-		var1:Find("anim"):GetComponent(typeof(Animator)):SetTrigger("idle")
+	if var1_14 and var0_14 then
+		var1_14:Find("anim"):GetComponent(typeof(Animator)):SetTrigger("win")
+	elseif var1_14 then
+		var1_14:Find("anim"):GetComponent(typeof(Animator)):SetTrigger("idle")
 	end
 
-	if arg2 then
-		local var2 = arg2.position.x
+	if arg2_14 then
+		local var2_14 = arg2_14.position.x
 
-		arg0.itemIndexTF.localPosition = Vector3(var2 / PileGameConst.RATIO, 0, 0)
+		arg0_14.itemIndexTF.localPosition = Vector3(var2_14 / PileGameConst.RATIO, 0, 0)
 
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_STEP_PILE_SUCCESS)
 	end
 end
 
-function var0.UpdateFailedCnt(arg0, arg1, arg2, arg3, arg4)
-	for iter0, iter1 in ipairs(arg0.heats) do
-		setActive(iter1, arg2 < iter0)
+function var0_0.UpdateFailedCnt(arg0_15, arg1_15, arg2_15, arg3_15, arg4_15)
+	for iter0_15, iter1_15 in ipairs(arg0_15.heats) do
+		setActive(iter1_15, arg2_15 < iter0_15)
 	end
 
-	if arg3 then
-		arg0.anikiAnim:SetTrigger("miss")
-		arg0.items[arg4]:Find("anim"):GetComponent(typeof(Animator)):SetTrigger("miss")
+	if arg3_15 then
+		arg0_15.anikiAnim:SetTrigger("miss")
+		arg0_15.items[arg4_15]:Find("anim"):GetComponent(typeof(Animator)):SetTrigger("miss")
 	end
 end
 
-function var0.AddPile(arg0, arg1, arg2, arg3)
-	local function var0(arg0)
-		local var0 = tf(arg0)
+function var0_0.AddPile(arg0_16, arg1_16, arg2_16, arg3_16)
+	local function var0_16(arg0_17)
+		local var0_17 = tf(arg0_17)
 
-		SetParent(var0, arg0.itemsContainer)
+		SetParent(var0_17, arg0_16.itemsContainer)
 
-		var0.sizeDelta = arg1.sizeDelta
-		var0.pivot = arg1.pivot
-		go(var0).name = arg1.name .. "_" .. arg1.gname
-		arg0.items[arg1] = var0
-		var0.eulerAngles = Vector3(0, 0, 0)
+		var0_17.sizeDelta = arg1_16.sizeDelta
+		var0_17.pivot = arg1_16.pivot
+		go(var0_17).name = arg1_16.name .. "_" .. arg1_16.gname
+		arg0_16.items[arg1_16] = var0_17
+		var0_17.eulerAngles = Vector3(0, 0, 0)
 
-		arg0:OnItemPositionChange(arg1)
-		setActive(var0, not arg2)
+		arg0_16:OnItemPositionChange(arg1_16)
+		setActive(var0_17, not arg2_16)
 
-		if not arg2 then
-			var0:Find("anim"):GetComponent(typeof(Animator)):SetTrigger("exit")
+		if not arg2_16 then
+			var0_17:Find("anim"):GetComponent(typeof(Animator)):SetTrigger("exit")
 		end
 
 		if PileGameConst.DEBUG then
-			arg0:AddPileCollider(arg1)
+			arg0_16:AddPileCollider(arg1_16)
 		end
 
-		arg3()
+		arg3_16()
 	end
 
-	PoolMgr.GetInstance():GetPrefab("Stacks/" .. arg1.gname, arg1.gname, true, var0)
+	PoolMgr.GetInstance():GetPrefab("Stacks/" .. arg1_16.gname, arg1_16.gname, true, var0_16)
 end
 
-function var0.OnStartDrop(arg0, arg1, arg2, arg3)
-	if arg3 then
-		arg0.manjuuAnim:SetBool("despair", PileGameController.DROP_AREA_WARN == arg2)
+function var0_0.OnStartDrop(arg0_18, arg1_18, arg2_18, arg3_18)
+	if arg3_18 then
+		arg0_18.manjuuAnim:SetBool("despair", PileGameController.DROP_AREA_WARN == arg2_18)
 	else
-		arg0.manjuuAnim:SetTrigger("shock")
+		arg0_18.manjuuAnim:SetTrigger("shock")
 	end
 
-	arg0.items[arg1]:Find("anim"):GetComponent(typeof(Animator)):SetTrigger("drop")
+	arg0_18.items[arg1_18]:Find("anim"):GetComponent(typeof(Animator)):SetTrigger("drop")
 end
 
-function var0.OnItemPositionChange(arg0, arg1)
-	local var0 = arg0.items[arg1]
+function var0_0.OnItemPositionChange(arg0_19, arg1_19)
+	local var0_19 = arg0_19.items[arg1_19]
 
-	if var0 then
-		var0.localPosition = arg1.position
-	end
-end
-
-function var0.OnItemPositionChangeWithAnim(arg0, arg1, arg2)
-	local var0 = arg0.items[arg1]
-
-	if var0 then
-		LeanTween.moveLocalY(go(var0), arg1.position.y, PileGameConst.SINK_TIME):setOnComplete(System.Action(arg2))
+	if var0_19 then
+		var0_19.localPosition = arg1_19.position
 	end
 end
 
-function var0.OnItemIndexPositionChange(arg0, arg1)
-	local var0 = arg1.position.x
-	local var1 = arg1.position.y
+function var0_0.OnItemPositionChangeWithAnim(arg0_20, arg1_20, arg2_20)
+	local var0_20 = arg0_20.items[arg1_20]
 
-	arg0.prevPosition = arg0.prevPosition or arg0.manjuuPilot.localPosition.x
+	if var0_20 then
+		LeanTween.moveLocalY(go(var0_20), arg1_20.position.y, PileGameConst.SINK_TIME):setOnComplete(System.Action(arg2_20))
+	end
+end
 
-	local var2 = 0
-	local var3 = 1
+function var0_0.OnItemIndexPositionChange(arg0_21, arg1_21)
+	local var0_21 = arg1_21.position.x
+	local var1_21 = arg1_21.position.y
 
-	if var0 - arg0.prevPosition <= 0 then
-		var2 = var0 + 140
-		var3 = -1
+	arg0_21.prevPosition = arg0_21.prevPosition or arg0_21.manjuuPilot.localPosition.x
+
+	local var2_21 = 0
+	local var3_21 = 1
+
+	if var0_21 - arg0_21.prevPosition <= 0 then
+		var2_21 = var0_21 + 140
+		var3_21 = -1
 	else
-		var2 = var0 - 140
+		var2_21 = var0_21 - 140
 	end
 
-	local var4 = var1 + arg1.sizeDelta.y + arg0.manjuuPilot.rect.height / 2
+	local var4_21 = var1_21 + arg1_21.sizeDelta.y + arg0_21.manjuuPilot.rect.height / 2
 
-	arg0.manjuuPilot.localPosition = Vector3(var2, var4, 0)
-	arg0.manjuuPilot.localScale = Vector3(var3, 1, 1)
-	arg0.prevPosition = var0
+	arg0_21.manjuuPilot.localPosition = Vector3(var2_21, var4_21, 0)
+	arg0_21.manjuuPilot.localScale = Vector3(var3_21, 1, 1)
+	arg0_21.prevPosition = var0_21
 end
 
-function var0.OnExceedingTheHighestScore(arg0)
-	arg0.manjuuAnim:SetTrigger("satisfied")
+function var0_0.OnExceedingTheHighestScore(arg0_22)
+	arg0_22.manjuuAnim:SetTrigger("satisfied")
 end
 
-function var0.DoSink(arg0, arg1, arg2)
-	local var0 = getAnchoredPosition(arg0.anikiAnim.gameObject)
+function var0_0.DoSink(arg0_23, arg1_23, arg2_23)
+	local var0_23 = getAnchoredPosition(arg0_23.anikiAnim.gameObject)
 
-	LeanTween.value(arg0.anikiAnim.gameObject, var0.y, var0.y - arg1, PileGameConst.SINK_TIME):setOnUpdate(System.Action_float(function(arg0)
-		setAnchoredPosition(arg0.anikiAnim.gameObject, {
-			y = arg0
+	LeanTween.value(arg0_23.anikiAnim.gameObject, var0_23.y, var0_23.y - arg1_23, PileGameConst.SINK_TIME):setOnUpdate(System.Action_float(function(arg0_24)
+		setAnchoredPosition(arg0_23.anikiAnim.gameObject, {
+			y = arg0_24
 		})
-	end)):setOnComplete(System.Action(arg2))
-	arg0.bgMgr:DoMove(arg1)
+	end)):setOnComplete(System.Action(arg2_23))
+	arg0_23.bgMgr:DoMove(arg1_23)
 end
 
-function var0.OnRemovePile(arg0, arg1)
-	local var0 = arg0.items[arg1]
+function var0_0.OnRemovePile(arg0_25, arg1_25)
+	local var0_25 = arg0_25.items[arg1_25]
 
-	if var0 then
+	if var0_25 then
 		if PileGameConst.DEBUG then
-			Destroy(var0:Find("collider").gameObject)
+			Destroy(var0_25:Find("collider").gameObject)
 		end
 
-		var0:Find("anim"):GetComponent(typeof(Animator)):SetTrigger("exit")
+		var0_25:Find("anim"):GetComponent(typeof(Animator)):SetTrigger("exit")
 
-		var0.eulerAngles = Vector3(0, 0, 0)
+		var0_25.eulerAngles = Vector3(0, 0, 0)
 
-		PoolMgr.GetInstance():ReturnPrefab("Stacks/" .. arg1.gname, arg1.gname, var0.gameObject)
+		PoolMgr.GetInstance():ReturnPrefab("Stacks/" .. arg1_25.gname, arg1_25.gname, var0_25.gameObject)
 
-		arg0.items[arg1] = nil
+		arg0_25.items[arg1_25] = nil
 	end
 end
 
-function var0.PlaySpeAction(arg0, arg1)
-	local var0 = arg0.items[arg1]
+function var0_0.PlaySpeAction(arg0_26, arg1_26)
+	local var0_26 = arg0_26.items[arg1_26]
 
-	if var0 then
-		local var1 = arg1.speActionCount
+	if var0_26 then
+		local var1_26 = arg1_26.speActionCount
 
-		if var1 == 0 then
+		if var1_26 == 0 then
 			return
 		end
 
-		local var2 = math.random(1, var1) - 1
-		local var3 = var2 == 0 and "spe" or "spe" .. var2
+		local var2_26 = math.random(1, var1_26) - 1
+		local var3_26 = var2_26 == 0 and "spe" or "spe" .. var2_26
 
-		var0:Find("anim"):GetComponent(typeof(Animator)):SetTrigger(var3)
+		var0_26:Find("anim"):GetComponent(typeof(Animator)):SetTrigger(var3_26)
 	end
 end
 
-function var0.OnGameStart(arg0)
-	onButton(arg0, arg0.bg, function()
-		arg0.controller:Drop()
+function var0_0.OnGameStart(arg0_27)
+	onButton(arg0_27, arg0_27.bg, function()
+		arg0_27.controller:Drop()
 	end, SFX_PANEL)
 end
 
-function var0.OnGameExited(arg0)
-	setActive(arg0.overviewPanel, true)
-	setActive(arg0.bg, false)
+function var0_0.OnGameExited(arg0_29)
+	setActive(arg0_29.overviewPanel, true)
+	setActive(arg0_29.bg, false)
 
-	arg0.itemsContainer.eulerAngles = Vector3(0, 0, 0)
-	arg0.itemsContainer.pivot = Vector2(0.5, 0.5)
+	arg0_29.itemsContainer.eulerAngles = Vector3(0, 0, 0)
+	arg0_29.itemsContainer.pivot = Vector2(0.5, 0.5)
 
-	arg0.bgMgr:Clear()
+	arg0_29.bgMgr:Clear()
 
 	if PileGameConst.DEBUG then
-		Destroy(arg0.gameContainer:Find("ground").gameObject)
-		Destroy(arg0.gameContainer:Find("deathLineR").gameObject)
-		Destroy(arg0.gameContainer:Find("deathLineL").gameObject)
-		Destroy(arg0.gameContainer:Find("safeLineL").gameObject)
-		Destroy(arg0.gameContainer:Find("safeLineR").gameObject)
+		Destroy(arg0_29.gameContainer:Find("ground").gameObject)
+		Destroy(arg0_29.gameContainer:Find("deathLineR").gameObject)
+		Destroy(arg0_29.gameContainer:Find("deathLineL").gameObject)
+		Destroy(arg0_29.gameContainer:Find("safeLineL").gameObject)
+		Destroy(arg0_29.gameContainer:Find("safeLineR").gameObject)
 	end
 end
 
-function var0.OnGameEnd(arg0, arg1, arg2)
+function var0_0.OnGameEnd(arg0_30, arg1_30, arg2_30)
 	(function()
-		pg.UIMgr.GetInstance():BlurPanel(arg0.resultPanel)
-		setActive(arg0.resultPanel, true)
-		onButton(arg0, arg0.endGameBtn, function()
-			setActive(arg0.resultPanel, false)
-			pg.UIMgr.GetInstance():UnblurPanel(arg0.resultPanel, arg0.bg)
-			arg0.controller:ExitGame()
+		pg.UIMgr.GetInstance():BlurPanel(arg0_30.resultPanel)
+		setActive(arg0_30.resultPanel, true)
+		onButton(arg0_30, arg0_30.endGameBtn, function()
+			setActive(arg0_30.resultPanel, false)
+			pg.UIMgr.GetInstance():UnblurPanel(arg0_30.resultPanel, arg0_30.bg)
+			arg0_30.controller:ExitGame()
 		end)
 
-		arg0.finalScoreTxt.text = arg1
-		arg0.highestScoreText.text = arg2
+		arg0_30.finalScoreTxt.text = arg1_30
+		arg0_30.highestScoreText.text = arg2_30
 	end)()
 end
 
-function var0.OnShake(arg0, arg1)
-	local var0 = getAnchoredPosition(arg0.anikiAnim)
+function var0_0.OnShake(arg0_33, arg1_33)
+	local var0_33 = getAnchoredPosition(arg0_33.anikiAnim)
 
-	setAnchoredPosition(arg0.anikiAnim, {
-		x = var0.x + arg1
+	setAnchoredPosition(arg0_33.anikiAnim, {
+		x = var0_33.x + arg1_33
 	})
 end
 
-function var0.OnCollapse(arg0, arg1, arg2, arg3)
-	local function var0(arg0, arg1, arg2, arg3)
-		LeanTween.value(go(arg0.itemsContainer), arg0, arg1, arg2):setOnUpdate(System.Action_float(function(arg0)
-			arg0.itemsContainer.eulerAngles = Vector3(0, 0, arg0)
-		end)):setOnComplete(System.Action(arg3))
+function var0_0.OnCollapse(arg0_34, arg1_34, arg2_34, arg3_34)
+	local function var0_34(arg0_35, arg1_35, arg2_35, arg3_35)
+		LeanTween.value(go(arg0_34.itemsContainer), arg0_35, arg1_35, arg2_35):setOnUpdate(System.Action_float(function(arg0_36)
+			arg0_34.itemsContainer.eulerAngles = Vector3(0, 0, arg0_36)
+		end)):setOnComplete(System.Action(arg3_35))
 	end
 
 	seriesAsync({
-		function(arg0)
-			arg0.manjuuAnim:SetTrigger("shock")
+		function(arg0_37)
+			arg0_34.manjuuAnim:SetTrigger("shock")
 
-			local var0 = 0.5 + arg1 / arg0.itemsContainer.rect.width
+			local var0_37 = 0.5 + arg1_34 / arg0_34.itemsContainer.rect.width
 
-			arg0.itemsContainer.pivot = Vector2(var0, 0)
+			arg0_34.itemsContainer.pivot = Vector2(var0_37, 0)
 
-			local var1 = arg2 == 1 and -35 or 35
+			local var1_37 = arg2_34 == 1 and -35 or 35
 
-			var0(0, var1, 0.5, function()
-				arg0(var1)
+			var0_34(0, var1_37, 0.5, function()
+				arg0_37(var1_37)
 			end)
 		end,
-		function(arg0, arg1)
-			local var0 = {}
-			local var1 = _.values(arg0.items)
+		function(arg0_39, arg1_39)
+			local var0_39 = {}
+			local var1_39 = _.values(arg0_34.items)
 
-			table.sort(var1, function(arg0, arg1)
-				return arg0.localPosition.y < arg1.localPosition.y
+			table.sort(var1_39, function(arg0_40, arg1_40)
+				return arg0_40.localPosition.y < arg1_40.localPosition.y
 			end)
 
-			for iter0, iter1 in ipairs(var1) do
-				table.insert(var0, function(arg0)
-					local var0 = arg2 == 1 and -90 or 90
+			for iter0_39, iter1_39 in ipairs(var1_39) do
+				table.insert(var0_39, function(arg0_41)
+					local var0_41 = arg2_34 == 1 and -90 or 90
 
 					parallelAsync({
-						function(arg0)
-							var0(arg1, var0, 1, arg0)
+						function(arg0_42)
+							var0_34(arg1_39, var0_41, 1, arg0_42)
 						end,
-						function(arg0)
-							local var0 = arg2 == 1 and -356 or 356
+						function(arg0_43)
+							local var0_43 = arg2_34 == 1 and -356 or 356
 
-							LeanTween.value(go(iter1), 0, var0, 1):setOnUpdate(System.Action_float(function(arg0)
-								iter1.eulerAngles = Vector3(0, 0, arg0)
-							end)):setOnComplete(System.Action(arg0))
+							LeanTween.value(go(iter1_39), 0, var0_43, 1):setOnUpdate(System.Action_float(function(arg0_44)
+								iter1_39.eulerAngles = Vector3(0, 0, arg0_44)
+							end)):setOnComplete(System.Action(arg0_43))
 						end,
-						function(arg0)
-							LeanTween.moveLocalY(go(iter1), iter1.localPosition.y + 50 * iter0, 1):setOnComplete(System.Action(arg0))
+						function(arg0_45)
+							LeanTween.moveLocalY(go(iter1_39), iter1_39.localPosition.y + 50 * iter0_39, 1):setOnComplete(System.Action(arg0_45))
 						end
-					}, arg0)
+					}, arg0_41)
 				end)
 			end
 
-			parallelAsync(var0, arg0)
+			parallelAsync(var0_39, arg0_39)
 		end
-	}, arg3)
+	}, arg3_34)
 end
 
-function var0.InitSup(arg0, arg1)
+function var0_0.InitSup(arg0_46, arg1_46)
 	if PileGameConst.DEBUG then
-		local var0 = arg1.ground
-		local var1 = cloneTplTo(arg0.groundTpl, arg0.gameContainer, "ground")
+		local var0_46 = arg1_46.ground
+		local var1_46 = cloneTplTo(arg0_46.groundTpl, arg0_46.gameContainer, "ground")
 
-		var1.sizeDelta = var0.sizeDelta
-		var1.pivot = var0.pivot
-		var1.localPosition = var0.position
-		cloneTplTo(arg0.deathLine, arg0.gameContainer, "deathLineR").localPosition = Vector3(arg1.deathLine.y, 0, 0)
-		cloneTplTo(arg0.deathLine, arg0.gameContainer, "deathLineL").localPosition = Vector3(arg1.deathLine.x, 0, 0)
-		cloneTplTo(arg0.safeLine, arg0.gameContainer, "safeLineL").localPosition = Vector3(arg1.safeLine.x, 0, 0)
-		cloneTplTo(arg0.safeLine, arg0.gameContainer, "safeLineR").localPosition = Vector3(arg1.safeLine.y, 0, 0)
+		var1_46.sizeDelta = var0_46.sizeDelta
+		var1_46.pivot = var0_46.pivot
+		var1_46.localPosition = var0_46.position
+		cloneTplTo(arg0_46.deathLine, arg0_46.gameContainer, "deathLineR").localPosition = Vector3(arg1_46.deathLine.y, 0, 0)
+		cloneTplTo(arg0_46.deathLine, arg0_46.gameContainer, "deathLineL").localPosition = Vector3(arg1_46.deathLine.x, 0, 0)
+		cloneTplTo(arg0_46.safeLine, arg0_46.gameContainer, "safeLineL").localPosition = Vector3(arg1_46.safeLine.x, 0, 0)
+		cloneTplTo(arg0_46.safeLine, arg0_46.gameContainer, "safeLineR").localPosition = Vector3(arg1_46.safeLine.y, 0, 0)
 	end
 end
 
-function var0.AddPileCollider(arg0, arg1)
-	local var0 = arg0.items[arg1]
-	local var1 = cloneTplTo(arg0.itemCollider, var0, "collider")
-	local var2 = arg1.collider
-	local var3 = (0.5 - arg1.pivot.x) * arg1.sizeDelta.x + var2.offset.x
-	local var4 = (0.5 - arg1.pivot.y) * arg1.sizeDelta.y + var2.offset.y
+function var0_0.AddPileCollider(arg0_47, arg1_47)
+	local var0_47 = arg0_47.items[arg1_47]
+	local var1_47 = cloneTplTo(arg0_47.itemCollider, var0_47, "collider")
+	local var2_47 = arg1_47.collider
+	local var3_47 = (0.5 - arg1_47.pivot.x) * arg1_47.sizeDelta.x + var2_47.offset.x
+	local var4_47 = (0.5 - arg1_47.pivot.y) * arg1_47.sizeDelta.y + var2_47.offset.y
 
-	var1.localPosition = Vector3(var3, var4, 0)
-	var1.sizeDelta = var2.sizeDelta
+	var1_47.localPosition = Vector3(var3_47, var4_47, 0)
+	var1_47.sizeDelta = var2_47.sizeDelta
 end
 
-function var0.onBackPressed(arg0)
-	if isActive(arg0.resultPanel) then
-		setActive(arg0.resultPanel, false)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0.resultPanel, arg0.bg)
-		arg0.controller:ExitGame()
+function var0_0.onBackPressed(arg0_48)
+	if isActive(arg0_48.resultPanel) then
+		setActive(arg0_48.resultPanel, false)
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_48.resultPanel, arg0_48.bg)
+		arg0_48.controller:ExitGame()
 
 		return true
-	elseif isActive(arg0.exitPanel) then
-		setActive(arg0.exitPanel, false)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0.exitPanel, arg0.bg)
+	elseif isActive(arg0_48.exitPanel) then
+		setActive(arg0_48.exitPanel, false)
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_48.exitPanel, arg0_48.bg)
 
 		return true
-	elseif isActive(arg0.bg) then
-		arg0.controller:ExitGame()
+	elseif isActive(arg0_48.bg) then
+		arg0_48.controller:ExitGame()
 
-		if arg0.timer then
-			arg0.timer:Stop()
+		if arg0_48.timer then
+			arg0_48.timer:Stop()
 
-			arg0.timer = nil
+			arg0_48.timer = nil
 		end
 
 		return true
@@ -441,16 +441,16 @@ function var0.onBackPressed(arg0)
 	return false
 end
 
-function var0.Dispose(arg0)
-	pg.DelegateInfo.Dispose(arg0)
+function var0_0.Dispose(arg0_49)
+	pg.DelegateInfo.Dispose(arg0_49)
 
-	if arg0.timer then
-		arg0.timer:Stop()
+	if arg0_49.timer then
+		arg0_49.timer:Stop()
 
-		arg0.timer = nil
+		arg0_49.timer = nil
 	end
 
-	arg0.bgMgr:Clear()
+	arg0_49.bgMgr:Clear()
 end
 
-return var0
+return var0_0

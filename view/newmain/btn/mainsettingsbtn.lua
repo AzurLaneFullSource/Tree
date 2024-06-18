@@ -1,9 +1,9 @@
-﻿local var0 = class("MainSettingsBtn", import(".MainBaseBtn"))
+﻿local var0_0 = class("MainSettingsBtn", import(".MainBaseBtn"))
 
-function var0.OnClick(arg0)
+function var0_0.OnClick(arg0_1)
 	SettingsRedDotNode.CanUpdateCV = false
 
-	arg0:emit(NewMainMediator.GO_SCENE, SCENE.SETTINGS)
+	arg0_1:emit(NewMainMediator.GO_SCENE, SCENE.SETTINGS)
 end
 
-return var0
+return var0_0

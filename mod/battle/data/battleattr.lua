@@ -1,12 +1,12 @@
 ﻿ys = ys or {}
 
-local var0 = {}
+local var0_0 = {}
 
-ys.Battle.BattleAttr = var0
+ys.Battle.BattleAttr = var0_0
 
-local var1 = ys.Battle.BattleConst
+local var1_0 = ys.Battle.BattleConst
 
-var0.AttrListInheritance = {
+var0_0.AttrListInheritance = {
 	"level",
 	"formulaLevel",
 	"repressReduce",
@@ -53,464 +53,464 @@ var0.AttrListInheritance = {
 	"airResistPierce"
 }
 
-function var0.InsertInheritedAttr(arg0)
-	for iter0, iter1 in pairs(arg0) do
-		var0.AttrListInheritance[#var0.AttrListInheritance + 1] = iter1
+function var0_0.InsertInheritedAttr(arg0_1)
+	for iter0_1, iter1_1 in pairs(arg0_1) do
+		var0_0.AttrListInheritance[#var0_0.AttrListInheritance + 1] = iter1_1
 	end
 end
 
-var0.InsertInheritedAttr(ys.Battle.BattleConfig.AMMO_DAMAGE_ENHANCE)
-var0.InsertInheritedAttr(ys.Battle.BattleConfig.AMMO_DAMAGE_REDUCE)
-var0.InsertInheritedAttr(ys.Battle.BattleConfig.DAMAGE_AMMO_TO_ARMOR_RATE_ENHANCE)
-var0.InsertInheritedAttr(ys.Battle.BattleConfig.DAMAGE_TO_ARMOR_RATE_ENHANCE)
-var0.InsertInheritedAttr(ys.Battle.BattleConfig.SHIP_TYPE_ACCURACY_ENHANCE)
+var0_0.InsertInheritedAttr(ys.Battle.BattleConfig.AMMO_DAMAGE_ENHANCE)
+var0_0.InsertInheritedAttr(ys.Battle.BattleConfig.AMMO_DAMAGE_REDUCE)
+var0_0.InsertInheritedAttr(ys.Battle.BattleConfig.DAMAGE_AMMO_TO_ARMOR_RATE_ENHANCE)
+var0_0.InsertInheritedAttr(ys.Battle.BattleConfig.DAMAGE_TO_ARMOR_RATE_ENHANCE)
+var0_0.InsertInheritedAttr(ys.Battle.BattleConfig.SHIP_TYPE_ACCURACY_ENHANCE)
 
-var0.TAG_EHC_KEY = "DMG_TAG_EHC_"
-var0.FROM_TAG_EHC_KEY = "DMG_FROM_TAG_"
-var0.TAG_CRI_EHC_KEY = "CRI_TAG_EHC_"
-var0.TAG_CRIDMG_EHC_KEY = "CRIDMG_TAG_EHC_"
-var0.ATTACK_ATTR_TYPE = {
-	[var1.WeaponDamageAttr.CANNON] = "cannonPower",
-	[var1.WeaponDamageAttr.TORPEDO] = "torpedoPower",
-	[var1.WeaponDamageAttr.ANTI_AIR] = "antiAirPower",
-	[var1.WeaponDamageAttr.AIR] = "airPower",
-	[var1.WeaponDamageAttr.ANIT_SUB] = "antiSubPower"
+var0_0.TAG_EHC_KEY = "DMG_TAG_EHC_"
+var0_0.FROM_TAG_EHC_KEY = "DMG_FROM_TAG_"
+var0_0.TAG_CRI_EHC_KEY = "CRI_TAG_EHC_"
+var0_0.TAG_CRIDMG_EHC_KEY = "CRIDMG_TAG_EHC_"
+var0_0.ATTACK_ATTR_TYPE = {
+	[var1_0.WeaponDamageAttr.CANNON] = "cannonPower",
+	[var1_0.WeaponDamageAttr.TORPEDO] = "torpedoPower",
+	[var1_0.WeaponDamageAttr.ANTI_AIR] = "antiAirPower",
+	[var1_0.WeaponDamageAttr.AIR] = "airPower",
+	[var1_0.WeaponDamageAttr.ANIT_SUB] = "antiSubPower"
 }
 
-function var0.GetAtkAttrByType(arg0, arg1)
-	local var0 = var0.ATTACK_ATTR_TYPE[arg1]
+function var0_0.GetAtkAttrByType(arg0_2, arg1_2)
+	local var0_2 = var0_0.ATTACK_ATTR_TYPE[arg1_2]
 
-	return math.max(arg0[var0], 0)
+	return math.max(arg0_2[var0_2], 0)
 end
 
-function var0.SetAttr(arg0, arg1)
-	arg0._attr = setmetatable({}, {
-		__index = arg1
+function var0_0.SetAttr(arg0_3, arg1_3)
+	arg0_3._attr = setmetatable({}, {
+		__index = arg1_3
 	})
 end
 
-function var0.GetAttr(arg0)
-	return arg0._attr
+function var0_0.GetAttr(arg0_4)
+	return arg0_4._attr
 end
 
-function var0.SetBaseAttr(arg0)
-	arg0._baseAttr = Clone(arg0._attr)
+function var0_0.SetBaseAttr(arg0_5)
+	arg0_5._baseAttr = Clone(arg0_5._attr)
 end
 
-function var0.IsInvincible(arg0)
-	local var0 = arg0._attr.isInvincible
+function var0_0.IsInvincible(arg0_6)
+	local var0_6 = arg0_6._attr.isInvincible
 
-	return var0 and var0 > 0
+	return var0_6 and var0_6 > 0
 end
 
-function var0.AppendInvincible(arg0)
-	local var0 = arg0._attr.isInvincible or 0
+function var0_0.AppendInvincible(arg0_7)
+	local var0_7 = arg0_7._attr.isInvincible or 0
 
-	arg0._attr.isInvincible = var0 + 1
+	arg0_7._attr.isInvincible = var0_7 + 1
 end
 
-function var0.AddImmuneAreaLimit(arg0, arg1)
-	local var0 = (arg0._attr.immuneAreaLimit or 0) + arg1
+function var0_0.AddImmuneAreaLimit(arg0_8, arg1_8)
+	local var0_8 = (arg0_8._attr.immuneAreaLimit or 0) + arg1_8
 
-	arg0._attr.immuneAreaLimit = var0
+	arg0_8._attr.immuneAreaLimit = var0_8
 
-	arg0._move:ImmuneAreaLimit(var0 > 0)
+	arg0_8._move:ImmuneAreaLimit(var0_8 > 0)
 end
 
-function var0.AddImmuneMaxAreaLimit(arg0, arg1)
-	local var0 = (arg0._attr.immuneMaxAreaLimit or 0) + arg1
+function var0_0.AddImmuneMaxAreaLimit(arg0_9, arg1_9)
+	local var0_9 = (arg0_9._attr.immuneMaxAreaLimit or 0) + arg1_9
 
-	arg0._attr.immuneMaxAreaLimit = var0
+	arg0_9._attr.immuneMaxAreaLimit = var0_9
 
-	arg0._move:ImmuneMaxAreaLimit(var0 > 0)
+	arg0_9._move:ImmuneMaxAreaLimit(var0_9 > 0)
 end
 
-function var0.IsImmuneAreaLimit(arg0)
-	local var0 = arg0._attr.immuneAreaLimit
+function var0_0.IsImmuneAreaLimit(arg0_10)
+	local var0_10 = arg0_10._attr.immuneAreaLimit
 
-	return var0 and var0 > 0
+	return var0_10 and var0_10 > 0
 end
 
-function var0.IsImmuneMaxAreaLimit(arg0)
-	local var0 = arg0._attr.immuneMaxAreaLimit
+function var0_0.IsImmuneMaxAreaLimit(arg0_11)
+	local var0_11 = arg0_11._attr.immuneMaxAreaLimit
 
-	return var0 and var0 > 0
+	return var0_11 and var0_11 > 0
 end
 
-function var0.IsVisitable(arg0)
-	local var0 = arg0._attr.isUnVisitable
+function var0_0.IsVisitable(arg0_12)
+	local var0_12 = arg0_12._attr.isUnVisitable
 
-	return not var0 or var0 <= 0
+	return not var0_12 or var0_12 <= 0
 end
 
-function var0.UnVisitable(arg0)
-	local var0 = arg0._attr.isUnVisitable or 0
+function var0_0.UnVisitable(arg0_13)
+	local var0_13 = arg0_13._attr.isUnVisitable or 0
 
-	arg0._attr.isUnVisitable = var0 + 1
+	arg0_13._attr.isUnVisitable = var0_13 + 1
 end
 
-function var0.Visitable(arg0)
-	local var0 = arg0._attr.isUnVisitable or 0
+function var0_0.Visitable(arg0_14)
+	local var0_14 = arg0_14._attr.isUnVisitable or 0
 
-	arg0._attr.isUnVisitable = var0 - 1
+	arg0_14._attr.isUnVisitable = var0_14 - 1
 end
 
-function var0.IsSpirit(arg0)
-	local var0 = arg0._attr.isSpirit
+function var0_0.IsSpirit(arg0_15)
+	local var0_15 = arg0_15._attr.isSpirit
 
-	return var0 and var0 > 0
+	return var0_15 and var0_15 > 0
 end
 
-function var0.Spirit(arg0)
-	local var0 = arg0._attr.isSpirit or 0
+function var0_0.Spirit(arg0_16)
+	local var0_16 = arg0_16._attr.isSpirit or 0
 
-	arg0._attr.isSpirit = var0 + 1
+	arg0_16._attr.isSpirit = var0_16 + 1
 end
 
-function var0.Entity(arg0)
-	local var0 = arg0._attr.isSpirit or 0
+function var0_0.Entity(arg0_17)
+	local var0_17 = arg0_17._attr.isSpirit or 0
 
-	arg0._attr.isSpirit = var0 - 1
+	arg0_17._attr.isSpirit = var0_17 - 1
 end
 
-function var0.IsStun(arg0)
-	local var0 = arg0._attr.isStun
+function var0_0.IsStun(arg0_18)
+	local var0_18 = arg0_18._attr.isStun
 
-	return var0 and var0 > 0
+	return var0_18 and var0_18 > 0
 end
 
-function var0.Stun(arg0)
-	local var0 = arg0._attr.isStun or 0
+function var0_0.Stun(arg0_19)
+	local var0_19 = arg0_19._attr.isStun or 0
 
-	arg0._attr.isStun = var0 + 1
+	arg0_19._attr.isStun = var0_19 + 1
 end
 
-function var0.CancelStun(arg0)
-	local var0 = arg0._attr.isStun or 0
+function var0_0.CancelStun(arg0_20)
+	local var0_20 = arg0_20._attr.isStun or 0
 
-	arg0._attr.isStun = var0 - 1
+	arg0_20._attr.isStun = var0_20 - 1
 end
 
-function var0.IsCloak(arg0)
-	return (arg0._attr.isCloak or 0) == 1
+function var0_0.IsCloak(arg0_21)
+	return (arg0_21._attr.isCloak or 0) == 1
 end
 
-function var0.Cloak(arg0)
-	arg0._attr.isCloak = 1
-	arg0._attr.airResistPierceActive = 1
+function var0_0.Cloak(arg0_22)
+	arg0_22._attr.isCloak = 1
+	arg0_22._attr.airResistPierceActive = 1
 end
 
-function var0.Uncloak(arg0)
-	arg0._attr.isCloak = 0
-	arg0._attr.airResistPierceActive = 0
+function var0_0.Uncloak(arg0_23)
+	arg0_23._attr.isCloak = 0
+	arg0_23._attr.airResistPierceActive = 0
 end
 
-function var0.IsLockAimBias(arg0)
-	return (arg0._attr.lockAimBias or 0) >= 1
+function var0_0.IsLockAimBias(arg0_24)
+	return (arg0_24._attr.lockAimBias or 0) >= 1
 end
 
-function var0.IsUnitCldImmune(arg0)
-	return (arg0._attr.unitCldImmune or 0) >= 1
+function var0_0.IsUnitCldImmune(arg0_25)
+	return (arg0_25._attr.unitCldImmune or 0) >= 1
 end
 
-function var0.UnitCldImmune(arg0)
-	local var0 = arg0._attr.unitCldImmune or 0
+function var0_0.UnitCldImmune(arg0_26)
+	local var0_26 = arg0_26._attr.unitCldImmune or 0
 
-	arg0._attr.unitCldImmune = var0 + 1
+	arg0_26._attr.unitCldImmune = var0_26 + 1
 end
 
-function var0.UnitCldEnable(arg0)
-	local var0 = arg0._attr.unitCldImmune or 0
+function var0_0.UnitCldEnable(arg0_27)
+	local var0_27 = arg0_27._attr.unitCldImmune or 0
 
-	arg0._attr.unitCldImmune = var0 - 1
+	arg0_27._attr.unitCldImmune = var0_27 - 1
 end
 
-function var0.GetCurrentTargetSelect(arg0)
-	local var0
-	local var1 = var0.GetCurrent(arg0, "TargetChoise")
-	local var2 = ys.Battle.BattleConfig.TARGET_SELECT_PRIORITY
+function var0_0.GetCurrentTargetSelect(arg0_28)
+	local var0_28
+	local var1_28 = var0_0.GetCurrent(arg0_28, "TargetChoise")
+	local var2_28 = ys.Battle.BattleConfig.TARGET_SELECT_PRIORITY
 
-	for iter0, iter1 in ipairs(var1) do
-		if not var0 or var2[iter1] > var2[var0] then
-			var0 = iter1
+	for iter0_28, iter1_28 in ipairs(var1_28) do
+		if not var0_28 or var2_28[iter1_28] > var2_28[var0_28] then
+			var0_28 = iter1_28
 		end
 	end
 
-	return var0
+	return var0_28
 end
 
-function var0.AddTargetSelect(arg0, arg1)
-	table.insert(var0.GetCurrent(arg0, "TargetChoise"), arg1)
+function var0_0.AddTargetSelect(arg0_29, arg1_29)
+	table.insert(var0_0.GetCurrent(arg0_29, "TargetChoise"), arg1_29)
 end
 
-function var0.RemoveTargetSelect(arg0, arg1)
-	local var0 = var0.GetCurrent(arg0, "TargetChoise")
+function var0_0.RemoveTargetSelect(arg0_30, arg1_30)
+	local var0_30 = var0_0.GetCurrent(arg0_30, "TargetChoise")
 
-	for iter0, iter1 in ipairs(var0) do
-		if iter1 == arg1 then
-			table.remove(var0, iter0)
+	for iter0_30, iter1_30 in ipairs(var0_30) do
+		if iter1_30 == arg1_30 then
+			table.remove(var0_30, iter0_30)
 
 			break
 		end
 	end
 end
 
-function var0.GetCurrentGuardianID(arg0)
-	local var0 = var0.GetCurrent(arg0, "guardian")
-	local var1 = #var0
+function var0_0.GetCurrentGuardianID(arg0_31)
+	local var0_31 = var0_0.GetCurrent(arg0_31, "guardian")
+	local var1_31 = #var0_31
 
-	if var1 == 0 then
+	if var1_31 == 0 then
 		return nil
 	else
-		return var0[var1]
+		return var0_31[var1_31]
 	end
 end
 
-function var0.AddGuardianID(arg0, arg1)
-	local var0 = var0.GetCurrent(arg0, "guardian")
+function var0_0.AddGuardianID(arg0_32, arg1_32)
+	local var0_32 = var0_0.GetCurrent(arg0_32, "guardian")
 
-	if not table.contains(var0, arg1) then
-		table.insert(var0, arg1)
+	if not table.contains(var0_32, arg1_32) then
+		table.insert(var0_32, arg1_32)
 	end
 end
 
-function var0.RemoveGuardianID(arg0, arg1)
-	local var0 = var0.GetCurrent(arg0, "guardian")
+function var0_0.RemoveGuardianID(arg0_33, arg1_33)
+	local var0_33 = var0_0.GetCurrent(arg0_33, "guardian")
 
-	for iter0, iter1 in ipairs(var0) do
-		if iter1 == arg1 then
-			table.remove(var0, iter0)
+	for iter0_33, iter1_33 in ipairs(var0_33) do
+		if iter1_33 == arg1_33 then
+			table.remove(var0_33, iter0_33)
 
 			return
 		end
 	end
 end
 
-function var0.SetPlayerAttrFromOutBattle(arg0, arg1, arg2)
-	local var0 = arg0._attr or {}
+function var0_0.SetPlayerAttrFromOutBattle(arg0_34, arg1_34, arg2_34)
+	local var0_34 = arg0_34._attr or {}
 
-	arg0._attr = var0
-	var0.id = arg1.id
-	var0.battleUID = arg0:GetUniqueID()
-	var0.level = arg1.level
-	var0.formulaLevel = arg1.level
-	var0.maxHP = arg1.durability
-	var0.HPRate = 1
-	var0.DMGRate = 0
-	var0.cannonPower = arg1.cannon
-	var0.torpedoPower = arg1.torpedo
-	var0.antiAirPower = arg1.antiaircraft
-	var0.antiSubPower = arg1.antisub or 0
-	var0.baseAntiSubPower = arg2 and arg2.antisub or arg1.antisub
-	var0.airPower = arg1.air
-	var0.loadSpeed = arg1.reload
-	var0.armorType = arg1.armorType
-	var0.attackRating = arg1.hit
-	var0.dodgeRate = arg1.dodge
-	var0.velocity = ys.Battle.BattleFormulas.ConvertShipSpeed(arg1.speed)
-	var0.baseVelocity = var0.velocity
-	var0.luck = arg1.luck
-	var0.repressReduce = arg1.repressReduce or 1
-	var0.oxyMax = arg1.oxy_max
-	var0.oxyCost = arg1.oxy_cost
-	var0.oxyRecovery = arg1.oxy_recovery
-	var0.oxyRecoverySurface = arg1.oxy_recovery_surface
-	var0.oxyRecoveryBench = arg1.oxy_recovery_bench
-	var0.oxyAtkDuration = arg1.attack_duration
-	var0.raidDist = arg1.raid_distance
-	var0.sonarRange = arg1.sonarRange or 0
-	var0.cloakExposeBase = arg2 and arg2.dodge + ys.Battle.BattleConfig.CLOAK_EXPOSE_CONST or 0
-	var0.cloakExposeExtra = 0
-	var0.cloakRestore = var0.cloakExposeBase + var0.cloakExposeExtra + ys.Battle.BattleConfig.CLOAK_BASE_RESTORE_DELTA
-	var0.cloakRecovery = ys.Battle.BattleConfig.CLOAK_RECOVERY
-	var0.cloakStrikeAdditive = ys.Battle.BattleConfig.CLOAK_STRIKE_ADDITIVE
-	var0.cloakBombardAdditive = ys.Battle.BattleConfig.CLOAK_STRIKE_ADDITIVE
-	var0.airResistPierce = ys.Battle.BattleConfig.BASE_ARP
-	var0.aimBias = 0
-	var0.aimBiasDecaySpeed = 0
-	var0.aimBiasDecaySpeedRatio = 0
-	var0.aimBiasExtraACC = 0
-	var0.healingRate = 1
-	var0.DMG_TAG_EHC_N_99 = arg1[AttributeType.AntiSiren] or 0
-	var0.comboTag = "combo_" .. var0.battleUID
-	var0.labelTag = {}
-	var0.barrageCounterMod = 1
-	var0.TargetChoise = {}
-	var0.guardian = {}
+	arg0_34._attr = var0_34
+	var0_34.id = arg1_34.id
+	var0_34.battleUID = arg0_34:GetUniqueID()
+	var0_34.level = arg1_34.level
+	var0_34.formulaLevel = arg1_34.level
+	var0_34.maxHP = arg1_34.durability
+	var0_34.HPRate = 1
+	var0_34.DMGRate = 0
+	var0_34.cannonPower = arg1_34.cannon
+	var0_34.torpedoPower = arg1_34.torpedo
+	var0_34.antiAirPower = arg1_34.antiaircraft
+	var0_34.antiSubPower = arg1_34.antisub or 0
+	var0_34.baseAntiSubPower = arg2_34 and arg2_34.antisub or arg1_34.antisub
+	var0_34.airPower = arg1_34.air
+	var0_34.loadSpeed = arg1_34.reload
+	var0_34.armorType = arg1_34.armorType
+	var0_34.attackRating = arg1_34.hit
+	var0_34.dodgeRate = arg1_34.dodge
+	var0_34.velocity = ys.Battle.BattleFormulas.ConvertShipSpeed(arg1_34.speed)
+	var0_34.baseVelocity = var0_34.velocity
+	var0_34.luck = arg1_34.luck
+	var0_34.repressReduce = arg1_34.repressReduce or 1
+	var0_34.oxyMax = arg1_34.oxy_max
+	var0_34.oxyCost = arg1_34.oxy_cost
+	var0_34.oxyRecovery = arg1_34.oxy_recovery
+	var0_34.oxyRecoverySurface = arg1_34.oxy_recovery_surface
+	var0_34.oxyRecoveryBench = arg1_34.oxy_recovery_bench
+	var0_34.oxyAtkDuration = arg1_34.attack_duration
+	var0_34.raidDist = arg1_34.raid_distance
+	var0_34.sonarRange = arg1_34.sonarRange or 0
+	var0_34.cloakExposeBase = arg2_34 and arg2_34.dodge + ys.Battle.BattleConfig.CLOAK_EXPOSE_CONST or 0
+	var0_34.cloakExposeExtra = 0
+	var0_34.cloakRestore = var0_34.cloakExposeBase + var0_34.cloakExposeExtra + ys.Battle.BattleConfig.CLOAK_BASE_RESTORE_DELTA
+	var0_34.cloakRecovery = ys.Battle.BattleConfig.CLOAK_RECOVERY
+	var0_34.cloakStrikeAdditive = ys.Battle.BattleConfig.CLOAK_STRIKE_ADDITIVE
+	var0_34.cloakBombardAdditive = ys.Battle.BattleConfig.CLOAK_STRIKE_ADDITIVE
+	var0_34.airResistPierce = ys.Battle.BattleConfig.BASE_ARP
+	var0_34.aimBias = 0
+	var0_34.aimBiasDecaySpeed = 0
+	var0_34.aimBiasDecaySpeedRatio = 0
+	var0_34.aimBiasExtraACC = 0
+	var0_34.healingRate = 1
+	var0_34.DMG_TAG_EHC_N_99 = arg1_34[AttributeType.AntiSiren] or 0
+	var0_34.comboTag = "combo_" .. var0_34.battleUID
+	var0_34.labelTag = {}
+	var0_34.barrageCounterMod = 1
+	var0_34.TargetChoise = {}
+	var0_34.guardian = {}
 
-	var0.SetBaseAttr(arg0)
+	var0_0.SetBaseAttr(arg0_34)
 end
 
-function var0.AttrFixer(arg0, arg1)
-	if arg0 == SYSTEM_SCENARIO then
-		arg1.repressReduce = ys.Battle.BattleDataProxy.GetInstance():GetRepressReduce()
-	elseif arg0 == SYSTEM_DUEL or arg0 == SYSTEM_SHAM then
-		local var0 = arg1.level
-		local var1 = arg1.durability
-		local var2, var3 = ys.Battle.BattleDataFunction.GetPlayerUnitDurabilityExtraAddition(arg0, var0)
+function var0_0.AttrFixer(arg0_35, arg1_35)
+	if arg0_35 == SYSTEM_SCENARIO then
+		arg1_35.repressReduce = ys.Battle.BattleDataProxy.GetInstance():GetRepressReduce()
+	elseif arg0_35 == SYSTEM_DUEL or arg0_35 == SYSTEM_SHAM then
+		local var0_35 = arg1_35.level
+		local var1_35 = arg1_35.durability
+		local var2_35, var3_35 = ys.Battle.BattleDataFunction.GetPlayerUnitDurabilityExtraAddition(arg0_35, var0_35)
 
-		arg1.durability = var1 * var2 + var3
+		arg1_35.durability = var1_35 * var2_35 + var3_35
 	end
 end
 
-function var0.InitDOTAttr(arg0, arg1)
-	local var0 = ys.Battle.BattleConfig.DOT_CONFIG_DEFAULT
-	local var1 = ys.Battle.BattleConfig.DOT_CONFIG
+function var0_0.InitDOTAttr(arg0_36, arg1_36)
+	local var0_36 = ys.Battle.BattleConfig.DOT_CONFIG_DEFAULT
+	local var1_36 = ys.Battle.BattleConfig.DOT_CONFIG
 
-	for iter0, iter1 in ipairs(var1) do
-		for iter2, iter3 in pairs(iter1) do
-			if iter2 == "hit" then
-				arg0[iter3] = arg1[iter3] or var0[iter2]
+	for iter0_36, iter1_36 in ipairs(var1_36) do
+		for iter2_36, iter3_36 in pairs(iter1_36) do
+			if iter2_36 == "hit" then
+				arg0_36[iter3_36] = arg1_36[iter3_36] or var0_36[iter2_36]
 			else
-				arg0[iter3] = var0[iter2]
+				arg0_36[iter3_36] = var0_36[iter2_36]
 			end
 		end
 	end
 end
 
-function var0.SetEnemyAttr(arg0, arg1)
-	local var0 = arg0._tmpData
-	local var1 = arg0:GetLevel()
-	local var2 = arg0._attr or {}
+function var0_0.SetEnemyAttr(arg0_37, arg1_37)
+	local var0_37 = arg0_37._tmpData
+	local var1_37 = arg0_37:GetLevel()
+	local var2_37 = arg0_37._attr or {}
 
-	arg0._attr = var2
-	var2.battleUID = arg0:GetUniqueID()
-	var2.level = var1
-	var2.formulaLevel = var1
+	arg0_37._attr = var2_37
+	var2_37.battleUID = arg0_37:GetUniqueID()
+	var2_37.level = var1_37
+	var2_37.formulaLevel = var1_37
 
-	local var3 = (var1 - 1) / 1000
+	local var3_37 = (var1_37 - 1) / 1000
 
-	var2.maxHP = math.ceil(var0.durability + var0.durability_growth * var3)
-	var2.HPRate = 1
-	var2.DMGRate = 0
-	var2.cannonPower = var0.cannon + var0.cannon_growth * var3
-	var2.torpedoPower = var0.torpedo + var0.torpedo_growth * var3
-	var2.antiAirPower = var0.antiaircraft + var0.antiaircraft_growth * var3
-	var2.airPower = var0.air + var0.air_growth * var3
-	var2.antiSubPower = var0.antisub + var0.antisub_growth * var3
-	var2.loadSpeed = var0.reload + var0.reload_growth * var3
-	var2.armorType = var0.armor_type
-	var2.attackRating = var0.hit + var0.hit_growth * var3
-	var2.dodgeRate = var0.dodge + var0.dodge_growth * var3
-	var2.velocity = ys.Battle.BattleFormulas.ConvertShipSpeed(var0.speed + var0.speed_growth * var3)
-	var2.baseVelocity = var2.velocity
-	var2.luck = var0.luck + var0.luck_growth * var3
-	var2.bulletSpeedRatio = 0
-	var2.id = "enemy_" .. tostring(var0.id)
-	var2.repressReduce = 1
-	var2.healingRate = 1
-	var2.comboTag = "combo_" .. var2.battleUID
-	var2.labelTag = {}
-	var2.TargetChoise = {}
-	var2.guardian = {}
+	var2_37.maxHP = math.ceil(var0_37.durability + var0_37.durability_growth * var3_37)
+	var2_37.HPRate = 1
+	var2_37.DMGRate = 0
+	var2_37.cannonPower = var0_37.cannon + var0_37.cannon_growth * var3_37
+	var2_37.torpedoPower = var0_37.torpedo + var0_37.torpedo_growth * var3_37
+	var2_37.antiAirPower = var0_37.antiaircraft + var0_37.antiaircraft_growth * var3_37
+	var2_37.airPower = var0_37.air + var0_37.air_growth * var3_37
+	var2_37.antiSubPower = var0_37.antisub + var0_37.antisub_growth * var3_37
+	var2_37.loadSpeed = var0_37.reload + var0_37.reload_growth * var3_37
+	var2_37.armorType = var0_37.armor_type
+	var2_37.attackRating = var0_37.hit + var0_37.hit_growth * var3_37
+	var2_37.dodgeRate = var0_37.dodge + var0_37.dodge_growth * var3_37
+	var2_37.velocity = ys.Battle.BattleFormulas.ConvertShipSpeed(var0_37.speed + var0_37.speed_growth * var3_37)
+	var2_37.baseVelocity = var2_37.velocity
+	var2_37.luck = var0_37.luck + var0_37.luck_growth * var3_37
+	var2_37.bulletSpeedRatio = 0
+	var2_37.id = "enemy_" .. tostring(var0_37.id)
+	var2_37.repressReduce = 1
+	var2_37.healingRate = 1
+	var2_37.comboTag = "combo_" .. var2_37.battleUID
+	var2_37.labelTag = {}
+	var2_37.TargetChoise = {}
+	var2_37.guardian = {}
 
-	var0.SetBaseAttr(arg0)
+	var0_0.SetBaseAttr(arg0_37)
 end
 
-function var0.SetEnemyWorldEnhance(arg0)
-	local var0 = arg0._tmpData
-	local var1 = arg0._attr
-	local var2 = var1.level
-	local var3 = ys.Battle.BattleDataProxy.GetInstance()
-	local var4 = var0.world_enhancement
-	local var5 = ys.Battle.BattleFormulas
+function var0_0.SetEnemyWorldEnhance(arg0_38)
+	local var0_38 = arg0_38._tmpData
+	local var1_38 = arg0_38._attr
+	local var2_38 = var1_38.level
+	local var3_38 = ys.Battle.BattleDataProxy.GetInstance()
+	local var4_38 = var0_38.world_enhancement
+	local var5_38 = ys.Battle.BattleFormulas
 
-	var1.maxHP = var1.maxHP * var5.WorldEnemyAttrEnhance(var4[1], var2)
-	var1.cannonPower = var1.cannonPower * var5.WorldEnemyAttrEnhance(var4[2], var2)
-	var1.torpedoPower = var1.torpedoPower * var5.WorldEnemyAttrEnhance(var4[3], var2)
-	var1.antiAirPower = var1.antiAirPower * var5.WorldEnemyAttrEnhance(var4[4], var2)
-	var1.airPower = var1.airPower * var5.WorldEnemyAttrEnhance(var4[5], var2)
-	var1.attackRating = var1.attackRating * var5.WorldEnemyAttrEnhance(var4[6], var2)
-	var1.dodgeRate = var1.dodgeRate * var5.WorldEnemyAttrEnhance(var4[7], var2)
+	var1_38.maxHP = var1_38.maxHP * var5_38.WorldEnemyAttrEnhance(var4_38[1], var2_38)
+	var1_38.cannonPower = var1_38.cannonPower * var5_38.WorldEnemyAttrEnhance(var4_38[2], var2_38)
+	var1_38.torpedoPower = var1_38.torpedoPower * var5_38.WorldEnemyAttrEnhance(var4_38[3], var2_38)
+	var1_38.antiAirPower = var1_38.antiAirPower * var5_38.WorldEnemyAttrEnhance(var4_38[4], var2_38)
+	var1_38.airPower = var1_38.airPower * var5_38.WorldEnemyAttrEnhance(var4_38[5], var2_38)
+	var1_38.attackRating = var1_38.attackRating * var5_38.WorldEnemyAttrEnhance(var4_38[6], var2_38)
+	var1_38.dodgeRate = var1_38.dodgeRate * var5_38.WorldEnemyAttrEnhance(var4_38[7], var2_38)
 
-	local var6 = var3:GetInitData()
-	local var7, var8, var9 = var5.WorldMapRewardAttrEnhance(var6.EnemyMapRewards, var6.FleetMapRewards)
+	local var6_38 = var3_38:GetInitData()
+	local var7_38, var8_38, var9_38 = var5_38.WorldMapRewardAttrEnhance(var6_38.EnemyMapRewards, var6_38.FleetMapRewards)
 
-	var1.cannonPower = var1.cannonPower * (1 + var7)
-	var1.torpedoPower = var1.torpedoPower * (1 + var7)
-	var1.airPower = var1.airPower * (1 + var7)
-	var1.antiAirPower = var1.antiAirPower * (1 + var7)
-	var1.antiSubPower = var1.antiSubPower * (1 + var7)
-	var1.maxHP = math.ceil(var1.maxHP * (1 + var8))
-	var1.worldBuffResistance = var9
+	var1_38.cannonPower = var1_38.cannonPower * (1 + var7_38)
+	var1_38.torpedoPower = var1_38.torpedoPower * (1 + var7_38)
+	var1_38.airPower = var1_38.airPower * (1 + var7_38)
+	var1_38.antiAirPower = var1_38.antiAirPower * (1 + var7_38)
+	var1_38.antiSubPower = var1_38.antiSubPower * (1 + var7_38)
+	var1_38.maxHP = math.ceil(var1_38.maxHP * (1 + var8_38))
+	var1_38.worldBuffResistance = var9_38
 
-	var0.SetBaseAttr(arg0)
+	var0_0.SetBaseAttr(arg0_38)
 end
 
-function var0.SetMinionAttr(arg0, arg1)
-	local var0 = arg0:GetMaster()
-	local var1 = var0.GetAttr(var0)
-	local var2 = arg0._tmpData
-	local var3 = var1.level
-	local var4 = arg0._attr or {}
+function var0_0.SetMinionAttr(arg0_39, arg1_39)
+	local var0_39 = arg0_39:GetMaster()
+	local var1_39 = var0_0.GetAttr(var0_39)
+	local var2_39 = arg0_39._tmpData
+	local var3_39 = var1_39.level
+	local var4_39 = arg0_39._attr or {}
 
-	arg0._attr = var4
-	var4.battleUID = arg0:GetUniqueID()
+	arg0_39._attr = var4_39
+	var4_39.battleUID = arg0_39:GetUniqueID()
 
-	for iter0, iter1 in ipairs(var0.AttrListInheritance) do
-		var4[iter1] = var1[iter1]
+	for iter0_39, iter1_39 in ipairs(var0_0.AttrListInheritance) do
+		var4_39[iter1_39] = var1_39[iter1_39]
 	end
 
-	for iter2, iter3 in pairs(var1) do
-		if string.find(iter2, var0.TAG_EHC_KEY) then
-			var4[iter2] = iter3
+	for iter2_39, iter3_39 in pairs(var1_39) do
+		if string.find(iter2_39, var0_0.TAG_EHC_KEY) then
+			var4_39[iter2_39] = iter3_39
 		end
 	end
 
-	for iter4, iter5 in pairs(var1) do
-		if string.find(iter4, var0.TAG_CRI_EHC_KEY) then
-			var4[iter4] = iter5
+	for iter4_39, iter5_39 in pairs(var1_39) do
+		if string.find(iter4_39, var0_0.TAG_CRI_EHC_KEY) then
+			var4_39[iter4_39] = iter5_39
 		end
 	end
 
-	var4.id = var1.id
-	var4.level = var3
-	var4.formulaLevel = var3
+	var4_39.id = var1_39.id
+	var4_39.level = var3_39
+	var4_39.formulaLevel = var3_39
 
-	local function var5(arg0, arg1)
-		local var0 = var2[arg0 .. "_growth"]
+	local function var5_39(arg0_40, arg1_40)
+		local var0_40 = var2_39[arg0_40 .. "_growth"]
 
-		if var0 ~= 0 then
-			var4[arg1] = var1[arg1] * var0 * 0.0001
+		if var0_40 ~= 0 then
+			var4_39[arg1_40] = var1_39[arg1_40] * var0_40 * 0.0001
 		else
-			var4[arg1] = var2[arg0]
+			var4_39[arg1_40] = var2_39[arg0_40]
 		end
 	end
 
-	var4.HPRate = 1
-	var4.DMGRate = 0
+	var4_39.HPRate = 1
+	var4_39.DMGRate = 0
 
-	var5("durability", "maxHP")
-	var5("cannon", "cannonPower")
-	var5("torpedo", "torpedoPower")
-	var5("antiaircraft", "antiAirPower")
-	var5("air", "airPower")
-	var5("antisub", "antiSubPower")
-	var5("reload", "loadSpeed")
-	var5("hit", "attackRating")
-	var5("dodge", "dodgeRate")
-	var5("luck", "luck")
+	var5_39("durability", "maxHP")
+	var5_39("cannon", "cannonPower")
+	var5_39("torpedo", "torpedoPower")
+	var5_39("antiaircraft", "antiAirPower")
+	var5_39("air", "airPower")
+	var5_39("antisub", "antiSubPower")
+	var5_39("reload", "loadSpeed")
+	var5_39("hit", "attackRating")
+	var5_39("dodge", "dodgeRate")
+	var5_39("luck", "luck")
 
-	var4.armorType = var2.armor_type
+	var4_39.armorType = var2_39.armor_type
 
-	var5("speed", "velocity")
+	var5_39("speed", "velocity")
 
-	var4.velocity = ys.Battle.BattleFormulas.ConvertShipSpeed(var4.velocity)
-	var4.baseVelocity = var4.velocity
-	var4.bulletSpeedRatio = 0
-	var4.repressReduce = 1
-	var4.healingRate = 1
-	var4.comboTag = "combo_" .. var4.battleUID
-	var4.labelTag = {}
-	var4.TargetChoise = {}
-	var4.guardian = {}
+	var4_39.velocity = ys.Battle.BattleFormulas.ConvertShipSpeed(var4_39.velocity)
+	var4_39.baseVelocity = var4_39.velocity
+	var4_39.bulletSpeedRatio = 0
+	var4_39.repressReduce = 1
+	var4_39.healingRate = 1
+	var4_39.comboTag = "combo_" .. var4_39.battleUID
+	var4_39.labelTag = {}
+	var4_39.TargetChoise = {}
+	var4_39.guardian = {}
 
-	var0.SetBaseAttr(arg0)
+	var0_0.SetBaseAttr(arg0_39)
 end
 
-function var0.IsWorldMapRewardAttrWarning(arg0, arg1)
-	for iter0 = 1, 3 do
-		if arg1[iter0] / (arg0[iter0] ~= 0 and arg0[iter0] or 1) < pg.gameset.world_mapbuff_tips.key_value / 10000 then
+function var0_0.IsWorldMapRewardAttrWarning(arg0_41, arg1_41)
+	for iter0_41 = 1, 3 do
+		if arg1_41[iter0_41] / (arg0_41[iter0_41] ~= 0 and arg0_41[iter0_41] or 1) < pg.gameset.world_mapbuff_tips.key_value / 10000 then
 			return true
 		end
 	end
@@ -518,344 +518,344 @@ function var0.IsWorldMapRewardAttrWarning(arg0, arg1)
 	return false
 end
 
-function var0.MonsterAttrFixer(arg0, arg1)
-	if arg0 == SYSTEM_SCENARIO then
-		local var0 = ys.Battle.BattleDataProxy.GetInstance()
-		local var1 = var0:IsCompletelyRepress() and var0:GetRepressLevel() or 0
-		local var2 = var0.GetCurrent(arg1, "level")
+function var0_0.MonsterAttrFixer(arg0_42, arg1_42)
+	if arg0_42 == SYSTEM_SCENARIO then
+		local var0_42 = ys.Battle.BattleDataProxy.GetInstance()
+		local var1_42 = var0_42:IsCompletelyRepress() and var0_42:GetRepressLevel() or 0
+		local var2_42 = var0_0.GetCurrent(arg1_42, "level")
 
-		var0.SetCurrent(arg1, "formulaLevel", math.max(1, var2 - var1))
-	elseif arg0 == SYSTEM_WORLD then
-		var0.SetEnemyWorldEnhance(arg1)
+		var0_0.SetCurrent(arg1_42, "formulaLevel", math.max(1, var2_42 - var1_42))
+	elseif arg0_42 == SYSTEM_WORLD then
+		var0_0.SetEnemyWorldEnhance(arg1_42)
 	end
 end
 
-function var0.SetAircraftAttFromMother(arg0, arg1)
-	local var0 = arg0._attr or {}
+function var0_0.SetAircraftAttFromMother(arg0_43, arg1_43)
+	local var0_43 = arg0_43._attr or {}
 
-	arg0._attr = var0
-	var0.battleUID = arg0:GetUniqueID()
-	var0.hostUID = arg1:GetUniqueID()
+	arg0_43._attr = var0_43
+	var0_43.battleUID = arg0_43:GetUniqueID()
+	var0_43.hostUID = arg1_43:GetUniqueID()
 
-	if not type(arg1._attr.id) == "string" or string.find(arg1._attr.id, "enemy_") == nil then
-		var0.id = arg1._attr.id
+	if not type(arg1_43._attr.id) == "string" or string.find(arg1_43._attr.id, "enemy_") == nil then
+		var0_43.id = arg1_43._attr.id
 	end
 
-	local var1 = var0.GetAttr(arg1)
+	local var1_43 = var0_0.GetAttr(arg1_43)
 
-	for iter0, iter1 in ipairs(var0.AttrListInheritance) do
-		var0[iter1] = var1[iter1]
+	for iter0_43, iter1_43 in ipairs(var0_0.AttrListInheritance) do
+		var0_43[iter1_43] = var1_43[iter1_43]
 	end
 
-	for iter2, iter3 in pairs(var1) do
-		if string.find(iter2, var0.TAG_EHC_KEY) then
-			var0[iter2] = iter3
+	for iter2_43, iter3_43 in pairs(var1_43) do
+		if string.find(iter2_43, var0_0.TAG_EHC_KEY) then
+			var0_43[iter2_43] = iter3_43
 		end
 	end
 
-	for iter4, iter5 in pairs(var1) do
-		if string.find(iter4, var0.TAG_CRI_EHC_KEY) then
-			var0[iter4] = iter5
+	for iter4_43, iter5_43 in pairs(var1_43) do
+		if string.find(iter4_43, var0_0.TAG_CRI_EHC_KEY) then
+			var0_43[iter4_43] = iter5_43
 		end
 	end
 
-	var0.armorType = 0
-	var0.velocity = var0.GetCurrent(arg1, "baseVelocity")
-	var0.labelTag = {}
-	var0.TargetChoise = {}
-	var0.guardian = {}
-	var0.comboTag = "combo_" .. var0.hostUID
+	var0_43.armorType = 0
+	var0_43.velocity = var0_0.GetCurrent(arg1_43, "baseVelocity")
+	var0_43.labelTag = {}
+	var0_43.TargetChoise = {}
+	var0_43.guardian = {}
+	var0_43.comboTag = "combo_" .. var0_43.hostUID
 end
 
-function var0.SetAircraftAttFromTemp(arg0)
-	arg0._attr = arg0._attr or {}
+function var0_0.SetAircraftAttFromTemp(arg0_44)
+	arg0_44._attr = arg0_44._attr or {}
 
-	local var0 = var0.GetCurrent(arg0, "hiveExtraHP")
+	local var0_44 = var0_0.GetCurrent(arg0_44, "hiveExtraHP")
 
-	arg0._attr.velocity = arg0._attr.velocity or ys.Battle.BattleFormulas.ConvertAircraftSpeed(arg0._tmpData.speed)
+	arg0_44._attr.velocity = arg0_44._attr.velocity or ys.Battle.BattleFormulas.ConvertAircraftSpeed(arg0_44._tmpData.speed)
 
-	local var1 = arg0._attr.level or 1
+	local var1_44 = arg0_44._attr.level or 1
 
-	arg0._attr.maxHP = arg0._attr.maxHP or arg0._tmpData.max_hp + arg0._tmpData.hp_growth / 1000 * (var1 - 1) + var0
-	arg0._attr.crashDMG = arg0._tmpData.crash_DMG
-	arg0._attr.dodge = arg0._tmpData.dodge
-	arg0._attr.dodgeLimit = arg0._tmpData.dodge_limit
+	arg0_44._attr.maxHP = arg0_44._attr.maxHP or arg0_44._tmpData.max_hp + arg0_44._tmpData.hp_growth / 1000 * (var1_44 - 1) + var0_44
+	arg0_44._attr.crashDMG = arg0_44._tmpData.crash_DMG
+	arg0_44._attr.dodge = arg0_44._tmpData.dodge
+	arg0_44._attr.dodgeLimit = arg0_44._tmpData.dodge_limit
 end
 
-function var0.SetAirFighterAttr(arg0, arg1)
-	local var0 = arg0._attr or {}
+function var0_0.SetAirFighterAttr(arg0_45, arg1_45)
+	local var0_45 = arg0_45._attr or {}
 
-	arg0._attr = var0
+	arg0_45._attr = var0_45
 
-	local var1 = ys.Battle.BattleDataProxy.GetInstance()
-	local var2 = var1:GetDungeonLevel()
+	local var1_45 = ys.Battle.BattleDataProxy.GetInstance()
+	local var2_45 = var1_45:GetDungeonLevel()
 
-	var0.battleUID = arg0:GetUniqueID()
-	var0.hostUID = 0
-	var0.id = 0
-	var0.level = var2
-	var0.formulaLevel = var2
+	var0_45.battleUID = arg0_45:GetUniqueID()
+	var0_45.hostUID = 0
+	var0_45.id = 0
+	var0_45.level = var2_45
+	var0_45.formulaLevel = var2_45
 
-	if var1:IsCompletelyRepress() then
-		var0.formulaLevel = math.max(var0.formulaLevel - 10, 1)
+	if var1_45:IsCompletelyRepress() then
+		var0_45.formulaLevel = math.max(var0_45.formulaLevel - 10, 1)
 	end
 
-	local var3 = (var2 - 1) / 1000
+	local var3_45 = (var2_45 - 1) / 1000
 
-	var0.maxHP = math.floor(arg1.max_hp + arg1.hp_growth * var3)
-	var0.attackRating = arg1.accuracy + arg1.ACC_growth * var3
+	var0_45.maxHP = math.floor(arg1_45.max_hp + arg1_45.hp_growth * var3_45)
+	var0_45.attackRating = arg1_45.accuracy + arg1_45.ACC_growth * var3_45
 
-	local var4 = arg1.attack_power + arg1.AP_growth * var3
+	local var4_45 = arg1_45.attack_power + arg1_45.AP_growth * var3_45
 
-	var0.dodge = arg1.dodge
-	var0.dodgeLimit = arg1.dodge_limit
-	var0.cannonPower = var4
-	var0.torpedoPower = var4
-	var0.antiAirPower = var4
-	var0.antiSubPower = var4
-	var0.airPower = var4
-	var0.loadSpeed = 0
-	var0.armorType = 1
-	var0.dodgeRate = 0
-	var0.luck = 50
-	var0.velocity = ys.Battle.BattleFormulas.ConvertAircraftSpeed(arg1.speed)
-	var0.repressReduce = 1
-	var0.TargetChoise = {}
-	var0.guardian = {}
-	var0.crashDMG = arg1.crash_DMG
+	var0_45.dodge = arg1_45.dodge
+	var0_45.dodgeLimit = arg1_45.dodge_limit
+	var0_45.cannonPower = var4_45
+	var0_45.torpedoPower = var4_45
+	var0_45.antiAirPower = var4_45
+	var0_45.antiSubPower = var4_45
+	var0_45.airPower = var4_45
+	var0_45.loadSpeed = 0
+	var0_45.armorType = 1
+	var0_45.dodgeRate = 0
+	var0_45.luck = 50
+	var0_45.velocity = ys.Battle.BattleFormulas.ConvertAircraftSpeed(arg1_45.speed)
+	var0_45.repressReduce = 1
+	var0_45.TargetChoise = {}
+	var0_45.guardian = {}
+	var0_45.crashDMG = arg1_45.crash_DMG
 end
 
-function var0.SetFusionAttrFromElement(arg0, arg1, arg2, arg3)
-	local var0 = var0.GetAttr(arg1)
-	local var1 = var0.level
-	local var2 = arg0._attr or {}
+function var0_0.SetFusionAttrFromElement(arg0_46, arg1_46, arg2_46, arg3_46)
+	local var0_46 = var0_0.GetAttr(arg1_46)
+	local var1_46 = var0_46.level
+	local var2_46 = arg0_46._attr or {}
 
-	arg0._attr = var2
-	var2.id = var0.id
-	var2.level = var1
-	var2.formulaLevel = var1
-	var2.battleUID = arg0:GetUniqueID()
+	arg0_46._attr = var2_46
+	var2_46.id = var0_46.id
+	var2_46.level = var1_46
+	var2_46.formulaLevel = var1_46
+	var2_46.battleUID = arg0_46:GetUniqueID()
 
-	for iter0, iter1 in ipairs(var0.AttrListInheritance) do
-		var2[iter1] = var0[iter1]
+	for iter0_46, iter1_46 in ipairs(var0_0.AttrListInheritance) do
+		var2_46[iter1_46] = var0_46[iter1_46]
 	end
 
-	for iter2, iter3 in pairs(var0) do
-		if string.find(iter2, var0.TAG_EHC_KEY) then
-			var2[iter2] = iter3
+	for iter2_46, iter3_46 in pairs(var0_46) do
+		if string.find(iter2_46, var0_0.TAG_EHC_KEY) then
+			var2_46[iter2_46] = iter3_46
 		end
 	end
 
-	for iter4, iter5 in pairs(var0) do
-		if string.find(iter4, var0.TAG_CRI_EHC_KEY) then
-			var2[iter4] = iter5
+	for iter4_46, iter5_46 in pairs(var0_46) do
+		if string.find(iter4_46, var0_0.TAG_CRI_EHC_KEY) then
+			var2_46[iter4_46] = iter5_46
 		end
 	end
 
-	local var3 = arg1:GetHP()
+	local var3_46 = arg1_46:GetHP()
 
-	for iter6, iter7 in ipairs(arg2) do
-		var3 = var3 + iter7:GetHP()
+	for iter6_46, iter7_46 in ipairs(arg2_46) do
+		var3_46 = var3_46 + iter7_46:GetHP()
 	end
 
-	var2.maxHP = var3
-	var2.hpProvideRate = {}
-	var2.hpProvideRate[var0.GetCurrent(arg1, "id")] = arg1:GetHP() / var3
+	var2_46.maxHP = var3_46
+	var2_46.hpProvideRate = {}
+	var2_46.hpProvideRate[var0_0.GetCurrent(arg1_46, "id")] = arg1_46:GetHP() / var3_46
 
-	for iter8, iter9 in ipairs(arg2) do
-		var2.hpProvideRate[var0.GetCurrent(iter9, "id")] = iter9:GetHP() / var3
+	for iter8_46, iter9_46 in ipairs(arg2_46) do
+		var2_46.hpProvideRate[var0_0.GetCurrent(iter9_46, "id")] = iter9_46:GetHP() / var3_46
 	end
 
-	local function var4(arg0)
-		local var0 = arg3[arg0] or 1
+	local function var4_46(arg0_47)
+		local var0_47 = arg3_46[arg0_47] or 1
 
-		var2[arg0] = var0.GetCurrent(arg1, arg0) * var0
+		var2_46[arg0_47] = var0_0.GetCurrent(arg1_46, arg0_47) * var0_47
 	end
 
-	var4("cannonPower")
-	var4("torpedoPower")
-	var4("antiAirPower")
-	var4("antiSubPower")
-	var4("baseAntiSubPower")
-	var4("airPower")
-	var4("loadSpeed")
-	var4("attackRating")
-	var4("dodgeRate")
-	var4("luck")
-	var4("velocity")
-	var4("baseVelocity")
+	var4_46("cannonPower")
+	var4_46("torpedoPower")
+	var4_46("antiAirPower")
+	var4_46("antiSubPower")
+	var4_46("baseAntiSubPower")
+	var4_46("airPower")
+	var4_46("loadSpeed")
+	var4_46("attackRating")
+	var4_46("dodgeRate")
+	var4_46("luck")
+	var4_46("velocity")
+	var4_46("baseVelocity")
 
-	var2.armorType = var0.GetCurrent(arg1, "armorType")
-	var2.aimBias = 0
-	var2.aimBiasDecaySpeed = 0
-	var2.aimBiasDecaySpeedRatio = 0
-	var2.aimBiasExtraACC = 0
-	var2.healingRate = 1
-	var2.comboTag = "combo_" .. var2.battleUID
-	var2.labelTag = {}
-	var2.barrageCounterMod = 1
-	var2.TargetChoise = {}
-	var2.guardian = {}
+	var2_46.armorType = var0_0.GetCurrent(arg1_46, "armorType")
+	var2_46.aimBias = 0
+	var2_46.aimBiasDecaySpeed = 0
+	var2_46.aimBiasDecaySpeedRatio = 0
+	var2_46.aimBiasExtraACC = 0
+	var2_46.healingRate = 1
+	var2_46.comboTag = "combo_" .. var2_46.battleUID
+	var2_46.labelTag = {}
+	var2_46.barrageCounterMod = 1
+	var2_46.TargetChoise = {}
+	var2_46.guardian = {}
 
-	var0.SetBaseAttr(arg0)
+	var0_0.SetBaseAttr(arg0_46)
 end
 
-function var0.FlashByBuff(arg0, arg1, arg2)
-	arg0._attr[arg1] = arg2 + (arg0._baseAttr[arg1] or 0)
+function var0_0.FlashByBuff(arg0_48, arg1_48, arg2_48)
+	arg0_48._attr[arg1_48] = arg2_48 + (arg0_48._baseAttr[arg1_48] or 0)
 
-	if string.find(arg1, var0.FROM_TAG_EHC_KEY) then
-		local var0 = 0
+	if string.find(arg1_48, var0_0.FROM_TAG_EHC_KEY) then
+		local var0_48 = 0
 
-		for iter0, iter1 in pairs(arg0._attr) do
-			if string.find(iter0, var0.FROM_TAG_EHC_KEY) and iter1 ~= 0 then
-				var0 = 1
+		for iter0_48, iter1_48 in pairs(arg0_48._attr) do
+			if string.find(iter0_48, var0_0.FROM_TAG_EHC_KEY) and iter1_48 ~= 0 then
+				var0_48 = 1
 
 				break
 			end
 		end
 
-		var0.SetCurrent(arg0, var0.FROM_TAG_EHC_KEY, var0)
+		var0_0.SetCurrent(arg0_48, var0_0.FROM_TAG_EHC_KEY, var0_48)
 	end
 end
 
-function var0.FlashVelocity(arg0, arg1, arg2)
-	local var0 = var0.GetBase(arg0, "velocity") * 1.8
-	local var1 = var0.GetBase(arg0, "velocity") * 0.2
-	local var2 = arg0._baseAttr.velocity * arg1 + arg2
-	local var3 = Mathf.Clamp(var2, var1, var0)
+function var0_0.FlashVelocity(arg0_49, arg1_49, arg2_49)
+	local var0_49 = var0_0.GetBase(arg0_49, "velocity") * 1.8
+	local var1_49 = var0_0.GetBase(arg0_49, "velocity") * 0.2
+	local var2_49 = arg0_49._baseAttr.velocity * arg1_49 + arg2_49
+	local var3_49 = Mathf.Clamp(var2_49, var1_49, var0_49)
 
-	var0.SetCurrent(arg0, "velocity", var3)
+	var0_0.SetCurrent(arg0_49, "velocity", var3_49)
 end
 
-function var0.HasSonar(arg0)
-	local var0 = arg0:GetTemplate().type
+function var0_0.HasSonar(arg0_50)
+	local var0_50 = arg0_50:GetTemplate().type
 
-	return ys.Battle.BattleConfig.VAN_SONAR_PROPERTY[var0] ~= nil
+	return ys.Battle.BattleConfig.VAN_SONAR_PROPERTY[var0_50] ~= nil
 end
 
-function var0.SetCurrent(arg0, arg1, arg2)
-	arg0._attr[arg1] = arg2
+function var0_0.SetCurrent(arg0_51, arg1_51, arg2_51)
+	arg0_51._attr[arg1_51] = arg2_51
 end
 
-function var0.GetCurrent(arg0, arg1)
-	local var0 = AttributeType.IsPrimalBattleAttr(arg1) or false
+function var0_0.GetCurrent(arg0_52, arg1_52)
+	local var0_52 = AttributeType.IsPrimalBattleAttr(arg1_52) or false
 
-	return var0._attrFunc[var0](arg0, arg1)
+	return var0_0._attrFunc[var0_52](arg0_52, arg1_52)
 end
 
-function var0._getPrimalAttr(arg0, arg1)
-	return math.max(arg0._attr[arg1], 0)
+function var0_0._getPrimalAttr(arg0_53, arg1_53)
+	return math.max(arg0_53._attr[arg1_53], 0)
 end
 
-function var0._getSecondaryAttr(arg0, arg1)
-	return arg0._attr[arg1] or 0
+function var0_0._getSecondaryAttr(arg0_54, arg1_54)
+	return arg0_54._attr[arg1_54] or 0
 end
 
-var0._attrFunc = {
-	[true] = var0._getPrimalAttr,
-	[false] = var0._getSecondaryAttr
+var0_0._attrFunc = {
+	[true] = var0_0._getPrimalAttr,
+	[false] = var0_0._getSecondaryAttr
 }
 
-function var0.GetBase(arg0, arg1)
-	return arg0._baseAttr[arg1] or 0
+function var0_0.GetBase(arg0_55, arg1_55)
+	return arg0_55._baseAttr[arg1_55] or 0
 end
 
-function var0.GetCurrentTags(arg0)
-	return arg0._attr.labelTag or {}
+function var0_0.GetCurrentTags(arg0_56)
+	return arg0_56._attr.labelTag or {}
 end
 
-function var0.Increase(arg0, arg1, arg2)
-	if arg2 then
-		arg0._attr[arg1] = (arg0._attr[arg1] or 0) + arg2
+function var0_0.Increase(arg0_57, arg1_57, arg2_57)
+	if arg2_57 then
+		arg0_57._attr[arg1_57] = (arg0_57._attr[arg1_57] or 0) + arg2_57
 	end
 end
 
-function var0.RatioIncrease(arg0, arg1, arg2)
-	if arg2 then
-		arg0._attr[arg1] = arg0._attr[arg1] + arg0._baseAttr[arg1] * arg2 / 10000
+function var0_0.RatioIncrease(arg0_58, arg1_58, arg2_58)
+	if arg2_58 then
+		arg0_58._attr[arg1_58] = arg0_58._attr[arg1_58] + arg0_58._baseAttr[arg1_58] * arg2_58 / 10000
 	end
 end
 
-function var0.GetTagAttr(arg0, arg1, arg2)
-	local var0 = arg1:GetLabelTag()
-	local var1 = {}
+function var0_0.GetTagAttr(arg0_59, arg1_59, arg2_59)
+	local var0_59 = arg1_59:GetLabelTag()
+	local var1_59 = {}
 
-	for iter0, iter1 in ipairs(var0) do
-		var1[var0.TAG_EHC_KEY .. iter1] = true
+	for iter0_59, iter1_59 in ipairs(var0_59) do
+		var1_59[var0_0.TAG_EHC_KEY .. iter1_59] = true
 	end
 
-	local var2 = 1
+	local var2_59 = 1
 
-	for iter2, iter3 in pairs(var1) do
-		local var3 = var0.GetCurrent(arg0, iter2)
+	for iter2_59, iter3_59 in pairs(var1_59) do
+		local var3_59 = var0_0.GetCurrent(arg0_59, iter2_59)
 
-		if var3 ~= 0 then
-			if arg2 then
-				var3 = ys.Battle.BattleDataFunction.GetLimitAttributeRange(iter2, var3)
+		if var3_59 ~= 0 then
+			if arg2_59 then
+				var3_59 = ys.Battle.BattleDataFunction.GetLimitAttributeRange(iter2_59, var3_59)
 			end
 
-			var2 = var2 * (1 + var3)
+			var2_59 = var2_59 * (1 + var3_59)
 		end
 	end
 
-	if var0.GetCurrent(arg1, var0.FROM_TAG_EHC_KEY) > 0 then
-		local var4 = arg0:GetWeaponTempData().attack_attribute
-		local var5 = var0.FROM_TAG_EHC_KEY .. var4 .. "_"
-		local var6 = var0.GetCurrentTags(arg0)
+	if var0_0.GetCurrent(arg1_59, var0_0.FROM_TAG_EHC_KEY) > 0 then
+		local var4_59 = arg0_59:GetWeaponTempData().attack_attribute
+		local var5_59 = var0_0.FROM_TAG_EHC_KEY .. var4_59 .. "_"
+		local var6_59 = var0_0.GetCurrentTags(arg0_59)
 
-		for iter4, iter5 in pairs(var6) do
-			if iter5 > 0 then
-				local var7 = var5 .. iter4
-				local var8 = var0.GetCurrent(arg1, var7)
+		for iter4_59, iter5_59 in pairs(var6_59) do
+			if iter5_59 > 0 then
+				local var7_59 = var5_59 .. iter4_59
+				local var8_59 = var0_0.GetCurrent(arg1_59, var7_59)
 
-				if var8 ~= 0 then
-					var2 = var2 * (1 + var8)
+				if var8_59 ~= 0 then
+					var2_59 = var2_59 * (1 + var8_59)
 				end
 			end
 		end
 	end
 
-	return var2
+	return var2_59
 end
 
-function var0.GetTagAttrCri(arg0, arg1)
-	local var0 = arg1:GetLabelTag()
-	local var1 = {}
+function var0_0.GetTagAttrCri(arg0_60, arg1_60)
+	local var0_60 = arg1_60:GetLabelTag()
+	local var1_60 = {}
 
-	for iter0, iter1 in ipairs(var0) do
-		var1[var0.TAG_CRI_EHC_KEY .. iter1] = true
+	for iter0_60, iter1_60 in ipairs(var0_60) do
+		var1_60[var0_0.TAG_CRI_EHC_KEY .. iter1_60] = true
 	end
 
-	local var2 = 0
+	local var2_60 = 0
 
-	for iter2, iter3 in pairs(var1) do
-		local var3 = var0.GetCurrent(arg0, iter2)
+	for iter2_60, iter3_60 in pairs(var1_60) do
+		local var3_60 = var0_0.GetCurrent(arg0_60, iter2_60)
 
-		if var3 ~= 0 then
-			var2 = var2 + var3
+		if var3_60 ~= 0 then
+			var2_60 = var2_60 + var3_60
 		end
 	end
 
-	return var2
+	return var2_60
 end
 
-function var0.GetTagAttrCriDmg(arg0, arg1)
-	local var0 = arg1:GetLabelTag()
-	local var1 = {}
+function var0_0.GetTagAttrCriDmg(arg0_61, arg1_61)
+	local var0_61 = arg1_61:GetLabelTag()
+	local var1_61 = {}
 
-	for iter0, iter1 in ipairs(var0) do
-		var1[var0.TAG_CRIDMG_EHC_KEY .. iter1] = true
+	for iter0_61, iter1_61 in ipairs(var0_61) do
+		var1_61[var0_0.TAG_CRIDMG_EHC_KEY .. iter1_61] = true
 	end
 
-	local var2 = 0
+	local var2_61 = 0
 
-	for iter2, iter3 in pairs(var1) do
-		local var3 = var0.GetCurrent(arg0, iter2)
+	for iter2_61, iter3_61 in pairs(var1_61) do
+		local var3_61 = var0_0.GetCurrent(arg0_61, iter2_61)
 
-		if var3 ~= 0 then
-			var2 = var2 + var3
+		if var3_61 ~= 0 then
+			var2_61 = var2_61 + var3_61
 		end
 	end
 
-	return var2
+	return var2_61
 end

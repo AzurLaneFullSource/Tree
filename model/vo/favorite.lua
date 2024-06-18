@@ -1,96 +1,96 @@
-﻿local var0 = class("Favorite", import(".BaseVO"))
+﻿local var0_0 = class("Favorite", import(".BaseVO"))
 
-var0.STATE_AWARD = 1
-var0.STATE_WAIT = 2
-var0.STATE_LOCK = 3
-var0.STATE_FETCHED = 4
+var0_0.STATE_AWARD = 1
+var0_0.STATE_WAIT = 2
+var0_0.STATE_LOCK = 3
+var0_0.STATE_FETCHED = 4
 
-function var0.Ctor(arg0, arg1)
-	arg0.configId = arg1.id
-	arg0.id = arg0.configId
-	arg0.star = arg1.star
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.configId = arg1_1.id
+	arg0_1.id = arg0_1.configId
+	arg0_1.star = arg1_1.star
 end
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_2)
 	return pg.storeup_data_template
 end
 
-function var0.getStarCount(arg0, arg1)
-	local var0 = 0
+function var0_0.getStarCount(arg0_3, arg1_3)
+	local var0_3 = 0
 
-	for iter0, iter1 in pairs(arg0:getConfig("char_list")) do
-		if arg1[iter1] then
-			var0 = var0 + arg1[iter1].star
+	for iter0_3, iter1_3 in pairs(arg0_3:getConfig("char_list")) do
+		if arg1_3[iter1_3] then
+			var0_3 = var0_3 + arg1_3[iter1_3].star
 		end
 	end
 
-	return var0
+	return var0_3
 end
 
-function var0.getNextAwardIndex(arg0, arg1)
-	local var0 = 1
+function var0_0.getNextAwardIndex(arg0_4, arg1_4)
+	local var0_4 = 1
 
-	if arg1[arg0.id] then
-		var0 = arg1[arg0.id] + 1
+	if arg1_4[arg0_4.id] then
+		var0_4 = arg1_4[arg0_4.id] + 1
 	end
 
-	return var0
+	return var0_4
 end
 
-function var0.isFetchAll(arg0, arg1)
-	return (arg1[arg0.id] or 0) >= #arg0:getConfig("level")
+function var0_0.isFetchAll(arg0_5, arg1_5)
+	return (arg1_5[arg0_5.id] or 0) >= #arg0_5:getConfig("level")
 end
 
-function var0.canGetRes(arg0, arg1, arg2)
-	local var0 = arg0:getNextAwardIndex(arg2)
-	local var1 = arg0:getConfig("award_display")
-	local var2 = arg0:getStarCount(arg1)
-	local var3 = false
+function var0_0.canGetRes(arg0_6, arg1_6, arg2_6)
+	local var0_6 = arg0_6:getNextAwardIndex(arg2_6)
+	local var1_6 = arg0_6:getConfig("award_display")
+	local var2_6 = arg0_6:getStarCount(arg1_6)
+	local var3_6 = false
 
-	if var0 <= #var1 then
-		var3 = true
+	if var0_6 <= #var1_6 then
+		var3_6 = true
 
-		if var2 >= arg0:getConfig("level")[var0] then
+		if var2_6 >= arg0_6:getConfig("level")[var0_6] then
 			return true
 		end
 	end
 
-	return false, var3
+	return false, var3_6
 end
 
-function var0.getState(arg0, arg1, arg2)
-	local var0 = arg2[arg0.id]
-	local var1, var2 = arg0:canGetRes(arg1, arg2)
-	local var3 = arg0:isFetchAll(arg2)
+function var0_0.getState(arg0_7, arg1_7, arg2_7)
+	local var0_7 = arg2_7[arg0_7.id]
+	local var1_7, var2_7 = arg0_7:canGetRes(arg1_7, arg2_7)
+	local var3_7 = arg0_7:isFetchAll(arg2_7)
 
-	if var1 then
-		return var0.STATE_AWARD
-	elseif var3 then
-		return var0.STATE_FETCHED
+	if var1_7 then
+		return var0_0.STATE_AWARD
+	elseif var3_7 then
+		return var0_0.STATE_FETCHED
 	else
-		return var2 and var0.STATE_WAIT or var0.STATE_LOCK
+		return var2_7 and var0_0.STATE_WAIT or var0_0.STATE_LOCK
 	end
 end
 
-function var0.getAwardState(arg0, arg1, arg2, arg3)
-	local var0 = arg2[arg0.id] or 0
-	local var1 = arg0:getConfig("level")
-	local var2 = arg0:getConfig("award_display")
+function var0_0.getAwardState(arg0_8, arg1_8, arg2_8, arg3_8)
+	local var0_8 = arg2_8[arg0_8.id] or 0
+	local var1_8 = arg0_8:getConfig("level")
+	local var2_8 = arg0_8:getConfig("award_display")
 
-	if var1[arg3] <= arg0:getStarCount(arg1) then
-		return var0 < arg3 and (var2[arg3] and var0.STATE_AWARD or var0.STATE_LOCK) or var0.STATE_FETCHED
+	if var1_8[arg3_8] <= arg0_8:getStarCount(arg1_8) then
+		return var0_8 < arg3_8 and (var2_8[arg3_8] and var0_0.STATE_AWARD or var0_0.STATE_LOCK) or var0_0.STATE_FETCHED
 	else
-		return var2[arg3] and var0.STATE_WAIT or var0.STATE_LOCK
+		return var2_8[arg3_8] and var0_0.STATE_WAIT or var0_0.STATE_LOCK
 	end
 end
 
-function var0.containShipGroup(arg0, arg1)
-	local var0 = arg0:getConfig("award_display")
+function var0_0.containShipGroup(arg0_9, arg1_9)
+	local var0_9 = arg0_9:getConfig("award_display")
 
-	return _.any(var0, function(arg0)
-		if arg0[1] == DROP_TYPE_SHIP and Ship.New({
-			configId = arg0[2]
-		}):getGroupId() == arg1 then
+	return _.any(var0_9, function(arg0_10)
+		if arg0_10[1] == DROP_TYPE_SHIP and Ship.New({
+			configId = arg0_10[2]
+		}):getGroupId() == arg1_9 then
 			return true
 		end
 
@@ -98,4 +98,4 @@ function var0.containShipGroup(arg0, arg1)
 	end)
 end
 
-return var0
+return var0_0

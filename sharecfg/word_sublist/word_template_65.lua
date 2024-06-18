@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_65 = {}
+var0_0.word_template_65 = {}
 
-local var1 = var0.word_template_65
+local var1_0 = var0_0.word_template_65
 
 function temp()
-	var1.诚 = {
+	var1_0.诚 = {
 		心 = {
 			机 = {
 				器 = {
@@ -65,7 +65,7 @@ end
 temp()
 
 function temp()
-	var1.城 = {
+	var1_0.城 = {
 		堡 = {
 			里 = {
 				的 = {
@@ -219,7 +219,7 @@ end
 temp()
 
 function temp()
-	var1.乘 = {
+	var1_0.乘 = {
 		飛 = {
 			機 = {
 				罷 = {
@@ -254,7 +254,7 @@ end
 temp()
 
 function temp()
-	var1.程 = {
+	var1_0.程 = {
 		凱 = {
 			this = true
 		},
@@ -276,7 +276,7 @@ end
 temp()
 
 function temp()
-	var1.吃 = {
+	var1_0.吃 = {
 		大 = {
 			便 = {
 				this = true
@@ -428,7 +428,7 @@ end
 temp()
 
 function temp()
-	var1.螭 = {
+	var1_0.螭 = {
 		this = {
 			this = true
 		}
@@ -438,7 +438,7 @@ end
 temp()
 
 function temp()
-	var1.鴟 = {
+	var1_0.鴟 = {
 		this = {
 			this = true
 		}

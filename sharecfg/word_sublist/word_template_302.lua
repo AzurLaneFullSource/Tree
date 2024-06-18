@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_302 = {}
+var0_0.word_template_302 = {}
 
-local var1 = var0.word_template_302
+local var1_0 = var0_0.word_template_302
 
 function temp()
-	var1.县 = {
+	var1_0.县 = {
 		里 = {
 			干 = {
 				部 = {
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.现 = {
+	var1_0.现 = {
 		代 = {
 			广 = {
 				州 = {
@@ -295,7 +295,7 @@ end
 temp()
 
 function temp()
-	var1.限 = {
+	var1_0.限 = {
 		制 = {
 			级 = {
 				特 = {
@@ -319,7 +319,7 @@ end
 temp()
 
 function temp()
-	var1.线 = {
+	var1_0.线 = {
 		上 = {
 			投 = {
 				注 = {
@@ -333,7 +333,7 @@ end
 temp()
 
 function temp()
-	var1.峴 = {
+	var1_0.峴 = {
 		this = {
 			this = true
 		}
@@ -343,7 +343,7 @@ end
 temp()
 
 function temp()
-	var1.献 = {
+	var1_0.献 = {
 		身 = {
 			一 = {
 				位 = {
@@ -377,7 +377,7 @@ end
 temp()
 
 function temp()
-	var1.膁 = {
+	var1_0.膁 = {
 		this = {
 			this = true
 		}

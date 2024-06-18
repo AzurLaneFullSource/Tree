@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_49 = {}
+var0_0.word_template_49 = {}
 
-local var1 = var0.word_template_49
+local var1_0 = var0_0.word_template_49
 
 function temp()
-	var1.比 = {
+	var1_0.比 = {
 		次 = {
 			仁 = {
 				this = true
@@ -30,7 +30,7 @@ end
 temp()
 
 function temp()
-	var1.笔 = {
+	var1_0.笔 = {
 		式 = {
 			呼 = {
 				叫 = {
@@ -48,7 +48,7 @@ end
 temp()
 
 function temp()
-	var1.必 = {
+	var1_0.必 = {
 		须 = {
 			冒 = {
 				充 = {
@@ -104,7 +104,7 @@ end
 temp()
 
 function temp()
-	var1.毕 = {
+	var1_0.毕 = {
 		业 = {
 			证 = {
 				办 = {
@@ -120,7 +120,7 @@ end
 temp()
 
 function temp()
-	var1.毖 = {
+	var1_0.毖 = {
 		毖 = {
 			this = true
 		}
@@ -130,7 +130,7 @@ end
 temp()
 
 function temp()
-	var1.碧 = {
+	var1_0.碧 = {
 		香 = {
 			亭 = {
 				this = true
@@ -147,7 +147,7 @@ end
 temp()
 
 function temp()
-	var1.避 = {
+	var1_0.避 = {
 		孕 = {
 			套 = {
 				对 = {

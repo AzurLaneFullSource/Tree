@@ -1,99 +1,99 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleCardPuzzleFormulas
-local var2 = class("BattleCardPuzzleFleetBuffAddFleetAttr", var0.Battle.BattleFleetBuffEffect)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleCardPuzzleFormulas
+local var2_0 = class("BattleCardPuzzleFleetBuffAddFleetAttr", var0_0.Battle.BattleFleetBuffEffect)
 
-var0.Battle.BattleCardPuzzleFleetBuffAddFleetAttr = var2
-var2.__name = "BattleCardPuzzleFleetBuffAddFleetAttr"
-var2.FX_TYPE = var0.Battle.BattleBuffEffect.FX_TYPE_MOD_ATTR
+var0_0.Battle.BattleCardPuzzleFleetBuffAddFleetAttr = var2_0
+var2_0.__name = "BattleCardPuzzleFleetBuffAddFleetAttr"
+var2_0.FX_TYPE = var0_0.Battle.BattleBuffEffect.FX_TYPE_MOD_ATTR
 
-function var2.Ctor(arg0, arg1)
-	arg0._tempData = Clone(arg1)
-	arg0._type = arg0._tempData.type
+function var2_0.Ctor(arg0_1, arg1_1)
+	arg0_1._tempData = Clone(arg1_1)
+	arg0_1._type = arg0_1._tempData.type
 
-	arg0:SetActive()
+	arg0_1:SetActive()
 end
 
-function var2.GetEffectType(arg0)
-	return var2.FX_TYPE
+function var2_0.GetEffectType(arg0_2)
+	return var2_0.FX_TYPE
 end
 
-function var2.SetArgs(arg0, arg1, arg2)
-	var2.super.SetArgs(arg0, arg1, arg2)
+function var2_0.SetArgs(arg0_3, arg1_3, arg2_3)
+	var2_0.super.SetArgs(arg0_3, arg1_3, arg2_3)
 
-	arg0._group = arg0._tempData.arg_list.group or arg0._fleetBuff:GetID()
-	arg0._attr = arg0._tempData.arg_list.attr
-	arg0._number = arg0._tempData.arg_list.number
+	arg0_3._group = arg0_3._tempData.arg_list.group or arg0_3._fleetBuff:GetID()
+	arg0_3._attr = arg0_3._tempData.arg_list.attr
+	arg0_3._number = arg0_3._tempData.arg_list.number
 
-	if arg0._tempData.arg_list.enhance_formula then
-		local var0 = arg0._tempData.arg_list.enhance_formula
+	if arg0_3._tempData.arg_list.enhance_formula then
+		local var0_3 = arg0_3._tempData.arg_list.enhance_formula
 
-		arg0._number = var1.parseFormula(var0, arg1:GetAttrManager()) + arg0._number
+		arg0_3._number = var1_0.parseFormula(var0_3, arg1_3:GetAttrManager()) + arg0_3._number
 	end
 
-	arg0._cache = arg0._tempData.arg_list.maintain
-	arg0._numberBase = arg0._number
+	arg0_3._cache = arg0_3._tempData.arg_list.maintain
+	arg0_3._numberBase = arg0_3._number
 end
 
-function var2.onRemove(arg0)
-	if arg0._cache then
-		arg0._number = 0
+function var2_0.onRemove(arg0_4)
+	if arg0_4._cache then
+		arg0_4._number = 0
 	end
 
-	arg0:onTrigger()
+	arg0_4:onTrigger()
 end
 
-function var2.GetGroup(arg0)
-	return arg0._group
+function var2_0.GetGroup(arg0_5)
+	return arg0_5._group
 end
 
-function var2.GetNumber(arg0)
-	return arg0._number * arg0._fleetBuff:GetStack()
+function var2_0.GetNumber(arg0_6)
+	return arg0_6._number * arg0_6._fleetBuff:GetStack()
 end
 
-function var2.IsSameAttr(arg0, arg1)
-	return arg0._attr == arg1
+function var2_0.IsSameAttr(arg0_7, arg1_7)
+	return arg0_7._attr == arg1_7
 end
 
-function var2.onTrigger(arg0)
-	local var0 = arg0._cardPuzzleComponent
+function var2_0.onTrigger(arg0_8)
+	local var0_8 = arg0_8._cardPuzzleComponent
 
-	if arg0._cache then
-		local var1 = var0:GetBuffManager():GetCardPuzzleBuffList()
-		local var2 = 0
-		local var3 = 0
-		local var4 = {}
-		local var5 = {}
+	if arg0_8._cache then
+		local var1_8 = var0_8:GetBuffManager():GetCardPuzzleBuffList()
+		local var2_8 = 0
+		local var3_8 = 0
+		local var4_8 = {}
+		local var5_8 = {}
 
-		for iter0, iter1 in pairs(var1) do
-			for iter2, iter3 in ipairs(iter1._effectList) do
-				if iter3:GetEffectType() == var2.FX_TYPE and iter3:IsSameAttr(arg0._attr) then
-					local var6 = iter3:GetNumber()
-					local var7 = iter3:GetGroup()
-					local var8 = var4[var7] or 0
-					local var9 = var5[var7] or 0
+		for iter0_8, iter1_8 in pairs(var1_8) do
+			for iter2_8, iter3_8 in ipairs(iter1_8._effectList) do
+				if iter3_8:GetEffectType() == var2_0.FX_TYPE and iter3_8:IsSameAttr(arg0_8._attr) then
+					local var6_8 = iter3_8:GetNumber()
+					local var7_8 = iter3_8:GetGroup()
+					local var8_8 = var4_8[var7_8] or 0
+					local var9_8 = var5_8[var7_8] or 0
 
-					if var8 < var6 and var6 > 0 then
-						var2 = var2 + var6 - var8
-						var8 = var6
+					if var8_8 < var6_8 and var6_8 > 0 then
+						var2_8 = var2_8 + var6_8 - var8_8
+						var8_8 = var6_8
 					end
 
-					if var6 < var9 and var6 < 0 then
-						var3 = var3 + var6 - var9
-						var9 = var6
+					if var6_8 < var9_8 and var6_8 < 0 then
+						var3_8 = var3_8 + var6_8 - var9_8
+						var9_8 = var6_8
 					end
 
-					var4[var7] = var8
-					var5[var7] = var9
+					var4_8[var7_8] = var8_8
+					var5_8[var7_8] = var9_8
 				end
 			end
 		end
 
-		local var10 = var2 + var3
+		local var10_8 = var2_8 + var3_8
 
-		var0:UpdateAttrByBuff(arg0._attr, var10)
+		var0_8:UpdateAttrByBuff(arg0_8._attr, var10_8)
 	else
-		var0:AddAttrBySkill(arg0._attr, arg0:GetNumber())
+		var0_8:AddAttrBySkill(arg0_8._attr, arg0_8:GetNumber())
 	end
 end

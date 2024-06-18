@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	BLACK_HOLE_RANGE = 2,
 	DECOY_RANGE = 5,
 	TIME_INTERVAL = 0.0166666666666667,
@@ -319,382 +319,382 @@
 	}
 }
 
-function var0.GetStageConfig(arg0)
-	return setmetatable(var0.STAGE_CONFIG[arg0] or {}, {
-		__index = var0.STAGE_CONFIG.BASE_CONFIG
+function var0_0.GetStageConfig(arg0_1)
+	return setmetatable(var0_0.STAGE_CONFIG[arg0_1] or {}, {
+		__index = var0_0.STAGE_CONFIG.BASE_CONFIG
 	})
 end
 
-function var0.GetCreateConfig(arg0)
-	local var0 = {}
+function var0_0.GetCreateConfig(arg0_2)
+	local var0_2 = {}
 
-	switch(arg0.name, {
+	switch(arg0_2.name, {
 		FuShun = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetFuShun)
-			table.insert(var0, "character/FuShun")
-			table.insert(var0, "character")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetFuShun)
+			table.insert(var0_2, "character/FuShun")
+			table.insert(var0_2, "character")
 		end,
 		Nenjuu = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetNenjuu)
-			table.insert(var0, "character/Nenjuu")
-			table.insert(var0, "character")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetNenjuu)
+			table.insert(var0_2, "character/Nenjuu")
+			table.insert(var0_2, "character")
 		end,
 		Nenjuu_Doppelgangers = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetNenjuu)
-			table.insert(var0, "character/Nenjuu_Doppelgangers")
-			table.insert(var0, "character")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetNenjuu)
+			table.insert(var0_2, "character/Nenjuu_Doppelgangers")
+			table.insert(var0_2, "character")
 		end,
 		Ice = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetIce)
-			table.insert(var0, "object/Ice")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetIce)
+			table.insert(var0_2, "object/Ice")
+			table.insert(var0_2, "object")
 		end,
 		Bomb = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetBomb)
-			table.insert(var0, "effect/Bomb")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetBomb)
+			table.insert(var0_2, "effect/Bomb")
+			table.insert(var0_2, "object")
 		end,
 		SignWarp = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetTimeEffect)
-			table.insert(var0, "effect/SignWarp")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetTimeEffect)
+			table.insert(var0_2, "effect/SignWarp")
+			table.insert(var0_2, "effect")
 		end,
 		Rock = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Rock")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Rock")
+			table.insert(var0_2, "object")
 		end,
 		BlackHole = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetBlackHole)
-			table.insert(var0, "object/BlackHole")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetBlackHole)
+			table.insert(var0_2, "object/BlackHole")
+			table.insert(var0_2, "object")
 		end,
 		Decoy = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetEffect)
-			table.insert(var0, "effect/Decoy")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetEffect)
+			table.insert(var0_2, "effect/Decoy")
+			table.insert(var0_2, "effect")
 		end,
 		EF_bk_Flash_Jump = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetEffect)
-			table.insert(var0, "effect/EF_bk_Flash_Jump")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetEffect)
+			table.insert(var0_2, "effect/EF_bk_Flash_Jump")
+			table.insert(var0_2, "effect")
 		end,
 		EF_bk_Flash_Land = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetSubEffect)
-			table.insert(var0, "effect/EF_bk_Flash_Land")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetSubEffect)
+			table.insert(var0_2, "effect/EF_bk_Flash_Land")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Break_E = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetEffect)
-			table.insert(var0, "effect/EF_Break_E")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetEffect)
+			table.insert(var0_2, "effect/EF_Break_E")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Break_N = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetEffect)
-			table.insert(var0, "effect/EF_Break_N")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetEffect)
+			table.insert(var0_2, "effect/EF_Break_N")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Break_S = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetEffect)
-			table.insert(var0, "effect/EF_Break_S")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetEffect)
+			table.insert(var0_2, "effect/EF_Break_S")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Break_W = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetEffect)
-			table.insert(var0, "effect/EF_Break_W")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetEffect)
+			table.insert(var0_2, "effect/EF_Break_W")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Attack_E = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetSubEffect)
-			table.insert(var0, "effect/EF_Attack_E")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetSubEffect)
+			table.insert(var0_2, "effect/EF_Attack_E")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Attack_S = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetSubEffect)
-			table.insert(var0, "effect/EF_Attack_S")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetSubEffect)
+			table.insert(var0_2, "effect/EF_Attack_S")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Attack_N = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetSubEffect)
-			table.insert(var0, "effect/EF_Attack_N")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetSubEffect)
+			table.insert(var0_2, "effect/EF_Attack_N")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Attack_W = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetSubEffect)
-			table.insert(var0, "effect/EF_Attack_W")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetSubEffect)
+			table.insert(var0_2, "effect/EF_Attack_W")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Attack_Hit_W_bk = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetSubEffect)
-			table.insert(var0, "effect/EF_Attack_Hit_W_bk")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetSubEffect)
+			table.insert(var0_2, "effect/EF_Attack_Hit_W_bk")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Attack_Hit_W_fr = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetSubEffect)
-			table.insert(var0, "effect/EF_Attack_Hit_W_fr")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetSubEffect)
+			table.insert(var0_2, "effect/EF_Attack_Hit_W_fr")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Attack_Hit_E_bk = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetSubEffect)
-			table.insert(var0, "effect/EF_Attack_Hit_E_bk")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetSubEffect)
+			table.insert(var0_2, "effect/EF_Attack_Hit_E_bk")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Attack_Hit_E_fr = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetSubEffect)
-			table.insert(var0, "effect/EF_Attack_Hit_E_fr")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetSubEffect)
+			table.insert(var0_2, "effect/EF_Attack_Hit_E_fr")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Attack_Hit_N = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetSubEffect)
-			table.insert(var0, "effect/EF_Attack_Hit_N")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetSubEffect)
+			table.insert(var0_2, "effect/EF_Attack_Hit_N")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Attack_Hit_S = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetSubEffect)
-			table.insert(var0, "effect/EF_Attack_Hit_S")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetSubEffect)
+			table.insert(var0_2, "effect/EF_Attack_Hit_S")
+			table.insert(var0_2, "effect")
 		end,
 		EF_bk_Freeze = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetSubEffect)
-			table.insert(var0, "effect/EF_bk_Freeze")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetSubEffect)
+			table.insert(var0_2, "effect/EF_bk_Freeze")
+			table.insert(var0_2, "effect")
 		end,
 		EF_bk_overlay_Lantern = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetSubEffect)
-			table.insert(var0, "effect/EF_bk_overlay_Lantern")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetSubEffect)
+			table.insert(var0_2, "effect/EF_bk_overlay_Lantern")
+			table.insert(var0_2, "effect")
 		end,
 		Lamp_A = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Lamp_A")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Lamp_A")
+			table.insert(var0_2, "object")
 
-			arg0.hide = true
+			arg0_2.hide = true
 		end,
 		Pine = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Pine")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Pine")
+			table.insert(var0_2, "object")
 
-			arg0.size = NewPos(2, 2)
+			arg0_2.size = NewPos(2, 2)
 		end,
 		Plum = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Plum")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Plum")
+			table.insert(var0_2, "object")
 
-			arg0.size = NewPos(2, 2)
+			arg0_2.size = NewPos(2, 2)
 		end,
 		Pond = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Pond")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Pond")
+			table.insert(var0_2, "object")
 
-			arg0.size = NewPos(2, 2)
+			arg0_2.size = NewPos(2, 2)
 		end,
 		Manjuu_fishing = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Manjuu_fishing")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Manjuu_fishing")
+			table.insert(var0_2, "object")
 
-			arg0.size = NewPos(2, 2)
+			arg0_2.size = NewPos(2, 2)
 		end,
 		Fire = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Fire")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Fire")
+			table.insert(var0_2, "object")
 
-			arg0.size = NewPos(3, 3)
+			arg0_2.size = NewPos(3, 3)
 		end,
 		Building_A = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Building_A")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Building_A")
+			table.insert(var0_2, "object")
 
-			arg0.size = NewPos(3, 3)
-			arg0.hide = true
+			arg0_2.size = NewPos(3, 3)
+			arg0_2.hide = true
 		end,
 		Item_1 = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetItem)
-			table.insert(var0, "object/Item")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetItem)
+			table.insert(var0_2, "object/Item")
+			table.insert(var0_2, "object")
 		end,
 		Item_2 = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetItem)
-			table.insert(var0, "object/Item")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetItem)
+			table.insert(var0_2, "object/Item")
+			table.insert(var0_2, "object")
 		end,
 		Item_3 = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetItem)
-			table.insert(var0, "object/Item")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetItem)
+			table.insert(var0_2, "object/Item")
+			table.insert(var0_2, "object")
 		end,
 		Item_4 = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetItem)
-			table.insert(var0, "object/Item")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetItem)
+			table.insert(var0_2, "object/Item")
+			table.insert(var0_2, "object")
 		end,
 		Item_5 = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetItem)
-			table.insert(var0, "object/Item")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetItem)
+			table.insert(var0_2, "object/Item")
+			table.insert(var0_2, "object")
 		end,
 		Item_6 = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetItem)
-			table.insert(var0, "object/Item")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetItem)
+			table.insert(var0_2, "object/Item")
+			table.insert(var0_2, "object")
 		end,
 		EF_fr_Inactivate = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetSubEffect)
-			table.insert(var0, "effect/EF_fr_Inactivate")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetSubEffect)
+			table.insert(var0_2, "effect/EF_fr_Inactivate")
+			table.insert(var0_2, "object")
 		end,
 		EF_Ghost_E_bk = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetRushEffect)
-			table.insert(var0, "effect/EF_Ghost_E_bk")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetRushEffect)
+			table.insert(var0_2, "effect/EF_Ghost_E_bk")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Ghost_N_bk = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetRushEffect)
-			table.insert(var0, "effect/EF_Ghost_N_bk")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetRushEffect)
+			table.insert(var0_2, "effect/EF_Ghost_N_bk")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Ghost_N_fr = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetRushEffect)
-			table.insert(var0, "effect/EF_Ghost_N_fr")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetRushEffect)
+			table.insert(var0_2, "effect/EF_Ghost_N_fr")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Ghost_S_bk = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetRushEffect)
-			table.insert(var0, "effect/EF_Ghost_S_bk")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetRushEffect)
+			table.insert(var0_2, "effect/EF_Ghost_S_bk")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Ghost_W_bk = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetRushEffect)
-			table.insert(var0, "effect/EF_Ghost_W_bk")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetRushEffect)
+			table.insert(var0_2, "effect/EF_Ghost_W_bk")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Nenjuu_Ghost_E_bk = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetRushEffect)
-			table.insert(var0, "effect/EF_Nenjuu_Ghost_E_bk")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetRushEffect)
+			table.insert(var0_2, "effect/EF_Nenjuu_Ghost_E_bk")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Nenjuu_Ghost_N_bk = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetRushEffect)
-			table.insert(var0, "effect/EF_Nenjuu_Ghost_N_bk")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetRushEffect)
+			table.insert(var0_2, "effect/EF_Nenjuu_Ghost_N_bk")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Nenjuu_Ghost_N_fr = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetRushEffect)
-			table.insert(var0, "effect/EF_Nenjuu_Ghost_N_fr")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetRushEffect)
+			table.insert(var0_2, "effect/EF_Nenjuu_Ghost_N_fr")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Nenjuu_Ghost_S_bk = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetRushEffect)
-			table.insert(var0, "effect/EF_Nenjuu_Ghost_S_bk")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetRushEffect)
+			table.insert(var0_2, "effect/EF_Nenjuu_Ghost_S_bk")
+			table.insert(var0_2, "effect")
 		end,
 		EF_Nenjuu_Ghost_W_bk = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetRushEffect)
-			table.insert(var0, "effect/EF_Nenjuu_Ghost_W_bk")
-			table.insert(var0, "effect")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetRushEffect)
+			table.insert(var0_2, "effect/EF_Nenjuu_Ghost_W_bk")
+			table.insert(var0_2, "effect")
 		end,
 		Snow_1 = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Snow_1")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Snow_1")
+			table.insert(var0_2, "object")
 		end,
 		Snow_2 = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Snow_2")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Snow_2")
+			table.insert(var0_2, "object")
 		end,
 		Snow_3 = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Snow_3")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Snow_3")
+			table.insert(var0_2, "object")
 		end,
 		Snow_4 = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Snow_4")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Snow_4")
+			table.insert(var0_2, "object")
 		end,
 		Snow_5 = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Snow_5")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Snow_5")
+			table.insert(var0_2, "object")
 
-			arg0.size = NewPos(2, 1)
-			arg0.hide = true
+			arg0_2.size = NewPos(2, 1)
+			arg0_2.hide = true
 		end,
 		Lamp_B1 = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Lamp_B1")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Lamp_B1")
+			table.insert(var0_2, "object")
 
-			arg0.hide = true
+			arg0_2.hide = true
 		end,
 		Lamp_B2 = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Lamp_B2")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Lamp_B2")
+			table.insert(var0_2, "object")
 
-			arg0.hide = true
+			arg0_2.hide = true
 		end,
 		Building_B = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Building_B")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Building_B")
+			table.insert(var0_2, "object")
 
-			arg0.size = NewPos(4, 3)
-			arg0.hide = true
+			arg0_2.size = NewPos(4, 3)
+			arg0_2.hide = true
 		end,
 		["1_Arbor_1"] = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetArbor)
-			table.insert(var0, "object/Arbor")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetArbor)
+			table.insert(var0_2, "object/Arbor")
+			table.insert(var0_2, "object")
 
-			arg0.size = NewPos(2, 2)
-			arg0.hide = true
+			arg0_2.size = NewPos(2, 2)
+			arg0_2.hide = true
 		end,
 		["1_Arbor_2"] = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetArbor)
-			table.insert(var0, "object/Arbor")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetArbor)
+			table.insert(var0_2, "object/Arbor")
+			table.insert(var0_2, "object")
 
-			arg0.size = NewPos(2, 2)
-			arg0.hide = true
+			arg0_2.size = NewPos(2, 2)
+			arg0_2.hide = true
 		end,
 		["1_Arbor_3"] = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetArbor)
-			table.insert(var0, "object/Arbor")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetArbor)
+			table.insert(var0_2, "object/Arbor")
+			table.insert(var0_2, "object")
 
-			arg0.size = NewPos(2, 2)
-			arg0.hide = true
+			arg0_2.size = NewPos(2, 2)
+			arg0_2.hide = true
 		end,
 		["1_Arbor_4"] = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetArbor)
-			table.insert(var0, "object/Arbor")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetArbor)
+			table.insert(var0_2, "object/Arbor")
+			table.insert(var0_2, "object")
 
-			arg0.size = NewPos(2, 2)
-			arg0.hide = true
+			arg0_2.size = NewPos(2, 2)
+			arg0_2.hide = true
 		end,
 		Dango_1 = function()
-			table.insert(var0, NenjuuGameNameSpace.TargetObject)
-			table.insert(var0, "object/Dango")
-			table.insert(var0, "object")
+			table.insert(var0_2, NenjuuGameNameSpace.TargetObject)
+			table.insert(var0_2, "object/Dango")
+			table.insert(var0_2, "object")
 		end
 	}, function()
-		warning("name error:" .. arg0.name)
-		table.insert(var0, false)
+		warning("name error:" .. arg0_2.name)
+		table.insert(var0_2, false)
 	end)
 
-	return unpack(var0)
+	return unpack(var0_2)
 end
 
-var0.SKILL_LEVEL_CONFIG = {
+var0_0.SKILL_LEVEL_CONFIG = {
 	ice = {
 		level = 1,
 		cost = {
@@ -776,29 +776,29 @@ var0.SKILL_LEVEL_CONFIG = {
 	}
 }
 
-function var0.GetSkillParam(arg0, arg1)
-	return var0.SKILL_LEVEL_CONFIG[arg0].param[arg1]
+function var0_0.GetSkillParam(arg0_68, arg1_68)
+	return var0_0.SKILL_LEVEL_CONFIG[arg0_68].param[arg1_68]
 end
 
-var0.ITEM_LIST = {
+var0_0.ITEM_LIST = {
 	"bomb",
 	"lantern"
 }
 
-function var0.ParsingElements(arg0)
-	local var0 = {
-		high = arg0[1] or 0,
-		count = arg0[2] or 0,
-		item = arg0[3] and var0.ITEM_LIST[arg0[3]] or nil
+function var0_0.ParsingElements(arg0_69)
+	local var0_69 = {
+		high = arg0_69[1] or 0,
+		count = arg0_69[2] or 0,
+		item = arg0_69[3] and var0_0.ITEM_LIST[arg0_69[3]] or nil
 	}
 
-	for iter0 = 1, 7 do
-		var0["stage_" .. iter0] = arg0[iter0 + 3] or 0
+	for iter0_69 = 1, 7 do
+		var0_69["stage_" .. iter0_69] = arg0_69[iter0_69 + 3] or 0
 	end
 
-	var0.level = {}
+	var0_69.level = {}
 
-	for iter1, iter2 in ipairs({
+	for iter1_69, iter2_69 in ipairs({
 		"bomb",
 		"lantern",
 		"ice",
@@ -807,13 +807,13 @@ function var0.ParsingElements(arg0)
 		"blessing",
 		"decoy"
 	}) do
-		var0.level[iter2] = arg0[iter1 + 10] or var0.SKILL_LEVEL_CONFIG[iter2].level
+		var0_69.level[iter2_69] = arg0_69[iter1_69 + 10] or var0_0.SKILL_LEVEL_CONFIG[iter2_69].level
 	end
 
-	return var0
+	return var0_69
 end
 
-var0.ABILITY_LIST = {
+var0_0.ABILITY_LIST = {
 	"teleport",
 	"rush",
 	"breakpassable",
@@ -824,4 +824,4 @@ var0.ABILITY_LIST = {
 	"stealth"
 }
 
-return var0
+return var0_0

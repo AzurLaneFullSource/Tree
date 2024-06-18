@@ -1,20 +1,20 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleFleetBuffFixSubRefLine = class("BattleFleetBuffFixSubRefLine", var0.Battle.BattleFleetBuffEffect)
-var0.Battle.BattleFleetBuffFixSubRefLine.__name = "BattleFleetBuffFixSubRefLine"
+var0_0.Battle.BattleFleetBuffFixSubRefLine = class("BattleFleetBuffFixSubRefLine", var0_0.Battle.BattleFleetBuffEffect)
+var0_0.Battle.BattleFleetBuffFixSubRefLine.__name = "BattleFleetBuffFixSubRefLine"
 
-local var1 = var0.Battle.BattleFleetBuffFixSubRefLine
+local var1_0 = var0_0.Battle.BattleFleetBuffFixSubRefLine
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.onAttach(arg0, arg1, arg2)
-	arg1:FixSubRefLine(arg0._tempData.arg_list.line)
+function var1_0.onAttach(arg0_2, arg1_2, arg2_2)
+	arg1_2:FixSubRefLine(arg0_2._tempData.arg_list.line)
 end
 
-function var1.onRemove(arg0, arg1, arg2)
-	arg1:FixSubRefLine()
+function var1_0.onRemove(arg0_3, arg1_3, arg2_3)
+	arg1_3:FixSubRefLine()
 end

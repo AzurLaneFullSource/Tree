@@ -1,21 +1,21 @@
-﻿local var0 = class("SnowballGameView", import("..BaseMiniGameView"))
-local var1 = {
+﻿local var0_0 = class("SnowballGameView", import("..BaseMiniGameView"))
+local var1_0 = {
 	-1920,
 	-1080,
 	1920,
 	1080
 }
-local var2 = "snowball_type_player"
-local var3 = "snowball_type_enemy"
-local var4 = "win"
-local var5 = "fail"
-local var6 = 3
-local var7 = 6
-local var8 = "charactor_type_other"
-local var9 = "charactor_type_enemy"
-local var10 = {
+local var2_0 = "snowball_type_player"
+local var3_0 = "snowball_type_enemy"
+local var4_0 = "win"
+local var5_0 = "fail"
+local var6_0 = 3
+local var7_0 = 6
+local var8_0 = "charactor_type_other"
+local var9_0 = "charactor_type_enemy"
+local var10_0 = {
 	charactor_type_other = {
-		type = var8,
+		type = var8_0,
 		skin_names = {
 			"bailu",
 			"huangjia",
@@ -28,7 +28,7 @@ local var10 = {
 		}
 	},
 	charactor_type_enemy = {
-		type = var9,
+		type = var9_0,
 		skin_names = {
 			"enemy1",
 			"enemy2",
@@ -47,20 +47,20 @@ local var10 = {
 		}
 	}
 }
-local var11 = 3
-local var12 = 1
-local var13 = 18
-local var14 = 30
-local var15 = 3
-local var16 = 100
-local var17 = {
+local var11_0 = 3
+local var12_0 = 1
+local var13_0 = 18
+local var14_0 = 30
+local var15_0 = 3
+local var16_0 = 100
+local var17_0 = {
 	12,
 	14,
 	15,
 	16,
 	17
 }
-local var18 = {
+local var18_0 = {
 	{
 		3,
 		5
@@ -82,7 +82,7 @@ local var18 = {
 		2
 	}
 }
-local var19 = {
+local var19_0 = {
 	{
 		90,
 		10,
@@ -109,18 +109,18 @@ local var19 = {
 		20
 	}
 }
-local var20 = {
+local var20_0 = {
 	0,
 	30,
 	60,
 	90,
 	120
 }
-local var21 = 1.5
-local var22 = {
+local var21_0 = 1.5
+local var22_0 = {
 	{
 		weight = 70,
-		type = var9,
+		type = var9_0,
 		indexs = {
 			1,
 			2,
@@ -140,7 +140,7 @@ local var22 = {
 	},
 	{
 		weight = 30,
-		type = var8,
+		type = var8_0,
 		indexs = {
 			4,
 			5,
@@ -152,105 +152,105 @@ local var22 = {
 		}
 	}
 }
-local var23 = "event:/ui/ddldaoshu2"
-local var24 = "event:/ui/sou"
-local var25 = "event:/ui/xueqiu"
+local var23_0 = "event:/ui/ddldaoshu2"
+local var24_0 = "event:/ui/sou"
+local var25_0 = "event:/ui/xueqiu"
 
-local function var26(arg0)
-	print(arg0)
+local function var26_0(arg0_1)
+	print(arg0_1)
 end
 
-local function var27(arg0)
-	local var0 = {}
-	local var1 = 1
+local function var27_0(arg0_2)
+	local var0_2 = {}
+	local var1_2 = 1
 
-	function var0.Ctor(arg0)
-		arg0._tf = arg0
-		arg0.reloadProgress = findTF(arg0._tf, "reloadProgress")
-		arg0.playerAnimator = GetComponent(findTF(arg0._tf, "player"), typeof(Animator))
-		arg0.playerDft = GetComponent(findTF(arg0._tf, "player"), typeof(DftAniEvent))
+	function var0_2.Ctor(arg0_3)
+		arg0_3._tf = arg0_2
+		arg0_3.reloadProgress = findTF(arg0_3._tf, "reloadProgress")
+		arg0_3.playerAnimator = GetComponent(findTF(arg0_3._tf, "player"), typeof(Animator))
+		arg0_3.playerDft = GetComponent(findTF(arg0_3._tf, "player"), typeof(DftAniEvent))
 
-		arg0.playerDft:SetStartEvent(function()
-			arg0.playerAnimator:ResetTrigger("throw")
-			arg0.playerAnimator:SetBool("snowball", true)
+		arg0_3.playerDft:SetStartEvent(function()
+			arg0_3.playerAnimator:ResetTrigger("throw")
+			arg0_3.playerAnimator:SetBool("snowball", true)
 		end)
-		arg0.playerDft:SetTriggerEvent(function()
-			arg0:throwSnowball()
+		arg0_3.playerDft:SetTriggerEvent(function()
+			arg0_3:throwSnowball()
 		end)
-		arg0.playerDft:SetEndEvent(function()
+		arg0_3.playerDft:SetEndEvent(function()
 			return
 		end)
 
-		arg0.heartPos = findTF(arg0._tf, "heartPos")
-		arg0.tplHeart = findTF(arg0._tf, "heartPos/tplHeart")
-		arg0.collider = findTF(arg0._tf, "collider")
-		arg0.throwCallback = nil
-		arg0.damageCallback = nil
-		arg0.gameOverCallback = nil
+		arg0_3.heartPos = findTF(arg0_3._tf, "heartPos")
+		arg0_3.tplHeart = findTF(arg0_3._tf, "heartPos/tplHeart")
+		arg0_3.collider = findTF(arg0_3._tf, "collider")
+		arg0_3.throwCallback = nil
+		arg0_3.damageCallback = nil
+		arg0_3.gameOverCallback = nil
 	end
 
-	function var0.prepare(arg0)
-		arg0._life = var11
-		arg0._reloadTime = nil
-		arg0._skillTime = nil
-		arg0.stepTime = 0
+	function var0_2.prepare(arg0_7)
+		arg0_7._life = var11_0
+		arg0_7._reloadTime = nil
+		arg0_7._skillTime = nil
+		arg0_7.stepTime = 0
 
-		arg0.playerAnimator:ResetTrigger("skill")
-		arg0.playerAnimator:ResetTrigger("throw")
-		arg0.playerAnimator:ResetTrigger("damage")
-		arg0.playerAnimator:ResetTrigger("reload")
-		arg0.playerAnimator:ResetTrigger("fail")
-		arg0.playerAnimator:ResetTrigger("win")
-		arg0.playerAnimator:ResetTrigger("fail")
-		arg0.playerAnimator:SetTrigger("restart")
-		arg0.playerAnimator:ResetTrigger("restart")
-		arg0:Clear()
+		arg0_7.playerAnimator:ResetTrigger("skill")
+		arg0_7.playerAnimator:ResetTrigger("throw")
+		arg0_7.playerAnimator:ResetTrigger("damage")
+		arg0_7.playerAnimator:ResetTrigger("reload")
+		arg0_7.playerAnimator:ResetTrigger("fail")
+		arg0_7.playerAnimator:ResetTrigger("win")
+		arg0_7.playerAnimator:ResetTrigger("fail")
+		arg0_7.playerAnimator:SetTrigger("restart")
+		arg0_7.playerAnimator:ResetTrigger("restart")
+		arg0_7:Clear()
 	end
 
-	function var0.step(arg0)
-		arg0.stepTime = arg0.stepTime + Time.deltaTime
+	function var0_2.step(arg0_8)
+		arg0_8.stepTime = arg0_8.stepTime + Time.deltaTime
 
-		if not arg0._reloadTime then
-			arg0._reloadTime = arg0.stepTime
+		if not arg0_8._reloadTime then
+			arg0_8._reloadTime = arg0_8.stepTime
 		end
 
-		if not arg0.playerAnimator:GetBool("snowball") and arg0.stepTime - arg0._reloadTime > var12 then
-			arg0:reload()
+		if not arg0_8.playerAnimator:GetBool("snowball") and arg0_8.stepTime - arg0_8._reloadTime > var12_0 then
+			arg0_8:reload()
 		end
 
-		if not arg0.playerAnimator:GetBool("snowball") and not isActive(arg0.reloadProgress) then
-			setActive(arg0.reloadProgress, true)
-		elseif arg0.playerAnimator:GetBool("snowball") and isActive(arg0.reloadProgress) then
-			setActive(arg0.reloadProgress, false)
+		if not arg0_8.playerAnimator:GetBool("snowball") and not isActive(arg0_8.reloadProgress) then
+			setActive(arg0_8.reloadProgress, true)
+		elseif arg0_8.playerAnimator:GetBool("snowball") and isActive(arg0_8.reloadProgress) then
+			setActive(arg0_8.reloadProgress, false)
 		end
 
-		local var0 = (arg0.stepTime - arg0._reloadTime) / var12
+		local var0_8 = (arg0_8.stepTime - arg0_8._reloadTime) / var12_0
 
-		if var0 > 1 then
-			var0 = 1
+		if var0_8 > 1 then
+			var0_8 = 1
 		end
 
-		setSlider(arg0.reloadProgress, 0, 1, var0)
+		setSlider(arg0_8.reloadProgress, 0, 1, var0_8)
 	end
 
-	function var0.reload(arg0)
-		arg0.playerAnimator:SetTrigger("reload")
+	function var0_2.reload(arg0_9)
+		arg0_9.playerAnimator:SetTrigger("reload")
 	end
 
-	function var0.skill(arg0)
-		if arg0._skillTime and arg0.stepTime - arg0._skillTime < var14 then
+	function var0_2.skill(arg0_10)
+		if arg0_10._skillTime and arg0_10.stepTime - arg0_10._skillTime < var14_0 then
 			return
 		end
 
-		arg0._skillTime = arg0.stepTime
-		arg0._reloadTime = arg0.stepTime
+		arg0_10._skillTime = arg0_10.stepTime
+		arg0_10._reloadTime = arg0_10.stepTime
 
-		arg0.playerAnimator:SetTrigger("skill")
+		arg0_10.playerAnimator:SetTrigger("skill")
 	end
 
-	function var0.throw(arg0)
-		if arg0.playerAnimator:GetBool("snowball") then
-			arg0.playerAnimator:SetTrigger("throw")
+	function var0_2.throw(arg0_11)
+		if arg0_11.playerAnimator:GetBool("snowball") then
+			arg0_11.playerAnimator:SetTrigger("throw")
 
 			return true
 		end
@@ -258,166 +258,166 @@ local function var27(arg0)
 		return false
 	end
 
-	function var0.damage(arg0)
-		if arg0._life == 0 then
+	function var0_2.damage(arg0_12)
+		if arg0_12._life == 0 then
 			return
 		end
 
-		arg0._life = arg0._life - 1
+		arg0_12._life = arg0_12._life - 1
 
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var25)
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var25_0)
 
-		if arg0.damageCallback then
-			arg0.damageCallback()
+		if arg0_12.damageCallback then
+			arg0_12.damageCallback()
 		end
 
-		if arg0._life > 0 then
-			arg0.playerAnimator:SetTrigger("damage")
-			arg0:createHeart()
+		if arg0_12._life > 0 then
+			arg0_12.playerAnimator:SetTrigger("damage")
+			arg0_12:createHeart()
 		else
-			arg0.playerAnimator:SetTrigger("fail")
+			arg0_12.playerAnimator:SetTrigger("fail")
 
-			if arg0.gameOverCallback then
-				arg0.gameOverCallback()
+			if arg0_12.gameOverCallback then
+				arg0_12.gameOverCallback()
 			end
 		end
 	end
 
-	function var0.createHeart(arg0)
-		local var0 = tf(instantiate(arg0.tplHeart))
+	function var0_2.createHeart(arg0_13)
+		local var0_13 = tf(instantiate(arg0_13.tplHeart))
 
-		GetComponent(var0, typeof(DftAniEvent)):SetEndEvent(function()
-			Destroy(var0)
+		GetComponent(var0_13, typeof(DftAniEvent)):SetEndEvent(function()
+			Destroy(var0_13)
 		end)
-		setParent(var0, arg0.heartPos)
-		setActive(var0, true)
+		setParent(var0_13, arg0_13.heartPos)
+		setActive(var0_13, true)
 	end
 
-	function var0.setSpeed(arg0, arg1)
-		arg0.playerAnimator.speed = arg1
+	function var0_2.setSpeed(arg0_15, arg1_15)
+		arg0_15.playerAnimator.speed = arg1_15
 	end
 
-	function var0.throwSnowball(arg0)
-		if arg0.throwCallback then
-			local var0 = findTF(arg0._tf, "throwPos").position
+	function var0_2.throwSnowball(arg0_16)
+		if arg0_16.throwCallback then
+			local var0_16 = findTF(arg0_16._tf, "throwPos").position
 
-			arg0.throwCallback(var0)
+			arg0_16.throwCallback(var0_16)
 		end
 
-		arg0.playerAnimator:SetBool("snowball", false)
+		arg0_16.playerAnimator:SetBool("snowball", false)
 
-		arg0._reloadTime = arg0.stepTime
+		arg0_16._reloadTime = arg0_16.stepTime
 	end
 
-	function var0.move(arg0, arg1)
-		arg0._tf.anchoredPosition = arg1
+	function var0_2.move(arg0_17, arg1_17)
+		arg0_17._tf.anchoredPosition = arg1_17
 	end
 
-	function var0.settlement(arg0, arg1)
-		if arg1 == var5 then
-			arg0.playerAnimator:SetTrigger("fail")
-		elseif arg1 == var4 then
-			arg0.playerAnimator:SetTrigger("win")
+	function var0_2.settlement(arg0_18, arg1_18)
+		if arg1_18 == var5_0 then
+			arg0_18.playerAnimator:SetTrigger("fail")
+		elseif arg1_18 == var4_0 then
+			arg0_18.playerAnimator:SetTrigger("win")
 		end
 	end
 
-	function var0.stop(arg0)
-		arg0.playerAnimator.speed = 0
+	function var0_2.stop(arg0_19)
+		arg0_19.playerAnimator.speed = 0
 	end
 
-	function var0.resume(arg0)
-		arg0.playerAnimator.speed = 1
+	function var0_2.resume(arg0_20)
+		arg0_20.playerAnimator.speed = 1
 	end
 
-	function var0.getTargetPosition(arg0)
-		return findTF(arg0._tf, "targetPos").position
+	function var0_2.getTargetPosition(arg0_21)
+		return findTF(arg0_21._tf, "targetPos").position
 	end
 
-	function var0.getColliderBound(arg0)
-		return arg0.collider.position, arg0.collider.sizeDelta
+	function var0_2.getColliderBound(arg0_22)
+		return arg0_22.collider.position, arg0_22.collider.sizeDelta
 	end
 
-	function var0.getLife(arg0)
-		return arg0._life
+	function var0_2.getLife(arg0_23)
+		return arg0_23._life
 	end
 
-	function var0.Clear(arg0)
-		arg0._life = var11
+	function var0_2.Clear(arg0_24)
+		arg0_24._life = var11_0
 	end
 
-	var0:Ctor()
+	var0_2:Ctor()
 
-	return var0
+	return var0_2
 end
 
-local function var28(arg0, arg1, arg2, arg3, arg4)
-	local var0 = {
-		_tf = arg0,
-		_moveDirect = arg1,
-		_targetPosition = arg2,
-		_type = arg3,
-		_targetIndex = arg4
+local function var28_0(arg0_25, arg1_25, arg2_25, arg3_25, arg4_25)
+	local var0_25 = {
+		_tf = arg0_25,
+		_moveDirect = arg1_25,
+		_targetPosition = arg2_25,
+		_type = arg3_25,
+		_targetIndex = arg4_25
 	}
 
-	var0._id = nil
+	var0_25._id = nil
 
-	function var0.Ctor(arg0)
-		arg0._animator = GetComponent(findTF(arg0._tf, "snowball"), typeof(Animator))
-		arg0.snowballDft = GetComponent(findTF(arg0._tf, "snowball"), typeof(DftAniEvent))
+	function var0_25.Ctor(arg0_26)
+		arg0_26._animator = GetComponent(findTF(arg0_26._tf, "snowball"), typeof(Animator))
+		arg0_26.snowballDft = GetComponent(findTF(arg0_26._tf, "snowball"), typeof(DftAniEvent))
 
-		arg0.snowballDft:SetEndEvent(function()
-			arg0._removeFlag = true
+		arg0_26.snowballDft:SetEndEvent(function()
+			arg0_26._removeFlag = true
 
-			arg0:dispose()
+			arg0_26:dispose()
 		end)
 	end
 
-	function var0.setId(arg0, arg1)
-		arg0._id = arg1
+	function var0_25.setId(arg0_28, arg1_28)
+		arg0_28._id = arg1_28
 	end
 
-	function var0.getId(arg0, arg1)
-		return arg0._id
+	function var0_25.getId(arg0_29, arg1_29)
+		return arg0_29._id
 	end
 
-	function var0.setPosition(arg0, arg1)
-		arg0._tf.anchoredPosition = arg1
-		arg0._tf.localEulerAngles = Vector3(0, 0, math.atan(arg1.y / arg1.x) * math.rad2Deg)
+	function var0_25.setPosition(arg0_30, arg1_30)
+		arg0_30._tf.anchoredPosition = arg1_30
+		arg0_30._tf.localEulerAngles = Vector3(0, 0, math.atan(arg1_25.y / arg1_25.x) * math.rad2Deg)
 	end
 
-	function var0.hit(arg0)
-		arg0._hitFlag = true
+	function var0_25.hit(arg0_31)
+		arg0_31._hitFlag = true
 
-		arg0._animator:SetTrigger("hit")
+		arg0_31._animator:SetTrigger("hit")
 	end
 
-	function var0.move(arg0)
-		local var0 = Time.deltaTime / 0.015
+	function var0_25.move(arg0_32)
+		local var0_32 = Time.deltaTime / 0.015
 
-		if var0 > 2 then
-			var0 = 1
+		if var0_32 > 2 then
+			var0_32 = 1
 		end
 
-		local var1 = arg0._tf.anchoredPosition
+		local var1_32 = arg0_32._tf.anchoredPosition
 
-		if arg0._hitFlag then
-			var0 = var0 / 8
+		if arg0_32._hitFlag then
+			var0_32 = var0_32 / 8
 		end
 
-		var1.x = var1.x + arg0._moveDirect.x * var0
-		var1.y = var1.y + arg0._moveDirect.y * var0
-		arg0._tf.anchoredPosition = var1
+		var1_32.x = var1_32.x + arg0_32._moveDirect.x * var0_32
+		var1_32.y = var1_32.y + arg0_32._moveDirect.y * var0_32
+		arg0_32._tf.anchoredPosition = var1_32
 	end
 
-	function var0.getRemoveFlag(arg0)
-		return arg0._removeFlag
+	function var0_25.getRemoveFlag(arg0_33)
+		return arg0_33._removeFlag
 	end
 
-	function var0.checkOutScene(arg0)
-		local var0 = arg0._tf.anchoredPosition
+	function var0_25.checkOutScene(arg0_34)
+		local var0_34 = arg0_34._tf.anchoredPosition
 
-		if var0.x < var1[1] or var0.x > var1[3] or var0.y < var1[2] or var0.y > var1[4] then
-			arg0:dispose()
+		if var0_34.x < var1_0[1] or var0_34.x > var1_0[3] or var0_34.y < var1_0[2] or var0_34.y > var1_0[4] then
+			arg0_34:dispose()
 
 			return true
 		end
@@ -425,1437 +425,1437 @@ local function var28(arg0, arg1, arg2, arg3, arg4)
 		return false
 	end
 
-	function var0.getAnchoredPos(arg0)
-		return arg0._tf.anchoredPosition
+	function var0_25.getAnchoredPos(arg0_35)
+		return arg0_35._tf.anchoredPosition
 	end
 
-	function var0.getTargetPos(arg0)
-		return arg0.tar
+	function var0_25.getTargetPos(arg0_36)
+		return arg0_36.tar
 	end
 
-	function var0.getType(arg0)
-		return arg0._type
+	function var0_25.getType(arg0_37)
+		return arg0_37._type
 	end
 
-	function var0.getIndex(arg0)
-		return arg0._targetIndex
+	function var0_25.getIndex(arg0_38)
+		return arg0_38._targetIndex
 	end
 
-	function var0.checkArrived(arg0, arg1, arg2)
-		if arg0._hitFlag then
+	function var0_25.checkArrived(arg0_39, arg1_39, arg2_39)
+		if arg0_39._hitFlag then
 			return
 		end
 
-		local var0 = arg0:getAnchoredPos()
+		local var0_39 = arg0_39:getAnchoredPos()
 
-		if var0.x > arg1.x and var0.x < arg1.x + arg2.x and var0.y > arg1.y and var0.y < arg1.y + arg2.y then
+		if var0_39.x > arg1_39.x and var0_39.x < arg1_39.x + arg2_39.x and var0_39.y > arg1_39.y and var0_39.y < arg1_39.y + arg2_39.y then
 			return true
 		end
 
 		return false
 	end
 
-	function var0.getArrived(arg0)
-		if arg0._hitFlag then
+	function var0_25.getArrived(arg0_40)
+		if arg0_40._hitFlag then
 			return
 		end
 
-		local var0 = arg0:getAnchoredPos()
+		local var0_40 = arg0_40:getAnchoredPos()
 
-		if math.abs(arg0._targetPosition.x - var0.x) <= math.abs(arg0._moveDirect.x * 2) and math.abs(arg0._targetPosition.y - var0.y) <= math.abs(arg0._moveDirect.y * 2) then
+		if math.abs(arg0_40._targetPosition.x - var0_40.x) <= math.abs(arg0_40._moveDirect.x * 2) and math.abs(arg0_40._targetPosition.y - var0_40.y) <= math.abs(arg0_40._moveDirect.y * 2) then
 			return true
 		end
 
 		return false
 	end
 
-	function var0.dispose(arg0)
-		if arg0._tf then
-			Destroy(arg0._tf)
+	function var0_25.dispose(arg0_41)
+		if arg0_41._tf then
+			Destroy(arg0_41._tf)
 
-			arg0._tf = nil
+			arg0_41._tf = nil
 		end
 	end
 
-	var0:Ctor()
+	var0_25:Ctor()
 
-	return var0
+	return var0_25
 end
 
-local function var29(arg0, arg1)
-	local var0 = {
-		_snowballContainer = arg0,
-		_tplSnowball = arg1,
+local function var29_0(arg0_42, arg1_42)
+	local var0_42 = {
+		_snowballContainer = arg0_42,
+		_tplSnowball = arg1_42,
 		snowballs = {}
 	}
 
-	var0._snowBallId = 0
+	var0_42._snowBallId = 0
 
-	function var0.createSnowball(arg0, arg1, arg2, arg3, arg4, arg5)
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var24)
+	function var0_42.createSnowball(arg0_43, arg1_43, arg2_43, arg3_43, arg4_43, arg5_43)
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var24_0)
 
-		local var0 = tf(Instantiate(arg0._tplSnowball))
+		local var0_43 = tf(Instantiate(arg0_43._tplSnowball))
 
-		SetParent(var0, arg0._snowballContainer)
-		setActive(var0, true)
+		SetParent(var0_43, arg0_43._snowballContainer)
+		setActive(var0_43, true)
 
-		local var1 = arg3 * (arg2.x > arg1.x and 1 or -1)
-		local var2 = (arg2.y - arg1.y) / (arg2.x - arg1.x) * var1
+		local var1_43 = arg3_43 * (arg2_43.x > arg1_43.x and 1 or -1)
+		local var2_43 = (arg2_43.y - arg1_43.y) / (arg2_43.x - arg1_43.x) * var1_43
 
-		if arg2.x < arg1.x then
-			var0.localScale = Vector3(-1, 1, 1)
+		if arg2_43.x < arg1_43.x then
+			var0_43.localScale = Vector3(-1, 1, 1)
 		end
 
-		local var3 = Vector3(var1, var2, 0)
-		local var4 = var28(var0, var3, arg2, arg4, arg5)
+		local var3_43 = Vector3(var1_43, var2_43, 0)
+		local var4_43 = var28_0(var0_43, var3_43, arg2_43, arg4_43, arg5_43)
 
-		var4:setId(arg0:getSnowBallId())
-		var4:setPosition(arg1)
-		table.insert(arg0.snowballs, var4)
+		var4_43:setId(arg0_43:getSnowBallId())
+		var4_43:setPosition(arg1_43)
+		table.insert(arg0_43.snowballs, var4_43)
 	end
 
-	function var0.prepare(arg0)
-		for iter0 = #arg0.snowballs, 1, -1 do
-			local var0 = arg0.snowballs[iter0]
+	function var0_42.prepare(arg0_44)
+		for iter0_44 = #arg0_44.snowballs, 1, -1 do
+			local var0_44 = arg0_44.snowballs[iter0_44]
 
-			table.remove(arg0.snowballs, iter0)
-			var0:dispose()
+			table.remove(arg0_44.snowballs, iter0_44)
+			var0_44:dispose()
 		end
 	end
 
-	function var0.step(arg0)
-		for iter0 = #arg0.snowballs, 1, -1 do
-			local var0 = arg0.snowballs[iter0]
+	function var0_42.step(arg0_45)
+		for iter0_45 = #arg0_45.snowballs, 1, -1 do
+			local var0_45 = arg0_45.snowballs[iter0_45]
 
-			if var0:getRemoveFlag() or var0:checkOutScene() then
-				table.remove(arg0.snowballs, iter0)
+			if var0_45:getRemoveFlag() or var0_45:checkOutScene() then
+				table.remove(arg0_45.snowballs, iter0_45)
 			else
-				var0:move()
+				var0_45:move()
 			end
 		end
 	end
 
-	function var0.clearEnemySnowball(arg0)
-		for iter0 = #arg0.snowballs, 1, -1 do
-			if arg0.snowballs[iter0]:getType() == var3 then
-				arg0.snowballs[iter0]:hit()
+	function var0_42.clearEnemySnowball(arg0_46)
+		for iter0_46 = #arg0_46.snowballs, 1, -1 do
+			if arg0_46.snowballs[iter0_46]:getType() == var3_0 then
+				arg0_46.snowballs[iter0_46]:hit()
 			end
 		end
 	end
 
-	function var0.snowballHit(arg0, arg1)
-		if not arg1 then
+	function var0_42.snowballHit(arg0_47, arg1_47)
+		if not arg1_47 then
 			return
 		end
 
-		for iter0 = #arg0.snowballs, 1, -1 do
-			if arg0.snowballs[iter0]:getId() == arg1 then
-				arg0.snowballs[iter0]:hit()
+		for iter0_47 = #arg0_47.snowballs, 1, -1 do
+			if arg0_47.snowballs[iter0_47]:getId() == arg1_47 then
+				arg0_47.snowballs[iter0_47]:hit()
 			end
 		end
 	end
 
-	function var0.getSnowBallId(arg0)
-		arg0._snowBallId = arg0._snowBallId + 1
+	function var0_42.getSnowBallId(arg0_48)
+		arg0_48._snowBallId = arg0_48._snowBallId + 1
 
-		return arg0._snowBallId
+		return arg0_48._snowBallId
 	end
 
-	function var0.getSnowballs(arg0)
-		return Clone(arg0.snowballs)
+	function var0_42.getSnowballs(arg0_49)
+		return Clone(arg0_49.snowballs)
 	end
 
-	return var0
+	return var0_42
 end
 
-local function var30(arg0, arg1, arg2, arg3, arg4)
-	local var0 = {
-		_tf = arg1,
-		_index = arg2,
-		_data = arg0,
-		_name = arg3,
-		_score = arg4,
-		Ctor = function(arg0)
-			arg0.leaveCallback = nil
-			arg0.collider = findTF(arg0._tf, "collider")
-			arg0.otherAnimator = GetComponent(findTF(arg0._tf, "char"), typeof(Animator))
-			arg0.otherDft = GetComponent(findTF(arg0._tf, "char"), typeof(DftAniEvent))
+local function var30_0(arg0_50, arg1_50, arg2_50, arg3_50, arg4_50)
+	local var0_50 = {
+		_tf = arg1_50,
+		_index = arg2_50,
+		_data = arg0_50,
+		_name = arg3_50,
+		_score = arg4_50,
+		Ctor = function(arg0_51)
+			arg0_51.leaveCallback = nil
+			arg0_51.collider = findTF(arg0_51._tf, "collider")
+			arg0_51.otherAnimator = GetComponent(findTF(arg0_51._tf, "char"), typeof(Animator))
+			arg0_51.otherDft = GetComponent(findTF(arg0_51._tf, "char"), typeof(DftAniEvent))
 
-			arg0.otherDft:SetEndEvent(function()
-				if arg0.leaveCallback then
-					arg0.leaveCallback()
+			arg0_51.otherDft:SetEndEvent(function()
+				if arg0_51.leaveCallback then
+					arg0_51.leaveCallback()
 				end
 
-				arg0:dispose()
+				arg0_51:dispose()
 			end)
 
-			arg0._leaveTime = math.random(arg0._data.time[1], arg0._data.time[2])
+			arg0_51._leaveTime = math.random(arg0_51._data.time[1], arg0_51._data.time[2])
 		end,
-		step = function(arg0)
-			if arg0.removeFlag then
+		step = function(arg0_53)
+			if arg0_53.removeFlag then
 				return
 			end
 
-			arg0._leaveTime = arg0._leaveTime - Time.deltaTime
+			arg0_53._leaveTime = arg0_53._leaveTime - Time.deltaTime
 		end,
-		getColliderBound = function(arg0)
-			return arg0.collider.position, arg0.collider.sizeDelta
+		getColliderBound = function(arg0_54)
+			return arg0_54.collider.position, arg0_54.collider.sizeDelta
 		end,
-		apear = function(arg0)
-			arg0.otherAnimator:SetTrigger("apear")
+		apear = function(arg0_55)
+			arg0_55.otherAnimator:SetTrigger("apear")
 		end,
-		damage = function(arg0)
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var25)
-			arg0.otherAnimator:SetTrigger("damage")
+		damage = function(arg0_56)
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var25_0)
+			arg0_56.otherAnimator:SetTrigger("damage")
 		end,
-		leave = function(arg0)
-			arg0.otherAnimator:SetTrigger("leave")
+		leave = function(arg0_57)
+			arg0_57.otherAnimator:SetTrigger("leave")
 		end,
-		getLeaveTime = function(arg0)
-			return arg0._leaveTime
+		getLeaveTime = function(arg0_58)
+			return arg0_58._leaveTime
 		end,
-		getScore = function(arg0)
-			return arg0._score
+		getScore = function(arg0_59)
+			return arg0_59._score
 		end,
-		getType = function(arg0)
-			return arg0._data.type
+		getType = function(arg0_60)
+			return arg0_60._data.type
 		end,
-		getName = function(arg0)
-			return arg0._name
+		getName = function(arg0_61)
+			return arg0_61._name
 		end,
-		setSpeed = function(arg0, arg1)
-			arg0.otherAnimator.speed = arg1
+		setSpeed = function(arg0_62, arg1_62)
+			arg0_62.otherAnimator.speed = arg1_62
 		end,
-		getPosition = function(arg0)
-			return arg0._tf.position
+		getPosition = function(arg0_63)
+			return arg0_63._tf.position
 		end,
-		dispose = function(arg0)
-			arg0.leaveCallback = nil
+		dispose = function(arg0_64)
+			arg0_64.leaveCallback = nil
 
-			if arg0._tf then
-				Destroy(arg0._tf)
+			if arg0_64._tf then
+				Destroy(arg0_64._tf)
 
-				arg0._tf = nil
+				arg0_64._tf = nil
 			end
 
-			arg0.removeFlag = true
+			arg0_64.removeFlag = true
 		end
 	}
 
-	var0:Ctor()
+	var0_50:Ctor()
 
-	return var0
+	return var0_50
 end
 
-local function var31(arg0, arg1, arg2, arg3, arg4)
-	local var0 = {
-		_tf = arg1,
-		_index = arg2,
-		_data = arg0,
-		_name = arg3,
-		_score = arg4,
-		Ctor = function(arg0)
-			arg0.leaveCallback = nil
-			arg0.enemyAnimator = GetComponent(findTF(arg0._tf, "char"), typeof(Animator))
-			arg0.enemyDft = GetComponent(findTF(arg0._tf, "char"), typeof(DftAniEvent))
-			arg0.collider = findTF(arg0._tf, "collider")
-			arg0.throwPos = findTF(arg0._tf, "throwPos")
+local function var31_0(arg0_65, arg1_65, arg2_65, arg3_65, arg4_65)
+	local var0_65 = {
+		_tf = arg1_65,
+		_index = arg2_65,
+		_data = arg0_65,
+		_name = arg3_65,
+		_score = arg4_65,
+		Ctor = function(arg0_66)
+			arg0_66.leaveCallback = nil
+			arg0_66.enemyAnimator = GetComponent(findTF(arg0_66._tf, "char"), typeof(Animator))
+			arg0_66.enemyDft = GetComponent(findTF(arg0_66._tf, "char"), typeof(DftAniEvent))
+			arg0_66.collider = findTF(arg0_66._tf, "collider")
+			arg0_66.throwPos = findTF(arg0_66._tf, "throwPos")
 
-			arg0.enemyDft:SetEndEvent(function()
-				if arg0.leaveCallback then
-					arg0.leaveCallback()
+			arg0_66.enemyDft:SetEndEvent(function()
+				if arg0_66.leaveCallback then
+					arg0_66.leaveCallback()
 				end
 
-				arg0:dispose()
+				arg0_66:dispose()
 			end)
-			arg0.enemyDft:SetTriggerEvent(function()
-				if arg0._throwCallback then
-					arg0._throwCallback(arg0.throwPos.position, arg0._index)
+			arg0_66.enemyDft:SetTriggerEvent(function()
+				if arg0_66._throwCallback then
+					arg0_66._throwCallback(arg0_66.throwPos.position, arg0_66._index)
 				end
 			end)
 
-			arg0._leaveTime = math.random(arg0._data.time[1], arg0._data.time[2])
-			arg0._activeTime = 0
+			arg0_66._leaveTime = math.random(arg0_66._data.time[1], arg0_66._data.time[2])
+			arg0_66._activeTime = 0
 		end
 	}
 
-	function var0.setThrowCallback(arg0, arg1)
-		var0._throwCallback = arg1
+	function var0_65.setThrowCallback(arg0_69, arg1_69)
+		var0_65._throwCallback = arg1_69
 	end
 
-	function var0.getColliderBound(arg0)
-		return arg0.collider.position, arg0.collider.sizeDelta
+	function var0_65.getColliderBound(arg0_70)
+		return arg0_70.collider.position, arg0_70.collider.sizeDelta
 	end
 
-	function var0.step(arg0)
-		if arg0.removeFlag then
+	function var0_65.step(arg0_71)
+		if arg0_71.removeFlag then
 			return
 		end
 
-		arg0._leaveTime = arg0._leaveTime - Time.deltaTime
-		arg0._activeTime = arg0._activeTime + Time.deltaTime
+		arg0_71._leaveTime = arg0_71._leaveTime - Time.deltaTime
+		arg0_71._activeTime = arg0_71._activeTime + Time.deltaTime
 
-		if arg0._activeTime > var21 then
-			arg0._activeTime = 0
+		if arg0_71._activeTime > var21_0 then
+			arg0_71._activeTime = 0
 
-			if arg0:getSnowball() then
-				arg0:throw()
-				arg0.enemyAnimator:SetBool("snowball", false)
+			if arg0_71:getSnowball() then
+				arg0_71:throw()
+				arg0_71.enemyAnimator:SetBool("snowball", false)
 			else
-				arg0.enemyAnimator:SetBool("snowball", true)
-				arg0:reload()
+				arg0_71.enemyAnimator:SetBool("snowball", true)
+				arg0_71:reload()
 			end
 		end
 	end
 
-	function var0.apear(arg0)
-		arg0.enemyAnimator:SetTrigger("apear")
+	function var0_65.apear(arg0_72)
+		arg0_72.enemyAnimator:SetTrigger("apear")
 	end
 
-	function var0.damage(arg0)
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var25)
-		arg0.enemyAnimator:SetTrigger("damage")
+	function var0_65.damage(arg0_73)
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var25_0)
+		arg0_73.enemyAnimator:SetTrigger("damage")
 	end
 
-	function var0.leave(arg0)
-		arg0.enemyAnimator:SetTrigger("leave")
+	function var0_65.leave(arg0_74)
+		arg0_74.enemyAnimator:SetTrigger("leave")
 	end
 
-	function var0.reload(arg0)
-		arg0.enemyAnimator:SetTrigger("reload")
+	function var0_65.reload(arg0_75)
+		arg0_75.enemyAnimator:SetTrigger("reload")
 	end
 
-	function var0.throw(arg0)
-		arg0.enemyAnimator:SetTrigger("throw")
+	function var0_65.throw(arg0_76)
+		arg0_76.enemyAnimator:SetTrigger("throw")
 	end
 
-	function var0.hit(arg0)
-		arg0.enemyAnimator:SetTrigger("hit")
+	function var0_65.hit(arg0_77)
+		arg0_77.enemyAnimator:SetTrigger("hit")
 	end
 
-	function var0.getSnowball(arg0)
-		return arg0.enemyAnimator:GetBool("snowball")
+	function var0_65.getSnowball(arg0_78)
+		return arg0_78.enemyAnimator:GetBool("snowball")
 	end
 
-	function var0.getLeaveTime(arg0)
-		return arg0._leaveTime
+	function var0_65.getLeaveTime(arg0_79)
+		return arg0_79._leaveTime
 	end
 
-	function var0.getType(arg0)
-		return arg0._data.type
+	function var0_65.getType(arg0_80)
+		return arg0_80._data.type
 	end
 
-	function var0.getScore(arg0)
-		return arg0._score
+	function var0_65.getScore(arg0_81)
+		return arg0_81._score
 	end
 
-	function var0.setSpeed(arg0, arg1)
-		arg0.enemyAnimator.speed = arg1
+	function var0_65.setSpeed(arg0_82, arg1_82)
+		arg0_82.enemyAnimator.speed = arg1_82
 	end
 
-	function var0.getName(arg0)
-		return arg0._name
+	function var0_65.getName(arg0_83)
+		return arg0_83._name
 	end
 
-	function var0.getPosition(arg0)
-		return arg0._tf.position
+	function var0_65.getPosition(arg0_84)
+		return arg0_84._tf.position
 	end
 
-	function var0.dispose(arg0)
-		arg0.leaveCallback = nil
+	function var0_65.dispose(arg0_85)
+		arg0_85.leaveCallback = nil
 
-		if arg0._tf then
-			Destroy(arg0._tf)
+		if arg0_85._tf then
+			Destroy(arg0_85._tf)
 
-			arg0._tf = nil
+			arg0_85._tf = nil
 		end
 
-		arg0.removeFlag = true
+		arg0_85.removeFlag = true
 	end
 
-	var0:Ctor()
+	var0_65:Ctor()
 
-	return var0
+	return var0_65
 end
 
-local function var32(arg0, arg1)
-	local var0 = {
-		_tplCharactorDic = arg1,
-		_charactorContainer = arg0,
+local function var32_0(arg0_86, arg1_86)
+	local var0_86 = {
+		_tplCharactorDic = arg1_86,
+		_charactorContainer = arg0_86,
 		charators = {}
 	}
 
-	var0.apearStepTime = nil
-	var0.gameStepTime = 0
+	var0_86.apearStepTime = nil
+	var0_86.gameStepTime = 0
 
-	function var0.Ctor(arg0)
-		for iter0 = 1, var7 do
-			arg0.charators[iter0] = 0
+	function var0_86.Ctor(arg0_87)
+		for iter0_87 = 1, var7_0 do
+			arg0_87.charators[iter0_87] = 0
 		end
 
-		arg0.throwCallback = nil
-		arg0.charactorDamageCallback = nil
+		arg0_87.throwCallback = nil
+		arg0_87.charactorDamageCallback = nil
 	end
 
-	function var0.prepare(arg0)
-		for iter0, iter1 in pairs(arg0.charators) do
-			if iter1 ~= 0 then
-				iter1:dispose()
+	function var0_86.prepare(arg0_88)
+		for iter0_88, iter1_88 in pairs(arg0_88.charators) do
+			if iter1_88 ~= 0 then
+				iter1_88:dispose()
 
-				arg0.charators[iter0] = 0
+				arg0_88.charators[iter0_88] = 0
 			end
 		end
 
-		arg0.gameStepTime = 0
-		arg0.apearStepTime = nil
+		arg0_88.gameStepTime = 0
+		arg0_88.apearStepTime = nil
 	end
 
-	function var0.step(arg0)
-		arg0.gameStepTime = arg0.gameStepTime + Time.deltaTime
+	function var0_86.step(arg0_89)
+		arg0_89.gameStepTime = arg0_89.gameStepTime + Time.deltaTime
 
-		if arg0.gameStepTime > arg0:getNextApearTime() then
-			local var0 = arg0:getApearAmount()
+		if arg0_89.gameStepTime > arg0_89:getNextApearTime() then
+			local var0_89 = arg0_89:getApearAmount()
 
-			for iter0 = 1, var0 do
-				arg0:apearCharactor()
+			for iter0_89 = 1, var0_89 do
+				arg0_89:apearCharactor()
 			end
 
-			arg0:setNextApearTime()
+			arg0_89:setNextApearTime()
 		end
 
-		for iter1 = 1, #arg0.charators do
-			if arg0.charators[iter1] ~= 0 then
-				local var1 = arg0.charators[iter1]:getLeaveTime()
+		for iter1_89 = 1, #arg0_89.charators do
+			if arg0_89.charators[iter1_89] ~= 0 then
+				local var1_89 = arg0_89.charators[iter1_89]:getLeaveTime()
 
-				if arg0.charators[iter1]:getLeaveTime() < 0 then
-					arg0:leaveCharactor(iter1)
+				if arg0_89.charators[iter1_89]:getLeaveTime() < 0 then
+					arg0_89:leaveCharactor(iter1_89)
 				else
-					arg0.charators[iter1]:step()
+					arg0_89.charators[iter1_89]:step()
 				end
 			end
 		end
 	end
 
-	function var0.leaveCharactor(arg0, arg1)
-		if arg0.charators[arg1] ~= 0 then
-			arg0.charators[arg1]:leave()
+	function var0_86.leaveCharactor(arg0_90, arg1_90)
+		if arg0_90.charators[arg1_90] ~= 0 then
+			arg0_90.charators[arg1_90]:leave()
 
-			arg0.charators[arg1] = 0
+			arg0_90.charators[arg1_90] = 0
 		end
 	end
 
-	function var0.removeCharactor(arg0, arg1)
-		if arg0.charators[arg1] ~= 0 then
-			arg0.charators[arg1] = 0
+	function var0_86.removeCharactor(arg0_91, arg1_91)
+		if arg0_91.charators[arg1_91] ~= 0 then
+			arg0_91.charators[arg1_91] = 0
 		end
 	end
 
-	function var0.damageEnemy(arg0)
-		for iter0 = 1, #arg0.charators do
-			if arg0.charators[iter0] and arg0.charators[iter0] ~= 0 and arg0.charators[iter0]:getScore() > 0 then
-				if arg0.charactorDamageCallback then
-					arg0.charactorDamageCallback(arg0.charators[iter0]:getPosition(), arg0.charators[iter0]:getScore())
+	function var0_86.damageEnemy(arg0_92)
+		for iter0_92 = 1, #arg0_92.charators do
+			if arg0_92.charators[iter0_92] and arg0_92.charators[iter0_92] ~= 0 and arg0_92.charators[iter0_92]:getScore() > 0 then
+				if arg0_92.charactorDamageCallback then
+					arg0_92.charactorDamageCallback(arg0_92.charators[iter0_92]:getPosition(), arg0_92.charators[iter0_92]:getScore())
 				end
 
-				arg0.charators[iter0]:damage()
-				arg0:removeCharactor(iter0)
+				arg0_92.charators[iter0_92]:damage()
+				arg0_92:removeCharactor(iter0_92)
 			end
 		end
 	end
 
-	function var0.getCharactorByIndex(arg0, arg1)
-		return arg0.charators[arg1]
+	function var0_86.getCharactorByIndex(arg0_93, arg1_93)
+		return arg0_93.charators[arg1_93]
 	end
 
-	function var0.apearCharactor(arg0)
-		local var0 = arg0:getAbleRandomDatas()
+	function var0_86.apearCharactor(arg0_94)
+		local var0_94 = arg0_94:getAbleRandomDatas()
 
-		if not var0 then
+		if not var0_94 then
 			return
 		end
 
-		local var1 = arg0:getDataByWeight(var0)
+		local var1_94 = arg0_94:getDataByWeight(var0_94)
 
-		if not var1 then
+		if not var1_94 then
 			return
 		end
 
-		local var2, var3 = arg0:getCharactorName(var10[var1.type])
-		local var4 = arg0:getCharactorRandomIndex(var1)
-		local var5 = arg0:createCharactor(var1, var4, var2, var3)
+		local var2_94, var3_94 = arg0_94:getCharactorName(var10_0[var1_94.type])
+		local var4_94 = arg0_94:getCharactorRandomIndex(var1_94)
+		local var5_94 = arg0_94:createCharactor(var1_94, var4_94, var2_94, var3_94)
 
-		if var5 then
-			arg0:addCharactor(var5, var4)
+		if var5_94 then
+			arg0_94:addCharactor(var5_94, var4_94)
 		end
 	end
 
-	function var0.setSpeed(arg0, arg1)
-		arg0.speedValue = arg1
+	function var0_86.setSpeed(arg0_95, arg1_95)
+		arg0_95.speedValue = arg1_95
 
-		for iter0 = 1, #arg0.charators do
-			if arg0.charators[iter0] and arg0.charators[iter0] ~= 0 then
-				arg0.charators[iter0]:setSpeed(arg1)
+		for iter0_95 = 1, #arg0_95.charators do
+			if arg0_95.charators[iter0_95] and arg0_95.charators[iter0_95] ~= 0 then
+				arg0_95.charators[iter0_95]:setSpeed(arg1_95)
 			end
 		end
 	end
 
-	function var0.createCharactor(arg0, arg1, arg2, arg3, arg4)
-		local var0 = tf(Instantiate(arg0._tplCharactorDic[arg3]))
-		local var1 = findTF(arg0._charactorContainer, arg2)
+	function var0_86.createCharactor(arg0_96, arg1_96, arg2_96, arg3_96, arg4_96)
+		local var0_96 = tf(Instantiate(arg0_96._tplCharactorDic[arg3_96]))
+		local var1_96 = findTF(arg0_96._charactorContainer, arg2_96)
 
-		SetParent(var0, var1)
-		setActive(var0, true)
+		SetParent(var0_96, var1_96)
+		setActive(var0_96, true)
 
-		local var2
+		local var2_96
 
-		if arg1.type == var8 then
-			var2 = var30(arg1, var0, arg2, arg3, arg4)
-		elseif arg1.type == var9 then
-			var2 = var31(arg1, var0, arg2, arg3, arg4)
+		if arg1_96.type == var8_0 then
+			var2_96 = var30_0(arg1_96, var0_96, arg2_96, arg3_96, arg4_96)
+		elseif arg1_96.type == var9_0 then
+			var2_96 = var31_0(arg1_96, var0_96, arg2_96, arg3_96, arg4_96)
 
-			var2:setThrowCallback(arg0.throwCallback)
+			var2_96:setThrowCallback(arg0_96.throwCallback)
 		end
 
-		return var2
+		return var2_96
 	end
 
-	function var0.addCharactor(arg0, arg1, arg2)
-		arg0.charators[arg2] = arg1
+	function var0_86.addCharactor(arg0_97, arg1_97, arg2_97)
+		arg0_97.charators[arg2_97] = arg1_97
 
-		arg1:apear()
+		arg1_97:apear()
 	end
 
-	function var0.getCharactorRandomIndex(arg0, arg1)
-		local var0 = arg0:getEmptyIndex()
-		local var1 = {}
+	function var0_86.getCharactorRandomIndex(arg0_98, arg1_98)
+		local var0_98 = arg0_98:getEmptyIndex()
+		local var1_98 = {}
 
-		for iter0 = 1, #var0 do
-			if table.contains(arg1.indexs, var0[iter0]) then
-				table.insert(var1, var0[iter0])
+		for iter0_98 = 1, #var0_98 do
+			if table.contains(arg1_98.indexs, var0_98[iter0_98]) then
+				table.insert(var1_98, var0_98[iter0_98])
 			end
 		end
 
-		if #var1 then
-			return var1[math.random(1, #var1)]
+		if #var1_98 then
+			return var1_98[math.random(1, #var1_98)]
 		end
 
 		return nil
 	end
 
-	function var0.getCharactorName(arg0, arg1)
-		local var0 = arg1.skin_names
-		local var1 = math.random(1, #arg1.skin_names)
+	function var0_86.getCharactorName(arg0_99, arg1_99)
+		local var0_99 = arg1_99.skin_names
+		local var1_99 = math.random(1, #arg1_99.skin_names)
 
-		return arg1.skin_names[var1], arg1.score[var1]
+		return arg1_99.skin_names[var1_99], arg1_99.score[var1_99]
 	end
 
-	function var0.getDataByWeight(arg0, arg1)
-		if #arg1 == 1 then
-			return arg1[1]
+	function var0_86.getDataByWeight(arg0_100, arg1_100)
+		if #arg1_100 == 1 then
+			return arg1_100[1]
 		else
-			if not arg0.charactorWeight then
-				arg0.charactorWeight = {}
-				arg0.charactorSubWeight = 0
+			if not arg0_100.charactorWeight then
+				arg0_100.charactorWeight = {}
+				arg0_100.charactorSubWeight = 0
 
-				for iter0 = 1, #arg1 do
-					arg0.charactorSubWeight = arg0.charactorSubWeight + arg1[iter0].weight
+				for iter0_100 = 1, #arg1_100 do
+					arg0_100.charactorSubWeight = arg0_100.charactorSubWeight + arg1_100[iter0_100].weight
 
-					table.insert(arg0.charactorWeight, arg0.charactorSubWeight)
+					table.insert(arg0_100.charactorWeight, arg0_100.charactorSubWeight)
 				end
 			end
 
-			local var0 = math.random(0, arg0.charactorSubWeight)
+			local var0_100 = math.random(0, arg0_100.charactorSubWeight)
 
-			for iter1 = #arg0.charactorWeight - 1, 1, -1 do
-				if var0 > arg0.charactorWeight[iter1] then
-					return arg1[iter1 + 1]
+			for iter1_100 = #arg0_100.charactorWeight - 1, 1, -1 do
+				if var0_100 > arg0_100.charactorWeight[iter1_100] then
+					return arg1_100[iter1_100 + 1]
 				end
 			end
 
-			return arg1[1]
+			return arg1_100[1]
 		end
 
 		return nil
 	end
 
-	function var0.getAbleRandomDatas(arg0)
-		local var0 = {}
-		local var1 = arg0:getEmptyIndex()
+	function var0_86.getAbleRandomDatas(arg0_101)
+		local var0_101 = {}
+		local var1_101 = arg0_101:getEmptyIndex()
 
-		if #var1 == 0 then
-			return var0
+		if #var1_101 == 0 then
+			return var0_101
 		end
 
-		for iter0 = 1, #var22 do
-			local var2 = var22[iter0].indexs
-			local var3
+		for iter0_101 = 1, #var22_0 do
+			local var2_101 = var22_0[iter0_101].indexs
+			local var3_101
 
-			for iter1, iter2 in ipairs(var2) do
-				if table.contains(var1, iter2) and not var3 then
-					table.insert(var0, var22[iter0])
+			for iter1_101, iter2_101 in ipairs(var2_101) do
+				if table.contains(var1_101, iter2_101) and not var3_101 then
+					table.insert(var0_101, var22_0[iter0_101])
 
-					var3 = true
+					var3_101 = true
 				end
 			end
 		end
 
-		return var0
+		return var0_101
 	end
 
-	function var0.getEmptyIndex(arg0)
-		local var0 = {}
+	function var0_86.getEmptyIndex(arg0_102)
+		local var0_102 = {}
 
-		for iter0, iter1 in pairs(arg0.charators) do
-			if iter1 == 0 then
-				table.insert(var0, iter0)
+		for iter0_102, iter1_102 in pairs(arg0_102.charators) do
+			if iter1_102 == 0 then
+				table.insert(var0_102, iter0_102)
 			end
 		end
 
-		return var0
+		return var0_102
 	end
 
-	function var0.getNextApearTime(arg0)
-		if not arg0.apearStepTime then
-			arg0:setNextApearTime()
+	function var0_86.getNextApearTime(arg0_103)
+		if not arg0_103.apearStepTime then
+			arg0_103:setNextApearTime()
 		end
 
-		return arg0.apearStepTime
+		return arg0_103.apearStepTime
 	end
 
-	function var0.setNextApearTime(arg0)
-		if not arg0.apearStepTime then
-			arg0.apearStepTime = 0
+	function var0_86.setNextApearTime(arg0_104)
+		if not arg0_104.apearStepTime then
+			arg0_104.apearStepTime = 0
 		end
 
-		arg0.apearStepTime = arg0.apearStepTime + arg0:getApearTime()
+		arg0_104.apearStepTime = arg0_104.apearStepTime + arg0_104:getApearTime()
 	end
 
-	function var0.getApearTime(arg0)
-		local var0 = 1
+	function var0_86.getApearTime(arg0_105)
+		local var0_105 = 1
 
-		for iter0 = #var20, 1, -1 do
-			if arg0.gameStepTime > var20[iter0] then
-				var0 = iter0
+		for iter0_105 = #var20_0, 1, -1 do
+			if arg0_105.gameStepTime > var20_0[iter0_105] then
+				var0_105 = iter0_105
 
 				break
 			end
 		end
 
-		local var1 = var18[var0][2] - var18[var0][1]
-		local var2 = var18[var0][1]
+		local var1_105 = var18_0[var0_105][2] - var18_0[var0_105][1]
+		local var2_105 = var18_0[var0_105][1]
 
-		return math.random() * var1 + var2
+		return math.random() * var1_105 + var2_105
 	end
 
-	function var0.getApearAmount(arg0)
-		local var0 = 1
+	function var0_86.getApearAmount(arg0_106)
+		local var0_106 = 1
 
-		for iter0 = #var20, 1, -1 do
-			if arg0.gameStepTime > var20[iter0] then
-				var0 = iter0
+		for iter0_106 = #var20_0, 1, -1 do
+			if arg0_106.gameStepTime > var20_0[iter0_106] then
+				var0_106 = iter0_106
 
 				break
 			end
 		end
 
-		local var1 = var19[var0]
-		local var2 = 0
-		local var3 = {}
+		local var1_106 = var19_0[var0_106]
+		local var2_106 = 0
+		local var3_106 = {}
 
-		for iter1 = 1, #var1 do
-			var2 = var2 + var1[iter1]
+		for iter1_106 = 1, #var1_106 do
+			var2_106 = var2_106 + var1_106[iter1_106]
 
-			table.insert(var3, var2)
+			table.insert(var3_106, var2_106)
 		end
 
-		local var4 = math.random(0, var2)
+		local var4_106 = math.random(0, var2_106)
 
-		for iter2 = #var3 - 1, 1, -1 do
-			if var4 > var3[iter2] then
-				return iter2 + 1
+		for iter2_106 = #var3_106 - 1, 1, -1 do
+			if var4_106 > var3_106[iter2_106] then
+				return iter2_106 + 1
 			end
 		end
 
 		return 1
 	end
 
-	var0:Ctor()
+	var0_86:Ctor()
 
-	return var0
+	return var0_86
 end
 
-local function var33(arg0, arg1, arg2, arg3)
-	local var0 = {
-		_player = arg1,
-		_charactorCtrl = arg3,
-		_snowballCtrl = arg2,
-		_sceneTf = arg0
+local function var33_0(arg0_107, arg1_107, arg2_107, arg3_107)
+	local var0_107 = {
+		_player = arg1_107,
+		_charactorCtrl = arg3_107,
+		_snowballCtrl = arg2_107,
+		_sceneTf = arg0_107
 	}
 
-	var0.hitEnemyCallback = nil
+	var0_107.hitEnemyCallback = nil
 
-	function var0.Ctor(arg0)
+	function var0_107.Ctor(arg0_108)
 		return
 	end
 
-	function var0.prepare(arg0)
+	function var0_107.prepare(arg0_109)
 		return
 	end
 
-	function var0.step(arg0)
-		local var0 = arg0._snowballCtrl:getSnowballs()
+	function var0_107.step(arg0_110)
+		local var0_110 = arg0_110._snowballCtrl:getSnowballs()
 
-		for iter0 = 1, #var0 do
-			local var1 = var0[iter0]:getType()
-			local var2 = var0[iter0]:getIndex()
-			local var3 = arg3:getCharactorByIndex(var2)
+		for iter0_110 = 1, #var0_110 do
+			local var1_110 = var0_110[iter0_110]:getType()
+			local var2_110 = var0_110[iter0_110]:getIndex()
+			local var3_110 = arg3_107:getCharactorByIndex(var2_110)
 
-			if var1 == var2 then
-				if var3 and var3 ~= 0 then
-					local var4, var5 = var3:getColliderBound()
-					local var6 = arg0._sceneTf:InverseTransformPoint(var4)
+			if var1_110 == var2_0 then
+				if var3_110 and var3_110 ~= 0 then
+					local var4_110, var5_110 = var3_110:getColliderBound()
+					local var6_110 = arg0_110._sceneTf:InverseTransformPoint(var4_110)
 
-					if var0[iter0]:checkArrived(var6, var5) then
-						var3:damage()
-						arg0._snowballCtrl:snowballHit(var0[iter0]:getId())
-						arg3:removeCharactor(var2)
+					if var0_110[iter0_110]:checkArrived(var6_110, var5_110) then
+						var3_110:damage()
+						arg0_110._snowballCtrl:snowballHit(var0_110[iter0_110]:getId())
+						arg3_107:removeCharactor(var2_110)
 
-						if arg0.hitEnemyCallback then
-							arg0.hitEnemyCallback(var3:getType(), var3:getName(), var3:getScore(), var3:getPosition())
+						if arg0_110.hitEnemyCallback then
+							arg0_110.hitEnemyCallback(var3_110:getType(), var3_110:getName(), var3_110:getScore(), var3_110:getPosition())
 						end
 					end
 				end
-			elseif var1 == var3 then
-				local var7, var8 = arg0._player:getColliderBound()
-				local var9 = arg0._sceneTf:InverseTransformPoint(var7)
+			elseif var1_110 == var3_0 then
+				local var7_110, var8_110 = arg0_110._player:getColliderBound()
+				local var9_110 = arg0_110._sceneTf:InverseTransformPoint(var7_110)
 
-				if var0[iter0]:checkArrived(var9, var8) then
-					if var3 and var3 ~= 0 and var3:getType() == var9 then
-						var3:hit()
+				if var0_110[iter0_110]:checkArrived(var9_110, var8_110) then
+					if var3_110 and var3_110 ~= 0 and var3_110:getType() == var9_0 then
+						var3_110:hit()
 					end
 
-					arg0._player:damage()
-					arg0._snowballCtrl:snowballHit(var0[iter0]:getId())
+					arg0_110._player:damage()
+					arg0_110._snowballCtrl:snowballHit(var0_110[iter0_110]:getId())
 				end
 			end
 		end
 	end
 
-	var0:Ctor()
+	var0_107:Ctor()
 
-	return var0
+	return var0_107
 end
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_111)
 	return "SnowballGameUI"
 end
 
-function var0.getBGM(arg0)
+function var0_0.getBGM(arg0_112)
 	return "backyard"
 end
 
-function var0.didEnter(arg0)
-	arg0:initData()
-	arg0:initUI()
+function var0_0.didEnter(arg0_113)
+	arg0_113:initData()
+	arg0_113:initUI()
 end
 
-function var0.initData(arg0)
-	arg0.timer = Timer.New(function()
-		arg0:onTimer()
+function var0_0.initData(arg0_114)
+	arg0_114.timer = Timer.New(function()
+		arg0_114:onTimer()
 	end, 0.0166666666666667, -1)
 end
 
-function var0.initUI(arg0)
-	arg0.sceneTf = findTF(arg0._tf, "scene")
-	arg0.clickMask = findTF(arg0._tf, "clickMask")
-	arg0.player = var27(findTF(arg0._tf, "scene/luao"))
+function var0_0.initUI(arg0_116)
+	arg0_116.sceneTf = findTF(arg0_116._tf, "scene")
+	arg0_116.clickMask = findTF(arg0_116._tf, "clickMask")
+	arg0_116.player = var27_0(findTF(arg0_116._tf, "scene/luao"))
 
-	function arg0.player.throwCallback(arg0)
-		arg0:onPlayerThrowSnowball(arg0)
+	function arg0_116.player.throwCallback(arg0_117)
+		arg0_116:onPlayerThrowSnowball(arg0_117)
 	end
 
-	function arg0.player.damageCallback()
-		arg0:onPlayerDamage()
+	function arg0_116.player.damageCallback()
+		arg0_116:onPlayerDamage()
 	end
 
-	function arg0.player.gameOverCallback()
-		arg0:onGameOver()
+	function arg0_116.player.gameOverCallback()
+		arg0_116:onGameOver()
 	end
 
-	arg0.snowballContainer = findTF(arg0._tf, "scene_front/snowballContainer")
-	arg0.tplSnowball = findTF(arg0._tf, "tplSnowball")
-	arg0.snowballController = var29(arg0.snowballContainer, arg0.tplSnowball)
-	arg0.tplScore = findTF(arg0._tf, "tplScore")
-	arg0.specialTf = findTF(arg0._tf, "scene_front/special")
-	arg0.specialAniamtor = GetComponent(arg0.specialTf, typeof(Animator))
+	arg0_116.snowballContainer = findTF(arg0_116._tf, "scene_front/snowballContainer")
+	arg0_116.tplSnowball = findTF(arg0_116._tf, "tplSnowball")
+	arg0_116.snowballController = var29_0(arg0_116.snowballContainer, arg0_116.tplSnowball)
+	arg0_116.tplScore = findTF(arg0_116._tf, "tplScore")
+	arg0_116.specialTf = findTF(arg0_116._tf, "scene_front/special")
+	arg0_116.specialAniamtor = GetComponent(arg0_116.specialTf, typeof(Animator))
 
-	GetComponent(arg0.specialTf, typeof(DftAniEvent)):SetTriggerEvent(function()
-		arg0:specialComplete()
+	GetComponent(arg0_116.specialTf, typeof(DftAniEvent)):SetTriggerEvent(function()
+		arg0_116:specialComplete()
 	end)
 
-	arg0.charactorContainer = findTF(arg0._tf, "scene/charactorContainer")
+	arg0_116.charactorContainer = findTF(arg0_116._tf, "scene/charactorContainer")
 
-	local var0 = {}
+	local var0_116 = {}
 
-	for iter0, iter1 in pairs(var10) do
-		local var1 = iter1.skin_names
+	for iter0_116, iter1_116 in pairs(var10_0) do
+		local var1_116 = iter1_116.skin_names
 
-		for iter2, iter3 in ipairs(var1) do
-			var0[iter3] = findTF(arg0._tf, "charactor/" .. iter3)
+		for iter2_116, iter3_116 in ipairs(var1_116) do
+			var0_116[iter3_116] = findTF(arg0_116._tf, "charactor/" .. iter3_116)
 		end
 	end
 
-	arg0.charactorController = var32(arg0.charactorContainer, var0)
+	arg0_116.charactorController = var32_0(arg0_116.charactorContainer, var0_116)
 
-	function arg0.charactorController.throwCallback(arg0, arg1)
-		function arg0.charactorController.charactorDamageCallback(arg0, arg1)
-			arg0:onHitEnemy(arg1, arg0)
+	function arg0_116.charactorController.throwCallback(arg0_121, arg1_121)
+		function arg0_116.charactorController.charactorDamageCallback(arg0_122, arg1_122)
+			arg0_116:onHitEnemy(arg1_122, arg0_122)
 		end
 
-		local var0 = var17[arg0:getCurrentDiff()]
+		local var0_121 = var17_0[arg0_116:getCurrentDiff()]
 
-		arg0:onEnemyThrowSnowball(arg0, arg1, var0)
+		arg0_116:onEnemyThrowSnowball(arg0_121, arg1_121, var0_121)
 	end
 
-	arg0.colliderController = var33(arg0.sceneTf, arg0.player, arg0.snowballController, arg0.charactorController)
+	arg0_116.colliderController = var33_0(arg0_116.sceneTf, arg0_116.player, arg0_116.snowballController, arg0_116.charactorController)
 
-	function arg0.colliderController.hitEnemyCallback(arg0, arg1, arg2, arg3)
-		arg0:onHitEnemy(arg2, arg3)
+	function arg0_116.colliderController.hitEnemyCallback(arg0_123, arg1_123, arg2_123, arg3_123)
+		arg0_116:onHitEnemy(arg2_123, arg3_123)
 	end
 
-	local var2 = findTF(arg0._tf, "scene/moveCollider")
+	local var2_116 = findTF(arg0_116._tf, "scene/moveCollider")
 
-	arg0.playerMoveVecs = {}
+	arg0_116.playerMoveVecs = {}
 
-	for iter4 = 1, var6 do
-		local var3 = findTF(var2, iter4)
+	for iter4_116 = 1, var6_0 do
+		local var3_116 = findTF(var2_116, iter4_116)
 
-		table.insert(arg0.playerMoveVecs, var3.anchoredPosition)
+		table.insert(arg0_116.playerMoveVecs, var3_116.anchoredPosition)
 	end
 
-	arg0.lockTf = findTF(arg0._tf, "scene_front/lock")
+	arg0_116.lockTf = findTF(arg0_116._tf, "scene_front/lock")
 
-	local var4 = findTF(arg0._tf, "scene/throwCollider")
+	local var4_116 = findTF(arg0_116._tf, "scene/throwCollider")
 
-	for iter5 = 1, var7 do
-		local var5 = findTF(var4, iter5)
-		local var6 = iter5
+	for iter5_116 = 1, var7_0 do
+		local var5_116 = findTF(var4_116, iter5_116)
+		local var6_116 = iter5_116
 
-		onButton(arg0, var5, function()
-			local var0 = arg0.charactorController:getCharactorByIndex(var6)
+		onButton(arg0_116, var5_116, function()
+			local var0_124 = arg0_116.charactorController:getCharactorByIndex(var6_116)
 
-			if var0 and var0 ~= 0 then
-				local var1 = findTF(var5, "target").position
-				local var2 = arg0.sceneTf:InverseTransformPoint(var1.x, var1.y, 0)
+			if var0_124 and var0_124 ~= 0 then
+				local var1_124 = findTF(var5_116, "target").position
+				local var2_124 = arg0_116.sceneTf:InverseTransformPoint(var1_124.x, var1_124.y, 0)
 
-				arg0:throwSnowballTo(var2, var6, var0)
+				arg0_116:throwSnowballTo(var2_124, var6_116, var0_124)
 			end
 		end)
 	end
 
-	arg0.countUI = findTF(arg0._tf, "pop/CountUI")
-	arg0.countAnimator = GetComponent(findTF(arg0.countUI, "count"), typeof(Animator))
-	arg0.countDft = GetComponent(findTF(arg0.countUI, "count"), typeof(DftAniEvent))
+	arg0_116.countUI = findTF(arg0_116._tf, "pop/CountUI")
+	arg0_116.countAnimator = GetComponent(findTF(arg0_116.countUI, "count"), typeof(Animator))
+	arg0_116.countDft = GetComponent(findTF(arg0_116.countUI, "count"), typeof(DftAniEvent))
 
-	arg0.countDft:SetTriggerEvent(function()
+	arg0_116.countDft:SetTriggerEvent(function()
 		return
 	end)
-	arg0.countDft:SetEndEvent(function()
-		setActive(arg0.countUI, false)
-		arg0:gameStart()
+	arg0_116.countDft:SetEndEvent(function()
+		setActive(arg0_116.countUI, false)
+		arg0_116:gameStart()
 	end)
 
-	arg0.leaveUI = findTF(arg0._tf, "pop/LeaveUI")
+	arg0_116.leaveUI = findTF(arg0_116._tf, "pop/LeaveUI")
 
-	onButton(arg0, findTF(arg0.leaveUI, "ad/btnOk"), function()
-		arg0:resumeGame()
-		arg0.player:settlement(var4)
-		arg0:onGameOver()
+	onButton(arg0_116, findTF(arg0_116.leaveUI, "ad/btnOk"), function()
+		arg0_116:resumeGame()
+		arg0_116.player:settlement(var4_0)
+		arg0_116:onGameOver()
 	end, SFX_CANCEL)
-	onButton(arg0, findTF(arg0.leaveUI, "ad/btnCancel"), function()
-		arg0:resumeGame()
-	end, SFX_CANCEL)
-
-	arg0.pauseUI = findTF(arg0._tf, "pop/pauseUI")
-
-	onButton(arg0, findTF(arg0.pauseUI, "ad/btnOk"), function()
-		setActive(arg0.pauseUI, false)
-		arg0:resumeGame()
+	onButton(arg0_116, findTF(arg0_116.leaveUI, "ad/btnCancel"), function()
+		arg0_116:resumeGame()
 	end, SFX_CANCEL)
 
-	arg0.settlementUI = findTF(arg0._tf, "pop/SettleMentUI")
+	arg0_116.pauseUI = findTF(arg0_116._tf, "pop/pauseUI")
 
-	onButton(arg0, findTF(arg0.settlementUI, "ad/btnOver"), function()
-		setActive(arg0.settlementUI, false)
-		arg0:openMenuUI()
+	onButton(arg0_116, findTF(arg0_116.pauseUI, "ad/btnOk"), function()
+		setActive(arg0_116.pauseUI, false)
+		arg0_116:resumeGame()
 	end, SFX_CANCEL)
 
-	arg0.menuUI = findTF(arg0._tf, "pop/menuUI")
-	arg0.battleScrollRect = GetComponent(findTF(arg0.menuUI, "battList"), typeof(ScrollRect))
-	arg0.totalTimes = arg0:getGameTotalTime()
+	arg0_116.settlementUI = findTF(arg0_116._tf, "pop/SettleMentUI")
 
-	local var7 = arg0:getGameUsedTimes() - 4 < 0 and 0 or arg0:getGameUsedTimes() - 4
+	onButton(arg0_116, findTF(arg0_116.settlementUI, "ad/btnOver"), function()
+		setActive(arg0_116.settlementUI, false)
+		arg0_116:openMenuUI()
+	end, SFX_CANCEL)
 
-	scrollTo(arg0.battleScrollRect, 0, 1 - var7 / (arg0.totalTimes - 4))
-	onButton(arg0, findTF(arg0.menuUI, "rightPanelBg/arrowUp"), function()
-		local var0 = arg0.battleScrollRect.normalizedPosition.y + 1 / (arg0.totalTimes - 4)
+	arg0_116.menuUI = findTF(arg0_116._tf, "pop/menuUI")
+	arg0_116.battleScrollRect = GetComponent(findTF(arg0_116.menuUI, "battList"), typeof(ScrollRect))
+	arg0_116.totalTimes = arg0_116:getGameTotalTime()
 
-		if var0 > 1 then
-			var0 = 1
+	local var7_116 = arg0_116:getGameUsedTimes() - 4 < 0 and 0 or arg0_116:getGameUsedTimes() - 4
+
+	scrollTo(arg0_116.battleScrollRect, 0, 1 - var7_116 / (arg0_116.totalTimes - 4))
+	onButton(arg0_116, findTF(arg0_116.menuUI, "rightPanelBg/arrowUp"), function()
+		local var0_131 = arg0_116.battleScrollRect.normalizedPosition.y + 1 / (arg0_116.totalTimes - 4)
+
+		if var0_131 > 1 then
+			var0_131 = 1
 		end
 
-		scrollTo(arg0.battleScrollRect, 0, var0)
+		scrollTo(arg0_116.battleScrollRect, 0, var0_131)
 	end, SFX_CANCEL)
-	onButton(arg0, findTF(arg0.menuUI, "rightPanelBg/arrowDown"), function()
-		local var0 = arg0.battleScrollRect.normalizedPosition.y - 1 / (arg0.totalTimes - 4)
+	onButton(arg0_116, findTF(arg0_116.menuUI, "rightPanelBg/arrowDown"), function()
+		local var0_132 = arg0_116.battleScrollRect.normalizedPosition.y - 1 / (arg0_116.totalTimes - 4)
 
-		if var0 < 0 then
-			var0 = 0
+		if var0_132 < 0 then
+			var0_132 = 0
 		end
 
-		scrollTo(arg0.battleScrollRect, 0, var0)
+		scrollTo(arg0_116.battleScrollRect, 0, var0_132)
 	end, SFX_CANCEL)
-	onButton(arg0, findTF(arg0.menuUI, "btnBack"), function()
-		arg0:closeView()
+	onButton(arg0_116, findTF(arg0_116.menuUI, "btnBack"), function()
+		arg0_116:closeView()
 	end, SFX_CANCEL)
-	onButton(arg0, findTF(arg0.menuUI, "btnRule"), function()
+	onButton(arg0_116, findTF(arg0_116.menuUI, "btnRule"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.snowball_help.tip
 		})
 	end, SFX_CANCEL)
-	onButton(arg0, findTF(arg0.menuUI, "btnStart"), function()
-		setActive(arg0.menuUI, false)
-		arg0:readyStart()
+	onButton(arg0_116, findTF(arg0_116.menuUI, "btnStart"), function()
+		setActive(arg0_116.menuUI, false)
+		arg0_116:readyStart()
 	end, SFX_CANCEL)
 
-	local var8 = findTF(arg0.menuUI, "tplBattleItem")
+	local var8_116 = findTF(arg0_116.menuUI, "tplBattleItem")
 
-	arg0.battleItems = {}
+	arg0_116.battleItems = {}
 
-	for iter6 = 1, arg0.totalTimes do
-		local var9 = tf(instantiate(var8))
+	for iter6_116 = 1, arg0_116.totalTimes do
+		local var9_116 = tf(instantiate(var8_116))
 
-		var9.name = "battleItem_" .. iter6
+		var9_116.name = "battleItem_" .. iter6_116
 
-		setParent(var9, findTF(arg0.menuUI, "battList/Viewport/Content"))
+		setParent(var9_116, findTF(arg0_116.menuUI, "battList/Viewport/Content"))
 
-		local var10 = iter6
+		local var10_116 = iter6_116
 
-		GetSpriteFromAtlasAsync("ui/minigameui/snowballgameui_atlas", "tx_" .. var10, function(arg0)
-			setImageSprite(findTF(var9, "state_open/icon"), arg0, true)
-			setImageSprite(findTF(var9, "state_clear/icon"), arg0, true)
-			setImageSprite(findTF(var9, "state_current/icon"), arg0, true)
+		GetSpriteFromAtlasAsync("ui/minigameui/snowballgameui_atlas", "tx_" .. var10_116, function(arg0_136)
+			setImageSprite(findTF(var9_116, "state_open/icon"), arg0_136, true)
+			setImageSprite(findTF(var9_116, "state_clear/icon"), arg0_136, true)
+			setImageSprite(findTF(var9_116, "state_current/icon"), arg0_136, true)
 		end)
-		GetSpriteFromAtlasAsync("ui/minigameui/snowballgameui_atlas", "battleDesc" .. var10, function(arg0)
-			setImageSprite(findTF(var9, "state_open/buttomDesc"), arg0, true)
-			setImageSprite(findTF(var9, "state_clear/buttomDesc"), arg0, true)
-			setImageSprite(findTF(var9, "state_current/buttomDesc"), arg0, true)
-			setImageSprite(findTF(var9, "state_closed/buttomDesc"), arg0, true)
+		GetSpriteFromAtlasAsync("ui/minigameui/snowballgameui_atlas", "battleDesc" .. var10_116, function(arg0_137)
+			setImageSprite(findTF(var9_116, "state_open/buttomDesc"), arg0_137, true)
+			setImageSprite(findTF(var9_116, "state_clear/buttomDesc"), arg0_137, true)
+			setImageSprite(findTF(var9_116, "state_current/buttomDesc"), arg0_137, true)
+			setImageSprite(findTF(var9_116, "state_closed/buttomDesc"), arg0_137, true)
 		end)
-		setActive(var9, true)
-		table.insert(arg0.battleItems, var9)
+		setActive(var9_116, true)
+		table.insert(arg0_116.battleItems, var9_116)
 	end
 
-	arg0.gameUI = findTF(arg0._tf, "ui/gameUI")
-	arg0.lifeProgress = findTF(arg0.gameUI, "lifeProgress")
-	arg0.textLife = findTF(arg0.gameUI, "life")
-	arg0.textScore = findTF(arg0.gameUI, "score")
+	arg0_116.gameUI = findTF(arg0_116._tf, "ui/gameUI")
+	arg0_116.lifeProgress = findTF(arg0_116.gameUI, "lifeProgress")
+	arg0_116.textLife = findTF(arg0_116.gameUI, "life")
+	arg0_116.textScore = findTF(arg0_116.gameUI, "score")
 
-	onButton(arg0, findTF(arg0.gameUI, "btnStop"), function()
-		arg0:stopGame()
-		setActive(arg0.pauseUI, true)
+	onButton(arg0_116, findTF(arg0_116.gameUI, "btnStop"), function()
+		arg0_116:stopGame()
+		setActive(arg0_116.pauseUI, true)
 	end)
-	onButton(arg0, findTF(arg0.gameUI, "btnLeave"), function()
-		arg0:stopGame()
-		setActive(arg0.leaveUI, true)
+	onButton(arg0_116, findTF(arg0_116.gameUI, "btnLeave"), function()
+		arg0_116:stopGame()
+		setActive(arg0_116.leaveUI, true)
 	end)
-	onButton(arg0, findTF(arg0.gameUI, "btnMoveUp"), function()
-		if arg0.playerPosIndex > 1 then
-			arg0.playerPosIndex = arg0.playerPosIndex - 1
+	onButton(arg0_116, findTF(arg0_116.gameUI, "btnMoveUp"), function()
+		if arg0_116.playerPosIndex > 1 then
+			arg0_116.playerPosIndex = arg0_116.playerPosIndex - 1
 
-			arg0:movePlayerTo(arg0.playerPosIndex)
+			arg0_116:movePlayerTo(arg0_116.playerPosIndex)
 		end
 	end)
-	onButton(arg0, findTF(arg0.gameUI, "btnMoveDown"), function()
-		if arg0.playerPosIndex < #arg0.playerMoveVecs then
-			arg0.playerPosIndex = arg0.playerPosIndex + 1
+	onButton(arg0_116, findTF(arg0_116.gameUI, "btnMoveDown"), function()
+		if arg0_116.playerPosIndex < #arg0_116.playerMoveVecs then
+			arg0_116.playerPosIndex = arg0_116.playerPosIndex + 1
 
-			arg0:movePlayerTo(arg0.playerPosIndex)
+			arg0_116:movePlayerTo(arg0_116.playerPosIndex)
 		end
 	end)
 
-	arg0.btnSkill = findTF(arg0.gameUI, "btnSkill")
+	arg0_116.btnSkill = findTF(arg0_116.gameUI, "btnSkill")
 
-	onButton(arg0, arg0.btnSkill, function()
-		if arg0.skilTime == var14 then
-			arg0.skilTime = 0
+	onButton(arg0_116, arg0_116.btnSkill, function()
+		if arg0_116.skilTime == var14_0 then
+			arg0_116.skilTime = 0
 
-			arg0:usePlayerSkill()
+			arg0_116:usePlayerSkill()
 		end
 	end)
-	arg0:updateMenuUI()
-	arg0:openMenuUI()
+	arg0_116:updateMenuUI()
+	arg0_116:openMenuUI()
 
-	if not arg0.handle then
-		arg0.handle = UpdateBeat:CreateListener(arg0.Update, arg0)
+	if not arg0_116.handle then
+		arg0_116.handle = UpdateBeat:CreateListener(arg0_116.Update, arg0_116)
 	end
 
-	UpdateBeat:AddListener(arg0.handle)
+	UpdateBeat:AddListener(arg0_116.handle)
 end
 
-function var0.Update(arg0)
-	arg0:AddDebugInput()
+function var0_0.Update(arg0_143)
+	arg0_143:AddDebugInput()
 end
 
-function var0.AddDebugInput(arg0)
-	if arg0.gameStop or arg0.settlementFlag then
+function var0_0.AddDebugInput(arg0_144)
+	if arg0_144.gameStop or arg0_144.settlementFlag then
 		return
 	end
 
 	if IsUnityEditor then
-		if Input.GetKeyDown(KeyCode.W) and arg0.playerPosIndex and arg0.playerPosIndex > 1 then
-			arg0.playerPosIndex = arg0.playerPosIndex - 1
+		if Input.GetKeyDown(KeyCode.W) and arg0_144.playerPosIndex and arg0_144.playerPosIndex > 1 then
+			arg0_144.playerPosIndex = arg0_144.playerPosIndex - 1
 
-			arg0:movePlayerTo(arg0.playerPosIndex)
+			arg0_144:movePlayerTo(arg0_144.playerPosIndex)
 		end
 
-		if Input.GetKeyDown(KeyCode.S) and arg0.playerPosIndex and arg0.playerPosIndex < #arg0.playerMoveVecs then
-			arg0.playerPosIndex = arg0.playerPosIndex + 1
+		if Input.GetKeyDown(KeyCode.S) and arg0_144.playerPosIndex and arg0_144.playerPosIndex < #arg0_144.playerMoveVecs then
+			arg0_144.playerPosIndex = arg0_144.playerPosIndex + 1
 
-			arg0:movePlayerTo(arg0.playerPosIndex)
-		end
-	end
-end
-
-function var0.getCurrentDiff(arg0)
-	for iter0 = #var20, 1, -1 do
-		if arg0.gameStepTime > var20[iter0] then
-			return iter0
+			arg0_144:movePlayerTo(arg0_144.playerPosIndex)
 		end
 	end
 end
 
-function var0.updateMenuUI(arg0)
-	local var0 = arg0:getGameUsedTimes()
-	local var1 = arg0:getGameTimes()
+function var0_0.getCurrentDiff(arg0_145)
+	for iter0_145 = #var20_0, 1, -1 do
+		if arg0_145.gameStepTime > var20_0[iter0_145] then
+			return iter0_145
+		end
+	end
+end
 
-	for iter0 = 1, #arg0.battleItems do
-		setActive(findTF(arg0.battleItems[iter0], "state_open"), false)
-		setActive(findTF(arg0.battleItems[iter0], "state_closed"), false)
-		setActive(findTF(arg0.battleItems[iter0], "state_clear"), false)
-		setActive(findTF(arg0.battleItems[iter0], "state_current"), false)
+function var0_0.updateMenuUI(arg0_146)
+	local var0_146 = arg0_146:getGameUsedTimes()
+	local var1_146 = arg0_146:getGameTimes()
 
-		if iter0 <= var0 then
-			setActive(findTF(arg0.battleItems[iter0], "state_clear"), true)
-		elseif iter0 == var0 + 1 and var1 >= 1 then
-			setActive(findTF(arg0.battleItems[iter0], "state_current"), true)
-		elseif var0 < iter0 and iter0 <= var0 + var1 then
-			setActive(findTF(arg0.battleItems[iter0], "state_open"), true)
+	for iter0_146 = 1, #arg0_146.battleItems do
+		setActive(findTF(arg0_146.battleItems[iter0_146], "state_open"), false)
+		setActive(findTF(arg0_146.battleItems[iter0_146], "state_closed"), false)
+		setActive(findTF(arg0_146.battleItems[iter0_146], "state_clear"), false)
+		setActive(findTF(arg0_146.battleItems[iter0_146], "state_current"), false)
+
+		if iter0_146 <= var0_146 then
+			setActive(findTF(arg0_146.battleItems[iter0_146], "state_clear"), true)
+		elseif iter0_146 == var0_146 + 1 and var1_146 >= 1 then
+			setActive(findTF(arg0_146.battleItems[iter0_146], "state_current"), true)
+		elseif var0_146 < iter0_146 and iter0_146 <= var0_146 + var1_146 then
+			setActive(findTF(arg0_146.battleItems[iter0_146], "state_open"), true)
 		else
-			setActive(findTF(arg0.battleItems[iter0], "state_closed"), true)
+			setActive(findTF(arg0_146.battleItems[iter0_146], "state_closed"), true)
 		end
 	end
 
-	arg0.totalTimes = arg0:getGameTotalTime()
+	arg0_146.totalTimes = arg0_146:getGameTotalTime()
 
-	local var2 = 1 - (arg0:getGameUsedTimes() - 3 < 0 and 0 or arg0:getGameUsedTimes() - 3) / (arg0.totalTimes - 4)
+	local var2_146 = 1 - (arg0_146:getGameUsedTimes() - 3 < 0 and 0 or arg0_146:getGameUsedTimes() - 3) / (arg0_146.totalTimes - 4)
 
-	if var2 > 1 then
-		var2 = 1
+	if var2_146 > 1 then
+		var2_146 = 1
 	end
 
-	scrollTo(arg0.battleScrollRect, 0, var2)
-	setActive(findTF(arg0.menuUI, "btnStart/tip"), var1 > 0)
-	arg0:CheckGet()
+	scrollTo(arg0_146.battleScrollRect, 0, var2_146)
+	setActive(findTF(arg0_146.menuUI, "btnStart/tip"), var1_146 > 0)
+	arg0_146:CheckGet()
 end
 
-function var0.CheckGet(arg0)
-	setActive(findTF(arg0.menuUI, "got"), false)
+function var0_0.CheckGet(arg0_147)
+	setActive(findTF(arg0_147.menuUI, "got"), false)
 
-	if arg0:getUltimate() and arg0:getUltimate() ~= 0 then
-		setActive(findTF(arg0.menuUI, "got"), true)
+	if arg0_147:getUltimate() and arg0_147:getUltimate() ~= 0 then
+		setActive(findTF(arg0_147.menuUI, "got"), true)
 	end
 
-	if arg0:getUltimate() == 0 then
-		if arg0:getGameTotalTime() > arg0:getGameUsedTimes() then
+	if arg0_147:getUltimate() == 0 then
+		if arg0_147:getGameTotalTime() > arg0_147:getGameUsedTimes() then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = arg0:GetMGHubData().id,
+			hubid = arg0_147:GetMGHubData().id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
-		setActive(findTF(arg0.menuUI, "got"), true)
+		setActive(findTF(arg0_147.menuUI, "got"), true)
 	end
 end
 
-function var0.openMenuUI(arg0)
-	setActive(findTF(arg0._tf, "scene_front"), false)
-	setActive(findTF(arg0._tf, "scene_background"), false)
-	setActive(findTF(arg0._tf, "scene"), false)
-	setActive(arg0.gameUI, false)
-	setActive(arg0.menuUI, true)
-	arg0:updateMenuUI()
+function var0_0.openMenuUI(arg0_148)
+	setActive(findTF(arg0_148._tf, "scene_front"), false)
+	setActive(findTF(arg0_148._tf, "scene_background"), false)
+	setActive(findTF(arg0_148._tf, "scene"), false)
+	setActive(arg0_148.gameUI, false)
+	setActive(arg0_148.menuUI, true)
+	arg0_148:updateMenuUI()
 end
 
-function var0.clearUI(arg0)
-	setActive(arg0.sceneTf, false)
-	setActive(arg0.settlementUI, false)
-	setActive(arg0.countUI, false)
-	setActive(arg0.menuUI, false)
-	setActive(arg0.gameUI, false)
+function var0_0.clearUI(arg0_149)
+	setActive(arg0_149.sceneTf, false)
+	setActive(arg0_149.settlementUI, false)
+	setActive(arg0_149.countUI, false)
+	setActive(arg0_149.menuUI, false)
+	setActive(arg0_149.gameUI, false)
 end
 
-function var0.OnSendMiniGameOPDone(arg0, arg1)
-	if arg0.sendSuccessFlag then
-		local var0 = (getProxy(MiniGameProxy):GetMiniGameData(MiniGameDataCreator.NewYearShrineGameID):GetRuntimeData("count") or 0) + 2
+function var0_0.OnSendMiniGameOPDone(arg0_150, arg1_150)
+	if arg0_150.sendSuccessFlag then
+		local var0_150 = (getProxy(MiniGameProxy):GetMiniGameData(MiniGameDataCreator.NewYearShrineGameID):GetRuntimeData("count") or 0) + 2
 
 		pg.m02:sendNotification(GAME.MODIFY_MINI_GAME_DATA, {
 			id = MiniGameDataCreator.NewYearShrineGameID,
 			map = {
-				count = var0
+				count = var0_150
 			}
 		})
 
-		arg0.sendSuccessFlag = false
+		arg0_150.sendSuccessFlag = false
 	end
 end
 
-function var0.readyStart(arg0)
-	setActive(arg0.countUI, true)
-	arg0.countAnimator:Play("count")
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var23)
+function var0_0.readyStart(arg0_151)
+	setActive(arg0_151.countUI, true)
+	arg0_151.countAnimator:Play("count")
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var23_0)
 end
 
-function var0.gameStart(arg0)
-	setActive(findTF(arg0._tf, "scene_front"), true)
-	setActive(findTF(arg0._tf, "scene_background"), true)
-	setActive(findTF(arg0._tf, "scene"), true)
-	setActive(arg0.gameUI, true)
-	setActive(arg0.lockTf, false)
+function var0_0.gameStart(arg0_152)
+	setActive(findTF(arg0_152._tf, "scene_front"), true)
+	setActive(findTF(arg0_152._tf, "scene_background"), true)
+	setActive(findTF(arg0_152._tf, "scene"), true)
+	setActive(arg0_152.gameUI, true)
+	setActive(arg0_152.lockTf, false)
 
-	arg0.gameStartFlag = true
-	arg0.scoreNum = 0
-	arg0.skilTime = 0
-	arg0.playerPosIndex = 2
+	arg0_152.gameStartFlag = true
+	arg0_152.scoreNum = 0
+	arg0_152.skilTime = 0
+	arg0_152.playerPosIndex = 2
 
-	arg0:movePlayerTo(arg0.playerPosIndex)
+	arg0_152:movePlayerTo(arg0_152.playerPosIndex)
 
-	arg0.specialTime = 0
-	arg0.gameStepTime = 0
+	arg0_152.specialTime = 0
+	arg0_152.gameStepTime = 0
 
-	arg0.player:prepare()
-	arg0.snowballController:prepare()
-	arg0.charactorController:prepare()
-	arg0.colliderController:prepare()
-	arg0:updateGameUI()
-	arg0:timerStart()
+	arg0_152.player:prepare()
+	arg0_152.snowballController:prepare()
+	arg0_152.charactorController:prepare()
+	arg0_152.colliderController:prepare()
+	arg0_152:updateGameUI()
+	arg0_152:timerStart()
 end
 
-function var0.onPlayerDamage(arg0)
-	arg0:updateGameUI()
+function var0_0.onPlayerDamage(arg0_153)
+	arg0_153:updateGameUI()
 end
 
-function var0.getGameTimes(arg0)
-	return arg0:GetMGHubData().count
+function var0_0.getGameTimes(arg0_154)
+	return arg0_154:GetMGHubData().count
 end
 
-function var0.getGameUsedTimes(arg0)
-	return arg0:GetMGHubData().usedtime
+function var0_0.getGameUsedTimes(arg0_155)
+	return arg0_155:GetMGHubData().usedtime
 end
 
-function var0.getUltimate(arg0)
-	return arg0:GetMGHubData().ultimate
+function var0_0.getUltimate(arg0_156)
+	return arg0_156:GetMGHubData().ultimate
 end
 
-function var0.getGameTotalTime(arg0)
-	return (arg0:GetMGHubData():getConfig("reward_need"))
+function var0_0.getGameTotalTime(arg0_157)
+	return (arg0_157:GetMGHubData():getConfig("reward_need"))
 end
 
-function var0.changeSpeed(arg0, arg1)
-	arg0.player:setSpeed(arg1)
+function var0_0.changeSpeed(arg0_158, arg1_158)
+	arg0_158.player:setSpeed(arg1_158)
 
-	arg0.specialAniamtor.speed = arg1
+	arg0_158.specialAniamtor.speed = arg1_158
 
-	arg0.charactorController:setSpeed(arg1)
+	arg0_158.charactorController:setSpeed(arg1_158)
 end
 
-function var0.onTimer(arg0)
-	arg0.player:step()
-	arg0.snowballController:step()
-	arg0.charactorController:step()
-	arg0.colliderController:step()
-	arg0:gameStep()
+function var0_0.onTimer(arg0_159)
+	arg0_159.player:step()
+	arg0_159.snowballController:step()
+	arg0_159.charactorController:step()
+	arg0_159.colliderController:step()
+	arg0_159:gameStep()
 end
 
-function var0.gameStep(arg0)
-	arg0.gameStepTime = arg0.gameStepTime + Time.deltaTime
-	arg0.skilTime = arg0.skilTime + Time.deltaTime
+function var0_0.gameStep(arg0_160)
+	arg0_160.gameStepTime = arg0_160.gameStepTime + Time.deltaTime
+	arg0_160.skilTime = arg0_160.skilTime + Time.deltaTime
 
-	if arg0.skilTime > var14 then
-		arg0.skilTime = var14
+	if arg0_160.skilTime > var14_0 then
+		arg0_160.skilTime = var14_0
 	end
 
-	if not arg0.skillProgress then
-		arg0.skillProgress = GetComponent(findTF(arg0.btnSkill, "progress"), typeof(Image))
+	if not arg0_160.skillProgress then
+		arg0_160.skillProgress = GetComponent(findTF(arg0_160.btnSkill, "progress"), typeof(Image))
 	end
 
-	arg0.skillProgress.fillAmount = arg0.skilTime / var14
+	arg0_160.skillProgress.fillAmount = arg0_160.skilTime / var14_0
 
-	if arg0.skilTime == var14 then
-		if not isActive(findTF(arg0.gameUI, "xuehezhan_zhiyuantiao")) then
-			setActive(findTF(arg0.gameUI, "xuehezhan_zhiyuantiao"), true)
+	if arg0_160.skilTime == var14_0 then
+		if not isActive(findTF(arg0_160.gameUI, "xuehezhan_zhiyuantiao")) then
+			setActive(findTF(arg0_160.gameUI, "xuehezhan_zhiyuantiao"), true)
 		end
-	elseif isActive(findTF(arg0.gameUI, "xuehezhan_zhiyuantiao")) then
-		setActive(findTF(arg0.gameUI, "xuehezhan_zhiyuantiao"), false)
+	elseif isActive(findTF(arg0_160.gameUI, "xuehezhan_zhiyuantiao")) then
+		setActive(findTF(arg0_160.gameUI, "xuehezhan_zhiyuantiao"), false)
 	end
 
-	if arg0.gameStepTime < arg0.specialTime then
-		if not arg0.specialIndex then
-			arg0.specialIndex = 0
-		end
-
-		if arg0.specialIndex > 20 then
-			arg0.specialIndex = 0
-
-			arg0.charactorController:damageEnemy()
+	if arg0_160.gameStepTime < arg0_160.specialTime then
+		if not arg0_160.specialIndex then
+			arg0_160.specialIndex = 0
 		end
 
-		arg0.specialIndex = arg0.specialIndex + 1
+		if arg0_160.specialIndex > 20 then
+			arg0_160.specialIndex = 0
+
+			arg0_160.charactorController:damageEnemy()
+		end
+
+		arg0_160.specialIndex = arg0_160.specialIndex + 1
 	end
 end
 
-function var0.timerStart(arg0)
-	if not arg0.timer.running then
-		arg0.timer:Start()
+function var0_0.timerStart(arg0_161)
+	if not arg0_161.timer.running then
+		arg0_161.timer:Start()
 	end
 end
 
-function var0.timerStop(arg0)
-	if arg0.timer.running then
-		arg0.timer:Stop()
+function var0_0.timerStop(arg0_162)
+	if arg0_162.timer.running then
+		arg0_162.timer:Stop()
 	end
 end
 
-function var0.movePlayerTo(arg0, arg1)
-	arg0.player:move(arg0.playerMoveVecs[arg1])
+function var0_0.movePlayerTo(arg0_163, arg1_163)
+	arg0_163.player:move(arg0_163.playerMoveVecs[arg1_163])
 end
 
-function var0.updateGameUI(arg0)
-	setSlider(arg0.lifeProgress, 0, 1, arg0.player:getLife() / var11)
-	setText(arg0.textLife, arg0.player:getLife() .. "/" .. var11)
-	setText(arg0.textScore, arg0.scoreNum)
+function var0_0.updateGameUI(arg0_164)
+	setSlider(arg0_164.lifeProgress, 0, 1, arg0_164.player:getLife() / var11_0)
+	setText(arg0_164.textLife, arg0_164.player:getLife() .. "/" .. var11_0)
+	setText(arg0_164.textScore, arg0_164.scoreNum)
 end
 
-function var0.throwSnowballTo(arg0, arg1, arg2, arg3)
-	arg0.throwTarget = arg1
-	arg0.targetIndex = arg2
+function var0_0.throwSnowballTo(arg0_165, arg1_165, arg2_165, arg3_165)
+	arg0_165.throwTarget = arg1_165
+	arg0_165.targetIndex = arg2_165
 
-	if arg0.player:throw() and arg0.targetCharactor ~= arg3 then
-		setActive(arg0.lockTf, false)
+	if arg0_165.player:throw() and arg0_165.targetCharactor ~= arg3_165 then
+		setActive(arg0_165.lockTf, false)
 
-		arg0.lockTf.anchoredPosition = arg1
+		arg0_165.lockTf.anchoredPosition = arg1_165
 
-		setActive(arg0.lockTf, true)
+		setActive(arg0_165.lockTf, true)
 
-		arg0.targetCharactor = arg3
+		arg0_165.targetCharactor = arg3_165
 	end
 end
 
-function var0.onPlayerThrowSnowball(arg0, arg1)
-	if arg0.throwTarget then
-		local var0 = arg0.sceneTf:InverseTransformPoint(arg1.x, arg1.y, 0)
-		local var1 = arg0.throwTarget
+function var0_0.onPlayerThrowSnowball(arg0_166, arg1_166)
+	if arg0_166.throwTarget then
+		local var0_166 = arg0_166.sceneTf:InverseTransformPoint(arg1_166.x, arg1_166.y, 0)
+		local var1_166 = arg0_166.throwTarget
 
-		arg0.snowballController:createSnowball(var0, var1, var13, var2, arg0.targetIndex)
+		arg0_166.snowballController:createSnowball(var0_166, var1_166, var13_0, var2_0, arg0_166.targetIndex)
 
-		arg0.throwTarget = nil
-		arg0.targetIndex = nil
+		arg0_166.throwTarget = nil
+		arg0_166.targetIndex = nil
 	end
 end
 
-function var0.onEnemyThrowSnowball(arg0, arg1, arg2, arg3)
-	local var0 = arg0.sceneTf:InverseTransformPoint(arg1.x, arg1.y, 0)
-	local var1 = arg0.player:getTargetPosition()
-	local var2 = arg0.sceneTf:InverseTransformPoint(var1.x, var1.y, 0)
+function var0_0.onEnemyThrowSnowball(arg0_167, arg1_167, arg2_167, arg3_167)
+	local var0_167 = arg0_167.sceneTf:InverseTransformPoint(arg1_167.x, arg1_167.y, 0)
+	local var1_167 = arg0_167.player:getTargetPosition()
+	local var2_167 = arg0_167.sceneTf:InverseTransformPoint(var1_167.x, var1_167.y, 0)
 
-	arg0.snowballController:createSnowball(var0, var2, arg3, var3, arg2)
+	arg0_167.snowballController:createSnowball(var0_167, var2_167, arg3_167, var3_0, arg2_167)
 end
 
-function var0.usePlayerSkill(arg0)
+function var0_0.usePlayerSkill(arg0_168)
 	Time.timeScale = 0.05
 
-	LeanTween.delayedCall(go(arg0.specialTf), 3, System.Action(function()
+	LeanTween.delayedCall(go(arg0_168.specialTf), 3, System.Action(function()
 		if Time.timeScale ~= 1 then
 			Time.timeScale = 1
 		end
 	end))
-	arg0.player:skill()
-	arg0.snowballController:clearEnemySnowball()
-	setActive(arg0.specialTf, true)
+	arg0_168.player:skill()
+	arg0_168.snowballController:clearEnemySnowball()
+	setActive(arg0_168.specialTf, true)
 
-	if not arg0.specialEffect then
-		arg0.specialEffect = findTF(arg0._tf, "xuehezhan_xueqiuhongzha")
+	if not arg0_168.specialEffect then
+		arg0_168.specialEffect = findTF(arg0_168._tf, "xuehezhan_xueqiuhongzha")
 	end
 
-	setActive(arg0.specialEffect, false)
-	setActive(arg0.specialEffect, true)
+	setActive(arg0_168.specialEffect, false)
+	setActive(arg0_168.specialEffect, true)
 end
 
-function var0.specialComplete(arg0)
+function var0_0.specialComplete(arg0_170)
 	Time.timeScale = 1
 
-	setActive(arg0.specialTf, false)
+	setActive(arg0_170.specialTf, false)
 
-	arg0.specialTime = arg0.gameStepTime + var15
-	arg0.specialIndex = 0
+	arg0_170.specialTime = arg0_170.gameStepTime + var15_0
+	arg0_170.specialIndex = 0
 end
 
-function var0.dropSpeedUp(arg0)
+function var0_0.dropSpeedUp(arg0_171)
 	return
 end
 
-function var0.onHitEnemy(arg0, arg1, arg2)
-	arg0:addScore(arg1, arg2)
-	arg0:updateGameUI()
+function var0_0.onHitEnemy(arg0_172, arg1_172, arg2_172)
+	arg0_172:addScore(arg1_172, arg2_172)
+	arg0_172:updateGameUI()
 end
 
-function var0.addScore(arg0, arg1, arg2)
-	arg0.scoreNum = arg0.scoreNum + arg1
+function var0_0.addScore(arg0_173, arg1_173, arg2_173)
+	arg0_173.scoreNum = arg0_173.scoreNum + arg1_173
 
-	if arg0.scoreNum < 0 then
-		arg0.scoreNum = 0
+	if arg0_173.scoreNum < 0 then
+		arg0_173.scoreNum = 0
 	end
 
-	local var0 = tf(instantiate(arg0.tplScore))
-	local var1 = findTF(var0, "ad")
-	local var2 = GetComponent(var1, typeof(DftAniEvent))
+	local var0_173 = tf(instantiate(arg0_173.tplScore))
+	local var1_173 = findTF(var0_173, "ad")
+	local var2_173 = GetComponent(var1_173, typeof(DftAniEvent))
 
-	var0.anchoredPosition = arg0.snowballContainer:InverseTransformPoint(arg2)
+	var0_173.anchoredPosition = arg0_173.snowballContainer:InverseTransformPoint(arg2_173)
 
-	if arg1 > 0 then
-		setActive(findTF(var1, "add"), true)
-		setText(findTF(var1, "add"), "+" .. arg1)
+	if arg1_173 > 0 then
+		setActive(findTF(var1_173, "add"), true)
+		setText(findTF(var1_173, "add"), "+" .. arg1_173)
 	else
-		setActive(findTF(var1, "sub"), true)
-		setText(findTF(var1, "sub"), arg1)
+		setActive(findTF(var1_173, "sub"), true)
+		setText(findTF(var1_173, "sub"), arg1_173)
 	end
 
-	setParent(var0, arg0.snowballContainer)
-	var2:SetEndEvent(function()
-		setActive(var0, false)
-		Destroy(var0)
+	setParent(var0_173, arg0_173.snowballContainer)
+	var2_173:SetEndEvent(function()
+		setActive(var0_173, false)
+		Destroy(var0_173)
 	end)
-	setActive(var0, true)
+	setActive(var0_173, true)
 end
 
-function var0.onGameOver(arg0)
-	arg0:timerStop()
+function var0_0.onGameOver(arg0_175)
+	arg0_175:timerStop()
 
-	arg0.settlementFlag = true
+	arg0_175.settlementFlag = true
 
-	setActive(arg0.clickMask, true)
-	LeanTween.delayedCall(go(arg0._tf), 2, System.Action(function()
-		arg0.settlementFlag = false
-		arg0.gameStartFlag = false
+	setActive(arg0_175.clickMask, true)
+	LeanTween.delayedCall(go(arg0_175._tf), 2, System.Action(function()
+		arg0_175.settlementFlag = false
+		arg0_175.gameStartFlag = false
 
-		setActive(arg0.clickMask, false)
-		setActive(findTF(arg0.gameUI, "xuehezhan_zhiyuantiao"), false)
-		setActive(arg0.specialTf, false)
-		arg0:showSettlement()
+		setActive(arg0_175.clickMask, false)
+		setActive(findTF(arg0_175.gameUI, "xuehezhan_zhiyuantiao"), false)
+		setActive(arg0_175.specialTf, false)
+		arg0_175:showSettlement()
 	end))
 end
 
-function var0.showSettlement(arg0)
-	setActive(arg0.settlementUI, true)
-	GetComponent(findTF(arg0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
+function var0_0.showSettlement(arg0_177)
+	setActive(arg0_177.settlementUI, true)
+	GetComponent(findTF(arg0_177.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-	local var0 = arg0:GetMGData():GetRuntimeData("elements")
-	local var1 = arg0.scoreNum
-	local var2 = var0 and #var0 > 0 and var0[1] or 0
+	local var0_177 = arg0_177:GetMGData():GetRuntimeData("elements")
+	local var1_177 = arg0_177.scoreNum
+	local var2_177 = var0_177 and #var0_177 > 0 and var0_177[1] or 0
 
-	if var2 <= var1 then
-		var2 = var1
+	if var2_177 <= var1_177 then
+		var2_177 = var1_177
 
-		arg0:StoreDataToServer({
-			var2
+		arg0_177:StoreDataToServer({
+			var2_177
 		})
 	end
 
-	local var3 = findTF(arg0.settlementUI, "ad/highText")
-	local var4 = findTF(arg0.settlementUI, "ad/currentText")
+	local var3_177 = findTF(arg0_177.settlementUI, "ad/highText")
+	local var4_177 = findTF(arg0_177.settlementUI, "ad/currentText")
 
-	setText(var3, var2)
-	setText(var4, var1)
+	setText(var3_177, var2_177)
+	setText(var4_177, var1_177)
 
-	if arg0:getGameTimes() and arg0:getGameTimes() > 0 then
-		arg0.sendSuccessFlag = true
+	if arg0_177:getGameTimes() and arg0_177:getGameTimes() > 0 then
+		arg0_177.sendSuccessFlag = true
 
-		arg0:SendSuccess(0)
+		arg0_177:SendSuccess(0)
 	end
 end
 
-function var0.resumeGame(arg0)
-	arg0.gameStop = false
+function var0_0.resumeGame(arg0_178)
+	arg0_178.gameStop = false
 
-	setActive(arg0.leaveUI, false)
-	arg0:changeSpeed(1)
-	arg0:timerStart()
+	setActive(arg0_178.leaveUI, false)
+	arg0_178:changeSpeed(1)
+	arg0_178:timerStart()
 end
 
-function var0.stopGame(arg0)
-	arg0.gameStop = true
+function var0_0.stopGame(arg0_179)
+	arg0_179.gameStop = true
 
-	arg0:timerStop()
-	arg0:changeSpeed(0)
+	arg0_179:timerStop()
+	arg0_179:changeSpeed(0)
 end
 
-function var0.onBackPressed(arg0)
-	if not arg0.gameStartFlag then
-		arg0:emit(var0.ON_BACK_PRESSED)
+function var0_0.onBackPressed(arg0_180)
+	if not arg0_180.gameStartFlag then
+		arg0_180:emit(var0_0.ON_BACK_PRESSED)
 	else
-		if arg0.settlementFlag then
+		if arg0_180.settlementFlag then
 			return
 		end
 
-		if isActive(arg0.pauseUI) then
-			setActive(arg0.pauseUI, false)
+		if isActive(arg0_180.pauseUI) then
+			setActive(arg0_180.pauseUI, false)
 		end
 
-		arg0:stopGame()
-		setActive(arg0.leaveUI, true)
+		arg0_180:stopGame()
+		setActive(arg0_180.leaveUI, true)
 	end
 end
 
-function var0.willExit(arg0)
-	if arg0.handle then
-		UpdateBeat:RemoveListener(arg0.handle)
+function var0_0.willExit(arg0_181)
+	if arg0_181.handle then
+		UpdateBeat:RemoveListener(arg0_181.handle)
 	end
 
-	if not arg0._tf then
+	if not arg0_181._tf then
 		print()
 	end
 
-	if arg0._tf and LeanTween.isTweening(go(arg0._tf)) then
-		LeanTween.cancel(go(arg0._tf))
+	if arg0_181._tf and LeanTween.isTweening(go(arg0_181._tf)) then
+		LeanTween.cancel(go(arg0_181._tf))
 	end
 
-	if arg0.specialTf and LeanTween.isTweening(go(arg0.specialTf)) then
-		LeanTween.cancel(go(arg0.specialTf))
+	if arg0_181.specialTf and LeanTween.isTweening(go(arg0_181.specialTf)) then
+		LeanTween.cancel(go(arg0_181.specialTf))
 	end
 
-	if arg0.specialEffect and LeanTween.isTweening(go(arg0.specialEffect)) then
-		LeanTween.cancel(go(arg0.specialEffect))
+	if arg0_181.specialEffect and LeanTween.isTweening(go(arg0_181.specialEffect)) then
+		LeanTween.cancel(go(arg0_181.specialEffect))
 	end
 
-	if arg0.timer and arg0.timer.running then
-		arg0.timer:Stop()
+	if arg0_181.timer and arg0_181.timer.running then
+		arg0_181.timer:Stop()
 	end
 
 	Time.timeScale = 1
-	arg0.timer = nil
+	arg0_181.timer = nil
 end
 
-return var0
+return var0_0

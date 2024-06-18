@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_223 = {}
+var0_0.word_template_223 = {}
 
-local var1 = var0.word_template_223
+local var1_0 = var0_0.word_template_223
 
 function temp()
-	var1.埤 = {
+	var1_0.埤 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.啤 = {
+	var1_0.啤 = {
 		酒 = {
 			乐 = {
 				园 = {
@@ -38,7 +38,7 @@ end
 temp()
 
 function temp()
-	var1.罴 = {
+	var1_0.罴 = {
 		this = {
 			this = true
 		}
@@ -48,7 +48,7 @@ end
 temp()
 
 function temp()
-	var1.羆 = {
+	var1_0.羆 = {
 		this = {
 			this = true
 		}
@@ -58,7 +58,7 @@ end
 temp()
 
 function temp()
-	var1.鼙 = {
+	var1_0.鼙 = {
 		this = {
 			this = true
 		}
@@ -68,7 +68,7 @@ end
 temp()
 
 function temp()
-	var1.匹 = {
+	var1_0.匹 = {
 		米 = {
 			诺 = {
 				定 = {
@@ -82,7 +82,7 @@ end
 temp()
 
 function temp()
-	var1.庀 = {
+	var1_0.庀 = {
 		this = {
 			this = true
 		}

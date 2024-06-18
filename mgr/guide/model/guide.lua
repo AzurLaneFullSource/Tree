@@ -1,47 +1,47 @@
-﻿local var0 = class("Guide")
+﻿local var0_0 = class("Guide")
 
-function var0.Data2GuideStep(arg0, arg1)
-	if arg1.hideui then
-		return GuideHideUIStep.New(arg1)
-	elseif arg1.stories then
-		return GuideStoryStep.New(arg1)
-	elseif arg1.notifies then
-		return GuideSendNotifiesStep.New(arg1)
-	elseif arg1.showSign then
-		return GuideShowSignStep.New(arg1)
-	elseif arg1.doFunc then
-		return GuideDoFunctionStep.New(arg1)
-	elseif arg1.ui then
-		return GuideFindUIStep.New(arg1)
+function var0_0.Data2GuideStep(arg0_1, arg1_1)
+	if arg1_1.hideui then
+		return GuideHideUIStep.New(arg1_1)
+	elseif arg1_1.stories then
+		return GuideStoryStep.New(arg1_1)
+	elseif arg1_1.notifies then
+		return GuideSendNotifiesStep.New(arg1_1)
+	elseif arg1_1.showSign then
+		return GuideShowSignStep.New(arg1_1)
+	elseif arg1_1.doFunc then
+		return GuideDoFunctionStep.New(arg1_1)
+	elseif arg1_1.ui then
+		return GuideFindUIStep.New(arg1_1)
 	else
-		return GuideDoNothingStep.New(arg1)
+		return GuideDoNothingStep.New(arg1_1)
 	end
 end
 
-function var0.Ctor(arg0, arg1)
-	arg0.steps = {}
+function var0_0.Ctor(arg0_2, arg1_2)
+	arg0_2.steps = {}
 
-	for iter0, iter1 in ipairs(arg1.events) do
-		local var0 = arg0:Data2GuideStep(iter1)
+	for iter0_2, iter1_2 in ipairs(arg1_2.events) do
+		local var0_2 = arg0_2:Data2GuideStep(iter1_2)
 
-		if arg1.isWorld ~= nil then
-			var0:UpdateIsWorld(arg1.isWorld)
+		if arg1_2.isWorld ~= nil then
+			var0_2:UpdateIsWorld(arg1_2.isWorld)
 		end
 
-		table.insert(arg0.steps, var0)
+		table.insert(arg0_2.steps, var0_2)
 	end
 end
 
-function var0.GetStepsWithCode(arg0, arg1)
-	local var0 = {}
+function var0_0.GetStepsWithCode(arg0_3, arg1_3)
+	local var0_3 = {}
 
-	for iter0, iter1 in ipairs(arg0.steps) do
-		if not arg1 or iter1:IsMatchWithCode(arg1) then
-			table.insert(var0, iter1)
+	for iter0_3, iter1_3 in ipairs(arg0_3.steps) do
+		if not arg1_3 or iter1_3:IsMatchWithCode(arg1_3) then
+			table.insert(var0_3, iter1_3)
 		end
 	end
 
-	return var0
+	return var0_3
 end
 
-return var0
+return var0_0

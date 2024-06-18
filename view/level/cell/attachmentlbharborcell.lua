@@ -1,38 +1,38 @@
-﻿local var0 = class("AttachmentLBHarborCell", import("view.level.cell.StaticCellView"))
+﻿local var0_0 = class("AttachmentLBHarborCell", import("view.level.cell.StaticCellView"))
 
-function var0.GetOrder(arg0)
+function var0_0.GetOrder(arg0_1)
 	return ChapterConst.CellPriorityAttachment
 end
 
-function var0.Update(arg0)
-	local var0 = arg0.info
+function var0_0.Update(arg0_2)
+	local var0_2 = arg0_2.info
 
-	if IsNil(arg0.go) then
-		arg0:PrepareBase("box_gangkou")
-		arg0:GetLoader():GetPrefab("leveluiview/Tpl_Box", "Tpl_Box", function(arg0)
-			setParent(arg0, arg0.tf)
+	if IsNil(arg0_2.go) then
+		arg0_2:PrepareBase("box_gangkou")
+		arg0_2:GetLoader():GetPrefab("leveluiview/Tpl_Box", "Tpl_Box", function(arg0_3)
+			setParent(arg0_3, arg0_2.tf)
 
-			tf(arg0).anchoredPosition3D = Vector3(0, 30, 0)
+			tf(arg0_3).anchoredPosition3D = Vector3(0, 30, 0)
 
-			arg0:GetLoader():GetPrefab("boxprefab/gangkou", "gangkou", function(arg0)
-				tf(arg0):SetParent(tf(arg0):Find("icon"), false)
+			arg0_2:GetLoader():GetPrefab("boxprefab/gangkou", "gangkou", function(arg0_4)
+				tf(arg0_4):SetParent(tf(arg0_3):Find("icon"), false)
 			end)
 
-			arg0.box = arg0
+			arg0_2.box = arg0_3
 
-			arg0:Update()
+			arg0_2:Update()
 		end)
 	end
 
-	if arg0.box then
-		setActive(findTF(arg0.box, "effect_found"), var0.trait == ChapterConst.TraitVirgin)
+	if arg0_2.box then
+		setActive(findTF(arg0_2.box, "effect_found"), var0_2.trait == ChapterConst.TraitVirgin)
 
-		if var0.trait == ChapterConst.TraitVirgin then
+		if var0_2.trait == ChapterConst.TraitVirgin then
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_WEIGHANCHOR_ENEMY)
 		end
 	end
 
-	setActive(arg0.tf, var0.flag == ChapterConst.CellFlagActive)
+	setActive(arg0_2.tf, var0_2.flag == ChapterConst.CellFlagActive)
 end
 
-return var0
+return var0_0

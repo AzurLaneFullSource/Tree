@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Let's check out <color=#ffde38>build</color> details!",
 	"Tap <color=#ffde38>queue</color> to see construction progress.",
 	"It takes time to build a new ship.",
@@ -17,7 +17,7 @@ return {
 				mode = 1,
 				posY = -132.4,
 				posX = 423.25,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				pathIndex = -1,
@@ -46,7 +46,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 0,
-				text = var0[2]
+				text = var0_0[2]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/blur_panel/adapt/left_length/frame/tagRoot/queue_btn",
@@ -68,7 +68,7 @@ return {
 				mode = 1,
 				posY = 160,
 				posX = 450,
-				text = var0[3]
+				text = var0_0[3]
 			}
 		},
 		{
@@ -78,7 +78,7 @@ return {
 				mode = 1,
 				posY = 160,
 				posX = 450,
-				text = var0[4]
+				text = var0_0[4]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/BuildShipDetailUI1(Clone)/list_single_line/content/project_1/frame/buiding/quick_btn",
@@ -104,7 +104,7 @@ return {
 				mode = 1,
 				posY = 250,
 				posX = 450,
-				text = var0[5]
+				text = var0_0[5]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/Msgbox(Clone)/window/button_container/custom_button_1(Clone)",

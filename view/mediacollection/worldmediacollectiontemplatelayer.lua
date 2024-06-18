@@ -1,17 +1,17 @@
-﻿local var0 = class("WorldMediaCollectionTemplateLayer", import("view.base.BaseSubView"))
+﻿local var0_0 = class("WorldMediaCollectionTemplateLayer", import("view.base.BaseSubView"))
 
-function var0.getUIName(arg0)
-	assert(false, "Need Assign UIName " .. arg0.__cname)
+function var0_0.getUIName(arg0_1)
+	assert(false, "Need Assign UIName " .. arg0_1.__cname)
 end
 
-function var0.Ctor(arg0, arg1, ...)
-	var0.super.Ctor(arg0, ...)
+function var0_0.Ctor(arg0_2, arg1_2, ...)
+	var0_0.super.Ctor(arg0_2, ...)
 
-	arg0.viewParent = arg1
-	arg0.buffer = setmetatable({}, {
-		__index = function(arg0, arg1)
-			return function(arg0, ...)
-				arg0:ActionInvoke(arg1, ...)
+	arg0_2.viewParent = arg1_2
+	arg0_2.buffer = setmetatable({}, {
+		__index = function(arg0_3, arg1_3)
+			return function(arg0_4, ...)
+				arg0_2:ActionInvoke(arg1_3, ...)
 			end
 		end,
 		__newindex = function()
@@ -20,56 +20,56 @@ function var0.Ctor(arg0, arg1, ...)
 	})
 end
 
-function var0.Show(arg0)
-	var0.super.Show(arg0)
+function var0_0.Show(arg0_6)
+	var0_0.super.Show(arg0_6)
 
-	if arg0._top then
-		arg0.viewParent:Add2TopContainer(arg0._top)
+	if arg0_6._top then
+		arg0_6.viewParent:Add2TopContainer(arg0_6._top)
 	end
 end
 
-function var0.Hide(arg0)
-	if arg0._top then
-		setParent(arg0._top, arg0._tf)
+function var0_0.Hide(arg0_7)
+	if arg0_7._top then
+		setParent(arg0_7._top, arg0_7._tf)
 	end
 
-	var0.super.Hide(arg0)
+	var0_0.super.Hide(arg0_7)
 end
 
-function var0.OnSelected(arg0)
-	arg0:Show()
+function var0_0.OnSelected(arg0_8)
+	arg0_8:Show()
 end
 
-function var0.OnReselected(arg0)
+function var0_0.OnReselected(arg0_9)
 	return
 end
 
-function var0.OnDeselected(arg0)
-	arg0:Hide()
+function var0_0.OnDeselected(arg0_10)
+	arg0_10:Hide()
 end
 
-function var0.OnBackward(arg0)
+function var0_0.OnBackward(arg0_11)
 	return
 end
 
-function var0.Add2LayerContainer(arg0, arg1)
-	setParent(arg1, arg0._tf)
+function var0_0.Add2LayerContainer(arg0_12, arg1_12)
+	setParent(arg1_12, arg0_12._tf)
 end
 
-function var0.Add2TopContainer(arg0, arg1)
-	setParent(arg1, arg0._top)
+function var0_0.Add2TopContainer(arg0_13, arg1_13)
+	setParent(arg1_13, arg0_13._top)
 end
 
-function var0.SetActive(arg0, arg1)
-	if arg1 then
-		arg0:Show()
+function var0_0.SetActive(arg0_14, arg1_14)
+	if arg1_14 then
+		arg0_14:Show()
 	else
-		arg0:Hide()
+		arg0_14:Hide()
 	end
 end
 
-function var0.UpdateView(arg0)
+function var0_0.UpdateView(arg0_15)
 	return
 end
 
-return var0
+return var0_0

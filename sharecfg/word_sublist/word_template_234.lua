@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_234 = {}
+var0_0.word_template_234 = {}
 
-local var1 = var0.word_template_234
+local var1_0 = var0_0.word_template_234
 
 function temp()
-	var1.肷 = {
+	var1_0.肷 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.浅 = {
+	var1_0.浅 = {
 		仓 = {
 			惠 = {
 				this = true
@@ -41,7 +41,7 @@ end
 temp()
 
 function temp()
-	var1.欠 = {
+	var1_0.欠 = {
 		操 = {
 			this = true
 		},
@@ -68,7 +68,7 @@ end
 temp()
 
 function temp()
-	var1.椠 = {
+	var1_0.椠 = {
 		this = {
 			this = true
 		}
@@ -78,7 +78,7 @@ end
 temp()
 
 function temp()
-	var1.槧 = {
+	var1_0.槧 = {
 		this = {
 			this = true
 		}
@@ -88,7 +88,7 @@ end
 temp()
 
 function temp()
-	var1.枪 = {
+	var1_0.枪 = {
 		决 = {
 			女 = {
 				犯 = {
@@ -136,7 +136,7 @@ end
 temp()
 
 function temp()
-	var1.戕 = {
+	var1_0.戕 = {
 		this = {
 			this = true
 		}

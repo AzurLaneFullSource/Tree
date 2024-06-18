@@ -1,40 +1,40 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleBuffWorldVariable = class("BattleBuffWorldVariable", var0.Battle.BattleBuffEffect)
-var0.Battle.BattleBuffWorldVariable.__name = "BattleBuffWorldVariable"
+var0_0.Battle.BattleBuffWorldVariable = class("BattleBuffWorldVariable", var0_0.Battle.BattleBuffEffect)
+var0_0.Battle.BattleBuffWorldVariable.__name = "BattleBuffWorldVariable"
 
-local var1 = var0.Battle.BattleBuffWorldVariable
+local var1_0 = var0_0.Battle.BattleBuffWorldVariable
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	arg0._variable = arg0._tempData.arg_list.variable
-	arg0._key = arg0._tempData.arg_list.key
-	arg0._number = arg0._tempData.arg_list.number
-	arg0._resetNumber = arg0._tempData.arg_list.resetNumber
-	arg0._speedFactorName = "buff_" .. arg0._tempData.id
+function var1_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	arg0_2._variable = arg0_2._tempData.arg_list.variable
+	arg0_2._key = arg0_2._tempData.arg_list.key
+	arg0_2._number = arg0_2._tempData.arg_list.number
+	arg0_2._resetNumber = arg0_2._tempData.arg_list.resetNumber
+	arg0_2._speedFactorName = "buff_" .. arg0_2._tempData.id
 end
 
-function var1.onAttach(arg0, arg1, arg2)
-	local var0 = var0.Battle.BattleVariable
+function var1_0.onAttach(arg0_3, arg1_3, arg2_3)
+	local var0_3 = var0_0.Battle.BattleVariable
 
-	if arg0._key then
-		var0.AppendIFFFactor(arg0._key, arg0._speedFactorName, arg0._number)
+	if arg0_3._key then
+		var0_3.AppendIFFFactor(arg0_3._key, arg0_3._speedFactorName, arg0_3._number)
 	else
-		var0.AppendMapFactor(arg0._speedFactorName, arg0._number)
+		var0_3.AppendMapFactor(arg0_3._speedFactorName, arg0_3._number)
 	end
 end
 
-function var1.onRemove(arg0, arg1, arg2)
-	local var0 = var0.Battle.BattleVariable
+function var1_0.onRemove(arg0_4, arg1_4, arg2_4)
+	local var0_4 = var0_0.Battle.BattleVariable
 
-	if arg0._key then
-		var0.RemoveIFFFactor(arg0._key, arg0._speedFactorName)
+	if arg0_4._key then
+		var0_4.RemoveIFFFactor(arg0_4._key, arg0_4._speedFactorName)
 	else
-		var0.RemoveMapFactor(arg0._speedFactorName)
+		var0_4.RemoveMapFactor(arg0_4._speedFactorName)
 	end
 end

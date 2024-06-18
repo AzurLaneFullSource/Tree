@@ -1,83 +1,83 @@
-﻿local var0 = class("CourtyardFurnitureState")
+﻿local var0_0 = class("CourtyardFurnitureState")
 
-function var0.Ctor(arg0, arg1, arg2, arg3, arg4, arg5)
-	arg0._tf = arg1.transform
-	arg0.rectTF = arg2
-	arg0.rootTF = arg0._tf.parent
-	arg0.furnitureStateImg = arg0._tf:GetComponent(typeof(Image))
-	arg0.furnitureStateAnim = arg0._tf:GetComponent(typeof(Animation))
-	arg0.selectedMat = arg3
-	arg0.canPlaceMat = arg4
-	arg0.cantPlaceMat = arg5
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1, arg5_1)
+	arg0_1._tf = arg1_1.transform
+	arg0_1.rectTF = arg2_1
+	arg0_1.rootTF = arg0_1._tf.parent
+	arg0_1.furnitureStateImg = arg0_1._tf:GetComponent(typeof(Image))
+	arg0_1.furnitureStateAnim = arg0_1._tf:GetComponent(typeof(Animation))
+	arg0_1.selectedMat = arg3_1
+	arg0_1.canPlaceMat = arg4_1
+	arg0_1.cantPlaceMat = arg5_1
 end
 
-function var0.Init(arg0, arg1, arg2)
+function var0_0.Init(arg0_2, arg1_2, arg2_2)
 	pg.UIMgr.GetInstance():LoadingOn(false)
-	setActive(arg0._tf, false)
-	ResourceMgr.Inst:getAssetAsync("furnitrues/" .. arg2:GetPicture(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0)
+	setActive(arg0_2._tf, false)
+	ResourceMgr.Inst:getAssetAsync("furnitrues/" .. arg2_2:GetPicture(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_3)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		if arg0.exited then
+		if arg0_2.exited then
 			return
 		end
 
-		setActive(arg0._tf, true)
+		setActive(arg0_2._tf, true)
 
-		arg0.furnitureStateImg.sprite = arg0:GetComponent(typeof(Image)).sprite
-		arg0._tf.sizeDelta = arg0.transform.sizeDelta
-		arg0._tf.localPosition = arg1:GetCenterPoint()
+		arg0_2.furnitureStateImg.sprite = arg0_3:GetComponent(typeof(Image)).sprite
+		arg0_2._tf.sizeDelta = arg0_3.transform.sizeDelta
+		arg0_2._tf.localPosition = arg1_2:GetCenterPoint()
 
-		arg0:OnUpdateScale(arg1)
-		arg0:OnReset()
+		arg0_2:OnUpdateScale(arg1_2)
+		arg0_2:OnReset()
 	end), true, true)
 end
 
-function var0.OnInit(arg0, arg1, arg2)
-	arg0:Init(arg1, arg2)
-	setParent(arg0._tf, arg0.rectTF)
+function var0_0.OnInit(arg0_4, arg1_4, arg2_4)
+	arg0_4:Init(arg1_4, arg2_4)
+	setParent(arg0_4._tf, arg0_4.rectTF)
 end
 
-function var0.OnUpdateScale(arg0, arg1)
-	local var0 = CourtYardCalcUtil.GetSign(arg1._tf.localScale.x)
+function var0_0.OnUpdateScale(arg0_5, arg1_5)
+	local var0_5 = CourtYardCalcUtil.GetSign(arg1_5._tf.localScale.x)
 
-	arg0._tf.localScale = Vector3(var0, 1, 1)
+	arg0_5._tf.localScale = Vector3(var0_5, 1, 1)
 end
 
-function var0.OnUpdate(arg0, arg1)
-	arg0._tf.localPosition = arg1:GetCenterPoint()
+function var0_0.OnUpdate(arg0_6, arg1_6)
+	arg0_6._tf.localPosition = arg1_6:GetCenterPoint()
 end
 
-function var0.OnCantPlace(arg0)
-	if arg0.furnitureStateImg.material ~= arg0.cantPlaceMat then
-		arg0.furnitureStateImg.material = arg0.cantPlaceMat
+function var0_0.OnCantPlace(arg0_7)
+	if arg0_7.furnitureStateImg.material ~= arg0_7.cantPlaceMat then
+		arg0_7.furnitureStateImg.material = arg0_7.cantPlaceMat
 
-		arg0.furnitureStateAnim:Play("anim_courtyard_iconred")
+		arg0_7.furnitureStateAnim:Play("anim_courtyard_iconred")
 	end
 end
 
-function var0.OnCanPlace(arg0)
-	if arg0.furnitureStateImg.material ~= arg0.canPlaceMat then
-		arg0.furnitureStateImg.material = arg0.canPlaceMat
+function var0_0.OnCanPlace(arg0_8)
+	if arg0_8.furnitureStateImg.material ~= arg0_8.canPlaceMat then
+		arg0_8.furnitureStateImg.material = arg0_8.canPlaceMat
 
-		arg0.furnitureStateAnim:Play("anim_courtyard_icongreen")
+		arg0_8.furnitureStateAnim:Play("anim_courtyard_icongreen")
 	end
 end
 
-function var0.OnReset(arg0)
-	if arg0.furnitureStateImg.material ~= arg0.selectedMat then
-		arg0.furnitureStateImg.material = arg0.selectedMat
+function var0_0.OnReset(arg0_9)
+	if arg0_9.furnitureStateImg.material ~= arg0_9.selectedMat then
+		arg0_9.furnitureStateImg.material = arg0_9.selectedMat
 
-		arg0.furnitureStateAnim:Play("anim_courtyard_iconwhite")
+		arg0_9.furnitureStateAnim:Play("anim_courtyard_iconwhite")
 	end
 end
 
-function var0.OnClear(arg0)
-	arg0.furnitureStateAnim:Stop()
+function var0_0.OnClear(arg0_10)
+	arg0_10.furnitureStateAnim:Stop()
 
-	arg0.furnitureStateImg.sprite = nil
-	arg0.furnitureStateImg.material = nil
+	arg0_10.furnitureStateImg.sprite = nil
+	arg0_10.furnitureStateImg.material = nil
 
-	setParent(arg0._tf, arg0.rootTF)
+	setParent(arg0_10._tf, arg0_10.rootTF)
 end
 
-return var0
+return var0_0

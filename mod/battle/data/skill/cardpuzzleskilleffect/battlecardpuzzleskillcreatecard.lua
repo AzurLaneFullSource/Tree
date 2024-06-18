@@ -1,33 +1,33 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleFleetCardPuzzleCardManageComponent
-local var2 = class("BattleCardPuzzleSkillCreateCard", var0.Battle.BattleCardPuzzleSkillEffect)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleFleetCardPuzzleCardManageComponent
+local var2_0 = class("BattleCardPuzzleSkillCreateCard", var0_0.Battle.BattleCardPuzzleSkillEffect)
 
-var0.Battle.BattleCardPuzzleSkillCreateCard = var2
-var2.__name = "BattleCardPuzzleSkillCreateCard"
-var2.MOVE_OP_Add = "Add"
-var2.MOVE_OP_BOTTOM = "Bottom"
+var0_0.Battle.BattleCardPuzzleSkillCreateCard = var2_0
+var2_0.__name = "BattleCardPuzzleSkillCreateCard"
+var2_0.MOVE_OP_Add = "Add"
+var2_0.MOVE_OP_BOTTOM = "Bottom"
 
-function var2.Ctor(arg0, arg1)
-	var2.super.Ctor(arg0, arg1)
+function var2_0.Ctor(arg0_1, arg1_1)
+	var2_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0._cardID = arg0._tempData.arg_list.card_id
-	arg0._moveTo = arg0._tempData.arg_list.move_to
-	arg0._moveOP = arg0._tempData.arg_list.move_op or var1.FUNC_NAME_ADD
-	arg0._op = arg0._tempData.arg_list.shuffle or 1
+	arg0_1._cardID = arg0_1._tempData.arg_list.card_id
+	arg0_1._moveTo = arg0_1._tempData.arg_list.move_to
+	arg0_1._moveOP = arg0_1._tempData.arg_list.move_op or var1_0.FUNC_NAME_ADD
+	arg0_1._op = arg0_1._tempData.arg_list.shuffle or 1
 end
 
-function var2.SkillEffectHandler(arg0)
-	local var0 = arg0._card:GetClient()
-	local var1 = var0:GenerateCard(arg0._cardID)
-	local var2 = var0:GetCardPileByIndex(arg0._moveTo)
+function var2_0.SkillEffectHandler(arg0_2)
+	local var0_2 = arg0_2._card:GetClient()
+	local var1_2 = var0_2:GenerateCard(arg0_2._cardID)
+	local var2_2 = var0_2:GetCardPileByIndex(arg0_2._moveTo)
 
-	var2[arg0._moveOP](var2, var1)
+	var2_2[arg0_2._moveOP](var2_2, var1_2)
 
-	if arg0._op == 1 then
-		var2:Shuffle()
+	if arg0_2._op == 1 then
+		var2_2:Shuffle()
 	end
 
-	arg0:Finale()
+	arg0_2:Finale()
 end

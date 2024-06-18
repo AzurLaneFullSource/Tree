@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_152 = {}
+var0_0.word_template_152 = {}
 
-local var1 = var0.word_template_152
+local var1_0 = var0_0.word_template_152
 
 function temp()
-	var1.角 = {
+	var1_0.角 = {
 		落 = {
 			里 = {
 				的 = {
@@ -53,7 +53,7 @@ end
 temp()
 
 function temp()
-	var1.狡 = {
+	var1_0.狡 = {
 		猾 = {
 			的 = {
 				達 = {
@@ -78,7 +78,7 @@ end
 temp()
 
 function temp()
-	var1.脚 = {
+	var1_0.脚 = {
 		交 = {
 			this = true
 		},
@@ -97,7 +97,7 @@ end
 temp()
 
 function temp()
-	var1.腳 = {
+	var1_0.腳 = {
 		交 = {
 			this = true
 		}
@@ -107,7 +107,7 @@ end
 temp()
 
 function temp()
-	var1.剿 = {
+	var1_0.剿 = {
 		共 = {
 			复 = {
 				国 = {
@@ -126,7 +126,7 @@ end
 temp()
 
 function temp()
-	var1.撟 = {
+	var1_0.撟 = {
 		this = {
 			this = true
 		}
@@ -136,7 +136,7 @@ end
 temp()
 
 function temp()
-	var1.叫 = {
+	var1_0.叫 = {
 		床 = {
 			this = true,
 			声 = {

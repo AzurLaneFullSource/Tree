@@ -1,281 +1,281 @@
-﻿local var0 = class("BackHillCampusFestival2022Scene", import("..TemplateMV.BackHillTemplate"))
+﻿local var0_0 = class("BackHillCampusFestival2022Scene", import("..TemplateMV.BackHillTemplate"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "BackHillCampusFestivalUI"
 end
 
-var0.edge2area = {
+var0_0.edge2area = {
 	default = "_SDPlace"
 }
-var0.Buildings = {
+var0_0.Buildings = {
 	[19] = "teachingbuilding",
 	[20] = "astrologerstent",
 	[21] = "stage",
 	[22] = "shoppingstreet"
 }
 
-function var0.init(arg0)
-	var0.super.init(arg0)
+function var0_0.init(arg0_2)
+	var0_0.super.init(arg0_2)
 
-	arg0.top = arg0:findTF("top")
-	arg0._bg = arg0:findTF("BG")
-	arg0._map = arg0:findTF("map")
+	arg0_2.top = arg0_2:findTF("top")
+	arg0_2._bg = arg0_2:findTF("BG")
+	arg0_2._map = arg0_2:findTF("map")
 
-	for iter0 = 0, arg0._map.childCount - 1 do
-		local var0 = arg0._map:GetChild(iter0)
-		local var1 = go(var0).name
+	for iter0_2 = 0, arg0_2._map.childCount - 1 do
+		local var0_2 = arg0_2._map:GetChild(iter0_2)
+		local var1_2 = go(var0_2).name
 
-		arg0["map_" .. var1] = var0
+		arg0_2["map_" .. var1_2] = var0_2
 	end
 
-	arg0._shipTpl = arg0:findTF("ship")
-	arg0._upper = arg0:findTF("upper")
+	arg0_2._shipTpl = arg0_2:findTF("ship")
+	arg0_2._upper = arg0_2:findTF("upper")
 
-	for iter1 = 0, arg0._upper.childCount - 1 do
-		local var2 = arg0._upper:GetChild(iter1)
-		local var3 = go(var2).name
+	for iter1_2 = 0, arg0_2._upper.childCount - 1 do
+		local var2_2 = arg0_2._upper:GetChild(iter1_2)
+		local var3_2 = go(var2_2).name
 
-		arg0["upper_" .. var3] = var2
+		arg0_2["upper_" .. var3_2] = var2_2
 	end
 
-	setActive(arg0.map_Decoration, false)
+	setActive(arg0_2.map_Decoration, false)
 
-	arg0._SDPlace = arg0._map:Find("SDPlace")
-	arg0.containers = {
-		arg0._SDPlace
+	arg0_2._SDPlace = arg0_2._map:Find("SDPlace")
+	arg0_2.containers = {
+		arg0_2._SDPlace
 	}
-	arg0.gameCountTxt = arg0.top:Find("GameCount/Text"):GetComponent(typeof(Text))
-	arg0.materialTxt = arg0.top:Find("Material/Text"):GetComponent(typeof(Text))
-	arg0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.BackHillCampusFestiva2022Graph"))
+	arg0_2.gameCountTxt = arg0_2.top:Find("GameCount/Text"):GetComponent(typeof(Text))
+	arg0_2.materialTxt = arg0_2.top:Find("Material/Text"):GetComponent(typeof(Text))
+	arg0_2.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.BackHillCampusFestiva2022Graph"))
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0:findTF("top/Back"), function()
-		arg0:onBackPressed()
+function var0_0.didEnter(arg0_3)
+	onButton(arg0_3, arg0_3:findTF("top/Back"), function()
+		arg0_3:onBackPressed()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0:findTF("top/Home"), function()
-		arg0:emit(var0.ON_HOME)
+	onButton(arg0_3, arg0_3:findTF("top/Home"), function()
+		arg0_3:emit(var0_0.ON_HOME)
 	end, SFX_PANEL)
-	onButton(arg0, arg0:findTF("top/Help"), function()
+	onButton(arg0_3, arg0_3:findTF("top/Help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.backhill_campusfestival_tip.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0:findTF("top/Invitation"), function()
-		local var0 = getProxy(ActivityProxy):getActivityById(ActivityConst.INVITATION_JP_FIFTH)
+	onButton(arg0_3, arg0_3:findTF("top/Invitation"), function()
+		local var0_7 = getProxy(ActivityProxy):getActivityById(ActivityConst.INVITATION_JP_FIFTH)
 
-		if var0 and not var0:isEnd() then
-			arg0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ACTIVITY, {
-				id = var0.id
+		if var0_7 and not var0_7:isEnd() then
+			arg0_3:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ACTIVITY, {
+				id = var0_7.id
 			})
 		end
 	end)
 
-	local var0 = getProxy(ActivityProxy):getActivityById(ActivityConst.MINIGAME_CAKEMAKING)
+	local var0_3 = getProxy(ActivityProxy):getActivityById(ActivityConst.MINIGAME_CAKEMAKING)
 
-	arg0:InitStudents(var0 and var0.id, 3, 4)
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "cakeshop", function()
+	arg0_3:InitStudents(var0_3 and var0_3.id, 3, 4)
+	arg0_3:InitFacilityCross(arg0_3._map, arg0_3._upper, "cakeshop", function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 42)
 	end)
 
-	for iter0, iter1 in pairs(arg0.Buildings) do
-		arg0:InitFacilityCross(arg0._map, arg0._upper, iter1, function()
-			arg0:emit(BackHillMediatorTemplate.GO_SUBLAYER, Context.New({
+	for iter0_3, iter1_3 in pairs(arg0_3.Buildings) do
+		arg0_3:InitFacilityCross(arg0_3._map, arg0_3._upper, iter1_3, function()
+			arg0_3:emit(BackHillMediatorTemplate.GO_SUBLAYER, Context.New({
 				mediator = BuildingUpgradeMediator,
 				viewComponent = BuildingUpgradeLayer,
 				data = {
-					buildingID = iter0
+					buildingID = iter0_3
 				}
 			}))
 		end)
 	end
 
-	setActive(arg0.upper_shujvhuigu, PLATFORM_CODE == PLATFORM_JP)
+	setActive(arg0_3.upper_shujvhuigu, PLATFORM_CODE == PLATFORM_JP)
 
 	if PLATFORM_CODE == PLATFORM_JP then
-		local function var1()
-			arg0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.SUMMARY)
+		local function var1_3()
+			arg0_3:emit(NewYearFestivalMediator.GO_SCENE, SCENE.SUMMARY)
 		end
 
-		arg0:InitFacilityCross(arg0._map, arg0._upper, "shujvhuigu", var1)
+		arg0_3:InitFacilityCross(arg0_3._map, arg0_3._upper, "shujvhuigu", var1_3)
 	end
 
-	arg0:BindItemSkinShop()
-	arg0:BindItemBuildShip()
-	arg0:RegisterDataResponse()
-	arg0:UpdateView()
+	arg0_3:BindItemSkinShop()
+	arg0_3:BindItemBuildShip()
+	arg0_3:RegisterDataResponse()
+	arg0_3:UpdateView()
 end
 
-function var0.UpdateActivity(arg0, arg1)
-	if arg1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF then
-		arg0:UpdateView()
+function var0_0.UpdateActivity(arg0_11, arg1_11)
+	if arg1_11:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF then
+		arg0_11:UpdateView()
 	end
 end
 
-local var1 = {
+local var1_0 = {
 	Vector2(-744, -187.3),
 	Vector2(-744, -187.3),
 	Vector2(-801.7, -149)
 }
 
-function var0.RegisterDataResponse(arg0)
-	arg0.Respones = ResponsableTree.CreateShell({})
+function var0_0.RegisterDataResponse(arg0_12)
+	arg0_12.Respones = ResponsableTree.CreateShell({})
 
-	arg0.Respones:SetRawData("view", arg0)
+	arg0_12.Respones:SetRawData("view", arg0_12)
 
-	local var0 = _.values(arg0.Buildings)
+	local var0_12 = _.values(arg0_12.Buildings)
 
-	for iter0, iter1 in ipairs(var0) do
-		arg0.Respones:AddRawListener({
+	for iter0_12, iter1_12 in ipairs(var0_12) do
+		arg0_12.Respones:AddRawListener({
 			"view",
-			iter1
-		}, function(arg0, arg1)
-			if not arg1 then
+			iter1_12
+		}, function(arg0_13, arg1_13)
+			if not arg1_13 then
 				return
 			end
 
-			arg0.loader:GetSpriteQuiet("ui/" .. arg0:getUIName() .. "_atlas", "entrance_" .. iter1 .. arg1, arg0["map_" .. iter1], true)
+			arg0_13.loader:GetSpriteQuiet("ui/" .. arg0_12:getUIName() .. "_atlas", "entrance_" .. iter1_12 .. arg1_13, arg0_13["map_" .. iter1_12], true)
 
-			local var0 = arg0["upper_" .. iter1]
+			local var0_13 = arg0_13["upper_" .. iter1_12]
 
-			if not var0 or IsNil(var0:Find("Lv")) then
+			if not var0_13 or IsNil(var0_13:Find("Lv")) then
 				return
 			end
 
-			setText(var0:Find("Lv"), arg1)
+			setText(var0_13:Find("Lv"), arg1_13)
 		end)
 	end
 
-	arg0.Respones:AddRawListener({
+	arg0_12.Respones:AddRawListener({
 		"view",
 		"stage"
-	}, function(arg0, arg1)
-		local var0 = arg0.map_stage
+	}, function(arg0_14, arg1_14)
+		local var0_14 = arg0_14.map_stage
 
-		setAnchoredPosition(var0, var1[arg1])
+		setAnchoredPosition(var0_14, var1_0[arg1_14])
 	end)
 
-	local var1 = {
+	local var1_12 = {
 		"cakeshop",
 		"shujvhuigu"
 	}
 
-	table.insertto(var1, var0)
+	table.insertto(var1_12, var0_12)
 
-	for iter2, iter3 in ipairs(var1) do
-		arg0.Respones:AddRawListener({
+	for iter2_12, iter3_12 in ipairs(var1_12) do
+		arg0_12.Respones:AddRawListener({
 			"view",
-			iter3 .. "Tip"
-		}, function(arg0, arg1)
-			local var0 = arg0["upper_" .. iter3]
+			iter3_12 .. "Tip"
+		}, function(arg0_15, arg1_15)
+			local var0_15 = arg0_15["upper_" .. iter3_12]
 
-			if not var0 or IsNil(var0:Find("Tip")) then
+			if not var0_15 or IsNil(var0_15:Find("Tip")) then
 				return
 			end
 
-			setActive(var0:Find("Tip"), arg1)
+			setActive(var0_15:Find("Tip"), arg1_15)
 		end)
 	end
 
-	arg0.Respones.hubData = {}
+	arg0_12.Respones.hubData = {}
 
-	arg0.Respones:AddRawListener({
+	arg0_12.Respones:AddRawListener({
 		"view",
 		"hubData"
-	}, function(arg0, arg1)
-		arg0.gameCountTxt.text = "X " .. arg1.count
+	}, function(arg0_16, arg1_16)
+		arg0_16.gameCountTxt.text = "X " .. arg1_16.count
 	end, {
 		strict = true
 	})
-	arg0.Respones:AddRawListener({
+	arg0_12.Respones:AddRawListener({
 		"view",
 		"materialCount"
-	}, function(arg0, arg1)
-		arg0.materialTxt.text = arg1
+	}, function(arg0_17, arg1_17)
+		arg0_17.materialTxt.text = arg1_17
 	end)
 end
 
-function var0.UpdateView(arg0)
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF)
+function var0_0.UpdateView(arg0_18)
+	local var0_18 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF)
 
-	for iter0, iter1 in pairs(arg0.Buildings) do
-		arg0.Respones[iter1] = var0.data1KeyValueList[2][iter0] or 1
-		arg0.Respones[iter1 .. "Tip"] = arg0:UpdateBuildingTip(var0, iter0)
+	for iter0_18, iter1_18 in pairs(arg0_18.Buildings) do
+		arg0_18.Respones[iter1_18] = var0_18.data1KeyValueList[2][iter0_18] or 1
+		arg0_18.Respones[iter1_18 .. "Tip"] = arg0_18:UpdateBuildingTip(var0_18, iter0_18)
 	end
 
-	local var1 = _.all(_.keys(arg0.Buildings), function(arg0)
-		local var0 = var0.data1KeyValueList[2][arg0] or 1
-		local var1 = pg.activity_event_building[arg0]
+	local var1_18 = _.all(_.keys(arg0_18.Buildings), function(arg0_19)
+		local var0_19 = var0_18.data1KeyValueList[2][arg0_19] or 1
+		local var1_19 = pg.activity_event_building[arg0_19]
 
-		return var1 and var0 >= #var1.buff
+		return var1_19 and var0_19 >= #var1_19.buff
 	end)
 
-	setActive(arg0.map_Decoration, var1)
+	setActive(arg0_18.map_Decoration, var1_18)
 
-	local var2 = next(var0.data1KeyValueList[1])
+	local var2_18 = next(var0_18.data1KeyValueList[1])
 
-	arg0.Respones.materialCount = var0.data1KeyValueList[1][var2] or 0
+	arg0_18.Respones.materialCount = var0_18.data1KeyValueList[1][var2_18] or 0
 
-	local function var3()
+	local function var3_18()
 		return BackHillTemplate.IsMiniActNeedTip(ActivityConst.MINIGAME_CAKEMAKING)
 	end
 
-	arg0.Respones.cakeshopTip = tobool(var3())
+	arg0_18.Respones.cakeshopTip = tobool(var3_18())
 
-	local var4 = getProxy(ActivityProxy):getActivityById(ActivityConst.MINIGAME_CAKEMAKING)
-	local var5 = getProxy(MiniGameProxy):GetHubByHubId(var4:getConfig("config_id"))
+	local var4_18 = getProxy(ActivityProxy):getActivityById(ActivityConst.MINIGAME_CAKEMAKING)
+	local var5_18 = getProxy(MiniGameProxy):GetHubByHubId(var4_18:getConfig("config_id"))
 
-	arg0:UpdateHubData(var5)
+	arg0_18:UpdateHubData(var5_18)
 
-	local function var6()
+	local function var6_18()
 		if PLATFORM_CODE ~= PLATFORM_JP then
 			return
 		end
 
-		local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY)
+		local var0_21 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY)
 
-		return Activity.IsActivityReady(var0)
+		return Activity.IsActivityReady(var0_21)
 	end
 
-	arg0.Respones.shujvhuiguTip = tobool(var6())
+	arg0_18.Respones.shujvhuiguTip = tobool(var6_18())
 end
 
-function var0.UpdateHubData(arg0, arg1)
-	arg0.Respones.hubData.count = arg1.count
-	arg0.Respones.hubData.usedtime = arg1.usedtime
-	arg0.Respones.hubData.id = arg1.id
+function var0_0.UpdateHubData(arg0_22, arg1_22)
+	arg0_22.Respones.hubData.count = arg1_22.count
+	arg0_22.Respones.hubData.usedtime = arg1_22.usedtime
+	arg0_22.Respones.hubData.id = arg1_22.id
 
-	arg0.Respones:PropertyChange("hubData")
+	arg0_22.Respones:PropertyChange("hubData")
 end
 
-function var0.IsShowMainTip(arg0)
-	local function var0()
+function var0_0.IsShowMainTip(arg0_23)
+	local function var0_23()
 		return BackHillTemplate.IsMiniActNeedTip(ActivityConst.MINIGAME_CAKEMAKING)
 	end
 
-	local function var1()
-		local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF)
+	local function var1_23()
+		local var0_25 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF)
 
-		return Activity.IsActivityReady(var0)
+		return Activity.IsActivityReady(var0_25)
 	end
 
-	local function var2()
+	local function var2_23()
 		if PLATFORM_CODE ~= PLATFORM_JP then
 			return
 		end
 
-		local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY)
+		local var0_26 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY)
 
-		return Activity.IsActivityReady(var0)
+		return Activity.IsActivityReady(var0_26)
 	end
 
-	return var0() or var1() or var2()
+	return var0_23() or var1_23() or var2_23()
 end
 
-function var0.willExit(arg0)
-	arg0:clearStudents()
-	var0.super.willExit(arg0)
+function var0_0.willExit(arg0_27)
+	arg0_27:clearStudents()
+	var0_0.super.willExit(arg0_27)
 end
 
-return var0
+return var0_0

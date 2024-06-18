@@ -1,53 +1,53 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleBuffShield = class("BattleBuffShield", var0.Battle.BattleBuffEffect)
-var0.Battle.BattleBuffShield.__name = "BattleBuffShield"
+var0_0.Battle.BattleBuffShield = class("BattleBuffShield", var0_0.Battle.BattleBuffEffect)
+var0_0.Battle.BattleBuffShield.__name = "BattleBuffShield"
 
-local var1 = var0.Battle.BattleBuffShield
+local var1_0 = var0_0.Battle.BattleBuffShield
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.GetEffectAttachData(arg0)
-	return arg0._shield
+function var1_0.GetEffectAttachData(arg0_2)
+	return arg0_2._shield
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	local var0 = arg0._tempData.arg_list
+function var1_0.SetArgs(arg0_3, arg1_3, arg2_3)
+	local var0_3 = arg0_3._tempData.arg_list
 
-	arg0._number = var0.number or 0
-	arg0._maxHPRatio = var0.maxHPRatio or 0
-	arg0._casterMaxHPRatio = var0.casterMaxHPRatio or 0
-	arg0._shield = arg0:CalcNumber(arg1)
+	arg0_3._number = var0_3.number or 0
+	arg0_3._maxHPRatio = var0_3.maxHPRatio or 0
+	arg0_3._casterMaxHPRatio = var0_3.casterMaxHPRatio or 0
+	arg0_3._shield = arg0_3:CalcNumber(arg1_3)
 end
 
-function var1.onStack(arg0, arg1, arg2)
-	arg0._shield = arg0:CalcNumber(arg1)
+function var1_0.onStack(arg0_4, arg1_4, arg2_4)
+	arg0_4._shield = arg0_4:CalcNumber(arg1_4)
 end
 
-function var1.onTakeDamage(arg0, arg1, arg2, arg3)
-	if arg0:damageCheck(arg3) then
-		local var0 = arg3.damage
+function var1_0.onTakeDamage(arg0_5, arg1_5, arg2_5, arg3_5)
+	if arg0_5:damageCheck(arg3_5) then
+		local var0_5 = arg3_5.damage
 
-		arg0._shield = arg0._shield - var0
+		arg0_5._shield = arg0_5._shield - var0_5
 
-		if arg0._shield > 0 then
-			arg3.damage = 0
+		if arg0_5._shield > 0 then
+			arg3_5.damage = 0
 		else
-			arg3.damage = -arg0._shield
+			arg3_5.damage = -arg0_5._shield
 
-			arg2:SetToCancel()
+			arg2_5:SetToCancel()
 		end
 	end
 end
 
-function var1.CalcNumber(arg0, arg1)
-	local var0, var1 = arg1:GetHP()
-	local var2, var3 = arg0._caster:GetHP()
-	local var4 = var1 * arg0._maxHPRatio + arg0._number + arg0._casterMaxHPRatio * var3
+function var1_0.CalcNumber(arg0_6, arg1_6)
+	local var0_6, var1_6 = arg1_6:GetHP()
+	local var2_6, var3_6 = arg0_6._caster:GetHP()
+	local var4_6 = var1_6 * arg0_6._maxHPRatio + arg0_6._number + arg0_6._casterMaxHPRatio * var3_6
 
-	return math.max(0, math.floor(var4))
+	return math.max(0, math.floor(var4_6))
 end

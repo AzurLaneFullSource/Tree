@@ -1,28 +1,28 @@
-﻿local var0 = class("OpenOrCloseCatteryCommand", pm.SimpleCommand)
+﻿local var0_0 = class("OpenOrCloseCatteryCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody().open
-	local var1 = var0 and 0 or 1
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody().open
+	local var1_1 = var0_1 and 0 or 1
 
 	pg.ConnectionMgr.GetInstance():Send(25036, {
-		is_open = var1
+		is_open = var1_1
 	})
 
-	local var2 = getProxy(CommanderProxy)
+	local var2_1 = getProxy(CommanderProxy)
 
-	var2:UpdateOpenCommanderScene(var0)
+	var2_1:UpdateOpenCommanderScene(var0_1)
 
-	if var0 then
-		local var3 = var2:GetCommanderHome()
+	if var0_1 then
+		local var3_1 = var2_1:GetCommanderHome()
 
-		if var3 then
-			local var4 = var3:GetCatteries()
+		if var3_1 then
+			local var4_1 = var3_1:GetCatteries()
 
-			for iter0, iter1 in pairs(var4) do
-				iter1:ClearCacheExp()
+			for iter0_1, iter1_1 in pairs(var4_1) do
+				iter1_1:ClearCacheExp()
 			end
 		end
 	end
 end
 
-return var0
+return var0_0

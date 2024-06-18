@@ -1,12 +1,12 @@
-﻿local var0 = class("XiaoTianChengPtPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var0_0 = class("XiaoTianChengPtPage", import(".TemplatePage.PtTemplatePage"))
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
+function var0_0.OnInit(arg0_1)
+	var0_0.super.OnInit(arg0_1)
 
-	arg0.hearts = UIItemList.New(arg0:findTF("AD/heart"), arg0:findTF("AD/heart/mark"))
-	arg0.helpBtn = arg0:findTF("AD/Image")
+	arg0_1.hearts = UIItemList.New(arg0_1:findTF("AD/heart"), arg0_1:findTF("AD/heart/mark"))
+	arg0_1.helpBtn = arg0_1:findTF("AD/Image")
 
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_1, arg0_1.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.gametip_xiaotiancheng.tip
@@ -14,24 +14,24 @@ function var0.OnInit(arg0)
 	end, SFX_PANEL)
 end
 
-function var0.OnFirstFlush(arg0)
-	var0.super.OnFirstFlush(arg0)
-	onButton(arg0, arg0.battleBtn, function()
-		arg0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+function var0_0.OnFirstFlush(arg0_3)
+	var0_0.super.OnFirstFlush(arg0_3)
+	onButton(arg0_3, arg0_3.battleBtn, function()
+		arg0_3:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
 end
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
+function var0_0.OnUpdateFlush(arg0_5)
+	var0_0.super.OnUpdateFlush(arg0_5)
 
-	local var0, var1, var2 = arg0.ptData:GetLevelProgress()
+	local var0_5, var1_5, var2_5 = arg0_5.ptData:GetLevelProgress()
 
-	arg0.hearts:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			setActive(arg2, arg1 < arg0.ptData.level)
+	arg0_5.hearts:make(function(arg0_6, arg1_6, arg2_6)
+		if arg0_6 == UIItemList.EventUpdate then
+			setActive(arg2_6, arg1_6 < arg0_5.ptData.level)
 		end
 	end)
-	arg0.hearts:align(var1)
+	arg0_5.hearts:align(var1_5)
 end
 
-return var0
+return var0_0

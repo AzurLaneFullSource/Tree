@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_167 = {}
+var0_0.word_template_167 = {}
 
-local var1 = var0.word_template_167
+local var1_0 = var0_0.word_template_167
 
 function temp()
-	var1.开 = {
+	var1_0.开 = {
 		苞 = {
 			this = true
 		},
@@ -376,7 +376,7 @@ end
 temp()
 
 function temp()
-	var1.開 = {
+	var1_0.開 = {
 		苞 = {
 			this = true
 		},
@@ -408,7 +408,7 @@ end
 temp()
 
 function temp()
-	var1.凯 = {
+	var1_0.凯 = {
 		托 = {
 			米 = {
 				酮 = {
@@ -431,7 +431,7 @@ end
 temp()
 
 function temp()
-	var1.凱 = {
+	var1_0.凱 = {
 		奧 = {
 			勒 = {
 				尼 = {
@@ -464,7 +464,7 @@ end
 temp()
 
 function temp()
-	var1.砍 = {
+	var1_0.砍 = {
 		翻 = {
 			一 = {
 				條 = {
@@ -553,7 +553,7 @@ end
 temp()
 
 function temp()
-	var1.看 = {
+	var1_0.看 = {
 		病 = {
 			最 = {
 				不 = {
@@ -615,7 +615,7 @@ end
 temp()
 
 function temp()
-	var1.康 = {
+	var1_0.康 = {
 		宝 = {
 			莱 = {
 				this = true

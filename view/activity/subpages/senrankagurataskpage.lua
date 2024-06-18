@@ -1,57 +1,57 @@
-﻿local var0 = class("SenrankaguraTaskPage", import("...base.BaseActivityPage"))
+﻿local var0_0 = class("SenrankaguraTaskPage", import("...base.BaseActivityPage"))
 
-function var0.OnInit(arg0)
-	arg0.taskProxy = getProxy(TaskProxy)
-	arg0.activityProxy = getProxy(ActivityProxy)
+function var0_0.OnInit(arg0_1)
+	arg0_1.taskProxy = getProxy(TaskProxy)
+	arg0_1.activityProxy = getProxy(ActivityProxy)
 
-	arg0:findUI()
+	arg0_1:findUI()
 end
 
-function var0.OnDataSetting(arg0)
-	arg0.configID = arg0.activity:getConfig("config_id")
-	arg0.configData = pg.activity_event_turning[arg0.configID]
-	arg0.groupNum = arg0.configData.total_num
+function var0_0.OnDataSetting(arg0_2)
+	arg0_2.configID = arg0_2.activity:getConfig("config_id")
+	arg0_2.configData = pg.activity_event_turning[arg0_2.configID]
+	arg0_2.groupNum = arg0_2.configData.total_num
 end
 
-function var0.OnFirstFlush(arg0)
+function var0_0.OnFirstFlush(arg0_3)
 	return
 end
 
-function var0.OnUpdateFlush(arg0)
-	local var0 = arg0:getCurIndex()
+function var0_0.OnUpdateFlush(arg0_4)
+	local var0_4 = arg0_4:getCurIndex()
 
-	if arg0.markClickPos and arg0.markClickPos > 0 then
+	if arg0_4.markClickPos and arg0_4.markClickPos > 0 then
 		print("有操作再更新任务面板")
-		arg0:openTaskAni()
-	elseif var0 > 0 then
-		if arg0.activity.data4 <= arg0.groupNum then
+		arg0_4:openTaskAni()
+	elseif var0_4 > 0 then
+		if arg0_4.activity.data4 <= arg0_4.groupNum then
 			print("直接更新任务面板")
-			arg0:updateTaskPanel()
-			setActive(arg0.posPanel, false)
-			setActive(arg0.taskPanel, true)
+			arg0_4:updateTaskPanel()
+			setActive(arg0_4.posPanel, false)
+			setActive(arg0_4.taskPanel, true)
 		end
-	elseif var0 == 0 then
-		arg0:updatePosPanel()
-		setActive(arg0.posPanel, true)
-		setActive(arg0.taskPanel, false)
+	elseif var0_4 == 0 then
+		arg0_4:updatePosPanel()
+		setActive(arg0_4.posPanel, true)
+		setActive(arg0_4.taskPanel, false)
 
-		if arg0:getStep() > arg0.groupNum then
+		if arg0_4:getStep() > arg0_4.groupNum then
 			-- block empty
 		end
 	end
 
-	arg0:check()
-	arg0:updateLogText()
+	arg0_4:check()
+	arg0_4:updateLogText()
 end
 
-function var0.onDestroy(arg0)
+function var0_0.onDestroy(arg0_5)
 	return
 end
 
-function var0.findUI(arg0)
-	local var0 = arg0:findTF("IconList")
+function var0_0.findUI(arg0_6)
+	local var0_6 = arg0_6:findTF("IconList")
 
-	arg0.nameList = {
+	arg0_6.nameList = {
 		"feiniao",
 		"banjiu",
 		"yan",
@@ -60,7 +60,7 @@ function var0.findUI(arg0)
 		"zi",
 		"xishao"
 	}
-	arg0.paintingList = {
+	arg0_6.paintingList = {
 		"asuka",
 		"ikaruga",
 		"homura",
@@ -69,18 +69,18 @@ function var0.findUI(arg0)
 		"murasaki",
 		"yuuyaki"
 	}
-	arg0.iconSpriteDict = {}
+	arg0_6.iconSpriteDict = {}
 
-	for iter0, iter1 in ipairs(arg0.nameList) do
-		local var1 = arg0:findTF(iter1, var0)
-		local var2 = getImageSprite(var1)
+	for iter0_6, iter1_6 in ipairs(arg0_6.nameList) do
+		local var1_6 = arg0_6:findTF(iter1_6, var0_6)
+		local var2_6 = getImageSprite(var1_6)
 
-		arg0.iconSpriteDict[iter0] = var2
-		arg0.iconSpriteDict[iter1] = var2
+		arg0_6.iconSpriteDict[iter0_6] = var2_6
+		arg0_6.iconSpriteDict[iter1_6] = var2_6
 	end
 
-	local var3 = arg0:findTF("HXList")
-	local var4 = {
+	local var3_6 = arg0_6:findTF("HXList")
+	local var4_6 = {
 		"feiniao",
 		"yan",
 		"xuequan",
@@ -88,16 +88,16 @@ function var0.findUI(arg0)
 		"xishao"
 	}
 
-	arg0.hxSpriteDict = {}
+	arg0_6.hxSpriteDict = {}
 
-	for iter2, iter3 in ipairs(var4) do
-		local var5 = arg0:findTF(iter3, var3)
-		local var6 = getImageSprite(var5)
+	for iter2_6, iter3_6 in ipairs(var4_6) do
+		local var5_6 = arg0_6:findTF(iter3_6, var3_6)
+		local var6_6 = getImageSprite(var5_6)
 
-		arg0.hxSpriteDict[iter3] = var6
+		arg0_6.hxSpriteDict[iter3_6] = var6_6
 	end
 
-	arg0.hxPosDict = {
+	arg0_6.hxPosDict = {
 		feiniao = {
 			x = -47,
 			y = -7
@@ -119,7 +119,7 @@ function var0.findUI(arg0)
 			y = -21
 		}
 	}
-	arg0.paintingPosDict = {
+	arg0_6.paintingPosDict = {
 		feiniao = {
 			x = 42,
 			y = -22
@@ -149,341 +149,341 @@ function var0.findUI(arg0)
 			y = -1
 		}
 	}
-	arg0.posPanel = arg0:findTF("PosPanel")
-	arg0.finalLockTF = arg0:findTF("FinalAward/Lock", arg0.posPanel)
-	arg0.finalGotTF = arg0:findTF("FinalAward/Got", arg0.posPanel)
-	arg0.posTFList = {}
+	arg0_6.posPanel = arg0_6:findTF("PosPanel")
+	arg0_6.finalLockTF = arg0_6:findTF("FinalAward/Lock", arg0_6.posPanel)
+	arg0_6.finalGotTF = arg0_6:findTF("FinalAward/Got", arg0_6.posPanel)
+	arg0_6.posTFList = {}
 
-	local var7 = arg0:findTF("PosList", arg0.posPanel)
+	local var7_6 = arg0_6:findTF("PosList", arg0_6.posPanel)
 
-	for iter4 = 1, #arg0.nameList do
-		local var8 = arg0:findTF(iter4, var7)
+	for iter4_6 = 1, #arg0_6.nameList do
+		local var8_6 = arg0_6:findTF(iter4_6, var7_6)
 
-		table.insert(arg0.posTFList, var8)
+		table.insert(arg0_6.posTFList, var8_6)
 
-		local var9 = arg0:findTF("Get", var8)
+		local var9_6 = arg0_6:findTF("Get", var8_6)
 
-		onButton(arg0, var9, function()
-			local var0 = arg0:getStep()
+		onButton(arg0_6, var9_6, function()
+			local var0_7 = arg0_6:getStep()
 
-			if var0 < arg0:getCurDayCount() and var0 < arg0.groupNum then
-				arg0.markClickPos = iter4
+			if var0_7 < arg0_6:getCurDayCount() and var0_7 < arg0_6.groupNum then
+				arg0_6.markClickPos = iter4_6
 
-				arg0:selectPos(iter4)
+				arg0_6:selectPos(iter4_6)
 			end
 		end, SFX_PANEL)
 	end
 
-	arg0.taskPanel = arg0:findTF("TaskPanel")
-	arg0.paintingTF = arg0:findTF("PaintingPanel/Main/Painting", arg0.taskPanel)
-	arg0.paintingHXTF = arg0:findTF("PaintingPanel/Main/HX", arg0.taskPanel)
-	arg0.progressTFList = {}
+	arg0_6.taskPanel = arg0_6:findTF("TaskPanel")
+	arg0_6.paintingTF = arg0_6:findTF("PaintingPanel/Main/Painting", arg0_6.taskPanel)
+	arg0_6.paintingHXTF = arg0_6:findTF("PaintingPanel/Main/HX", arg0_6.taskPanel)
+	arg0_6.progressTFList = {}
 
-	local var10 = arg0:findTF("Progress", arg0.taskPanel)
+	local var10_6 = arg0_6:findTF("Progress", arg0_6.taskPanel)
 
-	for iter5 = 1, #arg0.nameList do
-		local var11 = arg0:findTF(iter5, var10)
+	for iter5_6 = 1, #arg0_6.nameList do
+		local var11_6 = arg0_6:findTF(iter5_6, var10_6)
 
-		arg0.progressTFList[iter5] = var11
+		arg0_6.progressTFList[iter5_6] = var11_6
 	end
 
-	arg0.taskTFList = {}
-	arg0.taskTFList[1] = arg0:findTF("Task1", arg0.taskPanel)
-	arg0.taskTFList[2] = arg0:findTF("Task2", arg0.taskPanel)
-	arg0.logText = arg0:findTF("LogText")
+	arg0_6.taskTFList = {}
+	arg0_6.taskTFList[1] = arg0_6:findTF("Task1", arg0_6.taskPanel)
+	arg0_6.taskTFList[2] = arg0_6:findTF("Task2", arg0_6.taskPanel)
+	arg0_6.logText = arg0_6:findTF("LogText")
 end
 
-function var0.updatePosPanel(arg0)
-	local var0 = arg0.posTFList
-	local var1 = arg0.activity.data1_list
+function var0_0.updatePosPanel(arg0_8)
+	local var0_8 = arg0_8.posTFList
+	local var1_8 = arg0_8.activity.data1_list
 
-	for iter0, iter1 in ipairs(var0) do
-		local var2 = var1[iter0] > 0
-		local var3 = arg0:findTF("Got", iter1)
-		local var4 = arg0:findTF("Icon", var3)
-		local var5 = var1[iter0]
-		local var6 = arg0.iconSpriteDict[var5]
+	for iter0_8, iter1_8 in ipairs(var0_8) do
+		local var2_8 = var1_8[iter0_8] > 0
+		local var3_8 = arg0_8:findTF("Got", iter1_8)
+		local var4_8 = arg0_8:findTF("Icon", var3_8)
+		local var5_8 = var1_8[iter0_8]
+		local var6_8 = arg0_8.iconSpriteDict[var5_8]
 
-		setImageSprite(var4, var6, true)
-		setActive(var3, var2)
+		setImageSprite(var4_8, var6_8, true)
+		setActive(var3_8, var2_8)
 	end
 
-	local var7 = arg0:isGotFinalAward()
+	local var7_8 = arg0_8:isGotFinalAward()
 
-	setActive(arg0.finalGotTF, var7)
-	setActive(arg0.finalLockTF, not var7)
+	setActive(arg0_8.finalGotTF, var7_8)
+	setActive(arg0_8.finalLockTF, not var7_8)
 end
 
-function var0.updateTaskPanel(arg0)
-	arg0:updateTaskList()
-	arg0:updateProgress()
-	arg0:updatePainting()
+function var0_0.updateTaskPanel(arg0_9)
+	arg0_9:updateTaskList()
+	arg0_9:updateProgress()
+	arg0_9:updatePainting()
 end
 
-function var0.updateTaskList(arg0)
-	local var0 = arg0:getCurTaskIDList()
+function var0_0.updateTaskList(arg0_10)
+	local var0_10 = arg0_10:getCurTaskIDList()
 
-	for iter0, iter1 in ipairs(arg0.taskTFList) do
-		local var1 = var0[iter0]
-		local var2 = arg0.taskProxy:getTaskVO(var1)
-		local var3 = arg0:findTF("Desc", iter1)
+	for iter0_10, iter1_10 in ipairs(arg0_10.taskTFList) do
+		local var1_10 = var0_10[iter0_10]
+		local var2_10 = arg0_10.taskProxy:getTaskVO(var1_10)
+		local var3_10 = arg0_10:findTF("Desc", iter1_10)
 
-		setText(var3, var2:getConfig("desc"))
+		setText(var3_10, var2_10:getConfig("desc"))
 
-		local var4 = var2:getProgress()
-		local var5 = var2:getConfig("target_num")
-		local var6 = arg0:findTF("ProgressText", iter1)
-		local var7 = arg0:findTF("ProgressBar", iter1)
+		local var4_10 = var2_10:getProgress()
+		local var5_10 = var2_10:getConfig("target_num")
+		local var6_10 = arg0_10:findTF("ProgressText", iter1_10)
+		local var7_10 = arg0_10:findTF("ProgressBar", iter1_10)
 
-		setText(var6, var4 .. "/" .. var5)
-		setSlider(var7, 0, var5, var4)
+		setText(var6_10, var4_10 .. "/" .. var5_10)
+		setSlider(var7_10, 0, var5_10, var4_10)
 
-		local var8 = var2:getTaskStatus()
-		local var9 = arg0:findTF("GetBtn", iter1)
-		local var10 = arg0:findTF("GotBtn", iter1)
-		local var11 = arg0:findTF("GoBtn", iter1)
+		local var8_10 = var2_10:getTaskStatus()
+		local var9_10 = arg0_10:findTF("GetBtn", iter1_10)
+		local var10_10 = arg0_10:findTF("GotBtn", iter1_10)
+		local var11_10 = arg0_10:findTF("GoBtn", iter1_10)
 
-		setActive(var11, var8 == 0)
-		setActive(var9, var8 == 1)
-		setActive(var10, var8 == 2)
-		onButton(arg0, var11, function()
-			arg0:emit(ActivityMediator.ON_TASK_GO, var2)
+		setActive(var11_10, var8_10 == 0)
+		setActive(var9_10, var8_10 == 1)
+		setActive(var10_10, var8_10 == 2)
+		onButton(arg0_10, var11_10, function()
+			arg0_10:emit(ActivityMediator.ON_TASK_GO, var2_10)
 		end, SFX_PANEL)
-		onButton(arg0, var9, function()
-			arg0:emit(ActivityMediator.ON_TASK_SUBMIT, var2)
+		onButton(arg0_10, var9_10, function()
+			arg0_10:emit(ActivityMediator.ON_TASK_SUBMIT, var2_10)
 		end, SFX_PANEL)
 
-		local var12 = var2:getConfig("award_display")[1]
-		local var13 = {
-			type = var12[1],
-			id = var12[2],
-			count = var12[3]
+		local var12_10 = var2_10:getConfig("award_display")[1]
+		local var13_10 = {
+			type = var12_10[1],
+			id = var12_10[2],
+			count = var12_10[3]
 		}
-		local var14 = arg0:findTF("Icon", iter1)
+		local var14_10 = arg0_10:findTF("Icon", iter1_10)
 
-		updateDrop(var14, var13)
-		onButton(arg0, var14, function()
-			arg0:emit(BaseUI.ON_DROP, var13)
+		updateDrop(var14_10, var13_10)
+		onButton(arg0_10, var14_10, function()
+			arg0_10:emit(BaseUI.ON_DROP, var13_10)
 		end, SFX_PANEL)
 
-		if arg0:isFinishedCurTaskList() then
-			local var15 = arg0:getStep()
-			local var16 = arg0.configData.story_task[var15][1]
+		if arg0_10:isFinishedCurTaskList() then
+			local var15_10 = arg0_10:getStep()
+			local var16_10 = arg0_10.configData.story_task[var15_10][1]
 
-			print("story", tostring(var16))
+			print("story", tostring(var16_10))
 
-			if var16 then
-				pg.NewStoryMgr.GetInstance():Play(var16, nil)
+			if var16_10 then
+				pg.NewStoryMgr.GetInstance():Play(var16_10, nil)
 			end
 		end
 	end
 end
 
-function var0.updateProgress(arg0)
-	local var0 = arg0:getStep()
+function var0_0.updateProgress(arg0_14)
+	local var0_14 = arg0_14:getStep()
 
-	for iter0, iter1 in ipairs(arg0.progressTFList) do
-		local var1 = arg0:findTF("Get", iter1)
-		local var2 = arg0:findTF("Got", iter1)
-		local var3 = arg0:findTF("Doing", iter1)
+	for iter0_14, iter1_14 in ipairs(arg0_14.progressTFList) do
+		local var1_14 = arg0_14:findTF("Get", iter1_14)
+		local var2_14 = arg0_14:findTF("Got", iter1_14)
+		local var3_14 = arg0_14:findTF("Doing", iter1_14)
 
-		setActive(var2, iter0 < var0)
-		setActive(var1, var0 < iter0)
-		setActive(var3, iter0 == var0)
+		setActive(var2_14, iter0_14 < var0_14)
+		setActive(var1_14, var0_14 < iter0_14)
+		setActive(var3_14, iter0_14 == var0_14)
 	end
 end
 
-function var0.updatePainting(arg0)
-	local var0 = arg0:getCurIndex()
-	local var1 = arg0.nameList[var0]
-	local var2 = arg0.paintingList[var0]
-	local var3 = LoadSprite("activitypainting/" .. var2, var2)
+function var0_0.updatePainting(arg0_15)
+	local var0_15 = arg0_15:getCurIndex()
+	local var1_15 = arg0_15.nameList[var0_15]
+	local var2_15 = arg0_15.paintingList[var0_15]
+	local var3_15 = LoadSprite("activitypainting/" .. var2_15, var2_15)
 
-	setImageSprite(arg0.paintingTF, var3, true)
+	setImageSprite(arg0_15.paintingTF, var3_15, true)
 
-	local var4 = arg0.paintingPosDict[var1]
+	local var4_15 = arg0_15.paintingPosDict[var1_15]
 
-	setLocalPosition(arg0.paintingTF, var4)
+	setLocalPosition(arg0_15.paintingTF, var4_15)
 
 	if PLATFORM_CODE == PLATFORM_CH then
-		local var5 = arg0.hxPosDict[var1]
+		local var5_15 = arg0_15.hxPosDict[var1_15]
 
-		if var5 then
-			local var6 = arg0.hxSpriteDict[var1]
+		if var5_15 then
+			local var6_15 = arg0_15.hxSpriteDict[var1_15]
 
-			setImageSprite(arg0.paintingHXTF, var6, true)
-			setLocalPosition(arg0.paintingHXTF, var5)
-			setActive(arg0.paintingHXTF, true)
+			setImageSprite(arg0_15.paintingHXTF, var6_15, true)
+			setLocalPosition(arg0_15.paintingHXTF, var5_15)
+			setActive(arg0_15.paintingHXTF, true)
 		else
-			setActive(arg0.paintingHXTF, false)
+			setActive(arg0_15.paintingHXTF, false)
 		end
 	else
-		setActive(arg0.paintingHXTF, false)
+		setActive(arg0_15.paintingHXTF, false)
 	end
 end
 
-function var0.openTaskAni(arg0)
-	local var0 = arg0:getCurIndex()
-	local var1 = arg0.activity.data1_list
-	local var2 = table.indexof(var1, var0, 1)
-	local var3 = arg0.posTFList[var2]
-	local var4 = arg0:findTF("Get", var3)
-	local var5 = arg0:findTF("Got", var3)
+function var0_0.openTaskAni(arg0_16)
+	local var0_16 = arg0_16:getCurIndex()
+	local var1_16 = arg0_16.activity.data1_list
+	local var2_16 = table.indexof(var1_16, var0_16, 1)
+	local var3_16 = arg0_16.posTFList[var2_16]
+	local var4_16 = arg0_16:findTF("Get", var3_16)
+	local var5_16 = arg0_16:findTF("Got", var3_16)
 
-	setImageAlpha(var4, 1)
-	setImageAlpha(var5, 0)
-	setActive(var4, true)
-	setActive(var5, true)
+	setImageAlpha(var4_16, 1)
+	setImageAlpha(var5_16, 0)
+	setActive(var4_16, true)
+	setActive(var5_16, true)
 
-	local var6 = arg0:findTF("Icon", var5)
+	local var6_16 = arg0_16:findTF("Icon", var5_16)
 
-	setActive(var6, false)
+	setActive(var6_16, false)
 
-	local var7 = System.Action_float(function(arg0)
-		setImageAlpha(var4, 1 - arg0)
-		setImageAlpha(var5, arg0)
+	local var7_16 = System.Action_float(function(arg0_17)
+		setImageAlpha(var4_16, 1 - arg0_17)
+		setImageAlpha(var5_16, arg0_17)
 	end)
-	local var8 = System.Action(function()
-		local var0 = arg0:getCurIndex()
-		local var1 = arg0.configData.story_list[var0]
+	local var8_16 = System.Action(function()
+		local var0_18 = arg0_16:getCurIndex()
+		local var1_18 = arg0_16.configData.story_list[var0_18]
 
-		if var1 then
-			pg.NewStoryMgr.GetInstance():Play(var1, function()
-				arg0:updateTaskPanel()
-				setActive(arg0.posPanel, false)
-				setActive(arg0.taskPanel, true)
+		if var1_18 then
+			pg.NewStoryMgr.GetInstance():Play(var1_18, function()
+				arg0_16:updateTaskPanel()
+				setActive(arg0_16.posPanel, false)
+				setActive(arg0_16.taskPanel, true)
 			end, true, true)
 		else
-			arg0:updateTaskPanel()
-			setActive(arg0.posPanel, false)
-			setActive(arg0.taskPanel, true)
+			arg0_16:updateTaskPanel()
+			setActive(arg0_16.posPanel, false)
+			setActive(arg0_16.taskPanel, true)
 		end
 
-		arg0.markClickPos = nil
+		arg0_16.markClickPos = nil
 	end)
 
-	var3:SetAsLastSibling()
-	arg0:managedTween(LeanTween.value, nil, go(var3), var7, 0, 1, 0.5):setOnComplete(var8)
+	var3_16:SetAsLastSibling()
+	arg0_16:managedTween(LeanTween.value, nil, go(var3_16), var7_16, 0, 1, 0.5):setOnComplete(var8_16)
 
-	arg0.tweenTF = var3
+	arg0_16.tweenTF = var3_16
 end
 
-function var0.check(arg0)
-	if not arg0:isGotFinalAward() then
-		local var0 = arg0:getStep()
+function var0_0.check(arg0_20)
+	if not arg0_20:isGotFinalAward() then
+		local var0_20 = arg0_20:getStep()
 
-		if var0 <= arg0.groupNum and arg0:getCurTaskIDList() and arg0:isFinishedCurTaskList() then
+		if var0_20 <= arg0_20.groupNum and arg0_20:getCurTaskIDList() and arg0_20:isFinishedCurTaskList() then
 			print("清除位置")
-			arg0:resetPos()
+			arg0_20:resetPos()
 		end
 
-		if var0 == arg0.groupNum and not arg0:getCurTaskIDList() then
+		if var0_20 == arg0_20.groupNum and not arg0_20:getCurTaskIDList() then
 			print("领取最终奖励")
-			arg0:getFinalAward()
+			arg0_20:getFinalAward()
 		end
 	end
 end
 
-function var0.isGotFinalAward(arg0)
-	return arg0.activity.data2 > 0
+function var0_0.isGotFinalAward(arg0_21)
+	return arg0_21.activity.data2 > 0
 end
 
-function var0.getStep(arg0)
-	return arg0.activity.data3
+function var0_0.getStep(arg0_22)
+	return arg0_22.activity.data3
 end
 
-function var0.getCurIndex(arg0)
-	return arg0.activity.data4
+function var0_0.getCurIndex(arg0_23)
+	return arg0_23.activity.data4
 end
 
-function var0.getCurTaskIDList(arg0)
-	local var0 = arg0:getCurIndex()
+function var0_0.getCurTaskIDList(arg0_24)
+	local var0_24 = arg0_24:getCurIndex()
 
-	return arg0.configData.task_table[var0]
+	return arg0_24.configData.task_table[var0_24]
 end
 
-function var0.isFinishedCurTaskList(arg0)
-	local var0 = arg0:getCurTaskIDList()
+function var0_0.isFinishedCurTaskList(arg0_25)
+	local var0_25 = arg0_25:getCurTaskIDList()
 
-	return _.all(var0, function(arg0)
-		return arg0.taskProxy:getTaskVO(arg0):getTaskStatus() == 2
+	return _.all(var0_25, function(arg0_26)
+		return arg0_25.taskProxy:getTaskVO(arg0_26):getTaskStatus() == 2
 	end)
 end
 
-function var0.getCurDayCount(arg0)
-	local var0 = arg0.activity.data1
-	local var1 = pg.TimeMgr.GetInstance():GetServerTime()
+function var0_0.getCurDayCount(arg0_27)
+	local var0_27 = arg0_27.activity.data1
+	local var1_27 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	return pg.TimeMgr.GetInstance():DiffDay(var0, var1) + 1
+	return pg.TimeMgr.GetInstance():DiffDay(var0_27, var1_27) + 1
 end
 
-function var0.getMaxDayCount(arg0)
-	local var0 = arg0:getCurDayCount()
+function var0_0.getMaxDayCount(arg0_28)
+	local var0_28 = arg0_28:getCurDayCount()
 
-	return (math.clamp(var0, 1, arg0.configData.total_num))
+	return (math.clamp(var0_28, 1, arg0_28.configData.total_num))
 end
 
-function var0.resetPos(arg0)
-	arg0:emit(ActivityMediator.EVENT_OPERATION, {
+function var0_0.resetPos(arg0_29)
+	arg0_29:emit(ActivityMediator.EVENT_OPERATION, {
 		cmd = 2,
-		activity_id = arg0.activity.id
+		activity_id = arg0_29.activity.id
 	})
 end
 
-function var0.selectPos(arg0, arg1)
-	arg0:emit(ActivityMediator.EVENT_OPERATION, {
+function var0_0.selectPos(arg0_30, arg1_30)
+	arg0_30:emit(ActivityMediator.EVENT_OPERATION, {
 		cmd = 1,
-		activity_id = arg0.activity.id,
-		arg1 = arg1
+		activity_id = arg0_30.activity.id,
+		arg1 = arg1_30
 	})
 end
 
-function var0.getFinalAward(arg0)
-	arg0:emit(ActivityMediator.EVENT_OPERATION, {
+function var0_0.getFinalAward(arg0_31)
+	arg0_31:emit(ActivityMediator.EVENT_OPERATION, {
 		cmd = 1,
-		activity_id = arg0.activity.id
+		activity_id = arg0_31.activity.id
 	})
 end
 
-function var0.updateLogText(arg0)
-	local var0 = arg0.activity.data1
-	local var1 = arg0.activity.data2
-	local var2 = arg0.activity.data3
-	local var3 = arg0.activity.data4
-	local var4 = arg0.activity.data1_list
-	local var5 = arg0.activity:getConfig("config_id")
-	local var6 = pg.activity_event_turning[var5].total_num
-	local var7 = pg.activity_event_turning[var5].groupid_list
-	local var8 = pg.TimeMgr.GetInstance():DiffDay(var0, pg.TimeMgr.GetInstance():GetServerTime()) + 1
-	local var9 = math.clamp(var8, 1, var6)
-	local var10 = ""
+function var0_0.updateLogText(arg0_32)
+	local var0_32 = arg0_32.activity.data1
+	local var1_32 = arg0_32.activity.data2
+	local var2_32 = arg0_32.activity.data3
+	local var3_32 = arg0_32.activity.data4
+	local var4_32 = arg0_32.activity.data1_list
+	local var5_32 = arg0_32.activity:getConfig("config_id")
+	local var6_32 = pg.activity_event_turning[var5_32].total_num
+	local var7_32 = pg.activity_event_turning[var5_32].groupid_list
+	local var8_32 = pg.TimeMgr.GetInstance():DiffDay(var0_32, pg.TimeMgr.GetInstance():GetServerTime()) + 1
+	local var9_32 = math.clamp(var8_32, 1, var6_32)
+	local var10_32 = ""
 
-	local function var11(arg0)
-		var10 = var10 .. arg0 .. "\n"
+	local function var11_32(arg0_33)
+		var10_32 = var10_32 .. arg0_33 .. "\n"
 	end
 
-	var11("开始时间戳：" .. tostring(var0))
-	var11("是否领取最终奖励：" .. tostring(var1))
-	var11("当前进度：" .. tostring(var2))
-	var11("抽到的索引：" .. tostring(var3))
-	var11("抽到的位置-索引列表：" .. table.concat(var4, "-"))
-	var11("活动开始到现在的天数：" .. tostring(var8))
-	var11("活动的最大抽取次数：" .. tostring(var9))
-	var11("配置的总段数：" .. tostring(var6))
-	var11("配置的GroupID列表：" .. table.concat(var7, "-"))
+	var11_32("开始时间戳：" .. tostring(var0_32))
+	var11_32("是否领取最终奖励：" .. tostring(var1_32))
+	var11_32("当前进度：" .. tostring(var2_32))
+	var11_32("抽到的索引：" .. tostring(var3_32))
+	var11_32("抽到的位置-索引列表：" .. table.concat(var4_32, "-"))
+	var11_32("活动开始到现在的天数：" .. tostring(var8_32))
+	var11_32("活动的最大抽取次数：" .. tostring(var9_32))
+	var11_32("配置的总段数：" .. tostring(var6_32))
+	var11_32("配置的GroupID列表：" .. table.concat(var7_32, "-"))
 
-	if var3 > 0 then
-		local var12 = pg.activity_event_turning[var5][var3]
-		local var13 = pg.activity_event_turning[var5].task_table[var3]
-		local var14 = pg.activity_event_turning[var5].story_list[var3]
+	if var3_32 > 0 then
+		local var12_32 = pg.activity_event_turning[var5_32][var3_32]
+		local var13_32 = pg.activity_event_turning[var5_32].task_table[var3_32]
+		local var14_32 = pg.activity_event_turning[var5_32].story_list[var3_32]
 
-		var11("当前的GroupID：" .. tostring(var12))
-		var11("当前的任务列表：" .. table.concat(var13, "-"))
-		var11("当前的剧情ID：" .. tostring(var14))
+		var11_32("当前的GroupID：" .. tostring(var12_32))
+		var11_32("当前的任务列表：" .. table.concat(var13_32, "-"))
+		var11_32("当前的剧情ID：" .. tostring(var14_32))
 	end
 
-	setText(arg0.logText, var10)
-	print(var10)
+	setText(arg0_32.logText, var10_32)
+	print(var10_32)
 end
 
-return var0
+return var0_0

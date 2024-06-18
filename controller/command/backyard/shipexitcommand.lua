@@ -1,50 +1,50 @@
-﻿local var0 = class("ShipExitCommand", pm.SimpleCommand)
+﻿local var0_0 = class("ShipExitCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = getProxy(DormProxy)
-	local var2 = var0.shipId
-	local var3 = getProxy(BayProxy)
-	local var4 = var3:getShipById(var2)
-	local var5 = var0.callback
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = getProxy(DormProxy)
+	local var2_1 = var0_1.shipId
+	local var3_1 = getProxy(BayProxy)
+	local var4_1 = var3_1:getShipById(var2_1)
+	local var5_1 = var0_1.callback
 
-	if not var1:getShipById(var2) then
+	if not var1_1:getShipById(var2_1) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_no_ship_tip"))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(19004, {
-		ship_id = var2
-	}, 19005, function(arg0)
-		local var0 = 0
+		ship_id = var2_1
+	}, 19005, function(arg0_2)
+		local var0_2 = 0
 
-		if arg0.result == 0 then
-			local var1 = var4.state
+		if arg0_2.result == 0 then
+			local var1_2 = var4_1.state
 
-			if var1 == Ship.STATE_REST then
+			if var1_2 == Ship.STATE_REST then
 				-- block empty
-			elseif var1 == Ship.STATE_TRAIN then
-				var4.state_info_2 = var4:getTotalExp()
+			elseif var1_2 == Ship.STATE_TRAIN then
+				var4_1.state_info_2 = var4_1:getTotalExp()
 			end
 
-			var4:updateStateInfo34(0, 0)
-			var1:exitYardById(var2)
-			var4:updateState(Ship.STATE_NORMAL)
+			var4_1:updateStateInfo34(0, 0)
+			var1_1:exitYardById(var2_1)
+			var4_1:updateState(Ship.STATE_NORMAL)
 
-			var0 = arg0.exp
+			var0_2 = arg0_2.exp
 
-			var4:addExp(var0)
-			var3:updateShip(var4)
-			arg0:sendNotification(GAME.EXIT_SHIP_DONE, var4)
+			var4_1:addExp(var0_2)
+			var3_1:updateShip(var4_1)
+			arg0_1:sendNotification(GAME.EXIT_SHIP_DONE, var4_1)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("backyard_shipExit", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("backyard_shipExit", arg0_2.result))
 		end
 
-		if var5 ~= nil then
-			var5(var0)
+		if var5_1 ~= nil then
+			var5_1(var0_2)
 		end
 	end)
 end
 
-return var0
+return var0_0

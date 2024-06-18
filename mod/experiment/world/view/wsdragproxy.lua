@@ -1,6 +1,6 @@
-﻿local var0 = class("WSDragProxy", import("...BaseEntity"))
+﻿local var0_0 = class("WSDragProxy", import("...BaseEntity"))
 
-var0.Fields = {
+var0_0.Fields = {
 	map = "table",
 	transform = "userdata",
 	leftExtend = "number",
@@ -17,214 +17,214 @@ var0.Fields = {
 	bottomExtend = "number"
 }
 
-function var0.Setup(arg0, arg1)
-	arg0.callInfo = arg1
-	arg0.dragTrigger = GetOrAddComponent(arg0.transform, typeof(EventTriggerListener))
+function var0_0.Setup(arg0_1, arg1_1)
+	arg0_1.callInfo = arg1_1
+	arg0_1.dragTrigger = GetOrAddComponent(arg0_1.transform, typeof(EventTriggerListener))
 
-	arg0.dragTrigger:AddBeginDragFunc(function()
-		arg0.isDraging = true
+	arg0_1.dragTrigger:AddBeginDragFunc(function()
+		arg0_1.isDraging = true
 	end)
-	arg0.dragTrigger:AddDragEndFunc(function()
-		arg0.isDraging = false
+	arg0_1.dragTrigger:AddDragEndFunc(function()
+		arg0_1.isDraging = false
 	end)
-	arg0.dragTrigger:AddPointClickFunc(function(arg0, arg1)
-		if not arg0.isDraging then
-			arg0.callInfo.clickCall(arg0, arg1)
+	arg0_1.dragTrigger:AddPointClickFunc(function(arg0_4, arg1_4)
+		if not arg0_1.isDraging then
+			arg0_1.callInfo.clickCall(arg0_4, arg1_4)
 		end
 	end)
 
-	arg0.dragTrigger.enabled = true
-	arg0.longPressTrigger = GetOrAddComponent(arg0.transform, typeof(UILongPressTrigger))
+	arg0_1.dragTrigger.enabled = true
+	arg0_1.longPressTrigger = GetOrAddComponent(arg0_1.transform, typeof(UILongPressTrigger))
 
-	local var0 = arg0.callInfo.longPressCall
+	local var0_1 = arg0_1.callInfo.longPressCall
 
-	function arg0.callInfo.longPressCall(...)
-		if arg0.isDraging then
+	function arg0_1.callInfo.longPressCall(...)
+		if arg0_1.isDraging then
 			return
 		end
 
-		var0(...)
+		var0_1(...)
 	end
 
-	arg0.longPressTrigger.onLongPressed:AddListener(arg0.callInfo.longPressCall)
+	arg0_1.longPressTrigger.onLongPressed:AddListener(arg0_1.callInfo.longPressCall)
 
-	arg0.longPressTrigger.enabled = true
+	arg0_1.longPressTrigger.enabled = true
 end
 
-function var0.Dispose(arg0)
-	arg0.transform.localPosition = Vector3.zero
+function var0_0.Dispose(arg0_6)
+	arg0_6.transform.localPosition = Vector3.zero
 
-	if arg0.map then
-		arg0.dragTrigger:RemoveDragFunc()
+	if arg0_6.map then
+		arg0_6.dragTrigger:RemoveDragFunc()
 	end
 
-	arg0.dragTrigger:RemoveBeginDragFunc()
-	arg0.dragTrigger:RemoveDragEndFunc()
-	arg0.dragTrigger:RemovePointClickFunc()
+	arg0_6.dragTrigger:RemoveBeginDragFunc()
+	arg0_6.dragTrigger:RemoveDragEndFunc()
+	arg0_6.dragTrigger:RemovePointClickFunc()
 
-	arg0.dragTrigger.enabled = true
+	arg0_6.dragTrigger.enabled = true
 
-	arg0.longPressTrigger.onLongPressed:RemoveListener(arg0.callInfo.longPressCall)
+	arg0_6.longPressTrigger.onLongPressed:RemoveListener(arg0_6.callInfo.longPressCall)
 
-	arg0.longPressTrigger.enabled = true
+	arg0_6.longPressTrigger.enabled = true
 
-	arg0:Clear()
+	arg0_6:Clear()
 end
 
-function var0.Focus(arg0, arg1, arg2, arg3, arg4)
-	local var0 = arg0.map.theme
-	local var1 = arg0.transform:Find("plane")
+function var0_0.Focus(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
+	local var0_7 = arg0_7.map.theme
+	local var1_7 = arg0_7.transform:Find("plane")
 
-	assert(var1, "plane not exist.")
+	assert(var1_7, "plane not exist.")
 
-	local var2 = arg0.transform.parent:InverseTransformVector(arg1 - var1.position)
+	local var2_7 = arg0_7.transform.parent:InverseTransformVector(arg1_7 - var1_7.position)
 
-	var2.x = var2.x + var1.localPosition.x
-	var2.y = var2.y + var1.localPosition.y - var1.localPosition.z * math.tan(math.pi / 180 * var0.angle)
-	var2.x = math.clamp(-var2.x, -arg0.rightExtend, arg0.leftExtend)
-	var2.y = math.clamp(-var2.y, -arg0.topExtend, arg0.bottomExtend)
-	var2.z = 0
+	var2_7.x = var2_7.x + var1_7.localPosition.x
+	var2_7.y = var2_7.y + var1_7.localPosition.y - var1_7.localPosition.z * math.tan(math.pi / 180 * var0_7.angle)
+	var2_7.x = math.clamp(-var2_7.x, -arg0_7.rightExtend, arg0_7.leftExtend)
+	var2_7.y = math.clamp(-var2_7.y, -arg0_7.topExtend, arg0_7.bottomExtend)
+	var2_7.z = 0
 
-	if arg0.twFocusId then
-		arg0.wsTimer:RemoveInMapTween(arg0.twFocusId)
+	if arg0_7.twFocusId then
+		arg0_7.wsTimer:RemoveInMapTween(arg0_7.twFocusId)
 	end
 
-	local var3 = {}
+	local var3_7 = {}
 
-	if arg3 then
-		table.insert(var3, function(arg0)
-			if arg0.isDraging then
-				arg0.isDraging = false
+	if arg3_7 then
+		table.insert(var3_7, function(arg0_8)
+			if arg0_7.isDraging then
+				arg0_7.isDraging = false
 			end
 
-			arg0.dragTrigger.enabled = false
-			arg0.longPressTrigger.enabled = false
+			arg0_7.dragTrigger.enabled = false
+			arg0_7.longPressTrigger.enabled = false
 
-			if not arg2 then
-				local var0 = (arg0.transform.localPosition - var2).magnitude
+			if not arg2_7 then
+				local var0_8 = (arg0_7.transform.localPosition - var2_7).magnitude
 
-				arg2 = var0 > 0 and var0 / (40 * math.sqrt(var0)) or 0
+				arg2_7 = var0_8 > 0 and var0_8 / (40 * math.sqrt(var0_8)) or 0
 			end
 
-			arg0.twFocusId = LeanTween.moveLocal(arg0.transform.gameObject, var2, arg2):setEase(arg3):setOnComplete(System.Action(arg0)).uniqueId
+			arg0_7.twFocusId = LeanTween.moveLocal(arg0_7.transform.gameObject, var2_7, arg2_7):setEase(arg3_7):setOnComplete(System.Action(arg0_8)).uniqueId
 
-			arg0.wsTimer:AddInMapTween(arg0.twFocusId)
+			arg0_7.wsTimer:AddInMapTween(arg0_7.twFocusId)
 		end)
 	else
-		arg0.transform.localPosition = var2
+		arg0_7.transform.localPosition = var2_7
 	end
 
-	seriesAsync(var3, function()
-		arg0.dragTrigger.enabled = true
-		arg0.longPressTrigger.enabled = true
+	seriesAsync(var3_7, function()
+		arg0_7.dragTrigger.enabled = true
+		arg0_7.longPressTrigger.enabled = true
 
-		if arg4 then
-			arg4()
+		if arg4_7 then
+			arg4_7()
 		end
 	end)
 end
 
-function var0.UpdateMap(arg0, arg1)
-	if arg0.map ~= arg1 or arg0.gid ~= arg1.gid then
-		arg0.map = arg1
-		arg0.gid = arg1.gid
+function var0_0.UpdateMap(arg0_10, arg1_10)
+	if arg0_10.map ~= arg1_10 or arg0_10.gid ~= arg1_10.gid then
+		arg0_10.map = arg1_10
+		arg0_10.gid = arg1_10.gid
 
-		arg0:UpdateDrag()
+		arg0_10:UpdateDrag()
 	end
 end
 
-function var0.UpdateDrag(arg0)
-	local var0, var1, var2 = getSizeRate()
-	local var3 = arg0.map.theme
-	local var4 = var2 * 0.5 / math.tan(math.deg2Rad * var3.fov * 0.5)
-	local var5 = math.deg2Rad * var3.angle
-	local var6 = Vector3(0, -math.sin(var5), -math.cos(var5))
-	local var7 = Vector3(var3.offsetx, var3.offsety, var3.offsetz) + WorldConst.DefaultMapOffset
-	local var8 = Vector3.Dot(var6, var7)
-	local var9 = var0 * math.clamp((var4 - var8) / var4, 0, 1)
+function var0_0.UpdateDrag(arg0_11)
+	local var0_11, var1_11, var2_11 = getSizeRate()
+	local var3_11 = arg0_11.map.theme
+	local var4_11 = var2_11 * 0.5 / math.tan(math.deg2Rad * var3_11.fov * 0.5)
+	local var5_11 = math.deg2Rad * var3_11.angle
+	local var6_11 = Vector3(0, -math.sin(var5_11), -math.cos(var5_11))
+	local var7_11 = Vector3(var3_11.offsetx, var3_11.offsety, var3_11.offsetz) + WorldConst.DefaultMapOffset
+	local var8_11 = Vector3.Dot(var6_11, var7_11)
+	local var9_11 = var0_11 * math.clamp((var4_11 - var8_11) / var4_11, 0, 1)
 
-	arg0.leftExtend, arg0.rightExtend, arg0.topExtend, arg0.bottomExtend = arg0:GetDragExtend(var1, var2)
-	arg0.transform.sizeDelta = Vector2(var1 + math.max(arg0.leftExtend, arg0.rightExtend) * 2, var2 + math.max(arg0.topExtend, arg0.bottomExtend) * 2)
+	arg0_11.leftExtend, arg0_11.rightExtend, arg0_11.topExtend, arg0_11.bottomExtend = arg0_11:GetDragExtend(var1_11, var2_11)
+	arg0_11.transform.sizeDelta = Vector2(var1_11 + math.max(arg0_11.leftExtend, arg0_11.rightExtend) * 2, var2_11 + math.max(arg0_11.topExtend, arg0_11.bottomExtend) * 2)
 
-	arg0.dragTrigger:RemoveDragFunc()
-	arg0.dragTrigger:AddDragFunc(function(arg0, arg1)
-		if arg0.onDragFunction then
-			arg0.onDragFunction()
+	arg0_11.dragTrigger:RemoveDragFunc()
+	arg0_11.dragTrigger:AddDragFunc(function(arg0_12, arg1_12)
+		if arg0_11.onDragFunction then
+			arg0_11.onDragFunction()
 		end
 
-		local var0 = arg0.transform.localPosition
+		local var0_12 = arg0_11.transform.localPosition
 
-		var0.x = math.clamp(var0.x + arg1.delta.x * var9.x, -arg0.rightExtend, arg0.leftExtend)
-		var0.y = math.clamp(var0.y + arg1.delta.y * var9.y / math.cos(var5), -arg0.topExtend, arg0.bottomExtend)
-		arg0.transform.localPosition = var0
+		var0_12.x = math.clamp(var0_12.x + arg1_12.delta.x * var9_11.x, -arg0_11.rightExtend, arg0_11.leftExtend)
+		var0_12.y = math.clamp(var0_12.y + arg1_12.delta.y * var9_11.y / math.cos(var5_11), -arg0_11.topExtend, arg0_11.bottomExtend)
+		arg0_11.transform.localPosition = var0_12
 	end)
 end
 
-function var0.GetDragExtend(arg0, arg1, arg2)
-	local var0 = arg0.map
-	local var1 = var0.theme
-	local var2 = arg0.transform:Find("plane")
+function var0_0.GetDragExtend(arg0_13, arg1_13, arg2_13)
+	local var0_13 = arg0_13.map
+	local var1_13 = var0_13.theme
+	local var2_13 = arg0_13.transform:Find("plane")
 
-	assert(var2, "plane not exist.")
+	assert(var2_13, "plane not exist.")
 
-	local var3 = var2.localPosition.x
-	local var4 = var2.localPosition.y - var2.localPosition.z * math.tan(math.pi / 180 * var1.angle)
-	local var5 = 99999999
-	local var6 = 0
-	local var7 = 0
+	local var3_13 = var2_13.localPosition.x
+	local var4_13 = var2_13.localPosition.y - var2_13.localPosition.z * math.tan(math.pi / 180 * var1_13.angle)
+	local var5_13 = 99999999
+	local var6_13 = 0
+	local var7_13 = 0
 
-	for iter0, iter1 in pairs(var0.cells) do
-		if var5 > iter1.row then
-			var5 = iter1.row
+	for iter0_13, iter1_13 in pairs(var0_13.cells) do
+		if var5_13 > iter1_13.row then
+			var5_13 = iter1_13.row
 		end
 
-		if var6 < iter1.row then
-			var6 = iter1.row
+		if var6_13 < iter1_13.row then
+			var6_13 = iter1_13.row
 		end
 
-		if var7 < iter1.column then
-			var7 = iter1.column
+		if var7_13 < iter1_13.column then
+			var7_13 = iter1_13.column
 		end
 	end
 
-	local var8 = var0.theme.cellSize + var0.theme.cellSpace
-	local var9 = math.max(var7 * var8.x - arg1 * 0.5, 0)
-	local var10 = math.max((WorldConst.MaxRow * 0.5 - var5) * var8.y, 0)
-	local var11 = math.max((var6 - WorldConst.MaxRow * 0.5) * var8.y, 0)
+	local var8_13 = var0_13.theme.cellSize + var0_13.theme.cellSpace
+	local var9_13 = math.max(var7_13 * var8_13.x - arg1_13 * 0.5, 0)
+	local var10_13 = math.max((WorldConst.MaxRow * 0.5 - var5_13) * var8_13.y, 0)
+	local var11_13 = math.max((var6_13 - WorldConst.MaxRow * 0.5) * var8_13.y, 0)
 
-	return 1000 - var3, var9 + var3, var10 + var4, var11 - var4
+	return 1000 - var3_13, var9_13 + var3_13, var10_13 + var4_13, var11_13 - var4_13
 end
 
-function var0.ShakePlane(arg0, arg1, arg2, arg3, arg4, arg5)
-	arg2 = math.clamp(arg2, 0, 90)
-	arg3 = math.max(arg3, 1)
-	arg4 = math.max(arg4, 1)
+function var0_0.ShakePlane(arg0_14, arg1_14, arg2_14, arg3_14, arg4_14, arg5_14)
+	arg2_14 = math.clamp(arg2_14, 0, 90)
+	arg3_14 = math.max(arg3_14, 1)
+	arg4_14 = math.max(arg4_14, 1)
 
-	local var0 = math.pi / 180 * arg2
-	local var1 = Vector3(math.cos(var0), math.sin(var0), 0) * arg1
-	local var2 = arg0.transform.anchoredPosition3D
-	local var3 = var2 + var1
-	local var4 = var2 - var1
-	local var5 = 0.0333
-	local var6 = var5 * arg3 * 0.5
-	local var7 = var5 * arg3
-	local var8 = var5 * arg3 * 0.5
+	local var0_14 = math.pi / 180 * arg2_14
+	local var1_14 = Vector3(math.cos(var0_14), math.sin(var0_14), 0) * arg1_14
+	local var2_14 = arg0_14.transform.anchoredPosition3D
+	local var3_14 = var2_14 + var1_14
+	local var4_14 = var2_14 - var1_14
+	local var5_14 = 0.0333
+	local var6_14 = var5_14 * arg3_14 * 0.5
+	local var7_14 = var5_14 * arg3_14
+	local var8_14 = var5_14 * arg3_14 * 0.5
 
-	arg0.dragTrigger.enabled = false
-	arg0.longPressTrigger.enabled = false
+	arg0_14.dragTrigger.enabled = false
+	arg0_14.longPressTrigger.enabled = false
 
-	local var9 = LeanTween.moveLocal(arg0.transform.gameObject, var3, var6)
-	local var10 = LeanTween.moveLocal(arg0.transform.gameObject, var4, var7):setDelay(var6):setLoopPingPong(arg4)
-	local var11 = LeanTween.moveLocal(arg0.transform.gameObject, var2, var8):setDelay(var6 + var7 * arg4 * 2):setOnComplete(System.Action(function()
-		arg0.dragTrigger.enabled = true
-		arg0.longPressTrigger.enabled = true
+	local var9_14 = LeanTween.moveLocal(arg0_14.transform.gameObject, var3_14, var6_14)
+	local var10_14 = LeanTween.moveLocal(arg0_14.transform.gameObject, var4_14, var7_14):setDelay(var6_14):setLoopPingPong(arg4_14)
+	local var11_14 = LeanTween.moveLocal(arg0_14.transform.gameObject, var2_14, var8_14):setDelay(var6_14 + var7_14 * arg4_14 * 2):setOnComplete(System.Action(function()
+		arg0_14.dragTrigger.enabled = true
+		arg0_14.longPressTrigger.enabled = true
 
-		arg5()
+		arg5_14()
 	end))
 
-	arg0.wsTimer:AddInMapTween(var9.uniqueId)
-	arg0.wsTimer:AddInMapTween(var10.uniqueId)
-	arg0.wsTimer:AddInMapTween(var11.uniqueId)
+	arg0_14.wsTimer:AddInMapTween(var9_14.uniqueId)
+	arg0_14.wsTimer:AddInMapTween(var10_14.uniqueId)
+	arg0_14.wsTimer:AddInMapTween(var11_14.uniqueId)
 end
 
-return var0
+return var0_0

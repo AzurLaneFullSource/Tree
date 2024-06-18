@@ -1,45 +1,45 @@
-﻿local var0 = class("MetaCharacterRepairCommand", pm.SimpleCommand)
+﻿local var0_0 = class("MetaCharacterRepairCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.shipID
-	local var2 = var0.attr
-	local var3 = getProxy(BayProxy)
-	local var4 = var3:getShipById(var1)
-	local var5 = var4:getMetaCharacter()
-	local var6 = var5:getAttrVO(var2)
-	local var7 = var6:getItem()
-	local var8 = var7:getTotalCnt()
-	local var9 = var7:getItemId()
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.shipID
+	local var2_1 = var0_1.attr
+	local var3_1 = getProxy(BayProxy)
+	local var4_1 = var3_1:getShipById(var1_1)
+	local var5_1 = var4_1:getMetaCharacter()
+	local var6_1 = var5_1:getAttrVO(var2_1)
+	local var7_1 = var6_1:getItem()
+	local var8_1 = var7_1:getTotalCnt()
+	local var9_1 = var7_1:getItemId()
 
-	if var8 > getProxy(BagProxy):getItemCountById(var9) then
+	if var8_1 > getProxy(BagProxy):getItemCountById(var9_1) then
 		return
 	end
 
-	if var6:isMaxLevel() then
+	if var6_1:isMaxLevel() then
 		return
 	end
 
-	print("63301 meta repair:", var1, var7.id)
+	print("63301 meta repair:", var1_1, var7_1.id)
 	pg.ConnectionMgr.GetInstance():Send(63301, {
-		ship_id = var1,
-		repair_id = var7.id
-	}, 63302, function(arg0)
-		if arg0.result == 0 then
+		ship_id = var1_1,
+		repair_id = var7_1.id
+	}, 63302, function(arg0_2)
+		if arg0_2.result == 0 then
 			print("63302 meta repair success:")
-			var6:levelUp()
-			var3:updateShip(var4)
-			getProxy(MetaCharacterProxy):getMetaProgressVOByID(var5.id):updateShip(var4)
-			arg0:sendNotification(GAME.CONSUME_ITEM, Drop.New({
+			var6_1:levelUp()
+			var3_1:updateShip(var4_1)
+			getProxy(MetaCharacterProxy):getMetaProgressVOByID(var5_1.id):updateShip(var4_1)
+			arg0_1:sendNotification(GAME.CONSUME_ITEM, Drop.New({
 				type = DROP_TYPE_ITEM,
-				id = var9,
-				count = var8
+				id = var9_1,
+				count = var8_1
 			}))
-			arg0:sendNotification(GAME.REPAIR_META_CHARACTER_DONE)
+			arg0_1:sendNotification(GAME.REPAIR_META_CHARACTER_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0_2.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

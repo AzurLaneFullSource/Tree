@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_229 = {}
+var0_0.word_template_229 = {}
 
-local var1 = var0.word_template_229
+local var1_0 = var0_0.word_template_229
 
 function temp()
-	var1.齊 = {
+	var1_0.齊 = {
 		墨 = {
 			this = true
 		},
@@ -20,7 +20,7 @@ end
 temp()
 
 function temp()
-	var1.騎 = {
+	var1_0.騎 = {
 		你 = {
 			this = true
 		}
@@ -30,7 +30,7 @@ end
 temp()
 
 function temp()
-	var1.屺 = {
+	var1_0.屺 = {
 		this = {
 			this = true
 		}
@@ -40,7 +40,7 @@ end
 temp()
 
 function temp()
-	var1.启 = {
+	var1_0.启 = {
 		靖 = {
 			this = true
 		}
@@ -50,7 +50,7 @@ end
 temp()
 
 function temp()
-	var1.起 = {
+	var1_0.起 = {
 		义 = {
 			this = true,
 			日 = {
@@ -86,7 +86,7 @@ end
 temp()
 
 function temp()
-	var1.綮 = {
+	var1_0.綮 = {
 		this = {
 			this = true
 		}
@@ -96,7 +96,7 @@ end
 temp()
 
 function temp()
-	var1.气 = {
+	var1_0.气 = {
 		q = {
 			i = {
 				a = {

@@ -1,74 +1,74 @@
-﻿local var0 = class("CourtYardMonglineInteraction", import(".CourtYardInteraction"))
+﻿local var0_0 = class("CourtYardMonglineInteraction", import(".CourtYardInteraction"))
 
-function var0.DoStep(arg0)
-	arg0.statesCnt[arg0.host.user] = 1
-	arg0.statesCnt[arg0.host.owner] = 1
-	arg0.totalUserActionCnt = #arg0.userActions
-	arg0.totalOwnerActionCnt = #arg0.ownerActions
+function var0_0.DoStep(arg0_1)
+	arg0_1.statesCnt[arg0_1.host.user] = 1
+	arg0_1.statesCnt[arg0_1.host.owner] = 1
+	arg0_1.totalUserActionCnt = #arg0_1.userActions
+	arg0_1.totalOwnerActionCnt = #arg0_1.ownerActions
 
-	var0.super.DoStep(arg0)
+	var0_0.super.DoStep(arg0_1)
 end
 
-function var0.PlayUserAction(arg0)
-	local var0 = arg0.statesCnt[arg0.host.user] + 1
+function var0_0.PlayUserAction(arg0_2)
+	local var0_2 = arg0_2.statesCnt[arg0_2.host.user] + 1
 
-	if var0 > arg0.totalUserActionCnt then
+	if var0_2 > arg0_2.totalUserActionCnt then
 		return
 	end
 
-	arg0.statesCnt[arg0.host.user] = var0
-	arg0.states[arg0.host.user] = false
+	arg0_2.statesCnt[arg0_2.host.user] = var0_2
+	arg0_2.states[arg0_2.host.user] = false
 
-	print("ship..............", var0, arg0.userActions[var0])
-	arg0.host:GetUser():UpdateInteraction(arg0:PackData(arg0.userActions[var0]))
+	print("ship..............", var0_2, arg0_2.userActions[var0_2])
+	arg0_2.host:GetUser():UpdateInteraction(arg0_2:PackData(arg0_2.userActions[var0_2]))
 end
 
-function var0.PlayOwnerAction(arg0)
-	local var0 = arg0.statesCnt[arg0.host.owner] + 1
+function var0_0.PlayOwnerAction(arg0_3)
+	local var0_3 = arg0_3.statesCnt[arg0_3.host.owner] + 1
 
-	if var0 > arg0.totalOwnerActionCnt then
+	if var0_3 > arg0_3.totalOwnerActionCnt then
 		return
 	end
 
-	arg0.statesCnt[arg0.host.owner] = var0
-	arg0.states[arg0.host.owner] = false
+	arg0_3.statesCnt[arg0_3.host.owner] = var0_3
+	arg0_3.states[arg0_3.host.owner] = false
 
-	print("furn", var0, arg0.ownerActions[var0])
-	arg0.host:GetOwner():UpdateInteraction(arg0:PackData(arg0.ownerActions[var0]))
+	print("furn", var0_3, arg0_3.ownerActions[var0_3])
+	arg0_3.host:GetOwner():UpdateInteraction(arg0_3:PackData(arg0_3.ownerActions[var0_3]))
 end
 
-function var0.StepEnd(arg0, arg1)
-	if arg0.preheatProcess then
-		arg0:DoStep()
+function var0_0.StepEnd(arg0_4, arg1_4)
+	if arg0_4.preheatProcess then
+		arg0_4:DoStep()
 
-		arg0.preheatProcess = false
+		arg0_4.preheatProcess = false
 	else
-		if arg0.index == 0 then
+		if arg0_4.index == 0 then
 			return
 		end
 
-		arg0.states[arg1] = true
+		arg0_4.states[arg1_4] = true
 
-		if arg0.host:GetUser() == arg1 then
-			arg0:PlayUserAction()
-		elseif arg0.host:GetOwner() == arg1 then
-			arg0:PlayOwnerAction()
+		if arg0_4.host:GetUser() == arg1_4 then
+			arg0_4:PlayUserAction()
+		elseif arg0_4.host:GetOwner() == arg1_4 then
+			arg0_4:PlayOwnerAction()
 		end
 
-		if arg0:IsFinishAll() then
-			arg0:AllStepEnd()
+		if arg0_4:IsFinishAll() then
+			arg0_4:AllStepEnd()
 		end
 	end
 end
 
-function var0.IsFinishAll(arg0)
-	return arg0.statesCnt[arg0.host.owner] >= arg0.totalOwnerActionCnt and arg0.statesCnt[arg0.host.user] >= arg0.totalUserActionCnt
+function var0_0.IsFinishAll(arg0_5)
+	return arg0_5.statesCnt[arg0_5.host.owner] >= arg0_5.totalOwnerActionCnt and arg0_5.statesCnt[arg0_5.host.user] >= arg0_5.totalUserActionCnt
 end
 
-function var0.Clear(arg0)
-	var0.super.Clear(arg0)
+function var0_0.Clear(arg0_6)
+	var0_0.super.Clear(arg0_6)
 
-	arg0.statesCnt = {}
+	arg0_6.statesCnt = {}
 end
 
-return var0
+return var0_0

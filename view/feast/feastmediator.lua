@@ -1,88 +1,88 @@
-﻿local var0 = class("FeastMediator", import("view.backYard.CourtYardMediator"))
+﻿local var0_0 = class("FeastMediator", import("view.backYard.CourtYardMediator"))
 
-var0.SET_UP = "FeastMediator:SET_UP"
-var0.MAKE_TICKET = "FeastMediator:MAKE_TICKET"
-var0.GIVE_TICKET = "FeastMediator:GIVE_TICKET"
-var0.GIVE_GIFT = "FeastMediator:GIVE_GIFT"
-var0.EVENT_PT_OPERATION = "FeastMediator:EVENT_PT_OPERATION"
-var0.ON_SUBMIT = "FeastMediator:ON_SUBMIT"
-var0.ON_GO = "FeastMediator:ON_GO"
-var0.ON_SUBMIT_ONE_KEY = "FeastMediator:ON_SUBMIT_ONE_KEY"
-var0.ON_SHIP_ENTER_FEAST = "FeastMediator:ON_SHIP_ENTER_FEAST"
+var0_0.SET_UP = "FeastMediator:SET_UP"
+var0_0.MAKE_TICKET = "FeastMediator:MAKE_TICKET"
+var0_0.GIVE_TICKET = "FeastMediator:GIVE_TICKET"
+var0_0.GIVE_GIFT = "FeastMediator:GIVE_GIFT"
+var0_0.EVENT_PT_OPERATION = "FeastMediator:EVENT_PT_OPERATION"
+var0_0.ON_SUBMIT = "FeastMediator:ON_SUBMIT"
+var0_0.ON_GO = "FeastMediator:ON_GO"
+var0_0.ON_SUBMIT_ONE_KEY = "FeastMediator:ON_SUBMIT_ONE_KEY"
+var0_0.ON_SHIP_ENTER_FEAST = "FeastMediator:ON_SHIP_ENTER_FEAST"
 
-function var0.register(arg0)
-	arg0.caches = {}
+function var0_0.register(arg0_1)
+	arg0_1.caches = {}
 
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST)
+	local var0_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST)
 
-	arg0:bind(var0.SET_UP, function(arg0, arg1)
-		local var0 = arg0:GenCourtYardData(arg1)
+	arg0_1:bind(var0_0.SET_UP, function(arg0_2, arg1_2)
+		local var0_2 = arg0_1:GenCourtYardData(arg1_2)
 
-		_courtyard = CourtYardBridge.New(var0)
+		_courtyard = CourtYardBridge.New(var0_2)
 	end)
-	arg0:bind(var0.MAKE_TICKET, function(arg0, arg1)
-		arg0:sendNotification(GAME.FEAST_OP, {
-			activityId = var0.id,
+	arg0_1:bind(var0_0.MAKE_TICKET, function(arg0_3, arg1_3)
+		arg0_1:sendNotification(GAME.FEAST_OP, {
+			activityId = var0_1.id,
 			cmd = FeastDorm.OP_MAKE_TICKET,
-			arg1 = arg1
+			arg1 = arg1_3
 		})
 	end)
-	arg0:bind(var0.GIVE_TICKET, function(arg0, arg1)
-		arg0:sendNotification(GAME.FEAST_OP, {
-			activityId = var0.id,
+	arg0_1:bind(var0_0.GIVE_TICKET, function(arg0_4, arg1_4)
+		arg0_1:sendNotification(GAME.FEAST_OP, {
+			activityId = var0_1.id,
 			cmd = FeastDorm.OP_GIVE_TICKET,
-			arg1 = arg1
+			arg1 = arg1_4
 		})
 	end)
-	arg0:bind(var0.GIVE_GIFT, function(arg0, arg1)
-		arg0:sendNotification(GAME.FEAST_OP, {
-			activityId = var0.id,
+	arg0_1:bind(var0_0.GIVE_GIFT, function(arg0_5, arg1_5)
+		arg0_1:sendNotification(GAME.FEAST_OP, {
+			activityId = var0_1.id,
 			cmd = FeastDorm.OP_GIVE_GIFT,
-			arg1 = arg1
+			arg1 = arg1_5
 		})
 	end)
-	arg0:bind(var0.EVENT_PT_OPERATION, function(arg0, arg1)
-		arg0:sendNotification(GAME.ACT_NEW_PT, arg1)
+	arg0_1:bind(var0_0.EVENT_PT_OPERATION, function(arg0_6, arg1_6)
+		arg0_1:sendNotification(GAME.ACT_NEW_PT, arg1_6)
 	end)
-	arg0:bind(var0.ON_SUBMIT, function(arg0, arg1)
-		arg0:sendNotification(GAME.SUBMIT_TASK, arg1)
+	arg0_1:bind(var0_0.ON_SUBMIT, function(arg0_7, arg1_7)
+		arg0_1:sendNotification(GAME.SUBMIT_TASK, arg1_7)
 	end)
-	arg0:bind(var0.ON_GO, function(arg0, arg1)
-		arg0:HandleTaskGo(arg1)
+	arg0_1:bind(var0_0.ON_GO, function(arg0_8, arg1_8)
+		arg0_1:HandleTaskGo(arg1_8)
 	end)
-	arg0:bind(var0.ON_SUBMIT_ONE_KEY, function(arg0, arg1)
-		arg0:sendNotification(GAME.SUBMIT_TASK_ONESTEP, {
-			resultList = arg1
+	arg0_1:bind(var0_0.ON_SUBMIT_ONE_KEY, function(arg0_9, arg1_9)
+		arg0_1:sendNotification(GAME.SUBMIT_TASK_ONESTEP, {
+			resultList = arg1_9
 		})
 	end)
-	arg0:bind(var0.ON_SHIP_ENTER_FEAST, function(arg0, arg1)
+	arg0_1:bind(var0_0.ON_SHIP_ENTER_FEAST, function(arg0_10, arg1_10)
 		if _courtyard then
-			_courtyard:GetController():ShipEnterFeast(arg1)
+			_courtyard:GetController():ShipEnterFeast(arg1_10)
 		end
 	end)
-	arg0:sendNotification(GAME.FEAST_OP, {
-		activityId = var0.id,
+	arg0_1:sendNotification(GAME.FEAST_OP, {
+		activityId = var0_1.id,
 		cmd = FeastDorm.OP_ENTER
 	})
 end
 
-function var0.HandleTaskGo(arg0, arg1)
-	if arg1:IsActRoutineType() and arg1:getConfig("sub_type") == 430 then
+function var0_0.HandleTaskGo(arg0_11, arg1_11)
+	if arg1_11:IsActRoutineType() and arg1_11:getConfig("sub_type") == 430 then
 		-- block empty
-	elseif arg1:IsActRoutineType() and arg1:getConfig("sub_type") == 431 then
-		arg0.viewComponent:emit(FeastScene.GO_INTERACTION)
-	elseif arg1:IsActType() and (arg1:getConfig("sub_type") == 432 or arg1:getConfig("sub_type") == 433) then
-		arg0.viewComponent:emit(FeastScene.GO_INVITATION)
-	elseif arg1:IsActType() and arg1:getConfig("sub_type") == 417 then
+	elseif arg1_11:IsActRoutineType() and arg1_11:getConfig("sub_type") == 431 then
+		arg0_11.viewComponent:emit(FeastScene.GO_INTERACTION)
+	elseif arg1_11:IsActType() and (arg1_11:getConfig("sub_type") == 432 or arg1_11:getConfig("sub_type") == 433) then
+		arg0_11.viewComponent:emit(FeastScene.GO_INVITATION)
+	elseif arg1_11:IsActType() and arg1_11:getConfig("sub_type") == 417 then
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 56)
 	else
-		arg0:sendNotification(GAME.TASK_GO, {
-			taskVO = arg1
+		arg0_11:sendNotification(GAME.TASK_GO, {
+			taskVO = arg1_11
 		})
 	end
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_12)
 	return {
 		CourtYardEvent._QUIT,
 		CourtYardEvent._INITED,
@@ -97,136 +97,136 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
-	local var2 = arg1:getType()
+function var0_0.handleNotification(arg0_13, arg1_13)
+	local var0_13 = arg1_13:getName()
+	local var1_13 = arg1_13:getBody()
+	local var2_13 = arg1_13:getType()
 
-	if var0 == CourtYardEvent._QUIT then
-		arg0.viewComponent:emit(BaseUI.ON_BACK)
-	elseif var0 == CourtYardEvent._INITED then
-		arg0.viewComponent:OnCourtYardLoaded()
-	elseif var0 == CourtYardEvent._FEAST_INTERACTION then
-		local var3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST)
+	if var0_13 == CourtYardEvent._QUIT then
+		arg0_13.viewComponent:emit(BaseUI.ON_BACK)
+	elseif var0_13 == CourtYardEvent._INITED then
+		arg0_13.viewComponent:OnCourtYardLoaded()
+	elseif var0_13 == CourtYardEvent._FEAST_INTERACTION then
+		local var3_13 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST)
 
-		if not var3 or var3:isEnd() then
+		if not var3_13 or var3_13:isEnd() then
 			return
 		end
 
-		local var4 = var1.groupId
-		local var5 = var1.special
+		local var4_13 = var1_13.groupId
+		local var5_13 = var1_13.special
 
-		arg0:sendNotification(GAME.FEAST_OP, {
-			activityId = var3.id,
+		arg0_13:sendNotification(GAME.FEAST_OP, {
+			activityId = var3_13.id,
 			cmd = FeastDorm.OP_INTERACTION,
-			arg1 = var4,
-			arg2 = var5
+			arg1 = var4_13,
+			arg2 = var5_13
 		})
-	elseif var0 == GAME.FEAST_OP_DONE then
-		local var6 = 0
-		local var7 = true
+	elseif var0_13 == GAME.FEAST_OP_DONE then
+		local var6_13 = 0
+		local var7_13 = true
 
-		if var1.cmd == FeastDorm.OP_INTERACTION then
-			_courtyard:GetController():UpdateBubble(var1.groupId, var1.value)
+		if var1_13.cmd == FeastDorm.OP_INTERACTION then
+			_courtyard:GetController():UpdateBubble(var1_13.groupId, var1_13.value)
 
-			if var1.chat and var1.chat ~= "" then
-				_courtyard:GetController():UpdateChatBubble(var1.groupId, var1.chat)
+			if var1_13.chat and var1_13.chat ~= "" then
+				_courtyard:GetController():UpdateChatBubble(var1_13.groupId, var1_13.chat)
 			end
 
-			var6 = CourtYardConst.FEAST_EFFECT_TIME
-		elseif var1.cmd == FeastDorm.OP_GIVE_TICKET then
-			local var8 = getProxy(FeastProxy):getRawData():GetFeastShip(var1.groupId)
+			var6_13 = CourtYardConst.FEAST_EFFECT_TIME
+		elseif var1_13.cmd == FeastDorm.OP_GIVE_TICKET then
+			local var8_13 = getProxy(FeastProxy):getRawData():GetFeastShip(var1_13.groupId)
 
-			_courtyard:GetController():AddShipWithSpecialPosition(var8)
-			arg0.viewComponent:emit(FeastScene.ON_GOT_TICKET, var1.awards)
+			_courtyard:GetController():AddShipWithSpecialPosition(var8_13)
+			arg0_13.viewComponent:emit(FeastScene.ON_GOT_TICKET, var1_13.awards)
 
-			local var9 = getProxy(FeastProxy):getRawData():GetInvitedFeastShip(var1.groupId)
+			local var9_13 = getProxy(FeastProxy):getRawData():GetInvitedFeastShip(var1_13.groupId)
 
-			var7 = false
-		elseif var1.cmd == FeastDorm.OP_RANDOM_SHIPS then
+			var7_13 = false
+		elseif var1_13.cmd == FeastDorm.OP_RANDOM_SHIPS then
 			_courtyard:GetController():ExitAllShip()
 
-			local var10 = {}
+			local var10_13 = {}
 
-			for iter0, iter1 in ipairs(var1.ships or {}) do
-				table.insert(var10, function(arg0)
-					_courtyard:GetController():AddShip(iter1)
-					onNextTick(arg0)
+			for iter0_13, iter1_13 in ipairs(var1_13.ships or {}) do
+				table.insert(var10_13, function(arg0_14)
+					_courtyard:GetController():AddShip(iter1_13)
+					onNextTick(arg0_14)
 				end)
 			end
 
-			seriesAsync(var10)
-		elseif var1.cmd == FeastDorm.OP_GIVE_GIFT then
-			arg0.viewComponent:emit(FeastScene.ON_GOT_GIFT, var1.awards)
+			seriesAsync(var10_13)
+		elseif var1_13.cmd == FeastDorm.OP_GIVE_GIFT then
+			arg0_13.viewComponent:emit(FeastScene.ON_GOT_GIFT, var1_13.awards)
 
-			local var11 = getProxy(FeastProxy):getRawData():GetInvitedFeastShip(var1.groupId)
+			local var11_13 = getProxy(FeastProxy):getRawData():GetInvitedFeastShip(var1_13.groupId)
 
-			var7 = false
-		elseif var1.cmd == FeastDorm.OP_MAKE_TICKET then
-			arg0.viewComponent:emit(FeastScene.ON_MAKE_TICKET, var1.groupId)
+			var7_13 = false
+		elseif var1_13.cmd == FeastDorm.OP_MAKE_TICKET then
+			arg0_13.viewComponent:emit(FeastScene.ON_MAKE_TICKET, var1_13.groupId)
 		end
 
-		if #var1.awards > 0 and var7 then
-			local var12 = var1.cmd == FeastDorm.OP_INTERACTION and #arg0.caches == 0 and var6 or 0
+		if #var1_13.awards > 0 and var7_13 then
+			local var12_13 = var1_13.cmd == FeastDorm.OP_INTERACTION and #arg0_13.caches == 0 and var6_13 or 0
 
-			table.insert(arg0.caches, {
-				var1.awards,
-				var12
+			table.insert(arg0_13.caches, {
+				var1_13.awards,
+				var12_13
 			})
 
-			if #arg0.caches == 1 then
-				arg0:DisplayAwards()
+			if #arg0_13.caches == 1 then
+				arg0_13:DisplayAwards()
 			end
 		end
-	elseif var0 == TaskProxy.TASK_ADDED or var0 == TaskProxy.TASK_UPDATED or var0 == TaskProxy.TASK_REMOVED then
-		arg0.viewComponent:emit(FeastScene.ON_TASK_UPDATE)
-	elseif var0 == ActivityProxy.ACTIVITY_UPDATED then
-		if var1.id == ActivityConst.FEAST_PT_ACT then
-			arg0.viewComponent:emit(FeastScene.ON_ACT_UPDATE)
+	elseif var0_13 == TaskProxy.TASK_ADDED or var0_13 == TaskProxy.TASK_UPDATED or var0_13 == TaskProxy.TASK_REMOVED then
+		arg0_13.viewComponent:emit(FeastScene.ON_TASK_UPDATE)
+	elseif var0_13 == ActivityProxy.ACTIVITY_UPDATED then
+		if var1_13.id == ActivityConst.FEAST_PT_ACT then
+			arg0_13.viewComponent:emit(FeastScene.ON_ACT_UPDATE)
 		end
-	elseif var0 == GAME.SUBMIT_TASK_DONE then
-		arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1, function()
-			local var0 = var2
+	elseif var0_13 == GAME.SUBMIT_TASK_DONE then
+		arg0_13.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_13, function()
+			local var0_15 = var2_13
 
-			getProxy(FeastProxy):HandleTaskStories(var0)
+			getProxy(FeastProxy):HandleTaskStories(var0_15)
 		end)
-	elseif var0 == GAME.ACT_NEW_PT_DONE then
-		arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1.awards, function()
+	elseif var0_13 == GAME.ACT_NEW_PT_DONE then
+		arg0_13.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_13.awards, function()
 			return
 		end)
 	end
 end
 
-function var0.DisplayAwards(arg0)
-	local var0 = arg0.caches[1]
-	local var1 = var0[1]
-	local var2 = var0[2]
-	local var3 = {}
+function var0_0.DisplayAwards(arg0_17)
+	local var0_17 = arg0_17.caches[1]
+	local var1_17 = var0_17[1]
+	local var2_17 = var0_17[2]
+	local var3_17 = {}
 
-	if var2 > 0 then
-		table.insert(var3, function(arg0)
-			if not arg0.viewComponent then
+	if var2_17 > 0 then
+		table.insert(var3_17, function(arg0_18)
+			if not arg0_17.viewComponent then
 				return
 			end
 
-			onDelayTick(arg0, var2, 1)
+			onDelayTick(arg0_18, var2_17, 1)
 		end)
 	end
 
-	table.insert(var3, function(arg0)
-		if not arg0.viewComponent then
+	table.insert(var3_17, function(arg0_19)
+		if not arg0_17.viewComponent then
 			return
 		end
 
-		arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1, arg0)
+		arg0_17.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_17, arg0_19)
 	end)
-	seriesAsync(var3, function()
-		table.remove(arg0.caches, 1)
+	seriesAsync(var3_17, function()
+		table.remove(arg0_17.caches, 1)
 
-		if #arg0.caches > 0 then
-			arg0:DisplayAwards()
+		if #arg0_17.caches > 0 then
+			arg0_17:DisplayAwards()
 		end
 	end)
 end
 
-return var0
+return var0_0

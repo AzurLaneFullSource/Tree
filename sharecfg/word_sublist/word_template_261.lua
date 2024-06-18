@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_261 = {}
+var0_0.word_template_261 = {}
 
-local var1 = var0.word_template_261
+local var1_0 = var0_0.word_template_261
 
 function temp()
-	var1.石 = {
+	var1_0.石 = {
 		川 = {
 			佳 = {
 				奈 = {
@@ -128,7 +128,7 @@ end
 temp()
 
 function temp()
-	var1.识 = {
+	var1_0.识 = {
 		牌 = {
 			器 = {
 				this = true
@@ -147,7 +147,7 @@ end
 temp()
 
 function temp()
-	var1.实 = {
+	var1_0.实 = {
 		际 = {
 			神 = {
 				this = true
@@ -318,7 +318,7 @@ end
 temp()
 
 function temp()
-	var1.食 = {
+	var1_0.食 = {
 		精 = {
 			this = true
 		},
@@ -363,7 +363,7 @@ end
 temp()
 
 function temp()
-	var1.時 = {
+	var1_0.時 = {
 		代 = {
 			論 = {
 				壇 = {
@@ -405,7 +405,7 @@ end
 temp()
 
 function temp()
-	var1.實 = {
+	var1_0.實 = {
 		際 = {
 			神 = {
 				this = true
@@ -417,7 +417,7 @@ end
 temp()
 
 function temp()
-	var1.鰣 = {
+	var1_0.鰣 = {
 		this = {
 			this = true
 		}

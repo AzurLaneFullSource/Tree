@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_335 = {}
+var0_0.word_template_335 = {}
 
-local var1 = var0.word_template_335
+local var1_0 = var0_0.word_template_335
 
 function temp()
-	var1.原 = {
+	var1_0.原 = {
 		产 = {
 			地 = {
 				烟 = {
@@ -102,7 +102,7 @@ end
 temp()
 
 function temp()
-	var1.圆 = {
+	var1_0.圆 = {
 		顿 = {
 			法 = {
 				门 = {
@@ -125,7 +125,7 @@ end
 temp()
 
 function temp()
-	var1.圓 = {
+	var1_0.圓 = {
 		滿 = {
 			this = true
 		}
@@ -135,7 +135,7 @@ end
 temp()
 
 function temp()
-	var1.緣 = {
+	var1_0.緣 = {
 		圈 = {
 			圈 = {
 				this = true
@@ -147,7 +147,7 @@ end
 temp()
 
 function temp()
-	var1.远 = {
+	var1_0.远 = {
 		程 = {
 			破 = {
 				解 = {
@@ -193,7 +193,7 @@ end
 temp()
 
 function temp()
-	var1.遠 = {
+	var1_0.遠 = {
 		離 = {
 			苼 = {
 				命 = {
@@ -212,7 +212,7 @@ end
 temp()
 
 function temp()
-	var1.院 = {
+	var1_0.院 = {
 		院 = {
 			认 = {
 				钱 = {

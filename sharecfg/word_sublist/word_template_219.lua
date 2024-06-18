@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_219 = {}
+var0_0.word_template_219 = {}
 
-local var1 = var0.word_template_219
+local var1_0 = var0_0.word_template_219
 
 function temp()
-	var1.諾 = {
+	var1_0.諾 = {
 		姆 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.女 = {
+	var1_0.女 = {
 		屄 = {
 			this = true
 		},
@@ -512,7 +512,7 @@ end
 temp()
 
 function temp()
-	var1.欧 = {
+	var1_0.欧 = {
 		美 = {
 			a = {
 				v = {
@@ -664,7 +664,7 @@ end
 temp()
 
 function temp()
-	var1.殴 = {
+	var1_0.殴 = {
 		打 = {
 			this = true
 		}
@@ -674,7 +674,7 @@ end
 temp()
 
 function temp()
-	var1.歐 = {
+	var1_0.歐 = {
 		美 = {
 			b = {
 				t = {
@@ -703,7 +703,7 @@ end
 temp()
 
 function temp()
-	var1.偶 = {
+	var1_0.偶 = {
 		尔 = {
 			j = {
 				z = {
@@ -739,7 +739,7 @@ end
 temp()
 
 function temp()
-	var1.啪 = {
+	var1_0.啪 = {
 		啪 = {
 			啪 = {
 				this = true

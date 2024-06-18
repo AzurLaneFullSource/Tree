@@ -1,74 +1,74 @@
 ﻿pg = pg or {}
 
-local var0 = pg
-local var1 = require("Mgr/Pool/PoolUtil")
-local var2 = class("LuaObPool")
+local var0_0 = pg
+local var1_0 = require("Mgr/Pool/PoolUtil")
+local var2_0 = class("LuaObPool")
 
-var0.LuaObPool = var2
+var0_0.LuaObPool = var2_0
 
-function var2.Ctor(arg0, arg1, arg2, arg3)
-	assert(arg1.Init, "template should have func Init")
-	assert(arg1.Recycle, "template should have func Recycle")
-	assert(arg1.Dispose, "template should have func Dispose")
+function var2_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	assert(arg1_1.Init, "template should have func Init")
+	assert(arg1_1.Recycle, "template should have func Recycle")
+	assert(arg1_1.Dispose, "template should have func Dispose")
 
-	arg0.baseClass = arg1
-	arg0.info = arg2
-	arg0.list = {}
-	arg0.ob2index = {}
+	arg0_1.baseClass = arg1_1
+	arg0_1.info = arg2_1
+	arg0_1.list = {}
+	arg0_1.ob2index = {}
 
-	for iter0 = 1, arg3 do
-		arg0.list[iter0] = arg1.New(arg0, arg2)
+	for iter0_1 = 1, arg3_1 do
+		arg0_1.list[iter0_1] = arg1_1.New(arg0_1, arg2_1)
 	end
 
-	arg0.usedEnd = 0
+	arg0_1.usedEnd = 0
 end
 
-function var2.GetObject(arg0)
-	local var0 = arg0.list
-	local var1 = arg0.usedEnd
-	local var2
+function var2_0.GetObject(arg0_2)
+	local var0_2 = arg0_2.list
+	local var1_2 = arg0_2.usedEnd
+	local var2_2
 
-	if var1 >= #var0 then
-		var0[#var0 + 1] = arg0.baseClass.New(arg0, arg0.info)
+	if var1_2 >= #var0_2 then
+		var0_2[#var0_2 + 1] = arg0_2.baseClass.New(arg0_2, arg0_2.info)
 	end
 
-	local var3 = var1 + 1
-	local var4 = var0[var3]
+	local var3_2 = var1_2 + 1
+	local var4_2 = var0_2[var3_2]
 
-	arg0.ob2index[var4] = var3
-	arg0.usedEnd = var3
+	arg0_2.ob2index[var4_2] = var3_2
+	arg0_2.usedEnd = var3_2
 
-	var4:Init()
+	var4_2:Init()
 
-	return var4
+	return var4_2
 end
 
-function var2.Recycle(arg0, arg1)
-	local var0 = arg0.ob2index[arg1]
-	local var1 = arg0.usedEnd
-	local var2 = arg0.list
+function var2_0.Recycle(arg0_3, arg1_3)
+	local var0_3 = arg0_3.ob2index[arg1_3]
+	local var1_3 = arg0_3.usedEnd
+	local var2_3 = arg0_3.list
 
-	arg1:Recycle()
+	arg1_3:Recycle()
 
-	if var1 ~= var0 then
-		local var3 = var2[var1]
+	if var1_3 ~= var0_3 then
+		local var3_3 = var2_3[var1_3]
 
-		arg0.ob2index[var3] = var0
-		var2[var1], var2[var0] = arg1, var3
+		arg0_3.ob2index[var3_3] = var0_3
+		var2_3[var1_3], var2_3[var0_3] = arg1_3, var3_3
 	end
 
-	arg0.ob2index[arg1] = nil
-	arg0.usedEnd = var1 - 1
+	arg0_3.ob2index[arg1_3] = nil
+	arg0_3.usedEnd = var1_3 - 1
 end
 
-function var2.UpdateInfo(arg0, arg1, arg2)
-	arg0.info[arg1] = arg2
+function var2_0.UpdateInfo(arg0_4, arg1_4, arg2_4)
+	arg0_4.info[arg1_4] = arg2_4
 end
 
-function var2.Dispose(arg0)
-	for iter0, iter1 in ipairs(arg0.list) do
-		iter1:Dispose()
+function var2_0.Dispose(arg0_5)
+	for iter0_5, iter1_5 in ipairs(arg0_5.list) do
+		iter1_5:Dispose()
 	end
 
-	arg0.ob2index = nil
+	arg0_5.ob2index = nil
 end

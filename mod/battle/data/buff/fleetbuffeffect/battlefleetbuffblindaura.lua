@@ -1,29 +1,29 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConst
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConst
 
-var0.Battle.BattleFleetBuffBlindAura = class("BattleFleetBuffBlindAura", var0.Battle.BattleFleetBuffEffect)
-var0.Battle.BattleFleetBuffBlindAura.__name = "BattleFleetBuffBlindAura"
+var0_0.Battle.BattleFleetBuffBlindAura = class("BattleFleetBuffBlindAura", var0_0.Battle.BattleFleetBuffEffect)
+var0_0.Battle.BattleFleetBuffBlindAura.__name = "BattleFleetBuffBlindAura"
 
-local var2 = var0.Battle.BattleFleetBuffBlindAura
+local var2_0 = var0_0.Battle.BattleFleetBuffBlindAura
 
-function var2.Ctor(arg0, arg1)
-	var2.super.Ctor(arg0, arg1)
+function var2_0.Ctor(arg0_1, arg1_1)
+	var2_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var2.SetArgs(arg0, arg1, arg2)
-	local var0 = arg0._tempData.arg_list.target
-	local var1 = arg1:GetIFF()
+function var2_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	local var0_2 = arg0_2._tempData.arg_list.target
+	local var1_2 = arg1_2:GetIFF()
 
-	local function var2(arg0)
-		local var0 = arg0:getTargetList(arg1, var0, arg0._tempData.arg_list)
+	local function var2_2(arg0_3)
+		local var0_3 = arg0_2:getTargetList(arg1_2, var0_2, arg0_2._tempData.arg_list)
 
-		for iter0, iter1 in ipairs(arg0) do
-			if iter1.Active then
-				for iter2, iter3 in ipairs(var0) do
-					if iter3:GetUniqueID() == iter1.UID then
-						iter3:SetBlindInvisible(true)
+		for iter0_3, iter1_3 in ipairs(arg0_3) do
+			if iter1_3.Active then
+				for iter2_3, iter3_3 in ipairs(var0_3) do
+					if iter3_3:GetUniqueID() == iter1_3.UID then
+						iter3_3:SetBlindInvisible(true)
 
 						break
 					end
@@ -32,13 +32,13 @@ function var2.SetArgs(arg0, arg1, arg2)
 		end
 	end
 
-	local function var3(arg0)
-		if arg0.Active then
-			local var0 = arg0:getTargetList(arg1, var0, arg0._tempData.arg_list)
+	local function var3_2(arg0_4)
+		if arg0_4.Active then
+			local var0_4 = arg0_2:getTargetList(arg1_2, var0_2, arg0_2._tempData.arg_list)
 
-			for iter0, iter1 in ipairs(var0) do
-				if iter1:GetUniqueID() == arg0.UID then
-					iter1:SetBlindInvisible(false)
+			for iter0_4, iter1_4 in ipairs(var0_4) do
+				if iter1_4:GetUniqueID() == arg0_4.UID then
+					iter1_4:SetBlindInvisible(false)
 
 					break
 				end
@@ -46,13 +46,13 @@ function var2.SetArgs(arg0, arg1, arg2)
 		end
 	end
 
-	arg0._aura = var0.Battle.BattleDataProxy.GetInstance():SpawnLastingCubeArea(var1.AOEField.SURFACE, var1, Vector3(-55, 0, 55), 180, 70, 0, var2, var3, false)
+	arg0_2._aura = var0_0.Battle.BattleDataProxy.GetInstance():SpawnLastingCubeArea(var1_0.AOEField.SURFACE, var1_2, Vector3(-55, 0, 55), 180, 70, 0, var2_2, var3_2, false)
 end
 
-function var2.Clear(arg0)
-	arg0._aura:SetActiveFlag(false)
+function var2_0.Clear(arg0_5)
+	arg0_5._aura:SetActiveFlag(false)
 
-	arg0._aura = nil
+	arg0_5._aura = nil
 
-	var2.super.Clear(arg0)
+	var2_0.super.Clear(arg0_5)
 end

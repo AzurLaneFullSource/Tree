@@ -1,139 +1,139 @@
-﻿local var0 = class("ZumaPTShopWindowLayer", import("...base.BaseUI"))
+﻿local var0_0 = class("ZumaPTShopWindowLayer", import("...base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ZumaPTShopWindowUI"
 end
 
-function var0.init(arg0)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
-	arg0:initData()
-	arg0:findUI()
-	arg0:addListener()
+function var0_0.init(arg0_2)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
+	arg0_2:initData()
+	arg0_2:findUI()
+	arg0_2:addListener()
 end
 
-function var0.didEnter(arg0)
-	arg0:updateGoodInfoPanel()
-	arg0:updateBuyPanelWithNum(1)
+function var0_0.didEnter(arg0_3)
+	arg0_3:updateGoodInfoPanel()
+	arg0_3:updateBuyPanelWithNum(1)
 end
 
-function var0.willExit(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
-	arg0.pageUtil:Dispose()
+function var0_0.willExit(arg0_4)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_4._tf)
+	arg0_4.pageUtil:Dispose()
 end
 
-function var0.onBackPressed(arg0)
-	arg0:closeView()
+function var0_0.onBackPressed(arg0_5)
+	arg0_5:closeView()
 end
 
-function var0.initData(arg0)
-	arg0.actShopVO = arg0.contextData.actShopVO
-	arg0.goodVO = arg0.contextData.goodVO
-	arg0.perCost = arg0.goodVO:getConfig("resource_num")
-	arg0.maxBuyCount = math.floor(Drop.New({
-		type = arg0.goodVO:getConfig("resource_category"),
-		id = arg0.goodVO:getConfig("resource_type")
-	}):getOwnedCount() / arg0.perCost)
+function var0_0.initData(arg0_6)
+	arg0_6.actShopVO = arg0_6.contextData.actShopVO
+	arg0_6.goodVO = arg0_6.contextData.goodVO
+	arg0_6.perCost = arg0_6.goodVO:getConfig("resource_num")
+	arg0_6.maxBuyCount = math.floor(Drop.New({
+		type = arg0_6.goodVO:getConfig("resource_category"),
+		id = arg0_6.goodVO:getConfig("resource_type")
+	}):getOwnedCount() / arg0_6.perCost)
 
-	if arg0.goodVO:getConfig("num_limit") ~= 0 then
-		arg0.maxBuyCount = math.min(arg0.maxBuyCount, math.max(arg0.goodVO:GetPurchasableCnt(), 0))
+	if arg0_6.goodVO:getConfig("num_limit") ~= 0 then
+		arg0_6.maxBuyCount = math.min(arg0_6.maxBuyCount, math.max(arg0_6.goodVO:GetPurchasableCnt(), 0))
 	end
 
-	arg0.curBuyCount = 1
-	arg0.costItemInfo = Drop.New({
-		type = arg0.goodVO:getConfig("resource_category"),
-		id = arg0.goodVO:getConfig("resource_type")
+	arg0_6.curBuyCount = 1
+	arg0_6.costItemInfo = Drop.New({
+		type = arg0_6.goodVO:getConfig("resource_category"),
+		id = arg0_6.goodVO:getConfig("resource_type")
 	})
 end
 
-function var0.findUI(arg0)
-	arg0.bg = arg0:findTF("BG")
+function var0_0.findUI(arg0_7)
+	arg0_7.bg = arg0_7:findTF("BG")
 
-	local var0 = arg0:findTF("Panel")
-	local var1 = arg0:findTF("Info", var0)
+	local var0_7 = arg0_7:findTF("Panel")
+	local var1_7 = arg0_7:findTF("Info", var0_7)
 
-	arg0.nameText = arg0:findTF("Name/Text", var1)
-	arg0.descText = arg0:findTF("Desc", var1)
-	arg0.itemTF = arg0:findTF("CommonItemTemplate", var1)
-	arg0.countTF = arg0:findTF("Count", var1)
-	arg0.countText = arg0:findTF("Count/Num", var1)
+	arg0_7.nameText = arg0_7:findTF("Name/Text", var1_7)
+	arg0_7.descText = arg0_7:findTF("Desc", var1_7)
+	arg0_7.itemTF = arg0_7:findTF("CommonItemTemplate", var1_7)
+	arg0_7.countTF = arg0_7:findTF("Count", var1_7)
+	arg0_7.countText = arg0_7:findTF("Count/Num", var1_7)
 
-	local var2 = arg0:findTF("Count/Tip", var1)
+	local var2_7 = arg0_7:findTF("Count/Tip", var1_7)
 
-	setText(var2, i18n("word_own1"))
+	setText(var2_7, i18n("word_own1"))
 
-	arg0.titleTF = arg0:findTF("Title", var0)
+	arg0_7.titleTF = arg0_7:findTF("Title", var0_7)
 
-	local var3 = arg0:findTF("Buy", var0)
+	local var3_7 = arg0_7:findTF("Buy", var0_7)
 
-	arg0.minusBtn = arg0:findTF("Minus", var3)
-	arg0.addBtn = arg0:findTF("Add", var3)
-	arg0.maxBtn = arg0:findTF("Max", var3)
-	arg0.buyNumText = arg0:findTF("Num", var3)
-	arg0.butCountText = arg0:findTF("BuyCount/Num", var0)
-	arg0.costNumText = arg0:findTF("Cost/Num", var0)
-	arg0.confirmBtn = arg0:findTF("ConfirmBtn", var0)
-	arg0.cancelBtn = arg0:findTF("CancelBtn", var0)
+	arg0_7.minusBtn = arg0_7:findTF("Minus", var3_7)
+	arg0_7.addBtn = arg0_7:findTF("Add", var3_7)
+	arg0_7.maxBtn = arg0_7:findTF("Max", var3_7)
+	arg0_7.buyNumText = arg0_7:findTF("Num", var3_7)
+	arg0_7.butCountText = arg0_7:findTF("BuyCount/Num", var0_7)
+	arg0_7.costNumText = arg0_7:findTF("Cost/Num", var0_7)
+	arg0_7.confirmBtn = arg0_7:findTF("ConfirmBtn", var0_7)
+	arg0_7.cancelBtn = arg0_7:findTF("CancelBtn", var0_7)
 end
 
-function var0.addListener(arg0)
-	local function var0()
-		arg0:closeView()
+function var0_0.addListener(arg0_8)
+	local function var0_8()
+		arg0_8:closeView()
 	end
 
-	onButton(arg0, arg0.bg, var0, SFX_CANCEL)
-	onButton(arg0, arg0.cancelBtn, var0, SFX_CANCEL)
-	onButton(arg0, arg0.confirmBtn, function()
-		if arg0.curBuyCount > arg0.maxBuyCount then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("islandshop_tips4", arg0.costItemInfo:getName()))
+	onButton(arg0_8, arg0_8.bg, var0_8, SFX_CANCEL)
+	onButton(arg0_8, arg0_8.cancelBtn, var0_8, SFX_CANCEL)
+	onButton(arg0_8, arg0_8.confirmBtn, function()
+		if arg0_8.curBuyCount > arg0_8.maxBuyCount then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("islandshop_tips4", arg0_8.costItemInfo:getName()))
 
 			return
 		end
 
 		pg.m02:sendNotification(GAME.ISLAND_SHOPPING, {
-			shop = arg0.actShopVO,
-			arg1 = arg0.goodVO.id,
-			arg2 = arg0.curBuyCount
+			shop = arg0_8.actShopVO,
+			arg1 = arg0_8.goodVO.id,
+			arg2 = arg0_8.curBuyCount
 		})
 	end, SFX_CANCEL)
 
-	arg0.pageUtil = PageUtil.New(arg0.minusBtn, arg0.addBtn, arg0.maxBtn, arg0.butCountText)
+	arg0_8.pageUtil = PageUtil.New(arg0_8.minusBtn, arg0_8.addBtn, arg0_8.maxBtn, arg0_8.butCountText)
 
-	arg0.pageUtil:setNumUpdate(function(arg0)
-		arg0:updateBuyPanelWithNum(arg0)
+	arg0_8.pageUtil:setNumUpdate(function(arg0_11)
+		arg0_8:updateBuyPanelWithNum(arg0_11)
 	end)
-	arg0.pageUtil:setAddNum(1)
-	arg0.pageUtil:setMaxNum(math.max(arg0.maxBuyCount, 1))
-	arg0.pageUtil:setDefaultNum(1)
+	arg0_8.pageUtil:setAddNum(1)
+	arg0_8.pageUtil:setMaxNum(math.max(arg0_8.maxBuyCount, 1))
+	arg0_8.pageUtil:setDefaultNum(1)
 end
 
-function var0.updateGoodInfoPanel(arg0)
-	local var0 = arg0.goodVO
-	local var1 = Drop.New({
-		type = var0:getConfig("commodity_type"),
-		id = var0:getConfig("commodity_id"),
-		count = var0:getConfig("num")
+function var0_0.updateGoodInfoPanel(arg0_12)
+	local var0_12 = arg0_12.goodVO
+	local var1_12 = Drop.New({
+		type = var0_12:getConfig("commodity_type"),
+		id = var0_12:getConfig("commodity_id"),
+		count = var0_12:getConfig("num")
 	})
 
-	updateDrop(arg0.itemTF, var1)
+	updateDrop(arg0_12.itemTF, var1_12)
 
-	local var2, var3 = var1:getOwnedCount()
+	local var2_12, var3_12 = var1_12:getOwnedCount()
 
-	setActive(arg0.countTF, var3)
+	setActive(arg0_12.countTF, var3_12)
 
-	if var3 then
-		setText(arg0.countText, var2)
+	if var3_12 then
+		setText(arg0_12.countText, var2_12)
 	end
 
-	setText(arg0.nameText, var1:getConfig("name"))
-	setText(arg0.descText, string.gsub(var1.desc or var1:getConfig("desc"), "<[^>]+>", ""))
+	setText(arg0_12.nameText, var1_12:getConfig("name"))
+	setText(arg0_12.descText, string.gsub(var1_12.desc or var1_12:getConfig("desc"), "<[^>]+>", ""))
 end
 
-function var0.updateBuyPanelWithNum(arg0, arg1)
-	arg0.curBuyCount = arg1 or 0
+function var0_0.updateBuyPanelWithNum(arg0_13, arg1_13)
+	arg0_13.curBuyCount = arg1_13 or 0
 
-	setText(arg0.buyNumText, arg0.curBuyCount)
-	setText(arg0.butCountText, arg0.curBuyCount)
-	setText(arg0.costNumText, arg0.curBuyCount * arg0.perCost)
+	setText(arg0_13.buyNumText, arg0_13.curBuyCount)
+	setText(arg0_13.butCountText, arg0_13.curBuyCount)
+	setText(arg0_13.costNumText, arg0_13.curBuyCount * arg0_13.perCost)
 end
 
-return var0
+return var0_0

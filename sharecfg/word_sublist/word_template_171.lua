@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_171 = {}
+var0_0.word_template_171 = {}
 
-local var1 = var0.word_template_171
+local var1_0 = var0_0.word_template_171
 
 function temp()
-	var1.恐 = {
+	var1_0.恐 = {
 		怖 = {
 			分 = {
 				子 = {
@@ -88,7 +88,7 @@ end
 temp()
 
 function temp()
-	var1.控 = {
+	var1_0.控 = {
 		制 = {
 			人 = {
 				口 = {
@@ -104,7 +104,7 @@ end
 temp()
 
 function temp()
-	var1.抠 = {
+	var1_0.抠 = {
 		b = {
 			this = true
 		},
@@ -129,7 +129,7 @@ end
 temp()
 
 function temp()
-	var1.摳 = {
+	var1_0.摳 = {
 		穴 = {
 			this = true
 		}
@@ -139,7 +139,7 @@ end
 temp()
 
 function temp()
-	var1.瞘 = {
+	var1_0.瞘 = {
 		this = {
 			this = true
 		}
@@ -149,7 +149,7 @@ end
 temp()
 
 function temp()
-	var1.口 = {
+	var1_0.口 = {
 		暴 = {
 			this = true
 		},
@@ -290,7 +290,7 @@ end
 temp()
 
 function temp()
-	var1.扣 = {
+	var1_0.扣 = {
 		扣 = {
 			this = true
 		}

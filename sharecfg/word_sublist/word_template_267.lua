@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_267 = {}
+var0_0.word_template_267 = {}
 
-local var1 = var0.word_template_267
+local var1_0 = var0_0.word_template_267
 
 function temp()
-	var1.双 = {
+	var1_0.双 = {
 		胞 = {
 			胎 = {
 				在 = {
@@ -217,7 +217,7 @@ end
 temp()
 
 function temp()
-	var1.雙 = {
+	var1_0.雙 = {
 		胞 = {
 			胎 = {
 				姊 = {
@@ -277,7 +277,7 @@ end
 temp()
 
 function temp()
-	var1.爽 = {
+	var1_0.爽 = {
 		电 = {
 			影 = {
 				this = true
@@ -305,7 +305,7 @@ end
 temp()
 
 function temp()
-	var1.谁 = {
+	var1_0.谁 = {
 		操 = {
 			我 = {
 				屁 = {
@@ -648,7 +648,7 @@ end
 temp()
 
 function temp()
-	var1.水 = {
+	var1_0.水 = {
 		泊 = {
 			梁 = {
 				山 = {
@@ -944,7 +944,7 @@ end
 temp()
 
 function temp()
-	var1.氺 = {
+	var1_0.氺 = {
 		猓 = {
 			机 = {
 				this = true
@@ -961,7 +961,7 @@ end
 temp()
 
 function temp()
-	var1.稅 = {
+	var1_0.稅 = {
 		力 = {
 			this = true
 		}

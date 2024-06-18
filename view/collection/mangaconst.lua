@@ -1,54 +1,54 @@
 ﻿MangaConst = {}
 
-local var0 = MangaConst
+local var0_0 = MangaConst
 
-var0.Version = 0
-var0.NewCount = 0
+var0_0.Version = 0
+var0_0.NewCount = 0
 
-function var0.setVersionAndNewCount()
-	local var0 = #pg.cartoon.all
-	local var1 = pg.cartoon.all[var0]
+function var0_0.setVersionAndNewCount()
+	local var0_1 = #pg.cartoon.all
+	local var1_1 = pg.cartoon.all[var0_1]
 
-	var0.Version = pg.cartoon[var1].mark
+	var0_0.Version = pg.cartoon[var1_1].mark
 
-	local var2 = 0
+	local var2_1 = 0
 
-	for iter0 = var0, 1, -1 do
-		local var3 = pg.cartoon.all[iter0]
-		local var4 = pg.cartoon[var3].mark
+	for iter0_1 = var0_1, 1, -1 do
+		local var3_1 = pg.cartoon.all[iter0_1]
+		local var4_1 = pg.cartoon[var3_1].mark
 
-		if var4 == var0.Version then
-			var2 = var2 + 1
-		elseif var4 < var0.Version then
+		if var4_1 == var0_0.Version then
+			var2_1 = var2_1 + 1
+		elseif var4_1 < var0_0.Version then
 			break
 		end
 	end
 
-	var0.NewCount = var2
+	var0_0.NewCount = var2_1
 end
 
-var0.MANGA_PATH_PREFIX = "mangapic/"
-var0.SET_MANGA_LIKE = 0
-var0.CANCEL_MANGA_LIKE = 1
+var0_0.MANGA_PATH_PREFIX = "mangapic/"
+var0_0.SET_MANGA_LIKE = 0
+var0_0.CANCEL_MANGA_LIKE = 1
 
-function var0.isMangaEverReadByID(arg0)
-	local var0 = getProxy(AppreciateProxy):getMangaReadIDList()
+function var0_0.isMangaEverReadByID(arg0_2)
+	local var0_2 = getProxy(AppreciateProxy):getMangaReadIDList()
 
-	return table.contains(var0, arg0)
+	return table.contains(var0_2, arg0_2)
 end
 
-function var0.isMangaNewByID(arg0)
-	local var0 = pg.cartoon[arg0]
+function var0_0.isMangaNewByID(arg0_3)
+	local var0_3 = pg.cartoon[arg0_3]
 
-	assert(var0, "Manga info is null, ID:" .. tostring(arg0))
+	assert(var0_3, "Manga info is null, ID:" .. tostring(arg0_3))
 
-	return var0.mark >= var0.Version
+	return var0_3.mark >= var0_0.Version
 end
 
-function var0.isMangaLikeByID(arg0)
-	local var0 = getProxy(AppreciateProxy):getMangaLikeIDList()
+function var0_0.isMangaLikeByID(arg0_4)
+	local var0_4 = getProxy(AppreciateProxy):getMangaLikeIDList()
 
-	return table.contains(var0, arg0)
+	return table.contains(var0_4, arg0_4)
 end
 
-return var0
+return var0_0

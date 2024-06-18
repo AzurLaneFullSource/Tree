@@ -1,6 +1,6 @@
-﻿local var0 = class("GuildEventBaseCommand", pm.SimpleCommand)
+﻿local var0_0 = class("GuildEventBaseCommand", pm.SimpleCommand)
 
-function var0.ExistGuild(arg0)
+function var0_0.ExistGuild(arg0_1)
 	if not getProxy(GuildProxy):getRawData() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_not_exist"))
 
@@ -10,8 +10,8 @@ function var0.ExistGuild(arg0)
 	return true
 end
 
-function var0.ExistEvent(arg0, arg1)
-	if not getProxy(GuildProxy):getRawData():GetEventById(arg1) then
+function var0_0.ExistEvent(arg0_2, arg1_2)
+	if not getProxy(GuildProxy):getRawData():GetEventById(arg1_2) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_not_exist_battle"))
 
 		return false
@@ -20,14 +20,14 @@ function var0.ExistEvent(arg0, arg1)
 	return true
 end
 
-function var0.ExistActiveEvent(arg0)
-	if not arg0:ExistGuild() then
+function var0_0.ExistActiveEvent(arg0_3)
+	if not arg0_3:ExistGuild() then
 		return false
 	end
 
-	local var0 = getProxy(GuildProxy):getRawData():GetActiveEvent()
+	local var0_3 = getProxy(GuildProxy):getRawData():GetActiveEvent()
 
-	if not var0 or var0 and var0:IsExpired() then
+	if not var0_3 or var0_3 and var0_3:IsExpired() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_battle_is_end"))
 
 		return false
@@ -36,7 +36,7 @@ function var0.ExistActiveEvent(arg0)
 	return true
 end
 
-function var0.NotExistActiveEvent(arg0)
+function var0_0.NotExistActiveEvent(arg0_4)
 	if getProxy(GuildProxy):getRawData():GetActiveEvent() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_battle_is_exist"))
 
@@ -46,14 +46,14 @@ function var0.NotExistActiveEvent(arg0)
 	return true
 end
 
-function var0.ExistMission(arg0, arg1)
-	if not arg0:ExistActiveEvent() then
+function var0_0.ExistMission(arg0_5, arg1_5)
+	if not arg0_5:ExistActiveEvent() then
 		return false
 	end
 
-	local var0 = getProxy(GuildProxy):getRawData():GetActiveEvent()
+	local var0_5 = getProxy(GuildProxy):getRawData():GetActiveEvent()
 
-	if arg1 and var0:GetMissionById(arg1) == nil then
+	if arg1_5 and var0_5:GetMissionById(arg1_5) == nil then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_event_not_exist"))
 
 		return false
@@ -62,18 +62,18 @@ function var0.ExistMission(arg0, arg1)
 	return true
 end
 
-function var0.GetMissionById(arg0, arg1)
-	if arg0:ExistMission(arg1) then
-		return getProxy(GuildProxy):getRawData():GetActiveEvent():GetMissionById(arg1)
+function var0_0.GetMissionById(arg0_6, arg1_6)
+	if arg0_6:ExistMission(arg1_6) then
+		return getProxy(GuildProxy):getRawData():GetActiveEvent():GetMissionById(arg1_6)
 	end
 end
 
-function var0.CanFormationMission(arg0, arg1)
-	if not arg0:ExistMission(arg1) then
+function var0_0.CanFormationMission(arg0_7, arg1_7)
+	if not arg0_7:ExistMission(arg1_7) then
 		return false
 	end
 
-	if getProxy(GuildProxy):getRawData():GetActiveEvent():GetMissionById(arg1):GetCanFormationIndex() == -1 then
+	if getProxy(GuildProxy):getRawData():GetActiveEvent():GetMissionById(arg1_7):GetCanFormationIndex() == -1 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_fleet_can_not_edit"))
 
 		return false
@@ -82,14 +82,14 @@ function var0.CanFormationMission(arg0, arg1)
 	return true
 end
 
-function var0.ExistBoss(arg0)
-	if not arg0:ExistActiveEvent() then
+function var0_0.ExistBoss(arg0_8)
+	if not arg0_8:ExistActiveEvent() then
 		return false
 	end
 
-	local var0 = getProxy(GuildProxy):getRawData():GetActiveEvent():GetBossMission()
+	local var0_8 = getProxy(GuildProxy):getRawData():GetActiveEvent():GetBossMission()
 
-	if not var0 or not var0:IsActive() then
+	if not var0_8 or not var0_8:IsActive() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_not_exist_boss"))
 
 		return false
@@ -98,10 +98,10 @@ function var0.ExistBoss(arg0)
 	return true
 end
 
-function var0.IsAnim(arg0)
-	local var0 = getProxy(GuildProxy):getRawData()
+function var0_0.IsAnim(arg0_9)
+	local var0_9 = getProxy(GuildProxy):getRawData()
 
-	if not GuildMember.IsAdministrator(var0:getSelfDuty()) then
+	if not GuildMember.IsAdministrator(var0_9:getSelfDuty()) then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_commander_and_sub_op"))
 
 		return false
@@ -110,8 +110,8 @@ function var0.IsAnim(arg0)
 	return true
 end
 
-function var0.CheckCapital(arg0, arg1, arg2)
-	if getProxy(GuildProxy):getRawData():getCapital() < arg1:GetConsume() then
+function var0_0.CheckCapital(arg0_10, arg1_10, arg2_10)
+	if getProxy(GuildProxy):getRawData():getCapital() < arg1_10:GetConsume() then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_guildgold_no_enough_for_battle"))
 
 		return false
@@ -120,4 +120,4 @@ function var0.CheckCapital(arg0, arg1, arg2)
 	return true
 end
 
-return var0
+return var0_0

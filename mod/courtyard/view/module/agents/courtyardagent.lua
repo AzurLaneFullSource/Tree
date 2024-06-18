@@ -1,17 +1,17 @@
-﻿local var0 = class("CourtYardAgent")
+﻿local var0_0 = class("CourtYardAgent")
 
-function var0.Ctor(arg0, arg1)
-	setmetatable(arg0, {
-		__index = function(arg0, arg1)
-			local var0 = rawget(arg0, "class")
+function var0_0.Ctor(arg0_1, arg1_1)
+	setmetatable(arg0_1, {
+		__index = function(arg0_2, arg1_2)
+			local var0_2 = rawget(arg0_2, "class")
 
-			return var0[arg1] and var0[arg1] or arg1[arg1]
+			return var0_2[arg1_2] and var0_2[arg1_2] or arg1_1[arg1_2]
 		end
 	})
 end
 
-function var0.Dispose(arg0)
+function var0_0.Dispose(arg0_3)
 	return
 end
 
-return var0
+return var0_0

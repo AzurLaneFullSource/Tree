@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_205 = {}
+var0_0.word_template_205 = {}
 
-local var1 = var0.word_template_205
+local var1_0 = var0_0.word_template_205
 
 function temp()
-	var1.迷 = {
+	var1_0.迷 = {
 		彩 = {
 			弩 = {
 				this = true
@@ -269,7 +269,7 @@ end
 temp()
 
 function temp()
-	var1.谜 = {
+	var1_0.谜 = {
 		幻 = {
 			药 = {
 				this = true
@@ -286,7 +286,7 @@ end
 temp()
 
 function temp()
-	var1.禰 = {
+	var1_0.禰 = {
 		this = {
 			this = true
 		}
@@ -296,7 +296,7 @@ end
 temp()
 
 function temp()
-	var1.米 = {
+	var1_0.米 = {
 		幻 = {
 			要 = {
 				this = true
@@ -319,7 +319,7 @@ end
 temp()
 
 function temp()
-	var1.羋 = {
+	var1_0.羋 = {
 		this = {
 			this = true
 		}
@@ -329,7 +329,7 @@ end
 temp()
 
 function temp()
-	var1.觅 = {
+	var1_0.觅 = {
 		风 = {
 			流 = {
 				this = true
@@ -357,7 +357,7 @@ end
 temp()
 
 function temp()
-	var1.宓 = {
+	var1_0.宓 = {
 		毛 = {
 			this = true
 		}

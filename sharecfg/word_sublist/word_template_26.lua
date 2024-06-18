@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_26 = {}
+var0_0.word_template_26 = {}
 
-local var1 = var0.word_template_26
+local var1_0 = var0_0.word_template_26
 
 function temp()
-	var1.辱 = {
+	var1_0.辱 = {
 		this = {
 			this = true
 		},
@@ -23,7 +23,7 @@ end
 temp()
 
 function temp()
-	var1.尻 = {
+	var1_0.尻 = {
 		軽 = {
 			this = true
 		},
@@ -36,7 +36,7 @@ end
 temp()
 
 function temp()
-	var1.心 = {
+	var1_0.心 = {
 		障 = {
 			児 = {
 				this = true
@@ -78,7 +78,7 @@ end
 temp()
 
 function temp()
-	var1.人 = {
+	var1_0.人 = {
 		體 = {
 			實 = {
 				驗 = {
@@ -910,7 +910,7 @@ end
 temp()
 
 function temp()
-	var1.性 = {
+	var1_0.性 = {
 		感 = {
 			this = true,
 			护 = {
@@ -1508,7 +1508,7 @@ end
 temp()
 
 function temp()
-	var1.整 = {
+	var1_0.整 = {
 		体 = {
 			this = true
 		},
@@ -1549,7 +1549,7 @@ end
 temp()
 
 function temp()
-	var1.赤 = {
+	var1_0.赤 = {
 		→ = {
 			あ = {
 				な = {

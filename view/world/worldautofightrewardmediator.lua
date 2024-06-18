@@ -1,7 +1,7 @@
-﻿local var0 = class("WorldAutoFightRewardMediator", ContextMediator)
+﻿local var0_0 = class("WorldAutoFightRewardMediator", ContextMediator)
 
-function var0.register(arg0)
+function var0_0.register(arg0_1)
 	return
 end
 
-return var0
+return var0_0

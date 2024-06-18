@@ -1,183 +1,183 @@
-﻿local var0 = class("BattleGateWorldBoss")
+﻿local var0_0 = class("BattleGateWorldBoss")
 
-ys.Battle.BattleGateWorldBoss = var0
-var0.__name = "BattleGateWorldBoss"
+ys.Battle.BattleGateWorldBoss = var0_0
+var0_0.__name = "BattleGateWorldBoss"
 
-function var0.Entrance(arg0, arg1)
+function var0_0.Entrance(arg0_1, arg1_1)
 	if BeginStageCommand.DockOverload() then
 		return
 	end
 
-	local var0 = arg0.actId
-	local var1 = getProxy(PlayerProxy)
-	local var2 = getProxy(BayProxy)
-	local var3 = pg.battle_cost_template[SYSTEM_WORLD_BOSS]
-	local var4 = true
-	local var5 = {}
-	local var6 = 0
-	local var7 = 0
-	local var8 = nowWorld()
-	local var9 = var8:GetBossProxy():GetFleet(arg0.bossId)
-	local var10 = var9.ships
+	local var0_1 = arg0_1.actId
+	local var1_1 = getProxy(PlayerProxy)
+	local var2_1 = getProxy(BayProxy)
+	local var3_1 = pg.battle_cost_template[SYSTEM_WORLD_BOSS]
+	local var4_1 = true
+	local var5_1 = {}
+	local var6_1 = 0
+	local var7_1 = 0
+	local var8_1 = nowWorld()
+	local var9_1 = var8_1:GetBossProxy():GetFleet(arg0_1.bossId)
+	local var10_1 = var9_1.ships
 
-	for iter0, iter1 in ipairs(var10) do
-		var5[#var5 + 1] = iter1
+	for iter0_1, iter1_1 in ipairs(var10_1) do
+		var5_1[#var5_1 + 1] = iter1_1
 	end
 
-	local var11 = var2:getSortShipsByFleet(var9)
-	local var12 = var1:getData()
-	local var13 = arg0.bossId
-	local var14 = var8:GetBossProxy()
-	local var15 = var14:GetBossById(var13)
-	local var16 = var15:GetStageID()
+	local var11_1 = var2_1:getSortShipsByFleet(var9_1)
+	local var12_1 = var1_1:getData()
+	local var13_1 = arg0_1.bossId
+	local var14_1 = var8_1:GetBossProxy()
+	local var15_1 = var14_1:GetBossById(var13_1)
+	local var16_1 = var15_1:GetStageID()
 
-	if var14:IsSelfBoss(var15) and var15:GetSelfFightCnt() > 0 then
-		var7 = var15:GetOilConsume()
+	if var14_1:IsSelfBoss(var15_1) and var15_1:GetSelfFightCnt() > 0 then
+		var7_1 = var15_1:GetOilConsume()
 	end
 
-	if var4 and var7 > var12.oil then
+	if var4_1 and var7_1 > var12_1.oil then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 		return
 	end
 
-	arg1.ShipVertify()
+	arg1_1.ShipVertify()
 
-	local function var17(arg0)
-		if var4 then
-			var12:consume({
+	local function var17_1(arg0_2)
+		if var4_1 then
+			var12_1:consume({
 				gold = 0,
-				oil = var7
+				oil = var7_1
 			})
 		end
 
-		if var3.enter_energy_cost > 0 then
-			local var0 = pg.gameset.battle_consume_energy.key_value
+		if var3_1.enter_energy_cost > 0 then
+			local var0_2 = pg.gameset.battle_consume_energy.key_value
 
-			for iter0, iter1 in ipairs(var11) do
-				iter1:cosumeEnergy(var0)
-				var2:updateShip(iter1)
+			for iter0_2, iter1_2 in ipairs(var11_1) do
+				iter1_2:cosumeEnergy(var0_2)
+				var2_1:updateShip(iter1_2)
 			end
 		end
 
-		if var14:IsSelfBoss(var15) then
-			var15:IncreaseFightCnt()
+		if var14_1:IsSelfBoss(var15_1) then
+			var15_1:IncreaseFightCnt()
 		else
-			if WorldBossConst._IsCurrBoss(var15) then
-				var14:reducePt()
+			if WorldBossConst._IsCurrBoss(var15_1) then
+				var14_1:reducePt()
 			end
 
-			var14:LockCacheBoss(var13)
+			var14_1:LockCacheBoss(var13_1)
 		end
 
-		var1:updatePlayer(var12)
+		var1_1:updatePlayer(var12_1)
 
-		local var1 = {
+		local var1_2 = {
 			prefabFleet = {},
-			bossId = var13,
-			actId = var0,
-			stageId = var16,
+			bossId = var13_1,
+			actId = var0_1,
+			stageId = var16_1,
 			system = SYSTEM_WORLD_BOSS,
-			token = arg0.key,
-			bossLevel = var15:GetLevel(),
-			bossConfigId = var15:GetConfigID()
+			token = arg0_2.key,
+			bossLevel = var15_1:GetLevel(),
+			bossConfigId = var15_1:GetConfigID()
 		}
 
-		arg1:sendNotification(GAME.BEGIN_STAGE_DONE, var1)
+		arg1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var1_2)
 	end
 
-	local function var18(arg0)
-		local function var0()
-			var14:UnlockCacheBoss()
-			var14:RemoveCacheBoss(var15.id)
+	local function var18_1(arg0_3)
+		local function var0_3()
+			var14_1:UnlockCacheBoss()
+			var14_1:RemoveCacheBoss(var15_1.id)
 			pg.m02:sendNotification(GAME.WORLD_BOSS_START_BATTLE_FIALED)
 		end
 
-		if arg0.result == 1 then
+		if arg0_3.result == 1 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_none"))
-			var0()
-		elseif arg0.result == 3 then
+			var0_3()
+		elseif arg0_3.result == 3 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_none"))
-			var0()
-		elseif arg0.result == 6 then
+			var0_3()
+		elseif arg0_3.result == 6 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_max_challenge_cnt"))
-			var0()
-		elseif arg0.result == 20 then
+			var0_3()
+		elseif arg0_3.result == 20 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_none"))
-			var0()
-		elseif arg0.result == 9997 then
+			var0_3()
+		elseif arg0_3.result == 9997 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_maintenance"))
-			var0()
+			var0_3()
 		else
-			arg1:RequestFailStandardProcess(arg0)
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0.result] .. arg0.result)
+			arg1_1:RequestFailStandardProcess(arg0_3)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_3.result] .. arg0_3.result)
 		end
 	end
 
-	BeginStageCommand.SendRequest(SYSTEM_WORLD_BOSS, var5, {
-		var13
-	}, var17, var18)
+	BeginStageCommand.SendRequest(SYSTEM_WORLD_BOSS, var5_1, {
+		var13_1
+	}, var17_1, var18_1)
 end
 
-function var0.Exit(arg0, arg1)
-	if arg1.CheaterVertify() then
+function var0_0.Exit(arg0_5, arg1_5)
+	if arg1_5.CheaterVertify() then
 		return
 	end
 
-	local var0 = pg.battle_cost_template[SYSTEM_WORLD_BOSS]
-	local var1 = arg0.statistics._battleScore
-	local var2 = {}
-	local var3 = nowWorld():GetBossProxy():GetFleet(arg0.bossId)
-	local var4 = getProxy(BayProxy):getSortShipsByFleet(var3)
-	local var5 = arg1.GeneralPackage(arg0, var4)
-	local var6 = 0
-	local var7 = {}
+	local var0_5 = pg.battle_cost_template[SYSTEM_WORLD_BOSS]
+	local var1_5 = arg0_5.statistics._battleScore
+	local var2_5 = {}
+	local var3_5 = nowWorld():GetBossProxy():GetFleet(arg0_5.bossId)
+	local var4_5 = getProxy(BayProxy):getSortShipsByFleet(var3_5)
+	local var5_5 = arg1_5.GeneralPackage(arg0_5, var4_5)
+	local var6_5 = 0
+	local var7_5 = {}
 
-	for iter0, iter1 in ipairs(arg0.statistics._enemyInfoList) do
-		table.insert(var7, {
-			enemy_id = iter1.id,
-			damage_taken = iter1.damage,
-			total_hp = iter1.totalHp
+	for iter0_5, iter1_5 in ipairs(arg0_5.statistics._enemyInfoList) do
+		table.insert(var7_5, {
+			enemy_id = iter1_5.id,
+			damage_taken = iter1_5.damage,
+			total_hp = iter1_5.totalHp
 		})
 
-		if var6 < iter1.damage then
-			var6 = iter1.damage
+		if var6_5 < iter1_5.damage then
+			var6_5 = iter1_5.damage
 		end
 	end
 
-	var5.enemy_info = var7
+	var5_5.enemy_info = var7_5
 
-	local function var8(arg0)
-		local var0, var1 = arg1:GeneralLoot(arg0)
+	local function var8_5(arg0_6)
+		local var0_6, var1_6 = arg1_5:GeneralLoot(arg0_6)
 
-		arg1.addShipsExp(arg0.ship_exp_list, arg0.statistics, accumulate)
+		arg1_5.addShipsExp(arg0_6.ship_exp_list, arg0_5.statistics, accumulate)
 
-		local var2 = nowWorld():GetBossProxy()
-		local var3 = var2:GetBossById(arg0.bossId)
-		local var4 = var3:GetName()
+		local var2_6 = nowWorld():GetBossProxy()
+		local var3_6 = var2_6:GetBossById(arg0_5.bossId)
+		local var4_6 = var3_6:GetName()
 
-		var2:ClearRank(var3.id)
-		var2:UpdateHighestDamage(var6)
+		var2_6:ClearRank(var3_6.id)
+		var2_6:UpdateHighestDamage(var6_5)
 
-		arg0.statistics.mvpShipID = arg0.mvp
+		arg0_5.statistics.mvpShipID = arg0_6.mvp
 
-		local var5 = {
+		local var5_6 = {
 			system = SYSTEM_WORLD_BOSS,
-			statistics = arg0.statistics,
-			score = var1,
-			drops = var0,
+			statistics = arg0_5.statistics,
+			score = var1_5,
+			drops = var0_6,
 			commanderExps = {},
-			result = arg0.result,
-			extraDrops = var1,
-			bossId = arg0.bossId,
-			name = var4
+			result = arg0_6.result,
+			extraDrops = var1_6,
+			bossId = arg0_5.bossId,
+			name = var4_6
 		}
 
-		arg1:sendNotification(GAME.FINISH_STAGE_DONE, var5)
-		var2:UnlockCacheBoss()
+		arg1_5:sendNotification(GAME.FINISH_STAGE_DONE, var5_6)
+		var2_6:UnlockCacheBoss()
 	end
 
-	arg1:SendRequest(var5, var8)
+	arg1_5:SendRequest(var5_5, var8_5)
 end
 
-return var0
+return var0_0

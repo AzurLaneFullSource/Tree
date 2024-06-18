@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_384 = {}
+var0_0.word_template_384 = {}
 
-local var1 = var0.word_template_384
+local var1_0 = var0_0.word_template_384
 
 function temp()
-	var1.喉 = {
+	var1_0.喉 = {
 		舌 = {
 			习 = {
 				this = true
@@ -22,7 +22,7 @@ end
 temp()
 
 function temp()
-	var1.岸 = {
+	var1_0.岸 = {
 		英 = {
 			this = true
 		}
@@ -32,7 +32,7 @@ end
 temp()
 
 function temp()
-	var1.宪 = {
+	var1_0.宪 = {
 		法 = {
 			政 = {
 				变 = {
@@ -46,7 +46,7 @@ end
 temp()
 
 function temp()
-	var1.狆 = {
+	var1_0.狆 = {
 		特 = {
 			脃 = {
 				this = true,
@@ -70,7 +70,7 @@ end
 temp()
 
 function temp()
-	var1.理 = {
+	var1_0.理 = {
 		论 = {
 			创 = {
 				新 = {
@@ -89,7 +89,7 @@ end
 temp()
 
 function temp()
-	var1.忠 = {
+	var1_0.忠 = {
 		供 = {
 			忠 = {
 				秧 = {
@@ -120,7 +120,7 @@ end
 temp()
 
 function temp()
-	var1.咸 = {
+	var1_0.咸 = {
 		阳 = {
 			城 = {
 				里 = {

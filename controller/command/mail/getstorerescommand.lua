@@ -1,30 +1,30 @@
-﻿local var0 = class("GetStoreResCommand", pm.SimpleCommand)
+﻿local var0_0 = class("GetStoreResCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.oil
-	local var2 = var0.gold
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.oil
+	local var2_1 = var0_1.gold
 
-	if var1 == 0 and var2 == 0 then
+	if var1_1 == 0 and var2_1 == 0 then
 		return
 	end
 
-	local var3 = GetItemsOverflowDic({
+	local var3_1 = GetItemsOverflowDic({
 		Drop.New({
 			type = DROP_TYPE_RESOURCE,
 			id = PlayerConst.ResOil,
-			count = var1
+			count = var1_1
 		}),
 		Drop.New({
 			type = DROP_TYPE_RESOURCE,
 			id = PlayerConst.ResGold,
-			count = var2
+			count = var2_1
 		})
 	})
-	local var4, var5 = CheckOverflow(var3)
+	local var4_1, var5_1 = CheckOverflow(var3_1)
 
-	if not var4 then
-		switch(var5, {
+	if not var4_1 then
+		switch(var5_1, {
 			gold = function()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_mail"))
 			end,
@@ -43,33 +43,33 @@ function var0.execute(arg0, arg1)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(30012, {
-		oil = var1,
-		gold = var2
-	}, 30013, function(arg0)
-		if arg0.result == 0 then
+		oil = var1_1,
+		gold = var2_1
+	}, 30013, function(arg0_6)
+		if arg0_6.result == 0 then
 			getProxy(PlayerProxy):UpdatePlayerRes({
 				{
 					id = PlayerConst.ResOil,
-					count = var1
+					count = var1_1
 				},
 				{
 					id = PlayerConst.ResStoreOil,
-					count = -var1
+					count = -var1_1
 				},
 				{
 					id = PlayerConst.ResGold,
-					count = var2
+					count = var2_1
 				},
 				{
 					id = PlayerConst.ResStoreGold,
-					count = -var2
+					count = -var2_1
 				}
 			})
-			arg0:sendNotification(GAME.GET_STORE_RES_DONE)
+			arg0_1:sendNotification(GAME.GET_STORE_RES_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0_6.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

@@ -1,39 +1,39 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConfig
-local var2 = var0.Battle.BattleFleetCardPuzzleCardManageComponent
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConfig
+local var2_0 = var0_0.Battle.BattleFleetCardPuzzleCardManageComponent
 
-var0.Battle.BattleCardPuzzleWave = class("BattleCardPuzzleWave", var0.Battle.BattleWaveInfo)
-var0.Battle.BattleCardPuzzleWave.__name = "BattleCardPuzzleWave"
+var0_0.Battle.BattleCardPuzzleWave = class("BattleCardPuzzleWave", var0_0.Battle.BattleWaveInfo)
+var0_0.Battle.BattleCardPuzzleWave.__name = "BattleCardPuzzleWave"
 
-local var3 = var0.Battle.BattleCardPuzzleWave
+local var3_0 = var0_0.Battle.BattleCardPuzzleWave
 
-function var3.Ctor(arg0)
-	var3.super.Ctor(arg0)
+function var3_0.Ctor(arg0_1)
+	var3_0.super.Ctor(arg0_1)
 end
 
-function var3.SetWaveData(arg0, arg1)
-	var3.super.SetWaveData(arg0, arg1)
+function var3_0.SetWaveData(arg0_2, arg1_2)
+	var3_0.super.SetWaveData(arg0_2, arg1_2)
 
-	arg0._cardID = arg0._param.card_id
-	arg0._moveTo = arg0._param.move_to
-	arg0._moveOP = arg0._param.move_op or var2.FUNC_NAME_ADD
-	arg0._op = arg0._param.shuffle or 1
+	arg0_2._cardID = arg0_2._param.card_id
+	arg0_2._moveTo = arg0_2._param.move_to
+	arg0_2._moveOP = arg0_2._param.move_op or var2_0.FUNC_NAME_ADD
+	arg0_2._op = arg0_2._param.shuffle or 1
 end
 
-function var3.DoWave(arg0)
-	var3.super.DoWave(arg0)
+function var3_0.DoWave(arg0_3)
+	var3_0.super.DoWave(arg0_3)
 
-	local var0 = var0.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(var1.FRIENDLY_CODE):GetCardPuzzleComponent()
-	local var1 = var0:GenerateCard(arg0._cardID)
-	local var2 = var0:GetCardPileByIndex(arg0._moveTo)
+	local var0_3 = var0_0.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(var1_0.FRIENDLY_CODE):GetCardPuzzleComponent()
+	local var1_3 = var0_3:GenerateCard(arg0_3._cardID)
+	local var2_3 = var0_3:GetCardPileByIndex(arg0_3._moveTo)
 
-	var2[arg0._moveOP](var2, var1)
+	var2_3[arg0_3._moveOP](var2_3, var1_3)
 
-	if arg0._op == 1 then
-		var2:Shuffle()
+	if arg0_3._op == 1 then
+		var2_3:Shuffle()
 	end
 
-	arg0:doPass()
+	arg0_3:doPass()
 end

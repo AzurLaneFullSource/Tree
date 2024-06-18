@@ -1,223 +1,223 @@
-﻿local var0 = class("GuideUIDuplicator")
+﻿local var0_0 = class("GuideUIDuplicator")
 
-function var0.Ctor(arg0, arg1)
-	arg0.caches = {}
-	arg0.root = arg1
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.caches = {}
+	arg0_1.root = arg1_1
 end
 
-function var0.Duplicate(arg0, arg1, arg2)
-	local var0 = Object.Instantiate(arg1, arg0.root).transform
+function var0_0.Duplicate(arg0_2, arg1_2, arg2_2)
+	local var0_2 = Object.Instantiate(arg1_2, arg0_2.root).transform
 
-	setActive(var0, true)
-	arg0:InitDuplication(var0, arg1, arg2)
+	setActive(var0_2, true)
+	arg0_2:InitDuplication(var0_2, arg1_2, arg2_2)
 
-	if arg2 then
-		arg0:UpdateSettings(var0, arg1, arg2)
+	if arg2_2 then
+		arg0_2:UpdateSettings(var0_2, arg1_2, arg2_2)
 	end
 
-	table.insert(arg0.caches, var0)
+	table.insert(arg0_2.caches, var0_2)
 
-	return var0
+	return var0_2
 end
 
-local function var1(arg0)
-	return arg0:GetComponent(typeof(Button)) ~= nil or arg0:GetComponent(typeof(Toggle)) ~= nil or arg0:GetComponent(typeof(EventTriggerListener)) ~= nil
+local function var1_0(arg0_3)
+	return arg0_3:GetComponent(typeof(Button)) ~= nil or arg0_3:GetComponent(typeof(Toggle)) ~= nil or arg0_3:GetComponent(typeof(EventTriggerListener)) ~= nil
 end
 
-local function var2(arg0)
-	local var0 = arg0:GetComponent(typeof(Button))
-	local var1 = arg0:GetComponentsInChildren(typeof(Button))
+local function var2_0(arg0_4)
+	local var0_4 = arg0_4:GetComponent(typeof(Button))
+	local var1_4 = arg0_4:GetComponentsInChildren(typeof(Button))
 
-	for iter0 = 1, var1.Length do
-		local var2 = var1[iter0 - 1]
+	for iter0_4 = 1, var1_4.Length do
+		local var2_4 = var1_4[iter0_4 - 1]
 
-		if var0 ~= var2 then
-			var2.enabled = false
+		if var0_4 ~= var2_4 then
+			var2_4.enabled = false
 		end
 	end
 
-	local var3 = arg0:GetComponent(typeof(Toggle))
-	local var4 = arg0:GetComponentsInChildren(typeof(Toggle))
+	local var3_4 = arg0_4:GetComponent(typeof(Toggle))
+	local var4_4 = arg0_4:GetComponentsInChildren(typeof(Toggle))
 
-	for iter1 = 1, var4.Length do
-		local var5 = var4[iter1 - 1]
+	for iter1_4 = 1, var4_4.Length do
+		local var5_4 = var4_4[iter1_4 - 1]
 
-		if var3 ~= var5 then
-			var5.enabled = false
+		if var3_4 ~= var5_4 then
+			var5_4.enabled = false
 		end
 	end
 
-	if var3 then
-		setToggleEnabled(arg0, true)
+	if var3_4 then
+		setToggleEnabled(arg0_4, true)
 	end
 end
 
-local function var3(arg0)
-	if LeanTween.isTweening(arg0.gameObject) then
-		LeanTween.cancel(arg0.gameObject)
+local function var3_0(arg0_5)
+	if LeanTween.isTweening(arg0_5.gameObject) then
+		LeanTween.cancel(arg0_5.gameObject)
 	end
 
-	eachChild(arg0, function(arg0)
-		if LeanTween.isTweening(arg0.gameObject) then
-			LeanTween.cancel(arg0.gameObject)
+	eachChild(arg0_5, function(arg0_6)
+		if LeanTween.isTweening(arg0_6.gameObject) then
+			LeanTween.cancel(arg0_6.gameObject)
 		end
 	end)
 end
 
-function var0.InitDuplication(arg0, arg1, arg2, arg3)
-	local var0 = arg1:GetComponent(typeof(CanvasGroup))
+function var0_0.InitDuplication(arg0_7, arg1_7, arg2_7, arg3_7)
+	local var0_7 = arg1_7:GetComponent(typeof(CanvasGroup))
 
-	if var0 then
-		var0.alpha = 1
+	if var0_7 then
+		var0_7.alpha = 1
 	end
 
-	local var1 = arg1:GetComponentInChildren(typeof(UnityEngine.UI.Graphic))
+	local var1_7 = arg1_7:GetComponentInChildren(typeof(UnityEngine.UI.Graphic))
 
-	if arg1:GetComponentInChildren(typeof(Canvas)) or var1 == nil then
-		GetOrAddComponent(arg1, typeof(Image)).color = Color.New(1, 1, 1, 0)
+	if arg1_7:GetComponentInChildren(typeof(Canvas)) or var1_7 == nil then
+		GetOrAddComponent(arg1_7, typeof(Image)).color = Color.New(1, 1, 1, 0)
 	end
 
-	if var1 and var1.raycastTarget == false then
-		var1.raycastTarget = true
+	if var1_7 and var1_7.raycastTarget == false then
+		var1_7.raycastTarget = true
 	end
 
-	local var2 = arg1:GetComponent(typeof(Animator))
+	local var2_7 = arg1_7:GetComponent(typeof(Animator))
 
-	if var2 then
-		var2.enabled = false
+	if var2_7 then
+		var2_7.enabled = false
 	end
 
-	if var1(arg1) or arg3.clearChildEvent then
-		var2(arg1)
+	if var1_0(arg1_7) or arg3_7.clearChildEvent then
+		var2_0(arg1_7)
 	end
 
-	var3(arg1)
+	var3_0(arg1_7)
 
-	if not arg3.keepScrollTxt then
-		local var3 = arg1:GetComponentsInChildren(typeof(ScrollText))
+	if not arg3_7.keepScrollTxt then
+		local var3_7 = arg1_7:GetComponentsInChildren(typeof(ScrollText))
 
-		for iter0 = 1, var3.Length do
-			local var4 = var3[iter0 - 1]
+		for iter0_7 = 1, var3_7.Length do
+			local var4_7 = var3_7[iter0_7 - 1]
 
-			setActive(var4.gameObject, false)
+			setActive(var4_7.gameObject, false)
 		end
 	end
 
-	if arg1:GetComponent(typeof(Canvas)) and arg1:GetComponent(typeof(GraphicRaycaster)) == nil then
-		GetOrAddComponent(arg1, typeof(GraphicRaycaster))
+	if arg1_7:GetComponent(typeof(Canvas)) and arg1_7:GetComponent(typeof(GraphicRaycaster)) == nil then
+		GetOrAddComponent(arg1_7, typeof(GraphicRaycaster))
 	end
 
-	arg1.sizeDelta = arg2.sizeDelta
+	arg1_7.sizeDelta = arg2_7.sizeDelta
 end
 
-function var0.UpdateSettings(arg0, arg1, arg2, arg3)
-	if arg3.customPosition then
-		arg0:SetCustomPosition(arg1, arg2, arg3)
+function var0_0.UpdateSettings(arg0_8, arg1_8, arg2_8, arg3_8)
+	if arg3_8.customPosition then
+		arg0_8:SetCustomPosition(arg1_8, arg2_8, arg3_8)
 	else
-		arg0:Syn(arg1, arg2, arg3)
+		arg0_8:Syn(arg1_8, arg2_8, arg3_8)
 	end
 
-	if arg3.clearAllEvent then
-		GetOrAddComponent(arg1, typeof(CanvasGroup)).blocksRaycasts = false
+	if arg3_8.clearAllEvent then
+		GetOrAddComponent(arg1_8, typeof(CanvasGroup)).blocksRaycasts = false
 	end
 end
 
-function var0.SetCustomPosition(arg0, arg1, arg2, arg3)
-	if arg3.pos then
-		arg1.localPosition = Vector3(arg3.pos.x, arg3.pos.y, arg3.pos.z or 0)
-	elseif arg3.isLevelPoint then
-		local var0 = pg.UIMgr.GetInstance().levelCameraComp
-		local var1 = arg2.transform.parent:TransformPoint(arg2.transform.localPosition)
-		local var2 = var0:WorldToScreenPoint(var1)
-		local var3 = pg.UIMgr.GetInstance().overlayCameraComp
+function var0_0.SetCustomPosition(arg0_9, arg1_9, arg2_9, arg3_9)
+	if arg3_9.pos then
+		arg1_9.localPosition = Vector3(arg3_9.pos.x, arg3_9.pos.y, arg3_9.pos.z or 0)
+	elseif arg3_9.isLevelPoint then
+		local var0_9 = pg.UIMgr.GetInstance().levelCameraComp
+		local var1_9 = arg2_9.transform.parent:TransformPoint(arg2_9.transform.localPosition)
+		local var2_9 = var0_9:WorldToScreenPoint(var1_9)
+		local var3_9 = pg.UIMgr.GetInstance().overlayCameraComp
 
-		arg1.localPosition = LuaHelper.ScreenToLocal(arg0.root, var2, var3)
+		arg1_9.localPosition = LuaHelper.ScreenToLocal(arg0_9.root, var2_9, var3_9)
 	else
-		arg1.position = arg2.transform.position
-		arg1.localPosition = Vector3(arg1.localPosition.x, arg1.localPosition.y, 0)
+		arg1_9.position = arg2_9.transform.position
+		arg1_9.localPosition = Vector3(arg1_9.localPosition.x, arg1_9.localPosition.y, 0)
 	end
 
-	local var4 = arg3.scale or 1
+	local var4_9 = arg3_9.scale or 1
 
-	arg1.localScale = Vector3(var4, var4, var4)
-	arg1.eulerAngles = arg3.eulerAngles and Vector3(arg3.eulerAngles[1], arg3.eulerAngles[2], arg3.eulerAngles[3]) or Vector3(0, 0, 0)
+	arg1_9.localScale = Vector3(var4_9, var4_9, var4_9)
+	arg1_9.eulerAngles = arg3_9.eulerAngles and Vector3(arg3_9.eulerAngles[1], arg3_9.eulerAngles[2], arg3_9.eulerAngles[3]) or Vector3(0, 0, 0)
 end
 
-local function var4(arg0, arg1, arg2, arg3)
-	local var0 = arg0.root:InverseTransformPoint(arg2.transform.position)
+local function var4_0(arg0_10, arg1_10, arg2_10, arg3_10)
+	local var0_10 = arg0_10.root:InverseTransformPoint(arg2_10.transform.position)
 
-	arg1.localPosition = Vector3(var0.x, var0.y, 0)
+	arg1_10.localPosition = Vector3(var0_10.x, var0_10.y, 0)
 
-	local var1 = arg2.transform.localScale
+	local var1_10 = arg2_10.transform.localScale
 
-	arg1.localScale = Vector3(var1.x, var1.y, var1.z)
+	arg1_10.localScale = Vector3(var1_10.x, var1_10.y, var1_10.z)
 end
 
-local function var5(arg0, arg1, arg2)
-	local var0
-	local var1
-	local var2 = arg2.image.isChild and arg1:Find(arg2.image.source) or GameObject.Find(arg2.image.source)
+local function var5_0(arg0_11, arg1_11, arg2_11)
+	local var0_11
+	local var1_11
+	local var2_11 = arg2_11.image.isChild and arg1_11:Find(arg2_11.image.source) or GameObject.Find(arg2_11.image.source)
 
-	if arg2.image.isRelative then
-		var1 = arg2.image.target == "" and arg0 or arg0:Find(arg2.image.target)
+	if arg2_11.image.isRelative then
+		var1_11 = arg2_11.image.target == "" and arg0_11 or arg0_11:Find(arg2_11.image.target)
 	else
-		var1 = GameObject.Find(arg2.image.target)
+		var1_11 = GameObject.Find(arg2_11.image.target)
 	end
 
-	if IsNil(var2) or IsNil(var1) then
+	if IsNil(var2_11) or IsNil(var1_11) then
 		return
 	end
 
-	local var3 = var2:GetComponent(typeof(Image))
-	local var4 = var1:GetComponent(typeof(Image))
+	local var3_11 = var2_11:GetComponent(typeof(Image))
+	local var4_11 = var1_11:GetComponent(typeof(Image))
 
-	if not var3 or not var4 then
+	if not var3_11 or not var4_11 then
 		return
 	end
 
-	local var5 = var3.sprite
-	local var6 = var4.sprite
+	local var5_11 = var3_11.sprite
+	local var6_11 = var4_11.sprite
 
-	if var5 and var6 and var5 ~= var6 then
-		var4.enabled = var3.enabled
+	if var5_11 and var6_11 and var5_11 ~= var6_11 then
+		var4_11.enabled = var3_11.enabled
 
-		setImageSprite(var1, var5)
+		setImageSprite(var1_11, var5_11)
 	end
 end
 
-function var0.Syn(arg0, arg1, arg2, arg3)
-	arg0:RemoveTimer()
+function var0_0.Syn(arg0_12, arg1_12, arg2_12, arg3_12)
+	arg0_12:RemoveTimer()
 
-	arg0.timer = Timer.New(function()
-		var4(arg0, arg1, arg2, arg3)
+	arg0_12.timer = Timer.New(function()
+		var4_0(arg0_12, arg1_12, arg2_12, arg3_12)
 
-		if arg3.image then
-			var5(arg1, arg2, arg3)
+		if arg3_12.image then
+			var5_0(arg1_12, arg2_12, arg3_12)
 		end
 	end, 0.01, -1)
 
-	arg0.timer:Start()
-	arg0.timer.func()
+	arg0_12.timer:Start()
+	arg0_12.timer.func()
 end
 
-function var0.RemoveTimer(arg0)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var0_0.RemoveTimer(arg0_14)
+	if arg0_14.timer then
+		arg0_14.timer:Stop()
 
-		arg0.timer = nil
+		arg0_14.timer = nil
 	end
 end
 
-function var0.Clear(arg0)
-	if arg0.caches and #arg0.caches > 0 then
-		for iter0, iter1 in ipairs(arg0.caches) do
-			Object.Destroy(iter1.gameObject)
+function var0_0.Clear(arg0_15)
+	if arg0_15.caches and #arg0_15.caches > 0 then
+		for iter0_15, iter1_15 in ipairs(arg0_15.caches) do
+			Object.Destroy(iter1_15.gameObject)
 		end
 
-		arg0.caches = {}
+		arg0_15.caches = {}
 	end
 
-	arg0:RemoveTimer()
+	arg0_15:RemoveTimer()
 end
 
-return var0
+return var0_0

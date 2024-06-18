@@ -1,119 +1,119 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConfig
-local var2 = var0.Battle.BattleTargetChoise
-local var3 = var0.Battle.BattleUnitEvent
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConfig
+local var2_0 = var0_0.Battle.BattleTargetChoise
+local var3_0 = var0_0.Battle.BattleUnitEvent
 
-var0.Battle.BattelUAVUnit = class("BattelUAVUnit", var0.Battle.BattleAircraftUnit)
-var0.Battle.BattelUAVUnit.__name = "BattelUAVUnit"
+var0_0.Battle.BattelUAVUnit = class("BattelUAVUnit", var0_0.Battle.BattleAircraftUnit)
+var0_0.Battle.BattelUAVUnit.__name = "BattelUAVUnit"
 
-local var4 = var0.Battle.BattelUAVUnit
+local var4_0 = var0_0.Battle.BattelUAVUnit
 
-var4.MOVE_STATE = "MOVE_STATE"
-var4.HOVER_STATE = "HOVER_STATE"
+var4_0.MOVE_STATE = "MOVE_STATE"
+var4_0.HOVER_STATE = "HOVER_STATE"
 
-function var4.Ctor(arg0, arg1)
-	var4.super.Ctor(arg0, arg1)
+function var4_0.Ctor(arg0_1, arg1_1)
+	var4_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0._dir = var0.Battle.BattleConst.UnitDir.LEFT
-	arg0._type = var0.Battle.BattleConst.UnitType.UAV_UNIT
+	arg0_1._dir = var0_0.Battle.BattleConst.UnitDir.LEFT
+	arg0_1._type = var0_0.Battle.BattleConst.UnitType.UAV_UNIT
 end
 
-function var4.Update(arg0, arg1)
-	arg0:updatePatrol(arg1)
+function var4_0.Update(arg0_2, arg1_2)
+	arg0_2:updatePatrol(arg1_2)
 end
 
-function var4.SetTemplate(arg0, arg1)
-	var4.super.SetTemplate(arg0, arg1)
+function var4_0.SetTemplate(arg0_3, arg1_3)
+	var4_0.super.SetTemplate(arg0_3, arg1_3)
 
-	local var0 = arg1.funnel_behavior.offsetX * arg0:GetIFF()
-	local var1 = arg1.funnel_behavior.offsetZ
-	local var2 = var0.Battle.BattleDataProxy.GetInstance():GetVanguardBornCoordinate(arg0:GetIFF())
+	local var0_3 = arg1_3.funnel_behavior.offsetX * arg0_3:GetIFF()
+	local var1_3 = arg1_3.funnel_behavior.offsetZ
+	local var2_3 = var0_0.Battle.BattleDataProxy.GetInstance():GetVanguardBornCoordinate(arg0_3:GetIFF())
 
-	arg0._centerPos = BuildVector3(var2) + Vector3(var0, 0, var1)
-	arg0._range = arg1.funnel_behavior.hover_range
+	arg0_3._centerPos = BuildVector3(var2_3) + Vector3(var0_3, 0, var1_3)
+	arg0_3._range = arg1_3.funnel_behavior.hover_range
 end
 
-function var4.changePartolState(arg0, arg1)
-	if arg1 == var4.MOVE_STATE then
-		arg0:changeToMoveState()
-	elseif arg1 == var4.HOVER_STATE then
-		arg0:changeToHoverState()
+function var4_0.changePartolState(arg0_4, arg1_4)
+	if arg1_4 == var4_0.MOVE_STATE then
+		arg0_4:changeToMoveState()
+	elseif arg1_4 == var4_0.HOVER_STATE then
+		arg0_4:changeToHoverState()
 	end
 
-	arg0._portalState = arg1
+	arg0_4._portalState = arg1_4
 end
 
-function var4.AddCreateTimer(arg0, arg1, arg2)
-	arg0._currentState = arg0.STATE_CREATE
-	arg0._speedDir = arg1
-	arg0._velocity = var0.Battle.BattleFormulas.ConvertAircraftSpeed(20)
-	arg2 = arg2 or 1.5
+function var4_0.AddCreateTimer(arg0_5, arg1_5, arg2_5)
+	arg0_5._currentState = arg0_5.STATE_CREATE
+	arg0_5._speedDir = arg1_5
+	arg0_5._velocity = var0_0.Battle.BattleFormulas.ConvertAircraftSpeed(20)
+	arg2_5 = arg2_5 or 1.5
 
-	local var0 = function()
-		arg0._existStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
-		arg0._velocity = var0.Battle.BattleFormulas.ConvertAircraftSpeed(arg0._tmpData.speed)
+	local function var0_5()
+		arg0_5._existStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
+		arg0_5._velocity = var0_0.Battle.BattleFormulas.ConvertAircraftSpeed(arg0_5._tmpData.speed)
 
-		arg0:changePartolState(var4.MOVE_STATE)
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0._createTimer)
+		arg0_5:changePartolState(var4_0.MOVE_STATE)
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_5._createTimer)
 
-		arg0._createTimer = nil
+		arg0_5._createTimer = nil
 	end
 
-	arg0.updatePatrol = arg0._updateCreate
-	arg0._createTimer = pg.TimeMgr.GetInstance():AddBattleTimer("AddCreateTimer", 0, arg2, var0)
+	arg0_5.updatePatrol = arg0_5._updateCreate
+	arg0_5._createTimer = pg.TimeMgr.GetInstance():AddBattleTimer("AddCreateTimer", 0, arg2_5, var0_5)
 end
 
-function var4._updateCreate(arg0)
-	arg0:UpdateSpeed()
+function var4_0._updateCreate(arg0_7)
+	arg0_7:UpdateSpeed()
 
-	arg0._pos = arg0._pos + arg0._speed
+	arg0_7._pos = arg0_7._pos + arg0_7._speed
 end
 
-function var4.changeToMoveState(arg0)
-	arg0._cruiseLimit = arg0._centerPos.x
-	arg0.updatePatrol = arg0._updateMove
+function var4_0.changeToMoveState(arg0_8)
+	arg0_8._cruiseLimit = arg0_8._centerPos.x
+	arg0_8.updatePatrol = arg0_8._updateMove
 end
 
-function var4._updateMove(arg0, arg1)
-	arg0:UpdateSpeed()
+function var4_0._updateMove(arg0_9, arg1_9)
+	arg0_9:UpdateSpeed()
 
-	arg0._pos = arg0._pos + arg0._speed
+	arg0_9._pos = arg0_9._pos + arg0_9._speed
 
-	if arg0._IFF == var1.FRIENDLY_CODE then
-		if arg0._pos.x > arg0._cruiseLimit then
-			arg0:changePartolState(var4.HOVER_STATE)
+	if arg0_9._IFF == var1_0.FRIENDLY_CODE then
+		if arg0_9._pos.x > arg0_9._cruiseLimit then
+			arg0_9:changePartolState(var4_0.HOVER_STATE)
 		end
-	elseif arg0._IFF == var1.FOE_CODE and arg0._pos.x < arg0._cruiseLimit then
-		arg0:changePartolState(var4.HOVER_STATE)
+	elseif arg0_9._IFF == var1_0.FOE_CODE and arg0_9._pos.x < arg0_9._cruiseLimit then
+		arg0_9:changePartolState(var4_0.HOVER_STATE)
 	end
 end
 
-function var4.changeToHoverState(arg0)
-	arg0._hoverStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
-	arg0.updatePatrol = arg0._updateHover
+function var4_0.changeToHoverState(arg0_10)
+	arg0_10._hoverStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
+	arg0_10.updatePatrol = arg0_10._updateHover
 end
 
-function var4._updateHover(arg0, arg1)
-	local var0 = arg1 - arg0._hoverStartTime
+function var4_0._updateHover(arg0_11, arg1_11)
+	local var0_11 = arg1_11 - arg0_11._hoverStartTime
 
-	arg0._pos = Vector3(math.sin(var0) * arg0._range, 15, math.cos(var0) * arg0._range):Add(arg0._centerPos)
+	arg0_11._pos = Vector3(math.sin(var0_11) * arg0_11._range, 15, math.cos(var0_11) * arg0_11._range):Add(arg0_11._centerPos)
 end
 
-function var4.GetSize(arg0)
-	if arg0._portalState == var4.HOVER_STATE then
-		local var0 = pg.TimeMgr.GetInstance():GetCombatTime() - arg0._hoverStartTime
-		local var1 = math.cos(var0)
+function var4_0.GetSize(arg0_12)
+	if arg0_12._portalState == var4_0.HOVER_STATE then
+		local var0_12 = pg.TimeMgr.GetInstance():GetCombatTime() - arg0_12._hoverStartTime
+		local var1_12 = math.cos(var0_12)
 
-		if var1 > 0 and var1 < 0.2 then
-			var1 = 0.2
-		elseif var1 <= 0 and var1 > -0.2 then
-			var1 = -0.2
+		if var1_12 > 0 and var1_12 < 0.2 then
+			var1_12 = 0.2
+		elseif var1_12 <= 0 and var1_12 > -0.2 then
+			var1_12 = -0.2
 		end
 
-		return var1
+		return var1_12
 	else
-		var4.super.GetSize(arg0)
+		var4_0.super.GetSize(arg0_12)
 	end
 end

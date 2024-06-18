@@ -1,13 +1,13 @@
-﻿local var0 = class("MainOverDueSkinSequence", import(".MainOverDueAttireSequence"))
+﻿local var0_0 = class("MainOverDueSkinSequence", import(".MainOverDueAttireSequence"))
 
-function var0.Execute(arg0, arg1)
-	local var0 = getProxy(ShipSkinProxy):getOverDueSkins()
+function var0_0.Execute(arg0_1, arg1_1)
+	local var0_1 = getProxy(ShipSkinProxy):getOverDueSkins()
 
-	if #var0 > 0 then
-		arg0:Display(SkinExpireDisplayPage, var0, arg1)
+	if #var0_1 > 0 then
+		arg0_1:Display(SkinExpireDisplayPage, var0_1, arg1_1)
 	else
-		arg1()
+		arg1_1()
 	end
 end
 
-return var0
+return var0_0

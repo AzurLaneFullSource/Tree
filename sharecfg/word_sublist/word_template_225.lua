@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_225 = {}
+var0_0.word_template_225 = {}
 
-local var1 = var0.word_template_225
+local var1_0 = var0_0.word_template_225
 
 function temp()
-	var1.漂 = {
+	var1_0.漂 = {
 		流 = {
 			淫 = {
 				河 = {
@@ -32,7 +32,7 @@ end
 temp()
 
 function temp()
-	var1.飘 = {
+	var1_0.飘 = {
 		渺 = {
 			双 = {
 				雄 = {
@@ -69,7 +69,7 @@ end
 temp()
 
 function temp()
-	var1.嫖 = {
+	var1_0.嫖 = {
 		娼 = {
 			this = true,
 			精 = {
@@ -107,7 +107,7 @@ end
 temp()
 
 function temp()
-	var1.票 = {
+	var1_0.票 = {
 		务 = {
 			售 = {
 				票 = {
@@ -125,7 +125,7 @@ end
 temp()
 
 function temp()
-	var1.贫 = {
+	var1_0.贫 = {
 		穷 = {
 			时 = {
 				老 = {
@@ -147,7 +147,7 @@ end
 temp()
 
 function temp()
-	var1.品 = {
+	var1_0.品 = {
 		色 = {
 			堂 = {
 				this = true,
@@ -188,7 +188,7 @@ end
 temp()
 
 function temp()
-	var1.聘 = {
+	var1_0.聘 = {
 		男 = {
 			公 = {
 				关 = {

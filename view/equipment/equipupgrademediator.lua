@@ -1,27 +1,27 @@
-﻿local var0 = class("EquipUpgradeMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("EquipUpgradeMediator", import("..base.ContextMediator"))
 
-var0.EQUIPMENT_UPGRDE = "EquipUpgradeMediator:EQUIPMENT_UPGRDE"
-var0.REPLACE_EQUIP = "EquipUpgradeMediator:REPLACE_EQUIP"
-var0.ON_ITEM = "EquipUpgradeMediator:ON_ITEM"
+var0_0.EQUIPMENT_UPGRDE = "EquipUpgradeMediator:EQUIPMENT_UPGRDE"
+var0_0.REPLACE_EQUIP = "EquipUpgradeMediator:REPLACE_EQUIP"
+var0_0.ON_ITEM = "EquipUpgradeMediator:ON_ITEM"
 
-function var0.register(arg0)
-	arg0.bagProxy = getProxy(BagProxy)
+function var0_0.register(arg0_1)
+	arg0_1.bagProxy = getProxy(BagProxy)
 
-	local var0 = arg0.bagProxy:getData()
+	local var0_1 = arg0_1.bagProxy:getData()
 
-	arg0.viewComponent:setItems(var0)
+	arg0_1.viewComponent:setItems(var0_1)
 
-	local var1 = getProxy(PlayerProxy)
+	local var1_1 = getProxy(PlayerProxy)
 
-	arg0.viewComponent:updateRes(var1:getData())
-	arg0:bind(var0.EQUIPMENT_UPGRDE, function(arg0)
-		arg0:sendNotification(GAME.UPGRADE_EQUIPMENTS, {
-			shipId = arg0.contextData.shipId,
-			pos = arg0.contextData.pos,
-			equipmentId = arg0.contextData.equipmentId
+	arg0_1.viewComponent:updateRes(var1_1:getData())
+	arg0_1:bind(var0_0.EQUIPMENT_UPGRDE, function(arg0_2)
+		arg0_1:sendNotification(GAME.UPGRADE_EQUIPMENTS, {
+			shipId = arg0_1.contextData.shipId,
+			pos = arg0_1.contextData.pos,
+			equipmentId = arg0_1.contextData.equipmentId
 		})
 	end)
-	arg0:bind(var0.ON_ITEM, function(arg0, arg1)
+	arg0_1:bind(var0_0.ON_ITEM, function(arg0_3, arg1_3)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
 			content = "",
@@ -29,32 +29,32 @@ function var0.register(arg0)
 			type = MSGBOX_TYPE_SINGLE_ITEM,
 			drop = {
 				type = DROP_TYPE_ITEM,
-				id = arg1,
-				cfg = Item.getConfigData(arg1)
+				id = arg1_3,
+				cfg = Item.getConfigData(arg1_3)
 			},
 			weight = LayerWeightConst.TOP_LAYER
 		})
 	end)
 
-	local var2 = arg0.contextData.shipId
+	local var2_1 = arg0_1.contextData.shipId
 
-	if var2 ~= nil then
-		local var3 = getProxy(BayProxy):getShipById(var2)
+	if var2_1 ~= nil then
+		local var3_1 = getProxy(BayProxy):getShipById(var2_1)
 
-		arg0.contextData.shipVO = var3
-		arg0.contextData.equipmentVO = var3:getEquip(arg0.contextData.pos)
+		arg0_1.contextData.shipVO = var3_1
+		arg0_1.contextData.equipmentVO = var3_1:getEquip(arg0_1.contextData.pos)
 	else
-		local var4 = arg0.contextData.equipmentId
+		local var4_1 = arg0_1.contextData.equipmentId
 
-		if var4 ~= nil then
-			local var5 = getProxy(EquipmentProxy)
+		if var4_1 ~= nil then
+			local var5_1 = getProxy(EquipmentProxy)
 
-			arg0.contextData.equipmentVO = var5:getEquipmentById(var4)
+			arg0_1.contextData.equipmentVO = var5_1:getEquipmentById(var4_1)
 		end
 	end
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_4)
 	return {
 		GAME.UPGRADE_EQUIPMENTS_DONE,
 		BagProxy.ITEM_UPDATED,
@@ -62,27 +62,27 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_5, arg1_5)
+	local var0_5 = arg1_5:getName()
+	local var1_5 = arg1_5:getBody()
 
-	if var0 == GAME.UPGRADE_EQUIPMENTS_DONE then
-		local var2 = var1.ship
-		local var3 = var1.equip
-		local var4 = var1.newEquip
+	if var0_5 == GAME.UPGRADE_EQUIPMENTS_DONE then
+		local var2_5 = var1_5.ship
+		local var3_5 = var1_5.equip
+		local var4_5 = var1_5.newEquip
 
-		arg0.contextData.shipVO = var2
-		arg0.contextData.equipmentVO = var4
+		arg0_5.contextData.shipVO = var2_5
+		arg0_5.contextData.equipmentVO = var4_5
 
-		arg0.viewComponent:updateAll()
-		arg0.viewComponent:upgradeFinish(var3, var4)
-	elseif var0 == BagProxy.ITEM_UPDATED then
-		arg0.viewComponent:setItems(arg0.bagProxy:getData())
-	elseif var0 == PlayerProxy.UPDATED then
-		local var5 = getProxy(PlayerProxy)
+		arg0_5.viewComponent:updateAll()
+		arg0_5.viewComponent:upgradeFinish(var3_5, var4_5)
+	elseif var0_5 == BagProxy.ITEM_UPDATED then
+		arg0_5.viewComponent:setItems(arg0_5.bagProxy:getData())
+	elseif var0_5 == PlayerProxy.UPDATED then
+		local var5_5 = getProxy(PlayerProxy)
 
-		arg0.viewComponent:updateRes(var5:getData())
+		arg0_5.viewComponent:updateRes(var5_5:getData())
 	end
 end
 
-return var0
+return var0_0

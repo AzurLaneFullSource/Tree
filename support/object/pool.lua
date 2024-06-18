@@ -1,190 +1,190 @@
 ﻿pg = pg or {}
 
-local var0 = pg
-local var1 = require("Mgr/Pool/PoolUtil")
-local var2 = class("Pool")
+local var0_0 = pg
+local var1_0 = require("Mgr/Pool/PoolUtil")
+local var2_0 = class("Pool")
 
-var0.Pool = var2
+var0_0.Pool = var2_0
 
-function var2.Ctor(arg0, arg1, arg2, arg3, arg4, arg5, arg6)
-	assert(arg2, "template or transform should exist")
+function var2_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1, arg5_1, arg6_1)
+	assert(arg2_1, "template or transform should exist")
 
-	arg0.template = arg2
-	arg0.keepParent = arg5
-	arg0.parentTF = arg1
-	arg0.templateActive = arg2.activeSelf
-	arg0.parentActive = arg1.gameObject.activeSelf
-	arg0.keepActive = arg6
-	arg0.min = arg3
-	arg0.list = ys.LinkList.New()
-	arg0.map = {}
-	arg0.usedEnd = nil
-	arg0.resizeTime = arg4
+	arg0_1.template = arg2_1
+	arg0_1.keepParent = arg5_1
+	arg0_1.parentTF = arg1_1
+	arg0_1.templateActive = arg2_1.activeSelf
+	arg0_1.parentActive = arg1_1.gameObject.activeSelf
+	arg0_1.keepActive = arg6_1
+	arg0_1.min = arg3_1
+	arg0_1.list = ys.LinkList.New()
+	arg0_1.map = {}
+	arg0_1.usedEnd = nil
+	arg0_1.resizeTime = arg4_1
 end
 
-function var2.InitSize(arg0, arg1)
-	arg1 = arg1 or arg0.min
+function var2_0.InitSize(arg0_2, arg1_2)
+	arg1_2 = arg1_2 or arg0_2.min
 
-	local var0 = {}
+	local var0_2 = {}
 
-	for iter0 = 1, arg1 do
-		var0[iter0] = arg0:GetObject()
+	for iter0_2 = 1, arg1_2 do
+		var0_2[iter0_2] = arg0_2:GetObject()
 	end
 
-	for iter1 = 1, arg1 do
-		arg0:Recycle(var0[iter1])
+	for iter1_2 = 1, arg1_2 do
+		arg0_2:Recycle(var0_2[iter1_2])
 	end
 
-	return arg0
+	return arg0_2
 end
 
-function var2.SetInitFuncs(arg0, arg1)
-	arg0.initFunc = arg1
+function var2_0.SetInitFuncs(arg0_3, arg1_3)
+	arg0_3.initFunc = arg1_3
 end
 
-function var2.SetRecycleFuncs(arg0, arg1)
-	arg0.recycleFunc = arg1
+function var2_0.SetRecycleFuncs(arg0_4, arg1_4)
+	arg0_4.recycleFunc = arg1_4
 end
 
-function var2.IsEmpty(arg0)
-	return arg0.usedEnd == arg0.list.Tail
+function var2_0.IsEmpty(arg0_5)
+	return arg0_5.usedEnd == arg0_5.list.Tail
 end
 
-function var2.GetRootTF(arg0)
-	return arg0.parentTF
+function var2_0.GetRootTF(arg0_6)
+	return arg0_6.parentTF
 end
 
-function var2.GetObject(arg0)
-	local var0
-	local var1 = arg0.usedEnd
+function var2_0.GetObject(arg0_7)
+	local var0_7
+	local var1_7 = arg0_7.usedEnd
 
-	if not arg0:IsEmpty() then
-		if var1 == nil then
-			var1 = arg0.list.Head
+	if not arg0_7:IsEmpty() then
+		if var1_7 == nil then
+			var1_7 = arg0_7.list.Head
 		else
-			var1 = arg0.usedEnd.Next
+			var1_7 = arg0_7.usedEnd.Next
 		end
 
-		arg0.usedEnd = var1
-		var0 = var1.Data
-		arg0.map[var0] = var1
+		arg0_7.usedEnd = var1_7
+		var0_7 = var1_7.Data
+		arg0_7.map[var0_7] = var1_7
 
-		LuaHelper.ResetTF(var0.transform)
+		LuaHelper.ResetTF(var0_7.transform)
 
-		if not arg0.keepActive and arg0.parentActive then
-			var0:SetActive(true)
+		if not arg0_7.keepActive and arg0_7.parentActive then
+			var0_7:SetActive(true)
 		end
 	else
-		var0 = Object.Instantiate(arg0.template)
+		var0_7 = Object.Instantiate(arg0_7.template)
 
-		if not arg0.templateActive then
-			var0:SetActive(true)
+		if not arg0_7.templateActive then
+			var0_7:SetActive(true)
 		end
 
-		if arg0.keepParent then
-			var0.transform:SetParent(arg0.parentTF, false)
+		if arg0_7.keepParent then
+			var0_7.transform:SetParent(arg0_7.parentTF, false)
 		end
 
-		if arg0.initFunc then
-			arg0.initFunc(var0)
+		if arg0_7.initFunc then
+			arg0_7.initFunc(var0_7)
 		end
 
-		local var2 = arg0.list:AddLast(var0)
+		local var2_7 = arg0_7.list:AddLast(var0_7)
 
-		arg0.usedEnd = var2
-		arg0.map[var0] = var2
+		arg0_7.usedEnd = var2_7
+		arg0_7.map[var0_7] = var2_7
 	end
 
-	return var0
+	return var0_7
 end
 
-function var2.ResetParent(arg0, arg1)
-	arg0.parentTF = arg1
+function var2_0.ResetParent(arg0_8, arg1_8)
+	arg0_8.parentTF = arg1_8
 
-	for iter0 in arg0.list:Iterator() do
-		iter0.Data.transform:SetParent(arg0.parentTF, false)
+	for iter0_8 in arg0_8.list:Iterator() do
+		iter0_8.Data.transform:SetParent(arg0_8.parentTF, false)
 	end
 end
 
-function var2.Recycle(arg0, arg1)
-	local var0 = arg0.map[arg1]
+function var2_0.Recycle(arg0_9, arg1_9)
+	local var0_9 = arg0_9.map[arg1_9]
 
-	if var0 == nil then
-		var1.Destroy(arg1)
+	if var0_9 == nil then
+		var1_0.Destroy(arg1_9)
 
 		return
 	end
 
-	arg0.map[arg1] = nil
+	arg0_9.map[arg1_9] = nil
 
-	if not arg0.keepActive and arg0.parentActive then
-		arg1:SetActive(false)
+	if not arg0_9.keepActive and arg0_9.parentActive then
+		arg1_9:SetActive(false)
 	end
 
-	if not arg0.keepParent then
-		LuaHelper.SetGOParentTF(arg1, arg0.parentTF, false)
+	if not arg0_9.keepParent then
+		LuaHelper.SetGOParentTF(arg1_9, arg0_9.parentTF, false)
 	end
 
-	if arg0.recycleFunc then
-		arg0.recycleFunc(arg1)
+	if arg0_9.recycleFunc then
+		arg0_9.recycleFunc(arg1_9)
 	end
 
-	if arg0.usedEnd == var0 then
-		arg0.usedEnd = var0.Before
+	if arg0_9.usedEnd == var0_9 then
+		arg0_9.usedEnd = var0_9.Before
 	end
 
-	arg0.list:Remove(var0)
-	arg0.list:AddNodeLast(var0)
+	arg0_9.list:Remove(var0_9)
+	arg0_9.list:AddNodeLast(var0_9)
 
-	var0.liveTime = var0.TimeMgr.GetInstance():GetCombatTime() + arg0.resizeTime
+	var0_9.liveTime = var0_0.TimeMgr.GetInstance():GetCombatTime() + arg0_9.resizeTime
 end
 
-function var2.AllRecycle(arg0)
-	for iter0, iter1 in pairs(arg0.map) do
-		arg0:Recycle(iter0)
+function var2_0.AllRecycle(arg0_10)
+	for iter0_10, iter1_10 in pairs(arg0_10.map) do
+		arg0_10:Recycle(iter0_10)
 	end
 end
 
-function var2.Resize(arg0)
-	if arg0.list.Count <= arg0.min then
+function var2_0.Resize(arg0_11)
+	if arg0_11.list.Count <= arg0_11.min then
 		return
 	end
 
-	local var0
+	local var0_11
 
-	if arg0.usedEnd then
-		var0 = arg0.usedEnd.Next
+	if arg0_11.usedEnd then
+		var0_11 = arg0_11.usedEnd.Next
 	else
-		var0 = arg0.list.Head
+		var0_11 = arg0_11.list.Head
 	end
 
-	local var1 = var0.TimeMgr.GetInstance():GetCombatTime()
-	local var2 = 0
+	local var1_11 = var0_0.TimeMgr.GetInstance():GetCombatTime()
+	local var2_11 = 0
 
-	while var0 do
-		if var1 < var0.liveTime then
+	while var0_11 do
+		if var1_11 < var0_11.liveTime then
 			break
 		end
 
-		var1.Destroy(var0.Data)
+		var1_0.Destroy(var0_11.Data)
 
-		var0 = var0.Next, arg0.list:Remove(var0)
-		var2 = var2 + 1
+		var0_11 = var0_11.Next, arg0_11.list:Remove(var0_11)
+		var2_11 = var2_11 + 1
 
-		if var2 >= 6 or arg0.list.Count <= arg0.min then
+		if var2_11 >= 6 or arg0_11.list.Count <= arg0_11.min then
 			break
 		end
 	end
 end
 
-function var2.Dispose(arg0)
-	for iter0 in arg0.list:Iterator() do
-		var1.Destroy(iter0.Data)
+function var2_0.Dispose(arg0_12)
+	for iter0_12 in arg0_12.list:Iterator() do
+		var1_0.Destroy(iter0_12.Data)
 	end
 
-	arg0.list = nil
-	arg0.map = nil
-	arg0.last = nil
-	arg0.template = nil
-	arg0.parentTF = nil
+	arg0_12.list = nil
+	arg0_12.map = nil
+	arg0_12.last = nil
+	arg0_12.template = nil
+	arg0_12.parentTF = nil
 end

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_180 = {}
+var0_0.word_template_180 = {}
 
-local var1 = var0.word_template_180
+local var1_0 = var0_0.word_template_180
 
 function temp()
-	var1.鰳 = {
+	var1_0.鰳 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.雷 = {
+	var1_0.雷 = {
 		代 = {
 			表 = {
 				this = true
@@ -140,7 +140,7 @@ end
 temp()
 
 function temp()
-	var1.诔 = {
+	var1_0.诔 = {
 		this = {
 			this = true
 		}
@@ -150,7 +150,7 @@ end
 temp()
 
 function temp()
-	var1.誄 = {
+	var1_0.誄 = {
 		this = {
 			this = true
 		}
@@ -160,7 +160,7 @@ end
 temp()
 
 function temp()
-	var1.冷 = {
+	var1_0.冷 = {
 		剑 = {
 			烈 = {
 				女 = {
@@ -196,7 +196,7 @@ end
 temp()
 
 function temp()
-	var1.离 = {
+	var1_0.离 = {
 		长 = {
 			春 = {
 				this = true
@@ -215,7 +215,7 @@ end
 temp()
 
 function temp()
-	var1.嫠 = {
+	var1_0.嫠 = {
 		this = {
 			this = true
 		}

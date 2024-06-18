@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_253 = {}
+var0_0.word_template_253 = {}
 
-local var1 = var0.word_template_253
+local var1_0 = var0_0.word_template_253
 
 function temp()
-	var1.杀 = {
+	var1_0.杀 = {
 		掉 = {
 			警 = {
 				察 = {
@@ -224,7 +224,7 @@ end
 temp()
 
 function temp()
-	var1.沙 = {
+	var1_0.沙 = {
 		发 = {
 			上 = {
 				的 = {
@@ -302,7 +302,7 @@ end
 temp()
 
 function temp()
-	var1.砂 = {
+	var1_0.砂 = {
 		倉 = {
 			彩 = {
 				this = true
@@ -314,7 +314,7 @@ end
 temp()
 
 function temp()
-	var1.啥 = {
+	var1_0.啥 = {
 		叫 = {
 			两 = {
 				会 = {
@@ -360,7 +360,7 @@ end
 temp()
 
 function temp()
-	var1.傻 = {
+	var1_0.傻 = {
 		B = {
 			this = true
 		},
@@ -438,7 +438,7 @@ end
 temp()
 
 function temp()
-	var1.煞 = {
+	var1_0.煞 = {
 		笔 = {
 			this = true
 		},
@@ -451,7 +451,7 @@ end
 temp()
 
 function temp()
-	var1.釃 = {
+	var1_0.釃 = {
 		this = {
 			this = true
 		}

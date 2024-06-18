@@ -1,11 +1,11 @@
-﻿local var0 = class("MainNoticeBtn", import(".MainBaseBtn"))
+﻿local var0_0 = class("MainNoticeBtn", import(".MainBaseBtn"))
 
-function var0.OnClick(arg0)
+function var0_0.OnClick(arg0_1)
 	if #getProxy(ServerNoticeProxy):getServerNotices(false) > 0 then
-		arg0:emit(NewMainMediator.OPEN_NOTICE)
+		arg0_1:emit(NewMainMediator.OPEN_NOTICE)
 	else
 		pg.TipsMgr.GetInstance():ShowTips(i18n("no_notice_tip"))
 	end
 end
 
-return var0
+return var0_0

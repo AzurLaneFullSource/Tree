@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_318 = {}
+var0_0.word_template_318 = {}
 
-local var1 = var0.word_template_318
+local var1_0 = var0_0.word_template_318
 
 function temp()
-	var1.养 = {
+	var1_0.养 = {
 		不 = {
 			起 = {
 				父 = {
@@ -101,7 +101,7 @@ end
 temp()
 
 function temp()
-	var1.样 = {
+	var1_0.样 = {
 		品 = {
 			枪 = {
 				this = true
@@ -113,7 +113,7 @@ end
 temp()
 
 function temp()
-	var1.妖 = {
+	var1_0.妖 = {
 		媚 = {
 			熟 = {
 				母 = {
@@ -155,7 +155,7 @@ end
 temp()
 
 function temp()
-	var1.姚 = {
+	var1_0.姚 = {
 		羅 = {
 			this = true
 		},
@@ -183,7 +183,7 @@ end
 temp()
 
 function temp()
-	var1.軺 = {
+	var1_0.軺 = {
 		this = {
 			this = true
 		}
@@ -193,7 +193,7 @@ end
 temp()
 
 function temp()
-	var1.摇 = {
+	var1_0.摇 = {
 		头 = {
 			会 = {
 				更 = {
@@ -258,7 +258,7 @@ end
 temp()
 
 function temp()
-	var1.搖 = {
+	var1_0.搖 = {
 		頭 = {
 			丸 = {
 				this = true

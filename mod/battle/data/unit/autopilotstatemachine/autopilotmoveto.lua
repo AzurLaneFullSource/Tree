@@ -1,33 +1,33 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("AutoPilotMoveTo", var0.Battle.IPilot)
+local var0_0 = ys
+local var1_0 = class("AutoPilotMoveTo", var0_0.Battle.IPilot)
 
-var0.Battle.AutoPilotMoveTo = var1
-var1.__name = "AutoPilotMoveTo"
+var0_0.Battle.AutoPilotMoveTo = var1_0
+var1_0.__name = "AutoPilotMoveTo"
 
-function var1.Ctor(arg0, ...)
-	var1.super.Ctor(arg0, ...)
+function var1_0.Ctor(arg0_1, ...)
+	var1_0.super.Ctor(arg0_1, ...)
 end
 
-function var1.SetParameter(arg0, arg1, arg2)
-	var1.super.SetParameter(arg0, arg1, arg2)
+function var1_0.SetParameter(arg0_2, arg1_2, arg2_2)
+	var1_0.super.SetParameter(arg0_2, arg1_2, arg2_2)
 
-	arg0._targetPos = Vector3(arg1.x, 0, arg1.z)
+	arg0_2._targetPos = Vector3(arg1_2.x, 0, arg1_2.z)
 end
 
-function var1.GetDirection(arg0, arg1)
-	local var0 = arg0._targetPos - arg1
+function var1_0.GetDirection(arg0_3, arg1_3)
+	local var0_3 = arg0_3._targetPos - arg1_3
 
-	var0.y = 0
+	var0_3.y = 0
 
-	if var0.magnitude < arg0._valve then
-		var0 = Vector3.zero
+	if var0_3.magnitude < arg0_3._valve then
+		var0_3 = Vector3.zero
 
-		if arg0._duration == -1 or arg0:IsExpired() then
-			arg0:Finish()
+		if arg0_3._duration == -1 or arg0_3:IsExpired() then
+			arg0_3:Finish()
 		end
 	end
 
-	return var0.normalized
+	return var0_3.normalized
 end

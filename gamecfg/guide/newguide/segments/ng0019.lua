@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Tap here to change Quick Retire settings.",
 	"In the top part, select which ship rarities you would like to prioritize.",
 	"In the bottom part, select what you would like to do for duplicate copies of ships you already own.",
@@ -15,7 +15,7 @@ return {
 				mode = 1,
 				posY = -285,
 				posX = -302,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/blur_panel/adapt/left_length/frame/setting",
@@ -38,7 +38,7 @@ return {
 				mode = 1,
 				posY = 101.6,
 				posX = -56.2,
-				text = var0[2]
+				text = var0_0[2]
 			}
 		},
 		{
@@ -48,7 +48,7 @@ return {
 				mode = 1,
 				posY = -159.6,
 				posX = 13.3,
-				text = var0[3]
+				text = var0_0[3]
 			}
 		},
 		{
@@ -58,7 +58,7 @@ return {
 				mode = 1,
 				posY = 150.7,
 				posX = 224.01,
-				text = var0[4]
+				text = var0_0[4]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/DockyardQuickSelectSettingUI(Clone)/window/top/bg/obtain/title/title_en/info",

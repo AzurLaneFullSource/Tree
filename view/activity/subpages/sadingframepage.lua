@@ -1,84 +1,84 @@
-﻿local var0 = class("SaDingFramePage", import(".TemplatePage.NewFrameTemplatePage"))
+﻿local var0_0 = class("SaDingFramePage", import(".TemplatePage.NewFrameTemplatePage"))
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
+function var0_0.OnInit(arg0_1)
+	var0_0.super.OnInit(arg0_1)
 
-	arg0.bar = arg0:findTF("AD/switcher/phase2/barContent")
-	arg0.cur = arg0:findTF("AD/switcher/phase2/progress/step")
-	arg0.target = arg0:findTF("AD/switcher/phase2/progress/all")
-	arg0.getTag = arg0:findTF("AD/switcher/phase2/get")
-	arg0.gotTag = arg0:findTF("AD/switcher/phase2/got")
-	arg0.titles = {
-		arg0.switchBtn:Find("2"),
-		arg0.switchBtn:Find("1")
+	arg0_1.bar = arg0_1:findTF("AD/switcher/phase2/barContent")
+	arg0_1.cur = arg0_1:findTF("AD/switcher/phase2/progress/step")
+	arg0_1.target = arg0_1:findTF("AD/switcher/phase2/progress/all")
+	arg0_1.getTag = arg0_1:findTF("AD/switcher/phase2/get")
+	arg0_1.gotTag = arg0_1:findTF("AD/switcher/phase2/got")
+	arg0_1.titles = {
+		arg0_1.switchBtn:Find("2"),
+		arg0_1.switchBtn:Find("1")
 	}
 end
 
-function var0.OnUpdateFlush(arg0)
-	local var0 = arg0.activity.data1
-	local var1 = arg0.avatarConfig.target
+function var0_0.OnUpdateFlush(arg0_2)
+	local var0_2 = arg0_2.activity.data1
+	local var1_2 = arg0_2.avatarConfig.target
 
-	var0 = var1 < var0 and var1 or var0
+	var0_2 = var1_2 < var0_2 and var1_2 or var0_2
 
-	local var2 = var0 / var1
+	local var2_2 = var0_2 / var1_2
 
-	setText(arg0.cur, var2 >= 1 and setColorStr(var0, COLOR_GREEN) or var0)
-	setText(arg0.target, "/" .. var1)
-	setSlider(arg0.bar, 0, var1, var0)
+	setText(arg0_2.cur, var2_2 >= 1 and setColorStr(var0_2, COLOR_GREEN) or var0_2)
+	setText(arg0_2.target, "/" .. var1_2)
+	setSlider(arg0_2.bar, 0, var1_2, var0_2)
 
-	local var3 = var1 <= var0
-	local var4 = arg0.activity.data2 >= 1
+	local var3_2 = var1_2 <= var0_2
+	local var4_2 = arg0_2.activity.data2 >= 1
 
-	setActive(arg0.battleBtn, arg0.inPhase2 and not var3)
-	setActive(arg0.getBtn, arg0.inPhase2 and not var4 and var3)
-	setActive(arg0.gotBtn, arg0.inPhase2 and var4)
-	setActive(arg0.getTag, arg0.inPhase2 and not var4 and var3)
-	setActive(arg0.gotTag, arg0.inPhase2 and var4)
-	setActive(arg0:findTF("AD/switcher/phase2/progress"), not var4)
+	setActive(arg0_2.battleBtn, arg0_2.inPhase2 and not var3_2)
+	setActive(arg0_2.getBtn, arg0_2.inPhase2 and not var4_2 and var3_2)
+	setActive(arg0_2.gotBtn, arg0_2.inPhase2 and var4_2)
+	setActive(arg0_2.getTag, arg0_2.inPhase2 and not var4_2 and var3_2)
+	setActive(arg0_2.gotTag, arg0_2.inPhase2 and var4_2)
+	setActive(arg0_2:findTF("AD/switcher/phase2/progress"), not var4_2)
 end
 
-function var0.Switch(arg0, arg1)
-	arg0.isSwitching = true
+function var0_0.Switch(arg0_3, arg1_3)
+	arg0_3.isSwitching = true
 
-	setToggleEnabled(arg0.switchBtn, false)
+	setToggleEnabled(arg0_3.switchBtn, false)
 
-	local var0 = {}
+	local var0_3 = {}
 
-	for iter0, iter1 in ipairs({
-		arg0.phases,
-		arg0.titles
+	for iter0_3, iter1_3 in ipairs({
+		arg0_3.phases,
+		arg0_3.titles
 	}) do
-		local var1, var2 = unpack(iter1)
+		local var1_3, var2_3 = unpack(iter1_3)
 
-		if arg1 then
-			var1, var2 = var2, var1
+		if arg1_3 then
+			var1_3, var2_3 = var2_3, var1_3
 		end
 
-		LeanTween.cancel(go(var1))
+		LeanTween.cancel(go(var1_3))
 
-		local var3 = GetOrAddComponent(var1, "CanvasGroup")
+		local var3_3 = GetOrAddComponent(var1_3, "CanvasGroup")
 
-		var3.alpha = 0
+		var3_3.alpha = 0
 
-		table.insert(var0, function(arg0)
-			LeanTween.alphaCanvas(var3, 1, 0.4):setOnComplete(System.Action(arg0))
+		table.insert(var0_3, function(arg0_4)
+			LeanTween.alphaCanvas(var3_3, 1, 0.4):setOnComplete(System.Action(arg0_4))
 		end)
-		LeanTween.cancel(go(var2))
+		LeanTween.cancel(go(var2_3))
 
-		local var4 = GetOrAddComponent(var2, "CanvasGroup")
+		local var4_3 = GetOrAddComponent(var2_3, "CanvasGroup")
 
-		var4.alpha = 1
+		var4_3.alpha = 1
 
-		table.insert(var0, function(arg0)
-			LeanTween.alphaCanvas(var4, 0, 0.4):setOnComplete(System.Action(arg0))
+		table.insert(var0_3, function(arg0_5)
+			LeanTween.alphaCanvas(var4_3, 0, 0.4):setOnComplete(System.Action(arg0_5))
 		end)
 	end
 
-	parallelAsync(var0, function()
-		arg0.isSwitching = nil
+	parallelAsync(var0_3, function()
+		arg0_3.isSwitching = nil
 
-		setToggleEnabled(arg0.switchBtn, true)
+		setToggleEnabled(arg0_3.switchBtn, true)
 	end)
 end
 
-return var0
+return var0_0

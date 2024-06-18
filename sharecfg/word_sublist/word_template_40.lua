@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_40 = {}
+var0_0.word_template_40 = {}
 
-local var1 = var0.word_template_40
+local var1_0 = var0_0.word_template_40
 
 function temp()
-	var1.挨 = {
+	var1_0.挨 = {
 		球 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.譪 = {
+	var1_0.譪 = {
 		件 = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.艾 = {
+	var1_0.艾 = {
 		可 = {
 			米 = {
 				来 = {
@@ -133,7 +133,7 @@ end
 temp()
 
 function temp()
-	var1.爱 = {
+	var1_0.爱 = {
 		爱 = {
 			情 = {
 				趣 = {
@@ -434,7 +434,7 @@ end
 temp()
 
 function temp()
-	var1.瑷 = {
+	var1_0.瑷 = {
 		液 = {
 			this = true
 		}
@@ -444,7 +444,7 @@ end
 temp()
 
 function temp()
-	var1.安 = {
+	var1_0.安 = {
 		倍 = {
 			晋 = {
 				三 = {
@@ -874,7 +874,7 @@ end
 temp()
 
 function temp()
-	var1.按 = {
+	var1_0.按 = {
 		摩 = {
 			按 = {
 				到 = {

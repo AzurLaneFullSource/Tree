@@ -1,72 +1,72 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleStoryWave = class("BattleStoryWave", var0.Battle.BattleWaveInfo)
-var0.Battle.BattleStoryWave.__name = "BattleStoryWave"
+var0_0.Battle.BattleStoryWave = class("BattleStoryWave", var0_0.Battle.BattleWaveInfo)
+var0_0.Battle.BattleStoryWave.__name = "BattleStoryWave"
 
-local var1 = var0.Battle.BattleStoryWave
+local var1_0 = var0_0.Battle.BattleStoryWave
 
-function var1.Ctor(arg0)
-	var1.super.Ctor(arg0)
+function var1_0.Ctor(arg0_1)
+	var1_0.super.Ctor(arg0_1)
 end
 
-function var1.SetWaveData(arg0, arg1)
-	var1.super.SetWaveData(arg0, arg1)
+function var1_0.SetWaveData(arg0_2, arg1_2)
+	var1_0.super.SetWaveData(arg0_2, arg1_2)
 
-	arg0._storyID = arg0._param.id
+	arg0_2._storyID = arg0_2._param.id
 end
 
-function var1.DoWave(arg0)
-	var1.super.DoWave(arg0)
+function var1_0.DoWave(arg0_3)
+	var1_0.super.DoWave(arg0_3)
 
-	local var0 = true
-	local var1 = false
+	local var0_3 = true
+	local var1_3 = false
 
-	if var0.Battle.BattleDataProxy.GetInstance():GetInitData().battleType == SYSTEM_SCENARIO then
-		local var2 = getProxy(ChapterProxy):getActiveChapter(true)
+	if var0_0.Battle.BattleDataProxy.GetInstance():GetInitData().battleType == SYSTEM_SCENARIO then
+		local var2_3 = getProxy(ChapterProxy):getActiveChapter(true)
 
-		var1 = var2 and var2:IsAutoFight() or var1
+		var1_3 = var2_3 and var2_3:IsAutoFight() or var1_3
 
-		if arg0._param.progress then
-			if not var2 then
-				var0 = false
-			elseif math.min(var2.progress + var2:getConfig("progress_boss"), 100) < arg0._param.progress then
-				var0 = false
+		if arg0_3._param.progress then
+			if not var2_3 then
+				var0_3 = false
+			elseif math.min(var2_3.progress + var2_3:getConfig("progress_boss"), 100) < arg0_3._param.progress then
+				var0_3 = false
 			end
 		end
 
-		local var3 = var2 and getProxy(ChapterProxy):getMapById(var2:getConfig("map"))
+		local var3_3 = var2_3 and getProxy(ChapterProxy):getMapById(var2_3:getConfig("map"))
 
-		if var3 and var3:getRemaster() then
-			var0 = false
+		if var3_3 and var3_3:getRemaster() then
+			var0_3 = false
 		end
 	end
 
-	if var0 then
+	if var0_3 then
 		pg.MsgboxMgr.GetInstance():hide()
 
-		local function var4(arg0, arg1)
-			if arg0 then
-				arg0:doFail(arg1)
+		local function var4_3(arg0_4, arg1_4)
+			if arg0_4 then
+				arg0_3:doFail(arg1_4)
 			else
-				arg0:doPass(arg1)
+				arg0_3:doPass(arg1_4)
 			end
 		end
 
-		ChapterOpCommand.PlayChapterStory(arg0._storyID, var4, var1)
+		ChapterOpCommand.PlayChapterStory(arg0_3._storyID, var4_3, var1_3)
 		gcAll()
 	else
-		arg0:doPass()
+		arg0_3:doPass()
 	end
 end
 
-function var1.doPass(arg0, arg1)
-	var0.Battle.BattleDataProxy.GetInstance():AddWaveFlag(arg1)
-	var1.super.doPass(arg0)
+function var1_0.doPass(arg0_5, arg1_5)
+	var0_0.Battle.BattleDataProxy.GetInstance():AddWaveFlag(arg1_5)
+	var1_0.super.doPass(arg0_5)
 end
 
-function var1.doFail(arg0, arg1)
-	var0.Battle.BattleDataProxy.GetInstance():AddWaveFlag(arg1)
-	var1.super.doFail(arg0)
+function var1_0.doFail(arg0_6, arg1_6)
+	var0_0.Battle.BattleDataProxy.GetInstance():AddWaveFlag(arg1_6)
+	var1_0.super.doFail(arg0_6)
 end

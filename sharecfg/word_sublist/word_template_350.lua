@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_350 = {}
+var0_0.word_template_350 = {}
 
-local var1 = var0.word_template_350
+local var1_0 = var0_0.word_template_350
 
 function temp()
-	var1.冢 = {
+	var1_0.冢 = {
 		本 = {
 			友 = {
 				希 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.仲 = {
+	var1_0.仲 = {
 		根 = {
 			香 = {
 				澄 = {
@@ -44,7 +44,7 @@ end
 temp()
 
 function temp()
-	var1.众 = {
+	var1_0.众 = {
 		央 = {
 			企 = {
 				抢 = {
@@ -102,7 +102,7 @@ end
 temp()
 
 function temp()
-	var1.重 = {
+	var1_0.重 = {
 		大 = {
 			事 = {
 				件 = {
@@ -257,7 +257,7 @@ end
 temp()
 
 function temp()
-	var1.周 = {
+	var1_0.周 = {
 		本 = {
 			顺 = {
 				this = true
@@ -390,7 +390,7 @@ end
 temp()
 
 function temp()
-	var1.週 = {
+	var1_0.週 = {
 		六 = {
 			性 = {
 				吧 = {
@@ -419,7 +419,7 @@ end
 temp()
 
 function temp()
-	var1.粥 = {
+	var1_0.粥 = {
 		健 = {
 			康 = {
 				this = true

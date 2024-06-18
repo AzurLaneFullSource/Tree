@@ -1,6 +1,6 @@
-﻿local var0 = class("EducatePlanProxy")
+﻿local var0_0 = class("EducatePlanProxy")
 
-var0.INDEX2BG = {
+var0_0.INDEX2BG = {
 	{
 		"empty_blue",
 		"plan_name_blue"
@@ -15,100 +15,100 @@ var0.INDEX2BG = {
 	}
 }
 
-function var0.Ctor(arg0)
-	arg0.allPlans = {}
+function var0_0.Ctor(arg0_1)
+	arg0_1.allPlans = {}
 
-	local var0 = pg.child_plan.all
+	local var0_1 = pg.child_plan.all
 
-	for iter0, iter1 in ipairs(var0) do
-		table.insert(arg0.allPlans, EducatePlan.New(iter1))
+	for iter0_1, iter1_1 in ipairs(var0_1) do
+		table.insert(arg0_1.allPlans, EducatePlan.New(iter1_1))
 	end
 
-	arg0.gridColorCfg = pg.child_data[1].plan_color
+	arg0_1.gridColorCfg = pg.child_data[1].plan_color
 end
 
-function var0.GetCfgPlans(arg0)
-	return arg0.allPlans
+function var0_0.GetCfgPlans(arg0_2)
+	return arg0_2.allPlans
 end
 
-function var0.SetUp(arg0, arg1)
-	arg0:initHistory(arg1.history or {})
+function var0_0.SetUp(arg0_3, arg1_3)
+	arg0_3:initHistory(arg1_3.history or {})
 
-	arg0.selectedPlans = arg1.selectedPlans or {}
+	arg0_3.selectedPlans = arg1_3.selectedPlans or {}
 
-	if #arg0.selectedPlans > 0 then
-		arg0:initGridData()
+	if #arg0_3.selectedPlans > 0 then
+		arg0_3:initGridData()
 	else
-		arg0.gridData = {}
+		arg0_3.gridData = {}
 	end
 
-	arg0.playerId = getProxy(PlayerProxy):getRawData().id
+	arg0_3.playerId = getProxy(PlayerProxy):getRawData().id
 end
 
-function var0.GetGridBgName(arg0, arg1, arg2)
-	local var0 = 1
+function var0_0.GetGridBgName(arg0_4, arg1_4, arg2_4)
+	local var0_4 = 1
 
-	underscore.each(arg0.gridColorCfg, function(arg0)
-		underscore.each(arg0[1], function(arg0)
-			if arg0[1] == arg1 and arg0[2] == arg2 then
-				var0 = arg0[2]
+	underscore.each(arg0_4.gridColorCfg, function(arg0_5)
+		underscore.each(arg0_5[1], function(arg0_6)
+			if arg0_6[1] == arg1_4 and arg0_6[2] == arg2_4 then
+				var0_4 = arg0_5[2]
 
 				return
 			end
 		end)
 	end)
 
-	return var0.INDEX2BG[var0]
+	return var0_0.INDEX2BG[var0_4]
 end
 
-function var0.initHistory(arg0, arg1)
-	arg0.history = {}
+function var0_0.initHistory(arg0_7, arg1_7)
+	arg0_7.history = {}
 
-	for iter0, iter1 in ipairs(arg1) do
-		arg0.history[iter1.plan_id] = iter1.count
+	for iter0_7, iter1_7 in ipairs(arg1_7) do
+		arg0_7.history[iter1_7.plan_id] = iter1_7.count
 	end
 end
 
-function var0.UpdateHistory(arg0, arg1)
-	for iter0, iter1 in pairs(arg0.gridData) do
-		for iter2, iter3 in pairs(iter1) do
-			if iter3:IsPlan() then
-				if not arg0.history[iter3.id] then
-					arg0.history[iter3.id] = 0
+function var0_0.UpdateHistory(arg0_8, arg1_8)
+	for iter0_8, iter1_8 in pairs(arg0_8.gridData) do
+		for iter2_8, iter3_8 in pairs(iter1_8) do
+			if iter3_8:IsPlan() then
+				if not arg0_8.history[iter3_8.id] then
+					arg0_8.history[iter3_8.id] = 0
 				end
 
-				arg0.history[iter3.id] = arg0.history[iter3.id] + 1
+				arg0_8.history[iter3_8.id] = arg0_8.history[iter3_8.id] + 1
 			end
 		end
 	end
 end
 
-function var0.GetHistoryCntById(arg0, arg1)
-	return arg0.history[arg1] or 0
+function var0_0.GetHistoryCntById(arg0_9, arg1_9)
+	return arg0_9.history[arg1_9] or 0
 end
 
-function var0.initGridData(arg0)
-	arg0.gridData = {}
+function var0_0.initGridData(arg0_10)
+	arg0_10.gridData = {}
 
-	for iter0, iter1 in ipairs(arg0.selectedPlans) do
-		if not arg0.gridData[iter1.day] then
-			arg0.gridData[iter1.day] = {}
+	for iter0_10, iter1_10 in ipairs(arg0_10.selectedPlans) do
+		if not arg0_10.gridData[iter1_10.day] then
+			arg0_10.gridData[iter1_10.day] = {}
 		end
 
-		if iter1.value[1] then
-			local var0 = iter1.value[1].spec_event_id
-			local var1 = iter1.value[1].plan_id
+		if iter1_10.value[1] then
+			local var0_10 = iter1_10.value[1].spec_event_id
+			local var1_10 = iter1_10.value[1].plan_id
 
-			if var0 and var0 ~= 0 then
-				getProxy(EducateProxy):GetEventProxy():AddFinishSpecEvent(var0)
+			if var0_10 and var0_10 ~= 0 then
+				getProxy(EducateProxy):GetEventProxy():AddFinishSpecEvent(var0_10)
 
-				arg0.gridData[iter1.day][iter1.index] = EducateGrid.New({
-					id = var0,
+				arg0_10.gridData[iter1_10.day][iter1_10.index] = EducateGrid.New({
+					id = var0_10,
 					type = EducateGrid.TYPE_EVENT
 				})
-			elseif var1 and var1 ~= 0 then
-				arg0.gridData[iter1.day][iter1.index] = EducateGrid.New({
-					id = var1,
+			elseif var1_10 and var1_10 ~= 0 then
+				arg0_10.gridData[iter1_10.day][iter1_10.index] = EducateGrid.New({
+					id = var1_10,
 					type = EducateGrid.TYPE_PLAN
 				})
 			end
@@ -116,79 +116,79 @@ function var0.initGridData(arg0)
 	end
 end
 
-function var0.SetGridData(arg0, arg1)
-	arg0.selectedPlans = arg1
+function var0_0.SetGridData(arg0_11, arg1_11)
+	arg0_11.selectedPlans = arg1_11
 
-	arg0:initGridData()
+	arg0_11:initGridData()
 end
 
-function var0.GetGridData(arg0)
-	return arg0.gridData
+function var0_0.GetGridData(arg0_12)
+	return arg0_12.gridData
 end
 
-function var0.GetCost(arg0)
-	local var0 = 0
-	local var1 = 0
+function var0_0.GetCost(arg0_13)
+	local var0_13 = 0
+	local var1_13 = 0
 
-	for iter0, iter1 in pairs(arg0.gridData) do
-		for iter2, iter3 in pairs(iter1) do
-			if iter3:IsPlan() then
-				local var2, var3 = iter3.data:GetCost()
+	for iter0_13, iter1_13 in pairs(arg0_13.gridData) do
+		for iter2_13, iter3_13 in pairs(iter1_13) do
+			if iter3_13:IsPlan() then
+				local var2_13, var3_13 = iter3_13.data:GetCost()
 
-				var0 = var0 + var2
-				var1 = var1 + var3
+				var0_13 = var0_13 + var2_13
+				var1_13 = var1_13 + var3_13
 			end
 		end
 	end
 
-	return var0, var1
+	return var0_13, var1_13
 end
 
-function var0.CheckExcute(arg0)
-	return #arg0.selectedPlans > 0
+function var0_0.CheckExcute(arg0_14)
+	return #arg0_14.selectedPlans > 0
 end
 
-function var0.GetShowPlans(arg0, arg1, arg2, arg3)
-	return underscore.select(arg0.allPlans, function(arg0)
-		local var0 = arg0:getConfig("pre")[1]
+function var0_0.GetShowPlans(arg0_15, arg1_15, arg2_15, arg3_15)
+	return underscore.select(arg0_15.allPlans, function(arg0_16)
+		local var0_16 = arg0_16:getConfig("pre")[1]
 
-		return arg0:IsShow(arg1, arg2, arg3) and arg0:IsMatchPre(arg0:GetHistoryCntById(var0))
+		return arg0_16:IsShow(arg1_15, arg2_15, arg3_15) and arg0_16:IsMatchPre(arg0_15:GetHistoryCntById(var0_16))
 	end)
 end
 
-function var0.ClearLocalPlansData(arg0)
-	local var0 = getProxy(EducateProxy):GetCharData():GetNextWeekPlanCnt()
+function var0_0.ClearLocalPlansData(arg0_17)
+	local var0_17 = getProxy(EducateProxy):GetCharData():GetNextWeekPlanCnt()
 
-	for iter0 = 1, 6 do
-		for iter1 = 1, 3 do
-			local var1 = iter1 <= var0 and EducateGrid.TYPE_EMPTY or EducateGrid.TYPE_LOCK
-			local var2 = 0 .. "_" .. var1
+	for iter0_17 = 1, 6 do
+		for iter1_17 = 1, 3 do
+			local var1_17 = iter1_17 <= var0_17 and EducateGrid.TYPE_EMPTY or EducateGrid.TYPE_LOCK
+			local var2_17 = 0 .. "_" .. var1_17
 
-			PlayerPrefs.SetString(EducateConst.PLANS_DATA_KEY .. arg0.playerId .. "_" .. iter0 .. "_" .. iter1, var2)
+			PlayerPrefs.SetString(EducateConst.PLANS_DATA_KEY .. arg0_17.playerId .. "_" .. iter0_17 .. "_" .. iter1_17, var2_17)
 		end
 	end
 end
 
-function var0.GetRecommendPlan(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
-	local var0 = arg0:GetShowPlans(arg3:GetNextWeekStage(), arg1, arg2)
-	local var1 = arg3.money - arg4
-	local var2 = arg3.mood - arg5
+function var0_0.GetRecommendPlan(arg0_18, arg1_18, arg2_18, arg3_18, arg4_18, arg5_18, arg6_18, arg7_18)
+	local var0_18 = arg0_18:GetShowPlans(arg3_18:GetNextWeekStage(), arg1_18, arg2_18)
+	local var1_18 = arg3_18.money - arg4_18
+	local var2_18 = arg3_18.mood - arg5_18
 
-	for iter0, iter1 in ipairs(arg7) do
-		table.sort(var0, CompareFuncs({
-			function(arg0)
-				return -arg0:GetAttrResultValue(iter1)
+	for iter0_18, iter1_18 in ipairs(arg7_18) do
+		table.sort(var0_18, CompareFuncs({
+			function(arg0_19)
+				return -arg0_19:GetAttrResultValue(iter1_18)
 			end,
-			function(arg0)
-				return arg0.id
+			function(arg0_20)
+				return arg0_20.id
 			end
 		}))
 
-		for iter2, iter3 in ipairs(var0) do
-			local var3, var4, var5 = iter3:GetCost()
+		for iter2_18, iter3_18 in ipairs(var0_18) do
+			local var3_18, var4_18, var5_18 = iter3_18:GetCost()
 
-			if var3 <= var1 and var4 <= var2 and var5 <= arg6 and iter3:IsMatchAttr(arg3) and iter3:IsMatchPre(arg0:GetHistoryCntById(iter3.id)) then
-				return iter3
+			if var3_18 <= var1_18 and var4_18 <= var2_18 and var5_18 <= arg6_18 and iter3_18:IsMatchAttr(arg3_18) and iter3_18:IsMatchPre(arg0_18:GetHistoryCntById(iter3_18.id)) then
+				return iter3_18
 			end
 		end
 	end
@@ -196,42 +196,42 @@ function var0.GetRecommendPlan(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
 	return nil
 end
 
-function var0.OnExecutePlanDone(arg0)
-	arg0.selectedPlans = {}
+function var0_0.OnExecutePlanDone(arg0_21)
+	arg0_21.selectedPlans = {}
 end
 
-function var0.OnNewWeek(arg0)
+function var0_0.OnNewWeek(arg0_22)
 	return
 end
 
-function var0.GridData2ProtData(arg0)
-	local var0 = {}
+function var0_0.GridData2ProtData(arg0_23)
+	local var0_23 = {}
 
-	for iter0, iter1 in pairs(arg0) do
-		for iter2, iter3 in pairs(iter1) do
-			if iter3:IsPlan() then
-				table.insert(var0, {
-					day = iter0,
-					index = iter2,
+	for iter0_23, iter1_23 in pairs(arg0_23) do
+		for iter2_23, iter3_23 in pairs(iter1_23) do
+			if iter3_23:IsPlan() then
+				table.insert(var0_23, {
+					day = iter0_23,
+					index = iter2_23,
 					value = {
 						{
 							event_id = 0,
 							spec_event_id = 0,
-							plan_id = iter3.id
+							plan_id = iter3_23.id
 						}
 					}
 				})
 			end
 
-			if iter3:IsEvent() then
-				table.insert(var0, {
-					day = iter0,
-					index = iter2,
+			if iter3_23:IsEvent() then
+				table.insert(var0_23, {
+					day = iter0_23,
+					index = iter2_23,
 					value = {
 						{
 							event_id = 0,
 							plan_id = 0,
-							spec_event_id = iter3.id
+							spec_event_id = iter3_23.id
 						}
 					}
 				})
@@ -239,7 +239,7 @@ function var0.GridData2ProtData(arg0)
 		end
 	end
 
-	return var0
+	return var0_23
 end
 
-return var0
+return var0_0

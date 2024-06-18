@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_260 = {}
+var0_0.word_template_260 = {}
 
-local var1 = var0.word_template_260
+local var1_0 = var0_0.word_template_260
 
 function temp()
-	var1.师 = {
+	var1_0.师 = {
 		涛 = {
 			this = true
 		},
@@ -26,7 +26,7 @@ end
 temp()
 
 function temp()
-	var1.狮 = {
+	var1_0.狮 = {
 		牌 = {
 			密 = {
 				封 = {
@@ -59,7 +59,7 @@ end
 temp()
 
 function temp()
-	var1.施 = {
+	var1_0.施 = {
 		工 = {
 			暴 = {
 				徒 = {
@@ -73,7 +73,7 @@ end
 temp()
 
 function temp()
-	var1.湿 = {
+	var1_0.湿 = {
 		了 = {
 			this = true
 		},
@@ -109,7 +109,7 @@ end
 temp()
 
 function temp()
-	var1.濕 = {
+	var1_0.濕 = {
 		了 = {
 			還 = {
 				說 = {
@@ -140,7 +140,7 @@ end
 temp()
 
 function temp()
-	var1.鯴 = {
+	var1_0.鯴 = {
 		this = {
 			this = true
 		}
@@ -150,7 +150,7 @@ end
 temp()
 
 function temp()
-	var1.十 = {
+	var1_0.十 = {
 		八 = {
 			大 = {
 				this = true,

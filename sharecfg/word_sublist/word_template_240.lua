@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_240 = {}
+var0_0.word_template_240 = {}
 
-local var1 = var0.word_template_240
+local var1_0 = var0_0.word_template_240
 
 function temp()
-	var1.清 = {
+	var1_0.清 = {
 		偿 = {
 			债 = {
 				务 = {
@@ -220,7 +220,7 @@ end
 temp()
 
 function temp()
-	var1.輕 = {
+	var1_0.輕 = {
 		舟 = {
 			快 = {
 				訊 = {
@@ -234,7 +234,7 @@ end
 temp()
 
 function temp()
-	var1.檠 = {
+	var1_0.檠 = {
 		this = {
 			this = true
 		}
@@ -244,7 +244,7 @@ end
 temp()
 
 function temp()
-	var1.苘 = {
+	var1_0.苘 = {
 		this = {
 			this = true
 		}
@@ -254,7 +254,7 @@ end
 temp()
 
 function temp()
-	var1.謦 = {
+	var1_0.謦 = {
 		this = {
 			this = true
 		}
@@ -264,7 +264,7 @@ end
 temp()
 
 function temp()
-	var1.檾 = {
+	var1_0.檾 = {
 		this = {
 			this = true
 		}
@@ -274,7 +274,7 @@ end
 temp()
 
 function temp()
-	var1.庆 = {
+	var1_0.庆 = {
 		丰 = {
 			包 = {
 				子 = {

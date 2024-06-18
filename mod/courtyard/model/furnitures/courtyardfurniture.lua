@@ -1,236 +1,236 @@
-﻿local var0 = class("CourtYardFurniture", import("..map.CourtYardDepthItem"))
+﻿local var0_0 = class("CourtYardFurniture", import("..map.CourtYardDepthItem"))
 
-var0.STATE_IDLE = 1
-var0.STATE_DRAG = 2
-var0.STATE_INTERACT = 3
-var0.STATE_TOUCH_PREPARE = 4
-var0.STATE_TOUCH = 5
-var0.STATE_PLAY_MUSIC = 6
-var0.STATE_STOP_MUSIC = 7
+var0_0.STATE_IDLE = 1
+var0_0.STATE_DRAG = 2
+var0_0.STATE_INTERACT = 3
+var0_0.STATE_TOUCH_PREPARE = 4
+var0_0.STATE_TOUCH = 5
+var0_0.STATE_PLAY_MUSIC = 6
+var0_0.STATE_STOP_MUSIC = 7
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0.id = arg2.id
-	arg0.configId = arg2.configId or arg0.id
-	arg0.config = pg.furniture_data_template[arg0.configId]
-	arg0.date = arg2.date or 0
-	arg0.selectedFlag = false
-	arg0.slots = {}
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.id = arg2_1.id
+	arg0_1.configId = arg2_1.configId or arg0_1.id
+	arg0_1.config = pg.furniture_data_template[arg0_1.configId]
+	arg0_1.date = arg2_1.date or 0
+	arg0_1.selectedFlag = false
+	arg0_1.slots = {}
 
-	arg0:InitSlots()
+	arg0_1:InitSlots()
 
-	arg0.musicDatas = {}
-	arg0.musicData = nil
+	arg0_1.musicDatas = {}
+	arg0_1.musicData = nil
 
-	arg0:InitMusicData()
+	arg0_1:InitMusicData()
 
-	arg0.state = var0.STATE_IDLE
+	arg0_1.state = var0_0.STATE_IDLE
 
-	var0.super.Ctor(arg0, arg1, arg0.id, arg0.config.size[1], arg0.config.size[2])
+	var0_0.super.Ctor(arg0_1, arg1_1, arg0_1.id, arg0_1.config.size[1], arg0_1.config.size[2])
 end
 
-function var0.InitSlots(arg0)
-	if arg0:IsSpine() then
-		table.insert(arg0.slots, CourtYardFurnitureSpineSlot.New(1, arg0.config.spine))
+function var0_0.InitSlots(arg0_2)
+	if arg0_2:IsSpine() then
+		table.insert(arg0_2.slots, CourtYardFurnitureSpineSlot.New(1, arg0_2.config.spine))
 
-		if type(arg0.config.spine_extra) == "table" then
-			for iter0, iter1 in ipairs(arg0.config.spine_extra) do
-				local var0 = {
+		if type(arg0_2.config.spine_extra) == "table" then
+			for iter0_2, iter1_2 in ipairs(arg0_2.config.spine_extra) do
+				local var0_2 = {
 					{},
-					[3] = arg0.config.spine[3],
-					[4] = iter1[1],
-					[5] = iter1[2],
-					[6] = iter1[3]
+					[3] = arg0_2.config.spine[3],
+					[4] = iter1_2[1],
+					[5] = iter1_2[2],
+					[6] = iter1_2[3]
 				}
 
-				table.insert(arg0.slots, CourtYardFurnitureSpineSlot.New(iter0 + 1, var0))
+				table.insert(arg0_2.slots, CourtYardFurnitureSpineSlot.New(iter0_2 + 1, var0_2))
 			end
 		end
 
-		if type(arg0.config.followBone) == "table" then
-			if type(arg0.config.followBone[1]) == "table" then
-				for iter2, iter3 in ipairs(arg0.config.followBone) do
-					local var1 = arg0.slots[iter2]
+		if type(arg0_2.config.followBone) == "table" then
+			if type(arg0_2.config.followBone[1]) == "table" then
+				for iter2_2, iter3_2 in ipairs(arg0_2.config.followBone) do
+					local var1_2 = arg0_2.slots[iter2_2]
 
-					if var1 then
-						var1:SetFollower(iter3)
+					if var1_2 then
+						var1_2:SetFollower(iter3_2)
 					end
 				end
-			elseif type(arg0.config.followBone[1]) == "string" then
-				arg0.slots[1]:SetFollower(arg0.config.followBone)
+			elseif type(arg0_2.config.followBone[1]) == "string" then
+				arg0_2.slots[1]:SetFollower(arg0_2.config.followBone)
 			end
-		elseif type(arg0.config.animator) == "table" then
-			for iter4, iter5 in ipairs(arg0.slots) do
-				iter5:SetAnimators(arg0.config.animator)
+		elseif type(arg0_2.config.animator) == "table" then
+			for iter4_2, iter5_2 in ipairs(arg0_2.slots) do
+				iter5_2:SetAnimators(arg0_2.config.animator)
 			end
 		end
 
-		if type(arg0.config.spine_action_replace) == "table" then
-			for iter6, iter7 in ipairs(arg0.slots) do
-				iter7:SetSubstitute(arg0.config.spine_action_replace)
+		if type(arg0_2.config.spine_action_replace) == "table" then
+			for iter6_2, iter7_2 in ipairs(arg0_2.slots) do
+				iter7_2:SetSubstitute(arg0_2.config.spine_action_replace)
 			end
 		end
-	elseif type(arg0.config.interAction) == "table" then
-		for iter8, iter9 in ipairs(arg0.config.interAction) do
-			table.insert(arg0.slots, CourtYardFurnitureSlot.New(iter8, iter9))
+	elseif type(arg0_2.config.interAction) == "table" then
+		for iter8_2, iter9_2 in ipairs(arg0_2.config.interAction) do
+			table.insert(arg0_2.slots, CourtYardFurnitureSlot.New(iter8_2, iter9_2))
 		end
 	end
 end
 
-function var0.GetLevel(arg0)
-	return arg0.config.level
+function var0_0.GetLevel(arg0_3)
+	return arg0_3.config.level
 end
 
-function var0._InitMusicData(arg0, arg1, arg2, arg3, arg4)
-	local var0 = type(arg2) == "table" and arg2 or {
-		arg2
+function var0_0._InitMusicData(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4)
+	local var0_4 = type(arg2_4) == "table" and arg2_4 or {
+		arg2_4
 	}
-	local var1 = type(arg3) == "table" and arg3 or {
-		arg3
+	local var1_4 = type(arg3_4) == "table" and arg3_4 or {
+		arg3_4
 	}
 
-	for iter0, iter1 in ipairs(var0) do
-		table.insert(arg0.musicDatas, {
-			voice = iter1,
-			voiceType = arg1,
-			action = var1[iter0],
-			effect = arg4
+	for iter0_4, iter1_4 in ipairs(var0_4) do
+		table.insert(arg0_4.musicDatas, {
+			voice = iter1_4,
+			voiceType = arg1_4,
+			action = var1_4[iter0_4],
+			effect = arg4_4
 		})
 	end
 end
 
-function var0.InitMusicData(arg0)
-	local var0 = arg0.config.can_trigger
+function var0_0.InitMusicData(arg0_5)
+	local var0_5 = arg0_5.config.can_trigger
 
-	if var0[1] == 3 then
-		arg0:_InitMusicData(1, var0[2][1], var0[2][2], var0[2][3])
-		arg0:_InitMusicData(2, var0[3][1], var0[3][2], var0[3][3])
+	if var0_5[1] == 3 then
+		arg0_5:_InitMusicData(1, var0_5[2][1], var0_5[2][2], var0_5[2][3])
+		arg0_5:_InitMusicData(2, var0_5[3][1], var0_5[3][2], var0_5[3][3])
 	else
-		arg0:_InitMusicData(var0[1], var0[2], var0[3], var0[4])
+		arg0_5:_InitMusicData(var0_5[1], var0_5[2], var0_5[3], var0_5[4])
 	end
 end
 
-function var0.Init(arg0, arg1, arg2)
-	arg0:SetPosition(arg1)
-	arg0:SetDir(arg2)
+function var0_0.Init(arg0_6, arg1_6, arg2_6)
+	arg0_6:SetPosition(arg1_6)
+	arg0_6:SetDir(arg2_6)
 end
 
-function var0.DisableRotation(arg0)
-	return arg0.config.can_rotate ~= 0 or arg0:IsType(Furniture.TYPE_WALL) or arg0:IsType(Furniture.TYPE_WALL_MAT)
+function var0_0.DisableRotation(arg0_7)
+	return arg0_7.config.can_rotate ~= 0 or arg0_7:IsType(Furniture.TYPE_WALL) or arg0_7:IsType(Furniture.TYPE_WALL_MAT)
 end
 
-function var0.IsType(arg0, arg1)
-	return arg0.config.type == arg1
+function var0_0.IsType(arg0_8, arg1_8)
+	return arg0_8.config.type == arg1_8
 end
 
-function var0.IsMusicalInstruments(arg0)
-	return arg0:IsType(Furniture.TYPE_LUTE)
+function var0_0.IsMusicalInstruments(arg0_9)
+	return arg0_9:IsType(Furniture.TYPE_LUTE)
 end
 
-function var0.IsRandomSlotType(arg0)
-	return arg0:IsType(Furniture.TYPE_RANDOM_SLOT)
+function var0_0.IsRandomSlotType(arg0_10)
+	return arg0_10:IsType(Furniture.TYPE_RANDOM_SLOT)
 end
 
-function var0.RawGetOffset(arg0)
-	local var0 = arg0.config.offset
+function var0_0.RawGetOffset(arg0_11)
+	local var0_11 = arg0_11.config.offset
 
-	return Vector3(var0[1], var0[2], 0)
+	return Vector3(var0_11[1], var0_11[2], 0)
 end
 
-function var0.SetPosition(arg0, arg1)
-	var0.super.SetPosition(arg0, arg1)
-	arg0:DispatchEvent(CourtYardEvent.FURNITURE_POSITION_CHANGE, arg1, arg0:GetOffset())
+function var0_0.SetPosition(arg0_12, arg1_12)
+	var0_0.super.SetPosition(arg0_12, arg1_12)
+	arg0_12:DispatchEvent(CourtYardEvent.FURNITURE_POSITION_CHANGE, arg1_12, arg0_12:GetOffset())
 end
 
-function var0.UpdateOpFlag(arg0, arg1)
-	var0.super.UpdateOpFlag(arg0, arg1)
-	arg0:DispatchEvent(CourtYardEvent.FURNITURE_OP_FLAG_CHANGE, arg0.opFlag)
+function var0_0.UpdateOpFlag(arg0_13, arg1_13)
+	var0_0.super.UpdateOpFlag(arg0_13, arg1_13)
+	arg0_13:DispatchEvent(CourtYardEvent.FURNITURE_OP_FLAG_CHANGE, arg0_13.opFlag)
 end
 
-function var0.InActivityRange(arg0, arg1)
-	local var0 = arg0:GetHost():GetStorey():GetRange()
+function var0_0.InActivityRange(arg0_14, arg1_14)
+	local var0_14 = arg0_14:GetHost():GetStorey():GetRange()
 
-	return arg1.x < var0.x and arg1.y < var0.y and arg1.x >= 0 and arg1.y >= 0
+	return arg1_14.x < var0_14.x and arg1_14.y < var0_14.y and arg1_14.x >= 0 and arg1_14.y >= 0
 end
 
-function var0.GetObjType(arg0)
+function var0_0.GetObjType(arg0_15)
 	return CourtYardConst.OBJ_TYPE_COMMOM
 end
 
-function var0.GetDeathType(arg0)
+function var0_0.GetDeathType(arg0_16)
 	return CourtYardConst.DEPTH_TYPE_FURNITURE
 end
 
-function var0.GetType(arg0)
-	return arg0.config.type
+function var0_0.GetType(arg0_17)
+	return arg0_17.config.type
 end
 
-function var0.GetPicture(arg0)
-	return arg0.config.picture
+function var0_0.GetPicture(arg0_18)
+	return arg0_18.config.picture
 end
 
-function var0.IsOverlap(arg0, arg1)
-	local var0 = arg0:GetArea()
+function var0_0.IsOverlap(arg0_19, arg1_19)
+	local var0_19 = arg0_19:GetArea()
 
-	return _.any(var0, function(arg0)
-		return arg0 == arg1
+	return _.any(var0_19, function(arg0_20)
+		return arg0_20 == arg1_19
 	end)
 end
 
-function var0.Rotate(arg0)
-	local var0 = arg0.dir == 1 and 2 or 1
+function var0_0.Rotate(arg0_21)
+	local var0_21 = arg0_21.dir == 1 and 2 or 1
 
-	var0.super.SetDir(arg0, var0)
-	arg0:DispatchEvent(CourtYardEvent.ROTATE_FURNITURE, arg0.dir)
+	var0_0.super.SetDir(arg0_21, var0_21)
+	arg0_21:DispatchEvent(CourtYardEvent.ROTATE_FURNITURE, arg0_21.dir)
 end
 
-function var0.GetSize(arg0)
-	return arg0.sizeX, arg0.sizeY
+function var0_0.GetSize(arg0_22)
+	return arg0_22.sizeX, arg0_22.sizeY
 end
 
-function var0.GetArchMask(arg0)
-	return arg0.config.picture .. "_using"
+function var0_0.GetArchMask(arg0_23)
+	return arg0_23.config.picture .. "_using"
 end
 
-function var0.HasDescription(arg0)
-	local var0 = arg0.config.can_trigger
+function var0_0.HasDescription(arg0_24)
+	local var0_24 = arg0_24.config.can_trigger
 
-	return #var0 > 0 and var0[1] > 0
+	return #var0_24 > 0 and var0_24[1] > 0
 end
 
-function var0.ExistVoice(arg0)
-	local var0 = arg0.config.can_trigger
+function var0_0.ExistVoice(arg0_25)
+	local var0_25 = arg0_25.config.can_trigger
 
-	return var0[2] ~= nil, var0[1]
+	return var0_25[2] ~= nil, var0_25[1]
 end
 
-function var0.GetIcon(arg0)
-	return arg0.config.icon
+function var0_0.GetIcon(arg0_26)
+	return arg0_26.config.icon
 end
 
-function var0.GetName(arg0)
-	return arg0.config.name
+function var0_0.GetName(arg0_27)
+	return arg0_27.config.name
 end
 
-function var0.GetAddDate(arg0)
-	if arg0.date > 0 then
-		return pg.TimeMgr.GetInstance():STimeDescS(arg0.date, "%Y/%m/%d")
+function var0_0.GetAddDate(arg0_28)
+	if arg0_28.date > 0 then
+		return pg.TimeMgr.GetInstance():STimeDescS(arg0_28.date, "%Y/%m/%d")
 	end
 end
 
-function var0.GetComfortable(arg0)
-	return arg0.config.comfortable
+function var0_0.GetComfortable(arg0_29)
+	return arg0_29.config.comfortable
 end
 
-function var0.GetDescription(arg0)
-	return arg0.config.describe
+function var0_0.GetDescription(arg0_30)
+	return arg0_30.config.describe
 end
 
-function var0.GetAddMode(arg0)
-	return arg0.config.gain_by
+function var0_0.GetAddMode(arg0_31)
+	return arg0_31.config.gain_by
 end
 
-function var0.GetGametipType(arg0)
-	local var0 = arg0:GetType()
+function var0_0.GetGametipType(arg0_32)
+	local var0_32 = arg0_32:GetType()
 
 	return ({
 		i18n("word_wallpaper"),
@@ -248,85 +248,85 @@ function var0.GetGametipType(arg0)
 		"",
 		"",
 		i18n("word_collection")
-	})[var0]
+	})[var0_32]
 end
 
-function var0.CanTouch(arg0)
-	return arg0.config.spine and arg0.config.spine[1] and arg0.config.spine[1][3] ~= nil
+function var0_0.CanTouch(arg0_33)
+	return arg0_33.config.spine and arg0_33.config.spine[1] and arg0_33.config.spine[1][3] ~= nil
 end
 
-function var0.GetTouchAction(arg0)
-	if arg0:CanTouch() then
-		local var0 = arg0.config.spine
-		local var1 = {}
+function var0_0.GetTouchAction(arg0_34)
+	if arg0_34:CanTouch() then
+		local var0_34 = arg0_34.config.spine
+		local var1_34 = {}
 
-		table.insert(var1, var0[1][3][1])
+		table.insert(var1_34, var0_34[1][3][1])
 
-		for iter0, iter1 in ipairs(var0[1][3][3] or {}) do
-			table.insert(var1, iter1)
+		for iter0_34, iter1_34 in ipairs(var0_34[1][3][3] or {}) do
+			table.insert(var1_34, iter1_34)
 		end
 
-		return var1[math.random(1, #var1)], var0[1][3][2]
+		return var1_34[math.random(1, #var1_34)], var0_34[1][3][2]
 	end
 end
 
-function var0.GetTouchPrepareAction(arg0)
-	if arg0:CanTouch() then
-		return arg0.config.spine[1][3][6]
+function var0_0.GetTouchPrepareAction(arg0_35)
+	if arg0_35:CanTouch() then
+		return arg0_35.config.spine[1][3][6]
 	end
 end
 
-function var0.GetTouchBg(arg0)
-	if arg0:CanTouch() then
-		return arg0.config.spine[1][3][7]
+function var0_0.GetTouchBg(arg0_36)
+	if arg0_36:CanTouch() then
+		return arg0_36.config.spine[1][3][7]
 	end
 end
 
-function var0.TriggerTouchDefault(arg0)
-	if arg0:CanTouch() and arg0.config.spine[1][3][8] and arg0.config.spine[1][3][8] > 0 then
+function var0_0.TriggerTouchDefault(arg0_37)
+	if arg0_37:CanTouch() and arg0_37.config.spine[1][3][8] and arg0_37.config.spine[1][3][8] > 0 then
 		return true
 	end
 
 	return false
 end
 
-function var0.GetTouchSound(arg0)
-	if arg0:CanTouch() then
-		local var0 = arg0.config.spine[1][3][4]
+function var0_0.GetTouchSound(arg0_38)
+	if arg0_38:CanTouch() then
+		local var0_38 = arg0_38.config.spine[1][3][4]
 
-		if type(var0) == "table" then
-			return var0[math.random(1, #var0)]
+		if type(var0_38) == "table" then
+			return var0_38[math.random(1, #var0_38)]
 		else
-			return var0
+			return var0_38
 		end
 	end
 end
 
-function var0.GetTouchEffect(arg0)
-	if arg0:CanTouch() then
-		return arg0.config.spine[1][3][5]
+function var0_0.GetTouchEffect(arg0_39)
+	if arg0_39:CanTouch() then
+		return arg0_39.config.spine[1][3][5]
 	end
 end
 
-function var0.IsTouchState(arg0)
-	return arg0.state == var0.STATE_TOUCH or arg0.state == var0.STATE_TOUCH_PREPARE
+function var0_0.IsTouchState(arg0_40)
+	return arg0_40.state == var0_0.STATE_TOUCH or arg0_40.state == var0_0.STATE_TOUCH_PREPARE
 end
 
-function var0.IsDragingState(arg0)
-	return arg0.state == var0.STATE_DRAG
+function var0_0.IsDragingState(arg0_41)
+	return arg0_41.state == var0_0.STATE_DRAG
 end
 
-function var0.IsSpine(arg0)
-	return type(arg0.config.spine) == "table"
+function var0_0.IsSpine(arg0_42)
+	return type(arg0_42.config.spine) == "table"
 end
 
-function var0.GetFirstSlot(arg0)
-	return arg0.slots[1]
+function var0_0.GetFirstSlot(arg0_43)
+	return arg0_43.slots[1]
 end
 
-function var0.AnySlotIsLoop(arg0)
-	for iter0, iter1 in pairs(arg0.slots) do
-		if iter1.loop then
+function var0_0.AnySlotIsLoop(arg0_44)
+	for iter0_44, iter1_44 in pairs(arg0_44.slots) do
+		if iter1_44.loop then
 			return true
 		end
 	end
@@ -334,258 +334,258 @@ function var0.AnySlotIsLoop(arg0)
 	return false
 end
 
-function var0.GetMaskNames(arg0)
-	local var0 = {}
+function var0_0.GetMaskNames(arg0_45)
+	local var0_45 = {}
 
-	for iter0, iter1 in ipairs(arg0.slots) do
-		local var1 = iter1:GetMask()
+	for iter0_45, iter1_45 in ipairs(arg0_45.slots) do
+		local var1_45 = iter1_45:GetMask()
 
-		if var1 then
-			var0[iter1.id] = var1
+		if var1_45 then
+			var0_45[iter1_45.id] = var1_45
 		end
 	end
 
-	return var0
+	return var0_45
 end
 
-function var0.IsMultiMask(arg0)
-	local var0 = arg0:GetMaskNames()
+function var0_0.IsMultiMask(arg0_46)
+	local var0_46 = arg0_46:GetMaskNames()
 
-	return not arg0:IsSpine() and table.getCount(var0) > 0 and arg0:GetSlotCnt() > 1
+	return not arg0_46:IsSpine() and table.getCount(var0_46) > 0 and arg0_46:GetSlotCnt() > 1
 end
 
-function var0.GetBodyMasks(arg0)
-	local var0 = {}
+function var0_0.GetBodyMasks(arg0_47)
+	local var0_47 = {}
 
-	for iter0, iter1 in ipairs(arg0.slots) do
-		local var1 = iter1:GetBodyMask()
+	for iter0_47, iter1_47 in ipairs(arg0_47.slots) do
+		local var1_47 = iter1_47:GetBodyMask()
 
-		if var1 then
-			var0[iter1.id] = var1
+		if var1_47 then
+			var0_47[iter1_47.id] = var1_47
 		end
 	end
 
-	return var0
+	return var0_47
 end
 
-function var0.GetAnimators(arg0)
-	local var0 = {}
+function var0_0.GetAnimators(arg0_48)
+	local var0_48 = {}
 
-	for iter0, iter1 in ipairs(arg0.slots) do
-		for iter2, iter3 in pairs(iter1:GetAnimators()) do
-			table.insert(var0, iter3)
+	for iter0_48, iter1_48 in ipairs(arg0_48.slots) do
+		for iter2_48, iter3_48 in pairs(iter1_48:GetAnimators()) do
+			table.insert(var0_48, iter3_48)
 		end
 	end
 
-	return var0
+	return var0_48
 end
 
-function var0.GetAnimatorMask(arg0)
-	if not arg0.config.animator then
+function var0_0.GetAnimatorMask(arg0_49)
+	if not arg0_49.config.animator then
 		return nil
 	end
 
-	local var0 = arg0.config.animator[3]
+	local var0_49 = arg0_49.config.animator[3]
 
-	if var0 then
+	if var0_49 then
 		return {
-			size = Vector2(var0[1][1], var0[1][2]),
-			offset = Vector2(var0[2][1], var0[2][2])
+			size = Vector2(var0_49[1][1], var0_49[1][2]),
+			offset = Vector2(var0_49[2][1], var0_49[2][2])
 		}
 	end
 end
 
-function var0.CanInterAction(arg0, arg1)
-	return _.any(arg0.slots, function(arg0)
-		return arg0:IsEmpty()
-	end) and not arg0:IsPlayMusicState() and (#arg0.config.interAction_group == 0 or _.any(arg0.config.interAction_group, function(arg0)
-		return arg1:GetGroupID() == arg0
+function var0_0.CanInterAction(arg0_50, arg1_50)
+	return _.any(arg0_50.slots, function(arg0_51)
+		return arg0_51:IsEmpty()
+	end) and not arg0_50:IsPlayMusicState() and (#arg0_50.config.interAction_group == 0 or _.any(arg0_50.config.interAction_group, function(arg0_52)
+		return arg1_50:GetGroupID() == arg0_52
 	end))
 end
 
-function var0.IsPlayMusicState(arg0)
-	return arg0.state == var0.STATE_PLAY_MUSIC
+function var0_0.IsPlayMusicState(arg0_53)
+	return arg0_53.state == var0_0.STATE_PLAY_MUSIC
 end
 
-function var0.GetInteractionSlot(arg0)
-	if arg0:IsRandomSlotType() then
-		local var0 = {}
+function var0_0.GetInteractionSlot(arg0_54)
+	if arg0_54:IsRandomSlotType() then
+		local var0_54 = {}
 
-		for iter0, iter1 in ipairs(arg0.slots) do
-			if iter1:IsEmpty() then
-				table.insert(var0, iter1)
+		for iter0_54, iter1_54 in ipairs(arg0_54.slots) do
+			if iter1_54:IsEmpty() then
+				table.insert(var0_54, iter1_54)
 			end
 		end
 
-		return var0[math.random(1, #var0)]
+		return var0_54[math.random(1, #var0_54)]
 	else
-		return _.detect(arg0.slots, function(arg0)
-			return arg0:IsEmpty()
+		return _.detect(arg0_54.slots, function(arg0_55)
+			return arg0_55:IsEmpty()
 		end)
 	end
 end
 
-function var0._ChangeState(arg0, arg1)
-	arg0.state = arg1
+function var0_0._ChangeState(arg0_56, arg1_56)
+	arg0_56.state = arg1_56
 
-	arg0:DispatchEvent(CourtYardEvent.FURNITURE_STATE_CHANGE, arg1)
+	arg0_56:DispatchEvent(CourtYardEvent.FURNITURE_STATE_CHANGE, arg1_56)
 end
 
-function var0.ChangeState(arg0, arg1)
-	if arg0:IsPlayMusicState() and arg1 ~= var0.STATE_STOP_MUSIC then
+function var0_0.ChangeState(arg0_57, arg1_57)
+	if arg0_57:IsPlayMusicState() and arg1_57 ~= var0_0.STATE_STOP_MUSIC then
 		return
 	end
 
-	if arg0:IsInteractionState() then
+	if arg0_57:IsInteractionState() then
 		return
 	end
 
-	if arg1 == var0.STATE_TOUCH and arg0:GetTouchPrepareAction() then
-		arg0:_ChangeState(var0.STATE_TOUCH_PREPARE)
-	elseif arg1 == var0.STATE_PLAY_MUSIC then
-		local var0 = _.select(arg0.musicDatas, function(arg0)
-			return arg0.voiceType == 2
+	if arg1_57 == var0_0.STATE_TOUCH and arg0_57:GetTouchPrepareAction() then
+		arg0_57:_ChangeState(var0_0.STATE_TOUCH_PREPARE)
+	elseif arg1_57 == var0_0.STATE_PLAY_MUSIC then
+		local var0_57 = _.select(arg0_57.musicDatas, function(arg0_58)
+			return arg0_58.voiceType == 2
 		end)
 
-		if #var0 > 0 then
-			arg0.musicData = var0[math.random(1, #var0)]
+		if #var0_57 > 0 then
+			arg0_57.musicData = var0_57[math.random(1, #var0_57)]
 
-			arg0:_ChangeState(arg1)
+			arg0_57:_ChangeState(arg1_57)
 		end
-	elseif arg1 == var0.STATE_STOP_MUSIC then
-		arg0:_ChangeState(var0.STATE_IDLE)
+	elseif arg1_57 == var0_0.STATE_STOP_MUSIC then
+		arg0_57:_ChangeState(var0_0.STATE_IDLE)
 
-		arg0.musicData = nil
+		arg0_57.musicData = nil
 	else
-		arg0:_ChangeState(arg1)
+		arg0_57:_ChangeState(arg1_57)
 	end
 end
 
-function var0.IsInteractionState(arg0)
-	return arg0.state == var0.STATE_INTERACT
+function var0_0.IsInteractionState(arg0_59)
+	return arg0_59.state == var0_0.STATE_INTERACT
 end
 
-function var0.WillInteraction(arg0, arg1)
-	arg0:DispatchEvent(CourtYardEvent.FURNITURE_WILL_INTERACTION, arg1)
+function var0_0.WillInteraction(arg0_60, arg1_60)
+	arg0_60:DispatchEvent(CourtYardEvent.FURNITURE_WILL_INTERACTION, arg1_60)
 end
 
-function var0.StartInteraction(arg0, arg1)
-	local var0 = {}
+function var0_0.StartInteraction(arg0_61, arg1_61)
+	local var0_61 = {}
 
-	_.each(arg0.slots, function(arg0)
-		if arg0.id ~= arg1.id and arg0:IsUsing() then
-			table.insert(var0, arg0)
-			arg0:DispatchEvent(CourtYardEvent.FURNITURE_STOP_INTERACTION, arg0)
+	_.each(arg0_61.slots, function(arg0_62)
+		if arg0_62.id ~= arg1_61.id and arg0_62:IsUsing() then
+			table.insert(var0_61, arg0_62)
+			arg0_61:DispatchEvent(CourtYardEvent.FURNITURE_STOP_INTERACTION, arg0_62)
 		end
 	end)
 
-	if #var0 > 0 then
-		arg0:_ChangeState(var0.STATE_IDLE)
+	if #var0_61 > 0 then
+		arg0_61:_ChangeState(var0_0.STATE_IDLE)
 	end
 
-	arg0:_ChangeState(var0.STATE_INTERACT)
+	arg0_61:_ChangeState(var0_0.STATE_INTERACT)
 
-	if #var0 > 0 then
-		arg1:OnStart()
+	if #var0_61 > 0 then
+		arg1_61:OnStart()
 	end
 
-	for iter0, iter1 in ipairs(var0) do
-		iter1:OnStart()
-		arg0:DispatchEvent(CourtYardEvent.FURNITURE_START_INTERACTION, iter1)
+	for iter0_61, iter1_61 in ipairs(var0_61) do
+		iter1_61:OnStart()
+		arg0_61:DispatchEvent(CourtYardEvent.FURNITURE_START_INTERACTION, iter1_61)
 	end
 
-	arg0:DispatchEvent(CourtYardEvent.FURNITURE_START_INTERACTION, arg1)
+	arg0_61:DispatchEvent(CourtYardEvent.FURNITURE_START_INTERACTION, arg1_61)
 end
 
-function var0.OnPreheatActionEnd(arg0)
+function var0_0.OnPreheatActionEnd(arg0_63)
 	return
 end
 
-function var0.UpdateInteraction(arg0, ...)
-	arg0:DispatchEvent(CourtYardEvent.FURNITURE_UPDATE_INTERACTION, ...)
+function var0_0.UpdateInteraction(arg0_64, ...)
+	arg0_64:DispatchEvent(CourtYardEvent.FURNITURE_UPDATE_INTERACTION, ...)
 end
 
-function var0.AnySlotIsUsing(arg0)
-	return _.any(arg0.slots, function(arg0)
-		return arg0:IsUsing()
+function var0_0.AnySlotIsUsing(arg0_65)
+	return _.any(arg0_65.slots, function(arg0_66)
+		return arg0_66:IsUsing()
 	end)
 end
 
-function var0.ClearInteraction(arg0, arg1)
-	local var0 = _.select(arg0.slots, function(arg0)
-		return arg0.id ~= arg1.id and arg0:IsUsing()
+function var0_0.ClearInteraction(arg0_67, arg1_67)
+	local var0_67 = _.select(arg0_67.slots, function(arg0_68)
+		return arg0_68.id ~= arg1_67.id and arg0_68:IsUsing()
 	end)
 
-	for iter0, iter1 in ipairs(var0) do
-		iter1:Reset()
+	for iter0_67, iter1_67 in ipairs(var0_67) do
+		iter1_67:Reset()
 	end
 
-	if #var0 <= 0 then
-		arg0:_ChangeState(var0.STATE_IDLE)
+	if #var0_67 <= 0 then
+		arg0_67:_ChangeState(var0_0.STATE_IDLE)
 	end
 
 	onNextTick(function()
-		arg0:DispatchEvent(CourtYardEvent.FURNITURE_STOP_INTERACTION, arg1)
+		arg0_67:DispatchEvent(CourtYardEvent.FURNITURE_STOP_INTERACTION, arg1_67)
 	end)
 end
 
-function var0.GetUsingSlots(arg0)
-	local var0 = {}
+function var0_0.GetUsingSlots(arg0_70)
+	local var0_70 = {}
 
-	for iter0, iter1 in ipairs(arg0.slots) do
-		if iter1:IsUsing() then
-			table.insert(var0, iter1)
+	for iter0_70, iter1_70 in ipairs(arg0_70.slots) do
+		if iter1_70:IsUsing() then
+			table.insert(var0_70, iter1_70)
 		end
 	end
 
-	return var0
+	return var0_70
 end
 
-function var0.GetSlotCnt(arg0)
-	return #arg0.slots
+function var0_0.GetSlotCnt(arg0_71)
+	return #arg0_71.slots
 end
 
-function var0.GetMusicData(arg0)
-	return arg0.musicData
+function var0_0.GetMusicData(arg0_72)
+	return arg0_72.musicData
 end
 
-function var0.GetInterActionBgm(arg0)
-	local var0 = type(arg0.config.interaction_bgm)
+function var0_0.GetInterActionBgm(arg0_73)
+	local var0_73 = type(arg0_73.config.interaction_bgm)
 
-	if var0 == "string" then
-		return arg0.config.interaction_bgm, 0
-	elseif var0 == "table" then
-		return arg0.config.interaction_bgm[2], arg0.config.interaction_bgm[1]
+	if var0_73 == "string" then
+		return arg0_73.config.interaction_bgm, 0
+	elseif var0_73 == "table" then
+		return arg0_73.config.interaction_bgm[2], arg0_73.config.interaction_bgm[1]
 	else
 		return nil
 	end
 end
 
-function var0.CanClickWhenExitEditMode(arg0)
-	return arg0:HasDescription() or arg0:CanTouch()
+function var0_0.CanClickWhenExitEditMode(arg0_74)
+	return arg0_74:HasDescription() or arg0_74:CanTouch()
 end
 
-function var0.Dispose(arg0)
-	var0.super.Dispose(arg0)
+function var0_0.Dispose(arg0_75)
+	var0_0.super.Dispose(arg0_75)
 
-	for iter0, iter1 in ipairs(arg0:GetUsingSlots()) do
-		iter1:Stop()
+	for iter0_75, iter1_75 in ipairs(arg0_75:GetUsingSlots()) do
+		iter1_75:Stop()
 	end
 end
 
-function var0.ToTable(arg0)
-	local var0 = arg0:GetPosition()
+function var0_0.ToTable(arg0_76)
+	local var0_76 = arg0_76:GetPosition()
 
 	return {
-		id = arg0.id,
-		configId = arg0.configId,
-		dir = arg0.dir,
-		position = var0,
-		x = var0.x,
-		y = var0.y,
-		parent = arg0.parent and arg0.parent.id or 0,
+		id = arg0_76.id,
+		configId = arg0_76.configId,
+		dir = arg0_76.dir,
+		position = var0_76,
+		x = var0_76.x,
+		y = var0_76.y,
+		parent = arg0_76.parent and arg0_76.parent.id or 0,
 		child = {}
 	}
 end
 
-return var0
+return var0_0

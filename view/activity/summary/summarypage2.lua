@@ -1,40 +1,40 @@
-﻿local var0 = class("SummaryPage2", import(".SummaryAnimationPage"))
+﻿local var0_0 = class("SummaryPage2", import(".SummaryAnimationPage"))
 
-function var0.OnInit(arg0)
-	local var0 = findTF(arg0._go, "name/Text")
+function var0_0.OnInit(arg0_1)
+	local var0_1 = findTF(arg0_1._go, "name/Text")
 
-	setText(var0, arg0.summaryInfoVO.firstProposeName)
+	setText(var0_1, arg0_1.summaryInfoVO.firstProposeName)
 
-	local var1 = findTF(arg0._go, "texts")
+	local var1_1 = findTF(arg0_1._go, "texts")
 
-	arg0.textTFs = {}
+	arg0_1.textTFs = {}
 
-	for iter0 = 1, var1.childCount do
-		local var2 = var1:GetChild(iter0 - 1)
-		local var3 = go(var2).name
+	for iter0_1 = 1, var1_1.childCount do
+		local var2_1 = var1_1:GetChild(iter0_1 - 1)
+		local var3_1 = go(var2_1).name
 
-		if var3 ~= "label" then
-			setText(var2:Find("Text"), arg0.summaryInfoVO[var3])
+		if var3_1 ~= "label" then
+			setText(var2_1:Find("Text"), arg0_1.summaryInfoVO[var3_1])
 		end
 
-		table.insert(arg0.textTFs, var2)
+		table.insert(arg0_1.textTFs, var2_1)
 	end
 
-	local var4 = findTF(arg0._go, "name/date")
+	local var4_1 = findTF(arg0_1._go, "name/date")
 
-	setText(var4, arg0.summaryInfoVO.firstLadyTime)
+	setText(var4_1, arg0_1.summaryInfoVO.firstLadyTime)
 
-	local var5 = findTF(arg0._go, "painting"):Find("mask/painting")
-	local var6 = Ship.New({
-		configId = arg0.summaryInfoVO.firstLadyId
+	local var5_1 = findTF(arg0_1._go, "painting"):Find("mask/painting")
+	local var6_1 = Ship.New({
+		configId = arg0_1.summaryInfoVO.firstLadyId
 	}):getPainting()
 
-	setPaintingPrefabAsync(var5, var6, "chuanwu")
-	setActive(arg0._go, false)
+	setPaintingPrefabAsync(var5_1, var6_1, "chuanwu")
+	setActive(arg0_1._go, false)
 end
 
-function var0.Clear(arg0)
+function var0_0.Clear(arg0_2)
 	return
 end
 
-return var0
+return var0_0

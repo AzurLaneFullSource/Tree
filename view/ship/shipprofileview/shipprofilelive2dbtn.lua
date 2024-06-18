@@ -1,119 +1,119 @@
-﻿local var0 = class("ShipProfileLive2dBtn")
+﻿local var0_0 = class("ShipProfileLive2dBtn")
 
-function var0.Ctor(arg0, arg1)
-	pg.DelegateInfo.New(arg0)
+function var0_0.Ctor(arg0_1, arg1_1)
+	pg.DelegateInfo.New(arg0_1)
 
-	arg0._tf = arg1
-	arg0.live2dBtn = arg1
-	arg0.live2dToggle = arg0.live2dBtn:Find("toggle")
-	arg0.live2dState = arg0.live2dBtn:Find("state")
-	arg0.live2dOn = arg0.live2dToggle:Find("on")
-	arg0.live2dOff = arg0.live2dToggle:Find("off")
-	arg0.manager = BundleWizard.Inst:GetGroupMgr("L2D")
+	arg0_1._tf = arg1_1
+	arg0_1.live2dBtn = arg1_1
+	arg0_1.live2dToggle = arg0_1.live2dBtn:Find("toggle")
+	arg0_1.live2dState = arg0_1.live2dBtn:Find("state")
+	arg0_1.live2dOn = arg0_1.live2dToggle:Find("on")
+	arg0_1.live2dOff = arg0_1.live2dToggle:Find("off")
+	arg0_1.manager = BundleWizard.Inst:GetGroupMgr("L2D")
 end
 
-function var0.Update(arg0, arg1, arg2)
-	arg0.paintingName = arg1
-	arg0.isOn = arg2
+function var0_0.Update(arg0_2, arg1_2, arg2_2)
+	arg0_2.paintingName = arg1_2
+	arg0_2.isOn = arg2_2
 
-	local var0 = arg0.manager
-	local var1 = "live2d/" .. arg1
-	local var2 = HXSet.autoHxShiftPath(var1, nil, true)
-	local var3 = var0.state
+	local var0_2 = arg0_2.manager
+	local var1_2 = "live2d/" .. arg1_2
+	local var2_2 = HXSet.autoHxShiftPath(var1_2, nil, true)
+	local var3_2 = var0_2.state
 
-	if var3 == DownloadState.None or var3 == DownloadState.CheckFailure then
-		var0:CheckD()
+	if var3_2 == DownloadState.None or var3_2 == DownloadState.CheckFailure then
+		var0_2:CheckD()
 	end
 
-	local var4 = var0:CheckF(var2)
+	local var4_2 = var0_2:CheckF(var2_2)
 
-	if var4 == DownloadState.CheckToUpdate or var4 == DownloadState.UpdateFailure then
-		arg0:OnCheckToUpdate(var2)
-	elseif var4 == DownloadState.Updating then
-		arg0:OnUpdating()
+	if var4_2 == DownloadState.CheckToUpdate or var4_2 == DownloadState.UpdateFailure then
+		arg0_2:OnCheckToUpdate(var2_2)
+	elseif var4_2 == DownloadState.Updating then
+		arg0_2:OnUpdating()
 	else
-		arg0:OnUpdated(var2, arg2)
+		arg0_2:OnUpdated(var2_2, arg2_2)
 	end
 
-	arg0:AddTimer(var2, var4, arg1, arg2)
+	arg0_2:AddTimer(var2_2, var4_2, arg1_2, arg2_2)
 end
 
-function var0.RemoveTimer(arg0)
-	if arg0.live2dTimer then
-		arg0.live2dTimer:Stop()
+function var0_0.RemoveTimer(arg0_3)
+	if arg0_3.live2dTimer then
+		arg0_3.live2dTimer:Stop()
 
-		arg0.live2dTimer = nil
+		arg0_3.live2dTimer = nil
 	end
 end
 
-function var0.AddTimer(arg0, arg1, arg2, arg3, arg4)
-	arg0:RemoveTimer()
+function var0_0.AddTimer(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4)
+	arg0_4:RemoveTimer()
 
-	if arg2 == DownloadState.CheckToUpdate or arg2 == DownloadState.UpdateFailure or arg2 == DownloadState.Updating then
-		arg0.live2dTimer = Timer.New(function()
-			local var0 = arg0.manager:CheckF(arg1)
+	if arg2_4 == DownloadState.CheckToUpdate or arg2_4 == DownloadState.UpdateFailure or arg2_4 == DownloadState.Updating then
+		arg0_4.live2dTimer = Timer.New(function()
+			local var0_5 = arg0_4.manager:CheckF(arg1_4)
 
-			arg0:Update(arg3, var0 == DownloadState.UpdateSuccess and true or arg4)
+			arg0_4:Update(arg3_4, var0_5 == DownloadState.UpdateSuccess and true or arg4_4)
 		end, 0.5, 1)
 
-		arg0.live2dTimer:Start()
+		arg0_4.live2dTimer:Start()
 	end
 end
 
-function var0.OnCheckToUpdate(arg0, arg1)
-	setActive(arg0.live2dBtn, true)
-	setActive(arg0.live2dState, false)
-	setActive(arg0.live2dToggle, true)
-	setActive(arg0.live2dOn, false)
-	setActive(arg0.live2dOff, true)
-	onButton(arg0, arg0.live2dBtn, function()
-		VersionMgr.Inst:RequestUIForUpdateF("L2D", arg1, true)
+function var0_0.OnCheckToUpdate(arg0_6, arg1_6)
+	setActive(arg0_6.live2dBtn, true)
+	setActive(arg0_6.live2dState, false)
+	setActive(arg0_6.live2dToggle, true)
+	setActive(arg0_6.live2dOn, false)
+	setActive(arg0_6.live2dOff, true)
+	onButton(arg0_6, arg0_6.live2dBtn, function()
+		VersionMgr.Inst:RequestUIForUpdateF("L2D", arg1_6, true)
 	end, SFX_PANEL)
 end
 
-function var0.OnUpdating(arg0)
-	setActive(arg0.live2dBtn, true)
-	setActive(arg0.live2dToggle, false)
-	setActive(arg0.live2dState, true)
-	removeOnButton(arg0.live2dBtn)
+function var0_0.OnUpdating(arg0_8)
+	setActive(arg0_8.live2dBtn, true)
+	setActive(arg0_8.live2dToggle, false)
+	setActive(arg0_8.live2dState, true)
+	removeOnButton(arg0_8.live2dBtn)
 end
 
-function var0.OnUpdated(arg0, arg1, arg2)
-	local var0 = checkABExist(arg1)
+function var0_0.OnUpdated(arg0_9, arg1_9, arg2_9)
+	local var0_9 = checkABExist(arg1_9)
 
-	setActive(arg0.live2dBtn, var0)
-	setActive(arg0.live2dState, false)
-	setActive(arg0.live2dToggle, true)
-	setActive(arg0.live2dOn, arg2)
-	setActive(arg0.live2dOff, not arg2)
-	onButton(arg0, arg0.live2dBtn, function()
-		arg0:Update(arg0.paintingName, not arg0.isOn)
+	setActive(arg0_9.live2dBtn, var0_9)
+	setActive(arg0_9.live2dState, false)
+	setActive(arg0_9.live2dToggle, true)
+	setActive(arg0_9.live2dOn, arg2_9)
+	setActive(arg0_9.live2dOff, not arg2_9)
+	onButton(arg0_9, arg0_9.live2dBtn, function()
+		arg0_9:Update(arg0_9.paintingName, not arg0_9.isOn)
 	end, SFX_PANEL)
 
-	if arg0.callback then
-		arg0.callback(arg0.isOn)
+	if arg0_9.callback then
+		arg0_9.callback(arg0_9.isOn)
 	end
 end
 
-function var0.Disable(arg0)
-	if arg0.isOn then
-		triggerButton(arg0.live2dBtn)
+function var0_0.Disable(arg0_11)
+	if arg0_11.isOn then
+		triggerButton(arg0_11.live2dBtn)
 	end
 end
 
-function var0.SetEnable(arg0, arg1)
-	setButtonEnabled(arg0.live2dBtn, arg1)
+function var0_0.SetEnable(arg0_12, arg1_12)
+	setButtonEnabled(arg0_12.live2dBtn, arg1_12)
 end
 
-function var0.AddListener(arg0, arg1)
-	arg0.callback = arg1
+function var0_0.AddListener(arg0_13, arg1_13)
+	arg0_13.callback = arg1_13
 end
 
-function var0.Dispose(arg0)
-	arg0.callback = nil
+function var0_0.Dispose(arg0_14)
+	arg0_14.callback = nil
 
-	arg0:RemoveTimer()
-	pg.DelegateInfo.Dispose(arg0)
+	arg0_14:RemoveTimer()
+	pg.DelegateInfo.Dispose(arg0_14)
 end
 
-return var0
+return var0_0

@@ -1,39 +1,39 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleBuffSetBattleUnitType = class("BattleBuffSetBattleUnitType", var0.Battle.BattleBuffEffect)
-var0.Battle.BattleBuffSetBattleUnitType.__name = "BattleBuffSetBattleUnitType"
+var0_0.Battle.BattleBuffSetBattleUnitType = class("BattleBuffSetBattleUnitType", var0_0.Battle.BattleBuffEffect)
+var0_0.Battle.BattleBuffSetBattleUnitType.__name = "BattleBuffSetBattleUnitType"
 
-local var1 = var0.Battle.BattleBuffSetBattleUnitType
-local var2 = var0.Battle.BattleAttr
+local var1_0 = var0_0.Battle.BattleBuffSetBattleUnitType
+local var2_0 = var0_0.Battle.BattleAttr
 
-var1.FX_TYPE = var0.Battle.BattleBuffEffect.FX_TTPE_MOD_BATTLE_UNIT_TYPE
-var1.ATTR_KEY = "battle_unit_type"
+var1_0.FX_TYPE = var0_0.Battle.BattleBuffEffect.FX_TTPE_MOD_BATTLE_UNIT_TYPE
+var1_0.ATTR_KEY = "battle_unit_type"
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.GetEffectType(arg0)
-	return var1.FX_TYPE
+function var1_0.GetEffectType(arg0_2)
+	return var1_0.FX_TYPE
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	arg0._value = arg0._tempData.arg_list.value
+function var1_0.SetArgs(arg0_3, arg1_3, arg2_3)
+	arg0_3._value = arg0_3._tempData.arg_list.value
 end
 
-function var1.onAttach(arg0, arg1, arg2)
-	var2.SetCurrent(arg1, var1.ATTR_KEY, arg0._value)
-	arg0.flash(arg1)
+function var1_0.onAttach(arg0_4, arg1_4, arg2_4)
+	var2_0.SetCurrent(arg1_4, var1_0.ATTR_KEY, arg0_4._value)
+	arg0_4.flash(arg1_4)
 end
 
-function var1.onRemove(arg0, arg1, arg2)
-	var2.SetCurrent(arg1, var1.ATTR_KEY, nil)
-	arg0.flash(arg1)
+function var1_0.onRemove(arg0_5, arg1_5, arg2_5)
+	var2_0.SetCurrent(arg1_5, var1_0.ATTR_KEY, nil)
+	arg0_5.flash(arg1_5)
 end
 
-function var1.flash(arg0)
-	arg0:UpdateBlindInvisibleBySpectre()
-	var0.Battle.BattleDataProxy.GetInstance():SwitchSpectreUnit(arg0)
+function var1_0.flash(arg0_6)
+	arg0_6:UpdateBlindInvisibleBySpectre()
+	var0_0.Battle.BattleDataProxy.GetInstance():SwitchSpectreUnit(arg0_6)
 end

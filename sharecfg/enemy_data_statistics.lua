@@ -21636,32 +21636,32 @@ pg.enemy_data_statistics = {
 }
 
 setmetatable(pg.enemy_data_statistics, {
-	__index = function(arg0, arg1)
-		local var0 = pg.enemy_data_statistics.indexs[arg1]
+	__index = function(arg0_1, arg1_1)
+		local var0_1 = pg.enemy_data_statistics.indexs[arg1_1]
 
-		if var0 == nil then
+		if var0_1 == nil then
 			return nil
 		end
 
-		local var1 = pg.enemy_data_statistics.subList[var0]
+		local var1_1 = pg.enemy_data_statistics.subList[var0_1]
 
-		if pg[var1] == nil then
-			require("ShareCfg.enemy_data_statistics_subList." .. var1)
+		if pg[var1_1] == nil then
+			require("ShareCfg.enemy_data_statistics_subList." .. var1_1)
 		end
 
-		local var2 = pg[var1][arg1]
-		local var3 = rawget(var2, "base")
+		local var2_1 = pg[var1_1][arg1_1]
+		local var3_1 = rawget(var2_1, "base")
 
-		if var3 ~= nil then
-			rawset(var2, "base", nil)
+		if var3_1 ~= nil then
+			rawset(var2_1, "base", nil)
 
-			local var4 = arg0[var3]
+			local var4_1 = arg0_1[var3_1]
 
-			setmetatable(var2, {
-				__index = var4
+			setmetatable(var2_1, {
+				__index = var4_1
 			})
 		end
 
-		return var2
+		return var2_1
 	end
 })

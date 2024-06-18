@@ -1,29 +1,29 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("BattleSkillPhaseJump", var0.Battle.BattleSkillEffect)
+local var0_0 = ys
+local var1_0 = class("BattleSkillPhaseJump", var0_0.Battle.BattleSkillEffect)
 
-var0.Battle.BattleSkillPhaseJump = var1
-var1.__name = "BattleSkillPhaseJump"
+var0_0.Battle.BattleSkillPhaseJump = var1_0
+var1_0.__name = "BattleSkillPhaseJump"
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1, lv)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1, lv)
 
-	arg0._phaseIndex = arg0._tempData.arg_list.index or 0
+	arg0_1._phaseIndex = arg0_1._tempData.arg_list.index or 0
 end
 
-function var1.DoDataEffect(arg0, arg1)
-	arg0:doJump(arg1)
+function var1_0.DoDataEffect(arg0_2, arg1_2)
+	arg0_2:doJump(arg1_2)
 end
 
-function var1.DoDataEffectWithoutTarget(arg0, arg1)
-	arg0:doJump(arg1)
+function var1_0.DoDataEffectWithoutTarget(arg0_3, arg1_3)
+	arg0_3:doJump(arg1_3)
 end
 
-function var1.doJump(arg0, arg1)
-	local var0 = arg1:GetPhaseSwitcher()
+function var1_0.doJump(arg0_4, arg1_4)
+	local var0_4 = arg1_4:GetPhaseSwitcher()
 
-	if var0 then
-		var0:ForceSwitch(arg0._phaseIndex)
+	if var0_4 then
+		var0_4:ForceSwitch(arg0_4._phaseIndex)
 	end
 end

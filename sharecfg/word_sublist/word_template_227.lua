@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_227 = {}
+var0_0.word_template_227 = {}
 
-local var1 = var0.word_template_227
+local var1_0 = var0_0.word_template_227
 
 function temp()
-	var1.仆 = {
+	var1_0.仆 = {
 		街 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.蒲 = {
+	var1_0.蒲 = {
 		公 = {
 			英 = {
 				方 = {
@@ -35,7 +35,7 @@ end
 temp()
 
 function temp()
-	var1.朴 = {
+	var1_0.朴 = {
 		槿 = {
 			惠 = {
 				this = true
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.普 = {
+	var1_0.普 = {
 		布 = {
 			次 = {
 				仁 = {
@@ -88,7 +88,7 @@ end
 temp()
 
 function temp()
-	var1.七 = {
+	var1_0.七 = {
 		号 = {
 			已 = {
 				经 = {
@@ -292,7 +292,7 @@ end
 temp()
 
 function temp()
-	var1.妻 = {
+	var1_0.妻 = {
 		交 = {
 			换 = {
 				this = true
@@ -326,7 +326,7 @@ end
 temp()
 
 function temp()
-	var1.戚 = {
+	var1_0.戚 = {
 		建 = {
 			国 = {
 				this = true

@@ -1,21 +1,21 @@
-﻿local var0 = class("HololiveMedalCollectionMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("HololiveMedalCollectionMediator", import("view.base.ContextMediator"))
 
-function var0.register(arg0)
-	arg0:BindEvent()
+function var0_0.register(arg0_1)
+	arg0_1:BindEvent()
 end
 
-function var0.BindEvent(arg0)
-	arg0:bind(ActivityMediator.ON_TASK_SUBMIT, function(arg0, arg1)
-		arg0:sendNotification(GAME.SUBMIT_TASK, arg1.id)
+function var0_0.BindEvent(arg0_2)
+	arg0_2:bind(ActivityMediator.ON_TASK_SUBMIT, function(arg0_3, arg1_3)
+		arg0_2:sendNotification(GAME.SUBMIT_TASK, arg1_3.id)
 	end)
-	arg0:bind(ActivityMediator.ON_TASK_GO, function(arg0, arg1)
-		arg0:sendNotification(GAME.TASK_GO, {
-			taskVO = arg1
+	arg0_2:bind(ActivityMediator.ON_TASK_GO, function(arg0_4, arg1_4)
+		arg0_2:sendNotification(GAME.TASK_GO, {
+			taskVO = arg1_4
 		})
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_5)
 	return {
 		GAME.MEMORYBOOK_UNLOCK_DONE,
 		ActivityProxy.ACTIVITY_SHOW_AWARDS,
@@ -24,23 +24,23 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_6, arg1_6)
+	local var0_6 = arg1_6:getName()
+	local var1_6 = arg1_6:getBody()
 
-	if var0 == GAME.MEMORYBOOK_UNLOCK_DONE then
-		arg0.viewComponent:UpdateView()
-	elseif var0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
-		arg0.viewComponent:PlayStory(function()
-			arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1.awards, var1.callback)
+	if var0_6 == GAME.MEMORYBOOK_UNLOCK_DONE then
+		arg0_6.viewComponent:UpdateView()
+	elseif var0_6 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
+		arg0_6.viewComponent:PlayStory(function()
+			arg0_6.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_6.awards, var1_6.callback)
 		end)
-	elseif var0 == GAME.SUBMIT_TASK_DONE then
-		arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1, function()
-			arg0.viewComponent:UpdateView()
+	elseif var0_6 == GAME.SUBMIT_TASK_DONE then
+		arg0_6.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_6, function()
+			arg0_6.viewComponent:UpdateView()
 		end)
-	elseif var0 == ActivityProxy.ACTIVITY_OPERATION_DONE then
-		arg0.viewComponent:UpdateView()
+	elseif var0_6 == ActivityProxy.ACTIVITY_OPERATION_DONE then
+		arg0_6.viewComponent:UpdateView()
 	end
 end
 
-return var0
+return var0_0

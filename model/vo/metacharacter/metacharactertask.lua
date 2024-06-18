@@ -1,74 +1,74 @@
-﻿local var0 = class("MetaCharacterTask")
+﻿local var0_0 = class("MetaCharacterTask")
 
-var0.STATE_EMPTY = 1
-var0.STATE_START = 2
-var0.STATE_FINISHED = 3
-var0.STATE_SUBMITED = 4
+var0_0.STATE_EMPTY = 1
+var0_0.STATE_START = 2
+var0_0.STATE_FINISHED = 3
+var0_0.STATE_SUBMITED = 4
 
-function var0.Ctor(arg0, arg1)
-	arg0.taskId = arg1.taskId
-	arg0.star = arg1.star
-	arg0.level = arg1.level
-	arg0.skillId = arg1.skillId
-	arg0.isLearned = false
-	arg0.prevTask = arg1.prev
-	arg0.indexOfTaskList = arg1.indexofList
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.taskId = arg1_1.taskId
+	arg0_1.star = arg1_1.star
+	arg0_1.level = arg1_1.level
+	arg0_1.skillId = arg1_1.skillId
+	arg0_1.isLearned = false
+	arg0_1.prevTask = arg1_1.prev
+	arg0_1.indexOfTaskList = arg1_1.indexofList
 end
 
-function var0.setIsLearned(arg0)
-	arg0.isLearned = true
+function var0_0.setIsLearned(arg0_2)
+	arg0_2.isLearned = true
 end
 
-function var0.isLearnedTask(arg0)
-	return arg0.isLearned
+function var0_0.isLearnedTask(arg0_3)
+	return arg0_3.isLearned
 end
 
-function var0.CanFetch(arg0, arg1)
-	local var0 = arg1:getConfig("star")
-	local var1 = arg1.level
+function var0_0.CanFetch(arg0_4, arg1_4)
+	local var0_4 = arg1_4:getConfig("star")
+	local var1_4 = arg1_4.level
 
-	return var0 >= arg0.star and var1 >= arg0.level
+	return var0_4 >= arg0_4.star and var1_4 >= arg0_4.level
 end
 
-function var0.GetTask(arg0)
-	if arg0:isLearnedTask() then
+function var0_0.GetTask(arg0_5)
+	if arg0_5:isLearnedTask() then
 		return Task.New({
 			submitTime = 1,
-			id = arg0.taskId
+			id = arg0_5.taskId
 		})
 	else
-		return getProxy(TaskProxy):getTaskById(arg0.taskId) or Task.New({
-			id = arg0.taskId
+		return getProxy(TaskProxy):getTaskById(arg0_5.taskId) or Task.New({
+			id = arg0_5.taskId
 		})
 	end
 end
 
-function var0.GetDesc(arg0)
-	local var0 = pg.skill_data_template[arg0.skillId]
+function var0_0.GetDesc(arg0_6)
+	local var0_6 = pg.skill_data_template[arg0_6.skillId]
 
-	if arg0.isLearned then
-		return i18n("meta_learn_skill", var0.name)
+	if arg0_6.isLearned then
+		return i18n("meta_learn_skill", var0_6.name)
 	else
-		return i18n1(var0.name .. "Lv+1")
+		return i18n1(var0_6.name .. "Lv+1")
 	end
 end
 
-function var0.GetState(arg0)
-	local var0 = getProxy(TaskProxy):getTaskVO(arg0.taskId)
+function var0_0.GetState(arg0_7)
+	local var0_7 = getProxy(TaskProxy):getTaskVO(arg0_7.taskId)
 
-	if not var0 then
-		if arg0:isLearnedTask() then
+	if not var0_7 then
+		if arg0_7:isLearnedTask() then
 			return MetaCharacterTask.STATE_SUBMITED
 		else
 			return MetaCharacterTask.STATE_EMPTY
 		end
 	else
-		local var1 = var0:isFinish()
-		local var2 = var0:isReceive()
+		local var1_7 = var0_7:isFinish()
+		local var2_7 = var0_7:isReceive()
 
-		if var1 and var2 then
+		if var1_7 and var2_7 then
 			return MetaCharacterTask.STATE_SUBMITED
-		elseif var1 and not var2 then
+		elseif var1_7 and not var2_7 then
 			return MetaCharacterTask.STATE_FINISHED
 		else
 			return MetaCharacterTask.STATE_START
@@ -76,4 +76,4 @@ function var0.GetState(arg0)
 	end
 end
 
-return var0
+return var0_0

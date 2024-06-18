@@ -1,7 +1,7 @@
-﻿local var0 = class("SecondSummaryPage1", import(".SummaryAnimationPage"))
+﻿local var0_0 = class("SecondSummaryPage1", import(".SummaryAnimationPage"))
 
-function var0.OnInit(arg0)
+function var0_0.OnInit(arg0_1)
 	return
 end
 
-return var0
+return var0_0

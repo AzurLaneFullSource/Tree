@@ -1,7 +1,7 @@
-﻿local var0 = class("DexiV5PtPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var0_0 = class("DexiV5PtPage", import(".TemplatePage.PtTemplatePage"))
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
+function var0_0.OnUpdateFlush(arg0_1)
+	var0_0.super.OnUpdateFlush(arg0_1)
 end
 
-return var0
+return var0_0

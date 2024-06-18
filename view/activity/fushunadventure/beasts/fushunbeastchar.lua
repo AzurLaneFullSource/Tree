@@ -1,175 +1,175 @@
-﻿local var0 = class("FushunBeastChar")
+﻿local var0_0 = class("FushunBeastChar")
 
-function var0.Ctor(arg0, arg1, arg2, arg3, arg4)
-	arg0._go = arg1
-	arg0._tf = arg1.transform
-	arg0.index = arg2
-	arg0.template_id = arg3.id
-	arg0.name = arg3.name
-	arg0.dir = -1
-	arg0.maxHp = arg3.hp
-	arg0.hp = arg3.hp
-	arg0.attackDistance = arg3.attackDistance
-	arg0.score = arg3.score
-	arg0.energyScore = arg3.energyScore
-	arg0.escape = false
-	arg0.freeze = false
-	arg0.attacking = false
-	arg0.animator = arg0._go:GetComponent(typeof(Animator))
-	arg0.animatorEvent = arg0._go:GetComponent(typeof(DftAniEvent))
-	arg0.collider2D = arg0._tf:GetComponent(typeof(UnityEngine.Collider2D))
-	arg0.effectCollider2D = arg0._tf:Find("effect"):GetComponent(typeof(UnityEngine.Collider2D))
-	arg0.hpBar = UIItemList.New(arg1.transform:Find("hp"), arg1.transform:Find("hp/tpl"))
-	arg0.fushunLoader = arg4
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
+	arg0_1._go = arg1_1
+	arg0_1._tf = arg1_1.transform
+	arg0_1.index = arg2_1
+	arg0_1.template_id = arg3_1.id
+	arg0_1.name = arg3_1.name
+	arg0_1.dir = -1
+	arg0_1.maxHp = arg3_1.hp
+	arg0_1.hp = arg3_1.hp
+	arg0_1.attackDistance = arg3_1.attackDistance
+	arg0_1.score = arg3_1.score
+	arg0_1.energyScore = arg3_1.energyScore
+	arg0_1.escape = false
+	arg0_1.freeze = false
+	arg0_1.attacking = false
+	arg0_1.animator = arg0_1._go:GetComponent(typeof(Animator))
+	arg0_1.animatorEvent = arg0_1._go:GetComponent(typeof(DftAniEvent))
+	arg0_1.collider2D = arg0_1._tf:GetComponent(typeof(UnityEngine.Collider2D))
+	arg0_1.effectCollider2D = arg0_1._tf:Find("effect"):GetComponent(typeof(UnityEngine.Collider2D))
+	arg0_1.hpBar = UIItemList.New(arg1_1.transform:Find("hp"), arg1_1.transform:Find("hp/tpl"))
+	arg0_1.fushunLoader = arg4_1
 
-	arg0:MakeHpBar()
+	arg0_1:MakeHpBar()
 end
 
-function var0.MakeHpBar(arg0)
-	setActive(arg0.hpBar.container, true)
-	arg0.hpBar:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			setActive(arg2:Find("mark"), arg1 < arg0.hp)
+function var0_0.MakeHpBar(arg0_2)
+	setActive(arg0_2.hpBar.container, true)
+	arg0_2.hpBar:make(function(arg0_3, arg1_3, arg2_3)
+		if arg0_3 == UIItemList.EventUpdate then
+			setActive(arg2_3:Find("mark"), arg1_3 < arg0_2.hp)
 		end
 	end)
-	arg0.hpBar:align(arg0.maxHp)
+	arg0_2.hpBar:align(arg0_2.maxHp)
 end
 
-function var0.SetSpeed(arg0, arg1)
-	arg0.speed = arg1
+function var0_0.SetSpeed(arg0_4, arg1_4)
+	arg0_4.speed = arg1_4
 end
 
-function var0.SetPosition(arg0, arg1)
-	arg0._tf.localPosition = arg1
+function var0_0.SetPosition(arg0_5, arg1_5)
+	arg0_5._tf.localPosition = arg1_5
 end
 
-function var0.GetPosition(arg0)
-	return arg0._tf.localPosition
+function var0_0.GetPosition(arg0_6)
+	return arg0_6._tf.localPosition
 end
 
-function var0.GetAttackPosition(arg0)
-	return arg0._tf.localPosition - Vector3(arg0.attackDistance, 0, 0)
+function var0_0.GetAttackPosition(arg0_7)
+	return arg0_7._tf.localPosition - Vector3(arg0_7.attackDistance, 0, 0)
 end
 
-function var0.Move(arg0)
-	if arg0.attacking then
+function var0_0.Move(arg0_8)
+	if arg0_8.attacking then
 		return
 	end
 
-	arg0._tf:Translate(Vector3(-1 * arg0.speed * Time.deltaTime, 0, 0))
-	arg0.animator:SetFloat("speed", arg0.speed)
+	arg0_8._tf:Translate(Vector3(-1 * arg0_8.speed * Time.deltaTime, 0, 0))
+	arg0_8.animator:SetFloat("speed", arg0_8.speed)
 end
 
-function var0.Attack(arg0)
-	arg0.animatorEvent:SetEndEvent(nil)
-	arg0.animatorEvent:SetEndEvent(function()
-		arg0.attacking = false
+function var0_0.Attack(arg0_9)
+	arg0_9.animatorEvent:SetEndEvent(nil)
+	arg0_9.animatorEvent:SetEndEvent(function()
+		arg0_9.attacking = false
 
-		arg0:Unfreeze()
-		arg0:Die()
+		arg0_9:Unfreeze()
+		arg0_9:Die()
 	end)
-	arg0.animatorEvent:SetTriggerEvent(nil)
-	arg0.animatorEvent:SetTriggerEvent(function()
-		setActive(arg0.hpBar.container, false)
+	arg0_9.animatorEvent:SetTriggerEvent(nil)
+	arg0_9.animatorEvent:SetTriggerEvent(function()
+		setActive(arg0_9.hpBar.container, false)
 	end)
 
-	arg0.attacking = true
+	arg0_9.attacking = true
 
-	arg0.animator:SetTrigger("attack")
+	arg0_9.animator:SetTrigger("attack")
 end
 
-function var0.OnHit(arg0)
-	arg0.escape = true
+function var0_0.OnHit(arg0_12)
+	arg0_12.escape = true
 
-	arg0:Freeze()
+	arg0_12:Freeze()
 end
 
-function var0.IsEscape(arg0)
-	return arg0.escape
+function var0_0.IsEscape(arg0_13)
+	return arg0_13.escape
 end
 
-function var0.Die(arg0)
-	arg0:UpdateHp(0)
+function var0_0.Die(arg0_14)
+	arg0_14:UpdateHp(0)
 end
 
-function var0.Hurt(arg0, arg1)
-	if arg0:IsDeath() or arg0:IsEscape() then
+function var0_0.Hurt(arg0_15, arg1_15)
+	if arg0_15:IsDeath() or arg0_15:IsEscape() then
 		return
 	end
 
-	arg0:UpdateHp(arg0.hp - arg1)
+	arg0_15:UpdateHp(arg0_15.hp - arg1_15)
 end
 
-function var0.UpdateHp(arg0, arg1)
-	arg0.hp = math.max(arg1, 0)
+function var0_0.UpdateHp(arg0_16, arg1_16)
+	arg0_16.hp = math.max(arg1_16, 0)
 
-	arg0.hpBar:align(arg0.maxHp)
+	arg0_16.hpBar:align(arg0_16.maxHp)
 end
 
-function var0.IsFreeze(arg0)
-	return arg0.freeze
+function var0_0.IsFreeze(arg0_17)
+	return arg0_17.freeze
 end
 
-function var0.Freeze(arg0)
-	arg0.freeze = true
+function var0_0.Freeze(arg0_18)
+	arg0_18.freeze = true
 end
 
-function var0.Unfreeze(arg0)
-	arg0.freeze = false
+function var0_0.Unfreeze(arg0_19)
+	arg0_19.freeze = false
 end
 
-function var0.IsDeath(arg0)
-	return arg0.hp <= 0
+function var0_0.IsDeath(arg0_20)
+	return arg0_20.hp <= 0
 end
 
-function var0.WillDeath(arg0)
-	return arg0:IsDeath() or arg0:IsEscape()
+function var0_0.WillDeath(arg0_21)
+	return arg0_21:IsDeath() or arg0_21:IsEscape()
 end
 
-function var0.GetHp(arg0)
-	return arg0.hp
+function var0_0.GetHp(arg0_22)
+	return arg0_22.hp
 end
 
-function var0.Vanish(arg0)
-	if arg0.vanish then
+function var0_0.Vanish(arg0_23)
+	if arg0_23.vanish then
 		return
 	end
 
-	if arg0:IsEscape() then
-		arg0:Dispose()
+	if arg0_23:IsEscape() then
+		arg0_23:Dispose()
 	else
-		arg0.vanish = true
+		arg0_23.vanish = true
 
-		arg0.animatorEvent:SetEndEvent(nil)
-		arg0.animatorEvent:SetEndEvent(function()
-			arg0:Dispose()
+		arg0_23.animatorEvent:SetEndEvent(nil)
+		arg0_23.animatorEvent:SetEndEvent(function()
+			arg0_23:Dispose()
 		end)
-		arg0.animator:SetTrigger("vanish")
+		arg0_23.animator:SetTrigger("vanish")
 	end
 
-	setActive(arg0.hpBar.container, false)
+	setActive(arg0_23.hpBar.container, false)
 end
 
-function var0.GetScore(arg0)
-	return arg0.score
+function var0_0.GetScore(arg0_25)
+	return arg0_25.score
 end
 
-function var0.GetEnergyScore(arg0)
-	return arg0.energyScore
+function var0_0.GetEnergyScore(arg0_26)
+	return arg0_26.energyScore
 end
 
-function var0.GetMaxHp(arg0)
-	return arg0.maxHp
+function var0_0.GetMaxHp(arg0_27)
+	return arg0_27.maxHp
 end
 
-function var0.Dispose(arg0)
-	arg0.animatorEvent:SetTriggerEvent(nil)
-	arg0.animatorEvent:SetEndEvent(nil)
-	arg0.fushunLoader:ReturnPrefab("FushunAdventure/" .. arg0.name, "", arg0._go, false)
+function var0_0.Dispose(arg0_28)
+	arg0_28.animatorEvent:SetTriggerEvent(nil)
+	arg0_28.animatorEvent:SetEndEvent(nil)
+	arg0_28.fushunLoader:ReturnPrefab("FushunAdventure/" .. arg0_28.name, "", arg0_28._go, false)
 
-	arg0._go = nil
-	arg0._tf = nil
-	arg0.animator = nil
+	arg0_28._go = nil
+	arg0_28._tf = nil
+	arg0_28.animator = nil
 end
 
-return var0
+return var0_0

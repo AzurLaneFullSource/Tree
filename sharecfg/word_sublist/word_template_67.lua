@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_67 = {}
+var0_0.word_template_67 = {}
 
-local var1 = var0.word_template_67
+local var1_0 = var0_0.word_template_67
 
 function temp()
-	var1.傺 = {
+	var1_0.傺 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.瘛 = {
+	var1_0.瘛 = {
 		this = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.冲 = {
+	var1_0.冲 = {
 		杯 = {
 			三 = {
 				鹿 = {
@@ -155,7 +155,7 @@ end
 temp()
 
 function temp()
-	var1.充 = {
+	var1_0.充 = {
 		气 = {
 			人 = {
 				this = true
@@ -177,7 +177,7 @@ end
 temp()
 
 function temp()
-	var1.舂 = {
+	var1_0.舂 = {
 		this = {
 			this = true
 		}
@@ -187,7 +187,7 @@ end
 temp()
 
 function temp()
-	var1.艟 = {
+	var1_0.艟 = {
 		this = {
 			this = true
 		}
@@ -197,7 +197,7 @@ end
 temp()
 
 function temp()
-	var1.抽 = {
+	var1_0.抽 = {
 		叉 = {
 			this = true
 		},

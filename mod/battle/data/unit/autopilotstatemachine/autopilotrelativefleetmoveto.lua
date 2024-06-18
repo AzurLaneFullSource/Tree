@@ -1,59 +1,59 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("AutoPilotRelativeFleetMoveTo", var0.Battle.IPilot)
+local var0_0 = ys
+local var1_0 = class("AutoPilotRelativeFleetMoveTo", var0_0.Battle.IPilot)
 
-var0.Battle.AutoPilotRelativeFleetMoveTo = var1
-var1.__name = "AutoPilotRelativeFleetMoveTo"
+var0_0.Battle.AutoPilotRelativeFleetMoveTo = var1_0
+var1_0.__name = "AutoPilotRelativeFleetMoveTo"
 
-function var1.Ctor(arg0, ...)
-	var1.super.Ctor(arg0, ...)
+function var1_0.Ctor(arg0_1, ...)
+	var1_0.super.Ctor(arg0_1, ...)
 end
 
-function var1.SetParameter(arg0, arg1, arg2)
-	var1.super.SetParameter(arg0, arg1, arg2)
+function var1_0.SetParameter(arg0_2, arg1_2, arg2_2)
+	var1_0.super.SetParameter(arg0_2, arg1_2, arg2_2)
 
-	arg0._offsetX = arg1.offsetX
-	arg0._offsetZ = arg1.offsetZ
-	arg0._fixX = arg1.X
-	arg0._fixZ = arg1.Z
-	arg0._targetFleetVO = var0.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(var0.Battle.BattleConfig.FRIENDLY_CODE)
+	arg0_2._offsetX = arg1_2.offsetX
+	arg0_2._offsetZ = arg1_2.offsetZ
+	arg0_2._fixX = arg1_2.X
+	arg0_2._fixZ = arg1_2.Z
+	arg0_2._targetFleetVO = var0_0.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(var0_0.Battle.BattleConfig.FRIENDLY_CODE)
 end
 
-function var1.GetDirection(arg0, arg1)
-	if arg0:IsExpired() then
-		arg0:Finish()
+function var1_0.GetDirection(arg0_3, arg1_3)
+	if arg0_3:IsExpired() then
+		arg0_3:Finish()
 
 		return Vector3.zero
 	end
 
-	local var0
-	local var1
-	local var2 = arg0._targetFleetVO:GetMotion():GetPos()
+	local var0_3
+	local var1_3
+	local var2_3 = arg0_3._targetFleetVO:GetMotion():GetPos()
 
-	if arg0._offsetX then
-		var0 = var2.x + arg0._offsetX
-	elseif arg0._fixX then
-		var0 = arg0._fixX
+	if arg0_3._offsetX then
+		var0_3 = var2_3.x + arg0_3._offsetX
+	elseif arg0_3._fixX then
+		var0_3 = arg0_3._fixX
 	else
-		var0 = arg1.x
+		var0_3 = arg1_3.x
 	end
 
-	if arg0._offsetZ then
-		var1 = var2.z + arg0._offsetZ
-	elseif arg0._fixZ then
-		var1 = arg0._fixZ
+	if arg0_3._offsetZ then
+		var1_3 = var2_3.z + arg0_3._offsetZ
+	elseif arg0_3._fixZ then
+		var1_3 = arg0_3._fixZ
 	else
-		var1 = arg1.z
+		var1_3 = arg1_3.z
 	end
 
-	local var3 = Vector3.New(var0, 0, var1) - arg1
+	local var3_3 = Vector3.New(var0_3, 0, var1_3) - arg1_3
 
-	var3.y = 0
+	var3_3.y = 0
 
-	if var3.magnitude < arg0._valve then
-		var3 = Vector3.zero
+	if var3_3.magnitude < arg0_3._valve then
+		var3_3 = Vector3.zero
 	end
 
-	return var3.normalized
+	return var3_3.normalized
 end

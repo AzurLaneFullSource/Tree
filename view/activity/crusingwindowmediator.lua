@@ -1,29 +1,29 @@
-﻿local var0 = class("CrusingWindowMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("CrusingWindowMediator", import("view.base.ContextMediator"))
 
-var0.GO_CRUSING = "CrusingWindowMediator.GO_CRUSING"
+var0_0.GO_CRUSING = "CrusingWindowMediator.GO_CRUSING"
 
-function var0.register(arg0)
-	arg0:bind(var0.GO_CRUSING, function(arg0)
-		arg0.contextData.onClose = nil
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.GO_CRUSING, function(arg0_2)
+		arg0_1.contextData.onClose = nil
 
-		arg0.viewComponent:closeView()
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.CRUSING)
+		arg0_1.viewComponent:closeView()
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.CRUSING)
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_3)
 	return {}
 end
 
-function var0.remove(arg0)
-	if arg0.contextData.onClose then
-		arg0.contextData.onClose()
+function var0_0.remove(arg0_4)
+	if arg0_4.contextData.onClose then
+		arg0_4.contextData.onClose()
 	end
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_5, arg1_5)
+	local var0_5 = arg1_5:getName()
+	local var1_5 = arg1_5:getBody()
 end
 
-return var0
+return var0_0

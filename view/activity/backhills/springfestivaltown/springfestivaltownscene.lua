@@ -1,183 +1,183 @@
-﻿local var0 = class("SpringFestivalTownScene", import("..TemplateMV.BackHillTemplate"))
+﻿local var0_0 = class("SpringFestivalTownScene", import("..TemplateMV.BackHillTemplate"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "SpringFestivalTownUI"
 end
 
-function var0.getBGM(arg0)
+function var0_0.getBGM(arg0_2)
 	return "story-china"
 end
 
-var0.HUB_ID = 5
-var0.edge2area = {
+var0_0.HUB_ID = 5
+var0_0.edge2area = {
 	default = "_middle",
 	["9_9"] = "_bottom",
 	["4_4"] = "_front"
 }
 
-function var0.init(arg0)
-	arg0.top = arg0:findTF("top")
-	arg0._closeBtn = arg0:findTF("top/return_btn")
-	arg0._homeBtn = arg0:findTF("top/return_main_btn")
-	arg0._helpBtn = arg0:findTF("top/help_btn")
-	arg0._map = arg0:findTF("map")
+function var0_0.init(arg0_3)
+	arg0_3.top = arg0_3:findTF("top")
+	arg0_3._closeBtn = arg0_3:findTF("top/return_btn")
+	arg0_3._homeBtn = arg0_3:findTF("top/return_main_btn")
+	arg0_3._helpBtn = arg0_3:findTF("top/help_btn")
+	arg0_3._map = arg0_3:findTF("map")
 
-	for iter0 = 0, arg0._map.childCount - 1 do
-		local var0 = arg0._map:GetChild(iter0)
-		local var1 = go(var0).name
+	for iter0_3 = 0, arg0_3._map.childCount - 1 do
+		local var0_3 = arg0_3._map:GetChild(iter0_3)
+		local var1_3 = go(var0_3).name
 
-		arg0["_" .. var1] = var0
+		arg0_3["_" .. var1_3] = var0_3
 	end
 
-	arg0._front = arg0._map:Find("top")
-	arg0._middle = arg0._map:Find("middle")
-	arg0._bottom = arg0._map:Find("bottom")
-	arg0.containers = {
-		arg0._front,
-		arg0._middle,
-		arg0._bottom
+	arg0_3._front = arg0_3._map:Find("top")
+	arg0_3._middle = arg0_3._map:Find("middle")
+	arg0_3._bottom = arg0_3._map:Find("bottom")
+	arg0_3.containers = {
+		arg0_3._front,
+		arg0_3._middle,
+		arg0_3._bottom
 	}
-	arg0._shipTpl = arg0._map:Find("ship")
-	arg0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.SpringFestivalTownGraph"))
-	arg0._upper = arg0:findTF("upper")
-	arg0.usableTxt = arg0.top:Find("usable_count/Text"):GetComponent(typeof(Text))
-	arg0.diedieleTF = arg0.top:Find("diediele_count")
-	arg0.diedieleTxt = arg0.diedieleTF:Find("Text"):GetComponent(typeof(Text))
-	arg0.effectReq = LoadPrefabRequestPackage.New("ui/map_donghuangchunjie", "map_donghuangchunjie", function(arg0)
-		setParent(arg0, arg0._map, false)
+	arg0_3._shipTpl = arg0_3._map:Find("ship")
+	arg0_3.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.SpringFestivalTownGraph"))
+	arg0_3._upper = arg0_3:findTF("upper")
+	arg0_3.usableTxt = arg0_3.top:Find("usable_count/Text"):GetComponent(typeof(Text))
+	arg0_3.diedieleTF = arg0_3.top:Find("diediele_count")
+	arg0_3.diedieleTxt = arg0_3.diedieleTF:Find("Text"):GetComponent(typeof(Text))
+	arg0_3.effectReq = LoadPrefabRequestPackage.New("ui/map_donghuangchunjie", "map_donghuangchunjie", function(arg0_4)
+		setParent(arg0_4, arg0_3._map, false)
 
-		local var0 = GameObject.Find("UICamera/Canvas"):GetComponent(typeof(Canvas)).sortingOrder
-		local var1 = arg0:GetComponentsInChildren(typeof(Renderer))
+		local var0_4 = GameObject.Find("UICamera/Canvas"):GetComponent(typeof(Canvas)).sortingOrder
+		local var1_4 = arg0_4:GetComponentsInChildren(typeof(Renderer))
 
-		for iter0 = 0, var1.Length - 1 do
-			var1[iter0].sortingOrder = var0 + 1
+		for iter0_4 = 0, var1_4.Length - 1 do
+			var1_4[iter0_4].sortingOrder = var0_4 + 1
 		end
 
-		arg0.mapeffect = arg0
+		arg0_3.mapeffect = arg0_4
 	end):Start()
 
-	arg0:managedTween(LeanTween.value, nil, go(arg0._map), System.Action_UnityEngine_Color(function(arg0)
-		go(arg0._map):GetComponent(typeof(Image)).material:SetColor("_Color", arg0)
+	arg0_3:managedTween(LeanTween.value, nil, go(arg0_3._map), System.Action_UnityEngine_Color(function(arg0_5)
+		go(arg0_3._map):GetComponent(typeof(Image)).material:SetColor("_Color", arg0_5)
 	end), Color(0, 0, 0, 0), Color(1, 1, 0, 0), 1.5):setLoopPingPong(-1)
 end
 
-function var0.didEnter(arg0)
-	local var0 = getProxy(MiniGameProxy)
+function var0_0.didEnter(arg0_6)
+	local var0_6 = getProxy(MiniGameProxy)
 
-	onButton(arg0, arg0._closeBtn, function()
-		arg0:emit(var0.ON_BACK)
+	onButton(arg0_6, arg0_6._closeBtn, function()
+		arg0_6:emit(var0_0.ON_BACK)
 	end)
-	onButton(arg0, arg0.diedieleTF, function()
-		arg0:emit(NewYearFestivalMediator.ON_OPEN_PILE_SIGNED)
+	onButton(arg0_6, arg0_6.diedieleTF, function()
+		arg0_6:emit(NewYearFestivalMediator.ON_OPEN_PILE_SIGNED)
 	end)
-	onButton(arg0, arg0._homeBtn, function()
-		arg0:emit(var0.ON_HOME)
+	onButton(arg0_6, arg0_6._homeBtn, function()
+		arg0_6:emit(var0_0.ON_HOME)
 	end)
-	onButton(arg0, arg0._helpBtn, function()
+	onButton(arg0_6, arg0_6._helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_chunjie_feast.tip
 		})
 	end)
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "kaihongbao", function()
-		arg0:emit(NewYearFestivalMediator.GO_SUBLAYER, Context.New({
+	arg0_6:InitFacilityCross(arg0_6._map, arg0_6._upper, "kaihongbao", function()
+		arg0_6:emit(NewYearFestivalMediator.GO_SUBLAYER, Context.New({
 			mediator = RedPacketMediator,
 			viewComponent = RedPacketLayer,
 			onRemoved = function()
-				if arg0.mapeffect then
-					setActive(arg0.mapeffect, true)
+				if arg0_6.mapeffect then
+					setActive(arg0_6.mapeffect, true)
 				end
 			end
 		}), function()
-			if arg0.mapeffect then
-				setActive(arg0.mapeffect, false)
+			if arg0_6.mapeffect then
+				setActive(arg0_6.mapeffect, false)
 			end
 		end)
 	end)
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "danianshou", function()
-		arg0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.ACTIVITY, {
+	arg0_6:InitFacilityCross(arg0_6._map, arg0_6._upper, "danianshou", function()
+		arg0_6:emit(NewYearFestivalMediator.GO_SCENE, SCENE.ACTIVITY, {
 			id = ActivityConst.BEAT_MONSTER_NIAN_2020
 		})
 	end)
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "dafuweng", function()
-		arg0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.ACTIVITY, {
+	arg0_6:InitFacilityCross(arg0_6._map, arg0_6._upper, "dafuweng", function()
+		arg0_6:emit(NewYearFestivalMediator.GO_SCENE, SCENE.ACTIVITY, {
 			id = ActivityConst.MONOPOLY_2020
 		})
 	end)
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "diediele", function()
+	arg0_6:InitFacilityCross(arg0_6._map, arg0_6._upper, "diediele", function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 9)
 	end)
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "jianzao", function()
-		arg0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.GETBOAT, {
+	arg0_6:InitFacilityCross(arg0_6._map, arg0_6._upper, "jianzao", function()
+		arg0_6:emit(NewYearFestivalMediator.GO_SCENE, SCENE.GETBOAT, {
 			projectName = "new",
 			page = 1
 		})
 	end)
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "sishu", function()
-		arg0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.COLORING)
+	arg0_6:InitFacilityCross(arg0_6._map, arg0_6._upper, "sishu", function()
+		arg0_6:emit(NewYearFestivalMediator.GO_SCENE, SCENE.COLORING)
 	end)
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "pifushangdian", function()
-		arg0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.SKINSHOP)
+	arg0_6:InitFacilityCross(arg0_6._map, arg0_6._upper, "pifushangdian", function()
+		arg0_6:emit(NewYearFestivalMediator.GO_SCENE, SCENE.SKINSHOP)
 	end)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0.top, false)
-	arg0:InitStudents(ActivityConst.ACTIVITY_478, 3, 5)
-	arg0:UpdateView()
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_6.top, false)
+	arg0_6:InitStudents(ActivityConst.ACTIVITY_478, 3, 5)
+	arg0_6:UpdateView()
 end
 
-function var0.UpdateView(arg0)
-	local var0
-	local var1
-	local var2 = getProxy(ActivityProxy)
-	local var3 = getProxy(MiniGameProxy)
-	local var4 = arg0._upper:Find("danianshou/tip")
-	local var5 = var2:getActivityById(ActivityConst.BEAT_MONSTER_NIAN_2020)
+function var0_0.UpdateView(arg0_20)
+	local var0_20
+	local var1_20
+	local var2_20 = getProxy(ActivityProxy)
+	local var3_20 = getProxy(MiniGameProxy)
+	local var4_20 = arg0_20._upper:Find("danianshou/tip")
+	local var5_20 = var2_20:getActivityById(ActivityConst.BEAT_MONSTER_NIAN_2020)
 
-	setActive(var4, var5 and var5:readyToAchieve())
+	setActive(var4_20, var5_20 and var5_20:readyToAchieve())
 
-	local var6 = arg0._upper:Find("dafuweng/tip")
-	local var7 = var2:getActivityById(ActivityConst.MONOPOLY_2020)
+	local var6_20 = arg0_20._upper:Find("dafuweng/tip")
+	local var7_20 = var2_20:getActivityById(ActivityConst.MONOPOLY_2020)
 
-	setActive(var6, var7 and var7:readyToAchieve())
+	setActive(var6_20, var7_20 and var7_20:readyToAchieve())
 
-	local var8 = arg0._upper:Find("sishu/tip")
+	local var8_20 = arg0_20._upper:Find("sishu/tip")
 
-	setActive(var8, getProxy(ColoringProxy):CheckTodayTip())
+	setActive(var8_20, getProxy(ColoringProxy):CheckTodayTip())
 
-	local var9 = arg0._upper:Find("jianzao/tip")
+	local var9_20 = arg0_20._upper:Find("jianzao/tip")
 
-	setActive(var9, false)
+	setActive(var9_20, false)
 
-	local var10 = arg0._upper:Find("pifushangdian/tip")
+	local var10_20 = arg0_20._upper:Find("pifushangdian/tip")
 
-	setActive(var10, false)
+	setActive(var10_20, false)
 
-	local var11 = arg0._upper:Find("kaihongbao/tip")
+	local var11_20 = arg0_20._upper:Find("kaihongbao/tip")
 
-	setActive(var11, RedPacketLayer.isShowRedPoint())
+	setActive(var11_20, RedPacketLayer.isShowRedPoint())
 
-	local var12 = var3:GetHubByHubId(arg0.HUB_ID)
-	local var13 = arg0._upper:Find("diediele/tip")
+	local var12_20 = var3_20:GetHubByHubId(arg0_20.HUB_ID)
+	local var13_20 = arg0_20._upper:Find("diediele/tip")
 
-	setActive(var13, var12.count > 0)
-	arg0:UpdateDieDieleCnt(var12)
+	setActive(var13_20, var12_20.count > 0)
+	arg0_20:UpdateDieDieleCnt(var12_20)
 end
 
-function var0.UpdateDieDieleCnt(arg0, arg1)
-	arg0.usableTxt.text = "X" .. arg1.count
-	arg0.diedieleTxt.text = arg1.usedtime .. "/" .. arg1:getConfig("reward_need")
+function var0_0.UpdateDieDieleCnt(arg0_21, arg1_21)
+	arg0_21.usableTxt.text = "X" .. arg1_21.count
+	arg0_21.diedieleTxt.text = arg1_21.usedtime .. "/" .. arg1_21:getConfig("reward_need")
 end
 
-function var0.TryPlayStory(arg0)
+function var0_0.TryPlayStory(arg0_22)
 	return
 end
 
-function var0.willExit(arg0)
-	arg0.effectReq:Stop()
+function var0_0.willExit(arg0_23)
+	arg0_23.effectReq:Stop()
 
-	arg0.mapeffect = nil
+	arg0_23.mapeffect = nil
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0.top, arg0._tf)
-	arg0:clearStudents()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_23.top, arg0_23._tf)
+	arg0_23:clearStudents()
 end
 
-return var0
+return var0_0

@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Tap the help button to check the detailed explanation"
 }
 
@@ -12,7 +12,7 @@ return {
 				mode = 2,
 				posY = -382,
 				posX = -245,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/TecSpeedUpUI(Clone)/Window/HelpBtn",

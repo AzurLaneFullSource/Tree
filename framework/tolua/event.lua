@@ -1,110 +1,110 @@
-﻿local var0 = setmetatable
-local var1 = xpcall
-local var2 = pcall
-local var3 = assert
-local var4 = rawget
-local var5 = error
-local var6 = print
-local var7 = tolua.traceback
-local var8 = ilist
-local var9 = {
-	__call = function(arg0, ...)
+﻿local var0_0 = setmetatable
+local var1_0 = xpcall
+local var2_0 = pcall
+local var3_0 = assert
+local var4_0 = rawget
+local var5_0 = error
+local var6_0 = print
+local var7_0 = tolua.traceback
+local var8_0 = ilist
+local var9_0 = {
+	__call = function(arg0_1, ...)
 		if jit then
-			if arg0.obj == nil then
-				return var1(arg0.func, var7, ...)
+			if arg0_1.obj == nil then
+				return var1_0(arg0_1.func, var7_0, ...)
 			else
-				return var1(arg0.func, var7, arg0.obj, ...)
+				return var1_0(arg0_1.func, var7_0, arg0_1.obj, ...)
 			end
 		else
-			local var0 = packEx(...)
+			local var0_1 = packEx(...)
 
-			if arg0.obj == nil then
-				local function var1()
-					arg0.func(unpackEx(var0))
+			if arg0_1.obj == nil then
+				local function var1_1()
+					arg0_1.func(unpackEx(var0_1))
 				end
 
-				return var1(var1, var7)
+				return var1_0(var1_1, var7_0)
 			else
-				local function var2()
-					arg0.func(arg0.obj, unpackEx(var0))
+				local function var2_1()
+					arg0_1.func(arg0_1.obj, unpackEx(var0_1))
 				end
 
-				return var1(var2, var7)
+				return var1_0(var2_1, var7_0)
 			end
 		end
 	end,
-	__eq = function(arg0, arg1)
-		return arg0.func == arg1.func and arg0.obj == arg1.obj
+	__eq = function(arg0_4, arg1_4)
+		return arg0_4.func == arg1_4.func and arg0_4.obj == arg1_4.obj
 	end
 }
 
-local function var10(arg0, arg1)
-	return var0({
-		func = arg0,
-		obj = arg1
-	}, var9)
+local function var10_0(arg0_5, arg1_5)
+	return var0_0({
+		func = arg0_5,
+		obj = arg1_5
+	}, var9_0)
 end
 
-local var11 = {
-	__call = function(arg0, ...)
-		if arg0.obj == nil then
-			return var2(arg0.func, ...)
+local var11_0 = {
+	__call = function(arg0_6, ...)
+		if arg0_6.obj == nil then
+			return var2_0(arg0_6.func, ...)
 		else
-			return var2(arg0.func, arg0.obj, ...)
+			return var2_0(arg0_6.func, arg0_6.obj, ...)
 		end
 	end,
-	__eq = function(arg0, arg1)
-		return arg0.func == arg1.func and arg0.obj == arg1.obj
+	__eq = function(arg0_7, arg1_7)
+		return arg0_7.func == arg1_7.func and arg0_7.obj == arg1_7.obj
 	end
 }
 
-local function var12(arg0, arg1)
-	return var0({
-		func = arg0,
-		obj = arg1
-	}, var11)
+local function var12_0(arg0_8, arg1_8)
+	return var0_0({
+		func = arg0_8,
+		obj = arg1_8
+	}, var11_0)
 end
 
-local var13 = {}
+local var13_0 = {}
 
-var13.__index = var13
+var13_0.__index = var13_0
 
-function var13.Add(arg0, arg1, arg2)
-	var3(arg1)
+function var13_0.Add(arg0_9, arg1_9, arg2_9)
+	var3_0(arg1_9)
 
-	if arg0.keepSafe then
-		arg1 = var10(arg1, arg2)
+	if arg0_9.keepSafe then
+		arg1_9 = var10_0(arg1_9, arg2_9)
 	else
-		arg1 = var12(arg1, arg2)
+		arg1_9 = var12_0(arg1_9, arg2_9)
 	end
 
-	if arg0.lock then
-		local var0 = {
+	if arg0_9.lock then
+		local var0_9 = {
 			_prev = 0,
 			_next = 0,
 			removed = true,
-			value = arg1
+			value = arg1_9
 		}
 
-		table.insert(arg0.opList, function()
-			arg0.list:pushnode(var0)
+		table.insert(arg0_9.opList, function()
+			arg0_9.list:pushnode(var0_9)
 		end)
 
-		return var0
+		return var0_9
 	else
-		return arg0.list:push(arg1)
+		return arg0_9.list:push(arg1_9)
 	end
 end
 
-function var13.Remove(arg0, arg1, arg2)
-	for iter0, iter1 in var8(arg0.list) do
-		if iter1.func == arg1 and iter1.obj == arg2 then
-			if arg0.lock then
-				table.insert(arg0.opList, function()
-					arg0.list:remove(iter0)
+function var13_0.Remove(arg0_11, arg1_11, arg2_11)
+	for iter0_11, iter1_11 in var8_0(arg0_11.list) do
+		if iter1_11.func == arg1_11 and iter1_11.obj == arg2_11 then
+			if arg0_11.lock then
+				table.insert(arg0_11.opList, function()
+					arg0_11.list:remove(iter0_11)
 				end)
 			else
-				arg0.list:remove(iter0)
+				arg0_11.list:remove(iter0_11)
 			end
 
 			break
@@ -112,114 +112,114 @@ function var13.Remove(arg0, arg1, arg2)
 	end
 end
 
-function var13.CreateListener(arg0, arg1, arg2)
-	if arg0.keepSafe then
-		arg1 = var10(arg1, arg2)
+function var13_0.CreateListener(arg0_13, arg1_13, arg2_13)
+	if arg0_13.keepSafe then
+		arg1_13 = var10_0(arg1_13, arg2_13)
 	else
-		arg1 = var12(arg1, arg2)
+		arg1_13 = var12_0(arg1_13, arg2_13)
 	end
 
 	return {
 		_prev = 0,
 		_next = 0,
 		removed = true,
-		value = arg1
+		value = arg1_13
 	}
 end
 
-function var13.AddListener(arg0, arg1)
-	var3(arg1)
+function var13_0.AddListener(arg0_14, arg1_14)
+	var3_0(arg1_14)
 
-	if arg0.lock then
-		table.insert(arg0.opList, function()
-			arg0.list:pushnode(arg1)
+	if arg0_14.lock then
+		table.insert(arg0_14.opList, function()
+			arg0_14.list:pushnode(arg1_14)
 		end)
 	else
-		arg0.list:pushnode(arg1)
+		arg0_14.list:pushnode(arg1_14)
 	end
 end
 
-function var13.RemoveListener(arg0, arg1)
-	var3(arg1)
+function var13_0.RemoveListener(arg0_16, arg1_16)
+	var3_0(arg1_16)
 
-	if arg0.lock then
-		table.insert(arg0.opList, function()
-			arg0.list:remove(arg1)
+	if arg0_16.lock then
+		table.insert(arg0_16.opList, function()
+			arg0_16.list:remove(arg1_16)
 		end)
 	else
-		arg0.list:remove(arg1)
+		arg0_16.list:remove(arg1_16)
 	end
 end
 
-function var13.Count(arg0)
-	return arg0.list.length
+function var13_0.Count(arg0_18)
+	return arg0_18.list.length
 end
 
-function var13.Clear(arg0)
-	arg0.list:clear()
+function var13_0.Clear(arg0_19)
+	arg0_19.list:clear()
 
-	arg0.opList = {}
-	arg0.lock = false
-	arg0.keepSafe = false
-	arg0.current = nil
+	arg0_19.opList = {}
+	arg0_19.lock = false
+	arg0_19.keepSafe = false
+	arg0_19.current = nil
 end
 
-function var13.Dump(arg0)
-	local var0 = 0
+function var13_0.Dump(arg0_20)
+	local var0_20 = 0
 
-	for iter0, iter1 in var8(arg0.list) do
-		if iter1.obj then
-			var6("update function:", iter1.func, "object name:", iter1.obj.name)
+	for iter0_20, iter1_20 in var8_0(arg0_20.list) do
+		if iter1_20.obj then
+			var6_0("update function:", iter1_20.func, "object name:", iter1_20.obj.name)
 		else
-			var6("update function: ", iter1.func)
+			var6_0("update function: ", iter1_20.func)
 		end
 
-		var0 = var0 + 1
+		var0_20 = var0_20 + 1
 	end
 
-	var6("all function is:", var0)
+	var6_0("all function is:", var0_20)
 end
 
-function var13.__call(arg0, ...)
-	local var0 = arg0.list
+function var13_0.__call(arg0_21, ...)
+	local var0_21 = arg0_21.list
 
-	arg0.lock = true
+	arg0_21.lock = true
 
-	for iter0, iter1 in var8(var0) do
-		arg0.current = iter0
+	for iter0_21, iter1_21 in var8_0(var0_21) do
+		arg0_21.current = iter0_21
 
-		local var1, var2 = iter1(...)
+		local var1_21, var2_21 = iter1_21(...)
 
-		if not var1 then
-			var0:remove(iter0)
+		if not var1_21 then
+			var0_21:remove(iter0_21)
 
-			arg0.lock = false
+			arg0_21.lock = false
 
-			var5(var2)
+			var5_0(var2_21)
 		end
 	end
 
-	local var3 = arg0.opList
+	local var3_21 = arg0_21.opList
 
-	arg0.lock = false
+	arg0_21.lock = false
 
-	for iter2, iter3 in ipairs(var3) do
-		iter3()
+	for iter2_21, iter3_21 in ipairs(var3_21) do
+		iter3_21()
 
-		var3[iter2] = nil
+		var3_21[iter2_21] = nil
 	end
 end
 
-function event(arg0, arg1)
-	arg1 = arg1 or false
+function event(arg0_22, arg1_22)
+	arg1_22 = arg1_22 or false
 
-	return var0({
+	return var0_0({
 		lock = false,
-		name = arg0,
-		keepSafe = arg1,
+		name = arg0_22,
+		keepSafe = arg1_22,
 		opList = {},
 		list = list:new()
-	}, var13)
+	}, var13_0)
 end
 
 UpdateBeat = event("Update", true)
@@ -227,29 +227,29 @@ LateUpdateBeat = event("LateUpdate", true)
 FixedUpdateBeat = event("FixedUpdate", true)
 CoUpdateBeat = event("CoUpdate")
 
-local var14 = Time
-local var15 = UpdateBeat
-local var16 = LateUpdateBeat
-local var17 = FixedUpdateBeat
-local var18 = CoUpdateBeat
+local var14_0 = Time
+local var15_0 = UpdateBeat
+local var16_0 = LateUpdateBeat
+local var17_0 = FixedUpdateBeat
+local var18_0 = CoUpdateBeat
 
-function Update(arg0, arg1)
-	var14:SetDeltaTime(arg0, arg1)
-	var15()
+function Update(arg0_23, arg1_23)
+	var14_0:SetDeltaTime(arg0_23, arg1_23)
+	var15_0()
 end
 
 function LateUpdate()
-	var16()
-	var18()
-	var14:SetFrameCount()
+	var16_0()
+	var18_0()
+	var14_0:SetFrameCount()
 end
 
-function FixedUpdate(arg0)
-	var14:SetFixedDelta(arg0)
-	var17()
+function FixedUpdate(arg0_25)
+	var14_0:SetFixedDelta(arg0_25)
+	var17_0()
 end
 
 function PrintEvents()
-	var15:Dump()
-	var17:Dump()
+	var15_0:Dump()
+	var17_0:Dump()
 end

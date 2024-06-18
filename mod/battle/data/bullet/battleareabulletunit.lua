@@ -1,8 +1,8 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConst
-local var2 = class("BattleAreaBulletUnit", var0.Battle.BattleBulletUnit)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConst
+local var2_0 = class("BattleAreaBulletUnit", var0_0.Battle.BattleBulletUnit)
 
-var2.__name = "BattleAreaBulletUnit"
-var0.Battle.BattleAreaBulletUnit = var2
+var2_0.__name = "BattleAreaBulletUnit"
+var0_0.Battle.BattleAreaBulletUnit = var2_0

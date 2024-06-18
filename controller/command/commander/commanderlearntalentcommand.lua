@@ -1,83 +1,83 @@
-﻿local var0 = class("CommanderLearnTalentCommand", pm.SimpleCommand)
+﻿local var0_0 = class("CommanderLearnTalentCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.id
-	local var2 = var0.talentId
-	local var3 = var0.replaceid or 0
-	local var4 = getProxy(CommanderProxy)
-	local var5 = var4:getCommanderById(var1)
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.id
+	local var2_1 = var0_1.talentId
+	local var3_1 = var0_1.replaceid or 0
+	local var4_1 = getProxy(CommanderProxy)
+	local var5_1 = var4_1:getCommanderById(var1_1)
 
-	if not var5 then
+	if not var5_1 then
 		return
 	end
 
-	local var6 = var5:getNotLearnedList()
+	local var6_1 = var5_1:getNotLearnedList()
 
-	if not _.any(var6, function(arg0)
-		return arg0.id == var2
+	if not _.any(var6_1, function(arg0_2)
+		return arg0_2.id == var2_1
 	end) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("commander_talent_not_exist"))
 
 		return
 	end
 
-	local var7 = var5:getTalents()
+	local var7_1 = var5_1:getTalents()
 
-	if var3 ~= 0 and not _.any(var7, function(arg0)
-		return arg0.id == var3
+	if var3_1 ~= 0 and not _.any(var7_1, function(arg0_3)
+		return arg0_3.id == var3_1
 	end) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("commander_replace_talent_not_exist"))
 
 		return
 	end
 
-	local var8 = CommanderTalent.New({
-		id = var2
+	local var8_1 = CommanderTalent.New({
+		id = var2_1
 	})
-	local var9 = var8:getConfig("cost")
-	local var10 = getProxy(PlayerProxy)
-	local var11 = var10:getData()
+	local var9_1 = var8_1:getConfig("cost")
+	local var10_1 = getProxy(PlayerProxy)
+	local var11_1 = var10_1:getData()
 
-	if var9 > var11.gold then
+	if var9_1 > var11_1.gold then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(25012, {
-		commanderid = var1,
-		targetid = var2,
-		replaceid = var3
-	}, 25013, function(arg0)
-		if arg0.result == 0 then
-			var11:consume({
-				gold = var9
+		commanderid = var1_1,
+		targetid = var2_1,
+		replaceid = var3_1
+	}, 25013, function(arg0_4)
+		if arg0_4.result == 0 then
+			var11_1:consume({
+				gold = var9_1
 			})
-			var10:updatePlayer(var11)
+			var10_1:updatePlayer(var11_1)
 
-			local var0 = var5:getSameGroupTalent(var8.groupId)
+			local var0_4 = var5_1:getSameGroupTalent(var8_1.groupId)
 
-			if var0 then
-				var5:deleteTablent(var0.id)
+			if var0_4 then
+				var5_1:deleteTablent(var0_4.id)
 			end
 
-			if var3 ~= 0 then
-				var5:deleteTablent(var3)
+			if var3_1 ~= 0 then
+				var5_1:deleteTablent(var3_1)
 			end
 
-			var5:addTalent(var8)
-			var5:updatePt(var5.pt + 1)
-			var5:updateNotLearnedList({})
-			var4:updateCommander(var5)
-			arg0:sendNotification(GAME.COMMANDER_LEARN_TALENTS_DONE, {
-				commander = var5
+			var5_1:addTalent(var8_1)
+			var5_1:updatePt(var5_1.pt + 1)
+			var5_1:updateNotLearnedList({})
+			var4_1:updateCommander(var5_1)
+			arg0_1:sendNotification(GAME.COMMANDER_LEARN_TALENTS_DONE, {
+				commander = var5_1
 			})
-			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_talent_learned", var8:getConfig("name")))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_talent_learned", var8_1:getConfig("name")))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_talent_learn_erro", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_talent_learn_erro", arg0_4.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

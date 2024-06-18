@@ -1,150 +1,150 @@
-﻿local var0 = class("LimitChallengePreCombatMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("LimitChallengePreCombatMediator", import("view.base.ContextMediator"))
 
-var0.ON_UPDATE_CUSTOM_FLEET = "LimitChallengePreCombatMediator:ON_UPDATE_CUSTOM_FLEET"
-var0.ON_START = "LimitChallengePreCombatMediator:ON_START"
-var0.BEGIN_STAGE = "LimitChallengePreCombatMediator:BEGIN_STAGE"
-var0.OPEN_SHIP_INFO = "LimitChallengePreCombatMediator:OPEN_SHIP_INFO"
-var0.CHANGE_FLEET_SHIP = "LimitChallengePreCombatMediator:CHANGE_FLEET_SHIP"
-var0.CHANGE_FLEET_SHIPS_ORDER = "LimitChallengePreCombatMediator:CHANGE_FLEET_SHIPS_ORDER"
-var0.REMOVE_SHIP = "LimitChallengePreCombatMediator:REMOVE_SHIP"
-var0.ON_AUTO = "LimitChallengePreCombatMediator:ON_AUTO"
-var0.ON_SUB_AUTO = "LimitChallengePreCombatMediator:ON_SUB_AUTO"
-var0.ON_CHANGE_FLEET = "LimitChallengePreCombatMediator:ON_CHANGE_FLEET"
-var0.ON_CMD_SKILL = "LimitChallengePreCombatMediator:ON_CMD_SKILL"
-var0.ON_SELECT_COMMANDER = "LimitChallengePreCombatMediator:ON_SELECT_COMMANDER"
+var0_0.ON_UPDATE_CUSTOM_FLEET = "LimitChallengePreCombatMediator:ON_UPDATE_CUSTOM_FLEET"
+var0_0.ON_START = "LimitChallengePreCombatMediator:ON_START"
+var0_0.BEGIN_STAGE = "LimitChallengePreCombatMediator:BEGIN_STAGE"
+var0_0.OPEN_SHIP_INFO = "LimitChallengePreCombatMediator:OPEN_SHIP_INFO"
+var0_0.CHANGE_FLEET_SHIP = "LimitChallengePreCombatMediator:CHANGE_FLEET_SHIP"
+var0_0.CHANGE_FLEET_SHIPS_ORDER = "LimitChallengePreCombatMediator:CHANGE_FLEET_SHIPS_ORDER"
+var0_0.REMOVE_SHIP = "LimitChallengePreCombatMediator:REMOVE_SHIP"
+var0_0.ON_AUTO = "LimitChallengePreCombatMediator:ON_AUTO"
+var0_0.ON_SUB_AUTO = "LimitChallengePreCombatMediator:ON_SUB_AUTO"
+var0_0.ON_CHANGE_FLEET = "LimitChallengePreCombatMediator:ON_CHANGE_FLEET"
+var0_0.ON_CMD_SKILL = "LimitChallengePreCombatMediator:ON_CMD_SKILL"
+var0_0.ON_SELECT_COMMANDER = "LimitChallengePreCombatMediator:ON_SELECT_COMMANDER"
 
-function var0.register(arg0)
-	arg0:bindEvent()
+function var0_0.register(arg0_1)
+	arg0_1:bindEvent()
 
-	arg0.ships = getProxy(BayProxy):getRawData()
+	arg0_1.ships = getProxy(BayProxy):getRawData()
 
-	arg0.viewComponent:SetShips(arg0.ships)
+	arg0_1.viewComponent:SetShips(arg0_1.ships)
 
-	local var0 = pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommanderCatMediator") and not LOCK_COMMANDER
+	local var0_1 = pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommanderCatMediator") and not LOCK_COMMANDER
 
-	arg0.viewComponent:SetOpenCommander(var0)
+	arg0_1.viewComponent:SetOpenCommander(var0_1)
 
-	local var1 = _.map({
+	local var1_1 = _.map({
 		FleetProxy.CHALLENGE_FLEET_ID,
 		FleetProxy.CHALLENGE_SUB_FLEET_ID
-	}, function(arg0)
-		return getProxy(FleetProxy):getFleetById(arg0)
+	}, function(arg0_2)
+		return getProxy(FleetProxy):getFleetById(arg0_2)
 	end)
 
-	arg0.fleets = var1
-	arg0.contextData.fleets = var1
+	arg0_1.fleets = var1_1
+	arg0_1.contextData.fleets = var1_1
 
-	arg0.viewComponent:SetFleets(var1)
+	arg0_1.viewComponent:SetFleets(var1_1)
 
-	arg0.contextData.fleetIndex = arg0.contextData.fleetIndex or 1
+	arg0_1.contextData.fleetIndex = arg0_1.contextData.fleetIndex or 1
 
-	local var2 = var1[arg0.contextData.fleetIndex]
+	local var2_1 = var1_1[arg0_1.contextData.fleetIndex]
 
-	arg0.viewComponent:SetCurrentFleet(var2.id)
-	arg0.viewComponent:SetSubFlag(var1[#var1]:isLegalToFight() == true)
-	arg0.viewComponent:SetStageID(arg0.contextData.stageId)
+	arg0_1.viewComponent:SetCurrentFleet(var2_1.id)
+	arg0_1.viewComponent:SetSubFlag(var1_1[#var1_1]:isLegalToFight() == true)
+	arg0_1.viewComponent:SetStageID(arg0_1.contextData.stageId)
 end
 
-function var0.bindEvent(arg0)
-	arg0:bind(var0.ON_CHANGE_FLEET, function(arg0, arg1)
-		arg0:changeFleet(arg1)
+function var0_0.bindEvent(arg0_3)
+	arg0_3:bind(var0_0.ON_CHANGE_FLEET, function(arg0_4, arg1_4)
+		arg0_3:changeFleet(arg1_4)
 	end)
-	arg0:bind(var0.ON_AUTO, function(arg0, arg1)
-		arg0:onAutoBtn(arg1)
+	arg0_3:bind(var0_0.ON_AUTO, function(arg0_5, arg1_5)
+		arg0_3:onAutoBtn(arg1_5)
 	end)
-	arg0:bind(var0.ON_SUB_AUTO, function(arg0, arg1)
-		arg0:onAutoSubBtn(arg1)
+	arg0_3:bind(var0_0.ON_SUB_AUTO, function(arg0_6, arg1_6)
+		arg0_3:onAutoSubBtn(arg1_6)
 	end)
-	arg0:bind(var0.CHANGE_FLEET_SHIPS_ORDER, function(arg0, arg1)
-		arg0:refreshEdit(arg1)
+	arg0_3:bind(var0_0.CHANGE_FLEET_SHIPS_ORDER, function(arg0_7, arg1_7)
+		arg0_3:refreshEdit(arg1_7)
 	end)
-	arg0:bind(var0.REMOVE_SHIP, function(arg0, arg1, arg2)
-		arg0:removeShipFromFleet(arg2, arg1)
-		arg0:refreshEdit(arg2)
+	arg0_3:bind(var0_0.REMOVE_SHIP, function(arg0_8, arg1_8, arg2_8)
+		arg0_3:removeShipFromFleet(arg2_8, arg1_8)
+		arg0_3:refreshEdit(arg2_8)
 	end)
-	arg0:bind(var0.OPEN_SHIP_INFO, function(arg0, arg1, arg2)
-		local var0 = {}
+	arg0_3:bind(var0_0.OPEN_SHIP_INFO, function(arg0_9, arg1_9, arg2_9)
+		local var0_9 = {}
 
-		for iter0, iter1 in ipairs(arg2:getShipIds()) do
-			table.insert(var0, arg0.ships[iter1])
+		for iter0_9, iter1_9 in ipairs(arg2_9:getShipIds()) do
+			table.insert(var0_9, arg0_3.ships[iter1_9])
 		end
 
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
-			shipId = arg1,
-			shipVOs = var0
+		arg0_3:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
+			shipId = arg1_9,
+			shipVOs = var0_9
 		})
 	end)
-	arg0:bind(var0.CHANGE_FLEET_SHIP, function(arg0, arg1, arg2, arg3)
-		local var0 = _.flatten(_.map(arg0.contextData.fleets, function(arg0)
-			return arg0:GetRawShipIds()
+	arg0_3:bind(var0_0.CHANGE_FLEET_SHIP, function(arg0_10, arg1_10, arg2_10, arg3_10)
+		local var0_10 = _.flatten(_.map(arg0_3.contextData.fleets, function(arg0_11)
+			return arg0_11:GetRawShipIds()
 		end))
-		local var1, var2, var3 = var0.getDockCallbackFuncs(arg1, arg2, arg3, var0, arg0.contextData.actId)
+		local var1_10, var2_10, var3_10 = var0_0.getDockCallbackFuncs(arg1_10, arg2_10, arg3_10, var0_10, arg0_3.contextData.actId)
 
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
+		arg0_3:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 			useBlackBlock = true,
 			selectedMin = 0,
 			skipSelect = true,
 			selectedMax = 1,
 			energyDisplay = false,
 			leastLimitMsg = i18n("battle_preCombatMediator_leastLimit"),
-			quitTeam = arg1 ~= nil,
-			teamFilter = arg3,
-			onShip = var1,
-			confirmSelect = var2,
-			onSelected = var3,
+			quitTeam = arg1_10 ~= nil,
+			teamFilter = arg3_10,
+			onShip = var1_10,
+			confirmSelect = var2_10,
+			onSelected = var3_10,
 			hideTagFlags = ShipStatus.TAG_HIDE_CHALLENGE,
 			blockTagFlags = {
 				inEvent = true
 			},
-			otherSelectedIds = var0,
+			otherSelectedIds = var0_10,
 			ignoredIds = pg.ShipFlagMgr.GetInstance():FilterShips({
 				isActivityNpc = true
 			})
 		})
 	end)
-	arg0:bind(var0.ON_UPDATE_CUSTOM_FLEET, function(arg0)
-		_.each(arg0.contextData.fleets, function(arg0)
-			arg0:sendNotification(GAME.UPDATE_FLEET, {
-				fleet = arg0
+	arg0_3:bind(var0_0.ON_UPDATE_CUSTOM_FLEET, function(arg0_12)
+		_.each(arg0_3.contextData.fleets, function(arg0_13)
+			arg0_3:sendNotification(GAME.UPDATE_FLEET, {
+				fleet = arg0_13
 			})
 
-			local var0 = arg0:GetRawCommanderIds()
+			local var0_13 = arg0_13:GetRawCommanderIds()
 
 			_.each({
 				1,
 				2
-			}, function(arg0)
-				arg0:sendNotification(GAME.COOMMANDER_EQUIP_TO_FLEET, {
-					fleetId = arg0.id,
-					pos = arg0,
-					commanderId = var0[arg0] or 0
+			}, function(arg0_14)
+				arg0_3:sendNotification(GAME.COOMMANDER_EQUIP_TO_FLEET, {
+					fleetId = arg0_13.id,
+					pos = arg0_14,
+					commanderId = var0_13[arg0_14] or 0
 				})
 			end)
 		end)
 	end)
-	arg0:bind(var0.ON_START, function(arg0)
-		arg0.viewComponent:emit(var0.ON_UPDATE_CUSTOM_FLEET)
+	arg0_3:bind(var0_0.ON_START, function(arg0_15)
+		arg0_3.viewComponent:emit(var0_0.ON_UPDATE_CUSTOM_FLEET)
 		seriesAsync({
-			function(arg0)
-				for iter0 = 1, #arg0.contextData.fleets - 1 do
-					if arg0.contextData.fleets[iter0]:isLegalToFight() ~= true then
+			function(arg0_16)
+				for iter0_16 = 1, #arg0_3.contextData.fleets - 1 do
+					if arg0_3.contextData.fleets[iter0_16]:isLegalToFight() ~= true then
 						pg.TipsMgr.GetInstance():ShowTips(i18n("elite_disable_formation_unsatisfied"))
 
 						return
 					end
 				end
 
-				local var0 = {}
+				local var0_16 = {}
 
-				if _.any(arg0.contextData.fleets, function(arg0)
-					return _.any(arg0:GetRawShipIds(), function(arg0)
-						local var0 = getProxy(BayProxy):RawGetShipById(arg0)
+				if _.any(arg0_3.contextData.fleets, function(arg0_17)
+					return _.any(arg0_17:GetRawShipIds(), function(arg0_18)
+						local var0_18 = getProxy(BayProxy):RawGetShipById(arg0_18)
 
-						if var0[var0:getGroupId()] then
+						if var0_16[var0_18:getGroupId()] then
 							return true
 						end
 
-						var0[var0:getGroupId()] = true
+						var0_16[var0_18:getGroupId()] = true
 					end)
 				end) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("guild_event_exist_same_kind_ship"))
@@ -152,31 +152,31 @@ function var0.bindEvent(arg0)
 					return
 				end
 
-				arg0()
+				arg0_16()
 			end,
-			function(arg0)
-				table.SerialIpairsAsync(arg0.contextData.fleets, function(arg0, arg1, arg2)
-					local var0, var1 = arg1:HaveShipsInEvent()
+			function(arg0_19)
+				table.SerialIpairsAsync(arg0_3.contextData.fleets, function(arg0_20, arg1_20, arg2_20)
+					local var0_20, var1_20 = arg1_20:HaveShipsInEvent()
 
-					if var0 then
-						pg.TipsMgr.GetInstance():ShowTips(var1)
+					if var0_20 then
+						pg.TipsMgr.GetInstance():ShowTips(var1_20)
 
 						return
 					end
 
-					local var2 = arg0.contextData.actId
+					local var2_20 = arg0_3.contextData.actId
 
-					if _.any(arg1:getShipIds(), function(arg0)
-						local var0 = getProxy(BayProxy):RawGetShipById(arg0)
+					if _.any(arg1_20:getShipIds(), function(arg0_21)
+						local var0_21 = getProxy(BayProxy):RawGetShipById(arg0_21)
 
-						if not var0 then
+						if not var0_21 then
 							return
 						end
 
-						local var1, var2 = ShipStatus.ShipStatusCheck("inChallenge", var0)
+						local var1_21, var2_21 = ShipStatus.ShipStatusCheck("inChallenge", var0_21)
 
-						if not var1 then
-							pg.TipsMgr.GetInstance():ShowTips(var2)
+						if not var1_21 then
+							pg.TipsMgr.GetInstance():ShowTips(var2_21)
 
 							return true
 						end
@@ -184,141 +184,141 @@ function var0.bindEvent(arg0)
 						return
 					end
 
-					arg2()
-				end, arg0)
+					arg2_20()
+				end, arg0_19)
 			end,
-			function(arg0)
-				arg0.viewComponent:emit(var0.BEGIN_STAGE)
+			function(arg0_22)
+				arg0_3.viewComponent:emit(var0_0.BEGIN_STAGE)
 			end
 		})
 	end)
-	arg0:bind(var0.BEGIN_STAGE, function(arg0)
-		arg0:sendNotification(GAME.BEGIN_STAGE, {
-			stageId = arg0.contextData.stageId,
-			system = arg0.contextData.system,
-			actId = arg0.contextData.actId
+	arg0_3:bind(var0_0.BEGIN_STAGE, function(arg0_23)
+		arg0_3:sendNotification(GAME.BEGIN_STAGE, {
+			stageId = arg0_3.contextData.stageId,
+			system = arg0_3.contextData.system,
+			actId = arg0_3.contextData.actId
 		})
 	end)
-	arg0:bind(var0.ON_CMD_SKILL, function(arg0, arg1)
-		arg0:addSubLayers(Context.New({
+	arg0_3:bind(var0_0.ON_CMD_SKILL, function(arg0_24, arg1_24)
+		arg0_3:addSubLayers(Context.New({
 			mediator = CommanderSkillMediator,
 			viewComponent = CommanderSkillLayer,
 			data = {
-				skill = arg1
+				skill = arg1_24
 			}
 		}))
 	end)
-	arg0:bind(var0.ON_SELECT_COMMANDER, function(arg0, arg1, arg2)
-		local var0 = _.map({
+	arg0_3:bind(var0_0.ON_SELECT_COMMANDER, function(arg0_25, arg1_25, arg2_25)
+		local var0_25 = _.map({
 			FleetProxy.CHALLENGE_FLEET_ID,
 			FleetProxy.CHALLENGE_SUB_FLEET_ID
-		}, function(arg0)
-			return getProxy(FleetProxy):getFleetById(arg0)
+		}, function(arg0_26)
+			return getProxy(FleetProxy):getFleetById(arg0_26)
 		end)
 
-		var0.onSelectCommander(var0, arg1, arg2)
+		var0_0.onSelectCommander(var0_25, arg1_25, arg2_25)
 	end)
 end
 
-function var0.onAutoBtn(arg0, arg1)
-	local var0 = arg1.isOn
-	local var1 = arg1.toggle
+function var0_0.onAutoBtn(arg0_27, arg1_27)
+	local var0_27 = arg1_27.isOn
+	local var1_27 = arg1_27.toggle
 
-	arg0:sendNotification(GAME.AUTO_BOT, {
-		isActiveBot = var0,
-		toggle = var1,
-		system = arg0.contextData.system
+	arg0_27:sendNotification(GAME.AUTO_BOT, {
+		isActiveBot = var0_27,
+		toggle = var1_27,
+		system = arg0_27.contextData.system
 	})
 end
 
-function var0.onAutoSubBtn(arg0, arg1)
-	local var0 = arg1.isOn
-	local var1 = arg1.toggle
+function var0_0.onAutoSubBtn(arg0_28, arg1_28)
+	local var0_28 = arg1_28.isOn
+	local var1_28 = arg1_28.toggle
 
-	arg0:sendNotification(GAME.AUTO_SUB, {
-		isActiveSub = var0,
-		toggle = var1,
-		system = arg0.contextData.system
+	arg0_28:sendNotification(GAME.AUTO_SUB, {
+		isActiveSub = var0_28,
+		toggle = var1_28,
+		system = arg0_28.contextData.system
 	})
 end
 
-function var0.changeFleet(arg0, arg1)
-	arg0.contextData.fleetIndex = table.indexof(arg0.contextData.fleets, _.detect(arg0.contextData.fleets, function(arg0)
-		return arg0.id == arg1
+function var0_0.changeFleet(arg0_29, arg1_29)
+	arg0_29.contextData.fleetIndex = table.indexof(arg0_29.contextData.fleets, _.detect(arg0_29.contextData.fleets, function(arg0_30)
+		return arg0_30.id == arg1_29
 	end))
 
-	arg0.viewComponent:SetCurrentFleet(arg1)
-	arg0.viewComponent:UpdateFleetView(true)
-	arg0.viewComponent:SetFleetStepper()
+	arg0_29.viewComponent:SetCurrentFleet(arg1_29)
+	arg0_29.viewComponent:UpdateFleetView(true)
+	arg0_29.viewComponent:SetFleetStepper()
 end
 
-function var0.refreshEdit(arg0, arg1)
-	arg0.viewComponent:UpdateFleetView(false)
+function var0_0.refreshEdit(arg0_31, arg1_31)
+	arg0_31.viewComponent:UpdateFleetView(false)
 
-	local var0 = arg0.contextData.fleets
+	local var0_31 = arg0_31.contextData.fleets
 
-	arg0.viewComponent:SetSubFlag(var0[#var0]:isLegalToFight() == true)
-	getProxy(FleetProxy):updateFleet(arg1)
+	arg0_31.viewComponent:SetSubFlag(var0_31[#var0_31]:isLegalToFight() == true)
+	getProxy(FleetProxy):updateFleet(arg1_31)
 end
 
-function var0.removeShipFromFleet(arg0, arg1, arg2)
-	if not arg1:canRemove(arg2) then
-		local var0, var1 = arg1:getShipPos(arg2)
+function var0_0.removeShipFromFleet(arg0_32, arg1_32, arg2_32)
+	if not arg1_32:canRemove(arg2_32) then
+		local var0_32, var1_32 = arg1_32:getShipPos(arg2_32)
 
-		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_formationUI_removeError_onlyShip", arg2:getConfigTable().name, arg1.name, Fleet.C_TEAM_NAME[var1]))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_formationUI_removeError_onlyShip", arg2_32:getConfigTable().name, arg1_32.name, Fleet.C_TEAM_NAME[var1_32]))
 
 		return false
 	end
 
-	arg1:removeShip(arg2)
+	arg1_32:removeShip(arg2_32)
 
 	return true
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_33)
 	return {
 		GAME.BEGIN_STAGE_DONE,
 		GAME.BEGIN_STAGE_ERRO
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_34, arg1_34)
+	local var0_34 = arg1_34:getName()
+	local var1_34 = arg1_34:getBody()
 
-	if var0 == GAME.BEGIN_STAGE_DONE then
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1)
-	elseif var0 == GAME.BEGIN_STAGE_ERRO and var1 == 3 then
+	if var0_34 == GAME.BEGIN_STAGE_DONE then
+		arg0_34:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_34)
+	elseif var0_34 == GAME.BEGIN_STAGE_ERRO and var1_34 == 3 then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
 			content = i18n("battle_preCombatMediator_timeout"),
 			onYes = function()
-				arg0.viewComponent:emit(BaseUI.ON_CLOSE)
+				arg0_34.viewComponent:emit(BaseUI.ON_CLOSE)
 			end
 		})
 	end
 end
 
-function var0.remove(arg0)
-	var0.super.remove(arg0)
+function var0_0.remove(arg0_36)
+	var0_0.super.remove(arg0_36)
 end
 
-function var0.getDockCallbackFuncs(arg0, arg1, arg2, arg3, arg4)
-	local var0 = getProxy(BayProxy)
+function var0_0.getDockCallbackFuncs(arg0_37, arg1_37, arg2_37, arg3_37, arg4_37)
+	local var0_37 = getProxy(BayProxy)
 
-	local function var1(arg0, arg1)
-		local var0, var1 = ShipStatus.ShipStatusCheck("inChallenge", arg0, arg1)
+	local function var1_37(arg0_38, arg1_38)
+		local var0_38, var1_38 = ShipStatus.ShipStatusCheck("inChallenge", arg0_38, arg1_38)
 
-		if not var0 then
-			return var0, var1
+		if not var0_38 then
+			return var0_38, var1_38
 		end
 
-		if arg0 and arg0:isSameKind(arg0) then
+		if arg0_37 and arg0_37:isSameKind(arg0_38) then
 			return true
 		end
 
-		for iter0, iter1 in ipairs(arg3) do
-			if arg0:isSameKind(var0:getShipById(iter1)) then
+		for iter0_38, iter1_38 in ipairs(arg3_37) do
+			if arg0_38:isSameKind(var0_37:getShipById(iter1_38)) then
 				return false, i18n("ship_formationMediator_changeNameError_sameShip")
 			end
 		end
@@ -326,75 +326,75 @@ function var0.getDockCallbackFuncs(arg0, arg1, arg2, arg3, arg4)
 		return true
 	end
 
-	local function var2(arg0, arg1, arg2)
-		arg1()
+	local function var2_37(arg0_39, arg1_39, arg2_39)
+		arg1_39()
 	end
 
-	local function var3(arg0)
-		if #arg0 == 0 then
-			if arg0 then
-				arg1:removeShip(arg0)
+	local function var3_37(arg0_40)
+		if #arg0_40 == 0 then
+			if arg0_37 then
+				arg1_37:removeShip(arg0_37)
 			end
-		elseif #arg0 > 0 then
-			local var0 = arg1:getShipPos(arg0)
-			local var1 = var0:getShipById(arg0[1])
+		elseif #arg0_40 > 0 then
+			local var0_40 = arg1_37:getShipPos(arg0_37)
+			local var1_40 = var0_37:getShipById(arg0_40[1])
 
-			if var0 then
-				arg1:removeShip(arg0)
+			if var0_40 then
+				arg1_37:removeShip(arg0_37)
 
-				if var1.id == arg0.id then
-					var0 = nil
+				if var1_40.id == arg0_37.id then
+					var0_40 = nil
 				end
 			end
 
-			arg1:insertShip(var1, var0, arg2)
-			arg1:RemoveUnusedItems()
+			arg1_37:insertShip(var1_40, var0_40, arg2_37)
+			arg1_37:RemoveUnusedItems()
 		end
 
-		getProxy(FleetProxy):updateFleet(arg1)
+		getProxy(FleetProxy):updateFleet(arg1_37)
 	end
 
-	return var1, var2, var3
+	return var1_37, var2_37, var3_37
 end
 
-function var0.onSelectCommander(arg0, arg1, arg2)
-	local var0 = _.detect(arg0, function(arg0)
-		return arg0.id == arg2
+function var0_0.onSelectCommander(arg0_41, arg1_41, arg2_41)
+	local var0_41 = _.detect(arg0_41, function(arg0_42)
+		return arg0_42.id == arg2_41
 	end)
 
-	assert(var0)
+	assert(var0_41)
 
-	local var1 = var0:getCommanderByPos(arg1)
+	local var1_41 = var0_41:getCommanderByPos(arg1_41)
 
 	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
 		maxCount = 1,
 		mode = CommanderCatScene.MODE_SELECT,
 		fleetType = CommanderCatScene.FLEET_TYPE_LIMIT_CHALLENGE,
-		activeCommander = var1,
+		activeCommander = var1_41,
 		ignoredIds = {},
-		onCommander = function(arg0)
+		onCommander = function(arg0_43)
 			return true
 		end,
-		onSelected = function(arg0, arg1)
-			local var0 = arg0[1]
-			local var1 = getProxy(CommanderProxy):getCommanderById(var0)
+		onSelected = function(arg0_44, arg1_44)
+			local var0_44 = arg0_44[1]
+			local var1_44 = getProxy(CommanderProxy):getCommanderById(var0_44)
 
-			for iter0, iter1 in pairs(arg0) do
-				if iter1.id == arg2 then
-					local var2 = iter1:getCommanders()
+			for iter0_44, iter1_44 in pairs(arg0_41) do
+				if iter1_44.id == arg2_41 then
+					local var2_44 = iter1_44:getCommanders()
 
-					for iter2, iter3 in pairs(var2) do
-						if iter3.groupId == var1.groupId and iter2 ~= arg1 then
+					for iter2_44, iter3_44 in pairs(var2_44) do
+						if iter3_44.groupId == var1_44.groupId and iter2_44 ~= arg1_41 then
 							pg.TipsMgr.GetInstance():ShowTips(i18n("commander_can_not_select_same_group"))
 
 							return
 						end
 					end
 				else
-					local var3 = iter1:getCommanders()
+					local var3_44 = iter1_44:getCommanders()
 
-					for iter4, iter5 in pairs(var3) do
-						if var0 == iter5.id then
+					for iter4_44, iter5_44 in pairs(var3_44) do
+						if var0_44 == iter5_44.id then
 							pg.TipsMgr.GetInstance():ShowTips(i18n("commander_is_in_fleet_already"))
 
 							return
@@ -403,16 +403,16 @@ function var0.onSelectCommander(arg0, arg1, arg2)
 				end
 			end
 
-			var0:updateCommanderByPos(arg1, var1)
-			getProxy(FleetProxy):updateFleet(var0)
-			arg1()
+			var0_41:updateCommanderByPos(arg1_41, var1_44)
+			getProxy(FleetProxy):updateFleet(var0_41)
+			arg1_44()
 		end,
-		onQuit = function(arg0)
-			var0:updateCommanderByPos(arg1, nil)
-			getProxy(FleetProxy):updateFleet(var0)
-			arg0()
+		onQuit = function(arg0_45)
+			var0_41:updateCommanderByPos(arg1_41, nil)
+			getProxy(FleetProxy):updateFleet(var0_41)
+			arg0_45()
 		end
 	})
 end
 
-return var0
+return var0_0

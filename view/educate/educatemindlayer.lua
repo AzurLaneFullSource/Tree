@@ -1,192 +1,192 @@
-﻿local var0 = class("EducateMindLayer", import(".base.EducateBaseUI"))
+﻿local var0_0 = class("EducateMindLayer", import(".base.EducateBaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "EducateMindUI"
 end
 
-function var0.init(arg0)
-	arg0:initData()
-	arg0:findUI()
-	arg0:addListener()
+function var0_0.init(arg0_2)
+	arg0_2:initData()
+	arg0_2:findUI()
+	arg0_2:addListener()
 end
 
-function var0.initData(arg0)
-	arg0.taskProxy = getProxy(EducateProxy):GetTaskProxy()
-	arg0.taskVOs = arg0.taskProxy:GetTasksBySystem(EducateTask.SYSTEM_TYPE_MIND)
+function var0_0.initData(arg0_3)
+	arg0_3.taskProxy = getProxy(EducateProxy):GetTaskProxy()
+	arg0_3.taskVOs = arg0_3.taskProxy:GetTasksBySystem(EducateTask.SYSTEM_TYPE_MIND)
 end
 
-function var0.findUI(arg0)
-	arg0.anim = arg0:findTF("anim_root"):GetComponent(typeof(Animation))
-	arg0.animEvent = arg0:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+function var0_0.findUI(arg0_4)
+	arg0_4.anim = arg0_4:findTF("anim_root"):GetComponent(typeof(Animation))
+	arg0_4.animEvent = arg0_4:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
 
-	arg0.animEvent:SetEndEvent(function()
-		arg0:emit(var0.ON_CLOSE)
+	arg0_4.animEvent:SetEndEvent(function()
+		arg0_4:emit(var0_0.ON_CLOSE)
 	end)
 
-	arg0.windowTF = arg0:findTF("anim_root/window")
-	arg0.scrollview = arg0:findTF("scrollview", arg0.windowTF)
-	arg0.emptyTF = arg0:findTF("empty", arg0.scrollview)
+	arg0_4.windowTF = arg0_4:findTF("anim_root/window")
+	arg0_4.scrollview = arg0_4:findTF("scrollview", arg0_4.windowTF)
+	arg0_4.emptyTF = arg0_4:findTF("empty", arg0_4.scrollview)
 
-	setText(arg0:findTF("Text", arg0.emptyTF), i18n("child_mind_empty_tip"))
+	setText(arg0_4:findTF("Text", arg0_4.emptyTF), i18n("child_mind_empty_tip"))
 
-	arg0.contentTF = arg0:findTF("view/content", arg0.scrollview)
-	arg0.finishListTF = arg0:findTF("finish_list", arg0.contentTF)
-	arg0.finishUIList = UIItemList.New(arg0:findTF("list", arg0.finishListTF), arg0:findTF("list/tpl", arg0.finishListTF))
+	arg0_4.contentTF = arg0_4:findTF("view/content", arg0_4.scrollview)
+	arg0_4.finishListTF = arg0_4:findTF("finish_list", arg0_4.contentTF)
+	arg0_4.finishUIList = UIItemList.New(arg0_4:findTF("list", arg0_4.finishListTF), arg0_4:findTF("list/tpl", arg0_4.finishListTF))
 
-	setText(arg0:findTF("title/Text", arg0.finishListTF), i18n("child_mind_finish_title"))
-	setText(arg0:findTF("list/tpl/get_btn/Text", arg0.finishListTF), i18n("word_take"))
+	setText(arg0_4:findTF("title/Text", arg0_4.finishListTF), i18n("child_mind_finish_title"))
+	setText(arg0_4:findTF("list/tpl/get_btn/Text", arg0_4.finishListTF), i18n("word_take"))
 
-	arg0.unFinishListTF = arg0:findTF("unfinish_list", arg0.contentTF)
-	arg0.unFinishUIList = UIItemList.New(arg0:findTF("list", arg0.unFinishListTF), arg0:findTF("list/tpl", arg0.unFinishListTF))
+	arg0_4.unFinishListTF = arg0_4:findTF("unfinish_list", arg0_4.contentTF)
+	arg0_4.unFinishUIList = UIItemList.New(arg0_4:findTF("list", arg0_4.unFinishListTF), arg0_4:findTF("list/tpl", arg0_4.unFinishListTF))
 
-	setText(arg0:findTF("title/Text", arg0.unFinishListTF), i18n("child_mind_processing_title"))
-	setText(arg0:findTF("list/tpl/time_desc", arg0.unFinishListTF), i18n("child_mind_time_title"))
+	setText(arg0_4:findTF("title/Text", arg0_4.unFinishListTF), i18n("child_mind_processing_title"))
+	setText(arg0_4:findTF("list/tpl/time_desc", arg0_4.unFinishListTF), i18n("child_mind_time_title"))
 end
 
-function var0.addListener(arg0)
-	onButton(arg0, arg0:findTF("anim_root/bg"), function()
-		arg0:_close()
+function var0_0.addListener(arg0_6)
+	onButton(arg0_6, arg0_6:findTF("anim_root/bg"), function()
+		arg0_6:_close()
 	end, SFX_PANEL)
 end
 
-function var0.didEnter(arg0)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0._tf, {
-		groupName = arg0:getGroupNameFromData(),
-		weight = arg0:getWeightFromData() + 1
+function var0_0.didEnter(arg0_8)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_8._tf, {
+		groupName = arg0_8:getGroupNameFromData(),
+		weight = arg0_8:getWeightFromData() + 1
 	})
-	arg0.finishUIList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			GetOrAddComponent(arg2, "CanvasGroup").alpha = 1
+	arg0_8.finishUIList:make(function(arg0_9, arg1_9, arg2_9)
+		if arg0_9 == UIItemList.EventUpdate then
+			GetOrAddComponent(arg2_9, "CanvasGroup").alpha = 1
 
-			arg0:updateFinishItem(arg1, arg2)
+			arg0_8:updateFinishItem(arg1_9, arg2_9)
 		end
 	end)
-	arg0.unFinishUIList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			arg0:updateUnfinishItem(arg1, arg2)
+	arg0_8.unFinishUIList:make(function(arg0_10, arg1_10, arg2_10)
+		if arg0_10 == UIItemList.EventUpdate then
+			arg0_8:updateUnfinishItem(arg1_10, arg2_10)
 		end
 	end)
-	arg0:updateItems()
+	arg0_8:updateItems()
 	EducateTipHelper.ClearNewTip(EducateTipHelper.NEW_MIND_TASK)
 end
 
-function var0.sumbitTask(arg0, arg1)
-	arg0:emit(EducateMindMediator.ON_TASK_SUBMIT, arg1)
+function var0_0.sumbitTask(arg0_11, arg1_11)
+	arg0_11:emit(EducateMindMediator.ON_TASK_SUBMIT, arg1_11)
 end
 
-function var0.updateItems(arg0)
-	local var0 = getProxy(EducateProxy):GetCurTime()
+function var0_0.updateItems(arg0_12)
+	local var0_12 = getProxy(EducateProxy):GetCurTime()
 
-	arg0.taskVOs = underscore.select(arg0.taskVOs, function(arg0)
-		return arg0:InTime(var0)
+	arg0_12.taskVOs = underscore.select(arg0_12.taskVOs, function(arg0_13)
+		return arg0_13:InTime(var0_12)
 	end)
-	arg0.finishTaskVOs = {}
-	arg0.unFinishTaskVOs = {}
+	arg0_12.finishTaskVOs = {}
+	arg0_12.unFinishTaskVOs = {}
 
-	underscore.each(arg0.taskVOs, function(arg0)
-		if arg0:IsFinish() then
-			table.insert(arg0.finishTaskVOs, arg0)
+	underscore.each(arg0_12.taskVOs, function(arg0_14)
+		if arg0_14:IsFinish() then
+			table.insert(arg0_12.finishTaskVOs, arg0_14)
 		else
-			table.insert(arg0.unFinishTaskVOs, arg0)
+			table.insert(arg0_12.unFinishTaskVOs, arg0_14)
 		end
 	end)
 
-	local var1 = CompareFuncs({
-		function(arg0)
-			return arg0:GetRemainTime(var0)
+	local var1_12 = CompareFuncs({
+		function(arg0_15)
+			return arg0_15:GetRemainTime(var0_12)
 		end,
-		function(arg0)
-			return arg0.id
+		function(arg0_16)
+			return arg0_16.id
 		end
 	})
 
-	table.sort(arg0.finishTaskVOs, var1)
-	table.sort(arg0.unFinishTaskVOs, var1)
-	setActive(arg0.finishListTF, #arg0.finishTaskVOs > 0)
-	arg0.finishUIList:align(#arg0.finishTaskVOs)
-	setActive(arg0.unFinishListTF, #arg0.unFinishTaskVOs > 0)
-	arg0.unFinishUIList:align(#arg0.unFinishTaskVOs)
-	setActive(arg0.emptyTF, #arg0.finishTaskVOs <= 0 and #arg0.unFinishTaskVOs <= 0)
+	table.sort(arg0_12.finishTaskVOs, var1_12)
+	table.sort(arg0_12.unFinishTaskVOs, var1_12)
+	setActive(arg0_12.finishListTF, #arg0_12.finishTaskVOs > 0)
+	arg0_12.finishUIList:align(#arg0_12.finishTaskVOs)
+	setActive(arg0_12.unFinishListTF, #arg0_12.unFinishTaskVOs > 0)
+	arg0_12.unFinishUIList:align(#arg0_12.unFinishTaskVOs)
+	setActive(arg0_12.emptyTF, #arg0_12.finishTaskVOs <= 0 and #arg0_12.unFinishTaskVOs <= 0)
 end
 
-function var0.updateFinishItem(arg0, arg1, arg2)
-	if LeanTween.isTweening(arg2.gameObject) then
-		LeanTween.cancel(arg2.gameObject)
+function var0_0.updateFinishItem(arg0_17, arg1_17, arg2_17)
+	if LeanTween.isTweening(arg2_17.gameObject) then
+		LeanTween.cancel(arg2_17.gameObject)
 	end
 
-	GetOrAddComponent(arg2, "CanvasGroup").alpha = 1
+	GetOrAddComponent(arg2_17, "CanvasGroup").alpha = 1
 
-	setActive(arg2, true)
+	setActive(arg2_17, true)
 
-	local var0 = arg0.finishTaskVOs[arg1 + 1]
+	local var0_17 = arg0_17.finishTaskVOs[arg1_17 + 1]
 
-	setText(arg0:findTF("desc", arg2), var0:getConfig("name"))
-	onButton(arg0, arg0:findTF("get_btn", arg2), function()
-		if not arg0.isClick then
-			arg0.isClick = true
+	setText(arg0_17:findTF("desc", arg2_17), var0_17:getConfig("name"))
+	onButton(arg0_17, arg0_17:findTF("get_btn", arg2_17), function()
+		if not arg0_17.isClick then
+			arg0_17.isClick = true
 
-			arg0:doAnim(arg2, function()
+			arg0_17:doAnim(arg2_17, function()
 				return
 			end)
 			onDelayTick(function()
-				arg0.isClick = nil
+				arg0_17.isClick = nil
 
-				arg0:sumbitTask(var0)
+				arg0_17:sumbitTask(var0_17)
 			end, 0.165)
 		end
 	end, SFX_PANEL)
 end
 
-function var0.updateUnfinishItem(arg0, arg1, arg2)
-	local var0 = arg0.unFinishTaskVOs[arg1 + 1]
+function var0_0.updateUnfinishItem(arg0_21, arg1_21, arg2_21)
+	local var0_21 = arg0_21.unFinishTaskVOs[arg1_21 + 1]
 
-	setText(arg0:findTF("desc", arg2), var0:getConfig("name"))
+	setText(arg0_21:findTF("desc", arg2_21), var0_21:getConfig("name"))
 
-	local var1 = var0:GetRemainTime()
-	local var2 = var1 < 7 and 0 or math.floor(var1 / 7)
+	local var1_21 = var0_21:GetRemainTime()
+	local var2_21 = var1_21 < 7 and 0 or math.floor(var1_21 / 7)
 
-	setText(arg0:findTF("time_desc/time", arg2), var2 .. i18n("word_week"))
+	setText(arg0_21:findTF("time_desc/time", arg2_21), var2_21 .. i18n("word_week"))
 end
 
-function var0.doAnim(arg0, arg1, arg2)
-	local var0 = GetOrAddComponent(arg1, "CanvasGroup")
-	local var1 = arg1.transform.localPosition
+function var0_0.doAnim(arg0_22, arg1_22, arg2_22)
+	local var0_22 = GetOrAddComponent(arg1_22, "CanvasGroup")
+	local var1_22 = arg1_22.transform.localPosition
 
-	LeanTween.alphaCanvas(var0, 0, 0.198):setFrom(1)
-	LeanTween.value(go(arg1), var1.x, var1.x + 200, 0.264):setOnUpdate(System.Action_float(function(arg0)
-		arg1.transform.localPosition = Vector3(arg0, var1.y, var1.z)
+	LeanTween.alphaCanvas(var0_22, 0, 0.198):setFrom(1)
+	LeanTween.value(go(arg1_22), var1_22.x, var1_22.x + 200, 0.264):setOnUpdate(System.Action_float(function(arg0_23)
+		arg1_22.transform.localPosition = Vector3(arg0_23, var1_22.y, var1_22.z)
 	end)):setEase(LeanTweenType.easeInCubic):setOnComplete(System.Action(function()
-		arg1.transform.localPosition = var1
+		arg1_22.transform.localPosition = var1_22
 
-		setActive(arg1, false)
-		arg2()
+		setActive(arg1_22, false)
+		arg2_22()
 	end))
 end
 
-function var0.updateView(arg0)
-	arg0:initData()
-	arg0:updateItems()
+function var0_0.updateView(arg0_25)
+	arg0_25:initData()
+	arg0_25:updateItems()
 end
 
-function var0._close(arg0)
-	if arg0.isClick then
+function var0_0._close(arg0_26)
+	if arg0_26.isClick then
 		return
 	end
 
-	arg0.anim:Play("anim_educate_mind_out")
+	arg0_26.anim:Play("anim_educate_mind_out")
 end
 
-function var0.onBackPressed(arg0)
-	arg0:_close()
+function var0_0.onBackPressed(arg0_27)
+	arg0_27:_close()
 end
 
-function var0.willExit(arg0)
-	arg0.animEvent:SetEndEvent(nil)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0._tf)
+function var0_0.willExit(arg0_28)
+	arg0_28.animEvent:SetEndEvent(nil)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_28._tf)
 
-	if arg0.contextData.onExit then
-		arg0.contextData.onExit()
+	if arg0_28.contextData.onExit then
+		arg0_28.contextData.onExit()
 	end
 end
 
-return var0
+return var0_0

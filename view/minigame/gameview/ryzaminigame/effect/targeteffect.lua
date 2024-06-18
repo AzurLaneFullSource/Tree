@@ -1,6 +1,6 @@
-﻿local var0 = class("TargetEffect", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
+﻿local var0_0 = class("TargetEffect", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
 
-function var0.GetCollideRange(arg0)
+function var0_0.GetCollideRange(arg0_1)
 	return {
 		{
 			{
@@ -15,4 +15,4 @@ function var0.GetCollideRange(arg0)
 	}
 end
 
-return var0
+return var0_0

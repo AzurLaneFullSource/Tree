@@ -1,63 +1,63 @@
-﻿local var0 = class("LevelAmbushView", import("..base.BaseSubView"))
+﻿local var0_0 = class("LevelAmbushView", import("..base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "LevelAmbushView"
 end
 
-function var0.OnInit(arg0)
-	arg0:InitData()
-	arg0:InitUI()
-	setActive(arg0._tf, true)
+function var0_0.OnInit(arg0_2)
+	arg0_2:InitData()
+	arg0_2:InitUI()
+	setActive(arg0_2._tf, true)
 end
 
-function var0.InitData(arg0)
-	arg0.chapter = arg0.contextData.chapterVO
-	arg0.fleet = arg0.chapter.fleet
+function var0_0.InitData(arg0_3)
+	arg0_3.chapter = arg0_3.contextData.chapterVO
+	arg0_3.fleet = arg0_3.chapter.fleet
 
-	local var0 = arg0.chapter:getChapterCell(arg0.fleet.line.row, arg0.fleet.line.column)
+	local var0_3 = arg0_3.chapter:getChapterCell(arg0_3.fleet.line.row, arg0_3.fleet.line.column)
 
-	arg0.template = pg.expedition_data_template[var0.attachmentId]
+	arg0_3.template = pg.expedition_data_template[var0_3.attachmentId]
 end
 
-function var0.InitUI(arg0)
-	local var0 = findTF(arg0._tf, "window")
-	local var1 = findTF(arg0._tf, "window/ship/lv/Text")
-	local var2 = findTF(arg0._tf, "window/ship/icon")
-	local var3 = findTF(arg0._tf, "window/evade/rate")
-	local var4 = findTF(arg0._tf, "window/fight_button")
-	local var5 = findTF(arg0._tf, "window/dodge_button")
+function var0_0.InitUI(arg0_4)
+	local var0_4 = findTF(arg0_4._tf, "window")
+	local var1_4 = findTF(arg0_4._tf, "window/ship/lv/Text")
+	local var2_4 = findTF(arg0_4._tf, "window/ship/icon")
+	local var3_4 = findTF(arg0_4._tf, "window/evade/rate")
+	local var4_4 = findTF(arg0_4._tf, "window/fight_button")
+	local var5_4 = findTF(arg0_4._tf, "window/dodge_button")
 
-	GetImageSpriteFromAtlasAsync("enemies/" .. arg0.template.icon, "", var2)
-	setText(var1, arg0.template.level)
-	setText(var3, math.floor(arg0.chapter:getAmbushDodge(arg0.fleet) * 100) .. "%")
-	onButton(arg0, var4, function()
-		arg0:emit(LevelMediator2.ON_OP, {
+	GetImageSpriteFromAtlasAsync("enemies/" .. arg0_4.template.icon, "", var2_4)
+	setText(var1_4, arg0_4.template.level)
+	setText(var3_4, math.floor(arg0_4.chapter:getAmbushDodge(arg0_4.fleet) * 100) .. "%")
+	onButton(arg0_4, var4_4, function()
+		arg0_4:emit(LevelMediator2.ON_OP, {
 			arg1 = 0,
 			type = ChapterConst.OpAmbush,
-			id = arg0.fleet.id
+			id = arg0_4.fleet.id
 		})
-		arg0:Destroy()
+		arg0_4:Destroy()
 	end, SFX_UI_WEIGHANCHOR_ATTACK)
-	onButton(arg0, var5, function()
-		arg0:emit(LevelMediator2.ON_OP, {
+	onButton(arg0_4, var5_4, function()
+		arg0_4:emit(LevelMediator2.ON_OP, {
 			arg1 = 1,
 			type = ChapterConst.OpAmbush,
-			id = arg0.fleet.id
+			id = arg0_4.fleet.id
 		})
-		arg0:Destroy()
+		arg0_4:Destroy()
 	end, SFX_UI_WEIGHANCHOR_AVOID)
 
-	var0.localScale = Vector3(1, 0, 1)
+	var0_4.localScale = Vector3(1, 0, 1)
 
-	LeanTween.scaleY(var0.gameObject, 1, 0.3):setOnComplete(System.Action(arg0.onComplete))
+	LeanTween.scaleY(var0_4.gameObject, 1, 0.3):setOnComplete(System.Action(arg0_4.onComplete))
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_7)
 	return
 end
 
-function var0.SetFuncOnComplete(arg0, arg1)
-	arg0.onComplete = arg1
+function var0_0.SetFuncOnComplete(arg0_8, arg1_8)
+	arg0_8.onComplete = arg1_8
 end
 
-return var0
+return var0_0

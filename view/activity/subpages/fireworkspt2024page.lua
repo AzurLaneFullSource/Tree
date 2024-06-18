@@ -1,6 +1,6 @@
-﻿local var0 = class("FireworksPt2024Page", import(".FireworksPtPage"))
+﻿local var0_0 = class("FireworksPt2024Page", import(".FireworksPtPage"))
 
-var0.ANIM_SHOW = {
+var0_0.ANIM_SHOW = {
 	{
 		70166,
 		70167,
@@ -23,89 +23,89 @@ var0.ANIM_SHOW = {
 	}
 }
 
-function var0.OnFirstFlush(arg0)
-	var0.super.OnFirstFlush(arg0)
-	onButton(arg0, arg0.fireBtn, function()
+function var0_0.OnFirstFlush(arg0_1)
+	var0_0.super.OnFirstFlush(arg0_1)
+	onButton(arg0_1, arg0_1.fireBtn, function()
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SPRING_FESTIVAL_BACKHILL_2024, {
 			openFireworkLayer = true
 		})
 	end, SFX_PANEL)
 end
 
-function var0.UpdateFrieworkPanel(arg0, arg1)
-	arg0.fireworkAct = getProxy(ActivityProxy):getActivityById(arg0.fireworkActID)
+function var0_0.UpdateFrieworkPanel(arg0_3, arg1_3)
+	arg0_3.fireworkAct = getProxy(ActivityProxy):getActivityById(arg0_3.fireworkActID)
 
-	assert(arg0.fireworkAct and not arg0.fireworkAct:isEnd(), "烟花活动(type92)已结束")
+	assert(arg0_3.fireworkAct and not arg0_3.fireworkAct:isEnd(), "烟花活动(type92)已结束")
 
-	arg0.unlockCount = arg0.fireworkAct:getData1()
-	arg0.unlockIds = arg0.fireworkAct:getData1List()
+	arg0_3.unlockCount = arg0_3.fireworkAct:getData1()
+	arg0_3.unlockIds = arg0_3.fireworkAct:getData1List()
 
-	local var0 = #arg0.fireworkPages
+	local var0_3 = #arg0_3.fireworkPages
 
-	if var0 < arg1 or arg1 < 1 then
+	if var0_3 < arg1_3 or arg1_3 < 1 then
 		return
 	end
 
-	arg0.pageIndex = arg1
+	arg0_3.pageIndex = arg1_3
 
-	for iter0, iter1 in ipairs(arg0.fireworkPages) do
-		setActive(iter1, tonumber(iter1.name) == arg1)
+	for iter0_3, iter1_3 in ipairs(arg0_3.fireworkPages) do
+		setActive(iter1_3, tonumber(iter1_3.name) == arg1_3)
 	end
 
-	for iter2, iter3 in ipairs(arg0.dots) do
-		setActive(iter3, tonumber(iter3.name) == arg1)
+	for iter2_3, iter3_3 in ipairs(arg0_3.dots) do
+		setActive(iter3_3, tonumber(iter3_3.name) == arg1_3)
 	end
 
-	setButtonEnabled(arg0.nextPageBtn, arg1 ~= var0)
-	setButtonEnabled(arg0.lastPageBtn, arg1 ~= 1)
-	setText(arg0.fireworkNumText, #arg0.unlockIds .. "/" .. #arg0.fireworkIds)
+	setButtonEnabled(arg0_3.nextPageBtn, arg1_3 ~= var0_3)
+	setButtonEnabled(arg0_3.lastPageBtn, arg1_3 ~= 1)
+	setText(arg0_3.fireworkNumText, #arg0_3.unlockIds .. "/" .. #arg0_3.fireworkIds)
 
-	arg0.ptNum = getProxy(PlayerProxy):getRawData():getResource(arg0.ptID)
+	arg0_3.ptNum = getProxy(PlayerProxy):getRawData():getResource(arg0_3.ptID)
 
-	setText(arg0.ptText, arg0.ptNum)
+	setText(arg0_3.ptText, arg0_3.ptNum)
 
-	local var1 = arg0:getAnimId()
-	local var2 = arg0.unlockCount > 0 and arg0.ptNum >= arg0.ptConsume
+	local var1_3 = arg0_3:getAnimId()
+	local var2_3 = arg0_3.unlockCount > 0 and arg0_3.ptNum >= arg0_3.ptConsume
 
-	for iter4 = #arg0.fireworkPages, 1, -1 do
-		eachChild(arg0.fireworkPages[iter4], function(arg0)
-			local var0 = tonumber(arg0.name)
+	for iter4_3 = #arg0_3.fireworkPages, 1, -1 do
+		eachChild(arg0_3.fireworkPages[iter4_3], function(arg0_4)
+			local var0_4 = tonumber(arg0_4.name)
 
-			if table.contains(arg0.unlockIds, var0) then
-				setActive(arg0, false)
+			if table.contains(arg0_3.unlockIds, var0_4) then
+				setActive(arg0_4, false)
 			else
-				setActive(arg0, true)
+				setActive(arg0_4, true)
 
-				if var2 and var1 and var0 == var1 then
-					arg0:playSwingAnim(arg0)
+				if var2_3 and var1_3 and var0_4 == var1_3 then
+					arg0_3:playSwingAnim(arg0_4)
 				else
-					arg0:stopSwingAnim(arg0)
+					arg0_3:stopSwingAnim(arg0_4)
 				end
 
-				onButton(arg0, arg0, function()
-					arg0:OnUnlockClick(var0)
+				onButton(arg0_3, arg0_4, function()
+					arg0_3:OnUnlockClick(var0_4)
 				end, SFX_PANEL)
 			end
 		end)
 	end
 end
 
-function var0.getAnimId(arg0)
-	for iter0, iter1 in ipairs(var0.ANIM_SHOW[arg0.pageIndex]) do
-		if not table.contains(arg0.unlockIds, iter1) then
-			return iter1
+function var0_0.getAnimId(arg0_6)
+	for iter0_6, iter1_6 in ipairs(var0_0.ANIM_SHOW[arg0_6.pageIndex]) do
+		if not table.contains(arg0_6.unlockIds, iter1_6) then
+			return iter1_6
 		end
 	end
 
 	return nil
 end
 
-function var0.playSwingAnim(arg0, arg1)
-	arg0:findTF("pos/Image", arg1):GetComponent(typeof(Animation)):Play("swing")
+function var0_0.playSwingAnim(arg0_7, arg1_7)
+	arg0_7:findTF("pos/Image", arg1_7):GetComponent(typeof(Animation)):Play("swing")
 end
 
-function var0.stopSwingAnim(arg0, arg1)
-	arg0:findTF("pos/Image", arg1):GetComponent(typeof(Animation)):Stop()
+function var0_0.stopSwingAnim(arg0_8, arg1_8)
+	arg0_8:findTF("pos/Image", arg1_8):GetComponent(typeof(Animation)):Stop()
 end
 
-return var0
+return var0_0

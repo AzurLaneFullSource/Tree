@@ -1,27 +1,27 @@
-﻿local var0 = type
-local var1 = string.sub
-local var2 = string.byte
-local var3 = string.format
-local var4 = string.match
-local var5 = string.gmatch
-local var6 = string.gsub
-local var7 = table.concat
-local var8 = require("bit")
-local var9 = var8.band
-local var10 = var8.bor
-local var11 = var8.bxor
-local var12 = var8.tohex
-local var13 = var8.lshift
-local var14 = var8.rshift
-local var15 = var8.arshift
-local var16 = var8.ror
-local var17 = {
+﻿local var0_0 = type
+local var1_0 = string.sub
+local var2_0 = string.byte
+local var3_0 = string.format
+local var4_0 = string.match
+local var5_0 = string.gmatch
+local var6_0 = string.gsub
+local var7_0 = table.concat
+local var8_0 = require("bit")
+local var9_0 = var8_0.band
+local var10_0 = var8_0.bor
+local var11_0 = var8_0.bxor
+local var12_0 = var8_0.tohex
+local var13_0 = var8_0.lshift
+local var14_0 = var8_0.rshift
+local var15_0 = var8_0.arshift
+local var16_0 = var8_0.ror
+local var17_0 = {
 	[0] = "adrDBx",
 	"adrpDBx",
 	shift = 31,
 	mask = 1
 }
-local var18 = {
+local var18_0 = {
 	[0] = "add|movDNIg",
 	"adds|cmnD0NIg",
 	"subDNIg",
@@ -29,7 +29,7 @@ local var18 = {
 	shift = 29,
 	mask = 3
 }
-local var19 = {
+local var19_0 = {
 	[0] = {
 		false,
 		shift = 22,
@@ -54,7 +54,7 @@ local var19 = {
 	shift = 31,
 	mask = 1
 }
-local var20 = {
+local var20_0 = {
 	[0] = {
 		false,
 		shift = 22,
@@ -79,7 +79,7 @@ local var20 = {
 	shift = 31,
 	mask = 1
 }
-local var21 = {
+local var21_0 = {
 	[0] = {
 		shift = 22,
 		mask = 1,
@@ -105,14 +105,14 @@ local var21 = {
 	shift = 31,
 	mask = 1
 }
-local var22 = {
-	[0] = var17,
-	var17,
-	var18,
+local var22_0 = {
+	[0] = var17_0,
+	var17_0,
+	var18_0,
 	false,
-	var19,
-	var20,
-	var21,
+	var19_0,
+	var20_0,
+	var21_0,
 	{
 		[0] = "extr|rorDNM4w",
 		shift = 15,
@@ -123,7 +123,7 @@ local var22 = {
 	shift = 23,
 	mask = 7
 }
-local var23 = {
+local var23_0 = {
 	[0] = {
 		false,
 		shift = 15,
@@ -236,7 +236,7 @@ local var23 = {
 	shift = 31,
 	mask = 1
 }
-local var24 = {
+local var24_0 = {
 	[0] = {
 		false,
 		shift = 15,
@@ -317,14 +317,14 @@ local var24 = {
 	shift = 31,
 	mask = 1
 }
-local var25 = {
-	[0] = var24,
-	var24,
-	var24,
+local var25_0 = {
+	[0] = var24_0,
+	var24_0,
+	var24_0,
 	shift = 22,
 	mask = 3
 }
-local var26 = {
+local var26_0 = {
 	shift = 22,
 	mask = 3,
 	[0] = {
@@ -336,7 +336,7 @@ local var26 = {
 		mask = 3
 	}
 }
-local var27 = {
+local var27_0 = {
 	shift = 10,
 	mask = 63,
 	[0] = {
@@ -348,7 +348,7 @@ local var27 = {
 		mask = 3
 	}
 }
-local var28 = {
+local var28_0 = {
 	shift = 4,
 	mask = 1,
 	[0] = {
@@ -370,7 +370,7 @@ local var28 = {
 		}
 	}
 }
-local var29 = {
+local var29_0 = {
 	shift = 11,
 	mask = 1,
 	[0] = {
@@ -394,7 +394,7 @@ local var29 = {
 		mask = 1
 	}
 }
-local var30 = {
+local var30_0 = {
 	shift = 29,
 	mask = 1,
 	[0] = {
@@ -422,7 +422,7 @@ local var30 = {
 		mask = 1
 	}
 }
-local var31 = {
+local var31_0 = {
 	shift = 29,
 	mask = 1,
 	[0] = {
@@ -441,7 +441,7 @@ local var31 = {
 		mask = 63
 	}
 }
-local var32 = {
+local var32_0 = {
 	false,
 	false,
 	false,
@@ -483,12 +483,12 @@ local var32 = {
 	shift = 29,
 	mask = 7
 }
-local var33 = {
+local var33_0 = {
 	[0] = {
-		[0] = var23,
+		[0] = var23_0,
 		{
-			[0] = var25,
-			var26,
+			[0] = var25_0,
+			var26_0,
 			shift = 21,
 			mask = 1
 		},
@@ -497,33 +497,33 @@ local var33 = {
 	},
 	{
 		false,
-		[0] = var27,
-		var28,
+		[0] = var27_0,
+		var28_0,
 		false,
-		var29,
+		var29_0,
 		false,
 		{
-			[0] = var31,
-			var30,
+			[0] = var31_0,
+			var30_0,
 			shift = 30,
 			mask = 1
 		},
 		false,
-		var32,
-		var32,
-		var32,
-		var32,
-		var32,
-		var32,
-		var32,
-		var32,
+		var32_0,
+		var32_0,
+		var32_0,
+		var32_0,
+		var32_0,
+		var32_0,
+		var32_0,
+		var32_0,
 		shift = 21,
 		mask = 15
 	},
 	shift = 28,
 	mask = 1
 }
-local var34 = {
+local var34_0 = {
 	[0] = {
 		[0] = "ldrDwB",
 		"ldrDxB",
@@ -540,7 +540,7 @@ local var34 = {
 	shift = 26,
 	mask = 1
 }
-local var35 = {
+local var35_0 = {
 	[0] = {
 		shift = 26,
 		mask = 1,
@@ -601,7 +601,7 @@ local var35 = {
 	shift = 30,
 	mask = 3
 }
-local var36 = {
+local var36_0 = {
 	[0] = {
 		[0] = {
 			shift = 26,
@@ -635,9 +635,9 @@ local var36 = {
 				mask = 3
 			}
 		},
-		var35,
+		var35_0,
 		false,
-		var35,
+		var35_0,
 		shift = 10,
 		mask = 3
 	},
@@ -701,7 +701,7 @@ local var36 = {
 	shift = 21,
 	mask = 1
 }
-local var37 = {
+local var37_0 = {
 	[0] = {
 		[0] = {
 			[0] = "stpDzAzwP",
@@ -746,22 +746,22 @@ local var37 = {
 	shift = 22,
 	mask = 1
 }
-local var38 = {
+local var38_0 = {
 	shift = 24,
 	mask = 49,
-	[16] = var34,
-	[48] = var36,
+	[16] = var34_0,
+	[48] = var36_0,
 	[32] = {
-		var37,
-		var37,
-		var37,
+		var37_0,
+		var37_0,
+		var37_0,
 		shift = 23,
 		mask = 3
 	},
 	[33] = {
-		var37,
-		var37,
-		var37,
+		var37_0,
+		var37_0,
+		var37_0,
 		shift = 23,
 		mask = 3
 	},
@@ -814,7 +814,7 @@ local var38 = {
 		mask = 1
 	}
 }
-local var39 = {
+local var39_0 = {
 	{
 		[0] = {
 			{
@@ -1055,7 +1055,7 @@ local var39 = {
 	shift = 28,
 	mask = 7
 }
-local var40 = {
+local var40_0 = {
 	[0] = "bB",
 	{
 		[0] = "cbzDBg",
@@ -1126,46 +1126,46 @@ local var40 = {
 	shift = 29,
 	mask = 7
 }
-local var41 = {
+local var41_0 = {
 	[0] = false,
 	false,
 	false,
 	false,
-	var38,
-	var33,
-	var38,
-	var39,
-	var22,
-	var22,
-	var40,
-	var40,
-	var38,
-	var33,
-	var38,
-	var39,
+	var38_0,
+	var33_0,
+	var38_0,
+	var39_0,
+	var22_0,
+	var22_0,
+	var40_0,
+	var40_0,
+	var38_0,
+	var33_0,
+	var38_0,
+	var39_0,
 	shift = 25,
 	mask = 15
 }
-local var42 = {
+local var42_0 = {
 	x = {},
 	w = {},
 	d = {},
 	s = {}
 }
 
-for iter0 = 0, 30 do
-	var42.x[iter0] = "x" .. iter0
-	var42.w[iter0] = "w" .. iter0
-	var42.d[iter0] = "d" .. iter0
-	var42.s[iter0] = "s" .. iter0
+for iter0_0 = 0, 30 do
+	var42_0.x[iter0_0] = "x" .. iter0_0
+	var42_0.w[iter0_0] = "w" .. iter0_0
+	var42_0.d[iter0_0] = "d" .. iter0_0
+	var42_0.s[iter0_0] = "s" .. iter0_0
 end
 
-var42.x[31] = "sp"
-var42.w[31] = "wsp"
-var42.d[31] = "d31"
-var42.s[31] = "s31"
+var42_0.x[31] = "sp"
+var42_0.w[31] = "wsp"
+var42_0.d[31] = "d31"
+var42_0.s[31] = "s31"
 
-local var43 = {
+local var43_0 = {
 	[0] = "eq",
 	"ne",
 	"cs",
@@ -1182,12 +1182,12 @@ local var43 = {
 	"le",
 	"al"
 }
-local var44 = {
+local var44_0 = {
 	[0] = "lsl",
 	"lsr",
 	"asr"
 }
-local var45 = {
+local var45_0 = {
 	[0] = "uxtb",
 	"uxth",
 	"uxtw",
@@ -1198,46 +1198,46 @@ local var45 = {
 	"sxtx"
 }
 
-local function var46(arg0, arg1, arg2)
-	local var0 = arg0.pos
-	local var1 = ""
+local function var46_0(arg0_1, arg1_1, arg2_1)
+	local var0_1 = arg0_1.pos
+	local var1_1 = ""
 
-	if arg0.rel then
-		local var2 = arg0.symtab[arg0.rel]
+	if arg0_1.rel then
+		local var2_1 = arg0_1.symtab[arg0_1.rel]
 
-		if var2 then
-			var1 = "\t->" .. var2
+		if var2_1 then
+			var1_1 = "\t->" .. var2_1
 		end
 	end
 
-	if arg0.hexdump > 0 then
-		arg0.out(var3("%08x  %s  %-5s %s%s\n", arg0.addr + var0, var12(arg0.op), arg1, var7(arg2, ", "), var1))
+	if arg0_1.hexdump > 0 then
+		arg0_1.out(var3_0("%08x  %s  %-5s %s%s\n", arg0_1.addr + var0_1, var12_0(arg0_1.op), arg1_1, var7_0(arg2_1, ", "), var1_1))
 	else
-		arg0.out(var3("%08x  %-5s %s%s\n", arg0.addr + var0, arg1, var7(arg2, ", "), var1))
+		arg0_1.out(var3_0("%08x  %-5s %s%s\n", arg0_1.addr + var0_1, arg1_1, var7_0(arg2_1, ", "), var1_1))
 	end
 
-	arg0.pos = var0 + 4
+	arg0_1.pos = var0_1 + 4
 end
 
-local function var47(arg0)
-	return var46(arg0, ".long", {
-		"0x" .. var12(arg0.op)
+local function var47_0(arg0_2)
+	return var46_0(arg0_2, ".long", {
+		"0x" .. var12_0(arg0_2.op)
 	})
 end
 
-local function var48(arg0, arg1, arg2)
-	return var42[var4(arg1, arg0 .. "%w-([xwds])")][arg2]
+local function var48_0(arg0_3, arg1_3, arg2_3)
+	return var42_0[var4_0(arg1_3, arg0_3 .. "%w-([xwds])")][arg2_3]
 end
 
-local function var49(arg0)
-	if arg0 < 0 then
-		return var12(arg0)
+local function var49_0(arg0_4)
+	if arg0_4 < 0 then
+		return var12_0(arg0_4)
 	else
-		return var3("%x", arg0)
+		return var3_0("%x", arg0_4)
 	end
 end
 
-local var50 = {
+local var50_0 = {
 	1431655765,
 	286331153,
 	16843009,
@@ -1245,105 +1245,105 @@ local var50 = {
 	1
 }
 
-local function var51(arg0)
-	local var0 = var9(var14(arg0, 10), 63)
-	local var1 = var9(var14(arg0, 16), 63)
+local function var51_0(arg0_5)
+	local var0_5 = var9_0(var14_0(arg0_5, 10), 63)
+	local var1_5 = var9_0(var14_0(arg0_5, 16), 63)
 
-	if var9(arg0, 4194304) == 0 then
-		local var2 = 5
+	if var9_0(arg0_5, 4194304) == 0 then
+		local var2_5 = 5
 
-		if var0 >= 56 then
-			if var0 >= 60 then
-				var2 = 1
+		if var0_5 >= 56 then
+			if var0_5 >= 60 then
+				var2_5 = 1
 			else
-				var2 = 2
+				var2_5 = 2
 			end
-		elseif var0 >= 48 then
-			var2 = 3
-		elseif var0 >= 32 then
-			var2 = 4
+		elseif var0_5 >= 48 then
+			var2_5 = 3
+		elseif var0_5 >= 32 then
+			var2_5 = 4
 		end
 
-		local var3 = var13(1, var2) - 1
-		local var4 = var9(var0, var3)
-		local var5 = var9(var1, var3)
-		local var6 = var16(var14(-1, 31 - var4), var5)
+		local var3_5 = var13_0(1, var2_5) - 1
+		local var4_5 = var9_0(var0_5, var3_5)
+		local var5_5 = var9_0(var1_5, var3_5)
+		local var6_5 = var16_0(var14_0(-1, 31 - var4_5), var5_5)
 
-		if var2 ~= 5 then
-			var6 = var9(var6, var13(1, var3) - 1) + var14(var6, 31 - var3)
+		if var2_5 ~= 5 then
+			var6_5 = var9_0(var6_5, var13_0(1, var3_5) - 1) + var14_0(var6_5, 31 - var3_5)
 		end
 
-		local var7 = var6 * var50[var2]
-		local var8 = var49(var7)
+		local var7_5 = var6_5 * var50_0[var2_5]
+		local var8_5 = var49_0(var7_5)
 
-		if var14(arg0, 31) ~= 0 then
-			return var8 .. var12(var7)
+		if var14_0(arg0_5, 31) ~= 0 then
+			return var8_5 .. var12_0(var7_5)
 		else
-			return var8
+			return var8_5
 		end
 	else
-		local var9 = -1
-		local var10 = 0
+		local var9_5 = -1
+		local var10_5 = 0
 
-		if var0 < 32 then
-			var9 = var14(-1, 31 - var0)
+		if var0_5 < 32 then
+			var9_5 = var14_0(-1, 31 - var0_5)
 		else
-			var10 = var14(-1, 63 - var0)
+			var10_5 = var14_0(-1, 63 - var0_5)
 		end
 
-		if var1 ~= 0 then
-			var9, var10 = var16(var9, var1), var16(var10, var1)
+		if var1_5 ~= 0 then
+			var9_5, var10_5 = var16_0(var9_5, var1_5), var16_0(var10_5, var1_5)
 
-			local var11 = var1 == 32 and 0 or var9(var11(var9, var10), var13(-1, 32 - var1))
+			local var11_5 = var1_5 == 32 and 0 or var9_0(var11_0(var9_5, var10_5), var13_0(-1, 32 - var1_5))
 
-			var9, var10 = var11(var9, var11), var11(var10, var11)
+			var9_5, var10_5 = var11_0(var9_5, var11_5), var11_0(var10_5, var11_5)
 
-			if var1 >= 32 then
-				var9, var10 = var10, var9
+			if var1_5 >= 32 then
+				var9_5, var10_5 = var10_5, var9_5
 			end
 		end
 
-		if var10 ~= 0 then
-			return var49(var10) .. var12(var9)
+		if var10_5 ~= 0 then
+			return var49_0(var10_5) .. var12_0(var9_5)
 		else
-			return var49(var9)
+			return var49_0(var9_5)
 		end
 	end
 end
 
-local function var52(arg0, arg1)
-	if arg1 == "b" or arg1 == "bl" then
-		return var15(var13(arg0, 6), 4)
-	elseif arg1 == "adr" or arg1 == "adrp" then
-		local var0 = var9(var14(arg0, 29), 3)
-		local var1 = var13(var15(var13(arg0, 8), 13), 2)
+local function var52_0(arg0_6, arg1_6)
+	if arg1_6 == "b" or arg1_6 == "bl" then
+		return var15_0(var13_0(arg0_6, 6), 4)
+	elseif arg1_6 == "adr" or arg1_6 == "adrp" then
+		local var0_6 = var9_0(var14_0(arg0_6, 29), 3)
+		local var1_6 = var13_0(var15_0(var13_0(arg0_6, 8), 13), 2)
 
-		return var10(var1, var0)
-	elseif arg1 == "tbz" or arg1 == "tbnz" then
-		return var13(var15(var13(arg0, 13), 18), 2)
+		return var10_0(var1_6, var0_6)
+	elseif arg1_6 == "tbz" or arg1_6 == "tbnz" then
+		return var13_0(var15_0(var13_0(arg0_6, 13), 18), 2)
 	else
-		return var13(var15(var13(arg0, 8), 13), 2)
+		return var13_0(var15_0(var13_0(arg0_6, 8), 13), 2)
 	end
 end
 
-local function var53(arg0)
-	local var0 = var9(arg0, 1048576) == 0 and 1 or -1
-	local var1 = var11(var14(var15(var13(arg0, 12), 5), 24), 128) - 131
+local function var53_0(arg0_7)
+	local var0_7 = var9_0(arg0_7, 1048576) == 0 and 1 or -1
+	local var1_7 = var11_0(var14_0(var15_0(var13_0(arg0_7, 12), 5), 24), 128) - 131
 
-	return var0 * (16 + var9(var14(arg0, 13), 15)) * 2^var1
+	return var0_7 * (16 + var9_0(var14_0(arg0_7, 13), 15)) * 2^var1_7
 end
 
-local function var54(arg0, arg1, arg2, arg3)
-	if arg2 < arg3 or arg2 == 31 or arg2 == 63 then
+local function var54_0(arg0_8, arg1_8, arg2_8, arg3_8)
+	if arg2_8 < arg3_8 or arg2_8 == 31 or arg2_8 == 63 then
 		return false
 	end
 
-	if arg3 == 0 then
-		if arg0 == 0 and (arg2 == 7 or arg2 == 15) then
+	if arg3_8 == 0 then
+		if arg0_8 == 0 and (arg2_8 == 7 or arg2_8 == 15) then
 			return false
 		end
 
-		if arg0 ~= 0 and arg1 == 0 and (arg2 == 7 or arg2 == 15 or arg2 == 31) then
+		if arg0_8 ~= 0 and arg1_8 == 0 and (arg2_8 == 7 or arg2_8 == 15 or arg2_8 == 31) then
 			return false
 		end
 	end
@@ -1351,461 +1351,461 @@ local function var54(arg0, arg1, arg2, arg3)
 	return true
 end
 
-local function var55(arg0)
-	local var0 = arg0.pos
-	local var1, var2, var3, var4 = var2(arg0.code, var0 + 1, var0 + 4)
-	local var5 = var10(var13(var4, 24), var13(var3, 16), var13(var2, 8), var1)
-	local var6 = {}
-	local var7 = ""
-	local var8
-	local var9
-	local var10
-	local var11
+local function var55_0(arg0_9)
+	local var0_9 = arg0_9.pos
+	local var1_9, var2_9, var3_9, var4_9 = var2_0(arg0_9.code, var0_9 + 1, var0_9 + 4)
+	local var5_9 = var10_0(var13_0(var4_9, 24), var13_0(var3_9, 16), var13_0(var2_9, 8), var1_9)
+	local var6_9 = {}
+	local var7_9 = ""
+	local var8_9
+	local var9_9
+	local var10_9
+	local var11_9
 
-	arg0.op = var5
-	arg0.rel = nil
+	arg0_9.op = var5_9
+	arg0_9.rel = nil
 
-	local var12
-	local var13
-	local var14 = var41[var9(var14(var5, 25), 15)]
+	local var12_9
+	local var13_9
+	local var14_9 = var41_0[var9_0(var14_0(var5_9, 25), 15)]
 
-	while var0(var14) ~= "string" do
-		if not var14 then
-			return var47(arg0)
+	while var0_0(var14_9) ~= "string" do
+		if not var14_9 then
+			return var47_0(arg0_9)
 		end
 
-		var14 = var14[var9(var14(var5, var14.shift), var14.mask)] or var14._
+		var14_9 = var14_9[var9_0(var14_0(var5_9, var14_9.shift), var14_9.mask)] or var14_9._
 	end
 
-	local var15, var16 = var4(var14, "^([a-z0-9]*)(.*)")
-	local var17, var18 = var4(var16, "|([a-z0-9_.|]*)(.*)")
+	local var15_9, var16_9 = var4_0(var14_9, "^([a-z0-9]*)(.*)")
+	local var17_9, var18_9 = var4_0(var16_9, "|([a-z0-9_.|]*)(.*)")
 
-	if var17 then
-		var16 = var18
+	if var17_9 then
+		var16_9 = var18_9
 	end
 
-	if var1(var16, 1, 1) == "." then
-		local var19, var20 = var4(var16, "^([a-z0-9.]*)(.*)")
+	if var1_0(var16_9, 1, 1) == "." then
+		local var19_9, var20_9 = var4_0(var16_9, "^([a-z0-9.]*)(.*)")
 
-		var7 = var7 .. var19
-		var16 = var20
+		var7_9 = var7_9 .. var19_9
+		var16_9 = var20_9
 	end
 
-	local var21 = var4(var16, "[gf]")
+	local var21_9 = var4_0(var16_9, "[gf]")
 
-	if var21 then
-		if var21 == "g" then
-			var11 = var9(var5, 2147483648) ~= 0 and var42.x or var42.w
+	if var21_9 then
+		if var21_9 == "g" then
+			var11_9 = var9_0(var5_9, 2147483648) ~= 0 and var42_0.x or var42_0.w
 		else
-			var11 = var9(var5, 4194304) ~= 0 and var42.d or var42.s
+			var11_9 = var9_0(var5_9, 4194304) ~= 0 and var42_0.d or var42_0.s
 		end
 	end
 
-	local var22
-	local var23
+	local var22_9
+	local var23_9
 
-	for iter0 in var5(var16, ".") do
-		local var24
+	for iter0_9 in var5_0(var16_9, ".") do
+		local var24_9
 
-		if iter0 == "D" then
-			local var25 = var9(var5, 31)
+		if iter0_9 == "D" then
+			local var25_9 = var9_0(var5_9, 31)
 
-			var24 = var21 and var11[var25] or var48(iter0, var16, var25)
-		elseif iter0 == "N" then
-			local var26 = var9(var14(var5, 5), 31)
+			var24_9 = var21_9 and var11_9[var25_9] or var48_0(iter0_9, var16_9, var25_9)
+		elseif iter0_9 == "N" then
+			local var26_9 = var9_0(var14_0(var5_9, 5), 31)
 
-			var24 = var21 and var11[var26] or var48(iter0, var16, var26)
-		elseif iter0 == "M" then
-			local var27 = var9(var14(var5, 16), 31)
+			var24_9 = var21_9 and var11_9[var26_9] or var48_0(iter0_9, var16_9, var26_9)
+		elseif iter0_9 == "M" then
+			local var27_9 = var9_0(var14_0(var5_9, 16), 31)
 
-			var24 = var21 and var11[var27] or var48(iter0, var16, var27)
-		elseif iter0 == "A" then
-			local var28 = var9(var14(var5, 10), 31)
+			var24_9 = var21_9 and var11_9[var27_9] or var48_0(iter0_9, var16_9, var27_9)
+		elseif iter0_9 == "A" then
+			local var28_9 = var9_0(var14_0(var5_9, 10), 31)
 
-			var24 = var21 and var11[var28] or var48(iter0, var16, var28)
-		elseif iter0 == "B" then
-			local var29 = arg0.addr + var0 + var52(var5, var15)
+			var24_9 = var21_9 and var11_9[var28_9] or var48_0(iter0_9, var16_9, var28_9)
+		elseif iter0_9 == "B" then
+			local var29_9 = arg0_9.addr + var0_9 + var52_0(var5_9, var15_9)
 
-			arg0.rel = var29
-			var24 = "0x" .. var12(var29)
-		elseif iter0 == "T" then
-			var24 = var10(var9(var14(var5, 26), 32), var9(var14(var5, 19), 31))
-		elseif iter0 == "V" then
-			var24 = var9(var5, 15)
-		elseif iter0 == "C" then
-			var24 = var43[var9(var14(var5, 12), 15)]
-		elseif iter0 == "c" then
-			local var30 = var9(var14(var5, 5), 31)
-			local var31 = var9(var14(var5, 16), 31)
-			local var32 = var9(var14(var5, 12), 15)
-			local var33 = var11(var32, 1)
+			arg0_9.rel = var29_9
+			var24_9 = "0x" .. var12_0(var29_9)
+		elseif iter0_9 == "T" then
+			var24_9 = var10_0(var9_0(var14_0(var5_9, 26), 32), var9_0(var14_0(var5_9, 19), 31))
+		elseif iter0_9 == "V" then
+			var24_9 = var9_0(var5_9, 15)
+		elseif iter0_9 == "C" then
+			var24_9 = var43_0[var9_0(var14_0(var5_9, 12), 15)]
+		elseif iter0_9 == "c" then
+			local var30_9 = var9_0(var14_0(var5_9, 5), 31)
+			local var31_9 = var9_0(var14_0(var5_9, 16), 31)
+			local var32_9 = var9_0(var14_0(var5_9, 12), 15)
+			local var33_9 = var11_0(var32_9, 1)
 
-			var24 = var43[var32]
+			var24_9 = var43_0[var32_9]
 
-			if var17 and var32 ~= 14 and var32 ~= 15 then
-				local var34, var35 = var4(var17, "([^|]*)|(.*)")
+			if var17_9 and var32_9 ~= 14 and var32_9 ~= 15 then
+				local var34_9, var35_9 = var4_0(var17_9, "([^|]*)|(.*)")
 
-				if var30 == var31 then
-					local var36 = #var6
+				if var30_9 == var31_9 then
+					local var36_9 = #var6_9
 
-					var6[var36] = nil
-					var24 = var43[var33]
+					var6_9[var36_9] = nil
+					var24_9 = var43_0[var33_9]
 
-					if var30 ~= 31 then
-						if var34 then
-							var15 = var34
+					if var30_9 ~= 31 then
+						if var34_9 then
+							var15_9 = var34_9
 						else
-							var15 = var17
+							var15_9 = var17_9
 						end
 					else
-						var6[var36 - 1] = nil
-						var15 = var35
+						var6_9[var36_9 - 1] = nil
+						var15_9 = var35_9
 					end
 				end
 			end
-		elseif iter0 == "W" then
-			var24 = var9(var14(var5, 5), 65535)
-		elseif iter0 == "Y" then
-			var24 = var9(var14(var5, 5), 65535)
+		elseif iter0_9 == "W" then
+			var24_9 = var9_0(var14_0(var5_9, 5), 65535)
+		elseif iter0_9 == "Y" then
+			var24_9 = var9_0(var14_0(var5_9, 5), 65535)
 
-			local var37 = var9(var14(var5, 21), 3)
+			local var37_9 = var9_0(var14_0(var5_9, 21), 3)
 
-			if var17 and (var37 == 0 or var24 ~= 0) then
-				var15 = var17
+			if var17_9 and (var37_9 == 0 or var24_9 ~= 0) then
+				var15_9 = var17_9
 			end
-		elseif iter0 == "L" then
-			local var38 = var42.x[var9(var14(var5, 5), 31)]
-			local var39 = var15(var13(var5, 11), 23)
+		elseif iter0_9 == "L" then
+			local var38_9 = var42_0.x[var9_0(var14_0(var5_9, 5), 31)]
+			local var39_9 = var15_0(var13_0(var5_9, 11), 23)
 
-			if var9(var5, 2048) ~= 0 then
-				var24 = "[" .. var38 .. ", #" .. var39 .. "]!"
+			if var9_0(var5_9, 2048) ~= 0 then
+				var24_9 = "[" .. var38_9 .. ", #" .. var39_9 .. "]!"
 			else
-				var24 = "[" .. var38 .. "], #" .. var39
+				var24_9 = "[" .. var38_9 .. "], #" .. var39_9
 			end
-		elseif iter0 == "U" then
-			local var40 = var42.x[var9(var14(var5, 5), 31)]
-			local var41 = var9(var14(var5, 30), 3)
-			local var42 = var13(var15(var13(var5, 10), 20), var41)
+		elseif iter0_9 == "U" then
+			local var40_9 = var42_0.x[var9_0(var14_0(var5_9, 5), 31)]
+			local var41_9 = var9_0(var14_0(var5_9, 30), 3)
+			local var42_9 = var13_0(var15_0(var13_0(var5_9, 10), 20), var41_9)
 
-			if var42 ~= 0 then
-				var24 = "[" .. var40 .. ", #" .. var42 .. "]"
+			if var42_9 ~= 0 then
+				var24_9 = "[" .. var40_9 .. ", #" .. var42_9 .. "]"
 			else
-				var24 = "[" .. var40 .. "]"
+				var24_9 = "[" .. var40_9 .. "]"
 			end
-		elseif iter0 == "K" then
-			local var43 = var42.x[var9(var14(var5, 5), 31)]
-			local var44 = var15(var13(var5, 11), 23)
+		elseif iter0_9 == "K" then
+			local var43_9 = var42_0.x[var9_0(var14_0(var5_9, 5), 31)]
+			local var44_9 = var15_0(var13_0(var5_9, 11), 23)
 
-			if var44 ~= 0 then
-				var24 = "[" .. var43 .. ", #" .. var44 .. "]"
+			if var44_9 ~= 0 then
+				var24_9 = "[" .. var43_9 .. ", #" .. var44_9 .. "]"
 			else
-				var24 = "[" .. var43 .. "]"
+				var24_9 = "[" .. var43_9 .. "]"
 			end
-		elseif iter0 == "O" then
-			local var45 = var42.x[var9(var14(var5, 5), 31)]
-			local var46
+		elseif iter0_9 == "O" then
+			local var45_9 = var42_0.x[var9_0(var14_0(var5_9, 5), 31)]
+			local var46_9
 
-			if var9(var14(var5, 13), 1) == 0 then
-				var46 = var42.w[var9(var14(var5, 16), 31)]
+			if var9_0(var14_0(var5_9, 13), 1) == 0 then
+				var46_9 = var42_0.w[var9_0(var14_0(var5_9, 16), 31)]
 			else
-				var46 = var42.x[var9(var14(var5, 16), 31)]
+				var46_9 = var42_0.x[var9_0(var14_0(var5_9, 16), 31)]
 			end
 
-			var24 = "[" .. var45 .. ", " .. var46
+			var24_9 = "[" .. var45_9 .. ", " .. var46_9
 
-			local var47 = var9(var14(var5, 13), 7)
-			local var48 = var9(var14(var5, 12), 1)
-			local var49 = var9(var14(var5, 30), 3)
+			local var47_9 = var9_0(var14_0(var5_9, 13), 7)
+			local var48_9 = var9_0(var14_0(var5_9, 12), 1)
+			local var49_9 = var9_0(var14_0(var5_9, 30), 3)
 
-			if var47 == 3 then
-				if var48 == 0 then
-					var24 = var24 .. "]"
+			if var47_9 == 3 then
+				if var48_9 == 0 then
+					var24_9 = var24_9 .. "]"
 				else
-					var24 = var24 .. ", lsl #" .. var49 .. "]"
+					var24_9 = var24_9 .. ", lsl #" .. var49_9 .. "]"
 				end
-			elseif var47 == 2 or var47 == 6 or var47 == 7 then
-				if var48 == 0 then
-					var24 = var24 .. ", " .. var45[var47] .. "]"
+			elseif var47_9 == 2 or var47_9 == 6 or var47_9 == 7 then
+				if var48_9 == 0 then
+					var24_9 = var24_9 .. ", " .. var45_0[var47_9] .. "]"
 				else
-					var24 = var24 .. ", " .. var45[var47] .. " #" .. var49 .. "]"
+					var24_9 = var24_9 .. ", " .. var45_0[var47_9] .. " #" .. var49_9 .. "]"
 				end
 			else
-				var24 = var24 .. "]"
+				var24_9 = var24_9 .. "]"
 			end
-		elseif iter0 == "P" then
-			local var50 = var14(var5, 26)
-			local var51 = 2
+		elseif iter0_9 == "P" then
+			local var50_9 = var14_0(var5_9, 26)
+			local var51_9 = 2
 
-			if var50 >= 42 then
-				var51 = 4
-			elseif var50 >= 27 then
-				var51 = 3
+			if var50_9 >= 42 then
+				var51_9 = 4
+			elseif var50_9 >= 27 then
+				var51_9 = 3
 			end
 
-			local var52 = var13(var15(var13(var5, 10), 25), var51)
-			local var53 = var42.x[var9(var14(var5, 5), 31)]
-			local var54 = var9(var14(var5, 23), 3)
+			local var52_9 = var13_0(var15_0(var13_0(var5_9, 10), 25), var51_9)
+			local var53_9 = var42_0.x[var9_0(var14_0(var5_9, 5), 31)]
+			local var54_9 = var9_0(var14_0(var5_9, 23), 3)
 
-			if var54 == 1 then
-				var24 = "[" .. var53 .. "], #" .. var52
-			elseif var54 == 2 then
-				if var52 == 0 then
-					var24 = "[" .. var53 .. "]"
+			if var54_9 == 1 then
+				var24_9 = "[" .. var53_9 .. "], #" .. var52_9
+			elseif var54_9 == 2 then
+				if var52_9 == 0 then
+					var24_9 = "[" .. var53_9 .. "]"
 				else
-					var24 = "[" .. var53 .. ", #" .. var52 .. "]"
+					var24_9 = "[" .. var53_9 .. ", #" .. var52_9 .. "]"
 				end
-			elseif var54 == 3 then
-				var24 = "[" .. var53 .. ", #" .. var52 .. "]!"
+			elseif var54_9 == 3 then
+				var24_9 = "[" .. var53_9 .. ", #" .. var52_9 .. "]!"
 			end
-		elseif iter0 == "I" then
-			local var55 = var9(var14(var5, 22), 3)
-			local var56 = var9(var14(var5, 10), 4095)
-			local var57 = var9(var14(var5, 5), 31)
-			local var58 = var9(var5, 31)
+		elseif iter0_9 == "I" then
+			local var55_9 = var9_0(var14_0(var5_9, 22), 3)
+			local var56_9 = var9_0(var14_0(var5_9, 10), 4095)
+			local var57_9 = var9_0(var14_0(var5_9, 5), 31)
+			local var58_9 = var9_0(var5_9, 31)
 
-			if var17 == "mov" and var55 == 0 and var56 == 0 and (var57 == 31 or var58 == 31) then
-				var15 = var17
-				var24 = nil
-			elseif var55 == 0 then
-				var24 = var56
-			elseif var55 == 1 then
-				var24 = var56 .. ", lsl #12"
+			if var17_9 == "mov" and var55_9 == 0 and var56_9 == 0 and (var57_9 == 31 or var58_9 == 31) then
+				var15_9 = var17_9
+				var24_9 = nil
+			elseif var55_9 == 0 then
+				var24_9 = var56_9
+			elseif var55_9 == 1 then
+				var24_9 = var56_9 .. ", lsl #12"
 			end
-		elseif iter0 == "i" then
-			var24 = "#0x" .. var51(var5)
-		elseif iter0 == "1" then
-			var23 = var9(var14(var5, 16), 63)
-			var24 = var23
-		elseif iter0 == "2" then
-			var24 = var9(var14(var5, 10), 63)
+		elseif iter0_9 == "i" then
+			var24_9 = "#0x" .. var51_0(var5_9)
+		elseif iter0_9 == "1" then
+			var23_9 = var9_0(var14_0(var5_9, 16), 63)
+			var24_9 = var23_9
+		elseif iter0_9 == "2" then
+			var24_9 = var9_0(var14_0(var5_9, 10), 63)
 
-			if var17 then
-				local var59, var60, var61, var62, var63, var64 = var4(var17, "([^|]*)|([^|]*)|([^|]*)|([^|]*)|([^|]*)|(.*)")
-				local var65 = var9(var14(var5, 26), 32)
-				local var66 = var9(var14(var5, 30), 1)
+			if var17_9 then
+				local var59_9, var60_9, var61_9, var62_9, var63_9, var64_9 = var4_0(var17_9, "([^|]*)|([^|]*)|([^|]*)|([^|]*)|([^|]*)|(.*)")
+				local var65_9 = var9_0(var14_0(var5_9, 26), 32)
+				local var66_9 = var9_0(var14_0(var5_9, 30), 1)
 
-				if var54(var65, var66, var24, var23) then
-					var15 = var60
-					var24 = var24 - var23 + 1
-				elseif var23 == 0 and var24 == 7 then
-					local var67 = #var6
+				if var54_0(var65_9, var66_9, var24_9, var23_9) then
+					var15_9 = var60_9
+					var24_9 = var24_9 - var23_9 + 1
+				elseif var23_9 == 0 and var24_9 == 7 then
+					local var67_9 = #var6_9
 
-					var6[var67] = nil
+					var6_9[var67_9] = nil
 
-					if var65 ~= 0 then
-						var6[var67 - 1] = var6(var6[var67 - 1], "x", "w")
+					if var65_9 ~= 0 then
+						var6_9[var67_9 - 1] = var6_0(var6_9[var67_9 - 1], "x", "w")
 					end
 
-					var12 = var6[var67 - 1]
-					var15 = var64
-					var24 = nil
-				elseif var23 == 0 and var24 == 15 then
-					local var68 = #var6
+					var12_9 = var6_9[var67_9 - 1]
+					var15_9 = var64_9
+					var24_9 = nil
+				elseif var23_9 == 0 and var24_9 == 15 then
+					local var68_9 = #var6_9
 
-					var6[var68] = nil
+					var6_9[var68_9] = nil
 
-					if var65 ~= 0 then
-						var6[var68 - 1] = var6(var6[var68 - 1], "x", "w")
+					if var65_9 ~= 0 then
+						var6_9[var68_9 - 1] = var6_0(var6_9[var68_9 - 1], "x", "w")
 					end
 
-					var12 = var6[var68 - 1]
-					var15 = var63
-					var24 = nil
-				elseif var24 == 31 or var24 == 63 then
-					if var24 == 31 and var23 == 0 and var15 == "sbfm" then
-						var15 = var62
+					var12_9 = var6_9[var68_9 - 1]
+					var15_9 = var63_9
+					var24_9 = nil
+				elseif var24_9 == 31 or var24_9 == 63 then
+					if var24_9 == 31 and var23_9 == 0 and var15_9 == "sbfm" then
+						var15_9 = var62_9
 
-						local var69 = #var6
+						local var69_9 = #var6_9
 
-						var6[var69] = nil
+						var6_9[var69_9] = nil
 
-						if var65 ~= 0 then
-							var6[var69 - 1] = var6(var6[var69 - 1], "x", "w")
+						if var65_9 ~= 0 then
+							var6_9[var69_9 - 1] = var6_0(var6_9[var69_9 - 1], "x", "w")
 						end
 
-						var12 = var6[var69 - 1]
+						var12_9 = var6_9[var69_9 - 1]
 					else
-						var15 = var61
+						var15_9 = var61_9
 					end
 
-					var24 = nil
-				elseif var9(var24, 31) ~= 31 and var23 == var24 + 1 and var15 == "ubfm" then
-					var15 = var62
-					var12 = "#" .. var65 + 32 - var23
-					var6[#var6] = var12
-					var24 = nil
-				elseif var24 < var23 then
-					var15 = var59
-					var12 = "#" .. var65 + 32 - var23
-					var6[#var6] = var12
-					var24 = var24 + 1
+					var24_9 = nil
+				elseif var9_0(var24_9, 31) ~= 31 and var23_9 == var24_9 + 1 and var15_9 == "ubfm" then
+					var15_9 = var62_9
+					var12_9 = "#" .. var65_9 + 32 - var23_9
+					var6_9[#var6_9] = var12_9
+					var24_9 = nil
+				elseif var24_9 < var23_9 then
+					var15_9 = var59_9
+					var12_9 = "#" .. var65_9 + 32 - var23_9
+					var6_9[#var6_9] = var12_9
+					var24_9 = var24_9 + 1
 				end
 			end
-		elseif iter0 == "3" then
-			var24 = var9(var14(var5, 10), 63)
+		elseif iter0_9 == "3" then
+			var24_9 = var9_0(var14_0(var5_9, 10), 63)
 
-			if var17 then
-				local var70, var71 = var4(var17, "([^|]*)|(.*)")
+			if var17_9 then
+				local var70_9, var71_9 = var4_0(var17_9, "([^|]*)|(.*)")
 
-				if var24 < var23 then
-					var15 = var70
+				if var24_9 < var23_9 then
+					var15_9 = var70_9
 
-					local var72 = var9(var14(var5, 26), 32)
+					local var72_9 = var9_0(var14_0(var5_9, 26), 32)
 
-					var12 = "#" .. var72 + 32 - var23
-					var6[#var6] = var12
-					var24 = var24 + 1
-				elseif var23 <= var24 then
-					var15 = var71
-					var24 = var24 - var23 + 1
+					var12_9 = "#" .. var72_9 + 32 - var23_9
+					var6_9[#var6_9] = var12_9
+					var24_9 = var24_9 + 1
+				elseif var23_9 <= var24_9 then
+					var15_9 = var71_9
+					var24_9 = var24_9 - var23_9 + 1
 				end
 			end
-		elseif iter0 == "4" then
-			var24 = var9(var14(var5, 10), 63)
+		elseif iter0_9 == "4" then
+			var24_9 = var9_0(var14_0(var5_9, 10), 63)
 
-			local var73 = var9(var14(var5, 5), 31)
-			local var74 = var9(var14(var5, 16), 31)
+			local var73_9 = var9_0(var14_0(var5_9, 5), 31)
+			local var74_9 = var9_0(var14_0(var5_9, 16), 31)
 
-			if var17 and var73 == var74 then
-				local var75 = #var6
+			if var17_9 and var73_9 == var74_9 then
+				local var75_9 = #var6_9
 
-				var6[var75] = nil
-				var12 = var6[var75 - 1]
-				var15 = var17
+				var6_9[var75_9] = nil
+				var12_9 = var6_9[var75_9 - 1]
+				var15_9 = var17_9
 			end
-		elseif iter0 == "5" then
-			var24 = var9(var14(var5, 16), 31)
-		elseif iter0 == "S" then
-			var24 = var9(var14(var5, 10), 63)
+		elseif iter0_9 == "5" then
+			var24_9 = var9_0(var14_0(var5_9, 16), 31)
+		elseif iter0_9 == "S" then
+			var24_9 = var9_0(var14_0(var5_9, 10), 63)
 
-			if var24 == 0 then
-				var24 = nil
+			if var24_9 == 0 then
+				var24_9 = nil
 			else
-				var24 = var44[var9(var14(var5, 22), 3)] .. " #" .. var24
+				var24_9 = var44_0[var9_0(var14_0(var5_9, 22), 3)] .. " #" .. var24_9
 			end
-		elseif iter0 == "X" then
-			local var76 = var9(var14(var5, 13), 7)
+		elseif iter0_9 == "X" then
+			local var76_9 = var9_0(var14_0(var5_9, 13), 7)
 
-			if var76 ~= 3 and var76 ~= 7 then
-				var12 = var42.w[var9(var14(var5, 16), 31)]
-				var6[#var6] = var12
+			if var76_9 ~= 3 and var76_9 ~= 7 then
+				var12_9 = var42_0.w[var9_0(var14_0(var5_9, 16), 31)]
+				var6_9[#var6_9] = var12_9
 			end
 
-			var24 = var9(var14(var5, 10), 7)
+			var24_9 = var9_0(var14_0(var5_9, 10), 7)
 
-			if var76 == 2 + var9(var14(var5, 31), 1) and var9(var14(var5, var22 and 5 or 0), 31) == 31 then
-				if var24 == 0 then
-					var24 = nil
+			if var76_9 == 2 + var9_0(var14_0(var5_9, 31), 1) and var9_0(var14_0(var5_9, var22_9 and 5 or 0), 31) == 31 then
+				if var24_9 == 0 then
+					var24_9 = nil
 				else
-					var24 = "lsl #" .. var24
+					var24_9 = "lsl #" .. var24_9
 				end
-			elseif var24 == 0 then
-				var24 = var45[var9(var14(var5, 13), 7)]
+			elseif var24_9 == 0 then
+				var24_9 = var45_0[var9_0(var14_0(var5_9, 13), 7)]
 			else
-				var24 = var45[var9(var14(var5, 13), 7)] .. " #" .. var24
+				var24_9 = var45_0[var9_0(var14_0(var5_9, 13), 7)] .. " #" .. var24_9
 			end
-		elseif iter0 == "R" then
-			var24 = var9(var14(var5, 21), 3)
+		elseif iter0_9 == "R" then
+			var24_9 = var9_0(var14_0(var5_9, 21), 3)
 
-			if var24 == 0 then
-				var24 = nil
+			if var24_9 == 0 then
+				var24_9 = nil
 			else
-				var24 = "lsl #" .. var24 * 16
+				var24_9 = "lsl #" .. var24_9 * 16
 			end
-		elseif iter0 == "z" then
-			local var77 = #var6
+		elseif iter0_9 == "z" then
+			local var77_9 = #var6_9
 
-			if var6[var77] == "sp" then
-				var6[var77] = "xzr"
-			elseif var6[var77] == "wsp" then
-				var6[var77] = "wzr"
+			if var6_9[var77_9] == "sp" then
+				var6_9[var77_9] = "xzr"
+			elseif var6_9[var77_9] == "wsp" then
+				var6_9[var77_9] = "wzr"
 			end
-		elseif iter0 == "Z" then
-			var24 = 0
-		elseif iter0 == "F" then
-			var24 = var53(var5)
-		elseif iter0 == "g" or iter0 == "f" or iter0 == "x" or iter0 == "w" or iter0 == "d" or iter0 == "s" then
+		elseif iter0_9 == "Z" then
+			var24_9 = 0
+		elseif iter0_9 == "F" then
+			var24_9 = var53_0(var5_9)
+		elseif iter0_9 == "g" or iter0_9 == "f" or iter0_9 == "x" or iter0_9 == "w" or iter0_9 == "d" or iter0_9 == "s" then
 			-- block empty
-		elseif iter0 == "0" then
-			if var12 == "sp" or var12 == "wsp" then
-				local var78 = #var6
+		elseif iter0_9 == "0" then
+			if var12_9 == "sp" or var12_9 == "wsp" then
+				local var78_9 = #var6_9
 
-				var6[var78] = nil
-				var12 = var6[var78 - 1]
+				var6_9[var78_9] = nil
+				var12_9 = var6_9[var78_9 - 1]
 
-				if var17 then
-					local var79, var80 = var4(var17, "([^|]*)|(.*)")
+				if var17_9 then
+					local var79_9, var80_9 = var4_0(var17_9, "([^|]*)|(.*)")
 
-					if not var79 then
-						var15 = var17
-					elseif var22 then
-						var15, var17 = var80, var79
+					if not var79_9 then
+						var15_9 = var17_9
+					elseif var22_9 then
+						var15_9, var17_9 = var80_9, var79_9
 					else
-						var15, var17 = var79, var80
+						var15_9, var17_9 = var79_9, var80_9
 					end
 				end
 			end
 
-			var22 = true
+			var22_9 = true
 		else
 			assert(false)
 		end
 
-		if var24 then
-			var12 = var24
+		if var24_9 then
+			var12_9 = var24_9
 
-			if var0(var24) == "number" then
-				var24 = "#" .. var24
+			if var0_0(var24_9) == "number" then
+				var24_9 = "#" .. var24_9
 			end
 
-			var6[#var6 + 1] = var24
+			var6_9[#var6_9 + 1] = var24_9
 		end
 	end
 
-	return var46(arg0, var15 .. var7, var6)
+	return var46_0(arg0_9, var15_9 .. var7_9, var6_9)
 end
 
-local function var56(arg0, arg1, arg2)
-	arg1 = arg1 or 0
+local function var56_0(arg0_10, arg1_10, arg2_10)
+	arg1_10 = arg1_10 or 0
 
-	local var0 = arg2 and arg1 + arg2 or #arg0.code
+	local var0_10 = arg2_10 and arg1_10 + arg2_10 or #arg0_10.code
 
-	arg0.pos = arg1
-	arg0.rel = nil
+	arg0_10.pos = arg1_10
+	arg0_10.rel = nil
 
-	while var0 > arg0.pos do
-		var55(arg0)
+	while var0_10 > arg0_10.pos do
+		var55_0(arg0_10)
 	end
 end
 
-local function var57(arg0, arg1, arg2)
-	local var0 = {
-		code = arg0,
-		addr = arg1 or 0,
-		out = arg2 or io.write,
+local function var57_0(arg0_11, arg1_11, arg2_11)
+	local var0_11 = {
+		code = arg0_11,
+		addr = arg1_11 or 0,
+		out = arg2_11 or io.write,
 		symtab = {},
-		disass = var56
+		disass = var56_0
 	}
 
-	var0.hexdump = 8
+	var0_11.hexdump = 8
 
-	return var0
+	return var0_11
 end
 
-local function var58(arg0, arg1, arg2)
-	var57(arg0, arg1, arg2):disass()
+local function var58_0(arg0_12, arg1_12, arg2_12)
+	var57_0(arg0_12, arg1_12, arg2_12):disass()
 end
 
-local function var59(arg0)
-	if arg0 < 32 then
-		return var42.x[arg0]
+local function var59_0(arg0_13)
+	if arg0_13 < 32 then
+		return var42_0.x[arg0_13]
 	end
 
-	return var42.d[arg0 - 32]
+	return var42_0.d[arg0_13 - 32]
 end
 
 return {
-	create = var57,
-	disass = var58,
-	regname = var59
+	create = var57_0,
+	disass = var58_0,
+	regname = var59_0
 }

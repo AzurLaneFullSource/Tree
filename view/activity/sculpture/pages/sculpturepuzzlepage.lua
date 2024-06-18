@@ -1,130 +1,130 @@
-﻿local var0 = class("SculpturePuzzlePage", import("view.base.BaseSubView"))
+﻿local var0_0 = class("SculpturePuzzlePage", import("view.base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "SculpturePuzzleUI"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.backBtn = arg0:findTF("back")
-	arg0.lineTr = arg0:findTF("frame/line")
-	arg0.frameTr = arg0:findTF("frame")
-	arg0.tipBtn = arg0:findTF("frame/tip")
-	arg0.tipGrayBtn = arg0:findTF("frame/tip_gray")
-	arg0.tipGrayBtnTxt = arg0.tipGrayBtn:Find("Text"):GetComponent(typeof(Text))
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.backBtn = arg0_2:findTF("back")
+	arg0_2.lineTr = arg0_2:findTF("frame/line")
+	arg0_2.frameTr = arg0_2:findTF("frame")
+	arg0_2.tipBtn = arg0_2:findTF("frame/tip")
+	arg0_2.tipGrayBtn = arg0_2:findTF("frame/tip_gray")
+	arg0_2.tipGrayBtnTxt = arg0_2.tipGrayBtn:Find("Text"):GetComponent(typeof(Text))
 
-	setActive(arg0.tipGrayBtn, false)
-	setText(arg0:findTF("frame/tip_text"), i18n("sculpture_puzzle_tip"))
+	setActive(arg0_2.tipGrayBtn, false)
+	setText(arg0_2:findTF("frame/tip_text"), i18n("sculpture_puzzle_tip"))
 end
 
-function var0.OnInit(arg0)
-	arg0.slots = {}
+function var0_0.OnInit(arg0_3)
+	arg0_3.slots = {}
 end
 
-function var0.Show(arg0, arg1, arg2, arg3)
-	var0.super.Show(arg0)
-	arg0:Clear()
+function var0_0.Show(arg0_4, arg1_4, arg2_4, arg3_4)
+	var0_0.super.Show(arg0_4)
+	arg0_4:Clear()
 
-	arg0.id = arg1
-	arg0.activity = arg2
+	arg0_4.id = arg1_4
+	arg0_4.activity = arg2_4
 
-	if arg3 then
-		arg3()
+	if arg3_4 then
+		arg3_4()
 	end
 
 	seriesAsync({
-		function(arg0)
-			arg0:LoadLine(arg0)
+		function(arg0_5)
+			arg0_4:LoadLine(arg0_5)
 		end,
-		function(arg0)
-			arg0:LoadPuzzle(arg0)
+		function(arg0_6)
+			arg0_4:LoadPuzzle(arg0_6)
 		end
 	}, function()
-		arg0:RegisterEvent()
+		arg0_4:RegisterEvent()
 	end)
-	pg.BgmMgr.GetInstance():Push(arg0.__cname, "bar-soft")
+	pg.BgmMgr.GetInstance():Push(arg0_4.__cname, "bar-soft")
 end
 
-function var0.LoadLine(arg0, arg1)
-	local var0 = arg0.activity:GetResorceName(arg0.id)
+function var0_0.LoadLine(arg0_8, arg1_8)
+	local var0_8 = arg0_8.activity:GetResorceName(arg0_8.id)
 
-	ResourceMgr.Inst:getAssetAsync("ui/" .. var0 .. "_puzzle_line", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0)
-		local var0 = Object.Instantiate(arg0, arg0.lineTr)
+	ResourceMgr.Inst:getAssetAsync("ui/" .. var0_8 .. "_puzzle_line", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_9)
+		local var0_9 = Object.Instantiate(arg0_9, arg0_8.lineTr)
 
-		eachChild(var0, function(arg0)
-			arg0.slots[arg0.gameObject.name] = {
+		eachChild(var0_9, function(arg0_10)
+			arg0_8.slots[arg0_10.gameObject.name] = {
 				flag = false,
-				tr = arg0
+				tr = arg0_10
 			}
 		end)
 
-		arg0.puzzleLine = var0
+		arg0_8.puzzleLine = var0_9
 
-		arg1()
+		arg1_8()
 	end), true, true)
 end
 
-function Screen2Local(arg0, arg1)
-	local var0 = GameObject.Find("UICamera"):GetComponent("Camera")
-	local var1 = arg0:GetComponent("RectTransform")
+function Screen2Local(arg0_11, arg1_11)
+	local var0_11 = GameObject.Find("UICamera"):GetComponent("Camera")
+	local var1_11 = arg0_11:GetComponent("RectTransform")
 
-	return (LuaHelper.ScreenToLocal(var1, arg1, var0))
+	return (LuaHelper.ScreenToLocal(var1_11, arg1_11, var0_11))
 end
 
-function TrPosition2LocalPos(arg0, arg1, arg2)
-	if arg0 == arg1 then
-		return arg2
+function TrPosition2LocalPos(arg0_12, arg1_12, arg2_12)
+	if arg0_12 == arg1_12 then
+		return arg2_12
 	else
-		local var0 = arg0:TransformPoint(arg2)
-		local var1 = arg1:InverseTransformPoint(var0)
+		local var0_12 = arg0_12:TransformPoint(arg2_12)
+		local var1_12 = arg1_12:InverseTransformPoint(var0_12)
 
-		return Vector3(var1.x, var1.y, 0)
+		return Vector3(var1_12.x, var1_12.y, 0)
 	end
 end
 
-function var0.HandlePuzzlePart(arg0, arg1)
-	eachChild(arg1, function(arg0)
-		local var0 = arg0:GetComponent(typeof(EventTriggerListener))
-		local var1
-		local var2
+function var0_0.HandlePuzzlePart(arg0_13, arg1_13)
+	eachChild(arg1_13, function(arg0_14)
+		local var0_14 = arg0_14:GetComponent(typeof(EventTriggerListener))
+		local var1_14
+		local var2_14
 
-		var0:AddBeginDragFunc(function()
-			var2 = arg0:GetSiblingIndex()
+		var0_14:AddBeginDragFunc(function()
+			var2_14 = arg0_14:GetSiblingIndex()
 
-			arg0:SetAsLastSibling()
+			arg0_14:SetAsLastSibling()
 
-			var1 = arg0.localPosition
+			var1_14 = arg0_14.localPosition
 		end)
-		var0:AddDragFunc(function(arg0, arg1)
-			local var0 = Screen2Local(arg0.parent, arg1.position)
+		var0_14:AddDragFunc(function(arg0_16, arg1_16)
+			local var0_16 = Screen2Local(arg0_14.parent, arg1_16.position)
 
-			arg0.localPosition = var0
+			arg0_14.localPosition = var0_16
 		end)
-		var0:AddDragEndFunc(function(arg0, arg1)
-			local var0 = arg0.slots[arg0.gameObject.name].tr
-			local var1 = TrPosition2LocalPos(var0.parent, arg0.parent, var0.localPosition)
+		var0_14:AddDragEndFunc(function(arg0_17, arg1_17)
+			local var0_17 = arg0_13.slots[arg0_14.gameObject.name].tr
+			local var1_17 = TrPosition2LocalPos(var0_17.parent, arg0_14.parent, var0_17.localPosition)
 
-			if Vector2.Distance(var1, arg0.localPosition) < 50 then
-				arg0.slots[arg0.gameObject.name].flag = true
-				arg0.localPosition = var1
+			if Vector2.Distance(var1_17, arg0_14.localPosition) < 50 then
+				arg0_13.slots[arg0_14.gameObject.name].flag = true
+				arg0_14.localPosition = var1_17
 
-				ClearEventTrigger(var0)
-				Object.Destroy(var0)
+				ClearEventTrigger(var0_14)
+				Object.Destroy(var0_14)
 
-				if arg0:IsFinishAll() then
-					arg0:emit(SculptureMediator.ON_JOINT_SCULPTURE, arg0.id)
+				if arg0_13:IsFinishAll() then
+					arg0_13:emit(SculptureMediator.ON_JOINT_SCULPTURE, arg0_13.id)
 				end
 			else
-				arg0.localPosition = var1
+				arg0_14.localPosition = var1_14
 			end
 
-			arg0:SetSiblingIndex(var2)
+			arg0_14:SetSiblingIndex(var2_14)
 		end)
 	end)
 end
 
-function var0.IsFinishAll(arg0)
-	for iter0, iter1 in pairs(arg0.slots) do
-		if iter1.flag == false then
+function var0_0.IsFinishAll(arg0_18)
+	for iter0_18, iter1_18 in pairs(arg0_18.slots) do
+		if iter1_18.flag == false then
 			return false
 		end
 	end
@@ -132,144 +132,144 @@ function var0.IsFinishAll(arg0)
 	return true
 end
 
-function var0.LoadPuzzle(arg0, arg1)
-	local var0 = arg0.activity:GetResorceName(arg0.id)
+function var0_0.LoadPuzzle(arg0_19, arg1_19)
+	local var0_19 = arg0_19.activity:GetResorceName(arg0_19.id)
 
-	ResourceMgr.Inst:getAssetAsync("ui/" .. var0 .. "_puzzle", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0)
-		local var0 = Object.Instantiate(arg0, arg0.frameTr)
+	ResourceMgr.Inst:getAssetAsync("ui/" .. var0_19 .. "_puzzle", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_20)
+		local var0_20 = Object.Instantiate(arg0_20, arg0_19.frameTr)
 
-		arg0:HandlePuzzlePart(var0.transform)
+		arg0_19:HandlePuzzlePart(var0_20.transform)
 
-		arg0.puzzle = var0
+		arg0_19.puzzle = var0_20
 
-		arg1()
+		arg1_19()
 	end), true, true)
 end
 
-function var0.RegisterEvent(arg0)
-	onButton(arg0, arg0.backBtn, function()
-		arg0.contextData.miniMsgBox:ExecuteAction("Show", {
+function var0_0.RegisterEvent(arg0_21)
+	onButton(arg0_21, arg0_21.backBtn, function()
+		arg0_21.contextData.miniMsgBox:ExecuteAction("Show", {
 			showNo = true,
 			content = i18n("sculpture_drawline_exit"),
 			onYes = function()
-				arg0:Hide()
+				arg0_21:Hide()
 			end
 		})
 	end, SFX_PANEL)
 
-	local var0 = 0
+	local var0_21 = 0
 
-	onButton(arg0, arg0.tipBtn, function()
-		if arg0:IsFinishAll() or var0 > 0 then
+	onButton(arg0_21, arg0_21.tipBtn, function()
+		if arg0_21:IsFinishAll() or var0_21 > 0 then
 			return
 		end
 
-		local var0 = {}
+		local var0_24 = {}
 
-		for iter0, iter1 in pairs(arg0.slots) do
-			if iter1.flag == false then
-				table.insert(var0, iter1.tr)
+		for iter0_24, iter1_24 in pairs(arg0_21.slots) do
+			if iter1_24.flag == false then
+				table.insert(var0_24, iter1_24.tr)
 			end
 		end
 
-		if #var0 == 0 then
+		if #var0_24 == 0 then
 			return
 		end
 
-		var0 = 10
+		var0_21 = 10
 
-		local var1 = math.random(1, #var0)
+		local var1_24 = math.random(1, #var0_24)
 
-		arg0:BlinkSlots({
-			var0[var1]
+		arg0_21:BlinkSlots({
+			var0_24[var1_24]
 		})
-		setActive(arg0.tipBtn, false)
-		setActive(arg0.tipGrayBtn, true)
-		arg0:AddTimer(function()
-			var0 = 0
+		setActive(arg0_21.tipBtn, false)
+		setActive(arg0_21.tipGrayBtn, true)
+		arg0_21:AddTimer(function()
+			var0_21 = 0
 
-			setActive(arg0.tipBtn, true)
-			setActive(arg0.tipGrayBtn, false)
+			setActive(arg0_21.tipBtn, true)
+			setActive(arg0_21.tipGrayBtn, false)
 		end)
 	end, SFX_PANEL)
 end
 
-function var0.AddTimer(arg0, arg1)
-	arg0:ClearTimer()
+function var0_0.AddTimer(arg0_26, arg1_26)
+	arg0_26:ClearTimer()
 
-	local var0 = 11
+	local var0_26 = 11
 
-	arg0.timer = Timer.New(function()
-		var0 = var0 - 1
-		arg0.tipGrayBtnTxt.text = var0 .. "s"
+	arg0_26.timer = Timer.New(function()
+		var0_26 = var0_26 - 1
+		arg0_26.tipGrayBtnTxt.text = var0_26 .. "s"
 
-		if var0 <= 0 then
-			arg1()
+		if var0_26 <= 0 then
+			arg1_26()
 		end
 	end, 1, 10)
 
-	arg0.timer.func()
-	arg0.timer:Start()
+	arg0_26.timer.func()
+	arg0_26.timer:Start()
 end
 
-function var0.ClearTimer(arg0)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var0_0.ClearTimer(arg0_28)
+	if arg0_28.timer then
+		arg0_28.timer:Stop()
 
-		arg0.timer = nil
+		arg0_28.timer = nil
 	end
 end
 
-function var0.BlinkSlots(arg0, arg1, arg2)
-	local var0 = {}
+function var0_0.BlinkSlots(arg0_29, arg1_29, arg2_29)
+	local var0_29 = {}
 
-	for iter0, iter1 in ipairs(arg1) do
-		local var1 = iter1:GetComponent(typeof(Image))
-		local var2 = var1.color
+	for iter0_29, iter1_29 in ipairs(arg1_29) do
+		local var1_29 = iter1_29:GetComponent(typeof(Image))
+		local var2_29 = var1_29.color
 
-		table.insert(var0, function(arg0)
-			LeanTween.value(iter1.gameObject, 0.5, 1, 0.3):setLoopPingPong(3):setOnUpdate(System.Action_float(function(arg0)
-				var1.color = Color.New(var2.r, var2.g, var2.b, arg0)
+		table.insert(var0_29, function(arg0_30)
+			LeanTween.value(iter1_29.gameObject, 0.5, 1, 0.3):setLoopPingPong(3):setOnUpdate(System.Action_float(function(arg0_31)
+				var1_29.color = Color.New(var2_29.r, var2_29.g, var2_29.b, arg0_31)
 			end)):setOnComplete(System.Action(function()
-				var1.color = Color.New(var2.r, var2.g, var2.b, 0)
+				var1_29.color = Color.New(var2_29.r, var2_29.g, var2_29.b, 0)
 
-				arg0()
+				arg0_30()
 			end))
 		end)
 	end
 
-	parallelAsync(var0, arg2)
+	parallelAsync(var0_29, arg2_29)
 end
 
-function var0.Clear(arg0)
-	if arg0.puzzleLine then
-		Object.Destroy(arg0.puzzleLine.gameObject)
+function var0_0.Clear(arg0_33)
+	if arg0_33.puzzleLine then
+		Object.Destroy(arg0_33.puzzleLine.gameObject)
 
-		arg0.puzzleLine = nil
+		arg0_33.puzzleLine = nil
 	end
 
-	if arg0.puzzle then
-		Object.Destroy(arg0.puzzle.gameObject)
+	if arg0_33.puzzle then
+		Object.Destroy(arg0_33.puzzle.gameObject)
 
-		arg0.puzzle = nil
+		arg0_33.puzzle = nil
 	end
 
-	arg0.slots = {}
+	arg0_33.slots = {}
 end
 
-function var0.Hide(arg0)
-	var0.super.Hide(arg0)
-	pg.BgmMgr.GetInstance():Pop(arg0.__cname)
+function var0_0.Hide(arg0_34)
+	var0_0.super.Hide(arg0_34)
+	pg.BgmMgr.GetInstance():Pop(arg0_34.__cname)
 end
 
-function var0.OnDestroy(arg0)
-	arg0:ClearTimer()
+function var0_0.OnDestroy(arg0_35)
+	arg0_35:ClearTimer()
 
-	for iter0, iter1 in pairs(arg0.slots) do
-		if LeanTween.isTweening(iter1.tr.gameObject) then
-			LeanTween.cancel(iter1.tr.gameObject)
+	for iter0_35, iter1_35 in pairs(arg0_35.slots) do
+		if LeanTween.isTweening(iter1_35.tr.gameObject) then
+			LeanTween.cancel(iter1_35.tr.gameObject)
 		end
 	end
 end
 
-return var0
+return var0_0

@@ -1,42 +1,42 @@
-﻿local var0 = class("EducateMapMediator", import("..base.EducateContextMediator"))
+﻿local var0_0 = class("EducateMapMediator", import("..base.EducateContextMediator"))
 
-var0.ON_SPECIAL_EVENT_TRIGGER = "EducateMapMediator.ON_SPECIAL_EVENT_TRIGGER"
-var0.ON_MAP_SITE_OPERATE = "EducateMapMediator.ON_MAP_SITE_OPERATE"
-var0.ON_OPEN_SHOP = "EducateMapMediator.ON_OPEN_SHOP"
-var0.ON_ADD_TASK_PROGRESS = "EducateMapMediator.ON_ADD_TASK_PROGRESS"
+var0_0.ON_SPECIAL_EVENT_TRIGGER = "EducateMapMediator.ON_SPECIAL_EVENT_TRIGGER"
+var0_0.ON_MAP_SITE_OPERATE = "EducateMapMediator.ON_MAP_SITE_OPERATE"
+var0_0.ON_OPEN_SHOP = "EducateMapMediator.ON_OPEN_SHOP"
+var0_0.ON_ADD_TASK_PROGRESS = "EducateMapMediator.ON_ADD_TASK_PROGRESS"
 
-function var0.register(arg0)
-	arg0:bind(var0.ON_SPECIAL_EVENT_TRIGGER, function(arg0, arg1)
-		arg0:sendNotification(GAME.EDUCATE_TRIGGER_SPEC_EVENT, {
-			siteId = arg1.siteId,
-			eventId = arg1.id,
-			callback = arg1.callback
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.ON_SPECIAL_EVENT_TRIGGER, function(arg0_2, arg1_2)
+		arg0_1:sendNotification(GAME.EDUCATE_TRIGGER_SPEC_EVENT, {
+			siteId = arg1_2.siteId,
+			eventId = arg1_2.id,
+			callback = arg1_2.callback
 		})
 	end)
-	arg0:bind(var0.ON_MAP_SITE_OPERATE, function(arg0, arg1)
-		arg0:sendNotification(GAME.EDUCATE_MAP_SITE, {
-			siteId = arg1.siteId,
-			optionVO = arg1.optionVO
+	arg0_1:bind(var0_0.ON_MAP_SITE_OPERATE, function(arg0_3, arg1_3)
+		arg0_1:sendNotification(GAME.EDUCATE_MAP_SITE, {
+			siteId = arg1_3.siteId,
+			optionVO = arg1_3.optionVO
 		})
 	end)
-	arg0:bind(var0.ON_OPEN_SHOP, function(arg0, arg1)
-		arg0:addSubLayers(Context.New({
+	arg0_1:bind(var0_0.ON_OPEN_SHOP, function(arg0_4, arg1_4)
+		arg0_1:addSubLayers(Context.New({
 			mediator = EducateShopMediator,
 			viewComponent = EducateShopLayer,
 			data = {
-				shopId = arg1
+				shopId = arg1_4
 			}
 		}))
 	end)
-	arg0:bind(var0.ON_ADD_TASK_PROGRESS, function(arg0, arg1)
-		arg0:sendNotification(GAME.EDUCATE_ADD_TASK_PROGRESS, {
-			system = arg1.system,
-			progresses = arg1.progresses
+	arg0_1:bind(var0_0.ON_ADD_TASK_PROGRESS, function(arg0_5, arg1_5)
+		arg0_1:sendNotification(GAME.EDUCATE_ADD_TASK_PROGRESS, {
+			system = arg1_5.system,
+			progresses = arg1_5.progresses
 		})
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_6)
 	return {
 		EducateProxy.RESOURCE_UPDATED,
 		EducateProxy.ATTR_UPDATED,
@@ -54,38 +54,38 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_7, arg1_7)
+	local var0_7 = arg1_7:getName()
+	local var1_7 = arg1_7:getBody()
 
-	if var0 == EducateProxy.RESOURCE_UPDATED then
-		arg0.viewComponent:updateRes()
-	elseif var0 == EducateProxy.ATTR_UPDATED then
-		arg0.viewComponent:updateAttrs()
-	elseif var0 == EducateProxy.BUFF_ADDED then
-		arg0.viewComponent:updateAttrs()
-	elseif var0 == EducateProxy.TIME_UPDATED then
-		arg0.viewComponent:updateTime()
-		arg0.viewComponent:updateRes()
-		arg0.viewComponent:updateTarget()
-	elseif var0 == EducateProxy.TIME_WEEKDAY_UPDATED then
-		arg0.viewComponent:updateTimeWeekDay(var1.weekDay)
-	elseif var0 == EducateTaskProxy.TASK_UPDATED or var0 == EducateTaskProxy.TASK_ADDED or var0 == EducateTaskProxy.TASK_REMOVED or var0 == GAME.EDUCATE_SUBMIT_TASK_DONE then
-		arg0.viewComponent:updateTarget()
-	elseif var0 == EducateProxy.CLEAR_NEW_TIP then
-		if var1.index == EducateTipHelper.NEW_SITE then
-			arg0.viewComponent:clearNewTip(var1.id)
+	if var0_7 == EducateProxy.RESOURCE_UPDATED then
+		arg0_7.viewComponent:updateRes()
+	elseif var0_7 == EducateProxy.ATTR_UPDATED then
+		arg0_7.viewComponent:updateAttrs()
+	elseif var0_7 == EducateProxy.BUFF_ADDED then
+		arg0_7.viewComponent:updateAttrs()
+	elseif var0_7 == EducateProxy.TIME_UPDATED then
+		arg0_7.viewComponent:updateTime()
+		arg0_7.viewComponent:updateRes()
+		arg0_7.viewComponent:updateTarget()
+	elseif var0_7 == EducateProxy.TIME_WEEKDAY_UPDATED then
+		arg0_7.viewComponent:updateTimeWeekDay(var1_7.weekDay)
+	elseif var0_7 == EducateTaskProxy.TASK_UPDATED or var0_7 == EducateTaskProxy.TASK_ADDED or var0_7 == EducateTaskProxy.TASK_REMOVED or var0_7 == GAME.EDUCATE_SUBMIT_TASK_DONE then
+		arg0_7.viewComponent:updateTarget()
+	elseif var0_7 == EducateProxy.CLEAR_NEW_TIP then
+		if var1_7.index == EducateTipHelper.NEW_SITE then
+			arg0_7.viewComponent:clearNewTip(var1_7.id)
 		end
-	elseif var0 == GAME.EDUCATE_REFRESH_DONE then
-		arg0.viewComponent:emit(EducateBaseUI.EDUCATE_CHANGE_SCENE, SCENE.EDUCATE)
-	elseif var0 == GAME.EDUCATE_TRIGGER_SPEC_EVENT_DONE then
-		if var1.type == EducateSpecialEvent.TYPE_SITE then
-			arg0.viewComponent:ShowSpecEvent(var1.siteId, var1.id, var1.drops, var1.cb)
+	elseif var0_7 == GAME.EDUCATE_REFRESH_DONE then
+		arg0_7.viewComponent:emit(EducateBaseUI.EDUCATE_CHANGE_SCENE, SCENE.EDUCATE)
+	elseif var0_7 == GAME.EDUCATE_TRIGGER_SPEC_EVENT_DONE then
+		if var1_7.type == EducateSpecialEvent.TYPE_SITE then
+			arg0_7.viewComponent:ShowSpecEvent(var1_7.siteId, var1_7.id, var1_7.drops, var1_7.cb)
 		end
-	elseif var0 == GAME.EDUCATE_MAP_SITE_DONE then
-		assert(var1.branchId ~= 0, "请检查配置, 无返回结果分支, optionId: " .. var1.optionId)
-		arg0.viewComponent:ShowSitePerform(var1.optionId, var1.branchId, var1.events, var1.drops, var1.eventDrops)
+	elseif var0_7 == GAME.EDUCATE_MAP_SITE_DONE then
+		assert(var1_7.branchId ~= 0, "请检查配置, 无返回结果分支, optionId: " .. var1_7.optionId)
+		arg0_7.viewComponent:ShowSitePerform(var1_7.optionId, var1_7.branchId, var1_7.events, var1_7.drops, var1_7.eventDrops)
 	end
 end
 
-return var0
+return var0_0

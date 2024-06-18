@@ -1,131 +1,131 @@
-﻿local var0 = class("DOAPPMiniGameView", import("view.miniGame.MiniGameTemplateView"))
+﻿local var0_0 = class("DOAPPMiniGameView", import("view.miniGame.MiniGameTemplateView"))
 
-var0.canSelectStage = false
+var0_0.canSelectStage = false
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "DOAPPMiniGameUI"
 end
 
-function var0.getGameController(arg0)
+function var0_0.getGameController(arg0_2)
 	return DOAPPMiniGameController
 end
 
-function var0.initPageUI(arg0)
-	var0.super.initPageUI(arg0)
-	onButton(arg0, arg0.rtTitlePage:Find("main/btn_help"), function()
+function var0_0.initPageUI(arg0_3)
+	var0_0.super.initPageUI(arg0_3)
+	onButton(arg0_3, arg0_3.rtTitlePage:Find("main/btn_help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.doa_minigame_help.tip
 		})
 	end, SFX_PANEL)
 
-	local var0 = arg0:GetMGData():GetSimpleValue("story")
+	local var0_3 = arg0_3:GetMGData():GetSimpleValue("story")
 
-	onButton(arg0, arg0.rtTitlePage:Find("main/btn_start"), function()
-		local var0 = {}
-		local var1 = checkExist(var0, {
-			arg0.stageIndex
+	onButton(arg0_3, arg0_3.rtTitlePage:Find("main/btn_start"), function()
+		local var0_5 = {}
+		local var1_5 = checkExist(var0_3, {
+			arg0_3.stageIndex
 		}, {
 			1
 		})
 
-		if var1 then
-			table.insert(var0, function(arg0)
-				pg.NewStoryMgr.GetInstance():Play(var1, arg0)
+		if var1_5 then
+			table.insert(var0_5, function(arg0_6)
+				pg.NewStoryMgr.GetInstance():Play(var1_5, arg0_6)
 			end)
 		end
 
-		seriesAsync(var0, function()
-			arg0:openUI("select")
+		seriesAsync(var0_5, function()
+			arg0_3:openUI("select")
 		end)
 	end, SFX_PANEL)
 
-	local var1 = arg0.rtTitlePage:Find("select")
+	local var1_3 = arg0_3.rtTitlePage:Find("select")
 
-	onButton(arg0, var1:Find("btn_back"), function()
-		arg0:openUI("main")
+	onButton(arg0_3, var1_3:Find("btn_back"), function()
+		arg0_3:openUI("main")
 	end, SFX_CANCEL)
-	onButton(arg0, var1:Find("btn/confirm"), function()
-		if not arg0.character then
+	onButton(arg0_3, var1_3:Find("btn/confirm"), function()
+		if not arg0_3.character then
 			pg.TipsMgr.GetInstance():ShowTips("without selected character")
 
 			return
 		end
 
-		arg0.gameController:ResetGame()
-		arg0.gameController:ReadyGame({
-			name = arg0.character
+		arg0_3.gameController:ResetGame()
+		arg0_3.gameController:ReadyGame({
+			name = arg0_3.character
 		})
-		arg0:openUI("countdown")
+		arg0_3:openUI("countdown")
 	end, SFX_CONFIRM)
-	eachChild(var1:Find("content"), function(arg0)
-		setText(arg0:Find("name/Text"), i18n("doa_minigame_" .. arg0.name))
-		onToggle(arg0, arg0, function(arg0)
-			if arg0 then
-				arg0.character = arg0.name
+	eachChild(var1_3:Find("content"), function(arg0_10)
+		setText(arg0_10:Find("name/Text"), i18n("doa_minigame_" .. arg0_10.name))
+		onToggle(arg0_3, arg0_10, function(arg0_11)
+			if arg0_11 then
+				arg0_3.character = arg0_10.name
 
-				setAnchoredPosition(arg0:Find(arg0.name), {
+				setAnchoredPosition(arg0_10:Find(arg0_10.name), {
 					x = 70
 				})
-				quickPlayAnimator(arg0:Find(arg0.name .. "/Image"), "Win")
+				quickPlayAnimator(arg0_10:Find(arg0_10.name .. "/Image"), "Win")
 			else
-				if arg0.character == arg0.name then
-					arg0.character = nil
+				if arg0_3.character == arg0_10.name then
+					arg0_3.character = nil
 				end
 
-				setAnchoredPosition(arg0:Find(arg0.name), {
+				setAnchoredPosition(arg0_10:Find(arg0_10.name), {
 					x = 110
 				})
-				quickPlayAnimator(arg0:Find(arg0.name .. "/Image"), "Idle")
+				quickPlayAnimator(arg0_10:Find(arg0_10.name .. "/Image"), "Idle")
 			end
 		end, SFX_PANEL)
 	end)
 end
 
-local function var1(arg0, arg1, arg2, arg3)
-	eachChild(arg0:Find("mask"), function(arg0)
-		setActive(arg0, arg0.name == arg1)
+local function var1_0(arg0_12, arg1_12, arg2_12, arg3_12)
+	eachChild(arg0_12:Find("mask"), function(arg0_13)
+		setActive(arg0_13, arg0_13.name == arg1_12)
 	end)
-	setText(arg0:Find("name/Text"), i18n("doa_minigame_" .. arg1))
-	eachChild(arg0:Find("name/Text"), function(arg0)
-		setActive(arg0, arg0.name == arg1)
+	setText(arg0_12:Find("name/Text"), i18n("doa_minigame_" .. arg1_12))
+	eachChild(arg0_12:Find("name/Text"), function(arg0_14)
+		setActive(arg0_14, arg0_14.name == arg1_12)
 	end)
-	setActive(arg0:Find("result/lose"), arg3 < 0)
-	setActive(arg0:Find("result/win"), arg3 > 0)
-	eachChild(arg0:Find("point"), function(arg0)
-		setActive(arg0, tonumber(arg0.name) <= arg2)
+	setActive(arg0_12:Find("result/lose"), arg3_12 < 0)
+	setActive(arg0_12:Find("result/win"), arg3_12 > 0)
+	eachChild(arg0_12:Find("point"), function(arg0_15)
+		setActive(arg0_15, tonumber(arg0_15.name) <= arg2_12)
 	end)
 end
 
-function var0.initOpenUISwich(arg0)
-	var0.super.initOpenUISwich(arg0)
+function var0_0.initOpenUISwich(arg0_16)
+	var0_0.super.initOpenUISwich(arg0_16)
 
-	function arg0.openSwitchDic.result()
-		var1(arg0.rtTitlePage:Find("result/window/self"), arg0.gameController:GetResultInfo(false))
-		var1(arg0.rtTitlePage:Find("result/window/other"), arg0.gameController:GetResultInfo(true))
+	function arg0_16.openSwitchDic.result()
+		var1_0(arg0_16.rtTitlePage:Find("result/window/self"), arg0_16.gameController:GetResultInfo(false))
+		var1_0(arg0_16.rtTitlePage:Find("result/window/other"), arg0_16.gameController:GetResultInfo(true))
 
-		local var0 = arg0:GetMGHubData()
+		local var0_17 = arg0_16:GetMGHubData()
 
-		if arg0.stageIndex == var0.usedtime + 1 and var0.count > 0 then
-			arg0:SendSuccess(0)
+		if arg0_16.stageIndex == var0_17.usedtime + 1 and var0_17.count > 0 then
+			arg0_16:SendSuccess(0)
 		end
 	end
 
-	function arg0.openSwitchDic.select()
-		triggerToggle(arg0.rtTitlePage:Find("select/content/Marie"), true)
+	function arg0_16.openSwitchDic.select()
+		triggerToggle(arg0_16.rtTitlePage:Find("select/content/Marie"), true)
 	end
 end
 
-function var0.initBackPressSwitch(arg0)
-	var0.super.initBackPressSwitch(arg0)
+function var0_0.initBackPressSwitch(arg0_19)
+	var0_0.super.initBackPressSwitch(arg0_19)
 
-	function arg0.backPressSwitchDic.select()
-		arg0:openUI("main")
+	function arg0_19.backPressSwitchDic.select()
+		arg0_19:openUI("main")
 	end
 end
 
-function var0.willExit(arg0)
-	arg0.gameController:willExit()
+function var0_0.willExit(arg0_21)
+	arg0_21.gameController:willExit()
 end
 
-return var0
+return var0_0

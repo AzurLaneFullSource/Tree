@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Tap to open the Gear R&D interface.",
 	"Here, you can view the R&D pathways for the various pieces of gear you have.",
 	"Drag the screen to view the possible products of each R&D pathway.",
@@ -38,7 +38,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = -60.9,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/SelectTechnologyUI(Clone)/frame/bg/transform_btn",
@@ -61,7 +61,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = -396.33,
-				text = var0[2],
+				text = var0_0[2],
 				ui = {
 					path = "/UICamera/Canvas/UIMain/EquipmentTransformTreeUI(Clone)/Adapt/Left/EquipmentTypes/ViewPort/Content"
 				}
@@ -73,7 +73,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = -65.8,
-				text = var0[3]
+				text = var0_0[3]
 			}
 		},
 		{
@@ -83,7 +83,7 @@ return {
 				mode = 1,
 				posY = -253.44,
 				posX = 151.52,
-				text = var0[4]
+				text = var0_0[4]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/EquipmentTransformTreeUI(Clone)/Adapt/Right/ViewPort/Content/11060/Item",
@@ -106,7 +106,7 @@ return {
 				mode = 1,
 				posY = -251.52,
 				posX = -122.97,
-				text = var0[5],
+				text = var0_0[5],
 				ui = {
 					path = "OverlayCamera/Overlay/UIMain/EquipmentTransformUI(Clone)/Adapt/SourceEquip/Item"
 				}
@@ -119,7 +119,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = -396.56,
-				text = var0[6],
+				text = var0_0[6],
 				ui = {
 					path = "OverlayCamera/Overlay/UIMain/EquipmentTransformUI(Clone)/Adapt/MaterialModule1/Item"
 				}
@@ -132,7 +132,7 @@ return {
 				mode = 1,
 				posY = -215.3,
 				posX = 337.29,
-				text = var0[7],
+				text = var0_0[7],
 				ui = {
 					path = "OverlayCamera/Overlay/UIMain/EquipmentTransformUI(Clone)/Adapt/ComposePanel"
 				}

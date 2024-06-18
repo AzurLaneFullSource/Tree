@@ -1,694 +1,694 @@
-﻿local var0 = class("MonopolyGame")
-local var1 = pg.activity_event_monopoly_map
-local var2 = pg.activity_event_monopoly_event
-local var3 = 501041
-local var4 = 501041
-local var5 = 6
-local var6 = 5
-local var7 = {}
+﻿local var0_0 = class("MonopolyGame")
+local var1_0 = pg.activity_event_monopoly_map
+local var2_0 = pg.activity_event_monopoly_event
+local var3_0 = 501041
+local var4_0 = 501041
+local var5_0 = 6
+local var6_0 = 5
+local var7_0 = {}
 
-var7.stateGold = "dafuweng_gold"
-var7.stateOil = "dafuweng_oil"
-var7.stateEvent = "dafuweng_event"
-var7.stateWalk = "dafuweng_walk"
-var7.stateStand = "dafuweng_stand"
-var7.stateJump = "dafuweng_jump"
-var7.stateRun = "dafuweng_run"
-var7.stateTouch = "dafuweng_touch"
+var7_0.stateGold = "dafuweng_gold"
+var7_0.stateOil = "dafuweng_oil"
+var7_0.stateEvent = "dafuweng_event"
+var7_0.stateWalk = "dafuweng_walk"
+var7_0.stateStand = "dafuweng_stand"
+var7_0.stateJump = "dafuweng_jump"
+var7_0.stateRun = "dafuweng_run"
+var7_0.stateTouch = "dafuweng_touch"
 
-local var8
+local var8_0
 
-local function var9()
-	local var0 = {
-		onActionUpdated = function(arg0, arg1)
+local function var9_0()
+	local var0_1 = {
+		onActionUpdated = function(arg0_2, arg1_2)
 			return
 		end
 	}
 
-	var0.currState = nil
+	var0_1.currState = nil
 
-	function var0.ChangeState(arg0, arg1, arg2)
-		arg2 = arg2 or function()
+	function var0_1.ChangeState(arg0_3, arg1_3, arg2_3)
+		arg2_3 = arg2_3 or function()
 			return
 		end
 
-		if arg0.currState == arg1 then
-			arg2()
+		if arg0_3.currState == arg1_3 then
+			arg2_3()
 		end
 
-		arg0.currState = arg1
+		arg0_3.currState = arg1_3
 
-		arg0.onActionUpdated(arg1, arg2)
+		arg0_3.onActionUpdated(arg1_3, arg2_3)
 	end
 
-	function var0.IsStandState(arg0)
-		return arg0.currState == var7.stateStand
+	function var0_1.IsStandState(arg0_5)
+		return arg0_5.currState == var7_0.stateStand
 	end
 
-	return var0
+	return var0_1
 end
 
-local function var10(arg0)
+local function var10_0(arg0_6)
 	return {
-		onMove = function(arg0, arg1)
+		onMove = function(arg0_7, arg1_7)
 			return
 		end,
-		onJump = function(arg0, arg1)
+		onJump = function(arg0_8, arg1_8)
 			return
 		end,
-		onUpdatePos = function(arg0)
+		onUpdatePos = function(arg0_9)
 			return
 		end,
 		ship = Ship.New({
-			configId = arg0,
-			skin_id = var4
+			configId = arg0_6,
+			skin_id = var4_0
 		}),
-		state = var9(),
-		Move = function(arg0, arg1, arg2, arg3)
-			arg2 = arg2 or function()
+		state = var9_0(),
+		Move = function(arg0_10, arg1_10, arg2_10, arg3_10)
+			arg2_10 = arg2_10 or function()
 				return
 			end
 
-			if #arg1 == 0 then
-				arg2()
+			if #arg1_10 == 0 then
+				arg2_10()
 
 				return
 			end
 
-			local function var0(arg0)
-				if arg0 then
-					arg0.state:ChangeState(var7.stateWalk)
+			local function var0_10(arg0_12)
+				if arg0_12 then
+					arg0_10.state:ChangeState(var7_0.stateWalk)
 				else
-					arg0.state:ChangeState(var7.stateRun)
+					arg0_10.state:ChangeState(var7_0.stateRun)
 				end
 
-				arg0.onMove(arg1, function()
-					local var0 = arg0:GetAction(arg1[#arg1])
+				arg0_10.onMove(arg1_10, function()
+					local var0_13 = arg0_10:GetAction(arg1_10[#arg1_10])
 
-					if var0 then
-						arg0.state:ChangeState(var0, function()
-							arg0.state:ChangeState(var7.stateStand)
-							arg2()
+					if var0_13 then
+						arg0_10.state:ChangeState(var0_13, function()
+							arg0_10.state:ChangeState(var7_0.stateStand)
+							arg2_10()
 						end)
 					else
-						arg0.state:ChangeState(var7.stateStand)
-						arg2()
+						arg0_10.state:ChangeState(var7_0.stateStand)
+						arg2_10()
 					end
 				end)
 			end
 
-			if #arg1 <= 3 and not arg3 then
-				arg0:Jump(arg1, arg2)
+			if #arg1_10 <= 3 and not arg3_10 then
+				arg0_10:Jump(arg1_10, arg2_10)
 			else
-				var0(arg3)
+				var0_10(arg3_10)
 			end
 		end,
-		Jump = function(arg0, arg1, arg2)
-			arg2 = arg2 or function()
+		Jump = function(arg0_15, arg1_15, arg2_15)
+			arg2_15 = arg2_15 or function()
 				return
 			end
 
-			if #arg1 == 0 then
-				arg2()
+			if #arg1_15 == 0 then
+				arg2_15()
 
 				return
 			end
 
-			local var0 = {}
+			local var0_15 = {}
 
-			for iter0, iter1 in pairs(arg1) do
-				table.insert(var0, function(arg0)
-					arg0.state:ChangeState(var7.stateJump)
-					arg0.onJump(iter1, function()
-						arg0.state:ChangeState(var7.stateStand)
-						arg0()
+			for iter0_15, iter1_15 in pairs(arg1_15) do
+				table.insert(var0_15, function(arg0_17)
+					arg0_15.state:ChangeState(var7_0.stateJump)
+					arg0_15.onJump(iter1_15, function()
+						arg0_15.state:ChangeState(var7_0.stateStand)
+						arg0_17()
 					end)
 				end)
 			end
 
-			seriesAsync(var0, function()
-				local var0 = arg0:GetAction(arg1[#arg1])
+			seriesAsync(var0_15, function()
+				local var0_19 = arg0_15:GetAction(arg1_15[#arg1_15])
 
-				if var0 then
-					arg0.state:ChangeState(var0, function()
-						arg0.state:ChangeState(var7.stateStand)
-						arg2()
+				if var0_19 then
+					arg0_15.state:ChangeState(var0_19, function()
+						arg0_15.state:ChangeState(var7_0.stateStand)
+						arg2_15()
 					end)
 				else
-					arg0.state:ChangeState(var7.stateStand)
-					arg2()
+					arg0_15.state:ChangeState(var7_0.stateStand)
+					arg2_15()
 				end
 			end)
 		end,
-		Touch = function(arg0)
-			if arg0.state:IsStandState() then
-				arg0.state:ChangeState(var7.stateTouch, function()
-					arg0.state:ChangeState(var7.stateStand)
+		Touch = function(arg0_21)
+			if arg0_21.state:IsStandState() then
+				arg0_21.state:ChangeState(var7_0.stateTouch, function()
+					arg0_21.state:ChangeState(var7_0.stateStand)
 				end)
 			end
 		end,
-		GetAction = function(arg0, arg1)
-			local var0 = arg1.config.icon
+		GetAction = function(arg0_23, arg1_23)
+			local var0_23 = arg1_23.config.icon
 
-			if var0 == "icon_1" then
-				return var7.stateEvent
-			elseif var0 == "icon_2" then
-				return var7.stateGold
-			elseif var0 == "icon_3" then
+			if var0_23 == "icon_1" then
+				return var7_0.stateEvent
+			elseif var0_23 == "icon_2" then
+				return var7_0.stateGold
+			elseif var0_23 == "icon_3" then
 				-- block empty
-			elseif var0 == "icon_4" then
-				return var7.stateEvent
-			elseif var0 == "icon_5" then
-				return var7.stateOil
-			elseif var0 == "icon_6" then
-				return var7.stateEvent
+			elseif var0_23 == "icon_4" then
+				return var7_0.stateEvent
+			elseif var0_23 == "icon_5" then
+				return var7_0.stateOil
+			elseif var0_23 == "icon_6" then
+				return var7_0.stateEvent
 			end
 		end,
-		InitPos = function(arg0, arg1)
-			arg0:ChangePos(arg1)
-			arg0.state:ChangeState(var7.stateStand)
+		InitPos = function(arg0_24, arg1_24)
+			arg0_24:ChangePos(arg1_24)
+			arg0_24.state:ChangeState(var7_0.stateStand)
 		end,
-		ChangePos = function(arg0, arg1)
-			assert(arg1)
-			arg0.onUpdatePos(arg1)
+		ChangePos = function(arg0_25, arg1_25)
+			assert(arg1_25)
+			arg0_25.onUpdatePos(arg1_25)
 		end,
-		Dispose = function(arg0)
-			arg0.onMove = nil
-			arg0.onUpdatePos = nil
+		Dispose = function(arg0_26)
+			arg0_26.onMove = nil
+			arg0_26.onUpdatePos = nil
 		end
 	}
 end
 
-local function var11(arg0)
+local function var11_0(arg0_27)
 	return {
-		id = arg0,
-		config = var2[arg0],
-		ExistStory = function(arg0)
-			return arg0.config.story and arg0.config.story ~= "0"
+		id = arg0_27,
+		config = var2_0[arg0_27],
+		ExistStory = function(arg0_28)
+			return arg0_28.config.story and arg0_28.config.story ~= "0"
 		end,
-		isEmpty = function(arg0)
-			return arg0.config.story == "0" and arg0.config.drop == 0 and #arg0.config.effect == 0
+		isEmpty = function(arg0_29)
+			return arg0_29.config.story == "0" and arg0_29.config.drop == 0 and #arg0_29.config.effect == 0
 		end,
-		Dispose = function(arg0)
-			arg0.config = nil
+		Dispose = function(arg0_30)
+			arg0_30.config = nil
 		end
 	}
 end
 
-local function var12(arg0)
-	local var0 = {}
+local function var12_0(arg0_31)
+	local var0_31 = {}
 
-	var0.row, var0.column = arg0.pos[1], arg0.pos[2]
-	var0.index = arg0.index
-	var0.id = arg0.id
-	var0.flag = arg0.flag
+	var0_31.row, var0_31.column = arg0_31.pos[1], arg0_31.pos[2]
+	var0_31.index = arg0_31.index
+	var0_31.id = arg0_31.id
+	var0_31.flag = arg0_31.flag
 
-	assert(var0.id)
+	assert(var0_31.id)
 
-	var0.config = var1[var0.id]
-	var0.events = {}
+	var0_31.config = var1_0[var0_31.id]
+	var0_31.events = {}
 
-	for iter0, iter1 in ipairs(var2.all) do
-		if not table.contains(var0.events, iter1) then
-			table.insert(var0.events, var11(iter1))
+	for iter0_31, iter1_31 in ipairs(var2_0.all) do
+		if not table.contains(var0_31.events, iter1_31) then
+			table.insert(var0_31.events, var11_0(iter1_31))
 		end
 	end
 
-	function var0.GetEvent(arg0, arg1)
-		for iter0, iter1 in ipairs(arg0.events) do
-			if iter1.id == arg1 then
-				return iter1
+	function var0_31.GetEvent(arg0_32, arg1_32)
+		for iter0_32, iter1_32 in ipairs(arg0_32.events) do
+			if iter1_32.id == arg1_32 then
+				return iter1_32
 			end
 		end
 	end
 
-	function var0.SetNext(arg0, arg1)
-		arg0.next = arg1
+	function var0_31.SetNext(arg0_33, arg1_33)
+		arg0_33.next = arg1_33
 	end
 
-	function var0.Dispose(arg0)
-		for iter0, iter1 in ipairs(arg0.events) do
-			iter1:Dispose()
+	function var0_31.Dispose(arg0_34)
+		for iter0_34, iter1_34 in ipairs(arg0_34.events) do
+			iter1_34:Dispose()
 		end
 	end
 
-	return var0
+	return var0_31
 end
 
-local function var13(arg0, arg1)
-	local var0 = {
-		ROW = var5,
-		COLUMN = var6 - 2,
-		cellIds = arg0,
+local function var13_0(arg0_35, arg1_35)
+	local var0_35 = {
+		ROW = var5_0,
+		COLUMN = var6_0 - 2,
+		cellIds = arg0_35,
 		path = {}
 	}
 
-	var0.char = nil
-	var0.index = arg1
+	var0_35.char = nil
+	var0_35.index = arg1_35
 
-	function var0.onCreateCell(arg0)
+	function var0_35.onCreateCell(arg0_36)
 		return
 	end
 
-	function var0.onCreateChar(arg0)
+	function var0_35.onCreateChar(arg0_37)
 		return
 	end
 
-	function var0.Init(arg0)
-		local var0 = 0
+	function var0_35.Init(arg0_38)
+		local var0_38 = 0
 
-		for iter0 = 0, var0.ROW - 1 do
-			var0:CeateCell({
-				var0,
-				iter0
+		for iter0_38 = 0, var0_35.ROW - 1 do
+			var0_35:CeateCell({
+				var0_38,
+				iter0_38
 			}, 0)
 		end
 
-		local var1 = var0.ROW - 1
+		local var1_38 = var0_35.ROW - 1
 
-		for iter1 = 1, var0.COLUMN do
-			var0:CeateCell({
-				iter1,
-				var1
-			}, #arg0.path)
+		for iter1_38 = 1, var0_35.COLUMN do
+			var0_35:CeateCell({
+				iter1_38,
+				var1_38
+			}, #arg0_38.path)
 		end
 
-		local var2 = var0.COLUMN + 1
+		local var2_38 = var0_35.COLUMN + 1
 
-		for iter2 = var0.ROW - 1, 0, -1 do
-			var0:CeateCell({
-				var2,
-				iter2
-			}, #arg0.path)
+		for iter2_38 = var0_35.ROW - 1, 0, -1 do
+			var0_35:CeateCell({
+				var2_38,
+				iter2_38
+			}, #arg0_38.path)
 		end
 
-		local var3 = 0
-		local var4 = #arg0.path - 1
+		local var3_38 = 0
+		local var4_38 = #arg0_38.path - 1
 
-		for iter3 = var0.COLUMN, 1, -1 do
-			var0:CeateCell({
-				iter3,
-				var3
-			}, var4)
+		for iter3_38 = var0_35.COLUMN, 1, -1 do
+			var0_35:CeateCell({
+				iter3_38,
+				var3_38
+			}, var4_38)
 		end
 
-		arg0:CreateChar(var3)
+		arg0_38:CreateChar(var3_0)
 	end
 
-	function var0.CreateChar(arg0, arg1)
-		arg0.char = var10(arg1)
+	function var0_35.CreateChar(arg0_39, arg1_39)
+		arg0_39.char = var10_0(arg1_39)
 
-		arg0.onCreateChar(arg0.char)
+		arg0_39.onCreateChar(arg0_39.char)
 
-		local var0 = arg0:GetCell(arg0.index)
+		local var0_39 = arg0_39:GetCell(arg0_39.index)
 
-		arg0.char:InitPos(var0)
+		arg0_39.char:InitPos(var0_39)
 	end
 
-	function var0.CeateCell(arg0, arg1, arg2)
-		local var0 = #arg0.path
-		local var1 = var12({
-			pos = arg1,
-			index = var0 + 1,
-			id = arg0.cellIds[var0 + 1],
-			flag = arg2
+	function var0_35.CeateCell(arg0_40, arg1_40, arg2_40)
+		local var0_40 = #arg0_40.path
+		local var1_40 = var12_0({
+			pos = arg1_40,
+			index = var0_40 + 1,
+			id = arg0_40.cellIds[var0_40 + 1],
+			flag = arg2_40
 		})
 
-		if var0 == 0 then
-			var1:SetNext(var1)
+		if var0_40 == 0 then
+			var1_40:SetNext(var1_40)
 		else
-			local var2 = arg0.path[var0]
-			local var3 = arg0.path[1]
+			local var2_40 = arg0_40.path[var0_40]
+			local var3_40 = arg0_40.path[1]
 
-			var2:SetNext(var1)
-			var1:SetNext(var3)
+			var2_40:SetNext(var1_40)
+			var1_40:SetNext(var3_40)
 		end
 
-		table.insert(arg0.path, var1)
-		arg0.onCreateCell(var1)
+		table.insert(arg0_40.path, var1_40)
+		arg0_40.onCreateCell(var1_40)
 	end
 
-	function var0.GetPath(arg0)
-		return arg0.path
+	function var0_35.GetPath(arg0_41)
+		return arg0_41.path
 	end
 
-	function var0.GetChar(arg0)
-		return arg0.char
+	function var0_35.GetChar(arg0_42)
+		return arg0_42.char
 	end
 
-	function var0.GetPathCell(arg0, arg1)
-		return _.map(arg1, function(arg0)
-			return arg0.path[arg0]
+	function var0_35.GetPathCell(arg0_43, arg1_43)
+		return _.map(arg1_43, function(arg0_44)
+			return arg0_43.path[arg0_44]
 		end)
 	end
 
-	function var0.UpdateCharPos(arg0, arg1, arg2, arg3)
-		local var0 = arg0:GetPathCell(arg1)
+	function var0_35.UpdateCharPos(arg0_45, arg1_45, arg2_45, arg3_45)
+		local var0_45 = arg0_45:GetPathCell(arg1_45)
 
-		arg0.char:Move(var0, arg2, arg3)
+		arg0_45.char:Move(var0_45, arg2_45, arg3_45)
 
-		arg0.index = arg1[#arg1]
+		arg0_45.index = arg1_45[#arg1_45]
 	end
 
-	function var0.GetCell(arg0, arg1)
-		return arg0.path[arg1]
+	function var0_35.GetCell(arg0_46, arg1_46)
+		return arg0_46.path[arg1_46]
 	end
 
-	function var0.GetPos(arg0)
-		return arg0.index
+	function var0_35.GetPos(arg0_47)
+		return arg0_47.index
 	end
 
-	function var0.Dispose(arg0)
-		for iter0, iter1 in ipairs(arg0.path) do
-			iter1:Dispose()
+	function var0_35.Dispose(arg0_48)
+		for iter0_48, iter1_48 in ipairs(arg0_48.path) do
+			iter1_48:Dispose()
 		end
 
-		arg0.char:Dispose()
+		arg0_48.char:Dispose()
 
-		arg0.onCreateCell = nil
-		arg0.onCreateChar = nil
+		arg0_48.onCreateCell = nil
+		arg0_48.onCreateChar = nil
 	end
 
-	return var0
+	return var0_35
 end
 
-local function var14(arg0, arg1)
-	local var0 = {
-		_tf = arg0,
-		_img = arg0:GetComponent(typeof(Image)),
-		cell = arg1,
+local function var14_0(arg0_49, arg1_49)
+	local var0_49 = {
+		_tf = arg0_49,
+		_img = arg0_49:GetComponent(typeof(Image)),
+		cell = arg1_49,
 		interval = Vector2(0, 0),
 		startPos = Vector2(0, 0),
-		offset = Vector2(arg0.rect.width * 0.5 + 2.5, arg0.rect.height * 0.5 - 2),
-		GetGenPos = function(arg0)
-			local var0 = arg0.cell.column
-			local var1 = arg0.cell.row
-			local var2 = arg0.startPos.x + var0 * arg0.offset.x + var1 * arg0.offset.x
-			local var3 = arg0.startPos.y + var0 * arg0.offset.y + var1 * -arg0.offset.y
+		offset = Vector2(arg0_49.rect.width * 0.5 + 2.5, arg0_49.rect.height * 0.5 - 2),
+		GetGenPos = function(arg0_50)
+			local var0_50 = arg0_50.cell.column
+			local var1_50 = arg0_50.cell.row
+			local var2_50 = arg0_50.startPos.x + var0_50 * arg0_50.offset.x + var1_50 * arg0_50.offset.x
+			local var3_50 = arg0_50.startPos.y + var0_50 * arg0_50.offset.y + var1_50 * -arg0_50.offset.y
 
-			return Vector3(var2, var3, 0)
+			return Vector3(var2_50, var3_50, 0)
 		end,
-		UpdateStyle = function(arg0)
-			local var0 = arg0.cell
-			local var1 = GetSpriteFromAtlas("ui/activityuipage/monopolycar_atlas", var0.config.icon)
+		UpdateStyle = function(arg0_51)
+			local var0_51 = arg0_51.cell
+			local var1_51 = GetSpriteFromAtlas("ui/activityuipage/monopolycar_atlas", var0_51.config.icon)
 
-			arg0._img.sprite = var1
+			arg0_51._img.sprite = var1_51
 
-			arg0._img:SetNativeSize()
+			arg0_51._img:SetNativeSize()
 		end,
-		Dispose = function(arg0)
+		Dispose = function(arg0_52)
 			return
 		end
 	}
 
-	setAnchoredPosition(arg0, var0:GetGenPos())
-	var0._tf:SetSiblingIndex(arg1.flag)
+	setAnchoredPosition(arg0_49, var0_49:GetGenPos())
+	var0_49._tf:SetSiblingIndex(arg1_49.flag)
 
-	return var0
+	return var0_49
 end
 
-local function var15(arg0, arg1)
-	local var0 = {
-		_tf = arg0
+local function var15_0(arg0_53, arg1_53)
+	local var0_53 = {
+		_tf = arg0_53
 	}
 
-	var0.WalkSpeed = 1
-	var0.RunSpeed = 0.5
-	var0.jumpSpeed = 0.5
-	var0.char = arg1
+	var0_53.WalkSpeed = 1
+	var0_53.RunSpeed = 0.5
+	var0_53.jumpSpeed = 0.5
+	var0_53.char = arg1_53
 
-	local var1 = arg0:GetChild(0)
+	local var1_53 = arg0_53:GetChild(0)
 
-	tf(var1).localScale = Vector3(0.5, 0.5, 0.5)
-	var0.SpineAnimUI = var1:GetComponent("SpineAnimUI")
+	tf(var1_53).localScale = Vector3(0.5, 0.5, 0.5)
+	var0_53.SpineAnimUI = var1_53:GetComponent("SpineAnimUI")
 
-	local var2 = GameObject("mouseChild")
+	local var2_53 = GameObject("mouseChild")
 
-	tf(var2):SetParent(tf(var1))
+	tf(var2_53):SetParent(tf(var1_53))
 
-	tf(var2).localPosition = Vector3.zero
+	tf(var2_53).localPosition = Vector3.zero
 
-	setParent(var2, var1)
+	setParent(var2_53, var1_53)
 
-	GetOrAddComponent(var2, "Image").color = Color.New(0, 0, 0, 0)
+	GetOrAddComponent(var2_53, "Image").color = Color.New(0, 0, 0, 0)
 
-	local var3 = var2:GetComponent(typeof(RectTransform))
+	local var3_53 = var2_53:GetComponent(typeof(RectTransform))
 
-	var3.sizeDelta = Vector2(3, 3)
-	var3.pivot = Vector2(0.5, 0)
-	var3.anchoredPosition = Vector2(0, 0)
+	var3_53.sizeDelta = Vector2(3, 3)
+	var3_53.pivot = Vector2(0.5, 0)
+	var3_53.anchoredPosition = Vector2(0, 0)
 
-	onButton(nil, var2, function()
-		var0.char:Touch()
+	onButton(nil, var2_53, function()
+		var0_53.char:Touch()
 	end)
 
-	function var0.Action(arg0, arg1, arg2, arg3)
-		local var0 = {}
+	function var0_53.Action(arg0_55, arg1_55, arg2_55, arg3_55)
+		local var0_55 = {}
 
-		_.each(arg1, function(arg0)
-			table.insert(var0, function(arg0)
-				arg0:UpdateScale(arg0)
+		_.each(arg1_55, function(arg0_56)
+			table.insert(var0_55, function(arg0_57)
+				arg0_55:UpdateScale(arg0_56)
 
-				local var0 = arg0:GetGenPos()
+				local var0_57 = arg0_56:GetGenPos()
 
-				if arg0._tf.localPosition == var0 then
-					arg0()
+				if arg0_55._tf.localPosition == var0_57 then
+					arg0_57()
 				else
-					LeanTween.moveLocal(go(arg0._tf), var0, arg3):setOnComplete(System.Action(function()
-						arg0.preCellTF = arg0
+					LeanTween.moveLocal(go(arg0_55._tf), var0_57, arg3_55):setOnComplete(System.Action(function()
+						arg0_55.preCellTF = arg0_56
 
-						arg0()
+						arg0_57()
 					end))
 				end
 			end)
 		end)
-		seriesAsync(var0, function()
-			if arg2 then
-				arg2()
+		seriesAsync(var0_55, function()
+			if arg2_55 then
+				arg2_55()
 			end
 		end)
 	end
 
-	function var0.Move(arg0, arg1, arg2)
-		if #arg1 > 3 then
-			arg0:Action(arg1, arg2, arg0.RunSpeed)
+	function var0_53.Move(arg0_60, arg1_60, arg2_60)
+		if #arg1_60 > 3 then
+			arg0_60:Action(arg1_60, arg2_60, arg0_60.RunSpeed)
 		else
-			arg0:Action(arg1, arg2, arg0.WalkSpeed)
+			arg0_60:Action(arg1_60, arg2_60, arg0_60.WalkSpeed)
 		end
 	end
 
-	function var0.Jump(arg0, arg1, arg2)
-		arg0:Action({
-			arg1
+	function var0_53.Jump(arg0_61, arg1_61, arg2_61)
+		arg0_61:Action({
+			arg1_61
 		}, function()
-			arg2()
+			arg2_61()
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_STEP_MONOPOLY)
-		end, arg0.jumpSpeed)
+		end, arg0_61.jumpSpeed)
 	end
 
-	function var0.UpdatePos(arg0, arg1)
-		arg0.preCellTF = arg1
+	function var0_53.UpdatePos(arg0_63, arg1_63)
+		arg0_63.preCellTF = arg1_63
 
-		local var0 = arg1:GetGenPos()
+		local var0_63 = arg1_63:GetGenPos()
 
-		arg0._tf.localPosition = var0
+		arg0_63._tf.localPosition = var0_63
 	end
 
-	function var0.UpdateScale(arg0, arg1)
-		local var0 = 1
+	function var0_53.UpdateScale(arg0_64, arg1_64)
+		local var0_64 = 1
 
-		arg0.preCellTF = arg0.preCellTF or arg1
+		arg0_64.preCellTF = arg0_64.preCellTF or arg1_64
 
-		if arg1.cell.row > arg0.preCellTF.cell.row or arg1.cell.column > arg0.preCellTF.cell.column then
-			var0 = 1
-		elseif arg1.cell.row < arg0.preCellTF.cell.row or arg1.cell.column < arg0.preCellTF.cell.column then
-			var0 = -1
+		if arg1_64.cell.row > arg0_64.preCellTF.cell.row or arg1_64.cell.column > arg0_64.preCellTF.cell.column then
+			var0_64 = 1
+		elseif arg1_64.cell.row < arg0_64.preCellTF.cell.row or arg1_64.cell.column < arg0_64.preCellTF.cell.column then
+			var0_64 = -1
 		end
 
-		arg0._tf.localScale = Vector3(var0, 1, 1)
+		arg0_64._tf.localScale = Vector3(var0_64, 1, 1)
 	end
 
-	function var0.ChangeAction(arg0, arg1, arg2)
-		arg0.SpineAnimUI:SetActionCallBack(nil)
-		arg0.SpineAnimUI:SetAction(arg1, 0)
-		arg0.SpineAnimUI:SetActionCallBack(function(arg0)
-			if arg0 == "finish" then
-				arg0.SpineAnimUI:SetActionCallBack(nil)
-				arg2()
+	function var0_53.ChangeAction(arg0_65, arg1_65, arg2_65)
+		arg0_65.SpineAnimUI:SetActionCallBack(nil)
+		arg0_65.SpineAnimUI:SetAction(arg1_65, 0)
+		arg0_65.SpineAnimUI:SetActionCallBack(function(arg0_66)
+			if arg0_66 == "finish" then
+				arg0_65.SpineAnimUI:SetActionCallBack(nil)
+				arg2_65()
 			end
 		end)
 	end
 
-	function var0.Dispose(arg0)
-		arg0.SpineAnimUI:SetActionCallBack(nil)
+	function var0_53.Dispose(arg0_67)
+		arg0_67.SpineAnimUI:SetActionCallBack(nil)
 
-		arg0.char.onMove = nil
+		arg0_67.char.onMove = nil
 
-		if arg0.timer then
-			arg0.timer:Stop()
+		if arg0_67.timer then
+			arg0_67.timer:Stop()
 
-			arg0.timer = nil
+			arg0_67.timer = nil
 		end
 	end
 
-	return var0
+	return var0_53
 end
 
-function var0.SetUp(arg0, arg1, arg2)
-	arg0.viewComponent = arg1
+function var0_0.SetUp(arg0_68, arg1_68, arg2_68)
+	arg0_68.viewComponent = arg1_68
 
-	local var0 = arg0.viewComponent._tf
+	local var0_68 = arg0_68.viewComponent._tf
 
-	pg.DelegateInfo.New(arg0)
+	pg.DelegateInfo.New(arg0_68)
 
-	arg0._tf = var0
-	arg0._go = go(var0)
-	arg0.models = {}
+	arg0_68._tf = var0_68
+	arg0_68._go = go(var0_68)
+	arg0_68.models = {}
 
 	parallelAsync({
-		function(arg0)
-			local var0 = Ship.New({
-				configId = var3,
-				skin_id = var4
+		function(arg0_69)
+			local var0_69 = Ship.New({
+				configId = var3_0,
+				skin_id = var4_0
 			})
-			local var1 = var0:getPrefab()
+			local var1_69 = var0_69:getPrefab()
 
-			PoolMgr.GetInstance():GetSpineChar(var1, true, function(arg0)
-				arg0.models[var0.configId] = arg0
+			PoolMgr.GetInstance():GetSpineChar(var1_69, true, function(arg0_70)
+				arg0_68.models[var0_69.configId] = arg0_70
 
-				arg0()
+				arg0_69()
 			end)
 		end,
-		function(arg0)
-			onNextTick(arg0)
+		function(arg0_71)
+			onNextTick(arg0_71)
 		end
 	}, function()
-		arg0:setActivity(arg2)
-		arg0:init()
-		arg0:didEnter()
+		arg0_68:setActivity(arg2_68)
+		arg0_68:init()
+		arg0_68:didEnter()
 	end)
 end
 
-function var0.setActivity(arg0, arg1)
-	arg0.activity = arg1
+function var0_0.setActivity(arg0_73, arg1_73)
+	arg0_73.activity = arg1_73
 
-	local var0 = arg0.activity.data1
-	local var1 = arg0.activity.data1_list[1]
+	local var0_73 = arg0_73.activity.data1
+	local var1_73 = arg0_73.activity.data1_list[1]
 
-	arg0.useCount = arg0.activity.data1_list[2]
+	arg0_73.useCount = arg0_73.activity.data1_list[2]
 
-	local var2 = arg0.activity.data1_list[3] - 1
-	local var3 = arg0.activity.data2_list[1]
-	local var4 = arg0.activity.data2_list[2]
-	local var5 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var6 = math.ceil((var5 - var0) / 86400) * arg0.activity:getDataConfig("daily_time")
+	local var2_73 = arg0_73.activity.data1_list[3] - 1
+	local var3_73 = arg0_73.activity.data2_list[1]
+	local var4_73 = arg0_73.activity.data2_list[2]
+	local var5_73 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var6_73 = math.ceil((var5_73 - var0_73) / 86400) * arg0_73.activity:getDataConfig("daily_time")
 
-	arg0.pos = arg0.activity.data2
-	arg0.step = arg0.activity.data3
-	arg0.effectId = arg0.activity.data4
-	arg0.totalCnt = var6 + var1
-	arg0.leftCount = arg0.totalCnt - arg0.useCount
+	arg0_73.pos = arg0_73.activity.data2
+	arg0_73.step = arg0_73.activity.data3
+	arg0_73.effectId = arg0_73.activity.data4
+	arg0_73.totalCnt = var6_73 + var1_73
+	arg0_73.leftCount = arg0_73.totalCnt - arg0_73.useCount
 
-	local var7 = arg1:getDataConfig("reward_time")
+	local var7_73 = arg1_73:getDataConfig("reward_time")
 
-	arg0.nextredPacketStep = var7 - arg0.useCount % var7
-	arg0.advanceTotalCnt = #arg1:getDataConfig("reward")
-	arg0.isAdvanceRp = arg0.advanceTotalCnt - var4 > 0
-	arg0.leftAwardCnt = var3 - var4
-	arg0.advanceRpCount = math.max(0, math.min(var3, arg0.advanceTotalCnt) - var4)
-	arg0.commonRpCount = math.max(0, var3 - arg0.advanceTotalCnt) - math.max(0, var4 - arg0.advanceTotalCnt)
-	arg0.leftDropShipCnt = 10 - var2
+	arg0_73.nextredPacketStep = var7_73 - arg0_73.useCount % var7_73
+	arg0_73.advanceTotalCnt = #arg1_73:getDataConfig("reward")
+	arg0_73.isAdvanceRp = arg0_73.advanceTotalCnt - var4_73 > 0
+	arg0_73.leftAwardCnt = var3_73 - var4_73
+	arg0_73.advanceRpCount = math.max(0, math.min(var3_73, arg0_73.advanceTotalCnt) - var4_73)
+	arg0_73.commonRpCount = math.max(0, var3_73 - arg0_73.advanceTotalCnt) - math.max(0, var4_73 - arg0_73.advanceTotalCnt)
+	arg0_73.leftDropShipCnt = 10 - var2_73
 end
 
-function var0.NetActivity(arg0, arg1)
-	arg0:setActivity(arg1)
-	arg0:updateLeftCount()
-	arg0:updateNextRedPacketStep()
+function var0_0.NetActivity(arg0_74, arg1_74)
+	arg0_74:setActivity(arg1_74)
+	arg0_74:updateLeftCount()
+	arg0_74:updateNextRedPacketStep()
 end
 
-function var0.init(arg0)
-	arg0:blockAllEvent(false)
+function var0_0.init(arg0_75)
+	arg0_75:blockAllEvent(false)
 
-	arg0.bg = arg0:findTF("AD")
-	arg0.mapCellTpl = arg0:getTpl("mapCell", arg0.bg)
-	arg0.mapContainer = arg0:findTF("mapContainer", arg0.bg)
-	arg0.charTpl = arg0:getTpl("char", arg0.bg)
-	arg0.startBtn = arg0:findTF("start", arg0.bg)
-	arg0.valueImg = arg0:findTF("value", arg0.bg):GetComponent(typeof(Image))
-	arg0.leftcountLabel = arg0:findTF("leftcount", arg0.bg):GetComponent(typeof(Text))
-	arg0.leftCountTF = arg0:findTF("leftcount/Text", arg0.bg):GetComponent(typeof(Text))
-	arg0.nextRedPacketStepTF = arg0:findTF("nextRpStep/Text", arg0.bg):GetComponent(typeof(Text))
-	arg0.commonRp = arg0:findTF("rp", arg0.bg)
-	arg0.commonAnim = arg0.commonRp:GetComponent(typeof(Animator))
-	arg0.commonRpCnt = arg0:findTF("rp_text/Text", arg0.bg):GetComponent(typeof(Text))
-	arg0.dropShipTxt = arg0:findTF("AD/drop_ship_text"):GetComponent(typeof(Text))
-	arg0.helpBtn = arg0:findTF("AD/help")
-	arg0.anim = arg0:findTF("AD/anim")
+	arg0_75.bg = arg0_75:findTF("AD")
+	arg0_75.mapCellTpl = arg0_75:getTpl("mapCell", arg0_75.bg)
+	arg0_75.mapContainer = arg0_75:findTF("mapContainer", arg0_75.bg)
+	arg0_75.charTpl = arg0_75:getTpl("char", arg0_75.bg)
+	arg0_75.startBtn = arg0_75:findTF("start", arg0_75.bg)
+	arg0_75.valueImg = arg0_75:findTF("value", arg0_75.bg):GetComponent(typeof(Image))
+	arg0_75.leftcountLabel = arg0_75:findTF("leftcount", arg0_75.bg):GetComponent(typeof(Text))
+	arg0_75.leftCountTF = arg0_75:findTF("leftcount/Text", arg0_75.bg):GetComponent(typeof(Text))
+	arg0_75.nextRedPacketStepTF = arg0_75:findTF("nextRpStep/Text", arg0_75.bg):GetComponent(typeof(Text))
+	arg0_75.commonRp = arg0_75:findTF("rp", arg0_75.bg)
+	arg0_75.commonAnim = arg0_75.commonRp:GetComponent(typeof(Animator))
+	arg0_75.commonRpCnt = arg0_75:findTF("rp_text/Text", arg0_75.bg):GetComponent(typeof(Text))
+	arg0_75.dropShipTxt = arg0_75:findTF("AD/drop_ship_text"):GetComponent(typeof(Text))
+	arg0_75.helpBtn = arg0_75:findTF("AD/help")
+	arg0_75.anim = arg0_75:findTF("AD/anim")
 
-	setActive(arg0.anim, false)
+	setActive(arg0_75.anim, false)
 
-	arg0.leftcountLabel.text = i18n("monopoly_left_count")
-	arg0.advanceTag = arg0:findTF("AD/rp/sp")
-	arg0.advanceLabel = arg0:findTF("AD/rp_text/sp")
-	arg0.advancecLabel = arg0:findTF("AD/rp_text/label")
-	arg0.advanceImage = arg0:findTF("AD/rp_text/sp_img")
-	arg0.advanceTxt = arg0:findTF("AD/rp_text/sp_img/Text"):GetComponent(typeof(Text))
+	arg0_75.leftcountLabel.text = i18n("monopoly_left_count")
+	arg0_75.advanceTag = arg0_75:findTF("AD/rp/sp")
+	arg0_75.advanceLabel = arg0_75:findTF("AD/rp_text/sp")
+	arg0_75.advancecLabel = arg0_75:findTF("AD/rp_text/label")
+	arg0_75.advanceImage = arg0_75:findTF("AD/rp_text/sp_img")
+	arg0_75.advanceTxt = arg0_75:findTF("AD/rp_text/sp_img/Text"):GetComponent(typeof(Text))
 end
 
-function var0.updateNextRedPacketStep(arg0)
-	arg0.nextRedPacketStepTF.text = arg0.nextredPacketStep
+function var0_0.updateNextRedPacketStep(arg0_76)
+	arg0_76.nextRedPacketStepTF.text = arg0_76.nextredPacketStep
 end
 
-function var0.updateLeftCount(arg0)
-	arg0.leftCountTF.text = arg0.leftCount
+function var0_0.updateLeftCount(arg0_77)
+	arg0_77.leftCountTF.text = arg0_77.leftCount
 
-	arg0.commonAnim:SetInteger("count", arg0.leftAwardCnt)
+	arg0_77.commonAnim:SetInteger("count", arg0_77.leftAwardCnt)
 
-	arg0.commonRpCnt.text = arg0.commonRpCount
+	arg0_77.commonRpCnt.text = arg0_77.commonRpCount
 end
 
-function var0.updateValue(arg0, arg1)
-	if arg1 ~= 0 then
-		arg0.valueImg.sprite = GetSpriteFromAtlas("ui/activityuipage/monopoly_atlas", arg1)
+function var0_0.updateValue(arg0_78, arg1_78)
+	if arg1_78 ~= 0 then
+		arg0_78.valueImg.sprite = GetSpriteFromAtlas("ui/activityuipage/monopoly_atlas", arg1_78)
 
-		arg0.valueImg:SetNativeSize()
+		arg0_78.valueImg:SetNativeSize()
 	end
 
-	setActive(go(arg0.valueImg), arg1 ~= 0)
+	setActive(go(arg0_78.valueImg), arg1_78 ~= 0)
 end
 
-function var0.didEnter(arg0)
-	setActive(arg0.startBtn, arg0.leftCount > 0)
-	arg0:updateLeftCount()
-	arg0:updateValue(0)
-	arg0:updateNextRedPacketStep()
+function var0_0.didEnter(arg0_79)
+	setActive(arg0_79.startBtn, arg0_79.leftCount > 0)
+	arg0_79:updateLeftCount()
+	arg0_79:updateValue(0)
+	arg0_79:updateNextRedPacketStep()
 
-	local var0 = arg0.activity:getDataConfig("map")
+	local var0_79 = arg0_79.activity:getDataConfig("map")
 
-	arg0.mapVO = var13(var0, arg0.pos)
+	arg0_79.mapVO = var13_0(var0_79, arg0_79.pos)
 
-	arg0:createMap(arg0.mapVO)
-	arg0.mapVO:Init()
-	arg0:checkState()
-	onButton(arg0, arg0.startBtn, function()
-		if arg0.block then
+	arg0_79:createMap(arg0_79.mapVO)
+	arg0_79.mapVO:Init()
+	arg0_79:checkState()
+	onButton(arg0_79, arg0_79.startBtn, function()
+		if arg0_79.block then
 			return
 		end
 
-		if arg0.leftCount <= 0 then
+		if arg0_79.leftCount <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_count_noenough"))
 
 			return
 		end
 
-		arg0:startAction()
+		arg0_79:startAction()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.commonRp, function()
-		if arg0.leftAwardCnt > 0 then
-			arg0:emit(MonopolyPage.ON_AWARD)
+	onButton(arg0_79, arg0_79.commonRp, function()
+		if arg0_79.leftAwardCnt > 0 then
+			arg0_79:emit(MonopolyPage.ON_AWARD)
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_79, arg0_79.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_chunjie_monopoly.tip
@@ -696,284 +696,284 @@ function var0.didEnter(arg0)
 	end, SFX_PANEL)
 end
 
-function var0.blockAllEvent(arg0, arg1)
-	arg0:emit(ActivityMainScene.LOCK_ACT_MAIN, arg1)
+function var0_0.blockAllEvent(arg0_83, arg1_83)
+	arg0_83:emit(ActivityMainScene.LOCK_ACT_MAIN, arg1_83)
 
-	arg0.block = arg1
+	arg0_83.block = arg1_83
 end
 
-function var0.triggerEvent(arg0, arg1, arg2, arg3)
-	local var0 = arg0.mapVO:GetCell(arg1):GetEvent(arg2)
+function var0_0.triggerEvent(arg0_84, arg1_84, arg2_84, arg3_84)
+	local var0_84 = arg0_84.mapVO:GetCell(arg1_84):GetEvent(arg2_84)
 
-	local function var1(arg0, arg1)
-		if arg0 and arg0:ExistStory() then
-			pg.NewStoryMgr.GetInstance():Play(arg0.config.story, arg1, true, true)
+	local function var1_84(arg0_85, arg1_85)
+		if arg0_85 and arg0_85:ExistStory() then
+			pg.NewStoryMgr.GetInstance():Play(arg0_85.config.story, arg1_85, true, true)
 		else
-			arg1()
+			arg1_85()
 		end
 	end
 
-	local var2 = {
-		function(arg0)
-			var1(var0, arg0)
+	local var2_84 = {
+		function(arg0_86)
+			var1_84(var0_84, arg0_86)
 		end,
-		function(arg0)
-			local var0
+		function(arg0_87)
+			local var0_87
 
-			local function var1()
-				if not var0 or var0:isEmpty() then
-					arg0()
+			local function var1_87()
+				if not var0_84 or var0_84:isEmpty() then
+					arg0_87()
 
 					return
 				end
 
-				arg0:emit(MonopolyPage.ON_TRIGGER, arg0.activity.id, function(arg0, arg1)
-					if not arg0 or #arg0 == 0 then
-						arg0()
+				arg0_84:emit(MonopolyPage.ON_TRIGGER, arg0_84.activity.id, function(arg0_89, arg1_89)
+					if not arg0_89 or #arg0_89 == 0 then
+						arg0_87()
 
 						return
 					end
 
-					arg0.mapVO:UpdateCharPos(arg0, function()
-						local var0 = arg0[#arg0]
+					arg0_84.mapVO:UpdateCharPos(arg0_89, function()
+						local var0_90 = arg0_89[#arg0_89]
 
-						var0 = arg0.mapVO:GetCell(var0):GetEvent(arg1)
+						var0_84 = arg0_84.mapVO:GetCell(var0_90):GetEvent(arg1_89)
 
-						var1(var0, var1)
+						var1_84(var0_84, var1_87)
 					end, true)
 				end)
 			end
 
-			var1()
+			var1_87()
 		end
 	}
 
-	seriesAsync(var2, arg3)
+	seriesAsync(var2_84, arg3_84)
 end
 
-function var0.checkState(arg0)
-	local var0 = {}
+function var0_0.checkState(arg0_91)
+	local var0_91 = {}
 
-	arg0:blockAllEvent(true)
+	arg0_91:blockAllEvent(true)
 
-	local var1 = arg0:getStrory()
+	local var1_91 = arg0_91:getStrory()
 
-	if var1 then
-		table.insert(var0, function(arg0)
-			pg.NewStoryMgr.GetInstance():Play(var1, arg0)
+	if var1_91 then
+		table.insert(var0_91, function(arg0_92)
+			pg.NewStoryMgr.GetInstance():Play(var1_91, arg0_92)
 		end)
 	end
 
-	if arg0.effectId ~= 0 then
-		table.insert(var0, function(arg0)
-			local var0 = arg0.mapVO:GetPos()
+	if arg0_91.effectId ~= 0 then
+		table.insert(var0_91, function(arg0_93)
+			local var0_93 = arg0_91.mapVO:GetPos()
 
-			arg0:triggerEvent(var0, arg0.effectId, arg0)
+			arg0_91:triggerEvent(var0_93, arg0_91.effectId, arg0_93)
 		end)
 	end
 
-	if arg0.step ~= 0 then
-		table.insert(var0, function(arg0)
-			arg0:emit(MonopolyPage.ON_MOVE, arg0.activity.id, function(arg0, arg1, arg2)
-				if not arg1 or #arg1 == 0 then
-					arg0()
+	if arg0_91.step ~= 0 then
+		table.insert(var0_91, function(arg0_94)
+			arg0_91:emit(MonopolyPage.ON_MOVE, arg0_91.activity.id, function(arg0_95, arg1_95, arg2_95)
+				if not arg1_95 or #arg1_95 == 0 then
+					arg0_94()
 
 					return
 				end
 
-				arg0.mapVO:UpdateCharPos(arg1, function()
-					local var0 = arg1[#arg1]
+				arg0_91.mapVO:UpdateCharPos(arg1_95, function()
+					local var0_96 = arg1_95[#arg1_95]
 
-					arg0:triggerEvent(var0, arg2, arg0)
+					arg0_91:triggerEvent(var0_96, arg2_95, arg0_94)
 				end)
 			end)
 		end)
 	end
 
-	seriesAsync(var0, function()
-		arg0:blockAllEvent(false)
+	seriesAsync(var0_91, function()
+		arg0_91:blockAllEvent(false)
 	end)
 end
 
-function var0.startAction(arg0)
-	local var0 = arg0.activity.id
-	local var1 = 0
+function var0_0.startAction(arg0_98)
+	local var0_98 = arg0_98.activity.id
+	local var1_98 = 0
 
-	local function var2(arg0)
-		if var1 == 0 then
-			arg0()
+	local function var2_98(arg0_99)
+		if var1_98 == 0 then
+			arg0_99()
 
 			return
 		end
 
-		arg0:emit(MonopolyPage.ON_MOVE, var0, function(arg0, arg1, arg2)
-			if not arg1 or #arg1 == 0 then
-				arg0()
+		arg0_98:emit(MonopolyPage.ON_MOVE, var0_98, function(arg0_100, arg1_100, arg2_100)
+			if not arg1_100 or #arg1_100 == 0 then
+				arg0_99()
 
 				return
 			end
 
-			var1 = arg0
+			var1_98 = arg0_100
 
-			arg0.mapVO:UpdateCharPos(arg1, function()
-				local var0 = arg1[#arg1]
+			arg0_98.mapVO:UpdateCharPos(arg1_100, function()
+				local var0_101 = arg1_100[#arg1_100]
 
-				arg0:triggerEvent(var0, arg2, arg0)
+				arg0_98:triggerEvent(var0_101, arg2_100, arg0_99)
 			end)
 		end)
 	end
 
 	seriesAsync({
-		function(arg0)
-			setActive(arg0.startBtn, false)
-			arg0:blockAllEvent(true)
-			arg0:playerAnim(arg0)
+		function(arg0_102)
+			setActive(arg0_98.startBtn, false)
+			arg0_98:blockAllEvent(true)
+			arg0_98:playerAnim(arg0_102)
 		end,
-		function(arg0)
-			arg0:emit(MonopolyPage.ON_START, var0, function(arg0)
-				var1 = arg0
+		function(arg0_103)
+			arg0_98:emit(MonopolyPage.ON_START, var0_98, function(arg0_104)
+				var1_98 = arg0_104
 
-				arg0:updateValue(arg0)
-				arg0()
+				arg0_98:updateValue(arg0_104)
+				arg0_103()
 			end)
 		end,
-		function(arg0)
-			var2(arg0)
+		function(arg0_105)
+			var2_98(arg0_105)
 		end,
-		function(arg0)
-			var2(arg0)
+		function(arg0_106)
+			var2_98(arg0_106)
 		end,
-		function(arg0)
-			local var0 = arg0:getStrory()
+		function(arg0_107)
+			local var0_107 = arg0_98:getStrory()
 
-			if not var0 then
-				arg0()
+			if not var0_107 then
+				arg0_107()
 
 				return
 			end
 
-			pg.NewStoryMgr.GetInstance():Play(var0, arg0)
+			pg.NewStoryMgr.GetInstance():Play(var0_107, arg0_107)
 		end
 	}, function()
-		arg0:updateValue(0)
-		arg0:blockAllEvent(false)
-		setActive(arg0.startBtn, arg0.leftCount > 0)
+		arg0_98:updateValue(0)
+		arg0_98:blockAllEvent(false)
+		setActive(arg0_98.startBtn, arg0_98.leftCount > 0)
 	end)
 end
 
-function var0.getStrory(arg0)
-	local var0 = arg0.useCount
-	local var1 = arg0.activity:getDataConfig("story") or {}
-	local var2 = _.detect(var1, function(arg0)
-		return arg0[1] == var0
+function var0_0.getStrory(arg0_109)
+	local var0_109 = arg0_109.useCount
+	local var1_109 = arg0_109.activity:getDataConfig("story") or {}
+	local var2_109 = _.detect(var1_109, function(arg0_110)
+		return arg0_110[1] == var0_109
 	end)
 
-	if var2 then
-		return var2[2]
+	if var2_109 then
+		return var2_109[2]
 	end
 
 	return nil
 end
 
-function var0.createMap(arg0, arg1)
-	arg0.cellTFs, arg0.charCard = {}
+function var0_0.createMap(arg0_111, arg1_111)
+	arg0_111.cellTFs, arg0_111.charCard = {}
 
-	function arg1.onCreateCell(arg0)
-		local var0 = cloneTplTo(arg0.mapCellTpl, arg0.mapContainer)
-		local var1 = var14(var0, arg0)
+	function arg1_111.onCreateCell(arg0_112)
+		local var0_112 = cloneTplTo(arg0_111.mapCellTpl, arg0_111.mapContainer)
+		local var1_112 = var14_0(var0_112, arg0_112)
 
-		var1:UpdateStyle()
+		var1_112:UpdateStyle()
 
-		arg0.cellTFs[arg0.index] = var1
+		arg0_111.cellTFs[arg0_112.index] = var1_112
 	end
 
-	function arg1.onCreateChar(arg0)
-		local var0 = cloneTplTo(arg0.charTpl, arg0.mapContainer)
-		local var1 = arg0.models[arg0.ship.configId]
+	function arg1_111.onCreateChar(arg0_113)
+		local var0_113 = cloneTplTo(arg0_111.charTpl, arg0_111.mapContainer)
+		local var1_113 = arg0_111.models[arg0_113.ship.configId]
 
-		setParent(var1, var0)
+		setParent(var1_113, var0_113)
 
-		arg0.charCard = var15(var0, arg0)
+		arg0_111.charCard = var15_0(var0_113, arg0_113)
 
-		function arg0.onMove(arg0, arg1)
-			local var0 = _.map(arg0, function(arg0)
-				return arg0.cellTFs[arg0.index]
+		function arg0_113.onMove(arg0_114, arg1_114)
+			local var0_114 = _.map(arg0_114, function(arg0_115)
+				return arg0_111.cellTFs[arg0_115.index]
 			end)
 
-			arg0.charCard:Move(var0, arg1)
+			arg0_111.charCard:Move(var0_114, arg1_114)
 		end
 
-		function arg0.onUpdatePos(arg0)
-			local var0 = arg0.cellTFs[arg0.index]
+		function arg0_113.onUpdatePos(arg0_116)
+			local var0_116 = arg0_111.cellTFs[arg0_116.index]
 
-			arg0.charCard:UpdatePos(var0)
+			arg0_111.charCard:UpdatePos(var0_116)
 		end
 
-		function arg0.state.onActionUpdated(arg0, arg1)
-			arg0.charCard:ChangeAction(arg0, arg1)
+		function arg0_113.state.onActionUpdated(arg0_117, arg1_117)
+			arg0_111.charCard:ChangeAction(arg0_117, arg1_117)
 		end
 
-		function arg0.onJump(arg0, arg1)
-			local var0 = arg0.cellTFs[arg0.index]
+		function arg0_113.onJump(arg0_118, arg1_118)
+			local var0_118 = arg0_111.cellTFs[arg0_118.index]
 
-			arg0.charCard:Jump(var0, arg1)
+			arg0_111.charCard:Jump(var0_118, arg1_118)
 		end
 	end
 end
 
-function var0.playerAnim(arg0, arg1)
-	setActive(arg0.anim, true)
+function var0_0.playerAnim(arg0_119, arg1_119)
+	setActive(arg0_119.anim, true)
 
-	if arg0.timer then
-		arg0.timer:Stop()
+	if arg0_119.timer then
+		arg0_119.timer:Stop()
 	end
 
-	arg0.timer = Timer.New(function()
-		arg1()
-		setActive(arg0.anim, false)
+	arg0_119.timer = Timer.New(function()
+		arg1_119()
+		setActive(arg0_119.anim, false)
 	end, 1.5, 1)
 
-	arg0.timer:Start()
+	arg0_119.timer:Start()
 end
 
-function var0.findTF(arg0, arg1, arg2)
-	assert(arg0._tf, "transform should exist")
+function var0_0.findTF(arg0_121, arg1_121, arg2_121)
+	assert(arg0_121._tf, "transform should exist")
 
-	return findTF(arg2 or arg0._tf, arg1)
+	return findTF(arg2_121 or arg0_121._tf, arg1_121)
 end
 
-function var0.getTpl(arg0, arg1, arg2)
-	local var0 = arg0:findTF(arg1, arg2)
+function var0_0.getTpl(arg0_122, arg1_122, arg2_122)
+	local var0_122 = arg0_122:findTF(arg1_122, arg2_122)
 
-	var0:SetParent(arg0._tf, false)
-	SetActive(var0, false)
+	var0_122:SetParent(arg0_122._tf, false)
+	SetActive(var0_122, false)
 
-	return var0
+	return var0_122
 end
 
-function var0.Destroy(arg0)
-	for iter0, iter1 in pairs(arg0.cellTFs) do
-		iter1:Dispose()
+function var0_0.Destroy(arg0_123)
+	for iter0_123, iter1_123 in pairs(arg0_123.cellTFs) do
+		iter1_123:Dispose()
 	end
 
-	arg0.charCard:Dispose()
-	arg0.mapVO:Dispose()
+	arg0_123.charCard:Dispose()
+	arg0_123.mapVO:Dispose()
 
-	arg0.cellTFs = nil
-	arg0.charCard = nil
-	arg0.mapVO = nil
+	arg0_123.cellTFs = nil
+	arg0_123.charCard = nil
+	arg0_123.mapVO = nil
 
-	if arg0.timer then
-		arg0.timer:Stop()
+	if arg0_123.timer then
+		arg0_123.timer:Stop()
 
-		arg0.timer = nil
+		arg0_123.timer = nil
 	end
 
-	pg.DelegateInfo.Dispose(arg0)
+	pg.DelegateInfo.Dispose(arg0_123)
 end
 
-function var0.emit(arg0, arg1, arg2, arg3)
-	arg0.viewComponent:emit(arg1, arg2, arg3)
+function var0_0.emit(arg0_124, arg1_124, arg2_124, arg3_124)
+	arg0_124.viewComponent:emit(arg1_124, arg2_124, arg3_124)
 end
 
-return var0
+return var0_0

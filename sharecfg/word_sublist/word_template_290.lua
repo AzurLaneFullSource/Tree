@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_290 = {}
+var0_0.word_template_290 = {}
 
-local var1 = var0.word_template_290
+local var1_0 = var0_0.word_template_290
 
 function temp()
-	var1.微 = {
+	var1_0.微 = {
 		电 = {
 			波 = {
 				拉 = {
@@ -89,7 +89,7 @@ end
 temp()
 
 function temp()
-	var1.为 = {
+	var1_0.为 = {
 		哥 = {
 			哥 = {
 				服 = {
@@ -344,7 +344,7 @@ end
 temp()
 
 function temp()
-	var1.围 = {
+	var1_0.围 = {
 		攻 = {
 			this = true
 		},
@@ -386,7 +386,7 @@ end
 temp()
 
 function temp()
-	var1.唯 = {
+	var1_0.唯 = {
 		国 = {
 			人 = {
 				不 = {
@@ -444,7 +444,7 @@ end
 temp()
 
 function temp()
-	var1.惟 = {
+	var1_0.惟 = {
 		有 = {
 			美 = {
 				女 = {
@@ -464,7 +464,7 @@ end
 temp()
 
 function temp()
-	var1.维 = {
+	var1_0.维 = {
 		["\""] = {
 			["\""] = {
 				尼 = {
@@ -933,7 +933,7 @@ end
 temp()
 
 function temp()
-	var1.維 = {
+	var1_0.維 = {
 		["\""] = {
 			["\""] = {
 				尼 = {

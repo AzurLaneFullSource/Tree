@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	[Vector3] = 1,
 	[Quaternion] = 2,
 	[Vector2] = 3,
@@ -13,23 +13,23 @@
 	[uint64] = 12
 }
 
-local function var1()
-	local var0 = getmetatable
-	local var1 = var0
+local function var1_0()
+	local var0_1 = getmetatable
+	local var1_1 = var0_0
 
-	return function(arg0)
-		local var0 = var0(arg0)
+	return function(arg0_2)
+		local var0_2 = var0_1(arg0_2)
 
-		if var0 == nil then
+		if var0_2 == nil then
 			return 0
 		end
 
-		return var1[var0] or 0
+		return var1_1[var0_2] or 0
 	end
 end
 
-function AddValueType(arg0, arg1)
-	var0[arg0] = arg1
+function AddValueType(arg0_3, arg1_3)
+	var0_0[arg0_3] = arg1_3
 end
 
-GetLuaValueType = var1()
+GetLuaValueType = var1_0()

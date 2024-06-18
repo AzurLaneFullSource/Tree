@@ -1,128 +1,128 @@
-﻿local var0 = class("NavTacticsDockyardScene", import("view.ship.DockyardScene"))
-local var1 = 7
+﻿local var0_0 = class("NavTacticsDockyardScene", import("view.ship.DockyardScene"))
+local var1_0 = 7
 
-function var0.init(arg0)
-	var0.super.init(arg0)
+function var0_0.init(arg0_1)
+	var0_0.super.init(arg0_1)
 
-	arg0.toggleTr = arg0:findTF("toggle_nav")
-	arg0.toggleOnTr = arg0.toggleTr:Find("on")
-	arg0.toggleOffTr = arg0.toggleTr:Find("off")
+	arg0_1.toggleTr = arg0_1:findTF("toggle_nav")
+	arg0_1.toggleOnTr = arg0_1.toggleTr:Find("on")
+	arg0_1.toggleOffTr = arg0_1.toggleTr:Find("off")
 
-	setActive(arg0.toggleTr, true)
+	setActive(arg0_1.toggleTr, true)
 end
 
-function var0.didEnter(arg0)
-	var0.super.didEnter(arg0)
+function var0_0.didEnter(arg0_2)
+	var0_0.super.didEnter(arg0_2)
 
-	local function var0()
-		local var0 = arg0.isShowRecent
+	local function var0_2()
+		local var0_3 = arg0_2.isShowRecent
 
-		setActive(arg0.toggleOnTr, var0)
-		setActive(arg0.toggleOffTr, not var0)
+		setActive(arg0_2.toggleOnTr, var0_3)
+		setActive(arg0_2.toggleOffTr, not var0_3)
 	end
 
-	arg0.isShowRecent = false
+	arg0_2.isShowRecent = false
 
-	onButton(arg0, arg0.toggleTr, function()
-		local var0 = arg0:CollectionRecentShips()
+	onButton(arg0_2, arg0_2.toggleTr, function()
+		local var0_4 = arg0_2:CollectionRecentShips()
 
-		if #var0 <= 0 then
+		if #var0_4 <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("tactics_no_recent_ships"))
 
 			return
 		end
 
-		arg0.isShowRecent = not arg0.isShowRecent
-		var0.ToggleOn = arg0.isShowRecent
+		arg0_2.isShowRecent = not arg0_2.isShowRecent
+		var0_0.ToggleOn = arg0_2.isShowRecent
 
-		var0()
-		arg0:OnRecentShips(var0)
+		var0_2()
+		arg0_2:OnRecentShips(var0_4)
 	end, SFX_PANEL)
 
-	local var1 = var0.ToggleOn
+	local var1_2 = var0_0.ToggleOn
 
-	if var1 and #arg0:CollectionRecentShips() == 0 then
-		var1 = false
+	if var1_2 and #arg0_2:CollectionRecentShips() == 0 then
+		var1_2 = false
 	end
 
-	if var1 then
-		triggerButton(arg0.toggleTr)
+	if var1_2 then
+		triggerButton(arg0_2.toggleTr)
 	else
-		local var2 = arg0:CollectionRecentShips()
+		local var2_2 = arg0_2:CollectionRecentShips()
 
-		var0()
-		arg0:OnRecentShips(var2)
+		var0_2()
+		arg0_2:OnRecentShips(var2_2)
 	end
 end
 
-function var0.GetCard(arg0, arg1)
-	return NavTacticsDockyardShipItem.New(arg1, arg0.contextData.hideTagFlags, arg0.contextData.blockTagFlags)
+function var0_0.GetCard(arg0_5, arg1_5)
+	return NavTacticsDockyardShipItem.New(arg1_5, arg0_5.contextData.hideTagFlags, arg0_5.contextData.blockTagFlags)
 end
 
-function var0.OnClickCard(arg0, arg1)
-	if arg1.shipVO then
-		var0.super.OnClickCard(arg0, arg1)
+function var0_0.OnClickCard(arg0_6, arg1_6)
+	if arg1_6.shipVO then
+		var0_0.super.OnClickCard(arg0_6, arg1_6)
 	end
 end
 
-function var0.onUpdateItem(arg0, arg1, arg2)
-	var0.super.onUpdateItem(arg0, arg1, arg2)
+function var0_0.onUpdateItem(arg0_7, arg1_7, arg2_7)
+	var0_0.super.onUpdateItem(arg0_7, arg1_7, arg2_7)
 
-	if arg0.isShowRecent and arg1 + 1 <= var1 then
-		local var0 = arg0.scrollItems[arg2]
+	if arg0_7.isShowRecent and arg1_7 + 1 <= var1_0 then
+		local var0_7 = arg0_7.scrollItems[arg2_7]
 
-		setActive(var0.recentTr, arg0.shipVOs[arg1 + 1])
+		setActive(var0_7.recentTr, arg0_7.shipVOs[arg1_7 + 1])
 	end
 end
 
-function var0.OnRecentShips(arg0, arg1)
-	arg0.recentShips = arg1
+function var0_0.OnRecentShips(arg0_8, arg1_8)
+	arg0_8.recentShips = arg1_8
 
-	if #arg0.recentShips > 0 then
-		arg0:filter()
+	if #arg0_8.recentShips > 0 then
+		arg0_8:filter()
 	end
 end
 
-function var0.updateShipCount(arg0, arg1)
-	if arg0.isShowRecent and #arg0.recentShips > 0 then
-		for iter0 = #arg0.recentShips + 1, var1 do
-			table.insert(arg0.shipVOs, 1, false)
+function var0_0.updateShipCount(arg0_9, arg1_9)
+	if arg0_9.isShowRecent and #arg0_9.recentShips > 0 then
+		for iter0_9 = #arg0_9.recentShips + 1, var1_0 do
+			table.insert(arg0_9.shipVOs, 1, false)
 		end
 
-		for iter1 = #arg0.recentShips, 1, -1 do
-			local var0 = arg0.recentShips[iter1]
+		for iter1_9 = #arg0_9.recentShips, 1, -1 do
+			local var0_9 = arg0_9.recentShips[iter1_9]
 
-			table.insert(arg0.shipVOs, 1, var0)
+			table.insert(arg0_9.shipVOs, 1, var0_9)
 		end
 
-		var0.super.updateShipCount(arg0, arg1)
+		var0_0.super.updateShipCount(arg0_9, arg1_9)
 	else
-		var0.super.updateShipCount(arg0, arg1)
+		var0_0.super.updateShipCount(arg0_9, arg1_9)
 	end
 end
 
-function var0.CollectionRecentShips(arg0)
-	local var0 = {}
-	local var1 = getProxy(NavalAcademyProxy):GetRecentShips()
+function var0_0.CollectionRecentShips(arg0_10)
+	local var0_10 = {}
+	local var1_10 = getProxy(NavalAcademyProxy):GetRecentShips()
 
-	for iter0 = #var1, 1, -1 do
-		if #var0 == var1 then
+	for iter0_10 = #var1_10, 1, -1 do
+		if #var0_10 == var1_0 then
 			break
 		end
 
-		local var2 = tonumber(var1[iter0])
+		local var2_10 = tonumber(var1_10[iter0_10])
 
-		if var2 > 0 and arg0.shipVOsById[var2] then
-			table.insert(var0, arg0.shipVOsById[var2])
+		if var2_10 > 0 and arg0_10.shipVOsById[var2_10] then
+			table.insert(var0_10, arg0_10.shipVOsById[var2_10])
 		end
 	end
 
-	return var0
+	return var0_10
 end
 
-function var0.willExit(arg0)
-	var0.super.willExit(arg0)
-	setActive(arg0.toggleTr, false)
+function var0_0.willExit(arg0_11)
+	var0_0.super.willExit(arg0_11)
+	setActive(arg0_11.toggleTr, false)
 end
 
-return var0
+return var0_0

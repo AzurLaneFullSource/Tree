@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_128 = {}
+var0_0.word_template_128 = {}
 
-local var1 = var0.word_template_128
+local var1_0 = var0_0.word_template_128
 
 function temp()
-	var1.鱟 = {
+	var1_0.鱟 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.呼 = {
+	var1_0.呼 = {
 		喊 = {
 			派 = {
 				this = true
@@ -54,7 +54,7 @@ end
 temp()
 
 function temp()
-	var1.忽 = {
+	var1_0.忽 = {
 		视 = {
 			农 = {
 				民 = {
@@ -75,7 +75,7 @@ end
 temp()
 
 function temp()
-	var1.狐 = {
+	var1_0.狐 = {
 		狸 = {
 			先 = {
 				生 = {
@@ -109,7 +109,7 @@ end
 temp()
 
 function temp()
-	var1.湖 = {
+	var1_0.湖 = {
 		岸 = {
 			護 = {
 				衛 = {
@@ -180,7 +180,7 @@ end
 temp()
 
 function temp()
-	var1.蝴 = {
+	var1_0.蝴 = {
 		蝶 = {
 			逼 = {
 				this = true
@@ -192,7 +192,7 @@ end
 temp()
 
 function temp()
-	var1.觳 = {
+	var1_0.觳 = {
 		this = {
 			this = true
 		}

@@ -1,54 +1,54 @@
-﻿local var0 = class("PtAwardLayer", import("view.base.BaseUI"))
+﻿local var0_0 = class("PtAwardLayer", import("view.base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ActivitybonusWindow_btnVariant"
 end
 
-function var0.init(arg0)
-	arg0.window = PtAwardWindow.New(arg0._tf, arg0)
+function var0_0.init(arg0_2)
+	arg0_2.window = PtAwardWindow.New(arg0_2._tf, arg0_2)
 
-	function arg0.window.Hide()
-		arg0:Hide()
+	function arg0_2.window.Hide()
+		arg0_2:Hide()
 	end
 
-	arg0.btn_banned = arg0._tf:Find("window/btn_banned")
-	arg0.btn_get = arg0._tf:Find("window/btn_get")
-	arg0.btn_got = arg0._tf:Find("window/btn_got")
+	arg0_2.btn_banned = arg0_2._tf:Find("window/btn_banned")
+	arg0_2.btn_get = arg0_2._tf:Find("window/btn_get")
+	arg0_2.btn_got = arg0_2._tf:Find("window/btn_got")
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0.btn_get, function()
-		local var0 = arg0.contextData.ptData
-		local var1, var2 = var0:GetResProgress()
+function var0_0.didEnter(arg0_4)
+	onButton(arg0_4, arg0_4.btn_get, function()
+		local var0_5 = arg0_4.contextData.ptData
+		local var1_5, var2_5 = var0_5:GetResProgress()
 
-		arg0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+		arg0_4:emit(ActivityMediator.EVENT_PT_OPERATION, {
 			cmd = 1,
-			activity_id = var0:GetId(),
-			arg1 = var2
+			activity_id = var0_5:GetId(),
+			arg1 = var2_5
 		})
 	end, SFX_PANEL)
-	arg0:UpdateView()
+	arg0_4:UpdateView()
 end
 
-function var0.UpdateView(arg0)
-	arg0.window:Show(arg0.contextData.ptData)
+function var0_0.UpdateView(arg0_6)
+	arg0_6.window:Show(arg0_6.contextData.ptData)
 
-	local var0 = arg0.contextData.ptData:CanGetAward()
+	local var0_6 = arg0_6.contextData.ptData:CanGetAward()
 
-	setActive(arg0.btn_get, var0)
-	setActive(arg0.btn_banned, not var0)
+	setActive(arg0_6.btn_get, var0_6)
+	setActive(arg0_6.btn_banned, not var0_6)
 end
 
-function var0.Hide(arg0)
-	arg0:closeView()
+function var0_0.Hide(arg0_7)
+	arg0_7:closeView()
 end
 
-function var0.willExit(arg0)
-	if arg0.window then
-		arg0.window:Dispose()
+function var0_0.willExit(arg0_8)
+	if arg0_8.window then
+		arg0_8.window:Dispose()
 
-		arg0.window = nil
+		arg0_8.window = nil
 	end
 end
 
-return var0
+return var0_0

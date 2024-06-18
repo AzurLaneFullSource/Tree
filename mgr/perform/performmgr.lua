@@ -1,294 +1,294 @@
 ﻿pg = pg or {}
 
-local var0 = singletonClass("PerformMgr")
+local var0_0 = singletonClass("PerformMgr")
 
-pg.PerformMgr = var0
+pg.PerformMgr = var0_0
 
-local var1 = 1
-local var2 = 2
-local var3 = 3
-local var4 = 4
-local var5 = 5
-local var6 = 6
-local var7 = 7
-local var8 = 0
-local var9 = 1
-local var10 = 2
+local var1_0 = 1
+local var2_0 = 2
+local var3_0 = 3
+local var4_0 = 4
+local var5_0 = 5
+local var6_0 = 6
+local var7_0 = 7
+local var8_0 = 0
+local var9_0 = 1
+local var10_0 = 2
 
 require("Mgr/Perform/Include")
 
-local var11 = true
+local var11_0 = true
 
-local function var12(...)
-	if var11 and IsUnityEditor then
+local function var12_0(...)
+	if var11_0 and IsUnityEditor then
 		originalPrint(...)
 	end
 end
 
-function var0.Init(arg0, arg1)
-	arg0.status = var1
-	arg0.playedList = {}
-	arg0.playQueue = {}
+function var0_0.Init(arg0_2, arg1_2)
+	arg0_2.status = var1_0
+	arg0_2.playedList = {}
+	arg0_2.playQueue = {}
 
-	if arg1 then
-		arg1()
+	if arg1_2 then
+		arg1_2()
 	end
 end
 
-function var0.CheckLoad(arg0, arg1)
+function var0_0.CheckLoad(arg0_3, arg1_3)
 	seriesAsync({
-		function(arg0)
-			if not arg0._go then
-				PoolMgr.GetInstance():GetUI("PerformUI", true, function(arg0)
-					arg0._go = arg0
-					arg0._tf = tf(arg0._go)
-					arg0.UIOverlay = GameObject.Find("Overlay/UIOverlay")
+		function(arg0_4)
+			if not arg0_3._go then
+				PoolMgr.GetInstance():GetUI("PerformUI", true, function(arg0_5)
+					arg0_3._go = arg0_5
+					arg0_3._tf = tf(arg0_3._go)
+					arg0_3.UIOverlay = GameObject.Find("Overlay/UIOverlay")
 
-					arg0._go.transform:SetParent(arg0.UIOverlay.transform, false)
+					arg0_3._go.transform:SetParent(arg0_3.UIOverlay.transform, false)
 
-					arg0.cpkPlayer = CpkPerformPlayer.New(findTF(arg0._tf, "window_cpk"))
-					arg0.dialoguePlayer = DialoguePerformPlayer.New(findTF(arg0._tf, "window_dialogue"))
-					arg0.picturePlayer = PictruePerformPlayer.New(findTF(arg0._tf, "window_picture"))
-					arg0.storyPlayer = StoryPerformPlayer.New(findTF(arg0._tf, "window_story"))
+					arg0_3.cpkPlayer = CpkPerformPlayer.New(findTF(arg0_3._tf, "window_cpk"))
+					arg0_3.dialoguePlayer = DialoguePerformPlayer.New(findTF(arg0_3._tf, "window_dialogue"))
+					arg0_3.picturePlayer = PictruePerformPlayer.New(findTF(arg0_3._tf, "window_picture"))
+					arg0_3.storyPlayer = StoryPerformPlayer.New(findTF(arg0_3._tf, "window_story"))
 
-					setActive(arg0._go, false)
+					setActive(arg0_3._go, false)
 
-					arg0.status = var2
+					arg0_3.status = var2_0
 
-					arg0()
+					arg0_4()
 				end)
 			else
-				arg0()
+				arg0_4()
 			end
 		end
 	}, function()
-		if arg1 then
-			arg1()
+		if arg1_3 then
+			arg1_3()
 		end
 	end)
 end
 
-function var0.PlayOne(arg0, arg1, arg2, arg3, arg4)
-	assert(pg.child_performance[arg1], "child_performance not exist id: " .. arg1)
+function var0_0.PlayOne(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
+	assert(pg.child_performance[arg1_7], "child_performance not exist id: " .. arg1_7)
 
-	if not arg0:CheckState() then
-		var12("perform state error" .. arg0.status)
+	if not arg0_7:CheckState() then
+		var12_0("perform state error" .. arg0_7.status)
 
 		return nil
 	end
 
-	var12("OnlyOne Play")
-	arg0:Show()
+	var12_0("OnlyOne Play")
+	arg0_7:Show()
 
-	local function var0()
-		arg0:Hide()
+	local function var0_7()
+		arg0_7:Hide()
 
-		if arg2 then
-			arg2()
+		if arg2_7 then
+			arg2_7()
 		end
 	end
 
-	arg0:play(arg1, var0, arg3, arg4)
+	arg0_7:play(arg1_7, var0_7, arg3_7, arg4_7)
 end
 
-function var0.PlayGroup(arg0, arg1, arg2, arg3, arg4)
-	local var0 = {}
+function var0_0.PlayGroup(arg0_9, arg1_9, arg2_9, arg3_9, arg4_9)
+	local var0_9 = {}
 
-	for iter0, iter1 in ipairs(arg1) do
-		table.insert(var0, function(arg0)
-			arg0:play(iter1, arg0, arg3, arg4)
+	for iter0_9, iter1_9 in ipairs(arg1_9) do
+		table.insert(var0_9, function(arg0_10)
+			arg0_9:play(iter1_9, arg0_10, arg3_9, arg4_9)
 		end)
 	end
 
-	arg0:Show()
-	seriesAsync(var0, function(arg0)
-		arg0:Hide()
+	arg0_9:Show()
+	seriesAsync(var0_9, function(arg0_11)
+		arg0_9:Hide()
 
-		if arg2 then
-			arg2()
+		if arg2_9 then
+			arg2_9()
 		end
 	end)
 end
 
-function var0.play(arg0, arg1, arg2, arg3, arg4)
-	assert(pg.child_performance[arg1], "child_performance not exist id: " .. arg1)
+function var0_0.play(arg0_12, arg1_12, arg2_12, arg3_12, arg4_12)
+	assert(pg.child_performance[arg1_12], "child_performance not exist id: " .. arg1_12)
 
-	if not arg0:CheckState() then
-		var12("perform state error" .. arg0.status)
+	if not arg0_12:CheckState() then
+		var12_0("perform state error" .. arg0_12.status)
 
 		return nil
 	end
 
-	var12("Play Perform:", arg1)
-	arg0:addTaskProgress(arg1)
+	var12_0("Play Perform:", arg1_12)
+	arg0_12:addTaskProgress(arg1_12)
 
-	arg0.status = var4
+	arg0_12.status = var4_0
 
-	local function var0()
-		arg0.status = var5
+	local function var0_12()
+		arg0_12.status = var5_0
 
-		if arg2 then
-			arg2()
+		if arg2_12 then
+			arg2_12()
 		end
 	end
 
-	local var1 = pg.child_performance[arg1]
+	local var1_12 = pg.child_performance[arg1_12]
 
-	arg0:setWindowStatus(var1)
-	switch(var1.type, {
+	arg0_12:setWindowStatus(var1_12)
+	switch(var1_12.type, {
 		[EducateConst.PERFORM_TYPE_ANIM] = function()
-			arg0.cpkPlayer:Play(var1, var0, arg4)
+			arg0_12.cpkPlayer:Play(var1_12, var0_12, arg4_12)
 		end,
 		[EducateConst.PERFORM_TYPE_WORD] = function()
-			local var0 = setmetatable({
-				drops = arg3 or {}
+			local var0_15 = setmetatable({
+				drops = arg3_12 or {}
 			}, {
-				__index = var1
+				__index = var1_12
 			})
 
-			arg0.dialoguePlayer:Play(var0, var0)
+			arg0_12.dialoguePlayer:Play(var0_15, var0_12)
 		end,
 		[EducateConst.PERFORM_TYPE_STORY] = function()
-			arg0.storyPlayer:Play(var1, var0)
+			arg0_12.storyPlayer:Play(var1_12, var0_12)
 		end,
 		[EducateConst.PERFORM_TYPE_PICTURE] = function()
-			arg0.picturePlayer:Play(var1, var0, arg4)
+			arg0_12.picturePlayer:Play(var1_12, var0_12, arg4_12)
 		end
 	})
 end
 
-function var0.addTaskProgress(arg0, arg1)
-	local var0 = getProxy(EducateProxy):GetTaskProxy():GetPerformAddTasks(arg1)
-	local var1 = {}
-	local var2 = {}
-	local var3 = {}
+function var0_0.addTaskProgress(arg0_18, arg1_18)
+	local var0_18 = getProxy(EducateProxy):GetTaskProxy():GetPerformAddTasks(arg1_18)
+	local var1_18 = {}
+	local var2_18 = {}
+	local var3_18 = {}
 
-	for iter0, iter1 in ipairs(var0) do
-		if iter1:IsMind() then
-			table.insert(var1, {
+	for iter0_18, iter1_18 in ipairs(var0_18) do
+		if iter1_18:IsMind() then
+			table.insert(var1_18, {
 				progress = 1,
-				task_id = iter1.id
+				task_id = iter1_18.id
 			})
 		end
 
-		if iter1:IsTarget() then
-			table.insert(var2, {
+		if iter1_18:IsTarget() then
+			table.insert(var2_18, {
 				progress = 1,
-				task_id = iter1.id
+				task_id = iter1_18.id
 			})
 		end
 
-		if iter1:IsMain() then
-			table.insert(var3, {
+		if iter1_18:IsMain() then
+			table.insert(var3_18, {
 				progress = 1,
-				task_id = iter1.id
+				task_id = iter1_18.id
 			})
 		end
 	end
 
-	if #var1 > 0 then
+	if #var1_18 > 0 then
 		pg.m02:sendNotification(GAME.EDUCATE_ADD_TASK_PROGRESS, {
 			system = EducateTask.SYSTEM_TYPE_MIND,
-			progresses = var1
+			progresses = var1_18
 		})
 	end
 
-	if #var2 > 0 then
+	if #var2_18 > 0 then
 		pg.m02:sendNotification(GAME.EDUCATE_ADD_TASK_PROGRESS, {
 			system = EducateTask.SYSTEM_TYPE_TARGET,
-			progresses = var2
+			progresses = var2_18
 		})
 	end
 
-	if #var3 > 0 then
+	if #var3_18 > 0 then
 		pg.m02:sendNotification(GAME.EDUCATE_ADD_TASK_PROGRESS, {
 			system = EducateTask.STSTEM_TYPE_MAIN,
-			progresses = var3
+			progresses = var3_18
 		})
 	end
 end
 
-function var0.PlayGroupNoHide(arg0, arg1, arg2, arg3, arg4)
-	local var0 = {}
+function var0_0.PlayGroupNoHide(arg0_19, arg1_19, arg2_19, arg3_19, arg4_19)
+	local var0_19 = {}
 
-	for iter0, iter1 in ipairs(arg1) do
-		table.insert(var0, function(arg0)
-			arg0:play(iter1, arg0, arg3, arg4)
+	for iter0_19, iter1_19 in ipairs(arg1_19) do
+		table.insert(var0_19, function(arg0_20)
+			arg0_19:play(iter1_19, arg0_20, arg3_19, arg4_19)
 		end)
 	end
 
-	seriesAsync(var0, arg2)
+	seriesAsync(var0_19, arg2_19)
 end
 
-function var0.setWindowStatus(arg0, arg1)
-	setActive(arg0.cpkPlayer._tf, arg1.cpk_status == var10)
-	setActive(arg0.dialoguePlayer._tf, arg1.dialogue_status == var10)
-	setActive(arg0.picturePlayer._tf, arg1.picture_status == var10)
-	setActive(arg0.storyPlayer._tf, arg1.story_status == var10)
+function var0_0.setWindowStatus(arg0_21, arg1_21)
+	setActive(arg0_21.cpkPlayer._tf, arg1_21.cpk_status == var10_0)
+	setActive(arg0_21.dialoguePlayer._tf, arg1_21.dialogue_status == var10_0)
+	setActive(arg0_21.picturePlayer._tf, arg1_21.picture_status == var10_0)
+	setActive(arg0_21.storyPlayer._tf, arg1_21.story_status == var10_0)
 end
 
-function var0.CheckState(arg0)
-	if arg0.status == var1 then
+function var0_0.CheckState(arg0_22)
+	if arg0_22.status == var1_0 then
 		return false
 	end
 
 	return true
 end
 
-function var0.IsRunning(arg0)
-	return arg0.status == var3 or arg0.status == var4 or arg0.status == var5
+function var0_0.IsRunning(arg0_23)
+	return arg0_23.status == var3_0 or arg0_23.status == var4_0 or arg0_23.status == var5_0
 end
 
-function var0.Show(arg0)
-	arg0:CheckLoad(function()
-		arg0:_Show()
+function var0_0.Show(arg0_24)
+	arg0_24:CheckLoad(function()
+		arg0_24:_Show()
 	end)
 end
 
-function var0._Show(arg0)
-	arg0.status = var3
+function var0_0._Show(arg0_26)
+	arg0_26.status = var3_0
 
-	setActive(arg0._go, true)
-	arg0._tf:SetAsLastSibling()
+	setActive(arg0_26._go, true)
+	arg0_26._tf:SetAsLastSibling()
 end
 
-function var0.Clear(arg0)
-	arg0.cpkPlayer:Clear()
-	arg0.dialoguePlayer:Clear()
-	arg0.picturePlayer:Clear()
-	arg0.storyPlayer:Clear()
+function var0_0.Clear(arg0_27)
+	arg0_27.cpkPlayer:Clear()
+	arg0_27.dialoguePlayer:Clear()
+	arg0_27.picturePlayer:Clear()
+	arg0_27.storyPlayer:Clear()
 end
 
-function var0.Show(arg0)
-	arg0:CheckLoad(function()
-		arg0:_Show()
+function var0_0.Show(arg0_28)
+	arg0_28:CheckLoad(function()
+		arg0_28:_Show()
 	end)
 end
 
-function var0.Hide(arg0)
-	arg0:Clear()
-	setActive(arg0._go, false)
+function var0_0.Hide(arg0_30)
+	arg0_30:Clear()
+	setActive(arg0_30._go, false)
 
-	arg0.status = var6
+	arg0_30.status = var6_0
 end
 
-function var0.Quit(arg0)
-	arg0.status = var7
+function var0_0.Quit(arg0_31)
+	arg0_31.status = var7_0
 end
 
-function var0.SetParamForUI(arg0, arg1)
-	arg0:CheckLoad(function()
-		arg0:_SetParamForUI(arg1)
+function var0_0.SetParamForUI(arg0_32, arg1_32)
+	arg0_32:CheckLoad(function()
+		arg0_32:_SetParamForUI(arg1_32)
 	end)
 end
 
-function var0._SetParamForUI(arg0, arg1)
-	local var0 = var0.UI_PARAM[arg1] or var0.UI_PARAM.Default
+function var0_0._SetParamForUI(arg0_34, arg1_34)
+	local var0_34 = var0_0.UI_PARAM[arg1_34] or var0_0.UI_PARAM.Default
 
-	arg0.cpkPlayer:SetUIParam(var0)
+	arg0_34.cpkPlayer:SetUIParam(var0_34)
 end
 
-var0.UI_PARAM = {
+var0_0.UI_PARAM = {
 	Default = {
 		showCpkBg = true,
 		sliderPos = {

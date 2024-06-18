@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_166 = {}
+var0_0.word_template_166 = {}
 
-local var1 = var0.word_template_166
+local var1_0 = var0_0.word_template_166
 
 function temp()
-	var1.军 = {
+	var1_0.军 = {
 		报 = {
 			内 = {
 				部 = {
@@ -348,7 +348,7 @@ end
 temp()
 
 function temp()
-	var1.君 = {
+	var1_0.君 = {
 		子 = {
 			会 = {
 				所 = {
@@ -362,7 +362,7 @@ end
 temp()
 
 function temp()
-	var1.軍 = {
+	var1_0.軍 = {
 		妓 = {
 			this = true
 		},
@@ -415,7 +415,7 @@ end
 temp()
 
 function temp()
-	var1.麇 = {
+	var1_0.麇 = {
 		this = {
 			this = true
 		}
@@ -425,7 +425,7 @@ end
 temp()
 
 function temp()
-	var1.咖 = {
+	var1_0.咖 = {
 		啡 = {
 			因 = {
 				this = true
@@ -440,7 +440,7 @@ end
 temp()
 
 function temp()
-	var1.喀 = {
+	var1_0.喀 = {
 		特 = {
 			this = true
 		}
@@ -450,7 +450,7 @@ end
 temp()
 
 function temp()
-	var1.卡 = {
+	var1_0.卡 = {
 		拉 = {
 			卡 = {
 				西 = {

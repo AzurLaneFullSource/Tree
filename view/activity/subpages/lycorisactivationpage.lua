@@ -1,9 +1,9 @@
-﻿local var0 = class("LycorisActivationPage", import(".TemplatePage.SkinTemplatePage"))
+﻿local var0_0 = class("LycorisActivationPage", import(".TemplatePage.SkinTemplatePage"))
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
-	arg0:PlayStory()
-	setText(arg0.dayTF, tostring(arg0.nday) .. "/7")
+function var0_0.OnUpdateFlush(arg0_1)
+	var0_0.super.OnUpdateFlush(arg0_1)
+	arg0_1:PlayStory()
+	setText(arg0_1.dayTF, tostring(arg0_1.nday) .. "/7")
 end
 
-return var0
+return var0_0

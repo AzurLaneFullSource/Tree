@@ -1,570 +1,570 @@
-﻿local var0 = class("EducateScene", import(".base.EducateBaseUI"))
+﻿local var0_0 = class("EducateScene", import(".base.EducateBaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "EducateUI"
 end
 
-function var0.preload(arg0, arg1)
+function var0_0.preload(arg0_2, arg1_2)
 	pg.PerformMgr.GetInstance():CheckLoad(function()
-		arg1()
+		arg1_2()
 	end)
 end
 
-function var0.init(arg0)
-	arg0:initData()
-	arg0:findUI()
-	arg0:addListener()
+function var0_0.init(arg0_4)
+	arg0_4:initData()
+	arg0_4:findUI()
+	arg0_4:addListener()
 end
 
-function var0.PlayBGM(arg0)
-	local var0 = getProxy(EducateProxy):GetCharData():GetBgm()
+function var0_0.PlayBGM(arg0_5)
+	local var0_5 = getProxy(EducateProxy):GetCharData():GetBgm()
 
-	if var0 then
-		pg.BgmMgr.GetInstance():Push(arg0.__cname, var0)
+	if var0_5 then
+		pg.BgmMgr.GetInstance():Push(arg0_5.__cname, var0_5)
 	end
 end
 
-function var0.initData(arg0)
+function var0_0.initData(arg0_6)
 	return
 end
 
-function var0.findUI(arg0)
-	arg0.mainAnim = arg0:findTF("anim_root"):GetComponent(typeof(Animation))
-	arg0.bgTF = arg0:findTF("anim_root/bg")
-	arg0.blurPanel = arg0:findTF("anim_root/blur_panel")
-	arg0.blurPanelAnim = arg0.blurPanel:GetComponent(typeof(Animation))
-	arg0.topTF = arg0:findTF("top", arg0.blurPanel)
-	arg0.favorBtn = arg0:findTF("favor", arg0.topTF)
-	arg0.favorLvTF = arg0:findTF("anim_root/Text", arg0.favorBtn)
-	arg0.favorMaxTF = arg0:findTF("anim_root/max", arg0.favorBtn)
-	arg0.favorBtnAnim = arg0:findTF("anim_root", arg0.favorBtn):GetComponent(typeof(Animation))
-	arg0.favorBtnAnimEvent = arg0:findTF("anim_root", arg0.favorBtn):GetComponent(typeof(DftAniEvent))
+function var0_0.findUI(arg0_7)
+	arg0_7.mainAnim = arg0_7:findTF("anim_root"):GetComponent(typeof(Animation))
+	arg0_7.bgTF = arg0_7:findTF("anim_root/bg")
+	arg0_7.blurPanel = arg0_7:findTF("anim_root/blur_panel")
+	arg0_7.blurPanelAnim = arg0_7.blurPanel:GetComponent(typeof(Animation))
+	arg0_7.topTF = arg0_7:findTF("top", arg0_7.blurPanel)
+	arg0_7.favorBtn = arg0_7:findTF("favor", arg0_7.topTF)
+	arg0_7.favorLvTF = arg0_7:findTF("anim_root/Text", arg0_7.favorBtn)
+	arg0_7.favorMaxTF = arg0_7:findTF("anim_root/max", arg0_7.favorBtn)
+	arg0_7.favorBtnAnim = arg0_7:findTF("anim_root", arg0_7.favorBtn):GetComponent(typeof(Animation))
+	arg0_7.favorBtnAnimEvent = arg0_7:findTF("anim_root", arg0_7.favorBtn):GetComponent(typeof(DftAniEvent))
 
-	arg0.favorBtnAnimEvent:SetTriggerEvent(function()
-		arg0:updateFavorBtn()
+	arg0_7.favorBtnAnimEvent:SetTriggerEvent(function()
+		arg0_7:updateFavorBtn()
 	end)
 
-	arg0.mainTF = arg0:findTF("anim_root/main")
-	arg0.paintTF = arg0:findTF("painting", arg0.mainTF)
-	arg0.dialogueTF = arg0:findTF("dialogue", arg0.blurPanel)
-	arg0.dialogueContent = arg0:findTF("content", arg0.dialogueTF)
+	arg0_7.mainTF = arg0_7:findTF("anim_root/main")
+	arg0_7.paintTF = arg0_7:findTF("painting", arg0_7.mainTF)
+	arg0_7.dialogueTF = arg0_7:findTF("dialogue", arg0_7.blurPanel)
+	arg0_7.dialogueContent = arg0_7:findTF("content", arg0_7.dialogueTF)
 
-	setActive(arg0.dialogueTF, false)
+	setActive(arg0_7.dialogueTF, false)
 
-	arg0.bubbleTF = arg0:findTF("anim_root/blur_panel/bubble")
+	arg0_7.bubbleTF = arg0_7:findTF("anim_root/blur_panel/bubble")
 
-	setActive(arg0.bubbleTF, false)
+	setActive(arg0_7.bubbleTF, false)
 
-	arg0.bubbleBtn = arg0:findTF("bubble", arg0.bubbleTF)
-	arg0.optionsTF = arg0:findTF("options", arg0.mainTF)
-	arg0.chatBtn = arg0:findTF("options/chat", arg0.optionsTF)
-	arg0.giftBtn = arg0:findTF("options/gift", arg0.optionsTF)
+	arg0_7.bubbleBtn = arg0_7:findTF("bubble", arg0_7.bubbleTF)
+	arg0_7.optionsTF = arg0_7:findTF("options", arg0_7.mainTF)
+	arg0_7.chatBtn = arg0_7:findTF("options/chat", arg0_7.optionsTF)
+	arg0_7.giftBtn = arg0_7:findTF("options/gift", arg0_7.optionsTF)
 
-	setActive(arg0.optionsTF, false)
+	setActive(arg0_7.optionsTF, false)
 
-	arg0.bottomTF = arg0:findTF("bottom", arg0.blurPanel)
-	arg0.bookBtn = arg0:findTF("left/btns/book", arg0.bottomTF)
+	arg0_7.bottomTF = arg0_7:findTF("bottom", arg0_7.blurPanel)
+	arg0_7.bookBtn = arg0_7:findTF("left/btns/book", arg0_7.bottomTF)
 
-	setText(arg0:findTF("unlock/Text", arg0.bookBtn), i18n("child_btn_collect"))
+	setText(arg0_7:findTF("unlock/Text", arg0_7.bookBtn), i18n("child_btn_collect"))
 
-	arg0.mindBtn = arg0:findTF("left/btns/mind", arg0.bottomTF)
+	arg0_7.mindBtn = arg0_7:findTF("left/btns/mind", arg0_7.bottomTF)
 
-	setText(arg0:findTF("unlock/Text", arg0.mindBtn), i18n("child_btn_mind"))
+	setText(arg0_7:findTF("unlock/Text", arg0_7.mindBtn), i18n("child_btn_mind"))
 
-	arg0.bagBtn = arg0:findTF("left/btns/bag", arg0.bottomTF)
+	arg0_7.bagBtn = arg0_7:findTF("left/btns/bag", arg0_7.bottomTF)
 
-	setText(arg0:findTF("unlock/Text", arg0.bagBtn), i18n("child_btn_bag"))
+	setText(arg0_7:findTF("unlock/Text", arg0_7.bagBtn), i18n("child_btn_bag"))
 
-	arg0.datePanel = EducateDatePanel.New(arg0:findTF("date", arg0.topTF), arg0.event)
-	arg0.favorPanel = EducateFavorPanel.New(arg0:findTF("favor_panel", arg0.topTF), arg0.event)
-	arg0.resPanel = EducateResPanel.New(arg0:findTF("res", arg0.topTF), arg0.event)
-	arg0.topPanel = EducateTopPanel.New(arg0:findTF("top_right", arg0.topTF), arg0.event)
-	arg0.targetPanel = EducateTargetPanel.New(arg0:findTF("target", arg0.topTF), arg0.event)
-	arg0.bottomPanel = EducateBottomPanel.New(arg0:findTF("right", arg0.bottomTF), arg0.event, {
-		isMainEnter = arg0.contextData.isMainEnter
+	arg0_7.datePanel = EducateDatePanel.New(arg0_7:findTF("date", arg0_7.topTF), arg0_7.event)
+	arg0_7.favorPanel = EducateFavorPanel.New(arg0_7:findTF("favor_panel", arg0_7.topTF), arg0_7.event)
+	arg0_7.resPanel = EducateResPanel.New(arg0_7:findTF("res", arg0_7.topTF), arg0_7.event)
+	arg0_7.topPanel = EducateTopPanel.New(arg0_7:findTF("top_right", arg0_7.topTF), arg0_7.event)
+	arg0_7.targetPanel = EducateTargetPanel.New(arg0_7:findTF("target", arg0_7.topTF), arg0_7.event)
+	arg0_7.bottomPanel = EducateBottomPanel.New(arg0_7:findTF("right", arg0_7.bottomTF), arg0_7.event, {
+		isMainEnter = arg0_7.contextData.isMainEnter
 	})
-	arg0.archivePanel = EducateArchivePanel.New(arg0:findTF("archive_panel", arg0.mainTF), arg0.event, {
+	arg0_7.archivePanel = EducateArchivePanel.New(arg0_7:findTF("archive_panel", arg0_7.mainTF), arg0_7.event, {
 		isShow = true,
-		isMainEnter = arg0.contextData.isMainEnter
+		isMainEnter = arg0_7.contextData.isMainEnter
 	})
 end
 
-function var0._loadSubViews(arg0)
-	arg0.datePanel:Load()
-	arg0.favorPanel:Load()
-	arg0.resPanel:Load()
-	arg0.topPanel:Load()
-	arg0.targetPanel:Load()
-	arg0.bottomPanel:Load()
-	arg0.archivePanel:Load()
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0.blurPanel, {
+function var0_0._loadSubViews(arg0_9)
+	arg0_9.datePanel:Load()
+	arg0_9.favorPanel:Load()
+	arg0_9.resPanel:Load()
+	arg0_9.topPanel:Load()
+	arg0_9.targetPanel:Load()
+	arg0_9.bottomPanel:Load()
+	arg0_9.archivePanel:Load()
+	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_9.blurPanel, {
 		pbList = {
-			arg0:findTF("bottom/left", arg0.blurPanel)
+			arg0_9:findTF("bottom/left", arg0_9.blurPanel)
 		},
-		groupName = arg0:getGroupNameFromData()
+		groupName = arg0_9:getGroupNameFromData()
 	})
 
-	local var0 = arg0.contextData.isMainEnter and "anim_educate_educateUI_bg_in" or "anim_educate_educateUI_bg_show"
+	local var0_9 = arg0_9.contextData.isMainEnter and "anim_educate_educateUI_bg_in" or "anim_educate_educateUI_bg_show"
 
-	arg0.mainAnim:Play(var0)
+	arg0_9.mainAnim:Play(var0_9)
 
-	local var1 = arg0.contextData.isMainEnter and "anim_educate_educateUI_in" or "anim_educate_educateUI_show"
+	local var1_9 = arg0_9.contextData.isMainEnter and "anim_educate_educateUI_in" or "anim_educate_educateUI_show"
 
-	arg0.blurPanelAnim:Play(var1)
+	arg0_9.blurPanelAnim:Play(var1_9)
 end
 
-function var0.addListener(arg0)
-	onButton(arg0, arg0.chatBtn, function()
+function var0_0.addListener(arg0_10)
+	onButton(arg0_10, arg0_10.chatBtn, function()
 		pg.TipsMgr.GetInstance():ShowTips("触发对话[待开发]...")
 	end, SFX_PANEL)
-	onButton(arg0, arg0.giftBtn, function()
+	onButton(arg0_10, arg0_10.giftBtn, function()
 		pg.TipsMgr.GetInstance():ShowTips("送礼(?)...")
 	end, SFX_PANEL)
-	onButton(arg0, arg0.favorBtn, function()
-		arg0.favorPanel:Show()
+	onButton(arg0_10, arg0_10.favorBtn, function()
+		arg0_10.favorPanel:Show()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.bookBtn, function()
-		arg0:emit(var0.EDUCATE_GO_SUBLAYER, Context.New({
+	onButton(arg0_10, arg0_10.bookBtn, function()
+		arg0_10:emit(var0_0.EDUCATE_GO_SUBLAYER, Context.New({
 			mediator = EducateCollectEntranceMediator,
 			viewComponent = EducateCollectEntranceLayer
 		}))
 	end, SFX_PANEL)
-	onButton(arg0, arg0.mindBtn, function()
-		if isActive(arg0:findTF("lock", arg0.mindBtn)) then
+	onButton(arg0_10, arg0_10.mindBtn, function()
+		if isActive(arg0_10:findTF("lock", arg0_10.mindBtn)) then
 			return
 		end
 
-		arg0:emit(var0.EDUCATE_GO_SUBLAYER, Context.New({
+		arg0_10:emit(var0_0.EDUCATE_GO_SUBLAYER, Context.New({
 			mediator = EducateMindMediator,
 			viewComponent = EducateMindLayer,
 			data = {
 				onExit = function()
-					arg0:checkBubbleShow()
+					arg0_10:checkBubbleShow()
 				end
 			}
 		}))
 	end, SFX_PANEL)
-	onButton(arg0, arg0.bagBtn, function()
-		if isActive(arg0:findTF("lock", arg0.bagBtn)) then
+	onButton(arg0_10, arg0_10.bagBtn, function()
+		if isActive(arg0_10:findTF("lock", arg0_10.bagBtn)) then
 			return
 		end
 
-		arg0:emit(var0.EDUCATE_GO_SUBLAYER, Context.New({
+		arg0_10:emit(var0_0.EDUCATE_GO_SUBLAYER, Context.New({
 			mediator = EducateBagMediator,
 			viewComponent = EducateBagLayer
 		}))
 	end, SFX_PANEL)
-	onButton(arg0, arg0:findTF("fitter", arg0.paintTF), function()
-		arg0:ShowDialogue()
+	onButton(arg0_10, arg0_10:findTF("fitter", arg0_10.paintTF), function()
+		arg0_10:ShowDialogue()
 	end, SFX_PANEL)
 end
 
-function var0.didEnter(arg0)
-	if arg0.contextData.onEnter then
-		arg0.contextData.onEnter()
+function var0_0.didEnter(arg0_19)
+	if arg0_19.contextData.onEnter then
+		arg0_19.contextData.onEnter()
 
-		arg0.contextData.onEnter = nil
+		arg0_19.contextData.onEnter = nil
 	end
 
-	arg0:updatePaintingUI()
-	arg0:updateUnlockBtns()
-	arg0:updateNewTips()
-	arg0:updateMindTip()
-	arg0:updateFavorBtn()
-	arg0:SeriesCheck()
+	arg0_19:updatePaintingUI()
+	arg0_19:updateUnlockBtns()
+	arg0_19:updateNewTips()
+	arg0_19:updateMindTip()
+	arg0_19:updateFavorBtn()
+	arg0_19:SeriesCheck()
 end
 
-function var0.SeriesCheck(arg0)
-	local var0 = {}
+function var0_0.SeriesCheck(arg0_20)
+	local var0_20 = {}
 
-	table.insert(var0, function(arg0)
-		arg0:CheckNewChar(arg0)
+	table.insert(var0_20, function(arg0_21)
+		arg0_20:CheckNewChar(arg0_21)
 	end)
-	table.insert(var0, function(arg0)
+	table.insert(var0_20, function(arg0_22)
 		if getProxy(EducateProxy):GetPlanProxy():CheckExcute() then
-			arg0:emit(EducateMediator.ON_EXECTUE_PLANS)
+			arg0_20:emit(EducateMediator.ON_EXECTUE_PLANS)
 		else
-			arg0()
+			arg0_22()
 		end
 	end)
-	table.insert(var0, function(arg0)
-		arg0:CheckTips(arg0)
+	table.insert(var0_20, function(arg0_23)
+		arg0_20:CheckTips(arg0_23)
 	end)
-	table.insert(var0, function(arg0)
+	table.insert(var0_20, function(arg0_24)
 		if getProxy(EducateProxy):GetEventProxy():NeedGetHomeEventData() then
-			arg0:emit(EducateMediator.ON_GET_EVENT, arg0)
+			arg0_20:emit(EducateMediator.ON_GET_EVENT, arg0_24)
 		else
-			arg0()
+			arg0_24()
 		end
 	end)
-	arg0:checkBubbleShow()
-	table.insert(var0, function(arg0)
-		if not arg0.contextData.ingoreGuideCheck then
-			EducateGuideSequence.CheckGuide(arg0.__cname, arg0)
+	arg0_20:checkBubbleShow()
+	table.insert(var0_20, function(arg0_25)
+		if not arg0_20.contextData.ingoreGuideCheck then
+			EducateGuideSequence.CheckGuide(arg0_20.__cname, arg0_25)
 		else
-			arg0.contextData.ingoreGuideCheck = nil
+			arg0_20.contextData.ingoreGuideCheck = nil
 
-			arg0()
+			arg0_25()
 		end
 	end)
-	seriesAsync(var0, function()
+	seriesAsync(var0_20, function()
 		return
 	end)
 end
 
-function var0.OnCheckGuide(arg0)
-	EducateGuideSequence.CheckGuide(arg0.__cname, function()
+function var0_0.OnCheckGuide(arg0_27)
+	EducateGuideSequence.CheckGuide(arg0_27.__cname, function()
 		return
 	end)
 end
 
-function var0.CheckTips(arg0, arg1)
-	local var0 = {}
+function var0_0.CheckTips(arg0_29, arg1_29)
+	local var0_29 = {}
 
-	for iter0, iter1 in ipairs(EducateTipHelper.GetSystemUnlockTips()) do
-		table.insert(var0, function(arg0)
-			arg0:emit(var0.EDUCATE_ON_UNLOCK_TIP, {
+	for iter0_29, iter1_29 in ipairs(EducateTipHelper.GetSystemUnlockTips()) do
+		table.insert(var0_29, function(arg0_30)
+			arg0_29:emit(var0_0.EDUCATE_ON_UNLOCK_TIP, {
 				type = EducateUnlockTipLayer.UNLOCK_TYPE_SYSTEM,
-				single = iter1,
-				onExit = arg0
+				single = iter1_29,
+				onExit = arg0_30
 			})
 		end)
 	end
 
-	seriesAsync(var0, function()
-		arg1()
+	seriesAsync(var0_29, function()
+		arg1_29()
 	end)
 end
 
-function var0.CheckNewChar(arg0, arg1)
+function var0_0.CheckNewChar(arg0_32, arg1_32)
 	if getProxy(EducateProxy):GetCharData():GetCallName() == "" then
-		setActive(arg0._tf, false)
+		setActive(arg0_32._tf, false)
 
-		local var0 = {}
+		local var0_32 = {}
 
-		table.insert(var0, function(arg0)
-			pg.PerformMgr.GetInstance():PlayGroup(EducateConst.FIRST_ENTER_PERFORM_IDS, arg0)
+		table.insert(var0_32, function(arg0_33)
+			pg.PerformMgr.GetInstance():PlayGroup(EducateConst.FIRST_ENTER_PERFORM_IDS, arg0_33)
 		end)
-		table.insert(var0, function(arg0)
-			arg0:emit(var0.EDUCATE_GO_SUBLAYER, Context.New({
+		table.insert(var0_32, function(arg0_34)
+			arg0_32:emit(var0_0.EDUCATE_GO_SUBLAYER, Context.New({
 				mediator = EducateNewCharMediator,
 				viewComponent = EducateNewCharLayer,
 				data = {
-					callback = arg0
+					callback = arg0_34
 				}
 			}))
 		end)
-		table.insert(var0, function(arg0)
-			pg.PerformMgr.GetInstance():PlayOne(EducateConst.AFTER_SET_CALLNAME_PERFORM_ID, arg0)
+		table.insert(var0_32, function(arg0_35)
+			pg.PerformMgr.GetInstance():PlayOne(EducateConst.AFTER_SET_CALLNAME_PERFORM_ID, arg0_35)
 		end)
-		seriesAsync(var0, function()
-			setActive(arg0._tf, true)
-			arg0:_loadSubViews()
-			arg1()
+		seriesAsync(var0_32, function()
+			setActive(arg0_32._tf, true)
+			arg0_32:_loadSubViews()
+			arg1_32()
 		end)
 	else
-		arg0:_loadSubViews()
-		arg1()
+		arg0_32:_loadSubViews()
+		arg1_32()
 	end
 end
 
-function var0.showBubble(arg0, arg1)
-	setActive(arg0.bubbleTF, true)
-	onButton(arg0, arg0.bubbleBtn, function()
-		arg1()
-		setActive(arg0.bubbleTF, false)
+function var0_0.showBubble(arg0_37, arg1_37)
+	setActive(arg0_37.bubbleTF, true)
+	onButton(arg0_37, arg0_37.bubbleBtn, function()
+		arg1_37()
+		setActive(arg0_37.bubbleTF, false)
 	end, SFX_PANEL)
 end
 
-function var0.PlayPerformWithDrops(arg0, arg1, arg2, arg3)
-	local var0 = EducateHelper.GetDialogueShowDrops(arg2)
-	local var1 = EducateHelper.GetCommonShowDrops(arg2)
+function var0_0.PlayPerformWithDrops(arg0_39, arg1_39, arg2_39, arg3_39)
+	local var0_39 = EducateHelper.GetDialogueShowDrops(arg2_39)
+	local var1_39 = EducateHelper.GetCommonShowDrops(arg2_39)
 
-	local function var2()
-		if #var1 > 0 then
-			arg0:emit(var0.EDUCATE_ON_AWARD, {
-				items = var1,
+	local function var2_39()
+		if #var1_39 > 0 then
+			arg0_39:emit(var0_0.EDUCATE_ON_AWARD, {
+				items = var1_39,
 				removeFunc = function()
-					if arg3 then
-						arg3()
+					if arg3_39 then
+						arg3_39()
 					end
 				end
 			})
-		elseif arg3 then
-			arg3()
+		elseif arg3_39 then
+			arg3_39()
 		end
 	end
 
-	if #arg1 > 0 then
-		pg.PerformMgr.GetInstance():PlayGroup(arg1, var2, var0)
-	elseif var2 then
-		var2()
+	if #arg1_39 > 0 then
+		pg.PerformMgr.GetInstance():PlayGroup(arg1_39, var2_39, var0_39)
+	elseif var2_39 then
+		var2_39()
 	end
 end
 
-function var0.ShowFavorUpgrade(arg0, arg1, arg2, arg3)
-	arg0:PlayPerformWithDrops(arg2, arg1, function()
-		if #arg1 > 0 then
-			arg0:emit(var0.EDUCATE_ON_AWARD, {
-				items = arg1,
+function var0_0.ShowFavorUpgrade(arg0_42, arg1_42, arg2_42, arg3_42)
+	arg0_42:PlayPerformWithDrops(arg2_42, arg1_42, function()
+		if #arg1_42 > 0 then
+			arg0_42:emit(var0_0.EDUCATE_ON_AWARD, {
+				items = arg1_42,
 				removeFunc = function()
-					arg0.favorBtnAnim:Play("anim_educate_favor_levelup")
+					arg0_42.favorBtnAnim:Play("anim_educate_favor_levelup")
 
-					if arg3 then
-						arg3()
+					if arg3_42 then
+						arg3_42()
 					end
 				end
 			})
 		else
-			arg0.favorBtnAnim:Play("anim_educate_favor_levelup")
+			arg0_42.favorBtnAnim:Play("anim_educate_favor_levelup")
 
-			if arg3 then
-				arg3()
+			if arg3_42 then
+				arg3_42()
 			end
 		end
 	end)
 end
 
-function var0.ShowSpecialEvent(arg0, arg1, arg2, arg3)
-	local var0 = pg.child_event_special[arg1].performance
+function var0_0.ShowSpecialEvent(arg0_45, arg1_45, arg2_45, arg3_45)
+	local var0_45 = pg.child_event_special[arg1_45].performance
 
-	arg0:PlayPerformWithDrops(var0, arg2, function()
-		if #arg2 > 0 then
-			arg0:emit(var0.EDUCATE_ON_AWARD, {
-				items = arg2,
+	arg0_45:PlayPerformWithDrops(var0_45, arg2_45, function()
+		if #arg2_45 > 0 then
+			arg0_45:emit(var0_0.EDUCATE_ON_AWARD, {
+				items = arg2_45,
 				removeFunc = function()
-					if arg3 then
-						arg3()
+					if arg3_45 then
+						arg3_45()
 					end
 				end
 			})
-		elseif arg3 then
-			arg3()
+		elseif arg3_45 then
+			arg3_45()
 		end
 	end)
 end
 
-function var0.checkBubbleShow(arg0)
-	local var0 = getProxy(EducateProxy):GetEventProxy():GetHomeSpecEvents()
-	local var1 = getProxy(EducateProxy):GetCharData()
+function var0_0.checkBubbleShow(arg0_48)
+	local var0_48 = getProxy(EducateProxy):GetEventProxy():GetHomeSpecEvents()
+	local var1_48 = getProxy(EducateProxy):GetCharData()
 
-	if #var0 > 0 then
-		setActive(arg0:findTF("Text", arg0.bubbleBtn), true)
-		setActive(arg0:findTF("Image", arg0.bubbleBtn), false)
-		arg0:showBubble(function()
-			arg0:emit(EducateMediator.ON_SPECIAL_EVENT_TRIGGER, {
-				id = var0[1].id,
+	if #var0_48 > 0 then
+		setActive(arg0_48:findTF("Text", arg0_48.bubbleBtn), true)
+		setActive(arg0_48:findTF("Image", arg0_48.bubbleBtn), false)
+		arg0_48:showBubble(function()
+			arg0_48:emit(EducateMediator.ON_SPECIAL_EVENT_TRIGGER, {
+				id = var0_48[1].id,
 				callback = function()
-					arg0:checkBubbleShow()
-					EducateGuideSequence.CheckGuide(arg0.__cname, function()
+					arg0_48:checkBubbleShow()
+					EducateGuideSequence.CheckGuide(arg0_48.__cname, function()
 						return
 					end)
 				end
 			})
 		end)
-	elseif var1:CheckFavor() then
-		setActive(arg0:findTF("Text", arg0.bubbleBtn), false)
-		setActive(arg0:findTF("Image", arg0.bubbleBtn), true)
-		arg0:showBubble(function()
-			arg0:emit(EducateMediator.ON_UPGRADE_FAVOR, function()
-				arg0:checkBubbleShow()
-				EducateGuideSequence.CheckGuide(arg0.__cname, function()
+	elseif var1_48:CheckFavor() then
+		setActive(arg0_48:findTF("Text", arg0_48.bubbleBtn), false)
+		setActive(arg0_48:findTF("Image", arg0_48.bubbleBtn), true)
+		arg0_48:showBubble(function()
+			arg0_48:emit(EducateMediator.ON_UPGRADE_FAVOR, function()
+				arg0_48:checkBubbleShow()
+				EducateGuideSequence.CheckGuide(arg0_48.__cname, function()
 					return
 				end)
 			end)
 		end)
 	else
-		setActive(arg0.bubbleTF, false)
-		removeOnButton(arg0.bubbleTF)
+		setActive(arg0_48.bubbleTF, false)
+		removeOnButton(arg0_48.bubbleTF)
 	end
 end
 
-function var0.updateResPanel(arg0)
-	arg0.resPanel:Flush()
+function var0_0.updateResPanel(arg0_55)
+	arg0_55.resPanel:Flush()
 end
 
-function var0.updateArchivePanel(arg0)
-	arg0.archivePanel:Flush()
+function var0_0.updateArchivePanel(arg0_56)
+	arg0_56.archivePanel:Flush()
 end
 
-function var0.showArchivePanel(arg0)
-	arg0.archivePanel:showPanel()
+function var0_0.showArchivePanel(arg0_57)
+	arg0_57.archivePanel:showPanel()
 end
 
-function var0.updateDatePanel(arg0)
-	arg0.datePanel:Flush()
-	arg0:updateUnlockBtns()
+function var0_0.updateDatePanel(arg0_58)
+	arg0_58.datePanel:Flush()
+	arg0_58:updateUnlockBtns()
 end
 
-function var0.updateUnlockBtns(arg0)
-	local var0 = EducateHelper.IsSystemUnlock(EducateConst.SYSTEM_MEMORY)
+function var0_0.updateUnlockBtns(arg0_59)
+	local var0_59 = EducateHelper.IsSystemUnlock(EducateConst.SYSTEM_MEMORY)
 
-	setActive(arg0:findTF("lock", arg0.bookBtn), not var0)
-	setActive(arg0:findTF("unlock", arg0.bookBtn), var0)
+	setActive(arg0_59:findTF("lock", arg0_59.bookBtn), not var0_59)
+	setActive(arg0_59:findTF("unlock", arg0_59.bookBtn), var0_59)
 
-	local var1 = EducateHelper.IsSystemUnlock(EducateConst.SYSTEM_BAG)
+	local var1_59 = EducateHelper.IsSystemUnlock(EducateConst.SYSTEM_BAG)
 
-	setActive(arg0:findTF("lock", arg0.bagBtn), not var1)
-	setActive(arg0:findTF("unlock", arg0.bagBtn), var1)
+	setActive(arg0_59:findTF("lock", arg0_59.bagBtn), not var1_59)
+	setActive(arg0_59:findTF("unlock", arg0_59.bagBtn), var1_59)
 
-	local var2 = EducateHelper.IsSystemUnlock(EducateConst.SYSTEM_FAVOR_AND_MIND)
+	local var2_59 = EducateHelper.IsSystemUnlock(EducateConst.SYSTEM_FAVOR_AND_MIND)
 
-	setActive(arg0:findTF("lock", arg0.mindBtn), not var2)
-	setActive(arg0:findTF("unlock", arg0.mindBtn), var2)
-	setActive(arg0.favorBtn, var2)
+	setActive(arg0_59:findTF("lock", arg0_59.mindBtn), not var2_59)
+	setActive(arg0_59:findTF("unlock", arg0_59.mindBtn), var2_59)
+	setActive(arg0_59.favorBtn, var2_59)
 end
 
-function var0.updateMindTip(arg0)
-	setActive(arg0:findTF("unlock/tip", arg0.mindBtn), getProxy(EducateProxy):GetTaskProxy():IsShowMindTasksTip())
+function var0_0.updateMindTip(arg0_60)
+	setActive(arg0_60:findTF("unlock/tip", arg0_60.mindBtn), getProxy(EducateProxy):GetTaskProxy():IsShowMindTasksTip())
 end
 
-function var0.updateWeekDay(arg0, arg1)
-	arg0.datePanel:UpdateWeekDay(arg1)
+function var0_0.updateWeekDay(arg0_61, arg1_61)
+	arg0_61.datePanel:UpdateWeekDay(arg1_61)
 end
 
-function var0.updateFavorBtn(arg0)
-	local var0 = getProxy(EducateProxy):GetCharData()
-	local var1 = var0:GetFavor()
+function var0_0.updateFavorBtn(arg0_62)
+	local var0_62 = getProxy(EducateProxy):GetCharData()
+	local var1_62 = var0_62:GetFavor()
 
-	setText(arg0.favorLvTF, var1.lv)
+	setText(arg0_62.favorLvTF, var1_62.lv)
 
-	local var2 = var0:GetFavorMaxLv()
+	local var2_62 = var0_62:GetFavorMaxLv()
 
-	setActive(arg0.favorMaxTF, var1.lv == var2)
+	setActive(arg0_62.favorMaxTF, var1_62.lv == var2_62)
 end
 
-function var0.updateTargetPanel(arg0)
-	arg0.targetPanel:Flush()
+function var0_0.updateTargetPanel(arg0_63)
+	arg0_63.targetPanel:Flush()
 end
 
-function var0.updateBottomPanel(arg0)
-	arg0.bottomPanel:Flush()
+function var0_0.updateBottomPanel(arg0_64)
+	arg0_64.bottomPanel:Flush()
 end
 
-function var0.updatePaintingUI(arg0)
-	local var0 = getProxy(EducateProxy):GetCharData()
+function var0_0.updatePaintingUI(arg0_65)
+	local var0_65 = getProxy(EducateProxy):GetCharData()
 
-	arg0.bgName = var0:GetBGName()
-	arg0.paintingName = var0:GetPaintingName()
-	arg0.wordList, arg0.faceList = var0:GetMainDialogueInfo()
+	arg0_65.bgName = var0_65:GetBGName()
+	arg0_65.paintingName = var0_65:GetPaintingName()
+	arg0_65.wordList, arg0_65.faceList = var0_65:GetMainDialogueInfo()
 
-	local var1 = LoadSprite("bg/" .. arg0.bgName)
+	local var1_65 = LoadSprite("bg/" .. arg0_65.bgName)
 
-	setImageSprite(arg0.bgTF, var1, false)
-	setPaintingPrefab(arg0.paintTF, arg0.paintingName, "yangcheng")
+	setImageSprite(arg0_65.bgTF, var1_65, false)
+	setPaintingPrefab(arg0_65.paintTF, arg0_65.paintingName, "yangcheng")
 end
 
-function var0.ShowDialogue(arg0)
-	if LeanTween.isTweening(arg0.dialogueTF) then
+function var0_0.ShowDialogue(arg0_66)
+	if LeanTween.isTweening(arg0_66.dialogueTF) then
 		return
 	end
 
-	local var0 = math.random(#arg0.wordList)
-	local var1 = pg.child_word[arg0.wordList[var0]].word
+	local var0_66 = math.random(#arg0_66.wordList)
+	local var1_66 = pg.child_word[arg0_66.wordList[var0_66]].word
 
-	if not arg0.callName then
-		arg0.callName = getProxy(EducateProxy):GetCharData():GetCallName()
+	if not arg0_66.callName then
+		arg0_66.callName = getProxy(EducateProxy):GetCharData():GetCallName()
 	end
 
-	local var2 = string.gsub(var1, "$1", arg0.callName)
+	local var2_66 = string.gsub(var1_66, "$1", arg0_66.callName)
 
-	setText(arg0.dialogueContent, var2)
+	setText(arg0_66.dialogueContent, var2_66)
 
-	local var3 = GetSpriteFromAtlas("paintingface/" .. arg0.paintingName, arg0.faceList[var0])
-	local var4 = arg0:findTF("fitter", arg0.paintTF):GetChild(0):Find("face")
+	local var3_66 = GetSpriteFromAtlas("paintingface/" .. arg0_66.paintingName, arg0_66.faceList[var0_66])
+	local var4_66 = arg0_66:findTF("fitter", arg0_66.paintTF):GetChild(0):Find("face")
 
-	if var4 and var3 then
-		setImageSprite(var4, var3)
-		setActive(var4, true)
+	if var4_66 and var3_66 then
+		setImageSprite(var4_66, var3_66)
+		setActive(var4_66, true)
 	end
 
-	arg0.dialogueTF.localScale = Vector3.zero
+	arg0_66.dialogueTF.localScale = Vector3.zero
 
-	setActive(arg0.dialogueTF, true)
-	LeanTween.scale(arg0.dialogueTF, Vector3.one, 0.3):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
-		LeanTween.scale(arg0.dialogueTF, Vector3.zero, 0.3):setEase(LeanTweenType.easeInBack):setDelay(3):setOnComplete(System.Action(function()
-			setActive(arg0.dialogueTF, false)
+	setActive(arg0_66.dialogueTF, true)
+	LeanTween.scale(arg0_66.dialogueTF, Vector3.one, 0.3):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
+		LeanTween.scale(arg0_66.dialogueTF, Vector3.zero, 0.3):setEase(LeanTweenType.easeInBack):setDelay(3):setOnComplete(System.Action(function()
+			setActive(arg0_66.dialogueTF, false)
 
-			if var4 then
-				setActive(var4, false)
+			if var4_66 then
+				setActive(var4_66, false)
 			end
 		end))
 	end))
 end
 
-function var0.updateNewTips(arg0)
-	arg0:updateBookNewTip()
-	arg0:updateMindNewTip()
+function var0_0.updateNewTips(arg0_69)
+	arg0_69:updateBookNewTip()
+	arg0_69:updateMindNewTip()
 end
 
-function var0.updateBookNewTip(arg0)
-	local var0 = underscore.any(pg.child_memory.all, function(arg0)
-		return EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_MEMORY, arg0)
+function var0_0.updateBookNewTip(arg0_70)
+	local var0_70 = underscore.any(pg.child_memory.all, function(arg0_71)
+		return EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_MEMORY, arg0_71)
 	end)
-	local var1 = EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_POLAROID)
+	local var1_70 = EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_POLAROID)
 
-	setActive(arg0:findTF("unlock/new", arg0.bookBtn), var0 or var1)
+	setActive(arg0_70:findTF("unlock/new", arg0_70.bookBtn), var0_70 or var1_70)
 end
 
-function var0.updateMindNewTip(arg0)
-	setActive(arg0:findTF("unlock/new", arg0.mindBtn), EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_MIND_TASK))
+function var0_0.updateMindNewTip(arg0_72)
+	setActive(arg0_72:findTF("unlock/new", arg0_72.mindBtn), EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_MIND_TASK))
 end
 
-function var0.FlushView(arg0)
-	arg0.datePanel:Flush()
-	arg0.favorPanel:Flush()
-	arg0.resPanel:Flush()
-	arg0.targetPanel:Flush()
-	arg0.bottomPanel:Flush()
-	arg0.archivePanel:Flush()
-	arg0:updatePaintingUI()
-	arg0:updateUnlockBtns()
-	arg0:updateNewTips()
-	arg0:updateMindTip()
-	arg0:updateFavorBtn()
-	arg0:SeriesCheck()
+function var0_0.FlushView(arg0_73)
+	arg0_73.datePanel:Flush()
+	arg0_73.favorPanel:Flush()
+	arg0_73.resPanel:Flush()
+	arg0_73.targetPanel:Flush()
+	arg0_73.bottomPanel:Flush()
+	arg0_73.archivePanel:Flush()
+	arg0_73:updatePaintingUI()
+	arg0_73:updateUnlockBtns()
+	arg0_73:updateNewTips()
+	arg0_73:updateMindTip()
+	arg0_73:updateFavorBtn()
+	arg0_73:SeriesCheck()
 end
 
-function var0.onBackPressed(arg0)
-	arg0:emit(EducateBaseUI.ON_HOME)
+function var0_0.onBackPressed(arg0_74)
+	arg0_74:emit(EducateBaseUI.ON_HOME)
 end
 
-function var0.willExit(arg0)
-	arg0.contextData.isMainEnter = nil
+function var0_0.willExit(arg0_75)
+	arg0_75.contextData.isMainEnter = nil
 
-	arg0.datePanel:Destroy()
+	arg0_75.datePanel:Destroy()
 
-	arg0.datePanel = nil
+	arg0_75.datePanel = nil
 
-	arg0.favorPanel:Destroy()
+	arg0_75.favorPanel:Destroy()
 
-	arg0.favorPanel = nil
+	arg0_75.favorPanel = nil
 
-	arg0.resPanel:Destroy()
+	arg0_75.resPanel:Destroy()
 
-	arg0.resPanel = nil
+	arg0_75.resPanel = nil
 
-	arg0.topPanel:Destroy()
+	arg0_75.topPanel:Destroy()
 
-	arg0.topPanel = nil
+	arg0_75.topPanel = nil
 
-	arg0.targetPanel:Destroy()
+	arg0_75.targetPanel:Destroy()
 
-	arg0.targetPanel = nil
+	arg0_75.targetPanel = nil
 
-	arg0.bottomPanel:Destroy()
+	arg0_75.bottomPanel:Destroy()
 
-	arg0.bottomPanel = nil
+	arg0_75.bottomPanel = nil
 
-	arg0.archivePanel:Destroy()
+	arg0_75.archivePanel:Destroy()
 
-	arg0.archivePanel = nil
+	arg0_75.archivePanel = nil
 
-	if LeanTween.isTweening(arg0.dialogueTF) then
-		LeanTween.cancel(arg0.dialogueTF)
+	if LeanTween.isTweening(arg0_75.dialogueTF) then
+		LeanTween.cancel(arg0_75.dialogueTF)
 	end
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0.blurPanel, arg0._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_75.blurPanel, arg0_75._tf)
 end
 
-return var0
+return var0_0

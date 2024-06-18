@@ -1,20 +1,20 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConst
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConst
 
-var0.Battle.BattleDepthChargeUnit = class("BattleDepthChargeUnit", var0.Battle.BattleWeaponUnit)
-var0.Battle.BattleDepthChargeUnit.__name = "BattleDepthChargeUnit"
+var0_0.Battle.BattleDepthChargeUnit = class("BattleDepthChargeUnit", var0_0.Battle.BattleWeaponUnit)
+var0_0.Battle.BattleDepthChargeUnit.__name = "BattleDepthChargeUnit"
 
-local var2 = var0.Battle.BattleDepthChargeUnit
-local var3 = var0.Battle.BattleTargetChoise
+local var2_0 = var0_0.Battle.BattleDepthChargeUnit
+local var3_0 = var0_0.Battle.BattleTargetChoise
 
-function var2.Ctor(arg0)
-	var2.super.Ctor(arg0)
+function var2_0.Ctor(arg0_1)
+	var2_0.super.Ctor(arg0_1)
 end
 
-function var2.TriggerBuffOnFire(arg0)
-	arg0._host:TriggerBuff(var1.BuffEffectType.ON_DEPTH_CHARGE_DROP, {
-		equipIndex = arg0._equipmentIndex
+function var2_0.TriggerBuffOnFire(arg0_2)
+	arg0_2._host:TriggerBuff(var1_0.BuffEffectType.ON_DEPTH_CHARGE_DROP, {
+		equipIndex = arg0_2._equipmentIndex
 	})
 end

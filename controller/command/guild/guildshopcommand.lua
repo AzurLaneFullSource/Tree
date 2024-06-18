@@ -1,64 +1,64 @@
-﻿local var0 = class("GuildShopCommand", pm.SimpleCommand)
+﻿local var0_0 = class("GuildShopCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.goodsId
-	local var2 = var0.selectedId
-	local var3 = #var2
-	local var4 = getProxy(PlayerProxy)
-	local var5 = var4:getData()
-	local var6 = var5:getResource(8)
-	local var7 = getProxy(ShopsProxy)
-	local var8 = var7:getGuildShop():getGoodsById(var1)
-	local var9 = var8:GetPrice()
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.goodsId
+	local var2_1 = var0_1.selectedId
+	local var3_1 = #var2_1
+	local var4_1 = getProxy(PlayerProxy)
+	local var5_1 = var4_1:getData()
+	local var6_1 = var5_1:getResource(8)
+	local var7_1 = getProxy(ShopsProxy)
+	local var8_1 = var7_1:getGuildShop():getGoodsById(var1_1)
+	local var9_1 = var8_1:GetPrice()
 
-	if var6 < var9 * var3 then
+	if var6_1 < var9_1 * var3_1 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
 	end
 
-	if not var8:CanPurchaseCnt(var3) then
+	if not var8_1:CanPurchaseCnt(var3_1) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_shop_cnt_no_enough"))
 
 		return
 	end
 
-	local var10 = {}
+	local var10_1 = {}
 
-	for iter0, iter1 in ipairs(var2) do
-		if not var10[iter1] then
-			var10[iter1] = {
+	for iter0_1, iter1_1 in ipairs(var2_1) do
+		if not var10_1[iter1_1] then
+			var10_1[iter1_1] = {
 				count = 1,
-				id = iter1
+				id = iter1_1
 			}
 		else
-			var10[iter1].count = var10[iter1].count + 1
+			var10_1[iter1_1].count = var10_1[iter1_1].count + 1
 		end
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(60035, {
-		goodsid = var8.configId,
-		index = var8.index,
-		selected = _.values(var10)
-	}, 60036, function(arg0)
-		if arg0.result == 0 then
-			local var0 = PlayerConst.addTranDrop(arg0.drop_list)
-			local var1 = var7:getGuildShop()
+		goodsid = var8_1.configId,
+		index = var8_1.index,
+		selected = _.values(var10_1)
+	}, 60036, function(arg0_2)
+		if arg0_2.result == 0 then
+			local var0_2 = PlayerConst.addTranDrop(arg0_2.drop_list)
+			local var1_2 = var7_1:getGuildShop()
 
-			var1:UpdateGoodsCnt(var1, var3)
-			var7:updateGuildShop(var1)
-			var5:consume({
-				guildCoin = var9 * var3
+			var1_2:UpdateGoodsCnt(var1_1, var3_1)
+			var7_1:updateGuildShop(var1_2)
+			var5_1:consume({
+				guildCoin = var9_1 * var3_1
 			})
-			var4:updatePlayer(var5)
-			arg0:sendNotification(GAME.ON_GUILD_SHOP_PURCHASE_DONE, {
-				awards = var0
+			var4_1:updatePlayer(var5_1)
+			arg0_1:sendNotification(GAME.ON_GUILD_SHOP_PURCHASE_DONE, {
+				awards = var0_2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0.result] .. arg0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)
 		end
 	end)
 end
 
-return var0
+return var0_0

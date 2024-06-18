@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_68 = {}
+var0_0.word_template_68 = {}
 
-local var1 = var0.word_template_68
+local var1_0 = var0_0.word_template_68
 
 function temp()
-	var1.瘳 = {
+	var1_0.瘳 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.筹 = {
+	var1_0.筹 = {
 		码 = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.雠 = {
+	var1_0.雠 = {
 		this = {
 			this = true
 		}
@@ -37,7 +37,7 @@ end
 temp()
 
 function temp()
-	var1.籌 = {
+	var1_0.籌 = {
 		碼 = {
 			this = true
 		}
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.臭 = {
+	var1_0.臭 = {
 		["7"] = {
 			["8"] = {
 				this = true
@@ -129,7 +129,7 @@ end
 temp()
 
 function temp()
-	var1.初 = {
+	var1_0.初 = {
 		夜 = {
 			无 = {
 				红 = {
@@ -239,7 +239,7 @@ end
 temp()
 
 function temp()
-	var1.除 = {
+	var1_0.除 = {
 		疤 = {
 			痕 = {
 				this = true

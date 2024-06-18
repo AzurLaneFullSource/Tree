@@ -1,89 +1,89 @@
-﻿local var0 = class("DockyardMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("DockyardMediator", import("..base.ContextMediator"))
 
-var0.ON_DESTROY_SHIPS = "DockyardMediator:ON_DESTROY_SHIPS"
-var0.ON_SHIP_DETAIL = "DockyardMediator:ON_SHIP_DETAIL"
-var0.ON_SHIP_REPAIR = "DockyardMediator:ON_SHIP_REPAIR"
-var0.OPEN_DOCKYARD_INDEX = "DockyardMediator:OPEN_DOCKYARD_INDEX"
+var0_0.ON_DESTROY_SHIPS = "DockyardMediator:ON_DESTROY_SHIPS"
+var0_0.ON_SHIP_DETAIL = "DockyardMediator:ON_SHIP_DETAIL"
+var0_0.ON_SHIP_REPAIR = "DockyardMediator:ON_SHIP_REPAIR"
+var0_0.OPEN_DOCKYARD_INDEX = "DockyardMediator:OPEN_DOCKYARD_INDEX"
 
-function var0.register(arg0)
-	if arg0.contextData.selectFriend then
-		local var0 = getProxy(FriendProxy):getAllFriends()
+function var0_0.register(arg0_1)
+	if arg0_1.contextData.selectFriend then
+		local var0_1 = getProxy(FriendProxy):getAllFriends()
 
-		arg0.viewComponent:setFriends(var0)
+		arg0_1.viewComponent:setFriends(var0_1)
 	end
 
-	local var1 = getProxy(BayProxy)
+	local var1_1 = getProxy(BayProxy)
 
-	if arg0.contextData.shipVOs then
-		arg0.shipsById = {}
+	if arg0_1.contextData.shipVOs then
+		arg0_1.shipsById = {}
 
-		for iter0, iter1 in ipairs(arg0.contextData.shipVOs) do
-			arg0.shipsById[iter1.id] = iter1
+		for iter0_1, iter1_1 in ipairs(arg0_1.contextData.shipVOs) do
+			arg0_1.shipsById[iter1_1.id] = iter1_1
 		end
-	elseif arg0.contextData.mode == DockyardScene.MODE_WORLD then
-		arg0.shipsById = {}
+	elseif arg0_1.contextData.mode == DockyardScene.MODE_WORLD then
+		arg0_1.shipsById = {}
 
-		for iter2, iter3 in ipairs(nowWorld():GetShipVOs()) do
-			arg0.shipsById[iter3.id] = iter3
+		for iter2_1, iter3_1 in ipairs(nowWorld():GetShipVOs()) do
+			arg0_1.shipsById[iter3_1.id] = iter3_1
 		end
 	else
-		arg0.shipsById = {}
+		arg0_1.shipsById = {}
 
-		for iter4, iter5 in pairs(var1.data) do
-			arg0.shipsById[iter4] = iter5
+		for iter4_1, iter5_1 in pairs(var1_1.data) do
+			arg0_1.shipsById[iter4_1] = iter5_1
 		end
 	end
 
-	if arg0.contextData.mode == DockyardScene.MODE_MOD then
-		local var2 = arg0.contextData.ignoredIds[1]
+	if arg0_1.contextData.mode == DockyardScene.MODE_MOD then
+		local var2_1 = arg0_1.contextData.ignoredIds[1]
 
-		arg0.viewComponent:setModShip(arg0.shipsById[var2]:clone())
+		arg0_1.viewComponent:setModShip(arg0_1.shipsById[var2_1]:clone())
 	end
 
-	arg0.fleetProxy = getProxy(FleetProxy)
-	arg0.fleetShipIds = arg0.fleetProxy:getAllShipIds()
+	arg0_1.fleetProxy = getProxy(FleetProxy)
+	arg0_1.fleetShipIds = arg0_1.fleetProxy:getAllShipIds()
 
-	if arg0.contextData.ignoredIds then
-		for iter6, iter7 in ipairs(arg0.contextData.ignoredIds) do
-			arg0.shipsById[iter7] = nil
+	if arg0_1.contextData.ignoredIds then
+		for iter6_1, iter7_1 in ipairs(arg0_1.contextData.ignoredIds) do
+			arg0_1.shipsById[iter7_1] = nil
 		end
 	end
 
-	arg0.viewComponent:setShips(arg0.shipsById)
-	arg0.viewComponent:setShipsCount(var1:getShipCount())
+	arg0_1.viewComponent:setShips(arg0_1.shipsById)
+	arg0_1.viewComponent:setShipsCount(var1_1:getShipCount())
 
-	local var3 = getProxy(PlayerProxy):getData()
+	local var3_1 = getProxy(PlayerProxy):getData()
 
-	arg0.viewComponent:setPlayer(var3)
-	arg0:bind(var0.ON_DESTROY_SHIPS, function(arg0, arg1, arg2)
-		arg0:sendNotification(GAME.DESTROY_SHIPS, {
-			destroyEquipment = arg2,
-			shipIds = arg1
+	arg0_1.viewComponent:setPlayer(var3_1)
+	arg0_1:bind(var0_0.ON_DESTROY_SHIPS, function(arg0_2, arg1_2, arg2_2)
+		arg0_1:sendNotification(GAME.DESTROY_SHIPS, {
+			destroyEquipment = arg2_2,
+			shipIds = arg1_2
 		})
 	end)
-	arg0:bind(var0.ON_SHIP_DETAIL, function(arg0, arg1, arg2, arg3)
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
-			shipId = arg1.id,
-			shipVOs = arg2,
-			selectContextData = arg3
+	arg0_1:bind(var0_0.ON_SHIP_DETAIL, function(arg0_3, arg1_3, arg2_3, arg3_3)
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
+			shipId = arg1_3.id,
+			shipVOs = arg2_3,
+			selectContextData = arg3_3
 		})
 	end)
-	arg0:bind(var0.ON_SHIP_REPAIR, function(arg0, arg1, arg2)
-		arg0:sendNotification(GAME.WORLD_SHIP_REPAIR, {
-			shipIds = arg1,
-			totalCost = arg2
+	arg0_1:bind(var0_0.ON_SHIP_REPAIR, function(arg0_4, arg1_4, arg2_4)
+		arg0_1:sendNotification(GAME.WORLD_SHIP_REPAIR, {
+			shipIds = arg1_4,
+			totalCost = arg2_4
 		})
 	end)
-	arg0:bind(var0.OPEN_DOCKYARD_INDEX, function(arg0, arg1)
-		arg0:addSubLayers(Context.New({
+	arg0_1:bind(var0_0.OPEN_DOCKYARD_INDEX, function(arg0_5, arg1_5)
+		arg0_1:addSubLayers(Context.New({
 			viewComponent = CustomIndexLayer,
 			mediator = CustomIndexMediator,
-			data = arg1
+			data = arg1_5
 		}))
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_6)
 	return {
 		GAME.DESTROY_SHIP_DONE,
 		FleetProxy.FLEET_UPDATED,
@@ -97,123 +97,123 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_7, arg1_7)
+	local var0_7 = arg1_7:getName()
+	local var1_7 = arg1_7:getBody()
 
-	if var0 == GAME.DESTROY_SHIP_DONE then
+	if var0_7 == GAME.DESTROY_SHIP_DONE then
 		if not pg.m02:hasMediator(ShipMainMediator.__cname) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_dockyardMediator_destroy"))
 		end
 
-		for iter0, iter1 in ipairs(var1.destroiedShipIds) do
-			arg0.viewComponent:removeShip(iter1)
+		for iter0_7, iter1_7 in ipairs(var1_7.destroiedShipIds) do
+			arg0_7.viewComponent:removeShip(iter1_7)
 		end
 
-		arg0.viewComponent:updateShipCount()
-		arg0.viewComponent:setShipsCount(getProxy(BayProxy):getShipCount())
-		arg0.viewComponent:updateBarInfo()
-		arg0.viewComponent:updateSelected()
-		arg0.viewComponent:updateDestroyRes()
+		arg0_7.viewComponent:updateShipCount()
+		arg0_7.viewComponent:setShipsCount(getProxy(BayProxy):getShipCount())
+		arg0_7.viewComponent:updateBarInfo()
+		arg0_7.viewComponent:updateSelected()
+		arg0_7.viewComponent:updateDestroyRes()
 
-		local function var2()
-			if table.getCount(var1.equipments) > 0 then
-				local var0 = {}
+		local function var2_7()
+			if table.getCount(var1_7.equipments) > 0 then
+				local var0_8 = {}
 
-				for iter0, iter1 in pairs(var1.equipments) do
-					table.insert(var0, iter1)
+				for iter0_8, iter1_8 in pairs(var1_7.equipments) do
+					table.insert(var0_8, iter1_8)
 				end
 
-				arg0:addSubLayers(Context.New({
+				arg0_7:addSubLayers(Context.New({
 					viewComponent = ResolveEquipmentLayer,
 					mediator = ResolveEquipmentMediator,
 					data = {
-						Equipments = var0
+						Equipments = var0_8
 					}
 				}))
 			end
 		end
 
-		arg0.viewComponent:emit(BaseUI.ON_AWARD, {
-			items = var1.bonus,
+		arg0_7.viewComponent:emit(BaseUI.ON_AWARD, {
+			items = var1_7.bonus,
 			title = AwardInfoLayer.TITLE.ITEM,
-			removeFunc = var2
+			removeFunc = var2_7
 		})
-		arg0.viewComponent:closeDestroyPanel()
-	elseif var0 == FleetProxy.FLEET_UPDATED then
-		local var3 = arg0.fleetShipIds
+		arg0_7.viewComponent:closeDestroyPanel()
+	elseif var0_7 == FleetProxy.FLEET_UPDATED then
+		local var3_7 = arg0_7.fleetShipIds
 
-		arg0.fleetShipIds = arg0.fleetProxy:getAllShipIds()
+		arg0_7.fleetShipIds = arg0_7.fleetProxy:getAllShipIds()
 
-		local var4 = {}
+		local var4_7 = {}
 
-		for iter2, iter3 in ipairs(var3) do
-			var4[iter3] = 1
+		for iter2_7, iter3_7 in ipairs(var3_7) do
+			var4_7[iter3_7] = 1
 		end
 
-		for iter4, iter5 in ipairs(arg0.fleetShipIds) do
-			if var4[iter5] == 1 then
-				var4[iter5] = 2
+		for iter4_7, iter5_7 in ipairs(arg0_7.fleetShipIds) do
+			if var4_7[iter5_7] == 1 then
+				var4_7[iter5_7] = 2
 			else
-				var4[iter5] = 3
+				var4_7[iter5_7] = 3
 			end
 		end
 
-		for iter6, iter7 in ipairs(var3) do
-			if var4[iter7] == 1 then
-				var4[iter7] = 0
+		for iter6_7, iter7_7 in ipairs(var3_7) do
+			if var4_7[iter7_7] == 1 then
+				var4_7[iter7_7] = 0
 			end
 		end
 
-		for iter8, iter9 in pairs(var4) do
-			if iter9 == 0 then
-				arg0:setShipFlag(iter8, "inFleet", false)
-			elseif iter9 == 3 then
-				arg0:setShipFlag(iter8, "inFleet", true)
+		for iter8_7, iter9_7 in pairs(var4_7) do
+			if iter9_7 == 0 then
+				arg0_7:setShipFlag(iter8_7, "inFleet", false)
+			elseif iter9_7 == 3 then
+				arg0_7:setShipFlag(iter8_7, "inFleet", true)
 			end
 
-			arg0.viewComponent:updateShipStatusById(iter8)
+			arg0_7.viewComponent:updateShipStatusById(iter8_7)
 		end
-	elseif var0 == GAME.EXIT_SHIP_DONE then
-		arg0:setShipFlag(var1.id, "inBackyard", false)
-		arg0.viewComponent:updateShipStatusById(var1.id)
-	elseif var0 == GAME.UPDATE_LOCK_DONE then
-		arg0.shipsById[var1.id].lockState = var1.lockState
+	elseif var0_7 == GAME.EXIT_SHIP_DONE then
+		arg0_7:setShipFlag(var1_7.id, "inBackyard", false)
+		arg0_7.viewComponent:updateShipStatusById(var1_7.id)
+	elseif var0_7 == GAME.UPDATE_LOCK_DONE then
+		arg0_7.shipsById[var1_7.id].lockState = var1_7.lockState
 
-		arg0.viewComponent:updateShipStatusById(var1.id)
-	elseif var0 == GAME.CANCEL_LEARN_TACTICS_DONE then
-		arg0:setShipFlag(var1.shipId, "inTactics", false)
-		arg0.viewComponent:updateShipStatusById(var1.shipId)
-	elseif var0 == GAME.UPDATE_EXERCISE_FLEET_DONE then
-		local var5 = var1.oldFleet
-		local var6 = var1.newFleet
+		arg0_7.viewComponent:updateShipStatusById(var1_7.id)
+	elseif var0_7 == GAME.CANCEL_LEARN_TACTICS_DONE then
+		arg0_7:setShipFlag(var1_7.shipId, "inTactics", false)
+		arg0_7.viewComponent:updateShipStatusById(var1_7.shipId)
+	elseif var0_7 == GAME.UPDATE_EXERCISE_FLEET_DONE then
+		local var5_7 = var1_7.oldFleet
+		local var6_7 = var1_7.newFleet
 
-		for iter10, iter11 in ipairs(var5.ships) do
-			arg0:setShipFlag(iter11, "inExercise", false)
-			arg0.viewComponent:updateShipStatusById(iter11)
+		for iter10_7, iter11_7 in ipairs(var5_7.ships) do
+			arg0_7:setShipFlag(iter11_7, "inExercise", false)
+			arg0_7.viewComponent:updateShipStatusById(iter11_7)
 		end
 
-		for iter12, iter13 in ipairs(var6.ships) do
-			arg0:setShipFlag(iter13, "inExercise", true)
-			arg0.viewComponent:updateShipStatusById(iter13)
+		for iter12_7, iter13_7 in ipairs(var6_7.ships) do
+			arg0_7:setShipFlag(iter13_7, "inExercise", true)
+			arg0_7.viewComponent:updateShipStatusById(iter13_7)
 		end
-	elseif var0 == PlayerProxy.UPDATED then
-		arg0.viewComponent:setPlayer(var1)
-	elseif var0 == GAME.WORLD_SHIP_REPAIR_DONE then
-		_.each(var1.shipIds, function(arg0)
-			arg0.viewComponent:updateShipStatusById(arg0)
+	elseif var0_7 == PlayerProxy.UPDATED then
+		arg0_7.viewComponent:setPlayer(var1_7)
+	elseif var0_7 == GAME.WORLD_SHIP_REPAIR_DONE then
+		_.each(var1_7.shipIds, function(arg0_9)
+			arg0_7.viewComponent:updateShipStatusById(arg0_9)
 		end)
-	elseif var0 == GAME.WORLD_FLEET_REDEPLOY_DONE then
-		arg0.viewComponent:emit(BaseUI.ON_BACK)
+	elseif var0_7 == GAME.WORLD_FLEET_REDEPLOY_DONE then
+		arg0_7.viewComponent:emit(BaseUI.ON_BACK)
 	end
 end
 
-function var0.setShipFlag(arg0, arg1, arg2, arg3)
-	local var0 = arg0.shipsById[arg1]
+function var0_0.setShipFlag(arg0_10, arg1_10, arg2_10, arg3_10)
+	local var0_10 = arg0_10.shipsById[arg1_10]
 
-	if var0 then
-		var0[arg2] = arg3
+	if var0_10 then
+		var0_10[arg2_10] = arg3_10
 	end
 end
 
-return var0
+return var0_0

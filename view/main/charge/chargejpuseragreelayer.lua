@@ -1,48 +1,48 @@
-﻿local var0 = class("ChargeJPUserAgreeLayer", import("...base.BaseUI"))
+﻿local var0_0 = class("ChargeJPUserAgreeLayer", import("...base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ChargeJPUserAgreeUI"
 end
 
-function var0.init(arg0)
-	arg0:initData()
-	arg0:findUI()
-	arg0:addListener()
-	arg0:initUIText()
+function var0_0.init(arg0_2)
+	arg0_2:initData()
+	arg0_2:findUI()
+	arg0_2:addListener()
+	arg0_2:initUIText()
 end
 
-function var0.didEnter(arg0)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
-	setText(arg0.scrollText, arg0.contentStr or "")
-	scrollTo(arg0.scrollRect, 0, 1)
+function var0_0.didEnter(arg0_3)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
+	setText(arg0_3.scrollText, arg0_3.contentStr or "")
+	scrollTo(arg0_3.scrollRect, 0, 1)
 end
 
-function var0.willExit(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+function var0_0.willExit(arg0_4)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_4._tf)
 end
 
-function var0.initData(arg0)
-	arg0.contentStr = arg0.contextData.contentStr
+function var0_0.initData(arg0_5)
+	arg0_5.contentStr = arg0_5.contextData.contentStr
 end
 
-function var0.initUIText(arg0)
+function var0_0.initUIText(arg0_6)
 	return
 end
 
-function var0.findUI(arg0)
-	arg0.bg = arg0:findTF("bg")
-	arg0.closeBtn = arg0:findTF("window/top/btnBack")
-	arg0.scrollRect = arg0:findTF("container/scrollrect")
-	arg0.scrollText = arg0:findTF("content/Text", arg0.scrollRect)
+function var0_0.findUI(arg0_7)
+	arg0_7.bg = arg0_7:findTF("bg")
+	arg0_7.closeBtn = arg0_7:findTF("window/top/btnBack")
+	arg0_7.scrollRect = arg0_7:findTF("container/scrollrect")
+	arg0_7.scrollText = arg0_7:findTF("content/Text", arg0_7.scrollRect)
 end
 
-function var0.addListener(arg0)
-	onButton(arg0, arg0.bg, function()
-		arg0:closeView()
+function var0_0.addListener(arg0_8)
+	onButton(arg0_8, arg0_8.bg, function()
+		arg0_8:closeView()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.closeBtn, function()
-		arg0:closeView()
+	onButton(arg0_8, arg0_8.closeBtn, function()
+		arg0_8:closeView()
 	end, SFX_CANCEL)
 end
 
-return var0
+return var0_0

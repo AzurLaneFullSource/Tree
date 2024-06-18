@@ -1,39 +1,39 @@
-﻿local var0 = class("SetComanderPrefabFleetCommand", pm.SimpleCommand)
+﻿local var0_0 = class("SetComanderPrefabFleetCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.id
-	local var2 = var0.commanders
-	local var3 = getProxy(CommanderProxy)
-	local var4 = {}
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.id
+	local var2_1 = var0_1.commanders
+	local var3_1 = getProxy(CommanderProxy)
+	local var4_1 = {}
 
-	for iter0, iter1 in pairs(var2) do
-		table.insert(var4, {
-			id = iter1.id,
-			pos = iter0
+	for iter0_1, iter1_1 in pairs(var2_1) do
+		table.insert(var4_1, {
+			id = iter1_1.id,
+			pos = iter0_1
 		})
 	end
 
-	if #var4 == 0 or _.all(var4, function(arg0)
-		return arg0.id == 0
+	if #var4_1 == 0 or _.all(var4_1, function(arg0_2)
+		return arg0_2.id == 0
 	end) then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(25022, {
-		id = var1,
-		commandersid = var4
-	}, 25023, function(arg0)
-		if arg0.result == 0 then
-			local var0 = var3:getPrefabFleetById(var1)
+		id = var1_1,
+		commandersid = var4_1
+	}, 25023, function(arg0_3)
+		if arg0_3.result == 0 then
+			local var0_3 = var3_1:getPrefabFleetById(var1_1)
 
-			var0:updateCommanders(var2)
-			var3:updatePrefabFleet(var0)
-			arg0:sendNotification(GAME.SET_COMMANDER_PREFAB_DONE)
+			var0_3:updateCommanders(var2_1)
+			var3_1:updatePrefabFleet(var0_3)
+			arg0_1:sendNotification(GAME.SET_COMMANDER_PREFAB_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0.result])
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_3.result])
 		end
 	end)
 end
 
-return var0
+return var0_0

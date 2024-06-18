@@ -1,6 +1,6 @@
-﻿local var0 = Vector2.zero
-local var1 = rawget
-local var2 = setmetatable
+﻿local var0_0 = Vector2.zero
+local var1_0 = rawget
+local var2_0 = setmetatable
 
 TouchPhase = {
 	Began = 0,
@@ -16,77 +16,77 @@ TouchBits = {
 	ALL = 7
 }
 
-local var3 = TouchPhase
-local var4 = TouchBits
-local var5 = {}
-local var6 = tolua.initget(var5)
+local var3_0 = TouchPhase
+local var4_0 = TouchBits
+local var5_0 = {}
+local var6_0 = tolua.initget(var5_0)
 
-function var5.__index(arg0, arg1)
-	local var0 = var1(var5, arg1)
+function var5_0.__index(arg0_1, arg1_1)
+	local var0_1 = var1_0(var5_0, arg1_1)
 
-	if var0 == nil then
-		var0 = var1(var6, arg1)
+	if var0_1 == nil then
+		var0_1 = var1_0(var6_0, arg1_1)
 
-		if var0 ~= nil then
-			return var0(arg0)
+		if var0_1 ~= nil then
+			return var0_1(arg0_1)
 		end
 	end
 
-	return var0
+	return var0_1
 end
 
-function var5.New(arg0, arg1, arg2, arg3, arg4, arg5, arg6)
-	return var2({
-		fingerId = arg0 or 0,
-		position = arg1 or var0,
-		rawPosition = arg2 or var0,
-		deltaPosition = arg3 or var0,
-		deltaTime = arg4 or 0,
-		tapCount = arg5 or 0,
-		phase = arg6 or 0
-	}, var5)
+function var5_0.New(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2, arg5_2, arg6_2)
+	return var2_0({
+		fingerId = arg0_2 or 0,
+		position = arg1_2 or var0_0,
+		rawPosition = arg2_2 or var0_0,
+		deltaPosition = arg3_2 or var0_0,
+		deltaTime = arg4_2 or 0,
+		tapCount = arg5_2 or 0,
+		phase = arg6_2 or 0
+	}, var5_0)
 end
 
-function var5.Init(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
-	arg0.fingerId = arg1
-	arg0.position = arg2
-	arg0.rawPosition = arg3
-	arg0.deltaPosition = arg4
-	arg0.deltaTime = arg5
-	arg0.tapCount = arg6
-	arg0.phase = arg7
+function var5_0.Init(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3, arg5_3, arg6_3, arg7_3)
+	arg0_3.fingerId = arg1_3
+	arg0_3.position = arg2_3
+	arg0_3.rawPosition = arg3_3
+	arg0_3.deltaPosition = arg4_3
+	arg0_3.deltaTime = arg5_3
+	arg0_3.tapCount = arg6_3
+	arg0_3.phase = arg7_3
 end
 
-function var5.Destroy(arg0)
-	arg0.position = nil
-	arg0.rawPosition = nil
-	arg0.deltaPosition = nil
+function var5_0.Destroy(arg0_4)
+	arg0_4.position = nil
+	arg0_4.rawPosition = nil
+	arg0_4.deltaPosition = nil
 end
 
-function var5.GetMask(...)
-	local var0 = {
+function var5_0.GetMask(...)
+	local var0_5 = {
 		...
 	}
-	local var1 = 0
+	local var1_5 = 0
 
-	for iter0 = 1, #var0 do
-		local var2 = var4[var0[iter0]] or 0
+	for iter0_5 = 1, #var0_5 do
+		local var2_5 = var4_0[var0_5[iter0_5]] or 0
 
-		if var2 ~= 0 then
-			var1 = var1 + var2
+		if var2_5 ~= 0 then
+			var1_5 = var1_5 + var2_5
 		end
 	end
 
-	if var1 == 0 then
-		var1 = var4.all
+	if var1_5 == 0 then
+		var1_5 = var4_0.all
 	end
 
-	return var1
+	return var1_5
 end
 
-UnityEngine.TouchPhase = var3
-UnityEngine.Touch = var5
+UnityEngine.TouchPhase = var3_0
+UnityEngine.Touch = var5_0
 
-var2(var5, var5)
+var2_0(var5_0, var5_0)
 
-return var5
+return var5_0

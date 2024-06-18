@@ -1,41 +1,41 @@
-﻿local var0 = class("MainIslandActDelegationBtn", import(".MainBaseSpcailActBtn"))
+﻿local var0_0 = class("MainIslandActDelegationBtn", import(".MainBaseSpcailActBtn"))
 
-function var0.GetContainer(arg0)
-	return arg0.root.parent:Find("eventPanel")
+function var0_0.GetContainer(arg0_1)
+	return arg0_1.root.parent:Find("eventPanel")
 end
 
-function var0.InShowTime(arg0)
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND)
+function var0_0.InShowTime(arg0_2)
+	local var0_2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND)
 
-	return var0 and not var0:isEnd()
+	return var0_2 and not var0_2:isEnd()
 end
 
-function var0.GetUIName(arg0)
+function var0_0.GetUIName(arg0_3)
 	return "MainIslandActDelegationBtn"
 end
 
-function var0.OnClick(arg0)
-	arg0.event:emit(NewMainMediator.GO_SCENE, SCENE.ANNIVERSARY_ISLAND_SEA, {
+function var0_0.OnClick(arg0_4)
+	arg0_4.event:emit(NewMainMediator.GO_SCENE, SCENE.ANNIVERSARY_ISLAND_SEA, {
 		checkMain = true
 	})
 end
 
-function var0.OnInit(arg0)
+function var0_0.OnInit(arg0_5)
 	return
 end
 
-function var0.OnRegister(arg0)
-	arg0.redDot = RedDotNode.New(arg0._tf:Find("tip"), {
+function var0_0.OnRegister(arg0_6)
+	arg0_6.redDot = RedDotNode.New(arg0_6._tf:Find("tip"), {
 		pg.RedDotMgr.TYPES.ISLAND
 	})
 
-	pg.redDotHelper:AddNode(arg0.redDot)
+	pg.redDotHelper:AddNode(arg0_6.redDot)
 end
 
-function var0.OnClear(arg0)
-	if arg0.redDot then
-		pg.redDotHelper:RemoveNode(arg0.redDot)
+function var0_0.OnClear(arg0_7)
+	if arg0_7.redDot then
+		pg.redDotHelper:RemoveNode(arg0_7.redDot)
 	end
 end
 
-return var0
+return var0_0

@@ -1,125 +1,125 @@
-﻿local var0 = class("NavalAcademyShipsView")
+﻿local var0_0 = class("NavalAcademyShipsView")
 
-function var0.Ctor(arg0, arg1)
-	arg0.parent = arg1
-	arg0.academyStudents = {}
-	arg0._map = arg1:findTF("academyMap/map")
-	arg0._shipTpl = arg0._map:Find("ship")
-	arg0._fountain = arg0._map:Find("fountain")
-	arg0.academyGraphPath = GraphPath.New(AcademyGraph)
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.parent = arg1_1
+	arg0_1.academyStudents = {}
+	arg0_1._map = arg1_1:findTF("academyMap/map")
+	arg0_1._shipTpl = arg0_1._map:Find("ship")
+	arg0_1._fountain = arg0_1._map:Find("fountain")
+	arg0_1.academyGraphPath = GraphPath.New(AcademyGraph)
 end
 
-function var0.BindBuildings(arg0, arg1)
-	arg0.buildings = _.map(arg1, function(arg0)
-		return arg0._tf
+function var0_0.BindBuildings(arg0_2, arg1_2)
+	arg0_2.buildings = _.map(arg1_2, function(arg0_3)
+		return arg0_3._tf
 	end)
 end
 
-function var0.Refresh(arg0)
-	local var0, var1 = arg0:getStudents()
+function var0_0.Refresh(arg0_4)
+	local var0_4, var1_4 = arg0_4:getStudents()
 
-	_.each(_.keys(arg0.academyStudents), function(arg0)
-		local var0 = var0[arg0]
-		local var1 = var1[arg0]
-		local var2 = arg0.academyStudents[arg0]
+	_.each(_.keys(arg0_4.academyStudents), function(arg0_5)
+		local var0_5 = var0_4[arg0_5]
+		local var1_5 = var1_4[arg0_5]
+		local var2_5 = arg0_4.academyStudents[arg0_5]
 
-		if var0 then
-			var2:updateStudent(var0, var1)
+		if var0_5 then
+			var2_5:updateStudent(var0_5, var1_5)
 		else
-			var2:detach()
+			var2_5:detach()
 		end
 	end)
 
-	for iter0, iter1 in pairs(var0) do
-		if not arg0.academyStudents[iter0] then
-			local var2 = var1[iter0]
-			local var3 = cloneTplTo(arg0._shipTpl, arg0._map)
-			local var4 = NavalAcademyStudent.New(var3.gameObject)
+	for iter0_4, iter1_4 in pairs(var0_4) do
+		if not arg0_4.academyStudents[iter0_4] then
+			local var2_4 = var1_4[iter0_4]
+			local var3_4 = cloneTplTo(arg0_4._shipTpl, arg0_4._map)
+			local var4_4 = NavalAcademyStudent.New(var3_4.gameObject)
 
-			var4:attach()
-			var4:setPathFinder(arg0.academyGraphPath)
-			var4:setCallBack(function(arg0)
-				arg0:onStateChange(iter1, arg0)
-			end, function(arg0, arg1)
-				arg0:onTask(iter1, var2)
+			var4_4:attach()
+			var4_4:setPathFinder(arg0_4.academyGraphPath)
+			var4_4:setCallBack(function(arg0_6)
+				arg0_4:onStateChange(iter1_4, arg0_6)
+			end, function(arg0_7, arg1_7)
+				arg0_4:onTask(iter1_4, var2_4)
 			end)
-			var4:updateStudent(iter1, var2)
+			var4_4:updateStudent(iter1_4, var2_4)
 
-			arg0.academyStudents[iter0] = var4
+			arg0_4.academyStudents[iter0_4] = var4_4
 		end
 	end
 
-	arg0:sortStudents()
+	arg0_4:sortStudents()
 end
 
-function var0.Init(arg0)
-	arg0:Refresh()
+function var0_0.Init(arg0_8)
+	arg0_8:Refresh()
 end
 
-function var0.onStateChange(arg0, arg1, arg2)
-	if arg0.sortTimer then
-		arg0.sortTimer:Stop()
+function var0_0.onStateChange(arg0_9, arg1_9, arg2_9)
+	if arg0_9.sortTimer then
+		arg0_9.sortTimer:Stop()
 
-		arg0.sortTimer = nil
+		arg0_9.sortTimer = nil
 	end
 
-	if arg2 == NavalAcademyStudent.ShipState.Walk then
-		arg0.sortTimer = Timer.New(function()
-			arg0:sortStudents()
+	if arg2_9 == NavalAcademyStudent.ShipState.Walk then
+		arg0_9.sortTimer = Timer.New(function()
+			arg0_9:sortStudents()
 		end, 0.2, -1)
 
-		arg0.sortTimer:Start()
+		arg0_9.sortTimer:Start()
 	end
 end
 
-function var0.sortStudents(arg0)
-	local var0 = {}
+function var0_0.sortStudents(arg0_11)
+	local var0_11 = {}
 
-	table.insertto(var0, arg0.buildings)
+	table.insertto(var0_11, arg0_11.buildings)
 
-	for iter0, iter1 in pairs(arg0.academyStudents) do
-		table.insert(var0, iter1._tf)
+	for iter0_11, iter1_11 in pairs(arg0_11.academyStudents) do
+		table.insert(var0_11, iter1_11._tf)
 	end
 
-	table.sort(var0, function(arg0, arg1)
-		return arg0.anchoredPosition.y > arg1.anchoredPosition.y
+	table.sort(var0_11, function(arg0_12, arg1_12)
+		return arg0_12.anchoredPosition.y > arg1_12.anchoredPosition.y
 	end)
 
-	local var1 = 0
+	local var1_11 = 0
 
-	for iter2, iter3 in ipairs(var0) do
-		iter3:SetSiblingIndex(var1)
+	for iter2_11, iter3_11 in ipairs(var0_11) do
+		iter3_11:SetSiblingIndex(var1_11)
 
-		var1 = var1 + 1
+		var1_11 = var1_11 + 1
 	end
 end
 
-function var0.onTask(arg0, arg1, arg2)
-	local var0 = getProxy(TaskProxy)
-	local var1 = getProxy(ActivityProxy)
-	local var2 = var1:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST)
-	local var3 = _.detect(var2, function(arg0)
-		local var0 = arg0:getTaskShip()
+function var0_0.onTask(arg0_13, arg1_13, arg2_13)
+	local var0_13 = getProxy(TaskProxy)
+	local var1_13 = getProxy(ActivityProxy)
+	local var2_13 = var1_13:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST)
+	local var3_13 = _.detect(var2_13, function(arg0_14)
+		local var0_14 = arg0_14:getTaskShip()
 
-		return var0 and var0.groupId == arg1.groupId
+		return var0_14 and var0_14.groupId == arg1_13.groupId
 	end)
 
-	if var3 and not var3:isEnd() then
-		if var3.id == ActivityConst.JYHZ_ACTIVITY_ID and arg2.acceptTaskId then
-			local var4 = var0:getAcademyTask(arg1.groupId)
-			local var5 = var1:getActivityByType(ActivityConst.ACTIVITY_TYPE_ZPROJECT)
+	if var3_13 and not var3_13:isEnd() then
+		if var3_13.id == ActivityConst.JYHZ_ACTIVITY_ID and arg2_13.acceptTaskId then
+			local var4_13 = var0_13:getAcademyTask(arg1_13.groupId)
+			local var5_13 = var1_13:getActivityByType(ActivityConst.ACTIVITY_TYPE_ZPROJECT)
 
-			if var5 then
-				local var6 = var5:getConfig("config_data")
-				local var7 = _.detect(var6, function(arg0)
-					local var0 = pg.chapter_template[arg0]
+			if var5_13 then
+				local var6_13 = var5_13:getConfig("config_data")
+				local var7_13 = _.detect(var6_13, function(arg0_15)
+					local var0_15 = pg.chapter_template[arg0_15]
 
-					return _.any(var0.npc_data, function(arg0)
-						return pg.npc_squad_template[arg0].task_id == var4
+					return _.any(var0_15.npc_data, function(arg0_16)
+						return pg.npc_squad_template[arg0_16].task_id == var4_13
 					end)
 				end)
 
-				if var7 and getProxy(ChapterProxy):getChapterById(var7).active then
+				if var7_13 and getProxy(ChapterProxy):getChapterById(var7_13).active then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("task_target_chapter_in_progress"))
 
 					return
@@ -127,40 +127,40 @@ function var0.onTask(arg0, arg1, arg2)
 			end
 		end
 
-		if arg2.type then
-			if arg2.type == 1 then
-				Application.OpenURL(arg2.param)
-			elseif arg2.type == 2 then
-				arg0:emit(NavalAcademyMediator.GO_SCENE, arg2.param)
-			elseif arg2.type == 3 then
-				arg0:emit(NavalAcademyMediator.OPEN_ACTIVITY_PANEL, tonumber(arg2.param))
-			elseif arg2.type == 4 then
-				arg0:emit(NavalAcademyMediator.OPEN_ACTIVITY_SHOP)
-			elseif arg2.type == 5 then
-				arg0:emit(NavalAcademyMediator.OPEN_SCROLL, tonumber(arg2.param))
+		if arg2_13.type then
+			if arg2_13.type == 1 then
+				Application.OpenURL(arg2_13.param)
+			elseif arg2_13.type == 2 then
+				arg0_13:emit(NavalAcademyMediator.GO_SCENE, arg2_13.param)
+			elseif arg2_13.type == 3 then
+				arg0_13:emit(NavalAcademyMediator.OPEN_ACTIVITY_PANEL, tonumber(arg2_13.param))
+			elseif arg2_13.type == 4 then
+				arg0_13:emit(NavalAcademyMediator.OPEN_ACTIVITY_SHOP)
+			elseif arg2_13.type == 5 then
+				arg0_13:emit(NavalAcademyMediator.OPEN_SCROLL, tonumber(arg2_13.param))
 			end
-		elseif not arg2.currentTask and arg2.acceptTaskId then
-			local var8 = getProxy(PlayerProxy):getRawData()
-			local var9 = pg.task_data_template[arg2.acceptTaskId]
+		elseif not arg2_13.currentTask and arg2_13.acceptTaskId then
+			local var8_13 = getProxy(PlayerProxy):getRawData()
+			local var9_13 = pg.task_data_template[arg2_13.acceptTaskId]
 
-			if var8.level < var9.level then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("task_level_notenough", var9.level))
+			if var8_13.level < var9_13.level then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("task_level_notenough", var9_13.level))
 
 				return
 			end
 
-			arg0:emit(NavalAcademyMediator.ACTIVITY_OP, {
+			arg0_13:emit(NavalAcademyMediator.ACTIVITY_OP, {
 				cmd = 1,
-				activity_id = var3.id,
-				arg1 = arg2.acceptTaskId
+				activity_id = var3_13.id,
+				arg1 = arg2_13.acceptTaskId
 			})
-		elseif arg2.currentTask then
-			if not arg2.currentTask:isFinish() and arg2.currentTask:getConfig("sub_type") == 29 then
-				arg0:emit(NavalAcademyMediator.TASK_GO, {
-					taskVO = arg2.currentTask
+		elseif arg2_13.currentTask then
+			if not arg2_13.currentTask:isFinish() and arg2_13.currentTask:getConfig("sub_type") == 29 then
+				arg0_13:emit(NavalAcademyMediator.TASK_GO, {
+					taskVO = arg2_13.currentTask
 				})
-			elseif not arg2.currentTask:isReceive() then
-				arg0:emit(NavalAcademyMediator.GO_TASK_SCENE, {
+			elseif not arg2_13.currentTask:isReceive() then
+				arg0_13:emit(NavalAcademyMediator.GO_TASK_SCENE, {
 					page = "activity"
 				})
 			end
@@ -170,76 +170,76 @@ function var0.onTask(arg0, arg1, arg2)
 	end
 end
 
-function var0.emit(arg0, ...)
-	arg0.parent:emit(...)
+function var0_0.emit(arg0_17, ...)
+	arg0_17.parent:emit(...)
 end
 
-function var0.clearStudents(arg0)
-	if arg0.sortTimer then
-		arg0.sortTimer:Stop()
+function var0_0.clearStudents(arg0_18)
+	if arg0_18.sortTimer then
+		arg0_18.sortTimer:Stop()
 
-		arg0.sortTimer = nil
+		arg0_18.sortTimer = nil
 	end
 
-	for iter0, iter1 in pairs(arg0.academyStudents) do
-		iter1:detach()
-		Destroy(iter1._go)
+	for iter0_18, iter1_18 in pairs(arg0_18.academyStudents) do
+		iter1_18:detach()
+		Destroy(iter1_18._go)
 	end
 
-	arg0.academyStudents = {}
+	arg0_18.academyStudents = {}
 end
 
-function var0.Dispose(arg0)
-	arg0:clearStudents()
+function var0_0.Dispose(arg0_19)
+	arg0_19:clearStudents()
 end
 
-function var0.getStudents(arg0)
-	local var0 = {}
-	local var1 = {}
-	local var2 = getProxy(TaskProxy)
-	local var3 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST)
+function var0_0.getStudents(arg0_20)
+	local var0_20 = {}
+	local var1_20 = {}
+	local var2_20 = getProxy(TaskProxy)
+	local var3_20 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST)
 
-	local function var4(arg0)
-		local var0 = arg0:getConfig("config_client")
-		local var1 = arg0:getConfig("config_data")
-		local var2 = _.flatten(var1)
-		local var3
-		local var4
+	local function var4_20(arg0_21)
+		local var0_21 = arg0_21:getConfig("config_client")
+		local var1_21 = arg0_21:getConfig("config_data")
+		local var2_21 = _.flatten(var1_21)
+		local var3_21
+		local var4_21
 
-		if type(var0) == "table" then
-			for iter0, iter1 in ipairs(var0) do
-				var0[iter1.id] = Ship.New(iter1)
+		if type(var0_21) == "table" then
+			for iter0_21, iter1_21 in ipairs(var0_21) do
+				var0_20[iter1_21.id] = Ship.New(iter1_21)
 
-				if iter0 == 1 then
-					var0[iter1.id].withShipFace = true
+				if iter0_21 == 1 then
+					var0_20[iter1_21.id].withShipFace = true
 
-					local var5 = {}
+					local var5_21 = {}
 
-					if iter1.type then
-						var5.type = iter1.type
-						var5.param = iter1.param
+					if iter1_21.type then
+						var5_21.type = iter1_21.type
+						var5_21.param = iter1_21.param
 					end
 
-					local var6, var7 = getActivityTask(arg0, true)
+					local var6_21, var7_21 = getActivityTask(arg0_21, true)
 
-					var5.showTips = var6 and not var7 or var7 and var7:isFinish() and not var7:isReceive()
-					var5.acceptTaskId = var6
-					var5.currentTask = var7
-					var1[iter1.id] = var5
-					var3 = var5.acceptTaskId
-					var4 = var5.currentTask
+					var5_21.showTips = var6_21 and not var7_21 or var7_21 and var7_21:isFinish() and not var7_21:isReceive()
+					var5_21.acceptTaskId = var6_21
+					var5_21.currentTask = var7_21
+					var1_20[iter1_21.id] = var5_21
+					var3_21 = var5_21.acceptTaskId
+					var4_21 = var5_21.currentTask
 				end
 
-				local var8 = iter1.tasks
+				local var8_21 = iter1_21.tasks
 
-				if var8 then
-					var0[iter1.id].hide = true
+				if var8_21 then
+					var0_20[iter1_21.id].hide = true
 
-					local var9 = var4 and table.indexof(var2, var4.id) or table.indexof(var2, var3)
+					local var9_21 = var4_21 and table.indexof(var2_21, var4_21.id) or table.indexof(var2_21, var3_21)
 
-					for iter2, iter3 in ipairs(var8) do
-						if iter3 == var9 then
-							var0[iter1.id].hide = false
+					for iter2_21, iter3_21 in ipairs(var8_21) do
+						if iter3_21 == var9_21 then
+							var0_20[iter1_21.id].hide = false
 
 							break
 						end
@@ -249,15 +249,15 @@ function var0.getStudents(arg0)
 		end
 	end
 
-	_.each(var3, function(arg0)
-		if not arg0:isEnd() then
-			var4(arg0)
+	_.each(var3_20, function(arg0_22)
+		if not arg0_22:isEnd() then
+			var4_20(arg0_22)
 		end
 	end)
 
-	var0 = getProxy(NavalAcademyProxy):fillStudens(var0)
+	var0_20 = getProxy(NavalAcademyProxy):fillStudens(var0_20)
 
-	return var0, var1
+	return var0_20, var1_20
 end
 
-return var0
+return var0_0

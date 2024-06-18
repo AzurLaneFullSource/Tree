@@ -1,9 +1,9 @@
-﻿local var0 = class("MiniGameConst")
+﻿local var0_0 = class("MiniGameConst")
 
-var0.MG_TYPE_1 = 1
-var0.MG_TYPE_2 = 2
-var0.MG_TYPE_3 = 3
-var0.MG_TYPE_4 = 4
-var0.MG_TYPE_5 = 5
+var0_0.MG_TYPE_1 = 1
+var0_0.MG_TYPE_2 = 2
+var0_0.MG_TYPE_3 = 3
+var0_0.MG_TYPE_4 = 4
+var0_0.MG_TYPE_5 = 5
 
-return var0
+return var0_0

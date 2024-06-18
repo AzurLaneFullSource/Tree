@@ -1,39 +1,39 @@
-﻿local var0 = class("GetMailListToIndexCommand", pm.SimpleCommand)
+﻿local var0_0 = class("GetMailListToIndexCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.index
-	local var2 = var0.callback
-	local var3 = getProxy(MailProxy)
-	local var4
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.index
+	local var2_1 = var0_1.callback
+	local var3_1 = getProxy(MailProxy)
+	local var4_1
 
-	local function var5(arg0)
-		local var0 = 1
-		local var1, var2 = getProxy(MailProxy):GetNextIndex()
+	local function var5_1(arg0_2)
+		local var0_2 = 1
+		local var1_2, var2_2 = getProxy(MailProxy):GetNextIndex()
 
 		pg.ConnectionMgr.GetInstance():Send(30002, {
 			type = 1,
-			index_begin = var1,
-			index_end = var2
-		}, 30003, function(arg0)
-			local var0 = underscore.map(arg0.mail_list, function(arg0)
-				return Mail.New(arg0)
+			index_begin = var1_2,
+			index_end = var2_2
+		}, 30003, function(arg0_3)
+			local var0_3 = underscore.map(arg0_3.mail_list, function(arg0_4)
+				return Mail.New(arg0_4)
 			end)
 
-			var3:AddNextMails(var0)
+			var3_1:AddNextMails(var0_3)
 
-			if #var3.ids < var1 then
-				var5(arg0)
+			if #var3_1.ids < var1_1 then
+				var5_1(arg0_2)
 			else
-				arg0()
+				arg0_2()
 			end
 		end)
 	end
 
-	var5(function()
-		existCall(var2)
-		arg0:sendNotification(GAME.GET_MAIL_LIST_TO_INDEX_DONE)
+	var5_1(function()
+		existCall(var2_1)
+		arg0_1:sendNotification(GAME.GET_MAIL_LIST_TO_INDEX_DONE)
 	end)
 end
 
-return var0
+return var0_0

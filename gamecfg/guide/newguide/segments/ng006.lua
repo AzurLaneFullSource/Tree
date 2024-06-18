@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Start by going to the Buy menu to purchase a Cat Box from Akashi!"
 }
 
@@ -12,7 +12,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 0,
-				text = var0[1]
+				text = var0_0[1]
 			}
 		},
 		{

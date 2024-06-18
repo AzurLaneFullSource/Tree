@@ -1,39 +1,39 @@
-﻿local var0 = class("BossRushCMDFormationMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("BossRushCMDFormationMediator", import("view.base.ContextMediator"))
 
-function var0.register(arg0)
-	local var0 = getProxy(CommanderProxy):getPrefabFleet()
+function var0_0.register(arg0_1)
+	local var0_1 = getProxy(CommanderProxy):getPrefabFleet()
 
-	arg0.viewComponent:updateFleet(arg0.contextData.fleet)
-	arg0.viewComponent:setCommanderPrefabs(var0)
-	arg0.viewComponent:setCallback(arg0.contextData.callback)
+	arg0_1.viewComponent:updateFleet(arg0_1.contextData.fleet)
+	arg0_1.viewComponent:setCommanderPrefabs(var0_1)
+	arg0_1.viewComponent:setCallback(arg0_1.contextData.callback)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_2)
 	return {
 		CommanderProxy.PREFAB_FLEET_UPDATE,
 		GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_3, arg1_3)
+	local var0_3 = arg1_3:getName()
+	local var1_3 = arg1_3:getBody()
 
-	if var0 == nil then
+	if var0_3 == nil then
 		-- block empty
-	elseif var0 == CommanderProxy.PREFAB_FLEET_UPDATE then
-		local var2 = getProxy(CommanderProxy):getPrefabFleet()
+	elseif var0_3 == CommanderProxy.PREFAB_FLEET_UPDATE then
+		local var2_3 = getProxy(CommanderProxy):getPrefabFleet()
 
-		arg0.viewComponent:setCommanderPrefabs(var2)
-	elseif var0 == GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE then
-		arg0.viewComponent:updateRecordFleet()
-		arg0.viewComponent:updateDesc()
-		arg0.viewComponent:updateRecordPanel()
+		arg0_3.viewComponent:setCommanderPrefabs(var2_3)
+	elseif var0_3 == GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE then
+		arg0_3.viewComponent:updateRecordFleet()
+		arg0_3.viewComponent:updateDesc()
+		arg0_3.viewComponent:updateRecordPanel()
 	end
 end
 
-function var0.remove(arg0)
+function var0_0.remove(arg0_4)
 	return
 end
 
-return var0
+return var0_0

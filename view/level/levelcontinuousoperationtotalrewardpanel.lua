@@ -1,93 +1,93 @@
-﻿local var0 = class("LevelContinuousOperationTotalRewardPanel", import("view.level.LevelStageTotalRewardPanel"))
+﻿local var0_0 = class("LevelContinuousOperationTotalRewardPanel", import("view.level.LevelStageTotalRewardPanel"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "LevelContinuousOperationTotalRewardPanel"
 end
 
-function var0.init(arg0)
-	var0.super.init(arg0)
+function var0_0.init(arg0_2)
+	var0_0.super.init(arg0_2)
 end
 
-function var0.didEnter(arg0)
-	var0.super.didEnter(arg0)
+function var0_0.didEnter(arg0_3)
+	var0_0.super.didEnter(arg0_3)
 end
 
-function var0.UpdateView(arg0)
-	var0.super.UpdateView(arg0)
-	setActive(arg0.boxView, true)
-	setActive(arg0.emptyTip, false)
+function var0_0.UpdateView(arg0_4)
+	var0_0.super.UpdateView(arg0_4)
+	setActive(arg0_4.boxView, true)
+	setActive(arg0_4.emptyTip, false)
 
-	local var0 = arg0.contextData.continuousData
-	local var1 = var0:GetTotalBattleTime()
-	local var2 = arg0.contextData.chapter:GetMaxBattleCount()
-	local var3 = math.min(var1, var2)
-	local var4 = var3 > 0 and var0:IsActive()
+	local var0_4 = arg0_4.contextData.continuousData
+	local var1_4 = var0_4:GetTotalBattleTime()
+	local var2_4 = arg0_4.contextData.chapter:GetMaxBattleCount()
+	local var3_4 = math.min(var1_4, var2_4)
+	local var4_4 = var3_4 > 0 and var0_4:IsActive()
 
-	onButton(arg0, arg0.window:Find("Fixed/ButtonGO"), function()
-		if arg0.contextData.spItemID and not (PlayerPrefs.GetInt("autoFight_firstUse_sp", 0) == 1) then
+	onButton(arg0_4, arg0_4.window:Find("Fixed/ButtonGO"), function()
+		if arg0_4.contextData.spItemID and not (PlayerPrefs.GetInt("autoFight_firstUse_sp", 0) == 1) then
 			PlayerPrefs.SetInt("autoFight_firstUse_sp", 1)
 			PlayerPrefs.Save()
 
-			local function var0()
-				arg0.contextData.spItemID = nil
+			local function var0_5()
+				arg0_4.contextData.spItemID = nil
 
-				arg0:UpdateSPItem()
+				arg0_4:UpdateSPItem()
 			end
 
-			arg0:HandleShowMsgBox({
+			arg0_4:HandleShowMsgBox({
 				hideNo = true,
 				content = i18n("autofight_special_operation_tip"),
-				onYes = var0,
-				onNo = var0
+				onYes = var0_5,
+				onNo = var0_5
 			})
 
 			return
 		end
 
-		local var1 = Chapter.GetSPOperationItemCacheKey(arg0.contextData.chapter.id)
+		local var1_5 = Chapter.GetSPOperationItemCacheKey(arg0_4.contextData.chapter.id)
 
-		PlayerPrefs.SetInt(var1, arg0.contextData.spItemID or 0)
+		PlayerPrefs.SetInt(var1_5, arg0_4.contextData.spItemID or 0)
 
-		if var4 then
-			getProxy(ChapterProxy):InitContinuousTime(SYSTEM_SCENARIO, var3)
+		if var4_4 then
+			getProxy(ChapterProxy):InitContinuousTime(SYSTEM_SCENARIO, var3_4)
 		end
 
-		local var2 = true
+		local var2_5 = true
 
-		arg0:emit(LevelMediator2.ON_RETRACKING, arg0.contextData.chapter, var2)
-		arg0:closeView()
+		arg0_4:emit(LevelMediator2.ON_RETRACKING, arg0_4.contextData.chapter, var2_5)
+		arg0_4:closeView()
 	end, SFX_CONFIRM)
 
-	local var5 = {}
-	local var6 = var0:IsActive()
+	local var5_4 = {}
+	local var6_4 = var0_4:IsActive()
 
-	if var6 then
-		table.insert(var5, i18n("multiple_sorties_finish"))
+	if var6_4 then
+		table.insert(var5_4, i18n("multiple_sorties_finish"))
 	else
-		table.insert(var5, i18n("multiple_sorties_stop"))
+		table.insert(var5_4, i18n("multiple_sorties_stop"))
 	end
 
-	setActive(arg0.boxView:Find("Content/TextArea2/Title/Sucess"), var6)
-	setActive(arg0.boxView:Find("Content/TextArea2/Title/Failure"), not var6)
-	table.insert(var5, i18n("multiple_sorties_main_end", var1, var1 - var0:GetRestBattleTime()))
+	setActive(arg0_4.boxView:Find("Content/TextArea2/Title/Sucess"), var6_4)
+	setActive(arg0_4.boxView:Find("Content/TextArea2/Title/Failure"), not var6_4)
+	table.insert(var5_4, i18n("multiple_sorties_main_end", var1_4, var1_4 - var0_4:GetRestBattleTime()))
 
-	if #var5 > 0 then
-		setText(arg0.boxView:Find("Content/TextArea2/Title/Text"), var5[1])
-		setText(arg0.boxView:Find("Content/TextArea2/Detail"), var5[2])
+	if #var5_4 > 0 then
+		setText(arg0_4.boxView:Find("Content/TextArea2/Title/Text"), var5_4[1])
+		setText(arg0_4.boxView:Find("Content/TextArea2/Detail"), var5_4[2])
 	end
 
-	if var4 then
-		local var7 = arg0.contextData.chapter:GetRestDailyBonus()
+	if var4_4 then
+		local var7_4 = arg0_4.contextData.chapter:GetRestDailyBonus()
 
-		setActive(arg0.spList, go(arg0.spList).activeSelf and var7 < var3)
+		setActive(arg0_4.spList, go(arg0_4.spList).activeSelf and var7_4 < var3_4)
 	end
 
-	setActive(arg0.window:Find("RetryTimes"), var4)
-	setText(arg0.window:Find("RetryTimes/Text"), i18n("multiple_sorties_retry_desc", var3))
+	setActive(arg0_4.window:Find("RetryTimes"), var4_4)
+	setText(arg0_4.window:Find("RetryTimes/Text"), i18n("multiple_sorties_retry_desc", var3_4))
 end
 
-function var0.willExit(arg0)
-	var0.super.willExit(arg0)
+function var0_0.willExit(arg0_7)
+	var0_0.super.willExit(arg0_7)
 end
 
-return var0
+return var0_0

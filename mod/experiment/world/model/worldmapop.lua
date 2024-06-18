@@ -1,6 +1,6 @@
-﻿local var0 = class("WorldMapOp", import("...BaseEntity"))
+﻿local var0_0 = class("WorldMapOp", import("...BaseEntity"))
 
-var0.Fields = {
+var0_0.Fields = {
 	updateAttachmentCells = "table",
 	fleetUpdates = "table",
 	anim = "string",
@@ -37,304 +37,304 @@ var0.Fields = {
 	destGridId = "number"
 }
 
-function var0.Apply(arg0)
-	assert(not arg0.applied, "current op has been applied.")
+function var0_0.Apply(arg0_1)
+	assert(not arg0_1.applied, "current op has been applied.")
 
-	arg0.applied = true
+	arg0_1.applied = true
 
-	local var0 = getProxy(WorldProxy)
-	local var1 = nowWorld()
-	local var2 = var1:GetActiveMap()
+	local var0_1 = getProxy(WorldProxy)
+	local var1_1 = nowWorld()
+	local var2_1 = var1_1:GetActiveMap()
 
-	if arg0.op == WorldConst.OpReqMoveFleet then
-		var1:IncRound()
-	elseif arg0.op == WorldConst.OpReqRound then
-		var1:IncRound()
-	elseif arg0.op == WorldConst.OpReqEvent then
-		local var3 = var2:GetFleet(arg0.id)
-		local var4 = arg0.effect
-		local var5 = var4.effect_type
-		local var6 = var4.effect_paramater
+	if arg0_1.op == WorldConst.OpReqMoveFleet then
+		var1_1:IncRound()
+	elseif arg0_1.op == WorldConst.OpReqRound then
+		var1_1:IncRound()
+	elseif arg0_1.op == WorldConst.OpReqEvent then
+		local var3_1 = var2_1:GetFleet(arg0_1.id)
+		local var4_1 = arg0_1.effect
+		local var5_1 = var4_1.effect_type
+		local var6_1 = var4_1.effect_paramater
 
-		if var5 == WorldMapAttachment.EffectEventTeleport or var5 == WorldMapAttachment.EffectEventTeleportBack then
-			assert(arg0.destMapId and arg0.destMapId > 0)
-			var0:NetUpdateActiveMap(arg0.entranceId, arg0.destMapId, arg0.destGridId)
-		elseif var5 == WorldMapAttachment.EffectEventShipBuff then
-			local var7 = var6[1]
+		if var5_1 == WorldMapAttachment.EffectEventTeleport or var5_1 == WorldMapAttachment.EffectEventTeleportBack then
+			assert(arg0_1.destMapId and arg0_1.destMapId > 0)
+			var0_1:NetUpdateActiveMap(arg0_1.entranceId, arg0_1.destMapId, arg0_1.destGridId)
+		elseif var5_1 == WorldMapAttachment.EffectEventShipBuff then
+			local var7_1 = var6_1[1]
 
-			_.each(var3:GetShips(true), function(arg0)
-				arg0:AddBuff(var7, 1)
+			_.each(var3_1:GetShips(true), function(arg0_2)
+				arg0_2:AddBuff(var7_1, 1)
 			end)
-		elseif var5 == WorldMapAttachment.EffectEventAchieveCarry then
-			_.each(var6, function(arg0)
-				local var0 = WorldCarryItem.New()
+		elseif var5_1 == WorldMapAttachment.EffectEventAchieveCarry then
+			_.each(var6_1, function(arg0_3)
+				local var0_3 = WorldCarryItem.New()
 
-				var0:Setup(arg0)
-				var3:AddCarry(var0)
+				var0_3:Setup(arg0_3)
+				var3_1:AddCarry(var0_3)
 			end)
-		elseif var5 == WorldMapAttachment.EffectEventConsumeCarry then
-			local var8 = var6[1] or {}
+		elseif var5_1 == WorldMapAttachment.EffectEventConsumeCarry then
+			local var8_1 = var6_1[1] or {}
 
-			_.each(var8, function(arg0)
-				var3:RemoveCarry(arg0)
+			_.each(var8_1, function(arg0_4)
+				var3_1:RemoveCarry(arg0_4)
 			end)
-		elseif var5 == WorldMapAttachment.EffectEventConsumeItem then
-			var1:GetInventoryProxy():RemoveItem(var6[1], var6[2])
-		elseif var5 == WorldMapAttachment.EffectEventDropTreasure then
-			var1.treasureCount = var1.treasureCount + 1
-		elseif var5 == WorldMapAttachment.EffectEventFOV then
-			var2:EventEffectOpenFOV(var4)
-		elseif var5 == WorldMapAttachment.EffectEventProgress then
-			local var9 = math.max(var1:GetProgress(), var6[1])
+		elseif var5_1 == WorldMapAttachment.EffectEventConsumeItem then
+			var1_1:GetInventoryProxy():RemoveItem(var6_1[1], var6_1[2])
+		elseif var5_1 == WorldMapAttachment.EffectEventDropTreasure then
+			var1_1.treasureCount = var1_1.treasureCount + 1
+		elseif var5_1 == WorldMapAttachment.EffectEventFOV then
+			var2_1:EventEffectOpenFOV(var4_1)
+		elseif var5_1 == WorldMapAttachment.EffectEventProgress then
+			local var9_1 = math.max(var1_1:GetProgress(), var6_1[1])
 
-			var1:UpdateProgress(var9)
-		elseif var5 == WorldMapAttachment.EffectEventDeleteTask then
-			local var10 = var1:GetTaskProxy()
+			var1_1:UpdateProgress(var9_1)
+		elseif var5_1 == WorldMapAttachment.EffectEventDeleteTask then
+			local var10_1 = var1_1:GetTaskProxy()
 
-			for iter0, iter1 in ipairs(var6) do
-				var10:deleteTask(iter1)
+			for iter0_1, iter1_1 in ipairs(var6_1) do
+				var10_1:deleteTask(iter1_1)
 			end
-		elseif var5 == WorldMapAttachment.EffectEventGlobalBuff then
-			var1:AddGlobalBuff(var6[1], var6[2])
-		elseif var5 == WorldMapAttachment.EffectEventMapClearFlag then
-			var2:UpdateClearFlag(var6[1] == 1)
-		elseif var5 == WorldMapAttachment.EffectEventBrokenClean then
-			for iter2, iter3 in ipairs(var1:GetShips()) do
-				if iter3:IsBroken() then
-					iter3:RemoveBuff(WorldConst.BrokenBuffId)
+		elseif var5_1 == WorldMapAttachment.EffectEventGlobalBuff then
+			var1_1:AddGlobalBuff(var6_1[1], var6_1[2])
+		elseif var5_1 == WorldMapAttachment.EffectEventMapClearFlag then
+			var2_1:UpdateClearFlag(var6_1[1] == 1)
+		elseif var5_1 == WorldMapAttachment.EffectEventBrokenClean then
+			for iter2_1, iter3_1 in ipairs(var1_1:GetShips()) do
+				if iter3_1:IsBroken() then
+					iter3_1:RemoveBuff(WorldConst.BrokenBuffId)
 				end
 			end
-		elseif var5 == WorldMapAttachment.EffectEventCatSalvage then
+		elseif var5_1 == WorldMapAttachment.EffectEventCatSalvage then
 			-- block empty
-		elseif var5 == WorldMapAttachment.EffectEventAddWorldBossFreeCount then
+		elseif var5_1 == WorldMapAttachment.EffectEventAddWorldBossFreeCount then
 			nowWorld():GetBossProxy():AddSummonFree(1)
 		end
 
-		if #var4.sound_effects > 0 then
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:" .. var4.sound_effects)
+		if #var4_1.sound_effects > 0 then
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:" .. var4_1.sound_effects)
 		end
-	elseif arg0.op == WorldConst.OpReqDiscover then
-		_.each(arg0.locations, function(arg0)
-			var2:GetCell(arg0.row, arg0.column):UpdateDiscovered(true)
+	elseif arg0_1.op == WorldConst.OpReqDiscover then
+		_.each(arg0_1.locations, function(arg0_5)
+			var2_1:GetCell(arg0_5.row, arg0_5.column):UpdateDiscovered(true)
 		end)
-		_.each(arg0.hiddenAttachments, function(arg0)
-			arg0:UpdateLurk(false)
+		_.each(arg0_1.hiddenAttachments, function(arg0_6)
+			arg0_6:UpdateLurk(false)
 		end)
-	elseif arg0.op == WorldConst.OpReqTransport then
-		assert(arg0.destMapId and arg0.destMapId > 0)
-		var0:NetUpdateActiveMap(arg0.entranceId, arg0.destMapId, arg0.destGridId)
+	elseif arg0_1.op == WorldConst.OpReqTransport then
+		assert(arg0_1.destMapId and arg0_1.destMapId > 0)
+		var0_1:NetUpdateActiveMap(arg0_1.entranceId, arg0_1.destMapId, arg0_1.destGridId)
 
-		local var11 = var1:TreasureMap2ItemId(arg0.destMapId, arg0.entranceId)
+		local var11_1 = var1_1:TreasureMap2ItemId(arg0_1.destMapId, arg0_1.entranceId)
 
-		if var11 then
-			var1:GetInventoryProxy():RemoveItem(var11, 1)
+		if var11_1 then
+			var1_1:GetInventoryProxy():RemoveItem(var11_1, 1)
 		end
-	elseif arg0.op == WorldConst.OpReqSub then
-		var1:ResetSubmarine()
-		var1:UpdateSubmarineSupport(true)
+	elseif arg0_1.op == WorldConst.OpReqSub then
+		var1_1:ResetSubmarine()
+		var1_1:UpdateSubmarineSupport(true)
 
-		local var12 = var1:GetActiveMap()
-	elseif arg0.op == WorldConst.OpReqPressingMap then
-		local var13 = arg0.arg1
+		local var12_1 = var1_1:GetActiveMap()
+	elseif arg0_1.op == WorldConst.OpReqPressingMap then
+		local var13_1 = arg0_1.arg1
 
-		var1:FlagMapPressingAward(var13)
-		var1:GetAtlas():AddPressingMap(var13)
+		var1_1:FlagMapPressingAward(var13_1)
+		var1_1:GetAtlas():AddPressingMap(var13_1)
 
-		local var14 = var1:GetMap(var13)
+		local var14_1 = var1_1:GetMap(var13_1)
 
-		if not var14.visionFlag and nowWorld():IsMapVisioned(var13) then
-			var14:UpdateVisionFlag(true)
+		if not var14_1.visionFlag and nowWorld():IsMapVisioned(var13_1) then
+			var14_1:UpdateVisionFlag(true)
 		end
-	elseif arg0.op == WorldConst.OpReqJumpOut then
-		assert(arg0.destMapId and arg0.destMapId > 0)
+	elseif arg0_1.op == WorldConst.OpReqJumpOut then
+		assert(arg0_1.destMapId and arg0_1.destMapId > 0)
 
-		local var15 = pg.world_chapter_template_reset[var2.gid].reset_item
-		local var16 = var1:GetInventoryProxy()
+		local var15_1 = pg.world_chapter_template_reset[var2_1.gid].reset_item
+		local var16_1 = var1_1:GetInventoryProxy()
 
-		_.each(var15, function(arg0)
-			var16:RemoveItem(arg0)
+		_.each(var15_1, function(arg0_7)
+			var16_1:RemoveItem(arg0_7)
 		end)
-		var0:NetUpdateActiveMap(arg0.entranceId, arg0.destMapId, arg0.destGridId)
+		var0_1:NetUpdateActiveMap(arg0_1.entranceId, arg0_1.destMapId, arg0_1.destGridId)
 
-		var2 = var1:GetActiveMap()
-	elseif arg0.op == WorldConst.OpReqEnterPort then
+		var2_1 = var1_1:GetActiveMap()
+	elseif arg0_1.op == WorldConst.OpReqEnterPort then
 		-- block empty
-	elseif arg0.op == WorldConst.OpReqCatSalvage then
-		var2:GetFleet(arg0.id):UpdateCatSalvage(0, nil, 0)
-	elseif arg0.op == WorldConst.OpReqSkipBattle then
-		var2:WriteBack(true, {
+	elseif arg0_1.op == WorldConst.OpReqCatSalvage then
+		var2_1:GetFleet(arg0_1.id):UpdateCatSalvage(0, nil, 0)
+	elseif arg0_1.op == WorldConst.OpReqSkipBattle then
+		var2_1:WriteBack(true, {
 			statistics = {},
 			hpDropInfo = {}
 		})
-	elseif arg0.op == WorldConst.OpActionFleetMove then
-		local var17 = arg0.path[#arg0.path]
+	elseif arg0_1.op == WorldConst.OpActionFleetMove then
+		local var17_1 = arg0_1.path[#arg0_1.path]
 
-		var2:UpdateFleetLocation(arg0.id, var17.row, var17.column)
+		var2_1:UpdateFleetLocation(arg0_1.id, var17_1.row, var17_1.column)
 
-		var1.stepCount = var1.stepCount + #arg0.path
-	elseif arg0.op == WorldConst.OpActionMoveStep then
-		arg0:ApplyAttachmentUpdate()
-		_.each(arg0.hiddenCells, function(arg0)
-			arg0:UpdateDiscovered(true)
+		var1_1.stepCount = var1_1.stepCount + #arg0_1.path
+	elseif arg0_1.op == WorldConst.OpActionMoveStep then
+		arg0_1:ApplyAttachmentUpdate()
+		_.each(arg0_1.hiddenCells, function(arg0_8)
+			arg0_8:UpdateDiscovered(true)
 		end)
 
-		local var18 = var2:GetFleet(arg0.id)
-		local var19 = var2:GetCell(var18.row, var18.column):GetEventAttachment()
+		local var18_1 = var2_1:GetFleet(arg0_1.id)
+		local var19_1 = var2_1:GetCell(var18_1.row, var18_1.column):GetEventAttachment()
 
-		if var19 and var19:IsTriggered() then
-			var19.triggered = false
+		if var19_1 and var19_1:IsTriggered() then
+			var19_1.triggered = false
 		end
 
-		if arg0.updateCarryItems and #arg0.updateCarryItems > 0 then
-			local var20 = var18:GetCarries()
+		if arg0_1.updateCarryItems and #arg0_1.updateCarryItems > 0 then
+			local var20_1 = var18_1:GetCarries()
 
-			assert(#var20 == #arg0.updateCarryItems)
+			assert(#var20_1 == #arg0_1.updateCarryItems)
 
-			for iter4, iter5 in ipairs(var20) do
-				iter5:UpdateOffset(arg0.updateCarryItems[iter4].offsetRow, arg0.updateCarryItems[iter4].offsetColumn)
+			for iter4_1, iter5_1 in ipairs(var20_1) do
+				iter5_1:UpdateOffset(arg0_1.updateCarryItems[iter4_1].offsetRow, arg0_1.updateCarryItems[iter4_1].offsetColumn)
 			end
 
-			WPool:ReturnArray(arg0.updateCarryItems)
+			WPool:ReturnArray(arg0_1.updateCarryItems)
 
-			arg0.updateCarryItems = nil
+			arg0_1.updateCarryItems = nil
 		end
 
-		var2:UpdateFleetLocation(arg0.id, arg0.pos.row, arg0.pos.column)
-		_.each(arg0.hiddenAttachments, function(arg0)
-			arg0:UpdateLurk(false)
+		var2_1:UpdateFleetLocation(arg0_1.id, arg0_1.pos.row, arg0_1.pos.column)
+		_.each(arg0_1.hiddenAttachments, function(arg0_9)
+			arg0_9:UpdateLurk(false)
 		end)
-	elseif arg0.op == WorldConst.OpActionAttachmentMove then
-		assert(#arg0.path > 0)
+	elseif arg0_1.op == WorldConst.OpActionAttachmentMove then
+		assert(#arg0_1.path > 0)
 
-		local var21 = arg0.attachment:Clone()
-		local var22 = arg0.path[#arg0.path]
+		local var21_1 = arg0_1.attachment:Clone()
+		local var22_1 = arg0_1.path[#arg0_1.path]
 
-		var2:GetCell(arg0.attachment.row, arg0.attachment.column):RemoveAttachment(arg0.attachment)
+		var2_1:GetCell(arg0_1.attachment.row, arg0_1.attachment.column):RemoveAttachment(arg0_1.attachment)
 
-		local var23 = var2:GetCell(var22.row, var22.column)
+		local var23_1 = var2_1:GetCell(var22_1.row, var22_1.column)
 
-		assert(var23, "dest cell not exist: " .. var22.row .. ", " .. var22.column)
+		assert(var23_1, "dest cell not exist: " .. var22_1.row .. ", " .. var22_1.column)
 
-		var21.row = var22.row
-		var21.column = var22.column
+		var21_1.row = var22_1.row
+		var21_1.column = var22_1.column
 
-		var23:AddAttachment(var21)
-	elseif arg0.op == WorldConst.OpActionEventOp then
-		local var24 = arg0.effect
+		var23_1:AddAttachment(var21_1)
+	elseif arg0_1.op == WorldConst.OpActionEventOp then
+		local var24_1 = arg0_1.effect
 
-		if var24.effect_type == WorldMapAttachment.EffectEventFOV then
-			var2:EventEffectOpenFOV(var24)
+		if var24_1.effect_type == WorldMapAttachment.EffectEventFOV then
+			var2_1:EventEffectOpenFOV(var24_1)
 		end
 
-		arg0.attachment:UpdateDataOp(arg0.attachment.dataop - 1)
-	elseif arg0.op == WorldConst.OpActionTaskGoto then
-		local var25 = arg0.effect
+		arg0_1.attachment:UpdateDataOp(arg0_1.attachment.dataop - 1)
+	elseif arg0_1.op == WorldConst.OpActionTaskGoto then
+		local var25_1 = arg0_1.effect
 
-		if var25.effect_type == WorldMapAttachment.EffectEventFOV then
-			var2:EventEffectOpenFOV(var25)
+		if var25_1.effect_type == WorldMapAttachment.EffectEventFOV then
+			var2_1:EventEffectOpenFOV(var25_1)
 		end
 	end
 
-	if arg0.childOps then
-		_.each(arg0.childOps, function(arg0)
-			if not arg0.applied then
-				arg0:Apply()
-			end
-		end)
-	end
-
-	if arg0.stepOps then
-		_.each(arg0.stepOps, function(arg0)
-			if not arg0.applied then
-				arg0:Apply()
+	if arg0_1.childOps then
+		_.each(arg0_1.childOps, function(arg0_10)
+			if not arg0_10.applied then
+				arg0_10:Apply()
 			end
 		end)
 	end
 
-	arg0:ApplyAttachmentUpdate()
-	arg0:ApplyNetUpdate()
+	if arg0_1.stepOps then
+		_.each(arg0_1.stepOps, function(arg0_11)
+			if not arg0_11.applied then
+				arg0_11:Apply()
+			end
+		end)
+	end
 
-	if arg0.callbacksWhenApplied then
-		_.each(arg0.callbacksWhenApplied, function(arg0)
-			arg0()
+	arg0_1:ApplyAttachmentUpdate()
+	arg0_1:ApplyNetUpdate()
+
+	if arg0_1.callbacksWhenApplied then
+		_.each(arg0_1.callbacksWhenApplied, function(arg0_12)
+			arg0_12()
 		end)
 	end
 end
 
-function var0.ApplyAttachmentUpdate(arg0)
-	local var0 = getProxy(WorldProxy)
-	local var1 = nowWorld():GetActiveMap()
+function var0_0.ApplyAttachmentUpdate(arg0_13)
+	local var0_13 = getProxy(WorldProxy)
+	local var1_13 = nowWorld():GetActiveMap()
 
-	if arg0.updateAttachmentCells then
-		var0:UpdateMapAttachmentCells(var1.id, arg0.updateAttachmentCells)
+	if arg0_13.updateAttachmentCells then
+		var0_13:UpdateMapAttachmentCells(var1_13.id, arg0_13.updateAttachmentCells)
 
-		for iter0, iter1 in pairs(arg0.updateAttachmentCells) do
-			local var2 = var1:GetCell(iter1.pos.row, iter1.pos.column)
+		for iter0_13, iter1_13 in pairs(arg0_13.updateAttachmentCells) do
+			local var2_13 = var1_13:GetCell(iter1_13.pos.row, iter1_13.pos.column)
 
-			_.each(iter1.attachmentList, function(arg0)
-				if not var2:ContainsAttachment(arg0) then
-					WPool:Return(arg0)
+			_.each(iter1_13.attachmentList, function(arg0_14)
+				if not var2_13:ContainsAttachment(arg0_14) then
+					WPool:Return(arg0_14)
 				end
 			end)
 		end
 
-		arg0.updateAttachmentCells = nil
+		arg0_13.updateAttachmentCells = nil
 	end
 end
 
-function var0.ApplyNetUpdate(arg0)
-	local var0 = getProxy(WorldProxy)
-	local var1 = nowWorld()
-	local var2 = var1:GetActiveMap()
+function var0_0.ApplyNetUpdate(arg0_15)
+	local var0_15 = getProxy(WorldProxy)
+	local var1_15 = nowWorld()
+	local var2_15 = var1_15:GetActiveMap()
 
-	if arg0.staminaUpdate then
-		var1.staminaMgr:ChangeStamina(arg0.staminaUpdate[1], arg0.staminaUpdate[2])
+	if arg0_15.staminaUpdate then
+		var1_15.staminaMgr:ChangeStamina(arg0_15.staminaUpdate[1], arg0_15.staminaUpdate[2])
 
-		arg0.staminaUpdate = nil
+		arg0_15.staminaUpdate = nil
 	end
 
-	if arg0.shipUpdates and #arg0.shipUpdates > 0 then
-		var0:ApplyShipUpdate(arg0.shipUpdates)
-		WPool:ReturnArray(arg0.shipUpdates)
+	if arg0_15.shipUpdates and #arg0_15.shipUpdates > 0 then
+		var0_15:ApplyShipUpdate(arg0_15.shipUpdates)
+		WPool:ReturnArray(arg0_15.shipUpdates)
 
-		arg0.shipUpdates = nil
+		arg0_15.shipUpdates = nil
 	end
 
-	if arg0.fleetAttachUpdates and #arg0.fleetAttachUpdates > 0 then
-		var0:ApplyFleetAttachUpdate(var2.id, arg0.fleetAttachUpdates)
-		WPool:ReturnArray(arg0.fleetAttachUpdates)
+	if arg0_15.fleetAttachUpdates and #arg0_15.fleetAttachUpdates > 0 then
+		var0_15:ApplyFleetAttachUpdate(var2_15.id, arg0_15.fleetAttachUpdates)
+		WPool:ReturnArray(arg0_15.fleetAttachUpdates)
 
-		arg0.fleetAttachUpdates = nil
+		arg0_15.fleetAttachUpdates = nil
 	end
 
-	if arg0.fleetUpdates and #arg0.fleetUpdates > 0 then
-		var0:ApplyFleetUpdate(var2.id, arg0.fleetUpdates)
-		WPool:ReturnArray(arg0.fleetUpdates)
+	if arg0_15.fleetUpdates and #arg0_15.fleetUpdates > 0 then
+		var0_15:ApplyFleetUpdate(var2_15.id, arg0_15.fleetUpdates)
+		WPool:ReturnArray(arg0_15.fleetUpdates)
 
-		arg0.fleetUpdates = nil
+		arg0_15.fleetUpdates = nil
 	end
 
-	if arg0.terrainUpdates and #arg0.terrainUpdates > 0 then
-		var0:ApplyTerrainUpdate(var2.id, arg0.terrainUpdates)
-		WPool:ReturnArray(arg0.terrainUpdates)
+	if arg0_15.terrainUpdates and #arg0_15.terrainUpdates > 0 then
+		var0_15:ApplyTerrainUpdate(var2_15.id, arg0_15.terrainUpdates)
+		WPool:ReturnArray(arg0_15.terrainUpdates)
 
-		arg0.terrainUpdates = nil
+		arg0_15.terrainUpdates = nil
 	end
 
-	if arg0.salvageUpdates and #arg0.salvageUpdates > 0 then
-		var0:ApplySalvageUpdate(arg0.salvageUpdates)
-		WPool:ReturnArray(arg0.salvageUpdates)
+	if arg0_15.salvageUpdates and #arg0_15.salvageUpdates > 0 then
+		var0_15:ApplySalvageUpdate(arg0_15.salvageUpdates)
+		WPool:ReturnArray(arg0_15.salvageUpdates)
 
-		arg0.salvageUpdates = nil
+		arg0_15.salvageUpdates = nil
 	end
 end
 
-function var0.AddCallbackWhenApplied(arg0, arg1)
-	if not arg0.callbacksWhenApplied then
-		arg0.callbacksWhenApplied = {}
+function var0_0.AddCallbackWhenApplied(arg0_16, arg1_16)
+	if not arg0_16.callbacksWhenApplied then
+		arg0_16.callbacksWhenApplied = {}
 	end
 
-	table.insert(arg0.callbacksWhenApplied, arg1)
+	table.insert(arg0_16.callbacksWhenApplied, arg1_16)
 end
 
-return var0
+return var0_0

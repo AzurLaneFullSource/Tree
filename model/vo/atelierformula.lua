@@ -1,92 +1,92 @@
-﻿local var0 = class("AtelierFormula", import("model.vo.BaseVO"))
+﻿local var0_0 = class("AtelierFormula", import("model.vo.BaseVO"))
 
-var0.TYPE = {
+var0_0.TYPE = {
 	TOOL = 3,
 	EQUIP = 1,
 	OTHER = 4,
 	ITEM = 2
 }
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_1)
 	return pg.activity_ryza_recipe
 end
 
-function var0.Ctor(arg0, ...)
-	var0.super.Ctor(arg0, ...)
+function var0_0.Ctor(arg0_2, ...)
+	var0_0.super.Ctor(arg0_2, ...)
 
-	arg0.times = arg0.times or 0
+	arg0_2.times = arg0_2.times or 0
 end
 
-function var0.GetConfigID(arg0)
-	return arg0.configId
+function var0_0.GetConfigID(arg0_3)
+	return arg0_3.configId
 end
 
-function var0.GetName(arg0)
-	return arg0:getConfig("name")
+function var0_0.GetName(arg0_4)
+	return arg0_4:getConfig("name")
 end
 
-function var0.GetIconPath(arg0)
-	return arg0:getConfig("icon")
+function var0_0.GetIconPath(arg0_5)
+	return arg0_5:getConfig("icon")
 end
 
-function var0.GetType(arg0)
-	return arg0:getConfig("type")
+function var0_0.GetType(arg0_6)
+	return arg0_6:getConfig("type")
 end
 
-function var0.GetDesc(arg0)
-	return arg0:getConfig("display")
+function var0_0.GetDesc(arg0_7)
+	return arg0_7:getConfig("display")
 end
 
-function var0.GetMaxLimit(arg0)
-	return arg0:getConfig("item_num")
+function var0_0.GetMaxLimit(arg0_8)
+	return arg0_8:getConfig("item_num")
 end
 
-function var0.SetUsedCount(arg0, arg1)
-	arg0.times = arg1
+function var0_0.SetUsedCount(arg0_9, arg1_9)
+	arg0_9.times = arg1_9
 end
 
-function var0.GetUsedCount(arg0)
-	return arg0.times
+function var0_0.GetUsedCount(arg0_10)
+	return arg0_10.times
 end
 
-function var0.IsAvaliable(arg0)
-	return arg0:GetMaxLimit() < 0 or arg0:GetUsedCount() < arg0:GetMaxLimit()
+function var0_0.IsAvaliable(arg0_11)
+	return arg0_11:GetMaxLimit() < 0 or arg0_11:GetUsedCount() < arg0_11:GetMaxLimit()
 end
 
-function var0.GetProduction(arg0)
-	return arg0:getConfig("item_id")
+function var0_0.GetProduction(arg0_12)
+	return arg0_12:getConfig("item_id")
 end
 
-function var0.GetCircleList(arg0)
-	return arg0:getConfig("recipe_circle")
+function var0_0.GetCircleList(arg0_13)
+	return arg0_13:getConfig("recipe_circle")
 end
 
-function var0.IsFormualCanComposite(arg0, arg1)
-	local var0 = {}
-	local var1 = arg1:GetItems()
+function var0_0.IsFormualCanComposite(arg0_14, arg1_14)
+	local var0_14 = {}
+	local var1_14 = arg1_14:GetItems()
 
-	local function var2(arg0)
-		local var0 = var0[arg0:GetConfigID()] or Clone(var1[arg0:GetConfigID()])
+	local function var2_14(arg0_15)
+		local var0_15 = var0_14[arg0_15:GetConfigID()] or Clone(var1_14[arg0_15:GetConfigID()])
 
-		assert(var0, "Using Unexist material")
+		assert(var0_15, "Using Unexist material")
 
-		var0.count = var0.count - 1
-		var0[arg0:GetConfigID()] = var0
+		var0_15.count = var0_15.count - 1
+		var0_14[arg0_15:GetConfigID()] = var0_15
 	end
 
-	local var3 = _.map(arg0:GetCircleList(), function(arg0)
+	local var3_14 = _.map(arg0_14:GetCircleList(), function(arg0_16)
 		return AtelierFormulaCircle.New({
-			configId = arg0
+			configId = arg0_16
 		})
 	end)
 
-	if _.any(var3, function(arg0)
-		if arg0:GetType() == AtelierFormulaCircle.TYPE.BASE or arg0:GetType() == AtelierFormulaCircle.TYPE.SAIREN then
-			local var0 = arg0:GetLimitItemID()
-			local var1 = var0[var0] or var1[var0]
+	if _.any(var3_14, function(arg0_17)
+		if arg0_17:GetType() == AtelierFormulaCircle.TYPE.BASE or arg0_17:GetType() == AtelierFormulaCircle.TYPE.SAIREN then
+			local var0_17 = arg0_17:GetLimitItemID()
+			local var1_17 = var0_14[var0_17] or var1_14[var0_17]
 
-			if var1 and var1.count > 0 then
-				var2(var1)
+			if var1_17 and var1_17.count > 0 then
+				var2_14(var1_17)
 			else
 				return true
 			end
@@ -95,14 +95,14 @@ function var0.IsFormualCanComposite(arg0, arg1)
 		return false
 	end
 
-	local var4 = AtelierMaterial.bindConfigTable()
+	local var4_14 = AtelierMaterial.bindConfigTable()
 
-	local function var5(arg0)
-		for iter0, iter1 in ipairs(var4.all) do
-			local var0 = var0[iter1] or var1[iter1]
+	local function var5_14(arg0_18)
+		for iter0_18, iter1_18 in ipairs(var4_14.all) do
+			local var0_18 = var0_14[iter1_18] or var1_14[iter1_18]
 
-			if var0 and var0.count > 0 and arg0:CanUseMaterial(var0, arg0) then
-				var2(var0)
+			if var0_18 and var0_18.count > 0 and arg0_18:CanUseMaterial(var0_18, arg0_14) then
+				var2_14(var0_18)
 
 				return
 			end
@@ -111,17 +111,17 @@ function var0.IsFormualCanComposite(arg0, arg1)
 		return true
 	end
 
-	if _.any(var3, function(arg0)
-		if arg0:GetType() == AtelierFormulaCircle.TYPE.NORMAL then
-			return var5(arg0)
+	if _.any(var3_14, function(arg0_19)
+		if arg0_19:GetType() == AtelierFormulaCircle.TYPE.NORMAL then
+			return var5_14(arg0_19)
 		end
 	end) then
 		return false
 	end
 
-	if _.any(var3, function(arg0)
-		if arg0:GetType() == AtelierFormulaCircle.TYPE.ANY then
-			return var5(arg0)
+	if _.any(var3_14, function(arg0_20)
+		if arg0_20:GetType() == AtelierFormulaCircle.TYPE.ANY then
+			return var5_14(arg0_20)
 		end
 	end) then
 		return false
@@ -130,4 +130,4 @@ function var0.IsFormualCanComposite(arg0, arg1)
 	return true
 end
 
-return var0
+return var0_0

@@ -1,58 +1,58 @@
-﻿local var0 = class("ShipEvaluation", import(".BaseVO"))
+﻿local var0_0 = class("ShipEvaluation", import(".BaseVO"))
 
-function var0.Ctor(arg0, arg1)
-	arg0.id = arg1.ship_group_id
-	arg0.hearts = arg1.heart_count
-	arg0.evaCount = arg1.discuss_count
-	arg0.ievaCount = arg1.daily_discuss_count
-	arg0.evas = {}
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.id = arg1_1.ship_group_id
+	arg0_1.hearts = arg1_1.heart_count
+	arg0_1.evaCount = arg1_1.discuss_count
+	arg0_1.ievaCount = arg1_1.daily_discuss_count
+	arg0_1.evas = {}
 
-	for iter0, iter1 in ipairs(arg1.discuss_list) do
-		table.insert(arg0.evas, {
+	for iter0_1, iter1_1 in ipairs(arg1_1.discuss_list) do
+		table.insert(arg0_1.evas, {
 			hot = false,
 			izan = false,
-			id = iter1.id,
-			good_count = iter1.good_count,
-			bad_count = iter1.bad_count,
-			nick_name = iter1.nick_name,
-			context = iter1.context
+			id = iter1_1.id,
+			good_count = iter1_1.good_count,
+			bad_count = iter1_1.bad_count,
+			nick_name = iter1_1.nick_name,
+			context = iter1_1.context
 		})
 	end
 
-	arg0:sortEvas()
+	arg0_1:sortEvas()
 end
 
-function var0.sortEvas(arg0)
-	arg0.evas = _.sort(arg0.evas, function(arg0, arg1)
-		local var0 = arg0.good_count - arg0.bad_count
-		local var1 = arg1.good_count - arg1.bad_count
+function var0_0.sortEvas(arg0_2)
+	arg0_2.evas = _.sort(arg0_2.evas, function(arg0_3, arg1_3)
+		local var0_3 = arg0_3.good_count - arg0_3.bad_count
+		local var1_3 = arg1_3.good_count - arg1_3.bad_count
 
-		if var0 == var1 then
-			return arg0.id > arg1.id
+		if var0_3 == var1_3 then
+			return arg0_3.id > arg1_3.id
 		else
-			return var1 < var0
+			return var1_3 < var0_3
 		end
 	end)
 
-	local var0 = math.min(2, #arg0.evas)
-	local var1 = _(arg0.evas):chain():slice(var0 + 1, #arg0.evas - var0):sort(function(arg0, arg1)
-		local var0 = arg0.good_count - arg0.bad_count
-		local var1 = arg1.good_count - arg1.bad_count
+	local var0_2 = math.min(2, #arg0_2.evas)
+	local var1_2 = _(arg0_2.evas):chain():slice(var0_2 + 1, #arg0_2.evas - var0_2):sort(function(arg0_4, arg1_4)
+		local var0_4 = arg0_4.good_count - arg0_4.bad_count
+		local var1_4 = arg1_4.good_count - arg1_4.bad_count
 
-		if var0 <= -5 or var1 <= -5 then
-			return var1 < var0
+		if var0_4 <= -5 or var1_4 <= -5 then
+			return var1_4 < var0_4
 		else
-			return arg0.id > arg1.id
+			return arg0_4.id > arg1_4.id
 		end
 	end):value()
 
-	for iter0 = 1, #arg0.evas do
-		arg0.evas[iter0].hot = iter0 <= var0
+	for iter0_2 = 1, #arg0_2.evas do
+		arg0_2.evas[iter0_2].hot = iter0_2 <= var0_2
 
-		if var0 < iter0 then
-			arg0.evas[iter0] = var1[iter0 - var0]
+		if var0_2 < iter0_2 then
+			arg0_2.evas[iter0_2] = var1_2[iter0_2 - var0_2]
 		end
 	end
 end
 
-return var0
+return var0_0

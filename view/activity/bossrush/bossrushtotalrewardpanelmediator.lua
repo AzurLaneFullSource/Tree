@@ -1,9 +1,9 @@
-﻿local var0 = class("BossRushTotalRewardPanelMediator", import("view.activity.worldboss.ActivityBossTotalRewardPanelMediator"))
+﻿local var0_0 = class("BossRushTotalRewardPanelMediator", import("view.activity.worldboss.ActivityBossTotalRewardPanelMediator"))
 
-var0.ON_WILL_EXIT = "BossRushTotalRewardPanelMediator:ON_WILL_EXIT"
+var0_0.ON_WILL_EXIT = "BossRushTotalRewardPanelMediator:ON_WILL_EXIT"
 
-function var0.register(arg0)
+function var0_0.register(arg0_1)
 	getProxy(SettingsProxy):ResetContinuousOperationAutoSub()
 end
 
-return var0
+return var0_0

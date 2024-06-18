@@ -1,32 +1,32 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleBuffAddAircraftTag = class("BattleBuffAddAircraftTag", var0.Battle.BattleBuffEffect)
-var0.Battle.BattleBuffAddAircraftTag.__name = "BattleBuffAddAircraftTag"
+var0_0.Battle.BattleBuffAddAircraftTag = class("BattleBuffAddAircraftTag", var0_0.Battle.BattleBuffEffect)
+var0_0.Battle.BattleBuffAddAircraftTag.__name = "BattleBuffAddAircraftTag"
 
-local var1 = var0.Battle.BattleBuffAddAircraftTag
+local var1_0 = var0_0.Battle.BattleBuffAddAircraftTag
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	arg0._labelTag = arg0._tempData.arg_list.tag_list
+function var1_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	arg0_2._labelTag = arg0_2._tempData.arg_list.tag_list
 end
 
-function var1.onAircraftCreate(arg0, arg1, arg2, arg3)
-	if not arg0:equipIndexRequire(arg3.equipIndex) then
+function var1_0.onAircraftCreate(arg0_3, arg1_3, arg2_3, arg3_3)
+	if not arg0_3:equipIndexRequire(arg3_3.equipIndex) then
 		return
 	end
 
-	local var0 = arg3.aircraft
+	local var0_3 = arg3_3.aircraft
 
-	for iter0, iter1 in ipairs(arg0._labelTag) do
-		if string.find(iter1, "^[NT]_%d+$") then
+	for iter0_3, iter1_3 in ipairs(arg0_3._labelTag) do
+		if string.find(iter1_3, "^[NT]_%d+$") then
 			pg.TipsMgr.GetInstance():ShowTips(">>BattleBuffAddAircraftTag<<不允许使用'N_'或'T_'标签")
 		else
-			var0:AddLabelTag(iter1)
+			var0_3:AddLabelTag(iter1_3)
 		end
 	end
 end

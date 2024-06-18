@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_341 = {}
+var0_0.word_template_341 = {}
 
-local var1 = var0.word_template_341
+local var1_0 = var0_0.word_template_341
 
 function temp()
-	var1.摘 = {
+	var1_0.摘 = {
 		取 = {
 			犯 = {
 				人 = {
@@ -34,7 +34,7 @@ end
 temp()
 
 function temp()
-	var1.佔 = {
+	var1_0.佔 = {
 		領 = {
 			中 = {
 				環 = {
@@ -48,7 +48,7 @@ end
 temp()
 
 function temp()
-	var1.战 = {
+	var1_0.战 = {
 		斗 = {
 			弹 = {
 				this = true
@@ -97,7 +97,7 @@ end
 temp()
 
 function temp()
-	var1.站 = {
+	var1_0.站 = {
 		在 = {
 			马 = {
 				路 = {
@@ -139,7 +139,7 @@ end
 temp()
 
 function temp()
-	var1.驏 = {
+	var1_0.驏 = {
 		this = {
 			this = true
 		}
@@ -149,7 +149,7 @@ end
 temp()
 
 function temp()
-	var1.张 = {
+	var1_0.张 = {
 		柏 = {
 			笠 = {
 				this = true
@@ -505,7 +505,7 @@ end
 temp()
 
 function temp()
-	var1.章 = {
+	var1_0.章 = {
 		孝 = {
 			嚴 = {
 				this = true

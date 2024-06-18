@@ -1,34 +1,34 @@
-﻿local var0 = class("NewProbabilitySkinShopView", import("view.base.BaseSubView"))
+﻿local var0_0 = class("NewProbabilitySkinShopView", import("view.base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ProbabilitySkinShopItem"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.purchaseBtn = arg0:findTF("frame")
-	arg0.tipTxt = arg0:findTF("tip/Text"):GetComponent(typeof(Text))
-	arg0.icon = arg0:findTF("frame/icon/Image"):GetComponent(typeof(Image))
-	arg0.tag = arg0:findTF("frame/icon/tag"):GetComponent(typeof(Image))
-	arg0.nameTxt = arg0:findTF("frame/name/Text"):GetComponent(typeof(Text))
-	arg0.priceTxt = arg0:findTF("frame/price"):GetComponent(typeof(Text))
-	arg0.descTxt = arg0:findTF("frame/desc"):GetComponent(typeof(Text))
-	arg0.limitTxt = arg0:findTF("frame/count"):GetComponent(typeof(Text))
-	arg0.uiList = UIItemList.New(arg0:findTF("frame/awards"), arg0:findTF("frame/awards/award"))
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.purchaseBtn = arg0_2:findTF("frame")
+	arg0_2.tipTxt = arg0_2:findTF("tip/Text"):GetComponent(typeof(Text))
+	arg0_2.icon = arg0_2:findTF("frame/icon/Image"):GetComponent(typeof(Image))
+	arg0_2.tag = arg0_2:findTF("frame/icon/tag"):GetComponent(typeof(Image))
+	arg0_2.nameTxt = arg0_2:findTF("frame/name/Text"):GetComponent(typeof(Text))
+	arg0_2.priceTxt = arg0_2:findTF("frame/price"):GetComponent(typeof(Text))
+	arg0_2.descTxt = arg0_2:findTF("frame/desc"):GetComponent(typeof(Text))
+	arg0_2.limitTxt = arg0_2:findTF("frame/count"):GetComponent(typeof(Text))
+	arg0_2.uiList = UIItemList.New(arg0_2:findTF("frame/awards"), arg0_2:findTF("frame/awards/award"))
 
-	arg0._tf:SetSiblingIndex(2)
+	arg0_2._tf:SetSiblingIndex(2)
 end
 
-function var0.Show(arg0, arg1)
-	var0.super.Show(arg0)
-	arg0:UpdateCommodity(arg1)
-	arg0:UpdateTip()
+function var0_0.Show(arg0_3, arg1_3)
+	var0_0.super.Show(arg0_3)
+	arg0_3:UpdateCommodity(arg1_3)
+	arg0_3:UpdateTip()
 end
 
-function var0.Flush(arg0, arg1)
-	arg0:UpdateCommodity(arg1)
+function var0_0.Flush(arg0_4, arg1_4)
+	arg0_4:UpdateCommodity(arg1_4)
 end
 
-local function var1(arg0)
+local function var1_0(arg0_5)
 	return ({
 		"hot",
 		"new_tag",
@@ -36,103 +36,103 @@ local function var1(arg0)
 		"shuangbei_tag",
 		"activity",
 		"xianshi"
-	})[arg0] or "hot"
+	})[arg0_5] or "hot"
 end
 
-local function var2(arg0, arg1)
-	local var0 = arg1:getConfig("display")
+local function var2_0(arg0_6, arg1_6)
+	local var0_6 = arg1_6:getConfig("display")
 
-	arg0.uiList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = var0[arg1 + 1]
-			local var1 = {
-				type = var0[1],
-				id = var0[2],
-				count = var0[3]
+	arg0_6.uiList:make(function(arg0_7, arg1_7, arg2_7)
+		if arg0_7 == UIItemList.EventUpdate then
+			local var0_7 = var0_6[arg1_7 + 1]
+			local var1_7 = {
+				type = var0_7[1],
+				id = var0_7[2],
+				count = var0_7[3]
 			}
 
-			updateDrop(arg2, var1)
+			updateDrop(arg2_7, var1_7)
 		end
 	end)
-	arg0.uiList:align(#var0)
+	arg0_6.uiList:align(#var0_6)
 end
 
-function var0.UpdateCommodity(arg0, arg1)
-	local var0 = arg1:getConfig("picture")
+function var0_0.UpdateCommodity(arg0_8, arg1_8)
+	local var0_8 = arg1_8:getConfig("picture")
 
-	arg0.icon.sprite = LoadSprite("ChargeIcon/" .. var0)
+	arg0_8.icon.sprite = LoadSprite("ChargeIcon/" .. var0_8)
 
-	arg0.icon:SetNativeSize()
+	arg0_8.icon:SetNativeSize()
 
-	arg0.nameTxt.text = arg1:getConfig("name_display")
-	arg0.priceTxt.text = "$" .. arg1:getConfig("money")
-	arg0.limitTxt.text = arg1:GetLimitDesc()
-	arg0.descTxt.text = arg1:getConfig("descrip")
+	arg0_8.nameTxt.text = arg1_8:getConfig("name_display")
+	arg0_8.priceTxt.text = "$" .. arg1_8:getConfig("money")
+	arg0_8.limitTxt.text = arg1_8:GetLimitDesc()
+	arg0_8.descTxt.text = arg1_8:getConfig("descrip")
 
-	local var1 = arg1:getConfig("tag")
+	local var1_8 = arg1_8:getConfig("tag")
 
-	arg0.tag.sprite = LoadSprite("chargeTag", var1(var1))
+	arg0_8.tag.sprite = LoadSprite("chargeTag", var1_0(var1_8))
 
-	arg0.tag:SetNativeSize()
-	var2(arg0, arg1)
-	onButton(arg0, arg0.purchaseBtn, function()
-		if arg1:canPurchase() then
-			arg0:OnCharge(arg1)
+	arg0_8.tag:SetNativeSize()
+	var2_0(arg0_8, arg1_8)
+	onButton(arg0_8, arg0_8.purchaseBtn, function()
+		if arg1_8:canPurchase() then
+			arg0_8:OnCharge(arg1_8)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 		end
 	end, SFX_PANEL)
 end
 
-function var0.OnCharge(arg0, arg1)
-	local var0 = arg1
-	local var1 = underscore.map(var0:getConfig("extra_service_item"), function(arg0)
+function var0_0.OnCharge(arg0_10, arg1_10)
+	local var0_10 = arg1_10
+	local var1_10 = underscore.map(var0_10:getConfig("extra_service_item"), function(arg0_11)
 		return {
-			type = arg0[1],
-			id = arg0[2],
-			count = arg0[3]
+			type = arg0_11[1],
+			id = arg0_11[2],
+			count = arg0_11[3]
 		}
 	end)
-	local var2 = var0:getConfig("gem") + var0:getConfig("extra_gem")
+	local var2_10 = var0_10:getConfig("gem") + var0_10:getConfig("extra_gem")
 
-	if var2 > 0 then
-		table.insert(var1, {
+	if var2_10 > 0 then
+		table.insert(var1_10, {
 			id = 4,
 			type = 1,
-			count = var2
+			count = var2_10
 		})
 	end
 
-	local var3 = {
+	local var3_10 = {
 		isMonthCard = false,
 		isChargeType = true,
-		icon = "chargeicon/" .. var0:getConfig("picture"),
-		name = var0:getConfig("name_display"),
+		icon = "chargeicon/" .. var0_10:getConfig("picture"),
+		name = var0_10:getConfig("name_display"),
 		tipExtra = i18n("charge_title_getitem"),
-		extraItems = var1,
-		price = var0:getConfig("money"),
-		isLocalPrice = var0:IsLocalPrice(),
-		tagType = var0:getConfig("tag"),
-		descExtra = var0:getConfig("descrip_extra"),
-		limitArgs = var0:getConfig("limit_args"),
+		extraItems = var1_10,
+		price = var0_10:getConfig("money"),
+		isLocalPrice = var0_10:IsLocalPrice(),
+		tagType = var0_10:getConfig("tag"),
+		descExtra = var0_10:getConfig("descrip_extra"),
+		limitArgs = var0_10:getConfig("limit_args"),
 		onYes = function()
 			if ChargeConst.isNeedSetBirth() then
-				arg0:emit(NewProbabilitySkinShopMediator.OPEN_CHARGE_BIRTHDAY)
+				arg0_10:emit(NewProbabilitySkinShopMediator.OPEN_CHARGE_BIRTHDAY)
 			else
-				arg0:emit(NewProbabilitySkinShopMediator.CHARGE, var0.id)
+				arg0_10:emit(NewProbabilitySkinShopMediator.CHARGE, var0_10.id)
 			end
 		end
 	}
 
-	arg0:emit(NewProbabilitySkinShopMediator.OPEN_CHARGE_ITEM_PANEL, var3)
+	arg0_10:emit(NewProbabilitySkinShopMediator.OPEN_CHARGE_ITEM_PANEL, var3_10)
 end
 
-function var0.UpdateTip(arg0)
-	arg0.tipTxt.text = i18n("probabilityskinshop_tip")
+function var0_0.UpdateTip(arg0_13)
+	arg0_13.tipTxt.text = i18n("probabilityskinshop_tip")
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_14)
 	return
 end
 
-return var0
+return var0_0

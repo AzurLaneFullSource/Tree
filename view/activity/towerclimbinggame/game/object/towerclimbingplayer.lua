@@ -1,196 +1,196 @@
-﻿local var0 = class("TowerClimbingPlayer")
-local var1 = 0.6
+﻿local var0_0 = class("TowerClimbingPlayer")
+local var1_0 = 0.6
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0.map = arg1
-	arg0.player = arg2
-	arg0.action = ""
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.map = arg1_1
+	arg0_1.player = arg2_1
+	arg0_1.action = ""
 end
 
-function var0.Init(arg0, arg1)
-	local var0 = arg0.player:GetShipName()
+function var0_0.Init(arg0_2, arg1_2)
+	local var0_2 = arg0_2.player:GetShipName()
 
-	TowerClimbingResMgr.GetPlayer(var0, function(arg0)
-		arg0.shipName = var0
+	TowerClimbingResMgr.GetPlayer(var0_2, function(arg0_3)
+		arg0_2.shipName = var0_2
 
-		arg0:OnLoaded(arg0)
-		arg1()
+		arg0_2:OnLoaded(arg0_3)
+		arg1_2()
 	end)
 end
 
-function var0.OnLoaded(arg0, arg1)
-	arg0._go = arg1
-	arg0._tf = tf(arg1)
-	arg0.rigbody = arg0._go:GetComponent(typeof(UnityEngine.Rigidbody2D))
-	arg0.physics2DItem = arg0._go:GetComponent("Physics2DItem")
+function var0_0.OnLoaded(arg0_4, arg1_4)
+	arg0_4._go = arg1_4
+	arg0_4._tf = tf(arg1_4)
+	arg0_4.rigbody = arg0_4._go:GetComponent(typeof(UnityEngine.Rigidbody2D))
+	arg0_4.physics2DItem = arg0_4._go:GetComponent("Physics2DItem")
 
-	arg0.physics2DItem.CollisionEnter:AddListener(function(arg0)
-		local var0 = arg0.map:GetHitBlock(arg0.collider.gameObject)
+	arg0_4.physics2DItem.CollisionEnter:AddListener(function(arg0_5)
+		local var0_5 = arg0_4.map:GetHitBlock(arg0_5.collider.gameObject)
 
-		if var0 and arg0.collider.name == TowerClimbingGameSettings.BLOCK_NAME and arg0.contacts.Length > 0 then
-			arg0.map:SendEvent("EnterBlock", arg0.contacts[0], var0.block.level)
+		if var0_5 and arg0_5.collider.name == TowerClimbingGameSettings.BLOCK_NAME and arg0_5.contacts.Length > 0 then
+			arg0_4.map:SendEvent("EnterBlock", arg0_5.contacts[0], var0_5.block.level)
 		end
 
-		if arg0.collider.name == TowerClimbingGameSettings.FIRE_NAME then
-			arg0.map:SendEvent("EnterAttacker")
+		if arg0_5.collider.name == TowerClimbingGameSettings.FIRE_NAME then
+			arg0_4.map:SendEvent("EnterAttacker")
 		end
 
-		if arg0.collider.name == TowerClimbingGameSettings.STAB_NAME and arg0.otherCollider.name == "player" then
-			Physics2D.IgnoreCollision(arg0.collider, arg0.otherCollider)
+		if arg0_5.collider.name == TowerClimbingGameSettings.STAB_NAME and arg0_5.otherCollider.name == "player" then
+			Physics2D.IgnoreCollision(arg0_5.collider, arg0_5.otherCollider)
 		end
 
-		if arg0.collider.name == TowerClimbingGameSettings.STAB_NAME and arg0.otherCollider.name == TowerClimbingGameSettings.STAB_HURT_AREA then
-			arg0.map:SendEvent("EnterAttacker")
+		if arg0_5.collider.name == TowerClimbingGameSettings.STAB_NAME and arg0_5.otherCollider.name == TowerClimbingGameSettings.STAB_HURT_AREA then
+			arg0_4.map:SendEvent("EnterAttacker")
 		end
 
-		if arg0.collider.name == TowerClimbingGameSettings.GROUND_NAME then
-			arg0.map:SendEvent("EnterGround")
-		end
-	end)
-	arg0.physics2DItem.CollisionStay:AddListener(function(arg0)
-		local var0 = {}
-
-		for iter0 = 1, arg0.contacts.Length do
-			table.insert(var0, arg0.contacts[iter0 - 1])
-		end
-
-		if arg0.collider.name == TowerClimbingGameSettings.BLOCK_NAME then
-			arg0.map:SendEvent("StayBlock", var0, arg0.rigbody.velocity)
+		if arg0_5.collider.name == TowerClimbingGameSettings.GROUND_NAME then
+			arg0_4.map:SendEvent("EnterGround")
 		end
 	end)
-	arg0.physics2DItem.CollisionExit:AddListener(function(arg0)
-		local var0 = arg0.map:GetHitBlock(arg0.collider.gameObject)
+	arg0_4.physics2DItem.CollisionStay:AddListener(function(arg0_6)
+		local var0_6 = {}
 
-		if arg0.collider.name == TowerClimbingGameSettings.BLOCK_NAME then
-			arg0.map:SendEvent("ExitBlock", var0.block.level)
+		for iter0_6 = 1, arg0_6.contacts.Length do
+			table.insert(var0_6, arg0_6.contacts[iter0_6 - 1])
+		end
+
+		if arg0_6.collider.name == TowerClimbingGameSettings.BLOCK_NAME then
+			arg0_4.map:SendEvent("StayBlock", var0_6, arg0_4.rigbody.velocity)
+		end
+	end)
+	arg0_4.physics2DItem.CollisionExit:AddListener(function(arg0_7)
+		local var0_7 = arg0_4.map:GetHitBlock(arg0_7.collider.gameObject)
+
+		if arg0_7.collider.name == TowerClimbingGameSettings.BLOCK_NAME then
+			arg0_4.map:SendEvent("ExitBlock", var0_7.block.level)
 		end
 	end)
 
-	arg0.spineAnim = arg0._go:GetComponent("SpineAnimUI")
+	arg0_4.spineAnim = arg0_4._go:GetComponent("SpineAnimUI")
 
-	SetParent(arg1, arg0.map._tf:Find("game/block_play_con"))
+	SetParent(arg1_4, arg0_4.map._tf:Find("game/block_play_con"))
 
-	arg1.name = "player"
-	arg0._tf.localScale = Vector3(var1, var1, 1)
+	arg1_4.name = "player"
+	arg0_4._tf.localScale = Vector3(var1_0, var1_0, 1)
 
-	setActive(arg1, true)
+	setActive(arg1_4, true)
 end
 
-function var0.AdjustVel(arg0, arg1)
-	arg0.rigbody.velocity = arg0.rigbody.velocity + arg1
+function var0_0.AdjustVel(arg0_8, arg1_8)
+	arg0_8.rigbody.velocity = arg0_8.rigbody.velocity + arg1_8
 end
 
-function var0.Jump(arg0, arg1)
-	local var0 = arg0.rigbody.velocity
+function var0_0.Jump(arg0_9, arg1_9)
+	local var0_9 = arg0_9.rigbody.velocity
 
-	arg0.rigbody.velocity = Vector2(arg0.rigbody.velocity.x, arg1)
+	arg0_9.rigbody.velocity = Vector2(arg0_9.rigbody.velocity.x, arg1_9)
 end
 
-function var0.MoveLeft(arg0, arg1)
-	arg0:SetAction("walk")
+function var0_0.MoveLeft(arg0_10, arg1_10)
+	arg0_10:SetAction("walk")
 
-	arg0._tf.localScale = Vector3(-var1, var1, 1)
-	arg0.rigbody.velocity = Vector2(-arg1, arg0.rigbody.velocity.y)
+	arg0_10._tf.localScale = Vector3(-var1_0, var1_0, 1)
+	arg0_10.rigbody.velocity = Vector2(-arg1_10, arg0_10.rigbody.velocity.y)
 end
 
-function var0.MoveRight(arg0, arg1)
-	arg0:SetAction("walk")
+function var0_0.MoveRight(arg0_11, arg1_11)
+	arg0_11:SetAction("walk")
 
-	arg0._tf.localScale = Vector3(var1, var1, 1)
-	arg0.rigbody.velocity = Vector2(arg1, arg0.rigbody.velocity.y)
+	arg0_11._tf.localScale = Vector3(var1_0, var1_0, 1)
+	arg0_11.rigbody.velocity = Vector2(arg1_11, arg0_11.rigbody.velocity.y)
 end
 
-function var0.BeInjured(arg0, arg1)
-	arg0.rigbody.velocity = arg0.rigbody.velocity + arg1
+function var0_0.BeInjured(arg0_12, arg1_12)
+	arg0_12.rigbody.velocity = arg0_12.rigbody.velocity + arg1_12
 end
 
-function var0.Idle(arg0)
-	arg0:SetAction("stand2")
+function var0_0.Idle(arg0_13)
+	arg0_13:SetAction("stand2")
 end
 
-function var0.Dead(arg0)
-	setActive(arg0._tf, false)
+function var0_0.Dead(arg0_14)
+	setActive(arg0_14._tf, false)
 end
 
-function var0.Invincible(arg0, arg1)
-	local var0 = arg0._tf:GetComponent("SkeletonGraphic")
+function var0_0.Invincible(arg0_15, arg1_15)
+	local var0_15 = arg0_15._tf:GetComponent("SkeletonGraphic")
 
-	if arg1 then
-		if arg0.timer then
-			arg0.timer:Stop()
+	if arg1_15 then
+		if arg0_15.timer then
+			arg0_15.timer:Stop()
 
-			arg0.timer = nil
+			arg0_15.timer = nil
 		end
 
-		local var1 = 0
+		local var1_15 = 0
 
-		arg0.timer = Timer.New(function()
-			var1 = var1 + 1
+		arg0_15.timer = Timer.New(function()
+			var1_15 = var1_15 + 1
 
-			if var1 % 2 == 0 then
-				var0.color = Color.New(1, 1, 1, 1)
+			if var1_15 % 2 == 0 then
+				var0_15.color = Color.New(1, 1, 1, 1)
 			else
-				var0.color = Color.New(1, 0, 0, 1)
+				var0_15.color = Color.New(1, 0, 0, 1)
 			end
 		end, 0.3, -1)
 
-		arg0.timer:Start()
+		arg0_15.timer:Start()
 	else
-		if arg0.timer then
-			arg0.timer:Stop()
+		if arg0_15.timer then
+			arg0_15.timer:Stop()
 
-			arg0.timer = nil
+			arg0_15.timer = nil
 		end
 
-		var0.color = Color.New(1, 1, 1, 1)
+		var0_15.color = Color.New(1, 1, 1, 1)
 	end
 end
 
-function var0.ChangePosition(arg0, arg1)
-	local var0 = arg0.map.blockContainer:InverseTransformVector(arg0.map.groundContainer:TransformVector(arg1))
+function var0_0.ChangePosition(arg0_17, arg1_17)
+	local var0_17 = arg0_17.map.blockContainer:InverseTransformVector(arg0_17.map.groundContainer:TransformVector(arg1_17))
 
-	arg0._tf.anchoredPosition = var0
+	arg0_17._tf.anchoredPosition = var0_17
 end
 
-function var0.BeFatalInjured(arg0, arg1)
-	arg0.spineAnim:SetActionCallBack(function(arg0)
-		if arg0 == "finish" then
-			arg0.spineAnim:SetActionCallBack(nil)
-			arg1()
+function var0_0.BeFatalInjured(arg0_18, arg1_18)
+	arg0_18.spineAnim:SetActionCallBack(function(arg0_19)
+		if arg0_19 == "finish" then
+			arg0_18.spineAnim:SetActionCallBack(nil)
+			arg1_18()
 		end
 	end)
 
-	arg0.action = "dead"
+	arg0_18.action = "dead"
 
-	arg0.spineAnim:SetAction(arg0.action, 0)
+	arg0_18.spineAnim:SetAction(arg0_18.action, 0)
 end
 
-function var0.SetAction(arg0, arg1)
-	if arg0.action == arg1 then
+function var0_0.SetAction(arg0_20, arg1_20)
+	if arg0_20.action == arg1_20 then
 		return
 	end
 
-	arg0.action = arg1
+	arg0_20.action = arg1_20
 
-	arg0.spineAnim:SetAction(arg1, 0)
+	arg0_20.spineAnim:SetAction(arg1_20, 0)
 end
 
-function var0.Dispose(arg0)
-	arg0.spineAnim:SetActionCallBack(nil)
+function var0_0.Dispose(arg0_21)
+	arg0_21.spineAnim:SetActionCallBack(nil)
 
-	if LeanTween.isTweening(arg0._go) then
-		LeanTween.cancel(arg0._go)
+	if LeanTween.isTweening(arg0_21._go) then
+		LeanTween.cancel(arg0_21._go)
 	end
 
-	if arg0.timer then
-		arg0.timer:Stop()
+	if arg0_21.timer then
+		arg0_21.timer:Stop()
 
-		arg0.timer = nil
+		arg0_21.timer = nil
 	end
 
-	if arg0.shipName then
-		TowerClimbingResMgr.ReturnPlayer(arg0.shipName, arg0._go)
+	if arg0_21.shipName then
+		TowerClimbingResMgr.ReturnPlayer(arg0_21.shipName, arg0_21._go)
 	end
 end
 
-return var0
+return var0_0

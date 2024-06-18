@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_279 = {}
+var0_0.word_template_279 = {}
 
-local var1 = var0.word_template_279
+local var1_0 = var0_0.word_template_279
 
 function temp()
-	var1.替 = {
+	var1_0.替 = {
 		党 = {
 			说 = {
 				话 = {
@@ -34,7 +34,7 @@ end
 temp()
 
 function temp()
-	var1.兲 = {
+	var1_0.兲 = {
 		朝 = {
 			真 = {
 				理 = {
@@ -48,7 +48,7 @@ end
 temp()
 
 function temp()
-	var1.添 = {
+	var1_0.添 = {
 		逼 = {
 			this = true
 		},
@@ -88,7 +88,7 @@ end
 temp()
 
 function temp()
-	var1.田 = {
+	var1_0.田 = {
 		村 = {
 			麻 = {
 				衣 = {
@@ -176,7 +176,7 @@ end
 temp()
 
 function temp()
-	var1.畑 = {
+	var1_0.畑 = {
 		野 = {
 			浩 = {
 				子 = {
@@ -190,7 +190,7 @@ end
 temp()
 
 function temp()
-	var1.甜 = {
+	var1_0.甜 = {
 		性 = {
 			涩 = {
 				爱 = {
@@ -213,7 +213,7 @@ end
 temp()
 
 function temp()
-	var1.舔 = {
+	var1_0.舔 = {
 		B = {
 			this = true
 		},

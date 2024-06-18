@@ -1,36 +1,36 @@
-﻿local var0 = class("IslandTowerClimbingGameView", import("..BaseMiniGameView"))
+﻿local var0_0 = class("IslandTowerClimbingGameView", import("..BaseMiniGameView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "IslandTowerClimbingUI"
 end
 
-function var0.GetMGData(arg0)
-	local var0 = arg0.contextData.miniGameId
+function var0_0.GetMGData(arg0_2)
+	local var0_2 = arg0_2.contextData.miniGameId
 
-	return getProxy(MiniGameProxy):GetMiniGameData(var0):clone()
+	return getProxy(MiniGameProxy):GetMiniGameData(var0_2):clone()
 end
 
-function var0.GetMGHubData(arg0)
-	local var0 = arg0.contextData.miniGameId
+function var0_0.GetMGHubData(arg0_3)
+	local var0_3 = arg0_3.contextData.miniGameId
 
-	return getProxy(MiniGameProxy):GetHubByGameId(var0)
+	return getProxy(MiniGameProxy):GetHubByGameId(var0_3)
 end
 
-function var0.didEnter(arg0)
+function var0_0.didEnter(arg0_4)
 	if not Physics2D.autoSimulation then
 		Physics2D.autoSimulation = true
-		arg0.isChangeAutoSimulation = true
+		arg0_4.isChangeAutoSimulation = true
 	end
 
-	arg0:Start()
+	arg0_4:Start()
 
-	arg0.backBtn = findTF(arg0._tf, "overview/back")
+	arg0_4.backBtn = findTF(arg0_4._tf, "overview/back")
 
-	onButton(arg0, arg0.backBtn, function()
-		arg0:emit(var0.ON_BACK)
+	onButton(arg0_4, arg0_4.backBtn, function()
+		arg0_4:emit(var0_0.ON_BACK)
 	end, SFX_PANEL)
-	onButton(arg0, findTF(arg0._tf, "overview/item"), function()
-		local var0 = {
+	onButton(arg0_4, findTF(arg0_4._tf, "overview/item"), function()
+		local var0_6 = {
 			mediator = IslandGameLimitMediator,
 			viewComponent = IslandGameLimitLayer,
 			data = {
@@ -38,142 +38,142 @@ function var0.didEnter(arg0)
 			}
 		}
 
-		arg0:emit(BaseMiniGameMediator.OPEN_SUB_LAYER, var0)
+		arg0_4:emit(BaseMiniGameMediator.OPEN_SUB_LAYER, var0_6)
 	end, SFX_CANCEL)
 
-	local var0 = ActivityConst.ISLAND_GAME_ID
-	local var1 = pg.activity_template[var0].config_client.item_id
+	local var0_4 = ActivityConst.ISLAND_GAME_ID
+	local var1_4 = pg.activity_template[var0_4].config_client.item_id
 
-	arg0.itemConfig = Item.getConfigData(var1)
+	arg0_4.itemConfig = Item.getConfigData(var1_4)
 
-	LoadImageSpriteAsync(arg0.itemConfig.icon, findTF(arg0._tf, "overview/item/img"), true)
+	LoadImageSpriteAsync(arg0_4.itemConfig.icon, findTF(arg0_4._tf, "overview/item/img"), true)
 
-	arg0.hub_id = pg.activity_template[var0].config_id
-	arg0.itemNums = getProxy(MiniGameProxy):GetHubByHubId(arg0.hub_id).count or 0
+	arg0_4.hub_id = pg.activity_template[var0_4].config_id
+	arg0_4.itemNums = getProxy(MiniGameProxy):GetHubByHubId(arg0_4.hub_id).count or 0
 
-	setText(findTF(arg0._tf, "overview/item/num"), arg0.itemNums)
+	setText(findTF(arg0_4._tf, "overview/item/num"), arg0_4.itemNums)
 end
 
-function var0.Start(arg0)
-	arg0.controller = TowerClimbingController.New()
+function var0_0.Start(arg0_7)
+	arg0_7.controller = TowerClimbingController.New()
 
-	arg0.controller.view:SetUI(arg0._go)
+	arg0_7.controller.view:SetUI(arg0_7._go)
 
-	local function var0(arg0, arg1, arg2, arg3)
-		local var0 = arg0:GetMGData():GetRuntimeData("elements") or {}
+	local function var0_7(arg0_8, arg1_8, arg2_8, arg3_8)
+		local var0_8 = arg0_7:GetMGData():GetRuntimeData("elements") or {}
 
-		for iter0 = 1, arg3 do
-			if iter0 > #var0 then
-				table.insert(var0, 0)
+		for iter0_8 = 1, arg3_8 do
+			if iter0_8 > #var0_8 then
+				table.insert(var0_8, 0)
 			end
 		end
 
-		if arg0 >= var0[arg3] then
-			var0[arg3] = arg0
+		if arg0_8 >= var0_8[arg3_8] then
+			var0_8[arg3_8] = arg0_8
 
-			arg0:StoreDataToServer(var0)
-			arg0:updateHighScore()
+			arg0_7:StoreDataToServer(var0_8)
+			arg0_7:updateHighScore()
 		end
 
-		if arg0:getGameTimes() and arg0:getGameTimes() > 0 then
-			arg0.sendSuccessFlag = true
+		if arg0_7:getGameTimes() and arg0_7:getGameTimes() > 0 then
+			arg0_7.sendSuccessFlag = true
 
-			arg0:SendSuccess(0)
+			arg0_7:SendSuccess(0)
 		end
 	end
 
-	local function var1(arg0, arg1)
+	local function var1_7(arg0_9, arg1_9)
 		return
 	end
 
-	arg0.controller:SetCallBack(var0, var1)
+	arg0_7.controller:SetCallBack(var0_7, var1_7)
 
-	local var2 = arg0:PackData()
+	local var2_7 = arg0_7:PackData()
 
-	arg0.controller:SetUp(var2)
+	arg0_7.controller:SetUp(var2_7)
 end
 
-function var0.updateHighScore(arg0)
-	local var0 = arg0:GetMGData():GetRuntimeData("elements") or {}
+function var0_0.updateHighScore(arg0_10)
+	local var0_10 = arg0_10:GetMGData():GetRuntimeData("elements") or {}
 
-	if arg0.controller then
+	if arg0_10.controller then
 		-- block empty
 	end
 
-	arg0.controller:updateHighScore(var0)
+	arg0_10.controller:updateHighScore(var0_10)
 end
 
-function var0.OnSendMiniGameOPDone(arg0, arg1)
-	arg0.itemNums = getProxy(MiniGameProxy):GetHubByHubId(arg0.hub_id).count or 0
+function var0_0.OnSendMiniGameOPDone(arg0_11, arg1_11)
+	arg0_11.itemNums = getProxy(MiniGameProxy):GetHubByHubId(arg0_11.hub_id).count or 0
 
-	setText(findTF(arg0._tf, "overview/item/num"), arg0.itemNums)
-	arg0:updateHighScore()
+	setText(findTF(arg0_11._tf, "overview/item/num"), arg0_11.itemNums)
+	arg0_11:updateHighScore()
 end
 
-function var0.getGameTimes(arg0)
-	return arg0:GetMGHubData().count
+function var0_0.getGameTimes(arg0_12)
+	return arg0_12:GetMGHubData().count
 end
 
-function var0.GetTowerClimbingPageAndScore(arg0)
-	local var0 = 0
-	local var1 = 1
-	local var2 = {
+function var0_0.GetTowerClimbingPageAndScore(arg0_13)
+	local var0_13 = 0
+	local var1_13 = 1
+	local var2_13 = {
 		0,
 		0,
 		0
 	}
 
-	return var0, var1, var2
+	return var0_13, var1_13, var2_13
 end
 
-function var0.GetAwardScores()
-	local var0 = pg.mini_game[MiniGameDataCreator.TowerClimbingGameID].simple_config_data
+function var0_0.GetAwardScores()
+	local var0_14 = pg.mini_game[MiniGameDataCreator.TowerClimbingGameID].simple_config_data
 
-	return (_.map(var0, function(arg0)
-		return arg0[1]
+	return (_.map(var0_14, function(arg0_15)
+		return arg0_15[1]
 	end))
 end
 
-function var0.PackData(arg0)
-	local var0 = arg0._tf.rect.width
-	local var1 = arg0._tf.rect.height
-	local var2 = arg0:GetMGData():GetRuntimeData("elements")
-	local var3, var4, var5 = var0.GetTowerClimbingPageAndScore(var2)
+function var0_0.PackData(arg0_16)
+	local var0_16 = arg0_16._tf.rect.width
+	local var1_16 = arg0_16._tf.rect.height
+	local var2_16 = arg0_16:GetMGData():GetRuntimeData("elements")
+	local var3_16, var4_16, var5_16 = var0_0.GetTowerClimbingPageAndScore(var2_16)
 
-	print(var3, "-", var4)
+	print(var3_16, "-", var4_16)
 
-	local var6 = var0.GetAwardScores()
+	local var6_16 = var0_0.GetAwardScores()
 
 	return {
 		shipId = 107031,
 		npcName = "TowerClimbingManjuu",
 		life = 3,
-		screenWidth = var0,
-		screenHeight = var1,
-		higestscore = var3,
-		pageIndex = var4,
-		mapScores = var5,
-		awards = var6
+		screenWidth = var0_16,
+		screenHeight = var1_16,
+		higestscore = var3_16,
+		pageIndex = var4_16,
+		mapScores = var5_16,
+		awards = var6_16
 	}
 end
 
-function var0.onBackPressed(arg0)
-	if arg0.controller and arg0.controller:onBackPressed() then
+function var0_0.onBackPressed(arg0_17)
+	if arg0_17.controller and arg0_17.controller:onBackPressed() then
 		return
 	end
 
-	arg0:emit(var0.ON_BACK)
+	arg0_17:emit(var0_0.ON_BACK)
 end
 
-function var0.willExit(arg0)
-	if arg0.controller then
-		arg0.controller:Dispose()
+function var0_0.willExit(arg0_18)
+	if arg0_18.controller then
+		arg0_18.controller:Dispose()
 	end
 
-	if arg0.isChangeAutoSimulation then
+	if arg0_18.isChangeAutoSimulation then
 		Physics2D.autoSimulation = false
-		arg0.isChangeAutoSimulation = nil
+		arg0_18.isChangeAutoSimulation = nil
 	end
 end
 
-return var0
+return var0_0

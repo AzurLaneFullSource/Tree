@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_359 = {}
+var0_0.word_template_359 = {}
 
-local var1 = var0.word_template_359
+local var1_0 = var0_0.word_template_359
 
 function temp()
-	var1.综 = {
+	var1_0.综 = {
 		合 = {
 			执 = {
 				法 = {
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.总 = {
+	var1_0.总 = {
 		参 = {
 			谋 = {
 				部 = {
@@ -301,7 +301,7 @@ end
 temp()
 
 function temp()
-	var1.偬 = {
+	var1_0.偬 = {
 		this = {
 			this = true
 		}
@@ -311,7 +311,7 @@ end
 temp()
 
 function temp()
-	var1.總 = {
+	var1_0.總 = {
 		理 = {
 			this = true
 		},
@@ -335,7 +335,7 @@ end
 temp()
 
 function temp()
-	var1.纵 = {
+	var1_0.纵 = {
 		情 = {
 			兵 = {
 				团 = {
@@ -361,7 +361,7 @@ end
 temp()
 
 function temp()
-	var1.诹 = {
+	var1_0.诹 = {
 		this = {
 			this = true
 		}
@@ -371,7 +371,7 @@ end
 temp()
 
 function temp()
-	var1.陬 = {
+	var1_0.陬 = {
 		this = {
 			this = true
 		}

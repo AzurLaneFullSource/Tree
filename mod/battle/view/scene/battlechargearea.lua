@@ -1,54 +1,54 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleChargeArea = class("BattleChargeArea")
-var0.Battle.BattleChargeArea.__name = "BattleChargeArea"
+var0_0.Battle.BattleChargeArea = class("BattleChargeArea")
+var0_0.Battle.BattleChargeArea.__name = "BattleChargeArea"
 
-function var0.Battle.BattleChargeArea.Ctor(arg0, arg1)
-	arg1.gameObject:SetActive(false)
+function var0_0.Battle.BattleChargeArea.Ctor(arg0_1, arg1_1)
+	arg1_1.gameObject:SetActive(false)
 
-	arg0._areaTf = arg1.transform
-	arg0._areaGO = arg1
+	arg0_1._areaTf = arg1_1.transform
+	arg0_1._areaGO = arg1_1
 end
 
-function var0.Battle.BattleChargeArea.InitArea(arg0)
-	local var0 = arg0._areaTf
+function var0_0.Battle.BattleChargeArea.InitArea(arg0_2)
+	local var0_2 = arg0_2._areaTf
 
-	arg0._controller = var0:GetComponent("ChargeArea")
+	arg0_2._controller = var0_2:GetComponent("ChargeArea")
 
-	local var1 = arg0._chargeWeapon:GetTemplateData().range
-	local var2 = arg0._chargeWeapon:GetTemplateData().angle
-	local var3 = var0.localScale
+	local var1_2 = arg0_2._chargeWeapon:GetTemplateData().range
+	local var2_2 = arg0_2._chargeWeapon:GetTemplateData().angle
+	local var3_2 = var0_2.localScale
 
-	var3.x = var1 / 5.5
-	var3.y = var1 / 5.5
-	var0.localScale = var3
-	arg0._controller.maxAngle = var2
-	arg0._controller.minAngle = arg0._chargeWeapon:GetMinAngle()
-	var0:Find("UpperEdge").transform.localScale = Vector3(1, 1 / var3.y, 1)
-	var0:Find("LowerEdge").transform.localScale = Vector3(1, 1 / var3.y, 1)
-	arg0._controller.rate = 0.5
+	var3_2.x = var1_2 / 5.5
+	var3_2.y = var1_2 / 5.5
+	var0_2.localScale = var3_2
+	arg0_2._controller.maxAngle = var2_2
+	arg0_2._controller.minAngle = arg0_2._chargeWeapon:GetMinAngle()
+	var0_2:Find("UpperEdge").transform.localScale = Vector3(1, 1 / var3_2.y, 1)
+	var0_2:Find("LowerEdge").transform.localScale = Vector3(1, 1 / var3_2.y, 1)
+	arg0_2._controller.rate = 0.5
 end
 
-function var0.Battle.BattleChargeArea.Update(arg0, arg1)
-	arg0._areaTf.position = arg1
+function var0_0.Battle.BattleChargeArea.Update(arg0_3, arg1_3)
+	arg0_3._areaTf.position = arg1_3
 end
 
-function var0.Battle.BattleChargeArea.SetWeapon(arg0, arg1)
-	arg0._chargeWeapon = arg1
+function var0_0.Battle.BattleChargeArea.SetWeapon(arg0_4, arg1_4)
+	arg0_4._chargeWeapon = arg1_4
 
-	arg0:InitArea()
+	arg0_4:InitArea()
 end
 
-function var0.Battle.BattleChargeArea.SetActive(arg0, arg1)
-	arg0._areaGO:SetActive(arg1)
+function var0_0.Battle.BattleChargeArea.SetActive(arg0_5, arg1_5)
+	arg0_5._areaGO:SetActive(arg1_5)
 end
 
-function var0.Battle.BattleChargeArea.GetActive(arg0)
-	return arg0._areaGO:GetActive()
+function var0_0.Battle.BattleChargeArea.GetActive(arg0_6)
+	return arg0_6._areaGO:GetActive()
 end
 
-function var0.Battle.BattleChargeArea.Reset(arg0)
-	arg0._controller.rate = 1
+function var0_0.Battle.BattleChargeArea.Reset(arg0_7)
+	arg0_7._controller.rate = 1
 end

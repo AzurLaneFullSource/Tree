@@ -1,17 +1,17 @@
-﻿local var0 = class("LoadSceneCommand", pm.SimpleCommand)
+﻿local var0_0 = class("LoadSceneCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
 
-	var0.type = LOAD_TYPE_SCENE
+	var0_1.type = LOAD_TYPE_SCENE
 
-	if not var0.isReload then
-		var0.prevContext = var0.prevContext or getProxy(ContextProxy):getCurrentContext()
+	if not var0_1.isReload then
+		var0_1.prevContext = var0_1.prevContext or getProxy(ContextProxy):getCurrentContext()
 	end
 
-	SCENE.CheckPreloadData(var0, function()
-		arg0:sendNotification(GAME.LOAD_CONTEXT, var0)
+	SCENE.CheckPreloadData(var0_1, function()
+		arg0_1:sendNotification(GAME.LOAD_CONTEXT, var0_1)
 	end)
 end
 
-return var0
+return var0_0

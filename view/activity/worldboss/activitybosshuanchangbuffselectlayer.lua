@@ -1,7 +1,7 @@
-﻿local var0 = class("ActivityBossHuanChangBuffSelectLayer", import(".ActivityBossBuffSelectLayerTemplate"))
+﻿local var0_0 = class("ActivityBossHuanChangBuffSelectLayer", import(".ActivityBossBuffSelectLayerTemplate"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ActivityBossHuanChangBuffSelectUI"
 end
 
-return var0
+return var0_0

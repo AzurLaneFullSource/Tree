@@ -1,30 +1,30 @@
-﻿local var0 = class("BattleGateDebug")
+﻿local var0_0 = class("BattleGateDebug")
 
-ys.Battle.BattleGateDebug = var0
-var0.__name = "BattleGateDebug"
+ys.Battle.BattleGateDebug = var0_0
+var0_0.__name = "BattleGateDebug"
 
-function var0.Entrance(arg0, arg1)
-	local var0 = getProxy(FleetProxy):getFleetById(1)
+function var0_0.Entrance(arg0_1, arg1_1)
+	local var0_1 = getProxy(FleetProxy):getFleetById(1)
 
-	if var0 == nil or var0:isEmpty() then
+	if var0_1 == nil or var0_1:isEmpty() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_fleetEmpty"))
 
 		return
 	end
 
-	local var1 = PROLOGUE_DUNGEON
-	local var2 = {
+	local var1_1 = PROLOGUE_DUNGEON
+	local var2_1 = {
 		mainFleetId = 1,
 		prefabFleet = {},
-		stageId = var1,
+		stageId = var1_1,
 		system = SYSTEM_DEBUG
 	}
 
-	arg1:sendNotification(GAME.BEGIN_STAGE_DONE, var2)
+	arg1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var2_1)
 end
 
-function var0.Exit()
+function var0_0.Exit()
 	return
 end
 
-return var0
+return var0_0

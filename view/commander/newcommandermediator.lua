@@ -1,33 +1,33 @@
-﻿local var0 = class("NewCommanderMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("NewCommanderMediator", import("..base.ContextMediator"))
 
-var0.ON_LOCK = "NewCommanderMediator:ON_LOCK"
+var0_0.ON_LOCK = "NewCommanderMediator:ON_LOCK"
 
-function var0.register(arg0)
-	arg0:bind(var0.ON_LOCK, function(arg0, arg1, arg2)
-		arg0:sendNotification(GAME.COMMANDER_LOCK, {
-			commanderId = arg1,
-			flag = arg2
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.ON_LOCK, function(arg0_2, arg1_2, arg2_2)
+		arg0_1:sendNotification(GAME.COMMANDER_LOCK, {
+			commanderId = arg1_2,
+			flag = arg2_2
 		})
 	end)
 
-	local var0 = arg0.contextData.commander
+	local var0_1 = arg0_1.contextData.commander
 
-	assert(var0, "commander can not be nil")
+	assert(var0_1, "commander can not be nil")
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_3)
 	return {
 		GAME.COMMANDER_LOCK_DONE
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_4, arg1_4)
+	local var0_4 = arg1_4:getName()
+	local var1_4 = arg1_4:getBody()
 
-	if var0 == GAME.COMMANDER_LOCK_DONE then
-		arg0.viewComponent:updateLockState()
+	if var0_4 == GAME.COMMANDER_LOCK_DONE then
+		arg0_4.viewComponent:updateLockState()
 	end
 end
 
-return var0
+return var0_0

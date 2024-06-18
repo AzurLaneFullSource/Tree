@@ -1,9 +1,9 @@
-﻿local var0 = class("EnemyBossChaser", import("view.miniGame.gameView.RyzaMiniGame.character.EnemyChaser"))
+﻿local var0_0 = class("EnemyBossChaser", import("view.miniGame.gameView.RyzaMiniGame.character.EnemyChaser"))
 
-var0.WeaponName = "Laser"
-var0.ConfigSkillCD = 10
-var0.StatusOffset = setmetatable({}, {
-	__index = function(arg0, arg1)
+var0_0.WeaponName = "Laser"
+var0_0.ConfigSkillCD = 10
+var0_0.StatusOffset = setmetatable({}, {
+	__index = function(arg0_1, arg1_1)
 		return {
 			0,
 			0
@@ -11,33 +11,33 @@ var0.StatusOffset = setmetatable({}, {
 	end
 })
 
-function var0.InitUI(arg0, arg1)
-	var0.super.InitUI(arg0, arg1)
+function var0_0.InitUI(arg0_2, arg1_2)
+	var0_0.super.InitUI(arg0_2, arg1_2)
 
-	arg0.hp = arg1.hp or 4
-	arg0.hpMax = arg0.hp
-	arg0.speed = arg1.speed or 3
-	arg0.damageDic = {}
+	arg0_2.hp = arg1_2.hp or 4
+	arg0_2.hpMax = arg0_2.hp
+	arg0_2.speed = arg1_2.speed or 3
+	arg0_2.damageDic = {}
 end
 
-function var0.InitRegister(arg0, arg1)
+function var0_0.InitRegister(arg0_3, arg1_3)
 	return
 end
 
-function var0.TimeTrigger(arg0, arg1)
-	var0.super.TimeTrigger(arg0, arg1)
+function var0_0.TimeTrigger(arg0_4, arg1_4)
+	var0_0.super.TimeTrigger(arg0_4, arg1_4)
 
-	for iter0, iter1 in ipairs(arg0.responder:CollideFire(arg0)) do
-		if not arg0.damageDic[iter1] then
-			arg0.damageDic[iter1] = true
+	for iter0_4, iter1_4 in ipairs(arg0_4.responder:CollideFire(arg0_4)) do
+		if not arg0_4.damageDic[iter1_4] then
+			arg0_4.damageDic[iter1_4] = true
 
-			arg0:Hurt(1)
+			arg0_4:Hurt(1)
 		end
 	end
 end
 
-function var0.GetUIHeight(arg0)
+function var0_0.GetUIHeight(arg0_5)
 	return 192
 end
 
-return var0
+return var0_0

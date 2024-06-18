@@ -1,6 +1,6 @@
-﻿local var0 = class("CourtYardStageFurniture", import(".CourtYardCanPutFurniture"))
+﻿local var0_0 = class("CourtYardStageFurniture", import(".CourtYardCanPutFurniture"))
 
-function var0.AllowDepthType(arg0)
+function var0_0.AllowDepthType(arg0_1)
 	return {
 		CourtYardConst.DEPTH_TYPE_MAT,
 		CourtYardConst.DEPTH_TYPE_SHIP,
@@ -8,4 +8,4 @@ function var0.AllowDepthType(arg0)
 	}
 end
 
-return var0
+return var0_0

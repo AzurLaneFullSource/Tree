@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Click the button for help"
 }
 
@@ -12,7 +12,7 @@ return {
 				mode = 2,
 				posY = 180.11,
 				posX = 538.63,
-				text = var0[1],
+				text = var0_0[1],
 				ui = {
 					path = "",
 					pathIndex = -1

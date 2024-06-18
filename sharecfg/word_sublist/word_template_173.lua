@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_173 = {}
+var0_0.word_template_173 = {}
 
-local var1 = var0.word_template_173
+local var1_0 = var0_0.word_template_173
 
 function temp()
-	var1.褲 = {
+	var1_0.褲 = {
 		襪 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.嚳 = {
+	var1_0.嚳 = {
 		this = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.胯 = {
+	var1_0.胯 = {
 		下 = {
 			呻 = {
 				吟 = {
@@ -41,7 +41,7 @@ end
 temp()
 
 function temp()
-	var1.跨 = {
+	var1_0.跨 = {
 		省 = {
 			毁 = {
 				报 = {
@@ -67,7 +67,7 @@ end
 temp()
 
 function temp()
-	var1.快 = {
+	var1_0.快 = {
 		播 = {
 			this = true
 		},
@@ -189,7 +189,7 @@ end
 temp()
 
 function temp()
-	var1.款 = {
+	var1_0.款 = {
 		到 = {
 			发 = {
 				货 = {
@@ -203,7 +203,7 @@ end
 temp()
 
 function temp()
-	var1.狂 = {
+	var1_0.狂 = {
 		操 = {
 			this = true,
 			你 = {

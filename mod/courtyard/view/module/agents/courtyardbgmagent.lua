@@ -1,117 +1,117 @@
-﻿local var0 = class("CourtYardBGMAgent", import(".CourtYardAgent"))
-local var1 = 0
-local var2 = 1
+﻿local var0_0 = class("CourtYardBGMAgent", import(".CourtYardAgent"))
+local var1_0 = 0
+local var2_0 = 1
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0.recoders = {}
-	arg0.playName = nil
-	arg0.waitForStop = false
-	arg0.defaultBgm = arg0:GetDefaultBgm()
+	arg0_1.recoders = {}
+	arg0_1.playName = nil
+	arg0_1.waitForStop = false
+	arg0_1.defaultBgm = arg0_1:GetDefaultBgm()
 
-	arg0:PlayVoice(arg0.defaultBgm)
+	arg0_1:PlayVoice(arg0_1.defaultBgm)
 end
 
-function var0.Play(arg0, arg1, arg2)
-	if not arg1 or arg1 == "" then
+function var0_0.Play(arg0_2, arg1_2, arg2_2)
+	if not arg1_2 or arg1_2 == "" then
 		return
 	end
 
-	arg2 = arg2 or var1
+	arg2_2 = arg2_2 or var1_0
 
-	if not arg0.recoders[arg1] then
-		arg0.recoders = {}
+	if not arg0_2.recoders[arg1_2] then
+		arg0_2.recoders = {}
 
-		arg0:PlayVoice(arg1, function(arg0)
-			if arg2 == var2 then
-				arg0:HandlePlayOnce(arg0)
+		arg0_2:PlayVoice(arg1_2, function(arg0_3)
+			if arg2_2 == var2_0 then
+				arg0_2:HandlePlayOnce(arg0_3)
 			end
 		end)
 	end
 
-	arg0.recoders[arg1] = (arg0.recoders[arg1] or 0) + 1
+	arg0_2.recoders[arg1_2] = (arg0_2.recoders[arg1_2] or 0) + 1
 end
 
-function var0.HandlePlayOnce(arg0, arg1)
-	local var0 = long2int(arg1.length) * 0.001
+function var0_0.HandlePlayOnce(arg0_4, arg1_4)
+	local var0_4 = long2int(arg1_4.length) * 0.001
 
-	arg0:AddTimerToStopBgm(var0)
+	arg0_4:AddTimerToStopBgm(var0_4)
 end
 
-function var0.AddTimerToStopBgm(arg0, arg1)
-	arg0.waitForStop = true
-	arg0.timer = Timer.New(function()
-		arg0:Reset()
+function var0_0.AddTimerToStopBgm(arg0_5, arg1_5)
+	arg0_5.waitForStop = true
+	arg0_5.timer = Timer.New(function()
+		arg0_5:Reset()
 
-		arg0.waitForStop = false
-	end, arg1, 1)
+		arg0_5.waitForStop = false
+	end, arg1_5, 1)
 
-	arg0.timer:Start()
+	arg0_5.timer:Start()
 end
 
-function var0.RemoveTimer(arg0)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var0_0.RemoveTimer(arg0_7)
+	if arg0_7.timer then
+		arg0_7.timer:Stop()
 
-		arg0.timer = nil
+		arg0_7.timer = nil
 	end
 end
 
-function var0.Stop(arg0, arg1)
-	if arg0.waitForStop then
+function var0_0.Stop(arg0_8, arg1_8)
+	if arg0_8.waitForStop then
 		return
 	end
 
-	if not arg0.recoders[arg1] then
+	if not arg0_8.recoders[arg1_8] then
 		return
 	end
 
-	arg0.recoders[arg1] = arg0.recoders[arg1] - 1
+	arg0_8.recoders[arg1_8] = arg0_8.recoders[arg1_8] - 1
 
-	if arg0.recoders[arg1] == 0 then
-		arg0:Reset()
+	if arg0_8.recoders[arg1_8] == 0 then
+		arg0_8:Reset()
 	end
 end
 
-function var0.Reset(arg0)
-	arg0.recoders = {}
+function var0_0.Reset(arg0_9)
+	arg0_9.recoders = {}
 
-	arg0:PlayVoice(arg0.defaultBgm)
+	arg0_9:PlayVoice(arg0_9.defaultBgm)
 end
 
-function var0.PlayVoice(arg0, arg1, arg2)
-	if arg0.playName == arg1 then
+function var0_0.PlayVoice(arg0_10, arg1_10, arg2_10)
+	if arg0_10.playName == arg1_10 then
 		return
 	end
 
-	local var0 = "bgm-" .. arg1
+	local var0_10 = "bgm-" .. arg1_10
 
-	CriWareMgr.Inst:PlayBGM(var0, CriWareMgr.CRI_FADE_TYPE.FADE_INOUT, function(arg0)
-		if arg0 == nil then
-			warning("Missing BGM :" .. (arg1 or "NIL"))
-		elseif arg2 then
-			arg2(arg0.cueInfo)
+	CriWareMgr.Inst:PlayBGM(var0_10, CriWareMgr.CRI_FADE_TYPE.FADE_INOUT, function(arg0_11)
+		if arg0_11 == nil then
+			warning("Missing BGM :" .. (arg1_10 or "NIL"))
+		elseif arg2_10 then
+			arg2_10(arg0_11.cueInfo)
 		end
 	end)
 
-	arg0.playName = arg1
+	arg0_10.playName = arg1_10
 end
 
-function var0.Clear(arg0)
-	arg0:RemoveTimer()
+function var0_0.Clear(arg0_12)
+	arg0_12:RemoveTimer()
 
-	arg0.recoders = {}
-	arg0.playName = nil
-	arg0.waitForStop = false
+	arg0_12.recoders = {}
+	arg0_12.playName = nil
+	arg0_12.waitForStop = false
 
 	pg.CriMgr.GetInstance():StopBGM()
 end
 
-function var0.Dispose(arg0)
-	arg0.recoders = nil
+function var0_0.Dispose(arg0_13)
+	arg0_13.recoders = nil
 
-	arg0:RemoveTimer()
+	arg0_13:RemoveTimer()
 end
 
-return var0
+return var0_0

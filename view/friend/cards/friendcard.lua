@@ -1,66 +1,66 @@
-﻿local var0 = class("FriendCard")
+﻿local var0_0 = class("FriendCard")
 
-function var0.Ctor(arg0, arg1)
-	pg.DelegateInfo.New(arg0)
+function var0_0.Ctor(arg0_1, arg1_1)
+	pg.DelegateInfo.New(arg0_1)
 
-	arg0.go = arg1
-	arg0.tf = tf(arg1)
-	arg0.nameTF = arg0.tf:Find("frame/request_info/name_bg/Text"):GetComponent(typeof(Text))
-	arg0.iconTF = arg0.tf:Find("icon/icon_bg/icon"):GetComponent(typeof(Image))
-	arg0.circle = arg0.tf:Find("icon/icon_bg/frame")
-	arg0.starList = UIItemList.New(arg0.tf:Find("icon/icon_bg/stars"), arg0.tf:Find("icon/icon_bg/stars/star"))
-	arg0.manifestoTF = arg0.tf:Find("frame/request_content/Text"):GetComponent(typeof(Text))
-	arg0.resumeBtn = arg0.tf:Find("resume_btn")
+	arg0_1.go = arg1_1
+	arg0_1.tf = tf(arg1_1)
+	arg0_1.nameTF = arg0_1.tf:Find("frame/request_info/name_bg/Text"):GetComponent(typeof(Text))
+	arg0_1.iconTF = arg0_1.tf:Find("icon/icon_bg/icon"):GetComponent(typeof(Image))
+	arg0_1.circle = arg0_1.tf:Find("icon/icon_bg/frame")
+	arg0_1.starList = UIItemList.New(arg0_1.tf:Find("icon/icon_bg/stars"), arg0_1.tf:Find("icon/icon_bg/stars/star"))
+	arg0_1.manifestoTF = arg0_1.tf:Find("frame/request_content/Text"):GetComponent(typeof(Text))
+	arg0_1.resumeBtn = arg0_1.tf:Find("resume_btn")
 end
 
-function var0.update(arg0, arg1)
-	arg0:clear()
+function var0_0.update(arg0_2, arg1_2)
+	arg0_2:clear()
 
-	arg0.friendVO = arg1
-	arg0.nameTF.text = arg1.name
+	arg0_2.friendVO = arg1_2
+	arg0_2.nameTF.text = arg1_2.name
 
-	local var0 = pg.ship_data_statistics[arg1.icon]
-	local var1 = Ship.New({
-		configId = arg1.icon
+	local var0_2 = pg.ship_data_statistics[arg1_2.icon]
+	local var1_2 = Ship.New({
+		configId = arg1_2.icon
 	})
 
-	LoadSpriteAsync("qicon/" .. var1:getPrefab(), function(arg0)
-		arg0.iconTF.sprite = arg0
+	LoadSpriteAsync("qicon/" .. var1_2:getPrefab(), function(arg0_3)
+		arg0_2.iconTF.sprite = arg0_3
 	end)
 
-	local var2 = AttireFrame.attireFrameRes(arg1, arg1.id == getProxy(PlayerProxy):getRawData().id, AttireConst.TYPE_ICON_FRAME, arg1.propose)
+	local var2_2 = AttireFrame.attireFrameRes(arg1_2, arg1_2.id == getProxy(PlayerProxy):getRawData().id, AttireConst.TYPE_ICON_FRAME, arg1_2.propose)
 
-	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var2, var2, true, function(arg0)
-		if IsNil(arg0.tf) then
+	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var2_2, var2_2, true, function(arg0_4)
+		if IsNil(arg0_2.tf) then
 			return
 		end
 
-		if arg0.circle then
-			arg0.name = var2
-			findTF(arg0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
+		if arg0_2.circle then
+			arg0_4.name = var2_2
+			findTF(arg0_4.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
 
-			setParent(arg0, arg0.circle, false)
+			setParent(arg0_4, arg0_2.circle, false)
 		else
-			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var2, var2, arg0)
+			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var2_2, var2_2, arg0_4)
 		end
 	end)
 
-	local var3 = var1:getStar()
+	local var3_2 = var1_2:getStar()
 
-	arg0.starList:align(var3)
+	arg0_2.starList:align(var3_2)
 end
 
-function var0.clear(arg0)
-	if arg0.circle.childCount > 0 then
-		local var0 = arg0.circle:GetChild(0).gameObject
+function var0_0.clear(arg0_5)
+	if arg0_5.circle.childCount > 0 then
+		local var0_5 = arg0_5.circle:GetChild(0).gameObject
 
-		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var0.name, var0.name, var0)
+		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var0_5.name, var0_5.name, var0_5)
 	end
 end
 
-function var0.dispose(arg0)
-	pg.DelegateInfo.Dispose(arg0)
-	arg0:clear()
+function var0_0.dispose(arg0_6)
+	pg.DelegateInfo.Dispose(arg0_6)
+	arg0_6:clear()
 end
 
-return var0
+return var0_0

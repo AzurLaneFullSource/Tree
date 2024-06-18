@@ -1,40 +1,40 @@
-﻿local var0 = class("KurskSPPtPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var0_0 = class("KurskSPPtPage", import(".TemplatePage.PtTemplatePage"))
 
-function var0.OnFirstFlush(arg0)
-	var0.super.OnFirstFlush(arg0)
-	onButton(arg0, arg0.battleBtn, function()
-		local var0
-		local var1
-		local var2 = arg0.activity:getConfig("config_client").linkActID
+function var0_0.OnFirstFlush(arg0_1)
+	var0_0.super.OnFirstFlush(arg0_1)
+	onButton(arg0_1, arg0_1.battleBtn, function()
+		local var0_2
+		local var1_2
+		local var2_2 = arg0_1.activity:getConfig("config_client").linkActID
 
-		if var2 then
-			var1 = getProxy(ActivityProxy):getActivityById(var2)
+		if var2_2 then
+			var1_2 = getProxy(ActivityProxy):getActivityById(var2_2)
 		end
 
-		if not var2 then
-			arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.BOSSRUSH_MAIN)
-		elseif var1 and not var1:isEnd() then
-			arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.BOSSRUSH_MAIN)
+		if not var2_2 then
+			arg0_1:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.BOSSRUSH_MAIN)
+		elseif var1_2 and not var1_2:isEnd() then
+			arg0_1:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.BOSSRUSH_MAIN)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0:findTF("build_btn", arg0.bg), function()
-		local var0
-		local var1
-		local var2 = arg0.activity:getConfig("config_client").linkActID
+	onButton(arg0_1, arg0_1:findTF("build_btn", arg0_1.bg), function()
+		local var0_3
+		local var1_3
+		local var2_3 = arg0_1.activity:getConfig("config_client").linkActID
 
-		if var2 then
-			var1 = getProxy(ActivityProxy):getActivityById(var2)
+		if var2_3 then
+			var1_3 = getProxy(ActivityProxy):getActivityById(var2_3)
 		end
 
-		if not var2 then
-			arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+		if not var2_3 then
+			arg0_1:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
 				page = BuildShipScene.PAGE_BUILD,
 				projectName = BuildShipScene.PROJECTS.ACTIVITY
 			})
-		elseif var1 and not var1:isEnd() then
-			arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+		elseif var1_3 and not var1_3:isEnd() then
+			arg0_1:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
 				page = BuildShipScene.PAGE_BUILD,
 				projectName = BuildShipScene.PROJECTS.ACTIVITY
 			})
@@ -44,9 +44,9 @@ function var0.OnFirstFlush(arg0)
 	end, SFX_PANEL)
 end
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
-	setActive(arg0.battleBtn, true)
+function var0_0.OnUpdateFlush(arg0_4)
+	var0_0.super.OnUpdateFlush(arg0_4)
+	setActive(arg0_4.battleBtn, true)
 end
 
-return var0
+return var0_0

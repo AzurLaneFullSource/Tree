@@ -1,7 +1,7 @@
-﻿local var0 = class("MainCollectionBtn", import(".MainBaseBtn"))
+﻿local var0_0 = class("MainCollectionBtn", import(".MainBaseBtn"))
 
-function var0.OnClick(arg0)
-	arg0:emit(NewMainMediator.GO_SCENE, SCENE.COLLECTSHIP)
+function var0_0.OnClick(arg0_1)
+	arg0_1:emit(NewMainMediator.GO_SCENE, SCENE.COLLECTSHIP)
 end
 
-return var0
+return var0_0

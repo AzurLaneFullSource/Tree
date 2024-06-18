@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_134 = {}
+var0_0.word_template_134 = {}
 
-local var1 = var0.word_template_134
+local var1_0 = var0_0.word_template_134
 
 function temp()
-	var1.回 = {
+	var1_0.回 = {
 		分 = {
 			器 = {
 				this = true
@@ -136,7 +136,7 @@ end
 temp()
 
 function temp()
-	var1.茴 = {
+	var1_0.茴 = {
 		香 = {
 			醚 = {
 				this = true
@@ -148,7 +148,7 @@ end
 temp()
 
 function temp()
-	var1.毀 = {
+	var1_0.毀 = {
 		滅 = {
 			步 = {
 				兵 = {
@@ -172,7 +172,7 @@ end
 temp()
 
 function temp()
-	var1.毁 = {
+	var1_0.毁 = {
 		灭 = {
 			佛 = {
 				教 = {
@@ -186,7 +186,7 @@ end
 temp()
 
 function temp()
-	var1.汇 = {
+	var1_0.汇 = {
 		报 = {
 			浮 = {
 				夸 = {
@@ -213,7 +213,7 @@ end
 temp()
 
 function temp()
-	var1.绘 = {
+	var1_0.绘 = {
 		芳 = {
 			录 = {
 				this = true
@@ -225,7 +225,7 @@ end
 temp()
 
 function temp()
-	var1.恵 = {
+	var1_0.恵 = {
 		美 = {
 			梨 = {
 				this = true

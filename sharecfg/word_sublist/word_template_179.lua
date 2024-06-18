@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_179 = {}
+var0_0.word_template_179 = {}
 
-local var1 = var0.word_template_179
+local var1_0 = var0_0.word_template_179
 
 function temp()
-	var1.佬 = {
+	var1_0.佬 = {
 		唬 = {
 			机 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.荖 = {
+	var1_0.荖 = {
 		虎 = {
 			機 = {
 				this = true
@@ -31,7 +31,7 @@ end
 temp()
 
 function temp()
-	var1.姥 = {
+	var1_0.姥 = {
 		唬 = {
 			机 = {
 				this = true
@@ -43,7 +43,7 @@ end
 temp()
 
 function temp()
-	var1.仂 = {
+	var1_0.仂 = {
 		this = {
 			this = true
 		}
@@ -53,7 +53,7 @@ end
 temp()
 
 function temp()
-	var1.乐 = {
+	var1_0.乐 = {
 		施 = {
 			会 = {
 				this = true
@@ -127,7 +127,7 @@ end
 temp()
 
 function temp()
-	var1.泐 = {
+	var1_0.泐 = {
 		this = {
 			this = true
 		}
@@ -137,7 +137,7 @@ end
 temp()
 
 function temp()
-	var1.鳓 = {
+	var1_0.鳓 = {
 		this = {
 			this = true
 		}

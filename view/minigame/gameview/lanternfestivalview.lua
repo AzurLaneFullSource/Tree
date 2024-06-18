@@ -1,79 +1,79 @@
-﻿local var0 = class("LanternFestivalView", import("..BaseMiniGameView"))
+﻿local var0_0 = class("LanternFestivalView", import("..BaseMiniGameView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "LanternFestivalUI"
 end
 
-function var0.didEnter(arg0)
-	arg0.controller = LanternRiddlesController.New()
+function var0_0.didEnter(arg0_2)
+	arg0_2.controller = LanternRiddlesController.New()
 
-	arg0.controller.view:SetUI(arg0._tf)
+	arg0_2.controller.view:SetUI(arg0_2._tf)
 
-	local var0 = function()
-		arg0:emit(var0.ON_BACK)
+	local function var0_2()
+		arg0_2:emit(var0_0.ON_BACK)
 	end
 
-	local function var1()
-		arg0:emit(var0.ON_HOME)
+	local function var1_2()
+		arg0_2:emit(var0_0.ON_HOME)
 	end
 
-	local function var2()
-		if arg0:GetMGHubData().count > 0 then
-			arg0:SendSuccess(0)
+	local function var2_2()
+		if arg0_2:GetMGHubData().count > 0 then
+			arg0_2:SendSuccess(0)
 		end
 	end
 
-	local function var3()
-		local var0 = arg0.controller:GetSaveData()
+	local function var3_2()
+		local var0_6 = arg0_2.controller:GetSaveData()
 
-		arg0:StoreDataToServer(var0)
+		arg0_2:StoreDataToServer(var0_6)
 	end
 
-	arg0.controller:SetCallBack(var0, var1, var2, var3)
+	arg0_2.controller:SetCallBack(var0_2, var1_2, var2_2, var3_2)
 
-	local var4 = arg0:PackData()
+	local var4_2 = arg0_2:PackData()
 
-	arg0.controller:SetUp(var4)
+	arg0_2.controller:SetUp(var4_2)
 end
 
-function var0.PackData(arg0)
-	local var0 = 15
-	local var1 = arg0:GetMGHubData()
-	local var2 = arg0:GetMGData():GetRuntimeData("elements")
-	local var3
-	local var4
+function var0_0.PackData(arg0_7)
+	local var0_7 = 15
+	local var1_7 = arg0_7:GetMGHubData()
+	local var2_7 = arg0_7:GetMGData():GetRuntimeData("elements")
+	local var3_7
+	local var4_7
 
-	if var2 and #var2 > 0 then
-		var3 = _.slice(var2, 1, var0)
-		var4 = _.slice(var2, var0 + 1, var1.usedtime)
+	if var2_7 and #var2_7 > 0 then
+		var3_7 = _.slice(var2_7, 1, var0_7)
+		var4_7 = _.slice(var2_7, var0_7 + 1, var1_7.usedtime)
 	else
-		var3 = {}
+		var3_7 = {}
 
-		for iter0 = 1, var0 do
-			table.insert(var3, 0)
+		for iter0_7 = 1, var0_7 do
+			table.insert(var3_7, 0)
 		end
 
-		var4 = {}
+		var4_7 = {}
 	end
 
 	return {
-		finishCount = var1.usedtime,
-		unlockCount = var1.count,
-		nextTimes = var3,
-		finishList = var4
+		finishCount = var1_7.usedtime,
+		unlockCount = var1_7.count,
+		nextTimes = var3_7,
+		finishList = var4_7
 	}
 end
 
-function var0.OnGetAwardDone(arg0, arg1)
-	if arg1.cmd == MiniGameOPCommand.CMD_COMPLETE then
-		local var0 = arg0:GetMGHubData()
-		local var1 = var0.ultimate
-		local var2 = var0.usedtime
-		local var3 = var0:getConfig("reward_need")
+function var0_0.OnGetAwardDone(arg0_8, arg1_8)
+	if arg1_8.cmd == MiniGameOPCommand.CMD_COMPLETE then
+		local var0_8 = arg0_8:GetMGHubData()
+		local var1_8 = var0_8.ultimate
+		local var2_8 = var0_8.usedtime
+		local var3_8 = var0_8:getConfig("reward_need")
 
-		if var1 == 0 and var3 <= var2 then
+		if var1_8 == 0 and var3_8 <= var2_8 then
 			pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-				hubid = var0.id,
+				hubid = var0_8.id,
 				cmd = MiniGameOPCommand.CMD_ULTIMATE,
 				args1 = {}
 			})
@@ -81,8 +81,8 @@ function var0.OnGetAwardDone(arg0, arg1)
 	end
 end
 
-function var0.willExit(arg0)
-	arg0.controller:Dispose()
+function var0_0.willExit(arg0_9)
+	arg0_9.controller:Dispose()
 end
 
-return var0
+return var0_0

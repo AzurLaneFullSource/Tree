@@ -1,33 +1,33 @@
-﻿local var0 = class("RivalInfoMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("RivalInfoMediator", import("..base.ContextMediator"))
 
-var0.START_BATTLE = "RivalInfoMediator:START_BATTLE"
+var0_0.START_BATTLE = "RivalInfoMediator:START_BATTLE"
 
-function var0.register(arg0)
-	assert(arg0.contextData.rival, "rival should exist")
-	assert(arg0.contextData.type, "type should exist")
-	arg0.viewComponent:setRival(arg0.contextData.rival)
-	arg0:bind(var0.START_BATTLE, function(arg0)
-		local var0
+function var0_0.register(arg0_1)
+	assert(arg0_1.contextData.rival, "rival should exist")
+	assert(arg0_1.contextData.type, "type should exist")
+	arg0_1.viewComponent:setRival(arg0_1.contextData.rival)
+	arg0_1:bind(var0_0.START_BATTLE, function(arg0_2)
+		local var0_2
 
-		if arg0.contextData.type == RivalInfoLayer.TYPE_BATTLE then
-			var0 = SYSTEM_DUEL
+		if arg0_1.contextData.type == RivalInfoLayer.TYPE_BATTLE then
+			var0_2 = SYSTEM_DUEL
 		end
 
-		arg0:sendNotification(GAME.MILITARY_STARTED, {
-			rivalId = arg0.contextData.rival.id,
-			system = var0
+		arg0_1:sendNotification(GAME.MILITARY_STARTED, {
+			rivalId = arg0_1.contextData.rival.id,
+			system = var0_2
 		})
-		arg0.viewComponent:emit(BaseUI.ON_CLOSE)
+		arg0_1.viewComponent:emit(BaseUI.ON_CLOSE)
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_3)
 	return {}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_4, arg1_4)
+	local var0_4 = arg1_4:getName()
+	local var1_4 = arg1_4:getBody()
 end
 
-return var0
+return var0_0

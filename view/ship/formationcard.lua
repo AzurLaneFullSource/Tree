@@ -1,98 +1,98 @@
-﻿local var0 = class("FormationCard")
-local var1 = 0
-local var2 = 1
-local var3 = 2
+﻿local var0_0 = class("FormationCard")
+local var1_0 = 0
+local var2_0 = 1
+local var3_0 = 2
 
-function var0.Ctor(arg0, arg1)
-	arg0.go = arg1
-	arg0.tr = arg1.transform
-	arg0.content = arg0.tr:Find("content")
-	arg0.bgImage = arg0.content:Find("bg"):GetComponent(typeof(Image))
-	arg0.paintingTr = arg0.content:Find("ship_icon/painting")
-	arg0.detailTF = arg0.content:Find("detail")
-	arg0.lvTxt = arg0.detailTF:Find("top/level"):GetComponent(typeof(Text))
-	arg0.shipType = arg0.detailTF:Find("top/type")
-	arg0.propsTr = arg0.detailTF:Find("info")
-	arg0.nameTxt = arg0.detailTF:Find("name_mask/name")
-	arg0.frame = arg0.content:Find("front/frame")
-	arg0.UIlist = UIItemList.New(arg0.content:Find("front/stars"), arg0.content:Find("front/stars/star_tpl"))
-	arg0.shipState = arg0.content:Find("front/flag")
-	arg0.proposeMark = arg0.content:Find("front/propose")
-	arg0.otherBg = arg0.content:Find("front/bg_other")
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.go = arg1_1
+	arg0_1.tr = arg1_1.transform
+	arg0_1.content = arg0_1.tr:Find("content")
+	arg0_1.bgImage = arg0_1.content:Find("bg"):GetComponent(typeof(Image))
+	arg0_1.paintingTr = arg0_1.content:Find("ship_icon/painting")
+	arg0_1.detailTF = arg0_1.content:Find("detail")
+	arg0_1.lvTxt = arg0_1.detailTF:Find("top/level"):GetComponent(typeof(Text))
+	arg0_1.shipType = arg0_1.detailTF:Find("top/type")
+	arg0_1.propsTr = arg0_1.detailTF:Find("info")
+	arg0_1.nameTxt = arg0_1.detailTF:Find("name_mask/name")
+	arg0_1.frame = arg0_1.content:Find("front/frame")
+	arg0_1.UIlist = UIItemList.New(arg0_1.content:Find("front/stars"), arg0_1.content:Find("front/stars/star_tpl"))
+	arg0_1.shipState = arg0_1.content:Find("front/flag")
+	arg0_1.proposeMark = arg0_1.content:Find("front/propose")
+	arg0_1.otherBg = arg0_1.content:Find("front/bg_other")
 
-	setActive(arg0.shipState, false)
+	setActive(arg0_1.shipState, false)
 
-	arg0.loader = AutoLoader.New()
+	arg0_1.loader = AutoLoader.New()
 end
 
-function var0.update(arg0, arg1)
-	if arg1 then
-		setActive(arg0.content, true)
+function var0_0.update(arg0_2, arg1_2)
+	if arg1_2 then
+		setActive(arg0_2.content, true)
 
-		arg0.shipVO = arg1
+		arg0_2.shipVO = arg1_2
 
-		arg0:flush()
+		arg0_2:flush()
 	else
-		setActive(arg0.content, false)
+		setActive(arg0_2.content, false)
 	end
 end
 
-function var0.flush(arg0)
-	local var0 = arg0.shipVO
+function var0_0.flush(arg0_3)
+	local var0_3 = arg0_3.shipVO
 
-	arg0.lvTxt.text = "Lv." .. var0.level
+	arg0_3.lvTxt.text = "Lv." .. var0_3.level
 
-	local var1 = var0:getMaxStar()
-	local var2 = var0:getStar()
+	local var1_3 = var0_3:getMaxStar()
+	local var2_3 = var0_3:getStar()
 
-	arg0.UIlist:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			setActive(arg2:Find("star"), arg1 < var2)
+	arg0_3.UIlist:make(function(arg0_4, arg1_4, arg2_4)
+		if arg0_4 == UIItemList.EventUpdate then
+			setActive(arg2_4:Find("star"), arg1_4 < var2_3)
 		end
 	end)
-	arg0.UIlist:align(var1)
-	setScrollText(arg0.nameTxt, var0:GetColorName())
-	arg0:updateProps({})
-	setPaintingPrefabAsync(arg0.paintingTr, var0:getPainting(), "biandui")
+	arg0_3.UIlist:align(var1_3)
+	setScrollText(arg0_3.nameTxt, var0_3:GetColorName())
+	arg0_3:updateProps({})
+	setPaintingPrefabAsync(arg0_3.paintingTr, var0_3:getPainting(), "biandui")
 
-	local var3 = var0:rarity2bgPrint()
+	local var3_3 = var0_3:rarity2bgPrint()
 
-	GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. var3, "", arg0.bgImage)
+	GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. var3_3, "", arg0_3.bgImage)
 
-	local var4, var5 = var0:GetFrameAndEffect(true)
+	local var4_3, var5_3 = var0_3:GetFrameAndEffect(true)
 
-	setRectShipCardFrame(arg0.frame, var3, var4)
-	setFrameEffect(arg0.otherBg, var5)
-	setProposeMarkIcon(arg0.proposeMark, var0)
+	setRectShipCardFrame(arg0_3.frame, var3_3, var4_3)
+	setFrameEffect(arg0_3.otherBg, var5_3)
+	setProposeMarkIcon(arg0_3.proposeMark, var0_3)
 
-	local var6 = arg0.shipVO:getShipType()
+	local var6_3 = arg0_3.shipVO:getShipType()
 
-	setImageSprite(arg0.shipType, GetSpriteFromAtlas("shiptype", shipType2print(var6)))
+	setImageSprite(arg0_3.shipType, GetSpriteFromAtlas("shiptype", shipType2print(var6_3)))
 end
 
-function var0.updateProps(arg0, arg1)
-	for iter0 = 0, 2 do
-		local var0 = arg0.propsTr:GetChild(iter0)
+function var0_0.updateProps(arg0_5, arg1_5)
+	for iter0_5 = 0, 2 do
+		local var0_5 = arg0_5.propsTr:GetChild(iter0_5)
 
-		if iter0 < #arg1 then
-			var0.gameObject:SetActive(true)
+		if iter0_5 < #arg1_5 then
+			var0_5.gameObject:SetActive(true)
 
-			var0:GetChild(0):GetComponent("Text").text = arg1[iter0 + 1][1]
-			var0:GetChild(1):GetComponent("Text").text = arg1[iter0 + 1][2]
+			var0_5:GetChild(0):GetComponent("Text").text = arg1_5[iter0_5 + 1][1]
+			var0_5:GetChild(1):GetComponent("Text").text = arg1_5[iter0_5 + 1][2]
 		else
-			var0.gameObject:SetActive(false)
+			var0_5.gameObject:SetActive(false)
 		end
 	end
 end
 
-function var0.clear(arg0)
-	local var0 = arg0.shipVO
+function var0_0.clear(arg0_6)
+	local var0_6 = arg0_6.shipVO
 
-	if var0 then
-		retPaintingPrefab(arg0.paintingTr, var0:getPainting())
+	if var0_6 then
+		retPaintingPrefab(arg0_6.paintingTr, var0_6:getPainting())
 	end
 
-	arg0.loader:Clear()
+	arg0_6.loader:Clear()
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_135 = {}
+var0_0.word_template_135 = {}
 
-local var1 = var0.word_template_135
+local var1_0 = var0_0.word_template_135
 
 function temp()
-	var1.惠 = {
+	var1_0.惠 = {
 		美 = {
 			梨 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.會 = {
+	var1_0.會 = {
 		陰 = {
 			this = true
 		}
@@ -29,7 +29,7 @@ end
 temp()
 
 function temp()
-	var1.慧 = {
+	var1_0.慧 = {
 		网 = {
 			this = true
 		}
@@ -39,7 +39,7 @@ end
 temp()
 
 function temp()
-	var1.噦 = {
+	var1_0.噦 = {
 		this = {
 			this = true
 		}
@@ -49,7 +49,7 @@ end
 temp()
 
 function temp()
-	var1.繢 = {
+	var1_0.繢 = {
 		this = {
 			this = true
 		}
@@ -59,7 +59,7 @@ end
 temp()
 
 function temp()
-	var1.昏 = {
+	var1_0.昏 = {
 		迷 = {
 			圖 = {
 				騰 = {
@@ -76,7 +76,7 @@ end
 temp()
 
 function temp()
-	var1.婚 = {
+	var1_0.婚 = {
 		嫁 = {
 			业 = {
 				务 = {

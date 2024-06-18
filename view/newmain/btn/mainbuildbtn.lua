@@ -1,7 +1,7 @@
-﻿local var0 = class("MainBuildBtn", import(".MainBaseBtn"))
+﻿local var0_0 = class("MainBuildBtn", import(".MainBaseBtn"))
 
-function var0.OnClick(arg0)
-	arg0:emit(NewMainMediator.GO_SCENE, SCENE.GETBOAT)
+function var0_0.OnClick(arg0_1)
+	arg0_1:emit(NewMainMediator.GO_SCENE, SCENE.GETBOAT)
 end
 
-return var0
+return var0_0

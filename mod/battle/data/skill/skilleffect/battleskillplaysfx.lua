@@ -1,25 +1,25 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("BattleSkillPlaySFX", var0.Battle.BattleSkillEffect)
+local var0_0 = ys
+local var1_0 = class("BattleSkillPlaySFX", var0_0.Battle.BattleSkillEffect)
 
-var0.Battle.BattleSkillPlaySFX = var1
-var1.__name = "BattleSkillPlaySFX"
+var0_0.Battle.BattleSkillPlaySFX = var1_0
+var1_0.__name = "BattleSkillPlaySFX"
 
-function var1.Ctor(arg0, arg1, arg2)
-	var1.super.Ctor(arg0, arg1, arg2)
+function var1_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var1_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 
-	arg0._SFXID = arg0._tempData.arg_list.sound_effect
+	arg0_1._SFXID = arg0_1._tempData.arg_list.sound_effect
 end
 
-function var1.DoDataEffect(arg0, arg1, arg2)
-	arg0:playSound()
+function var1_0.DoDataEffect(arg0_2, arg1_2, arg2_2)
+	arg0_2:playSound()
 end
 
-function var1.DoDataEffectWithoutTarget(arg0, arg1)
-	arg0:playSound()
+function var1_0.DoDataEffectWithoutTarget(arg0_3, arg1_3)
+	arg0_3:playSound()
 end
 
-function var1.playSound(arg0)
-	var0.Battle.PlayBattleSFX(arg0._SFXID)
+function var1_0.playSound(arg0_4)
+	var0_0.Battle.PlayBattleSFX(arg0_4._SFXID)
 end

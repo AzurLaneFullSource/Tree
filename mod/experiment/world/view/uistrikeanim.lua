@@ -1,6 +1,6 @@
-﻿local var0 = class("UIStrikeAnim", import(".UIAnim"))
+﻿local var0_0 = class("UIStrikeAnim", import(".UIAnim"))
 
-var0.Fields = {
+var0_0.Fields = {
 	spineAnim = "userdata",
 	prefab = "string",
 	aniEvent = "userdata",
@@ -14,124 +14,124 @@ var0.Fields = {
 	painting = "userdata",
 	shipVO = "table"
 }
-var0.EventLoaded = "UIStrikeAnim.EventLoaded"
+var0_0.EventLoaded = "UIStrikeAnim.EventLoaded"
 
-function var0.Setup(arg0, arg1, arg2)
-	arg0.prefab = arg1
-	arg0.shipVO = arg2
+function var0_0.Setup(arg0_1, arg1_1, arg2_1)
+	arg0_1.prefab = arg1_1
+	arg0_1.shipVO = arg2_1
 end
 
-function var0.LoadBack(arg0)
-	if arg0.transform and arg0.painting and arg0.char then
-		arg0:Init()
-		arg0:DispatchEvent(var0.EventLoaded)
+function var0_0.LoadBack(arg0_2)
+	if arg0_2.transform and arg0_2.painting and arg0_2.char then
+		arg0_2:Init()
+		arg0_2:DispatchEvent(var0_0.EventLoaded)
 	end
 end
 
-function var0.Load(arg0)
-	local var0 = arg0.prefab
-	local var1 = PoolMgr.GetInstance()
+function var0_0.Load(arg0_3)
+	local var0_3 = arg0_3.prefab
+	local var1_3 = PoolMgr.GetInstance()
 
-	var1:GetUI(var0, true, function(arg0)
-		if var0 == arg0.prefab then
-			arg0.transform = arg0.transform
+	var1_3:GetUI(var0_3, true, function(arg0_4)
+		if var0_3 == arg0_3.prefab then
+			arg0_3.transform = arg0_4.transform
 
-			arg0:LoadBack()
+			arg0_3:LoadBack()
 		else
-			var1:ReturnUI(var0, arg0)
+			var1_3:ReturnUI(var0_3, arg0_4)
 		end
 	end)
-	arg0:ReloadShip(arg0.shipVO)
+	arg0_3:ReloadShip(arg0_3.shipVO)
 end
 
-function var0.ReloadShip(arg0, arg1)
-	arg0.shipVO = arg1
-	arg0.aniEvent = nil
-	arg0.painting = nil
-	arg0.char = nil
+function var0_0.ReloadShip(arg0_5, arg1_5)
+	arg0_5.shipVO = arg1_5
+	arg0_5.aniEvent = nil
+	arg0_5.painting = nil
+	arg0_5.char = nil
 
-	local var0 = PoolMgr.GetInstance()
+	local var0_5 = PoolMgr.GetInstance()
 
-	var0.GetInstance():GetPainting(arg1:getPainting(), true, function(arg0)
-		arg0.painting = arg0
+	var0_5.GetInstance():GetPainting(arg1_5:getPainting(), true, function(arg0_6)
+		arg0_5.painting = arg0_6
 
-		ShipExpressionHelper.SetExpression(arg0.painting, arg1:getPainting())
-		arg0:LoadBack()
+		ShipExpressionHelper.SetExpression(arg0_5.painting, arg1_5:getPainting())
+		arg0_5:LoadBack()
 	end)
-	var0.GetInstance():GetSpineChar(arg1:getPrefab(), true, function(arg0)
-		arg0.char = arg0
-		arg0.char.transform.localScale = Vector3.one
+	var0_5.GetInstance():GetSpineChar(arg1_5:getPrefab(), true, function(arg0_7)
+		arg0_5.char = arg0_7
+		arg0_5.char.transform.localScale = Vector3.one
 
-		arg0:LoadBack()
+		arg0_5:LoadBack()
 	end)
 end
 
-function var0.UnloadShipVO(arg0)
-	local var0 = arg0.shipVO
+function var0_0.UnloadShipVO(arg0_8)
+	local var0_8 = arg0_8.shipVO
 
-	retPaintingPrefab(arg0.transform:Find("mask/painting"), var0:getPainting())
-	PoolMgr.GetInstance():ReturnSpineChar(var0:getPrefab(), arg0.char)
+	retPaintingPrefab(arg0_8.transform:Find("mask/painting"), var0_8:getPainting())
+	PoolMgr.GetInstance():ReturnSpineChar(var0_8:getPrefab(), arg0_8.char)
 
-	arg0.shipVO = nil
-	arg0.painting = nil
-	arg0.char = nil
+	arg0_8.shipVO = nil
+	arg0_8.painting = nil
+	arg0_8.char = nil
 end
 
-function var0.Play(arg0, arg1)
-	arg0.playing = true
+function var0_0.Play(arg0_9, arg1_9)
+	arg0_9.playing = true
 
-	function arg0.onStart(arg0)
-		arg0.spineAnim:SetAction("attack", 0)
+	function arg0_9.onStart(arg0_10)
+		arg0_9.spineAnim:SetAction("attack", 0)
 
-		arg0.skelegraph.freeze = true
+		arg0_9.skelegraph.freeze = true
 	end
 
-	function arg0.onTrigger(arg0)
-		arg0.skelegraph.freeze = false
+	function arg0_9.onTrigger(arg0_11)
+		arg0_9.skelegraph.freeze = false
 
-		arg0.spineAnim:SetActionCallBack(function(arg0)
-			if arg0 == "action" then
+		arg0_9.spineAnim:SetActionCallBack(function(arg0_12)
+			if arg0_12 == "action" then
 				-- block empty
-			elseif arg0 == "finish" then
-				arg0.skelegraph.freeze = true
+			elseif arg0_12 == "finish" then
+				arg0_9.skelegraph.freeze = true
 			end
 		end)
 	end
 
-	arg0.onEnd = arg1
+	arg0_9.onEnd = arg1_9
 
-	arg0:Update()
+	arg0_9:Update()
 end
 
-function var0.Stop(arg0)
-	arg0.playing = false
+function var0_0.Stop(arg0_13)
+	arg0_13.playing = false
 
-	arg0:Update()
+	arg0_13:Update()
 
-	if arg0.skelegraph then
-		arg0.skelegraph.freeze = false
+	if arg0_13.skelegraph then
+		arg0_13.skelegraph.freeze = false
 	end
 
-	arg0:UnloadShipVO()
+	arg0_13:UnloadShipVO()
 end
 
-function var0.Init(arg0)
-	setActive(arg0.transform, false)
+function var0_0.Init(arg0_14)
+	setActive(arg0_14.transform, false)
 
-	local var0 = arg0.transform:Find("torpedo")
-	local var1 = arg0.transform:Find("mask/painting")
-	local var2 = arg0.transform:Find("ship")
+	local var0_14 = arg0_14.transform:Find("torpedo")
+	local var1_14 = arg0_14.transform:Find("mask/painting")
+	local var2_14 = arg0_14.transform:Find("ship")
 
-	setParent(arg0.painting, var1:Find("fitter"), false)
-	setParent(arg0.char, var2, false)
-	setActive(var2, false)
-	setActive(var0, false)
+	setParent(arg0_14.painting, var1_14:Find("fitter"), false)
+	setParent(arg0_14.char, var2_14, false)
+	setActive(var2_14, false)
+	setActive(var0_14, false)
 
-	arg0.spineAnim = arg0.char:GetComponent("SpineAnimUI")
-	arg0.skelegraph = arg0.spineAnim:GetComponent("SkeletonGraphic")
-	arg0.aniEvent = arg0.transform:GetComponent("DftAniEvent")
+	arg0_14.spineAnim = arg0_14.char:GetComponent("SpineAnimUI")
+	arg0_14.skelegraph = arg0_14.spineAnim:GetComponent("SkeletonGraphic")
+	arg0_14.aniEvent = arg0_14.transform:GetComponent("DftAniEvent")
 
-	arg0:Update()
+	arg0_14:Update()
 end
 
-return var0
+return var0_0

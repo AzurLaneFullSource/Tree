@@ -1,25 +1,25 @@
-﻿local var0 = class("ShipProfileMainExCvBtn", import(".ShipProfileCvBtn"))
+﻿local var0_0 = class("ShipProfileMainExCvBtn", import(".ShipProfileCvBtn"))
 
-function var0.Init(arg0, arg1, arg2, arg3, arg4)
-	arg0.shipGroup = arg1
-	arg0.isLive2d = arg3
-	arg0.skin = arg2
+function var0_0.Init(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
+	arg0_1.shipGroup = arg1_1
+	arg0_1.isLive2d = arg3_1
+	arg0_1.skin = arg2_1
 
-	local var0 = "main" .. arg4
-	local var1 = pg.character_voice[var0]
-	local var2 = i18n("word_cv_key_main") .. arg4 .. "Ex"
+	local var0_1 = "main" .. arg4_1
+	local var1_1 = pg.character_voice[var0_1]
+	local var2_1 = i18n("word_cv_key_main") .. arg4_1 .. "Ex"
 
-	if var1 then
-		arg0.voice = Clone(var1)
-		arg0.voice.voice_name = var2
+	if var1_1 then
+		arg0_1.voice = Clone(var1_1)
+		arg0_1.voice.voice_name = var2_1
 	else
-		arg0.voice = {
+		arg0_1.voice = {
 			profile_index = 5,
 			spine_action = "normal",
 			l2d_action = "main_3",
-			key = var0,
-			voice_name = var2,
-			resource_key = "main_" .. arg4,
+			key = var0_1,
+			voice_name = var2_1,
+			resource_key = "main_" .. arg4_1,
 			unlock_condition = {
 				0,
 				0
@@ -27,83 +27,83 @@ function var0.Init(arg0, arg1, arg2, arg3, arg4)
 		}
 	end
 
-	local var3 = arg0.voice
+	local var3_1 = arg0_1.voice
 
-	arg0.words = pg.ship_skin_words[arg0.skin.id]
+	arg0_1.words = pg.ship_skin_words[arg0_1.skin.id]
 
-	local var4
-	local var5
-	local var6
-	local var7
-	local var8
-	local var9
-	local var10 = var3.key
-	local var11 = arg0.shipGroup:GetMaxIntimacy()
+	local var4_1
+	local var5_1
+	local var6_1
+	local var7_1
+	local var8_1
+	local var9_1
+	local var10_1 = var3_1.key
+	local var11_1 = arg0_1.shipGroup:GetMaxIntimacy()
 
-	if string.find(var10, ShipWordHelper.WORD_TYPE_MAIN) then
-		local var12 = string.gsub(var10, ShipWordHelper.WORD_TYPE_MAIN, "")
+	if string.find(var10_1, ShipWordHelper.WORD_TYPE_MAIN) then
+		local var12_1 = string.gsub(var10_1, ShipWordHelper.WORD_TYPE_MAIN, "")
 
-		var7 = tonumber(var12)
-		var4, var5, var6 = ShipWordHelper.GetWordAndCV(arg0.skin.id, ShipWordHelper.WORD_TYPE_MAIN, var7, nil, var11)
+		var7_1 = tonumber(var12_1)
+		var4_1, var5_1, var6_1 = ShipWordHelper.GetWordAndCV(arg0_1.skin.id, ShipWordHelper.WORD_TYPE_MAIN, var7_1, nil, var11_1)
 
-		if arg0.isLive2d then
-			var8 = ShipWordHelper.GetL2dCvCalibrate(arg0.skin.id, ShipWordHelper.WORD_TYPE_MAIN, var7)
-			var9 = ShipWordHelper.GetL2dSoundEffect(arg0.skin.id, ShipWordHelper.WORD_TYPE_MAIN, var7)
+		if arg0_1.isLive2d then
+			var8_1 = ShipWordHelper.GetL2dCvCalibrate(arg0_1.skin.id, ShipWordHelper.WORD_TYPE_MAIN, var7_1)
+			var9_1 = ShipWordHelper.GetL2dSoundEffect(arg0_1.skin.id, ShipWordHelper.WORD_TYPE_MAIN, var7_1)
 		end
 	else
-		var4, var5, var6 = ShipWordHelper.GetWordAndCV(arg0.skin.id, var10)
+		var4_1, var5_1, var6_1 = ShipWordHelper.GetWordAndCV(arg0_1.skin.id, var10_1)
 
-		if arg0.isLive2d then
-			var8 = ShipWordHelper.GetL2dCvCalibrate(arg0.skin.id, var10)
-			var9 = ShipWordHelper.GetL2dSoundEffect(arg0.skin.id, var10)
+		if arg0_1.isLive2d then
+			var8_1 = ShipWordHelper.GetL2dCvCalibrate(arg0_1.skin.id, var10_1)
+			var9_1 = ShipWordHelper.GetL2dSoundEffect(arg0_1.skin.id, var10_1)
 		end
 	end
 
-	arg0.wordData = {
-		cvKey = var4,
-		cvPath = var5,
-		textContent = var6,
-		mainIndex = var7,
-		voiceCalibrate = var8,
-		se = var9,
-		maxfavor = var11
+	arg0_1.wordData = {
+		cvKey = var4_1,
+		cvPath = var5_1,
+		textContent = var6_1,
+		mainIndex = var7_1,
+		voiceCalibrate = var8_1,
+		se = var9_1,
+		maxfavor = var11_1
 	}
 end
 
-function var0.Update(arg0)
-	local var0 = arg0.voice
-	local var1 = var0.unlock_condition[1] < 0
-	local var2 = arg0.wordData.textContent == nil or arg0.wordData.textContent == "nil" or arg0.wordData.textContent == ""
+function var0_0.Update(arg0_2)
+	local var0_2 = arg0_2.voice
+	local var1_2 = var0_2.unlock_condition[1] < 0
+	local var2_2 = arg0_2.wordData.textContent == nil or arg0_2.wordData.textContent == "nil" or arg0_2.wordData.textContent == ""
 
-	if not arg0.isLive2d then
-		var1 = var1 or var2
+	if not arg0_2.isLive2d then
+		var1_2 = var1_2 or var2_2
 	else
-		local var3 = var0.l2d_action:match("^" .. ShipWordHelper.WORD_TYPE_MAIN .. "_")
+		local var3_2 = var0_2.l2d_action:match("^" .. ShipWordHelper.WORD_TYPE_MAIN .. "_")
 
-		var1 = var1 or var2 and var3
+		var1_2 = var1_2 or var2_2 and var3_2
 	end
 
-	setActive(arg0._tf, not var1)
+	setActive(arg0_2._tf, not var1_2)
 
-	if not var1 then
-		arg0:UpdateCvBtn()
-		arg0:UpdateIcon()
+	if not var1_2 then
+		arg0_2:UpdateCvBtn()
+		arg0_2:UpdateIcon()
 	end
 end
 
-function var0.UpdateCvBtn(arg0)
-	local var0 = arg0.voice
-	local var1 = arg0.shipGroup
-	local var2 = true
-	local var3
-	local var4 = var2 and var0.voice_name or "???"
+function var0_0.UpdateCvBtn(arg0_3)
+	local var0_3 = arg0_3.voice
+	local var1_3 = arg0_3.shipGroup
+	local var2_3 = true
+	local var3_3
+	local var4_3 = var2_3 and var0_3.voice_name or "???"
 
-	arg0.nameTxt.text = var4
+	arg0_3.nameTxt.text = var4_3
 
-	local var5 = arg0.shipGroup:GetMaxIntimacy()
-	local var6 = ShipWordHelper.ExistDifferentMainExWord(arg0.skin.id, var0.key, arg0.wordData.mainIndex, var5)
+	local var5_3 = arg0_3.shipGroup:GetMaxIntimacy()
+	local var6_3 = ShipWordHelper.ExistDifferentMainExWord(arg0_3.skin.id, var0_3.key, arg0_3.wordData.mainIndex, var5_3)
 
-	setActive(arg0.tagDiff, var6)
+	setActive(arg0_3.tagDiff, var6_3)
 end
 
-return var0
+return var0_0

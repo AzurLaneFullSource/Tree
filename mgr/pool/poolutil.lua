@@ -1,18 +1,18 @@
-﻿local var0 = {}
+﻿local var0_0 = {}
 
-var0.clearSprites = true
+var0_0.clearSprites = true
 
-function var0.Destroy(arg0, arg1)
-	local var0 = UIUtil.IsGameObject(arg0)
-	local var1 = var0 and UIUtil.IsPrefab(arg0)
+function var0_0.Destroy(arg0_1, arg1_1)
+	local var0_1 = UIUtil.IsGameObject(arg0_1)
+	local var1_1 = var0_1 and UIUtil.IsPrefab(arg0_1)
 
-	if var0 and var0.clearSprites and not arg1 then
-		UIUtil.ClearTextureRef(arg0)
+	if var0_1 and var0_0.clearSprites and not arg1_1 then
+		UIUtil.ClearTextureRef(arg0_1)
 	end
 
-	if var0 and not var1 then
-		Object.Destroy(arg0)
+	if var0_1 and not var1_1 then
+		Object.Destroy(arg0_1)
 	end
 end
 
-return var0
+return var0_0

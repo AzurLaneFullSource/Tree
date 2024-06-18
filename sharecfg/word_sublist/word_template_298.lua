@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_298 = {}
+var0_0.word_template_298 = {}
 
-local var1 = var0.word_template_298
+local var1_0 = var0_0.word_template_298
 
 function temp()
-	var1.嘻 = {
+	var1_0.嘻 = {
 		弄 = {
 			春 = {
 				根 = {
@@ -46,7 +46,7 @@ end
 temp()
 
 function temp()
-	var1.犠 = {
+	var1_0.犠 = {
 		母 = {
 			妹 = {
 				this = true
@@ -58,7 +58,7 @@ end
 temp()
 
 function temp()
-	var1.习 = {
+	var1_0.习 = {
 		j = {
 			i = {
 				n = {
@@ -1166,7 +1166,7 @@ end
 temp()
 
 function temp()
-	var1.袭 = {
+	var1_0.袭 = {
 		近 = {
 			平 = {
 				this = true
@@ -1178,7 +1178,7 @@ end
 temp()
 
 function temp()
-	var1.習 = {
+	var1_0.習 = {
 		包 = {
 			this = true,
 			子 = {
@@ -1352,7 +1352,7 @@ end
 temp()
 
 function temp()
-	var1.媳 = {
+	var1_0.媳 = {
 		婦 = {
 			伸 = {
 				手 = {
@@ -1389,7 +1389,7 @@ end
 temp()
 
 function temp()
-	var1.覡 = {
+	var1_0.覡 = {
 		this = {
 			this = true
 		}

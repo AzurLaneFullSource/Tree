@@ -1,29 +1,29 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle = var0.Battle or {}
+var0_0.Battle = var0_0.Battle or {}
 
-local var1 = {}
+local var1_0 = {}
 
-pg.bfConsts = var1
-var1.DFT_CRIT_EFFECT = 1.5
-var1.DFT_CRIT_RATE = 0.05
-var1.SECONDs = 60
-var1.PERCENT = 0.01
-var1.PERCENT1 = 0.001
-var1.PERCENT2 = 0.0001
-var1.HUNDRED = 100
-var1.SCORE_RATE = {
+pg.bfConsts = var1_0
+var1_0.DFT_CRIT_EFFECT = 1.5
+var1_0.DFT_CRIT_RATE = 0.05
+var1_0.SECONDs = 60
+var1_0.PERCENT = 0.01
+var1_0.PERCENT1 = 0.001
+var1_0.PERCENT2 = 0.0001
+var1_0.HUNDRED = 100
+var1_0.SCORE_RATE = {
 	0.7,
 	0.8,
 	0.3
 }
-var1.CRASH_RATE = {
+var1_0.CRASH_RATE = {
 	0.05,
 	0.025
 }
-var1.SUBMARINE_KAMIKAZE = {
+var1_0.SUBMARINE_KAMIKAZE = {
 	80,
 	3.5,
 	1.5,
@@ -33,7 +33,7 @@ var1.SUBMARINE_KAMIKAZE = {
 	1,
 	0.005
 }
-var1.LEAK_RATE = {
+var1_0.LEAK_RATE = {
 	10,
 	2.2,
 	0.7,
@@ -42,7 +42,7 @@ var1.LEAK_RATE = {
 	0.005,
 	0.5
 }
-var1.PLANE_LEAK_RATE = {
+var1_0.PLANE_LEAK_RATE = {
 	1,
 	1,
 	0.01,
@@ -56,20 +56,20 @@ var1.PLANE_LEAK_RATE = {
 	1,
 	1
 }
-var1.METEO_RATE = {
+var1_0.METEO_RATE = {
 	0.05,
 	20,
 	0.6,
 	0.4
 }
-var1.NUM1 = 1
-var1.NUM0 = 0
-var1.NUM10000 = 10000
-var1.ACCURACY = {
+var1_0.NUM1 = 1
+var1_0.NUM0 = 0
+var1_0.NUM10000 = 10000
+var1_0.ACCURACY = {
 	0.1,
 	2
 }
-var1.DRATE = {
+var1_0.DRATE = {
 	25,
 	0.02,
 	0.0002,
@@ -78,399 +78,399 @@ var1.DRATE = {
 	0.8,
 	150
 }
-var1.SPEED_CONST = 0.02
-var1.HP_CONST = 1.5
+var1_0.SPEED_CONST = 0.02
+var1_0.HP_CONST = 1.5
 
-local var2 = singletonClass("BattleState", var0.MVC.Facade)
+local var2_0 = singletonClass("BattleState", var0_0.MVC.Facade)
 
-var0.Battle.BattleState = var2
-var2.__name = "BattleState"
-var2.BATTLE_STATE_IDLE = "BATTLE_IDLE"
-var2.BATTLE_STATE_OPENING = "BATTLE_OPENING"
-var2.BATTLE_STATE_FIGHT = "BATTLE_FIGHT"
-var2.BATTLE_STATE_REPORT = "BATTLE_REPORT"
+var0_0.Battle.BattleState = var2_0
+var2_0.__name = "BattleState"
+var2_0.BATTLE_STATE_IDLE = "BATTLE_IDLE"
+var2_0.BATTLE_STATE_OPENING = "BATTLE_OPENING"
+var2_0.BATTLE_STATE_FIGHT = "BATTLE_FIGHT"
+var2_0.BATTLE_STATE_REPORT = "BATTLE_REPORT"
 
-function var2.Ctor(arg0)
-	var2.super.Ctor(arg0)
-	arg0:ChangeState(var2.BATTLE_STATE_IDLE)
+function var2_0.Ctor(arg0_1)
+	var2_0.super.Ctor(arg0_1)
+	arg0_1:ChangeState(var2_0.BATTLE_STATE_IDLE)
 end
 
-function var2.IsAutoBotActive(arg0)
-	local var0 = AutoBotCommand.GetAutoBotMark(arg0)
+function var2_0.IsAutoBotActive(arg0_2)
+	local var0_2 = AutoBotCommand.GetAutoBotMark(arg0_2)
 
-	return PlayerPrefs.GetInt("autoBotIsAcitve" .. var0, 0) == 1 and AutoBotCommand.autoBotSatisfied()
+	return PlayerPrefs.GetInt("autoBotIsAcitve" .. var0_2, 0) == 1 and AutoBotCommand.autoBotSatisfied()
 end
 
-function var2.IsAutoSubActive(arg0)
-	local var0 = AutoSubCommand.GetAutoSubMark(arg0)
+function var2_0.IsAutoSubActive(arg0_3)
+	local var0_3 = AutoSubCommand.GetAutoSubMark(arg0_3)
 
-	return PlayerPrefs.GetInt("autoSubIsAcitve" .. var0, 0) == 1
+	return PlayerPrefs.GetInt("autoSubIsAcitve" .. var0_3, 0) == 1
 end
 
-function var2.ChatUseable(arg0)
-	local var0 = PlayerPrefs.GetInt(HIDE_CHAT_FLAG)
-	local var1 = not var0 or var0 ~= 1
-	local var2 = arg0:GetBattleType()
-	local var3 = arg0.IsAutoBotActive(var2)
-	local var4 = var2 == SYSTEM_DUEL
-	local var5 = var2 == SYSTEM_CARDPUZZLE
+function var2_0.ChatUseable(arg0_4)
+	local var0_4 = PlayerPrefs.GetInt(HIDE_CHAT_FLAG)
+	local var1_4 = not var0_4 or var0_4 ~= 1
+	local var2_4 = arg0_4:GetBattleType()
+	local var3_4 = arg0_4.IsAutoBotActive(var2_4)
+	local var4_4 = var2_4 == SYSTEM_DUEL
+	local var5_4 = var2_4 == SYSTEM_CARDPUZZLE
 
-	return var1 and (var4 or var3) and not var5
+	return var1_4 and (var4_4 or var3_4) and not var5_4
 end
 
-function var2.GetState(arg0)
-	return arg0._state
+function var2_0.GetState(arg0_5)
+	return arg0_5._state
 end
 
-function var2.GetBattleType(arg0)
-	return arg0._battleType
+function var2_0.GetBattleType(arg0_6)
+	return arg0_6._battleType
 end
 
-function var2.SetBattleUI(arg0, arg1)
-	arg0._baseUI = arg1
+function var2_0.SetBattleUI(arg0_7, arg1_7)
+	arg0_7._baseUI = arg1_7
 end
 
-function var2.EnterBattle(arg0, arg1, arg2)
+function var2_0.EnterBattle(arg0_8, arg1_8, arg2_8)
 	pg.TimeMgr.GetInstance():ResetCombatTime()
-	arg0:Active()
-	arg0:ResetTimer()
+	arg0_8:Active()
+	arg0_8:ResetTimer()
 
-	arg0._dataProxy = arg0:AddDataProxy(var0.Battle.BattleDataProxy.GetInstance())
-	arg0._uiMediator = arg0:AddMediator(var0.Battle.BattleUIMediator.New())
+	arg0_8._dataProxy = arg0_8:AddDataProxy(var0_0.Battle.BattleDataProxy.GetInstance())
+	arg0_8._uiMediator = arg0_8:AddMediator(var0_0.Battle.BattleUIMediator.New())
 
-	if arg1.battleType == SYSTEM_DUEL then
-		arg0._battleCommand = arg0:AddCommand(var0.Battle.BattleDuelArenaCommand.New())
+	if arg1_8.battleType == SYSTEM_DUEL then
+		arg0_8._battleCommand = arg0_8:AddCommand(var0_0.Battle.BattleDuelArenaCommand.New())
 
-		arg0._battleCommand:ConfigBattleData(arg1)
-	elseif arg1.battleType == SYSTEM_CHALLENGE then
-		arg0._battleCommand = arg0:AddCommand(var0.Battle.BattleSingleChallengeCommand.New())
+		arg0_8._battleCommand:ConfigBattleData(arg1_8)
+	elseif arg1_8.battleType == SYSTEM_CHALLENGE then
+		arg0_8._battleCommand = arg0_8:AddCommand(var0_0.Battle.BattleSingleChallengeCommand.New())
 
-		arg0._battleCommand:ConfigBattleData(arg1)
-	elseif arg1.battleType == SYSTEM_DODGEM then
-		arg0._battleCommand = arg0:AddCommand(var0.Battle.BattleDodgemCommand.New())
-	elseif arg1.battleType == SYSTEM_SUBMARINE_RUN then
-		arg0._battleCommand = arg0:AddCommand(var0.Battle.BattleSubmarineRunCommand.New())
-	elseif arg1.battleType == SYSTEM_SUB_ROUTINE then
-		arg0._battleCommand = arg0:AddCommand(var0.Battle.BattleSubRoutineCommand.New())
-	elseif arg1.battleType == SYSTEM_HP_SHARE_ACT_BOSS or arg1.battleType == SYSTEM_BOSS_EXPERIMENT then
-		arg0._battleCommand = arg0:AddCommand(var0.Battle.BattleInheritDungeonCommand.New())
-	elseif arg1.battleType == SYSTEM_WORLD_BOSS then
-		arg0._battleCommand = arg0:AddCommand(var0.Battle.BattleWorldBossCommand.New())
-	elseif arg1.battleType == SYSTEM_DEBUG then
-		arg0._battleCommand = arg0:AddCommand(var0.Battle.BattleDebugCommand.New())
-	elseif arg1.battleType == SYSTEM_AIRFIGHT then
-		arg0._battleCommand = arg0:AddCommand(var0.Battle.BattleAirFightCommand.New())
-	elseif arg1.battleType == SYSTEM_GUILD then
-		arg0._battleCommand = arg0:AddCommand(var0.Battle.BattleGuildBossCommand.New())
-	elseif arg1.battleType == SYSTEM_CARDPUZZLE then
-		arg0._battleCommand = arg0:AddCommand(var0.Battle.BattleCardPuzzleCommand.New())
+		arg0_8._battleCommand:ConfigBattleData(arg1_8)
+	elseif arg1_8.battleType == SYSTEM_DODGEM then
+		arg0_8._battleCommand = arg0_8:AddCommand(var0_0.Battle.BattleDodgemCommand.New())
+	elseif arg1_8.battleType == SYSTEM_SUBMARINE_RUN then
+		arg0_8._battleCommand = arg0_8:AddCommand(var0_0.Battle.BattleSubmarineRunCommand.New())
+	elseif arg1_8.battleType == SYSTEM_SUB_ROUTINE then
+		arg0_8._battleCommand = arg0_8:AddCommand(var0_0.Battle.BattleSubRoutineCommand.New())
+	elseif arg1_8.battleType == SYSTEM_HP_SHARE_ACT_BOSS or arg1_8.battleType == SYSTEM_BOSS_EXPERIMENT then
+		arg0_8._battleCommand = arg0_8:AddCommand(var0_0.Battle.BattleInheritDungeonCommand.New())
+	elseif arg1_8.battleType == SYSTEM_WORLD_BOSS then
+		arg0_8._battleCommand = arg0_8:AddCommand(var0_0.Battle.BattleWorldBossCommand.New())
+	elseif arg1_8.battleType == SYSTEM_DEBUG then
+		arg0_8._battleCommand = arg0_8:AddCommand(var0_0.Battle.BattleDebugCommand.New())
+	elseif arg1_8.battleType == SYSTEM_AIRFIGHT then
+		arg0_8._battleCommand = arg0_8:AddCommand(var0_0.Battle.BattleAirFightCommand.New())
+	elseif arg1_8.battleType == SYSTEM_GUILD then
+		arg0_8._battleCommand = arg0_8:AddCommand(var0_0.Battle.BattleGuildBossCommand.New())
+	elseif arg1_8.battleType == SYSTEM_CARDPUZZLE then
+		arg0_8._battleCommand = arg0_8:AddCommand(var0_0.Battle.BattleCardPuzzleCommand.New())
 	else
-		arg0._battleCommand = arg0:AddCommand(var0.Battle.BattleSingleDungeonCommand.New())
+		arg0_8._battleCommand = arg0_8:AddCommand(var0_0.Battle.BattleSingleDungeonCommand.New())
 	end
 
-	arg0._battleType = arg1.battleType
-	arg0._sceneMediator = arg0:AddMediator(var0.Battle.BattleSceneMediator.New())
-	arg0._weaponCommand = arg0:AddCommand(var0.Battle.BattleControllerWeaponCommand.New())
+	arg0_8._battleType = arg1_8.battleType
+	arg0_8._sceneMediator = arg0_8:AddMediator(var0_0.Battle.BattleSceneMediator.New())
+	arg0_8._weaponCommand = arg0_8:AddCommand(var0_0.Battle.BattleControllerWeaponCommand.New())
 
-	arg0._dataProxy:InitBattle(arg1)
+	arg0_8._dataProxy:InitBattle(arg1_8)
 
 	if BATTLE_DEFAULT_UNIT_DETAIL then
-		arg0:AddMediator(var0.Battle.BattleReferenceBoxMediator.New())
-		arg0:GetMediatorByName(var0.Battle.BattleReferenceBoxMediator.__name):ActiveUnitDetail(true)
+		arg0_8:AddMediator(var0_0.Battle.BattleReferenceBoxMediator.New())
+		arg0_8:GetMediatorByName(var0_0.Battle.BattleReferenceBoxMediator.__name):ActiveUnitDetail(true)
 	end
 
-	if arg2 then
+	if arg2_8 then
 		-- block empty
 	else
-		arg0:ChangeState(var2.BATTLE_STATE_OPENING)
-		UpdateBeat:Add(arg0.Update, arg0)
+		arg0_8:ChangeState(var2_0.BATTLE_STATE_OPENING)
+		UpdateBeat:Add(arg0_8.Update, arg0_8)
 	end
 end
 
-function var2.GetSceneMediator(arg0)
-	return arg0._sceneMediator
+function var2_0.GetSceneMediator(arg0_9)
+	return arg0_9._sceneMediator
 end
 
-function var2.GetUIMediator(arg0)
-	return arg0._uiMediator
+function var2_0.GetUIMediator(arg0_10)
+	return arg0_10._uiMediator
 end
 
-function var2.ActiveBot(arg0, arg1)
-	arg0._weaponCommand:ActiveBot(arg1, true)
-	arg0:EnableJoystick(not arg1)
+function var2_0.ActiveBot(arg0_11, arg1_11)
+	arg0_11._weaponCommand:ActiveBot(arg1_11, true)
+	arg0_11:EnableJoystick(not arg1_11)
 end
 
-function var2.EnableJoystick(arg0, arg1)
-	arg0._uiMediator:EnableJoystick(arg1)
+function var2_0.EnableJoystick(arg0_12, arg1_12)
+	arg0_12._uiMediator:EnableJoystick(arg1_12)
 end
 
-function var2.IsBotActive(arg0)
-	return arg0._weaponCommand:GetWeaponBot():IsActive()
+function var2_0.IsBotActive(arg0_13)
+	return arg0_13._weaponCommand:GetWeaponBot():IsActive()
 end
 
-function var2.Update(arg0)
-	if not arg0._isPause then
-		for iter0, iter1 in pairs(arg0._mediatorList) do
-			iter1:Update()
+function var2_0.Update(arg0_14)
+	if not arg0_14._isPause then
+		for iter0_14, iter1_14 in pairs(arg0_14._mediatorList) do
+			iter1_14:Update()
 		end
 	else
-		for iter2, iter3 in pairs(arg0._mediatorList) do
-			iter3:UpdatePause()
+		for iter2_14, iter3_14 in pairs(arg0_14._mediatorList) do
+			iter3_14:UpdatePause()
 		end
 	end
 end
 
-function var2.GenerateVertifyData(arg0)
+function var2_0.GenerateVertifyData(arg0_15)
 	return
 end
 
-function var2.Vertify()
+function var2_0.Vertify()
 	return true, -1
 end
 
-function var2.ChangeState(arg0, arg1)
-	arg0._state = arg1
+function var2_0.ChangeState(arg0_17, arg1_17)
+	arg0_17._state = arg1_17
 
-	if arg1 == var2.BATTLE_STATE_OPENING then
-		arg0._dataProxy:Start()
+	if arg1_17 == var2_0.BATTLE_STATE_OPENING then
+		arg0_17._dataProxy:Start()
 
-		local var0 = arg0._dataProxy._dungeonInfo.beginStoy
+		local var0_17 = arg0_17._dataProxy._dungeonInfo.beginStoy
 
-		if var0 then
-			pg.NewStoryMgr.GetInstance():Play(var0, function()
-				arg0._battleCommand:DoPrologue()
+		if var0_17 then
+			pg.NewStoryMgr.GetInstance():Play(var0_17, function()
+				arg0_17._battleCommand:DoPrologue()
 			end)
 		else
-			arg0._battleCommand:DoPrologue()
+			arg0_17._battleCommand:DoPrologue()
 		end
-	elseif arg1 == var2.BATTLE_STATE_FIGHT then
-		arg0:ActiveAutoComponentTimer()
-	elseif arg1 == var2.BATTLE_STATE_REPORT then
+	elseif arg1_17 == var2_0.BATTLE_STATE_FIGHT then
+		arg0_17:ActiveAutoComponentTimer()
+	elseif arg1_17 == var2_0.BATTLE_STATE_REPORT then
 		-- block empty
 	end
 end
 
-function var2.GetUI(arg0)
-	return arg0._baseUI
+function var2_0.GetUI(arg0_19)
+	return arg0_19._baseUI
 end
 
-function var2.ConfigBattleEndFunc(arg0, arg1)
-	arg0._endFunc = arg1
+function var2_0.ConfigBattleEndFunc(arg0_20, arg1_20)
+	arg0_20._endFunc = arg1_20
 end
 
-function var2.BattleEnd(arg0)
-	arg0:disableCommon()
+function var2_0.BattleEnd(arg0_21)
+	arg0_21:disableCommon()
 
-	if arg0._dataProxy:GetStatistics()._battleScore >= var0.Battle.BattleConst.BattleScore.B then
-		arg0._dataProxy:CelebrateVictory(arg0._dataProxy:GetFriendlyCode())
-		arg0:reportDelayTimer(function()
-			arg0:DoResult()
-		end, var0.Battle.BattleConfig.CelebrateDuration)
+	if arg0_21._dataProxy:GetStatistics()._battleScore >= var0_0.Battle.BattleConst.BattleScore.B then
+		arg0_21._dataProxy:CelebrateVictory(arg0_21._dataProxy:GetFriendlyCode())
+		arg0_21:reportDelayTimer(function()
+			arg0_21:DoResult()
+		end, var0_0.Battle.BattleConfig.CelebrateDuration)
 	else
-		arg0:DoResult()
+		arg0_21:DoResult()
 	end
 end
 
-function var2.BattleTimeUp(arg0)
-	arg0:disableCommon()
-	arg0:ActiveEscape()
-	arg0:reportDelayTimer(function()
-		arg0:DeactiveEscape()
-		arg0:DoResult()
-	end, var0.Battle.BattleConfig.EscapeDuration)
+function var2_0.BattleTimeUp(arg0_23)
+	arg0_23:disableCommon()
+	arg0_23:ActiveEscape()
+	arg0_23:reportDelayTimer(function()
+		arg0_23:DeactiveEscape()
+		arg0_23:DoResult()
+	end, var0_0.Battle.BattleConfig.EscapeDuration)
 end
 
-function var2.DoResult(arg0)
-	arg0._sceneMediator:PauseCharacterAction(true)
-	arg0._dataProxy:BotPercentage(arg0._weaponCommand:GetBotActiveDuration())
-	arg0._dataProxy:HPRatioStatistics()
-	arg0._endFunc(arg0._dataProxy:GetStatistics())
+function var2_0.DoResult(arg0_25)
+	arg0_25._sceneMediator:PauseCharacterAction(true)
+	arg0_25._dataProxy:BotPercentage(arg0_25._weaponCommand:GetBotActiveDuration())
+	arg0_25._dataProxy:HPRatioStatistics()
+	arg0_25._endFunc(arg0_25._dataProxy:GetStatistics())
 end
 
-function var2.ExitBattle(arg0)
-	var0.Battle.BattleCameraUtil.GetInstance():Clear()
+function var2_0.ExitBattle(arg0_26)
+	var0_0.Battle.BattleCameraUtil.GetInstance():Clear()
 
-	for iter0, iter1 in pairs(arg0._mediatorList) do
-		arg0:RemoveMediator(iter1)
+	for iter0_26, iter1_26 in pairs(arg0_26._mediatorList) do
+		arg0_26:RemoveMediator(iter1_26)
 	end
 
-	for iter2, iter3 in pairs(arg0._commandList) do
-		arg0:RemoveCommand(iter3)
+	for iter2_26, iter3_26 in pairs(arg0_26._commandList) do
+		arg0_26:RemoveCommand(iter3_26)
 	end
 
-	for iter4, iter5 in pairs(arg0._proxyList) do
-		arg0:RemoveProxy(iter5)
+	for iter4_26, iter5_26 in pairs(arg0_26._proxyList) do
+		arg0_26:RemoveProxy(iter5_26)
 	end
 
-	var0.Battle.BattleConfig.BASIC_TIME_SCALE = 1
+	var0_0.Battle.BattleConfig.BASIC_TIME_SCALE = 1
 
-	arg0:RemoveAllTimer()
-	var0.Battle.BattleResourceManager.GetInstance():Clear()
+	arg0_26:RemoveAllTimer()
+	var0_0.Battle.BattleResourceManager.GetInstance():Clear()
 
-	arg0._takeoverProcess = nil
+	arg0_26._takeoverProcess = nil
 
-	arg0:ChangeState(var2.BATTLE_STATE_IDLE)
+	arg0_26:ChangeState(var2_0.BATTLE_STATE_IDLE)
 
-	arg0._baseUI = nil
-	arg0._endFunc = nil
-	arg0._uiMediator = nil
-	arg0._sceneMediator = nil
-	arg0._battleCommand = nil
-	arg0._weaponCommand = nil
+	arg0_26._baseUI = nil
+	arg0_26._endFunc = nil
+	arg0_26._uiMediator = nil
+	arg0_26._sceneMediator = nil
+	arg0_26._battleCommand = nil
+	arg0_26._weaponCommand = nil
 
-	removeSingletonInstance(var0.Battle.BattleDataProxy)
+	removeSingletonInstance(var0_0.Battle.BattleDataProxy)
 
-	arg0._dataProxy = nil
+	arg0_26._dataProxy = nil
 
-	var0.Battle.BattleVariable.Clear()
-	var0.Battle.BattleBulletFactory.DestroyFactory()
-	UpdateBeat:Remove(arg0.Update, arg0)
+	var0_0.Battle.BattleVariable.Clear()
+	var0_0.Battle.BattleBulletFactory.DestroyFactory()
+	UpdateBeat:Remove(arg0_26.Update, arg0_26)
 	pg.EffectMgr.GetInstance():ClearBattleEffectMap()
 
-	arg0._timeScale = nil
-	arg0._timescalerCache = nil
+	arg0_26._timeScale = nil
+	arg0_26._timescalerCache = nil
 
 	gcAll(true)
 end
 
-function var2.Stop(arg0, arg1)
-	arg0:disableCommon()
-	arg0._baseUI:exitBattle(arg1)
+function var2_0.Stop(arg0_27, arg1_27)
+	arg0_27:disableCommon()
+	arg0_27._baseUI:exitBattle(arg1_27)
 end
 
-function var2.disableCommon(arg0)
-	arg0._weaponCommand:ActiveBot(false)
-	arg0:ScaleTimer()
-	var0.Battle.BattleCameraUtil.GetInstance():ResetFocus()
-	arg0:ChangeState(var2.BATTLE_STATE_REPORT)
-	arg0._dataProxy:ClearAirFighterTimer()
-	arg0._dataProxy:KillAllAircraft()
-	arg0._sceneMediator:AllBulletNeutralize()
-	var0.Battle.BattleCameraUtil.GetInstance():StopShake()
-	var0.Battle.BattleCameraUtil.GetInstance():Deactive()
-	arg0._uiMediator:DisableComponent()
-	arg0:Deactive()
+function var2_0.disableCommon(arg0_28)
+	arg0_28._weaponCommand:ActiveBot(false)
+	arg0_28:ScaleTimer()
+	var0_0.Battle.BattleCameraUtil.GetInstance():ResetFocus()
+	arg0_28:ChangeState(var2_0.BATTLE_STATE_REPORT)
+	arg0_28._dataProxy:ClearAirFighterTimer()
+	arg0_28._dataProxy:KillAllAircraft()
+	arg0_28._sceneMediator:AllBulletNeutralize()
+	var0_0.Battle.BattleCameraUtil.GetInstance():StopShake()
+	var0_0.Battle.BattleCameraUtil.GetInstance():Deactive()
+	arg0_28._uiMediator:DisableComponent()
+	arg0_28:Deactive()
 end
 
-function var2.reportDelayTimer(arg0, arg1, arg2)
-	local var0
+function var2_0.reportDelayTimer(arg0_29, arg1_29, arg2_29)
+	local var0_29
 
-	local function var1()
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(var0)
+	local function var1_29()
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(var0_29)
 
-		var0 = nil
+		var0_29 = nil
 
-		arg1()
+		arg1_29()
 	end
 
-	arg0:RemoveAllTimer()
+	arg0_29:RemoveAllTimer()
 	pg.TimeMgr.GetInstance():ResumeBattleTimer()
 
-	var0 = pg.TimeMgr.GetInstance():AddBattleTimer("", -1, arg2, var1)
+	var0_29 = pg.TimeMgr.GetInstance():AddBattleTimer("", -1, arg2_29, var1_29)
 end
 
-function var2.SetTakeoverProcess(arg0, arg1)
-	assert(arg0._takeoverProcess == nil, "已经有接管的战斗过程，暂时没有定义这种逻辑")
-	assert(arg1.Pause ~= nil and type(arg1.Pause) == "function", "SetTakeoverProcess附加过程，必须要有Pause函数")
-	assert(arg1.Pause ~= nil and type(arg1.Resume) == "function", "SetTakeoverProcess附加过程，必须要有Pause函数")
+function var2_0.SetTakeoverProcess(arg0_31, arg1_31)
+	assert(arg0_31._takeoverProcess == nil, "已经有接管的战斗过程，暂时没有定义这种逻辑")
+	assert(arg1_31.Pause ~= nil and type(arg1_31.Pause) == "function", "SetTakeoverProcess附加过程，必须要有Pause函数")
+	assert(arg1_31.Pause ~= nil and type(arg1_31.Resume) == "function", "SetTakeoverProcess附加过程，必须要有Pause函数")
 
-	arg0._takeoverProcess = arg1
+	arg0_31._takeoverProcess = arg1_31
 
-	arg0:_pause()
+	arg0_31:_pause()
 end
 
-function var2.ClearTakeoverProcess(arg0)
-	assert(arg0._takeoverProcess, "没有接管的战斗过程，暂时没有定义这种逻辑")
+function var2_0.ClearTakeoverProcess(arg0_32)
+	assert(arg0_32._takeoverProcess, "没有接管的战斗过程，暂时没有定义这种逻辑")
 
-	arg0._takeoverProcess = nil
+	arg0_32._takeoverProcess = nil
 
-	arg0:_resume()
+	arg0_32:_resume()
 end
 
-function var2.IsPause(arg0)
-	return arg0._isPause
+function var2_0.IsPause(arg0_33)
+	return arg0_33._isPause
 end
 
-function var2.Pause(arg0)
-	local var0 = arg0._takeoverProcess
+function var2_0.Pause(arg0_34)
+	local var0_34 = arg0_34._takeoverProcess
 
-	if var0 then
-		var0.Pause()
+	if var0_34 then
+		var0_34.Pause()
 	else
-		arg0:_pause()
+		arg0_34:_pause()
 	end
 end
 
-function var2._pause(arg0)
-	arg0:Deactive()
-	arg0._dataProxy:PausePuzzleComponent()
-	arg0._sceneMediator:Pause()
+function var2_0._pause(arg0_35)
+	arg0_35:Deactive()
+	arg0_35._dataProxy:PausePuzzleComponent()
+	arg0_35._sceneMediator:Pause()
 
-	if arg0._timeScale ~= 1 then
-		arg0:CacheTimescaler(arg0._timeScale)
-		arg0:ScaleTimer(1)
+	if arg0_35._timeScale ~= 1 then
+		arg0_35:CacheTimescaler(arg0_35._timeScale)
+		arg0_35:ScaleTimer(1)
 	end
 
-	var0.Battle.BattleCameraUtil.GetInstance():PauseCameraTween()
+	var0_0.Battle.BattleCameraUtil.GetInstance():PauseCameraTween()
 end
 
-function var2.Resume(arg0)
-	if arg0._state == var2.BATTLE_STATE_IDLE then
-		arg0:ChangeState(var2.BATTLE_STATE_OPENING)
-		UpdateBeat:Add(arg0.Update, arg0)
-	elseif arg0._state == var2.BATTLE_STATE_REPORT then
+function var2_0.Resume(arg0_36)
+	if arg0_36._state == var2_0.BATTLE_STATE_IDLE then
+		arg0_36:ChangeState(var2_0.BATTLE_STATE_OPENING)
+		UpdateBeat:Add(arg0_36.Update, arg0_36)
+	elseif arg0_36._state == var2_0.BATTLE_STATE_REPORT then
 		return
 	end
 
-	local var0 = arg0._takeoverProcess
+	local var0_36 = arg0_36._takeoverProcess
 
-	if var0 then
-		var0.Resume()
+	if var0_36 then
+		var0_36.Resume()
 	else
-		arg0:_resume()
+		arg0_36:_resume()
 	end
 end
 
-function var2._resume(arg0)
-	arg0._sceneMediator:Resume()
-	arg0:Active()
-	arg0._dataProxy:ResumePuzzleComponent()
+function var2_0._resume(arg0_37)
+	arg0_37._sceneMediator:Resume()
+	arg0_37:Active()
+	arg0_37._dataProxy:ResumePuzzleComponent()
 
-	if arg0._timescalerCache then
-		arg0:ScaleTimer(arg0._timescalerCache)
-		arg0:CacheTimescaler()
+	if arg0_37._timescalerCache then
+		arg0_37:ScaleTimer(arg0_37._timescalerCache)
+		arg0_37:CacheTimescaler()
 	end
 
-	var0.Battle.BattleCameraUtil.GetInstance():ResumeCameraTween()
+	var0_0.Battle.BattleCameraUtil.GetInstance():ResumeCameraTween()
 end
 
-function var2.ScaleTimer(arg0, arg1)
-	arg1 = arg1 or var0.Battle.BattleConfig.BASIC_TIME_SCALE
+function var2_0.ScaleTimer(arg0_38, arg1_38)
+	arg1_38 = arg1_38 or var0_0.Battle.BattleConfig.BASIC_TIME_SCALE
 
-	pg.TimeMgr.GetInstance():ScaleBattleTimer(arg1)
+	pg.TimeMgr.GetInstance():ScaleBattleTimer(arg1_38)
 
-	arg0._timeScale = arg1
+	arg0_38._timeScale = arg1_38
 end
 
-function var2.GetTimeScaleRate(arg0)
-	return arg0._timeScale or 1
+function var2_0.GetTimeScaleRate(arg0_39)
+	return arg0_39._timeScale or 1
 end
 
-function var2.CacheTimescaler(arg0, arg1)
-	arg0._timescalerCache = arg1
+function var2_0.CacheTimescaler(arg0_40, arg1_40)
+	arg0_40._timescalerCache = arg1_40
 end
 
-function var0.Battle.PlayBattleSFX(arg0)
-	if arg0 ~= "" then
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/" .. arg0)
+function var0_0.Battle.PlayBattleSFX(arg0_41)
+	if arg0_41 ~= "" then
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/" .. arg0_41)
 	end
 end
 
-function var2.OpenConsole(arg0)
-	arg0._uiMediator:InitDebugConsole()
-	arg0._uiMediator:ActiveDebugConsole()
+function var2_0.OpenConsole(arg0_42)
+	arg0_42._uiMediator:InitDebugConsole()
+	arg0_42._uiMediator:ActiveDebugConsole()
 end
 
-function var2.ActiveReference(arg0)
-	arg0._controllerCommand = arg0:AddCommand(var0.Battle.BattleControllerCommand.New())
+function var2_0.ActiveReference(arg0_43)
+	arg0_43._controllerCommand = arg0_43:AddCommand(var0_0.Battle.BattleControllerCommand.New())
 end

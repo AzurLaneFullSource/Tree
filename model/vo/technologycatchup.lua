@@ -1,29 +1,29 @@
-﻿local var0 = class("TechnologyCatchup", import(".BaseVO"))
+﻿local var0_0 = class("TechnologyCatchup", import(".BaseVO"))
 
-var0.STATE_UNSELECT = 1
-var0.STATE_CATCHUPING = 2
-var0.STATE_FINISHED_ALL = 3
+var0_0.STATE_UNSELECT = 1
+var0_0.STATE_CATCHUPING = 2
+var0_0.STATE_FINISHED_ALL = 3
 
-function var0.Ctor(arg0, arg1)
-	arg0.id = arg1.version
-	arg0.configId = arg0.id
-	arg0.ssrNum = arg1.number or 0
-	arg0.urNums = arg1.dr_numbers or {}
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.id = arg1_1.version
+	arg0_1.configId = arg0_1.id
+	arg0_1.ssrNum = arg1_1.number or 0
+	arg0_1.urNums = arg1_1.dr_numbers or {}
 
-	arg0:bulidTargetNums()
+	arg0_1:bulidTargetNums()
 
-	arg0.state = var0.STATE_UNSELECT
+	arg0_1.state = var0_0.STATE_UNSELECT
 
-	arg0:updateState()
+	arg0_1:updateState()
 end
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_2)
 	return pg.technology_catchup_template
 end
 
-function var0.isUr(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0:getConfig("ur_char")) do
-		if arg1 == iter1 then
+function var0_0.isUr(arg0_3, arg1_3)
+	for iter0_3, iter1_3 in ipairs(arg0_3:getConfig("ur_char")) do
+		if arg1_3 == iter1_3 then
 			return true
 		end
 	end
@@ -31,90 +31,90 @@ function var0.isUr(arg0, arg1)
 	return false
 end
 
-function var0.bulidTargetNums(arg0)
-	arg0.targetNums = {}
+function var0_0.bulidTargetNums(arg0_4)
+	arg0_4.targetNums = {}
 
-	for iter0, iter1 in ipairs(arg0:getConfig("char_choice")) do
-		if arg0:isUr(iter1) then
-			for iter2, iter3 in pairs(arg0.urNums) do
-				if iter3.id == iter1 then
-					arg0.targetNums[iter1] = iter3.number or 0
+	for iter0_4, iter1_4 in ipairs(arg0_4:getConfig("char_choice")) do
+		if arg0_4:isUr(iter1_4) then
+			for iter2_4, iter3_4 in pairs(arg0_4.urNums) do
+				if iter3_4.id == iter1_4 then
+					arg0_4.targetNums[iter1_4] = iter3_4.number or 0
 				end
 			end
 		else
-			arg0.targetNums[iter1] = arg0.ssrNum
+			arg0_4.targetNums[iter1_4] = arg0_4.ssrNum
 		end
 
-		if not arg0.targetNums[iter1] then
-			arg0.targetNums[iter1] = 0
+		if not arg0_4.targetNums[iter1_4] then
+			arg0_4.targetNums[iter1_4] = 0
 		end
 	end
 end
 
-function var0.getTargetNum(arg0, arg1)
-	return arg0.targetNums[arg1]
+function var0_0.getTargetNum(arg0_5, arg1_5)
+	return arg0_5.targetNums[arg1_5]
 end
 
-function var0.addTargetNum(arg0, arg1, arg2)
-	if arg0:isUr(arg1) then
-		arg0.targetNums[arg1] = arg0.targetNums[arg1] + arg2
+function var0_0.addTargetNum(arg0_6, arg1_6, arg2_6)
+	if arg0_6:isUr(arg1_6) then
+		arg0_6.targetNums[arg1_6] = arg0_6.targetNums[arg1_6] + arg2_6
 	else
-		for iter0, iter1 in ipairs(arg0:getConfig("char_choice")) do
-			if not arg0:isUr(iter1) then
-				arg0.targetNums[iter1] = arg0.targetNums[iter1] + arg2
+		for iter0_6, iter1_6 in ipairs(arg0_6:getConfig("char_choice")) do
+			if not arg0_6:isUr(iter1_6) then
+				arg0_6.targetNums[iter1_6] = arg0_6.targetNums[iter1_6] + arg2_6
 			end
 		end
 	end
 
-	arg0:updateState()
+	arg0_6:updateState()
 end
 
-function var0.isFinish(arg0, arg1)
-	if arg0:isUr(arg1) then
-		return arg0.targetNums[arg1] >= arg0:getConfig("obtain_max_per_ur")
+function var0_0.isFinish(arg0_7, arg1_7)
+	if arg0_7:isUr(arg1_7) then
+		return arg0_7.targetNums[arg1_7] >= arg0_7:getConfig("obtain_max_per_ur")
 	else
-		return arg0.targetNums[arg1] >= arg0:getConfig("obtain_max")
+		return arg0_7.targetNums[arg1_7] >= arg0_7:getConfig("obtain_max")
 	end
 end
 
-function var0.isFinishSSR(arg0)
-	local var0 = true
+function var0_0.isFinishSSR(arg0_8)
+	local var0_8 = true
 
-	for iter0, iter1 in ipairs(arg0:getConfig("char_choice")) do
-		if not arg0:isUr(iter1) and not arg0:isFinish(iter1) then
-			var0 = false
+	for iter0_8, iter1_8 in ipairs(arg0_8:getConfig("char_choice")) do
+		if not arg0_8:isUr(iter1_8) and not arg0_8:isFinish(iter1_8) then
+			var0_8 = false
 		end
 	end
 
-	return var0
+	return var0_8
 end
 
-function var0.isFinishAll(arg0)
-	local var0 = true
+function var0_0.isFinishAll(arg0_9)
+	local var0_9 = true
 
-	for iter0, iter1 in ipairs(arg0:getConfig("char_choice")) do
-		if not arg0:isFinish(iter1) then
-			var0 = false
+	for iter0_9, iter1_9 in ipairs(arg0_9:getConfig("char_choice")) do
+		if not arg0_9:isFinish(iter1_9) then
+			var0_9 = false
 		end
 	end
 
-	return var0
+	return var0_9
 end
 
-function var0.updateState(arg0)
-	local var0 = getProxy(TechnologyProxy).curCatchupGroupID
+function var0_0.updateState(arg0_10)
+	local var0_10 = getProxy(TechnologyProxy).curCatchupGroupID
 
-	if arg0:isFinishAll() then
-		arg0.state = var0.STATE_FINISHED_ALL
-	elseif arg0.targetNums[var0] then
-		arg0.state = var0.STATE_CATCHUPING
+	if arg0_10:isFinishAll() then
+		arg0_10.state = var0_0.STATE_FINISHED_ALL
+	elseif arg0_10.targetNums[var0_10] then
+		arg0_10.state = var0_0.STATE_CATCHUPING
 	else
-		arg0.state = var0.STATE_UNSELECT
+		arg0_10.state = var0_0.STATE_UNSELECT
 	end
 end
 
-function var0.getState(arg0)
-	return arg0.state
+function var0_0.getState(arg0_11)
+	return arg0_11.state
 end
 
-return var0
+return var0_0

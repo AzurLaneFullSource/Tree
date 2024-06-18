@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_347 = {}
+var0_0.word_template_347 = {}
 
-local var1 = var0.word_template_347
+local var1_0 = var0_0.word_template_347
 
 function temp()
-	var1.直 = {
+	var1_0.直 = {
 		同 = {
 			志 = {
 				this = true
@@ -144,7 +144,7 @@ end
 temp()
 
 function temp()
-	var1.职 = {
+	var1_0.职 = {
 		场 = {
 			淫 = {
 				行 = {
@@ -195,7 +195,7 @@ end
 temp()
 
 function temp()
-	var1.植 = {
+	var1_0.植 = {
 		物 = {
 			白 = {
 				冰 = {
@@ -212,7 +212,7 @@ end
 temp()
 
 function temp()
-	var1.縶 = {
+	var1_0.縶 = {
 		this = {
 			this = true
 		}
@@ -222,7 +222,7 @@ end
 temp()
 
 function temp()
-	var1.職 = {
+	var1_0.職 = {
 		場 = {
 			淫 = {
 				猥 = {
@@ -240,7 +240,7 @@ end
 temp()
 
 function temp()
-	var1.躑 = {
+	var1_0.躑 = {
 		this = {
 			this = true
 		}
@@ -250,7 +250,7 @@ end
 temp()
 
 function temp()
-	var1.止 = {
+	var1_0.止 = {
 		尿 = {
 			喝 = {
 				三 = {

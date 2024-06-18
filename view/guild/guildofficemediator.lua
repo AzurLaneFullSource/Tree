@@ -1,58 +1,58 @@
-﻿local var0 = class("GuildOfficeMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("GuildOfficeMediator", import("..base.ContextMediator"))
 
-var0.ON_ACCEPT_TASK = "GuildOfficeMediator:ON_ACCEPT_TASK"
-var0.ON_COMMIT = "GuildOfficeMediator:ON_COMMIT"
-var0.ON_FETCH_CAPITAL_LOG = "GuildOfficeMediator:ON_FETCH_CAPITAL_LOG"
-var0.ON_SELECT_TASK = "GuildOfficeMediator:ON_SELECT_TASK"
-var0.ON_SUBMIT_TASK = "GuildOfficeMediator:ON_SUBMIT_TASK"
-var0.UPDATE_WEEKLY_TASK = "GuildOfficeMediator:UPDATE_WEEKLY_TASK"
-var0.ON_PURCHASE_SUPPLY = "GuildOfficeMediator:ON_PURCHASE_SUPPLY"
-var0.GET_SUPPLY_AWARD = "GuildOfficeMediator:GET_SUPPLY_AWARD"
-var0.REFRES_DONATE_LIST = "GuildOfficeMediator:REFRES_DONATE_LIST"
+var0_0.ON_ACCEPT_TASK = "GuildOfficeMediator:ON_ACCEPT_TASK"
+var0_0.ON_COMMIT = "GuildOfficeMediator:ON_COMMIT"
+var0_0.ON_FETCH_CAPITAL_LOG = "GuildOfficeMediator:ON_FETCH_CAPITAL_LOG"
+var0_0.ON_SELECT_TASK = "GuildOfficeMediator:ON_SELECT_TASK"
+var0_0.ON_SUBMIT_TASK = "GuildOfficeMediator:ON_SUBMIT_TASK"
+var0_0.UPDATE_WEEKLY_TASK = "GuildOfficeMediator:UPDATE_WEEKLY_TASK"
+var0_0.ON_PURCHASE_SUPPLY = "GuildOfficeMediator:ON_PURCHASE_SUPPLY"
+var0_0.GET_SUPPLY_AWARD = "GuildOfficeMediator:GET_SUPPLY_AWARD"
+var0_0.REFRES_DONATE_LIST = "GuildOfficeMediator:REFRES_DONATE_LIST"
 
-function var0.register(arg0)
-	local var0 = getProxy(GuildProxy)
+function var0_0.register(arg0_1)
+	local var0_1 = getProxy(GuildProxy)
 
-	arg0:bind(var0.REFRES_DONATE_LIST, function(arg0, arg1)
+	arg0_1:bind(var0_0.REFRES_DONATE_LIST, function(arg0_2, arg1_2)
 		return
 	end)
-	arg0:bind(var0.UPDATE_WEEKLY_TASK, function(arg0)
-		arg0:sendNotification(GAME.GUILD_WEEKLY_TASK_PROGREE_UPDATE)
+	arg0_1:bind(var0_0.UPDATE_WEEKLY_TASK, function(arg0_3)
+		arg0_1:sendNotification(GAME.GUILD_WEEKLY_TASK_PROGREE_UPDATE)
 	end)
-	arg0:bind(var0.ON_SUBMIT_TASK, function(arg0, arg1)
-		arg0:sendNotification(GAME.SUBMIT_TASK, arg1)
+	arg0_1:bind(var0_0.ON_SUBMIT_TASK, function(arg0_4, arg1_4)
+		arg0_1:sendNotification(GAME.SUBMIT_TASK, arg1_4)
 	end)
-	arg0:bind(var0.ON_SELECT_TASK, function(arg0, arg1, arg2)
-		arg0:sendNotification(GAME.GUILD_SELECT_TASK, {
-			taskId = arg1,
-			num = arg2
+	arg0_1:bind(var0_0.ON_SELECT_TASK, function(arg0_5, arg1_5, arg2_5)
+		arg0_1:sendNotification(GAME.GUILD_SELECT_TASK, {
+			taskId = arg1_5,
+			num = arg2_5
 		})
 	end)
-	arg0:bind(var0.ON_ACCEPT_TASK, function(arg0, arg1)
-		arg0:sendNotification(GAME.TRIGGER_TASK, arg1)
+	arg0_1:bind(var0_0.ON_ACCEPT_TASK, function(arg0_6, arg1_6)
+		arg0_1:sendNotification(GAME.TRIGGER_TASK, arg1_6)
 	end)
-	arg0:bind(var0.ON_COMMIT, function(arg0, arg1)
-		arg0:sendNotification(GAME.GUILD_COMMIT_DONATE, {
-			taskId = arg1
+	arg0_1:bind(var0_0.ON_COMMIT, function(arg0_7, arg1_7)
+		arg0_1:sendNotification(GAME.GUILD_COMMIT_DONATE, {
+			taskId = arg1_7
 		})
 	end)
-	arg0:bind(var0.ON_PURCHASE_SUPPLY, function(arg0)
-		arg0:sendNotification(GAME.GUILD_BUY_SUPPLY)
+	arg0_1:bind(var0_0.ON_PURCHASE_SUPPLY, function(arg0_8)
+		arg0_1:sendNotification(GAME.GUILD_BUY_SUPPLY)
 	end)
-	arg0:bind(var0.GET_SUPPLY_AWARD, function(arg0)
-		arg0:sendNotification(GAME.GUILD_GET_SUPPLY_AWARD)
+	arg0_1:bind(var0_0.GET_SUPPLY_AWARD, function(arg0_9)
+		arg0_1:sendNotification(GAME.GUILD_GET_SUPPLY_AWARD)
 	end)
 
-	local var1 = var0:getData()
+	local var1_1 = var0_1:getData()
 
-	arg0.viewComponent:SetGuild(var1)
+	arg0_1.viewComponent:SetGuild(var1_1)
 
-	local var2 = getProxy(PlayerProxy):getRawData()
+	local var2_1 = getProxy(PlayerProxy):getRawData()
 
-	arg0.viewComponent:setPlayer(var2)
+	arg0_1.viewComponent:setPlayer(var2_1)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_10)
 	return {
 		GAME.TRIGGER_TASK_DONE,
 		GAME.GUILD_COMMIT_DONATE_DONE,
@@ -71,54 +71,54 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_11, arg1_11)
+	local var0_11 = arg1_11:getName()
+	local var1_11 = arg1_11:getBody()
 
-	if var0 == GuildProxy.GUILD_UPDATED then
-		arg0.viewComponent:SetGuild(var1)
-	elseif var0 == PlayerProxy.UPDATED then
-		arg0.viewComponent:setPlayer(getProxy(PlayerProxy):getRawData())
-	elseif var0 == GAME.GUILD_COMMIT_DONATE_DONE then
-		arg0.viewComponent:UpdateContribution()
+	if var0_11 == GuildProxy.GUILD_UPDATED then
+		arg0_11.viewComponent:SetGuild(var1_11)
+	elseif var0_11 == PlayerProxy.UPDATED then
+		arg0_11.viewComponent:setPlayer(getProxy(PlayerProxy):getRawData())
+	elseif var0_11 == GAME.GUILD_COMMIT_DONATE_DONE then
+		arg0_11.viewComponent:UpdateContribution()
 
-		local function var2()
+		local function var2_11()
 			return
 		end
 
-		if var1.awards and #var1.awards > 0 then
-			arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1.awards, var2)
+		if var1_11.awards and #var1_11.awards > 0 then
+			arg0_11.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_11.awards, var2_11)
 		else
-			var2()
+			var2_11()
 		end
-	elseif var0 == GuildProxy.ON_DONATE_LIST_UPDATED then
-		arg0.viewComponent:UpdateContribution()
-	elseif var0 == GAME.TRIGGER_TASK_DONE then
+	elseif var0_11 == GuildProxy.ON_DONATE_LIST_UPDATED then
+		arg0_11.viewComponent:UpdateContribution()
+	elseif var0_11 == GAME.TRIGGER_TASK_DONE then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_get_week_done"))
-		arg0.viewComponent:UpdateTask()
-	elseif var0 == GAME.SUBMIT_TASK_DONE then
-		arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1)
-		arg0.viewComponent:UpdateTask(true)
-	elseif var0 == GuildProxy.WEEKLYTASK_ADDED or var0 == GuildProxy.WEEKLYTASK_UPDATED or var0 == GAME.GUILD_WEEKLY_TASK_PROGREE_UPDATE_DONE then
-		arg0.viewComponent:UpdateTask()
-	elseif var0 == GAME.GUILD_GET_SUPPLY_AWARD_DONE then
-		arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1.list)
-		arg0.viewComponent:UpdateSupplyPanel()
-	elseif var0 == GuildProxy.SUPPLY_STARTED then
-		arg0.viewComponent:UpdateSupplyPanel()
-	elseif var0 == GAME.ZERO_HOUR_OP_DONE then
+		arg0_11.viewComponent:UpdateTask()
+	elseif var0_11 == GAME.SUBMIT_TASK_DONE then
+		arg0_11.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_11)
+		arg0_11.viewComponent:UpdateTask(true)
+	elseif var0_11 == GuildProxy.WEEKLYTASK_ADDED or var0_11 == GuildProxy.WEEKLYTASK_UPDATED or var0_11 == GAME.GUILD_WEEKLY_TASK_PROGREE_UPDATE_DONE then
+		arg0_11.viewComponent:UpdateTask()
+	elseif var0_11 == GAME.GUILD_GET_SUPPLY_AWARD_DONE then
+		arg0_11.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_11.list)
+		arg0_11.viewComponent:UpdateSupplyPanel()
+	elseif var0_11 == GuildProxy.SUPPLY_STARTED then
+		arg0_11.viewComponent:UpdateSupplyPanel()
+	elseif var0_11 == GAME.ZERO_HOUR_OP_DONE then
 		-- block empty
-	elseif var0 == TaskProxy.TASK_UPDATED then
-		local var3 = getProxy(GuildProxy):getRawData()
+	elseif var0_11 == TaskProxy.TASK_UPDATED then
+		local var3_11 = getProxy(GuildProxy):getRawData()
 
-		if var3 then
-			local var4 = var3:getWeeklyTask()
+		if var3_11 then
+			local var4_11 = var3_11:getWeeklyTask()
 
-			if var4 and var4.id > 0 and var4:IsSamePrivateTask(var1) then
-				arg0.viewComponent:UpdateTask()
+			if var4_11 and var4_11.id > 0 and var4_11:IsSamePrivateTask(var1_11) then
+				arg0_11.viewComponent:UpdateTask()
 			end
 		end
 	end
 end
 
-return var0
+return var0_0

@@ -1,21 +1,21 @@
-﻿local var0 = class("EducatePolaroid", import("model.vo.BaseVO"))
+﻿local var0_0 = class("EducatePolaroid", import("model.vo.BaseVO"))
 
-function var0.Ctor(arg0, arg1)
-	arg0.id = arg1.id
-	arg0.configId = arg0.id
-	arg0.time = arg1.time or {
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.id = arg1_1.id
+	arg0_1.configId = arg0_1.id
+	arg0_1.time = arg1_1.time or {
 		week = 1,
 		month = 3,
 		day = 7
 	}
 end
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_2)
 	return pg.child_polaroid
 end
 
-function var0.GetTimeWeight(arg0)
-	return arg0.time.month * 28 + arg0.time.week * 7 + arg0.time.day
+function var0_0.GetTimeWeight(arg0_3)
+	return arg0_3.time.month * 28 + arg0_3.time.week * 7 + arg0_3.time.day
 end
 
-return var0
+return var0_0

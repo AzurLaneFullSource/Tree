@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_361 = {}
+var0_0.word_template_361 = {}
 
-local var1 = var0.word_template_361
+local var1_0 = var0_0.word_template_361
 
 function temp()
-	var1.組 = {
+	var1_0.組 = {
 		裝 = {
 			錄 = {
 				音 = {
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.躜 = {
+	var1_0.躜 = {
 		this = {
 			this = true
 		}
@@ -37,7 +37,7 @@ end
 temp()
 
 function temp()
-	var1.躦 = {
+	var1_0.躦 = {
 		this = {
 			this = true
 		}
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.缵 = {
+	var1_0.缵 = {
 		this = {
 			this = true
 		}
@@ -57,7 +57,7 @@ end
 temp()
 
 function temp()
-	var1.纘 = {
+	var1_0.纘 = {
 		this = {
 			this = true
 		}
@@ -67,7 +67,7 @@ end
 temp()
 
 function temp()
-	var1.钻 = {
+	var1_0.钻 = {
 		插 = {
 			this = true
 		},
@@ -90,7 +90,7 @@ end
 temp()
 
 function temp()
-	var1.鑽 = {
+	var1_0.鑽 = {
 		插 = {
 			this = true
 		}

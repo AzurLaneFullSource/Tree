@@ -1,31 +1,31 @@
-﻿local var0 = class("VipCard", import(".BaseVO"))
+﻿local var0_0 = class("VipCard", import(".BaseVO"))
 
-var0.MONTH = 1
+var0_0.MONTH = 1
 
-function var0.Ctor(arg0, arg1)
-	arg0.id = arg1.type
-	arg0.type = arg1.type
-	arg0.leftDate = arg1.left_date
-	arg0.data = arg1.data
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.id = arg1_1.type
+	arg0_1.type = arg1_1.type
+	arg0_1.leftDate = arg1_1.left_date
+	arg0_1.data = arg1_1.data
 end
 
-function var0.getLeftDate(arg0)
-	if arg0.type == var0.MONTH then
-		return arg0.leftDate + 86400
+function var0_0.getLeftDate(arg0_2)
+	if arg0_2.type == var0_0.MONTH then
+		return arg0_2.leftDate + 86400
 	end
 end
 
-function var0.GetLeftDay(arg0)
-	local var0 = arg0:getLeftDate()
-	local var1 = pg.TimeMgr.GetInstance():GetServerTime()
+function var0_0.GetLeftDay(arg0_3)
+	local var0_3 = arg0_3:getLeftDate()
+	local var1_3 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	return (math.floor((var0 - var1) / 86400))
+	return (math.floor((var0_3 - var1_3) / 86400))
 end
 
-function var0.isExpire(arg0)
-	if arg0.type == var0.MONTH then
-		return arg0:getLeftDate() <= pg.TimeMgr.GetInstance():GetServerTime()
+function var0_0.isExpire(arg0_4)
+	if arg0_4.type == var0_0.MONTH then
+		return arg0_4:getLeftDate() <= pg.TimeMgr.GetInstance():GetServerTime()
 	end
 end
 
-return var0
+return var0_0

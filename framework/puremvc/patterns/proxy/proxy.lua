@@ -1,34 +1,34 @@
-﻿local var0 = import("..observer.Notifier")
-local var1 = class("Proxy", var0)
+﻿local var0_0 = import("..observer.Notifier")
+local var1_0 = class("Proxy", var0_0)
 
-function var1.Ctor(arg0, arg1, arg2)
-	if arg1 ~= nil then
-		arg0:setData(arg1)
+function var1_0.Ctor(arg0_1, arg1_1, arg2_1)
+	if arg1_1 ~= nil then
+		arg0_1:setData(arg1_1)
 	end
 
-	arg0.proxyName = arg2 or arg0.__cname or var1.NAME
+	arg0_1.proxyName = arg2_1 or arg0_1.__cname or var1_0.NAME
 end
 
-var1.NAME = "Proxy"
+var1_0.NAME = "Proxy"
 
-function var1.getProxyName(arg0)
-	return arg0.proxyName
+function var1_0.getProxyName(arg0_2)
+	return arg0_2.proxyName
 end
 
-function var1.setData(arg0, arg1)
-	arg0.data = arg1
+function var1_0.setData(arg0_3, arg1_3)
+	arg0_3.data = arg1_3
 end
 
-function var1.getData(arg0)
-	return arg0.data
+function var1_0.getData(arg0_4)
+	return arg0_4.data
 end
 
-function var1.onRegister(arg0)
+function var1_0.onRegister(arg0_5)
 	return
 end
 
-function var1.onRemove(arg0)
+function var1_0.onRemove(arg0_6)
 	return
 end
 
-return var1
+return var1_0

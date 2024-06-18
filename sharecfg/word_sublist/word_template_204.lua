@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_204 = {}
+var0_0.word_template_204 = {}
 
-local var1 = var0.word_template_204
+local var1_0 = var0_0.word_template_204
 
 function temp()
-	var1.門 = {
+	var1_0.門 = {
 		徒 = {
 			會 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.萌 = {
+	var1_0.萌 = {
 		大 = {
 			奶 = {
 				this = true
@@ -34,7 +34,7 @@ end
 temp()
 
 function temp()
-	var1.蒙 = {
+	var1_0.蒙 = {
 		["."] = {
 			汗 = {
 				藥 = {
@@ -145,7 +145,7 @@ end
 temp()
 
 function temp()
-	var1.猛 = {
+	var1_0.猛 = {
 		巴 = {
 			胶 = {
 				囊 = {
@@ -226,7 +226,7 @@ end
 temp()
 
 function temp()
-	var1.孟 = {
+	var1_0.孟 = {
 		建 = {
 			柱 = {
 				this = true
@@ -252,7 +252,7 @@ end
 temp()
 
 function temp()
-	var1.梦 = {
+	var1_0.梦 = {
 		幻 = {
 			迷 = {
 				情 = {
@@ -309,7 +309,7 @@ end
 temp()
 
 function temp()
-	var1.咪 = {
+	var1_0.咪 = {
 		咪 = {
 			this = true,
 			电 = {

@@ -1,29 +1,29 @@
-﻿local var0 = class("ChapterStoryItem", import("model.vo.BaseVO"))
+﻿local var0_0 = class("ChapterStoryItem", import("model.vo.BaseVO"))
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_1)
 	return pg.story_template
 end
 
-function var0.GetStoryName(arg0)
-	return arg0:getConfig("story")
+function var0_0.GetStoryName(arg0_2)
+	return arg0_2:getConfig("story")
 end
 
-function var0.GetName(arg0)
-	return arg0:getConfig("name")
+function var0_0.GetName(arg0_3)
+	return arg0_3:getConfig("name")
 end
 
-function var0.GetIcon(arg0)
-	local var0 = arg0:getConfig("icon")
+function var0_0.GetIcon(arg0_4)
+	local var0_4 = arg0_4:getConfig("icon")
 
-	return "StoryPointIcon/" .. var0, var0
+	return "StoryPointIcon/" .. var0_4, var0_4
 end
 
-function var0.GetPosition(arg0)
-	return arg0:getConfig("pos")
+function var0_0.GetPosition(arg0_5)
+	return arg0_5:getConfig("pos")
 end
 
-function var0.IsClear(arg0)
-	return pg.NewStoryMgr.GetInstance():IsPlayed(arg0:GetStoryName())
+function var0_0.IsClear(arg0_6)
+	return pg.NewStoryMgr.GetInstance():IsPlayed(arg0_6:GetStoryName())
 end
 
-return var0
+return var0_0

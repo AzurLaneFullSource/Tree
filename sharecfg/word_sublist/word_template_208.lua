@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_208 = {}
+var0_0.word_template_208 = {}
 
-local var1 = var0.word_template_208
+local var1_0 = var0_0.word_template_208
 
 function temp()
-	var1.泯 = {
+	var1_0.泯 = {
 		运 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.敏 = {
+	var1_0.敏 = {
 		感 = {
 			的 = {
 				政 = {
@@ -50,7 +50,7 @@ end
 temp()
 
 function temp()
-	var1.湣 = {
+	var1_0.湣 = {
 		this = {
 			this = true
 		}
@@ -60,7 +60,7 @@ end
 temp()
 
 function temp()
-	var1.黽 = {
+	var1_0.黽 = {
 		this = {
 			this = true
 		}
@@ -70,7 +70,7 @@ end
 temp()
 
 function temp()
-	var1.鰵 = {
+	var1_0.鰵 = {
 		this = {
 			this = true
 		}
@@ -80,7 +80,7 @@ end
 temp()
 
 function temp()
-	var1.名 = {
+	var1_0.名 = {
 		表 = {
 			回 = {
 				收 = {
@@ -134,7 +134,7 @@ end
 temp()
 
 function temp()
-	var1.明 = {
+	var1_0.明 = {
 		H = {
 			u = {
 				i = {

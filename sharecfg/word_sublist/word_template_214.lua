@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_214 = {}
+var0_0.word_template_214 = {}
 
-local var1 = var0.word_template_214
+local var1_0 = var0_0.word_template_214
 
 function temp()
-	var1.嫩 = {
+	var1_0.嫩 = {
 		b = {
 			this = true
 		},
@@ -95,7 +95,7 @@ end
 temp()
 
 function temp()
-	var1.能 = {
+	var1_0.能 = {
 		挂 = {
 			上 = {
 				邓 = {
@@ -116,7 +116,7 @@ end
 temp()
 
 function temp()
-	var1.尼 = {
+	var1_0.尼 = {
 		奧 = {
 			夫 = {
 				this = true
@@ -162,7 +162,7 @@ end
 temp()
 
 function temp()
-	var1.倪 = {
+	var1_0.倪 = {
 		育 = {
 			贤 = {
 				this = true
@@ -182,7 +182,7 @@ end
 temp()
 
 function temp()
-	var1.鯢 = {
+	var1_0.鯢 = {
 		this = {
 			this = true
 		}
@@ -192,7 +192,7 @@ end
 temp()
 
 function temp()
-	var1.伱 = {
+	var1_0.伱 = {
 		妈 = {
 			this = true
 		}
@@ -202,7 +202,7 @@ end
 temp()
 
 function temp()
-	var1.你 = {
+	var1_0.你 = {
 		爸 = {
 			this = true,
 			操 = {

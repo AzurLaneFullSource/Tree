@@ -1,19 +1,19 @@
-﻿local var0 = class("MainRankBtn4Mellow", import(".MainRankBtn"))
+﻿local var0_0 = class("MainRankBtn4Mellow", import(".MainRankBtn"))
 
-function var0.Ctor(arg0, arg1, arg2)
-	var0.super.Ctor(arg0, arg1, arg2)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var0_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 
-	arg0.rankImage = arg1:Find("root/Image"):GetComponent(typeof(Image))
+	arg0_1.rankImage = arg1_1:Find("root/Image"):GetComponent(typeof(Image))
 end
 
-function var0.Flush(arg0)
-	local var0 = arg0:IsActive()
+function var0_0.Flush(arg0_2)
+	local var0_2 = arg0_2:IsActive()
 
-	setActive(arg0._tf:Find("root/lock"), not var0)
+	setActive(arg0_2._tf:Find("root/lock"), not var0_2)
 
-	local var1 = var0 and Color(1, 1, 1, 1) or Color(0.3, 0.3, 0.3, 1)
+	local var1_2 = var0_2 and Color(1, 1, 1, 1) or Color(0.3, 0.3, 0.3, 1)
 
-	arg0.rankImage.color = var1
+	arg0_2.rankImage.color = var1_2
 end
 
-return var0
+return var0_0

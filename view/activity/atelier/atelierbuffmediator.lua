@@ -1,49 +1,49 @@
-﻿local var0 = class("AtelierMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("AtelierMediator", import("view.base.ContextMediator"))
 
-function var0.register(arg0)
-	arg0:bind(GAME.UPDATE_ATELIER_BUFF, function(arg0, arg1)
-		arg0:sendNotification(GAME.UPDATE_ATELIER_BUFF, arg1)
+function var0_0.register(arg0_1)
+	arg0_1:bind(GAME.UPDATE_ATELIER_BUFF, function(arg0_2, arg1_2)
+		arg0_1:sendNotification(GAME.UPDATE_ATELIER_BUFF, arg1_2)
 	end)
-	arg0:bind(AtelierMaterialDetailMediator.SHOW_DETAIL, function(arg0, arg1)
-		arg0:addSubLayers(Context.New({
+	arg0_1:bind(AtelierMaterialDetailMediator.SHOW_DETAIL, function(arg0_3, arg1_3)
+		arg0_1:addSubLayers(Context.New({
 			mediator = AtelierMaterialDetailMediator,
 			viewComponent = AtelierMaterialDetailLayer,
 			data = {
-				material = arg1
+				material = arg1_3
 			}
 		}))
 	end)
 
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+	local var0_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
-	assert(var0 and not var0:isEnd())
-	arg0.viewComponent:SetActivity(var0)
+	assert(var0_1 and not var0_1:isEnd())
+	arg0_1.viewComponent:SetActivity(var0_1)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_4)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		GAME.UPDATE_ATELIER_BUFF_DONE
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_5, arg1_5)
+	local var0_5 = arg1_5:getName()
+	local var1_5 = arg1_5:getBody()
 
-	if var0 == nil then
+	if var0_5 == nil then
 		-- block empty
-	elseif var0 == ActivityProxy.ACTIVITY_UPDATED then
-		if var1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ATELIER_LINK then
-			arg0.viewComponent:SetActivity(var1)
+	elseif var0_5 == ActivityProxy.ACTIVITY_UPDATED then
+		if var1_5:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ATELIER_LINK then
+			arg0_5.viewComponent:SetActivity(var1_5)
 		end
-	elseif var0 == GAME.UPDATE_ATELIER_BUFF_DONE then
-		arg0.viewComponent:OnUpdateAtelierBuff()
+	elseif var0_5 == GAME.UPDATE_ATELIER_BUFF_DONE then
+		arg0_5.viewComponent:OnUpdateAtelierBuff()
 	end
 end
 
-function var0.remove(arg0)
+function var0_0.remove(arg0_6)
 	return
 end
 
-return var0
+return var0_0

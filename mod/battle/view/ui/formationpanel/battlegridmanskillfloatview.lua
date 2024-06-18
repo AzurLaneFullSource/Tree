@@ -1,86 +1,86 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConfig
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConfig
 
-var0.Battle.BattleGridmanSkillFloatView = class("BattleGridmanSkillFloatView")
-var0.Battle.BattleGridmanSkillFloatView.__name = "BattleGridmanSkillFloatView"
+var0_0.Battle.BattleGridmanSkillFloatView = class("BattleGridmanSkillFloatView")
+var0_0.Battle.BattleGridmanSkillFloatView.__name = "BattleGridmanSkillFloatView"
 
-local var2 = var0.Battle.BattleGridmanSkillFloatView
+local var2_0 = var0_0.Battle.BattleGridmanSkillFloatView
 
-function var2.Ctor(arg0, arg1)
-	arg0._go = arg1
-	arg0._tf = tf(arg1)
+function var2_0.Ctor(arg0_1, arg1_1)
+	arg0_1._go = arg1_1
+	arg0_1._tf = tf(arg1_1)
 
-	arg0:init()
+	arg0_1:init()
 end
 
-function var2.init(arg0)
-	arg0._fusion = {}
-	arg0._fusion[var1.FRIENDLY_CODE] = arg0._tf:Find("fusion_1")
-	arg0._fusion[var1.FOE_CODE] = arg0._tf:Find("fusion_-1")
-	arg0._skillList = {}
+function var2_0.init(arg0_2)
+	arg0_2._fusion = {}
+	arg0_2._fusion[var1_0.FRIENDLY_CODE] = arg0_2._tf:Find("fusion_1")
+	arg0_2._fusion[var1_0.FOE_CODE] = arg0_2._tf:Find("fusion_-1")
+	arg0_2._skillList = {}
 
-	local function var0(arg0)
-		arg0._skillList[arg0] = {}
+	local function var0_2(arg0_3)
+		arg0_2._skillList[arg0_3] = {}
 
-		for iter0 = 1, 3 do
-			local var0 = iter0 * arg0
-			local var1 = arg0._tf:Find("skill_" .. var0)
+		for iter0_3 = 1, 3 do
+			local var0_3 = iter0_3 * arg0_3
+			local var1_3 = arg0_2._tf:Find("skill_" .. var0_3)
 
-			table.insert(arg0._skillList[arg0], {
+			table.insert(arg0_2._skillList[arg0_3], {
 				idle = true,
-				tf = var1
+				tf = var1_3
 			})
 		end
 	end
 
-	var0(var1.FRIENDLY_CODE)
-	var0(var1.FOE_CODE)
+	var0_2(var1_0.FRIENDLY_CODE)
+	var0_2(var1_0.FOE_CODE)
 
-	arg0._resource = arg0._tf:Find("res")
+	arg0_2._resource = arg0_2._tf:Find("res")
 end
 
-function var2.DoSkillFloat(arg0, arg1, arg2)
-	local var0
-	local var1 = arg0._skillList[arg2]
+function var2_0.DoSkillFloat(arg0_4, arg1_4, arg2_4)
+	local var0_4
+	local var1_4 = arg0_4._skillList[arg2_4]
 
-	for iter0 = 1, 3 do
-		if var1[iter0].idle then
-			var0 = var1[iter0]
+	for iter0_4 = 1, 3 do
+		if var1_4[iter0_4].idle then
+			var0_4 = var1_4[iter0_4]
 
 			break
 		end
 	end
 
-	if not var0 then
+	if not var0_4 then
 		return
 	end
 
-	var0.idle = false
+	var0_4.idle = false
 
-	local var2 = var0.tf
-	local var3 = var2:Find("anima")
-	local var4 = arg0._resource:Find(arg1):GetComponent(typeof(Image)).sprite
+	local var2_4 = var0_4.tf
+	local var3_4 = var2_4:Find("anima")
+	local var4_4 = arg0_4._resource:Find(arg1_4):GetComponent(typeof(Image)).sprite
 
-	setImageSprite(var3, var4, true)
-	setActive(var2, true)
-	var3:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg0)
-		var0.idle = true
+	setImageSprite(var3_4, var4_4, true)
+	setActive(var2_4, true)
+	var3_4:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg0_5)
+		var0_4.idle = true
 
-		setActive(var2, false)
+		setActive(var2_4, false)
 	end)
 end
 
-function var2.DoFusionFloat(arg0, arg1)
-	local var0 = arg0._fusion[arg1]
+function var2_0.DoFusionFloat(arg0_6, arg1_6)
+	local var0_6 = arg0_6._fusion[arg1_6]
 
-	setActive(var0, true)
-	var0:Find("anima"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg0)
-		setActive(var0, false)
+	setActive(var0_6, true)
+	var0_6:Find("anima"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg0_7)
+		setActive(var0_6, false)
 	end)
 end
 
-function var2.Dispose(arg0)
+function var2_0.Dispose(arg0_8)
 	return
 end

@@ -1,8 +1,8 @@
-﻿local var0 = class("BaileyHalloweenPage", import(".TemplatePage.SkinTemplatePage"))
+﻿local var0_0 = class("BaileyHalloweenPage", import(".TemplatePage.SkinTemplatePage"))
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
-	setText(arg0.dayTF, arg0.nday .. "/" .. #arg0.taskGroup)
+function var0_0.OnUpdateFlush(arg0_1)
+	var0_0.super.OnUpdateFlush(arg0_1)
+	setText(arg0_1.dayTF, arg0_1.nday .. "/" .. #arg0_1.taskGroup)
 end
 
-return var0
+return var0_0

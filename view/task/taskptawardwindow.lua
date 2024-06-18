@@ -1,58 +1,58 @@
-﻿local var0 = class("TaskPtAwardWindow", import("..activity.Panels.PtAwardWindow"))
+﻿local var0_0 = class("TaskPtAwardWindow", import("..activity.Panels.PtAwardWindow"))
 
-function var0.UpdateList(arg0, arg1, arg2, arg3)
-	assert(#arg1 == #arg2)
-	arg0.UIlist:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg1[arg1 + 1]
+function var0_0.UpdateList(arg0_1, arg1_1, arg2_1, arg3_1)
+	assert(#arg1_1 == #arg2_1)
+	arg0_1.UIlist:make(function(arg0_2, arg1_2, arg2_2)
+		if arg0_2 == UIItemList.EventUpdate then
+			local var0_2 = arg1_1[arg1_2 + 1]
 
-			arg0:UpdateDrop(arg2:Find("award"), var0[1])
-			arg0:UpdateDrop(arg2:Find("award1"), var0[2])
+			arg0_1:UpdateDrop(arg2_2:Find("award"), var0_2[1])
+			arg0_1:UpdateDrop(arg2_2:Find("award1"), var0_2[2])
 
-			local var1 = arg2[arg1 + 1]
+			local var1_2 = arg2_1[arg1_2 + 1]
 
-			setText(arg2:Find("title/Text"), "PHASE " .. arg1 + 1)
-			setText(arg2:Find("target/Text"), var1)
-			setText(arg2:Find("target/title"), arg0.resTitle)
-			setActive(arg2:Find("award/mask"), arg1 + 1 <= arg3)
-			setActive(arg2:Find("award1/mask"), arg1 + 1 <= arg3)
+			setText(arg2_2:Find("title/Text"), "PHASE " .. arg1_2 + 1)
+			setText(arg2_2:Find("target/Text"), var1_2)
+			setText(arg2_2:Find("target/title"), arg0_1.resTitle)
+			setActive(arg2_2:Find("award/mask"), arg1_2 + 1 <= arg3_1)
+			setActive(arg2_2:Find("award1/mask"), arg1_2 + 1 <= arg3_1)
 
-			if arg2:Find("target/icon") then
-				if arg0.resIcon == "" then
-					arg0.resIcon = nil
+			if arg2_2:Find("target/icon") then
+				if arg0_1.resIcon == "" then
+					arg0_1.resIcon = nil
 				end
 
-				if arg0.resIcon then
-					LoadImageSpriteAsync(arg0.resIcon, arg2:Find("target/icon"), false)
+				if arg0_1.resIcon then
+					LoadImageSpriteAsync(arg0_1.resIcon, arg2_2:Find("target/icon"), false)
 				end
 
-				setActive(arg2:Find("target/icon"), arg0.resIcon)
-				setActive(arg2:Find("target/mark"), arg0.resIcon)
+				setActive(arg2_2:Find("target/icon"), arg0_1.resIcon)
+				setActive(arg2_2:Find("target/mark"), arg0_1.resIcon)
 			end
 		end
 	end)
-	arg0.UIlist:align(#arg1)
+	arg0_1.UIlist:align(#arg1_1)
 end
 
-function var0.UpdateDrop(arg0, arg1, arg2)
-	if arg2 then
-		setActive(arg1, true)
+function var0_0.UpdateDrop(arg0_3, arg1_3, arg2_3)
+	if arg2_3 then
+		setActive(arg1_3, true)
 
-		local var0 = {
-			type = arg2[1],
-			id = arg2[2],
-			count = arg2[3]
+		local var0_3 = {
+			type = arg2_3[1],
+			id = arg2_3[2],
+			count = arg2_3[3]
 		}
 
-		updateDrop(arg1, var0, {
+		updateDrop(arg1_3, var0_3, {
 			hideName = true
 		})
-		onButton(arg0.binder, arg1, function()
-			arg0.binder:emit(BaseUI.ON_DROP, var0)
+		onButton(arg0_3.binder, arg1_3, function()
+			arg0_3.binder:emit(BaseUI.ON_DROP, var0_3)
 		end, SFX_PANEL)
 	else
-		setActive(arg1, false)
+		setActive(arg1_3, false)
 	end
 end
 
-return var0
+return var0_0

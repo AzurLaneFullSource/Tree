@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_230 = {}
+var0_0.word_template_230 = {}
 
-local var1 = var0.word_template_230
+local var1_0 = var0_0.word_template_230
 
 function temp()
-	var1.汔 = {
+	var1_0.汔 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.弃 = {
+	var1_0.弃 = {
 		欓 = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.汽 = {
+	var1_0.汽 = {
 		q = {
 			i = {
 				a = {
@@ -142,7 +142,7 @@ end
 temp()
 
 function temp()
-	var1.契 = {
+	var1_0.契 = {
 		约 = {
 			法 = {
 				师 = {
@@ -156,7 +156,7 @@ end
 temp()
 
 function temp()
-	var1.氣 = {
+	var1_0.氣 = {
 		動 = {
 			鋼 = {
 				珠 = {
@@ -191,7 +191,7 @@ end
 temp()
 
 function temp()
-	var1.碛 = {
+	var1_0.碛 = {
 		this = {
 			this = true
 		}
@@ -201,7 +201,7 @@ end
 temp()
 
 function temp()
-	var1.噐 = {
+	var1_0.噐 = {
 		具 = {
 			表 = {
 				演 = {

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_172 = {}
+var0_0.word_template_172 = {}
 
-local var1 = var0.word_template_172
+local var1_0 = var0_0.word_template_172
 
 function temp()
-	var1.寇 = {
+	var1_0.寇 = {
 		晓 = {
 			伟 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.哭 = {
+	var1_0.哭 = {
 		爸 = {
 			this = true
 		},
@@ -39,7 +39,7 @@ end
 temp()
 
 function temp()
-	var1.堀 = {
+	var1_0.堀 = {
 		江 = {
 			千 = {
 				春 = {
@@ -60,7 +60,7 @@ end
 temp()
 
 function temp()
-	var1.苦 = {
+	var1_0.苦 = {
 		干 = {
 			巧 = {
 				干 = {
@@ -105,7 +105,7 @@ end
 temp()
 
 function temp()
-	var1.库 = {
+	var1_0.库 = {
 		氯 = {
 			铵 = {
 				this = true
@@ -130,7 +130,7 @@ end
 temp()
 
 function temp()
-	var1.裤 = {
+	var1_0.裤 = {
 		袜 = {
 			this = true
 		},
@@ -149,7 +149,7 @@ end
 temp()
 
 function temp()
-	var1.酷 = {
+	var1_0.酷 = {
 		刑 = {
 			之 = {
 				赤 = {

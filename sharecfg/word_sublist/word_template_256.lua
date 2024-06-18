@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_256 = {}
+var0_0.word_template_256 = {}
 
-local var1 = var0.word_template_256
+local var1_0 = var0_0.word_template_256
 
 function temp()
-	var1.邵 = {
+	var1_0.邵 = {
 		鸿 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.舌 = {
+	var1_0.舌 = {
 		头 = {
 			添 = {
 				this = true
@@ -70,7 +70,7 @@ end
 temp()
 
 function temp()
-	var1.厙 = {
+	var1_0.厙 = {
 		this = {
 			this = true
 		}
@@ -80,7 +80,7 @@ end
 temp()
 
 function temp()
-	var1.摄 = {
+	var1_0.摄 = {
 		像 = {
 			钢 = {
 				笔 = {
@@ -137,7 +137,7 @@ end
 temp()
 
 function temp()
-	var1.灄 = {
+	var1_0.灄 = {
 		this = {
 			this = true
 		}
@@ -147,7 +147,7 @@ end
 temp()
 
 function temp()
-	var1.申 = {
+	var1_0.申 = {
 		维 = {
 			辰 = {
 				this = true
@@ -171,7 +171,7 @@ end
 temp()
 
 function temp()
-	var1.伸 = {
+	var1_0.伸 = {
 		手 = {
 			摸 = {
 				姐 = {

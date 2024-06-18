@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_103 = {}
+var0_0.word_template_103 = {}
 
-local var1 = var0.word_template_103
+local var1_0 = var0_0.word_template_103
 
 function temp()
-	var1.黼 = {
+	var1_0.黼 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.父 = {
+	var1_0.父 = {
 		母 = {
 			逼 = {
 				疯 = {
@@ -50,7 +50,7 @@ end
 temp()
 
 function temp()
-	var1.付 = {
+	var1_0.付 = {
 		费 = {
 			视 = {
 				频 = {
@@ -74,7 +74,7 @@ end
 temp()
 
 function temp()
-	var1.负 = {
+	var1_0.负 = {
 		面 = {
 			撤 = {
 				稿 = {
@@ -132,7 +132,7 @@ end
 temp()
 
 function temp()
-	var1.妇 = {
+	var1_0.妇 = {
 		检 = {
 			单 = {
 				办 = {
@@ -161,7 +161,7 @@ end
 temp()
 
 function temp()
-	var1.复 = {
+	var1_0.复 = {
 		制 = {
 			银 = {
 				行 = {
@@ -184,7 +184,7 @@ end
 temp()
 
 function temp()
-	var1.冨 = {
+	var1_0.冨 = {
 		永 = {
 			萌 = {
 				美 = {

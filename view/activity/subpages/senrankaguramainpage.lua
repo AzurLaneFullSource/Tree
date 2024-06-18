@@ -1,132 +1,132 @@
-﻿local var0 = class("SenrankaguraMainPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿local var0_0 = class("SenrankaguraMainPage", import(".TemplatePage.PreviewTemplatePage"))
 
-var0.SWITCH_INTERVAL = 6
-var0.SWITCH_TIME = 0.5
-var0.SWITCH_WIDTH = 367
-var0.TACHIE_DELAY = 0.03
+var0_0.SWITCH_INTERVAL = 6
+var0_0.SWITCH_TIME = 0.5
+var0_0.SWITCH_WIDTH = 367
+var0_0.TACHIE_DELAY = 0.03
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("AD/mask")
-	arg0.btnList = arg0:findTF("btn_list", arg0.bg)
-	arg0.main = arg0:findTF("main", arg0.bg)
-	arg0.totalNum = arg0.main.childCount
-	arg0.randomList = {}
-	arg0.children = {}
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("AD/mask")
+	arg0_1.btnList = arg0_1:findTF("btn_list", arg0_1.bg)
+	arg0_1.main = arg0_1:findTF("main", arg0_1.bg)
+	arg0_1.totalNum = arg0_1.main.childCount
+	arg0_1.randomList = {}
+	arg0_1.children = {}
 
-	for iter0 = 1, arg0.totalNum do
-		local var0 = arg0.main:GetChild(iter0 - 1)
+	for iter0_1 = 1, arg0_1.totalNum do
+		local var0_1 = arg0_1.main:GetChild(iter0_1 - 1)
 
-		table.insert(arg0.children, var0)
-		setActive(var0, false)
+		table.insert(arg0_1.children, var0_1)
+		setActive(var0_1, false)
 
 		if PLATFORM_CODE ~= PLATFORM_CH then
-			local var1 = findTF(var0, "hx")
+			local var1_1 = findTF(var0_1, "hx")
 
-			if var1 then
-				setActive(var1, false)
+			if var1_1 then
+				setActive(var1_1, false)
 			end
 		end
 	end
 end
 
-function var0.OnFirstFlush(arg0)
-	var0.super.OnFirstFlush(arg0)
-	onButton(arg0, arg0:findTF("mountain", arg0.btnList), function()
+function var0_0.OnFirstFlush(arg0_2)
+	var0_0.super.OnFirstFlush(arg0_2)
+	onButton(arg0_2, arg0_2:findTF("mountain", arg0_2.btnList), function()
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SENRANKAGURA_BACKHILL)
 	end, SFX_PANEL)
 
-	for iter0 = 1, arg0.totalNum do
-		table.insert(arg0.randomList, iter0)
+	for iter0_2 = 1, arg0_2.totalNum do
+		table.insert(arg0_2.randomList, iter0_2)
 	end
 
-	shuffle(arg0.randomList)
+	shuffle(arg0_2.randomList)
 
-	arg0.index = 1
+	arg0_2.index = 1
 
-	setActive(arg0.children[arg0.randomList[arg0.index]], true)
+	setActive(arg0_2.children[arg0_2.randomList[arg0_2.index]], true)
 
-	arg0.LTList = {}
+	arg0_2.LTList = {}
 
-	function arg0.Interval()
-		table.insert(arg0.LTList, LeanTween.delayedCall(go(arg0._tf), var0.SWITCH_INTERVAL, System.Action(arg0.FadeIn)).uniqueId)
+	function arg0_2.Interval()
+		table.insert(arg0_2.LTList, LeanTween.delayedCall(go(arg0_2._tf), var0_0.SWITCH_INTERVAL, System.Action(arg0_2.FadeIn)).uniqueId)
 	end
 
-	function arg0.FadeIn()
-		local var0 = arg0.children[arg0.randomList[arg0.index]]
+	function arg0_2.FadeIn()
+		local var0_5 = arg0_2.children[arg0_2.randomList[arg0_2.index]]
 
-		arg0.index = arg0.index % arg0.totalNum + 1
+		arg0_2.index = arg0_2.index % arg0_2.totalNum + 1
 
-		local var1 = arg0.children[arg0.randomList[arg0.index]]
-		local var2 = var0.SWITCH_WIDTH
+		local var1_5 = arg0_2.children[arg0_2.randomList[arg0_2.index]]
+		local var2_5 = var0_0.SWITCH_WIDTH
 
-		setActive(var1, true)
+		setActive(var1_5, true)
 
-		local var3 = {
-			findTF(var1, "bg"),
-			findTF(var1, "tachie"),
-			findTF(var1, "hx")
+		local var3_5 = {
+			findTF(var1_5, "bg"),
+			findTF(var1_5, "tachie"),
+			findTF(var1_5, "hx")
 		}
-		local var4 = {
-			findTF(var0, "bg"),
-			findTF(var0, "tachie"),
-			findTF(var0, "hx")
+		local var4_5 = {
+			findTF(var0_5, "bg"),
+			findTF(var0_5, "tachie"),
+			findTF(var0_5, "hx")
 		}
-		local var5 = {
+		local var5_5 = {
 			0,
-			var0.TACHIE_DELAY,
-			var0.TACHIE_DELAY
+			var0_0.TACHIE_DELAY,
+			var0_0.TACHIE_DELAY
 		}
 
-		table.insert(arg0.LTList, LeanTween.delayedCall(go(arg0._tf), var0.SWITCH_TIME + var0.TACHIE_DELAY, System.Action(arg0.Interval)).uniqueId)
-		table.Foreach(var3, function(arg0, arg1)
-			setImageAlpha(arg1, 0)
+		table.insert(arg0_2.LTList, LeanTween.delayedCall(go(arg0_2._tf), var0_0.SWITCH_TIME + var0_0.TACHIE_DELAY, System.Action(arg0_2.Interval)).uniqueId)
+		table.Foreach(var3_5, function(arg0_6, arg1_6)
+			setImageAlpha(arg1_6, 0)
 
-			local var0 = rtf(arg1).anchoredPosition.x
+			local var0_6 = rtf(arg1_6).anchoredPosition.x
 
-			setAnchoredPosition(arg1, {
-				x = var2 + var0
+			setAnchoredPosition(arg1_6, {
+				x = var2_5 + var0_6
 			})
 
-			local function var1()
-				table.insert(arg0.LTList, LeanTween.alpha(arg1, 1, var0.SWITCH_TIME):setEase(LeanTweenType.easeOutSine).uniqueId)
-				table.insert(arg0.LTList, LeanTween.moveX(rtf(arg1), 0 + var0, var0.SWITCH_TIME):setEase(LeanTweenType.easeOutSine).uniqueId)
+			local function var1_6()
+				table.insert(arg0_2.LTList, LeanTween.alpha(arg1_6, 1, var0_0.SWITCH_TIME):setEase(LeanTweenType.easeOutSine).uniqueId)
+				table.insert(arg0_2.LTList, LeanTween.moveX(rtf(arg1_6), 0 + var0_6, var0_0.SWITCH_TIME):setEase(LeanTweenType.easeOutSine).uniqueId)
 			end
 
-			if var5[arg0] > 0 then
-				table.insert(arg0.LTList, LeanTween.delayedCall(go(arg1), var5[arg0], System.Action(var1)).uniqueId)
+			if var5_5[arg0_6] > 0 then
+				table.insert(arg0_2.LTList, LeanTween.delayedCall(go(arg1_6), var5_5[arg0_6], System.Action(var1_6)).uniqueId)
 			else
-				var1()
+				var1_6()
 			end
 		end)
-		table.Foreach(var4, function(arg0, arg1)
-			local var0 = rtf(arg1).anchoredPosition.x
+		table.Foreach(var4_5, function(arg0_8, arg1_8)
+			local var0_8 = rtf(arg1_8).anchoredPosition.x
 
-			local function var1()
-				setAnchoredPosition(arg1, {
-					x = var0
+			local function var1_8()
+				setAnchoredPosition(arg1_8, {
+					x = var0_8
 				})
 			end
 
-			local var2 = function()
-				table.insert(arg0.LTList, LeanTween.alpha(arg1, 0, var0.SWITCH_TIME):setEase(LeanTweenType.easeOutSine).uniqueId)
-				table.insert(arg0.LTList, LeanTween.moveX(rtf(arg1), -var2 + var0, var0.SWITCH_TIME):setOnComplete(System.Action(var1)):setEase(LeanTweenType.easeOutSine).uniqueId)
+			local function var2_8()
+				table.insert(arg0_2.LTList, LeanTween.alpha(arg1_8, 0, var0_0.SWITCH_TIME):setEase(LeanTweenType.easeOutSine).uniqueId)
+				table.insert(arg0_2.LTList, LeanTween.moveX(rtf(arg1_8), -var2_5 + var0_8, var0_0.SWITCH_TIME):setOnComplete(System.Action(var1_8)):setEase(LeanTweenType.easeOutSine).uniqueId)
 			end
 
-			if var5[arg0] > 0 then
-				table.insert(arg0.LTList, LeanTween.delayedCall(go(arg1), var5[arg0], System.Action(var2)).uniqueId)
+			if var5_5[arg0_8] > 0 then
+				table.insert(arg0_2.LTList, LeanTween.delayedCall(go(arg1_8), var5_5[arg0_8], System.Action(var2_8)).uniqueId)
 			else
-				var2()
+				var2_8()
 			end
 		end)
 	end
 
-	arg0.Interval()
+	arg0_2.Interval()
 end
 
-function var0.OnDestroy(arg0)
-	for iter0, iter1 in ipairs(arg0.LTList or {}) do
-		LeanTween.cancel(iter1)
+function var0_0.OnDestroy(arg0_11)
+	for iter0_11, iter1_11 in ipairs(arg0_11.LTList or {}) do
+		LeanTween.cancel(iter1_11)
 	end
 end
 
-return var0
+return var0_0

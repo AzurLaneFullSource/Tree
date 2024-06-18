@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_141 = {}
+var0_0.word_template_141 = {}
 
-local var1 = var0.word_template_141
+local var1_0 = var0_0.word_template_141
 
 function temp()
-	var1.覿 = {
+	var1_0.覿 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.挤 = {
+	var1_0.挤 = {
 		奶 = {
 			this = true
 		},
@@ -34,7 +34,7 @@ end
 temp()
 
 function temp()
-	var1.掎 = {
+	var1_0.掎 = {
 		this = {
 			this = true
 		}
@@ -44,7 +44,7 @@ end
 temp()
 
 function temp()
-	var1.彐 = {
+	var1_0.彐 = {
 		this = {
 			this = true
 		}
@@ -54,7 +54,7 @@ end
 temp()
 
 function temp()
-	var1.计 = {
+	var1_0.计 = {
 		牌 = {
 			软 = {
 				件 = {
@@ -73,7 +73,7 @@ end
 temp()
 
 function temp()
-	var1.纪 = {
+	var1_0.纪 = {
 		念 = {
 			this = true,
 			["6"] = {
@@ -188,7 +188,7 @@ end
 temp()
 
 function temp()
-	var1.技 = {
+	var1_0.技 = {
 		校 = {
 			门 = {
 				this = true

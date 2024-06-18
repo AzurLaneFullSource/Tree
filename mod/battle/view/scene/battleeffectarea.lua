@@ -1,102 +1,102 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConst
-local var2 = var0.Battle.BattleConfig
-local var3 = class("BattleEffectArea")
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConst
+local var2_0 = var0_0.Battle.BattleConfig
+local var3_0 = class("BattleEffectArea")
 
-var0.Battle.BattleEffectArea = var3
-var3.__name = "BattleEffectArea"
+var0_0.Battle.BattleEffectArea = var3_0
+var3_0.__name = "BattleEffectArea"
 
-local var4 = Vector3(0, 3.5, -5)
+local var4_0 = Vector3(0, 3.5, -5)
 
-function var3.Ctor(arg0, arg1, arg2, arg3)
-	arg0._go = arg1
-	arg0._aoeData = arg2
-	arg0._topCover = arg3
+function var3_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	arg0_1._go = arg1_1
+	arg0_1._aoeData = arg2_1
+	arg0_1._topCover = arg3_1
 
-	arg0:Init()
+	arg0_1:Init()
 end
 
-function var3.Init(arg0)
-	arg0._tf = arg0._go.transform
-	arg0._areaType = arg0._aoeData:GetAreaType()
+function var3_0.Init(arg0_2)
+	arg0_2._tf = arg0_2._go.transform
+	arg0_2._areaType = arg0_2._aoeData:GetAreaType()
 
-	if arg0._areaType == var1.AreaType.CUBE then
-		arg0.UpdateScale = arg0.updateCubeScale
-	elseif arg0._areaType == var1.AreaType.COLUMN then
-		arg0.UpdateScale = arg0.updateColumnScale
+	if arg0_2._areaType == var1_0.AreaType.CUBE then
+		arg0_2.UpdateScale = arg0_2.updateCubeScale
+	elseif arg0_2._areaType == var1_0.AreaType.COLUMN then
+		arg0_2.UpdateScale = arg0_2.updateColumnScale
 	end
 
-	if arg0._aoeData:GetIFF() == var2.FOE_CODE then
-		function arg0.GetAngle()
-			return arg0._aoeData:GetAngle() * -1 + 180
+	if arg0_2._aoeData:GetIFF() == var2_0.FOE_CODE then
+		function arg0_2.GetAngle()
+			return arg0_2._aoeData:GetAngle() * -1 + 180
 		end
 	else
-		function arg0.GetAngle()
-			return arg0._aoeData:GetAngle() * -1
+		function arg0_2.GetAngle()
+			return arg0_2._aoeData:GetAngle() * -1
 		end
 	end
 
-	arg0:Update()
+	arg0_2:Update()
 end
 
-function var3.Update(arg0)
-	arg0:UpdateScale()
-	arg0:UpdatePosition()
-	arg0:UpdateRotation()
+function var3_0.Update(arg0_5)
+	arg0_5:UpdateScale()
+	arg0_5:UpdatePosition()
+	arg0_5:UpdateRotation()
 end
 
-function var3.updateCubeScale(arg0)
-	local var0 = 1
-	local var1 = 1
+function var3_0.updateCubeScale(arg0_6)
+	local var0_6 = 1
+	local var1_6 = 1
 
-	if not arg0._aoeData:GetFXStatic() then
-		var0 = arg0._aoeData:GetWidth() * arg0._aoeData:GetIFF()
-		var1 = arg0._aoeData:GetHeight()
+	if not arg0_6._aoeData:GetFXStatic() then
+		var0_6 = arg0_6._aoeData:GetWidth() * arg0_6._aoeData:GetIFF()
+		var1_6 = arg0_6._aoeData:GetHeight()
 	end
 
-	if var0 == arg0._preWidth and var1 == arg0._preHeight then
+	if var0_6 == arg0_6._preWidth and var1_6 == arg0_6._preHeight then
 		return
 	end
 
-	arg0._tf.localScale = Vector3(var0, 1, var1)
-	arg0._preWidth = var0
-	arg0._preHeight = var1
+	arg0_6._tf.localScale = Vector3(var0_6, 1, var1_6)
+	arg0_6._preWidth = var0_6
+	arg0_6._preHeight = var1_6
 end
 
-function var3.updateColumnScale(arg0)
-	local var0 = arg0._aoeData:GetRange()
+function var3_0.updateColumnScale(arg0_7)
+	local var0_7 = arg0_7._aoeData:GetRange()
 
-	if var0 == arg0._preRange then
+	if var0_7 == arg0_7._preRange then
 		return
 	end
 
-	arg0._tf.localScale = Vector3(var0, 1, var0)
-	arg0._preRange = var0
+	arg0_7._tf.localScale = Vector3(var0_7, 1, var0_7)
+	arg0_7._preRange = var0_7
 end
 
-function var3.UpdatePosition(arg0)
-	if arg0._topCover then
-		arg0._tf.position = arg0._aoeData:GetPosition() + var4
+function var3_0.UpdatePosition(arg0_8)
+	if arg0_8._topCover then
+		arg0_8._tf.position = arg0_8._aoeData:GetPosition() + var4_0
 	else
-		arg0._tf.position = arg0._aoeData:GetPosition()
+		arg0_8._tf.position = arg0_8._aoeData:GetPosition()
 	end
 end
 
-function var3.UpdateRotation(arg0)
-	local var0 = arg0:GetAngle()
+function var3_0.UpdateRotation(arg0_9)
+	local var0_9 = arg0_9:GetAngle()
 
-	if arg0._preAngle == var0 then
+	if arg0_9._preAngle == var0_9 then
 		return
 	end
 
-	arg0._tf.localEulerAngles = Vector3(0, var0, 0)
-	arg0._preAngle = var0
+	arg0_9._tf.localEulerAngles = Vector3(0, var0_9, 0)
+	arg0_9._preAngle = var0_9
 end
 
-function var3.Dispose(arg0)
-	var0.Battle.BattleResourceManager.GetInstance():DestroyOb(arg0._go)
+function var3_0.Dispose(arg0_10)
+	var0_0.Battle.BattleResourceManager.GetInstance():DestroyOb(arg0_10._go)
 
-	arg0._go = nil
+	arg0_10._go = nil
 end

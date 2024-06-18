@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_209 = {}
+var0_0.word_template_209 = {}
 
-local var1 = var0.word_template_209
+local var1_0 = var0_0.word_template_209
 
 function temp()
-	var1.命 = {
+	var1_0.命 = {
 		运 = {
 			就 = {
 				象 = {
@@ -25,7 +25,7 @@ end
 temp()
 
 function temp()
-	var1.摸 = {
+	var1_0.摸 = {
 		j = {
 			j = {
 				爽 = {
@@ -133,7 +133,7 @@ end
 temp()
 
 function temp()
-	var1.模 = {
+	var1_0.模 = {
 		拟 = {
 			机 = {
 				this = true
@@ -158,7 +158,7 @@ end
 temp()
 
 function temp()
-	var1.摩 = {
+	var1_0.摩 = {
 		擦 = {
 			着 = {
 				this = true
@@ -209,7 +209,7 @@ end
 temp()
 
 function temp()
-	var1.魔 = {
+	var1_0.魔 = {
 		法 = {
 			加 = {
 				南 = {
@@ -277,7 +277,7 @@ end
 temp()
 
 function temp()
-	var1.末 = {
+	var1_0.末 = {
 		日 = {
 			代 = {
 				码 = {
@@ -335,7 +335,7 @@ end
 temp()
 
 function temp()
-	var1.茉 = {
+	var1_0.茉 = {
 		莉 = {
 			花 = {
 				this = true,

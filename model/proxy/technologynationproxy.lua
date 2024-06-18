@@ -1,54 +1,54 @@
-﻿local var0 = class("TechnologyNationProxy", import(".NetProxy"))
+﻿local var0_0 = class("TechnologyNationProxy", import(".NetProxy"))
 
-function var0.register(arg0)
-	arg0.typeAttrTable = {}
-	arg0.typeOrder = {}
-	arg0.typeAttrOrderTable = {}
-	arg0.groupListInCount = {}
-	arg0.nationToPoint = {}
-	arg0.ifShowRedPoint = false
-	arg0.techList = {}
+function var0_0.register(arg0_1)
+	arg0_1.typeAttrTable = {}
+	arg0_1.typeOrder = {}
+	arg0_1.typeAttrOrderTable = {}
+	arg0_1.groupListInCount = {}
+	arg0_1.nationToPoint = {}
+	arg0_1.ifShowRedPoint = false
+	arg0_1.techList = {}
 
-	arg0:on(64000, function(arg0)
-		for iter0, iter1 in ipairs(arg0.tech_list) do
-			arg0.techList[iter1.group_id] = {
-				completeID = iter1.effect_tech_id,
-				studyID = iter1.study_tech_id,
-				finishTime = iter1.study_finish_time,
-				rewardedID = iter1.rewarded_tech
+	arg0_1:on(64000, function(arg0_2)
+		for iter0_2, iter1_2 in ipairs(arg0_2.tech_list) do
+			arg0_1.techList[iter1_2.group_id] = {
+				completeID = iter1_2.effect_tech_id,
+				studyID = iter1_2.study_tech_id,
+				finishTime = iter1_2.study_finish_time,
+				rewardedID = iter1_2.rewarded_tech
 			}
 		end
 
-		arg0:flushData()
-		arg0:setTimer()
-		arg0:initSetableAttrAddition(arg0.techset_list)
+		arg0_1:flushData()
+		arg0_1:setTimer()
+		arg0_1:initSetableAttrAddition(arg0_2.techset_list)
 	end)
 
 	if IsUnityEditor then
-		local var0 = {
+		local var0_1 = {
 			ShipType.FengFanM,
 			ShipType.FengFanS,
 			ShipType.FengFanV
 		}
 
-		local function var1(arg0)
-			if #var0 ~= #arg0 then
+		local function var1_1(arg0_3)
+			if #var0_1 ~= #arg0_3 then
 				return false
 			end
 
-			local var0 = {}
-			local var1 = {}
+			local var0_3 = {}
+			local var1_3 = {}
 
-			for iter0, iter1 in ipairs(var0) do
-				var0[iter1] = (var0[iter1] or 0) + 1
+			for iter0_3, iter1_3 in ipairs(var0_1) do
+				var0_3[iter1_3] = (var0_3[iter1_3] or 0) + 1
 			end
 
-			for iter2, iter3 in ipairs(arg0) do
-				var1[iter3] = (var1[iter3] or 0) + 1
+			for iter2_3, iter3_3 in ipairs(arg0_3) do
+				var1_3[iter3_3] = (var1_3[iter3_3] or 0) + 1
 			end
 
-			for iter4, iter5 in pairs(var0) do
-				if var1[iter4] ~= iter5 then
+			for iter4_3, iter5_3 in pairs(var0_3) do
+				if var1_3[iter4_3] ~= iter5_3 then
 					return false
 				end
 			end
@@ -56,75 +56,75 @@ function var0.register(arg0)
 			return true
 		end
 
-		for iter0, iter1 in ipairs(pg.fleet_tech_ship_class.all) do
-			if pg.fleet_tech_ship_class[iter1].nation == Nation.MOT then
-				local var2 = pg.fleet_tech_ship_template[iter1]
-				local var3 = var2.add_get_shiptype
-				local var4 = var2.add_level_shiptype
+		for iter0_1, iter1_1 in ipairs(pg.fleet_tech_ship_class.all) do
+			if pg.fleet_tech_ship_class[iter1_1].nation == Nation.MOT then
+				local var2_1 = pg.fleet_tech_ship_template[iter1_1]
+				local var3_1 = var2_1.add_get_shiptype
+				local var4_1 = var2_1.add_level_shiptype
 
-				if not var1(var3) then
-					assert(false, "请检查fleet_tech_ship_class中的add_get_shiptype， ID：" .. iter1)
+				if not var1_1(var3_1) then
+					assert(false, "请检查fleet_tech_ship_class中的add_get_shiptype， ID：" .. iter1_1)
 				end
 
-				if not var1(var4) then
-					assert(false, "请检查fleet_tech_ship_class中的add_level_shiptype， ID：" .. iter1)
+				if not var1_1(var4_1) then
+					assert(false, "请检查fleet_tech_ship_class中的add_level_shiptype， ID：" .. iter1_1)
 				end
 			end
 		end
 	end
 end
 
-function var0.flushData(arg0)
-	arg0:shipGroupFilter()
-	arg0:nationPointFilter()
-	arg0:calculateTecBuff()
-	arg0:refreshRedPoint()
+function var0_0.flushData(arg0_4)
+	arg0_4:shipGroupFilter()
+	arg0_4:nationPointFilter()
+	arg0_4:calculateTecBuff()
+	arg0_4:refreshRedPoint()
 end
 
-function var0.updateTecItem(arg0, arg1, arg2, arg3, arg4, arg5)
-	if not arg0.techList[arg1] then
-		arg0.techList[arg1] = {
+function var0_0.updateTecItem(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5, arg5_5)
+	if not arg0_5.techList[arg1_5] then
+		arg0_5.techList[arg1_5] = {
 			completeID = 0,
 			rewardedID = 0,
-			studyID = arg3,
-			finishTime = arg4
+			studyID = arg3_5,
+			finishTime = arg4_5
 		}
 
 		return
 	end
 
-	arg0.techList[arg1] = {
-		completeID = arg2 or arg0.techList[arg1].completeID,
-		studyID = arg3,
-		finishTime = arg4,
-		rewardedID = arg5 or arg0.techList[arg1].rewardedID
+	arg0_5.techList[arg1_5] = {
+		completeID = arg2_5 or arg0_5.techList[arg1_5].completeID,
+		studyID = arg3_5,
+		finishTime = arg4_5,
+		rewardedID = arg5_5 or arg0_5.techList[arg1_5].rewardedID
 	}
 end
 
-function var0.updateTecItemAward(arg0, arg1, arg2)
-	arg0.techList[arg1].rewardedID = arg2
+function var0_0.updateTecItemAward(arg0_6, arg1_6, arg2_6)
+	arg0_6.techList[arg1_6].rewardedID = arg2_6
 end
 
-function var0.updateTecItemAwardOneStep(arg0)
-	for iter0, iter1 in pairs(arg0.techList) do
-		iter1.rewardedID = iter1.completeID
+function var0_0.updateTecItemAwardOneStep(arg0_7)
+	for iter0_7, iter1_7 in pairs(arg0_7.techList) do
+		iter1_7.rewardedID = iter1_7.completeID
 	end
 end
 
-function var0.shipGroupFilter(arg0)
-	arg0.groupListInCount = {}
+function var0_0.shipGroupFilter(arg0_8)
+	arg0_8.groupListInCount = {}
 
-	local var0 = getProxy(CollectionProxy).shipGroups
+	local var0_8 = getProxy(CollectionProxy).shipGroups
 
-	for iter0, iter1 in pairs(var0) do
-		if pg.fleet_tech_ship_template[iter1.id] then
-			table.insert(arg0.groupListInCount, iter1)
+	for iter0_8, iter1_8 in pairs(var0_8) do
+		if pg.fleet_tech_ship_template[iter1_8.id] then
+			table.insert(arg0_8.groupListInCount, iter1_8)
 		end
 	end
 end
 
-function var0.nationPointFilter(arg0)
-	local var0 = {
+function var0_0.nationPointFilter(arg0_9)
+	local var0_9 = {
 		Nation.US,
 		Nation.EN,
 		Nation.JP,
@@ -139,131 +139,131 @@ function var0.nationPointFilter(arg0)
 	}
 
 	if not LOCK_TEC_MOT then
-		table.insert(var0, Nation.MOT)
+		table.insert(var0_9, Nation.MOT)
 	end
 
-	arg0.nationToPoint = {}
-	arg0.nationToPointLog = {}
-	arg0.nationToPointLog2 = {}
+	arg0_9.nationToPoint = {}
+	arg0_9.nationToPointLog = {}
+	arg0_9.nationToPointLog2 = {}
 
-	for iter0, iter1 in ipairs(var0) do
-		arg0.nationToPoint[iter1] = 0
-		arg0.nationToPointLog[iter1] = {
+	for iter0_9, iter1_9 in ipairs(var0_9) do
+		arg0_9.nationToPoint[iter1_9] = 0
+		arg0_9.nationToPointLog[iter1_9] = {
 			{},
 			{},
 			{}
 		}
-		arg0.nationToPointLog2[iter1] = {}
+		arg0_9.nationToPointLog2[iter1_9] = {}
 	end
 
-	for iter2, iter3 in ipairs(arg0.groupListInCount) do
-		local var1 = iter3:getNation()
-		local var2 = iter3.id
+	for iter2_9, iter3_9 in ipairs(arg0_9.groupListInCount) do
+		local var1_9 = iter3_9:getNation()
+		local var2_9 = iter3_9.id
 
-		if var1 ~= tonumber(string.sub(tostring(var2), 1, 1)) then
-			table.insert(arg0.nationToPointLog2[var1], iter3)
+		if var1_9 ~= tonumber(string.sub(tostring(var2_9), 1, 1)) then
+			table.insert(arg0_9.nationToPointLog2[var1_9], iter3_9)
 		end
 
-		local var3 = pg.fleet_tech_ship_template[var2]
-		local var4 = 0 + var3.pt_get
+		local var3_9 = pg.fleet_tech_ship_template[var2_9]
+		local var4_9 = 0 + var3_9.pt_get
 
-		table.insert(arg0.nationToPointLog[var1][1], var2)
+		table.insert(arg0_9.nationToPointLog[var1_9][1], var2_9)
 
-		if iter3.maxLV and iter3.maxLV >= TechnologyConst.SHIP_LEVEL_FOR_BUFF then
-			var4 = var4 + var3.pt_level
+		if iter3_9.maxLV and iter3_9.maxLV >= TechnologyConst.SHIP_LEVEL_FOR_BUFF then
+			var4_9 = var4_9 + var3_9.pt_level
 
-			table.insert(arg0.nationToPointLog[var1][2], var2)
+			table.insert(arg0_9.nationToPointLog[var1_9][2], var2_9)
 		end
 
-		if iter3.star >= var3.max_star then
-			var4 = var4 + var3.pt_upgrage
+		if iter3_9.star >= var3_9.max_star then
+			var4_9 = var4_9 + var3_9.pt_upgrage
 
-			table.insert(arg0.nationToPointLog[var1][3], var2)
+			table.insert(arg0_9.nationToPointLog[var1_9][3], var2_9)
 		end
 
-		arg0.nationToPoint[var1] = arg0.nationToPoint[var1] + var4
+		arg0_9.nationToPoint[var1_9] = arg0_9.nationToPoint[var1_9] + var4_9
 	end
 
-	arg0.point = 0
+	arg0_9.point = 0
 
-	for iter4, iter5 in pairs(arg0.nationToPoint) do
-		arg0.point = arg0.point + iter5
+	for iter4_9, iter5_9 in pairs(arg0_9.nationToPoint) do
+		arg0_9.point = arg0_9.point + iter5_9
 	end
 end
 
-function var0.calculateTecBuff(arg0)
-	arg0.typeBuffList = {}
-	arg0.typeOrder = {}
+function var0_0.calculateTecBuff(arg0_10)
+	arg0_10.typeBuffList = {}
+	arg0_10.typeOrder = {}
 
-	for iter0, iter1 in ipairs(arg0.groupListInCount) do
-		local var0 = iter1.id
-		local var1 = pg.fleet_tech_ship_template[var0].add_get_shiptype
-		local var2 = pg.fleet_tech_ship_template[var0].add_get_attr
-		local var3 = pg.fleet_tech_ship_template[var0].add_get_value
+	for iter0_10, iter1_10 in ipairs(arg0_10.groupListInCount) do
+		local var0_10 = iter1_10.id
+		local var1_10 = pg.fleet_tech_ship_template[var0_10].add_get_shiptype
+		local var2_10 = pg.fleet_tech_ship_template[var0_10].add_get_attr
+		local var3_10 = pg.fleet_tech_ship_template[var0_10].add_get_value
 
-		for iter2, iter3 in ipairs(var1) do
-			if not arg0.typeBuffList[iter3] then
-				arg0.typeBuffList[iter3] = {
+		for iter2_10, iter3_10 in ipairs(var1_10) do
+			if not arg0_10.typeBuffList[iter3_10] then
+				arg0_10.typeBuffList[iter3_10] = {
 					{
-						var2,
-						var3
+						var2_10,
+						var3_10
 					}
 				}
-				arg0.typeOrder[#arg0.typeOrder + 1] = iter3
+				arg0_10.typeOrder[#arg0_10.typeOrder + 1] = iter3_10
 			else
-				arg0.typeBuffList[iter3][#arg0.typeBuffList[iter3] + 1] = {
-					var2,
-					var3
+				arg0_10.typeBuffList[iter3_10][#arg0_10.typeBuffList[iter3_10] + 1] = {
+					var2_10,
+					var3_10
 				}
 			end
 		end
 
-		if iter1.maxLV >= TechnologyConst.SHIP_LEVEL_FOR_BUFF then
-			local var4 = pg.fleet_tech_ship_template[var0].add_level_shiptype
-			local var5 = pg.fleet_tech_ship_template[var0].add_level_attr
-			local var6 = pg.fleet_tech_ship_template[var0].add_level_value
+		if iter1_10.maxLV >= TechnologyConst.SHIP_LEVEL_FOR_BUFF then
+			local var4_10 = pg.fleet_tech_ship_template[var0_10].add_level_shiptype
+			local var5_10 = pg.fleet_tech_ship_template[var0_10].add_level_attr
+			local var6_10 = pg.fleet_tech_ship_template[var0_10].add_level_value
 
-			for iter4, iter5 in ipairs(var4) do
-				if not arg0.typeBuffList[iter5] then
-					arg0.typeBuffList[iter5] = {
+			for iter4_10, iter5_10 in ipairs(var4_10) do
+				if not arg0_10.typeBuffList[iter5_10] then
+					arg0_10.typeBuffList[iter5_10] = {
 						{
-							var5,
-							var6
+							var5_10,
+							var6_10
 						}
 					}
-					arg0.typeOrder[#arg0.typeOrder + 1] = iter5
+					arg0_10.typeOrder[#arg0_10.typeOrder + 1] = iter5_10
 				else
-					arg0.typeBuffList[iter5][#arg0.typeBuffList[iter5] + 1] = {
-						var5,
-						var6
+					arg0_10.typeBuffList[iter5_10][#arg0_10.typeBuffList[iter5_10] + 1] = {
+						var5_10,
+						var6_10
 					}
 				end
 			end
 		end
 	end
 
-	for iter6, iter7 in pairs(arg0.techList) do
-		if iter7.completeID ~= 0 then
-			local var7 = pg.fleet_tech_template[iter7.completeID].add
+	for iter6_10, iter7_10 in pairs(arg0_10.techList) do
+		if iter7_10.completeID ~= 0 then
+			local var7_10 = pg.fleet_tech_template[iter7_10.completeID].add
 
-			for iter8, iter9 in ipairs(var7) do
-				local var8 = iter9[1]
-				local var9 = iter9[2]
-				local var10 = iter9[3]
+			for iter8_10, iter9_10 in ipairs(var7_10) do
+				local var8_10 = iter9_10[1]
+				local var9_10 = iter9_10[2]
+				local var10_10 = iter9_10[3]
 
-				for iter10, iter11 in ipairs(var8) do
-					if not arg0.typeBuffList[iter11] then
-						arg0.typeBuffList[iter11] = {
+				for iter10_10, iter11_10 in ipairs(var8_10) do
+					if not arg0_10.typeBuffList[iter11_10] then
+						arg0_10.typeBuffList[iter11_10] = {
 							{
-								var9,
-								var10
+								var9_10,
+								var10_10
 							}
 						}
-						arg0.typeOrder[#arg0.typeOrder + 1] = iter11
+						arg0_10.typeOrder[#arg0_10.typeOrder + 1] = iter11_10
 					else
-						arg0.typeBuffList[iter11][#arg0.typeBuffList[iter11] + 1] = {
-							var9,
-							var10
+						arg0_10.typeBuffList[iter11_10][#arg0_10.typeBuffList[iter11_10] + 1] = {
+							var9_10,
+							var10_10
 						}
 					end
 				end
@@ -271,61 +271,61 @@ function var0.calculateTecBuff(arg0)
 		end
 	end
 
-	arg0.typeAttrTable = {}
-	arg0.typeAttrOrderTable = {}
+	arg0_10.typeAttrTable = {}
+	arg0_10.typeAttrOrderTable = {}
 
-	for iter12, iter13 in pairs(arg0.typeBuffList) do
-		if not arg0.typeAttrTable[iter12] then
-			arg0.typeAttrTable[iter12] = {}
-			arg0.typeAttrOrderTable[iter12] = {}
+	for iter12_10, iter13_10 in pairs(arg0_10.typeBuffList) do
+		if not arg0_10.typeAttrTable[iter12_10] then
+			arg0_10.typeAttrTable[iter12_10] = {}
+			arg0_10.typeAttrOrderTable[iter12_10] = {}
 		end
 
-		for iter14, iter15 in ipairs(iter13) do
-			local var11 = iter15[1]
-			local var12 = iter15[2]
+		for iter14_10, iter15_10 in ipairs(iter13_10) do
+			local var11_10 = iter15_10[1]
+			local var12_10 = iter15_10[2]
 
-			if not arg0.typeAttrTable[iter12][var11] then
-				arg0.typeAttrTable[iter12][var11] = var12
-				arg0.typeAttrOrderTable[iter12][#arg0.typeAttrOrderTable[iter12] + 1] = var11
+			if not arg0_10.typeAttrTable[iter12_10][var11_10] then
+				arg0_10.typeAttrTable[iter12_10][var11_10] = var12_10
+				arg0_10.typeAttrOrderTable[iter12_10][#arg0_10.typeAttrOrderTable[iter12_10] + 1] = var11_10
 			else
-				arg0.typeAttrTable[iter12][var11] = arg0.typeAttrTable[iter12][var11] + var12
+				arg0_10.typeAttrTable[iter12_10][var11_10] = arg0_10.typeAttrTable[iter12_10][var11_10] + var12_10
 			end
 		end
 	end
 
-	table.sort(arg0.typeOrder, function(arg0, arg1)
-		return arg0 < arg1
+	table.sort(arg0_10.typeOrder, function(arg0_11, arg1_11)
+		return arg0_11 < arg1_11
 	end)
 
-	for iter16, iter17 in pairs(arg0.typeAttrOrderTable) do
-		table.sort(iter17, function(arg0, arg1)
-			return arg0 < arg1
+	for iter16_10, iter17_10 in pairs(arg0_10.typeAttrOrderTable) do
+		table.sort(iter17_10, function(arg0_12, arg1_12)
+			return arg0_12 < arg1_12
 		end)
 	end
 end
 
-function var0.setTimer(arg0)
-	for iter0, iter1 in pairs(arg0.techList) do
-		if iter1.studyID ~= 0 then
-			local var0 = iter1.finishTime
-			local var1 = pg.TimeMgr.GetInstance():GetServerTime()
-			local var2 = table.indexof(pg.fleet_tech_group[iter0].techs, iter1.completeID, 1) or 0
-			local var3 = pg.fleet_tech_group[iter0].techs[var2 + 1]
+function var0_0.setTimer(arg0_13)
+	for iter0_13, iter1_13 in pairs(arg0_13.techList) do
+		if iter1_13.studyID ~= 0 then
+			local var0_13 = iter1_13.finishTime
+			local var1_13 = pg.TimeMgr.GetInstance():GetServerTime()
+			local var2_13 = table.indexof(pg.fleet_tech_group[iter0_13].techs, iter1_13.completeID, 1) or 0
+			local var3_13 = pg.fleet_tech_group[iter0_13].techs[var2_13 + 1]
 
-			if var0 < var1 then
-				arg0:sendNotification(GAME.FINISH_CAMP_TEC, {
-					tecID = iter0,
-					levelID = var3
+			if var0_13 < var1_13 then
+				arg0_13:sendNotification(GAME.FINISH_CAMP_TEC, {
+					tecID = iter0_13,
+					levelID = var3_13
 				})
 
 				return
 			else
 				onDelayTick(function()
-					arg0:sendNotification(GAME.FINISH_CAMP_TEC, {
-						tecID = iter0,
-						levelID = var3
+					arg0_13:sendNotification(GAME.FINISH_CAMP_TEC, {
+						tecID = iter0_13,
+						levelID = var3_13
 					})
-				end, var0 - var1)
+				end, var0_13 - var1_13)
 
 				return
 			end
@@ -333,13 +333,13 @@ function var0.setTimer(arg0)
 	end
 end
 
-function var0.refreshRedPoint(arg0)
-	arg0.ifShowRedPoint = false
+function var0_0.refreshRedPoint(arg0_15)
+	arg0_15.ifShowRedPoint = false
 
-	for iter0, iter1 in pairs(arg0.techList) do
-		if iter1.studyID ~= 0 then
-			if iter1.finishTime < pg.TimeMgr.GetInstance():GetServerTime() then
-				arg0.ifShowRedPoint = true
+	for iter0_15, iter1_15 in pairs(arg0_15.techList) do
+		if iter1_15.studyID ~= 0 then
+			if iter1_15.finishTime < pg.TimeMgr.GetInstance():GetServerTime() then
+				arg0_15.ifShowRedPoint = true
 
 				return
 			else
@@ -348,16 +348,16 @@ function var0.refreshRedPoint(arg0)
 		end
 	end
 
-	for iter2, iter3 in ipairs(pg.fleet_tech_group.all) do
-		if not arg0.techList[iter3] or arg0.techList[iter3].studyID == 0 then
-			local var0 = arg0:getLevelByTecID(iter3)
+	for iter2_15, iter3_15 in ipairs(pg.fleet_tech_group.all) do
+		if not arg0_15.techList[iter3_15] or arg0_15.techList[iter3_15].studyID == 0 then
+			local var0_15 = arg0_15:getLevelByTecID(iter3_15)
 
-			if var0 < #pg.fleet_tech_group[iter3].techs then
-				local var1 = pg.fleet_tech_group[iter3].nation[1]
-				local var2 = pg.fleet_tech_group[iter3].techs[var0 + 1]
+			if var0_15 < #pg.fleet_tech_group[iter3_15].techs then
+				local var1_15 = pg.fleet_tech_group[iter3_15].nation[1]
+				local var2_15 = pg.fleet_tech_group[iter3_15].techs[var0_15 + 1]
 
-				if arg0.nationToPoint[var1] >= pg.fleet_tech_template[var2].pt then
-					arg0.ifShowRedPoint = true
+				if arg0_15.nationToPoint[var1_15] >= pg.fleet_tech_template[var2_15].pt then
+					arg0_15.ifShowRedPoint = true
 
 					break
 				end
@@ -365,179 +365,179 @@ function var0.refreshRedPoint(arg0)
 		end
 	end
 
-	arg0.ifShowRedPoint = arg0:isAnyTecCampCanGetAward()
+	arg0_15.ifShowRedPoint = arg0_15:isAnyTecCampCanGetAward()
 end
 
-function var0.isAnyTecCampCanGetAward(arg0)
-	local var0 = false
+function var0_0.isAnyTecCampCanGetAward(arg0_16)
+	local var0_16 = false
 
 	if not LOCK_TEC_NATION_AWARD then
-		for iter0, iter1 in pairs(arg0.techList) do
-			local var1 = pg.fleet_tech_group[iter0]
-			local var2 = iter1.rewardedID
-			local var3 = iter1.completeID
+		for iter0_16, iter1_16 in pairs(arg0_16.techList) do
+			local var1_16 = pg.fleet_tech_group[iter0_16]
+			local var2_16 = iter1_16.rewardedID
+			local var3_16 = iter1_16.completeID
 
-			if (table.indexof(var1.techs, var2, 1) or 0) < (table.indexof(var1.techs, var3, 1) or 0) then
-				var0 = true
+			if (table.indexof(var1_16.techs, var2_16, 1) or 0) < (table.indexof(var1_16.techs, var3_16, 1) or 0) then
+				var0_16 = true
 
 				break
 			end
 		end
 	end
 
-	return var0
+	return var0_16
 end
 
-function var0.GetTecList(arg0)
-	return arg0.techList
+function var0_0.GetTecList(arg0_17)
+	return arg0_17.techList
 end
 
-function var0.GetTecItemByGroupID(arg0, arg1)
-	return arg0.techList[arg1]
+function var0_0.GetTecItemByGroupID(arg0_18, arg1_18)
+	return arg0_18.techList[arg1_18]
 end
 
-function var0.getLevelByTecID(arg0, arg1)
-	local var0
+function var0_0.getLevelByTecID(arg0_19, arg1_19)
+	local var0_19
 
-	return not arg0.techList[arg1] and 0 or table.indexof(pg.fleet_tech_group[arg1].techs, arg0.techList[arg1].completeID, 1) or 0
+	return not arg0_19.techList[arg1_19] and 0 or table.indexof(pg.fleet_tech_group[arg1_19].techs, arg0_19.techList[arg1_19].completeID, 1) or 0
 end
 
-function var0.getGroupListInCount(arg0)
-	return arg0.groupListInCount
+function var0_0.getGroupListInCount(arg0_20)
+	return arg0_20.groupListInCount
 end
 
-function var0.getShowRedPointTag(arg0)
-	return arg0.ifShowRedPoint
+function var0_0.getShowRedPointTag(arg0_21)
+	return arg0_21.ifShowRedPoint
 end
 
-function var0.getStudyingTecItem(arg0)
-	for iter0, iter1 in pairs(arg0.techList) do
-		if iter1.studyID ~= 0 then
-			return iter0
+function var0_0.getStudyingTecItem(arg0_22)
+	for iter0_22, iter1_22 in pairs(arg0_22.techList) do
+		if iter1_22.studyID ~= 0 then
+			return iter0_22
 		end
 	end
 
 	return nil
 end
 
-function var0.getPoint(arg0)
-	return arg0.point
+function var0_0.getPoint(arg0_23)
+	return arg0_23.point
 end
 
-function var0.getNationPointList(arg0)
-	return arg0.nationToPoint
+function var0_0.getNationPointList(arg0_24)
+	return arg0_24.nationToPoint
 end
 
-function var0.getNationPoint(arg0, arg1)
-	return arg0.nationToPoint[arg1]
+function var0_0.getNationPoint(arg0_25, arg1_25)
+	return arg0_25.nationToPoint[arg1_25]
 end
 
-function var0.getLeftTime(arg0)
-	local var0 = arg0.techList[arg0:getStudyingTecItem()]
+function var0_0.getLeftTime(arg0_26)
+	local var0_26 = arg0_26.techList[arg0_26:getStudyingTecItem()]
 
-	if var0 then
-		local var1 = var0.finishTime - pg.TimeMgr.GetInstance():GetServerTime()
+	if var0_26 then
+		local var1_26 = var0_26.finishTime - pg.TimeMgr.GetInstance():GetServerTime()
 
-		return var1 > 0 and var1 or 0
+		return var1_26 > 0 and var1_26 or 0
 	else
 		return 0
 	end
 end
 
-function var0.getTecBuff(arg0)
+function var0_0.getTecBuff(arg0_27)
 	if OPEN_TEC_TREE_SYSTEM then
-		return arg0.typeAttrTable, arg0.typeOrder, arg0.typeAttrOrderTable
+		return arg0_27.typeAttrTable, arg0_27.typeOrder, arg0_27.typeAttrOrderTable
 	end
 end
 
-function var0.getShipAddition(arg0, arg1, arg2)
-	local var0 = table.indexof(TechnologyConst.TECH_NATION_ATTRS, arg2)
-	local var1 = 0
-	local var2 = (arg0:getTecBuff() or {})[arg1]
+function var0_0.getShipAddition(arg0_28, arg1_28, arg2_28)
+	local var0_28 = table.indexof(TechnologyConst.TECH_NATION_ATTRS, arg2_28)
+	local var1_28 = 0
+	local var2_28 = (arg0_28:getTecBuff() or {})[arg1_28]
 
-	if var2 and var0 and var2[var0] then
-		var1 = arg0:getSetableAttrAdditionValueByTypeAttr(arg1, var0)
+	if var2_28 and var0_28 and var2_28[var0_28] then
+		var1_28 = arg0_28:getSetableAttrAdditionValueByTypeAttr(arg1_28, var0_28)
 	end
 
-	return var1
+	return var1_28
 end
 
-function var0.getShipMaxAddition(arg0, arg1, arg2)
-	local var0 = table.indexof(TechnologyConst.TECH_NATION_ATTRS, arg2)
-	local var1 = 0
-	local var2 = (arg0:getTecBuff() or {})[arg1]
+function var0_0.getShipMaxAddition(arg0_29, arg1_29, arg2_29)
+	local var0_29 = table.indexof(TechnologyConst.TECH_NATION_ATTRS, arg2_29)
+	local var1_29 = 0
+	local var2_29 = (arg0_29:getTecBuff() or {})[arg1_29]
 
-	if var2 and var0 and var2[var0] then
-		var1 = var2[var0]
+	if var2_29 and var0_29 and var2_29[var0_29] then
+		var1_29 = var2_29[var0_29]
 	end
 
-	return var1
+	return var1_29
 end
 
-function var0.printNationPointLog(arg0)
-	for iter0, iter1 in pairs(arg0.nationToPointLog) do
-		print("----------------" .. iter0 .. "----------------")
+function var0_0.printNationPointLog(arg0_30)
+	for iter0_30, iter1_30 in pairs(arg0_30.nationToPointLog) do
+		print("----------------" .. iter0_30 .. "----------------")
 
-		for iter2, iter3 in ipairs(iter1) do
-			local var0 = iter2 .. "    :"
+		for iter2_30, iter3_30 in ipairs(iter1_30) do
+			local var0_30 = iter2_30 .. "    :"
 
-			for iter4, iter5 in ipairs(iter3) do
-				var0 = var0 .. "  " .. iter5
+			for iter4_30, iter5_30 in ipairs(iter3_30) do
+				var0_30 = var0_30 .. "  " .. iter5_30
 			end
 
-			print(var0)
+			print(var0_30)
 		end
 	end
 
 	print("----------------Filte----------------")
 
-	for iter6, iter7 in pairs(arg0.nationToPointLog2) do
-		local var1 = iter6 .. " :"
+	for iter6_30, iter7_30 in pairs(arg0_30.nationToPointLog2) do
+		local var1_30 = iter6_30 .. " :"
 
-		for iter8, iter9 in ipairs(iter7) do
-			local var2 = iter9.id
-			local var3 = iter9:getNation()
-			local var4
+		for iter8_30, iter9_30 in ipairs(iter7_30) do
+			local var2_30 = iter9_30.id
+			local var3_30 = iter9_30:getNation()
+			local var4_30
 
-			for iter10 = 4, 1, -1 do
-				if pg.ship_data_statistics[tonumber(var2 .. iter10)] then
-					var4 = pg.ship_data_statistics[tonumber(var2 .. iter10)].nationality
+			for iter10_30 = 4, 1, -1 do
+				if pg.ship_data_statistics[tonumber(var2_30 .. iter10_30)] then
+					var4_30 = pg.ship_data_statistics[tonumber(var2_30 .. iter10_30)].nationality
 				end
 			end
 
-			var1 = var1 .. tostring(var2) .. " " .. tostring(var3) .. " " .. tostring(var4) .. "||"
+			var1_30 = var1_30 .. tostring(var2_30) .. " " .. tostring(var3_30) .. " " .. tostring(var4_30) .. "||"
 		end
 
-		print(var1)
+		print(var1_30)
 	end
 end
 
-function var0.initSetableAttrAddition(arg0, arg1)
-	arg0.setValueTypeAttrTable = {}
+function var0_0.initSetableAttrAddition(arg0_31, arg1_31)
+	arg0_31.setValueTypeAttrTable = {}
 
-	for iter0, iter1 in ipairs(arg1) do
-		local var0 = iter1.ship_type
-		local var1 = iter1.attr_type
-		local var2 = iter1.set_value
+	for iter0_31, iter1_31 in ipairs(arg1_31) do
+		local var0_31 = iter1_31.ship_type
+		local var1_31 = iter1_31.attr_type
+		local var2_31 = iter1_31.set_value
 
-		if not arg0.setValueTypeAttrTable[var0] then
-			arg0.setValueTypeAttrTable[var0] = {}
+		if not arg0_31.setValueTypeAttrTable[var0_31] then
+			arg0_31.setValueTypeAttrTable[var0_31] = {}
 		end
 
-		arg0.setValueTypeAttrTable[var0][var1] = var2
+		arg0_31.setValueTypeAttrTable[var0_31][var1_31] = var2_31
 	end
 end
 
-function var0.getSetableAttrAddition(arg0)
-	return arg0.setValueTypeAttrTable
+function var0_0.getSetableAttrAddition(arg0_32)
+	return arg0_32.setValueTypeAttrTable
 end
 
-function var0.getSetableAttrAdditionValueByTypeAttr(arg0, arg1, arg2)
-	if arg0.setValueTypeAttrTable[arg1] and arg0.setValueTypeAttrTable[arg1][arg2] then
-		return arg0.setValueTypeAttrTable[arg1][arg2]
+function var0_0.getSetableAttrAdditionValueByTypeAttr(arg0_33, arg1_33, arg2_33)
+	if arg0_33.setValueTypeAttrTable[arg1_33] and arg0_33.setValueTypeAttrTable[arg1_33][arg2_33] then
+		return arg0_33.setValueTypeAttrTable[arg1_33][arg2_33]
 	else
-		return arg0.typeAttrTable[arg1][arg2]
+		return arg0_33.typeAttrTable[arg1_33][arg2_33]
 	end
 end
 
-return var0
+return var0_0

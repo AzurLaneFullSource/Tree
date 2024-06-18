@@ -1,49 +1,49 @@
-﻿local var0 = class("GuildMemberMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("GuildMemberMediator", import("..base.ContextMediator"))
 
-var0.OPEN_DESC_INFO = "GuildMemberMediator:OPEN_DESC_INFO"
-var0.FIRE = "GuildMemberMediator:FIRE"
-var0.SET_DUTY = "GuildMemberMediator:SET_DUTY"
-var0.IMPEACH = "GuildMemberMediator:IMPEACH"
-var0.GET_RANK = "GuildMemberMediator:GET_RANK"
+var0_0.OPEN_DESC_INFO = "GuildMemberMediator:OPEN_DESC_INFO"
+var0_0.FIRE = "GuildMemberMediator:FIRE"
+var0_0.SET_DUTY = "GuildMemberMediator:SET_DUTY"
+var0_0.IMPEACH = "GuildMemberMediator:IMPEACH"
+var0_0.GET_RANK = "GuildMemberMediator:GET_RANK"
 
-function var0.register(arg0)
-	local var0 = getProxy(PlayerProxy):getData()
+function var0_0.register(arg0_1)
+	local var0_1 = getProxy(PlayerProxy):getData()
 
-	arg0.viewComponent:setPlayerVO(var0)
+	arg0_1.viewComponent:setPlayerVO(var0_1)
 
-	local var1 = getProxy(GuildProxy)
+	local var1_1 = getProxy(GuildProxy)
 
-	arg0.viewComponent:setGuildVO(var1:getData())
-	arg0:bind(var0.GET_RANK, function(arg0, arg1)
-		arg0:sendNotification(GAME.GUILD_GET_RANK, {
-			id = arg1
+	arg0_1.viewComponent:setGuildVO(var1_1:getData())
+	arg0_1:bind(var0_0.GET_RANK, function(arg0_2, arg1_2)
+		arg0_1:sendNotification(GAME.GUILD_GET_RANK, {
+			id = arg1_2
 		})
 	end)
-	arg0:bind(var0.OPEN_DESC_INFO, function(arg0, arg1)
-		arg0:sendNotification(GAME.FRIEND_SEARCH, {
+	arg0_1:bind(var0_0.OPEN_DESC_INFO, function(arg0_3, arg1_3)
+		arg0_1:sendNotification(GAME.FRIEND_SEARCH, {
 			type = SearchFriendCommand.SEARCH_TYPE_RESUME,
-			keyword = arg1.id
+			keyword = arg1_3.id
 		})
 	end)
-	arg0:bind(var0.FIRE, function(arg0, arg1)
-		arg0:sendNotification(GAME.GUILD_FIRE, arg1)
+	arg0_1:bind(var0_0.FIRE, function(arg0_4, arg1_4)
+		arg0_1:sendNotification(GAME.GUILD_FIRE, arg1_4)
 	end)
-	arg0:bind(var0.SET_DUTY, function(arg0, arg1, arg2)
-		arg0:sendNotification(GAME.SET_GUILD_DUTY, {
-			playerId = arg1,
-			dutyId = arg2
+	arg0_1:bind(var0_0.SET_DUTY, function(arg0_5, arg1_5, arg2_5)
+		arg0_1:sendNotification(GAME.SET_GUILD_DUTY, {
+			playerId = arg1_5,
+			dutyId = arg2_5
 		})
 	end)
-	arg0:bind(var0.IMPEACH, function(arg0, arg1)
-		arg0:sendNotification(GAME.GUILD_IMPEACH, arg1)
+	arg0_1:bind(var0_0.IMPEACH, function(arg0_6, arg1_6)
+		arg0_1:sendNotification(GAME.GUILD_IMPEACH, arg1_6)
 	end)
 
-	local var2 = getProxy(GuildProxy):GetRanks()
+	local var2_1 = getProxy(GuildProxy):GetRanks()
 
-	arg0.viewComponent:SetRanks(var2)
+	arg0_1.viewComponent:SetRanks(var2_1)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_7)
 	return {
 		GuildProxy.GUILD_UPDATED,
 		GAME.SET_GUILD_DUTY_DONE,
@@ -53,27 +53,27 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_8, arg1_8)
+	local var0_8 = arg1_8:getName()
+	local var1_8 = arg1_8:getBody()
 
-	if var0 == GuildProxy.GUILD_UPDATED then
-		arg0.viewComponent:setGuildVO(var1)
-		arg0.viewComponent:RefreshMembers()
-	elseif var0 == GAME.SET_GUILD_DUTY_DONE then
-		arg0.viewComponent:LoadPainting(var1)
-	elseif var0 == GAME.GUILD_FIRE_DONE then
-		arg0.viewComponent:ActiveDefaultMenmber()
-	elseif var0 == GAME.FRIEND_SEARCH_DONE then
-		local var2 = var1.list[1]
+	if var0_8 == GuildProxy.GUILD_UPDATED then
+		arg0_8.viewComponent:setGuildVO(var1_8)
+		arg0_8.viewComponent:RefreshMembers()
+	elseif var0_8 == GAME.SET_GUILD_DUTY_DONE then
+		arg0_8.viewComponent:LoadPainting(var1_8)
+	elseif var0_8 == GAME.GUILD_FIRE_DONE then
+		arg0_8.viewComponent:ActiveDefaultMenmber()
+	elseif var0_8 == GAME.FRIEND_SEARCH_DONE then
+		local var2_8 = var1_8.list[1]
 
-		arg0.viewComponent:ShowInfoPanel(var2)
-	elseif var0 == GAME.GUILD_GET_RANK_DONE then
-		local var3 = var1.id
-		local var4 = var1.list
+		arg0_8.viewComponent:ShowInfoPanel(var2_8)
+	elseif var0_8 == GAME.GUILD_GET_RANK_DONE then
+		local var3_8 = var1_8.id
+		local var4_8 = var1_8.list
 
-		arg0.viewComponent:UpdateRankList(var3, var4)
+		arg0_8.viewComponent:UpdateRankList(var3_8, var4_8)
 	end
 end
 
-return var0
+return var0_0

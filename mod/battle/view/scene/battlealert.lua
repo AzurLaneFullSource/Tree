@@ -1,31 +1,31 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleAlert = class("BattleAlert")
-var0.Battle.BattleAlert.__name = "BattleAlert"
+var0_0.Battle.BattleAlert = class("BattleAlert")
+var0_0.Battle.BattleAlert.__name = "BattleAlert"
 
-function var0.Battle.BattleAlert.Ctor(arg0, arg1)
-	arg0._alertGO = arg1
-	arg0._alertTf = arg1.transform
-	arg0._diskTf = arg0._alertGO.transform:Find("Disk")
+function var0_0.Battle.BattleAlert.Ctor(arg0_1, arg1_1)
+	arg0_1._alertGO = arg1_1
+	arg0_1._alertTf = arg1_1.transform
+	arg0_1._diskTf = arg0_1._alertGO.transform:Find("Disk")
 
-	arg0:UpdateRate(0)
-	arg0._alertGO:SetActive(true)
+	arg0_1:UpdateRate(0)
+	arg0_1._alertGO:SetActive(true)
 end
 
-function var0.Battle.BattleAlert.SetPosition(arg0, arg1)
-	arg0._alertTf.localPosition = Vector3(arg1.x, 0, arg1.z)
+function var0_0.Battle.BattleAlert.SetPosition(arg0_2, arg1_2)
+	arg0_2._alertTf.localPosition = Vector3(arg1_2.x, 0, arg1_2.z)
 end
 
-function var0.Battle.BattleAlert.Zoom(arg0, arg1)
-	arg0._alertTf.localScale = Vector3(arg1 * 2, arg1 * 2, 1)
+function var0_0.Battle.BattleAlert.Zoom(arg0_3, arg1_3)
+	arg0_3._alertTf.localScale = Vector3(arg1_3 * 2, arg1_3 * 2, 1)
 end
 
-function var0.Battle.BattleAlert.UpdateRate(arg0, arg1)
-	arg0._diskTf.localScale = Vector3(arg1, arg1, 1)
+function var0_0.Battle.BattleAlert.UpdateRate(arg0_4, arg1_4)
+	arg0_4._diskTf.localScale = Vector3(arg1_4, arg1_4, 1)
 end
 
-function var0.Battle.BattleAlert.Dispose(arg0)
-	Object.Destroy(arg0._alertGO)
+function var0_0.Battle.BattleAlert.Dispose(arg0_5)
+	Object.Destroy(arg0_5._alertGO)
 end

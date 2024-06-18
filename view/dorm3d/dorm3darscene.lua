@@ -1,101 +1,101 @@
-﻿local var0 = class("Dorm3dARScene", import("view.base.BaseUI"))
-local var1 = "dorm3d/scenesres/scenes/arscene/arscene_scene"
+﻿local var0_0 = class("Dorm3dARScene", import("view.base.BaseUI"))
+local var1_0 = "dorm3d/scenesres/scenes/arscene/arscene_scene"
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "Dorm3DARUI"
 end
 
-function var0.preload(arg0, arg1)
-	arg0.sceneName = "ARScene"
+function var0_0.preload(arg0_2, arg1_2)
+	arg0_2.sceneName = "ARScene"
 
 	seriesAsync({
-		function(arg0)
+		function(arg0_3)
 			pg.UIMgr.GetInstance():LoadingOn(false)
-			SceneOpMgr.Inst:LoadSceneAsync(string.lower(var1), arg0.sceneName, LoadSceneMode.Additive, function(arg0, arg1)
-				arg0()
+			SceneOpMgr.Inst:LoadSceneAsync(string.lower(var1_0), arg0_2.sceneName, LoadSceneMode.Additive, function(arg0_4, arg1_4)
+				arg0_3()
 			end)
 		end,
-		function(arg0)
+		function(arg0_5)
 			pg.UIMgr.GetInstance():LoadingOff()
-			arg0()
+			arg0_5()
 		end,
-		arg1
+		arg1_2
 	})
 end
 
-function var0.init(arg0)
-	arg0:findUI()
-	arg0:addListener()
+function var0_0.init(arg0_6)
+	arg0_6:findUI()
+	arg0_6:addListener()
 end
 
-function var0.didEnter(arg0)
+function var0_0.didEnter(arg0_7)
 	return
 end
 
-function var0.willExit(arg0)
-	SceneOpMgr.Inst:UnloadSceneAsync(string.lower(var1), arg0.sceneName)
+function var0_0.willExit(arg0_8)
+	SceneOpMgr.Inst:UnloadSceneAsync(string.lower(var1_0), arg0_8.sceneName)
 end
 
-function var0.findUI(arg0)
-	arg0.backBtn = arg0:findTF("BackBtn")
+function var0_0.findUI(arg0_9)
+	arg0_9.backBtn = arg0_9:findTF("BackBtn")
 
-	local var0 = arg0:findTF("MenuList")
+	local var0_9 = arg0_9:findTF("MenuList")
 
-	arg0.resetBtn = arg0:findTF("ResetBtn", var0)
-	arg0.showPlaneBtn = arg0:findTF("ShowPlaneBtn", var0)
-	arg0.hidePlaneBtn = arg0:findTF("HidePlaneBtn", var0)
+	arg0_9.resetBtn = arg0_9:findTF("ResetBtn", var0_9)
+	arg0_9.showPlaneBtn = arg0_9:findTF("ShowPlaneBtn", var0_9)
+	arg0_9.hidePlaneBtn = arg0_9:findTF("HidePlaneBtn", var0_9)
 
-	local var1 = arg0:findTF("TipText")
+	local var1_9 = arg0_9:findTF("TipText")
 
-	arg0.tipCheckPlane = arg0:findTF("CheckPlaneText", var1)
-	arg0.tipInsPrefab = arg0:findTF("InsPrefabText", var1)
-	arg0.tipDistance = arg0:findTF("DistanceText", var1)
+	arg0_9.tipCheckPlane = arg0_9:findTF("CheckPlaneText", var1_9)
+	arg0_9.tipInsPrefab = arg0_9:findTF("InsPrefabText", var1_9)
+	arg0_9.tipDistance = arg0_9:findTF("DistanceText", var1_9)
 
-	setText(arg0.tipCheckPlane, "请检测一个平面")
-	setText(arg0.tipInsPrefab, "长按平面呼出角色")
-	setText(arg0.tipDistance, "距离太近隐藏角色")
-	setActive(arg0.tipCheckPlane, false)
-	setActive(arg0.tipInsPrefab, false)
-	setActive(arg0.tipDistance, false)
+	setText(arg0_9.tipCheckPlane, "请检测一个平面")
+	setText(arg0_9.tipInsPrefab, "长按平面呼出角色")
+	setText(arg0_9.tipDistance, "距离太近隐藏角色")
+	setActive(arg0_9.tipCheckPlane, false)
+	setActive(arg0_9.tipInsPrefab, false)
+	setActive(arg0_9.tipDistance, false)
 
-	local var2 = GameObject.Find("ScriptHander")
+	local var2_9 = GameObject.Find("ScriptHander")
 
-	arg0.aiHelperSC = GetComponent(var2, "ARHelper")
+	arg0_9.aiHelperSC = GetComponent(var2_9, "ARHelper")
 end
 
-function var0.addListener(arg0)
-	onButton(arg0, arg0.backBtn, function()
-		arg0:closeView()
+function var0_0.addListener(arg0_10)
+	onButton(arg0_10, arg0_10.backBtn, function()
+		arg0_10:closeView()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.resetBtn, function()
-		arg0.aiHelperSC:ResetAll()
+	onButton(arg0_10, arg0_10.resetBtn, function()
+		arg0_10.aiHelperSC:ResetAll()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.showPlaneBtn, function()
-		arg0.aiHelperSC:ShowAllPlane(true)
+	onButton(arg0_10, arg0_10.showPlaneBtn, function()
+		arg0_10.aiHelperSC:ShowAllPlane(true)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.hidePlaneBtn, function()
-		arg0.aiHelperSC:ShowAllPlane(false)
+	onButton(arg0_10, arg0_10.hidePlaneBtn, function()
+		arg0_10.aiHelperSC:ShowAllPlane(false)
 	end, SFX_PANEL)
 
-	function arg0.aiHelperSC.planeCountCB(arg0, arg1)
-		local var0 = arg0 > 0
+	function arg0_10.aiHelperSC.planeCountCB(arg0_15, arg1_15)
+		local var0_15 = arg0_15 > 0
 
-		setActive(arg0.tipCheckPlane, not var0)
-		setActive(arg0.tipInsPrefab, var0 and not arg1)
+		setActive(arg0_10.tipCheckPlane, not var0_15)
+		setActive(arg0_10.tipInsPrefab, var0_15 and not arg1_15)
 	end
 
-	function arg0.aiHelperSC.distanceCB(arg0)
+	function arg0_10.aiHelperSC.distanceCB(arg0_16)
 		pg.TipsMgr.GetInstance():ShowTips("距离过近，以后会隐藏")
 	end
 
-	function arg0.aiHelperSC.insPrefabFailCB()
+	function arg0_10.aiHelperSC.insPrefabFailCB()
 		pg.TipsMgr.GetInstance():ShowTips("距离过近，呼出角色失败")
 	end
 
-	function arg0.aiHelperSC.insPrefabSuccCB()
+	function arg0_10.aiHelperSC.insPrefabSuccCB()
 		pg.TipsMgr.GetInstance():ShowTips("呼出角色成功")
-		arg0.aiHelperSC:StopPlaneCheck()
+		arg0_10.aiHelperSC:StopPlaneCheck()
 	end
 end
 
-return var0
+return var0_0

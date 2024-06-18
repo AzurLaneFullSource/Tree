@@ -1,28 +1,28 @@
-﻿local var0 = class("GetBackYardVisitorCommand", pm.SimpleCommand)
+﻿local var0_0 = class("GetBackYardVisitorCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody().callback
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody().callback
 
 	pg.ConnectionMgr.GetInstance():Send(19024, {
 		type = 0
-	}, 19025, function(arg0)
-		if arg0.visitor and arg0.visitor.ship_template ~= 0 then
-			local var0 = Ship.New({
+	}, 19025, function(arg0_2)
+		if arg0_2.visitor and arg0_2.visitor.ship_template ~= 0 then
+			local var0_2 = Ship.New({
 				id = 99999999,
-				template_id = arg0.visitor.ship_template,
-				name = arg0.visitor.name,
-				skin_id = arg0.visitor.ship_skin
+				template_id = arg0_2.visitor.ship_template,
+				name = arg0_2.visitor.name,
+				skin_id = arg0_2.visitor.ship_skin
 			})
 
-			getProxy(DormProxy):SetVisitorShip(var0)
+			getProxy(DormProxy):SetVisitorShip(var0_2)
 		end
 
-		if var0 then
-			var0()
+		if var0_1 then
+			var0_1()
 		end
 
-		arg0:sendNotification(GAME.BACKYARD_GET_VISITOR_SHIP_DONE)
+		arg0_1:sendNotification(GAME.BACKYARD_GET_VISITOR_SHIP_DONE)
 	end)
 end
 
-return var0
+return var0_0

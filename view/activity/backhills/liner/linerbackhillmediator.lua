@@ -1,20 +1,20 @@
-﻿local var0 = class("LinerBackHillMediator", import("..TemplateMV.BackHillMediatorTemplate"))
+﻿local var0_0 = class("LinerBackHillMediator", import("..TemplateMV.BackHillMediatorTemplate"))
 
-var0.GO_MINIGAME = "GO_MINIGAME"
+var0_0.GO_MINIGAME = "GO_MINIGAME"
 
-function var0.register(arg0)
-	arg0:BindEvent()
-	arg0:bind(var0.GO_MINIGAME, function(arg0, arg1, ...)
-		arg0:sendNotification(GAME.GO_MINI_GAME, arg1, ...)
+function var0_0.register(arg0_1)
+	arg0_1:BindEvent()
+	arg0_1:bind(var0_0.GO_MINIGAME, function(arg0_2, arg1_2, ...)
+		arg0_1:sendNotification(GAME.GO_MINI_GAME, arg1_2, ...)
 	end)
 end
 
-function var0.initNotificationHandleDic(arg0)
-	arg0.handleDic = {
-		[GAME.ACTIVITY_LINER_OP_DONE] = function(arg0, arg1)
-			arg0.viewComponent:UpdateView()
+function var0_0.initNotificationHandleDic(arg0_3)
+	arg0_3.handleDic = {
+		[GAME.ACTIVITY_LINER_OP_DONE] = function(arg0_4, arg1_4)
+			arg0_4.viewComponent:UpdateView()
 		end
 	}
 end
 
-return var0
+return var0_0

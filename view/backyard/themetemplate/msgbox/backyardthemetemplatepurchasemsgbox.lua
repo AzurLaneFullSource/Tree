@@ -1,77 +1,77 @@
-﻿local var0 = class("BackYardThemeTemplatePurchaseMsgbox", import("...Shop.msgbox.BackYardThemeMsgBoxPage"))
+﻿local var0_0 = class("BackYardThemeTemplatePurchaseMsgbox", import("...Shop.msgbox.BackYardThemeMsgBoxPage"))
 
-function var0.SetUp(arg0, arg1, arg2, arg3)
-	arg0.dorm = arg2
-	arg0.template = arg1
-	arg0.player = arg3
-	arg0.count = 1
-	arg0.maxCount = 1
+function var0_0.SetUp(arg0_1, arg1_1, arg2_1, arg3_1)
+	arg0_1.dorm = arg2_1
+	arg0_1.template = arg1_1
+	arg0_1.player = arg3_1
+	arg0_1.count = 1
+	arg0_1.maxCount = 1
 
-	arg0:UpdateMainInfo()
-	arg0:UpdateBtns()
-	arg0:UpdatePrice()
-	arg0:Show()
+	arg0_1:UpdateMainInfo()
+	arg0_1:UpdateBtns()
+	arg0_1:UpdatePrice()
+	arg0_1:Show()
 
-	arg0.purchase.text = i18n("purchase_backyard_theme_desc_for_onekey")
+	arg0_1.purchase.text = i18n("purchase_backyard_theme_desc_for_onekey")
 
-	setText(arg0.goldPurchaseBtn:Find("content/Text"), i18n("fur_onekey_buy"))
+	setText(arg0_1.goldPurchaseBtn:Find("content/Text"), i18n("fur_onekey_buy"))
 end
 
-function var0.UpdateMainInfo(arg0)
-	arg0.nameTxt.text = arg0.template:GetName()
-	arg0.descTxt.text = arg0.template:GetDesc()
+function var0_0.UpdateMainInfo(arg0_2)
+	arg0_2.nameTxt.text = arg0_2.template:GetName()
+	arg0_2.descTxt.text = arg0_2.template:GetDesc()
 
-	setActive(arg0.icon.gameObject, false)
-	setActive(arg0.rawIcon.gameObject, false)
+	setActive(arg0_2.icon.gameObject, false)
+	setActive(arg0_2.rawIcon.gameObject, false)
 
-	local var0 = arg0.template:GetIconMd5()
+	local var0_2 = arg0_2.template:GetIconMd5()
 
-	BackYardThemeTempalteUtil.GetTexture(arg0.template:GetTextureIconName(), var0, function(arg0)
-		if not IsNil(arg0.rawIcon) and arg0 then
-			setActive(arg0.rawIcon.gameObject, true)
+	BackYardThemeTempalteUtil.GetTexture(arg0_2.template:GetTextureIconName(), var0_2, function(arg0_3)
+		if not IsNil(arg0_2.rawIcon) and arg0_3 then
+			setActive(arg0_2.rawIcon.gameObject, true)
 
-			arg0.rawIcon.texture = arg0
+			arg0_2.rawIcon.texture = arg0_3
 		end
 	end)
 end
 
-function var0.GetAddList(arg0)
-	local var0 = {}
-	local var1 = arg0.template:GetFurnitureCnt()
-	local var2 = arg0.dorm:GetPurchasedFurnitures()
+function var0_0.GetAddList(arg0_4)
+	local var0_4 = {}
+	local var1_4 = arg0_4.template:GetFurnitureCnt()
+	local var2_4 = arg0_4.dorm:GetPurchasedFurnitures()
 
-	for iter0, iter1 in pairs(var1) do
-		if pg.furniture_data_template[iter0] then
-			local var3 = var2[iter0]
-			local var4 = 0
+	for iter0_4, iter1_4 in pairs(var1_4) do
+		if pg.furniture_data_template[iter0_4] then
+			local var3_4 = var2_4[iter0_4]
+			local var4_4 = 0
 
-			if not var3 then
-				var3 = Furniture.New({
-					id = iter0
+			if not var3_4 then
+				var3_4 = Furniture.New({
+					id = iter0_4
 				})
 			else
-				var4 = var3.count
+				var4_4 = var3_4.count
 			end
 
-			if var3:canPurchase() and var3:inTime() and var3:canPurchaseByDormMoeny() then
-				for iter2 = 1, iter1 - var4 do
-					table.insert(var0, var3)
+			if var3_4:canPurchase() and var3_4:inTime() and var3_4:canPurchaseByDormMoeny() then
+				for iter2_4 = 1, iter1_4 - var4_4 do
+					table.insert(var0_4, var3_4)
 				end
 			end
 		end
 	end
 
-	return var0
+	return var0_4
 end
 
-function var0.OnDestroy(arg0)
-	var0.super.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_5)
+	var0_0.super.OnDestroy(arg0_5)
 
-	if not IsNil(arg0.rawIcon.texture) then
-		Object.Destroy(arg0.rawIcon.texture)
+	if not IsNil(arg0_5.rawIcon.texture) then
+		Object.Destroy(arg0_5.rawIcon.texture)
 
-		arg0.rawIcon.texture = nil
+		arg0_5.rawIcon.texture = nil
 	end
 end
 
-return var0
+return var0_0

@@ -1,133 +1,133 @@
-﻿local var0 = class("ChargeItemBoxLayer", import("...base.BaseUI"))
+﻿local var0_0 = class("ChargeItemBoxLayer", import("...base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ChargeItemBoxUI"
 end
 
-function var0.init(arg0)
-	arg0:initData()
-	arg0:findUI()
-	arg0:addListener()
-	arg0:initUIText()
+function var0_0.init(arg0_2)
+	arg0_2:initData()
+	arg0_2:findUI()
+	arg0_2:addListener()
+	arg0_2:initUIText()
 end
 
-function var0.didEnter(arg0)
-	arg0:updatePanel()
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+function var0_0.didEnter(arg0_3)
+	arg0_3:updatePanel()
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
 end
 
-function var0.willExit(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+function var0_0.willExit(arg0_4)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_4._tf)
 end
 
-function var0.initData(arg0)
-	arg0.panelConfig = arg0.contextData.panelConfig
+function var0_0.initData(arg0_5)
+	arg0_5.panelConfig = arg0_5.contextData.panelConfig
 end
 
-function var0.initUIText(arg0)
-	local var0 = arg0:findTF("window/button_container/button_cancel/Image")
-	local var1 = arg0:findTF("window/button_container/button_ok/Image")
+function var0_0.initUIText(arg0_6)
+	local var0_6 = arg0_6:findTF("window/button_container/button_cancel/Image")
+	local var1_6 = arg0_6:findTF("window/button_container/button_ok/Image")
 
-	setText(var0, i18n("text_cancel"))
-	setText(var1, i18n("text_buy"))
+	setText(var0_6, i18n("text_cancel"))
+	setText(var1_6, i18n("text_buy"))
 end
 
-function var0.findUI(arg0)
-	arg0.bg = arg0:findTF("back_sign")
-	arg0.detailWindow = arg0:findTF("window")
-	arg0.cancelBtn = arg0:findTF("button_container/button_cancel", arg0.detailWindow)
-	arg0.confirmBtn = arg0:findTF("button_container/button_ok", arg0.detailWindow)
-	arg0.detailName = arg0:findTF("goods/name", arg0.detailWindow)
-	arg0.detailIcon = arg0:findTF("goods/icon", arg0.detailWindow)
-	arg0.detailRmb = arg0:findTF("prince_bg/contain/icon_rmb", arg0.detailWindow)
-	arg0.detailGem = arg0:findTF("prince_bg/contain/icon_gem", arg0.detailWindow)
-	arg0.detailPrice = arg0:findTF("prince_bg/contain/Text", arg0.detailWindow)
-	arg0.detailTag = arg0:findTF("goods/tag", arg0.detailWindow)
-	arg0.detailTags = {}
+function var0_0.findUI(arg0_7)
+	arg0_7.bg = arg0_7:findTF("back_sign")
+	arg0_7.detailWindow = arg0_7:findTF("window")
+	arg0_7.cancelBtn = arg0_7:findTF("button_container/button_cancel", arg0_7.detailWindow)
+	arg0_7.confirmBtn = arg0_7:findTF("button_container/button_ok", arg0_7.detailWindow)
+	arg0_7.detailName = arg0_7:findTF("goods/name", arg0_7.detailWindow)
+	arg0_7.detailIcon = arg0_7:findTF("goods/icon", arg0_7.detailWindow)
+	arg0_7.detailRmb = arg0_7:findTF("prince_bg/contain/icon_rmb", arg0_7.detailWindow)
+	arg0_7.detailGem = arg0_7:findTF("prince_bg/contain/icon_gem", arg0_7.detailWindow)
+	arg0_7.detailPrice = arg0_7:findTF("prince_bg/contain/Text", arg0_7.detailWindow)
+	arg0_7.detailTag = arg0_7:findTF("goods/tag", arg0_7.detailWindow)
+	arg0_7.detailTags = {}
 
-	table.insert(arg0.detailTags, arg0:findTF("hot", arg0.detailTag))
-	table.insert(arg0.detailTags, arg0:findTF("new", arg0.detailTag))
-	table.insert(arg0.detailTags, arg0:findTF("advice", arg0.detailTag))
-	table.insert(arg0.detailTags, arg0:findTF("double", arg0.detailTag))
-	table.insert(arg0.detailTags, arg0:findTF("discount", arg0.detailTag))
+	table.insert(arg0_7.detailTags, arg0_7:findTF("hot", arg0_7.detailTag))
+	table.insert(arg0_7.detailTags, arg0_7:findTF("new", arg0_7.detailTag))
+	table.insert(arg0_7.detailTags, arg0_7:findTF("advice", arg0_7.detailTag))
+	table.insert(arg0_7.detailTags, arg0_7:findTF("double", arg0_7.detailTag))
+	table.insert(arg0_7.detailTags, arg0_7:findTF("discount", arg0_7.detailTag))
 
-	arg0.detailTagAdviceTF = arg0.detailTags[3]
-	arg0.detailTagDoubleTF = arg0.detailTags[4]
-	arg0.detailNormalTip = arg0:findTF("NormalTips", arg0.detailWindow)
+	arg0_7.detailTagAdviceTF = arg0_7.detailTags[3]
+	arg0_7.detailTagDoubleTF = arg0_7.detailTags[4]
+	arg0_7.detailNormalTip = arg0_7:findTF("NormalTips", arg0_7.detailWindow)
 end
 
-function var0.addListener(arg0)
-	onButton(arg0, arg0.bg, function()
-		arg0:closeView()
+function var0_0.addListener(arg0_8)
+	onButton(arg0_8, arg0_8.bg, function()
+		arg0_8:closeView()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.cancelBtn, function()
-		arg0:closeView()
+	onButton(arg0_8, arg0_8.cancelBtn, function()
+		arg0_8:closeView()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.confirmBtn, function()
-		if arg0.panelConfig.onYes then
-			arg0.panelConfig.onYes()
-			arg0:closeView()
+	onButton(arg0_8, arg0_8.confirmBtn, function()
+		if arg0_8.panelConfig.onYes then
+			arg0_8.panelConfig.onYes()
+			arg0_8:closeView()
 		end
 	end, SFX_PANEL)
 end
 
-function var0.updatePanel(arg0)
-	local var0 = arg0.panelConfig.icon
-	local var1 = arg0.panelConfig.name and arg0.panelConfig.name or ""
+function var0_0.updatePanel(arg0_12)
+	local var0_12 = arg0_12.panelConfig.icon
+	local var1_12 = arg0_12.panelConfig.name and arg0_12.panelConfig.name or ""
 
-	if not arg0.panelConfig.tipBonus then
-		local var2 = ""
+	if not arg0_12.panelConfig.tipBonus then
+		local var2_12 = ""
 	end
 
-	local var3 = arg0.panelConfig.bonusItem
+	local var3_12 = arg0_12.panelConfig.bonusItem
 
-	if not arg0.panelConfig.tipExtra or not arg0.panelConfig.tipExtra then
-		local var4 = ""
+	if not arg0_12.panelConfig.tipExtra or not arg0_12.panelConfig.tipExtra then
+		local var4_12 = ""
 	end
 
-	if not arg0.panelConfig.extraItems or not arg0.panelConfig.extraItems then
-		local var5 = {}
+	if not arg0_12.panelConfig.extraItems or not arg0_12.panelConfig.extraItems then
+		local var5_12 = {}
 	end
 
-	local var6 = arg0.panelConfig.price and arg0.panelConfig.price or 0
-	local var7 = arg0.panelConfig.isChargeType
-	local var8 = arg0.panelConfig.isLocalPrice
-	local var9 = arg0.panelConfig.isMonthCard
-	local var10 = arg0.panelConfig.tagType
-	local var11 = arg0.panelConfig.normalTip
-	local var12 = arg0.panelConfig.extraDrop
+	local var6_12 = arg0_12.panelConfig.price and arg0_12.panelConfig.price or 0
+	local var7_12 = arg0_12.panelConfig.isChargeType
+	local var8_12 = arg0_12.panelConfig.isLocalPrice
+	local var9_12 = arg0_12.panelConfig.isMonthCard
+	local var10_12 = arg0_12.panelConfig.tagType
+	local var11_12 = arg0_12.panelConfig.normalTip
+	local var12_12 = arg0_12.panelConfig.extraDrop
 
-	if arg0.detailNormalTip then
-		setActive(arg0.detailNormalTip, var11)
+	if arg0_12.detailNormalTip then
+		setActive(arg0_12.detailNormalTip, var11_12)
 	end
 
-	if var11 then
-		if arg0.detailNormalTip:GetComponent("Text") then
-			setText(arg0.detailNormalTip, var11)
+	if var11_12 then
+		if arg0_12.detailNormalTip:GetComponent("Text") then
+			setText(arg0_12.detailNormalTip, var11_12)
 		else
-			setButtonText(arg0.detailNormalTip, var11)
+			setButtonText(arg0_12.detailNormalTip, var11_12)
 		end
 	end
 
-	setActive(arg0.detailTag, var10 > 0)
+	setActive(arg0_12.detailTag, var10_12 > 0)
 
-	if var10 > 0 then
-		for iter0, iter1 in ipairs(arg0.detailTags) do
-			setActive(iter1, iter0 == var10)
+	if var10_12 > 0 then
+		for iter0_12, iter1_12 in ipairs(arg0_12.detailTags) do
+			setActive(iter1_12, iter0_12 == var10_12)
 		end
 	end
 
-	GetImageSpriteFromAtlasAsync(var0, "", arg0.detailIcon, false)
-	setText(arg0.detailName, var1)
+	GetImageSpriteFromAtlasAsync(var0_12, "", arg0_12.detailIcon, false)
+	setText(arg0_12.detailName, var1_12)
 
 	if PLATFORM_CODE == PLATFORM_CHT then
-		setActive(arg0.detailRmb, var7 and not var8)
+		setActive(arg0_12.detailRmb, var7_12 and not var8_12)
 	else
-		setActive(arg0.detailRmb, var7)
+		setActive(arg0_12.detailRmb, var7_12)
 	end
 
-	setActive(arg0.detailGem, not var7)
-	setText(arg0.detailPrice, var6)
+	setActive(arg0_12.detailGem, not var7_12)
+	setText(arg0_12.detailPrice, var6_12)
 end
 
-return var0
+return var0_0

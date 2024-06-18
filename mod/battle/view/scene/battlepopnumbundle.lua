@@ -1,112 +1,112 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleUnitEvent
-local var2 = var0.Battle.BattleConst
-local var3 = var0.Battle.BattlePopNumManager
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleUnitEvent
+local var2_0 = var0_0.Battle.BattleConst
+local var3_0 = var0_0.Battle.BattlePopNumManager
 
-var0.Battle.BattlePopNumBundle = class("BattlePopNumBundle")
-var0.Battle.BattlePopNumBundle.__name = "BattlePopNumBundle"
+var0_0.Battle.BattlePopNumBundle = class("BattlePopNumBundle")
+var0_0.Battle.BattlePopNumBundle.__name = "BattlePopNumBundle"
 
-local var4 = var0.Battle.BattlePopNumBundle
+local var4_0 = var0_0.Battle.BattlePopNumBundle
 
-var4.PRO = 0
-var4.SLIM = 1
+var4_0.PRO = 0
+var4_0.SLIM = 1
 
-function var4.Ctor(arg0, arg1, arg2)
-	arg0.pool = arg1
-	arg0._container = cloneTplTo(arg2.containerTpl, arg2.containerTpl.parent)
-	arg0._bundleType = arg2.type
-	arg0._score = arg2.score
+function var4_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.pool = arg1_1
+	arg0_1._container = cloneTplTo(arg2_1.containerTpl, arg2_1.containerTpl.parent)
+	arg0_1._bundleType = arg2_1.type
+	arg0_1._score = arg2_1.score
 
-	arg0:init()
+	arg0_1:init()
 end
 
-function var4.InitPopScore(arg0, arg1)
-	arg0._allPool[var3.POP_SCORE] = arg0:generateTempPool(var3.POP_SCORE, arg0._container, arg1, 1)
+function var4_0.InitPopScore(arg0_2, arg1_2)
+	arg0_2._allPool[var3_0.POP_SCORE] = arg0_2:generateTempPool(var3_0.POP_SCORE, arg0_2._container, arg1_2, 1)
 end
 
-function var4.GetContainer(arg0)
-	return arg0._container
+function var4_0.GetContainer(arg0_3)
+	return arg0_3._container
 end
 
-function var4.init(arg0)
-	arg0._allPool = {}
+function var4_0.init(arg0_4)
+	arg0_4._allPool = {}
 
-	local var0 = var3.GetInstance():GetPopSkin()
+	local var0_4 = var3_0.GetInstance():GetPopSkin()
 
-	if arg0._score then
-		arg0._allPool[var3.POP_SCORE] = arg0:generateTempPool(var3.POP_SCORE, arg0._container, var0, 1)
+	if arg0_4._score then
+		arg0_4._allPool[var3_0.POP_SCORE] = arg0_4:generateTempPool(var3_0.POP_SCORE, arg0_4._container, var0_4, 1)
 	else
-		arg0._allPool[var3.POP_COMMON] = arg0:generateTempPool(var3.POP_COMMON, arg0._container, var0, 1)
-		arg0._allPool[var3.POP_CT_EXPLO] = arg0:generateTempPool(var3.POP_CT_EXPLO, arg0._container, var0, 0)
-		arg0._allPool[var3.POP_MISS] = arg0:generateTempPool(var3.POP_MISS, arg0._container, var0, 0)
-		arg0._allPool[var3.POP_NORMAL] = arg0:generateTempPool(var3.POP_NORMAL, arg0._container, var0, 0)
-		arg0._allPool[var3.POP_CT_NORMAL] = arg0:generateTempPool(var3.POP_CT_NORMAL, arg0._container, var0, 0)
+		arg0_4._allPool[var3_0.POP_COMMON] = arg0_4:generateTempPool(var3_0.POP_COMMON, arg0_4._container, var0_4, 1)
+		arg0_4._allPool[var3_0.POP_CT_EXPLO] = arg0_4:generateTempPool(var3_0.POP_CT_EXPLO, arg0_4._container, var0_4, 0)
+		arg0_4._allPool[var3_0.POP_MISS] = arg0_4:generateTempPool(var3_0.POP_MISS, arg0_4._container, var0_4, 0)
+		arg0_4._allPool[var3_0.POP_NORMAL] = arg0_4:generateTempPool(var3_0.POP_NORMAL, arg0_4._container, var0_4, 0)
+		arg0_4._allPool[var3_0.POP_CT_NORMAL] = arg0_4:generateTempPool(var3_0.POP_CT_NORMAL, arg0_4._container, var0_4, 0)
 
-		if arg0._bundleType == var4.PRO then
-			arg0._allPool[var3.POP_UNBREAK] = arg0:generateTempPool(var3.POP_UNBREAK, arg0._container, var0, 1)
-			arg0._allPool[var3.POP_HEAL] = arg0:generateTempPool(var3.POP_HEAL, arg0._container, var0, 1)
-			arg0._allPool[var3.POP_EXPLO] = arg0:generateTempPool(var3.POP_EXPLO, arg0._container, var0, 0)
-			arg0._allPool[var3.POP_PIERCE] = arg0:generateTempPool(var3.POP_PIERCE, arg0._container, var0, 0)
-			arg0._allPool[var3.POP_CT_PIERCE] = arg0:generateTempPool(var3.POP_CT_PIERCE, arg0._container, var0, 0)
+		if arg0_4._bundleType == var4_0.PRO then
+			arg0_4._allPool[var3_0.POP_UNBREAK] = arg0_4:generateTempPool(var3_0.POP_UNBREAK, arg0_4._container, var0_4, 1)
+			arg0_4._allPool[var3_0.POP_HEAL] = arg0_4:generateTempPool(var3_0.POP_HEAL, arg0_4._container, var0_4, 1)
+			arg0_4._allPool[var3_0.POP_EXPLO] = arg0_4:generateTempPool(var3_0.POP_EXPLO, arg0_4._container, var0_4, 0)
+			arg0_4._allPool[var3_0.POP_PIERCE] = arg0_4:generateTempPool(var3_0.POP_PIERCE, arg0_4._container, var0_4, 0)
+			arg0_4._allPool[var3_0.POP_CT_PIERCE] = arg0_4:generateTempPool(var3_0.POP_CT_PIERCE, arg0_4._container, var0_4, 0)
 		end
 	end
 end
 
-function var4.Clear(arg0)
-	arg0.pool:Recycle(arg0)
+function var4_0.Clear(arg0_5)
+	arg0_5.pool:Recycle(arg0_5)
 end
 
-function var4.GetPop(arg0, arg1, arg2, arg3, arg4, arg5)
-	local var0, var1 = var3.getType(arg1, arg2, arg3, arg5)
-	local var2 = arg0._allPool[var0]:GetObject()
+function var4_0.GetPop(arg0_6, arg1_6, arg2_6, arg3_6, arg4_6, arg5_6)
+	local var0_6, var1_6 = var3_0.getType(arg1_6, arg2_6, arg3_6, arg5_6)
+	local var2_6 = arg0_6._allPool[var0_6]:GetObject()
 
-	if var0 ~= var3.POP_MISS then
-		var2:SetText(arg4)
+	if var0_6 ~= var3_0.POP_MISS then
+		var2_6:SetText(arg4_6)
 	end
 
-	var2:SetScale(var1)
+	var2_6:SetScale(var1_6)
 
-	return var2
+	return var2_6
 end
 
-function var4.GetScorePop(arg0, arg1)
-	local var0 = arg0._allPool[var3.POP_SCORE]:GetObject()
+function var4_0.GetScorePop(arg0_7, arg1_7)
+	local var0_7 = arg0_7._allPool[var3_0.POP_SCORE]:GetObject()
 
-	var0:SetText(arg1)
+	var0_7:SetText(arg1_7)
 
-	return var0
+	return var0_7
 end
 
-function var4.generateTempPool(arg0, arg1, arg2, arg3, arg4)
-	return pg.LuaObPool.New(var0.Battle.BattlePopNum, {
-		template = arg3.transform:Find(arg1).gameObject,
-		parentTF = arg2,
-		mgr = arg0
-	}, arg4)
+function var4_0.generateTempPool(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
+	return pg.LuaObPool.New(var0_0.Battle.BattlePopNum, {
+		template = arg3_8.transform:Find(arg1_8).gameObject,
+		parentTF = arg2_8,
+		mgr = arg0_8
+	}, arg4_8)
 end
 
-function var4.Init(arg0)
+function var4_0.Init(arg0_9)
 	return
 end
 
-function var4.Recycle(arg0)
+function var4_0.Recycle(arg0_10)
 	return
 end
 
-function var4.IsScorePop(arg0)
-	return arg0._score
+function var4_0.IsScorePop(arg0_11)
+	return arg0_11._score
 end
 
-function var4.Dispose(arg0)
-	for iter0, iter1 in pairs(arg0._allPool) do
-		iter1:Dispose()
+function var4_0.Dispose(arg0_12)
+	for iter0_12, iter1_12 in pairs(arg0_12._allPool) do
+		iter1_12:Dispose()
 	end
 
-	arg0._allPool = nil
+	arg0_12._allPool = nil
 
-	Object.Destroy(arg0._container.gameObject)
+	Object.Destroy(arg0_12._container.gameObject)
 
-	arg0._container = nil
+	arg0_12._container = nil
 end

@@ -1,91 +1,91 @@
-﻿local var0 = {}
-local var1 = 0
-local var2 = true
+﻿local var0_0 = {}
+local var1_0 = 0
+local var2_0 = true
 
-local function var3(arg0, arg1)
-	local var0 = collectgarbage("count") - var1
+local function var3_0(arg0_1, arg1_1)
+	local var0_1 = collectgarbage("count") - var1_0
 
-	if var0 <= 1e-06 then
-		var1 = collectgarbage("count")
+	if var0_1 <= 1e-06 then
+		var1_0 = collectgarbage("count")
 
 		return
 	end
 
-	local var1 = debug.getinfo(2, "S").source
+	local var1_1 = debug.getinfo(2, "S").source
 
-	if var2 then
-		var1 = string.format("%s__%d", var1, arg1 - 1)
+	if var2_0 then
+		var1_1 = string.format("%s__%d", var1_1, arg1_1 - 1)
 	end
 
-	local var2 = var0[var1]
+	local var2_1 = var0_0[var1_1]
 
-	if not var2 then
-		var0[var1] = {
-			var1,
+	if not var2_1 then
+		var0_0[var1_1] = {
+			var1_1,
 			1,
-			var0
+			var0_1
 		}
 	else
-		var2[2] = var2[2] + 1
-		var2[3] = var2[3] + var0
+		var2_1[2] = var2_1[2] + 1
+		var2_1[3] = var2_1[3] + var0_1
 	end
 
-	var1 = collectgarbage("count")
+	var1_0 = collectgarbage("count")
 end
 
-local function var4(arg0)
+local function var4_0(arg0_2)
 	if debug.gethook() then
 		SC_MemLeakDetector.SC_StopRecordAllocAndDumpStat()
 
 		return
 	end
 
-	var0 = {}
-	var1 = collectgarbage("count")
-	var2 = not arg0
+	var0_0 = {}
+	var1_0 = collectgarbage("count")
+	var2_0 = not arg0_2
 
-	debug.sethook(var3, "l")
+	debug.sethook(var3_0, "l")
 end
 
-local function var5(arg0)
+local function var5_0(arg0_3)
 	debug.sethook()
 
-	if not var0 then
+	if not var0_0 then
 		return
 	end
 
-	local var0 = {}
+	local var0_3 = {}
 
-	for iter0, iter1 in pairs(var0) do
-		table.insert(var0, iter1)
+	for iter0_3, iter1_3 in pairs(var0_0) do
+		table.insert(var0_3, iter1_3)
 	end
 
-	table.sort(var0, function(arg0, arg1)
-		return arg0[3] > arg1[3]
+	table.sort(var0_3, function(arg0_4, arg1_4)
+		return arg0_4[3] > arg1_4[3]
 	end)
 
-	arg0 = arg0 or "memAlloc.csv"
+	arg0_3 = arg0_3 or "memAlloc.csv"
 
-	local var1 = io.open(arg0, "w")
+	local var1_3 = io.open(arg0_3, "w")
 
-	if not var1 then
-		logw.error("can't open file:", arg0)
+	if not var1_3 then
+		logw.error("can't open file:", arg0_3)
 
 		return
 	end
 
-	var1:write("fileLine, count, mem K, avg K\n")
+	var1_3:write("fileLine, count, mem K, avg K\n")
 
-	for iter2, iter3 in ipairs(var0) do
-		var1:write(string.format("%s, %d, %f, %f\n", iter3[1], iter3[2], iter3[3], iter3[3] / iter3[2]))
+	for iter2_3, iter3_3 in ipairs(var0_3) do
+		var1_3:write(string.format("%s, %d, %f, %f\n", iter3_3[1], iter3_3[2], iter3_3[3], iter3_3[3] / iter3_3[2]))
 	end
 
-	var1:close()
+	var1_3:close()
 
-	var0 = nil
+	var0_0 = nil
 end
 
 return {
-	StartRecordAlloc = var4,
-	StopRecordAllocAndDumpStat = var5
+	StartRecordAlloc = var4_0,
+	StopRecordAllocAndDumpStat = var5_0
 }

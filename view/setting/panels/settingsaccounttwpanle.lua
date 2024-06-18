@@ -1,64 +1,64 @@
-﻿local var0 = class("SettingsAccountTwPanle", import(".SettingsBasePanel"))
+﻿local var0_0 = class("SettingsAccountTwPanle", import(".SettingsBasePanel"))
 
-function var0.GetUIName(arg0)
+function var0_0.GetUIName(arg0_1)
 	return "SettingsAccountTW"
 end
 
-function var0.InitTitle(arg0)
+function var0_0.InitTitle(arg0_2)
 	return
 end
 
-function var0.OnInit(arg0)
-	arg0.googleBtn = arg0._tf:Find("page1/bind_google")
-	arg0.gamecenterBtn = arg0._tf:Find("page1/bind_gamecenter")
-	arg0.faceBookBtn = arg0._tf:Find("page1/bind_facebook")
-	arg0.phoneBtn = arg0._tf:Find("page1/bind_phone")
-	arg0.appleBtn = arg0._tf:Find("page1/bind_apple")
+function var0_0.OnInit(arg0_3)
+	arg0_3.googleBtn = arg0_3._tf:Find("page1/bind_google")
+	arg0_3.gamecenterBtn = arg0_3._tf:Find("page1/bind_gamecenter")
+	arg0_3.faceBookBtn = arg0_3._tf:Find("page1/bind_facebook")
+	arg0_3.phoneBtn = arg0_3._tf:Find("page1/bind_phone")
+	arg0_3.appleBtn = arg0_3._tf:Find("page1/bind_apple")
 
-	setActive(arg0.appleBtn, true)
+	setActive(arg0_3.appleBtn, true)
 
-	local var0 = {
-		arg0.faceBookBtn,
-		arg0.googleBtn,
-		arg0.phoneBtn,
-		arg0.gamecenterBtn,
-		arg0.appleBtn
+	local var0_3 = {
+		arg0_3.faceBookBtn,
+		arg0_3.googleBtn,
+		arg0_3.phoneBtn,
+		arg0_3.gamecenterBtn,
+		arg0_3.appleBtn
 	}
-	local var1 = pg.SdkMgr.GetInstance()
-	local var2 = var1:IsBindFaceBook()
-	local var3 = var1:IsBindGoogle()
-	local var4 = var1:IsBindPhone()
-	local var5 = var1:IsBindGameCenter()
-	local var6 = var1:IsBindApple()
-	local var7 = {
-		var2,
-		var3,
-		var4,
-		var5,
-		var6
+	local var1_3 = pg.SdkMgr.GetInstance()
+	local var2_3 = var1_3:IsBindFaceBook()
+	local var3_3 = var1_3:IsBindGoogle()
+	local var4_3 = var1_3:IsBindPhone()
+	local var5_3 = var1_3:IsBindGameCenter()
+	local var6_3 = var1_3:IsBindApple()
+	local var7_3 = {
+		var2_3,
+		var3_3,
+		var4_3,
+		var5_3,
+		var6_3
 	}
 
-	for iter0, iter1 in ipairs(var0) do
-		local var8 = var7[iter0]
+	for iter0_3, iter1_3 in ipairs(var0_3) do
+		local var8_3 = var7_3[iter0_3]
 
-		setActive(iter1:Find("unbind"), not var8)
-		setActive(iter1:Find("bind"), var8)
-		onButton(arg0, iter1, function()
-			if not var8 then
-				var1:BindSocial(iter0)
+		setActive(iter1_3:Find("unbind"), not var8_3)
+		setActive(iter1_3:Find("bind"), var8_3)
+		onButton(arg0_3, iter1_3, function()
+			if not var8_3 then
+				var1_3:BindSocial(iter0_3)
 			end
 		end, SFX_PANEL)
 	end
 end
 
-function var0.OnUpdate(arg0)
+function var0_0.OnUpdate(arg0_5)
 	if PLATFORM == PLATFORM_ANDROID then
-		setActive(arg0.googleBtn, true)
-		setActive(arg0.gamecenterBtn, false)
+		setActive(arg0_5.googleBtn, true)
+		setActive(arg0_5.gamecenterBtn, false)
 	else
-		setActive(arg0.googleBtn, true)
-		setActive(arg0.gamecenterBtn, false)
+		setActive(arg0_5.googleBtn, true)
+		setActive(arg0_5.gamecenterBtn, false)
 	end
 end
 
-return var0
+return var0_0

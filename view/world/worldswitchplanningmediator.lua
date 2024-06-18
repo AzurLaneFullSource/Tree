@@ -1,24 +1,24 @@
-﻿local var0 = class("WorldSwitchPlanningMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("WorldSwitchPlanningMediator", import("view.base.ContextMediator"))
 
-var0.OnConfirm = "WorldSwitchPlanningMediator.OnConfirm"
-var0.OnMove = "WorldSwitchPlanningMediator.OnMove"
+var0_0.OnConfirm = "WorldSwitchPlanningMediator.OnConfirm"
+var0_0.OnMove = "WorldSwitchPlanningMediator.OnMove"
 
-function var0.register(arg0)
-	arg0:bind(var0.OnConfirm, function(arg0)
-		arg0:sendNotification(WorldMediator.OnStartAutoSwitch)
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.OnConfirm, function(arg0_2)
+		arg0_1:sendNotification(WorldMediator.OnStartAutoSwitch)
 	end)
-	arg0:bind(var0.OnMove, function(arg0, arg1)
-		arg0:sendNotification(WorldMediator.OnMoveAndOpenLayer, arg1)
+	arg0_1:bind(var0_0.OnMove, function(arg0_3, arg1_3)
+		arg0_1:sendNotification(WorldMediator.OnMoveAndOpenLayer, arg1_3)
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_4)
 	return {}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_5, arg1_5)
+	local var0_5 = arg1_5:getName()
+	local var1_5 = arg1_5:getBody()
 end
 
-return var0
+return var0_0

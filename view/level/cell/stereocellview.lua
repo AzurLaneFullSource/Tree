@@ -1,39 +1,39 @@
-﻿local var0 = class("StereoCellView", import("view.level.cell.LevelCellView"))
+﻿local var0_0 = class("StereoCellView", import("view.level.cell.LevelCellView"))
 
-function var0.Ctor(arg0, arg1, arg2)
-	var0.super.Ctor(arg0)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var0_0.super.Ctor(arg0_1)
 
-	arg0.assetName = nil
-	arg0.line = {
-		row = arg1,
-		column = arg2
+	arg0_1.assetName = nil
+	arg0_1.line = {
+		row = arg1_1,
+		column = arg2_1
 	}
-	arg0.buffer = FuncBuffer.New()
+	arg0_1.buffer = FuncBuffer.New()
 end
 
-function var0.UpdateGO(arg0, arg1, arg2)
-	local var0 = arg0:GetLoader():GetRequestPackage("main")
+function var0_0.UpdateGO(arg0_2, arg1_2, arg2_2)
+	local var0_2 = arg0_2:GetLoader():GetRequestPackage("main")
 
-	if var0 and var0.name == arg0.assetName then
+	if var0_2 and var0_2.name == arg0_2.assetName then
 		return
 	end
 
-	arg0.buffer:Clear()
-	arg0.buffer:SetNotifier(nil)
-	arg0:GetLoader():GetPrefab(arg1, arg2, function(arg0)
-		arg0.go = arg0
-		arg0.tf = arg0.go.transform
+	arg0_2.buffer:Clear()
+	arg0_2.buffer:SetNotifier(nil)
+	arg0_2:GetLoader():GetPrefab(arg1_2, arg2_2, function(arg0_3)
+		arg0_2.go = arg0_3
+		arg0_2.tf = arg0_2.go.transform
 
-		arg0:OnLoaded(arg0)
-		arg0.buffer:SetNotifier(arg0)
-		arg0.buffer:ExcuteAll()
-		arg0:OverrideCanvas()
-		arg0:ResetCanvasOrder()
+		arg0_2:OnLoaded(arg0_3)
+		arg0_2.buffer:SetNotifier(arg0_2)
+		arg0_2.buffer:ExcuteAll()
+		arg0_2:OverrideCanvas()
+		arg0_2:ResetCanvasOrder()
 	end, "main")
 end
 
-function var0.OnLoaded(arg0, arg1)
+function var0_0.OnLoaded(arg0_4, arg1_4)
 	return
 end
 
-return var0
+return var0_0

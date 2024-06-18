@@ -1,113 +1,113 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConfig
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConfig
 
-var0.Battle.CardPuzzleEnergyBar = class("CardPuzzleEnergyBar")
+var0_0.Battle.CardPuzzleEnergyBar = class("CardPuzzleEnergyBar")
 
-local var2 = var0.Battle.CardPuzzleEnergyBar
+local var2_0 = var0_0.Battle.CardPuzzleEnergyBar
 
-var2.__name = "CardPuzzleEnergyBar"
+var2_0.__name = "CardPuzzleEnergyBar"
 
-function var2.Ctor(arg0, arg1)
-	arg0._go = arg1
-	arg0._tf = arg0._go.transform
-	arg0._currentLabel = arg0._tf:Find("count_label/count/current")
-	arg0._shadeLabel = arg0._tf:Find("count_label/count/current")
-	arg0._maxLabel = arg0._tf:Find("count_label/max")
-	arg0._recoverBlockList = arg0._tf:Find("block_list")
+function var2_0.Ctor(arg0_1, arg1_1)
+	arg0_1._go = arg1_1
+	arg0_1._tf = arg0_1._go.transform
+	arg0_1._currentLabel = arg0_1._tf:Find("count_label/count/current")
+	arg0_1._shadeLabel = arg0_1._tf:Find("count_label/count/current")
+	arg0_1._maxLabel = arg0_1._tf:Find("count_label/max")
+	arg0_1._recoverBlockList = arg0_1._tf:Find("block_list")
 end
 
-function var2.SetCardPuzzleComponent(arg0, arg1)
-	arg0._info = arg1
-	arg0._energyInfo = arg0._info:GetEnergy()
-	arg0._blockTFList = {}
-	arg0._max = arg0._energyInfo:GetMaxEnergy()
+function var2_0.SetCardPuzzleComponent(arg0_2, arg1_2)
+	arg0_2._info = arg1_2
+	arg0_2._energyInfo = arg0_2._info:GetEnergy()
+	arg0_2._blockTFList = {}
+	arg0_2._max = arg0_2._energyInfo:GetMaxEnergy()
 
-	for iter0 = 1, arg0._max do
-		local var0 = arg0._recoverBlockList:Find("block_" .. iter0)
-		local var1 = var0:Find("full")
-		local var2 = var0:Find("recover")
-		local var3 = {
-			full = var1,
-			recover = var2
+	for iter0_2 = 1, arg0_2._max do
+		local var0_2 = arg0_2._recoverBlockList:Find("block_" .. iter0_2)
+		local var1_2 = var0_2:Find("full")
+		local var2_2 = var0_2:Find("recover")
+		local var3_2 = {
+			full = var1_2,
+			recover = var2_2
 		}
 
-		table.insert(arg0._blockTFList, var3)
+		table.insert(arg0_2._blockTFList, var3_2)
 	end
 
-	arg0._lastPoint = 0
+	arg0_2._lastPoint = 0
 
-	local var4 = arg0._blockTFList[arg0._lastPoint + 1]
+	local var4_2 = arg0_2._blockTFList[arg0_2._lastPoint + 1]
 
-	arg0:activeRecoverBlock(var4)
+	arg0_2:activeRecoverBlock(var4_2)
 end
 
-function var2.Update(arg0)
-	arg0:updateEnergyPoint()
-	arg0:updateEnergyProgress()
+function var2_0.Update(arg0_3)
+	arg0_3:updateEnergyPoint()
+	arg0_3:updateEnergyProgress()
 end
 
-function var2.updateEnergyProgress(arg0)
-	local var0 = arg0._energyInfo:GetCurrentEnergy()
+function var2_0.updateEnergyProgress(arg0_4)
+	local var0_4 = arg0_4._energyInfo:GetCurrentEnergy()
 
-	if arg0._lastPoint == var0 then
-		if var0 >= arg0._max then
+	if arg0_4._lastPoint == var0_4 then
+		if var0_4 >= arg0_4._max then
 			-- block empty
 		else
-			local var1 = arg0._blockTFList[var0 + 1]
+			local var1_4 = arg0_4._blockTFList[var0_4 + 1]
 
-			arg0:updateRecoverBlock(var1)
+			arg0_4:updateRecoverBlock(var1_4)
 		end
 	else
-		local var2 = arg0._max
-		local var3 = arg0._blockTFList
+		local var2_4 = arg0_4._max
+		local var3_4 = arg0_4._blockTFList
 
-		for iter0, iter1 in ipairs(var3) do
-			local var4 = arg0._blockTFList[iter0]
-			local var5 = iter0 - 1
+		for iter0_4, iter1_4 in ipairs(var3_4) do
+			local var4_4 = arg0_4._blockTFList[iter0_4]
+			local var5_4 = iter0_4 - 1
 
-			if var5 < var0 then
-				arg0:updateSingleBlock(var4, true)
-			elseif var5 == var0 then
-				arg0:activeRecoverBlock(var4)
-				arg0:updateRecoverBlock(var4)
-			elseif var0 < var5 then
-				arg0:updateSingleBlock(var4, false)
+			if var5_4 < var0_4 then
+				arg0_4:updateSingleBlock(var4_4, true)
+			elseif var5_4 == var0_4 then
+				arg0_4:activeRecoverBlock(var4_4)
+				arg0_4:updateRecoverBlock(var4_4)
+			elseif var0_4 < var5_4 then
+				arg0_4:updateSingleBlock(var4_4, false)
 			end
 		end
 	end
 
-	arg0._lastPoint = var0
+	arg0_4._lastPoint = var0_4
 end
 
-function var2.updateEnergyPoint(arg0)
-	setText(arg0._currentLabel, arg0._energyInfo:GetCurrentEnergy())
-	setText(arg0._shadeLabel, arg0._energyInfo:GetCurrentEnergy())
-	setText(arg0._maxLabel, arg0._energyInfo:GetMaxEnergy())
+function var2_0.updateEnergyPoint(arg0_5)
+	setText(arg0_5._currentLabel, arg0_5._energyInfo:GetCurrentEnergy())
+	setText(arg0_5._shadeLabel, arg0_5._energyInfo:GetCurrentEnergy())
+	setText(arg0_5._maxLabel, arg0_5._energyInfo:GetMaxEnergy())
 end
 
-function var2.activeRecoverBlock(arg0, arg1)
-	setActive(arg1.full, false)
-	setActive(arg1.recover, true)
+function var2_0.activeRecoverBlock(arg0_6, arg1_6)
+	setActive(arg1_6.full, false)
+	setActive(arg1_6.recover, true)
 end
 
-function var2.updateRecoverBlock(arg0, arg1)
-	local var0 = arg1.full
+function var2_0.updateRecoverBlock(arg0_7, arg1_7)
+	local var0_7 = arg1_7.full
 
-	arg1.recover:GetComponent(typeof(Image)).fillAmount = arg0._energyInfo:GetGeneratingProcess()
+	arg1_7.recover:GetComponent(typeof(Image)).fillAmount = arg0_7._energyInfo:GetGeneratingProcess()
 end
 
-function var2.updateSingleBlock(arg0, arg1, arg2)
-	local var0 = arg1.full
-	local var1 = arg1.recover
+function var2_0.updateSingleBlock(arg0_8, arg1_8, arg2_8)
+	local var0_8 = arg1_8.full
+	local var1_8 = arg1_8.recover
 
-	setActive(var0, arg2)
-	setActive(var1, false)
+	setActive(var0_8, arg2_8)
+	setActive(var1_8, false)
 end
 
-function var2.Dispose(arg0)
-	arg0._currentLabel = nil
-	arg0._maxLabel = nil
-	arg0._recoverBlockList = nil
+function var2_0.Dispose(arg0_9)
+	arg0_9._currentLabel = nil
+	arg0_9._maxLabel = nil
+	arg0_9._recoverBlockList = nil
 end

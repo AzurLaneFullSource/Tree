@@ -1,34 +1,34 @@
-﻿local var0 = class("PathFinding")
+﻿local var0_0 = class("PathFinding")
 
-PathFinding = var0
-var0.PrioNormal = 1
-var0.PrioObstacle = 1000
-var0.PrioForbidden = 1000000
+PathFinding = var0_0
+var0_0.PrioNormal = 1
+var0_0.PrioObstacle = 1000
+var0_0.PrioForbidden = 1000000
 
-function var0.Ctor(arg0, arg1, arg2, arg3)
-	arg0.cells = arg1
-	arg0.rows = arg2
-	arg0.columns = arg3
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	arg0_1.cells = arg1_1
+	arg0_1.rows = arg2_1
+	arg0_1.columns = arg3_1
 end
 
-function var0.Find(arg0, arg1, arg2)
-	arg1 = {
-		row = arg1.row,
-		column = arg1.column
+function var0_0.Find(arg0_2, arg1_2, arg2_2)
+	arg1_2 = {
+		row = arg1_2.row,
+		column = arg1_2.column
 	}
-	arg2 = {
-		row = arg2.row,
-		column = arg2.column
+	arg2_2 = {
+		row = arg2_2.row,
+		column = arg2_2.column
 	}
 
-	if arg0.cells[arg1.row][arg1.column] < 0 or arg0.cells[arg2.row][arg2.column] < 0 then
+	if arg0_2.cells[arg1_2.row][arg1_2.column] < 0 or arg0_2.cells[arg2_2.row][arg2_2.column] < 0 then
 		return 0, {}
 	else
-		return arg0:_Find(arg1, arg2)
+		return arg0_2:_Find(arg1_2, arg2_2)
 	end
 end
 
-local var1 = {
+local var1_0 = {
 	{
 		1,
 		0
@@ -47,97 +47,97 @@ local var1 = {
 	}
 }
 
-function var0._Find(arg0, arg1, arg2)
-	local var0 = var0.PrioForbidden
-	local var1 = {}
-	local var2 = {
-		arg1
+function var0_0._Find(arg0_3, arg1_3, arg2_3)
+	local var0_3 = var0_0.PrioForbidden
+	local var1_3 = {}
+	local var2_3 = {
+		arg1_3
 	}
-	local var3 = {}
-	local var4 = {
-		[arg1.row] = {
-			[arg1.column] = {
+	local var3_3 = {}
+	local var4_3 = {
+		[arg1_3.row] = {
+			[arg1_3.column] = {
 				priority = 0,
 				path = {}
 			}
 		}
 	}
 
-	while #var2 > 0 do
-		local var5 = table.remove(var2, 1)
+	while #var2_3 > 0 do
+		local var5_3 = table.remove(var2_3, 1)
 
-		if var5.row == arg2.row and var5.column == arg2.column then
-			local var6 = var4[var5.row][var5.column]
+		if var5_3.row == arg2_3.row and var5_3.column == arg2_3.column then
+			local var6_3 = var4_3[var5_3.row][var5_3.column]
 
-			var0 = var6.priority
-			var1 = var6.path
+			var0_3 = var6_3.priority
+			var1_3 = var6_3.path
 
 			break
 		end
 
-		table.insert(var3, var5)
-		_.each(var1, function(arg0)
-			local var0 = {
-				row = var5.row + arg0[1],
-				column = var5.column + arg0[2]
+		table.insert(var3_3, var5_3)
+		_.each(var1_0, function(arg0_4)
+			local var0_4 = {
+				row = var5_3.row + arg0_4[1],
+				column = var5_3.column + arg0_4[2]
 			}
 
-			if not (_.any(var2, function(arg0)
-				return arg0.row == var0.row and arg0.column == var0.column
-			end) or _.any(var3, function(arg0)
-				return arg0.row == var0.row and arg0.column == var0.column
-			end)) and var0.row >= 0 and var0.row < arg0.rows and var0.column >= 0 and var0.column < arg0.columns then
-				local var1 = var4[var5.row][var5.column]
-				local var2 = var1.priority + arg0.cells[var0.row][var0.column]
+			if not (_.any(var2_3, function(arg0_5)
+				return arg0_5.row == var0_4.row and arg0_5.column == var0_4.column
+			end) or _.any(var3_3, function(arg0_6)
+				return arg0_6.row == var0_4.row and arg0_6.column == var0_4.column
+			end)) and var0_4.row >= 0 and var0_4.row < arg0_3.rows and var0_4.column >= 0 and var0_4.column < arg0_3.columns then
+				local var1_4 = var4_3[var5_3.row][var5_3.column]
+				local var2_4 = var1_4.priority + arg0_3.cells[var0_4.row][var0_4.column]
 
-				if var2 < var0.PrioObstacle then
-					local var3 = Clone(var1)
+				if var2_4 < var0_0.PrioObstacle then
+					local var3_4 = Clone(var1_4)
 
-					table.insert(var3.path, var0)
+					table.insert(var3_4.path, var0_4)
 
-					var3.priority = var2
-					var4[var0.row] = var4[var0.row] or {}
-					var4[var0.row][var0.column] = var3
+					var3_4.priority = var2_4
+					var4_3[var0_4.row] = var4_3[var0_4.row] or {}
+					var4_3[var0_4.row][var0_4.column] = var3_4
 
-					local var4 = 0
+					local var4_4 = 0
 
-					for iter0 = #var2, 1, -1 do
-						local var5 = var2[iter0]
-						local var6 = var4[var5.row][var5.column]
+					for iter0_4 = #var2_3, 1, -1 do
+						local var5_4 = var2_3[iter0_4]
+						local var6_4 = var4_3[var5_4.row][var5_4.column]
 
-						if var3.priority >= var6.priority then
-							var4 = iter0
+						if var3_4.priority >= var6_4.priority then
+							var4_4 = iter0_4
 
 							break
 						end
 					end
 
-					table.insert(var2, var4 + 1, var0)
+					table.insert(var2_3, var4_4 + 1, var0_4)
 				else
-					var0 = math.min(var0, var2)
+					var0_3 = math.min(var0_3, var2_4)
 				end
 			end
 		end)
 	end
 
-	if var0 >= var0.PrioObstacle then
-		local var7 = 1000000
-		local var8 = var0.PrioForbidden
+	if var0_3 >= var0_0.PrioObstacle then
+		local var7_3 = 1000000
+		local var8_3 = var0_0.PrioForbidden
 
-		for iter0, iter1 in pairs(var4) do
-			for iter2, iter3 in pairs(iter1) do
-				local var9 = math.abs(arg2.row - iter0) + math.abs(arg2.column - iter2)
+		for iter0_3, iter1_3 in pairs(var4_3) do
+			for iter2_3, iter3_3 in pairs(iter1_3) do
+				local var9_3 = math.abs(arg2_3.row - iter0_3) + math.abs(arg2_3.column - iter2_3)
 
-				if var9 < var7 or var9 == var7 and var8 > iter3.priority then
-					var7 = var9
-					var8 = iter3.priority
-					var1 = iter3.path
+				if var9_3 < var7_3 or var9_3 == var7_3 and var8_3 > iter3_3.priority then
+					var7_3 = var9_3
+					var8_3 = iter3_3.priority
+					var1_3 = iter3_3.path
 				end
 			end
 		end
 	end
 
-	return var0, var1
+	return var0_3, var1_3
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_319 = {}
+var0_0.word_template_319 = {}
 
-local var1 = var0.word_template_319
+local var1_0 = var0_0.word_template_319
 
 function temp()
-	var1.遥 = {
+	var1_0.遥 = {
 		控 = {
 			彩 = {
 				蝶 = {
@@ -69,7 +69,7 @@ end
 temp()
 
 function temp()
-	var1.遙 = {
+	var1_0.遙 = {
 		控 = {
 			色 = {
 				子 = {
@@ -83,7 +83,7 @@ end
 temp()
 
 function temp()
-	var1.銚 = {
+	var1_0.銚 = {
 		this = {
 			this = true
 		}
@@ -93,7 +93,7 @@ end
 temp()
 
 function temp()
-	var1.咬 = {
+	var1_0.咬 = {
 		着 = {
 			龟 = {
 				头 = {
@@ -114,7 +114,7 @@ end
 temp()
 
 function temp()
-	var1.药 = {
+	var1_0.药 = {
 		劲 = {
 			过 = {
 				了 = {
@@ -140,7 +140,7 @@ end
 temp()
 
 function temp()
-	var1.要 = {
+	var1_0.要 = {
 		k = {
 			粉 = {
 				this = true
@@ -325,7 +325,7 @@ end
 temp()
 
 function temp()
-	var1.藥 = {
+	var1_0.藥 = {
 		材 = {
 			商 = {
 				人 = {

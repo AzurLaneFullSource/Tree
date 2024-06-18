@@ -1,35 +1,35 @@
-﻿local var0 = class("GetGuildBossRankCommand", import(".GuildEventBaseCommand"))
+﻿local var0_0 = class("GetGuildBossRankCommand", import(".GuildEventBaseCommand"))
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody().callback
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody().callback
 
 	pg.ConnectionMgr.GetInstance():Send(61029, {
 		type = 0
-	}, 61030, function(arg0)
-		local var0 = getProxy(GuildProxy)
-		local var1 = var0:getRawData()
-		local var2 = {}
+	}, 61030, function(arg0_2)
+		local var0_2 = getProxy(GuildProxy)
+		local var1_2 = var0_2:getRawData()
+		local var2_2 = {}
 
-		for iter0, iter1 in ipairs(arg0.list) do
-			local var3 = var1:getMemberById(iter1.user_id)
+		for iter0_2, iter1_2 in ipairs(arg0_2.list) do
+			local var3_2 = var1_2:getMemberById(iter1_2.user_id)
 
-			if var3 then
-				table.insert(var2, {
-					name = var3.name,
-					damage = iter1.damage
+			if var3_2 then
+				table.insert(var2_2, {
+					name = var3_2.name,
+					damage = iter1_2.damage
 				})
 			end
 		end
 
-		var0:UpdateBossRank(var2)
-		var0:UpdateBossRankRefreshTime(pg.TimeMgr.GetInstance():GetServerTime())
+		var0_2:UpdateBossRank(var2_2)
+		var0_2:UpdateBossRankRefreshTime(pg.TimeMgr.GetInstance():GetServerTime())
 
-		if var0 then
-			var0()
+		if var0_1 then
+			var0_1()
 		end
 
-		arg0:sendNotification(GAME.GET_GUILD_BOSS_RANK_DONE)
+		arg0_1:sendNotification(GAME.GET_GUILD_BOSS_RANK_DONE)
 	end)
 end
 
-return var0
+return var0_0

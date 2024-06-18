@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Our next mission is to support the Eagles' aviation fleet combat drills. Tap <color=#ff7d36>Attack</color> to get started.",
 	"Hornet must be hiding somewhere here. If you can crush her then the sea is yours!",
 	"Commander, we must first test your skills in defeating the enemy vanguard.",
@@ -16,7 +16,7 @@ return {
 				mode = 2,
 				posY = 61.61,
 				posX = 261.62,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				pathIndex = -1,
@@ -43,7 +43,7 @@ return {
 				mode = 2,
 				posY = -351,
 				posX = -257,
-				text = var0[2]
+				text = var0_0[2]
 			}
 		},
 		{
@@ -53,7 +53,7 @@ return {
 				mode = 2,
 				posY = -351,
 				posX = -257,
-				text = var0[3]
+				text = var0_0[3]
 			},
 			baseui = {
 				delay = 0.2,
@@ -68,7 +68,7 @@ return {
 				mode = 2,
 				posY = -351,
 				posX = -257,
-				text = var0[4]
+				text = var0_0[4]
 			},
 			ui = {
 				path = "/LevelCamera/Canvas/UIMain/LevelGrid/DragLayer/plane/cells/chapter_cell_4_6/attachment",

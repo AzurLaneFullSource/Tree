@@ -1,30 +1,30 @@
-﻿local var0 = class("RemasterAwardReceiveCommand", pm.SimpleCommand)
+﻿local var0_0 = class("RemasterAwardReceiveCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.chapterId
-	local var2 = var0.pos
-	local var3 = getProxy(ChapterProxy)
-	local var4 = var3.remasterInfo[var1]
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.chapterId
+	local var2_1 = var0_1.pos
+	local var3_1 = getProxy(ChapterProxy)
+	local var4_1 = var3_1.remasterInfo[var1_1]
 
-	if not var4 or var4.receive then
+	if not var4_1 or var4_1.receive then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(13507, {
-		chapter_id = var1,
-		pos = var2
-	}, 13508, function(arg0)
-		if arg0.result == 0 then
-			var3:markRemasterPassReceive(var1, var2)
+		chapter_id = var1_1,
+		pos = var2_1
+	}, 13508, function(arg0_2)
+		if arg0_2.result == 0 then
+			var3_1:markRemasterPassReceive(var1_1, var2_1)
 
-			local var0 = PlayerConst.addTranDrop(arg0.drop_list)
+			local var0_2 = PlayerConst.addTranDrop(arg0_2.drop_list)
 
-			arg0:sendNotification(GAME.CHAPTER_REMASTER_AWARD_RECEIVE_DONE, var0)
+			arg0_1:sendNotification(GAME.CHAPTER_REMASTER_AWARD_RECEIVE_DONE, var0_2)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0_2.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"有新的战斗机制出现了！点击帮助按钮查看！"
 }
 
@@ -8,7 +8,7 @@ return {
 		{
 			action = {
 				say = {
-					text = var0[1],
+					text = var0_0[1],
 					style = {
 						alpha = 0.4,
 						mode = 1,

@@ -1,78 +1,78 @@
-﻿local var0 = class("PiratePage", import("view.base.BaseActivityPage"))
+﻿local var0_0 = class("PiratePage", import("view.base.BaseActivityPage"))
 
-var0.PROGRESS_TEXT = "%d/7"
-var0.DIALOG_DELAY = 15
+var0_0.PROGRESS_TEXT = "%d/7"
+var0_0.DIALOG_DELAY = 15
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("AD")
-	arg0.progress = arg0:findTF("progress", arg0.bg)
-	arg0.progressText = arg0:findTF("Text", arg0.progress)
-	arg0.complete = arg0:findTF("complete", arg0.bg)
-	arg0.goBtn = arg0:findTF("go_btn", arg0.bg)
-	arg0.red = arg0:findTF("red", arg0.goBtn)
-	arg0.dialogTf = arg0:findTF("dialog", arg0.bg)
-	arg0.dialogText = arg0:findTF("Text", arg0.dialogTf)
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.progress = arg0_1:findTF("progress", arg0_1.bg)
+	arg0_1.progressText = arg0_1:findTF("Text", arg0_1.progress)
+	arg0_1.complete = arg0_1:findTF("complete", arg0_1.bg)
+	arg0_1.goBtn = arg0_1:findTF("go_btn", arg0_1.bg)
+	arg0_1.red = arg0_1:findTF("red", arg0_1.goBtn)
+	arg0_1.dialogTf = arg0_1:findTF("dialog", arg0_1.bg)
+	arg0_1.dialogText = arg0_1:findTF("Text", arg0_1.dialogTf)
 end
 
-function var0.OnDataSetting(arg0)
-	arg0.count = 0
-	arg0.taskProxy = getProxy(TaskProxy)
-	arg0.taskGroup = arg0.activity:getConfig("config_data")
-	arg0.totoalCount = #arg0.taskGroup
-	arg0.dialog_progress = arg0.activity:getConfig("config_client").shipyard_phase_1
-	arg0.dialog_complete = arg0.activity:getConfig("config_client").shipyard_phase_2
+function var0_0.OnDataSetting(arg0_2)
+	arg0_2.count = 0
+	arg0_2.taskProxy = getProxy(TaskProxy)
+	arg0_2.taskGroup = arg0_2.activity:getConfig("config_data")
+	arg0_2.totoalCount = #arg0_2.taskGroup
+	arg0_2.dialog_progress = arg0_2.activity:getConfig("config_client").shipyard_phase_1
+	arg0_2.dialog_complete = arg0_2.activity:getConfig("config_client").shipyard_phase_2
 
-	return updateActivityTaskStatus(arg0.activity)
+	return updateActivityTaskStatus(arg0_2.activity)
 end
 
-function var0.OnShowFlush(arg0)
-	setActive(arg0.dialogTf, true)
-	setImageAlpha(arg0.dialogTf, 1)
-	setText(arg0.dialogText, not arg0.activity:canPermanentFinish() and arg0.dialog_progress[math.random(#arg0.dialog_progress)] or arg0.dialog_complete[math.random(#arg0.dialog_complete)])
-	LeanTween.alpha(arg0.dialogTf, 0, 0.5):setDelay(var0.DIALOG_DELAY):setOnComplete(System.Action(function()
-		SetActive(arg0.dialogTf, false)
+function var0_0.OnShowFlush(arg0_3)
+	setActive(arg0_3.dialogTf, true)
+	setImageAlpha(arg0_3.dialogTf, 1)
+	setText(arg0_3.dialogText, not arg0_3.activity:canPermanentFinish() and arg0_3.dialog_progress[math.random(#arg0_3.dialog_progress)] or arg0_3.dialog_complete[math.random(#arg0_3.dialog_complete)])
+	LeanTween.alpha(arg0_3.dialogTf, 0, 0.5):setDelay(var0_0.DIALOG_DELAY):setOnComplete(System.Action(function()
+		SetActive(arg0_3.dialogTf, false)
 	end))
 end
 
-function var0.OnHideFlush(arg0)
-	LeanTween.cancel(arg0.dialogTf)
+function var0_0.OnHideFlush(arg0_5)
+	LeanTween.cancel(arg0_5.dialogTf)
 end
 
-function var0.OnFirstFlush(arg0)
-	arg0.count = arg0.activity.data3
+function var0_0.OnFirstFlush(arg0_6)
+	arg0_6.count = arg0_6.activity.data3
 
-	setActive(arg0.red, arg0:CheckRed())
-	onButton(arg0, arg0.goBtn, function()
-		arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SECRET_SHIPYARD)
+	setActive(arg0_6.red, arg0_6:CheckRed())
+	onButton(arg0_6, arg0_6.goBtn, function()
+		arg0_6:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SECRET_SHIPYARD)
 	end, SFX_PANEL)
 end
 
-function var0.CheckRed(arg0)
-	local var0 = false
+function var0_0.CheckRed(arg0_8)
+	local var0_8 = false
 
-	if arg0.activity:readyToAchieve() then
-		var0 = true
+	if arg0_8.activity:readyToAchieve() then
+		var0_8 = true
 	end
 
-	local var1 = arg0.activity:getNDay()
+	local var1_8 = arg0_8.activity:getNDay()
 
-	if var1 < 8 and PlayerPrefs.GetInt("PiratePage" .. var1, 0) == 0 then
-		PlayerPrefs.SetInt("PiratePage" .. var1, 1)
+	if var1_8 < 8 and PlayerPrefs.GetInt("PiratePage" .. var1_8, 0) == 0 then
+		PlayerPrefs.SetInt("PiratePage" .. var1_8, 1)
 
-		var0 = true
+		var0_8 = true
 	end
 
-	return var0
+	return var0_8
 end
 
-function var0.OnUpdateFlush(arg0)
-	arg0.count = arg0.activity.data3
+function var0_0.OnUpdateFlush(arg0_9)
+	arg0_9.count = arg0_9.activity.data3
 
-	if arg0.progress then
-		setText(arg0.progressText, string.format(var0.PROGRESS_TEXT, arg0.count))
-		setActive(arg0.progress, not arg0.activity:canPermanentFinish())
-		setActive(arg0.complete, arg0.activity:canPermanentFinish())
+	if arg0_9.progress then
+		setText(arg0_9.progressText, string.format(var0_0.PROGRESS_TEXT, arg0_9.count))
+		setActive(arg0_9.progress, not arg0_9.activity:canPermanentFinish())
+		setActive(arg0_9.complete, arg0_9.activity:canPermanentFinish())
 	end
 end
 
-return var0
+return var0_0

@@ -1,21 +1,21 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleSkillConsumeBuff = class("BattleSkillConsumeBuff", var0.Battle.BattleSkillEffect)
-var0.Battle.BattleSkillConsumeBuff.__name = "BattleSkillConsumeBuff"
+var0_0.Battle.BattleSkillConsumeBuff = class("BattleSkillConsumeBuff", var0_0.Battle.BattleSkillEffect)
+var0_0.Battle.BattleSkillConsumeBuff.__name = "BattleSkillConsumeBuff"
 
-local var1 = var0.Battle.BattleSkillConsumeBuff
+local var1_0 = var0_0.Battle.BattleSkillConsumeBuff
 
-function var1.Ctor(arg0, arg1, arg2)
-	var1.super.Ctor(arg0, arg1, arg2)
+function var1_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var1_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 
-	arg0._buffID = arg0._tempData.arg_list.buff_id
-	arg0._count = arg0._tempData.arg_list.consume_count
+	arg0_1._buffID = arg0_1._tempData.arg_list.buff_id
+	arg0_1._count = arg0_1._tempData.arg_list.consume_count
 end
 
-function var1.DoDataEffect(arg0, arg1, arg2)
-	if arg2:IsAlive() then
-		arg2:ConsumeBuffStack(arg0._buffID, arg0._count)
+function var1_0.DoDataEffect(arg0_2, arg1_2, arg2_2)
+	if arg2_2:IsAlive() then
+		arg2_2:ConsumeBuffStack(arg0_2._buffID, arg0_2._count)
 	end
 end

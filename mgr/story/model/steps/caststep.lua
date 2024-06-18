@@ -1,83 +1,83 @@
-﻿local var0 = class("CastStep", import(".StoryStep"))
-local var1 = 1
-local var2 = 2
-local var3 = 3
-local var4 = 4
+﻿local var0_0 = class("CastStep", import(".StoryStep"))
+local var1_0 = 1
+local var2_0 = 2
+local var3_0 = 3
+local var4_0 = 4
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0.layout = arg1.layout
-	arg0.time = arg1.time or 5
-	arg0.spacing = arg1.spacing or 35
+	arg0_1.layout = arg1_1.layout
+	arg0_1.time = arg1_1.time or 5
+	arg0_1.spacing = arg1_1.spacing or 35
 end
 
-function var0.GetMode(arg0)
+function var0_0.GetMode(arg0_2)
 	return Story.MODE_CAST
 end
 
-function var0.DataToLayout(arg0, arg1)
-	if arg1[1] == var1 then
+function var0_0.DataToLayout(arg0_3, arg1_3)
+	if arg1_3[1] == var1_0 then
 		return {
-			type = var1,
-			text = arg1[2]
+			type = var1_0,
+			text = arg1_3[2]
 		}
-	elseif arg1[1] == var2 then
-		local var0 = Vector2(arg1[3] or 0, arg1[4] or 0)
+	elseif arg1_3[1] == var2_0 then
+		local var0_3 = Vector2(arg1_3[3] or 0, arg1_3[4] or 0)
 
 		return {
-			type = var2,
-			path = arg1[2],
-			size = var0
+			type = var2_0,
+			path = arg1_3[2],
+			size = var0_3
 		}
-	elseif arg1[1] == var3 then
-		local var1 = {}
-		local var2 = arg1[2]
-		local var3 = arg0:ShouldReplacePlayer()
+	elseif arg1_3[1] == var3_0 then
+		local var1_3 = {}
+		local var2_3 = arg1_3[2]
+		local var3_3 = arg0_3:ShouldReplacePlayer()
 
-		for iter0 = 1, #var2 do
-			local var4 = var2[iter0]
+		for iter0_3 = 1, #var2_3 do
+			local var4_3 = var2_3[iter0_3]
 
-			if var3 then
-				var4 = arg0:ReplacePlayerName(var4)
+			if var3_3 then
+				var4_3 = arg0_3:ReplacePlayerName(var4_3)
 			end
 
-			local var5 = HXSet.hxLan(var4)
+			local var5_3 = HXSet.hxLan(var4_3)
 
-			table.insert(var1, var5)
+			table.insert(var1_3, var5_3)
 		end
 
 		return {
-			type = var3,
-			names = var1,
-			column = arg1[3] or 2,
-			evenColumnColor = arg1[4] or "#c2c2c2"
+			type = var3_0,
+			names = var1_3,
+			column = arg1_3[3] or 2,
+			evenColumnColor = arg1_3[4] or "#c2c2c2"
 		}
-	elseif arg1[1] == var4 then
+	elseif arg1_3[1] == var4_0 then
 		return {
-			type = var4
+			type = var4_0
 		}
 	end
 end
 
-function var0.GetLayout(arg0)
-	local var0 = {}
+function var0_0.GetLayout(arg0_4)
+	local var0_4 = {}
 
-	for iter0, iter1 in ipairs(arg0.layout or {}) do
-		local var1 = arg0:DataToLayout(iter1)
+	for iter0_4, iter1_4 in ipairs(arg0_4.layout or {}) do
+		local var1_4 = arg0_4:DataToLayout(iter1_4)
 
-		table.insert(var0, var1)
+		table.insert(var0_4, var1_4)
 	end
 
-	return var0
+	return var0_4
 end
 
-function var0.GetSpacing(arg0)
-	return arg0.spacing
+function var0_0.GetSpacing(arg0_5)
+	return arg0_5.spacing
 end
 
-function var0.GetPlayTime(arg0)
-	return arg0.time
+function var0_0.GetPlayTime(arg0_6)
+	return arg0_6.time
 end
 
-return var0
+return var0_0

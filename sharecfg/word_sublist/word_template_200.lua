@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_200 = {}
+var0_0.word_template_200 = {}
 
-local var1 = var0.word_template_200
+local var1_0 = var0_0.word_template_200
 
 function temp()
-	var1.螞 = {
+	var1_0.螞 = {
 		蟻 = {
 			上 = {
 				樹 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.骂 = {
+	var1_0.骂 = {
 		人 = {
 			歇 = {
 				后 = {
@@ -42,7 +42,7 @@ end
 temp()
 
 function temp()
-	var1.吗 = {
+	var1_0.吗 = {
 		苯 = {
 			丁 = {
 				酯 = {
@@ -91,7 +91,7 @@ end
 temp()
 
 function temp()
-	var1.嘛 = {
+	var1_0.嘛 = {
 		奖 = {
 			机 = {
 				this = true
@@ -103,7 +103,7 @@ end
 temp()
 
 function temp()
-	var1.买 = {
+	var1_0.买 = {
 		财 = {
 			富 = {
 				this = true
@@ -348,7 +348,7 @@ end
 temp()
 
 function temp()
-	var1.麦 = {
+	var1_0.麦 = {
 		当 = {
 			劳 = {
 				麦 = {
@@ -411,7 +411,7 @@ end
 temp()
 
 function temp()
-	var1.卖 = {
+	var1_0.卖 = {
 		["."] = {
 			国 = {
 				this = true

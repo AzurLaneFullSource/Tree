@@ -1,51 +1,51 @@
-﻿local var0 = class("FoodCard")
+﻿local var0_0 = class("FoodCard")
 
-function var0.Ctor(arg0, arg1)
-	arg0._go = arg1
-	arg0._tf = tf(arg1)
-	arg0.mask = arg0._tf:Find("mask")
-	arg0.count = arg0._tf:Find("icon_bg/count"):GetComponent(typeof(Text))
-	arg0.nameTxt = arg0._tf:Find("Text"):GetComponent(typeof(Text))
-	arg0.addTF = arg0._tf:Find("add")
-	arg0.icon = arg0._tf:Find("icon_bg/icon")
-	arg0.startPos = arg0._tf.anchoredPosition
-	arg0.width = arg0._tf.sizeDelta.x
-	arg0.space = 36
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1._go = arg1_1
+	arg0_1._tf = tf(arg1_1)
+	arg0_1.mask = arg0_1._tf:Find("mask")
+	arg0_1.count = arg0_1._tf:Find("icon_bg/count"):GetComponent(typeof(Text))
+	arg0_1.nameTxt = arg0_1._tf:Find("Text"):GetComponent(typeof(Text))
+	arg0_1.addTF = arg0_1._tf:Find("add")
+	arg0_1.icon = arg0_1._tf:Find("icon_bg/icon")
+	arg0_1.startPos = arg0_1._tf.anchoredPosition
+	arg0_1.width = arg0_1._tf.sizeDelta.x
+	arg0_1.space = 36
 end
 
-function var0.UpdatePositin(arg0, arg1)
-	local var0 = arg0.startPos.x + arg1 * (arg0.width + arg0.space)
+function var0_0.UpdatePositin(arg0_2, arg1_2)
+	local var0_2 = arg0_2.startPos.x + arg1_2 * (arg0_2.width + arg0_2.space)
 
-	arg0._tf.anchoredPosition3D = Vector3(var0, arg0.startPos.y, 0)
+	arg0_2._tf.anchoredPosition3D = Vector3(var0_2, arg0_2.startPos.y, 0)
 end
 
-function var0.Update(arg0, arg1, arg2)
-	arg0.foodId = arg1
-	arg0.name = i18n("word_food") .. Item.getConfigData(arg1).usage_arg[1]
+function var0_0.Update(arg0_3, arg1_3, arg2_3)
+	arg0_3.foodId = arg1_3
+	arg0_3.name = i18n("word_food") .. Item.getConfigData(arg1_3).usage_arg[1]
 
-	arg0:UpdateCnt(arg2)
+	arg0_3:UpdateCnt(arg2_3)
 
-	arg0._go.name = "food_" .. arg1
+	arg0_3._go.name = "food_" .. arg1_3
 
-	updateItem(arg0._tf, Item.New({
-		id = arg1,
-		cnt = arg2
+	updateItem(arg0_3._tf, Item.New({
+		id = arg1_3,
+		cnt = arg2_3
 	}))
 end
 
-function var0.UpdateCnt(arg0, arg1)
-	arg0.count.text = arg1
+function var0_0.UpdateCnt(arg0_4, arg1_4)
+	arg0_4.count.text = arg1_4
 
-	local var0 = arg1 == 0
+	local var0_4 = arg1_4 == 0
 
-	setActive(arg0.mask, var0)
+	setActive(arg0_4.mask, var0_4)
 
-	arg0.count.text = arg1
-	arg0.nameTxt.text = arg0.name
+	arg0_4.count.text = arg1_4
+	arg0_4.nameTxt.text = arg0_4.name
 end
 
-function var0.Dispose(arg0)
+function var0_0.Dispose(arg0_5)
 	return
 end
 
-return var0
+return var0_0

@@ -1,36 +1,36 @@
-﻿local var0 = class("SaratogaWFSkinPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var0_0 = class("SaratogaWFSkinPage", import(".TemplatePage.PtTemplatePage"))
 
-function var0.OnFirstFlush(arg0)
-	onButton(arg0, arg0.displayBtn, function()
-		arg0:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
-			type = arg0.ptData.type,
-			dropList = arg0.ptData.dropList,
-			targets = arg0.ptData.targets,
-			level = arg0.ptData.level,
-			count = arg0.ptData.count,
-			resId = arg0.ptData.resId
+function var0_0.OnFirstFlush(arg0_1)
+	onButton(arg0_1, arg0_1.displayBtn, function()
+		arg0_1:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
+			type = arg0_1.ptData.type,
+			dropList = arg0_1.ptData.dropList,
+			targets = arg0_1.ptData.targets,
+			level = arg0_1.ptData.level,
+			count = arg0_1.ptData.count,
+			resId = arg0_1.ptData.resId
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.battleBtn, function()
-		arg0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+	onButton(arg0_1, arg0_1.battleBtn, function()
+		arg0_1:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.getBtn, function()
-		local var0, var1 = arg0.ptData:GetResProgress()
+	onButton(arg0_1, arg0_1.getBtn, function()
+		local var0_4, var1_4 = arg0_1.ptData:GetResProgress()
 
-		arg0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+		arg0_1:emit(ActivityMediator.EVENT_PT_OPERATION, {
 			cmd = 1,
-			activity_id = arg0.ptData:GetId(),
-			arg1 = var1
+			activity_id = arg0_1.ptData:GetId(),
+			arg1 = var1_4
 		})
 	end, SFX_PANEL)
 end
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
+function var0_0.OnUpdateFlush(arg0_5)
+	var0_0.super.OnUpdateFlush(arg0_5)
 
-	local var0, var1, var2 = arg0.ptData:GetResProgress()
+	local var0_5, var1_5, var2_5 = arg0_5.ptData:GetResProgress()
 
-	setText(arg0.progress, setColorStr(var0, "#F294B8FF") .. "/" .. var1)
+	setText(arg0_5.progress, setColorStr(var0_5, "#F294B8FF") .. "/" .. var1_5)
 end
 
-return var0
+return var0_0

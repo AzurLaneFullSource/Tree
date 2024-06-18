@@ -1,6 +1,6 @@
-﻿local var0 = class("EducateGuideSequence")
+﻿local var0_0 = class("EducateGuideSequence")
 
-var0.config = {
+var0_0.config = {
 	EducateScene = {
 		{
 			ignorePlayer = true,
@@ -28,9 +28,9 @@ var0.config = {
 		{
 			id = "tb_4",
 			condition = function()
-				local var0 = getProxy(EducateProxy):GetCurTime()
+				local var0_6 = getProxy(EducateProxy):GetCurTime()
 
-				return pg.NewStoryMgr.GetInstance():IsPlayed("tb_3") and var0.month == 2 and var0.week == 4
+				return pg.NewStoryMgr.GetInstance():IsPlayed("tb_3") and var0_6.month == 2 and var0_6.week == 4
 			end,
 			args = function()
 				return {}
@@ -48,9 +48,9 @@ var0.config = {
 		{
 			id = "tb_18",
 			condition = function()
-				local var0 = getProxy(EducateProxy):GetCurTime()
+				local var0_10 = getProxy(EducateProxy):GetCurTime()
 
-				return var0.month == 3 and var0.week == 2
+				return var0_10.month == 3 and var0_10.week == 2
 			end,
 			args = function()
 				return {}
@@ -62,9 +62,9 @@ var0.config = {
 		{
 			id = "tb_19",
 			condition = function()
-				local var0 = getProxy(EducateProxy):GetCurTime()
+				local var0_13 = getProxy(EducateProxy):GetCurTime()
 
-				return pg.NewStoryMgr.GetInstance():IsPlayed("tb_18") and var0.month == 3 and var0.week == 2
+				return pg.NewStoryMgr.GetInstance():IsPlayed("tb_18") and var0_13.month == 3 and var0_13.week == 2
 			end,
 			args = function()
 				return {}
@@ -107,9 +107,9 @@ var0.config = {
 		{
 			id = "tb_10",
 			condition = function()
-				local var0 = getProxy(EducateProxy):GetCurTime()
+				local var0_21 = getProxy(EducateProxy):GetCurTime()
 
-				return var0.month == 3 and var0.week == 4 and #getProxy(EducateProxy):GetBuffList() > 0
+				return var0_21.month == 3 and var0_21.week == 4 and #getProxy(EducateProxy):GetBuffList() > 0
 			end,
 			args = function()
 				return {}
@@ -118,12 +118,12 @@ var0.config = {
 		{
 			id = "tb_9_2",
 			condition = function()
-				local var0 = getProxy(EducateProxy):GetTaskProxy()
-				local var1 = var0:GetTargetId()
-				local var2 = var0:GetTargetSetDays()
-				local var3 = getProxy(EducateProxy):GetCurTime()
+				local var0_23 = getProxy(EducateProxy):GetTaskProxy()
+				local var1_23 = var0_23:GetTargetId()
+				local var2_23 = var0_23:GetTargetSetDays()
+				local var3_23 = getProxy(EducateProxy):GetCurTime()
 
-				return EducateHelper.IsSameDay(var3, var2[2]) and pg.child_target_set[var1].stage == 2
+				return EducateHelper.IsSameDay(var3_23, var2_23[2]) and pg.child_target_set[var1_23].stage == 2
 			end,
 			args = function()
 				return {}
@@ -133,10 +133,10 @@ var0.config = {
 			id = "tb_11",
 			ignorePlayer = true,
 			condition = function()
-				local var0 = getProxy(EducateProxy):GetCurTime()
-				local var1 = getProxy(EducateProxy):GetCharData()
+				local var0_25 = getProxy(EducateProxy):GetCurTime()
+				local var1_25 = getProxy(EducateProxy):GetCharData()
 
-				return var0.month == 4 and var0.week == 1 and var1.site == var1:GetSiteCnt()
+				return var0_25.month == 4 and var0_25.week == 1 and var1_25.site == var1_25:GetSiteCnt()
 			end,
 			args = function()
 				return {}
@@ -145,9 +145,9 @@ var0.config = {
 		{
 			id = "tb_13",
 			condition = function()
-				local var0 = getProxy(EducateProxy):GetCurTime()
+				local var0_27 = getProxy(EducateProxy):GetCurTime()
 
-				return var0.month == 4 and var0.week == 3
+				return var0_27.month == 4 and var0_27.week == 3
 			end,
 			args = function()
 				return {}
@@ -156,9 +156,9 @@ var0.config = {
 		{
 			id = "tb_14",
 			condition = function()
-				local var0 = getProxy(EducateProxy):GetCurTime()
+				local var0_29 = getProxy(EducateProxy):GetCurTime()
 
-				return var0.month == 4 and var0.week == 4
+				return var0_29.month == 4 and var0_29.week == 4
 			end,
 			args = function()
 				return {}
@@ -167,12 +167,12 @@ var0.config = {
 		{
 			id = "tb_21",
 			condition = function()
-				local var0 = getProxy(EducateProxy):GetTaskProxy()
-				local var1 = var0:GetTargetId()
-				local var2 = var0:GetTargetSetDays()
-				local var3 = getProxy(EducateProxy):GetCurTime()
+				local var0_31 = getProxy(EducateProxy):GetTaskProxy()
+				local var1_31 = var0_31:GetTargetId()
+				local var2_31 = var0_31:GetTargetSetDays()
+				local var3_31 = getProxy(EducateProxy):GetCurTime()
 
-				return EducateHelper.IsSameDay(var3, var2[3]) and pg.child_target_set[var1].stage == 3
+				return EducateHelper.IsSameDay(var3_31, var2_31[3]) and pg.child_target_set[var1_31].stage == 3
 			end,
 			args = function()
 				return {}
@@ -181,9 +181,9 @@ var0.config = {
 		{
 			id = "tb_9",
 			condition = function()
-				local var0 = getProxy(EducateProxy):GetCurTime()
+				local var0_33 = getProxy(EducateProxy):GetCurTime()
 
-				return var0.month == 6 and var0.week == 1
+				return var0_33.month == 6 and var0_33.week == 1
 			end,
 			args = function()
 				return {}
@@ -192,12 +192,12 @@ var0.config = {
 		{
 			id = "tb_22",
 			condition = function()
-				local var0 = getProxy(EducateProxy):GetTaskProxy()
-				local var1 = var0:GetTargetId()
-				local var2 = var0:GetTargetSetDays()
-				local var3 = getProxy(EducateProxy):GetCurTime()
+				local var0_35 = getProxy(EducateProxy):GetTaskProxy()
+				local var1_35 = var0_35:GetTargetId()
+				local var2_35 = var0_35:GetTargetSetDays()
+				local var3_35 = getProxy(EducateProxy):GetCurTime()
 
-				return EducateHelper.IsSameDay(var3, var2[4]) and pg.child_target_set[var1].stage == 4
+				return EducateHelper.IsSameDay(var3_35, var2_35[4]) and pg.child_target_set[var1_35].stage == 4
 			end,
 			args = function()
 				return {}
@@ -206,9 +206,9 @@ var0.config = {
 		{
 			id = "tb_16",
 			condition = function()
-				local var0 = getProxy(EducateProxy):GetCurTime()
+				local var0_37 = getProxy(EducateProxy):GetCurTime()
 
-				return var0.month == 14 and var0.week == 4
+				return var0_37.month == 14 and var0_37.week == 4
 			end,
 			args = function()
 				return {}
@@ -249,65 +249,65 @@ var0.config = {
 	}
 }
 
-function var0.CheckGuide(arg0, arg1)
+function var0_0.CheckGuide(arg0_45, arg1_45)
 	if not getProxy(EducateProxy):IsFirstGame() then
-		arg1()
+		arg1_45()
 
 		return
 	end
 
-	local var0 = var0.config[arg0] or {}
-	local var1 = underscore.detect(var0, function(arg0)
-		local var0 = arg0.id
-		local var1 = arg0.condition
+	local var0_45 = var0_0.config[arg0_45] or {}
+	local var1_45 = underscore.detect(var0_45, function(arg0_46)
+		local var0_46 = arg0_46.id
+		local var1_46 = arg0_46.condition
 
-		return (arg0.ignorePlayer or not pg.NewStoryMgr.GetInstance():IsPlayed(var0)) and var1()
+		return (arg0_46.ignorePlayer or not pg.NewStoryMgr.GetInstance():IsPlayed(var0_46)) and var1_46()
 	end)
 
-	if not var1 then
-		arg1()
+	if not var1_45 then
+		arg1_45()
 
 		return
 	end
 
-	local var2 = var1.id
-	local var3 = var1.args()
+	local var2_45 = var1_45.id
+	local var3_45 = var1_45.args()
 
 	if pg.SeriesGuideMgr.GetInstance():isRunning() then
-		arg1()
+		arg1_45()
 
 		return
 	end
 
 	if not pg.NewGuideMgr.GetInstance():CanPlay() then
-		arg1()
+		arg1_45()
 
 		return
 	end
 
 	pg.m02:sendNotification(GAME.STORY_UPDATE, {
-		storyId = var2
+		storyId = var2_45
 	})
-	pg.NewGuideMgr.GetInstance():Play(var2, var3, function()
-		if var1.nextOne then
-			local var0, var1 = var1.nextOne()
+	pg.NewGuideMgr.GetInstance():Play(var2_45, var3_45, function()
+		if var1_45.nextOne then
+			local var0_47, var1_47 = var1_45.nextOne()
 
-			var0.PlayNextOne(var0, var1)
+			var0_0.PlayNextOne(var0_47, var1_47)
 		end
-	end, arg1)
+	end, arg1_45)
 end
 
-function var0.PlayNextOne(arg0, arg1)
-	if not arg0 then
+function var0_0.PlayNextOne(arg0_48, arg1_48)
+	if not arg0_48 then
 		return
 	end
 
-	pg.NewGuideMgr.GetInstance():Play(arg0, arg1, function()
+	pg.NewGuideMgr.GetInstance():Play(arg0_48, arg1_48, function()
 		return
 	end)
 	pg.m02:sendNotification(GAME.STORY_UPDATE, {
-		storyId = arg0
+		storyId = arg0_48
 	})
 end
 
-return var0
+return var0_0

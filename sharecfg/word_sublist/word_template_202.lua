@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_202 = {}
+var0_0.word_template_202 = {}
 
-local var1 = var0.word_template_202
+local var1_0 = var0_0.word_template_202
 
 function temp()
-	var1.漫 = {
+	var1_0.漫 = {
 		步 = {
 			丝 = {
 				足 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.猫 = {
+	var1_0.猫 = {
 		女 = {
 			凤 = {
 				舞 = {
@@ -63,7 +63,7 @@ end
 temp()
 
 function temp()
-	var1.茅 = {
+	var1_0.茅 = {
 		台 = {
 			酒 = {
 				回 = {
@@ -79,7 +79,7 @@ end
 temp()
 
 function temp()
-	var1.冒 = {
+	var1_0.冒 = {
 		毛 = {
 			湾 = {
 				this = true
@@ -91,7 +91,7 @@ end
 temp()
 
 function temp()
-	var1.没 = {
+	var1_0.没 = {
 		到 = {
 			火 = {
 				场 = {
@@ -340,7 +340,7 @@ end
 temp()
 
 function temp()
-	var1.玫 = {
+	var1_0.玫 = {
 		瑰 = {
 			粉 = {
 				推 = {
@@ -354,7 +354,7 @@ end
 temp()
 
 function temp()
-	var1.梅 = {
+	var1_0.梅 = {
 		德 = {
 			韦 = {
 				杰 = {

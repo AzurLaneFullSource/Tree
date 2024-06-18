@@ -1,100 +1,100 @@
-﻿local var0 = class("BaseActivityPage", import(".BaseSubView"))
+﻿local var0_0 = class("BaseActivityPage", import(".BaseSubView"))
 
-function var0.SetShareData(arg0, arg1)
-	arg0.shareData = arg1
+function var0_0.SetShareData(arg0_1, arg1_1)
+	arg0_1.shareData = arg1_1
 end
 
-function var0.SetUIName(arg0, arg1)
-	arg0._uiName = arg1
+function var0_0.SetUIName(arg0_2, arg1_2)
+	arg0_2._uiName = arg1_2
 end
 
-function var0.getUIName(arg0)
-	return arg0._uiName
+function var0_0.getUIName(arg0_3)
+	return arg0_3._uiName
 end
 
-function var0.Flush(arg0, arg1)
-	arg0.activity = arg1
+function var0_0.Flush(arg0_4, arg1_4)
+	arg0_4.activity = arg1_4
 
-	if arg0:OnDataSetting() then
+	if arg0_4:OnDataSetting() then
 		return
 	end
 
-	if defaultValue(arg0.isFirst, true) then
-		arg0.isFirst = false
+	if defaultValue(arg0_4.isFirst, true) then
+		arg0_4.isFirst = false
 
-		arg0:BindPageLink()
-		arg0:OnFirstFlush()
+		arg0_4:BindPageLink()
+		arg0_4:OnFirstFlush()
 	end
 
-	arg0:OnUpdateFlush()
+	arg0_4:OnUpdateFlush()
 end
 
-function var0.ShowOrHide(arg0, arg1)
-	SetActive(arg0._go, arg1)
+function var0_0.ShowOrHide(arg0_5, arg1_5)
+	SetActive(arg0_5._go, arg1_5)
 
-	if arg1 then
-		local var0 = {}
+	if arg1_5 then
+		local var0_5 = {}
 
-		arg0:emit(ActivityMainScene.GET_PAGE_BGM, arg0.__cname, var0)
+		arg0_5:emit(ActivityMainScene.GET_PAGE_BGM, arg0_5.__cname, var0_5)
 
-		if var0.bgm then
-			pg.BgmMgr.GetInstance():Push(ActivityMainScene.__cname, var0.bgm)
+		if var0_5.bgm then
+			pg.BgmMgr.GetInstance():Push(ActivityMainScene.__cname, var0_5.bgm)
 		end
 
-		arg0:OnShowFlush()
+		arg0_5:OnShowFlush()
 	else
-		arg0:OnHideFlush()
+		arg0_5:OnHideFlush()
 	end
 end
 
-function var0.BindPageLink(arg0)
-	for iter0, iter1 in ipairs(arg0:GetPageLink()) do
-		ActivityConst.PageIdLink[iter1] = arg0.activity.id
+function var0_0.BindPageLink(arg0_6)
+	for iter0_6, iter1_6 in ipairs(arg0_6:GetPageLink()) do
+		ActivityConst.PageIdLink[iter1_6] = arg0_6.activity.id
 	end
 end
 
-function var0.OnInit(arg0)
+function var0_0.OnInit(arg0_7)
 	return
 end
 
-function var0.OnDataSetting(arg0)
+function var0_0.OnDataSetting(arg0_8)
 	return
 end
 
-function var0.GetPageLink(arg0)
+function var0_0.GetPageLink(arg0_9)
 	return {}
 end
 
-function var0.OnFirstFlush(arg0)
+function var0_0.OnFirstFlush(arg0_10)
 	return
 end
 
-function var0.OnUpdateFlush(arg0)
+function var0_0.OnUpdateFlush(arg0_11)
 	return
 end
 
-function var0.OnHideFlush(arg0)
+function var0_0.OnHideFlush(arg0_12)
 	return
 end
 
-function var0.OnShowFlush(arg0)
+function var0_0.OnShowFlush(arg0_13)
 	return
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_14)
 	return
 end
 
-function var0.OnLoadLayers(arg0)
+function var0_0.OnLoadLayers(arg0_15)
 	return
 end
 
-function var0.OnRemoveLayers(arg0)
+function var0_0.OnRemoveLayers(arg0_16)
 	return
 end
 
-function var0.UseSecondPage(arg0, arg1)
+function var0_0.UseSecondPage(arg0_17, arg1_17)
 	return false
 end
 
-return var0
+return var0_0

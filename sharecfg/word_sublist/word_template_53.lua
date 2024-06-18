@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_53 = {}
+var0_0.word_template_53 = {}
 
-local var1 = var0.word_template_53
+local var1_0 = var0_0.word_template_53
 
 function temp()
-	var1.冰 = {
+	var1_0.冰 = {
 		["."] = {
 			麻 = {
 				this = true
@@ -222,7 +222,7 @@ end
 temp()
 
 function temp()
-	var1.丙 = {
+	var1_0.丙 = {
 		吡 = {
 			兰 = {
 				this = true
@@ -244,7 +244,7 @@ end
 temp()
 
 function temp()
-	var1.病 = {
+	var1_0.病 = {
 		不 = {
 			起 = {
 				药 = {
@@ -271,7 +271,7 @@ end
 temp()
 
 function temp()
-	var1.拨 = {
+	var1_0.拨 = {
 		开 = {
 			她 = {
 				的 = {
@@ -304,7 +304,7 @@ end
 temp()
 
 function temp()
-	var1.波 = {
+	var1_0.波 = {
 		霸 = {
 			this = true,
 			乳 = {
@@ -415,7 +415,7 @@ end
 temp()
 
 function temp()
-	var1.玻 = {
+	var1_0.玻 = {
 		璃 = {
 			壶 = {
 				从 = {
@@ -449,7 +449,7 @@ end
 temp()
 
 function temp()
-	var1.伯 = {
+	var1_0.伯 = {
 		莱 = {
 			塔 = {
 				销 = {

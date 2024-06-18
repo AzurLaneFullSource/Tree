@@ -1,21 +1,21 @@
-﻿local var0 = class("MainEducateCharIcon", import(".MainBaseIcon"))
+﻿local var0_0 = class("MainEducateCharIcon", import(".MainBaseIcon"))
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0.iconTr = arg1:Find("icon")
-	arg0.iconImg = arg0.iconTr:GetComponent(typeof(Image))
+	arg0_1.iconTr = arg1_1:Find("icon")
+	arg0_1.iconImg = arg0_1.iconTr:GetComponent(typeof(Image))
 end
 
-function var0.Load(arg0, arg1)
-	setActive(arg0.iconTr, true)
-	GetImageSpriteFromAtlasAsync("SquareIcon/" .. arg1, "", arg0.iconTr, true)
+function var0_0.Load(arg0_2, arg1_2)
+	setActive(arg0_2.iconTr, true)
+	GetImageSpriteFromAtlasAsync("SquareIcon/" .. arg1_2, "", arg0_2.iconTr, true)
 end
 
-function var0.Unload(arg0)
-	setActive(arg0.iconTr, false)
+function var0_0.Unload(arg0_3)
+	setActive(arg0_3.iconTr, false)
 
-	arg0.iconImg.sprite = nil
+	arg0_3.iconImg.sprite = nil
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_293 = {}
+var0_0.word_template_293 = {}
 
-local var1 = var0.word_template_293
+local var1_0 = var0_0.word_template_293
 
 function temp()
-	var1.閿 = {
+	var1_0.閿 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.稳 = {
+	var1_0.稳 = {
 		健 = {
 			赢 = {
 				利 = {
@@ -92,7 +92,7 @@ end
 temp()
 
 function temp()
-	var1.问 = {
+	var1_0.问 = {
 		题 = {
 			出 = {
 				在 = {
@@ -117,7 +117,7 @@ end
 temp()
 
 function temp()
-	var1.汶 = {
+	var1_0.汶 = {
 		川 = {
 			腾 = {
 				空 = {
@@ -152,7 +152,7 @@ end
 temp()
 
 function temp()
-	var1.瓮 = {
+	var1_0.瓮 = {
 		安 = {
 			事 = {
 				变 = {
@@ -166,7 +166,7 @@ end
 temp()
 
 function temp()
-	var1.窝 = {
+	var1_0.窝 = {
 		窝 = {
 			客 = {
 				this = true
@@ -178,7 +178,7 @@ end
 temp()
 
 function temp()
-	var1.窩 = {
+	var1_0.窩 = {
 		窩 = {
 			客 = {
 				this = true

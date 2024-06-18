@@ -1,7 +1,7 @@
-﻿local var0 = class("ShipExpMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("ShipExpMediator", import("..base.ContextMediator"))
 
-function var0.register(arg0)
-	arg0.contextData.type = arg0.contextData.type or ShipExpLayer.TypeDefault
+function var0_0.register(arg0_1)
+	arg0_1.contextData.type = arg0_1.contextData.type or ShipExpLayer.TypeDefault
 end
 
-return var0
+return var0_0

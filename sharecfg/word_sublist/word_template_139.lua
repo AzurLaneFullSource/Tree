@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_139 = {}
+var0_0.word_template_139 = {}
 
-local var1 = var0.word_template_139
+local var1_0 = var0_0.word_template_139
 
 function temp()
-	var1.積 = {
+	var1_0.積 = {
 		克 = {
 			館 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.擊 = {
+	var1_0.擊 = {
 		倒 = {
 			圖 = {
 				騰 = {
@@ -42,7 +42,7 @@ end
 temp()
 
 function temp()
-	var1.雞 = {
+	var1_0.雞 = {
 		８ = {
 			this = true
 		},
@@ -87,7 +87,7 @@ end
 temp()
 
 function temp()
-	var1.鶏 = {
+	var1_0.鶏 = {
 		["8"] = {
 			this = true
 		},
@@ -127,7 +127,7 @@ end
 temp()
 
 function temp()
-	var1.鷄 = {
+	var1_0.鷄 = {
 		巴 = {
 			this = true
 		}
@@ -137,7 +137,7 @@ end
 temp()
 
 function temp()
-	var1.及 = {
+	var1_0.及 = {
 		川 = {
 			奈 = {
 				央 = {
@@ -151,7 +151,7 @@ end
 temp()
 
 function temp()
-	var1.吉 = {
+	var1_0.吉 = {
 		跋 = {
 			猫 = {
 				this = true

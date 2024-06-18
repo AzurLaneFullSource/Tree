@@ -1,16 +1,16 @@
-﻿local var0 = print
+﻿local var0_0 = print
 
 function originalPrint(...)
 	if IsUnityEditor then
-		var0(debug.traceback(printEx(...), 2))
+		var0_0(debug.traceback(printEx(...), 2))
 	else
-		var0(printEx(...))
+		var0_0(printEx(...))
 	end
 end
 
 if IsUnityEditor then
 	function print(...)
-		var0(debug.traceback(printEx(...), 2))
+		var0_0(debug.traceback(printEx(...), 2))
 	end
 else
 	function print()
@@ -18,73 +18,73 @@ else
 	end
 end
 
-local var1 = setmetatable({}, {
+local var1_0 = setmetatable({}, {
 	__mode = "kv"
 })
-local var2 = getmetatable(GameObject)
-local var3 = var2.__index
+local var2_0 = getmetatable(GameObject)
+local var3_0 = var2_0.__index
 
-function var2.__index(arg0, arg1)
-	if arg1 == "transform" then
-		local var0 = var1[arg0]
+function var2_0.__index(arg0_4, arg1_4)
+	if arg1_4 == "transform" then
+		local var0_4 = var1_0[arg0_4]
 
-		if var0 then
-			return var0
+		if var0_4 then
+			return var0_4
 		end
 
-		local var1 = var3(arg0, arg1)
+		local var1_4 = var3_0(arg0_4, arg1_4)
 
-		var1[arg0] = var1
+		var1_0[arg0_4] = var1_4
 
-		return var1
-	elseif arg1 == "gameObject" then
-		return arg0
+		return var1_4
+	elseif arg1_4 == "gameObject" then
+		return arg0_4
 	else
-		return var3(arg0, arg1)
+		return var3_0(arg0_4, arg1_4)
 	end
 end
 
-local var4 = setmetatable({}, {
+local var4_0 = setmetatable({}, {
 	__mode = "kv"
 })
-local var5 = getmetatable(Transform)
-local var6 = var5.__index
+local var5_0 = getmetatable(Transform)
+local var6_0 = var5_0.__index
 
-function var5.__index(arg0, arg1)
-	if arg1 == "gameObject" then
-		local var0 = var4[arg0]
+function var5_0.__index(arg0_5, arg1_5)
+	if arg1_5 == "gameObject" then
+		local var0_5 = var4_0[arg0_5]
 
-		if var0 then
-			return var0
+		if var0_5 then
+			return var0_5
 		end
 
-		local var1 = var6(arg0, arg1)
+		local var1_5 = var6_0(arg0_5, arg1_5)
 
-		var4[arg0] = var1
+		var4_0[arg0_5] = var1_5
 
-		return var1
-	elseif arg1 == "transform" then
-		return arg0
+		return var1_5
+	elseif arg1_5 == "transform" then
+		return arg0_5
 	else
-		return var6(arg0, arg1)
+		return var6_0(arg0_5, arg1_5)
 	end
 end
 
-function gcAll(arg0)
+function gcAll(arg0_6)
 	PoolMgr.GetInstance():ExcessPainting()
 	ResourceMgr.Inst:unloadUnusedAssetBundles()
-	GCThread.GetInstance():GC(arg0)
+	GCThread.GetInstance():GC(arg0_6)
 end
 
-function RemoveTableItem(arg0, arg1, arg2)
-	local var0 = 0
+function RemoveTableItem(arg0_7, arg1_7, arg2_7)
+	local var0_7 = 0
 
-	for iter0 = 1, #arg0 do
-		if arg0[iter0 - var0] == arg1 then
-			table.remove(arg0, iter0 - var0)
+	for iter0_7 = 1, #arg0_7 do
+		if arg0_7[iter0_7 - var0_7] == arg1_7 then
+			table.remove(arg0_7, iter0_7 - var0_7)
 
-			if arg2 then
-				var0 = var0 + 1
+			if arg2_7 then
+				var0_7 = var0_7 + 1
 			else
 				break
 			end
@@ -92,104 +92,104 @@ function RemoveTableItem(arg0, arg1, arg2)
 	end
 end
 
-function IsNil(arg0)
-	return arg0 == nil or arg0:Equals(nil)
+function IsNil(arg0_8)
+	return arg0_8 == nil or arg0_8:Equals(nil)
 end
 
-function isnan(arg0)
-	return arg0 ~= arg0
+function isnan(arg0_9)
+	return arg0_9 ~= arg0_9
 end
 
-function GetDir(arg0)
-	return string.match(arg0, ".*/")
+function GetDir(arg0_10)
+	return string.match(arg0_10, ".*/")
 end
 
-function GetFileName(arg0)
-	return string.match(arg0, ".*/(.*)")
+function GetFileName(arg0_11)
+	return string.match(arg0_11, ".*/(.*)")
 end
 
-function DumpTable(arg0)
-	for iter0, iter1 in pairs(arg0) do
-		if iter1 ~= nil then
-			Debugger.Log("Key: {0}, Value: {1}", tostring(iter0), tostring(iter1))
+function DumpTable(arg0_12)
+	for iter0_12, iter1_12 in pairs(arg0_12) do
+		if iter1_12 ~= nil then
+			Debugger.Log("Key: {0}, Value: {1}", tostring(iter0_12), tostring(iter1_12))
 		else
-			Debugger.Log("Key: {0}, Value nil", tostring(iter0))
+			Debugger.Log("Key: {0}, Value nil", tostring(iter0_12))
 		end
 	end
 end
 
-function PrintTable(arg0)
-	local var0 = {}
+function PrintTable(arg0_13)
+	local var0_13 = {}
 
-	local function var1(arg0, arg1, arg2)
-		for iter0, iter1 in pairs(arg0) do
-			if type(iter1) == "table" then
-				table.insert(arg1, arg2 .. tostring(iter0) .. ":\n")
-				var1(iter1, arg1, arg2 .. " ")
+	local function var1_13(arg0_14, arg1_14, arg2_14)
+		for iter0_14, iter1_14 in pairs(arg0_14) do
+			if type(iter1_14) == "table" then
+				table.insert(arg1_14, arg2_14 .. tostring(iter0_14) .. ":\n")
+				var1_13(iter1_14, arg1_14, arg2_14 .. " ")
 			else
-				table.insert(arg1, arg2 .. tostring(iter0) .. ": " .. tostring(iter1) .. "\n")
+				table.insert(arg1_14, arg2_14 .. tostring(iter0_14) .. ": " .. tostring(iter1_14) .. "\n")
 			end
 		end
 	end
 
-	var1(arg0, var0, "")
+	var1_13(arg0_13, var0_13, "")
 
-	return table.concat(var0, "")
+	return table.concat(var0_13, "")
 end
 
-function PrintLua(arg0, arg1)
-	local var0
+function PrintLua(arg0_15, arg1_15)
+	local var0_15
 
-	arg1 = arg1 or _G
+	arg1_15 = arg1_15 or _G
 
-	for iter0 in string.gmatch(arg0, "%w+") do
-		arg1 = arg1[iter0]
+	for iter0_15 in string.gmatch(arg0_15, "%w+") do
+		arg1_15 = arg1_15[iter0_15]
 	end
 
-	local var1 = arg1
+	local var1_15 = arg1_15
 
-	if var1 == nil then
-		Debugger.Log("Lua Module {0} not exists", arg0)
+	if var1_15 == nil then
+		Debugger.Log("Lua Module {0} not exists", arg0_15)
 
 		return
 	end
 
-	Debugger.Log("-----------------Dump Table {0}-----------------", arg0)
+	Debugger.Log("-----------------Dump Table {0}-----------------", arg0_15)
 
-	if type(var1) == "table" then
-		for iter1, iter2 in pairs(var1) do
-			Debugger.Log("Key: {0}, Value: {1}", iter1, tostring(iter2))
+	if type(var1_15) == "table" then
+		for iter1_15, iter2_15 in pairs(var1_15) do
+			Debugger.Log("Key: {0}, Value: {1}", iter1_15, tostring(iter2_15))
 		end
 	end
 
-	local var2 = getmetatable(var1)
+	local var2_15 = getmetatable(var1_15)
 
-	Debugger.Log("-----------------Dump meta {0}-----------------", arg0)
+	Debugger.Log("-----------------Dump meta {0}-----------------", arg0_15)
 
-	while var2 ~= nil and var2 ~= var1 do
-		for iter3, iter4 in pairs(var2) do
-			if iter3 ~= nil then
-				Debugger.Log("Key: {0}, Value: {1}", tostring(iter3), tostring(iter4))
+	while var2_15 ~= nil and var2_15 ~= var1_15 do
+		for iter3_15, iter4_15 in pairs(var2_15) do
+			if iter3_15 ~= nil then
+				Debugger.Log("Key: {0}, Value: {1}", tostring(iter3_15), tostring(iter4_15))
 			end
 		end
 
-		var2 = getmetatable(var2)
+		var2_15 = getmetatable(var2_15)
 	end
 
 	Debugger.Log("-----------------Dump meta Over-----------------")
 	Debugger.Log("-----------------Dump Table Over-----------------")
 end
 
-function IsString(arg0)
-	return type(arg0) == "string"
+function IsString(arg0_16)
+	return type(arg0_16) == "string"
 end
 
-function IsNumber(arg0)
-	return type(arg0) == "number"
+function IsNumber(arg0_17)
+	return type(arg0_17) == "number"
 end
 
-function tobool(arg0)
-	return arg0 and true or false
+function tobool(arg0_18)
+	return arg0_18 and true or false
 end
 
 function warning(...)
@@ -208,161 +208,161 @@ function errorMsg(...)
 	end
 end
 
-function BuildVector3(arg0)
-	return Vector3(arg0[1], arg0[2], arg0[3])
+function BuildVector3(arg0_21)
+	return Vector3(arg0_21[1], arg0_21[2], arg0_21[3])
 end
 
-function ShowFuncInfo(arg0)
-	local var0 = debug.getinfo(arg0)
+function ShowFuncInfo(arg0_22)
+	local var0_22 = debug.getinfo(arg0_22)
 
-	return string.format("file:%s#%d", var0.source, var0.linedefined)
+	return string.format("file:%s#%d", var0_22.source, var0_22.linedefined)
 end
 
-function String2Table(arg0)
-	local var0 = {}
+function String2Table(arg0_23)
+	local var0_23 = {}
 
-	for iter0 in arg0:gmatch(".") do
-		table.insert(var0, iter0)
+	for iter0_23 in arg0_23:gmatch(".") do
+		table.insert(var0_23, iter0_23)
 	end
 
-	return var0
+	return var0_23
 end
 
-local var7 = require("bit")
+local var7_0 = require("bit")
 
-function unicode_to_utf8(arg0)
-	if type(arg0) ~= "string" then
-		return arg0
+function unicode_to_utf8(arg0_24)
+	if type(arg0_24) ~= "string" then
+		return arg0_24
 	end
 
-	local var0 = ""
-	local var1 = 1
+	local var0_24 = ""
+	local var1_24 = 1
 
 	while true do
-		local var2 = string.byte(arg0, var1)
-		local var3
+		local var2_24 = string.byte(arg0_24, var1_24)
+		local var3_24
 
-		if var2 ~= nil and string.sub(arg0, var1, var1 + 1) == "\\u" then
-			var3 = tonumber("0x" .. string.sub(arg0, var1 + 2, var1 + 5))
-			var1 = var1 + 6
-		elseif var2 ~= nil then
-			var3 = var2
-			var1 = var1 + 1
+		if var2_24 ~= nil and string.sub(arg0_24, var1_24, var1_24 + 1) == "\\u" then
+			var3_24 = tonumber("0x" .. string.sub(arg0_24, var1_24 + 2, var1_24 + 5))
+			var1_24 = var1_24 + 6
+		elseif var2_24 ~= nil then
+			var3_24 = var2_24
+			var1_24 = var1_24 + 1
 		else
 			break
 		end
 
-		if var3 <= 127 then
-			var0 = var0 .. string.char(var7.band(var3, 127))
-		elseif var3 >= 128 and var3 <= 2047 then
-			var0 = var0 .. string.char(var7.bor(192, var7.band(var7.rshift(var3, 6), 31)))
-			var0 = var0 .. string.char(var7.bor(128, var7.band(var3, 63)))
-		elseif var3 >= 2048 and var3 <= 65535 then
-			var0 = var0 .. string.char(var7.bor(224, var7.band(var7.rshift(var3, 12), 15)))
-			var0 = var0 .. string.char(var7.bor(128, var7.band(var7.rshift(var3, 6), 63)))
-			var0 = var0 .. string.char(var7.bor(128, var7.band(var3, 63)))
+		if var3_24 <= 127 then
+			var0_24 = var0_24 .. string.char(var7_0.band(var3_24, 127))
+		elseif var3_24 >= 128 and var3_24 <= 2047 then
+			var0_24 = var0_24 .. string.char(var7_0.bor(192, var7_0.band(var7_0.rshift(var3_24, 6), 31)))
+			var0_24 = var0_24 .. string.char(var7_0.bor(128, var7_0.band(var3_24, 63)))
+		elseif var3_24 >= 2048 and var3_24 <= 65535 then
+			var0_24 = var0_24 .. string.char(var7_0.bor(224, var7_0.band(var7_0.rshift(var3_24, 12), 15)))
+			var0_24 = var0_24 .. string.char(var7_0.bor(128, var7_0.band(var7_0.rshift(var3_24, 6), 63)))
+			var0_24 = var0_24 .. string.char(var7_0.bor(128, var7_0.band(var3_24, 63)))
 		end
 	end
 
-	return var0 .. "\x00"
+	return var0_24 .. "\x00"
 end
 
-function utf8_to_unicode(arg0)
-	if type(arg0) ~= "string" then
-		return arg0
+function utf8_to_unicode(arg0_25)
+	if type(arg0_25) ~= "string" then
+		return arg0_25
 	end
 
-	local var0 = ""
-	local var1 = 1
-	local var2 = string.byte(arg0, var1)
-	local var3 = 0
+	local var0_25 = ""
+	local var1_25 = 1
+	local var2_25 = string.byte(arg0_25, var1_25)
+	local var3_25 = 0
 
-	while var2 ~= nil do
-		local var4
-		local var5
+	while var2_25 ~= nil do
+		local var4_25
+		local var5_25
 
-		if var2 >= 0 and var2 <= 127 then
-			var4 = var2
-			var5 = 0
-		elseif var7.band(var2, 224) == 192 then
-			local var6 = 0
-			local var7 = 0
-			local var8 = var7.band(var2, var7.rshift(255, 3))
+		if var2_25 >= 0 and var2_25 <= 127 then
+			var4_25 = var2_25
+			var5_25 = 0
+		elseif var7_0.band(var2_25, 224) == 192 then
+			local var6_25 = 0
+			local var7_25 = 0
+			local var8_25 = var7_0.band(var2_25, var7_0.rshift(255, 3))
 
-			var1 = var1 + 1
-			var2 = string.byte(arg0, var1)
+			var1_25 = var1_25 + 1
+			var2_25 = string.byte(arg0_25, var1_25)
 
-			local var9 = var7.band(var2, var7.rshift(255, 2))
+			local var9_25 = var7_0.band(var2_25, var7_0.rshift(255, 2))
 
-			var4 = var7.bor(var9, var7.lshift(var7.band(var8, var7.rshift(255, 6)), 6))
-			var5 = var7.rshift(var8, 2)
-		elseif var7.band(var2, 240) == 224 then
-			local var10 = 0
-			local var11 = 0
-			local var12 = 0
-			local var13 = var7.band(var2, var7.rshift(255, 3))
+			var4_25 = var7_0.bor(var9_25, var7_0.lshift(var7_0.band(var8_25, var7_0.rshift(255, 6)), 6))
+			var5_25 = var7_0.rshift(var8_25, 2)
+		elseif var7_0.band(var2_25, 240) == 224 then
+			local var10_25 = 0
+			local var11_25 = 0
+			local var12_25 = 0
+			local var13_25 = var7_0.band(var2_25, var7_0.rshift(255, 3))
 
-			var1 = var1 + 1
-			var2 = string.byte(arg0, var1)
+			var1_25 = var1_25 + 1
+			var2_25 = string.byte(arg0_25, var1_25)
 
-			local var14 = var7.band(var2, var7.rshift(255, 2))
+			local var14_25 = var7_0.band(var2_25, var7_0.rshift(255, 2))
 
-			var1 = var1 + 1
-			var2 = string.byte(arg0, var1)
+			var1_25 = var1_25 + 1
+			var2_25 = string.byte(arg0_25, var1_25)
 
-			local var15 = var7.band(var2, var7.rshift(255, 2))
+			local var15_25 = var7_0.band(var2_25, var7_0.rshift(255, 2))
 
-			var4 = var7.bor(var7.lshift(var7.band(var14, var7.rshift(255, 6)), 6), var15)
-			var5 = var7.bor(var7.lshift(var13, 4), var7.rshift(var14, 2))
+			var4_25 = var7_0.bor(var7_0.lshift(var7_0.band(var14_25, var7_0.rshift(255, 6)), 6), var15_25)
+			var5_25 = var7_0.bor(var7_0.lshift(var13_25, 4), var7_0.rshift(var14_25, 2))
 		end
 
-		var0 = var0 .. string.format("\\u%02x%02x", var5, var4)
+		var0_25 = var0_25 .. string.format("\\u%02x%02x", var5_25, var4_25)
 
-		if var5 == 0 then
-			var3 = var3 + 1
+		if var5_25 == 0 then
+			var3_25 = var3_25 + 1
 		else
-			var3 = var3 + 2
+			var3_25 = var3_25 + 2
 		end
 
-		var1 = var1 + 1
-		var2 = string.byte(arg0, var1)
+		var1_25 = var1_25 + 1
+		var2_25 = string.byte(arg0_25, var1_25)
 	end
 
-	return var0, var3
+	return var0_25, var3_25
 end
 
-function utf8_size(arg0)
-	if not arg0 then
+function utf8_size(arg0_26)
+	if not arg0_26 then
 		return 0
-	elseif arg0 > 240 then
+	elseif arg0_26 > 240 then
 		return 4
-	elseif arg0 > 225 then
+	elseif arg0_26 > 225 then
 		return 3
-	elseif arg0 > 192 then
+	elseif arg0_26 > 192 then
 		return 2
 	else
 		return 1
 	end
 end
 
-function utf8_len(arg0)
-	local var0 = 1
-	local var1 = 0
-	local var2 = #arg0
+function utf8_len(arg0_27)
+	local var0_27 = 1
+	local var1_27 = 0
+	local var2_27 = #arg0_27
 
-	while var0 <= var2 do
-		local var3 = string.byte(arg0, var0)
+	while var0_27 <= var2_27 do
+		local var3_27 = string.byte(arg0_27, var0_27)
 
-		var0 = var0 + utf8_size(var3)
-		var1 = var1 + 1
+		var0_27 = var0_27 + utf8_size(var3_27)
+		var1_27 = var1_27 + 1
 	end
 
-	return var1
+	return var1_27
 end
 
-function existCall(arg0, ...)
-	if arg0 and type(arg0) == "function" then
-		return arg0(...)
+function existCall(arg0_28, ...)
+	if arg0_28 and type(arg0_28) == "function" then
+		return arg0_28(...)
 	end
 end
 
@@ -373,42 +373,42 @@ function packEx(...)
 	}
 end
 
-function unpackEx(arg0)
-	return unpack(arg0, 1, arg0.len)
+function unpackEx(arg0_30)
+	return unpack(arg0_30, 1, arg0_30.len)
 end
 
 function printEx(...)
-	local var0 = packEx(...)
+	local var0_31 = packEx(...)
 
-	for iter0 = 1, var0.len do
-		var0[iter0] = tostring(var0[iter0])
+	for iter0_31 = 1, var0_31.len do
+		var0_31[iter0_31] = tostring(var0_31[iter0_31])
 	end
 
-	return table.concat(var0, " ")
+	return table.concat(var0_31, " ")
 end
 
-function envFunc(arg0, arg1, ...)
-	assert(type(arg0) == "table")
+function envFunc(arg0_32, arg1_32, ...)
+	assert(type(arg0_32) == "table")
 
-	local var0 = getfenv(arg1)
+	local var0_32 = getfenv(arg1_32)
 
-	warning(var0 == _G)
-	setfenv(arg1, setmetatable({}, {
-		__index = function(arg0, arg1)
-			if arg0[arg1] ~= nil then
-				return arg0[arg1]
+	warning(var0_32 == _G)
+	setfenv(arg1_32, setmetatable({}, {
+		__index = function(arg0_33, arg1_33)
+			if arg0_32[arg1_33] ~= nil then
+				return arg0_32[arg1_33]
 			else
-				return var0[arg1]
+				return var0_32[arg1_33]
 			end
 		end,
-		__newindex = function(arg0, arg1, arg2)
-			arg0[arg1] = arg2
+		__newindex = function(arg0_34, arg1_34, arg2_34)
+			arg0_32[arg1_34] = arg2_34
 		end
 	}))
 
-	local var1 = packEx(arg1(...))
+	local var1_32 = packEx(arg1_32(...))
 
-	setfenv(arg1, var0)
+	setfenv(arg1_32, var0_32)
 
-	return unpackEx(var1)
+	return unpackEx(var1_32)
 end

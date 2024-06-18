@@ -2,16 +2,16 @@
 	return 0
 end
 
-function GetBattleCheckResult(arg0, arg1, arg2)
-	local var0 = 2621
-	local var1 = 3527
-	local var2 = GetBattleCheck()
+function GetBattleCheckResult(arg0_2, arg1_2, arg2_2)
+	local var0_2 = 2621
+	local var1_2 = 3527
+	local var2_2 = GetBattleCheck()
 
-	arg0 = math.floor(arg0 % var0 * (arg1 % var0) % var0 + arg2)
+	arg0_2 = math.floor(arg0_2 % var0_2 * (arg1_2 % var0_2) % var0_2 + arg2_2)
 
-	local var3 = tostring(math.floor(var2 % var1 * (arg1 % var1) % (var1 + arg0)))
+	local var3_2 = tostring(math.floor(var2_2 % var1_2 * (arg1_2 % var1_2) % (var1_2 + arg0_2)))
 
-	return arg0, var3
+	return arg0_2, var3_2
 end
 
 ys.BattleShipLevelVertify = {}

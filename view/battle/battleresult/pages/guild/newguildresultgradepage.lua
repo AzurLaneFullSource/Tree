@@ -1,65 +1,65 @@
-﻿local var0 = class("NewGuildResultGradePage", import("..NewBattleResultGradePage"))
+﻿local var0_0 = class("NewGuildResultGradePage", import("..NewBattleResultGradePage"))
 
-function var0.LoadBG(arg0, arg1)
-	local var0 = "Victory"
+function var0_0.LoadBG(arg0_1, arg1_1)
+	local var0_1 = "Victory"
 
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. var0, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0)
-		if arg0.exited or IsNil(arg0) then
-			if arg1 then
-				arg1()
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. var0_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_2)
+		if arg0_1.exited or IsNil(arg0_2) then
+			if arg1_1 then
+				arg1_1()
 			end
 
 			return
 		end
 
-		Object.Instantiate(arg0, arg0.bgTr).transform:SetAsFirstSibling()
+		Object.Instantiate(arg0_2, arg0_1.bgTr).transform:SetAsFirstSibling()
 
-		if arg1 then
-			arg1()
+		if arg1_1 then
+			arg1_1()
 		end
 	end), false, false)
 end
 
-function var0.LoadGrade(arg0, arg1)
-	local var0 = "battlescore/grade_label_clear"
+function var0_0.LoadGrade(arg0_3, arg1_3)
+	local var0_3 = "battlescore/grade_label_clear"
 
-	LoadImageSpriteAsync(var0, arg0.gradeTxt, true)
+	LoadImageSpriteAsync(var0_3, arg0_3.gradeTxt, true)
 
-	if arg1 then
-		arg1()
+	if arg1_3 then
+		arg1_3()
 	end
 end
 
-function var0.GetContributionPoint(arg0)
-	local var0 = 0
-	local var1 = pg.guildset.guild_damage_resource.key_value
+function var0_0.GetContributionPoint(arg0_4)
+	local var0_4 = 0
+	local var1_4 = pg.guildset.guild_damage_resource.key_value
 
-	for iter0, iter1 in ipairs(arg0.contextData.drops) do
-		if iter1.configId == var1 then
-			var0 = iter1.count
+	for iter0_4, iter1_4 in ipairs(arg0_4.contextData.drops) do
+		if iter1_4.configId == var1_4 then
+			var0_4 = iter1_4.count
 		end
 	end
 
-	return var0
+	return var0_4
 end
 
-function var0.GetGetObjectives(arg0)
-	local var0 = {}
-	local var1 = i18n("battle_result_total_damage")
+function var0_0.GetGetObjectives(arg0_5)
+	local var0_5 = {}
+	local var1_5 = i18n("battle_result_total_damage")
 
-	table.insert(var0, {
-		text = setColorStr(var1, "#FFFFFFFF"),
-		value = setColorStr(arg0.contextData.statistics.specificDamage, COLOR_BLUE)
+	table.insert(var0_5, {
+		text = setColorStr(var1_5, "#FFFFFFFF"),
+		value = setColorStr(arg0_5.contextData.statistics.specificDamage, COLOR_BLUE)
 	})
 
-	local var2 = i18n("battle_result_contribution")
+	local var2_5 = i18n("battle_result_contribution")
 
-	table.insert(var0, {
-		text = setColorStr(var2, "#FFFFFFFF"),
-		value = setColorStr(arg0:GetContributionPoint(), COLOR_YELLOW)
+	table.insert(var0_5, {
+		text = setColorStr(var2_5, "#FFFFFFFF"),
+		value = setColorStr(arg0_5:GetContributionPoint(), COLOR_YELLOW)
 	})
 
-	return var0
+	return var0_5
 end
 
-return var0
+return var0_0

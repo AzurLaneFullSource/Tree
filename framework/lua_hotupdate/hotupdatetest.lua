@@ -1,21 +1,21 @@
-﻿local var0 = 0
+﻿local var0_0 = 0
 
 function HUT_Var1()
-	var0 = var0 + 2
+	var0_0 = var0_0 + 2
 
-	print("x = ", var0)
+	print("x = ", var0_0)
 end
 
 function HUT_Var3()
-	var0 = var0 + 10
+	var0_0 = var0_0 + 10
 
-	print("x = ", var0)
+	print("x = ", var0_0)
 end
 
-local var1 = HUT_Var1
+local var1_0 = HUT_Var1
 
 function HUT_Func()
-	var1()
+	var1_0()
 end
 
 function HUT_FUNC2()

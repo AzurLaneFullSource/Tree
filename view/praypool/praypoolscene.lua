@@ -1,44 +1,44 @@
-﻿local var0 = class("PrayPoolScene", import("..base.BaseUI"))
+﻿local var0_0 = class("PrayPoolScene", import("..base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "PrayPool"
 end
 
-function var0.init(arg0)
-	arg0:findUI()
-	arg0:initData()
-	arg0:initEvents()
+function var0_0.init(arg0_2)
+	arg0_2:findUI()
+	arg0_2:initData()
+	arg0_2:initEvents()
 end
 
-function var0.didEnter(arg0)
-	local var0 = arg0.prayProxy:getPageState()
+function var0_0.didEnter(arg0_3)
+	local var0_3 = arg0_3.prayProxy:getPageState()
 
-	arg0:switchPage(var0)
+	arg0_3:switchPage(var0_3)
 end
 
-function var0.willExit(arg0)
-	for iter0, iter1 in ipairs(arg0.subViewList) do
-		iter1:Destroy()
+function var0_0.willExit(arg0_4)
+	for iter0_4, iter1_4 in ipairs(arg0_4.subViewList) do
+		iter1_4:Destroy()
 	end
 end
 
-function var0.onBackPressed(arg0)
-	local var0
+function var0_0.onBackPressed(arg0_5)
+	local var0_5
 
-	for iter0, iter1 in ipairs(arg0.subViewList) do
-		var0 = iter1:OnBackPress()
+	for iter0_5, iter1_5 in ipairs(arg0_5.subViewList) do
+		var0_5 = iter1_5:OnBackPress()
 	end
 
-	if not var0 then
-		arg0:emit(var0.ON_BACK)
+	if not var0_5 then
+		arg0_5:emit(var0_0.ON_BACK)
 	end
 end
 
-function var0.findUI(arg0)
-	arg0.subViewContainer = arg0:findTF("BG/SubViewContainer")
-	arg0.helpBtn = arg0:findTF("BG/HelpBtn")
+function var0_0.findUI(arg0_6)
+	arg0_6.subViewContainer = arg0_6:findTF("BG/SubViewContainer")
+	arg0_6.helpBtn = arg0_6:findTF("BG/HelpBtn")
 
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_6, arg0_6.helpBtn, function()
 		if pg.gametip.pray_build_help then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
@@ -49,42 +49,42 @@ function var0.findUI(arg0)
 	end)
 end
 
-function var0.initData(arg0)
-	arg0.prayProxy = getProxy(PrayProxy)
-	arg0.prayPoolHomeView = PrayPoolHomeView.New(arg0.subViewContainer, arg0.event, arg0.contextData)
-	arg0.prayPoolSelectPoolView = PrayPoolSelectPoolView.New(arg0.subViewContainer, arg0.event, arg0.contextData)
-	arg0.prayPoolSelectShipView = PrayPoolSelectShipView.New(arg0.subViewContainer, arg0.event, arg0.contextData)
-	arg0.PrayPoolSuccessView = PrayPoolSuccessView.New(arg0.subViewContainer, arg0.event, arg0.contextData)
-	arg0.curSubView = nil
-	arg0.subViewList = {
-		[PrayProxy.STATE_HOME] = arg0.prayPoolHomeView,
-		[PrayProxy.STATE_SELECT_POOL] = arg0.prayPoolSelectPoolView,
-		[PrayProxy.STAGE_SELECT_SHIP] = arg0.prayPoolSelectShipView,
-		[PrayProxy.STAGE_BUILD_SUCCESS] = arg0.PrayPoolSuccessView
+function var0_0.initData(arg0_8)
+	arg0_8.prayProxy = getProxy(PrayProxy)
+	arg0_8.prayPoolHomeView = PrayPoolHomeView.New(arg0_8.subViewContainer, arg0_8.event, arg0_8.contextData)
+	arg0_8.prayPoolSelectPoolView = PrayPoolSelectPoolView.New(arg0_8.subViewContainer, arg0_8.event, arg0_8.contextData)
+	arg0_8.prayPoolSelectShipView = PrayPoolSelectShipView.New(arg0_8.subViewContainer, arg0_8.event, arg0_8.contextData)
+	arg0_8.PrayPoolSuccessView = PrayPoolSuccessView.New(arg0_8.subViewContainer, arg0_8.event, arg0_8.contextData)
+	arg0_8.curSubView = nil
+	arg0_8.subViewList = {
+		[PrayProxy.STATE_HOME] = arg0_8.prayPoolHomeView,
+		[PrayProxy.STATE_SELECT_POOL] = arg0_8.prayPoolSelectPoolView,
+		[PrayProxy.STAGE_SELECT_SHIP] = arg0_8.prayPoolSelectShipView,
+		[PrayProxy.STAGE_BUILD_SUCCESS] = arg0_8.PrayPoolSuccessView
 	}
 end
 
-function var0.initEvents(arg0)
-	arg0:bind(PrayPoolConst.SWITCH_TO_SELECT_POOL_PAGE, function(arg0, arg1)
-		arg0:switchPage(arg1)
+function var0_0.initEvents(arg0_9)
+	arg0_9:bind(PrayPoolConst.SWITCH_TO_SELECT_POOL_PAGE, function(arg0_10, arg1_10)
+		arg0_9:switchPage(arg1_10)
 	end)
-	arg0:bind(PrayPoolConst.SWITCH_TO_SELECT_SHIP_PAGE, function(arg0, arg1)
-		arg0:switchPage(arg1)
+	arg0_9:bind(PrayPoolConst.SWITCH_TO_SELECT_SHIP_PAGE, function(arg0_11, arg1_11)
+		arg0_9:switchPage(arg1_11)
 	end)
-	arg0:bind(PrayPoolConst.SWITCH_TO_HOME_PAGE, function(arg0, arg1)
-		arg0:switchPage(arg1)
+	arg0_9:bind(PrayPoolConst.SWITCH_TO_HOME_PAGE, function(arg0_12, arg1_12)
+		arg0_9:switchPage(arg1_12)
 	end)
 end
 
-function var0.switchPage(arg0, arg1)
-	arg0.subViewList[arg1]:Reset()
-	arg0.subViewList[arg1]:Load()
+function var0_0.switchPage(arg0_13, arg1_13)
+	arg0_13.subViewList[arg1_13]:Reset()
+	arg0_13.subViewList[arg1_13]:Load()
 
-	if arg0.curSubView then
-		arg0.curSubView:Destroy()
+	if arg0_13.curSubView then
+		arg0_13.curSubView:Destroy()
 	end
 
-	arg0.curSubView = arg0.subViewList[arg1]
+	arg0_13.curSubView = arg0_13.subViewList[arg1_13]
 end
 
-return var0
+return var0_0

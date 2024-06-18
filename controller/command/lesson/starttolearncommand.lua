@@ -1,24 +1,24 @@
-﻿local var0 = class("StartToLearnCommand", pm.SimpleCommand)
+﻿local var0_0 = class("StartToLearnCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody().students
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody().students
 
 	pg.ConnectionMgr.GetInstance():Send(22002, {
-		students = var0
-	}, 22003, function(arg0)
-		if arg0.result == 0 then
-			local var0 = getProxy(NavalAcademyProxy)
-			local var1 = var0:getCourse()
+		students = var0_1
+	}, 22003, function(arg0_2)
+		if arg0_2.result == 0 then
+			local var0_2 = getProxy(NavalAcademyProxy)
+			local var1_2 = var0_2:getCourse()
 
-			var1.students = var0
-			var1.timestamp = pg.TimeMgr.GetInstance():GetServerTime()
+			var1_2.students = var0_1
+			var1_2.timestamp = pg.TimeMgr.GetInstance():GetServerTime()
 
-			var0:setCourse(var1)
-			arg0:sendNotification(GAME.CLASS_START_COURSE_DONE)
+			var0_2:setCourse(var1_2)
+			arg0_1:sendNotification(GAME.CLASS_START_COURSE_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("lesson_startToLearn", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("lesson_startToLearn", arg0_2.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

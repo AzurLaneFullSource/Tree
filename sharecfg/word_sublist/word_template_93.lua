@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_93 = {}
+var0_0.word_template_93 = {}
 
-local var1 = var0.word_template_93
+local var1_0 = var0_0.word_template_93
 
 function temp()
-	var1.发 = {
+	var1_0.发 = {
 		p = {
 			i = {
 				a = {
@@ -183,7 +183,7 @@ end
 temp()
 
 function temp()
-	var1.発 = {
+	var1_0.発 = {
 		妻 = {
 			this = true
 		},
@@ -196,7 +196,7 @@ end
 temp()
 
 function temp()
-	var1.發 = {
+	var1_0.發 = {
 		工 = {
 			資 = {
 				都 = {
@@ -258,7 +258,7 @@ end
 temp()
 
 function temp()
-	var1.廢 = {
+	var1_0.廢 = {
 		墟 = {
 			守 = {
 				護 = {
@@ -285,7 +285,7 @@ end
 temp()
 
 function temp()
-	var1.砝 = {
+	var1_0.砝 = {
 		仑 = {
 			大 = {
 				砝 = {
@@ -305,7 +305,7 @@ end
 temp()
 
 function temp()
-	var1.珐 = {
+	var1_0.珐 = {
 		["."] = {
 			輪 = {
 				功 = {
@@ -333,7 +333,7 @@ end
 temp()
 
 function temp()
-	var1.翻 = {
+	var1_0.翻 = {
 		牌 = {
 			机 = {
 				this = true,

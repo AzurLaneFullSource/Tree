@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_386 = {}
+var0_0.word_template_386 = {}
 
-local var1 = var0.word_template_386
+local var1_0 = var0_0.word_template_386
 
 function temp()
-	var1.侼 = {
+	var1_0.侼 = {
 		稀 = {
 			莱 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.芜 = {
+	var1_0.芜 = {
 		县 = {
 			连 = {
 				任 = {
@@ -33,7 +33,7 @@ end
 temp()
 
 function temp()
-	var1.笱 = {
+	var1_0.笱 = {
 		丽 = {
 			淉 = {
 				甲 = {
@@ -73,7 +73,7 @@ end
 temp()
 
 function temp()
-	var1.铑 = {
+	var1_0.铑 = {
 		人 = {
 			南 = {
 				巡 = {
@@ -87,7 +87,7 @@ end
 temp()
 
 function temp()
-	var1.益 = {
+	var1_0.益 = {
 		阳 = {
 			["6"] = {
 				["9"] = {
@@ -127,7 +127,7 @@ end
 temp()
 
 function temp()
-	var1.荭 = {
+	var1_0.荭 = {
 		萎 = {
 			鋲 = {
 				this = true
@@ -139,7 +139,7 @@ end
 temp()
 
 function temp()
-	var1.凳 = {
+	var1_0.凳 = {
 		唉 = {
 			子 = {
 				this = true

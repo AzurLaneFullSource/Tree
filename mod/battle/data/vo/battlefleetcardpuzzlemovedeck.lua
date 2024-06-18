@@ -1,86 +1,86 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleUnitEvent
-local var2 = var0.Battle.BattleEvent
-local var3 = var0.Battle.BattleCardPuzzleEvent
-local var4 = var0.Battle.BattleFormulas
-local var5 = var0.Battle.BattleConst
-local var6 = var0.Battle.BattleConfig
-local var7 = var0.Battle.BattleCardPuzzleConfig
-local var8 = var0.Battle.BattleAttr
-local var9 = var0.Battle.BattleDataFunction
-local var10 = var0.Battle.BattleAttr
-local var11 = class("BattleFleetCardPuzzleMoveDeck")
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleUnitEvent
+local var2_0 = var0_0.Battle.BattleEvent
+local var3_0 = var0_0.Battle.BattleCardPuzzleEvent
+local var4_0 = var0_0.Battle.BattleFormulas
+local var5_0 = var0_0.Battle.BattleConst
+local var6_0 = var0_0.Battle.BattleConfig
+local var7_0 = var0_0.Battle.BattleCardPuzzleConfig
+local var8_0 = var0_0.Battle.BattleAttr
+local var9_0 = var0_0.Battle.BattleDataFunction
+local var10_0 = var0_0.Battle.BattleAttr
+local var11_0 = class("BattleFleetCardPuzzleMoveDeck")
 
-var0.Battle.BattleFleetCardPuzzleMoveDeck = var11
-var11.__name = "BattleFleetCardPuzzleMoveDeck"
+var0_0.Battle.BattleFleetCardPuzzleMoveDeck = var11_0
+var11_0.__name = "BattleFleetCardPuzzleMoveDeck"
 
-function var11.Ctor(arg0, arg1, arg2)
-	arg0._cardPuzzleComponent = arg1
-	arg0._indexID = arg2
+function var11_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1._cardPuzzleComponent = arg1_1
+	arg0_1._indexID = arg2_1
 
-	arg0:init()
+	arg0_1:init()
 end
 
-function var11.CustomConfig(arg0, arg1)
-	arg0._generateRate = var9.GetPuzzleDungeonTemplate(arg1).move_recovery
+function var11_0.CustomConfig(arg0_2, arg1_2)
+	arg0_2._generateRate = var9_0.GetPuzzleDungeonTemplate(arg1_2).move_recovery
 end
 
-function var11.GetIndexID(arg0)
-	return arg0._indexID
+function var11_0.GetIndexID(arg0_3)
+	return arg0_3._indexID
 end
 
-function var11.Dispose(arg0)
+function var11_0.Dispose(arg0_4)
 	return
 end
 
-function var11.GetCardList(arg0)
-	return arg0._moveCardList
+function var11_0.GetCardList(arg0_5)
+	return arg0_5._moveCardList
 end
 
-function var11.Update(arg0, arg1)
-	arg0:update(arg1)
+function var11_0.Update(arg0_6, arg1_6)
+	arg0_6:update(arg1_6)
 end
 
-function var11.init(arg0)
-	arg0._moveCardList = {}
+function var11_0.init(arg0_7)
+	arg0_7._moveCardList = {}
 
-	var0.EventDispatcher.AttachEventDispatcher(arg0)
-	var0.Battle.BattleFleetCardPuzzleCardManageComponent.AttachCardManager(arg0)
+	var0_0.EventDispatcher.AttachEventDispatcher(arg0_7)
+	var0_0.Battle.BattleFleetCardPuzzleCardManageComponent.AttachCardManager(arg0_7)
 
-	arg0._attrManager = arg0._cardPuzzleComponent:GetAttrManager()
-	arg0._generateRate = var7.moveCardGenerateSpeedPerSecond
-	arg0._maxMoveCard = var7.BASE_MAX_MOVE
-	arg0._generating = 0
+	arg0_7._attrManager = arg0_7._cardPuzzleComponent:GetAttrManager()
+	arg0_7._generateRate = var7_0.moveCardGenerateSpeedPerSecond
+	arg0_7._maxMoveCard = var7_0.BASE_MAX_MOVE
+	arg0_7._generating = 0
 
-	arg0:updateTimeStamp()
+	arg0_7:updateTimeStamp()
 end
 
-function var11.updateTimeStamp(arg0)
-	arg0._lastUpdateTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
+function var11_0.updateTimeStamp(arg0_8)
+	arg0_8._lastUpdateTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
 end
 
-function var11.update(arg0, arg1)
-	if arg0:GetLength() < arg0._maxMoveCard + arg0._attrManager:GetCurrent("MoveExtra") then
-		arg0._generating = (arg1 - arg0._lastUpdateTimeStamp) * arg0._generateRate + arg0._generating
+function var11_0.update(arg0_9, arg1_9)
+	if arg0_9:GetLength() < arg0_9._maxMoveCard + arg0_9._attrManager:GetCurrent("MoveExtra") then
+		arg0_9._generating = (arg1_9 - arg0_9._lastUpdateTimeStamp) * arg0_9._generateRate + arg0_9._generating
 	end
 
-	arg0:updateTimeStamp()
+	arg0_9:updateTimeStamp()
 end
 
-function var11.GetGeneratePorcess(arg0)
-	return arg0._generating
+function var11_0.GetGeneratePorcess(arg0_10)
+	return arg0_10._generating
 end
 
-function var11.TryPlayTopMoveCard(arg0)
-	local var0 = arg0:GetLength()
+function var11_0.TryPlayTopMoveCard(arg0_11)
+	local var0_11 = arg0_11:GetLength()
 
-	if var0 > 0 then
-		return arg0:GetCardList()[var0]
+	if var0_11 > 0 then
+		return arg0_11:GetCardList()[var0_11]
 	end
 end
 
-function var11.RestartGenrate(arg0)
-	arg0._generating = 0
+function var11_0.RestartGenrate(arg0_12)
+	arg0_12._generating = 0
 end

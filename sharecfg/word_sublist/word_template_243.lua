@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_243 = {}
+var0_0.word_template_243 = {}
 
-local var1 = var0.word_template_243
+local var1_0 = var0_0.word_template_243
 
 function temp()
-	var1.区 = {
+	var1_0.区 = {
 		乡 = {
 			干 = {
 				部 = {
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.诎 = {
+	var1_0.诎 = {
 		this = {
 			this = true
 		}
@@ -37,7 +37,7 @@ end
 temp()
 
 function temp()
-	var1.祛 = {
+	var1_0.祛 = {
 		除 = {
 			黑 = {
 				眼 = {
@@ -65,7 +65,7 @@ end
 temp()
 
 function temp()
-	var1.詘 = {
+	var1_0.詘 = {
 		this = {
 			this = true
 		},
@@ -78,7 +78,7 @@ end
 temp()
 
 function temp()
-	var1.麴 = {
+	var1_0.麴 = {
 		this = {
 			this = true
 		}
@@ -88,7 +88,7 @@ end
 temp()
 
 function temp()
-	var1.黢 = {
+	var1_0.黢 = {
 		this = {
 			this = true
 		}
@@ -98,7 +98,7 @@ end
 temp()
 
 function temp()
-	var1.劬 = {
+	var1_0.劬 = {
 		this = {
 			this = true
 		}

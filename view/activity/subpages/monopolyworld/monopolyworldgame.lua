@@ -1,7 +1,7 @@
-﻿local var0 = class("MonopolyWorldGame")
-local var1 = 117
-local var2 = 60
-local var3 = {
+﻿local var0_0 = class("MonopolyWorldGame")
+local var1_0 = 117
+local var2_0 = 60
+local var3_0 = {
 	{
 		0,
 		4007,
@@ -43,617 +43,617 @@ local var3 = {
 		0
 	}
 }
-local var4 = "mengya"
-local var5 = "monopoly_world_tip1"
-local var6 = "monopoly_world_tip2"
-local var7 = "monopoly_world_tip3"
-local var8 = 0.6
-local var9 = "dafuweng_gold"
-local var10 = "dafuweng_oil"
-local var11 = "dafuweng_event"
-local var12 = "dafuweng_walk"
-local var13 = "dafuweng_stand"
-local var14 = "dafuweng_walk"
-local var15 = "dafuweng_run"
-local var16 = "dafuweng_touch"
-local var17 = "cell gold"
-local var18 = "cell move"
-local var19 = "cell oil"
-local var20 = "cell event"
-local var21 = "cell item"
-local var22 = {
+local var4_0 = "mengya"
+local var5_0 = "monopoly_world_tip1"
+local var6_0 = "monopoly_world_tip2"
+local var7_0 = "monopoly_world_tip3"
+local var8_0 = 0.6
+local var9_0 = "dafuweng_gold"
+local var10_0 = "dafuweng_oil"
+local var11_0 = "dafuweng_event"
+local var12_0 = "dafuweng_walk"
+local var13_0 = "dafuweng_stand"
+local var14_0 = "dafuweng_walk"
+local var15_0 = "dafuweng_run"
+local var16_0 = "dafuweng_touch"
+local var17_0 = "cell gold"
+local var18_0 = "cell move"
+local var19_0 = "cell oil"
+local var20_0 = "cell event"
+local var21_0 = "cell item"
+local var22_0 = {
 	{
 		path_length = 1,
 		name = "gulitemengya_1",
-		cell_type = var18
+		cell_type = var18_0
 	},
 	{
 		path_length = 2,
 		name = "gulitemengya_2",
-		cell_type = var18
+		cell_type = var18_0
 	},
 	{
 		path_length = 3,
 		name = "gulitemengya_3",
-		cell_type = var18
+		cell_type = var18_0
 	},
 	{
 		name = "gulitemengya_daoju",
-		cell_type = var21
+		cell_type = var21_0
 	},
 	{
 		name = "gulitemengya_jinbi",
-		cell_type = var17
+		cell_type = var17_0
 	},
 	{
 		name = "gulitemengya_mingyun",
-		cell_type = var20
+		cell_type = var20_0
 	},
 	{
 		name = "gulitemengya_shiyou",
-		cell_type = var19
+		cell_type = var19_0
 	}
 }
-local var23 = {
+local var23_0 = {
 	84180,
 	84181,
 	84183,
 	84179,
 	84182
 }
-local var24
-local var25
+local var24_0
+local var25_0
 
-function var0.Ctor(arg0, arg1, arg2, arg3)
-	arg0._binder = arg1
-	arg0._tf = arg2
-	arg0._event = arg3
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	arg0_1._binder = arg1_1
+	arg0_1._tf = arg2_1
+	arg0_1._event = arg3_1
 
-	arg0:initData()
-	arg0:initUI()
-	arg0:initEvent()
+	arg0_1:initData()
+	arg0_1:initUI()
+	arg0_1:initEvent()
 end
 
-function var0.initData(arg0)
-	arg0.leftCount = 0
-	arg0.inAnimatedFlag = false
-	arg0.mapCells = {}
+function var0_0.initData(arg0_2)
+	arg0_2.leftCount = 0
+	arg0_2.inAnimatedFlag = false
+	arg0_2.mapCells = {}
 end
 
-function var0.initUI(arg0)
-	arg0.tplMapCell = findTF(arg0._tf, "tplMapCell")
-	arg0.gameTipUI1 = findTF(arg0._tf, "btnStart/desc")
+function var0_0.initUI(arg0_3)
+	arg0_3.tplMapCell = findTF(arg0_3._tf, "tplMapCell")
+	arg0_3.gameTipUI1 = findTF(arg0_3._tf, "btnStart/desc")
 
-	setText(arg0.gameTipUI1, i18n(var5))
+	setText(arg0_3.gameTipUI1, i18n(var5_0))
 
-	arg0.gameTipUI2 = findTF(arg0._tf, "bg/desc")
+	arg0_3.gameTipUI2 = findTF(arg0_3._tf, "bg/desc")
 
-	setText(arg0.gameTipUI2, "")
+	setText(arg0_3.gameTipUI2, "")
 
-	arg0.mapContainer = findTF(arg0._tf, "mapContainer")
-	arg0.char = findTF(arg0._tf, "mapContainer/char")
+	arg0_3.mapContainer = findTF(arg0_3._tf, "mapContainer")
+	arg0_3.char = findTF(arg0_3._tf, "mapContainer/char")
 
-	setActive(arg0.char, false)
+	setActive(arg0_3.char, false)
 
-	arg0.btnStart = findTF(arg0._tf, "btnStart")
-	arg0.effectStart = findTF(arg0.btnStart, "gulitemengya_pingmu")
-	arg0.btnHelp = findTF(arg0._tf, "topRight/btnHelp")
-	arg0.labelLeftCount = findTF(arg0.btnStart, "times")
-	arg0.btnBack = findTF(arg0._tf, "leftTop/back")
+	arg0_3.btnStart = findTF(arg0_3._tf, "btnStart")
+	arg0_3.effectStart = findTF(arg0_3.btnStart, "gulitemengya_pingmu")
+	arg0_3.btnHelp = findTF(arg0_3._tf, "topRight/btnHelp")
+	arg0_3.labelLeftCount = findTF(arg0_3.btnStart, "times")
+	arg0_3.btnBack = findTF(arg0_3._tf, "leftTop/back")
 
-	arg0:initMap()
-	arg0:initChar()
-	arg0:initFurn()
+	arg0_3:initMap()
+	arg0_3:initChar()
+	arg0_3:initFurn()
 end
 
-function var0.initFurn(arg0)
-	local var0 = findTF(arg0._tf, "bg/mask/event"):GetComponent("HScrollSnap")
+function var0_0.initFurn(arg0_4)
+	local var0_4 = findTF(arg0_4._tf, "bg/mask/event"):GetComponent("HScrollSnap")
 
-	arg0.bannerCanvas = GetComponent(findTF(arg0._tf, "bg/mask"), typeof(CanvasGroup))
+	arg0_4.bannerCanvas = GetComponent(findTF(arg0_4._tf, "bg/mask"), typeof(CanvasGroup))
 
-	var0:Init()
+	var0_4:Init()
 
-	local var1 = findTF(var0, "content")
-	local var2 = findTF(var0, "item")
-	local var3 = findTF(arg0._tf, "bg/dots")
-	local var4 = findTF(arg0._tf, "bg/dot")
+	local var1_4 = findTF(var0_4, "content")
+	local var2_4 = findTF(var0_4, "item")
+	local var3_4 = findTF(arg0_4._tf, "bg/dots")
+	local var4_4 = findTF(arg0_4._tf, "bg/dot")
 
-	setActive(var2, false)
-	setActive(var4, false)
+	setActive(var2_4, false)
+	setActive(var4_4, false)
 
-	arg0.furnItems = {}
+	arg0_4.furnItems = {}
 
-	for iter0 = 0, #var23 - 1 do
-		cloneTplTo(var4, var3)
+	for iter0_4 = 0, #var23_0 - 1 do
+		cloneTplTo(var4_4, var3_4)
 
-		local var5 = Instantiate(var2)
+		local var5_4 = Instantiate(var2_4)
 
-		var24 = pg.furniture_data_template[var23[iter0 + 1]]
-		var25 = var24.icon
+		var24_0 = pg.furniture_data_template[var23_0[iter0_4 + 1]]
+		var25_0 = var24_0.icon
 
-		GetImageSpriteFromAtlasAsync("ui/monopolyworldui_atlas", var25, findTF(var5, "img"), true)
-		var0:AddChild(var5)
-		setActive(var5, true)
-		table.insert(arg0.furnItems, var5)
+		GetImageSpriteFromAtlasAsync("ui/monopolyworldui_atlas", var25_0, findTF(var5_4, "img"), true)
+		var0_4:AddChild(var5_4)
+		setActive(var5_4, true)
+		table.insert(arg0_4.furnItems, var5_4)
 	end
 
-	arg0.bannerSnap = var0
-	arg0.bannerContent = var1
-	arg0.bannerDots = var3
-	arg0.furnNames = {}
+	arg0_4.bannerSnap = var0_4
+	arg0_4.bannerContent = var1_4
+	arg0_4.bannerDots = var3_4
+	arg0_4.furnNames = {}
 
-	for iter1 = 1, #var23 do
-		table.insert(arg0.furnNames, findTF(arg0._tf, "bg/furnName/img" .. iter1))
+	for iter1_4 = 1, #var23_0 do
+		table.insert(arg0_4.furnNames, findTF(arg0_4._tf, "bg/furnName/img" .. iter1_4))
 	end
 
-	local function var6()
-		for iter0 = 1, #var23 do
-			if iter0 == arg0.bannerSnap:CurrentScreen() + 1 then
-				if not isActive(arg0.furnNames[iter0]) then
-					setActive(arg0.furnNames[iter0], true)
+	local function var6_4()
+		for iter0_5 = 1, #var23_0 do
+			if iter0_5 == arg0_4.bannerSnap:CurrentScreen() + 1 then
+				if not isActive(arg0_4.furnNames[iter0_5]) then
+					setActive(arg0_4.furnNames[iter0_5], true)
 				end
-			elseif isActive(arg0.furnNames[iter0]) then
-				setActive(arg0.furnNames[iter0], false)
+			elseif isActive(arg0_4.furnNames[iter0_5]) then
+				setActive(arg0_4.furnNames[iter0_5], false)
 			end
 		end
 	end
 
-	arg0.funrTimer = Timer.New(var6, 0.2, -1)
+	arg0_4.funrTimer = Timer.New(var6_4, 0.2, -1)
 
-	arg0.funrTimer:Start()
-	var6()
+	arg0_4.funrTimer:Start()
+	var6_4()
 end
 
-function var0.initEvent(arg0)
-	onButton(arg0._binder, arg0.btnStart, function()
-		if arg0.inAnimatedFlag then
+function var0_0.initEvent(arg0_6)
+	onButton(arg0_6._binder, arg0_6.btnStart, function()
+		if arg0_6.inAnimatedFlag then
 			return
 		end
 
-		if arg0.leftCount and arg0.leftCount <= 0 then
+		if arg0_6.leftCount and arg0_6.leftCount <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_count_noenough"))
 
 			return
 		end
 
-		arg0:changeAnimeState(true)
-		setActive(arg0.btnStart, true)
-		arg0._event:emit(MonopolyWorldScene.ON_START, arg0.activity.id, function(arg0)
-			if arg0 and arg0 > 0 then
-				arg0:showRollAnimated(arg0)
+		arg0_6:changeAnimeState(true)
+		setActive(arg0_6.btnStart, true)
+		arg0_6._event:emit(MonopolyWorldScene.ON_START, arg0_6.activity.id, function(arg0_8)
+			if arg0_8 and arg0_8 > 0 then
+				arg0_6:showRollAnimated(arg0_8)
 			end
 		end)
 	end, SFX_PANEL)
-	onButton(arg0._binder, arg0.btnHelp, function()
+	onButton(arg0_6._binder, arg0_6.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_monopoly_world.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0._binder, arg0.btnBack, function()
-		if not arg0.inAnimatedFlag then
-			arg0._event:emit(BaseUI.ON_BACK)
+	onButton(arg0_6._binder, arg0_6.btnBack, function()
+		if not arg0_6.inAnimatedFlag then
+			arg0_6._event:emit(BaseUI.ON_BACK)
 		end
 	end, SFX_PANEL)
-	onButton(arg0._binder, findTF(arg0.char, "click"), function()
-		if not arg0.model or arg0.inAnimatedFlag then
+	onButton(arg0_6._binder, findTF(arg0_6.char, "click"), function()
+		if not arg0_6.model or arg0_6.inAnimatedFlag then
 			return
 		end
 
-		arg0:changeCharAction(var16, 1, function()
-			arg0:changeCharAction(var13)
+		arg0_6:changeCharAction(var16_0, 1, function()
+			arg0_6:changeCharAction(var13_0)
 		end)
 	end, SFX_PANEL)
 end
 
-function var0.showRollAnimated(arg0, arg1)
+function var0_0.showRollAnimated(arg0_13, arg1_13)
 	seriesAsync({
-		function(arg0)
-			setActive(arg0.effectStart, true)
-			GetComponent(findTF(arg0.btnStart, "anim"), typeof(Animator)):Play("start", -1, 0)
+		function(arg0_14)
+			setActive(arg0_13.effectStart, true)
+			GetComponent(findTF(arg0_13.btnStart, "anim"), typeof(Animator)):Play("start", -1, 0)
 			LeanTween.delayedCall(1, System.Action(function()
-				for iter0 = 1, 6 do
-					local var0 = findTF(arg0.btnStart, "num/" .. iter0)
+				for iter0_15 = 1, 6 do
+					local var0_15 = findTF(arg0_13.btnStart, "num/" .. iter0_15)
 
-					if iter0 ~= arg1 then
-						setActive(var0, false)
+					if iter0_15 ~= arg1_13 then
+						setActive(var0_15, false)
 					else
-						setActive(var0, true)
+						setActive(var0_15, true)
 					end
 				end
 			end))
 			LeanTween.delayedCall(2, System.Action(function()
-				arg0()
+				arg0_14()
 			end))
 		end
 	}, function()
-		arg0.useCount = arg0.useCount + 1
-		arg0.leftCount = arg0.leftCount - 1
-		arg0.step = arg1
+		arg0_13.useCount = arg0_13.useCount + 1
+		arg0_13.leftCount = arg0_13.leftCount - 1
+		arg0_13.step = arg1_13
 
-		arg0:updataUI()
-		arg0:checkCharActive()
+		arg0_13:updataUI()
+		arg0_13:checkCharActive()
 	end)
 end
 
-function var0.checkCountStory(arg0, arg1)
-	local var0 = arg0.useCount
-	local var1 = arg0.activity:getDataConfig("story") or {}
-	local var2 = _.detect(var1, function(arg0)
-		return arg0[1] == var0
+function var0_0.checkCountStory(arg0_18, arg1_18)
+	local var0_18 = arg0_18.useCount
+	local var1_18 = arg0_18.activity:getDataConfig("story") or {}
+	local var2_18 = _.detect(var1_18, function(arg0_19)
+		return arg0_19[1] == var0_18
 	end)
 
-	if var2 then
-		pg.NewStoryMgr.GetInstance():Play(var2[2], arg1)
+	if var2_18 then
+		pg.NewStoryMgr.GetInstance():Play(var2_18[2], arg1_18)
 	else
-		arg1()
+		arg1_18()
 	end
 end
 
-function var0.changeAnimeState(arg0, arg1)
-	if arg1 then
-		arg0.btnStart:GetComponent(typeof(Image)).raycastTarget = false
-		arg0.inAnimatedFlag = true
+function var0_0.changeAnimeState(arg0_20, arg1_20)
+	if arg1_20 then
+		arg0_20.btnStart:GetComponent(typeof(Image)).raycastTarget = false
+		arg0_20.inAnimatedFlag = true
 
-		arg0._event:emit(ActivityMainScene.LOCK_ACT_MAIN, true)
+		arg0_20._event:emit(ActivityMainScene.LOCK_ACT_MAIN, true)
 	else
-		arg0.inAnimatedFlag = false
-		arg0.btnStart:GetComponent(typeof(Image)).raycastTarget = true
+		arg0_20.inAnimatedFlag = false
+		arg0_20.btnStart:GetComponent(typeof(Image)).raycastTarget = true
 
-		arg0._event:emit(ActivityMainScene.LOCK_ACT_MAIN, false)
+		arg0_20._event:emit(ActivityMainScene.LOCK_ACT_MAIN, false)
 	end
 end
 
-function var0.initMap(arg0)
-	local var0 = var3
+function var0_0.initMap(arg0_21)
+	local var0_21 = var3_0
 
-	arg0.mapCells = {}
+	arg0_21.mapCells = {}
 
-	for iter0 = 1, #var0 do
-		local var1 = iter0 - 1
-		local var2 = {
-			x = -var1 * var1,
-			y = -var1 * var2
+	for iter0_21 = 1, #var0_21 do
+		local var1_21 = iter0_21 - 1
+		local var2_21 = {
+			x = -var1_21 * var1_0,
+			y = -var1_21 * var2_0
 		}
-		local var3 = var0[iter0]
+		local var3_21 = var0_21[iter0_21]
 
-		for iter1 = 1, #var3 do
-			local var4 = iter1 - 1
-			local var5 = var3[iter1]
+		for iter1_21 = 1, #var3_21 do
+			local var4_21 = iter1_21 - 1
+			local var5_21 = var3_21[iter1_21]
 
-			if var5 > 0 then
-				local var6 = cloneTplTo(arg0.tplMapCell, arg0.mapContainer, tostring(var5))
-				local var7 = Vector2(var1 * var4 + var2.x, -var2 * var4 + var2.y)
+			if var5_21 > 0 then
+				local var6_21 = cloneTplTo(arg0_21.tplMapCell, arg0_21.mapContainer, tostring(var5_21))
+				local var7_21 = Vector2(var1_0 * var4_21 + var2_21.x, -var2_0 * var4_21 + var2_21.y)
 
-				var6.localPosition = var7
+				var6_21.localPosition = var7_21
 
-				local var8 = pg.activity_event_monopoly_map[var5].icon
-				local var9 = GetSpriteFromAtlas("ui/monopolyworldui_atlas", var8)
+				local var8_21 = pg.activity_event_monopoly_map[var5_21].icon
+				local var9_21 = GetSpriteFromAtlas("ui/monopolyworldui_atlas", var8_21)
 
-				findTF(var6, "image"):GetComponent(typeof(Image)).sprite = var9
+				findTF(var6_21, "image"):GetComponent(typeof(Image)).sprite = var9_21
 
-				findTF(var6, "image"):GetComponent(typeof(Image)):SetNativeSize()
+				findTF(var6_21, "image"):GetComponent(typeof(Image)):SetNativeSize()
 
-				local var10 = {
-					col = var4,
-					row = var1,
-					mapId = var5,
-					tf = var6,
-					icon = var8,
-					position = var7
+				local var10_21 = {
+					col = var4_21,
+					row = var1_21,
+					mapId = var5_21,
+					tf = var6_21,
+					icon = var8_21,
+					position = var7_21
 				}
 
-				table.insert(arg0.mapCells, var10)
+				table.insert(arg0_21.mapCells, var10_21)
 			end
 		end
 	end
 
-	table.sort(arg0.mapCells, function(arg0, arg1)
-		return arg0.mapId < arg1.mapId
+	table.sort(arg0_21.mapCells, function(arg0_22, arg1_22)
+		return arg0_22.mapId < arg1_22.mapId
 	end)
 end
 
-function var0.initChar(arg0)
-	PoolMgr.GetInstance():GetSpineChar(var4, true, function(arg0)
-		arg0.model = arg0
-		arg0.model.transform.localScale = Vector3.one
-		arg0.model.transform.localPosition = Vector3.zero
+function var0_0.initChar(arg0_23)
+	PoolMgr.GetInstance():GetSpineChar(var4_0, true, function(arg0_24)
+		arg0_23.model = arg0_24
+		arg0_23.model.transform.localScale = Vector3.one
+		arg0_23.model.transform.localPosition = Vector3.zero
 
-		arg0.model.transform:SetParent(arg0.char, false)
+		arg0_23.model.transform:SetParent(arg0_23.char, false)
 
-		arg0.anim = arg0.model:GetComponent(typeof(SpineAnimUI))
+		arg0_23.anim = arg0_23.model:GetComponent(typeof(SpineAnimUI))
 
-		arg0:changeCharAction(var13, 0, nil)
-		arg0:checkCharActive()
+		arg0_23:changeCharAction(var13_0, 0, nil)
+		arg0_23:checkCharActive()
 
-		if arg0.pos then
-			arg0:updataCharDirect(arg0.pos, false)
+		if arg0_23.pos then
+			arg0_23:updataCharDirect(arg0_23.pos, false)
 		end
 	end)
 end
 
-function var0.updataCharDirect(arg0, arg1, arg2)
-	if arg0.model then
-		local var0 = arg0.mapCells[arg1].position
-		local var1 = arg1 + 1 > #arg0.mapCells and 1 or arg1 + 1
-		local var2 = arg0.mapCells[var1]
-		local var3 = arg0:getMoveType(arg0.mapCells[arg1].mapId, arg0.mapCells[var1].mapId, arg2) or arg0.char.localScale.x
+function var0_0.updataCharDirect(arg0_25, arg1_25, arg2_25)
+	if arg0_25.model then
+		local var0_25 = arg0_25.mapCells[arg1_25].position
+		local var1_25 = arg1_25 + 1 > #arg0_25.mapCells and 1 or arg1_25 + 1
+		local var2_25 = arg0_25.mapCells[var1_25]
+		local var3_25 = arg0_25:getMoveType(arg0_25.mapCells[arg1_25].mapId, arg0_25.mapCells[var1_25].mapId, arg2_25) or arg0_25.char.localScale.x
 
-		arg0.char.localScale = Vector3(var3, arg0.char.localScale.y, arg0.char.localScale.z)
+		arg0_25.char.localScale = Vector3(var3_25, arg0_25.char.localScale.y, arg0_25.char.localScale.z)
 	end
 end
 
-function var0.getMoveType(arg0, arg1, arg2, arg3)
-	local var0 = var3
-	local var1 = {}
-	local var2 = {}
+function var0_0.getMoveType(arg0_26, arg1_26, arg2_26, arg3_26)
+	local var0_26 = var3_0
+	local var1_26 = {}
+	local var2_26 = {}
 
-	for iter0 = 1, #var0 do
-		local var3 = var0[iter0]
+	for iter0_26 = 1, #var0_26 do
+		local var3_26 = var0_26[iter0_26]
 
-		for iter1 = 1, #var3 do
-			local var4 = var3[iter1]
+		for iter1_26 = 1, #var3_26 do
+			local var4_26 = var3_26[iter1_26]
 
-			if var4 == arg1 then
-				var1 = {
-					x = iter1,
-					y = iter0
+			if var4_26 == arg1_26 then
+				var1_26 = {
+					x = iter1_26,
+					y = iter0_26
 				}
 			end
 
-			if var4 == arg2 then
-				var2 = {
-					x = iter1,
-					y = iter0
+			if var4_26 == arg2_26 then
+				var2_26 = {
+					x = iter1_26,
+					y = iter0_26
 				}
 			end
 		end
 	end
 
-	local var5
+	local var5_26
 
-	if var2.y > var1.y then
-		var5 = -var8
-	elseif var2.y < var1.y then
-		var5 = var8
-	elseif var2.x > var1.x then
-		var5 = var8
-	elseif var2.x < var1.x then
-		var5 = -var8
+	if var2_26.y > var1_26.y then
+		var5_26 = -var8_0
+	elseif var2_26.y < var1_26.y then
+		var5_26 = var8_0
+	elseif var2_26.x > var1_26.x then
+		var5_26 = var8_0
+	elseif var2_26.x < var1_26.x then
+		var5_26 = -var8_0
 	end
 
-	return var5
+	return var5_26
 end
 
-function var0.checkCharActive(arg0)
-	if arg0.anim then
-		if arg0.effectId and arg0.effectId > 0 then
-			arg0:changeAnimeState(true)
-			arg0:checkEffect(function()
-				arg0:changeAnimeState(false)
-				arg0:checkCharActive()
+function var0_0.checkCharActive(arg0_27)
+	if arg0_27.anim then
+		if arg0_27.effectId and arg0_27.effectId > 0 then
+			arg0_27:changeAnimeState(true)
+			arg0_27:checkEffect(function()
+				arg0_27:changeAnimeState(false)
+				arg0_27:checkCharActive()
 			end)
-		elseif arg0.step and arg0.step > 0 then
-			arg0:changeAnimeState(true)
-			arg0:checkStep(function()
-				arg0:changeAnimeState(false)
-				arg0:checkCharActive()
+		elseif arg0_27.step and arg0_27.step > 0 then
+			arg0_27:changeAnimeState(true)
+			arg0_27:checkStep(function()
+				arg0_27:changeAnimeState(false)
+				arg0_27:checkCharActive()
 			end)
-		elseif arg0.activity then
-			arg0.activity = getProxy(ActivityProxy):getActivityById(arg0.activity.id)
+		elseif arg0_27.activity then
+			arg0_27.activity = getProxy(ActivityProxy):getActivityById(arg0_27.activity.id)
 
-			arg0:updataActivity(arg0.activity)
+			arg0_27:updataActivity(arg0_27.activity)
 		end
 	end
 end
 
-function var0.firstUpdata(arg0, arg1)
-	arg0:activityDataUpdata(arg1)
-	arg0:updataUI()
-	arg0:updataChar()
-	arg0:checkCharActive()
+function var0_0.firstUpdata(arg0_30, arg1_30)
+	arg0_30:activityDataUpdata(arg1_30)
+	arg0_30:updataUI()
+	arg0_30:updataChar()
+	arg0_30:checkCharActive()
 end
 
-function var0.updataActivity(arg0, arg1)
-	arg0:activityDataUpdata(arg1)
-	arg0:updataUI()
+function var0_0.updataActivity(arg0_31, arg1_31)
+	arg0_31:activityDataUpdata(arg1_31)
+	arg0_31:updataUI()
 end
 
-function var0.activityDataUpdata(arg0, arg1)
-	arg0.activity = arg1
+function var0_0.activityDataUpdata(arg0_32, arg1_32)
+	arg0_32.activity = arg1_32
 
-	local var0 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var1 = arg0.activity.data1
+	local var0_32 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var1_32 = arg0_32.activity.data1
 
-	arg0.totalCnt = math.ceil((var0 - var1) / 86400) * arg0.activity:getDataConfig("daily_time") + arg0.activity.data1_list[1]
-	arg0.useCount = arg0.activity.data1_list[2]
-	arg0.leftCount = arg0.totalCnt - arg0.useCount
+	arg0_32.totalCnt = math.ceil((var0_32 - var1_32) / 86400) * arg0_32.activity:getDataConfig("daily_time") + arg0_32.activity.data1_list[1]
+	arg0_32.useCount = arg0_32.activity.data1_list[2]
+	arg0_32.leftCount = arg0_32.totalCnt - arg0_32.useCount
 
-	if arg0.turnCnt and arg0.turnCnt ~= arg0.activity.data1_list[3] - 1 then
-		arg0.autoShowScreen = nil
+	if arg0_32.turnCnt and arg0_32.turnCnt ~= arg0_32.activity.data1_list[3] - 1 then
+		arg0_32.autoShowScreen = nil
 	end
 
-	arg0.turnCnt = arg0.activity.data1_list[3] - 1
-	arg0.leftDropShipCnt = 8 - arg0.turnCnt
+	arg0_32.turnCnt = arg0_32.activity.data1_list[3] - 1
+	arg0_32.leftDropShipCnt = 8 - arg0_32.turnCnt
 
-	local var2 = arg0.activity.data2_list[2]
+	local var2_32 = arg0_32.activity.data2_list[2]
 
-	arg0.advanceTotalCnt = #arg1:getDataConfig("reward")
-	arg0.isAdvanceRp = arg0.advanceTotalCnt - var2 > 0
+	arg0_32.advanceTotalCnt = #arg1_32:getDataConfig("reward")
+	arg0_32.isAdvanceRp = arg0_32.advanceTotalCnt - var2_32 > 0
 
-	local var3 = arg0.activity.data2_list[1]
+	local var3_32 = arg0_32.activity.data2_list[1]
 
-	arg0.leftAwardCnt = var3 - var2
-	arg0.advanceRpCount = math.max(0, math.min(var3, arg0.advanceTotalCnt) - var2)
-	arg0.commonRpCount = math.max(0, var3 - arg0.advanceTotalCnt) - math.max(0, var2 - arg0.advanceTotalCnt)
+	arg0_32.leftAwardCnt = var3_32 - var2_32
+	arg0_32.advanceRpCount = math.max(0, math.min(var3_32, arg0_32.advanceTotalCnt) - var2_32)
+	arg0_32.commonRpCount = math.max(0, var3_32 - arg0_32.advanceTotalCnt) - math.max(0, var2_32 - arg0_32.advanceTotalCnt)
 
-	local var4 = arg1:getDataConfig("reward_time")
+	local var4_32 = arg1_32:getDataConfig("reward_time")
 
-	arg0.nextredPacketStep = var4 - arg0.useCount % var4
-	arg0.pos = arg0.activity.data2
-	arg0.lastPos = arg0.pos
-	arg0.step = arg0.activity.data3
-	arg0.effectId = arg0.activity.data4
+	arg0_32.nextredPacketStep = var4_32 - arg0_32.useCount % var4_32
+	arg0_32.pos = arg0_32.activity.data2
+	arg0_32.lastPos = arg0_32.pos
+	arg0_32.step = arg0_32.activity.data3
+	arg0_32.effectId = arg0_32.activity.data4
 end
 
-function var0.checkStep(arg0, arg1)
-	if arg0.step > 0 then
-		arg0._event:emit(MonopolyWorldScene.ON_MOVE, arg0.activity.id, function(arg0, arg1, arg2)
-			arg0.step = arg0
-			arg0.lastPos = arg0.pos
-			arg0.pos = arg1[#arg1]
-			arg0.effectId = arg2
+function var0_0.checkStep(arg0_33, arg1_33)
+	if arg0_33.step > 0 then
+		arg0_33._event:emit(MonopolyWorldScene.ON_MOVE, arg0_33.activity.id, function(arg0_34, arg1_34, arg2_34)
+			arg0_33.step = arg0_34
+			arg0_33.lastPos = arg0_33.pos
+			arg0_33.pos = arg1_34[#arg1_34]
+			arg0_33.effectId = arg2_34
 
 			seriesAsync({
-				function(arg0)
-					local var0 = #arg1 > 3 and var15 or var14
+				function(arg0_35)
+					local var0_35 = #arg1_34 > 3 and var15_0 or var14_0
 
-					arg0:moveCharWithPaths(arg1, var0, arg0)
+					arg0_33:moveCharWithPaths(arg1_34, var0_35, arg0_35)
 				end,
-				function(arg0)
-					if arg1 and #arg1 > 0 and arg0.pos == 1 then
-						arg0.turnCnt = arg0.turnCnt + 1
+				function(arg0_36)
+					if arg1_34 and #arg1_34 > 0 and arg0_33.pos == 1 then
+						arg0_33.turnCnt = arg0_33.turnCnt + 1
 
-						setText(findTF(arg0._tf, "topRight/times"), tostring(arg0.turnCnt))
-						arg0:changeBg()
+						setText(findTF(arg0_33._tf, "topRight/times"), tostring(arg0_33.turnCnt))
+						arg0_33:changeBg()
 					end
 
-					if isActive(arg0.effectStart) then
-						setActive(arg0.effectStart, false)
-						setActive(arg0.effectStart, true)
+					if isActive(arg0_33.effectStart) then
+						setActive(arg0_33.effectStart, false)
+						setActive(arg0_33.effectStart, true)
 						LeanTween.delayedCall(1, System.Action(function()
-							for iter0 = 1, 6 do
-								local var0 = findTF(arg0.btnStart, "num/" .. iter0)
+							for iter0_37 = 1, 6 do
+								local var0_37 = findTF(arg0_33.btnStart, "num/" .. iter0_37)
 
-								setActive(var0, false)
+								setActive(var0_37, false)
 							end
 						end))
 						LeanTween.delayedCall(2, System.Action(function()
-							setActive(arg0.effectStart, false)
+							setActive(arg0_33.effectStart, false)
 						end))
 					end
 
-					arg0:checkEffect(arg0)
+					arg0_33:checkEffect(arg0_36)
 				end
 			}, function()
-				if arg1 then
-					arg1()
+				if arg1_33 then
+					arg1_33()
 				end
 			end)
 		end)
 	else
-		if arg0.pos == 1 then
-			arg0.turnCnt = arg0.turnCnt + 1
+		if arg0_33.pos == 1 then
+			arg0_33.turnCnt = arg0_33.turnCnt + 1
 
-			arg0:changeBg()
+			arg0_33:changeBg()
 		end
 
-		if arg1 then
-			arg1()
+		if arg1_33 then
+			arg1_33()
 		end
 	end
 end
 
-function var0.updataUI(arg0)
-	setText(arg0.labelLeftCount, arg0.leftCount)
+function var0_0.updataUI(arg0_40)
+	setText(arg0_40.labelLeftCount, arg0_40.leftCount)
 
-	local var0 = arg0.activity:getDataConfig("daily_time")
+	local var0_40 = arg0_40.activity:getDataConfig("daily_time")
 
-	var25 = var24.icon
+	var25_0 = var24_0.icon
 
-	if arg0.turnCnt and arg0.turnCnt < #var23 then
-		var24 = pg.furniture_data_template[var23[arg0.turnCnt + 1]]
+	if arg0_40.turnCnt and arg0_40.turnCnt < #var23_0 then
+		var24_0 = pg.furniture_data_template[var23_0[arg0_40.turnCnt + 1]]
 
-		setText(arg0.gameTipUI2, i18n(var6, var0, 1))
+		setText(arg0_40.gameTipUI2, i18n(var6_0, var0_40, 1))
 	else
-		setText(arg0.gameTipUI2, i18n(var7, var0))
+		setText(arg0_40.gameTipUI2, i18n(var7_0, var0_40))
 	end
 
-	if arg0.leftCount and arg0.leftCount > 0 then
-		setActive(findTF(arg0.btnStart, "img3"), true)
-		setActive(findTF(arg0.btnStart, "img4"), false)
+	if arg0_40.leftCount and arg0_40.leftCount > 0 then
+		setActive(findTF(arg0_40.btnStart, "img3"), true)
+		setActive(findTF(arg0_40.btnStart, "img4"), false)
 	else
-		setActive(findTF(arg0.btnStart, "img3"), false)
-		setActive(findTF(arg0.btnStart, "img4"), true)
+		setActive(findTF(arg0_40.btnStart, "img3"), false)
+		setActive(findTF(arg0_40.btnStart, "img4"), true)
 	end
 
-	setText(findTF(arg0._tf, "topRight/times"), tostring(arg0.turnCnt))
+	setText(findTF(arg0_40._tf, "topRight/times"), tostring(arg0_40.turnCnt))
 
-	for iter0 = 1, #arg0.furnItems do
-		if iter0 <= arg0.turnCnt then
-			setActive(findTF(arg0.furnItems[iter0], "got"), true)
+	for iter0_40 = 1, #arg0_40.furnItems do
+		if iter0_40 <= arg0_40.turnCnt then
+			setActive(findTF(arg0_40.furnItems[iter0_40], "got"), true)
 		else
-			setActive(findTF(arg0.furnItems[iter0], "got"), false)
+			setActive(findTF(arg0_40.furnItems[iter0_40], "got"), false)
 		end
 	end
 
-	if arg0.bannerSnap.StartingScreen == 0 and not arg0.bannerInit then
-		if arg0.turnCnt < #var23 then
-			arg0.bannerSnap.StartingScreen = arg0.turnCnt % 5 + 1
-			arg0.bannerInit = true
+	if arg0_40.bannerSnap.StartingScreen == 0 and not arg0_40.bannerInit then
+		if arg0_40.turnCnt < #var23_0 then
+			arg0_40.bannerSnap.StartingScreen = arg0_40.turnCnt % 5 + 1
+			arg0_40.bannerInit = true
 		else
-			arg0.bannerSnap.autoSnap = 5
+			arg0_40.bannerSnap.autoSnap = 5
 		end
-	elseif arg0.bannerSnap:CurrentScreen() ~= arg0.turnCnt and arg0.turnCnt < #var23 then
-		local var1 = arg0.turnCnt % 5 - arg0.bannerSnap:CurrentScreen()
+	elseif arg0_40.bannerSnap:CurrentScreen() ~= arg0_40.turnCnt and arg0_40.turnCnt < #var23_0 then
+		local var1_40 = arg0_40.turnCnt % 5 - arg0_40.bannerSnap:CurrentScreen()
 
-		for iter1 = 1, math.abs(var1) do
-			if math.sign(var1) > 0 then
-				arg0.bannerSnap:NextScreen(true)
+		for iter1_40 = 1, math.abs(var1_40) do
+			if math.sign(var1_40) > 0 then
+				arg0_40.bannerSnap:NextScreen(true)
 			else
-				arg0.bannerSnap:PreviousScreen(true)
+				arg0_40.bannerSnap:PreviousScreen(true)
 			end
 		end
 	end
 
-	if arg0.turnCnt >= #var23 then
-		if arg0.bannerCanvas.blocksRaycasts ~= true then
-			arg0.bannerCanvas.blocksRaycasts = true
+	if arg0_40.turnCnt >= #var23_0 then
+		if arg0_40.bannerCanvas.blocksRaycasts ~= true then
+			arg0_40.bannerCanvas.blocksRaycasts = true
 		end
 
-		if not isActive(findTF(arg0._tf, "bg/dots")) then
-			arg0.bannerSnap:NextScreen(true)
-			setActive(findTF(arg0._tf, "bg/dots"), true)
+		if not isActive(findTF(arg0_40._tf, "bg/dots")) then
+			arg0_40.bannerSnap:NextScreen(true)
+			setActive(findTF(arg0_40._tf, "bg/dots"), true)
 		end
 	else
-		if arg0.bannerCanvas.blocksRaycasts == true then
-			arg0.bannerCanvas.blocksRaycasts = false
+		if arg0_40.bannerCanvas.blocksRaycasts == true then
+			arg0_40.bannerCanvas.blocksRaycasts = false
 		end
 
-		if isActive(findTF(arg0._tf, "bg/dots")) then
-			setActive(findTF(arg0._tf, "bg/dots"), false)
+		if isActive(findTF(arg0_40._tf, "bg/dots")) then
+			setActive(findTF(arg0_40._tf, "bg/dots"), false)
 		end
 	end
 
-	arg0:changeBg()
+	arg0_40:changeBg()
 end
 
-function var0.updataChar(arg0)
-	local var0 = arg0.mapCells[arg0.pos]
+function var0_0.updataChar(arg0_41)
+	local var0_41 = arg0_41.mapCells[arg0_41.pos]
 
-	arg0.char.localPosition = var0.position
+	arg0_41.char.localPosition = var0_41.position
 
-	if not isActive(arg0.char) then
-		SetActive(arg0.char, true)
-		arg0.char:SetAsLastSibling()
+	if not isActive(arg0_41.char) then
+		SetActive(arg0_41.char, true)
+		arg0_41.char:SetAsLastSibling()
 	end
 
-	if arg0.model then
-		arg0:updataCharDirect(arg0.pos, false)
+	if arg0_41.model then
+		arg0_41:updataCharDirect(arg0_41.pos, false)
 	end
 end
 
-function var0.getEffectTf(arg0, arg1, arg2)
-	for iter0 = 1, #var22 do
-		local var0 = var22[iter0]
+function var0_0.getEffectTf(arg0_42, arg1_42, arg2_42)
+	for iter0_42 = 1, #var22_0 do
+		local var0_42 = var22_0[iter0_42]
 
-		if var0.cell_type == arg1 then
-			local var1 = var0.name
+		if var0_42.cell_type == arg1_42 then
+			local var1_42 = var0_42.name
 
-			if not arg2 then
-				return findTF(arg0._tf, "mapContainer/effect/" .. var1)
-			elseif arg2 == var0.path_length then
-				return findTF(arg0._tf, "mapContainer/effect/" .. var1)
+			if not arg2_42 then
+				return findTF(arg0_42._tf, "mapContainer/effect/" .. var1_42)
+			elseif arg2_42 == var0_42.path_length then
+				return findTF(arg0_42._tf, "mapContainer/effect/" .. var1_42)
 			end
 		end
 	end
@@ -661,269 +661,269 @@ function var0.getEffectTf(arg0, arg1, arg2)
 	return nil
 end
 
-function var0.checkEffect(arg0, arg1)
-	if arg0.effectId > 0 then
-		local var0 = arg0.mapCells[arg0.pos]
-		local var1, var2 = arg0:getActionName(var0.icon)
-		local var3 = pg.activity_event_monopoly_event[arg0.effectId].story
+function var0_0.checkEffect(arg0_43, arg1_43)
+	if arg0_43.effectId > 0 then
+		local var0_43 = arg0_43.mapCells[arg0_43.pos]
+		local var1_43, var2_43 = arg0_43:getActionName(var0_43.icon)
+		local var3_43 = pg.activity_event_monopoly_event[arg0_43.effectId].story
 
 		seriesAsync({
-			function(arg0)
-				if var1 then
-					arg0:changeCharAction(var1, 1, function()
-						arg0:changeCharAction(var13, 0, nil)
-						arg0()
+			function(arg0_44)
+				if var1_43 then
+					arg0_43:changeCharAction(var1_43, 1, function()
+						arg0_43:changeCharAction(var13_0, 0, nil)
+						arg0_44()
 					end)
 				end
 
-				if var2 then
-					local var0 = arg0:getEffectTf(var2)
+				if var2_43 then
+					local var0_44 = arg0_43:getEffectTf(var2_43)
 
-					if var0 then
-						var0.anchoredPosition = Vector2(var0.position.x, var0.position.y)
+					if var0_44 then
+						var0_44.anchoredPosition = Vector2(var0_43.position.x, var0_43.position.y)
 
-						setActive(var0, false)
-						setActive(var0, true)
+						setActive(var0_44, false)
+						setActive(var0_44, true)
 					end
 				end
 
-				if not var1 and not var2 then
-					arg0()
-				elseif not var1 and var2 then
+				if not var1_43 and not var2_43 then
+					arg0_44()
+				elseif not var1_43 and var2_43 then
 					LeanTween.delayedCall(1, System.Action(function()
-						arg0()
+						arg0_44()
 					end))
 				end
 			end,
-			function(arg0)
-				if var3 and tonumber(var3) ~= 0 then
-					pg.NewStoryMgr.GetInstance():Play(var3, arg0, true, true)
+			function(arg0_47)
+				if var3_43 and tonumber(var3_43) ~= 0 then
+					pg.NewStoryMgr.GetInstance():Play(var3_43, arg0_47, true, true)
 				else
-					arg0()
+					arg0_47()
 				end
 			end,
-			function(arg0)
-				arg0:triggerEfeect(arg0)
+			function(arg0_48)
+				arg0_43:triggerEfeect(arg0_48)
 			end,
-			function(arg0)
-				arg0:checkCountStory(arg0)
+			function(arg0_49)
+				arg0_43:checkCountStory(arg0_49)
 			end,
-			function(arg0)
-				if arg0.pos == 1 then
-					arg0:changeBg()
+			function(arg0_50)
+				if arg0_43.pos == 1 then
+					arg0_43:changeBg()
 				end
 
-				arg0()
+				arg0_50()
 			end
-		}, arg1)
-	elseif arg1 then
-		arg1()
+		}, arg1_43)
+	elseif arg1_43 then
+		arg1_43()
 	end
 end
 
-function var0.triggerEfeect(arg0, arg1)
-	arg0._event:emit(MonopolyWorldScene.ON_TRIGGER, arg0.activity.id, function(arg0, arg1)
-		if arg0 and #arg0 >= 0 then
-			arg0.effectId = arg1
-			arg0.lastPos = arg0.pos
-			arg0.pos = arg0[#arg0]
+function var0_0.triggerEfeect(arg0_51, arg1_51)
+	arg0_51._event:emit(MonopolyWorldScene.ON_TRIGGER, arg0_51.activity.id, function(arg0_52, arg1_52)
+		if arg0_52 and #arg0_52 >= 0 then
+			arg0_51.effectId = arg1_52
+			arg0_51.lastPos = arg0_51.pos
+			arg0_51.pos = arg0_52[#arg0_52]
 
-			if #arg0 > 0 then
+			if #arg0_52 > 0 then
 				print()
 			end
 
-			local var0 = arg0:getEffectTf(var18, #arg0)
+			local var0_52 = arg0_51:getEffectTf(var18_0, #arg0_52)
 
 			seriesAsync({
-				function(arg0)
-					if var0 then
-						setActive(var0, false)
-						setActive(var0, true)
+				function(arg0_53)
+					if var0_52 then
+						setActive(var0_52, false)
+						setActive(var0_52, true)
 
-						var0.anchoredPosition = arg0.mapCells[arg0.lastPos].position
+						var0_52.anchoredPosition = arg0_51.mapCells[arg0_51.lastPos].position
 
 						LeanTween.delayedCall(1, System.Action(function()
-							arg0()
+							arg0_53()
 						end))
 					else
-						arg0()
+						arg0_53()
 					end
 				end,
-				function(arg0)
-					arg0:moveCharWithPaths(arg0, var12, arg0)
+				function(arg0_55)
+					arg0_51:moveCharWithPaths(arg0_52, var12_0, arg0_55)
 				end
 			}, function()
-				if var0 then
+				if var0_52 then
 					-- block empty
 				end
 
-				arg1()
+				arg1_51()
 			end)
 		end
 	end)
 end
 
-function var0.changeBg(arg0)
-	local var0 = arg0.turnCnt and arg0.turnCnt % 5 + 1 or 1
+function var0_0.changeBg(arg0_57)
+	local var0_57 = arg0_57.turnCnt and arg0_57.turnCnt % 5 + 1 or 1
 
-	for iter0 = 1, 5 do
-		local var1 = findTF(arg0._tf, "bg/img" .. iter0)
-		local var2 = GetComponent(var1, typeof(Image)).color.a
+	for iter0_57 = 1, 5 do
+		local var1_57 = findTF(arg0_57._tf, "bg/img" .. iter0_57)
+		local var2_57 = GetComponent(var1_57, typeof(Image)).color.a
 
-		if iter0 == var0 then
-			if var2 ~= 1 then
-				LeanTween.alpha(var1, 1, 0.5)
+		if iter0_57 == var0_57 then
+			if var2_57 ~= 1 then
+				LeanTween.alpha(var1_57, 1, 0.5)
 			end
-		elseif var2 ~= 0 then
-			LeanTween.alpha(var1, 0, 0.5)
+		elseif var2_57 ~= 0 then
+			LeanTween.alpha(var1_57, 0, 0.5)
 		end
 	end
 end
 
-function var0.toMoveCar(arg0)
-	if not arg0.targetPosition then
+function var0_0.toMoveCar(arg0_58)
+	if not arg0_58.targetPosition then
 		return
 	end
 
-	local var0 = math.abs(arg0.targetPosition.x - arg0.char.localPosition.x)
-	local var1 = math.abs(arg0.targetPosition.y - arg0.char.localPosition.y)
+	local var0_58 = math.abs(arg0_58.targetPosition.x - arg0_58.char.localPosition.x)
+	local var1_58 = math.abs(arg0_58.targetPosition.y - arg0_58.char.localPosition.y)
 
-	if var0 <= 6.5 and var1 <= 6.5 then
-		arg0.targetPosition = nil
+	if var0_58 <= 6.5 and var1_58 <= 6.5 then
+		arg0_58.targetPosition = nil
 
-		if arg0.moveComplete then
-			arg0:updataCharDirect(arg0.targetPosIndex, true)
-			arg0.moveComplete()
+		if arg0_58.moveComplete then
+			arg0_58:updataCharDirect(arg0_58.targetPosIndex, true)
+			arg0_58.moveComplete()
 		end
 	end
 
-	arg0.speedX = math.abs(arg0.speedX + arg0.baseASpeedX) > math.abs(arg0.baseSpeedX) and arg0.baseSpeedX or arg0.speedX + arg0.baseASpeedX
-	arg0.speedY = math.abs(arg0.speedY + arg0.baseASpeedY) > math.abs(arg0.baseSpeedY) and arg0.baseSpeedY or arg0.speedY + arg0.baseASpeedY
+	arg0_58.speedX = math.abs(arg0_58.speedX + arg0_58.baseASpeedX) > math.abs(arg0_58.baseSpeedX) and arg0_58.baseSpeedX or arg0_58.speedX + arg0_58.baseASpeedX
+	arg0_58.speedY = math.abs(arg0_58.speedY + arg0_58.baseASpeedY) > math.abs(arg0_58.baseSpeedY) and arg0_58.baseSpeedY or arg0_58.speedY + arg0_58.baseASpeedY
 
-	local var2 = arg0.char.localPosition
+	local var2_58 = arg0_58.char.localPosition
 
-	arg0.char.localPosition = Vector3(var2.x + arg0.speedX, var2.y + arg0.speedY, 0)
+	arg0_58.char.localPosition = Vector3(var2_58.x + arg0_58.speedX, var2_58.y + arg0_58.speedY, 0)
 end
 
-function var0.checkPathTurn(arg0, arg1)
-	local var0 = arg1 + 1 > #arg0.mapCells and 1 or arg1 + 1
-	local var1 = arg1 - 1 < 1 and #arg0.mapCells or arg1 - 1
+function var0_0.checkPathTurn(arg0_59, arg1_59)
+	local var0_59 = arg1_59 + 1 > #arg0_59.mapCells and 1 or arg1_59 + 1
+	local var1_59 = arg1_59 - 1 < 1 and #arg0_59.mapCells or arg1_59 - 1
 
-	if arg0.mapCells[var0].col == arg0.mapCells[var1].col or arg0.mapCells[var0].row == arg0.mapCells[var1].row then
+	if arg0_59.mapCells[var0_59].col == arg0_59.mapCells[var1_59].col or arg0_59.mapCells[var0_59].row == arg0_59.mapCells[var1_59].row then
 		return false
 	end
 
 	return true
 end
 
-function var0.moveCharWithPaths(arg0, arg1, arg2, arg3)
-	if not arg1 or #arg1 <= 0 then
-		if arg3 then
-			arg3()
+function var0_0.moveCharWithPaths(arg0_60, arg1_60, arg2_60, arg3_60)
+	if not arg1_60 or #arg1_60 <= 0 then
+		if arg3_60 then
+			arg3_60()
 		end
 
 		return
 	end
 
-	local var0 = {}
-	local var1 = arg1[1] - 1 < 1 and #arg0.mapCells or arg1[1] - 1
+	local var0_60 = {}
+	local var1_60 = arg1_60[1] - 1 < 1 and #arg0_60.mapCells or arg1_60[1] - 1
 
-	for iter0 = 1, #arg1 do
-		local var2 = arg0.mapCells[arg1[iter0]]
+	for iter0_60 = 1, #arg1_60 do
+		local var2_60 = arg0_60.mapCells[arg1_60[iter0_60]]
 
-		table.insert(var0, function(arg0)
-			arg0:changeCharAction(arg2, 0, nil)
-			arg0:updataCharDirect(var1, true)
+		table.insert(var0_60, function(arg0_61)
+			arg0_60:changeCharAction(arg2_60, 0, nil)
+			arg0_60:updataCharDirect(var1_60, true)
 
-			var1 = arg1[iter0]
+			var1_60 = arg1_60[iter0_60]
 
-			local var0
-			local var1 = arg2 == var12 and 0.9 or arg2 == var14 and 0.9 or 0.5
+			local var0_61
+			local var1_61 = arg2_60 == var12_0 and 0.9 or arg2_60 == var14_0 and 0.9 or 0.5
 
-			LeanTween.moveLocal(go(arg0.char), var2.tf.localPosition, var1):setEase(LeanTweenType.linear):setOnComplete(System.Action(function()
-				if arg2 == var14 then
+			LeanTween.moveLocal(go(arg0_60.char), var2_60.tf.localPosition, var1_61):setEase(LeanTweenType.linear):setOnComplete(System.Action(function()
+				if arg2_60 == var14_0 then
 					LeanTween.delayedCall(0.05, System.Action(function()
-						arg0()
+						arg0_61()
 					end))
 				else
-					arg0()
+					arg0_61()
 				end
 			end))
 		end)
 
-		if iter0 == #arg1 then
-			table.insert(var0, function(arg0)
-				arg0:changeCharAction(var13, 0, nil)
-				arg0:updataCharDirect(arg1[iter0], false)
-				arg0()
+		if iter0_60 == #arg1_60 then
+			table.insert(var0_60, function(arg0_64)
+				arg0_60:changeCharAction(var13_0, 0, nil)
+				arg0_60:updataCharDirect(arg1_60[iter0_60], false)
+				arg0_64()
 			end)
 		end
 	end
 
-	seriesAsync(var0, arg3)
+	seriesAsync(var0_60, arg3_60)
 end
 
-function var0.changeCharAction(arg0, arg1, arg2, arg3)
-	if arg0.actionName == arg1 and arg0.actionName ~= var14 then
+function var0_0.changeCharAction(arg0_65, arg1_65, arg2_65, arg3_65)
+	if arg0_65.actionName == arg1_65 and arg0_65.actionName ~= var14_0 then
 		return
 	end
 
-	arg0.actionName = arg1
+	arg0_65.actionName = arg1_65
 
-	arg0.anim:SetActionCallBack(nil)
-	arg0.anim:SetAction(arg1, 0)
-	arg0.anim:SetActionCallBack(function(arg0)
-		if arg0 == "finish" then
-			if arg2 == 1 then
-				arg0.anim:SetActionCallBack(nil)
-				arg0.anim:SetAction(var13, 0)
+	arg0_65.anim:SetActionCallBack(nil)
+	arg0_65.anim:SetAction(arg1_65, 0)
+	arg0_65.anim:SetActionCallBack(function(arg0_66)
+		if arg0_66 == "finish" then
+			if arg2_65 == 1 then
+				arg0_65.anim:SetActionCallBack(nil)
+				arg0_65.anim:SetAction(var13_0, 0)
 			end
 
-			if arg3 then
-				arg3()
+			if arg3_65 then
+				arg3_65()
 			end
 		end
 	end)
 
-	if arg2 ~= 1 and arg3 then
-		arg3()
+	if arg2_65 ~= 1 and arg3_65 then
+		arg3_65()
 	end
 end
 
-function var0.getActionName(arg0, arg1)
-	if arg1 == "icon_1" then
-		return var11, var21
-	elseif arg1 == "icon_2" then
-		return var9, var17
-	elseif arg1 == "icon_3" then
-		return var11, var20
-	elseif arg1 == "icon_4" then
-		return var11, var21
-	elseif arg1 == "icon_5" then
-		return var10, var19
-	elseif arg1 == "icon_6" then
+function var0_0.getActionName(arg0_67, arg1_67)
+	if arg1_67 == "icon_1" then
+		return var11_0, var21_0
+	elseif arg1_67 == "icon_2" then
+		return var9_0, var17_0
+	elseif arg1_67 == "icon_3" then
+		return var11_0, var20_0
+	elseif arg1_67 == "icon_4" then
+		return var11_0, var21_0
+	elseif arg1_67 == "icon_5" then
+		return var10_0, var19_0
+	elseif arg1_67 == "icon_6" then
 		return nil, nil
 	end
 end
 
-function var0.dispose(arg0)
-	if arg0.skinCardName and arg0.showModel then
-		PoolMgr.GetInstance():ReturnSpineChar(arg0.skinCardName, arg0.showModel)
+function var0_0.dispose(arg0_68)
+	if arg0_68.skinCardName and arg0_68.showModel then
+		PoolMgr.GetInstance():ReturnSpineChar(arg0_68.skinCardName, arg0_68.showModel)
 	end
 
-	if arg0.funrTimer then
-		arg0.funrTimer:Stop()
+	if arg0_68.funrTimer then
+		arg0_68.funrTimer:Stop()
 
-		arg0.funrTimer = nil
+		arg0_68.funrTimer = nil
 	end
 
-	for iter0 = 1, 5 do
-		local var0 = findTF(arg0._tf, "bg/img" .. iter0)
+	for iter0_68 = 1, 5 do
+		local var0_68 = findTF(arg0_68._tf, "bg/img" .. iter0_68)
 
-		if LeanTween.isTweening(var0) then
-			LeanTween.cancel(var0)
+		if LeanTween.isTweening(var0_68) then
+			LeanTween.cancel(var0_68)
 		end
 	end
 end
 
-return var0
+return var0_0

@@ -1,35 +1,35 @@
-﻿local var0 = class("ActivityLevelConst")
+﻿local var0_0 = class("ActivityLevelConst")
 
-function var0.getExtraChapterSocre(arg0, arg1, arg2, arg3)
-	if not arg3 or arg3:isEnd() then
+function var0_0.getExtraChapterSocre(arg0_1, arg1_1, arg2_1, arg3_1)
+	if not arg3_1 or arg3_1:isEnd() then
 		return 0, 0
 	end
 
-	local var0 = arg3:getConfig("config_data")
+	local var0_1 = arg3_1:getConfig("config_data")
 
-	assert(var0, "miss config >>" .. arg0)
+	assert(var0_1, "miss config >>" .. arg0_1)
 
-	local var1 = 0
-	local var2 = 0
+	local var1_1 = 0
+	local var2_1 = 0
 
-	if var0 then
-		var1 = (var0[2] / math.pow(arg1 + var0[3], var0[4]) - math.pow(arg2, var0[5])) * var0[6]
-		var1 = math.max(var1, 1)
+	if var0_1 then
+		var1_1 = (var0_1[2] / math.pow(arg1_1 + var0_1[3], var0_1[4]) - math.pow(arg2_1, var0_1[5])) * var0_1[6]
+		var1_1 = math.max(var1_1, 1)
 	end
 
-	local var3 = arg3:getData1() or 0
+	local var3_1 = arg3_1:getData1() or 0
 
-	return math.floor(var1), math.floor(var3)
+	return math.floor(var1_1), math.floor(var3_1)
 end
 
-function var0.getShipsPower(arg0)
-	local var0 = 0
+function var0_0.getShipsPower(arg0_2)
+	local var0_2 = 0
 
-	for iter0, iter1 in pairs(arg0) do
-		var0 = var0 + iter1:getShipCombatPower()
+	for iter0_2, iter1_2 in pairs(arg0_2) do
+		var0_2 = var0_2 + iter1_2:getShipCombatPower()
 	end
 
-	return var0
+	return var0_2
 end
 
-return var0
+return var0_0

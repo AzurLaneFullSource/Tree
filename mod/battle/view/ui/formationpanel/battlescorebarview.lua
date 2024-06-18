@@ -1,39 +1,39 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleDataFunction
-local var2 = class("BattleScoreBarView")
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleDataFunction
+local var2_0 = class("BattleScoreBarView")
 
-var0.Battle.BattleScoreBarView = var2
-var2.__name = "BattleScoreBarView"
+var0_0.Battle.BattleScoreBarView = var2_0
+var2_0.__name = "BattleScoreBarView"
 
-function var2.Ctor(arg0, arg1)
-	arg0._go = arg1
-	arg0._tf = arg1.transform
+function var2_0.Ctor(arg0_1, arg1_1)
+	arg0_1._go = arg1_1
+	arg0_1._tf = arg1_1.transform
 
-	arg0:init()
+	arg0_1:init()
 end
 
-function var2.init(arg0)
-	arg0._scoreTF = arg0._tf:Find("bg/Text")
-	arg0._comboTF = arg0._tf:Find("comboMark")
-	arg0._comboText = arg0._tf:Find("comboMark/value")
+function var2_0.init(arg0_2)
+	arg0_2._scoreTF = arg0_2._tf:Find("bg/Text")
+	arg0_2._comboTF = arg0_2._tf:Find("comboMark")
+	arg0_2._comboText = arg0_2._tf:Find("comboMark/value")
 end
 
-function var2.SetActive(arg0, arg1)
-	SetActive(arg0._tf, arg1)
+function var2_0.SetActive(arg0_3, arg1_3)
+	SetActive(arg0_3._tf, arg1_3)
 end
 
-function var2.UpdateScore(arg0, arg1)
-	setText(arg0._scoreTF, arg1)
+function var2_0.UpdateScore(arg0_4, arg1_4)
+	setText(arg0_4._scoreTF, arg1_4)
 end
 
-function var2.UpdateCombo(arg0, arg1)
-	if arg1 > 1 then
-		SetActive(arg0._comboTF, true)
+function var2_0.UpdateCombo(arg0_5, arg1_5)
+	if arg1_5 > 1 then
+		SetActive(arg0_5._comboTF, true)
 	else
-		SetActive(arg0._comboTF, false)
+		SetActive(arg0_5._comboTF, false)
 	end
 
-	setText(arg0._comboText, arg1)
+	setText(arg0_5._comboText, arg1_5)
 end

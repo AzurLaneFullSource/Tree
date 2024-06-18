@@ -1,10 +1,10 @@
-﻿local var0 = class("ObjectTreasureN", import("view.miniGame.gameView.RyzaMiniGame.object.ObjectBreakable"))
+﻿local var0_0 = class("ObjectTreasureN", import("view.miniGame.gameView.RyzaMiniGame.object.ObjectBreakable"))
 
-function var0.InitRegister(arg0, arg1)
-	var0.super.InitRegister(arg0, arg1)
-	arg0:Register("touch", function()
-		arg0:DeregisterAll()
-		arg0._tf:Find("Image"):GetComponent(typeof(Animator)):Play("Open")
+function var0_0.InitRegister(arg0_1, arg1_1)
+	var0_0.super.InitRegister(arg0_1, arg1_1)
+	arg0_1:Register("touch", function()
+		arg0_1:DeregisterAll()
+		arg0_1._tf:Find("Image"):GetComponent(typeof(Animator)):Play("Open")
 	end, {
 		{
 			0,
@@ -13,4 +13,4 @@ function var0.InitRegister(arg0, arg1)
 	})
 end
 
-return var0
+return var0_0

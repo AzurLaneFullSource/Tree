@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_207 = {}
+var0_0.word_template_207 = {}
 
-local var1 = var0.word_template_207
+local var1_0 = var0_0.word_template_207
 
 function temp()
-	var1.苗 = {
+	var1_0.苗 = {
 		独 = {
 			this = true
 		},
@@ -33,7 +33,7 @@ end
 temp()
 
 function temp()
-	var1.妙 = {
+	var1_0.妙 = {
 		美 = {
 			人 = {
 				this = true
@@ -57,7 +57,7 @@ end
 temp()
 
 function temp()
-	var1.灭 = {
+	var1_0.灭 = {
 		掉 = {
 			所 = {
 				有 = {
@@ -204,7 +204,7 @@ end
 temp()
 
 function temp()
-	var1.滅 = {
+	var1_0.滅 = {
 		族 = {
 			this = true
 		}
@@ -214,7 +214,7 @@ end
 temp()
 
 function temp()
-	var1.民 = {
+	var1_0.民 = {
 		办 = {
 			真 = {
 				实 = {
@@ -627,7 +627,7 @@ end
 temp()
 
 function temp()
-	var1.緡 = {
+	var1_0.緡 = {
 		this = {
 			this = true
 		}
@@ -637,7 +637,7 @@ end
 temp()
 
 function temp()
-	var1.闵 = {
+	var1_0.闵 = {
 		行 = {
 			倒 = {
 				钩 = {

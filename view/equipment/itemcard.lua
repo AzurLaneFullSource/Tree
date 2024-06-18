@@ -1,67 +1,67 @@
-﻿local var0 = class("ItemCard")
+﻿local var0_0 = class("ItemCard")
 
-function var0.Ctor(arg0, arg1)
-	arg0.go = arg1
-	arg0.bg = findTF(arg1, "bg")
-	arg0.countTF = findTF(arg1, "bg/icon_bg/count"):GetComponent(typeof(Text))
-	arg0.nameTF = findTF(arg1, "bg/name"):GetComponent(typeof(Text))
-	arg0.timeLimitTag = findTF(arg1, "bg/timeline")
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.go = arg1_1
+	arg0_1.bg = findTF(arg1_1, "bg")
+	arg0_1.countTF = findTF(arg1_1, "bg/icon_bg/count"):GetComponent(typeof(Text))
+	arg0_1.nameTF = findTF(arg1_1, "bg/name"):GetComponent(typeof(Text))
+	arg0_1.timeLimitTag = findTF(arg1_1, "bg/timeline")
 
-	ClearTweenItemAlphaAndWhite(arg0.go)
+	ClearTweenItemAlphaAndWhite(arg0_1.go)
 end
 
-function var0.update(arg0, arg1)
-	arg0.itemVO = arg1
+function var0_0.update(arg0_2, arg1_2)
+	arg0_2.itemVO = arg1_2
 
-	if not IsNil(arg0.timeLimitTag) then
-		setActive(arg0.timeLimitTag, arg1:getConfig("time_limit") == 1 or Item.InTimeLimitSkinAssigned(arg1.id))
+	if not IsNil(arg0_2.timeLimitTag) then
+		setActive(arg0_2.timeLimitTag, arg1_2:getConfig("time_limit") == 1 or Item.InTimeLimitSkinAssigned(arg1_2.id))
 	end
 
-	updateItem(rtf(arg0.bg), arg1)
-	TweenItemAlphaAndWhite(arg0.go)
+	updateItem(rtf(arg0_2.bg), arg1_2)
+	TweenItemAlphaAndWhite(arg0_2.go)
 
-	arg0.countTF.text = arg1.count > 0 and arg1.count or ""
-	arg0.nameTF.text = arg0:ShortenString(arg1:getConfig("name"), 6)
+	arg0_2.countTF.text = arg1_2.count > 0 and arg1_2.count or ""
+	arg0_2.nameTF.text = arg0_2:ShortenString(arg1_2:getConfig("name"), 6)
 end
 
-function var0.ShortenString(arg0, arg1, arg2)
-	local var0 = 1
-	local var1 = 0
-	local var2 = 0
-	local var3 = #arg1
-	local var4 = false
+function var0_0.ShortenString(arg0_3, arg1_3, arg2_3)
+	local var0_3 = 1
+	local var1_3 = 0
+	local var2_3 = 0
+	local var3_3 = #arg1_3
+	local var4_3 = false
 
-	while var0 <= var3 do
-		local var5 = string.byte(arg1, var0)
-		local var6, var7 = GetPerceptualSize(var5)
+	while var0_3 <= var3_3 do
+		local var5_3 = string.byte(arg1_3, var0_3)
+		local var6_3, var7_3 = GetPerceptualSize(var5_3)
 
-		var0 = var0 + var6
-		var1 = var1 + var7
+		var0_3 = var0_3 + var6_3
+		var1_3 = var1_3 + var7_3
 
-		local var8 = math.ceil(var1)
+		local var8_3 = math.ceil(var1_3)
 
-		if var8 == arg2 - 1 then
-			var2 = var0
-		elseif arg2 < var8 then
-			var4 = true
+		if var8_3 == arg2_3 - 1 then
+			var2_3 = var0_3
+		elseif arg2_3 < var8_3 then
+			var4_3 = true
 
 			break
 		end
 	end
 
-	if var2 == 0 or var3 < var2 or not var4 then
-		return arg1
+	if var2_3 == 0 or var3_3 < var2_3 or not var4_3 then
+		return arg1_3
 	end
 
-	return string.sub(arg1, 1, var2 - 1) .. ".."
+	return string.sub(arg1_3, 1, var2_3 - 1) .. ".."
 end
 
-function var0.clear(arg0)
-	ClearTweenItemAlphaAndWhite(arg0.go)
+function var0_0.clear(arg0_4)
+	ClearTweenItemAlphaAndWhite(arg0_4.go)
 end
 
-function var0.dispose(arg0)
+function var0_0.dispose(arg0_5)
 	return
 end
 
-return var0
+return var0_0

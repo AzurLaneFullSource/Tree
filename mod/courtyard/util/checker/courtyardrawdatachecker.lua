@@ -1,45 +1,45 @@
-﻿local var0 = class("CourtYardRawDataChecker")
+﻿local var0_0 = class("CourtYardRawDataChecker")
 
-function var0.Check(arg0, arg1)
-	local var0 = {}
-	local var1 = {}
+function var0_0.Check(arg0_1, arg1_1)
+	local var0_1 = {}
+	local var1_1 = {}
 
-	for iter0, iter1 in pairs(arg0) do
-		local var2 = RawFurnitureData.New(iter1)
+	for iter0_1, iter1_1 in pairs(arg0_1) do
+		local var2_1 = RawFurnitureData.New(iter1_1)
 
-		if not var0.FillMap(var1, var2) then
+		if not var0_0.FillMap(var1_1, var2_1) then
 			return false, i18n1("Incorrect position")
 		end
 
-		var0[iter1.id] = var2
+		var0_1[iter1_1.id] = var2_1
 	end
 
-	for iter2, iter3 in pairs(var0) do
-		local var3, var4 = var0._CheckFurnitrue(iter3, var0, arg1)
+	for iter2_1, iter3_1 in pairs(var0_1) do
+		local var3_1, var4_1 = var0_0._CheckFurnitrue(iter3_1, var0_1, arg1_1)
 
-		if not var3 then
-			return var3, i18n1("[" .. iter3.name .. "] erro:" .. var4 .. "-" .. iter3.id)
+		if not var3_1 then
+			return var3_1, i18n1("[" .. iter3_1.name .. "] erro:" .. var4_1 .. "-" .. iter3_1.id)
 		end
 	end
 
 	return true
 end
 
-function var0.FillMap(arg0, arg1)
-	if not arg1:MatOrPaper() and not arg1:ExistParnet() and arg1.config.belong == 1 and arg1.x and arg1.y then
-		assert(arg1.x, arg1.id)
+function var0_0.FillMap(arg0_2, arg1_2)
+	if not arg1_2:MatOrPaper() and not arg1_2:ExistParnet() and arg1_2.config.belong == 1 and arg1_2.x and arg1_2.y then
+		assert(arg1_2.x, arg1_2.id)
 
-		for iter0 = arg1.x, arg1.x + arg1.sizeX - 1 do
-			for iter1 = arg1.y, arg1.y + arg1.sizeY - 1 do
-				if not arg0[iter0] then
-					arg0[iter0] = {}
+		for iter0_2 = arg1_2.x, arg1_2.x + arg1_2.sizeX - 1 do
+			for iter1_2 = arg1_2.y, arg1_2.y + arg1_2.sizeY - 1 do
+				if not arg0_2[iter0_2] then
+					arg0_2[iter0_2] = {}
 				end
 
-				if arg0[iter0][iter1] then
+				if arg0_2[iter0_2][iter1_2] then
 					return false
 				end
 
-				arg0[iter0][iter1] = true
+				arg0_2[iter0_2][iter1_2] = true
 			end
 		end
 	end
@@ -47,50 +47,50 @@ function var0.FillMap(arg0, arg1)
 	return true
 end
 
-function var0.CheckFurnitrue(arg0, arg1, arg2)
-	local var0 = {}
-	local var1 = {}
+function var0_0.CheckFurnitrue(arg0_3, arg1_3, arg2_3)
+	local var0_3 = {}
+	local var1_3 = {}
 
-	for iter0, iter1 in pairs(arg1) do
-		local var2 = RawFurnitureData.New(iter1)
+	for iter0_3, iter1_3 in pairs(arg1_3) do
+		local var2_3 = RawFurnitureData.New(iter1_3)
 
-		if not var0.FillMap(var1, var2) then
+		if not var0_0.FillMap(var1_3, var2_3) then
 			return false, i18n1("Incorrect position")
 		end
 
-		var0[iter1.id] = var2
+		var0_3[iter1_3.id] = var2_3
 	end
 
-	local var3 = var0[arg0.id]
+	local var3_3 = var0_3[arg0_3.id]
 
-	return var0._CheckFurnitrue(var3, var0, arg2)
+	return var0_0._CheckFurnitrue(var3_3, var0_3, arg2_3)
 end
 
-function var0._CheckFurnitrue(arg0, arg1, arg2)
-	local var0 = arg2.x
-	local var1 = arg2.y
-	local var2 = arg2.z
-	local var3 = arg2.w
+function var0_0._CheckFurnitrue(arg0_4, arg1_4, arg2_4)
+	local var0_4 = arg2_4.x
+	local var1_4 = arg2_4.y
+	local var2_4 = arg2_4.z
+	local var3_4 = arg2_4.w
 
-	if not arg0:IsCompletion() then
+	if not arg0_4:IsCompletion() then
 		return false, "Incomplete data"
 	end
 
-	if arg0:ExistParnet() and not arg0:LegalParent(arg1[arg0.parent]) then
+	if arg0_4:ExistParnet() and not arg0_4:LegalParent(arg1_4[arg0_4.parent]) then
 		return false, "Incorrect [parent -> child] relation"
 	end
 
-	for iter0, iter1 in pairs(arg0.child or {}) do
-		if not arg0:LegalChild(arg1[iter0]) then
+	for iter0_4, iter1_4 in pairs(arg0_4.child or {}) do
+		if not arg0_4:LegalChild(arg1_4[iter0_4]) then
 			return false, "Incorrect [child -> parent] relation"
 		end
 	end
 
-	if not arg0:InSide(var0, var1, var2, var3) then
+	if not arg0_4:InSide(var0_4, var1_4, var2_4, var3_4) then
 		return false, "out side"
 	end
 
 	return true
 end
 
-return var0
+return var0_0

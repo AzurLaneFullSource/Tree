@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_192 = {}
+var0_0.word_template_192 = {}
 
-local var1 = var0.word_template_192
+local var1_0 = var0_0.word_template_192
 
 function temp()
-	var1.龙 = {
+	var1_0.龙 = {
 		[" "] = {
 			虎 = {
 				[" "] = {
@@ -100,7 +100,7 @@ end
 temp()
 
 function temp()
-	var1.隆 = {
+	var1_0.隆 = {
 		鼻 = {
 			this = true
 		},
@@ -113,7 +113,7 @@ end
 temp()
 
 function temp()
-	var1.龍 = {
+	var1_0.龍 = {
 		縛 = {
 			監 = {
 				禁 = {
@@ -146,7 +146,7 @@ end
 temp()
 
 function temp()
-	var1.窿 = {
+	var1_0.窿 = {
 		鼻 = {
 			this = true
 		}
@@ -156,7 +156,7 @@ end
 temp()
 
 function temp()
-	var1.拢 = {
+	var1_0.拢 = {
 		唬 = {
 			饑 = {
 				this = true
@@ -168,7 +168,7 @@ end
 temp()
 
 function temp()
-	var1.楼 = {
+	var1_0.楼 = {
 		继 = {
 			伟 = {
 				this = true
@@ -189,7 +189,7 @@ end
 temp()
 
 function temp()
-	var1.搂 = {
+	var1_0.搂 = {
 		着 = {
 			小 = {
 				姐 = {

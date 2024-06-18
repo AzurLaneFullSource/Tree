@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_19 = {}
+var0_0.word_template_19 = {}
 
-local var1 = var0.word_template_19
+local var1_0 = var0_0.word_template_19
 
 function temp()
-	var1.感 = {
+	var1_0.感 = {
 		染 = {
 			this = true
 		},
@@ -145,7 +145,7 @@ end
 temp()
 
 function temp()
-	var1.換 = {
+	var1_0.換 = {
 		金 = {
 			this = true
 		},
@@ -167,7 +167,7 @@ end
 temp()
 
 function temp()
-	var1.還 = {
+	var1_0.還 = {
 		政 = {
 			於 = {
 				民 = {
@@ -184,7 +184,7 @@ end
 temp()
 
 function temp()
-	var1.顔 = {
+	var1_0.顔 = {
 		射 = {
 			this = true
 		},
@@ -204,7 +204,7 @@ end
 temp()
 
 function temp()
-	var1.奇 = {
+	var1_0.奇 = {
 		形 = {
 			児 = {
 				this = true
@@ -254,7 +254,7 @@ end
 temp()
 
 function temp()
-	var1.寄 = {
+	var1_0.寄 = {
 		生 = {
 			虫 = {
 				this = true
@@ -266,7 +266,7 @@ end
 temp()
 
 function temp()
-	var1.帰 = {
+	var1_0.帰 = {
 		化 = {
 			人 = {
 				this = true

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_48 = {}
+var0_0.word_template_48 = {}
 
-local var1 = var0.word_template_48
+local var1_0 = var0_0.word_template_48
 
 function temp()
-	var1.逩 = {
+	var1_0.逩 = {
 		馳 = {
 			寳 = {
 				馬 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.苯 = {
+	var1_0.苯 = {
 		巴 = {
 			比 = {
 				妥 = {
@@ -94,7 +94,7 @@ end
 temp()
 
 function temp()
-	var1.笨 = {
+	var1_0.笨 = {
 		屄 = {
 			this = true
 		},
@@ -107,7 +107,7 @@ end
 temp()
 
 function temp()
-	var1.屄 = {
+	var1_0.屄 = {
 		this = {
 			this = true
 		},
@@ -137,7 +137,7 @@ end
 temp()
 
 function temp()
-	var1.逼 = {
+	var1_0.逼 = {
 		this = {
 			this = true
 		},
@@ -283,7 +283,7 @@ end
 temp()
 
 function temp()
-	var1.鼻 = {
+	var1_0.鼻 = {
 		吸 = {
 			剂 = {
 				this = true
@@ -298,7 +298,7 @@ end
 temp()
 
 function temp()
-	var1.匕 = {
+	var1_0.匕 = {
 		首 = {
 			麻 = {
 				醉 = {

@@ -1,24 +1,24 @@
-﻿local var0 = class("ResourceFieldProductAttr", import(".ResourceFieldAttr"))
+﻿local var0_0 = class("ResourceFieldProductAttr", import(".ResourceFieldAttr"))
 
-function var0.Ctor(arg0, arg1, arg2, arg3, arg4)
-	var0.super.Ctor(arg0, arg1, arg2, arg3)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
+	var0_0.super.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 
-	arg0.multiple = arg4
+	arg0_1.multiple = arg4_1
 end
 
-function var0.ReCalcValue(arg0)
-	arg0.value = arg0.config[arg0.level][arg0.attrName] * arg0.multiple
-	arg0.nextValue = arg0.config[arg0.nextLevel][arg0.attrName] * arg0.multiple
-	arg0.maxValue = arg0.config[#arg0.config][arg0.attrName] * arg0.multiple
-	arg0.addition = arg0.nextValue - arg0.value
+function var0_0.ReCalcValue(arg0_2)
+	arg0_2.value = arg0_2.config[arg0_2.level][arg0_2.attrName] * arg0_2.multiple
+	arg0_2.nextValue = arg0_2.config[arg0_2.nextLevel][arg0_2.attrName] * arg0_2.multiple
+	arg0_2.maxValue = arg0_2.config[#arg0_2.config][arg0_2.attrName] * arg0_2.multiple
+	arg0_2.addition = arg0_2.nextValue - arg0_2.value
 end
 
-function var0.GetAdditionDesc(arg0)
-	return arg0.addition .. "/h"
+function var0_0.GetAdditionDesc(arg0_3)
+	return arg0_3.addition .. "/h"
 end
 
-function var0.GetProgressDesc(arg0)
-	return arg0.value .. "/h" .. "/" .. arg0.maxValue .. "/h"
+function var0_0.GetProgressDesc(arg0_4)
+	return arg0_4.value .. "/h" .. "/" .. arg0_4.maxValue .. "/h"
 end
 
-return var0
+return var0_0

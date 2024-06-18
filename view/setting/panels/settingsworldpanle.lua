@@ -1,32 +1,32 @@
-﻿local var0 = class("SettingsWorldPanle", import(".SettingsNotificationPanel"))
+﻿local var0_0 = class("SettingsWorldPanle", import(".SettingsNotificationPanel"))
 
-function var0.GetUIName(arg0)
+function var0_0.GetUIName(arg0_1)
 	return "SettingsWorld"
 end
 
-function var0.GetTitle(arg0)
+function var0_0.GetTitle(arg0_2)
 	return i18n("world_setting_title")
 end
 
-function var0.GetTitleEn(arg0)
+function var0_0.GetTitleEn(arg0_3)
 	return "  / OPERATION SETTINGS"
 end
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
+function var0_0.OnInit(arg0_4)
+	var0_0.super.OnInit(arg0_4)
 
-	arg0.worldbossProgressTip = findTF(arg0._tf, "world_boss")
+	arg0_4.worldbossProgressTip = findTF(arg0_4._tf, "world_boss")
 end
 
-function var0.OnItemSwitch(arg0, arg1, arg2)
-	getProxy(SettingsProxy):SetWorldFlag(arg1.key, arg2)
+function var0_0.OnItemSwitch(arg0_5, arg1_5, arg2_5)
+	getProxy(SettingsProxy):SetWorldFlag(arg1_5.key, arg2_5)
 end
 
-function var0.GetDefaultValue(arg0, arg1)
-	return getProxy(SettingsProxy):GetWorldFlag(arg1.key)
+function var0_0.GetDefaultValue(arg0_6, arg1_6)
+	return getProxy(SettingsProxy):GetWorldFlag(arg1_6.key)
 end
 
-function var0.GetList(arg0)
+function var0_0.GetList(arg0_7)
 	return {
 		{
 			key = "story_tips",
@@ -46,67 +46,67 @@ function var0.GetList(arg0)
 	}
 end
 
-function var0.DisplayWorldBossProgressTipSettings(arg0)
-	local var0 = pg.NewStoryMgr.GetInstance():IsPlayed("WorldG190")
+function var0_0.DisplayWorldBossProgressTipSettings(arg0_8)
+	local var0_8 = pg.NewStoryMgr.GetInstance():IsPlayed("WorldG190")
 
-	setActive(arg0.worldbossProgressTip, var0)
+	setActive(arg0_8.worldbossProgressTip, var0_8)
 
-	if var0 then
-		arg0:InitWorldBossProgressTipSettings()
+	if var0_8 then
+		arg0_8:InitWorldBossProgressTipSettings()
 	end
 end
 
-function var0.InitWorldBossProgressTipSettings(arg0)
-	local var0 = arg0.worldbossProgressTip
-	local var1 = arg0:GetWorldBossProgressTipConfig()
-	local var2 = getProxy(SettingsProxy):GetWorldBossProgressTipFlag()
+function var0_0.InitWorldBossProgressTipSettings(arg0_9)
+	local var0_9 = arg0_9.worldbossProgressTip
+	local var1_9 = arg0_9:GetWorldBossProgressTipConfig()
+	local var2_9 = getProxy(SettingsProxy):GetWorldBossProgressTipFlag()
 
-	local function var3(arg0, arg1)
-		local var0 = tostring(var1[arg0])
+	local function var3_9(arg0_10, arg1_10)
+		local var0_10 = tostring(var1_9[arg0_10])
 
-		onToggle(arg0, arg1, function(arg0)
-			if arg0 then
-				getProxy(SettingsProxy):WorldBossProgressTipFlag(var0)
+		onToggle(arg0_9, arg1_10, function(arg0_11)
+			if arg0_11 then
+				getProxy(SettingsProxy):WorldBossProgressTipFlag(var0_10)
 			end
 		end, SFX_PANEL)
 
-		if var0 == var2 then
-			triggerToggle(arg1, true)
+		if var0_10 == var2_9 then
+			triggerToggle(arg1_10, true)
 		end
 	end
 
-	local var4 = var0:Find("notify_tpl")
+	local var4_9 = var0_9:Find("notify_tpl")
 
-	var4:Find("mask/Text"):GetComponent("ScrollText"):SetText(i18n("world_boss_progress_tip_title"))
+	var4_9:Find("mask/Text"):GetComponent("ScrollText"):SetText(i18n("world_boss_progress_tip_title"))
 
-	for iter0 = 1, #var1 do
-		var3(iter0, var4:Find(tostring(iter0)))
+	for iter0_9 = 1, #var1_9 do
+		var3_9(iter0_9, var4_9:Find(tostring(iter0_9)))
 	end
 
-	onButton(arg0, var4:Find("mask/Text"), function()
+	onButton(arg0_9, var4_9:Find("mask/Text"), function()
 		pg.m02:sendNotification(NewSettingsMediator.SHOW_DESC, {
 			desc = i18n("world_boss_progress_tip_desc")
 		})
 	end, SFX_PANEL)
 end
 
-function var0.GetWorldBossProgressTipConfig(arg0)
-	local var0 = pg.gameset.joint_boss_ticket.description
-	local var1 = {}
+function var0_0.GetWorldBossProgressTipConfig(arg0_13)
+	local var0_13 = pg.gameset.joint_boss_ticket.description
+	local var1_13 = {}
 
-	table.insert(var1, "")
+	table.insert(var1_13, "")
 
-	local var2 = var0[1] + var0[2]
+	local var2_13 = var0_13[1] + var0_13[2]
 
-	table.insert(var1, var0[1] .. "&" .. var2)
-	table.insert(var1, var2)
+	table.insert(var1_13, var0_13[1] .. "&" .. var2_13)
+	table.insert(var1_13, var2_13)
 
-	return var1
+	return var1_13
 end
 
-function var0.OnUpdate(arg0)
-	var0.super.OnUpdate(arg0)
-	arg0:DisplayWorldBossProgressTipSettings()
+function var0_0.OnUpdate(arg0_14)
+	var0_0.super.OnUpdate(arg0_14)
+	arg0_14:DisplayWorldBossProgressTipSettings()
 end
 
-return var0
+return var0_0

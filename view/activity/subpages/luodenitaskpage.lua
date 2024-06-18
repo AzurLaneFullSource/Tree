@@ -1,80 +1,80 @@
-﻿local var0 = class("LuodeniTaskPage", import(".TemplatePage.SkinTemplatePage"))
+﻿local var0_0 = class("LuodeniTaskPage", import(".TemplatePage.SkinTemplatePage"))
 
-function var0.OnUpdateFlush(arg0)
-	arg0.nday = arg0.activity.data3
+function var0_0.OnUpdateFlush(arg0_1)
+	arg0_1.nday = arg0_1.activity.data3
 
-	local var0 = arg0.activity:getConfig("config_client").firstStory
+	local var0_1 = arg0_1.activity:getConfig("config_client").firstStory
 
-	if var0 then
-		playStory(var0)
+	if var0_1 then
+		playStory(var0_1)
 	end
 
-	arg0:PlayStory()
+	arg0_1:PlayStory()
 
-	if arg0.dayTF then
-		setText(arg0.dayTF, tostring(arg0.nday))
+	if arg0_1.dayTF then
+		setText(arg0_1.dayTF, tostring(arg0_1.nday))
 	end
 
-	arg0.uilist:align(#arg0.taskGroup[arg0.nday])
-	setText(arg0.dayTF, setColorStr(arg0.nday, "#F2F5FF") .. setColorStr("/" .. #arg0.taskGroup, "#F2F5FF"))
+	arg0_1.uilist:align(#arg0_1.taskGroup[arg0_1.nday])
+	setText(arg0_1.dayTF, setColorStr(arg0_1.nday, "#F2F5FF") .. setColorStr("/" .. #arg0_1.taskGroup, "#F2F5FF"))
 end
 
-function var0.PlayStory(arg0)
-	local var0 = arg0.activity:getConfig("config_client").story
-	local var1 = false
+function var0_0.PlayStory(arg0_2)
+	local var0_2 = arg0_2.activity:getConfig("config_client").story
+	local var1_2 = false
 
-	if arg0.nday == 1 then
-		local var2 = arg0.taskGroup[1][1]
-		local var3 = arg0.taskGroup[1][2]
-		local var4 = arg0.taskProxy:getTaskById(var2) or arg0.taskProxy:getFinishTaskById(var2)
-		local var5 = arg0.taskProxy:getTaskById(var3) or arg0.taskProxy:getFinishTaskById(var3)
+	if arg0_2.nday == 1 then
+		local var2_2 = arg0_2.taskGroup[1][1]
+		local var3_2 = arg0_2.taskGroup[1][2]
+		local var4_2 = arg0_2.taskProxy:getTaskById(var2_2) or arg0_2.taskProxy:getFinishTaskById(var2_2)
+		local var5_2 = arg0_2.taskProxy:getTaskById(var3_2) or arg0_2.taskProxy:getFinishTaskById(var3_2)
 
-		if var4:getTaskStatus() == 2 and var5:getTaskStatus() == 2 and checkExist(var0, {
+		if var4_2:getTaskStatus() == 2 and var5_2:getTaskStatus() == 2 and checkExist(var0_2, {
 			1
 		}, {
 			1
 		}) then
-			var1 = true
+			var1_2 = true
 		end
 	end
 
-	if arg0.nday == 2 then
-		var1 = true
+	if arg0_2.nday == 2 then
+		var1_2 = true
 	end
 
-	if arg0.nday == 1 and var1 or arg0.nday == 2 then
-		pg.NewStoryMgr.GetInstance():Play(var0[1][1])
+	if arg0_2.nday == 1 and var1_2 or arg0_2.nday == 2 then
+		pg.NewStoryMgr.GetInstance():Play(var0_2[1][1])
 	end
 
-	if arg0.nday == 5 then
-		local var6 = arg0.nday
-		local var7 = arg0.taskGroup[arg0.nday][1]
-		local var8 = arg0.taskGroup[arg0.nday][2]
-		local var9 = arg0.taskProxy:getTaskById(var7) or arg0.taskProxy:getFinishTaskById(var7)
-		local var10 = arg0.taskProxy:getTaskById(var8) or arg0.taskProxy:getFinishTaskById(var8)
+	if arg0_2.nday == 5 then
+		local var6_2 = arg0_2.nday
+		local var7_2 = arg0_2.taskGroup[arg0_2.nday][1]
+		local var8_2 = arg0_2.taskGroup[arg0_2.nday][2]
+		local var9_2 = arg0_2.taskProxy:getTaskById(var7_2) or arg0_2.taskProxy:getFinishTaskById(var7_2)
+		local var10_2 = arg0_2.taskProxy:getTaskById(var8_2) or arg0_2.taskProxy:getFinishTaskById(var8_2)
 
-		if var9:getTaskStatus() == 2 and var10:getTaskStatus() == 2 then
-			var6 = var6 + 1
+		if var9_2:getTaskStatus() == 2 and var10_2:getTaskStatus() == 2 then
+			var6_2 = var6_2 + 1
 		end
 
-		if checkExist(var0, {
-			var6
+		if checkExist(var0_2, {
+			var6_2
 		}, {
 			1
 		}) then
-			pg.NewStoryMgr.GetInstance():Play(var0[var6][1])
+			pg.NewStoryMgr.GetInstance():Play(var0_2[var6_2][1])
 		end
-	elseif arg0.nday ~= 1 and checkExist(var0, {
-		arg0.nday
+	elseif arg0_2.nday ~= 1 and checkExist(var0_2, {
+		arg0_2.nday
 	}, {
 		1
 	}) then
-		pg.NewStoryMgr.GetInstance():Play(var0[arg0.nday][1])
+		pg.NewStoryMgr.GetInstance():Play(var0_2[arg0_2.nday][1])
 	end
 end
 
-function var0.GetProgressColor(arg0)
+function var0_0.GetProgressColor(arg0_3)
 	return "#98A7D1", "#98A7D1"
 end
 
-return var0
+return var0_0

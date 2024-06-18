@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_105 = {}
+var0_0.word_template_105 = {}
 
-local var1 = var0.word_template_105
+local var1_0 = var0_0.word_template_105
 
 function temp()
-	var1.酐 = {
+	var1_0.酐 = {
 		乐 = {
 			欣 = {
 				this = true
@@ -24,7 +24,7 @@ end
 temp()
 
 function temp()
-	var1.赶 = {
+	var1_0.赶 = {
 		走 = {
 			嫖 = {
 				客 = {
@@ -44,7 +44,7 @@ end
 temp()
 
 function temp()
-	var1.敢 = {
+	var1_0.敢 = {
 		将 = {
 			工 = {
 				程 = {
@@ -93,7 +93,7 @@ end
 temp()
 
 function temp()
-	var1.趕 = {
+	var1_0.趕 = {
 		你 = {
 			娘 = {
 				this = true
@@ -118,7 +118,7 @@ end
 temp()
 
 function temp()
-	var1.干 = {
+	var1_0.干 = {
 		this = {
 			this = true
 		},
@@ -424,7 +424,7 @@ end
 temp()
 
 function temp()
-	var1.幹 = {
+	var1_0.幹 = {
 		["7"] = {
 			["8"] = {
 				this = true
@@ -550,7 +550,7 @@ end
 temp()
 
 function temp()
-	var1.冈 = {
+	var1_0.冈 = {
 		村 = {
 			宁 = {
 				次 = {

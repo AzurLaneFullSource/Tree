@@ -1,14 +1,14 @@
-﻿local var0 = class("MainVoteEntranceBtnMellowAdapt", import(".MainCommonSpActBtnAdapt"))
+﻿local var0_0 = class("MainVoteEntranceBtnMellowAdapt", import(".MainCommonSpActBtnAdapt"))
 
-function var0.GetContainer(arg0)
-	return arg0.root:Find("right")
+function var0_0.GetContainer(arg0_1)
+	return arg0_1.root:Find("right")
 end
 
-function var0.OnInit(arg0)
-	setAnchoredPosition(arg0._tf, {
+function var0_0.OnInit(arg0_2)
+	setAnchoredPosition(arg0_2._tf, {
 		x = 208,
 		y = 209
 	})
 end
 
-return var0
+return var0_0

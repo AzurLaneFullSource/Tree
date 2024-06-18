@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Commander! Let me show you how to control your fleet.",
 	"First, <color=#ff7d36>move the joystick</color> to get the fleet moving!",
 	"Characters will <color=#ff7d36>fire their weapons automatically</color>, but you also have more firepower available at your disposal.",
@@ -40,7 +40,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[1]
+				text = var0_0[1]
 			}
 		},
 		{
@@ -53,7 +53,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[2]
+				text = var0_0[2]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/CombatUI(Clone)/Stick/Area",
@@ -72,7 +72,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[3]
+				text = var0_0[3]
 			}
 		},
 		{
@@ -97,7 +97,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[4]
+				text = var0_0[4]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/CombatUI(Clone)/Weapon_button_container/Skill_2/ActCtl",
@@ -116,7 +116,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[5]
+				text = var0_0[5]
 			}
 		},
 		{
@@ -141,7 +141,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[6]
+				text = var0_0[6]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/CombatUI(Clone)/Weapon_button_container/Skill_1/ActCtl",

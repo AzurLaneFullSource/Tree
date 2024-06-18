@@ -1,202 +1,202 @@
-﻿local var0 = class("EducateBottomPanel", import("...base.BaseSubView"))
+﻿local var0_0 = class("EducateBottomPanel", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "EducateBottomPanel"
 end
 
-function var0.OnInit(arg0)
-	arg0.contentTF = arg0:findTF("content")
-	arg0.planBtn = arg0:findTF("btns/schedule", arg0.contentTF)
-	arg0.mapBtn = arg0:findTF("btns/map", arg0.contentTF)
+function var0_0.OnInit(arg0_2)
+	arg0_2.contentTF = arg0_2:findTF("content")
+	arg0_2.planBtn = arg0_2:findTF("btns/schedule", arg0_2.contentTF)
+	arg0_2.mapBtn = arg0_2:findTF("btns/map", arg0_2.contentTF)
 
-	setText(arg0:findTF("tips/limit/Text", arg0.mapBtn), i18n("child_option_limit"))
+	setText(arg0_2:findTF("tips/limit/Text", arg0_2.mapBtn), i18n("child_option_limit"))
 
-	arg0.schoolBtn = arg0:findTF("btns/enter_school", arg0.contentTF)
-	arg0.upgradeBtn = arg0:findTF("btns/system_upgrade", arg0.contentTF)
-	arg0.targetSetBtn = arg0:findTF("btns/target_set", arg0.contentTF)
-	arg0.endingBtn = arg0:findTF("btns/ending", arg0.contentTF)
-	arg0.resetBtn = arg0:findTF("btns/reset", arg0.contentTF)
+	arg0_2.schoolBtn = arg0_2:findTF("btns/enter_school", arg0_2.contentTF)
+	arg0_2.upgradeBtn = arg0_2:findTF("btns/system_upgrade", arg0_2.contentTF)
+	arg0_2.targetSetBtn = arg0_2:findTF("btns/target_set", arg0_2.contentTF)
+	arg0_2.endingBtn = arg0_2:findTF("btns/ending", arg0_2.contentTF)
+	arg0_2.resetBtn = arg0_2:findTF("btns/reset", arg0_2.contentTF)
 
-	arg0:addListener()
+	arg0_2:addListener()
 
-	arg0.targetSetDays = getProxy(EducateProxy):GetTaskProxy():GetTargetSetDays()
+	arg0_2.targetSetDays = getProxy(EducateProxy):GetTaskProxy():GetTargetSetDays()
 
-	arg0:Flush()
+	arg0_2:Flush()
 end
 
-function var0.addListener(arg0)
-	onButton(arg0, arg0.planBtn, function()
-		arg0:emit(EducateBaseUI.EDUCATE_GO_SCENE, SCENE.EDUCATE_SCHEDULE)
+function var0_0.addListener(arg0_3)
+	onButton(arg0_3, arg0_3.planBtn, function()
+		arg0_3:emit(EducateBaseUI.EDUCATE_GO_SCENE, SCENE.EDUCATE_SCHEDULE)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.mapBtn, function()
-		if isActive(arg0:findTF("lock", arg0.mapBtn)) then
+	onButton(arg0_3, arg0_3.mapBtn, function()
+		if isActive(arg0_3:findTF("lock", arg0_3.mapBtn)) then
 			return
 		end
 
-		arg0:emit(EducateBaseUI.EDUCATE_GO_SCENE, SCENE.EDUCATE_MAP)
+		arg0_3:emit(EducateBaseUI.EDUCATE_GO_SCENE, SCENE.EDUCATE_MAP)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.schoolBtn, function()
-		arg0:emit(EducateBaseUI.EDUCATE_ON_MSG_TIP, {
+	onButton(arg0_3, arg0_3.schoolBtn, function()
+		arg0_3:emit(EducateBaseUI.EDUCATE_ON_MSG_TIP, {
 			content = i18n("child_school_sure_tip"),
 			onYes = function()
-				setActive(arg0.schoolBtn, false)
-				arg0:updateTargetSetBtn()
+				setActive(arg0_3.schoolBtn, false)
+				arg0_3:updateTargetSetBtn()
 
-				local var0 = EducateConst.ENTER_NEW_STAGE_PERFORMS[2]
+				local var0_7 = EducateConst.ENTER_NEW_STAGE_PERFORMS[2]
 
-				if var0 then
-					pg.PerformMgr.GetInstance():PlayOne(var0, function()
-						arg0:playGuide("tb_9_1")
-						arg0:onEnterVirtualStage()
+				if var0_7 then
+					pg.PerformMgr.GetInstance():PlayOne(var0_7, function()
+						arg0_3:playGuide("tb_9_1")
+						arg0_3:onEnterVirtualStage()
 					end)
 				else
-					arg0:playGuide("tb_9_1")
-					arg0:onEnterVirtualStage()
+					arg0_3:playGuide("tb_9_1")
+					arg0_3:onEnterVirtualStage()
 				end
 
 				getProxy(EducateProxy):GetPlanProxy():ClearLocalPlansData()
 			end
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.upgradeBtn, function()
-		arg0:emit(EducateBaseUI.EDUCATE_ON_MSG_TIP, {
+	onButton(arg0_3, arg0_3.upgradeBtn, function()
+		arg0_3:emit(EducateBaseUI.EDUCATE_ON_MSG_TIP, {
 			content = i18n("child_upgrade_sure_tip"),
 			onYes = function()
-				setActive(arg0.upgradeBtn, false)
-				arg0:updateTargetSetBtn()
+				setActive(arg0_3.upgradeBtn, false)
+				arg0_3:updateTargetSetBtn()
 
-				local var0 = getProxy(EducateProxy):GetCharData():GetStage()
-				local var1 = EducateConst.ENTER_NEW_STAGE_PERFORMS[var0 + 1]
+				local var0_10 = getProxy(EducateProxy):GetCharData():GetStage()
+				local var1_10 = EducateConst.ENTER_NEW_STAGE_PERFORMS[var0_10 + 1]
 
-				if var1 then
-					pg.PerformMgr.GetInstance():PlayOne(var1, function()
-						arg0:onEnterVirtualStage()
+				if var1_10 then
+					pg.PerformMgr.GetInstance():PlayOne(var1_10, function()
+						arg0_3:onEnterVirtualStage()
 					end)
 				else
-					arg0:onEnterVirtualStage()
+					arg0_3:onEnterVirtualStage()
 				end
 
 				getProxy(EducateProxy):GetPlanProxy():ClearLocalPlansData()
 			end
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.targetSetBtn, function()
-		arg0:emit(EducateBaseUI.EDUCATE_GO_SUBLAYER, Context.New({
+	onButton(arg0_3, arg0_3.targetSetBtn, function()
+		arg0_3:emit(EducateBaseUI.EDUCATE_GO_SUBLAYER, Context.New({
 			mediator = EducateTargetSetMediator,
 			viewComponent = EducateTargetSetLayer
 		}))
 	end, SFX_PANEL)
-	onButton(arg0, arg0.endingBtn, function()
-		arg0:emit(EducateBaseUI.EDUCATE_ON_MSG_TIP, {
+	onButton(arg0_3, arg0_3.endingBtn, function()
+		arg0_3:emit(EducateBaseUI.EDUCATE_ON_MSG_TIP, {
 			content = i18n("child_end_sure_tip"),
 			onYes = function()
 				pg.PerformMgr.GetInstance():PlayOne(EducateConst.FIRST_ENTER_END_PERFORM, function()
-					arg0:emit(EducateMediator.ON_ENDING_TRIGGER)
+					arg0_3:emit(EducateMediator.ON_ENDING_TRIGGER)
 				end)
 			end
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.resetBtn, function()
-		arg0:emit(EducateBaseUI.EDUCATE_ON_MSG_TIP, {
+	onButton(arg0_3, arg0_3.resetBtn, function()
+		arg0_3:emit(EducateBaseUI.EDUCATE_ON_MSG_TIP, {
 			content = i18n("child_reset_sure_tip"),
 			onYes = function()
-				arg0:emit(EducateMediator.ON_GAME_RESET)
+				arg0_3:emit(EducateMediator.ON_GAME_RESET)
 			end
 		})
 	end, SFX_PANEL)
 
-	local var0 = "anim_educate_bottom_show"
+	local var0_3 = "anim_educate_bottom_show"
 
-	if arg0.contextData and arg0.contextData.isMainEnter then
-		var0 = "anim_educate_bottom_in"
+	if arg0_3.contextData and arg0_3.contextData.isMainEnter then
+		var0_3 = "anim_educate_bottom_in"
 	end
 
-	arg0._tf:GetComponent(typeof(Animation)):Play(var0)
+	arg0_3._tf:GetComponent(typeof(Animation)):Play(var0_3)
 end
 
-function var0.playGuide(arg0, arg1)
-	if not pg.NewStoryMgr.GetInstance():IsPlayed(arg1) then
-		pg.NewGuideMgr.GetInstance():Play(arg1)
+function var0_0.playGuide(arg0_18, arg1_18)
+	if not pg.NewStoryMgr.GetInstance():IsPlayed(arg1_18) then
+		pg.NewGuideMgr.GetInstance():Play(arg1_18)
 		pg.m02:sendNotification(GAME.STORY_UPDATE, {
-			storyId = arg1
+			storyId = arg1_18
 		})
 	end
 end
 
-function var0.onEnterVirtualStage(arg0)
+function var0_0.onEnterVirtualStage(arg0_19)
 	getProxy(EducateProxy):SetVirtualStage(true)
-	arg0:emit(EducateMediator.ENTER_VIRTUAL_STAGE)
+	arg0_19:emit(EducateMediator.ENTER_VIRTUAL_STAGE)
 end
 
-function var0.Flush(arg0)
-	if not arg0:GetLoaded() then
+function var0_0.Flush(arg0_20)
+	if not arg0_20:GetLoaded() then
 		return
 	end
 
-	arg0.curTime = getProxy(EducateProxy):GetCurTime()
-	arg0.status = getProxy(EducateProxy):GetGameStatus()
+	arg0_20.curTime = getProxy(EducateProxy):GetCurTime()
+	arg0_20.status = getProxy(EducateProxy):GetGameStatus()
 
-	local var0 = EducateHelper.IsSystemUnlock(EducateConst.SYSTEM_GO_OUT)
-	local var1 = getProxy(EducateProxy):InVirtualStage()
+	local var0_20 = EducateHelper.IsSystemUnlock(EducateConst.SYSTEM_GO_OUT)
+	local var1_20 = getProxy(EducateProxy):InVirtualStage()
 
-	setActive(arg0:findTF("lock", arg0.mapBtn), not var0 or var1)
-	setActive(arg0.planBtn, arg0.status ~= EducateConst.STATUES_ENDING and arg0.status ~= EducateConst.STATUES_RESET)
-	setActive(arg0.mapBtn, arg0.status ~= EducateConst.STATUES_ENDING and arg0.status ~= EducateConst.STATUES_RESET)
-	arg0:updateMapBtnTips()
-	setActive(arg0.schoolBtn, arg0:isSchoolBtnShow() and not var1)
-	setActive(arg0.upgradeBtn, arg0:isUpgradeBtnShow() and not var1)
-	arg0:updateTargetSetBtn()
-	setActive(arg0.endingBtn, arg0.status == EducateConst.STATUES_ENDING)
-	setActive(arg0.resetBtn, arg0.status == EducateConst.STATUES_RESET)
+	setActive(arg0_20:findTF("lock", arg0_20.mapBtn), not var0_20 or var1_20)
+	setActive(arg0_20.planBtn, arg0_20.status ~= EducateConst.STATUES_ENDING and arg0_20.status ~= EducateConst.STATUES_RESET)
+	setActive(arg0_20.mapBtn, arg0_20.status ~= EducateConst.STATUES_ENDING and arg0_20.status ~= EducateConst.STATUES_RESET)
+	arg0_20:updateMapBtnTips()
+	setActive(arg0_20.schoolBtn, arg0_20:isSchoolBtnShow() and not var1_20)
+	setActive(arg0_20.upgradeBtn, arg0_20:isUpgradeBtnShow() and not var1_20)
+	arg0_20:updateTargetSetBtn()
+	setActive(arg0_20.endingBtn, arg0_20.status == EducateConst.STATUES_ENDING)
+	setActive(arg0_20.resetBtn, arg0_20.status == EducateConst.STATUES_RESET)
 
-	if isActive(arg0.schoolBtn) or isActive(arg0.upgradeBtn) or isActive(arg0.targetSetBtn) then
-		setActive(arg0.planBtn, false)
+	if isActive(arg0_20.schoolBtn) or isActive(arg0_20.upgradeBtn) or isActive(arg0_20.targetSetBtn) then
+		setActive(arg0_20.planBtn, false)
 	end
 end
 
-function var0.isSchoolBtnShow(arg0)
-	return arg0.status == EducateConst.STATUES_PREPARE and EducateHelper.IsSameDay(arg0.curTime, arg0.targetSetDays[2])
+function var0_0.isSchoolBtnShow(arg0_21)
+	return arg0_21.status == EducateConst.STATUES_PREPARE and EducateHelper.IsSameDay(arg0_21.curTime, arg0_21.targetSetDays[2])
 end
 
-function var0.isUpgradeBtnShow(arg0)
-	return arg0.status == EducateConst.STATUES_PREPARE and (EducateHelper.IsSameDay(arg0.curTime, arg0.targetSetDays[3]) or EducateHelper.IsSameDay(arg0.curTime, arg0.targetSetDays[4]))
+function var0_0.isUpgradeBtnShow(arg0_22)
+	return arg0_22.status == EducateConst.STATUES_PREPARE and (EducateHelper.IsSameDay(arg0_22.curTime, arg0_22.targetSetDays[3]) or EducateHelper.IsSameDay(arg0_22.curTime, arg0_22.targetSetDays[4]))
 end
 
-function var0.isTargetSetBtnShow(arg0)
-	return arg0.status == EducateConst.STATUES_PREPARE and not isActive(arg0.schoolBtn) and not isActive(arg0.upgradeBtn)
+function var0_0.isTargetSetBtnShow(arg0_23)
+	return arg0_23.status == EducateConst.STATUES_PREPARE and not isActive(arg0_23.schoolBtn) and not isActive(arg0_23.upgradeBtn)
 end
 
-function var0.updateTargetSetBtn(arg0)
-	local var0 = arg0:isTargetSetBtnShow()
+function var0_0.updateTargetSetBtn(arg0_24)
+	local var0_24 = arg0_24:isTargetSetBtnShow()
 
-	setActive(arg0.targetSetBtn, var0)
+	setActive(arg0_24.targetSetBtn, var0_24)
 
-	if var0 then
-		setActive(arg0:findTF("lock", arg0.mapBtn), true)
+	if var0_24 then
+		setActive(arg0_24:findTF("lock", arg0_24.mapBtn), true)
 	end
 end
 
-function var0.updateMapBtnTips(arg0)
+function var0_0.updateMapBtnTips(arg0_25)
 	EducateTipHelper.GetSiteUnlockTipIds()
 
-	local var0 = getProxy(EducateProxy):GetShowSiteIds()
-	local var1 = underscore.any(var0, function(arg0)
-		return EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_SITE, arg0)
+	local var0_25 = getProxy(EducateProxy):GetShowSiteIds()
+	local var1_25 = underscore.any(var0_25, function(arg0_26)
+		return EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_SITE, arg0_26)
 	end)
-	local var2 = underscore.any(var0, function(arg0)
-		local var0 = getProxy(EducateProxy):GetOptionsBySiteId(arg0)
+	local var2_25 = underscore.any(var0_25, function(arg0_27)
+		local var0_27 = getProxy(EducateProxy):GetOptionsBySiteId(arg0_27)
 
-		return underscore.any(var0, function(arg0)
-			return arg0:IsShowLimit()
+		return underscore.any(var0_27, function(arg0_28)
+			return arg0_28:IsShowLimit()
 		end)
 	end)
 
-	setActive(arg0:findTF("tips/new", arg0.mapBtn), var1)
-	setActive(arg0:findTF("tips/limit", arg0.mapBtn), var2)
+	setActive(arg0_25:findTF("tips/new", arg0_25.mapBtn), var1_25)
+	setActive(arg0_25:findTF("tips/limit", arg0_25.mapBtn), var2_25)
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_29)
 	return
 end
 
-return var0
+return var0_0

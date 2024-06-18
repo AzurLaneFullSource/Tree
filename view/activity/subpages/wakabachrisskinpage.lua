@@ -1,29 +1,29 @@
-﻿local var0 = class("WakabaChrisSkinPage", import(".TemplatePage.SkinTemplatePage"))
+﻿local var0_0 = class("WakabaChrisSkinPage", import(".TemplatePage.SkinTemplatePage"))
 
-function var0.OnUpdateFlush(arg0)
-	arg0.nday = arg0.activity.data3
+function var0_0.OnUpdateFlush(arg0_1)
+	arg0_1.nday = arg0_1.activity.data3
 
-	local var0 = {}
-	local var1 = arg0.activity:getConfig("config_client").story
-	local var2 = pg.NewStoryMgr.GetInstance()
+	local var0_1 = {}
+	local var1_1 = arg0_1.activity:getConfig("config_client").story
+	local var2_1 = pg.NewStoryMgr.GetInstance()
 
-	for iter0 = 1, arg0.nday do
-		if checkExist(var1, {
-			iter0
+	for iter0_1 = 1, arg0_1.nday do
+		if checkExist(var1_1, {
+			iter0_1
 		}, {
 			1
-		}) and not var2:IsPlayed(var1[iter0][1]) then
-			table.insert(var0, function(arg0)
-				var2:Play(var1[iter0][1], arg0)
+		}) and not var2_1:IsPlayed(var1_1[iter0_1][1]) then
+			table.insert(var0_1, function(arg0_2)
+				var2_1:Play(var1_1[iter0_1][1], arg0_2)
 			end)
 		end
 	end
 
-	seriesAsync(var0, function()
-		print("story play number", #var0)
+	seriesAsync(var0_1, function()
+		print("story play number", #var0_1)
 	end)
-	setText(arg0.dayTF, arg0.nday .. "/" .. #arg0.taskGroup)
-	arg0.uilist:align(#arg0.taskGroup[arg0.nday])
+	setText(arg0_1.dayTF, arg0_1.nday .. "/" .. #arg0_1.taskGroup)
+	arg0_1.uilist:align(#arg0_1.taskGroup[arg0_1.nday])
 end
 
-return var0
+return var0_0

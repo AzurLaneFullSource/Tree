@@ -1,106 +1,106 @@
-﻿local var0 = class("TempestaMedalCollectionScene", import("view.base.BaseUI"))
+﻿local var0_0 = class("TempestaMedalCollectionScene", import("view.base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "TempestaMedalCollectionUI"
 end
 
-function var0.setActivity(arg0, arg1)
-	arg0.activity = arg1
+function var0_0.setActivity(arg0_2, arg1_2)
+	arg0_2.activity = arg1_2
 end
 
-function var0.onBackPressed(arg0)
-	if isActive(arg0.rtHelpPanel) then
-		setActive(arg0.rtHelpPanel)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0.rtHelpPanel, arg0._tf)
+function var0_0.onBackPressed(arg0_3)
+	if isActive(arg0_3.rtHelpPanel) then
+		setActive(arg0_3.rtHelpPanel)
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_3.rtHelpPanel, arg0_3._tf)
 
 		return
 	end
 
-	arg0:closeView()
+	arg0_3:closeView()
 end
 
-function var0.init(arg0)
-	onButton(arg0, arg0._tf:Find("top/btn_back"), function()
-		arg0:onBackPressed()
+function var0_0.init(arg0_4)
+	onButton(arg0_4, arg0_4._tf:Find("top/btn_back"), function()
+		arg0_4:onBackPressed()
 	end, SFX_CANCEL)
 
-	arg0.rtMainPanel = arg0._tf:Find("main")
+	arg0_4.rtMainPanel = arg0_4._tf:Find("main")
 
-	onButton(arg0, arg0.rtMainPanel:Find("btn_help"), function()
-		pg.UIMgr.GetInstance():BlurPanel(arg0.rtHelpPanel)
-		setActive(arg0.rtHelpPanel, true)
+	onButton(arg0_4, arg0_4.rtMainPanel:Find("btn_help"), function()
+		pg.UIMgr.GetInstance():BlurPanel(arg0_4.rtHelpPanel)
+		setActive(arg0_4.rtHelpPanel, true)
 	end, SFX_PANEL)
 
-	arg0.rtHelpPanel = arg0._tf:Find("help_panel")
+	arg0_4.rtHelpPanel = arg0_4._tf:Find("help_panel")
 
-	setText(arg0.rtHelpPanel:Find("window/Text"), i18n("pirate_wanted_help"))
-	onButton(arg0, arg0.rtHelpPanel:Find("bg"), function()
-		arg0:onBackPressed()
+	setText(arg0_4.rtHelpPanel:Find("window/Text"), i18n("pirate_wanted_help"))
+	onButton(arg0_4, arg0_4.rtHelpPanel:Find("bg"), function()
+		arg0_4:onBackPressed()
 	end, SFX_CANCEL)
 end
 
-function var0.didEnter(arg0)
-	arg0:updateTaskLayers()
+function var0_0.didEnter(arg0_8)
+	arg0_8:updateTaskLayers()
 end
 
-function var0.updateTaskLayers(arg0)
-	local var0 = getProxy(TaskProxy)
-	local var1 = underscore.map(arg0.activity:getConfig("config_data"), function(arg0)
-		return var0:getTaskVO(arg0)
+function var0_0.updateTaskLayers(arg0_9)
+	local var0_9 = getProxy(TaskProxy)
+	local var1_9 = underscore.map(arg0_9.activity:getConfig("config_data"), function(arg0_10)
+		return var0_9:getTaskVO(arg0_10)
 	end)
 
-	for iter0, iter1 in ipairs(var1) do
-		local var2 = arg0.rtMainPanel:Find("tasks"):GetChild(iter0 - 1)
+	for iter0_9, iter1_9 in ipairs(var1_9) do
+		local var2_9 = arg0_9.rtMainPanel:Find("tasks"):GetChild(iter0_9 - 1)
 
-		if iter0 == #var1 then
-			setActive(var2:Find("got"), iter1:isReceive())
+		if iter0_9 == #var1_9 then
+			setActive(var2_9:Find("got"), iter1_9:isReceive())
 
-			local var3 = Drop.Create(iter1:getConfig("award_display")[1])
+			local var3_9 = Drop.Create(iter1_9:getConfig("award_display")[1])
 
-			onButton(arg0, var2, function()
-				arg0:emit(BaseUI.ON_DROP, var3)
+			onButton(arg0_9, var2_9, function()
+				arg0_9:emit(BaseUI.ON_DROP, var3_9)
 			end, SFX_PANEL)
 		else
-			local var4 = {}
+			local var4_9 = {}
 
-			var4.type, var4.id, var4.count = unpack(iter1:getConfig("award_display")[1])
+			var4_9.type, var4_9.id, var4_9.count = unpack(iter1_9:getConfig("award_display")[1])
 
-			updateDrop(var2:Find("IconTpl"), var4)
-			onButton(arg0, var2:Find("IconTpl"), function()
-				arg0:emit(BaseUI.ON_DROP, var4)
+			updateDrop(var2_9:Find("IconTpl"), var4_9)
+			onButton(arg0_9, var2_9:Find("IconTpl"), function()
+				arg0_9:emit(BaseUI.ON_DROP, var4_9)
 			end, SFX_PANEL)
-			setText(var2:Find("Text"), iter1:getConfig("desc"))
+			setText(var2_9:Find("Text"), iter1_9:getConfig("desc"))
 
-			local var5 = iter1:getTaskStatus()
+			local var5_9 = iter1_9:getTaskStatus()
 
-			setActive(var2:Find("btn_go"), var5 == 0)
-			setActive(var2:Find("btn_get"), var5 == 1)
-			setActive(var2:Find("btn_got"), var5 == 2)
-			onButton(arg0, var2:Find("btn_go"), function()
-				arg0:emit(TempestaMedalCollectionMediator.ON_TASK_GO, iter1)
+			setActive(var2_9:Find("btn_go"), var5_9 == 0)
+			setActive(var2_9:Find("btn_get"), var5_9 == 1)
+			setActive(var2_9:Find("btn_got"), var5_9 == 2)
+			onButton(arg0_9, var2_9:Find("btn_go"), function()
+				arg0_9:emit(TempestaMedalCollectionMediator.ON_TASK_GO, iter1_9)
 			end, SFX_PANEL)
-			onButton(arg0, var2:Find("btn_get"), function()
-				arg0:emit(TempestaMedalCollectionMediator.ON_TASK_SUBMIT, iter1)
+			onButton(arg0_9, var2_9:Find("btn_get"), function()
+				arg0_9:emit(TempestaMedalCollectionMediator.ON_TASK_SUBMIT, iter1_9)
 			end, SFX_PANEL)
 		end
 	end
 
-	local var6 = #var1 - 1
-	local var7 = underscore.reduce(var1, 0, function(arg0, arg1)
-		return arg0 + (arg1:isReceive() and 1 or 0)
+	local var6_9 = #var1_9 - 1
+	local var7_9 = underscore.reduce(var1_9, 0, function(arg0_15, arg1_15)
+		return arg0_15 + (arg1_15:isReceive() and 1 or 0)
 	end)
 
-	setText(arg0.rtMainPanel:Find("progress/Text"), math.min(var7, var6) .. "/" .. var6)
+	setText(arg0_9.rtMainPanel:Find("progress/Text"), math.min(var7_9, var6_9) .. "/" .. var6_9)
 
-	if var6 <= var7 and not var1[#var1]:isReceive() then
-		arg0:emit(TempestaMedalCollectionMediator.ON_TASK_SUBMIT, var1[#var1])
+	if var6_9 <= var7_9 and not var1_9[#var1_9]:isReceive() then
+		arg0_9:emit(TempestaMedalCollectionMediator.ON_TASK_SUBMIT, var1_9[#var1_9])
 	end
 end
 
-function var0.willExit(arg0)
-	if isActive(arg0.rtHelpPanel) then
-		arg0:onBackPressed()
+function var0_0.willExit(arg0_16)
+	if isActive(arg0_16.rtHelpPanel) then
+		arg0_16:onBackPressed()
 	end
 end
 
-return var0
+return var0_0

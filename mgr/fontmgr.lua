@@ -1,17 +1,17 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.FontMgr = singletonClass("FontMgr")
+var0_0.FontMgr = singletonClass("FontMgr")
 
-local var1 = var0.FontMgr
+local var1_0 = var0_0.FontMgr
 
-function var0.FontMgr.Init(arg0, arg1)
+function var0_0.FontMgr.Init(arg0_1, arg1_1)
 	print("initializing font manager...")
 
-	local var0 = {}
+	local var0_1 = {}
 
-	for iter0, iter1 in pairs({
+	for iter0_1, iter1_1 in pairs({
 		crifont = "crifont",
 		remfont = "remfont",
 		heiti = "zhunyuan",
@@ -29,18 +29,18 @@ function var0.FontMgr.Init(arg0, arg1)
 		lvnumber = "lvnumber",
 		sourcehanserifcn = "sourcehanserifcn-bold_0"
 	}) do
-		table.insert(var0, function(arg0)
-			ResourceMgr.Inst:getAssetAsync("font/" .. iter1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0)
-				arg0.fonts[iter0] = arg0
+		table.insert(var0_1, function(arg0_2)
+			ResourceMgr.Inst:getAssetAsync("font/" .. iter1_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_3)
+				arg0_1.fonts[iter0_1] = arg0_3
 
-				arg0()
+				arg0_2()
 			end), false, false)
 		end)
 	end
 
-	arg0.fonts = {}
+	arg0_1.fonts = {}
 
-	parallelAsync(var0, function(arg0)
-		arg1(arg0)
+	parallelAsync(var0_1, function(arg0_4)
+		arg1_1(arg0_4)
 	end)
 end

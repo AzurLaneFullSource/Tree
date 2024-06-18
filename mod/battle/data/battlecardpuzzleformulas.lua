@@ -1,192 +1,192 @@
 ﻿ys.Battle.BattleCardPuzzleFormulas = ys.Battle.BattleCardPuzzleFormulas or {}
 
-local var0 = ys.Battle.BattleCardPuzzleFormulas
-local var1 = ys.Battle.BattleConst
-local var2 = pg.gameset
-local var3 = ys.Battle.BattleAttr
-local var4 = ys.Battle.BattleConfig
-local var5 = ys.Battle.BattleConfig.AnitAirRepeaterConfig
-local var6 = pg.bfConsts
-local var7 = var4.AMMO_DAMAGE_ENHANCE
-local var8 = var4.AMMO_DAMAGE_REDUCE
+local var0_0 = ys.Battle.BattleCardPuzzleFormulas
+local var1_0 = ys.Battle.BattleConst
+local var2_0 = pg.gameset
+local var3_0 = ys.Battle.BattleAttr
+local var4_0 = ys.Battle.BattleConfig
+local var5_0 = ys.Battle.BattleConfig.AnitAirRepeaterConfig
+local var6_0 = pg.bfConsts
+local var7_0 = var4_0.AMMO_DAMAGE_ENHANCE
+local var8_0 = var4_0.AMMO_DAMAGE_REDUCE
 
-var0.CUSTOM_FORMULA = {
+var0_0.CUSTOM_FORMULA = {
 	double_energy = "energy*5+combo+2"
 }
 
-function var0.CreateContextCalculateDamage(arg0, arg1, arg2, arg3)
-	local var0 = var6.NUM1
-	local var1 = var6.NUM0
-	local var2 = var6.NUM10000
-	local var3 = var6.DRATE
-	local var4 = var6.ACCURACY
-	local var5 = arg0:GetWeaponHostAttr()
-	local var6 = arg0:GetWeapon()
-	local var7 = arg0:GetWeaponTempData()
-	local var8 = var7.type
-	local var9 = var7.attack_attribute
-	local var10 = var6:GetConvertedAtkAttr()
-	local var11 = arg0:GetTemplate()
-	local var12 = var11.damage_type
-	local var13 = var11.random_damage_rate
-	local var14 = arg1._attr
-	local var15 = arg3 or var0
+function var0_0.CreateContextCalculateDamage(arg0_1, arg1_1, arg2_1, arg3_1)
+	local var0_1 = var6_0.NUM1
+	local var1_1 = var6_0.NUM0
+	local var2_1 = var6_0.NUM10000
+	local var3_1 = var6_0.DRATE
+	local var4_1 = var6_0.ACCURACY
+	local var5_1 = arg0_1:GetWeaponHostAttr()
+	local var6_1 = arg0_1:GetWeapon()
+	local var7_1 = arg0_1:GetWeaponTempData()
+	local var8_1 = var7_1.type
+	local var9_1 = var7_1.attack_attribute
+	local var10_1 = var6_1:GetConvertedAtkAttr()
+	local var11_1 = arg0_1:GetTemplate()
+	local var12_1 = var11_1.damage_type
+	local var13_1 = var11_1.random_damage_rate
+	local var14_1 = arg1_1._attr
+	local var15_1 = arg3_1 or var0_1
 
-	arg2 = arg2 or var1
+	arg2_1 = arg2_1 or var1_1
 
-	local var16 = var14.armorType
-	local var17 = var5.formulaLevel - var14.formulaLevel
-	local var18 = var0
-	local var19 = false
-	local var20 = false
-	local var21 = var0
-	local var22 = arg0:GetCorrectedDMG()
-	local var23 = (var0 + arg0:GetWeaponAtkAttr() * var10) * var22
+	local var16_1 = var14_1.armorType
+	local var17_1 = var5_1.formulaLevel - var14_1.formulaLevel
+	local var18_1 = var0_1
+	local var19_1 = false
+	local var20_1 = false
+	local var21_1 = var0_1
+	local var22_1 = arg0_1:GetCorrectedDMG()
+	local var23_1 = (var0_1 + arg0_1:GetWeaponAtkAttr() * var10_1) * var22_1
 
-	if var9 == var1.WeaponDamageAttr.CANNON then
-		var15 = var0 + var3.GetCurrent(arg1, "injureRatioByCannon") + var3.GetCurrent(arg0, "damageRatioByCannon")
-	elseif var9 == var1.WeaponDamageAttr.TORPEDO then
-		var15 = var0 + var3.GetCurrent(arg1, "injureRatioByBulletTorpedo") + var3.GetCurrent(arg0, "damageRatioByBulletTorpedo")
-	elseif var9 == var1.WeaponDamageAttr.AIR then
-		local var24 = var3.GetCurrent(arg0, "airResistPierceActive") == 1 and var3.GetCurrent(arg0, "airResistPierce") or 0
+	if var9_1 == var1_0.WeaponDamageAttr.CANNON then
+		var15_1 = var0_1 + var3_0.GetCurrent(arg1_1, "injureRatioByCannon") + var3_0.GetCurrent(arg0_1, "damageRatioByCannon")
+	elseif var9_1 == var1_0.WeaponDamageAttr.TORPEDO then
+		var15_1 = var0_1 + var3_0.GetCurrent(arg1_1, "injureRatioByBulletTorpedo") + var3_0.GetCurrent(arg0_1, "damageRatioByBulletTorpedo")
+	elseif var9_1 == var1_0.WeaponDamageAttr.AIR then
+		local var24_1 = var3_0.GetCurrent(arg0_1, "airResistPierceActive") == 1 and var3_0.GetCurrent(arg0_1, "airResistPierce") or 0
 
-		var15 = var15 * math.min(var3[7] / (var14.antiAirPower + var3[7]) + var24, 1) * (var0 + var3.GetCurrent(arg1, "injureRatioByAir") + var3.GetCurrent(arg0, "damageRatioByAir"))
-	elseif var9 == var1.WeaponDamageAttr.ANTI_AIR then
+		var15_1 = var15_1 * math.min(var3_1[7] / (var14_1.antiAirPower + var3_1[7]) + var24_1, 1) * (var0_1 + var3_0.GetCurrent(arg1_1, "injureRatioByAir") + var3_0.GetCurrent(arg0_1, "damageRatioByAir"))
+	elseif var9_1 == var1_0.WeaponDamageAttr.ANTI_AIR then
 		-- block empty
-	elseif var9 == var1.WeaponDamageAttr.ANIT_SUB then
+	elseif var9_1 == var1_0.WeaponDamageAttr.ANIT_SUB then
 		-- block empty
 	end
 
-	local var25 = var5.luck - var14.luck
+	local var25_1 = var5_1.luck - var14_1.luck
 
-	if var3.GetCurrent(arg1, "perfectDodge") == 1 then
-		var19 = true
+	if var3_0.GetCurrent(arg1_1, "perfectDodge") == 1 then
+		var19_1 = true
 	end
 
-	if not var19 then
-		var21 = var23
+	if not var19_1 then
+		var21_1 = var23_1
 
-		if var3.GetCurrent(arg0, "GCT") == 1 then
-			var20 = true
-			var18 = math.max(1, var6.DFT_CRIT_EFFECT + var3.GetCurrent(arg0, "criDamage") - var3.GetCurrent(arg1, "criDamageResist"))
+		if var3_0.GetCurrent(arg0_1, "GCT") == 1 then
+			var20_1 = true
+			var18_1 = math.max(1, var6_0.DFT_CRIT_EFFECT + var3_0.GetCurrent(arg0_1, "criDamage") - var3_0.GetCurrent(arg1_1, "criDamageResist"))
 		else
-			var20 = false
+			var20_1 = false
 		end
 	else
-		var21 = var1
+		var21_1 = var1_1
 
-		local var26 = {
+		local var26_1 = {
 			isMiss = true,
 			isDamagePrevent = false,
-			isCri = var20
+			isCri = var20_1
 		}
 
-		return var21, var26
+		return var21_1, var26_1
 	end
 
-	local var27 = var6.NUM1
-	local var28 = var3.GetCurrent(arg0, "damageRatioBullet")
-	local var29 = var3.GetTagAttr(arg0, arg1)
-	local var30 = var3.GetCurrent(arg1, "injureRatio")
-	local var31 = (var6:GetFixAmmo() or var12[var16] or var27) + var3.GetCurrent(arg0, var4.DAMAGE_AMMO_TO_ARMOR_RATE_ENHANCE[var16])
-	local var32 = var3.GetCurrent(arg0, var4.DAMAGE_TO_ARMOR_RATE_ENHANCE[var16])
-	local var33 = var3.GetCurrent(arg0, var7[var11.ammo_type])
-	local var34 = var3.GetCurrent(arg1, var8[var11.ammo_type])
-	local var35 = var3.GetCurrent(arg0, "comboTag")
-	local var36 = var3.GetCurrent(arg1, var35)
-	local var37 = math.max(var27, math.floor(var21 * var15 * (var27 - arg2) * var31 * (var27 + var32) * var18 * (var27 + var28) * var29 * (var27 + var30) * (var27 + var33 - var34) * (var27 + var36) * (var27 + math.min(var3[1], math.max(-var3[1], var17)) * var3[2])))
+	local var27_1 = var6_0.NUM1
+	local var28_1 = var3_0.GetCurrent(arg0_1, "damageRatioBullet")
+	local var29_1 = var3_0.GetTagAttr(arg0_1, arg1_1)
+	local var30_1 = var3_0.GetCurrent(arg1_1, "injureRatio")
+	local var31_1 = (var6_1:GetFixAmmo() or var12_1[var16_1] or var27_1) + var3_0.GetCurrent(arg0_1, var4_0.DAMAGE_AMMO_TO_ARMOR_RATE_ENHANCE[var16_1])
+	local var32_1 = var3_0.GetCurrent(arg0_1, var4_0.DAMAGE_TO_ARMOR_RATE_ENHANCE[var16_1])
+	local var33_1 = var3_0.GetCurrent(arg0_1, var7_0[var11_1.ammo_type])
+	local var34_1 = var3_0.GetCurrent(arg1_1, var8_0[var11_1.ammo_type])
+	local var35_1 = var3_0.GetCurrent(arg0_1, "comboTag")
+	local var36_1 = var3_0.GetCurrent(arg1_1, var35_1)
+	local var37_1 = math.max(var27_1, math.floor(var21_1 * var15_1 * (var27_1 - arg2_1) * var31_1 * (var27_1 + var32_1) * var18_1 * (var27_1 + var28_1) * var29_1 * (var27_1 + var30_1) * (var27_1 + var33_1 - var34_1) * (var27_1 + var36_1) * (var27_1 + math.min(var3_1[1], math.max(-var3_1[1], var17_1)) * var3_1[2])))
 
-	if arg1:GetCurrentOxyState() == var1.OXY_STATE.DIVE then
-		var37 = math.floor(var37 * var11.antisub_enhancement)
+	if arg1_1:GetCurrentOxyState() == var1_0.OXY_STATE.DIVE then
+		var37_1 = math.floor(var37_1 * var11_1.antisub_enhancement)
 	end
 
-	local var38 = {
-		isMiss = var19,
-		isCri = var20,
-		damageAttr = var9
+	local var38_1 = {
+		isMiss = var19_1,
+		isCri = var20_1,
+		damageAttr = var9_1
 	}
-	local var39 = arg0:GetDamageEnhance()
+	local var39_1 = arg0_1:GetDamageEnhance()
 
-	if var39 ~= 1 then
-		var37 = math.floor(var37 * var39)
+	if var39_1 ~= 1 then
+		var37_1 = math.floor(var37_1 * var39_1)
 	end
 
-	local var40 = var37 * var14.repressReduce
+	local var40_1 = var37_1 * var14_1.repressReduce
 
-	if var13 ~= 0 then
-		var40 = var40 * (Mathf.RandomFloat(var13) + 1)
+	if var13_1 ~= 0 then
+		var40_1 = var40_1 * (Mathf.RandomFloat(var13_1) + 1)
 	end
 
-	local var41 = var3.GetCurrent(arg0, "damageEnhanceProjectile")
-	local var42 = math.max(0, var40 + var41) * arg0:GetWeaponCardPuzzleEnhance()
-	local var43 = math.floor(var42)
-	local var44 = var11.DMG_font[var16]
+	local var41_1 = var3_0.GetCurrent(arg0_1, "damageEnhanceProjectile")
+	local var42_1 = math.max(0, var40_1 + var41_1) * arg0_1:GetWeaponCardPuzzleEnhance()
+	local var43_1 = math.floor(var42_1)
+	local var44_1 = var11_1.DMG_font[var16_1]
 
-	if var41 < 0 then
-		var44 = var4.BULLET_DECREASE_DMG_FONT
+	if var41_1 < 0 then
+		var44_1 = var4_0.BULLET_DECREASE_DMG_FONT
 	end
 
-	return var43, var38, var44
+	return var43_1, var38_1, var44_1
 end
 
-function var0.parseCompare(arg0, arg1)
-	local var0, var1 = string.find(arg0, "%p+")
-	local var2 = string.sub(arg0, var0, var1)
-	local var3 = string.sub(arg0, 1, var0 - 1)
-	local var4 = string.sub(arg0, var1 + 1, #arg0)
-	local var5 = getCompareFuncByPunctuation(var2)
-	local var6 = tonumber(var3) or arg1:GetCurrent(var3)
-	local var7 = tonumber(var4) or arg1:GetCurrent(var4)
+function var0_0.parseCompare(arg0_2, arg1_2)
+	local var0_2, var1_2 = string.find(arg0_2, "%p+")
+	local var2_2 = string.sub(arg0_2, var0_2, var1_2)
+	local var3_2 = string.sub(arg0_2, 1, var0_2 - 1)
+	local var4_2 = string.sub(arg0_2, var1_2 + 1, #arg0_2)
+	local var5_2 = getCompareFuncByPunctuation(var2_2)
+	local var6_2 = tonumber(var3_2) or arg1_2:GetCurrent(var3_2)
+	local var7_2 = tonumber(var4_2) or arg1_2:GetCurrent(var4_2)
 
-	return var5(var6, var7)
+	return var5_2(var6_2, var7_2)
 end
 
-function var0.parseFormula(arg0, arg1)
-	local var0 = {}
-	local var1 = {}
+function var0_0.parseFormula(arg0_3, arg1_3)
+	local var0_3 = {}
+	local var1_3 = {}
 
-	for iter0 in string.gmatch(arg0, "%w+%.?%w*") do
-		table.insert(var0, iter0)
+	for iter0_3 in string.gmatch(arg0_3, "%w+%.?%w*") do
+		table.insert(var0_3, iter0_3)
 	end
 
-	for iter1 in string.gmatch(arg0, "[^%w%.]") do
-		table.insert(var1, iter1)
+	for iter1_3 in string.gmatch(arg0_3, "[^%w%.]") do
+		table.insert(var1_3, iter1_3)
 	end
 
-	local var2 = {}
-	local var3 = {}
-	local var4 = 1
-	local var5 = var0[1]
+	local var2_3 = {}
+	local var3_3 = {}
+	local var4_3 = 1
+	local var5_3 = var0_3[1]
 
-	var5 = tonumber(var5) or arg1:GetCurrent(var5)
+	var5_3 = tonumber(var5_3) or arg1_3:GetCurrent(var5_3)
 
-	for iter2, iter3 in ipairs(var1) do
-		var4 = var4 + 1
+	for iter2_3, iter3_3 in ipairs(var1_3) do
+		var4_3 = var4_3 + 1
 
-		local var6 = tonumber(var0[var4]) or arg1:GetCurrent(var0[var4])
+		local var6_3 = tonumber(var0_3[var4_3]) or arg1_3:GetCurrent(var0_3[var4_3])
 
-		if iter3 == "+" or iter3 == "-" then
-			table.insert(var3, var5)
+		if iter3_3 == "+" or iter3_3 == "-" then
+			table.insert(var3_3, var5_3)
 
-			var5 = var6
+			var5_3 = var6_3
 
-			table.insert(var2, iter3)
-		elseif iter3 == "*" or iter3 == "/" then
-			var5 = getArithmeticFuncByOperator(iter3)(var5, var6)
+			table.insert(var2_3, iter3_3)
+		elseif iter3_3 == "*" or iter3_3 == "/" then
+			var5_3 = getArithmeticFuncByOperator(iter3_3)(var5_3, var6_3)
 		end
 	end
 
-	table.insert(var3, var5)
+	table.insert(var3_3, var5_3)
 
-	local var7 = 1
-	local var8 = var3[var7]
+	local var7_3 = 1
+	local var8_3 = var3_3[var7_3]
 
-	while var7 < #var3 do
-		local var9 = getArithmeticFuncByOperator(var2[var7])
+	while var7_3 < #var3_3 do
+		local var9_3 = getArithmeticFuncByOperator(var2_3[var7_3])
 
-		var7 = var7 + 1
-		var8 = var9(var8, var3[var7])
+		var7_3 = var7_3 + 1
+		var8_3 = var9_3(var8_3, var3_3[var7_3])
 	end
 
-	return var8
+	return var8_3
 end

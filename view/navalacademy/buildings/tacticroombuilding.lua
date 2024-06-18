@@ -1,67 +1,67 @@
-﻿local var0 = class("TacticRoomBuilding", import(".NavalAcademyBuilding"))
+﻿local var0_0 = class("TacticRoomBuilding", import(".NavalAcademyBuilding"))
 
-function var0.GetGameObjectName(arg0)
+function var0_0.GetGameObjectName(arg0_1)
 	return "tacticRoom"
 end
 
-function var0.GetTitle(arg0)
+function var0_0.GetTitle(arg0_2)
 	return i18n("school_title_xueyuan")
 end
 
-function var0.OnClick(arg0)
-	arg0:emit(NavalAcademyMediator.ON_OPEN_TACTICROOM)
+function var0_0.OnClick(arg0_3)
+	arg0_3:emit(NavalAcademyMediator.ON_OPEN_TACTICROOM)
 end
 
-function var0.IsTip(arg0)
-	local var0 = getProxy(NavalAcademyProxy):getStudents()
+function var0_0.IsTip(arg0_4)
+	local var0_4 = getProxy(NavalAcademyProxy):getStudents()
 
-	if #var0 <= 0 then
+	if #var0_4 <= 0 then
 		return false
 	end
 
-	local var1 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var2
+	local var1_4 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var2_4
 
-	for iter0, iter1 in pairs(var0) do
-		local var3 = iter1:getFinishTime() - var1
+	for iter0_4, iter1_4 in pairs(var0_4) do
+		local var3_4 = iter1_4:getFinishTime() - var1_4
 
-		if not var2 or var3 < var2 then
-			var2 = var3
+		if not var2_4 or var3_4 < var2_4 then
+			var2_4 = var3_4
 		end
 
-		if var3 <= 0 then
+		if var3_4 <= 0 then
 			return true
 		end
 	end
 
-	arg0:RemoveTimer()
+	arg0_4:RemoveTimer()
 
-	if var2 and var2 > 0 then
-		arg0:AddTimer(var2)
+	if var2_4 and var2_4 > 0 then
+		arg0_4:AddTimer(var2_4)
 	end
 
 	return false
 end
 
-function var0.AddTimer(arg0, arg1)
-	arg0.timer = Timer.New(function()
-		arg0:RefreshTip()
-	end, arg1, 1)
+function var0_0.AddTimer(arg0_5, arg1_5)
+	arg0_5.timer = Timer.New(function()
+		arg0_5:RefreshTip()
+	end, arg1_5, 1)
 
-	arg0.timer:Start()
+	arg0_5.timer:Start()
 end
 
-function var0.RemoveTimer(arg0)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var0_0.RemoveTimer(arg0_7)
+	if arg0_7.timer then
+		arg0_7.timer:Stop()
 
-		arg0.timer = nil
+		arg0_7.timer = nil
 	end
 end
 
-function var0.Dispose(arg0)
-	var0.super.Dispose(arg0)
-	arg0:RemoveTimer()
+function var0_0.Dispose(arg0_8)
+	var0_0.super.Dispose(arg0_8)
+	arg0_8:RemoveTimer()
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_80 = {}
+var0_0.word_template_80 = {}
 
-local var1 = var0.word_template_80
+local var1_0 = var0_0.word_template_80
 
 function temp()
-	var1.到 = {
+	var1_0.到 = {
 		我 = {
 			这 = {
 				里 = {
@@ -49,7 +49,7 @@ end
 temp()
 
 function temp()
-	var1.悼 = {
+	var1_0.悼 = {
 		念 = {
 			this = true,
 			胡 = {
@@ -89,7 +89,7 @@ end
 temp()
 
 function temp()
-	var1.道 = {
+	var1_0.道 = {
 		教 = {
 			this = true
 		},
@@ -133,7 +133,7 @@ end
 temp()
 
 function temp()
-	var1.盜 = {
+	var1_0.盜 = {
 		撮 = {
 			this = true
 		},
@@ -148,7 +148,7 @@ end
 temp()
 
 function temp()
-	var1.稻 = {
+	var1_0.稻 = {
 		草 = {
 			人 = {
 				闯 = {
@@ -182,7 +182,7 @@ end
 temp()
 
 function temp()
-	var1.纛 = {
+	var1_0.纛 = {
 		this = {
 			this = true
 		}
@@ -192,7 +192,7 @@ end
 temp()
 
 function temp()
-	var1.得 = {
+	var1_0.得 = {
 		谁 = {
 			跟 = {
 				谁 = {

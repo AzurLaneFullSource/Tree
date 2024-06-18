@@ -1,43 +1,43 @@
-﻿local var0 = class("MetaSkillDetailBoxMediator", import("...base.ContextMediator"))
+﻿local var0_0 = class("MetaSkillDetailBoxMediator", import("...base.ContextMediator"))
 
-function var0.register(arg0)
+function var0_0.register(arg0_1)
 	return
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_2)
 	return {
 		GAME.TACTICS_META_UNLOCK_SKILL_DONE,
 		GAME.TACTICS_META_SWITCH_SKILL_DONE
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_3, arg1_3)
+	local var0_3 = arg1_3:getName()
+	local var1_3 = arg1_3:getBody()
 
-	if var0 == GAME.TACTICS_META_UNLOCK_SKILL_DONE or var0 == GAME.TACTICS_META_SWITCH_SKILL_DONE then
-		if var0 == GAME.TACTICS_META_SWITCH_SKILL_DONE then
-			local var2 = arg0.contextData.expInfoList
+	if var0_3 == GAME.TACTICS_META_UNLOCK_SKILL_DONE or var0_3 == GAME.TACTICS_META_SWITCH_SKILL_DONE then
+		if var0_3 == GAME.TACTICS_META_SWITCH_SKILL_DONE then
+			local var2_3 = arg0_3.contextData.expInfoList
 
-			if var2 and #var2 > 0 then
-				local var3 = arg0.contextData.metaShipID
-				local var4
+			if var2_3 and #var2_3 > 0 then
+				local var3_3 = arg0_3.contextData.metaShipID
+				local var4_3
 
-				for iter0, iter1 in ipairs(var2) do
-					if iter1.shipID == var3 and iter1.isUpLevel and iter1.isMaxLevel then
-						var4 = iter0
+				for iter0_3, iter1_3 in ipairs(var2_3) do
+					if iter1_3.shipID == var3_3 and iter1_3.isUpLevel and iter1_3.isMaxLevel then
+						var4_3 = iter0_3
 					end
 				end
 
-				if var4 then
-					var2[var4].isUpLevel = false
-					var2[var4].isMaxLevel = false
+				if var4_3 then
+					var2_3[var4_3].isUpLevel = false
+					var2_3[var4_3].isMaxLevel = false
 				end
 			end
 		end
 
-		arg0.viewComponent:updateSkillList()
+		arg0_3.viewComponent:updateSkillList()
 	end
 end
 
-return var0
+return var0_0

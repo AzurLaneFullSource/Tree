@@ -1,6 +1,6 @@
-﻿local var0 = class("WSMapObject", import("...BaseEntity"))
+﻿local var0_0 = class("WSMapObject", import("...BaseEntity"))
 
-var0.Fields = {
+var0_0.Fields = {
 	modelType = "number",
 	modelAction = "string",
 	modelResPath = "string",
@@ -14,119 +14,119 @@ var0.Fields = {
 	modelResName = "string"
 }
 
-function var0.GetModelAngles(arg0)
-	return arg0.modelAngles and arg0.modelAngles:Clone() or Vector3.zero
+function var0_0.GetModelAngles(arg0_1)
+	return arg0_1.modelAngles and arg0_1.modelAngles:Clone() or Vector3.zero
 end
 
-function var0.UpdateModelAngles(arg0, arg1)
-	if arg0.modelAngles ~= arg1 then
-		arg0.modelAngles = arg1
+function var0_0.UpdateModelAngles(arg0_2, arg1_2)
+	if arg0_2.modelAngles ~= arg1_2 then
+		arg0_2.modelAngles = arg1_2
 
-		arg0:FlushModelAngles()
+		arg0_2:FlushModelAngles()
 	end
 end
 
-function var0.FlushModelAngles(arg0)
-	if arg0.model and arg0.modelAngles then
-		arg0.model.localEulerAngles = arg0.modelAngles
+function var0_0.FlushModelAngles(arg0_3)
+	if arg0_3.model and arg0_3.modelAngles then
+		arg0_3.model.localEulerAngles = arg0_3.modelAngles
 	end
 end
 
-function var0.GetModelScale(arg0)
-	return arg0.modelScale and arg0.modelScale:Clone() or Vector3.one
+function var0_0.GetModelScale(arg0_4)
+	return arg0_4.modelScale and arg0_4.modelScale:Clone() or Vector3.one
 end
 
-function var0.UpdateModelScale(arg0, arg1)
-	if arg0.modelScale ~= arg1 then
-		arg0.modelScale = arg1
+function var0_0.UpdateModelScale(arg0_5, arg1_5)
+	if arg0_5.modelScale ~= arg1_5 then
+		arg0_5.modelScale = arg1_5
 
-		arg0:FlushModelScale()
+		arg0_5:FlushModelScale()
 	end
 end
 
-function var0.GetModelAction(arg0)
-	return arg0.modelAction
+function var0_0.GetModelAction(arg0_6)
+	return arg0_6.modelAction
 end
 
-function var0.FlushModelScale(arg0)
-	if arg0.model and arg0.modelScale then
-		arg0.model.localScale = arg0.modelScale
+function var0_0.FlushModelScale(arg0_7)
+	if arg0_7.model and arg0_7.modelScale then
+		arg0_7.model.localScale = arg0_7.modelScale
 	end
 end
 
-function var0.UpdateModelAction(arg0, arg1)
-	if arg0.modelAction ~= arg1 then
-		arg0.modelAction = arg1
+function var0_0.UpdateModelAction(arg0_8, arg1_8)
+	if arg0_8.modelAction ~= arg1_8 then
+		arg0_8.modelAction = arg1_8
 
-		arg0:FlushModelAction()
+		arg0_8:FlushModelAction()
 	end
 end
 
-function var0.FlushModelAction(arg0)
-	if arg0.model and arg0.modelAction then
-		if arg0.modelType == WorldConst.ModelSpine then
-			local var0 = arg0.modelComps and arg0.modelComps[1]
+function var0_0.FlushModelAction(arg0_9)
+	if arg0_9.model and arg0_9.modelAction then
+		if arg0_9.modelType == WorldConst.ModelSpine then
+			local var0_9 = arg0_9.modelComps and arg0_9.modelComps[1]
 
-			if var0 then
-				var0:SetAction(arg0.modelAction, 0)
+			if var0_9 then
+				var0_9:SetAction(arg0_9.modelAction, 0)
 			end
-		elseif arg0.modelType == WorldConst.ModelPrefab then
-			local var1 = arg0.modelComps and arg0.modelComps[1]
+		elseif arg0_9.modelType == WorldConst.ModelPrefab then
+			local var1_9 = arg0_9.modelComps and arg0_9.modelComps[1]
 
-			if var1 then
-				local var2 = Animator.StringToHash(arg0.modelAction)
+			if var1_9 then
+				local var2_9 = Animator.StringToHash(arg0_9.modelAction)
 
-				if var1:HasState(0, var2) then
-					var1:Play(var2)
+				if var1_9:HasState(0, var2_9) then
+					var1_9:Play(var2_9)
 				end
 			end
 		end
 	end
 end
 
-function var0.PlayModelAction(arg0, arg1, arg2, arg3)
-	assert(arg1)
+function var0_0.PlayModelAction(arg0_10, arg1_10, arg2_10, arg3_10)
+	assert(arg1_10)
 
-	local var0 = {}
+	local var0_10 = {}
 
-	if arg0.model then
-		if arg0.modelType == WorldConst.ModelSpine then
-			local var1 = arg0.modelComps and arg0.modelComps[1]
+	if arg0_10.model then
+		if arg0_10.modelType == WorldConst.ModelSpine then
+			local var1_10 = arg0_10.modelComps and arg0_10.modelComps[1]
 
-			if var1 and var1.transform.gameObject.activeInHierarchy then
-				table.insert(var0, function(arg0)
-					var1:SetAction(arg1, 0)
+			if var1_10 and var1_10.transform.gameObject.activeInHierarchy then
+				table.insert(var0_10, function(arg0_11)
+					var1_10:SetAction(arg1_10, 0)
 
-					if arg2 then
-						arg0:NewActionTimer(arg2, arg0)
+					if arg2_10 then
+						arg0_10:NewActionTimer(arg2_10, arg0_11)
 					else
-						var1:SetActionCallBack(function(arg0)
-							if arg0 == "finish" then
-								var1:SetActionCallBack(nil)
-								arg0()
+						var1_10:SetActionCallBack(function(arg0_12)
+							if arg0_12 == "finish" then
+								var1_10:SetActionCallBack(nil)
+								arg0_11()
 							end
 						end)
 					end
 				end)
 			end
-		elseif arg0.modelType == WorldConst.ModelPrefab then
-			local var2 = arg0.modelComps and arg0.modelComps[1]
+		elseif arg0_10.modelType == WorldConst.ModelPrefab then
+			local var2_10 = arg0_10.modelComps and arg0_10.modelComps[1]
 
-			if var2 and var2.transform.gameObject.activeInHierarchy then
-				local var3 = Animator.StringToHash(arg1)
+			if var2_10 and var2_10.transform.gameObject.activeInHierarchy then
+				local var3_10 = Animator.StringToHash(arg1_10)
 
-				if var2:HasState(0, var3) then
-					table.insert(var0, function(arg0)
-						var2:Play(var3)
+				if var2_10:HasState(0, var3_10) then
+					table.insert(var0_10, function(arg0_13)
+						var2_10:Play(var3_10)
 
-						if arg2 then
-							arg0:NewActionTimer(arg2, arg0)
+						if arg2_10 then
+							arg0_10:NewActionTimer(arg2_10, arg0_13)
 						else
-							local var0 = arg0.modelComps[2]
+							local var0_13 = arg0_10.modelComps[2]
 
-							var0:SetEndEvent(function()
-								var0:SetEndEvent(nil)
-								arg0()
+							var0_13:SetEndEvent(function()
+								var0_13:SetEndEvent(nil)
+								arg0_13()
 							end)
 						end
 					end)
@@ -135,176 +135,176 @@ function var0.PlayModelAction(arg0, arg1, arg2, arg3)
 		end
 	end
 
-	seriesAsync(var0, arg3)
+	seriesAsync(var0_10, arg3_10)
 end
 
-function var0.LoadModel(arg0, arg1, arg2, arg3, arg4, arg5)
-	if arg0.modelType ~= arg1 or arg0.modelResPath ~= arg2 or arg0.modelResName ~= arg3 then
-		arg0:UnloadModel()
+function var0_0.LoadModel(arg0_15, arg1_15, arg2_15, arg3_15, arg4_15, arg5_15)
+	if arg0_15.modelType ~= arg1_15 or arg0_15.modelResPath ~= arg2_15 or arg0_15.modelResName ~= arg3_15 then
+		arg0_15:UnloadModel()
 
-		arg0.model = createNewGameObject("model")
-		arg0.modelType = arg1
-		arg0.modelResPath = arg2
-		arg0.modelResName = arg3
-		arg0.modelResAsync = defaultValue(arg4, true)
+		arg0_15.model = createNewGameObject("model")
+		arg0_15.modelType = arg1_15
+		arg0_15.modelResPath = arg2_15
+		arg0_15.modelResName = arg3_15
+		arg0_15.modelResAsync = defaultValue(arg4_15, true)
 
-		local var0 = {}
+		local var0_15 = {}
 
-		if arg0.modelType == WorldConst.ModelSpine then
-			arg0.modelAction = arg0.modelAction or WorldConst.ActionIdle
+		if arg0_15.modelType == WorldConst.ModelSpine then
+			arg0_15.modelAction = arg0_15.modelAction or WorldConst.ActionIdle
 
-			table.insert(var0, function(arg0)
-				arg0:LoadSpine(arg0)
+			table.insert(var0_15, function(arg0_16)
+				arg0_15:LoadSpine(arg0_16)
 			end)
-		elseif arg0.modelType == WorldConst.ModelPrefab then
-			arg0.modelAction = arg0.modelAction or "idle"
+		elseif arg0_15.modelType == WorldConst.ModelPrefab then
+			arg0_15.modelAction = arg0_15.modelAction or "idle"
 
-			table.insert(var0, function(arg0)
-				arg0:LoadPrefab(arg0)
+			table.insert(var0_15, function(arg0_17)
+				arg0_15:LoadPrefab(arg0_17)
 			end)
 		else
-			assert("invalid model type: " .. arg1)
+			assert("invalid model type: " .. arg1_15)
 		end
 
-		seriesAsync(var0, function()
-			if arg0.modelScale == nil then
-				arg0.modelScale = arg0.model.localScale
+		seriesAsync(var0_15, function()
+			if arg0_15.modelScale == nil then
+				arg0_15.modelScale = arg0_15.model.localScale
 			else
-				arg0:FlushModelScale()
+				arg0_15:FlushModelScale()
 			end
 
-			if arg0.modelAngles == nil then
-				arg0.modelAngles = arg0.model.localEulerAngles
+			if arg0_15.modelAngles == nil then
+				arg0_15.modelAngles = arg0_15.model.localEulerAngles
 			else
-				arg0:FlushModelAngles()
+				arg0_15:FlushModelAngles()
 			end
 
-			arg0:FlushModelAction()
+			arg0_15:FlushModelAction()
 
-			if arg5 then
-				arg5()
+			if arg5_15 then
+				arg5_15()
 			end
 		end)
 	end
 end
 
-function var0.UnloadModel(arg0)
-	arg0:DisposeActionTimer()
+function var0_0.UnloadModel(arg0_19)
+	arg0_19:DisposeActionTimer()
 
-	if arg0.model then
-		if arg0.model.childCount > 0 then
-			if arg0.modelType == WorldConst.ModelSpine then
-				arg0:UnloadSpine()
-			elseif arg0.modelType == WorldConst.ModelPrefab then
-				arg0:UnloadPrefab()
+	if arg0_19.model then
+		if arg0_19.model.childCount > 0 then
+			if arg0_19.modelType == WorldConst.ModelSpine then
+				arg0_19:UnloadSpine()
+			elseif arg0_19.modelType == WorldConst.ModelPrefab then
+				arg0_19:UnloadPrefab()
 			end
 		end
 
-		Destroy(arg0.model)
+		Destroy(arg0_19.model)
 	end
 
-	arg0.model = nil
-	arg0.modelComps = nil
-	arg0.modelType = nil
-	arg0.modelResPath = nil
-	arg0.modelResName = nil
-	arg0.modelResAsync = nil
+	arg0_19.model = nil
+	arg0_19.modelComps = nil
+	arg0_19.modelType = nil
+	arg0_19.modelResPath = nil
+	arg0_19.modelResName = nil
+	arg0_19.modelResAsync = nil
 end
 
-function var0.LoadSpine(arg0, arg1)
-	local var0 = arg0.modelResPath
-	local var1 = arg0.modelResAsync
+function var0_0.LoadSpine(arg0_20, arg1_20)
+	local var0_20 = arg0_20.modelResPath
+	local var1_20 = arg0_20.modelResAsync
 
-	PoolMgr.GetInstance():GetSpineChar(var0, var1, function(arg0)
-		if arg0.modelType ~= WorldConst.ModelSpine or arg0.modelResPath ~= var0 then
-			PoolMgr.GetInstance():ReturnSpineChar(var0, arg0)
+	PoolMgr.GetInstance():GetSpineChar(var0_20, var1_20, function(arg0_21)
+		if arg0_20.modelType ~= WorldConst.ModelSpine or arg0_20.modelResPath ~= var0_20 then
+			PoolMgr.GetInstance():ReturnSpineChar(var0_20, arg0_21)
 
 			return
 		end
 
-		local var0 = arg0.transform
+		local var0_21 = arg0_21.transform
 
-		var0:GetComponent("SkeletonGraphic").raycastTarget = false
-		var0.anchoredPosition3D = Vector3.zero
-		var0.localScale = Vector3.one
+		var0_21:GetComponent("SkeletonGraphic").raycastTarget = false
+		var0_21.anchoredPosition3D = Vector3.zero
+		var0_21.localScale = Vector3.one
 
-		pg.ViewUtils.SetLayer(var0, Layer.UI)
-		var0:SetParent(arg0.model, false)
+		pg.ViewUtils.SetLayer(var0_21, Layer.UI)
+		var0_21:SetParent(arg0_20.model, false)
 
-		arg0.modelComps = {
-			var0:GetComponent("SpineAnimUI")
+		arg0_20.modelComps = {
+			var0_21:GetComponent("SpineAnimUI")
 		}
 
-		arg1()
+		arg1_20()
 	end)
 end
 
-function var0.LoadPrefab(arg0, arg1)
-	local var0 = arg0.modelResPath
-	local var1 = arg0.modelResName
-	local var2 = arg0.modelResAsync
+function var0_0.LoadPrefab(arg0_22, arg1_22)
+	local var0_22 = arg0_22.modelResPath
+	local var1_22 = arg0_22.modelResName
+	local var2_22 = arg0_22.modelResAsync
 
-	PoolMgr.GetInstance():GetPrefab(var0, var1, var2, function(arg0)
-		if arg0.modelType ~= WorldConst.ModelPrefab or arg0.modelResPath ~= var0 or arg0.modelResName ~= var1 then
-			PoolMgr.GetInstance():ReturnPrefab(var0, var1, arg0, true)
+	PoolMgr.GetInstance():GetPrefab(var0_22, var1_22, var2_22, function(arg0_23)
+		if arg0_22.modelType ~= WorldConst.ModelPrefab or arg0_22.modelResPath ~= var0_22 or arg0_22.modelResName ~= var1_22 then
+			PoolMgr.GetInstance():ReturnPrefab(var0_22, var1_22, arg0_23, true)
 
 			return
 		end
 
-		local var0 = arg0:GetComponentsInChildren(typeof(Image))
+		local var0_23 = arg0_23:GetComponentsInChildren(typeof(Image))
 
-		for iter0 = 0, var0.Length - 1 do
-			var0[iter0].raycastTarget = false
+		for iter0_23 = 0, var0_23.Length - 1 do
+			var0_23[iter0_23].raycastTarget = false
 		end
 
-		arg0.transform:SetParent(arg0.model, false)
+		arg0_23.transform:SetParent(arg0_22.model, false)
 
-		arg0.modelComps = {}
+		arg0_22.modelComps = {}
 
-		local var1 = arg0:GetComponentInChildren(typeof(Animator))
+		local var1_23 = arg0_23:GetComponentInChildren(typeof(Animator))
 
-		if var1 then
-			local var2 = var1:GetComponent("DftAniEvent")
+		if var1_23 then
+			local var2_23 = var1_23:GetComponent("DftAniEvent")
 
-			arg0.modelComps = {
-				var1,
-				var2
+			arg0_22.modelComps = {
+				var1_23,
+				var2_23
 			}
 		end
 
-		arg1()
+		arg1_22()
 	end)
 end
 
-function var0.UnloadSpine(arg0)
-	arg0.modelComps[1]:SetActionCallBack(nil)
-	PoolMgr.GetInstance():ReturnSpineChar(arg0.modelResPath, arg0.model:GetChild(0).gameObject)
+function var0_0.UnloadSpine(arg0_24)
+	arg0_24.modelComps[1]:SetActionCallBack(nil)
+	PoolMgr.GetInstance():ReturnSpineChar(arg0_24.modelResPath, arg0_24.model:GetChild(0).gameObject)
 end
 
-function var0.UnloadPrefab(arg0)
-	local var0 = arg0.modelComps[2]
+function var0_0.UnloadPrefab(arg0_25)
+	local var0_25 = arg0_25.modelComps[2]
 
-	if var0 then
-		var0:SetEndEvent(nil)
+	if var0_25 then
+		var0_25:SetEndEvent(nil)
 	end
 
-	PoolMgr.GetInstance():ReturnPrefab(arg0.modelResPath, arg0.modelResName, arg0.model:GetChild(0).gameObject, true)
+	PoolMgr.GetInstance():ReturnPrefab(arg0_25.modelResPath, arg0_25.modelResName, arg0_25.model:GetChild(0).gameObject, true)
 end
 
-function var0.NewActionTimer(arg0, arg1, arg2)
-	arg0:DisposeActionTimer()
+function var0_0.NewActionTimer(arg0_26, arg1_26, arg2_26)
+	arg0_26:DisposeActionTimer()
 
-	arg0.modelActionTimer = Timer.New(arg2, arg1, 1)
+	arg0_26.modelActionTimer = Timer.New(arg2_26, arg1_26, 1)
 
-	arg0.modelActionTimer:Start()
+	arg0_26.modelActionTimer:Start()
 end
 
-function var0.DisposeActionTimer(arg0)
-	if arg0.modelActionTimer then
-		arg0.modelActionTimer:Stop()
+function var0_0.DisposeActionTimer(arg0_27)
+	if arg0_27.modelActionTimer then
+		arg0_27.modelActionTimer:Stop()
 
-		arg0.modelActionTimer = nil
+		arg0_27.modelActionTimer = nil
 	end
 end
 
-return var0
+return var0_0

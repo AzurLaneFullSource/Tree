@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_349 = {}
+var0_0.word_template_349 = {}
 
-local var1 = var0.word_template_349
+local var1_0 = var0_0.word_template_349
 
 function temp()
-	var1.製 = {
+	var1_0.製 = {
 		造 = {
 			緬 = {
 				古 = {
@@ -36,7 +36,7 @@ end
 temp()
 
 function temp()
-	var1.觶 = {
+	var1_0.觶 = {
 		this = {
 			this = true
 		}
@@ -46,7 +46,7 @@ end
 temp()
 
 function temp()
-	var1.騭 = {
+	var1_0.騭 = {
 		this = {
 			this = true
 		}
@@ -56,7 +56,7 @@ end
 temp()
 
 function temp()
-	var1.躓 = {
+	var1_0.躓 = {
 		this = {
 			this = true
 		}
@@ -66,7 +66,7 @@ end
 temp()
 
 function temp()
-	var1.终 = {
+	var1_0.终 = {
 		极 = {
 			猎 = {
 				杀 = {
@@ -89,7 +89,7 @@ end
 temp()
 
 function temp()
-	var1.钟 = {
+	var1_0.钟 = {
 		共 = {
 			this = true
 		},
@@ -131,7 +131,7 @@ end
 temp()
 
 function temp()
-	var1.鐘 = {
+	var1_0.鐘 = {
 		山 = {
 			風 = {
 				雨 = {

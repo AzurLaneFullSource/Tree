@@ -1,11 +1,11 @@
-﻿local var0 = class("MainActAtelierBtn", import(".MainBaseActivityBtn"))
+﻿local var0_0 = class("MainActAtelierBtn", import(".MainBaseActivityBtn"))
 
-function var0.GetEventName(arg0)
+function var0_0.GetEventName(arg0_1)
 	return "event_Atelier"
 end
 
-function var0.OnInit(arg0)
-	setActive(arg0.tipTr.gameObject, false)
+function var0_0.OnInit(arg0_2)
+	setActive(arg0_2.tipTr.gameObject, false)
 end
 
-return var0
+return var0_0

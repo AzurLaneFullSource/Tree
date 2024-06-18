@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_291 = {}
+var0_0.word_template_291 = {}
 
-local var1 = var0.word_template_291
+local var1_0 = var0_0.word_template_291
 
 function temp()
-	var1.伟 = {
+	var1_0.伟 = {
 		哥 = {
 			this = true,
 			的 = {
@@ -71,7 +71,7 @@ end
 temp()
 
 function temp()
-	var1.伪 = {
+	var1_0.伪 = {
 		法 = {
 			院 = {
 				this = true
@@ -98,7 +98,7 @@ end
 temp()
 
 function temp()
-	var1.尾 = {
+	var1_0.尾 = {
 		申 = {
 			鲸 = {
 				this = true
@@ -110,7 +110,7 @@ end
 temp()
 
 function temp()
-	var1.猥 = {
+	var1_0.猥 = {
 		琐 = {
 			this = true
 		},
@@ -129,7 +129,7 @@ end
 temp()
 
 function temp()
-	var1.鮪 = {
+	var1_0.鮪 = {
 		this = {
 			this = true
 		}
@@ -139,7 +139,7 @@ end
 temp()
 
 function temp()
-	var1.卫 = {
+	var1_0.卫 = {
 		生 = {
 			部 = {
 				this = true
@@ -210,7 +210,7 @@ end
 temp()
 
 function temp()
-	var1.未 = {
+	var1_0.未 = {
 		成 = {
 			年 = {
 				禁 = {

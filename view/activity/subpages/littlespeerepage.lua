@@ -1,178 +1,178 @@
-﻿local var0 = class("LittleSpeeRePage", import(".TemplatePage.PtTemplatePage"))
+﻿local var0_0 = class("LittleSpeeRePage", import(".TemplatePage.PtTemplatePage"))
 
-var0.FILL_ANI_TIME = 0.5
-var0.IMAGE_ANI_TIME = 0.5
-var0.IMAGE_MAX_SCALE = Vector3(2, 2, 2)
-var0.TEXT_ANI_TIME = 0.3
-var0.TEXT_MAX_SCALE = Vector3(3, 3, 3)
+var0_0.FILL_ANI_TIME = 0.5
+var0_0.IMAGE_ANI_TIME = 0.5
+var0_0.IMAGE_MAX_SCALE = Vector3(2, 2, 2)
+var0_0.TEXT_ANI_TIME = 0.3
+var0_0.TEXT_MAX_SCALE = Vector3(3, 3, 3)
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
+function var0_0.OnInit(arg0_1)
+	var0_0.super.OnInit(arg0_1)
 
-	arg0.heartTpl = arg0:findTF("HeartTpl", arg0.bg)
-	arg0.heartContainer = arg0:findTF("HeartContainer", arg0.bg)
-	arg0.helpBtn = arg0:findTF("help_btn", arg0.bg)
-	arg0.getFinalBtn = arg0:findTF("get_final_btn", arg0.bg)
-	arg0.gotFinalBtn = arg0:findTF("got_final_btn", arg0.bg)
-	arg0.performBtn = arg0:findTF("perform_btn", arg0.bg)
-	arg0.performImage = arg0:findTF("image", arg0.performBtn)
-	arg0.performText = arg0:findTF("text", arg0.performBtn)
-	arg0.performReBtn = arg0:findTF("perform_re_btn", arg0.bg)
+	arg0_1.heartTpl = arg0_1:findTF("HeartTpl", arg0_1.bg)
+	arg0_1.heartContainer = arg0_1:findTF("HeartContainer", arg0_1.bg)
+	arg0_1.helpBtn = arg0_1:findTF("help_btn", arg0_1.bg)
+	arg0_1.getFinalBtn = arg0_1:findTF("get_final_btn", arg0_1.bg)
+	arg0_1.gotFinalBtn = arg0_1:findTF("got_final_btn", arg0_1.bg)
+	arg0_1.performBtn = arg0_1:findTF("perform_btn", arg0_1.bg)
+	arg0_1.performImage = arg0_1:findTF("image", arg0_1.performBtn)
+	arg0_1.performText = arg0_1:findTF("text", arg0_1.performBtn)
+	arg0_1.performReBtn = arg0_1:findTF("perform_re_btn", arg0_1.bg)
 end
 
-function var0.OnFirstFlush(arg0)
-	var0.super.OnFirstFlush(arg0)
+function var0_0.OnFirstFlush(arg0_2)
+	var0_0.super.OnFirstFlush(arg0_2)
 
-	arg0.storyName = arg0.activity:getConfig("config_client").performStory
-	arg0.activateStoryName = arg0.activity:getConfig("config_client").activateStory
-	arg0.heartUIItemList = UIItemList.New(arg0.heartContainer, arg0.heartTpl)
+	arg0_2.storyName = arg0_2.activity:getConfig("config_client").performStory
+	arg0_2.activateStoryName = arg0_2.activity:getConfig("config_client").activateStory
+	arg0_2.heartUIItemList = UIItemList.New(arg0_2.heartContainer, arg0_2.heartTpl)
 
-	arg0.heartUIItemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg1 + 1
+	arg0_2.heartUIItemList:make(function(arg0_3, arg1_3, arg2_3)
+		if arg0_3 == UIItemList.EventUpdate then
+			local var0_3 = arg1_3 + 1
 
-			arg2.name = var0
+			arg2_3.name = var0_3
 
-			local var1 = arg0.ptData:GetLevel()
-			local var2 = arg0:findTF("Full", arg2)
+			local var1_3 = arg0_2.ptData:GetLevel()
+			local var2_3 = arg0_2:findTF("Full", arg2_3)
 
-			setFillAmount(var2, 1)
-			setActive(var2, var0 <= var1)
+			setFillAmount(var2_3, 1)
+			setActive(var2_3, var0_3 <= var1_3)
 		end
 	end)
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_2, arg0_2.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.littleSpee_npc.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.battleBtn, function()
-		arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.LEVEL)
+	onButton(arg0_2, arg0_2.battleBtn, function()
+		arg0_2:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.LEVEL)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.getBtn, function()
-		arg0:OnGetBtnClick()
+	onButton(arg0_2, arg0_2.getBtn, function()
+		arg0_2:OnGetBtnClick()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.getFinalBtn, function()
-		arg0:OnGetBtnClick()
+	onButton(arg0_2, arg0_2.getFinalBtn, function()
+		arg0_2:OnGetBtnClick()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.performBtn, function()
-		local var0 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg0.storyName)
+	onButton(arg0_2, arg0_2.performBtn, function()
+		local var0_8 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg0_2.storyName)
 
-		assert(var0 and var0 ~= 0, "Missing Story Stage ID: " .. (arg0.storyName or "NIL"))
-		arg0:emit(ActivityMediator.GO_PERFORM_COMBAT, {
-			stageId = var0
+		assert(var0_8 and var0_8 ~= 0, "Missing Story Stage ID: " .. (arg0_2.storyName or "NIL"))
+		arg0_2:emit(ActivityMediator.GO_PERFORM_COMBAT, {
+			stageId = var0_8
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.performReBtn, function()
-		local var0 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg0.storyName)
+	onButton(arg0_2, arg0_2.performReBtn, function()
+		local var0_9 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg0_2.storyName)
 
-		assert(var0 and var0 ~= 0, "Missing Story Stage ID: " .. (arg0.storyName or "NIL"))
-		arg0:emit(ActivityMediator.GO_PERFORM_COMBAT, {
+		assert(var0_9 and var0_9 ~= 0, "Missing Story Stage ID: " .. (arg0_2.storyName or "NIL"))
+		arg0_2:emit(ActivityMediator.GO_PERFORM_COMBAT, {
 			memory = true,
-			stageId = var0
+			stageId = var0_9
 		})
 	end, SFX_PANEL)
-	setActive(arg0.performReBtn, false)
-	setActive(arg0.performBtn, false)
-	setActive(arg0.getFinalBtn, false)
+	setActive(arg0_2.performReBtn, false)
+	setActive(arg0_2.performBtn, false)
+	setActive(arg0_2.getFinalBtn, false)
 
-	arg0.inGetProcess = false
+	arg0_2.inGetProcess = false
 end
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
+function var0_0.OnUpdateFlush(arg0_10)
+	var0_0.super.OnUpdateFlush(arg0_10)
 
-	local var0, var1 = arg0.ptData:GetLevelProgress()
+	local var0_10, var1_10 = arg0_10.ptData:GetLevelProgress()
 
-	arg0.heartUIItemList:align(var1)
+	arg0_10.heartUIItemList:align(var1_10)
 
-	if var0 == var1 then
-		setActive(arg0.getBtn, false)
-		setActive(arg0.gotBtn, false)
+	if var0_10 == var1_10 then
+		setActive(arg0_10.getBtn, false)
+		setActive(arg0_10.gotBtn, false)
 
-		local var2 = arg0.ptData:CanGetAward()
-		local var3 = arg0.ptData:CanGetNextAward()
-		local var4 = pg.NewStoryMgr.GetInstance():IsPlayed(arg0.storyName)
+		local var2_10 = arg0_10.ptData:CanGetAward()
+		local var3_10 = arg0_10.ptData:CanGetNextAward()
+		local var4_10 = pg.NewStoryMgr.GetInstance():IsPlayed(arg0_10.storyName)
 
-		setActive(arg0.performBtn, not var4 and var2)
-		setActive(arg0.performReBtn, var4)
-		setActive(arg0.getFinalBtn, var4 and var2)
-		setActive(arg0.gotFinalBtn, var4 and not var3)
+		setActive(arg0_10.performBtn, not var4_10 and var2_10)
+		setActive(arg0_10.performReBtn, var4_10)
+		setActive(arg0_10.getFinalBtn, var4_10 and var2_10)
+		setActive(arg0_10.gotFinalBtn, var4_10 and not var3_10)
 
-		if not var4 and var2 then
-			pg.NewStoryMgr.GetInstance():Play(arg0.activateStoryName)
-			setActive(arg0.performBtn, true)
-			setLocalScale(arg0.performImage, Vector3.one)
-			arg0:managedTween(LeanTween.scale, nil, arg0.performImage, var0.IMAGE_MAX_SCALE, var0.IMAGE_ANI_TIME)
-			arg0:managedTween(LeanTween.alphaCanvas, nil, GetOrAddComponent(arg0.performImage, typeof(CanvasGroup)), 1, var0.IMAGE_ANI_TIME / 2):setFrom(0)
-			arg0:managedTween(LeanTween.delayedCall, function()
-				arg0:managedTween(LeanTween.alphaCanvas, nil, GetOrAddComponent(arg0.performImage, typeof(CanvasGroup)), 0, var0.IMAGE_ANI_TIME / 2)
-			end, var0.IMAGE_ANI_TIME / 2, nil)
-			setLocalScale(arg0.performText, var0.TEXT_MAX_SCALE)
-			arg0:managedTween(LeanTween.scale, nil, arg0.performText, Vector3.one, var0.TEXT_ANI_TIME)
-			arg0:managedTween(LeanTween.alphaCanvas, nil, GetOrAddComponent(arg0.performText, typeof(CanvasGroup)), 1, var0.TEXT_ANI_TIME):setFrom(0)
+		if not var4_10 and var2_10 then
+			pg.NewStoryMgr.GetInstance():Play(arg0_10.activateStoryName)
+			setActive(arg0_10.performBtn, true)
+			setLocalScale(arg0_10.performImage, Vector3.one)
+			arg0_10:managedTween(LeanTween.scale, nil, arg0_10.performImage, var0_0.IMAGE_MAX_SCALE, var0_0.IMAGE_ANI_TIME)
+			arg0_10:managedTween(LeanTween.alphaCanvas, nil, GetOrAddComponent(arg0_10.performImage, typeof(CanvasGroup)), 1, var0_0.IMAGE_ANI_TIME / 2):setFrom(0)
+			arg0_10:managedTween(LeanTween.delayedCall, function()
+				arg0_10:managedTween(LeanTween.alphaCanvas, nil, GetOrAddComponent(arg0_10.performImage, typeof(CanvasGroup)), 0, var0_0.IMAGE_ANI_TIME / 2)
+			end, var0_0.IMAGE_ANI_TIME / 2, nil)
+			setLocalScale(arg0_10.performText, var0_0.TEXT_MAX_SCALE)
+			arg0_10:managedTween(LeanTween.scale, nil, arg0_10.performText, Vector3.one, var0_0.TEXT_ANI_TIME)
+			arg0_10:managedTween(LeanTween.alphaCanvas, nil, GetOrAddComponent(arg0_10.performText, typeof(CanvasGroup)), 1, var0_0.TEXT_ANI_TIME):setFrom(0)
 		else
-			setActive(arg0.performBtn, false)
+			setActive(arg0_10.performBtn, false)
 		end
 	end
 end
 
-function var0.OnGetBtnClick(arg0)
-	if arg0.inGetProcess then
+function var0_0.OnGetBtnClick(arg0_12)
+	if arg0_12.inGetProcess then
 		return
 	end
 
-	arg0.inGetProcess = true
+	arg0_12.inGetProcess = true
 
-	local var0 = {}
-	local var1 = arg0.ptData:GetAward()
-	local var2 = getProxy(PlayerProxy):getRawData()
-	local var3 = pg.gameset.urpt_chapter_max.description[1]
-	local var4 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var3)
-	local var5, var6 = Task.StaticJudgeOverflow(var2.gold, var2.oil, var4, true, true, {
+	local var0_12 = {}
+	local var1_12 = arg0_12.ptData:GetAward()
+	local var2_12 = getProxy(PlayerProxy):getRawData()
+	local var3_12 = pg.gameset.urpt_chapter_max.description[1]
+	local var4_12 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var3_12)
+	local var5_12, var6_12 = Task.StaticJudgeOverflow(var2_12.gold, var2_12.oil, var4_12, true, true, {
 		{
-			var1.type,
-			var1.id,
-			var1.count
+			var1_12.type,
+			var1_12.id,
+			var1_12.count
 		}
 	})
 
-	if var5 then
-		table.insert(var0, function(arg0)
+	if var5_12 then
+		table.insert(var0_12, function(arg0_13)
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_ITEM_BOX,
 				content = i18n("award_max_warning"),
-				items = var6,
-				onYes = arg0
+				items = var6_12,
+				onYes = arg0_13
 			})
 		end)
 
-		arg0.inGetProcess = false
+		arg0_12.inGetProcess = false
 	end
 
-	table.insert(var0, function(arg0)
-		local var0 = arg0.ptData:GetLevelProgress()
-		local var1 = arg0:findTF(var0 .. "/Full", arg0.heartContainer)
+	table.insert(var0_12, function(arg0_14)
+		local var0_14 = arg0_12.ptData:GetLevelProgress()
+		local var1_14 = arg0_12:findTF(var0_14 .. "/Full", arg0_12.heartContainer)
 
-		setFillAmount(var1, 0)
-		setActive(var1, true)
-		arg0:managedTween(LeanTween.value, nil, go(var1), 0, 1, var0.FILL_ANI_TIME):setOnUpdate(System.Action_float(function(arg0)
-			setFillAmount(var1, arg0)
+		setFillAmount(var1_14, 0)
+		setActive(var1_14, true)
+		arg0_12:managedTween(LeanTween.value, nil, go(var1_14), 0, 1, var0_0.FILL_ANI_TIME):setOnUpdate(System.Action_float(function(arg0_15)
+			setFillAmount(var1_14, arg0_15)
 		end)):setOnComplete(System.Action(function()
-			arg0()
+			arg0_14()
 		end))
 	end)
-	seriesAsync(var0, function()
-		local var0, var1 = arg0.ptData:GetResProgress()
+	seriesAsync(var0_12, function()
+		local var0_17, var1_17 = arg0_12.ptData:GetResProgress()
 
-		arg0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+		arg0_12:emit(ActivityMediator.EVENT_PT_OPERATION, {
 			cmd = 1,
-			activity_id = arg0.ptData:GetId(),
-			arg1 = var1
+			activity_id = arg0_12.ptData:GetId(),
+			arg1 = var1_17
 		})
 
-		arg0.inGetProcess = false
+		arg0_12.inGetProcess = false
 	end)
 end
 
-return var0
+return var0_0

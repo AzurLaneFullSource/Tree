@@ -1,193 +1,193 @@
-﻿local var0 = class("ActivityShop", import(".BaseShop"))
+﻿local var0_0 = class("ActivityShop", import(".BaseShop"))
 
-function var0.Ctor(arg0, arg1)
-	arg0.activityId = arg1.id
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.activityId = arg1_1.id
 
-	local var0 = {}
+	local var0_1 = {}
 
-	for iter0, iter1 in ipairs(arg1.data1_list) do
-		var0[iter1] = arg1.data2_list[iter0]
+	for iter0_1, iter1_1 in ipairs(arg1_1.data1_list) do
+		var0_1[iter1_1] = arg1_1.data2_list[iter0_1]
 	end
 
-	arg0.goods = {}
+	arg0_1.goods = {}
 
-	local var1 = arg0:bindConfigTable()
+	local var1_1 = arg0_1:bindConfigTable()
 
-	for iter2, iter3 in ipairs(var1.all) do
-		if arg1.id == var1[iter3].activity then
-			local var2 = var0[iter3] or 0
+	for iter2_1, iter3_1 in ipairs(var1_1.all) do
+		if arg1_1.id == var1_1[iter3_1].activity then
+			local var2_1 = var0_1[iter3_1] or 0
 
-			arg0.goods[iter3] = Goods.Create({
-				shop_id = iter3,
-				buy_count = var2
+			arg0_1.goods[iter3_1] = Goods.Create({
+				shop_id = iter3_1,
+				buy_count = var2_1
 			}, Goods.TYPE_ACTIVITY)
 		end
 	end
 
-	arg0.type = ShopArgs.ShopActivity
-	arg0.config = pg.activity_template[arg0.activityId]
+	arg0_1.type = ShopArgs.ShopActivity
+	arg0_1.config = pg.activity_template[arg0_1.activityId]
 end
 
-function var0.IsSameKind(arg0, arg1)
-	return isa(arg1, ActivityShop) and arg1.activityId and arg1.activityId == arg0.activityId
+function var0_0.IsSameKind(arg0_2, arg1_2)
+	return isa(arg1_2, ActivityShop) and arg1_2.activityId and arg1_2.activityId == arg0_2.activityId
 end
 
-function var0.GetCommodityById(arg0, arg1)
-	return arg0:getGoodsById(arg1)
+function var0_0.GetCommodityById(arg0_3, arg1_3)
+	return arg0_3:getGoodsById(arg1_3)
 end
 
-function var0.GetCommodities(arg0)
-	return arg0:getSortGoods()
+function var0_0.GetCommodities(arg0_4)
+	return arg0_4:getSortGoods()
 end
 
-function var0.getSortGoods(arg0)
-	local var0 = {}
+function var0_0.getSortGoods(arg0_5)
+	local var0_5 = {}
 
-	for iter0, iter1 in pairs(arg0.goods) do
-		table.insert(var0, iter1)
+	for iter0_5, iter1_5 in pairs(arg0_5.goods) do
+		table.insert(var0_5, iter1_5)
 	end
 
-	table.sort(var0, CompareFuncs({
-		function(arg0)
-			local var0, var1 = arg0:CheckArgLimit()
+	table.sort(var0_5, CompareFuncs({
+		function(arg0_6)
+			local var0_6, var1_6 = arg0_6:CheckArgLimit()
 
-			return (arg0:canPurchase() or var1) and 0 or 1
+			return (arg0_6:canPurchase() or var1_6) and 0 or 1
 		end,
-		function(arg0)
-			local var0, var1, var2 = arg0:CheckTimeLimit()
+		function(arg0_7)
+			local var0_7, var1_7, var2_7 = arg0_7:CheckTimeLimit()
 
-			return var0 and var1 and 0 or 1
+			return var0_7 and var1_7 and 0 or 1
 		end,
-		function(arg0)
-			return arg0:getConfig("order")
+		function(arg0_8)
+			return arg0_8:getConfig("order")
 		end,
-		function(arg0)
-			return arg0.id
+		function(arg0_9)
+			return arg0_9.id
 		end
 	}))
 
-	return var0
+	return var0_5
 end
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_10)
 	return pg.activity_shop_template
 end
 
-function var0.getGoodsById(arg0, arg1)
-	return arg0.goods[arg1]
+function var0_0.getGoodsById(arg0_11, arg1_11)
+	return arg0_11.goods[arg1_11]
 end
 
-function var0.isEnd(arg0)
-	local var0 = getProxy(ActivityProxy):getActivityById(arg0.activityId)
+function var0_0.isEnd(arg0_12)
+	local var0_12 = getProxy(ActivityProxy):getActivityById(arg0_12.activityId)
 
-	return not var0 or var0:isEnd()
+	return not var0_12 or var0_12:isEnd()
 end
 
-function var0.getOpenTime(arg0)
-	local var0 = pg.activity_template[arg0.activityId].time
-	local var1 = var0[2][1]
-	local var2 = var0[3][1]
-	local var3 = var0[3][2]
+function var0_0.getOpenTime(arg0_13)
+	local var0_13 = pg.activity_template[arg0_13.activityId].time
+	local var1_13 = var0_13[2][1]
+	local var2_13 = var0_13[3][1]
+	local var3_13 = var0_13[3][2]
 
-	return string.format("%d.%d.%d~%d.%d.%d %d:%d:%d", var1[1], var1[2], var1[3], var2[1], var2[2], var2[3], var3[1], var3[2], var3[3])
+	return string.format("%d.%d.%d~%d.%d.%d %d:%d:%d", var1_13[1], var1_13[2], var1_13[3], var2_13[1], var2_13[2], var2_13[3], var3_13[1], var3_13[2], var3_13[3])
 end
 
-function var0.getStartTime(arg0)
-	if arg0:isEnd() then
+function var0_0.getStartTime(arg0_14)
+	if arg0_14:isEnd() then
 		return 0
 	end
 
-	return getProxy(ActivityProxy):getActivityById(arg0.activityId):getStartTime()
+	return getProxy(ActivityProxy):getActivityById(arg0_14.activityId):getStartTime()
 end
 
-function var0.getBgPath(arg0)
-	local var0 = pg.activity_template[arg0.activityId]
-	local var1 = var0.config_client[2] or {
+function var0_0.getBgPath(arg0_15)
+	local var0_15 = pg.activity_template[arg0_15.activityId]
+	local var1_15 = var0_15.config_client[2] or {
 		255,
 		255,
 		255,
 		255
 	}
-	local var2 = var0.config_client.outline or {
+	local var2_15 = var0_15.config_client.outline or {
 		0,
 		0,
 		0,
 		1
 	}
 
-	return var0.config_client[1], Color.New(var1[1], var1[2], var1[3], var1[4]), Color.New(var2[1], var2[2], var2[3], var2[4])
+	return var0_15.config_client[1], Color.New(var1_15[1], var1_15[2], var1_15[3], var1_15[4]), Color.New(var2_15[1], var2_15[2], var2_15[3], var2_15[4])
 end
 
-function var0.getToggleImage(arg0)
-	return pg.activity_template[arg0.activityId].config_client.toggle or "huodongdduihuan_butten"
+function var0_0.getToggleImage(arg0_16)
+	return pg.activity_template[arg0_16.activityId].config_client.toggle or "huodongdduihuan_butten"
 end
 
-function var0.getResId(arg0)
-	local var0
+function var0_0.getResId(arg0_17)
+	local var0_17
 
-	for iter0, iter1 in pairs(arg0.goods) do
-		var0 = iter1
+	for iter0_17, iter1_17 in pairs(arg0_17.goods) do
+		var0_17 = iter1_17
 
 		break
 	end
 
-	return (var0:getConfig("resource_type"))
+	return (var0_17:getConfig("resource_type"))
 end
 
-function var0.GetResList(arg0)
-	local var0 = {}
+function var0_0.GetResList(arg0_18)
+	local var0_18 = {}
 
-	for iter0, iter1 in pairs(arg0.goods) do
-		var0[iter1:getConfig("resource_type")] = true
+	for iter0_18, iter1_18 in pairs(arg0_18.goods) do
+		var0_18[iter1_18:getConfig("resource_type")] = true
 	end
 
-	local var1 = {}
+	local var1_18 = {}
 
-	for iter2, iter3 in pairs(var0) do
-		table.insert(var1, iter2)
+	for iter2_18, iter3_18 in pairs(var0_18) do
+		table.insert(var1_18, iter2_18)
 	end
 
-	return var1
+	return var1_18
 end
 
-function var0.GetEnterVoice(arg0)
-	local var0 = arg0.config.config_client.enter
+function var0_0.GetEnterVoice(arg0_19)
+	local var0_19 = arg0_19.config.config_client.enter
 
-	if var0 then
-		return var0[1], var0[2], var0[3]
-	end
-end
-
-function var0.GetPurchaseVoice(arg0)
-	local var0 = arg0.config.config_client.purchase
-
-	if var0 then
-		return var0[1], var0[2], var0[3]
+	if var0_19 then
+		return var0_19[1], var0_19[2], var0_19[3]
 	end
 end
 
-function var0.GetPurchaseAllVoice(arg0)
-	local var0 = arg0.config.config_client.purchase_all
+function var0_0.GetPurchaseVoice(arg0_20)
+	local var0_20 = arg0_20.config.config_client.purchase
 
-	if var0 then
-		return var0[1], var0[2], var0[3]
+	if var0_20 then
+		return var0_20[1], var0_20[2], var0_20[3]
 	end
 end
 
-function var0.GetTouchVoice(arg0)
-	local var0 = arg0.config.config_client.touch
+function var0_0.GetPurchaseAllVoice(arg0_21)
+	local var0_21 = arg0_21.config.config_client.purchase_all
 
-	if var0 then
-		return var0[1], var0[2], var0[3]
+	if var0_21 then
+		return var0_21[1], var0_21[2], var0_21[3]
 	end
 end
 
-function var0.IsEventShop(arg0)
-	return pg.activity_template[arg0.activityId].config_client.event_shop
+function var0_0.GetTouchVoice(arg0_22)
+	local var0_22 = arg0_22.config.config_client.touch
+
+	if var0_22 then
+		return var0_22[1], var0_22[2], var0_22[3]
+	end
 end
 
-function var0.GetBGM(arg0)
-	return pg.activity_template[arg0.activityId].config_client.bgm or ""
+function var0_0.IsEventShop(arg0_23)
+	return pg.activity_template[arg0_23.activityId].config_client.event_shop
 end
 
-return var0
+function var0_0.GetBGM(arg0_24)
+	return pg.activity_template[arg0_24.activityId].config_client.bgm or ""
+end
+
+return var0_0

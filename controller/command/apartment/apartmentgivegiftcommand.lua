@@ -1,50 +1,50 @@
-﻿local var0 = class("ApartmentGiveGiftCommand", pm.SimpleCommand)
+﻿local var0_0 = class("ApartmentGiveGiftCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.groupId
-	local var2 = var0.giftId
-	local var3 = var0.count
-	local var4 = getProxy(ApartmentProxy)
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.groupId
+	local var2_1 = var0_1.giftId
+	local var3_1 = var0_1.count
+	local var4_1 = getProxy(ApartmentProxy)
 
-	if var3 > var4:getGiftCount(var2) then
+	if var3_1 > var4_1:getGiftCount(var2_1) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 		return
 	end
 
-	local var5 = var4:getApartment(var1)
+	local var5_1 = var4_1:getApartment(var1_1)
 
 	pg.ConnectionMgr.GetInstance():Send(28009, {
-		ship_group = var1,
+		ship_group = var1_1,
 		gifts = {
 			{
-				gift_id = var2,
-				number = var3
+				gift_id = var2_1,
+				number = var3_1
 			}
 		}
-	}, 28010, function(arg0)
-		if arg0.result == 0 then
-			var4:addGiftGiveCount(var2, var3)
-			var4:changeGiftCount(var2, -var3)
+	}, 28010, function(arg0_2)
+		if arg0_2.result == 0 then
+			var4_1:addGiftGiveCount(var2_1, var3_1)
+			var4_1:changeGiftCount(var2_1, -var3_1)
 
-			local var0 = pg.dorm3d_gift[var2].favor_trigger_id
+			local var0_2 = pg.dorm3d_gift[var2_1].favor_trigger_id
 
-			var5 = var4:getApartment(var1)
+			var5_1 = var4_1:getApartment(var1_1)
 
-			local var1 = var5:addFavor(var0)
+			local var1_2 = var5_1:addFavor(var0_2)
 
-			var4:updateApartment(var5)
-			arg0:sendNotification(GAME.APARTMENT_TRIGGER_FAVOR_DONE, {
-				triggerId = var0,
-				delta = var1,
-				apartment = var5
+			var4_1:updateApartment(var5_1)
+			arg0_1:sendNotification(GAME.APARTMENT_TRIGGER_FAVOR_DONE, {
+				triggerId = var0_2,
+				delta = var1_2,
+				apartment = var5_1
 			})
-			arg0:sendNotification(GAME.APARTMENT_GIVE_GIFT_DONE, var2)
+			arg0_1:sendNotification(GAME.APARTMENT_GIVE_GIFT_DONE, var2_1)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0.result] .. arg0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)
 		end
 	end)
 end
 
-return var0
+return var0_0

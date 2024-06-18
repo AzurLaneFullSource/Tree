@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_33 = {}
+var0_0.word_template_33 = {}
 
-local var1 = var0.word_template_33
+local var1_0 = var0_0.word_template_33
 
 function temp()
-	var1.副 = {
+	var1_0.副 = {
 		業 = {
 			this = true
 		},
@@ -41,7 +41,7 @@ end
 temp()
 
 function temp()
-	var1.分 = {
+	var1_0.分 = {
 		際 = {
 			this = true
 		},
@@ -88,7 +88,7 @@ end
 temp()
 
 function temp()
-	var1.糞 = {
+	var1_0.糞 = {
 		尿 = {
 			this = true
 		},
@@ -101,7 +101,7 @@ end
 temp()
 
 function temp()
-	var1.文 = {
+	var1_0.文 = {
 		通 = {
 			this = true
 		},
@@ -221,7 +221,7 @@ end
 temp()
 
 function temp()
-	var1.便 = {
+	var1_0.便 = {
 		秘 = {
 			this = true
 		},
@@ -238,7 +238,7 @@ end
 temp()
 
 function temp()
-	var1.包 = {
+	var1_0.包 = {
 		茎 = {
 			this = true
 		},
@@ -713,7 +713,7 @@ end
 temp()
 
 function temp()
-	var1.宝 = {
+	var1_0.宝 = {
 		く = {
 			じ = {
 				this = true

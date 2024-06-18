@@ -1,27 +1,27 @@
-﻿local var0 = class("GameRoomCoinMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("GameRoomCoinMediator", import("..base.ContextMediator"))
 
-var0.CHANGE_VISIBLE = "GameRoomCoinMediator:CHANGE_VISIBLE"
-var0.CHANGE_COIN_NUM = "GameRoomCoinMediator:CHANGE COIN COUNT"
+var0_0.CHANGE_VISIBLE = "GameRoomCoinMediator:CHANGE_VISIBLE"
+var0_0.CHANGE_COIN_NUM = "GameRoomCoinMediator:CHANGE COIN COUNT"
 
-function var0.register(arg0)
-	arg0:bind(GameRoomCoinMediator.CHANGE_COIN_NUM, function(arg0, arg1)
-		arg0:sendNotification(GAME.GAME_COIN_COUNT_CHANGE, arg1)
+function var0_0.register(arg0_1)
+	arg0_1:bind(GameRoomCoinMediator.CHANGE_COIN_NUM, function(arg0_2, arg1_2)
+		arg0_1:sendNotification(GAME.GAME_COIN_COUNT_CHANGE, arg1_2)
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_3)
 	return {
 		GameRoomCoinMediator.CHANGE_VISIBLE
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_4, arg1_4)
+	local var0_4 = arg1_4:getName()
+	local var1_4 = arg1_4:getBody()
 
-	if var0 == GameRoomCoinMediator.CHANGE_VISIBLE then
-		arg0.viewComponent:changeVisible(var1)
+	if var0_4 == GameRoomCoinMediator.CHANGE_VISIBLE then
+		arg0_4.viewComponent:changeVisible(var1_4)
 	end
 end
 
-return var0
+return var0_0

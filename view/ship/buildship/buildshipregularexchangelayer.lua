@@ -1,121 +1,121 @@
-﻿local var0 = class("BuildShipRegularExchangeLayer", import("view.base.BaseUI"))
+﻿local var0_0 = class("BuildShipRegularExchangeLayer", import("view.base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "BuildShipRegularExchangeUI"
 end
 
-function var0.preload(arg0, arg1)
-	arg0.cfg = pg.ship_data_create_exchange[REGULAR_BUILD_POOL_EXCHANGE_ID]
-	arg0.ids = arg0.cfg.exchange_ship_id
-	arg0.iconSprites = {}
+function var0_0.preload(arg0_2, arg1_2)
+	arg0_2.cfg = pg.ship_data_create_exchange[REGULAR_BUILD_POOL_EXCHANGE_ID]
+	arg0_2.ids = arg0_2.cfg.exchange_ship_id
+	arg0_2.iconSprites = {}
 
-	local var0 = {}
+	local var0_2 = {}
 
-	for iter0, iter1 in ipairs(arg0.ids) do
-		table.insert(var0, function(arg0)
-			GetSpriteFromAtlasAsync("RegularExchangeIcon", tostring(iter1), function(arg0)
-				arg0.iconSprites[iter1] = arg0
+	for iter0_2, iter1_2 in ipairs(arg0_2.ids) do
+		table.insert(var0_2, function(arg0_3)
+			GetSpriteFromAtlasAsync("RegularExchangeIcon", tostring(iter1_2), function(arg0_4)
+				arg0_2.iconSprites[iter1_2] = arg0_4
 
-				arg0()
+				arg0_3()
 			end)
 		end)
 	end
 
-	seriesAsync(var0, arg1)
+	seriesAsync(var0_2, arg1_2)
 end
 
-function var0.setCount(arg0, arg1)
-	arg0.count = arg1
+function var0_0.setCount(arg0_5, arg1_5)
+	arg0_5.count = arg1_5
 
-	setText(arg0.textCount, arg0.count .. "/" .. arg0.cfg.exchange_request)
-	setGray(arg0.btnConfirm, arg0.count < arg0.cfg.exchange_request)
+	setText(arg0_5.textCount, arg0_5.count .. "/" .. arg0_5.cfg.exchange_request)
+	setGray(arg0_5.btnConfirm, arg0_5.count < arg0_5.cfg.exchange_request)
 end
 
-function var0.init(arg0)
-	arg0.btnBack = arg0._tf:Find("top/bg/btn_back")
+function var0_0.init(arg0_6)
+	arg0_6.btnBack = arg0_6._tf:Find("top/bg/btn_back")
 
-	onButton(arg0, arg0.btnBack, function()
-		arg0:closeView()
+	onButton(arg0_6, arg0_6.btnBack, function()
+		arg0_6:closeView()
 	end, SFX_CANCEL)
 
-	local var0 = arg0._tf:Find("select/container")
+	local var0_6 = arg0_6._tf:Find("select/container")
 
-	arg0.iconList = UIItemList.New(var0, var0:Find("tpl"))
+	arg0_6.iconList = UIItemList.New(var0_6, var0_6:Find("tpl"))
 
-	arg0.iconList:make(function(arg0, arg1, arg2)
-		arg1 = arg1 + 1
+	arg0_6.iconList:make(function(arg0_8, arg1_8, arg2_8)
+		arg1_8 = arg1_8 + 1
 
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = Ship.New({
-				configId = arg0.ids[arg1]
+		if arg0_8 == UIItemList.EventUpdate then
+			local var0_8 = Ship.New({
+				configId = arg0_6.ids[arg1_8]
 			})
 
-			setImageSprite(arg2:Find("Image"), arg0.iconSprites[var0.configId], true)
-			setActive(arg2:Find("noget"), not getProxy(CollectionProxy):getShipGroup(var0:getGroupId()))
-			onToggle(arg0, arg2, function(arg0)
-				if arg0 then
-					arg0:setSelectedShip(var0)
+			setImageSprite(arg2_8:Find("Image"), arg0_6.iconSprites[var0_8.configId], true)
+			setActive(arg2_8:Find("noget"), not getProxy(CollectionProxy):getShipGroup(var0_8:getGroupId()))
+			onToggle(arg0_6, arg2_8, function(arg0_9)
+				if arg0_9 then
+					arg0_6:setSelectedShip(var0_8)
 				end
 			end, SFX_PANEL)
-			triggerToggle(arg2, arg1 == 1)
+			triggerToggle(arg2_8, arg1_8 == 1)
 		end
 	end)
-	onButton(arg0, arg0._tf:Find("select/operation/help"), function()
+	onButton(arg0_6, arg0_6._tf:Find("select/operation/help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("Normalbuild_URexchange_help")
 		})
 	end, SFX_PANEL)
-	setText(arg0._tf:Find("select/operation/count/Text"), i18n("Normalbuild_URexchange_text2") .. ":")
+	setText(arg0_6._tf:Find("select/operation/count/Text"), i18n("Normalbuild_URexchange_text2") .. ":")
 
-	arg0.textCount = arg0._tf:Find("select/operation/count/num")
-	arg0.btnConfirm = arg0._tf:Find("select/operation/confirm")
+	arg0_6.textCount = arg0_6._tf:Find("select/operation/count/num")
+	arg0_6.btnConfirm = arg0_6._tf:Find("select/operation/confirm")
 
-	onButton(arg0, arg0.btnConfirm, function()
-		if arg0.count < arg0.cfg.exchange_request then
+	onButton(arg0_6, arg0_6.btnConfirm, function()
+		if arg0_6.count < arg0_6.cfg.exchange_request then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("Normalbuild_URexchange_warning1"))
 		else
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("Normalbuild_URexchange_confirm", arg0.shipVO:getName()),
+				content = i18n("Normalbuild_URexchange_confirm", arg0_6.shipVO:getName()),
 				onYes = function()
-					arg0:emit(BuildShipRegularExchangeMediator.EXCHAGNE_SHIP, arg0.shipVO.configId)
-					arg0:closeView()
+					arg0_6:emit(BuildShipRegularExchangeMediator.EXCHAGNE_SHIP, arg0_6.shipVO.configId)
+					arg0_6:closeView()
 				end
 			})
 		end
 	end, SFX_CONFIRM)
 
-	arg0.rtName = arg0._tf:Find("select/name_bg")
-	arg0.rtPaint = arg0._tf:Find("main/paint")
+	arg0_6.rtName = arg0_6._tf:Find("select/name_bg")
+	arg0_6.rtPaint = arg0_6._tf:Find("main/paint")
 end
 
-function var0.setSelectedShip(arg0, arg1)
-	if arg0.shipVO then
-		retPaintingPrefab(arg0.rtPaint, arg0.shipVO:getPainting())
+function var0_0.setSelectedShip(arg0_13, arg1_13)
+	if arg0_13.shipVO then
+		retPaintingPrefab(arg0_13.rtPaint, arg0_13.shipVO:getPainting())
 	end
 
-	arg0.shipVO = arg1
+	arg0_13.shipVO = arg1_13
 
-	local var0 = ShipType.Type2BattlePrint(arg1:getShipType())
+	local var0_13 = ShipType.Type2BattlePrint(arg1_13:getShipType())
 
-	eachChild(arg0.rtName:Find("shiptype"), function(arg0)
-		setActive(arg0, arg0.name == var0)
+	eachChild(arg0_13.rtName:Find("shiptype"), function(arg0_14)
+		setActive(arg0_14, arg0_14.name == var0_13)
 	end)
-	setText(arg0.rtName:Find("name"), arg1:getName())
-	setText(arg0.rtName:Find("english"), string.upper(arg1:getConfig("english_name")))
-	setPaintingPrefabAsync(arg0.rtPaint, arg1:getPainting(), "huode")
+	setText(arg0_13.rtName:Find("name"), arg1_13:getName())
+	setText(arg0_13.rtName:Find("english"), string.upper(arg1_13:getConfig("english_name")))
+	setPaintingPrefabAsync(arg0_13.rtPaint, arg1_13:getPainting(), "huode")
 end
 
-function var0.didEnter(arg0)
-	arg0.iconList:align(#arg0.ids)
+function var0_0.didEnter(arg0_15)
+	arg0_15.iconList:align(#arg0_15.ids)
 end
 
-function var0.willExit(arg0)
-	arg0.iconSprites = nil
+function var0_0.willExit(arg0_16)
+	arg0_16.iconSprites = nil
 
-	if arg0.shipVO then
-		retPaintingPrefab(arg0.rtPaint, arg0.shipVO:getPainting())
+	if arg0_16.shipVO then
+		retPaintingPrefab(arg0_16.rtPaint, arg0_16.shipVO:getPainting())
 	end
 end
 
-return var0
+return var0_0

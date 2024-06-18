@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_232 = {}
+var0_0.word_template_232 = {}
 
-local var1 = var0.word_template_232
+local var1_0 = var0_0.word_template_232
 
 function temp()
-	var1.签 = {
+	var1_0.签 = {
 		字 = {
 			是 = {
 				威 = {
@@ -25,7 +25,7 @@ end
 temp()
 
 function temp()
-	var1.愆 = {
+	var1_0.愆 = {
 		this = {
 			this = true
 		}
@@ -35,7 +35,7 @@ end
 temp()
 
 function temp()
-	var1.鉛 = {
+	var1_0.鉛 = {
 		彈 = {
 			氣 = {
 				槍 = {
@@ -58,7 +58,7 @@ end
 temp()
 
 function temp()
-	var1.僉 = {
+	var1_0.僉 = {
 		this = {
 			this = true
 		}
@@ -68,7 +68,7 @@ end
 temp()
 
 function temp()
-	var1.搴 = {
+	var1_0.搴 = {
 		this = {
 			this = true
 		}
@@ -78,7 +78,7 @@ end
 temp()
 
 function temp()
-	var1.钤 = {
+	var1_0.钤 = {
 		this = {
 			this = true
 		}
@@ -88,7 +88,7 @@ end
 temp()
 
 function temp()
-	var1.前 = {
+	var1_0.前 = {
 		例 = {
 			腺 = {
 				保 = {

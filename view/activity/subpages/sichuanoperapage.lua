@@ -1,22 +1,22 @@
-﻿local var0 = class("SiChuanOperaPage", import(".TemplatePage.LoginTemplatePage"))
+﻿local var0_0 = class("SiChuanOperaPage", import(".TemplatePage.LoginTemplatePage"))
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
+function var0_0.OnInit(arg0_1)
+	var0_0.super.OnInit(arg0_1)
 
-	arg0.dayText = arg0:findTF("AD/DayText")
-	arg0.url = arg0:findTF("AD/url")
+	arg0_1.dayText = arg0_1:findTF("AD/DayText")
+	arg0_1.url = arg0_1:findTF("AD/url")
 end
 
-function var0.OnFirstFlush(arg0)
-	var0.super.OnFirstFlush(arg0)
-	onButton(arg0, arg0.url, function()
-		Application.OpenURL(arg0.activity:getConfig("config_client"))
+function var0_0.OnFirstFlush(arg0_2)
+	var0_0.super.OnFirstFlush(arg0_2)
+	onButton(arg0_2, arg0_2.url, function()
+		Application.OpenURL(arg0_2.activity:getConfig("config_client"))
 	end, SFX_PANEL)
 end
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
-	setText(arg0.dayText, string.format("%02d", arg0.nday))
+function var0_0.OnUpdateFlush(arg0_4)
+	var0_0.super.OnUpdateFlush(arg0_4)
+	setText(arg0_4.dayText, string.format("%02d", arg0_4.nday))
 end
 
-return var0
+return var0_0

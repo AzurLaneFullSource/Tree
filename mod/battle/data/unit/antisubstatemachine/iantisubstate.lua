@@ -1,56 +1,56 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.IAntiSubState = class("IAntiSubState")
-var0.Battle.IAntiSubState.__name = "IAntiSubState"
+var0_0.Battle.IAntiSubState = class("IAntiSubState")
+var0_0.Battle.IAntiSubState.__name = "IAntiSubState"
 
-local var1 = var0.Battle.IAntiSubState
+local var1_0 = var0_0.Battle.IAntiSubState
 
-function var1.Ctor(arg0)
+function var1_0.Ctor(arg0_1)
 	return
 end
 
-function var1.OnVigilantEngage(arg0)
+function var1_0.OnVigilantEngage(arg0_2)
 	return
 end
 
-function var1.OnMineExplode(arg0)
+function var1_0.OnMineExplode(arg0_3)
 	return
 end
 
-function var1.OnSubmarinFloat(arg0)
+function var1_0.OnSubmarinFloat(arg0_4)
 	return
 end
 
-function var1.OnSonarDetect(arg0)
+function var1_0.OnSonarDetect(arg0_5)
 	return
 end
 
-function var1.ToPreLevel(arg0)
+function var1_0.ToPreLevel(arg0_6)
 	return
 end
 
-function var1.OnHateChain(arg0)
+function var1_0.OnHateChain(arg0_7)
 	return
 end
 
-function var1.CanDecay(arg0)
+function var1_0.CanDecay(arg0_8)
 	return nil
 end
 
-function var1.GetWeaponUseable(arg0)
+function var1_0.GetWeaponUseable(arg0_9)
 	return nil
 end
 
-function var1.GetWarnMark(arg0)
+function var1_0.GetWarnMark(arg0_10)
 	return nil
 end
 
-function var1.GetMeterSpeed(arg0)
+function var1_0.GetMeterSpeed(arg0_11)
 	return nil
 end
 
-function var1.DecayDuration(arg0)
+function var1_0.DecayDuration(arg0_12)
 	return nil
 end

@@ -10,54 +10,54 @@
 				dir = -1,
 				posX = -92,
 				uiFunc = function()
-					local var0 = {}
+					local var0_1 = {}
 
 					if not pg.NewStoryMgr.GetInstance():IsPlayed(VoteStoryUtil.GetStoryNameByType(VoteStoryUtil.ENTER_MAIN_STAGE)) then
-						table.insert(var0, {
+						table.insert(var0_1, {
 							path = "/UICamera/Canvas/UIMain/VoteEntranceUI(Clone)/bg/main/title"
 						})
-						table.insert(var0, {
+						table.insert(var0_1, {
 							path = "/UICamera/Canvas/UIMain/VoteEntranceUI(Clone)/bg/main/tip"
 						})
 					end
 
 					if not pg.NewStoryMgr.GetInstance():IsPlayed(VoteStoryUtil.GetStoryNameByType(VoteStoryUtil.ENTER_SUB_STAGE)) then
-						table.insert(var0, {
+						table.insert(var0_1, {
 							path = "/UICamera/Canvas/UIMain/VoteEntranceUI(Clone)/bg/sub/title"
 						})
-						table.insert(var0, {
+						table.insert(var0_1, {
 							path = "/UICamera/Canvas/UIMain/VoteEntranceUI(Clone)/bg/sub/tip"
 						})
 					end
 
 					if not pg.NewStoryMgr.GetInstance():IsPlayed(VoteStoryUtil.GetStoryNameByType(VoteStoryUtil.ENTER_EXCHANGE)) then
-						table.insert(var0, {
+						table.insert(var0_1, {
 							path = "/UICamera/Canvas/UIMain/VoteEntranceUI(Clone)/bg/exchange/title"
 						})
-						table.insert(var0, {
+						table.insert(var0_1, {
 							path = "/UICamera/Canvas/UIMain/VoteEntranceUI(Clone)/bg/exchange/tip"
 						})
 					end
 
 					if not pg.NewStoryMgr.GetInstance():IsPlayed(VoteStoryUtil.GetStoryNameByType(VoteStoryUtil.ENTER_SCHEDULE)) then
-						table.insert(var0, {
+						table.insert(var0_1, {
 							path = "/UICamera/Canvas/UIMain/VoteEntranceUI(Clone)/bg/billboard/title"
 						})
-						table.insert(var0, {
+						table.insert(var0_1, {
 							path = "/UICamera/Canvas/UIMain/VoteEntranceUI(Clone)/bg/billboard/tip"
 						})
 					end
 
 					if not pg.NewStoryMgr.GetInstance():IsPlayed(VoteStoryUtil.GetStoryNameByType(VoteStoryUtil.ENTER_HALL)) then
-						table.insert(var0, {
+						table.insert(var0_1, {
 							path = "/UICamera/Canvas/UIMain/VoteEntranceUI(Clone)/bg/honor/title"
 						})
-						table.insert(var0, {
+						table.insert(var0_1, {
 							path = "/UICamera/Canvas/UIMain/VoteEntranceUI(Clone)/bg/honor/tip"
 						})
 					end
 
-					return var0
+					return var0_1
 				end
 			}
 		}

@@ -1,49 +1,49 @@
-﻿local var0 = class("NewHpShareActBossResultGradePage", import("..activityBoss.NewActivityBossResultGradePage"))
+﻿local var0_0 = class("NewHpShareActBossResultGradePage", import("..activityBoss.NewActivityBossResultGradePage"))
 
-function var0.LoadGrade(arg0, arg1)
-	local var0 = "battlescore/grade_label_clear"
+function var0_0.LoadGrade(arg0_1, arg1_1)
+	local var0_1 = "battlescore/grade_label_clear"
 
-	LoadImageSpriteAsync(var0, arg0.gradeTxt, true)
+	LoadImageSpriteAsync(var0_1, arg0_1.gradeTxt, true)
 
-	if arg1 then
-		arg1()
+	if arg1_1 then
+		arg1_1()
 	end
 end
 
-function var0.GetContributionPoint(arg0)
-	local var0 = arg0.contextData
-	local var1 = pg.activity_template[var0.actId]
-	local var2 = pg.activity_event_worldboss[var1.config_id].damage_resource
-	local var3 = 0
+function var0_0.GetContributionPoint(arg0_2)
+	local var0_2 = arg0_2.contextData
+	local var1_2 = pg.activity_template[var0_2.actId]
+	local var2_2 = pg.activity_event_worldboss[var1_2.config_id].damage_resource
+	local var3_2 = 0
 
-	for iter0, iter1 in ipairs(var0.drops) do
-		if iter1.configId == var2 then
-			var3 = iter1.count
+	for iter0_2, iter1_2 in ipairs(var0_2.drops) do
+		if iter1_2.configId == var2_2 then
+			var3_2 = iter1_2.count
 		end
 	end
 
-	return var3
+	return var3_2
 end
 
-function var0.GetGetObjectives(arg0)
-	local var0 = arg0.contextData
-	local var1 = {}
-	local var2 = arg0:GetContributionPoint()
-	local var3 = i18n("battle_result_total_damage")
+function var0_0.GetGetObjectives(arg0_3)
+	local var0_3 = arg0_3.contextData
+	local var1_3 = {}
+	local var2_3 = arg0_3:GetContributionPoint()
+	local var3_3 = i18n("battle_result_total_damage")
 
-	table.insert(var1, {
-		text = setColorStr(var3, "#FFFFFFFF"),
-		value = setColorStr(var0.statistics.specificDamage, COLOR_BLUE)
+	table.insert(var1_3, {
+		text = setColorStr(var3_3, "#FFFFFFFF"),
+		value = setColorStr(var0_3.statistics.specificDamage, COLOR_BLUE)
 	})
 
-	local var4 = i18n("battle_result_contribution")
+	local var4_3 = i18n("battle_result_contribution")
 
-	table.insert(var1, {
-		text = setColorStr(var4, "#FFFFFFFF"),
-		value = setColorStr(var2, COLOR_YELLOW)
+	table.insert(var1_3, {
+		text = setColorStr(var4_3, "#FFFFFFFF"),
+		value = setColorStr(var2_3, COLOR_YELLOW)
 	})
 
-	return var1
+	return var1_3
 end
 
-return var0
+return var0_0

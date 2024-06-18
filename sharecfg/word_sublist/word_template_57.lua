@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_57 = {}
+var0_0.word_template_57 = {}
 
-local var1 = var0.word_template_57
+local var1_0 = var0_0.word_template_57
 
 function temp()
-	var1.仓 = {
+	var1_0.仓 = {
 		本 = {
 			麻 = {
 				衣 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.苍 = {
+	var1_0.苍 = {
 		井 = {
 			优 = {
 				this = true
@@ -45,7 +45,7 @@ end
 temp()
 
 function temp()
-	var1.沧 = {
+	var1_0.沧 = {
 		澜 = {
 			曲 = {
 				this = true
@@ -78,7 +78,7 @@ end
 temp()
 
 function temp()
-	var1.藏 = {
+	var1_0.藏 = {
 		春 = {
 			阁 = {
 				this = true
@@ -202,7 +202,7 @@ end
 temp()
 
 function temp()
-	var1.曹 = {
+	var1_0.曹 = {
 		長 = {
 			青 = {
 				this = true
@@ -242,7 +242,7 @@ end
 temp()
 
 function temp()
-	var1.草 = {
+	var1_0.草 = {
 		this = {
 			this = true
 		},
@@ -318,7 +318,7 @@ end
 temp()
 
 function temp()
-	var1.肏 = {
+	var1_0.肏 = {
 		this = {
 			this = true
 		},

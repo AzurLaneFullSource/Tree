@@ -1,388 +1,388 @@
-﻿local var0 = class("Fushun3BgController")
+﻿local var0_0 = class("Fushun3BgController")
 
-function var0.Ctor(arg0, arg1, arg2, arg3, arg4, arg5)
-	arg0._bgTpl = arg1
-	arg0._fireTpl = arg2
-	arg0._backSceneTf = arg4
-	arg0._petalTpl = arg3
-	arg0._event = arg5
-	arg0._backBgBottomTf = findTF(arg0._backSceneTf, "bgBottom")
-	arg0._backBgMidTf = findTF(arg0._backSceneTf, "bgMid")
-	arg0._backBgTopTf = findTF(arg0._backSceneTf, "bgTop")
-	arg0._backBgPetalTf = findTF(arg0._backSceneTf, "bgPetal")
-	arg0.bgItems = {}
-	arg0.bgsPool = {}
-	arg0.bgLoops = {}
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1, arg5_1)
+	arg0_1._bgTpl = arg1_1
+	arg0_1._fireTpl = arg2_1
+	arg0_1._backSceneTf = arg4_1
+	arg0_1._petalTpl = arg3_1
+	arg0_1._event = arg5_1
+	arg0_1._backBgBottomTf = findTF(arg0_1._backSceneTf, "bgBottom")
+	arg0_1._backBgMidTf = findTF(arg0_1._backSceneTf, "bgMid")
+	arg0_1._backBgTopTf = findTF(arg0_1._backSceneTf, "bgTop")
+	arg0_1._backBgPetalTf = findTF(arg0_1._backSceneTf, "bgPetal")
+	arg0_1.bgItems = {}
+	arg0_1.bgsPool = {}
+	arg0_1.bgLoops = {}
 
-	for iter0 = 1, #Fushun3GameConst.loop_bg do
-		local var0 = arg0:getBgData(Fushun3GameConst.loop_bg[iter0])
+	for iter0_1 = 1, #Fushun3GameConst.loop_bg do
+		local var0_1 = arg0_1:getBgData(Fushun3GameConst.loop_bg[iter0_1])
 
-		if var0 then
-			table.insert(arg0.bgLoops, {
-				data = var0,
+		if var0_1 then
+			table.insert(arg0_1.bgLoops, {
+				data = var0_1,
 				pos = Vector2(0, 0)
 			})
 		end
 	end
 
-	arg0._bgAnimTf = findTF(arg0._backSceneTf, "bg/anim")
-	arg0.bgAnimator = GetComponent(findTF(arg0._backSceneTf, "bg/anim"), typeof(Animator))
+	arg0_1._bgAnimTf = findTF(arg0_1._backSceneTf, "bg/anim")
+	arg0_1.bgAnimator = GetComponent(findTF(arg0_1._backSceneTf, "bg/anim"), typeof(Animator))
 end
 
-function var0.start(arg0)
-	arg0:clearBg()
+function var0_0.start(arg0_2)
+	arg0_2:clearBg()
 
-	arg0.fireTime = math.random() * (Fushun3GameConst.fire_time[2] - Fushun3GameConst.fire_time[1]) + Fushun3GameConst.fire_time[1]
+	arg0_2.fireTime = math.random() * (Fushun3GameConst.fire_time[2] - Fushun3GameConst.fire_time[1]) + Fushun3GameConst.fire_time[1]
 
-	for iter0 = 1, #arg0.bgLoops do
-		arg0.bgLoops[iter0].pos = Vector2(0, 0)
+	for iter0_2 = 1, #arg0_2.bgLoops do
+		arg0_2.bgLoops[iter0_2].pos = Vector2(0, 0)
 	end
 
-	arg0.midBgPosX = 0
+	arg0_2.midBgPosX = 0
 
-	arg0:createMidBg()
+	arg0_2:createMidBg()
 
-	arg0.topBgIds = Clone(Fushun3GameConst.top_bg)
-	arg0.topBgIdx = math.random(1, #arg0.topBgIds)
-	arg0.topBgPosX = 0
-	arg0.petalCount = 0
+	arg0_2.topBgIds = Clone(Fushun3GameConst.top_bg)
+	arg0_2.topBgIdx = math.random(1, #arg0_2.topBgIds)
+	arg0_2.topBgPosX = 0
+	arg0_2.petalCount = 0
 
-	for iter1 = arg0.topBgIdx, #arg0.topBgIds do
-		arg0:createTopBg(arg0.topBgIds[iter1])
+	for iter1_2 = arg0_2.topBgIdx, #arg0_2.topBgIds do
+		arg0_2:createTopBg(arg0_2.topBgIds[iter1_2])
 	end
 
-	arg0:changeDayNight(false)
+	arg0_2:changeDayNight(false)
 end
 
-function var0.step(arg0)
-	if arg0.fireTime > 0 then
-		arg0.fireTime = arg0.fireTime - Time.deltaTime
+function var0_0.step(arg0_3)
+	if arg0_3.fireTime > 0 then
+		arg0_3.fireTime = arg0_3.fireTime - Time.deltaTime
 
-		if arg0.fireTime <= 0 then
+		if arg0_3.fireTime <= 0 then
 			if not Fushun3GameVo.GetTimeFlag() then
-				arg0:createFire()
+				arg0_3:createFire()
 			end
 
-			arg0.fireTime = math.random() * (Fushun3GameConst.fire_time[2] - Fushun3GameConst.fire_time[1]) + Fushun3GameConst.fire_time[1]
+			arg0_3.fireTime = math.random() * (Fushun3GameConst.fire_time[2] - Fushun3GameConst.fire_time[1]) + Fushun3GameConst.fire_time[1]
 		end
 	end
 
-	if Fushun3GameVo.GetTimeFlag() and arg0.petalCount < Fushun3GameConst.petal_count_max then
-		arg0:createPetal()
+	if Fushun3GameVo.GetTimeFlag() and arg0_3.petalCount < Fushun3GameConst.petal_count_max then
+		arg0_3:createPetal()
 	end
 
-	for iter0 = 1, #arg0.bgLoops do
-		local var0 = arg0._backBgBottomTf.anchoredPosition
-		local var1 = arg0.bgLoops[iter0].data
-		local var2 = arg0.bgLoops[iter0].pos
-		local var3 = var1.bound.x * Fushun3GameConst.game_scale
+	for iter0_3 = 1, #arg0_3.bgLoops do
+		local var0_3 = arg0_3._backBgBottomTf.anchoredPosition
+		local var1_3 = arg0_3.bgLoops[iter0_3].data
+		local var2_3 = arg0_3.bgLoops[iter0_3].pos
+		local var3_3 = var1_3.bound.x * Fushun3GameConst.game_scale
 
-		if math.abs(var0.x) + var3 * Fushun3GameConst.loop_nums >= var2.x then
-			local var4 = arg0:getBgFromPool(var1.id)
+		if math.abs(var0_3.x) + var3_3 * Fushun3GameConst.loop_nums >= var2_3.x then
+			local var4_3 = arg0_3:getBgFromPool(var1_3.id)
 
-			var4.tf.anchoredPosition = Vector2(var2.x, var1.pos.y)
+			var4_3.tf.anchoredPosition = Vector2(var2_3.x, var1_3.pos.y)
 
-			setActive(var4.tf, true)
-			table.insert(arg0.bgItems, var4)
+			setActive(var4_3.tf, true)
+			table.insert(arg0_3.bgItems, var4_3)
 
-			var2.x = var2.x + var3
-			arg0.bgLoops[iter0].pos = var2
+			var2_3.x = var2_3.x + var3_3
+			arg0_3.bgLoops[iter0_3].pos = var2_3
 		end
 	end
 
-	if arg0.topBgPosX < math.abs(arg0._backBgTopTf.anchoredPosition.x) + Fushun3GameConst.top_bg_inst_posX then
-		local var5 = arg0.topBgIds[arg0.topBgIdx]
+	if arg0_3.topBgPosX < math.abs(arg0_3._backBgTopTf.anchoredPosition.x) + Fushun3GameConst.top_bg_inst_posX then
+		local var5_3 = arg0_3.topBgIds[arg0_3.topBgIdx]
 
-		arg0:createTopBg(var5)
+		arg0_3:createTopBg(var5_3)
 
-		if arg0.topBgIdx >= #arg0.topBgIds then
-			arg0.topBgIdx = 1
+		if arg0_3.topBgIdx >= #arg0_3.topBgIds then
+			arg0_3.topBgIdx = 1
 		else
-			arg0.topBgIdx = arg0.topBgIdx + 1
+			arg0_3.topBgIdx = arg0_3.topBgIdx + 1
 		end
 	end
 
-	if arg0.midBgPosX < math.abs(arg0._backBgMidTf.anchoredPosition.x) + Fushun3GameConst.mid_bg_inst_posX then
-		arg0:createMidBg()
+	if arg0_3.midBgPosX < math.abs(arg0_3._backBgMidTf.anchoredPosition.x) + Fushun3GameConst.mid_bg_inst_posX then
+		arg0_3:createMidBg()
 	end
 
-	if arg0.dayTimeCount and arg0.dayTimeCount > 0 then
-		arg0.dayTimeCount = arg0.dayTimeCount - Time.deltaTime
+	if arg0_3.dayTimeCount and arg0_3.dayTimeCount > 0 then
+		arg0_3.dayTimeCount = arg0_3.dayTimeCount - Time.deltaTime
 
-		if arg0.dayTimeCount <= 0 then
-			Fushun3GameVo.ChangeTimeType(arg0.timeTypeData.next)
-			print("切换白天黑夜下一个阶段 = " .. tostring(arg0.timeTypeData.next))
-			arg0:changeDayNight(true)
-			arg0._event:emit(Fushun3GameEvent.day_night_change)
+		if arg0_3.dayTimeCount <= 0 then
+			Fushun3GameVo.ChangeTimeType(arg0_3.timeTypeData.next)
+			print("切换白天黑夜下一个阶段 = " .. tostring(arg0_3.timeTypeData.next))
+			arg0_3:changeDayNight(true)
+			arg0_3._event:emit(Fushun3GameEvent.day_night_change)
 		end
 	end
 
-	for iter1 = 1, #arg0.bgItems do
-		local var6 = arg0.bgItems[iter1]
+	for iter1_3 = 1, #arg0_3.bgItems do
+		local var6_3 = arg0_3.bgItems[iter1_3]
 
-		if var6.data.type == Fushun3GameConst.BG_TYPE_PETAL then
-			local var7 = var6.tf.anchoredPosition
+		if var6_3.data.type == Fushun3GameConst.BG_TYPE_PETAL then
+			local var7_3 = var6_3.tf.anchoredPosition
 
-			var7.x = var7.x + var6.speed.x * Time.deltaTime
-			var7.y = var7.y + var6.speed.y * Time.deltaTime
-			var6.tf.anchoredPosition = var7
+			var7_3.x = var7_3.x + var6_3.speed.x * Time.deltaTime
+			var7_3.y = var7_3.y + var6_3.speed.y * Time.deltaTime
+			var6_3.tf.anchoredPosition = var7_3
 
-			if var7.y < Fushun3GameConst.petal_remove_y then
-				var6.removeTime = 0
+			if var7_3.y < Fushun3GameConst.petal_remove_y then
+				var6_3.removeTime = 0
 			end
 		end
 	end
 
-	arg0:removeBg()
+	arg0_3:removeBg()
 end
 
-function var0.changeDayNight(arg0, arg1)
-	arg0.timeTypeData = Fushun3GameVo.GetTimeTypeData()
-	arg0.dayTimeCount = arg0.timeTypeData.time
+function var0_0.changeDayNight(arg0_4, arg1_4)
+	arg0_4.timeTypeData = Fushun3GameVo.GetTimeTypeData()
+	arg0_4.dayTimeCount = arg0_4.timeTypeData.time
 
-	arg0:changeBg(arg1)
-	arg0:changeBgItems(arg1)
+	arg0_4:changeBg(arg1_4)
+	arg0_4:changeBgItems(arg1_4)
 end
 
-function var0.changeBgItems(arg0, arg1)
-	if arg1 and arg0.currentItemTimeFlag == Fushun3GameVo.GetTimeFlag() then
+function var0_0.changeBgItems(arg0_5, arg1_5)
+	if arg1_5 and arg0_5.currentItemTimeFlag == Fushun3GameVo.GetTimeFlag() then
 		return
 	end
 
-	arg0.currentItemTimeFlag = Fushun3GameVo.GetTimeFlag()
+	arg0_5.currentItemTimeFlag = Fushun3GameVo.GetTimeFlag()
 
-	for iter0 = 1, #arg0.bgItems do
-		local var0 = arg0.bgItems[iter0].tf
-		local var1 = arg0.bgItems[iter0].data
+	for iter0_5 = 1, #arg0_5.bgItems do
+		local var0_5 = arg0_5.bgItems[iter0_5].tf
+		local var1_5 = arg0_5.bgItems[iter0_5].data
 
-		if var1.type == Fushun3GameConst.BG_TYPE_FIRE then
-			if arg0.bgItems[iter0].removeTime and arg0.currentItemTimeFlag then
-				arg0.bgItems[iter0].removeTime = 0
+		if var1_5.type == Fushun3GameConst.BG_TYPE_FIRE then
+			if arg0_5.bgItems[iter0_5].removeTime and arg0_5.currentItemTimeFlag then
+				arg0_5.bgItems[iter0_5].removeTime = 0
 			end
-		elseif var1.type == Fushun3GameConst.BG_TYPE_PETAL then
-			if arg0.bgItems[iter0].removeTime and not arg0.currentItemTimeFlag then
-				arg0.bgItems[iter0].removeTime = 0
+		elseif var1_5.type == Fushun3GameConst.BG_TYPE_PETAL then
+			if arg0_5.bgItems[iter0_5].removeTime and not arg0_5.currentItemTimeFlag then
+				arg0_5.bgItems[iter0_5].removeTime = 0
 			end
 		else
-			local var2 = GetComponent(var0, typeof(Animator))
+			local var2_5 = GetComponent(var0_5, typeof(Animator))
 
-			if arg1 then
-				local var3 = arg0.currentItemTimeFlag and findTF(var0, "day") or findTF(var0, "night")
+			if arg1_5 then
+				local var3_5 = arg0_5.currentItemTimeFlag and findTF(var0_5, "day") or findTF(var0_5, "night")
 
-				setActive(var3, false)
-				setActive(var3, true)
+				setActive(var3_5, false)
+				setActive(var3_5, true)
 
-				local var4 = Fushun3GameVo.GetTimeFlag() and "day" or "night"
+				local var4_5 = Fushun3GameVo.GetTimeFlag() and "day" or "night"
 
-				var2:SetTrigger(var4)
+				var2_5:SetTrigger(var4_5)
 			else
-				local var5 = Fushun3GameVo.GetTimeFlag() and "day_no_fade" or "night_no_fade"
+				local var5_5 = Fushun3GameVo.GetTimeFlag() and "day_no_fade" or "night_no_fade"
 
-				var2:SetTrigger(var5)
+				var2_5:SetTrigger(var5_5)
 			end
 		end
 	end
 end
 
-function var0.changeBg(arg0, arg1)
-	if arg1 then
-		arg0.bgAnimator:SetTrigger(arg0.timeTypeData.change_anim)
+function var0_0.changeBg(arg0_6, arg1_6)
+	if arg1_6 then
+		arg0_6.bgAnimator:SetTrigger(arg0_6.timeTypeData.change_anim)
 	else
-		setActive(arg0._bgAnimTf, false)
-		setActive(arg0._bgAnimTf, true)
+		setActive(arg0_6._bgAnimTf, false)
+		setActive(arg0_6._bgAnimTf, true)
 
-		local var0 = arg0._bgAnimTf.childCount
+		local var0_6 = arg0_6._bgAnimTf.childCount
 
-		for iter0 = 0, var0 - 1 do
-			local var1 = arg0._bgAnimTf:GetChild(iter0)
+		for iter0_6 = 0, var0_6 - 1 do
+			local var1_6 = arg0_6._bgAnimTf:GetChild(iter0_6)
 
-			setActive(var1, var1.name == arg0.timeTypeData.tf)
+			setActive(var1_6, var1_6.name == arg0_6.timeTypeData.tf)
 		end
 
-		arg0.bgAnimator:SetTrigger(arg0.timeTypeData.anim)
+		arg0_6.bgAnimator:SetTrigger(arg0_6.timeTypeData.anim)
 	end
 
-	print("当前状态" .. tostring(arg0.timeTypeData.name))
+	print("当前状态" .. tostring(arg0_6.timeTypeData.name))
 end
 
-function var0.createTopBg(arg0, arg1)
-	local var0 = arg0:getBgData(arg1)
+function var0_0.createTopBg(arg0_7, arg1_7)
+	local var0_7 = arg0_7:getBgData(arg1_7)
 
-	if var0 then
-		local var1 = arg0:getBgFromPool(var0.id)
+	if var0_7 then
+		local var1_7 = arg0_7:getBgFromPool(var0_7.id)
 
-		var1.tf.anchoredPosition = Vector2(arg0.topBgPosX, var1.data.pos.y)
-		arg0.topBgPosX = arg0.topBgPosX + var1.data.bound.x * Fushun3GameConst.game_scale
+		var1_7.tf.anchoredPosition = Vector2(arg0_7.topBgPosX, var1_7.data.pos.y)
+		arg0_7.topBgPosX = arg0_7.topBgPosX + var1_7.data.bound.x * Fushun3GameConst.game_scale
 
-		setActive(var1.tf, true)
-		table.insert(arg0.bgItems, var1)
+		setActive(var1_7.tf, true)
+		table.insert(arg0_7.bgItems, var1_7)
 	end
 end
 
-function var0.createMidBg(arg0)
-	local var0 = 0
+function var0_0.createMidBg(arg0_8)
+	local var0_8 = 0
 
-	for iter0 = 1, #Fushun3GameConst.mid_bg do
-		local var1 = Fushun3GameConst.mid_bg[iter0]
-		local var2 = var1.num
-		local var3 = var1.mid_random
-		local var4 = Clone(var1.ids)
+	for iter0_8 = 1, #Fushun3GameConst.mid_bg do
+		local var1_8 = Fushun3GameConst.mid_bg[iter0_8]
+		local var2_8 = var1_8.num
+		local var3_8 = var1_8.mid_random
+		local var4_8 = Clone(var1_8.ids)
 
-		for iter1 = 1, var2 do
-			local var5 = table.remove(var4, math.random(1, #var4))
-			local var6 = arg0:getBgFromPool(var5)
+		for iter1_8 = 1, var2_8 do
+			local var5_8 = table.remove(var4_8, math.random(1, #var4_8))
+			local var6_8 = arg0_8:getBgFromPool(var5_8)
 
-			if var6 then
-				if var3 then
-					var6.tf.anchoredPosition = Vector2(math.random(900, 1000) + arg0.midBgPosX, var6.data.pos.y)
+			if var6_8 then
+				if var3_8 then
+					var6_8.tf.anchoredPosition = Vector2(math.random(900, 1000) + arg0_8.midBgPosX, var6_8.data.pos.y)
 				else
-					var6.tf.anchoredPosition = Vector2(var0 + arg0.midBgPosX, var6.data.pos.y)
-					var0 = var0 + var6.data.bound.x * Fushun3GameConst.game_scale
+					var6_8.tf.anchoredPosition = Vector2(var0_8 + arg0_8.midBgPosX, var6_8.data.pos.y)
+					var0_8 = var0_8 + var6_8.data.bound.x * Fushun3GameConst.game_scale
 				end
 
-				setActive(var6.tf, true)
-				table.insert(arg0.bgItems, var6)
+				setActive(var6_8.tf, true)
+				table.insert(arg0_8.bgItems, var6_8)
 			end
 		end
 	end
 
-	arg0.midBgPosX = arg0.midBgPosX + Fushun3GameConst.mid_bg_inst_posX
+	arg0_8.midBgPosX = arg0_8.midBgPosX + Fushun3GameConst.mid_bg_inst_posX
 end
 
-function var0.createPetal(arg0)
-	local var0 = Fushun3GameConst.petal_ids[math.random(1, #Fushun3GameConst.petal_ids)]
-	local var1 = Vector2(math.random(100, 1920), math.random(540, 1080))
-	local var2 = arg0:getBgFromPool(var0)
+function var0_0.createPetal(arg0_9)
+	local var0_9 = Fushun3GameConst.petal_ids[math.random(1, #Fushun3GameConst.petal_ids)]
+	local var1_9 = Vector2(math.random(100, 1920), math.random(540, 1080))
+	local var2_9 = arg0_9:getBgFromPool(var0_9)
 
-	if var2 then
-		var1.x = var1.x + math.abs(var2.parentTf.anchoredPosition.x)
-		var1.y = var1.y
-		var2.tf.anchoredPosition = var1
-		var2.removeTime = math.random(Fushun3GameConst.peta_remove_time[1], Fushun3GameConst.peta_remove_time[2])
-		var1.x = var1.x + var2.data.bound.x
-		var2.speed = Vector2(Fushun3GameConst.petal_speed[1] + math.random(1, Fushun3GameConst.petal_speed_offset), Fushun3GameConst.petal_speed[2] + math.random(1, Fushun3GameConst.petal_speed_offset))
+	if var2_9 then
+		var1_9.x = var1_9.x + math.abs(var2_9.parentTf.anchoredPosition.x)
+		var1_9.y = var1_9.y
+		var2_9.tf.anchoredPosition = var1_9
+		var2_9.removeTime = math.random(Fushun3GameConst.peta_remove_time[1], Fushun3GameConst.peta_remove_time[2])
+		var1_9.x = var1_9.x + var2_9.data.bound.x
+		var2_9.speed = Vector2(Fushun3GameConst.petal_speed[1] + math.random(1, Fushun3GameConst.petal_speed_offset), Fushun3GameConst.petal_speed[2] + math.random(1, Fushun3GameConst.petal_speed_offset))
 
-		setActive(var2.tf, true)
-		table.insert(arg0.bgItems, var2)
+		setActive(var2_9.tf, true)
+		table.insert(arg0_9.bgItems, var2_9)
 
-		arg0.petalCount = arg0.petalCount + 1
+		arg0_9.petalCount = arg0_9.petalCount + 1
 	end
 end
 
-function var0.createFire(arg0)
-	local var0 = Fushun3GameConst.fire_group[math.random(1, #Fushun3GameConst.fire_group)]
-	local var1 = Vector2(math.random(100, 1920), 0)
+function var0_0.createFire(arg0_10)
+	local var0_10 = Fushun3GameConst.fire_group[math.random(1, #Fushun3GameConst.fire_group)]
+	local var1_10 = Vector2(math.random(100, 1920), 0)
 
-	for iter0 = 1, #var0 do
-		local var2 = var0[iter0]
-		local var3 = arg0:getBgFromPool(var2)
+	for iter0_10 = 1, #var0_10 do
+		local var2_10 = var0_10[iter0_10]
+		local var3_10 = arg0_10:getBgFromPool(var2_10)
 
-		if var3 then
-			var1.x = var1.x + math.abs(var3.parentTf.anchoredPosition.x)
-			var1.y = var3.data.pos.y
-			var3.tf.anchoredPosition = var1
-			var3.removeTime = Fushun3GameConst.fire_remove
-			var1.x = var1.x + var3.data.bound.x
+		if var3_10 then
+			var1_10.x = var1_10.x + math.abs(var3_10.parentTf.anchoredPosition.x)
+			var1_10.y = var3_10.data.pos.y
+			var3_10.tf.anchoredPosition = var1_10
+			var3_10.removeTime = Fushun3GameConst.fire_remove
+			var1_10.x = var1_10.x + var3_10.data.bound.x
 
-			setActive(var3.tf, true)
-			table.insert(arg0.bgItems, var3)
-		end
-	end
-end
-
-function var0.getBgData(arg0, arg1)
-	for iter0 = 1, #Fushun3GameConst.bg_data do
-		if Fushun3GameConst.bg_data[iter0].id == arg1 then
-			return Fushun3GameConst.bg_data[iter0]
+			setActive(var3_10.tf, true)
+			table.insert(arg0_10.bgItems, var3_10)
 		end
 	end
 end
 
-function var0.getBgFromPool(arg0, arg1)
-	for iter0 = 1, #arg0.bgsPool do
-		if arg0.bgsPool[iter0].data.id == arg1 then
-			return table.remove(arg0.bgsPool, iter0)
+function var0_0.getBgData(arg0_11, arg1_11)
+	for iter0_11 = 1, #Fushun3GameConst.bg_data do
+		if Fushun3GameConst.bg_data[iter0_11].id == arg1_11 then
+			return Fushun3GameConst.bg_data[iter0_11]
+		end
+	end
+end
+
+function var0_0.getBgFromPool(arg0_12, arg1_12)
+	for iter0_12 = 1, #arg0_12.bgsPool do
+		if arg0_12.bgsPool[iter0_12].data.id == arg1_12 then
+			return table.remove(arg0_12.bgsPool, iter0_12)
 		end
 	end
 
-	local var0
+	local var0_12
 
-	for iter1 = 1, #Fushun3GameConst.bg_data do
-		local var1 = Fushun3GameConst.bg_data[iter1]
+	for iter1_12 = 1, #Fushun3GameConst.bg_data do
+		local var1_12 = Fushun3GameConst.bg_data[iter1_12]
 
-		if var1.id == arg1 then
-			var0 = var1
+		if var1_12.id == arg1_12 then
+			var0_12 = var1_12
 		end
 	end
 
-	if var0 then
-		local var2
-		local var3
+	if var0_12 then
+		local var2_12
+		local var3_12
 
-		if var0.type == Fushun3GameConst.BG_TYPE_FIRE then
-			var2 = tf(instantiate(findTF(arg0._fireTpl, var0.name)))
-			var3 = findTF(arg0._backSceneTf, "bgFire")
-		elseif var0.type == Fushun3GameConst.BG_TYPE_TOP then
-			var2 = tf(instantiate(findTF(arg0._bgTpl, var0.name)))
-			var3 = findTF(arg0._backSceneTf, "bgTop")
-		elseif var0.type == Fushun3GameConst.BG_TYPE_MID then
-			var2 = tf(instantiate(findTF(arg0._bgTpl, var0.name)))
-			var3 = findTF(arg0._backSceneTf, "bgMid")
-		elseif var0.type == Fushun3GameConst.BG_TYPE_LOOP then
-			var2 = tf(instantiate(findTF(arg0._bgTpl, var0.name)))
-			var3 = findTF(arg0._backSceneTf, "bgBottom")
-		elseif var0.type == Fushun3GameConst.BG_TYPE_PETAL then
-			var2 = tf(instantiate(findTF(arg0._petalTpl, var0.name)))
-			var3 = findTF(arg0._backSceneTf, "bgPetal")
+		if var0_12.type == Fushun3GameConst.BG_TYPE_FIRE then
+			var2_12 = tf(instantiate(findTF(arg0_12._fireTpl, var0_12.name)))
+			var3_12 = findTF(arg0_12._backSceneTf, "bgFire")
+		elseif var0_12.type == Fushun3GameConst.BG_TYPE_TOP then
+			var2_12 = tf(instantiate(findTF(arg0_12._bgTpl, var0_12.name)))
+			var3_12 = findTF(arg0_12._backSceneTf, "bgTop")
+		elseif var0_12.type == Fushun3GameConst.BG_TYPE_MID then
+			var2_12 = tf(instantiate(findTF(arg0_12._bgTpl, var0_12.name)))
+			var3_12 = findTF(arg0_12._backSceneTf, "bgMid")
+		elseif var0_12.type == Fushun3GameConst.BG_TYPE_LOOP then
+			var2_12 = tf(instantiate(findTF(arg0_12._bgTpl, var0_12.name)))
+			var3_12 = findTF(arg0_12._backSceneTf, "bgBottom")
+		elseif var0_12.type == Fushun3GameConst.BG_TYPE_PETAL then
+			var2_12 = tf(instantiate(findTF(arg0_12._petalTpl, var0_12.name)))
+			var3_12 = findTF(arg0_12._backSceneTf, "bgPetal")
 		end
 
-		if var2 and var3 then
-			SetParent(var2, var3)
+		if var2_12 and var3_12 then
+			SetParent(var2_12, var3_12)
 		end
 
 		return {
-			tf = var2,
-			data = var0,
-			parentTf = var3
+			tf = var2_12,
+			data = var0_12,
+			parentTf = var3_12
 		}
 	end
 
 	return nil
 end
 
-function var0.clearBg(arg0)
-	for iter0 = #arg0.bgItems, 1, -1 do
-		setActive(arg0.bgItems[iter0].tf, false)
-		table.insert(arg0.bgsPool, table.remove(arg0.bgItems, iter0))
+function var0_0.clearBg(arg0_13)
+	for iter0_13 = #arg0_13.bgItems, 1, -1 do
+		setActive(arg0_13.bgItems[iter0_13].tf, false)
+		table.insert(arg0_13.bgsPool, table.remove(arg0_13.bgItems, iter0_13))
 	end
 end
 
-function var0.removeBg(arg0)
-	local var0 = {}
+function var0_0.removeBg(arg0_14)
+	local var0_14 = {}
 
-	for iter0 = #arg0.bgItems, 1, -1 do
-		local var1 = arg0.bgItems[iter0]
+	for iter0_14 = #arg0_14.bgItems, 1, -1 do
+		local var1_14 = arg0_14.bgItems[iter0_14]
 
-		if var0[var1.parentTf] == nil then
-			var0[var1.parentTf] = math.abs(var1.parentTf.anchoredPosition.x) + Fushun3GameConst.bg_remove_posX - var1.data.bound.x * Fushun3GameConst.game_scale
+		if var0_14[var1_14.parentTf] == nil then
+			var0_14[var1_14.parentTf] = math.abs(var1_14.parentTf.anchoredPosition.x) + Fushun3GameConst.bg_remove_posX - var1_14.data.bound.x * Fushun3GameConst.game_scale
 		end
 
-		if var1.removeTime and var1.removeTime > 0 then
-			var1.removeTime = var1.removeTime - Time.deltaTime
+		if var1_14.removeTime and var1_14.removeTime > 0 then
+			var1_14.removeTime = var1_14.removeTime - Time.deltaTime
 		end
 
-		if var1.tf.anchoredPosition.x <= var0[var1.parentTf] then
-			setActive(var1.tf, false)
-			table.insert(arg0.bgsPool, table.remove(arg0.bgItems, iter0))
-		elseif var1.removeTime and var1.removeTime <= 0 then
-			if var1.data.type == Fushun3GameConst.BG_TYPE_PETAL then
-				arg0.petalCount = arg0.petalCount - 1
+		if var1_14.tf.anchoredPosition.x <= var0_14[var1_14.parentTf] then
+			setActive(var1_14.tf, false)
+			table.insert(arg0_14.bgsPool, table.remove(arg0_14.bgItems, iter0_14))
+		elseif var1_14.removeTime and var1_14.removeTime <= 0 then
+			if var1_14.data.type == Fushun3GameConst.BG_TYPE_PETAL then
+				arg0_14.petalCount = arg0_14.petalCount - 1
 			end
 
-			setActive(var1.tf, false)
-			table.insert(arg0.bgsPool, table.remove(arg0.bgItems, iter0))
+			setActive(var1_14.tf, false)
+			table.insert(arg0_14.bgsPool, table.remove(arg0_14.bgItems, iter0_14))
 		end
 	end
 end
 
-return var0
+return var0_0

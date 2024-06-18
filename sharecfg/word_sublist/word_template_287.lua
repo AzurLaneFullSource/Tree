@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_287 = {}
+var0_0.word_template_287 = {}
 
-local var1 = var0.word_template_287
+local var1_0 = var0_0.word_template_287
 
 function temp()
-	var1.咼 = {
+	var1_0.咼 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.歪 = {
+	var1_0.歪 = {
 		哥 = {
 			甘 = {
 				国 = {
@@ -70,7 +70,7 @@ end
 temp()
 
 function temp()
-	var1.外 = {
+	var1_0.外 = {
 		　 = {
 			挂 = {
 				this = true
@@ -294,7 +294,7 @@ end
 temp()
 
 function temp()
-	var1.完 = {
+	var1_0.完 = {
 		蛋 = {
 			操 = {
 				this = true
@@ -306,7 +306,7 @@ end
 temp()
 
 function temp()
-	var1.玩 = {
+	var1_0.玩 = {
 		["3"] = {
 			p = {
 				this = true
@@ -371,7 +371,7 @@ end
 temp()
 
 function temp()
-	var1.晚 = {
+	var1_0.晚 = {
 		年 = {
 			周 = {
 				恩 = {
@@ -483,7 +483,7 @@ end
 temp()
 
 function temp()
-	var1.綰 = {
+	var1_0.綰 = {
 		this = {
 			this = true
 		}

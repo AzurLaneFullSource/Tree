@@ -1,26 +1,26 @@
-﻿local var0 = class("FushunAdventureGameConst")
+﻿local var0_0 = class("FushunAdventureGameConst")
 
-var0.BGM_NAME = "main-chunjie2"
-var0.GAME_BGM_NAME = "bgm-cccp3"
-var0.A_BTN_VOICE = "event:/ui/quanji"
-var0.B_BTN_VOICE = "event:/ui/tiji"
-var0.COUNT_DOWN_VOICE = "event:/ui/ddldaoshu2"
-var0.ENTER_EX_VOICE = "event:/ui/baoqi"
-var0.EX_TIP_TIME = 3
-var0.EX_TIME = 10
-var0.EX_CLICK_SCORE = 10
-var0.COMBO_SCORE_TARGET = 20
-var0.COMBO_EXTRA_SCORE = 5
-var0.LEVEL_CNT = 7
-var0.SHAKE_RANGE = 0.1
-var0.SHAKE_TIME = 0.05
-var0.SHAKE_LOOP_CNT = 2
-var0.FUSHUN_INIT_POSITION = Vector2(-655.7, -205)
-var0.FUSHUN_ATTACK_DISTANCE = 230
-var0.FUSHUN_ATTACK_RANGE = 300
-var0.ENEMY_SPAWN_POSITION = Vector2(1300, -351)
-var0.EX_ENEMY_SPAWN_TIME = 0.5
-var0.SPEED_ADDITION = {
+var0_0.BGM_NAME = "main-chunjie2"
+var0_0.GAME_BGM_NAME = "bgm-cccp3"
+var0_0.A_BTN_VOICE = "event:/ui/quanji"
+var0_0.B_BTN_VOICE = "event:/ui/tiji"
+var0_0.COUNT_DOWN_VOICE = "event:/ui/ddldaoshu2"
+var0_0.ENTER_EX_VOICE = "event:/ui/baoqi"
+var0_0.EX_TIP_TIME = 3
+var0_0.EX_TIME = 10
+var0_0.EX_CLICK_SCORE = 10
+var0_0.COMBO_SCORE_TARGET = 20
+var0_0.COMBO_EXTRA_SCORE = 5
+var0_0.LEVEL_CNT = 7
+var0_0.SHAKE_RANGE = 0.1
+var0_0.SHAKE_TIME = 0.05
+var0_0.SHAKE_LOOP_CNT = 2
+var0_0.FUSHUN_INIT_POSITION = Vector2(-655.7, -205)
+var0_0.FUSHUN_ATTACK_DISTANCE = 230
+var0_0.FUSHUN_ATTACK_RANGE = 300
+var0_0.ENEMY_SPAWN_POSITION = Vector2(1300, -351)
+var0_0.EX_ENEMY_SPAWN_TIME = 0.5
+var0_0.SPEED_ADDITION = {
 	{
 		{
 			0,
@@ -50,7 +50,7 @@ var0.SPEED_ADDITION = {
 		3.4
 	}
 }
-var0.PROPABILITES = {
+var0_0.PROPABILITES = {
 	{
 		{
 			0,
@@ -88,7 +88,7 @@ var0.PROPABILITES = {
 		30
 	}
 }
-var0.ENEMY_SPAWN_TIME_ADDITION = {
+var0_0.ENEMY_SPAWN_TIME_ADDITION = {
 	{
 		{
 			0,
@@ -130,7 +130,7 @@ var0.ENEMY_SPAWN_TIME_ADDITION = {
 		}
 	}
 }
-var0.ENEMYS = {
+var0_0.ENEMYS = {
 	{
 		crazy_speed = 14,
 		name = "beast01",
@@ -163,4 +163,4 @@ var0.ENEMYS = {
 	}
 }
 
-return var0
+return var0_0

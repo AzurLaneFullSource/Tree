@@ -1,42 +1,42 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleBuffHealingCorrupt = class("BattleBuffHealingCorrupt", var0.Battle.BattleBuffEffect)
-var0.Battle.BattleBuffHealingCorrupt.__name = "BattleBuffHealingCorrupt"
+var0_0.Battle.BattleBuffHealingCorrupt = class("BattleBuffHealingCorrupt", var0_0.Battle.BattleBuffEffect)
+var0_0.Battle.BattleBuffHealingCorrupt.__name = "BattleBuffHealingCorrupt"
 
-local var1 = var0.Battle.BattleBuffHealingCorrupt
+local var1_0 = var0_0.Battle.BattleBuffHealingCorrupt
 
-var1.FX_TYPE = var0.Battle.BattleBuffEffect.FX_TYPE_LINK
+var1_0.FX_TYPE = var0_0.Battle.BattleBuffEffect.FX_TYPE_LINK
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	local var0 = arg0._tempData.arg_list
+function var1_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	local var0_2 = arg0_2._tempData.arg_list
 
-	arg0._corruptRate = var0.corruptRate or 1
-	arg0._damageRate = var0.damageRate or 1
+	arg0_2._corruptRate = var0_2.corruptRate or 1
+	arg0_2._damageRate = var0_2.damageRate or 1
 end
 
-function var1.onTakeHealing(arg0, arg1, arg2, arg3)
-	if arg3.incorrupt then
+function var1_0.onTakeHealing(arg0_3, arg1_3, arg2_3, arg3_3)
+	if arg3_3.incorrupt then
 		return
 	end
 
-	local var0 = arg3.damage
-	local var1 = math.ceil(var0 * arg0._corruptRate)
+	local var0_3 = arg3_3.damage
+	local var1_3 = math.ceil(var0_3 * arg0_3._corruptRate)
 
-	arg3.damage = var0 - var1
+	arg3_3.damage = var0_3 - var1_3
 
-	local var2 = math.ceil(var1 * arg0._damageRate) * -1
-	local var3 = {
+	local var2_3 = math.ceil(var1_3 * arg0_3._damageRate) * -1
+	local var3_3 = {
 		isMiss = false,
 		isCri = false,
 		isHeal = false,
 		isShare = false
 	}
 
-	arg1:UpdateHP(var2, var3)
+	arg1_3:UpdateHP(var2_3, var3_3)
 end

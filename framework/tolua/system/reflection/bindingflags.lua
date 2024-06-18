@@ -2,20 +2,20 @@
 	System.Reflection = {}
 end
 
-local function var0(...)
-	local var0 = {
+local function var0_0(...)
+	local var0_1 = {
 		...
 	}
-	local var1 = 0
+	local var1_1 = 0
 
-	for iter0 = 1, #var0 do
-		var1 = var1 + var0[iter0]
+	for iter0_1 = 1, #var0_1 do
+		var1_1 = var1_1 + var0_1[iter0_1]
 	end
 
-	return var1
+	return var1_1
 end
 
-local var1 = {
+local var1_0 = {
 	Default = 0,
 	SetField = 2048,
 	Static = 8,
@@ -38,7 +38,7 @@ local var1 = {
 	IgnoreCase = 1
 }
 
-System.Reflection.BindingFlags = var1
-System.Reflection.BindingFlags.GetMask = var0
+System.Reflection.BindingFlags = var1_0
+System.Reflection.BindingFlags.GetMask = var0_0
 
-return var1
+return var1_0

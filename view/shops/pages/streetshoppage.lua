@@ -1,166 +1,166 @@
-﻿local var0 = class("StreetShopPage", import(".BaseShopPage"))
+﻿local var0_0 = class("StreetShopPage", import(".BaseShopPage"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "StreetShop"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.timerText = arg0:findTF("timer_bg/Text"):GetComponent(typeof(Text))
-	arg0.refreshBtn = arg0:findTF("refresh_btn")
-	arg0.actTip = arg0:findTF("tip/tip_activity"):GetComponent(typeof(Text))
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.timerText = arg0_2:findTF("timer_bg/Text"):GetComponent(typeof(Text))
+	arg0_2.refreshBtn = arg0_2:findTF("refresh_btn")
+	arg0_2.actTip = arg0_2:findTF("tip/tip_activity"):GetComponent(typeof(Text))
 
-	local var0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP_STREET)
-	local var1 = _.select(var0, function(arg0)
-		return arg0 and not arg0:isEnd()
+	local var0_2 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP_STREET)
+	local var1_2 = _.select(var0_2, function(arg0_3)
+		return arg0_3 and not arg0_3:isEnd()
 	end)
 
-	setActive(arg0.actTip, #var1 > 0)
+	setActive(arg0_2.actTip, #var1_2 > 0)
 
-	arg0.actTip.text = arg0:GenTip(var1)
-	arg0.helpBtn = arg0:findTF("tip/help")
+	arg0_2.actTip.text = arg0_2:GenTip(var1_2)
+	arg0_2.helpBtn = arg0_2:findTF("tip/help")
 
-	setActive(arg0.helpBtn, #var1 > 1)
+	setActive(arg0_2.helpBtn, #var1_2 > 1)
 
-	arg0.activitys = var1
+	arg0_2.activitys = var1_2
 end
 
-function var0.GenTip(arg0, arg1)
-	local var0 = ""
+function var0_0.GenTip(arg0_4, arg1_4)
+	local var0_4 = ""
 
-	if #arg1 == 1 then
-		local var1 = arg1[1]
+	if #arg1_4 == 1 then
+		local var1_4 = arg1_4[1]
 
-		var0 = i18n("shop_street_activity_tip", var1:GetShopTime())
-	elseif #arg1 > 1 then
-		var0 = arg0:GenTipForMultiAct(arg1)
+		var0_4 = i18n("shop_street_activity_tip", var1_4:GetShopTime())
+	elseif #arg1_4 > 1 then
+		var0_4 = arg0_4:GenTipForMultiAct(arg1_4)
 	end
 
-	return var0
+	return var0_4
 end
 
-function var0.GenTipForMultiAct(arg0, arg1)
-	local var0 = arg1[1]
-	local var1 = var0:getStartTime()
-	local var2 = var0.stopTime
-	local var3 = _.all(arg1, function(arg0)
-		return arg0:getStartTime() == var1
+function var0_0.GenTipForMultiAct(arg0_5, arg1_5)
+	local var0_5 = arg1_5[1]
+	local var1_5 = var0_5:getStartTime()
+	local var2_5 = var0_5.stopTime
+	local var3_5 = _.all(arg1_5, function(arg0_6)
+		return arg0_6:getStartTime() == var1_5
 	end)
-	local var4 = _.all(arg1, function(arg0)
-		return arg0.stopTime == var2
+	local var4_5 = _.all(arg1_5, function(arg0_7)
+		return arg0_7.stopTime == var2_5
 	end)
-	local var5 = var0
+	local var5_5 = var0_5
 
-	if not var4 then
-		table.sort(arg1, function(arg0, arg1)
-			return arg0.stopTime < arg1.stopTime
+	if not var4_5 then
+		table.sort(arg1_5, function(arg0_8, arg1_8)
+			return arg0_8.stopTime < arg1_8.stopTime
 		end)
 
-		var5 = arg1[1]
-	elseif not var3 and var4 then
-		table.sort(arg1, function(arg0, arg1)
-			return arg0:getStartTime() < arg1:getStartTime()
+		var5_5 = arg1_5[1]
+	elseif not var3_5 and var4_5 then
+		table.sort(arg1_5, function(arg0_9, arg1_9)
+			return arg0_9:getStartTime() < arg1_9:getStartTime()
 		end)
 
-		var5 = arg1[1]
+		var5_5 = arg1_5[1]
 	end
 
-	return i18n("shop_street_activity_tip", var5:GetShopTime())
+	return i18n("shop_street_activity_tip", var5_5:GetShopTime())
 end
 
-function var0.GenHelpContent(arg0, arg1, arg2)
-	local var0 = arg2:getConfig("config_data")
+function var0_0.GenHelpContent(arg0_10, arg1_10, arg2_10)
+	local var0_10 = arg2_10:getConfig("config_data")
 
-	for iter0, iter1 in ipairs(var0) do
-		local var1 = iter1[1]
-		local var2 = pg.shop_template[var1].effect_args[1]
-		local var3 = Item.getConfigData(var2).name
-		local var4 = arg2:GetShopTime()
+	for iter0_10, iter1_10 in ipairs(var0_10) do
+		local var1_10 = iter1_10[1]
+		local var2_10 = pg.shop_template[var1_10].effect_args[1]
+		local var3_10 = Item.getConfigData(var2_10).name
+		local var4_10 = arg2_10:GetShopTime()
 
-		table.insert(arg1, i18n("shop_street_Equipment_skin_box_help", var3, var4))
+		table.insert(arg1_10, i18n("shop_street_Equipment_skin_box_help", var3_10, var4_10))
 	end
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0.helpBtn, function()
-		local var0 = {}
+function var0_0.OnInit(arg0_11)
+	onButton(arg0_11, arg0_11.helpBtn, function()
+		local var0_12 = {}
 
-		table.sort(arg0.activitys, function(arg0, arg1)
-			return arg0:getStartTime() < arg1:getStartTime()
+		table.sort(arg0_11.activitys, function(arg0_13, arg1_13)
+			return arg0_13:getStartTime() < arg1_13:getStartTime()
 		end)
-		_.each(arg0.activitys, function(arg0)
-			arg0:GenHelpContent(var0, arg0)
+		_.each(arg0_11.activitys, function(arg0_14)
+			arg0_11:GenHelpContent(var0_12, arg0_14)
 		end)
 
-		local var1 = table.concat(var0, "\n\n")
+		local var1_12 = table.concat(var0_12, "\n\n")
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = var1
+			content = var1_12
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.refreshBtn, function()
-		local var0 = ShoppingStreet.getRiseShopId(ShopArgs.ShoppingStreetUpgrade, arg0.shop.flashCount)
+	onButton(arg0_11, arg0_11.refreshBtn, function()
+		local var0_15 = ShoppingStreet.getRiseShopId(ShopArgs.ShoppingStreetUpgrade, arg0_11.shop.flashCount)
 
-		if not var0 then
+		if not var0_15 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("shopStreet_refresh_max_count"))
 
 			return
 		end
 
-		local var1 = pg.shop_template[var0]
+		local var1_15 = pg.shop_template[var0_15]
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			noText = "text_cancel",
 			hideNo = false,
 			yesText = "text_confirm",
-			content = i18n("refresh_shopStreet_question", i18n("word_" .. id2res(var1.resource_type) .. "_icon"), var1.resource_num, arg0.shop.flashCount),
+			content = i18n("refresh_shopStreet_question", i18n("word_" .. id2res(var1_15.resource_type) .. "_icon"), var1_15.resource_num, arg0_11.shop.flashCount),
 			onYes = function()
-				arg0:emit(NewShopsMediator.REFRESH_STREET_SHOP, var0)
+				arg0_11:emit(NewShopsMediator.REFRESH_STREET_SHOP, var0_15)
 			end
 		})
 	end, SFX_PANEL)
 end
 
-function var0.ResUISettings(arg0)
+function var0_0.ResUISettings(arg0_17)
 	return {
 		showType = PlayerResUI.TYPE_ALL
 	}
 end
 
-function var0.OnUpdatePlayer(arg0)
-	local var0 = arg0.player
+function var0_0.OnUpdatePlayer(arg0_18)
+	local var0_18 = arg0_18.player
 end
 
-function var0.OnSetUp(arg0)
-	arg0:RemoveTimer()
-	arg0:AddTimer()
+function var0_0.OnSetUp(arg0_19)
+	arg0_19:RemoveTimer()
+	arg0_19:AddTimer()
 end
 
-function var0.OnUpdateAll(arg0)
-	arg0:InitCommodities()
-	arg0:OnSetUp()
+function var0_0.OnUpdateAll(arg0_20)
+	arg0_20:InitCommodities()
+	arg0_20:OnSetUp()
 end
 
-function var0.OnUpdateCommodity(arg0, arg1)
-	local var0
+function var0_0.OnUpdateCommodity(arg0_21, arg1_21)
+	local var0_21
 
-	for iter0, iter1 in pairs(arg0.cards) do
-		if iter1.goodsVO.id == arg1.id then
-			var0 = iter1
+	for iter0_21, iter1_21 in pairs(arg0_21.cards) do
+		if iter1_21.goodsVO.id == arg1_21.id then
+			var0_21 = iter1_21
 		end
 	end
 
-	if var0 then
-		var0:update(arg1)
+	if var0_21 then
+		var0_21:update(arg1_21)
 	end
 end
 
-function var0.OnInitItem(arg0, arg1)
-	local var0 = GoodsCard.New(arg1)
+function var0_0.OnInitItem(arg0_22, arg1_22)
+	local var0_22 = GoodsCard.New(arg1_22)
 
-	onButton(arg0, var0.go, function()
-		local var0 = var0.goodsVO
+	onButton(arg0_22, var0_22.go, function()
+		local var0_23 = var0_22.goodsVO
 
-		if not var0:canPurchase() then
+		if not var0_23:canPurchase() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 
 			return
@@ -170,87 +170,87 @@ function var0.OnInitItem(arg0, arg1)
 			yesText = "text_exchange",
 			type = MSGBOX_TYPE_SINGLE_ITEM,
 			drop = {
-				id = var0:getConfig("effect_args")[1],
-				type = var0:getConfig("type"),
-				count = var0:getConfig("num")
+				id = var0_23:getConfig("effect_args")[1],
+				type = var0_23:getConfig("type"),
+				count = var0_23:getConfig("num")
 			},
 			onYes = function()
-				arg0:Purchase(var0)
+				arg0_22:Purchase(var0_23)
 			end
 		})
 	end, SFX_PANEL)
 
-	arg0.cards[arg1] = var0
+	arg0_22.cards[arg1_22] = var0_22
 end
 
-function var0.OnUpdateItem(arg0, arg1, arg2)
-	local var0 = arg0.cards[arg2]
+function var0_0.OnUpdateItem(arg0_25, arg1_25, arg2_25)
+	local var0_25 = arg0_25.cards[arg2_25]
 
-	if not var0 then
-		arg0:OnInitItem(arg2)
+	if not var0_25 then
+		arg0_25:OnInitItem(arg2_25)
 
-		var0 = arg0.cards[arg2]
+		var0_25 = arg0_25.cards[arg2_25]
 	end
 
-	local var1 = arg0.displays[arg1 + 1]
+	local var1_25 = arg0_25.displays[arg1_25 + 1]
 
-	var0:update(var1)
+	var0_25:update(var1_25)
 end
 
-function var0.Purchase(arg0, arg1)
-	local var0 = arg1:getConfig("resource_type")
+function var0_0.Purchase(arg0_26, arg1_26)
+	local var0_26 = arg1_26:getConfig("resource_type")
 
-	if var0 == 4 or var0 == 14 then
-		local var1 = arg0.player:getResById(var0)
-		local var2 = Item.New({
-			id = arg1:getConfig("effect_args")[1]
+	if var0_26 == 4 or var0_26 == 14 then
+		local var1_26 = arg0_26.player:getResById(var0_26)
+		local var2_26 = Item.New({
+			id = arg1_26:getConfig("effect_args")[1]
 		})
-		local var3 = arg1:getConfig("resource_num") * (arg1.discount / 100)
+		local var3_26 = arg1_26:getConfig("resource_num") * (arg1_26.discount / 100)
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("charge_scene_buy_confirm", var3, var2:getConfig("name")),
+			content = i18n("charge_scene_buy_confirm", var3_26, var2_26:getConfig("name")),
 			onYes = function()
-				arg0:emit(NewShopsMediator.ON_SHOPPING, arg1.id, 1)
+				arg0_26:emit(NewShopsMediator.ON_SHOPPING, arg1_26.id, 1)
 			end
 		})
 	else
-		arg0:emit(NewShopsMediator.ON_SHOPPING, arg1.id, 1)
+		arg0_26:emit(NewShopsMediator.ON_SHOPPING, arg1_26.id, 1)
 	end
 end
 
-function var0.RemoveTimer(arg0)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var0_0.RemoveTimer(arg0_28)
+	if arg0_28.timer then
+		arg0_28.timer:Stop()
 
-		arg0.timer = nil
+		arg0_28.timer = nil
 	end
 end
 
-function var0.AddTimer(arg0)
-	local var0 = arg0.shop
+function var0_0.AddTimer(arg0_29)
+	local var0_29 = arg0_29.shop
 
-	arg0.timer = Timer.New(function()
-		if var0:isUpdateGoods() then
-			arg0:RemoveTimer()
-			arg0:emit(NewShopsMediator.REFRESH_STREET_SHOP)
+	arg0_29.timer = Timer.New(function()
+		if var0_29:isUpdateGoods() then
+			arg0_29:RemoveTimer()
+			arg0_29:emit(NewShopsMediator.REFRESH_STREET_SHOP)
 		else
-			local var0 = pg.TimeMgr.GetInstance():GetServerTime()
-			local var1 = var0.nextFlashTime - var0
+			local var0_30 = pg.TimeMgr.GetInstance():GetServerTime()
+			local var1_30 = var0_29.nextFlashTime - var0_30
 
-			arg0.timerText.text = pg.TimeMgr.GetInstance():DescCDTime(var1)
+			arg0_29.timerText.text = pg.TimeMgr.GetInstance():DescCDTime(var1_30)
 		end
 	end, 1, -1)
 
-	arg0.timer:Start()
-	arg0.timer.func()
+	arg0_29.timer:Start()
+	arg0_29.timer.func()
 end
 
-function var0.OnDestroy(arg0)
-	arg0:RemoveTimer()
+function var0_0.OnDestroy(arg0_31)
+	arg0_31:RemoveTimer()
 
-	if arg0:isShowing() then
-		arg0:Hide()
+	if arg0_31:isShowing() then
+		arg0_31:Hide()
 	end
 end
 
-return var0
+return var0_0

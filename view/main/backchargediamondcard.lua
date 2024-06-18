@@ -1,71 +1,71 @@
-﻿local var0 = class("ChargeDiamondCard")
+﻿local var0_0 = class("ChargeDiamondCard")
 
-var0.NewTagType = 2
-var0.DoubleTagType = 4
+var0_0.NewTagType = 2
+var0_0.DoubleTagType = 4
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0.go = arg1
-	arg0.tr = tf(arg1)
-	arg0.iconImg = arg0.tr:Find("IconImg")
-	arg0.diamondCountText = arg0.tr:Find("Count/Text")
-	arg0.priceText = arg0.tr:Find("Price/Text")
-	arg0.beginTimeText = arg0.tr:Find("beginTime/text")
-	arg0.backTimeText = arg0.tr:Find("backTime/text")
-	arg0.beginTimeDesc = arg0.tr:Find("beginTime")
-	arg0.backTimeDesc = arg0.tr:Find("backTime")
-	arg0.leftDesc = arg0.tr:Find("lastAmount/text")
-	arg0.goods = nil
-	arg0.parentContext = arg2
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.go = arg1_1
+	arg0_1.tr = tf(arg1_1)
+	arg0_1.iconImg = arg0_1.tr:Find("IconImg")
+	arg0_1.diamondCountText = arg0_1.tr:Find("Count/Text")
+	arg0_1.priceText = arg0_1.tr:Find("Price/Text")
+	arg0_1.beginTimeText = arg0_1.tr:Find("beginTime/text")
+	arg0_1.backTimeText = arg0_1.tr:Find("backTime/text")
+	arg0_1.beginTimeDesc = arg0_1.tr:Find("beginTime")
+	arg0_1.backTimeDesc = arg0_1.tr:Find("backTime")
+	arg0_1.leftDesc = arg0_1.tr:Find("lastAmount/text")
+	arg0_1.goods = nil
+	arg0_1.parentContext = arg2_1
 end
 
-function var0.update(arg0, arg1, arg2, arg3)
-	arg0.goods = arg1
+function var0_0.update(arg0_2, arg1_2, arg2_2, arg3_2)
+	arg0_2.goods = arg1_2
 
-	if not table.contains(arg3, arg1.id) and arg1:firstPayDouble() then
-		local var0 = arg1:getConfig("gem")
-	elseif arg1:hasExtraGem() then
-		local var1 = arg1:getConfig("extra_gem")
+	if not table.contains(arg3_2, arg1_2.id) and arg1_2:firstPayDouble() then
+		local var0_2 = arg1_2:getConfig("gem")
+	elseif arg1_2:hasExtraGem() then
+		local var1_2 = arg1_2:getConfig("extra_gem")
 	end
 
-	setText(arg0.diamondCountText, arg1:getConfig("gem"))
+	setText(arg0_2.diamondCountText, arg1_2:getConfig("gem"))
 
 	if PLATFORM_CODE == PLATFORM_US then
-		local var2 = arg1:getConfig("money")
+		local var2_2 = arg1_2:getConfig("money")
 
-		setText(arg0.priceText, math.floor(var2 / 100) .. "." .. var2 - math.floor(var2 / 100) * 100)
+		setText(arg0_2.priceText, math.floor(var2_2 / 100) .. "." .. var2_2 - math.floor(var2_2 / 100) * 100)
 	else
-		setText(arg0.priceText, arg1:getConfig("money"))
+		setText(arg0_2.priceText, arg1_2:getConfig("money"))
 	end
 
-	LoadSpriteAsync("chargeicon/" .. arg1:getConfig("picture"), function(arg0)
-		if arg0 then
-			setImageSprite(arg0.iconImg, arg0, true)
+	LoadSpriteAsync("chargeicon/" .. arg1_2:getConfig("picture"), function(arg0_3)
+		if arg0_3 then
+			setImageSprite(arg0_2.iconImg, arg0_3, true)
 		end
 	end)
 
-	if arg0.goods.buyTime then
-		local var3 = pg.TimeMgr.GetInstance():STimeDescS(arg0.goods.buyTime, "%Y-%m-%d %H:%M")
+	if arg0_2.goods.buyTime then
+		local var3_2 = pg.TimeMgr.GetInstance():STimeDescS(arg0_2.goods.buyTime, "%Y-%m-%d %H:%M")
 
-		setText(arg0.beginTimeText, var3)
+		setText(arg0_2.beginTimeText, var3_2)
 	end
 
-	if arg0.goods.refundTime then
-		local var4 = pg.TimeMgr.GetInstance():STimeDescS(arg0.goods.refundTime, "%Y-%m-%d %H:%M")
+	if arg0_2.goods.refundTime then
+		local var4_2 = pg.TimeMgr.GetInstance():STimeDescS(arg0_2.goods.refundTime, "%Y-%m-%d %H:%M")
 
-		setText(arg0.backTimeText, var4)
+		setText(arg0_2.backTimeText, var4_2)
 	end
 
-	setText(arg0.beginTimeDesc, i18n("Supplement_pay6"))
-	setText(arg0.backTimeDesc, i18n("Supplement_pay7"))
-	setText(arg0.leftDesc, i18n("Supplement_pay8", "1/1"))
+	setText(arg0_2.beginTimeDesc, i18n("Supplement_pay6"))
+	setText(arg0_2.backTimeDesc, i18n("Supplement_pay7"))
+	setText(arg0_2.leftDesc, i18n("Supplement_pay8", "1/1"))
 end
 
-function var0.destoryTimer(arg0)
-	if arg0.updateTimer then
-		arg0.updateTimer:Stop()
+function var0_0.destoryTimer(arg0_4)
+	if arg0_4.updateTimer then
+		arg0_4.updateTimer:Stop()
 
-		arg0.updateTimer = nil
+		arg0_4.updateTimer = nil
 	end
 end
 
-return var0
+return var0_0

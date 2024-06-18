@@ -1,78 +1,78 @@
-﻿local var0 = require("Mgr/Pool/PoolUtil")
-local var1 = class("PoolPlural")
-local var2 = "UnityEngine.GameObject"
+﻿local var0_0 = require("Mgr/Pool/PoolUtil")
+local var1_0 = class("PoolPlural")
+local var2_0 = "UnityEngine.GameObject"
 
-function var1.Ctor(arg0, arg1, arg2)
-	local var0 = getmetatable(arg1)
+function var1_0.Ctor(arg0_1, arg1_1, arg2_1)
+	local var0_1 = getmetatable(arg1_1)
 
-	if not var0 or var0[".name"] ~= var2 then
-		warning("Poolplural should use gameobject as prefab not transform " .. (arg1 and arg1.name or "NIL"))
+	if not var0_1 or var0_1[".name"] ~= var2_0 then
+		warning("Poolplural should use gameobject as prefab not transform " .. (arg1_1 and arg1_1.name or "NIL"))
 	end
 
-	arg0.prefab = arg1
-	arg0.capacity = arg2
-	arg0.index = 0
-	arg0.items = {}
-	arg0.balance = 0
+	arg0_1.prefab = arg1_1
+	arg0_1.capacity = arg2_1
+	arg0_1.index = 0
+	arg0_1.items = {}
+	arg0_1.balance = 0
 end
 
-function var1.Enqueue(arg0, arg1, arg2)
-	arg0.balance = arg0.balance - 1
+function var1_0.Enqueue(arg0_2, arg1_2, arg2_2)
+	arg0_2.balance = arg0_2.balance - 1
 
-	if arg2 or #arg0.items >= arg0.capacity then
-		var0.Destroy(arg1)
+	if arg2_2 or #arg0_2.items >= arg0_2.capacity then
+		var0_0.Destroy(arg1_2)
 
 		return true
 	else
-		table.insert(arg0.items, arg1)
+		table.insert(arg0_2.items, arg1_2)
 
 		return false
 	end
 end
 
-function var1.Dequeue(arg0)
-	arg0.balance = arg0.balance + 1
+function var1_0.Dequeue(arg0_3)
+	arg0_3.balance = arg0_3.balance + 1
 
-	local var0
+	local var0_3
 
-	while IsNil(var0) and #arg0.items > 0 do
-		var0 = table.remove(arg0.items)
+	while IsNil(var0_3) and #arg0_3.items > 0 do
+		var0_3 = table.remove(arg0_3.items)
 	end
 
-	if IsNil(var0) then
-		var0 = arg0:NewItem()
+	if IsNil(var0_3) then
+		var0_3 = arg0_3:NewItem()
 	end
 
-	return var0
+	return var0_3
 end
 
-function var1.NewItem(arg0)
-	return Object.Instantiate(arg0.prefab)
+function var1_0.NewItem(arg0_4)
+	return Object.Instantiate(arg0_4.prefab)
 end
 
-function var1.AllReturned(arg0)
-	return arg0.balance == 0
+function var1_0.AllReturned(arg0_5)
+	return arg0_5.balance == 0
 end
 
-function var1.ClearPrefab(arg0, arg1)
-	var0.Destroy(arg0.prefab, arg1)
+function var1_0.ClearPrefab(arg0_6, arg1_6)
+	var0_0.Destroy(arg0_6.prefab, arg1_6)
 
-	arg0.prefab = nil
+	arg0_6.prefab = nil
 end
 
-function var1.ClearItems(arg0, arg1)
-	for iter0 = 1, #arg0.items do
-		var0.Destroy(arg0.items[iter0], arg1)
+function var1_0.ClearItems(arg0_7, arg1_7)
+	for iter0_7 = 1, #arg0_7.items do
+		var0_0.Destroy(arg0_7.items[iter0_7], arg1_7)
 	end
 
-	table.clear(arg0.items)
+	table.clear(arg0_7.items)
 
-	arg0.balance = 0
+	arg0_7.balance = 0
 end
 
-function var1.Clear(arg0, arg1)
-	arg0:ClearPrefab(arg1)
-	arg0:ClearItems(arg1)
+function var1_0.Clear(arg0_8, arg1_8)
+	arg0_8:ClearPrefab(arg1_8)
+	arg0_8:ClearItems(arg1_8)
 end
 
-return var1
+return var1_0

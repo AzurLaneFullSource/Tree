@@ -1,16 +1,16 @@
-﻿local var0 = class("PublicGuildResPage", import("..subPages.main.GuildResPage"))
+﻿local var0_0 = class("PublicGuildResPage", import("..subPages.main.GuildResPage"))
 
-function var0.OnInit(arg0)
-	local var0 = "blue"
+function var0_0.OnInit(arg0_1)
+	local var0_1 = "blue"
 
-	arg0.contributionBg.sprite = GetSpriteFromAtlas("ui/GuildMainUI_atlas", "res_" .. var0)
-	arg0.captailBg.sprite = GetSpriteFromAtlas("ui/GuildMainUI_atlas", "res_" .. var0)
+	arg0_1.contributionBg.sprite = GetSpriteFromAtlas("ui/GuildMainUI_atlas", "res_" .. var0_1)
+	arg0_1.captailBg.sprite = GetSpriteFromAtlas("ui/GuildMainUI_atlas", "res_" .. var0_1)
 
-	setActive(arg0.captailBg.gameObject, false)
+	setActive(arg0_1.captailBg.gameObject, false)
 end
 
-function var0.Update(arg0, arg1)
-	arg0.resContributionTxt.text = arg1:getResource(8)
+function var0_0.Update(arg0_2, arg1_2)
+	arg0_2.resContributionTxt.text = arg1_2:getResource(8)
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_76 = {}
+var0_0.word_template_76 = {}
 
-local var1 = var0.word_template_76
+local var1_0 = var0_0.word_template_76
 
 function temp()
-	var1.傣 = {
+	var1_0.傣 = {
 		肌 = {
 			松 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.代 = {
+	var1_0.代 = {
 		办 = {
 			this = true,
 			产 = {
@@ -423,7 +423,7 @@ end
 temp()
 
 function temp()
-	var1.带 = {
+	var1_0.带 = {
 		蛋 = {
 			this = true
 		},
@@ -463,7 +463,7 @@ end
 temp()
 
 function temp()
-	var1.帶 = {
+	var1_0.帶 = {
 		根 = {
 			吊 = {
 				this = true
@@ -482,7 +482,7 @@ end
 temp()
 
 function temp()
-	var1.紿 = {
+	var1_0.紿 = {
 		this = {
 			this = true
 		}
@@ -492,7 +492,7 @@ end
 temp()
 
 function temp()
-	var1.戴 = {
+	var1_0.戴 = {
 		海 = {
 			静 = {
 				this = true
@@ -522,7 +522,7 @@ end
 temp()
 
 function temp()
-	var1.丹 = {
+	var1_0.丹 = {
 		铁 = {
 			神 = {
 				功 = {

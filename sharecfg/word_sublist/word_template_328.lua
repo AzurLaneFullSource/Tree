@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_328 = {}
+var0_0.word_template_328 = {}
 
-local var1 = var0.word_template_328
+local var1_0 = var0_0.word_template_328
 
 function temp()
-	var1.應 = {
+	var1_0.應 = {
 		召 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.佣 = {
+	var1_0.佣 = {
 		金 = {
 			开 = {
 				户 = {
@@ -40,7 +40,7 @@ end
 temp()
 
 function temp()
-	var1.庸 = {
+	var1_0.庸 = {
 		官 = {
 			年 = {
 				薪 = {
@@ -60,7 +60,7 @@ end
 temp()
 
 function temp()
-	var1.永 = {
+	var1_0.永 = {
 		久 = {
 			地 = {
 				址 = {
@@ -139,7 +139,7 @@ end
 temp()
 
 function temp()
-	var1.用 = {
+	var1_0.用 = {
 		城 = {
 			管 = {
 				灭 = {
@@ -332,7 +332,7 @@ end
 temp()
 
 function temp()
-	var1.优 = {
+	var1_0.优 = {
 		网 = {
 			this = true
 		},
@@ -386,7 +386,7 @@ end
 temp()
 
 function temp()
-	var1.憂 = {
+	var1_0.憂 = {
 		鬱 = {
 			的 = {
 				艾 = {

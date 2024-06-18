@@ -1,78 +1,78 @@
-﻿local var0 = class("LevelStageComboPanel", import("view.base.BaseSubPanel"))
+﻿local var0_0 = class("LevelStageComboPanel", import("view.base.BaseSubPanel"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "LevelStageComboPanel"
 end
 
-function var0.OnInit(arg0)
-	arg0.tf_combo = arg0:findTF("combo/text")
-	arg0.text_combo = arg0.tf_combo:GetComponent(typeof(Text))
-	arg0.tf_perfect = arg0:findTF("perfect/text")
-	arg0.text_perfect = arg0.tf_perfect:GetComponent(typeof(Text))
-	arg0.tf_good = arg0:findTF("good/text")
-	arg0.text_good = arg0.tf_good:GetComponent(typeof(Text))
-	arg0.tf_miss = arg0:findTF("miss/text")
-	arg0.text_miss = arg0.tf_miss:GetComponent(typeof(Text))
-	arg0.anims = {}
+function var0_0.OnInit(arg0_2)
+	arg0_2.tf_combo = arg0_2:findTF("combo/text")
+	arg0_2.text_combo = arg0_2.tf_combo:GetComponent(typeof(Text))
+	arg0_2.tf_perfect = arg0_2:findTF("perfect/text")
+	arg0_2.text_perfect = arg0_2.tf_perfect:GetComponent(typeof(Text))
+	arg0_2.tf_good = arg0_2:findTF("good/text")
+	arg0_2.text_good = arg0_2.tf_good:GetComponent(typeof(Text))
+	arg0_2.tf_miss = arg0_2:findTF("miss/text")
+	arg0_2.text_miss = arg0_2.tf_miss:GetComponent(typeof(Text))
+	arg0_2.anims = {}
 end
 
-function var0.UpdateView(arg0, arg1)
-	if not arg1 then
+function var0_0.UpdateView(arg0_3, arg1_3)
+	if not arg1_3 then
 		return
 	end
 
-	setText(arg0.text_combo, arg1.combo or 0)
+	setText(arg0_3.text_combo, arg1_3.combo or 0)
 
-	local var0 = arg1.scoreHistory
+	local var0_3 = arg1_3.scoreHistory
 
-	if var0 then
-		arg0.text_perfect.text = var0[4] or 0
-		arg0.text_good.text = (var0[2] or 0) + (var0[3] or 0)
-		arg0.text_miss.text = (var0[0] or 0) + (var0[1] or 0)
+	if var0_3 then
+		arg0_3.text_perfect.text = var0_3[4] or 0
+		arg0_3.text_good.text = (var0_3[2] or 0) + (var0_3[3] or 0)
+		arg0_3.text_miss.text = (var0_3[0] or 0) + (var0_3[1] or 0)
 	end
 end
 
-function var0.UpdateViewAnimated(arg0, arg1)
-	if not arg1 then
+function var0_0.UpdateViewAnimated(arg0_4, arg1_4)
+	if not arg1_4 then
 		return
 	end
 
-	arg0:SetTextAnim(arg0.tf_combo, arg0.text_combo, arg1.combo or 0, 1)
+	arg0_4:SetTextAnim(arg0_4.tf_combo, arg0_4.text_combo, arg1_4.combo or 0, 1)
 
-	local var0 = arg1.scoreHistory
+	local var0_4 = arg1_4.scoreHistory
 
-	if var0 then
-		arg0:SetTextAnim(arg0.tf_perfect, arg0.text_perfect, var0[4] or 0, 2)
-		arg0:SetTextAnim(arg0.tf_good, arg0.text_good, (var0[2] or 0) + (var0[3] or 0), 3)
-		arg0:SetTextAnim(arg0.tf_miss, arg0.text_miss, (var0[0] or 0) + (var0[1] or 0), 4)
+	if var0_4 then
+		arg0_4:SetTextAnim(arg0_4.tf_perfect, arg0_4.text_perfect, var0_4[4] or 0, 2)
+		arg0_4:SetTextAnim(arg0_4.tf_good, arg0_4.text_good, (var0_4[2] or 0) + (var0_4[3] or 0), 3)
+		arg0_4:SetTextAnim(arg0_4.tf_miss, arg0_4.text_miss, (var0_4[0] or 0) + (var0_4[1] or 0), 4)
 	end
 end
 
-function var0.SetTextAnim(arg0, arg1, arg2, arg3, arg4)
-	if tonumber(arg2.text) == arg3 then
+function var0_0.SetTextAnim(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5)
+	if tonumber(arg2_5.text) == arg3_5 then
 		return
 	end
 
-	local var0 = false
-	local var1 = arg1.localPosition
-	local var2 = var1 + Vector3(0, 30, 0)
+	local var0_5 = false
+	local var1_5 = arg1_5.localPosition
+	local var2_5 = var1_5 + Vector3(0, 30, 0)
 
-	arg0.anims[arg4] = LeanTween.value(go(arg1), 0, 1, 0.3):setLoopPingPong(1):setOnUpdate(System.Action_float(function(arg0)
-		arg1.localPosition = Vector3.Lerp(var1, var2, arg0)
+	arg0_5.anims[arg4_5] = LeanTween.value(go(arg1_5), 0, 1, 0.3):setLoopPingPong(1):setOnUpdate(System.Action_float(function(arg0_6)
+		arg1_5.localPosition = Vector3.Lerp(var1_5, var2_5, arg0_6)
 
-		if arg0 >= 1 and not var0 then
-			arg2.text = arg3
-			var0 = true
+		if arg0_6 >= 1 and not var0_5 then
+			arg2_5.text = arg3_5
+			var0_5 = true
 		end
 	end)).id
 end
 
-function var0.OnDestroy(arg0)
-	for iter0, iter1 in pairs(arg0.anims) do
-		LeanTween.cancel(iter1)
+function var0_0.OnDestroy(arg0_7)
+	for iter0_7, iter1_7 in pairs(arg0_7.anims) do
+		LeanTween.cancel(iter1_7)
 	end
 
-	table.clear(arg0.anims)
+	table.clear(arg0_7.anims)
 end
 
-return var0
+return var0_0

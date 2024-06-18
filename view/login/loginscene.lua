@@ -1,298 +1,298 @@
-﻿local var0 = class("LoginScene", import("..base.BaseUI"))
-local var1 = 1
+﻿local var0_0 = class("LoginScene", import("..base.BaseUI"))
+local var1_0 = 1
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "LoginUI2"
 end
 
-function var0.getBGM(arg0)
-	if arg0.bgmName and arg0.bgmName ~= "" then
-		return arg0.bgmName
+function var0_0.getBGM(arg0_2)
+	if arg0_2.bgmName and arg0_2.bgmName ~= "" then
+		return arg0_2.bgmName
 	end
 
-	return var0.super.getBGM(arg0)
+	return var0_0.super.getBGM(arg0_2)
 end
 
-function var0.preload(arg0, arg1)
-	arg0.iconSpries = {}
+function var0_0.preload(arg0_3, arg1_3)
+	arg0_3.iconSpries = {}
 
 	seriesAsync({
-		function(arg0)
-			buildTempAB("ui/LoginUI2_atlas", function(arg0)
-				table.insert(arg0.iconSpries, arg0:LoadAssetSync("statu_green", typeof(Sprite), true, false))
-				table.insert(arg0.iconSpries, arg0:LoadAssetSync("statu_gray", typeof(Sprite), true, false))
-				table.insert(arg0.iconSpries, arg0:LoadAssetSync("statu_red", typeof(Sprite), true, false))
-				table.insert(arg0.iconSpries, arg0:LoadAssetSync("statu_org", typeof(Sprite), true, false))
-				arg0()
+		function(arg0_4)
+			buildTempAB("ui/LoginUI2_atlas", function(arg0_5)
+				table.insert(arg0_3.iconSpries, arg0_5:LoadAssetSync("statu_green", typeof(Sprite), true, false))
+				table.insert(arg0_3.iconSpries, arg0_5:LoadAssetSync("statu_gray", typeof(Sprite), true, false))
+				table.insert(arg0_3.iconSpries, arg0_5:LoadAssetSync("statu_red", typeof(Sprite), true, false))
+				table.insert(arg0_3.iconSpries, arg0_5:LoadAssetSync("statu_org", typeof(Sprite), true, false))
+				arg0_4()
 			end)
 		end,
-		function(arg0)
-			arg0.isCriBg, arg0.bgPath, arg0.bgmName, arg0.isOpPlay, arg0.opVersion = getLoginConfig()
+		function(arg0_6)
+			arg0_3.isCriBg, arg0_3.bgPath, arg0_3.bgmName, arg0_3.isOpPlay, arg0_3.opVersion = getLoginConfig()
 
-			if arg0.isCriBg then
-				LoadAndInstantiateAsync("effect", arg0.bgPath, function(arg0)
-					arg0.criBgGo = arg0
+			if arg0_3.isCriBg then
+				LoadAndInstantiateAsync("effect", arg0_3.bgPath, function(arg0_7)
+					arg0_3.criBgGo = arg0_7
 
-					arg0()
+					arg0_6()
 				end)
 			else
-				LoadSpriteAsync("loadingbg/" .. arg0.bgPath, function(arg0)
-					arg0.staticBgSprite = arg0
+				LoadSpriteAsync("loadingbg/" .. arg0_3.bgPath, function(arg0_8)
+					arg0_3.staticBgSprite = arg0_8
 
-					arg0()
+					arg0_6()
 				end)
 			end
 		end
-	}, arg1)
+	}, arg1_3)
 end
 
-function var0.init(arg0)
-	local var0 = BundleWizard.Inst:GetGroupMgr("DEFAULT_RES")
+function var0_0.init(arg0_9)
+	local var0_9 = BundleWizard.Inst:GetGroupMgr("DEFAULT_RES")
 
-	arg0:setBg()
+	arg0_9:setBg()
 
-	arg0.version = arg0:findTF("version")
-	arg0.version:GetComponent("Text").text = "ver " .. var0.CurrentVersion:ToString()
-	arg0.bgLay = arg0:findTF("bg_lay")
-	arg0.accountBtn = arg0:findTF("bg_lay/buttons/account_button")
-	arg0.repairBtn = arg0:findTF("btns/repair_button")
-	arg0.privateBtn = arg0:findTF("btns/private_btn")
-	arg0.licenceBtn = arg0:findTF("btns/Licence_btn")
-	arg0.chInfo = arg0:findTF("background/info")
+	arg0_9.version = arg0_9:findTF("version")
+	arg0_9.version:GetComponent("Text").text = "ver " .. var0_9.CurrentVersion:ToString()
+	arg0_9.bgLay = arg0_9:findTF("bg_lay")
+	arg0_9.accountBtn = arg0_9:findTF("bg_lay/buttons/account_button")
+	arg0_9.repairBtn = arg0_9:findTF("btns/repair_button")
+	arg0_9.privateBtn = arg0_9:findTF("btns/private_btn")
+	arg0_9.licenceBtn = arg0_9:findTF("btns/Licence_btn")
+	arg0_9.chInfo = arg0_9:findTF("background/info")
 
-	setActive(arg0.chInfo, PLATFORM_CODE == PLATFORM_CH)
+	setActive(arg0_9.chInfo, PLATFORM_CODE == PLATFORM_CH)
 
-	arg0.pressToLogin = GetOrAddComponent(arg0:findTF("background/press_to_login"), "CanvasGroup")
+	arg0_9.pressToLogin = GetOrAddComponent(arg0_9:findTF("background/press_to_login"), "CanvasGroup")
 
-	LeanTween.alphaCanvas(arg0.pressToLogin, 0.25, var1):setFrom(1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
+	LeanTween.alphaCanvas(arg0_9.pressToLogin, 0.25, var1_0):setFrom(1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
 
-	arg0.currentServer = arg0:findTF("current_server")
-	arg0.serviceBtn = arg0:findTF("bg_lay/buttons/service_button")
-	arg0.filingBtn = arg0:findTF("filingBtn")
+	arg0_9.currentServer = arg0_9:findTF("current_server")
+	arg0_9.serviceBtn = arg0_9:findTF("bg_lay/buttons/service_button")
+	arg0_9.filingBtn = arg0_9:findTF("filingBtn")
 
-	setActive(arg0.filingBtn, PLATFORM_CODE == PLATFORM_CH)
+	setActive(arg0_9.filingBtn, PLATFORM_CODE == PLATFORM_CH)
 
-	arg0.serversPanel = arg0:findTF("servers")
-	arg0.servers = arg0:findTF("panel/servers/content/server_list", arg0.serversPanel)
-	arg0.serverTpl = arg0:getTpl("server_tpl")
-	arg0.recentTF = arg0:findTF("panel/servers/content/advice_panel/recent", arg0.serversPanel)
-	arg0.adviceTF = arg0:findTF("panel/servers/content/advice_panel/advice", arg0.serversPanel)
-	arg0.userAgreenTF = arg0:findTF("UserAgreement")
-	arg0.userAgreenMainTF = arg0:findTF("UserAgreement/window")
-	arg0.closeUserAgreenTF = arg0.userAgreenTF:Find("window/close_btn")
-	arg0.userAgreenConfirmTF = arg0:findTF("UserAgreement/window/accept_btn")
-	arg0.userDisagreeConfirmTF = arg0:findTF("UserAgreement/window/disagree_btn")
-	arg0.switchGatewayBtn = SwitchGatewayBtn.New(arg0:findTF("servers/panel/switch_platform"))
+	arg0_9.serversPanel = arg0_9:findTF("servers")
+	arg0_9.servers = arg0_9:findTF("panel/servers/content/server_list", arg0_9.serversPanel)
+	arg0_9.serverTpl = arg0_9:getTpl("server_tpl")
+	arg0_9.recentTF = arg0_9:findTF("panel/servers/content/advice_panel/recent", arg0_9.serversPanel)
+	arg0_9.adviceTF = arg0_9:findTF("panel/servers/content/advice_panel/advice", arg0_9.serversPanel)
+	arg0_9.userAgreenTF = arg0_9:findTF("UserAgreement")
+	arg0_9.userAgreenMainTF = arg0_9:findTF("UserAgreement/window")
+	arg0_9.closeUserAgreenTF = arg0_9.userAgreenTF:Find("window/close_btn")
+	arg0_9.userAgreenConfirmTF = arg0_9:findTF("UserAgreement/window/accept_btn")
+	arg0_9.userDisagreeConfirmTF = arg0_9:findTF("UserAgreement/window/disagree_btn")
+	arg0_9.switchGatewayBtn = SwitchGatewayBtn.New(arg0_9:findTF("servers/panel/switch_platform"))
 
-	setActive(arg0.userAgreenTF, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0.userAgreenTF, arg0._tf)
+	setActive(arg0_9.userAgreenTF, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_9.userAgreenTF, arg0_9._tf)
 
-	arg0.opBtn = arg0:findTF("bg_lay/buttons/opBtn")
+	arg0_9.opBtn = arg0_9:findTF("bg_lay/buttons/opBtn")
 
-	if arg0.opBtn then
-		setActive(arg0.opBtn, arg0.isOpPlay)
+	if arg0_9.opBtn then
+		setActive(arg0_9.opBtn, arg0_9.isOpPlay)
 	end
 
-	arg0.airiUidTxt = arg0:findTF("airi_uid")
-	arg0.shareData = {}
-	arg0.searchAccount = arg0:findTF("panel/searchAccount", arg0.serversPanel)
+	arg0_9.airiUidTxt = arg0_9:findTF("airi_uid")
+	arg0_9.shareData = {}
+	arg0_9.searchAccount = arg0_9:findTF("panel/searchAccount", arg0_9.serversPanel)
 
-	setText(findTF(arg0.searchAccount, "text"), i18n("query_role_button"))
+	setText(findTF(arg0_9.searchAccount, "text"), i18n("query_role_button"))
 
-	arg0.serverPanelCanvas = GetComponent(arg0:findTF("servers/panel/servers"), typeof(CanvasGroup))
+	arg0_9.serverPanelCanvas = GetComponent(arg0_9:findTF("servers/panel/servers"), typeof(CanvasGroup))
 
-	onButton(arg0, arg0.searchAccount, function()
-		if not arg0.serversDic or arg0.searching then
+	onButton(arg0_9, arg0_9.searchAccount, function()
+		if not arg0_9.serversDic or arg0_9.searching then
 			return
 		end
 
-		arg0:searchAountState(true)
+		arg0_9:searchAountState(true)
 
-		arg0.serverPanelCanvas.interactable = false
+		arg0_9.serverPanelCanvas.interactable = false
 
-		arg0.event:emit(LoginMediator.ON_SEARCH_ACCOUNT, {
+		arg0_9.event:emit(LoginMediator.ON_SEARCH_ACCOUNT, {
 			callback = function()
-				arg0.serverPanelCanvas.interactable = true
+				arg0_9.serverPanelCanvas.interactable = true
 
-				arg0:searchAountState(false)
+				arg0_9:searchAountState(false)
 			end,
-			update = function(arg0)
-				arg0:setServerAccountData(arg0)
+			update = function(arg0_12)
+				arg0_9:setServerAccountData(arg0_12)
 			end
 		})
 	end, SFX_CONFIRM)
 
-	arg0.subViewList = {}
-	arg0.loginPanelView = LoginPanelView.New(arg0._tf, arg0.event, arg0.contextData)
+	arg0_9.subViewList = {}
+	arg0_9.loginPanelView = LoginPanelView.New(arg0_9._tf, arg0_9.event, arg0_9.contextData)
 
-	arg0.loginPanelView:SetShareData(arg0.shareData)
+	arg0_9.loginPanelView:SetShareData(arg0_9.shareData)
 
-	arg0.registerPanelView = RegisterPanelView.New(arg0._tf, arg0.event, arg0.contextData)
+	arg0_9.registerPanelView = RegisterPanelView.New(arg0_9._tf, arg0_9.event, arg0_9.contextData)
 
-	arg0.loginPanelView:SetShareData(arg0.shareData)
+	arg0_9.loginPanelView:SetShareData(arg0_9.shareData)
 
-	arg0.tencentLoginPanelView = TencentLoginPanelView.New(arg0._tf, arg0.event, arg0.contextData)
+	arg0_9.tencentLoginPanelView = TencentLoginPanelView.New(arg0_9._tf, arg0_9.event, arg0_9.contextData)
 
-	arg0.loginPanelView:SetShareData(arg0.shareData)
+	arg0_9.loginPanelView:SetShareData(arg0_9.shareData)
 
-	arg0.airiLoginPanelView = AiriLoginPanelView.New(arg0._tf, arg0.event, arg0.contextData)
+	arg0_9.airiLoginPanelView = AiriLoginPanelView.New(arg0_9._tf, arg0_9.event, arg0_9.contextData)
 
-	arg0.loginPanelView:SetShareData(arg0.shareData)
+	arg0_9.loginPanelView:SetShareData(arg0_9.shareData)
 
-	arg0.transcodeAlertView = TranscodeAlertView.New(arg0._tf, arg0.event, arg0.contextData)
+	arg0_9.transcodeAlertView = TranscodeAlertView.New(arg0_9._tf, arg0_9.event, arg0_9.contextData)
 
-	arg0.loginPanelView:SetShareData(arg0.shareData)
+	arg0_9.loginPanelView:SetShareData(arg0_9.shareData)
 
-	arg0.yostarAlertView = YostarAlertView.New(arg0._tf, arg0.event, arg0.contextData)
+	arg0_9.yostarAlertView = YostarAlertView.New(arg0_9._tf, arg0_9.event, arg0_9.contextData)
 
-	arg0.loginPanelView:SetShareData(arg0.shareData)
+	arg0_9.loginPanelView:SetShareData(arg0_9.shareData)
 
-	arg0.subViewList[LoginSceneConst.DEFINE.LOGIN_PANEL_VIEW] = arg0.loginPanelView
-	arg0.subViewList[LoginSceneConst.DEFINE.REGISTER_PANEL_VIEW] = arg0.registerPanelView
-	arg0.subViewList[LoginSceneConst.DEFINE.TENCENT_LOGIN_VIEW] = arg0.tencentLoginPanelView
-	arg0.subViewList[LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW] = arg0.airiLoginPanelView
-	arg0.subViewList[LoginSceneConst.DEFINE.TRANSCODE_ALERT_VIEW] = arg0.transcodeAlertView
-	arg0.subViewList[LoginSceneConst.DEFINE.YOSTAR_ALERT_VIEW] = arg0.yostarAlertView
-	arg0.subViewList[LoginSceneConst.DEFINE.PRESS_TO_LOGIN] = arg0.pressToLogin
-	arg0.subViewList[LoginSceneConst.DEFINE.BG_LAY] = arg0.bgLay
-	arg0.subViewList[LoginSceneConst.DEFINE.SERVER_PANEL] = arg0.serversPanel
-	arg0.subViewList[LoginSceneConst.DEFINE.ACCOUNT_BTN] = arg0.accountBtn
-	arg0.subViewList[LoginSceneConst.DEFINE.CURRENT_SERVER] = arg0.currentServer
-	arg0.age = arg0:findTF("background/age")
+	arg0_9.subViewList[LoginSceneConst.DEFINE.LOGIN_PANEL_VIEW] = arg0_9.loginPanelView
+	arg0_9.subViewList[LoginSceneConst.DEFINE.REGISTER_PANEL_VIEW] = arg0_9.registerPanelView
+	arg0_9.subViewList[LoginSceneConst.DEFINE.TENCENT_LOGIN_VIEW] = arg0_9.tencentLoginPanelView
+	arg0_9.subViewList[LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW] = arg0_9.airiLoginPanelView
+	arg0_9.subViewList[LoginSceneConst.DEFINE.TRANSCODE_ALERT_VIEW] = arg0_9.transcodeAlertView
+	arg0_9.subViewList[LoginSceneConst.DEFINE.YOSTAR_ALERT_VIEW] = arg0_9.yostarAlertView
+	arg0_9.subViewList[LoginSceneConst.DEFINE.PRESS_TO_LOGIN] = arg0_9.pressToLogin
+	arg0_9.subViewList[LoginSceneConst.DEFINE.BG_LAY] = arg0_9.bgLay
+	arg0_9.subViewList[LoginSceneConst.DEFINE.SERVER_PANEL] = arg0_9.serversPanel
+	arg0_9.subViewList[LoginSceneConst.DEFINE.ACCOUNT_BTN] = arg0_9.accountBtn
+	arg0_9.subViewList[LoginSceneConst.DEFINE.CURRENT_SERVER] = arg0_9.currentServer
+	arg0_9.age = arg0_9:findTF("background/age")
 
 	if PLATFORM_CODE == PLATFORM_CH then
-		onButton(arg0, arg0.age, function()
+		onButton(arg0_9, arg0_9.age, function()
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
 				helps = pg.gametip.cadpa_help.tip,
 				title = pg.MsgboxMgr.TITLE_CADPA
 			})
 		end)
-		SetActive(arg0.age, true)
+		SetActive(arg0_9.age, true)
 	end
 
-	SetActive(arg0.age, PLATFORM_CODE == PLATFORM_CH)
-	setText(findTF(arg0.currentServer, "server_name"), "")
-	arg0:switchToServer()
-	arg0:initEvents()
+	SetActive(arg0_9.age, PLATFORM_CODE == PLATFORM_CH)
+	setText(findTF(arg0_9.currentServer, "server_name"), "")
+	arg0_9:switchToServer()
+	arg0_9:initEvents()
 end
 
-function var0.setServerAccountData(arg0, arg1)
-	local var0 = arg1.id
-	local var1
+function var0_0.setServerAccountData(arg0_14, arg1_14)
+	local var0_14 = arg1_14.id
+	local var1_14
 
-	for iter0 = 1, #arg0.serversDic do
-		if arg0.serversDic[iter0].id == var0 then
-			var1 = arg0.serversDic[iter0]
+	for iter0_14 = 1, #arg0_14.serversDic do
+		if arg0_14.serversDic[iter0_14].id == var0_14 then
+			var1_14 = arg0_14.serversDic[iter0_14]
 
 			break
 		end
 	end
 
-	if not var1 then
+	if not var1_14 then
 		return
 	end
 
-	local var2 = var1.tf
+	local var2_14 = var1_14.tf
 
-	if arg1 and arg1.level then
-		setActive(findTF(var2, "mark/charactor"), true)
-		setActive(findTF(var2, "mark/level"), true)
-		setActive(findTF(var2, "mark/searching"), false)
-		setText(findTF(var2, "mark/level"), "lv." .. arg1.level)
-		setText(findTF(var2, "mark/level"), setColorStr("lv." .. arg1.level, "#ffffffff"))
+	if arg1_14 and arg1_14.level then
+		setActive(findTF(var2_14, "mark/charactor"), true)
+		setActive(findTF(var2_14, "mark/level"), true)
+		setActive(findTF(var2_14, "mark/searching"), false)
+		setText(findTF(var2_14, "mark/level"), "lv." .. arg1_14.level)
+		setText(findTF(var2_14, "mark/level"), setColorStr("lv." .. arg1_14.level, "#ffffffff"))
 
-		var1.level = arg1.level
+		var1_14.level = arg1_14.level
 	else
-		setActive(findTF(var2, "mark/level"), true)
-		setActive(findTF(var2, "mark/searching"), false)
-		setActive(findTF(var2, "mark/charactor"), false)
+		setActive(findTF(var2_14, "mark/level"), true)
+		setActive(findTF(var2_14, "mark/searching"), false)
+		setActive(findTF(var2_14, "mark/charactor"), false)
 
-		var1.level = 0
+		var1_14.level = 0
 
-		setText(findTF(var2, "mark/level"), setColorStr(i18n("query_role_none"), "#d0d0d0FF"))
+		setText(findTF(var2_14, "mark/level"), setColorStr(i18n("query_role_none"), "#d0d0d0FF"))
 	end
 end
 
-function var0.searchAountState(arg0, arg1)
-	arg0.searching = arg1
+function var0_0.searchAountState(arg0_15, arg1_15)
+	arg0_15.searching = arg1_15
 
-	for iter0 = 1, #arg0.serversDic do
-		local var0 = arg0.serversDic[iter0].tf
-		local var1 = arg0.serversDic[iter0].level
+	for iter0_15 = 1, #arg0_15.serversDic do
+		local var0_15 = arg0_15.serversDic[iter0_15].tf
+		local var1_15 = arg0_15.serversDic[iter0_15].level
 
-		setActive(findTF(var0, "mark"), true)
+		setActive(findTF(var0_15, "mark"), true)
 
-		if arg1 then
-			setActive(findTF(var0, "mark/charactor"), false)
-			setActive(findTF(var0, "mark/level"), true)
-			setText(findTF(var0, "mark/level"), setColorStr(i18n("query_role"), "#d0d0d0FF"))
-			setActive(findTF(var0, "mark/searching"), true)
+		if arg1_15 then
+			setActive(findTF(var0_15, "mark/charactor"), false)
+			setActive(findTF(var0_15, "mark/level"), true)
+			setText(findTF(var0_15, "mark/level"), setColorStr(i18n("query_role"), "#d0d0d0FF"))
+			setActive(findTF(var0_15, "mark/searching"), true)
 		else
-			if not var1 then
-				setText(findTF(var0, "mark/level"), setColorStr(i18n("query_role_fail"), "#d0d0d0FF"))
+			if not var1_15 then
+				setText(findTF(var0_15, "mark/level"), setColorStr(i18n("query_role_fail"), "#d0d0d0FF"))
 			end
 
-			setActive(findTF(var0, "mark/searching"), false)
+			setActive(findTF(var0_15, "mark/searching"), false)
 		end
 	end
 end
 
-function var0.initEvents(arg0)
-	arg0:bind(LoginSceneConst.SWITCH_SUB_VIEW, function(arg0, arg1)
-		arg0:switchSubView(arg1)
+function var0_0.initEvents(arg0_16)
+	arg0_16:bind(LoginSceneConst.SWITCH_SUB_VIEW, function(arg0_17, arg1_17)
+		arg0_16:switchSubView(arg1_17)
 	end)
-	arg0:bind(LoginSceneConst.CLEAR_REGISTER_VIEW, function(arg0)
-		arg0.registerPanelView:ActionInvoke("Clear")
+	arg0_16:bind(LoginSceneConst.CLEAR_REGISTER_VIEW, function(arg0_18)
+		arg0_16.registerPanelView:ActionInvoke("Clear")
 	end)
 end
 
-function var0.switchSubView(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0.subViewList) do
-		if isa(iter1, BaseSubView) then
-			if table.contains(arg1, iter0) then
-				iter1:CallbackInvoke(function()
-					arg0.repairBtn:SetAsLastSibling()
+function var0_0.switchSubView(arg0_19, arg1_19)
+	for iter0_19, iter1_19 in ipairs(arg0_19.subViewList) do
+		if isa(iter1_19, BaseSubView) then
+			if table.contains(arg1_19, iter0_19) then
+				iter1_19:CallbackInvoke(function()
+					arg0_19.repairBtn:SetAsLastSibling()
 				end)
-				iter1:Load()
-				iter1:ActionInvoke("Show")
+				iter1_19:Load()
+				iter1_19:ActionInvoke("Show")
 			else
-				iter1:ActionInvoke("Hide")
+				iter1_19:ActionInvoke("Hide")
 			end
 		else
-			setActive(iter1, table.contains(arg1, iter0))
+			setActive(iter1_19, table.contains(arg1_19, iter0_19))
 		end
 	end
 
-	if not table.contains(arg1, LoginSceneConst.DEFINE.SERVER_PANEL) then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0.serversPanel, arg0._tf)
+	if not table.contains(arg1_19, LoginSceneConst.DEFINE.SERVER_PANEL) then
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_19.serversPanel, arg0_19._tf)
 	end
 
-	if table.contains(arg1, LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW) then
-		setActive(arg0.airiUidTxt, false)
+	if table.contains(arg1_19, LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW) then
+		setActive(arg0_19.airiUidTxt, false)
 	end
 
-	arg0.userAgreenTF:SetAsLastSibling()
-	arg0.repairBtn:SetAsLastSibling()
+	arg0_19.userAgreenTF:SetAsLastSibling()
+	arg0_19.repairBtn:SetAsLastSibling()
 end
 
-function var0.onBackPressed(arg0)
-	if arg0.searching then
+function var0_0.onBackPressed(arg0_21)
+	if arg0_21.searching then
 		return
 	end
 
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	if isActive(arg0.serversPanel) then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0.serversPanel, arg0._tf)
-		setActive(arg0.serversPanel, false)
+	if isActive(arg0_21.serversPanel) then
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_21.serversPanel, arg0_21._tf)
+		setActive(arg0_21.serversPanel, false)
 
 		return
 	end
 
-	if isActive(arg0.userAgreenTF) then
-		setActive(arg0.userAgreenTF, false)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0.userAgreenTF, arg0._tf)
+	if isActive(arg0_21.userAgreenTF) then
+		setActive(arg0_21.userAgreenTF, false)
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_21.userAgreenTF, arg0_21._tf)
 
 		return
 	end
@@ -300,205 +300,205 @@ function var0.onBackPressed(arg0)
 	pg.SdkMgr.GetInstance():OnAndoridBackPress()
 end
 
-function var0.setUserData(arg0, arg1)
-	setActive(arg0.airiUidTxt, true)
-	setText(arg0.airiUidTxt, "uid: " .. arg1.arg2)
+function var0_0.setUserData(arg0_22, arg1_22)
+	setActive(arg0_22.airiUidTxt, true)
+	setText(arg0_22.airiUidTxt, "uid: " .. arg1_22.arg2)
 end
 
-function var0.showUserAgreement(arg0, arg1)
-	local var0
+function var0_0.showUserAgreement(arg0_23, arg1_23)
+	local var0_23
 
 	if PLATFORM_CODE == PLATFORM_CH then
-		arg0.userAgreenConfirmTF:GetComponent(typeof(Image)).color = Color.New(0.784313725490196, 0.784313725490196, 0.784313725490196, 0.501960784313725)
+		arg0_23.userAgreenConfirmTF:GetComponent(typeof(Image)).color = Color.New(0.784313725490196, 0.784313725490196, 0.784313725490196, 0.501960784313725)
 	else
-		var0 = true
+		var0_23 = true
 	end
 
-	local var1 = require("ShareCfg.UserAgreement")
+	local var1_23 = require("ShareCfg.UserAgreement")
 
-	setActive(arg0.userAgreenTF, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0.userAgreenTF, false, {
+	setActive(arg0_23.userAgreenTF, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_23.userAgreenTF, false, {
 		weight = LayerWeightConst.THIRD_LAYER
 	})
-	setText(arg0.userAgreenTF:Find("window/container/scrollrect/content/Text"), var1.content)
-	onButton(arg0, arg0.userAgreenConfirmTF, function()
-		if var0 then
-			setActive(arg0.userAgreenTF, false)
-			pg.UIMgr.GetInstance():UnblurPanel(arg0.userAgreenTF, arg0._tf)
+	setText(arg0_23.userAgreenTF:Find("window/container/scrollrect/content/Text"), var1_23.content)
+	onButton(arg0_23, arg0_23.userAgreenConfirmTF, function()
+		if var0_23 then
+			setActive(arg0_23.userAgreenTF, false)
+			pg.UIMgr.GetInstance():UnblurPanel(arg0_23.userAgreenTF, arg0_23._tf)
 
-			if arg1 then
-				arg1()
+			if arg1_23 then
+				arg1_23()
 			end
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("read_the_user_agreement"))
 		end
 	end)
-	onScroll(arg0, arg0.userAgreenTF:Find("window/container/scrollrect"), function(arg0)
-		if arg0.y <= 0.01 and not var0 then
-			var0 = true
+	onScroll(arg0_23, arg0_23.userAgreenTF:Find("window/container/scrollrect"), function(arg0_25)
+		if arg0_25.y <= 0.01 and not var0_23 then
+			var0_23 = true
 
 			if PLATFORM_CODE == PLATFORM_CH then
-				arg0.userAgreenConfirmTF:GetComponent(typeof(Image)).color = Color.New(1, 1, 1, 1)
+				arg0_23.userAgreenConfirmTF:GetComponent(typeof(Image)).color = Color.New(1, 1, 1, 1)
 			end
 		end
 	end)
 end
 
-function var0.setBg(arg0)
-	arg0.bgImg = arg0:findTF("background/bg"):GetComponent(typeof(Image))
+function var0_0.setBg(arg0_26)
+	arg0_26.bgImg = arg0_26:findTF("background/bg"):GetComponent(typeof(Image))
 
-	if not arg0.isCriBg then
-		setImageSprite(arg0.bgImg, arg0.staticBgSprite)
+	if not arg0_26.isCriBg then
+		setImageSprite(arg0_26.bgImg, arg0_26.staticBgSprite)
 	else
-		arg0.bgImg.enabled = false
+		arg0_26.bgImg.enabled = false
 
-		local var0 = arg0.criBgGo.transform
+		local var0_26 = arg0_26.criBgGo.transform
 
-		var0:SetParent(arg0.bgImg.transform, false)
-		var0:SetAsFirstSibling()
+		var0_26:SetParent(arg0_26.bgImg.transform, false)
+		var0_26:SetAsFirstSibling()
 	end
 end
 
-function var0.setLastLogin(arg0, arg1)
-	arg0.shareData.lastLoginUser = arg1
+function var0_0.setLastLogin(arg0_27, arg1_27)
+	arg0_27.shareData.lastLoginUser = arg1_27
 end
 
-function var0.setAutoLogin(arg0)
-	arg0.shareData.autoLoginEnabled = true
+function var0_0.setAutoLogin(arg0_28)
+	arg0_28.shareData.autoLoginEnabled = true
 end
 
-function var0.setLastLoginServer(arg0, arg1)
-	if not arg1 then
-		setText(findTF(arg0.currentServer, "server_name"), "")
+function var0_0.setLastLoginServer(arg0_29, arg1_29)
+	if not arg1_29 then
+		setText(findTF(arg0_29.currentServer, "server_name"), "")
 
-		arg0.shareData.lastLoginServer = nil
+		arg0_29.shareData.lastLoginServer = nil
 
-		arg0:updateAdviceServer()
+		arg0_29:updateAdviceServer()
 
 		return
 	end
 
-	setText(findTF(arg0.currentServer, "server_name"), arg1.name)
+	setText(findTF(arg0_29.currentServer, "server_name"), arg1_29.name)
 
-	arg0.shareData.lastLoginServer = arg1
+	arg0_29.shareData.lastLoginServer = arg1_29
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0.closeUserAgreenTF, function()
+function var0_0.didEnter(arg0_30)
+	onButton(arg0_30, arg0_30.closeUserAgreenTF, function()
 		if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
-			setActive(arg0.userAgreenTF, false)
-			pg.UIMgr.GetInstance():UnblurPanel(arg0.userAgreenTF, arg0._tf)
+			setActive(arg0_30.userAgreenTF, false)
+			pg.UIMgr.GetInstance():UnblurPanel(arg0_30.userAgreenTF, arg0_30._tf)
 		else
-			setActive(arg0.userAgreenMainTF, false)
+			setActive(arg0_30.userAgreenMainTF, false)
 			onNextTick(function()
-				setActive(arg0.userAgreenMainTF, true)
+				setActive(arg0_30.userAgreenMainTF, true)
 			end)
 		end
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.privateBtn, function()
+	onButton(arg0_30, arg0_30.privateBtn, function()
 		pg.SdkMgr.GetInstance():ShowPrivate()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.licenceBtn, function()
+	onButton(arg0_30, arg0_30.licenceBtn, function()
 		pg.SdkMgr.GetInstance():ShowLicence()
 	end, SFX_PANEL)
-	setActive(arg0.privateBtn, PLATFORM_CODE == PLATFORM_CH)
-	setActive(arg0.licenceBtn, PLATFORM_CODE == PLATFORM_CH)
+	setActive(arg0_30.privateBtn, PLATFORM_CODE == PLATFORM_CH)
+	setActive(arg0_30.licenceBtn, PLATFORM_CODE == PLATFORM_CH)
 
 	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
-		onButton(arg0, arg0.userDisagreeConfirmTF, function()
-			setActive(arg0.userAgreenTF, false)
-			pg.UIMgr.GetInstance():UnblurPanel(arg0.userAgreenTF, arg0._tf)
+		onButton(arg0_30, arg0_30.userDisagreeConfirmTF, function()
+			setActive(arg0_30.userAgreenTF, false)
+			pg.UIMgr.GetInstance():UnblurPanel(arg0_30.userAgreenTF, arg0_30._tf)
 		end)
 	end
 
-	setActive(arg0.serviceBtn, PLATFORM_CODE == PLATFORM_KR)
-	onButton(arg0, arg0.serviceBtn, function()
+	setActive(arg0_30.serviceBtn, PLATFORM_CODE == PLATFORM_KR)
+	onButton(arg0_30, arg0_30.serviceBtn, function()
 		if PLATFORM_CODE == PLATFORM_KR then
 			pg.SdkMgr.GetInstance():UserCenter()
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("word_systemClose"))
 		end
 	end, SFX_MAIN)
-	onButton(arg0, arg0.accountBtn, function()
-		local var0 = pg.SdkMgr.GetInstance():GetLoginType() ~= LoginType.PLATFORM_INNER
+	onButton(arg0_30, arg0_30.accountBtn, function()
+		local var0_37 = pg.SdkMgr.GetInstance():GetLoginType() ~= LoginType.PLATFORM_INNER
 
-		if not var0 then
-			arg0:switchToLogin()
-		elseif var0 and PLATFORM_KR == PLATFORM_CODE then
+		if not var0_37 then
+			arg0_30:switchToLogin()
+		elseif var0_37 and PLATFORM_KR == PLATFORM_CODE then
 			pg.SdkMgr.GetInstance():SwitchAccount()
 		end
 	end, SFX_MAIN)
-	onButton(arg0, arg0.repairBtn, function()
+	onButton(arg0_30, arg0_30.repairBtn, function()
 		pg.RepairResMgr.GetInstance():Repair()
 	end)
 
-	local function var0()
-		local var0 = pg.SdkMgr.GetInstance():GetLoginType()
+	local function var0_30()
+		local var0_39 = pg.SdkMgr.GetInstance():GetLoginType()
 
-		if var0 == LoginType.PLATFORM then
+		if var0_39 == LoginType.PLATFORM then
 			pg.SdkMgr.GetInstance():LoginSdk()
-		elseif var0 == LoginType.PLATFORM_TENCENT then
-			arg0:switchToTencentLogin()
-		elseif var0 == LoginType.PLATFORM_INNER then
-			arg0:switchToLogin()
+		elseif var0_39 == LoginType.PLATFORM_TENCENT then
+			arg0_30:switchToTencentLogin()
+		elseif var0_39 == LoginType.PLATFORM_INNER then
+			arg0_30:switchToLogin()
 		end
 	end
 
-	onButton(arg0, arg0.filingBtn, function()
+	onButton(arg0_30, arg0_30.filingBtn, function()
 		Application.OpenURL("http://sq.ccm.gov.cn:80/ccnt/sczr/service/business/emark/gameNetTag/4028c08b58bd467b0158bd8bd80d062a")
 	end, SFX_PANEL)
-	onButton(arg0, arg0.currentServer, function()
-		if table.getCount(arg0.serverList or {}) == 0 then
-			var0()
+	onButton(arg0_30, arg0_30.currentServer, function()
+		if table.getCount(arg0_30.serverList or {}) == 0 then
+			var0_30()
 		else
-			pg.UIMgr.GetInstance():BlurPanel(arg0.serversPanel)
-			setActive(arg0.serversPanel, true)
+			pg.UIMgr.GetInstance():BlurPanel(arg0_30.serversPanel)
+			setActive(arg0_30.serversPanel, true)
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0.serversPanel, function()
-		pg.UIMgr.GetInstance():UnblurPanel(arg0.serversPanel, arg0._tf)
-		setActive(arg0.serversPanel, false)
+	onButton(arg0_30, arg0_30.serversPanel, function()
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_30.serversPanel, arg0_30._tf)
+		setActive(arg0_30.serversPanel, false)
 	end, SFX_CANCEL)
-	onButton(arg0, arg0:findTF("background"), function()
+	onButton(arg0_30, arg0_30:findTF("background"), function()
 		if pg.CpkPlayMgr.GetInstance():OnPlaying() then
 			return
 		end
 
-		if not arg0.initFinished then
+		if not arg0_30.initFinished then
 			return
 		end
 
-		if arg0.isNeedResCheck then
-			arg0.event:emit(LoginMediator.CHECK_RES)
+		if arg0_30.isNeedResCheck then
+			arg0_30.event:emit(LoginMediator.CHECK_RES)
 
 			return
 		end
 
 		if getProxy(SettingsProxy):CheckNeedUserAgreement() then
-			arg0.event:emit(LoginMediator.ON_LOGIN_PROCESS)
+			arg0_30.event:emit(LoginMediator.ON_LOGIN_PROCESS)
 
 			return
 		end
 
-		if go(arg0.pressToLogin).activeSelf then
-			if table.getCount(arg0.serverList or {}) == 0 then
-				var0()
+		if go(arg0_30.pressToLogin).activeSelf then
+			if table.getCount(arg0_30.serverList or {}) == 0 then
+				var0_30()
 
 				return
 			end
 
-			if not arg0.shareData.lastLoginServer then
+			if not arg0_30.shareData.lastLoginServer then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("login_loginScene_choiseServer"))
 
 				return
 			end
 
-			if arg0.shareData.lastLoginServer.status == Server.STATUS.VINDICATE or arg0.shareData.lastLoginServer.status == Server.STATUS.FULL then
-				ServerStateChecker.New():Execute(function(arg0)
-					if arg0 then
+			if arg0_30.shareData.lastLoginServer.status == Server.STATUS.VINDICATE or arg0_30.shareData.lastLoginServer.status == Server.STATUS.FULL then
+				ServerStateChecker.New():Execute(function(arg0_44)
+					if arg0_44 then
 						pg.TipsMgr.GetInstance():ShowTips(i18n("login_loginScene_server_disabled"))
 					else
-						arg0.event:emit(LoginMediator.ON_SERVER, arg0.shareData.lastLoginServer)
+						arg0_30.event:emit(LoginMediator.ON_SERVER, arg0_30.shareData.lastLoginServer)
 						pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CONFIRM)
 					end
 				end)
@@ -506,98 +506,98 @@ function var0.didEnter(arg0)
 				return
 			end
 
-			arg0.event:emit(LoginMediator.ON_SERVER, arg0.shareData.lastLoginServer)
+			arg0_30.event:emit(LoginMediator.ON_SERVER, arg0_30.shareData.lastLoginServer)
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CONFIRM)
 		end
 	end)
 
-	if arg0.isOpPlay then
-		onButton(arg0, arg0.opBtn, function()
-			if arg0.initFinished and not pg.CpkPlayMgr.GetInstance():OnPlaying() then
-				arg0:playOpening()
+	if arg0_30.isOpPlay then
+		onButton(arg0_30, arg0_30.opBtn, function()
+			if arg0_30.initFinished and not pg.CpkPlayMgr.GetInstance():OnPlaying() then
+				arg0_30:playOpening()
 			end
 		end)
 
-		if PLATFORM_CODE ~= PLATFORM_JP and PlayerPrefs.GetString("op_ver", "") ~= arg0.opVersion then
-			arg0:playOpening(function()
-				PlayerPrefs.SetString("op_ver", arg0.opVersion)
-				arg0:playExtraVoice()
+		if PLATFORM_CODE ~= PLATFORM_JP and PlayerPrefs.GetString("op_ver", "") ~= arg0_30.opVersion then
+			arg0_30:playOpening(function()
+				PlayerPrefs.SetString("op_ver", arg0_30.opVersion)
+				arg0_30:playExtraVoice()
 
-				arg0.initFinished = true
+				arg0_30.initFinished = true
 
-				arg0.event:emit(LoginMediator.ON_LOGIN_PROCESS)
+				arg0_30.event:emit(LoginMediator.ON_LOGIN_PROCESS)
 			end)
 
 			return
 		end
 
-		arg0.event:emit(LoginMediator.ON_LOGIN_PROCESS)
+		arg0_30.event:emit(LoginMediator.ON_LOGIN_PROCESS)
 	else
-		arg0.event:emit(LoginMediator.ON_LOGIN_PROCESS)
+		arg0_30.event:emit(LoginMediator.ON_LOGIN_PROCESS)
 	end
 
-	arg0:playExtraVoice()
+	arg0_30:playExtraVoice()
 
-	arg0.initFinished = true
+	arg0_30.initFinished = true
 
-	arg0:InitPrivateAndLicence()
+	arg0_30:InitPrivateAndLicence()
 end
 
-function var0.InitPrivateAndLicence(arg0)
-	local var0 = PLATFORM_CODE == PLATFORM_CH or IsUnityEditor
+function var0_0.InitPrivateAndLicence(arg0_47)
+	local var0_47 = PLATFORM_CODE == PLATFORM_CH or IsUnityEditor
 
-	setActive(arg0.privateBtn, var0)
-	setActive(arg0.licenceBtn, var0)
+	setActive(arg0_47.privateBtn, var0_47)
+	setActive(arg0_47.licenceBtn, var0_47)
 
-	if var0 then
-		onButton(arg0, arg0.privateBtn, function()
+	if var0_47 then
+		onButton(arg0_47, arg0_47.privateBtn, function()
 			pg.SdkMgr.GetInstance():ShowPrivate()
 		end, SFX_PANEL)
-		onButton(arg0, arg0.licenceBtn, function()
+		onButton(arg0_47, arg0_47.licenceBtn, function()
 			pg.SdkMgr.GetInstance():ShowLicence()
 		end, SFX_PANEL)
 	end
 end
 
-function var0.playExtraVoice(arg0)
-	local var0 = pg.gameset.login_extra_voice.description
+function var0_0.playExtraVoice(arg0_50)
+	local var0_50 = pg.gameset.login_extra_voice.description
 
-	if var0 and #var0 > 0 then
-		local var1 = var0[math.clamp(math.floor(math.random() * #var0) + 1, 1, #var0)]
-		local var2 = "cv-" .. var1
-		local var3 = pg.CriMgr.GetInstance()
+	if var0_50 and #var0_50 > 0 then
+		local var1_50 = var0_50[math.clamp(math.floor(math.random() * #var0_50) + 1, 1, #var0_50)]
+		local var2_50 = "cv-" .. var1_50
+		local var3_50 = pg.CriMgr.GetInstance()
 
-		arg0.loginCueSheet = var2
+		arg0_50.loginCueSheet = var2_50
 
-		var3:PlayCV_V3(var2, "extra")
+		var3_50:PlayCV_V3(var2_50, "extra")
 	end
 end
 
-function var0.unloadExtraVoice(arg0)
-	if arg0.loginCueSheet then
-		pg.CriMgr.GetInstance():UnloadCueSheet(arg0.loginCueSheet)
+function var0_0.unloadExtraVoice(arg0_51)
+	if arg0_51.loginCueSheet then
+		pg.CriMgr.GetInstance():UnloadCueSheet(arg0_51.loginCueSheet)
 
-		arg0.loginCueSheet = nil
+		arg0_51.loginCueSheet = nil
 	end
 end
 
-function var0.autoLogin(arg0)
-	if arg0.shareData.lastLoginUser then
-		if arg0.shareData.autoLoginEnabled then
-			arg0.event:emit(LoginMediator.ON_LOGIN, arg0.shareData.lastLoginUser)
+function var0_0.autoLogin(arg0_52)
+	if arg0_52.shareData.lastLoginUser then
+		if arg0_52.shareData.autoLoginEnabled then
+			arg0_52.event:emit(LoginMediator.ON_LOGIN, arg0_52.shareData.lastLoginUser)
 		end
 
-		if arg0.loginPanelView:GetLoaded() then
-			if arg0.shareData.lastLoginUser.type == 1 then
-				arg0.loginPanelView:SetContent(arg0.shareData.lastLoginUser.arg2, arg0.shareData.lastLoginUser.arg3)
-			elseif arg0.shareData.lastLoginUser.type == 2 then
-				arg0.loginPanelView:SetContent(arg0.shareData.lastLoginUser.arg1, arg0.shareData.lastLoginUser.arg2)
+		if arg0_52.loginPanelView:GetLoaded() then
+			if arg0_52.shareData.lastLoginUser.type == 1 then
+				arg0_52.loginPanelView:SetContent(arg0_52.shareData.lastLoginUser.arg2, arg0_52.shareData.lastLoginUser.arg3)
+			elseif arg0_52.shareData.lastLoginUser.type == 2 then
+				arg0_52.loginPanelView:SetContent(arg0_52.shareData.lastLoginUser.arg1, arg0_52.shareData.lastLoginUser.arg2)
 			end
 		end
 	end
 end
 
-local var2 = {
+local var2_0 = {
 	{
 		0.403921568627451,
 		1,
@@ -624,123 +624,123 @@ local var2 = {
 	}
 }
 
-function var0.updateServerTF(arg0, arg1, arg2)
-	setText(findTF(arg1, "name"), "-  " .. arg2.name .. "  -")
-	setImageSprite(findTF(arg1, "statu"), arg0.iconSpries[arg2.status + 1], true)
+function var0_0.updateServerTF(arg0_53, arg1_53, arg2_53)
+	setText(findTF(arg1_53, "name"), "-  " .. arg2_53.name .. "  -")
+	setImageSprite(findTF(arg1_53, "statu"), arg0_53.iconSpries[arg2_53.status + 1], true)
 
-	findTF(arg1, "statu_1"):GetComponent("Image").color = Color.New(var2[arg2.status + 1][1], var2[arg2.status + 1][2], var2[arg2.status + 1][3], var2[arg2.status + 1][4])
+	findTF(arg1_53, "statu_1"):GetComponent("Image").color = Color.New(var2_0[arg2_53.status + 1][1], var2_0[arg2_53.status + 1][2], var2_0[arg2_53.status + 1][3], var2_0[arg2_53.status + 1][4])
 
-	setActive(findTF(arg1, "mark"), arg2.isLogined)
-	setActive(arg0:findTF("tag_new", arg1), arg2.isNew)
-	setActive(arg0:findTF("tag_hot", arg1), arg2.isHot)
-	onButton(arg0, arg1, function()
-		if arg2.status == Server.STATUS.VINDICATE then
+	setActive(findTF(arg1_53, "mark"), arg2_53.isLogined)
+	setActive(arg0_53:findTF("tag_new", arg1_53), arg2_53.isNew)
+	setActive(arg0_53:findTF("tag_hot", arg1_53), arg2_53.isHot)
+	onButton(arg0_53, arg1_53, function()
+		if arg2_53.status == Server.STATUS.VINDICATE then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("login_loginScene_server_vindicate"))
 
 			return
 		end
 
-		if arg2.status == Server.STATUS.FULL then
+		if arg2_53.status == Server.STATUS.FULL then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("login_loginScene_server_full"))
 
 			return
 		end
 
-		arg0:setLastLoginServer(arg2)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0.serversPanel, arg0._tf)
-		setActive(arg0.serversPanel, false)
+		arg0_53:setLastLoginServer(arg2_53)
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_53.serversPanel, arg0_53._tf)
+		setActive(arg0_53.serversPanel, false)
 	end, SFX_CONFIRM)
 end
 
-function var0.updateAdviceServer(arg0)
-	if not arg0.recentTF or not arg0.adviceTF then
+function var0_0.updateAdviceServer(arg0_55)
+	if not arg0_55.recentTF or not arg0_55.adviceTF then
 		return
 	end
 
-	setActive(arg0.recentTF, arg0.shareData.lastLoginServer)
+	setActive(arg0_55.recentTF, arg0_55.shareData.lastLoginServer)
 
-	if arg0.shareData.lastLoginServer then
-		local var0 = findTF(arg0.recentTF, "server")
+	if arg0_55.shareData.lastLoginServer then
+		local var0_55 = findTF(arg0_55.recentTF, "server")
 
-		arg0:updateServerTF(var0, arg0.shareData.lastLoginServer)
+		arg0_55:updateServerTF(var0_55, arg0_55.shareData.lastLoginServer)
 	end
 
-	local var1 = getProxy(ServerProxy).firstServer
+	local var1_55 = getProxy(ServerProxy).firstServer
 
-	setActive(arg0.adviceTF, var1)
+	setActive(arg0_55.adviceTF, var1_55)
 
-	if var1 then
-		local var2 = findTF(arg0.adviceTF, "server")
+	if var1_55 then
+		local var2_55 = findTF(arg0_55.adviceTF, "server")
 
-		arg0:updateServerTF(var2, var1)
+		arg0_55:updateServerTF(var2_55, var1_55)
 	end
 end
 
-function var0.updateServerList(arg0, arg1)
-	arg0.serverList = arg1
+function var0_0.updateServerList(arg0_56, arg1_56)
+	arg0_56.serverList = arg1_56
 
-	local var0 = _.sort(_.values(arg1), function(arg0, arg1)
-		return arg0.sortIndex < arg1.sortIndex
+	local var0_56 = _.sort(_.values(arg1_56), function(arg0_57, arg1_57)
+		return arg0_57.sortIndex < arg1_57.sortIndex
 	end)
 
-	removeAllChildren(arg0.servers)
+	removeAllChildren(arg0_56.servers)
 
 	if IsUnityEditor then
-		table.sort(var0, function(arg0, arg1)
-			local var0 = string.lower(arg0.name)
-			local var1 = string.lower(arg1.name)
+		table.sort(var0_56, function(arg0_58, arg1_58)
+			local var0_58 = string.lower(arg0_58.name)
+			local var1_58 = string.lower(arg1_58.name)
 
-			return string.byte(var0, 1) > string.byte(var1, 1)
+			return string.byte(var0_58, 1) > string.byte(var1_58, 1)
 		end)
 	end
 
-	arg0.serversDic = {}
+	arg0_56.serversDic = {}
 
-	for iter0, iter1 in pairs(var0) do
-		local var1 = cloneTplTo(arg0.serverTpl, arg0.servers)
+	for iter0_56, iter1_56 in pairs(var0_56) do
+		local var1_56 = cloneTplTo(arg0_56.serverTpl, arg0_56.servers)
 
-		arg0:updateServerTF(var1, iter1)
-		table.insert(arg0.serversDic, {
-			server = iter1,
-			tf = var1,
-			id = iter1.id
+		arg0_56:updateServerTF(var1_56, iter1_56)
+		table.insert(arg0_56.serversDic, {
+			server = iter1_56,
+			tf = var1_56,
+			id = iter1_56.id
 		})
 	end
 end
 
-function var0.fillterRefundServer(arg0)
-	local var0 = getProxy(UserProxy)
-	local var1 = {}
+function var0_0.fillterRefundServer(arg0_59)
+	local var0_59 = getProxy(UserProxy)
+	local var1_59 = {}
 
-	if var0.data.limitServerIds and #var0.data.limitServerIds > 0 and arg0.serverList and #arg0.serverList > 0 then
-		local var2 = var0.data.limitServerIds
-		local var3
+	if var0_59.data.limitServerIds and #var0_59.data.limitServerIds > 0 and arg0_59.serverList and #arg0_59.serverList > 0 then
+		local var2_59 = var0_59.data.limitServerIds
+		local var3_59
 
-		for iter0, iter1 in pairs(arg0.serverList) do
-			local var4 = iter1.id
-			local var5 = false
+		for iter0_59, iter1_59 in pairs(arg0_59.serverList) do
+			local var4_59 = iter1_59.id
+			local var5_59 = false
 
-			for iter2, iter3 in pairs(var2) do
-				if var2[iter2] == var4 and not var5 then
-					if not var3 then
-						var3 = "\n" .. iter1.name
+			for iter2_59, iter3_59 in pairs(var2_59) do
+				if var2_59[iter2_59] == var4_59 and not var5_59 then
+					if not var3_59 then
+						var3_59 = "\n" .. iter1_59.name
 					else
-						var3 = var3 .. "," .. iter1.name
+						var3_59 = var3_59 .. "," .. iter1_59.name
 					end
 
-					table.insert(var1, iter1)
+					table.insert(var1_59, iter1_59)
 
-					var5 = true
+					var5_59 = true
 				end
 			end
 		end
 
-		arg0:updateServerList(var1)
+		arg0_59:updateServerList(var1_59)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			modal = true,
 			hideNo = true,
 			hideClose = true,
-			content = i18n("login_arrears_tips", var3),
+			content = i18n("login_arrears_tips", var3_59),
 			onYes = function()
 				return
 			end
@@ -748,42 +748,42 @@ function var0.fillterRefundServer(arg0)
 	end
 end
 
-function var0.switchToTencentLogin(arg0)
-	arg0:switchSubView({
+function var0_0.switchToTencentLogin(arg0_61)
+	arg0_61:switchSubView({
 		LoginSceneConst.DEFINE.TENCENT_LOGIN_VIEW
 	})
 end
 
-function var0.switchToAiriLogin(arg0)
-	arg0:switchSubView({
+function var0_0.switchToAiriLogin(arg0_62)
+	arg0_62:switchSubView({
 		LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW,
 		LoginSceneConst.DEFINE.PRESS_TO_LOGIN
 	})
 end
 
-function var0.switchToLogin(arg0)
-	arg0:switchSubView({
+function var0_0.switchToLogin(arg0_63)
+	arg0_63:switchSubView({
 		LoginSceneConst.DEFINE.LOGIN_PANEL_VIEW
 	})
 end
 
-function var0.switchToRegister(arg0)
-	arg0:switchSubView({
+function var0_0.switchToRegister(arg0_64)
+	arg0_64:switchSubView({
 		LoginSceneConst.DEFINE.REGISTER_PANEL_VIEW
 	})
 end
 
-function var0.switchToServer(arg0)
-	arg0:updateAdviceServer()
+function var0_0.switchToServer(arg0_65)
+	arg0_65:updateAdviceServer()
 
 	if pg.SdkMgr.GetInstance():GetLoginType() ~= LoginType.PLATFORM_INNER and PLATFORM_CODE ~= PLATFORM_KR then
-		arg0:switchSubView({
+		arg0_65:switchSubView({
 			LoginSceneConst.DEFINE.PRESS_TO_LOGIN,
 			LoginSceneConst.DEFINE.CURRENT_SERVER,
 			LoginSceneConst.DEFINE.BG_LAY
 		})
 	else
-		arg0:switchSubView({
+		arg0_65:switchSubView({
 			LoginSceneConst.DEFINE.ACCOUNT_BTN,
 			LoginSceneConst.DEFINE.PRESS_TO_LOGIN,
 			LoginSceneConst.DEFINE.CURRENT_SERVER,
@@ -792,80 +792,80 @@ function var0.switchToServer(arg0)
 	end
 end
 
-function var0.SwitchToWaitPanel(arg0, arg1)
-	local var0 = arg0:findTF("Msgbox")
-	local var1 = arg0:findTF("window/content", var0)
+function var0_0.SwitchToWaitPanel(arg0_66, arg1_66)
+	local var0_66 = arg0_66:findTF("Msgbox")
+	local var1_66 = arg0_66:findTF("window/content", var0_66)
 
-	arg0.waitTimer = nil
+	arg0_66.waitTimer = nil
 
-	local var2 = 0
-	local var3 = arg1
+	local var2_66 = 0
+	local var3_66 = arg1_66
 
-	arg0.waitTimer = Timer.New(function()
-		setText(var1, i18n("login_wait_tip", var3))
+	arg0_66.waitTimer = Timer.New(function()
+		setText(var1_66, i18n("login_wait_tip", var3_66))
 
-		arg1 = arg1 - 1
+		arg1_66 = arg1_66 - 1
 
 		if math.random(0, 1) == 1 then
-			var3 = arg1
+			var3_66 = arg1_66
 		end
 
-		if arg1 <= 0 then
-			triggerButton(arg0:findTF("background"))
-			arg0.waitTimer:Stop()
+		if arg1_66 <= 0 then
+			triggerButton(arg0_66:findTF("background"))
+			arg0_66.waitTimer:Stop()
 
-			arg0.waitTimer = nil
+			arg0_66.waitTimer = nil
 		end
 	end, 1, -1)
 
-	arg0.waitTimer:Start()
-	arg0.waitTimer.func()
-	setActive(var0, true)
+	arg0_66.waitTimer:Start()
+	arg0_66.waitTimer.func()
+	setActive(var0_66, true)
 end
 
-function var0.willExit(arg0)
-	if arg0.waitTimer then
-		arg0.waitTimer:Stop()
+function var0_0.willExit(arg0_68)
+	if arg0_68.waitTimer then
+		arg0_68.waitTimer:Stop()
 
-		arg0.waitTimer = nil
+		arg0_68.waitTimer = nil
 	end
 
 	pg.CpkPlayMgr.GetInstance():DisposeCpkMovie()
-	arg0.loginPanelView:Destroy()
-	arg0.registerPanelView:Destroy()
-	arg0.tencentLoginPanelView:Destroy()
-	arg0.airiLoginPanelView:Destroy()
-	arg0.transcodeAlertView:Destroy()
-	arg0.yostarAlertView:Destroy()
-	arg0.switchGatewayBtn:Dispose()
+	arg0_68.loginPanelView:Destroy()
+	arg0_68.registerPanelView:Destroy()
+	arg0_68.tencentLoginPanelView:Destroy()
+	arg0_68.airiLoginPanelView:Destroy()
+	arg0_68.transcodeAlertView:Destroy()
+	arg0_68.yostarAlertView:Destroy()
+	arg0_68.switchGatewayBtn:Dispose()
 end
 
-function var0.playOpening(arg0, arg1)
+function var0_0.playOpening(arg0_69, arg1_69)
 	pg.CpkPlayMgr.GetInstance():PlayCpkMovie(function()
-		if not arg0.cg then
-			arg0.cg = GetOrAddComponent(arg0._tf, "CanvasGroup")
+		if not arg0_69.cg then
+			arg0_69.cg = GetOrAddComponent(arg0_69._tf, "CanvasGroup")
 		end
 
-		arg0.cg.alpha = 0
+		arg0_69.cg.alpha = 0
 	end, function()
-		arg0.cg.alpha = 1
+		arg0_69.cg.alpha = 1
 
-		if arg1 then
-			arg1()
+		if arg1_69 then
+			arg1_69()
 		end
 	end, "ui", "opening", true, false, nil)
 
-	arg0.onPlayingOP = true
+	arg0_69.onPlayingOP = true
 end
 
-function var0.closeYostarAlertView(arg0)
-	if arg0.yostarAlertView and arg0.yostarAlertView:CheckState(BaseSubView.STATES.INITED) then
-		arg0.yostarAlertView:Destroy()
+function var0_0.closeYostarAlertView(arg0_72)
+	if arg0_72.yostarAlertView and arg0_72.yostarAlertView:CheckState(BaseSubView.STATES.INITED) then
+		arg0_72.yostarAlertView:Destroy()
 	end
 end
 
-function var0.onLoadDataDone(arg0)
-	arg0:unloadExtraVoice()
+function var0_0.onLoadDataDone(arg0_73)
+	arg0_73:unloadExtraVoice()
 
 	if getProxy(PlayerProxy) then
 		getProxy(PlayerProxy):setFlag("login", true)
@@ -875,4 +875,4 @@ function var0.onLoadDataDone(arg0)
 	end
 end
 
-return var0
+return var0_0

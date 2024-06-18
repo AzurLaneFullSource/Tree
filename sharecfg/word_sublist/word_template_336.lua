@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_336 = {}
+var0_0.word_template_336 = {}
 
-local var1 = var0.word_template_336
+local var1_0 = var0_0.word_template_336
 
 function temp()
-	var1.曰 = {
+	var1_0.曰 = {
 		G = {
 			M = {
 				this = true
@@ -25,7 +25,7 @@ end
 temp()
 
 function temp()
-	var1.阅 = {
+	var1_0.阅 = {
 		兵 = {
 			仪 = {
 				式 = {
@@ -39,7 +39,7 @@ end
 temp()
 
 function temp()
-	var1.悦 = {
+	var1_0.悦 = {
 		虐 = {
 			缯 = {
 				图 = {
@@ -53,7 +53,7 @@ end
 temp()
 
 function temp()
-	var1.越 = {
+	var1_0.越 = {
 		来 = {
 			越 = {
 				像 = {
@@ -79,7 +79,7 @@ end
 temp()
 
 function temp()
-	var1.躒 = {
+	var1_0.躒 = {
 		this = {
 			this = true
 		}
@@ -89,7 +89,7 @@ end
 temp()
 
 function temp()
-	var1.晕 = {
+	var1_0.晕 = {
 		倒 = {
 			型 = {
 				this = true
@@ -101,7 +101,7 @@ end
 temp()
 
 function temp()
-	var1.云 = {
+	var1_0.云 = {
 		南 = {
 			户 = {
 				外 = {

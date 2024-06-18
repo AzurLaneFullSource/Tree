@@ -1,109 +1,109 @@
-﻿local var0 = class("RacingMiniGameView", import("view.miniGame.MiniGameTemplateView"))
+﻿local var0_0 = class("RacingMiniGameView", import("view.miniGame.MiniGameTemplateView"))
 
-var0.canSelectStage = false
+var0_0.canSelectStage = false
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "RacingMiniGameUI"
 end
 
-function var0.getGameController(arg0)
+function var0_0.getGameController(arg0_2)
 	return RacingMiniGameController
 end
 
-function var0.getShowSide(arg0)
+function var0_0.getShowSide(arg0_3)
 	return false
 end
 
-function var0.initPageUI(arg0)
-	arg0.rtTitlePage = arg0._tf:Find("TitlePage")
+function var0_0.initPageUI(arg0_4)
+	arg0_4.rtTitlePage = arg0_4._tf:Find("TitlePage")
 
-	arg0.rtTitlePage:Find("countdown"):Find("bg"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-		arg0:openUI()
-		arg0.gameController:StartGame()
+	arg0_4.rtTitlePage:Find("countdown"):Find("bg"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		arg0_4:openUI()
+		arg0_4.gameController:StartGame()
 		pg.BgmMgr.GetInstance():ContinuePlay()
 	end)
 
-	local var0 = arg0.rtTitlePage:Find("pause")
+	local var0_4 = arg0_4.rtTitlePage:Find("pause")
 
-	onButton(arg0, var0:Find("window/btn_confirm"), function()
-		arg0:openUI()
-		arg0.gameController:ResumeGame()
+	onButton(arg0_4, var0_4:Find("window/btn_confirm"), function()
+		arg0_4:openUI()
+		arg0_4.gameController:ResumeGame()
 	end, SFX_CONFIRM)
 
-	local var1 = arg0.rtTitlePage:Find("exit")
+	local var1_4 = arg0_4.rtTitlePage:Find("exit")
 
-	onButton(arg0, var1:Find("window/btn_cancel"), function()
-		arg0:openUI()
-		arg0.gameController:ResumeGame()
+	onButton(arg0_4, var1_4:Find("window/btn_cancel"), function()
+		arg0_4:openUI()
+		arg0_4.gameController:ResumeGame()
 	end, SFX_CANCEL)
-	onButton(arg0, var1:Find("window/btn_confirm"), function()
-		arg0:openUI()
-		arg0.gameController:EndGame()
+	onButton(arg0_4, var1_4:Find("window/btn_confirm"), function()
+		arg0_4:openUI()
+		arg0_4.gameController:EndGame()
 	end, SFX_CONFIRM)
 
-	local var2 = arg0.rtTitlePage:Find("result")
+	local var2_4 = arg0_4.rtTitlePage:Find("result")
 
-	onButton(arg0, var2:Find("window/btn_finish"), function()
-		arg0:closeView()
+	onButton(arg0_4, var2_4:Find("window/btn_finish"), function()
+		arg0_4:closeView()
 	end, SFX_CONFIRM)
 end
 
-function var0.didEnter(arg0)
-	arg0:initPageUI()
-	arg0:initControllerUI()
+function var0_0.didEnter(arg0_10)
+	arg0_10:initPageUI()
+	arg0_10:initControllerUI()
 
-	arg0.gameController = arg0:getGameController().New(arg0, arg0._tf)
+	arg0_10.gameController = arg0_10:getGameController().New(arg0_10, arg0_10._tf)
 
-	arg0.gameController:ResetGame()
-	arg0.gameController:ReadyGame(getProxy(MiniGameProxy):GetRank(arg0:GetMGData().id))
+	arg0_10.gameController:ResetGame()
+	arg0_10.gameController:ReadyGame(getProxy(MiniGameProxy):GetRank(arg0_10:GetMGData().id))
 	pg.BgmMgr.GetInstance():StopPlay()
-	arg0:openUI("countdown")
+	arg0_10:openUI("countdown")
 end
 
-function var0.initOpenUISwich(arg0)
-	var0.super.initOpenUISwich(arg0)
+function var0_0.initOpenUISwich(arg0_11)
+	var0_0.super.initOpenUISwich(arg0_11)
 
-	arg0.openSwitchDic.main = nil
+	arg0_11.openSwitchDic.main = nil
 
-	function arg0.openSwitchDic.result()
+	function arg0_11.openSwitchDic.result()
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-streamers")
 
-		local var0 = arg0:GetMGData().id
-		local var1 = arg0.gameController.point
-		local var2 = getProxy(MiniGameProxy):GetHighScore(var0) / 100
-		local var3 = arg0.rtTitlePage:Find("result")
+		local var0_12 = arg0_11:GetMGData().id
+		local var1_12 = arg0_11.gameController.point
+		local var2_12 = getProxy(MiniGameProxy):GetHighScore(var0_12) / 100
+		local var3_12 = arg0_11.rtTitlePage:Find("result")
 
-		setActive(var3:Find("window/now/new"), var2 < var1)
+		setActive(var3_12:Find("window/now/new"), var2_12 < var1_12)
 
-		if var2 <= var1 then
-			var2 = var1
+		if var2_12 <= var1_12 then
+			var2_12 = var1_12
 
-			getProxy(MiniGameProxy):UpdataHighScore(var0, math.floor(var1 * 100))
+			getProxy(MiniGameProxy):UpdataHighScore(var0_12, math.floor(var1_12 * 100))
 		end
 
-		setText(var3:Find("window/high/Text"), string.format("%.2fm", var2))
-		setText(var3:Find("window/now/Text"), string.format("%.2fm", var1))
+		setText(var3_12:Find("window/high/Text"), string.format("%.2fm", var2_12))
+		setText(var3_12:Find("window/now/Text"), string.format("%.2fm", var1_12))
 
-		local var4 = arg0:GetMGHubData()
+		local var4_12 = arg0_11:GetMGHubData()
 
-		arg0:emit(BaseMiniGameMediator.GAME_FINISH_TRACKING, {
-			game_id = var0,
-			hub_id = var4.id,
-			isComplete = arg0.gameController.result
+		arg0_11:emit(BaseMiniGameMediator.GAME_FINISH_TRACKING, {
+			game_id = var0_12,
+			hub_id = var4_12.id,
+			isComplete = arg0_11.gameController.result
 		})
 
-		if (not arg0:getShowSide() or arg0.stageIndex == var4.usedtime + 1) and var4.count > 0 then
-			arg0:SendSuccess(0)
+		if (not arg0_11:getShowSide() or arg0_11.stageIndex == var4_12.usedtime + 1) and var4_12.count > 0 then
+			arg0_11:SendSuccess(0)
 		end
 	end
 
-	function arg0.openSwitchDic.countdown()
+	function arg0_11.openSwitchDic.countdown()
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_STEP_PILE_COUNTDOWN)
 	end
 end
 
-function var0.willExit(arg0)
-	arg0.gameController:willExit()
+function var0_0.willExit(arg0_14)
+	arg0_14.gameController:willExit()
 end
 
-return var0
+return var0_0

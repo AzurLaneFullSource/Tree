@@ -1,71 +1,71 @@
-﻿local var0 = class("GameRoomPileGameView", import("..BaseMiniGameView"))
+﻿local var0_0 = class("GameRoomPileGameView", import("..BaseMiniGameView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "GameRoomPileGameUI"
 end
 
-function var0.init(arg0)
-	arg0.backBtn = arg0:findTF("overview/back")
+function var0_0.init(arg0_2)
+	arg0_2.backBtn = arg0_2:findTF("overview/back")
 end
 
-local var1 = 7
+local var1_0 = 7
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0.backBtn, function()
-		arg0:emit(var0.ON_BACK)
+function var0_0.didEnter(arg0_3)
+	onButton(arg0_3, arg0_3.backBtn, function()
+		arg0_3:emit(var0_0.ON_BACK)
 	end, SFX_PANEL)
 
-	arg0.controller = PileGameController.New()
+	arg0_3.controller = PileGameController.New()
 
-	arg0.controller.view:SetUI(arg0._go)
+	arg0_3.controller.view:SetUI(arg0_3._go)
 
-	local var0 = arg0:PackData()
+	local var0_3 = arg0_3:PackData()
 
-	arg0.controller:SetUp(var0, function(arg0, arg1)
-		if arg1 < arg0 then
-			arg0:StoreDataToServer({
-				arg0
+	arg0_3.controller:SetUp(var0_3, function(arg0_5, arg1_5)
+		if arg1_5 < arg0_5 then
+			arg0_3:StoreDataToServer({
+				arg0_5
 			})
 		end
 
-		local var0 = arg0:GetMGHubData()
+		local var0_5 = arg0_3:GetMGHubData()
 
-		arg0:SendSuccess(arg0)
+		arg0_3:SendSuccess(arg0_5)
 	end)
-	arg0.controller:setGameStartCallback(function(arg0)
-		arg0:openCoinLayer(arg0)
+	arg0_3.controller:setGameStartCallback(function(arg0_6)
+		arg0_3:openCoinLayer(arg0_6)
 	end)
 end
 
-function var0.PackData(arg0)
-	local var0 = arg0:GetMGData():GetRuntimeData("elements")
-	local var1 = var0 and var0[1] or 0
+function var0_0.PackData(arg0_7)
+	local var0_7 = arg0_7:GetMGData():GetRuntimeData("elements")
+	local var1_7 = var0_7 and var0_7[1] or 0
 
-	if arg0:getGameRoomData() then
-		arg0.gameHelpTip = arg0:getGameRoomData().game_help
+	if arg0_7:getGameRoomData() then
+		arg0_7.gameHelpTip = arg0_7:getGameRoomData().game_help
 	end
 
 	return {
-		highestScore = var1,
-		screen = Vector2(arg0._tf.rect.width, arg0._tf.rect.height),
-		tip = arg0.gameHelpTip
+		highestScore = var1_7,
+		screen = Vector2(arg0_7._tf.rect.width, arg0_7._tf.rect.height),
+		tip = arg0_7.gameHelpTip
 	}
 end
 
-function var0.OnGetAwardDone(arg0, arg1)
+function var0_0.OnGetAwardDone(arg0_8, arg1_8)
 	return
 end
 
-function var0.onBackPressed(arg0)
-	if arg0.controller:onBackPressed() then
+function var0_0.onBackPressed(arg0_9)
+	if arg0_9.controller:onBackPressed() then
 		return
 	end
 
-	arg0:emit(var0.ON_BACK)
+	arg0_9:emit(var0_0.ON_BACK)
 end
 
-function var0.willExit(arg0)
-	arg0.controller:Dispose()
+function var0_0.willExit(arg0_10)
+	arg0_10.controller:Dispose()
 end
 
-return var0
+return var0_0

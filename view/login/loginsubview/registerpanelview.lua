@@ -1,61 +1,61 @@
-﻿local var0 = class("RegisterPanelView", import("...base.BaseSubView"))
+﻿local var0_0 = class("RegisterPanelView", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "RegisterPanelView"
 end
 
-function var0.OnLoaded(arg0)
+function var0_0.OnLoaded(arg0_2)
 	return
 end
 
-function var0.SetShareData(arg0, arg1)
-	arg0.shareData = arg1
+function var0_0.SetShareData(arg0_3, arg1_3)
+	arg0_3.shareData = arg1_3
 end
 
-function var0.OnInit(arg0)
-	arg0.registerPanel = arg0._tf
-	arg0.registerUsername = arg0:findTF("account/username", arg0.registerPanel)
-	arg0.cancelButton = arg0:findTF("cancel_button", arg0.registerPanel)
-	arg0.confirmButton = arg0:findTF("confirm_button", arg0.registerPanel)
+function var0_0.OnInit(arg0_4)
+	arg0_4.registerPanel = arg0_4._tf
+	arg0_4.registerUsername = arg0_4:findTF("account/username", arg0_4.registerPanel)
+	arg0_4.cancelButton = arg0_4:findTF("cancel_button", arg0_4.registerPanel)
+	arg0_4.confirmButton = arg0_4:findTF("confirm_button", arg0_4.registerPanel)
 
-	arg0:InitEvent()
+	arg0_4:InitEvent()
 end
 
-function var0.InitEvent(arg0)
-	onButton(arg0, arg0.confirmButton, function()
-		local var0 = getInputText(arg0.registerUsername)
+function var0_0.InitEvent(arg0_5)
+	onButton(arg0_5, arg0_5.confirmButton, function()
+		local var0_6 = getInputText(arg0_5.registerUsername)
 
-		if var0 == "" then
+		if var0_6 == "" then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("login_loginScene_error_noUserName"))
-			ActivateInputField(arg0.registerUsername)
+			ActivateInputField(arg0_5.registerUsername)
 
 			return
 		end
 
-		local var1 = User.New({
+		local var1_6 = User.New({
 			arg3 = "",
 			arg2 = "",
 			type = 2,
-			arg1 = var0
+			arg1 = var0_6
 		})
 
-		if var1 then
-			arg0.event:emit(LoginMediator.ON_REGISTER, var1)
+		if var1_6 then
+			arg0_5.event:emit(LoginMediator.ON_REGISTER, var1_6)
 		end
 	end, SFX_CONFIRM)
-	onButton(arg0, arg0.cancelButton, function()
-		arg0:emit(LoginSceneConst.SWITCH_SUB_VIEW, {
+	onButton(arg0_5, arg0_5.cancelButton, function()
+		arg0_5:emit(LoginSceneConst.SWITCH_SUB_VIEW, {
 			LoginSceneConst.DEFINE.LOGIN_PANEL_VIEW
 		})
 	end, SFX_CANCEL)
 end
 
-function var0.Clear(arg0)
+function var0_0.Clear(arg0_8)
 	return
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_9)
 	return
 end
 
-return var0
+return var0_0

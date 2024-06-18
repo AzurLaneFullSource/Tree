@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_327 = {}
+var0_0.word_template_327 = {}
 
-local var1 = var0.word_template_327
+local var1_0 = var0_0.word_template_327
 
 function temp()
-	var1.鷹 = {
+	var1_0.鷹 = {
 		眼 = {
 			派 = {
 				氏 = {
@@ -23,7 +23,7 @@ end
 temp()
 
 function temp()
-	var1.莹 = {
+	var1_0.莹 = {
 		穴 = {
 			this = true
 		}
@@ -33,7 +33,7 @@ end
 temp()
 
 function temp()
-	var1.营 = {
+	var1_0.营 = {
 		业 = {
 			执 = {
 				照 = {
@@ -51,7 +51,7 @@ end
 temp()
 
 function temp()
-	var1.赢 = {
+	var1_0.赢 = {
 		翻 = {
 			天 = {
 				this = true
@@ -81,7 +81,7 @@ end
 temp()
 
 function temp()
-	var1.应 = {
+	var1_0.应 = {
 		开 = {
 			生 = {
 				肖 = {
@@ -120,7 +120,7 @@ end
 temp()
 
 function temp()
-	var1.映 = {
+	var1_0.映 = {
 		山 = {
 			红 = {
 				["("] = {
@@ -146,7 +146,7 @@ end
 temp()
 
 function temp()
-	var1.硬 = {
+	var1_0.硬 = {
 		币 = {
 			出 = {
 				售 = {

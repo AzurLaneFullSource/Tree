@@ -1,50 +1,50 @@
-﻿local var0 = "zh-cn"
-local var1 = require("Framework/lang/" .. var0)
+﻿local var0_0 = "zh-cn"
+local var1_0 = require("Framework/lang/" .. var0_0)
 
-function l10n(arg0)
-	return var1[arg0] or arg0
+function l10n(arg0_1)
+	return var1_0[arg0_1] or arg0_1
 end
 
-function i18n(arg0, ...)
-	local var0 = pg.gametip[arg0]
+function i18n(arg0_2, ...)
+	local var0_2 = pg.gametip[arg0_2]
 
-	if var0 then
-		local var1 = var0.tip
+	if var0_2 then
+		local var1_2 = var0_2.tip
 
-		for iter0, iter1 in ipairs({
+		for iter0_2, iter1_2 in ipairs({
 			...
 		}) do
-			var1 = string.gsub(var1, "$" .. iter0, iter1)
+			var1_2 = string.gsub(var1_2, "$" .. iter0_2, iter1_2)
 		end
 
-		return var1
+		return var1_2
 	else
-		return i18n_not_find(arg0)
+		return i18n_not_find(arg0_2)
 	end
 end
 
-function i18n_not_find(arg0)
-	return "UndefinedLanguage:" .. arg0
+function i18n_not_find(arg0_3)
+	return "UndefinedLanguage:" .. arg0_3
 end
 
-function i18n1(arg0, ...)
-	return string.format(l10n(arg0), ...)
+function i18n1(arg0_4, ...)
+	return string.format(l10n(arg0_4), ...)
 end
 
-function i18n2(arg0, ...)
-	local var0 = pg.gameset_language_client[arg0]
+function i18n2(arg0_5, ...)
+	local var0_5 = pg.gameset_language_client[arg0_5]
 
-	if var0 then
-		local var1 = var0.value
+	if var0_5 then
+		local var1_5 = var0_5.value
 
-		for iter0, iter1 in ipairs({
+		for iter0_5, iter1_5 in ipairs({
 			...
 		}) do
-			var1 = string.gsub(var1, "$" .. iter0, iter1)
+			var1_5 = string.gsub(var1_5, "$" .. iter0_5, iter1_5)
 		end
 
-		return var1
+		return var1_5
 	else
-		return arg0
+		return arg0_5
 	end
 end

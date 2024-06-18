@@ -1,72 +1,72 @@
-﻿local var0 = class("FriendRefusePage", import("...base.BaseSubView"))
+﻿local var0_0 = class("FriendRefusePage", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "FriendRefuseUI"
 end
 
-function var0.OnLoaded(arg0)
+function var0_0.OnLoaded(arg0_2)
 	return
 end
 
-function var0.OnInit(arg0)
-	arg0.context = arg0._tf:Find("window/frame/Text"):GetComponent(typeof(Text))
-	arg0.remind = arg0._tf:Find("window/remind")
-	arg0.confirmBtn = arg0._tf:Find("window/confirm_btn")
-	arg0.cancelBtn = arg0._tf:Find("window/cancel_btn")
-	arg0.closeBtn = arg0._tf:Find("window/top/btnBack")
-	arg0.checkLabel = arg0.remind:Find("Text"):GetComponent(typeof(Text))
+function var0_0.OnInit(arg0_3)
+	arg0_3.context = arg0_3._tf:Find("window/frame/Text"):GetComponent(typeof(Text))
+	arg0_3.remind = arg0_3._tf:Find("window/remind")
+	arg0_3.confirmBtn = arg0_3._tf:Find("window/confirm_btn")
+	arg0_3.cancelBtn = arg0_3._tf:Find("window/cancel_btn")
+	arg0_3.closeBtn = arg0_3._tf:Find("window/top/btnBack")
+	arg0_3.checkLabel = arg0_3.remind:Find("Text"):GetComponent(typeof(Text))
 
-	onButton(nil, arg0.cancelBtn, function()
-		arg0:Hide()
+	onButton(nil, arg0_3.cancelBtn, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(nil, arg0._tf, function()
-		arg0:Hide()
+	onButton(nil, arg0_3._tf, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(nil, arg0.closeBtn, function()
-		arg0:Hide()
+	onButton(nil, arg0_3.closeBtn, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
 
-	arg0.isOn = false
+	arg0_3.isOn = false
 
-	onToggle(nil, arg0.remind, function(arg0)
-		arg0.isOn = arg0
+	onToggle(nil, arg0_3.remind, function(arg0_7)
+		arg0_3.isOn = arg0_7
 	end, SFX_PANEL)
-	onButton(nil, arg0.confirmBtn, function()
-		if arg0.func then
-			arg0.func(arg0.isOn)
+	onButton(nil, arg0_3.confirmBtn, function()
+		if arg0_3.func then
+			arg0_3.func(arg0_3.isOn)
 		end
 
-		arg0:Hide()
+		arg0_3:Hide()
 	end, SFX_PANEL)
 end
 
-function var0.Show(arg0, arg1, arg2, arg3)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+function var0_0.Show(arg0_9, arg1_9, arg2_9, arg3_9)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_9._tf)
 
-	arg0.func = arg3
-	arg0.context.text = arg1
+	arg0_9.func = arg3_9
+	arg0_9.context.text = arg1_9
 
-	triggerToggle(arg0.remind, false)
-	setActive(arg0._tf, true)
+	triggerToggle(arg0_9.remind, false)
+	setActive(arg0_9._tf, true)
 
-	arg0.checkLabel.text = arg2
+	arg0_9.checkLabel.text = arg2_9
 
-	arg0._tf:SetAsLastSibling()
+	arg0_9._tf:SetAsLastSibling()
 end
 
-function var0.Hide(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, arg0._parentTf)
-	setActive(arg0._tf, false)
+function var0_0.Hide(arg0_10)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_10._tf, arg0_10._parentTf)
+	setActive(arg0_10._tf, false)
 
-	arg0.func = nil
-	arg0.context.text = ""
-	arg0.checkLabel.text = ""
+	arg0_10.func = nil
+	arg0_10.context.text = ""
+	arg0_10.checkLabel.text = ""
 end
 
-function var0.OnDestroy(arg0)
-	arg0:Hide()
-	removeOnButton(arg0._tf)
-	removeOnButton(arg0.cancelBtn)
+function var0_0.OnDestroy(arg0_11)
+	arg0_11:Hide()
+	removeOnButton(arg0_11._tf)
+	removeOnButton(arg0_11.cancelBtn)
 end
 
-return var0
+return var0_0

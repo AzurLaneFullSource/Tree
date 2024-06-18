@@ -1,75 +1,75 @@
-﻿local var0 = class("NewPlayerScene", import("..base.BaseUI"))
-local var1 = 0.5
-local var2 = -300
-local var3 = Vector3(-380, 265, 0)
-local var4 = 19
-local var5 = {
+﻿local var0_0 = class("NewPlayerScene", import("..base.BaseUI"))
+local var1_0 = 0.5
+local var2_0 = -300
+local var3_0 = Vector3(-380, 265, 0)
+local var4_0 = 19
+local var5_0 = {
 	101171,
 	201211,
 	401231
 }
-local var6 = {
+local var6_0 = {
 	[401231] = "z23",
 	[101171] = "lafei",
 	[301051] = "lingbo",
 	[201211] = "biaoqiang"
 }
-local var7 = {
+local var7_0 = {
 	[101171] = i18n("login_newPlayerScene_word_laFei"),
 	[201211] = i18n("login_newPlayerScene_word_biaoqiang"),
 	[401231] = i18n("login_newPlayerScene_word_z23")
 }
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "NewPlayerUI"
 end
 
-function var0.init(arg0)
-	arg0.eventTriggers = {}
-	arg0.characters = arg0:findTF("select_character/characters")
-	arg0.propPanel = arg0:findTF("prop_panel")
-	arg0.selectPanel = arg0:findTF("select_character")
+function var0_0.init(arg0_2)
+	arg0_2.eventTriggers = {}
+	arg0_2.characters = arg0_2:findTF("select_character/characters")
+	arg0_2.propPanel = arg0_2:findTF("prop_panel")
+	arg0_2.selectPanel = arg0_2:findTF("select_character")
 
-	setActive(arg0.propPanel, false)
-	setActive(arg0.selectPanel, true)
+	setActive(arg0_2.propPanel, false)
+	setActive(arg0_2.selectPanel, true)
 
-	arg0.confirmBtn = arg0:findTF("bg/qr_btn", arg0.propPanel)
-	arg0.tip = arg0:findTF("select_character/tip")
-	arg0.skillPanel = arg0:findTF("bg/skill_panel", arg0.propPanel)
-	arg0.skillTpl = arg0:getTpl("bg/skill_panel/frame/skilltpl", arg0.propPanel)
-	arg0.skillContainer = arg0:findTF("bg/skill_panel/frame", arg0.propPanel)
-	arg0.namedPanel = arg0:findTF("named_panel")
+	arg0_2.confirmBtn = arg0_2:findTF("bg/qr_btn", arg0_2.propPanel)
+	arg0_2.tip = arg0_2:findTF("select_character/tip")
+	arg0_2.skillPanel = arg0_2:findTF("bg/skill_panel", arg0_2.propPanel)
+	arg0_2.skillTpl = arg0_2:getTpl("bg/skill_panel/frame/skilltpl", arg0_2.propPanel)
+	arg0_2.skillContainer = arg0_2:findTF("bg/skill_panel/frame", arg0_2.propPanel)
+	arg0_2.namedPanel = arg0_2:findTF("named_panel")
 
-	setActive(arg0.namedPanel, false)
+	setActive(arg0_2.namedPanel, false)
 
-	arg0.info = arg0.namedPanel:Find("info")
-	arg0.nickname = arg0.info:Find("nickname")
-	arg0.qChar = arg0.propPanel:Find("q_char")
-	arg0.chat = arg0:findTF("info/tip/chatbgtop0/Text", arg0.namedPanel)
-	arg0.propertyPanel = PropertyPanel.New(arg0.propPanel:Find("bg/property_panel/frame"))
-	arg0.paintTF = arg0:findTF("prop_panel/bg/paint")
-	arg0.nameTF = arg0:findTF("prop_panel/bg/name")
-	arg0.nameEnTF = arg0:findTF("prop_panel/bg/english_name_bg")
-	arg0.titleShipinfoTF = arg0:findTF("lines/hori/shipinfo_text")
-	arg0.titleShipchooseTF = arg0:findTF("lines/hori/shipchoose_text")
+	arg0_2.info = arg0_2.namedPanel:Find("info")
+	arg0_2.nickname = arg0_2.info:Find("nickname")
+	arg0_2.qChar = arg0_2.propPanel:Find("q_char")
+	arg0_2.chat = arg0_2:findTF("info/tip/chatbgtop0/Text", arg0_2.namedPanel)
+	arg0_2.propertyPanel = PropertyPanel.New(arg0_2.propPanel:Find("bg/property_panel/frame"))
+	arg0_2.paintTF = arg0_2:findTF("prop_panel/bg/paint")
+	arg0_2.nameTF = arg0_2:findTF("prop_panel/bg/name")
+	arg0_2.nameEnTF = arg0_2:findTF("prop_panel/bg/english_name_bg")
+	arg0_2.titleShipinfoTF = arg0_2:findTF("lines/hori/shipinfo_text")
+	arg0_2.titleShipchooseTF = arg0_2:findTF("lines/hori/shipchoose_text")
 
-	setImageAlpha(arg0.titleShipinfoTF, 1)
-	setImageAlpha(arg0.titleShipchooseTF, 0)
+	setImageAlpha(arg0_2.titleShipinfoTF, 1)
+	setImageAlpha(arg0_2.titleShipchooseTF, 0)
 
-	arg0.randBtn = findTF(arg0.info, "random_button")
+	arg0_2.randBtn = findTF(arg0_2.info, "random_button")
 
-	setActive(arg0.randBtn, PLATFORM_CODE == PLATFORM_CH)
+	setActive(arg0_2.randBtn, PLATFORM_CODE == PLATFORM_CH)
 end
 
-function var0.onBackPressed(arg0)
-	if LeanTween.isTweening(go(arg0.propPanel)) then
+function var0_0.onBackPressed(arg0_3)
+	if LeanTween.isTweening(go(arg0_3.propPanel)) then
 		return
 	end
 
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	if isActive(arg0.namedPanel) then
-		arg0:closeNamedPanel()
+	if isActive(arg0_3.namedPanel) then
+		arg0_3:closeNamedPanel()
 
 		return
 	end
@@ -77,114 +77,114 @@ function var0.onBackPressed(arg0)
 	pg.SdkMgr.GetInstance():OnAndoridBackPress()
 end
 
-function var0.switchPanel(arg0)
-	setActive(arg0.propPanel, true)
+function var0_0.switchPanel(arg0_4)
+	setActive(arg0_4.propPanel, true)
 
-	local var0 = arg0.propPanel:GetComponent(typeof(CanvasGroup))
-	local var1 = arg0.selectPanel:GetComponent(typeof(CanvasGroup))
+	local var0_4 = arg0_4.propPanel:GetComponent(typeof(CanvasGroup))
+	local var1_4 = arg0_4.selectPanel:GetComponent(typeof(CanvasGroup))
 
-	LeanTween.value(go(arg0.propPanel), 0, 1, 0.5):setOnUpdate(System.Action_float(function(arg0)
-		var0.alpha = arg0
-		var1.alpha = 1 - arg0
+	LeanTween.value(go(arg0_4.propPanel), 0, 1, 0.5):setOnUpdate(System.Action_float(function(arg0_5)
+		var0_4.alpha = arg0_5
+		var1_4.alpha = 1 - arg0_5
 	end)):setOnComplete(System.Action(function()
-		setActive(arg0.selectPanel, false)
+		setActive(arg0_4.selectPanel, false)
 	end))
 
-	arg0.skillPanel.localPosition = Vector3.New(-1000, arg0.skillPanel.localPosition.y, arg0.skillPanel.localPosition.z)
+	arg0_4.skillPanel.localPosition = Vector3.New(-1000, arg0_4.skillPanel.localPosition.y, arg0_4.skillPanel.localPosition.z)
 
-	LeanTween.moveX(arg0.skillPanel, 339, 0.2)
+	LeanTween.moveX(arg0_4.skillPanel, 339, 0.2)
 
-	local var2 = arg0:findTF("lines/line")
-	local var3 = arg0:findTF("lines/hori")
+	local var2_4 = arg0_4:findTF("lines/line")
+	local var3_4 = arg0_4:findTF("lines/hori")
 
-	LeanTween.moveY(var2, -328, 0.2)
-	LeanTween.moveX(var3, -820, 0.2)
+	LeanTween.moveY(var2_4, -328, 0.2)
+	LeanTween.moveX(var3_4, -820, 0.2)
 
-	for iter0 = 1, 3 do
-		local var4 = arg0:findTF("character_" .. iter0, arg0.characters)
-		local var5 = arg0:findTF("bg/characters/character_" .. iter0, arg0.propPanel)
+	for iter0_4 = 1, 3 do
+		local var4_4 = arg0_4:findTF("character_" .. iter0_4, arg0_4.characters)
+		local var5_4 = arg0_4:findTF("bg/characters/character_" .. iter0_4, arg0_4.propPanel)
 
-		setImageAlpha(var4, 1)
-		LeanTween.alpha(var4, 0, 0.25)
-		LeanTween.move(go(var4), var5.position, 0.3)
-		setImageAlpha(arg0.titleShipinfoTF, 0)
-		setImageAlpha(arg0.titleShipchooseTF, 1)
-		LeanTween.alpha(arg0.titleShipinfoTF, 1, 0.25)
-		LeanTween.alpha(arg0.titleShipchooseTF, 0, 0.25)
+		setImageAlpha(var4_4, 1)
+		LeanTween.alpha(var4_4, 0, 0.25)
+		LeanTween.move(go(var4_4), var5_4.position, 0.3)
+		setImageAlpha(arg0_4.titleShipinfoTF, 0)
+		setImageAlpha(arg0_4.titleShipchooseTF, 1)
+		LeanTween.alpha(arg0_4.titleShipinfoTF, 1, 0.25)
+		LeanTween.alpha(arg0_4.titleShipchooseTF, 0, 0.25)
 	end
 end
 
-function var0.initCharacters(arg0)
-	arg0.charInitPos = {}
+function var0_0.initCharacters(arg0_7)
+	arg0_7.charInitPos = {}
 
-	for iter0 = 1, 3 do
-		local var0 = arg0:findTF("prop_panel/bg/characters/character_" .. iter0)
+	for iter0_7 = 1, 3 do
+		local var0_7 = arg0_7:findTF("prop_panel/bg/characters/character_" .. iter0_7)
 
-		onToggle(arg0, var0, function(arg0)
-			if arg0 then
-				arg0:selectCharacterByIdx(var0, var5[iter0])
-				setActive(arg0:findTF("selected", var0), true)
+		onToggle(arg0_7, var0_7, function(arg0_8)
+			if arg0_8 then
+				arg0_7:selectCharacterByIdx(var0_7, var5_0[iter0_7])
+				setActive(arg0_7:findTF("selected", var0_7), true)
 
-				var0:GetComponent(typeof(RectTransform)).sizeDelta = Vector2(196, 196)
+				var0_7:GetComponent(typeof(RectTransform)).sizeDelta = Vector2(196, 196)
 			else
-				setActive(arg0:findTF("selected", var0), false)
+				setActive(arg0_7:findTF("selected", var0_7), false)
 
-				var0:GetComponent(typeof(RectTransform)).sizeDelta = Vector2(140, 140)
+				var0_7:GetComponent(typeof(RectTransform)).sizeDelta = Vector2(140, 140)
 			end
 		end)
 	end
 
-	local var1 = {
+	local var1_7 = {
 		0.2,
 		0.3,
 		0.1
 	}
 
-	for iter1 = 1, 3 do
-		local var2 = arg0:findTF("character_" .. iter1, arg0.characters)
+	for iter1_7 = 1, 3 do
+		local var2_7 = arg0_7:findTF("character_" .. iter1_7, arg0_7.characters)
 
-		onButton(arg0, var2, function()
-			arg0:switchPanel()
-			triggerToggle(arg0:findTF("prop_panel/bg/characters/character_" .. iter1), true)
+		onButton(arg0_7, var2_7, function()
+			arg0_7:switchPanel()
+			triggerToggle(arg0_7:findTF("prop_panel/bg/characters/character_" .. iter1_7), true)
 		end)
 
-		var2.localPosition = Vector3.New(var2.localPosition.x, 912, var2.localPosition.z)
+		var2_7.localPosition = Vector3.New(var2_7.localPosition.x, 912, var2_7.localPosition.z)
 
-		setImageAlpha(var2, 0)
-		LeanTween.alpha(var2, 1, 0.3):setDelay(var1[iter1])
-		LeanTween.moveY(var2, 0, 0.2):setDelay(var1[iter1])
+		setImageAlpha(var2_7, 0)
+		LeanTween.alpha(var2_7, 1, 0.3):setDelay(var1_7[iter1_7])
+		LeanTween.moveY(var2_7, 0, 0.2):setDelay(var1_7[iter1_7])
 	end
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0.confirmBtn, function()
-		arg0:showNamedPanel()
+function var0_0.didEnter(arg0_10)
+	onButton(arg0_10, arg0_10.confirmBtn, function()
+		arg0_10:showNamedPanel()
 	end, SFX_PANEL)
-	onButton(arg0, findTF(arg0.info, "random_button"), function()
-		local var0 = require("GameCfg.names")
-		local var1 = var0[1][math.random(#var0[1])]
-		local var2 = var0[2][math.random(#var0[2])]
-		local var3 = var0[3][math.random(#var0[3])]
-		local var4 = var0[4][math.random(#var0[4])]
+	onButton(arg0_10, findTF(arg0_10.info, "random_button"), function()
+		local var0_12 = require("GameCfg.names")
+		local var1_12 = var0_12[1][math.random(#var0_12[1])]
+		local var2_12 = var0_12[2][math.random(#var0_12[2])]
+		local var3_12 = var0_12[3][math.random(#var0_12[3])]
+		local var4_12 = var0_12[4][math.random(#var0_12[4])]
 
-		setInputText(arg0.nickname, var1 .. var2 .. var3 .. var4)
+		setInputText(arg0_10.nickname, var1_12 .. var2_12 .. var3_12 .. var4_12)
 	end, SFX_MAIN)
-	onButton(arg0, findTF(arg0.info, "btn_container/enter_button"), function()
-		if not arg0.contextData.configId then
+	onButton(arg0_10, findTF(arg0_10.info, "btn_container/enter_button"), function()
+		if not arg0_10.contextData.configId then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("login_newPlayerScene_error_notChoiseShip"))
 
 			return
 		end
 
-		local var0 = getInputText(arg0.nickname)
+		local var0_13 = getInputText(arg0_10.nickname)
 
-		if var0 == "" then
+		if var0_13 == "" then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("login_newPlayerScene_inputName"))
 
 			return
 		end
 
-		if not nameValidityCheck(var0, 4, 14, {
+		if not nameValidityCheck(var0_13, 4, 14, {
 			"spece_illegal_tip",
 			"login_newPlayerScene_name_tooShort",
 			"login_newPlayerScene_name_tooLong",
@@ -193,109 +193,109 @@ function var0.didEnter(arg0)
 			return
 		end
 
-		arg0.event:emit(NewPlayerMediator.ON_CREATE, var0, arg0.contextData.configId)
+		arg0_10.event:emit(NewPlayerMediator.ON_CREATE, var0_13, arg0_10.contextData.configId)
 	end, SFX_CONFIRM)
-	onButton(arg0, findTF(arg0.info, "btn_container/cancel_button"), function()
-		arg0:closeNamedPanel()
+	onButton(arg0_10, findTF(arg0_10.info, "btn_container/cancel_button"), function()
+		arg0_10:closeNamedPanel()
 	end)
-	arg0:initCharacters()
+	arg0_10:initCharacters()
 end
 
-local var8 = 0.3
-local var9 = -47
+local var8_0 = 0.3
+local var9_0 = -47
 
-function var0.selectCharacterByIdx(arg0, arg1, arg2)
-	arg0.inProp = true
-	arg0.contextData.configId = arg2
+function var0_0.selectCharacterByIdx(arg0_15, arg1_15, arg2_15)
+	arg0_15.inProp = true
+	arg0_15.contextData.configId = arg2_15
 
-	arg0.propertyPanel:initProperty(arg2)
-	arg0:initSkills()
+	arg0_15.propertyPanel:initProperty(arg2_15)
+	arg0_15:initSkills()
 
-	local var0 = pg.ship_data_statistics[arg2]
+	local var0_15 = pg.ship_data_statistics[arg2_15]
 
-	setPaintingPrefab(arg0.paintTF, var6[arg2], "chuanwu")
-	setText(arg0:findTF("name_mask/Text", arg0.nameTF), var0.name)
-	setText(arg0:findTF("english_name", arg0.nameTF), var0.english_name)
-	setText(arg0.nameEnTF, string.upper(var0.english_name))
+	setPaintingPrefab(arg0_15.paintTF, var6_0[arg2_15], "chuanwu")
+	setText(arg0_15:findTF("name_mask/Text", arg0_15.nameTF), var0_15.name)
+	setText(arg0_15:findTF("english_name", arg0_15.nameTF), var0_15.english_name)
+	setText(arg0_15.nameEnTF, string.upper(var0_15.english_name))
 
-	local var1 = Ship.New({
-		configId = arg0.contextData.configId
+	local var1_15 = Ship.New({
+		configId = arg0_15.contextData.configId
 	}):getPrefab()
 
-	if var1 == arg0.shipPrefab then
+	if var1_15 == arg0_15.shipPrefab then
 		return
 	end
 
-	arg0:recycleSpineChar()
+	arg0_15:recycleSpineChar()
 	pg.UIMgr.GetInstance():LoadingOn()
-	PoolMgr.GetInstance():GetSpineChar(var1, true, function(arg0)
+	PoolMgr.GetInstance():GetSpineChar(var1_15, true, function(arg0_16)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		arg0.shipPrefab = var1
-		arg0.shipModel = arg0
+		arg0_15.shipPrefab = var1_15
+		arg0_15.shipModel = arg0_16
 
-		arg0:GetComponent("SpineAnimUI"):SetAction("stand", 0)
+		arg0_16:GetComponent("SpineAnimUI"):SetAction("stand", 0)
 
-		tf(arg0).localScale = Vector3(0.5, 0.5, 1)
-		tf(arg0).localPosition = Vector3(15, -95, 0)
+		tf(arg0_16).localScale = Vector3(0.5, 0.5, 1)
+		tf(arg0_16).localPosition = Vector3(15, -95, 0)
 
-		pg.ViewUtils.SetLayer(tf(arg0), Layer.UI)
-		removeAllChildren(arg0.qChar)
-		SetParent(arg0, arg0.qChar, false)
+		pg.ViewUtils.SetLayer(tf(arg0_16), Layer.UI)
+		removeAllChildren(arg0_15.qChar)
+		SetParent(arg0_16, arg0_15.qChar, false)
 	end)
 end
 
-function var0.initSkills(arg0)
-	local var0 = pg.ship_data_template[arg0.contextData.configId]
+function var0_0.initSkills(arg0_17)
+	local var0_17 = pg.ship_data_template[arg0_17.contextData.configId]
 
-	removeAllChildren(arg0.skillContainer)
+	removeAllChildren(arg0_17.skillContainer)
 
-	for iter0, iter1 in ipairs(var0.buff_list_display) do
-		local var1 = getSkillConfig(iter1)
-		local var2 = table.contains(var0.buff_list, iter1)
-		local var3 = cloneTplTo(arg0.skillTpl, arg0.skillContainer)
+	for iter0_17, iter1_17 in ipairs(var0_17.buff_list_display) do
+		local var1_17 = getSkillConfig(iter1_17)
+		local var2_17 = table.contains(var0_17.buff_list, iter1_17)
+		local var3_17 = cloneTplTo(arg0_17.skillTpl, arg0_17.skillContainer)
 
-		setActive(var3:Find("mask"), not var2)
-		onButton(arg0, var3, function()
-			arg0:emit(NewPlayerMediator.ON_SKILLINFO, var1.id)
+		setActive(var3_17:Find("mask"), not var2_17)
+		onButton(arg0_17, var3_17, function()
+			arg0_17:emit(NewPlayerMediator.ON_SKILLINFO, var1_17.id)
 		end, SFX_PANEL)
-		LoadImageSpriteAsync("skillicon/" .. var1.icon, findTF(var3, "icon"))
+		LoadImageSpriteAsync("skillicon/" .. var1_17.icon, findTF(var3_17, "icon"))
 	end
 end
 
-function var0.showNamedPanel(arg0)
-	arg0.qChar:SetParent(arg0.info)
-	pg.UIMgr.GetInstance():BlurPanel(arg0.namedPanel)
-	setActive(arg0.namedPanel, true)
-	setInputText(arg0.nickname, "")
-	setText(arg0.chat, var7[arg0.contextData.configId])
+function var0_0.showNamedPanel(arg0_19)
+	arg0_19.qChar:SetParent(arg0_19.info)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_19.namedPanel)
+	setActive(arg0_19.namedPanel, true)
+	setInputText(arg0_19.nickname, "")
+	setText(arg0_19.chat, var7_0[arg0_19.contextData.configId])
 end
 
-function var0.closeNamedPanel(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0.namedPanel, arg0._tf)
-	setActive(arg0.namedPanel, false)
-	arg0.qChar:SetParent(arg0.propPanel)
+function var0_0.closeNamedPanel(arg0_20)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_20.namedPanel, arg0_20._tf)
+	setActive(arg0_20.namedPanel, false)
+	arg0_20.qChar:SetParent(arg0_20.propPanel)
 end
 
-function var0.recycleSpineChar(arg0)
-	if arg0.shipPrefab and arg0.shipModel then
-		PoolMgr.GetInstance():ReturnSpineChar(arg0.shipPrefab, arg0.shipModel)
+function var0_0.recycleSpineChar(arg0_21)
+	if arg0_21.shipPrefab and arg0_21.shipModel then
+		PoolMgr.GetInstance():ReturnSpineChar(arg0_21.shipPrefab, arg0_21.shipModel)
 
-		arg0.shipPrefab = nil
-		arg0.shipModel = nil
+		arg0_21.shipPrefab = nil
+		arg0_21.shipModel = nil
 	end
 end
 
-function var0.willExit(arg0)
-	if arg0.eventTriggers then
-		for iter0, iter1 in pairs(arg0.eventTriggers) do
-			ClearEventTrigger(iter0)
+function var0_0.willExit(arg0_22)
+	if arg0_22.eventTriggers then
+		for iter0_22, iter1_22 in pairs(arg0_22.eventTriggers) do
+			ClearEventTrigger(iter0_22)
 		end
 
-		arg0.eventTriggers = nil
+		arg0_22.eventTriggers = nil
 	end
 
-	arg0:closeNamedPanel()
+	arg0_22:closeNamedPanel()
 end
 
-return var0
+return var0_0

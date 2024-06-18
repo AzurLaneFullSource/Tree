@@ -1,61 +1,61 @@
-﻿local var0 = class("AttachmentLBAntiAirCell", import("view.level.cell.StaticCellView"))
+﻿local var0_0 = class("AttachmentLBAntiAirCell", import("view.level.cell.StaticCellView"))
 
-function var0.GetOrder(arg0)
+function var0_0.GetOrder(arg0_1)
 	return ChapterConst.CellPriorityAttachment
 end
 
-function var0.Update(arg0)
-	local var0 = arg0.info
+function var0_0.Update(arg0_2)
+	local var0_2 = arg0_2.info
 
-	if IsNil(arg0.go) then
-		arg0:PrepareBase("antiAir")
+	if IsNil(arg0_2.go) then
+		arg0_2:PrepareBase("antiAir")
 
-		local var1 = pg.land_based_template[var0.attachmentId]
+		local var1_2 = pg.land_based_template[var0_2.attachmentId]
 
-		assert(var1, "land_based_template not exist: " .. var0.attachmentId)
-		arg0:GetLoader():GetPrefab("leveluiview/Tpl_AntiAirGun", "Tpl_AntiAirGun", function(arg0)
-			setParent(arg0, arg0.tf)
+		assert(var1_2, "land_based_template not exist: " .. var0_2.attachmentId)
+		arg0_2:GetLoader():GetPrefab("leveluiview/Tpl_AntiAirGun", "Tpl_AntiAirGun", function(arg0_3)
+			setParent(arg0_3, arg0_2.tf)
 
-			tf(arg0).anchoredPosition3D = Vector3(0, 10, 0)
-			arg0.antiAirGun = arg0
+			tf(arg0_3).anchoredPosition3D = Vector3(0, 10, 0)
+			arg0_2.antiAirGun = arg0_3
 
-			arg0:Update()
+			arg0_2:Update()
 		end)
-		arg0:GetLoader():GetPrefab("leveluiview/Tpl_AntiAirGunArea", "Tpl_AntiAirGunArea", function(arg0)
-			setParent(arg0, arg0.grid.restrictMap)
+		arg0_2:GetLoader():GetPrefab("leveluiview/Tpl_AntiAirGunArea", "Tpl_AntiAirGunArea", function(arg0_4)
+			setParent(arg0_4, arg0_2.grid.restrictMap)
 
-			arg0.name = "chapter_cell_mark_" .. var0.row .. "_" .. var0.column .. "#AntiAirGunArea"
+			arg0_4.name = "chapter_cell_mark_" .. var0_2.row .. "_" .. var0_2.column .. "#AntiAirGunArea"
 
-			local var0 = arg0.chapter.theme
-			local var1 = var0:GetLinePosition(arg0.line.row, arg0.line.column)
-			local var2 = arg0.grid.restrictMap.anchoredPosition
+			local var0_4 = arg0_2.chapter.theme
+			local var1_4 = var0_4:GetLinePosition(arg0_2.line.row, arg0_2.line.column)
+			local var2_4 = arg0_2.grid.restrictMap.anchoredPosition
 
-			tf(arg0).anchoredPosition = Vector2(var1.x - var2.x, var1.y - var2.y)
+			tf(arg0_4).anchoredPosition = Vector2(var1_4.x - var2_4.x, var1_4.y - var2_4.y)
 
-			local var3 = var1.function_args[1]
-			local var4 = (var3 * 2 + 1) * var0.cellSize.x + var3 * 2 * var0.cellSpace.x
-			local var5 = (var3 * 2 + 1) * var0.cellSize.y + var3 * 2 * var0.cellSpace.y
+			local var3_4 = var1_2.function_args[1]
+			local var4_4 = (var3_4 * 2 + 1) * var0_4.cellSize.x + var3_4 * 2 * var0_4.cellSpace.x
+			local var5_4 = (var3_4 * 2 + 1) * var0_4.cellSize.y + var3_4 * 2 * var0_4.cellSpace.y
 
-			tf(arg0).sizeDelta = Vector2(var4, var5)
+			tf(arg0_4).sizeDelta = Vector2(var4_4, var5_4)
 		end)
 	end
 
-	if arg0.antiAirGun and var0.flag ~= ChapterConst.CellFlagDisabled then
-		local var2 = math.ceil(var0.data / 2)
-		local var3 = pg.land_based_template[var0.attachmentId]
+	if arg0_2.antiAirGun and var0_2.flag ~= ChapterConst.CellFlagDisabled then
+		local var2_2 = math.ceil(var0_2.data / 2)
+		local var3_2 = pg.land_based_template[var0_2.attachmentId]
 
-		assert(var3, "land_based_template not exist: " .. var0.attachmentId)
+		assert(var3_2, "land_based_template not exist: " .. var0_2.attachmentId)
 
-		local var4 = var3.function_args[2]
-		local var5 = arg0.chapter:getRoundNum()
-		local var6 = tf(arg0.antiAirGun):Find("text")
+		local var4_2 = var3_2.function_args[2]
+		local var5_2 = arg0_2.chapter:getRoundNum()
+		local var6_2 = tf(arg0_2.antiAirGun):Find("text")
 
-		setActive(var6, var5 < var2)
+		setActive(var6_2, var5_2 < var2_2)
 
-		tf(arg0.antiAirGun):Find("Slider"):GetComponent(typeof(Slider)).value = math.max(var5 - var2 + var4, 0) / var4
+		tf(arg0_2.antiAirGun):Find("Slider"):GetComponent(typeof(Slider)).value = math.max(var5_2 - var2_2 + var4_2, 0) / var4_2
 	end
 
-	setActive(arg0.tf, var0.flag ~= ChapterConst.CellFlagDisabled)
+	setActive(arg0_2.tf, var0_2.flag ~= ChapterConst.CellFlagDisabled)
 end
 
-return var0
+return var0_0

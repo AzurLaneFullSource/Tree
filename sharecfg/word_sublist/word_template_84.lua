@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_84 = {}
+var0_0.word_template_84 = {}
 
-local var1 = var0.word_template_84
+local var1_0 = var0_0.word_template_84
 
 function temp()
-	var1.點 = {
+	var1_0.點 = {
 		心 = {
 			車 = {
 				式 = {
@@ -24,7 +24,7 @@ end
 temp()
 
 function temp()
-	var1.电 = {
+	var1_0.电 = {
 		表 = {
 			倒 = {
 				转 = {
@@ -227,7 +227,7 @@ end
 temp()
 
 function temp()
-	var1.電 = {
+	var1_0.電 = {
 		话 = {
 			this = true
 		},
@@ -263,7 +263,7 @@ end
 temp()
 
 function temp()
-	var1.刁 = {
+	var1_0.刁 = {
 		近 = {
 			平 = {
 				this = true
@@ -381,7 +381,7 @@ end
 temp()
 
 function temp()
-	var1.叼 = {
+	var1_0.叼 = {
 		近 = {
 			平 = {
 				this = true
@@ -407,7 +407,7 @@ end
 temp()
 
 function temp()
-	var1.貂 = {
+	var1_0.貂 = {
 		禅 = {
 			艳 = {
 				史 = {
@@ -425,7 +425,7 @@ end
 temp()
 
 function temp()
-	var1.屌 = {
+	var1_0.屌 = {
 		this = {
 			this = true
 		},

@@ -1,87 +1,87 @@
-﻿local var0 = class("LinerReasoningPage", import("view.base.BaseSubView"))
+﻿local var0_0 = class("LinerReasoningPage", import("view.base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "LinerReasoningPage"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.titleTF = arg0:findTF("clues/title")
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.titleTF = arg0_2:findTF("clues/title")
 
-	setText(arg0.titleTF, i18n("liner_event_reasoning_title"))
+	setText(arg0_2.titleTF, i18n("liner_event_reasoning_title"))
 
-	arg0.eventNameTF = arg0:findTF("clues/name")
-	arg0.cluesTF = arg0:findTF("clues/content")
-	arg0.optionsTF = arg0:findTF("options")
+	arg0_2.eventNameTF = arg0_2:findTF("clues/name")
+	arg0_2.cluesTF = arg0_2:findTF("clues/content")
+	arg0_2.optionsTF = arg0_2:findTF("options")
 
-	arg0:findTF("clues/reasoning_title"):GetComponent(typeof(Image)):SetNativeSize()
+	arg0_2:findTF("clues/reasoning_title"):GetComponent(typeof(Image)):SetNativeSize()
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0:findTF("mask"), function()
-		arg0:Hide()
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3:findTF("mask"), function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
 
-	arg0.cluesUIList = UIItemList.New(arg0.cluesTF, arg0:findTF("tpl", arg0.cluesTF))
+	arg0_3.cluesUIList = UIItemList.New(arg0_3.cluesTF, arg0_3:findTF("tpl", arg0_3.cluesTF))
 
-	arg0.cluesUIList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg1 + 1
-			local var1 = arg0.clues[var0]
+	arg0_3.cluesUIList:make(function(arg0_5, arg1_5, arg2_5)
+		if arg0_5 == UIItemList.EventUpdate then
+			local var0_5 = arg1_5 + 1
+			local var1_5 = arg0_3.clues[var0_5]
 
-			setText(arg2:Find("index/Text"), var1:GetTitle())
-			setText(arg2:Find("Text"), var1:GetReasoningDesc())
+			setText(arg2_5:Find("index/Text"), var1_5:GetTitle())
+			setText(arg2_5:Find("Text"), var1_5:GetReasoningDesc())
 		end
 	end)
 
-	arg0.optionsUIList = UIItemList.New(arg0.optionsTF, arg0:findTF("tpl", arg0.optionsTF))
+	arg0_3.optionsUIList = UIItemList.New(arg0_3.optionsTF, arg0_3:findTF("tpl", arg0_3.optionsTF))
 
-	arg0.optionsUIList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg1 + 1
+	arg0_3.optionsUIList:make(function(arg0_6, arg1_6, arg2_6)
+		if arg0_6 == UIItemList.EventUpdate then
+			local var0_6 = arg1_6 + 1
 
-			setText(arg2:Find("Text"), arg0.options[var0])
-			onButton(arg0, arg2, function()
-				arg0:emit(LinerLogBookMediator.GET_EVENT_AWARD, arg0.actId, arg0.groupIdx, var0, arg0.eventGroup:GetDrop())
-				arg0:Hide()
+			setText(arg2_6:Find("Text"), arg0_3.options[var0_6])
+			onButton(arg0_3, arg2_6, function()
+				arg0_3:emit(LinerLogBookMediator.GET_EVENT_AWARD, arg0_3.actId, arg0_3.groupIdx, var0_6, arg0_3.eventGroup:GetDrop())
+				arg0_3:Hide()
 			end, SFX_CONFIRM)
 		end
 	end)
 end
 
-function var0.ShowOptions(arg0, arg1, arg2)
-	arg0.actId = arg1
-	arg0.groupIdx = arg2
+function var0_0.ShowOptions(arg0_8, arg1_8, arg2_8)
+	arg0_8.actId = arg1_8
+	arg0_8.groupIdx = arg2_8
 
-	local var0 = pg.activity_template[arg0.actId].config_data[3][arg0.groupIdx]
+	local var0_8 = pg.activity_template[arg0_8.actId].config_data[3][arg0_8.groupIdx]
 
-	arg0.eventGroup = LinerEventGroup.New(var0)
+	arg0_8.eventGroup = LinerEventGroup.New(var0_8)
 
-	setText(arg0.eventNameTF, arg0.eventGroup:GetTitle())
+	setText(arg0_8.eventNameTF, arg0_8.eventGroup:GetTitle())
 
-	arg0.clues = arg0.eventGroup:GetEventList()
-	arg0.options = arg0.eventGroup:GetConclusions()
+	arg0_8.clues = arg0_8.eventGroup:GetEventList()
+	arg0_8.options = arg0_8.eventGroup:GetConclusions()
 
-	arg0.cluesUIList:align(#arg0.clues)
-	arg0:Show()
+	arg0_8.cluesUIList:align(#arg0_8.clues)
+	arg0_8:Show()
 
-	local var1 = {}
+	local var1_8 = {}
 
-	for iter0 = 1, #arg0.options do
-		table.insert(var1, function(arg0)
-			arg0:managedTween(LeanTween.delayedCall, function()
-				arg0.optionsUIList:align(iter0)
-				arg0()
+	for iter0_8 = 1, #arg0_8.options do
+		table.insert(var1_8, function(arg0_9)
+			arg0_8:managedTween(LeanTween.delayedCall, function()
+				arg0_8.optionsUIList:align(iter0_8)
+				arg0_9()
 			end, 0.066, nil)
 		end)
 	end
 
-	seriesAsync(var1, function()
+	seriesAsync(var1_8, function()
 		return
 	end)
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_12)
 	return
 end
 
-return var0
+return var0_0

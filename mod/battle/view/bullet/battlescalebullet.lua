@@ -1,24 +1,24 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleScaleBullet = class("BattleScaleBullet", var0.Battle.BattleBullet)
-var0.Battle.BattleScaleBullet.__name = "BattleScaleBullet"
+var0_0.Battle.BattleScaleBullet = class("BattleScaleBullet", var0_0.Battle.BattleBullet)
+var0_0.Battle.BattleScaleBullet.__name = "BattleScaleBullet"
 
-local var1 = var0.Battle.BattleScaleBullet
+local var1_0 = var0_0.Battle.BattleScaleBullet
 
-function var1.Ctor(arg0)
-	var1.super.Ctor(arg0)
+function var1_0.Ctor(arg0_1)
+	var1_0.super.Ctor(arg0_1)
 end
 
-function var1.Update(arg0, arg1)
-	var1.super.Update(arg0, arg1)
-	arg0:updateModelScale()
+function var1_0.Update(arg0_2, arg1_2)
+	var1_0.super.Update(arg0_2, arg1_2)
+	arg0_2:updateModelScale()
 end
 
-function var1.updateModelScale(arg0)
-	local var0
+function var1_0.updateModelScale(arg0_3)
+	local var0_3
 
-	var0.x, var0 = arg0._bulletData:GetBoxSize().x * 2, arg0._tf.localScale
-	arg0._tf.localScale = var0
+	var0_3.x, var0_3 = arg0_3._bulletData:GetBoxSize().x * 2, arg0_3._tf.localScale
+	arg0_3._tf.localScale = var0_3
 end

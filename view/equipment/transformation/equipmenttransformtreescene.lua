@@ -1,483 +1,483 @@
-﻿local var0 = class("EquipmentTransformTreeScene", import("view.base.BaseUI"))
-local var1 = require("Mgr/Pool/PoolPlural")
-local var2 = "ui/EquipmentTransformTreeUI_atlas"
+﻿local var0_0 = class("EquipmentTransformTreeScene", import("view.base.BaseUI"))
+local var1_0 = require("Mgr/Pool/PoolPlural")
+local var2_0 = "ui/EquipmentTransformTreeUI_atlas"
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "EquipmentTransformTreeUI"
 end
 
-var0.optionsPath = {
+var0_0.optionsPath = {
 	"blur_panel/adapt/top/option"
 }
-var0.MODE_NORMAL = 1
-var0.MODE_HIDESIDE = 2
+var0_0.MODE_NORMAL = 1
+var0_0.MODE_HIDESIDE = 2
 
-function var0.init(arg0)
-	arg0.leftPanel = arg0._tf:Find("Adapt/Left")
-	arg0.rightPanel = arg0._tf:Find("Adapt/Right")
-	arg0.nationToggleGroup = arg0.leftPanel:Find("Nations"):Find("ViewPort/Content")
+function var0_0.init(arg0_2)
+	arg0_2.leftPanel = arg0_2._tf:Find("Adapt/Left")
+	arg0_2.rightPanel = arg0_2._tf:Find("Adapt/Right")
+	arg0_2.nationToggleGroup = arg0_2.leftPanel:Find("Nations"):Find("ViewPort/Content")
 
-	setActive(arg0.nationToggleGroup:GetChild(0), false)
-	arg0.nationToggleGroup:GetChild(0):Find("selectedCursor").gameObject:SetActive(false)
+	setActive(arg0_2.nationToggleGroup:GetChild(0), false)
+	arg0_2.nationToggleGroup:GetChild(0):Find("selectedCursor").gameObject:SetActive(false)
 
-	arg0.equipmentTypeToggleGroup = arg0.leftPanel:Find("EquipmentTypes"):Find("ViewPort/Content")
+	arg0_2.equipmentTypeToggleGroup = arg0_2.leftPanel:Find("EquipmentTypes"):Find("ViewPort/Content")
 
-	setActive(arg0.equipmentTypeToggleGroup:GetChild(0), false)
-	arg0.equipmentTypeToggleGroup:GetChild(0):Find("selectedframe").gameObject:SetActive(false)
+	setActive(arg0_2.equipmentTypeToggleGroup:GetChild(0), false)
+	arg0_2.equipmentTypeToggleGroup:GetChild(0):Find("selectedframe").gameObject:SetActive(false)
 
-	arg0.TreeCanvas = arg0.rightPanel:Find("ViewPort/Content")
+	arg0_2.TreeCanvas = arg0_2.rightPanel:Find("ViewPort/Content")
 
-	setActive(arg0.rightPanel:Find("EquipNode"), false)
-	setActive(arg0.rightPanel:Find("Link"), false)
+	setActive(arg0_2.rightPanel:Find("EquipNode"), false)
+	setActive(arg0_2.rightPanel:Find("Link"), false)
 
-	arg0.nodes = {}
-	arg0.links = {}
-	arg0.plurals = {
-		EquipNode = var1.New(arg0.rightPanel:Find("EquipNode").gameObject, 5),
-		Link = var1.New(arg0.rightPanel:Find("Link").gameObject, 8)
+	arg0_2.nodes = {}
+	arg0_2.links = {}
+	arg0_2.plurals = {
+		EquipNode = var1_0.New(arg0_2.rightPanel:Find("EquipNode").gameObject, 5),
+		Link = var1_0.New(arg0_2.rightPanel:Find("Link").gameObject, 8)
 	}
-	arg0.pluralRoot = pg.PoolMgr.GetInstance().root
-	arg0.top = arg0._tf:Find("blur_panel")
-	arg0.loader = AutoLoader.New()
+	arg0_2.pluralRoot = pg.PoolMgr.GetInstance().root
+	arg0_2.top = arg0_2._tf:Find("blur_panel")
+	arg0_2.loader = AutoLoader.New()
 end
 
-function var0.GetEnv(arg0)
-	arg0.env = arg0.env or {}
+function var0_0.GetEnv(arg0_3)
+	arg0_3.env = arg0_3.env or {}
 
-	return arg0.env
+	return arg0_3.env
 end
 
-function var0.SetEnv(arg0, arg1)
-	arg0.env = arg1
+function var0_0.SetEnv(arg0_4, arg1_4)
+	arg0_4.env = arg1_4
 end
 
-function var0.didEnter(arg0)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0.top)
-	onButton(arg0, arg0.top:Find("adapt/top/back"), function()
-		arg0:closeView()
+function var0_0.didEnter(arg0_5)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_5.top)
+	onButton(arg0_5, arg0_5.top:Find("adapt/top/back"), function()
+		arg0_5:closeView()
 	end, SFX_CANCEL)
 
-	if arg0.contextData.targetEquipId then
-		local var0
-		local var1
-		local var2 = false
+	if arg0_5.contextData.targetEquipId then
+		local var0_5
+		local var1_5
+		local var2_5 = false
 
-		for iter0, iter1 in pairs(arg0.env.nationsTree) do
-			for iter2, iter3 in pairs(iter1) do
-				for iter4, iter5 in ipairs(iter3.equipments) do
-					if iter5[3] == arg0.contextData.targetEquipId then
-						var0, var1 = iter0, iter2
-						var2 = true
+		for iter0_5, iter1_5 in pairs(arg0_5.env.nationsTree) do
+			for iter2_5, iter3_5 in pairs(iter1_5) do
+				for iter4_5, iter5_5 in ipairs(iter3_5.equipments) do
+					if iter5_5[3] == arg0_5.contextData.targetEquipId then
+						var0_5, var1_5 = iter0_5, iter2_5
+						var2_5 = true
 
 						break
 					end
 				end
 			end
 
-			if var2 then
+			if var2_5 then
 				break
 			end
 		end
 
-		if var2 then
-			arg0.contextData.nation = var0
-			arg0.contextData.equipmentTypeIndex = var1
+		if var2_5 then
+			arg0_5.contextData.nation = var0_5
+			arg0_5.contextData.equipmentTypeIndex = var1_5
 		end
 
-		arg0.contextData.targetEquipId = nil
+		arg0_5.contextData.targetEquipId = nil
 	end
 
-	arg0:InitPage()
+	arg0_5:InitPage()
 
-	if arg0.contextData.mode == var0.MODE_HIDESIDE then
-		setActive(arg0.leftPanel, false)
+	if arg0_5.contextData.mode == var0_0.MODE_HIDESIDE then
+		setActive(arg0_5.leftPanel, false)
 
-		local var3 = arg0.rightPanel.sizeDelta
+		local var3_5 = arg0_5.rightPanel.sizeDelta
 
-		var3.x = 0
-		arg0.rightPanel.sizeDelta = var3
+		var3_5.x = 0
+		arg0_5.rightPanel.sizeDelta = var3_5
 
-		setAnchoredPosition(arg0.rightPanel, {
+		setAnchoredPosition(arg0_5.rightPanel, {
 			x = 0
 		})
 	end
 end
 
-function var0.GetSortKeys(arg0)
-	local var0 = _.keys(arg0)
+function var0_0.GetSortKeys(arg0_7)
+	local var0_7 = _.keys(arg0_7)
 
-	table.sort(var0, function(arg0, arg1)
-		return arg0 < arg1
+	table.sort(var0_7, function(arg0_8, arg1_8)
+		return arg0_8 < arg1_8
 	end)
 
-	return var0
+	return var0_7
 end
 
-function var0.GetSortTypes(arg0)
-	local var0 = _.values(arg0)
+function var0_0.GetSortTypes(arg0_9)
+	local var0_9 = _.values(arg0_9)
 
-	table.sort(var0, function(arg0, arg1)
-		return arg0.id < arg1.id
+	table.sort(var0_9, function(arg0_10, arg1_10)
+		return arg0_10.id < arg1_10.id
 	end)
 
-	return _.map(var0, function(arg0)
-		return arg0.category2
+	return _.map(var0_9, function(arg0_11)
+		return arg0_11.category2
 	end)
 end
 
-function var0.InitPage(arg0)
-	arg0.firstInit = true
+function var0_0.InitPage(arg0_12)
+	arg0_12.firstInit = true
 
-	local var0 = arg0.contextData
-	local var1 = arg0.env
+	local var0_12 = arg0_12.contextData
+	local var1_12 = arg0_12.env
 
-	var0.mode = var0.mode or var0.MODE_NORMAL
+	var0_12.mode = var0_12.mode or var0_0.MODE_NORMAL
 
-	local var2 = var0.nation
-	local var3 = var0.GetSortKeys(var1.nationsTree)
+	local var2_12 = var0_12.nation
+	local var3_12 = var0_0.GetSortKeys(var1_12.nationsTree)
 
-	if not var2 or not table.contains(var3, var2) then
-		var2 = var3[1]
+	if not var2_12 or not table.contains(var3_12, var2_12) then
+		var2_12 = var3_12[1]
 	end
 
-	if next(var1.nationsTree[var2]) == nil then
-		for iter0 = 2, #var3 do
-			if next(var1.nationsTree[var3[iter0]]) ~= nil then
-				var2 = var3[iter0]
+	if next(var1_12.nationsTree[var2_12]) == nil then
+		for iter0_12 = 2, #var3_12 do
+			if next(var1_12.nationsTree[var3_12[iter0_12]]) ~= nil then
+				var2_12 = var3_12[iter0_12]
 
 				break
 			end
 		end
 	end
 
-	var0.nation = nil
+	var0_12.nation = nil
 
-	arg0:UpdateNations()
+	arg0_12:UpdateNations()
 
-	local var4 = table.indexof(var3, var2) or 1
+	local var4_12 = table.indexof(var3_12, var2_12) or 1
 
-	triggerButton(arg0.nationToggles[var4])
+	triggerButton(arg0_12.nationToggles[var4_12])
 
-	arg0.firstInit = nil
+	arg0_12.firstInit = nil
 end
 
-function var0.UpdateNations(arg0)
-	local var0 = var0.GetSortKeys(arg0.env.nationsTree)
+function var0_0.UpdateNations(arg0_13)
+	local var0_13 = var0_0.GetSortKeys(arg0_13.env.nationsTree)
 
-	arg0.nationToggles = CustomIndexLayer.Clone2Full(arg0.nationToggleGroup, #var0)
+	arg0_13.nationToggles = CustomIndexLayer.Clone2Full(arg0_13.nationToggleGroup, #var0_13)
 
-	for iter0 = 1, #arg0.nationToggles do
-		local var1 = arg0.nationToggles[iter0]
-		local var2 = var0[iter0]
+	for iter0_13 = 1, #arg0_13.nationToggles do
+		local var1_13 = arg0_13.nationToggles[iter0_13]
+		local var2_13 = var0_13[iter0_13]
 
-		arg0.loader:GetSprite(var2, "nation" .. var2 .. "_disable", var1:Find("selectedIcon"))
-		setActive(var1:Find("selectedCursor"), false)
-		onButton(arg0, var1, function()
-			if arg0.contextData.nation ~= var2 then
-				if next(arg0.env.nationsTree[var2]) == nil then
+		arg0_13.loader:GetSprite(var2_0, "nation" .. var2_13 .. "_disable", var1_13:Find("selectedIcon"))
+		setActive(var1_13:Find("selectedCursor"), false)
+		onButton(arg0_13, var1_13, function()
+			if arg0_13.contextData.nation ~= var2_13 then
+				if next(arg0_13.env.nationsTree[var2_13]) == nil then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("word_comingSoon"))
 
 					return
 				end
 
-				arg0.loader:GetSprite(var2, "nation" .. var2, var1:Find("selectedIcon"))
+				arg0_13.loader:GetSprite(var2_0, "nation" .. var2_13, var1_13:Find("selectedIcon"))
 
-				if arg0.contextData.nation then
-					local var0 = table.indexof(var0, arg0.contextData.nation)
+				if arg0_13.contextData.nation then
+					local var0_14 = table.indexof(var0_13, arg0_13.contextData.nation)
 
-					setActive(arg0.nationToggles[var0]:Find("selectedCursor"), false)
-					arg0.loader:GetSprite(var2, "nation" .. arg0.contextData.nation .. "_disable", arg0.nationToggles[var0]:Find("selectedIcon"))
+					setActive(arg0_13.nationToggles[var0_14]:Find("selectedCursor"), false)
+					arg0_13.loader:GetSprite(var2_0, "nation" .. arg0_13.contextData.nation .. "_disable", arg0_13.nationToggles[var0_14]:Find("selectedIcon"))
 				end
 
-				arg0.contextData.nation = var2
+				arg0_13.contextData.nation = var2_13
 
-				arg0:UpdateEquipmentTypes()
+				arg0_13:UpdateEquipmentTypes()
 
-				local var1 = var0.GetSortTypes(arg0.env.nationsTree[var2])
-				local var2 = var1[1]
+				local var1_14 = var0_0.GetSortTypes(arg0_13.env.nationsTree[var2_13])
+				local var2_14 = var1_14[1]
 
-				if arg0.firstInit then
-					local var3 = arg0.contextData.equipmentTypeIndex
+				if arg0_13.firstInit then
+					local var3_14 = arg0_13.contextData.equipmentTypeIndex
 
-					if var3 and table.contains(var1, var3) then
-						var2 = var3
+					if var3_14 and table.contains(var1_14, var3_14) then
+						var2_14 = var3_14
 					end
 				end
 
-				arg0.contextData.equipmentTypeIndex = nil
+				arg0_13.contextData.equipmentTypeIndex = nil
 
-				local var4 = table.indexof(var1, var2) or 1
+				local var4_14 = table.indexof(var1_14, var2_14) or 1
 
-				triggerToggle(arg0.equipmentTypeToggles[var4], true)
+				triggerToggle(arg0_13.equipmentTypeToggles[var4_14], true)
 			end
 		end, SFX_UI_TAG)
 	end
 end
 
-function var0.UpdateEquipmentTypes(arg0)
-	local var0 = var0.GetSortTypes(arg0.env.nationsTree[arg0.contextData.nation])
+function var0_0.UpdateEquipmentTypes(arg0_15)
+	local var0_15 = var0_0.GetSortTypes(arg0_15.env.nationsTree[arg0_15.contextData.nation])
 
-	arg0.equipmentTypeToggles = CustomIndexLayer.Clone2Full(arg0.equipmentTypeToggleGroup, #var0)
+	arg0_15.equipmentTypeToggles = CustomIndexLayer.Clone2Full(arg0_15.equipmentTypeToggleGroup, #var0_15)
 
-	for iter0 = 1, #arg0.equipmentTypeToggles do
-		local var1 = arg0.equipmentTypeToggles[iter0]
+	for iter0_15 = 1, #arg0_15.equipmentTypeToggles do
+		local var1_15 = arg0_15.equipmentTypeToggles[iter0_15]
 
-		var1:GetComponent(typeof(Toggle)).isOn = false
+		var1_15:GetComponent(typeof(Toggle)).isOn = false
 
-		local var2 = var0[iter0]
+		local var2_15 = var0_15[iter0_15]
 
-		arg0.loader:GetSprite(var2, "equipmentType" .. var2, var1:Find("itemName"), true)
-		setActive(var1:Find("selectedframe"), false)
-		onToggle(arg0, var1, function(arg0)
-			if arg0 and arg0.contextData.equipmentTypeIndex ~= var2 then
-				arg0.contextData.equipmentTypeIndex = var2
+		arg0_15.loader:GetSprite(var2_0, "equipmentType" .. var2_15, var1_15:Find("itemName"), true)
+		setActive(var1_15:Find("selectedframe"), false)
+		onToggle(arg0_15, var1_15, function(arg0_16)
+			if arg0_16 and arg0_15.contextData.equipmentTypeIndex ~= var2_15 then
+				arg0_15.contextData.equipmentTypeIndex = var2_15
 
-				arg0:ResetCanvas()
+				arg0_15:ResetCanvas()
 			end
 
-			setActive(var1:Find("selectedframe"), arg0)
+			setActive(var1_15:Find("selectedframe"), arg0_16)
 		end, SFX_UI_TAG)
 	end
 
-	arg0.equipmentTypeToggleGroup.anchoredPosition = Vector2.zero
-	arg0.leftPanel:Find("EquipmentTypes"):GetComponent(typeof(ScrollRect)).velocity = Vector2.zero
+	arg0_15.equipmentTypeToggleGroup.anchoredPosition = Vector2.zero
+	arg0_15.leftPanel:Find("EquipmentTypes"):GetComponent(typeof(ScrollRect)).velocity = Vector2.zero
 end
 
-local var3 = {
+local var3_0 = {
 	15,
 	-4,
 	15,
 	6
 }
 
-function var0.ResetCanvas(arg0)
-	local var0 = EquipmentProxy.EquipmentTransformTreeTemplate[arg0.contextData.nation][arg0.contextData.equipmentTypeIndex]
+function var0_0.ResetCanvas(arg0_17)
+	local var0_17 = EquipmentProxy.EquipmentTransformTreeTemplate[arg0_17.contextData.nation][arg0_17.contextData.equipmentTypeIndex]
 
-	assert(var0, "can't find Equip_upgrade_template Nation: " .. arg0.contextData.nation .. " Type: " .. arg0.contextData.equipmentTypeIndex)
+	assert(var0_17, "can't find Equip_upgrade_template Nation: " .. arg0_17.contextData.nation .. " Type: " .. arg0_17.contextData.equipmentTypeIndex)
 
-	arg0.TreeCanvas.sizeDelta = Vector2(unpack(var0.canvasSize))
-	arg0.TreeCanvas.anchoredPosition = Vector2.zero
-	arg0.rightPanel:GetComponent(typeof(ScrollRect)).velocity = Vector2.zero
+	arg0_17.TreeCanvas.sizeDelta = Vector2(unpack(var0_17.canvasSize))
+	arg0_17.TreeCanvas.anchoredPosition = Vector2.zero
+	arg0_17.rightPanel:GetComponent(typeof(ScrollRect)).velocity = Vector2.zero
 
-	arg0:ReturnCanvasItems()
+	arg0_17:ReturnCanvasItems()
 
-	for iter0, iter1 in ipairs(var0.equipments) do
-		local var1 = arg0.plurals.EquipNode:Dequeue()
+	for iter0_17, iter1_17 in ipairs(var0_17.equipments) do
+		local var1_17 = arg0_17.plurals.EquipNode:Dequeue()
 
-		setActive(var1, true)
-		setParent(var1, arg0.TreeCanvas)
-		table.insert(arg0.nodes, {
-			id = iter1[3],
-			cfg = iter1,
-			go = var1
+		setActive(var1_17, true)
+		setParent(var1_17, arg0_17.TreeCanvas)
+		table.insert(arg0_17.nodes, {
+			id = iter1_17[3],
+			cfg = iter1_17,
+			go = var1_17
 		})
 
-		var1.name = iter1[3]
+		var1_17.name = iter1_17[3]
 
-		arg0:UpdateItemNode(tf(var1), iter1)
+		arg0_17:UpdateItemNode(tf(var1_17), iter1_17)
 	end
 
-	for iter2, iter3 in ipairs(var0.links) do
-		for iter4 = 1, #iter3 - 1 do
-			local var2 = iter3[iter4]
-			local var3 = iter3[iter4 + 1]
-			local var4 = {
-				var3[1] - var2[1],
-				var2[2] - var3[2]
+	for iter2_17, iter3_17 in ipairs(var0_17.links) do
+		for iter4_17 = 1, #iter3_17 - 1 do
+			local var2_17 = iter3_17[iter4_17]
+			local var3_17 = iter3_17[iter4_17 + 1]
+			local var4_17 = {
+				var3_17[1] - var2_17[1],
+				var2_17[2] - var3_17[2]
 			}
-			local var5 = math.abs(var4[1]) > math.abs(var4[2])
-			local var6 = var5 and math.abs(var4[1]) or math.abs(var4[2])
+			local var5_17 = math.abs(var4_17[1]) > math.abs(var4_17[2])
+			local var6_17 = var5_17 and math.abs(var4_17[1]) or math.abs(var4_17[2])
 
-			if var5 then
-				var4[2] = 0
+			if var5_17 then
+				var4_17[2] = 0
 			else
-				var4[1] = 0
+				var4_17[1] = 0
 			end
 
-			local var7 = 1 - math.sign(var4[1])
+			local var7_17 = 1 - math.sign(var4_17[1])
 
-			var7 = var7 ~= 1 and var7 or 2 - math.sign(var4[2])
+			var7_17 = var7_17 ~= 1 and var7_17 or 2 - math.sign(var4_17[2])
 
-			local var8 = math.deg2Rad * 90 * var7
+			local var8_17 = math.deg2Rad * 90 * var7_17
 
-			if #iter3 == 2 then
-				local var9 = arg0.plurals.Link:Dequeue()
+			if #iter3_17 == 2 then
+				local var9_17 = arg0_17.plurals.Link:Dequeue()
 
-				table.insert(arg0.links, go(var9))
-				setActive(var9, true)
-				setParent(var9, arg0.TreeCanvas)
-				arg0.loader:GetSprite(var2, var4[2] == 0 and "wirehead" or "wireline", var9)
+				table.insert(arg0_17.links, go(var9_17))
+				setActive(var9_17, true)
+				setParent(var9_17, arg0_17.TreeCanvas)
+				arg0_17.loader:GetSprite(var2_0, var4_17[2] == 0 and "wirehead" or "wireline", var9_17)
 
-				tf(var9).sizeDelta = Vector2(28, 26)
-				tf(var9).pivot = Vector2(0.5, 0.5)
-				tf(var9).localRotation = Quaternion.Euler(0, 0, var7 * 90)
+				tf(var9_17).sizeDelta = Vector2(28, 26)
+				tf(var9_17).pivot = Vector2(0.5, 0.5)
+				tf(var9_17).localRotation = Quaternion.Euler(0, 0, var7_17 * 90)
 
-				local var10 = Vector2(math.cos(var8), math.sin(var8)) * var3[(var7 - 1) % 4 + 1]
+				local var10_17 = Vector2(math.cos(var8_17), math.sin(var8_17)) * var3_0[(var7_17 - 1) % 4 + 1]
 
-				tf(var9).anchoredPosition = Vector2(var2[1] + var10.x, -var2[2] + var10.y)
+				tf(var9_17).anchoredPosition = Vector2(var2_17[1] + var10_17.x, -var2_17[2] + var10_17.y)
 
-				local var11 = arg0.plurals.Link:Dequeue()
+				local var11_17 = arg0_17.plurals.Link:Dequeue()
 
-				table.insert(arg0.links, go(var11))
-				setActive(var11, true)
-				setParent(var11, arg0.TreeCanvas)
-				arg0.loader:GetSprite(var2, "wiretail", var11)
+				table.insert(arg0_17.links, go(var11_17))
+				setActive(var11_17, true)
+				setParent(var11_17, arg0_17.TreeCanvas)
+				arg0_17.loader:GetSprite(var2_0, "wiretail", var11_17)
 
-				tf(var11).sizeDelta = Vector2(28, 26)
-				tf(var11).pivot = Vector2(0.5, 0.5)
-				tf(var11).localRotation = Quaternion.Euler(0, 0, var7 * 90)
+				tf(var11_17).sizeDelta = Vector2(28, 26)
+				tf(var11_17).pivot = Vector2(0.5, 0.5)
+				tf(var11_17).localRotation = Quaternion.Euler(0, 0, var7_17 * 90)
 
-				local var12 = Vector2(math.cos(var8), math.sin(var8)) * -var3[(var7 + 1) % 4 + 1]
+				local var12_17 = Vector2(math.cos(var8_17), math.sin(var8_17)) * -var3_0[(var7_17 + 1) % 4 + 1]
 
-				tf(var11).anchoredPosition = Vector2(var3[1] + var12.x, -var3[2] + var12.y)
+				tf(var11_17).anchoredPosition = Vector2(var3_17[1] + var12_17.x, -var3_17[2] + var12_17.y)
 
-				local var13 = arg0.plurals.Link:Dequeue()
+				local var13_17 = arg0_17.plurals.Link:Dequeue()
 
-				table.insert(arg0.links, go(var13))
-				setActive(var13, true)
-				setParent(var13, arg0.TreeCanvas)
-				arg0.loader:GetSprite(var2, "wireline", var13)
+				table.insert(arg0_17.links, go(var13_17))
+				setActive(var13_17, true)
+				setParent(var13_17, arg0_17.TreeCanvas)
+				arg0_17.loader:GetSprite(var2_0, "wireline", var13_17)
 
-				tf(var13).sizeDelta = Vector2(math.max(0, var6 - var3[(var7 - 1) % 4 + 1] - var3[(var7 + 1) % 4 + 1] - 28), 16)
-				tf(var13).pivot = Vector2(0, 0.5)
-				tf(var13).localRotation = Quaternion.Euler(0, 0, var7 * 90)
+				tf(var13_17).sizeDelta = Vector2(math.max(0, var6_17 - var3_0[(var7_17 - 1) % 4 + 1] - var3_0[(var7_17 + 1) % 4 + 1] - 28), 16)
+				tf(var13_17).pivot = Vector2(0, 0.5)
+				tf(var13_17).localRotation = Quaternion.Euler(0, 0, var7_17 * 90)
 
-				local var14 = Vector2(math.cos(var8), math.sin(var8)) * 14
+				local var14_17 = Vector2(math.cos(var8_17), math.sin(var8_17)) * 14
 
-				tf(var13).anchoredPosition = Vector2(var2[1] + var10.x, -var2[2] + var10.y) + var14
+				tf(var13_17).anchoredPosition = Vector2(var2_17[1] + var10_17.x, -var2_17[2] + var10_17.y) + var14_17
 
 				break
 			end
 
-			local var15 = arg0.plurals.Link:Dequeue()
+			local var15_17 = arg0_17.plurals.Link:Dequeue()
 
-			table.insert(arg0.links, go(var15))
-			setActive(var15, true)
-			setParent(var15, arg0.TreeCanvas)
+			table.insert(arg0_17.links, go(var15_17))
+			setActive(var15_17, true)
+			setParent(var15_17, arg0_17.TreeCanvas)
 
-			local var16 = 1
+			local var16_17 = 1
 
-			if iter4 == 1 then
-				arg0.loader:GetSprite(var2, var4[2] == 0 and "wirehead" or "wireline", var15)
+			if iter4_17 == 1 then
+				arg0_17.loader:GetSprite(var2_0, var4_17[2] == 0 and "wirehead" or "wireline", var15_17)
 
-				local var17 = var6 + 14 + var16 - var3[(var7 - 1) % 4 + 1]
+				local var17_17 = var6_17 + 14 + var16_17 - var3_0[(var7_17 - 1) % 4 + 1]
 
-				tf(var15).sizeDelta = Vector2(var17, 26)
-				tf(var15).pivot = Vector2((var17 - var16) / var17, 0.5)
-				tf(var15).localRotation = Quaternion.Euler(0, 0, var7 * 90)
-				tf(var15).anchoredPosition = Vector2(var3[1], -var3[2])
-			elseif iter4 + 1 == #iter3 then
-				arg0.loader:GetSprite(var2, "wiretail", var15)
+				tf(var15_17).sizeDelta = Vector2(var17_17, 26)
+				tf(var15_17).pivot = Vector2((var17_17 - var16_17) / var17_17, 0.5)
+				tf(var15_17).localRotation = Quaternion.Euler(0, 0, var7_17 * 90)
+				tf(var15_17).anchoredPosition = Vector2(var3_17[1], -var3_17[2])
+			elseif iter4_17 + 1 == #iter3_17 then
+				arg0_17.loader:GetSprite(var2_0, "wiretail", var15_17)
 
-				tf(var15).sizeDelta = Vector2(var6 + 14 + var16 - var3[(var7 + 1) % 4 + 1], 26)
-				tf(var15).pivot = Vector2(var16 / (var6 + 14 + var16 - var3[(var7 + 1) % 4 + 1]), 0.5)
-				tf(var15).localRotation = Quaternion.Euler(0, 0, var7 * 90)
-				tf(var15).anchoredPosition = Vector2(var2[1], -var2[2])
+				tf(var15_17).sizeDelta = Vector2(var6_17 + 14 + var16_17 - var3_0[(var7_17 + 1) % 4 + 1], 26)
+				tf(var15_17).pivot = Vector2(var16_17 / (var6_17 + 14 + var16_17 - var3_0[(var7_17 + 1) % 4 + 1]), 0.5)
+				tf(var15_17).localRotation = Quaternion.Euler(0, 0, var7_17 * 90)
+				tf(var15_17).anchoredPosition = Vector2(var2_17[1], -var2_17[2])
 			else
-				arg0.loader:GetSprite(var2, "wireline", var15)
+				arg0_17.loader:GetSprite(var2_0, "wireline", var15_17)
 
-				tf(var15).sizeDelta = Vector2(var6 + var16 * 2, 16)
-				tf(var15).pivot = Vector2(var16 / (var6 + var16 * 2), 0.5)
-				tf(var15).localRotation = Quaternion.Euler(0, 0, var7 * 90)
-				tf(var15).anchoredPosition = Vector2(var2[1], -var2[2])
+				tf(var15_17).sizeDelta = Vector2(var6_17 + var16_17 * 2, 16)
+				tf(var15_17).pivot = Vector2(var16_17 / (var6_17 + var16_17 * 2), 0.5)
+				tf(var15_17).localRotation = Quaternion.Euler(0, 0, var7_17 * 90)
+				tf(var15_17).anchoredPosition = Vector2(var2_17[1], -var2_17[2])
 			end
 		end
 	end
 end
 
-function var0.UpdateItemNode(arg0, arg1, arg2)
-	arg1 = tf(arg1)
-	arg1.anchoredPosition = Vector2(arg2[1], -arg2[2])
+function var0_0.UpdateItemNode(arg0_18, arg1_18, arg2_18)
+	arg1_18 = tf(arg1_18)
+	arg1_18.anchoredPosition = Vector2(arg2_18[1], -arg2_18[2])
 
-	updateDrop(arg1:Find("Item"), {
-		id = arg2[3],
+	updateDrop(arg1_18:Find("Item"), {
+		id = arg2_18[3],
 		type = DROP_TYPE_EQUIP
 	})
-	onButton(arg0, arg1:Find("Item"), function()
-		local var0 = EquipmentProxy.GetTransformSources(arg2[3])[1]
+	onButton(arg0_18, arg1_18:Find("Item"), function()
+		local var0_19 = EquipmentProxy.GetTransformSources(arg2_18[3])[1]
 
-		if not var0 then
+		if not var0_19 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_upgrade_initial_node"))
 
 			return
 		end
 
-		arg0:emit(EquipmentTransformTreeMediator.OPEN_LAYER, Context.New({
+		arg0_18:emit(EquipmentTransformTreeMediator.OPEN_LAYER, Context.New({
 			mediator = EquipmentTransformMediator,
 			viewComponent = EquipmentTransformLayer,
 			data = {
-				formulaId = var0
+				formulaId = var0_19
 			}
 		}))
 	end, SFX_PANEL)
-	arg1:Find("Mask/NameText"):GetComponent("ScrollText"):SetText(Equipment.getConfigData(arg2[3]).name)
+	arg1_18:Find("Mask/NameText"):GetComponent("ScrollText"):SetText(Equipment.getConfigData(arg2_18[3]).name)
 
-	local var0 = arg0.env.tracebackHelper:GetSortedEquipTraceBack(arg2[3])
-	local var1 = _.any(var0, function(arg0)
-		local var0 = arg0.candicates
+	local var0_18 = arg0_18.env.tracebackHelper:GetSortedEquipTraceBack(arg2_18[3])
+	local var1_18 = _.any(var0_18, function(arg0_20)
+		local var0_20 = arg0_20.candicates
 
-		return var0 and #var0 > 0 and EquipmentTransformUtil.CheckTransformFormulasSucceed(arg0.formulas, var0[#var0])
+		return var0_20 and #var0_20 > 0 and EquipmentTransformUtil.CheckTransformFormulasSucceed(arg0_20.formulas, var0_20[#var0_20])
 	end)
 
-	setActive(arg1:Find("cratfable"), var1)
-	onButton(arg0, arg1:Find("cratfable"), function()
-		arg0:emit(EquipmentTransformTreeMediator.OPEN_LAYER, Context.New({
+	setActive(arg1_18:Find("cratfable"), var1_18)
+	onButton(arg0_18, arg1_18:Find("cratfable"), function()
+		arg0_18:emit(EquipmentTransformTreeMediator.OPEN_LAYER, Context.New({
 			mediator = EquipmentTraceBackMediator,
 			viewComponent = EquipmentTraceBackLayer,
 			data = {
-				TargetEquipmentId = arg2[3]
+				TargetEquipmentId = arg2_18[3]
 			}
 		}))
 	end)
 
-	local var2 = arg2[4] and PlayerPrefs.GetInt("ShowTransformTip_" .. arg2[3], 0) == 0
+	local var2_18 = arg2_18[4] and PlayerPrefs.GetInt("ShowTransformTip_" .. arg2_18[3], 0) == 0
 
-	setActive(arg1:Find("Item/new"), var2)
+	setActive(arg1_18:Find("Item/new"), var2_18)
 end
 
-function var0.UpdateItemNodes(arg0)
-	for iter0, iter1 in ipairs(arg0.nodes) do
-		arg0:UpdateItemNode(iter1.go, iter1.cfg)
+function var0_0.UpdateItemNodes(arg0_22)
+	for iter0_22, iter1_22 in ipairs(arg0_22.nodes) do
+		arg0_22:UpdateItemNode(iter1_22.go, iter1_22.cfg)
 	end
 end
 
-function var0.UpdateItemNodeByID(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0.nodes) do
-		if arg1 == iter1.id then
-			arg0:UpdateItemNode(iter1.go, iter1.cfg)
+function var0_0.UpdateItemNodeByID(arg0_23, arg1_23)
+	for iter0_23, iter1_23 in ipairs(arg0_23.nodes) do
+		if arg1_23 == iter1_23.id then
+			arg0_23:UpdateItemNode(iter1_23.go, iter1_23.cfg)
 
 			break
 		end
 	end
 end
 
-function var0.ReturnCanvasItems(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0.nodes) do
-		if not arg0.plurals.EquipNode:Enqueue(iter1.go, arg1) then
-			setParent(iter1.go, arg0.pluralRoot)
+function var0_0.ReturnCanvasItems(arg0_24, arg1_24)
+	for iter0_24, iter1_24 in ipairs(arg0_24.nodes) do
+		if not arg0_24.plurals.EquipNode:Enqueue(iter1_24.go, arg1_24) then
+			setParent(iter1_24.go, arg0_24.pluralRoot)
 		end
 	end
 
-	table.clean(arg0.nodes)
+	table.clean(arg0_24.nodes)
 
-	for iter2, iter3 in ipairs(arg0.links) do
-		if not arg0.plurals.Link:Enqueue(iter3, arg1) then
-			setParent(iter3, arg0.pluralRoot)
+	for iter2_24, iter3_24 in ipairs(arg0_24.links) do
+		if not arg0_24.plurals.Link:Enqueue(iter3_24, arg1_24) then
+			setParent(iter3_24, arg0_24.pluralRoot)
 		end
 	end
 
-	table.clean(arg0.links)
+	table.clean(arg0_24.links)
 end
 
-function var0.willExit(arg0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0.top, arg0._tf)
-	arg0:ReturnCanvasItems(true)
+function var0_0.willExit(arg0_25)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_25.top, arg0_25._tf)
+	arg0_25:ReturnCanvasItems(true)
 
-	for iter0, iter1 in pairs(arg0.plurals) do
-		iter1:Clear()
+	for iter0_25, iter1_25 in pairs(arg0_25.plurals) do
+		iter1_25:Clear()
 	end
 
-	arg0.loader:Clear()
+	arg0_25.loader:Clear()
 end
 
-return var0
+return var0_0

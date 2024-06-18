@@ -1,53 +1,53 @@
-﻿local var0 = class("MainBasePanel", import(".MainBaseView"))
+﻿local var0_0 = class("MainBasePanel", import(".MainBaseView"))
 
-function var0.Ctor(arg0, arg1, arg2, arg3)
-	var0.super.Ctor(arg0, arg1, arg2)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	var0_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 
-	arg0.contextData = arg3
-	arg0.btns = arg0:GetBtns()
+	arg0_1.contextData = arg3_1
+	arg0_1.btns = arg0_1:GetBtns()
 
-	arg0:Register()
+	arg0_1:Register()
 end
 
-function var0.Init(arg0)
-	for iter0, iter1 in ipairs(arg0.btns) do
-		onButton(arg0, iter1:GetTarget(), function()
-			iter1:OnClick()
+function var0_0.Init(arg0_2)
+	for iter0_2, iter1_2 in ipairs(arg0_2.btns) do
+		onButton(arg0_2, iter1_2:GetTarget(), function()
+			iter1_2:OnClick()
 		end, SFX_PANEL)
-		iter1:Flush(true)
+		iter1_2:Flush(true)
 	end
 end
 
-function var0.Register(arg0)
-	arg0:bind(PlayerProxy.UPDATED, function(arg0)
-		arg0:Refresh()
+function var0_0.Register(arg0_4)
+	arg0_4:bind(PlayerProxy.UPDATED, function(arg0_5)
+		arg0_4:Refresh()
 	end)
 end
 
-function var0.Refresh(arg0)
-	for iter0, iter1 in ipairs(arg0.btns) do
-		iter1:Flush(false)
+function var0_0.Refresh(arg0_6)
+	for iter0_6, iter1_6 in ipairs(arg0_6.btns) do
+		iter1_6:Flush(false)
 	end
 end
 
-function var0.Dispose(arg0)
-	var0.super.Dispose(arg0)
+function var0_0.Dispose(arg0_7)
+	var0_0.super.Dispose(arg0_7)
 
-	for iter0, iter1 in ipairs(arg0.btns) do
-		iter1:Dispose()
+	for iter0_7, iter1_7 in ipairs(arg0_7.btns) do
+		iter1_7:Dispose()
 	end
 
-	arg0.btns = {}
+	arg0_7.btns = {}
 
-	arg0:OnDispose()
+	arg0_7:OnDispose()
 end
 
-function var0.GetBtns(arg0)
+function var0_0.GetBtns(arg0_8)
 	return {}
 end
 
-function var0.OnDispose(arg0)
+function var0_0.OnDispose(arg0_9)
 	return
 end
 
-return var0
+return var0_0

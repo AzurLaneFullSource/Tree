@@ -1,87 +1,87 @@
-﻿local var0 = class("CipherTestLayer", import("..base.BaseUI"))
+﻿local var0_0 = class("CipherTestLayer", import("..base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "CipherTest"
 end
 
-function var0.init(arg0)
-	arg0.nextBtn = arg0:findTF("Next")
-	arg0.gcBtn = arg0:findTF("GC")
-	arg0.live2dContainer = arg0:findTF("Painting/Live2D")
-	arg0.l2dList = arg0:GetL2DList()
-	arg0.curIndex = 0
-	arg0.live2dChar = nil
-	arg0.skinID = nil
+function var0_0.init(arg0_2)
+	arg0_2.nextBtn = arg0_2:findTF("Next")
+	arg0_2.gcBtn = arg0_2:findTF("GC")
+	arg0_2.live2dContainer = arg0_2:findTF("Painting/Live2D")
+	arg0_2.l2dList = arg0_2:GetL2DList()
+	arg0_2.curIndex = 0
+	arg0_2.live2dChar = nil
+	arg0_2.skinID = nil
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0.nextBtn, function()
-		arg0:ClearL2dPainting()
+function var0_0.didEnter(arg0_3)
+	onButton(arg0_3, arg0_3.nextBtn, function()
+		arg0_3:ClearL2dPainting()
 
-		arg0.curIndex = arg0.curIndex + 1
-		arg0.curL2D = arg0.l2dList[arg0.curIndex]
+		arg0_3.curIndex = arg0_3.curIndex + 1
+		arg0_3.curL2D = arg0_3.l2dList[arg0_3.curIndex]
 
-		arg0:LoadL2dPainting(arg0.curL2D)
+		arg0_3:LoadL2dPainting(arg0_3.curL2D)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.gcBtn, function()
+	onButton(arg0_3, arg0_3.gcBtn, function()
 		gcAll()
 	end, SFX_PANEL)
 end
 
-function var0.willExit(arg0)
+function var0_0.willExit(arg0_6)
 	return
 end
 
-function var0.GetL2DList(arg0)
-	local var0 = {}
-	local var1 = pg.ship_skin_template.all
+function var0_0.GetL2DList(arg0_7)
+	local var0_7 = {}
+	local var1_7 = pg.ship_skin_template.all
 
-	for iter0, iter1 in ipairs(var1) do
+	for iter0_7, iter1_7 in ipairs(var1_7) do
 		if ShipSkin.New({
-			id = iter1
+			id = iter1_7
 		}):IsLive2d() then
-			table.insert(var0, iter1)
+			table.insert(var0_7, iter1_7)
 		end
 	end
 
-	return var0
+	return var0_7
 end
 
-function var0.LoadL2dPainting(arg0, arg1)
-	local var0 = pg.ship_skin_template[arg1].ship_group
-	local var1 = ShipGroup.getDefaultShipConfig(var0)
-	local var2 = Live2D.GenerateData({
+function var0_0.LoadL2dPainting(arg0_8, arg1_8)
+	local var0_8 = pg.ship_skin_template[arg1_8].ship_group
+	local var1_8 = ShipGroup.getDefaultShipConfig(var0_8)
+	local var2_8 = Live2D.GenerateData({
 		ship = Ship.New({
 			id = 999,
-			configId = var1.id,
-			skin_id = arg1
+			configId = var1_8.id,
+			skin_id = arg1_8
 		}),
 		scale = Vector3(52, 52, 52),
 		position = Vector3(0, 0, -1),
-		parent = arg0.live2dContainer
+		parent = arg0_8.live2dContainer
 	})
 
-	var2.shopPreView = true
+	var2_8.shopPreView = true
 
 	pg.UIMgr.GetInstance():LoadingOn()
 
-	local var3
+	local var3_8
 
-	var3 = Live2D.New(var2, function(arg0)
-		arg0:IgonreReactPos(true)
-		arg0:ClearL2dPainting()
+	var3_8 = Live2D.New(var2_8, function(arg0_9)
+		arg0_9:IgonreReactPos(true)
+		arg0_8:ClearL2dPainting()
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		arg0.live2dChar = var3
+		arg0_8.live2dChar = var3_8
 	end)
 end
 
-function var0.ClearL2dPainting(arg0)
-	if arg0.live2dChar then
-		arg0.live2dChar:Dispose()
+function var0_0.ClearL2dPainting(arg0_10)
+	if arg0_10.live2dChar then
+		arg0_10.live2dChar:Dispose()
 
-		arg0.live2dChar = nil
+		arg0_10.live2dChar = nil
 	end
 end
 
-return var0
+return var0_0

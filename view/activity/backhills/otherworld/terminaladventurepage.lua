@@ -1,191 +1,191 @@
-﻿local var0 = class("TerminalAdventurePage", import("view.base.BaseSubView"))
+﻿local var0_0 = class("TerminalAdventurePage", import("view.base.BaseSubView"))
 
-var0.BIND_PT_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_PT_ID
-var0.BIND_TASK_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_TASK_ID
+var0_0.BIND_PT_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_PT_ID
+var0_0.BIND_TASK_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_TASK_ID
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "TerminalAdventurePage"
 end
 
-function var0.OnLoaded(arg0)
-	arg0._tf.name = tostring(OtherworldTerminalLayer.PAGE_ADVENTURE)
-	arg0.levelTF = arg0:findTF("frame/level")
+function var0_0.OnLoaded(arg0_2)
+	arg0_2._tf.name = tostring(OtherworldTerminalLayer.PAGE_ADVENTURE)
+	arg0_2.levelTF = arg0_2:findTF("frame/level")
 
-	setText(arg0:findTF("title/content/Text", arg0.levelTF), i18n("adventure_award_title"))
-	setText(arg0:findTF("progress/title", arg0.levelTF), i18n("adventure_progress_title"))
-	setText(arg0:findTF("lv", arg0.levelTF), i18n("adventure_lv_title"))
+	setText(arg0_2:findTF("title/content/Text", arg0_2.levelTF), i18n("adventure_award_title"))
+	setText(arg0_2:findTF("progress/title", arg0_2.levelTF), i18n("adventure_progress_title"))
+	setText(arg0_2:findTF("lv", arg0_2.levelTF), i18n("adventure_lv_title"))
 
-	arg0.ptIconTF = arg0:findTF("progress/Image", arg0.levelTF)
-	arg0.ptValueTF = arg0:findTF("progress/value", arg0.levelTF)
-	arg0.ptLvTF = arg0:findTF("lv/Text", arg0.levelTF)
-	arg0.awardView = arg0:findTF("awards/view", arg0.levelTF)
-	arg0.awardUIList = UIItemList.New(arg0:findTF("content", arg0.awardView), arg0:findTF("content/tpl", arg0.awardView))
-	arg0.recordTF = arg0:findTF("frame/record")
+	arg0_2.ptIconTF = arg0_2:findTF("progress/Image", arg0_2.levelTF)
+	arg0_2.ptValueTF = arg0_2:findTF("progress/value", arg0_2.levelTF)
+	arg0_2.ptLvTF = arg0_2:findTF("lv/Text", arg0_2.levelTF)
+	arg0_2.awardView = arg0_2:findTF("awards/view", arg0_2.levelTF)
+	arg0_2.awardUIList = UIItemList.New(arg0_2:findTF("content", arg0_2.awardView), arg0_2:findTF("content/tpl", arg0_2.awardView))
+	arg0_2.recordTF = arg0_2:findTF("frame/record")
 
-	setText(arg0:findTF("title/content/Text", arg0.recordTF), i18n("adventure_record_title"))
-	setText(arg0:findTF("grade", arg0.recordTF), i18n("adventure_record_grade_title"))
+	setText(arg0_2:findTF("title/content/Text", arg0_2.recordTF), i18n("adventure_record_title"))
+	setText(arg0_2:findTF("grade", arg0_2.recordTF), i18n("adventure_record_grade_title"))
 
-	arg0.recordGradeTF = arg0:findTF("grade/Text", arg0.recordTF)
-	arg0.taskUIList = UIItemList.New(arg0:findTF("form", arg0.recordTF), arg0:findTF("form/tpl", arg0.recordTF))
+	arg0_2.recordGradeTF = arg0_2:findTF("grade/Text", arg0_2.recordTF)
+	arg0_2.taskUIList = UIItemList.New(arg0_2:findTF("form", arg0_2.recordTF), arg0_2:findTF("form/tpl", arg0_2.recordTF))
 
-	setText(arg0:findTF("frame/tip"), i18n("adventure_award_end_tip"))
+	setText(arg0_2:findTF("frame/tip"), i18n("adventure_award_end_tip"))
 
-	arg0.getBtn = arg0:findTF("frame/get_all_btn")
+	arg0_2.getBtn = arg0_2:findTF("frame/get_all_btn")
 
-	setText(arg0:findTF("Text", arg0.getBtn), i18n("adventure_get_all"))
+	setText(arg0_2:findTF("Text", arg0_2.getBtn), i18n("adventure_get_all"))
 
-	arg0.getGreyBtn = arg0:findTF("frame/get_all_btn_grey")
+	arg0_2.getGreyBtn = arg0_2:findTF("frame/get_all_btn_grey")
 
-	setText(arg0:findTF("Text", arg0.getGreyBtn), i18n("adventure_get_all"))
+	setText(arg0_2:findTF("Text", arg0_2.getGreyBtn), i18n("adventure_get_all"))
 end
 
-function var0.OnInit(arg0)
-	local var0 = getProxy(ActivityProxy):getActivityById(var0.BIND_PT_ACT_ID)
+function var0_0.OnInit(arg0_3)
+	local var0_3 = getProxy(ActivityProxy):getActivityById(var0_0.BIND_PT_ACT_ID)
 
-	assert(var0, "not exist bind pt act, id" .. var0.BIND_PT_ACT_ID)
+	assert(var0_3, "not exist bind pt act, id" .. var0_0.BIND_PT_ACT_ID)
 
-	arg0.ptData = ActivityPtData.New(var0)
-	arg0.taskActivity = getProxy(ActivityProxy):getActivityById(var0.BIND_TASK_ACT_ID)
+	arg0_3.ptData = ActivityPtData.New(var0_3)
+	arg0_3.taskActivity = getProxy(ActivityProxy):getActivityById(var0_0.BIND_TASK_ACT_ID)
 
-	assert(arg0.taskActivity, "not exist bind task act, id" .. var0.BIND_TASK_ACT_ID)
-	onButton(arg0, arg0.getBtn, function()
-		local var0 = arg0.ptData:GetCurrTarget()
+	assert(arg0_3.taskActivity, "not exist bind task act, id" .. var0_0.BIND_TASK_ACT_ID)
+	onButton(arg0_3, arg0_3.getBtn, function()
+		local var0_4 = arg0_3.ptData:GetCurrTarget()
 
-		arg0:emit(OtherworldTerminalMediator.ON_GET_PT_ALL_AWARD, {
-			actId = var0.BIND_PT_ACT_ID,
-			arg1 = var0
+		arg0_3:emit(OtherworldTerminalMediator.ON_GET_PT_ALL_AWARD, {
+			actId = var0_0.BIND_PT_ACT_ID,
+			arg1 = var0_4
 		})
 	end, SFX_PANEL)
-	arg0:InitPtUI()
-	arg0:UpdatePtView()
-	arg0:InitTaskUI()
-	arg0:UpdateTaskView()
+	arg0_3:InitPtUI()
+	arg0_3:UpdatePtView()
+	arg0_3:InitTaskUI()
+	arg0_3:UpdateTaskView()
 end
 
-function var0.InitPtUI(arg0)
-	LoadImageSpriteAsync(Drop.New(arg0.ptData:GetRes()):getIcon(), arg0.ptIconTF, false)
-	arg0.awardUIList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg1 + 1
-			local var1 = arg0.ptData.dropList[var0]
-			local var2 = arg0.ptData.targets[var0]
-			local var3 = Drop.New({
-				type = var1[1],
-				id = var1[2],
-				count = var1[3]
+function var0_0.InitPtUI(arg0_5)
+	LoadImageSpriteAsync(Drop.New(arg0_5.ptData:GetRes()):getIcon(), arg0_5.ptIconTF, false)
+	arg0_5.awardUIList:make(function(arg0_6, arg1_6, arg2_6)
+		if arg0_6 == UIItemList.EventUpdate then
+			local var0_6 = arg1_6 + 1
+			local var1_6 = arg0_5.ptData.dropList[var0_6]
+			local var2_6 = arg0_5.ptData.targets[var0_6]
+			local var3_6 = Drop.New({
+				type = var1_6[1],
+				id = var1_6[2],
+				count = var1_6[3]
 			})
 
-			updateDrop(arg2:Find("IconTpl"), var3, {
+			updateDrop(arg2_6:Find("IconTpl"), var3_6, {
 				hideName = true
 			})
-			onButton(arg0.binder, arg2:Find("IconTpl"), function()
-				arg0:emit(BaseUI.ON_DROP, var3)
+			onButton(arg0_5.binder, arg2_6:Find("IconTpl"), function()
+				arg0_5:emit(BaseUI.ON_DROP, var3_6)
 			end, SFX_PANEL)
 
-			local var4 = arg0.ptData:GetLevel()
+			local var4_6 = arg0_5.ptData:GetLevel()
 
-			setActive(arg2:Find("IconTpl/got"), var0 <= var4)
-			setText(arg2:Find("lv"), "Lv:" .. var0)
-			setActive(arg2:Find("lv0"), var0 == 1)
+			setActive(arg2_6:Find("IconTpl/got"), var0_6 <= var4_6)
+			setText(arg2_6:Find("lv"), "Lv:" .. var0_6)
+			setActive(arg2_6:Find("lv0"), var0_6 == 1)
 
-			local var5 = arg2:Find("progress")
+			local var5_6 = arg2_6:Find("progress")
 
-			setActive(var5:Find("left"), var0 ~= 1)
-			setActive(var5:Find("right"), var0 == #arg0.ptData.targets)
+			setActive(var5_6:Find("left"), var0_6 ~= 1)
+			setActive(var5_6:Find("right"), var0_6 == #arg0_5.ptData.targets)
 
-			if var0 <= var4 then
-				setSlider(var5, 0, 1, 1)
+			if var0_6 <= var4_6 then
+				setSlider(var5_6, 0, 1, 1)
 			else
-				local var6 = arg0.ptData.targets[var0]
-				local var7 = var0 == 1 and 0 or arg0.ptData.targets[var0 - 1]
-				local var8 = arg0.ptData.count
+				local var6_6 = arg0_5.ptData.targets[var0_6]
+				local var7_6 = var0_6 == 1 and 0 or arg0_5.ptData.targets[var0_6 - 1]
+				local var8_6 = arg0_5.ptData.count
 
-				setSlider(var5, 0, 1, (var8 - var7) / (var6 - var7))
+				setSlider(var5_6, 0, 1, (var8_6 - var7_6) / (var6_6 - var7_6))
 			end
 		end
 	end)
 end
 
-function var0.UpdatePt(arg0, arg1)
-	arg0.ptData = ActivityPtData.New(arg1)
+function var0_0.UpdatePt(arg0_8, arg1_8)
+	arg0_8.ptData = ActivityPtData.New(arg1_8)
 
-	arg0:UpdatePtView()
+	arg0_8:UpdatePtView()
 end
 
-function var0.UpdatePtView(arg0)
-	local var0 = arg0.ptData:CanGetAward()
+function var0_0.UpdatePtView(arg0_9)
+	local var0_9 = arg0_9.ptData:CanGetAward()
 
-	setActive(arg0.getBtn, var0)
-	setActive(arg0.getGreyBtn, not var0)
+	setActive(arg0_9.getBtn, var0_9)
+	setActive(arg0_9.getGreyBtn, not var0_9)
 
-	local var1 = arg0.ptData:GetLevel()
-	local var2, var3 = arg0.ptData:GetResProgress()
+	local var1_9 = arg0_9.ptData:GetLevel()
+	local var2_9, var3_9 = arg0_9.ptData:GetResProgress()
 
-	setText(arg0.ptValueTF, math.max(var3 - var2, 0))
-	setText(arg0.ptLvTF, var1)
-	arg0.awardUIList:align(#arg0.ptData.targets)
-	scrollTo(arg0.awardView, var1 / #arg0.ptData.targets, 0)
+	setText(arg0_9.ptValueTF, math.max(var3_9 - var2_9, 0))
+	setText(arg0_9.ptLvTF, var1_9)
+	arg0_9.awardUIList:align(#arg0_9.ptData.targets)
+	scrollTo(arg0_9.awardView, var1_9 / #arg0_9.ptData.targets, 0)
 end
 
-function var0.InitTaskUI(arg0)
-	arg0.taskIds = arg0.taskActivity:getConfig("config_data")
+function var0_0.InitTaskUI(arg0_10)
+	arg0_10.taskIds = arg0_10.taskActivity:getConfig("config_data")
 
-	arg0.taskUIList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg0.taskIds[arg1 + 1]
-			local var1 = getProxy(TaskProxy):getTaskById(var0)
+	arg0_10.taskUIList:make(function(arg0_11, arg1_11, arg2_11)
+		if arg0_11 == UIItemList.EventUpdate then
+			local var0_11 = arg0_10.taskIds[arg1_11 + 1]
+			local var1_11 = getProxy(TaskProxy):getTaskById(var0_11)
 
-			setText(arg0:findTF("name", arg2), var1:getConfig("desc"))
-			setText(arg0:findTF("value", arg2), var1:getProgress())
+			setText(arg0_10:findTF("name", arg2_11), var1_11:getConfig("desc"))
+			setText(arg0_10:findTF("value", arg2_11), var1_11:getProgress())
 		end
 	end)
 end
 
-function var0.UpdateTask(arg0, arg1)
-	arg0.taskActivity = arg1
+function var0_0.UpdateTask(arg0_12, arg1_12)
+	arg0_12.taskActivity = arg1_12
 
-	arg0:UpdateTaskView()
+	arg0_12:UpdateTaskView()
 end
 
-function var0.UpdateTaskView(arg0)
-	arg0.taskUIList:align(#arg0.taskIds)
-	setText(arg0.recordGradeTF, arg0:GetAdventureGrade())
+function var0_0.UpdateTaskView(arg0_13)
+	arg0_13.taskUIList:align(#arg0_13.taskIds)
+	setText(arg0_13.recordGradeTF, arg0_13:GetAdventureGrade())
 end
 
-function var0.GetAdventureGrade(arg0)
-	local var0 = arg0.taskActivity:getConfig("config_client")
+function var0_0.GetAdventureGrade(arg0_14)
+	local var0_14 = arg0_14.taskActivity:getConfig("config_client")
 
-	for iter0, iter1 in ipairs(var0) do
-		if #iter1[2] > 0 then
-			for iter2, iter3 in ipairs(iter1[2]) do
-				local var1 = iter3[1]
-				local var2 = iter3[2]
-				local var3 = getProxy(TaskProxy):getTaskById(var1)
+	for iter0_14, iter1_14 in ipairs(var0_14) do
+		if #iter1_14[2] > 0 then
+			for iter2_14, iter3_14 in ipairs(iter1_14[2]) do
+				local var1_14 = iter3_14[1]
+				local var2_14 = iter3_14[2]
+				local var3_14 = getProxy(TaskProxy):getTaskById(var1_14)
 
-				if var3 and var2 <= var3:getProgress() then
-					return iter1[1]
+				if var3_14 and var2_14 <= var3_14:getProgress() then
+					return iter1_14[1]
 				end
 			end
 		else
-			return iter1[1]
+			return iter1_14[1]
 		end
 	end
 
 	return ""
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_15)
 	return
 end
 
-function var0.IsTip()
-	local var0 = getProxy(ActivityProxy):getActivityById(var0.BIND_PT_ACT_ID)
+function var0_0.IsTip()
+	local var0_16 = getProxy(ActivityProxy):getActivityById(var0_0.BIND_PT_ACT_ID)
 
-	if not var0 or var0:isEnd() then
+	if not var0_16 or var0_16:isEnd() then
 		return false
 	end
 
-	return ActivityPtData.New(var0):CanGetAward()
+	return ActivityPtData.New(var0_16):CanGetAward()
 end
 
-return var0
+return var0_0

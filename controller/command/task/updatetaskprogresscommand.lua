@@ -1,99 +1,99 @@
-﻿local var0 = class("UpdateTaskProgressCommand", pm.SimpleCommand)
+﻿local var0_0 = class("UpdateTaskProgressCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.taskId
-	local var2 = pg.task_data_template[var1]
-	local var3
-	local var4
-	local var5 = getProxy(TaskProxy)
-	local var6 = var5:getTaskById(var1)
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.taskId
+	local var2_1 = pg.task_data_template[var1_1]
+	local var3_1
+	local var4_1
+	local var5_1 = getProxy(TaskProxy)
+	local var6_1 = var5_1:getTaskById(var1_1)
 
-	if not var6 then
+	if not var6_1 then
 		return
 	end
 
-	local var7 = var6:getConfig("sub_type")
-	local var8 = false
+	local var7_1 = var6_1:getConfig("sub_type")
+	local var8_1 = false
 
-	if var7 == 2001 then
-		var3 = Task.TASK_PROGRESS_UPDATE
+	if var7_1 == 2001 then
+		var3_1 = Task.TASK_PROGRESS_UPDATE
 
-		local var9 = var2.target_id
-		local var10 = var2.target_num
-		local var11 = getProxy(FleetProxy):getData()
+		local var9_1 = var2_1.target_id
+		local var10_1 = var2_1.target_num
+		local var11_1 = getProxy(FleetProxy):getData()
 
-		for iter0, iter1 in pairs(var11) do
-			if (table.contains(var9, iter1.id) or #var9 == 0) and iter1:getShipCount() == var10 then
-				var8 = true
+		for iter0_1, iter1_1 in pairs(var11_1) do
+			if (table.contains(var9_1, iter1_1.id) or #var9_1 == 0) and iter1_1:getShipCount() == var10_1 then
+				var8_1 = true
 
 				break
 			end
 		end
 
-		var4 = var10
-	elseif var7 == 2002 then
-		var3 = Task.TASK_PROGRESS_UPDATE
+		var4_1 = var10_1
+	elseif var7_1 == 2002 then
+		var3_1 = Task.TASK_PROGRESS_UPDATE
 
-		local var12 = var2.target_id
-		local var13 = var12[1]
-		local var14 = var12[2]
-		local var15 = var2.target_num
-		local var16 = getProxy(FleetProxy):getData()
-		local var17 = 0
+		local var12_1 = var2_1.target_id
+		local var13_1 = var12_1[1]
+		local var14_1 = var12_1[2]
+		local var15_1 = var2_1.target_num
+		local var16_1 = getProxy(FleetProxy):getData()
+		local var17_1 = 0
 
-		for iter2, iter3 in pairs(var16) do
-			if iter3:getShipCount() == var14 and var13 <= iter3:avgLevel() then
-				var17 = var17 + 1
+		for iter2_1, iter3_1 in pairs(var16_1) do
+			if iter3_1:getShipCount() == var14_1 and var13_1 <= iter3_1:avgLevel() then
+				var17_1 = var17_1 + 1
 			end
 		end
 
-		if not var6:isFinish() and var17 > var6.progress then
-			var8 = true
-			var4 = var17
+		if not var6_1:isFinish() and var17_1 > var6_1.progress then
+			var8_1 = true
+			var4_1 = var17_1
 		end
-	elseif var7 == 2003 then
-		var3 = Task.TASK_PROGRESS_UPDATE
-		var8 = true
-		var4 = 1
-	elseif var7 == 2010 or var7 == 2011 then
-		var3 = Task.TASK_PROGRESS_APPEND
-		var8 = true
-		var4 = 1
-	elseif var7 == 2012 then
-		var3 = Task.TASK_PROGRESS_UPDATE
-		var4 = var0.progress
-		var8 = true
+	elseif var7_1 == 2003 then
+		var3_1 = Task.TASK_PROGRESS_UPDATE
+		var8_1 = true
+		var4_1 = 1
+	elseif var7_1 == 2010 or var7_1 == 2011 then
+		var3_1 = Task.TASK_PROGRESS_APPEND
+		var8_1 = true
+		var4_1 = 1
+	elseif var7_1 == 2012 then
+		var3_1 = Task.TASK_PROGRESS_UPDATE
+		var4_1 = var0_1.progress
+		var8_1 = true
 	end
 
-	if not var8 then
+	if not var8_1 then
 		return
 	end
 
-	local var18 = {
-		id = var1,
-		mode = var3,
-		progress = var4
+	local var18_1 = {
+		id = var1_1,
+		mode = var3_1,
+		progress = var4_1
 	}
 
 	pg.ConnectionMgr.GetInstance():Send(20009, {
 		progressinfo = {
-			var18
+			var18_1
 		}
-	}, 20010, function(arg0)
-		if arg0.result == 0 then
-			if var3 == Task.TASK_PROGRESS_UPDATE then
-				var6:updateProgress(var4)
-			elseif var3 == Task.TASK_PROGRESS_APPEND then
-				local var0 = var6.progress + var4
+	}, 20010, function(arg0_2)
+		if arg0_2.result == 0 then
+			if var3_1 == Task.TASK_PROGRESS_UPDATE then
+				var6_1:updateProgress(var4_1)
+			elseif var3_1 == Task.TASK_PROGRESS_APPEND then
+				local var0_2 = var6_1.progress + var4_1
 
-				var6:updateProgress(var0)
+				var6_1:updateProgress(var0_2)
 			end
 
-			var5:updateTask(var6)
-			arg0:sendNotification(GAME.SHARE_TASK_FINISHED)
+			var5_1:updateTask(var6_1)
+			arg0_1:sendNotification(GAME.SHARE_TASK_FINISHED)
 		end
 	end)
 end
 
-return var0
+return var0_0

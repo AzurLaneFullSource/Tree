@@ -1,25 +1,25 @@
-﻿local var0 = class("ShipModMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("ShipModMediator", import("..base.ContextMediator"))
 
-var0.ON_SELECT_MATERIAL_SHIPS = "ShipModMediator:ON_SELECT_MATERIAL_SHIPS"
-var0.ON_AUTO_SELECT_SHIP = "ShipModMediator:ON_AUTO_SELECT_SHIP"
-var0.MOD_SHIP = "ShipModMediator:MOD_SHIP"
-var0.ON_SKILL = "ShipModMediator:ON_SKILL"
-var0.LOADEND = "ShipModMediator:LOADEND"
+var0_0.ON_SELECT_MATERIAL_SHIPS = "ShipModMediator:ON_SELECT_MATERIAL_SHIPS"
+var0_0.ON_AUTO_SELECT_SHIP = "ShipModMediator:ON_AUTO_SELECT_SHIP"
+var0_0.MOD_SHIP = "ShipModMediator:MOD_SHIP"
+var0_0.ON_SKILL = "ShipModMediator:ON_SKILL"
+var0_0.LOADEND = "ShipModMediator:LOADEND"
 
-function var0.register(arg0)
-	local var0 = getProxy(BayProxy)
-	local var1 = var0:getRawData()
+function var0_0.register(arg0_1)
+	local var0_1 = getProxy(BayProxy)
+	local var1_1 = var0_1:getRawData()
 
-	arg0.viewComponent:setShipVOs(var1)
+	arg0_1.viewComponent:setShipVOs(var1_1)
 
-	local var2 = var0:getShipById(arg0.contextData.shipId)
+	local var2_1 = var0_1:getShipById(arg0_1.contextData.shipId)
 
-	arg0.viewComponent:setShip(var2)
-	arg0:bind(var0.ON_SELECT_MATERIAL_SHIPS, function(arg0)
-		local var0 = pg.ShipFlagMgr.GetInstance():FilterShips(ShipStatus.FILTER_SHIPS_FLAGS_1)
+	arg0_1.viewComponent:setShip(var2_1)
+	arg0_1:bind(var0_0.ON_SELECT_MATERIAL_SHIPS, function(arg0_2)
+		local var0_2 = pg.ShipFlagMgr.GetInstance():FilterShips(ShipStatus.FILTER_SHIPS_FLAGS_1)
 
-		table.insert(var0, 1, arg0.contextData.shipId)
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
+		table.insert(var0_2, 1, arg0_1.contextData.shipId)
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 			blockLock = true,
 			destroyCheck = true,
 			selectedMin = 0,
@@ -27,10 +27,10 @@ function var0.register(arg0)
 			leftTopInfo = i18n("word_equipment_intensify"),
 			mode = DockyardScene.MODE_MOD,
 			onShip = ShipStatus.canDestroyShip,
-			ignoredIds = var0,
-			selectedIds = arg0.contextData.materialShipIds,
-			onSelected = function(arg0)
-				arg0.contextData.materialShipIds = arg0
+			ignoredIds = var0_2,
+			selectedIds = arg0_1.contextData.materialShipIds,
+			onSelected = function(arg0_3)
+				arg0_1.contextData.materialShipIds = arg0_3
 			end,
 			sortData = {
 				Asc = true,
@@ -39,72 +39,72 @@ function var0.register(arg0)
 			hideTagFlags = ShipStatus.TAG_HIDE_DESTROY
 		})
 	end)
-	arg0:bind(var0.ON_AUTO_SELECT_SHIP, function(arg0)
-		local var0 = var0:getModRecommendShip(arg0.viewComponent.shipVO, arg0.contextData.materialShipIds or {})
+	arg0_1:bind(var0_0.ON_AUTO_SELECT_SHIP, function(arg0_4)
+		local var0_4 = var0_1:getModRecommendShip(arg0_1.viewComponent.shipVO, arg0_1.contextData.materialShipIds or {})
 
-		if #var0 > 0 then
-			arg0.contextData.materialShipIds = var0
+		if #var0_4 > 0 then
+			arg0_1.contextData.materialShipIds = var0_4
 
-			arg0.viewComponent:initSelectedShips()
-			arg0.viewComponent:initAttrs()
+			arg0_1.viewComponent:initSelectedShips()
+			arg0_1.viewComponent:initAttrs()
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("without_selected_ship"))
 		end
 	end)
-	arg0:bind(var0.MOD_SHIP, function(arg0, arg1)
-		arg0:sendNotification(GAME.MOD_SHIP, {
-			shipId = arg1,
-			shipIds = arg0.contextData.materialShipIds
+	arg0_1:bind(var0_0.MOD_SHIP, function(arg0_5, arg1_5)
+		arg0_1:sendNotification(GAME.MOD_SHIP, {
+			shipId = arg1_5,
+			shipIds = arg0_1.contextData.materialShipIds
 		})
 	end)
-	arg0:bind(var0.ON_SKILL, function(arg0, arg1, arg2)
-		arg0:addSubLayers(Context.New({
+	arg0_1:bind(var0_0.ON_SKILL, function(arg0_6, arg1_6, arg2_6)
+		arg0_1:addSubLayers(Context.New({
 			mediator = SkillInfoMediator,
 			viewComponent = SkillInfoLayer,
 			data = {
-				skillOnShip = arg2,
-				skillId = arg1
+				skillOnShip = arg2_6,
+				skillId = arg1_6
 			}
 		}))
 	end)
-	arg0:bind(var0.LOADEND, function(arg0, arg1)
-		arg0:sendNotification(var0.LOADEND, arg1)
+	arg0_1:bind(var0_0.LOADEND, function(arg0_7, arg1_7)
+		arg0_1:sendNotification(var0_0.LOADEND, arg1_7)
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_8)
 	return {
 		GAME.MOD_SHIP_DONE
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_9, arg1_9)
+	local var0_9 = arg1_9:getName()
+	local var1_9 = arg1_9:getBody()
 
-	if var0 == GAME.MOD_SHIP_DONE then
-		arg0.contextData.materialShipIds = nil
+	if var0_9 == GAME.MOD_SHIP_DONE then
+		arg0_9.contextData.materialShipIds = nil
 
-		arg0.viewComponent:setShip(var1.newShip)
-		arg0.viewComponent:modAttrAnim(var1.newShip, var1.oldShip)
+		arg0_9.viewComponent:setShip(var1_9.newShip)
+		arg0_9.viewComponent:modAttrAnim(var1_9.newShip, var1_9.oldShip)
 		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_shipModLayer_modSuccess"))
 
-		if table.getCount(var1.equipments) > 0 then
-			local var2 = {}
+		if table.getCount(var1_9.equipments) > 0 then
+			local var2_9 = {}
 
-			for iter0, iter1 in pairs(var1.equipments) do
-				table.insert(var2, iter1)
+			for iter0_9, iter1_9 in pairs(var1_9.equipments) do
+				table.insert(var2_9, iter1_9)
 			end
 
-			arg0:addSubLayers(Context.New({
+			arg0_9:addSubLayers(Context.New({
 				viewComponent = ResolveEquipmentLayer,
 				mediator = ResolveEquipmentMediator,
 				data = {
-					Equipments = var2
+					Equipments = var2_9
 				}
 			}))
 		end
 	end
 end
 
-return var0
+return var0_0

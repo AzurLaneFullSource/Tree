@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_10 = {}
+var0_0.word_template_10 = {}
 
-local var1 = var0.word_template_10
+local var1_0 = var0_0.word_template_10
 
 function temp()
-	var1.セ = {
+	var1_0.セ = {
 		ッ = {
 			ク = {
 				ス = {
@@ -37,7 +37,7 @@ end
 temp()
 
 function temp()
-	var1.せ = {
+	var1_0.せ = {
 		む = {
 			し = {
 				this = true
@@ -67,7 +67,7 @@ end
 temp()
 
 function temp()
-	var1.ゼ = {
+	var1_0.ゼ = {
 		ン = {
 			ラ = {
 				this = true
@@ -79,7 +79,7 @@ end
 temp()
 
 function temp()
-	var1.ぜ = {
+	var1_0.ぜ = {
 		ん = {
 			ら = {
 				this = true
@@ -91,7 +91,7 @@ end
 temp()
 
 function temp()
-	var1.ち = {
+	var1_0.ち = {
 		え = {
 			お = {
 				く = {
@@ -142,7 +142,7 @@ end
 temp()
 
 function temp()
-	var1.チ = {
+	var1_0.チ = {
 		ェ = {
 			ン = {
 				メ = {
@@ -198,7 +198,7 @@ end
 temp()
 
 function temp()
-	var1.つ = {
+	var1_0.つ = {
 		ん = {
 			ぼ = {
 				this = true

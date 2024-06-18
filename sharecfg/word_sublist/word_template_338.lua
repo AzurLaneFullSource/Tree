@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_338 = {}
+var0_0.word_template_338 = {}
 
-local var1 = var0.word_template_338
+local var1_0 = var0_0.word_template_338
 
 function temp()
-	var1.鏨 = {
+	var1_0.鏨 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.赃 = {
+	var1_0.赃 = {
 		款 = {
 			洗 = {
 				钱 = {
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.臧 = {
+	var1_0.臧 = {
 		献 = {
 			甫 = {
 				this = true
@@ -62,7 +62,7 @@ end
 temp()
 
 function temp()
-	var1.遭 = {
+	var1_0.遭 = {
 		人 = {
 			强 = {
 				暴 = {
@@ -84,7 +84,7 @@ end
 temp()
 
 function temp()
-	var1.早 = {
+	var1_0.早 = {
 		就 = {
 			已 = {
 				经 = {
@@ -178,7 +178,7 @@ end
 temp()
 
 function temp()
-	var1.澡 = {
+	var1_0.澡 = {
 		资 = {
 			this = true
 		}
@@ -188,7 +188,7 @@ end
 temp()
 
 function temp()
-	var1.繰 = {
+	var1_0.繰 = {
 		this = {
 			this = true
 		}

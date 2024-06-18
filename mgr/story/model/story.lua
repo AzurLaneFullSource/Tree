@@ -1,25 +1,25 @@
-﻿local var0 = class("Story")
+﻿local var0_0 = class("Story")
 
-var0.MODE_ASIDE = 1
-var0.MODE_DIALOGUE = 2
-var0.MODE_BG = 3
-var0.MODE_CAROUSE = 4
-var0.MODE_VEDIO = 5
-var0.MODE_CAST = 6
-var0.STORY_AUTO_SPEED = {
+var0_0.MODE_ASIDE = 1
+var0_0.MODE_DIALOGUE = 2
+var0_0.MODE_BG = 3
+var0_0.MODE_CAROUSE = 4
+var0_0.MODE_VEDIO = 5
+var0_0.MODE_CAST = 6
+var0_0.STORY_AUTO_SPEED = {
 	-9,
 	0,
 	5,
 	9
 }
-var0.TRIGGER_DELAY_TIME = {
+var0_0.TRIGGER_DELAY_TIME = {
 	4,
 	3,
 	1.5,
 	0
 }
 
-function var0.GetStoryStepCls(arg0)
+function var0_0.GetStoryStepCls(arg0_1)
 	return ({
 		AsideStep,
 		DialogueStep,
@@ -27,391 +27,391 @@ function var0.GetStoryStepCls(arg0)
 		CarouselStep,
 		VedioStep,
 		CastStep
-	})[arg0]
+	})[arg0_1]
 end
 
-var0.PLAYER = 2
-var0.TB = 4
-var0.PlaceholderMap = {
-	playername = var0.PLAYER,
-	tb = var0.TB
+var0_0.PLAYER = 2
+var0_0.TB = 4
+var0_0.PlaceholderMap = {
+	playername = var0_0.PLAYER,
+	tb = var0_0.TB
 }
 
-function var0.Ctor(arg0, arg1, arg2, arg3, arg4, arg5)
-	arg0.name = arg1.id
-	arg0.mode = arg1.mode
-	arg0.once = arg1.once
-	arg0.fadeOut = arg1.fadeOut
-	arg0.hideSkip = defaultValue(arg1.hideSkip, false)
-	arg0.skipTip = defaultValue(arg1.skipTip, true)
-	arg0.noWaitFade = defaultValue(arg1.noWaitFade, false)
-	arg0.dialogueBox = arg1.dialogbox or 1
-	arg0.defaultTb = arg1.defaultTb
-	arg0.placeholder = 0
+function var0_0.Ctor(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2, arg5_2)
+	arg0_2.name = arg1_2.id
+	arg0_2.mode = arg1_2.mode
+	arg0_2.once = arg1_2.once
+	arg0_2.fadeOut = arg1_2.fadeOut
+	arg0_2.hideSkip = defaultValue(arg1_2.hideSkip, false)
+	arg0_2.skipTip = defaultValue(arg1_2.skipTip, true)
+	arg0_2.noWaitFade = defaultValue(arg1_2.noWaitFade, false)
+	arg0_2.dialogueBox = arg1_2.dialogbox or 1
+	arg0_2.defaultTb = arg1_2.defaultTb
+	arg0_2.placeholder = 0
 
-	for iter0, iter1 in ipairs(arg1.placeholder or {}) do
-		local var0 = var0.PlaceholderMap[iter1] or 0
+	for iter0_2, iter1_2 in ipairs(arg1_2.placeholder or {}) do
+		local var0_2 = var0_0.PlaceholderMap[iter1_2] or 0
 
-		assert(var0 > 0, iter1)
+		assert(var0_2 > 0, iter1_2)
 
-		arg0.placeholder = bit.bor(arg0.placeholder, var0)
+		arg0_2.placeholder = bit.bor(arg0_2.placeholder, var0_2)
 	end
 
-	arg0.hideRecord = defaultValue(arg1.hideRecord, false)
-	arg0.hideAutoBtn = defaultValue(arg1.hideAuto, false)
-	arg0.storyAlpha = defaultValue(arg1.alpha, 0.568)
+	arg0_2.hideRecord = defaultValue(arg1_2.hideRecord, false)
+	arg0_2.hideAutoBtn = defaultValue(arg1_2.hideAuto, false)
+	arg0_2.storyAlpha = defaultValue(arg1_2.alpha, 0.568)
 
 	if UnGamePlayState then
-		arg0.speedData = arg1.speed or 0
+		arg0_2.speedData = arg1_2.speed or 0
 	else
-		arg0.speedData = arg1.speed or getProxy(SettingsProxy):GetStorySpeed() or 0
+		arg0_2.speedData = arg1_2.speed or getProxy(SettingsProxy):GetStorySpeed() or 0
 	end
 
-	arg0.steps = {}
+	arg0_2.steps = {}
 
-	local var1 = 0
-	local var2 = arg3 or {}
-	local var3 = {}
+	local var1_2 = 0
+	local var2_2 = arg3_2 or {}
+	local var3_2 = {}
 
-	for iter2, iter3 in ipairs(arg1.scripts or {}) do
-		local var4 = iter3.mode or arg0.mode
-		local var5 = var0.GetStoryStepCls(var4).New(iter3)
+	for iter2_2, iter3_2 in ipairs(arg1_2.scripts or {}) do
+		local var4_2 = iter3_2.mode or arg0_2.mode
+		local var5_2 = var0_0.GetStoryStepCls(var4_2).New(iter3_2)
 
-		var5:SetId(iter2)
-		var5:SetPlaceholderType(arg0:GetPlaceholder())
-		var5:SetDefaultTb(arg0.defaultTb)
+		var5_2:SetId(iter2_2)
+		var5_2:SetPlaceholderType(arg0_2:GetPlaceholder())
+		var5_2:SetDefaultTb(arg0_2.defaultTb)
 
-		if var5:ExistOption() then
-			var1 = var1 + 1
+		if var5_2:ExistOption() then
+			var1_2 = var1_2 + 1
 
-			if var2[var1] then
-				var5:SetOptionSelCodes(var2[var1])
+			if var2_2[var1_2] then
+				var5_2:SetOptionSelCodes(var2_2[var1_2])
 			end
 
-			if arg4 then
-				var5.important = true
+			if arg4_2 then
+				var5_2.important = true
 			end
 
-			table.insert(var3, iter2)
+			table.insert(var3_2, iter2_2)
 
-			if arg5 then
-				var5:AutoShowOption()
+			if arg5_2 then
+				var5_2:AutoShowOption()
 			end
 		end
 
-		table.insert(arg0.steps, var5)
+		table.insert(arg0_2.steps, var5_2)
 	end
 
-	if #arg0.steps > 0 then
-		table.insert(var3, #arg0.steps)
+	if #arg0_2.steps > 0 then
+		table.insert(var3_2, #arg0_2.steps)
 	end
 
-	arg0:HandleRecallOptions(var3)
+	arg0_2:HandleRecallOptions(var3_2)
 
-	arg0.branchCode = nil
-	arg0.force = arg2
+	arg0_2.branchCode = nil
+	arg0_2.force = arg2_2
 
 	if UnGamePlayState then
-		arg0.isPlayed = false
+		arg0_2.isPlayed = false
 	else
-		arg0.isPlayed = pg.NewStoryMgr:GetInstance():IsPlayed(arg0.name)
+		arg0_2.isPlayed = pg.NewStoryMgr:GetInstance():IsPlayed(arg0_2.name)
 	end
 
-	arg0.nextScriptName = nil
-	arg0.skipAll = false
-	arg0.isAuto = false
-	arg0.speed = 0
+	arg0_2.nextScriptName = nil
+	arg0_2.skipAll = false
+	arg0_2.isAuto = false
+	arg0_2.speed = 0
 end
 
-function var0.HandleRecallOptions(arg0, arg1)
-	local function var0(arg0, arg1)
-		local var0 = arg0.steps[arg0]
-		local var1 = {}
+function var0_0.HandleRecallOptions(arg0_3, arg1_3)
+	local function var0_3(arg0_4, arg1_4)
+		local var0_4 = arg0_3.steps[arg0_4]
+		local var1_4 = {}
 
-		for iter0 = arg0, arg1 do
-			local var2 = arg0.steps[iter0]
+		for iter0_4 = arg0_4, arg1_4 do
+			local var2_4 = arg0_3.steps[iter0_4]
 
-			table.insert(var1, var2)
+			table.insert(var1_4, var2_4)
 		end
 
-		local var3 = var0:GetOptionCnt()
+		local var3_4 = var0_4:GetOptionCnt()
 
 		return {
-			var1,
-			var3,
-			arg1,
-			arg0
+			var1_4,
+			var3_4,
+			arg1_4,
+			arg0_4
 		}
 	end
 
-	local function var1(arg0)
-		for iter0 = arg0, 1, -1 do
-			local var0 = arg0.steps[iter0]
+	local function var1_3(arg0_5)
+		for iter0_5 = arg0_5, 1, -1 do
+			local var0_5 = arg0_3.steps[iter0_5]
 
-			if var0 and var0.branchCode ~= nil then
-				return iter0
+			if var0_5 and var0_5.branchCode ~= nil then
+				return iter0_5
 			end
 		end
 
 		assert(false)
 	end
 
-	local var2 = {}
+	local var2_3 = {}
 
-	for iter0, iter1 in ipairs(arg1) do
-		if arg0.steps[iter1]:IsRecallOption() then
-			local var3 = iter1
-			local var4 = arg1[iter0 + 1]
+	for iter0_3, iter1_3 in ipairs(arg1_3) do
+		if arg0_3.steps[iter1_3]:IsRecallOption() then
+			local var3_3 = iter1_3
+			local var4_3 = arg1_3[iter0_3 + 1]
 
-			if var3 and var4 then
-				local var5 = var1(var4)
+			if var3_3 and var4_3 then
+				local var5_3 = var1_3(var4_3)
 
-				table.insert(var2, var0(var3, var5))
+				table.insert(var2_3, var0_3(var3_3, var5_3))
 			end
 		end
 	end
 
-	local var6 = 0
+	local var6_3 = 0
 
-	for iter2, iter3 in ipairs(var2) do
-		local var7 = iter3[1]
-		local var8 = iter3[2]
-		local var9 = iter3[3]
-		local var10 = iter3[4]
+	for iter2_3, iter3_3 in ipairs(var2_3) do
+		local var7_3 = iter3_3[1]
+		local var8_3 = iter3_3[2]
+		local var9_3 = iter3_3[3]
+		local var10_3 = iter3_3[4]
 
-		for iter4 = 1, var8 - 1 do
-			local var11 = var9 + var6
+		for iter4_3 = 1, var8_3 - 1 do
+			local var11_3 = var9_3 + var6_3
 
-			for iter5, iter6 in ipairs(var7) do
-				local var12 = Clone(iter6)
+			for iter5_3, iter6_3 in ipairs(var7_3) do
+				local var12_3 = Clone(iter6_3)
 
-				var12:SetId(var10)
-				table.insert(arg0.steps, var11 + iter5, var12)
+				var12_3:SetId(var10_3)
+				table.insert(arg0_3.steps, var11_3 + iter5_3, var12_3)
 			end
 		end
 
-		var6 = var6 + (var8 - 1) * #var7
+		var6_3 = var6_3 + (var8_3 - 1) * #var7_3
 	end
 end
 
-function var0.GetPlaceholder(arg0)
-	return arg0.placeholder
+function var0_0.GetPlaceholder(arg0_6)
+	return arg0_6.placeholder
 end
 
-function var0.ShouldReplaceContent(arg0)
-	return arg0.placeholder > 0
+function var0_0.ShouldReplaceContent(arg0_7)
+	return arg0_7.placeholder > 0
 end
 
-function var0.GetStoryAlpha(arg0)
-	return arg0.storyAlpha
+function var0_0.GetStoryAlpha(arg0_8)
+	return arg0_8.storyAlpha
 end
 
-function var0.ShouldHideAutoBtn(arg0)
-	return arg0.hideAutoBtn
+function var0_0.ShouldHideAutoBtn(arg0_9)
+	return arg0_9.hideAutoBtn
 end
 
-function var0.ShouldHideRecord(arg0)
-	return arg0.hideRecord
+function var0_0.ShouldHideRecord(arg0_10)
+	return arg0_10.hideRecord
 end
 
-function var0.GetDialogueStyleName(arg0)
-	return arg0.dialogueBox
+function var0_0.GetDialogueStyleName(arg0_11)
+	return arg0_11.dialogueBox
 end
 
-function var0.IsDialogueStyle2(arg0)
-	return arg0:GetDialogueStyleName() == 2
+function var0_0.IsDialogueStyle2(arg0_12)
+	return arg0_12:GetDialogueStyleName() == 2
 end
 
-function var0.GetTriggerDelayTime(arg0)
-	local var0 = table.indexof(var0.STORY_AUTO_SPEED, arg0.speed)
+function var0_0.GetTriggerDelayTime(arg0_13)
+	local var0_13 = table.indexof(var0_0.STORY_AUTO_SPEED, arg0_13.speed)
 
-	if var0 then
-		return var0.TRIGGER_DELAY_TIME[var0] or 0
+	if var0_13 then
+		return var0_0.TRIGGER_DELAY_TIME[var0_13] or 0
 	end
 
 	return 0
 end
 
-function var0.SetAutoPlay(arg0)
-	arg0.isAuto = true
+function var0_0.SetAutoPlay(arg0_14)
+	arg0_14.isAuto = true
 
-	arg0:SetPlaySpeed(arg0.speedData)
+	arg0_14:SetPlaySpeed(arg0_14.speedData)
 end
 
-function var0.UpdatePlaySpeed(arg0)
-	local var0 = getProxy(SettingsProxy):GetStorySpeed() or 0
+function var0_0.UpdatePlaySpeed(arg0_15)
+	local var0_15 = getProxy(SettingsProxy):GetStorySpeed() or 0
 
-	arg0:SetPlaySpeed(var0)
+	arg0_15:SetPlaySpeed(var0_15)
 end
 
-function var0.GetPlaySpeed(arg0)
-	return arg0.speed
+function var0_0.GetPlaySpeed(arg0_16)
+	return arg0_16.speed
 end
 
-function var0.StopAutoPlay(arg0)
-	arg0.isAuto = false
+function var0_0.StopAutoPlay(arg0_17)
+	arg0_17.isAuto = false
 
-	arg0:ResetSpeed()
+	arg0_17:ResetSpeed()
 end
 
-function var0.SetPlaySpeed(arg0, arg1)
-	arg0.speed = arg1
+function var0_0.SetPlaySpeed(arg0_18, arg1_18)
+	arg0_18.speed = arg1_18
 end
 
-function var0.ResetSpeed(arg0)
-	arg0.speed = 0
+function var0_0.ResetSpeed(arg0_19)
+	arg0_19.speed = 0
 end
 
-function var0.GetPlaySpeed(arg0)
-	return arg0.speed
+function var0_0.GetPlaySpeed(arg0_20)
+	return arg0_20.speed
 end
 
-function var0.GetAutoPlayFlag(arg0)
-	return arg0.isAuto
+function var0_0.GetAutoPlayFlag(arg0_21)
+	return arg0_21.isAuto
 end
 
-function var0.ShowSkipTip(arg0)
-	return arg0.skipTip
+function var0_0.ShowSkipTip(arg0_22)
+	return arg0_22.skipTip
 end
 
-function var0.ShouldWaitFadeout(arg0)
-	return not arg0.noWaitFade
+function var0_0.ShouldWaitFadeout(arg0_23)
+	return not arg0_23.noWaitFade
 end
 
-function var0.ShouldHideSkip(arg0)
-	return arg0.hideSkip
+function var0_0.ShouldHideSkip(arg0_24)
+	return arg0_24.hideSkip
 end
 
-function var0.CanPlay(arg0)
-	return arg0.force or not arg0.isPlayed
+function var0_0.CanPlay(arg0_25)
+	return arg0_25.force or not arg0_25.isPlayed
 end
 
-function var0.GetId(arg0)
-	return arg0.name
+function var0_0.GetId(arg0_26)
+	return arg0_26.name
 end
 
-function var0.GetName(arg0)
-	return arg0.name
+function var0_0.GetName(arg0_27)
+	return arg0_27.name
 end
 
-function var0.GetStepByIndex(arg0, arg1)
-	local var0 = arg0.steps[arg1]
+function var0_0.GetStepByIndex(arg0_28, arg1_28)
+	local var0_28 = arg0_28.steps[arg1_28]
 
-	if not var0 or arg0.branchCode and not var0:IsSameBranch(arg0.branchCode) then
+	if not var0_28 or arg0_28.branchCode and not var0_28:IsSameBranch(arg0_28.branchCode) then
 		return nil
 	end
 
-	return var0
+	return var0_28
 end
 
-function var0.GetNextStep(arg0, arg1)
-	if arg1 >= #arg0.steps then
+function var0_0.GetNextStep(arg0_29, arg1_29)
+	if arg1_29 >= #arg0_29.steps then
 		return nil
 	end
 
-	local var0 = arg1 + 1
-	local var1 = arg0:GetStepByIndex(var0)
+	local var0_29 = arg1_29 + 1
+	local var1_29 = arg0_29:GetStepByIndex(var0_29)
 
-	if not var1 and var0 < #arg0.steps then
-		return arg0:GetNextStep(var0)
+	if not var1_29 and var0_29 < #arg0_29.steps then
+		return arg0_29:GetNextStep(var0_29)
 	else
-		return var1
+		return var1_29
 	end
 end
 
-function var0.GetPrevStep(arg0, arg1)
-	if arg1 <= 1 then
+function var0_0.GetPrevStep(arg0_30, arg1_30)
+	if arg1_30 <= 1 then
 		return nil
 	end
 
-	local var0 = arg1 - 1
-	local var1 = arg0:GetStepByIndex(var0)
+	local var0_30 = arg1_30 - 1
+	local var1_30 = arg0_30:GetStepByIndex(var0_30)
 
-	if not var1 and var0 > 1 then
-		return arg0:GetPrevStep(var0)
+	if not var1_30 and var0_30 > 1 then
+		return arg0_30:GetPrevStep(var0_30)
 	else
-		return var1
+		return var1_30
 	end
 end
 
-function var0.ShouldFadeout(arg0)
-	return arg0.fadeOut ~= nil
+function var0_0.ShouldFadeout(arg0_31)
+	return arg0_31.fadeOut ~= nil
 end
 
-function var0.GetFadeoutTime(arg0)
-	return arg0.fadeOut
+function var0_0.GetFadeoutTime(arg0_32)
+	return arg0_32.fadeOut
 end
 
-function var0.IsPlayed(arg0)
-	return arg0.isPlayed
+function var0_0.IsPlayed(arg0_33)
+	return arg0_33.isPlayed
 end
 
-function var0.SetBranchCode(arg0, arg1)
-	arg0.branchCode = arg1
+function var0_0.SetBranchCode(arg0_34, arg1_34)
+	arg0_34.branchCode = arg1_34
 end
 
-function var0.GetBranchCode(arg0)
-	return arg0.branchCode
+function var0_0.GetBranchCode(arg0_35)
+	return arg0_35.branchCode
 end
 
-function var0.GetNextScriptName(arg0)
-	return arg0.nextScriptName
+function var0_0.GetNextScriptName(arg0_36)
+	return arg0_36.nextScriptName
 end
 
-function var0.SetNextScriptName(arg0, arg1)
-	arg0.nextScriptName = arg1
+function var0_0.SetNextScriptName(arg0_37, arg1_37)
+	arg0_37.nextScriptName = arg1_37
 end
 
-function var0.SkipAll(arg0)
-	arg0.skipAll = true
+function var0_0.SkipAll(arg0_38)
+	arg0_38.skipAll = true
 end
 
-function var0.StopSkip(arg0)
-	arg0.skipAll = false
+function var0_0.StopSkip(arg0_39)
+	arg0_39.skipAll = false
 end
 
-function var0.ShouldSkipAll(arg0)
-	return arg0.skipAll
+function var0_0.ShouldSkipAll(arg0_40)
+	return arg0_40.skipAll
 end
 
-function var0.GetUsingPaintingNames(arg0)
-	local var0 = {}
+function var0_0.GetUsingPaintingNames(arg0_41)
+	local var0_41 = {}
 
-	for iter0, iter1 in ipairs(arg0.steps) do
-		local var1 = iter1:GetUsingPaintingNames()
+	for iter0_41, iter1_41 in ipairs(arg0_41.steps) do
+		local var1_41 = iter1_41:GetUsingPaintingNames()
 
-		for iter2, iter3 in ipairs(var1) do
-			var0[iter3] = true
+		for iter2_41, iter3_41 in ipairs(var1_41) do
+			var0_41[iter3_41] = true
 		end
 	end
 
-	local var2 = {}
+	local var2_41 = {}
 
-	for iter4, iter5 in pairs(var0) do
-		table.insert(var2, iter4)
+	for iter4_41, iter5_41 in pairs(var0_41) do
+		table.insert(var2_41, iter4_41)
 	end
 
-	return var2
+	return var2_41
 end
 
-function var0.GetAllStepDispatcherRecallName(arg0)
-	local var0 = {}
+function var0_0.GetAllStepDispatcherRecallName(arg0_42)
+	local var0_42 = {}
 
-	for iter0, iter1 in ipairs(arg0.steps) do
-		local var1 = iter1:GetDispatcherRecallName()
+	for iter0_42, iter1_42 in ipairs(arg0_42.steps) do
+		local var1_42 = iter1_42:GetDispatcherRecallName()
 
-		if var1 then
-			var0[var1] = true
+		if var1_42 then
+			var0_42[var1_42] = true
 		end
 	end
 
-	local var2 = {}
+	local var2_42 = {}
 
-	for iter2, iter3 in pairs(var0) do
-		table.insert(var2, iter2)
+	for iter2_42, iter3_42 in pairs(var0_42) do
+		table.insert(var2_42, iter2_42)
 	end
 
-	return var2
+	return var2_42
 end
 
-return var0
+return var0_0

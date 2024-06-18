@@ -1,22 +1,22 @@
-﻿local var0 = class("SurveyCommand", pm.SimpleCommand)
+﻿local var0_0 = class("SurveyCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
 
 	pg.ConnectionMgr.GetInstance():Send(11025, {
-		survey_id = var0.surveyID
-	}, 11026, function(arg0)
-		if arg0.result == 0 then
-			print(var0.surveyID, var0.surveyUrlStr)
-			pg.SdkMgr.GetInstance():Survey(var0.surveyUrlStr)
+		survey_id = var0_1.surveyID
+	}, 11026, function(arg0_2)
+		if arg0_2.result == 0 then
+			print(var0_1.surveyID, var0_1.surveyUrlStr)
+			pg.SdkMgr.GetInstance():Survey(var0_1.surveyUrlStr)
 
 			if IsUnityEditor then
-				Application.OpenURL(var0.surveyUrlStr)
+				Application.OpenURL(var0_1.surveyUrlStr)
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0_2.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

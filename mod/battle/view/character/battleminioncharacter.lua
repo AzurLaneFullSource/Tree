@@ -1,127 +1,127 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConst
-local var2 = var0.Battle.BattleConfig
-local var3 = var0.Battle.BattleUnitEvent
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConst
+local var2_0 = var0_0.Battle.BattleConfig
+local var3_0 = var0_0.Battle.BattleUnitEvent
 
-var0.Battle.BattleMinionCharacter = class("BattleMinionCharacter", var0.Battle.BattleCharacter)
-var0.Battle.BattleMinionCharacter.__name = "BattleMinionCharacter"
+var0_0.Battle.BattleMinionCharacter = class("BattleMinionCharacter", var0_0.Battle.BattleCharacter)
+var0_0.Battle.BattleMinionCharacter.__name = "BattleMinionCharacter"
 
-local var4 = var0.Battle.BattleMinionCharacter
+local var4_0 = var0_0.Battle.BattleMinionCharacter
 
-function var4.Ctor(arg0)
-	var4.super.Ctor(arg0)
+function var4_0.Ctor(arg0_1)
+	var4_0.super.Ctor(arg0_1)
 
-	arg0._preCastBound = false
+	arg0_1._preCastBound = false
 end
 
-function var4.RegisterWeaponListener(arg0, arg1)
-	var4.super.RegisterWeaponListener(arg0, arg1)
-	arg1:RegisterEventListener(arg0, var3.WEAPON_PRE_CAST, arg0.onWeaponPreCast)
-	arg1:RegisterEventListener(arg0, var3.WEAPON_PRE_CAST_FINISH, arg0.onWeaponPrecastFinish)
+function var4_0.RegisterWeaponListener(arg0_2, arg1_2)
+	var4_0.super.RegisterWeaponListener(arg0_2, arg1_2)
+	arg1_2:RegisterEventListener(arg0_2, var3_0.WEAPON_PRE_CAST, arg0_2.onWeaponPreCast)
+	arg1_2:RegisterEventListener(arg0_2, var3_0.WEAPON_PRE_CAST_FINISH, arg0_2.onWeaponPrecastFinish)
 end
 
-function var4.UnregisterWeaponListener(arg0, arg1)
-	var4.super.UnregisterWeaponListener(arg0, arg1)
-	arg1:UnregisterEventListener(arg0, var3.WEAPON_PRE_CAST)
-	arg1:UnregisterEventListener(arg0, var3.WEAPON_PRE_CAST_FINISH)
+function var4_0.UnregisterWeaponListener(arg0_3, arg1_3)
+	var4_0.super.UnregisterWeaponListener(arg0_3, arg1_3)
+	arg1_3:UnregisterEventListener(arg0_3, var3_0.WEAPON_PRE_CAST)
+	arg1_3:UnregisterEventListener(arg0_3, var3_0.WEAPON_PRE_CAST_FINISH)
 end
 
-function var4.Update(arg0)
-	var4.super.Update(arg0)
-	arg0:UpdatePosition()
-	arg0:UpdateMatrix()
+function var4_0.Update(arg0_4)
+	var4_0.super.Update(arg0_4)
+	arg0_4:UpdatePosition()
+	arg0_4:UpdateMatrix()
 end
 
-function var4.updateComponentVisible(arg0)
-	if arg0._unitData:GetIFF() ~= var2.FOE_CODE then
+function var4_0.updateComponentVisible(arg0_5)
+	if arg0_5._unitData:GetIFF() ~= var2_0.FOE_CODE then
 		return
 	end
 
-	local var0 = arg0._unitData:GetExposed()
-	local var1 = arg0._unitData:GetDiveDetected()
-	local var2 = arg0._unitData:GetDiveInvisible()
-	local var3 = var0 and (not var2 or not not var1)
+	local var0_5 = arg0_5._unitData:GetExposed()
+	local var1_5 = arg0_5._unitData:GetDiveDetected()
+	local var2_5 = arg0_5._unitData:GetDiveInvisible()
+	local var3_5 = var0_5 and (not var2_5 or not not var1_5)
 
-	SetActive(arg0._HPBarTf, var3)
-	SetActive(arg0._FXAttachPoint, var3)
+	SetActive(arg0_5._HPBarTf, var3_5)
+	SetActive(arg0_5._FXAttachPoint, var3_5)
 end
 
-function var4.updateComponentDiveInvisible(arg0)
-	local var0 = arg0._unitData:GetDiveDetected() and arg0._unitData:GetIFF() == var2.FOE_CODE
-	local var1 = arg0._unitData:GetDiveInvisible()
-	local var2
-	local var3 = (var0 or not var1) and true or false
+function var4_0.updateComponentDiveInvisible(arg0_6)
+	local var0_6 = arg0_6._unitData:GetDiveDetected() and arg0_6._unitData:GetIFF() == var2_0.FOE_CODE
+	local var1_6 = arg0_6._unitData:GetDiveInvisible()
+	local var2_6
+	local var3_6 = (var0_6 or not var1_6) and true or false
 
-	SetActive(arg0._HPBarTf, var3)
-	SetActive(arg0._FXAttachPoint, var3)
+	SetActive(arg0_6._HPBarTf, var3_6)
+	SetActive(arg0_6._FXAttachPoint, var3_6)
 end
 
-function var4.Dispose(arg0)
-	arg0:AddShaderColor()
-	var4.super.Dispose(arg0)
+function var4_0.Dispose(arg0_7)
+	arg0_7:AddShaderColor()
+	var4_0.super.Dispose(arg0_7)
 end
 
-function var4.GetModleID(arg0)
-	return arg0._unitData:GetTemplate().prefab
+function var4_0.GetModleID(arg0_8)
+	return arg0_8._unitData:GetTemplate().prefab
 end
 
-function var4.onWeaponPreCast(arg0, arg1)
-	local var0 = arg1.Data
-	local var1 = var0.fx
+function var4_0.onWeaponPreCast(arg0_9, arg1_9)
+	local var0_9 = arg1_9.Data
+	local var1_9 = var0_9.fx
 
-	arg0:AddFX(var1, true)
+	arg0_9:AddFX(var1_9, true)
 
-	arg0._preCastBound = var0.isBound
+	arg0_9._preCastBound = var0_9.isBound
 end
 
-function var4.onWeaponPrecastFinish(arg0, arg1)
-	local var0 = arg1.Data.fx
+function var4_0.onWeaponPrecastFinish(arg0_10, arg1_10)
+	local var0_10 = arg1_10.Data.fx
 
-	arg0:RemoveCacheFX(var0)
+	arg0_10:RemoveCacheFX(var0_10)
 
-	arg0._preCastBound = false
+	arg0_10._preCastBound = false
 end
 
-function var4.OnUpdateHP(arg0, arg1)
-	var4.super.OnUpdateHP(arg0, arg1)
+function var4_0.OnUpdateHP(arg0_11, arg1_11)
+	var4_0.super.OnUpdateHP(arg0_11, arg1_11)
 
-	if arg1.Data.dHP <= 0 then
-		arg0:AddBlink(1, 1, 1, 0.1, 0.1, true)
+	if arg1_11.Data.dHP <= 0 then
+		arg0_11:AddBlink(1, 1, 1, 0.1, 0.1, true)
 	end
 end
 
-function var4.AddModel(arg0, arg1)
-	var4.super.AddModel(arg0, arg1)
+function var4_0.AddModel(arg0_12, arg1_12)
+	var4_0.super.AddModel(arg0_12, arg1_12)
 
-	local var0 = arg0._unitData:GetTemplate().hp_bar[2]
+	local var0_12 = arg0_12._unitData:GetTemplate().hp_bar[2]
 
-	arg0._hpBarOffset = Vector3(0, var0, 0)
+	arg0_12._hpBarOffset = Vector3(0, var0_12, 0)
 end
 
-function var4.GetSpecificFXScale(arg0)
-	return arg0._unitData:GetTemplate().specific_fx_scale
+function var4_0.GetSpecificFXScale(arg0_13)
+	return arg0_13._unitData:GetTemplate().specific_fx_scale
 end
 
-function var4.OnAnimatorTrigger(arg0)
-	arg0._unitData:CharacterActionTriggerCallback()
+function var4_0.OnAnimatorTrigger(arg0_14)
+	arg0_14._unitData:CharacterActionTriggerCallback()
 end
 
-function var4.OnAnimatorEnd(arg0)
-	arg0._unitData:CharacterActionEndCallback()
+function var4_0.OnAnimatorEnd(arg0_15)
+	arg0_15._unitData:CharacterActionEndCallback()
 end
 
-function var4.OnAnimatorStart(arg0)
-	arg0._unitData:CharacterActionStartCallback()
+function var4_0.OnAnimatorStart(arg0_16)
+	arg0_16._unitData:CharacterActionStartCallback()
 end
 
-function var4.UpdateAimBiasBar(arg0)
-	var4.super.UpdateAimBiasBar(arg0)
+function var4_0.UpdateAimBiasBar(arg0_17)
+	var4_0.super.UpdateAimBiasBar(arg0_17)
 
-	if arg0._fogFx then
-		local var0 = arg0:GetUnitData():GetAimBias():GetCurrentRate()
+	if arg0_17._fogFx then
+		local var0_17 = arg0_17:GetUnitData():GetAimBias():GetCurrentRate()
 
-		arg0._fogFx.transform.localScale = Vector3(var0, var0, 1)
+		arg0_17._fogFx.transform.localScale = Vector3(var0_17, var0_17, 1)
 	end
 end

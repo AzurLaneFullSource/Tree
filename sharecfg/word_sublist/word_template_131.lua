@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_131 = {}
+var0_0.word_template_131 = {}
 
-local var1 = var0.word_template_131
+local var1_0 = var0_0.word_template_131
 
 function temp()
-	var1.划 = {
+	var1_0.划 = {
 		船 = {
 			式 = {
 				性 = {
@@ -23,7 +23,7 @@ end
 temp()
 
 function temp()
-	var1.华 = {
+	var1_0.华 = {
 		国 = {
 			锋 = {
 				this = true
@@ -166,7 +166,7 @@ end
 temp()
 
 function temp()
-	var1.華 = {
+	var1_0.華 = {
 		國 = {
 			鋒 = {
 				this = true
@@ -228,7 +228,7 @@ end
 temp()
 
 function temp()
-	var1.滑 = {
+	var1_0.滑 = {
 		动 = {
 			着 = {
 				this = true
@@ -260,7 +260,7 @@ end
 temp()
 
 function temp()
-	var1.话 = {
+	var1_0.话 = {
 		说 = {
 			江 = {
 				核 = {
@@ -287,7 +287,7 @@ end
 temp()
 
 function temp()
-	var1.怀 = {
+	var1_0.怀 = {
 		念 = {
 			this = true,
 			["6"] = {
@@ -307,7 +307,7 @@ end
 temp()
 
 function temp()
-	var1.懷 = {
+	var1_0.懷 = {
 		特 = {
 			this = true
 		}

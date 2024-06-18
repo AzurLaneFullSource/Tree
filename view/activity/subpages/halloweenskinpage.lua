@@ -1,61 +1,61 @@
-﻿local var0 = class("HalloweenSkinPage", import("...base.BaseActivityPage"))
+﻿local var0_0 = class("HalloweenSkinPage", import("...base.BaseActivityPage"))
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("AD")
-	arg0.stage = arg0:findTF("AD/Text"):GetComponent(typeof(Text))
-	arg0.goBtn = arg0:findTF("AD/go_btn")
-	arg0.gotBtn = arg0:findTF("AD/got_btn")
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.stage = arg0_1:findTF("AD/Text"):GetComponent(typeof(Text))
+	arg0_1.goBtn = arg0_1:findTF("AD/go_btn")
+	arg0_1.gotBtn = arg0_1:findTF("AD/got_btn")
 end
 
-function var0.OnFirstFlush(arg0)
-	arg0.tasks = _.flatten(arg0.activity:getConfig("config_data"))
+function var0_0.OnFirstFlush(arg0_2)
+	arg0_2.tasks = _.flatten(arg0_2.activity:getConfig("config_data"))
 
-	onButton(arg0, arg0.goBtn, function()
-		if arg0:LastTaskBeFinished() then
+	onButton(arg0_2, arg0_2.goBtn, function()
+		if arg0_2:LastTaskBeFinished() then
 			return
 		end
 
-		arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.NAVALACADEMYSCENE)
+		arg0_2:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.NAVALACADEMYSCENE)
 	end, SFX_PANEL)
 end
 
-function var0.LastTaskBeFinished(arg0)
-	local var0 = getProxy(TaskProxy)
-	local var1 = arg0.tasks[#arg0.tasks]
-	local var2 = var0:getTaskVO(var1)
+function var0_0.LastTaskBeFinished(arg0_4)
+	local var0_4 = getProxy(TaskProxy)
+	local var1_4 = arg0_4.tasks[#arg0_4.tasks]
+	local var2_4 = var0_4:getTaskVO(var1_4)
 
-	if var2 and var2:isReceive() then
+	if var2_4 and var2_4:isReceive() then
 		return true
 	end
 
 	return false
 end
 
-function var0.OnUpdateFlush(arg0)
-	local var0 = arg0.activity
-	local var1 = 0
-	local var2 = getProxy(TaskProxy)
+function var0_0.OnUpdateFlush(arg0_5)
+	local var0_5 = arg0_5.activity
+	local var1_5 = 0
+	local var2_5 = getProxy(TaskProxy)
 
-	for iter0 = #arg0.tasks, 1, -1 do
-		local var3 = arg0.tasks[iter0]
-		local var4 = var2:getTaskVO(var3)
+	for iter0_5 = #arg0_5.tasks, 1, -1 do
+		local var3_5 = arg0_5.tasks[iter0_5]
+		local var4_5 = var2_5:getTaskVO(var3_5)
 
-		if var4 and var4:isReceive() then
-			var1 = iter0
-		elseif var4 and not var4:isReceive() then
-			var1 = iter0 - 1
+		if var4_5 and var4_5:isReceive() then
+			var1_5 = iter0_5
+		elseif var4_5 and not var4_5:isReceive() then
+			var1_5 = iter0_5 - 1
 		end
 	end
 
-	arg0.stage.text = var1 .. "/" .. #arg0.tasks
+	arg0_5.stage.text = var1_5 .. "/" .. #arg0_5.tasks
 
-	local var5 = arg0:LastTaskBeFinished()
+	local var5_5 = arg0_5:LastTaskBeFinished()
 
-	setActive(arg0.gotBtn, var5)
+	setActive(arg0_5.gotBtn, var5_5)
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_6)
 	return
 end
 
-return var0
+return var0_0

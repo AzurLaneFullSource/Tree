@@ -1,75 +1,75 @@
-﻿local var0 = class("GuildTechnologyGroupCard", import(".GuildTechnologyCard"))
+﻿local var0_0 = class("GuildTechnologyGroupCard", import(".GuildTechnologyCard"))
 
-function var0.Ctor(arg0, arg1, arg2)
-	var0.super.Ctor(arg0, arg1, arg2)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var0_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 
-	arg0.devBtn = arg0.breakoutTF:Find("dev_btn")
-	arg0.cancelBtn = arg0.breakoutTF:Find("cancel_btn")
-	arg0.devBtnTxt = arg0.devBtn:Find("Text"):GetComponent(typeof(Text))
+	arg0_1.devBtn = arg0_1.breakoutTF:Find("dev_btn")
+	arg0_1.cancelBtn = arg0_1.breakoutTF:Find("cancel_btn")
+	arg0_1.devBtnTxt = arg0_1.devBtn:Find("Text"):GetComponent(typeof(Text))
 end
 
-function var0.Update(arg0, arg1, arg2, arg3)
-	local var0 = arg1.id
+function var0_0.Update(arg0_2, arg1_2, arg2_2, arg3_2)
+	local var0_2 = arg1_2.id
 
-	arg0.titleImg.text = arg1:getConfig("name")
-	arg0.iconImag.sprite = GetSpriteFromAtlas("GuildTechnology", var0)
-	arg0.descTxt.text = arg1:GetDesc()
+	arg0_2.titleImg.text = arg1_2:getConfig("name")
+	arg0_2.iconImag.sprite = GetSpriteFromAtlas("GuildTechnology", var0_2)
+	arg0_2.descTxt.text = arg1_2:GetDesc()
 
-	local var1 = arg1:GetMaxLevel()
-	local var2 = arg1:GetLevel()
-	local var3 = arg1:GetState()
+	local var1_2 = arg1_2:GetMaxLevel()
+	local var2_2 = arg1_2:GetLevel()
+	local var3_2 = arg1_2:GetState()
 
-	setActive(arg0.maxTF, var1 <= var2)
-	setActive(arg0.breakoutTF, var2 < var1)
-	setActive(arg0.devBtn, var3 == GuildTechnologyGroup.STATE_STOP and var2 < var1)
-	setActive(arg0.breakoutSlider.gameObject, var3 == GuildTechnologyGroup.STATE_START)
-	setActive(arg0.cancelBtn, false)
+	setActive(arg0_2.maxTF, var1_2 <= var2_2)
+	setActive(arg0_2.breakoutTF, var2_2 < var1_2)
+	setActive(arg0_2.devBtn, var3_2 == GuildTechnologyGroup.STATE_STOP and var2_2 < var1_2)
+	setActive(arg0_2.breakoutSlider.gameObject, var3_2 == GuildTechnologyGroup.STATE_START)
+	setActive(arg0_2.cancelBtn, false)
 
-	if var2 < var1 then
-		onButton(arg0, arg0._tf, function()
-			if not arg3 then
+	if var2_2 < var1_2 then
+		onButton(arg0_2, arg0_2._tf, function()
+			if not arg3_2 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("guild_tech_non_admin"))
 
 				return
 			end
 
 			pg.MsgboxMgr:GetInstance():ShowMsgBox({
-				content = i18n("guild_start_tech_group_tip", arg1:getConfig("name")),
+				content = i18n("guild_start_tech_group_tip", arg1_2:getConfig("name")),
 				onYes = function()
-					arg0.view:emit(GuildTechnologyMediator.ON_START, var0)
+					arg0_2.view:emit(GuildTechnologyMediator.ON_START, var0_2)
 				end
 			})
 		end, SFX_PANEL)
 
-		arg0.levelTxt.text = "Lv." .. var2 .. "/" .. var1
+		arg0_2.levelTxt.text = "Lv." .. var2_2 .. "/" .. var1_2
 	else
-		arg0.levelTxt.text = "Lv." .. var1 .. "/" .. var1
+		arg0_2.levelTxt.text = "Lv." .. var1_2 .. "/" .. var1_2
 	end
 
-	if var3 == GuildTechnologyGroup.STATE_START then
-		local var4 = arg1:GetTargetProgress()
-		local var5 = arg1:GetProgress()
+	if var3_2 == GuildTechnologyGroup.STATE_START then
+		local var4_2 = arg1_2:GetTargetProgress()
+		local var5_2 = arg1_2:GetProgress()
 
-		arg0.breakoutSlider.value = var5 / var4
-		arg0.breakoutTxt.text = var5 .. "/" .. var4
+		arg0_2.breakoutSlider.value = var5_2 / var4_2
+		arg0_2.breakoutTxt.text = var5_2 .. "/" .. var4_2
 	end
 
-	onButton(arg0, arg0.cancelBtn, function()
-		if not arg3 then
+	onButton(arg0_2, arg0_2.cancelBtn, function()
+		if not arg3_2 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_tech_non_admin"))
 
 			return
 		end
 
 		pg.MsgboxMgr:GetInstance():ShowMsgBox({
-			content = i18n("guild_cancel_tech_tip", arg1:getConfig("name")),
+			content = i18n("guild_cancel_tech_tip", arg1_2:getConfig("name")),
 			onYes = function()
-				arg0.view:emit(GuildTechnologyMediator.ON_CANCEL_TECH, var0)
+				arg0_2.view:emit(GuildTechnologyMediator.ON_CANCEL_TECH, var0_2)
 			end
 		})
 	end, SFX_PANEL)
 
-	arg0.devBtnTxt.text = i18n("guild_tech_donate_target", arg1:GetTargetProgress())
+	arg0_2.devBtnTxt.text = i18n("guild_tech_donate_target", arg1_2:GetTargetProgress())
 end
 
-return var0
+return var0_0

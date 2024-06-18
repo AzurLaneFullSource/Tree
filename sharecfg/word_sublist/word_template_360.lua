@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_360 = {}
+var0_0.word_template_360 = {}
 
-local var1 = var0.word_template_360
+local var1_0 = var0_0.word_template_360
 
 function temp()
-	var1.諏 = {
+	var1_0.諏 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.鄹 = {
+	var1_0.鄹 = {
 		this = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.鲰 = {
+	var1_0.鲰 = {
 		this = {
 			this = true
 		}
@@ -37,7 +37,7 @@ end
 temp()
 
 function temp()
-	var1.鯫 = {
+	var1_0.鯫 = {
 		this = {
 			this = true
 		}
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.足 = {
+	var1_0.足 = {
 		交 = {
 			this = true,
 			口 = {
@@ -94,7 +94,7 @@ end
 temp()
 
 function temp()
-	var1.组 = {
+	var1_0.组 = {
 		鸡 = {
 			部 = {
 				this = true
@@ -147,7 +147,7 @@ end
 temp()
 
 function temp()
-	var1.祖 = {
+	var1_0.祖 = {
 		国 = {
 			在 = {
 				沉 = {

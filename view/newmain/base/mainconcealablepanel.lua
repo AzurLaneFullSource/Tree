@@ -1,56 +1,56 @@
-﻿local var0 = class("MainConcealablePanel", import(".MainBasePanel"))
+﻿local var0_0 = class("MainConcealablePanel", import(".MainBasePanel"))
 
-function var0.Ctor(arg0, arg1, arg2, arg3)
-	var0.super.Ctor(arg0, arg1, arg2, arg3)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	var0_0.super.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 
-	arg0.initPosition = {}
+	arg0_1.initPosition = {}
 
-	for iter0, iter1 in ipairs(arg0.btns) do
-		if not iter1:IsFixed() then
-			table.insert(arg0.initPosition, iter1._tf.localPosition)
+	for iter0_1, iter1_1 in ipairs(arg0_1.btns) do
+		if not iter1_1:IsFixed() then
+			table.insert(arg0_1.initPosition, iter1_1._tf.localPosition)
 		end
 	end
 
-	arg0.isChanged = false
+	arg0_1.isChanged = false
 end
 
-function var0.Init(arg0)
-	var0.super.Init(arg0)
-	arg0:CalcLayout()
+function var0_0.Init(arg0_2)
+	var0_0.super.Init(arg0_2)
+	arg0_2:CalcLayout()
 end
 
-function var0.Refresh(arg0)
-	var0.super.Refresh(arg0)
-	arg0:CalcLayout()
+function var0_0.Refresh(arg0_3)
+	var0_0.super.Refresh(arg0_3)
+	arg0_3:CalcLayout()
 end
 
-function var0.CalcLayout(arg0)
-	local var0 = {}
+function var0_0.CalcLayout(arg0_4)
+	local var0_4 = {}
 
-	for iter0, iter1 in ipairs(arg0.btns) do
-		if not iter1:IsFixed() and isActive(iter1._tf) then
-			table.insert(var0, iter1._tf)
+	for iter0_4, iter1_4 in ipairs(arg0_4.btns) do
+		if not iter1_4:IsFixed() and isActive(iter1_4._tf) then
+			table.insert(var0_4, iter1_4._tf)
 		end
 	end
 
-	local var1 = #var0 >= #arg0.initPosition
+	local var1_4 = #var0_4 >= #arg0_4.initPosition
 
-	if var1 and not arg0.isChanged then
+	if var1_4 and not arg0_4.isChanged then
 		return
 	end
 
-	arg0:FillEmptySlot(var0)
+	arg0_4:FillEmptySlot(var0_4)
 
-	arg0.isChanged = not var1
+	arg0_4.isChanged = not var1_4
 end
 
-function var0.FillEmptySlot(arg0, arg1)
-	local var0 = #arg0.initPosition
+function var0_0.FillEmptySlot(arg0_5, arg1_5)
+	local var0_5 = #arg0_5.initPosition
 
-	for iter0 = #arg1, 1, -1 do
-		arg1[iter0].localPosition = arg0.initPosition[var0]
-		var0 = var0 - 1
+	for iter0_5 = #arg1_5, 1, -1 do
+		arg1_5[iter0_5].localPosition = arg0_5.initPosition[var0_5]
+		var0_5 = var0_5 - 1
 	end
 end
 
-return var0
+return var0_0

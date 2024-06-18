@@ -1,46 +1,46 @@
-﻿local var0 = class("GetGuildBossInfoCommand", import(".GuildEventBaseCommand"))
+﻿local var0_0 = class("GetGuildBossInfoCommand", import(".GuildEventBaseCommand"))
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
 
-	if not arg0:ExistActiveEvent() then
+	if not arg0_1:ExistActiveEvent() then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(61027, {
 		type = 0
-	}, 61028, function(arg0)
-		if arg0.result == 0 then
-			local var0 = getProxy(GuildProxy)
-			local var1 = var0:getData()
+	}, 61028, function(arg0_2)
+		if arg0_2.result == 0 then
+			local var0_2 = getProxy(GuildProxy)
+			local var1_2 = var0_2:getData()
 
-			var1:GetActiveEvent():GetBossMission():Flush(arg0.boss_event)
-			var0:updateGuild(var1)
-			var0:SetRefreshBossTime(pg.TimeMgr.GetInstance():GetServerTime())
-			arg0:sendNotification(GAME.GUILD_GET_BOSS_INFO_DONE)
-		elseif arg0.result == 20 then
-			local var2 = getProxy(GuildProxy):getData()
-			local var3 = var2:GetActiveEvent()
-			local var4 = false
+			var1_2:GetActiveEvent():GetBossMission():Flush(arg0_2.boss_event)
+			var0_2:updateGuild(var1_2)
+			var0_2:SetRefreshBossTime(pg.TimeMgr.GetInstance():GetServerTime())
+			arg0_1:sendNotification(GAME.GUILD_GET_BOSS_INFO_DONE)
+		elseif arg0_2.result == 20 then
+			local var2_2 = getProxy(GuildProxy):getData()
+			local var3_2 = var2_2:GetActiveEvent()
+			local var4_2 = false
 
-			if var3 then
-				var3:Deactivate()
+			if var3_2 then
+				var3_2:Deactivate()
 
-				var4 = true
+				var4_2 = true
 			end
 
-			getProxy(GuildProxy):updateGuild(var2)
+			getProxy(GuildProxy):updateGuild(var2_2)
 
-			if var4 then
+			if var4_2 then
 				pg.ShipFlagMgr.GetInstance():ClearShipsFlag("inGuildEvent")
 				pg.ShipFlagMgr.GetInstance():ClearShipsFlag("inGuildBossEvent")
 			end
 
-			arg0:sendNotification(GAME.GUILD_END_BATTLE)
+			arg0_1:sendNotification(GAME.GUILD_END_BATTLE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0.result] .. arg0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)
 		end
 	end)
 end
 
-return var0
+return var0_0

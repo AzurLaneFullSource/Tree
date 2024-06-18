@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_334 = {}
+var0_0.word_template_334 = {}
 
-local var1 = var0.word_template_334
+local var1_0 = var0_0.word_template_334
 
 function temp()
-	var1.鬱 = {
+	var1_0.鬱 = {
 		慕 = {
 			明 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.鸳 = {
+	var1_0.鸳 = {
 		鸯 = {
 			浴 = {
 				this = true
@@ -34,7 +34,7 @@ end
 temp()
 
 function temp()
-	var1.冤 = {
+	var1_0.冤 = {
 		民 = {
 			大 = {
 				同 = {
@@ -50,7 +50,7 @@ end
 temp()
 
 function temp()
-	var1.鴛 = {
+	var1_0.鴛 = {
 		鴦 = {
 			浴 = {
 				this = true
@@ -62,7 +62,7 @@ end
 temp()
 
 function temp()
-	var1.元 = {
+	var1_0.元 = {
 		旦 = {
 			没 = {
 				进 = {
@@ -115,7 +115,7 @@ end
 temp()
 
 function temp()
-	var1.员 = {
+	var1_0.员 = {
 		工 = {
 			砍 = {
 				死 = {
@@ -144,7 +144,7 @@ end
 temp()
 
 function temp()
-	var1.袁 = {
+	var1_0.袁 = {
 		纯 = {
 			清 = {
 				this = true

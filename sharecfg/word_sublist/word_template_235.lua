@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_235 = {}
+var0_0.word_template_235 = {}
 
-local var1 = var0.word_template_235
+local var1_0 = var0_0.word_template_235
 
 function temp()
-	var1.锖 = {
+	var1_0.锖 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.槍 = {
+	var1_0.槍 = {
 		支 = {
 			彈 = {
 				藥 = {
@@ -31,7 +31,7 @@ end
 temp()
 
 function temp()
-	var1.錆 = {
+	var1_0.錆 = {
 		this = {
 			this = true
 		}
@@ -41,7 +41,7 @@ end
 temp()
 
 function temp()
-	var1.强 = {
+	var1_0.强 = {
 		j = {
 			this = true
 		},
@@ -305,7 +305,7 @@ end
 temp()
 
 function temp()
-	var1.抢 = {
+	var1_0.抢 = {
 		劫 = {
 			this = true
 		},
@@ -325,7 +325,7 @@ end
 temp()
 
 function temp()
-	var1.羟 = {
+	var1_0.羟 = {
 		蒂 = {
 			巴 = {
 				酚 = {
@@ -358,7 +358,7 @@ end
 temp()
 
 function temp()
-	var1.搶 = {
+	var1_0.搶 = {
 		劫 = {
 			this = true
 		},

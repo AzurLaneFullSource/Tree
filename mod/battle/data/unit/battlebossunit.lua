@@ -1,44 +1,44 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleDataFunction
-local var2 = var0.Battle.BattleConst
-local var3 = var0.Battle.BattleFormulas
-local var4 = var0.Battle.BattleAttr
-local var5 = var0.Battle.BattleConfig
-local var6 = var0.Battle.BattleUnitEvent
-local var7 = class("BattleBossUnit", var0.Battle.BattleEnemyUnit)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleDataFunction
+local var2_0 = var0_0.Battle.BattleConst
+local var3_0 = var0_0.Battle.BattleFormulas
+local var4_0 = var0_0.Battle.BattleAttr
+local var5_0 = var0_0.Battle.BattleConfig
+local var6_0 = var0_0.Battle.BattleUnitEvent
+local var7_0 = class("BattleBossUnit", var0_0.Battle.BattleEnemyUnit)
 
-var0.Battle.BattleBossUnit = var7
-var7.__name = "BattleBossUnit"
+var0_0.Battle.BattleBossUnit = var7_0
+var7_0.__name = "BattleBossUnit"
 
-function var7.Ctor(arg0, arg1, arg2)
-	var7.super.Ctor(arg0, arg1, arg2)
+function var7_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var7_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 
-	arg0._isBoss = true
+	arg0_1._isBoss = true
 end
 
-function var7.IsBoss(arg0)
+function var7_0.IsBoss(arg0_2)
 	return true
 end
 
-function var7.BarrierStateChange(arg0, arg1, arg2)
-	local var0 = {
-		barrierDurability = arg1,
-		barrierDuration = arg2
+function var7_0.BarrierStateChange(arg0_3, arg1_3, arg2_3)
+	local var0_3 = {
+		barrierDurability = arg1_3,
+		barrierDuration = arg2_3
 	}
 
-	arg0:DispatchEvent(var0.Event.New(var6.BARRIER_STATE_CHANGE, var0))
+	arg0_3:DispatchEvent(var0_0.Event.New(var6_0.BARRIER_STATE_CHANGE, var0_3))
 end
 
-function var7.UpdateHP(arg0, arg1, arg2, arg3, arg4)
-	local var0 = var7.super.UpdateHP(arg0, arg1, arg2, arg3, arg4) or 0
+function var7_0.UpdateHP(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4)
+	local var0_4 = var7_0.super.UpdateHP(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4) or 0
 
-	if var0 < 0 then
-		for iter0, iter1 in ipairs(arg0._autoWeaponList) do
-			iter1:UpdatePrecastArmor(var0)
+	if var0_4 < 0 then
+		for iter0_4, iter1_4 in ipairs(arg0_4._autoWeaponList) do
+			iter1_4:UpdatePrecastArmor(var0_4)
 		end
 	end
 
-	return var0
+	return var0_4
 end

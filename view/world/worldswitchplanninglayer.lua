@@ -1,9 +1,9 @@
-﻿local var0 = class("WorldSwitchPlanningLayer", import("view.base.BaseUI"))
+﻿local var0_0 = class("WorldSwitchPlanningLayer", import("view.base.BaseUI"))
 
-var0.MODE_DIFFICULT = 0
-var0.MODE_SAFE = 1
-var0.MODE_TREASURE = 2
-var0.modeToggleDic = {
+var0_0.MODE_DIFFICULT = 0
+var0_0.MODE_SAFE = 1
+var0_0.MODE_TREASURE = 2
+var0_0.modeToggleDic = {
 	[0] = {
 		base = true,
 		wait_2 = true,
@@ -26,59 +26,59 @@ var0.modeToggleDic = {
 	}
 }
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "WorldSwitchPlanningUI"
 end
 
-function var0.init(arg0)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+function var0_0.init(arg0_2)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
 
-	arg0.rtBg = arg0._tf:Find("bg")
+	arg0_2.rtBg = arg0_2._tf:Find("bg")
 
-	onButton(arg0, arg0.rtBg, function()
-		arg0:closeView()
+	onButton(arg0_2, arg0_2.rtBg, function()
+		arg0_2:closeView()
 	end, SFX_CANCEL)
 
-	arg0.rtWindow = arg0._tf:Find("window")
-	arg0.btnBack = arg0.rtWindow:Find("top/btnBack")
+	arg0_2.rtWindow = arg0_2._tf:Find("window")
+	arg0_2.btnBack = arg0_2.rtWindow:Find("top/btnBack")
 
-	onButton(arg0, arg0.btnBack, function()
-		arg0:closeView()
+	onButton(arg0_2, arg0_2.btnBack, function()
+		arg0_2:closeView()
 	end, SFX_CANCEL)
 
-	arg0.btnCancel = arg0.rtWindow:Find("button_container/custom_button_2")
+	arg0_2.btnCancel = arg0_2.rtWindow:Find("button_container/custom_button_2")
 
-	setText(arg0.btnCancel:Find("pic"), i18n("text_cancel"))
-	onButton(arg0, arg0.btnCancel, function()
-		arg0:closeView()
+	setText(arg0_2.btnCancel:Find("pic"), i18n("text_cancel"))
+	onButton(arg0_2, arg0_2.btnCancel, function()
+		arg0_2:closeView()
 	end, SFX_CANCEL)
 
-	arg0.btnConfirm = arg0.rtWindow:Find("button_container/custom_button_1")
+	arg0_2.btnConfirm = arg0_2.rtWindow:Find("button_container/custom_button_1")
 
-	setText(arg0.btnConfirm:Find("pic"), i18n("text_confirm"))
-	onButton(arg0, arg0.btnConfirm, function()
-		arg0:emit(WorldSwitchPlanningMediator.OnConfirm)
-		arg0:closeView()
+	setText(arg0_2.btnConfirm:Find("pic"), i18n("text_confirm"))
+	onButton(arg0_2, arg0_2.btnConfirm, function()
+		arg0_2:emit(WorldSwitchPlanningMediator.OnConfirm)
+		arg0_2:closeView()
 	end, SFX_CONFIRM)
 
-	arg0.btnMove = arg0.rtWindow:Find("button_container/custom_button_3")
+	arg0_2.btnMove = arg0_2.rtWindow:Find("button_container/custom_button_3")
 
-	setText(arg0.btnMove:Find("pic"), i18n("text_goto"))
-	onButton(arg0, arg0.btnMove, function()
-		local var0 = nowWorld()
+	setText(arg0_2.btnMove:Find("pic"), i18n("text_goto"))
+	onButton(arg0_2, arg0_2.btnMove, function()
+		local var0_7 = nowWorld()
 
-		if var0:GetInventoryProxy():GetItemCount(WorldConst.SwitchPlainingItemId) > 0 then
-			arg0:emit(WorldSwitchPlanningMediator.OnMove, {
+		if var0_7:GetInventoryProxy():GetItemCount(WorldConst.SwitchPlainingItemId) > 0 then
+			arg0_2:emit(WorldSwitchPlanningMediator.OnMove, {
 				inMap = true,
 				context = Context.New({
 					mediator = WorldInventoryMediator,
 					viewComponent = WorldInventoryLayer
 				})
 			})
-		elseif not var0:IsSystemOpen(WorldConst.SystemResetShop) then
+		elseif not var0_7:IsSystemOpen(WorldConst.SystemResetShop) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_automode_treasure_3"))
 		else
-			arg0:emit(WorldSwitchPlanningMediator.OnMove, {
+			arg0_2:emit(WorldSwitchPlanningMediator.OnMove, {
 				inMap = false,
 				context = Context.New({
 					mediator = WorldShopMediator,
@@ -87,92 +87,92 @@ function var0.init(arg0)
 			})
 		end
 
-		arg0:closeView()
+		arg0_2:closeView()
 	end, SFX_CONFIRM)
 
-	arg0.rtContent = arg0.rtWindow:Find("content")
+	arg0_2.rtContent = arg0_2.rtWindow:Find("content")
 
-	onToggle(arg0, arg0.rtContent:Find("toggles/toggle_base"), function(arg0)
-		if arg0 then
-			arg0:updateView(var0.MODE_DIFFICULT)
-			scrollTo(arg0.rtView:Find("content"), nil, 1)
+	onToggle(arg0_2, arg0_2.rtContent:Find("toggles/toggle_base"), function(arg0_8)
+		if arg0_8 then
+			arg0_2:updateView(var0_0.MODE_DIFFICULT)
+			scrollTo(arg0_2.rtView:Find("content"), nil, 1)
 		end
 	end, SFX_PANEL)
-	onToggle(arg0, arg0.rtContent:Find("toggles/toggle_safe"), function(arg0)
-		if arg0 then
-			arg0:updateView(var0.MODE_SAFE)
-			scrollTo(arg0.rtView:Find("content"), nil, 1)
+	onToggle(arg0_2, arg0_2.rtContent:Find("toggles/toggle_safe"), function(arg0_9)
+		if arg0_9 then
+			arg0_2:updateView(var0_0.MODE_SAFE)
+			scrollTo(arg0_2.rtView:Find("content"), nil, 1)
 		end
 	end, SFX_PANEL)
-	onToggle(arg0, arg0.rtContent:Find("toggles/toggle_treasure"), function(arg0)
-		if arg0 then
-			arg0:updateView(var0.MODE_TREASURE)
-			scrollTo(arg0.rtView:Find("content"), nil, 1)
+	onToggle(arg0_2, arg0_2.rtContent:Find("toggles/toggle_treasure"), function(arg0_10)
+		if arg0_10 then
+			arg0_2:updateView(var0_0.MODE_TREASURE)
+			scrollTo(arg0_2.rtView:Find("content"), nil, 1)
 		end
 	end, SFX_PANEL)
 
-	arg0.rtView = arg0.rtContent:Find("view")
+	arg0_2.rtView = arg0_2.rtContent:Find("view")
 
-	for iter0, iter1 in ipairs({
+	for iter0_2, iter1_2 in ipairs({
 		"base",
 		"treasure"
 	}) do
-		local var0 = arg0.rtView:Find("content/" .. iter1 .. "/toggles")
-		local var1 = var0:Find("all")
-		local var2 = {}
-		local var3 = 0
-		local var4 = var0.childCount
+		local var0_2 = arg0_2.rtView:Find("content/" .. iter1_2 .. "/toggles")
+		local var1_2 = var0_2:Find("all")
+		local var2_2 = {}
+		local var3_2 = 0
+		local var4_2 = var0_2.childCount
 
-		eachChild(var0, function(arg0)
-			onToggle(arg0, arg0, function(arg0)
-				local var0 = (arg0 and 1 or 0) - defaultValue(var2[arg0.name], 0)
+		eachChild(var0_2, function(arg0_11)
+			onToggle(arg0_2, arg0_11, function(arg0_12)
+				local var0_12 = (arg0_12 and 1 or 0) - defaultValue(var2_2[arg0_11.name], 0)
 
-				var2[arg0.name] = arg0 and 1 or 0
-				var3 = var3 + var0
+				var2_2[arg0_11.name] = arg0_12 and 1 or 0
+				var3_2 = var3_2 + var0_12
 
-				local var1 = true
+				local var1_12 = true
 
-				if arg0 == var1 and arg0 then
-					eachChild(var0, function(arg0)
-						if arg0 ~= arg0 and GetComponent(arg0, typeof(Toggle)).isOn == true then
-							triggerToggle(arg0, false)
+				if arg0_11 == var1_2 and arg0_12 then
+					eachChild(var0_2, function(arg0_13)
+						if arg0_13 ~= arg0_11 and GetComponent(arg0_13, typeof(Toggle)).isOn == true then
+							triggerToggle(arg0_13, false)
 
-							var1 = false
+							var1_12 = false
 						end
 					end)
-				elseif var3 == 0 or var3 >= var4 - 1 then
-					triggerToggle(var1, true)
+				elseif var3_2 == 0 or var3_2 >= var4_2 - 1 then
+					triggerToggle(var1_2, true)
 
-					var1 = false
-				elseif var3 > 1 and GetComponent(var1, typeof(Toggle)).isOn == true then
-					triggerToggle(var1, false)
+					var1_12 = false
+				elseif var3_2 > 1 and GetComponent(var1_2, typeof(Toggle)).isOn == true then
+					triggerToggle(var1_2, false)
 
-					var1 = false
+					var1_12 = false
 				end
 
-				if var1 then
-					arg0:saveConfig(iter1)
+				if var1_12 then
+					arg0_2:saveConfig(iter1_2)
 				end
 			end, SFX_PANEL)
 		end)
 	end
 
-	local var5 = pg.gameset.joint_boss_ticket.description
-	local var6 = var5[1] + var5[2]
-	local var7 = var5[1] .. "&" .. var6
-	local var8 = {}
+	local var5_2 = pg.gameset.joint_boss_ticket.description
+	local var6_2 = var5_2[1] + var5_2[2]
+	local var7_2 = var5_2[1] .. "&" .. var6_2
+	local var8_2 = {}
 
-	table.insert(var8, "")
-	table.insert(var8, var7)
-	table.insert(var8, tostring(var6))
+	table.insert(var8_2, "")
+	table.insert(var8_2, var7_2)
+	table.insert(var8_2, tostring(var6_2))
 
-	arg0.togglesList = {
+	arg0_2.togglesList = {
 		safe = {
 			getFlag = function()
 				return PlayerPrefs.GetString("auto_switch_difficult_safe", "all")
 			end,
-			setFlag = function(arg0)
-				PlayerPrefs.SetString("auto_switch_difficult_safe", arg0)
+			setFlag = function(arg0_15)
+				PlayerPrefs.SetString("auto_switch_difficult_safe", arg0_15)
 				PlayerPrefs.Save()
 			end,
 			info = {
@@ -184,8 +184,8 @@ function var0.init(arg0)
 			getFlag = function()
 				return PlayerPrefs.GetInt("auto_switch_wait", 0)
 			end,
-			setFlag = function(arg0)
-				PlayerPrefs.SetInt("auto_switch_wait", arg0)
+			setFlag = function(arg0_17)
+				PlayerPrefs.SetInt("auto_switch_wait", arg0_17)
 				PlayerPrefs.Save()
 			end,
 			info = {
@@ -197,8 +197,8 @@ function var0.init(arg0)
 			getFlag = function()
 				return PlayerPrefs.GetInt("auto_switch_wait_2", 0)
 			end,
-			setFlag = function(arg0)
-				PlayerPrefs.SetInt("auto_switch_wait_2", arg0)
+			setFlag = function(arg0_19)
+				PlayerPrefs.SetInt("auto_switch_wait_2", arg0_19)
 				PlayerPrefs.Save()
 			end,
 			info = {
@@ -210,21 +210,21 @@ function var0.init(arg0)
 			getFlag = function()
 				return getProxy(SettingsProxy):GetWorldBossProgressTipFlag()
 			end,
-			setFlag = function(arg0)
-				getProxy(SettingsProxy):WorldBossProgressTipFlag(arg0)
+			setFlag = function(arg0_21)
+				getProxy(SettingsProxy):WorldBossProgressTipFlag(arg0_21)
 			end,
 			info = {
-				no = var8[1],
-				["100"] = var8[2],
-				["200"] = var8[3]
+				no = var8_2[1],
+				["100"] = var8_2[2],
+				["200"] = var8_2[3]
 			}
 		},
 		consume = {
 			getFlag = function()
 				return getProxy(SettingsProxy):GetWorldFlag("consume_item")
 			end,
-			setFlag = function(arg0)
-				getProxy(SettingsProxy):SetWorldFlag("consume_item", arg0)
+			setFlag = function(arg0_23)
+				getProxy(SettingsProxy):SetWorldFlag("consume_item", arg0_23)
 			end,
 			info = {
 				yes = true,
@@ -233,19 +233,19 @@ function var0.init(arg0)
 		}
 	}
 
-	for iter2, iter3 in pairs(arg0.togglesList) do
-		local var9 = arg0.rtView:Find("content/" .. iter2 .. "/toggles")
+	for iter2_2, iter3_2 in pairs(arg0_2.togglesList) do
+		local var9_2 = arg0_2.rtView:Find("content/" .. iter2_2 .. "/toggles")
 
-		for iter4, iter5 in pairs(iter3.info) do
-			onToggle(arg0, var9:Find(iter4), function(arg0)
-				if arg0 then
-					iter3.setFlag(iter5)
+		for iter4_2, iter5_2 in pairs(iter3_2.info) do
+			onToggle(arg0_2, var9_2:Find(iter4_2), function(arg0_24)
+				if arg0_24 then
+					iter3_2.setFlag(iter5_2)
 				end
 			end, SFX_PANEL)
 		end
 	end
 
-	local var10 = {
+	local var10_2 = {
 		base = {
 			text = "world_automode_setting_1",
 			info = {
@@ -303,130 +303,130 @@ function var0.init(arg0)
 		}
 	}
 
-	for iter6, iter7 in pairs(var10) do
-		local var11 = arg0.rtView:Find("content/" .. iter6)
+	for iter6_2, iter7_2 in pairs(var10_2) do
+		local var11_2 = arg0_2.rtView:Find("content/" .. iter6_2)
 
-		setText(var11:Find("Text"), i18n(iter7.text))
+		setText(var11_2:Find("Text"), i18n(iter7_2.text))
 
-		for iter8, iter9 in pairs(iter7.info) do
-			setText(var11:Find("toggles/" .. iter8 .. "/Text"), i18n(iter9))
+		for iter8_2, iter9_2 in pairs(iter7_2.info) do
+			setText(var11_2:Find("toggles/" .. iter8_2 .. "/Text"), i18n(iter9_2))
 		end
 	end
 
-	setText(arg0.rtWindow:Find("top/bg/title"), i18n("world_automode_title_1"))
-	setText(arg0.rtWindow:Find("top/bg/title/title_en"), i18n("world_automode_title_2"))
-	setText(arg0.rtContent:Find("toggles/toggle_base/Text"), i18n("area_putong"))
-	setText(arg0.rtContent:Find("toggles/toggle_safe/Text"), i18n("area_anquan"))
-	setText(arg0.rtContent:Find("toggles/toggle_treasure/Text"), i18n("area_yinmi"))
+	setText(arg0_2.rtWindow:Find("top/bg/title"), i18n("world_automode_title_1"))
+	setText(arg0_2.rtWindow:Find("top/bg/title/title_en"), i18n("world_automode_title_2"))
+	setText(arg0_2.rtContent:Find("toggles/toggle_base/Text"), i18n("area_putong"))
+	setText(arg0_2.rtContent:Find("toggles/toggle_safe/Text"), i18n("area_anquan"))
+	setText(arg0_2.rtContent:Find("toggles/toggle_treasure/Text"), i18n("area_yinmi"))
 end
 
-function var0.didEnter(arg0)
-	triggerToggle(arg0.rtContent:Find("toggles"):GetChild(PlayerPrefs.GetInt("auto_switch_mode", 0)), true)
+function var0_0.didEnter(arg0_25)
+	triggerToggle(arg0_25.rtContent:Find("toggles"):GetChild(PlayerPrefs.GetInt("auto_switch_mode", 0)), true)
 end
 
-function var0.willExit(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+function var0_0.willExit(arg0_26)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_26._tf)
 end
 
-function var0.initToggle(arg0, arg1)
-	local var0 = arg0.togglesList[arg1]
-	local var1 = var0.getFlag()
+function var0_0.initToggle(arg0_27, arg1_27)
+	local var0_27 = arg0_27.togglesList[arg1_27]
+	local var1_27 = var0_27.getFlag()
 
-	for iter0, iter1 in pairs(var0.info) do
-		if iter1 == var1 then
-			triggerToggle(arg0.rtView:Find("content/" .. arg1 .. "/toggles/" .. iter0), true)
+	for iter0_27, iter1_27 in pairs(var0_27.info) do
+		if iter1_27 == var1_27 then
+			triggerToggle(arg0_27.rtView:Find("content/" .. arg1_27 .. "/toggles/" .. iter0_27), true)
 
 			break
 		end
 	end
 end
 
-function var0.updateView(arg0, arg1)
-	PlayerPrefs.SetInt("auto_switch_mode", arg1)
+function var0_0.updateView(arg0_28, arg1_28)
+	PlayerPrefs.SetInt("auto_switch_mode", arg1_28)
 	PlayerPrefs.Save()
 
-	local var0 = nowWorld()
-	local var1 = arg1 == var0.MODE_TREASURE and not var0:GetGobalFlag("treasure_flag")
+	local var0_28 = nowWorld()
+	local var1_28 = arg1_28 == var0_0.MODE_TREASURE and not var0_28:GetGobalFlag("treasure_flag")
 
-	setActive(arg0.rtView:Find("content"), not var1)
-	setActive(arg0.rtContent:Find("scrollbar"), not var1)
-	setActive(arg0.rtView:Find("tip"), var1)
-	setActive(arg0.btnConfirm, not var1)
-	setActive(arg0.btnMove, var1)
+	setActive(arg0_28.rtView:Find("content"), not var1_28)
+	setActive(arg0_28.rtContent:Find("scrollbar"), not var1_28)
+	setActive(arg0_28.rtView:Find("tip"), var1_28)
+	setActive(arg0_28.btnConfirm, not var1_28)
+	setActive(arg0_28.btnMove, var1_28)
 
-	if var1 then
-		if var0:GetInventoryProxy():GetItemCount(WorldConst.SwitchPlainingItemId) > 0 then
-			setText(arg0.rtView:Find("tip/Text"), i18n("world_automode_treasure_2"))
+	if var1_28 then
+		if var0_28:GetInventoryProxy():GetItemCount(WorldConst.SwitchPlainingItemId) > 0 then
+			setText(arg0_28.rtView:Find("tip/Text"), i18n("world_automode_treasure_2"))
 		else
-			setText(arg0.rtView:Find("tip/Text"), i18n("world_automode_treasure_1"))
+			setText(arg0_28.rtView:Find("tip/Text"), i18n("world_automode_treasure_1"))
 		end
 	end
 
-	eachChild(arg0.rtView:Find("content"), function(arg0)
-		setActive(arg0, var0.modeToggleDic[arg1][arg0.name])
+	eachChild(arg0_28.rtView:Find("content"), function(arg0_29)
+		setActive(arg0_29, var0_0.modeToggleDic[arg1_28][arg0_29.name])
 
-		if var0.modeToggleDic[arg1] then
-			switch(arg0.name, {
+		if var0_0.modeToggleDic[arg1_28] then
+			switch(arg0_29.name, {
 				base = function()
-					local var0 = {}
+					local var0_30 = {}
 
-					for iter0, iter1 in ipairs(var0.paresingToggleString(PlayerPrefs.GetString("auto_switch_difficult_base", "all"))) do
-						var0[iter1] = true
+					for iter0_30, iter1_30 in ipairs(var0_0.paresingToggleString(PlayerPrefs.GetString("auto_switch_difficult_base", "all"))) do
+						var0_30[iter1_30] = true
 					end
 
-					eachChild(arg0.rtView:Find("content/base/toggles"), function(arg0)
-						triggerToggle(arg0, var0[arg0.name])
+					eachChild(arg0_28.rtView:Find("content/base/toggles"), function(arg0_31)
+						triggerToggle(arg0_31, var0_30[arg0_31.name])
 					end)
 				end,
 				treasure = function()
-					local var0 = {}
+					local var0_32 = {}
 
-					for iter0, iter1 in ipairs(var0.paresingToggleString(PlayerPrefs.GetString("auto_switch_difficult_treasure", "all"))) do
-						var0[iter1] = true
+					for iter0_32, iter1_32 in ipairs(var0_0.paresingToggleString(PlayerPrefs.GetString("auto_switch_difficult_treasure", "all"))) do
+						var0_32[iter1_32] = true
 					end
 
-					eachChild(arg0.rtView:Find("content/treasure/toggles"), function(arg0)
-						triggerToggle(arg0, var0[arg0.name])
+					eachChild(arg0_28.rtView:Find("content/treasure/toggles"), function(arg0_33)
+						triggerToggle(arg0_33, var0_32[arg0_33.name])
 					end)
 				end
 			}, function()
-				arg0:initToggle(arg0.name)
+				arg0_28:initToggle(arg0_29.name)
 			end)
 		end
 	end)
 end
 
-function var0.saveConfig(arg0, arg1)
-	local var0 = {}
+function var0_0.saveConfig(arg0_35, arg1_35)
+	local var0_35 = {}
 
-	eachChild(arg0.rtView:Find("content/" .. arg1 .. "/toggles"), function(arg0)
-		if GetComponent(arg0, typeof(Toggle)).isOn then
-			table.insert(var0, arg0.name)
+	eachChild(arg0_35.rtView:Find("content/" .. arg1_35 .. "/toggles"), function(arg0_36)
+		if GetComponent(arg0_36, typeof(Toggle)).isOn then
+			table.insert(var0_35, arg0_36.name)
 		end
 	end)
-	PlayerPrefs.SetString("auto_switch_difficult_" .. arg1, table.concat(var0, "&"))
+	PlayerPrefs.SetString("auto_switch_difficult_" .. arg1_35, table.concat(var0_35, "&"))
 	PlayerPrefs.Save()
 end
 
-function var0.paresingToggleString(arg0)
-	if not arg0 or arg0 == "" then
+function var0_0.paresingToggleString(arg0_37)
+	if not arg0_37 or arg0_37 == "" then
 		return {}
 	end
 
-	return string.split(arg0, "&")
+	return string.split(arg0_37, "&")
 end
 
-function var0.checkDifficultValid(arg0, arg1)
-	local var0 = var0.paresingToggleString(arg0)
+function var0_0.checkDifficultValid(arg0_38, arg1_38)
+	local var0_38 = var0_0.paresingToggleString(arg0_38)
 
-	for iter0, iter1 in ipairs(var0) do
-		if iter1 == "all" then
+	for iter0_38, iter1_38 in ipairs(var0_38) do
+		if iter1_38 == "all" then
 			return true
-		elseif string.sub(iter1, 1, 6) == "until_" then
-			if arg1 <= tonumber(string.sub(iter1, 7)) then
+		elseif string.sub(iter1_38, 1, 6) == "until_" then
+			if arg1_38 <= tonumber(string.sub(iter1_38, 7)) then
 				return true
 			end
-		elseif arg1 == tonumber(iter1) then
+		elseif arg1_38 == tonumber(iter1_38) then
 			return true
 		end
 	end
@@ -434,4 +434,4 @@ function var0.checkDifficultValid(arg0, arg1)
 	return false
 end
 
-return var0
+return var0_0

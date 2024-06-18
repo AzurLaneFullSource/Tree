@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_366 = {}
+var0_0.word_template_366 = {}
 
-local var1 = var0.word_template_366
+local var1_0 = var0_0.word_template_366
 
 function temp()
-	var1.承 = {
+	var1_0.承 = {
 		认 = {
 			["6"] = {
 				["/"] = {
@@ -23,7 +23,7 @@ end
 temp()
 
 function temp()
-	var1.烈 = {
+	var1_0.烈 = {
 		士 = {
 			this = true
 		}
@@ -33,7 +33,7 @@ end
 temp()
 
 function temp()
-	var1.争 = {
+	var1_0.争 = {
 		取 = {
 			民 = {
 				主 = {
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.ⅵ = {
+	var1_0.ⅵ = {
 		ⅳ = {
 			纪 = {
 				念 = {
@@ -63,7 +63,7 @@ end
 temp()
 
 function temp()
-	var1["9"] = {
+	var1_0["9"] = {
 		["8"] = {
 			["7"] = {
 				["5"] = {
@@ -158,7 +158,7 @@ end
 temp()
 
 function temp()
-	var1.皿 = {
+	var1_0.皿 = {
 		煑 = {
 			謌 = {
 				聲 = {
@@ -192,7 +192,7 @@ end
 temp()
 
 function temp()
-	var1.“ = {
+	var1_0.“ = {
 		八 = {
 			九 = {
 				” = {

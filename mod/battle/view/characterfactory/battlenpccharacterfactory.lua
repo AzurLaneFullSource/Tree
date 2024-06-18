@@ -1,87 +1,87 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = singletonClass("BattleNPCCharacterFactory", var0.Battle.BattleEnemyCharacterFactory)
+local var0_0 = ys
+local var1_0 = singletonClass("BattleNPCCharacterFactory", var0_0.Battle.BattleEnemyCharacterFactory)
 
-var0.Battle.BattleNPCCharacterFactory = var1
-var1.__name = "BattleNPCCharacterFactory"
+var0_0.Battle.BattleNPCCharacterFactory = var1_0
+var1_0.__name = "BattleNPCCharacterFactory"
 
-function var1.Ctor(arg0)
-	var1.super.Ctor(arg0)
+function var1_0.Ctor(arg0_1)
+	var1_0.super.Ctor(arg0_1)
 
-	arg0.HP_BAR_NAME = var0.Battle.BattleHPBarManager.HP_BAR_FOE
+	arg0_1.HP_BAR_NAME = var0_0.Battle.BattleHPBarManager.HP_BAR_FOE
 end
 
-function var1.CreateCharacter(arg0, arg1)
-	local var0 = arg1.extraInfo
-	local var1 = arg1.unit
-	local var2 = arg0:MakeCharacter()
+function var1_0.CreateCharacter(arg0_2, arg1_2)
+	local var0_2 = arg1_2.extraInfo
+	local var1_2 = arg1_2.unit
+	local var2_2 = arg0_2:MakeCharacter()
 
-	var2:SetFactory(arg0)
-	var2:SetUnitData(var1)
+	var2_2:SetFactory(arg0_2)
+	var2_2:SetUnitData(var1_2)
 
-	if var0.modleID then
-		var2:SetModleID(var0.modleID)
+	if var0_2.modleID then
+		var2_2:SetModleID(var0_2.modleID)
 	end
 
-	if var0.HPColor then
-		var2:SetHPColor(var0.HPColor)
+	if var0_2.HPColor then
+		var2_2:SetHPColor(var0_2.HPColor)
 	end
 
-	if var0.isUnvisible then
-		var2:SetUnvisible()
+	if var0_2.isUnvisible then
+		var2_2:SetUnvisible()
 	end
 
-	arg0:MakeModel(var2)
+	arg0_2:MakeModel(var2_2)
 
-	return var2
+	return var2_2
 end
 
-function var1.MakeModel(arg0, arg1)
-	local var0 = arg1:GetUnitData()
+function var1_0.MakeModel(arg0_3, arg1_3)
+	local var0_3 = arg1_3:GetUnitData()
 
-	local function var1(arg0)
-		arg1:AddModel(arg0)
+	local function var1_3(arg0_4)
+		arg1_3:AddModel(arg0_4)
 
-		local var0 = arg0:GetSceneMediator()
+		local var0_4 = arg0_3:GetSceneMediator()
 
-		arg1:CameraOrthogonal(var0.Battle.BattleCameraUtil.GetInstance():GetCamera())
-		var0:AddEnemyCharacter(arg1)
-		arg0:MakeUIComponentContainer(arg1)
-		arg0:MakeFXContainer(arg1)
-		arg0:MakePopNumPool(arg1)
-		arg0:MakeBloodBar(arg1)
-		arg0:MakeWaveFX(arg1)
-		arg0:MakeSmokeFX(arg1)
-		arg0:MakeArrowBar(arg1)
+		arg1_3:CameraOrthogonal(var0_0.Battle.BattleCameraUtil.GetInstance():GetCamera())
+		var0_4:AddEnemyCharacter(arg1_3)
+		arg0_3:MakeUIComponentContainer(arg1_3)
+		arg0_3:MakeFXContainer(arg1_3)
+		arg0_3:MakePopNumPool(arg1_3)
+		arg0_3:MakeBloodBar(arg1_3)
+		arg0_3:MakeWaveFX(arg1_3)
+		arg0_3:MakeSmokeFX(arg1_3)
+		arg0_3:MakeArrowBar(arg1_3)
 
-		local var1 = var0:GetTemplate().appear_fx
+		local var1_4 = var0_3:GetTemplate().appear_fx
 
-		for iter0, iter1 in ipairs(var1) do
-			arg1:AddFX(iter1)
+		for iter0_4, iter1_4 in ipairs(var1_4) do
+			arg1_3:AddFX(iter1_4)
 		end
 
-		arg1:MakeVisible()
+		arg1_3:MakeVisible()
 	end
 
-	arg0:GetCharacterPool():InstCharacter(arg1:GetModleID(), function(arg0)
-		var1(arg0)
+	arg0_3:GetCharacterPool():InstCharacter(arg1_3:GetModleID(), function(arg0_5)
+		var1_3(arg0_5)
 	end)
 end
 
-function var1.MakeCharacter(arg0)
-	return var0.Battle.BattleNPCCharacter.New()
+function var1_0.MakeCharacter(arg0_6)
+	return var0_0.Battle.BattleNPCCharacter.New()
 end
 
-function var1.MakeBloodBar(arg0, arg1)
-	local var0 = arg0:GetHPBarPool():GetHPBar(arg0.HP_BAR_NAME)
-	local var1 = var0.transform
-	local var2 = arg1:GetHPColor()
+function var1_0.MakeBloodBar(arg0_7, arg1_7)
+	local var0_7 = arg0_7:GetHPBarPool():GetHPBar(arg0_7.HP_BAR_NAME)
+	local var1_7 = var0_7.transform
+	local var2_7 = arg1_7:GetHPColor()
 
-	if var2 then
-		var1:Find("blood"):GetComponent(typeof(Image)).color = var2
+	if var2_7 then
+		var1_7:Find("blood"):GetComponent(typeof(Image)).color = var2_7
 	end
 
-	arg1:AddHPBar(var0)
-	arg1:UpdateHPBarPosition()
+	arg1_7:AddHPBar(var0_7)
+	arg1_7:UpdateHPBarPosition()
 end

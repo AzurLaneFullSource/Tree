@@ -1,116 +1,116 @@
-﻿local var0 = class("MetaCharacterAttr", import("..BaseVO"))
+﻿local var0_0 = class("MetaCharacterAttr", import("..BaseVO"))
 
-function var0.Ctor(arg0, arg1)
-	arg0.attr = arg1.attr
-	arg0.items = _.map(arg1.items or {}, function(arg0)
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.attr = arg1_1.attr
+	arg0_1.items = _.map(arg1_1.items or {}, function(arg0_2)
 		return MetaRepairItem.New({
-			id = arg0
+			id = arg0_2
 		})
 	end)
-	arg0.level = arg1.level or 1
+	arg0_1.level = arg1_1.level or 1
 end
 
-function var0.getLevelByItemId(arg0, arg1)
-	local var0 = 1
+function var0_0.getLevelByItemId(arg0_3, arg1_3)
+	local var0_3 = 1
 
-	for iter0, iter1 in pairs(arg0.items) do
-		if iter1.id == arg1 then
-			var0 = iter0 + 1
+	for iter0_3, iter1_3 in pairs(arg0_3.items) do
+		if iter1_3.id == arg1_3 then
+			var0_3 = iter0_3 + 1
 
 			break
 		end
 	end
 
-	return var0
+	return var0_3
 end
 
-function var0.updateCount(arg0, arg1)
-	if arg1 > arg0.level then
-		arg0.level = arg1
+function var0_0.updateCount(arg0_4, arg1_4)
+	if arg1_4 > arg0_4.level then
+		arg0_4.level = arg1_4
 	end
 end
 
-function var0.hasItemId(arg0, arg1)
-	return _.any(arg0.items, function(arg0)
-		return arg0.id == arg1
+function var0_0.hasItemId(arg0_5, arg1_5)
+	return _.any(arg0_5.items, function(arg0_6)
+		return arg0_6.id == arg1_5
 	end)
 end
 
-function var0.getLevel(arg0)
-	return arg0.level
+function var0_0.getLevel(arg0_7)
+	return arg0_7.level
 end
 
-function var0.isMaxLevel(arg0)
-	return arg0.level > #arg0.items
+function var0_0.isMaxLevel(arg0_8)
+	return arg0_8.level > #arg0_8.items
 end
 
-function var0.getAddition(arg0)
-	local var0 = 0
+function var0_0.getAddition(arg0_9)
+	local var0_9 = 0
 
-	for iter0 = 1, arg0.level - 1 do
-		var0 = var0 + arg0.items[iter0]:getAdditionValue()
+	for iter0_9 = 1, arg0_9.level - 1 do
+		var0_9 = var0_9 + arg0_9.items[iter0_9]:getAdditionValue()
 	end
 
-	return var0
+	return var0_9
 end
 
-function var0.getMaxAddition(arg0)
-	local var0 = 0
+function var0_0.getMaxAddition(arg0_10)
+	local var0_10 = 0
 
-	for iter0, iter1 in ipairs(arg0.items) do
-		var0 = var0 + iter1:getAdditionValue()
+	for iter0_10, iter1_10 in ipairs(arg0_10.items) do
+		var0_10 = var0_10 + iter1_10:getAdditionValue()
 	end
 
-	return var0
+	return var0_10
 end
 
-function var0.getRepairExp(arg0)
-	local var0 = 0
+function var0_0.getRepairExp(arg0_11)
+	local var0_11 = 0
 
-	for iter0 = 1, arg0.level - 1 do
-		var0 = var0 + arg0.items[iter0]:getRepairExp()
+	for iter0_11 = 1, arg0_11.level - 1 do
+		var0_11 = var0_11 + arg0_11.items[iter0_11]:getRepairExp()
 	end
 
-	return var0
+	return var0_11
 end
 
-function var0.getItem(arg0)
-	assert(arg0.items[arg0.level], "level : " .. arg0.level)
+function var0_0.getItem(arg0_12)
+	assert(arg0_12.items[arg0_12.level], "level : " .. arg0_12.level)
 
-	return arg0.items[arg0.level]
+	return arg0_12.items[arg0_12.level]
 end
 
-function var0.getItemByLevel(arg0, arg1)
-	return arg0.items[arg1]
+function var0_0.getItemByLevel(arg0_13, arg1_13)
+	return arg0_13.items[arg1_13]
 end
 
-function var0.levelUp(arg0)
-	if not arg0:isMaxLevel() then
-		arg0.level = arg0.level + 1
+function var0_0.levelUp(arg0_14)
+	if not arg0_14:isMaxLevel() then
+		arg0_14.level = arg0_14.level + 1
 	end
 end
 
-function var0.isCanRepair(arg0)
-	if arg0:isMaxLevel() then
+function var0_0.isCanRepair(arg0_15)
+	if arg0_15:isMaxLevel() then
 		return false
 	end
 
-	local var0 = arg0:getItem()
-	local var1 = var0:getItemId()
+	local var0_15 = arg0_15:getItem()
+	local var1_15 = var0_15:getItemId()
 
-	if var0:getTotalCnt() <= getProxy(BagProxy):getItemCountById(var1) then
+	if var0_15:getTotalCnt() <= getProxy(BagProxy):getItemCountById(var1_15) then
 		return true
 	else
 		return false
 	end
 end
 
-function var0.getItemCount(arg0)
-	return #arg0.items
+function var0_0.getItemCount(arg0_16)
+	return #arg0_16.items
 end
 
-function var0.isLock(arg0)
-	return arg0:getItemCount() == 0
+function var0_0.isLock(arg0_17)
+	return arg0_17:getItemCount() == 0
 end
 
-return var0
+return var0_0

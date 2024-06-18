@@ -1,116 +1,116 @@
-﻿local var0 = class("ArchivesWorldBossCard")
+﻿local var0_0 = class("ArchivesWorldBossCard")
 
-function var0.Ctor(arg0, arg1)
-	arg0._go = arg1
-	arg0._tf = arg1.transform
-	arg0.icon = arg0._tf:Find("icon"):GetComponent(typeof(Image))
-	arg0.underwayTr = arg0._tf:Find("underway")
-	arg0.staticTr = arg0._tf:Find("static")
-	arg0.finishTr = arg0._tf:Find("finish")
-	arg0.nameTxt = arg0._tf:Find("name"):GetComponent(typeof(Text))
-	arg0.staticMaskTr = arg0._tf:Find("static_mask")
-	arg0.uProgress = arg0.underwayTr:Find("progress/bar")
-	arg0.uProgressTxt = arg0.underwayTr:Find("Text"):GetComponent(typeof(Text))
-	arg0.sProgress = arg0.staticTr:Find("progress/bar")
-	arg0.sProgressTxt = arg0.staticTr:Find("Text"):GetComponent(typeof(Text))
-	arg0.fProgress = arg0.staticTr:Find("progress/bar")
-	arg0.arrTr = arg0._tf:Find("arr")
-	arg0.arrLpos = arg0.arrTr.localPosition
-	arg0.sLabel = arg0.staticTr:Find("Text/label")
-	arg0.sSynValue = arg0.staticTr:Find("Text1")
-	arg0.sLabelLpos = arg0.sLabel.localPosition
-	arg0.underwayLabelStr = i18n("meta_pt_point")
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1._go = arg1_1
+	arg0_1._tf = arg1_1.transform
+	arg0_1.icon = arg0_1._tf:Find("icon"):GetComponent(typeof(Image))
+	arg0_1.underwayTr = arg0_1._tf:Find("underway")
+	arg0_1.staticTr = arg0_1._tf:Find("static")
+	arg0_1.finishTr = arg0_1._tf:Find("finish")
+	arg0_1.nameTxt = arg0_1._tf:Find("name"):GetComponent(typeof(Text))
+	arg0_1.staticMaskTr = arg0_1._tf:Find("static_mask")
+	arg0_1.uProgress = arg0_1.underwayTr:Find("progress/bar")
+	arg0_1.uProgressTxt = arg0_1.underwayTr:Find("Text"):GetComponent(typeof(Text))
+	arg0_1.sProgress = arg0_1.staticTr:Find("progress/bar")
+	arg0_1.sProgressTxt = arg0_1.staticTr:Find("Text"):GetComponent(typeof(Text))
+	arg0_1.fProgress = arg0_1.staticTr:Find("progress/bar")
+	arg0_1.arrTr = arg0_1._tf:Find("arr")
+	arg0_1.arrLpos = arg0_1.arrTr.localPosition
+	arg0_1.sLabel = arg0_1.staticTr:Find("Text/label")
+	arg0_1.sSynValue = arg0_1.staticTr:Find("Text1")
+	arg0_1.sLabelLpos = arg0_1.sLabel.localPosition
+	arg0_1.underwayLabelStr = i18n("meta_pt_point")
 
-	setText(arg0.underwayTr:Find("label"), arg0.underwayLabelStr)
-	setText(arg0.sLabel, i18n("meta_syn_rate"))
+	setText(arg0_1.underwayTr:Find("label"), arg0_1.underwayLabelStr)
+	setText(arg0_1.sLabel, i18n("meta_syn_rate"))
 
-	arg0.tip = arg0._tf:Find("tip")
+	arg0_1.tip = arg0_1._tf:Find("tip")
 
-	setActive(arg0.arrTr, false)
+	setActive(arg0_1.arrTr, false)
 end
 
-function var0.Update(arg0, arg1)
-	arg0.data = arg1
-	arg0.bossId = arg1.id
-	arg0.metaProgressVO = arg1.progress
+function var0_0.Update(arg0_2, arg1_2)
+	arg0_2.data = arg1_2
+	arg0_2.bossId = arg1_2.id
+	arg0_2.metaProgressVO = arg1_2.progress
 
-	arg0:Flush()
+	arg0_2:Flush()
 end
 
-function var0.Flush(arg0)
-	local var0 = arg0.metaProgressVO
-	local var1 = WorldBossConst.GetArchivesId()
-	local var2 = arg0.bossId == var1 and WorldBossConst.GetAchieveState() ~= WorldBossConst.ACHIEVE_STATE_NOSTART
-	local var3 = var0.metaPtData
-	local var4 = not var3:CanGetNextAward()
+function var0_0.Flush(arg0_3)
+	local var0_3 = arg0_3.metaProgressVO
+	local var1_3 = WorldBossConst.GetArchivesId()
+	local var2_3 = arg0_3.bossId == var1_3 and WorldBossConst.GetAchieveState() ~= WorldBossConst.ACHIEVE_STATE_NOSTART
+	local var3_3 = var0_3.metaPtData
+	local var4_3 = not var3_3:CanGetNextAward()
 
-	setActive(arg0.underwayTr, var2 and not var4)
-	setActive(arg0.staticTr, not var2 and not var4)
-	setActive(arg0.staticMaskTr, not var2 and not var4)
-	setActive(arg0.finishTr, var4)
+	setActive(arg0_3.underwayTr, var2_3 and not var4_3)
+	setActive(arg0_3.staticTr, not var2_3 and not var4_3)
+	setActive(arg0_3.staticMaskTr, not var2_3 and not var4_3)
+	setActive(arg0_3.finishTr, var4_3)
 
-	local var5 = var3:GetResProgress()
-	local var6 = var3:GetTotalResRequire()
-	local var7 = var0.metaPtData.level + 1 > var0.unlockPTLevel
-	local var8 = var0.id
+	local var5_3 = var3_3:GetResProgress()
+	local var6_3 = var3_3:GetTotalResRequire()
+	local var7_3 = var0_3.metaPtData.level + 1 > var0_3.unlockPTLevel
+	local var8_3 = var0_3.id
 
-	arg0.icon.sprite = GetSpriteFromAtlas("MetaWorldboss/" .. var8, "archives")
-	arg0.sLabel.localPosition = Vector3(arg0.sLabel.localPosition.x, arg0.sLabelLpos.y, 0)
+	arg0_3.icon.sprite = GetSpriteFromAtlas("MetaWorldboss/" .. var8_3, "archives")
+	arg0_3.sLabel.localPosition = Vector3(arg0_3.sLabel.localPosition.x, arg0_3.sLabelLpos.y, 0)
 
-	if var4 then
-		setFillAmount(arg0.fProgress, 1)
-	elseif var2 then
-		setFillAmount(arg0.uProgress, var5 / var6)
-		setText(arg0.underwayTr:Find("label"), arg0.underwayLabelStr .. "(" .. var5 .. "/" .. var6 .. ")")
+	if var4_3 then
+		setFillAmount(arg0_3.fProgress, 1)
+	elseif var2_3 then
+		setFillAmount(arg0_3.uProgress, var5_3 / var6_3)
+		setText(arg0_3.underwayTr:Find("label"), arg0_3.underwayLabelStr .. "(" .. var5_3 .. "/" .. var6_3 .. ")")
 	else
-		setText(arg0.underwayTr:Find("label"), arg0.underwayLabelStr)
+		setText(arg0_3.underwayTr:Find("label"), arg0_3.underwayLabelStr)
 
-		if var7 then
-			arg0.sProgressTxt.enabled = false
+		if var7_3 then
+			arg0_3.sProgressTxt.enabled = false
 
-			setText(arg0.staticTr:Find("label"), i18n("meta_pt_point"))
-			setText(arg0.sLabel, i18n("meta_syn_finish"))
-			setText(arg0.sSynValue, "(" .. var5 .. "/" .. var6 .. ")")
+			setText(arg0_3.staticTr:Find("label"), i18n("meta_pt_point"))
+			setText(arg0_3.sLabel, i18n("meta_syn_finish"))
+			setText(arg0_3.sSynValue, "(" .. var5_3 .. "/" .. var6_3 .. ")")
 
-			arg0.sLabel.localPosition = Vector3(arg0.sLabel.localPosition.x, arg0.sLabelLpos.y + 20, 0)
+			arg0_3.sLabel.localPosition = Vector3(arg0_3.sLabel.localPosition.x, arg0_3.sLabelLpos.y + 20, 0)
 
-			setFillAmount(arg0.sProgress, var5 / var6)
+			setFillAmount(arg0_3.sProgress, var5_3 / var6_3)
 		else
-			arg0.sProgressTxt.enabled = true
+			arg0_3.sProgressTxt.enabled = true
 
-			setText(arg0.staticTr:Find("label"), "")
-			setText(arg0.sSynValue, "")
-			setText(arg0.sLabel, i18n("meta_syn_rate"))
+			setText(arg0_3.staticTr:Find("label"), "")
+			setText(arg0_3.sSynValue, "")
+			setText(arg0_3.sLabel, i18n("meta_syn_rate"))
 
-			local var9 = math.min(1, var5 / var0.unlockPTNum)
+			local var9_3 = math.min(1, var5_3 / var0_3.unlockPTNum)
 
-			setFillAmount(arg0.sProgress, var9)
+			setFillAmount(arg0_3.sProgress, var9_3)
 
-			arg0.sProgressTxt.text = string.format("%0.1f", var9 * 100) .. "%"
+			arg0_3.sProgressTxt.text = string.format("%0.1f", var9_3 * 100) .. "%"
 		end
 	end
 
-	local var10 = ShipGroup.getDefaultShipConfig(var0.id)
+	local var10_3 = ShipGroup.getDefaultShipConfig(var0_3.id)
 
-	arg0.nameTxt.text = var10.name
+	arg0_3.nameTxt.text = var10_3.name
 
-	setActive(arg0.tip, var3:CanGetAward())
+	setActive(arg0_3.tip, var3_3:CanGetAward())
 end
 
-function var0.Select(arg0)
-	setActive(arg0.arrTr, true)
-	LeanTween.value(arg0.arrTr.gameObject, arg0.arrLpos.x, arg0.arrLpos.x - 20, 0.9):setOnUpdate(System.Action_float(function(arg0)
-		arg0.arrTr.localPosition = Vector3(arg0, arg0.arrLpos.y, 0)
+function var0_0.Select(arg0_4)
+	setActive(arg0_4.arrTr, true)
+	LeanTween.value(arg0_4.arrTr.gameObject, arg0_4.arrLpos.x, arg0_4.arrLpos.x - 20, 0.9):setOnUpdate(System.Action_float(function(arg0_5)
+		arg0_4.arrTr.localPosition = Vector3(arg0_5, arg0_4.arrLpos.y, 0)
 	end)):setLoopPingPong()
 end
 
-function var0.UnSelect(arg0)
-	setActive(arg0.arrTr, false)
-	LeanTween.cancel(arg0.arrTr.gameObject)
+function var0_0.UnSelect(arg0_6)
+	setActive(arg0_6.arrTr, false)
+	LeanTween.cancel(arg0_6.arrTr.gameObject)
 end
 
-function var0.Dispose(arg0)
-	arg0:UnSelect()
+function var0_0.Dispose(arg0_7)
+	arg0_7:UnSelect()
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_legal_template = {}
+var0_0.word_legal_template = {}
 
-local var1 = var0.word_legal_template
+local var1_0 = var0_0.word_legal_template
 
 function temp()
-	var1.合 = {
+	var1_0.合 = {
 		法 = {
 			词 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.U = {
+	var1_0.U = {
 		n = {
 			i = {
 				v = {
@@ -241,7 +241,7 @@ end
 temp()
 
 function temp()
-	var1.P = {
+	var1_0.P = {
 		r = {
 			o = {
 				t = {
@@ -726,7 +726,7 @@ end
 temp()
 
 function temp()
-	var1.S = {
+	var1_0.S = {
 		p = {
 			e = {
 				c = {
@@ -1640,7 +1640,7 @@ end
 temp()
 
 function temp()
-	var1.D = {
+	var1_0.D = {
 		e = {
 			w = {
 				e = {
@@ -1830,7 +1830,7 @@ end
 temp()
 
 function temp()
-	var1.C = {
+	var1_0.C = {
 		a = {
 			s = {
 				s = {
@@ -2408,7 +2408,7 @@ end
 temp()
 
 function temp()
-	var1.G = {
+	var1_0.G = {
 		r = {
 			i = {
 				d = {
@@ -2755,7 +2755,7 @@ end
 temp()
 
 function temp()
-	var1.M = {
+	var1_0.M = {
 		c = {
 			C = {
 				a = {
@@ -3343,7 +3343,7 @@ end
 temp()
 
 function temp()
-	var1.F = {
+	var1_0.F = {
 		l = {
 			e = {
 				t = {
@@ -3638,7 +3638,7 @@ end
 temp()
 
 function temp()
-	var1.T = {
+	var1_0.T = {
 		h = {
 			a = {
 				t = {
@@ -3961,7 +3961,7 @@ end
 temp()
 
 function temp()
-	var1.A = {
+	var1_0.A = {
 		u = {
 			l = {
 				i = {
@@ -4818,7 +4818,7 @@ end
 temp()
 
 function temp()
-	var1.B = {
+	var1_0.B = {
 		e = {
 			n = {
 				s = {
@@ -5186,7 +5186,7 @@ end
 temp()
 
 function temp()
-	var1.L = {
+	var1_0.L = {
 		a = {
 			f = {
 				f = {
@@ -5805,7 +5805,7 @@ end
 temp()
 
 function temp()
-	var1.H = {
+	var1_0.H = {
 		a = {
 			m = {
 				m = {
@@ -6328,7 +6328,7 @@ end
 temp()
 
 function temp()
-	var1.E = {
+	var1_0.E = {
 		l = {
 			d = {
 				r = {
@@ -6536,7 +6536,7 @@ end
 temp()
 
 function temp()
-	var1.R = {
+	var1_0.R = {
 		a = {
 			d = {
 				f = {
@@ -6839,7 +6839,7 @@ end
 temp()
 
 function temp()
-	var1.J = {
+	var1_0.J = {
 		e = {
 			n = {
 				k = {
@@ -7040,7 +7040,7 @@ end
 temp()
 
 function temp()
-	var1.N = {
+	var1_0.N = {
 		i = {
 			c = {
 				h = {
@@ -7466,7 +7466,7 @@ end
 temp()
 
 function temp()
-	var1.K = {
+	var1_0.K = {
 		a = {
 			l = {
 				k = {
@@ -7907,7 +7907,7 @@ end
 temp()
 
 function temp()
-	var1.I = {
+	var1_0.I = {
 		n = {
 			g = {
 				r = {
@@ -8209,7 +8209,7 @@ end
 temp()
 
 function temp()
-	var1.O = {
+	var1_0.O = {
 		m = {
 			a = {
 				h = {
@@ -8330,7 +8330,7 @@ end
 temp()
 
 function temp()
-	var1.Q = {
+	var1_0.Q = {
 		u = {
 			i = {
 				n = {
@@ -8386,7 +8386,7 @@ end
 temp()
 
 function temp()
-	var1.V = {
+	var1_0.V = {
 		i = {
 			n = {
 				c = {
@@ -8593,7 +8593,7 @@ end
 temp()
 
 function temp()
-	var1.W = {
+	var1_0.W = {
 		i = {
 			c = {
 				h = {
@@ -8781,7 +8781,7 @@ end
 temp()
 
 function temp()
-	var1.Y = {
+	var1_0.Y = {
 		o = {
 			r = {
 				k = {
@@ -8999,7 +8999,7 @@ end
 temp()
 
 function temp()
-	var1.安 = {
+	var1_0.安 = {
 		森 = {
 			this = true
 		}
@@ -9009,7 +9009,7 @@ end
 temp()
 
 function temp()
-	var1.Z = {
+	var1_0.Z = {
 		u = {
 			i = {
 				k = {
@@ -9094,7 +9094,7 @@ end
 temp()
 
 function temp()
-	var1.É = {
+	var1_0.É = {
 		m = {
 			i = {
 				l = {
@@ -9131,7 +9131,7 @@ end
 temp()
 
 function temp()
-	var1["2"] = {
+	var1_0["2"] = {
 		["2"] = {
 			this = true
 		}
@@ -9141,7 +9141,7 @@ end
 temp()
 
 function temp()
-	var1["3"] = {
+	var1_0["3"] = {
 		["3"] = {
 			this = true
 		}
@@ -9151,7 +9151,7 @@ end
 temp()
 
 function temp()
-	var1.久 = {
+	var1_0.久 = {
 		远 = {
 			this = true
 		}
@@ -9161,7 +9161,7 @@ end
 temp()
 
 function temp()
-	var1.猫 = {
+	var1_0.猫 = {
 		音 = {
 			this = true
 		}
@@ -9171,7 +9171,7 @@ end
 temp()
 
 function temp()
-	var1.露 = {
+	var1_0.露 = {
 		露 = {
 			缇 = {
 				耶 = {
@@ -9185,7 +9185,7 @@ end
 temp()
 
 function temp()
-	var1.乌 = {
+	var1_0.乌 = {
 		璐 = {
 			露 = {
 				this = true
@@ -9197,7 +9197,7 @@ end
 temp()
 
 function temp()
-	var1.萨 = {
+	var1_0.萨 = {
 		拉 = {
 			娜 = {
 				this = true
@@ -9209,7 +9209,7 @@ end
 temp()
 
 function temp()
-	var1.芙 = {
+	var1_0.芙 = {
 		米 = {
 			露 = {
 				露 = {
@@ -9223,7 +9223,7 @@ end
 temp()
 
 function temp()
-	var1.Ō = {
+	var1_0.Ō = {
 		k = {
 			a = {
 				m = {
@@ -9247,7 +9247,7 @@ end
 temp()
 
 function temp()
-	var1.Ä = {
+	var1_0.Ä = {
 		g = {
 			i = {
 				r = {

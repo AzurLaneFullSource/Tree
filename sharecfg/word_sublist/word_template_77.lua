@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_77 = {}
+var0_0.word_template_77 = {}
 
-local var1 = var0.word_template_77
+local var1_0 = var0_0.word_template_77
 
 function temp()
-	var1.担 = {
+	var1_0.担 = {
 		心 = {
 			仙 = {
 				人 = {
@@ -23,7 +23,7 @@ end
 temp()
 
 function temp()
-	var1.单 = {
+	var1_0.单 = {
 		飞 = {
 			模 = {
 				特 = {
@@ -109,7 +109,7 @@ end
 temp()
 
 function temp()
-	var1.旦 = {
+	var1_0.旦 = {
 		正 = {
 			昂 = {
 				杰 = {
@@ -123,7 +123,7 @@ end
 temp()
 
 function temp()
-	var1.但 = {
+	var1_0.但 = {
 		闻 = {
 			床 = {
 				上 = {
@@ -242,7 +242,7 @@ end
 temp()
 
 function temp()
-	var1.弹 = {
+	var1_0.弹 = {
 		刺 = {
 			跳 = {
 				刀 = {
@@ -307,7 +307,7 @@ end
 temp()
 
 function temp()
-	var1.彈 = {
+	var1_0.彈 = {
 		劾 = {
 			this = true
 		}
@@ -317,7 +317,7 @@ end
 temp()
 
 function temp()
-	var1.当 = {
+	var1_0.当 = {
 		官 = {
 			的 = {
 				受 = {

@@ -1,40 +1,40 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleTorpedoBullet
-local var2 = var0.Battle.BattleResourceManager
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleTorpedoBullet
+local var2_0 = var0_0.Battle.BattleResourceManager
 
-var0.Battle.BattleTorpedoBullet = class("BattleTorpedoBullet", var0.Battle.BattleBullet)
-var0.Battle.BattleTorpedoBullet.__name = "BattleTorpedoBullet"
+var0_0.Battle.BattleTorpedoBullet = class("BattleTorpedoBullet", var0_0.Battle.BattleBullet)
+var0_0.Battle.BattleTorpedoBullet.__name = "BattleTorpedoBullet"
 
-local var3 = var0.Battle.BattleTorpedoBullet
+local var3_0 = var0_0.Battle.BattleTorpedoBullet
 
-function var3.Ctor(arg0)
-	var3.super.Ctor(arg0)
+function var3_0.Ctor(arg0_1)
+	var3_0.super.Ctor(arg0_1)
 end
 
-function var3.Dispose(arg0)
-	if arg0._alert then
-		arg0._alert:Dispose()
+function var3_0.Dispose(arg0_2)
+	if arg0_2._alert then
+		arg0_2._alert:Dispose()
 	end
 
-	var3.super.Dispose(arg0)
+	var3_0.super.Dispose(arg0_2)
 end
 
-function var3.Advance(arg0)
-	arg0._speed = arg0._speed * 2
+function var3_0.Advance(arg0_3)
+	arg0_3._speed = arg0_3._speed * 2
 end
 
-function var3.GetZExtraOffset(arg0)
+function var3_0.GetZExtraOffset(arg0_4)
 	return 0
 end
 
-function var3.MakeAlert(arg0, arg1)
-	arg0._alert = var0.Battle.TorAlert.New(arg1)
+function var3_0.MakeAlert(arg0_5, arg1_5)
+	arg0_5._alert = var0_0.Battle.TorAlert.New(arg1_5)
 
-	arg0._alert:SetPosition(arg0._bulletData:GetPosition(), arg0._bulletData:GetYAngle())
+	arg0_5._alert:SetPosition(arg0_5._bulletData:GetPosition(), arg0_5._bulletData:GetYAngle())
 end
 
-function var3.Neutrailze(arg0)
-	SetActive(arg0._go, false)
+function var3_0.Neutrailze(arg0_6)
+	SetActive(arg0_6._go, false)
 end

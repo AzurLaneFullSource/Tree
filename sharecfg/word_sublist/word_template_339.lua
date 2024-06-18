@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_339 = {}
+var0_0.word_template_339 = {}
 
-local var1 = var0.word_template_339
+local var1_0 = var0_0.word_template_339
 
 function temp()
-	var1.造 = {
+	var1_0.造 = {
 		愛 = {
 			this = true
 		},
@@ -43,7 +43,7 @@ end
 temp()
 
 function temp()
-	var1.泽 = {
+	var1_0.泽 = {
 		东 = {
 			领 = {
 				导 = {
@@ -129,7 +129,7 @@ end
 temp()
 
 function temp()
-	var1.則 = {
+	var1_0.則 = {
 		民 = {
 			this = true
 		}
@@ -139,7 +139,7 @@ end
 temp()
 
 function temp()
-	var1.擇 = {
+	var1_0.擇 = {
 		民 = {
 			this = true
 		}
@@ -149,7 +149,7 @@ end
 temp()
 
 function temp()
-	var1.澤 = {
+	var1_0.澤 = {
 		夫 = {
 			this = true
 		},
@@ -162,7 +162,7 @@ end
 temp()
 
 function temp()
-	var1.賾 = {
+	var1_0.賾 = {
 		this = {
 			this = true
 		}
@@ -172,7 +172,7 @@ end
 temp()
 
 function temp()
-	var1.贼 = {
+	var1_0.贼 = {
 		民 = {
 			this = true
 		}

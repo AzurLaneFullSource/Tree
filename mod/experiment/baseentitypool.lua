@@ -1,48 +1,48 @@
-﻿local var0 = class("BaseEntityPool", import(".BaseEntity"))
+﻿local var0_0 = class("BaseEntityPool", import(".BaseEntity"))
 
-var0.Fields = {
+var0_0.Fields = {
 	pools = "table"
 }
 
-function var0.Build(arg0)
-	arg0.pools = {}
+function var0_0.Build(arg0_1)
+	arg0_1.pools = {}
 end
 
-function var0.Get(arg0, arg1)
-	local var0 = arg0.pools
+function var0_0.Get(arg0_2, arg1_2)
+	local var0_2 = arg0_2.pools
 
-	var0[arg1] = var0[arg1] or {}
+	var0_2[arg1_2] = var0_2[arg1_2] or {}
 
-	local var1 = var0[arg1]
+	local var1_2 = var0_2[arg1_2]
 
-	if #var1 == 0 then
-		return arg1.New()
+	if #var1_2 == 0 then
+		return arg1_2.New()
 	else
-		var1[#var1]:Build()
+		var1_2[#var1_2]:Build()
 
-		return table.remove(var1, #var1)
+		return table.remove(var1_2, #var1_2)
 	end
 end
 
-function var0.Return(arg0, arg1, arg2)
-	arg1:Dispose()
+function var0_0.Return(arg0_3, arg1_3, arg2_3)
+	arg1_3:Dispose()
 
-	arg2 = arg2 or arg1.class
-	arg0.pools[arg2] = arg0.pools[arg2] or {}
+	arg2_3 = arg2_3 or arg1_3.class
+	arg0_3.pools[arg2_3] = arg0_3.pools[arg2_3] or {}
 
-	table.insert(arg0.pools[arg2], arg1)
+	table.insert(arg0_3.pools[arg2_3], arg1_3)
 end
 
-function var0.ReturnArray(arg0, arg1, arg2)
-	for iter0, iter1 in ipairs(arg1) do
-		arg0:Return(iter1, arg2)
+function var0_0.ReturnArray(arg0_4, arg1_4, arg2_4)
+	for iter0_4, iter1_4 in ipairs(arg1_4) do
+		arg0_4:Return(iter1_4, arg2_4)
 	end
 end
 
-function var0.ReturnMap(arg0, arg1, arg2)
-	for iter0, iter1 in pairs(arg1) do
-		arg0:Return(iter1, arg2)
+function var0_0.ReturnMap(arg0_5, arg1_5, arg2_5)
+	for iter0_5, iter1_5 in pairs(arg1_5) do
+		arg0_5:Return(iter1_5, arg2_5)
 	end
 end
 
-return var0
+return var0_0

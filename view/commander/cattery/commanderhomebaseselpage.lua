@@ -1,91 +1,91 @@
-﻿local var0 = class("CommanderHomeBaseSelPage", import("view.base.BaseSubView"))
+﻿local var0_0 = class("CommanderHomeBaseSelPage", import("view.base.BaseSubView"))
 
-function var0.OnLoaded(arg0)
-	arg0.scrollrect = arg0:findTF("scrollrect"):GetComponent("LScrollRect")
-	arg0.okBtn = arg0:findTF("ok_button")
+function var0_0.OnLoaded(arg0_1)
+	arg0_1.scrollrect = arg0_1:findTF("scrollrect"):GetComponent("LScrollRect")
+	arg0_1.okBtn = arg0_1:findTF("ok_button")
 
-	setActive(arg0._tf, true)
+	setActive(arg0_1._tf, true)
 end
 
-function var0.OnInit(arg0)
-	arg0.cards = {}
+function var0_0.OnInit(arg0_2)
+	arg0_2.cards = {}
 
-	function arg0.scrollrect.onInitItem(arg0)
-		arg0:OnInitItem(arg0)
+	function arg0_2.scrollrect.onInitItem(arg0_3)
+		arg0_2:OnInitItem(arg0_3)
 	end
 
-	function arg0.scrollrect.onUpdateItem(arg0, arg1)
-		arg0:OnUpdateItem(arg0, arg1)
+	function arg0_2.scrollrect.onUpdateItem(arg0_4, arg1_4)
+		arg0_2:OnUpdateItem(arg0_4, arg1_4)
 	end
 end
 
-function var0.OnInitItem(arg0, arg1)
-	local var0 = CommanderCard.New(arg1)
+function var0_0.OnInitItem(arg0_5, arg1_5)
+	local var0_5 = CommanderCard.New(arg1_5)
 
-	onButton(arg0, var0._tf, function()
-		arg0:OnSelected(var0)
+	onButton(arg0_5, var0_5._tf, function()
+		arg0_5:OnSelected(var0_5)
 	end, SFX_PANEL)
 
-	arg0.cards[arg1] = var0
+	arg0_5.cards[arg1_5] = var0_5
 end
 
-function var0.OnUpdateItem(arg0, arg1, arg2)
-	local var0 = arg0.cards[arg2]
+function var0_0.OnUpdateItem(arg0_7, arg1_7, arg2_7)
+	local var0_7 = arg0_7.cards[arg2_7]
 
-	if not var0 then
-		arg0:OnInitItem(arg2)
+	if not var0_7 then
+		arg0_7:OnInitItem(arg2_7)
 
-		var0 = arg0.cards[arg2]
+		var0_7 = arg0_7.cards[arg2_7]
 	end
 
-	local var1 = arg1 + 1
-	local var2 = arg0.displays[var1]
+	local var1_7 = arg1_7 + 1
+	local var2_7 = arg0_7.displays[var1_7]
 
-	var0:update(var2)
-	setActive(var0._tf:Find("line"), var1 % 4 == 1)
+	var0_7:update(var2_7)
+	setActive(var0_7._tf:Find("line"), var1_7 % 4 == 1)
 end
 
-function var0.Update(arg0)
-	arg0:Show()
+function var0_0.Update(arg0_8)
+	arg0_8:Show()
 
-	local var0 = getProxy(CommanderProxy):getData()
+	local var0_8 = getProxy(CommanderProxy):getData()
 
-	arg0.displays = {}
+	arg0_8.displays = {}
 
-	for iter0, iter1 in pairs(var0) do
-		table.insert(arg0.displays, iter1)
+	for iter0_8, iter1_8 in pairs(var0_8) do
+		table.insert(arg0_8.displays, iter1_8)
 	end
 
-	local var1 = getProxy(FleetProxy):getCommandersInFleet()
+	local var1_8 = getProxy(FleetProxy):getCommandersInFleet()
 
-	table.sort(arg0.displays, function(arg0, arg1)
-		local var0 = table.contains(var1, arg0.id) and 1 or 0
-		local var1 = table.contains(var1, arg1.id) and 1 or 0
+	table.sort(arg0_8.displays, function(arg0_9, arg1_9)
+		local var0_9 = table.contains(var1_8, arg0_9.id) and 1 or 0
+		local var1_9 = table.contains(var1_8, arg1_9.id) and 1 or 0
 
-		if var0 == var1 then
-			return arg0.level > arg1.level
+		if var0_9 == var1_9 then
+			return arg0_9.level > arg1_9.level
 		else
-			return var1 < var0
+			return var1_9 < var0_9
 		end
 	end)
 
-	local var2 = 8 - #arg0.displays
+	local var2_8 = 8 - #arg0_8.displays
 
-	for iter2 = 1, var2 do
-		table.insert(arg0.displays, false)
+	for iter2_8 = 1, var2_8 do
+		table.insert(arg0_8.displays, false)
 	end
 
-	arg0.scrollrect:SetTotalCount(#arg0.displays, -1)
+	arg0_8.scrollrect:SetTotalCount(#arg0_8.displays, -1)
 end
 
-function var0.OnDestroy(arg0)
-	for iter0, iter1 in pairs(arg0.cards) do
-		iter1:clear()
+function var0_0.OnDestroy(arg0_10)
+	for iter0_10, iter1_10 in pairs(arg0_10.cards) do
+		iter1_10:clear()
 	end
 end
 
-function var0.OnSelected(arg0)
+function var0_0.OnSelected(arg0_11)
 	return
 end
 
-return var0
+return var0_0

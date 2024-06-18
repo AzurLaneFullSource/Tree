@@ -1,78 +1,78 @@
-﻿local var0 = class("PutFurnitureCommand", pm.SimpleCommand)
+﻿local var0_0 = class("PutFurnitureCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.furnsPos
-	local var2 = var0.tip
-	local var3 = var0.callback
-	local var4 = getProxy(DormProxy)
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.furnsPos
+	local var2_1 = var0_1.tip
+	local var3_1 = var0_1.callback
+	local var4_1 = getProxy(DormProxy)
 
-	if not var4 then
+	if not var4_1 then
 		return
 	end
 
-	local var5 = var0.floor or var4.floor
+	local var5_1 = var0_1.floor or var4_1.floor
 
-	assert(var5, "floor should exist")
+	assert(var5_1, "floor should exist")
 
-	local var6 = var4:getRawData()
-	local var7 = var6.level
-	local var8, var9 = CourtYardRawDataChecker.Check(var1, var6:GetMapSize())
+	local var6_1 = var4_1:getRawData()
+	local var7_1 = var6_1.level
+	local var8_1, var9_1 = CourtYardRawDataChecker.Check(var1_1, var6_1:GetMapSize())
 
-	if not var8 then
-		if var3 then
-			var3(false, var9)
+	if not var8_1 then
+		if var3_1 then
+			var3_1(false, var9_1)
 
 			return
 		end
 
-		pg.TipsMgr.GetInstance():ShowTips(var9)
+		pg.TipsMgr.GetInstance():ShowTips(var9_1)
 
 		return
 	end
 
-	local var10 = {}
+	local var10_1 = {}
 
-	for iter0, iter1 in pairs(var1) do
-		local var11 = {}
+	for iter0_1, iter1_1 in pairs(var1_1) do
+		local var11_1 = {}
 
-		for iter2, iter3 in pairs(iter1.child) do
-			table.insert(var11, {
-				id = tostring(iter2),
-				x = iter3.x,
-				y = iter3.y
+		for iter2_1, iter3_1 in pairs(iter1_1.child) do
+			table.insert(var11_1, {
+				id = tostring(iter2_1),
+				x = iter3_1.x,
+				y = iter3_1.y
 			})
 		end
 
-		table.insert(var10, {
+		table.insert(var10_1, {
 			shipId = 1,
-			id = tostring(iter1.configId),
-			x = iter1.x,
-			y = iter1.y,
-			dir = iter1.dir,
-			child = var11,
-			parent = iter1.parent
+			id = tostring(iter1_1.configId),
+			x = iter1_1.x,
+			y = iter1_1.y,
+			dir = iter1_1.dir,
+			child = var11_1,
+			parent = iter1_1.parent
 		})
 	end
 
-	var4:getRawData():SetTheme(var5, BackYardSelfThemeTemplate.New({
+	var4_1:getRawData():SetTheme(var5_1, BackYardSelfThemeTemplate.New({
 		id = -1,
-		furniture_put_list = var10
-	}, var5))
+		furniture_put_list = var10_1
+	}, var5_1))
 	pg.ConnectionMgr.GetInstance():Send(19008, {
-		floor = var5,
-		furniture_put_list = var10
+		floor = var5_1,
+		furniture_put_list = var10_1
 	})
 
-	if var2 then
+	if var2_1 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_putFurniture_ok"))
 	end
 
-	arg0:sendNotification(GAME.PUT_FURNITURE_DONE)
+	arg0_1:sendNotification(GAME.PUT_FURNITURE_DONE)
 
-	if var3 then
-		var3(true)
+	if var3_1 then
+		var3_1(true)
 	end
 end
 
-return var0
+return var0_0

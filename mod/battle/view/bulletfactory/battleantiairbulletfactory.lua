@@ -1,118 +1,118 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleAntiAirBulletFactory = singletonClass("BattleAntiAirBulletFactory", var0.Battle.BattleBulletFactory)
-var0.Battle.BattleAntiAirBulletFactory.__name = "BattleAntiAirBulletFactory"
+var0_0.Battle.BattleAntiAirBulletFactory = singletonClass("BattleAntiAirBulletFactory", var0_0.Battle.BattleBulletFactory)
+var0_0.Battle.BattleAntiAirBulletFactory.__name = "BattleAntiAirBulletFactory"
 
-local var1 = var0.Battle.BattleAntiAirBulletFactory
+local var1_0 = var0_0.Battle.BattleAntiAirBulletFactory
 
-function var1.Ctor(arg0)
-	var1.super.Ctor(arg0)
+function var1_0.Ctor(arg0_1)
+	var1_0.super.Ctor(arg0_1)
 
-	arg0._tmpTimerList = {}
+	arg0_1._tmpTimerList = {}
 end
 
-function var1.NeutralizeBullet(arg0)
-	for iter0, iter1 in pairs(arg0._tmpTimerList) do
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(iter1)
+function var1_0.NeutralizeBullet(arg0_2)
+	for iter0_2, iter1_2 in pairs(arg0_2._tmpTimerList) do
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(iter1_2)
 
-		arg0._tmpTimerList[iter1] = nil
+		arg0_2._tmpTimerList[iter1_2] = nil
 	end
 end
 
-function var1.CreateBullet(arg0, arg1, arg2, arg3, arg4, arg5)
-	local var0 = arg2:GetTemplate().hit_type
-	local var1 = arg0:GetDataProxy()
-	local var2 = arg2:GetDirectHitUnit()
+function var1_0.CreateBullet(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3, arg5_3)
+	local var0_3 = arg2_3:GetTemplate().hit_type
+	local var1_3 = arg0_3:GetDataProxy()
+	local var2_3 = arg2_3:GetDirectHitUnit()
 
-	if not var2 then
-		var1:RemoveBulletUnit(arg2:GetUniqueID())
+	if not var2_3 then
+		var1_3:RemoveBulletUnit(arg2_3:GetUniqueID())
 
 		return
 	end
 
-	local var3 = var2:GetUniqueID()
-	local var4 = arg0:GetSceneMediator():GetAircraft(var3)
+	local var3_3 = var2_3:GetUniqueID()
+	local var4_3 = arg0_3:GetSceneMediator():GetAircraft(var3_3)
 
-	if var4 == nil then
-		var1:RemoveBulletUnit(arg2:GetUniqueID())
+	if var4_3 == nil then
+		var1_3:RemoveBulletUnit(arg2_3:GetUniqueID())
 
 		return
 	end
 
-	local var5 = var4:GetPosition():Clone()
-	local var6 = var0.range
+	local var5_3 = var4_3:GetPosition():Clone()
+	local var6_3 = var0_3.range
 
-	local function var7(arg0)
-		local var0 = {}
+	local function var7_3(arg0_4)
+		local var0_4 = {}
 
-		for iter0, iter1 in ipairs(arg0) do
-			if iter1.Active then
-				local var1 = arg0:GetSceneMediator():GetAircraft(iter1.UID)
+		for iter0_4, iter1_4 in ipairs(arg0_4) do
+			if iter1_4.Active then
+				local var1_4 = arg0_3:GetSceneMediator():GetAircraft(iter1_4.UID)
 
-				if var1 then
-					local var2 = var1:GetUnitData()
+				if var1_4 then
+					local var2_4 = var1_4:GetUnitData()
 
-					if var2:IsVisitable() then
-						var0[#var0 + 1] = var2
+					if var2_4:IsVisitable() then
+						var0_4[#var0_4 + 1] = var2_4
 					end
 				end
 			end
 		end
 
-		var1:HandleMeteoDamage(arg2, var0)
+		var1_3:HandleMeteoDamage(arg2_3, var0_4)
 	end
 
-	local function var8()
-		var1:SpawnColumnArea(arg2:GetEffectField(), arg2:GetIFF(), var5, var6, var0.time, var7)
-		var1:RemoveBulletUnit(arg2:GetUniqueID())
+	local function var8_3()
+		var1_3:SpawnColumnArea(arg2_3:GetEffectField(), arg2_3:GetIFF(), var5_3, var6_3, var0_3.time, var7_3)
+		var1_3:RemoveBulletUnit(arg2_3:GetUniqueID())
 	end
 
-	local function var9()
-		local var0
+	local function var9_3()
+		local var0_6
 
-		if var2:IsAlive() and var4 then
-			var0 = var4:GetPosition():Clone():Add(Vector3(math.random(var6) - var6 * 0.5, 0, math.random(var6) - var6 * 0.5))
-			var5 = var0
+		if var2_3:IsAlive() and var4_3 then
+			var0_6 = var4_3:GetPosition():Clone():Add(Vector3(math.random(var6_3) - var6_3 * 0.5, 0, math.random(var6_3) - var6_3 * 0.5))
+			var5_3 = var0_6
 		else
-			var0 = var5
+			var0_6 = var5_3
 		end
 
-		local var1, var2 = arg0:GetFXPool():GetFX(arg2:GetTemplate().hit_fx)
+		local var1_6, var2_6 = arg0_3:GetFXPool():GetFX(arg2_3:GetTemplate().hit_fx)
 
-		pg.EffectMgr.GetInstance():PlayBattleEffect(var1, var2:Add(var0), true)
+		pg.EffectMgr.GetInstance():PlayBattleEffect(var1_6, var2_6:Add(var0_6), true)
 	end
 
-	local var10
-	local var11
+	local var10_3
+	local var11_3
 
-	local function var12()
-		if arg4 == nil then
-			var8()
+	local function var12_3()
+		if arg4_3 == nil then
+			var8_3()
 		else
-			arg0:PlayFireFX(arg1, arg2, arg3, arg4, arg5, var11)
-		end
-	end
-
-	function var11()
-		if arg0._tmpTimerList[var10] ~= nil then
-			var12()
-			var9()
-		else
-			var8()
+			arg0_3:PlayFireFX(arg1_3, arg2_3, arg3_3, arg4_3, arg5_3, var11_3)
 		end
 	end
 
-	local function var13()
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(var10)
-
-		arg0._tmpTimerList[var10] = nil
-		var10 = nil
+	function var11_3()
+		if arg0_3._tmpTimerList[var10_3] ~= nil then
+			var12_3()
+			var9_3()
+		else
+			var8_3()
+		end
 	end
 
-	var10 = pg.TimeMgr.GetInstance():AddBattleTimer("antiAirTimer", -1, 0.5, var13, true)
-	arg0._tmpTimerList[var10] = var10
+	local function var13_3()
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(var10_3)
 
-	var12()
+		arg0_3._tmpTimerList[var10_3] = nil
+		var10_3 = nil
+	end
+
+	var10_3 = pg.TimeMgr.GetInstance():AddBattleTimer("antiAirTimer", -1, 0.5, var13_3, true)
+	arg0_3._tmpTimerList[var10_3] = var10_3
+
+	var12_3()
 end

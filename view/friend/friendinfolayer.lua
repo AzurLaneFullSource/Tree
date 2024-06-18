@@ -1,18 +1,18 @@
-﻿local var0 = class("FriendInfoLayer", import("..base.BaseUI"))
+﻿local var0_0 = class("FriendInfoLayer", import("..base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "FriendInfoUI"
 end
 
-function var0.setFriend(arg0, arg1)
-	arg0.friend = arg1
+function var0_0.setFriend(arg0_2, arg1_2)
+	arg0_2.friend = arg1_2
 end
 
-function var0.setFriendProxy(arg0, arg1)
-	arg0.friendProxy = arg1
+function var0_0.setFriendProxy(arg0_3, arg1_3)
+	arg0_3.friendProxy = arg1_3
 end
 
-local var1 = {
+local var1_0 = {
 	"OPEN_RESUME",
 	"OPEND_FRIEND",
 	"OPEN_BACKYARD",
@@ -20,268 +20,268 @@ local var1 = {
 	"OPEN_INFORM"
 }
 
-function var0.init(arg0)
-	if arg0.contextData.form == NotificationLayer.FORM_BATTLE then
-		setParent(arg0._tf, arg0.contextData.parent)
-	elseif arg0.contextData.form == NotificationLayer.FORM_MAIN then
-		pg.UIMgr.GetInstance():BlurPanel(arg0._tf, false, {
-			groupName = arg0:getGroupNameFromData(),
+function var0_0.init(arg0_4)
+	if arg0_4.contextData.form == NotificationLayer.FORM_BATTLE then
+		setParent(arg0_4._tf, arg0_4.contextData.parent)
+	elseif arg0_4.contextData.form == NotificationLayer.FORM_MAIN then
+		pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf, false, {
+			groupName = arg0_4:getGroupNameFromData(),
 			weight = LayerWeightConst.SECOND_LAYER
 		})
 	else
-		pg.UIMgr.GetInstance():OverlayPanel(arg0._tf, {
-			groupName = arg0:getGroupNameFromData(),
+		pg.UIMgr.GetInstance():OverlayPanel(arg0_4._tf, {
+			groupName = arg0_4:getGroupNameFromData(),
 			weight = LayerWeightConst.SECOND_LAYER
 		})
 	end
 
-	arg0.frame = arg0:findTF("frame")
-	arg0.iconTF = arg0:findTF("frame/left_bg/icon_bg/frame/icon"):GetComponent(typeof(Image))
-	arg0.starsTF = arg0:findTF("frame/left_bg/icon_bg/stars")
-	arg0.starTF = arg0:findTF("frame/left_bg/icon_bg/stars/star")
-	arg0.playerNameTF = arg0:findTF("frame/left_bg/name_bg/Text"):GetComponent(typeof(Text))
-	arg0.levelTF = arg0:findTF("frame/left_bg/icon_bg/lv/Text"):GetComponent(typeof(Text))
-	arg0.resumeEmblem = arg0:findTF("frame/left_bg/emblem")
-	arg0.resumeRank = arg0:findTF("frame/left_bg/emblem/Text"):GetComponent(typeof(Text))
-	arg0.informPanel = arg0:findTF("inform_panel")
-	arg0.toggleTpl = arg0:findTF("inform_panel/frame/window/main/Toggle")
-	arg0.buttonTpl = arg0:findTF("inform_panel/frame/window/main/button")
-	arg0.toggleContainer = arg0:findTF("inform_panel/frame/window/main/toggles")
-	arg0.confirmBtn = arg0:findTF("frame/window/buttons/confirm_btn", arg0.informPanel)
-	arg0.cancelBtn = arg0:findTF("frame/window/buttons/cancel_btn", arg0.informPanel)
-	arg0.backBtn = arg0:findTF("inform_panel/frame/window/top/btnBack")
-	arg0.nameTF = arg0:findTF("inform_panel/frame/window/name"):GetComponent(typeof(Text))
+	arg0_4.frame = arg0_4:findTF("frame")
+	arg0_4.iconTF = arg0_4:findTF("frame/left_bg/icon_bg/frame/icon"):GetComponent(typeof(Image))
+	arg0_4.starsTF = arg0_4:findTF("frame/left_bg/icon_bg/stars")
+	arg0_4.starTF = arg0_4:findTF("frame/left_bg/icon_bg/stars/star")
+	arg0_4.playerNameTF = arg0_4:findTF("frame/left_bg/name_bg/Text"):GetComponent(typeof(Text))
+	arg0_4.levelTF = arg0_4:findTF("frame/left_bg/icon_bg/lv/Text"):GetComponent(typeof(Text))
+	arg0_4.resumeEmblem = arg0_4:findTF("frame/left_bg/emblem")
+	arg0_4.resumeRank = arg0_4:findTF("frame/left_bg/emblem/Text"):GetComponent(typeof(Text))
+	arg0_4.informPanel = arg0_4:findTF("inform_panel")
+	arg0_4.toggleTpl = arg0_4:findTF("inform_panel/frame/window/main/Toggle")
+	arg0_4.buttonTpl = arg0_4:findTF("inform_panel/frame/window/main/button")
+	arg0_4.toggleContainer = arg0_4:findTF("inform_panel/frame/window/main/toggles")
+	arg0_4.confirmBtn = arg0_4:findTF("frame/window/buttons/confirm_btn", arg0_4.informPanel)
+	arg0_4.cancelBtn = arg0_4:findTF("frame/window/buttons/cancel_btn", arg0_4.informPanel)
+	arg0_4.backBtn = arg0_4:findTF("inform_panel/frame/window/top/btnBack")
+	arg0_4.nameTF = arg0_4:findTF("inform_panel/frame/window/name"):GetComponent(typeof(Text))
 
-	if arg0.contextData.pos then
-		if arg0.contextData.backyardView then
-			local var0 = arg0:findTF("frame_for_backyard")
+	if arg0_4.contextData.pos then
+		if arg0_4.contextData.backyardView then
+			local var0_4 = arg0_4:findTF("frame_for_backyard")
 
-			var0.position = arg0.contextData.pos
-			var0.localPosition = Vector3(var0.localPosition.x, var0.localPosition.y, 0)
+			var0_4.position = arg0_4.contextData.pos
+			var0_4.localPosition = Vector3(var0_4.localPosition.x, var0_4.localPosition.y, 0)
 		else
-			arg0.height = arg0._tf.rect.height
-			arg0.frame.position = arg0.contextData.pos
+			arg0_4.height = arg0_4._tf.rect.height
+			arg0_4.frame.position = arg0_4.contextData.pos
 
-			local var1 = arg0.frame.localPosition
-			local var2 = -1 * (arg0.height / 2 - arg0.frame.sizeDelta.y)
-			local var3 = var2 >= var1.y and var2 or var1.y
+			local var1_4 = arg0_4.frame.localPosition
+			local var2_4 = -1 * (arg0_4.height / 2 - arg0_4.frame.sizeDelta.y)
+			local var3_4 = var2_4 >= var1_4.y and var2_4 or var1_4.y
 
-			arg0.frame.localPosition = Vector3(var1.x, var3, 0)
+			arg0_4.frame.localPosition = Vector3(var1_4.x, var3_4, 0)
 		end
 	end
 end
 
-function var0.didEnter(arg0)
-	arg0:Init()
-	onButton(arg0, arg0._tf, function()
-		arg0:emit(var0.ON_CLOSE)
+function var0_0.didEnter(arg0_5)
+	arg0_5:Init()
+	onButton(arg0_5, arg0_5._tf, function()
+		arg0_5:emit(var0_0.ON_CLOSE)
 	end, SOUND_BACK)
 end
 
-function var0.Init(arg0)
-	local var0 = arg0.contextData.backyardView
+function var0_0.Init(arg0_7)
+	local var0_7 = arg0_7.contextData.backyardView
 
-	arg0:initInfo()
-	setActive(arg0:findTF("frame_for_backyard"), var0)
-	setActive(arg0:findTF("frame"), not var0)
+	arg0_7:initInfo()
+	setActive(arg0_7:findTF("frame_for_backyard"), var0_7)
+	setActive(arg0_7:findTF("frame"), not var0_7)
 
-	local var1
+	local var1_7
 
-	if var0 then
-		var1 = arg0:findTF("frame_for_backyard/right_bg")
+	if var0_7 then
+		var1_7 = arg0_7:findTF("frame_for_backyard/right_bg")
 	else
-		var1 = arg0:findTF("frame/right_bg")
+		var1_7 = arg0_7:findTF("frame/right_bg")
 	end
 
-	arg0.btnTFs = {}
+	arg0_7.btnTFs = {}
 
-	for iter0, iter1 in ipairs(var1) do
-		local var2 = var1:GetChild(iter0 - 1)
+	for iter0_7, iter1_7 in ipairs(var1_0) do
+		local var2_7 = var1_7:GetChild(iter0_7 - 1)
 
-		setActive(var2, true)
-		onButton(arg0, var2, function()
-			if iter1 == "" then
+		setActive(var2_7, true)
+		onButton(arg0_7, var2_7, function()
+			if iter1_7 == "" then
 				return
 			end
 
-			if iter1 == "OPEN_INFORM" then
-				local var0 = arg0.friend.id .. arg0.contextData.msg
-				local var1 = getProxy(ChatProxy)
+			if iter1_7 == "OPEN_INFORM" then
+				local var0_8 = arg0_7.friend.id .. arg0_7.contextData.msg
+				local var1_8 = getProxy(ChatProxy)
 
-				if not table.contains(var1.informs, var0) then
-					arg0:openInfromPanel()
+				if not table.contains(var1_8.informs, var0_8) then
+					arg0_7:openInfromPanel()
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("chat_msg_inform"))
 				end
 			else
-				arg0:emit(FriendInfoMediator[iter1])
+				arg0_7:emit(FriendInfoMediator[iter1_7])
 			end
 		end)
 
-		arg0.btnTFs[iter0] = var2
+		arg0_7.btnTFs[iter0_7] = var2_7
 	end
 
-	setActive(arg0.btnTFs[5], arg0.contextData.msg)
-	setButtonEnabled(arg0.btnTFs[2], not arg0.friendProxy:isFriend(arg0.friend.id))
-	arg0:updateBlack()
+	setActive(arg0_7.btnTFs[5], arg0_7.contextData.msg)
+	setButtonEnabled(arg0_7.btnTFs[2], not arg0_7.friendProxy:isFriend(arg0_7.friend.id))
+	arg0_7:updateBlack()
 
-	if arg0.contextData.form == NotificationLayer.FORM_BATTLE then
-		setActive(arg0.btnTFs[3], false)
+	if arg0_7.contextData.form == NotificationLayer.FORM_BATTLE then
+		setActive(arg0_7.btnTFs[3], false)
 
-		local var3 = arg0:findTF("frame")
-		local var4 = var3.sizeDelta
+		local var3_7 = arg0_7:findTF("frame")
+		local var4_7 = var3_7.sizeDelta
 
-		var3.sizeDelta = Vector2(var4.x, var4.y - 66.7)
+		var3_7.sizeDelta = Vector2(var4_7.x, var4_7.y - 66.7)
 	end
 
-	setActive(arg0:findTF("frame/left_bg", false))
+	setActive(arg0_7:findTF("frame/left_bg", false))
 end
 
-function var0.openInfromPanel(arg0)
-	setActive(arg0.informPanel, true)
+function var0_0.openInfromPanel(arg0_9)
+	setActive(arg0_9.informPanel, true)
 
-	if not arg0.isInitInform then
-		arg0.isInitInform = true
+	if not arg0_9.isInitInform then
+		arg0_9.isInitInform = true
 
-		arg0:initInform()
+		arg0_9:initInform()
 	end
 end
 
-function var0.initInform(arg0)
-	arg0.informInfoForBackYard = {}
+function var0_0.initInform(arg0_10)
+	arg0_10.informInfoForBackYard = {}
 
-	local var0
-	local var1 = arg0.contextData.backyardView
+	local var0_10
+	local var1_10 = arg0_10.contextData.backyardView
 
-	if var1 then
-		arg0.nameTF.text = i18n("inform_player", arg0.friend.name) .. i18n("backyard_theme_inform_them", arg0.contextData.msg)
+	if var1_10 then
+		arg0_10.nameTF.text = i18n("inform_player", arg0_10.friend.name) .. i18n("backyard_theme_inform_them", arg0_10.contextData.msg)
 
-		local var2 = require("ShareCfg.InformForBackYardThemeTemplateCfg")
+		local var2_10 = require("ShareCfg.InformForBackYardThemeTemplateCfg")
 
-		for iter0, iter1 in ipairs(var2) do
-			local var3 = cloneTplTo(arg0.buttonTpl, arg0.toggleContainer)
+		for iter0_10, iter1_10 in ipairs(var2_10) do
+			local var3_10 = cloneTplTo(arg0_10.buttonTpl, arg0_10.toggleContainer)
 
-			var3:Find("Label"):GetComponent("Text").text = iter1.content
+			var3_10:Find("Label"):GetComponent("Text").text = iter1_10.content
 
-			local var4 = false
+			local var4_10 = false
 
-			onButton(arg0, var3, function()
-				var4 = not var4
+			onButton(arg0_10, var3_10, function()
+				var4_10 = not var4_10
 
-				setActive(var3:Find("Background/Checkmark"), var4)
+				setActive(var3_10:Find("Background/Checkmark"), var4_10)
 
-				if var4 then
-					table.insert(arg0.informInfoForBackYard, iter0)
-				elseif table.contains(arg0.informInfoForBackYard, iter0) then
-					table.removebyvalue(arg0.informInfoForBackYard, iter0)
+				if var4_10 then
+					table.insert(arg0_10.informInfoForBackYard, iter0_10)
+				elseif table.contains(arg0_10.informInfoForBackYard, iter0_10) then
+					table.removebyvalue(arg0_10.informInfoForBackYard, iter0_10)
 				end
 			end)
 		end
 	else
-		arg0.nameTF.text = i18n("inform_player", arg0.friend.name)
+		arg0_10.nameTF.text = i18n("inform_player", arg0_10.friend.name)
 
-		local var5 = require("ShareCfg.informCfg")
+		local var5_10 = require("ShareCfg.informCfg")
 
-		for iter2, iter3 in ipairs(var5) do
-			local var6 = cloneTplTo(arg0.toggleTpl, arg0.toggleContainer)
+		for iter2_10, iter3_10 in ipairs(var5_10) do
+			local var6_10 = cloneTplTo(arg0_10.toggleTpl, arg0_10.toggleContainer)
 
-			var6:Find("Label"):GetComponent("Text").text = iter3.content
+			var6_10:Find("Label"):GetComponent("Text").text = iter3_10.content
 
-			onToggle(arg0, var6, function(arg0)
-				if arg0 then
-					arg0.informInfo = iter3.content
+			onToggle(arg0_10, var6_10, function(arg0_12)
+				if arg0_12 then
+					arg0_10.informInfo = iter3_10.content
 				end
 			end)
 		end
 	end
 
-	onButton(arg0, arg0.confirmBtn, function()
-		if not arg0.contextData.msg then
+	onButton(arg0_10, arg0_10.confirmBtn, function()
+		if not arg0_10.contextData.msg then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("inform_chat_msg"))
 
 			return
 		end
 
-		if var1 then
-			if #arg0.informInfoForBackYard == 0 then
+		if var1_10 then
+			if #arg0_10.informInfoForBackYard == 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("inform_select_type"))
 
 				return
 			end
 
-			arg0:emit(FriendInfoMediator.INFORM_BACKYARD, arg0.friend.id, arg0.informInfoForBackYard, arg0.contextData.msg, arg0.friend.name)
+			arg0_10:emit(FriendInfoMediator.INFORM_BACKYARD, arg0_10.friend.id, arg0_10.informInfoForBackYard, arg0_10.contextData.msg, arg0_10.friend.name)
 		else
-			if not arg0.informInfo then
+			if not arg0_10.informInfo then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("inform_select_type"))
 
 				return
 			end
 
-			arg0:emit(FriendInfoMediator.INFORM, arg0.friend.id, arg0.informInfo, arg0.contextData.msg)
+			arg0_10:emit(FriendInfoMediator.INFORM, arg0_10.friend.id, arg0_10.informInfo, arg0_10.contextData.msg)
 		end
 	end)
-	onButton(arg0, arg0.cancelBtn, function()
-		arg0:closeInfromPanel()
+	onButton(arg0_10, arg0_10.cancelBtn, function()
+		arg0_10:closeInfromPanel()
 	end)
-	onButton(arg0, arg0.backBtn, function()
-		arg0:closeInfromPanel()
+	onButton(arg0_10, arg0_10.backBtn, function()
+		arg0_10:closeInfromPanel()
 	end)
 end
 
-function var0.closeInfromPanel(arg0)
-	setActive(arg0.informPanel, false)
+function var0_0.closeInfromPanel(arg0_16)
+	setActive(arg0_16.informPanel, false)
 
-	arg0.informInfo = nil
+	arg0_16.informInfo = nil
 end
 
-function var0.initInfo(arg0)
-	assert(arg0.friend, "self.friend is nil")
+function var0_0.initInfo(arg0_17)
+	assert(arg0_17.friend, "self.friend is nil")
 
-	local var0 = pg.ship_data_statistics[arg0.friend.icon]
+	local var0_17 = pg.ship_data_statistics[arg0_17.friend.icon]
 
-	assert(var0, "shipCfg is nil >> id ==" .. arg0.friend.icon)
+	assert(var0_17, "shipCfg is nil >> id ==" .. arg0_17.friend.icon)
 
-	local var1 = pg.ship_skin_template[var0.skin_id]
+	local var1_17 = pg.ship_skin_template[var0_17.skin_id]
 
-	assert(var1, "skinCfg is nil >> id ==" .. var0.skin_id)
-	LoadSpriteAsync("qicon/" .. var1.painting, function(arg0)
-		if not IsNil(arg0.iconTF) then
-			if not arg0 then
-				arg0.iconTF.sprite = GetSpriteFromAtlas("heroicon/unknown", "")
+	assert(var1_17, "skinCfg is nil >> id ==" .. var0_17.skin_id)
+	LoadSpriteAsync("qicon/" .. var1_17.painting, function(arg0_18)
+		if not IsNil(arg0_17.iconTF) then
+			if not arg0_18 then
+				arg0_17.iconTF.sprite = GetSpriteFromAtlas("heroicon/unknown", "")
 			else
-				arg0.iconTF.sprite = arg0
+				arg0_17.iconTF.sprite = arg0_18
 			end
 		end
 	end)
 
-	for iter0 = arg0.starsTF.childCount, var0.star - 1 do
-		cloneTplTo(arg0.starTF, arg0.starsTF)
+	for iter0_17 = arg0_17.starsTF.childCount, var0_17.star - 1 do
+		cloneTplTo(arg0_17.starTF, arg0_17.starsTF)
 	end
 
-	for iter1 = 1, var0.star do
-		local var2 = arg0.starsTF:GetChild(iter1 - 1)
+	for iter1_17 = 1, var0_17.star do
+		local var2_17 = arg0_17.starsTF:GetChild(iter1_17 - 1)
 
-		setActive(var2, iter1 <= var0.star)
+		setActive(var2_17, iter1_17 <= var0_17.star)
 	end
 
-	arg0.playerNameTF.text = arg0.friend.name
-	arg0.levelTF.text = arg0.friend.level
+	arg0_17.playerNameTF.text = arg0_17.friend.name
+	arg0_17.levelTF.text = arg0_17.friend.level
 
-	local var3 = SeasonInfo.getMilitaryRank(arg0.friend.score, arg0.friend.rank)
-	local var4 = SeasonInfo.getEmblem(arg0.friend.score, arg0.friend.rank)
+	local var3_17 = SeasonInfo.getMilitaryRank(arg0_17.friend.score, arg0_17.friend.rank)
+	local var4_17 = SeasonInfo.getEmblem(arg0_17.friend.score, arg0_17.friend.rank)
 
-	LoadImageSpriteAsync("emblem/" .. var4, arg0.resumeEmblem)
+	LoadImageSpriteAsync("emblem/" .. var4_17, arg0_17.resumeEmblem)
 end
 
-function var0.updateBlack(arg0)
-	local var0 = arg0.friendProxy:getBlackPlayerById(arg0.friend.id) ~= nil
+function var0_0.updateBlack(arg0_19)
+	local var0_19 = arg0_19.friendProxy:getBlackPlayerById(arg0_19.friend.id) ~= nil
 
-	setActive(findTF(arg0.btnTFs[4], "black"), not var0)
-	setActive(findTF(arg0.btnTFs[4], "unblack"), var0)
+	setActive(findTF(arg0_19.btnTFs[4], "black"), not var0_19)
+	setActive(findTF(arg0_19.btnTFs[4], "unblack"), var0_19)
 end
 
-function var0.willExit(arg0)
+function var0_0.willExit(arg0_20)
 	return
 end
 
-return var0
+return var0_0

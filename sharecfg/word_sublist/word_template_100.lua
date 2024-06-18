@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_100 = {}
+var0_0.word_template_100 = {}
 
-local var1 = var0.word_template_100
+local var1_0 = var0_0.word_template_100
 
 function temp()
-	var1.凤 = {
+	var1_0.凤 = {
 		反 = {
 			展 = {
 				翅 = {
@@ -42,7 +42,7 @@ end
 temp()
 
 function temp()
-	var1.奉 = {
+	var1_0.奉 = {
 		承 = {
 			领 = {
 				导 = {
@@ -68,7 +68,7 @@ end
 temp()
 
 function temp()
-	var1.佛 = {
+	var1_0.佛 = {
 		恩 = {
 			先 = {
 				已 = {
@@ -250,7 +250,7 @@ end
 temp()
 
 function temp()
-	var1.夫 = {
+	var1_0.夫 = {
 		妇 = {
 			乐 = {
 				园 = {
@@ -359,7 +359,7 @@ end
 temp()
 
 function temp()
-	var1.呋 = {
+	var1_0.呋 = {
 		替 = {
 			定 = {
 				this = true
@@ -371,7 +371,7 @@ end
 temp()
 
 function temp()
-	var1.肤 = {
+	var1_0.肤 = {
 		白 = {
 			胸 = {
 				大 = {
@@ -385,7 +385,7 @@ end
 temp()
 
 function temp()
-	var1.弗 = {
+	var1_0.弗 = {
 		吉 = {
 			尼 = {
 				亚 = {

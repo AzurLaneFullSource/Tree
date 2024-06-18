@@ -1,276 +1,276 @@
-﻿local var0 = class("DoaMedalCollectionView", import("view.base.BaseUI"))
+﻿local var0_0 = class("DoaMedalCollectionView", import("view.base.BaseUI"))
 
-var0.FADE_OUT_TIME = 1
-var0.PAGE_NUM = 7
-var0.MEDAL_NUM_PER_PAGE = 2
+var0_0.FADE_OUT_TIME = 1
+var0_0.PAGE_NUM = 7
+var0_0.MEDAL_NUM_PER_PAGE = 2
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "DoaMedalCollectionUI"
 end
 
-function var0.init(arg0)
-	arg0:initData()
-	arg0:findUI()
-	arg0:addListener()
+function var0_0.init(arg0_2)
+	arg0_2:initData()
+	arg0_2:findUI()
+	arg0_2:addListener()
 end
 
-function var0.didEnter(arg0)
-	arg0:checkAward()
-	setText(arg0.progressText, setColorStr(tostring(#arg0.activeIDList), COLOR_WHITE) .. "/" .. #arg0.allIDList)
-	triggerToggle(arg0.switchBtnList[1], true)
+function var0_0.didEnter(arg0_3)
+	arg0_3:checkAward()
+	setText(arg0_3.progressText, setColorStr(tostring(#arg0_3.activeIDList), COLOR_WHITE) .. "/" .. #arg0_3.allIDList)
+	triggerToggle(arg0_3.switchBtnList[1], true)
 end
 
-function var0.willExit(arg0)
-	if LeanTween.isTweening(go(arg0.picture)) then
-		LeanTween.cancel(go(arg0.picture), false)
+function var0_0.willExit(arg0_4)
+	if LeanTween.isTweening(go(arg0_4.picture)) then
+		LeanTween.cancel(go(arg0_4.picture), false)
 	end
 end
 
-function var0.getBGM(arg0)
+function var0_0.getBGM(arg0_5)
 	return math.random() > 0.5 and "doa_main_day" or "doa_main_night"
 end
 
-function var0.initData(arg0)
-	arg0.activityProxy = getProxy(ActivityProxy)
-	arg0.activityData = arg0.activityProxy:getActivityById(ActivityConst.DOA_MEDAL_ACT_ID)
-	arg0.allIDList = arg0.activityData:GetPicturePuzzleIds()
+function var0_0.initData(arg0_6)
+	arg0_6.activityProxy = getProxy(ActivityProxy)
+	arg0_6.activityData = arg0_6.activityProxy:getActivityById(ActivityConst.DOA_MEDAL_ACT_ID)
+	arg0_6.allIDList = arg0_6.activityData:GetPicturePuzzleIds()
 
-	print(#arg0.allIDList)
+	print(#arg0_6.allIDList)
 
-	arg0.pageIDList = {}
+	arg0_6.pageIDList = {}
 
-	for iter0 = 1, var0.PAGE_NUM do
-		arg0.pageIDList[iter0] = {}
+	for iter0_6 = 1, var0_0.PAGE_NUM do
+		arg0_6.pageIDList[iter0_6] = {}
 
-		for iter1 = 1, var0.MEDAL_NUM_PER_PAGE do
-			arg0.pageIDList[iter0][iter1] = arg0.allIDList[(iter0 - 1) * var0.MEDAL_NUM_PER_PAGE + iter1]
+		for iter1_6 = 1, var0_0.MEDAL_NUM_PER_PAGE do
+			arg0_6.pageIDList[iter0_6][iter1_6] = arg0_6.allIDList[(iter0_6 - 1) * var0_0.MEDAL_NUM_PER_PAGE + iter1_6]
 		end
 	end
 
-	arg0.activatableIDList = arg0.activityData.data1_list
-	arg0.activeIDList = arg0.activityData.data2_list
-	arg0.curPage = nil
-	arg0.newMedalID = nil
+	arg0_6.activatableIDList = arg0_6.activityData.data1_list
+	arg0_6.activeIDList = arg0_6.activityData.data2_list
+	arg0_6.curPage = nil
+	arg0_6.newMedalID = nil
 end
 
-function var0.findUI(arg0)
-	arg0.bg = arg0:findTF("BG")
+function var0_0.findUI(arg0_7)
+	arg0_7.bg = arg0_7:findTF("BG")
 
-	local var0 = arg0:findTF("NotchAdapt")
+	local var0_7 = arg0_7:findTF("NotchAdapt")
 
-	arg0.backBtn = arg0:findTF("BackBtn", var0)
-	arg0.progressText = arg0:findTF("ProgressImg/ProgressText", var0)
-	arg0.helpBtn = arg0:findTF("HelpBtn", var0)
+	arg0_7.backBtn = arg0_7:findTF("BackBtn", var0_7)
+	arg0_7.progressText = arg0_7:findTF("ProgressImg/ProgressText", var0_7)
+	arg0_7.helpBtn = arg0_7:findTF("HelpBtn", var0_7)
 
-	local var1 = arg0:findTF("SwitchBtnList", arg0._tf)
+	local var1_7 = arg0_7:findTF("SwitchBtnList", arg0_7._tf)
 
-	arg0.tplButtom = findTF(var1, "tplButtom")
-	arg0.imgGot = arg0:findTF("ProgressImg/got", var0)
-	arg0.switchBtnList = {}
-	arg0.medalTfList = {}
+	arg0_7.tplButtom = findTF(var1_7, "tplButtom")
+	arg0_7.imgGot = arg0_7:findTF("ProgressImg/got", var0_7)
+	arg0_7.switchBtnList = {}
+	arg0_7.medalTfList = {}
 
-	for iter0 = 1, var0.PAGE_NUM do
-		local var2 = tf(instantiate(go(arg0.tplButtom)))
+	for iter0_7 = 1, var0_0.PAGE_NUM do
+		local var2_7 = tf(instantiate(go(arg0_7.tplButtom)))
 
-		LoadSpriteAtlasAsync("ui/doamedalcollectionui_atlas", "ship" .. iter0 .. "Icon", function(arg0)
-			if var2 then
-				setImageSprite(findTF(var2, "icon"), arg0, true)
+		LoadSpriteAtlasAsync("ui/doamedalcollectionui_atlas", "ship" .. iter0_7 .. "Icon", function(arg0_8)
+			if var2_7 then
+				setImageSprite(findTF(var2_7, "icon"), arg0_8, true)
 			end
 		end)
-		LoadSpriteAtlasAsync("ui/doamedalcollectionui_atlas", "ship" .. iter0 .. "Name", function(arg0)
-			if var2 then
-				setImageSprite(findTF(var2, "name"), arg0, true)
+		LoadSpriteAtlasAsync("ui/doamedalcollectionui_atlas", "ship" .. iter0_7 .. "Name", function(arg0_9)
+			if var2_7 then
+				setImageSprite(findTF(var2_7, "name"), arg0_9, true)
 			end
 		end)
-		LoadSpriteAtlasAsync("ui/doamedalcollectionui_atlas", "ship" .. iter0 .. "NameSelect", function(arg0)
-			if var2 then
-				setImageSprite(findTF(var2, "nameSelect"), arg0, true)
+		LoadSpriteAtlasAsync("ui/doamedalcollectionui_atlas", "ship" .. iter0_7 .. "NameSelect", function(arg0_10)
+			if var2_7 then
+				setImageSprite(findTF(var2_7, "nameSelect"), arg0_10, true)
 			end
 		end)
-		setParent(var2, var1)
-		setActive(var2, true)
-		table.insert(arg0.switchBtnList, var2)
+		setParent(var2_7, var1_7)
+		setActive(var2_7, true)
+		table.insert(arg0_7.switchBtnList, var2_7)
 
-		for iter1 = 1, var0.MEDAL_NUM_PER_PAGE do
-			local var3 = (iter0 - 1) * var0.MEDAL_NUM_PER_PAGE + iter1
-			local var4 = findTF(arg0._tf, "MedalContainer/medal" .. var3)
+		for iter1_7 = 1, var0_0.MEDAL_NUM_PER_PAGE do
+			local var3_7 = (iter0_7 - 1) * var0_0.MEDAL_NUM_PER_PAGE + iter1_7
+			local var4_7 = findTF(arg0_7._tf, "MedalContainer/medal" .. var3_7)
 
-			setActive(var4, false)
-			GetComponent(findTF(var4, "disAcive/lock"), typeof(Image)):SetNativeSize()
-			GetComponent(findTF(var4, "disAcive/unlock"), typeof(Image)):SetNativeSize()
-			table.insert(arg0.medalTfList, var4)
+			setActive(var4_7, false)
+			GetComponent(findTF(var4_7, "disAcive/lock"), typeof(Image)):SetNativeSize()
+			GetComponent(findTF(var4_7, "disAcive/unlock"), typeof(Image)):SetNativeSize()
+			table.insert(arg0_7.medalTfList, var4_7)
 		end
 	end
 
-	arg0.picture = findTF(arg0._tf, "picture")
-	arg0.pictureName = findTF(arg0._tf, "picture/name")
-	arg0.leftPage = findTF(arg0._tf, "book/leftPage")
-	arg0.rightPage = findTF(arg0._tf, "book/rightPage")
+	arg0_7.picture = findTF(arg0_7._tf, "picture")
+	arg0_7.pictureName = findTF(arg0_7._tf, "picture/name")
+	arg0_7.leftPage = findTF(arg0_7._tf, "book/leftPage")
+	arg0_7.rightPage = findTF(arg0_7._tf, "book/rightPage")
 end
 
-function var0.addListener(arg0)
-	onButton(arg0, arg0.backBtn, function()
-		arg0:closeView()
+function var0_0.addListener(arg0_11)
+	onButton(arg0_11, arg0_11.backBtn, function()
+		arg0_11:closeView()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_11, arg0_11.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.doa_collection.tip
 		})
 	end, SFX_PANEL)
 
-	for iter0, iter1 in ipairs(arg0.switchBtnList) do
-		onToggle(arg0, iter1, function(arg0)
-			if arg0 == true then
-				local var0 = arg0.curPage ~= iter0
+	for iter0_11, iter1_11 in ipairs(arg0_11.switchBtnList) do
+		onToggle(arg0_11, iter1_11, function(arg0_14)
+			if arg0_14 == true then
+				local var0_14 = arg0_11.curPage ~= iter0_11
 
-				arg0.curPage = iter0
+				arg0_11.curPage = iter0_11
 
-				arg0:updateSwitchBtnTF()
-				arg0:updateMedalContainerView(iter0, var0)
+				arg0_11:updateSwitchBtnTF()
+				arg0_11:updateMedalContainerView(iter0_11, var0_14)
 			end
 		end, SFX_PANEL)
 	end
 end
 
-function var0.UpdateActivity(arg0, arg1)
-	arg0:checkAward()
+function var0_0.UpdateActivity(arg0_15, arg1_15)
+	arg0_15:checkAward()
 end
 
-function var0.updateMedalContainerView(arg0, arg1, arg2)
-	local var0 = arg0.pageIDList[arg1]
+function var0_0.updateMedalContainerView(arg0_16, arg1_16, arg2_16)
+	local var0_16 = arg0_16.pageIDList[arg1_16]
 
-	if arg2 then
-		setActive(arg0.picture, false)
-		LoadSpriteAtlasAsync("ui/doamedalcollectionui_atlas", "pictureImage" .. arg1, function(arg0)
-			setImageSprite(arg0.picture, arg0, true)
+	if arg2_16 then
+		setActive(arg0_16.picture, false)
+		LoadSpriteAtlasAsync("ui/doamedalcollectionui_atlas", "pictureImage" .. arg1_16, function(arg0_17)
+			setImageSprite(arg0_16.picture, arg0_17, true)
 
-			if LeanTween.isTweening(go(arg0.picture)) then
-				LeanTween.cancel(go(arg0.picture), false)
+			if LeanTween.isTweening(go(arg0_16.picture)) then
+				LeanTween.cancel(go(arg0_16.picture), false)
 			end
 
-			LeanTween.value(go(arg0.picture), 0, 1, 0.3):setOnUpdate(System.Action_float(function(arg0)
-				GetComponent(arg0.picture, typeof(CanvasGroup)).alpha = arg0
+			LeanTween.value(go(arg0_16.picture), 0, 1, 0.3):setOnUpdate(System.Action_float(function(arg0_18)
+				GetComponent(arg0_16.picture, typeof(CanvasGroup)).alpha = arg0_18
 			end))
-			setActive(arg0.picture, true)
+			setActive(arg0_16.picture, true)
 		end)
 	else
-		setActive(arg0.picture, true)
-		LoadSpriteAtlasAsync("ui/doamedalcollectionui_atlas", "pictureImage" .. arg1, function(arg0)
-			setImageSprite(arg0.picture, arg0, true)
+		setActive(arg0_16.picture, true)
+		LoadSpriteAtlasAsync("ui/doamedalcollectionui_atlas", "pictureImage" .. arg1_16, function(arg0_19)
+			setImageSprite(arg0_16.picture, arg0_19, true)
 		end)
 	end
 
-	LoadSpriteAtlasAsync("ui/doamedalcollectionui_atlas", "pictureName" .. arg1, function(arg0)
-		setImageSprite(arg0.pictureName, arg0, true)
+	LoadSpriteAtlasAsync("ui/doamedalcollectionui_atlas", "pictureName" .. arg1_16, function(arg0_20)
+		setImageSprite(arg0_16.pictureName, arg0_20, true)
 	end)
 
-	for iter0 = 1, #arg0.medalTfList do
-		local var1 = (arg1 - 1) * var0.MEDAL_NUM_PER_PAGE
-		local var2 = (arg1 - 1) * var0.MEDAL_NUM_PER_PAGE + var0.MEDAL_NUM_PER_PAGE
+	for iter0_16 = 1, #arg0_16.medalTfList do
+		local var1_16 = (arg1_16 - 1) * var0_0.MEDAL_NUM_PER_PAGE
+		local var2_16 = (arg1_16 - 1) * var0_0.MEDAL_NUM_PER_PAGE + var0_0.MEDAL_NUM_PER_PAGE
 
-		if var1 < iter0 and iter0 <= var2 then
-			setActive(arg0.medalTfList[iter0], true)
+		if var1_16 < iter0_16 and iter0_16 <= var2_16 then
+			setActive(arg0_16.medalTfList[iter0_16], true)
 		else
-			setActive(arg0.medalTfList[iter0], false)
+			setActive(arg0_16.medalTfList[iter0_16], false)
 		end
 	end
 
-	for iter1, iter2 in ipairs(var0) do
-		arg0:updateMedalView(var0, iter2)
+	for iter1_16, iter2_16 in ipairs(var0_16) do
+		arg0_16:updateMedalView(var0_16, iter2_16)
 	end
 end
 
-function var0.updateMedalView(arg0, arg1, arg2)
-	local var0 = table.contains(arg0.activeIDList, arg2)
-	local var1 = table.contains(arg0.activatableIDList, arg2) and not var0
-	local var2
+function var0_0.updateMedalView(arg0_21, arg1_21, arg2_21)
+	local var0_21 = table.contains(arg0_21.activeIDList, arg2_21)
+	local var1_21 = table.contains(arg0_21.activatableIDList, arg2_21) and not var0_21
+	local var2_21
 
-	var2 = not var0 and not var1
+	var2_21 = not var0_21 and not var1_21
 
-	local var3 = table.indexof(arg1, arg2, 1)
-	local var4 = (arg0.curPage - 1) * var0.MEDAL_NUM_PER_PAGE + var3
-	local var5 = arg0.medalTfList[var4]
+	local var3_21 = table.indexof(arg1_21, arg2_21, 1)
+	local var4_21 = (arg0_21.curPage - 1) * var0_0.MEDAL_NUM_PER_PAGE + var3_21
+	local var5_21 = arg0_21.medalTfList[var4_21]
 
-	if var0 then
-		setActive(findTF(var5, "isActive"), true)
-		setActive(findTF(var5, "disAcive"), false)
+	if var0_21 then
+		setActive(findTF(var5_21, "isActive"), true)
+		setActive(findTF(var5_21, "disAcive"), false)
 	else
-		setActive(findTF(var5, "isActive"), false)
-		setActive(findTF(var5, "disAcive"), true)
+		setActive(findTF(var5_21, "isActive"), false)
+		setActive(findTF(var5_21, "disAcive"), true)
 
-		if var1 then
-			onButton(arg0, findTF(var5, "disAcive"), function()
+		if var1_21 then
+			onButton(arg0_21, findTF(var5_21, "disAcive"), function()
 				pg.m02:sendNotification(GAME.MEMORYBOOK_UNLOCK, {
-					id = arg2,
-					actId = arg0.activityData.id
+					id = arg2_21,
+					actId = arg0_21.activityData.id
 				})
 			end, SFX_PANEL)
-			setActive(findTF(var5, "disAcive/lock"), false)
-			setActive(findTF(var5, "disAcive/unlock"), true)
+			setActive(findTF(var5_21, "disAcive/lock"), false)
+			setActive(findTF(var5_21, "disAcive/unlock"), true)
 		else
-			setActive(findTF(var5, "disAcive/lock"), true)
-			setActive(findTF(var5, "disAcive/unlock"), false)
+			setActive(findTF(var5_21, "disAcive/lock"), true)
+			setActive(findTF(var5_21, "disAcive/unlock"), false)
 		end
 	end
 end
 
-function var0.updateSwitchBtnTF(arg0)
-	setText(arg0.leftPage, (arg0.curPage - 1) * var0.MEDAL_NUM_PER_PAGE + 1)
-	setText(arg0.rightPage, (arg0.curPage - 1) * var0.MEDAL_NUM_PER_PAGE + 2)
+function var0_0.updateSwitchBtnTF(arg0_23)
+	setText(arg0_23.leftPage, (arg0_23.curPage - 1) * var0_0.MEDAL_NUM_PER_PAGE + 1)
+	setText(arg0_23.rightPage, (arg0_23.curPage - 1) * var0_0.MEDAL_NUM_PER_PAGE + 2)
 
-	for iter0, iter1 in ipairs(arg0.switchBtnList) do
-		local var0 = arg0:findTF("Tip", iter1)
-		local var1 = arg0:caculateActivatable(iter0)
+	for iter0_23, iter1_23 in ipairs(arg0_23.switchBtnList) do
+		local var0_23 = arg0_23:findTF("Tip", iter1_23)
+		local var1_23 = arg0_23:caculateActivatable(iter0_23)
 
-		if var1 == 0 or iter0 == arg0.curPage then
-			setActive(var0, false)
+		if var1_23 == 0 or iter0_23 == arg0_23.curPage then
+			setActive(var0_23, false)
 		end
 
-		if var1 > 0 and iter0 ~= arg0.curPage then
-			setActive(var0, true)
-		end
-	end
-end
-
-function var0.updateAfterSubmit(arg0, arg1)
-	arg0.activityProxy = getProxy(ActivityProxy)
-	arg0.activityData = arg0.activityProxy:getActivityById(ActivityConst.DOA_MEDAL_ACT_ID)
-	arg0.activatableIDList = arg0.activityData.data1_list
-	arg0.activeIDList = arg0.activityData.data2_list
-	arg0.newMedalID = arg1
-
-	triggerToggle(arg0.switchBtnList[arg0.curPage], true)
-	setText(arg0.progressText, setColorStr(tostring(#arg0.activeIDList), COLOR_WHITE) .. "/" .. #arg0.allIDList)
-	arg0:checkAward()
-end
-
-function var0.caculateActivatable(arg0, arg1)
-	local var0 = arg0.pageIDList[arg1]
-	local var1 = 0
-
-	for iter0, iter1 in ipairs(var0) do
-		local var2 = table.contains(arg0.activeIDList, iter1)
-		local var3 = table.contains(arg0.activatableIDList, iter1)
-
-		if not var2 and var3 then
-			var1 = var1 + 1
+		if var1_23 > 0 and iter0_23 ~= arg0_23.curPage then
+			setActive(var0_23, true)
 		end
 	end
-
-	return var1
 end
 
-function var0.checkAward(arg0)
-	setActive(arg0.imgGot, #arg0.activeIDList == #arg0.allIDList and arg0.activityData.data1 == 1)
+function var0_0.updateAfterSubmit(arg0_24, arg1_24)
+	arg0_24.activityProxy = getProxy(ActivityProxy)
+	arg0_24.activityData = arg0_24.activityProxy:getActivityById(ActivityConst.DOA_MEDAL_ACT_ID)
+	arg0_24.activatableIDList = arg0_24.activityData.data1_list
+	arg0_24.activeIDList = arg0_24.activityData.data2_list
+	arg0_24.newMedalID = arg1_24
 
-	if #arg0.activeIDList == #arg0.allIDList and arg0.activityData.data1 ~= 1 then
+	triggerToggle(arg0_24.switchBtnList[arg0_24.curPage], true)
+	setText(arg0_24.progressText, setColorStr(tostring(#arg0_24.activeIDList), COLOR_WHITE) .. "/" .. #arg0_24.allIDList)
+	arg0_24:checkAward()
+end
+
+function var0_0.caculateActivatable(arg0_25, arg1_25)
+	local var0_25 = arg0_25.pageIDList[arg1_25]
+	local var1_25 = 0
+
+	for iter0_25, iter1_25 in ipairs(var0_25) do
+		local var2_25 = table.contains(arg0_25.activeIDList, iter1_25)
+		local var3_25 = table.contains(arg0_25.activatableIDList, iter1_25)
+
+		if not var2_25 and var3_25 then
+			var1_25 = var1_25 + 1
+		end
+	end
+
+	return var1_25
+end
+
+function var0_0.checkAward(arg0_26)
+	setActive(arg0_26.imgGot, #arg0_26.activeIDList == #arg0_26.allIDList and arg0_26.activityData.data1 == 1)
+
+	if #arg0_26.activeIDList == #arg0_26.allIDList and arg0_26.activityData.data1 ~= 1 then
 		pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 1,
 			activity_id = ActivityConst.DOA_MEDAL_ACT_ID
 		})
-		setActive(arg0.imgGot, true)
+		setActive(arg0_26.imgGot, true)
 	end
 end
 
-return var0
+return var0_0

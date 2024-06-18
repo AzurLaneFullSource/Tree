@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_299 = {}
+var0_0.word_template_299 = {}
 
-local var1 = var0.word_template_299
+local var1_0 = var0_0.word_template_299
 
 function temp()
-	var1.襲 = {
+	var1_0.襲 = {
 		近 = {
 			平 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.洗 = {
+	var1_0.洗 = {
 		不 = {
 			洗 = {
 				先 = {
@@ -164,7 +164,7 @@ end
 temp()
 
 function temp()
-	var1.喜 = {
+	var1_0.喜 = {
 		多 = {
 			村 = {
 				麻 = {
@@ -359,7 +359,7 @@ end
 temp()
 
 function temp()
-	var1.系 = {
+	var1_0.系 = {
 		统 = {
 			this = true,
 			出 = {
@@ -402,7 +402,7 @@ end
 temp()
 
 function temp()
-	var1.细 = {
+	var1_0.细 = {
 		川 = {
 			百 = {
 				合 = {
@@ -443,7 +443,7 @@ end
 temp()
 
 function temp()
-	var1.郤 = {
+	var1_0.郤 = {
 		this = {
 			this = true
 		}
@@ -453,7 +453,7 @@ end
 temp()
 
 function temp()
-	var1.餼 = {
+	var1_0.餼 = {
 		this = {
 			this = true
 		}

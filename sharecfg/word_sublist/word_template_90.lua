@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_90 = {}
+var0_0.word_template_90 = {}
 
-local var1 = var0.word_template_90
+local var1_0 = var0_0.word_template_90
 
 function temp()
-	var1.度 = {
+	var1_0.度 = {
 		冷 = {
 			丁 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.渡 = {
+	var1_0.渡 = {
 		边 = {
 			美 = {
 				奈 = {
@@ -40,7 +40,7 @@ end
 temp()
 
 function temp()
-	var1.短 = {
+	var1_0.短 = {
 		线 = {
 			投 = {
 				机 = {
@@ -75,7 +75,7 @@ end
 temp()
 
 function temp()
-	var1.断 = {
+	var1_0.断 = {
 		虹 = {
 			玉 = {
 				钩 = {
@@ -147,7 +147,7 @@ end
 temp()
 
 function temp()
-	var1.对 = {
+	var1_0.对 = {
 		待 = {
 			干 = {
 				部 = {
@@ -373,7 +373,7 @@ end
 temp()
 
 function temp()
-	var1.顿 = {
+	var1_0.顿 = {
 		湿 = {
 			滔 = {
 				滔 = {
@@ -387,7 +387,7 @@ end
 temp()
 
 function temp()
-	var1.堕 = {
+	var1_0.堕 = {
 		淫 = {
 			this = true
 		}

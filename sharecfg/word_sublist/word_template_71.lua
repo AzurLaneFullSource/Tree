@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_71 = {}
+var0_0.word_template_71 = {}
 
-local var1 = var0.word_template_71
+local var1_0 = var0_0.word_template_71
 
 function temp()
-	var1.纯 = {
+	var1_0.纯 = {
 		缅 = {
 			this = true
 		},
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.純 = {
+	var1_0.純 = {
 		一 = {
 			郎 = {
 				this = true
@@ -39,7 +39,7 @@ end
 temp()
 
 function temp()
-	var1.蠢 = {
+	var1_0.蠢 = {
 		猪 = {
 			this = true
 		}
@@ -49,7 +49,7 @@ end
 temp()
 
 function temp()
-	var1.戳 = {
+	var1_0.戳 = {
 		那 = {
 			嗎 = {
 				B = {
@@ -72,7 +72,7 @@ end
 temp()
 
 function temp()
-	var1.慈 = {
+	var1_0.慈 = {
 		禧 = {
 			秘 = {
 				密 = {
@@ -90,7 +90,7 @@ end
 temp()
 
 function temp()
-	var1.磁 = {
+	var1_0.磁 = {
 		卡 = {
 			复 = {
 				制 = {
@@ -104,7 +104,7 @@ end
 temp()
 
 function temp()
-	var1.次 = {
+	var1_0.次 = {
 		旺 = {
 			仁 = {
 				增 = {

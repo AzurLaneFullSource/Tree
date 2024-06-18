@@ -1,6 +1,6 @@
-﻿local var0 = class("WorldEntrance", import("...BaseEntity"))
+﻿local var0_0 = class("WorldEntrance", import("...BaseEntity"))
 
-var0.Fields = {
+var0_0.Fields = {
 	config = "table",
 	marks = "table",
 	transportDic = "table",
@@ -9,27 +9,27 @@ var0.Fields = {
 	becomeSairen = "boolean",
 	active = "boolean"
 }
-var0.Listeners = {}
-var0.EventUpdateMapIndex = "WorldEntrance.EventUpdateMapIndex"
-var0.EventUpdateDisplayMarks = "WorldEntrance.EventUpdateDisplayMarks"
+var0_0.Listeners = {}
+var0_0.EventUpdateMapIndex = "WorldEntrance.EventUpdateMapIndex"
+var0_0.EventUpdateDisplayMarks = "WorldEntrance.EventUpdateDisplayMarks"
 
-function var0.DebugPrint(arg0)
-	return string.format("入口 [id: %s] [原始地图: %s] [所属区域: %s] [所属海域: %s]", arg0.id, arg0:GetBaseMapId(), arg0.config.regions, arg0.config.world)
+function var0_0.DebugPrint(arg0_1)
+	return string.format("入口 [id: %s] [原始地图: %s] [所属区域: %s] [所属海域: %s]", arg0_1.id, arg0_1:GetBaseMapId(), arg0_1.config.regions, arg0_1.config.world)
 end
 
-function var0.Setup(arg0, arg1, arg2)
-	arg0.id = arg1
+function var0_0.Setup(arg0_2, arg1_2, arg2_2)
+	arg0_2.id = arg1_2
 
-	assert(pg.world_chapter_colormask[arg1], "world_chapter_colormask.csv without this id:" .. arg0.id)
+	assert(pg.world_chapter_colormask[arg1_2], "world_chapter_colormask.csv without this id:" .. arg0_2.id)
 
-	arg0.config = pg.world_chapter_colormask[arg1]
-	arg0.transportDic = {}
+	arg0_2.config = pg.world_chapter_colormask[arg1_2]
+	arg0_2.transportDic = {}
 
-	for iter0, iter1 in ipairs(arg0.config.map_transfer) do
-		arg0.transportDic[iter1] = true
+	for iter0_2, iter1_2 in ipairs(arg0_2.config.map_transfer) do
+		arg0_2.transportDic[iter1_2] = true
 	end
 
-	arg0.marks = {
+	arg0_2.marks = {
 		task_main = 0,
 		task = 0,
 		treasure_sairen = 0,
@@ -43,85 +43,85 @@ function var0.Setup(arg0, arg1, arg2)
 	}
 end
 
-function var0.IsOpen(arg0)
-	return arg0:GetBaseMap():IsMapOpen()
+function var0_0.IsOpen(arg0_3)
+	return arg0_3:GetBaseMap():IsMapOpen()
 end
 
-function var0.GetBaseMapId(arg0)
-	return arg0.config.chapter
+function var0_0.GetBaseMapId(arg0_4)
+	return arg0_4.config.chapter
 end
 
-function var0.GetBaseMap(arg0)
-	return nowWorld():GetMap(arg0:GetBaseMapId())
+function var0_0.GetBaseMap(arg0_5)
+	return nowWorld():GetMap(arg0_5:GetBaseMapId())
 end
 
-function var0.GetColormaskUniqueID(arg0)
-	return arg0.config.color_id
+function var0_0.GetColormaskUniqueID(arg0_6)
+	return arg0_6.config.color_id
 end
 
-function var0.GetAreaId(arg0)
-	return arg0.config.regions
+function var0_0.GetAreaId(arg0_7)
+	return arg0_7.config.regions
 end
 
-function var0.IsPressing(arg0)
-	return arg0:GetBaseMap().isPressing
+function var0_0.IsPressing(arg0_8)
+	return arg0_8:GetBaseMap().isPressing
 end
 
-function var0.HasPort(arg0, arg1)
-	local var0 = arg0:GetPortId()
+function var0_0.HasPort(arg0_9, arg1_9)
+	local var0_9 = arg0_9:GetPortId()
 
-	return var0 > 0 and (not arg1 or pg.world_port_data[var0].port_camp == nowWorld():GetRealm())
+	return var0_9 > 0 and (not arg1_9 or pg.world_port_data[var0_9].port_camp == nowWorld():GetRealm())
 end
 
-function var0.GetPortId(arg0)
-	return arg0.config.port_map_icon
+function var0_0.GetPortId(arg0_10)
+	return arg0_10.config.port_map_icon
 end
 
-function var0.UpdateActive(arg0, arg1)
-	if arg0.active ~= arg1 then
-		arg0.active = arg1
+function var0_0.UpdateActive(arg0_11, arg1_11)
+	if arg0_11.active ~= arg1_11 then
+		arg0_11.active = arg1_11
 
-		if arg1 then
-			nowWorld():GetAtlas():SetActiveEntrance(arg0)
+		if arg1_11 then
+			nowWorld():GetAtlas():SetActiveEntrance(arg0_11)
 		end
 	end
 end
 
-function var0.UpdateDisplayMarks(arg0, arg1, arg2)
-	local var0 = arg0.marks[arg1] == 0 and arg2 or arg0.marks[arg1] == 1 and not arg2
+function var0_0.UpdateDisplayMarks(arg0_12, arg1_12, arg2_12)
+	local var0_12 = arg0_12.marks[arg1_12] == 0 and arg2_12 or arg0_12.marks[arg1_12] == 1 and not arg2_12
 
-	arg0.marks[arg1] = arg0.marks[arg1] + (arg2 and 1 or -1)
+	arg0_12.marks[arg1_12] = arg0_12.marks[arg1_12] + (arg2_12 and 1 or -1)
 
-	if var0 then
-		arg0:DispatchEvent(var0.EventUpdateDisplayMarks, arg1, arg0.marks[arg1] > 0)
+	if var0_12 then
+		arg0_12:DispatchEvent(var0_0.EventUpdateDisplayMarks, arg1_12, arg0_12.marks[arg1_12] > 0)
 	end
 end
 
-function var0.GetDisplayMarks(arg0)
-	return arg0.marks
+function var0_0.GetDisplayMarks(arg0_13)
+	return arg0_13.marks
 end
 
-function var0.GetSairenMapId(arg0)
-	return arg0.config.sairen_chapter[1]
+function var0_0.GetSairenMapId(arg0_14)
+	return arg0_14.config.sairen_chapter[1]
 end
 
-function var0.UpdateSairenMark(arg0, arg1)
-	if tobool(arg0.becomeSairen) ~= tobool(arg1) then
-		arg0.becomeSairen = arg1
+function var0_0.UpdateSairenMark(arg0_15, arg1_15)
+	if tobool(arg0_15.becomeSairen) ~= tobool(arg1_15) then
+		arg0_15.becomeSairen = arg1_15
 	end
 end
 
-function var0.GetAchievementAwards(arg0)
-	return _.map(arg0.config.target_drop_show, function(arg0)
+function var0_0.GetAchievementAwards(arg0_16)
+	return _.map(arg0_16.config.target_drop_show, function(arg0_17)
 		return {
-			star = arg0[1],
+			star = arg0_17[1],
 			drop = {
-				type = arg0[2][1],
-				id = arg0[2][2],
-				count = arg0[2][3]
+				type = arg0_17[2][1],
+				id = arg0_17[2][2],
+				count = arg0_17[2][3]
 			}
 		}
 	end)
 end
 
-return var0
+return var0_0

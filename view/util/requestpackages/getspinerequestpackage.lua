@@ -1,31 +1,31 @@
-﻿local var0 = class("GetSpineRequestPackage", import(".RequestPackage"))
+﻿local var0_0 = class("GetSpineRequestPackage", import(".RequestPackage"))
 
-function var0.__call(arg0)
-	if arg0.stopped then
+function var0_0.__call(arg0_1)
+	if arg0_1.stopped then
 		return
 	end
 
-	local var0 = arg0.name
+	local var0_1 = arg0_1.name
 
-	PoolMgr.GetInstance():GetSpineChar(var0, true, function(arg0)
-		if arg0.stopped then
-			PoolMgr.GetInstance():ReturnSpineChar(var0, arg0)
+	PoolMgr.GetInstance():GetSpineChar(var0_1, true, function(arg0_2)
+		if arg0_1.stopped then
+			PoolMgr.GetInstance():ReturnSpineChar(var0_1, arg0_2)
 
 			return
 		end
 
-		if arg0.onLoaded then
-			arg0.onLoaded(arg0)
+		if arg0_1.onLoaded then
+			arg0_1.onLoaded(arg0_2)
 		end
 	end)
 
-	return arg0
+	return arg0_1
 end
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0.name = arg1
-	arg0.path = "Spine"
-	arg0.onLoaded = arg2
+function var0_0.Ctor(arg0_3, arg1_3, arg2_3)
+	arg0_3.name = arg1_3
+	arg0_3.path = "Spine"
+	arg0_3.onLoaded = arg2_3
 end
 
-return var0
+return var0_0

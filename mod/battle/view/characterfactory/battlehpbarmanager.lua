@@ -1,110 +1,110 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = require("Mgr/Pool/PoolUtil")
-local var2 = singletonClass("BattleHPBarManager")
+local var0_0 = ys
+local var1_0 = require("Mgr/Pool/PoolUtil")
+local var2_0 = singletonClass("BattleHPBarManager")
 
-var0.Battle.BattleHPBarManager = var2
-var2.__name = "BattleHPBarManager"
-var2.ROOT_NAME = "HPBarContainer"
-var2.HP_BAR_FRIENDLY = "heroBlood"
-var2.HP_BAR_FOE = "enemyBlood"
-var2.ORIGIN_BAR_WIDTH = {
+var0_0.Battle.BattleHPBarManager = var2_0
+var2_0.__name = "BattleHPBarManager"
+var2_0.ROOT_NAME = "HPBarContainer"
+var2_0.HP_BAR_FRIENDLY = "heroBlood"
+var2_0.HP_BAR_FOE = "enemyBlood"
+var2_0.ORIGIN_BAR_WIDTH = {
 	heroBlood = 70,
 	enemyBlood = 154
 }
-var2.ORIGIN_PROGRESS_WIDTH = {
+var2_0.ORIGIN_PROGRESS_WIDTH = {
 	heroBlood = 66,
 	enemyBlood = 153
 }
 
-function var2.Ctor(arg0)
+function var2_0.Ctor(arg0_1)
 	return
 end
 
-function var2.Init(arg0, arg1, arg2)
-	arg0._allPool = {}
-	arg0._ob2Pool = {}
-	arg0._allPool[var2.HP_BAR_FRIENDLY] = var2.generateTempPool(var2.HP_BAR_FRIENDLY, arg2, arg1, 3, 10)
-	arg0._allPool[var2.HP_BAR_FOE] = var2.generateTempPool(var2.HP_BAR_FOE, arg2, arg1, 8, 10)
+function var2_0.Init(arg0_2, arg1_2, arg2_2)
+	arg0_2._allPool = {}
+	arg0_2._ob2Pool = {}
+	arg0_2._allPool[var2_0.HP_BAR_FRIENDLY] = var2_0.generateTempPool(var2_0.HP_BAR_FRIENDLY, arg2_2, arg1_2, 3, 10)
+	arg0_2._allPool[var2_0.HP_BAR_FOE] = var2_0.generateTempPool(var2_0.HP_BAR_FOE, arg2_2, arg1_2, 8, 10)
 end
 
-function var2.InitialPoolRoot(arg0, arg1)
-	arg0._allPool[var2.HP_BAR_FRIENDLY]:ResetParent(arg1)
-	arg0._allPool[var2.HP_BAR_FOE]:ResetParent(arg1)
+function var2_0.InitialPoolRoot(arg0_3, arg1_3)
+	arg0_3._allPool[var2_0.HP_BAR_FRIENDLY]:ResetParent(arg1_3)
+	arg0_3._allPool[var2_0.HP_BAR_FOE]:ResetParent(arg1_3)
 end
 
-function var2.Clear(arg0)
-	for iter0, iter1 in pairs(arg0._allPool) do
-		iter1:Dispose()
+function var2_0.Clear(arg0_4)
+	for iter0_4, iter1_4 in pairs(arg0_4._allPool) do
+		iter1_4:Dispose()
 	end
 
-	arg0._ob2Pool = {}
-	arg0._allPool = {}
+	arg0_4._ob2Pool = {}
+	arg0_4._allPool = {}
 end
 
-function var2.GetHPBar(arg0, arg1)
-	local var0 = arg0._allPool[arg1]
-	local var1 = var0:GetObject()
+function var2_0.GetHPBar(arg0_5, arg1_5)
+	local var0_5 = arg0_5._allPool[arg1_5]
+	local var1_5 = var0_5:GetObject()
 
-	arg0._ob2Pool[var1] = var0
+	arg0_5._ob2Pool[var1_5] = var0_5
 
-	local var2 = var1.transform
+	local var2_5 = var1_5.transform
 
-	var2:Find("blood"):GetComponent(typeof(Image)).fillAmount = 1
+	var2_5:Find("blood"):GetComponent(typeof(Image)).fillAmount = 1
 
-	local var3 = var2:Find("type")
+	local var3_5 = var2_5:Find("type")
 
-	if var3 then
-		SetActive(var3, false)
+	if var3_5 then
+		SetActive(var3_5, false)
 	end
 
-	local var4 = var2:Find("torpedoIcons")
+	local var4_5 = var2_5:Find("torpedoIcons")
 
-	if var4 then
-		SetActive(var4, false)
+	if var4_5 then
+		SetActive(var4_5, false)
 	end
 
-	local var5 = var2:Find("biasBar")
+	local var5_5 = var2_5:Find("biasBar")
 
-	if var5 then
-		SetActive(var5, false)
+	if var5_5 then
+		SetActive(var5_5, false)
 	end
 
-	return var1
+	return var1_5
 end
 
-function var2.DestroyObj(arg0, arg1)
-	if arg1 == nil then
+function var2_0.DestroyObj(arg0_6, arg1_6)
+	if arg1_6 == nil then
 		return
 	end
 
-	local var0 = arg0._ob2Pool[arg1]
+	local var0_6 = arg0_6._ob2Pool[arg1_6]
 
-	if var0 then
-		var0:Recycle(arg1)
+	if var0_6 then
+		var0_6:Recycle(arg1_6)
 	else
-		Object.Destroy(arg1)
+		Object.Destroy(arg1_6)
 	end
 end
 
-local var3 = Vector3(0, 10000, 0)
+local var3_0 = Vector3(0, 10000, 0)
 
-function var2.HideBullet(arg0)
-	arg0.transform.position = var3
+function var2_0.HideBullet(arg0_7)
+	arg0_7.transform.position = var3_0
 end
 
-function var2.generateTempPool(arg0, arg1, arg2, arg3, arg4)
-	local var0 = arg2.transform:Find(arg0).gameObject
+function var2_0.generateTempPool(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
+	local var0_8 = arg2_8.transform:Find(arg0_8).gameObject
 
-	var0.transform.position = var3
+	var0_8.transform.position = var3_0
 
-	var0:SetActive(true)
+	var0_8:SetActive(true)
 
-	local var1 = pg.Pool.New(arg1, var0, arg3, arg4, true, true)
+	local var1_8 = pg.Pool.New(arg1_8, var0_8, arg3_8, arg4_8, true, true)
 
-	var1:SetRecycleFuncs(var2.HideBullet)
-	var1:InitSize()
+	var1_8:SetRecycleFuncs(var2_0.HideBullet)
+	var1_8:InitSize()
 
-	return var1
+	return var1_8
 end

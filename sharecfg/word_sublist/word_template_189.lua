@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_189 = {}
+var0_0.word_template_189 = {}
 
-local var1 = var0.word_template_189
+local var1_0 = var0_0.word_template_189
 
 function temp()
-	var1.躪 = {
+	var1_0.躪 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.灵 = {
+	var1_0.灵 = {
 		灵 = {
 			教 = {
 				this = true
@@ -149,7 +149,7 @@ end
 temp()
 
 function temp()
-	var1.玲 = {
+	var1_0.玲 = {
 		珑 = {
 			孽 = {
 				缘 = {
@@ -176,7 +176,7 @@ end
 temp()
 
 function temp()
-	var1.铃 = {
+	var1_0.铃 = {
 		木 = {
 			爱 = {
 				理 = {
@@ -200,7 +200,7 @@ end
 temp()
 
 function temp()
-	var1.凌 = {
+	var1_0.凌 = {
 		辱 = {
 			this = true,
 			俱 = {
@@ -243,7 +243,7 @@ end
 temp()
 
 function temp()
-	var1.淩 = {
+	var1_0.淩 = {
 		鋒 = {
 			this = true
 		},
@@ -256,7 +256,7 @@ end
 temp()
 
 function temp()
-	var1.零 = {
+	var1_0.零 = {
 		["8"] = {
 			宪 = {
 				章 = {

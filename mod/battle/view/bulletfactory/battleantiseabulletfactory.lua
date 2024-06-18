@@ -1,93 +1,93 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleAntiSeaBulletFactory = singletonClass("BattleAntiSeaBulletFactory", var0.Battle.BattleBulletFactory)
-var0.Battle.BattleAntiSeaBulletFactory.__name = "BattleAntiSeaBulletFactory"
+var0_0.Battle.BattleAntiSeaBulletFactory = singletonClass("BattleAntiSeaBulletFactory", var0_0.Battle.BattleBulletFactory)
+var0_0.Battle.BattleAntiSeaBulletFactory.__name = "BattleAntiSeaBulletFactory"
 
-local var1 = var0.Battle.BattleAntiSeaBulletFactory
+local var1_0 = var0_0.Battle.BattleAntiSeaBulletFactory
 
-function var1.Ctor(arg0)
-	var1.super.Ctor(arg0)
+function var1_0.Ctor(arg0_1)
+	var1_0.super.Ctor(arg0_1)
 
-	arg0._tmpTimerList = {}
+	arg0_1._tmpTimerList = {}
 end
 
-function var1.NeutralizeBullet(arg0)
-	for iter0, iter1 in pairs(arg0._tmpTimerList) do
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(iter1)
+function var1_0.NeutralizeBullet(arg0_2)
+	for iter0_2, iter1_2 in pairs(arg0_2._tmpTimerList) do
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(iter1_2)
 
-		arg0._tmpTimerList[iter1] = nil
+		arg0_2._tmpTimerList[iter1_2] = nil
 	end
 end
 
-function var1.CreateBullet(arg0, arg1, arg2, arg3, arg4, arg5)
-	local var0 = arg2:GetTemplate().hit_type
-	local var1 = arg0:GetDataProxy()
-	local var2 = arg2:GetDirectHitUnit()
+function var1_0.CreateBullet(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3, arg5_3)
+	local var0_3 = arg2_3:GetTemplate().hit_type
+	local var1_3 = arg0_3:GetDataProxy()
+	local var2_3 = arg2_3:GetDirectHitUnit()
 
-	if not var2 then
-		var1:RemoveBulletUnit(arg2:GetUniqueID())
+	if not var2_3 then
+		var1_3:RemoveBulletUnit(arg2_3:GetUniqueID())
 
 		return
 	end
 
-	local var3 = var2:GetUniqueID()
-	local var4 = arg0:GetSceneMediator():GetCharacter(var3)
+	local var3_3 = var2_3:GetUniqueID()
+	local var4_3 = arg0_3:GetSceneMediator():GetCharacter(var3_3)
 
-	if not var4 then
-		var1:RemoveBulletUnit(arg2:GetUniqueID())
+	if not var4_3 then
+		var1_3:RemoveBulletUnit(arg2_3:GetUniqueID())
 
 		return
 	end
 
-	local var5 = var0.range
-	local var6
-	local var7
-	local var8
+	local var5_3 = var0_3.range
+	local var6_3
+	local var7_3
+	local var8_3
 
-	local function var9()
-		if var6 then
-			local var0
-			local var1 = var4:GetPosition():Clone()
+	local function var9_3()
+		if var6_3 then
+			local var0_4
+			local var1_4 = var4_3:GetPosition():Clone()
 
-			if var2:IsAlive() and var4 then
-				var0 = var1:Add(Vector3(math.random(var5) - var5 * 0.5, 0, math.random(var5) - var5 * 0.5))
+			if var2_3:IsAlive() and var4_3 then
+				var0_4 = var1_4:Add(Vector3(math.random(var5_3) - var5_3 * 0.5, 0, math.random(var5_3) - var5_3 * 0.5))
 			else
-				var0 = var1
+				var0_4 = var1_4
 			end
 
-			local var2, var3 = arg0:GetFXPool():GetFX(arg2:GetTemplate().hit_fx)
+			local var2_4, var3_4 = arg0_3:GetFXPool():GetFX(arg2_3:GetTemplate().hit_fx)
 
-			pg.EffectMgr.GetInstance():PlayBattleEffect(var2, var3:Add(var0), true)
+			pg.EffectMgr.GetInstance():PlayBattleEffect(var2_4, var3_4:Add(var0_4), true)
 		end
 	end
 
-	local function var10()
-		if var2:IsAlive() then
-			var1:HandleDamage(arg2, var2)
-			var1:RemoveBulletUnit(arg2:GetUniqueID())
+	local function var10_3()
+		if var2_3:IsAlive() then
+			var1_3:HandleDamage(arg2_3, var2_3)
+			var1_3:RemoveBulletUnit(arg2_3:GetUniqueID())
 		end
 
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(var6)
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(var6_3)
 
-		arg0._tmpTimerList[var6] = nil
-		var6 = nil
+		arg0_3._tmpTimerList[var6_3] = nil
+		var6_3 = nil
 	end
 
-	var6 = pg.TimeMgr.GetInstance():AddBattleTimer("antiAirTimer", 0, 0.5, var10, true)
-	arg0._tmpTimerList[var6] = var6
+	var6_3 = pg.TimeMgr.GetInstance():AddBattleTimer("antiAirTimer", 0, 0.5, var10_3, true)
+	arg0_3._tmpTimerList[var6_3] = var6_3
 
-	if arg4 ~= nil then
-		arg0:PlayFireFX(arg1, arg2, arg3, arg4, arg5, nil)
+	if arg4_3 ~= nil then
+		arg0_3:PlayFireFX(arg1_3, arg2_3, arg3_3, arg4_3, arg5_3, nil)
 
-		local var11 = pg.TimeMgr.GetInstance():AddBattleTimer("showHitFXTimer", -1, 0.1, var9, true)
+		local var11_3 = pg.TimeMgr.GetInstance():AddBattleTimer("showHitFXTimer", -1, 0.1, var9_3, true)
 
-		arg0._tmpTimerList[var11] = var11
+		arg0_3._tmpTimerList[var11_3] = var11_3
 
-		var9()
+		var9_3()
 	else
-		var1:HandleDamage(arg2, var2)
-		var1:RemoveBulletUnit(arg2:GetUniqueID())
+		var1_3:HandleDamage(arg2_3, var2_3)
+		var1_3:RemoveBulletUnit(arg2_3:GetUniqueID())
 	end
 end

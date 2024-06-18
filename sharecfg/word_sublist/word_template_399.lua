@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_399 = {}
+var0_0.word_template_399 = {}
 
-local var1 = var0.word_template_399
+local var1_0 = var0_0.word_template_399
 
 function temp()
-	var1.洒 = {
+	var1_0.洒 = {
 		哥 = {
 			儿 = {
 				王 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.蝗 = {
+	var1_0.蝗 = {
 		冥 = {
 			痔 = {
 				this = true
@@ -33,7 +33,7 @@ end
 temp()
 
 function temp()
-	var1.矛 = {
+	var1_0.矛 = {
 		按 = {
 			嘤 = {
 				this = true
@@ -53,7 +53,7 @@ end
 temp()
 
 function temp()
-	var1.坎 = {
+	var1_0.坎 = {
 		特 = {
 			["\\"] = {
 				p = {
@@ -75,7 +75,7 @@ end
 temp()
 
 function temp()
-	var1.ξ = {
+	var1_0.ξ = {
 		病 = {
 			毒 = {
 				this = true
@@ -87,7 +87,7 @@ end
 temp()
 
 function temp()
-	var1.闷 = {
+	var1_0.闷 = {
 		声 = {
 			发 = {
 				财 = {
@@ -119,7 +119,7 @@ end
 temp()
 
 function temp()
-	var1.蛇 = {
+	var1_0.蛇 = {
 		灰 = {
 			主 = {
 				义 = {

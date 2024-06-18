@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_226 = {}
+var0_0.word_template_226 = {}
 
-local var1 = var0.word_template_226
+local var1_0 = var0_0.word_template_226
 
 function temp()
-	var1.平 = {
+	var1_0.平 = {
 		反 = {
 			["6"] = {
 				["4"] = {
@@ -237,7 +237,7 @@ end
 temp()
 
 function temp()
-	var1.苹 = {
+	var1_0.苹 = {
 		果 = {
 			j = {
 				i = {
@@ -259,7 +259,7 @@ end
 temp()
 
 function temp()
-	var1.岥 = {
+	var1_0.岥 = {
 		解 = {
 			儀 = {
 				噐 = {
@@ -273,7 +273,7 @@ end
 temp()
 
 function temp()
-	var1.潑 = {
+	var1_0.潑 = {
 		婦 = {
 			this = true
 		}
@@ -283,7 +283,7 @@ end
 temp()
 
 function temp()
-	var1.醱 = {
+	var1_0.醱 = {
 		票 = {
 			this = true
 		}
@@ -293,7 +293,7 @@ end
 temp()
 
 function temp()
-	var1.迫 = {
+	var1_0.迫 = {
 		害 = {
 			伴 = {
 				奏 = {
@@ -312,7 +312,7 @@ end
 temp()
 
 function temp()
-	var1.扑 = {
+	var1_0.扑 = {
 		克 = {
 			分 = {
 				析 = {

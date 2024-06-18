@@ -1,44 +1,44 @@
-﻿local var0 = class("TargetObject", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
+﻿local var0_0 = class("TargetObject", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
 
-function var0.CellPassability(arg0)
+function var0_0.CellPassability(arg0_1)
 	return false
 end
 
-function var0.FirePassability(arg0)
+function var0_0.FirePassability(arg0_2)
 	return 2
 end
 
-local function var1(arg0)
-	local var0 = math.random()
+local function var1_0(arg0_3)
+	local var0_3 = math.random()
 
-	for iter0, iter1 in ipairs(arg0) do
-		if var0 < iter1[2] then
+	for iter0_3, iter1_3 in ipairs(arg0_3) do
+		if var0_3 < iter1_3[2] then
 			return {
 				name = "Item",
-				type = iter1[1]
+				type = iter1_3[1]
 			}
 		else
-			var0 = var0 - iter1[2]
+			var0_3 = var0_3 - iter1_3[2]
 		end
 	end
 end
 
-function var0.TryDrop(arg0, arg1, arg2)
-	if not arg1 then
+function var0_0.TryDrop(arg0_4, arg1_4, arg2_4)
+	if not arg1_4 then
 		return
 	end
 
-	local var0 = var1(arg1)
+	local var0_4 = var1_0(arg1_4)
 
-	if var0 then
-		var0.drop = arg2
-		var0.pos = {
-			arg0.pos.x,
-			arg0.pos.y
+	if var0_4 then
+		var0_4.drop = arg2_4
+		var0_4.pos = {
+			arg0_4.pos.x,
+			arg0_4.pos.y
 		}
 
-		arg0.responder:Create(var0)
+		arg0_4.responder:Create(var0_4)
 	end
 end
 
-return var0
+return var0_0

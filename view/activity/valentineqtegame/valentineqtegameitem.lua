@@ -1,5 +1,5 @@
-﻿local var0 = class("ValentineQteGameItem")
-local var1 = {
+﻿local var0_0 = class("ValentineQteGameItem")
+local var1_0 = {
 	"1",
 	"2",
 	"3",
@@ -8,54 +8,54 @@ local var1 = {
 	"6"
 }
 
-function var0.Ctor(arg0, arg1, arg2, arg3)
-	arg0._go = arg1
-	arg0._tf = arg1.transform
-	arg0.rect = arg0._tf.rect
-	arg0.image = arg0._go:GetComponent(typeof(Image))
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	arg0_1._go = arg1_1
+	arg0_1._tf = arg1_1.transform
+	arg0_1.rect = arg0_1._tf.rect
+	arg0_1.image = arg0_1._go:GetComponent(typeof(Image))
 
-	arg0:SetTime(arg3)
-	arg0:SetPosition(arg2)
+	arg0_1:SetTime(arg3_1)
+	arg0_1:SetPosition(arg2_1)
 
-	arg0.bound = getBounds(arg0._tf)
+	arg0_1.bound = getBounds(arg0_1._tf)
 
-	local var0 = math.random(1, #var1)
-	local var1 = GetSpriteFromAtlas("ui/valentineqtegame_atlas", var1[var0])
+	local var0_1 = math.random(1, #var1_0)
+	local var1_1 = GetSpriteFromAtlas("ui/valentineqtegame_atlas", var1_0[var0_1])
 
-	arg0.image.sprite = var1
+	arg0_1.image.sprite = var1_1
 
-	arg0.image:SetNativeSize()
+	arg0_1.image:SetNativeSize()
 end
 
-function var0.SetTime(arg0, arg1)
-	arg0.genTime = arg1
+function var0_0.SetTime(arg0_2, arg1_2)
+	arg0_2.genTime = arg1_2
 end
 
-function var0.SetPosition(arg0, arg1)
-	arg0.genPos = arg1
-	arg0._tf.localPosition = arg1
+function var0_0.SetPosition(arg0_3, arg1_3)
+	arg0_3.genPos = arg1_3
+	arg0_3._tf.localPosition = arg1_3
 end
 
-function var0.ShouldDisapper(arg0, arg1)
-	if arg0.genTime - arg1 >= ValentineQteGameConst.ITEM_DISAPPEAR_TIME then
+function var0_0.ShouldDisapper(arg0_4, arg1_4)
+	if arg0_4.genTime - arg1_4 >= ValentineQteGameConst.ITEM_DISAPPEAR_TIME then
 		return true
 	end
 
 	return false
 end
 
-function var0.IsOverlap(arg0, arg1)
-	local var0 = getBounds(arg1)
+function var0_0.IsOverlap(arg0_5, arg1_5)
+	local var0_5 = getBounds(arg1_5)
 
-	return arg0.bound:Intersects(var0)
+	return arg0_5.bound:Intersects(var0_5)
 end
 
-function var0.IsSufficientLength(arg0, arg1, arg2)
-	return arg2 < math.abs(arg0._tf.localPosition.x - arg1)
+function var0_0.IsSufficientLength(arg0_6, arg1_6, arg2_6)
+	return arg2_6 < math.abs(arg0_6._tf.localPosition.x - arg1_6)
 end
 
-function var0.Destroy(arg0)
-	arg0.image.sprite = nil
+function var0_0.Destroy(arg0_7)
+	arg0_7.image.sprite = nil
 end
 
-return var0
+return var0_0

@@ -1,15 +1,15 @@
-﻿local var0 = class("StarSeaFacilityPage", import(".TemplatePage.SkinTemplatePage"))
+﻿local var0_0 = class("StarSeaFacilityPage", import(".TemplatePage.SkinTemplatePage"))
 
-function var0.OnUpdateFlush(arg0)
-	arg0.nday = arg0.activity.data3
+function var0_0.OnUpdateFlush(arg0_1)
+	arg0_1.nday = arg0_1.activity.data3
 
-	arg0:PlayStory()
+	arg0_1:PlayStory()
 
-	if arg0.dayTF then
-		setText(arg0.dayTF, tostring(arg0.nday) .. "/7")
+	if arg0_1.dayTF then
+		setText(arg0_1.dayTF, tostring(arg0_1.nday) .. "/7")
 	end
 
-	arg0.uilist:align(#arg0.taskGroup[arg0.nday])
+	arg0_1.uilist:align(#arg0_1.taskGroup[arg0_1.nday])
 end
 
-return var0
+return var0_0

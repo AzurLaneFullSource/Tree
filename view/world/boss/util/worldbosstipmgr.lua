@@ -1,286 +1,286 @@
 ﻿pg = pg or {}
 pg.WorldBossTipMgr = singletonClass("WorldBossTipMgr")
 
-local var0 = pg.WorldBossTipMgr
-local var1 = true
-local var2 = false
-local var3 = {
+local var0_0 = pg.WorldBossTipMgr
+local var1_0 = true
+local var2_0 = false
+local var3_0 = {
 	"LevelMediator2",
 	"WorldMediator",
 	"WorldBossMediator"
 }
 
-function var0.Init(arg0, arg1)
-	arg0.isInit = true
-	arg0.list = {}
+function var0_0.Init(arg0_1, arg1_1)
+	arg0_1.isInit = true
+	arg0_1.list = {}
 
-	PoolMgr.GetInstance():GetUI("WorldBossTipUI", true, function(arg0)
-		arg0._go = arg0
-		arg0._tf = tf(arg0)
+	PoolMgr.GetInstance():GetUI("WorldBossTipUI", true, function(arg0_2)
+		arg0_1._go = arg0_2
+		arg0_1._tf = tf(arg0_2)
 
-		setActive(arg0._go, true)
+		setActive(arg0_1._go, true)
 
-		arg0.tipTF = arg0._tf:Find("BG")
-		arg0.tipTFCG = arg0.tipTF:GetComponent(typeof(CanvasGroup))
-		arg0.scrollText = arg0.tipTF:Find("Text"):GetComponent("ScrollText")
+		arg0_1.tipTF = arg0_1._tf:Find("BG")
+		arg0_1.tipTFCG = arg0_1.tipTF:GetComponent(typeof(CanvasGroup))
+		arg0_1.scrollText = arg0_1.tipTF:Find("Text"):GetComponent("ScrollText")
 
-		setParent(arg0._tf, GameObject.Find("OverlayCamera/Overlay/UIOverlay").transform)
+		setParent(arg0_1._tf, GameObject.Find("OverlayCamera/Overlay/UIOverlay").transform)
 
-		arg0.richText = arg0.tipTF:Find("Text"):GetComponent("RichText")
+		arg0_1.richText = arg0_1.tipTF:Find("Text"):GetComponent("RichText")
 
-		setActive(arg0.tipTF, false)
+		setActive(arg0_1.tipTF, false)
 
-		if arg1 then
-			arg1()
+		if arg1_1 then
+			arg1_1()
 		end
 	end)
 end
 
-function var0.Show(arg0, arg1)
-	if var2 then
-		local function var0()
-			if arg0:IsEnable(arg1:GetType()) then
-				table.insert(arg0.list, arg1)
+function var0_0.Show(arg0_3, arg1_3)
+	if var2_0 then
+		local function var0_3()
+			if arg0_3:IsEnable(arg1_3:GetType()) then
+				table.insert(arg0_3.list, arg1_3)
 
-				if #arg0.list == 1 then
-					arg0:Start()
+				if #arg0_3.list == 1 then
+					arg0_3:Start()
 				end
 			else
 				print("Message intercepted")
 			end
 		end
 
-		if not arg0.isInit then
-			arg0:Init(var0)
+		if not arg0_3.isInit then
+			arg0_3:Init(var0_3)
 		else
-			var0()
+			var0_3()
 		end
 	end
 
-	if var1 and arg0:IsEnableNotify(arg1:GetType()) then
-		local var1 = arg1:GetRoleName()
-		local var2 = arg1:GetType()
-		local var3
-		local var4
+	if var1_0 and arg0_3:IsEnableNotify(arg1_3:GetType()) then
+		local var1_3 = arg1_3:GetRoleName()
+		local var2_3 = arg1_3:GetType()
+		local var3_3
+		local var4_3
 
-		if WorldBoss.SUPPORT_TYPE_FRIEND == var2 then
-			var3 = ChatConst.ChannelFriend
-			var4 = i18n("world_word_friend")
-		elseif WorldBoss.SUPPORT_TYPE_GUILD == var2 then
-			var3 = ChatConst.ChannelGuild
-			var4 = i18n("world_word_guild_member")
+		if WorldBoss.SUPPORT_TYPE_FRIEND == var2_3 then
+			var3_3 = ChatConst.ChannelFriend
+			var4_3 = i18n("world_word_friend")
+		elseif WorldBoss.SUPPORT_TYPE_GUILD == var2_3 then
+			var3_3 = ChatConst.ChannelGuild
+			var4_3 = i18n("world_word_guild_member")
 		else
-			var3 = ChatConst.ChannelWorldBoss
-			var4 = i18n("world_word_guild_player")
+			var3_3 = ChatConst.ChannelWorldBoss
+			var4_3 = i18n("world_word_guild_player")
 		end
 
-		assert(var3)
+		assert(var3_3)
 
-		local var5 = arg1:GetPlayer()
-		local var6 = getProxy(PlayerProxy):getData()
+		local var5_3 = arg1_3:GetPlayer()
+		local var6_3 = getProxy(PlayerProxy):getData()
 
-		print(var3, var4)
+		print(var3_3, var4_3)
 
-		local var7 = {
+		local var7_3 = {
 			id = 4,
 			timestamp = pg.TimeMgr.GetInstance():GetServerTime(),
 			args = {
 				isDeath = false,
-				supportType = var4,
-				playerName = var1,
-				bossName = arg1.config.name,
-				level = arg1.level,
-				wordBossId = arg1.id,
-				lastTime = arg1.lastTime,
-				wordBossConfigId = arg1.configId
+				supportType = var4_3,
+				playerName = var1_3,
+				bossName = arg1_3.config.name,
+				level = arg1_3.level,
+				wordBossId = arg1_3.id,
+				lastTime = arg1_3.lastTime,
+				wordBossConfigId = arg1_3.configId
 			},
-			player = var5 or var6,
-			uniqueId = arg1.id .. "_" .. arg1.lastTime
+			player = var5_3 or var6_3,
+			uniqueId = arg1_3.id .. "_" .. arg1_3.lastTime
 		}
 
-		if var3 == ChatConst.ChannelGuild then
-			arg0:AddGuildMsg(var3, var7)
+		if var3_3 == ChatConst.ChannelGuild then
+			arg0_3:AddGuildMsg(var3_3, var7_3)
 		else
-			getProxy(ChatProxy):addNewMsg(ChatMsg.New(var3, var7))
+			getProxy(ChatProxy):addNewMsg(ChatMsg.New(var3_3, var7_3))
 		end
 	end
 end
 
-function var0.AddGuildMsg(arg0, arg1, arg2)
-	local var0 = getProxy(GuildProxy):getRawData()
+function var0_0.AddGuildMsg(arg0_5, arg1_5, arg2_5)
+	local var0_5 = getProxy(GuildProxy):getRawData()
 
-	if not var0 then
+	if not var0_5 then
 		return
 	end
 
-	local var1 = var0:getMemberById(arg2.player.id)
+	local var1_5 = var0_5:getMemberById(arg2_5.player.id)
 
-	if not var1 then
+	if not var1_5 then
 		return
 	end
 
-	arg2.player = var1
+	arg2_5.player = var1_5
 
-	getProxy(GuildProxy):AddNewMsg(ChatMsg.New(arg1, arg2))
+	getProxy(GuildProxy):AddNewMsg(ChatMsg.New(arg1_5, arg2_5))
 end
 
-function var0.IsEnableNotify(arg0, arg1)
+function var0_0.IsEnableNotify(arg0_6, arg1_6)
 	return true
 end
 
-function var0.IsEnable(arg0, arg1)
-	local var0 = arg0:IsEnableNotify(arg1)
-	local var1 = (function()
-		local var0 = getProxy(ContextProxy):getCurrentContext()
+function var0_0.IsEnable(arg0_7, arg1_7)
+	local var0_7 = arg0_7:IsEnableNotify(arg1_7)
+	local var1_7 = (function()
+		local var0_8 = getProxy(ContextProxy):getCurrentContext()
 
-		return _.any(var3, function(arg0)
-			return var0.mediator.__cname == arg0
+		return _.any(var3_0, function(arg0_9)
+			return var0_8.mediator.__cname == arg0_9
 		end)
 	end)()
 
-	return var0 and var1
+	return var0_7 and var1_7
 end
 
-function var0.Start(arg0)
-	if #arg0.list > 0 then
-		arg0:AddTimer()
+function var0_0.Start(arg0_10)
+	if #arg0_10.list > 0 then
+		arg0_10:AddTimer()
 	end
 end
 
-function var0.BuildClickableTxt(arg0, arg1)
-	local var0 = arg1:BuildTipText()
+function var0_0.BuildClickableTxt(arg0_11, arg1_11)
+	local var0_11 = arg1_11:BuildTipText()
 
-	return string.format("<material=underline c=#FFFFFF h=1 event=onClick args=" .. arg1.id .. ">%s</material>", var0)
+	return string.format("<material=underline c=#FFFFFF h=1 event=onClick args=" .. arg1_11.id .. ">%s</material>", var0_11)
 end
 
-function var0.AddTimer(arg0)
-	local var0 = arg0.list[1]
+function var0_0.AddTimer(arg0_12)
+	local var0_12 = arg0_12.list[1]
 
-	arg0:RemoveTimer()
-	setActive(arg0.tipTF, true)
-	arg0.scrollText:SetText(arg0:BuildClickableTxt(var0))
-	LeanTween.value(go(arg0.tipTF), 1, 0, 1):setOnUpdate(System.Action_float(function(arg0)
-		arg0.tipTFCG.alpha = arg0
+	arg0_12:RemoveTimer()
+	setActive(arg0_12.tipTF, true)
+	arg0_12.scrollText:SetText(arg0_12:BuildClickableTxt(var0_12))
+	LeanTween.value(go(arg0_12.tipTF), 1, 0, 1):setOnUpdate(System.Action_float(function(arg0_13)
+		arg0_12.tipTFCG.alpha = arg0_13
 	end)):setOnComplete(System.Action(function()
-		setActive(arg0.tipTF, false)
-		arg0.scrollText:SetText("")
+		setActive(arg0_12.tipTF, false)
+		arg0_12.scrollText:SetText("")
 
-		arg0.tipTFCG.alpha = 1
+		arg0_12.tipTFCG.alpha = 1
 
-		table.remove(arg0.list, 1)
-		arg0:Start()
+		table.remove(arg0_12.list, 1)
+		arg0_12:Start()
 	end)):setDelay(4)
 end
 
-local function var4(arg0, arg1)
-	if not arg0 or #arg0 == 0 then
+local function var4_0(arg0_15, arg1_15)
+	if not arg0_15 or #arg0_15 == 0 then
 		return
 	end
 
-	local var0 = _.detect(arg0, function(arg0)
-		return arg0.id == tonumber(arg1)
+	local var0_15 = _.detect(arg0_15, function(arg0_16)
+		return arg0_16.id == tonumber(arg1_15)
 	end)
 
-	if not var0 or var0:isDeath() then
+	if not var0_15 or var0_15:isDeath() then
 		return
 	end
 
 	return true
 end
 
-function var0.OnClick(arg0, arg1, arg2, arg3, arg4)
-	local var0 = nowWorld()
+function var0_0.OnClick(arg0_17, arg1_17, arg2_17, arg3_17, arg4_17)
+	local var0_17 = nowWorld()
 
-	if not var0 or not var0:IsActivate() then
+	if not var0_17 or not var0_17:IsActivate() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_unactivated"))
 
 		return
 	end
 
-	local var1 = var0:GetBossProxy()
+	local var1_17 = var0_17:GetBossProxy()
 
-	if not var1 then
+	if not var1_17 then
 		return
 	end
 
-	local function var2(arg0)
-		local var0 = getProxy(ContextProxy)
-		local var1 = var0:getCurrentContext()
+	local function var2_17(arg0_18)
+		local var0_18 = getProxy(ContextProxy)
+		local var1_18 = var0_18:getCurrentContext()
 
-		local function var2()
-			local var0 = function()
-				var1 = var0:getCurrentContext()
+		local function var2_18()
+			local function var0_19()
+				var1_18 = var0_18:getCurrentContext()
 
-				if var1:getContextByMediator(CombatLoadMediator) then
+				if var1_18:getContextByMediator(CombatLoadMediator) then
 					return
 				end
 
-				if var1.mediator.__cname == "WorldBossMediator" then
+				if var1_18.mediator.__cname == "WorldBossMediator" then
 					return
 				end
 
 				pg.m02:sendNotification(GAME.GO_WORLD_BOSS_SCENE)
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.WORLDBOSS, {
-					worldBossId = tonumber(arg2)
+					worldBossId = tonumber(arg2_17)
 				})
 			end
 
 			pg.m02:sendNotification(GAME.CHECK_WORLD_BOSS_STATE, {
-				bossId = tonumber(arg2),
-				time = arg3,
-				callback = var0,
-				failedCallback = arg4
+				bossId = tonumber(arg2_17),
+				time = arg3_17,
+				callback = var0_19,
+				failedCallback = arg4_17
 			})
 		end
 
-		if var1.mediator.__cname == "BattleMediator" then
+		if var1_18.mediator.__cname == "BattleMediator" then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("world_joint_exit_battle_tip"),
 				onYes = function()
 					pg.m02:sendNotification(GAME.QUIT_BATTLE)
-					var2()
+					var2_18()
 				end
 			})
 		else
-			var2()
+			var2_18()
 		end
 	end
 
-	if var1.isSetup then
-		local var3 = var1:GetBossById(tonumber(arg2))
+	if var1_17.isSetup then
+		local var3_17 = var1_17:GetBossById(tonumber(arg2_17))
 
-		if not var3 or var3:isDeath() then
-			local var4 = getProxy(ChatProxy)
-			local var5 = var3 and var3.lastTime or "0"
-			local var6 = var4:GetMessagesByUniqueId(tonumber(arg2) .. "_" .. var5)
+		if not var3_17 or var3_17:isDeath() then
+			local var4_17 = getProxy(ChatProxy)
+			local var5_17 = var3_17 and var3_17.lastTime or "0"
+			local var6_17 = var4_17:GetMessagesByUniqueId(tonumber(arg2_17) .. "_" .. var5_17)
 
-			for iter0, iter1 in ipairs(var6) do
-				iter1.args.isDeath = true
+			for iter0_17, iter1_17 in ipairs(var6_17) do
+				iter1_17.args.isDeath = true
 
-				var4:UpdateMsg(iter1)
+				var4_17:UpdateMsg(iter1_17)
 			end
 
-			local var7 = getProxy(GuildProxy)
-			local var8 = var7:GetMessagesByUniqueId(tonumber(arg2) .. "_" .. var5)
+			local var7_17 = getProxy(GuildProxy)
+			local var8_17 = var7_17:GetMessagesByUniqueId(tonumber(arg2_17) .. "_" .. var5_17)
 
-			for iter2, iter3 in ipairs(var8) do
-				iter3.args.isDeath = true
+			for iter2_17, iter3_17 in ipairs(var8_17) do
+				iter3_17.args.isDeath = true
 
-				var7:UpdateMsg(iter3)
+				var7_17:UpdateMsg(iter3_17)
 			end
 
-			arg4()
+			arg4_17()
 			pg.TipsMgr:GetInstance():ShowTips(i18n("world_boss_none"))
 
 			return
 		end
 
-		var2()
+		var2_17()
 	end
 end
 
-function var0.RemoveTimer(arg0)
-	if LeanTween.isTweening(go(arg0.tipTF)) then
-		LeanTween.cancel(go(arg0.tipTF))
+function var0_0.RemoveTimer(arg0_22)
+	if LeanTween.isTweening(go(arg0_22.tipTF)) then
+		LeanTween.cancel(go(arg0_22.tipTF))
 	end
 end

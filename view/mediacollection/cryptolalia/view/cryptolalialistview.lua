@@ -1,140 +1,140 @@
-﻿local var0 = class("CryptolaliaListView", import("view.base.BaseSubView"))
+﻿local var0_0 = class("CryptolaliaListView", import("view.base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "CryptolaliaListui"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.cards = {}
-	arg0.scrollrect = arg0:findTF("frame/view"):GetComponent("LScrollRect")
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.cards = {}
+	arg0_2.scrollrect = arg0_2:findTF("frame/view"):GetComponent("LScrollRect")
 
-	function arg0.scrollrect.onInitItem(arg0)
-		arg0:OnInitItem(arg0)
+	function arg0_2.scrollrect.onInitItem(arg0_3)
+		arg0_2:OnInitItem(arg0_3)
 	end
 
-	function arg0.scrollrect.onUpdateItem(arg0, arg1)
-		arg0:onUpdateItem(arg0, arg1)
+	function arg0_2.scrollrect.onUpdateItem(arg0_4, arg1_4)
+		arg0_2:onUpdateItem(arg0_4, arg1_4)
 	end
 
-	arg0.frameTr = arg0:findTF("frame")
-	arg0.subTitleTxt = arg0:findTF("frame/subtitle"):GetComponent(typeof(Text))
+	arg0_2.frameTr = arg0_2:findTF("frame")
+	arg0_2.subTitleTxt = arg0_2:findTF("frame/subtitle"):GetComponent(typeof(Text))
 
-	setText(arg0:findTF("frame/title"), i18n("cryptolalia_list_title"))
+	setText(arg0_2:findTF("frame/title"), i18n("cryptolalia_list_title"))
 end
 
-function var0.OnInit(arg0)
+function var0_0.OnInit(arg0_5)
 	return
 end
 
-function var0.OnInitItem(arg0, arg1)
-	local function var0()
-		if not arg0.cryptolaliaId then
+function var0_0.OnInitItem(arg0_6, arg1_6)
+	local function var0_6()
+		if not arg0_6.cryptolaliaId then
 			return
 		end
 
-		for iter0, iter1 in pairs(arg0.cards) do
-			if iter1.cryptolalia.id == arg0.cryptolaliaId then
-				iter1:Update(iter1.cryptolalia, arg0.langType, false)
+		for iter0_7, iter1_7 in pairs(arg0_6.cards) do
+			if iter1_7.cryptolalia.id == arg0_6.cryptolaliaId then
+				iter1_7:Update(iter1_7.cryptolalia, arg0_6.langType, false)
 			end
 		end
 	end
 
-	local var1 = CryptolaliaCard.New(arg1)
+	local var1_6 = CryptolaliaCard.New(arg1_6)
 
-	onButton(arg0, var1._go, function()
-		if arg0:CanSwitch() then
-			var0()
+	onButton(arg0_6, var1_6._go, function()
+		if arg0_6:CanSwitch() then
+			var0_6()
 
-			arg0.cryptolaliaId = var1.cryptolalia.id
+			arg0_6.cryptolaliaId = var1_6.cryptolalia.id
 
-			var1:Update(var1.cryptolalia, arg0.langType, true)
-			arg0:SelectCard(arg0.cryptolaliaId)
+			var1_6:Update(var1_6.cryptolalia, arg0_6.langType, true)
+			arg0_6:SelectCard(arg0_6.cryptolaliaId)
 		end
 	end, SFX_PANEL)
 
-	arg0.cards[arg1] = var1
+	arg0_6.cards[arg1_6] = var1_6
 end
 
-function var0.CanSwitch(arg0)
-	return not arg0.scrollRect.inAnimation
+function var0_0.CanSwitch(arg0_9)
+	return not arg0_9.scrollRect.inAnimation
 end
 
-function var0.onUpdateItem(arg0, arg1, arg2)
-	local var0 = arg0.cards[arg2]
+function var0_0.onUpdateItem(arg0_10, arg1_10, arg2_10)
+	local var0_10 = arg0_10.cards[arg2_10]
 
-	if not var0 then
-		arg0:OnInitItem(arg2)
+	if not var0_10 then
+		arg0_10:OnInitItem(arg2_10)
 
-		var0 = arg0.cards[arg2]
+		var0_10 = arg0_10.cards[arg2_10]
 	end
 
-	local var1 = arg0.displays[arg1 + 1]
-	local var2 = var1.id == arg0.cryptolaliaId
+	local var1_10 = arg0_10.displays[arg1_10 + 1]
+	local var2_10 = var1_10.id == arg0_10.cryptolaliaId
 
-	var0:Update(var1, arg0.langType, var2)
+	var0_10:Update(var1_10, arg0_10.langType, var2_10)
 end
 
-function var0.Show(arg0, arg1, arg2, arg3, arg4)
-	arg0.scrollRect = arg4
+function var0_0.Show(arg0_11, arg1_11, arg2_11, arg3_11, arg4_11)
+	arg0_11.scrollRect = arg4_11
 
-	var0.super.Show(arg0)
+	var0_0.super.Show(arg0_11)
 	seriesAsync({
-		function(arg0)
-			arg0:EnterAnimation(arg0)
+		function(arg0_12)
+			arg0_11:EnterAnimation(arg0_12)
 		end,
-		function(arg0)
-			arg0:InitList(arg1, arg2, arg3)
-			arg0:RegisterEvent()
-			arg0()
+		function(arg0_13)
+			arg0_11:InitList(arg1_11, arg2_11, arg3_11)
+			arg0_11:RegisterEvent()
+			arg0_13()
 		end
 	})
 end
 
-function var0.EnterAnimation(arg0, arg1)
-	local var0 = arg0.frameTr.sizeDelta.x
+function var0_0.EnterAnimation(arg0_14, arg1_14)
+	local var0_14 = arg0_14.frameTr.sizeDelta.x
 
-	LeanTween.value(arg0._tf.gameObject, var0, 0, 0.3):setOnUpdate(System.Action_float(function(arg0)
-		arg0._tf.localPosition = Vector3(arg0, arg0._tf.localPosition.y, 0)
-	end)):setFrom(var0):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(arg1))
+	LeanTween.value(arg0_14._tf.gameObject, var0_14, 0, 0.3):setOnUpdate(System.Action_float(function(arg0_15)
+		arg0_14._tf.localPosition = Vector3(arg0_15, arg0_14._tf.localPosition.y, 0)
+	end)):setFrom(var0_14):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(arg1_14))
 end
 
-function var0.InitList(arg0, arg1, arg2, arg3)
-	arg0.cryptolaliaId = arg3
-	arg0.langType = arg2
-	arg0.displays = arg1
+function var0_0.InitList(arg0_16, arg1_16, arg2_16, arg3_16)
+	arg0_16.cryptolaliaId = arg3_16
+	arg0_16.langType = arg2_16
+	arg0_16.displays = arg1_16
 
-	arg0.scrollrect:SetTotalCount(#arg0.displays)
+	arg0_16.scrollrect:SetTotalCount(#arg0_16.displays)
 
-	arg0.subTitleTxt.text = i18n("cryptolalia_list_subtitle", #arg0.displays)
+	arg0_16.subTitleTxt.text = i18n("cryptolalia_list_subtitle", #arg0_16.displays)
 end
 
-function var0.RegisterEvent(arg0)
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+function var0_0.RegisterEvent(arg0_17)
+	onButton(arg0_17, arg0_17._tf, function()
+		arg0_17:Hide()
 	end, SFX_PANEL)
 end
 
-function var0.Hide(arg0)
-	var0.super.Hide(arg0)
-	removeOnButton(arg0._tf)
+function var0_0.Hide(arg0_19)
+	var0_0.super.Hide(arg0_19)
+	removeOnButton(arg0_19._tf)
 
-	if LeanTween.isTweening(arg0._tf.gameObject) then
-		LeanTween.cancel(arg0._tf.gameObject)
+	if LeanTween.isTweening(arg0_19._tf.gameObject) then
+		LeanTween.cancel(arg0_19._tf.gameObject)
 	end
 end
 
-function var0.SelectCard(arg0, arg1)
-	arg0:emit(CryptolaliaScene.ON_SELECT, arg1)
+function var0_0.SelectCard(arg0_20, arg1_20)
+	arg0_20:emit(CryptolaliaScene.ON_SELECT, arg1_20)
 end
 
-function var0.OnDestroy(arg0)
-	for iter0, iter1 in pairs(arg0.cards) do
-		iter1:Dispose()
+function var0_0.OnDestroy(arg0_21)
+	for iter0_21, iter1_21 in pairs(arg0_21.cards) do
+		iter1_21:Dispose()
 	end
 
-	arg0.cards = {}
+	arg0_21.cards = {}
 
-	ClearLScrollrect(arg0.scrollrect)
+	ClearLScrollrect(arg0_21.scrollrect)
 end
 
-return var0
+return var0_0

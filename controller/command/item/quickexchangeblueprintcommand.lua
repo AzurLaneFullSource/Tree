@@ -1,27 +1,27 @@
-﻿local var0 = class("QuickExchangeBlueprintCommand", pm.SimpleCommand)
+﻿local var0_0 = class("QuickExchangeBlueprintCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = getProxy(BagProxy)
-	local var2 = {}
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = getProxy(BagProxy)
+	local var2_1 = {}
 
 	pg.ConnectionMgr.GetInstance():Send(15012, {
-		use_list = var0
-	}, 15013, function(arg0)
-		for iter0, iter1 in ipairs(arg0.ret_list) do
-			if iter1.result == 0 then
-				local var0 = var0[iter0]
+		use_list = var0_1
+	}, 15013, function(arg0_2)
+		for iter0_2, iter1_2 in ipairs(arg0_2.ret_list) do
+			if iter1_2.result == 0 then
+				local var0_2 = var0_1[iter0_2]
 
-				var1:removeItemById(var0.id, var0.count)
+				var1_1:removeItemById(var0_2.id, var0_2.count)
 
-				var2 = table.mergeArray(var2, PlayerConst.addTranDrop(iter1.drop_list))
+				var2_1 = table.mergeArray(var2_1, PlayerConst.addTranDrop(iter1_2.drop_list))
 			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0.result))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0_2.result))
 			end
 		end
 
-		arg0:sendNotification(GAME.QUICK_EXCHANGE_BLUEPRINT_DONE, var2)
+		arg0_1:sendNotification(GAME.QUICK_EXCHANGE_BLUEPRINT_DONE, var2_1)
 	end)
 end
 
-return var0
+return var0_0

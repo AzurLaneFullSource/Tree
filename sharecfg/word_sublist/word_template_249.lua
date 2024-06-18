@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_249 = {}
+var0_0.word_template_249 = {}
 
-local var1 = var0.word_template_249
+local var1_0 = var0_0.word_template_249
 
 function temp()
-	var1.蠕 = {
+	var1_0.蠕 = {
 		动 = {
 			this = true,
 			着 = {
@@ -20,7 +20,7 @@ end
 temp()
 
 function temp()
-	var1.顬 = {
+	var1_0.顬 = {
 		this = {
 			this = true
 		}
@@ -30,7 +30,7 @@ end
 temp()
 
 function temp()
-	var1.乳 = {
+	var1_0.乳 = {
 		f = {
 			a = {
 				n = {
@@ -243,7 +243,7 @@ end
 temp()
 
 function temp()
-	var1.入 = {
+	var1_0.入 = {
 		穴 = {
 			一 = {
 				游 = {
@@ -257,7 +257,7 @@ end
 temp()
 
 function temp()
-	var1.软 = {
+	var1_0.软 = {
 		妹 = {
 			this = true
 		},
@@ -274,7 +274,7 @@ end
 temp()
 
 function temp()
-	var1.軟 = {
+	var1_0.軟 = {
 		妹 = {
 			this = true
 		}
@@ -284,7 +284,7 @@ end
 temp()
 
 function temp()
-	var1.瑞 = {
+	var1_0.瑞 = {
 		典 = {
 			维 = {
 				吾 = {

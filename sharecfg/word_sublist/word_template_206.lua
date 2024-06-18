@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_206 = {}
+var0_0.word_template_206 = {}
 
-local var1 = var0.word_template_206
+local var1_0 = var0_0.word_template_206
 
 function temp()
-	var1.秘 = {
+	var1_0.秘 = {
 		部 = {
 			this = true
 		},
@@ -69,7 +69,7 @@ end
 temp()
 
 function temp()
-	var1.密 = {
+	var1_0.密 = {
 		洞 = {
 			this = true
 		},
@@ -105,7 +105,7 @@ end
 temp()
 
 function temp()
-	var1.蜜 = {
+	var1_0.蜜 = {
 		唇 = {
 			this = true
 		},
@@ -148,7 +148,7 @@ end
 temp()
 
 function temp()
-	var1.綿 = {
+	var1_0.綿 = {
 		恒 = {
 			this = true
 		}
@@ -158,7 +158,7 @@ end
 temp()
 
 function temp()
-	var1.免 = {
+	var1_0.免 = {
 		抵 = {
 			押 = {
 				贷 = {
@@ -348,7 +348,7 @@ end
 temp()
 
 function temp()
-	var1.缅 = {
+	var1_0.缅 = {
 		古 = {
 			this = true
 		},
@@ -368,7 +368,7 @@ end
 temp()
 
 function temp()
-	var1.面 = {
+	var1_0.面 = {
 		部 = {
 			整 = {
 				形 = {

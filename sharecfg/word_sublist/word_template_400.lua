@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_400 = {}
+var0_0.word_template_400 = {}
 
-local var1 = var0.word_template_400
+local var1_0 = var0_0.word_template_400
 
 function temp()
-	var1.休 = {
+	var1_0.休 = {
 		整 = {
 			路 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.糠 = {
+	var1_0.糠 = {
 		米 = {
 			军 = {
 				this = true
@@ -31,7 +31,7 @@ end
 temp()
 
 function temp()
-	var1.兆 = {
+	var1_0.兆 = {
 		家 = {
 			心 = {
 				this = true
@@ -56,7 +56,7 @@ end
 temp()
 
 function temp()
-	var1.境 = {
+	var1_0.境 = {
 		外 = {
 			有 = {
 				种 = {
@@ -96,7 +96,7 @@ end
 temp()
 
 function temp()
-	var1.臘 = {
+	var1_0.臘 = {
 		禸 = {
 			this = true
 		}
@@ -106,7 +106,7 @@ end
 temp()
 
 function temp()
-	var1.菠 = {
+	var1_0.菠 = {
 		犀 = {
 			来 = {
 				this = true
@@ -123,7 +123,7 @@ end
 temp()
 
 function temp()
-	var1.笠 = {
+	var1_0.笠 = {
 		战 = {
 			书 = {
 				this = true
@@ -135,7 +135,7 @@ end
 temp()
 
 function temp()
-	var1.茗 = {
+	var1_0.茗 = {
 		泽 = {
 			溪 = {
 				this = true
@@ -147,7 +147,7 @@ end
 temp()
 
 function temp()
-	var1.珖 = {
+	var1_0.珖 = {
 		掂 = {
 			总 = {
 				局 = {
@@ -161,7 +161,7 @@ end
 temp()
 
 function temp()
-	var1.琴 = {
+	var1_0.琴 = {
 		城 = {
 			监 = {
 				狱 = {
@@ -175,7 +175,7 @@ end
 temp()
 
 function temp()
-	var1.寡 = {
+	var1_0.寡 = {
 		人 = {
 			只 = {
 				想 = {
@@ -208,7 +208,7 @@ end
 temp()
 
 function temp()
-	var1.化 = {
+	var1_0.化 = {
 		锅 = {
 			风 = {
 				this = true
@@ -220,7 +220,7 @@ end
 temp()
 
 function temp()
-	var1.闽 = {
+	var1_0.闽 = {
 		江 = {
 			新 = {
 				军 = {
@@ -234,7 +234,7 @@ end
 temp()
 
 function temp()
-	var1.浦 = {
+	var1_0.浦 = {
 		江 = {
 			新 = {
 				军 = {
@@ -248,7 +248,7 @@ end
 temp()
 
 function temp()
-	var1.画 = {
+	var1_0.画 = {
 		〇 = {
 			的 = {
 				那 = {
@@ -264,7 +264,7 @@ end
 temp()
 
 function temp()
-	var1.紫 = {
+	var1_0.紫 = {
 		禅 = {
 			接 = {
 				机 = {
@@ -289,7 +289,7 @@ end
 temp()
 
 function temp()
-	var1.钲 = {
+	var1_0.钲 = {
 		国 = {
 			级 = {
 				this = true
@@ -301,7 +301,7 @@ end
 temp()
 
 function temp()
-	var1.O = {
+	var1_0.O = {
 		["2"] = {
 			A = {
 				g = {
@@ -333,7 +333,7 @@ end
 temp()
 
 function temp()
-	var1.佈 = {
+	var1_0.佈 = {
 		熙 = {
 			涞 = {
 				this = true
@@ -345,7 +345,7 @@ end
 temp()
 
 function temp()
-	var1.荷 = {
+	var1_0.荷 = {
 		韵 = {
 			诗 = {
 				this = true
@@ -357,7 +357,7 @@ end
 temp()
 
 function temp()
-	var1.储 = {
+	var1_0.储 = {
 		阳 = {
 			this = true
 		}
@@ -367,7 +367,7 @@ end
 temp()
 
 function temp()
-	var1.灬 = {
+	var1_0.灬 = {
 		占 = {
 			占 = {
 				占 = {
@@ -383,7 +383,7 @@ end
 temp()
 
 function temp()
-	var1.填 = {
+	var1_0.填 = {
 		空 = {
 			题 = {
 				[" "] = {
@@ -419,7 +419,7 @@ end
 temp()
 
 function temp()
-	var1.滋 = {
+	var1_0.滋 = {
 		磁 = {
 			也 = {
 				要 = {
@@ -443,7 +443,7 @@ end
 temp()
 
 function temp()
-	var1["*"] = {
+	var1_0["*"] = {
 		["*"] = {
 			也 = {
 				要 = {
@@ -530,7 +530,7 @@ end
 temp()
 
 function temp()
-	var1.甚 = {
+	var1_0.甚 = {
 		精 = {
 			this = true
 		}
@@ -540,7 +540,7 @@ end
 temp()
 
 function temp()
-	var1.谷 = {
+	var1_0.谷 = {
 		景 = {
 			生 = {
 				this = true
@@ -568,7 +568,7 @@ end
 temp()
 
 function temp()
-	var1.头 = {
+	var1_0.头 = {
 		上 = {
 			s = {
 				c = {
@@ -618,7 +618,7 @@ end
 temp()
 
 function temp()
-	var1.淮 = {
+	var1_0.淮 = {
 		["\\"] = {
 			x = {
 				["{"] = {
@@ -670,7 +670,7 @@ end
 temp()
 
 function temp()
-	var1.Ξ = {
+	var1_0.Ξ = {
 		大 = {
 			this = true
 		}
@@ -680,7 +680,7 @@ end
 temp()
 
 function temp()
-	var1.笑 = {
+	var1_0.笑 = {
 		贫 = {
 			酮 = {
 				痔 = {
@@ -743,7 +743,7 @@ end
 temp()
 
 function temp()
-	var1.芝 = {
+	var1_0.芝 = {
 		麻 = {
 			猪 = {
 				this = true
@@ -755,7 +755,7 @@ end
 temp()
 
 function temp()
-	var1.扬 = {
+	var1_0.扬 = {
 		上 = {
 			昆 = {
 				this = true
@@ -816,7 +816,7 @@ end
 temp()
 
 function temp()
-	var1.企 = {
+	var1_0.企 = {
 		国 = {
 			同 = {
 				构 = {
@@ -830,7 +830,7 @@ end
 temp()
 
 function temp()
-	var1.鲤 = {
+	var1_0.鲤 = {
 		虹 = {
 			智 = {
 				this = true
@@ -842,7 +842,7 @@ end
 temp()
 
 function temp()
-	var1.腊 = {
+	var1_0.腊 = {
 		哥 = {
 			this = true
 		},
@@ -857,7 +857,7 @@ end
 temp()
 
 function temp()
-	var1.蚉 = {
+	var1_0.蚉 = {
 		化 = {
 			大 = {
 				铬 = {
@@ -873,7 +873,7 @@ end
 temp()
 
 function temp()
-	var1.R = {
+	var1_0.R = {
 		M = {
 			正 = {
 				负 = {
@@ -986,7 +986,7 @@ end
 temp()
 
 function temp()
-	var1.蔷 = {
+	var1_0.蔷 = {
 		仔 = {
 			说 = {
 				电 = {
@@ -1002,7 +1002,7 @@ end
 temp()
 
 function temp()
-	var1.薇 = {
+	var1_0.薇 = {
 		羽 = {
 			看 = {
 				世 = {
@@ -1041,7 +1041,7 @@ end
 temp()
 
 function temp()
-	var1.睿 = {
+	var1_0.睿 = {
 		眼 = {
 			看 = {
 				世 = {
@@ -1057,7 +1057,7 @@ end
 temp()
 
 function temp()
-	var1.牆 = {
+	var1_0.牆 = {
 		囻 = {
 			籠 = {
 				民 = {
@@ -1081,7 +1081,7 @@ end
 temp()
 
 function temp()
-	var1.冮 = {
+	var1_0.冮 = {
 		译 = {
 			珉 = {
 				this = true
@@ -1093,7 +1093,7 @@ end
 temp()
 
 function temp()
-	var1["^"] = {
+	var1_0["^"] = {
 		["8"] = {
 			["8"] = {
 				["9"] = {
@@ -1119,7 +1119,7 @@ end
 temp()
 
 function temp()
-	var1.《 = {
+	var1_0.《 = {
 		赢 = {
 			麻 = {
 				了 = {
@@ -1273,7 +1273,7 @@ end
 temp()
 
 function temp()
-	var1.咒 = {
+	var1_0.咒 = {
 		雍 = {
 			炕 = {
 				this = true
@@ -1285,7 +1285,7 @@ end
 temp()
 
 function temp()
-	var1.资 = {
+	var1_0.资 = {
 		产 = {
 			转 = {
 				移 = {
@@ -1316,7 +1316,7 @@ end
 temp()
 
 function temp()
-	var1.孝 = {
+	var1_0.孝 = {
 		子 = {
 			北 = {
 				伐 = {
@@ -1336,7 +1336,7 @@ end
 temp()
 
 function temp()
-	var1.↑ = {
+	var1_0.↑ = {
 		面 = {
 			自 = {
 				愿 = {
@@ -1354,7 +1354,7 @@ end
 temp()
 
 function temp()
-	var1.裕 = {
+	var1_0.裕 = {
 		达 = {
 			国 = {
 				贸 = {
@@ -1368,7 +1368,7 @@ end
 temp()
 
 function temp()
-	var1.量 = {
+	var1_0.量 = {
 		子 = {
 			少 = {
 				年 = {
@@ -1388,7 +1388,7 @@ end
 temp()
 
 function temp()
-	var1.牌 = {
+	var1_0.牌 = {
 		席 = {
 			痘 = {
 				蒸 = {
@@ -1402,7 +1402,7 @@ end
 temp()
 
 function temp()
-	var1.拥 = {
+	var1_0.拥 = {
 		习 = {
 			反 = {
 				邓 = {
@@ -1416,7 +1416,7 @@ end
 temp()
 
 function temp()
-	var1.蛭 = {
+	var1_0.蛭 = {
 		畜 = {
 			是 = {
 				这 = {
@@ -1434,7 +1434,7 @@ end
 temp()
 
 function temp()
-	var1.饥 = {
+	var1_0.饥 = {
 		荒 = {
 			饿 = {
 				死 = {
@@ -1464,7 +1464,7 @@ end
 temp()
 
 function temp()
-	var1.櫈 = {
+	var1_0.櫈 = {
 		["\\"] = {
 			S = {
 				缾 = {
@@ -1488,7 +1488,7 @@ end
 temp()
 
 function temp()
-	var1.敌 = {
+	var1_0.敌 = {
 		在 = {
 			东 = {
 				湖 = {
@@ -1506,7 +1506,7 @@ end
 temp()
 
 function temp()
-	var1.咏 = {
+	var1_0.咏 = {
 		芝 = {
 			this = true
 		}
@@ -1516,7 +1516,7 @@ end
 temp()
 
 function temp()
-	var1.然 = {
+	var1_0.然 = {
 		后 = {
 			把 = {
 				他 = {
@@ -1562,7 +1562,7 @@ end
 temp()
 
 function temp()
-	var1.彻 = {
+	var1_0.彻 = {
 		底 = {
 			地 = {
 				羞 = {
@@ -1592,7 +1592,7 @@ end
 temp()
 
 function temp()
-	var1.膜 = {
+	var1_0.膜 = {
 		法 = {
 			师 = {
 				this = true
@@ -1604,7 +1604,7 @@ end
 temp()
 
 function temp()
-	var1.佟 = {
+	var1_0.佟 = {
 		姥 = {
 			老 = {
 				公 = {
@@ -1647,7 +1647,7 @@ end
 temp()
 
 function temp()
-	var1.厦 = {
+	var1_0.厦 = {
 		门 = {
 			特 = {
 				区 = {
@@ -1665,7 +1665,7 @@ end
 temp()
 
 function temp()
-	var1.减 = {
+	var1_0.减 = {
 		薪 = {
 			办 = {
 				this = true
@@ -1677,7 +1677,7 @@ end
 temp()
 
 function temp()
-	var1.棺 = {
+	var1_0.棺 = {
 		猿 = {
 			this = true
 		}
@@ -1687,7 +1687,7 @@ end
 temp()
 
 function temp()
-	var1.葛 = {
+	var1_0.葛 = {
 		亦 = {
 			民 = {
 				为 = {
@@ -1750,7 +1750,7 @@ end
 temp()
 
 function temp()
-	var1.刃 = {
+	var1_0.刃 = {
 		支 = {
 			this = true
 		}
@@ -1760,7 +1760,7 @@ end
 temp()
 
 function temp()
-	var1.踏 = {
+	var1_0.踏 = {
 		稻 = {
 			无 = {
 				痕 = {
@@ -1774,7 +1774,7 @@ end
 temp()
 
 function temp()
-	var1.憋 = {
+	var1_0.憋 = {
 		侃 = {
 			金 = {
 				舔 = {
@@ -1794,7 +1794,7 @@ end
 temp()
 
 function temp()
-	var1.晰 = {
+	var1_0.晰 = {
 		镜 = {
 			贫 = {
 				this = true
@@ -1806,7 +1806,7 @@ end
 temp()
 
 function temp()
-	var1.腾 = {
+	var1_0.腾 = {
 		宇 = {
 			this = true
 		}
@@ -1816,7 +1816,7 @@ end
 temp()
 
 function temp()
-	var1.モ = {
+	var1_0.モ = {
 		沢 = {
 			鸫 = {
 				this = true
@@ -1828,7 +1828,7 @@ end
 temp()
 
 function temp()
-	var1.犹 = {
+	var1_0.犹 = {
 		记 = {
 			太 = {
 				祖 = {
@@ -1868,7 +1868,7 @@ end
 temp()
 
 function temp()
-	var1.鲐 = {
+	var1_0.鲐 = {
 		湾 = {
 			国 = {
 				this = true
@@ -1880,7 +1880,7 @@ end
 temp()
 
 function temp()
-	var1.篮 = {
+	var1_0.篮 = {
 		v = {
 			团 = {
 				建 = {
@@ -1894,7 +1894,7 @@ end
 temp()
 
 function temp()
-	var1.啞 = {
+	var1_0.啞 = {
 		啞 = {
 			this = true
 		}
@@ -1904,7 +1904,7 @@ end
 temp()
 
 function temp()
-	var1.烽 = {
+	var1_0.烽 = {
 		火 = {
 			戏 = {
 				诸 = {
@@ -1926,7 +1926,7 @@ end
 temp()
 
 function temp()
-	var1.桶 = {
+	var1_0.桶 = {
 		里 = {
 			牙 = {
 				this = true
@@ -1938,7 +1938,7 @@ end
 temp()
 
 function temp()
-	var1.忄 = {
+	var1_0.忄 = {
 		真 = {
 			氵 = {
 				每 = {
@@ -1956,7 +1956,7 @@ end
 temp()
 
 function temp()
-	var1.亻 = {
+	var1_0.亻 = {
 		冬 = {
 			粒 = {
 				亚 = {
@@ -1970,7 +1970,7 @@ end
 temp()
 
 function temp()
-	var1.菇 = {
+	var1_0.菇 = {
 		武 = {
 			门 = {
 				this = true
@@ -1982,7 +1982,7 @@ end
 temp()
 
 function temp()
-	var1.舍 = {
+	var1_0.舍 = {
 		汇 = {
 			煮 = {
 				艺 = {
@@ -1996,7 +1996,7 @@ end
 temp()
 
 function temp()
-	var1.馆 = {
+	var1_0.馆 = {
 		猿 = {
 			this = true
 		}
@@ -2006,7 +2006,7 @@ end
 temp()
 
 function temp()
-	var1.夕 = {
+	var1_0.夕 = {
 		夕 = {
 			踢 = {
 				薇 = {
@@ -2027,7 +2027,7 @@ end
 temp()
 
 function temp()
-	var1.燥 = {
+	var1_0.燥 = {
 		仔 = {
 			["\\"] = {
 				x = {
@@ -2055,7 +2055,7 @@ end
 temp()
 
 function temp()
-	var1.皓 = {
+	var1_0.皓 = {
 		海 = {
 			东 = {
 				this = true
@@ -2067,7 +2067,7 @@ end
 temp()
 
 function temp()
-	var1.丑 = {
+	var1_0.丑 = {
 		港 = {
 			this = true
 		}
@@ -2077,7 +2077,7 @@ end
 temp()
 
 function temp()
-	var1.缑 = {
+	var1_0.缑 = {
 		利 = {
 			过 = {
 				家 = {
@@ -2110,7 +2110,7 @@ end
 temp()
 
 function temp()
-	var1.句 = {
+	var1_0.句 = {
 		禾 = {
 			囗 = {
 				豕 = {
@@ -2130,7 +2130,7 @@ end
 temp()
 
 function temp()
-	var1.玖 = {
+	var1_0.玖 = {
 		平 = {
 			共 = {
 				产 = {
@@ -2146,7 +2146,7 @@ end
 temp()
 
 function temp()
-	var1.悔 = {
+	var1_0.悔 = {
 		相 = {
 			稻 = {
 				之 = {
@@ -2180,7 +2180,7 @@ end
 temp()
 
 function temp()
-	var1.轁 = {
+	var1_0.轁 = {
 		上 = {
 			飝 = {
 				this = true
@@ -2192,7 +2192,7 @@ end
 temp()
 
 function temp()
-	var1.韬 = {
+	var1_0.韬 = {
 		上 = {
 			飝 = {
 				this = true
@@ -2204,7 +2204,7 @@ end
 temp()
 
 function temp()
-	var1.笳 = {
+	var1_0.笳 = {
 		Ⅰ = {
 			妙 = {
 				this = true
@@ -2216,7 +2216,7 @@ end
 temp()
 
 function temp()
-	var1.伶 = {
+	var1_0.伶 = {
 		计 = {
 			划 = {
 				this = true
@@ -2228,7 +2228,7 @@ end
 temp()
 
 function temp()
-	var1.扽 = {
+	var1_0.扽 = {
 		孝 = {
 			平 = {
 				this = true
@@ -2240,7 +2240,7 @@ end
 temp()
 
 function temp()
-	var1.怔 = {
+	var1_0.怔 = {
 		帼 = {
 			级 = {
 				this = true
@@ -2252,7 +2252,7 @@ end
 temp()
 
 function temp()
-	var1.惯 = {
+	var1_0.惯 = {
 		性 = {
 			谎 = {
 				言 = {
@@ -2266,7 +2266,7 @@ end
 temp()
 
 function temp()
-	var1.倡 = {
+	var1_0.倡 = {
 		民 = {
 			主 = {
 				坚 = {
@@ -2298,7 +2298,7 @@ end
 temp()
 
 function temp()
-	var1.樑 = {
+	var1_0.樑 = {
 		稼 = {
 			訶 = {
 				this = true
@@ -2310,7 +2310,7 @@ end
 temp()
 
 function temp()
-	var1.Y = {
+	var1_0.Y = {
 		G = {
 			z = {
 				Q = {
@@ -2338,7 +2338,7 @@ end
 temp()
 
 function temp()
-	var1.涡 = {
+	var1_0.涡 = {
 		潍 = {
 			涨 = {
 				蔗 = {
@@ -2358,7 +2358,7 @@ end
 temp()
 
 function temp()
-	var1.卧 = {
+	var1_0.卧 = {
 		位 = {
 			漳 = {
 				折 = {
@@ -2378,7 +2378,7 @@ end
 temp()
 
 function temp()
-	var1.牲 = {
+	var1_0.牲 = {
 		口 = {
 			红 = {
 				利 = {
@@ -2392,7 +2392,7 @@ end
 temp()
 
 function temp()
-	var1.荀 = {
+	var1_0.荀 = {
 		涖 = {
 			囯 = {
 				冢 = {
@@ -2414,7 +2414,7 @@ end
 temp()
 
 function temp()
-	var1.螿 = {
+	var1_0.螿 = {
 		蠌 = {
 			蛤 = {
 				this = true
@@ -2426,7 +2426,7 @@ end
 temp()
 
 function temp()
-	var1.丷 = {
+	var1_0.丷 = {
 		久 = {
 			哖 = {
 				陆 = {
@@ -2452,7 +2452,7 @@ end
 temp()
 
 function temp()
-	var1.枸 = {
+	var1_0.枸 = {
 		栗 = {
 			果 = {
 				荚 = {
@@ -2472,7 +2472,7 @@ end
 temp()
 
 function temp()
-	var1.膊 = {
+	var1_0.膊 = {
 		茜 = {
 			来 = {
 				this = true
@@ -2484,7 +2484,7 @@ end
 temp()
 
 function temp()
-	var1.责 = {
+	var1_0.责 = {
 		丼 = {
 			this = true
 		}
@@ -2494,7 +2494,7 @@ end
 temp()
 
 function temp()
-	var1.楚 = {
+	var1_0.楚 = {
 		辰 = {
 			接 = {
 				班 = {
@@ -2508,7 +2508,7 @@ end
 temp()
 
 function temp()
-	var1.骏 = {
+	var1_0.骏 = {
 		屏 = {
 			this = true
 		}
@@ -2518,7 +2518,7 @@ end
 temp()
 
 function temp()
-	var1.苔 = {
+	var1_0.苔 = {
 		毒 = {
 			this = true
 		}
@@ -2528,7 +2528,7 @@ end
 temp()
 
 function temp()
-	var1.底 = {
+	var1_0.底 = {
 		线 = {
 			橡 = {
 				皮 = {
@@ -2544,7 +2544,7 @@ end
 temp()
 
 function temp()
-	var1.⺼ = {
+	var1_0.⺼ = {
 		莫 = {
 			铪 = {
 				this = true
@@ -2556,7 +2556,7 @@ end
 temp()
 
 function temp()
-	var1.旒 = {
+	var1_0.旒 = {
 		四 = {
 			事 = {
 				件 = {
@@ -2570,7 +2570,7 @@ end
 temp()
 
 function temp()
-	var1.居 = {
+	var1_0.居 = {
 		榕 = {
 			基 = {
 				this = true
@@ -2582,7 +2582,7 @@ end
 temp()
 
 function temp()
-	var1.绪 = {
+	var1_0.绪 = {
 		一 = {
 			妙 = {
 				this = true
@@ -2594,7 +2594,7 @@ end
 temp()
 
 function temp()
-	var1.嘘 = {
+	var1_0.嘘 = {
 		一 = {
 			喵 = {
 				this = true
@@ -2606,7 +2606,7 @@ end
 temp()
 
 function temp()
-	var1.怒 = {
+	var1_0.怒 = {
 		斥 = {
 			二 = {
 				院 = {
@@ -2624,7 +2624,7 @@ end
 temp()
 
 function temp()
-	var1.返 = {
+	var1_0.返 = {
 		拱 = {
 			this = true
 		}
@@ -2634,7 +2634,7 @@ end
 temp()
 
 function temp()
-	var1.钞 = {
+	var1_0.钞 = {
 		票 = {
 			上 = {
 				那 = {
@@ -2654,7 +2654,7 @@ end
 temp()
 
 function temp()
-	var1.総 = {
+	var1_0.総 = {
 		書 = {
 			计 = {
 				this = true
@@ -2666,7 +2666,7 @@ end
 temp()
 
 function temp()
-	var1.雊 = {
+	var1_0.雊 = {
 		栗 = {
 			过 = {
 				家 = {
@@ -2686,7 +2686,7 @@ end
 temp()
 
 function temp()
-	var1.孛 = {
+	var1_0.孛 = {
 		檄 = {
 			来 = {
 				this = true
@@ -2698,7 +2698,7 @@ end
 temp()
 
 function temp()
-	var1.蹈 = {
+	var1_0.蹈 = {
 		上 = {
 			灰 = {
 				this = true
@@ -2710,7 +2710,7 @@ end
 temp()
 
 function temp()
-	var1.ピ = {
+	var1_0.ピ = {
 		リ = {
 			ピ = {
 				リ = {
@@ -2736,7 +2736,7 @@ end
 temp()
 
 function temp()
-	var1.钆 = {
+	var1_0.钆 = {
 		的 = {
 			事 = {
 				情 = {
@@ -2755,7 +2755,7 @@ end
 temp()
 
 function temp()
-	var1.也 = {
+	var1_0.也 = {
 		非 = {
 			罗 = {
 				马 = {
@@ -2776,7 +2776,7 @@ end
 temp()
 
 function temp()
-	var1.ろ = {
+	var1_0.ろ = {
 		く = {
 			じ = {
 				ゅ = {
@@ -2796,7 +2796,7 @@ end
 temp()
 
 function temp()
-	var1.乇 = {
+	var1_0.乇 = {
 		尺 = {
 			西 = {
 				this = true
@@ -2808,7 +2808,7 @@ end
 temp()
 
 function temp()
-	var1.锅 = {
+	var1_0.锅 = {
 		加 = {
 			整 = {
 				册 = {
@@ -2822,7 +2822,7 @@ end
 temp()
 
 function temp()
-	var1.鉌 = {
+	var1_0.鉌 = {
 		锌 = {
 			价 = {
 				值 = {
@@ -2838,7 +2838,7 @@ end
 temp()
 
 function temp()
-	var1.Ⅵ = {
+	var1_0.Ⅵ = {
 		肆 = {
 			this = true
 		}
@@ -2848,7 +2848,7 @@ end
 temp()
 
 function temp()
-	var1.闰 = {
+	var1_0.闰 = {
 		年 = {
 			第 = {
 				["1"] = {
@@ -2868,7 +2868,7 @@ end
 temp()
 
 function temp()
-	var1.茳 = {
+	var1_0.茳 = {
 		青 = {
 			this = true
 		}
@@ -2878,7 +2878,7 @@ end
 temp()
 
 function temp()
-	var1.瓜 = {
+	var1_0.瓜 = {
 		瓜 = {
 			是 = {
 				他 = {
@@ -2896,7 +2896,7 @@ end
 temp()
 
 function temp()
-	var1.俩 = {
+	var1_0.俩 = {
 		h = {
 			u = {
 				i = {
@@ -2910,7 +2910,7 @@ end
 temp()
 
 function temp()
-	var1.评 = {
+	var1_0.评 = {
 		论 = {
 			区 = {
 				清 = {
@@ -2926,7 +2926,7 @@ end
 temp()
 
 function temp()
-	var1.陶 = {
+	var1_0.陶 = {
 		某 = {
 			文 = {
 				this = true
@@ -2944,7 +2944,7 @@ end
 temp()
 
 function temp()
-	var1.渔 = {
+	var1_0.渔 = {
 		勾 = {
 			中 = {
 				学 = {
@@ -2958,7 +2958,7 @@ end
 temp()
 
 function temp()
-	var1.鱼 = {
+	var1_0.鱼 = {
 		钩 = {
 			中 = {
 				学 = {
@@ -2977,7 +2977,7 @@ end
 temp()
 
 function temp()
-	var1.泸 = {
+	var1_0.泸 = {
 		国 = {
 			this = true
 		}
@@ -2987,7 +2987,7 @@ end
 temp()
 
 function temp()
-	var1.I = {
+	var1_0.I = {
 		F = {
 			C = {
 				S = {
@@ -3003,7 +3003,7 @@ end
 temp()
 
 function temp()
-	var1.闯 = {
+	var1_0.闯 = {
 		王 = {
 			进 = {
 				京 = {
@@ -3028,7 +3028,7 @@ end
 temp()
 
 function temp()
-	var1.龚 = {
+	var1_0.龚 = {
 		惨 = {
 			挡 = {
 				this = true
@@ -3040,7 +3040,7 @@ end
 temp()
 
 function temp()
-	var1.汁 = {
+	var1_0.汁 = {
 		腊 = {
 			猪 = {
 				this = true
@@ -3052,7 +3052,7 @@ end
 temp()
 
 function temp()
-	var1.丿 = {
+	var1_0.丿 = {
 		["\\"] = {
 			[" "] = {
 				九 = {
@@ -3070,7 +3070,7 @@ end
 temp()
 
 function temp()
-	var1.崴 = {
+	var1_0.崴 = {
 		脚 = {
 			布 = {
 				this = true
@@ -3082,7 +3082,7 @@ end
 temp()
 
 function temp()
-	var1.豆 = {
+	var1_0.豆 = {
 		包 = {
 			和 = {
 				馅 = {
@@ -3135,7 +3135,7 @@ end
 temp()
 
 function temp()
-	var1.馅 = {
+	var1_0.馅 = {
 		饼 = {
 			和 = {
 				豆 = {
@@ -3168,7 +3168,7 @@ end
 temp()
 
 function temp()
-	var1.戏 = {
+	var1_0.戏 = {
 		子 = {
 			不 = {
 				知 = {
@@ -3217,7 +3217,7 @@ end
 temp()
 
 function temp()
-	var1.丧 = {
+	var1_0.丧 = {
 		事 = {
 			喜 = {
 				办 = {
@@ -3231,7 +3231,7 @@ end
 temp()
 
 function temp()
-	var1.沪 = {
+	var1_0.沪 = {
 		c = {
 			a = {
 				r = {
@@ -3319,7 +3319,7 @@ end
 temp()
 
 function temp()
-	var1.郎 = {
+	var1_0.郎 = {
 		咸 = {
 			平 = {
 				母 = {
@@ -3335,7 +3335,7 @@ end
 temp()
 
 function temp()
-	var1.币 = {
+	var1_0.币 = {
 		棺 = {
 			嗦 = {
 				国 = {
@@ -3349,7 +3349,7 @@ end
 temp()
 
 function temp()
-	var1.掩 = {
+	var1_0.掩 = {
 		耳 = {
 			到 = {
 				零 = {
@@ -3363,7 +3363,7 @@ end
 temp()
 
 function temp()
-	var1.辟 = {
+	var1_0.辟 = {
 		谣 = {
 			爆 = {
 				this = true
@@ -3375,7 +3375,7 @@ end
 temp()
 
 function temp()
-	var1.猾 = {
+	var1_0.猾 = {
 		媋 = {
 			赢 = {
 				this = true
@@ -3387,7 +3387,7 @@ end
 temp()
 
 function temp()
-	var1.虹 = {
+	var1_0.虹 = {
 		口 = {
 			区 = {
 				卫 = {
@@ -3417,7 +3417,7 @@ end
 temp()
 
 function temp()
-	var1.茹 = {
+	var1_0.茹 = {
 		仙 = {
 			· = {
 				阿 = {
@@ -3435,7 +3435,7 @@ end
 temp()
 
 function temp()
-	var1.豿 = {
+	var1_0.豿 = {
 		狸 = {
 			蝈 = {
 				袈 = {
@@ -3449,7 +3449,7 @@ end
 temp()
 
 function temp()
-	var1.玺 = {
+	var1_0.玺 = {
 		帝 = {
 			登 = {
 				基 = {
@@ -3463,7 +3463,7 @@ end
 temp()
 
 function temp()
-	var1.乎 = {
+	var1_0.乎 = {
 		字 = {
 			理 = {
 				直 = {
@@ -3485,7 +3485,7 @@ end
 temp()
 
 function temp()
-	var1.挑 = {
+	var1_0.挑 = {
 		小 = {
 			麦 = {
 				this = true
@@ -3497,7 +3497,7 @@ end
 temp()
 
 function temp()
-	var1.灾 = {
+	var1_0.灾 = {
 		区 = {
 			都 = {
 				不 = {
@@ -3515,7 +3515,7 @@ end
 temp()
 
 function temp()
-	var1.雍 = {
+	var1_0.雍 = {
 		正 = {
 			即 = {
 				位 = {
@@ -3529,7 +3529,7 @@ end
 temp()
 
 function temp()
-	var1.汲 = {
+	var1_0.汲 = {
 		取 = {
 			血 = {
 				的 = {
@@ -3589,7 +3589,7 @@ end
 temp()
 
 function temp()
-	var1.韦 = {
+	var1_0.韦 = {
 		将 = {
 			军 = {
 				this = true
@@ -3617,7 +3617,7 @@ end
 temp()
 
 function temp()
-	var1.著 = {
+	var1_0.著 = {
 		名 = {
 			捂 = {
 				四 = {
@@ -3635,7 +3635,7 @@ end
 temp()
 
 function temp()
-	var1.很 = {
+	var1_0.很 = {
 		酷 = {
 			， = {
 				说 = {
@@ -3655,7 +3655,7 @@ end
 temp()
 
 function temp()
-	var1.驱 = {
+	var1_0.驱 = {
 		除 = {
 			鞑 = {
 				虏 = {
@@ -3696,7 +3696,7 @@ end
 temp()
 
 function temp()
-	var1.演 = {
+	var1_0.演 = {
 		讲 = {
 			仙 = {
 				人 = {
@@ -3710,7 +3710,7 @@ end
 temp()
 
 function temp()
-	var1.啵 = {
+	var1_0.啵 = {
 		袭 = {
 			来 = {
 				this = true
@@ -3722,7 +3722,7 @@ end
 temp()
 
 function temp()
-	var1.构 = {
+	var1_0.构 = {
 		例 = {
 			埚 = {
 				佳 = {
@@ -3736,7 +3736,7 @@ end
 temp()
 
 function temp()
-	var1.拷 = {
+	var1_0.拷 = {
 		打 = {
 			小 = {
 				王 = {
@@ -3750,7 +3750,7 @@ end
 temp()
 
 function temp()
-	var1.煲 = {
+	var1_0.煲 = {
 		鳇 = {
 			this = true
 		}
@@ -3760,7 +3760,7 @@ end
 temp()
 
 function temp()
-	var1.攻 = {
+	var1_0.攻 = {
 		打 = {
 			天 = {
 				安 = {
@@ -3776,7 +3776,7 @@ end
 temp()
 
 function temp()
-	var1.鉭 = {
+	var1_0.鉭 = {
 		["\\"] = {
 			x = {
 				["{"] = {
@@ -3814,7 +3814,7 @@ end
 temp()
 
 function temp()
-	var1.莉 = {
+	var1_0.莉 = {
 		卡 = {
 			醤 = {
 				this = true
@@ -3826,7 +3826,7 @@ end
 temp()
 
 function temp()
-	var1.目 = {
+	var1_0.目 = {
 		击 = {
 			者 = {
 				说 = {
@@ -3892,7 +3892,7 @@ end
 temp()
 
 function temp()
-	var1.夠 = {
+	var1_0.夠 = {
 		栗 = {
 			果 = {
 				钾 = {
@@ -3906,7 +3906,7 @@ end
 temp()
 
 function temp()
-	var1.糸 = {
+	var1_0.糸 = {
 		统 = {
 			this = true
 		}
@@ -3916,7 +3916,7 @@ end
 temp()
 
 function temp()
-	var1.鉆 = {
+	var1_0.鉆 = {
 		this = {
 			this = true
 		}
@@ -3926,7 +3926,7 @@ end
 temp()
 
 function temp()
-	var1.舰 = {
+	var1_0.舰 = {
 		姬 = {
 			this = true
 		}
@@ -3936,7 +3936,7 @@ end
 temp()
 
 function temp()
-	var1.玳 = {
+	var1_0.玳 = {
 		柑 = {
 			this = true
 		}
@@ -3946,7 +3946,7 @@ end
 temp()
 
 function temp()
-	var1.忪 = {
+	var1_0.忪 = {
 		众 = {
 			this = true
 		},
@@ -3959,7 +3959,7 @@ end
 temp()
 
 function temp()
-	var1.侧 = {
+	var1_0.侧 = {
 		滑 = {
 			this = true
 		}
@@ -3969,7 +3969,7 @@ end
 temp()
 
 function temp()
-	var1.昊 = {
+	var1_0.昊 = {
 		钊 = {
 			燮 = {
 				this = true

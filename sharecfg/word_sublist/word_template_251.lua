@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_251 = {}
+var0_0.word_template_251 = {}
 
-local var1 = var0.word_template_251
+local var1_0 = var0_0.word_template_251
 
 function temp()
-	var1.賽 = {
+	var1_0.賽 = {
 		唓 = {
 			諷 = {
 				紜 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.氵 = {
+	var1_0.氵 = {
 		去 = {
 			this = true,
 			l = {
@@ -74,7 +74,7 @@ end
 temp()
 
 function temp()
-	var1.毿 = {
+	var1_0.毿 = {
 		this = {
 			this = true
 		}
@@ -84,7 +84,7 @@ end
 temp()
 
 function temp()
-	var1.糁 = {
+	var1_0.糁 = {
 		this = {
 			this = true
 		}
@@ -94,7 +94,7 @@ end
 temp()
 
 function temp()
-	var1.糝 = {
+	var1_0.糝 = {
 		this = {
 			this = true
 		}
@@ -104,7 +104,7 @@ end
 temp()
 
 function temp()
-	var1.散 = {
+	var1_0.散 = {
 		弹 = {
 			枪 = {
 				买 = {
@@ -135,7 +135,7 @@ end
 temp()
 
 function temp()
-	var1.桑 = {
+	var1_0.桑 = {
 		东 = {
 			仁 = {
 				波 = {

@@ -1,93 +1,93 @@
-﻿local var0 = class("CatteryOpAnimPage", import("....base.BaseSubView"))
+﻿local var0_0 = class("CatteryOpAnimPage", import("....base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "CatteryOPAnimUI"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.homeExpAnim = CatteryAddHomeExpAnim.New(arg0:findTF("bg/single"))
-	arg0.homeAndCommanderAnim = CattertAddHomeExpAndCommanderExpAnim.New(arg0:findTF("bg/both"))
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.homeExpAnim = CatteryAddHomeExpAnim.New(arg0_2:findTF("bg/single"))
+	arg0_2.homeAndCommanderAnim = CattertAddHomeExpAndCommanderExpAnim.New(arg0_2:findTF("bg/both"))
 end
 
-function var0.OnInit(arg0)
+function var0_0.OnInit(arg0_3)
 	return
 end
 
-function var0.AddPlan(arg0, arg1)
-	arg0:RemoveTimer()
-	arg0:Show()
+function var0_0.AddPlan(arg0_4, arg1_4)
+	arg0_4:RemoveTimer()
+	arg0_4:Show()
 
-	local var0, var1, var2, var3 = arg0:ParseData(arg1)
-	local var4
+	local var0_4, var1_4, var2_4, var3_4 = arg0_4:ParseData(arg1_4)
+	local var4_4
 
-	if #var0 > 0 then
-		var4 = arg0.homeAndCommanderAnim
+	if #var0_4 > 0 then
+		var4_4 = arg0_4.homeAndCommanderAnim
 	else
-		var4 = arg0.homeExpAnim
+		var4_4 = arg0_4.homeExpAnim
 	end
 
-	if arg0.player then
-		arg0.player:Clear()
+	if arg0_4.player then
+		arg0_4.player:Clear()
 
-		if arg0.player ~= var4 then
-			arg0.player:Hide()
+		if arg0_4.player ~= var4_4 then
+			arg0_4.player:Hide()
 		end
 	end
 
-	arg0.doAnim = true
+	arg0_4.doAnim = true
 
-	var4:Action(var0, var1, var2, var3, function()
-		arg0.doAnim = false
+	var4_4:Action(var0_4, var1_4, var2_4, var3_4, function()
+		arg0_4.doAnim = false
 
-		if arg0.exited then
+		if arg0_4.exited then
 			return
 		end
 
-		arg0.timer = Timer.New(function()
-			var4:Hide()
-			arg0:Hide()
+		arg0_4.timer = Timer.New(function()
+			var4_4:Hide()
+			arg0_4:Hide()
 		end, 0.5, 1)
 
-		arg0.timer:Start()
+		arg0_4.timer:Start()
 	end)
 
-	arg0.player = var4
+	arg0_4.player = var4_4
 end
 
-function var0.ParseData(arg0, arg1)
-	local var0 = false
-	local var1 = false
+function var0_0.ParseData(arg0_7, arg1_7)
+	local var0_7 = false
+	local var1_7 = false
 
-	for iter0, iter1 in ipairs(arg1.awards) do
-		if iter1.id == Item.COMMANDER_QUICKLY_TOOL_ID then
-			var0 = true
+	for iter0_7, iter1_7 in ipairs(arg1_7.awards) do
+		if iter1_7.id == Item.COMMANDER_QUICKLY_TOOL_ID then
+			var0_7 = true
 		end
 
-		if iter1.id == PlayerConst.ResDormMoney then
-			var1 = true
+		if iter1_7.id == PlayerConst.ResDormMoney then
+			var1_7 = true
 		end
 	end
 
-	return arg1.commanderExps, arg1.homeExp, var0, var1
+	return arg1_7.commanderExps, arg1_7.homeExp, var0_7, var1_7
 end
 
-function var0.RemoveTimer(arg0)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var0_0.RemoveTimer(arg0_8)
+	if arg0_8.timer then
+		arg0_8.timer:Stop()
 
-		arg0.timer = nil
+		arg0_8.timer = nil
 	end
 end
 
-function var0.OnDestroy(arg0)
-	arg0:RemoveTimer()
+function var0_0.OnDestroy(arg0_9)
+	arg0_9:RemoveTimer()
 
-	arg0.doAnim = nil
+	arg0_9.doAnim = nil
 
-	arg0.homeExpAnim:Dispose()
-	arg0.homeAndCommanderAnim:Dispose()
+	arg0_9.homeExpAnim:Dispose()
+	arg0_9.homeAndCommanderAnim:Dispose()
 
-	arg0.exited = true
+	arg0_9.exited = true
 end
 
-return var0
+return var0_0

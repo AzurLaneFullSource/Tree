@@ -1,48 +1,48 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleWeaponRangeSector = class("BattleWeaponRangeSector")
-var0.Battle.BattleWeaponRangeSector.__name = "BattleWeaponRangeSector"
+var0_0.Battle.BattleWeaponRangeSector = class("BattleWeaponRangeSector")
+var0_0.Battle.BattleWeaponRangeSector.__name = "BattleWeaponRangeSector"
 
-local var1 = var0.Battle.BattleWeaponRangeSector
+local var1_0 = var0_0.Battle.BattleWeaponRangeSector
 
-function var1.Ctor(arg0, arg1)
-	arg0._tf = arg1
+function var1_0.Ctor(arg0_1, arg1_1)
+	arg0_1._tf = arg1_1
 
-	setActive(arg0._tf, true)
-	arg0:initSector()
+	setActive(arg0_1._tf, true)
+	arg0_1:initSector()
 end
 
-function var1.ConfigHost(arg0, arg1, arg2)
-	arg0._host = arg1
-	arg0._weapon = arg2
+function var1_0.ConfigHost(arg0_2, arg1_2, arg2_2)
+	arg0_2._host = arg1_2
+	arg0_2._weapon = arg2_2
 
-	arg0:updateSector(arg0._weapon)
+	arg0_2:updateSector(arg0_2._weapon)
 end
 
-function var1.initSector(arg0)
-	arg0._minRange = arg0._tf:Find("minSector")
-	arg0._minSector = arg0._minRange:Find("sector"):GetComponent(typeof(Renderer)).material
-	arg0._maxRange = arg0._tf:Find("maxSector")
-	arg0._maxSector = arg0._maxRange:Find("sector"):GetComponent(typeof(Renderer)).material
+function var1_0.initSector(arg0_3)
+	arg0_3._minRange = arg0_3._tf:Find("minSector")
+	arg0_3._minSector = arg0_3._minRange:Find("sector"):GetComponent(typeof(Renderer)).material
+	arg0_3._maxRange = arg0_3._tf:Find("maxSector")
+	arg0_3._maxSector = arg0_3._maxRange:Find("sector"):GetComponent(typeof(Renderer)).material
 end
 
-function var1.updateSector(arg0, arg1)
-	local var0 = arg1:GetAttackAngle()
-	local var1 = arg1._maxRangeSqr * 2
-	local var2 = arg1._minRangeSqr * 2
+function var1_0.updateSector(arg0_4, arg1_4)
+	local var0_4 = arg1_4:GetAttackAngle()
+	local var1_4 = arg1_4._maxRangeSqr * 2
+	local var2_4 = arg1_4._minRangeSqr * 2
 
-	arg0._maxRange.localScale = Vector3(var1, 1, var1)
-	arg0._minRange.localScale = Vector3(var2, 1, var2)
+	arg0_4._maxRange.localScale = Vector3(var1_4, 1, var1_4)
+	arg0_4._minRange.localScale = Vector3(var2_4, 1, var2_4)
 
-	arg0._maxSector:SetInt("_Angle", var0)
-	arg0._minSector:SetInt("_Angle", var0)
+	arg0_4._maxSector:SetInt("_Angle", var0_4)
+	arg0_4._minSector:SetInt("_Angle", var0_4)
 end
 
-function var1.Dispose(arg0)
-	Destroy(arg0._tf)
+function var1_0.Dispose(arg0_5)
+	Destroy(arg0_5._tf)
 
-	arg0._host = nil
-	arg0._weapon = nil
+	arg0_5._host = nil
+	arg0_5._weapon = nil
 end

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_34 = {}
+var0_0.word_template_34 = {}
 
-local var1 = var0.word_template_34
+local var1_0 = var0_0.word_template_34
 
 function temp()
-	var1.法 = {
+	var1_0.法 = {
 		輪 = {
 			this = true,
 			功 = {
@@ -446,7 +446,7 @@ end
 temp()
 
 function temp()
-	var1.北 = {
+	var1_0.北 = {
 		京 = {
 			this = true,
 			之 = {
@@ -910,7 +910,7 @@ end
 temp()
 
 function temp()
-	var1.本 = {
+	var1_0.本 = {
 		番 = {
 			this = true
 		},
@@ -1172,7 +1172,7 @@ end
 temp()
 
 function temp()
-	var1.万 = {
+	var1_0.万 = {
 		円 = {
 			this = true
 		},
@@ -1381,7 +1381,7 @@ end
 temp()
 
 function temp()
-	var1.無 = {
+	var1_0.無 = {
 		修 = {
 			正 = {
 				this = true
@@ -1523,7 +1523,7 @@ end
 temp()
 
 function temp()
-	var1.毛 = {
+	var1_0.毛 = {
 		唐 = {
 			人 = {
 				this = true
@@ -2612,7 +2612,7 @@ end
 temp()
 
 function temp()
-	var1.儲 = {
+	var1_0.儲 = {
 		か = {
 			this = true
 		},

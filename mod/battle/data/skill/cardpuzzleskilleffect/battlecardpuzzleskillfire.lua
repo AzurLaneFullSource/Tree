@@ -1,86 +1,86 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleDataFunction
-local var2 = var0.Battle.BattleCardPuzzleFormulas
-local var3 = var0.Battle.BattleConst
-local var4 = class("BattleCardPuzzleSkillFire", var0.Battle.BattleCardPuzzleSkillEffect)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleDataFunction
+local var2_0 = var0_0.Battle.BattleCardPuzzleFormulas
+local var3_0 = var0_0.Battle.BattleConst
+local var4_0 = class("BattleCardPuzzleSkillFire", var0_0.Battle.BattleCardPuzzleSkillEffect)
 
-var0.Battle.BattleCardPuzzleSkillFire = var4
-var4.__name = "BattleCardPuzzleSkillFire"
+var0_0.Battle.BattleCardPuzzleSkillFire = var4_0
+var4_0.__name = "BattleCardPuzzleSkillFire"
 
-function var4.Ctor(arg0, arg1)
-	var4.super.Ctor(arg0, arg1)
+function var4_0.Ctor(arg0_1, arg1_1)
+	var4_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0._weaponID = arg0._tempData.arg_list.weapon_id
-	arg0._emitter = arg0._tempData.arg_list.emitter
-	arg0._useSkin = arg0._tempData.arg_list.useSkin
-	arg0._enhance = arg0._tempData.arg_list.enhance_formula
+	arg0_1._weaponID = arg0_1._tempData.arg_list.weapon_id
+	arg0_1._emitter = arg0_1._tempData.arg_list.emitter
+	arg0_1._useSkin = arg0_1._tempData.arg_list.useSkin
+	arg0_1._enhance = arg0_1._tempData.arg_list.enhance_formula
 end
 
-function var4.SetWeaponSkin(arg0, arg1)
-	arg0._modelID = arg1
+function var4_0.SetWeaponSkin(arg0_2, arg1_2)
+	arg0_2._modelID = arg1_2
 end
 
-function var4.SkillEffectHandler(arg0)
-	if arg0._weapon == nil then
-		arg0._weapon = var0.Battle.BattleDataFunction.CreateWeaponUnit(arg0._weaponID, arg0._caster)
+function var4_0.SkillEffectHandler(arg0_3)
+	if arg0_3._weapon == nil then
+		arg0_3._weapon = var0_0.Battle.BattleDataFunction.CreateWeaponUnit(arg0_3._weaponID, arg0_3._caster)
 
-		if arg0._modelID then
-			arg0._weapon:SetModelID(arg0._modelID)
-		elseif arg0._useSkin then
-			local var0 = arg0._caster:GetPriorityWeaponSkin()
+		if arg0_3._modelID then
+			arg0_3._weapon:SetModelID(arg0_3._modelID)
+		elseif arg0_3._useSkin then
+			local var0_3 = arg0_3._caster:GetPriorityWeaponSkin()
 
-			if var0 then
-				arg0._weapon:SetModelID(var1.GetEquipSkin(var0))
+			if var0_3 then
+				arg0_3._weapon:SetModelID(var1_0.GetEquipSkin(var0_3))
 			end
 		end
 
-		local var1 = {
-			weapon = arg0._weapon
+		local var1_3 = {
+			weapon = arg0_3._weapon
 		}
-		local var2 = var0.Event.New(var0.Battle.BattleUnitEvent.CREATE_TEMPORARY_WEAPON, var1)
+		local var2_3 = var0_0.Event.New(var0_0.Battle.BattleUnitEvent.CREATE_TEMPORARY_WEAPON, var1_3)
 
-		arg0._caster:DispatchEvent(var2)
+		arg0_3._caster:DispatchEvent(var2_3)
 	end
 
-	local function var3()
-		arg0._weapon:Clear()
-		arg0:Finale()
+	local function var3_3()
+		arg0_3._weapon:Clear()
+		arg0_3:Finale()
 	end
 
-	if arg0._enhance then
-		local var4 = var2.parseFormula(arg0._enhance, arg0:GetCardPuzzleComponent():GetAttrManager())
+	if arg0_3._enhance then
+		local var4_3 = var2_0.parseFormula(arg0_3._enhance, arg0_3:GetCardPuzzleComponent():GetAttrManager())
 
-		arg0._weapon:SetCardPuzzleDamageEnhance(var4)
+		arg0_3._weapon:SetCardPuzzleDamageEnhance(var4_3)
 	end
 
-	arg0._weapon:updateMovementInfo()
+	arg0_3._weapon:updateMovementInfo()
 
-	local var5 = arg0:GetTarget()
+	local var5_3 = arg0_3:GetTarget()
 
-	if #var5 > 0 then
-		for iter0, iter1 in ipairs(var5) do
-			arg0._weapon:SingleFire(iter1, arg0._emitter, var3)
+	if #var5_3 > 0 then
+		for iter0_3, iter1_3 in ipairs(var5_3) do
+			arg0_3._weapon:SingleFire(iter1_3, arg0_3._emitter, var3_3)
 		end
 	else
-		arg0._weapon:SingleFire(nil, arg0._emitter, var3)
+		arg0_3._weapon:SingleFire(nil, arg0_3._emitter, var3_3)
 	end
 end
 
-function var4.Clear(arg0)
-	var4.super.Clear(arg0)
+function var4_0.Clear(arg0_5)
+	var4_0.super.Clear(arg0_5)
 
-	if arg0._weapon and not arg0._weapon:GetHost():IsAlive() then
-		arg0._weapon:Clear()
+	if arg0_5._weapon and not arg0_5._weapon:GetHost():IsAlive() then
+		arg0_5._weapon:Clear()
 	end
 end
 
-function var4.Interrupt(arg0)
-	var4.super.Interrupt(arg0)
+function var4_0.Interrupt(arg0_6)
+	var4_0.super.Interrupt(arg0_6)
 
-	if arg0._weapon then
-		arg0._weapon:Cease()
-		arg0._weapon:Clear()
+	if arg0_6._weapon then
+		arg0_6._weapon:Cease()
+		arg0_6._weapon:Clear()
 	end
 end

@@ -1,11 +1,11 @@
-﻿local var0 = class("Fleet", import(".BaseVO"))
+﻿local var0_0 = class("Fleet", import(".BaseVO"))
 
-var0.C_TEAM_NAME = {
+var0_0.C_TEAM_NAME = {
 	vanguard = i18n("word_vanguard_fleet"),
 	main = i18n("word_main_fleet"),
 	submarine = i18n("word_sub_fleet")
 }
-var0.DEFAULT_NAME = {
+var0_0.DEFAULT_NAME = {
 	i18n("ship_formationUI_fleetName1"),
 	i18n("ship_formationUI_fleetName2"),
 	i18n("ship_formationUI_fleetName3"),
@@ -18,7 +18,7 @@ var0.DEFAULT_NAME = {
 	[102] = i18n("ship_formationUI_fleetName_challenge"),
 	[103] = i18n("ship_formationUI_fleetName_challenge_sub")
 }
-var0.DEFAULT_NAME_FOR_DOCKYARD = {
+var0_0.DEFAULT_NAME_FOR_DOCKYARD = {
 	i18n("ship_formationUI_fleetName1"),
 	i18n("ship_formationUI_fleetName2"),
 	i18n("ship_formationUI_fleetName3"),
@@ -31,7 +31,7 @@ var0.DEFAULT_NAME_FOR_DOCKYARD = {
 	[102] = i18n("ship_formationUI_fleetName_challenge"),
 	[103] = i18n("ship_formationUI_fleetName_challenge_sub")
 }
-var0.DEFAULT_NAME_BOSS_ACT = {
+var0_0.DEFAULT_NAME_BOSS_ACT = {
 	i18n("ship_formationUI_fleetName_easy"),
 	i18n("ship_formationUI_fleetName_normal"),
 	i18n("ship_formationUI_fleetName_hard"),
@@ -43,7 +43,7 @@ var0.DEFAULT_NAME_BOSS_ACT = {
 	[14] = i18n("ship_formationUI_fleetName_extra_ss"),
 	[15] = i18n("ship_formationUI_fleetName_sp_ss")
 }
-var0.DEFAULT_NAME_BOSS_SINGLE_ACT = {
+var0_0.DEFAULT_NAME_BOSS_SINGLE_ACT = {
 	i18n("ship_formationUI_fleetName_easy"),
 	i18n("ship_formationUI_fleetName_normal"),
 	i18n("ship_formationUI_fleetName_hard"),
@@ -55,31 +55,31 @@ var0.DEFAULT_NAME_BOSS_SINGLE_ACT = {
 	[14] = i18n("ship_formationUI_fleetName_sp_ss"),
 	[15] = i18n("ship_formationUI_fleetName_extra_ss")
 }
-var0.REGULAR_FLEET_ID = 1
-var0.REGULAR_FLEET_NUMS = 6
-var0.SUBMARINE_FLEET_ID = 11
-var0.SUBMARINE_FLEET_NUMS = 4
+var0_0.REGULAR_FLEET_ID = 1
+var0_0.REGULAR_FLEET_NUMS = 6
+var0_0.SUBMARINE_FLEET_ID = 11
+var0_0.SUBMARINE_FLEET_NUMS = 4
 
-function var0.Ctor(arg0, arg1)
-	arg0.id = arg1.id
-	arg0.name = arg1.name or ""
-	arg0.defaultName = var0.DEFAULT_NAME[arg0.id]
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.id = arg1_1.id
+	arg0_1.name = arg1_1.name or ""
+	arg0_1.defaultName = var0_0.DEFAULT_NAME[arg0_1.id]
 
-	arg0:updateShips(arg1.ship_list)
+	arg0_1:updateShips(arg1_1.ship_list)
 
-	arg0.commanderIds = {}
+	arg0_1.commanderIds = {}
 
-	for iter0, iter1 in ipairs(arg1.commanders or {}) do
-		arg0.commanderIds[iter1.pos] = iter1.id
+	for iter0_1, iter1_1 in ipairs(arg1_1.commanders or {}) do
+		arg0_1.commanderIds[iter1_1.pos] = iter1_1.id
 	end
 
-	arg0.skills = {}
+	arg0_1.skills = {}
 
-	arg0:updateCommanderSkills()
+	arg0_1:updateCommanderSkills()
 end
 
-function var0.isUnlock(arg0)
-	local var0 = {
+function var0_0.isUnlock(arg0_2)
+	local var0_2 = {
 		nil,
 		nil,
 		404,
@@ -87,441 +87,441 @@ function var0.isUnlock(arg0)
 		604,
 		704
 	}
-	local var1 = getProxy(ChapterProxy)
-	local var2 = var0[arg0.id]
+	local var1_2 = getProxy(ChapterProxy)
+	local var2_2 = var0_2[arg0_2.id]
 
-	if var2 then
-		local var3 = var1:getChapterById(var2)
+	if var2_2 then
+		local var3_2 = var1_2:getChapterById(var2_2)
 
-		return var3 and var3:isClear(), i18n("formation_chapter_lock", string.sub(tostring(var2), 1, 1), arg0.id)
+		return var3_2 and var3_2:isClear(), i18n("formation_chapter_lock", string.sub(tostring(var2_2), 1, 1), arg0_2.id)
 	end
 
 	return true
 end
 
-function var0.containShip(arg0, arg1)
-	return table.contains(arg0.ships, arg1.id)
+function var0_0.containShip(arg0_3, arg1_3)
+	return table.contains(arg0_3.ships, arg1_3.id)
 end
 
-function var0.isFirstFleet(arg0)
-	return arg0.id == var0.REGULAR_FLEET_ID
+function var0_0.isFirstFleet(arg0_4)
+	return arg0_4.id == var0_0.REGULAR_FLEET_ID
 end
 
-function var0.outputCommanders(arg0)
-	local var0 = {}
+function var0_0.outputCommanders(arg0_5)
+	local var0_5 = {}
 
-	for iter0, iter1 in pairs(arg0.commanderIds) do
-		assert(iter1, "id is nil")
-		table.insert(var0, {
-			pos = iter0,
-			id = iter1
+	for iter0_5, iter1_5 in pairs(arg0_5.commanderIds) do
+		assert(iter1_5, "id is nil")
+		table.insert(var0_5, {
+			pos = iter0_5,
+			id = iter1_5
 		})
 	end
 
-	return var0
+	return var0_5
 end
 
-function var0.getCommanders(arg0)
-	local var0 = {}
+function var0_0.getCommanders(arg0_6)
+	local var0_6 = {}
 
-	for iter0, iter1 in pairs(arg0.commanderIds) do
-		var0[iter0] = getProxy(CommanderProxy):getCommanderById(iter1)
+	for iter0_6, iter1_6 in pairs(arg0_6.commanderIds) do
+		var0_6[iter0_6] = getProxy(CommanderProxy):getCommanderById(iter1_6)
 	end
 
-	return var0
+	return var0_6
 end
 
-function var0.getCommanderByPos(arg0, arg1)
-	return arg0:getCommanders()[arg1]
+function var0_0.getCommanderByPos(arg0_7, arg1_7)
+	return arg0_7:getCommanders()[arg1_7]
 end
 
-function var0.updateCommanderByPos(arg0, arg1, arg2)
-	if arg2 then
-		arg0.commanderIds[arg1] = arg2.id
+function var0_0.updateCommanderByPos(arg0_8, arg1_8, arg2_8)
+	if arg2_8 then
+		arg0_8.commanderIds[arg1_8] = arg2_8.id
 	else
-		arg0.commanderIds[arg1] = nil
+		arg0_8.commanderIds[arg1_8] = nil
 	end
 
-	arg0:updateCommanderSkills()
+	arg0_8:updateCommanderSkills()
 end
 
-function var0.getCommandersAddition(arg0)
-	local var0 = {}
+function var0_0.getCommandersAddition(arg0_9)
+	local var0_9 = {}
 
-	for iter0, iter1 in pairs(CommanderConst.PROPERTIES) do
-		local var1 = 0
+	for iter0_9, iter1_9 in pairs(CommanderConst.PROPERTIES) do
+		local var1_9 = 0
 
-		for iter2, iter3 in pairs(arg0:getCommanders()) do
-			var1 = var1 + iter3:getAbilitysAddition()[iter1]
+		for iter2_9, iter3_9 in pairs(arg0_9:getCommanders()) do
+			var1_9 = var1_9 + iter3_9:getAbilitysAddition()[iter1_9]
 		end
 
-		if var1 > 0 then
-			table.insert(var0, {
-				attrName = iter1,
-				value = var1
+		if var1_9 > 0 then
+			table.insert(var0_9, {
+				attrName = iter1_9,
+				value = var1_9
 			})
 		end
 	end
 
-	return var0
+	return var0_9
 end
 
-function var0.getCommandersTalentDesc(arg0)
-	local var0 = {}
+function var0_0.getCommandersTalentDesc(arg0_10)
+	local var0_10 = {}
 
-	for iter0, iter1 in pairs(arg0:getCommanders()) do
-		local var1 = iter1:getTalentsDesc()
+	for iter0_10, iter1_10 in pairs(arg0_10:getCommanders()) do
+		local var1_10 = iter1_10:getTalentsDesc()
 
-		for iter2, iter3 in pairs(var1) do
-			if var0[iter2] then
-				var0[iter2].value = var0[iter2].value + iter3.value
+		for iter2_10, iter3_10 in pairs(var1_10) do
+			if var0_10[iter2_10] then
+				var0_10[iter2_10].value = var0_10[iter2_10].value + iter3_10.value
 			else
-				var0[iter2] = {
-					name = iter2,
-					value = iter3.value,
-					type = iter3.type
+				var0_10[iter2_10] = {
+					name = iter2_10,
+					value = iter3_10.value,
+					type = iter3_10.type
 				}
 			end
 		end
 	end
 
-	return var0
+	return var0_10
 end
 
-function var0.findCommanderBySkillId(arg0, arg1)
-	local var0 = arg0:getCommanders()
+function var0_0.findCommanderBySkillId(arg0_11, arg1_11)
+	local var0_11 = arg0_11:getCommanders()
 
-	for iter0, iter1 in pairs(var0) do
-		if _.any(iter1:getSkills(), function(arg0)
-			return _.any(arg0:getTacticSkill(), function(arg0)
-				return arg0 == arg1
+	for iter0_11, iter1_11 in pairs(var0_11) do
+		if _.any(iter1_11:getSkills(), function(arg0_12)
+			return _.any(arg0_12:getTacticSkill(), function(arg0_13)
+				return arg0_13 == arg1_11
 			end)
 		end) then
-			return iter1
+			return iter1_11
 		end
 	end
 end
 
-function var0.updateCommanderSkills(arg0)
-	local var0 = #arg0.skills
+function var0_0.updateCommanderSkills(arg0_14)
+	local var0_14 = #arg0_14.skills
 
-	while var0 > 0 do
-		local var1 = arg0.skills[var0]
+	while var0_14 > 0 do
+		local var1_14 = arg0_14.skills[var0_14]
 
-		if not arg0:findCommanderBySkillId(var1.id) and var1:GetSystem() == FleetSkill.SystemCommanderNeko then
-			table.remove(arg0.skills, var0)
+		if not arg0_14:findCommanderBySkillId(var1_14.id) and var1_14:GetSystem() == FleetSkill.SystemCommanderNeko then
+			table.remove(arg0_14.skills, var0_14)
 		end
 
-		var0 = var0 - 1
+		var0_14 = var0_14 - 1
 	end
 
-	local var2 = arg0:getCommanders()
+	local var2_14 = arg0_14:getCommanders()
 
-	for iter0, iter1 in pairs(var2) do
-		for iter2, iter3 in ipairs(iter1:getSkills()) do
-			for iter4, iter5 in ipairs(iter3:getTacticSkill()) do
-				table.insert(arg0.skills, FleetSkill.New(FleetSkill.SystemCommanderNeko, iter5))
+	for iter0_14, iter1_14 in pairs(var2_14) do
+		for iter2_14, iter3_14 in ipairs(iter1_14:getSkills()) do
+			for iter4_14, iter5_14 in ipairs(iter3_14:getTacticSkill()) do
+				table.insert(arg0_14.skills, FleetSkill.New(FleetSkill.SystemCommanderNeko, iter5_14))
 			end
 		end
 	end
 end
 
-function var0.buildBattleBuffList(arg0)
-	local var0 = {}
-	local var1, var2 = FleetSkill.triggerSkill(arg0, FleetSkill.TypeBattleBuff)
+function var0_0.buildBattleBuffList(arg0_15)
+	local var0_15 = {}
+	local var1_15, var2_15 = FleetSkill.triggerSkill(arg0_15, FleetSkill.TypeBattleBuff)
 
-	if var1 and #var1 > 0 then
-		local var3 = {}
+	if var1_15 and #var1_15 > 0 then
+		local var3_15 = {}
 
-		for iter0, iter1 in ipairs(var1) do
-			local var4 = var2[iter0]
-			local var5 = arg0:findCommanderBySkillId(var4.id)
+		for iter0_15, iter1_15 in ipairs(var1_15) do
+			local var4_15 = var2_15[iter0_15]
+			local var5_15 = arg0_15:findCommanderBySkillId(var4_15.id)
 
-			var3[var5] = var3[var5] or {}
+			var3_15[var5_15] = var3_15[var5_15] or {}
 
-			table.insert(var3[var5], iter1)
+			table.insert(var3_15[var5_15], iter1_15)
 		end
 
-		for iter2, iter3 in pairs(var3) do
-			table.insert(var0, {
-				iter2,
-				iter3
+		for iter2_15, iter3_15 in pairs(var3_15) do
+			table.insert(var0_15, {
+				iter2_15,
+				iter3_15
 			})
 		end
 	end
 
-	local var6 = arg0:getCommanders()
+	local var6_15 = arg0_15:getCommanders()
 
-	for iter4, iter5 in pairs(var6) do
-		local var7 = iter5:getTalents()
+	for iter4_15, iter5_15 in pairs(var6_15) do
+		local var7_15 = iter5_15:getTalents()
 
-		for iter6, iter7 in ipairs(var7) do
-			local var8 = iter7:getBuffsAddition()
+		for iter6_15, iter7_15 in ipairs(var7_15) do
+			local var8_15 = iter7_15:getBuffsAddition()
 
-			if #var8 > 0 then
-				local var9
+			if #var8_15 > 0 then
+				local var9_15
 
-				for iter8, iter9 in ipairs(var0) do
-					if iter9[1] == iter5 then
-						var9 = iter9[2]
+				for iter8_15, iter9_15 in ipairs(var0_15) do
+					if iter9_15[1] == iter5_15 then
+						var9_15 = iter9_15[2]
 
 						break
 					end
 				end
 
-				if not var9 then
-					var9 = {}
+				if not var9_15 then
+					var9_15 = {}
 
-					table.insert(var0, {
-						iter5,
-						var9
+					table.insert(var0_15, {
+						iter5_15,
+						var9_15
 					})
 				end
 
-				for iter10, iter11 in ipairs(var8) do
-					table.insert(var9, iter11)
+				for iter10_15, iter11_15 in ipairs(var8_15) do
+					table.insert(var9_15, iter11_15)
 				end
 			end
 		end
 	end
 
-	return var0
+	return var0_15
 end
 
-function var0.getSkills(arg0)
-	return arg0.skills
+function var0_0.getSkills(arg0_16)
+	return arg0_16.skills
 end
 
-function var0.getShipIds(arg0)
-	local var0 = {}
-	local var1 = {
-		arg0.mainShips,
-		arg0.vanguardShips,
-		arg0.subShips
+function var0_0.getShipIds(arg0_17)
+	local var0_17 = {}
+	local var1_17 = {
+		arg0_17.mainShips,
+		arg0_17.vanguardShips,
+		arg0_17.subShips
 	}
 
-	for iter0, iter1 in ipairs(var1) do
-		for iter2, iter3 in ipairs(iter1) do
-			table.insert(var0, iter3)
+	for iter0_17, iter1_17 in ipairs(var1_17) do
+		for iter2_17, iter3_17 in ipairs(iter1_17) do
+			table.insert(var0_17, iter3_17)
 		end
 	end
 
-	return var0
+	return var0_17
 end
 
-function var0.GetRawShipIds(arg0)
-	return arg0.ships
+function var0_0.GetRawShipIds(arg0_18)
+	return arg0_18.ships
 end
 
-function var0.GetRawCommanderIds(arg0)
-	return arg0.commanderIds
+function var0_0.GetRawCommanderIds(arg0_19)
+	return arg0_19.commanderIds
 end
 
-function var0.findSkills(arg0, arg1)
-	return _.filter(arg0:getSkills(), function(arg0)
-		return arg0:GetType() == arg1
+function var0_0.findSkills(arg0_20, arg1_20)
+	return _.filter(arg0_20:getSkills(), function(arg0_21)
+		return arg0_21:GetType() == arg1_20
 	end)
 end
 
-function var0.updateShips(arg0, arg1)
-	arg0.ships = {}
-	arg0.vanguardShips = {}
-	arg0.mainShips = {}
-	arg0.subShips = {}
+function var0_0.updateShips(arg0_22, arg1_22)
+	arg0_22.ships = {}
+	arg0_22.vanguardShips = {}
+	arg0_22.mainShips = {}
+	arg0_22.subShips = {}
 
-	local var0 = getProxy(BayProxy)
+	local var0_22 = getProxy(BayProxy)
 
-	for iter0, iter1 in ipairs(arg1) do
-		local var1 = var0:getShipById(iter1)
+	for iter0_22, iter1_22 in ipairs(arg1_22) do
+		local var1_22 = var0_22:getShipById(iter1_22)
 
-		if var1 then
-			arg0:insertShip(var1, nil, var1:getTeamType())
+		if var1_22 then
+			arg0_22:insertShip(var1_22, nil, var1_22:getTeamType())
 		end
 	end
 end
 
-function var0.switchShip(arg0, arg1, arg2, arg3)
-	local var0 = arg0:getTeamByName(arg1)
+function var0_0.switchShip(arg0_23, arg1_23, arg2_23, arg3_23)
+	local var0_23 = arg0_23:getTeamByName(arg1_23)
 
-	var0[arg2], var0[arg3] = var0[arg3], var0[arg2]
+	var0_23[arg2_23], var0_23[arg3_23] = var0_23[arg3_23], var0_23[arg2_23]
 end
 
-function var0.getShipPos(arg0, arg1)
-	if not arg1 then
+function var0_0.getShipPos(arg0_24, arg1_24)
+	if not arg1_24 then
 		return
 	end
 
-	local var0 = arg1:getTeamType()
-	local var1 = arg0:getTeamByName(var0)
+	local var0_24 = arg1_24:getTeamType()
+	local var1_24 = arg0_24:getTeamByName(var0_24)
 
-	return table.indexof(var1, arg1.id) or -1, var0
+	return table.indexof(var1_24, arg1_24.id) or -1, var0_24
 end
 
-function var0.getTeamByName(arg0, arg1)
-	if arg1 == TeamType.Vanguard then
-		return arg0.vanguardShips
-	elseif arg1 == TeamType.Main then
-		return arg0.mainShips
-	elseif arg1 == TeamType.Submarine then
-		return arg0.subShips
+function var0_0.getTeamByName(arg0_25, arg1_25)
+	if arg1_25 == TeamType.Vanguard then
+		return arg0_25.vanguardShips
+	elseif arg1_25 == TeamType.Main then
+		return arg0_25.mainShips
+	elseif arg1_25 == TeamType.Submarine then
+		return arg0_25.subShips
 	end
 end
 
-function var0.CanInsertShip(arg0, arg1, arg2)
-	if arg0:isFull() or arg0:containShip(arg1) or not arg1:isAvaiable() or #arg0:getTeamByName(arg2) >= TeamType.GetTeamShipMax(arg2) then
+function var0_0.CanInsertShip(arg0_26, arg1_26, arg2_26)
+	if arg0_26:isFull() or arg0_26:containShip(arg1_26) or not arg1_26:isAvaiable() or #arg0_26:getTeamByName(arg2_26) >= TeamType.GetTeamShipMax(arg2_26) then
 		return false
 	end
 
 	return true
 end
 
-function var0.insertShip(arg0, arg1, arg2, arg3)
-	if not arg0:CanInsertShip(arg1, arg3) then
+function var0_0.insertShip(arg0_27, arg1_27, arg2_27, arg3_27)
+	if not arg0_27:CanInsertShip(arg1_27, arg3_27) then
 		errorMsg("fleet insert error")
 		pg.TipsMgr.GetInstance():ShowTips("fleet insert error")
 	else
-		local var0 = arg0:getTeamByName(arg3)
+		local var0_27 = arg0_27:getTeamByName(arg3_27)
 
-		arg2 = arg2 or #var0 + 1
+		arg2_27 = arg2_27 or #var0_27 + 1
 
-		local var1 = arg3 == TeamType.Main and #arg0.vanguardShips or 0
+		local var1_27 = arg3_27 == TeamType.Main and #arg0_27.vanguardShips or 0
 
-		table.insert(var0, arg2, arg1.id)
-		table.insert(arg0.ships, var1 + arg2, arg1.id)
+		table.insert(var0_27, arg2_27, arg1_27.id)
+		table.insert(arg0_27.ships, var1_27 + arg2_27, arg1_27.id)
 	end
 end
 
-function var0.canRemove(arg0, arg1)
-	local var0, var1 = arg0:getShipPos(arg1)
+function var0_0.canRemove(arg0_28, arg1_28)
+	local var0_28, var1_28 = arg0_28:getShipPos(arg1_28)
 
-	if var0 > 0 and #(arg0:getTeamByName(var1) or {}) == 1 and arg0:isFirstFleet() then
+	if var0_28 > 0 and #(arg0_28:getTeamByName(var1_28) or {}) == 1 and arg0_28:isFirstFleet() then
 		return false
 	else
 		return true
 	end
 end
 
-function var0.isRegularFleet(arg0)
-	return arg0.id >= var0.SUBMARINE_FLEET_ID and arg0.id < var0.SUBMARINE_FLEET_ID + var0.SUBMARINE_FLEET_NUMS or arg0.id >= var0.REGULAR_FLEET_ID and arg0.id < var0.REGULAR_FLEET_ID + var0.REGULAR_FLEET_NUMS
+function var0_0.isRegularFleet(arg0_29)
+	return arg0_29.id >= var0_0.SUBMARINE_FLEET_ID and arg0_29.id < var0_0.SUBMARINE_FLEET_ID + var0_0.SUBMARINE_FLEET_NUMS or arg0_29.id >= var0_0.REGULAR_FLEET_ID and arg0_29.id < var0_0.REGULAR_FLEET_ID + var0_0.REGULAR_FLEET_NUMS
 end
 
-function var0.isSubmarineFleet(arg0)
-	return arg0.id >= var0.SUBMARINE_FLEET_ID and arg0.id < var0.SUBMARINE_FLEET_ID + var0.SUBMARINE_FLEET_NUMS
+function var0_0.isSubmarineFleet(arg0_30)
+	return arg0_30.id >= var0_0.SUBMARINE_FLEET_ID and arg0_30.id < var0_0.SUBMARINE_FLEET_ID + var0_0.SUBMARINE_FLEET_NUMS
 end
 
-function var0.isPVPFleet(arg0)
-	return arg0.id == FleetProxy.PVP_FLEET_ID
+function var0_0.isPVPFleet(arg0_31)
+	return arg0_31.id == FleetProxy.PVP_FLEET_ID
 end
 
-function var0.getFleetType(arg0)
-	if arg0.id and arg0.id >= var0.SUBMARINE_FLEET_ID and arg0.id < var0.SUBMARINE_FLEET_ID + var0.SUBMARINE_FLEET_NUMS then
+function var0_0.getFleetType(arg0_32)
+	if arg0_32.id and arg0_32.id >= var0_0.SUBMARINE_FLEET_ID and arg0_32.id < var0_0.SUBMARINE_FLEET_ID + var0_0.SUBMARINE_FLEET_NUMS then
 		return FleetType.Submarine
 	end
 
 	return FleetType.Normal
 end
 
-function var0.removeShip(arg0, arg1)
-	assert(arg0:containShip(arg1), "ship are not in fleet")
+function var0_0.removeShip(arg0_33, arg1_33)
+	assert(arg0_33:containShip(arg1_33), "ship are not in fleet")
 
-	local var0 = arg1.id
+	local var0_33 = arg1_33.id
 
-	for iter0, iter1 in ipairs(arg0.ships) do
-		if iter1 == var0 then
-			table.remove(arg0.ships, iter0)
+	for iter0_33, iter1_33 in ipairs(arg0_33.ships) do
+		if iter1_33 == var0_33 then
+			table.remove(arg0_33.ships, iter0_33)
 
 			break
 		end
 	end
 
-	for iter2, iter3 in ipairs(arg0.vanguardShips) do
-		if iter3 == var0 then
-			return table.remove(arg0.vanguardShips, iter2), TeamType.Vanguard
+	for iter2_33, iter3_33 in ipairs(arg0_33.vanguardShips) do
+		if iter3_33 == var0_33 then
+			return table.remove(arg0_33.vanguardShips, iter2_33), TeamType.Vanguard
 		end
 	end
 
-	for iter4, iter5 in ipairs(arg0.mainShips) do
-		if iter5 == var0 then
-			return table.remove(arg0.mainShips, iter4), TeamType.Main
+	for iter4_33, iter5_33 in ipairs(arg0_33.mainShips) do
+		if iter5_33 == var0_33 then
+			return table.remove(arg0_33.mainShips, iter4_33), TeamType.Main
 		end
 	end
 
-	for iter6, iter7 in ipairs(arg0.subShips) do
-		if iter7 == var0 then
-			return table.remove(arg0.subShips, iter6), TeamType.Submarine
+	for iter6_33, iter7_33 in ipairs(arg0_33.subShips) do
+		if iter7_33 == var0_33 then
+			return table.remove(arg0_33.subShips, iter6_33), TeamType.Submarine
 		end
 	end
 
 	return nil
 end
 
-function var0.isFull(arg0)
-	local var0 = arg0:getFleetType()
+function var0_0.isFull(arg0_34)
+	local var0_34 = arg0_34:getFleetType()
 
-	if var0 == FleetType.Normal then
-		return #arg0.vanguardShips + #arg0.mainShips >= TeamType.VanguardMax + TeamType.MainMax
-	elseif var0 == FleetType.Submarine then
-		return #arg0.subShips >= TeamType.SubmarineMax
+	if var0_34 == FleetType.Normal then
+		return #arg0_34.vanguardShips + #arg0_34.mainShips >= TeamType.VanguardMax + TeamType.MainMax
+	elseif var0_34 == FleetType.Submarine then
+		return #arg0_34.subShips >= TeamType.SubmarineMax
 	end
 
 	return false
 end
 
-function var0.isEmpty(arg0)
-	return #arg0.ships == 0
+function var0_0.isEmpty(arg0_35)
+	return #arg0_35.ships == 0
 end
 
-function var0.isLegalToFight(arg0)
-	local var0 = arg0:getFleetType()
+function var0_0.isLegalToFight(arg0_36)
+	local var0_36 = arg0_36:getFleetType()
 
-	if var0 == FleetType.Normal then
-		if #arg0.vanguardShips == 0 then
+	if var0_36 == FleetType.Normal then
+		if #arg0_36.vanguardShips == 0 then
 			return TeamType.Vanguard, 1
-		elseif #arg0.mainShips == 0 then
+		elseif #arg0_36.mainShips == 0 then
 			return TeamType.Main, 1
 		end
-	elseif var0 == FleetType.Submarine and #arg0.subShips == 0 then
+	elseif var0_36 == FleetType.Submarine and #arg0_36.subShips == 0 then
 		return TeamType.Submarine, 1
 	end
 
 	return true
 end
 
-function var0.getSkillNum(arg0)
-	local var0 = {
+function var0_0.getSkillNum(arg0_37)
+	local var0_37 = {
 		"zhupao",
 		"yulei",
 		"fangkongpao",
 		"jianzaiji"
 	}
-	local var1 = {}
+	local var1_37 = {}
 
-	for iter0, iter1 in pairs(var0) do
-		var1[iter1] = 0
+	for iter0_37, iter1_37 in pairs(var0_37) do
+		var1_37[iter1_37] = 0
 	end
 
-	local var2 = getProxy(BayProxy):getRawData()
-	local var3 = ys.Battle.BattleConst.EquipmentType
+	local var2_37 = getProxy(BayProxy):getRawData()
+	local var3_37 = ys.Battle.BattleConst.EquipmentType
 
-	for iter2, iter3 in ipairs(arg0.ships) do
-		for iter4, iter5 in ipairs(var2[iter3]:getActiveEquipments()) do
-			if iter5 > 0 then
-				local var4 = Equipment.New({
-					id = iter5
+	for iter2_37, iter3_37 in ipairs(arg0_37.ships) do
+		for iter4_37, iter5_37 in ipairs(var2_37[iter3_37]:getActiveEquipments()) do
+			if iter5_37 > 0 then
+				local var4_37 = Equipment.New({
+					id = iter5_37
 				}):getConfig("weapon_id")
 
-				for iter6, iter7 in ipairs(var4) do
-					if iter7 > 0 then
-						local var5 = pg.weapon_property[iter7].type
+				for iter6_37, iter7_37 in ipairs(var4_37) do
+					if iter7_37 > 0 then
+						local var5_37 = pg.weapon_property[iter7_37].type
 
-						if var5 == var3.POINT_HIT_AND_LOCK then
-							var1.zhupao = var1.zhupao + 1
-						elseif var5 == var3.TORPEDO or var5 == var3.MANUAL_TORPEDO then
-							var1.yulei = var1.yulei + 1
-						elseif var5 == var3.ANTI_AIR then
-							var1.fangkongpao = var1.fangkongpao + 1
-						elseif var5 == var3.INTERCEPT_AIRCRAFT then
-							var1.jianzaiji = var1.jianzaiji + 1
+						if var5_37 == var3_37.POINT_HIT_AND_LOCK then
+							var1_37.zhupao = var1_37.zhupao + 1
+						elseif var5_37 == var3_37.TORPEDO or var5_37 == var3_37.MANUAL_TORPEDO then
+							var1_37.yulei = var1_37.yulei + 1
+						elseif var5_37 == var3_37.ANTI_AIR then
+							var1_37.fangkongpao = var1_37.fangkongpao + 1
+						elseif var5_37 == var3_37.INTERCEPT_AIRCRAFT then
+							var1_37.jianzaiji = var1_37.jianzaiji + 1
 						end
 					end
 				end
@@ -529,407 +529,407 @@ function var0.getSkillNum(arg0)
 		end
 	end
 
-	return var1
+	return var1_37
 end
 
-function var0.GetPropertiesSum(arg0)
-	local var0 = {
+function var0_0.GetPropertiesSum(arg0_38)
+	local var0_38 = {
 		cannon = 0,
 		antiAir = 0,
 		air = 0,
 		torpedo = 0
 	}
-	local var1 = getProxy(BayProxy):getRawData()
+	local var1_38 = getProxy(BayProxy):getRawData()
 
-	for iter0, iter1 in ipairs(arg0.ships) do
-		local var2 = var1[iter1]:getProperties(arg0:getCommanders())
+	for iter0_38, iter1_38 in ipairs(arg0_38.ships) do
+		local var2_38 = var1_38[iter1_38]:getProperties(arg0_38:getCommanders())
 
-		var0.cannon = var0.cannon + math.floor(var2.cannon)
-		var0.torpedo = var0.torpedo + math.floor(var2.torpedo)
-		var0.antiAir = var0.antiAir + math.floor(var2.antiaircraft)
-		var0.air = var0.air + math.floor(var2.air)
+		var0_38.cannon = var0_38.cannon + math.floor(var2_38.cannon)
+		var0_38.torpedo = var0_38.torpedo + math.floor(var2_38.torpedo)
+		var0_38.antiAir = var0_38.antiAir + math.floor(var2_38.antiaircraft)
+		var0_38.air = var0_38.air + math.floor(var2_38.air)
 	end
 
-	return var0
+	return var0_38
 end
 
-function var0.GetCostSum(arg0)
-	local var0 = {
+function var0_0.GetCostSum(arg0_39)
+	local var0_39 = {
 		gold = 0,
 		oil = 0
 	}
-	local var1 = arg0:getStartCost()
-	local var2 = arg0:getEndCost()
+	local var1_39 = arg0_39:getStartCost()
+	local var2_39 = arg0_39:getEndCost()
 
-	if arg0:getFleetType() == FleetType.Submarine then
-		var0.oil = var2.oil
+	if arg0_39:getFleetType() == FleetType.Submarine then
+		var0_39.oil = var2_39.oil
 	else
-		var0.oil = var1.oil + var2.oil
+		var0_39.oil = var1_39.oil + var2_39.oil
 	end
 
-	return var0
+	return var0_39
 end
 
-function var0.getStartCost(arg0)
-	local var0 = {
+function var0_0.getStartCost(arg0_40)
+	local var0_40 = {
 		gold = 0,
 		oil = 0
 	}
-	local var1 = getProxy(BayProxy):getRawData()
+	local var1_40 = getProxy(BayProxy):getRawData()
 
-	for iter0, iter1 in ipairs(arg0.ships) do
-		local var2 = var1[iter1]:getStartBattleExpend()
+	for iter0_40, iter1_40 in ipairs(arg0_40.ships) do
+		local var2_40 = var1_40[iter1_40]:getStartBattleExpend()
 
-		var0.oil = var0.oil + var2
+		var0_40.oil = var0_40.oil + var2_40
 	end
 
-	return var0
+	return var0_40
 end
 
-function var0.getEndCost(arg0)
-	local var0 = {
+function var0_0.getEndCost(arg0_41)
+	local var0_41 = {
 		gold = 0,
 		oil = 0
 	}
-	local var1 = getProxy(BayProxy):getRawData()
+	local var1_41 = getProxy(BayProxy):getRawData()
 
-	for iter0, iter1 in ipairs(arg0.ships) do
-		local var2 = var1[iter1]:getEndBattleExpend()
+	for iter0_41, iter1_41 in ipairs(arg0_41.ships) do
+		local var2_41 = var1_41[iter1_41]:getEndBattleExpend()
 
-		var0.oil = var0.oil + var2
+		var0_41.oil = var0_41.oil + var2_41
 	end
 
-	return var0
+	return var0_41
 end
 
-function var0.GetGearScoreSum(arg0, arg1)
-	local var0
+function var0_0.GetGearScoreSum(arg0_42, arg1_42)
+	local var0_42
 
-	if arg1 == nil then
-		var0 = arg0.ships
+	if arg1_42 == nil then
+		var0_42 = arg0_42.ships
 	else
-		var0 = arg0:getTeamByName(arg1)
+		var0_42 = arg0_42:getTeamByName(arg1_42)
 	end
 
-	local var1 = 0
-	local var2 = getProxy(BayProxy):getRawData()
+	local var1_42 = 0
+	local var2_42 = getProxy(BayProxy):getRawData()
 
-	for iter0, iter1 in ipairs(var0) do
-		var1 = var1 + var2[iter1]:getShipCombatPower(arg0:getCommanders())
+	for iter0_42, iter1_42 in ipairs(var0_42) do
+		var1_42 = var1_42 + var2_42[iter1_42]:getShipCombatPower(arg0_42:getCommanders())
 	end
 
-	return var1
+	return var1_42
 end
 
-function var0.GetEnergyStatus(arg0)
-	local var0 = false
-	local var1 = ""
-	local var2 = ""
-	local var3 = getProxy(BayProxy)
+function var0_0.GetEnergyStatus(arg0_43)
+	local var0_43 = false
+	local var1_43 = ""
+	local var2_43 = ""
+	local var3_43 = getProxy(BayProxy)
 
-	local function var4(arg0)
-		for iter0 = 1, 3 do
-			if arg0[iter0] then
-				local var0 = var3:getShipById(arg0[iter0])
+	local function var4_43(arg0_44)
+		for iter0_44 = 1, 3 do
+			if arg0_44[iter0_44] then
+				local var0_44 = var3_43:getShipById(arg0_44[iter0_44])
 
-				if var0.energy == Ship.ENERGY_LOW then
-					var0 = true
-					var2 = var2 .. "「" .. var0:getConfig("name") .. "」"
+				if var0_44.energy == Ship.ENERGY_LOW then
+					var0_43 = true
+					var2_43 = var2_43 .. "「" .. var0_44:getConfig("name") .. "」"
 				end
 			end
 		end
 	end
 
-	var4(arg0.mainShips)
-	var4(arg0.vanguardShips)
-	var4(arg0.subShips)
+	var4_43(arg0_43.mainShips)
+	var4_43(arg0_43.vanguardShips)
+	var4_43(arg0_43.subShips)
 
-	if var0 then
-		var1 = arg0:GetName()
+	if var0_43 then
+		var1_43 = arg0_43:GetName()
 	end
 
-	return var0, i18n("ship_energy_low_warn", var1, var2)
+	return var0_43, i18n("ship_energy_low_warn", var1_43, var2_43)
 end
 
-function var0.genRobotDataString(arg0)
-	local var0 = getProxy(BayProxy):getRawData()
-	local var1 = "99999,"
+function var0_0.genRobotDataString(arg0_45)
+	local var0_45 = getProxy(BayProxy):getRawData()
+	local var1_45 = "99999,"
 
-	for iter0 = 1, 3 do
-		if arg0.vanguardShips[iter0] and arg0.vanguardShips[iter0] > 0 then
-			var1 = var1 .. var0[arg0.vanguardShips[iter0]].configId .. "," .. var0[arg0.vanguardShips[iter0]].level .. ",\"{"
+	for iter0_45 = 1, 3 do
+		if arg0_45.vanguardShips[iter0_45] and arg0_45.vanguardShips[iter0_45] > 0 then
+			var1_45 = var1_45 .. var0_45[arg0_45.vanguardShips[iter0_45]].configId .. "," .. var0_45[arg0_45.vanguardShips[iter0_45]].level .. ",\"{"
 
-			for iter1, iter2 in pairs(var0[arg0.vanguardShips[iter0]]:getActiveEquipments()) do
-				var1 = var1 .. (iter2 and iter2.id or 0)
+			for iter1_45, iter2_45 in pairs(var0_45[arg0_45.vanguardShips[iter0_45]]:getActiveEquipments()) do
+				var1_45 = var1_45 .. (iter2_45 and iter2_45.id or 0)
 
-				if iter1 < 5 then
-					var1 = var1 .. ","
+				if iter1_45 < 5 then
+					var1_45 = var1_45 .. ","
 				end
 			end
 
-			var1 = var1 .. "}\","
+			var1_45 = var1_45 .. "}\","
 		else
-			var1 = var1 .. "" .. "," .. "" .. ",{" .. "},"
+			var1_45 = var1_45 .. "" .. "," .. "" .. ",{" .. "},"
 		end
 	end
 
-	for iter3 = 1, 3 do
-		if arg0.mainShips[iter3] and arg0.mainShips[iter3] > 0 then
-			var1 = var1 .. var0[arg0.mainShips[iter3]].configId .. "," .. var0[arg0.mainShips[iter3]].level .. ",\"{"
+	for iter3_45 = 1, 3 do
+		if arg0_45.mainShips[iter3_45] and arg0_45.mainShips[iter3_45] > 0 then
+			var1_45 = var1_45 .. var0_45[arg0_45.mainShips[iter3_45]].configId .. "," .. var0_45[arg0_45.mainShips[iter3_45]].level .. ",\"{"
 
-			for iter4, iter5 in pairs(var0[arg0.mainShips[iter3]]:getActiveEquipments()) do
-				var1 = var1 .. (iter5 and iter5.id or 0)
+			for iter4_45, iter5_45 in pairs(var0_45[arg0_45.mainShips[iter3_45]]:getActiveEquipments()) do
+				var1_45 = var1_45 .. (iter5_45 and iter5_45.id or 0)
 
-				if iter4 < 5 then
-					var1 = var1 .. ","
+				if iter4_45 < 5 then
+					var1_45 = var1_45 .. ","
 				end
 			end
 
-			var1 = var1 .. "}\","
+			var1_45 = var1_45 .. "}\","
 		else
-			var1 = var1 .. "" .. "," .. "" .. ",{" .. "},"
+			var1_45 = var1_45 .. "" .. "," .. "" .. ",{" .. "},"
 		end
 	end
 
-	local var2 = arg0:GetGearScoreSum(TeamType.Vanguard)
-	local var3 = arg0:GetGearScoreSum(TeamType.Main)
+	local var2_45 = arg0_45:GetGearScoreSum(TeamType.Vanguard)
+	local var3_45 = arg0_45:GetGearScoreSum(TeamType.Main)
 
-	return var1 .. math.floor(var2 + var3) .. ","
+	return var1_45 .. math.floor(var2_45 + var3_45) .. ","
 end
 
-function var0.getIndex(arg0)
-	if arg0.id >= var0.SUBMARINE_FLEET_ID and arg0.id < var0.SUBMARINE_FLEET_ID + var0.SUBMARINE_FLEET_NUMS then
-		return arg0.id - var0.SUBMARINE_FLEET_ID + 1
-	elseif arg0.id >= var0.REGULAR_FLEET_ID and arg0.id < var0.REGULAR_FLEET_ID + var0.REGULAR_FLEET_NUMS then
-		return arg0.id - var0.REGULAR_FLEET_ID + 1
+function var0_0.getIndex(arg0_46)
+	if arg0_46.id >= var0_0.SUBMARINE_FLEET_ID and arg0_46.id < var0_0.SUBMARINE_FLEET_ID + var0_0.SUBMARINE_FLEET_NUMS then
+		return arg0_46.id - var0_0.SUBMARINE_FLEET_ID + 1
+	elseif arg0_46.id >= var0_0.REGULAR_FLEET_ID and arg0_46.id < var0_0.REGULAR_FLEET_ID + var0_0.REGULAR_FLEET_NUMS then
+		return arg0_46.id - var0_0.REGULAR_FLEET_ID + 1
 	end
 
-	return arg0.id
+	return arg0_46.id
 end
 
-function var0.getShipCount(arg0)
-	return #arg0.ships
+function var0_0.getShipCount(arg0_47)
+	return #arg0_47.ships
 end
 
-function var0.avgLevel(arg0)
-	local var0 = 0
+function var0_0.avgLevel(arg0_48)
+	local var0_48 = 0
 
-	for iter0, iter1 in ipairs(arg0.ships) do
-		var0 = getProxy(BayProxy):getShipById(iter1).level + var0
+	for iter0_48, iter1_48 in ipairs(arg0_48.ships) do
+		var0_48 = getProxy(BayProxy):getShipById(iter1_48).level + var0_48
 	end
 
-	return math.floor(var0 / #arg0.ships)
+	return math.floor(var0_48 / #arg0_48.ships)
 end
 
-function var0.clearFleet(arg0)
-	local var0 = Clone(arg0.ships)
-	local var1 = getProxy(BayProxy)
+function var0_0.clearFleet(arg0_49)
+	local var0_49 = Clone(arg0_49.ships)
+	local var1_49 = getProxy(BayProxy)
 
-	for iter0, iter1 in ipairs(var0) do
-		local var2 = var1:getShipById(iter1)
+	for iter0_49, iter1_49 in ipairs(var0_49) do
+		local var2_49 = var1_49:getShipById(iter1_49)
 
-		arg0:removeShip(var2)
+		arg0_49:removeShip(var2_49)
 	end
 end
 
-function var0.EnergyCheck(arg0, arg1, arg2, arg3, arg4)
-	arg4 = arg4 or "ship_energy_low_warn"
+function var0_0.EnergyCheck(arg0_50, arg1_50, arg2_50, arg3_50, arg4_50)
+	arg4_50 = arg4_50 or "ship_energy_low_warn"
 
-	local var0 = {}
+	local var0_50 = {}
 
-	for iter0, iter1 in ipairs(arg0) do
-		if iter1.energy == Ship.ENERGY_LOW then
-			table.insert(var0, iter1)
+	for iter0_50, iter1_50 in ipairs(arg0_50) do
+		if iter1_50.energy == Ship.ENERGY_LOW then
+			table.insert(var0_50, iter1_50)
 		end
 	end
 
-	if #var0 > 0 then
-		local var1 = ""
-		local var2 = _.map(var0, function(arg0)
-			return "「" .. arg0:getConfig("name") .. "」"
+	if #var0_50 > 0 then
+		local var1_50 = ""
+		local var2_50 = _.map(var0_50, function(arg0_51)
+			return "「" .. arg0_51:getConfig("name") .. "」"
 		end)
 
-		if PLATFORM_CODE ~= PLATFORM_US or #var2 == 1 then
-			for iter2, iter3 in ipairs(var2) do
-				var1 = var1 .. iter3
+		if PLATFORM_CODE ~= PLATFORM_US or #var2_50 == 1 then
+			for iter2_50, iter3_50 in ipairs(var2_50) do
+				var1_50 = var1_50 .. iter3_50
 			end
 		else
-			if arg4 == "ship_energy_low_warn_no_exp" or arg4 == "ship_energy_low_warn" or arg4 == "ship_energy_low_desc" then
-				arg4 = "multiple_" .. arg4
+			if arg4_50 == "ship_energy_low_warn_no_exp" or arg4_50 == "ship_energy_low_warn" or arg4_50 == "ship_energy_low_desc" then
+				arg4_50 = "multiple_" .. arg4_50
 			end
 
-			for iter4 = 1, #var2 - 2 do
-				local var3 = var2[iter4]
+			for iter4_50 = 1, #var2_50 - 2 do
+				local var3_50 = var2_50[iter4_50]
 
-				var1 = var1 .. var3 .. ", "
+				var1_50 = var1_50 .. var3_50 .. ", "
 			end
 
-			var1 = var1 .. var2[#var2 - 1] .. " and " .. var2[#var2]
+			var1_50 = var1_50 .. var2_50[#var2_50 - 1] .. " and " .. var2_50[#var2_50]
 		end
 
-		existCall(arg3, false)
+		existCall(arg3_50, false)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n(arg4, arg1, var1),
+			content = i18n(arg4_50, arg1_50, var1_50),
 			onYes = function()
-				arg2(true)
+				arg2_50(true)
 			end,
 			onNo = function()
-				arg2(false)
+				arg2_50(false)
 			end,
 			weight = LayerWeightConst.TOP_LAYER
 		})
 	else
-		existCall(arg3, true)
-		arg2(true)
+		existCall(arg3_50, true)
+		arg2_50(true)
 	end
 end
 
-function var0.getFleetAirDominanceValue(arg0)
-	local var0 = getProxy(BayProxy)
-	local var1 = arg0:getCommanders()
-	local var2 = 0
+function var0_0.getFleetAirDominanceValue(arg0_54)
+	local var0_54 = getProxy(BayProxy)
+	local var1_54 = arg0_54:getCommanders()
+	local var2_54 = 0
 
-	for iter0, iter1 in ipairs(arg0.ships) do
-		var2 = (function(arg0, arg1)
-			return arg0 + calcAirDominanceValue(var0:getShipById(arg1), var1)
-		end)(var2, iter1)
+	for iter0_54, iter1_54 in ipairs(arg0_54.ships) do
+		var2_54 = (function(arg0_55, arg1_55)
+			return arg0_55 + calcAirDominanceValue(var0_54:getShipById(arg1_55), var1_54)
+		end)(var2_54, iter1_54)
 	end
 
-	return var2
+	return var2_54
 end
 
-function var0.RemoveUnusedItems(arg0)
-	local var0 = Clone(arg0.ships)
-	local var1 = getProxy(BayProxy)
+function var0_0.RemoveUnusedItems(arg0_56)
+	local var0_56 = Clone(arg0_56.ships)
+	local var1_56 = getProxy(BayProxy)
 
-	for iter0, iter1 in ipairs(var0) do
-		if not var1:getShipById(iter1) then
-			arg0:removeShipById(iter1)
+	for iter0_56, iter1_56 in ipairs(var0_56) do
+		if not var1_56:getShipById(iter1_56) then
+			arg0_56:removeShipById(iter1_56)
 		end
 	end
 
-	local var2 = getProxy(CommanderProxy)
-	local var3 = {}
+	local var2_56 = getProxy(CommanderProxy)
+	local var3_56 = {}
 
-	for iter2, iter3 in pairs(arg0.commanderIds) do
-		if not var2:getCommanderById(iter3) then
-			table.insert(var3, iter2)
+	for iter2_56, iter3_56 in pairs(arg0_56.commanderIds) do
+		if not var2_56:getCommanderById(iter3_56) then
+			table.insert(var3_56, iter2_56)
 		end
 	end
 
-	if #var3 > 0 then
-		for iter4, iter5 in pairs(var3) do
-			arg0.commanderIds[iter5] = nil
+	if #var3_56 > 0 then
+		for iter4_56, iter5_56 in pairs(var3_56) do
+			arg0_56.commanderIds[iter5_56] = nil
 		end
 
-		arg0.skills = {}
+		arg0_56.skills = {}
 
-		arg0:updateCommanderSkills()
+		arg0_56:updateCommanderSkills()
 	end
 end
 
-function var0.removeShipById(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0.ships) do
-		if iter1 == arg1 then
-			table.remove(arg0.ships, iter0)
+function var0_0.removeShipById(arg0_57, arg1_57)
+	for iter0_57, iter1_57 in ipairs(arg0_57.ships) do
+		if iter1_57 == arg1_57 then
+			table.remove(arg0_57.ships, iter0_57)
 
 			break
 		end
 	end
 
-	for iter2, iter3 in ipairs(arg0.vanguardShips) do
-		if iter3 == arg1 then
-			return table.remove(arg0.vanguardShips, iter2), TeamType.Vanguard
+	for iter2_57, iter3_57 in ipairs(arg0_57.vanguardShips) do
+		if iter3_57 == arg1_57 then
+			return table.remove(arg0_57.vanguardShips, iter2_57), TeamType.Vanguard
 		end
 	end
 
-	for iter4, iter5 in ipairs(arg0.mainShips) do
-		if iter5 == arg1 then
-			return table.remove(arg0.mainShips, iter4), TeamType.Main
+	for iter4_57, iter5_57 in ipairs(arg0_57.mainShips) do
+		if iter5_57 == arg1_57 then
+			return table.remove(arg0_57.mainShips, iter4_57), TeamType.Main
 		end
 	end
 
-	for iter6, iter7 in ipairs(arg0.subShips) do
-		if iter7 == arg1 then
-			return table.remove(arg0.subShips, iter6), TeamType.Submarine
+	for iter6_57, iter7_57 in ipairs(arg0_57.subShips) do
+		if iter7_57 == arg1_57 then
+			return table.remove(arg0_57.subShips, iter6_57), TeamType.Submarine
 		end
 	end
 end
 
-function var0.HaveShipsInEvent(arg0)
-	local var0 = getProxy(BayProxy):getRawData()
+function var0_0.HaveShipsInEvent(arg0_58)
+	local var0_58 = getProxy(BayProxy):getRawData()
 
-	for iter0, iter1 in ipairs(arg0.ships) do
-		if var0[iter1]:getFlag("inEvent") then
+	for iter0_58, iter1_58 in ipairs(arg0_58.ships) do
+		if var0_58[iter1_58]:getFlag("inEvent") then
 			return true, i18n("elite_disable_ship_escort")
 		end
 	end
 end
 
-function var0.GetFleetSonarRange(arg0)
-	local var0 = getProxy(BayProxy)
-	local var1 = 0
-	local var2 = 0
-	local var3 = 0
-	local var4 = 0
-	local var5 = ys.Battle.BattleConfig
+function var0_0.GetFleetSonarRange(arg0_59)
+	local var0_59 = getProxy(BayProxy)
+	local var1_59 = 0
+	local var2_59 = 0
+	local var3_59 = 0
+	local var4_59 = 0
+	local var5_59 = ys.Battle.BattleConfig
 
-	for iter0, iter1 in ipairs(arg0.ships) do
-		local var6 = var0:getShipById(iter1)
+	for iter0_59, iter1_59 in ipairs(arg0_59.ships) do
+		local var6_59 = var0_59:getShipById(iter1_59)
 
-		if var6 then
-			local var7 = var6:getShipType()
-			local var8 = var5.VAN_SONAR_PROPERTY[var7]
+		if var6_59 then
+			local var7_59 = var6_59:getShipType()
+			local var8_59 = var5_59.VAN_SONAR_PROPERTY[var7_59]
 
-			if var8 then
-				local var9 = (var6:getShipProperties()[AttributeType.AntiSub] or 0) / var8.a - var8.b
+			if var8_59 then
+				local var9_59 = (var6_59:getShipProperties()[AttributeType.AntiSub] or 0) / var8_59.a - var8_59.b
 
-				var1 = math.max(var1, Mathf.Clamp(var9, var8.minRange, var8.maxRange))
+				var1_59 = math.max(var1_59, Mathf.Clamp(var9_59, var8_59.minRange, var8_59.maxRange))
 			end
 
-			if table.contains(TeamType.MainShipType, var7) then
-				var4 = var4 + (var6:getShipProperties()[AttributeType.AntiSub] or 0)
+			if table.contains(TeamType.MainShipType, var7_59) then
+				var4_59 = var4_59 + (var6_59:getShipProperties()[AttributeType.AntiSub] or 0)
 			end
 
-			for iter2, iter3 in ipairs(var6:getActiveEquipments()) do
-				if iter3 then
-					var3 = var3 + (iter3:getConfig("equip_parameters").range or 0)
+			for iter2_59, iter3_59 in ipairs(var6_59:getActiveEquipments()) do
+				if iter3_59 then
+					var3_59 = var3_59 + (iter3_59:getConfig("equip_parameters").range or 0)
 				end
 			end
 		end
 	end
 
-	if var1 ~= 0 then
-		local var10 = var5.MAIN_SONAR_PROPERTY
-		local var11 = var4 / var10.a
+	if var1_59 ~= 0 then
+		local var10_59 = var5_59.MAIN_SONAR_PROPERTY
+		local var11_59 = var4_59 / var10_59.a
 
-		var2 = var3 + Mathf.Clamp(var11, var10.minRange, var10.maxRange)
+		var2_59 = var3_59 + Mathf.Clamp(var11_59, var10_59.minRange, var10_59.maxRange)
 	end
 
-	return var1 + var2
+	return var1_59 + var2_59
 end
 
-function var0.getInvestSums(arg0)
-	local var0 = getProxy(BayProxy)
+function var0_0.getInvestSums(arg0_60)
+	local var0_60 = getProxy(BayProxy)
 
-	local function var1(arg0, arg1)
-		local var0 = var0:getShipById(arg1):getProperties(arg0:getCommanders())
+	local function var1_60(arg0_61, arg1_61)
+		local var0_61 = var0_60:getShipById(arg1_61):getProperties(arg0_60:getCommanders())
 
-		return arg0 + var0[AttributeType.Air] + var0[AttributeType.Dodge]
+		return arg0_61 + var0_61[AttributeType.Air] + var0_61[AttributeType.Dodge]
 	end
 
-	local var2 = _.reduce(arg0.ships, 0, var1)
+	local var2_60 = _.reduce(arg0_60.ships, 0, var1_60)
 
-	return math.pow(var2, 0.666666666666667)
+	return math.pow(var2_60, 0.666666666666667)
 end
 
-function var0.ExistActNpcShip(arg0)
-	local var0 = getProxy(BayProxy)
+function var0_0.ExistActNpcShip(arg0_62)
+	local var0_62 = getProxy(BayProxy)
 
-	for iter0, iter1 in ipairs(arg0.ships) do
-		local var1 = var0:RawGetShipById(iter1)
+	for iter0_62, iter1_62 in ipairs(arg0_62.ships) do
+		local var1_62 = var0_62:RawGetShipById(iter1_62)
 
-		if var1 and var1:isActivityNpc() then
+		if var1_62 and var1_62:isActivityNpc() then
 			return true
 		end
 	end
@@ -937,8 +937,8 @@ function var0.ExistActNpcShip(arg0)
 	return false
 end
 
-function var0.GetName(arg0)
-	return arg0.name == "" and var0.DEFAULT_NAME[arg0.id] or arg0.name
+function var0_0.GetName(arg0_63)
+	return arg0_63.name == "" and var0_0.DEFAULT_NAME[arg0_63.id] or arg0_63.name
 end
 
-return var0
+return var0_0

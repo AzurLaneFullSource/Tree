@@ -1,145 +1,145 @@
-﻿local var0 = class("LoadingPanel", import("..base.BaseUI"))
+﻿local var0_0 = class("LoadingPanel", import("..base.BaseUI"))
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1)
 	seriesAsync({
-		function(arg0)
-			arg0:preload(arg0)
+		function(arg0_2)
+			arg0_1:preload(arg0_2)
 		end
 	}, function()
-		PoolMgr.GetInstance():GetUI("Loading", true, function(arg0)
-			local var0 = GameObject.Find("Overlay/UIOverlay")
+		PoolMgr.GetInstance():GetUI("Loading", true, function(arg0_4)
+			local var0_4 = GameObject.Find("Overlay/UIOverlay")
 
-			arg0.transform:SetParent(var0.transform, false)
-			arg0:SetActive(false)
-			arg0:onUILoaded(arg0)
-			arg1()
+			arg0_4.transform:SetParent(var0_4.transform, false)
+			arg0_4:SetActive(false)
+			arg0_1:onUILoaded(arg0_4)
+			arg1_1()
 		end)
 	end)
 end
 
-function var0.preload(arg0, arg1)
-	arg0.isCri, arg0.bgPath = getLoginConfig()
+function var0_0.preload(arg0_5, arg1_5)
+	arg0_5.isCri, arg0_5.bgPath = getLoginConfig()
 
-	if arg0.isCri then
-		LoadAndInstantiateAsync("effect", arg0.bgPath, function(arg0)
-			arg0.criBgGo = arg0
+	if arg0_5.isCri then
+		LoadAndInstantiateAsync("effect", arg0_5.bgPath, function(arg0_6)
+			arg0_5.criBgGo = arg0_6
 
-			if arg1 then
-				arg1()
+			if arg1_5 then
+				arg1_5()
 			end
 		end)
 	else
-		LoadSpriteAsync("loadingbg/" .. arg0.bgPath, function(arg0)
-			arg0.staticBgSprite = arg0
+		LoadSpriteAsync("loadingbg/" .. arg0_5.bgPath, function(arg0_7)
+			arg0_5.staticBgSprite = arg0_7
 
-			if arg1 then
-				arg1()
+			if arg1_5 then
+				arg1_5()
 			end
 		end)
 	end
 end
 
-function var0.init(arg0)
-	arg0.infos = arg0:findTF("infos")
-	arg0.infoTpl = arg0:getTpl("infos/info_tpl")
-	arg0.indicator = arg0:findTF("load")
-	arg0.bg = arg0:findTF("BG")
+function var0_0.init(arg0_8)
+	arg0_8.infos = arg0_8:findTF("infos")
+	arg0_8.infoTpl = arg0_8:getTpl("infos/info_tpl")
+	arg0_8.indicator = arg0_8:findTF("load")
+	arg0_8.bg = arg0_8:findTF("BG")
 
-	arg0:displayBG(true)
+	arg0_8:displayBG(true)
 end
 
-function var0.appendInfo(arg0, arg1)
-	local var0 = cloneTplTo(arg0.infoTpl, arg0.infos)
+function var0_0.appendInfo(arg0_9, arg1_9)
+	local var0_9 = cloneTplTo(arg0_9.infoTpl, arg0_9.infos)
 
-	setText(var0, arg1)
+	setText(var0_9, arg1_9)
 
-	local var1 = GetOrAddComponent(var0, "CanvasGroup")
-	local var2 = LeanTween.alphaCanvas(var1, 0, 0.3)
+	local var1_9 = GetOrAddComponent(var0_9, "CanvasGroup")
+	local var2_9 = LeanTween.alphaCanvas(var1_9, 0, 0.3)
 
-	var2:setDelay(1.5)
-	var2:setOnComplete(System.Action(function()
-		destroy(var0)
+	var2_9:setDelay(1.5)
+	var2_9:setOnComplete(System.Action(function()
+		destroy(var0_9)
 	end))
 end
 
-function var0.onLoading(arg0)
-	return arg0._go.activeInHierarchy
+function var0_0.onLoading(arg0_11)
+	return arg0_11._go.activeInHierarchy
 end
 
-local var1 = 0
+local var1_0 = 0
 
-function var0.on(arg0, arg1)
-	arg1 = defaultValue(arg1, true)
+function var0_0.on(arg0_12, arg1_12)
+	arg1_12 = defaultValue(arg1_12, true)
 
-	setImageAlpha(arg0._tf, arg1 and 0.01 or 0)
+	setImageAlpha(arg0_12._tf, arg1_12 and 0.01 or 0)
 
-	if not arg1 then
-		setActive(arg0.indicator, arg1)
-	elseif not arg0.delayTimer then
-		arg0.delayTimer = pg.TimeMgr.GetInstance():AddTimer("loading", 1, 0, function()
-			setImageAlpha(arg0._tf, 0.2)
-			setActive(arg0.indicator, true)
+	if not arg1_12 then
+		setActive(arg0_12.indicator, arg1_12)
+	elseif not arg0_12.delayTimer then
+		arg0_12.delayTimer = pg.TimeMgr.GetInstance():AddTimer("loading", 1, 0, function()
+			setImageAlpha(arg0_12._tf, 0.2)
+			setActive(arg0_12.indicator, true)
 		end)
 	end
 
-	var1 = var1 + 1
+	var1_0 = var1_0 + 1
 
-	if var1 > 0 then
-		setActive(arg0._go, true)
-		arg0._go.transform:SetAsLastSibling()
+	if var1_0 > 0 then
+		setActive(arg0_12._go, true)
+		arg0_12._go.transform:SetAsLastSibling()
 	end
 end
 
-function var0.off(arg0)
-	if var1 > 0 then
-		var1 = var1 - 1
+function var0_0.off(arg0_14)
+	if var1_0 > 0 then
+		var1_0 = var1_0 - 1
 
-		if var1 == 0 then
-			setActive(arg0._go, false)
-			setActive(arg0.indicator, false)
+		if var1_0 == 0 then
+			setActive(arg0_14._go, false)
+			setActive(arg0_14.indicator, false)
 
-			if arg0.delayTimer then
-				pg.TimeMgr.GetInstance():RemoveTimer(arg0.delayTimer)
+			if arg0_14.delayTimer then
+				pg.TimeMgr.GetInstance():RemoveTimer(arg0_14.delayTimer)
 
-				arg0.delayTimer = nil
+				arg0_14.delayTimer = nil
 			end
 		end
 	end
 end
 
-function var0.displayBG(arg0, arg1)
-	setActive(arg0.bg, arg1)
+function var0_0.displayBG(arg0_15, arg1_15)
+	setActive(arg0_15.bg, arg1_15)
 
-	local var0 = GetComponent(arg0.bg, "Image")
+	local var0_15 = GetComponent(arg0_15.bg, "Image")
 
-	if arg1 then
-		if not arg0.isCri then
-			if IsNil(var0.sprite) then
-				var0.sprite = arg0.staticBgSprite
+	if arg1_15 then
+		if not arg0_15.isCri then
+			if IsNil(var0_15.sprite) then
+				var0_15.sprite = arg0_15.staticBgSprite
 			end
-		elseif arg0.bg.childCount == 0 then
-			var0.enabled = false
+		elseif arg0_15.bg.childCount == 0 then
+			var0_15.enabled = false
 
-			local var1 = arg0.criBgGo.transform
+			local var1_15 = arg0_15.criBgGo.transform
 
-			var1:SetParent(arg0.bg.transform, false)
-			var1:SetAsFirstSibling()
+			var1_15:SetParent(arg0_15.bg.transform, false)
+			var1_15:SetAsFirstSibling()
 		end
 	else
-		if not arg0.isCri then
-			var0.sprite = nil
+		if not arg0_15.isCri then
+			var0_15.sprite = nil
 		else
-			removeAllChildren(arg0.bg)
+			removeAllChildren(arg0_15.bg)
 		end
 
-		arg0.criBgGo = nil
-		arg0.staticBgSprite = nil
+		arg0_15.criBgGo = nil
+		arg0_15.staticBgSprite = nil
 	end
 end
 
-function var0.getRetainCount(arg0)
-	return var1
+function var0_0.getRetainCount(arg0_16)
+	return var1_0
 end
 
-return var0
+return var0_0

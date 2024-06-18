@@ -1,108 +1,108 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = singletonClass("BattleEnemyCharacterFactory", var0.Battle.BattleCharacterFactory)
+local var0_0 = ys
+local var1_0 = singletonClass("BattleEnemyCharacterFactory", var0_0.Battle.BattleCharacterFactory)
 
-var0.Battle.BattleEnemyCharacterFactory = var1
-var1.__name = "BattleEnemyCharacterFactory"
+var0_0.Battle.BattleEnemyCharacterFactory = var1_0
+var1_0.__name = "BattleEnemyCharacterFactory"
 
-function var1.Ctor(arg0)
-	var1.super.Ctor(arg0)
+function var1_0.Ctor(arg0_1)
+	var1_0.super.Ctor(arg0_1)
 
-	arg0.HP_BAR_NAME = var0.Battle.BattleHPBarManager.HP_BAR_FOE
-	arg0.ARROW_BAR_NAME = "EnemyArrowContainer/EnemyArrow"
+	arg0_1.HP_BAR_NAME = var0_0.Battle.BattleHPBarManager.HP_BAR_FOE
+	arg0_1.ARROW_BAR_NAME = "EnemyArrowContainer/EnemyArrow"
 end
 
-function var1.MakeCharacter(arg0)
-	return var0.Battle.BattleEnemyCharacter.New()
+function var1_0.MakeCharacter(arg0_2)
+	return var0_0.Battle.BattleEnemyCharacter.New()
 end
 
-function var1.MakeModel(arg0, arg1)
-	local var0 = arg1:GetUnitData()
+function var1_0.MakeModel(arg0_3, arg1_3)
+	local var0_3 = arg1_3:GetUnitData()
 
-	local function var1(arg0)
-		arg1:AddModel(arg0)
+	local function var1_3(arg0_4)
+		arg1_3:AddModel(arg0_4)
 
-		local var0 = arg0:GetSceneMediator()
+		local var0_4 = arg0_3:GetSceneMediator()
 
-		arg1:CameraOrthogonal(var0.Battle.BattleCameraUtil.GetInstance():GetCamera())
-		var0:AddEnemyCharacter(arg1)
-		arg0:MakeUIComponentContainer(arg1)
-		arg0:MakeFXContainer(arg1)
-		arg0:MakePopNumPool(arg1)
-		arg0:MakeBloodBar(arg1)
-		arg0:MakeWaveFX(arg1)
-		arg0:MakeSmokeFX(arg1)
-		arg0:MakeArrowBar(arg1)
-		arg1:UpdateDiveInvisible(true)
-		arg1:UpdateCharacterForceDetected()
-		arg1:UpdateBlindInvisible()
+		arg1_3:CameraOrthogonal(var0_0.Battle.BattleCameraUtil.GetInstance():GetCamera())
+		var0_4:AddEnemyCharacter(arg1_3)
+		arg0_3:MakeUIComponentContainer(arg1_3)
+		arg0_3:MakeFXContainer(arg1_3)
+		arg0_3:MakePopNumPool(arg1_3)
+		arg0_3:MakeBloodBar(arg1_3)
+		arg0_3:MakeWaveFX(arg1_3)
+		arg0_3:MakeSmokeFX(arg1_3)
+		arg0_3:MakeArrowBar(arg1_3)
+		arg1_3:UpdateDiveInvisible(true)
+		arg1_3:UpdateCharacterForceDetected()
+		arg1_3:UpdateBlindInvisible()
 
-		local var1 = var0:GetTemplate().appear_fx
+		local var1_4 = var0_3:GetTemplate().appear_fx
 
-		for iter0, iter1 in ipairs(var1) do
-			arg1:AddFX(iter1)
+		for iter0_4, iter1_4 in ipairs(var1_4) do
+			arg1_3:AddFX(iter1_4)
 		end
 
-		if arg1:GetUnitData():GetAimBias() then
-			arg0:MakeAimBiasBar(arg1)
+		if arg1_3:GetUnitData():GetAimBias() then
+			arg0_3:MakeAimBiasBar(arg1_3)
 		end
 	end
 
-	arg0:GetCharacterPool():InstCharacter(arg1:GetModleID(), function(arg0)
-		var1(arg0)
+	arg0_3:GetCharacterPool():InstCharacter(arg1_3:GetModleID(), function(arg0_5)
+		var1_3(arg0_5)
 	end)
 end
 
-function var1.MakeArrowBar(arg0, arg1)
-	local var0 = arg0:GetArrowPool():GetArrow()
+function var1_0.MakeArrowBar(arg0_6, arg1_6)
+	local var0_6 = arg0_6:GetArrowPool():GetArrow()
 
-	arg1:AddArrowBar(var0)
-	arg1:UpdateArrowBarPostition()
+	arg1_6:AddArrowBar(var0_6)
+	arg1_6:UpdateArrowBarPostition()
 end
 
-function var1.GetArrowPool(arg0)
-	return var0.Battle.BattleArrowManager.GetInstance()
+function var1_0.GetArrowPool(arg0_7)
+	return var0_0.Battle.BattleArrowManager.GetInstance()
 end
 
-function var1.MakeBloodBar(arg0, arg1)
-	local var0 = arg0:GetHPBarPool():GetHPBar(arg0.HP_BAR_NAME)
-	local var1 = arg1:GetUnitData():GetTemplate().icon_type
-	local var2 = findTF(var0, "type")
+function var1_0.MakeBloodBar(arg0_8, arg1_8)
+	local var0_8 = arg0_8:GetHPBarPool():GetHPBar(arg0_8.HP_BAR_NAME)
+	local var1_8 = arg1_8:GetUnitData():GetTemplate().icon_type
+	local var2_8 = findTF(var0_8, "type")
 
-	if var1 ~= 0 then
-		local var3 = GetSpriteFromAtlas("shiptype", shipType2print(arg1:GetUnitData():GetTemplate().icon_type))
+	if var1_8 ~= 0 then
+		local var3_8 = GetSpriteFromAtlas("shiptype", shipType2print(arg1_8:GetUnitData():GetTemplate().icon_type))
 
-		setImageSprite(var2, var3, true)
+		setImageSprite(var2_8, var3_8, true)
 
-		local var4 = findTF(var2, "type")
+		local var4_8 = findTF(var2_8, "type")
 
-		setImageSprite(var4, var3, true)
-		SetActive(var2, true)
+		setImageSprite(var4_8, var3_8, true)
+		SetActive(var2_8, true)
 	else
-		SetActive(var2, false)
+		SetActive(var2_8, false)
 	end
 
-	arg1:AddHPBar(var0)
-	arg1:UpdateHPBarPosition()
+	arg1_8:AddHPBar(var0_8)
+	arg1_8:UpdateHPBarPosition()
 end
 
-function var1.MakeAimBiasBar(arg0, arg1)
-	local var0 = arg1._HPBarTf:Find("biasBar")
+function var1_0.MakeAimBiasBar(arg0_9, arg1_9)
+	local var0_9 = arg1_9._HPBarTf:Find("biasBar")
 
-	arg1:AddAimBiasBar(var0)
-	arg1:AddAimBiasFogFX()
+	arg1_9:AddAimBiasBar(var0_9)
+	arg1_9:AddAimBiasFogFX()
 end
 
-function var1.MakeWaveFX(arg0, arg1)
-	local var0 = arg1:GetUnitData():GetTemplate().wave_fx
+function var1_0.MakeWaveFX(arg0_10, arg1_10)
+	local var0_10 = arg1_10:GetUnitData():GetTemplate().wave_fx
 
-	if var0 ~= "" then
-		arg1:AddWaveFX(var0)
+	if var0_10 ~= "" then
+		arg1_10:AddWaveFX(var0_10)
 	end
 end
 
-function var1.RemoveCharacter(arg0, arg1)
-	var0.Battle.BattleCameraUtil.GetInstance():StartShake(pg.shake_template[var0.Battle.BattleConst.ShakeType.UNIT_DIE])
-	var1.super.RemoveCharacter(arg0, arg1)
+function var1_0.RemoveCharacter(arg0_11, arg1_11)
+	var0_0.Battle.BattleCameraUtil.GetInstance():StartShake(pg.shake_template[var0_0.Battle.BattleConst.ShakeType.UNIT_DIE])
+	var1_0.super.RemoveCharacter(arg0_11, arg1_11)
 end

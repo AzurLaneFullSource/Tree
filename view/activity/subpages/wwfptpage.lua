@@ -1,672 +1,672 @@
-﻿local var0 = class("WWFPtPage", import(".TemplatePage.PtTemplatePage"))
-local var1 = 6000
+﻿local var0_0 = class("WWFPtPage", import(".TemplatePage.PtTemplatePage"))
+local var1_0 = 6000
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
+function var0_0.OnInit(arg0_1)
+	var0_0.super.OnInit(arg0_1)
 
-	arg0.helpBtn = arg0:findTF("help_btn", arg0.bg)
-	arg0.collectBtn = arg0:findTF("collect_btn", arg0.bg)
-	arg0.taskRedDot = arg0:findTF("red_dot", arg0.collectBtn)
-	arg0.resNumTF = arg0:findTF("res_num", arg0.collectBtn)
-	arg0.title = arg0:findTF("title", arg0.bg)
-	arg0.tags = arg0:findTF("tags", arg0.bg)
-	arg0.convertBtn = arg0:findTF("convert_btn", arg0.bg)
-	arg0.switchBtn = arg0:findTF("switch_btn", arg0.bg)
-	arg0.switchRedDot = arg0:findTF("red_dot", arg0.switchBtn)
-	arg0.paintings = {
-		arg0:findTF("paintings/ninghai", arg0.bg),
-		arg0:findTF("paintings/pinghai", arg0.bg)
+	arg0_1.helpBtn = arg0_1:findTF("help_btn", arg0_1.bg)
+	arg0_1.collectBtn = arg0_1:findTF("collect_btn", arg0_1.bg)
+	arg0_1.taskRedDot = arg0_1:findTF("red_dot", arg0_1.collectBtn)
+	arg0_1.resNumTF = arg0_1:findTF("res_num", arg0_1.collectBtn)
+	arg0_1.title = arg0_1:findTF("title", arg0_1.bg)
+	arg0_1.tags = arg0_1:findTF("tags", arg0_1.bg)
+	arg0_1.convertBtn = arg0_1:findTF("convert_btn", arg0_1.bg)
+	arg0_1.switchBtn = arg0_1:findTF("switch_btn", arg0_1.bg)
+	arg0_1.switchRedDot = arg0_1:findTF("red_dot", arg0_1.switchBtn)
+	arg0_1.paintings = {
+		arg0_1:findTF("paintings/ninghai", arg0_1.bg),
+		arg0_1:findTF("paintings/pinghai", arg0_1.bg)
 	}
-	arg0.anim = arg0:findTF("anim", arg0.bg)
-	arg0.ninghaiTF = arg0:findTF("anim/panda_anim/ninghai", arg0.bg)
-	arg0.pinghaiTF = arg0:findTF("anim/panda_anim/pinghai", arg0.bg)
-	arg0.heartImages = arg0:findTF("hearts", arg0.bg)
-	arg0.step2 = arg0:findTF("step2", arg0.bg)
-	arg0.taskWindow = arg0:findTF("TaskWindow")
-	arg0.closeBtn = arg0:findTF("panel/close_btn", arg0.taskWindow)
-	arg0.maskBtn = arg0:findTF("mask", arg0.taskWindow)
-	arg0.item = arg0:findTF("panel/scrollview/item", arg0.taskWindow)
-	arg0.items = arg0:findTF("panel/scrollview/items", arg0.taskWindow)
-	arg0.uilist = UIItemList.New(arg0.items, arg0.item)
-	arg0.typeImages = arg0:findTF("panel/tags", arg0.taskWindow)
-	arg0.barImages = arg0:findTF("panel/bars", arg0.taskWindow)
-	arg0.guide = arg0:findTF("Guide")
-	arg0.guideTarget = arg0:findTF("target", arg0.guide)
-	arg0.guideContent = arg0:findTF("dialogBox/content", arg0.guide)
+	arg0_1.anim = arg0_1:findTF("anim", arg0_1.bg)
+	arg0_1.ninghaiTF = arg0_1:findTF("anim/panda_anim/ninghai", arg0_1.bg)
+	arg0_1.pinghaiTF = arg0_1:findTF("anim/panda_anim/pinghai", arg0_1.bg)
+	arg0_1.heartImages = arg0_1:findTF("hearts", arg0_1.bg)
+	arg0_1.step2 = arg0_1:findTF("step2", arg0_1.bg)
+	arg0_1.taskWindow = arg0_1:findTF("TaskWindow")
+	arg0_1.closeBtn = arg0_1:findTF("panel/close_btn", arg0_1.taskWindow)
+	arg0_1.maskBtn = arg0_1:findTF("mask", arg0_1.taskWindow)
+	arg0_1.item = arg0_1:findTF("panel/scrollview/item", arg0_1.taskWindow)
+	arg0_1.items = arg0_1:findTF("panel/scrollview/items", arg0_1.taskWindow)
+	arg0_1.uilist = UIItemList.New(arg0_1.items, arg0_1.item)
+	arg0_1.typeImages = arg0_1:findTF("panel/tags", arg0_1.taskWindow)
+	arg0_1.barImages = arg0_1:findTF("panel/bars", arg0_1.taskWindow)
+	arg0_1.guide = arg0_1:findTF("Guide")
+	arg0_1.guideTarget = arg0_1:findTF("target", arg0_1.guide)
+	arg0_1.guideContent = arg0_1:findTF("dialogBox/content", arg0_1.guide)
 end
 
-function var0.OnDataSetting(arg0)
-	arg0.titleTxts = {
+function var0_0.OnDataSetting(arg0_2)
+	arg0_2.titleTxts = {
 		i18n("wwf_bamboo_tip1"),
 		i18n("wwf_bamboo_tip2")
 	}
-	arg0.resID = arg0.activity:getConfig("config_client").convertRes
-	arg0.subActivities = arg0.activity:getConfig("config_client").ptActID
-	arg0.taskList = arg0.activity:getConfig("config_data")
+	arg0_2.resID = arg0_2.activity:getConfig("config_client").convertRes
+	arg0_2.subActivities = arg0_2.activity:getConfig("config_client").ptActID
+	arg0_2.taskList = arg0_2.activity:getConfig("config_data")
 
-	arg0:initPtData()
-	arg0:initTaskData()
-	arg0:initLocalData()
+	arg0_2:initPtData()
+	arg0_2:initTaskData()
+	arg0_2:initLocalData()
 end
 
-function var0.initPtData(arg0)
-	arg0.subPtDate = {}
+function var0_0.initPtData(arg0_3)
+	arg0_3.subPtDate = {}
 
-	for iter0, iter1 in ipairs(arg0.subActivities) do
-		local var0 = getProxy(ActivityProxy):getActivityById(iter1)
+	for iter0_3, iter1_3 in ipairs(arg0_3.subActivities) do
+		local var0_3 = getProxy(ActivityProxy):getActivityById(iter1_3)
 
-		if arg0.subPtDate[iter1] then
-			arg0.subPtDate[iter1]:Update(var0)
+		if arg0_3.subPtDate[iter1_3] then
+			arg0_3.subPtDate[iter1_3]:Update(var0_3)
 		else
-			arg0.subPtDate[iter1] = ActivityPtData.New(var0)
+			arg0_3.subPtDate[iter1_3] = ActivityPtData.New(var0_3)
 		end
 	end
 
-	arg0.resNum = getProxy(PlayerProxy):getRawData():getResource(arg0.resID)
+	arg0_3.resNum = getProxy(PlayerProxy):getRawData():getResource(arg0_3.resID)
 end
 
-function var0.setPtActIndex(arg0)
-	arg0.curActIndex = arg0.lastSelectIndex
-	arg0.curSubActID = arg0.subActivities[arg0.curActIndex]
+function var0_0.setPtActIndex(arg0_4)
+	arg0_4.curActIndex = arg0_4.lastSelectIndex
+	arg0_4.curSubActID = arg0_4.subActivities[arg0_4.curActIndex]
 
-	local var0 = arg0.curActIndex == 1 and 2 or 1
-	local var1 = arg0.subPtDate[arg0.curSubActID]:CanGetMorePt()
-	local var2 = arg0.subPtDate[arg0.subActivities[var0]]:CanGetAward()
+	local var0_4 = arg0_4.curActIndex == 1 and 2 or 1
+	local var1_4 = arg0_4.subPtDate[arg0_4.curSubActID]:CanGetMorePt()
+	local var2_4 = arg0_4.subPtDate[arg0_4.subActivities[var0_4]]:CanGetAward()
 
-	if not var1 or var2 then
-		arg0.curActIndex = var0
-		arg0.curSubActID = arg0.subActivities[arg0.curActIndex]
+	if not var1_4 or var2_4 then
+		arg0_4.curActIndex = var0_4
+		arg0_4.curSubActID = arg0_4.subActivities[arg0_4.curActIndex]
 
-		PlayerPrefs.SetInt("wwf_select_index_" .. arg0.playerId, arg0.lastSelectIndex)
+		PlayerPrefs.SetInt("wwf_select_index_" .. arg0_4.playerId, arg0_4.lastSelectIndex)
 		PlayerPrefs.Save()
 	end
 end
 
-function var0.setStep2Progress(arg0)
-	local var0 = arg0.subPtDate[arg0.curSubActID].count
+function var0_0.setStep2Progress(arg0_5)
+	local var0_5 = arg0_5.subPtDate[arg0_5.curSubActID].count
 
-	setImageSprite(arg0.step2, arg0.heartImages:Find(tostring(arg0.curActIndex)):GetComponent(typeof(Image)).sprite)
+	setImageSprite(arg0_5.step2, arg0_5.heartImages:Find(tostring(arg0_5.curActIndex)):GetComponent(typeof(Image)).sprite)
 
-	arg0.step2:GetComponent(typeof(Image)).fillAmount = var0 / var1
+	arg0_5.step2:GetComponent(typeof(Image)).fillAmount = var0_5 / var1_0
 end
 
-function var0.initTaskData(arg0)
-	arg0.taskProxy = getProxy(TaskProxy)
-	arg0.curTask = {}
-	arg0.todoTaskNum = 0
+function var0_0.initTaskData(arg0_6)
+	arg0_6.taskProxy = getProxy(TaskProxy)
+	arg0_6.curTask = {}
+	arg0_6.todoTaskNum = 0
 
-	for iter0, iter1 in ipairs(arg0.taskList) do
-		local var0 = arg0.taskProxy:getTaskById(iter1) or arg0.taskProxy:getFinishTaskById(iter1)
+	for iter0_6, iter1_6 in ipairs(arg0_6.taskList) do
+		local var0_6 = arg0_6.taskProxy:getTaskById(iter1_6) or arg0_6.taskProxy:getFinishTaskById(iter1_6)
 
-		if var0 then
-			table.insert(arg0.curTask, var0.id)
+		if var0_6 then
+			table.insert(arg0_6.curTask, var0_6.id)
 
-			if var0:getTaskStatus() == 0 then
-				arg0.todoTaskNum = arg0.todoTaskNum + 1
+			if var0_6:getTaskStatus() == 0 then
+				arg0_6.todoTaskNum = arg0_6.todoTaskNum + 1
 			end
 		end
 	end
 end
 
-function var0.initLocalData(arg0)
-	arg0.playerId = getProxy(PlayerProxy):getData().id
-	arg0.isFirst = PlayerPrefs.GetInt("wwf_first_" .. arg0.playerId)
+function var0_0.initLocalData(arg0_7)
+	arg0_7.playerId = getProxy(PlayerProxy):getData().id
+	arg0_7.isFirst = PlayerPrefs.GetInt("wwf_first_" .. arg0_7.playerId)
 
-	if PlayerPrefs.GetInt("wwf_select_index_" .. arg0.playerId) == 0 then
-		arg0.lastSelectIndex = 1
+	if PlayerPrefs.GetInt("wwf_select_index_" .. arg0_7.playerId) == 0 then
+		arg0_7.lastSelectIndex = 1
 	else
-		arg0.lastSelectIndex = PlayerPrefs.GetInt("wwf_select_index_" .. arg0.playerId)
+		arg0_7.lastSelectIndex = PlayerPrefs.GetInt("wwf_select_index_" .. arg0_7.playerId)
 	end
 
-	arg0.showTaskRedDot = false
+	arg0_7.showTaskRedDot = false
 
-	local var0 = PlayerPrefs.GetInt("wwf_todo_task_num_" .. arg0.playerId)
+	local var0_7 = PlayerPrefs.GetInt("wwf_todo_task_num_" .. arg0_7.playerId)
 
-	if (var0 == 0 and not arg0.todoTaskNum == 0 or var0 < arg0.todoTaskNum) and not arg0:isFinishAllAct() then
-		arg0.showTaskRedDot = true
+	if (var0_7 == 0 and not arg0_7.todoTaskNum == 0 or var0_7 < arg0_7.todoTaskNum) and not arg0_7:isFinishAllAct() then
+		arg0_7.showTaskRedDot = true
 	end
 
-	arg0.hasClickTask = false
+	arg0_7.hasClickTask = false
 
-	PlayerPrefs.SetInt("wwf_todo_task_num_" .. arg0.playerId, arg0.todoTaskNum)
+	PlayerPrefs.SetInt("wwf_todo_task_num_" .. arg0_7.playerId, arg0_7.todoTaskNum)
 	PlayerPrefs.Save()
 end
 
-function var0.OnFirstFlush(arg0)
-	onButton(arg0, arg0.awardTF, function()
-		arg0:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
-			type = arg0.subPtDate[arg0.curSubActID].type,
-			dropList = arg0.subPtDate[arg0.curSubActID].dropList,
-			targets = arg0.subPtDate[arg0.curSubActID].targets,
-			level = arg0.subPtDate[arg0.curSubActID].level,
-			count = arg0.subPtDate[arg0.curSubActID].count,
-			resId = arg0.subPtDate[arg0.curSubActID].resId
+function var0_0.OnFirstFlush(arg0_8)
+	onButton(arg0_8, arg0_8.awardTF, function()
+		arg0_8:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
+			type = arg0_8.subPtDate[arg0_8.curSubActID].type,
+			dropList = arg0_8.subPtDate[arg0_8.curSubActID].dropList,
+			targets = arg0_8.subPtDate[arg0_8.curSubActID].targets,
+			level = arg0_8.subPtDate[arg0_8.curSubActID].level,
+			count = arg0_8.subPtDate[arg0_8.curSubActID].count,
+			resId = arg0_8.subPtDate[arg0_8.curSubActID].resId
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.getBtn, function()
-		local var0 = {}
-		local var1 = arg0.subPtDate[arg0.curSubActID]:GetAward()
-		local var2 = getProxy(PlayerProxy):getData()
+	onButton(arg0_8, arg0_8.getBtn, function()
+		local var0_10 = {}
+		local var1_10 = arg0_8.subPtDate[arg0_8.curSubActID]:GetAward()
+		local var2_10 = getProxy(PlayerProxy):getData()
 
-		if var1.type == DROP_TYPE_RESOURCE and var1.id == PlayerConst.ResGold and var2:GoldMax(var1.count) then
-			table.insert(var0, function(arg0)
+		if var1_10.type == DROP_TYPE_RESOURCE and var1_10.id == PlayerConst.ResGold and var2_10:GoldMax(var1_10.count) then
+			table.insert(var0_10, function(arg0_11)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("gold_max_tip_title") .. i18n("award_max_warning"),
-					onYes = arg0
+					onYes = arg0_11
 				})
 			end)
 		end
 
-		local function var3()
-			if not arg0.subPtDate[arg0.curSubActID]:CanGetNextAward() then
-				triggerButton(arg0.switchBtn)
+		local function var3_10()
+			if not arg0_8.subPtDate[arg0_8.curSubActID]:CanGetNextAward() then
+				triggerButton(arg0_8.switchBtn)
 			end
 		end
 
-		seriesAsync(var0, function()
-			local var0, var1 = arg0.subPtDate[arg0.curSubActID]:GetResProgress()
+		seriesAsync(var0_10, function()
+			local var0_13, var1_13 = arg0_8.subPtDate[arg0_8.curSubActID]:GetResProgress()
 
-			arg0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+			arg0_8:emit(ActivityMediator.EVENT_PT_OPERATION, {
 				cmd = 1,
-				activity_id = arg0.subPtDate[arg0.curSubActID]:GetId(),
-				arg1 = var1,
-				callback = var3
+				activity_id = arg0_8.subPtDate[arg0_8.curSubActID]:GetId(),
+				arg1 = var1_13,
+				callback = var3_10
 			})
 		end)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_8, arg0_8.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("wwf_bamboo_help")
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.convertBtn, function()
-		if arg0.resNum <= 0 then
+	onButton(arg0_8, arg0_8.convertBtn, function()
+		if arg0_8.resNum <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("wwf_bamboo_tip3"))
-			arg0:openTask()
+			arg0_8:openTask()
 		else
-			arg0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+			arg0_8:emit(ActivityMediator.EVENT_PT_OPERATION, {
 				cmd = 5,
-				activity_id = arg0.curSubActID,
-				arg1 = arg0.resID
+				activity_id = arg0_8.curSubActID,
+				arg1 = arg0_8.resID
 			})
-			arg0:playSpineAni()
+			arg0_8:playSpineAni()
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0.switchBtn, function()
-		if arg0.isSwitching then
+	onButton(arg0_8, arg0_8.switchBtn, function()
+		if arg0_8.isSwitching then
 			return
 		end
 
-		arg0.curActIndex = arg0.curActIndex == 1 and 2 or 1
-		arg0.lastSelectIndex = arg0.curActIndex
+		arg0_8.curActIndex = arg0_8.curActIndex == 1 and 2 or 1
+		arg0_8.lastSelectIndex = arg0_8.curActIndex
 
-		PlayerPrefs.SetInt("wwf_select_index_" .. arg0.playerId, arg0.lastSelectIndex)
+		PlayerPrefs.SetInt("wwf_select_index_" .. arg0_8.playerId, arg0_8.lastSelectIndex)
 		PlayerPrefs.Save()
 
-		arg0.curSubActID = arg0.subActivities[arg0.curActIndex]
+		arg0_8.curSubActID = arg0_8.subActivities[arg0_8.curActIndex]
 
-		arg0:OnUpdatePtAct()
-		arg0:playPaintingAni()
-		arg0:setStep2Progress()
+		arg0_8:OnUpdatePtAct()
+		arg0_8:playPaintingAni()
+		arg0_8:setStep2Progress()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.collectBtn, function()
-		arg0:openTask()
+	onButton(arg0_8, arg0_8.collectBtn, function()
+		arg0_8:openTask()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.closeBtn, function()
-		arg0:closeTask()
+	onButton(arg0_8, arg0_8.closeBtn, function()
+		arg0_8:closeTask()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.maskBtn, function()
-		arg0:closeTask()
+	onButton(arg0_8, arg0_8.maskBtn, function()
+		arg0_8:closeTask()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.guideTarget, function()
-		setActive(arg0.guide, false)
-		arg0:openTask()
-		PlayerPrefs.SetInt("wwf_first_" .. arg0.playerId, 1)
+	onButton(arg0_8, arg0_8.guideTarget, function()
+		setActive(arg0_8.guide, false)
+		arg0_8:openTask()
+		PlayerPrefs.SetInt("wwf_first_" .. arg0_8.playerId, 1)
 		PlayerPrefs.Save()
 
-		if #arg0.finishItemList > 0 then
-			arg0:autoFinishTask()
+		if #arg0_8.finishItemList > 0 then
+			arg0_8:autoFinishTask()
 		end
 	end, SFX_PANEL)
 
-	local var0 = "ninghai_7"
-	local var1 = "pinghai_7"
+	local var0_8 = "ninghai_7"
+	local var1_8 = "pinghai_7"
 
-	if not arg0.model1 then
+	if not arg0_8.model1 then
 		pg.UIMgr.GetInstance():LoadingOn()
-		PoolMgr.GetInstance():GetSpineChar(var0, true, function(arg0)
+		PoolMgr.GetInstance():GetSpineChar(var0_8, true, function(arg0_21)
 			pg.UIMgr.GetInstance():LoadingOff()
 
-			arg0.prefab1 = var0
-			arg0.model1 = arg0
-			tf(arg0).localScale = Vector3(1, 1, 1)
+			arg0_8.prefab1 = var0_8
+			arg0_8.model1 = arg0_21
+			tf(arg0_21).localScale = Vector3(1, 1, 1)
 
-			setParent(arg0, arg0.ninghaiTF)
-			setActive(arg0, false)
+			setParent(arg0_21, arg0_8.ninghaiTF)
+			setActive(arg0_21, false)
 		end)
 	end
 
-	if not arg0.model2 then
+	if not arg0_8.model2 then
 		pg.UIMgr.GetInstance():LoadingOn()
-		PoolMgr.GetInstance():GetSpineChar(var1, true, function(arg0)
+		PoolMgr.GetInstance():GetSpineChar(var1_8, true, function(arg0_22)
 			pg.UIMgr.GetInstance():LoadingOff()
 
-			arg0.prefab2 = var1
-			arg0.model2 = arg0
-			tf(arg0).localScale = Vector3(1, 1, 1)
+			arg0_8.prefab2 = var1_8
+			arg0_8.model2 = arg0_22
+			tf(arg0_22).localScale = Vector3(1, 1, 1)
 
-			setParent(arg0, arg0.pinghaiTF)
-			setActive(arg0, false)
+			setParent(arg0_22, arg0_8.pinghaiTF)
+			setActive(arg0_22, false)
 		end)
 	end
 
-	arg0:setPtActIndex()
-	arg0:setStep2Progress()
-	arg0:initTaskWindow()
+	arg0_8:setPtActIndex()
+	arg0_8:setStep2Progress()
+	arg0_8:initTaskWindow()
 
-	if arg0.isFirst == 0 then
-		setActive(arg0.guide, true)
-		setText(arg0.guideContent, i18n("wwf_guide_tip"))
-	elseif #arg0.finishItemList > 0 then
-		arg0:openTask()
-		arg0:autoFinishTask()
+	if arg0_8.isFirst == 0 then
+		setActive(arg0_8.guide, true)
+		setText(arg0_8.guideContent, i18n("wwf_guide_tip"))
+	elseif #arg0_8.finishItemList > 0 then
+		arg0_8:openTask()
+		arg0_8:autoFinishTask()
 	end
 end
 
-function var0.OnUpdateFlush(arg0)
-	for iter0, iter1 in ipairs(arg0.subActivities) do
-		local var0 = getProxy(ActivityProxy):getActivityById(iter1)
+function var0_0.OnUpdateFlush(arg0_23)
+	for iter0_23, iter1_23 in ipairs(arg0_23.subActivities) do
+		local var0_23 = getProxy(ActivityProxy):getActivityById(iter1_23)
 
-		if arg0.subPtDate[iter1] then
-			arg0.subPtDate[iter1]:Update(var0)
+		if arg0_23.subPtDate[iter1_23] then
+			arg0_23.subPtDate[iter1_23]:Update(var0_23)
 		else
-			arg0.subPtDate[iter1] = ActivityPtData.New(var0)
+			arg0_23.subPtDate[iter1_23] = ActivityPtData.New(var0_23)
 		end
 	end
 
-	arg0.resNum = getProxy(PlayerProxy):getRawData():getResource(arg0.resID)
+	arg0_23.resNum = getProxy(PlayerProxy):getRawData():getResource(arg0_23.resID)
 
-	setText(arg0.resNumTF, arg0.resNum)
-	arg0:OnUpdatePtAct()
+	setText(arg0_23.resNumTF, arg0_23.resNum)
+	arg0_23:OnUpdatePtAct()
 
-	local var1 = arg0.curActIndex == 1 and 2 or 1
+	local var1_23 = arg0_23.curActIndex == 1 and 2 or 1
 
-	GetOrAddComponent(arg0.paintings[arg0.curActIndex], typeof(CanvasGroup)).alpha = 1
-	GetOrAddComponent(arg0.paintings[var1], typeof(CanvasGroup)).alpha = 0
+	GetOrAddComponent(arg0_23.paintings[arg0_23.curActIndex], typeof(CanvasGroup)).alpha = 1
+	GetOrAddComponent(arg0_23.paintings[var1_23], typeof(CanvasGroup)).alpha = 0
 end
 
-function var0.OnUpdatePtAct(arg0)
-	setText(arg0.title, arg0.titleTxts[arg0.curActIndex])
-	eachChild(arg0.tags, function(arg0)
-		setActive(arg0, tonumber(arg0.name) == arg0.curActIndex)
+function var0_0.OnUpdatePtAct(arg0_24)
+	setText(arg0_24.title, arg0_24.titleTxts[arg0_24.curActIndex])
+	eachChild(arg0_24.tags, function(arg0_25)
+		setActive(arg0_25, tonumber(arg0_25.name) == arg0_24.curActIndex)
 	end)
 
-	local var0, var1, var2 = arg0.subPtDate[arg0.curSubActID]:GetLevelProgress()
-	local var3, var4, var5 = arg0.subPtDate[arg0.curSubActID]:GetResProgress()
+	local var0_24, var1_24, var2_24 = arg0_24.subPtDate[arg0_24.curSubActID]:GetLevelProgress()
+	local var3_24, var4_24, var5_24 = arg0_24.subPtDate[arg0_24.curSubActID]:GetResProgress()
 
-	eachChild(arg0.step, function(arg0)
-		setActive(arg0, tonumber(arg0.name) < var0 and true or false)
+	eachChild(arg0_24.step, function(arg0_26)
+		setActive(arg0_26, tonumber(arg0_26.name) < var0_24 and true or false)
 	end)
-	setText(arg0.progress, (var5 >= 1 and setColorStr(var3, "#94D979") or var3) .. "/" .. var4)
+	setText(arg0_24.progress, (var5_24 >= 1 and setColorStr(var3_24, "#94D979") or var3_24) .. "/" .. var4_24)
 
-	local var6 = arg0.subPtDate[arg0.curSubActID]:GetAward()
+	local var6_24 = arg0_24.subPtDate[arg0_24.curSubActID]:GetAward()
 
-	updateDrop(arg0.awardTF, var6)
+	updateDrop(arg0_24.awardTF, var6_24)
 
-	local var7 = arg0.subPtDate[arg0.curSubActID]:CanGetAward()
-	local var8 = arg0.subPtDate[arg0.curSubActID]:CanGetNextAward()
-	local var9 = arg0.subPtDate[arg0.curSubActID]:CanGetMorePt()
+	local var7_24 = arg0_24.subPtDate[arg0_24.curSubActID]:CanGetAward()
+	local var8_24 = arg0_24.subPtDate[arg0_24.curSubActID]:CanGetNextAward()
+	local var9_24 = arg0_24.subPtDate[arg0_24.curSubActID]:CanGetMorePt()
 
-	setActive(arg0.convertBtn, not var7)
-	setActive(arg0.getBtn, var7)
-	setActive(arg0.gotBtn, not var8)
-	setActive(arg0:findTF("10", arg0.step), not var8)
-	setActive(arg0.switchRedDot, not var8 and not arg0:isFinishAllAct())
-	setActive(arg0.taskRedDot, arg0.showTaskRedDot and not arg0.hasClickTask)
+	setActive(arg0_24.convertBtn, not var7_24)
+	setActive(arg0_24.getBtn, var7_24)
+	setActive(arg0_24.gotBtn, not var8_24)
+	setActive(arg0_24:findTF("10", arg0_24.step), not var8_24)
+	setActive(arg0_24.switchRedDot, not var8_24 and not arg0_24:isFinishAllAct())
+	setActive(arg0_24.taskRedDot, arg0_24.showTaskRedDot and not arg0_24.hasClickTask)
 end
 
-function var0.playPaintingAni(arg0)
-	arg0.isSwitching = true
+function var0_0.playPaintingAni(arg0_27)
+	arg0_27.isSwitching = true
 
-	local var0 = arg0.curActIndex
-	local var1 = arg0.curActIndex == 1 and 2 or 1
-	local var2 = arg0.paintings[var0]
-	local var3 = arg0.paintings[var1]
-	local var4 = GetOrAddComponent(var2, typeof(CanvasGroup))
-	local var5 = GetOrAddComponent(var3, typeof(CanvasGroup))
+	local var0_27 = arg0_27.curActIndex
+	local var1_27 = arg0_27.curActIndex == 1 and 2 or 1
+	local var2_27 = arg0_27.paintings[var0_27]
+	local var3_27 = arg0_27.paintings[var1_27]
+	local var4_27 = GetOrAddComponent(var2_27, typeof(CanvasGroup))
+	local var5_27 = GetOrAddComponent(var3_27, typeof(CanvasGroup))
 
-	LeanTween.value(go(var3), 1, 0, 0.4):setOnUpdate(System.Action_float(function(arg0)
-		var5.alpha = arg0
+	LeanTween.value(go(var3_27), 1, 0, 0.4):setOnUpdate(System.Action_float(function(arg0_28)
+		var5_27.alpha = arg0_28
 	end)):setOnComplete(System.Action(function()
-		LeanTween.value(go(var2), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg0)
-			var4.alpha = arg0
+		LeanTween.value(go(var2_27), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg0_30)
+			var4_27.alpha = arg0_30
 		end)):setOnComplete(System.Action(function()
-			arg0.isSwitching = false
+			arg0_27.isSwitching = false
 		end))
 	end))
 end
 
-function var0.playSpineAni(arg0)
-	setActive(arg0.anim, true)
+function var0_0.playSpineAni(arg0_32)
+	setActive(arg0_32.anim, true)
 
-	local var0 = 0.4
-	local var1 = arg0:findTF("panda_anim", arg0.anim)
-	local var2 = arg0:findTF("heart_anim", arg0.anim)
-	local var3 = GetOrAddComponent(var1, typeof(CanvasGroup))
+	local var0_32 = 0.4
+	local var1_32 = arg0_32:findTF("panda_anim", arg0_32.anim)
+	local var2_32 = arg0_32:findTF("heart_anim", arg0_32.anim)
+	local var3_32 = GetOrAddComponent(var1_32, typeof(CanvasGroup))
 
-	setActive(var1, true)
+	setActive(var1_32, true)
 
-	var3.alpha = 1
+	var3_32.alpha = 1
 
-	LeanTween.value(go(var1), 0, 1, var0):setOnUpdate(System.Action_float(function(arg0)
-		var3.alpha = arg0
+	LeanTween.value(go(var1_32), 0, 1, var0_32):setOnUpdate(System.Action_float(function(arg0_33)
+		var3_32.alpha = arg0_33
 	end))
 
-	local function var4()
-		LeanTween.value(go(var1), 1, 0, var0):setOnUpdate(System.Action_float(function(arg0)
-			var3.alpha = arg0
+	local function var4_32()
+		LeanTween.value(go(var1_32), 1, 0, var0_32):setOnUpdate(System.Action_float(function(arg0_35)
+			var3_32.alpha = arg0_35
 		end))
-		LeanTween.scale(var1, Vector3(1, 0, 1), var0):setFrom(Vector3(1, 1, 1)):setOnComplete(System.Action(function()
-			setActive(var1, false)
+		LeanTween.scale(var1_32, Vector3(1, 0, 1), var0_32):setFrom(Vector3(1, 1, 1)):setOnComplete(System.Action(function()
+			setActive(var1_32, false)
 		end))
-		setActive(var2, true)
+		setActive(var2_32, true)
 		LeanTween.delayedCall(2, System.Action(function()
-			setActive(var2, false)
+			setActive(var2_32, false)
 
-			local var0 = arg0.step2:GetComponent(typeof(Image)).fillAmount
-			local var1 = arg0.subPtDate[arg0.curSubActID].count
+			local var0_37 = arg0_32.step2:GetComponent(typeof(Image)).fillAmount
+			local var1_37 = arg0_32.subPtDate[arg0_32.curSubActID].count
 
-			LeanTween.value(go(arg0.step2), var0, var1 / var1, 1):setOnUpdate(System.Action_float(function(arg0)
-				arg0.step2:GetComponent(typeof(Image)).fillAmount = arg0
+			LeanTween.value(go(arg0_32.step2), var0_37, var1_37 / var1_0, 1):setOnUpdate(System.Action_float(function(arg0_38)
+				arg0_32.step2:GetComponent(typeof(Image)).fillAmount = arg0_38
 			end)):setOnComplete(System.Action(function()
-				setActive(arg0.anim, false)
+				setActive(arg0_32.anim, false)
 
-				arg0.heartAni = false
+				arg0_32.heartAni = false
 			end))
 		end))
 	end
 
-	local var5 = arg0.curActIndex == 1 and arg0.model1 or arg0.model2
+	local var5_32 = arg0_32.curActIndex == 1 and arg0_32.model1 or arg0_32.model2
 
-	LeanTween.scale(var1, Vector3(1, 1, 1), var0):setFrom(Vector3(1, 0, 1)):setOnComplete(System.Action(function()
-		setActive(var5, true)
-		var5:GetComponent("SpineAnimUI"):SetActionCallBack(function(arg0)
-			if arg0 == "finish" then
-				var5:GetComponent("SpineAnimUI"):SetActionCallBack(nil)
-				setActive(var5, false)
-				var4()
+	LeanTween.scale(var1_32, Vector3(1, 1, 1), var0_32):setFrom(Vector3(1, 0, 1)):setOnComplete(System.Action(function()
+		setActive(var5_32, true)
+		var5_32:GetComponent("SpineAnimUI"):SetActionCallBack(function(arg0_41)
+			if arg0_41 == "finish" then
+				var5_32:GetComponent("SpineAnimUI"):SetActionCallBack(nil)
+				setActive(var5_32, false)
+				var4_32()
 			end
 		end)
-		var5:GetComponent("SpineAnimUI"):SetAction("event", 0)
+		var5_32:GetComponent("SpineAnimUI"):SetAction("event", 0)
 	end))
 
-	arg0.heartAni = false
+	arg0_32.heartAni = false
 
-	onButton(arg0, arg0.anim, function()
-		if arg0.heartAni then
+	onButton(arg0_32, arg0_32.anim, function()
+		if arg0_32.heartAni then
 			return
 		end
 
-		var5:GetComponent("SpineAnimUI"):SetActionCallBack(nil)
-		setActive(var5, false)
+		var5_32:GetComponent("SpineAnimUI"):SetActionCallBack(nil)
+		setActive(var5_32, false)
 
-		arg0.heartAni = true
+		arg0_32.heartAni = true
 
-		var4()
+		var4_32()
 	end, SFX_PANEL)
 end
 
-function var0.initTaskWindow(arg0)
-	arg0.finishItemList = {}
-	arg0.finishTaskVOList = {}
+function var0_0.initTaskWindow(arg0_43)
+	arg0_43.finishItemList = {}
+	arg0_43.finishTaskVOList = {}
 
-	arg0.uilist:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg1 + 1
-			local var1 = arg0:findTF("item", arg2)
-			local var2 = arg0.curTask[var0]
-			local var3 = arg0.taskProxy:getTaskById(var2) or arg0.taskProxy:getFinishTaskById(var2)
+	arg0_43.uilist:make(function(arg0_44, arg1_44, arg2_44)
+		if arg0_44 == UIItemList.EventUpdate then
+			local var0_44 = arg1_44 + 1
+			local var1_44 = arg0_43:findTF("item", arg2_44)
+			local var2_44 = arg0_43.curTask[var0_44]
+			local var3_44 = arg0_43.taskProxy:getTaskById(var2_44) or arg0_43.taskProxy:getFinishTaskById(var2_44)
 
-			assert(var3, "without this task by id: " .. var2)
+			assert(var3_44, "without this task by id: " .. var2_44)
 
-			local var4 = var3:getConfig("award_display")[1]
-			local var5 = {
-				type = var4[1],
-				id = var4[2],
-				count = var4[3]
+			local var4_44 = var3_44:getConfig("award_display")[1]
+			local var5_44 = {
+				type = var4_44[1],
+				id = var4_44[2],
+				count = var4_44[3]
 			}
 
-			updateDrop(var1, var5)
-			onButton(arg0, var1, function()
-				arg0:emit(BaseUI.ON_DROP, var5)
+			updateDrop(var1_44, var5_44)
+			onButton(arg0_43, var1_44, function()
+				arg0_43:emit(BaseUI.ON_DROP, var5_44)
 			end, SFX_PANEL)
 
-			local var6 = var3:getProgress()
-			local var7 = var3:getConfig("target_num")
+			local var6_44 = var3_44:getProgress()
+			local var7_44 = var3_44:getConfig("target_num")
 
-			setText(arg0:findTF("description", arg2), var3:getConfig("desc"))
-			setText(arg0:findTF("progressText", arg2), var6 .. "/" .. var7)
-			setSlider(arg0:findTF("progress", arg2), 0, var7, var6)
+			setText(arg0_43:findTF("description", arg2_44), var3_44:getConfig("desc"))
+			setText(arg0_43:findTF("progressText", arg2_44), var6_44 .. "/" .. var7_44)
+			setSlider(arg0_43:findTF("progress", arg2_44), 0, var7_44, var6_44)
 
-			local var8 = arg0:findTF("go_btn", arg2)
-			local var9 = var3:getTaskStatus()
+			local var8_44 = arg0_43:findTF("go_btn", arg2_44)
+			local var9_44 = var3_44:getTaskStatus()
 
-			if var9 == 1 then
-				table.insert(arg0.finishItemList, arg2)
-				table.insert(arg0.finishTaskVOList, var3)
+			if var9_44 == 1 then
+				table.insert(arg0_43.finishItemList, arg2_44)
+				table.insert(arg0_43.finishTaskVOList, var3_44)
 			end
 
-			setActive(arg0:findTF("finnal", arg2), var9 == 2)
-			onButton(arg0, var8, function()
-				arg0:emit(ActivityMediator.ON_TASK_GO, var3)
+			setActive(arg0_43:findTF("finnal", arg2_44), var9_44 == 2)
+			onButton(arg0_43, var8_44, function()
+				arg0_43:emit(ActivityMediator.ON_TASK_GO, var3_44)
 			end, SFX_PANEL)
 
-			local var10 = var3:getConfig("type")
+			local var10_44 = var3_44:getConfig("type")
 
-			setImageSprite(arg0:findTF("type", arg2), arg0.typeImages:Find(tostring(var10)):GetComponent(typeof(Image)).sprite, true)
-			setImageSprite(arg0:findTF("progress/slider", arg2), arg0.barImages:Find(tostring(var10)):GetComponent(typeof(Image)).sprite)
+			setImageSprite(arg0_43:findTF("type", arg2_44), arg0_43.typeImages:Find(tostring(var10_44)):GetComponent(typeof(Image)).sprite, true)
+			setImageSprite(arg0_43:findTF("progress/slider", arg2_44), arg0_43.barImages:Find(tostring(var10_44)):GetComponent(typeof(Image)).sprite)
 		end
 	end)
-	arg0.uilist:align(#arg0.curTask)
-	setActive(arg0.taskWindow, false)
+	arg0_43.uilist:align(#arg0_43.curTask)
+	setActive(arg0_43.taskWindow, false)
 end
 
-function var0.closeTask(arg0)
-	setActive(arg0.taskWindow, false)
+function var0_0.closeTask(arg0_47)
+	setActive(arg0_47.taskWindow, false)
 end
 
-function var0.openTask(arg0)
-	if not arg0.curSubActID then
-		arg0:setPtActIndex()
-		arg0:setStep2Progress()
+function var0_0.openTask(arg0_48)
+	if not arg0_48.curSubActID then
+		arg0_48:setPtActIndex()
+		arg0_48:setStep2Progress()
 	end
 
-	setActive(arg0.taskWindow, true)
+	setActive(arg0_48.taskWindow, true)
 
-	if arg0.showTaskRedDot then
-		setActive(arg0.taskRedDot, false)
-		getProxy(ActivityProxy):updateActivity(arg0.activity)
+	if arg0_48.showTaskRedDot then
+		setActive(arg0_48.taskRedDot, false)
+		getProxy(ActivityProxy):updateActivity(arg0_48.activity)
 	end
 
-	arg0.hasClickTask = true
+	arg0_48.hasClickTask = true
 
-	eachChild(arg0.items, function(arg0)
-		if isActive(arg0:findTF("finnal", arg0)) then
-			arg0:SetAsLastSibling()
+	eachChild(arg0_48.items, function(arg0_49)
+		if isActive(arg0_48:findTF("finnal", arg0_49)) then
+			arg0_49:SetAsLastSibling()
 		end
 	end)
 end
 
-function var0.autoFinishTask(arg0)
-	local var0 = 0.01
-	local var1 = 0.5
+function var0_0.autoFinishTask(arg0_50)
+	local var0_50 = 0.01
+	local var1_50 = 0.5
 
-	for iter0, iter1 in ipairs(arg0.finishItemList) do
-		local var2 = GetOrAddComponent(iter1, typeof(CanvasGroup))
+	for iter0_50, iter1_50 in ipairs(arg0_50.finishItemList) do
+		local var2_50 = GetOrAddComponent(iter1_50, typeof(CanvasGroup))
 
-		arg0:managedTween(LeanTween.delayedCall, function()
-			iter1:SetAsFirstSibling()
-			LeanTween.value(go(iter1), 1, 0, var1):setOnUpdate(System.Action_float(function(arg0)
-				var2.alpha = arg0
+		arg0_50:managedTween(LeanTween.delayedCall, function()
+			iter1_50:SetAsFirstSibling()
+			LeanTween.value(go(iter1_50), 1, 0, var1_50):setOnUpdate(System.Action_float(function(arg0_52)
+				var2_50.alpha = arg0_52
 			end)):setOnComplete(System.Action(function()
-				var2.alpha = 1
+				var2_50.alpha = 1
 
-				setActive(arg0:findTF("finnal", iter1), true)
-				iter1:SetAsLastSibling()
+				setActive(arg0_50:findTF("finnal", iter1_50), true)
+				iter1_50:SetAsLastSibling()
 			end))
-		end, var0, nil)
+		end, var0_50, nil)
 
-		var0 = var0 + var1 + 0.1
+		var0_50 = var0_50 + var1_50 + 0.1
 	end
 
-	arg0:managedTween(LeanTween.delayedCall, function()
+	arg0_50:managedTween(LeanTween.delayedCall, function()
 		pg.m02:sendNotification(GAME.SUBMIT_TASK_ONESTEP, {
-			resultList = arg0.finishTaskVOList
+			resultList = arg0_50.finishTaskVOList
 		})
-	end, var0, nil)
+	end, var0_50, nil)
 end
 
-function var0.canFinishTask(arg0, arg1)
-	local var0 = false
+function var0_0.canFinishTask(arg0_55, arg1_55)
+	local var0_55 = false
 
-	for iter0, iter1 in pairs(arg0) do
-		if (arg1:getTaskById(iter1) or arg1:getFinishTaskById(iter1)):getTaskStatus() == 1 then
-			var0 = true
+	for iter0_55, iter1_55 in pairs(arg0_55) do
+		if (arg1_55:getTaskById(iter1_55) or arg1_55:getFinishTaskById(iter1_55)):getTaskStatus() == 1 then
+			var0_55 = true
 
 			break
 		end
 	end
 
-	return var0
+	return var0_55
 end
 
-function var0.canAddProgress(arg0, arg1)
-	local var0 = false
+function var0_0.canAddProgress(arg0_56, arg1_56)
+	local var0_56 = false
 
-	for iter0, iter1 in pairs(arg1) do
-		local var1, var2, var3 = iter1:GetResProgress()
+	for iter0_56, iter1_56 in pairs(arg1_56) do
+		local var1_56, var2_56, var3_56 = iter1_56:GetResProgress()
 
-		if arg0 >= var2 - var1 and iter1:CanGetNextAward() then
-			var0 = true
+		if arg0_56 >= var2_56 - var1_56 and iter1_56:CanGetNextAward() then
+			var0_56 = true
 
 			break
 		end
 	end
 
-	return var0
+	return var0_56
 end
 
-function var0.canGetPtAward(arg0)
-	local var0 = false
+function var0_0.canGetPtAward(arg0_57)
+	local var0_57 = false
 
-	for iter0, iter1 in pairs(arg0) do
-		if iter1:CanGetAward() then
-			var0 = true
+	for iter0_57, iter1_57 in pairs(arg0_57) do
+		if iter1_57:CanGetAward() then
+			var0_57 = true
 
 			break
 		end
 	end
 
-	return var0
+	return var0_57
 end
 
-function var0.isFinishAllAct(arg0)
-	local var0 = true
+function var0_0.isFinishAllAct(arg0_58)
+	local var0_58 = true
 
-	for iter0, iter1 in pairs(arg0.subPtDate) do
-		if iter1:CanGetNextAward() then
-			var0 = false
+	for iter0_58, iter1_58 in pairs(arg0_58.subPtDate) do
+		if iter1_58:CanGetNextAward() then
+			var0_58 = false
 
 			break
 		end
 	end
 
-	return var0
+	return var0_58
 end
 
-function var0.isNewTask(arg0)
-	local var0 = getProxy(PlayerProxy):getData().id
-	local var1 = PlayerPrefs.GetInt("wwf_todo_task_num_" .. var0)
+function var0_0.isNewTask(arg0_59)
+	local var0_59 = getProxy(PlayerProxy):getData().id
+	local var1_59 = PlayerPrefs.GetInt("wwf_todo_task_num_" .. var0_59)
 
-	if var1 == 0 and not arg0 == 0 or var1 < arg0 then
+	if var1_59 == 0 and not arg0_59 == 0 or var1_59 < arg0_59 then
 		return true
 	else
 		return false
 	end
 end
 
-function var0.IsShowRed()
-	local var0 = pg.activity_template[ActivityConst.WWF_TASK_ID]
-	local var1 = var0.config_client.convertRes
-	local var2 = var0.config_client.ptActID
-	local var3 = var0.config_data
-	local var4 = {}
+function var0_0.IsShowRed()
+	local var0_60 = pg.activity_template[ActivityConst.WWF_TASK_ID]
+	local var1_60 = var0_60.config_client.convertRes
+	local var2_60 = var0_60.config_client.ptActID
+	local var3_60 = var0_60.config_data
+	local var4_60 = {}
 
-	for iter0, iter1 in ipairs(var2) do
-		local var5 = getProxy(ActivityProxy):getActivityById(iter1)
+	for iter0_60, iter1_60 in ipairs(var2_60) do
+		local var5_60 = getProxy(ActivityProxy):getActivityById(iter1_60)
 
-		if var4[iter1] then
-			var4[iter1]:Update(var5)
+		if var4_60[iter1_60] then
+			var4_60[iter1_60]:Update(var5_60)
 		else
-			var4[iter1] = ActivityPtData.New(var5)
+			var4_60[iter1_60] = ActivityPtData.New(var5_60)
 		end
 	end
 
-	local var6 = getProxy(PlayerProxy):getRawData():getResource(var1)
-	local var7 = getProxy(TaskProxy)
-	local var8 = {}
-	local var9 = 0
+	local var6_60 = getProxy(PlayerProxy):getRawData():getResource(var1_60)
+	local var7_60 = getProxy(TaskProxy)
+	local var8_60 = {}
+	local var9_60 = 0
 
-	for iter2, iter3 in ipairs(var3) do
-		local var10 = var7:getTaskById(iter3) or var7:getFinishTaskById(iter3)
+	for iter2_60, iter3_60 in ipairs(var3_60) do
+		local var10_60 = var7_60:getTaskById(iter3_60) or var7_60:getFinishTaskById(iter3_60)
 
-		if var10 then
-			table.insert(var8, var10.id)
+		if var10_60 then
+			table.insert(var8_60, var10_60.id)
 
-			if var10:getTaskStatus() == 0 then
-				var9 = var9 + 1
+			if var10_60:getTaskStatus() == 0 then
+				var9_60 = var9_60 + 1
 			end
 		end
 	end
 
 	if (function()
-		local var0 = true
+		local var0_61 = true
 
-		for iter0, iter1 in pairs(var4) do
-			if iter1:CanGetNextAward() then
-				var0 = false
+		for iter0_61, iter1_61 in pairs(var4_60) do
+			if iter1_61:CanGetNextAward() then
+				var0_61 = false
 
 				break
 			end
 		end
 
-		return var0
+		return var0_61
 	end)() then
 		return false
 	else
-		return var0.canFinishTask(var8, var7) or var0.canGetPtAward(var4) or var0.canAddProgress(var6, var4) or var0.isNewTask(var9)
+		return var0_0.canFinishTask(var8_60, var7_60) or var0_0.canGetPtAward(var4_60) or var0_0.canAddProgress(var6_60, var4_60) or var0_0.isNewTask(var9_60)
 	end
 
 	return false
 end
 
-function var0.OnDestroy(arg0)
-	if arg0.prefab1 and arg0.model1 then
-		PoolMgr.GetInstance():ReturnSpineChar(arg0.prefab1, arg0.model1)
+function var0_0.OnDestroy(arg0_62)
+	if arg0_62.prefab1 and arg0_62.model1 then
+		PoolMgr.GetInstance():ReturnSpineChar(arg0_62.prefab1, arg0_62.model1)
 
-		arg0.prefab1 = nil
-		arg0.model1 = nil
+		arg0_62.prefab1 = nil
+		arg0_62.model1 = nil
 	end
 
-	if arg0.prefab2 and arg0.model2 then
-		PoolMgr.GetInstance():ReturnSpineChar(arg0.prefab2, arg0.model2)
+	if arg0_62.prefab2 and arg0_62.model2 then
+		PoolMgr.GetInstance():ReturnSpineChar(arg0_62.prefab2, arg0_62.model2)
 
-		arg0.prefab2 = nil
-		arg0.model2 = nil
+		arg0_62.prefab2 = nil
+		arg0_62.model2 = nil
 	end
 
-	arg0:cleanManagedTween()
+	arg0_62:cleanManagedTween()
 end
 
-return var0
+return var0_0

@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"For this event, we have a new feature for you! You can read more details by tapping the Help button!"
 }
 
@@ -12,7 +12,7 @@ return {
 				mode = 1,
 				posY = 172,
 				posX = -337,
-				text = var0[1]
+				text = var0_0[1]
 			}
 		},
 		{

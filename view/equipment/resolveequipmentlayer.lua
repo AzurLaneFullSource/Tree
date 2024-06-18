@@ -1,245 +1,245 @@
-﻿local var0 = class("ResolveEquipmentLayer", import("..base.BaseUI"))
+﻿local var0_0 = class("ResolveEquipmentLayer", import("..base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ResolveEquipmentUI"
 end
 
-function var0.setPlayer(arg0, arg1)
-	arg0.player = arg1
+function var0_0.setPlayer(arg0_2, arg1_2)
+	arg0_2.player = arg1_2
 end
 
-function var0.setEquipments(arg0, arg1)
-	arg0.equipmentVOs = arg1
+function var0_0.setEquipments(arg0_3, arg1_3)
+	arg0_3.equipmentVOs = arg1_3
 
-	arg0:setEquipmentByIds(arg1)
+	arg0_3:setEquipmentByIds(arg1_3)
 end
 
-function var0.setEquipmentByIds(arg0, arg1)
-	arg0.equipmentVOByIds = {}
+function var0_0.setEquipmentByIds(arg0_4, arg1_4)
+	arg0_4.equipmentVOByIds = {}
 
-	for iter0, iter1 in ipairs(arg1) do
-		arg0.equipmentVOByIds[iter1.id] = iter1
+	for iter0_4, iter1_4 in ipairs(arg1_4) do
+		arg0_4.equipmentVOByIds[iter1_4.id] = iter1_4
 	end
 end
 
-function var0.init(arg0)
-	arg0.mainPanel = arg0:findTF("main")
+function var0_0.init(arg0_5)
+	arg0_5.mainPanel = arg0_5:findTF("main")
 
-	setActive(arg0.mainPanel, true)
+	setActive(arg0_5.mainPanel, true)
 
-	arg0.viewRect = arg0:findTF("main/frame/view"):GetComponent("LScrollRect")
-	arg0.backBtn = arg0:findTF("main/top/btnBack")
-	arg0.cancelBtn = arg0:findTF("main/cancel_btn")
-	arg0.okBtn = arg0:findTF("main/ok_btn")
+	arg0_5.viewRect = arg0_5:findTF("main/frame/view"):GetComponent("LScrollRect")
+	arg0_5.backBtn = arg0_5:findTF("main/top/btnBack")
+	arg0_5.cancelBtn = arg0_5:findTF("main/cancel_btn")
+	arg0_5.okBtn = arg0_5:findTF("main/ok_btn")
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, false, {})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_5._tf, false, {})
 
-	arg0.selectedIds = {}
-	arg0.selecteAllTF = arg0:findTF("main/all_toggle")
-	arg0.selecteAllToggle = arg0.selecteAllTF:GetComponent(typeof(Toggle))
-	arg0.destroyConfirm = arg0:findTF("destroy_confirm")
-	arg0.destroyBonusList = arg0.destroyConfirm:Find("got/scrollview/list")
-	arg0.destroyBonusItem = arg0.destroyConfirm:Find("got/scrollview/item")
+	arg0_5.selectedIds = {}
+	arg0_5.selecteAllTF = arg0_5:findTF("main/all_toggle")
+	arg0_5.selecteAllToggle = arg0_5.selecteAllTF:GetComponent(typeof(Toggle))
+	arg0_5.destroyConfirm = arg0_5:findTF("destroy_confirm")
+	arg0_5.destroyBonusList = arg0_5.destroyConfirm:Find("got/scrollview/list")
+	arg0_5.destroyBonusItem = arg0_5.destroyConfirm:Find("got/scrollview/item")
 
-	setActive(arg0.destroyConfirm, false)
-	setActive(arg0.destroyBonusItem, false)
+	setActive(arg0_5.destroyConfirm, false)
+	setActive(arg0_5.destroyBonusItem, false)
 
-	arg0.equipDestroyConfirmWindow = EquipDestoryConfirmWindow.New(arg0._tf, arg0.event)
+	arg0_5.equipDestroyConfirmWindow = EquipDestoryConfirmWindow.New(arg0_5._tf, arg0_5.event)
 end
 
-function var0.didEnter(arg0)
-	arg0:initEquipments()
-	onButton(arg0, arg0.backBtn, function()
-		arg0:emit(var0.ON_CLOSE)
+function var0_0.didEnter(arg0_6)
+	arg0_6:initEquipments()
+	onButton(arg0_6, arg0_6.backBtn, function()
+		arg0_6:emit(var0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.cancelBtn, function()
-		arg0:emit(var0.ON_CLOSE)
+	onButton(arg0_6, arg0_6.cancelBtn, function()
+		arg0_6:emit(var0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.okBtn, function()
-		local var0 = {}
+	onButton(arg0_6, arg0_6.okBtn, function()
+		local var0_9 = {}
 
-		if underscore.any(arg0.selectedIds, function(arg0)
-			local var0 = arg0.equipmentVOByIds[arg0[1]]
+		if underscore.any(arg0_6.selectedIds, function(arg0_10)
+			local var0_10 = arg0_6.equipmentVOByIds[arg0_10[1]]
 
-			return var0:getConfig("rarity") >= 4 or var0:getConfig("level") > 1
+			return var0_10:getConfig("rarity") >= 4 or var0_10:getConfig("level") > 1
 		end) then
-			table.insert(var0, function(arg0)
-				arg0.equipDestroyConfirmWindow:Load()
-				arg0.equipDestroyConfirmWindow:ActionInvoke("Show", underscore.map(arg0.selectedIds, function(arg0)
+			table.insert(var0_9, function(arg0_11)
+				arg0_6.equipDestroyConfirmWindow:Load()
+				arg0_6.equipDestroyConfirmWindow:ActionInvoke("Show", underscore.map(arg0_6.selectedIds, function(arg0_12)
 					return setmetatable({
-						count = arg0[2]
+						count = arg0_12[2]
 					}, {
-						__index = arg0.equipmentVOByIds[arg0[1]]
+						__index = arg0_6.equipmentVOByIds[arg0_12[1]]
 					})
-				end), arg0)
+				end), arg0_11)
 			end)
 		end
 
-		seriesAsync(var0, function()
-			if #arg0.selectedIds <= 0 then
+		seriesAsync(var0_9, function()
+			if #arg0_6.selectedIds <= 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("err_resloveequip_nochoice"))
 
 				return
 			end
 
-			setActive(arg0.mainPanel, false)
-			setActive(arg0.destroyConfirm, true)
-			arg0:displayDestroyBonus()
+			setActive(arg0_6.mainPanel, false)
+			setActive(arg0_6.destroyConfirm, true)
+			arg0_6:displayDestroyBonus()
 		end)
 	end, SFX_CONFIRM)
-	onButton(arg0, findTF(arg0.destroyConfirm, "actions/cancel_button"), function()
-		setActive(arg0.destroyConfirm, false)
-		setActive(arg0.mainPanel, true)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0.destroyConfirm, arg0._tf)
+	onButton(arg0_6, findTF(arg0_6.destroyConfirm, "actions/cancel_button"), function()
+		setActive(arg0_6.destroyConfirm, false)
+		setActive(arg0_6.mainPanel, true)
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_6.destroyConfirm, arg0_6._tf)
 	end, SFX_CANCEL)
-	onButton(arg0, findTF(arg0.destroyConfirm, "actions/destroy_button"), function()
-		local var0 = {}
+	onButton(arg0_6, findTF(arg0_6.destroyConfirm, "actions/destroy_button"), function()
+		local var0_15 = {}
 
-		seriesAsync(var0, function()
-			arg0:emit(ResolveEquipmentMediator.ON_RESOLVE, arg0.selectedIds)
+		seriesAsync(var0_15, function()
+			arg0_6:emit(ResolveEquipmentMediator.ON_RESOLVE, arg0_6.selectedIds)
 		end)
 	end, SFX_UI_EQUIPMENT_RESOLVE)
-	onToggle(arg0, arg0.selecteAllTF, function(arg0)
-		if arg0.isManual then
+	onToggle(arg0_6, arg0_6.selecteAllTF, function(arg0_17)
+		if arg0_6.isManual then
 			return
 		end
 
-		if arg0 then
-			arg0:selecteAllEquips()
+		if arg0_17 then
+			arg0_6:selecteAllEquips()
 		else
-			arg0:unselecteAllEquips()
+			arg0_6:unselecteAllEquips()
 		end
 	end, SFX_PANEL)
 end
 
-function var0.OnResolveEquipDone(arg0)
-	setActive(arg0.destroyConfirm, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
-	setActive(arg0.mainPanel, false)
-	arg0:unselecteAllEquips()
+function var0_0.OnResolveEquipDone(arg0_18)
+	setActive(arg0_18.destroyConfirm, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_18._tf)
+	setActive(arg0_18.mainPanel, false)
+	arg0_18:unselecteAllEquips()
 end
 
-function var0.onBackPressed(arg0)
+function var0_0.onBackPressed(arg0_19)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	if isActive(arg0.destroyConfirm) then
-		triggerButton(findTF(arg0.destroyConfirm, "actions/cancel_button"))
-	elseif arg0.equipDestroyConfirmWindow:isShowing() then
-		arg0.equipDestroyConfirmWindow:Hide()
+	if isActive(arg0_19.destroyConfirm) then
+		triggerButton(findTF(arg0_19.destroyConfirm, "actions/cancel_button"))
+	elseif arg0_19.equipDestroyConfirmWindow:isShowing() then
+		arg0_19.equipDestroyConfirmWindow:Hide()
 	else
-		triggerButton(arg0.cancelBtn)
+		triggerButton(arg0_19.cancelBtn)
 	end
 end
 
-function var0.selectedLowRarityEquipment(arg0)
-	arg0.selectedIds = {}
+function var0_0.selectedLowRarityEquipment(arg0_20)
+	arg0_20.selectedIds = {}
 
-	for iter0, iter1 in ipairs(arg0.equipmentVOs) do
-		if iter1:getConfig("level") <= 1 and iter1:getConfig("rarity") < 4 then
-			arg0:selectEquip(iter1, iter1.count)
+	for iter0_20, iter1_20 in ipairs(arg0_20.equipmentVOs) do
+		if iter1_20:getConfig("level") <= 1 and iter1_20:getConfig("rarity") < 4 then
+			arg0_20:selectEquip(iter1_20, iter1_20.count)
 		end
 	end
 
-	arg0:updateSelected()
+	arg0_20:updateSelected()
 end
 
-function var0.selecteAllEquips(arg0)
-	arg0.selectedIds = {}
+function var0_0.selecteAllEquips(arg0_21)
+	arg0_21.selectedIds = {}
 
-	for iter0, iter1 in ipairs(arg0.equipmentVOs) do
-		arg0:selectEquip(iter1, iter1.count)
+	for iter0_21, iter1_21 in ipairs(arg0_21.equipmentVOs) do
+		arg0_21:selectEquip(iter1_21, iter1_21.count)
 	end
 
-	arg0:updateSelected()
+	arg0_21:updateSelected()
 end
 
-function var0.unselecteAllEquips(arg0)
-	arg0.selectedIds = {}
+function var0_0.unselecteAllEquips(arg0_22)
+	arg0_22.selectedIds = {}
 
-	arg0:updateSelected()
+	arg0_22:updateSelected()
 end
 
-function var0.displayDestroyBonus(arg0)
-	local var0 = {}
-	local var1 = 0
+function var0_0.displayDestroyBonus(arg0_23)
+	local var0_23 = {}
+	local var1_23 = 0
 
-	for iter0, iter1 in ipairs(arg0.selectedIds) do
-		if Equipment.CanInBag(iter1[1]) then
-			local var2 = Equipment.getConfigData(iter1[1])
-			local var3 = var2.destory_item or {}
+	for iter0_23, iter1_23 in ipairs(arg0_23.selectedIds) do
+		if Equipment.CanInBag(iter1_23[1]) then
+			local var2_23 = Equipment.getConfigData(iter1_23[1])
+			local var3_23 = var2_23.destory_item or {}
 
-			var1 = var1 + (var2.destory_gold or 0) * iter1[2]
+			var1_23 = var1_23 + (var2_23.destory_gold or 0) * iter1_23[2]
 
-			for iter2, iter3 in ipairs(var3) do
-				local var4 = false
+			for iter2_23, iter3_23 in ipairs(var3_23) do
+				local var4_23 = false
 
-				for iter4, iter5 in ipairs(var0) do
-					if iter3[1] == var0[iter4].id then
-						var0[iter4].count = var0[iter4].count + iter3[2] * iter1[2]
-						var4 = true
+				for iter4_23, iter5_23 in ipairs(var0_23) do
+					if iter3_23[1] == var0_23[iter4_23].id then
+						var0_23[iter4_23].count = var0_23[iter4_23].count + iter3_23[2] * iter1_23[2]
+						var4_23 = true
 
 						break
 					end
 				end
 
-				if not var4 then
-					table.insert(var0, {
+				if not var4_23 then
+					table.insert(var0_23, {
 						type = DROP_TYPE_ITEM,
-						id = iter3[1],
-						count = iter3[2] * iter1[2]
+						id = iter3_23[1],
+						count = iter3_23[2] * iter1_23[2]
 					})
 				end
 			end
 		end
 	end
 
-	if var1 > 0 then
-		table.insert(var0, {
+	if var1_23 > 0 then
+		table.insert(var0_23, {
 			id = 1,
 			type = DROP_TYPE_RESOURCE,
-			count = var1
+			count = var1_23
 		})
 	end
 
-	for iter6 = #var0, arg0.destroyBonusList.childCount - 1 do
-		Destroy(arg0.destroyBonusList:GetChild(iter6))
+	for iter6_23 = #var0_23, arg0_23.destroyBonusList.childCount - 1 do
+		Destroy(arg0_23.destroyBonusList:GetChild(iter6_23))
 	end
 
-	for iter7 = arg0.destroyBonusList.childCount, #var0 - 1 do
-		cloneTplTo(arg0.destroyBonusItem, arg0.destroyBonusList)
+	for iter7_23 = arg0_23.destroyBonusList.childCount, #var0_23 - 1 do
+		cloneTplTo(arg0_23.destroyBonusItem, arg0_23.destroyBonusList)
 	end
 
-	for iter8 = 1, #var0 do
-		local var5 = arg0.destroyBonusList:GetChild(iter8 - 1)
-		local var6 = var0[iter8]
+	for iter8_23 = 1, #var0_23 do
+		local var5_23 = arg0_23.destroyBonusList:GetChild(iter8_23 - 1)
+		local var6_23 = var0_23[iter8_23]
 
-		if var6.type == DROP_TYPE_SHIP then
-			arg0.hasShip = true
+		if var6_23.type == DROP_TYPE_SHIP then
+			arg0_23.hasShip = true
 		end
 
-		local var7 = var5:Find("icon_bg/icon/icon")
+		local var7_23 = var5_23:Find("icon_bg/icon/icon")
 
-		GetComponent(var5:Find("icon_bg/icon"), typeof(Image)).enabled = true
+		GetComponent(var5_23:Find("icon_bg/icon"), typeof(Image)).enabled = true
 
-		if not IsNil(var7) then
-			setActive(var7, false)
+		if not IsNil(var7_23) then
+			setActive(var7_23, false)
 		end
 
-		updateDrop(var5, var6)
+		updateDrop(var5_23, var6_23)
 
-		local var8, var9 = contentWrap(var6:getConfig("name"), 10, 2)
+		local var8_23, var9_23 = contentWrap(var6_23:getConfig("name"), 10, 2)
 
-		if var8 then
-			var9 = var9 .. "..."
+		if var8_23 then
+			var9_23 = var9_23 .. "..."
 		end
 
-		setText(var5:Find("name"), var9)
-		onButton(arg0, var5, function()
-			if var6.type == DROP_TYPE_RESOURCE or var6.type == DROP_TYPE_ITEM then
-				arg0:emit(var0.ON_ITEM, var6:getConfig("id"))
-			elseif var6.type == DROP_TYPE_EQUIP then
-				arg0:emit(var0.ON_EQUIPMENT, {
-					equipmentId = var6:getConfig("id"),
+		setText(var5_23:Find("name"), var9_23)
+		onButton(arg0_23, var5_23, function()
+			if var6_23.type == DROP_TYPE_RESOURCE or var6_23.type == DROP_TYPE_ITEM then
+				arg0_23:emit(var0_0.ON_ITEM, var6_23:getConfig("id"))
+			elseif var6_23.type == DROP_TYPE_EQUIP then
+				arg0_23:emit(var0_0.ON_EQUIPMENT, {
+					equipmentId = var6_23:getConfig("id"),
 					type = EquipmentInfoMediator.TYPE_DISPLAY
 				})
 			end
@@ -247,74 +247,74 @@ function var0.displayDestroyBonus(arg0)
 	end
 end
 
-function var0.initEquipments(arg0)
-	function arg0.viewRect.onInitItem(arg0)
-		arg0:onInitItem(arg0)
+function var0_0.initEquipments(arg0_25)
+	function arg0_25.viewRect.onInitItem(arg0_26)
+		arg0_25:onInitItem(arg0_26)
 	end
 
-	function arg0.viewRect.onUpdateItem(arg0, arg1)
-		arg0:onUpdateItem(arg0, arg1)
+	function arg0_25.viewRect.onUpdateItem(arg0_27, arg1_27)
+		arg0_25:onUpdateItem(arg0_27, arg1_27)
 	end
 
-	function arg0.viewRect.onStart()
-		arg0:selectedLowRarityEquipment()
+	function arg0_25.viewRect.onStart()
+		arg0_25:selectedLowRarityEquipment()
 	end
 
-	arg0.cards = {}
+	arg0_25.cards = {}
 
-	arg0:filterEquipments()
+	arg0_25:filterEquipments()
 end
 
-function var0.filterEquipments(arg0)
-	table.sort(arg0.equipmentVOs, CompareFuncs({
-		function(arg0)
-			return -arg0:getConfig("rarity")
+function var0_0.filterEquipments(arg0_29)
+	table.sort(arg0_29.equipmentVOs, CompareFuncs({
+		function(arg0_30)
+			return -arg0_30:getConfig("rarity")
 		end,
-		function(arg0)
-			return arg0.id
+		function(arg0_31)
+			return arg0_31.id
 		end
 	}))
-	arg0.viewRect:SetTotalCount(#arg0.equipmentVOs, -1)
+	arg0_29.viewRect:SetTotalCount(#arg0_29.equipmentVOs, -1)
 end
 
-function var0.onInitItem(arg0, arg1)
-	local var0 = EquipmentItem.New(arg1)
+function var0_0.onInitItem(arg0_32, arg1_32)
+	local var0_32 = EquipmentItem.New(arg1_32)
 
-	onButton(arg0, var0.go, function()
-		arg0:selectEquip(var0.equipmentVO, var0.equipmentVO.count)
+	onButton(arg0_32, var0_32.go, function()
+		arg0_32:selectEquip(var0_32.equipmentVO, var0_32.equipmentVO.count)
 	end, SFX_PANEL)
-	onButton(arg0, var0.reduceBtn, function()
-		arg0:selectEquip(var0.equipmentVO, 1)
+	onButton(arg0_32, var0_32.reduceBtn, function()
+		arg0_32:selectEquip(var0_32.equipmentVO, 1)
 	end, SFX_PANEL)
 
-	arg0.cards[arg1] = var0
+	arg0_32.cards[arg1_32] = var0_32
 end
 
-function var0.onUpdateItem(arg0, arg1, arg2)
-	local var0 = arg0.cards[arg2]
+function var0_0.onUpdateItem(arg0_35, arg1_35, arg2_35)
+	local var0_35 = arg0_35.cards[arg2_35]
 
-	if not var0 then
-		arg0:onInitItem(arg2)
+	if not var0_35 then
+		arg0_35:onInitItem(arg2_35)
 
-		var0 = arg0.cards[arg2]
+		var0_35 = arg0_35.cards[arg2_35]
 	end
 
-	local var1 = arg0.equipmentVOs[arg1 + 1]
+	local var1_35 = arg0_35.equipmentVOs[arg1_35 + 1]
 
-	var0:update(var1, true)
+	var0_35:update(var1_35, true)
 end
 
-function var0.isSelectedAll(arg0)
-	for iter0, iter1 in pairs(arg0.equipmentVOByIds) do
-		local var0 = false
+function var0_0.isSelectedAll(arg0_36)
+	for iter0_36, iter1_36 in pairs(arg0_36.equipmentVOByIds) do
+		local var0_36 = false
 
-		for iter2, iter3 in pairs(arg0.selectedIds) do
-			if iter3[1] == iter1.id and iter1.count == iter3[2] then
-				var0 = true
+		for iter2_36, iter3_36 in pairs(arg0_36.selectedIds) do
+			if iter3_36[1] == iter1_36.id and iter1_36.count == iter3_36[2] then
+				var0_36 = true
 			end
 		end
 
-		if var0 == false then
+		if var0_36 == false then
 			return false
 		end
 	end
@@ -322,94 +322,94 @@ function var0.isSelectedAll(arg0)
 	return true
 end
 
-function var0.selectEquip(arg0, arg1, arg2)
-	if not arg0:checkDestroyGold(arg1, arg2) then
+function var0_0.selectEquip(arg0_37, arg1_37, arg2_37)
+	if not arg0_37:checkDestroyGold(arg1_37, arg2_37) then
 		return
 	end
 
-	if arg1:isImportance() then
+	if arg1_37:isImportance() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("retire_importantequipment_tips"))
 
 		return
 	end
 
-	local var0 = false
-	local var1
-	local var2 = 0
+	local var0_37 = false
+	local var1_37
+	local var2_37 = 0
 
-	for iter0, iter1 in pairs(arg0.selectedIds) do
-		if iter1[1] == arg1.id then
-			var0 = true
-			var1 = iter0
-			var2 = iter1[2]
+	for iter0_37, iter1_37 in pairs(arg0_37.selectedIds) do
+		if iter1_37[1] == arg1_37.id then
+			var0_37 = true
+			var1_37 = iter0_37
+			var2_37 = iter1_37[2]
 
 			break
 		end
 	end
 
-	if not var0 then
-		table.insert(arg0.selectedIds, {
-			arg1.id,
-			arg2
+	if not var0_37 then
+		table.insert(arg0_37.selectedIds, {
+			arg1_37.id,
+			arg2_37
 		})
-	elseif var2 - arg2 > 0 then
-		arg0.selectedIds[var1][2] = var2 - arg2
+	elseif var2_37 - arg2_37 > 0 then
+		arg0_37.selectedIds[var1_37][2] = var2_37 - arg2_37
 	else
-		table.remove(arg0.selectedIds, var1)
+		table.remove(arg0_37.selectedIds, var1_37)
 	end
 
-	arg0:updateSelected()
+	arg0_37:updateSelected()
 
-	local var3 = arg0:isSelectedAll()
+	local var3_37 = arg0_37:isSelectedAll()
 
-	arg0.isManual = true
+	arg0_37.isManual = true
 
-	triggerToggle(arg0.selecteAllTF, var3)
+	triggerToggle(arg0_37.selecteAllTF, var3_37)
 
-	arg0.isManual = nil
+	arg0_37.isManual = nil
 end
 
-function var0.updateSelected(arg0)
-	for iter0, iter1 in pairs(arg0.cards) do
-		if iter1.equipmentVO then
-			local var0 = false
-			local var1 = 0
+function var0_0.updateSelected(arg0_38)
+	for iter0_38, iter1_38 in pairs(arg0_38.cards) do
+		if iter1_38.equipmentVO then
+			local var0_38 = false
+			local var1_38 = 0
 
-			for iter2, iter3 in pairs(arg0.selectedIds) do
-				if iter1.equipmentVO.id == iter3[1] then
-					var0 = true
-					var1 = iter3[2]
+			for iter2_38, iter3_38 in pairs(arg0_38.selectedIds) do
+				if iter1_38.equipmentVO.id == iter3_38[1] then
+					var0_38 = true
+					var1_38 = iter3_38[2]
 
 					break
 				end
 			end
 
-			iter1:updateSelected(var0, var1)
+			iter1_38:updateSelected(var0_38, var1_38)
 		end
 	end
 end
 
-function var0.checkDestroyGold(arg0, arg1, arg2)
-	local var0 = 0
-	local var1 = false
+function var0_0.checkDestroyGold(arg0_39, arg1_39, arg2_39)
+	local var0_39 = 0
+	local var1_39 = false
 
-	for iter0, iter1 in pairs(arg0.selectedIds) do
-		local var2 = iter1[2]
+	for iter0_39, iter1_39 in pairs(arg0_39.selectedIds) do
+		local var2_39 = iter1_39[2]
 
-		if Equipment.CanInBag(iter1[1]) then
-			var0 = var0 + (Equipment.getConfigData(iter1[1]).destory_gold or 0) * var2
+		if Equipment.CanInBag(iter1_39[1]) then
+			var0_39 = var0_39 + (Equipment.getConfigData(iter1_39[1]).destory_gold or 0) * var2_39
 		end
 
-		if arg1 and iter1[1] == arg1.configId then
-			var1 = true
+		if arg1_39 and iter1_39[1] == arg1_39.configId then
+			var1_39 = true
 		end
 	end
 
-	if not var1 and arg1 and arg2 > 0 then
-		var0 = var0 + (arg1:getConfig("destory_gold") or 0) * arg2
+	if not var1_39 and arg1_39 and arg2_39 > 0 then
+		var0_39 = var0_39 + (arg1_39:getConfig("destory_gold") or 0) * arg2_39
 	end
 
-	if arg0.player:GoldMax(var0) then
+	if arg0_39.player:GoldMax(var0_39) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_destroy"))
 
 		return false
@@ -418,9 +418,9 @@ function var0.checkDestroyGold(arg0, arg1, arg2)
 	return true
 end
 
-function var0.willExit(arg0)
-	arg0.equipDestroyConfirmWindow:Destroy()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, pg.UIMgr.GetInstance().UIMain)
+function var0_0.willExit(arg0_40)
+	arg0_40.equipDestroyConfirmWindow:Destroy()
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_40._tf, pg.UIMgr.GetInstance().UIMain)
 end
 
-return var0
+return var0_0

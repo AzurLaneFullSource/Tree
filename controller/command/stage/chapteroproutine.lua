@@ -1,560 +1,560 @@
-﻿local var0 = class("ChapterOpRoutine", pm.SimpleCommand)
+﻿local var0_0 = class("ChapterOpRoutine", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
+function var0_0.execute(arg0_1, arg1_1)
 	return
 end
 
-function var0.initData(arg0, arg1, arg2, arg3)
-	arg0.op = arg1
-	arg0.data = arg2
-	arg0.chapter = arg3
-	arg0.items = {}
-	arg0.fullpath = nil
-	arg0.flag = 0
-	arg0.extraFlag = 0
+function var0_0.initData(arg0_2, arg1_2, arg2_2, arg3_2)
+	arg0_2.op = arg1_2
+	arg0_2.data = arg2_2
+	arg0_2.chapter = arg3_2
+	arg0_2.items = {}
+	arg0_2.fullpath = nil
+	arg0_2.flag = 0
+	arg0_2.extraFlag = 0
 end
 
-function var0.doDropUpdate(arg0)
-	arg0.items = PlayerConst.addTranDrop(arg0.data.drop_list)
+function var0_0.doDropUpdate(arg0_3)
+	arg0_3.items = PlayerConst.addTranDrop(arg0_3.data.drop_list)
 end
 
-function var0.doMapUpdate(arg0)
-	local var0 = arg0.data
-	local var1 = arg0.flag
-	local var2 = arg0.extraFlag
-	local var3 = arg0.chapter
+function var0_0.doMapUpdate(arg0_4)
+	local var0_4 = arg0_4.data
+	local var1_4 = arg0_4.flag
+	local var2_4 = arg0_4.extraFlag
+	local var3_4 = arg0_4.chapter
 
-	if #var0.map_update > 0 then
-		_.each(var0.map_update, function(arg0)
-			if arg0.item_type == ChapterConst.AttachStory and arg0.item_data == ChapterConst.StoryTrigger then
-				local var0 = ChapterCell.Line2Name(arg0.pos.row, arg0.pos.column)
-				local var1 = var3:GetChapterCellAttachemnts()
-				local var2 = var1[var0]
+	if #var0_4.map_update > 0 then
+		_.each(var0_4.map_update, function(arg0_5)
+			if arg0_5.item_type == ChapterConst.AttachStory and arg0_5.item_data == ChapterConst.StoryTrigger then
+				local var0_5 = ChapterCell.Line2Name(arg0_5.pos.row, arg0_5.pos.column)
+				local var1_5 = var3_4:GetChapterCellAttachemnts()
+				local var2_5 = var1_5[var0_5]
 
-				if var2 then
-					if var2.flag == ChapterConst.CellFlagTriggerActive and arg0.item_flag == ChapterConst.CellFlagTriggerDisabled then
-						local var3 = pg.map_event_template[var2.attachmentId].gametip
+				if var2_5 then
+					if var2_5.flag == ChapterConst.CellFlagTriggerActive and arg0_5.item_flag == ChapterConst.CellFlagTriggerDisabled then
+						local var3_5 = pg.map_event_template[var2_5.attachmentId].gametip
 
-						if var3 ~= "" then
-							pg.TipsMgr.GetInstance():ShowTips(i18n(var3))
+						if var3_5 ~= "" then
+							pg.TipsMgr.GetInstance():ShowTips(i18n(var3_5))
 						end
 					end
 
-					var2.attachment = arg0.item_type
-					var2.attachmentId = arg0.item_id
-					var2.flag = arg0.item_flag
-					var2.data = arg0.item_data
+					var2_5.attachment = arg0_5.item_type
+					var2_5.attachmentId = arg0_5.item_id
+					var2_5.flag = arg0_5.item_flag
+					var2_5.data = arg0_5.item_data
 				else
-					var1[var0] = ChapterCell.New(arg0)
+					var1_5[var0_5] = ChapterCell.New(arg0_5)
 				end
-			elseif arg0.item_type ~= ChapterConst.AttachNone and arg0.item_type ~= ChapterConst.AttachBorn and arg0.item_type ~= ChapterConst.AttachBorn_Sub then
-				local var4 = ChapterCell.New(arg0)
+			elseif arg0_5.item_type ~= ChapterConst.AttachNone and arg0_5.item_type ~= ChapterConst.AttachBorn and arg0_5.item_type ~= ChapterConst.AttachBorn_Sub then
+				local var4_5 = ChapterCell.New(arg0_5)
 
-				var3:mergeChapterCell(var4)
+				var3_4:mergeChapterCell(var4_5)
 			end
 		end)
 
-		var1 = bit.bor(var1, ChapterConst.DirtyAttachment)
-		var2 = bit.bor(var2, ChapterConst.DirtyAutoAction)
+		var1_4 = bit.bor(var1_4, ChapterConst.DirtyAttachment)
+		var2_4 = bit.bor(var2_4, ChapterConst.DirtyAutoAction)
 	end
 
-	arg0.flag = var1
-	arg0.extraFlag = var2
+	arg0_4.flag = var1_4
+	arg0_4.extraFlag = var2_4
 end
 
-function var0.doCellFlagUpdate(arg0)
-	local var0 = arg0.data
-	local var1 = arg0.flag
-	local var2 = arg0.chapter
+function var0_0.doCellFlagUpdate(arg0_6)
+	local var0_6 = arg0_6.data
+	local var1_6 = arg0_6.flag
+	local var2_6 = arg0_6.chapter
 
-	if #var0.cell_flag_list > 0 then
-		_.each(var0.cell_flag_list, function(arg0)
-			local var0 = var2:getChapterCell(arg0.pos.row, arg0.pos.column)
+	if #var0_6.cell_flag_list > 0 then
+		_.each(var0_6.cell_flag_list, function(arg0_7)
+			local var0_7 = var2_6:getChapterCell(arg0_7.pos.row, arg0_7.pos.column)
 
-			if var0 then
-				var0:updateFlagList(arg0)
+			if var0_7 then
+				var0_7:updateFlagList(arg0_7)
 			else
-				var0 = ChapterCell.New(arg0)
+				var0_7 = ChapterCell.New(arg0_7)
 			end
 
-			arg0.chapter:updateChapterCell(var0)
+			arg0_6.chapter:updateChapterCell(var0_7)
 		end)
 
-		var1 = bit.bor(var1, ChapterConst.DirtyCellFlag)
+		var1_6 = bit.bor(var1_6, ChapterConst.DirtyCellFlag)
 	end
 
-	arg0.flag = var1
+	arg0_6.flag = var1_6
 end
 
-function var0.doAIUpdate(arg0)
-	local var0 = arg0.data
-	local var1 = arg0.flag
-	local var2 = arg0.extraFlag
-	local var3 = arg0.chapter
+function var0_0.doAIUpdate(arg0_8)
+	local var0_8 = arg0_8.data
+	local var1_8 = arg0_8.flag
+	local var2_8 = arg0_8.extraFlag
+	local var3_8 = arg0_8.chapter
 
-	if #var0.ai_list > 0 then
-		_.each(var0.ai_list, function(arg0)
-			local var0 = ChapterChampionPackage.New(arg0)
+	if #var0_8.ai_list > 0 then
+		_.each(var0_8.ai_list, function(arg0_9)
+			local var0_9 = ChapterChampionPackage.New(arg0_9)
 
-			var3:mergeChampion(var0)
+			var3_8:mergeChampion(var0_9)
 		end)
 
-		var1 = bit.bor(var1, ChapterConst.DirtyChampion)
-		var2 = bit.bor(var2, ChapterConst.DirtyAutoAction)
+		var1_8 = bit.bor(var1_8, ChapterConst.DirtyChampion)
+		var2_8 = bit.bor(var2_8, ChapterConst.DirtyAutoAction)
 	end
 
-	arg0.flag = var1
-	arg0.extraFlag = var2
+	arg0_8.flag = var1_8
+	arg0_8.extraFlag = var2_8
 end
 
-function var0.doShipUpdate(arg0)
-	local var0 = arg0.data
-	local var1 = arg0.flag
-	local var2 = arg0.chapter
+function var0_0.doShipUpdate(arg0_10)
+	local var0_10 = arg0_10.data
+	local var1_10 = arg0_10.flag
+	local var2_10 = arg0_10.chapter
 
-	if #var0.ship_update > 0 then
-		_.each(var0.ship_update, function(arg0)
-			var2:updateFleetShipHp(arg0.id, arg0.hp_rant)
+	if #var0_10.ship_update > 0 then
+		_.each(var0_10.ship_update, function(arg0_11)
+			var2_10:updateFleetShipHp(arg0_11.id, arg0_11.hp_rant)
 
-			var1 = bit.bor(var1, ChapterConst.DirtyStrategy)
+			var1_10 = bit.bor(var1_10, ChapterConst.DirtyStrategy)
 		end)
 
-		var1 = bit.bor(var1, ChapterConst.DirtyFleet)
+		var1_10 = bit.bor(var1_10, ChapterConst.DirtyFleet)
 	end
 
-	arg0.flag = var1
+	arg0_10.flag = var1_10
 end
 
-function var0.doBuffUpdate(arg0)
-	local var0 = arg0.data
+function var0_0.doBuffUpdate(arg0_12)
+	local var0_12 = arg0_12.data
 
-	arg0.chapter:UpdateBuffList(var0.buff_list)
+	arg0_12.chapter:UpdateBuffList(var0_12.buff_list)
 end
 
-function var0.doExtraFlagUpdate(arg0)
-	local var0 = arg0.data
-	local var1 = arg0.chapter
-	local var2 = getProxy(ChapterProxy)
+function var0_0.doExtraFlagUpdate(arg0_13)
+	local var0_13 = arg0_13.data
+	local var1_13 = arg0_13.chapter
+	local var2_13 = getProxy(ChapterProxy)
 
-	if #var0.add_flag_list > 0 or #var0.del_flag_list > 0 then
-		var2:updateExtraFlag(var1, var0.add_flag_list, var0.del_flag_list)
+	if #var0_13.add_flag_list > 0 or #var0_13.del_flag_list > 0 then
+		var2_13:updateExtraFlag(var1_13, var0_13.add_flag_list, var0_13.del_flag_list)
 
-		arg0.flag = bit.bor(arg0.flag, ChapterConst.DirtyFleet, ChapterConst.DirtyStrategy, ChapterConst.DirtyCellFlag, ChapterConst.DirtyFloatItems, ChapterConst.DirtyAttachment)
+		arg0_13.flag = bit.bor(arg0_13.flag, ChapterConst.DirtyFleet, ChapterConst.DirtyStrategy, ChapterConst.DirtyCellFlag, ChapterConst.DirtyFloatItems, ChapterConst.DirtyAttachment)
 	end
 end
 
-function var0.doRetreat(arg0)
-	local var0 = arg0.op
-	local var1 = arg0.flag
-	local var2 = arg0.chapter
+function var0_0.doRetreat(arg0_14)
+	local var0_14 = arg0_14.op
+	local var1_14 = arg0_14.flag
+	local var2_14 = arg0_14.chapter
 
-	if var0.id then
-		if #var2.fleets > 0 then
-			local var3 = var2.fleets[var0.id]
+	if var0_14.id then
+		if #var2_14.fleets > 0 then
+			local var3_14 = var2_14.fleets[var0_14.id]
 
-			var2.fleets = _.filter(var2.fleets, function(arg0)
-				return arg0.id ~= var0.id
+			var2_14.fleets = _.filter(var2_14.fleets, function(arg0_15)
+				return arg0_15.id ~= var0_14.id
 			end)
 
-			if var3 and var3:getFleetType() == FleetType.Normal then
-				var2.findex = 1
+			if var3_14 and var3_14:getFleetType() == FleetType.Normal then
+				var2_14.findex = 1
 			end
 
-			var1 = bit.bor(var1, ChapterConst.DirtyFleet, ChapterConst.DirtyAttachment, ChapterConst.DirtyChampion, ChapterConst.DirtyStrategy)
+			var1_14 = bit.bor(var1_14, ChapterConst.DirtyFleet, ChapterConst.DirtyAttachment, ChapterConst.DirtyChampion, ChapterConst.DirtyStrategy)
 		end
 	else
-		var2:retreat(var0.win)
+		var2_14:retreat(var0_14.win)
 	end
 
-	arg0.flag = var1
+	arg0_14.flag = var1_14
 end
 
-function var0.doMove(arg0)
-	local var0 = arg0.extraFlag
-	local var1 = arg0.data
-	local var2 = arg0.chapter
-	local var3
+function var0_0.doMove(arg0_16)
+	local var0_16 = arg0_16.extraFlag
+	local var1_16 = arg0_16.data
+	local var2_16 = arg0_16.chapter
+	local var3_16
 
-	if #var1.move_path > 0 then
-		var3 = _.map(_.rest(var1.move_path, 1), function(arg0)
+	if #var1_16.move_path > 0 then
+		var3_16 = _.map(_.rest(var1_16.move_path, 1), function(arg0_17)
 			return {
-				row = arg0.row,
-				column = arg0.column
+				row = arg0_17.row,
+				column = arg0_17.column
 			}
 		end)
-		var2.moveStep = var2.moveStep + #var1.move_path
-		var0 = bit.bor(var0, ChapterConst.DirtyAutoAction)
+		var2_16.moveStep = var2_16.moveStep + #var1_16.move_path
+		var0_16 = bit.bor(var0_16, ChapterConst.DirtyAutoAction)
 	end
 
-	arg0.fullpath = var3
+	arg0_16.fullpath = var3_16
 
-	var2:IncreaseRound()
+	var2_16:IncreaseRound()
 
-	arg0.extraFlag = var0
+	arg0_16.extraFlag = var0_16
 end
 
-function var0.doOpenBox(arg0)
-	local var0 = arg0.items
-	local var1 = arg0.flag
-	local var2 = arg0.chapter
-	local var3 = var2.fleet
-	local var4 = var3.line
-	local var5 = var2:getChapterCell(var4.row, var4.column)
+function var0_0.doOpenBox(arg0_18)
+	local var0_18 = arg0_18.items
+	local var1_18 = arg0_18.flag
+	local var2_18 = arg0_18.chapter
+	local var3_18 = var2_18.fleet
+	local var4_18 = var3_18.line
+	local var5_18 = var2_18:getChapterCell(var4_18.row, var4_18.column)
 
-	var5.flag = ChapterConst.CellFlagDisabled
+	var5_18.flag = ChapterConst.CellFlagDisabled
 
-	local var6 = bit.bor(var1, ChapterConst.DirtyAttachment)
-	local var7 = pg.box_data_template[var5.attachmentId]
+	local var6_18 = bit.bor(var1_18, ChapterConst.DirtyAttachment)
+	local var7_18 = pg.box_data_template[var5_18.attachmentId]
 
-	assert(var7, "box_data_template not exist: " .. var5.attachmentId)
+	assert(var7_18, "box_data_template not exist: " .. var5_18.attachmentId)
 
-	if var7.type == ChapterConst.BoxStrategy then
-		local var8 = var7.effect_id
-		local var9 = var7.effect_arg
+	if var7_18.type == ChapterConst.BoxStrategy then
+		local var8_18 = var7_18.effect_id
+		local var9_18 = var7_18.effect_arg
 
-		var3:achievedStrategy(var8, var9)
-		table.insert(var0, Drop.New({
+		var3_18:achievedStrategy(var8_18, var9_18)
+		table.insert(var0_18, Drop.New({
 			type = DROP_TYPE_STRATEGY,
-			id = var8,
-			count = var9
+			id = var8_18,
+			count = var9_18
 		}))
 
-		var6 = bit.bor(var6, ChapterConst.DirtyStrategy)
-	elseif var7.type == ChapterConst.BoxSupply then
-		local var10, var11 = var2:getFleetAmmo(var3)
+		var6_18 = bit.bor(var6_18, ChapterConst.DirtyStrategy)
+	elseif var7_18.type == ChapterConst.BoxSupply then
+		local var10_18, var11_18 = var2_18:getFleetAmmo(var3_18)
 
-		var3.restAmmo = var3.restAmmo + math.min(var10 - var11, var7.effect_id)
-		var6 = bit.bor(var6, ChapterConst.DirtyFleet)
+		var3_18.restAmmo = var3_18.restAmmo + math.min(var10_18 - var11_18, var7_18.effect_id)
+		var6_18 = bit.bor(var6_18, ChapterConst.DirtyFleet)
 
-		pg.TipsMgr.GetInstance():ShowTips(i18n("level_ammo_supply_p1", var7.effect_id))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("level_ammo_supply_p1", var7_18.effect_id))
 	end
 
-	var2:clearChapterCell(var4.row, var4.column)
+	var2_18:clearChapterCell(var4_18.row, var4_18.column)
 
-	arg0.flag = var6
-	arg0.extraFlag = bit.bor(arg0.extraFlag, ChapterConst.DirtyAutoAction)
+	arg0_18.flag = var6_18
+	arg0_18.extraFlag = bit.bor(arg0_18.extraFlag, ChapterConst.DirtyAutoAction)
 end
 
-function var0.doPlayStory(arg0)
-	local var0 = arg0.flag
-	local var1 = arg0.chapter
-	local var2 = var1.fleet.line
-	local var3 = var1:getChapterCell(var2.row, var2.column)
+function var0_0.doPlayStory(arg0_19)
+	local var0_19 = arg0_19.flag
+	local var1_19 = arg0_19.chapter
+	local var2_19 = var1_19.fleet.line
+	local var3_19 = var1_19:getChapterCell(var2_19.row, var2_19.column)
 
-	var3.flag = ChapterConst.CellFlagDisabled
+	var3_19.flag = ChapterConst.CellFlagDisabled
 
-	var1:updateChapterCell(var3)
+	var1_19:updateChapterCell(var3_19)
 
-	arg0.flag = bit.bor(var0, ChapterConst.DirtyAttachment)
+	arg0_19.flag = bit.bor(var0_19, ChapterConst.DirtyAttachment)
 end
 
-function var0.doAmbush(arg0)
-	local var0 = arg0.op
-	local var1 = arg0.chapter
-	local var2 = var1.fleet
+function var0_0.doAmbush(arg0_20)
+	local var0_20 = arg0_20.op
+	local var1_20 = arg0_20.chapter
+	local var2_20 = var1_20.fleet
 
-	if var0.arg1 == 1 then
-		local var3 = var2.line
-		local var4 = var1:getChapterCell(var3.row, var3.column)
+	if var0_20.arg1 == 1 then
+		local var3_20 = var2_20.line
+		local var4_20 = var1_20:getChapterCell(var3_20.row, var3_20.column)
 
-		if var4.flag == ChapterConst.CellFlagAmbush then
-			var1:clearChapterCell(var3.row, var3.column)
+		if var4_20.flag == ChapterConst.CellFlagAmbush then
+			var1_20:clearChapterCell(var3_20.row, var3_20.column)
 		end
 
-		pg.TipsMgr.GetInstance():ShowTips(var4.flag == ChapterConst.CellFlagActive and i18n("chapter_tip_aovid_failed") or i18n("chapter_tip_aovid_succeed"))
+		pg.TipsMgr.GetInstance():ShowTips(var4_20.flag == ChapterConst.CellFlagActive and i18n("chapter_tip_aovid_failed") or i18n("chapter_tip_aovid_succeed"))
 	end
 end
 
-function var0.doStrategy(arg0)
-	local var0 = arg0.flag
-	local var1 = arg0.op
-	local var2 = arg0.chapter
-	local var3 = pg.strategy_data_template[var1.arg1]
+function var0_0.doStrategy(arg0_21)
+	local var0_21 = arg0_21.flag
+	local var1_21 = arg0_21.op
+	local var2_21 = arg0_21.chapter
+	local var3_21 = pg.strategy_data_template[var1_21.arg1]
 
-	if var3.type == ChapterConst.StgTypeForm then
-		local var4 = var2.fleet
+	if var3_21.type == ChapterConst.StgTypeForm then
+		local var4_21 = var2_21.fleet
 
-		for iter0, iter1 in ipairs(var4.stgIds) do
-			if pg.strategy_data_template[iter1].type == ChapterConst.StgTypeForm then
-				var4.stgIds[iter0] = var3.id
+		for iter0_21, iter1_21 in ipairs(var4_21.stgIds) do
+			if pg.strategy_data_template[iter1_21].type == ChapterConst.StgTypeForm then
+				var4_21.stgIds[iter0_21] = var3_21.id
 			end
 		end
 
-		PlayerPrefs.SetInt("team_formation_" .. var4.id, var3.id)
-		pg.TipsMgr.GetInstance():ShowTips(i18n("chapter_tip_change", var3.name))
-	elseif var3.type == ChapterConst.StgTypeConsume then
-		var2.fleet:consumeOneStrategy(var3.id)
+		PlayerPrefs.SetInt("team_formation_" .. var4_21.id, var3_21.id)
+		pg.TipsMgr.GetInstance():ShowTips(i18n("chapter_tip_change", var3_21.name))
+	elseif var3_21.type == ChapterConst.StgTypeConsume then
+		var2_21.fleet:consumeOneStrategy(var3_21.id)
 
-		if var3.id == ChapterConst.StrategyRepair or var3.id == ChapterConst.StrategyExchange then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("chapter_tip_use", var3.name))
+		if var3_21.id == ChapterConst.StrategyRepair or var3_21.id == ChapterConst.StrategyExchange then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("chapter_tip_use", var3_21.name))
 		end
 
-		if var3.id == ChapterConst.StrategyExchange then
-			local var5 = var2:getFleetById(var1.id)
-			local var6 = var2:getFleetById(var1.arg2)
+		if var3_21.id == ChapterConst.StrategyExchange then
+			local var5_21 = var2_21:getFleetById(var1_21.id)
+			local var6_21 = var2_21:getFleetById(var1_21.arg2)
 
-			var5.line, var6.line = var6.line, var5.line
-			var0 = bit.bor(var0, ChapterConst.DirtyFleet)
+			var5_21.line, var6_21.line = var6_21.line, var5_21.line
+			var0_21 = bit.bor(var0_21, ChapterConst.DirtyFleet)
 		end
-	elseif var3.type == ChapterConst.StgTypeBindSupportConsume then
-		var2:getChapterSupportFleet():consumeOneStrategy(var3.id)
+	elseif var3_21.type == ChapterConst.StgTypeBindSupportConsume then
+		var2_21:getChapterSupportFleet():consumeOneStrategy(var3_21.id)
 	end
 
-	arg0.flag = bit.bor(var0, ChapterConst.DirtyStrategy)
+	arg0_21.flag = bit.bor(var0_21, ChapterConst.DirtyStrategy)
 end
 
-function var0.doRepair(arg0)
-	local var0 = getProxy(ChapterProxy)
+function var0_0.doRepair(arg0_22)
+	local var0_22 = getProxy(ChapterProxy)
 
-	var0.repairTimes = var0.repairTimes + 1
+	var0_22.repairTimes = var0_22.repairTimes + 1
 
-	local var1, var2, var3 = ChapterConst.GetRepairParams()
+	local var1_22, var2_22, var3_22 = ChapterConst.GetRepairParams()
 
-	if var1 < var0.repairTimes then
-		local var4 = getProxy(PlayerProxy)
-		local var5 = var4:getData()
+	if var1_22 < var0_22.repairTimes then
+		local var4_22 = getProxy(PlayerProxy)
+		local var5_22 = var4_22:getData()
 
-		var5:consume({
-			gem = var3
+		var5_22:consume({
+			gem = var3_22
 		})
-		var4:updatePlayer(var5)
+		var4_22:updatePlayer(var5_22)
 	end
 end
 
-function var0.doSupply(arg0)
-	local var0 = arg0.flag
-	local var1 = arg0.chapter
-	local var2 = var1.fleet
-	local var3, var4 = var1:getFleetAmmo(var2)
-	local var5 = var2.line
-	local var6 = var1:getChapterCell(var5.row, var5.column)
-	local var7 = math.min(var6.attachmentId, var3 - var4)
+function var0_0.doSupply(arg0_23)
+	local var0_23 = arg0_23.flag
+	local var1_23 = arg0_23.chapter
+	local var2_23 = var1_23.fleet
+	local var3_23, var4_23 = var1_23:getFleetAmmo(var2_23)
+	local var5_23 = var2_23.line
+	local var6_23 = var1_23:getChapterCell(var5_23.row, var5_23.column)
+	local var7_23 = math.min(var6_23.attachmentId, var3_23 - var4_23)
 
-	var6.attachmentId = var6.attachmentId - var7
-	var2.restAmmo = var2.restAmmo + var7
+	var6_23.attachmentId = var6_23.attachmentId - var7_23
+	var2_23.restAmmo = var2_23.restAmmo + var7_23
 
-	var1:updateChapterCell(var6)
+	var1_23:updateChapterCell(var6_23)
 
-	if var6.attachmentId > 20 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("level_ammo_supply_p1", var7))
-	elseif var6.attachmentId > 0 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("level_ammo_supply", var7, var6.attachmentId))
+	if var6_23.attachmentId > 20 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("level_ammo_supply_p1", var7_23))
+	elseif var6_23.attachmentId > 0 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("level_ammo_supply", var7_23, var6_23.attachmentId))
 	else
-		pg.TipsMgr.GetInstance():ShowTips(i18n("level_ammo_empty", var7))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("level_ammo_empty", var7_23))
 	end
 
-	arg0.flag = bit.bor(var0, ChapterConst.DirtyAttachment, ChapterConst.DirtyFleet)
+	arg0_23.flag = bit.bor(var0_23, ChapterConst.DirtyAttachment, ChapterConst.DirtyFleet)
 end
 
-function var0.doSubState(arg0)
-	local var0 = arg0.flag
-	local var1 = arg0.op
+function var0_0.doSubState(arg0_24)
+	local var0_24 = arg0_24.flag
+	local var1_24 = arg0_24.op
 
-	arg0.chapter.subAutoAttack = var1.arg1
-	arg0.flag = bit.bor(var0, ChapterConst.DirtyStrategy)
+	arg0_24.chapter.subAutoAttack = var1_24.arg1
+	arg0_24.flag = bit.bor(var0_24, ChapterConst.DirtyStrategy)
 end
 
-function var0.doCollectAI(arg0)
-	local var0 = arg0.data
+function var0_0.doCollectAI(arg0_25)
+	local var0_25 = arg0_25.data
 
-	arg0.aiActs = arg0.aiActs or {}
+	arg0_25.aiActs = arg0_25.aiActs or {}
 
-	if var0.submarine_act_list then
-		_.each(var0.submarine_act_list, function(arg0)
-			table.insert(arg0.aiActs, SubAIAction.New(arg0))
+	if var0_25.submarine_act_list then
+		_.each(var0_25.submarine_act_list, function(arg0_26)
+			table.insert(arg0_25.aiActs, SubAIAction.New(arg0_26))
 		end)
 	end
 
-	if var0.escort_act_list then
-		_.each(var0.escort_act_list, function(arg0)
-			table.insert(arg0.aiActs, TransportAIAction.New(arg0))
+	if var0_25.escort_act_list then
+		_.each(var0_25.escort_act_list, function(arg0_27)
+			table.insert(arg0_25.aiActs, TransportAIAction.New(arg0_27))
 		end)
 	end
 
-	_.each(var0.ai_act_list, function(arg0)
-		local var0
+	_.each(var0_25.ai_act_list, function(arg0_28)
+		local var0_28
 
-		if arg0.act_type == ChapterConst.ActType_TargetDown then
-			if arg0.op.type == ChapterConst.OpStrategy then
-				if arg0.op.arg1 == ChapterConst.StrategyMissileStrike then
-					var0 = ChapterMissileExplodeAction.New(arg0)
-				elseif arg0.op.arg1 == ChapterConst.StrategyAirSupport then
-					var0 = ChapterAirSupportAIAction.New(arg0)
+		if arg0_28.act_type == ChapterConst.ActType_TargetDown then
+			if arg0_25.op.type == ChapterConst.OpStrategy then
+				if arg0_25.op.arg1 == ChapterConst.StrategyMissileStrike then
+					var0_28 = ChapterMissileExplodeAction.New(arg0_28)
+				elseif arg0_25.op.arg1 == ChapterConst.StrategyAirSupport then
+					var0_28 = ChapterAirSupportAIAction.New(arg0_28)
 				end
 
-				var0:SetTargetLine({
-					row = arg0.op.arg2,
-					column = arg0.op.arg3
+				var0_28:SetTargetLine({
+					row = arg0_25.op.arg2,
+					column = arg0_25.op.arg3
 				})
 			else
-				var0 = ChapterMissileExplodeAction.New(arg0)
+				var0_28 = ChapterMissileExplodeAction.New(arg0_28)
 			end
-		elseif arg0.act_type == ChapterConst.ActType_Expel then
-			var0 = ChapterExpelAIAction.New(arg0)
+		elseif arg0_28.act_type == ChapterConst.ActType_Expel then
+			var0_28 = ChapterExpelAIAction.New(arg0_28)
 
-			var0:SetTargetLine({
-				row = arg0.op.arg2,
-				column = arg0.op.arg3
+			var0_28:SetTargetLine({
+				row = arg0_25.op.arg2,
+				column = arg0_25.op.arg3
 			}, {
-				row = arg0.op.arg4,
-				column = arg0.op.arg5
+				row = arg0_25.op.arg4,
+				column = arg0_25.op.arg5
 			})
 		else
-			var0 = ChapterAIAction.New(arg0)
+			var0_28 = ChapterAIAction.New(arg0_28)
 		end
 
-		table.insert(arg0.aiActs, var0)
+		table.insert(arg0_25.aiActs, var0_28)
 	end)
-	_.each(var0.fleet_act_list, function(arg0)
-		table.insert(arg0.aiActs, FleetAIAction.New(arg0))
+	_.each(var0_25.fleet_act_list, function(arg0_29)
+		table.insert(arg0_25.aiActs, FleetAIAction.New(arg0_29))
 	end)
 end
 
-function var0.doBarrier(arg0)
-	local var0 = arg0.flag
-	local var1 = arg0.op
-	local var2 = arg0.chapter
-	local var3 = var2:getChapterCell(var1.arg1, var1.arg2)
+function var0_0.doBarrier(arg0_30)
+	local var0_30 = arg0_30.flag
+	local var1_30 = arg0_30.op
+	local var2_30 = arg0_30.chapter
+	local var3_30 = var2_30:getChapterCell(var1_30.arg1, var1_30.arg2)
 
-	assert(var3, "cell not exist: " .. var1.arg1 .. ", " .. var1.arg2)
+	assert(var3_30, "cell not exist: " .. var1_30.arg1 .. ", " .. var1_30.arg2)
 
-	local var4 = ChapterConst.AttachBox
-	local var5 = _.detect(pg.box_data_template.all, function(arg0)
-		return pg.box_data_template[arg0].type == ChapterConst.BoxBarrier
+	local var4_30 = ChapterConst.AttachBox
+	local var5_30 = _.detect(pg.box_data_template.all, function(arg0_31)
+		return pg.box_data_template[arg0_31].type == ChapterConst.BoxBarrier
 	end)
 
-	if var3.attachment ~= var4 or var3.attachmentId ~= var5 then
-		var3.attachment = var4
-		var3.attachmentId = var5
-		var3.flag = ChapterConst.CellFlagDisabled
+	if var3_30.attachment ~= var4_30 or var3_30.attachmentId ~= var5_30 then
+		var3_30.attachment = var4_30
+		var3_30.attachmentId = var5_30
+		var3_30.flag = ChapterConst.CellFlagDisabled
 	end
 
-	var2.modelCount = var2.modelCount + (var3.flag == ChapterConst.CellFlagDisabled and -1 or 1)
-	var3.flag = 1 - var3.flag
+	var2_30.modelCount = var2_30.modelCount + (var3_30.flag == ChapterConst.CellFlagDisabled and -1 or 1)
+	var3_30.flag = 1 - var3_30.flag
 
-	var2:updateChapterCell(var3)
+	var2_30:updateChapterCell(var3_30)
 
-	arg0.flag = bit.bor(var0, ChapterConst.DirtyAttachment, ChapterConst.DirtyStrategy)
+	arg0_30.flag = bit.bor(var0_30, ChapterConst.DirtyAttachment, ChapterConst.DirtyStrategy)
 end
 
-function var0.doRequest(arg0)
-	local var0 = arg0.data
-	local var1 = -1
-	local var2 = arg0.chapter.fleet
+function var0_0.doRequest(arg0_32)
+	local var0_32 = arg0_32.data
+	local var1_32 = -1
+	local var2_32 = arg0_32.chapter.fleet
 
-	if #var0.move_path > 0 then
-		local var3 = var0.move_path[#var0.move_path]
+	if #var0_32.move_path > 0 then
+		local var3_32 = var0_32.move_path[#var0_32.move_path]
 
-		var2.line = {
-			row = var3.row,
-			column = var3.column
+		var2_32.line = {
+			row = var3_32.row,
+			column = var3_32.column
 		}
 	end
 
-	arg0.flag = var1
+	arg0_32.flag = var1_32
 end
 
-function var0.doSkipBattle(arg0)
-	local var0 = arg0.flag
+function var0_0.doSkipBattle(arg0_33)
+	local var0_33 = arg0_33.flag
 
-	arg0.flag = bit.bor(var0, ChapterConst.DirtyStrategy, ChapterConst.DirtyAttachment, ChapterConst.DirtyAchieve, ChapterConst.DirtyFleet, ChapterConst.DirtyChampion)
+	arg0_33.flag = bit.bor(var0_33, ChapterConst.DirtyStrategy, ChapterConst.DirtyAttachment, ChapterConst.DirtyAchieve, ChapterConst.DirtyFleet, ChapterConst.DirtyChampion)
 end
 
-function var0.doTeleportSub(arg0)
-	local var0 = arg0.op
-	local var1 = arg0.chapter
-	local var2 = _.detect(var1.fleets, function(arg0)
-		return arg0.id == var0.id
+function var0_0.doTeleportSub(arg0_34)
+	local var0_34 = arg0_34.op
+	local var1_34 = arg0_34.chapter
+	local var2_34 = _.detect(var1_34.fleets, function(arg0_35)
+		return arg0_35.id == var0_34.id
 	end).startPos
 
-	arg0.fullpath = {
-		var2,
+	arg0_34.fullpath = {
+		var2_34,
 		{
-			row = var0.arg1,
-			column = var0.arg2
+			row = var0_34.arg1,
+			column = var0_34.arg2
 		}
 	}
 end
 
-function var0.doEnemyRound(arg0)
-	local var0 = arg0.chapter
-	local var1 = arg0.extraFlag
+function var0_0.doEnemyRound(arg0_36)
+	local var0_36 = arg0_36.chapter
+	local var1_36 = arg0_36.extraFlag
 
-	var0:IncreaseRound()
+	var0_36:IncreaseRound()
 
-	if var0:getPlayType() == ChapterConst.TypeDefence then
-		arg0.flag = bit.bor(arg0.flag, ChapterConst.DirtyAttachment)
+	if var0_36:getPlayType() == ChapterConst.TypeDefence then
+		arg0_36.flag = bit.bor(arg0_36.flag, ChapterConst.DirtyAttachment)
 	end
 
-	arg0.extraFlag = bit.bor(var1, ChapterConst.DirtyAutoAction)
+	arg0_36.extraFlag = bit.bor(var1_36, ChapterConst.DirtyAutoAction)
 end
 
-function var0.doTeleportByPortal(arg0)
-	local var0 = arg0.fullpath and arg0.fullpath[#arg0.fullpath]
+function var0_0.doTeleportByPortal(arg0_37)
+	local var0_37 = arg0_37.fullpath and arg0_37.fullpath[#arg0_37.fullpath]
 
-	if not var0 then
+	if not var0_37 then
 		return
 	end
 
-	local var1 = arg0.chapter
-	local var2
+	local var1_37 = arg0_37.chapter
+	local var2_37
 
-	if arg0.op.type == ChapterConst.OpMove then
-		var2 = var1:GetCellEventByKey("jump", var0.row, var0.column)
-	elseif arg0.op.type == ChapterConst.OpSubTeleport then
-		var2 = var1:GetCellEventByKey("jumpsub", var0.row, var0.column)
+	if arg0_37.op.type == ChapterConst.OpMove then
+		var2_37 = var1_37:GetCellEventByKey("jump", var0_37.row, var0_37.column)
+	elseif arg0_37.op.type == ChapterConst.OpSubTeleport then
+		var2_37 = var1_37:GetCellEventByKey("jumpsub", var0_37.row, var0_37.column)
 	end
 
-	if not var2 then
+	if not var2_37 then
 		return
 	end
 
-	local var3 = {
-		row = var2[1],
-		column = var2[2]
+	local var3_37 = {
+		row = var2_37[1],
+		column = var2_37[2]
 	}
 
-	if arg0.op.type == ChapterConst.OpMove and var1:getFleet(FleetType.Normal, var3.row, var3.column) then
+	if arg0_37.op.type == ChapterConst.OpMove and var1_37:getFleet(FleetType.Normal, var3_37.row, var3_37.column) then
 		return
 	end
 
-	arg0.teleportPaths = arg0.teleportPaths or {}
+	arg0_37.teleportPaths = arg0_37.teleportPaths or {}
 
-	table.insert(arg0.teleportPaths, {
-		row = var0.row,
-		column = var0.column
+	table.insert(arg0_37.teleportPaths, {
+		row = var0_37.row,
+		column = var0_37.column
 	})
-	table.insert(arg0.teleportPaths, var3)
+	table.insert(arg0_37.teleportPaths, var3_37)
 end
 
-function var0.doCollectCommonAction(arg0)
-	arg0.aiActs = arg0.aiActs or {}
+function var0_0.doCollectCommonAction(arg0_38)
+	arg0_38.aiActs = arg0_38.aiActs or {}
 
-	table.insert(arg0.aiActs, ChapterCommonAction.New(arg0))
+	table.insert(arg0_38.aiActs, ChapterCommonAction.New(arg0_38))
 end
 
-function var0.AddBoxAction(arg0)
-	local var0 = arg0.chapter
-	local var1 = var0.fleet.line
-	local var2 = var0:getChapterCell(var1.row, var1.column)
-	local var3 = pg.box_data_template[var2.attachmentId]
+function var0_0.AddBoxAction(arg0_39)
+	local var0_39 = arg0_39.chapter
+	local var1_39 = var0_39.fleet.line
+	local var2_39 = var0_39:getChapterCell(var1_39.row, var1_39.column)
+	local var3_39 = pg.box_data_template[var2_39.attachmentId]
 
-	assert(var3, "box_data_template not exist: " .. var2.attachmentId)
+	assert(var3_39, "box_data_template not exist: " .. var2_39.attachmentId)
 
-	if var3.type == ChapterConst.BoxStrategy then
-		local var4 = var3.effect_id
-		local var5 = var3.effect_arg
+	if var3_39.type == ChapterConst.BoxStrategy then
+		local var4_39 = var3_39.effect_id
+		local var5_39 = var3_39.effect_arg
 
-		table.insert(arg0.items, Drop.New({
+		table.insert(arg0_39.items, Drop.New({
 			type = DROP_TYPE_STRATEGY,
-			id = var4,
-			count = var5
+			id = var4_39,
+			count = var5_39
 		}))
 	end
 
-	arg0.aiActs = arg0.aiActs or {}
+	arg0_39.aiActs = arg0_39.aiActs or {}
 
-	table.insert(arg0.aiActs, ChapterBoxAction.New(arg0))
+	table.insert(arg0_39.aiActs, ChapterBoxAction.New(arg0_39))
 end
 
-return var0
+return var0_0

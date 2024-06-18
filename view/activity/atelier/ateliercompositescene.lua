@@ -1,427 +1,428 @@
-﻿local var0 = class("AtelierCompositeScene", import("view.base.BaseUI"))
+﻿local var0_0 = class("AtelierCompositeScene", import("view.base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "AtelierCompositeUI"
 end
 
-local var1 = import("model.vo.AtelierFormula")
-local var2 = import("model.vo.AtelierFormulaCircle")
-local var3 = import("Mgr.Pool.PoolPlural")
+local var1_0 = import("model.vo.AtelierFormula")
+local var2_0 = import("model.vo.AtelierFormulaCircle")
+local var3_0 = import("Mgr.Pool.PoolPlural")
 
-var0.FilterAll = bit.bor(1, 2, 4)
+var0_0.FilterAll = bit.bor(1, 2, 4)
 
-function var0.Ctor(arg0, ...)
-	var0.super.Ctor(arg0, ...)
+function var0_0.Ctor(arg0_2, ...)
+	var0_0.super.Ctor(arg0_2, ...)
 
-	arg0.loader = AutoLoader.New()
+	arg0_2.loader = AutoLoader.New()
 end
 
-function var0.init(arg0)
-	arg0.layerEmpty = arg0._tf:Find("Empty")
-	arg0.layerFormula = arg0._tf:Find("FormulaList")
-	arg0.painting = arg0._tf:Find("Painting")
-	arg0.chat = arg0.painting:Find("Chat")
-	arg0.layerFormulaDetail = arg0._tf:Find("FormulaDetail")
-	arg0.layerFormulaOverlay = arg0.layerFormulaDetail:Find("Overlay")
-	arg0.layerMaterialSelect = arg0.layerFormulaOverlay:Find("AvaliableMaterials")
-	arg0.layerCompositeConfirm = arg0._tf:Find("CompositeConfirmWindow")
-	arg0.layerCompositeResult = arg0._tf:Find("CompositeResultWindow")
-	arg0.layerStoreHouse = arg0._tf:Find("StoreHouseWindow")
-	arg0.layerMaterialsPreview = arg0._tf:Find("FormulaMaterialsPreview")
-	arg0.top = arg0._tf:Find("Top")
-	arg0.formulaRect = arg0.layerFormula:Find("Frame/ScrollView"):GetComponent("LScrollRect")
+function var0_0.init(arg0_3)
+	arg0_3.layerEmpty = arg0_3._tf:Find("Empty")
+	arg0_3.layerFormula = arg0_3._tf:Find("FormulaList")
+	arg0_3.painting = arg0_3._tf:Find("Painting")
+	arg0_3.chat = arg0_3.painting:Find("Chat")
+	arg0_3.layerFormulaDetail = arg0_3._tf:Find("FormulaDetail")
+	arg0_3.layerFormulaOverlay = arg0_3.layerFormulaDetail:Find("Overlay")
+	arg0_3.layerMaterialSelect = arg0_3.layerFormulaOverlay:Find("AvaliableMaterials")
+	arg0_3.layerCompositeConfirm = arg0_3._tf:Find("CompositeConfirmWindow")
+	arg0_3.layerCompositeResult = arg0_3._tf:Find("CompositeResultWindow")
+	arg0_3.layerStoreHouse = arg0_3._tf:Find("StoreHouseWindow")
+	arg0_3.layerMaterialsPreview = arg0_3._tf:Find("FormulaMaterialsPreview")
+	arg0_3.top = arg0_3._tf:Find("Top")
+	arg0_3.formulaRect = arg0_3.layerFormula:Find("Frame/ScrollView"):GetComponent("LScrollRect")
 
-	local var0 = arg0.layerFormula:Find("Frame/Item")
+	local var0_3 = arg0_3.layerFormula:Find("Frame/Item")
 
-	setActive(var0, false)
+	setActive(var0_3, false)
 
-	function arg0.formulaRect.onUpdateItem(arg0, arg1)
-		arg0:UpdateFormulaItem(arg0 + 1, arg1)
+	function arg0_3.formulaRect.onUpdateItem(arg0_4, arg1_4)
+		arg0_3:UpdateFormulaItem(arg0_4 + 1, arg1_4)
 	end
 
-	arg0.formulaFilterButtons = _.map({
+	arg0_3.formulaFilterButtons = _.map({
 		1,
 		2,
 		3
-	}, function(arg0)
-		return arg0.layerFormula:Find("Frame/Tabs"):GetChild(arg0 - 1)
+	}, function(arg0_5)
+		return arg0_3.layerFormula:Find("Frame/Tabs"):GetChild(arg0_5 - 1)
 	end)
-	arg0.candicatesRect = arg0.layerMaterialSelect:Find("Frame/List"):GetComponent("LScrollRect")
+	arg0_3.candicatesRect = arg0_3.layerMaterialSelect:Find("Frame/List"):GetComponent("LScrollRect")
 
-	local var1 = arg0.layerMaterialSelect:Find("Frame/Item")
+	local var1_3 = arg0_3.layerMaterialSelect:Find("Frame/Item")
 
-	setActive(var1, false)
+	setActive(var1_3, false)
 
-	function arg0.candicatesRect.onUpdateItem(arg0, arg1)
-		arg0:UpdateCandicateItem(arg0 + 1, arg1)
+	function arg0_3.candicatesRect.onUpdateItem(arg0_6, arg1_6)
+		arg0_3:UpdateCandicateItem(arg0_6 + 1, arg1_6)
 	end
 
-	arg0.storehouseRect = arg0.layerStoreHouse:Find("Window/ScrollView"):GetComponent("LScrollRect")
+	arg0_3.storehouseRect = arg0_3.layerStoreHouse:Find("Window/ScrollView"):GetComponent("LScrollRect")
 
-	local var2 = arg0.layerStoreHouse:Find("Window/ScrollView/Item")
+	local var2_3 = arg0_3.layerStoreHouse:Find("Window/ScrollView/Item")
 
-	setActive(var2, false)
-	setActive(arg0.layerFormula, false)
-	setActive(arg0.layerFormulaDetail, false)
-	setActive(arg0.layerMaterialSelect, false)
-	setActive(arg0.layerEmpty, false)
-	setActive(arg0.layerStoreHouse, false)
-	setActive(arg0.chat, false)
-	pg.ViewUtils.SetSortingOrder(arg0._tf:Find("Mask/BG"):GetChild(0), -1)
-	setText(arg0._tf:Find("Empty/Bar/Text"), i18n("ryza_tip_composite_unlock"))
-	setText(arg0.layerFormula:Find("Frame/Filter/Text"), i18n("ryza_toggle_only_composite"))
-	setText(arg0.layerFormula:Find("Frame/Empty"), i18n("ryza_tip_no_recipe"))
-	setText(arg0.layerFormula:Find("Frame/Item/Lock/Text"), i18n("ryza_tip_unlock_all_tools"))
-	setText(arg0.layerFormula:Find("Bar/Text"), i18n("ryza_tip_select_recipe"))
-	setText(arg0.layerStoreHouse:Find("Window/Empty"), i18n("ryza_tip_no_item"))
-	setText(arg0.layerCompositeResult:Find("Window/CountBG/Tip"), i18n("ryza_composite_count"))
-	setText(arg0.layerMaterialsPreview:Find("Frame/Text"), i18n("ryza_tip_item_access"))
-	setText(var1:Find("IconBG/Lack/Text"), i18n("ryza_ui_show_acess"))
+	setActive(var2_3, false)
+	setActive(arg0_3.layerFormula, false)
+	setActive(arg0_3.layerFormulaDetail, false)
+	setActive(arg0_3.layerMaterialSelect, false)
+	setActive(arg0_3.layerEmpty, false)
+	setActive(arg0_3.layerStoreHouse, false)
+	setActive(arg0_3.chat, false)
+	pg.ViewUtils.SetSortingOrder(arg0_3._tf:Find("Mask/BG"):GetChild(0), -1)
+	setText(arg0_3._tf:Find("Empty/Bar/Text"), i18n("ryza_tip_composite_unlock"))
+	setText(arg0_3.layerFormula:Find("Frame/Filter/Text"), i18n("ryza_toggle_only_composite"))
+	setText(arg0_3.layerFormula:Find("Frame/Empty"), i18n("ryza_tip_no_recipe"))
+	setText(arg0_3.layerFormula:Find("Frame/Item/Lock/Text"), i18n("ryza_tip_unlock_all_tools"))
+	setText(arg0_3.layerFormula:Find("Bar/Text"), i18n("ryza_tip_select_recipe"))
+	setText(arg0_3.layerStoreHouse:Find("Window/Empty"), i18n("ryza_tip_no_item"))
+	setText(arg0_3.layerCompositeResult:Find("Window/CountBG/Tip"), i18n("ryza_composite_count"))
+	setText(arg0_3.layerMaterialsPreview:Find("Frame/Text"), i18n("ryza_tip_item_access"))
+	setText(var1_3:Find("IconBG/Lack/Text"), i18n("ryza_ui_show_acess"))
 end
 
-function var0.SetEnabled(arg0, arg1)
-	arg0.unlockSystem = arg1
+function var0_0.SetEnabled(arg0_7, arg1_7)
+	arg0_7.unlockSystem = arg1_7
 end
 
-function var0.SetActivity(arg0, arg1)
-	arg0.activity = arg1
+function var0_0.SetActivity(arg0_8, arg1_8)
+	arg0_8.activity = arg1_8
 end
 
-local var4 = "ui/AtelierCompositeUI_atlas"
-local var5 = "ui/AtelierCommonUI_atlas"
+local var4_0 = "ui/AtelierCompositeUI_atlas"
+local var5_0 = "ui/AtelierCommonUI_atlas"
 
-function var0.preload(arg0, arg1)
+function var0_0.preload(arg0_9, arg1_9)
 	table.ParallelIpairsAsync({
-		var4,
-		var5
-	}, function(arg0, arg1, arg2)
-		arg0.loader:LoadBundle(arg1, arg2)
-	end, arg1)
+		var4_0,
+		var5_0
+	}, function(arg0_10, arg1_10, arg2_10)
+		arg0_9.loader:LoadBundle(arg1_10, arg2_10)
+	end, arg1_9)
 end
 
-function var0.didEnter(arg0)
-	arg0.contextData.filterType = var0.FilterAll
+function var0_0.didEnter(arg0_11)
+	arg0_11.contextData.filterType = var0_0.FilterAll
 
-	table.Foreach(arg0.formulaFilterButtons, function(arg0, arg1)
-		onButton(arg0, arg1, function()
-			if arg0.contextData.filterType == var0.FilterAll then
-				arg0.contextData.filterType = bit.lshift(1, arg0 - 1)
+	table.Foreach(arg0_11.formulaFilterButtons, function(arg0_12, arg1_12)
+		onButton(arg0_11, arg1_12, function()
+			if arg0_11.contextData.filterType == var0_0.FilterAll then
+				arg0_11.contextData.filterType = bit.lshift(1, arg0_12 - 1)
 			else
-				arg0.contextData.filterType = bit.bxor(arg0.contextData.filterType, bit.lshift(1, arg0 - 1))
+				arg0_11.contextData.filterType = bit.bxor(arg0_11.contextData.filterType, bit.lshift(1, arg0_12 - 1))
 
-				if arg0.contextData.filterType == 0 then
-					arg0.contextData.filterType = var0.FilterAll
+				if arg0_11.contextData.filterType == 0 then
+					arg0_11.contextData.filterType = var0_0.FilterAll
 				end
 			end
 
-			arg0:UpdateFilterButtons()
-			arg0:FilterFormulas()
-			arg0:UpdateFormulaList()
+			arg0_11:UpdateFilterButtons()
+			arg0_11:FilterFormulas()
+			arg0_11:UpdateFormulaList()
 		end, SFX_PANEL)
 	end)
-	onToggle(arg0, arg0.layerFormula:Find("Frame/Filter/Toggle"), function(arg0)
-		arg0.showOnlyComposite = arg0
+	onToggle(arg0_11, arg0_11.layerFormula:Find("Frame/Filter/Toggle"), function(arg0_14)
+		arg0_11.showOnlyComposite = arg0_14
 
-		arg0:FilterFormulas()
-		arg0:UpdateFormulaList()
+		arg0_11:FilterFormulas()
+		arg0_11:UpdateFormulaList()
 	end)
-	onButton(arg0, arg0.layerFormulaOverlay:Find("Description/List"), function()
-		arg0:HideFormulaDetail()
+	onButton(arg0_11, arg0_11.layerFormulaOverlay:Find("Description/List"), function()
+		arg0_11:HideFormulaDetail()
 
-		arg0.contextData.formulaId = nil
+		arg0_11.contextData.formulaId = nil
 
-		arg0:ShowFormulaList()
+		arg0_11:ShowFormulaList()
 	end)
-	onButton(arg0, arg0._tf:Find("Top/Back"), function()
-		arg0:onBackPressed()
+	onButton(arg0_11, arg0_11._tf:Find("Top/Back"), function()
+		arg0_11:onBackPressed()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0._tf:Find("Top/Home"), function()
-		arg0:quickExitFunc()
+	onButton(arg0_11, arg0_11._tf:Find("Top/Home"), function()
+		arg0_11:quickExitFunc()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0._tf:Find("Top/Help"), function()
+	onButton(arg0_11, arg0_11._tf:Find("Top/Help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("ryza_composite_help_tip")
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.layerMaterialSelect:Find("BG"), function()
-		arg0:CloseCandicatePanel()
+	onButton(arg0_11, arg0_11.layerMaterialSelect:Find("BG"), function()
+		arg0_11:CloseCandicatePanel()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.layerCompositeConfirm:Find("BG"), function()
-		arg0:HideCompositeConfirmWindow()
+	onButton(arg0_11, arg0_11.layerCompositeConfirm:Find("BG"), function()
+		arg0_11:HideCompositeConfirmWindow()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.layerCompositeConfirm:Find("Window/Cancel"), function()
-		arg0:HideCompositeConfirmWindow()
+	onButton(arg0_11, arg0_11.layerCompositeConfirm:Find("Window/Cancel"), function()
+		arg0_11:HideCompositeConfirmWindow()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.layerCompositeResult:Find("BG"), function()
-		arg0:HideCompositeResult()
+	onButton(arg0_11, arg0_11.layerCompositeResult:Find("BG"), function()
+		arg0_11:HideCompositeResult()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0._tf:Find("Top/StoreHouse"), function()
-		arg0.contextData.showStoreHouse = true
+	onButton(arg0_11, arg0_11._tf:Find("Top/StoreHouse"), function()
+		arg0_11.contextData.showStoreHouse = true
 
-		arg0:ShowStoreHouseWindow()
+		arg0_11:ShowStoreHouseWindow()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.layerStoreHouse:Find("Window/Close"), function()
-		arg0:CloseStoreHouseWindow()
+	onButton(arg0_11, arg0_11.layerStoreHouse:Find("Window/Close"), function()
+		arg0_11:CloseStoreHouseWindow()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.layerStoreHouse:Find("BG"), function()
-		arg0:CloseStoreHouseWindow()
+	onButton(arg0_11, arg0_11.layerStoreHouse:Find("BG"), function()
+		arg0_11:CloseStoreHouseWindow()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.layerMaterialsPreview:Find("BG"), function()
-		arg0:HideMaterialsPreview()
+	onButton(arg0_11, arg0_11.layerMaterialsPreview:Find("BG"), function()
+		arg0_11:HideMaterialsPreview()
 	end, SFX_CANCEL)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0.top)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_11.top)
 
-	if not arg0.unlockSystem then
-		setActive(arg0.layerEmpty, true)
-		setActive(arg0.painting, false)
+	if not arg0_11.unlockSystem then
+		setActive(arg0_11.layerEmpty, true)
+		setActive(arg0_11.painting, false)
 	else
-		if arg0.contextData.formulaId then
-			local var0 = arg0.activity:GetFormulas()[arg0.contextData.formulaId]
+		if arg0_11.contextData.formulaId then
+			local var0_11 = arg0_11.activity:GetFormulas()[arg0_11.contextData.formulaId]
 
-			arg0:ShowFormulaDetail(var0)
+			arg0_11:ShowFormulaDetail(var0_11)
 		else
-			arg0:DispalyChat({
+			arg0_11:DispalyChat({
 				"ryza_atellier1"
 			})
-			arg0:ShowFormulaList()
+			arg0_11:ShowFormulaList()
 		end
 
-		if arg0.contextData.showStoreHouse then
-			arg0:ShowStoreHouseWindow()
+		if arg0_11.contextData.showStoreHouse then
+			arg0_11:ShowStoreHouseWindow()
 		end
 	end
 
-	if arg0.unlockSystem and PlayerPrefs.GetInt("first_enter_ryza_atelier_" .. getProxy(PlayerProxy):getRawData().id, 0) == 0 then
-		triggerButton(arg0._tf:Find("Top/Help"))
+	if arg0_11.unlockSystem and PlayerPrefs.GetInt("first_enter_ryza_atelier_" .. getProxy(PlayerProxy):getRawData().id, 0) == 0 then
+		triggerButton(arg0_11._tf:Find("Top/Help"))
 		PlayerPrefs.SetInt("first_enter_ryza_atelier_" .. getProxy(PlayerProxy):getRawData().id, 1)
 	end
 end
 
-function var0.onBackPressed(arg0)
-	if arg0.animating then
+function var0_0.onBackPressed(arg0_27)
+	if arg0_27.animating then
 		return true
 	end
 
-	if arg0:CloseStoreHouseWindow() then
+	if arg0_27:CloseStoreHouseWindow() then
 		return true
 	end
 
-	if arg0:HideMaterialsPreview() then
+	if arg0_27:HideMaterialsPreview() then
 		return true
 	end
 
-	if arg0:HideCompositeResult() then
+	if arg0_27:HideCompositeResult() then
 		return true
 	end
 
-	if arg0:HideCompositeConfirmWindow() then
+	if arg0_27:HideCompositeConfirmWindow() then
 		return true
 	end
 
-	if arg0:HideCandicatePanel() then
+	if arg0_27:HideCandicatePanel() then
 		return true
 	end
 
-	if arg0:HideFormulaDetail() then
-		arg0.contextData.formulaId = nil
+	if arg0_27:HideFormulaDetail() then
+		arg0_27.contextData.formulaId = nil
 
-		arg0:ShowFormulaList()
+		arg0_27:ShowFormulaList()
 
 		return true
 	end
 
-	arg0:emit(var0.ON_BACK_PRESSED)
+	arg0_27:emit(var0_0.ON_BACK_PRESSED)
 end
 
-function var0.UpdateFilterButtons(arg0)
-	table.Foreach(arg0.formulaFilterButtons, function(arg0, arg1)
-		local var0 = arg0.contextData.filterType ~= var0.FilterAll
+function var0_0.UpdateFilterButtons(arg0_28)
+	table.Foreach(arg0_28.formulaFilterButtons, function(arg0_29, arg1_29)
+		local var0_29 = arg0_28.contextData.filterType ~= var0_0.FilterAll
 
-		var0 = var0 and bit.band(arg0.contextData.filterType, bit.lshift(1, arg0 - 1)) > 0
+		var0_29 = var0_29 and bit.band(arg0_28.contextData.filterType, bit.lshift(1, arg0_29 - 1)) > 0
 
-		setActive(arg1:Find("Selected"), var0)
+		setActive(arg1_29:Find("Selected"), var0_29)
 	end)
 end
 
-function var0.AddIdleTimer(arg0)
-	arg0:RemoveIdleTimer()
+function var0_0.AddIdleTimer(arg0_30)
+	arg0_30:RemoveIdleTimer()
 
-	arg0.idleTimer = Timer.New(function()
-		arg0:DispalyChat({
+	arg0_30.idleTimer = Timer.New(function()
+		arg0_30:DispalyChat({
 			"ryza_atellier1"
 		})
-		arg0:AddIdleTimer()
+		arg0_30:AddIdleTimer()
 	end, 8 + math.random() * 4)
 
-	arg0.idleTimer:Start()
+	arg0_30.idleTimer:Start()
 end
 
-function var0.RemoveIdleTimer(arg0)
-	if not arg0.idleTimer then
+function var0_0.RemoveIdleTimer(arg0_32)
+	if not arg0_32.idleTimer then
 		return
 	end
 
-	arg0.idleTimer:Stop()
+	arg0_32.idleTimer:Stop()
 
-	arg0.idleTimer = nil
+	arg0_32.idleTimer = nil
 end
 
-function var0.ShowFormulaList(arg0)
-	arg0:AddIdleTimer()
-	setActive(arg0.layerFormula, true)
-	setParent(arg0.layerFormula, arg0.top)
-	arg0.layerFormula:SetSiblingIndex(0)
-	arg0:UpdateFilterButtons()
-	arg0:FilterFormulas()
-	arg0:UpdateFormulaList()
+function var0_0.ShowFormulaList(arg0_33)
+	arg0_33:AddIdleTimer()
+	setActive(arg0_33.layerFormula, true)
+	setParent(arg0_33.layerFormula, arg0_33.top)
+	arg0_33.layerFormula:SetSiblingIndex(0)
+	arg0_33:UpdateFilterButtons()
+	arg0_33:FilterFormulas()
+	arg0_33:UpdateFormulaList()
 end
 
-function var0.HideFormulaList(arg0)
-	if not arg0.layerFormula then
+function var0_0.HideFormulaList(arg0_34)
+	if not arg0_34.layerFormula then
 		return
 	end
 
-	arg0:RemoveIdleTimer()
-	setParent(arg0.layerFormula, arg0._tf)
-	setActive(arg0.layerFormula, false)
+	arg0_34:RemoveIdleTimer()
+	setParent(arg0_34.layerFormula, arg0_34._tf)
+	setActive(arg0_34.layerFormula, false)
 
 	return true
 end
 
-function var0.FilterFormulas(arg0)
-	arg0.filterFormulas = {}
+function var0_0.FilterFormulas(arg0_35)
+	arg0_35.filterFormulas = {}
 
-	local var0 = arg0.contextData.filterType
-	local var1 = function(arg0)
-		if var0 == var0.FilterAll then
+	local var0_35 = arg0_35.contextData.filterType
+
+	local function var1_35(arg0_36)
+		if var0_35 == var0_0.FilterAll then
 			return true
 		end
 
-		return switch(arg0:GetType(), {
-			[var1.TYPE.EQUIP] = function()
-				return bit.band(var0, 1) > 0
+		return switch(arg0_36:GetType(), {
+			[var1_0.TYPE.EQUIP] = function()
+				return bit.band(var0_35, 1) > 0
 			end,
-			[var1.TYPE.ITEM] = function()
-				return bit.band(var0, 2) > 0
+			[var1_0.TYPE.ITEM] = function()
+				return bit.band(var0_35, 2) > 0
 			end,
-			[var1.TYPE.TOOL] = function()
-				return bit.band(var0, 4) > 0
+			[var1_0.TYPE.TOOL] = function()
+				return bit.band(var0_35, 4) > 0
 			end,
-			[var1.TYPE.OTHER] = function()
-				return bit.band(var0, 4) > 0
+			[var1_0.TYPE.OTHER] = function()
+				return bit.band(var0_35, 4) > 0
 			end
 		})
 	end
 
-	for iter0, iter1 in ipairs(_.values(arg0.activity:GetFormulas())) do
-		if var1(iter1) and (not arg0.showOnlyComposite or iter1:IsAvaliable() and var1.IsFormualCanComposite(iter1, arg0.activity)) then
-			table.insert(arg0.filterFormulas, iter1)
+	for iter0_35, iter1_35 in ipairs(_.values(arg0_35.activity:GetFormulas())) do
+		if var1_35(iter1_35) and (not arg0_35.showOnlyComposite or iter1_35:IsAvaliable() and var1_0.IsFormualCanComposite(iter1_35, arg0_35.activity)) then
+			table.insert(arg0_35.filterFormulas, iter1_35)
 		end
 	end
 
-	local function var2(arg0, arg1)
-		local var0 = {
-			function(arg0)
-				return arg0:IsAvaliable() and 0 or 1
+	local function var2_35(arg0_41, arg1_41)
+		local var0_41 = {
+			function(arg0_42)
+				return arg0_42:IsAvaliable() and 0 or 1
 			end,
-			function(arg0)
-				if arg0:GetType() ~= var1.TYPE.TOOL and not arg0.activity:IsCompleteAllTools() then
+			function(arg0_43)
+				if arg0_43:GetType() ~= var1_0.TYPE.TOOL and not arg0_35.activity:IsCompleteAllTools() then
 					return 1
 				else
 					return 0
 				end
 			end,
-			function(arg0)
-				return arg0:GetConfigID()
+			function(arg0_44)
+				return arg0_44:GetConfigID()
 			end
 		}
 
-		for iter0, iter1 in ipairs(var0) do
-			local var1 = iter1(arg0)
-			local var2 = iter1(arg1)
+		for iter0_41, iter1_41 in ipairs(var0_41) do
+			local var1_41 = iter1_41(arg0_41)
+			local var2_41 = iter1_41(arg1_41)
 
-			if var1 ~= var2 then
-				return var1 < var2
+			if var1_41 ~= var2_41 then
+				return var1_41 < var2_41
 			end
 		end
 
 		return false
 	end
 
-	table.sort(arg0.filterFormulas, var2)
+	table.sort(arg0_35.filterFormulas, var2_35)
 end
 
-function var0.UpdateFormulaList(arg0)
-	local var0 = #arg0.filterFormulas == 0
+function var0_0.UpdateFormulaList(arg0_45)
+	local var0_45 = #arg0_45.filterFormulas == 0
 
-	setActive(arg0.layerFormula:Find("Frame/Empty"), var0)
-	setActive(arg0.layerFormula:Find("Frame/ScrollView"), not var0)
-	arg0.formulaRect:SetTotalCount(#arg0.filterFormulas)
+	setActive(arg0_45.layerFormula:Find("Frame/Empty"), var0_45)
+	setActive(arg0_45.layerFormula:Find("Frame/ScrollView"), not var0_45)
+	arg0_45.formulaRect:SetTotalCount(#arg0_45.filterFormulas)
 end
 
-local var6 = {
-	[var1.TYPE.EQUIP] = "ryza_word_equip",
-	[var1.TYPE.ITEM] = "word_item",
-	[var1.TYPE.TOOL] = "word_tool",
-	[var1.TYPE.OTHER] = "word_other"
+local var6_0 = {
+	[var1_0.TYPE.EQUIP] = "ryza_word_equip",
+	[var1_0.TYPE.ITEM] = "word_item",
+	[var1_0.TYPE.TOOL] = "word_tool",
+	[var1_0.TYPE.OTHER] = "word_other"
 }
 
-function var0.UpdateFormulaItem(arg0, arg1, arg2)
-	local var0 = tf(arg2)
-	local var1 = arg0.filterFormulas[arg1]
-	local var2 = var1:GetProduction()
+function var0_0.UpdateFormulaItem(arg0_46, arg1_46, arg2_46)
+	local var0_46 = tf(arg2_46)
+	local var1_46 = arg0_46.filterFormulas[arg1_46]
+	local var2_46 = var1_46:GetProduction()
 
-	arg0:UpdateRyzaDrop(var0:Find("BG/Icon"), {
-		type = var2[1],
-		id = var2[2]
+	arg0_46:UpdateRyzaDrop(var0_46:Find("BG/Icon"), {
+		type = var2_46[1],
+		id = var2_46[2]
 	}, true)
 
-	local var3 = var6[var1:GetType()]
-	local var4 = var1:GetType() ~= var1.TYPE.TOOL and not arg0.activity:IsCompleteAllTools()
+	local var3_46 = var6_0[var1_46:GetType()]
+	local var4_46 = var1_46:GetType() ~= var1_0.TYPE.TOOL and not arg0_46.activity:IsCompleteAllTools()
 
-	setActive(var0:Find("Lock"), var4)
-	setActive(var0:Find("BG"), not var4)
-	setText(var0:Find("BG/Type"), i18n(var3))
-	setScrollText(var0:Find("BG/Name/Text"), var1:GetName())
+	setActive(var0_46:Find("Lock"), var4_46)
+	setActive(var0_46:Find("BG"), not var4_46)
+	setText(var0_46:Find("BG/Type"), i18n(var3_46))
+	setScrollText(var0_46:Find("BG/Name/Text"), var1_46:GetName())
 
-	local var5
+	local var5_46
 
-	if var1:GetMaxLimit() > 0 then
-		var5 = var1:GetMaxLimit() - var1:GetUsedCount() .. "/" .. var1:GetMaxLimit()
+	if var1_46:GetMaxLimit() > 0 then
+		var5_46 = var1_46:GetMaxLimit() - var1_46:GetUsedCount() .. "/" .. var1_46:GetMaxLimit()
 	else
-		var5 = "∞"
+		var5_46 = "∞"
 	end
 
-	local var6 = var1:IsAvaliable()
+	local var6_46 = var1_46:IsAvaliable()
 
-	setActive(var0:Find("BG/Count"), var6)
-	setActive(var0:Find("Completed"), not var6)
+	setActive(var0_46:Find("BG/Count"), var6_46)
+	setActive(var0_46:Find("Completed"), not var6_46)
 
-	if var6 then
-		local var7 = var1.IsFormualCanComposite(var1, arg0.activity)
-		local var8 = SummerFeastScene.TransformColor(var7 and "4fb3a3" or "d55a54")
+	if var6_46 then
+		local var7_46 = var1_0.IsFormualCanComposite(var1_46, arg0_46.activity)
+		local var8_46 = SummerFeastScene.TransformColor(var7_46 and "4fb3a3" or "d55a54")
 
-		setTextColor(var0:Find("BG/Count"), var8)
+		setTextColor(var0_46:Find("BG/Count"), var8_46)
 	end
 
-	setText(var0:Find("BG/Count"), var5)
-	onButton(arg0, var0, function()
-		if not var6 then
+	setText(var0_46:Find("BG/Count"), var5_46)
+	onButton(arg0_46, var0_46, function()
+		if not var6_46 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ryza_tip_composite_invalid"))
 
 			return
 		end
 
-		if var4 then
+		if var4_46 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ryza_tip_unlock_all_tools"))
 
 			return
 		end
 
-		arg0:HideFormulaList()
-		arg0:ShowFormulaDetail(var1)
-		arg0:DispalyChat({
+		arg0_46:HideFormulaList()
+		arg0_46:ShowFormulaDetail(var1_46)
+		arg0_46:DispalyChat({
 			"ryza_atellier2",
 			"ryza_atellier3",
 			"ryza_atellier4"
@@ -430,103 +431,103 @@ function var0.UpdateFormulaItem(arg0, arg1, arg2)
 	end, SFX_PANEL)
 end
 
-function var0.UpdateRyzaDrop(arg0, arg1, arg2, arg3)
-	updateDrop(arg1, arg2)
-	SetCompomentEnabled(arg1:Find("icon_bg"), typeof(Image), false)
-	setActive(arg1:Find("bg"), false)
-	setActive(arg1:Find("icon_bg/frame"), false)
-	setActive(arg1:Find("icon_bg/stars"), false)
+function var0_0.UpdateRyzaDrop(arg0_48, arg1_48, arg2_48, arg3_48)
+	updateDrop(arg1_48, arg2_48)
+	SetCompomentEnabled(arg1_48:Find("icon_bg"), typeof(Image), false)
+	setActive(arg1_48:Find("bg"), false)
+	setActive(arg1_48:Find("icon_bg/frame"), false)
+	setActive(arg1_48:Find("icon_bg/stars"), false)
 
-	local var0 = arg2:getConfig("rarity")
+	local var0_48 = arg2_48:getConfig("rarity")
 
-	if arg2.type == DROP_TYPE_EQUIP or arg2.type == DROP_TYPE_EQUIPMENT_SKIN then
-		var0 = var0 - 1
+	if arg2_48.type == DROP_TYPE_EQUIP or arg2_48.type == DROP_TYPE_EQUIPMENT_SKIN then
+		var0_48 = var0_48 - 1
 	end
 
-	local var1 = "icon_frame_" .. var0
+	local var1_48 = "icon_frame_" .. var0_48
 
-	if arg3 then
-		var1 = var1 .. "_small"
+	if arg3_48 then
+		var1_48 = var1_48 .. "_small"
 	end
 
-	arg0.loader:GetSpriteQuiet(var5, var1, arg1)
+	arg0_48.loader:GetSpriteQuiet(var5_0, var1_48, arg1_48)
 
-	if arg2.type == DROP_TYPE_EQUIP or arg2.type == DROP_TYPE_SPWEAPON then
-		onButton(arg0, arg1, function()
-			arg0:emit(var0.ON_DROP, arg2)
+	if arg2_48.type == DROP_TYPE_EQUIP or arg2_48.type == DROP_TYPE_SPWEAPON then
+		onButton(arg0_48, arg1_48, function()
+			arg0_48:emit(var0_0.ON_DROP, arg2_48)
 		end, SFX_PANEL)
 	else
-		removeOnButton(arg1)
+		removeOnButton(arg1_48)
 	end
 end
 
-local var7 = {
-	[var2.TYPE.BASE] = "circle",
-	[var2.TYPE.NORMAL] = "hexagon",
-	[var2.TYPE.SAIREN] = "doubleHexagon",
-	[var2.TYPE.ANY] = "anyHexagon"
+local var7_0 = {
+	[var2_0.TYPE.BASE] = "circle",
+	[var2_0.TYPE.NORMAL] = "hexagon",
+	[var2_0.TYPE.SAIREN] = "doubleHexagon",
+	[var2_0.TYPE.ANY] = "anyHexagon"
 }
 
-function var0.ShowFormulaDetail(arg0, arg1)
-	setActive(arg0.layerFormulaDetail, true)
-	setParent(arg0.layerFormulaOverlay, arg0.top)
-	arg0.layerFormulaOverlay:SetSiblingIndex(0)
-	setParent(arg0.painting, arg0.layerFormulaOverlay)
-	arg0.painting:SetSiblingIndex(0)
+function var0_0.ShowFormulaDetail(arg0_50, arg1_50)
+	setActive(arg0_50.layerFormulaDetail, true)
+	setParent(arg0_50.layerFormulaOverlay, arg0_50.top)
+	arg0_50.layerFormulaOverlay:SetSiblingIndex(0)
+	setParent(arg0_50.painting, arg0_50.layerFormulaOverlay)
+	arg0_50.painting:SetSiblingIndex(0)
 
-	if not arg0.nodePools then
-		arg0.nodePools = {
-			circle = var3.New(arg0.layerFormulaDetail:Find("CircleNode").gameObject, 100),
-			hexagon = var3.New(arg0.layerFormulaDetail:Find("HexagonNode").gameObject, 100),
-			anyHexagon = var3.New(arg0.layerFormulaDetail:Find("AnyHexagonNode").gameObject, 100),
-			doubleHexagon = var3.New(arg0.layerFormulaDetail:Find("DoubleHexagonNode").gameObject, 100)
+	if not arg0_50.nodePools then
+		arg0_50.nodePools = {
+			circle = var3_0.New(arg0_50.layerFormulaDetail:Find("CircleNode").gameObject, 100),
+			hexagon = var3_0.New(arg0_50.layerFormulaDetail:Find("HexagonNode").gameObject, 100),
+			anyHexagon = var3_0.New(arg0_50.layerFormulaDetail:Find("AnyHexagonNode").gameObject, 100),
+			doubleHexagon = var3_0.New(arg0_50.layerFormulaDetail:Find("DoubleHexagonNode").gameObject, 100)
 		}
 
-		table.Foreach(arg0.nodePools, function(arg0, arg1)
-			setActive(arg1.prefab, false)
+		table.Foreach(arg0_50.nodePools, function(arg0_51, arg1_51)
+			setActive(arg1_51.prefab, false)
 		end)
 	end
 
-	arg0.pluralRoot = arg0.pluralRoot or pg.PoolMgr.GetInstance().root
-	arg0.nodeList = arg0.nodeList or {}
+	arg0_50.pluralRoot = arg0_50.pluralRoot or pg.PoolMgr.GetInstance().root
+	arg0_50.nodeList = arg0_50.nodeList or {}
 
-	_.each(arg0.nodeList, function(arg0)
-		local var0 = arg0.nodePools[var7[arg0.Data:GetType()]]
-		local var1 = tf(arg0.GO)
+	_.each(arg0_50.nodeList, function(arg0_52)
+		local var0_52 = arg0_50.nodePools[var7_0[arg0_52.Data:GetType()]]
+		local var1_52 = tf(arg0_52.GO)
 
-		SetCompomentEnabled(var1:Find("Item"), typeof(Image), false)
-		arg0.loader:ClearRequest(var1:Find("Ring"))
-		table.Foreach(arg0.links, function(arg0)
-			local var0 = var1:Find("Links/" .. arg0)
+		SetCompomentEnabled(var1_52:Find("Item"), typeof(Image), false)
+		arg0_50.loader:ClearRequest(var1_52:Find("Ring"))
+		table.Foreach(arg0_52.links, function(arg0_53)
+			local var0_53 = var1_52:Find("Links/" .. arg0_53)
 
-			arg0.loader:ClearRequest(var0)
+			arg0_50.loader:ClearRequest(var0_53)
 		end)
-		arg0.loader:ClearRequest(var1)
+		arg0_50.loader:ClearRequest(var1_52)
 
-		if not var0:Enqueue(go(arg0.GO)) then
-			setParent(go(arg0.GO), arg0.pluralRoot)
-			setActive(go(arg0.GO), false)
+		if not var0_52:Enqueue(go(arg0_52.GO)) then
+			setParent(go(arg0_52.GO), arg0_50.pluralRoot)
+			setActive(go(arg0_52.GO), false)
 		end
 	end)
-	table.clean(arg0.nodeList)
-	arg0:InitFormula(arg1)
+	table.clean(arg0_50.nodeList)
+	arg0_50:InitFormula(arg1_50)
 end
 
-function var0.HideFormulaDetail(arg0)
-	if not isActive(arg0.layerFormulaDetail) then
+function var0_0.HideFormulaDetail(arg0_54)
+	if not isActive(arg0_54.layerFormulaDetail) then
 		return
 	end
 
-	arg0:HideCandicatePanel()
-	setParent(arg0.painting, arg0._tf)
-	arg0.painting:SetSiblingIndex(1)
-	setParent(arg0.layerFormulaOverlay, arg0.layerFormulaDetail)
-	setActive(arg0.layerFormulaDetail, false)
+	arg0_54:HideCandicatePanel()
+	setParent(arg0_54.painting, arg0_54._tf)
+	arg0_54.painting:SetSiblingIndex(1)
+	setParent(arg0_54.layerFormulaOverlay, arg0_54.layerFormulaDetail)
+	setActive(arg0_54.layerFormulaDetail, false)
 
 	return true
 end
 
-local var8 = {
+local var8_0 = {
 	{
 		0,
 		1
@@ -552,984 +553,985 @@ local var8 = {
 		0
 	}
 }
-local var9 = {
-	[var1.TYPE.EQUIP] = "text_equip",
-	[var1.TYPE.ITEM] = "text_item",
-	[var1.TYPE.TOOL] = "text_other",
-	[var1.TYPE.OTHER] = "text_other"
+local var9_0 = {
+	[var1_0.TYPE.EQUIP] = "text_equip",
+	[var1_0.TYPE.ITEM] = "text_item",
+	[var1_0.TYPE.TOOL] = "text_other",
+	[var1_0.TYPE.OTHER] = "text_other"
 }
 
-function var0.InitFormula(arg0, arg1)
-	arg0.contextData.formulaId = arg1:GetConfigID()
+function var0_0.InitFormula(arg0_55, arg1_55)
+	arg0_55.contextData.formulaId = arg1_55:GetConfigID()
 
-	local var0 = arg0.layerFormulaOverlay:Find("Description")
+	local var0_55 = arg0_55.layerFormulaOverlay:Find("Description")
 
-	arg0.loader:GetSpriteQuiet(var4, var9[arg1:GetType()], var0:Find("Type"))
+	arg0_55.loader:GetSpriteQuiet(var4_0, var9_0[arg1_55:GetType()], var0_55:Find("Type"))
 
-	local var1 = {
-		type = arg1:GetProduction()[1],
-		id = arg1:GetProduction()[2]
+	local var1_55 = {
+		type = arg1_55:GetProduction()[1],
+		id = arg1_55:GetProduction()[2]
 	}
 
-	arg0:UpdateRyzaDrop(var0:Find("Icon"), var1)
-	setText(var0:Find("Name"), arg1:GetName())
-	setText(var0:Find("Description/Text"), arg1:GetDesc())
+	arg0_55:UpdateRyzaDrop(var0_55:Find("Icon"), var1_55)
+	setText(var0_55:Find("Name"), arg1_55:GetName())
+	setText(var0_55:Find("Description/Text"), arg1_55:GetDesc())
 
-	local var2 = tostring(arg1:GetMaxLimit() - arg1:GetUsedCount())
+	local var2_55 = tostring(arg1_55:GetMaxLimit() - arg1_55:GetUsedCount())
 
-	if arg1:GetMaxLimit() < 0 then
-		var2 = "∞"
+	if arg1_55:GetMaxLimit() < 0 then
+		var2_55 = "∞"
 	end
 
-	setText(var0:Find("RestCount/Text"), i18n("ryza_rest_produce_count", var2))
-	setActive(arg0.layerMaterialSelect, false)
+	setText(var0_55:Find("RestCount/Text"), i18n("ryza_rest_produce_count", var2_55))
+	setActive(arg0_55.layerMaterialSelect, false)
 
-	local var3 = arg0.layerFormulaDetail:Find("ScrollView/Content")
+	local var3_55 = arg0_55.layerFormulaDetail:Find("ScrollView/Content")
 
-	setAnchoredPosition(var3, Vector2.zero)
-	_.each(arg1:GetCircleList(), function(arg0)
-		local var0 = var2.New({
-			configId = arg0
+	setAnchoredPosition(var3_55, Vector2.zero)
+	_.each(arg1_55:GetCircleList(), function(arg0_56)
+		local var0_56 = var2_0.New({
+			configId = arg0_56
 		})
-		local var1 = arg0.nodePools[var7[var0:GetType()]]:Dequeue()
+		local var1_56 = arg0_55.nodePools[var7_0[var0_56:GetType()]]:Dequeue()
 
-		var1.name = arg0
+		var1_56.name = arg0_56
 
-		setActive(var1, true)
-		setParent(tf(var1), var3)
+		setActive(var1_56, true)
+		setParent(tf(var1_56), var3_55)
 
-		local var2 = {
+		local var2_56 = {
 			Change = true,
-			Data = var0,
-			GO = var1
+			Data = var0_56,
+			GO = var1_56
 		}
 
-		table.insert(arg0.nodeList, var2)
+		table.insert(arg0_55.nodeList, var2_56)
 	end)
 
-	local var4 = 280
-	local var5 = math.deg2Rad * 30
-	local var6 = var4 * Vector2.New(math.cos(var5), math.sin(var5))
-	local var7 = var4 * Vector2(0, 1)
-	local var8 = Vector2.zero
+	local var4_55 = 280
+	local var5_55 = math.deg2Rad * 30
+	local var6_55 = var4_55 * Vector2.New(math.cos(var5_55), math.sin(var5_55))
+	local var7_55 = var4_55 * Vector2(0, 1)
+	local var8_55 = Vector2.zero
 
-	local function var9(arg0, arg1)
-		setAnchoredPosition(arg0.GO, arg1)
+	local function var9_55(arg0_57, arg1_57)
+		setAnchoredPosition(arg0_57.GO, arg1_57)
 
-		local var0 = arg0.Data:GetNeighbors()
+		local var0_57 = arg0_57.Data:GetNeighbors()
 
-		arg0.links = {}
+		arg0_57.links = {}
 
-		_.each(var0, function(arg0)
-			local var0 = arg0[1]
-			local var1 = arg0[2]
-			local var2 = var8[var0]
-			local var3 = var2[1] * var6 + var2[2] * var7
-			local var4 = _.detect(arg0.nodeList, function(arg0)
-				return arg0.Data:GetConfigID() == var1
+		_.each(var0_57, function(arg0_58)
+			local var0_58 = arg0_58[1]
+			local var1_58 = arg0_58[2]
+			local var2_58 = var8_0[var0_58]
+			local var3_58 = var2_58[1] * var6_55 + var2_58[2] * var7_55
+			local var4_58 = _.detect(arg0_55.nodeList, function(arg0_59)
+				return arg0_59.Data:GetConfigID() == var1_58
 			end)
 
-			var4.prevLink = {
-				(var0 + 2) % 5 + 1,
-				arg0
+			var4_58.prevLink = {
+				(var0_58 + 2) % 5 + 1,
+				arg0_57
 			}
-			arg0.links[var0] = var4
+			arg0_57.links[var0_58] = var4_58
 
-			local var5 = arg1 + var3
+			local var5_58 = arg1_57 + var3_58
 
-			var9(var4, var5)
+			var9_55(var4_58, var5_58)
 
-			var8 = Vector2.Max(var8, -var5)
-			var8 = Vector2.Max(var8, var5)
+			var8_55 = Vector2.Max(var8_55, -var5_58)
+			var8_55 = Vector2.Max(var8_55, var5_58)
 		end)
 	end
 
-	var9(arg0.nodeList[1], Vector2.zero)
-	setSizeDelta(var3, (var8 + Vector2.New(var4, var4)) * 2)
-	onButton(arg0, arg0.layerFormulaDetail:Find("Composite"), function()
-		if not _.all(arg0.nodeList, function(arg0)
-			return arg0.Instance
+	var9_55(arg0_55.nodeList[1], Vector2.zero)
+	setSizeDelta(var3_55, (var8_55 + Vector2.New(var4_55, var4_55)) * 2)
+	onButton(arg0_55, arg0_55.layerFormulaDetail:Find("Composite"), function()
+		if not _.all(arg0_55.nodeList, function(arg0_61)
+			return arg0_61.Instance
 		end) then
-			arg0:ShowMaterialsPreview()
+			arg0_55:ShowMaterialsPreview()
 
 			return
 		end
 
-		if not arg0.activity:GetFormulas()[arg0.contextData.formulaId]:IsAvaliable() then
+		if not arg0_55.activity:GetFormulas()[arg0_55.contextData.formulaId]:IsAvaliable() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ryza_tip_composite_invalid"))
 
 			return
 		end
 
-		arg0:ShowCompositeConfirmWindow()
+		arg0_55:ShowCompositeConfirmWindow()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.layerFormulaDetail:Find("AutoFill"), function()
-		local var0 = {}
-		local var1 = arg0.activity:GetItems()
+	onButton(arg0_55, arg0_55.layerFormulaDetail:Find("AutoFill"), function()
+		local var0_62 = {}
+		local var1_62 = arg0_55.activity:GetItems()
 
-		local function var2(arg0)
-			local var0 = var0[arg0:GetConfigID()] or Clone(var1[arg0:GetConfigID()])
+		local function var2_62(arg0_63)
+			local var0_63 = var0_62[arg0_63:GetConfigID()] or Clone(var1_62[arg0_63:GetConfigID()])
 
-			assert(var0, "Using Unexist material")
+			assert(var0_63, "Using Unexist material")
 
-			var0.count = var0.count - 1
-			var0[arg0:GetConfigID()] = var0
+			var0_63.count = var0_63.count - 1
+			var0_62[arg0_63:GetConfigID()] = var0_63
 		end
 
-		local var3 = {}
+		local var3_62 = {}
 
-		_.each(arg0.nodeList, function(arg0)
-			if arg0.Instance then
-				var2(arg0.Instance)
+		_.each(arg0_55.nodeList, function(arg0_64)
+			if arg0_64.Instance then
+				var2_62(arg0_64.Instance)
 			else
-				table.insert(var3, arg0)
+				table.insert(var3_62, arg0_64)
 			end
 		end)
 
-		if #var3 <= 0 then
+		if #var3_62 <= 0 then
 			return
 		end
 
-		local var4 = true
+		local var4_62 = true
 
-		local function var5()
-			if not var4 then
+		local function var5_62()
+			if not var4_62 then
 				return
 			end
 
-			arg0:DispalyChat({
+			arg0_55:DispalyChat({
 				"ryza_atellier5",
 				"ryza_atellier6",
 				"ryza_atellier7"
 			})
 
-			var4 = false
+			var4_62 = false
 		end
 
-		local var6 = false
-		local var7
+		local var6_62 = false
+		local var7_62
 
-		local function var8()
-			if var7 and coroutine.status(var7) == "suspended" then
-				local var0, var1 = coroutine.resume(var7)
+		local function var8_62()
+			if var7_62 and coroutine.status(var7_62) == "suspended" then
+				local var0_66, var1_66 = coroutine.resume(var7_62)
 
-				assert(var0, debug.traceback(var7, var1))
+				assert(var0_66, debug.traceback(var7_62, var1_66))
 			end
 		end
 
-		var7 = coroutine.create(function()
-			_.each(var3, function(arg0)
-				local var0 = arg0.Data
+		var7_62 = coroutine.create(function()
+			_.each(var3_62, function(arg0_68)
+				local var0_68 = arg0_68.Data
 
-				if var0:GetType() == var2.TYPE.BASE or var0:GetType() == var2.TYPE.SAIREN then
-					local var1 = var0:GetLimitItemID()
-					local var2 = var0[var1] or var1[var1]
+				if var0_68:GetType() == var2_0.TYPE.BASE or var0_68:GetType() == var2_0.TYPE.SAIREN then
+					local var1_68 = var0_68:GetLimitItemID()
+					local var2_68 = var0_62[var1_68] or var1_62[var1_68]
 
-					if var2 and var2.count > 0 then
-						var2(var2)
-						var5()
-						arg0:FillNodeAndPlayAnim(arg0, AtelierMaterial.New({
+					if var2_68 and var2_68.count > 0 then
+						var2_62(var2_68)
+						var5_62()
+						arg0_55:FillNodeAndPlayAnim(arg0_68, AtelierMaterial.New({
 							count = 1,
-							configId = var1
-						}), var8, true)
+							configId = var1_68
+						}), var8_62, true)
 						coroutine.yield()
 					else
-						var6 = true
+						var6_62 = true
 					end
 				end
 			end)
 
-			if not var6 then
-				local var0 = false
-				local var1 = false
+			if not var6_62 then
+				local var0_67 = false
+				local var1_67 = false
 
-				arg0:DisPlayUnlockEffect(function()
-					var0 = true
+				arg0_55:DisPlayUnlockEffect(function()
+					var0_67 = true
 
-					if var1 then
-						var8()
+					if var1_67 then
+						var8_62()
 					end
 				end)
 
-				if not var0 then
-					var1 = true
+				if not var0_67 then
+					var1_67 = true
 
 					coroutine.yield()
 				end
 
-				local var2 = true
+				local var2_67 = true
 
-				local function var3()
-					if not var2 then
+				local function var3_67()
+					if not var2_67 then
 						return
 					end
 
 					pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/ryza_atellier_ui_5")
 
-					var2 = false
+					var2_67 = false
 				end
 
-				local var4 = AtelierMaterial.bindConfigTable()
-				local var5 = function(arg0)
-					local var0 = arg0.Data
+				local var4_67 = AtelierMaterial.bindConfigTable()
 
-					for iter0, iter1 in ipairs(var4.all) do
-						local var1 = var0[iter1] or var1[iter1]
+				local function var5_67(arg0_71)
+					local var0_71 = arg0_71.Data
 
-						if var1 and var1.count > 0 and var1:IsNormal() and var0:CanUseMaterial(var1, arg1) then
-							var2(var1)
-							var5()
-							var3()
-							arg0:FillNodeAndPlayAnim(arg0, AtelierMaterial.New({
+					for iter0_71, iter1_71 in ipairs(var4_67.all) do
+						local var1_71 = var0_62[iter1_71] or var1_62[iter1_71]
+
+						if var1_71 and var1_71.count > 0 and var1_71:IsNormal() and var0_71:CanUseMaterial(var1_71, arg1_55) then
+							var2_62(var1_71)
+							var5_62()
+							var3_67()
+							arg0_55:FillNodeAndPlayAnim(arg0_71, AtelierMaterial.New({
 								count = 1,
-								configId = var1:GetConfigID()
+								configId = var1_71:GetConfigID()
 							}), true)
 
 							return
 						end
 					end
 
-					var6 = true
+					var6_62 = true
 				end
 
-				_.each(var3, function(arg0)
-					if arg0.Data:GetType() == var2.TYPE.NORMAL then
-						var5(arg0)
+				_.each(var3_62, function(arg0_72)
+					if arg0_72.Data:GetType() == var2_0.TYPE.NORMAL then
+						var5_67(arg0_72)
 					end
 				end)
-				_.each(var3, function(arg0)
-					if arg0.Data:GetType() == var2.TYPE.ANY then
-						var5(arg0)
+				_.each(var3_62, function(arg0_73)
+					if arg0_73.Data:GetType() == var2_0.TYPE.ANY then
+						var5_67(arg0_73)
 					end
 				end)
 			end
 
-			if var6 then
+			if var6_62 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("ryza_material_not_enough"))
 			end
 
-			arg0:UpdateFormulaDetail()
+			arg0_55:UpdateFormulaDetail()
 		end)
 
-		var8()
+		var8_62()
 	end, SFX_PANEL)
-	arg0:UpdateFormulaDetail()
+	arg0_55:UpdateFormulaDetail()
 end
 
-function var0.CleanNodeInstance(arg0)
-	local var0 = arg0.activity:GetFormulas()[arg0.contextData.formulaId]
+function var0_0.CleanNodeInstance(arg0_74)
+	local var0_74 = arg0_74.activity:GetFormulas()[arg0_74.contextData.formulaId]
 
-	if not var0:IsAvaliable() then
-		arg0:HideFormulaDetail()
+	if not var0_74:IsAvaliable() then
+		arg0_74:HideFormulaDetail()
 
-		arg0.contextData.formulaId = nil
+		arg0_74.contextData.formulaId = nil
 
-		arg0:ShowFormulaList()
+		arg0_74:ShowFormulaList()
 
 		return
 	end
 
-	_.each(arg0.nodeList, function(arg0)
-		arg0.Instance = nil
-		arg0.Change = true
+	_.each(arg0_74.nodeList, function(arg0_75)
+		arg0_75.Instance = nil
+		arg0_75.Change = true
 	end)
-	arg0:ShowFormulaDetail(var0)
+	arg0_74:ShowFormulaDetail(var0_74)
 end
 
-function var0.UpdateFormulaDetail(arg0)
-	local var0 = 0
-	local var1 = 0
-	local var2 = tobool(arg0.unlockAllBase)
+function var0_0.UpdateFormulaDetail(arg0_76)
+	local var0_76 = 0
+	local var1_76 = 0
+	local var2_76 = tobool(arg0_76.unlockAllBase)
 
-	arg0.unlockAllBase = true
+	arg0_76.unlockAllBase = true
 
-	_.each(arg0.nodeList, function(arg0)
-		var0 = var0 + 1
-		var1 = var1 + (arg0.Instance and 1 or 0)
-		arg0.unlockAllBase = arg0.unlockAllBase and (arg0.Data:GetType() ~= var2.TYPE.BASE and arg0.Data:GetType() ~= var2.TYPE.SAIREN or arg0.Instance)
+	_.each(arg0_76.nodeList, function(arg0_77)
+		var0_76 = var0_76 + 1
+		var1_76 = var1_76 + (arg0_77.Instance and 1 or 0)
+		arg0_76.unlockAllBase = arg0_76.unlockAllBase and (arg0_77.Data:GetType() ~= var2_0.TYPE.BASE and arg0_77.Data:GetType() ~= var2_0.TYPE.SAIREN or arg0_77.Instance)
 	end)
-	_.each(arg0.nodeList, function(arg0)
-		local var0 = not arg0.unlockAllBase and arg0.Data:GetType() ~= var2.TYPE.BASE and arg0.Data:GetType() ~= var2.TYPE.SAIREN
+	_.each(arg0_76.nodeList, function(arg0_78)
+		local var0_78 = not arg0_76.unlockAllBase and arg0_78.Data:GetType() ~= var2_0.TYPE.BASE and arg0_78.Data:GetType() ~= var2_0.TYPE.SAIREN
 
-		arg0.ChangeLock = arg0.ChangeLock or tobool(arg0.Lock) and not var0
-		arg0.Lock = var0
+		arg0_78.ChangeLock = arg0_78.ChangeLock or tobool(arg0_78.Lock) and not var0_78
+		arg0_78.Lock = var0_78
 	end)
 
-	local var3 = arg0.unlockAllBase ~= var2
+	local var3_76 = arg0_76.unlockAllBase ~= var2_76
 
-	_.each(arg0.nodeList, function(arg0)
-		if var3 then
-			arg0.Change = true
+	_.each(arg0_76.nodeList, function(arg0_79)
+		if var3_76 then
+			arg0_79.Change = true
 		end
 
-		arg0:UpdateNodeView(arg0)
+		arg0_76:UpdateNodeView(arg0_79)
 	end)
-	setText(arg0.layerFormulaDetail:Find("Bar/Text"), i18n("ryza_tip_put_materials", var1, var0))
-	setGray(arg0.layerFormulaDetail:Find("AutoFill"), not arg0.activity:GetFormulas()[arg0.contextData.formulaId]:IsAvaliable())
-	setActive(arg0.layerFormulaDetail:Find("Composite/Disabled"), var1 < var0)
+	setText(arg0_76.layerFormulaDetail:Find("Bar/Text"), i18n("ryza_tip_put_materials", var1_76, var0_76))
+	setGray(arg0_76.layerFormulaDetail:Find("AutoFill"), not arg0_76.activity:GetFormulas()[arg0_76.contextData.formulaId]:IsAvaliable())
+	setActive(arg0_76.layerFormulaDetail:Find("Composite/Disabled"), var1_76 < var0_76)
 end
 
-local var10 = {
-	[var2.ELEMENT_TYPE.PYRO] = "laisha_ui_huo",
-	[var2.ELEMENT_TYPE.CRYO] = "laisha_ui_bing",
-	[var2.ELEMENT_TYPE.ELECTRO] = "laisha_ui_lei",
-	[var2.ELEMENT_TYPE.ANEMO] = "laisha_ui_feng",
-	[var2.ELEMENT_TYPE.SAIREN] = "laisha_ui_sairen"
+local var10_0 = {
+	[var2_0.ELEMENT_TYPE.PYRO] = "laisha_ui_huo",
+	[var2_0.ELEMENT_TYPE.CRYO] = "laisha_ui_bing",
+	[var2_0.ELEMENT_TYPE.ELECTRO] = "laisha_ui_lei",
+	[var2_0.ELEMENT_TYPE.ANEMO] = "laisha_ui_feng",
+	[var2_0.ELEMENT_TYPE.SAIREN] = "laisha_ui_sairen"
 }
-local var11 = "laisha_ui_wupinshanguang"
-local var12 = "laisha_ui_jiesuo"
-local var13 = {
+local var11_0 = "laisha_ui_wupinshanguang"
+local var12_0 = "laisha_ui_jiesuo"
+local var13_0 = {
 	"laisha_ui_lianjie01",
 	"laisha_ui_lianjie02",
 	"laisha_ui_lianjie_qiehuan"
 }
 
-function var0.UpdateNodeView(arg0, arg1)
-	local var0 = tf(arg1.GO)
+function var0_0.UpdateNodeView(arg0_80, arg1_80)
+	local var0_80 = tf(arg1_80.GO)
 
-	for iter0 = 1, 6 do
-		setActive(var0:Find("Links"):GetChild(iter0 - 1), false)
+	for iter0_80 = 1, 6 do
+		setActive(var0_80:Find("Links"):GetChild(iter0_80 - 1), false)
 	end
 
-	local var1 = arg1.Data
+	local var1_80 = arg1_80.Data
 
-	_.each(var1:GetNeighbors(), function(arg0)
-		setActive(var0:Find("Links"):GetChild(arg0[1] - 1), true)
+	_.each(var1_80:GetNeighbors(), function(arg0_81)
+		setActive(var0_80:Find("Links"):GetChild(arg0_81[1] - 1), true)
 	end)
 
-	local var2 = var1:GetElementName()
-	local var3 = arg1.Lock
+	local var2_80 = var1_80:GetElementName()
+	local var3_80 = arg1_80.Lock
 
-	setActive(var0:Find("Lock"), var3)
+	setActive(var0_80:Find("Lock"), var3_80)
 
-	if var3 then
-		if var1:GetType() ~= var2.TYPE.ANY then
-			arg0.loader:GetSpriteQuiet(var5, "element_" .. var2, var0:Find("Lock/Require/Icon"))
+	if var3_80 then
+		if var1_80:GetType() ~= var2_0.TYPE.ANY then
+			arg0_80.loader:GetSpriteQuiet(var5_0, "element_" .. var2_80, var0_80:Find("Lock/Require/Icon"))
 		end
 
-		setText(var0:Find("Lock/Require/Text"), "X" .. var1:GetLevel())
+		setText(var0_80:Find("Lock/Require/Text"), "X" .. var1_80:GetLevel())
 	end
 
-	for iter1 = 3, var1:GetLevel() + 1, -1 do
-		local var4 = var0:Find("Slots"):GetChild(iter1 - 1)
+	for iter1_80 = 3, var1_80:GetLevel() + 1, -1 do
+		local var4_80 = var0_80:Find("Slots"):GetChild(iter1_80 - 1)
 
-		arg0.loader:GetSpriteQuiet(var4, "slot_BLOCKED", var4:Find("Image"))
+		arg0_80.loader:GetSpriteQuiet(var4_0, "slot_BLOCKED", var4_80:Find("Image"))
 	end
 
-	local var5 = arg1.Instance
+	local var5_80 = arg1_80.Instance
 
-	if not var5 then
-		if var1:GetType() == var2.TYPE.ANY then
-			setActive(var0:Find("All"), true)
+	if not var5_80 then
+		if var1_80:GetType() == var2_0.TYPE.ANY then
+			setActive(var0_80:Find("All"), true)
 		else
-			setActive(var0:Find("Icon"), true)
-			arg0.loader:GetSpriteQuiet(var4, "icon_" .. var2, var0:Find("Icon"), true)
+			setActive(var0_80:Find("Icon"), true)
+			arg0_80.loader:GetSpriteQuiet(var4_0, "icon_" .. var2_80, var0_80:Find("Icon"), true)
 		end
 
-		setActive(var0:Find("Item"), false)
+		setActive(var0_80:Find("Item"), false)
 
-		if var1:GetType() == var2.TYPE.BASE or var1:GetType() == var2.TYPE.SAIREN then
-			local var6 = AtelierMaterial.New({
-				configId = var1:GetLimitItemID()
+		if var1_80:GetType() == var2_0.TYPE.BASE or var1_80:GetType() == var2_0.TYPE.SAIREN then
+			local var6_80 = AtelierMaterial.New({
+				configId = var1_80:GetLimitItemID()
 			})
 
-			setActive(var0:Find("Name"), true)
-			setScrollText(var0:Find("Name/Rect/Text"), var6:GetName())
+			setActive(var0_80:Find("Name"), true)
+			setScrollText(var0_80:Find("Name/Rect/Text"), var6_80:GetName())
 		else
-			setActive(var0:Find("Name"), false)
+			setActive(var0_80:Find("Name"), false)
 		end
 
-		for iter2 = 1, var1:GetLevel() do
-			local var7 = var0:Find("Slots"):GetChild(iter2 - 1)
+		for iter2_80 = 1, var1_80:GetLevel() do
+			local var7_80 = var0_80:Find("Slots"):GetChild(iter2_80 - 1)
 
-			arg0.loader:GetSpriteQuiet(var4, "slot_NULL", var7:Find("Image"))
+			arg0_80.loader:GetSpriteQuiet(var4_0, "slot_NULL", var7_80:Find("Image"))
 		end
 	else
-		local var8 = var1:GetRingElement(var5)
-		local var9 = var2.ELEMENT_NAME[var8]
+		local var8_80 = var1_80:GetRingElement(var5_80)
+		local var9_80 = var2_0.ELEMENT_NAME[var8_80]
 
-		if var1:GetType() == var2.TYPE.ANY then
-			setActive(var0:Find("All"), false)
+		if var1_80:GetType() == var2_0.TYPE.ANY then
+			setActive(var0_80:Find("All"), false)
 		else
-			setActive(var0:Find("Icon"), false)
+			setActive(var0_80:Find("Icon"), false)
 		end
 
-		setActive(var0:Find("Item"), true)
+		setActive(var0_80:Find("Item"), true)
 
-		local var10
+		local var10_80
 
-		if var1:GetType() == var2.TYPE.BASE or var1:GetType() == var2.TYPE.SAIREN then
-			var10 = var5:GetBaseCircleTransform()
+		if var1_80:GetType() == var2_0.TYPE.BASE or var1_80:GetType() == var2_0.TYPE.SAIREN then
+			var10_80 = var5_80:GetBaseCircleTransform()
 		else
-			var10 = var5:GetNormalCircleTransform()
+			var10_80 = var5_80:GetNormalCircleTransform()
 		end
 
-		setLocalScale(var0:Find("Item"), Vector3.New(unpack(var10, 1, 3)))
-		setAnchoredPosition(var0:Find("Item"), Vector2.New(unpack(var10, 4, 5)))
-		arg0.loader:GetSpriteQuiet(var5:GetIconPath(), "", var0:Find("Item"), true)
-		setActive(var0:Find("Name"), true)
-		setScrollText(var0:Find("Name/Rect/Text"), var5:GetName())
+		setLocalScale(var0_80:Find("Item"), Vector3.New(unpack(var10_80, 1, 3)))
+		setAnchoredPosition(var0_80:Find("Item"), Vector2.New(unpack(var10_80, 4, 5)))
+		arg0_80.loader:GetSpriteQuiet(var5_80:GetIconPath(), "", var0_80:Find("Item"), true)
+		setActive(var0_80:Find("Name"), true)
+		setScrollText(var0_80:Find("Name/Rect/Text"), var5_80:GetName())
 
-		for iter3 = 1, var1:GetLevel() do
-			local var11 = var0:Find("Slots"):GetChild(iter3 - 1)
+		for iter3_80 = 1, var1_80:GetLevel() do
+			local var11_80 = var0_80:Find("Slots"):GetChild(iter3_80 - 1)
 
-			arg0.loader:GetSpriteQuiet(var4, "slot_" .. var9, var11:Find("Image"))
+			arg0_80.loader:GetSpriteQuiet(var4_0, "slot_" .. var9_80, var11_80:Find("Image"))
 		end
 	end
 
-	local var12 = var0:Find("Ring")
+	local var12_80 = var0_80:Find("Ring")
 
-	setImageColor(var12, var1:GetElementRingColor(var5))
+	setImageColor(var12_80, var1_80:GetElementRingColor(var5_80))
 
-	if arg1.Change then
-		local var13 = arg1.Data:GetRingElement(var5)
+	if arg1_80.Change then
+		local var13_80 = arg1_80.Data:GetRingElement(var5_80)
 
-		if var3 then
-			var13 = nil
+		if var3_80 then
+			var13_80 = nil
 		end
 
-		if var10[var13] then
-			local var14 = arg1.Data:GetType() == var2.TYPE.BASE and "_o" or "_6"
+		if var10_0[var13_80] then
+			local var14_80 = arg1_80.Data:GetType() == var2_0.TYPE.BASE and "_o" or "_6"
 
-			arg0.loader:GetPrefab("ui/" .. var10[var13] .. var14, "", function(arg0)
-				setParent(arg0, var12)
-				setAnchoredPosition(arg0, Vector2.zero)
-			end, var12)
+			arg0_80.loader:GetPrefab("ui/" .. var10_0[var13_80] .. var14_80, "", function(arg0_82)
+				setParent(arg0_82, var12_80)
+				setAnchoredPosition(arg0_82, Vector2.zero)
+			end, var12_80)
 		else
-			arg0.loader:ClearRequest(var12)
+			arg0_80.loader:ClearRequest(var12_80)
 		end
 
-		table.Foreach(arg1.links, function(arg0, arg1)
-			local var0 = var0:Find("Links/" .. arg0)
-			local var1 = var13[3]
+		table.Foreach(arg1_80.links, function(arg0_83, arg1_83)
+			local var0_83 = var0_80:Find("Links/" .. arg0_83)
+			local var1_83 = var13_0[3]
 
-			if arg1.Lock and var3 then
-				var1 = var13[1]
-			elseif not arg1.Lock and not var3 then
-				var1 = var13[2]
+			if arg1_83.Lock and var3_80 then
+				var1_83 = var13_0[1]
+			elseif not arg1_83.Lock and not var3_80 then
+				var1_83 = var13_0[2]
 			end
 
-			arg0.loader:GetPrefab("ui/" .. var1, "", function(arg0)
-				setParent(arg0, var0:Find("Link"))
-				setAnchoredPosition(arg0, Vector2.New(0, -15))
-			end, var0)
+			arg0_80.loader:GetPrefab("ui/" .. var1_83, "", function(arg0_84)
+				setParent(arg0_84, var0_83:Find("Link"))
+				setAnchoredPosition(arg0_84, Vector2.New(0, -15))
+			end, var0_83)
 		end)
 
-		arg1.Change = nil
+		arg1_80.Change = nil
 	end
 
-	if arg1.ChangeInstance then
-		local var15 = var0:Find("Item")
+	if arg1_80.ChangeInstance then
+		local var15_80 = var0_80:Find("Item")
 
-		if var5 then
-			arg0.loader:GetPrefab("ui/" .. var11, "", function(arg0)
-				setParent(arg0, var15)
-				setAnchoredPosition(arg0, Vector2.zero)
-			end, var0)
+		if var5_80 then
+			arg0_80.loader:GetPrefab("ui/" .. var11_0, "", function(arg0_85)
+				setParent(arg0_85, var15_80)
+				setAnchoredPosition(arg0_85, Vector2.zero)
+			end, var0_80)
 		else
-			arg0.loader:ClearRequest(var0)
+			arg0_80.loader:ClearRequest(var0_80)
 		end
 
-		arg1.ChangeInstance = nil
+		arg1_80.ChangeInstance = nil
 	end
 
-	onButton(arg0, var0, function()
-		if var3 then
+	onButton(arg0_80, var0_80, function()
+		if var3_80 then
 			return
 		end
 
-		local var0 = arg0.layerMaterialSelect:Find("TargetBG")
+		local var0_86 = arg0_80.layerMaterialSelect:Find("TargetBG")
 
-		var0.localRotation = Quaternion.identity
+		var0_86.localRotation = Quaternion.identity
 
-		local var1 = var1:GetType() == var2.TYPE.BASE and 300 or 245
+		local var1_86 = var1_80:GetType() == var2_0.TYPE.BASE and 300 or 245
 
-		setSizeDelta(var0, {
-			x = var1,
-			y = var1
+		setSizeDelta(var0_86, {
+			x = var1_86,
+			y = var1_86
 		})
 
-		local var2 = arg0.layerMaterialSelect:Find("Target")
+		local var2_86 = arg0_80.layerMaterialSelect:Find("Target")
 
-		arg0:ShowCandicatePanel()
+		arg0_80:ShowCandicatePanel()
 
-		local var3 = tf(Instantiate(var0))
+		local var3_86 = tf(Instantiate(var0_80))
 
-		SetCompomentEnabled(var3, typeof(Button), false)
-		setParent(var3, var2)
-		setAnchoredPosition(var3, Vector2.zero)
+		SetCompomentEnabled(var3_86, typeof(Button), false)
+		setParent(var3_86, var2_86)
+		setAnchoredPosition(var3_86, Vector2.zero)
 
-		for iter0 = 1, 6 do
-			setActive(var3:Find("Links"):GetChild(iter0 - 1), false)
+		for iter0_86 = 1, 6 do
+			setActive(var3_86:Find("Links"):GetChild(iter0_86 - 1), false)
 		end
 
-		local var4 = var2.anchoredPosition
-		local var5 = arg0.layerFormulaDetail:Find("ScrollView/Content")
-		local var6 = var0.anchoredPosition + arg0.layerFormulaDetail:Find("ScrollView").anchoredPosition
+		local var4_86 = var2_86.anchoredPosition
+		local var5_86 = arg0_80.layerFormulaDetail:Find("ScrollView/Content")
+		local var6_86 = var0_80.anchoredPosition + arg0_80.layerFormulaDetail:Find("ScrollView").anchoredPosition
 
-		setAnchoredPosition(var5, var4 - var6)
+		setAnchoredPosition(var5_86, var4_86 - var6_86)
 
-		arg0.candicateTarget = arg1
+		arg0_80.candicateTarget = arg1_80
 
-		GetComponent(var0, typeof(Animator)):SetBool("Selecting", true)
-		arg0:UpdateCandicatePanel()
+		GetComponent(var0_86, typeof(Animator)):SetBool("Selecting", true)
+		arg0_80:UpdateCandicatePanel()
 	end, SFX_PANEL)
 end
 
-function var0.FillNodeAndPlayAnim(arg0, arg1, arg2, arg3, arg4)
-	arg0:LoadingOn()
+function var0_0.FillNodeAndPlayAnim(arg0_87, arg1_87, arg2_87, arg3_87, arg4_87)
+	arg0_87:LoadingOn()
 
-	arg1.ChangeInstance = arg1.ChangeInstance or tobool(arg1.Instance) ~= tobool(arg2)
-	arg1.Instance = arg2
-	arg1.Change = true
+	arg1_87.ChangeInstance = arg1_87.ChangeInstance or tobool(arg1_87.Instance) ~= tobool(arg2_87)
+	arg1_87.Instance = arg2_87
+	arg1_87.Change = true
 
-	local var0 = {}
-	local var1 = {}
+	local var0_87 = {}
+	local var1_87 = {}
 
 	seriesAsync({
-		function(arg0)
+		function(arg0_88)
 			table.ParallelIpairsAsync({
 				"ui/laisha_ui_wupinzhiru",
 				"ui/laisha_ui_baoshi"
-			}, function(arg0, arg1, arg2)
-				var0[arg0] = arg0.loader:GetPrefab(arg1, "", function(arg0)
-					setParent(arg0, tf(arg1.GO))
-					setAnchoredPosition(arg0, Vector2.zero)
+			}, function(arg0_89, arg1_89, arg2_89)
+				var0_87[arg0_89] = arg0_87.loader:GetPrefab(arg1_89, "", function(arg0_90)
+					setParent(arg0_90, tf(arg1_87.GO))
+					setAnchoredPosition(arg0_90, Vector2.zero)
 
-					var1[arg0] = arg0
+					var1_87[arg0_89] = arg0_90
 
-					setActive(arg0, false)
-					arg2()
+					setActive(arg0_90, false)
+					arg2_89()
 				end)
-			end, arg0)
+			end, arg0_88)
 		end,
-		function(arg0)
-			setActive(var1[1], true)
-			arg0:managedTween(LeanTween.delayedCall, function()
-				if not arg4 then
-					arg0:UpdateFormulaDetail()
+		function(arg0_91)
+			setActive(var1_87[1], true)
+			arg0_87:managedTween(LeanTween.delayedCall, function()
+				if not arg4_87 then
+					arg0_87:UpdateFormulaDetail()
 				else
-					arg0:UpdateNodeView(arg1)
+					arg0_87:UpdateNodeView(arg1_87)
 				end
 
 				pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/ryza_atellier_ui_4")
-				arg0()
+				arg0_91()
 			end, 0.2, nil)
 		end,
-		function(arg0)
-			setActive(var1[2], true)
-			arg0:managedTween(LeanTween.delayedCall, function()
-				arg0()
+		function(arg0_93)
+			setActive(var1_87[2], true)
+			arg0_87:managedTween(LeanTween.delayedCall, function()
+				arg0_93()
 			end, 0.5, nil)
 		end,
-		function(arg0)
-			arg0.loader:ClearRequest(var0[1])
-			arg0.loader:ClearRequest(var0[2])
-			arg0:LoadingOff()
-			existCall(arg3)
+		function(arg0_95)
+			arg0_87.loader:ClearRequest(var0_87[1])
+			arg0_87.loader:ClearRequest(var0_87[2])
+			arg0_87:LoadingOff()
+			existCall(arg3_87)
 		end
 	})
 end
 
-function var0.DisPlayUnlockEffect(arg0, arg1)
-	arg0.unlockAllBase = true
+function var0_0.DisPlayUnlockEffect(arg0_96, arg1_96)
+	arg0_96.unlockAllBase = true
 
-	_.each(arg0.nodeList, function(arg0)
-		arg0.unlockAllBase = arg0.unlockAllBase and (arg0.Data:GetType() ~= var2.TYPE.BASE and arg0.Data:GetType() ~= var2.TYPE.SAIREN or arg0.Instance)
+	_.each(arg0_96.nodeList, function(arg0_97)
+		arg0_96.unlockAllBase = arg0_96.unlockAllBase and (arg0_97.Data:GetType() ~= var2_0.TYPE.BASE and arg0_97.Data:GetType() ~= var2_0.TYPE.SAIREN or arg0_97.Instance)
 	end)
-	_.each(arg0.nodeList, function(arg0)
-		local var0 = not arg0.unlockAllBase and arg0.Data:GetType() ~= var2.TYPE.BASE and arg0.Data:GetType() ~= var2.TYPE.SAIREN
+	_.each(arg0_96.nodeList, function(arg0_98)
+		local var0_98 = not arg0_96.unlockAllBase and arg0_98.Data:GetType() ~= var2_0.TYPE.BASE and arg0_98.Data:GetType() ~= var2_0.TYPE.SAIREN
 
-		arg0.ChangeLock = arg0.ChangeLock or tobool(arg0.Lock) and not var0
-		arg0.Lock = var0
+		arg0_98.ChangeLock = arg0_98.ChangeLock or tobool(arg0_98.Lock) and not var0_98
+		arg0_98.Lock = var0_98
 	end)
 
-	if not _.any(arg0.nodeList, function(arg0)
-		return arg0.ChangeLock
+	if not _.any(arg0_96.nodeList, function(arg0_99)
+		return arg0_99.ChangeLock
 	end) then
-		existCall(arg1)
+		existCall(arg1_96)
 
 		return
 	end
 
-	arg0:LoadingOn()
+	arg0_96:LoadingOn()
 
-	local var0 = {}
+	local var0_96 = {}
 
-	_.each(arg0.nodeList, function(arg0)
-		local var0 = tf(arg0.GO)
+	_.each(arg0_96.nodeList, function(arg0_100)
+		local var0_100 = tf(arg0_100.GO)
 
-		if arg0.ChangeLock then
-			if arg0.prevLink then
-				arg0.prevLink[2].Change = true
+		if arg0_100.ChangeLock then
+			if arg0_100.prevLink then
+				arg0_100.prevLink[2].Change = true
 			end
 
-			local var1 = arg0.loader:GetPrefab("ui/" .. var12, "", function(arg0)
-				setParent(arg0, var0)
-				setAnchoredPosition(arg0, Vector2.zero)
+			local var1_100 = arg0_96.loader:GetPrefab("ui/" .. var12_0, "", function(arg0_101)
+				setParent(arg0_101, var0_100)
+				setAnchoredPosition(arg0_101, Vector2.zero)
 			end)
 
-			table.insert(var0, var1)
+			table.insert(var0_96, var1_100)
 
-			arg0.ChangeLock = nil
+			arg0_100.ChangeLock = nil
 		end
 	end)
-	arg0:managedTween(LeanTween.delayedCall, function()
+	arg0_96:managedTween(LeanTween.delayedCall, function()
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/ryza_atellier_ui_3")
 	end, 0.7, nil)
-	arg0:managedTween(LeanTween.delayedCall, function()
-		_.each(var0, function(arg0)
-			arg0.loader:ClearRequest(arg0)
+	arg0_96:managedTween(LeanTween.delayedCall, function()
+		_.each(var0_96, function(arg0_104)
+			arg0_96.loader:ClearRequest(arg0_104)
 		end)
-		arg0:LoadingOff()
-		existCall(arg1)
+		arg0_96:LoadingOff()
+		existCall(arg1_96)
 	end, 1.7, nil)
 end
 
-function var0.ShowCandicatePanel(arg0)
-	arg0:DispalyChat({
+function var0_0.ShowCandicatePanel(arg0_105)
+	arg0_105:DispalyChat({
 		"ryza_atellier2",
 		"ryza_atellier3",
 		"ryza_atellier4"
 	})
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/ryza_atellier_ui_1")
-	pg.UIMgr.GetInstance():BlurPanel(arg0.top)
-	setActive(arg0.layerMaterialSelect, true)
-	SetCompomentEnabled(arg0.layerFormulaDetail:Find("ScrollView"), typeof(ScrollRect), false)
-	removeAllChildren(arg0.layerMaterialSelect:Find("Target"))
+	pg.UIMgr.GetInstance():BlurPanel(arg0_105.top)
+	setActive(arg0_105.layerMaterialSelect, true)
+	SetCompomentEnabled(arg0_105.layerFormulaDetail:Find("ScrollView"), typeof(ScrollRect), false)
+	removeAllChildren(arg0_105.layerMaterialSelect:Find("Target"))
 end
 
-function var0.CloseCandicatePanel(arg0)
-	arg0:LoadingOn()
+function var0_0.CloseCandicatePanel(arg0_106)
+	arg0_106:LoadingOn()
 
-	local var0 = GetComponent(arg0.layerMaterialSelect:Find("TargetBG"), typeof(DftAniEvent))
+	local var0_106 = GetComponent(arg0_106.layerMaterialSelect:Find("TargetBG"), typeof(DftAniEvent))
 
-	var0:SetEndEvent(function()
-		arg0:LoadingOff()
-		arg0:HideCandicatePanel()
-		var0:SetEndEvent(nil)
+	var0_106:SetEndEvent(function()
+		arg0_106:LoadingOff()
+		arg0_106:HideCandicatePanel()
+		var0_106:SetEndEvent(nil)
 	end)
-	GetComponent(arg0.layerMaterialSelect:Find("TargetBG"), typeof(Animator)):SetBool("Selecting", false)
+	GetComponent(arg0_106.layerMaterialSelect:Find("TargetBG"), typeof(Animator)):SetBool("Selecting", false)
 end
 
-function var0.HideCandicatePanel(arg0)
-	if not isActive(arg0.layerMaterialSelect) then
+function var0_0.HideCandicatePanel(arg0_108)
+	if not isActive(arg0_108.layerMaterialSelect) then
 		return
 	end
 
-	pg.UIMgr.GetInstance():OverlayPanel(arg0.top)
-	arg0.painting:SetSiblingIndex(1)
-	setActive(arg0.layerMaterialSelect, false)
-	removeAllChildren(arg0.layerMaterialSelect:Find("Target"))
-	SetCompomentEnabled(arg0.layerFormulaDetail:Find("ScrollView"), typeof(ScrollRect), true)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_108.top)
+	arg0_108.painting:SetSiblingIndex(1)
+	setActive(arg0_108.layerMaterialSelect, false)
+	removeAllChildren(arg0_108.layerMaterialSelect:Find("Target"))
+	SetCompomentEnabled(arg0_108.layerFormulaDetail:Find("ScrollView"), typeof(ScrollRect), true)
 
-	arg0.candicateTarget = nil
+	arg0_108.candicateTarget = nil
 
 	return true
 end
 
-function var0.UpdateCandicatePanel(arg0)
-	arg0.candicates = {}
+function var0_0.UpdateCandicatePanel(arg0_109)
+	arg0_109.candicates = {}
 
-	local var0 = arg0.activity:GetItems()
-	local var1 = arg0.activity:GetFormulas()[arg0.contextData.formulaId]
-	local var2 = AtelierMaterial.bindConfigTable()
-	local var3 = _.map(var2.all, function(arg0)
-		local var0 = var0[arg0] or AtelierMaterial.New({
-			configId = arg0
+	local var0_109 = arg0_109.activity:GetItems()
+	local var1_109 = arg0_109.activity:GetFormulas()[arg0_109.contextData.formulaId]
+	local var2_109 = AtelierMaterial.bindConfigTable()
+	local var3_109 = _.map(var2_109.all, function(arg0_110)
+		local var0_110 = var0_109[arg0_110] or AtelierMaterial.New({
+			configId = arg0_110
 		})
 
-		if arg0.candicateTarget.Data:CanUseMaterial(var0, var1) then
-			if var0[arg0] then
-				var0 = AtelierMaterial.New({
-					configId = arg0,
-					count = var0[arg0].count
+		if arg0_109.candicateTarget.Data:CanUseMaterial(var0_110, var1_109) then
+			if var0_109[arg0_110] then
+				var0_110 = AtelierMaterial.New({
+					configId = arg0_110,
+					count = var0_109[arg0_110].count
 				})
-				var0.count = _.reduce(arg0.nodeList, var0.count, function(arg0, arg1)
-					if arg1.Instance and arg1.Instance:GetConfigID() == arg0 then
-						arg0 = arg0 - 1
+				var0_110.count = _.reduce(arg0_109.nodeList, var0_110.count, function(arg0_111, arg1_111)
+					if arg1_111.Instance and arg1_111.Instance:GetConfigID() == arg0_110 then
+						arg0_111 = arg0_111 - 1
 					end
 
-					return arg0
+					return arg0_111
 				end)
 			end
 
-			return var0
+			return var0_110
 		end
 	end)
 
-	table.sort(var3, function(arg0, arg1)
-		if arg0.count * arg1.count == 0 and arg0.count - arg1.count ~= 0 then
-			return arg0.count < arg1.count
+	table.sort(var3_109, function(arg0_112, arg1_112)
+		if arg0_112.count * arg1_112.count == 0 and arg0_112.count - arg1_112.count ~= 0 then
+			return arg0_112.count < arg1_112.count
 		else
-			return arg0:GetConfigID() < arg1:GetConfigID()
+			return arg0_112:GetConfigID() < arg1_112:GetConfigID()
 		end
 	end)
-	_.each(var3, function(arg0)
-		for iter0 = 1, math.max(arg0.count, 1) do
-			table.insert(arg0.candicates, arg0)
+	_.each(var3_109, function(arg0_113)
+		for iter0_113 = 1, math.max(arg0_113.count, 1) do
+			table.insert(arg0_109.candicates, arg0_113)
 		end
 	end)
-	arg0.candicatesRect:SetTotalCount(#arg0.candicates, 0)
+	arg0_109.candicatesRect:SetTotalCount(#arg0_109.candicates, 0)
 end
 
-function var0.UpdateCandicateItem(arg0, arg1, arg2)
-	local var0 = tf(arg2)
-	local var1 = arg0.candicates[arg1]
+function var0_0.UpdateCandicateItem(arg0_114, arg1_114, arg2_114)
+	local var0_114 = tf(arg2_114)
+	local var1_114 = arg0_114.candicates[arg1_114]
 
-	arg0:UpdateRyzaItem(var0:Find("IconBG"), var1, true)
+	arg0_114:UpdateRyzaItem(var0_114:Find("IconBG"), var1_114, true)
 
-	local var2 = var1.count <= 0
+	local var2_114 = var1_114.count <= 0
 
-	setActive(var0:Find("IconBG/Lack"), var2)
-	onButton(arg0, var0, function()
-		if var2 then
-			var1 = CreateShell(var1)
-			var1.count = false
+	setActive(var0_114:Find("IconBG/Lack"), var2_114)
+	onButton(arg0_114, var0_114, function()
+		if var2_114 then
+			var1_114 = CreateShell(var1_114)
+			var1_114.count = false
 
-			arg0:ShowItemDetail(var1)
+			arg0_114:ShowItemDetail(var1_114)
 		else
-			arg0:DispalyChat({
+			arg0_114:DispalyChat({
 				"ryza_atellier5",
 				"ryza_atellier6",
 				"ryza_atellier7"
 			})
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/ryza_atellier_ui_2")
 
-			local var0 = arg0.candicateTarget
+			local var0_115 = arg0_114.candicateTarget
 
-			arg0:HideCandicatePanel()
+			arg0_114:HideCandicatePanel()
 			seriesAsync({
-				function(arg0)
-					arg0:FillNodeAndPlayAnim(var0, AtelierMaterial.New({
+				function(arg0_116)
+					arg0_114:FillNodeAndPlayAnim(var0_115, AtelierMaterial.New({
 						count = 1,
-						configId = var1:GetConfigID()
-					}), arg0, true)
+						configId = var1_114:GetConfigID()
+					}), arg0_116, true)
 				end,
-				function(arg0)
-					arg0:DisPlayUnlockEffect(arg0)
+				function(arg0_117)
+					arg0_114:DisPlayUnlockEffect(arg0_117)
 				end,
-				function(arg0)
-					arg0:UpdateFormulaDetail()
+				function(arg0_118)
+					arg0_114:UpdateFormulaDetail()
 				end
 			})
 		end
 	end, SFX_PANEL)
 end
 
-function var0.UpdateRyzaItem(arg0, arg1, arg2, arg3)
-	local var0 = "icon_frame_" .. arg2:GetRarity()
+function var0_0.UpdateRyzaItem(arg0_119, arg1_119, arg2_119, arg3_119)
+	local var0_119 = "icon_frame_" .. arg2_119:GetRarity()
 
-	if arg3 then
-		var0 = var0 .. "_small"
+	if arg3_119 then
+		var0_119 = var0_119 .. "_small"
 	end
 
-	arg0.loader:GetSpriteQuiet(var5, var0, arg1)
-	arg0.loader:GetSpriteQuiet(arg2:GetIconPath(), "", arg1:Find("Icon"))
+	arg0_119.loader:GetSpriteQuiet(var5_0, var0_119, arg1_119)
+	arg0_119.loader:GetSpriteQuiet(arg2_119:GetIconPath(), "", arg1_119:Find("Icon"))
 
-	if not IsNil(arg1:Find("Lv")) then
-		setText(arg1:Find("Lv/Text"), arg2:GetLevel())
+	if not IsNil(arg1_119:Find("Lv")) then
+		setText(arg1_119:Find("Lv/Text"), arg2_119:GetLevel())
 	end
 
-	local var1 = arg2:GetProps()
-	local var2 = CustomIndexLayer.Clone2Full(arg1:Find("List"), #var1)
+	local var1_119 = arg2_119:GetProps()
+	local var2_119 = CustomIndexLayer.Clone2Full(arg1_119:Find("List"), #var1_119)
 
-	for iter0, iter1 in ipairs(var2) do
-		arg0.loader:GetSpriteQuiet(var5, "element_" .. var2.ELEMENT_NAME[var1[iter0]], iter1)
+	for iter0_119, iter1_119 in ipairs(var2_119) do
+		arg0_119.loader:GetSpriteQuiet(var5_0, "element_" .. var2_0.ELEMENT_NAME[var1_119[iter0_119]], iter1_119)
 	end
 
-	if not IsNil(arg1:Find("Text")) then
-		setText(arg1:Find("Text"), arg2.count)
+	if not IsNil(arg1_119:Find("Text")) then
+		setText(arg1_119:Find("Text"), arg2_119.count)
 	end
 end
 
-function var0.ShowItemDetail(arg0, arg1)
-	arg0:emit(AtelierMaterialDetailMediator.SHOW_DETAIL, arg1)
+function var0_0.ShowItemDetail(arg0_120, arg1_120)
+	arg0_120:emit(AtelierMaterialDetailMediator.SHOW_DETAIL, arg1_120)
 end
 
-local var14 = 41
-local var15 = 5
+local var14_0 = 41
+local var15_0 = 5
 
-function var0.ShowCompositeConfirmWindow(arg0)
-	setActive(arg0.layerCompositeConfirm, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0.layerCompositeConfirm)
+function var0_0.ShowCompositeConfirmWindow(arg0_121)
+	setActive(arg0_121.layerCompositeConfirm, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_121.layerCompositeConfirm)
 
-	local var0 = 1
-	local var1 = {}
-	local var2 = {}
+	local var0_121 = 1
+	local var1_121 = {}
+	local var2_121 = {}
 
-	_.each(arg0.nodeList, function(arg0)
-		local var0 = arg0.Instance:GetConfigID()
+	_.each(arg0_121.nodeList, function(arg0_122)
+		local var0_122 = arg0_122.Instance:GetConfigID()
 
-		table.insert(var1, {
-			key = arg0.Data:GetConfigID(),
-			value = var0
+		table.insert(var1_121, {
+			key = arg0_122.Data:GetConfigID(),
+			value = var0_122
 		})
 
-		var2[var0] = (var2[var0] or 0) + 1
+		var2_121[var0_122] = (var2_121[var0_122] or 0) + 1
 	end)
-	onButton(arg0, arg0.layerCompositeConfirm:Find("Window/Confirm"), function()
-		arg0:emit(GAME.COMPOSITE_ATELIER_RECIPE, var1, var0)
+	onButton(arg0_121, arg0_121.layerCompositeConfirm:Find("Window/Confirm"), function()
+		arg0_121:emit(GAME.COMPOSITE_ATELIER_RECIPE, var1_121, var0_121)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/ryza_atellier_ui_6")
 	end, SFX_PANEL)
 
-	local var3 = arg0.activity:GetFormulas()[arg0.contextData.formulaId]
-	local var4 = var3:GetMaxLimit() ~= 1
-	local var5 = var3:GetMaxLimit() > 0 and var3:GetMaxLimit() - var3:GetUsedCount() or 10000
-	local var6 = arg0.activity:GetItems()
+	local var3_121 = arg0_121.activity:GetFormulas()[arg0_121.contextData.formulaId]
+	local var4_121 = var3_121:GetMaxLimit() ~= 1
+	local var5_121 = var3_121:GetMaxLimit() > 0 and var3_121:GetMaxLimit() - var3_121:GetUsedCount() or 10000
+	local var6_121 = arg0_121.activity:GetItems()
 
-	for iter0, iter1 in pairs(var2) do
-		local var7 = var6[iter0] and var6[iter0].count or 0
+	for iter0_121, iter1_121 in pairs(var2_121) do
+		local var7_121 = var6_121[iter0_121] and var6_121[iter0_121].count or 0
 
-		var5 = math.min(var5, math.floor(var7 / iter1))
+		var5_121 = math.min(var5_121, math.floor(var7_121 / iter1_121))
 	end
 
-	local var8 = var5
-	local var9 = {
+	local var8_121 = var5_121
+	local var9_121 = {
 		1,
-		var4 and var8 or 1
+		var4_121 and var8_121 or 1
 	}
-	local var10 = Drop.New({
-		type = var3:GetProduction()[1],
-		id = var3:GetProduction()[2]
+	local var10_121 = Drop.New({
+		type = var3_121:GetProduction()[1],
+		id = var3_121:GetProduction()[2]
 	})
 
-	arg0:UpdateRyzaDrop(arg0.layerCompositeConfirm:Find("Window/Icon"), var10)
+	arg0_121:UpdateRyzaDrop(arg0_121.layerCompositeConfirm:Find("Window/Icon"), var10_121)
 
-	local var11 = arg0.layerCompositeConfirm:Find("Window/Counters")
-	local var12 = var10:getConfig("name")
+	local var11_121 = arg0_121.layerCompositeConfirm:Find("Window/Counters")
+	local var12_121 = var10_121:getConfig("name")
 
-	setActive(var11, var4)
+	setActive(var11_121, var4_121)
 
-	if var4 then
-		setAnchoredPosition(arg0.layerCompositeConfirm:Find("Window/Icon"), {
-			y = var14
+	if var4_121 then
+		setAnchoredPosition(arg0_121.layerCompositeConfirm:Find("Window/Icon"), {
+			y = var14_0
 		})
 
-		local function var13()
-			setText(var11:Find("Number"), var0)
-			setText(arg0.layerCompositeConfirm:Find("Window/Text"), i18n("ryza_composite_confirm", var12, var0))
+		local function var13_121()
+			setText(var11_121:Find("Number"), var0_121)
+			setText(arg0_121.layerCompositeConfirm:Find("Window/Text"), i18n("ryza_composite_confirm", var12_121, var0_121))
 		end
 
-		var13()
-		onButton(arg0, var11:Find("Plus"), function()
-			local var0 = var0
+		var13_121()
+		onButton(arg0_121, var11_121:Find("Plus"), function()
+			local var0_125 = var0_121
 
-			var0 = var0 + 1
-			var0 = math.clamp(var0, var9[1], var9[2])
+			var0_121 = var0_121 + 1
+			var0_121 = math.clamp(var0_121, var9_121[1], var9_121[2])
 
-			if var0 == var0 then
+			if var0_125 == var0_121 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("ryza_tip_max_composite_count"))
 
 				return
 			end
 
-			var13()
+			var13_121()
 		end)
-		onButton(arg0, var11:Find("Minus"), function()
-			var0 = var0 - 1
-			var0 = math.clamp(var0, var9[1], var9[2])
+		onButton(arg0_121, var11_121:Find("Minus"), function()
+			var0_121 = var0_121 - 1
+			var0_121 = math.clamp(var0_121, var9_121[1], var9_121[2])
 
-			var13()
+			var13_121()
 		end)
-		onButton(arg0, var11:Find("Plus10"), function()
-			local var0 = var0
+		onButton(arg0_121, var11_121:Find("Plus10"), function()
+			local var0_127 = var0_121
 
-			var0 = var0 + 10
-			var0 = math.clamp(var0, var9[1], var9[2])
+			var0_121 = var0_121 + 10
+			var0_121 = math.clamp(var0_121, var9_121[1], var9_121[2])
 
-			if var0 == var0 then
+			if var0_127 == var0_121 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("ryza_tip_max_composite_count"))
 
 				return
 			end
 
-			var13()
+			var13_121()
 		end)
-		onButton(arg0, var11:Find("Minus10"), function()
-			var0 = var0 - 10
-			var0 = math.clamp(var0, var9[1], var9[2])
+		onButton(arg0_121, var11_121:Find("Minus10"), function()
+			var0_121 = var0_121 - 10
+			var0_121 = math.clamp(var0_121, var9_121[1], var9_121[2])
 
-			var13()
+			var13_121()
 		end)
 	else
-		setAnchoredPosition(arg0.layerCompositeConfirm:Find("Window/Icon"), {
-			y = var15
+		setAnchoredPosition(arg0_121.layerCompositeConfirm:Find("Window/Icon"), {
+			y = var15_0
 		})
-		setText(arg0.layerCompositeConfirm:Find("Window/Text"), i18n("ryza_composite_confirm_single", var12, var0))
+		setText(arg0_121.layerCompositeConfirm:Find("Window/Text"), i18n("ryza_composite_confirm_single", var12_121, var0_121))
 	end
 end
 
-function var0.HideCompositeConfirmWindow(arg0)
-	if not isActive(arg0.layerCompositeConfirm) then
+function var0_0.HideCompositeConfirmWindow(arg0_129)
+	if not isActive(arg0_129.layerCompositeConfirm) then
 		return
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0.layerCompositeConfirm, arg0._tf)
-	setActive(arg0.layerCompositeConfirm, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_129.layerCompositeConfirm, arg0_129._tf)
+	setActive(arg0_129.layerCompositeConfirm, false)
 
 	return true
 end
 
-local var16 = "laisha_lianjin"
+local var16_0 = "laisha_lianjin"
 
-function var0.OnCompositeResult(arg0, arg1)
-	arg0:LoadingOn()
-	arg0:DispalyChat({
+function var0_0.OnCompositeResult(arg0_130, arg1_130)
+	arg0_130:LoadingOn()
+	arg0_130:DispalyChat({
 		"ryza_atellier8",
 		"ryza_atellier9"
 	})
 
-	local var0 = 1.5
-	local var1 = 0.5
+	local var0_130 = 1.5
+	local var1_130 = 0.5
 
-	arg0.loader:GetPrefab("ui/" .. var16, "", function(arg0)
-		pg.UIMgr.GetInstance():OverlayPanel(tf(arg0), {
+	arg0_130.loader:GetPrefab("ui/" .. var16_0, "", function(arg0_131)
+		pg.UIMgr.GetInstance():OverlayPanel(tf(arg0_131), {
 			weight = LayerWeightConst.SECOND_LAYER
 		})
-		setAnchoredPosition(arg0, Vector2.zero)
-		arg0:managedTween(LeanTween.alphaCanvas, nil, GetComponent(arg0._tf, typeof(CanvasGroup)), 0, var0):setFrom(1)
-		arg0:managedTween(LeanTween.alphaCanvas, nil, GetComponent(arg0.top, typeof(CanvasGroup)), 0, var0):setFrom(1)
-		arg0:managedTween(LeanTween.alphaCanvas, nil, GetComponent(arg0.layerCompositeConfirm, typeof(CanvasGroup)), 0, var0):setFrom(1)
-		arg0:managedTween(LeanTween.delayedCall, function()
-			arg0:HideCompositeConfirmWindow()
-			setCanvasGroupAlpha(arg0.layerCompositeConfirm, 1)
-			arg0:CleanNodeInstance()
-			arg0:ShowCompositeResult(arg1)
-			arg0:DispalyChat({
+		setAnchoredPosition(arg0_131, Vector2.zero)
+		arg0_130:managedTween(LeanTween.alphaCanvas, nil, GetComponent(arg0_130._tf, typeof(CanvasGroup)), 0, var0_130):setFrom(1)
+		arg0_130:managedTween(LeanTween.alphaCanvas, nil, GetComponent(arg0_130.top, typeof(CanvasGroup)), 0, var0_130):setFrom(1)
+		arg0_130:managedTween(LeanTween.alphaCanvas, nil, GetComponent(arg0_130.layerCompositeConfirm, typeof(CanvasGroup)), 0, var0_130):setFrom(1)
+		arg0_130:managedTween(LeanTween.delayedCall, function()
+			arg0_130:HideCompositeConfirmWindow()
+			setCanvasGroupAlpha(arg0_130.layerCompositeConfirm, 1)
+			arg0_130:CleanNodeInstance()
+			arg0_130:ShowCompositeResult(arg1_130)
+			arg0_130:DispalyChat({
 				"ryza_atellier10",
 				"ryza_atellier11"
 			})
-			arg0:managedTween(LeanTween.alphaCanvas, nil, GetComponent(arg0._tf, typeof(CanvasGroup)), 1, var1):setFrom(0)
-			arg0:managedTween(LeanTween.alphaCanvas, nil, GetComponent(arg0.top, typeof(CanvasGroup)), 1, var1):setFrom(0)
-			arg0:managedTween(LeanTween.alphaCanvas, nil, GetOrAddComponent(arg0.layerCompositeResult, typeof(CanvasGroup)), 1, var1):setFrom(0)
-			arg0:managedTween(LeanTween.delayedCall, function()
-				arg0:LoadingOff()
-				pg.UIMgr.GetInstance():UnOverlayPanel(tf(arg0), arg0._tf)
-				arg0.loader:ClearRequest("CompositeResult")
-			end, go(arg0.layerCompositeResult), var1, nil)
-		end, go(arg0.layerCompositeResult), var0, nil)
+			arg0_130:managedTween(LeanTween.alphaCanvas, nil, GetComponent(arg0_130._tf, typeof(CanvasGroup)), 1, var1_130):setFrom(0)
+			arg0_130:managedTween(LeanTween.alphaCanvas, nil, GetComponent(arg0_130.top, typeof(CanvasGroup)), 1, var1_130):setFrom(0)
+			arg0_130:managedTween(LeanTween.alphaCanvas, nil, GetOrAddComponent(arg0_130.layerCompositeResult, typeof(CanvasGroup)), 1, var1_130):setFrom(0)
+			arg0_130:managedTween(LeanTween.delayedCall, function()
+				arg0_130:LoadingOff()
+				pg.UIMgr.GetInstance():UnOverlayPanel(tf(arg0_131), arg0_130._tf)
+				arg0_130.loader:ClearRequest("CompositeResult")
+			end, go(arg0_130.layerCompositeResult), var1_130, nil)
+		end, go(arg0_130.layerCompositeResult), var0_130, nil)
 	end, "CompositeResult")
 end
 
-function var0.ShowCompositeResult(arg0, arg1)
-	setActive(arg0.layerCompositeResult, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0.layerCompositeResult)
+function var0_0.ShowCompositeResult(arg0_134, arg1_134)
+	setActive(arg0_134.layerCompositeResult, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_134.layerCompositeResult)
 
-	local var0 = arg1[1]
+	local var0_134 = arg1_134[1]
 
-	arg0:UpdateRyzaDrop(arg0.layerCompositeResult:Find("Window/Icon"), var0)
-	setScrollText(arg0.layerCompositeResult:Find("Window/NameBG/Rect/Name"), var0:getName())
-	setText(arg0.layerCompositeResult:Find("Window/CountBG/Text"), var0.count)
+	arg0_134:UpdateRyzaDrop(arg0_134.layerCompositeResult:Find("Window/Icon"), var0_134)
+	setScrollText(arg0_134.layerCompositeResult:Find("Window/NameBG/Rect/Name"), var0_134:getName())
+	setText(arg0_134.layerCompositeResult:Find("Window/CountBG/Text"), var0_134.count)
 end
 
-function var0.HideCompositeResult(arg0)
-	if not isActive(arg0.layerCompositeResult) then
+function var0_0.HideCompositeResult(arg0_135)
+	if not isActive(arg0_135.layerCompositeResult) then
 		return
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0.layerCompositeResult, arg0._tf)
-	setActive(arg0.layerCompositeResult, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_135.layerCompositeResult, arg0_135._tf)
+	setActive(arg0_135.layerCompositeResult, false)
 
 	if pg.NewStoryMgr.GetInstance():IsPlayed("NG0032") then
 		pg.SystemGuideMgr.GetInstance():PlayByGuideId("NG0033", {
@@ -1540,371 +1542,371 @@ function var0.HideCompositeResult(arg0)
 	return true
 end
 
-function var0.ShowStoreHouseWindow(arg0)
-	setActive(arg0.layerStoreHouse, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0.layerStoreHouse)
+function var0_0.ShowStoreHouseWindow(arg0_136)
+	setActive(arg0_136.layerStoreHouse, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_136.layerStoreHouse)
 
-	local var0 = _.filter(_.values(arg0.activity:GetItems()), function(arg0)
-		return arg0.count > 0
+	local var0_136 = _.filter(_.values(arg0_136.activity:GetItems()), function(arg0_137)
+		return arg0_137.count > 0
 	end)
 
-	table.sort(var0, function(arg0, arg1)
-		return arg0:GetConfigID() < arg1:GetConfigID()
+	table.sort(var0_136, function(arg0_138, arg1_138)
+		return arg0_138:GetConfigID() < arg1_138:GetConfigID()
 	end)
-	setActive(arg0.layerStoreHouse:Find("Window/Empty"), #var0 == 0)
-	setActive(arg0.layerStoreHouse:Find("Window/ScrollView"), #var0 > 0)
+	setActive(arg0_136.layerStoreHouse:Find("Window/Empty"), #var0_136 == 0)
+	setActive(arg0_136.layerStoreHouse:Find("Window/ScrollView"), #var0_136 > 0)
 
-	if #var0 == 0 then
+	if #var0_136 == 0 then
 		return
 	end
 
-	function arg0.storehouseRect.onUpdateItem(arg0, arg1)
-		arg0 = arg0 + 1
+	function arg0_136.storehouseRect.onUpdateItem(arg0_139, arg1_139)
+		arg0_139 = arg0_139 + 1
 
-		local var0 = tf(arg1)
-		local var1 = var0[arg0]
+		local var0_139 = tf(arg1_139)
+		local var1_139 = var0_136[arg0_139]
 
-		arg0:UpdateRyzaItem(var0:Find("IconBG"), var1)
-		setScrollText(var0:Find("NameBG/Rect/Name"), var1:GetName())
-		onButton(arg0, var0, function()
-			arg0:ShowItemDetail(var1)
+		arg0_136:UpdateRyzaItem(var0_139:Find("IconBG"), var1_139)
+		setScrollText(var0_139:Find("NameBG/Rect/Name"), var1_139:GetName())
+		onButton(arg0_136, var0_139, function()
+			arg0_136:ShowItemDetail(var1_139)
 		end, SFX_PANEL)
 	end
 
-	arg0.storehouseRect:SetTotalCount(#var0)
+	arg0_136.storehouseRect:SetTotalCount(#var0_136)
 end
 
-function var0.CloseStoreHouseWindow(arg0)
-	arg0.contextData.showStoreHouse = nil
+function var0_0.CloseStoreHouseWindow(arg0_141)
+	arg0_141.contextData.showStoreHouse = nil
 
-	return arg0:HideStoreHouseWindow()
+	return arg0_141:HideStoreHouseWindow()
 end
 
-function var0.HideStoreHouseWindow(arg0)
-	if not isActive(arg0.layerStoreHouse) then
+function var0_0.HideStoreHouseWindow(arg0_142)
+	if not isActive(arg0_142.layerStoreHouse) then
 		return
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0.layerStoreHouse, arg0._tf)
-	setActive(arg0.layerStoreHouse, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_142.layerStoreHouse, arg0_142._tf)
+	setActive(arg0_142.layerStoreHouse, false)
 
 	return true
 end
 
-function var0.ShowMaterialsPreview(arg0)
-	setActive(arg0.layerMaterialsPreview, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0.layerMaterialsPreview)
+function var0_0.ShowMaterialsPreview(arg0_143)
+	setActive(arg0_143.layerMaterialsPreview, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_143.layerMaterialsPreview)
 
-	local var0 = arg0.activity:GetItems()
-	local var1 = arg0.activity:GetFormulas()[arg0.contextData.formulaId]
-	local var2 = AtelierMaterial.bindConfigTable()
-	local var3 = {}
-	local var4 = {}
-	local var5 = {}
+	local var0_143 = arg0_143.activity:GetItems()
+	local var1_143 = arg0_143.activity:GetFormulas()[arg0_143.contextData.formulaId]
+	local var2_143 = AtelierMaterial.bindConfigTable()
+	local var3_143 = {}
+	local var4_143 = {}
+	local var5_143 = {}
 
-	local function var6(arg0)
-		local var0 = var5[arg0:GetConfigID()] or Clone(var0[arg0:GetConfigID()])
+	local function var6_143(arg0_144)
+		local var0_144 = var5_143[arg0_144:GetConfigID()] or Clone(var0_143[arg0_144:GetConfigID()])
 
-		assert(var0, "Using Unexist material")
+		assert(var0_144, "Using Unexist material")
 
-		var0.count = var0.count - 1
-		var5[arg0:GetConfigID()] = var0
+		var0_144.count = var0_144.count - 1
+		var5_143[arg0_144:GetConfigID()] = var0_144
 	end
 
-	_.each(arg0.nodeList, function(arg0)
-		local var0 = arg0.Data
+	_.each(arg0_143.nodeList, function(arg0_145)
+		local var0_145 = arg0_145.Data
 
-		if var0:GetType() == var2.TYPE.BASE or var0:GetType() == var2.TYPE.SAIREN then
-			local var1 = var0:GetLimitItemID()
-			local var2 = var5[var1] or var0[var1]
+		if var0_145:GetType() == var2_0.TYPE.BASE or var0_145:GetType() == var2_0.TYPE.SAIREN then
+			local var1_145 = var0_145:GetLimitItemID()
+			local var2_145 = var5_143[var1_145] or var0_143[var1_145]
 
-			if var2 and var2.count > 0 then
-				local var3 = AtelierMaterial.New({
-					configId = var1
+			if var2_145 and var2_145.count > 0 then
+				local var3_145 = AtelierMaterial.New({
+					configId = var1_145
 				})
 
-				var3.count = false
+				var3_145.count = false
 
-				table.insert(var3, var3)
-				var6(var2)
+				table.insert(var3_143, var3_145)
+				var6_143(var2_145)
 			else
-				local var4 = AtelierMaterial.New({
-					configId = var1
+				local var4_145 = AtelierMaterial.New({
+					configId = var1_145
 				})
 
-				var4.count = false
+				var4_145.count = false
 
-				table.insert(var4, var4)
+				table.insert(var4_143, var4_145)
 			end
 		end
 	end)
 
-	local function var7(arg0)
-		if arg0.Instance then
-			local var0 = AtelierMaterial.New({
-				configId = arg0.Instance:GetConfigID()
+	local function var7_143(arg0_146)
+		if arg0_146.Instance then
+			local var0_146 = AtelierMaterial.New({
+				configId = arg0_146.Instance:GetConfigID()
 			})
 
-			var0.count = false
+			var0_146.count = false
 
-			table.insert(var3, var0)
-			var6(arg0.Instance)
+			table.insert(var3_143, var0_146)
+			var6_143(arg0_146.Instance)
 
 			return
 		end
 
-		local var1 = arg0.Data
-		local var2
+		local var1_146 = arg0_146.Data
+		local var2_146
 
-		for iter0, iter1 in ipairs(var2.all) do
-			local var3 = var5[iter1] or var0[iter1] or AtelierMaterial.New({
-				configId = iter1
+		for iter0_146, iter1_146 in ipairs(var2_143.all) do
+			local var3_146 = var5_143[iter1_146] or var0_143[iter1_146] or AtelierMaterial.New({
+				configId = iter1_146
 			})
 
-			if var3:IsNormal() and var1:CanUseMaterial(var3, var1) then
-				var2 = var2 or iter1
+			if var3_146:IsNormal() and var1_146:CanUseMaterial(var3_146, var1_143) then
+				var2_146 = var2_146 or iter1_146
 
-				if var3.count > 0 then
-					local var4 = AtelierMaterial.New({
-						configId = iter1
+				if var3_146.count > 0 then
+					local var4_146 = AtelierMaterial.New({
+						configId = iter1_146
 					})
 
-					var4.count = false
+					var4_146.count = false
 
-					table.insert(var3, var4)
-					var6(var3)
+					table.insert(var3_143, var4_146)
+					var6_143(var3_146)
 
 					return
 				end
 			end
 		end
 
-		local var5 = AtelierMaterial.New({
-			configId = var2
+		local var5_146 = AtelierMaterial.New({
+			configId = var2_146
 		})
 
-		var5.count = false
+		var5_146.count = false
 
-		table.insert(var4, var5)
+		table.insert(var4_143, var5_146)
 	end
 
-	_.each(arg0.nodeList, function(arg0)
-		if arg0.Data:GetType() == var2.TYPE.NORMAL then
-			var7(arg0)
+	_.each(arg0_143.nodeList, function(arg0_147)
+		if arg0_147.Data:GetType() == var2_0.TYPE.NORMAL then
+			var7_143(arg0_147)
 		end
 	end)
-	_.each(arg0.nodeList, function(arg0)
-		if arg0.Data:GetType() == var2.TYPE.ANY then
-			var7(arg0)
+	_.each(arg0_143.nodeList, function(arg0_148)
+		if arg0_148.Data:GetType() == var2_0.TYPE.ANY then
+			var7_143(arg0_148)
 		end
 	end)
 
-	local function var8(arg0, arg1)
-		return arg0:GetConfigID() < arg1:GetConfigID()
+	local function var8_143(arg0_149, arg1_149)
+		return arg0_149:GetConfigID() < arg1_149:GetConfigID()
 	end
 
-	table.sort(var3, var8)
-	table.sort(var4, var8)
+	table.sort(var3_143, var8_143)
+	table.sort(var4_143, var8_143)
 
-	local function var9()
-		local var0 = arg0.layerMaterialsPreview:Find("Frame/Scroll/Content/Owned/List")
+	local function var9_143()
+		local var0_150 = arg0_143.layerMaterialsPreview:Find("Frame/Scroll/Content/Owned/List")
 
-		setActive(var0.parent, #var3 > 0)
+		setActive(var0_150.parent, #var3_143 > 0)
 
-		if #var3 == 0 then
+		if #var3_143 == 0 then
 			return
 		end
 
-		local var1 = CustomIndexLayer.Clone2Full(var0, #var3)
+		local var1_150 = CustomIndexLayer.Clone2Full(var0_150, #var3_143)
 
-		table.Foreach(var1, function(arg0, arg1)
-			local var0 = var3[arg0]
+		table.Foreach(var1_150, function(arg0_151, arg1_151)
+			local var0_151 = var3_143[arg0_151]
 
-			arg0:UpdateRyzaItem(arg1:Find("IconBG"), var0, true)
-			onButton(arg0, arg1, function()
-				arg0:ShowItemDetail(var0)
+			arg0_143:UpdateRyzaItem(arg1_151:Find("IconBG"), var0_151, true)
+			onButton(arg0_143, arg1_151, function()
+				arg0_143:ShowItemDetail(var0_151)
 			end, SFX_PANEL)
 		end)
 	end
 
-	local function var10()
-		local var0 = arg0.layerMaterialsPreview:Find("Frame/Scroll/Content/Lack/List")
+	local function var10_143()
+		local var0_153 = arg0_143.layerMaterialsPreview:Find("Frame/Scroll/Content/Lack/List")
 
-		setActive(var0.parent, #var4 > 0)
+		setActive(var0_153.parent, #var4_143 > 0)
 
-		if #var4 == 0 then
+		if #var4_143 == 0 then
 			return
 		end
 
-		local var1 = CustomIndexLayer.Clone2Full(var0, #var4)
+		local var1_153 = CustomIndexLayer.Clone2Full(var0_153, #var4_143)
 
-		table.Foreach(var1, function(arg0, arg1)
-			local var0 = var4[arg0]
+		table.Foreach(var1_153, function(arg0_154, arg1_154)
+			local var0_154 = var4_143[arg0_154]
 
-			arg0:UpdateRyzaItem(arg1:Find("IconBG"), var0, true)
-			onButton(arg0, arg1, function()
-				arg0:ShowItemDetail(var0)
+			arg0_143:UpdateRyzaItem(arg1_154:Find("IconBG"), var0_154, true)
+			onButton(arg0_143, arg1_154, function()
+				arg0_143:ShowItemDetail(var0_154)
 			end, SFX_PANEL)
 		end)
 	end
 
-	var9()
-	var10()
+	var9_143()
+	var10_143()
 end
 
-function var0.HideMaterialsPreview(arg0)
-	if not isActive(arg0.layerMaterialsPreview) then
+function var0_0.HideMaterialsPreview(arg0_156)
+	if not isActive(arg0_156.layerMaterialsPreview) then
 		return
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0.layerMaterialsPreview, arg0._tf)
-	setActive(arg0.layerMaterialsPreview, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_156.layerMaterialsPreview, arg0_156._tf)
+	setActive(arg0_156.layerMaterialsPreview, false)
 
 	return true
 end
 
-function var0.OnReceiveFormualRequest(arg0, arg1)
-	arg0:HideCandicatePanel()
-	arg0:HideCompositeConfirmWindow()
-	arg0:HideCompositeResult()
-	arg0:HideMaterialsPreview()
-	arg0:CloseStoreHouseWindow()
-	arg0:HideFormulaList()
+function var0_0.OnReceiveFormualRequest(arg0_157, arg1_157)
+	arg0_157:HideCandicatePanel()
+	arg0_157:HideCompositeConfirmWindow()
+	arg0_157:HideCompositeResult()
+	arg0_157:HideMaterialsPreview()
+	arg0_157:CloseStoreHouseWindow()
+	arg0_157:HideFormulaList()
 
-	local var0 = arg0.activity:GetFormulas()[arg1]
+	local var0_157 = arg0_157.activity:GetFormulas()[arg1_157]
 
-	arg0:ShowFormulaDetail(var0)
+	arg0_157:ShowFormulaDetail(var0_157)
 end
 
-function var0.DispalyChat(arg0, arg1)
-	arg0:HideChat()
-	setActive(arg0.chat, true)
+function var0_0.DispalyChat(arg0_158, arg1_158)
+	arg0_158:HideChat()
+	setActive(arg0_158.chat, true)
 
-	arg0.chatTween = LeanTween.delayedCall(go(arg0.chat), 4, System.Action(function()
-		arg0:HideChat()
+	arg0_158.chatTween = LeanTween.delayedCall(go(arg0_158.chat), 4, System.Action(function()
+		arg0_158:HideChat()
 	end)).uniqueId
 
-	local var0 = arg1[math.random(#arg1)]
-	local var1 = pg.gametip.ryza_composite_words.tip
-	local var2 = _.detect(var1, function(arg0)
-		return arg0[1] == var0
+	local var0_158 = arg1_158[math.random(#arg1_158)]
+	local var1_158 = pg.gametip.ryza_composite_words.tip
+	local var2_158 = _.detect(var1_158, function(arg0_160)
+		return arg0_160[1] == var0_158
 	end)
-	local var3 = var2 and var2[2]
+	local var3_158 = var2_158 and var2_158[2]
 
-	setText(arg0.chat:Find("Text"), var3)
+	setText(arg0_158.chat:Find("Text"), var3_158)
 
-	local var4 = 1090001
-	local var5 = "event:/cv/" .. var4 .. "/" .. var0
+	local var4_158 = 1090001
+	local var5_158 = "event:/cv/" .. var4_158 .. "/" .. var0_158
 
-	arg0:PlaySound(var5)
+	arg0_158:PlaySound(var5_158)
 end
 
-function var0.HideChat(arg0)
-	if arg0.chatTween then
-		LeanTween.cancel(arg0.chatTween)
+function var0_0.HideChat(arg0_161)
+	if arg0_161.chatTween then
+		LeanTween.cancel(arg0_161.chatTween)
 
-		arg0.chatTween = nil
+		arg0_161.chatTween = nil
 	end
 
-	setActive(arg0.chat, false)
+	setActive(arg0_161.chat, false)
 end
 
-function var0.PlaySound(arg0, arg1, arg2)
-	if not arg0.playbackInfo or arg1 ~= arg0.prevCvPath or arg0.playbackInfo.channelPlayer == nil then
-		arg0:StopSound()
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg1, function(arg0)
-			if arg0 then
-				arg0.playbackInfo = arg0
+function var0_0.PlaySound(arg0_162, arg1_162, arg2_162)
+	if not arg0_162.playbackInfo or arg1_162 ~= arg0_162.prevCvPath or arg0_162.playbackInfo.channelPlayer == nil then
+		arg0_162:StopSound()
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg1_162, function(arg0_163)
+			if arg0_163 then
+				arg0_162.playbackInfo = arg0_163
 
-				arg0.playbackInfo:SetIgnoreAutoUnload(true)
+				arg0_162.playbackInfo:SetIgnoreAutoUnload(true)
 
-				if arg2 then
-					arg2(arg0.playbackInfo.cueInfo)
+				if arg2_162 then
+					arg2_162(arg0_162.playbackInfo.cueInfo)
 				end
-			elseif arg2 then
-				arg2()
+			elseif arg2_162 then
+				arg2_162()
 			end
 		end)
 
-		arg0.prevCvPath = arg1
+		arg0_162.prevCvPath = arg1_162
 
-		if arg0.playbackInfo == nil then
+		if arg0_162.playbackInfo == nil then
 			return nil
 		end
 
-		return arg0.playbackInfo.cueInfo
-	elseif arg0.playbackInfo then
-		arg0.playbackInfo:PlaybackStop()
-		arg0.playbackInfo:SetStartTimeAndPlay()
+		return arg0_162.playbackInfo.cueInfo
+	elseif arg0_162.playbackInfo then
+		arg0_162.playbackInfo:PlaybackStop()
+		arg0_162.playbackInfo:SetStartTimeAndPlay()
 
-		if arg2 then
-			arg2(arg0.playbackInfo.cueInfo)
+		if arg2_162 then
+			arg2_162(arg0_162.playbackInfo.cueInfo)
 		end
 
-		return arg0.playbackInfo.cueInfo
-	elseif arg2 then
-		arg2()
+		return arg0_162.playbackInfo.cueInfo
+	elseif arg2_162 then
+		arg2_162()
 	end
 
 	return nil
 end
 
-function var0.StopSound(arg0)
-	if arg0.playbackInfo then
-		pg.CriMgr.GetInstance():StopPlaybackInfoForce(arg0.playbackInfo)
-		arg0.playbackInfo:SetIgnoreAutoUnload(false)
+function var0_0.StopSound(arg0_164)
+	if arg0_164.playbackInfo then
+		pg.CriMgr.GetInstance():StopPlaybackInfoForce(arg0_164.playbackInfo)
+		arg0_164.playbackInfo:SetIgnoreAutoUnload(false)
 	end
 end
 
-function var0.ClearSound(arg0)
-	arg0:StopSound()
+function var0_0.ClearSound(arg0_165)
+	arg0_165:StopSound()
 
-	if arg0.playbackInfo then
-		arg0.playbackInfo:Dispose()
+	if arg0_165.playbackInfo then
+		arg0_165.playbackInfo:Dispose()
 
-		arg0.playbackInfo = nil
+		arg0_165.playbackInfo = nil
 	end
 end
 
-function var0.LoadingOn(arg0)
-	if arg0.animating then
+function var0_0.LoadingOn(arg0_166)
+	if arg0_166.animating then
 		return
 	end
 
-	arg0.animating = true
+	arg0_166.animating = true
 
 	pg.UIMgr.GetInstance():LoadingOn(false)
 end
 
-function var0.LoadingOff(arg0)
-	if not arg0.animating then
+function var0_0.LoadingOff(arg0_167)
+	if not arg0_167.animating then
 		return
 	end
 
 	pg.UIMgr.GetInstance():LoadingOff()
 
-	arg0.animating = false
+	arg0_167.animating = false
 end
 
-function var0.willExit(arg0)
-	arg0.loader:Clear()
-	arg0:LoadingOff()
-	arg0:HideChat()
-	arg0:ClearSound()
-	arg0:HideStoreHouseWindow()
-	arg0:HideMaterialsPreview()
-	arg0:HideCompositeResult()
-	arg0:HideCompositeConfirmWindow()
-	arg0:HideCandicatePanel()
-	arg0:HideFormulaDetail()
-	arg0:HideFormulaList()
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0.top, arg0._tf)
+function var0_0.willExit(arg0_168)
+	arg0_168.loader:Clear()
+	arg0_168:LoadingOff()
+	arg0_168:HideChat()
+	arg0_168:ClearSound()
+	arg0_168:HideStoreHouseWindow()
+	arg0_168:HideMaterialsPreview()
+	arg0_168:HideCompositeResult()
+	arg0_168:HideCompositeConfirmWindow()
+	arg0_168:HideCandicatePanel()
+	arg0_168:HideFormulaDetail()
+	arg0_168:HideFormulaList()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_168.top, arg0_168._tf)
 
-	if arg0.nodePools then
-		for iter0, iter1 in pairs(arg0.nodePools) do
-			iter1:ClearItems()
+	if arg0_168.nodePools then
+		for iter0_168, iter1_168 in pairs(arg0_168.nodePools) do
+			iter1_168:ClearItems()
 		end
 	end
 end
 
-return var0
+return var0_0

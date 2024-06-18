@@ -1,22 +1,22 @@
-﻿local var0 = class("Z46SkinPage", import(".TemplatePage.LoginTemplatePage"))
+﻿local var0_0 = class("Z46SkinPage", import(".TemplatePage.LoginTemplatePage"))
 
-function var0.OnFirstFlush(arg0)
-	setActive(arg0.item, false)
-	arg0.itemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg0:findTF("item", arg2)
-			local var1 = Drop.Create(arg0.config.front_drops[arg1 + 1])
+function var0_0.OnFirstFlush(arg0_1)
+	setActive(arg0_1.item, false)
+	arg0_1.itemList:make(function(arg0_2, arg1_2, arg2_2)
+		if arg0_2 == UIItemList.EventUpdate then
+			local var0_2 = arg0_1:findTF("item", arg2_2)
+			local var1_2 = Drop.Create(arg0_1.config.front_drops[arg1_2 + 1])
 
-			updateDrop(var0, var1)
-			onButton(arg0, arg2, function()
-				arg0:emit(BaseUI.ON_DROP, var1)
+			updateDrop(var0_2, var1_2)
+			onButton(arg0_1, arg2_2, function()
+				arg0_1:emit(BaseUI.ON_DROP, var1_2)
 			end, SFX_PANEL)
 
-			local var2 = arg0:findTF("got", arg2)
+			local var2_2 = arg0_1:findTF("got", arg2_2)
 
-			setActive(var2, arg1 < arg0.nday)
+			setActive(var2_2, arg1_2 < arg0_1.nday)
 		end
 	end)
 end
 
-return var0
+return var0_0

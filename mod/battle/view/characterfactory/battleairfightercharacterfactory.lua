@@ -1,45 +1,45 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleAirFighterCharacterFactory = singletonClass("BattleAirFighterCharacterFactory", var0.Battle.BattleAircraftCharacterFactory)
-var0.Battle.BattleAirFighterCharacterFactory.__name = "BattleAirFighterCharacterFactory"
+var0_0.Battle.BattleAirFighterCharacterFactory = singletonClass("BattleAirFighterCharacterFactory", var0_0.Battle.BattleAircraftCharacterFactory)
+var0_0.Battle.BattleAirFighterCharacterFactory.__name = "BattleAirFighterCharacterFactory"
 
-function var0.Battle.BattleAirFighterCharacterFactory.Ctor(arg0)
-	var0.Battle.BattleAirFighterCharacterFactory.super.Ctor(arg0)
+function var0_0.Battle.BattleAirFighterCharacterFactory.Ctor(arg0_1)
+	var0_0.Battle.BattleAirFighterCharacterFactory.super.Ctor(arg0_1)
 
-	arg0.HP_BAR_NAME = var0.Battle.BattleHPBarManager.HP_BAR_FOE
+	arg0_1.HP_BAR_NAME = var0_0.Battle.BattleHPBarManager.HP_BAR_FOE
 end
 
-function var0.Battle.BattleAirFighterCharacterFactory.MakeCharacter(arg0)
-	return var0.Battle.BattleAirFighterCharacter.New()
+function var0_0.Battle.BattleAirFighterCharacterFactory.MakeCharacter(arg0_2)
+	return var0_0.Battle.BattleAirFighterCharacter.New()
 end
 
-function var0.Battle.BattleAirFighterCharacterFactory.MakeModel(arg0, arg1)
-	local var0 = function(arg0)
-		arg1:AddModel(arg0)
-		arg1:InitWeapon()
+function var0_0.Battle.BattleAirFighterCharacterFactory.MakeModel(arg0_3, arg1_3)
+	local function var0_3(arg0_4)
+		arg1_3:AddModel(arg0_4)
+		arg1_3:InitWeapon()
 
-		local var0 = arg0:GetSceneMediator()
+		local var0_4 = arg0_3:GetSceneMediator()
 
-		arg1:CameraOrthogonal(var0.Battle.BattleCameraUtil.GetInstance():GetCamera())
-		var0:AddAirCraftCharacter(arg1)
-		arg0:MakeUIComponentContainer(arg1)
-		arg0:MakeFXContainer(arg1)
-		arg0:MakePopNumPool(arg1)
-		arg0:MakeBloodBar(arg1)
-		arg0:MakeShadow(arg1)
+		arg1_3:CameraOrthogonal(var0_0.Battle.BattleCameraUtil.GetInstance():GetCamera())
+		var0_4:AddAirCraftCharacter(arg1_3)
+		arg0_3:MakeUIComponentContainer(arg1_3)
+		arg0_3:MakeFXContainer(arg1_3)
+		arg0_3:MakePopNumPool(arg1_3)
+		arg0_3:MakeBloodBar(arg1_3)
+		arg0_3:MakeShadow(arg1_3)
 	end
 
-	arg0:GetCharacterPool():InstAirCharacter(arg1:GetModleID(), function(arg0)
-		var0(arg0)
+	arg0_3:GetCharacterPool():InstAirCharacter(arg1_3:GetModleID(), function(arg0_5)
+		var0_3(arg0_5)
 	end)
 end
 
-function var0.Battle.BattleAirFighterCharacterFactory.MakeBloodBar(arg0, arg1)
-	local var0 = arg0:GetHPBarPool():GetHPBar(arg0.HP_BAR_NAME)
+function var0_0.Battle.BattleAirFighterCharacterFactory.MakeBloodBar(arg0_6, arg1_6)
+	local var0_6 = arg0_6:GetHPBarPool():GetHPBar(arg0_6.HP_BAR_NAME)
 
-	arg1:AddHPBar(var0)
-	var0:SetActive(false)
-	arg1:UpdateHPBarPosition()
+	arg1_6:AddHPBar(var0_6)
+	var0_6:SetActive(false)
+	arg1_6:UpdateHPBarPosition()
 end

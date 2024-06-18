@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_218 = {}
+var0_0.word_template_218 = {}
 
-local var1 = var0.word_template_218
+local var1_0 = var0_0.word_template_218
 
 function temp()
-	var1.弄 = {
+	var1_0.弄 = {
 		穴 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.奴 = {
+	var1_0.奴 = {
 		畜 = {
 			抄 = {
 				this = true
@@ -59,7 +59,7 @@ end
 temp()
 
 function temp()
-	var1.努 = {
+	var1_0.努 = {
 		尔 = {
 			· = {
 				白 = {
@@ -122,7 +122,7 @@ end
 temp()
 
 function temp()
-	var1.弩 = {
+	var1_0.弩 = {
 		弓 = {
 			this = true
 		}
@@ -132,7 +132,7 @@ end
 temp()
 
 function temp()
-	var1.虐 = {
+	var1_0.虐 = {
 		r = {
 			u = {
 				this = true
@@ -214,7 +214,7 @@ end
 temp()
 
 function temp()
-	var1.儺 = {
+	var1_0.儺 = {
 		this = {
 			this = true
 		}
@@ -224,7 +224,7 @@ end
 temp()
 
 function temp()
-	var1.诺 = {
+	var1_0.诺 = {
 		匹 = {
 			哌 = {
 				酮 = {

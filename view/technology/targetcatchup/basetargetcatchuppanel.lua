@@ -1,255 +1,255 @@
-﻿local var0 = class("BaseTargetCatchupPanel", import("...base.BaseUI"))
+﻿local var0_0 = class("BaseTargetCatchupPanel", import("...base.BaseUI"))
 
-var0.SELECT_CHAR_LIGHT_FADE_TIME = 0.3
+var0_0.SELECT_CHAR_LIGHT_FADE_TIME = 0.3
 
-function var0.Ctor(arg0, arg1, arg2)
-	var0.super.Ctor(arg0)
-	PoolMgr.GetInstance():GetUI(arg0:getUIName(), true, function(arg0)
-		arg0.transform:SetParent(arg1, false)
-		arg0:onUILoaded(arg0)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var0_0.super.Ctor(arg0_1)
+	PoolMgr.GetInstance():GetUI(arg0_1:getUIName(), true, function(arg0_2)
+		arg0_2.transform:SetParent(arg1_1, false)
+		arg0_1:onUILoaded(arg0_2)
 
-		if arg2 then
-			arg2()
+		if arg2_1 then
+			arg2_1()
 		end
 	end)
 end
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_3)
 	assert(false)
 
 	return ""
 end
 
-function var0.init(arg0)
+function var0_0.init(arg0_4)
 	return
 end
 
-function var0.initData(arg0)
-	arg0.curSelectedIndex = 0
-	arg0.technologyProxy = getProxy(TechnologyProxy)
-	arg0.bayProxy = getProxy(BayProxy)
-	arg0.bagProxy = getProxy(BagProxy)
-	arg0.configCatchup = pg.technology_catchup_template
-	arg0.charIDList = arg0.configCatchup[arg0.tecID].char_choice
-	arg0.urList = arg0.configCatchup[arg0.tecID].ur_char
-	arg0.state = arg0.technologyProxy:getCatchupState(arg0.tecID)
+function var0_0.initData(arg0_5)
+	arg0_5.curSelectedIndex = 0
+	arg0_5.technologyProxy = getProxy(TechnologyProxy)
+	arg0_5.bayProxy = getProxy(BayProxy)
+	arg0_5.bagProxy = getProxy(BagProxy)
+	arg0_5.configCatchup = pg.technology_catchup_template
+	arg0_5.charIDList = arg0_5.configCatchup[arg0_5.tecID].char_choice
+	arg0_5.urList = arg0_5.configCatchup[arg0_5.tecID].ur_char
+	arg0_5.state = arg0_5.technologyProxy:getCatchupState(arg0_5.tecID)
 end
 
-function var0.initUI(arg0)
-	arg0.choosePanel = arg0:findTF("ChoosePanel")
+function var0_0.initUI(arg0_6)
+	arg0_6.choosePanel = arg0_6:findTF("ChoosePanel")
 
-	local var0 = arg0:findTF("SelectedImgTpl", arg0.choosePanel)
-	local var1 = arg0:findTF("SelectedImgList", arg0.choosePanel)
+	local var0_6 = arg0_6:findTF("SelectedImgTpl", arg0_6.choosePanel)
+	local var1_6 = arg0_6:findTF("SelectedImgList", arg0_6.choosePanel)
 
-	arg0.selectedImgUIItemList = UIItemList.New(var1, var0)
+	arg0_6.selectedImgUIItemList = UIItemList.New(var1_6, var0_6)
 
-	arg0.selectedImgUIItemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			arg1 = arg1 + 1
+	arg0_6.selectedImgUIItemList:make(function(arg0_7, arg1_7, arg2_7)
+		if arg0_7 == UIItemList.EventUpdate then
+			arg1_7 = arg1_7 + 1
 
-			local var0 = arg0:findTF("Selected", arg2)
+			local var0_7 = arg0_6:findTF("Selected", arg2_7)
 
-			setActive(var0, arg1 == arg0.curSelectedIndex)
+			setActive(var0_7, arg1_7 == arg0_6.curSelectedIndex)
 
-			if arg1 == arg0.curSelectedIndex then
-				setImageAlpha(var0, 0)
-				arg0:updateProgress(arg0.charIDList[arg0.curSelectedIndex])
-				arg0:managedTween(LeanTween.alpha, nil, rtf(var0), 1, var0.SELECT_CHAR_LIGHT_FADE_TIME):setFrom(0)
+			if arg1_7 == arg0_6.curSelectedIndex then
+				setImageAlpha(var0_7, 0)
+				arg0_6:updateProgress(arg0_6.charIDList[arg0_6.curSelectedIndex])
+				arg0_6:managedTween(LeanTween.alpha, nil, rtf(var0_7), 1, var0_0.SELECT_CHAR_LIGHT_FADE_TIME):setFrom(0)
 			end
 		end
 	end)
-	arg0.selectedImgUIItemList:align(#arg0.charIDList)
+	arg0_6.selectedImgUIItemList:align(#arg0_6.charIDList)
 
-	local var2 = arg0:findTF("CharTpl", arg0.choosePanel)
-	local var3 = arg0:findTF("CharList", arg0.choosePanel)
+	local var2_6 = arg0_6:findTF("CharTpl", arg0_6.choosePanel)
+	local var3_6 = arg0_6:findTF("CharList", arg0_6.choosePanel)
 
-	arg0.charUIItemList = UIItemList.New(var3, var2)
+	arg0_6.charUIItemList = UIItemList.New(var3_6, var2_6)
 
-	arg0.charUIItemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			arg1 = arg1 + 1
+	arg0_6.charUIItemList:make(function(arg0_8, arg1_8, arg2_8)
+		if arg0_8 == UIItemList.EventUpdate then
+			arg1_8 = arg1_8 + 1
 
-			arg0:updateCharTpl(arg1, arg2)
-			onButton(arg0, arg2, function()
-				if arg1 ~= arg0.curSelectedIndex then
-					arg0.curSelectedIndex = arg1
+			arg0_6:updateCharTpl(arg1_8, arg2_8)
+			onButton(arg0_6, arg2_8, function()
+				if arg1_8 ~= arg0_6.curSelectedIndex then
+					arg0_6.curSelectedIndex = arg1_8
 
-					arg0.selectedImgUIItemList:align(#arg0.charIDList)
+					arg0_6.selectedImgUIItemList:align(#arg0_6.charIDList)
 				end
 			end, SFX_PANEL)
 		end
 	end)
-	arg0.charUIItemList:align(#arg0.charIDList)
+	arg0_6.charUIItemList:align(#arg0_6.charIDList)
 
-	arg0.confirmBtn = arg0:findTF("ConfirmBtn", arg0.choosePanel)
+	arg0_6.confirmBtn = arg0_6:findTF("ConfirmBtn", arg0_6.choosePanel)
 
-	onButton(arg0, arg0.confirmBtn, function()
-		if arg0.curSelectedIndex and arg0.curSelectedIndex ~= 0 then
-			local var0 = arg0.charIDList[arg0.curSelectedIndex]
+	onButton(arg0_6, arg0_6.confirmBtn, function()
+		if arg0_6.curSelectedIndex and arg0_6.curSelectedIndex ~= 0 then
+			local var0_10 = arg0_6.charIDList[arg0_6.curSelectedIndex]
 
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("tec_target_catchup_select_tip", ShipGroup.getDefaultShipNameByGroupID(var0)),
+				content = i18n("tec_target_catchup_select_tip", ShipGroup.getDefaultShipNameByGroupID(var0_10)),
 				onYes = function()
 					pg.m02:sendNotification(GAME.SELECT_TEC_TARGET_CATCHUP, {
-						tecID = arg0.tecID,
-						charID = var0
+						tecID = arg0_6.tecID,
+						charID = var0_10
 					})
 				end
 			})
 		end
 	end, SFX_PANEL)
 
-	arg0.proTitle = arg0:findTF("ProgressTitle/Text", arg0.choosePanel)
+	arg0_6.proTitle = arg0_6:findTF("ProgressTitle/Text", arg0_6.choosePanel)
 
-	setText(arg0.proTitle, i18n("tec_target_catchup_progress"))
+	setText(arg0_6.proTitle, i18n("tec_target_catchup_progress"))
 
-	arg0.ssrProgress = arg0:findTF("ProgressTitle/Progress_SSR", arg0.choosePanel)
-	arg0.urProgress = arg0:findTF("ProgressTitle/Progress_UR", arg0.choosePanel)
-	arg0.showPanel = arg0:findTF("ShowPanel", arg0.targetCatchupPanel)
-	arg0.showBG = arg0:findTF("BG", arg0.showPanel)
-	arg0.nameText = arg0:findTF("NameText", arg0.showPanel)
-	arg0.progressText = arg0:findTF("Progress/ProgressText", arg0.showPanel)
-	arg0.tipText = arg0:findTF("Progress/Text", arg0.showPanel)
+	arg0_6.ssrProgress = arg0_6:findTF("ProgressTitle/Progress_SSR", arg0_6.choosePanel)
+	arg0_6.urProgress = arg0_6:findTF("ProgressTitle/Progress_UR", arg0_6.choosePanel)
+	arg0_6.showPanel = arg0_6:findTF("ShowPanel", arg0_6.targetCatchupPanel)
+	arg0_6.showBG = arg0_6:findTF("BG", arg0_6.showPanel)
+	arg0_6.nameText = arg0_6:findTF("NameText", arg0_6.showPanel)
+	arg0_6.progressText = arg0_6:findTF("Progress/ProgressText", arg0_6.showPanel)
+	arg0_6.tipText = arg0_6:findTF("Progress/Text", arg0_6.showPanel)
 
-	setText(arg0.tipText, i18n("tec_target_catchup_progress"))
+	setText(arg0_6.tipText, i18n("tec_target_catchup_progress"))
 
-	arg0.selectedImg = arg0:findTF("Selected", arg0.showPanel)
-	arg0.giveupBtn = arg0:findTF("GiveupBtn", arg0.showPanel)
-	arg0.finishedImg = arg0:findTF("Finished", arg0.showPanel)
-	arg0.helpBtn = arg0:findTF("HelpBtn", arg0.targetCatchupPanel)
+	arg0_6.selectedImg = arg0_6:findTF("Selected", arg0_6.showPanel)
+	arg0_6.giveupBtn = arg0_6:findTF("GiveupBtn", arg0_6.showPanel)
+	arg0_6.finishedImg = arg0_6:findTF("Finished", arg0_6.showPanel)
+	arg0_6.helpBtn = arg0_6:findTF("HelpBtn", arg0_6.targetCatchupPanel)
 
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_6, arg0_6.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.tec_target_catchup_help_tip.tip
 		})
 	end, SFX_PANEL)
-	setText(arg0:findTF("FinishAll/BG/Text", arg0.choosePanel), i18n("tec_target_catchup_all_finish_tip"))
-	setText(arg0:findTF("CharListBG/SSRTag/Text", arg0.choosePanel), i18n("tec_target_catchup_pry_char"))
+	setText(arg0_6:findTF("FinishAll/BG/Text", arg0_6.choosePanel), i18n("tec_target_catchup_all_finish_tip"))
+	setText(arg0_6:findTF("CharListBG/SSRTag/Text", arg0_6.choosePanel), i18n("tec_target_catchup_pry_char"))
 
-	if #arg0.urList > 0 then
-		setText(arg0:findTF("FinishPart/BG/Text", arg0.choosePanel), i18n("tec_target_catchup_dr_finish_tip"))
-		setText(arg0:findTF("CharListBG/URTag/Text", arg0.choosePanel), i18n("tec_target_catchup_dr_char"))
+	if #arg0_6.urList > 0 then
+		setText(arg0_6:findTF("FinishPart/BG/Text", arg0_6.choosePanel), i18n("tec_target_catchup_dr_finish_tip"))
+		setText(arg0_6:findTF("CharListBG/URTag/Text", arg0_6.choosePanel), i18n("tec_target_catchup_dr_char"))
 	end
 
-	for iter0, iter1 in ipairs(arg0.urList) do
-		setText(arg0:findTF("Finish_" .. iter1 .. "/BG/Text", arg0.choosePanel), i18n("tec_target_catchup_dr_finish_tip"))
+	for iter0_6, iter1_6 in ipairs(arg0_6.urList) do
+		setText(arg0_6:findTF("Finish_" .. iter1_6 .. "/BG/Text", arg0_6.choosePanel), i18n("tec_target_catchup_dr_finish_tip"))
 	end
 end
 
-function var0.updateTargetCatchupPage(arg0)
-	arg0.state = arg0.technologyProxy:getCatchupState(arg0.tecID)
+function var0_0.updateTargetCatchupPage(arg0_13)
+	arg0_13.state = arg0_13.technologyProxy:getCatchupState(arg0_13.tecID)
 
-	if arg0.state == TechnologyCatchup.STATE_CATCHUPING then
-		arg0:updateShowPanel()
+	if arg0_13.state == TechnologyCatchup.STATE_CATCHUPING then
+		arg0_13:updateShowPanel()
 	else
-		arg0:updateChoosePanel()
+		arg0_13:updateChoosePanel()
 	end
 end
 
-function var0.updateCharTpl(arg0, arg1, arg2)
-	local var0 = arg0:findTF("PrintNum/Text", arg2)
+function var0_0.updateCharTpl(arg0_14, arg1_14, arg2_14)
+	local var0_14 = arg0_14:findTF("PrintNum/Text", arg2_14)
 
-	setText(var0, i18n("tec_target_need_print"))
+	setText(var0_14, i18n("tec_target_need_print"))
 
-	local var1 = arg0:findTF("PrintNum/NumText", arg2)
-	local var2 = arg0:findTF("NameText", arg2)
-	local var3 = arg0:findTF("LevelText", arg2)
-	local var4 = arg0:findTF("NotGetTag", arg2)
-	local var5 = arg0.charIDList[arg1]
-	local var6 = arg0.bayProxy:findShipByGroup(var5)
-	local var7 = arg0.technologyProxy:getBluePrintVOByGroupID(var5)
-	local var8 = pg.ship_data_blueprint[var5].strengthen_item
-	local var9 = var6 and math.floor(arg0:getShipBluePrintCurExp(var7) / Item.getConfigData(var8).usage_arg[1]) or 0
-	local var10 = arg0.configCatchup[arg0.tecID].blueprint_max[arg1]
-	local var11 = arg0.bagProxy:getItemCountById(var8)
-	local var12 = math.max(var10 - var9 - var11, 0)
+	local var1_14 = arg0_14:findTF("PrintNum/NumText", arg2_14)
+	local var2_14 = arg0_14:findTF("NameText", arg2_14)
+	local var3_14 = arg0_14:findTF("LevelText", arg2_14)
+	local var4_14 = arg0_14:findTF("NotGetTag", arg2_14)
+	local var5_14 = arg0_14.charIDList[arg1_14]
+	local var6_14 = arg0_14.bayProxy:findShipByGroup(var5_14)
+	local var7_14 = arg0_14.technologyProxy:getBluePrintVOByGroupID(var5_14)
+	local var8_14 = pg.ship_data_blueprint[var5_14].strengthen_item
+	local var9_14 = var6_14 and math.floor(arg0_14:getShipBluePrintCurExp(var7_14) / Item.getConfigData(var8_14).usage_arg[1]) or 0
+	local var10_14 = arg0_14.configCatchup[arg0_14.tecID].blueprint_max[arg1_14]
+	local var11_14 = arg0_14.bagProxy:getItemCountById(var8_14)
+	local var12_14 = math.max(var10_14 - var9_14 - var11_14, 0)
 
-	setText(var1, var12)
+	setText(var1_14, var12_14)
 
-	local var13 = ShipGroup.getDefaultShipNameByGroupID(var5)
+	local var13_14 = ShipGroup.getDefaultShipNameByGroupID(var5_14)
 
-	setText(var2, var13)
-	setActive(var3, var6)
-	setActive(var4, not var6)
+	setText(var2_14, var13_14)
+	setActive(var3_14, var6_14)
+	setActive(var4_14, not var6_14)
 
-	if var6 then
-		local var14 = arg0.technologyProxy:getBluePrintVOByGroupID(var5)
+	if var6_14 then
+		local var14_14 = arg0_14.technologyProxy:getBluePrintVOByGroupID(var5_14)
 
-		setText(var3, "Lv. " .. var14.level .. "/" .. var14:getMaxLevel())
+		setText(var3_14, "Lv. " .. var14_14.level .. "/" .. var14_14:getMaxLevel())
 	end
 end
 
-function var0.updateShowPanel(arg0)
-	setActive(arg0.showPanel, true)
-	setActive(arg0.choosePanel, false)
+function var0_0.updateShowPanel(arg0_15)
+	setActive(arg0_15.showPanel, true)
+	setActive(arg0_15.choosePanel, false)
 
-	local var0 = arg0.technologyProxy:getCurCatchupTecInfo()
-	local var1 = var0.tecID
-	local var2 = var0.groupID
-	local var3 = var0.printNum
+	local var0_15 = arg0_15.technologyProxy:getCurCatchupTecInfo()
+	local var1_15 = var0_15.tecID
+	local var2_15 = var0_15.groupID
+	local var3_15 = var0_15.printNum
 
-	setImageSprite(arg0.showBG, LoadSprite("TecCatchup/selbg" .. var2, var2))
+	setImageSprite(arg0_15.showBG, LoadSprite("TecCatchup/selbg" .. var2_15, var2_15))
 
-	local var4 = ShipGroup.getDefaultShipNameByGroupID(var2)
+	local var4_15 = ShipGroup.getDefaultShipNameByGroupID(var2_15)
 
-	setText(arg0.nameText, var4)
-	setText(arg0.progressText, var3 .. "/" .. arg0:getMaxNum(var2))
+	setText(arg0_15.nameText, var4_15)
+	setText(arg0_15.progressText, var3_15 .. "/" .. arg0_15:getMaxNum(var2_15))
 
-	local var5 = arg0.state == TechnologyCatchup.STATE_FINISHED_ALL
+	local var5_15 = arg0_15.state == TechnologyCatchup.STATE_FINISHED_ALL
 
-	setActive(arg0.finishedImg, var5)
-	setActive(arg0.selectedImg, not var5)
-	onButton(arg0, arg0.selectedImg, function()
-		arg0:updateChoosePanel()
-		setActive(arg0:findTF("ProgressTitle", arg0.choosePanel), false)
+	setActive(arg0_15.finishedImg, var5_15)
+	setActive(arg0_15.selectedImg, not var5_15)
+	onButton(arg0_15, arg0_15.selectedImg, function()
+		arg0_15:updateChoosePanel()
+		setActive(arg0_15:findTF("ProgressTitle", arg0_15.choosePanel), false)
 	end, SFX_PANEL)
 end
 
-function var0.updateChoosePanel(arg0)
-	setActive(arg0.showPanel, false)
-	setActive(arg0.choosePanel, true)
+function var0_0.updateChoosePanel(arg0_17)
+	setActive(arg0_17.showPanel, false)
+	setActive(arg0_17.choosePanel, true)
 
-	local var0 = arg0.technologyProxy:getCatchupData(arg0.tecID)
+	local var0_17 = arg0_17.technologyProxy:getCatchupData(arg0_17.tecID)
 
-	if arg0.state == TechnologyCatchup.STATE_FINISHED_ALL then
-		setActive(arg0:findTF("FinishAll", arg0.choosePanel), true)
-		setActive(arg0:findTF("ProgressTitle", arg0.choosePanel), false)
-	elseif #arg0.urList > 0 then
-		setActive(arg0:findTF("FinishAll", arg0.choosePanel), false)
+	if arg0_17.state == TechnologyCatchup.STATE_FINISHED_ALL then
+		setActive(arg0_17:findTF("FinishAll", arg0_17.choosePanel), true)
+		setActive(arg0_17:findTF("ProgressTitle", arg0_17.choosePanel), false)
+	elseif #arg0_17.urList > 0 then
+		setActive(arg0_17:findTF("FinishAll", arg0_17.choosePanel), false)
 
-		local var1 = var0:isFinishSSR()
+		local var1_17 = var0_17:isFinishSSR()
 
-		setActive(arg0:findTF("FinishPart", arg0.choosePanel), var1)
+		setActive(arg0_17:findTF("FinishPart", arg0_17.choosePanel), var1_17)
 
-		for iter0, iter1 in ipairs(arg0.urList) do
-			local var2 = var0:isFinish(iter1)
+		for iter0_17, iter1_17 in ipairs(arg0_17.urList) do
+			local var2_17 = var0_17:isFinish(iter1_17)
 
-			setActive(arg0:findTF("Finish_" .. iter1, arg0.choosePanel), var2)
+			setActive(arg0_17:findTF("Finish_" .. iter1_17, arg0_17.choosePanel), var2_17)
 		end
 	end
 end
 
-function var0.updateProgress(arg0, arg1)
-	setActive(arg0:findTF("ProgressTitle", arg0.choosePanel), true)
+function var0_0.updateProgress(arg0_18, arg1_18)
+	setActive(arg0_18:findTF("ProgressTitle", arg0_18.choosePanel), true)
 
-	local var0 = arg0.technologyProxy:getCatchupData(arg0.tecID):getTargetNum(arg1)
-	local var1 = arg0:getMaxNum(arg1)
+	local var0_18 = arg0_18.technologyProxy:getCatchupData(arg0_18.tecID):getTargetNum(arg1_18)
+	local var1_18 = arg0_18:getMaxNum(arg1_18)
 
-	if arg0:isUR(arg1) then
-		setActive(arg0.urProgress, true)
-		setActive(arg0.ssrProgress, false)
-		setText(arg0:findTF("Text", arg0.urProgress), var0 .. "/" .. var1)
+	if arg0_18:isUR(arg1_18) then
+		setActive(arg0_18.urProgress, true)
+		setActive(arg0_18.ssrProgress, false)
+		setText(arg0_18:findTF("Text", arg0_18.urProgress), var0_18 .. "/" .. var1_18)
 	else
-		setActive(arg0.urProgress, false)
-		setActive(arg0.ssrProgress, true)
-		setText(arg0:findTF("Text", arg0.ssrProgress), var0 .. "/" .. var1)
+		setActive(arg0_18.urProgress, false)
+		setActive(arg0_18.ssrProgress, true)
+		setText(arg0_18:findTF("Text", arg0_18.ssrProgress), var0_18 .. "/" .. var1_18)
 	end
 end
 
-function var0.isUR(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0.urList) do
-		if arg1 == iter1 then
+function var0_0.isUR(arg0_19, arg1_19)
+	for iter0_19, iter1_19 in ipairs(arg0_19.urList) do
+		if arg1_19 == iter1_19 then
 			return true
 		end
 	end
@@ -257,31 +257,31 @@ function var0.isUR(arg0, arg1)
 	return false
 end
 
-function var0.getMaxNum(arg0, arg1)
-	return arg0:isUR(arg1) and pg.technology_catchup_template[arg0.tecID].obtain_max_per_ur or pg.technology_catchup_template[arg0.tecID].obtain_max
+function var0_0.getMaxNum(arg0_20, arg1_20)
+	return arg0_20:isUR(arg1_20) and pg.technology_catchup_template[arg0_20.tecID].obtain_max_per_ur or pg.technology_catchup_template[arg0_20.tecID].obtain_max
 end
 
-function var0.willExit(arg0)
-	PoolMgr.GetInstance():ReturnUI(arg0:getUIName(), arg0._go)
+function var0_0.willExit(arg0_21)
+	PoolMgr.GetInstance():ReturnUI(arg0_21:getUIName(), arg0_21._go)
 end
 
-function var0.getShipBluePrintCurExp(arg0, arg1)
-	local var0 = arg1.level
-	local var1 = arg1.fateLevel
-	local var2 = arg1.exp
-	local var3 = arg1:getConfig("strengthen_effect")
-	local var4 = arg1:getConfig("fate_strengthen")
-	local var5 = 0 + var2
+function var0_0.getShipBluePrintCurExp(arg0_22, arg1_22)
+	local var0_22 = arg1_22.level
+	local var1_22 = arg1_22.fateLevel
+	local var2_22 = arg1_22.exp
+	local var3_22 = arg1_22:getConfig("strengthen_effect")
+	local var4_22 = arg1_22:getConfig("fate_strengthen")
+	local var5_22 = 0 + var2_22
 
-	for iter0 = 1, var0 do
-		var5 = var5 + pg.ship_strengthen_blueprint[var3[iter0]].need_exp
+	for iter0_22 = 1, var0_22 do
+		var5_22 = var5_22 + pg.ship_strengthen_blueprint[var3_22[iter0_22]].need_exp
 	end
 
-	for iter1 = 1, var1 do
-		var5 = var5 + pg.ship_strengthen_blueprint[var4[iter1]].need_exp
+	for iter1_22 = 1, var1_22 do
+		var5_22 = var5_22 + pg.ship_strengthen_blueprint[var4_22[iter1_22]].need_exp
 	end
 
-	return var5
+	return var5_22
 end
 
-return var0
+return var0_0

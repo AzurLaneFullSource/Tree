@@ -1,7 +1,7 @@
-﻿local var0 = class("AiriJPTracker")
+﻿local var0_0 = class("AiriJPTracker")
 
-function var0.Ctor(arg0)
-	arg0.mapping = {
+function var0_0.Ctor(arg0_1)
+	arg0_1.mapping = {
 		[TRACKING_ROLE_CREATE] = "role_create",
 		[TRACKING_ROLE_LOGIN] = "role_login",
 		[TRACKING_TUTORIAL_COMPLETE_1] = "tutorial_complete_1",
@@ -45,105 +45,105 @@ function var0.Ctor(arg0)
 	}
 end
 
-function var0.Tracking(arg0, arg1, arg2, arg3)
-	local var0 = arg0.mapping[arg1]
+function var0_0.Tracking(arg0_2, arg1_2, arg2_2, arg3_2)
+	local var0_2 = arg0_2.mapping[arg1_2]
 
-	if var0 == nil then
+	if var0_2 == nil then
 		return
 	end
 
-	if arg1 == TRACKING_USER_LEVELUP then
-		originalPrint("tracking lvl:" .. arg3)
+	if arg1_2 == TRACKING_USER_LEVELUP then
+		originalPrint("tracking lvl:" .. arg3_2)
 
-		local var1 = AiriUserEvent.New(var0)
+		local var1_2 = AiriUserEvent.New(var0_2)
 
-		var1:AddParam("lvl", arg3)
-		var1:AddParam("user_id", arg2)
-		pg.SdkMgr.GetInstance():UserEventUpload(var1)
-	elseif arg1 == TRACKING_PURCHASE_CLICK then
-		local var2 = AiriUserEvent.New(var0)
+		var1_2:AddParam("lvl", arg3_2)
+		var1_2:AddParam("user_id", arg2_2)
+		pg.SdkMgr.GetInstance():UserEventUpload(var1_2)
+	elseif arg1_2 == TRACKING_PURCHASE_CLICK then
+		local var2_2 = AiriUserEvent.New(var0_2)
 
-		var2:AddParam("user_id", arg2)
-		pg.SdkMgr.GetInstance():UserEventUpload(var2)
-	elseif arg1 == TRACKING_PURCHASE_FIRST then
-		originalPrint("order id : " .. arg3)
+		var2_2:AddParam("user_id", arg2_2)
+		pg.SdkMgr.GetInstance():UserEventUpload(var2_2)
+	elseif arg1_2 == TRACKING_PURCHASE_FIRST then
+		originalPrint("order id : " .. arg3_2)
 
-		local var3 = AiriUserEvent.New(var0)
+		local var3_2 = AiriUserEvent.New(var0_2)
 
-		var3:AddParam("user_id", arg2)
-		var3:AddParam("order_id", arg3)
-		pg.SdkMgr.GetInstance():UserEventUpload(var3)
-	elseif arg1 == TRACKING_2D_RETENTION or arg1 == TRACKING_7D_RETENTION then
-		local var4 = AiriUserEvent.New(var0)
+		var3_2:AddParam("user_id", arg2_2)
+		var3_2:AddParam("order_id", arg3_2)
+		pg.SdkMgr.GetInstance():UserEventUpload(var3_2)
+	elseif arg1_2 == TRACKING_2D_RETENTION or arg1_2 == TRACKING_7D_RETENTION then
+		local var4_2 = AiriUserEvent.New(var0_2)
 
-		var4:AddParam("user_id", arg2)
-		pg.SdkMgr.GetInstance():UserEventUpload(var4)
-	elseif arg1 == TRACKING_BUILD_SHIP then
-		local var5 = AiriUserEvent.New(var0)
+		var4_2:AddParam("user_id", arg2_2)
+		pg.SdkMgr.GetInstance():UserEventUpload(var4_2)
+	elseif arg1_2 == TRACKING_BUILD_SHIP then
+		local var5_2 = AiriUserEvent.New(var0_2)
 
-		var5:AddParam("user_id", arg2)
-		var5:AddParam("Cons_Num", arg3)
-		pg.SdkMgr.GetInstance():UserEventUpload(var5)
-	elseif arg1 == TRACKING_SHIP_INTENSIFY then
-		local var6 = AiriUserEvent.New(var0)
+		var5_2:AddParam("user_id", arg2_2)
+		var5_2:AddParam("Cons_Num", arg3_2)
+		pg.SdkMgr.GetInstance():UserEventUpload(var5_2)
+	elseif arg1_2 == TRACKING_SHIP_INTENSIFY then
+		local var6_2 = AiriUserEvent.New(var0_2)
 
-		var6:AddParam("user_id", arg2)
-		var6:AddParam("Cost_Num", arg3)
-		pg.SdkMgr.GetInstance():UserEventUpload(var6)
-	elseif arg1 == TRACKING_SHIP_LEVEL_UP then
-		local var7 = AiriUserEvent.New(var0)
+		var6_2:AddParam("user_id", arg2_2)
+		var6_2:AddParam("Cost_Num", arg3_2)
+		pg.SdkMgr.GetInstance():UserEventUpload(var6_2)
+	elseif arg1_2 == TRACKING_SHIP_LEVEL_UP then
+		local var7_2 = AiriUserEvent.New(var0_2)
 
-		var7:AddParam("user_id", arg2)
-		var7:AddParam("Lvup_Num", arg3)
-		pg.SdkMgr.GetInstance():UserEventUpload(var7)
-	elseif arg1 == TRACKING_SHIP_HIGHEST_LEVEL then
-		local var8 = AiriUserEvent.New(var0)
+		var7_2:AddParam("user_id", arg2_2)
+		var7_2:AddParam("Lvup_Num", arg3_2)
+		pg.SdkMgr.GetInstance():UserEventUpload(var7_2)
+	elseif arg1_2 == TRACKING_SHIP_HIGHEST_LEVEL then
+		local var8_2 = AiriUserEvent.New(var0_2)
 
-		var8:AddParam("user_id", arg2)
-		var8:AddParam("Ship_Max_level", arg3)
-		pg.SdkMgr.GetInstance():UserEventUpload(var8)
-	elseif arg1 == TRACKING_CUBE_ADD then
-		local var9 = AiriUserEvent.New(var0)
+		var8_2:AddParam("user_id", arg2_2)
+		var8_2:AddParam("Ship_Max_level", arg3_2)
+		pg.SdkMgr.GetInstance():UserEventUpload(var8_2)
+	elseif arg1_2 == TRACKING_CUBE_ADD then
+		local var9_2 = AiriUserEvent.New(var0_2)
 
-		var9:AddParam("user_id", arg2)
-		var9:AddParam("Aqui_Num", arg3)
-		pg.SdkMgr.GetInstance():UserEventUpload(var9)
-	elseif arg1 == TRACKING_CUBE_CONSUME then
-		local var10 = AiriUserEvent.New(var0)
+		var9_2:AddParam("user_id", arg2_2)
+		var9_2:AddParam("Aqui_Num", arg3_2)
+		pg.SdkMgr.GetInstance():UserEventUpload(var9_2)
+	elseif arg1_2 == TRACKING_CUBE_CONSUME then
+		local var10_2 = AiriUserEvent.New(var0_2)
 
-		var10:AddParam("user_id", arg2)
-		var10:AddParam("Consum_Num", arg3)
-		pg.SdkMgr.GetInstance():UserEventUpload(var10)
-	elseif arg1 == TRACKING_PROPOSE_SHIP then
-		local var11 = AiriUserEvent.New(var0)
+		var10_2:AddParam("user_id", arg2_2)
+		var10_2:AddParam("Consum_Num", arg3_2)
+		pg.SdkMgr.GetInstance():UserEventUpload(var10_2)
+	elseif arg1_2 == TRACKING_PROPOSE_SHIP then
+		local var11_2 = AiriUserEvent.New(var0_2)
 
-		var11:AddParam("user_id", arg2)
-		var11:AddParam("Married_Id", arg3)
-		pg.SdkMgr.GetInstance():UserEventUpload(var11)
-	elseif arg1 == TRACKING_REMOULD_SHIP then
-		local var12 = AiriUserEvent.New(var0)
+		var11_2:AddParam("user_id", arg2_2)
+		var11_2:AddParam("Married_Id", arg3_2)
+		pg.SdkMgr.GetInstance():UserEventUpload(var11_2)
+	elseif arg1_2 == TRACKING_REMOULD_SHIP then
+		local var12_2 = AiriUserEvent.New(var0_2)
 
-		var12:AddParam("user_id", arg2)
-		var12:AddParam("Remodel_Id", arg3)
-		pg.SdkMgr.GetInstance():UserEventUpload(var12)
-	elseif arg1 == TRACKING_HARD_CHAPTER then
-		local var13 = AiriUserEvent.New(var0)
+		var12_2:AddParam("user_id", arg2_2)
+		var12_2:AddParam("Remodel_Id", arg3_2)
+		pg.SdkMgr.GetInstance():UserEventUpload(var12_2)
+	elseif arg1_2 == TRACKING_HARD_CHAPTER then
+		local var13_2 = AiriUserEvent.New(var0_2)
 
-		var13:AddParam("user_id", arg2)
-		var13:AddParam("Clear_Stage_Id", arg3)
-		pg.SdkMgr.GetInstance():UserEventUpload(var13)
-	elseif arg1 == TRACKING_HIGHEST_CHAPTER then
-		local var14 = AiriUserEvent.New(var0)
+		var13_2:AddParam("user_id", arg2_2)
+		var13_2:AddParam("Clear_Stage_Id", arg3_2)
+		pg.SdkMgr.GetInstance():UserEventUpload(var13_2)
+	elseif arg1_2 == TRACKING_HIGHEST_CHAPTER then
+		local var14_2 = AiriUserEvent.New(var0_2)
 
-		var14:AddParam("user_id", arg2)
-		var14:AddParam("Clear_Stage_Id", arg3)
-		pg.SdkMgr.GetInstance():UserEventUpload(var14)
+		var14_2:AddParam("user_id", arg2_2)
+		var14_2:AddParam("Clear_Stage_Id", arg3_2)
+		pg.SdkMgr.GetInstance():UserEventUpload(var14_2)
 	else
-		local var15 = AiriUserEvent.New(var0)
+		local var15_2 = AiriUserEvent.New(var0_2)
 
-		var15:AddParam("user_id", arg2)
-		pg.SdkMgr.GetInstance():UserEventUpload(var15)
+		var15_2:AddParam("user_id", arg2_2)
+		pg.SdkMgr.GetInstance():UserEventUpload(var15_2)
 	end
 end
 
-return var0
+return var0_0

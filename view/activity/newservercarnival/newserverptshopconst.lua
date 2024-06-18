@@ -1,129 +1,129 @@
 ﻿NewServerPTShopConst = {}
 
-local var0 = NewServerPTShopConst
+local var0_0 = NewServerPTShopConst
 
-var0.ConfigTable = pg.newserver_shop_template
+var0_0.ConfigTable = pg.newserver_shop_template
 
-function var0.GetActivity()
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_SHOP)
+function var0_0.GetActivity()
+	local var0_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_SHOP)
 
-	if var0 and not var0:isEnd() then
-		return var0
+	if var0_1 and not var0_1:isEnd() then
+		return var0_1
 	end
 end
 
-var0.GoodStatu = {
+var0_0.GoodStatu = {
 	OnSell = 1,
 	Locked = 2,
 	SellOut = 3
 }
 
-function var0.GetGoodStatu(arg0, arg1)
-	arg1 = arg1 or var0.GetActivity()
+function var0_0.GetGoodStatu(arg0_2, arg1_2)
+	arg1_2 = arg1_2 or var0_0.GetActivity()
 
-	if var0.isGoodOnSell(arg0, arg1) then
-		return var0.GoodStatu.OnSell
-	elseif var0.isGoodSellOut(arg0, arg1) then
-		return var0.GoodStatu.SellOut
-	elseif var0.isGoodLocked(arg0, arg1) then
-		return var0.GoodStatu.Locked
+	if var0_0.isGoodOnSell(arg0_2, arg1_2) then
+		return var0_0.GoodStatu.OnSell
+	elseif var0_0.isGoodSellOut(arg0_2, arg1_2) then
+		return var0_0.GoodStatu.SellOut
+	elseif var0_0.isGoodLocked(arg0_2, arg1_2) then
+		return var0_0.GoodStatu.Locked
 	end
 end
 
-function var0.isGoodOnSell(arg0, arg1)
-	local var0 = var0.isGoodInTime(arg0, arg1)
-	local var1 = arg0:isLeftCount()
+function var0_0.isGoodOnSell(arg0_3, arg1_3)
+	local var0_3 = var0_0.isGoodInTime(arg0_3, arg1_3)
+	local var1_3 = arg0_3:isLeftCount()
 
-	return var0 and var1
+	return var0_3 and var1_3
 end
 
-function var0.isGoodSellOut(arg0, arg1)
-	local var0 = var0.isGoodInTime(arg0, arg1)
-	local var1 = not arg0:isLeftCount()
+function var0_0.isGoodSellOut(arg0_4, arg1_4)
+	local var0_4 = var0_0.isGoodInTime(arg0_4, arg1_4)
+	local var1_4 = not arg0_4:isLeftCount()
 
-	return var0 and var1
+	return var0_4 and var1_4
 end
 
-function var0.isGoodLocked(arg0, arg1)
-	return not var0.isGoodInTime(arg0, arg1)
+function var0_0.isGoodLocked(arg0_5, arg1_5)
+	return not var0_0.isGoodInTime(arg0_5, arg1_5)
 end
 
-function var0.GetAllGoodVOList(arg0)
-	arg0 = arg0 or var0.GetActivity()
+function var0_0.GetAllGoodVOList(arg0_6)
+	arg0_6 = arg0_6 or var0_0.GetActivity()
 
-	local var0 = {}
-	local var1 = arg0.data2KeyValueList
+	local var0_6 = {}
+	local var1_6 = arg0_6.data2KeyValueList
 
-	for iter0, iter1 in pairs(var1) do
-		local var2 = NewServerPTGood.New(iter0)
+	for iter0_6, iter1_6 in pairs(var1_6) do
+		local var2_6 = NewServerPTGood.New(iter0_6)
 
-		var2:updateAllInfo(arg0)
-		table.insert(var0, var2)
+		var2_6:updateAllInfo(arg0_6)
+		table.insert(var0_6, var2_6)
 	end
 
-	return var0
+	return var0_6
 end
 
-function var0.GetGoodVOListByIndex(arg0, arg1, arg2)
-	arg1 = arg1 or var0.GetActivity()
-	arg2 = arg2 or var0.GetAllGoodVOList()
+function var0_0.GetGoodVOListByIndex(arg0_7, arg1_7, arg2_7)
+	arg1_7 = arg1_7 or var0_0.GetActivity()
+	arg2_7 = arg2_7 or var0_0.GetAllGoodVOList()
 
-	local var0 = {}
+	local var0_7 = {}
 
-	for iter0, iter1 in ipairs(arg2) do
-		if iter1:getUnlockIndex() == arg0 then
-			table.insert(var0, iter1)
+	for iter0_7, iter1_7 in ipairs(arg2_7) do
+		if iter1_7:getUnlockIndex() == arg0_7 then
+			table.insert(var0_7, iter1_7)
 		end
 	end
 
-	return var0
+	return var0_7
 end
 
-function var0.SortGoodVOList(arg0, arg1)
-	arg1 = arg1 or var0.GetActivity()
+function var0_0.SortGoodVOList(arg0_8, arg1_8)
+	arg1_8 = arg1_8 or var0_0.GetActivity()
 
-	local var0 = function(arg0, arg1)
-		local var0 = arg0:getUnlockIndex()
-		local var1 = arg1:getUnlockIndex()
-		local var2 = var0.GetGoodStatu(arg0, arg1)
-		local var3 = var0.GetGoodStatu(arg1, arg1)
+	local function var0_8(arg0_9, arg1_9)
+		local var0_9 = arg0_9:getUnlockIndex()
+		local var1_9 = arg1_9:getUnlockIndex()
+		local var2_9 = var0_0.GetGoodStatu(arg0_9, arg1_8)
+		local var3_9 = var0_0.GetGoodStatu(arg1_9, arg1_8)
 
-		if var0 < var1 then
+		if var0_9 < var1_9 then
 			return true
-		elseif var1 < var0 then
+		elseif var1_9 < var0_9 then
 			return false
-		elseif var0 == var1 then
-			if var2 < var3 then
+		elseif var0_9 == var1_9 then
+			if var2_9 < var3_9 then
 				return true
-			elseif var3 < var2 then
+			elseif var3_9 < var2_9 then
 				return false
-			elseif var2 == var3 then
-				return arg0.configID < arg1.configID
+			elseif var2_9 == var3_9 then
+				return arg0_9.configID < arg1_9.configID
 			end
 		end
 	end
 
-	table.sort(arg0, var0)
+	table.sort(arg0_8, var0_8)
 
-	return arg0
+	return arg0_8
 end
 
-function var0.GetStartTime(arg0)
-	arg0 = arg0 or var0.GetActivity()
+function var0_0.GetStartTime(arg0_10)
+	arg0_10 = arg0_10 or var0_0.GetActivity()
 
-	return arg0.stopTime - 1814400
+	return arg0_10.stopTime - 1814400
 end
 
-function var0.GetSecSinceStart(arg0)
-	arg0 = arg0 or var0.GetActivity()
+function var0_0.GetSecSinceStart(arg0_11)
+	arg0_11 = arg0_11 or var0_0.GetActivity()
 
-	return pg.TimeMgr.GetInstance():GetServerTime() - var0.GetStartTime(arg0)
+	return pg.TimeMgr.GetInstance():GetServerTime() - var0_0.GetStartTime(arg0_11)
 end
 
-function var0.isGoodInTime(arg0, arg1)
-	arg1 = arg1 or var0.GetActivity()
+function var0_0.isGoodInTime(arg0_12, arg1_12)
+	arg1_12 = arg1_12 or var0_0.GetActivity()
 
-	return var0.GetSecSinceStart(arg1) >= arg0:getConfig("unlock_time")
+	return var0_0.GetSecSinceStart(arg1_12) >= arg0_12:getConfig("unlock_time")
 end
 
-return var0
+return var0_0

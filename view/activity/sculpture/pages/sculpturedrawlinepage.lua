@@ -1,183 +1,183 @@
-﻿local var0 = class("SculptureDrawLinePage", import("view.base.BaseSubView"))
+﻿local var0_0 = class("SculptureDrawLinePage", import("view.base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "SculptureDrawLineUI"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.cg = GetOrAddComponent(arg0._parentTf, typeof(CanvasGroup))
-	arg0.backBtn = arg0:findTF("back")
-	arg0.helpBtn = arg0:findTF("help")
-	arg0.frame = arg0:findTF("frame")
-	arg0.eventTrigger = arg0:findTF("frame"):GetComponent(typeof(EventTriggerListener))
-	arg0.uiCam = pg.UIMgr.GetInstance().uiCamera:GetComponent("Camera")
-	arg0.oneKeyBtn = arg0.frame:Find("onekey")
-	arg0.penTpl = arg0.frame:Find("pen")
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.cg = GetOrAddComponent(arg0_2._parentTf, typeof(CanvasGroup))
+	arg0_2.backBtn = arg0_2:findTF("back")
+	arg0_2.helpBtn = arg0_2:findTF("help")
+	arg0_2.frame = arg0_2:findTF("frame")
+	arg0_2.eventTrigger = arg0_2:findTF("frame"):GetComponent(typeof(EventTriggerListener))
+	arg0_2.uiCam = pg.UIMgr.GetInstance().uiCamera:GetComponent("Camera")
+	arg0_2.oneKeyBtn = arg0_2.frame:Find("onekey")
+	arg0_2.penTpl = arg0_2.frame:Find("pen")
 
-	setText(arg0:findTF("tip"), i18n("sculpture_drawline_tip"))
+	setText(arg0_2:findTF("tip"), i18n("sculpture_drawline_tip"))
 end
 
-function var0.OnInit(arg0)
-	arg0.points = {}
-	arg0.index = 0
+function var0_0.OnInit(arg0_3)
+	arg0_3.points = {}
+	arg0_3.index = 0
 end
 
-function var0.Show(arg0, arg1, arg2)
-	var0.super.Show(arg0)
+function var0_0.Show(arg0_4, arg1_4, arg2_4)
+	var0_0.super.Show(arg0_4)
 
-	arg0.id = arg1
-	arg0.activity = arg2
+	arg0_4.id = arg1_4
+	arg0_4.activity = arg2_4
 
 	seriesAsync({
-		function(arg0)
-			arg0:Clear()
-			arg0:InitLine(arg0)
+		function(arg0_5)
+			arg0_4:Clear()
+			arg0_4:InitLine(arg0_5)
 		end,
-		function(arg0)
-			arg0:InitOneKey(arg0)
+		function(arg0_6)
+			arg0_4:InitOneKey(arg0_6)
 		end,
-		function(arg0)
-			arg0:InitLineRendering()
-			arg0:RegisterEvent(arg0)
+		function(arg0_7)
+			arg0_4:InitLineRendering()
+			arg0_4:RegisterEvent(arg0_7)
 		end
 	})
-	pg.BgmMgr.GetInstance():Push(arg0.__cname, "bar-soft")
+	pg.BgmMgr.GetInstance():Push(arg0_4.__cname, "bar-soft")
 end
 
-function var0.InitLine(arg0, arg1)
-	local var0 = arg0.activity:GetResorceName(arg0.id)
+function var0_0.InitLine(arg0_8, arg1_8)
+	local var0_8 = arg0_8.activity:GetResorceName(arg0_8.id)
 
-	ResourceMgr.Inst:getAssetAsync("ui/" .. var0 .. "_line", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0)
-		arg0.tracker = Object.Instantiate(arg0, arg0.frame).transform
-		arg0.trackerCollider = arg0.tracker:GetComponent("EdgeCollider2D")
+	ResourceMgr.Inst:getAssetAsync("ui/" .. var0_8 .. "_line", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_9)
+		arg0_8.tracker = Object.Instantiate(arg0_9, arg0_8.frame).transform
+		arg0_8.trackerCollider = arg0_8.tracker:GetComponent("EdgeCollider2D")
 
-		arg1()
+		arg1_8()
 	end), true, true)
 end
 
-function var0.InitOneKey(arg0, arg1)
-	local var0 = arg0.activity:GetResorceName(arg0.id)
+function var0_0.InitOneKey(arg0_10, arg1_10)
+	local var0_10 = arg0_10.activity:GetResorceName(arg0_10.id)
 
-	ResourceMgr.Inst:getAssetAsync("ui/" .. var0 .. "_onekey", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0)
-		local var0 = Object.Instantiate(arg0, arg0.frame).transform
+	ResourceMgr.Inst:getAssetAsync("ui/" .. var0_10 .. "_onekey", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_11)
+		local var0_11 = Object.Instantiate(arg0_11, arg0_10.frame).transform
 
-		arg0.onekeyTrack = var0:GetComponent("EdgeCollider2D")
+		arg0_10.onekeyTrack = var0_11:GetComponent("EdgeCollider2D")
 
-		arg1()
+		arg1_10()
 	end), true, true)
 end
 
-function var0.InitLineRendering(arg0)
-	arg0.eventTrigger:AddPointDownFunc(function(arg0, arg1)
-		arg0:OnPointDown(arg1)
+function var0_0.InitLineRendering(arg0_12)
+	arg0_12.eventTrigger:AddPointDownFunc(function(arg0_13, arg1_13)
+		arg0_12:OnPointDown(arg1_13)
 	end)
-	arg0.eventTrigger:AddPointUpFunc(function(arg0, arg1)
-		arg0:OnPointUp()
+	arg0_12.eventTrigger:AddPointUpFunc(function(arg0_14, arg1_14)
+		arg0_12:OnPointUp()
 	end)
-	arg0.eventTrigger:AddDragFunc(function(arg0, arg1)
-		arg0.index = arg0.index + 1
+	arg0_12.eventTrigger:AddDragFunc(function(arg0_15, arg1_15)
+		arg0_12.index = arg0_12.index + 1
 
-		if arg0.index % 5 ~= 0 then
+		if arg0_12.index % 5 ~= 0 then
 			return
 		end
 
-		arg0:OnDrag(arg1)
+		arg0_12:OnDrag(arg1_15)
 	end)
 end
 
-function var0.OnPointDown(arg0, arg1)
-	arg0.points = {}
+function var0_0.OnPointDown(arg0_16, arg1_16)
+	arg0_16.points = {}
 
-	arg0:AddPoint(arg1.position)
+	arg0_16:AddPoint(arg1_16.position)
 
-	local var0 = arg0.points[#arg0.points]
+	local var0_16 = arg0_16.points[#arg0_16.points]
 
-	arg0.pen = Object.Instantiate(arg0.penTpl, var0, Quaternion.New(0, 0, 0, 0), arg0.frame)
+	arg0_16.pen = Object.Instantiate(arg0_16.penTpl, var0_16, Quaternion.New(0, 0, 0, 0), arg0_16.frame)
 
-	setActive(arg0.pen, true)
+	setActive(arg0_16.pen, true)
 end
 
-function var0.OnPointUp(arg0)
-	if not arg0.pen then
+function var0_0.OnPointUp(arg0_17)
+	if not arg0_17.pen then
 		return
 	end
 
-	if #arg0.points <= 2 then
-		arg0.points = {}
+	if #arg0_17.points <= 2 then
+		arg0_17.points = {}
 
 		return
 	end
 
-	local var0 = true
+	local var0_17 = true
 
-	for iter0, iter1 in ipairs(arg0.points) do
-		if not arg0.trackerCollider:OverlapPoint(iter1) then
-			var0 = false
+	for iter0_17, iter1_17 in ipairs(arg0_17.points) do
+		if not arg0_17.trackerCollider:OverlapPoint(iter1_17) then
+			var0_17 = false
 
 			break
 		end
 	end
 
-	if var0 and (#arg0.points < 20 or Vector2.Distance(arg0.points[1], arg0.points[#arg0.points]) > 2) then
-		var0 = false
+	if var0_17 and (#arg0_17.points < 20 or Vector2.Distance(arg0_17.points[1], arg0_17.points[#arg0_17.points]) > 2) then
+		var0_17 = false
 	end
 
-	if not var0 then
-		arg0.contextData.tipPage:ExecuteAction("Show")
+	if not var0_17 then
+		arg0_17.contextData.tipPage:ExecuteAction("Show")
 	else
-		arg0:OnPass()
+		arg0_17:OnPass()
 	end
 
-	Object.Destroy(arg0.pen.gameObject)
+	Object.Destroy(arg0_17.pen.gameObject)
 
-	arg0.pen = nil
+	arg0_17.pen = nil
 end
 
-function var0.OnPass(arg0)
-	arg0.contextData.miniMsgBox:ExecuteAction("Show", {
+function var0_0.OnPass(arg0_18)
+	arg0_18.contextData.miniMsgBox:ExecuteAction("Show", {
 		yes_text = "btn_next",
 		effect = true,
 		model = true,
 		content = i18n("sculpture_drawline_done"),
 		onYes = function()
-			arg0:emit(SculptureMediator.ON_DRAW_SCULPTURE, arg0.id)
+			arg0_18:emit(SculptureMediator.ON_DRAW_SCULPTURE, arg0_18.id)
 		end
 	})
 end
 
-function var0.OnDrag(arg0, arg1)
-	if not arg0.pen then
+function var0_0.OnDrag(arg0_20, arg1_20)
+	if not arg0_20.pen then
 		return
 	end
 
-	arg0:AddPoint(arg1.position)
+	arg0_20:AddPoint(arg1_20.position)
 
-	local var0 = arg0.points[#arg0.points]
+	local var0_20 = arg0_20.points[#arg0_20.points]
 
-	arg0.pen.position = var0
+	arg0_20.pen.position = var0_20
 end
 
-function var0.AddPoint(arg0, arg1)
-	local var0 = arg0.uiCam:ScreenToWorldPoint(arg1)
-	local var1 = Vector3(var0.x, var0.y, -1)
+function var0_0.AddPoint(arg0_21, arg1_21)
+	local var0_21 = arg0_21.uiCam:ScreenToWorldPoint(arg1_21)
+	local var1_21 = Vector3(var0_21.x, var0_21.y, -1)
 
-	table.insert(arg0.points, var1)
+	table.insert(arg0_21.points, var1_21)
 end
 
-function var0.RegisterEvent(arg0, arg1)
-	onButton(arg0, arg0.backBtn, function()
-		arg0.contextData.miniMsgBox:ExecuteAction("Show", {
+function var0_0.RegisterEvent(arg0_22, arg1_22)
+	onButton(arg0_22, arg0_22.backBtn, function()
+		arg0_22.contextData.miniMsgBox:ExecuteAction("Show", {
 			showNo = true,
 			content = i18n("sculpture_drawline_exit"),
 			onYes = function()
-				arg0:Hide()
+				arg0_22:Hide()
 			end
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.oneKeyBtn, function()
-		arg0:OnOneKey()
+	onButton(arg0_22, arg0_22.oneKeyBtn, function()
+		arg0_22:OnOneKey()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_22, arg0_22.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.gift_act_help.tip
@@ -185,70 +185,70 @@ function var0.RegisterEvent(arg0, arg1)
 	end, SFX_PANEL)
 end
 
-function var0.OnOneKey(arg0)
-	arg0.points = {}
+function var0_0.OnOneKey(arg0_27)
+	arg0_27.points = {}
 
-	local var0 = arg0.onekeyTrack.points
+	local var0_27 = arg0_27.onekeyTrack.points
 
-	for iter0 = 1, var0.Length do
-		local var1 = var0[iter0 - 1]
-		local var2 = arg0.tracker:TransformPoint(var1)
-		local var3 = Vector3(var2.x, var2.y, -1)
+	for iter0_27 = 1, var0_27.Length do
+		local var1_27 = var0_27[iter0_27 - 1]
+		local var2_27 = arg0_27.tracker:TransformPoint(var1_27)
+		local var3_27 = Vector3(var2_27.x, var2_27.y, -1)
 
-		table.insert(arg0.points, var3)
+		table.insert(arg0_27.points, var3_27)
 	end
 
-	local function var4(arg0)
-		if not arg0.pen then
-			arg0.pen = Object.Instantiate(arg0.penTpl, arg0, Quaternion.New(0, 0, 0, 0), arg0.frame)
+	local function var4_27(arg0_28)
+		if not arg0_27.pen then
+			arg0_27.pen = Object.Instantiate(arg0_27.penTpl, arg0_28, Quaternion.New(0, 0, 0, 0), arg0_27.frame)
 		else
-			arg0.pen.position = arg0
+			arg0_27.pen.position = arg0_28
 		end
 	end
 
-	local var5 = {}
+	local var5_27 = {}
 
-	for iter1 = 1, #arg0.points do
-		table.insert(var5, function(arg0)
-			var4(arg0.points[iter1])
-			onNextTick(arg0)
+	for iter1_27 = 1, #arg0_27.points do
+		table.insert(var5_27, function(arg0_29)
+			var4_27(arg0_27.points[iter1_27])
+			onNextTick(arg0_29)
 		end)
 	end
 
-	arg0.cg.blocksRaycasts = false
+	arg0_27.cg.blocksRaycasts = false
 
-	seriesAsync(var5, function()
-		arg0:OnPass()
+	seriesAsync(var5_27, function()
+		arg0_27:OnPass()
 
-		arg0.cg.blocksRaycasts = true
+		arg0_27.cg.blocksRaycasts = true
 
-		if arg0.pen then
-			Object.Destroy(arg0.pen.gameObject)
+		if arg0_27.pen then
+			Object.Destroy(arg0_27.pen.gameObject)
 
-			arg0.pen = nil
+			arg0_27.pen = nil
 		end
 	end)
 end
 
-function var0.Clear(arg0)
-	if not IsNil(arg0.tracker) then
-		Object.Destroy(arg0.tracker.gameObject)
+function var0_0.Clear(arg0_31)
+	if not IsNil(arg0_31.tracker) then
+		Object.Destroy(arg0_31.tracker.gameObject)
 	end
 
-	arg0.points = {}
-	arg0.tracker = nil
+	arg0_31.points = {}
+	arg0_31.tracker = nil
 
-	removeOnButton(arg0.oneKeyBtn)
+	removeOnButton(arg0_31.oneKeyBtn)
 end
 
-function var0.Hide(arg0)
-	var0.super.Hide(arg0)
-	pg.BgmMgr.GetInstance():Pop(arg0.__cname)
-	arg0:Clear()
+function var0_0.Hide(arg0_32)
+	var0_0.super.Hide(arg0_32)
+	pg.BgmMgr.GetInstance():Pop(arg0_32.__cname)
+	arg0_32:Clear()
 end
 
-function var0.OnDestroy(arg0)
-	arg0.exited = true
+function var0_0.OnDestroy(arg0_33)
+	arg0_33.exited = true
 end
 
-return var0
+return var0_0

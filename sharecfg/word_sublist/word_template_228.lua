@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_228 = {}
+var0_0.word_template_228 = {}
 
-local var1 = var0.word_template_228
+local var1_0 = var0_0.word_template_228
 
 function temp()
-	var1.期 = {
+	var1_0.期 = {
 		货 = {
 			开 = {
 				户 = {
@@ -50,7 +50,7 @@ end
 temp()
 
 function temp()
-	var1.欺 = {
+	var1_0.欺 = {
 		行 = {
 			霸 = {
 				市 = {
@@ -84,7 +84,7 @@ end
 temp()
 
 function temp()
-	var1.漆 = {
+	var1_0.漆 = {
 		黑 = {
 			将 = {
 				不 = {
@@ -104,7 +104,7 @@ end
 temp()
 
 function temp()
-	var1.齐 = {
+	var1_0.齐 = {
 		B = {
 			短 = {
 				裙 = {
@@ -131,7 +131,7 @@ end
 temp()
 
 function temp()
-	var1.其 = {
+	var1_0.其 = {
 		美 = {
 			仁 = {
 				增 = {
@@ -145,7 +145,7 @@ end
 temp()
 
 function temp()
-	var1.骑 = {
+	var1_0.骑 = {
 		马 = {
 			射 = {
 				箭 = {
@@ -174,7 +174,7 @@ end
 temp()
 
 function temp()
-	var1.棋 = {
+	var1_0.棋 = {
 		牌 = {
 			游 = {
 				戏 = {

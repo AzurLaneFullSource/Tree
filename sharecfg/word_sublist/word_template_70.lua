@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_70 = {}
+var0_0.word_template_70 = {}
 
-local var1 = var0.word_template_70
+local var1_0 = var0_0.word_template_70
 
 function temp()
-	var1.穿 = {
+	var1_0.穿 = {
 		戴 = {
 			坐 = {
 				骑 = {
@@ -38,7 +38,7 @@ end
 temp()
 
 function temp()
-	var1.传 = {
+	var1_0.传 = {
 		奇 = {
 			私 = {
 				服 = {
@@ -79,7 +79,7 @@ end
 temp()
 
 function temp()
-	var1.傳 = {
+	var1_0.傳 = {
 		染 = {
 			性 = {
 				病 = {
@@ -93,7 +93,7 @@ end
 temp()
 
 function temp()
-	var1.床 = {
+	var1_0.床 = {
 		前 = {
 			看 = {
 				月 = {
@@ -137,7 +137,7 @@ end
 temp()
 
 function temp()
-	var1.创 = {
+	var1_0.创 = {
 		世 = {
 			之 = {
 				子 = {
@@ -222,7 +222,7 @@ end
 temp()
 
 function temp()
-	var1.吹 = {
+	var1_0.吹 = {
 		得 = {
 			你 = {
 				早 = {
@@ -315,7 +315,7 @@ end
 temp()
 
 function temp()
-	var1.锤 = {
+	var1_0.锤 = {
 		子 = {
 			情 = {
 				调 = {

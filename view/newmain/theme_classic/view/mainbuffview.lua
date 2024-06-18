@@ -1,70 +1,70 @@
-﻿local var0 = class("MainBuffView", import("...base.MainBaseView"))
+﻿local var0_0 = class("MainBuffView", import("...base.MainBaseView"))
 
-function var0.Ctor(arg0, arg1, arg2)
-	var0.super.Ctor(arg0, arg1, arg2)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var0_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 
-	arg0.buffs = {
-		arg1:Find("buff").gameObject
+	arg0_1.buffs = {
+		arg1_1:Find("buff").gameObject
 	}
-	arg0.skinFreeUsageTag = nil
-	arg0.timers = {}
-	arg0.buffOffsetX = 20
-	arg0.noTagStartPos = 285
-	arg0.hasTagStartPos = 390
-	arg0.tagPos = Vector3(-169, -18, 0)
+	arg0_1.skinFreeUsageTag = nil
+	arg0_1.timers = {}
+	arg0_1.buffOffsetX = 20
+	arg0_1.noTagStartPos = 285
+	arg0_1.hasTagStartPos = 390
+	arg0_1.tagPos = Vector3(-169, -18, 0)
 
-	arg0:bind(MiniGameProxy.ON_HUB_DATA_UPDATE, function(arg0)
-		arg0:Refresh()
+	arg0_1:bind(MiniGameProxy.ON_HUB_DATA_UPDATE, function(arg0_2)
+		arg0_1:Refresh()
 	end)
-	arg0:bind(GAME.SEND_MINI_GAME_OP_DONE, function(arg0)
-		arg0:Refresh()
+	arg0_1:bind(GAME.SEND_MINI_GAME_OP_DONE, function(arg0_3)
+		arg0_1:Refresh()
 	end)
 end
 
-function var0.CollectBuffs(arg0)
-	local var0 = BuffHelper.GetBuffsForMainUI()
-	local var1 = import("GameCfg.activity.MainUIVirtualIconData")
+function var0_0.CollectBuffs(arg0_4)
+	local var0_4 = BuffHelper.GetBuffsForMainUI()
+	local var1_4 = import("GameCfg.activity.MainUIVirtualIconData")
 
-	for iter0, iter1 in ipairs(var1.CurrentIconList) do
-		if var1[iter1]:CheckExist() then
-			table.insert(var0, var1[iter1])
+	for iter0_4, iter1_4 in ipairs(var1_4.CurrentIconList) do
+		if var1_4[iter1_4]:CheckExist() then
+			table.insert(var0_4, var1_4[iter1_4])
 		end
 	end
 
-	return var0
+	return var0_4
 end
 
-function var0.Init(arg0)
-	local var0 = arg0:CollectBuffs()
-	local var1 = arg0:ShouldFreeUsageSkinTag()
+function var0_0.Init(arg0_5)
+	local var0_5 = arg0_5:CollectBuffs()
+	local var1_5 = arg0_5:ShouldFreeUsageSkinTag()
 
-	arg0._tf.anchoredPosition = Vector3(var1 and arg0.hasTagStartPos or arg0.noTagStartPos, arg0._tf.anchoredPosition.y, 0)
+	arg0_5._tf.anchoredPosition = Vector3(var1_5 and arg0_5.hasTagStartPos or arg0_5.noTagStartPos, arg0_5._tf.anchoredPosition.y, 0)
 
-	if var1 then
-		arg0:UpdateFreeUsageSkinTag()
-	elseif arg0.skinFreeUsageTag then
-		setActive(arg0.skinFreeUsageTag, false)
+	if var1_5 then
+		arg0_5:UpdateFreeUsageSkinTag()
+	elseif arg0_5.skinFreeUsageTag then
+		setActive(arg0_5.skinFreeUsageTag, false)
 	end
 
-	arg0:ClearTimers()
-	arg0:UpdateBuffs(var0)
+	arg0_5:ClearTimers()
+	arg0_5:UpdateBuffs(var0_5)
 
-	arg0.buffList = var0
-	arg0.showTag = var1
+	arg0_5.buffList = var0_5
+	arg0_5.showTag = var1_5
 end
 
-function var0.Refresh(arg0)
-	local var0 = arg0:CollectBuffs()
-	local var1 = arg0:ShouldFreeUsageSkinTag()
+function var0_0.Refresh(arg0_6)
+	local var0_6 = arg0_6:CollectBuffs()
+	local var1_6 = arg0_6:ShouldFreeUsageSkinTag()
 
-	arg0:Init()
+	arg0_6:Init()
 end
 
-function var0.ShouldFreeUsageSkinTag(arg0)
-	local var0 = getProxy(ShipSkinProxy):getRawData()
+function var0_0.ShouldFreeUsageSkinTag(arg0_7)
+	local var0_7 = getProxy(ShipSkinProxy):getRawData()
 
-	for iter0, iter1 in pairs(var0) do
-		if iter1:isExpireType() and not iter1:isExpired() then
+	for iter0_7, iter1_7 in pairs(var0_7) do
+		if iter1_7:isExpireType() and not iter1_7:isExpired() then
 			return true
 		end
 	end
@@ -72,122 +72,122 @@ function var0.ShouldFreeUsageSkinTag(arg0)
 	return false
 end
 
-function var0.UpdateFreeUsageSkinTag(arg0)
-	local var0 = arg0.skinFreeUsageTag or Object.Instantiate(arg0.buffs[1], arg0.buffs[1].transform.parent).transform
+function var0_0.UpdateFreeUsageSkinTag(arg0_8)
+	local var0_8 = arg0_8.skinFreeUsageTag or Object.Instantiate(arg0_8.buffs[1], arg0_8.buffs[1].transform.parent).transform
 
-	arg0.skinFreeUsageTag = var0
+	arg0_8.skinFreeUsageTag = var0_8
 
-	local var1
+	local var1_8
 
-	var1.sprite, var1 = GetSpriteFromAtlas("ui/mainui_atlas", "huanzhuangtiyan"), var0:GetComponent(typeof(Image))
+	var1_8.sprite, var1_8 = GetSpriteFromAtlas("ui/mainui_atlas", "huanzhuangtiyan"), var0_8:GetComponent(typeof(Image))
 
-	var1:SetNativeSize()
-	onButton(arg0, var0, function()
-		local var0 = arg0:GetFreeUsageSkins()
+	var1_8:SetNativeSize()
+	onButton(arg0_8, var0_8, function()
+		local var0_9 = arg0_8:GetFreeUsageSkins()
 
-		arg0:emit(NewMainScene.ON_SKIN_FREEUSAGE_DESC, var0)
+		arg0_8:emit(NewMainScene.ON_SKIN_FREEUSAGE_DESC, var0_9)
 	end, SFX_PANEL)
 
-	var0.anchoredPosition = arg0.tagPos
+	var0_8.anchoredPosition = arg0_8.tagPos
 
-	setActive(arg0.skinFreeUsageTag, true)
+	setActive(arg0_8.skinFreeUsageTag, true)
 end
 
-function var0.GetFreeUsageSkins(arg0)
-	local var0 = {}
-	local var1 = getProxy(ShipSkinProxy):getRawData()
+function var0_0.GetFreeUsageSkins(arg0_10)
+	local var0_10 = {}
+	local var1_10 = getProxy(ShipSkinProxy):getRawData()
 
-	for iter0, iter1 in pairs(var1) do
-		if iter1:isExpireType() and not iter1:isExpired() then
-			table.insert(var0, iter1)
+	for iter0_10, iter1_10 in pairs(var1_10) do
+		if iter1_10:isExpireType() and not iter1_10:isExpired() then
+			table.insert(var0_10, iter1_10)
 		end
 	end
 
-	return var0
+	return var0_10
 end
 
-function var0.GetTpl(arg0, arg1)
-	if not arg0.buffs[arg1] then
-		local var0 = arg0.buffs[1]
-		local var1 = Object.Instantiate(var0, var0.transform.parent)
-		local var2 = var0.transform.anchoredPosition.x + (arg1 - 1) * (var0.transform.sizeDelta.x + arg0.buffOffsetX)
+function var0_0.GetTpl(arg0_11, arg1_11)
+	if not arg0_11.buffs[arg1_11] then
+		local var0_11 = arg0_11.buffs[1]
+		local var1_11 = Object.Instantiate(var0_11, var0_11.transform.parent)
+		local var2_11 = var0_11.transform.anchoredPosition.x + (arg1_11 - 1) * (var0_11.transform.sizeDelta.x + arg0_11.buffOffsetX)
 
-		var1.transform.anchoredPosition = Vector3(var2, var0.transform.anchoredPosition.y, 0)
-		arg0.buffs[arg1] = var1
+		var1_11.transform.anchoredPosition = Vector3(var2_11, var0_11.transform.anchoredPosition.y, 0)
+		arg0_11.buffs[arg1_11] = var1_11
 	end
 
-	return arg0.buffs[arg1]
+	return arg0_11.buffs[arg1_11]
 end
 
-function var0.UpdateBuffs(arg0, arg1)
-	for iter0 = #arg0.buffs, #arg1 + 1, -1 do
-		if arg0.buffs[iter0] then
-			setActive(arg0.buffs[iter0], false)
+function var0_0.UpdateBuffs(arg0_12, arg1_12)
+	for iter0_12 = #arg0_12.buffs, #arg1_12 + 1, -1 do
+		if arg0_12.buffs[iter0_12] then
+			setActive(arg0_12.buffs[iter0_12], false)
 		end
 	end
 
-	for iter1, iter2 in ipairs(arg1) do
-		local var0 = arg0:GetTpl(iter1)
+	for iter1_12, iter2_12 in ipairs(arg1_12) do
+		local var0_12 = arg0_12:GetTpl(iter1_12)
 
-		if iter2.IsVirtualIcon then
-			arg0:UpdateVirtualBuff(var0, iter2)
+		if iter2_12.IsVirtualIcon then
+			arg0_12:UpdateVirtualBuff(var0_12, iter2_12)
 		else
-			arg0:UpdateBuff(var0, iter2)
-			arg0:AddEndTimer(var0, iter2)
+			arg0_12:UpdateBuff(var0_12, iter2_12)
+			arg0_12:AddEndTimer(var0_12, iter2_12)
 		end
 	end
 end
 
-function var0.UpdateVirtualBuff(arg0, arg1, arg2)
-	LoadImageSpriteAtlasAsync("ui/mainui_atlas", arg2.Image, arg1)
-	onButton(arg0, arg1, function()
-		arg0:emit(NewMainMediator.GO_SINGLE_ACTIVITY, ActivityConst.DOA_PT_ID)
+function var0_0.UpdateVirtualBuff(arg0_13, arg1_13, arg2_13)
+	LoadImageSpriteAtlasAsync("ui/mainui_atlas", arg2_13.Image, arg1_13)
+	onButton(arg0_13, arg1_13, function()
+		arg0_13:emit(NewMainMediator.GO_SINGLE_ACTIVITY, ActivityConst.DOA_PT_ID)
 	end, SFX_PANEL)
-	setActive(arg1, true)
+	setActive(arg1_13, true)
 end
 
-function var0.UpdateBuff(arg0, arg1, arg2)
-	LoadImageSpriteAsync(arg2:getConfig("icon"), arg1)
-	onButton(arg0, arg1, function()
-		local var0 = pg.UIMgr.GetInstance().UIMain:InverseTransformPoint(arg1.transform.position)
+function var0_0.UpdateBuff(arg0_15, arg1_15, arg2_15)
+	LoadImageSpriteAsync(arg2_15:getConfig("icon"), arg1_15)
+	onButton(arg0_15, arg1_15, function()
+		local var0_16 = pg.UIMgr.GetInstance().UIMain:InverseTransformPoint(arg1_15.transform.position)
 
-		arg0:emit(NewMainScene.ON_BUFF_DESC, arg2, Vector3(var0.x, var0.y - 55, 0))
+		arg0_15:emit(NewMainScene.ON_BUFF_DESC, arg2_15, Vector3(var0_16.x, var0_16.y - 55, 0))
 	end, SFX_PANEL)
-	setActive(arg1, true)
+	setActive(arg1_15, true)
 end
 
-function var0.AddEndTimer(arg0, arg1, arg2)
-	local var0 = arg2:getLeftTime()
+function var0_0.AddEndTimer(arg0_17, arg1_17, arg2_17)
+	local var0_17 = arg2_17:getLeftTime()
 
-	arg0.timers[arg1] = Timer.New(function()
-		setActive(arg1, false)
-	end, var0, 1)
+	arg0_17.timers[arg1_17] = Timer.New(function()
+		setActive(arg1_17, false)
+	end, var0_17, 1)
 
-	arg0.timers[arg1]:Start()
+	arg0_17.timers[arg1_17]:Start()
 end
 
-function var0.ClearTimers(arg0)
-	for iter0, iter1 in pairs(arg0.timers) do
-		iter1:Stop()
+function var0_0.ClearTimers(arg0_19)
+	for iter0_19, iter1_19 in pairs(arg0_19.timers) do
+		iter1_19:Stop()
 	end
 
-	arg0.timers = {}
+	arg0_19.timers = {}
 end
 
-function var0.GetDirection(arg0)
+function var0_0.GetDirection(arg0_20)
 	return Vector2(0, 1)
 end
 
-function var0.Dispose(arg0)
-	var0.super.Dispose(arg0)
+function var0_0.Dispose(arg0_21)
+	var0_0.super.Dispose(arg0_21)
 
-	if arg0.skinFreeUsageTag then
-		Destroy(arg0.skinFreeUsageTag.gameObject)
+	if arg0_21.skinFreeUsageTag then
+		Destroy(arg0_21.skinFreeUsageTag.gameObject)
 
-		arg0.skinFreeUsageTag = nil
+		arg0_21.skinFreeUsageTag = nil
 	end
 
-	arg0:ClearTimers()
+	arg0_21:ClearTimers()
 end
 
-return var0
+return var0_0

@@ -1,20 +1,20 @@
-﻿local var0 = class("ItemRarity")
+﻿local var0_0 = class("ItemRarity")
 
-var0.Gray = 1
-var0.Blue = 2
-var0.Purple = 3
-var0.Gold = 4
-var0.SSR = 5
+var0_0.Gray = 1
+var0_0.Blue = 2
+var0_0.Purple = 3
+var0_0.Gold = 4
+var0_0.SSR = 5
 
-function var0.Rarity2Print(arg0)
-	if math.clamp(arg0, 1, 9) == arg0 then
-		return tostring(arg0)
+function var0_0.Rarity2Print(arg0_1)
+	if math.clamp(arg0_1, 1, 9) == arg0_1 then
+		return tostring(arg0_1)
 	else
-		return var0.Gray
+		return var0_0.Gray
 	end
 end
 
-var0.colors = {
+var0_0.colors = {
 	"FFFFFFFF",
 	"41D7FFFF",
 	"CC7BFFFF",
@@ -26,11 +26,11 @@ var0.colors = {
 	"FDC637FF"
 }
 
-function var0.Rarity2HexColor(arg0)
-	return var0.colors[arg0]
+function var0_0.Rarity2HexColor(arg0_2)
+	return var0_0.colors[arg0_2]
 end
 
-var0.frameColors = {
+var0_0.frameColors = {
 	"BDBDBDFF",
 	"65C7FFFF",
 	"BFA3FFFF",
@@ -42,8 +42,8 @@ var0.frameColors = {
 	"FFE743FF"
 }
 
-function var0.Rarity2FrameHexColor(arg0)
-	return var0.frameColors[arg0]
+function var0_0.Rarity2FrameHexColor(arg0_3)
+	return var0_0.frameColors[arg0_3]
 end
 
-return var0
+return var0_0

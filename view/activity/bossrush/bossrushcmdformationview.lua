@@ -1,258 +1,258 @@
-﻿local var0 = class("LevelCMDFormationView", import("view.base.BaseUI"))
+﻿local var0_0 = class("LevelCMDFormationView", import("view.base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "LevelCommanderView"
 end
 
-function var0.init(arg0)
-	arg0.descFrameTF = arg0:findTF("frame")
-	arg0.descPos1 = arg0:findTF("commander1/frame/info", arg0.descFrameTF)
-	arg0.descPos2 = arg0:findTF("commander2/frame/info", arg0.descFrameTF)
-	arg0.skillTFPos1 = arg0:findTF("commander1/skill_info", arg0.descFrameTF)
-	arg0.skillTFPos2 = arg0:findTF("commander2/skill_info", arg0.descFrameTF)
-	arg0.abilitysTF = UIItemList.New(arg0:findTF("atttr_panel/abilitys/mask/content", arg0.descFrameTF), arg0:findTF("atttr_panel/abilitys/mask/content/attr", arg0.descFrameTF))
-	arg0.talentsTF = UIItemList.New(arg0:findTF("atttr_panel/talents/mask/content", arg0.descFrameTF), arg0:findTF("atttr_panel/talents/mask/content/attr", arg0.descFrameTF))
-	arg0.abilityArr = arg0:findTF("frame/atttr_panel/abilitys/arr")
-	arg0.talentsArr = arg0:findTF("frame/atttr_panel/talents/arr")
-	arg0.restAllBtn = arg0:findTF("rest_all", arg0.descFrameTF)
-	arg0.quickBtn = arg0:findTF("quick_btn", arg0.descFrameTF)
-	arg0.recordPanel = arg0:findTF("record_panel")
-	arg0.recordCommanders = {
-		arg0.recordPanel:Find("current/commanders/commander1/frame/info"),
-		arg0.recordPanel:Find("current/commanders/commander2/frame/info")
+function var0_0.init(arg0_2)
+	arg0_2.descFrameTF = arg0_2:findTF("frame")
+	arg0_2.descPos1 = arg0_2:findTF("commander1/frame/info", arg0_2.descFrameTF)
+	arg0_2.descPos2 = arg0_2:findTF("commander2/frame/info", arg0_2.descFrameTF)
+	arg0_2.skillTFPos1 = arg0_2:findTF("commander1/skill_info", arg0_2.descFrameTF)
+	arg0_2.skillTFPos2 = arg0_2:findTF("commander2/skill_info", arg0_2.descFrameTF)
+	arg0_2.abilitysTF = UIItemList.New(arg0_2:findTF("atttr_panel/abilitys/mask/content", arg0_2.descFrameTF), arg0_2:findTF("atttr_panel/abilitys/mask/content/attr", arg0_2.descFrameTF))
+	arg0_2.talentsTF = UIItemList.New(arg0_2:findTF("atttr_panel/talents/mask/content", arg0_2.descFrameTF), arg0_2:findTF("atttr_panel/talents/mask/content/attr", arg0_2.descFrameTF))
+	arg0_2.abilityArr = arg0_2:findTF("frame/atttr_panel/abilitys/arr")
+	arg0_2.talentsArr = arg0_2:findTF("frame/atttr_panel/talents/arr")
+	arg0_2.restAllBtn = arg0_2:findTF("rest_all", arg0_2.descFrameTF)
+	arg0_2.quickBtn = arg0_2:findTF("quick_btn", arg0_2.descFrameTF)
+	arg0_2.recordPanel = arg0_2:findTF("record_panel")
+	arg0_2.recordCommanders = {
+		arg0_2.recordPanel:Find("current/commanders/commander1/frame/info"),
+		arg0_2.recordPanel:Find("current/commanders/commander2/frame/info")
 	}
-	arg0.reocrdSkills = {
-		arg0.recordPanel:Find("current/commanders/commander1/skill_info"),
-		arg0.recordPanel:Find("current/commanders/commander2/skill_info")
+	arg0_2.reocrdSkills = {
+		arg0_2.recordPanel:Find("current/commanders/commander1/skill_info"),
+		arg0_2.recordPanel:Find("current/commanders/commander2/skill_info")
 	}
-	arg0.recordList = UIItemList.New(arg0.recordPanel:Find("record/content"), arg0.recordPanel:Find("record/content/commanders"))
+	arg0_2.recordList = UIItemList.New(arg0_2.recordPanel:Find("record/content"), arg0_2.recordPanel:Find("record/content/commanders"))
 
-	onButton(arg0, arg0.restAllBtn, function()
-		arg0.callback({
+	onButton(arg0_2, arg0_2.restAllBtn, function()
+		arg0_2.callback({
 			type = LevelUIConst.COMMANDER_OP_REST_ALL
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.quickBtn, function()
-		arg0:OpenRecordPanel()
+	onButton(arg0_2, arg0_2.quickBtn, function()
+		arg0_2:OpenRecordPanel()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.recordPanel:Find("back"), function()
-		arg0:CloseRecordPanel()
+	onButton(arg0_2, arg0_2.recordPanel:Find("back"), function()
+		arg0_2:CloseRecordPanel()
 	end, SFX_PANEL)
-	onButton(arg0, arg0._tf:Find("bg"), function()
-		arg0:onBackPressed()
+	onButton(arg0_2, arg0_2._tf:Find("bg"), function()
+		arg0_2:onBackPressed()
 	end, SFX_PANEL)
 end
 
-function var0.didEnter(arg0)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+function var0_0.didEnter(arg0_7)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_7._tf)
 end
 
-function var0.willExit(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+function var0_0.willExit(arg0_8)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_8._tf)
 end
 
-function var0.setCallback(arg0, arg1)
-	arg0.callback = arg1
+function var0_0.setCallback(arg0_9, arg1_9)
+	arg0_9.callback = arg1_9
 end
 
-function var0.updateFleet(arg0, arg1)
-	arg0.fleet = arg1
+function var0_0.updateFleet(arg0_10, arg1_10)
+	arg0_10.fleet = arg1_10
 
-	arg0:updateDesc()
-	arg0:updateRecordFleet()
+	arg0_10:updateDesc()
+	arg0_10:updateRecordFleet()
 end
 
-function var0.setCommanderPrefabs(arg0, arg1)
-	arg0.prefabFleets = arg1
+function var0_0.setCommanderPrefabs(arg0_11, arg1_11)
+	arg0_11.prefabFleets = arg1_11
 
-	arg0:updateRecordPanel()
+	arg0_11:updateRecordPanel()
 end
 
-function var0.updateRecordFleet(arg0)
-	local var0 = arg0.fleet:getCommanders()
+function var0_0.updateRecordFleet(arg0_12)
+	local var0_12 = arg0_12.fleet:getCommanders()
 
-	for iter0, iter1 in ipairs(arg0.recordCommanders) do
-		local var1 = var0[iter0]
+	for iter0_12, iter1_12 in ipairs(arg0_12.recordCommanders) do
+		local var1_12 = var0_12[iter0_12]
 
-		arg0:updateCommander(iter1, iter0, var1)
-		arg0:updateSkillTF(var1, arg0.reocrdSkills[iter0])
+		arg0_12:updateCommander(iter1_12, iter0_12, var1_12)
+		arg0_12:updateSkillTF(var1_12, arg0_12.reocrdSkills[iter0_12])
 	end
 end
 
-function var0.updateRecordPanel(arg0)
-	local var0 = arg0.fleet:getCommanders()
+function var0_0.updateRecordPanel(arg0_13)
+	local var0_13 = arg0_13.fleet:getCommanders()
 
-	arg0.recordList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg0.prefabFleets[arg1 + 1]
+	arg0_13.recordList:make(function(arg0_14, arg1_14, arg2_14)
+		if arg0_14 == UIItemList.EventUpdate then
+			local var0_14 = arg0_13.prefabFleets[arg1_14 + 1]
 
-			arg0:UpdatePrefabFleet(var0, arg2, var0)
+			arg0_13:UpdatePrefabFleet(var0_14, arg2_14, var0_13)
 		end
 	end)
-	arg0.recordList:align(#arg0.prefabFleets)
+	arg0_13.recordList:align(#arg0_13.prefabFleets)
 end
 
-function var0.UpdatePrefabFleet(arg0, arg1, arg2, arg3)
-	local var0 = arg2:Find("fleet_name")
-	local var1 = arg1:getName()
+function var0_0.UpdatePrefabFleet(arg0_15, arg1_15, arg2_15, arg3_15)
+	local var0_15 = arg2_15:Find("fleet_name")
+	local var1_15 = arg1_15:getName()
 
-	onInputEndEdit(arg0, var0, function()
-		local var0 = getInputText(var0)
+	onInputEndEdit(arg0_15, var0_15, function()
+		local var0_16 = getInputText(var0_15)
 
-		arg0.callback({
+		arg0_15.callback({
 			type = LevelUIConst.COMMANDER_OP_RENAME,
-			id = arg1.id,
-			str = var0,
+			id = arg1_15.id,
+			str = var0_16,
 			onFailed = function()
-				setInputText(var0, var1)
+				setInputText(var0_15, var1_15)
 			end
 		})
 	end)
-	setInputText(var0, var1)
-	onButton(arg0, arg2:Find("use_btn"), function()
-		arg0.callback({
+	setInputText(var0_15, var1_15)
+	onButton(arg0_15, arg2_15:Find("use_btn"), function()
+		arg0_15.callback({
 			type = LevelUIConst.COMMANDER_OP_USE_PREFAB,
-			id = arg1.id
+			id = arg1_15.id
 		})
-		arg0:CloseRecordPanel()
+		arg0_15:CloseRecordPanel()
 	end, SFX_PANEL)
-	onButton(arg0, arg2:Find("record_btn"), function()
-		arg0.callback({
+	onButton(arg0_15, arg2_15:Find("record_btn"), function()
+		arg0_15.callback({
 			type = LevelUIConst.COMMANDER_OP_RECORD_PREFAB,
-			id = arg1.id
+			id = arg1_15.id
 		})
 	end, SFX_PANEL)
 
-	local var2 = {
-		arg2:Find("commander1/frame/info"),
-		arg2:Find("commander2/frame/info")
+	local var2_15 = {
+		arg2_15:Find("commander1/frame/info"),
+		arg2_15:Find("commander2/frame/info")
 	}
-	local var3 = {
-		arg2:Find("commander1/skill_info"),
-		arg2:Find("commander2/skill_info")
+	local var3_15 = {
+		arg2_15:Find("commander1/skill_info"),
+		arg2_15:Find("commander2/skill_info")
 	}
 
-	for iter0, iter1 in ipairs(var2) do
-		local var4 = arg1:getCommanderByPos(iter0)
+	for iter0_15, iter1_15 in ipairs(var2_15) do
+		local var4_15 = arg1_15:getCommanderByPos(iter0_15)
 
-		arg0:updateCommander(iter1, iter0, var4)
-		arg0:updateSkillTF(var4, var3[iter0])
+		arg0_15:updateCommander(iter1_15, iter0_15, var4_15)
+		arg0_15:updateSkillTF(var4_15, var3_15[iter0_15])
 	end
 end
 
-function var0.updateDesc(arg0)
-	local var0 = arg0.fleet:getCommanders()
+function var0_0.updateDesc(arg0_20)
+	local var0_20 = arg0_20.fleet:getCommanders()
 
-	for iter0 = 1, CommanderConst.MAX_FORMATION_POS do
-		local var1 = var0[iter0]
+	for iter0_20 = 1, CommanderConst.MAX_FORMATION_POS do
+		local var1_20 = var0_20[iter0_20]
 
-		arg0:updateCommander(arg0["descPos" .. iter0], iter0, var1, true)
-		arg0:updateSkillTF(var1, arg0["skillTFPos" .. iter0])
+		arg0_20:updateCommander(arg0_20["descPos" .. iter0_20], iter0_20, var1_20, true)
+		arg0_20:updateSkillTF(var1_20, arg0_20["skillTFPos" .. iter0_20])
 	end
 
-	arg0:updateAdditions()
+	arg0_20:updateAdditions()
 end
 
-function var0.updateAdditions(arg0)
-	local var0 = arg0.fleet
-	local var1 = _.values(var0:getCommandersTalentDesc())
-	local var2, var3 = var0:getCommandersAddition()
+function var0_0.updateAdditions(arg0_21)
+	local var0_21 = arg0_21.fleet
+	local var1_21 = _.values(var0_21:getCommandersTalentDesc())
+	local var2_21, var3_21 = var0_21:getCommandersAddition()
 
-	arg0.abilitysTF:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = var2[arg1 + 1]
+	arg0_21.abilitysTF:make(function(arg0_22, arg1_22, arg2_22)
+		if arg0_22 == UIItemList.EventUpdate then
+			local var0_22 = var2_21[arg1_22 + 1]
 
-			setText(arg2:Find("name"), AttributeType.Type2Name(var0.attrName))
-			setText(arg2:Find("Text"), string.format("%0.3f", var0.value) .. "%")
-			GetImageSpriteFromAtlasAsync("attricon", var0.attrName, arg2:Find("icon"), false)
-			setImageAlpha(arg2:Find("bg"), arg1 % 2)
+			setText(arg2_22:Find("name"), AttributeType.Type2Name(var0_22.attrName))
+			setText(arg2_22:Find("Text"), string.format("%0.3f", var0_22.value) .. "%")
+			GetImageSpriteFromAtlasAsync("attricon", var0_22.attrName, arg2_22:Find("icon"), false)
+			setImageAlpha(arg2_22:Find("bg"), arg1_22 % 2)
 		end
 	end)
-	arg0.abilitysTF:align(#var2)
-	setActive(arg0.abilityArr, #var2 > 4)
-	arg0.talentsTF:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = var1[arg1 + 1]
+	arg0_21.abilitysTF:align(#var2_21)
+	setActive(arg0_21.abilityArr, #var2_21 > 4)
+	arg0_21.talentsTF:make(function(arg0_23, arg1_23, arg2_23)
+		if arg0_23 == UIItemList.EventUpdate then
+			local var0_23 = var1_21[arg1_23 + 1]
 
-			setScrollText(findTF(arg2, "name_mask/name"), var0.name)
+			setScrollText(findTF(arg2_23, "name_mask/name"), var0_23.name)
 
-			local var1 = var0.type == CommanderConst.TALENT_ADDITION_RATIO and "%" or ""
+			local var1_23 = var0_23.type == CommanderConst.TALENT_ADDITION_RATIO and "%" or ""
 
-			setText(arg2:Find("Text"), var0.value .. var1)
-			setImageAlpha(arg2:Find("bg"), arg1 % 2)
+			setText(arg2_23:Find("Text"), var0_23.value .. var1_23)
+			setImageAlpha(arg2_23:Find("bg"), arg1_23 % 2)
 		end
 	end)
-	arg0.talentsTF:align(#var1)
-	setActive(arg0.talentsArr, #var1 > 4)
+	arg0_21.talentsTF:align(#var1_21)
+	setActive(arg0_21.talentsArr, #var1_21 > 4)
 end
 
-function var0.updateSkillTF(arg0, arg1, arg2)
-	setActive(arg2, arg1)
+function var0_0.updateSkillTF(arg0_24, arg1_24, arg2_24)
+	setActive(arg2_24, arg1_24)
 
-	if arg1 then
-		local var0 = arg1:getSkills()[1]
+	if arg1_24 then
+		local var0_24 = arg1_24:getSkills()[1]
 
-		GetImageSpriteFromAtlasAsync("CommanderSkillIcon/" .. var0:getConfig("icon"), "", arg2:Find("icon"))
-		setText(arg2:Find("level"), "Lv." .. var0:getLevel())
-		onButton(arg0, arg2, function()
-			arg0.callback({
+		GetImageSpriteFromAtlasAsync("CommanderSkillIcon/" .. var0_24:getConfig("icon"), "", arg2_24:Find("icon"))
+		setText(arg2_24:Find("level"), "Lv." .. var0_24:getLevel())
+		onButton(arg0_24, arg2_24, function()
+			arg0_24.callback({
 				type = LevelUIConst.COMMANDER_OP_SHOW_SKILL,
-				skill = var0
+				skill = var0_24
 			})
 		end, SFX_PANEL)
 	else
-		removeOnButton(arg2)
+		removeOnButton(arg2_24)
 	end
 end
 
-function var0.updateCommander(arg0, arg1, arg2, arg3, arg4)
-	local var0 = arg1:Find("add")
-	local var1 = arg1:Find("info")
+function var0_0.updateCommander(arg0_26, arg1_26, arg2_26, arg3_26, arg4_26)
+	local var0_26 = arg1_26:Find("add")
+	local var1_26 = arg1_26:Find("info")
 
-	if arg3 then
-		local var2 = arg1:Find("info/mask/icon")
-		local var3 = arg1:Find("info/frame")
+	if arg3_26 then
+		local var2_26 = arg1_26:Find("info/mask/icon")
+		local var3_26 = arg1_26:Find("info/frame")
 
-		GetImageSpriteFromAtlasAsync("CommanderHrz/" .. arg3:getPainting(), "", var2)
+		GetImageSpriteFromAtlasAsync("CommanderHrz/" .. arg3_26:getPainting(), "", var2_26)
 
-		local var4 = arg1:Find("info/name")
+		local var4_26 = arg1_26:Find("info/name")
 
-		if var4 then
-			setText(var4, arg3:getName())
+		if var4_26 then
+			setText(var4_26, arg3_26:getName())
 		end
 
-		local var5 = Commander.rarity2Frame(arg3:getRarity())
+		local var5_26 = Commander.rarity2Frame(arg3_26:getRarity())
 
-		setImageSprite(var3, GetSpriteFromAtlas("weaponframes", "commander_" .. var5))
+		setImageSprite(var3_26, GetSpriteFromAtlas("weaponframes", "commander_" .. var5_26))
 	end
 
-	if arg4 then
-		onButton(arg0, var1, function()
-			arg0.callback({
+	if arg4_26 then
+		onButton(arg0_26, var1_26, function()
+			arg0_26.callback({
 				type = LevelUIConst.COMMANDER_OP_ADD,
-				pos = arg2
+				pos = arg2_26
 			})
 		end, SFX_PANEL)
-		onButton(arg0, var0, function()
-			arg0.callback({
+		onButton(arg0_26, var0_26, function()
+			arg0_26.callback({
 				type = LevelUIConst.COMMANDER_OP_ADD,
-				pos = arg2
+				pos = arg2_26
 			})
 		end, SFX_PANEL)
 	end
 
-	setActive(var0, not arg3)
-	setActive(var1, arg3)
+	setActive(var0_26, not arg3_26)
+	setActive(var1_26, arg3_26)
 end
 
-function var0.OpenRecordPanel(arg0)
-	setActive(arg0.descFrameTF, false)
-	setActive(arg0.recordPanel, true)
+function var0_0.OpenRecordPanel(arg0_29)
+	setActive(arg0_29.descFrameTF, false)
+	setActive(arg0_29.recordPanel, true)
 end
 
-function var0.CloseRecordPanel(arg0)
-	setActive(arg0.descFrameTF, true)
-	setActive(arg0.recordPanel, false)
+function var0_0.CloseRecordPanel(arg0_30)
+	setActive(arg0_30.descFrameTF, true)
+	setActive(arg0_30.recordPanel, false)
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_278 = {}
+var0_0.word_template_278 = {}
 
-local var1 = var0.word_template_278
+local var1_0 = var0_0.word_template_278
 
 function temp()
-	var1.梯 = {
+	var1_0.梯 = {
 		恩 = {
 			梯 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.踢 = {
+	var1_0.踢 = {
 		掉 = {
 			你 = {
 				妈 = {
@@ -57,7 +57,7 @@ end
 temp()
 
 function temp()
-	var1.题 = {
+	var1_0.题 = {
 		板 = {
 			是 = {
 				宋 = {
@@ -75,7 +75,7 @@ end
 temp()
 
 function temp()
-	var1.題 = {
+	var1_0.題 = {
 		板 = {
 			是 = {
 				宋 = {
@@ -93,7 +93,7 @@ end
 temp()
 
 function temp()
-	var1.体 = {
+	var1_0.体 = {
 		奸 = {
 			this = true
 		},
@@ -157,7 +157,7 @@ end
 temp()
 
 function temp()
-	var1.體 = {
+	var1_0.體 = {
 		奸 = {
 			this = true
 		},
@@ -188,7 +188,7 @@ end
 temp()
 
 function temp()
-	var1.剃 = {
+	var1_0.剃 = {
 		刀 = {
 			淫 = {
 				魔 = {

@@ -1,33 +1,33 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.MVC = var0.MVC or {}
-var0.MVC.Mediator = class("MVC.Mediator")
-var0.MVC.Mediator.__name = "MVC.Mediator"
+var0_0.MVC = var0_0.MVC or {}
+var0_0.MVC.Mediator = class("MVC.Mediator")
+var0_0.MVC.Mediator.__name = "MVC.Mediator"
 
-function var0.MVC.Mediator.Ctor(arg0)
+function var0_0.MVC.Mediator.Ctor(arg0_1)
 	return
 end
 
-function var0.MVC.Mediator.Initialize(arg0)
-	var0.EventDispatcher.AttachEventDispatcher(arg0)
-	var0.EventListener.AttachEventListener(arg0)
+function var0_0.MVC.Mediator.Initialize(arg0_2)
+	var0_0.EventDispatcher.AttachEventDispatcher(arg0_2)
+	var0_0.EventListener.AttachEventListener(arg0_2)
 end
 
-function var0.MVC.Mediator.Update(arg0)
+function var0_0.MVC.Mediator.Update(arg0_3)
 	return
 end
 
-function var0.MVC.Mediator.UpdatePause(arg0)
+function var0_0.MVC.Mediator.UpdatePause(arg0_4)
 	return
 end
 
-function var0.MVC.Mediator.Dispose(arg0)
-	var0.EventListener.DetachEventListener(arg0)
-	var0.EventDispatcher.DetachEventDispatcher(arg0)
+function var0_0.MVC.Mediator.Dispose(arg0_5)
+	var0_0.EventListener.DetachEventListener(arg0_5)
+	var0_0.EventDispatcher.DetachEventDispatcher(arg0_5)
 end
 
-function var0.MVC.Mediator.GetState(arg0)
-	return arg0._state
+function var0_0.MVC.Mediator.GetState(arg0_6)
+	return arg0_6._state
 end

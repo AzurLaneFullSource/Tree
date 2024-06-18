@@ -1,162 +1,162 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.SimpleConnectionMgr = singletonClass("SimpleConnectionMgr")
+var0_0.SimpleConnectionMgr = singletonClass("SimpleConnectionMgr")
 
-local var1 = var0.SimpleConnectionMgr
-local var2 = createLog("SimpleConnectionMgr", false)
-local var3
-local var4
-local var5 = false
-local var6 = {}
-local var7
+local var1_0 = var0_0.SimpleConnectionMgr
+local var2_0 = createLog("SimpleConnectionMgr", false)
+local var3_0
+local var4_0
+local var5_0 = false
+local var6_0 = {}
+local var7_0
 
-function var1.Connect(arg0, arg1, arg2, arg3, arg4)
-	var1.stopTimer()
+function var1_0.Connect(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
+	var1_0.stopTimer()
 
-	var3 = Connection.New(arg1, arg2)
+	var3_0 = Connection.New(arg1_1, arg2_1)
 
-	var0.UIMgr.GetInstance():LoadingOn()
-	var3.onConnected:AddListener(function()
-		var0.UIMgr.GetInstance():LoadingOff()
-		var2("Simple Network Connected.")
+	var0_0.UIMgr.GetInstance():LoadingOn()
+	var3_0.onConnected:AddListener(function()
+		var0_0.UIMgr.GetInstance():LoadingOff()
+		var2_0("Simple Network Connected.")
 
-		var4 = var4 or var0.SendWindow.New(arg0, 0)
+		var4_0 = var4_0 or var0_0.SendWindow.New(arg0_1, 0)
 
-		var3.onData:AddListener(var4.onData)
+		var3_0.onData:AddListener(var4_0.onData)
 
-		var5 = true
-		var7 = false
+		var5_0 = true
+		var7_0 = false
 
-		arg3()
+		arg3_1()
 	end)
-	var3.onData:AddListener(arg0.onData)
-	var3.onError:AddListener(arg0.onError)
-	var3.onDisconnected:AddListener(arg0.onDisconnected)
+	var3_0.onData:AddListener(arg0_1.onData)
+	var3_0.onError:AddListener(arg0_1.onError)
+	var3_0.onDisconnected:AddListener(arg0_1.onDisconnected)
 
-	var7 = true
+	var7_0 = true
 
-	var3:Connect()
+	var3_0:Connect()
 
-	arg4 = defaultValue(arg4, SEND_TIMEOUT)
-	var1.timer = Timer.New(function()
-		if not var5 then
-			warning("connect timeout error (custom): " .. arg4)
-			var1.stopTimer()
-			arg0.onDisconnected(false, DISCONNECT_TIME_OUT)
+	arg4_1 = defaultValue(arg4_1, SEND_TIMEOUT)
+	var1_0.timer = Timer.New(function()
+		if not var5_0 then
+			warning("connect timeout error (custom): " .. arg4_1)
+			var1_0.stopTimer()
+			arg0_1.onDisconnected(false, DISCONNECT_TIME_OUT)
 
-			if var1.errorCB then
-				var1.errorCB()
+			if var1_0.errorCB then
+				var1_0.errorCB()
 			end
 		end
-	end, arg4, 1)
+	end, arg4_1, 1)
 
-	var1.timer:Start()
+	var1_0.timer:Start()
 end
 
-function var1.stopTimer()
-	if var1.timer then
-		var1.timer:Stop()
+function var1_0.stopTimer()
+	if var1_0.timer then
+		var1_0.timer:Stop()
 
-		var1.timer = nil
+		var1_0.timer = nil
 	end
 end
 
-function var1.onDisconnected(arg0, arg1)
-	var2("Simple Network onDisconnected: " .. tostring(arg0))
+function var1_0.onDisconnected(arg0_5, arg1_5)
+	var2_0("Simple Network onDisconnected: " .. tostring(arg0_5))
 
-	if var3 then
-		if not arg0 then
-			var3.onDisconnected:RemoveAllListeners()
+	if var3_0 then
+		if not arg0_5 then
+			var3_0.onDisconnected:RemoveAllListeners()
 		end
 
-		var3:Dispose()
+		var3_0:Dispose()
 
-		var3 = nil
+		var3_0 = nil
 	end
 
-	if arg0 then
-		var5 = false
+	if arg0_5 then
+		var5_0 = false
 	end
 
-	if var7 then
-		var0.UIMgr.GetInstance():LoadingOff()
+	if var7_0 then
+		var0_0.UIMgr.GetInstance():LoadingOff()
 	end
 
-	var7 = false
+	var7_0 = false
 end
 
-function var1.onData(arg0)
-	if var6[arg0.cmd] then
-		local var0 = var0.Packer.GetInstance():Unpack(arg0.cmd, arg0:getLuaStringBuffer())
+function var1_0.onData(arg0_6)
+	if var6_0[arg0_6.cmd] then
+		local var0_6 = var0_0.Packer.GetInstance():Unpack(arg0_6.cmd, arg0_6:getLuaStringBuffer())
 
-		for iter0, iter1 in ipairs(var6[arg0.cmd]) do
-			iter1(var0)
+		for iter0_6, iter1_6 in ipairs(var6_0[arg0_6.cmd]) do
+			iter1_6(var0_6)
 		end
 	end
 end
 
-function var1.SetErrorCB(arg0, arg1)
-	var1.errorCB = arg1
+function var1_0.SetErrorCB(arg0_7, arg1_7)
+	var1_0.errorCB = arg1_7
 end
 
-function var1.onError(arg0)
-	var0.UIMgr.GetInstance():LoadingOff()
-	var1.stopTimer()
+function var1_0.onError(arg0_8)
+	var0_0.UIMgr.GetInstance():LoadingOff()
+	var1_0.stopTimer()
 
-	arg0 = tostring(arg0)
+	arg0_8 = tostring(arg0_8)
 
-	var2("Simple Network Error: " .. arg0)
+	var2_0("Simple Network Error: " .. arg0_8)
 
-	if var3 then
-		var3:Dispose()
+	if var3_0 then
+		var3_0:Dispose()
 
-		var3 = nil
+		var3_0 = nil
 	end
 
-	if var7 then
-		var7 = false
+	if var7_0 then
+		var7_0 = false
 	end
 
-	if var1.errorCB then
-		var1.errorCB()
+	if var1_0.errorCB then
+		var1_0.errorCB()
 	end
 end
 
-function var1.Send(arg0, arg1, arg2, arg3, arg4, arg5, arg6)
-	if not var5 then
-		warning("Simple Network is not connected. msgid " .. arg1)
+function var1_0.Send(arg0_9, arg1_9, arg2_9, arg3_9, arg4_9, arg5_9, arg6_9)
+	if not var5_0 then
+		warning("Simple Network is not connected. msgid " .. arg1_9)
 
 		return
 	end
 
-	var4:Queue(arg1, arg2, arg3, arg4, arg5, nil, arg6)
+	var4_0:Queue(arg1_9, arg2_9, arg3_9, arg4_9, arg5_9, nil, arg6_9)
 end
 
-function var1.setPacketIdx(arg0, arg1)
-	var4:setPacketIdx(arg1)
+function var1_0.setPacketIdx(arg0_10, arg1_10)
+	var4_0:setPacketIdx(arg1_10)
 end
 
-function var1.On(arg0, arg1, arg2)
-	if var6[arg1] == nil then
-		var6[arg1] = {}
+function var1_0.On(arg0_11, arg1_11, arg2_11)
+	if var6_0[arg1_11] == nil then
+		var6_0[arg1_11] = {}
 	end
 
-	table.insert(var6[arg1], arg2)
+	table.insert(var6_0[arg1_11], arg2_11)
 end
 
-function var1.Off(arg0, arg1, arg2)
-	if var6[arg1] == nil then
+function var1_0.Off(arg0_12, arg1_12, arg2_12)
+	if var6_0[arg1_12] == nil then
 		return
 	end
 
-	if arg2 == nil then
-		var6[arg1] = nil
+	if arg2_12 == nil then
+		var6_0[arg1_12] = nil
 	else
-		for iter0, iter1 in ipairs(var6[arg1]) do
-			if iter1 == arg2 then
-				table.remove(var6[arg1], iter0)
+		for iter0_12, iter1_12 in ipairs(var6_0[arg1_12]) do
+			if iter1_12 == arg2_12 then
+				table.remove(var6_0[arg1_12], iter0_12)
 
 				break
 			end
@@ -164,45 +164,45 @@ function var1.Off(arg0, arg1, arg2)
 	end
 end
 
-function var1.Disconnect(arg0)
-	var6 = {}
+function var1_0.Disconnect(arg0_13)
+	var6_0 = {}
 
-	var2("Simple Network Disconnect !!!")
+	var2_0("Simple Network Disconnect !!!")
 
-	if var3 then
-		var3:Dispose()
+	if var3_0 then
+		var3_0:Dispose()
 
-		var3 = nil
+		var3_0 = nil
 	end
 
-	var4 = nil
-	var5 = false
+	var4_0 = nil
+	var5_0 = false
 end
 
-function var1.Reconnect(arg0, arg1)
-	arg0:Disconnect()
+function var1_0.Reconnect(arg0_14, arg1_14)
+	arg0_14:Disconnect()
 
-	if var1.errorCB then
-		var1.errorCB()
+	if var1_0.errorCB then
+		var1_0.errorCB()
 	end
 end
 
-function var1.resetHBTimer(arg0)
+function var1_0.resetHBTimer(arg0_15)
 	return
 end
 
-function var1.getConnection(arg0)
-	return var3
+function var1_0.getConnection(arg0_16)
+	return var3_0
 end
 
-function var1.isConnecting(arg0)
-	return var7
+function var1_0.isConnecting(arg0_17)
+	return var7_0
 end
 
-function var1.isConnected(arg0)
-	return var5
+function var1_0.isConnected(arg0_18)
+	return var5_0
 end
 
-function var1.SwitchProxy(arg0)
+function var1_0.SwitchProxy(arg0_19)
 	return
 end

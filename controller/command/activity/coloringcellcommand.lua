@@ -1,42 +1,42 @@
-﻿local var0 = class("ColoringCellCommand", pm.SimpleCommand)
+﻿local var0_0 = class("ColoringCellCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.activityId
-	local var2 = var0.id
-	local var3 = var0.cells
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.activityId
+	local var2_1 = var0_1.id
+	local var3_1 = var0_1.cells
 
 	pg.ConnectionMgr.GetInstance():Send(26004, {
-		act_id = var1,
-		id = var2,
-		cell_list = var3
-	}, 26005, function(arg0)
-		if arg0.result == 0 then
-			local var0 = getProxy(ColoringProxy)
-			local var1 = var0:getColorItems()
-			local var2 = var0:getColorGroup(var2)
-			local var3 = var2:getConfig("color_id_list")
+		act_id = var1_1,
+		id = var2_1,
+		cell_list = var3_1
+	}, 26005, function(arg0_2)
+		if arg0_2.result == 0 then
+			local var0_2 = getProxy(ColoringProxy)
+			local var1_2 = var0_2:getColorItems()
+			local var2_2 = var0_2:getColorGroup(var2_1)
+			local var3_2 = var2_2:getConfig("color_id_list")
 
-			_.each(var3, function(arg0)
-				var2:setFill(arg0.row, arg0.column, arg0.color)
+			_.each(var3_1, function(arg0_3)
+				var2_2:setFill(arg0_3.row, arg0_3.column, arg0_3.color)
 
-				if not var2:canBeCustomised() and arg0.color > 0 then
-					local var0 = var3[arg0.color]
+				if not var2_2:canBeCustomised() and arg0_3.color > 0 then
+					local var0_3 = var3_2[arg0_3.color]
 
-					var1[var0] = math.max(var1[var0] - 1, 0)
+					var1_2[var0_3] = math.max(var1_2[var0_3] - 1, 0)
 				end
 			end)
 
-			local var4 = var0:checkState()
+			local var4_2 = var0_2:checkState()
 
-			arg0:sendNotification(GAME.COLORING_CELL_DONE, {
-				cells = var3,
-				stateChange = var4
+			arg0_1:sendNotification(GAME.COLORING_CELL_DONE, {
+				cells = var3_1,
+				stateChange = var4_2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("coloring_cell", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("coloring_cell", arg0_2.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

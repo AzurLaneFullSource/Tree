@@ -1,304 +1,304 @@
-﻿local var0 = class("WorldMediaCollectionMemoryGroupLayer", import(".WorldMediaCollectionSubLayer"))
+﻿local var0_0 = class("WorldMediaCollectionMemoryGroupLayer", import(".WorldMediaCollectionSubLayer"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "WorldMediaCollectionMemoryGroupUI"
 end
 
-var0.PAGE_ACTIVITY = 2
+var0_0.PAGE_ACTIVITY = 2
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
-	assert(arg0.viewParent, "Need assign ViewParent for " .. arg0.__cname)
+function var0_0.OnInit(arg0_2)
+	var0_0.super.OnInit(arg0_2)
+	assert(arg0_2.viewParent, "Need assign ViewParent for " .. arg0_2.__cname)
 
-	arg0.memoryGroups = _.map(pg.memory_group.all, function(arg0)
-		return pg.memory_group[arg0]
+	arg0_2.memoryGroups = _.map(pg.memory_group.all, function(arg0_3)
+		return pg.memory_group[arg0_3]
 	end)
-	arg0.memoryGroupList = arg0:findTF("GroupRect"):GetComponent("LScrollRect")
+	arg0_2.memoryGroupList = arg0_2:findTF("GroupRect"):GetComponent("LScrollRect")
 
-	function arg0.memoryGroupList.onInitItem(arg0)
-		arg0:onInitMemoryGroup(arg0)
+	function arg0_2.memoryGroupList.onInitItem(arg0_4)
+		arg0_2:onInitMemoryGroup(arg0_4)
 	end
 
-	function arg0.memoryGroupList.onUpdateItem(arg0, arg1)
-		arg0:onUpdateMemoryGroup(arg0 + 1, arg1)
+	function arg0_2.memoryGroupList.onUpdateItem(arg0_5, arg1_5)
+		arg0_2:onUpdateMemoryGroup(arg0_5 + 1, arg1_5)
 	end
 
-	arg0.memoryGroupInfos = {}
+	arg0_2.memoryGroupInfos = {}
 
-	local var0 = arg0:findTF("GroupItem", arg0.memoryGroupList)
+	local var0_2 = arg0_2:findTF("GroupItem", arg0_2.memoryGroupList)
 
-	setActive(var0, false)
+	setActive(var0_2, false)
 
-	arg0.memoryGroupViewport = arg0:findTF("Viewport", arg0.memoryGroupList)
-	arg0.memoryGroupsGrid = arg0:findTF("Viewport/Content", arg0.memoryGroupList):GetComponent(typeof(GridLayoutGroup))
-	arg0.memoryTogGroup = arg0:findTF("Toggles", arg0._tf)
+	arg0_2.memoryGroupViewport = arg0_2:findTF("Viewport", arg0_2.memoryGroupList)
+	arg0_2.memoryGroupsGrid = arg0_2:findTF("Viewport/Content", arg0_2.memoryGroupList):GetComponent(typeof(GridLayoutGroup))
+	arg0_2.memoryTogGroup = arg0_2:findTF("Toggles", arg0_2._tf)
 
-	setActive(arg0.memoryTogGroup, true)
+	setActive(arg0_2.memoryTogGroup, true)
 
-	arg0.memoryToggles = {}
+	arg0_2.memoryToggles = {}
 
-	for iter0 = 0, 3 do
-		arg0.memoryToggles[iter0 + 1] = arg0:findTF(iter0, arg0.memoryTogGroup)
+	for iter0_2 = 0, 3 do
+		arg0_2.memoryToggles[iter0_2 + 1] = arg0_2:findTF(iter0_2, arg0_2.memoryTogGroup)
 	end
 
-	arg0.memoryFilterIndex = {
+	arg0_2.memoryFilterIndex = {
 		true,
 		true,
 		true
 	}
-	arg0.memoryActivityTogGroup = arg0:findTF("ActivityBar", arg0._tf)
+	arg0_2.memoryActivityTogGroup = arg0_2:findTF("ActivityBar", arg0_2._tf)
 
-	setActive(arg0.memoryActivityTogGroup, true)
+	setActive(arg0_2.memoryActivityTogGroup, true)
 
-	arg0.memoryActivityToggles = {}
+	arg0_2.memoryActivityToggles = {}
 
-	for iter1 = 0, 3 do
-		arg0.memoryActivityToggles[iter1 + 1] = arg0:findTF(iter1, arg0.memoryActivityTogGroup)
+	for iter1_2 = 0, 3 do
+		arg0_2.memoryActivityToggles[iter1_2 + 1] = arg0_2:findTF(iter1_2, arg0_2.memoryActivityTogGroup)
 	end
 
-	arg0.activityFilter = 0
+	arg0_2.activityFilter = 0
 
-	arg0:UpdateActivityBar()
+	arg0_2:UpdateActivityBar()
 
-	for iter2, iter3 in ipairs(arg0.memoryActivityToggles) do
-		onButton(arg0, iter3, function()
-			if iter2 == arg0.activityFilter then
-				arg0.activityFilter = 0
-			elseif iter2 ~= arg0.activityFilter then
-				arg0.activityFilter = iter2
+	for iter2_2, iter3_2 in ipairs(arg0_2.memoryActivityToggles) do
+		onButton(arg0_2, iter3_2, function()
+			if iter2_2 == arg0_2.activityFilter then
+				arg0_2.activityFilter = 0
+			elseif iter2_2 ~= arg0_2.activityFilter then
+				arg0_2.activityFilter = iter2_2
 			end
 
-			arg0:UpdateActivityBar()
-			arg0:MemoryFilter()
+			arg0_2:UpdateActivityBar()
+			arg0_2:MemoryFilter()
 		end, SFX_UI_TAG)
 	end
 
-	setText(arg0.memoryActivityToggles[1]:Find("Image1/Text"), i18n("memory_actiivty_ex"))
-	setText(arg0.memoryActivityToggles[1]:Find("Image2/Text"), i18n("memory_actiivty_ex"))
-	setText(arg0.memoryActivityToggles[2]:Find("Image1/Text"), i18n("memory_activity_sp"))
-	setText(arg0.memoryActivityToggles[2]:Find("Image2/Text"), i18n("memory_activity_sp"))
-	setText(arg0.memoryActivityToggles[3]:Find("Image1/Text"), i18n("memory_activity_daily"))
-	setText(arg0.memoryActivityToggles[3]:Find("Image2/Text"), i18n("memory_activity_daily"))
-	setText(arg0.memoryActivityToggles[4]:Find("Image1/Text"), i18n("memory_activity_others"))
-	setText(arg0.memoryActivityToggles[4]:Find("Image2/Text"), i18n("memory_activity_others"))
+	setText(arg0_2.memoryActivityToggles[1]:Find("Image1/Text"), i18n("memory_actiivty_ex"))
+	setText(arg0_2.memoryActivityToggles[1]:Find("Image2/Text"), i18n("memory_actiivty_ex"))
+	setText(arg0_2.memoryActivityToggles[2]:Find("Image1/Text"), i18n("memory_activity_sp"))
+	setText(arg0_2.memoryActivityToggles[2]:Find("Image2/Text"), i18n("memory_activity_sp"))
+	setText(arg0_2.memoryActivityToggles[3]:Find("Image1/Text"), i18n("memory_activity_daily"))
+	setText(arg0_2.memoryActivityToggles[3]:Find("Image2/Text"), i18n("memory_activity_daily"))
+	setText(arg0_2.memoryActivityToggles[4]:Find("Image1/Text"), i18n("memory_activity_others"))
+	setText(arg0_2.memoryActivityToggles[4]:Find("Image2/Text"), i18n("memory_activity_others"))
 
-	arg0.contextData.toggle = arg0.contextData.toggle or 1
+	arg0_2.contextData.toggle = arg0_2.contextData.toggle or 1
 
-	local var1 = arg0.contextData.toggle
+	local var1_2 = arg0_2.contextData.toggle
 
-	triggerToggle(arg0.memoryToggles[var1], true)
-	arg0:SwitchMemoryFilter(var1)
+	triggerToggle(arg0_2.memoryToggles[var1_2], true)
+	arg0_2:SwitchMemoryFilter(var1_2)
 
-	for iter4, iter5 in ipairs(arg0.memoryToggles) do
-		onToggle(arg0, iter5, function(arg0)
-			if not arg0 then
+	for iter4_2, iter5_2 in ipairs(arg0_2.memoryToggles) do
+		onToggle(arg0_2, iter5_2, function(arg0_7)
+			if not arg0_7 then
 				return
 			end
 
-			arg0:SwitchMemoryFilter(iter4)
-			arg0:MemoryFilter()
+			arg0_2:SwitchMemoryFilter(iter4_2)
+			arg0_2:MemoryFilter()
 		end, SFX_UI_TAG)
 	end
 
-	arg0.viewParent:Add2TopContainer(arg0.memoryTogGroup)
+	arg0_2.viewParent:Add2TopContainer(arg0_2.memoryTogGroup)
 
-	arg0.loader = AutoLoader.New()
+	arg0_2.loader = AutoLoader.New()
 
-	arg0:MemoryFilter()
+	arg0_2:MemoryFilter()
 
-	arg0.rectAnchorX = arg0:findTF("GroupRect").anchoredPosition.x
+	arg0_2.rectAnchorX = arg0_2:findTF("GroupRect").anchoredPosition.x
 
-	arg0:UpdateView()
+	arg0_2:UpdateView()
 end
 
-function var0.Show(arg0)
-	var0.super.Show(arg0)
-	setActive(arg0.memoryTogGroup, true)
+function var0_0.Show(arg0_8)
+	var0_0.super.Show(arg0_8)
+	setActive(arg0_8.memoryTogGroup, true)
 end
 
-function var0.Hide(arg0)
-	setActive(arg0.memoryTogGroup, false)
-	var0.super.Hide(arg0)
+function var0_0.Hide(arg0_9)
+	setActive(arg0_9.memoryTogGroup, false)
+	var0_0.super.Hide(arg0_9)
 end
 
-function var0.SwitchMemoryFilter(arg0, arg1)
-	if arg1 == 1 then
-		arg0.memoryFilterIndex = {
+function var0_0.SwitchMemoryFilter(arg0_10, arg1_10)
+	if arg1_10 == 1 then
+		arg0_10.memoryFilterIndex = {
 			true,
 			true,
 			true
 		}
 	else
-		for iter0 in ipairs(arg0.memoryFilterIndex) do
-			arg0.memoryFilterIndex[iter0] = arg1 - 1 == iter0
+		for iter0_10 in ipairs(arg0_10.memoryFilterIndex) do
+			arg0_10.memoryFilterIndex[iter0_10] = arg1_10 - 1 == iter0_10
 		end
 
-		if arg1 - 1 == var0.PAGE_ACTIVITY then
-			arg0.activityFilter = 0
+		if arg1_10 - 1 == var0_0.PAGE_ACTIVITY then
+			arg0_10.activityFilter = 0
 
-			arg0:UpdateActivityBar()
+			arg0_10:UpdateActivityBar()
 		end
 	end
 end
 
-function var0.MemoryFilter(arg0)
-	table.clear(arg0.memoryGroups)
+function var0_0.MemoryFilter(arg0_11)
+	table.clear(arg0_11.memoryGroups)
 
-	local var0 = not _.all(arg0.memoryFilterIndex, function(arg0)
-		return arg0
-	end) and arg0.memoryFilterIndex[var0.PAGE_ACTIVITY]
+	local var0_11 = not _.all(arg0_11.memoryFilterIndex, function(arg0_12)
+		return arg0_12
+	end) and arg0_11.memoryFilterIndex[var0_0.PAGE_ACTIVITY]
 
-	for iter0, iter1 in ipairs(pg.memory_group.all) do
-		local var1 = pg.memory_group[iter1]
+	for iter0_11, iter1_11 in ipairs(pg.memory_group.all) do
+		local var1_11 = pg.memory_group[iter1_11]
 
-		if arg0.memoryFilterIndex[var1.type] then
-			if var0 then
-				if arg0.activityFilter == 0 or arg0.activityFilter == var1.subtype then
-					table.insert(arg0.memoryGroups, var1)
+		if arg0_11.memoryFilterIndex[var1_11.type] then
+			if var0_11 then
+				if arg0_11.activityFilter == 0 or arg0_11.activityFilter == var1_11.subtype then
+					table.insert(arg0_11.memoryGroups, var1_11)
 				end
 			else
-				table.insert(arg0.memoryGroups, var1)
+				table.insert(arg0_11.memoryGroups, var1_11)
 			end
 		end
 	end
 
-	table.sort(arg0.memoryGroups, function(arg0, arg1)
-		return arg0.id < arg1.id
+	table.sort(arg0_11.memoryGroups, function(arg0_13, arg1_13)
+		return arg0_13.id < arg1_13.id
 	end)
-	arg0.memoryGroupList:SetTotalCount(#arg0.memoryGroups, 0)
-	setActive(arg0.memoryActivityTogGroup, var0)
+	arg0_11.memoryGroupList:SetTotalCount(#arg0_11.memoryGroups, 0)
+	setActive(arg0_11.memoryActivityTogGroup, var0_11)
 end
 
-function var0.onInitMemoryGroup(arg0, arg1)
-	if arg0.exited then
+function var0_0.onInitMemoryGroup(arg0_14, arg1_14)
+	if arg0_14.exited then
 		return
 	end
 
-	onButton(arg0, arg1, function()
-		local var0 = arg0.memoryGroupInfos[arg1]
+	onButton(arg0_14, arg1_14, function()
+		local var0_15 = arg0_14.memoryGroupInfos[arg1_14]
 
-		if var0 then
-			local var1 = getProxy(PlayerProxy):getRawData().id
+		if var0_15 then
+			local var1_15 = getProxy(PlayerProxy):getRawData().id
 
-			PlayerPrefs.DeleteKey("MEMORY_GROUP_NOTIFICATION" .. var1 .. " " .. var0.id)
-			arg0.viewParent:ShowSubMemories(var0)
+			PlayerPrefs.DeleteKey("MEMORY_GROUP_NOTIFICATION" .. var1_15 .. " " .. var0_15.id)
+			arg0_14.viewParent:ShowSubMemories(var0_15)
 		end
 	end, SOUND_BACK)
 end
 
-function var0.onUpdateMemoryGroup(arg0, arg1, arg2)
-	if arg0.exited then
+function var0_0.onUpdateMemoryGroup(arg0_16, arg1_16, arg2_16)
+	if arg0_16.exited then
 		return
 	end
 
-	local var0 = arg0.memoryGroups[arg1]
+	local var0_16 = arg0_16.memoryGroups[arg1_16]
 
-	assert(var0, "MemoryGroup Missing Config Index " .. arg1)
+	assert(var0_16, "MemoryGroup Missing Config Index " .. arg1_16)
 
-	arg0.memoryGroupInfos[arg2] = var0
+	arg0_16.memoryGroupInfos[arg2_16] = var0_16
 
-	setText(tf(arg2):Find("title"), var0.title)
-	arg0.loader:GetSpriteQuiet("memoryicon/" .. var0.icon, "", tf(arg2):Find("BG"))
+	setText(tf(arg2_16):Find("title"), var0_16.title)
+	arg0_16.loader:GetSpriteQuiet("memoryicon/" .. var0_16.icon, "", tf(arg2_16):Find("BG"))
 
-	local var1 = getProxy(PlayerProxy):getRawData().id
-	local var2 = PlayerPrefs.GetInt("MEMORY_GROUP_NOTIFICATION" .. var1 .. " " .. var0.id, 0) == 1
+	local var1_16 = getProxy(PlayerProxy):getRawData().id
+	local var2_16 = PlayerPrefs.GetInt("MEMORY_GROUP_NOTIFICATION" .. var1_16 .. " " .. var0_16.id, 0) == 1
 
-	setActive(tf(arg2):Find("Tip"), var2)
+	setActive(tf(arg2_16):Find("Tip"), var2_16)
 
-	local var3 = #var0.memories
-	local var4 = _.reduce(var0.memories, 0, function(arg0, arg1)
-		local var0 = pg.memory_template[arg1]
+	local var3_16 = #var0_16.memories
+	local var4_16 = _.reduce(var0_16.memories, 0, function(arg0_17, arg1_17)
+		local var0_17 = pg.memory_template[arg1_17]
 
-		if var0.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(var0.story, true) then
-			arg0 = arg0 + 1
+		if var0_17.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(var0_17.story, true) then
+			arg0_17 = arg0_17 + 1
 		end
 
-		return arg0
+		return arg0_17
 	end)
 
-	setText(tf(arg2):Find("count"), var4 .. "/" .. var3)
+	setText(tf(arg2_16):Find("count"), var4_16 .. "/" .. var3_16)
 end
 
-function var0.Return2MemoryGroup(arg0)
-	local var0 = arg0.contextData.memoryGroup
+function var0_0.Return2MemoryGroup(arg0_18)
+	local var0_18 = arg0_18.contextData.memoryGroup
 
-	if not var0 then
+	if not var0_18 then
 		return
 	end
 
-	local var1 = 0
+	local var1_18 = 0
 
-	for iter0, iter1 in ipairs(arg0.memoryGroups) do
-		if iter1.id == var0 then
-			var1 = iter0
+	for iter0_18, iter1_18 in ipairs(arg0_18.memoryGroups) do
+		if iter1_18.id == var0_18 then
+			var1_18 = iter0_18
 
 			break
 		end
 	end
 
-	local var2 = arg0:GetIndexRatio(var1)
+	local var2_18 = arg0_18:GetIndexRatio(var1_18)
 
-	arg0.memoryGroupList:SetTotalCount(#arg0.memoryGroups, var2)
+	arg0_18.memoryGroupList:SetTotalCount(#arg0_18.memoryGroups, var2_18)
 end
 
-function var0.SwitchReddotMemory(arg0)
-	local var0 = 0
-	local var1 = getProxy(PlayerProxy):getRawData().id
+function var0_0.SwitchReddotMemory(arg0_19)
+	local var0_19 = 0
+	local var1_19 = getProxy(PlayerProxy):getRawData().id
 
-	for iter0, iter1 in ipairs(arg0.memoryGroups) do
-		if PlayerPrefs.GetInt("MEMORY_GROUP_NOTIFICATION" .. var1 .. " " .. iter1.id, 0) == 1 then
-			var0 = iter0
+	for iter0_19, iter1_19 in ipairs(arg0_19.memoryGroups) do
+		if PlayerPrefs.GetInt("MEMORY_GROUP_NOTIFICATION" .. var1_19 .. " " .. iter1_19.id, 0) == 1 then
+			var0_19 = iter0_19
 
 			break
 		end
 	end
 
-	if var0 == 0 then
+	if var0_19 == 0 then
 		return
 	end
 
-	local var2 = arg0:GetIndexRatio(var0)
+	local var2_19 = arg0_19:GetIndexRatio(var0_19)
 
-	arg0.memoryGroupList:SetTotalCount(#arg0.memoryGroups, var2)
+	arg0_19.memoryGroupList:SetTotalCount(#arg0_19.memoryGroups, var2_19)
 end
 
-function var0.GetIndexRatio(arg0, arg1)
-	local var0 = 0
+function var0_0.GetIndexRatio(arg0_20, arg1_20)
+	local var0_20 = 0
 
-	if arg1 > 0 then
-		local var1 = arg0.memoryGroupList
-		local var2 = arg0.memoryGroupsGrid.cellSize.y + arg0.memoryGroupsGrid.spacing.y
-		local var3 = arg0.memoryGroupsGrid.constraintCount
-		local var4 = var2 * math.ceil(#arg0.memoryGroups / var3)
+	if arg1_20 > 0 then
+		local var1_20 = arg0_20.memoryGroupList
+		local var2_20 = arg0_20.memoryGroupsGrid.cellSize.y + arg0_20.memoryGroupsGrid.spacing.y
+		local var3_20 = arg0_20.memoryGroupsGrid.constraintCount
+		local var4_20 = var2_20 * math.ceil(#arg0_20.memoryGroups / var3_20)
 
-		var0 = (var2 * math.floor((arg1 - 1) / var3) + var1.paddingFront) / (var4 - arg0.memoryGroupViewport.rect.height)
-		var0 = Mathf.Clamp01(var0)
+		var0_20 = (var2_20 * math.floor((arg1_20 - 1) / var3_20) + var1_20.paddingFront) / (var4_20 - arg0_20.memoryGroupViewport.rect.height)
+		var0_20 = Mathf.Clamp01(var0_20)
 	end
 
-	return var0
+	return var0_20
 end
 
-function var0.UpdateView(arg0)
-	local var0 = WorldMediaCollectionScene.WorldRecordLock()
+function var0_0.UpdateView(arg0_21)
+	local var0_21 = WorldMediaCollectionScene.WorldRecordLock()
 
-	setAnchoredPosition(arg0:findTF("GroupRect"), {
-		x = var0 and 0 or arg0.rectAnchorX
+	setAnchoredPosition(arg0_21:findTF("GroupRect"), {
+		x = var0_21 and 0 or arg0_21.rectAnchorX
 	})
 
-	for iter0, iter1 in ipairs(arg0.memoryActivityToggles) do
-		setActive(iter1, _.any(pg.memory_group.all, function(arg0)
-			return pg.memory_group[arg0].subtype == iter0
+	for iter0_21, iter1_21 in ipairs(arg0_21.memoryActivityToggles) do
+		setActive(iter1_21, _.any(pg.memory_group.all, function(arg0_22)
+			return pg.memory_group[arg0_22].subtype == iter0_21
 		end))
 	end
 end
 
-function var0.UpdateActivityBar(arg0)
-	for iter0, iter1 in ipairs(arg0.memoryActivityToggles) do
-		local var0 = arg0.activityFilter == iter0
+function var0_0.UpdateActivityBar(arg0_23)
+	for iter0_23, iter1_23 in ipairs(arg0_23.memoryActivityToggles) do
+		local var0_23 = arg0_23.activityFilter == iter0_23
 
-		setActive(iter1:Find("Image1"), not var0)
-		setActive(iter1:Find("Image2"), var0)
+		setActive(iter1_23:Find("Image1"), not var0_23)
+		setActive(iter1_23:Find("Image2"), var0_23)
 	end
 end
 
-return var0
+return var0_0

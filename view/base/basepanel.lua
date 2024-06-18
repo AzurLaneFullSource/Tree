@@ -1,68 +1,68 @@
-﻿local var0 = class("BasePanel")
+﻿local var0_0 = class("BasePanel")
 
-function var0.Ctor(arg0, arg1)
-	assert(arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	assert(arg1_1)
 
-	arg0._go = arg1
-	arg0._tf = arg1.transform
+	arg0_1._go = arg1_1
+	arg0_1._tf = arg1_1.transform
 
-	function arg0.emit()
+	function arg0_1.emit()
 		assert(false, "can not emit event beforce attach to a parent ui.")
 	end
 
-	arg0:init()
+	arg0_1:init()
 end
 
-function var0.init(arg0)
+function var0_0.init(arg0_3)
 	return
 end
 
-function var0.attach(arg0, arg1)
-	assert(arg1)
+function var0_0.attach(arg0_4, arg1_4)
+	assert(arg1_4)
 
-	arg0.exited = false
-	arg0.parent = arg1
-	arg0.contextData = arg1.contextData
+	arg0_4.exited = false
+	arg0_4.parent = arg1_4
+	arg0_4.contextData = arg1_4.contextData
 
-	function arg0.emit(arg0, arg1, ...)
-		if arg0.parent then
-			arg0.parent:emit(arg1, ...)
+	function arg0_4.emit(arg0_5, arg1_5, ...)
+		if arg0_5.parent then
+			arg0_5.parent:emit(arg1_5, ...)
 		end
 	end
 
-	setActive(arg0._go, true)
-	pg.DelegateInfo.New(arg0)
+	setActive(arg0_4._go, true)
+	pg.DelegateInfo.New(arg0_4)
 end
 
-function var0.detach(arg0)
-	if not arg0.exited then
-		setActive(arg0._go, false)
-		pg.DelegateInfo.Dispose(arg0)
-		arg0:clear()
+function var0_0.detach(arg0_6)
+	if not arg0_6.exited then
+		setActive(arg0_6._go, false)
+		pg.DelegateInfo.Dispose(arg0_6)
+		arg0_6:clear()
 
-		arg0.parent = nil
-		arg0.emit = nil
-		arg0.exited = true
+		arg0_6.parent = nil
+		arg0_6.emit = nil
+		arg0_6.exited = true
 	end
 end
 
-function var0.findTF(arg0, arg1, arg2)
-	assert(arg0._tf, "transform should exist")
+function var0_0.findTF(arg0_7, arg1_7, arg2_7)
+	assert(arg0_7._tf, "transform should exist")
 
-	return findTF(arg2 or arg0._tf, arg1)
+	return findTF(arg2_7 or arg0_7._tf, arg1_7)
 end
 
-function var0.getTpl(arg0, arg1, arg2)
-	local var0 = arg0:findTF(arg1, arg2)
+function var0_0.getTpl(arg0_8, arg1_8, arg2_8)
+	local var0_8 = arg0_8:findTF(arg1_8, arg2_8)
 
-	var0:SetParent(arg0._tf, false)
-	SetActive(var0, false)
+	var0_8:SetParent(arg0_8._tf, false)
+	SetActive(var0_8, false)
 
-	return var0
+	return var0_8
 end
 
-function var0.clear(arg0)
+function var0_0.clear(arg0_9)
 	return
 end
 
-return var0
+return var0_0

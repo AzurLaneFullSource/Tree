@@ -1,140 +1,140 @@
-﻿local var0 = class("SpWeaponInfoMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("SpWeaponInfoMediator", import("view.base.ContextMediator"))
 
-var0.ON_DESTROY = "SpWeaponInfoMediator:ON_DESTROY"
-var0.ON_EQUIP = "SpWeaponInfoMediator:ON_EQUIP"
-var0.ON_INTENSIFY = "SpWeaponInfoMediator.ON_INTENSIFY"
-var0.ON_CHANGE = "SpWeaponInfoMediator.ON_CHANGE"
-var0.ON_UNEQUIP = "SpWeaponInfoMediator:ON_UNEQUIP"
-var0.ON_MOVE = "SpWeaponInfoMediator:ON_MOVE"
-var0.ON_MODIFY = "SpWeaponInfoMediator:ON_MODIFY"
+var0_0.ON_DESTROY = "SpWeaponInfoMediator:ON_DESTROY"
+var0_0.ON_EQUIP = "SpWeaponInfoMediator:ON_EQUIP"
+var0_0.ON_INTENSIFY = "SpWeaponInfoMediator.ON_INTENSIFY"
+var0_0.ON_CHANGE = "SpWeaponInfoMediator.ON_CHANGE"
+var0_0.ON_UNEQUIP = "SpWeaponInfoMediator:ON_UNEQUIP"
+var0_0.ON_MOVE = "SpWeaponInfoMediator:ON_MOVE"
+var0_0.ON_MODIFY = "SpWeaponInfoMediator:ON_MODIFY"
 
-function var0.register(arg0)
-	arg0:BindEvent()
+function var0_0.register(arg0_1)
+	arg0_1:BindEvent()
 
 	if getProxy(ContextProxy):getCurrentContext().scene == SCENE.SPWEAPON_STOREHOUSE then
-		arg0.viewComponent.fromEquipmentView = true
+		arg0_1.viewComponent.fromEquipmentView = true
 	end
 
-	local var0 = getProxy(BayProxy):getShipById()
-	local var1, var2 = unpack(arg0.contextData.shipVO and {
-		arg0.contextData.shipVO:GetSpWeapon(),
-		arg0.contextData.shipVO
+	local var0_1 = getProxy(BayProxy):getShipById()
+	local var1_1, var2_1 = unpack(arg0_1.contextData.shipVO and {
+		arg0_1.contextData.shipVO:GetSpWeapon(),
+		arg0_1.contextData.shipVO
 	} or {
-		EquipmentProxy.StaticGetSpWeapon(arg0.contextData.shipId, arg0.contextData.spWeaponUid)
+		EquipmentProxy.StaticGetSpWeapon(arg0_1.contextData.shipId, arg0_1.contextData.spWeaponUid)
 	})
 
-	if arg0.contextData.spWeaponConfigId then
-		var1 = SpWeapon.New({
-			id = arg0.contextData.spWeaponConfigId
+	if arg0_1.contextData.spWeaponConfigId then
+		var1_1 = SpWeapon.New({
+			id = arg0_1.contextData.spWeaponConfigId
 		})
 	end
 
-	local var3, var4 = EquipmentProxy.StaticGetSpWeapon(arg0.contextData.oldShipId, arg0.contextData.oldSpWeaponUid)
+	local var3_1, var4_1 = EquipmentProxy.StaticGetSpWeapon(arg0_1.contextData.oldShipId, arg0_1.contextData.oldSpWeaponUid)
 
-	arg0.viewComponent:setShip(var2, var4)
-	arg0.viewComponent:setEquipment(var1, var3)
+	arg0_1.viewComponent:setShip(var2_1, var4_1)
+	arg0_1.viewComponent:setEquipment(var1_1, var3_1)
 
-	local var5 = getProxy(PlayerProxy):getData()
+	local var5_1 = getProxy(PlayerProxy):getData()
 
-	arg0.viewComponent:setPlayer(var5)
+	arg0_1.viewComponent:setPlayer(var5_1)
 end
 
-function var0.BindEvent(arg0)
-	arg0:bind(var0.ON_EQUIP, function(arg0)
-		if arg0.contextData.oldShipId then
-			arg0:sendNotification(GAME.EQUIP_SPWEAPON_FROM_SHIP, {
-				spWeaponUid = arg0.contextData.oldSpWeaponUid,
-				oldShipId = arg0.contextData.oldShipId,
-				shipId = arg0.contextData.shipId
+function var0_0.BindEvent(arg0_2)
+	arg0_2:bind(var0_0.ON_EQUIP, function(arg0_3)
+		if arg0_2.contextData.oldShipId then
+			arg0_2:sendNotification(GAME.EQUIP_SPWEAPON_FROM_SHIP, {
+				spWeaponUid = arg0_2.contextData.oldSpWeaponUid,
+				oldShipId = arg0_2.contextData.oldShipId,
+				shipId = arg0_2.contextData.shipId
 			})
 		else
-			arg0:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
-				spWeaponUid = arg0.contextData.oldSpWeaponUid,
-				shipId = arg0.contextData.shipId
+			arg0_2:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
+				spWeaponUid = arg0_2.contextData.oldSpWeaponUid,
+				shipId = arg0_2.contextData.shipId
 			})
 		end
 	end)
-	arg0:bind(var0.ON_UNEQUIP, function(arg0)
-		arg0:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
-			shipId = arg0.contextData.shipId
+	arg0_2:bind(var0_0.ON_UNEQUIP, function(arg0_4)
+		arg0_2:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
+			shipId = arg0_2.contextData.shipId
 		})
-		arg0.viewComponent:emit(BaseUI.ON_CLOSE)
+		arg0_2.viewComponent:emit(BaseUI.ON_CLOSE)
 	end)
-	arg0:bind(var0.ON_MODIFY, function(arg0)
-		arg0:addSubLayers(Context.New({
+	arg0_2:bind(var0_0.ON_MODIFY, function(arg0_5)
+		arg0_2:addSubLayers(Context.New({
 			mediator = SpWeaponModifyMediator,
 			viewComponent = SpWeaponModifyLayer,
 			data = {
-				spWeaponUid = arg0.contextData.spWeaponUid,
-				shipId = arg0.contextData.shipId
+				spWeaponUid = arg0_2.contextData.spWeaponUid,
+				shipId = arg0_2.contextData.shipId
 			}
 		}), true)
-		arg0.viewComponent:emit(BaseUI.ON_CLOSE)
+		arg0_2.viewComponent:emit(BaseUI.ON_CLOSE)
 	end)
-	arg0:bind(var0.ON_INTENSIFY, function(arg0)
-		local var0 = getProxy(BayProxy):getShipById(arg0.contextData.shipId)
+	arg0_2:bind(var0_0.ON_INTENSIFY, function(arg0_6)
+		local var0_6 = getProxy(BayProxy):getShipById(arg0_2.contextData.shipId)
 
-		if var0 then
-			local var1, var2 = ShipStatus.ShipStatusCheck("onModify", var0)
+		if var0_6 then
+			local var1_6, var2_6 = ShipStatus.ShipStatusCheck("onModify", var0_6)
 
-			if not var1 then
-				pg.TipsMgr.GetInstance():ShowTips(var2)
+			if not var1_6 then
+				pg.TipsMgr.GetInstance():ShowTips(var2_6)
 
 				return
 			end
 		end
 
-		arg0:addSubLayers(Context.New({
+		arg0_2:addSubLayers(Context.New({
 			mediator = SpWeaponUpgradeMediator,
 			viewComponent = SpWeaponUpgradeLayer,
 			data = {
-				spWeaponUid = arg0.contextData.spWeaponUid,
-				shipId = arg0.contextData.shipId
+				spWeaponUid = arg0_2.contextData.spWeaponUid,
+				shipId = arg0_2.contextData.shipId
 			}
 		}), true, function()
-			arg0.viewComponent:emit(BaseUI.ON_CLOSE)
+			arg0_2.viewComponent:emit(BaseUI.ON_CLOSE)
 		end)
 	end)
-	arg0:bind(var0.ON_CHANGE, function(arg0)
-		local var0 = getProxy(BayProxy):getShipById(arg0.contextData.shipId)
-		local var1, var2 = ShipStatus.ShipStatusCheck("onModify", var0)
+	arg0_2:bind(var0_0.ON_CHANGE, function(arg0_8)
+		local var0_8 = getProxy(BayProxy):getShipById(arg0_2.contextData.shipId)
+		local var1_8, var2_8 = ShipStatus.ShipStatusCheck("onModify", var0_8)
 
-		if not var1 then
-			pg.TipsMgr.GetInstance():ShowTips(var2)
+		if not var1_8 then
+			pg.TipsMgr.GetInstance():ShowTips(var2_8)
 
 			return
 		end
 
-		arg0.viewComponent:emit(BaseUI.ON_CLOSE)
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.SPWEAPON_STOREHOUSE, {
+		arg0_2.viewComponent:emit(BaseUI.ON_CLOSE)
+		arg0_2:sendNotification(GAME.GO_SCENE, SCENE.SPWEAPON_STOREHOUSE, {
 			lock = true,
-			shipId = arg0.contextData.shipId,
+			shipId = arg0_2.contextData.shipId,
 			warp = StoreHouseConst.WARP_TO_WEAPON,
 			mode = StoreHouseConst.EQUIPMENT
 		})
 	end)
-	arg0:bind(var0.ON_MOVE, function(arg0, arg1)
-		arg0.viewComponent:emit(BaseUI.ON_CLOSE)
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
+	arg0_2:bind(var0_0.ON_MOVE, function(arg0_9, arg1_9)
+		arg0_2.viewComponent:emit(BaseUI.ON_CLOSE)
+		arg0_2:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
 			page = 2,
-			shipId = arg1
+			shipId = arg1_9
 		})
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_10)
 	return {
 		GAME.EQUIP_SPWEAPON_TO_SHIP_DONE
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_11, arg1_11)
+	local var0_11 = arg1_11:getName()
+	local var1_11 = arg1_11:getBody()
 
-	if var0 == GAME.EQUIP_SPWEAPON_TO_SHIP_DONE then
-		arg0.viewComponent:emit(BaseUI.ON_CLOSE)
+	if var0_11 == GAME.EQUIP_SPWEAPON_TO_SHIP_DONE then
+		arg0_11.viewComponent:emit(BaseUI.ON_CLOSE)
 	end
 end
 
-return var0
+return var0_0

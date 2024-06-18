@@ -1,23 +1,23 @@
-﻿local var0 = class("LoginMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("LoginMediator", import("..base.ContextMediator"))
 
-var0.ON_LOGIN = "LoginMediator:ON_LOGIN"
-var0.ON_REGISTER = "LoginMediator:ON_REGISTER"
-var0.ON_SERVER = "LoginMediator:ON_SERVER"
-var0.ON_LOGIN_PROCESS = "LoginMediator:ON_LOGIN_PROCESS"
-var0.ON_SEARCH_ACCOUNT = "LoginMediator:ON_SEARCH_ACCOUNT"
-var0.CHECK_RES = "LoginMediator:CHECK_RES"
+var0_0.ON_LOGIN = "LoginMediator:ON_LOGIN"
+var0_0.ON_REGISTER = "LoginMediator:ON_REGISTER"
+var0_0.ON_SERVER = "LoginMediator:ON_SERVER"
+var0_0.ON_LOGIN_PROCESS = "LoginMediator:ON_LOGIN_PROCESS"
+var0_0.ON_SEARCH_ACCOUNT = "LoginMediator:ON_SEARCH_ACCOUNT"
+var0_0.CHECK_RES = "LoginMediator:CHECK_RES"
 
-function var0.register(arg0)
-	arg0:bind(var0.ON_LOGIN, function(arg0, arg1)
-		arg0:sendNotification(GAME.USER_LOGIN, arg1)
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.ON_LOGIN, function(arg0_2, arg1_2)
+		arg0_1:sendNotification(GAME.USER_LOGIN, arg1_2)
 	end)
-	arg0:bind(var0.ON_REGISTER, function(arg0, arg1)
-		arg0:sendNotification(GAME.USER_REGISTER, arg1)
+	arg0_1:bind(var0_0.ON_REGISTER, function(arg0_3, arg1_3)
+		arg0_1:sendNotification(GAME.USER_REGISTER, arg1_3)
 	end)
-	arg0:bind(var0.ON_SERVER, function(arg0, arg1)
-		arg0:sendNotification(GAME.SERVER_LOGIN, arg1)
+	arg0_1:bind(var0_0.ON_SERVER, function(arg0_4, arg1_4)
+		arg0_1:sendNotification(GAME.SERVER_LOGIN, arg1_4)
 	end)
-	arg0:bind(var0.ON_LOGIN_PROCESS, function(arg0)
+	arg0_1:bind(var0_0.ON_LOGIN_PROCESS, function(arg0_5)
 		if PLATFORM_CODE == PLATFORM_CHT and (CSharpVersion == 31 or CSharpVersion == 32 or CSharpVersion == 33 or CSharpVersion == 34) then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				modal = true,
@@ -25,13 +25,13 @@ function var0.register(arg0)
 				content = "檢測到版本更新，需要手動下載更新包，是否前往下載？",
 				hideClose = true,
 				onYes = function()
-					local var0 = YongshiSdkMgr.inst.channelUID
+					local var0_6 = YongshiSdkMgr.inst.channelUID
 
-					if var0 == "0" then
+					if var0_6 == "0" then
 						Application.OpenURL("https://play.google.com/store/apps/details?id=com.hkmanjuu.azurlane.gp")
-					elseif var0 == "1" then
+					elseif var0_6 == "1" then
 						Application.OpenURL("https://apps.apple.com/app/id1479022429")
-					elseif var0 == "2" then
+					elseif var0_6 == "2" then
 						Application.OpenURL("http://www.mygame.com.tw/MyGameAD/Accept.aspx?P=YAS3ZA2RSR&S=QUNRMMN7HY")
 					end
 
@@ -42,57 +42,57 @@ function var0.register(arg0)
 				end
 			})
 		else
-			arg0:loginProcessHandler()
+			arg0_1:loginProcessHandler()
 		end
 	end)
-	arg0:bind(var0.ON_SEARCH_ACCOUNT, function(arg0, arg1)
-		arg0:sendNotification(GAME.ACCOUNT_SEARCH, arg1)
+	arg0_1:bind(var0_0.ON_SEARCH_ACCOUNT, function(arg0_8, arg1_8)
+		arg0_1:sendNotification(GAME.ACCOUNT_SEARCH, arg1_8)
 	end)
-	arg0:bind(var0.CHECK_RES, function(arg0)
-		arg0:checkPaintingRes()
+	arg0_1:bind(var0_0.CHECK_RES, function(arg0_9)
+		arg0_1:checkPaintingRes()
 	end)
 	pg.SdkMgr.GetInstance():EnterLoginScene()
 end
 
-function var0.remove(arg0)
+function var0_0.remove(arg0_10)
 	pg.SdkMgr.GetInstance():ExitLoginScene()
 end
 
-function var0.loginProcessHandler(arg0)
-	local var0 = getProxy(SettingsProxy)
-	local var1 = pg.SdkMgr.GetInstance():GetLoginType()
+function var0_0.loginProcessHandler(arg0_11)
+	local var0_11 = getProxy(SettingsProxy)
+	local var1_11 = pg.SdkMgr.GetInstance():GetLoginType()
 
-	assert(var1)
+	assert(var1_11)
 
-	arg0.process = coroutine.wrap(function()
-		arg0.viewComponent:switchSubView({})
+	arg0_11.process = coroutine.wrap(function()
+		arg0_11.viewComponent:switchSubView({})
 
-		if var0:CheckNeedUserAgreement() then
-			arg0.viewComponent:showUserAgreement(arg0.process)
+		if var0_11:CheckNeedUserAgreement() then
+			arg0_11.viewComponent:showUserAgreement(arg0_11.process)
 			coroutine.yield()
-			var0:SetUserAgreement()
+			var0_11:SetUserAgreement()
 		end
 
-		local var0
+		local var0_12
 
-		if var1 == LoginType.PLATFORM then
-			arg0.viewComponent:switchToServer()
-		elseif var1 == LoginType.PLATFORM_TENCENT then
-			arg0.viewComponent:switchToTencentLogin()
-		elseif var1 == LoginType.PLATFORM_INNER then
-			arg0.viewComponent:switchToLogin()
+		if var1_11 == LoginType.PLATFORM then
+			arg0_11.viewComponent:switchToServer()
+		elseif var1_11 == LoginType.PLATFORM_TENCENT then
+			arg0_11.viewComponent:switchToTencentLogin()
+		elseif var1_11 == LoginType.PLATFORM_INNER then
+			arg0_11.viewComponent:switchToLogin()
 
-			var0 = getProxy(UserProxy):getLastLoginUser()
+			var0_12 = getProxy(UserProxy):getLastLoginUser()
 
-			arg0.viewComponent:setLastLogin(var0)
-		elseif var1 == LoginType.PLATFORM_AIRIJP or var1 == LoginType.PLATFORM_AIRIUS then
-			arg0.viewComponent:switchToAiriLogin()
+			arg0_11.viewComponent:setLastLogin(var0_12)
+		elseif var1_11 == LoginType.PLATFORM_AIRIJP or var1_11 == LoginType.PLATFORM_AIRIUS then
+			arg0_11.viewComponent:switchToAiriLogin()
 		end
 
-		arg0:CheckMaintain()
+		arg0_11:CheckMaintain()
 
-		if arg0.contextData.code then
-			if arg0.contextData.code == 0 or arg0.contextData.code == SDK_EXIT_CODE then
+		if arg0_11.contextData.code then
+			if arg0_11.contextData.code == 0 or arg0_11.contextData.code == SDK_EXIT_CODE then
 				-- block empty
 			else
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
@@ -107,61 +107,61 @@ function var0.loginProcessHandler(arg0)
 						i18n("login_loginMediator_serverLoginErro"),
 						i18n("login_loginMediator_vertifyFail"),
 						[199] = i18n("login_loginMediator_dataExpired")
-					})[arg0.contextData.code] or i18n("login_loginMediator_kickUndefined", arg0.contextData.code),
+					})[arg0_11.contextData.code] or i18n("login_loginMediator_kickUndefined", arg0_11.contextData.code),
 					onYes = function()
-						arg0.process()
+						arg0_11.process()
 					end
 				})
 				coroutine.yield()
 			end
 
-			if var0 then
-				if var0.type == 1 then
-					var0.arg3 = ""
-				elseif var0.type == 2 then
-					var0.arg2 = ""
+			if var0_12 then
+				if var0_12.type == 1 then
+					var0_12.arg3 = ""
+				elseif var0_12.type == 2 then
+					var0_12.arg2 = ""
 				end
 
-				arg0.viewComponent:setLastLogin(var0)
+				arg0_11.viewComponent:setLastLogin(var0_12)
 			end
 		else
-			arg0.viewComponent:setAutoLogin()
+			arg0_11.viewComponent:setAutoLogin()
 		end
 
-		if var1 == LoginType.PLATFORM then
+		if var1_11 == LoginType.PLATFORM then
 			pg.SdkMgr.GetInstance():LoginSdk()
-		elseif var1 == LoginType.PLATFORM_TENCENT then
+		elseif var1_11 == LoginType.PLATFORM_TENCENT then
 			pg.SdkMgr.GetInstance():TryLoginSdk()
-		elseif var1 == LoginType.PLATFORM_INNER then
+		elseif var1_11 == LoginType.PLATFORM_INNER then
 			-- block empty
 		end
 
-		arg0.viewComponent:autoLogin()
+		arg0_11.viewComponent:autoLogin()
 	end)
 
-	arg0.process()
+	arg0_11.process()
 end
 
-function var0.CheckMaintain(arg0)
-	ServerStateChecker.New():Execute(function(arg0)
-		if arg0 then
+function var0_0.CheckMaintain(arg0_14)
+	ServerStateChecker.New():Execute(function(arg0_15)
+		if arg0_15 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("login_loginMediator_kickServerClose"),
 				onNo = function()
-					arg0.process()
+					arg0_14.process()
 				end,
 				onYes = function()
-					arg0.process()
+					arg0_14.process()
 				end
 			})
 		else
-			arg0.process()
+			arg0_14.process()
 		end
 	end)
 	coroutine.yield()
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_18)
 	return {
 		GAME.USER_LOGIN_SUCCESS,
 		GAME.USER_LOGIN_FAILED,
@@ -179,163 +179,163 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_19, arg1_19)
+	local var0_19 = arg1_19:getName()
+	local var1_19 = arg1_19:getBody()
 
-	if var0 == ServerProxy.SERVERS_UPDATED then
-		arg0.viewComponent:updateServerList(var1)
-	elseif var0 == GAME.USER_LOGIN_SUCCESS then
+	if var0_19 == ServerProxy.SERVERS_UPDATED then
+		arg0_19.viewComponent:updateServerList(var1_19)
+	elseif var0_19 == GAME.USER_LOGIN_SUCCESS then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("login_loginMediator_loginSuccess"))
 
-		local var2 = getProxy(ServerProxy):getLastServer(var1.id)
+		local var2_19 = getProxy(ServerProxy):getLastServer(var1_19.id)
 
-		arg0.viewComponent:setLastLoginServer(var2)
-		arg0.viewComponent:switchToServer()
+		arg0_19.viewComponent:setLastLoginServer(var2_19)
+		arg0_19.viewComponent:switchToServer()
 
-		local var3 = getProxy(UserProxy)
+		local var3_19 = getProxy(UserProxy)
 
 		if PLATFORM_CODE == PLATFORM_JP then
-			arg0.viewComponent:setUserData(var3.getLastLoginUser())
+			arg0_19.viewComponent:setUserData(var3_19.getLastLoginUser())
 		end
 
 		if #getProxy(GatewayNoticeProxy):getGatewayNotices(false) > 0 then
-			arg0:addSubLayers(Context.New({
+			arg0_19:addSubLayers(Context.New({
 				mediator = GatewayNoticeMediator,
 				viewComponent = GatewayNoticeLayer
 			}))
 		end
 
-		local var4 = getProxy(UserProxy)
+		local var4_19 = getProxy(UserProxy)
 
-		if var4.data.limitServerIds and #var4.data.limitServerIds > 0 then
-			arg0.viewComponent:fillterRefundServer()
-			arg0.viewComponent:setLastLoginServer(nil)
+		if var4_19.data.limitServerIds and #var4_19.data.limitServerIds > 0 then
+			arg0_19.viewComponent:fillterRefundServer()
+			arg0_19.viewComponent:setLastLoginServer(nil)
 		end
 
-		arg0.viewComponent.switchGatewayBtn:Flush()
-	elseif var0 == GAME.USER_REGISTER_SUCCESS then
+		arg0_19.viewComponent.switchGatewayBtn:Flush()
+	elseif var0_19 == GAME.USER_REGISTER_SUCCESS then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			modal = true,
 			hideNo = true,
 			content = i18n("login_loginMediator_quest_RegisterSuccess"),
 			onYes = function()
-				arg0:sendNotification(GAME.USER_LOGIN, var1)
+				arg0_19:sendNotification(GAME.USER_LOGIN, var1_19)
 			end
 		})
-	elseif var0 == GAME.SERVER_LOGIN_SUCCESS then
-		if var1.uid == 0 then
+	elseif var0_19 == GAME.SERVER_LOGIN_SUCCESS then
+		if var1_19.uid == 0 then
 			if EPILOGUE_SKIPPABLE then
-				arg0:sendNotification(GAME.GO_SCENE, SCENE.CREATE_PLAYER)
+				arg0_19:sendNotification(GAME.GO_SCENE, SCENE.CREATE_PLAYER)
 			else
-				arg0:sendNotification(GAME.BEGIN_STAGE, {
+				arg0_19:sendNotification(GAME.BEGIN_STAGE, {
 					system = SYSTEM_PROLOGUE
 				})
 			end
 		else
-			arg0.facade:sendNotification(GAME.LOAD_PLAYER_DATA, {
-				id = var1.uid
+			arg0_19.facade:sendNotification(GAME.LOAD_PLAYER_DATA, {
+				id = var1_19.uid
 			})
 		end
-	elseif var0 == GAME.USER_REGISTER_FAILED then
+	elseif var0_19 == GAME.USER_REGISTER_FAILED then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			modal = true,
 			hideNo = true,
-			content = errorTip("login_loginMediator_registerFail", var1)
+			content = errorTip("login_loginMediator_registerFail", var1_19)
 		})
-	elseif var0 == GAME.USER_LOGIN_FAILED then
+	elseif var0_19 == GAME.USER_LOGIN_FAILED then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			modal = true,
 			hideNo = true,
-			content = errorTip("login_loginMediator_userLoginFail_error", var1),
+			content = errorTip("login_loginMediator_userLoginFail_error", var1_19),
 			onYes = function()
-				local var0 = pg.SdkMgr.GetInstance():GetLoginType()
+				local var0_21 = pg.SdkMgr.GetInstance():GetLoginType()
 
-				if var1 == 20 then
-					arg0.viewComponent:switchToRegister()
-				elseif var1 == 3 or var1 == 6 then
-					arg0.viewComponent:switchToServer()
-				elseif var1 == 1 or var1 == 9 or var1 == 11 or var1 == 12 then
-					if var0 == LoginType.PLATFORM_AIRIJP or var0 == LoginType.PLATFORM_AIRIUS then
-						arg0.viewComponent:switchToAiriLogin()
+				if var1_19 == 20 then
+					arg0_19.viewComponent:switchToRegister()
+				elseif var1_19 == 3 or var1_19 == 6 then
+					arg0_19.viewComponent:switchToServer()
+				elseif var1_19 == 1 or var1_19 == 9 or var1_19 == 11 or var1_19 == 12 then
+					if var0_21 == LoginType.PLATFORM_AIRIJP or var0_21 == LoginType.PLATFORM_AIRIUS then
+						arg0_19.viewComponent:switchToAiriLogin()
 					else
-						arg0.viewComponent:switchToLogin()
+						arg0_19.viewComponent:switchToLogin()
 					end
-				elseif var0 == LoginType.PLATFORM or var0 == LoginType.PLATFORM_TENCENT then
-					arg0.viewComponent:switchToServer()
-				elseif var0 == LoginType.PLATFORM_AIRIJP or var0 == LoginType.PLATFORM_AIRIUS then
-					arg0.viewComponent:switchToAiriLogin()
+				elseif var0_21 == LoginType.PLATFORM or var0_21 == LoginType.PLATFORM_TENCENT then
+					arg0_19.viewComponent:switchToServer()
+				elseif var0_21 == LoginType.PLATFORM_AIRIJP or var0_21 == LoginType.PLATFORM_AIRIUS then
+					arg0_19.viewComponent:switchToAiriLogin()
 				else
-					arg0.viewComponent:switchToLogin()
+					arg0_19.viewComponent:switchToLogin()
 				end
 			end
 		})
-	elseif var0 == GAME.SERVER_LOGIN_FAILED then
+	elseif var0_19 == GAME.SERVER_LOGIN_FAILED then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			modal = true,
 			hideNo = true,
-			content = errorTip("login_loginMediator_serverLoginFail", var1),
+			content = errorTip("login_loginMediator_serverLoginFail", var1_19),
 			onYes = function()
-				local var0 = pg.SdkMgr.GetInstance():GetLoginType()
+				local var0_22 = pg.SdkMgr.GetInstance():GetLoginType()
 
-				if var0 == LoginType.PLATFORM or LoginType.PLATFORM_TENCENT then
-					arg0.viewComponent:switchToServer()
-				elseif var0 == LoginType.PLATFORM_AIRIJP or var0 == LoginType.PLATFORM_AIRIUS then
-					arg0.viewComponent:switchToAiriLogin()
+				if var0_22 == LoginType.PLATFORM or LoginType.PLATFORM_TENCENT then
+					arg0_19.viewComponent:switchToServer()
+				elseif var0_22 == LoginType.PLATFORM_AIRIJP or var0_22 == LoginType.PLATFORM_AIRIUS then
+					arg0_19.viewComponent:switchToAiriLogin()
 				else
-					arg0.viewComponent:switchToLogin()
+					arg0_19.viewComponent:switchToLogin()
 				end
 			end
 		})
-	elseif var0 == GAME.LOAD_PLAYER_DATA_DONE then
-		arg0:checkPaintingRes()
-	elseif var0 == GAME.BEGIN_STAGE_DONE then
-		arg0.viewComponent:unloadExtraVoice()
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1)
-	elseif var0 == GAME.PLATFORM_LOGIN_DONE then
-		arg0:sendNotification(GAME.USER_LOGIN, var1.user)
-	elseif var0 == GAME.SERVER_LOGIN_WAIT then
-		arg0.viewComponent:SwitchToWaitPanel(var1)
-	elseif var0 == GAME.SERVER_LOGIN_FAILED_USER_BANNED then
-		if var1 == 0 then
+	elseif var0_19 == GAME.LOAD_PLAYER_DATA_DONE then
+		arg0_19:checkPaintingRes()
+	elseif var0_19 == GAME.BEGIN_STAGE_DONE then
+		arg0_19.viewComponent:unloadExtraVoice()
+		arg0_19:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_19)
+	elseif var0_19 == GAME.PLATFORM_LOGIN_DONE then
+		arg0_19:sendNotification(GAME.USER_LOGIN, var1_19.user)
+	elseif var0_19 == GAME.SERVER_LOGIN_WAIT then
+		arg0_19.viewComponent:SwitchToWaitPanel(var1_19)
+	elseif var0_19 == GAME.SERVER_LOGIN_FAILED_USER_BANNED then
+		if var1_19 == 0 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = true,
 				content = i18n("user_is_forever_banned")
 			})
 		else
-			local var5 = pg.TimeMgr.GetInstance():STimeDescS(var1, "%Y-%m-%d %H:%M")
+			local var5_19 = pg.TimeMgr.GetInstance():STimeDescS(var1_19, "%Y-%m-%d %H:%M")
 
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = true,
-				content = i18n("user_is_banned", var5)
+				content = i18n("user_is_banned", var5_19)
 			})
 		end
-	elseif var0 == GAME.ON_SOCIAL_LINKED then
-		arg0.viewComponent:closeYostarAlertView()
+	elseif var0_19 == GAME.ON_SOCIAL_LINKED then
+		arg0_19.viewComponent:closeYostarAlertView()
 	end
 end
 
-function var0.checkPaintingRes(arg0)
-	local function var0()
-		arg0.viewComponent:onLoadDataDone()
+function var0_0.checkPaintingRes(arg0_23)
+	local function var0_23()
+		arg0_23.viewComponent:onLoadDataDone()
 	end
 
-	local function var1()
-		arg0.viewComponent.isNeedResCheck = true
+	local function var1_23()
+		arg0_23.viewComponent.isNeedResCheck = true
 	end
 
 	pg.FileDownloadMgr.GetInstance():SetRemind(false)
 
-	local var2 = PaintingGroupConst.GetPaintingNameListInLogin()
-	local var3 = {
+	local var2_23 = PaintingGroupConst.GetPaintingNameListInLogin()
+	local var3_23 = {
 		isShowBox = true,
-		paintingNameList = var2,
-		finishFunc = var0,
-		onNo = var1,
-		onClose = var1
+		paintingNameList = var2_23,
+		finishFunc = var0_23,
+		onNo = var1_23,
+		onClose = var1_23
 	}
 
-	PaintingGroupConst.PaintingDownload(var3)
+	PaintingGroupConst.PaintingDownload(var3_23)
 end
 
-return var0
+return var0_0

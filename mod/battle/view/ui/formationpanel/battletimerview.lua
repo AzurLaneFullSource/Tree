@@ -1,43 +1,43 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleTimerView = class("BattleTimerView")
-var0.Battle.BattleTimerView.__name = "BattleTimerView"
+var0_0.Battle.BattleTimerView = class("BattleTimerView")
+var0_0.Battle.BattleTimerView.__name = "BattleTimerView"
 
-function var0.Battle.BattleTimerView.Ctor(arg0, arg1)
-	arg0._go = arg1
-	arg0._timer = arg0._go.transform:Find("Text")
-	arg0._blinker = arg0._timer:GetComponent(typeof(Animator))
-	arg0._isBlink = false
-	arg0._text = arg0._timer:GetComponent(typeof(Text))
-	arg0.timeStr = ""
+function var0_0.Battle.BattleTimerView.Ctor(arg0_1, arg1_1)
+	arg0_1._go = arg1_1
+	arg0_1._timer = arg0_1._go.transform:Find("Text")
+	arg0_1._blinker = arg0_1._timer:GetComponent(typeof(Animator))
+	arg0_1._isBlink = false
+	arg0_1._text = arg0_1._timer:GetComponent(typeof(Text))
+	arg0_1.timeStr = ""
 end
 
-function var0.Battle.BattleTimerView.SetActive(arg0, arg1)
-	setActive(arg0._go, arg1)
+function var0_0.Battle.BattleTimerView.SetActive(arg0_2, arg1_2)
+	setActive(arg0_2._go, arg1_2)
 end
 
-function var0.Battle.BattleTimerView.SetCountDownText(arg0, arg1)
-	if arg1 <= 30 and not arg0._isBlink then
-		arg0._blinker.enabled = true
-		arg0._isBlink = true
+function var0_0.Battle.BattleTimerView.SetCountDownText(arg0_3, arg1_3)
+	if arg1_3 <= 30 and not arg0_3._isBlink then
+		arg0_3._blinker.enabled = true
+		arg0_3._isBlink = true
 	end
 
-	local var0 = arg0.formatTime(math.floor(arg1))
+	local var0_3 = arg0_3.formatTime(math.floor(arg1_3))
 
-	if var0 == arg0.timeStr then
+	if var0_3 == arg0_3.timeStr then
 		return
 	end
 
-	arg0.timeStr = var0
-	arg0._text.text = var0
+	arg0_3.timeStr = var0_3
+	arg0_3._text.text = var0_3
 end
 
-function var0.Battle.BattleTimerView.formatTime(arg0)
-	return string.format("%02u:%02u", math.floor(arg0 / 60), arg0 % 60)
+function var0_0.Battle.BattleTimerView.formatTime(arg0_4)
+	return string.format("%02u:%02u", math.floor(arg0_4 / 60), arg0_4 % 60)
 end
 
-function var0.Battle.BattleTimerView.Dispose(arg0)
+function var0_0.Battle.BattleTimerView.Dispose(arg0_5)
 	return
 end

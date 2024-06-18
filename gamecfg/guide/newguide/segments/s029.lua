@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Commander! You defeated Hornet! You're really good at this!~",
 	"Something bad has happened though... I need to return back to my fleet. We'll see each other again, I'm sure of it!"
 }
@@ -13,7 +13,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[1]
+				text = var0_0[1]
 			}
 		},
 		{
@@ -23,7 +23,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[2]
+				text = var0_0[2]
 			}
 		}
 	}

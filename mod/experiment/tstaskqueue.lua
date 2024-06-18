@@ -1,72 +1,72 @@
-﻿local var0 = class("TSTaskQueue")
+﻿local var0_0 = class("TSTaskQueue")
 
-var0.MTPF = 0.0333333333333333
+var0_0.MTPF = 0.0333333333333333
 
-function var0.Ctor(arg0, arg1)
-	arg0.maxTimePerFrame = math.min(arg1, var0.MTPF)
-	arg0.taskPool = {}
-	arg0.taskQueue = {}
-	arg0.running = false
-	arg0.updateHandle = UpdateBeat:CreateListener(arg0.Update, arg0)
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.maxTimePerFrame = math.min(arg1_1, var0_0.MTPF)
+	arg0_1.taskPool = {}
+	arg0_1.taskQueue = {}
+	arg0_1.running = false
+	arg0_1.updateHandle = UpdateBeat:CreateListener(arg0_1.Update, arg0_1)
 end
 
-function var0.Enqueue(arg0, arg1)
-	assert(type(arg1) == "function", "job should be a function")
+function var0_0.Enqueue(arg0_2, arg1_2)
+	assert(type(arg1_2) == "function", "job should be a function")
 
-	local var0 = #arg0.taskPool > 0 and table.remove(arg0.taskPool, #arg0.taskPool) or TSTask.New()
+	local var0_2 = #arg0_2.taskPool > 0 and table.remove(arg0_2.taskPool, #arg0_2.taskPool) or TSTask.New()
 
-	var0:SetJob(arg1)
-	table.insert(arg0.taskQueue, var0)
+	var0_2:SetJob(arg1_2)
+	table.insert(arg0_2.taskQueue, var0_2)
 
-	if not arg0.running then
-		arg0.running = true
+	if not arg0_2.running then
+		arg0_2.running = true
 
-		UpdateBeat:AddListener(arg0.updateHandle)
+		UpdateBeat:AddListener(arg0_2.updateHandle)
 	end
 end
 
-function var0.Update(arg0)
-	if not arg0.running then
+function var0_0.Update(arg0_3)
+	if not arg0_3.running then
 		return
 	end
 
-	local var0 = 0
+	local var0_3 = 0
 
-	while var0 < arg0.maxTimePerFrame do
-		if #arg0.taskQueue == 0 then
-			UpdateBeat:RemoveListener(arg0.updateHandle)
+	while var0_3 < arg0_3.maxTimePerFrame do
+		if #arg0_3.taskQueue == 0 then
+			UpdateBeat:RemoveListener(arg0_3.updateHandle)
 
-			arg0.running = false
+			arg0_3.running = false
 
 			return
 		end
 
-		local var1 = table.remove(arg0.taskQueue, 1)
+		local var1_3 = table.remove(arg0_3.taskQueue, 1)
 
-		var0 = var0 + var1:Execute()
+		var0_3 = var0_3 + var1_3:Execute()
 
-		var1:Clear()
-		table.insert(arg0.taskPool, var1)
+		var1_3:Clear()
+		table.insert(arg0_3.taskPool, var1_3)
 	end
 end
 
-function var0.IsBusy(arg0)
-	return arg0.running
+function var0_0.IsBusy(arg0_4)
+	return arg0_4.running
 end
 
-function var0.Clear(arg0, arg1)
-	for iter0 = #arg0.taskQueue, 1, -1 do
-		local var0 = arg0.taskQueue[iter0]
+function var0_0.Clear(arg0_5, arg1_5)
+	for iter0_5 = #arg0_5.taskQueue, 1, -1 do
+		local var0_5 = arg0_5.taskQueue[iter0_5]
 
-		if arg1 then
-			var0:Execute()
+		if arg1_5 then
+			var0_5:Execute()
 		end
 
-		var0:Clear()
-		table.insert(arg0.taskPool, var0)
+		var0_5:Clear()
+		table.insert(arg0_5.taskPool, var0_5)
 	end
 
-	arg0.taskQueue = {}
+	arg0_5.taskQueue = {}
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_289 = {}
+var0_0.word_template_289 = {}
 
-local var1 = var0.word_template_289
+local var1_0 = var0_0.word_template_289
 
 function temp()
-	var1.往 = {
+	var1_0.往 = {
 		事 = {
 			并 = {
 				不 = {
@@ -120,7 +120,7 @@ end
 temp()
 
 function temp()
-	var1.網 = {
+	var1_0.網 = {
 		禪 = {
 			this = true
 		},
@@ -158,7 +158,7 @@ end
 temp()
 
 function temp()
-	var1.魍 = {
+	var1_0.魍 = {
 		魉 = {
 			鬼 = {
 				舞 = {
@@ -172,7 +172,7 @@ end
 temp()
 
 function temp()
-	var1.忘 = {
+	var1_0.忘 = {
 		记 = {
 			党 = {
 				章 = {
@@ -199,7 +199,7 @@ end
 temp()
 
 function temp()
-	var1.望 = {
+	var1_0.望 = {
 		月 = {
 			留 = {
 				美 = {
@@ -213,7 +213,7 @@ end
 temp()
 
 function temp()
-	var1.危 = {
+	var1_0.危 = {
 		害 = {
 			祖 = {
 				国 = {
@@ -245,7 +245,7 @@ end
 temp()
 
 function temp()
-	var1.威 = {
+	var1_0.威 = {
 		而 = {
 			钢 = {
 				this = true

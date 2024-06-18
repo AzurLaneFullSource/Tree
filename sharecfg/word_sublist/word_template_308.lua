@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_308 = {}
+var0_0.word_template_308 = {}
 
-local var1 = var0.word_template_308
+local var1_0 = var0_0.word_template_308
 
 function temp()
-	var1.姓 = {
+	var1_0.姓 = {
 		何 = {
 			的 = {
 				监 = {
@@ -62,7 +62,7 @@ end
 temp()
 
 function temp()
-	var1.凶 = {
+	var1_0.凶 = {
 		杀 = {
 			案 = {
 				this = true
@@ -74,7 +74,7 @@ end
 temp()
 
 function temp()
-	var1.兄 = {
+	var1_0.兄 = {
 		妹 = {
 			肉 = {
 				欲 = {
@@ -92,7 +92,7 @@ end
 temp()
 
 function temp()
-	var1.胸 = {
+	var1_0.胸 = {
 		部 = {
 			this = true,
 			油 = {
@@ -141,7 +141,7 @@ end
 temp()
 
 function temp()
-	var1.雄 = {
+	var1_0.雄 = {
 		风 = {
 			重 = {
 				振 = {
@@ -155,7 +155,7 @@ end
 temp()
 
 function temp()
-	var1.熊 = {
+	var1_0.熊 = {
 		田 = {
 			阳 = {
 				子 = {
@@ -221,7 +221,7 @@ end
 temp()
 
 function temp()
-	var1.修 = {
+	var1_0.修 = {
 		改 = {
 			投 = {
 				注 = {

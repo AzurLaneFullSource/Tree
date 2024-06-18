@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	Points = {
 		{
 			x = -173.3788,
@@ -29,8 +29,8 @@
 	}
 }
 
-var0.Points[1].outRandom = true
-var0.Points[2].scale = 0.4
-var0.Points[3].scale = 0.4
+var0_0.Points[1].outRandom = true
+var0_0.Points[2].scale = 0.4
+var0_0.Points[3].scale = 0.4
 
-return var0
+return var0_0

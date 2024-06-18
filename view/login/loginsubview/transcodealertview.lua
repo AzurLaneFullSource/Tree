@@ -1,49 +1,49 @@
-﻿local var0 = class("TranscodeAlertView", import("...base.BaseSubView"))
+﻿local var0_0 = class("TranscodeAlertView", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "TranscodeAlertView"
 end
 
-function var0.OnLoaded(arg0)
+function var0_0.OnLoaded(arg0_2)
 	return
 end
 
-function var0.SetShareData(arg0, arg1)
-	arg0.shareData = arg1
+function var0_0.SetShareData(arg0_3, arg1_3)
+	arg0_3.shareData = arg1_3
 end
 
-function var0.OnInit(arg0)
-	arg0.transcodeAlert = arg0._tf
-	arg0.tcSureBtn = arg0:findTF("transcode_sure", arg0.transcodeAlert)
-	arg0.uidTxt = arg0:findTF("uid_input_txt", arg0.transcodeAlert):GetComponent(typeof(InputField))
-	arg0.transcodeTxt = arg0:findTF("transcode_input_txt", arg0.transcodeAlert):GetComponent(typeof(InputField))
-	arg0.tcDesc = arg0:findTF("desc", arg0.transcodeAlert)
+function var0_0.OnInit(arg0_4)
+	arg0_4.transcodeAlert = arg0_4._tf
+	arg0_4.tcSureBtn = arg0_4:findTF("transcode_sure", arg0_4.transcodeAlert)
+	arg0_4.uidTxt = arg0_4:findTF("uid_input_txt", arg0_4.transcodeAlert):GetComponent(typeof(InputField))
+	arg0_4.transcodeTxt = arg0_4:findTF("transcode_input_txt", arg0_4.transcodeAlert):GetComponent(typeof(InputField))
+	arg0_4.tcDesc = arg0_4:findTF("desc", arg0_4.transcodeAlert)
 
-	setText(arg0.tcDesc, i18n("transcode_desc"))
-	arg0:InitEvent()
+	setText(arg0_4.tcDesc, i18n("transcode_desc"))
+	arg0_4:InitEvent()
 end
 
-function var0.InitEvent(arg0)
-	onButton(arg0, arg0.tcSureBtn, function()
-		local var0 = arg0.uidTxt.text
-		local var1 = arg0.transcodeTxt.text
+function var0_0.InitEvent(arg0_5)
+	onButton(arg0_5, arg0_5.tcSureBtn, function()
+		local var0_6 = arg0_5.uidTxt.text
+		local var1_6 = arg0_5.transcodeTxt.text
 
-		if var0 == "" or var1 == "" then
+		if var0_6 == "" or var1_6 == "" then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = true,
 				content = i18n("transcode_empty_tip")
 			})
 		else
-			pg.SdkMgr.GetInstance():LoginWithTranscode(var0, var1)
+			pg.SdkMgr.GetInstance():LoginWithTranscode(var0_6, var1_6)
 		end
 	end)
-	onButton(arg0, arg0.transcodeAlert, function()
-		arg0:Hide()
+	onButton(arg0_5, arg0_5.transcodeAlert, function()
+		arg0_5:Hide()
 	end)
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_8)
 	return
 end
 
-return var0
+return var0_0

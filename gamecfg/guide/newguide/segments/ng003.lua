@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"You can tap the Help button for info on Anti-Sub combat!"
 }
 
@@ -12,7 +12,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 0,
-				text = var0[1]
+				text = var0_0[1]
 			}
 		},
 		{

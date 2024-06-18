@@ -1,133 +1,133 @@
-﻿local var0 = class("CatteryCard")
+﻿local var0_0 = class("CatteryCard")
 
-function var0.Ctor(arg0, arg1)
-	arg0._go = arg1
-	arg0._tf = tf(arg1)
-	arg0.lockTF = findTF(arg0._tf, "lock")
-	arg0.unlockTF = findTF(arg0._tf, "unlock")
-	arg0.style = arg0.unlockTF:Find("mask/bg"):GetComponent(typeof(Image))
-	arg0.char = findTF(arg0.unlockTF, "char")
-	arg0.empty = findTF(arg0.unlockTF, "empty")
-	arg0.commanderExp = findTF(arg0.unlockTF, "commander_exp")
-	arg0.bubble = findTF(arg0.unlockTF, "bubble")
-	arg0.levelTxt = findTF(arg0.commanderExp, "level/Text"):GetComponent(typeof(Text))
-	arg0.expTxt = findTF(arg0.commanderExp, "exp/Text"):GetComponent(typeof(Text))
-	arg0.clean = findTF(arg0.bubble, "clean")
-	arg0.feed = findTF(arg0.bubble, "feed")
-	arg0.play = findTF(arg0.bubble, "play")
-	arg0.expAddition = findTF(arg0.unlockTF, "exp_addition")
-	arg0.expAdditionTxt = arg0.expAddition:Find("Text"):GetComponent(typeof(Text))
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1._go = arg1_1
+	arg0_1._tf = tf(arg1_1)
+	arg0_1.lockTF = findTF(arg0_1._tf, "lock")
+	arg0_1.unlockTF = findTF(arg0_1._tf, "unlock")
+	arg0_1.style = arg0_1.unlockTF:Find("mask/bg"):GetComponent(typeof(Image))
+	arg0_1.char = findTF(arg0_1.unlockTF, "char")
+	arg0_1.empty = findTF(arg0_1.unlockTF, "empty")
+	arg0_1.commanderExp = findTF(arg0_1.unlockTF, "commander_exp")
+	arg0_1.bubble = findTF(arg0_1.unlockTF, "bubble")
+	arg0_1.levelTxt = findTF(arg0_1.commanderExp, "level/Text"):GetComponent(typeof(Text))
+	arg0_1.expTxt = findTF(arg0_1.commanderExp, "exp/Text"):GetComponent(typeof(Text))
+	arg0_1.clean = findTF(arg0_1.bubble, "clean")
+	arg0_1.feed = findTF(arg0_1.bubble, "feed")
+	arg0_1.play = findTF(arg0_1.bubble, "play")
+	arg0_1.expAddition = findTF(arg0_1.unlockTF, "exp_addition")
+	arg0_1.expAdditionTxt = arg0_1.expAddition:Find("Text"):GetComponent(typeof(Text))
 end
 
-function var0.Update(arg0, arg1)
-	arg0.cattery = arg1
+function var0_0.Update(arg0_2, arg1_2)
+	arg0_2.cattery = arg1_2
 
-	local var0 = arg1:GetState()
-	local var1 = var0 == Cattery.STATE_LOCK
+	local var0_2 = arg1_2:GetState()
+	local var1_2 = var0_2 == Cattery.STATE_LOCK
 
-	if var1 then
-		setActive(arg0.bubble, false)
-	elseif var0 == Cattery.STATE_EMPTY then
-		arg0:FlushEmpty()
-	elseif var0 == Cattery.STATE_OCCUPATION then
-		arg0:FlushCommander()
+	if var1_2 then
+		setActive(arg0_2.bubble, false)
+	elseif var0_2 == Cattery.STATE_EMPTY then
+		arg0_2:FlushEmpty()
+	elseif var0_2 == Cattery.STATE_OCCUPATION then
+		arg0_2:FlushCommander()
 	end
 
-	setActive(arg0.lockTF, var1)
-	setActive(arg0.unlockTF, not var1)
-	arg0:UpdateStyle()
+	setActive(arg0_2.lockTF, var1_2)
+	setActive(arg0_2.unlockTF, not var1_2)
+	arg0_2:UpdateStyle()
 end
 
-function var0.UpdateStyle(arg0)
-	local var0 = arg0.cattery
-	local var1 = var0:GetState()
+function var0_0.UpdateStyle(arg0_3)
+	local var0_3 = arg0_3.cattery
+	local var1_3 = var0_3:GetState()
 
-	if not (var1 == Cattery.STATE_LOCK) then
-		local var2 = var0:_GetStyle_()
+	if not (var1_3 == Cattery.STATE_LOCK) then
+		local var2_3 = var0_3:_GetStyle_()
 
-		if var1 == Cattery.STATE_EMPTY then
-			arg0.style.sprite = GetSpriteFromAtlas("CatteryStyle/" .. var2:GetName(false), "")
+		if var1_3 == Cattery.STATE_EMPTY then
+			arg0_3.style.sprite = GetSpriteFromAtlas("CatteryStyle/" .. var2_3:GetName(false), "")
 		else
-			arg0.style.sprite = GetSpriteFromAtlas("CatteryStyle/" .. var2:GetName(var0:IsDirty()), "")
+			arg0_3.style.sprite = GetSpriteFromAtlas("CatteryStyle/" .. var2_3:GetName(var0_3:IsDirty()), "")
 		end
 	end
 end
 
-function var0.FlushEmpty(arg0)
-	setActive(arg0.empty, true)
-	setActive(arg0.commanderExp, false)
-	setActive(arg0.bubble, false)
-	arg0:ReturnChar()
-	arg0:InitBubble()
+function var0_0.FlushEmpty(arg0_4)
+	setActive(arg0_4.empty, true)
+	setActive(arg0_4.commanderExp, false)
+	setActive(arg0_4.bubble, false)
+	arg0_4:ReturnChar()
+	arg0_4:InitBubble()
 end
 
-function var0.FlushCommander(arg0)
-	setActive(arg0.empty, false)
-	setActive(arg0.commanderExp, true)
-	setActive(arg0.bubble, true)
+function var0_0.FlushCommander(arg0_5)
+	setActive(arg0_5.empty, false)
+	setActive(arg0_5.commanderExp, true)
+	setActive(arg0_5.bubble, true)
 
-	local var0 = arg0.cattery:GetCommander()
+	local var0_5 = arg0_5.cattery:GetCommander()
 
-	arg0.levelTxt.text = "LV." .. var0:getLevel()
-	arg0.expTxt.text = var0.exp .. "/" .. var0:getNextLevelExp()
+	arg0_5.levelTxt.text = "LV." .. var0_5:getLevel()
+	arg0_5.expTxt.text = var0_5.exp .. "/" .. var0_5:getNextLevelExp()
 
-	arg0:LoadChar(var0)
-	arg0:InitBubble()
+	arg0_5:LoadChar(var0_5)
+	arg0_5:InitBubble()
 end
 
-function var0.LoadChar(arg0, arg1)
-	arg0.painting = arg1:getPainting()
+function var0_0.LoadChar(arg0_6, arg1_6)
+	arg0_6.painting = arg1_6:getPainting()
 
-	setCommanderPaintingPrefab(arg0.char, arg0.painting, "info")
+	setCommanderPaintingPrefab(arg0_6.char, arg0_6.painting, "info")
 end
 
-function var0.ReturnChar(arg0)
-	if arg0.painting then
-		retCommanderPaintingPrefab(arg0.char, arg0.painting)
+function var0_0.ReturnChar(arg0_7)
+	if arg0_7.painting then
+		retCommanderPaintingPrefab(arg0_7.char, arg0_7.painting)
 
-		arg0.painting = nil
+		arg0_7.painting = nil
 	end
 end
 
-function var0.InitBubble(arg0)
-	local var0 = arg0.cattery
-	local var1 = var0:ExistCleanOP()
-	local var2 = var0:ExiseFeedOP()
-	local var3 = var0:ExistPlayOP()
+function var0_0.InitBubble(arg0_8)
+	local var0_8 = arg0_8.cattery
+	local var1_8 = var0_8:ExistCleanOP()
+	local var2_8 = var0_8:ExiseFeedOP()
+	local var3_8 = var0_8:ExistPlayOP()
 
-	setActive(arg0.clean, var1)
-	setActive(arg0.feed, var2)
-	setActive(arg0.play, var3)
-	setActive(arg0.bubble, var1 or var2 or var3)
+	setActive(arg0_8.clean, var1_8)
+	setActive(arg0_8.feed, var2_8)
+	setActive(arg0_8.play, var3_8)
+	setActive(arg0_8.bubble, var1_8 or var2_8 or var3_8)
 end
 
-function var0.AddExpAnim(arg0, arg1, arg2)
-	arg0:RemoveTimer()
+function var0_0.AddExpAnim(arg0_9, arg1_9, arg2_9)
+	arg0_9:RemoveTimer()
 
-	arg0.expAdditionTxt.text = arg1
+	arg0_9.expAdditionTxt.text = arg1_9
 
-	setActive(arg0.expAddition, true)
+	setActive(arg0_9.expAddition, true)
 
-	arg0.timer = Timer.New(function()
-		arg0:RemoveTimer()
-		setActive(arg0.expAddition, false)
-		arg2()
+	arg0_9.timer = Timer.New(function()
+		arg0_9:RemoveTimer()
+		setActive(arg0_9.expAddition, false)
+		arg2_9()
 	end, 1, 1)
 
-	arg0.timer:Start()
+	arg0_9.timer:Start()
 end
 
-function var0.RemoveTimer(arg0)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var0_0.RemoveTimer(arg0_11)
+	if arg0_11.timer then
+		arg0_11.timer:Stop()
 
-		arg0.timer = nil
+		arg0_11.timer = nil
 	end
 end
 
-function var0.Dispose(arg0)
-	arg0:ReturnChar()
-	arg0:RemoveTimer()
+function var0_0.Dispose(arg0_12)
+	arg0_12:ReturnChar()
+	arg0_12:RemoveTimer()
 end
 
-return var0
+return var0_0

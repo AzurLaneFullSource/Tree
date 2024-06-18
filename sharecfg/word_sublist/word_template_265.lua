@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_265 = {}
+var0_0.word_template_265 = {}
 
-local var1 = var0.word_template_265
+local var1_0 = var0_0.word_template_265
 
 function temp()
-	var1.守 = {
+	var1_0.守 = {
 		口 = {
 			如 = {
 				瓶 = {
@@ -38,7 +38,7 @@ end
 temp()
 
 function temp()
-	var1.受 = {
+	var1_0.受 = {
 		惊 = {
 			精 = {
 				this = true
@@ -68,7 +68,7 @@ end
 temp()
 
 function temp()
-	var1.售 = {
+	var1_0.售 = {
 		I = {
 			D = {
 				this = true
@@ -200,7 +200,7 @@ end
 temp()
 
 function temp()
-	var1.兽 = {
+	var1_0.兽 = {
 		奸 = {
 			this = true
 		},
@@ -241,7 +241,7 @@ end
 temp()
 
 function temp()
-	var1.獸 = {
+	var1_0.獸 = {
 		奸 = {
 			this = true
 		},
@@ -262,7 +262,7 @@ end
 temp()
 
 function temp()
-	var1.书 = {
+	var1_0.书 = {
 		记 = {
 			杨 = {
 				枫 = {
@@ -322,7 +322,7 @@ end
 temp()
 
 function temp()
-	var1.叔 = {
+	var1_0.叔 = {
 		嫂 = {
 			肉 = {
 				欲 = {

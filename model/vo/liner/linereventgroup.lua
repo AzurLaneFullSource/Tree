@@ -1,55 +1,55 @@
-﻿local var0 = class("LinerEventGroup", import("model.vo.BaseVO"))
+﻿local var0_0 = class("LinerEventGroup", import("model.vo.BaseVO"))
 
-function var0.Ctor(arg0, arg1)
-	arg0.id = arg1
-	arg0.configId = arg0.id
-	arg0.events = {}
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.id = arg1_1
+	arg0_1.configId = arg0_1.id
+	arg0_1.events = {}
 
-	for iter0, iter1 in ipairs(arg0:GetIds()) do
-		arg0.events[iter1] = LinerEvent.New(iter1)
+	for iter0_1, iter1_1 in ipairs(arg0_1:GetIds()) do
+		arg0_1.events[iter1_1] = LinerEvent.New(iter1_1)
 	end
 end
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_2)
 	return pg.activity_liner_event_group
 end
 
-function var0.GetTitle(arg0)
-	return HXSet.hxLan(arg0:getConfig("title"))
+function var0_0.GetTitle(arg0_3)
+	return HXSet.hxLan(arg0_3:getConfig("title"))
 end
 
-function var0.GetPic(arg0)
-	return arg0:getConfig("pic")
+function var0_0.GetPic(arg0_4)
+	return arg0_4:getConfig("pic")
 end
 
-function var0.GetEvent(arg0, arg1)
-	return arg0.events[arg1]
+function var0_0.GetEvent(arg0_5, arg1_5)
+	return arg0_5.events[arg1_5]
 end
 
-function var0.GetEvents(arg0)
-	return arg0.events
+function var0_0.GetEvents(arg0_6)
+	return arg0_6.events
 end
 
-function var0.GetIds(arg0)
-	return arg0:getConfig("ids")
+function var0_0.GetIds(arg0_7)
+	return arg0_7:getConfig("ids")
 end
 
-function var0.GetEventList(arg0)
-	local var0 = {}
+function var0_0.GetEventList(arg0_8)
+	local var0_8 = {}
 
-	for iter0, iter1 in pairs(arg0.events) do
-		table.insert(var0, iter1)
+	for iter0_8, iter1_8 in pairs(arg0_8.events) do
+		table.insert(var0_8, iter1_8)
 	end
 
-	return var0
+	return var0_8
 end
 
-function var0.GetConclusions(arg0)
-	return arg0:getConfig("conclusion")
+function var0_0.GetConclusions(arg0_9)
+	return arg0_9:getConfig("conclusion")
 end
 
-function var0.GetDrop(arg0)
-	return Drop.Create(arg0:getConfig("drop_display"))
+function var0_0.GetDrop(arg0_10)
+	return Drop.Create(arg0_10:getConfig("drop_display"))
 end
 
-return var0
+return var0_0

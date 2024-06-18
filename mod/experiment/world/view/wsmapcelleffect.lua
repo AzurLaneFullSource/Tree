@@ -1,72 +1,72 @@
-﻿local var0 = class("WSMapCellEffect", import(".WSMapEffect"))
+﻿local var0_0 = class("WSMapCellEffect", import(".WSMapEffect"))
 
-var0.Fields = {
+var0_0.Fields = {
 	cell = "table",
 	theme = "table"
 }
-var0.Listeners = {
+var0_0.Listeners = {
 	onUpdate = "Update"
 }
 
-function var0.GetName(arg0, arg1)
-	return "cell_effect_" .. arg0 .. "_" .. arg1
+function var0_0.GetName(arg0_1, arg1_1)
+	return "cell_effect_" .. arg0_1 .. "_" .. arg1_1
 end
 
-function var0.Setup(arg0, arg1, arg2)
-	assert(arg0.cell == nil)
+function var0_0.Setup(arg0_2, arg1_2, arg2_2)
+	assert(arg0_2.cell == nil)
 
-	arg0.cell = arg1
+	arg0_2.cell = arg1_2
 
-	arg0.cell:AddListener(WorldMapCell.EventUpdateInFov, arg0.onUpdate)
-	arg0.cell:AddListener(WorldMapCell.EventUpdateDiscovered, arg0.onUpdate)
-	arg0.cell:AddListener(WorldMapCell.EventUpdateFog, arg0.onUpdate)
+	arg0_2.cell:AddListener(WorldMapCell.EventUpdateInFov, arg0_2.onUpdate)
+	arg0_2.cell:AddListener(WorldMapCell.EventUpdateDiscovered, arg0_2.onUpdate)
+	arg0_2.cell:AddListener(WorldMapCell.EventUpdateFog, arg0_2.onUpdate)
 
-	arg0.theme = arg2
+	arg0_2.theme = arg2_2
 
-	var0.super.Setup(arg0, WorldConst.GetTerrainEffectRes(arg0.cell:GetTerrain(), arg0.cell.terrainDir, arg0.cell.terrainStrong))
-	arg0:Load(function()
-		local var0 = arg0.cell
-		local var1 = var0:GetTerrain()
+	var0_0.super.Setup(arg0_2, WorldConst.GetTerrainEffectRes(arg0_2.cell:GetTerrain(), arg0_2.cell.terrainDir, arg0_2.cell.terrainStrong))
+	arg0_2:Load(function()
+		local var0_3 = arg0_2.cell
+		local var1_3 = var0_3:GetTerrain()
 
-		if var1 == WorldMapCell.TerrainStream then
-			arg0:SetModelOrder(WorldConst.LOEffectB, var0.row)
-		elseif var1 == WorldMapCell.TerrainWind then
-			arg0:SetModelOrder(WorldConst.LOEffectC, var0.row)
-			setActive(arg0.model:GetChild(0):Find("Xyz/Arrow"), var0.terrainStrong > 0)
-			arg0:UpdateModelScale(WorldConst.GetWindScale(var0.terrainStrong))
-		elseif var1 == WorldMapCell.TerrainIce then
-			arg0:SetModelOrder(WorldConst.LOEffectA, var0.row)
-		elseif var1 == WorldMapCell.TerrainPoison then
-			arg0:SetModelOrder(WorldConst.LOEffectA, var0.row)
+		if var1_3 == WorldMapCell.TerrainStream then
+			arg0_2:SetModelOrder(WorldConst.LOEffectB, var0_3.row)
+		elseif var1_3 == WorldMapCell.TerrainWind then
+			arg0_2:SetModelOrder(WorldConst.LOEffectC, var0_3.row)
+			setActive(arg0_2.model:GetChild(0):Find("Xyz/Arrow"), var0_3.terrainStrong > 0)
+			arg0_2:UpdateModelScale(WorldConst.GetWindScale(var0_3.terrainStrong))
+		elseif var1_3 == WorldMapCell.TerrainIce then
+			arg0_2:SetModelOrder(WorldConst.LOEffectA, var0_3.row)
+		elseif var1_3 == WorldMapCell.TerrainPoison then
+			arg0_2:SetModelOrder(WorldConst.LOEffectA, var0_3.row)
 		end
 
-		arg0:Init()
+		arg0_2:Init()
 	end)
 end
 
-function var0.Dispose(arg0)
-	arg0.cell:RemoveListener(WorldMapCell.EventUpdateInFov, arg0.onUpdate)
-	arg0.cell:RemoveListener(WorldMapCell.EventUpdateDiscovered, arg0.onUpdate)
-	arg0.cell:RemoveListener(WorldMapCell.EventUpdateFog, arg0.onUpdate)
-	var0.super.Dispose(arg0)
+function var0_0.Dispose(arg0_4)
+	arg0_4.cell:RemoveListener(WorldMapCell.EventUpdateInFov, arg0_4.onUpdate)
+	arg0_4.cell:RemoveListener(WorldMapCell.EventUpdateDiscovered, arg0_4.onUpdate)
+	arg0_4.cell:RemoveListener(WorldMapCell.EventUpdateFog, arg0_4.onUpdate)
+	var0_0.super.Dispose(arg0_4)
 end
 
-function var0.Init(arg0)
-	local var0 = arg0.cell
-	local var1 = arg0.transform
+function var0_0.Init(arg0_5)
+	local var0_5 = arg0_5.cell
+	local var1_5 = arg0_5.transform
 
-	var1.name = var0.GetName(var0.row, var0.column)
-	var1.anchoredPosition3D = arg0.theme:GetLinePosition(var0.row, var0.column)
+	var1_5.name = var0_0.GetName(var0_5.row, var0_5.column)
+	var1_5.anchoredPosition3D = arg0_5.theme:GetLinePosition(var0_5.row, var0_5.column)
 
-	arg0:Update()
+	arg0_5:Update()
 end
 
-function var0.Update(arg0, arg1)
-	local var0 = arg0.cell
+function var0_0.Update(arg0_6, arg1_6)
+	local var0_6 = arg0_6.cell
 
-	if arg1 == nil or arg1 == WorldMapCell.EventUpdateInFov or arg1 == WorldMapCell.EventUpdateFog then
-		setActive(arg0.transform, var0:GetInFOV() and not var0:InFog())
+	if arg1_6 == nil or arg1_6 == WorldMapCell.EventUpdateInFov or arg1_6 == WorldMapCell.EventUpdateFog then
+		setActive(arg0_6.transform, var0_6:GetInFOV() and not var0_6:InFog())
 	end
 end
 
-return var0
+return var0_0

@@ -1,78 +1,78 @@
-﻿local var0 = class("CourtYardFollowerSlot", import(".CourtYardFurnitureBaseSlot"))
+﻿local var0_0 = class("CourtYardFollowerSlot", import(".CourtYardFurnitureBaseSlot"))
 
-function var0.OnInit(arg0, arg1)
-	arg0.name = arg1[1][1]
-	arg0.defaultAction = arg1[1][2]
-	arg0.skewValue = Vector3(arg1[3][1][1], arg1[3][1][2])
-	arg0.aciton = arg1[3][2]
+function var0_0.OnInit(arg0_1, arg1_1)
+	arg0_1.name = arg1_1[1][1]
+	arg0_1.defaultAction = arg1_1[1][2]
+	arg0_1.skewValue = Vector3(arg1_1[3][1][1], arg1_1[3][1][2])
+	arg0_1.aciton = arg1_1[3][2]
 end
 
-function var0.GetSpineDefaultAction(arg0)
-	return arg0.defaultAction
+function var0_0.GetSpineDefaultAction(arg0_2)
+	return arg0_2.defaultAction
 end
 
-function var0.Occupy(arg0, arg1, arg2, arg3)
-	if arg0:IsEmpty() then
-		arg0.owner = arg2
-		arg0.user = arg1
-		arg0.observer = arg3
+function var0_0.Occupy(arg0_3, arg1_3, arg2_3, arg3_3)
+	if arg0_3:IsEmpty() then
+		arg0_3.owner = arg2_3
+		arg0_3.user = arg1_3
+		arg0_3.observer = arg3_3
 
-		arg0:Use()
-		arg0:OnAwake()
-		arg3:StartInteraction(arg0)
-		arg1:StartInteraction(arg0)
-		arg2:StartInteraction(arg0, true)
-		arg0:OnStart()
+		arg0_3:Use()
+		arg0_3:OnAwake()
+		arg3_3:StartInteraction(arg0_3)
+		arg1_3:StartInteraction(arg0_3)
+		arg2_3:StartInteraction(arg0_3, true)
+		arg0_3:OnStart()
 	end
 end
 
-function var0.OnAwake(arg0)
-	arg0:ClearTimer()
+function var0_0.OnAwake(arg0_4)
+	arg0_4:ClearTimer()
 end
 
-function var0.Clear(arg0, arg1)
-	if arg0:IsUsing() then
-		arg0:Empty()
-		arg0.observer:WillClearInteraction(arg0, arg1)
-		arg0.user:ClearInteraction(arg0, arg1)
-		arg0.owner:ClearInteraction(arg0, arg1, true)
-		arg0.observer:ClearInteraction(arg0, arg1)
+function var0_0.Clear(arg0_5, arg1_5)
+	if arg0_5:IsUsing() then
+		arg0_5:Empty()
+		arg0_5.observer:WillClearInteraction(arg0_5, arg1_5)
+		arg0_5.user:ClearInteraction(arg0_5, arg1_5)
+		arg0_5.owner:ClearInteraction(arg0_5, arg1_5, true)
+		arg0_5.observer:ClearInteraction(arg0_5, arg1_5)
 
-		arg0.user = nil
-		arg0.owner = nil
-		arg0.observer = nil
+		arg0_5.user = nil
+		arg0_5.owner = nil
+		arg0_5.observer = nil
 	end
 end
 
-function var0.OnStart(arg0)
-	arg0.user:UpdateInteraction({
-		action = arg0.aciton,
-		slot = arg0
+function var0_0.OnStart(arg0_6)
+	arg0_6.user:UpdateInteraction({
+		action = arg0_6.aciton,
+		slot = arg0_6
 	})
 end
 
-function var0.ClearTimer(arg0)
+function var0_0.ClearTimer(arg0_7)
 	return
 end
 
-function var0.OnStop(arg0)
-	arg0:ClearTimer()
+function var0_0.OnStop(arg0_8)
+	arg0_8:ClearTimer()
 end
 
-function var0.OnEnd(arg0)
-	arg0:ClearTimer()
+function var0_0.OnEnd(arg0_9)
+	arg0_9:ClearTimer()
 end
 
-function var0.GetBodyMask(arg0)
+function var0_0.GetBodyMask(arg0_10)
 	return false
 end
 
-function var0.GetUsingAnimator(arg0)
+function var0_0.GetUsingAnimator(arg0_11)
 	return false
 end
 
-function var0.GetFollower(arg0)
+function var0_0.GetFollower(arg0_12)
 	return nil
 end
 
-return var0
+return var0_0

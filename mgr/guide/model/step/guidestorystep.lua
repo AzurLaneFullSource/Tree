@@ -1,21 +1,21 @@
-﻿local var0 = class("GuideStoryStep", import(".GuideStep"))
+﻿local var0_0 = class("GuideStoryStep", import(".GuideStep"))
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0.stories = {}
+	arg0_1.stories = {}
 
-	for iter0, iter1 in ipairs(arg1.stories) do
-		table.insert(arg0.stories, iter1)
+	for iter0_1, iter1_1 in ipairs(arg1_1.stories) do
+		table.insert(arg0_1.stories, iter1_1)
 	end
 end
 
-function var0.GetType(arg0)
+function var0_0.GetType(arg0_2)
 	return GuideStep.TYPE_STORY
 end
 
-function var0.GetStories(arg0)
-	return arg0.stories
+function var0_0.GetStories(arg0_3)
+	return arg0_3.stories
 end
 
-return var0
+return var0_0

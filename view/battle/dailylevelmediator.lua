@@ -1,143 +1,143 @@
-﻿local var0 = class("DailyLevelMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("DailyLevelMediator", import("..base.ContextMediator"))
 
-var0.ON_STAGE = "DailyLevelMediator:ON_STAGE"
-var0.ON_CHALLENGE = "DailyLevelMediator:ON_CHALLENGE"
-var0.ON_RESET_CHALLENGE = "DailyLevelMediator:ON_RESET_CHALLENGE"
-var0.ON_CONTINUE_CHALLENGE = "DailyLevelMediator:ON_CONTINUE_CHALLENGE"
-var0.ON_CHALLENGE_EDIT_FLEET = "DailyLevelMediator:ON_CHALLENGE_EDIT_FLEET"
-var0.ON_REQUEST_CHALLENGE = "DailyLevelMediator:ON_REQUEST_CHALLENGE"
-var0.ON_CHALLENGE_FLEET_CLEAR = "DailyLevelMediator.ON_CHALLENGE_FLEET_CLEAR"
-var0.ON_CHALLENGE_FLEET_RECOMMEND = "DailyLevelMediator.ON_CHALLENGE_FLEET_RECOMMEND"
-var0.ON_CHALLENGE_OPEN_DOCK = "DailyLevelMediator:ON_CHALLENGE_OPEN_DOCK"
-var0.ON_CHALLENGE_OPEN_RANK = "DailyLevelMediator:ON_CHALLENGE_OPEN_RANK"
-var0.ON_QUICK_BATTLE = "DailyLevelMediator:ON_QUICK_BATTLE"
+var0_0.ON_STAGE = "DailyLevelMediator:ON_STAGE"
+var0_0.ON_CHALLENGE = "DailyLevelMediator:ON_CHALLENGE"
+var0_0.ON_RESET_CHALLENGE = "DailyLevelMediator:ON_RESET_CHALLENGE"
+var0_0.ON_CONTINUE_CHALLENGE = "DailyLevelMediator:ON_CONTINUE_CHALLENGE"
+var0_0.ON_CHALLENGE_EDIT_FLEET = "DailyLevelMediator:ON_CHALLENGE_EDIT_FLEET"
+var0_0.ON_REQUEST_CHALLENGE = "DailyLevelMediator:ON_REQUEST_CHALLENGE"
+var0_0.ON_CHALLENGE_FLEET_CLEAR = "DailyLevelMediator.ON_CHALLENGE_FLEET_CLEAR"
+var0_0.ON_CHALLENGE_FLEET_RECOMMEND = "DailyLevelMediator.ON_CHALLENGE_FLEET_RECOMMEND"
+var0_0.ON_CHALLENGE_OPEN_DOCK = "DailyLevelMediator:ON_CHALLENGE_OPEN_DOCK"
+var0_0.ON_CHALLENGE_OPEN_RANK = "DailyLevelMediator:ON_CHALLENGE_OPEN_RANK"
+var0_0.ON_QUICK_BATTLE = "DailyLevelMediator:ON_QUICK_BATTLE"
 
-function var0.register(arg0)
-	local var0 = getProxy(DailyLevelProxy)
+function var0_0.register(arg0_1)
+	local var0_1 = getProxy(DailyLevelProxy)
 
-	arg0.viewComponent:setDailyCounts(var0:getRawData())
+	arg0_1.viewComponent:setDailyCounts(var0_1:getRawData())
 
-	arg0.ships = getProxy(BayProxy):getRawData()
+	arg0_1.ships = getProxy(BayProxy):getRawData()
 
-	arg0.viewComponent:setShips(arg0.ships)
+	arg0_1.viewComponent:setShips(arg0_1.ships)
 
-	local var1 = getProxy(PlayerProxy):getData()
+	local var1_1 = getProxy(PlayerProxy):getData()
 
-	arg0.viewComponent:updateRes(var1)
-	arg0:bind(var0.ON_QUICK_BATTLE, function(arg0, arg1, arg2, arg3)
-		arg0:CheckShipExpItemOverflow(arg2, function()
-			arg0:sendNotification(GAME.DAILY_LEVEL_QUICK_BATTLE, {
-				dailyLevelId = arg1,
-				stageId = arg2,
-				cnt = arg3
+	arg0_1.viewComponent:updateRes(var1_1)
+	arg0_1:bind(var0_0.ON_QUICK_BATTLE, function(arg0_2, arg1_2, arg2_2, arg3_2)
+		arg0_1:CheckShipExpItemOverflow(arg2_2, function()
+			arg0_1:sendNotification(GAME.DAILY_LEVEL_QUICK_BATTLE, {
+				dailyLevelId = arg1_2,
+				stageId = arg2_2,
+				cnt = arg3_2
 			})
 		end)
 	end)
-	arg0:bind(var0.ON_STAGE, function(arg0, arg1)
-		var0.dailyLevelId = arg0.contextData.dailyLevelId
+	arg0_1:bind(var0_0.ON_STAGE, function(arg0_4, arg1_4)
+		var0_1.dailyLevelId = arg0_1.contextData.dailyLevelId
 
-		local var0 = PreCombatLayer
-		local var1 = SYSTEM_ROUTINE
+		local var0_4 = PreCombatLayer
+		local var1_4 = SYSTEM_ROUTINE
 
-		if pg.expedition_data_template[arg1.id].type == Stage.SubmarinStage then
-			var0 = PreCombatLayerSubmarine
-			var1 = SYSTEM_SUB_ROUTINE
+		if pg.expedition_data_template[arg1_4.id].type == Stage.SubmarinStage then
+			var0_4 = PreCombatLayerSubmarine
+			var1_4 = SYSTEM_SUB_ROUTINE
 		end
 
-		arg0:addSubLayers(Context.New({
+		arg0_1:addSubLayers(Context.New({
 			mediator = PreCombatMediator,
-			viewComponent = var0,
+			viewComponent = var0_4,
 			data = {
-				stageId = arg1.id,
-				system = var1,
-				OnConfirm = function(arg0)
-					arg0:CheckShipExpItemOverflow(arg1.id, arg0)
+				stageId = arg1_4.id,
+				system = var1_4,
+				OnConfirm = function(arg0_5)
+					arg0_1:CheckShipExpItemOverflow(arg1_4.id, arg0_5)
 				end
 			}
 		}))
 	end)
-	arg0:bind(var0.ON_CHALLENGE, function()
-		arg0.viewComponent:openChallengeView()
+	arg0_1:bind(var0_0.ON_CHALLENGE, function()
+		arg0_1.viewComponent:openChallengeView()
 	end)
-	arg0:bind(var0.ON_CHALLENGE_EDIT_FLEET, function(arg0, arg1)
-		local var0 = challengeProxy:getCurrentChallengeInfo()
+	arg0_1:bind(var0_0.ON_CHALLENGE_EDIT_FLEET, function(arg0_7, arg1_7)
+		local var0_7 = challengeProxy:getCurrentChallengeInfo()
 
-		var0:setDamageRateID(arg1.damageRateID)
-		var0:setLevelRateID(arg1.levelRateID)
-		challengeProxy:updateChallenge(var0)
-		arg0.viewComponent:openChallengeFleetEditView()
+		var0_7:setDamageRateID(arg1_7.damageRateID)
+		var0_7:setLevelRateID(arg1_7.levelRateID)
+		challengeProxy:updateChallenge(var0_7)
+		arg0_1.viewComponent:openChallengeFleetEditView()
 	end)
-	arg0:bind(var0.ON_CONTINUE_CHALLENGE, function()
-		arg0:addSubLayers(Context.New({
+	arg0_1:bind(var0_0.ON_CONTINUE_CHALLENGE, function()
+		arg0_1:addSubLayers(Context.New({
 			mediator = ChallengePreCombatMediator,
 			viewComponent = ChallengePreCombatLayer,
 			data = {}
 		}))
 	end)
-	arg0:bind(var0.ON_RESET_CHALLENGE, function()
-		arg0:sendNotification(GAME.CHALLENGE_RESET)
+	arg0_1:bind(var0_0.ON_RESET_CHALLENGE, function()
+		arg0_1:sendNotification(GAME.CHALLENGE_RESET)
 	end)
-	arg0:bind(var0.ON_CHALLENGE_FLEET_CLEAR, function()
+	arg0_1:bind(var0_0.ON_CHALLENGE_FLEET_CLEAR, function()
 		challengeProxy:clearEdittingFleet()
-		arg0.viewComponent:flushFleetEditButton()
+		arg0_1.viewComponent:flushFleetEditButton()
 	end)
-	arg0:bind(var0.ON_CHALLENGE_FLEET_RECOMMEND, function()
+	arg0_1:bind(var0_0.ON_CHALLENGE_FLEET_RECOMMEND, function()
 		challengeProxy:recommendChallengeFleet()
-		arg0.viewComponent:flushFleetEditButton()
+		arg0_1.viewComponent:flushFleetEditButton()
 	end)
-	arg0:bind(var0.ON_REQUEST_CHALLENGE, function()
-		local var0 = challengeProxy:getCurrentChallengeInfo()
-		local var1 = var0:getGSRateID()
+	arg0_1:bind(var0_0.ON_REQUEST_CHALLENGE, function()
+		local var0_12 = challengeProxy:getCurrentChallengeInfo()
+		local var1_12 = var0_12:getGSRateID()
 
-		for iter0 = 1, 4 do
-			PlayerPrefs.SetInt("challengeShipUID_" .. iter0, nil)
+		for iter0_12 = 1, 4 do
+			PlayerPrefs.SetInt("challengeShipUID_" .. iter0_12, nil)
 		end
 
-		for iter1 = 1, #var0:getShips() do
-			PlayerPrefs.SetInt("challengeShipUID_" .. iter1, var0:getShips()[iter1].id)
+		for iter1_12 = 1, #var0_12:getShips() do
+			PlayerPrefs.SetInt("challengeShipUID_" .. iter1_12, var0_12:getShips()[iter1_12].id)
 		end
 
-		arg0:sendNotification(GAME.CHALLENGE_REQUEST, {
-			shipIDList = var0:getShips(),
-			levelRate = var0:getLevelRateID(),
-			damageRate = var0:getDamageRateID(),
-			gsRate = var1
+		arg0_1:sendNotification(GAME.CHALLENGE_REQUEST, {
+			shipIDList = var0_12:getShips(),
+			levelRate = var0_12:getLevelRateID(),
+			damageRate = var0_12:getDamageRateID(),
+			gsRate = var1_12
 		})
 	end)
-	arg0:bind(var0.ON_CHALLENGE_OPEN_RANK, function()
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.BILLBOARD, {
+	arg0_1:bind(var0_0.ON_CHALLENGE_OPEN_RANK, function()
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.BILLBOARD, {
 			page = PowerRank.TYPE_CHALLENGE
 		})
 	end)
-	arg0:bind(var0.ON_CHALLENGE_OPEN_DOCK, function(arg0, arg1)
-		local var0 = arg1.shipType
-		local var1 = arg1.shipVO
-		local var2 = arg1.fleet
-		local var3 = arg1.teamType
-		local var4 = getProxy(BayProxy):getRawData()
-		local var5 = {}
+	arg0_1:bind(var0_0.ON_CHALLENGE_OPEN_DOCK, function(arg0_14, arg1_14)
+		local var0_14 = arg1_14.shipType
+		local var1_14 = arg1_14.shipVO
+		local var2_14 = arg1_14.fleet
+		local var3_14 = arg1_14.teamType
+		local var4_14 = getProxy(BayProxy):getRawData()
+		local var5_14 = {}
 
-		for iter0, iter1 in pairs(var4) do
-			if iter1:getTeamType() ~= var3 or var0 ~= 0 and not table.contains({
-				var0
-			}, iter1:getShipType()) then
-				table.insert(var5, iter0)
+		for iter0_14, iter1_14 in pairs(var4_14) do
+			if iter1_14:getTeamType() ~= var3_14 or var0_14 ~= 0 and not table.contains({
+				var0_14
+			}, iter1_14:getShipType()) then
+				table.insert(var5_14, iter0_14)
 			end
 		end
 
-		local var6
-		local var7
-		local var8
+		local var6_14
+		local var7_14
+		local var8_14
 
-		if var1 == nil then
-			var6 = false
-			var8 = nil
+		if var1_14 == nil then
+			var6_14 = false
+			var8_14 = nil
 		else
-			var6 = true
-			var8 = var1.id
+			var6_14 = true
+			var8_14 = var1_14.id
 		end
 
-		local var9 = {
+		local var9_14 = {
 			inChallenge = true,
 			inEvent = false,
 			inBackyard = false,
@@ -147,52 +147,52 @@ function var0.register(arg0)
 			inAdmiral = false
 		}
 
-		arg0.contextData.challenge = true
+		arg0_1.contextData.challenge = true
 
-		local var10, var11, var12 = arg0:getDockCallbackFuncs(var2, var1)
+		local var10_14, var11_14, var12_14 = arg0_1:getDockCallbackFuncs(var2_14, var1_14)
 
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 			selectedMin = 0,
 			selectedMax = 1,
-			ignoredIds = var5,
-			activeShipId = var8,
+			ignoredIds = var5_14,
+			activeShipId = var8_14,
 			leastLimitMsg = i18n("ship_formationMediator_leastLimit"),
-			quitTeam = var6,
+			quitTeam = var6_14,
 			leftTopInfo = i18n("word_formation"),
-			onShip = var10,
-			confirmSelect = var11,
-			onSelected = var12,
-			flags = var9
+			onShip = var10_14,
+			confirmSelect = var11_14,
+			onSelected = var12_14,
+			flags = var9_14
 		})
 	end)
 
-	if arg0.contextData.loadBillBoard then
-		arg0.contextData.loadBillBoard = nil
+	if arg0_1.contextData.loadBillBoard then
+		arg0_1.contextData.loadBillBoard = nil
 
-		arg0.viewComponent:emit(var0.ON_CHALLENGE_OPEN_RANK)
+		arg0_1.viewComponent:emit(var0_0.ON_CHALLENGE_OPEN_RANK)
 	end
 end
 
-function var0.CheckShipExpItemOverflow(arg0, arg1, arg2)
-	local var0 = pg.expedition_data_template[arg1].award_display
+function var0_0.CheckShipExpItemOverflow(arg0_15, arg1_15, arg2_15)
+	local var0_15 = pg.expedition_data_template[arg1_15].award_display
 
-	if _.any(var0, function(arg0)
-		local var0 = getProxy(BagProxy):getItemCountById(arg0[2])
-		local var1 = Item.getConfigData(arg0[2])
+	if _.any(var0_15, function(arg0_16)
+		local var0_16 = getProxy(BagProxy):getItemCountById(arg0_16[2])
+		local var1_16 = Item.getConfigData(arg0_16[2])
 
-		return arg0[1] == DROP_TYPE_ITEM and var1.type == Item.EXP_BOOK_TYPE and var0 >= var1.max_num
+		return arg0_16[1] == DROP_TYPE_ITEM and var1_16.type == Item.EXP_BOOK_TYPE and var0_16 >= var1_16.max_num
 	end) then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("player_expResource_mail_fullBag"),
-			onYes = arg2,
+			onYes = arg2_15,
 			weight = LayerWeightConst.THIRD_LAYER
 		})
 	else
-		arg2()
+		arg2_15()
 	end
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_17)
 	return {
 		PlayerProxy.UPDATED,
 		ChallengeProxy.PRECOMBAT,
@@ -204,14 +204,14 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_18, arg1_18)
+	local var0_18 = arg1_18:getName()
+	local var1_18 = arg1_18:getBody()
 
-	if var0 == PlayerProxy.UPDATED then
-		arg0.viewComponent:updateRes(var1)
-	elseif var0 == ChallengeProxy.PRECOMBAT then
-		arg0:addSubLayers(Context.New({
+	if var0_18 == PlayerProxy.UPDATED then
+		arg0_18.viewComponent:updateRes(var1_18)
+	elseif var0_18 == ChallengeProxy.PRECOMBAT then
+		arg0_18:addSubLayers(Context.New({
 			mediator = ChallengePreCombatMediator,
 			viewComponent = ChallengePreCombatLayer,
 			data = {
@@ -219,116 +219,116 @@ function var0.handleNotification(arg0, arg1)
 				system = SYSTEM_ROUTINE
 			}
 		}))
-	elseif var0 == GAME.CHALLENGE_REQUEST_DONE then
-		arg0:addSubLayers(Context.New({
+	elseif var0_18 == GAME.CHALLENGE_REQUEST_DONE then
+		arg0_18:addSubLayers(Context.New({
 			mediator = ChallengePreCombatMediator,
 			viewComponent = ChallengePreCombatLayer,
 			data = {}
 		}))
-		arg0.viewComponent:closeChallengeFleetEditView()
-	elseif var0 == GAME.CHALLENGE_RESET_DONE then
-		arg0.viewComponent:closeChallengeSettingView()
-		arg0.viewComponent:openChallengeSettingView()
-	elseif var0 == ChallengeProxy.CHALLENGE_UPDATED then
-		local var2 = getProxy(ChallengeProxy):getCurrentChallengeInfo()
+		arg0_18.viewComponent:closeChallengeFleetEditView()
+	elseif var0_18 == GAME.CHALLENGE_RESET_DONE then
+		arg0_18.viewComponent:closeChallengeSettingView()
+		arg0_18.viewComponent:openChallengeSettingView()
+	elseif var0_18 == ChallengeProxy.CHALLENGE_UPDATED then
+		local var2_18 = getProxy(ChallengeProxy):getCurrentChallengeInfo()
 
-		arg0.viewComponent:setChallengeInfo(var2)
-	elseif var0 == GAME.DAILY_LEVEL_QUICK_BATTLE_DONE then
-		local var3 = var1.awards
+		arg0_18.viewComponent:setChallengeInfo(var2_18)
+	elseif var0_18 == GAME.DAILY_LEVEL_QUICK_BATTLE_DONE then
+		local var3_18 = var1_18.awards
 
-		if #var3 > 0 then
-			arg0:DisplayAwards(var3)
+		if #var3_18 > 0 then
+			arg0_18:DisplayAwards(var3_18)
 		end
 
-		local var4 = getProxy(DailyLevelProxy)
+		local var4_18 = getProxy(DailyLevelProxy)
 
-		arg0.viewComponent:setDailyCounts(var4:getRawData())
-		arg0.viewComponent:UpdateBattleBtn({
-			id = var1.stageId
+		arg0_18.viewComponent:setDailyCounts(var4_18:getRawData())
+		arg0_18.viewComponent:UpdateBattleBtn({
+			id = var1_18.stageId
 		})
-		arg0.viewComponent:UpdateDailyLevelCnt(var1.dailyLevelId)
-		arg0.viewComponent:UpdateDailyLevelCntForDescPanel(var1.dailyLevelId)
-	elseif var0 == GAME.REMOVE_LAYERS and var1.context.mediator.__cname == "PreCombatMediator" then
-		setActive(arg0.viewComponent.blurPanel, true)
+		arg0_18.viewComponent:UpdateDailyLevelCnt(var1_18.dailyLevelId)
+		arg0_18.viewComponent:UpdateDailyLevelCntForDescPanel(var1_18.dailyLevelId)
+	elseif var0_18 == GAME.REMOVE_LAYERS and var1_18.context.mediator.__cname == "PreCombatMediator" then
+		setActive(arg0_18.viewComponent.blurPanel, true)
 	end
 end
 
-function var0.getDockCallbackFuncs(arg0, arg1, arg2)
-	local var0 = getProxy(BayProxy)
-	local var1 = getProxy(ChallengeProxy)
-	local var2 = var1:getCurrentChallengeInfo()
-	local var3 = var2:getShips()
+function var0_0.getDockCallbackFuncs(arg0_19, arg1_19, arg2_19)
+	local var0_19 = getProxy(BayProxy)
+	local var1_19 = getProxy(ChallengeProxy)
+	local var2_19 = var1_19:getCurrentChallengeInfo()
+	local var3_19 = var2_19:getShips()
 
-	local function var4(arg0, arg1)
-		if arg2 and arg2:isSameKind(arg0) then
+	local function var4_19(arg0_20, arg1_20)
+		if arg2_19 and arg2_19:isSameKind(arg0_20) then
 			return true
 		end
 
-		local var0 = Challenge.shipTypeFixer(arg0:getShipType())
-		local var1 = 0
+		local var0_20 = Challenge.shipTypeFixer(arg0_20:getShipType())
+		local var1_20 = 0
 
-		for iter0, iter1 in pairs(arg1) do
-			if Challenge.shipTypeFixer(iter0:getShipType()) == var0 then
-				var1 = var1 + 1
+		for iter0_20, iter1_20 in pairs(arg1_19) do
+			if Challenge.shipTypeFixer(iter0_20:getShipType()) == var0_20 then
+				var1_20 = var1_20 + 1
 			end
 
-			if arg0:isSameKind(iter0) then
+			if arg0_20:isSameKind(iter0_20) then
 				return false, i18n("event_same_type_not_allowed")
 			end
 		end
 
-		if arg2 and Challenge.shipTypeFixer(arg2:getShipType()) == var0 then
-			var1 = var1 - 1
+		if arg2_19 and Challenge.shipTypeFixer(arg2_19:getShipType()) == var0_20 then
+			var1_20 = var1_20 - 1
 		end
 
-		if var1 >= Challenge.SAME_TYPE_LIMIT then
+		if var1_20 >= Challenge.SAME_TYPE_LIMIT then
 			return false, i18n("challenge_fleet_type_fail")
 		end
 
 		return true
 	end
 
-	local function var5(arg0, arg1, arg2)
-		arg1()
+	local function var5_19(arg0_21, arg1_21, arg2_21)
+		arg1_21()
 	end
 
-	local function var6(arg0)
-		if arg2 then
-			local var0
+	local function var6_19(arg0_22)
+		if arg2_19 then
+			local var0_22
 
-			for iter0, iter1 in ipairs(var3) do
-				if iter1.id == arg2.id then
-					var0 = iter0
+			for iter0_22, iter1_22 in ipairs(var3_19) do
+				if iter1_22.id == arg2_19.id then
+					var0_22 = iter0_22
 
 					break
 				end
 			end
 
-			table.remove(var3, var0)
+			table.remove(var3_19, var0_22)
 		end
 
-		if #arg0 > 0 then
-			var3[#var3 + 1] = {
-				id = arg0[1]
+		if #arg0_22 > 0 then
+			var3_19[#var3_19 + 1] = {
+				id = arg0_22[1]
 			}
 		end
 
-		var1:updateChallenge(var2)
+		var1_19:updateChallenge(var2_19)
 	end
 
-	return var4, var5, var6
+	return var4_19, var5_19, var6_19
 end
 
-function var0.DisplayAwards(arg0, arg1)
-	local var0 = {}
+function var0_0.DisplayAwards(arg0_23, arg1_23)
+	local var0_23 = {}
 
-	for iter0, iter1 in ipairs(arg1) do
-		for iter2, iter3 in ipairs(iter1) do
-			table.insert(var0, iter3)
+	for iter0_23, iter1_23 in ipairs(arg1_23) do
+		for iter2_23, iter3_23 in ipairs(iter1_23) do
+			table.insert(var0_23, iter3_23)
 		end
 	end
 
-	arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var0)
+	arg0_23.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_23)
 end
 
-return var0
+return var0_0

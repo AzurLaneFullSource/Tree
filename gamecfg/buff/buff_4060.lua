@@ -25,10 +25,10 @@
 						}
 					}
 				},
-				centerPosFun = function(arg0)
+				centerPosFun = function(arg0_1)
 					return Vector3(1, 0, -3.5)
 				end,
-				rotationFun = function(arg0)
+				rotationFun = function(arg0_2)
 					return Vector3(0, -120, 0)
 				end
 			}
@@ -58,10 +58,10 @@
 						}
 					}
 				},
-				centerPosFun = function(arg0)
+				centerPosFun = function(arg0_3)
 					return Vector3(1, 0, 3.5)
 				end,
-				rotationFun = function(arg0)
+				rotationFun = function(arg0_4)
 					return Vector3(0, 120, 0)
 				end
 			}

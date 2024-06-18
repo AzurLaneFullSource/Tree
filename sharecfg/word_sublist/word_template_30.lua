@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_30 = {}
+var0_0.word_template_30 = {}
 
-local var1 = var0.word_template_30
+local var1_0 = var0_0.word_template_30
 
 function temp()
-	var1.賭 = {
+	var1_0.賭 = {
 		博 = {
 			this = true
 		},
@@ -23,7 +23,7 @@ end
 temp()
 
 function temp()
-	var1.盗 = {
+	var1_0.盗 = {
 		撮 = {
 			this = true
 		},
@@ -66,7 +66,7 @@ end
 temp()
 
 function temp()
-	var1.頭 = {
+	var1_0.頭 = {
 		お = {
 			か = {
 				し = {
@@ -100,7 +100,7 @@ end
 temp()
 
 function temp()
-	var1.童 = {
+	var1_0.童 = {
 		貞 = {
 			this = true
 		},
@@ -134,7 +134,7 @@ end
 temp()
 
 function temp()
-	var1.特 = {
+	var1_0.特 = {
 		亜 = {
 			this = true
 		},
@@ -302,7 +302,7 @@ end
 temp()
 
 function temp()
-	var1.毒 = {
+	var1_0.毒 = {
 		品 = {
 			this = true,
 			出 = {
@@ -393,7 +393,7 @@ end
 temp()
 
 function temp()
-	var1.南 = {
+	var1_0.南 = {
 		京 = {
 			this = true,
 			近 = {

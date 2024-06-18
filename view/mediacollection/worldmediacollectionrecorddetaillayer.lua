@@ -1,154 +1,154 @@
-﻿local var0 = class("WorldMediaCollectionRecordDetailLayer", import(".WorldMediaCollectionSubLayer"))
+﻿local var0_0 = class("WorldMediaCollectionRecordDetailLayer", import(".WorldMediaCollectionSubLayer"))
 
-var0.TypeStory = 1
-var0.TypeBattle = 2
+var0_0.TypeStory = 1
+var0_0.TypeBattle = 2
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "WorldMediaCollectionMemoryDetailUI"
 end
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
-	assert(arg0.viewParent, "Need assign ViewParent for " .. arg0.__cname)
-	setActive(arg0._tf:Find("ItemRect/TitleRecord"), true)
-	setActive(arg0._tf:Find("ItemRect/TitleMemory"), false)
+function var0_0.OnInit(arg0_2)
+	var0_0.super.OnInit(arg0_2)
+	assert(arg0_2.viewParent, "Need assign ViewParent for " .. arg0_2.__cname)
+	setActive(arg0_2._tf:Find("ItemRect/TitleRecord"), true)
+	setActive(arg0_2._tf:Find("ItemRect/TitleMemory"), false)
 
-	arg0.recordItemList = arg0:findTF("ItemRect"):GetComponent("LScrollRect")
+	arg0_2.recordItemList = arg0_2:findTF("ItemRect"):GetComponent("LScrollRect")
 
-	function arg0.recordItemList.onInitItem(arg0)
-		arg0:OnInitRecordItem(arg0)
+	function arg0_2.recordItemList.onInitItem(arg0_3)
+		arg0_2:OnInitRecordItem(arg0_3)
 	end
 
-	function arg0.recordItemList.onUpdateItem(arg0, arg1)
-		arg0:OnUpdateRecordItem(arg0 + 1, arg1)
+	function arg0_2.recordItemList.onUpdateItem(arg0_4, arg1_4)
+		arg0_2:OnUpdateRecordItem(arg0_4 + 1, arg1_4)
 	end
 
-	arg0.recordItems = {}
+	arg0_2.recordItems = {}
 
-	local var0 = arg0:findTF("Item", arg0.recordItemList)
+	local var0_2 = arg0_2:findTF("Item", arg0_2.recordItemList)
 
-	setActive(var0, false)
+	setActive(var0_2, false)
 
-	arg0.loader = AutoLoader.New()
+	arg0_2.loader = AutoLoader.New()
 
-	setText(arg0._tf:Find("ItemRect/ProgressDesc"), i18n("world_collection_2"))
+	setText(arg0_2._tf:Find("ItemRect/ProgressDesc"), i18n("world_collection_2"))
 end
 
-function var0.OnInitRecordItem(arg0, arg1)
-	if arg0.exited then
+function var0_0.OnInitRecordItem(arg0_5, arg1_5)
+	if arg0_5.exited then
 		return
 	end
 
-	onButton(arg0, arg1, function()
-		local var0 = arg0.recordItems[arg1]
-		local var1 = nowWorld():GetCollectionProxy()
+	onButton(arg0_5, arg1_5, function()
+		local var0_6 = arg0_5.recordItems[arg1_5]
+		local var1_6 = nowWorld():GetCollectionProxy()
 
-		if var0 and arg0.CheckRecordIsUnlock(var0) then
-			arg0:PlayMemory(var0)
+		if var0_6 and arg0_5.CheckRecordIsUnlock(var0_6) then
+			arg0_5:PlayMemory(var0_6)
 		end
 	end, SOUND_BACK)
 end
 
-function var0.OnUpdateRecordItem(arg0, arg1, arg2)
-	if arg0.exited then
+function var0_0.OnUpdateRecordItem(arg0_7, arg1_7, arg2_7)
+	if arg0_7.exited then
 		return
 	end
 
-	local var0 = arg0.records and arg0.records[arg1]
+	local var0_7 = arg0_7.records and arg0_7.records[arg1_7]
 
-	assert("Not Initialize RecordGroups ID: " .. (arg0.contextData.recordGroup or "NIL"))
+	assert("Not Initialize RecordGroups ID: " .. (arg0_7.contextData.recordGroup or "NIL"))
 
-	arg0.recordItems[arg2] = var0
+	arg0_7.recordItems[arg2_7] = var0_7
 
-	local var1 = tf(arg2)
+	local var1_7 = tf(arg2_7)
 
-	if arg0.CheckRecordIsUnlock(var0) then
-		setActive(var1:Find("normal"), true)
-		setActive(var1:Find("lock"), false)
+	if arg0_7.CheckRecordIsUnlock(var0_7) then
+		setActive(var1_7:Find("normal"), true)
+		setActive(var1_7:Find("lock"), false)
 
-		var1:Find("normal/title"):GetComponent(typeof(Text)).text = var0.name
+		var1_7:Find("normal/title"):GetComponent(typeof(Text)).text = var0_7.name
 
-		arg0.loader:GetSpriteQuiet("memoryicon/" .. var0.icon, "", var1:Find("normal"))
-		setText(var1:Find("normal/id"), string.format("#%u", var0.group_ID))
+		arg0_7.loader:GetSpriteQuiet("memoryicon/" .. var0_7.icon, "", var1_7:Find("normal"))
+		setText(var1_7:Find("normal/id"), string.format("#%u", var0_7.group_ID))
 	else
-		setActive(var1:Find("normal"), false)
-		setActive(var1:Find("lock"), true)
-		setText(var1:Find("lock/condition"), var0.condition)
+		setActive(var1_7:Find("normal"), false)
+		setActive(var1_7:Find("lock"), true)
+		setText(var1_7:Find("lock/condition"), var0_7.condition)
 	end
 
-	onButton(arg0, var1, function()
-		if not arg0.CheckRecordIsUnlock(var0) then
+	onButton(arg0_7, var1_7, function()
+		if not arg0_7.CheckRecordIsUnlock(var0_7) then
 			return
 		end
 
-		arg0:PlayMemory(var0)
+		arg0_7:PlayMemory(var0_7)
 	end, SFX_PANEL)
 end
 
-function var0.SetStoryMask(arg0, arg1)
-	arg0.memoryMask = arg1
+function var0_0.SetStoryMask(arg0_9, arg1_9)
+	arg0_9.memoryMask = arg1_9
 end
 
-function var0.PlayMemory(arg0, arg1)
-	if arg1.type == var0.TypeBattle then
-		local var0 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg1.story)
+function var0_0.PlayMemory(arg0_10, arg1_10)
+	if arg1_10.type == var0_0.TypeBattle then
+		local var0_10 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg1_10.story)
 
-		arg0:emit(WorldMediaCollectionMediator.BEGIN_STAGE, {
+		arg0_10:emit(WorldMediaCollectionMediator.BEGIN_STAGE, {
 			memory = true,
 			system = SYSTEM_PERFORM,
-			stageId = var0
+			stageId = var0_10
 		})
 	else
-		local var1 = findTF(arg0.memoryMask, "pic")
+		local var1_10 = findTF(arg0_10.memoryMask, "pic")
 
-		if string.len(arg1.mask) > 0 then
-			setActive(var1, true)
+		if string.len(arg1_10.mask) > 0 then
+			setActive(var1_10, true)
 
-			var1:GetComponent(typeof(Image)).sprite = LoadSprite(arg1.mask)
+			var1_10:GetComponent(typeof(Image)).sprite = LoadSprite(arg1_10.mask)
 		else
-			setActive(var1, false)
+			setActive(var1_10, false)
 		end
 
-		setActive(arg0.memoryMask, true)
-		pg.NewStoryMgr.GetInstance():Play(arg1.story, function()
-			setActive(arg0.memoryMask, false)
+		setActive(arg0_10.memoryMask, true)
+		pg.NewStoryMgr.GetInstance():Play(arg1_10.story, function()
+			setActive(arg0_10.memoryMask, false)
 		end, true)
 	end
 end
 
-function var0.ShowRecordGroup(arg0, arg1)
-	arg0.contextData.recordGroup = arg1
+function var0_0.ShowRecordGroup(arg0_12, arg1_12)
+	arg0_12.contextData.recordGroup = arg1_12
 
-	local var0 = WorldCollectionProxy.GetCollectionRecordGroupTemplate(arg1)
+	local var0_12 = WorldCollectionProxy.GetCollectionRecordGroupTemplate(arg1_12)
 
-	assert("Missing Record Group Config ID: " .. (arg1 or "NIL"))
+	assert("Missing Record Group Config ID: " .. (arg1_12 or "NIL"))
 
-	arg0.records = _.map(var0.child, function(arg0)
-		return WorldCollectionProxy.GetCollectionTemplate(arg0)
+	arg0_12.records = _.map(var0_12.child, function(arg0_13)
+		return WorldCollectionProxy.GetCollectionTemplate(arg0_13)
 	end)
 
-	arg0.recordItemList:SetTotalCount(#arg0.records, 0)
+	arg0_12.recordItemList:SetTotalCount(#arg0_12.records, 0)
 
-	local var1 = #arg0.records
-	local var2 = _.reduce(arg0.records, 0, function(arg0, arg1)
-		if arg0.CheckRecordIsUnlock(arg1) then
-			arg0 = arg0 + 1
+	local var1_12 = #arg0_12.records
+	local var2_12 = _.reduce(arg0_12.records, 0, function(arg0_14, arg1_14)
+		if arg0_12.CheckRecordIsUnlock(arg1_14) then
+			arg0_14 = arg0_14 + 1
 		end
 
-		return arg0
+		return arg0_14
 	end)
 
-	setText(arg0._tf:Find("ItemRect/ProgressText"), var2 .. "/" .. var1)
+	setText(arg0_12._tf:Find("ItemRect/ProgressText"), var2_12 .. "/" .. var1_12)
 end
 
-function var0.CheckRecordIsUnlock(arg0)
-	return nowWorld():GetCollectionProxy():IsUnlock(arg0.id) or pg.NewStoryMgr.GetInstance():IsPlayed(arg0.story, true)
+function var0_0.CheckRecordIsUnlock(arg0_15)
+	return nowWorld():GetCollectionProxy():IsUnlock(arg0_15.id) or pg.NewStoryMgr.GetInstance():IsPlayed(arg0_15.story, true)
 end
 
-function var0.CleanList(arg0)
-	arg0.records = nil
+function var0_0.CleanList(arg0_16)
+	arg0_16.records = nil
 
-	arg0.recordItemList:SetTotalCount(0)
+	arg0_16.recordItemList:SetTotalCount(0)
 end
 
-return var0
+return var0_0

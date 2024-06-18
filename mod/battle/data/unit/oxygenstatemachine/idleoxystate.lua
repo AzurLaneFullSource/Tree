@@ -1,53 +1,53 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConst
-local var2 = var0.Battle.BattleAttr
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConst
+local var2_0 = var0_0.Battle.BattleAttr
 
-var0.Battle.IdleOxyState = class("IdleOxyState", var0.Battle.IOxyState)
-var0.Battle.IdleOxyState.__name = "IdleOxyState"
+var0_0.Battle.IdleOxyState = class("IdleOxyState", var0_0.Battle.IOxyState)
+var0_0.Battle.IdleOxyState.__name = "IdleOxyState"
 
-local var3 = var0.Battle.IdleOxyState
+local var3_0 = var0_0.Battle.IdleOxyState
 
-function var3.Ctor(arg0)
-	var3.super.Ctor(arg0)
+function var3_0.Ctor(arg0_1)
+	var3_0.super.Ctor(arg0_1)
 end
 
-function var3.GetWeaponUseableList(arg0)
+function var3_0.GetWeaponUseableList(arg0_2)
 	return {}
 end
 
-function var3.UpdateCldData(arg0, arg1, arg2)
-	local var0 = arg2:GetDiveState()
-	local var1 = arg0:GetDiveState()
+function var3_0.UpdateCldData(arg0_3, arg1_3, arg2_3)
+	local var0_3 = arg2_3:GetDiveState()
+	local var1_3 = arg0_3:GetDiveState()
 
-	arg1:GetCldData().Surface = var1
+	arg1_3:GetCldData().Surface = var1_3
 
-	if var0 ~= var1 then
-		var2.UnitCldEnable(arg1)
+	if var0_3 ~= var1_3 then
+		var2_0.UnitCldEnable(arg1_3)
 	end
 end
 
-function var3.GetDiveState(arg0)
-	return var1.OXY_STATE.FLOAT
+function var3_0.GetDiveState(arg0_4)
+	return var1_0.OXY_STATE.FLOAT
 end
 
-function var3.GetBubbleFlag(arg0)
+function var3_0.GetBubbleFlag(arg0_5)
 	return false
 end
 
-function var3.IsVisible(arg0)
+function var3_0.IsVisible(arg0_6)
 	return false
 end
 
-function var3.GetBarVisible(arg0)
+function var3_0.GetBarVisible(arg0_7)
 	return true
 end
 
-function var3.RunMode(arg0)
+function var3_0.RunMode(arg0_8)
 	return false
 end
 
-function var3.UpdateDive(arg0)
+function var3_0.UpdateDive(arg0_9)
 	return true
 end

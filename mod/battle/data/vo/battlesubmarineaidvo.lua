@@ -1,40 +1,40 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConfig
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConfig
 
-var0.Battle.BattleSubmarineAidVO = class("BattleSubmarineAidVO", var0.Battle.BattlePlayerWeaponVO)
-var0.Battle.BattleSubmarineAidVO.__name = "BattleSubmarineAidVO"
+var0_0.Battle.BattleSubmarineAidVO = class("BattleSubmarineAidVO", var0_0.Battle.BattlePlayerWeaponVO)
+var0_0.Battle.BattleSubmarineAidVO.__name = "BattleSubmarineAidVO"
 
-local var2 = var0.Battle.BattleSubmarineAidVO
+local var2_0 = var0_0.Battle.BattleSubmarineAidVO
 
-var2.GCD = var1.AirAssistCFG.GCD
+var2_0.GCD = var1_0.AirAssistCFG.GCD
 
-function var2.Ctor(arg0)
-	var2.super.Ctor(arg0, var2.GCD)
+function var2_0.Ctor(arg0_1)
+	var2_0.super.Ctor(arg0_1, var2_0.GCD)
 end
 
-function var2.SetUseable(arg0, arg1)
-	arg0._useable = arg1
-	arg0._current = arg1 and 1 or 0
-	arg0._max = 1
+function var2_0.SetUseable(arg0_2, arg1_2)
+	arg0_2._useable = arg1_2
+	arg0_2._current = arg1_2 and 1 or 0
+	arg0_2._max = 1
 
-	arg0:DispatchOverLoadChange()
-	arg0:DispatchCountChange()
+	arg0_2:DispatchOverLoadChange()
+	arg0_2:DispatchCountChange()
 end
 
-function var2.GetUseable(arg0)
-	return arg0._useable
+function var2_0.GetUseable(arg0_3)
+	return arg0_3._useable
 end
 
-function var2.IsOverLoad(arg0)
-	return arg0._current < arg0._max or arg0._count < 1
+function var2_0.IsOverLoad(arg0_4)
+	return arg0_4._current < arg0_4._max or arg0_4._count < 1
 end
 
-function var2.Cast(arg0)
-	arg0._count = arg0._count - 1
+function var2_0.Cast(arg0_5)
+	arg0_5._count = arg0_5._count - 1
 
-	arg0:resetCurrent()
-	arg0:DispatchOverLoadChange()
-	arg0:DispatchCountChange()
+	arg0_5:resetCurrent()
+	arg0_5:DispatchOverLoadChange()
+	arg0_5:DispatchCountChange()
 end

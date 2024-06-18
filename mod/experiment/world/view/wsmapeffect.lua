@@ -1,30 +1,30 @@
-﻿local var0 = class("WSMapEffect", import(".WSMapTransform"))
+﻿local var0_0 = class("WSMapEffect", import(".WSMapTransform"))
 
-var0.Fields = {
+var0_0.Fields = {
 	resPath = "string",
 	resName = "string"
 }
 
-function var0.Dispose(arg0)
-	arg0:Unload()
-	var0.super.Dispose(arg0)
+function var0_0.Dispose(arg0_1)
+	arg0_1:Unload()
+	var0_0.super.Dispose(arg0_1)
 end
 
-function var0.Setup(arg0, arg1, arg2)
-	arg0.resPath = arg1
-	arg0.resName = arg2
+function var0_0.Setup(arg0_2, arg1_2, arg2_2)
+	arg0_2.resPath = arg1_2
+	arg0_2.resName = arg2_2
 end
 
-function var0.Load(arg0, arg1)
-	arg0:LoadModel(WorldConst.ModelPrefab, arg0.resPath, arg0.resName, true, function()
-		setParent(arg0.model, arg0.transform, false)
+function var0_0.Load(arg0_3, arg1_3)
+	arg0_3:LoadModel(WorldConst.ModelPrefab, arg0_3.resPath, arg0_3.resName, true, function()
+		setParent(arg0_3.model, arg0_3.transform, false)
 
-		return existCall(arg1)
+		return existCall(arg1_3)
 	end)
 end
 
-function var0.Unload(arg0)
-	arg0:UnloadModel()
+function var0_0.Unload(arg0_5)
+	arg0_5:UnloadModel()
 end
 
-return var0
+return var0_0

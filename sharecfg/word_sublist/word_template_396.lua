@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_396 = {}
+var0_0.word_template_396 = {}
 
-local var1 = var0.word_template_396
+local var1_0 = var0_0.word_template_396
 
 function temp()
-	var1.罚 = {
+	var1_0.罚 = {
 		酒 = {
 			三 = {
 				杯 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.邹 = {
+	var1_0.邹 = {
 		允 = {
 			慷 = {
 				this = true
@@ -38,7 +38,7 @@ end
 temp()
 
 function temp()
-	var1.燈 = {
+	var1_0.燈 = {
 		罪 = {
 			人 = {
 				this = true
@@ -50,7 +50,7 @@ end
 temp()
 
 function temp()
-	var1.馼 = {
+	var1_0.馼 = {
 		字 = {
 			萸 = {
 				this = true
@@ -62,7 +62,7 @@ end
 temp()
 
 function temp()
-	var1.掴 = {
+	var1_0.掴 = {
 		物 = {
 			院 = {
 				this = true
@@ -74,7 +74,7 @@ end
 temp()
 
 function temp()
-	var1.咿 = {
+	var1_0.咿 = {
 		次 = {
 			麦 = {
 				d = {
@@ -94,7 +94,7 @@ end
 temp()
 
 function temp()
-	var1.沟 = {
+	var1_0.沟 = {
 		里 = {
 			滚 = {
 				架 = {

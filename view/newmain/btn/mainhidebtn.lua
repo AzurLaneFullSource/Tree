@@ -1,7 +1,7 @@
-﻿local var0 = class("MainHideBtn", import(".MainBaseBtn"))
+﻿local var0_0 = class("MainHideBtn", import(".MainBaseBtn"))
 
-function var0.OnClick(arg0)
-	arg0:emit(NewMainScene.FOLD, true)
+function var0_0.OnClick(arg0_1)
+	arg0_1:emit(NewMainScene.FOLD, true)
 end
 
-return var0
+return var0_0

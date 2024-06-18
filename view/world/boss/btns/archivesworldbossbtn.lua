@@ -1,38 +1,38 @@
-﻿local var0 = class("ArchivesWorldbossBtn")
+﻿local var0_0 = class("ArchivesWorldbossBtn")
 
-function var0.Ctor(arg0, arg1, arg2)
-	pg.DelegateInfo.New(arg0)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	pg.DelegateInfo.New(arg0_1)
 
-	arg0._tf = arg1
-	arg0.img = arg0._tf:GetComponent(typeof(Image))
-	arg0.event = arg2
-	arg0.iconText = arg0._tf:Find("Text"):GetComponent(typeof(Text))
-	arg0.tip = arg0._tf:Find("tip")
+	arg0_1._tf = arg1_1
+	arg0_1.img = arg0_1._tf:GetComponent(typeof(Image))
+	arg0_1.event = arg2_1
+	arg0_1.iconText = arg0_1._tf:Find("Text"):GetComponent(typeof(Text))
+	arg0_1.tip = arg0_1._tf:Find("tip")
 
-	onButton(arg0, arg0._tf, function()
-		arg0.event:emit(WorldBossScene.ON_SWITCH, WorldBossScene.PAGE_ARCHIVES_LIST)
+	onButton(arg0_1, arg0_1._tf, function()
+		arg0_1.event:emit(WorldBossScene.ON_SWITCH, WorldBossScene.PAGE_ARCHIVES_LIST)
 	end, SFX_PANEL)
 end
 
-function var0.Flush(arg0)
+function var0_0.Flush(arg0_3)
 	if WorldBossConst.GetAchieveState() == WorldBossConst.ACHIEVE_STATE_STARTING then
-		local var0 = WorldBossConst.GetArchivesId()
-		local var1 = WorldBossConst.BossId2MetaId(var0)
-		local var2 = getProxy(MetaCharacterProxy):getMetaProgressVOByID(var1)
-		local var3 = var2.metaPtData:GetResProgress()
+		local var0_3 = WorldBossConst.GetArchivesId()
+		local var1_3 = WorldBossConst.BossId2MetaId(var0_3)
+		local var2_3 = getProxy(MetaCharacterProxy):getMetaProgressVOByID(var1_3)
+		local var3_3 = var2_3.metaPtData:GetResProgress()
 
-		arg0.iconText.text = var3 .. "/" .. var2.metaPtData:GetTotalResRequire()
-		arg0.img.sprite = GetSpriteFromAtlas("MetaWorldboss/" .. var1, "btn")
+		arg0_3.iconText.text = var3_3 .. "/" .. var2_3.metaPtData:GetTotalResRequire()
+		arg0_3.img.sprite = GetSpriteFromAtlas("MetaWorldboss/" .. var1_3, "btn")
 	else
-		arg0.iconText.text = ""
-		arg0.img.sprite = LoadSprite("MetaWorldboss/extra_btn")
+		arg0_3.iconText.text = ""
+		arg0_3.img.sprite = LoadSprite("MetaWorldboss/extra_btn")
 	end
 
-	setActive(arg0.tip, WorldBossConst.AnyArchivesBossCanGetAward())
+	setActive(arg0_3.tip, WorldBossConst.AnyArchivesBossCanGetAward())
 end
 
-function var0.Dispose(arg0)
-	pg.DelegateInfo.Dispose(arg0)
+function var0_0.Dispose(arg0_4)
+	pg.DelegateInfo.Dispose(arg0_4)
 end
 
-return var0
+return var0_0

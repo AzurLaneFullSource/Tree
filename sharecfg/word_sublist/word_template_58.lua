@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_58 = {}
+var0_0.word_template_58 = {}
 
-local var1 = var0.word_template_58
+local var1_0 = var0_0.word_template_58
 
 function temp()
-	var1.册 = {
+	var1_0.册 = {
 		那 = {
 			娘 = {
 				餓 = {
@@ -23,7 +23,7 @@ end
 temp()
 
 function temp()
-	var1.厕 = {
+	var1_0.厕 = {
 		奴 = {
 			this = true
 		},
@@ -45,7 +45,7 @@ end
 temp()
 
 function temp()
-	var1.测 = {
+	var1_0.测 = {
 		绘 = {
 			局 = {
 				this = true
@@ -60,7 +60,7 @@ end
 temp()
 
 function temp()
-	var1.廁 = {
+	var1_0.廁 = {
 		奴 = {
 			this = true
 		},
@@ -82,7 +82,7 @@ end
 temp()
 
 function temp()
-	var1.岑 = {
+	var1_0.岑 = {
 		旭 = {
 			this = true
 		}
@@ -92,7 +92,7 @@ end
 temp()
 
 function temp()
-	var1.层 = {
+	var1_0.层 = {
 		层 = {
 			截 = {
 				访 = {
@@ -112,7 +112,7 @@ end
 temp()
 
 function temp()
-	var1.曾 = {
+	var1_0.曾 = {
 		q = {
 			红 = {
 				this = true

@@ -1,24 +1,24 @@
-﻿local var0 = class("CommanderQuicklyFinishBoxesCommand", pm.SimpleCommand)
+﻿local var0_0 = class("CommanderQuicklyFinishBoxesCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.itemCnt
-	local var2 = var0.finishCnt
-	local var3 = var0.affectCnt
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.itemCnt
+	local var2_1 = var0_1.finishCnt
+	local var3_1 = var0_1.affectCnt
 
 	pg.ConnectionMgr.GetInstance():Send(25037, {
-		item_cnt = var1,
-		finish_cnt = var2,
-		affect_cnt = var3
-	}, 25038, function(arg0)
-		if arg0.result == 0 then
-			getProxy(BagProxy):removeItemById(Item.COMMANDER_QUICKLY_TOOL_ID, var1)
-			arg0:sendNotification(GAME.COMMANDER_QUICKLY_FINISH_BOXES_DONE)
-			arg0:sendNotification(GAME.REFRESH_COMMANDER_BOXES)
+		item_cnt = var1_1,
+		finish_cnt = var2_1,
+		affect_cnt = var3_1
+	}, 25038, function(arg0_2)
+		if arg0_2.result == 0 then
+			getProxy(BagProxy):removeItemById(Item.COMMANDER_QUICKLY_TOOL_ID, var1_1)
+			arg0_1:sendNotification(GAME.COMMANDER_QUICKLY_FINISH_BOXES_DONE)
+			arg0_1:sendNotification(GAME.REFRESH_COMMANDER_BOXES)
 		else
-			arg0:sendNotification(GAME.COMMANDER_QUICKLY_FINISH_BOXES_ERROR)
+			arg0_1:sendNotification(GAME.COMMANDER_QUICKLY_FINISH_BOXES_ERROR)
 		end
 	end)
 end
 
-return var0
+return var0_0

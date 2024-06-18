@@ -1,117 +1,117 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("BattleBuffFixVelocity", var0.Battle.BattleBuffAddAttr)
+local var0_0 = ys
+local var1_0 = class("BattleBuffFixVelocity", var0_0.Battle.BattleBuffAddAttr)
 
-var0.Battle.BattleBuffFixVelocity = var1
-var1.__name = "BattleBuffFixVelocity"
-var1.FX_TYPE = var0.Battle.BattleBuffEffect.FX_TYPE_MOD_VELOCTIY
+var0_0.Battle.BattleBuffFixVelocity = var1_0
+var1_0.__name = "BattleBuffFixVelocity"
+var1_0.FX_TYPE = var0_0.Battle.BattleBuffEffect.FX_TYPE_MOD_VELOCTIY
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.GetEffectType(arg0)
-	return var0.Battle.BattleBuffEffect.FX_TYPE_MOD_VELOCTIY
+function var1_0.GetEffectType(arg0_2)
+	return var0_0.Battle.BattleBuffEffect.FX_TYPE_MOD_VELOCTIY
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	arg0._group = arg0._tempData.arg_list.group or arg2:GetID()
+function var1_0.SetArgs(arg0_3, arg1_3, arg2_3)
+	arg0_3._group = arg0_3._tempData.arg_list.group or arg2_3:GetID()
 
-	local var0 = arg0._tempData.arg_list.add or 0
+	local var0_3 = arg0_3._tempData.arg_list.add or 0
 
-	arg0._baseAdd = var0.Battle.BattleFormulas.ConvertShipSpeed(var0)
-	arg0._addValue = arg0._baseAdd
-	arg0._baseMul = (arg0._tempData.arg_list.mul or 0) * 0.0001
-	arg0._mulValue = arg0._baseMul
+	arg0_3._baseAdd = var0_0.Battle.BattleFormulas.ConvertShipSpeed(var0_3)
+	arg0_3._addValue = arg0_3._baseAdd
+	arg0_3._baseMul = (arg0_3._tempData.arg_list.mul or 0) * 0.0001
+	arg0_3._mulValue = arg0_3._baseMul
 end
 
-function var1.onStack(arg0, arg1, arg2)
-	arg0._addValue = arg0._baseAdd * arg2._stack
-	arg0._mulValue = arg0._baseMul * arg2._stack
+function var1_0.onStack(arg0_4, arg1_4, arg2_4)
+	arg0_4._addValue = arg0_4._baseAdd * arg2_4._stack
+	arg0_4._mulValue = arg0_4._baseMul * arg2_4._stack
 
-	arg0:UpdateAttr(arg1)
+	arg0_4:UpdateAttr(arg1_4)
 end
 
-function var1.onRemove(arg0, arg1, arg2)
-	arg0._addValue = 0
-	arg0._mulValue = 0
+function var1_0.onRemove(arg0_5, arg1_5, arg2_5)
+	arg0_5._addValue = 0
+	arg0_5._mulValue = 0
 
-	arg0:UpdateAttr(arg1)
+	arg0_5:UpdateAttr(arg1_5)
 end
 
-function var1.UpdateAttr(arg0, arg1)
-	local var0 = arg0:calcMulValue(arg1)
-	local var1 = arg0:calcAddValue(arg1)
+function var1_0.UpdateAttr(arg0_6, arg1_6)
+	local var0_6 = arg0_6:calcMulValue(arg1_6)
+	local var1_6 = arg0_6:calcAddValue(arg1_6)
 
-	var0.Battle.BattleAttr.FlashVelocity(arg1, var0, var1)
+	var0_0.Battle.BattleAttr.FlashVelocity(arg1_6, var0_6, var1_6)
 end
 
-function var1.calcMulValue(arg0, arg1)
-	local var0 = 1
-	local var1 = 1
-	local var2 = {}
-	local var3 = {}
-	local var4 = arg1:GetBuffList()
+function var1_0.calcMulValue(arg0_7, arg1_7)
+	local var0_7 = 1
+	local var1_7 = 1
+	local var2_7 = {}
+	local var3_7 = {}
+	local var4_7 = arg1_7:GetBuffList()
 
-	for iter0, iter1 in pairs(var4) do
-		for iter2, iter3 in ipairs(iter1._effectList) do
-			if iter3:GetEffectType() == var1.FX_TYPE then
-				local var5 = iter3._mulValue
-				local var6 = iter3._group
-				local var7 = var2[var6] or 1
-				local var8 = var3[var6] or 1
-				local var9 = 1 + var5
+	for iter0_7, iter1_7 in pairs(var4_7) do
+		for iter2_7, iter3_7 in ipairs(iter1_7._effectList) do
+			if iter3_7:GetEffectType() == var1_0.FX_TYPE then
+				local var5_7 = iter3_7._mulValue
+				local var6_7 = iter3_7._group
+				local var7_7 = var2_7[var6_7] or 1
+				local var8_7 = var3_7[var6_7] or 1
+				local var9_7 = 1 + var5_7
 
-				if var5 > 0 and var7 < var9 then
-					var0 = var0 / var7 * var9
-					var7 = var9
+				if var5_7 > 0 and var7_7 < var9_7 then
+					var0_7 = var0_7 / var7_7 * var9_7
+					var7_7 = var9_7
 				end
 
-				if var5 < 0 and var9 < var8 then
-					var1 = var1 / var8 * var9
-					var8 = var9
+				if var5_7 < 0 and var9_7 < var8_7 then
+					var1_7 = var1_7 / var8_7 * var9_7
+					var8_7 = var9_7
 				end
 
-				var2[var6] = var7
-				var3[var6] = var8
+				var2_7[var6_7] = var7_7
+				var3_7[var6_7] = var8_7
 			end
 		end
 	end
 
-	return var0 * var1
+	return var0_7 * var1_7
 end
 
-function var1.calcAddValue(arg0, arg1)
-	local var0 = arg1:GetBuffList()
-	local var1 = 0
-	local var2 = 0
-	local var3 = {}
-	local var4 = {}
+function var1_0.calcAddValue(arg0_8, arg1_8)
+	local var0_8 = arg1_8:GetBuffList()
+	local var1_8 = 0
+	local var2_8 = 0
+	local var3_8 = {}
+	local var4_8 = {}
 
-	for iter0, iter1 in pairs(var0) do
-		for iter2, iter3 in ipairs(iter1._effectList) do
-			if iter3:GetEffectType() == var1.FX_TYPE then
-				local var5 = iter3._addValue
-				local var6 = iter3._group
-				local var7 = var3[var6] or 0
-				local var8 = var4[var6] or 0
+	for iter0_8, iter1_8 in pairs(var0_8) do
+		for iter2_8, iter3_8 in ipairs(iter1_8._effectList) do
+			if iter3_8:GetEffectType() == var1_0.FX_TYPE then
+				local var5_8 = iter3_8._addValue
+				local var6_8 = iter3_8._group
+				local var7_8 = var3_8[var6_8] or 0
+				local var8_8 = var4_8[var6_8] or 0
 
-				if var7 < var5 and var5 > 0 then
-					var1 = var1 + var5 - var7
-					var7 = var5
+				if var7_8 < var5_8 and var5_8 > 0 then
+					var1_8 = var1_8 + var5_8 - var7_8
+					var7_8 = var5_8
 				end
 
-				if var5 < var8 and var5 < 0 then
-					var2 = var2 + var5 - var8
-					var8 = var5
+				if var5_8 < var8_8 and var5_8 < 0 then
+					var2_8 = var2_8 + var5_8 - var8_8
+					var8_8 = var5_8
 				end
 
-				var3[var6] = var7
-				var4[var6] = var8
+				var3_8[var6_8] = var7_8
+				var4_8[var6_8] = var8_8
 			end
 		end
 	end
 
-	return var1 + var2
+	return var1_8 + var2_8
 end

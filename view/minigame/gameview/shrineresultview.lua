@@ -1,63 +1,63 @@
-﻿local var0 = class("ShrineResultView", import("...base.BaseSubView"))
+﻿local var0_0 = class("ShrineResultView", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ShrineResult"
 end
 
-function var0.OnInit(arg0)
-	arg0:Show()
-	arg0:initData()
-	arg0:initUI()
+function var0_0.OnInit(arg0_2)
+	arg0_2:Show()
+	arg0_2:initData()
+	arg0_2:initUI()
 end
 
-function var0.OnDestroy(arg0)
-	if arg0.closeFunc then
-		arg0.closeFunc()
+function var0_0.OnDestroy(arg0_3)
+	if arg0_3.closeFunc then
+		arg0_3.closeFunc()
 
-		arg0.closeFunc = nil
+		arg0_3.closeFunc = nil
 	end
 end
 
-function var0.initData(arg0)
+function var0_0.initData(arg0_4)
 	return
 end
 
-function var0.initUI(arg0)
-	arg0.bg = arg0:findTF("BGImg")
-	arg0.dft = GetComponent(arg0._tf, "DftAniEvent")
-	arg0.text_buff = arg0:findTF("Main/MainBox/Text_Buff")
-	arg0.text_nobuff = arg0:findTF("Main/MainBox/Text_NoBuff")
-	arg0.buffImg_1 = arg0:findTF("Main/MainBox/Buff_1")
-	arg0.buffImg_2 = arg0:findTF("Main/MainBox/Buff_2")
-	arg0.buffImg_3 = arg0:findTF("Main/MainBox/Buff_3")
+function var0_0.initUI(arg0_5)
+	arg0_5.bg = arg0_5:findTF("BGImg")
+	arg0_5.dft = GetComponent(arg0_5._tf, "DftAniEvent")
+	arg0_5.text_buff = arg0_5:findTF("Main/MainBox/Text_Buff")
+	arg0_5.text_nobuff = arg0_5:findTF("Main/MainBox/Text_NoBuff")
+	arg0_5.buffImg_1 = arg0_5:findTF("Main/MainBox/Buff_1")
+	arg0_5.buffImg_2 = arg0_5:findTF("Main/MainBox/Buff_2")
+	arg0_5.buffImg_3 = arg0_5:findTF("Main/MainBox/Buff_3")
 
-	onButton(arg0, arg0.bg, function()
-		arg0:Destroy()
+	onButton(arg0_5, arg0_5.bg, function()
+		arg0_5:Destroy()
 	end, SFX_CANCEL)
-	arg0.dft:SetStartEvent(function()
-		setButtonEnabled(arg0.bg, false)
+	arg0_5.dft:SetStartEvent(function()
+		setButtonEnabled(arg0_5.bg, false)
 	end)
-	arg0.dft:SetEndEvent(function()
-		setButtonEnabled(arg0.bg, true)
+	arg0_5.dft:SetEndEvent(function()
+		setButtonEnabled(arg0_5.bg, true)
 	end)
 end
 
-function var0.updateView(arg0, arg1, arg2)
-	if arg2 then
-		setText(arg0.text_buff, arg1)
+function var0_0.updateView(arg0_9, arg1_9, arg2_9)
+	if arg2_9 then
+		setText(arg0_9.text_buff, arg1_9)
 	else
-		setText(arg0.text_nobuff, arg1)
+		setText(arg0_9.text_nobuff, arg1_9)
 	end
 
-	setActive(arg0.text_buff, arg2)
-	setActive(arg0.text_nobuff, not arg2)
-	setActive(arg0.buffImg_1, arg2 == 1)
-	setActive(arg0.buffImg_2, arg2 == 2)
-	setActive(arg0.buffImg_3, arg2 == 3)
+	setActive(arg0_9.text_buff, arg2_9)
+	setActive(arg0_9.text_nobuff, not arg2_9)
+	setActive(arg0_9.buffImg_1, arg2_9 == 1)
+	setActive(arg0_9.buffImg_2, arg2_9 == 2)
+	setActive(arg0_9.buffImg_3, arg2_9 == 3)
 end
 
-function var0.setCloseFunc(arg0, arg1)
-	arg0.closeFunc = arg1
+function var0_0.setCloseFunc(arg0_10, arg1_10)
+	arg0_10.closeFunc = arg1_10
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_395 = {}
+var0_0.word_template_395 = {}
 
-local var1 = var0.word_template_395
+local var1_0 = var0_0.word_template_395
 
 function temp()
-	var1.翠 = {
+	var1_0.翠 = {
 		鞑 = {
 			靼 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.卒 = {
+	var1_0.卒 = {
 		习 = {
 			延 = {
 				任 = {
@@ -33,7 +33,7 @@ end
 temp()
 
 function temp()
-	var1.颐 = {
+	var1_0.颐 = {
 		["."] = {
 			["{"] = {
 				["0"] = {
@@ -124,7 +124,7 @@ end
 temp()
 
 function temp()
-	var1.遨 = {
+	var1_0.遨 = {
 		["."] = {
 			["{"] = {
 				["0"] = {
@@ -180,7 +180,7 @@ end
 temp()
 
 function temp()
-	var1.扳 = {
+	var1_0.扳 = {
 		["."] = {
 			["{"] = {
 				["0"] = {
@@ -252,7 +252,7 @@ end
 temp()
 
 function temp()
-	var1.弑 = {
+	var1_0.弑 = {
 		["."] = {
 			["{"] = {
 				["0"] = {
@@ -308,7 +308,7 @@ end
 temp()
 
 function temp()
-	var1.忒 = {
+	var1_0.忒 = {
 		["\\"] = {
 			s = {
 				["*"] = {

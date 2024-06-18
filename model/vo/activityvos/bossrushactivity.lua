@@ -1,49 +1,49 @@
-﻿local var0 = class("BossRushActivity", import("model.vo.Activity"))
+﻿local var0_0 = class("BossRushActivity", import("model.vo.Activity"))
 
-function var0.SetSeriesData(arg0, arg1)
-	getProxy(ActivityProxy):GetBossRushRuntime(arg0.id).seriesData = arg1
+function var0_0.SetSeriesData(arg0_1, arg1_1)
+	getProxy(ActivityProxy):GetBossRushRuntime(arg0_1.id).seriesData = arg1_1
 end
 
-function var0.GetSeriesData(arg0)
-	return getProxy(ActivityProxy):GetBossRushRuntime(arg0.id).seriesData
+function var0_0.GetSeriesData(arg0_2)
+	return getProxy(ActivityProxy):GetBossRushRuntime(arg0_2.id).seriesData
 end
 
-function var0.HasAwards(arg0)
-	return arg0.data1 == 1
+function var0_0.HasAwards(arg0_3)
+	return arg0_3.data1 == 1
 end
 
-function var0.GetUsedBonus(arg0)
-	return arg0.data1_list
+function var0_0.GetUsedBonus(arg0_4)
+	return arg0_4.data1_list
 end
 
-function var0.AddUsedBonus(arg0, arg1)
-	local var0 = table.indexof(arg0:GetActiveSeriesIds(), arg1)
+function var0_0.AddUsedBonus(arg0_5, arg1_5)
+	local var0_5 = table.indexof(arg0_5:GetActiveSeriesIds(), arg1_5)
 
-	if not var0 or var0 < 0 then
+	if not var0_5 or var0_5 < 0 then
 		return
 	end
 
-	arg0:GetUsedBonus()[var0] = (arg0:GetUsedBonus()[var0] or 0) + 1
+	arg0_5:GetUsedBonus()[var0_5] = (arg0_5:GetUsedBonus()[var0_5] or 0) + 1
 end
 
-function var0.GetPassCounts(arg0)
-	return arg0.data2_list
+function var0_0.GetPassCounts(arg0_6)
+	return arg0_6.data2_list
 end
 
-function var0.AddPassSeries(arg0, arg1)
-	if arg0:HasPassSeries(arg1) then
+function var0_0.AddPassSeries(arg0_7, arg1_7)
+	if arg0_7:HasPassSeries(arg1_7) then
 		return
 	end
 
-	table.insert(arg0:GetPassCounts(), arg1)
+	table.insert(arg0_7:GetPassCounts(), arg1_7)
 end
 
-function var0.HasPassSeries(arg0, arg1)
-	return table.contains(arg0:GetPassCounts(), arg1)
+function var0_0.HasPassSeries(arg0_8, arg1_8)
+	return table.contains(arg0_8:GetPassCounts(), arg1_8)
 end
 
-function var0.GetActiveSeriesIds(arg0)
-	return arg0:getConfig("config_data")
+function var0_0.GetActiveSeriesIds(arg0_9)
+	return arg0_9:getConfig("config_data")
 end
 
-return var0
+return var0_0

@@ -1,26 +1,26 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleSkillGridmanFloat = class("BattleSkillGridmanFloat", var0.Battle.BattleSkillEffect)
-var0.Battle.BattleSkillGridmanFloat.__name = "BattleSkillGridmanFloat"
+var0_0.Battle.BattleSkillGridmanFloat = class("BattleSkillGridmanFloat", var0_0.Battle.BattleSkillEffect)
+var0_0.Battle.BattleSkillGridmanFloat.__name = "BattleSkillGridmanFloat"
 
-local var1 = var0.Battle.BattleSkillGridmanFloat
+local var1_0 = var0_0.Battle.BattleSkillGridmanFloat
 
-function var1.Ctor(arg0, arg1, arg2)
-	var1.super.Ctor(arg0, arg1, arg2)
+function var1_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var1_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 
-	arg0._iconType = arg0._tempData.arg_list.icon_type
+	arg0_1._iconType = arg0_1._tempData.arg_list.icon_type
 end
 
-function var1.DoDataEffect(arg0, arg1)
-	arg0:doGridmanSkillFloat(arg1)
+function var1_0.DoDataEffect(arg0_2, arg1_2)
+	arg0_2:doGridmanSkillFloat(arg1_2)
 end
 
-function var1.DoDataEffectWithoutTarget(arg0, arg1)
-	arg0:doGridmanSkillFloat(arg1)
+function var1_0.DoDataEffectWithoutTarget(arg0_3, arg1_3)
+	arg0_3:doGridmanSkillFloat(arg1_3)
 end
 
-function var1.doGridmanSkillFloat(arg0, arg1)
-	var0.Battle.BattleDataProxy.GetInstance():DispatchGridmanSkill(arg0._iconType, arg1:GetIFF())
+function var1_0.doGridmanSkillFloat(arg0_4, arg1_4)
+	var0_0.Battle.BattleDataProxy.GetInstance():DispatchGridmanSkill(arg0_4._iconType, arg1_4:GetIFF())
 end

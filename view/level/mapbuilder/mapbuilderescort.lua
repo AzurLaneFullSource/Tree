@@ -1,149 +1,149 @@
-﻿local var0 = import(".MapBuilder")
-local var1 = class("MapBuilderEscort", var0)
+﻿local var0_0 = import(".MapBuilder")
+local var1_0 = class("MapBuilderEscort", var0_0)
 
-function var1.GetType(arg0)
-	return var0.TYPEESCORT
+function var1_0.GetType(arg0_1)
+	return var0_0.TYPEESCORT
 end
 
-function var1.getUIName(arg0)
+function var1_0.getUIName(arg0_2)
 	return "escort_levels"
 end
 
-function var1.OnInit(arg0)
-	arg0.tpl = arg0._tf:Find("escort_level_tpl")
-	arg0.itemHolder = arg0._tf:Find("items")
+function var1_0.OnInit(arg0_3)
+	arg0_3.tpl = arg0_3._tf:Find("escort_level_tpl")
+	arg0_3.itemHolder = arg0_3._tf:Find("items")
 end
 
-function var1.Update(arg0, arg1)
-	arg0.map.pivot = Vector2(0.5, 0.5)
-	arg0.float.pivot = Vector2(0.5, 0.5)
+function var1_0.Update(arg0_4, arg1_4)
+	arg0_4.map.pivot = Vector2(0.5, 0.5)
+	arg0_4.float.pivot = Vector2(0.5, 0.5)
 
-	local var0 = arg0.map.rect.width / arg0.map.rect.height
-	local var1 = arg0._parentTf.rect.width / arg0._parentTf.rect.height
-	local var2 = 1
+	local var0_4 = arg0_4.map.rect.width / arg0_4.map.rect.height
+	local var1_4 = arg0_4._parentTf.rect.width / arg0_4._parentTf.rect.height
+	local var2_4 = 1
 
-	if var0 < var1 then
-		var2 = arg0._parentTf.rect.width / 1280
-		arg0._tf.localScale = Vector3(var2, var2, 1)
+	if var0_4 < var1_4 then
+		var2_4 = arg0_4._parentTf.rect.width / 1280
+		arg0_4._tf.localScale = Vector3(var2_4, var2_4, 1)
 	else
-		var2 = arg0._parentTf.rect.height / 720
-		arg0._tf.localScale = Vector3(var2, var2, 1)
+		var2_4 = arg0_4._parentTf.rect.height / 720
+		arg0_4._tf.localScale = Vector3(var2_4, var2_4, 1)
 	end
 
-	arg0.scaleRatio = var2
+	arg0_4.scaleRatio = var2_4
 
-	local var3 = string.split(arg1:getConfig("name"), "||")
+	local var3_4 = string.split(arg1_4:getConfig("name"), "||")
 
-	setText(arg0.sceneParent.chapterName, var3[1])
-	arg0.sceneParent.loader:GetSprite("chapterno", "chapterex", arg0.sceneParent.chapterNoTitle, true)
-	var1.super.Update(arg0, arg1)
+	setText(arg0_4.sceneParent.chapterName, var3_4[1])
+	arg0_4.sceneParent.loader:GetSprite("chapterno", "chapterex", arg0_4.sceneParent.chapterNoTitle, true)
+	var1_0.super.Update(arg0_4, arg1_4)
 end
 
-function var1.UpdateButtons(arg0)
-	arg0.sceneParent:updateDifficultyBtns()
-	arg0.sceneParent:updateActivityBtns()
+function var1_0.UpdateButtons(arg0_5)
+	arg0_5.sceneParent:updateDifficultyBtns()
+	arg0_5.sceneParent:updateActivityBtns()
 end
 
-function var1.UpdateEscortInfo(arg0)
-	local var0 = getProxy(ChapterProxy)
-	local var1 = var0:getMaxEscortChallengeTimes()
+function var1_0.UpdateEscortInfo(arg0_6)
+	local var0_6 = getProxy(ChapterProxy)
+	local var1_6 = var0_6:getMaxEscortChallengeTimes()
 
-	setText(arg0.sceneParent.escortBar:Find("times/text"), var1 - var0.escortChallengeTimes .. "/" .. var1)
-	onButton(arg0.sceneParent, arg0.sceneParent.mapHelpBtn, function()
-		arg0:InvokeParent("HandleShowMsgBox", {
+	setText(arg0_6.sceneParent.escortBar:Find("times/text"), var1_6 - var0_6.escortChallengeTimes .. "/" .. var1_6)
+	onButton(arg0_6.sceneParent, arg0_6.sceneParent.mapHelpBtn, function()
+		arg0_6:InvokeParent("HandleShowMsgBox", {
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("levelScene_escort_help_tip")
 		})
 	end, SFX_PANEL)
 end
 
-function var1.UpdateMapItems(arg0)
-	var1.super.UpdateMapItems(arg0)
-	arg0:UpdateEscortInfo()
+function var1_0.UpdateMapItems(arg0_8)
+	var1_0.super.UpdateMapItems(arg0_8)
+	arg0_8:UpdateEscortInfo()
 
-	local var0 = arg0.data
+	local var0_8 = arg0_8.data
 
-	setActive(arg0.sceneParent.escortBar, true)
-	setActive(arg0.sceneParent.mapHelpBtn, true)
+	setActive(arg0_8.sceneParent.escortBar, true)
+	setActive(arg0_8.sceneParent.mapHelpBtn, true)
 
-	local var1 = getProxy(ChapterProxy)
-	local var2 = getProxy(ChapterProxy):getEscortChapterIds()
-	local var3 = _.filter(var0:getChapters(), function(arg0)
-		return table.contains(var2, arg0.id)
+	local var1_8 = getProxy(ChapterProxy)
+	local var2_8 = getProxy(ChapterProxy):getEscortChapterIds()
+	local var3_8 = _.filter(var0_8:getChapters(), function(arg0_9)
+		return table.contains(var2_8, arg0_9.id)
 	end)
-	local var4 = UIItemList.New(arg0.itemHolder, arg0.tpl)
+	local var4_8 = UIItemList.New(arg0_8.itemHolder, arg0_8.tpl)
 
-	var4:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			arg0:UpdateEscortItem(arg2, var3[arg1 + 1].id, var3[arg1 + 1])
+	var4_8:make(function(arg0_10, arg1_10, arg2_10)
+		if arg0_10 == UIItemList.EventUpdate then
+			arg0_8:UpdateEscortItem(arg2_10, var3_8[arg1_10 + 1].id, var3_8[arg1_10 + 1])
 		end
 	end)
-	var4:align(#var3)
+	var4_8:align(#var3_8)
 end
 
-function var1.UpdateEscortItem(arg0, arg1, arg2, arg3)
-	local var0 = pg.escort_template[arg2]
+function var1_0.UpdateEscortItem(arg0_11, arg1_11, arg2_11, arg3_11)
+	local var0_11 = pg.escort_template[arg2_11]
 
-	assert(var0, "escort template not exist: " .. arg2)
+	assert(var0_11, "escort template not exist: " .. arg2_11)
 
-	local var1 = getProxy(ChapterProxy):getActiveChapter(true)
+	local var1_11 = getProxy(ChapterProxy):getActiveChapter(true)
 
-	arg1.name = "chapter_" .. arg3.id
+	arg1_11.name = "chapter_" .. arg3_11.id
 
-	local var2 = arg0.map.rect
+	local var2_11 = arg0_11.map.rect
 
-	arg1.anchoredPosition = Vector2(var2.width / arg0.scaleRatio * (tonumber(var0.pos_x) - 0.5), var2.height / arg0.scaleRatio * (tonumber(var0.pos_y) - 0.5))
+	arg1_11.anchoredPosition = Vector2(var2_11.width / arg0_11.scaleRatio * (tonumber(var0_11.pos_x) - 0.5), var2_11.height / arg0_11.scaleRatio * (tonumber(var0_11.pos_y) - 0.5))
 
-	local var3 = arg1:Find("fighting")
-	local var4 = var1 and var1.id == arg3.id
+	local var3_11 = arg1_11:Find("fighting")
+	local var4_11 = var1_11 and var1_11.id == arg3_11.id
 
-	setActive(var3, var4)
-	arg0:DeleteTween("fighting" .. arg3.id)
+	setActive(var3_11, var4_11)
+	arg0_11:DeleteTween("fighting" .. arg3_11.id)
 
-	if var4 then
-		setImageAlpha(var3, 1)
-		arg0:RecordTween("fighting" .. arg3.id, LeanTween.alpha(var3, 0, 0.5):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId)
+	if var4_11 then
+		setImageAlpha(var3_11, 1)
+		arg0_11:RecordTween("fighting" .. arg3_11.id, LeanTween.alpha(var3_11, 0, 0.5):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId)
 	end
 
-	GetImageSpriteFromAtlasAsync("levelmap/mapquad/" .. var0.pic, "", arg1, true)
+	GetImageSpriteFromAtlasAsync("levelmap/mapquad/" .. var0_11.pic, "", arg1_11, true)
 
-	local var5 = arg1:Find("anim")
-	local var6 = getProxy(ChapterProxy):getEscortChapterIds()
-	local var7 = table.indexof(var6, arg2)
-	local var8 = ({
+	local var5_11 = arg1_11:Find("anim")
+	local var6_11 = getProxy(ChapterProxy):getEscortChapterIds()
+	local var7_11 = table.indexof(var6_11, arg2_11)
+	local var8_11 = ({
 		Color.green,
 		Color.yellow,
 		Color.red
-	})[var7 or 1]
-	local var9 = var5:GetComponentsInChildren(typeof(Image))
+	})[var7_11 or 1]
+	local var9_11 = var5_11:GetComponentsInChildren(typeof(Image))
 
-	for iter0 = 0, var9.Length - 1 do
-		var9[iter0].color = var8
+	for iter0_11 = 0, var9_11.Length - 1 do
+		var9_11[iter0_11].color = var8_11
 	end
 
-	setImageColor(arg1, var8)
+	setImageColor(arg1_11, var8_11)
 
-	local var10 = arg3.id
+	local var10_11 = arg3_11.id
 
-	onButton(arg0.sceneParent, arg1, function()
-		local var0 = getProxy(ChapterProxy):getChapterById(var10)
+	onButton(arg0_11.sceneParent, arg1_11, function()
+		local var0_12 = getProxy(ChapterProxy):getChapterById(var10_11)
 
-		arg0:InvokeParent("TrySwitchChapter", var0)
+		arg0_11:InvokeParent("TrySwitchChapter", var0_12)
 	end, SFX_PANEL)
 end
 
-function var1.OnShow(arg0)
-	setActive(arg0.sceneParent.mainLayer:Find("title_chapter_lines"), true)
-	setActive(arg0.sceneParent.topChapter:Find("title_chapter"), true)
-	setActive(arg0.sceneParent.topChapter:Find("type_escort"), true)
+function var1_0.OnShow(arg0_13)
+	setActive(arg0_13.sceneParent.mainLayer:Find("title_chapter_lines"), true)
+	setActive(arg0_13.sceneParent.topChapter:Find("title_chapter"), true)
+	setActive(arg0_13.sceneParent.topChapter:Find("type_escort"), true)
 end
 
-function var1.OnHide(arg0)
-	setActive(arg0.sceneParent.mainLayer:Find("title_chapter_lines"), false)
-	setActive(arg0.sceneParent.topChapter:Find("title_chapter"), false)
-	setActive(arg0.sceneParent.topChapter:Find("type_escort"), false)
-	setActive(arg0.sceneParent.escortBar, false)
-	setActive(arg0.sceneParent.mapHelpBtn, false)
+function var1_0.OnHide(arg0_14)
+	setActive(arg0_14.sceneParent.mainLayer:Find("title_chapter_lines"), false)
+	setActive(arg0_14.sceneParent.topChapter:Find("title_chapter"), false)
+	setActive(arg0_14.sceneParent.topChapter:Find("type_escort"), false)
+	setActive(arg0_14.sceneParent.escortBar, false)
+	setActive(arg0_14.sceneParent.mapHelpBtn, false)
 end
 
-return var1
+return var1_0

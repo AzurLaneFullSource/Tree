@@ -1,91 +1,91 @@
-﻿local var0 = class("EquipmentSkinInfoUIForShopWindow", import("view.base.BaseSubView"))
+﻿local var0_0 = class("EquipmentSkinInfoUIForShopWindow", import("view.base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "EquipmentSkinInfoUIForShop"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.displayPanel = arg0:findTF("display")
-	arg0.displayActions = arg0.displayPanel:Find("actions")
-	arg0.displayNameTxt = arg0:findTF("info/display_panel/name_container/name", arg0.displayPanel):GetComponent(typeof(Text))
-	arg0.displayDescTxt = arg0:findTF("info/display_panel/desc", arg0.displayPanel):GetComponent(typeof(Text))
-	arg0.playBtn = arg0:findTF("info/play_btn", arg0.displayPanel)
-	arg0.confirmBtn = arg0._tf:Find("display/actions/confirm")
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.displayPanel = arg0_2:findTF("display")
+	arg0_2.displayActions = arg0_2.displayPanel:Find("actions")
+	arg0_2.displayNameTxt = arg0_2:findTF("info/display_panel/name_container/name", arg0_2.displayPanel):GetComponent(typeof(Text))
+	arg0_2.displayDescTxt = arg0_2:findTF("info/display_panel/desc", arg0_2.displayPanel):GetComponent(typeof(Text))
+	arg0_2.playBtn = arg0_2:findTF("info/play_btn", arg0_2.displayPanel)
+	arg0_2.confirmBtn = arg0_2._tf:Find("display/actions/confirm")
 
-	setText(arg0:findTF("display/top/bg/infomation/title"), i18n("words_information"))
-	setText(arg0:findTF("display/actions/cancel/upgrade"), i18n("msgbox_text_cancel"))
-	setText(arg0:findTF("display/actions/confirm/change"), i18n("shop_word_exchange"))
+	setText(arg0_2:findTF("display/top/bg/infomation/title"), i18n("words_information"))
+	setText(arg0_2:findTF("display/actions/cancel/upgrade"), i18n("msgbox_text_cancel"))
+	setText(arg0_2:findTF("display/actions/confirm/change"), i18n("shop_word_exchange"))
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:Hide()
 	end, SOUND_BACK)
-	onButton(arg0, arg0._tf:Find("display/top/btnBack"), function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3._tf:Find("display/top/btnBack"), function()
+		arg0_3:Hide()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0._tf:Find("display/actions/cancel"), function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3._tf:Find("display/actions/cancel"), function()
+		arg0_3:Hide()
 	end, SFX_CANCEL)
 end
 
-function var0.Show(arg0, arg1)
-	var0.super.Show(arg0)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
-	arg0:UpdateSkinView(arg1)
+function var0_0.Show(arg0_7, arg1_7)
+	var0_0.super.Show(arg0_7)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_7._tf)
+	arg0_7:UpdateSkinView(arg1_7)
 
-	arg0.showing = true
+	arg0_7.showing = true
 end
 
-function var0.Open(arg0, arg1, arg2)
-	local var0 = arg1:getConfig("commodity_id")
+function var0_0.Open(arg0_8, arg1_8, arg2_8)
+	local var0_8 = arg1_8:getConfig("commodity_id")
 
-	onButton(arg0, arg0.confirmBtn, function()
-		local var0 = pg.equip_skin_template[var0].name
+	onButton(arg0_8, arg0_8.confirmBtn, function()
+		local var0_9 = pg.equip_skin_template[var0_8].name
 
-		if arg2 then
-			arg2(arg1, 1, var0)
+		if arg2_8 then
+			arg2_8(arg1_8, 1, var0_9)
 		end
 
-		arg0:Hide()
+		arg0_8:Hide()
 	end, SFX_CANCEL)
-	arg0:Show(var0)
+	arg0_8:Show(var0_8)
 end
 
-function var0.UpdateSkinView(arg0, arg1)
-	local var0 = arg0.displayPanel
-	local var1 = pg.equip_skin_template[arg1]
+function var0_0.UpdateSkinView(arg0_10, arg1_10)
+	local var0_10 = arg0_10.displayPanel
+	local var1_10 = pg.equip_skin_template[arg1_10]
 
-	assert(var1, "miss config equip_skin_template >> " .. arg1)
+	assert(var1_10, "miss config equip_skin_template >> " .. arg1_10)
 
-	arg0.displayNameTxt.text = var1.name
-	arg0.displayDescTxt.text = var1.desc
+	arg0_10.displayNameTxt.text = var1_10.name
+	arg0_10.displayDescTxt.text = var1_10.desc
 
-	local var2 = _.map(var1.equip_type, function(arg0)
-		return EquipType.Type2Name2(arg0)
+	local var2_10 = _.map(var1_10.equip_type, function(arg0_11)
+		return EquipType.Type2Name2(arg0_11)
 	end)
 
-	setScrollText(arg0:findTF("info/display_panel/equip_type/mask/Text", var0), table.concat(var2, ","))
-	onButton(arg0, arg0.playBtn, function()
-		arg0:emit(NewShopsMediator.ON_ESKIN_PREVIEW, arg1)
+	setScrollText(arg0_10:findTF("info/display_panel/equip_type/mask/Text", var0_10), table.concat(var2_10, ","))
+	onButton(arg0_10, arg0_10.playBtn, function()
+		arg0_10:emit(NewShopsMediator.ON_ESKIN_PREVIEW, arg1_10)
 	end, SFX_PANEL)
-	updateDrop(arg0:findTF("info/equip", var0), {
+	updateDrop(arg0_10:findTF("info/equip", var0_10), {
 		type = DROP_TYPE_EQUIPMENT_SKIN,
-		id = arg1
+		id = arg1_10
 	})
 end
 
-function var0.Hide(arg0)
-	if arg0.showing then
-		var0.super.Hide(arg0)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, arg0._parentTf)
+function var0_0.Hide(arg0_13)
+	if arg0_13.showing then
+		var0_0.super.Hide(arg0_13)
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_13._tf, arg0_13._parentTf)
 
-		arg0.showing = false
+		arg0_13.showing = false
 	end
 end
 
-function var0.OnDestroy(arg0)
-	arg0:Hide()
+function var0_0.OnDestroy(arg0_14)
+	arg0_14:Hide()
 end
 
-return var0
+return var0_0

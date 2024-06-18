@@ -1,16 +1,16 @@
-﻿local var0 = class("MainBattleBtn", import(".MainBaseBtn"))
+﻿local var0_0 = class("MainBattleBtn", import(".MainBaseBtn"))
 
-function var0.OnClick(arg0)
-	local var0 = getProxy(ChapterProxy):getActiveChapter()
+function var0_0.OnClick(arg0_1)
+	local var0_1 = getProxy(ChapterProxy):getActiveChapter()
 
-	arg0:emit(NewMainMediator.GO_SCENE, SCENE.LEVEL, {
-		chapterId = var0 and var0.id,
-		mapIdx = var0 and var0:getConfig("map")
+	arg0_1:emit(NewMainMediator.GO_SCENE, SCENE.LEVEL, {
+		chapterId = var0_1 and var0_1.id,
+		mapIdx = var0_1 and var0_1:getConfig("map")
 	})
 end
 
-function var0.IsFixed(arg0)
+function var0_0.IsFixed(arg0_2)
 	return true
 end
 
-return var0
+return var0_0

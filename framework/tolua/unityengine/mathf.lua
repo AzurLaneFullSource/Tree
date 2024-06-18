@@ -1,253 +1,253 @@
-﻿local var0 = math
-local var1 = var0.floor
-local var2 = var0.abs
-local var3 = Mathf
+﻿local var0_0 = math
+local var1_0 = var0_0.floor
+local var2_0 = var0_0.abs
+local var3_0 = Mathf
 
-var3.Deg2Rad = var0.rad(1)
-var3.Epsilon = 1.4013e-45
-var3.Infinity = var0.huge
-var3.NegativeInfinity = -var0.huge
-var3.PI = var0.pi
-var3.Rad2Deg = var0.deg(1)
-var3.Abs = var0.abs
-var3.Acos = var0.acos
-var3.Asin = var0.asin
-var3.Atan = var0.atan
-var3.Atan2 = var0.atan2
-var3.Ceil = var0.ceil
-var3.Cos = var0.cos
-var3.Exp = var0.exp
-var3.Floor = var0.floor
-var3.Log = var0.log
-var3.Log10 = var0.log10
-var3.Max = var0.max
-var3.Min = var0.min
-var3.Pow = var0.pow
-var3.Sin = var0.sin
-var3.Sqrt = var0.sqrt
-var3.Tan = var0.tan
-var3.Deg = var0.deg
-var3.Rad = var0.rad
-var3.Random = var0.random
+var3_0.Deg2Rad = var0_0.rad(1)
+var3_0.Epsilon = 1.4013e-45
+var3_0.Infinity = var0_0.huge
+var3_0.NegativeInfinity = -var0_0.huge
+var3_0.PI = var0_0.pi
+var3_0.Rad2Deg = var0_0.deg(1)
+var3_0.Abs = var0_0.abs
+var3_0.Acos = var0_0.acos
+var3_0.Asin = var0_0.asin
+var3_0.Atan = var0_0.atan
+var3_0.Atan2 = var0_0.atan2
+var3_0.Ceil = var0_0.ceil
+var3_0.Cos = var0_0.cos
+var3_0.Exp = var0_0.exp
+var3_0.Floor = var0_0.floor
+var3_0.Log = var0_0.log
+var3_0.Log10 = var0_0.log10
+var3_0.Max = var0_0.max
+var3_0.Min = var0_0.min
+var3_0.Pow = var0_0.pow
+var3_0.Sin = var0_0.sin
+var3_0.Sqrt = var0_0.sqrt
+var3_0.Tan = var0_0.tan
+var3_0.Deg = var0_0.deg
+var3_0.Rad = var0_0.rad
+var3_0.Random = var0_0.random
 
-function var3.Approximately(arg0, arg1)
-	return var2(arg1 - arg0) < var0.max(1e-06 * var0.max(var2(arg0), var2(arg1)), 1.121039e-44)
+function var3_0.Approximately(arg0_1, arg1_1)
+	return var2_0(arg1_1 - arg0_1) < var0_0.max(1e-06 * var0_0.max(var2_0(arg0_1), var2_0(arg1_1)), 1.121039e-44)
 end
 
-function var3.Clamp(arg0, arg1, arg2)
-	if arg0 < arg1 then
-		arg0 = arg1
-	elseif arg2 < arg0 then
-		arg0 = arg2
+function var3_0.Clamp(arg0_2, arg1_2, arg2_2)
+	if arg0_2 < arg1_2 then
+		arg0_2 = arg1_2
+	elseif arg2_2 < arg0_2 then
+		arg0_2 = arg2_2
 	end
 
-	return arg0
+	return arg0_2
 end
 
-function var3.Clamp01(arg0)
-	if arg0 < 0 then
+function var3_0.Clamp01(arg0_3)
+	if arg0_3 < 0 then
 		return 0
-	elseif arg0 > 1 then
+	elseif arg0_3 > 1 then
 		return 1
 	end
 
-	return arg0
+	return arg0_3
 end
 
-function var3.DeltaAngle(arg0, arg1)
-	local var0 = var3.Repeat(arg1 - arg0, 360)
+function var3_0.DeltaAngle(arg0_4, arg1_4)
+	local var0_4 = var3_0.Repeat(arg1_4 - arg0_4, 360)
 
-	if var0 > 180 then
-		var0 = var0 - 360
+	if var0_4 > 180 then
+		var0_4 = var0_4 - 360
 	end
 
-	return var0
+	return var0_4
 end
 
-function var3.Gamma(arg0, arg1, arg2)
-	local var0 = false
+function var3_0.Gamma(arg0_5, arg1_5, arg2_5)
+	local var0_5 = false
 
-	if arg0 < 0 then
-		var0 = true
+	if arg0_5 < 0 then
+		var0_5 = true
 	end
 
-	local var1 = var2(arg0)
+	local var1_5 = var2_0(arg0_5)
 
-	if arg1 < var1 then
-		return not var0 and var1 or -var1
+	if arg1_5 < var1_5 then
+		return not var0_5 and var1_5 or -var1_5
 	end
 
-	local var2 = var0.pow(var1 / arg1, arg2) * arg1
+	local var2_5 = var0_0.pow(var1_5 / arg1_5, arg2_5) * arg1_5
 
-	return not var0 and var2 or -var2
+	return not var0_5 and var2_5 or -var2_5
 end
 
-function var3.InverseLerp(arg0, arg1, arg2)
-	if arg0 < arg1 then
-		if arg2 < arg0 then
+function var3_0.InverseLerp(arg0_6, arg1_6, arg2_6)
+	if arg0_6 < arg1_6 then
+		if arg2_6 < arg0_6 then
 			return 0
 		end
 
-		if arg1 < arg2 then
+		if arg1_6 < arg2_6 then
 			return 1
 		end
 
-		arg2 = arg2 - arg0
-		arg2 = arg2 / (arg1 - arg0)
+		arg2_6 = arg2_6 - arg0_6
+		arg2_6 = arg2_6 / (arg1_6 - arg0_6)
 
-		return arg2
+		return arg2_6
 	end
 
-	if arg0 <= arg1 then
+	if arg0_6 <= arg1_6 then
 		return 0
 	end
 
-	if arg2 < arg1 then
+	if arg2_6 < arg1_6 then
 		return 1
 	end
 
-	if arg0 < arg2 then
+	if arg0_6 < arg2_6 then
 		return 0
 	end
 
-	return 1 - (arg2 - arg1) / (arg0 - arg1)
+	return 1 - (arg2_6 - arg1_6) / (arg0_6 - arg1_6)
 end
 
-function var3.Lerp(arg0, arg1, arg2)
-	return arg0 + (arg1 - arg0) * var3.Clamp01(arg2)
+function var3_0.Lerp(arg0_7, arg1_7, arg2_7)
+	return arg0_7 + (arg1_7 - arg0_7) * var3_0.Clamp01(arg2_7)
 end
 
-function var3.LerpAngle(arg0, arg1, arg2)
-	local var0 = var3.Repeat(arg1 - arg0, 360)
+function var3_0.LerpAngle(arg0_8, arg1_8, arg2_8)
+	local var0_8 = var3_0.Repeat(arg1_8 - arg0_8, 360)
 
-	if var0 > 180 then
-		var0 = var0 - 360
+	if var0_8 > 180 then
+		var0_8 = var0_8 - 360
 	end
 
-	return arg0 + var0 * var3.Clamp01(arg2)
+	return arg0_8 + var0_8 * var3_0.Clamp01(arg2_8)
 end
 
-function var3.LerpUnclamped(arg0, arg1, arg2)
-	return arg0 + (arg1 - arg0) * arg2
+function var3_0.LerpUnclamped(arg0_9, arg1_9, arg2_9)
+	return arg0_9 + (arg1_9 - arg0_9) * arg2_9
 end
 
-function var3.MoveTowards(arg0, arg1, arg2)
-	if arg2 >= var2(arg1 - arg0) then
-		return arg1
+function var3_0.MoveTowards(arg0_10, arg1_10, arg2_10)
+	if arg2_10 >= var2_0(arg1_10 - arg0_10) then
+		return arg1_10
 	end
 
-	return arg0 + var3.Sign(arg1 - arg0) * arg2
+	return arg0_10 + var3_0.Sign(arg1_10 - arg0_10) * arg2_10
 end
 
-function var3.MoveTowardsAngle(arg0, arg1, arg2)
-	arg1 = arg0 + var3.DeltaAngle(arg0, arg1)
+function var3_0.MoveTowardsAngle(arg0_11, arg1_11, arg2_11)
+	arg1_11 = arg0_11 + var3_0.DeltaAngle(arg0_11, arg1_11)
 
-	return var3.MoveTowards(arg0, arg1, arg2)
+	return var3_0.MoveTowards(arg0_11, arg1_11, arg2_11)
 end
 
-function var3.PingPong(arg0, arg1)
-	arg0 = var3.Repeat(arg0, arg1 * 2)
+function var3_0.PingPong(arg0_12, arg1_12)
+	arg0_12 = var3_0.Repeat(arg0_12, arg1_12 * 2)
 
-	return arg1 - var2(arg0 - arg1)
+	return arg1_12 - var2_0(arg0_12 - arg1_12)
 end
 
-function var3.Repeat(arg0, arg1)
-	return arg0 - var1(arg0 / arg1) * arg1
+function var3_0.Repeat(arg0_13, arg1_13)
+	return arg0_13 - var1_0(arg0_13 / arg1_13) * arg1_13
 end
 
-function var3.Round(arg0)
-	return var1(arg0 + 0.5)
+function var3_0.Round(arg0_14)
+	return var1_0(arg0_14 + 0.5)
 end
 
-function var3.Sign(arg0)
-	arg0 = arg0 > 0 and 1 or arg0 < 0 and -1 or 0
+function var3_0.Sign(arg0_15)
+	arg0_15 = arg0_15 > 0 and 1 or arg0_15 < 0 and -1 or 0
 
-	return arg0
+	return arg0_15
 end
 
-function var3.SmoothDamp(arg0, arg1, arg2, arg3, arg4, arg5)
-	arg4 = arg4 or var3.Infinity
-	arg5 = arg5 or Time.deltaTime
-	arg3 = var3.Max(0.0001, arg3)
+function var3_0.SmoothDamp(arg0_16, arg1_16, arg2_16, arg3_16, arg4_16, arg5_16)
+	arg4_16 = arg4_16 or var3_0.Infinity
+	arg5_16 = arg5_16 or Time.deltaTime
+	arg3_16 = var3_0.Max(0.0001, arg3_16)
 
-	local var0 = 2 / arg3
-	local var1 = var0 * arg5
-	local var2 = 1 / (1 + var1 + 0.48 * var1 * var1 + 0.235 * var1 * var1 * var1)
-	local var3 = arg0 - arg1
-	local var4 = arg1
-	local var5 = arg4 * arg3
-	local var6 = var3.Clamp(var3, -var5, var5)
+	local var0_16 = 2 / arg3_16
+	local var1_16 = var0_16 * arg5_16
+	local var2_16 = 1 / (1 + var1_16 + 0.48 * var1_16 * var1_16 + 0.235 * var1_16 * var1_16 * var1_16)
+	local var3_16 = arg0_16 - arg1_16
+	local var4_16 = arg1_16
+	local var5_16 = arg4_16 * arg3_16
+	local var6_16 = var3_0.Clamp(var3_16, -var5_16, var5_16)
 
-	arg1 = arg0 - var6
+	arg1_16 = arg0_16 - var6_16
 
-	local var7 = (arg2 + var0 * var6) * arg5
+	local var7_16 = (arg2_16 + var0_16 * var6_16) * arg5_16
 
-	arg2 = (arg2 - var0 * var7) * var2
+	arg2_16 = (arg2_16 - var0_16 * var7_16) * var2_16
 
-	local var8 = arg1 + (var6 + var7) * var2
+	local var8_16 = arg1_16 + (var6_16 + var7_16) * var2_16
 
-	if arg0 < var4 == (var4 < var8) then
-		var8 = var4
-		arg2 = (var8 - var4) / arg5
+	if arg0_16 < var4_16 == (var4_16 < var8_16) then
+		var8_16 = var4_16
+		arg2_16 = (var8_16 - var4_16) / arg5_16
 	end
 
-	return var8, arg2
+	return var8_16, arg2_16
 end
 
-function var3.SmoothDampAngle(arg0, arg1, arg2, arg3, arg4, arg5)
-	arg5 = arg5 or Time.deltaTime
-	arg4 = arg4 or var3.Infinity
-	arg1 = arg0 + var3.DeltaAngle(arg0, arg1)
+function var3_0.SmoothDampAngle(arg0_17, arg1_17, arg2_17, arg3_17, arg4_17, arg5_17)
+	arg5_17 = arg5_17 or Time.deltaTime
+	arg4_17 = arg4_17 or var3_0.Infinity
+	arg1_17 = arg0_17 + var3_0.DeltaAngle(arg0_17, arg1_17)
 
-	return var3.SmoothDamp(arg0, arg1, arg2, arg3, arg4, arg5)
+	return var3_0.SmoothDamp(arg0_17, arg1_17, arg2_17, arg3_17, arg4_17, arg5_17)
 end
 
-function var3.SmoothStep(arg0, arg1, arg2)
-	arg2 = var3.Clamp01(arg2)
-	arg2 = -2 * arg2 * arg2 * arg2 + 3 * arg2 * arg2
+function var3_0.SmoothStep(arg0_18, arg1_18, arg2_18)
+	arg2_18 = var3_0.Clamp01(arg2_18)
+	arg2_18 = -2 * arg2_18 * arg2_18 * arg2_18 + 3 * arg2_18 * arg2_18
 
-	return arg1 * arg2 + arg0 * (1 - arg2)
+	return arg1_18 * arg2_18 + arg0_18 * (1 - arg2_18)
 end
 
-function var3.HorizontalAngle(arg0)
-	return var0.deg(var0.atan2(arg0.x, arg0.z))
+function var3_0.HorizontalAngle(arg0_19)
+	return var0_0.deg(var0_0.atan2(arg0_19.x, arg0_19.z))
 end
 
-function var3.IsNan(arg0)
-	return arg0 ~= arg0
+function var3_0.IsNan(arg0_20)
+	return arg0_20 ~= arg0_20
 end
 
-function var3.MultiRandom(arg0, arg1)
-	local var0 = {}
-	local var1 = {}
+function var3_0.MultiRandom(arg0_21, arg1_21)
+	local var0_21 = {}
+	local var1_21 = {}
 
-	for iter0, iter1 in ipairs(arg0) do
-		table.insert(var1, iter0)
+	for iter0_21, iter1_21 in ipairs(arg0_21) do
+		table.insert(var1_21, iter0_21)
 	end
 
-	arg1 = var0.min(#arg0, arg1)
+	arg1_21 = var0_0.min(#arg0_21, arg1_21)
 
-	while arg1 > 0 do
-		local var2 = var0.random(#var1)
-		local var3 = table.remove(var1, var2)
+	while arg1_21 > 0 do
+		local var2_21 = var0_0.random(#var1_21)
+		local var3_21 = table.remove(var1_21, var2_21)
 
-		table.insert(var0, arg0[var3])
+		table.insert(var0_21, arg0_21[var3_21])
 
-		arg1 = arg1 - 1
+		arg1_21 = arg1_21 - 1
 	end
 
-	return var0
+	return var0_21
 end
 
-function var3.RandomFloat(arg0, arg1, arg2)
-	arg1 = arg1 or 0
-	arg2 = arg2 or 10000
-	arg1 = arg1 * arg2
-	arg0 = arg0 * arg2
+function var3_0.RandomFloat(arg0_22, arg1_22, arg2_22)
+	arg1_22 = arg1_22 or 0
+	arg2_22 = arg2_22 or 10000
+	arg1_22 = arg1_22 * arg2_22
+	arg0_22 = arg0_22 * arg2_22
 
-	return var0.random(arg1, arg0) / arg2
+	return var0_0.random(arg1_22, arg0_22) / arg2_22
 end
 
-UnityEngine.Mathf = var3
+UnityEngine.Mathf = var3_0
 
-return var3
+return var3_0

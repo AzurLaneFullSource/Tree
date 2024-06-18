@@ -55,22 +55,22 @@ pg.TimeMgr.GetInstance():Init()
 pg.TimeMgr.GetInstance():_SetServerTime_(VersionMgr.Inst.timestamp, VersionMgr.Inst.monday0oclockTimestamp, VersionMgr.Inst.realStartUpTimeWhenSetServerTime)
 pg.PushNotificationMgr.GetInstance():Init()
 
-function OnApplicationPause(arg0)
-	originalPrint("OnApplicationPause: " .. tostring(arg0))
+function OnApplicationPause(arg0_3)
+	originalPrint("OnApplicationPause: " .. tostring(arg0_3))
 
 	if not pg.m02 then
 		return
 	end
 
-	if arg0 then
+	if arg0_3 then
 		pg.m02:sendNotification(GAME.PAUSE_BATTLE)
 		pg.PushNotificationMgr.GetInstance():PushAll()
 	else
 		pg.SdkMgr.GetInstance():BindCPU()
 	end
 
-	pg.SdkMgr.GetInstance():OnAppPauseForSDK(arg0)
-	pg.m02:sendNotification(GAME.ON_APPLICATION_PAUSE, arg0)
+	pg.SdkMgr.GetInstance():OnAppPauseForSDK(arg0_3)
+	pg.m02:sendNotification(GAME.ON_APPLICATION_PAUSE, arg0_3)
 end
 
 function OnApplicationExit()
@@ -94,17 +94,17 @@ function OnApplicationExit()
 		return
 	end
 
-	local var0 = ys.Battle.BattleState.GetInstance()
+	local var0_4 = ys.Battle.BattleState.GetInstance()
 
-	if var0 and var0:GetState() == var0.BATTLE_STATE_FIGHT and not var0:IsPause() then
+	if var0_4 and var0_4:GetState() == var0_4.BATTLE_STATE_FIGHT and not var0_4:IsPause() then
 		pg.m02:sendNotification(GAME.PAUSE_BATTLE)
 
 		return
 	end
 
-	local var1 = pg.UIMgr.GetInstance()
+	local var1_4 = pg.UIMgr.GetInstance()
 
-	if not var1._loadPanel or var1:LoadingRetainCount() ~= 0 then
+	if not var1_4._loadPanel or var1_4:LoadingRetainCount() ~= 0 then
 		return
 	end
 
@@ -112,90 +112,90 @@ function OnApplicationExit()
 		return
 	end
 
-	local var2 = pg.MsgboxMgr.GetInstance()
-	local var3 = var2 and var2:getMsgBoxOb()
-	local var4 = pg.NewStoryMgr.GetInstance()
+	local var2_4 = pg.MsgboxMgr.GetInstance()
+	local var3_4 = var2_4 and var2_4:getMsgBoxOb()
+	local var4_4 = pg.NewStoryMgr.GetInstance()
 
-	if var4 and var4:IsRunning() then
-		if var3 and var3.activeSelf then
+	if var4_4 and var4_4:IsRunning() then
+		if var3_4 and var3_4.activeSelf then
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-			triggerButton(var2._closeBtn)
+			triggerButton(var2_4._closeBtn)
 		end
 
 		return
 	end
 
-	local var5 = pg.m02
+	local var5_4 = pg.m02
 
-	if not var5 then
+	if not var5_4 then
 		return
 	end
 
-	local var6 = var5:retrieveProxy(ContextProxy.__cname)
+	local var6_4 = var5_4:retrieveProxy(ContextProxy.__cname)
 
-	if not var6 then
+	if not var6_4 then
 		return
 	end
 
-	local var7 = var6:getCurrentContext()
+	local var7_4 = var6_4:getCurrentContext()
 
-	if not var7 then
+	if not var7_4 then
 		return
 	end
 
-	local var8 = pg.ShareMgr.GetInstance()
+	local var8_4 = pg.ShareMgr.GetInstance()
 
-	if var8.go and isActive(var8.go) then
+	if var8_4.go and isActive(var8_4.go) then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-		triggerButton(var8.panel:Find("main/top/btnBack"))
+		triggerButton(var8_4.panel:Find("main/top/btnBack"))
 
 		return
 	end
 
-	local var9 = var7:retriveLastChild()
-	local var10 = var5:retrieveMediator(var9.mediator.__cname)
+	local var9_4 = var7_4:retriveLastChild()
+	local var10_4 = var5_4:retrieveMediator(var9_4.mediator.__cname)
 
-	if not var10 or not var10.viewComponent then
+	if not var10_4 or not var10_4.viewComponent then
 		return
 	end
 
-	local var11 = var10.viewComponent
-	local var12 = var11._tf.parent
-	local var13 = var11._tf:GetSiblingIndex()
-	local var14 = -1
-	local var15
+	local var11_4 = var10_4.viewComponent
+	local var12_4 = var11_4._tf.parent
+	local var13_4 = var11_4._tf:GetSiblingIndex()
+	local var14_4 = -1
+	local var15_4
 
-	if var3 and var3.activeSelf then
-		var15 = var3.transform.parent
-		var14 = var3.transform:GetSiblingIndex()
+	if var3_4 and var3_4.activeSelf then
+		var15_4 = var3_4.transform.parent
+		var14_4 = var3_4.transform:GetSiblingIndex()
 	end
 
 	if pg.playerResUI:checkBackPressed() then
 		return
 	end
 
-	if var12 == var15 and var14 < var13 then
-		var11:onBackPressed()
+	if var12_4 == var15_4 and var14_4 < var13_4 then
+		var11_4:onBackPressed()
 
 		return
 	end
 
-	if var3 and var3.activeSelf then
+	if var3_4 and var3_4.activeSelf then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-		triggerButton(var2._closeBtn)
+		triggerButton(var2_4._closeBtn)
 
 		return
 	end
 
-	local var16 = nowWorld()
+	local var16_4 = nowWorld()
 
-	if var16 and var16.staminaMgr:IsShowing() then
-		var16.staminaMgr:Hide()
+	if var16_4 and var16_4.staminaMgr:IsShowing() then
+		var16_4.staminaMgr:Hide()
 
 		return
 	end
 
-	var11:onBackPressed()
+	var11_4:onBackPressed()
 end
 
 function OnReceiveMemoryWarning()
@@ -213,114 +213,114 @@ function PressBack()
 	end
 end
 
-local function var0(arg0)
+local function var0_0(arg0_8)
 	parallelAsync({
-		function(arg0)
-			pg.LayerWeightMgr.GetInstance():Init(arg0)
+		function(arg0_9)
+			pg.LayerWeightMgr.GetInstance():Init(arg0_9)
 		end,
-		function(arg0)
-			pg.UIMgr.GetInstance():Init(arg0)
+		function(arg0_10)
+			pg.UIMgr.GetInstance():Init(arg0_10)
 		end,
-		function(arg0)
-			pg.CriMgr.GetInstance():Init(arg0)
+		function(arg0_11)
+			pg.CriMgr.GetInstance():Init(arg0_11)
 		end
-	}, arg0)
+	}, arg0_8)
 end
 
-local function var1(arg0)
+local function var1_0(arg0_12)
 	parallelAsync({
-		function(arg0)
-			pg.FontMgr.GetInstance():Init(arg0)
+		function(arg0_13)
+			pg.FontMgr.GetInstance():Init(arg0_13)
 		end,
-		function(arg0)
-			pg.ShaderMgr.GetInstance():Init(arg0)
+		function(arg0_14)
+			pg.ShaderMgr.GetInstance():Init(arg0_14)
 		end,
-		function(arg0)
-			pg.PoolMgr.GetInstance():Init(arg0)
+		function(arg0_15)
+			pg.PoolMgr.GetInstance():Init(arg0_15)
 		end,
-		function(arg0)
-			pg.TipsMgr.GetInstance():Init(arg0)
+		function(arg0_16)
+			pg.TipsMgr.GetInstance():Init(arg0_16)
 		end,
-		function(arg0)
-			pg.MsgboxMgr.GetInstance():Init(arg0)
+		function(arg0_17)
+			pg.MsgboxMgr.GetInstance():Init(arg0_17)
 		end,
-		function(arg0)
-			pg.SystemOpenMgr.GetInstance():Init(arg0)
+		function(arg0_18)
+			pg.SystemOpenMgr.GetInstance():Init(arg0_18)
 		end,
-		function(arg0)
-			pg.SystemGuideMgr.GetInstance():Init(arg0)
+		function(arg0_19)
+			pg.SystemGuideMgr.GetInstance():Init(arg0_19)
 		end,
-		function(arg0)
-			pg.NewGuideMgr.GetInstance():Init(arg0)
+		function(arg0_20)
+			pg.NewGuideMgr.GetInstance():Init(arg0_20)
 		end,
-		function(arg0)
-			pg.SeriesGuideMgr.GetInstance():Init(arg0)
+		function(arg0_21)
+			pg.SeriesGuideMgr.GetInstance():Init(arg0_21)
 		end,
-		function(arg0)
-			pg.ToastMgr.GetInstance():Init(arg0)
+		function(arg0_22)
+			pg.ToastMgr.GetInstance():Init(arg0_22)
 		end,
-		function(arg0)
-			pg.WorldToastMgr.GetInstance():Init(arg0)
+		function(arg0_23)
+			pg.WorldToastMgr.GetInstance():Init(arg0_23)
 		end,
-		function(arg0)
-			pg.SecondaryPWDMgr.GetInstance():Init(arg0)
+		function(arg0_24)
+			pg.SecondaryPWDMgr.GetInstance():Init(arg0_24)
 		end,
-		function(arg0)
-			pg.ShipFlagMgr.GetInstance():Init(arg0)
+		function(arg0_25)
+			pg.ShipFlagMgr.GetInstance():Init(arg0_25)
 		end,
-		function(arg0)
-			pg.NewStoryMgr.GetInstance():Init(arg0)
+		function(arg0_26)
+			pg.NewStoryMgr.GetInstance():Init(arg0_26)
 		end,
-		function(arg0)
-			pg.RedDotMgr.GetInstance():Init(arg0)
+		function(arg0_27)
+			pg.RedDotMgr.GetInstance():Init(arg0_27)
 		end,
-		function(arg0)
-			pg.UserAgreementMgr.GetInstance():Init(arg0)
+		function(arg0_28)
+			pg.UserAgreementMgr.GetInstance():Init(arg0_28)
 		end,
-		function(arg0)
-			pg.BrightnessMgr.GetInstance():Init(arg0)
+		function(arg0_29)
+			pg.BrightnessMgr.GetInstance():Init(arg0_29)
 		end,
-		function(arg0)
-			pg.ConfigTablePreloadMgr.GetInstance():Init(arg0)
+		function(arg0_30)
+			pg.ConfigTablePreloadMgr.GetInstance():Init(arg0_30)
 		end,
-		function(arg0)
-			pg.CameraFixMgr.GetInstance():Init(arg0)
+		function(arg0_31)
+			pg.CameraFixMgr.GetInstance():Init(arg0_31)
 		end,
-		function(arg0)
-			pg.BgmMgr.GetInstance():Init(arg0)
+		function(arg0_32)
+			pg.BgmMgr.GetInstance():Init(arg0_32)
 		end,
-		function(arg0)
-			pg.FileDownloadMgr.GetInstance():Init(arg0)
+		function(arg0_33)
+			pg.FileDownloadMgr.GetInstance():Init(arg0_33)
 		end,
-		function(arg0)
-			pg.RepairResMgr.GetInstance():Init(arg0)
+		function(arg0_34)
+			pg.RepairResMgr.GetInstance():Init(arg0_34)
 		end,
-		function(arg0)
-			pg.NodeCanvasMgr.GetInstance():Init(arg0)
+		function(arg0_35)
+			pg.NodeCanvasMgr.GetInstance():Init(arg0_35)
 		end,
-		function(arg0)
-			pg.SceneAnimMgr.GetInstance():Init(arg0)
+		function(arg0_36)
+			pg.SceneAnimMgr.GetInstance():Init(arg0_36)
 		end,
-		function(arg0)
-			pg.PerformMgr.GetInstance():Init(arg0)
+		function(arg0_37)
+			pg.PerformMgr.GetInstance():Init(arg0_37)
 		end
-	}, arg0)
+	}, arg0_12)
 end
 
-local var2 = os.clock()
+local var2_0 = os.clock()
 
 seriesAsync({
-	var0,
-	var1
-}, function(arg0)
+	var0_0,
+	var1_0
+}, function(arg0_38)
 	pg.SdkMgr.GetInstance():QueryWithProduct()
-	print("loading cost: " .. os.clock() - var2)
+	print("loading cost: " .. os.clock() - var2_0)
 	VersionMgr.Inst:DestroyUI()
 
-	local var0 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
+	local var0_38 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
 
-	if not IsNil(var0) then
-		Object.Destroy(var0)
+	if not IsNil(var0_38) then
+		Object.Destroy(var0_38)
 	end
 
 	Screen.sleepTimeout = SleepTimeout.SystemSetting
@@ -328,9 +328,9 @@ seriesAsync({
 	pg.UIMgr.GetInstance():displayLoadingBG(true)
 	pg.UIMgr.GetInstance():LoadingOn()
 
-	if arg0 then
-		pg.UIMgr.GetInstance():Loading(arg0)
-		error(arg0)
+	if arg0_38 then
+		pg.UIMgr.GetInstance():Loading(arg0_38)
+		error(arg0_38)
 
 		return
 	end

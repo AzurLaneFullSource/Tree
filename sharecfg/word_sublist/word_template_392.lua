@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_392 = {}
+var0_0.word_template_392 = {}
 
-local var1 = var0.word_template_392
+local var1_0 = var0_0.word_template_392
 
 function temp()
-	var1.兔 = {
+	var1_0.兔 = {
 		子 = {
 			开 = {
 				D = {
@@ -28,7 +28,7 @@ end
 temp()
 
 function temp()
-	var1.② = {
+	var1_0.② = {
 		時 = {
 			大 = {
 				this = true
@@ -40,7 +40,7 @@ end
 temp()
 
 function temp()
-	var1["="] = {
+	var1_0["="] = {
 		["+"] = {
 			大 = {
 				this = true
@@ -52,7 +52,7 @@ end
 temp()
 
 function temp()
-	var1.贰 = {
+	var1_0.贰 = {
 		零 = {
 			大 = {
 				this = true
@@ -76,7 +76,7 @@ end
 temp()
 
 function temp()
-	var1.悉 = {
+	var1_0.悉 = {
 		数 = {
 			尽 = {
 				核 = {
@@ -99,7 +99,7 @@ end
 temp()
 
 function temp()
-	var1.时 = {
+	var1_0.时 = {
 		俊 = {
 			萍 = {
 				this = true
@@ -154,7 +154,7 @@ end
 temp()
 
 function temp()
-	var1.岿 = {
+	var1_0.岿 = {
 		然 = {
 			不 = {
 				动 = {

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_117 = {}
+var0_0.word_template_117 = {}
 
-local var1 = var0.word_template_117
+local var1_0 = var0_0.word_template_117
 
 function temp()
-	var1.廣 = {
+	var1_0.廣 = {
 		場 = {
 			上 = {
 				的 = {
@@ -69,7 +69,7 @@ end
 temp()
 
 function temp()
-	var1.龟 = {
+	var1_0.龟 = {
 		儿 = {
 			子 = {
 				this = true
@@ -113,7 +113,7 @@ end
 temp()
 
 function temp()
-	var1.硅 = {
+	var1_0.硅 = {
 		酸 = {
 			甲 = {
 				酯 = {
@@ -127,7 +127,7 @@ end
 temp()
 
 function temp()
-	var1.嬀 = {
+	var1_0.嬀 = {
 		this = {
 			this = true
 		}
@@ -137,7 +137,7 @@ end
 temp()
 
 function temp()
-	var1.龜 = {
+	var1_0.龜 = {
 		兒 = {
 			子 = {
 				this = true
@@ -163,7 +163,7 @@ end
 temp()
 
 function temp()
-	var1.宄 = {
+	var1_0.宄 = {
 		this = {
 			this = true
 		}
@@ -173,7 +173,7 @@ end
 temp()
 
 function temp()
-	var1.庋 = {
+	var1_0.庋 = {
 		this = {
 			this = true
 		}

@@ -1,45 +1,45 @@
-﻿local var0 = class("ArchivesWorldBossEmptyPage", import(".BaseWorldBossEmptyPage"))
+﻿local var0_0 = class("ArchivesWorldBossEmptyPage", import(".BaseWorldBossEmptyPage"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ArchivesWorldBossEmptyUI"
 end
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
-	onButton(arg0, arg0.helpBtn, function()
+function var0_0.OnInit(arg0_2)
+	var0_0.super.OnInit(arg0_2)
+	onButton(arg0_2, arg0_2.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.world_archives_boss_help.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0:findTF("list_btn"), function()
-		arg0:emit(WorldBossScene.ON_SWITCH, WorldBossScene.PAGE_ARCHIVES_CHALLENGE)
+	onButton(arg0_2, arg0_2:findTF("list_btn"), function()
+		arg0_2:emit(WorldBossScene.ON_SWITCH, WorldBossScene.PAGE_ARCHIVES_CHALLENGE)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.activeBtn, function()
-		local var0 = WorldBossConst.GetAchieveState()
+	onButton(arg0_2, arg0_2.activeBtn, function()
+		local var0_5 = WorldBossConst.GetAchieveState()
 
-		if var0 == WorldBossConst.ACHIEVE_STATE_NOSTART then
+		if var0_5 == WorldBossConst.ACHIEVE_STATE_NOSTART then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_no_select_archives"))
-		elseif var0 == WorldBossConst.ACHIEVE_STATE_STARTING then
+		elseif var0_5 == WorldBossConst.ACHIEVE_STATE_STARTING then
 			if WorldBossConst.CanUnlockArchivesBoss() then
-				arg0:emit(WorldBossMediator.ON_ACTIVE_ARCHIVES_BOSS)
+				arg0_2:emit(WorldBossMediator.ON_ACTIVE_ARCHIVES_BOSS)
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_archives_item_count_noenough"))
 			end
-		elseif var0 == WorldBossConst.ACHIEVE_STATE_CLEAR then
+		elseif var0_5 == WorldBossConst.ACHIEVE_STATE_CLEAR then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_archives_are_clear"))
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0.progressTr, function()
-		local var0 = WorldBossConst.GetAchieveBossItemInfo()
+	onButton(arg0_2, arg0_2.progressTr, function()
+		local var0_6 = WorldBossConst.GetAchieveBossItemInfo()
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
 			type = MSGBOX_TYPE_DROP_ITEM,
-			name = var0.name,
-			content = var0.display,
-			iconPath = var0.icon,
-			frame = var0.rarity
+			name = var0_6.name,
+			content = var0_6.display,
+			iconPath = var0_6.icon,
+			frame = var0_6.rarity
 		})
 	end, SFX_PANEL)
 
@@ -48,59 +48,59 @@ function var0.OnInit(arg0)
 	end
 end
 
-function var0.OnUpdate(arg0)
-	arg0.archivesWorldbossBtn = arg0.archivesWorldbossBtn or ArchivesWorldbossBtn.New(arg0:findTF("archives_btn"), arg0.event)
+function var0_0.OnUpdate(arg0_7)
+	arg0_7.archivesWorldbossBtn = arg0_7.archivesWorldbossBtn or ArchivesWorldbossBtn.New(arg0_7:findTF("archives_btn"), arg0_7.event)
 
-	local var0 = WorldBossConst.GetAchieveState()
-	local var1
+	local var0_7 = WorldBossConst.GetAchieveState()
+	local var1_7
 
-	if var0 == WorldBossConst.ACHIEVE_STATE_NOSTART then
-		var1 = "text04"
-	elseif var0 == WorldBossConst.ACHIEVE_STATE_CLEAR then
-		var1 = "text05"
+	if var0_7 == WorldBossConst.ACHIEVE_STATE_NOSTART then
+		var1_7 = "text04"
+	elseif var0_7 == WorldBossConst.ACHIEVE_STATE_CLEAR then
+		var1_7 = "text05"
 	end
 
-	if var1 then
-		local var2 = arg0.noItem:GetComponent(typeof(Image))
+	if var1_7 then
+		local var2_7 = arg0_7.noItem:GetComponent(typeof(Image))
 
-		var2.sprite = GetSpriteFromAtlas("ui/WorldBossUI_atlas", var1)
+		var2_7.sprite = GetSpriteFromAtlas("ui/WorldBossUI_atlas", var1_7)
 
-		var2:SetNativeSize()
+		var2_7:SetNativeSize()
 	end
 
-	local var3 = WorldBossConst.GetAchieveState() == WorldBossConst.ACHIEVE_STATE_STARTING
+	local var3_7 = WorldBossConst.GetAchieveState() == WorldBossConst.ACHIEVE_STATE_STARTING
 
-	if var3 then
-		local var4 = WorldBossConst.GetArchivesId()
-		local var5 = WorldBossConst.BossId2MetaId(var4)
+	if var3_7 then
+		local var4_7 = WorldBossConst.GetArchivesId()
+		local var5_7 = WorldBossConst.BossId2MetaId(var4_7)
 
-		arg0:UpdateUseItemStyle(var5)
+		arg0_7:UpdateUseItemStyle(var5_7)
 	end
 
-	setActive(arg0.useItem, var3)
-	setActive(arg0.noItem, not var3)
-	arg0.archivesWorldbossBtn:Flush()
+	setActive(arg0_7.useItem, var3_7)
+	setActive(arg0_7.noItem, not var3_7)
+	arg0_7.archivesWorldbossBtn:Flush()
 end
 
-function var0.OnUpdateRes(arg0)
-	if not arg0.progressTxt then
+function var0_0.OnUpdateRes(arg0_8)
+	if not arg0_8.progressTxt then
 		return
 	end
 
-	local var0, var1, var2 = WorldBossConst.GetAchieveBossConsume()
-	local var3 = WorldBossConst.GetAchieveBossItemProgress()
+	local var0_8, var1_8, var2_8 = WorldBossConst.GetAchieveBossConsume()
+	local var3_8 = WorldBossConst.GetAchieveBossItemProgress()
 
-	arg0.progressTxt.text = var3 .. "/" .. var2
+	arg0_8.progressTxt.text = var3_8 .. "/" .. var2_8
 end
 
-function var0.OnDestroy(arg0)
-	var0.super.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_9)
+	var0_0.super.OnDestroy(arg0_9)
 
-	if arg0.archivesWorldbossBtn then
-		arg0.archivesWorldbossBtn:Dispose()
+	if arg0_9.archivesWorldbossBtn then
+		arg0_9.archivesWorldbossBtn:Dispose()
 
-		arg0.archivesWorldbossBtn = nil
+		arg0_9.archivesWorldbossBtn = nil
 	end
 end
 
-return var0
+return var0_0

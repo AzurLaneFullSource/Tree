@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_28 = {}
+var0_0.word_template_28 = {}
 
-local var1 = var0.word_template_28
+local var1_0 = var0_0.word_template_28
 
 function temp()
-	var1.族 = {
+	var1_0.族 = {
 		淨 = {
 			化 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.多 = {
+	var1_0.多 = {
 		重 = {
 			債 = {
 				務 = {
@@ -156,7 +156,7 @@ end
 temp()
 
 function temp()
-	var1.待 = {
+	var1_0.待 = {
 		ち = {
 			合 = {
 				this = true
@@ -237,7 +237,7 @@ end
 temp()
 
 function temp()
-	var1.退 = {
+	var1_0.退 = {
 		党 = {
 			this = true
 		},
@@ -403,7 +403,7 @@ end
 temp()
 
 function temp()
-	var1.大 = {
+	var1_0.大 = {
 		["?"] = {
 			this = true
 		},
@@ -2010,7 +2010,7 @@ end
 temp()
 
 function temp()
-	var1.脱 = {
+	var1_0.脱 = {
 		毛 = {
 			this = true,
 			仪 = {
@@ -2119,7 +2119,7 @@ end
 temp()
 
 function temp()
-	var1.知 = {
+	var1_0.知 = {
 		障 = {
 			this = true
 		},

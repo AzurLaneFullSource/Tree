@@ -1,141 +1,141 @@
-﻿local var0 = class("DestroyShipsCommand", pm.SimpleCommand)
+﻿local var0_0 = class("DestroyShipsCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.shipIds
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.shipIds
 
-	if not var0.destroyEquipment then
-		local var2 = false
+	if not var0_1.destroyEquipment then
+		local var2_1 = false
 	end
 
-	local var3 = getProxy(BayProxy)
-	local var4 = {}
+	local var3_1 = getProxy(BayProxy)
+	local var4_1 = {}
 
-	for iter0, iter1 in ipairs(var1) do
-		local var5 = var3:getShipById(iter1)
+	for iter0_1, iter1_1 in ipairs(var1_1) do
+		local var5_1 = var3_1:getShipById(iter1_1)
 
-		if var5 == nil then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", iter1))
+		if var5_1 == nil then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", iter1_1))
 
 			return
 		end
 
-		table.insert(var4, var5)
+		table.insert(var4_1, var5_1)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(12004, {
-		ship_id_list = var1
-	}, 12005, function(arg0)
-		if arg0.result == 0 then
-			local var0 = getProxy(EquipmentProxy)
-			local var1 = {}
-			local var2 = {}
+		ship_id_list = var1_1
+	}, 12005, function(arg0_2)
+		if arg0_2.result == 0 then
+			local var0_2 = getProxy(EquipmentProxy)
+			local var1_2 = {}
+			local var2_2 = {}
 
-			for iter0, iter1 in ipairs(var4) do
-				var3:removeShip(iter1)
+			for iter0_2, iter1_2 in ipairs(var4_1) do
+				var3_1:removeShip(iter1_2)
 
-				for iter2, iter3 in ipairs(iter1.equipments) do
-					if iter3 then
-						var0:addEquipment(iter3)
+				for iter2_2, iter3_2 in ipairs(iter1_2.equipments) do
+					if iter3_2 then
+						var0_2:addEquipment(iter3_2)
 
-						if not var1[iter3.id] then
-							var1[iter3.id] = iter3:clone()
+						if not var1_2[iter3_2.id] then
+							var1_2[iter3_2.id] = iter3_2:clone()
 						else
-							var1[iter3.id].count = var1[iter3.id].count + 1
+							var1_2[iter3_2.id].count = var1_2[iter3_2.id].count + 1
 						end
 					end
 
-					if iter1:getEquipSkin(iter2) ~= 0 then
-						var0:addEquipmentSkin(iter1:getEquipSkin(iter2), 1)
-						iter1:updateEquipmentSkin(iter2, 0)
+					if iter1_2:getEquipSkin(iter2_2) ~= 0 then
+						var0_2:addEquipmentSkin(iter1_2:getEquipSkin(iter2_2), 1)
+						iter1_2:updateEquipmentSkin(iter2_2, 0)
 						pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_unload"))
 					end
 				end
 
-				local var3 = iter1:GetSpWeapon()
+				local var3_2 = iter1_2:GetSpWeapon()
 
-				if var3 then
-					iter1:UpdateSpWeapon(nil)
-					var0:AddSpWeapon(var3)
+				if var3_2 then
+					iter1_2:UpdateSpWeapon(nil)
+					var0_2:AddSpWeapon(var3_2)
 					pg.TipsMgr.GetInstance():ShowTips(i18n("spweapon_tip_unload"))
 				end
 
-				table.insert(var2, iter1.id)
+				table.insert(var2_2, iter1_2.id)
 			end
 
-			local var4, var5, var6 = ShipCalcHelper.CalcDestoryRes(var4)
-			local var7 = {}
+			local var4_2, var5_2, var6_2 = ShipCalcHelper.CalcDestoryRes(var4_1)
+			local var7_2 = {}
 
-			if var4 > 0 then
-				table.insert(var7, Drop.New({
+			if var4_2 > 0 then
+				table.insert(var7_2, Drop.New({
 					type = DROP_TYPE_RESOURCE,
 					id = PlayerConst.ResGold,
-					count = var4
+					count = var4_2
 				}))
 			end
 
-			if var5 > 0 then
-				table.insert(var7, Drop.New({
+			if var5_2 > 0 then
+				table.insert(var7_2, Drop.New({
 					type = DROP_TYPE_RESOURCE,
 					id = PlayerConst.ResOil,
-					count = var5
+					count = var5_2
 				}))
 			end
 
-			local var8 = table.mergeArray(var7, var6)
+			local var8_2 = table.mergeArray(var7_2, var6_2)
 
-			for iter4, iter5 in ipairs(var8) do
-				arg0:sendNotification(GAME.ADD_ITEM, iter5)
+			for iter4_2, iter5_2 in ipairs(var8_2) do
+				arg0_1:sendNotification(GAME.ADD_ITEM, iter5_2)
 			end
 
-			arg0:sendNotification(GAME.DESTROY_SHIP_DONE, {
-				destroiedShipIds = var2,
-				bonus = var8,
-				equipments = var1
+			arg0_1:sendNotification(GAME.DESTROY_SHIP_DONE, {
+				destroiedShipIds = var2_2,
+				bonus = var8_2,
+				equipments = var1_2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_destoryShips", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_destoryShips", arg0_2.result))
 		end
 	end)
 end
 
-function var0.CheckShareSkin(arg0, arg1)
-	if not arg1.propose then
+function var0_0.CheckShareSkin(arg0_3, arg1_3)
+	if not arg1_3.propose then
 		return
 	end
 
-	local var0 = arg1:getProposeSkin()
+	local var0_3 = arg1_3:getProposeSkin()
 
-	if not var0 then
+	if not var0_3 then
 		return
 	end
 
-	local var1 = {}
-	local var2 = {}
+	local var1_3 = {}
+	local var2_3 = {}
 
-	for iter0, iter1 in pairs(getProxy(BayProxy):getRawData()) do
-		if iter1.skinId == var0.id then
-			if iter1.groupId == arg1.groupId then
-				table.insert(var1, iter1)
+	for iter0_3, iter1_3 in pairs(getProxy(BayProxy):getRawData()) do
+		if iter1_3.skinId == var0_3.id then
+			if iter1_3.groupId == arg1_3.groupId then
+				table.insert(var1_3, iter1_3)
 			else
-				table.insert(var2, iter1)
+				table.insert(var2_3, iter1_3)
 			end
 		end
 	end
 
-	if #var1 <= 0 then
-		for iter2, iter3 in ipairs(var2) do
-			iter3.skinId = iter3:getConfig("skin_id")
+	if #var1_3 <= 0 then
+		for iter2_3, iter3_3 in ipairs(var2_3) do
+			iter3_3.skinId = iter3_3:getConfig("skin_id")
 		end
 	end
 
-	if #var2 > 0 then
-		local var3 = table.concat(_.map(var2, function(arg0)
-			return arg0:getName()
+	if #var2_3 > 0 then
+		local var3_3 = table.concat(_.map(var2_3, function(arg0_4)
+			return arg0_4:getName()
 		end), ", ")
 
-		pg.TipsMgr.GetInstance():ShowTips(i18n("retire_marry_skin", var3))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("retire_marry_skin", var3_3))
 	end
 end
 
-return var0
+return var0_0

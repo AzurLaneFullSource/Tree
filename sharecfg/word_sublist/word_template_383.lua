@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_383 = {}
+var0_0.word_template_383 = {}
 
-local var1 = var0.word_template_383
+local var1_0 = var0_0.word_template_383
 
 function temp()
-	var1.硃 = {
+	var1_0.硃 = {
 		悳 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1["?"] = {
+	var1_0["?"] = {
 		i = {
 			老 = {
 				毛 = {
@@ -40,7 +40,7 @@ end
 temp()
 
 function temp()
-	var1.咨 = {
+	var1_0.咨 = {
 		讯 = {
 			紫 = {
 				阳 = {
@@ -54,7 +54,7 @@ end
 temp()
 
 function temp()
-	var1.揽 = {
+	var1_0.揽 = {
 		权 = {
 			的 = {
 				习 = {
@@ -68,7 +68,7 @@ end
 temp()
 
 function temp()
-	var1.某 = {
+	var1_0.某 = {
 		下 = {
 			任 = {
 				主 = {
@@ -128,7 +128,7 @@ end
 temp()
 
 function temp()
-	var1.席 = {
+	var1_0.席 = {
 		猪 = {
 			this = true
 		},
@@ -180,7 +180,7 @@ end
 temp()
 
 function temp()
-	var1.夶 = {
+	var1_0.夶 = {
 		万 = {
 			岁 = {
 				this = true

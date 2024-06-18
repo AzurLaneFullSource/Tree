@@ -1,54 +1,54 @@
-﻿local var0 = class("ClassRoomBuilding", import(".NavalAcademyUpgradableBuilding"))
+﻿local var0_0 = class("ClassRoomBuilding", import(".NavalAcademyUpgradableBuilding"))
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0.bubbleImg = arg0.bubble:Find("icon"):GetComponent(typeof(Image))
-	arg0.floatImg = arg0.floatTF:GetComponent(typeof(Image))
-	arg0.isUpdateIcon = false
+	arg0_1.bubbleImg = arg0_1.bubble:Find("icon"):GetComponent(typeof(Image))
+	arg0_1.floatImg = arg0_1.floatTF:GetComponent(typeof(Image))
+	arg0_1.isUpdateIcon = false
 end
 
-function var0.UpdateBubble(arg0)
-	local var0 = arg0:GetResField()
-	local var1 = var0:GetGenResCnt() > 0
+function var0_0.UpdateBubble(arg0_2)
+	local var0_2 = arg0_2:GetResField()
+	local var1_2 = var0_2:GetGenResCnt() > 0
 
-	setActive(arg0.bubble, var1)
+	setActive(arg0_2.bubble, var1_2)
 
-	if var1 then
-		arg0:FloatAni()
+	if var1_2 then
+		arg0_2:FloatAni()
 	end
 
-	if not arg0.isUpdateIcon then
-		local var2 = var0:GetResourceType()
-		local var3 = Item.getConfigData(var2).icon
+	if not arg0_2.isUpdateIcon then
+		local var2_2 = var0_2:GetResourceType()
+		local var3_2 = Item.getConfigData(var2_2).icon
 
-		arg0.bubbleImg.sprite = LoadSprite(var3)
-		arg0.floatImg.sprite = LoadSprite(var3)
+		arg0_2.bubbleImg.sprite = LoadSprite(var3_2)
+		arg0_2.floatImg.sprite = LoadSprite(var3_2)
 
-		onButton(arg0, arg0.bubble, function()
-			local var0 = arg0:GetResField()
+		onButton(arg0_2, arg0_2.bubble, function()
+			local var0_3 = arg0_2:GetResField()
 
-			arg0:emit(NavalAcademyMediator.ON_GET_CLASS_RES)
+			arg0_2:emit(NavalAcademyMediator.ON_GET_CLASS_RES)
 		end, SFX_PANEL)
 
-		arg0.isUpdateIcon = true
+		arg0_2.isUpdateIcon = true
 	end
 end
 
-function var0.GetGameObjectName(arg0)
+function var0_0.GetGameObjectName(arg0_4)
 	return "classRoom"
 end
 
-function var0.GetTitle(arg0)
+function var0_0.GetTitle(arg0_5)
 	return i18n("school_title_dajiangtang")
 end
 
-function var0.OnClick(arg0)
-	arg0:emit(NavalAcademyMediator.ON_OPEN_CLASSROOM)
+function var0_0.OnClick(arg0_6)
+	arg0_6:emit(NavalAcademyMediator.ON_OPEN_CLASSROOM)
 end
 
-function var0.GetResField(arg0)
-	return arg0.parent.classResField
+function var0_0.GetResField(arg0_7)
+	return arg0_7.parent.classResField
 end
 
-return var0
+return var0_0

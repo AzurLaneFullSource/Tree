@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_51 = {}
+var0_0.word_template_51 = {}
 
-local var1 = var0.word_template_51
+local var1_0 = var0_0.word_template_51
 
 function temp()
-	var1.颮 = {
+	var1_0.颮 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.镖 = {
+	var1_0.镖 = {
 		镖 = {
 			关 = {
 				在 = {
@@ -37,7 +37,7 @@ end
 temp()
 
 function temp()
-	var1.瘭 = {
+	var1_0.瘭 = {
 		this = {
 			this = true
 		}
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.镳 = {
+	var1_0.镳 = {
 		this = {
 			this = true
 		}
@@ -57,7 +57,7 @@ end
 temp()
 
 function temp()
-	var1.鑣 = {
+	var1_0.鑣 = {
 		this = {
 			this = true
 		}
@@ -67,7 +67,7 @@ end
 temp()
 
 function temp()
-	var1.表 = {
+	var1_0.表 = {
 		叔 = {
 			厅 = {
 				长 = {
@@ -103,7 +103,7 @@ end
 temp()
 
 function temp()
-	var1.婊 = {
+	var1_0.婊 = {
 		this = {
 			this = true
 		},

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_127 = {}
+var0_0.word_template_127 = {}
 
-local var1 = var0.word_template_127
+local var1_0 = var0_0.word_template_127
 
 function temp()
-	var1.黌 = {
+	var1_0.黌 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.哄 = {
+	var1_0.哄 = {
 		["."] = {
 			铲 = {
 				["."] = {
@@ -242,7 +242,7 @@ end
 temp()
 
 function temp()
-	var1.侯 = {
+	var1_0.侯 = {
 		贺 = {
 			华 = {
 				this = true
@@ -269,7 +269,7 @@ end
 temp()
 
 function temp()
-	var1.后 = {
+	var1_0.后 = {
 		宫 = {
 			社 = {
 				区 = {
@@ -356,7 +356,7 @@ end
 temp()
 
 function temp()
-	var1.厚 = {
+	var1_0.厚 = {
 		黑 = {
 			大 = {
 				全 = {
@@ -382,7 +382,7 @@ end
 temp()
 
 function temp()
-	var1.後 = {
+	var1_0.後 = {
 		庭 = {
 			this = true
 		}
@@ -392,7 +392,7 @@ end
 temp()
 
 function temp()
-	var1.候 = {
+	var1_0.候 = {
 		德 = {
 			建 = {
 				this = true

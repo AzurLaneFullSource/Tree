@@ -1,214 +1,214 @@
-﻿local var0 = class("CatteryDescPage", import("...base.BaseSubView"))
+﻿local var0_0 = class("CatteryDescPage", import("...base.BaseSubView"))
 
-var0.CHANGE_STYLE = "CatteryDescPage:CHANGE_STYLE"
-var0.CHANGE_COMMANDER = "CatteryDescPage:CHANGE_COMMANDER"
+var0_0.CHANGE_STYLE = "CatteryDescPage:CHANGE_STYLE"
+var0_0.CHANGE_COMMANDER = "CatteryDescPage:CHANGE_COMMANDER"
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "CatteryDescPage"
 end
 
-function var0.OnCatteryUpdate(arg0, arg1)
-	arg0:Flush(arg1)
+function var0_0.OnCatteryUpdate(arg0_2, arg1_2)
+	arg0_2:Flush(arg1_2)
 
-	if arg0.page and arg0.page:GetLoaded() and arg0.page:isShowing() then
-		arg0.page:OnCatteryUpdate(arg1)
+	if arg0_2.page and arg0_2.page:GetLoaded() and arg0_2.page:isShowing() then
+		arg0_2.page:OnCatteryUpdate(arg1_2)
 	end
 end
 
-function var0.OnCatteryStyleUpdate(arg0, arg1)
-	arg0.cattery = arg1
+function var0_0.OnCatteryStyleUpdate(arg0_3, arg1_3)
+	arg0_3.cattery = arg1_3
 
-	arg0:UpdateCatteryStyle()
+	arg0_3:UpdateCatteryStyle()
 
-	if arg0.page and arg0.page:GetLoaded() and arg0.page:isShowing() and isa(arg0.page, CommanderHomeSelCatteryStylePage) then
-		arg0.page:OnCatteryStyleUpdate(arg1)
+	if arg0_3.page and arg0_3.page:GetLoaded() and arg0_3.page:isShowing() and isa(arg0_3.page, CommanderHomeSelCatteryStylePage) then
+		arg0_3.page:OnCatteryStyleUpdate(arg1_3)
 	end
 end
 
-function var0.OnLoaded(arg0)
-	arg0.closeBtn = arg0:findTF("right/close_btn")
-	arg0.styleIcon = arg0:findTF("left/bg/mask/icon"):GetComponent(typeof(Image))
-	arg0.char = arg0:findTF("left/bg/char")
-	arg0.commanderEmpty = arg0:findTF("left/bg/info/empty")
-	arg0.styleInfo = arg0.commanderEmpty
-	arg0.commanderExp = arg0:findTF("left/bg/info/commander_exp")
-	arg0.commanderLevelTxt = arg0.commanderExp:Find("level/Text"):GetComponent(typeof(Text))
-	arg0.commanderExpTxt = arg0.commanderExp:Find("value_bg/Text"):GetComponent(typeof(Text))
-	arg0.commanderExpImg = arg0.commanderExp:Find("exp/Image")
-	arg0.pageContainer = arg0._tf:Find("")
-	arg0.toggleGroup = arg0:findTF("left/tags"):GetComponent(typeof(ToggleGroup))
-	arg0.pagesTF = arg0:findTF("right/pages")
-	arg0.tags = {
-		arg0:findTF("left/tags/commander"),
-		arg0:findTF("left/tags/home")
+function var0_0.OnLoaded(arg0_4)
+	arg0_4.closeBtn = arg0_4:findTF("right/close_btn")
+	arg0_4.styleIcon = arg0_4:findTF("left/bg/mask/icon"):GetComponent(typeof(Image))
+	arg0_4.char = arg0_4:findTF("left/bg/char")
+	arg0_4.commanderEmpty = arg0_4:findTF("left/bg/info/empty")
+	arg0_4.styleInfo = arg0_4.commanderEmpty
+	arg0_4.commanderExp = arg0_4:findTF("left/bg/info/commander_exp")
+	arg0_4.commanderLevelTxt = arg0_4.commanderExp:Find("level/Text"):GetComponent(typeof(Text))
+	arg0_4.commanderExpTxt = arg0_4.commanderExp:Find("value_bg/Text"):GetComponent(typeof(Text))
+	arg0_4.commanderExpImg = arg0_4.commanderExp:Find("exp/Image")
+	arg0_4.pageContainer = arg0_4._tf:Find("")
+	arg0_4.toggleGroup = arg0_4:findTF("left/tags"):GetComponent(typeof(ToggleGroup))
+	arg0_4.pagesTF = arg0_4:findTF("right/pages")
+	arg0_4.tags = {
+		arg0_4:findTF("left/tags/commander"),
+		arg0_4:findTF("left/tags/home")
 	}
-	arg0.pages = {
-		CommanderHomeSelCommanderPage.New(arg0.pagesTF, arg0.event),
-		CommanderHomeSelCatteryStylePage.New(arg0.pagesTF, arg0.event)
+	arg0_4.pages = {
+		CommanderHomeSelCommanderPage.New(arg0_4.pagesTF, arg0_4.event),
+		CommanderHomeSelCatteryStylePage.New(arg0_4.pagesTF, arg0_4.event)
 	}
 end
 
-function var0.OnInit(arg0)
-	arg0:bind(var0.CHANGE_STYLE, function(arg0, arg1)
-		arg0:PreviewCatteryStyle(arg1)
+function var0_0.OnInit(arg0_5)
+	arg0_5:bind(var0_0.CHANGE_STYLE, function(arg0_6, arg1_6)
+		arg0_5:PreviewCatteryStyle(arg1_6)
 	end, SFX_PANEL)
-	arg0:bind(var0.CHANGE_COMMANDER, function(arg0, arg1)
-		arg0:PreviewCatteryCommader(arg1)
+	arg0_5:bind(var0_0.CHANGE_COMMANDER, function(arg0_7, arg1_7)
+		arg0_5:PreviewCatteryCommader(arg1_7)
 	end)
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+	onButton(arg0_5, arg0_5._tf, function()
+		arg0_5:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.closeBtn, function()
-		arg0:Hide()
+	onButton(arg0_5, arg0_5.closeBtn, function()
+		arg0_5:Hide()
 	end, SFX_PANEL)
 
-	for iter0, iter1 in ipairs(arg0.tags) do
-		onToggle(arg0, iter1, function(arg0)
-			if arg0 then
-				arg0:SwitchPage(iter0)
+	for iter0_5, iter1_5 in ipairs(arg0_5.tags) do
+		onToggle(arg0_5, iter1_5, function(arg0_10)
+			if arg0_10 then
+				arg0_5:SwitchPage(iter0_5)
 			end
 		end, SFX_PANEL)
 	end
 end
 
-function var0.SwitchPage(arg0, arg1)
-	local var0 = arg0.pages[arg1]
+function var0_0.SwitchPage(arg0_11, arg1_11)
+	local var0_11 = arg0_11.pages[arg1_11]
 
-	if arg0.page == var0 then
+	if arg0_11.page == var0_11 then
 		return
 	end
 
-	if arg0.page then
-		arg0.page:Hide()
+	if arg0_11.page then
+		arg0_11.page:Hide()
 	end
 
-	var0:ExecuteAction("Update", arg0.home, arg0.cattery)
+	var0_11:ExecuteAction("Update", arg0_11.home, arg0_11.cattery)
 
-	arg0.page = var0
+	arg0_11.page = var0_11
 
-	local var1 = isa(var0, CommanderHomeSelCatteryStylePage)
+	local var1_11 = isa(var0_11, CommanderHomeSelCatteryStylePage)
 
-	setActive(arg0.commanderEmpty, var1)
-	setActive(arg0.commanderExp, not var1)
-	arg0:FlushCatteryInfo()
+	setActive(arg0_11.commanderEmpty, var1_11)
+	setActive(arg0_11.commanderExp, not var1_11)
+	arg0_11:FlushCatteryInfo()
 end
 
-function var0.Update(arg0, arg1, arg2)
-	arg0:Show()
+function var0_0.Update(arg0_12, arg1_12, arg2_12)
+	arg0_12:Show()
 
-	arg0.home = arg1
-	arg0.cattery = arg2
-	arg0.page = nil
+	arg0_12.home = arg1_12
+	arg0_12.cattery = arg2_12
+	arg0_12.page = nil
 
-	triggerToggle(arg0.tags[1], true)
+	triggerToggle(arg0_12.tags[1], true)
 
-	if arg2 then
-		arg0:Flush(arg2)
+	if arg2_12 then
+		arg0_12:Flush(arg2_12)
 	end
 end
 
-function var0.Show(arg0)
-	var0.super.Show(arg0)
-	arg0:emit(CommanderHomeLayer.DESC_PAGE_OPEN)
+function var0_0.Show(arg0_13)
+	var0_0.super.Show(arg0_13)
+	arg0_13:emit(CommanderHomeLayer.DESC_PAGE_OPEN)
 end
 
-function var0.Flush(arg0, arg1)
-	arg0.cattery = arg1
+function var0_0.Flush(arg0_14, arg1_14)
+	arg0_14.cattery = arg1_14
 
-	arg0:FlushCatteryInfo()
-	arg0:UpdateCatteryStyle()
+	arg0_14:FlushCatteryInfo()
+	arg0_14:UpdateCatteryStyle()
 end
 
-function var0.FlushCatteryInfo(arg0)
-	local var0 = false
+function var0_0.FlushCatteryInfo(arg0_15)
+	local var0_15 = false
 
-	if isa(arg0.page, CommanderHomeSelCommanderPage) then
-		local var1 = arg0.cattery:ExistCommander()
+	if isa(arg0_15.page, CommanderHomeSelCommanderPage) then
+		local var1_15 = arg0_15.cattery:ExistCommander()
 	end
 
-	arg0:UpdateCommander(arg0.cattery:GetCommander())
+	arg0_15:UpdateCommander(arg0_15.cattery:GetCommander())
 
-	local var2 = arg0.home
+	local var2_15 = arg0_15.home
 end
 
-function var0.UpdateCommander(arg0, arg1)
-	local var0 = arg1 ~= nil
+function var0_0.UpdateCommander(arg0_16, arg1_16)
+	local var0_16 = arg1_16 ~= nil
 
-	arg0:ReturnChar()
+	arg0_16:ReturnChar()
 
-	if var0 then
-		arg0:LoadChar(arg1)
+	if var0_16 then
+		arg0_16:LoadChar(arg1_16)
 
-		arg0.commanderLevelTxt.text = "LV." .. arg1:getLevel()
+		arg0_16.commanderLevelTxt.text = "LV." .. arg1_16:getLevel()
 
-		if arg1:isMaxLevel() then
-			arg0.commanderExpTxt.text = "MAX"
+		if arg1_16:isMaxLevel() then
+			arg0_16.commanderExpTxt.text = "MAX"
 
-			setFillAmount(arg0.commanderExpImg, 1)
+			setFillAmount(arg0_16.commanderExpImg, 1)
 		else
-			arg0.commanderExpTxt.text = "<color=#92FC63FF>" .. arg1.exp .. "</color>/" .. arg1:getNextLevelExp()
+			arg0_16.commanderExpTxt.text = "<color=#92FC63FF>" .. arg1_16.exp .. "</color>/" .. arg1_16:getNextLevelExp()
 
-			setFillAmount(arg0.commanderExpImg, arg1.exp / arg1:getNextLevelExp())
+			setFillAmount(arg0_16.commanderExpImg, arg1_16.exp / arg1_16:getNextLevelExp())
 		end
 	end
 
-	setActive(arg0.commanderExp, var0)
-	setActive(arg0.commanderEmpty, not var0)
+	setActive(arg0_16.commanderExp, var0_16)
+	setActive(arg0_16.commanderEmpty, not var0_16)
 end
 
-function var0.PreviewCatteryCommader(arg0, arg1)
-	arg0:UpdateCommander(arg1)
+function var0_0.PreviewCatteryCommader(arg0_17, arg1_17)
+	arg0_17:UpdateCommander(arg1_17)
 end
 
-function var0.UpdateCatteryStyle(arg0)
-	local var0 = arg0.cattery
-	local var1 = var0:_GetStyle_()
+function var0_0.UpdateCatteryStyle(arg0_18)
+	local var0_18 = arg0_18.cattery
+	local var1_18 = var0_18:_GetStyle_()
 
-	if var0:ExistCommander() then
-		arg0.styleIcon.sprite = GetSpriteFromAtlas("CatteryStyle/" .. var1:GetName(var0:IsDirty()), "")
+	if var0_18:ExistCommander() then
+		arg0_18.styleIcon.sprite = GetSpriteFromAtlas("CatteryStyle/" .. var1_18:GetName(var0_18:IsDirty()), "")
 	else
-		arg0.styleIcon.sprite = GetSpriteFromAtlas("CatteryStyle/" .. var1:GetName(false), "")
+		arg0_18.styleIcon.sprite = GetSpriteFromAtlas("CatteryStyle/" .. var1_18:GetName(false), "")
 	end
 end
 
-function var0.PreviewCatteryStyle(arg0, arg1)
-	local var0 = pg.commander_home_style[arg1].name
+function var0_0.PreviewCatteryStyle(arg0_19, arg1_19)
+	local var0_19 = pg.commander_home_style[arg1_19].name
 
-	arg0.styleIcon.sprite = GetSpriteFromAtlas("CatteryStyle/" .. var0, "")
+	arg0_19.styleIcon.sprite = GetSpriteFromAtlas("CatteryStyle/" .. var0_19, "")
 end
 
-function var0.LoadChar(arg0, arg1)
-	arg0.painting = arg1:getPainting()
+function var0_0.LoadChar(arg0_20, arg1_20)
+	arg0_20.painting = arg1_20:getPainting()
 
-	setCommanderPaintingPrefab(arg0.char, arg0.painting, "info")
+	setCommanderPaintingPrefab(arg0_20.char, arg0_20.painting, "info")
 end
 
-function var0.ReturnChar(arg0)
-	if arg0.painting then
-		retCommanderPaintingPrefab(arg0.char, arg0.painting)
+function var0_0.ReturnChar(arg0_21)
+	if arg0_21.painting then
+		retCommanderPaintingPrefab(arg0_21.char, arg0_21.painting)
 
-		arg0.painting = nil
+		arg0_21.painting = nil
 	end
 end
 
-function var0.Hide(arg0)
-	arg0:emit(CommanderHomeLayer.DESC_PAGE_CLOSE)
-	arg0.toggleGroup:SetAllTogglesOff()
-	var0.super.Hide(arg0)
+function var0_0.Hide(arg0_22)
+	arg0_22:emit(CommanderHomeLayer.DESC_PAGE_CLOSE)
+	arg0_22.toggleGroup:SetAllTogglesOff()
+	var0_0.super.Hide(arg0_22)
 
-	for iter0, iter1 in pairs(arg0.pages) do
-		if iter1:GetLoaded() and iter1:isShowing() then
-			iter1:Hide()
+	for iter0_22, iter1_22 in pairs(arg0_22.pages) do
+		if iter1_22:GetLoaded() and iter1_22:isShowing() then
+			iter1_22:Hide()
 		end
 	end
 end
 
-function var0.OnDestroy(arg0)
-	arg0:ReturnChar()
+function var0_0.OnDestroy(arg0_23)
+	arg0_23:ReturnChar()
 
-	for iter0, iter1 in ipairs(arg0.pages) do
-		iter1:Destroy()
+	for iter0_23, iter1_23 in ipairs(arg0_23.pages) do
+		iter1_23:Destroy()
 	end
 end
 
-return var0
+return var0_0

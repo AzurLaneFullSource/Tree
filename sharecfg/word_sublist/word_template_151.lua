@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_151 = {}
+var0_0.word_template_151 = {}
 
-local var1 = var0.word_template_151
+local var1_0 = var0_0.word_template_151
 
 function temp()
-	var1.酱 = {
+	var1_0.酱 = {
 		猪 = {
 			媳 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.醬 = {
+	var1_0.醬 = {
 		猪 = {
 			媳 = {
 				this = true
@@ -31,7 +31,7 @@ end
 temp()
 
 function temp()
-	var1.娇 = {
+	var1_0.娇 = {
 		声 = {
 			娇 = {
 				气 = {
@@ -66,7 +66,7 @@ end
 temp()
 
 function temp()
-	var1.姣 = {
+	var1_0.姣 = {
 		西 = {
 			this = true
 		}
@@ -76,7 +76,7 @@ end
 temp()
 
 function temp()
-	var1.胶 = {
+	var1_0.胶 = {
 		洲 = {
 			女 = {
 				烈 = {
@@ -92,7 +92,7 @@ end
 temp()
 
 function temp()
-	var1.椒 = {
+	var1_0.椒 = {
 		乳 = {
 			this = true
 		}
@@ -102,7 +102,7 @@ end
 temp()
 
 function temp()
-	var1.焦 = {
+	var1_0.焦 = {
 		焕 = {
 			成 = {
 				this = true

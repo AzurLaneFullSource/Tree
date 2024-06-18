@@ -1,18 +1,18 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleCannonBulletUnit = class("BattleCannonBulletUnit", var0.Battle.BattleBulletUnit)
-var0.Battle.BattleCannonBulletUnit.__name = "BattleCannonBulletUnit"
+var0_0.Battle.BattleCannonBulletUnit = class("BattleCannonBulletUnit", var0_0.Battle.BattleBulletUnit)
+var0_0.Battle.BattleCannonBulletUnit.__name = "BattleCannonBulletUnit"
 
-local var1 = var0.Battle.BattleCannonBulletUnit
+local var1_0 = var0_0.Battle.BattleCannonBulletUnit
 
-function var1.Ctor(arg0, arg1, arg2)
-	var1.super.Ctor(arg0, arg1, arg2)
+function var1_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var1_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 end
 
-function var1.Hit(arg0, arg1, arg2)
-	var1.super.Hit(arg0, arg1, arg2)
+function var1_0.Hit(arg0_2, arg1_2, arg2_2)
+	var1_0.super.Hit(arg0_2, arg1_2, arg2_2)
 
-	arg0._pierceCount = arg0._pierceCount - 1
+	arg0_2._pierceCount = arg0_2._pierceCount - 1
 end

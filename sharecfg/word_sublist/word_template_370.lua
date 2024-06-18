@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_370 = {}
+var0_0.word_template_370 = {}
 
-local var1 = var0.word_template_370
+local var1_0 = var0_0.word_template_370
 
 function temp()
-	var1.攝 = {
+	var1_0.攝 = {
 		影 = {
 			師 = {
 				柯 = {
@@ -30,7 +30,7 @@ end
 temp()
 
 function temp()
-	var1.查 = {
+	var1_0.查 = {
 		理 = {
 			柯 = {
 				尔 = {
@@ -44,7 +44,7 @@ end
 temp()
 
 function temp()
-	var1.檔 = {
+	var1_0.檔 = {
 		車 = {
 			的 = {
 				歹 = {
@@ -60,7 +60,7 @@ end
 temp()
 
 function temp()
-	var1.攩 = {
+	var1_0.攩 = {
 		車 = {
 			的 = {
 				歹 = {
@@ -76,7 +76,7 @@ end
 temp()
 
 function temp()
-	var1.噹 = {
+	var1_0.噹 = {
 		車 = {
 			的 = {
 				歹 = {
@@ -92,7 +92,7 @@ end
 temp()
 
 function temp()
-	var1.鐵 = {
+	var1_0.鐵 = {
 		騎 = {
 			繼 = {
 				續 = {
@@ -106,7 +106,7 @@ end
 temp()
 
 function temp()
-	var1.矮 = {
+	var1_0.矮 = {
 		子 = {
 			this = true,
 			凳 = {

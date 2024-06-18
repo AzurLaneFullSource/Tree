@@ -1,37 +1,37 @@
-﻿local var0 = class("NewNavalTacticsAdditionSkillCard", import(".NewNavalTacticsSkillCard"))
+﻿local var0_0 = class("NewNavalTacticsAdditionSkillCard", import(".NewNavalTacticsSkillCard"))
 
-function var0.Update(arg0, arg1, arg2)
-	local var0 = arg1.level
-	local var1 = arg1:GetNextLevelExp()
-	local var2 = arg1:GetExp()
-	local var3 = arg1:IsMaxLevel()
+function var0_0.Update(arg0_1, arg1_1, arg2_1)
+	local var0_1 = arg1_1.level
+	local var1_1 = arg1_1:GetNextLevelExp()
+	local var2_1 = arg1_1:GetExp()
+	local var3_1 = arg1_1:IsMaxLevel()
 
-	arg1:AddExp(arg2)
+	arg1_1:AddExp(arg2_1)
 
-	local var4 = false
+	local var4_1 = false
 
-	if not var3 and arg1:IsMaxLevel() then
-		var4 = true
+	if not var3_1 and arg1_1:IsMaxLevel() then
+		var4_1 = true
 	end
 
-	local var5 = arg1:GetNextLevelExp()
-	local var6 = arg1:GetExp()
-	local var7 = arg1.level - var0
-	local var8 = var7 > 0
+	local var5_1 = arg1_1:GetNextLevelExp()
+	local var6_1 = arg1_1:GetExp()
+	local var7_1 = arg1_1.level - var0_1
+	local var8_1 = var7_1 > 0
 
-	arg1.level = var0
+	arg1_1.level = var0_1
 
-	var0.super.Update(arg0, arg1, var7)
+	var0_0.super.Update(arg0_1, arg1_1, var7_1)
 
-	if var4 then
-		local var9 = var1 - var2
+	if var4_1 then
+		local var9_1 = var1_1 - var2_1
 
-		arg0.nextTxt.text = var2 .. "+<color=#A9F548FF>" .. var9 .. "</color>/" .. var1
-	elseif var8 then
-		arg0.nextTxt.text = "0+<color=#A9F548FF>" .. var6 .. "</color>/" .. var5
+		arg0_1.nextTxt.text = var2_1 .. "+<color=#A9F548FF>" .. var9_1 .. "</color>/" .. var1_1
+	elseif var8_1 then
+		arg0_1.nextTxt.text = "0+<color=#A9F548FF>" .. var6_1 .. "</color>/" .. var5_1
 	else
-		arg0.nextTxt.text = var2 .. "+<color=#A9F548FF>" .. arg2 .. "</color>/" .. var1
+		arg0_1.nextTxt.text = var2_1 .. "+<color=#A9F548FF>" .. arg2_1 .. "</color>/" .. var1_1
 	end
 end
 
-return var0
+return var0_0

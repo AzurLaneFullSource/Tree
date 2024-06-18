@@ -1,37 +1,37 @@
-﻿local var0 = class("AccountDeletePanel", import(".MsgboxSubPanel"))
+﻿local var0_0 = class("AccountDeletePanel", import(".MsgboxSubPanel"))
 
-var0.ConfigData = {}
+var0_0.ConfigData = {}
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "AccountDeleteBox"
 end
 
-function var0.UpdateView(arg0, arg1)
-	local var0 = arg1.onYes
+function var0_0.UpdateView(arg0_2, arg1_2)
+	local var0_2 = arg1_2.onYes
 
-	print("onYesFunc", tostring(var0))
+	print("onYesFunc", tostring(var0_2))
 
-	if var0 then
-		function arg1.onYes()
-			local var0 = getInputText(arg0.inputField)
+	if var0_2 then
+		function arg1_2.onYes()
+			local var0_3 = getInputText(arg0_2.inputField)
 
-			var0(var0)
+			var0_2(var0_3)
 		end
 	end
 
-	arg0:PreRefresh(arg1)
+	arg0_2:PreRefresh(arg1_2)
 
-	rtf(arg0.viewParent._window).sizeDelta = Vector2.New(1000, 638)
-	arg0.inputField = arg0:findTF("InputField", arg0._tf)
+	rtf(arg0_2.viewParent._window).sizeDelta = Vector2.New(1000, 638)
+	arg0_2.inputField = arg0_2:findTF("InputField", arg0_2._tf)
 
-	local var1 = arg0:findTF("Title", arg0._tf)
-	local var2 = arg0:findTF("InputField/Placeholder", arg0._tf)
-	local var3 = i18n("box_account_del_target")
-	local var4 = i18n("box_account_del_input", var3)
+	local var1_2 = arg0_2:findTF("Title", arg0_2._tf)
+	local var2_2 = arg0_2:findTF("InputField/Placeholder", arg0_2._tf)
+	local var3_2 = i18n("box_account_del_target")
+	local var4_2 = i18n("box_account_del_input", var3_2)
 
-	setText(var1, var4)
-	setText(var2, i18n("box_account_del_click"))
-	arg0:PostRefresh(arg1)
+	setText(var1_2, var4_2)
+	setText(var2_2, i18n("box_account_del_click"))
+	arg0_2:PostRefresh(arg1_2)
 end
 
-return var0
+return var0_0

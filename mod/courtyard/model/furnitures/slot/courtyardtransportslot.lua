@@ -1,68 +1,68 @@
-﻿local var0 = class("CourtYardTransportSlot", import(".CourtYardFurnitureBaseSlot"))
+﻿local var0_0 = class("CourtYardTransportSlot", import(".CourtYardFurnitureBaseSlot"))
 
-function var0.OnInit(arg0, arg1)
-	arg0.name = arg1[1][1]
-	arg0.defaultAction = arg1[1][2]
-	arg0.actions = {}
+function var0_0.OnInit(arg0_1, arg1_1)
+	arg0_1.name = arg1_1[1][1]
+	arg0_1.defaultAction = arg1_1[1][2]
+	arg0_1.actions = {}
 
-	for iter0, iter1 in ipairs(arg1[2]) do
-		table.insert(arg0.actions, {
-			userAction = iter1[1],
-			ownerAction = iter1[2],
-			time = iter1[3]
+	for iter0_1, iter1_1 in ipairs(arg1_1[2]) do
+		table.insert(arg0_1.actions, {
+			userAction = iter1_1[1],
+			ownerAction = iter1_1[2],
+			time = iter1_1[3]
 		})
 	end
 
-	arg0.animators = {}
+	arg0_1.animators = {}
 end
 
-function var0.SetAnimators(arg0, arg1)
-	for iter0, iter1 in ipairs(arg1) do
-		table.insert(arg0.animators, {
-			key = arg0.id .. "_" .. iter0,
-			value = iter1
+function var0_0.SetAnimators(arg0_2, arg1_2)
+	for iter0_2, iter1_2 in ipairs(arg1_2) do
+		table.insert(arg0_2.animators, {
+			key = arg0_2.id .. "_" .. iter0_2,
+			value = iter1_2
 		})
 	end
 end
 
-function var0.GetSpineDefaultAction(arg0)
-	return arg0.defaultAction
+function var0_0.GetSpineDefaultAction(arg0_3)
+	return arg0_3.defaultAction
 end
 
-function var0.OnAwake(arg0)
-	arg0.animatorIndex = arg0.index
+function var0_0.OnAwake(arg0_4)
+	arg0_4.animatorIndex = arg0_4.index
 end
 
-function var0.OnStart(arg0)
-	local var0 = arg0.actions[arg0.index]
+function var0_0.OnStart(arg0_5)
+	local var0_5 = arg0_5.actions[arg0_5.index]
 
-	arg0.user:UpdateInteraction({
-		action = var0.userAction,
-		slot = arg0
+	arg0_5.user:UpdateInteraction({
+		action = var0_5.userAction,
+		slot = arg0_5
 	})
-	arg0.owner:UpdateInteraction({
-		action = var0.ownerAction,
-		slot = arg0
+	arg0_5.owner:UpdateInteraction({
+		action = var0_5.ownerAction,
+		slot = arg0_5
 	})
 	Timer.New(function()
-		arg0:End()
-	end, var0.time, 1):Start()
+		arg0_5:End()
+	end, var0_5.time, 1):Start()
 end
 
-function var0.Occupy(arg0, arg1, arg2, arg3)
-	arg0.index = 1
+function var0_0.Occupy(arg0_7, arg1_7, arg2_7, arg3_7)
+	arg0_7.index = 1
 
-	var0.super.Occupy(arg0, arg1, arg2, arg3)
+	var0_0.super.Occupy(arg0_7, arg1_7, arg2_7, arg3_7)
 end
 
-function var0.Link(arg0, arg1, arg2, arg3)
-	arg0.index = 2
+function var0_0.Link(arg0_8, arg1_8, arg2_8, arg3_8)
+	arg0_8.index = 2
 
-	var0.super.Occupy(arg0, arg1, arg2, arg3)
+	var0_0.super.Occupy(arg0_8, arg1_8, arg2_8, arg3_8)
 end
 
-function var0.IsFirstTime(arg0)
-	return arg0.index == 1
+function var0_0.IsFirstTime(arg0_9)
+	return arg0_9.index == 1
 end
 
-return var0
+return var0_0

@@ -1,319 +1,319 @@
-﻿local var0 = class("WorldBossItemList")
-local var1 = 18
-local var2 = -15
-local var3 = 100
+﻿local var0_0 = class("WorldBossItemList")
+local var1_0 = 18
+local var2_0 = -15
+local var3_0 = 100
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0.tpl = arg2
-	arg0.container = arg1
-	arg0.angle = var1
-	arg0.space = var2
-	arg0.distance = var3
-	arg0.tplHeight = arg0.tpl.rect.height
-	arg0.trigger = arg0.container:GetComponent(typeof(EventTriggerListener))
-	arg0.hrzOffset = (arg0.tplHeight + arg0.space) / math.tan((90 - arg0.angle) * math.rad(1))
-	arg0.capacity = math.ceil(arg0.container.parent.parent.rect.height / (arg0.tplHeight + arg0.space))
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.tpl = arg2_1
+	arg0_1.container = arg1_1
+	arg0_1.angle = var1_0
+	arg0_1.space = var2_0
+	arg0_1.distance = var3_0
+	arg0_1.tplHeight = arg0_1.tpl.rect.height
+	arg0_1.trigger = arg0_1.container:GetComponent(typeof(EventTriggerListener))
+	arg0_1.hrzOffset = (arg0_1.tplHeight + arg0_1.space) / math.tan((90 - arg0_1.angle) * math.rad(1))
+	arg0_1.capacity = math.ceil(arg0_1.container.parent.parent.rect.height / (arg0_1.tplHeight + arg0_1.space))
 
-	for iter0 = 1, arg0.capacity do
-		cloneTplTo(arg0.tpl, arg0.container, iter0)
+	for iter0_1 = 1, arg0_1.capacity do
+		cloneTplTo(arg0_1.tpl, arg0_1.container, iter0_1)
 	end
 
-	arg0.OnSwitch = nil
-	arg0.OnRelease = nil
+	arg0_1.OnSwitch = nil
+	arg0_1.OnRelease = nil
 
-	setActive(arg0.tpl, false)
+	setActive(arg0_1.tpl, false)
 
-	arg0.tweens = {}
+	arg0_1.tweens = {}
 
-	arg0:AddListener()
+	arg0_1:AddListener()
 end
 
-function var0.Make(arg0, arg1, arg2, arg3)
-	arg0.OnInit = arg1
-	arg0.OnSwitch = arg2
-	arg0.OnRelease = arg3
+function var0_0.Make(arg0_2, arg1_2, arg2_2, arg3_2)
+	arg0_2.OnInit = arg1_2
+	arg0_2.OnSwitch = arg2_2
+	arg0_2.OnRelease = arg3_2
 end
 
-function var0.ClearTweens(arg0)
-	for iter0, iter1 in ipairs(arg0.tweens) do
-		if LeanTween.isTweening(iter1) then
-			LeanTween.cancel(iter1)
+function var0_0.ClearTweens(arg0_3)
+	for iter0_3, iter1_3 in ipairs(arg0_3.tweens) do
+		if LeanTween.isTweening(iter1_3) then
+			LeanTween.cancel(iter1_3)
 		end
 	end
 
-	arg0.tweens = {}
+	arg0_3.tweens = {}
 end
 
-function var0.Align(arg0, arg1, arg2)
-	arg0:ClearTweens()
+function var0_0.Align(arg0_4, arg1_4, arg2_4)
+	arg0_4:ClearTweens()
 
-	arg0.childs = {}
-	arg0.padding = 0
-	arg0.animFlag = false
-	arg0.totalCnt = arg1
-	arg0.index = 0
-	arg0.value = arg2 and arg2 or 0
-	arg0.midIndex = math.ceil(arg0.capacity * 0.5)
-	arg0.ranges = {
+	arg0_4.childs = {}
+	arg0_4.padding = 0
+	arg0_4.animFlag = false
+	arg0_4.totalCnt = arg1_4
+	arg0_4.index = 0
+	arg0_4.value = arg2_4 and arg2_4 or 0
+	arg0_4.midIndex = math.ceil(arg0_4.capacity * 0.5)
+	arg0_4.ranges = {
 		math.huge,
 		math.huge,
-		arg0.capacity - arg0.midIndex + 1,
-		arg0.midIndex - 1
+		arg0_4.capacity - arg0_4.midIndex + 1,
+		arg0_4.midIndex - 1
 	}
 
-	if arg1 < arg0.capacity then
-		local var0 = math.floor(arg1 * 0.5) + 1
+	if arg1_4 < arg0_4.capacity then
+		local var0_4 = math.floor(arg1_4 * 0.5) + 1
 
-		arg0.ranges[1] = arg1 - var0
-		arg0.ranges[2] = var0
+		arg0_4.ranges[1] = arg1_4 - var0_4
+		arg0_4.ranges[2] = var0_4
 	end
 
-	arg0:InitList()
+	arg0_4:InitList()
 end
 
-function var0.InitList(arg0)
-	for iter0 = 1, arg0.capacity do
-		local var0 = arg0.container:GetChild(iter0 - 1)
+function var0_0.InitList(arg0_5)
+	for iter0_5 = 1, arg0_5.capacity do
+		local var0_5 = arg0_5.container:GetChild(iter0_5 - 1)
 
-		var0.localScale = Vector3.one
+		var0_5.localScale = Vector3.one
 
-		var0.gameObject:SetActive(true)
-		table.insert(arg0.childs, {
+		var0_5.gameObject:SetActive(true)
+		table.insert(arg0_5.childs, {
 			index = -9999,
-			tr = var0
+			tr = var0_5
 		})
 	end
 
-	arg0.animTime = 0
+	arg0_5.animTime = 0
 
-	arg0:Switch()
+	arg0_5:Switch()
 
-	local var1 = arg0.value - 1
-	local var2 = 1
+	local var1_5 = arg0_5.value - 1
+	local var2_5 = 1
 
-	if arg0.totalCnt < arg0.capacity and arg0.value > arg0.ranges[2] then
-		var1, var2 = arg0.totalCnt - arg0.value + 1, -1
+	if arg0_5.totalCnt < arg0_5.capacity and arg0_5.value > arg0_5.ranges[2] then
+		var1_5, var2_5 = arg0_5.totalCnt - arg0_5.value + 1, -1
 	end
 
-	for iter1 = 1, var1 do
-		arg0:Switch(var2)
+	for iter1_5 = 1, var1_5 do
+		arg0_5:Switch(var2_5)
 	end
 
-	arg0:Release()
+	arg0_5:Release()
 
-	arg0.animTime = 0.05
+	arg0_5.animTime = 0.05
 end
 
-function var0.AddListener(arg0)
-	local var0 = Vector2.zero
-	local var1 = 0
-	local var2 = 0
-	local var3 = 0
-	local var4 = true
+function var0_0.AddListener(arg0_6)
+	local var0_6 = Vector2.zero
+	local var1_6 = 0
+	local var2_6 = 0
+	local var3_6 = 0
+	local var4_6 = true
 
-	local function var5(arg0)
-		if arg0 > 0 then
-			return arg0.index < arg0.ranges[2] - 1
+	local function var5_6(arg0_7)
+		if arg0_7 > 0 then
+			return arg0_6.index < arg0_6.ranges[2] - 1
 		else
-			return arg0.index > -arg0.ranges[1]
+			return arg0_6.index > -arg0_6.ranges[1]
 		end
 	end
 
-	arg0.trigger:AddBeginDragFunc(function(arg0, arg1)
-		if arg0.animFlag then
+	arg0_6.trigger:AddBeginDragFunc(function(arg0_8, arg1_8)
+		if arg0_6.animFlag then
 			return
 		end
 
-		var1, var2 = 0, 0
-		var0 = arg1.position
-		var3 = var0.y
-		var4 = true
+		var1_6, var2_6 = 0, 0
+		var0_6 = arg1_8.position
+		var3_6 = var0_6.y
+		var4_6 = true
 	end)
-	arg0.trigger:AddDragFunc(function(arg0, arg1)
-		if arg0.animFlag then
+	arg0_6.trigger:AddDragFunc(function(arg0_9, arg1_9)
+		if arg0_6.animFlag then
 			return
 		end
 
-		if var3 > arg1.position.y and var1 ~= 0 then
-			var0, var1 = arg1.position, 0
+		if var3_6 > arg1_9.position.y and var1_6 ~= 0 then
+			var0_6, var1_6 = arg1_9.position, 0
 		end
 
-		if var3 < arg1.position.y and var2 ~= 0 then
-			var0, var2 = arg1.position, 0
+		if var3_6 < arg1_9.position.y and var2_6 ~= 0 then
+			var0_6, var2_6 = arg1_9.position, 0
 		end
 
-		local var0 = arg1.position.y - var0.y
+		local var0_9 = arg1_9.position.y - var0_6.y
 
-		if not var5(var0) then
-			var4 = false
+		if not var5_6(var0_9) then
+			var4_6 = false
 
 			return
 		end
 
-		local var1 = math.abs(var0 / arg0.distance)
+		local var1_9 = math.abs(var0_9 / arg0_6.distance)
 
-		if var1 > var2 then
-			var2 = var1
+		if var1_9 > var2_6 then
+			var2_6 = var1_9
 
-			arg0:Switch(var0)
+			arg0_6:Switch(var0_9)
 		end
 
-		if var1 < var1 then
-			var1 = var1
+		if var1_9 < var1_6 then
+			var1_6 = var1_9
 
-			arg0:Switch(var0)
+			arg0_6:Switch(var0_9)
 		end
 
-		var3 = var0.y
+		var3_6 = var0_6.y
 	end)
-	arg0.trigger:AddDragEndFunc(function(arg0, arg1)
-		if not var4 then
+	arg0_6.trigger:AddDragEndFunc(function(arg0_10, arg1_10)
+		if not var4_6 then
 			return
 		end
 
-		arg0:Release()
+		arg0_6:Release()
 	end)
 end
 
-function var0.RefreshChildPos(arg0, arg1)
-	arg0.animFlag, arg0.padding = true, 0
+function var0_0.RefreshChildPos(arg0_11, arg1_11)
+	arg0_11.animFlag, arg0_11.padding = true, 0
 
-	local var0 = arg0.midIndex
+	local var0_11 = arg0_11.midIndex
 
-	for iter0 = 1, #arg0.childs do
-		local var1 = arg0.childs[iter0].tr
+	for iter0_11 = 1, #arg0_11.childs do
+		local var1_11 = arg0_11.childs[iter0_11].tr
 
-		if not IsNil(var1) then
-			local var2 = iter0 - 1
+		if not IsNil(var1_11) then
+			local var2_11 = iter0_11 - 1
 
-			if iter0 == var0 or iter0 == var0 + 1 then
-				arg0.padding = arg0.padding + math.abs(arg0.space) * 2
+			if iter0_11 == var0_11 or iter0_11 == var0_11 + 1 then
+				arg0_11.padding = arg0_11.padding + math.abs(arg0_11.space) * 2
 			end
 
-			if arg0.totalCnt == 0 then
-				arg0.padding = 0
+			if arg0_11.totalCnt == 0 then
+				arg0_11.padding = 0
 			end
 
-			local var3 = arg0.padding / math.tan((90 - arg0.angle) * math.rad(1))
-			local var4 = Vector3(-arg0.hrzOffset * var2 - var3, -1 * (arg0.tplHeight + arg0.space) * var2 - arg0.padding, 0)
-			local var5 = var4
+			local var3_11 = arg0_11.padding / math.tan((90 - arg0_11.angle) * math.rad(1))
+			local var4_11 = Vector3(-arg0_11.hrzOffset * var2_11 - var3_11, -1 * (arg0_11.tplHeight + arg0_11.space) * var2_11 - arg0_11.padding, 0)
+			local var5_11 = var4_11
 
-			if arg1 and var4.y < var1.localPosition.y then
-				var5 = Vector3(arg0.hrzOffset, arg0.tplHeight + arg0.space, 0)
-			elseif not arg1 and var4.y > var1.localPosition.y then
-				var1.localPosition = Vector3(arg0.hrzOffset, arg0.tplHeight + arg0.space, 0)
+			if arg1_11 and var4_11.y < var1_11.localPosition.y then
+				var5_11 = Vector3(arg0_11.hrzOffset, arg0_11.tplHeight + arg0_11.space, 0)
+			elseif not arg1_11 and var4_11.y > var1_11.localPosition.y then
+				var1_11.localPosition = Vector3(arg0_11.hrzOffset, arg0_11.tplHeight + arg0_11.space, 0)
 			end
 
-			if iter0 == var0 or arg0.animTime <= 0 then
-				var1:SetAsLastSibling()
+			if iter0_11 == var0_11 or arg0_11.animTime <= 0 then
+				var1_11:SetAsLastSibling()
 
-				var1.localPosition = var4
+				var1_11.localPosition = var4_11
 			end
 
-			table.insert(arg0.tweens, var1.gameObject)
-			LeanTween.moveLocal(var1.gameObject, var5, arg0.animTime):setOnComplete(System.Action(function()
-				if not IsNil(var1) then
-					var1.localPosition = var4
+			table.insert(arg0_11.tweens, var1_11.gameObject)
+			LeanTween.moveLocal(var1_11.gameObject, var5_11, arg0_11.animTime):setOnComplete(System.Action(function()
+				if not IsNil(var1_11) then
+					var1_11.localPosition = var4_11
 				end
 
-				arg0.animFlag = false
+				arg0_11.animFlag = false
 			end))
 		end
 	end
 end
 
-function var0.Switch(arg0, arg1)
-	if arg1 then
-		local var0 = table.remove(arg0.childs, arg1 > 0 and 1 or #arg0.childs)
+function var0_0.Switch(arg0_13, arg1_13)
+	if arg1_13 then
+		local var0_13 = table.remove(arg0_13.childs, arg1_13 > 0 and 1 or #arg0_13.childs)
 
-		table.insert(arg0.childs, arg1 > 0 and #arg0.childs + 1 or 1, var0)
+		table.insert(arg0_13.childs, arg1_13 > 0 and #arg0_13.childs + 1 or 1, var0_13)
 
-		arg0.index = (arg1 > 0 and 1 or -1) + arg0.index
+		arg0_13.index = (arg1_13 > 0 and 1 or -1) + arg0_13.index
 	end
 
-	local var1 = 0
-	local var2 = 0
+	local var1_13 = 0
+	local var2_13 = 0
 
-	if arg0.totalCnt < arg0.capacity then
-		var2 = math.min(arg0.ranges[4] - arg0.ranges[1] - arg0.index, arg0.ranges[4])
-		var1 = math.min(arg0.ranges[3] - arg0.ranges[2] + arg0.index, arg0.ranges[3])
+	if arg0_13.totalCnt < arg0_13.capacity then
+		var2_13 = math.min(arg0_13.ranges[4] - arg0_13.ranges[1] - arg0_13.index, arg0_13.ranges[4])
+		var1_13 = math.min(arg0_13.ranges[3] - arg0_13.ranges[2] + arg0_13.index, arg0_13.ranges[3])
 	end
 
-	local var3 = arg0.index % arg0.totalCnt
+	local var3_13 = arg0_13.index % arg0_13.totalCnt
 
-	for iter0, iter1 in ipairs(arg0.childs) do
-		local var4 = iter1.index
-		local var5 = iter0 - arg0.midIndex
+	for iter0_13, iter1_13 in ipairs(arg0_13.childs) do
+		local var4_13 = iter1_13.index
+		local var5_13 = iter0_13 - arg0_13.midIndex
 
-		if var2 > 0 and iter0 <= var2 or var1 > 0 and var1 > arg0.capacity - iter0 then
-			iter1.index = -1
+		if var2_13 > 0 and iter0_13 <= var2_13 or var1_13 > 0 and var1_13 > arg0_13.capacity - iter0_13 then
+			iter1_13.index = -1
 		else
-			iter1.index = (var5 + var3) % arg0.totalCnt
+			iter1_13.index = (var5_13 + var3_13) % arg0_13.totalCnt
 		end
 
-		if var4 ~= iter1.index and arg0.OnInit then
-			arg0.OnInit(iter1.tr, iter1.index)
+		if var4_13 ~= iter1_13.index and arg0_13.OnInit then
+			arg0_13.OnInit(iter1_13.tr, iter1_13.index)
 		end
 	end
 
-	arg0:RefreshChildPos((arg1 or 0) > 0)
+	arg0_13:RefreshChildPos((arg1_13 or 0) > 0)
 
-	local var6 = arg0.childs[arg0.midIndex]
+	local var6_13 = arg0_13.childs[arg0_13.midIndex]
 
-	if arg0.OnSwitch ~= nil then
-		arg0.OnSwitch(var6.tr, var6.index)
+	if arg0_13.OnSwitch ~= nil then
+		arg0_13.OnSwitch(var6_13.tr, var6_13.index)
 	end
 end
 
-function var0.SliceTo(arg0, arg1)
-	if arg0.animFlag then
+function var0_0.SliceTo(arg0_14, arg1_14)
+	if arg0_14.animFlag then
 		return
 	end
 
-	local var0 = -1
+	local var0_14 = -1
 
-	for iter0, iter1 in ipairs(arg0.childs) do
-		if iter1.tr == arg1 then
-			var0 = iter0
+	for iter0_14, iter1_14 in ipairs(arg0_14.childs) do
+		if iter1_14.tr == arg1_14 then
+			var0_14 = iter0_14
 
 			break
 		end
 	end
 
-	if var0 == -1 then
+	if var0_14 == -1 then
 		return
 	end
 
-	local var1 = var0 - arg0.midIndex
-	local var2 = Mathf.Sign(var1)
-	local var3 = {}
+	local var1_14 = var0_14 - arg0_14.midIndex
+	local var2_14 = Mathf.Sign(var1_14)
+	local var3_14 = {}
 
-	for iter2 = 1, math.abs(var1) do
-		table.insert(var3, function(arg0)
-			arg0:Switch(var2)
-			Timer.New(arg0, arg0.animTime * 2, 1):Start()
+	for iter2_14 = 1, math.abs(var1_14) do
+		table.insert(var3_14, function(arg0_15)
+			arg0_14:Switch(var2_14)
+			Timer.New(arg0_15, arg0_14.animTime * 2, 1):Start()
 		end)
 	end
 
-	seriesAsync(var3, function()
-		arg0:Release()
+	seriesAsync(var3_14, function()
+		arg0_14:Release()
 	end)
 end
 
-function var0.Release(arg0)
-	local var0 = arg0.childs[arg0.midIndex]
+function var0_0.Release(arg0_17)
+	local var0_17 = arg0_17.childs[arg0_17.midIndex]
 
-	if arg0.OnRelease ~= nil then
-		arg0.OnRelease(var0.tr, var0.index)
+	if arg0_17.OnRelease ~= nil then
+		arg0_17.OnRelease(var0_17.tr, var0_17.index)
 	end
 end
 
-function var0.Dispose(arg0)
-	arg0:ClearTweens()
+function var0_0.Dispose(arg0_18)
+	arg0_18:ClearTweens()
 
-	arg0.OnSwitch = nil
-	arg0.OnRelease = nil
-	arg0.OnInit = nil
+	arg0_18.OnSwitch = nil
+	arg0_18.OnRelease = nil
+	arg0_18.OnInit = nil
 end
 
-return var0
+return var0_0

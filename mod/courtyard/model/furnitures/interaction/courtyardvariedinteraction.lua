@@ -1,43 +1,43 @@
-﻿local var0 = class("CourtYardVariedInteraction", import(".CourtYardInteraction"))
+﻿local var0_0 = class("CourtYardVariedInteraction", import(".CourtYardInteraction"))
 
-function var0.InitData(arg0)
-	var0.super.InitData(arg0)
+function var0_0.InitData(arg0_1)
+	var0_0.super.InitData(arg0_1)
 
-	arg0.total = 1
+	arg0_1.total = 1
 end
 
-function var0.GetInterActionUserCnt(arg0)
-	local var0 = arg0.host:GetOwner()
+function var0_0.GetInterActionUserCnt(arg0_2)
+	local var0_2 = arg0_2.host:GetOwner()
 
-	if isa(var0, CourtYardFurniture) then
-		return #var0:GetUsingSlots()
+	if isa(var0_2, CourtYardFurniture) then
+		return #var0_2:GetUsingSlots()
 	else
 		return 1
 	end
 end
 
-function var0.GetUserAction(arg0)
-	local var0 = arg0:GetInterActionUserCnt()
+function var0_0.GetUserAction(arg0_3)
+	local var0_3 = arg0_3:GetInterActionUserCnt()
 
-	return arg0.userActions[var0]
+	return arg0_3.userActions[var0_3]
 end
 
-function var0.GetOwnerAction(arg0)
-	local var0 = arg0:GetInterActionUserCnt()
+function var0_0.GetOwnerAction(arg0_4)
+	local var0_4 = arg0_4:GetInterActionUserCnt()
 
-	return arg0.ownerActions[var0]
+	return arg0_4.ownerActions[var0_4]
 end
 
-function var0.Reset(arg0)
-	arg0.index = 0
+function var0_0.Reset(arg0_5)
+	arg0_5.index = 0
 
-	arg0:Update(arg0.loop)
+	arg0_5:Update(arg0_5.loop)
 end
 
-function var0.OnStepEnd(arg0)
-	if arg0:IsCompleteOwnerStep() then
-		arg0:DoStep()
+function var0_0.OnStepEnd(arg0_6)
+	if arg0_6:IsCompleteOwnerStep() then
+		arg0_6:DoStep()
 	end
 end
 
-return var0
+return var0_0

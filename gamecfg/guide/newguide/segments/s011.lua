@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Why not open up your <color=#ff7d36>Mission Log</color>?",
 	"Collect your <color=#ff7d36>mission rewards.</color>"
 }
@@ -13,7 +13,7 @@ return {
 				mode = 2,
 				posY = -123,
 				posX = 87.7,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				pathIndex = -1,
@@ -56,7 +56,7 @@ return {
 				mode = 2,
 				posY = 183,
 				posX = 474,
-				text = var0[2]
+				text = var0_0[2]
 			},
 			ui = {
 				delay = 1,

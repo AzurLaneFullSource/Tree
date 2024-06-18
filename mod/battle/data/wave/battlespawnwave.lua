@@ -1,349 +1,349 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleSpawnWave = class("BattleSpawnWave", var0.Battle.BattleWaveInfo)
-var0.Battle.BattleSpawnWave.__name = "BattleSpawnWave"
+var0_0.Battle.BattleSpawnWave = class("BattleSpawnWave", var0_0.Battle.BattleWaveInfo)
+var0_0.Battle.BattleSpawnWave.__name = "BattleSpawnWave"
 
-local var1 = var0.Battle.BattleSpawnWave
+local var1_0 = var0_0.Battle.BattleSpawnWave
 
-var1.ASYNC_TIME_GAP = 0.03
+var1_0.ASYNC_TIME_GAP = 0.03
 
-function var1.Ctor(arg0)
-	var1.super.Ctor(arg0)
+function var1_0.Ctor(arg0_1)
+	var1_0.super.Ctor(arg0_1)
 
-	arg0._spawnUnitList = {}
-	arg0._monsterList = {}
-	arg0._reinforceKillCount = 0
-	arg0._reinforceTotalKillCount = 0
-	arg0._airStrikeTimerList = {}
-	arg0._spawnTimerList = {}
-	arg0._reinforceSpawnTimerList = {}
+	arg0_1._spawnUnitList = {}
+	arg0_1._monsterList = {}
+	arg0_1._reinforceKillCount = 0
+	arg0_1._reinforceTotalKillCount = 0
+	arg0_1._airStrikeTimerList = {}
+	arg0_1._spawnTimerList = {}
+	arg0_1._reinforceSpawnTimerList = {}
 end
 
-function var1.SetWaveData(arg0, arg1)
-	var1.super.SetWaveData(arg0, arg1)
+function var1_0.SetWaveData(arg0_2, arg1_2)
+	var1_0.super.SetWaveData(arg0_2, arg1_2)
 
-	arg0._sapwnData = arg1.spawn or {}
-	arg0._airStrike = arg1.airFighter or {}
-	arg0._reinforce = arg1.reinforcement or {}
-	arg0._reinforceCount = #arg0._reinforce
-	arg0._spawnCount = #arg0._sapwnData
-	arg0._reinforceDuration = arg0._reinforce.reinforceDuration or 0
-	arg0._reinforeceExpire = false
-	arg0._round = arg0._param.round
+	arg0_2._sapwnData = arg1_2.spawn or {}
+	arg0_2._airStrike = arg1_2.airFighter or {}
+	arg0_2._reinforce = arg1_2.reinforcement or {}
+	arg0_2._reinforceCount = #arg0_2._reinforce
+	arg0_2._spawnCount = #arg0_2._sapwnData
+	arg0_2._reinforceDuration = arg0_2._reinforce.reinforceDuration or 0
+	arg0_2._reinforeceExpire = false
+	arg0_2._round = arg0_2._param.round
 end
 
-function var1.IsBossWave(arg0)
-	local var0 = false
-	local var1 = arg0._sapwnData
+function var1_0.IsBossWave(arg0_3)
+	local var0_3 = false
+	local var1_3 = arg0_3._sapwnData
 
-	for iter0, iter1 in ipairs(var1) do
-		if iter1.bossData then
-			var0 = true
+	for iter0_3, iter1_3 in ipairs(var1_3) do
+		if iter1_3.bossData then
+			var0_3 = true
 		end
 	end
 
-	return var0
+	return var0_3
 end
 
-function var1.DoWave(arg0)
-	var1.super.DoWave(arg0)
+function var1_0.DoWave(arg0_4)
+	var1_0.super.DoWave(arg0_4)
 
-	if arg0._round then
-		local var0 = false
-		local var1 = var0.Battle.BattleDataProxy.GetInstance()
+	if arg0_4._round then
+		local var0_4 = false
+		local var1_4 = var0_0.Battle.BattleDataProxy.GetInstance()
 
-		if var1:GetInitData().ChallengeInfo then
-			local var2 = var1:GetInitData().ChallengeInfo:getRound()
+		if var1_4:GetInitData().ChallengeInfo then
+			local var2_4 = var1_4:GetInitData().ChallengeInfo:getRound()
 
-			if arg0._round.less and var2 < arg0._round.less then
-				var0 = true
+			if arg0_4._round.less and var2_4 < arg0_4._round.less then
+				var0_4 = true
 			end
 
-			if arg0._round.more and var2 > arg0._round.more then
-				var0 = true
+			if arg0_4._round.more and var2_4 > arg0_4._round.more then
+				var0_4 = true
 			end
 
-			if arg0._round.equal and table.contains(arg0._round.equal, var2) then
-				var0 = true
+			if arg0_4._round.equal and table.contains(arg0_4._round.equal, var2_4) then
+				var0_4 = true
 			end
 		end
 
-		if not var0 then
-			arg0:doPass()
+		if not var0_4 then
+			arg0_4:doPass()
 
 			return
 		end
 	end
 
-	for iter0, iter1 in ipairs(arg0._airStrike) do
-		local var3 = iter1.delay + iter0 * var1.ASYNC_TIME_GAP
+	for iter0_4, iter1_4 in ipairs(arg0_4._airStrike) do
+		local var3_4 = iter1_4.delay + iter0_4 * var1_0.ASYNC_TIME_GAP
 
-		if var3 <= 0 then
-			arg0:doAirStrike(iter1)
+		if var3_4 <= 0 then
+			arg0_4:doAirStrike(iter1_4)
 		else
-			arg0:airStrikeTimer(iter1, var3)
+			arg0_4:airStrikeTimer(iter1_4, var3_4)
 		end
 	end
 
-	local var4 = 0
+	local var4_4 = 0
 
-	for iter2, iter3 in ipairs(arg0._sapwnData) do
-		if iter3.bossData then
-			var4 = var4 + 1
+	for iter2_4, iter3_4 in ipairs(arg0_4._sapwnData) do
+		if iter3_4.bossData then
+			var4_4 = var4_4 + 1
 		end
 	end
 
-	local var5 = 0
-	local var6 = 0
+	local var5_4 = 0
+	local var6_4 = 0
 
-	for iter4, iter5 in ipairs(arg0._sapwnData) do
-		if (iter5.chance or 1) >= math.random() then
-			if iter5.bossData and var4 > 1 then
-				var5 = var5 + 1
-				iter5.bossData.bossCount = var5
+	for iter4_4, iter5_4 in ipairs(arg0_4._sapwnData) do
+		if (iter5_4.chance or 1) >= math.random() then
+			if iter5_4.bossData and var4_4 > 1 then
+				var5_4 = var5_4 + 1
+				iter5_4.bossData.bossCount = var5_4
 			end
 
-			local var7 = iter5.delay + var6
+			local var7_4 = iter5_4.delay + var6_4
 
-			if var7 <= 0 then
-				arg0:doSpawn(iter5)
+			if var7_4 <= 0 then
+				arg0_4:doSpawn(iter5_4)
 			else
-				arg0:spawnTimer(iter5, var7, arg0._spawnTimerList)
+				arg0_4:spawnTimer(iter5_4, var7_4, arg0_4._spawnTimerList)
 			end
 		else
-			arg0._spawnCount = arg0._spawnCount - 1
+			arg0_4._spawnCount = arg0_4._spawnCount - 1
 		end
 
-		var6 = var6 + var1.ASYNC_TIME_GAP
+		var6_4 = var6_4 + var1_0.ASYNC_TIME_GAP
 	end
 
-	if arg0._reinforce then
-		arg0:doReinforce(var6)
+	if arg0_4._reinforce then
+		arg0_4:doReinforce(var6_4)
 	end
 
-	if arg0._spawnCount == 0 and arg0._reinforceDuration == 0 then
-		arg0:doPass()
+	if arg0_4._spawnCount == 0 and arg0_4._reinforceDuration == 0 then
+		arg0_4:doPass()
 	end
 
-	if arg0._reinforceDuration ~= 0 then
-		arg0:reinforceDurationTimer(arg0._reinforceDuration)
+	if arg0_4._reinforceDuration ~= 0 then
+		arg0_4:reinforceDurationTimer(arg0_4._reinforceDuration)
 	end
 
-	var0.Battle.BattleState.GenerateVertifyData(1)
+	var0_0.Battle.BattleState.GenerateVertifyData(1)
 
-	local var8, var9 = var0.Battle.BattleState.Vertify()
+	local var8_4, var9_4 = var0_0.Battle.BattleState.Vertify()
 
-	if not var8 then
-		local var10 = 100 + var9
+	if not var8_4 then
+		local var10_4 = 100 + var9_4
 
-		var0.Battle.BattleState.GetInstance():GetCommandByName(var0.Battle.BattleSingleDungeonCommand.__name):SetVertifyFail(var10)
+		var0_0.Battle.BattleState.GetInstance():GetCommandByName(var0_0.Battle.BattleSingleDungeonCommand.__name):SetVertifyFail(var10_4)
 	end
 end
 
-function var1.AddMonster(arg0, arg1)
-	if arg1:GetWaveIndex() ~= arg0._index then
+function var1_0.AddMonster(arg0_5, arg1_5)
+	if arg1_5:GetWaveIndex() ~= arg0_5._index then
 		return
 	end
 
-	arg0._monsterList[arg1:GetUniqueID()] = arg1
+	arg0_5._monsterList[arg1_5:GetUniqueID()] = arg1_5
 end
 
-function var1.RemoveMonster(arg0, arg1)
-	arg0:onWaveUnitDie(arg1)
+function var1_0.RemoveMonster(arg0_6, arg1_6)
+	arg0_6:onWaveUnitDie(arg1_6)
 end
 
-function var1.doSpawn(arg0, arg1)
-	local var0 = var0.Battle.BattleConst.UnitType.ENEMY_UNIT
+function var1_0.doSpawn(arg0_7, arg1_7)
+	local var0_7 = var0_0.Battle.BattleConst.UnitType.ENEMY_UNIT
 
-	if arg1.bossData then
-		var0 = var0.Battle.BattleConst.UnitType.BOSS_UNIT
+	if arg1_7.bossData then
+		var0_7 = var0_0.Battle.BattleConst.UnitType.BOSS_UNIT
 	end
 
-	arg0._spawnFunc(arg1, arg0._index, var0)
+	arg0_7._spawnFunc(arg1_7, arg0_7._index, var0_7)
 end
 
-function var1.spawnTimer(arg0, arg1, arg2, arg3)
-	local var0
+function var1_0.spawnTimer(arg0_8, arg1_8, arg2_8, arg3_8)
+	local var0_8
 
-	local function var1()
-		arg3[var0] = nil
+	local function var1_8()
+		arg3_8[var0_8] = nil
 
-		arg0:doSpawn(arg1)
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(var0)
+		arg0_8:doSpawn(arg1_8)
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(var0_8)
 	end
 
-	var0 = pg.TimeMgr.GetInstance():AddBattleTimer("", 1, arg2, var1, true)
-	arg3[var0] = true
+	var0_8 = pg.TimeMgr.GetInstance():AddBattleTimer("", 1, arg2_8, var1_8, true)
+	arg3_8[var0_8] = true
 end
 
-function var1.doAirStrike(arg0, arg1)
-	arg0._airFunc(arg1)
+function var1_0.doAirStrike(arg0_10, arg1_10)
+	arg0_10._airFunc(arg1_10)
 end
 
-function var1.airStrikeTimer(arg0, arg1, arg2)
-	local var0
+function var1_0.airStrikeTimer(arg0_11, arg1_11, arg2_11)
+	local var0_11
 
-	local function var1()
-		arg0._airStrikeTimerList[var0] = nil
+	local function var1_11()
+		arg0_11._airStrikeTimerList[var0_11] = nil
 
-		arg0:doAirStrike(arg1)
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(var0)
+		arg0_11:doAirStrike(arg1_11)
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(var0_11)
 	end
 
-	var0 = pg.TimeMgr.GetInstance():AddBattleTimer("", 1, arg2, var1, true)
-	arg0._airStrikeTimerList[var0] = true
+	var0_11 = pg.TimeMgr.GetInstance():AddBattleTimer("", 1, arg2_11, var1_11, true)
+	arg0_11._airStrikeTimerList[var0_11] = true
 end
 
-function var1.doReinforce(arg0, arg1)
-	arg0._reinforceKillCount = 0
+function var1_0.doReinforce(arg0_13, arg1_13)
+	arg0_13._reinforceKillCount = 0
 
-	if arg0._reinforeceExpire then
+	if arg0_13._reinforeceExpire then
 		return
 	end
 
-	arg1 = arg1 or 0
+	arg1_13 = arg1_13 or 0
 
-	for iter0, iter1 in ipairs(arg0._reinforce) do
-		iter1.reinforce = true
+	for iter0_13, iter1_13 in ipairs(arg0_13._reinforce) do
+		iter1_13.reinforce = true
 
-		local var0 = iter1.delay + arg1
+		local var0_13 = iter1_13.delay + arg1_13
 
-		if var0 <= 0 then
-			arg0:doSpawn(iter1)
+		if var0_13 <= 0 then
+			arg0_13:doSpawn(iter1_13)
 		else
-			arg0:spawnTimer(iter1, var0, arg0._reinforceSpawnTimerList)
+			arg0_13:spawnTimer(iter1_13, var0_13, arg0_13._reinforceSpawnTimerList)
 		end
 
-		arg1 = arg1 + var1.ASYNC_TIME_GAP
+		arg1_13 = arg1_13 + var1_0.ASYNC_TIME_GAP
 	end
 end
 
-function var1.reinforceTimer(arg0, arg1)
-	arg0:clearReinforceTimer()
+function var1_0.reinforceTimer(arg0_14, arg1_14)
+	arg0_14:clearReinforceTimer()
 
-	local function var0()
-		arg0:doReinforce()
-		arg0:clearReinforceTimer()
+	local function var0_14()
+		arg0_14:doReinforce()
+		arg0_14:clearReinforceTimer()
 	end
 
-	arg0._reinforceTimer = pg.TimeMgr.GetInstance():AddBattleTimer("", 1, arg1, var0, true)
+	arg0_14._reinforceTimer = pg.TimeMgr.GetInstance():AddBattleTimer("", 1, arg1_14, var0_14, true)
 end
 
-function var1.clearReinforceTimer(arg0)
-	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0._reinforceTimer)
+function var1_0.clearReinforceTimer(arg0_16)
+	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_16._reinforceTimer)
 
-	arg0._reinforceTimer = nil
+	arg0_16._reinforceTimer = nil
 end
 
-function var1.reinforceDurationTimer(arg0, arg1)
-	local function var0()
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0._reinforceDurationTimer)
+function var1_0.reinforceDurationTimer(arg0_17, arg1_17)
+	local function var0_17()
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_17._reinforceDurationTimer)
 
-		arg0._reinforeceExpire = true
-		arg0._reinforceDuration = nil
+		arg0_17._reinforeceExpire = true
+		arg0_17._reinforceDuration = nil
 
-		arg0:clearReinforceTimer()
-		arg0.clearTimerList(arg0._reinforceSpawnTimerList)
+		arg0_17:clearReinforceTimer()
+		arg0_17.clearTimerList(arg0_17._reinforceSpawnTimerList)
 
-		if arg0._spawnCount == 0 then
-			arg0:doPass()
+		if arg0_17._spawnCount == 0 then
+			arg0_17:doPass()
 		end
 	end
 
-	arg0._reinforceDurationTimer = pg.TimeMgr.GetInstance():AddBattleTimer("", 1, arg1, var0, true)
+	arg0_17._reinforceDurationTimer = pg.TimeMgr.GetInstance():AddBattleTimer("", 1, arg1_17, var0_17, true)
 end
 
-function var1.clearReinforceDurationTimer(arg0)
-	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0._reinforceDurationTimer)
+function var1_0.clearReinforceDurationTimer(arg0_19)
+	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_19._reinforceDurationTimer)
 
-	arg0._reinforceDurationTimer = nil
+	arg0_19._reinforceDurationTimer = nil
 end
 
-function var1.onWaveUnitDie(arg0, arg1)
-	local var0 = arg0._monsterList[arg1]
+function var1_0.onWaveUnitDie(arg0_20, arg1_20)
+	local var0_20 = arg0_20._monsterList[arg1_20]
 
-	if var0 == nil then
+	if var0_20 == nil then
 		return
 	end
 
-	local var1
+	local var1_20
 
-	if var0:IsReinforcement() then
-		arg0._reinforceKillCount = arg0._reinforceKillCount + 1
-		arg0._reinforceTotalKillCount = arg0._reinforceTotalKillCount + 1
+	if var0_20:IsReinforcement() then
+		arg0_20._reinforceKillCount = arg0_20._reinforceKillCount + 1
+		arg0_20._reinforceTotalKillCount = arg0_20._reinforceTotalKillCount + 1
 
-		if arg0._reinforceCount ~= 0 and arg0._reinforceCount == arg0._reinforceKillCount then
-			var1 = true
+		if arg0_20._reinforceCount ~= 0 and arg0_20._reinforceCount == arg0_20._reinforceKillCount then
+			var1_20 = true
 		end
 	end
 
-	local function var2(arg0)
-		if var1 and arg0 then
-			if arg0 == 0 then
-				arg0:doReinforce()
+	local function var2_20(arg0_21)
+		if var1_20 and arg0_21 then
+			if arg0_21 == 0 then
+				arg0_20:doReinforce()
 			else
-				arg0:reinforceTimer(arg0)
+				arg0_20:reinforceTimer(arg0_21)
 			end
 
-			var1 = false
+			var1_20 = false
 		end
 	end
 
-	local var3 = 0
-	local var4 = 0
+	local var3_20 = 0
+	local var4_20 = 0
 
-	for iter0, iter1 in pairs(arg0._monsterList) do
-		if iter1:IsAlive() == false then
-			if not iter1:IsReinforcement() then
-				var3 = var3 + 1
+	for iter0_20, iter1_20 in pairs(arg0_20._monsterList) do
+		if iter1_20:IsAlive() == false then
+			if not iter1_20:IsReinforcement() then
+				var3_20 = var3_20 + 1
 			end
 		else
-			var4 = var4 + 1
+			var4_20 = var4_20 + 1
 
-			var2(iter1:GetReinforceCastTime())
+			var2_20(iter1_20:GetReinforceCastTime())
 		end
 	end
 
-	if arg0._reinforceDuration ~= 0 and not arg0._reinforeceExpire then
-		var2(0)
+	if arg0_20._reinforceDuration ~= 0 and not arg0_20._reinforeceExpire then
+		var2_20(0)
 	end
 
-	if var4 == 0 and var3 >= arg0._spawnCount and arg0._reinforceTotalKillCount >= arg0._reinforceCount and (arg0._reinforceDuration == 0 or arg0._reinforeceExpire) then
-		arg0:doPass()
-	end
-end
-
-function var1.doPass(arg0)
-	arg0.clearTimerList(arg0._spawnTimerList)
-	arg0.clearTimerList(arg0._reinforceSpawnTimerList)
-	arg0:clearReinforceTimer()
-	arg0:clearReinforceDurationTimer()
-	var0.Battle.BattleDataProxy.GetInstance():KillWaveSummonMonster(arg0._index)
-	var1.super.doPass(arg0)
-end
-
-function var1.clearTimerList(arg0)
-	for iter0, iter1 in pairs(arg0) do
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(iter0)
+	if var4_20 == 0 and var3_20 >= arg0_20._spawnCount and arg0_20._reinforceTotalKillCount >= arg0_20._reinforceCount and (arg0_20._reinforceDuration == 0 or arg0_20._reinforeceExpire) then
+		arg0_20:doPass()
 	end
 end
 
-function var1.Dispose(arg0)
-	arg0.clearTimerList(arg0._airStrikeTimerList)
+function var1_0.doPass(arg0_22)
+	arg0_22.clearTimerList(arg0_22._spawnTimerList)
+	arg0_22.clearTimerList(arg0_22._reinforceSpawnTimerList)
+	arg0_22:clearReinforceTimer()
+	arg0_22:clearReinforceDurationTimer()
+	var0_0.Battle.BattleDataProxy.GetInstance():KillWaveSummonMonster(arg0_22._index)
+	var1_0.super.doPass(arg0_22)
+end
 
-	arg0._airStrikeTimerList = nil
+function var1_0.clearTimerList(arg0_23)
+	for iter0_23, iter1_23 in pairs(arg0_23) do
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(iter0_23)
+	end
+end
 
-	arg0.clearTimerList(arg0._spawnTimerList)
+function var1_0.Dispose(arg0_24)
+	arg0_24.clearTimerList(arg0_24._airStrikeTimerList)
 
-	arg0._spawnTimerList = nil
+	arg0_24._airStrikeTimerList = nil
 
-	arg0.clearTimerList(arg0._reinforceSpawnTimerList)
+	arg0_24.clearTimerList(arg0_24._spawnTimerList)
 
-	arg0._reinforceSpawnTimerList = nil
+	arg0_24._spawnTimerList = nil
 
-	arg0:clearReinforceTimer()
-	arg0:clearReinforceDurationTimer()
-	var1.super.Dispose(arg0)
+	arg0_24.clearTimerList(arg0_24._reinforceSpawnTimerList)
+
+	arg0_24._reinforceSpawnTimerList = nil
+
+	arg0_24:clearReinforceTimer()
+	arg0_24:clearReinforceDurationTimer()
+	var1_0.super.Dispose(arg0_24)
 end

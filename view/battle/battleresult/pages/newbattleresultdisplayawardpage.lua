@@ -1,128 +1,128 @@
-﻿local var0 = class("NewBattleResultDisplayAwardPage", import("view.base.BaseEventLogic"))
+﻿local var0_0 = class("NewBattleResultDisplayAwardPage", import("view.base.BaseEventLogic"))
 
-function var0.Ctor(arg0, arg1, arg2, arg3)
-	arg0._tf = arg1
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	arg0_1._tf = arg1_1
 
-	var0.super.Ctor(arg0, arg2)
+	var0_0.super.Ctor(arg0_1, arg2_1)
 
-	arg0.contextData = arg3
+	arg0_1.contextData = arg3_1
 end
 
-function var0.ExecuteAction(arg0, arg1, arg2)
-	arg0[arg1](arg0, arg2)
+function var0_0.ExecuteAction(arg0_2, arg1_2, arg2_2)
+	arg0_2[arg1_2](arg0_2, arg2_2)
 end
 
-function var0.SetUp(arg0, arg1)
-	local var0, var1 = arg0:CollectDrops()
+function var0_0.SetUp(arg0_3, arg1_3)
+	local var0_3, var1_3 = arg0_3:CollectDrops()
 
 	seriesAsync({
-		function(arg0)
-			arg0:ShowAwards(var0, var1, arg0)
+		function(arg0_4)
+			arg0_3:ShowAwards(var0_3, var1_3, arg0_4)
 		end,
-		function(arg0)
-			arg0:ShowShips(var0, arg0)
+		function(arg0_5)
+			arg0_3:ShowShips(var0_3, arg0_5)
 		end
-	}, arg1)
+	}, arg1_3)
 end
 
-function var0.ShowShips(arg0, arg1, arg2)
-	local var0 = #_.filter(arg1, function(arg0)
-		return arg0.type == DROP_TYPE_SHIP
+function var0_0.ShowShips(arg0_6, arg1_6, arg2_6)
+	local var0_6 = #_.filter(arg1_6, function(arg0_7)
+		return arg0_7.type == DROP_TYPE_SHIP
 	end)
-	local var1 = getProxy(BayProxy):getNewShip(true)
-	local var2 = {}
+	local var1_6 = getProxy(BayProxy):getNewShip(true)
+	local var2_6 = {}
 
-	_.each(var1, function(arg0)
-		if arg0:isMetaShip() then
-			table.insert(var2, arg0.configId)
+	_.each(var1_6, function(arg0_8)
+		if arg0_8:isMetaShip() then
+			table.insert(var2_6, arg0_8.configId)
 		end
 	end)
-	_.each(arg1, function(arg0)
-		local var0 = arg0.configId or arg0.id
+	_.each(arg1_6, function(arg0_9)
+		local var0_9 = arg0_9.configId or arg0_9.id
 
-		if Ship.isMetaShipByConfigID(var0) then
-			local var1 = table.indexof(var2, var0)
+		if Ship.isMetaShipByConfigID(var0_9) then
+			local var1_9 = table.indexof(var2_6, var0_9)
 
-			if var1 then
-				table.remove(var2, var1)
+			if var1_9 then
+				table.remove(var2_6, var1_9)
 			else
-				local var2 = Ship.New({
-					configId = var0
+				local var2_9 = Ship.New({
+					configId = var0_9
 				})
-				local var3 = getProxy(BayProxy):getMetaTransItemMap(var2.configId)
+				local var3_9 = getProxy(BayProxy):getMetaTransItemMap(var2_9.configId)
 
-				if var3 then
-					var2:setReMetaSpecialItemVO(var3)
+				if var3_9 then
+					var2_9:setReMetaSpecialItemVO(var3_9)
 				end
 
-				table.insert(var1, var2)
+				table.insert(var1_6, var2_9)
 			end
 		end
 	end)
 
-	local var3 = {}
+	local var3_6 = {}
 
-	for iter0 = math.max(1, #var1 - var0 + 1), #var1 do
-		local var4 = var1[iter0]
+	for iter0_6 = math.max(1, #var1_6 - var0_6 + 1), #var1_6 do
+		local var4_6 = var1_6[iter0_6]
 
-		if PlayerPrefs.GetInt(DISPLAY_SHIP_GET_EFFECT) == 1 or var4.virgin or var4:getRarity() >= ShipRarity.Purple then
-			local var5 = arg0.contextData.system == SYSTEM_SCENARIO and arg0.contextData.autoSkipFlag
+		if PlayerPrefs.GetInt(DISPLAY_SHIP_GET_EFFECT) == 1 or var4_6.virgin or var4_6:getRarity() >= ShipRarity.Purple then
+			local var5_6 = arg0_6.contextData.system == SYSTEM_SCENARIO and arg0_6.contextData.autoSkipFlag
 
-			table.insert(var3, function(arg0)
-				local var0 = var5 and not var4.virgin and 3 or nil
+			table.insert(var3_6, function(arg0_10)
+				local var0_10 = var5_6 and not var4_6.virgin and 3 or nil
 
-				arg0:emit(NewBattleResultMediator.GET_NEW_SHIP, var4, arg0, var0)
+				arg0_6:emit(NewBattleResultMediator.GET_NEW_SHIP, var4_6, arg0_10, var0_10)
 			end)
 		end
 	end
 
-	seriesAsync(var3, arg2)
+	seriesAsync(var3_6, arg2_6)
 end
 
-function var0.ShowAwards(arg0, arg1, arg2, arg3)
-	local var0 = arg0.contextData.autoSkipFlag
+function var0_0.ShowAwards(arg0_11, arg1_11, arg2_11, arg3_11)
+	local var0_11 = arg0_11.contextData.autoSkipFlag
 
-	if #arg1 > 0 then
-		arg0:emit(BaseUI.ON_AWARD, {
-			items = arg1,
-			extraBonus = arg2,
-			removeFunc = arg3,
-			closeOnCompleted = var0
+	if #arg1_11 > 0 then
+		arg0_11:emit(BaseUI.ON_AWARD, {
+			items = arg1_11,
+			extraBonus = arg2_11,
+			removeFunc = arg3_11,
+			closeOnCompleted = var0_11
 		})
 	else
-		arg3()
+		arg3_11()
 	end
 end
 
-function var0.CollectDrops(arg0)
-	local var0 = false
-	local var1 = {}
+function var0_0.CollectDrops(arg0_12)
+	local var0_12 = false
+	local var1_12 = {}
 
-	for iter0, iter1 in ipairs(arg0.contextData.drops or {}) do
-		table.insert(var1, iter1)
+	for iter0_12, iter1_12 in ipairs(arg0_12.contextData.drops or {}) do
+		table.insert(var1_12, iter1_12)
 	end
 
-	for iter2, iter3 in ipairs(arg0.contextData.extraDrops or {}) do
-		iter3.riraty = true
+	for iter2_12, iter3_12 in ipairs(arg0_12.contextData.extraDrops or {}) do
+		iter3_12.riraty = true
 
-		table.insert(var1, iter3)
+		table.insert(var1_12, iter3_12)
 	end
 
-	local var2 = arg0.contextData.extraBuffList
+	local var2_12 = arg0_12.contextData.extraBuffList
 
-	for iter4, iter5 in ipairs(var2 or {}) do
-		if pg.benefit_buff_template[iter5].benefit_type == Chapter.OPERATION_BUFF_TYPE_REWARD then
-			var0 = true
+	for iter4_12, iter5_12 in ipairs(var2_12 or {}) do
+		if pg.benefit_buff_template[iter5_12].benefit_type == Chapter.OPERATION_BUFF_TYPE_REWARD then
+			var0_12 = true
 
 			break
 		end
 	end
 
-	return var1, var0
+	return var1_12, var0_12
 end
 
-function var0.Destroy(arg0)
-	arg0.exited = true
+function var0_0.Destroy(arg0_13)
+	arg0_13.exited = true
 end
 
-return var0
+return var0_0

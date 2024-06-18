@@ -1,137 +1,137 @@
-﻿local var0 = class("SkillInfoLayer", import("..base.BaseUI"))
+﻿local var0_0 = class("SkillInfoLayer", import("..base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "SkillInfoUI"
 end
 
-function var0.init(arg0)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, false, {
-		weight = arg0:getWeightFromData()
+function var0_0.init(arg0_2)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, false, {
+		weight = arg0_2:getWeightFromData()
 	})
 
-	arg0.backBtn = arg0:findTF("panel/top/btnBack")
-	arg0.skillInfoName = arg0:findTF("panel/bg/skill_name")
-	arg0.skillInfoLv = arg0:findTF("panel/bg/skill_lv")
-	arg0.skillInfoIntro = arg0:findTF("panel/bg/help_panel/skill_intro")
-	arg0.skillInfoIcon = arg0:findTF("panel/bg/skill_icon")
-	arg0.btnTypeNormal = arg0:findTF("panel/bg/btn_type_normal")
-	arg0.btnTypeWorld = arg0:findTF("panel/bg/btn_type_world")
-	arg0.buttonList = arg0:findTF("panel/buttonList")
-	arg0.upgradeBtn = arg0:findTF("panel/buttonList/level_button")
-	arg0.metaBtn = arg0:findTF("panel/buttonList/meta_button")
+	arg0_2.backBtn = arg0_2:findTF("panel/top/btnBack")
+	arg0_2.skillInfoName = arg0_2:findTF("panel/bg/skill_name")
+	arg0_2.skillInfoLv = arg0_2:findTF("panel/bg/skill_lv")
+	arg0_2.skillInfoIntro = arg0_2:findTF("panel/bg/help_panel/skill_intro")
+	arg0_2.skillInfoIcon = arg0_2:findTF("panel/bg/skill_icon")
+	arg0_2.btnTypeNormal = arg0_2:findTF("panel/bg/btn_type_normal")
+	arg0_2.btnTypeWorld = arg0_2:findTF("panel/bg/btn_type_world")
+	arg0_2.buttonList = arg0_2:findTF("panel/buttonList")
+	arg0_2.upgradeBtn = arg0_2:findTF("panel/buttonList/level_button")
+	arg0_2.metaBtn = arg0_2:findTF("panel/buttonList/meta_button")
 
-	setText(arg0:findTF("Image", arg0.metaBtn), i18n("meta_skillbtn_tactics"))
+	setText(arg0_2:findTF("Image", arg0_2.metaBtn), i18n("meta_skillbtn_tactics"))
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0._tf, function()
-		arg0:emit(var0.ON_CLOSE)
+function var0_0.didEnter(arg0_3)
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:emit(var0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.backBtn, function()
-		arg0:emit(var0.ON_CLOSE)
+	onButton(arg0_3, arg0_3.backBtn, function()
+		arg0_3:emit(var0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(arg0, arg0:findTF("panel/buttonList/ok_button"), function()
-		arg0:emit(var0.ON_CLOSE)
+	onButton(arg0_3, arg0_3:findTF("panel/buttonList/ok_button"), function()
+		arg0_3:emit(var0_0.ON_CLOSE)
 	end, SFX_CONFIRM)
-	onButton(arg0, arg0.upgradeBtn, function()
-		arg0:emit(SkillInfoMediator.WARP_TO_TACTIC)
+	onButton(arg0_3, arg0_3.upgradeBtn, function()
+		arg0_3:emit(SkillInfoMediator.WARP_TO_TACTIC)
 	end, SFX_UI_CLICK)
-	onButton(arg0, arg0.metaBtn, function()
-		local var0 = arg0.contextData.shipId
-		local var1
-		local var2
+	onButton(arg0_3, arg0_3.metaBtn, function()
+		local var0_8 = arg0_3.contextData.shipId
+		local var1_8
+		local var2_8
 
-		if var0 then
-			var2 = getProxy(BayProxy):getShipById(arg0.contextData.shipId)
-			var1 = var2:isMetaShip()
+		if var0_8 then
+			var2_8 = getProxy(BayProxy):getShipById(arg0_3.contextData.shipId)
+			var1_8 = var2_8:isMetaShip()
 		end
 
-		if var1 then
-			arg0:emit(SkillInfoMediator.WARP_TO_META_TACTICS, var2.configId)
+		if var1_8 then
+			arg0_3:emit(SkillInfoMediator.WARP_TO_META_TACTICS, var2_8.configId)
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0.btnTypeNormal, function()
-		arg0:showInfo(false)
-		arg0:flushTypeBtn()
+	onButton(arg0_3, arg0_3.btnTypeNormal, function()
+		arg0_3:showInfo(false)
+		arg0_3:flushTypeBtn()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.btnTypeWorld, function()
-		arg0:showInfo(true)
-		arg0:flushTypeBtn()
+	onButton(arg0_3, arg0_3.btnTypeWorld, function()
+		arg0_3:showInfo(true)
+		arg0_3:flushTypeBtn()
 	end, SFX_PANEL)
 
-	if tobool(pg.skill_world_display[arg0.contextData.skillId]) then
-		arg0:flushTypeBtn()
+	if tobool(pg.skill_world_display[arg0_3.contextData.skillId]) then
+		arg0_3:flushTypeBtn()
 	else
-		setActive(arg0.btnTypeNormal, false)
-		setActive(arg0.btnTypeWorld, false)
+		setActive(arg0_3.btnTypeNormal, false)
+		setActive(arg0_3.btnTypeWorld, false)
 	end
 
-	arg0:showBase()
-	arg0:showInfo(false)
+	arg0_3:showBase()
+	arg0_3:showInfo(false)
 end
 
-function var0.flushTypeBtn(arg0)
-	setActive(arg0.btnTypeNormal, arg0.isWorld)
-	setActive(arg0.btnTypeWorld, not arg0.isWorld)
+function var0_0.flushTypeBtn(arg0_11)
+	setActive(arg0_11.btnTypeNormal, arg0_11.isWorld)
+	setActive(arg0_11.btnTypeWorld, not arg0_11.isWorld)
 end
 
-function var0.showBase(arg0)
-	local var0 = arg0.contextData.skillId
-	local var1 = arg0.contextData.skillOnShip
+function var0_0.showBase(arg0_12)
+	local var0_12 = arg0_12.contextData.skillId
+	local var1_12 = arg0_12.contextData.skillOnShip
 
-	setText(arg0.skillInfoName, getSkillName(var0))
+	setText(arg0_12.skillInfoName, getSkillName(var0_12))
 
-	local var2 = getSkillConfig(var0)
+	local var2_12 = getSkillConfig(var0_12)
 
-	LoadImageSpriteAsync("skillicon/" .. var2.icon, arg0.skillInfoIcon)
+	LoadImageSpriteAsync("skillicon/" .. var2_12.icon, arg0_12.skillInfoIcon)
 
-	local var3 = not arg0.contextData.fromNewShip and var1 and var1.level < #var2 and var1.id ~= 22262 and var1.id ~= 22261
+	local var3_12 = not arg0_12.contextData.fromNewShip and var1_12 and var1_12.level < #var2_12 and var1_12.id ~= 22262 and var1_12.id ~= 22261
 
-	setActive(arg0.upgradeBtn, var3)
+	setActive(arg0_12.upgradeBtn, var3_12)
 
-	local var4 = arg0.contextData.shipId
-	local var5
-	local var6
+	local var4_12 = arg0_12.contextData.shipId
+	local var5_12
+	local var6_12
 
-	if var4 then
-		var5 = getProxy(BayProxy):getShipById(arg0.contextData.shipId):isMetaShip()
+	if var4_12 then
+		var5_12 = getProxy(BayProxy):getShipById(arg0_12.contextData.shipId):isMetaShip()
 	end
 
-	local var7 = MetaCharacterConst.isMetaTaskSkillID(var0)
+	local var7_12 = MetaCharacterConst.isMetaTaskSkillID(var0_12)
 
-	setActive(arg0.metaBtn, var5 and var7)
+	setActive(arg0_12.metaBtn, var5_12 and var7_12)
 
-	if var5 then
-		setActive(arg0.upgradeBtn, false)
+	if var5_12 then
+		setActive(arg0_12.upgradeBtn, false)
 	end
 end
 
-function var0.showInfo(arg0, arg1)
-	arg0.isWorld = arg1
+function var0_0.showInfo(arg0_13, arg1_13)
+	arg0_13.isWorld = arg1_13
 
-	local var0 = arg0.contextData.skillId
-	local var1 = arg0.contextData.skillOnShip
-	local var2 = var1 and var1.level or 1
+	local var0_13 = arg0_13.contextData.skillId
+	local var1_13 = arg0_13.contextData.skillOnShip
+	local var2_13 = var1_13 and var1_13.level or 1
 
-	setText(arg0.skillInfoLv, "Lv." .. var2)
+	setText(arg0_13.skillInfoLv, "Lv." .. var2_13)
 
-	if arg0.contextData.fromNewShip then
-		setText(arg0.skillInfoIntro, getSkillDescGet(var0, arg1))
+	if arg0_13.contextData.fromNewShip then
+		setText(arg0_13.skillInfoIntro, getSkillDescGet(var0_13, arg1_13))
 	else
-		setText(arg0.skillInfoIntro, getSkillDesc(var0, var2, arg1))
+		setText(arg0_13.skillInfoIntro, getSkillDesc(var0_13, var2_13, arg1_13))
 	end
 end
 
-function var0.close(arg0)
-	arg0:emit(var0.ON_CLOSE)
+function var0_0.close(arg0_14)
+	arg0_14:emit(var0_0.ON_CLOSE)
 end
 
-function var0.willExit(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+function var0_0.willExit(arg0_15)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_15._tf)
 
-	if arg0.contextData.onExit then
-		arg0.contextData.onExit()
+	if arg0_15.contextData.onExit then
+		arg0_15.contextData.onExit()
 	end
 end
 
-return var0
+return var0_0

@@ -1,229 +1,229 @@
-﻿local var0 = class("RacePage", import("...base.BaseActivityPage"))
-local var1 = 58
+﻿local var0_0 = class("RacePage", import("...base.BaseActivityPage"))
+local var1_0 = 58
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("AD")
-	arg0.help = arg0:findTF("help", arg0.bg)
-	arg0.goBtn = arg0:findTF("go_btn", arg0.bg)
-	arg0.ticketStat = arg0:findTF("ticket_static", arg0.bg)
-	arg0.ticketNum = arg0:findTF("ticket_num", arg0.bg)
-	arg0.costTf = arg0:findTF("cost", arg0.bg)
-	arg0.progressBar = arg0:findTF("progress_bar", arg0.bg)
-	arg0.progressTpl = arg0:findTF("progress_tpl", arg0.bg)
-	arg0.progressContainer = arg0:findTF("progress", arg0.bg)
-	arg0.progressList = UIItemList.New(arg0.progressContainer, arg0.progressTpl)
-	arg0.rankBtn = arg0:findTF("rank_btn", arg0.bg)
-	arg0.rankPanel = arg0:findTF("rank_panel", arg0.bg)
-	arg0.rankBlank = arg0:findTF("rank_panel/static/blank_img", arg0.bg)
-	arg0.rankSelf = arg0:findTF("rank_panel/self", arg0.bg)
-	arg0.rankContainer = arg0:findTF("rank_panel/list_panel/view_content/list", arg0.bg)
-	arg0.rankTpl = arg0:findTF("rank_panel/list_panel/view_content/tpl", arg0.bg)
-	arg0.rankMask = arg0:findTF("rank_panel/mask", arg0.bg)
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.help = arg0_1:findTF("help", arg0_1.bg)
+	arg0_1.goBtn = arg0_1:findTF("go_btn", arg0_1.bg)
+	arg0_1.ticketStat = arg0_1:findTF("ticket_static", arg0_1.bg)
+	arg0_1.ticketNum = arg0_1:findTF("ticket_num", arg0_1.bg)
+	arg0_1.costTf = arg0_1:findTF("cost", arg0_1.bg)
+	arg0_1.progressBar = arg0_1:findTF("progress_bar", arg0_1.bg)
+	arg0_1.progressTpl = arg0_1:findTF("progress_tpl", arg0_1.bg)
+	arg0_1.progressContainer = arg0_1:findTF("progress", arg0_1.bg)
+	arg0_1.progressList = UIItemList.New(arg0_1.progressContainer, arg0_1.progressTpl)
+	arg0_1.rankBtn = arg0_1:findTF("rank_btn", arg0_1.bg)
+	arg0_1.rankPanel = arg0_1:findTF("rank_panel", arg0_1.bg)
+	arg0_1.rankBlank = arg0_1:findTF("rank_panel/static/blank_img", arg0_1.bg)
+	arg0_1.rankSelf = arg0_1:findTF("rank_panel/self", arg0_1.bg)
+	arg0_1.rankContainer = arg0_1:findTF("rank_panel/list_panel/view_content/list", arg0_1.bg)
+	arg0_1.rankTpl = arg0_1:findTF("rank_panel/list_panel/view_content/tpl", arg0_1.bg)
+	arg0_1.rankMask = arg0_1:findTF("rank_panel/mask", arg0_1.bg)
 
-	arg0:hideRankPanel()
+	arg0_1:hideRankPanel()
 end
 
-function var0.OnDataSetting(arg0)
-	local var0 = arg0.activity:getConfig("config_id")
-	local var1 = getProxy(MiniGameProxy):GetHubByHubId(var0)
+function var0_0.OnDataSetting(arg0_2)
+	local var0_2 = arg0_2.activity:getConfig("config_id")
+	local var1_2 = getProxy(MiniGameProxy):GetHubByHubId(var0_2)
 
-	var1 = arg0.activity:getConfig("config_client").gameid and var1
-	arg0.is_ranking = pg.mini_game[var1].is_ranking == 1
-	arg0.needCount = var1:getConfig("reward_need")
-	arg0.leftCount = var1.count
-	arg0.playedCount = var1.usedtime
-	arg0.curDay = arg0.leftCount + arg0.playedCount
+	var1_0 = arg0_2.activity:getConfig("config_client").gameid and var1_0
+	arg0_2.is_ranking = pg.mini_game[var1_0].is_ranking == 1
+	arg0_2.needCount = var1_2:getConfig("reward_need")
+	arg0_2.leftCount = var1_2.count
+	arg0_2.playedCount = var1_2.usedtime
+	arg0_2.curDay = arg0_2.leftCount + arg0_2.playedCount
 end
 
-function var0.OnFirstFlush(arg0)
-	local var0 = getProxy(MiniGameProxy)
+function var0_0.OnFirstFlush(arg0_3)
+	local var0_3 = getProxy(MiniGameProxy)
 
-	if var0:CanFetchRank(var1) then
+	if var0_3:CanFetchRank(var1_0) then
 		pg.m02:sendNotification(GAME.MINI_GAME_FRIEND_RANK, {
-			id = var1,
+			id = var1_0,
 			callback = function(...)
-				arg0:updateRankTf(...)
+				arg0_3:updateRankTf(...)
 			end
 		})
 	else
-		local var1 = var0:GetRank(var1)
+		local var1_3 = var0_3:GetRank(var1_0)
 
-		arg0:updateRankTf(var1)
+		arg0_3:updateRankTf(var1_3)
 	end
 
-	setActive(arg0.rankBtn, arg0.is_ranking)
-	onButton(arg0, arg0.rankBtn, function()
-		local var0 = isActive(arg0.rankPanel)
+	setActive(arg0_3.rankBtn, arg0_3.is_ranking)
+	onButton(arg0_3, arg0_3.rankBtn, function()
+		local var0_5 = isActive(arg0_3.rankPanel)
 
-		setActive(arg0.rankPanel, not var0)
+		setActive(arg0_3.rankPanel, not var0_5)
 
-		if not var0 then
-			local var1 = arg0.activity:getConfig("config_id")
-			local var2 = getProxy(MiniGameProxy):GetHubByHubId(var1)
-			local var3 = 103
+		if not var0_5 then
+			local var1_5 = arg0_3.activity:getConfig("config_id")
+			local var2_5 = getProxy(MiniGameProxy):GetHubByHubId(var1_5)
+			local var3_5 = 103
 
 			pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-				hubid = var2.id,
+				hubid = var2_5.id,
 				cmd = MiniGameOPCommand.CMD_SPECIAL_TRACK,
 				args1 = {
-					var1,
-					var3
+					var1_0,
+					var3_5
 				}
 			})
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0.rankMask, function()
-		arg0:hideRankPanel()
+	onButton(arg0_3, arg0_3.rankMask, function()
+		arg0_3:hideRankPanel()
 	end, SFX_PANEL)
-	arg0.progressList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventInit then
-			local var0 = arg0:findTF("item_mask/item", arg2)
-			local var1 = pg.mini_game[var1].simple_config_data.drop[arg1 + 1]
-			local var2 = {
-				type = var1[1],
-				id = var1[2],
-				count = var1[3]
+	arg0_3.progressList:make(function(arg0_7, arg1_7, arg2_7)
+		if arg0_7 == UIItemList.EventInit then
+			local var0_7 = arg0_3:findTF("item_mask/item", arg2_7)
+			local var1_7 = pg.mini_game[var1_0].simple_config_data.drop[arg1_7 + 1]
+			local var2_7 = {
+				type = var1_7[1],
+				id = var1_7[2],
+				count = var1_7[3]
 			}
 
-			updateDrop(var0, var2)
-			onButton(arg0, arg2, function()
-				arg0:emit(BaseUI.ON_DROP, var2)
+			updateDrop(var0_7, var2_7)
+			onButton(arg0_3, arg2_7, function()
+				arg0_3:emit(BaseUI.ON_DROP, var2_7)
 			end, SFX_PANEL)
-			setText(arg2:Find("text"), arg1 + 1)
-		elseif arg0 == UIItemList.EventUpdate then
-			setActive(arg2:Find("item_mask/got"), arg1 < arg0.playedCount)
-			setActive(arg2:Find("got_sequence"), arg1 < arg0.playedCount)
+			setText(arg2_7:Find("text"), arg1_7 + 1)
+		elseif arg0_7 == UIItemList.EventUpdate then
+			setActive(arg2_7:Find("item_mask/got"), arg1_7 < arg0_3.playedCount)
+			setActive(arg2_7:Find("got_sequence"), arg1_7 < arg0_3.playedCount)
 		end
 	end)
-	arg0.progressList:align(arg0.needCount)
-	onButton(arg0, arg0.goBtn, function()
-		pg.m02:sendNotification(GAME.GO_MINI_GAME, var1)
+	arg0_3.progressList:align(arg0_3.needCount)
+	onButton(arg0_3, arg0_3.goBtn, function()
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, var1_0)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.help, function()
+	onButton(arg0_3, arg0_3.help, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.racing_minigame_help.tip
 		})
 	end, SFX_PANEL)
-	setText(arg0.costTf:Find("cost_static"), i18n("racing_cost"))
-	setText(arg0.rankPanel:Find("static/top_text"), i18n("racing_rank_top_text"))
-	setText(arg0.rankPanel:Find("static/half_h_static"), i18n("racing_rank_half_h"))
-	setText(arg0.rankBlank:Find("text"), i18n("racing_rank_no_data"))
+	setText(arg0_3.costTf:Find("cost_static"), i18n("racing_cost"))
+	setText(arg0_3.rankPanel:Find("static/top_text"), i18n("racing_rank_top_text"))
+	setText(arg0_3.rankPanel:Find("static/half_h_static"), i18n("racing_rank_half_h"))
+	setText(arg0_3.rankBlank:Find("text"), i18n("racing_rank_no_data"))
 end
 
-function var0.OnUpdateFlush(arg0)
-	setActive(arg0.ticketStat, arg0.leftCount ~= 0)
-	setText(arg0.ticketNum, arg0.leftCount)
-	setText(arg0.costTf, arg0.playedCount)
-	setSlider(arg0.progressBar, 0, 1, arg0.playedCount / arg0.needCount)
+function var0_0.OnUpdateFlush(arg0_11)
+	setActive(arg0_11.ticketStat, arg0_11.leftCount ~= 0)
+	setText(arg0_11.ticketNum, arg0_11.leftCount)
+	setText(arg0_11.costTf, arg0_11.playedCount)
+	setSlider(arg0_11.progressBar, 0, 1, arg0_11.playedCount / arg0_11.needCount)
 end
 
-function var0.updateRankTf(arg0, arg1)
-	local var0 = getProxy(FriendProxy)
-	local var1 = getProxy(PlayerProxy):getData()
+function var0_0.updateRankTf(arg0_12, arg1_12)
+	local var0_12 = getProxy(FriendProxy)
+	local var1_12 = getProxy(PlayerProxy):getData()
 
-	arg1 = underscore.filter(arg1, function(arg0)
-		return var0:isFriend(arg0.player_id) or arg0.player_id == var1.id
+	arg1_12 = underscore.filter(arg1_12, function(arg0_13)
+		return var0_12:isFriend(arg0_13.player_id) or arg0_13.player_id == var1_12.id
 	end)
 
-	setActive(arg0.rankPanel:Find("list_panel/scroll_bar/handle"), #arg1 > 5)
+	setActive(arg0_12.rankPanel:Find("list_panel/scroll_bar/handle"), #arg1_12 > 5)
 
-	if #arg1 == 0 then
-		setActive(arg0.rankBlank, true)
-		arg0:updateRankSelfTf(#arg1)
+	if #arg1_12 == 0 then
+		setActive(arg0_12.rankBlank, true)
+		arg0_12:updateRankSelfTf(#arg1_12)
 
 		return
 	end
 
-	setActive(arg0.rankBlank, false)
-	UIItemList.StaticAlign(arg0.rankContainer, arg0.rankTpl, #arg1, function(arg0, arg1, arg2)
-		if arg0 ~= UIItemList.EventUpdate then
+	setActive(arg0_12.rankBlank, false)
+	UIItemList.StaticAlign(arg0_12.rankContainer, arg0_12.rankTpl, #arg1_12, function(arg0_14, arg1_14, arg2_14)
+		if arg0_14 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		setText(arg2:Find("name"), arg1[arg1 + 1].name)
-		setText(arg2:Find("score"), arg0:getScoreString(arg1[arg1 + 1].score))
-		arg0:updateRankPosTf(arg2:Find("position"), arg1[arg1 + 1].position)
-		arg0:updateRankFaceTf(arg2:Find("face"), arg1[arg1 + 1].display, arg1[arg1 + 1].position)
+		setText(arg2_14:Find("name"), arg1_12[arg1_14 + 1].name)
+		setText(arg2_14:Find("score"), arg0_12:getScoreString(arg1_12[arg1_14 + 1].score))
+		arg0_12:updateRankPosTf(arg2_14:Find("position"), arg1_12[arg1_14 + 1].position)
+		arg0_12:updateRankFaceTf(arg2_14:Find("face"), arg1_12[arg1_14 + 1].display, arg1_12[arg1_14 + 1].position)
 	end)
 
-	local var2 = underscore.detect(arg1, function(arg0)
-		return arg0.player_id == var1.id
+	local var2_12 = underscore.detect(arg1_12, function(arg0_15)
+		return arg0_15.player_id == var1_12.id
 	end)
 
-	arg0:updateRankSelfTf(#arg1, var2)
+	arg0_12:updateRankSelfTf(#arg1_12, var2_12)
 end
 
-function var0.updateRankPosTf(arg0, arg1, arg2)
-	setActive(arg1:Find("img1"), arg2 == 1)
-	setActive(arg1:Find("img2"), arg2 == 2)
-	setActive(arg1:Find("img3"), arg2 == 3)
-	setActive(arg1:Find("text"), arg2 > 3 or arg2 == 0)
+function var0_0.updateRankPosTf(arg0_16, arg1_16, arg2_16)
+	setActive(arg1_16:Find("img1"), arg2_16 == 1)
+	setActive(arg1_16:Find("img2"), arg2_16 == 2)
+	setActive(arg1_16:Find("img3"), arg2_16 == 3)
+	setActive(arg1_16:Find("text"), arg2_16 > 3 or arg2_16 == 0)
 
-	if arg2 > 3 then
-		setText(arg1:Find("text"), arg2)
+	if arg2_16 > 3 then
+		setText(arg1_16:Find("text"), arg2_16)
 	end
 
-	if arg2 == 0 then
-		setText(arg1:Find("text"), "--")
+	if arg2_16 == 0 then
+		setText(arg1_16:Find("text"), "--")
 	end
 end
 
-function var0.updateRankFaceTf(arg0, arg1, arg2, arg3)
-	if arg3 then
-		setActive(arg1:Find("frame1"), arg3 == 1)
-		setActive(arg1:Find("frame2"), arg3 == 2)
-		setActive(arg1:Find("frame3"), arg3 == 3)
-		setActive(arg1:Find("frame4"), arg3 > 3)
+function var0_0.updateRankFaceTf(arg0_17, arg1_17, arg2_17, arg3_17)
+	if arg3_17 then
+		setActive(arg1_17:Find("frame1"), arg3_17 == 1)
+		setActive(arg1_17:Find("frame2"), arg3_17 == 2)
+		setActive(arg1_17:Find("frame3"), arg3_17 == 3)
+		setActive(arg1_17:Find("frame4"), arg3_17 > 3)
 	end
 
-	local var0 = pg.ship_data_statistics[arg2.icon]
-	local var1 = Ship.New({
-		configId = arg2.icon,
-		skin_id = arg2.skinId,
-		propose = arg2.proposeTime
+	local var0_17 = pg.ship_data_statistics[arg2_17.icon]
+	local var1_17 = Ship.New({
+		configId = arg2_17.icon,
+		skin_id = arg2_17.skinId,
+		propose = arg2_17.proposeTime
 	})
 
-	LoadSpriteAsync("qicon/" .. var1:getPainting(), function(arg0)
-		arg1:Find("mask/icon"):GetComponent(typeof(Image)).sprite = arg0
+	LoadSpriteAsync("qicon/" .. var1_17:getPainting(), function(arg0_18)
+		arg1_17:Find("mask/icon"):GetComponent(typeof(Image)).sprite = arg0_18
 	end)
 end
 
-function var0.updateRankSelfTf(arg0, arg1, arg2)
-	local var0 = getProxy(PlayerProxy):getData()
-	local var1 = getProxy(BayProxy):getShipById(var0.character)
-	local var2 = getProxy(MiniGameProxy)
-	local var3 = {
-		position = arg2 and arg2.position or 0,
-		id = var0.id,
-		name = var0.name,
-		score = var2:GetHighScore(var1),
+function var0_0.updateRankSelfTf(arg0_19, arg1_19, arg2_19)
+	local var0_19 = getProxy(PlayerProxy):getData()
+	local var1_19 = getProxy(BayProxy):getShipById(var0_19.character)
+	local var2_19 = getProxy(MiniGameProxy)
+	local var3_19 = {
+		position = arg2_19 and arg2_19.position or 0,
+		id = var0_19.id,
+		name = var0_19.name,
+		score = var2_19:GetHighScore(var1_0),
 		display = {
-			icon = var1:getConfig("id"),
-			skinId = var1.skinId,
-			proposeTime = var1.proposeTime
+			icon = var1_19:getConfig("id"),
+			skinId = var1_19.skinId,
+			proposeTime = var1_19.proposeTime
 		}
 	}
 
-	setText(arg0.rankSelf:Find("name"), var3.name)
-	setText(arg0.rankSelf:Find("score"), arg0:getScoreString(var3.score))
-	arg0:updateRankPosTf(arg0.rankSelf:Find("position"), var3.position)
-	arg0:updateRankFaceTf(arg0.rankSelf:Find("face"), var3.display, nil)
-	setActive(arg0.rankSelf, true)
+	setText(arg0_19.rankSelf:Find("name"), var3_19.name)
+	setText(arg0_19.rankSelf:Find("score"), arg0_19:getScoreString(var3_19.score))
+	arg0_19:updateRankPosTf(arg0_19.rankSelf:Find("position"), var3_19.position)
+	arg0_19:updateRankFaceTf(arg0_19.rankSelf:Find("face"), var3_19.display, nil)
+	setActive(arg0_19.rankSelf, true)
 end
 
-function var0.showRankPanel(arg0)
-	setActive(arg0.rankPanel, true)
+function var0_0.showRankPanel(arg0_20)
+	setActive(arg0_20.rankPanel, true)
 end
 
-function var0.hideRankPanel(arg0)
-	setActive(arg0.rankPanel, false)
+function var0_0.hideRankPanel(arg0_21)
+	setActive(arg0_21.rankPanel, false)
 end
 
-function var0.getScoreString(arg0, arg1)
-	arg1 = arg1 or 0
+function var0_0.getScoreString(arg0_22, arg1_22)
+	arg1_22 = arg1_22 or 0
 
-	return string.format("%.2fM", arg1 / 100)
+	return string.format("%.2fM", arg1_22 / 100)
 end
 
-return var0
+return var0_0

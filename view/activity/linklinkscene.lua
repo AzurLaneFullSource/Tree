@@ -1,347 +1,347 @@
-﻿local var0 = class("LinkLinkScene", import("..base.BaseUI"))
+﻿local var0_0 = class("LinkLinkScene", import("..base.BaseUI"))
 
-var0.MAX_ROW = 6
-var0.MAX_COLUMN = 11
-var0.COUNT_DOWN = 3
-var0.RESET_CD = 5
-var0.GAME_STATE_BEGIN = 0
-var0.GAME_STATE_GAMING = 1
-var0.GAME_STATE_END = 2
-var0.CARD_STATE_NORMAL = 0
-var0.CARD_STATE_LINKED = 1
-var0.CARD_STATE_BLANK = 2
+var0_0.MAX_ROW = 6
+var0_0.MAX_COLUMN = 11
+var0_0.COUNT_DOWN = 3
+var0_0.RESET_CD = 5
+var0_0.GAME_STATE_BEGIN = 0
+var0_0.GAME_STATE_GAMING = 1
+var0_0.GAME_STATE_END = 2
+var0_0.CARD_STATE_NORMAL = 0
+var0_0.CARD_STATE_LINKED = 1
+var0_0.CARD_STATE_BLANK = 2
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "LinkLinkUI"
 end
 
-function var0.init(arg0)
-	arg0.backBtn = arg0:findTF("BackBtn")
-	arg0.helpBtn = arg0:findTF("top/help_btn")
-	arg0.resetBtn = arg0:findTF("info/reset_button")
-	arg0.awardTxt = arg0:findTF("info/award_txt")
-	arg0.timeTxt = arg0:findTF("info/time_txt")
-	arg0.bestTxt = arg0:findTF("info/best_txt")
-	arg0.layout = arg0:findTF("card_con/layout")
-	arg0.item = arg0.layout:Find("card")
-	arg0.bottom = arg0:findTF("card_con/bottom")
-	arg0.line = arg0.bottom:Find("card")
-	arg0.result = arg0:findTF("result")
-	arg0.countDown = arg0:findTF("count_down")
-	arg0.resource = arg0:findTF("resource")
-	arg0.bestTitleText = arg0:findTF("info/BestTitle")
-	arg0.curTitleText = arg0:findTF("info/CurTitle")
+function var0_0.init(arg0_2)
+	arg0_2.backBtn = arg0_2:findTF("BackBtn")
+	arg0_2.helpBtn = arg0_2:findTF("top/help_btn")
+	arg0_2.resetBtn = arg0_2:findTF("info/reset_button")
+	arg0_2.awardTxt = arg0_2:findTF("info/award_txt")
+	arg0_2.timeTxt = arg0_2:findTF("info/time_txt")
+	arg0_2.bestTxt = arg0_2:findTF("info/best_txt")
+	arg0_2.layout = arg0_2:findTF("card_con/layout")
+	arg0_2.item = arg0_2.layout:Find("card")
+	arg0_2.bottom = arg0_2:findTF("card_con/bottom")
+	arg0_2.line = arg0_2.bottom:Find("card")
+	arg0_2.result = arg0_2:findTF("result")
+	arg0_2.countDown = arg0_2:findTF("count_down")
+	arg0_2.resource = arg0_2:findTF("resource")
+	arg0_2.bestTitleText = arg0_2:findTF("info/BestTitle")
+	arg0_2.curTitleText = arg0_2:findTF("info/CurTitle")
 
-	setText(arg0.bestTitleText, i18n("LinkLinkGame_BestTime"))
-	setText(arg0.curTitleText, i18n("LinkLinkGame_CurTime"))
+	setText(arg0_2.bestTitleText, i18n("LinkLinkGame_BestTime"))
+	setText(arg0_2.curTitleText, i18n("LinkLinkGame_CurTime"))
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0.backBtn, function()
-		arg0:emit(var0.ON_BACK)
+function var0_0.didEnter(arg0_3)
+	onButton(arg0_3, arg0_3.backBtn, function()
+		arg0_3:emit(var0_0.ON_BACK)
 	end, SOUND_BACK)
-	arg0:SetState(var0.GAME_STATE_BEGIN)
+	arg0_3:SetState(var0_0.GAME_STATE_BEGIN)
 end
 
-function var0.willExit(arg0)
-	arg0:HideResult()
-	LeanTween.cancel(go(arg0.countDown))
+function var0_0.willExit(arg0_5)
+	arg0_5:HideResult()
+	LeanTween.cancel(go(arg0_5.countDown))
 
-	for iter0 = 0, arg0.layout.childCount - 1 do
-		LeanTween.cancel(go(arg0.layout:GetChild(iter0)))
+	for iter0_5 = 0, arg0_5.layout.childCount - 1 do
+		LeanTween.cancel(go(arg0_5.layout:GetChild(iter0_5)))
 	end
 
-	if arg0.countTimer then
-		arg0.countTimer:Stop()
+	if arg0_5.countTimer then
+		arg0_5.countTimer:Stop()
 
-		arg0.countTimer = nil
+		arg0_5.countTimer = nil
 	end
 end
 
-function var0.SetPlayer(arg0, arg1)
-	arg0.player = arg1
+function var0_0.SetPlayer(arg0_6, arg1_6)
+	arg0_6.player = arg1_6
 end
 
-function var0.SetActivity(arg0, arg1)
-	arg0.activity = arg1
-	arg0.activityAchieved = arg1.data1
-	arg0.activityProgress = arg1.data2
-	arg0.activityStartTime = arg1.data3
-	arg0.activityBestRecord = arg1.data4
+function var0_0.SetActivity(arg0_7, arg1_7)
+	arg0_7.activity = arg1_7
+	arg0_7.activityAchieved = arg1_7.data1
+	arg0_7.activityProgress = arg1_7.data2
+	arg0_7.activityStartTime = arg1_7.data3
+	arg0_7.activityBestRecord = arg1_7.data4
 
-	local var0 = arg0.activity:getConfig("config_client")[3]
-	local var1 = pg.TimeMgr.GetInstance()
+	local var0_7 = arg0_7.activity:getConfig("config_client")[3]
+	local var1_7 = pg.TimeMgr.GetInstance()
 
-	arg0.activityRestTimes = var1:DiffDay(arg0.activityStartTime, var1:GetServerTime()) + 1 - arg0.activityProgress
-	arg0.activityRestTimes = math.clamp(arg0.activityRestTimes, 0, #var0 - arg0.activityProgress)
+	arg0_7.activityRestTimes = var1_7:DiffDay(arg0_7.activityStartTime, var1_7:GetServerTime()) + 1 - arg0_7.activityProgress
+	arg0_7.activityRestTimes = math.clamp(arg0_7.activityRestTimes, 0, #var0_7 - arg0_7.activityProgress)
 
-	setText(arg0.awardTxt, arg0.activityRestTimes > 0 and var0[arg0.activityProgress + 1] or 0)
-	setText(arg0.bestTxt, arg0:FormatRecordTime(arg0.activityBestRecord))
+	setText(arg0_7.awardTxt, arg0_7.activityRestTimes > 0 and var0_7[arg0_7.activityProgress + 1] or 0)
+	setText(arg0_7.bestTxt, arg0_7:FormatRecordTime(arg0_7.activityBestRecord))
 end
 
-function var0.SetState(arg0, arg1)
-	if arg0.state ~= arg1 then
-		arg0.state = arg1
+function var0_0.SetState(arg0_8, arg1_8)
+	if arg0_8.state ~= arg1_8 then
+		arg0_8.state = arg1_8
 
-		if arg1 == var0.GAME_STATE_BEGIN then
-			arg0:GameBegin()
-		elseif arg1 == var0.GAME_STATE_GAMING then
-			arg0:GameLoop()
-		elseif arg1 == var0.GAME_STATE_END then
-			arg0:GameEnd()
+		if arg1_8 == var0_0.GAME_STATE_BEGIN then
+			arg0_8:GameBegin()
+		elseif arg1_8 == var0_0.GAME_STATE_GAMING then
+			arg0_8:GameLoop()
+		elseif arg1_8 == var0_0.GAME_STATE_END then
+			arg0_8:GameEnd()
 		end
 	end
 end
 
-function var0.GameBegin(arg0)
-	arg0.cards = {}
+function var0_0.GameBegin(arg0_9)
+	arg0_9.cards = {}
 
-	local var0 = {}
+	local var0_9 = {}
 
-	for iter0 = 0, 17 do
-		table.insert(var0, iter0)
-		table.insert(var0, iter0)
+	for iter0_9 = 0, 17 do
+		table.insert(var0_9, iter0_9)
+		table.insert(var0_9, iter0_9)
 	end
 
-	local var1 = 0
+	local var1_9 = 0
 
-	while #var0 > 0 do
-		local var2 = math.clamp(math.floor(math.random() * #var0 + 1), 1, #var0)
-		local var3 = math.floor(var1 / (var0.MAX_COLUMN - 2)) + 1
-		local var4 = var1 % (var0.MAX_COLUMN - 2) + 1
+	while #var0_9 > 0 do
+		local var2_9 = math.clamp(math.floor(math.random() * #var0_9 + 1), 1, #var0_9)
+		local var3_9 = math.floor(var1_9 / (var0_0.MAX_COLUMN - 2)) + 1
+		local var4_9 = var1_9 % (var0_0.MAX_COLUMN - 2) + 1
 
-		arg0.cards[var3] = arg0.cards[var3] or {}
-		arg0.cards[var3][var4] = {
-			row = var3,
-			column = var4,
-			id = var0[var2],
-			state = var0.CARD_STATE_NORMAL
+		arg0_9.cards[var3_9] = arg0_9.cards[var3_9] or {}
+		arg0_9.cards[var3_9][var4_9] = {
+			row = var3_9,
+			column = var4_9,
+			id = var0_9[var2_9],
+			state = var0_0.CARD_STATE_NORMAL
 		}
 
-		table.remove(var0, var2)
+		table.remove(var0_9, var2_9)
 
-		var1 = var1 + 1
+		var1_9 = var1_9 + 1
 	end
 
-	for iter1 = 0, var0.MAX_ROW - 1 do
-		for iter2 = 0, var0.MAX_COLUMN - 1 do
-			arg0.cards[iter1] = arg0.cards[iter1] or {}
-			arg0.cards[iter1][iter2] = arg0.cards[iter1][iter2] or {
-				row = iter1,
-				column = iter2,
-				state = var0.CARD_STATE_BLANK
+	for iter1_9 = 0, var0_0.MAX_ROW - 1 do
+		for iter2_9 = 0, var0_0.MAX_COLUMN - 1 do
+			arg0_9.cards[iter1_9] = arg0_9.cards[iter1_9] or {}
+			arg0_9.cards[iter1_9][iter2_9] = arg0_9.cards[iter1_9][iter2_9] or {
+				row = iter1_9,
+				column = iter2_9,
+				state = var0_0.CARD_STATE_BLANK
 			}
 		end
 	end
 
-	arg0.list = UIItemList.New(arg0.layout, arg0.item)
+	arg0_9.list = UIItemList.New(arg0_9.layout, arg0_9.item)
 
-	arg0.list:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = math.floor(arg1 / var0.MAX_COLUMN)
-			local var1 = arg1 % var0.MAX_COLUMN
-			local var2 = arg0.cards[var0][var1]
+	arg0_9.list:make(function(arg0_10, arg1_10, arg2_10)
+		if arg0_10 == UIItemList.EventUpdate then
+			local var0_10 = math.floor(arg1_10 / var0_0.MAX_COLUMN)
+			local var1_10 = arg1_10 % var0_0.MAX_COLUMN
+			local var2_10 = arg0_9.cards[var0_10][var1_10]
 
-			arg2.name = var0 .. "_" .. var1
-			arg2.localScale = Vector3.one
+			arg2_10.name = var0_10 .. "_" .. var1_10
+			arg2_10.localScale = Vector3.one
 
-			setActive(arg2:Find("display"), var2.state == var0.CARD_STATE_NORMAL)
+			setActive(arg2_10:Find("display"), var2_10.state == var0_0.CARD_STATE_NORMAL)
 
-			if var2.state == var0.CARD_STATE_NORMAL then
-				local var3 = getImageSprite(arg0.resource:GetChild(var2.id))
+			if var2_10.state == var0_0.CARD_STATE_NORMAL then
+				local var3_10 = getImageSprite(arg0_9.resource:GetChild(var2_10.id))
 
-				setImageSprite(arg2:Find("display/icon"), var3)
-				setActive(arg2:Find("display/selected"), false)
+				setImageSprite(arg2_10:Find("display/icon"), var3_10)
+				setActive(arg2_10:Find("display/selected"), false)
 			end
 		end
 	end)
-	arg0.list:align(var0.MAX_ROW * var0.MAX_COLUMN)
+	arg0_9.list:align(var0_0.MAX_ROW * var0_0.MAX_COLUMN)
 
-	arg0.llist = UIItemList.New(arg0.bottom, arg0.line)
+	arg0_9.llist = UIItemList.New(arg0_9.bottom, arg0_9.line)
 
-	arg0.llist:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg2:Find("lines")
+	arg0_9.llist:make(function(arg0_11, arg1_11, arg2_11)
+		if arg0_11 == UIItemList.EventUpdate then
+			local var0_11 = arg2_11:Find("lines")
 
-			for iter0 = 0, var0.childCount - 1 do
-				setActive(var0:GetChild(iter0), false)
+			for iter0_11 = 0, var0_11.childCount - 1 do
+				setActive(var0_11:GetChild(iter0_11), false)
 			end
 		end
 	end)
-	arg0.llist:align(var0.MAX_ROW * var0.MAX_COLUMN)
-	setActive(arg0.countDown, true)
+	arg0_9.llist:align(var0_0.MAX_ROW * var0_0.MAX_COLUMN)
+	setActive(arg0_9.countDown, true)
 
-	for iter3 = 0, arg0.countDown.childCount - 1 do
-		setActive(arg0.countDown:GetChild(iter3), false)
+	for iter3_9 = 0, arg0_9.countDown.childCount - 1 do
+		setActive(arg0_9.countDown:GetChild(iter3_9), false)
 	end
 
-	local var5 = 0
-	local var6 = arg0.countDown:GetChild(var5)
+	local var5_9 = 0
+	local var6_9 = arg0_9.countDown:GetChild(var5_9)
 
-	setActive(var6, true)
-	setImageAlpha(var6, 0)
-	LeanTween.value(go(arg0.countDown), 0, 1, 1):setOnUpdate(System.Action_float(function(arg0)
-		arg0 = math.min(arg0 / 0.3, 1)
+	setActive(var6_9, true)
+	setImageAlpha(var6_9, 0)
+	LeanTween.value(go(arg0_9.countDown), 0, 1, 1):setOnUpdate(System.Action_float(function(arg0_12)
+		arg0_12 = math.min(arg0_12 / 0.3, 1)
 
-		setImageAlpha(var6, arg0)
-		setLocalScale(var6, {
-			x = (1 - arg0) * 2 + 1,
-			y = (1 - arg0) * 2 + 1
+		setImageAlpha(var6_9, arg0_12)
+		setLocalScale(var6_9, {
+			x = (1 - arg0_12) * 2 + 1,
+			y = (1 - arg0_12) * 2 + 1
 		})
 	end)):setOnComplete(System.Action(function()
-		setActive(var6, false)
+		setActive(var6_9, false)
 
-		var5 = var5 + 1
+		var5_9 = var5_9 + 1
 
-		if var5 < arg0.countDown.childCount then
-			var6 = arg0.countDown:GetChild(var5)
+		if var5_9 < arg0_9.countDown.childCount then
+			var6_9 = arg0_9.countDown:GetChild(var5_9)
 
-			setActive(var6, true)
-			setImageAlpha(var6, 0)
+			setActive(var6_9, true)
+			setImageAlpha(var6_9, 0)
 		else
-			setActive(arg0.countDown, false)
-			arg0:SetState(var0.GAME_STATE_GAMING)
+			setActive(arg0_9.countDown, false)
+			arg0_9:SetState(var0_0.GAME_STATE_GAMING)
 		end
 	end)):setRepeat(4):setLoopType(LeanTweenType.punch):setOnCompleteOnRepeat(true):setEase(LeanTweenType.easeOutSine)
 end
 
-function var0.GameLoop(arg0)
-	local var0 = function(arg0)
-		local var0 = 0
-		local var1 = 0
+function var0_0.GameLoop(arg0_14)
+	local function var0_14(arg0_15)
+		local var0_15 = 0
+		local var1_15 = 0
 
-		for iter0 = 1, #arg0 - 1 do
-			local var2 = arg0[iter0]
-			local var3 = arg0[iter0 + 1]
-			local var4 = var3.row - var2.row
-			local var5 = var3.column - var2.column
-			local var6 = arg0.bottom:GetChild(var2.row * var0.MAX_COLUMN + var2.column):Find("lines")
+		for iter0_15 = 1, #arg0_15 - 1 do
+			local var2_15 = arg0_15[iter0_15]
+			local var3_15 = arg0_15[iter0_15 + 1]
+			local var4_15 = var3_15.row - var2_15.row
+			local var5_15 = var3_15.column - var2_15.column
+			local var6_15 = arg0_14.bottom:GetChild(var2_15.row * var0_0.MAX_COLUMN + var2_15.column):Find("lines")
 
-			for iter1 = 0, var6.childCount - 1 do
-				setActive(var6:GetChild(iter1), false)
+			for iter1_15 = 0, var6_15.childCount - 1 do
+				setActive(var6_15:GetChild(iter1_15), false)
 			end
 
-			if var4 ~= 0 then
-				setActive(var6:Find("y" .. var4), true)
-			elseif var5 ~= 0 then
-				setActive(var6:Find("x" .. var5), true)
+			if var4_15 ~= 0 then
+				setActive(var6_15:Find("y" .. var4_15), true)
+			elseif var5_15 ~= 0 then
+				setActive(var6_15:Find("x" .. var5_15), true)
 			end
 
-			if var4 ~= var0 and var5 ~= var1 then
-				local var7 = 0
-				local var8 = (var4 == -1 and var1 == 1 or var0 == 1 and var5 == -1) and 0 or (var5 == -1 and var0 == -1 or var4 == 1 and var1 == 1) and 90 or (var4 == 1 and var1 == -1 or var0 == -1 and var5 == 1) and 180 or 270
-				local var9 = var6:Find("joint")
+			if var4_15 ~= var0_15 and var5_15 ~= var1_15 then
+				local var7_15 = 0
+				local var8_15 = (var4_15 == -1 and var1_15 == 1 or var0_15 == 1 and var5_15 == -1) and 0 or (var5_15 == -1 and var0_15 == -1 or var4_15 == 1 and var1_15 == 1) and 90 or (var4_15 == 1 and var1_15 == -1 or var0_15 == -1 and var5_15 == 1) and 180 or 270
+				local var9_15 = var6_15:Find("joint")
 
-				setActive(var9, true)
+				setActive(var9_15, true)
 
-				var9.localEulerAngles = Vector3(0, 0, var8)
-			elseif var0 == 0 and var4 ~= 0 or var0 ~= 0 and var4 == var0 then
-				local var10 = var6:Find("cross")
+				var9_15.localEulerAngles = Vector3(0, 0, var8_15)
+			elseif var0_15 == 0 and var4_15 ~= 0 or var0_15 ~= 0 and var4_15 == var0_15 then
+				local var10_15 = var6_15:Find("cross")
 
-				setActive(var10, true)
+				setActive(var10_15, true)
 
-				var10.localEulerAngles = Vector3(0, 0, 90)
-			elseif var1 == 0 and var5 ~= 0 or var1 ~= 0 and var5 == var1 then
-				local var11 = var6:Find("cross")
+				var10_15.localEulerAngles = Vector3(0, 0, 90)
+			elseif var1_15 == 0 and var5_15 ~= 0 or var1_15 ~= 0 and var5_15 == var1_15 then
+				local var11_15 = var6_15:Find("cross")
 
-				setActive(var11, true)
+				setActive(var11_15, true)
 
-				var11.localEulerAngles = Vector3(0, 0, 0)
+				var11_15.localEulerAngles = Vector3(0, 0, 0)
 			end
 
-			var0, var1 = var4, var5
+			var0_15, var1_15 = var4_15, var5_15
 		end
 	end
 
-	local function var1(arg0)
-		for iter0 = 1, #arg0 - 1 do
-			local var0 = arg0[iter0]
-			local var1 = var0.row * var0.MAX_COLUMN + var0.column
-			local var2 = arg0.bottom:GetChild(var1):Find("lines")
+	local function var1_14(arg0_16)
+		for iter0_16 = 1, #arg0_16 - 1 do
+			local var0_16 = arg0_16[iter0_16]
+			local var1_16 = var0_16.row * var0_0.MAX_COLUMN + var0_16.column
+			local var2_16 = arg0_14.bottom:GetChild(var1_16):Find("lines")
 
-			for iter1 = 0, var2.childCount - 1 do
-				setActive(var2:GetChild(iter1), false)
+			for iter1_16 = 0, var2_16.childCount - 1 do
+				setActive(var2_16:GetChild(iter1_16), false)
 			end
 		end
 	end
 
-	local var2
-	local var3
-	local var4
+	local var2_14
+	local var3_14
+	local var4_14
 
-	arg0.list:each(function(arg0, arg1)
-		onButton(arg0, arg1:Find("display/icon"), function()
-			local var0 = math.floor(arg0 / var0.MAX_COLUMN)
-			local var1 = arg0 % var0.MAX_COLUMN
-			local var2 = arg0.cards[var0][var1]
+	arg0_14.list:each(function(arg0_17, arg1_17)
+		onButton(arg0_14, arg1_17:Find("display/icon"), function()
+			local var0_18 = math.floor(arg0_17 / var0_0.MAX_COLUMN)
+			local var1_18 = arg0_17 % var0_0.MAX_COLUMN
+			local var2_18 = arg0_14.cards[var0_18][var1_18]
 
-			if var2.state ~= var0.CARD_STATE_NORMAL then
+			if var2_18.state ~= var0_0.CARD_STATE_NORMAL then
 				return
-			elseif not var2 then
-				var2 = var2
-				var3 = arg1
+			elseif not var2_14 then
+				var2_14 = var2_18
+				var3_14 = arg1_17
 
-				setActive(arg1:Find("display/selected"), true)
-			elseif var4 then
+				setActive(arg1_17:Find("display/selected"), true)
+			elseif var4_14 then
 				return
-			elseif var2 == var2 then
-				setActive(arg1:Find("display/selected"), false)
+			elseif var2_14 == var2_18 then
+				setActive(arg1_17:Find("display/selected"), false)
 
-				var3 = nil
-				var2 = nil
-			elseif var2.id ~= var2.id then
-				setActive(var3:Find("display/selected"), false)
+				var3_14 = nil
+				var2_14 = nil
+			elseif var2_14.id ~= var2_18.id then
+				setActive(var3_14:Find("display/selected"), false)
 
-				var3 = nil
-				var2 = nil
+				var3_14 = nil
+				var2_14 = nil
 			else
-				local var3 = arg0:LinkLink(var2, var2)
+				local var3_18 = arg0_14:LinkLink(var2_14, var2_18)
 
-				if not var3 then
-					setActive(var3:Find("display/selected"), false)
+				if not var3_18 then
+					setActive(var3_14:Find("display/selected"), false)
 
-					var3 = nil
-					var2 = nil
+					var3_14 = nil
+					var2_14 = nil
 				else
-					var2.state = var0.CARD_STATE_LINKED
-					var2.state = var0.CARD_STATE_LINKED
+					var2_18.state = var0_0.CARD_STATE_LINKED
+					var2_14.state = var0_0.CARD_STATE_LINKED
 
-					setActive(arg1:Find("display/selected"), true)
-					var0(var3)
+					setActive(arg1_17:Find("display/selected"), true)
+					var0_14(var3_18)
 
-					var4 = true
+					var4_14 = true
 
-					local var4 = arg1
-					local var5 = var3
+					local var4_18 = arg1_17
+					local var5_18 = var3_14
 
-					LeanTween.value(go(var4), 1, 0.15, 0.3):setEase(LeanTweenType.easeInBack):setOnUpdate(System.Action_float(function(arg0)
-						var4.localScale = Vector3(arg0, arg0, 1)
-						var5.localScale = Vector3(arg0, arg0, 1)
+					LeanTween.value(go(var4_18), 1, 0.15, 0.3):setEase(LeanTweenType.easeInBack):setOnUpdate(System.Action_float(function(arg0_19)
+						var4_18.localScale = Vector3(arg0_19, arg0_19, 1)
+						var5_18.localScale = Vector3(arg0_19, arg0_19, 1)
 					end)):setOnComplete(System.Action(function()
-						var1(var3)
-						setActive(var4:Find("display"), false)
-						setActive(var5:Find("display"), false)
+						var1_14(var3_18)
+						setActive(var4_18:Find("display"), false)
+						setActive(var5_18:Find("display"), false)
 
-						var4 = false
+						var4_14 = false
 					end))
 
-					var3 = nil
-					var2 = nil
+					var3_14 = nil
+					var2_14 = nil
 
-					local var6 = true
+					local var6_18 = true
 
-					for iter0 = 0, var0.MAX_ROW - 1 do
-						for iter1 = 0, var0.MAX_COLUMN - 1 do
-							if arg0.cards[iter0][iter1].state == var0.CARD_STATE_NORMAL then
-								var6 = false
+					for iter0_18 = 0, var0_0.MAX_ROW - 1 do
+						for iter1_18 = 0, var0_0.MAX_COLUMN - 1 do
+							if arg0_14.cards[iter0_18][iter1_18].state == var0_0.CARD_STATE_NORMAL then
+								var6_18 = false
 
 								break
 							end
 						end
 					end
 
-					if var6 then
-						arg0:SetState(var0.GAME_STATE_END)
+					if var6_18 then
+						arg0_14:SetState(var0_0.GAME_STATE_END)
 					end
 				end
 			end
@@ -349,32 +349,32 @@ function var0.GameLoop(arg0)
 	end)
 
 	if IsUnityEditor and AUTO_LINKLINK then
-		setActive(arg0.helpBtn, true)
-		onButton(arg0, arg0.helpBtn, function()
-			var2 = nil
-			var3 = nil
+		setActive(arg0_14.helpBtn, true)
+		onButton(arg0_14, arg0_14.helpBtn, function()
+			var2_14 = nil
+			var3_14 = nil
 
-			for iter0 = 0, var0.MAX_ROW - 1 do
-				for iter1 = 0, var0.MAX_COLUMN - 1 do
-					local var0 = arg0.cards[iter0][iter1]
-					local var1 = var0.row * var0.MAX_COLUMN + var0.column
-					local var2 = arg0.layout:GetChild(var1)
+			for iter0_21 = 0, var0_0.MAX_ROW - 1 do
+				for iter1_21 = 0, var0_0.MAX_COLUMN - 1 do
+					local var0_21 = arg0_14.cards[iter0_21][iter1_21]
+					local var1_21 = var0_21.row * var0_0.MAX_COLUMN + var0_21.column
+					local var2_21 = arg0_14.layout:GetChild(var1_21)
 
-					if var0.state == var0.CARD_STATE_NORMAL then
-						for iter2 = 0, var0.MAX_ROW - 1 do
-							for iter3 = 0, var0.MAX_COLUMN - 1 do
-								if iter0 ~= iter2 or iter1 ~= iter3 then
-									local var3 = arg0.cards[iter2][iter3]
-									local var4 = var3.row * var0.MAX_COLUMN + var3.column
-									local var5 = arg0.layout:GetChild(var4)
+					if var0_21.state == var0_0.CARD_STATE_NORMAL then
+						for iter2_21 = 0, var0_0.MAX_ROW - 1 do
+							for iter3_21 = 0, var0_0.MAX_COLUMN - 1 do
+								if iter0_21 ~= iter2_21 or iter1_21 ~= iter3_21 then
+									local var3_21 = arg0_14.cards[iter2_21][iter3_21]
+									local var4_21 = var3_21.row * var0_0.MAX_COLUMN + var3_21.column
+									local var5_21 = arg0_14.layout:GetChild(var4_21)
 
-									if var0.id == var3.id then
-										triggerButton(var2:Find("display/icon"))
-										triggerButton(var5:Find("display/icon"))
+									if var0_21.id == var3_21.id then
+										triggerButton(var2_21:Find("display/icon"))
+										triggerButton(var5_21:Find("display/icon"))
 
-										if var4 then
+										if var4_14 then
 											Timer.New(function()
-												triggerButton(arg0.helpBtn)
+												triggerButton(arg0_14.helpBtn)
 											end, 0.4, 1):Start()
 
 											return
@@ -389,324 +389,324 @@ function var0.GameLoop(arg0)
 		end)
 	end
 
-	local var5 = 0
+	local var5_14 = 0
 
-	onButton(arg0, arg0.resetBtn, function()
-		if arg0.state ~= var0.GAME_STATE_GAMING then
+	onButton(arg0_14, arg0_14.resetBtn, function()
+		if arg0_14.state ~= var0_0.GAME_STATE_GAMING then
 			return
-		elseif Time.realtimeSinceStartup - var5 < var0.RESET_CD then
+		elseif Time.realtimeSinceStartup - var5_14 < var0_0.RESET_CD then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_wait"))
 		else
-			if var2 then
-				setActive(var3:Find("display/selected"), false)
+			if var2_14 then
+				setActive(var3_14:Find("display/selected"), false)
 
-				var3 = nil
-				var2 = nil
+				var3_14 = nil
+				var2_14 = nil
 			end
 
-			local var0 = {}
-			local var1 = {}
+			local var0_23 = {}
+			local var1_23 = {}
 
-			for iter0 = 0, var0.MAX_ROW - 1 do
-				for iter1 = 0, var0.MAX_COLUMN - 1 do
-					local var2 = arg0.cards[iter0][iter1]
+			for iter0_23 = 0, var0_0.MAX_ROW - 1 do
+				for iter1_23 = 0, var0_0.MAX_COLUMN - 1 do
+					local var2_23 = arg0_14.cards[iter0_23][iter1_23]
 
-					if var2.state == var0.CARD_STATE_NORMAL then
-						table.insert(var0, {
-							row = iter0,
-							column = iter1
+					if var2_23.state == var0_0.CARD_STATE_NORMAL then
+						table.insert(var0_23, {
+							row = iter0_23,
+							column = iter1_23
 						})
-						table.insert(var1, var2.id)
+						table.insert(var1_23, var2_23.id)
 					end
 				end
 			end
 
-			local var3 = 1
+			local var3_23 = 1
 
-			while #var1 > 0 do
-				local var4 = math.clamp(math.floor(math.random() * #var1 + 1), 1, #var1)
+			while #var1_23 > 0 do
+				local var4_23 = math.clamp(math.floor(math.random() * #var1_23 + 1), 1, #var1_23)
 
-				arg0.cards[var0[var3].row][var0[var3].column].id = var1[var4]
+				arg0_14.cards[var0_23[var3_23].row][var0_23[var3_23].column].id = var1_23[var4_23]
 
-				table.remove(var1, var4)
+				table.remove(var1_23, var4_23)
 
-				var3 = var3 + 1
+				var3_23 = var3_23 + 1
 			end
 
-			arg0.list:each(function(arg0, arg1)
-				local var0 = math.floor(arg0 / var0.MAX_COLUMN)
-				local var1 = arg0 % var0.MAX_COLUMN
-				local var2 = arg0.cards[var0][var1]
+			arg0_14.list:each(function(arg0_24, arg1_24)
+				local var0_24 = math.floor(arg0_24 / var0_0.MAX_COLUMN)
+				local var1_24 = arg0_24 % var0_0.MAX_COLUMN
+				local var2_24 = arg0_14.cards[var0_24][var1_24]
 
-				if var2.state == var0.CARD_STATE_NORMAL then
-					local var3 = getImageSprite(arg0.resource:GetChild(var2.id))
+				if var2_24.state == var0_0.CARD_STATE_NORMAL then
+					local var3_24 = getImageSprite(arg0_14.resource:GetChild(var2_24.id))
 
-					setImageSprite(arg1:Find("display/icon"), var3)
+					setImageSprite(arg1_24:Find("display/icon"), var3_24)
 				end
 			end)
 
-			var5 = Time.realtimeSinceStartup
+			var5_14 = Time.realtimeSinceStartup
 		end
 	end, SFX_PANEL)
 
-	arg0.startTime = Time.realtimeSinceStartup
-	arg0.countTimer = Timer.New(function()
-		local var0 = math.floor((Time.realtimeSinceStartup - arg0.startTime) * 1000)
+	arg0_14.startTime = Time.realtimeSinceStartup
+	arg0_14.countTimer = Timer.New(function()
+		local var0_25 = math.floor((Time.realtimeSinceStartup - arg0_14.startTime) * 1000)
 
-		setText(arg0.timeTxt, arg0:FormatRecordTime(var0))
+		setText(arg0_14.timeTxt, arg0_14:FormatRecordTime(var0_25))
 	end, 0.033, -1)
 
-	arg0.countTimer:Start()
-	arg0.countTimer.func()
+	arg0_14.countTimer:Start()
+	arg0_14.countTimer.func()
 end
 
-function var0.GameEnd(arg0)
-	arg0.countTimer:Stop()
+function var0_0.GameEnd(arg0_26)
+	arg0_26.countTimer:Stop()
 
-	arg0.countTimer = nil
-	arg0.lastRecord = math.floor((Time.realtimeSinceStartup - arg0.startTime) * 1000)
+	arg0_26.countTimer = nil
+	arg0_26.lastRecord = math.floor((Time.realtimeSinceStartup - arg0_26.startTime) * 1000)
 
-	if arg0.activityRestTimes > 0 or arg0.lastRecord < arg0.activityBestRecord then
-		local var0 = arg0.activityProgress + (arg0.activityRestTimes > 0 and 1 or 0)
+	if arg0_26.activityRestTimes > 0 or arg0_26.lastRecord < arg0_26.activityBestRecord then
+		local var0_26 = arg0_26.activityProgress + (arg0_26.activityRestTimes > 0 and 1 or 0)
 
-		arg0:emit(LinkLinkMediator.EVENT_OPERATION, {
+		arg0_26:emit(LinkLinkMediator.EVENT_OPERATION, {
 			cmd = 1,
-			activity_id = arg0.activity.id,
-			arg1 = var0,
-			arg2 = arg0.lastRecord
+			activity_id = arg0_26.activity.id,
+			arg1 = var0_26,
+			arg2 = arg0_26.lastRecord
 		})
 	else
-		arg0:DisplayResult(arg0.activity)
+		arg0_26:DisplayResult(arg0_26.activity)
 	end
 end
 
-function var0.DisplayResult(arg0, arg1)
-	setActive(arg0.result, true)
+function var0_0.DisplayResult(arg0_27, arg1_27)
+	setActive(arg0_27.result, true)
 
-	local var0 = arg0.result:Find("bg")
+	local var0_27 = arg0_27.result:Find("bg")
 
-	setActive(var0:Find("pic_new_record"), arg1.data4 < arg0.activityBestRecord)
-	setActive(var0:Find("pic_win"), arg1.data4 >= arg0.activityBestRecord)
-	setText(var0:Find("time_txt"), arg0:FormatRecordTime(arg0.lastRecord))
+	setActive(var0_27:Find("pic_new_record"), arg1_27.data4 < arg0_27.activityBestRecord)
+	setActive(var0_27:Find("pic_win"), arg1_27.data4 >= arg0_27.activityBestRecord)
+	setText(var0_27:Find("time_txt"), arg0_27:FormatRecordTime(arg0_27.lastRecord))
 
-	local var1 = arg1:getConfig("config_client")[3]
+	local var1_27 = arg1_27:getConfig("config_client")[3]
 
-	setText(var0:Find("award_txt"), arg1.data2 > arg0.activityProgress and var1[arg1.data2] or 0)
-	onButton(arg0, var0:Find("button"), function()
-		arg0:HideResult()
-		arg0:SetActivity(arg1)
-		arg0:SetState(var0.GAME_STATE_BEGIN)
+	setText(var0_27:Find("award_txt"), arg1_27.data2 > arg0_27.activityProgress and var1_27[arg1_27.data2] or 0)
+	onButton(arg0_27, var0_27:Find("button"), function()
+		arg0_27:HideResult()
+		arg0_27:SetActivity(arg1_27)
+		arg0_27:SetState(var0_0.GAME_STATE_BEGIN)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.result, function()
-		triggerButton(arg0.backBtn)
+	onButton(arg0_27, arg0_27.result, function()
+		triggerButton(arg0_27.backBtn)
 	end, SFX_CANCEL)
-	pg.UIMgr.GetInstance():BlurPanel(arg0.result)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_27.result)
 end
 
-function var0.HideResult(arg0)
-	if isActive(arg0.result) then
-		setActive(arg0.result, false)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0.result, arg0._tf)
+function var0_0.HideResult(arg0_30)
+	if isActive(arg0_30.result) then
+		setActive(arg0_30.result, false)
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_30.result, arg0_30._tf)
 	end
 end
 
-function var0.FormatRecordTime(arg0, arg1)
-	local var0 = math.floor(arg1 / 60000)
+function var0_0.FormatRecordTime(arg0_31, arg1_31)
+	local var0_31 = math.floor(arg1_31 / 60000)
 
-	var0 = var0 >= 10 and var0 or "0" .. var0
+	var0_31 = var0_31 >= 10 and var0_31 or "0" .. var0_31
 
-	local var1 = math.floor(arg1 % 60000 / 1000)
+	local var1_31 = math.floor(arg1_31 % 60000 / 1000)
 
-	var1 = var1 >= 10 and var1 or "0" .. var1
+	var1_31 = var1_31 >= 10 and var1_31 or "0" .. var1_31
 
-	local var2 = math.floor(arg1 % 1000 / 10)
+	local var2_31 = math.floor(arg1_31 % 1000 / 10)
 
-	var2 = var2 >= 10 and var2 or "0" .. var2
+	var2_31 = var2_31 >= 10 and var2_31 or "0" .. var2_31
 
-	return var0 .. "'" .. var1 .. "'" .. var2
+	return var0_31 .. "'" .. var1_31 .. "'" .. var2_31
 end
 
-function var0.LinkLink(arg0, arg1, arg2)
-	assert(arg1.row ~= arg2.row or arg1.column ~= arg2.column)
-	assert(arg1.id == arg2.id)
+function var0_0.LinkLink(arg0_32, arg1_32, arg2_32)
+	assert(arg1_32.row ~= arg2_32.row or arg1_32.column ~= arg2_32.column)
+	assert(arg1_32.id == arg2_32.id)
 
-	local var0 = {
-		row = arg1.row,
-		column = arg1.column
+	local var0_32 = {
+		row = arg1_32.row,
+		column = arg1_32.column
 	}
-	local var1 = {
-		row = arg2.row,
-		column = arg2.column
+	local var1_32 = {
+		row = arg2_32.row,
+		column = arg2_32.column
 	}
-	local var2 = {}
-	local var3 = {}
+	local var2_32 = {}
+	local var3_32 = {}
 
-	table.insert(var2, var0)
-	table.insert(var3, var0)
+	table.insert(var2_32, var0_32)
+	table.insert(var3_32, var0_32)
 
-	for iter0 = 1, 3 do
-		local var4 = arg0:IterateByOneSnap(var1, arg1.id, var2, var3)
+	for iter0_32 = 1, 3 do
+		local var4_32 = arg0_32:IterateByOneSnap(var1_32, arg1_32.id, var2_32, var3_32)
 
-		if var4 then
-			local var5 = {
-				var4
+		if var4_32 then
+			local var5_32 = {
+				var4_32
 			}
 
-			while var4 and var4.from do
-				if var4.row ~= var4.from.row then
-					local var6 = var4.row > var4.from.row and -1 or 1
+			while var4_32 and var4_32.from do
+				if var4_32.row ~= var4_32.from.row then
+					local var6_32 = var4_32.row > var4_32.from.row and -1 or 1
 
-					for iter1 = var4.row + var6, var4.from.row, var6 do
-						table.insert(var5, {
-							row = iter1,
-							column = var4.column
+					for iter1_32 = var4_32.row + var6_32, var4_32.from.row, var6_32 do
+						table.insert(var5_32, {
+							row = iter1_32,
+							column = var4_32.column
 						})
 					end
-				elseif var4.from.column ~= var4.column then
-					local var7 = var4.column > var4.from.column and -1 or 1
+				elseif var4_32.from.column ~= var4_32.column then
+					local var7_32 = var4_32.column > var4_32.from.column and -1 or 1
 
-					for iter2 = var4.column + var7, var4.from.column, var7 do
-						table.insert(var5, {
-							row = var4.row,
-							column = iter2
+					for iter2_32 = var4_32.column + var7_32, var4_32.from.column, var7_32 do
+						table.insert(var5_32, {
+							row = var4_32.row,
+							column = iter2_32
 						})
 					end
 				else
 					assert(false)
 				end
 
-				var4 = var4.from
+				var4_32 = var4_32.from
 			end
 
-			return var5
+			return var5_32
 		end
 	end
 end
 
-function var0.IterateByOneSnap(arg0, arg1, arg2, arg3, arg4)
-	for iter0 = 1, #arg3 do
-		local var0 = arg0:FindDirectLinkPoint(arg2, arg3[iter0], arg4)
+function var0_0.IterateByOneSnap(arg0_33, arg1_33, arg2_33, arg3_33, arg4_33)
+	for iter0_33 = 1, #arg3_33 do
+		local var0_33 = arg0_33:FindDirectLinkPoint(arg2_33, arg3_33[iter0_33], arg4_33)
 
-		for iter1, iter2 in ipairs(var0) do
-			if iter2.row == arg1.row and iter2.column == arg1.column then
-				return iter2
+		for iter1_33, iter2_33 in ipairs(var0_33) do
+			if iter2_33.row == arg1_33.row and iter2_33.column == arg1_33.column then
+				return iter2_33
 			end
 
-			table.insert(arg3, iter2)
+			table.insert(arg3_33, iter2_33)
 		end
 	end
 
-	_.each(arg3, function(arg0)
-		arg4[arg0.row .. "_" .. arg0.column] = true
+	_.each(arg3_33, function(arg0_34)
+		arg4_33[arg0_34.row .. "_" .. arg0_34.column] = true
 	end)
 end
 
-function var0.FindDirectLinkPoint(arg0, arg1, arg2, arg3)
-	local var0 = {}
+function var0_0.FindDirectLinkPoint(arg0_35, arg1_35, arg2_35, arg3_35)
+	local var0_35 = {}
 
-	for iter0 = arg2.row - 1, 0, -1 do
-		local var1 = iter0 .. "_" .. arg2.column
-		local var2 = arg0.cards[iter0][arg2.column]
+	for iter0_35 = arg2_35.row - 1, 0, -1 do
+		local var1_35 = iter0_35 .. "_" .. arg2_35.column
+		local var2_35 = arg0_35.cards[iter0_35][arg2_35.column]
 
-		if var2.state == var0.CARD_STATE_NORMAL and var2.id ~= arg1 or arg3[var1] then
+		if var2_35.state == var0_0.CARD_STATE_NORMAL and var2_35.id ~= arg1_35 or arg3_35[var1_35] then
 			break
 		end
 
-		table.insert(var0, {
-			row = iter0,
-			column = arg2.column,
-			from = arg2
+		table.insert(var0_35, {
+			row = iter0_35,
+			column = arg2_35.column,
+			from = arg2_35
 		})
 	end
 
-	for iter1 = arg2.row + 1, var0.MAX_ROW - 1 do
-		local var3 = iter1 .. "_" .. arg2.column
-		local var4 = arg0.cards[iter1][arg2.column]
+	for iter1_35 = arg2_35.row + 1, var0_0.MAX_ROW - 1 do
+		local var3_35 = iter1_35 .. "_" .. arg2_35.column
+		local var4_35 = arg0_35.cards[iter1_35][arg2_35.column]
 
-		if var4.state == var0.CARD_STATE_NORMAL and var4.id ~= arg1 or arg3[var3] then
+		if var4_35.state == var0_0.CARD_STATE_NORMAL and var4_35.id ~= arg1_35 or arg3_35[var3_35] then
 			break
 		end
 
-		table.insert(var0, {
-			row = iter1,
-			column = arg2.column,
-			from = arg2
+		table.insert(var0_35, {
+			row = iter1_35,
+			column = arg2_35.column,
+			from = arg2_35
 		})
 	end
 
-	for iter2 = arg2.column - 1, 0, -1 do
-		local var5 = arg2.row .. "_" .. iter2
-		local var6 = arg0.cards[arg2.row][iter2]
+	for iter2_35 = arg2_35.column - 1, 0, -1 do
+		local var5_35 = arg2_35.row .. "_" .. iter2_35
+		local var6_35 = arg0_35.cards[arg2_35.row][iter2_35]
 
-		if var6.state == var0.CARD_STATE_NORMAL and var6.id ~= arg1 or arg3[var5] then
+		if var6_35.state == var0_0.CARD_STATE_NORMAL and var6_35.id ~= arg1_35 or arg3_35[var5_35] then
 			break
 		end
 
-		table.insert(var0, {
-			row = arg2.row,
-			column = iter2,
-			from = arg2
+		table.insert(var0_35, {
+			row = arg2_35.row,
+			column = iter2_35,
+			from = arg2_35
 		})
 	end
 
-	for iter3 = arg2.column + 1, var0.MAX_COLUMN - 1 do
-		local var7 = arg2.row .. "_" .. iter3
-		local var8 = arg0.cards[arg2.row][iter3]
+	for iter3_35 = arg2_35.column + 1, var0_0.MAX_COLUMN - 1 do
+		local var7_35 = arg2_35.row .. "_" .. iter3_35
+		local var8_35 = arg0_35.cards[arg2_35.row][iter3_35]
 
-		if var8.state == var0.CARD_STATE_NORMAL and var8.id ~= arg1 or arg3[var7] then
+		if var8_35.state == var0_0.CARD_STATE_NORMAL and var8_35.id ~= arg1_35 or arg3_35[var7_35] then
 			break
 		end
 
-		table.insert(var0, {
-			row = arg2.row,
-			column = iter3,
-			from = arg2
+		table.insert(var0_35, {
+			row = arg2_35.row,
+			column = iter3_35,
+			from = arg2_35
 		})
 	end
 
-	return var0
+	return var0_35
 end
 
-function var0.LinkLink1(arg0, arg1, arg2)
-	assert(arg1.row ~= arg2.row or arg1.column ~= arg2.column)
-	assert(arg1.id == arg2.id)
+function var0_0.LinkLink1(arg0_36, arg1_36, arg2_36)
+	assert(arg1_36.row ~= arg2_36.row or arg1_36.column ~= arg2_36.column)
+	assert(arg1_36.id == arg2_36.id)
 
-	local var0
-	local var1 = {
-		[arg1.row .. "_" .. arg1.column] = {
+	local var0_36
+	local var1_36 = {
+		[arg1_36.row .. "_" .. arg1_36.column] = {
 			rdir = 0,
 			cdir = 0,
 			snap = 0,
-			row = arg1.row,
-			column = arg1.column,
+			row = arg1_36.row,
+			column = arg1_36.column,
 			path = {}
 		}
 	}
-	local var2 = {
-		row = arg1.row,
-		column = arg1.column
+	local var2_36 = {
+		row = arg1_36.row,
+		column = arg1_36.column
 	}
-	local var3 = {
-		row = arg2.row,
-		column = arg2.column
+	local var3_36 = {
+		row = arg2_36.row,
+		column = arg2_36.column
 	}
-	local var4 = {
-		var2
+	local var4_36 = {
+		var2_36
 	}
-	local var5 = {}
+	local var5_36 = {}
 
-	while #var4 > 0 do
-		local var6 = table.remove(var4, 1)
+	while #var4_36 > 0 do
+		local var6_36 = table.remove(var4_36, 1)
 
-		if var6.row == var3.row and var6.column == var3.column then
-			var0 = var1[var6.row .. "_" .. var6.column].path
+		if var6_36.row == var3_36.row and var6_36.column == var3_36.column then
+			var0_36 = var1_36[var6_36.row .. "_" .. var6_36.column].path
 
 			break
 		end
 
-		table.insert(var5, var6)
+		table.insert(var5_36, var6_36)
 
-		local var7 = {
+		local var7_36 = {
 			{
 				row = 1,
 				column = 0
@@ -725,61 +725,61 @@ function var0.LinkLink1(arg0, arg1, arg2)
 			}
 		}
 
-		_.each(var7, function(arg0)
-			arg0.row = var6.row + arg0.row
-			arg0.column = var6.column + arg0.column
+		_.each(var7_36, function(arg0_37)
+			arg0_37.row = var6_36.row + arg0_37.row
+			arg0_37.column = var6_36.column + arg0_37.column
 
-			local var0 = _.any(var4, function(arg0)
-				return arg0.row == arg0.row and arg0.column == arg0.column
-			end) or _.any(var5, function(arg0)
-				return arg0.row == arg0.row and arg0.column == arg0.column
+			local var0_37 = _.any(var4_36, function(arg0_38)
+				return arg0_38.row == arg0_37.row and arg0_38.column == arg0_37.column
+			end) or _.any(var5_36, function(arg0_39)
+				return arg0_39.row == arg0_37.row and arg0_39.column == arg0_37.column
 			end)
-			local var1 = arg0.cards[arg0.row] and arg0.cards[arg0.row][arg0.column] or nil
+			local var1_37 = arg0_36.cards[arg0_37.row] and arg0_36.cards[arg0_37.row][arg0_37.column] or nil
 
-			if not var0 and (not var1 or var1.state == var0.CARD_STATE_LINKED or var1.state == var0.CARD_STATE_BLANK or var1.id == arg1.id) and arg0.row >= 0 and arg0.row < var0.MAX_ROW and arg0.column >= 0 and arg0.column < var0.MAX_COLUMN then
-				local var2 = var1[var6.row .. "_" .. var6.column]
-				local var3 = var2.snap
-				local var4 = arg0.row - var6.row
-				local var5 = arg0.column - var6.column
+			if not var0_37 and (not var1_37 or var1_37.state == var0_0.CARD_STATE_LINKED or var1_37.state == var0_0.CARD_STATE_BLANK or var1_37.id == arg1_36.id) and arg0_37.row >= 0 and arg0_37.row < var0_0.MAX_ROW and arg0_37.column >= 0 and arg0_37.column < var0_0.MAX_COLUMN then
+				local var2_37 = var1_36[var6_36.row .. "_" .. var6_36.column]
+				local var3_37 = var2_37.snap
+				local var4_37 = arg0_37.row - var6_36.row
+				local var5_37 = arg0_37.column - var6_36.column
 
-				if var2.rdir ~= 0 and var2.rdir ~= var4 or var2.cdir ~= 0 and var2.cdir ~= var5 then
-					var3 = var3 + 1
+				if var2_37.rdir ~= 0 and var2_37.rdir ~= var4_37 or var2_37.cdir ~= 0 and var2_37.cdir ~= var5_37 then
+					var3_37 = var3_37 + 1
 				end
 
-				if var3 <= 2 then
-					local var6 = Clone(var2.path)
+				if var3_37 <= 2 then
+					local var6_37 = Clone(var2_37.path)
 
-					table.insert(var6, arg0)
+					table.insert(var6_37, arg0_37)
 
-					var1[arg0.row .. "_" .. arg0.column] = {
-						row = arg0.row,
-						column = arg0.column,
-						snap = var3,
-						rdir = var4,
-						cdir = var5,
-						path = var6
+					var1_36[arg0_37.row .. "_" .. arg0_37.column] = {
+						row = arg0_37.row,
+						column = arg0_37.column,
+						snap = var3_37,
+						rdir = var4_37,
+						cdir = var5_37,
+						path = var6_37
 					}
 
-					local var7 = 0
+					local var7_37 = 0
 
-					for iter0 = #var4, 1, -1 do
-						local var8 = var4[iter0]
-						local var9 = var1[var8.row .. "_" .. var8.column]
+					for iter0_37 = #var4_36, 1, -1 do
+						local var8_37 = var4_36[iter0_37]
+						local var9_37 = var1_36[var8_37.row .. "_" .. var8_37.column]
 
-						if var3 > var9.snap or var3 == var9.snap and #var6 > #var9.path then
-							var7 = iter0
+						if var3_37 > var9_37.snap or var3_37 == var9_37.snap and #var6_37 > #var9_37.path then
+							var7_37 = iter0_37
 
 							break
 						end
 					end
 
-					table.insert(var4, var7 + 1, arg0)
+					table.insert(var4_36, var7_37 + 1, arg0_37)
 				end
 			end
 		end)
 	end
 
-	return var0
+	return var0_36
 end
 
-return var0
+return var0_0

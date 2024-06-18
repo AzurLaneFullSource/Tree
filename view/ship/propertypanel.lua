@@ -1,6 +1,6 @@
-﻿local var0 = class("PropertyPanel")
-local var1 = 24.5
-local var2 = {
+﻿local var0_0 = class("PropertyPanel")
+local var1_0 = 24.5
+local var2_0 = {
 	"cannon",
 	"torpedo",
 	"air",
@@ -8,7 +8,7 @@ local var2 = {
 	"antiaircraft",
 	"durability"
 }
-local var3 = {
+local var3_0 = {
 	E = 1,
 	C = 3,
 	A = 5,
@@ -16,7 +16,7 @@ local var3 = {
 	S = 6,
 	B = 4
 }
-local var4 = {
+local var4_0 = {
 	{
 		0,
 		70.8
@@ -42,117 +42,117 @@ local var4 = {
 		38.4
 	}
 }
-local var5 = 1
-local var6 = 3
-local var7 = 4
-local var8 = 2
-local var9 = 5
+local var5_0 = 1
+local var6_0 = 3
+local var7_0 = 4
+local var8_0 = 2
+local var9_0 = 5
 
-var0.TypeRotation = 1
-var0.TypeFlat = 2
+var0_0.TypeRotation = 1
+var0_0.TypeFlat = 2
 
-function var0.Ctor(arg0, arg1, arg2)
-	var1 = arg2 or var1
-	arg0.tf = arg1
-	arg0.propertyTFs = findTF(arg0.tf, "property")
-	arg0.drawTF = findTF(arg0.tf, "property/draw")
-	arg0.drawPolygon = arg0.drawTF:GetComponent("DrawPolygon")
-	arg0.drawTF2 = findTF(arg0.tf, "property/draw_2")
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var1_0 = arg2_1 or var1_0
+	arg0_1.tf = arg1_1
+	arg0_1.propertyTFs = findTF(arg0_1.tf, "property")
+	arg0_1.drawTF = findTF(arg0_1.tf, "property/draw")
+	arg0_1.drawPolygon = arg0_1.drawTF:GetComponent("DrawPolygon")
+	arg0_1.drawTF2 = findTF(arg0_1.tf, "property/draw_2")
 
-	if arg0.drawTF2 then
-		arg0.drawPolygon2 = arg0.drawTF2:GetComponent("DrawPolygon")
+	if arg0_1.drawTF2 then
+		arg0_1.drawPolygon2 = arg0_1.drawTF2:GetComponent("DrawPolygon")
 	end
 end
 
-function var0.initProperty(arg0, arg1, arg2)
-	arg0.type = arg2 or var0.TypeRotation
+function var0_0.initProperty(arg0_2, arg1_2, arg2_2)
+	arg0_2.type = arg2_2 or var0_0.TypeRotation
 
-	local var0 = Ship.getGroupIdByConfigId(arg1)
-	local var1 = ShipGroup.GetGroupConfig(var0).property_hexagon
+	local var0_2 = Ship.getGroupIdByConfigId(arg1_2)
+	local var1_2 = ShipGroup.GetGroupConfig(var0_2).property_hexagon
 
-	arg0:initRadar(var1)
+	arg0_2:initRadar(var1_2)
 end
 
-function var0.initRadar(arg0, arg1)
-	local var0 = {}
-	local var1 = {}
+function var0_0.initRadar(arg0_3, arg1_3)
+	local var0_3 = {}
+	local var1_3 = {}
 
-	table.insert(var0, Vector3(0, 0, 0))
+	table.insert(var0_3, Vector3(0, 0, 0))
 
-	for iter0, iter1 in ipairs(var2) do
-		local var2 = arg0.propertyTFs:Find(iter1 .. "_grade")
-		local var3 = arg1[iter0]
+	for iter0_3, iter1_3 in ipairs(var2_0) do
+		local var2_3 = arg0_3.propertyTFs:Find(iter1_3 .. "_grade")
+		local var3_3 = arg1_3[iter0_3]
 
-		arg0:setSpriteTo("resources/" .. var3, var2:Find("grade"), true)
+		arg0_3:setSpriteTo("resources/" .. var3_3, var2_3:Find("grade"), true)
 
-		if arg0.type == var0.TypeRotation then
-			table.insert(var0, arg0:getGradeCoordinate(var3, iter0))
-		elseif arg0.type == var0.TypeFlat then
-			table.insert(var0, arg0:getGradeCoordinate1(var3, iter0))
+		if arg0_3.type == var0_0.TypeRotation then
+			table.insert(var0_3, arg0_3:getGradeCoordinate(var3_3, iter0_3))
+		elseif arg0_3.type == var0_0.TypeFlat then
+			table.insert(var0_3, arg0_3:getGradeCoordinate1(var3_3, iter0_3))
 		end
 
-		table.insert(var1, 0)
-		table.insert(var1, iter0)
+		table.insert(var1_3, 0)
+		table.insert(var1_3, iter0_3)
 
-		if iter0 + 1 > #var2 then
-			table.insert(var1, 1)
+		if iter0_3 + 1 > #var2_0 then
+			table.insert(var1_3, 1)
 		else
-			table.insert(var1, iter0 + 1)
+			table.insert(var1_3, iter0_3 + 1)
 		end
 
-		if findTF(var2, "Text") and findTF(var2, "Text"):GetComponent(typeof(Text)) then
-			setText(findTF(var2, "Text"), i18n("word_attr_" .. iter1))
+		if findTF(var2_3, "Text") and findTF(var2_3, "Text"):GetComponent(typeof(Text)) then
+			setText(findTF(var2_3, "Text"), i18n("word_attr_" .. iter1_3))
 		end
 	end
 
-	arg0.drawPolygon:draw(var0, var1)
+	arg0_3.drawPolygon:draw(var0_3, var1_3)
 
-	if arg0.drawPolygon2 then
-		arg0.drawPolygon2:draw(var0, var1)
+	if arg0_3.drawPolygon2 then
+		arg0_3.drawPolygon2:draw(var0_3, var1_3)
 	end
 end
 
-function var0.getGradeCoordinate(arg0, arg1, arg2)
-	local var0 = 0.163 * var3[arg1] * var4[arg2][1]
-	local var1 = 0.163 * var3[arg1] * var4[arg2][2]
+function var0_0.getGradeCoordinate(arg0_4, arg1_4, arg2_4)
+	local var0_4 = 0.163 * var3_0[arg1_4] * var4_0[arg2_4][1]
+	local var1_4 = 0.163 * var3_0[arg1_4] * var4_0[arg2_4][2]
 
-	return Vector3(var0, var1, 0)
+	return Vector3(var0_4, var1_4, 0)
 end
 
-function var0.getGradeCoordinate1(arg0, arg1, arg2)
-	local var0 = 0.66 * var3[arg1]
+function var0_0.getGradeCoordinate1(arg0_5, arg1_5, arg2_5)
+	local var0_5 = 0.66 * var3_0[arg1_5]
 
-	if arg2 == var8 then
-		return Vector3(-var0 * var1, 0, 0)
-	elseif arg2 == var9 then
-		return Vector3(var0 * var1, 0, 0)
+	if arg2_5 == var8_0 then
+		return Vector3(-var0_5 * var1_0, 0, 0)
+	elseif arg2_5 == var9_0 then
+		return Vector3(var0_5 * var1_0, 0, 0)
 	else
-		local var1 = 60
-		local var2 = var0 * var1
-		local var3 = math.sin(math.rad(var1)) * var2
-		local var4 = math.cos(math.rad(var1)) * var2
+		local var1_5 = 60
+		local var2_5 = var0_5 * var1_0
+		local var3_5 = math.sin(math.rad(var1_5)) * var2_5
+		local var4_5 = math.cos(math.rad(var1_5)) * var2_5
 
-		if arg2 == var5 then
-			var4 = -var4
-		elseif arg2 == var6 then
-			var4 = -var4
-			var3 = -var3
-		elseif arg2 == var7 then
-			var3 = -var3
+		if arg2_5 == var5_0 then
+			var4_5 = -var4_5
+		elseif arg2_5 == var6_0 then
+			var4_5 = -var4_5
+			var3_5 = -var3_5
+		elseif arg2_5 == var7_0 then
+			var3_5 = -var3_5
 		end
 
-		return Vector3(var4, var3, 0)
+		return Vector3(var4_5, var3_5, 0)
 	end
 end
 
-function var0.setSpriteTo(arg0, arg1, arg2, arg3)
-	local var0 = arg2:GetComponent(typeof(Image))
+function var0_0.setSpriteTo(arg0_6, arg1_6, arg2_6, arg3_6)
+	local var0_6 = arg2_6:GetComponent(typeof(Image))
 
-	var0.sprite = findTF(arg0.tf, arg1):GetComponent(typeof(Image)).sprite
+	var0_6.sprite = findTF(arg0_6.tf, arg1_6):GetComponent(typeof(Image)).sprite
 
-	if arg3 then
-		var0:SetNativeSize()
+	if arg3_6 then
+		var0_6:SetNativeSize()
 	end
 end
 
-return var0
+return var0_0

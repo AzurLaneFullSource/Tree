@@ -1,67 +1,67 @@
-﻿local var0 = class("NewServerShopMultiWindow", import("..msgbox.ShopMultiWindow"))
+﻿local var0_0 = class("NewServerShopMultiWindow", import("..msgbox.ShopMultiWindow"))
 
-function var0.InitWindow(arg0, arg1, arg2)
-	local var0 = {
-		id = arg1:getConfig("goods")[1],
-		type = arg1:getConfig("type"),
-		count = arg1:getConfig("num")
+function var0_0.InitWindow(arg0_1, arg1_1, arg2_1)
+	local var0_1 = {
+		id = arg1_1:getConfig("goods")[1],
+		type = arg1_1:getConfig("type"),
+		count = arg1_1:getConfig("num")
 	}
-	local var1, var2, var3 = arg1:CheckTimeLimit()
+	local var1_1, var2_1, var3_1 = arg1_1:CheckTimeLimit()
 
-	setActive(arg0.timeLimitTF, var1)
+	setActive(arg0_1.timeLimitTF, var1_1)
 
-	if var1 and var2 then
-		local var4 = getProxy(ActivityProxy):getActivityById(Item.getConfigData(var0.id).link_id)
-		local var5 = pg.TimeMgr.GetInstance():STimeDescC(var4.stopTime, "%m.%d")
+	if var1_1 and var2_1 then
+		local var4_1 = getProxy(ActivityProxy):getActivityById(Item.getConfigData(var0_1.id).link_id)
+		local var5_1 = pg.TimeMgr.GetInstance():STimeDescC(var4_1.stopTime, "%m.%d")
 
-		setText(arg0:findTF("Text", arg0.timeLimitTF), i18n("eventshop_time_hint", var5))
+		setText(arg0_1:findTF("Text", arg0_1.timeLimitTF), i18n("eventshop_time_hint", var5_1))
 	end
 
-	local var6 = Drop.New({
-		type = arg1:getConfig("resource_category"),
-		id = arg1:getConfig("resource_type")
+	local var6_1 = Drop.New({
+		type = arg1_1:getConfig("resource_category"),
+		id = arg1_1:getConfig("resource_type")
 	}):getOwnedCount()
-	local var7 = math.max(math.floor(var6 / arg1:getConfig("resource_num")), 1)
+	local var7_1 = math.max(math.floor(var6_1 / arg1_1:getConfig("resource_num")), 1)
 
-	if arg1:getConfig("goods_purchase_limit") ~= 0 then
-		local var8 = arg1:GetPurchasableCnt()
+	if arg1_1:getConfig("goods_purchase_limit") ~= 0 then
+		local var8_1 = arg1_1:GetPurchasableCnt()
 
-		var7 = math.min(var7, math.max(0, var8))
+		var7_1 = math.min(var7_1, math.max(0, var8_1))
 	end
 
-	local function var9(arg0)
-		arg0 = math.max(arg0, 1)
-		arg0 = math.min(arg0, var7)
-		arg0.countTF.text = arg0
-		arg0.curCount = arg0
-		arg0.itemCountTF.text = arg0 * arg1:getConfig("num")
+	local function var9_1(arg0_2)
+		arg0_2 = math.max(arg0_2, 1)
+		arg0_2 = math.min(arg0_2, var7_1)
+		arg0_1.countTF.text = arg0_2
+		arg0_1.curCount = arg0_2
+		arg0_1.itemCountTF.text = arg0_2 * arg1_1:getConfig("num")
 	end
 
-	var9(1)
-	updateDrop(arg0.topItem:Find("left/IconTpl"), var0)
-	UpdateOwnDisplay(arg0.ownerTF, var0)
-	RegisterDetailButton(arg0, arg0.detailTF, var0)
+	var9_1(1)
+	updateDrop(arg0_1.topItem:Find("left/IconTpl"), var0_1)
+	UpdateOwnDisplay(arg0_1.ownerTF, var0_1)
+	RegisterDetailButton(arg0_1, arg0_1.detailTF, var0_1)
 
-	arg0.nameTF.text = var0:getConfig("name")
-	arg0.descTF.text = var0.desc or var0:getConfig("desc")
+	arg0_1.nameTF.text = var0_1:getConfig("name")
+	arg0_1.descTF.text = var0_1.desc or var0_1:getConfig("desc")
 
-	updateDrop(arg0.bottomItem, var0)
-	onButton(arg0, arg0.confirmBtn, function()
-		if arg2 then
-			arg2(arg1, arg0.curCount, var0:getConfig("name"))
+	updateDrop(arg0_1.bottomItem, var0_1)
+	onButton(arg0_1, arg0_1.confirmBtn, function()
+		if arg2_1 then
+			arg2_1(arg1_1, arg0_1.curCount, var0_1:getConfig("name"))
 		end
 
-		arg0:Close()
+		arg0_1:Close()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.leftBtn, function()
-		var9(arg0.curCount - 1)
+	onButton(arg0_1, arg0_1.leftBtn, function()
+		var9_1(arg0_1.curCount - 1)
 	end)
-	onButton(arg0, arg0.rightBtn, function()
-		var9(arg0.curCount + 1)
+	onButton(arg0_1, arg0_1.rightBtn, function()
+		var9_1(arg0_1.curCount + 1)
 	end)
-	onButton(arg0, arg0.maxBtn, function()
-		var9(var7)
+	onButton(arg0_1, arg0_1.maxBtn, function()
+		var9_1(var7_1)
 	end)
 end
 
-return var0
+return var0_0

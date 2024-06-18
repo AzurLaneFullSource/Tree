@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_37 = {}
+var0_0.word_template_37 = {}
 
-local var1 = var0.word_template_37
+local var1_0 = var0_0.word_template_37
 
 function temp()
-	var1.傴 = {
+	var1_0.傴 = {
 		僂 = {
 			this = true
 		},
@@ -20,7 +20,7 @@ end
 temp()
 
 function temp()
-	var1.咥 = {
+	var1_0.咥 = {
 		this = {
 			this = true
 		}
@@ -30,7 +30,7 @@ end
 temp()
 
 function temp()
-	var1.喘 = {
+	var1_0.喘 = {
 		ぎ = {
 			this = true
 		}
@@ -40,7 +40,7 @@ end
 temp()
 
 function temp()
-	var1.專 = {
+	var1_0.專 = {
 		制 = {
 			this = true
 		},
@@ -60,7 +60,7 @@ end
 temp()
 
 function temp()
-	var1.癩 = {
+	var1_0.癩 = {
 		病 = {
 			this = true
 		}
@@ -70,7 +70,7 @@ end
 temp()
 
 function temp()
-	var1.穢 = {
+	var1_0.穢 = {
 		多 = {
 			this = true
 		}
@@ -80,7 +80,7 @@ end
 temp()
 
 function temp()
-	var1.聊 = {
+	var1_0.聊 = {
 		this = {
 			this = true
 		},

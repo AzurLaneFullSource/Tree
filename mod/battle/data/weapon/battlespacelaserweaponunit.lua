@@ -1,129 +1,129 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConst
-local var2 = var0.Battle.BattleConfig
-local var3 = var0.Battle.BattleFormulas
-local var4 = var0.Battle.BattleDataFunction
-local var5 = class("BattleSpaceLaserWeaponUnit", var0.Battle.BattleWeaponUnit)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConst
+local var2_0 = var0_0.Battle.BattleConfig
+local var3_0 = var0_0.Battle.BattleFormulas
+local var4_0 = var0_0.Battle.BattleDataFunction
+local var5_0 = class("BattleSpaceLaserWeaponUnit", var0_0.Battle.BattleWeaponUnit)
 
-var0.Battle.BattleSpaceLaserWeaponUnit = var5
-var5.__name = "BattleSpaceLaserWeaponUnit"
+var0_0.Battle.BattleSpaceLaserWeaponUnit = var5_0
+var5_0.__name = "BattleSpaceLaserWeaponUnit"
 
-function var5.createMajorEmitter(arg0, arg1, arg2, arg3, arg4, arg5)
-	local var0 = arg0:CreateEmitter(arg3, arg1, arg2)
+function var5_0.createMajorEmitter(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1, arg5_1)
+	local var0_1 = arg0_1:CreateEmitter(arg3_1, arg1_1, arg2_1)
 
-	arg0._majorEmitterList[#arg0._majorEmitterList + 1] = var0
+	arg0_1._majorEmitterList[#arg0_1._majorEmitterList + 1] = var0_1
 
-	return var0
+	return var0_1
 end
 
-function var5.CreateEmitter(arg0, arg1, arg2, arg3)
-	arg1 = arg1 or var5.EMITTER_NORMAL
+function var5_0.CreateEmitter(arg0_2, arg1_2, arg2_2, arg3_2)
+	arg1_2 = arg1_2 or var5_0.EMITTER_NORMAL
 
-	local var0
-	local var1
-	local var2
-	local var3 = 0
+	local var0_2
+	local var1_2
+	local var2_2
+	local var3_2 = 0
 
-	local function var4(arg0, arg1, arg2, arg3, arg4)
-		if arg0._currentState == arg0.STATE_DISABLE then
+	local function var4_2(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
+		if arg0_2._currentState == arg0_2.STATE_DISABLE then
 			return
 		end
 
-		local var0 = arg0._emitBulletIDList[arg3]
-		local var1 = arg0:Spawn(var0, arg4, var5.INTERNAL)
+		local var0_3 = arg0_2._emitBulletIDList[arg3_2]
+		local var1_3 = arg0_2:Spawn(var0_3, arg4_3, var5_0.INTERNAL)
 
-		var3 = var3 + 1
-		arg4 = arg0._tmpData.aim_type == var1.WeaponAimType.AIM and arg4 or nil
+		var3_2 = var3_2 + 1
+		arg4_3 = arg0_2._tmpData.aim_type == var1_0.WeaponAimType.AIM and arg4_3 or nil
 
-		var1:SetOffsetPriority(arg3)
-		var1:SetShiftInfo(arg0, arg1)
-		var1:setTrackingTarget(arg4)
-		var1:SetYAngle(var1)
-		var1:SetLifeTime(var1:GetTemplate().extra_param.attack_time)
-		var1:RegisterLifeEndCB(function()
-			var3 = var3 - 1
+		var1_3:SetOffsetPriority(arg3_3)
+		var1_3:SetShiftInfo(arg0_3, arg1_3)
+		var1_3:setTrackingTarget(arg4_3)
+		var1_3:SetYAngle(var1_2)
+		var1_3:SetLifeTime(var1_3:GetTemplate().extra_param.attack_time)
+		var1_3:RegisterLifeEndCB(function()
+			var3_2 = var3_2 - 1
 
-			if var3 > 0 then
+			if var3_2 > 0 then
 				return
 			end
 
-			if arg0._currentState == arg0.STATE_DISABLE then
+			if arg0_2._currentState == arg0_2.STATE_DISABLE then
 				return
 			end
 
-			for iter0, iter1 in ipairs(arg0._majorEmitterList) do
-				if iter1:GetState() ~= iter1.STATE_STOP then
+			for iter0_4, iter1_4 in ipairs(arg0_2._majorEmitterList) do
+				if iter1_4:GetState() ~= iter1_4.STATE_STOP then
 					return
 				end
 			end
 
-			arg0:EnterCoolDown()
+			arg0_2:EnterCoolDown()
 		end)
 
-		local var2 = var2 or arg4 and pg.Tool.FilterY(arg4:GetCLDZCenterPosition())
+		local var2_3 = var2_2 or arg4_3 and pg.Tool.FilterY(arg4_3:GetCLDZCenterPosition())
 
-		var1:SetRotateInfo(var2, arg0:GetBaseAngle(), arg2)
-		arg0:DispatchBulletEvent(var1, var0 or var2)
+		var1_3:SetRotateInfo(var2_3, arg0_2:GetBaseAngle(), arg2_3)
+		arg0_2:DispatchBulletEvent(var1_3, var0_2 or var2_3)
 
-		return var1
+		return var1_3
 	end
 
-	local var5 = function(arg0, arg1, arg2, arg3, arg4)
-		if arg0._currentState == arg0.STATE_DISABLE then
+	local function var5_2(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5)
+		if arg0_2._currentState == arg0_2.STATE_DISABLE then
 			return
 		end
 
-		local var0 = arg0._emitBulletIDList[arg3]
-		local var1 = var4.GetBulletTmpDataFromID(var0).extra_param.aim_time
+		local var0_5 = arg0_2._emitBulletIDList[arg3_2]
+		local var1_5 = var4_0.GetBulletTmpDataFromID(var0_5).extra_param.aim_time
 
-		if not var1 or not (var1 > 0) then
-			var4(arg0, arg1, arg2, arg3, arg4)
+		if not var1_5 or not (var1_5 > 0) then
+			var4_2(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5)
 
 			return
 		end
 
-		local var2 = arg0:Spawn(var0, arg4, var5.INTERNAL)
+		local var2_5 = arg0_2:Spawn(var0_5, arg4_5, var5_0.INTERNAL)
 
-		var3 = var3 + 1
-		arg4 = arg0._tmpData.aim_type == var1.WeaponAimType.AIM and arg4 or nil
+		var3_2 = var3_2 + 1
+		arg4_5 = arg0_2._tmpData.aim_type == var1_0.WeaponAimType.AIM and arg4_5 or nil
 
-		var2:setTrackingTarget(arg4)
-		var2:SetOffsetPriority(arg3)
-		var2:SetShiftInfo(arg0, arg1)
-		var2:SetLifeTime(var2:GetTemplate().extra_param.aim_time)
-		var2:SetAlert(true)
-		var2:RegisterLifeEndCB(function()
-			var3 = var3 - 1
-			var0 = pg.Tool.FilterY(var2:GetPosition() - Vector3(arg0, 0, arg1))
-			var1 = var2:GetYAngle()
-			var2 = var2:GetRotateInfo()
+		var2_5:setTrackingTarget(arg4_5)
+		var2_5:SetOffsetPriority(arg3_5)
+		var2_5:SetShiftInfo(arg0_5, arg1_5)
+		var2_5:SetLifeTime(var2_5:GetTemplate().extra_param.aim_time)
+		var2_5:SetAlert(true)
+		var2_5:RegisterLifeEndCB(function()
+			var3_2 = var3_2 - 1
+			var0_2 = pg.Tool.FilterY(var2_5:GetPosition() - Vector3(arg0_5, 0, arg1_5))
+			var1_2 = var2_5:GetYAngle()
+			var2_2 = var2_5:GetRotateInfo()
 
-			var4(arg0, arg1, arg2, arg3, arg4)
+			var4_2(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5)
 		end)
 
-		local var3 = var2:GetTemplate().alert_fx
+		local var3_5 = var2_5:GetTemplate().alert_fx
 
-		if var3 and #var3 > 0 then
-			var2:SetModleID(var3)
+		if var3_5 and #var3_5 > 0 then
+			var2_5:SetModleID(var3_5)
 		end
 
-		local var4 = arg4 and pg.Tool.FilterY(arg4:GetCLDZCenterPosition())
+		local var4_5 = arg4_5 and pg.Tool.FilterY(arg4_5:GetCLDZCenterPosition())
 
-		var2:SetRotateInfo(var4, arg0:GetBaseAngle(), arg2)
-		arg0:DispatchBulletEvent(var2, var4)
+		var2_5:SetRotateInfo(var4_5, arg0_2:GetBaseAngle(), arg2_5)
+		arg0_2:DispatchBulletEvent(var2_5, var4_5)
 
-		return var2
+		return var2_5
 	end
 
-	local function var6()
+	local function var6_2()
 		return
 	end
 
-	return (var0.Battle[arg1].New(var5, var6, arg2))
+	return (var0_0.Battle[arg1_2].New(var5_2, var6_2, arg2_2))
 end
 
-function var5.SingleFire(arg0, arg1, arg2, arg3, arg4)
+function var5_0.SingleFire(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 	assert(false, "Not Support only fire for BattleSpaceLaserWeapon")
 end

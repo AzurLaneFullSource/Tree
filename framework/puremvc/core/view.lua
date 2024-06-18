@@ -1,134 +1,134 @@
-﻿local var0 = import("..patterns.observer.Observer")
-local var1 = class("View")
+﻿local var0_0 = import("..patterns.observer.Observer")
+local var1_0 = class("View")
 
-function var1.Ctor(arg0, arg1)
-	if var1.instanceMap[arg1] ~= nil then
-		error(var1.MULTITON_MSG)
+function var1_0.Ctor(arg0_1, arg1_1)
+	if var1_0.instanceMap[arg1_1] ~= nil then
+		error(var1_0.MULTITON_MSG)
 	end
 
-	arg0.multitonKey = arg1
-	var1.instanceMap[arg0.multitonKey] = arg0
-	arg0.mediatorMap = {}
-	arg0.observerMap = {}
+	arg0_1.multitonKey = arg1_1
+	var1_0.instanceMap[arg0_1.multitonKey] = arg0_1
+	arg0_1.mediatorMap = {}
+	arg0_1.observerMap = {}
 
-	arg0:initializeView()
+	arg0_1:initializeView()
 end
 
-function var1.initializeView(arg0)
+function var1_0.initializeView(arg0_2)
 	return
 end
 
-function var1.getInstance(arg0)
-	if arg0 == nil then
+function var1_0.getInstance(arg0_3)
+	if arg0_3 == nil then
 		return nil
 	end
 
-	if var1.instanceMap[arg0] == nil then
-		return var1.New(arg0)
+	if var1_0.instanceMap[arg0_3] == nil then
+		return var1_0.New(arg0_3)
 	else
-		return var1.instanceMap[arg0]
+		return var1_0.instanceMap[arg0_3]
 	end
 end
 
-function var1.registerObserver(arg0, arg1, arg2)
-	if arg0.observerMap[arg1] ~= nil then
-		table.insert(arg0.observerMap[arg1], arg2)
+function var1_0.registerObserver(arg0_4, arg1_4, arg2_4)
+	if arg0_4.observerMap[arg1_4] ~= nil then
+		table.insert(arg0_4.observerMap[arg1_4], arg2_4)
 	else
-		if arg1 == nil then
+		if arg1_4 == nil then
 			print(debug.traceback())
 		end
 
-		arg0.observerMap[arg1] = {
-			arg2
+		arg0_4.observerMap[arg1_4] = {
+			arg2_4
 		}
 	end
 end
 
-function var1.notifyObservers(arg0, arg1)
-	local var0 = arg0.observerMap[arg1:getName()]
+function var1_0.notifyObservers(arg0_5, arg1_5)
+	local var0_5 = arg0_5.observerMap[arg1_5:getName()]
 
-	if var0 ~= nil then
-		local var1 = table.shallowCopy(var0)
+	if var0_5 ~= nil then
+		local var1_5 = table.shallowCopy(var0_5)
 
-		for iter0, iter1 in pairs(var1) do
-			if table.contains(var0, iter1) then
-				iter1:notifyObserver(arg1)
+		for iter0_5, iter1_5 in pairs(var1_5) do
+			if table.contains(var0_5, iter1_5) then
+				iter1_5:notifyObserver(arg1_5)
 			end
 		end
 
-		local var2
+		local var2_5
 	end
 end
 
-function var1.removeObserver(arg0, arg1, arg2)
-	local var0 = arg0.observerMap[arg1]
+function var1_0.removeObserver(arg0_6, arg1_6, arg2_6)
+	local var0_6 = arg0_6.observerMap[arg1_6]
 
-	for iter0, iter1 in pairs(var0) do
-		if iter1:compareNotifyContext(arg2) then
-			table.remove(var0, iter0)
+	for iter0_6, iter1_6 in pairs(var0_6) do
+		if iter1_6:compareNotifyContext(arg2_6) then
+			table.remove(var0_6, iter0_6)
 
 			break
 		end
 	end
 
-	if #var0 == 0 then
-		arg0.observerMap[arg1] = nil
+	if #var0_6 == 0 then
+		arg0_6.observerMap[arg1_6] = nil
 	end
 end
 
-function var1.registerMediator(arg0, arg1)
-	if arg0.mediatorMap[arg1:getMediatorName()] ~= nil then
+function var1_0.registerMediator(arg0_7, arg1_7)
+	if arg0_7.mediatorMap[arg1_7:getMediatorName()] ~= nil then
 		return
 	end
 
-	arg1:initializeNotifier(arg0.multitonKey)
+	arg1_7:initializeNotifier(arg0_7.multitonKey)
 
-	arg0.mediatorMap[arg1:getMediatorName()] = arg1
+	arg0_7.mediatorMap[arg1_7:getMediatorName()] = arg1_7
 
-	local var0 = arg1:listNotificationInterests()
+	local var0_7 = arg1_7:listNotificationInterests()
 
-	if #var0 > 0 then
-		local var1 = var0.New(arg1.handleNotification, arg1)
+	if #var0_7 > 0 then
+		local var1_7 = var0_0.New(arg1_7.handleNotification, arg1_7)
 
-		for iter0, iter1 in pairs(var0) do
-			arg0:registerObserver(iter1, var1)
+		for iter0_7, iter1_7 in pairs(var0_7) do
+			arg0_7:registerObserver(iter1_7, var1_7)
 		end
 	end
 
-	arg1:onRegister()
+	arg1_7:onRegister()
 end
 
-function var1.retrieveMediator(arg0, arg1)
-	return arg0.mediatorMap[arg1]
+function var1_0.retrieveMediator(arg0_8, arg1_8)
+	return arg0_8.mediatorMap[arg1_8]
 end
 
-function var1.removeMediator(arg0, arg1)
-	local var0 = arg0.mediatorMap[arg1]
+function var1_0.removeMediator(arg0_9, arg1_9)
+	local var0_9 = arg0_9.mediatorMap[arg1_9]
 
-	if var0 ~= nil then
-		local var1 = var0:listNotificationInterests()
+	if var0_9 ~= nil then
+		local var1_9 = var0_9:listNotificationInterests()
 
-		for iter0, iter1 in pairs(var1) do
-			arg0:removeObserver(iter1, var0)
+		for iter0_9, iter1_9 in pairs(var1_9) do
+			arg0_9:removeObserver(iter1_9, var0_9)
 		end
 
-		arg0.mediatorMap[arg1] = nil
+		arg0_9.mediatorMap[arg1_9] = nil
 
-		var0:onRemove()
+		var0_9:onRemove()
 	end
 
-	return var0
+	return var0_9
 end
 
-function var1.hasMediator(arg0, arg1)
-	return arg0.mediatorMap[arg1] ~= nil
+function var1_0.hasMediator(arg0_10, arg1_10)
+	return arg0_10.mediatorMap[arg1_10] ~= nil
 end
 
-function var1.removeView(arg0)
-	var1.instanceMap[arg0] = nil
+function var1_0.removeView(arg0_11)
+	var1_0.instanceMap[arg0_11] = nil
 end
 
-var1.instanceMap = {}
-var1.MULTITON_MSG = "View instance for this Multiton key already constructed!"
+var1_0.instanceMap = {}
+var1_0.MULTITON_MSG = "View instance for this Multiton key already constructed!"
 
-return var1
+return var1_0

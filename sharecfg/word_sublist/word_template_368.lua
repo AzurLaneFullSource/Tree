@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_368 = {}
+var0_0.word_template_368 = {}
 
-local var1 = var0.word_template_368
+local var1_0 = var0_0.word_template_368
 
 function temp()
-	var1.稍 = {
+	var1_0.稍 = {
 		有 = {
 			常 = {
 				识 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.⑥ = {
+	var1_0.⑥ = {
 		月 = {
 			三 = {
 				五 = {
@@ -101,7 +101,7 @@ end
 temp()
 
 function temp()
-	var1["3"] = {
+	var1_0["3"] = {
 		["5"] = {
 			日 = {
 				五 = {
@@ -503,7 +503,7 @@ end
 temp()
 
 function temp()
-	var1.③ = {
+	var1_0.③ = {
 		⑤ = {
 			日 = {
 				五 = {
@@ -553,7 +553,7 @@ end
 temp()
 
 function temp()
-	var1.叁 = {
+	var1_0.叁 = {
 		伍 = {
 			日 = {
 				五 = {
@@ -627,7 +627,7 @@ end
 temp()
 
 function temp()
-	var1.Ⅷ = {
+	var1_0.Ⅷ = {
 		九 = {
 			运 = {
 				动 = {
@@ -1016,7 +1016,7 @@ end
 temp()
 
 function temp()
-	var1.① = {
+	var1_0.① = {
 		⑨ = {
 			⑧ = {
 				⑨ = {

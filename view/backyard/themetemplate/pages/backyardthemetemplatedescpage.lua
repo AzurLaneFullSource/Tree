@@ -1,8 +1,8 @@
-﻿local var0 = class("BackYardThemeTemplateDescPage", import("....base.BaseSubView"))
-local var1 = 1
-local var2 = 2
-local var3 = 3
-local var4 = {
+﻿local var0_0 = class("BackYardThemeTemplateDescPage", import("....base.BaseSubView"))
+local var1_0 = 1
+local var2_0 = 2
+local var3_0 = 3
+local var4_0 = {
 	{
 		"text_desc",
 		"text_allin"
@@ -18,291 +18,291 @@ local var4 = {
 	}
 }
 
-local function var5(arg0)
-	return var4[arg0]
+local function var5_0(arg0_1)
+	return var4_0[arg0_1]
 end
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_2)
 	return "BackYardThemeTemplateDescPage"
 end
 
-function var0.ThemeTemplateUpdate(arg0, arg1)
-	if arg0.template and arg0.template.id == arg1.id then
-		arg0.template = arg1
+function var0_0.ThemeTemplateUpdate(arg0_3, arg1_3)
+	if arg0_3.template and arg0_3.template.id == arg1_3.id then
+		arg0_3.template = arg1_3
 
-		arg0:Flush()
+		arg0_3:Flush()
 	end
 end
 
-function var0.UpdateDorm(arg0, arg1)
-	arg0.dorm = arg1
+function var0_0.UpdateDorm(arg0_4, arg1_4)
+	arg0_4.dorm = arg1_4
 end
 
-function var0.PlayerUpdated(arg0, arg1)
-	arg0.player = arg1
+function var0_0.PlayerUpdated(arg0_5, arg1_5)
+	arg0_5.player = arg1_5
 end
 
-function var0.OnLoaded(arg0)
-	arg0.adpter = arg0:findTF("adpter")
-	arg0.frame = arg0:findTF("adpter/frame")
-	arg0.icon = arg0:findTF("adpter/frame/icon"):GetComponent(typeof(Image))
-	arg0.idTxt = arg0:findTF("adpter/frame/ID"):GetComponent(typeof(Text))
-	arg0.idLabel = arg0:findTF("adpter/frame/ID_label"):GetComponent(typeof(Text))
-	arg0.copyBtn = arg0:findTF("adpter/frame/copy")
-	arg0.nameTxt = arg0:findTF("adpter/frame/name"):GetComponent(typeof(Text))
-	arg0.mainPanel = arg0:findTF("adpter/frame/main")
-	arg0.timeTxt = arg0.mainPanel:Find("time"):GetComponent(typeof(Text))
-	arg0.btn1 = arg0.mainPanel:Find("desc_btn")
-	arg0.btn1Txt = arg0.mainPanel:Find("desc_btn/Text"):GetComponent(typeof(Text))
-	arg0.btn2 = arg0.mainPanel:Find("push_btn")
-	arg0.btn2Txt = arg0.mainPanel:Find("push_btn/Text"):GetComponent(typeof(Text))
-	arg0.heart = arg0.mainPanel:Find("heart")
-	arg0.heartSel = arg0.mainPanel:Find("heart/sel")
-	arg0.heartTxt = arg0.mainPanel:Find("heart/Text"):GetComponent(typeof(Text))
-	arg0.collection = arg0.mainPanel:Find("collection")
-	arg0.collectionSel = arg0.mainPanel:Find("collection/sel")
-	arg0.collectionTxt = arg0.mainPanel:Find("collection/Text"):GetComponent(typeof(Text))
-	arg0.idLabel.text = i18n("word_theme") .. "ID:"
+function var0_0.OnLoaded(arg0_6)
+	arg0_6.adpter = arg0_6:findTF("adpter")
+	arg0_6.frame = arg0_6:findTF("adpter/frame")
+	arg0_6.icon = arg0_6:findTF("adpter/frame/icon"):GetComponent(typeof(Image))
+	arg0_6.idTxt = arg0_6:findTF("adpter/frame/ID"):GetComponent(typeof(Text))
+	arg0_6.idLabel = arg0_6:findTF("adpter/frame/ID_label"):GetComponent(typeof(Text))
+	arg0_6.copyBtn = arg0_6:findTF("adpter/frame/copy")
+	arg0_6.nameTxt = arg0_6:findTF("adpter/frame/name"):GetComponent(typeof(Text))
+	arg0_6.mainPanel = arg0_6:findTF("adpter/frame/main")
+	arg0_6.timeTxt = arg0_6.mainPanel:Find("time"):GetComponent(typeof(Text))
+	arg0_6.btn1 = arg0_6.mainPanel:Find("desc_btn")
+	arg0_6.btn1Txt = arg0_6.mainPanel:Find("desc_btn/Text"):GetComponent(typeof(Text))
+	arg0_6.btn2 = arg0_6.mainPanel:Find("push_btn")
+	arg0_6.btn2Txt = arg0_6.mainPanel:Find("push_btn/Text"):GetComponent(typeof(Text))
+	arg0_6.heart = arg0_6.mainPanel:Find("heart")
+	arg0_6.heartSel = arg0_6.mainPanel:Find("heart/sel")
+	arg0_6.heartTxt = arg0_6.mainPanel:Find("heart/Text"):GetComponent(typeof(Text))
+	arg0_6.collection = arg0_6.mainPanel:Find("collection")
+	arg0_6.collectionSel = arg0_6.mainPanel:Find("collection/sel")
+	arg0_6.collectionTxt = arg0_6.mainPanel:Find("collection/Text"):GetComponent(typeof(Text))
+	arg0_6.idLabel.text = i18n("word_theme") .. "ID:"
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0.copyBtn, function()
-		if arg0.player then
-			UniPasteBoard.SetClipBoardString(arg0.template.id)
+function var0_0.OnInit(arg0_7)
+	onButton(arg0_7, arg0_7.copyBtn, function()
+		if arg0_7.player then
+			UniPasteBoard.SetClipBoardString(arg0_7.template.id)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("friend_id_copy_ok"))
 		end
 	end, SFX_PANEL)
 end
 
-function var0.SetUp(arg0, arg1, arg2, arg3, arg4)
-	arg0.pageType = arg1
-	arg0.template = arg2
-	arg0.dorm = arg3
-	arg0.player = arg4
+function var0_0.SetUp(arg0_9, arg1_9, arg2_9, arg3_9, arg4_9)
+	arg0_9.pageType = arg1_9
+	arg0_9.template = arg2_9
+	arg0_9.dorm = arg3_9
+	arg0_9.player = arg4_9
 
-	arg0:RefreshSortBtn()
-	arg0:Flush()
-	arg0:Show()
+	arg0_9:RefreshSortBtn()
+	arg0_9:Flush()
+	arg0_9:Show()
 end
 
-function var0.RefreshSortBtn(arg0)
-	local var0
-	local var1
+function var0_0.RefreshSortBtn(arg0_10)
+	local var0_10
+	local var1_10
 
-	if arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
-		local var2
+	if arg0_10.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
+		local var2_10
 
-		var2, var1 = BackYardConst.ServerIndex2ThemeSortIndex(getProxy(DormProxy).TYPE)
+		var2_10, var1_10 = BackYardConst.ServerIndex2ThemeSortIndex(getProxy(DormProxy).TYPE)
 	else
-		local var3
+		local var3_10
 
-		var3, var1 = 1, true
+		var3_10, var1_10 = 1, true
 	end
 
-	arg0.sortFlag = var1
+	arg0_10.sortFlag = var1_10
 end
 
-function var0.Flush(arg0)
-	arg0:UpdateWindow()
-	arg0:UpdatePlayer()
-	arg0:UpdateLikeInfo()
-	arg0["Update" .. arg0.pageType](arg0)
+function var0_0.Flush(arg0_11)
+	arg0_11:UpdateWindow()
+	arg0_11:UpdatePlayer()
+	arg0_11:UpdateLikeInfo()
+	arg0_11["Update" .. arg0_11.pageType](arg0_11)
 end
 
-function var0.Update1(arg0)
-	onButton(arg0, arg0.btn1, function()
-		arg0.contextData.infoPage:ExecuteAction("SetUp", arg0.template, arg0.dorm, arg0.player)
+function var0_0.Update1(arg0_12)
+	onButton(arg0_12, arg0_12.btn1, function()
+		arg0_12.contextData.infoPage:ExecuteAction("SetUp", arg0_12.template, arg0_12.dorm, arg0_12.player)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.btn2, function()
-		arg0.contextData.msgBox:ExecuteAction("SetUp", {
+	onButton(arg0_12, arg0_12.btn2, function()
+		arg0_12.contextData.msgBox:ExecuteAction("SetUp", {
 			type = BackYardThemeTemplateMsgBox.TYPE_IMAGE,
 			content = i18n("backyard_theme_apply_tip2"),
-			srpiteName = arg0.template:GetTextureIconName(),
-			md5 = arg0.template:GetIconMd5(),
+			srpiteName = arg0_12.template:GetTextureIconName(),
+			md5 = arg0_12.template:GetIconMd5(),
 			onYes = function()
-				arg0:emit(NewBackYardThemeTemplateMediator.ON_APPLY_TEMPLATE, arg0.template, function()
-					triggerButton(arg0.btn1)
+				arg0_12:emit(NewBackYardThemeTemplateMediator.ON_APPLY_TEMPLATE, arg0_12.template, function()
+					triggerButton(arg0_12.btn1)
 				end)
 			end
 		})
 	end, SFX_PANEL)
 
-	arg0.btn1Txt.text = i18n("courtyard_label_detail")
-	arg0.btn2Txt.text = i18n("courtyard_label_place_pnekey")
+	arg0_12.btn1Txt.text = i18n("courtyard_label_detail")
+	arg0_12.btn2Txt.text = i18n("courtyard_label_place_pnekey")
 end
 
-function var0.Update2(arg0)
-	local var0 = arg0.template
-	local var1 = var0:IsPushed()
+function var0_0.Update2(arg0_17)
+	local var0_17 = arg0_17.template
+	local var1_17 = var0_17:IsPushed()
 
-	onButton(arg0, arg0.btn1, function()
-		arg0:emit(NewBackYardThemeTemplateMediator.ON_DELETE_TEMPLATE, var0)
+	onButton(arg0_17, arg0_17.btn1, function()
+		arg0_17:emit(NewBackYardThemeTemplateMediator.ON_DELETE_TEMPLATE, var0_17)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.btn2, function()
-		if var1 then
-			arg0:emit(NewBackYardThemeTemplateMediator.ON_CANCEL_UPLOAD_TEMPLATE, var0)
+	onButton(arg0_17, arg0_17.btn2, function()
+		if var1_17 then
+			arg0_17:emit(NewBackYardThemeTemplateMediator.ON_CANCEL_UPLOAD_TEMPLATE, var0_17)
 		else
-			arg0:emit(NewBackYardThemeTemplateMediator.ON_UPLOAD_TEMPLATE, var0)
+			arg0_17:emit(NewBackYardThemeTemplateMediator.ON_UPLOAD_TEMPLATE, var0_17)
 		end
 	end, SFX_PANEL)
 
-	if not var1 then
-		local var2 = getProxy(DormProxy):GetUploadThemeTemplateCnt()
+	if not var1_17 then
+		local var2_17 = getProxy(DormProxy):GetUploadThemeTemplateCnt()
 
-		arg0.timeTxt.text = i18n("backyard_theme_upload_cnt", var2, BackYardConst.MAX_UPLOAD_THEME_CNT)
+		arg0_17.timeTxt.text = i18n("backyard_theme_upload_cnt", var2_17, BackYardConst.MAX_UPLOAD_THEME_CNT)
 	end
 
-	arg0.btn1Txt.text = i18n("courtyard_label_delete")
-	arg0.btn2Txt.text = var1 and i18n("courtyard_label_cancel_share") or i18n("courtyard_label_share")
+	arg0_17.btn1Txt.text = i18n("courtyard_label_delete")
+	arg0_17.btn2Txt.text = var1_17 and i18n("courtyard_label_cancel_share") or i18n("courtyard_label_share")
 end
 
-function var0.Update3(arg0)
-	arg0:Update1()
+function var0_0.Update3(arg0_20)
+	arg0_20:Update1()
 
-	arg0.timeTxt.text = i18n("backyard_theme_template_collection_cnt") .. getProxy(DormProxy):GetThemeTemplateCollectionCnt() .. "/" .. BackYardConst.MAX_COLLECTION_CNT
-	arg0.btn1Txt.text = i18n("courtyard_label_detail")
-	arg0.btn2Txt.text = i18n("courtyard_label_place_pnekey")
+	arg0_20.timeTxt.text = i18n("backyard_theme_template_collection_cnt") .. getProxy(DormProxy):GetThemeTemplateCollectionCnt() .. "/" .. BackYardConst.MAX_COLLECTION_CNT
+	arg0_20.btn1Txt.text = i18n("courtyard_label_detail")
+	arg0_20.btn2Txt.text = i18n("courtyard_label_place_pnekey")
 end
 
-function var0.UpdatePlayer(arg0)
-	if not arg0.template:ExistPlayerInfo() then
-		arg0:emit(NewBackYardThemeTemplateMediator.GET_TEMPLATE_PLAYERINFO, arg0.pageType, arg0.template)
+function var0_0.UpdatePlayer(arg0_21)
+	if not arg0_21.template:ExistPlayerInfo() then
+		arg0_21:emit(NewBackYardThemeTemplateMediator.GET_TEMPLATE_PLAYERINFO, arg0_21.pageType, arg0_21.template)
 	else
-		local var0 = arg0.template.player
+		local var0_21 = arg0_21.template.player
 
-		arg0.player = var0
-		arg0.nameTxt.text = var0:GetName()
-		arg0.idTxt.text = arg0.template.id
-		arg0.timeTxt.text = i18n("backyard_theme_upload_time") .. arg0.template:GetUploadTime()
+		arg0_21.player = var0_21
+		arg0_21.nameTxt.text = var0_21:GetName()
+		arg0_21.idTxt.text = arg0_21.template.id
+		arg0_21.timeTxt.text = i18n("backyard_theme_upload_time") .. arg0_21.template:GetUploadTime()
 
-		LoadSpriteAsync("qicon/" .. var0:getPainting(), function(arg0)
-			if IsNil(arg0.icon) then
+		LoadSpriteAsync("qicon/" .. var0_21:getPainting(), function(arg0_22)
+			if IsNil(arg0_21.icon) then
 				return
 			end
 
-			arg0.icon.sprite = arg0
+			arg0_21.icon.sprite = arg0_22
 		end)
 
-		if arg0.preLoadIcon then
-			local var1 = arg0.preLoadIcon.name
+		if arg0_21.preLoadIcon then
+			local var1_21 = arg0_21.preLoadIcon.name
 
-			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var1, var1, arg0.preLoadIcon)
+			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var1_21, var1_21, arg0_21.preLoadIcon)
 		end
 
-		local var2 = AttireFrame.attireFrameRes(var0, var0.id == getProxy(PlayerProxy):getRawData().id, AttireConst.TYPE_ICON_FRAME, var0.propose)
+		local var2_21 = AttireFrame.attireFrameRes(var0_21, var0_21.id == getProxy(PlayerProxy):getRawData().id, AttireConst.TYPE_ICON_FRAME, var0_21.propose)
 
-		PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var2, var2, true, function(arg0)
-			if arg0.icon then
-				arg0.name = var2
-				findTF(arg0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
+		PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var2_21, var2_21, true, function(arg0_23)
+			if arg0_21.icon then
+				arg0_23.name = var2_21
+				findTF(arg0_23.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
 
-				setParent(arg0, arg0.icon.gameObject, false)
+				setParent(arg0_23, arg0_21.icon.gameObject, false)
 
-				arg0.preLoadIcon = arg0
+				arg0_21.preLoadIcon = arg0_23
 			end
 		end)
-		onButton(arg0, arg0.icon, function()
-			if var0.id == getProxy(PlayerProxy):getRawData().id then
+		onButton(arg0_21, arg0_21.icon, function()
+			if var0_21.id == getProxy(PlayerProxy):getRawData().id then
 				return
 			end
 
-			local var0 = tf(arg0.icon.gameObject).position
-			local var1 = arg0.template:GetName()
+			local var0_24 = tf(arg0_21.icon.gameObject).position
+			local var1_24 = arg0_21.template:GetName()
 
-			arg0:emit(NewBackYardThemeTemplateMediator.ON_DISPLAY_PLAYER_INFO, var0.id, var0, arg0.template.id)
+			arg0_21:emit(NewBackYardThemeTemplateMediator.ON_DISPLAY_PLAYER_INFO, var0_21.id, var0_24, arg0_21.template.id)
 		end, SFX_PANEL)
 	end
 end
 
-function var0.UpdateLikeInfo(arg0)
-	local var0 = arg0.template
+function var0_0.UpdateLikeInfo(arg0_25)
+	local var0_25 = arg0_25.template
 
-	arg0.heartTxt.text = i18n("backyard_theme_word_like") .. var0:GetLikeCnt()
-	arg0.collectionTxt.text = i18n("backyard_theme_word_collection") .. var0:GetCollectionCnt()
+	arg0_25.heartTxt.text = i18n("backyard_theme_word_like") .. var0_25:GetLikeCnt()
+	arg0_25.collectionTxt.text = i18n("backyard_theme_word_collection") .. var0_25:GetCollectionCnt()
 
-	local var1 = arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM
-	local var2 = var0:IsLiked()
+	local var1_25 = arg0_25.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM
+	local var2_25 = var0_25:IsLiked()
 
-	onButton(arg0, arg0.heart, function()
-		if arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
+	onButton(arg0_25, arg0_25.heart, function()
+		if arg0_25.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
 			return
 		end
 
-		if not var2 then
-			arg0:emit(NewBackYardThemeTemplateMediator.ON_LIKE_THEME, arg0.template, arg0.template.time)
+		if not var2_25 then
+			arg0_25:emit(NewBackYardThemeTemplateMediator.ON_LIKE_THEME, arg0_25.template, arg0_25.template.time)
 		end
 	end, SFX_PANEL)
-	setActive(arg0.heartSel, var2 or var1)
+	setActive(arg0_25.heartSel, var2_25 or var1_25)
 
-	local var3 = var0:IsCollected()
+	local var3_25 = var0_25:IsCollected()
 
-	onButton(arg0, arg0.collection, function()
-		if arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
+	onButton(arg0_25, arg0_25.collection, function()
+		if arg0_25.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
 			return
 		end
 
-		if var3 then
-			arg0.contextData.msgBox:ExecuteAction("SetUp", {
+		if var3_25 then
+			arg0_25.contextData.msgBox:ExecuteAction("SetUp", {
 				content = i18n("backyard_theme_cancel_collection"),
 				onYes = function()
-					arg0:emit(NewBackYardThemeTemplateMediator.ON_COLECT_THEME, arg0.template, true, arg0.template.time)
+					arg0_25:emit(NewBackYardThemeTemplateMediator.ON_COLECT_THEME, arg0_25.template, true, arg0_25.template.time)
 				end
 			})
 		else
-			arg0:emit(NewBackYardThemeTemplateMediator.ON_COLECT_THEME, arg0.template, false, arg0.template.time)
+			arg0_25:emit(NewBackYardThemeTemplateMediator.ON_COLECT_THEME, arg0_25.template, false, arg0_25.template.time)
 		end
 	end, SFX_PANEL)
-	setActive(arg0.collectionSel, var3 or var1)
+	setActive(arg0_25.collectionSel, var3_25 or var1_25)
 end
 
-function var0.UpdateWindow(arg0)
-	local var0 = true
+function var0_0.UpdateWindow(arg0_29)
+	local var0_29 = true
 
-	if arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		arg0.frame.sizeDelta = Vector2(arg0.frame.sizeDelta.x, 456)
-	elseif arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
-		if arg0.template:IsPushed() then
-			arg0.frame.sizeDelta = Vector2(arg0.frame.sizeDelta.x, 456)
+	if arg0_29.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		arg0_29.frame.sizeDelta = Vector2(arg0_29.frame.sizeDelta.x, 456)
+	elseif arg0_29.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
+		if arg0_29.template:IsPushed() then
+			arg0_29.frame.sizeDelta = Vector2(arg0_29.frame.sizeDelta.x, 456)
 		else
-			var0 = false
-			arg0.frame.sizeDelta = Vector2(arg0.frame.sizeDelta.x, 395)
+			var0_29 = false
+			arg0_29.frame.sizeDelta = Vector2(arg0_29.frame.sizeDelta.x, 395)
 		end
-	elseif arg0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
-		arg0.frame.sizeDelta = Vector2(arg0.frame.sizeDelta.x, 456)
+	elseif arg0_29.pageType == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
+		arg0_29.frame.sizeDelta = Vector2(arg0_29.frame.sizeDelta.x, 456)
 	end
 
-	setActive(arg0.heart, var0)
-	setActive(arg0.collection, var0)
+	setActive(arg0_29.heart, var0_29)
+	setActive(arg0_29.collection, var0_29)
 end
 
-function var0.Show(arg0)
-	arg0.isShowing = true
+function var0_0.Show(arg0_30)
+	arg0_30.isShowing = true
 
-	var0.super.Show(arg0)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0.adpter, {
+	var0_0.super.Show(arg0_30)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_30.adpter, {
 		pbList = {
-			arg0:findTF("adpter/frame")
+			arg0_30:findTF("adpter/frame")
 		}
 	})
 end
 
-function var0.Hide(arg0)
-	arg0.isShowing = false
+function var0_0.Hide(arg0_31)
+	arg0_31.isShowing = false
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0.adpter, arg0._tf)
-	var0.super.Hide(arg0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_31.adpter, arg0_31._tf)
+	var0_0.super.Hide(arg0_31)
 end
 
-function var0.OnDestroy(arg0)
-	if arg0.isShowing then
-		arg0:Hide()
+function var0_0.OnDestroy(arg0_32)
+	if arg0_32.isShowing then
+		arg0_32:Hide()
 	end
 
-	if arg0.preLoadIcon then
-		local var0 = arg0.preLoadIcon.name
+	if arg0_32.preLoadIcon then
+		local var0_32 = arg0_32.preLoadIcon.name
 
-		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var0, var0, arg0.preLoadIcon)
+		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var0_32, var0_32, arg0_32.preLoadIcon)
 	end
 end
 
-return var0
+return var0_0

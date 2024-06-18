@@ -1,50 +1,50 @@
-﻿local var0 = class("LightLoginTemplatePage", import("view.base.BaseActivityPage"))
+﻿local var0_0 = class("LightLoginTemplatePage", import("view.base.BaseActivityPage"))
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("AD")
-	arg0.bar = arg0:findTF("bar", arg0.bg)
-	arg0.item = arg0:findTF("item", arg0.bg)
-	arg0.items = arg0:findTF("items", arg0.bg)
-	arg0.itemList = UIItemList.New(arg0.items, arg0.item)
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.bar = arg0_1:findTF("bar", arg0_1.bg)
+	arg0_1.item = arg0_1:findTF("item", arg0_1.bg)
+	arg0_1.items = arg0_1:findTF("items", arg0_1.bg)
+	arg0_1.itemList = UIItemList.New(arg0_1.items, arg0_1.item)
 end
 
-function var0.OnDataSetting(arg0)
-	arg0.config = pg.activity_7_day_sign[arg0.activity:getConfig("config_id")]
-	arg0.Day = #arg0.config.front_drops
+function var0_0.OnDataSetting(arg0_2)
+	arg0_2.config = pg.activity_7_day_sign[arg0_2.activity:getConfig("config_id")]
+	arg0_2.Day = #arg0_2.config.front_drops
 end
 
-function var0.OnFirstFlush(arg0)
-	setActive(arg0.item, false)
-	arg0.itemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventInit then
-			local var0 = arg0:findTF("item", arg2)
-			local var1 = Drop.Create(arg0.config.front_drops[arg1 + 1])
+function var0_0.OnFirstFlush(arg0_3)
+	setActive(arg0_3.item, false)
+	arg0_3.itemList:make(function(arg0_4, arg1_4, arg2_4)
+		if arg0_4 == UIItemList.EventInit then
+			local var0_4 = arg0_3:findTF("item", arg2_4)
+			local var1_4 = Drop.Create(arg0_3.config.front_drops[arg1_4 + 1])
 
-			updateDrop(var0, var1)
-			onButton(arg0, arg2, function()
-				arg0:emit(BaseUI.ON_DROP, var1)
+			updateDrop(var0_4, var1_4)
+			onButton(arg0_3, arg2_4, function()
+				arg0_3:emit(BaseUI.ON_DROP, var1_4)
 			end, SFX_PANEL)
-			GetImageSpriteFromAtlasAsync("ui/share/light_login_atlas", "DAY" .. arg1 + 1, arg0:findTF("day", arg2), true)
-		elseif arg0 == UIItemList.EventUpdate then
-			local var2 = arg1 < arg0.nday
+			GetImageSpriteFromAtlasAsync("ui/share/light_login_atlas", "DAY" .. arg1_4 + 1, arg0_3:findTF("day", arg2_4), true)
+		elseif arg0_4 == UIItemList.EventUpdate then
+			local var2_4 = arg1_4 < arg0_3.nday
 
-			setActive(arg0:findTF("got", arg2), var2)
-			setActive(arg0:findTF("get", arg2), var2)
-			setActive(arg0:findTF("bg", arg2), not var2)
+			setActive(arg0_3:findTF("got", arg2_4), var2_4)
+			setActive(arg0_3:findTF("get", arg2_4), var2_4)
+			setActive(arg0_3:findTF("bg", arg2_4), not var2_4)
 		end
 	end)
 end
 
-function var0.OnUpdateFlush(arg0)
-	arg0.nday = arg0.activity.data1
+function var0_0.OnUpdateFlush(arg0_6)
+	arg0_6.nday = arg0_6.activity.data1
 
-	arg0.itemList:align(arg0.Day)
-	setFillAmount(arg0.bar, arg0.nday / arg0.Day)
+	arg0_6.itemList:align(arg0_6.Day)
+	setFillAmount(arg0_6.bar, arg0_6.nday / arg0_6.Day)
 end
 
-function var0.OnDestroy(arg0)
-	clearImageSprite(arg0.bg)
-	removeAllChildren(arg0.items)
+function var0_0.OnDestroy(arg0_7)
+	clearImageSprite(arg0_7.bg)
+	removeAllChildren(arg0_7.items)
 end
 
-return var0
+return var0_0

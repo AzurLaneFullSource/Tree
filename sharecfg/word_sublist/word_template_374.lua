@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_374 = {}
+var0_0.word_template_374 = {}
 
-local var1 = var0.word_template_374
+local var1_0 = var0_0.word_template_374
 
 function temp()
-	var1.窗 = {
+	var1_0.窗 = {
 		外 = {
 			有 = {
 				蓝 = {
@@ -23,7 +23,7 @@ end
 temp()
 
 function temp()
-	var1.燒 = {
+	var1_0.燒 = {
 		油 = {
 			腸 = {
 				石 = {
@@ -37,7 +37,7 @@ end
 temp()
 
 function temp()
-	var1.i = {
+	var1_0.i = {
 		t = {
 			["'"] = {
 				s = {
@@ -256,7 +256,7 @@ end
 temp()
 
 function temp()
-	var1.拖 = {
+	var1_0.拖 = {
 		尸 = {
 			擦 = {
 				墙 = {
@@ -270,7 +270,7 @@ end
 temp()
 
 function temp()
-	var1.薪 = {
+	var1_0.薪 = {
 		火 = {
 			不 = {
 				息 = {
@@ -289,7 +289,7 @@ end
 temp()
 
 function temp()
-	var1.首 = {
+	var1_0.首 = {
 		度 = {
 			禁 = {
 				办 = {
@@ -325,7 +325,7 @@ end
 temp()
 
 function temp()
-	var1.柱 = {
+	var1_0.柱 = {
 		之 = {
 			殇 = {
 				国 = {

@@ -6,15 +6,15 @@
 		Image = "doa_virtual_buff",
 		IsVirtualIcon = true,
 		CheckExist = function()
-			local var0 = getProxy(ActivityProxy):getActivityById(ActivityConst.DOA_PT_ID)
+			local var0_1 = getProxy(ActivityProxy):getActivityById(ActivityConst.DOA_PT_ID)
 
-			if not var0 then
+			if not var0_1 then
 				return false
 			end
 
-			local var1 = ActivityPtData.New(var0)
+			local var1_1 = ActivityPtData.New(var0_1)
 
-			if not var0:isEnd() and var1:isInBuffTime() then
+			if not var0_1:isEnd() and var1_1:isInBuffTime() then
 				return true
 			end
 

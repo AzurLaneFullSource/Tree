@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_124 = {}
+var0_0.word_template_124 = {}
 
-local var1 = var0.word_template_124
+local var1_0 = var0_0.word_template_124
 
 function temp()
-	var1.灝 = {
+	var1_0.灝 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.喝 = {
+	var1_0.喝 = {
 		杯 = {
 			奶 = {
 				叫 = {
@@ -149,7 +149,7 @@ end
 temp()
 
 function temp()
-	var1.何 = {
+	var1_0.何 = {
 		春 = {
 			传 = {
 				奇 = {
@@ -216,7 +216,7 @@ end
 temp()
 
 function temp()
-	var1.河 = {
+	var1_0.河 = {
 		粉 = {
 			米 = {
 				粉 = {
@@ -282,7 +282,7 @@ end
 temp()
 
 function temp()
-	var1.曷 = {
+	var1_0.曷 = {
 		this = {
 			this = true
 		}
@@ -292,7 +292,7 @@ end
 temp()
 
 function temp()
-	var1.核 = {
+	var1_0.核 = {
 		弹 = {
 			this = true
 		},
@@ -356,7 +356,7 @@ end
 temp()
 
 function temp()
-	var1.翮 = {
+	var1_0.翮 = {
 		this = {
 			this = true
 		}

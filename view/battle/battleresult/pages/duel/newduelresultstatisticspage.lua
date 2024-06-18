@@ -1,49 +1,49 @@
-﻿local var0 = class("NewDuelResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
+﻿local var0_0 = class("NewDuelResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
 
-function var0.UpdatePlayer(arg0)
-	local var0 = getProxy(PlayerProxy):getRawData()
+function var0_0.UpdatePlayer(arg0_1)
+	local var0_1 = getProxy(PlayerProxy):getRawData()
 
-	arg0.playerName.text = var0:GetName()
+	arg0_1.playerName.text = var0_1:GetName()
 
-	local var1 = getProxy(MilitaryExerciseProxy):getSeasonInfo()
-	local var2 = SeasonInfo.getMilitaryRank(var1.score, var1.rank)
-	local var3, var4 = SeasonInfo.getNextMilitaryRank(var1.score, var1.rank)
+	local var1_1 = getProxy(MilitaryExerciseProxy):getSeasonInfo()
+	local var2_1 = SeasonInfo.getMilitaryRank(var1_1.score, var1_1.rank)
+	local var3_1, var4_1 = SeasonInfo.getNextMilitaryRank(var1_1.score, var1_1.rank)
 
-	arg0.playerLv.text = var2.name
-	arg0.playerExpLabel.text = i18n("word_rankScore")
+	arg0_1.playerLv.text = var2_1.name
+	arg0_1.playerExpLabel.text = i18n("word_rankScore")
 
-	local function var5()
-		arg0.playerExp.text = "+" .. NewBattleResultUtil.GetSeasonScoreOffset(arg0.contextData.oldRank, var1)
-		arg0.playerExpBar.fillAmount = var1.score / var4
+	local function var5_1()
+		arg0_1.playerExp.text = "+" .. NewBattleResultUtil.GetSeasonScoreOffset(arg0_1.contextData.oldRank, var1_1)
+		arg0_1.playerExpBar.fillAmount = var1_1.score / var4_1
 	end
 
-	if not arg0.contextData.autoSkipFlag then
-		arg0.duelAniamtion = NewBattleResultDuelAniamtion.New(arg0.playerExp, arg0.playerExpBar, var4, arg0.contextData.oldRank, var1)
+	if not arg0_1.contextData.autoSkipFlag then
+		arg0_1.duelAniamtion = NewBattleResultDuelAniamtion.New(arg0_1.playerExp, arg0_1.playerExpBar, var4_1, arg0_1.contextData.oldRank, var1_1)
 
-		arg0.duelAniamtion:SetUp(var5)
+		arg0_1.duelAniamtion:SetUp(var5_1)
 	else
-		var5()
+		var5_1()
 	end
 end
 
-function var0.UpdateChapterName(arg0)
-	local var0 = arg0.contextData
-	local var1 = getProxy(MilitaryExerciseProxy):getPreRivalById(var0.rivalId or 0)
-	local var2 = var1 and var1.name or ""
+function var0_0.UpdateChapterName(arg0_3)
+	local var0_3 = arg0_3.contextData
+	local var1_3 = getProxy(MilitaryExerciseProxy):getPreRivalById(var0_3.rivalId or 0)
+	local var2_3 = var1_3 and var1_3.name or ""
 
-	arg0.chapterName.text = var2
+	arg0_3.chapterName.text = var2_3
 
-	setActive(arg0.opBonus, false)
+	setActive(arg0_3.opBonus, false)
 end
 
-function var0.OnDestroy(arg0)
-	var0.super.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_4)
+	var0_0.super.OnDestroy(arg0_4)
 
-	if arg0.duelAniamtion then
-		arg0.duelAniamtion:Dispose()
+	if arg0_4.duelAniamtion then
+		arg0_4.duelAniamtion:Dispose()
 
-		arg0.duelAniamtion = nil
+		arg0_4.duelAniamtion = nil
 	end
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_222 = {}
+var0_0.word_template_222 = {}
 
-local var1 = var0.word_template_222
+local var1_0 = var0_0.word_template_222
 
 function temp()
-	var1.噴 = {
+	var1_0.噴 = {
 		精 = {
 			this = true
 		},
@@ -20,7 +20,7 @@ end
 temp()
 
 function temp()
-	var1.彭 = {
+	var1_0.彭 = {
 		德 = {
 			怀 = {
 				this = true
@@ -204,7 +204,7 @@ end
 temp()
 
 function temp()
-	var1.硼 = {
+	var1_0.硼 = {
 		酸 = {
 			this = true
 		}
@@ -214,7 +214,7 @@ end
 temp()
 
 function temp()
-	var1.批 = {
+	var1_0.批 = {
 		发 = {
 			this = true,
 			假 = {
@@ -343,7 +343,7 @@ end
 temp()
 
 function temp()
-	var1.劈 = {
+	var1_0.劈 = {
 		开 = {
 			你 = {
 				妈 = {
@@ -363,7 +363,7 @@ end
 temp()
 
 function temp()
-	var1.皮 = {
+	var1_0.皮 = {
 		鞭 = {
 			手 = {
 				拍 = {
@@ -440,7 +440,7 @@ end
 temp()
 
 function temp()
-	var1.蚍 = {
+	var1_0.蚍 = {
 		this = {
 			this = true
 		}

@@ -1,104 +1,104 @@
-﻿local var0 = class("VotePreRaceShipPage", import("....base.BaseSubView"))
+﻿local var0_0 = class("VotePreRaceShipPage", import("....base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "PreRaceShips"
 end
 
-function var0.OnInit(arg0)
-	arg0.scrollRect = arg0._tf:GetComponent("LScrollRect")
-	arg0.voteItems = {}
+function var0_0.OnInit(arg0_2)
+	arg0_2.scrollRect = arg0_2._tf:GetComponent("LScrollRect")
+	arg0_2.voteItems = {}
 
-	function arg0.scrollRect.onInitItem(arg0)
-		arg0:onInitItem(arg0)
+	function arg0_2.scrollRect.onInitItem(arg0_3)
+		arg0_2:onInitItem(arg0_3)
 	end
 
-	function arg0.scrollRect.onUpdateItem(arg0, arg1)
-		arg0:onUpdateItem(arg0, arg1)
+	function arg0_2.scrollRect.onUpdateItem(arg0_4, arg1_4)
+		arg0_2:onUpdateItem(arg0_4, arg1_4)
 	end
 
-	function arg0.scrollRect.onReturnItem(arg0, arg1)
-		arg0:onReturnItem(arg0, arg1)
+	function arg0_2.scrollRect.onReturnItem(arg0_5, arg1_5)
+		arg0_2:onReturnItem(arg0_5, arg1_5)
 	end
 
-	arg0._tf:SetAsFirstSibling()
+	arg0_2._tf:SetAsFirstSibling()
 end
 
-function var0.onInitItem(arg0, arg1)
-	local var0 = VoteShipItem.New(arg1)
+function var0_0.onInitItem(arg0_6, arg1_6)
+	local var0_6 = VoteShipItem.New(arg1_6)
 
-	onButton(arg0, var0.go, function()
-		if arg0.phase == VoteGroup.VOTE_STAGE then
-			arg0.CallBack(var0)
+	onButton(arg0_6, var0_6.go, function()
+		if arg0_6.phase == VoteGroup.VOTE_STAGE then
+			arg0_6.CallBack(var0_6)
 		end
 	end, SFX_PANEL)
 
-	arg0.voteItems[arg1] = var0
+	arg0_6.voteItems[arg1_6] = var0_6
 end
 
-function var0.SetCallBack(arg0, arg1)
-	arg0.CallBack = arg1
+function var0_0.SetCallBack(arg0_8, arg1_8)
+	arg0_8.CallBack = arg1_8
 end
 
-function var0.onUpdateItem(arg0, arg1, arg2)
-	local var0 = arg0.voteItems[arg2]
+function var0_0.onUpdateItem(arg0_9, arg1_9, arg2_9)
+	local var0_9 = arg0_9.voteItems[arg2_9]
 
-	if not var0 then
-		arg0:onInitItem(arg2)
+	if not var0_9 then
+		arg0_9:onInitItem(arg2_9)
 
-		var0 = arg0.voteItems[arg2]
+		var0_9 = arg0_9.voteItems[arg2_9]
 	end
 
-	local var1 = arg0.displays[arg1 + 1]
+	local var1_9 = arg0_9.displays[arg1_9 + 1]
 
-	arg0:UpdateShip(arg1, var0, var1)
+	arg0_9:UpdateShip(arg1_9, var0_9, var1_9)
 end
 
-function var0.UpdateShip(arg0, arg1, arg2, arg3)
-	if arg0.phase ~= VoteGroup.VOTE_STAGE then
-		local var0 = arg0.voteGroup:GetRank(arg3)
-		local var1, var2 = arg0.voteGroup:CanRankToNextTurn(var0)
+function var0_0.UpdateShip(arg0_10, arg1_10, arg2_10, arg3_10)
+	if arg0_10.phase ~= VoteGroup.VOTE_STAGE then
+		local var0_10 = arg0_10.voteGroup:GetRank(arg3_10)
+		local var1_10, var2_10 = arg0_10.voteGroup:CanRankToNextTurn(var0_10)
 
-		arg2:update(arg3, {
-			rank = var0,
-			riseFlag = var1,
-			resurgenceFlag = var2
+		arg2_10:update(arg3_10, {
+			rank = var0_10,
+			riseFlag = var1_10,
+			resurgenceFlag = var2_10
 		})
 	else
-		arg2:update(arg3, nil)
+		arg2_10:update(arg3_10, nil)
 	end
 end
 
-function var0.onReturnItem(arg0, arg1, arg2)
-	if arg0.exited then
+function var0_0.onReturnItem(arg0_11, arg1_11, arg2_11)
+	if arg0_11.exited then
 		return
 	end
 
-	local var0 = arg0.voteItems[arg2]
+	local var0_11 = arg0_11.voteItems[arg2_11]
 
-	if var0 then
-		var0:clear()
+	if var0_11 then
+		var0_11:clear()
 	end
 end
 
-function var0.Update(arg0, arg1, arg2)
-	arg0.voteGroup = arg1
-	arg0.phase = arg1:GetStage()
-	arg0.displays = arg2
+function var0_0.Update(arg0_12, arg1_12, arg2_12)
+	arg0_12.voteGroup = arg1_12
+	arg0_12.phase = arg1_12:GetStage()
+	arg0_12.displays = arg2_12
 
-	arg0:UpdateShips()
-	arg0:Show()
+	arg0_12:UpdateShips()
+	arg0_12:Show()
 end
 
-function var0.UpdateShips(arg0)
-	if arg0.phase == VoteGroup.VOTE_STAGE then
-		shuffle(arg0.displays)
+function var0_0.UpdateShips(arg0_13)
+	if arg0_13.phase == VoteGroup.VOTE_STAGE then
+		shuffle(arg0_13.displays)
 	end
 
-	arg0.scrollRect:SetTotalCount(#arg0.displays)
+	arg0_13.scrollRect:SetTotalCount(#arg0_13.displays)
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_14)
 	return
 end
 
-return var0
+return var0_0

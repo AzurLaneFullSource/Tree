@@ -1,36 +1,36 @@
-﻿local var0 = class("BackYardDecorationMediator", import("...base.ContextMediator"))
+﻿local var0_0 = class("BackYardDecorationMediator", import("...base.ContextMediator"))
 
-var0.ADD_FURNITURE = "BackYardDecorationMediator:ADD_FURNITURE"
-var0.REMOVE_PAPER = "BackYardDecorationMediator:REMOVE_PAPER"
-var0.SAVE_ALL = "BackYardDecorationMediator:SAVE_ALL"
-var0.ClEAR_ALL = "BackYardDecorationMediator:ClEAR_ALL"
-var0.OPEN_SHOP = "BackYardDecorationMediator:OPEN_SHOP"
-var0.GET_CUSTOM_THEME = "BackYardDecorationMediator:GET_CUSTOM_THEME"
-var0.DELETE_THEME = "BackYardDecorationMediator:DELETE_THEME"
-var0.SAVE_THEME = "BackYardDecorationMediator:SAVE_THEME"
-var0.APPLY_THEME = "BackYardDecorationMediator:APPLY_THEME"
-var0.ADD_FURNITURES = "BackYardDecorationMediator:ADD_FURNITURES"
-var0.ON_SELECTED_FURNITRUE = "BackYardDecorationMediator:ON_SELECTED_FURNITRUE"
-var0.GET_CURR_FURNITURE = "BackYardDecorationMediator:GET_CURR_FURNITURE"
-var0.GET_OTHER_FURNITURE = "BackYardDecorationMediator:GET_OTHER_FURNITURE"
-var0.GET_ALL_FURNITURE = "BackYardDecorationMediator:GET_ALL_FURNITURE"
-var0.START_TAKE_THEME_PHOTO = "BackYardDecorationMediator:START_TAKE_THEME_PHOTO"
-var0.END_TAKE_THEME_PHOTO = "BackYardDecorationMediator:END_TAKE_THEME_PHOTO"
-var0.ON_SET_UP = "BackYardDecorationMediator:ON_SET_UP"
+var0_0.ADD_FURNITURE = "BackYardDecorationMediator:ADD_FURNITURE"
+var0_0.REMOVE_PAPER = "BackYardDecorationMediator:REMOVE_PAPER"
+var0_0.SAVE_ALL = "BackYardDecorationMediator:SAVE_ALL"
+var0_0.ClEAR_ALL = "BackYardDecorationMediator:ClEAR_ALL"
+var0_0.OPEN_SHOP = "BackYardDecorationMediator:OPEN_SHOP"
+var0_0.GET_CUSTOM_THEME = "BackYardDecorationMediator:GET_CUSTOM_THEME"
+var0_0.DELETE_THEME = "BackYardDecorationMediator:DELETE_THEME"
+var0_0.SAVE_THEME = "BackYardDecorationMediator:SAVE_THEME"
+var0_0.APPLY_THEME = "BackYardDecorationMediator:APPLY_THEME"
+var0_0.ADD_FURNITURES = "BackYardDecorationMediator:ADD_FURNITURES"
+var0_0.ON_SELECTED_FURNITRUE = "BackYardDecorationMediator:ON_SELECTED_FURNITRUE"
+var0_0.GET_CURR_FURNITURE = "BackYardDecorationMediator:GET_CURR_FURNITURE"
+var0_0.GET_OTHER_FURNITURE = "BackYardDecorationMediator:GET_OTHER_FURNITURE"
+var0_0.GET_ALL_FURNITURE = "BackYardDecorationMediator:GET_ALL_FURNITURE"
+var0_0.START_TAKE_THEME_PHOTO = "BackYardDecorationMediator:START_TAKE_THEME_PHOTO"
+var0_0.END_TAKE_THEME_PHOTO = "BackYardDecorationMediator:END_TAKE_THEME_PHOTO"
+var0_0.ON_SET_UP = "BackYardDecorationMediator:ON_SET_UP"
 
-function var0.register(arg0)
-	arg0:bind(var0.ON_SELECTED_FURNITRUE, function(arg0, arg1)
-		_courtyard:GetController():SelectFurnitureByConfigId(arg1)
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.ON_SELECTED_FURNITRUE, function(arg0_2, arg1_2)
+		_courtyard:GetController():SelectFurnitureByConfigId(arg1_2)
 	end)
-	arg0:bind(var0.APPLY_THEME, function(arg0, arg1, arg2)
-		local var0, var1 = arg0:GetCanPutFurnitureForTheme(arg0.dorm, arg1)
+	arg0_1:bind(var0_0.APPLY_THEME, function(arg0_3, arg1_3, arg2_3)
+		local var0_3, var1_3 = arg0_1:GetCanPutFurnitureForTheme(arg0_1.dorm, arg1_3)
 
-		if arg2 then
-			arg2(var1, var0)
+		if arg2_3 then
+			arg2_3(var1_3, var0_3)
 		end
 	end)
-	arg0:bind(var0.SAVE_THEME, function(arg0, arg1, arg2)
-		if not arg0:AnyFurnitureInFloor(arg0.dorm, getProxy(DormProxy).floor) then
+	arg0_1:bind(var0_0.SAVE_THEME, function(arg0_4, arg1_4, arg2_4)
+		if not arg0_1:AnyFurnitureInFloor(arg0_1.dorm, getProxy(DormProxy).floor) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_save_empty_theme"))
 
 			return
@@ -38,267 +38,267 @@ function var0.register(arg0)
 
 		pg.UIMgr.GetInstance():LoadingOn()
 
-		local var0 = BackYardBaseThemeTemplate.BuildId(arg1)
-		local var1
-		local var2
-		local var3 = pg.UIMgr.GetInstance().uiCamera:GetComponent(typeof(Camera))
+		local var0_4 = BackYardBaseThemeTemplate.BuildId(arg1_4)
+		local var1_4
+		local var2_4
+		local var3_4 = pg.UIMgr.GetInstance().uiCamera:GetComponent(typeof(Camera))
 
 		seriesAsync({
-			function(arg0)
-				arg0:sendNotification(var0.START_TAKE_THEME_PHOTO)
+			function(arg0_5)
+				arg0_1:sendNotification(var0_0.START_TAKE_THEME_PHOTO)
 
-				var1 = BackYardThemeTempalteUtil.TakePhoto(var3)
-				var2 = BackYardThemeTempalteUtil.TakeIcon(var3)
+				var1_4 = BackYardThemeTempalteUtil.TakePhoto(var3_4)
+				var2_4 = BackYardThemeTempalteUtil.TakeIcon(var3_4)
 
-				arg0:sendNotification(var0.END_TAKE_THEME_PHOTO)
-				arg0()
+				arg0_1:sendNotification(var0_0.END_TAKE_THEME_PHOTO)
+				arg0_5()
 			end,
-			function(arg0)
-				onNextTick(arg0)
+			function(arg0_6)
+				onNextTick(arg0_6)
 			end,
-			function(arg0)
-				if not var1 or not var2 then
+			function(arg0_7)
+				if not var1_4 or not var2_4 then
 					return
 				end
 
-				BackYardThemeTempalteUtil.SavePhoto(var0, var1, var2, arg0)
+				BackYardThemeTempalteUtil.SavePhoto(var0_4, var1_4, var2_4, arg0_7)
 			end,
-			function(arg0)
-				onNextTick(arg0)
+			function(arg0_8)
+				onNextTick(arg0_8)
 			end,
-			function(arg0)
-				local var0 = BackYardThemeTempalteUtil.GetMd5(var0)
-				local var1 = BackYardThemeTempalteUtil.GetIconMd5(var0)
-				local var2 = _courtyard:GetController():GetStoreyData()
+			function(arg0_9)
+				local var0_9 = BackYardThemeTempalteUtil.GetMd5(var0_4)
+				local var1_9 = BackYardThemeTempalteUtil.GetIconMd5(var0_4)
+				local var2_9 = _courtyard:GetController():GetStoreyData()
 
 				pg.UIMgr.GetInstance():LoadingOff()
-				arg0:sendNotification(GAME.BACKYARD_SAVE_THEME_TEMPLATE, {
-					id = arg1,
-					name = arg2,
-					furnitureputList = var2,
-					iconMd5 = var1,
-					imageMd5 = var0
+				arg0_1:sendNotification(GAME.BACKYARD_SAVE_THEME_TEMPLATE, {
+					id = arg1_4,
+					name = arg2_4,
+					furnitureputList = var2_9,
+					iconMd5 = var1_9,
+					imageMd5 = var0_9
 				})
-				arg0()
+				arg0_9()
 			end
 		})
 	end)
-	arg0:bind(var0.DELETE_THEME, function(arg0, arg1)
-		arg0:sendNotification(GAME.BACKYARD_DELETE_THEME_TEMPLATE, {
-			templateId = arg1
+	arg0_1:bind(var0_0.DELETE_THEME, function(arg0_10, arg1_10)
+		arg0_1:sendNotification(GAME.BACKYARD_DELETE_THEME_TEMPLATE, {
+			templateId = arg1_10
 		})
 	end)
-	arg0:bind(var0.GET_CUSTOM_THEME, function(arg0, arg1)
-		arg0:sendNotification(GAME.BACKYARD_GET_THEME_TEMPLATE, {
+	arg0_1:bind(var0_0.GET_CUSTOM_THEME, function(arg0_11, arg1_11)
+		arg0_1:sendNotification(GAME.BACKYARD_GET_THEME_TEMPLATE, {
 			type = BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM,
-			callback = arg1
+			callback = arg1_11
 		})
 	end)
-	arg0:bind(var0.OPEN_SHOP, function(arg0)
+	arg0_1:bind(var0_0.OPEN_SHOP, function(arg0_12)
 		_courtyard:GetController():SaveFurnitures()
-		arg0.viewComponent:emit(BaseUI.ON_CLOSE)
-		arg0:sendNotification(GAME.OPEN_BACKYARD_SHOP)
+		arg0_1.viewComponent:emit(BaseUI.ON_CLOSE)
+		arg0_1:sendNotification(GAME.OPEN_BACKYARD_SHOP)
 	end)
-	arg0:bind(var0.SAVE_ALL, function(arg0)
+	arg0_1:bind(var0_0.SAVE_ALL, function(arg0_13)
 		_courtyard:GetController():SaveFurnitures()
 	end)
-	arg0:bind(var0.ClEAR_ALL, function(arg0, arg1)
-		arg0:sendNotification(GAME.ON_APPLY_SELF_THEME)
+	arg0_1:bind(var0_0.ClEAR_ALL, function(arg0_14, arg1_14)
+		arg0_1:sendNotification(GAME.ON_APPLY_SELF_THEME)
 		_courtyard:GetController():ClearFurnitures()
 	end)
-	arg0:bind(var0.ADD_FURNITURE, function(arg0, arg1, arg2)
-		local var0 = arg0:GenUniqueID(arg0.dorm, arg1.configId)
+	arg0_1:bind(var0_0.ADD_FURNITURE, function(arg0_15, arg1_15, arg2_15)
+		local var0_15 = arg0_1:GenUniqueID(arg0_1.dorm, arg1_15.configId)
 
 		_courtyard:GetController():AddFurniture({
 			selected = true,
-			id = var0,
-			configId = arg1.configId,
-			date = arg1.date
+			id = var0_15,
+			configId = arg1_15.configId,
+			date = arg1_15.date
 		})
-		getProxy(DormProxy):_ClearNewFlag(arg1.configId)
+		getProxy(DormProxy):_ClearNewFlag(arg1_15.configId)
 
-		local var1 = arg0.dorm:GetFurniture(arg1.configId)
+		local var1_15 = arg0_1.dorm:GetFurniture(arg1_15.configId)
 
-		var1:ClearNewFlag()
-		arg0.viewComponent:UpdateFurnitrue(var1)
+		var1_15:ClearNewFlag()
+		arg0_1.viewComponent:UpdateFurnitrue(var1_15)
 
-		if arg2 then
-			arg2()
+		if arg2_15 then
+			arg2_15()
 		end
 	end)
-	arg0:bind(var0.ADD_FURNITURES, function(arg0, arg1, arg2, arg3)
-		local var0 = {}
+	arg0_1:bind(var0_0.ADD_FURNITURES, function(arg0_16, arg1_16, arg2_16, arg3_16)
+		local var0_16 = {}
 
-		table.insert(var0, function(arg0)
-			arg0.viewComponent:emit(var0.ClEAR_ALL)
-			onNextTick(arg0)
+		table.insert(var0_16, function(arg0_17)
+			arg0_1.viewComponent:emit(var0_0.ClEAR_ALL)
+			onNextTick(arg0_17)
 		end)
 
-		local function var1(arg0)
+		local function var1_16(arg0_18)
 			_courtyard:GetController():AddFurniture({
-				id = arg0.id,
-				configId = arg0.configId,
-				parent = arg0.parent,
-				position = arg0.position,
-				dir = arg0.dir,
-				date = arg0.date
+				id = arg0_18.id,
+				configId = arg0_18.configId,
+				parent = arg0_18.parent,
+				position = arg0_18.position,
+				dir = arg0_18.dir,
+				date = arg0_18.date
 			})
 		end
 
-		local var2 = math.ceil(#arg2 / 3)
+		local var2_16 = math.ceil(#arg2_16 / 3)
 
-		for iter0, iter1 in pairs(arg2) do
-			assert(iter1.position)
-			table.insert(var0, function(arg0)
-				var1(iter1)
+		for iter0_16, iter1_16 in pairs(arg2_16) do
+			assert(iter1_16.position)
+			table.insert(var0_16, function(arg0_19)
+				var1_16(iter1_16)
 
-				if (iter0 - 1) % var2 == 0 then
-					onNextTick(arg0)
+				if (iter0_16 - 1) % var2_16 == 0 then
+					onNextTick(arg0_19)
 				else
-					arg0()
+					arg0_19()
 				end
 			end)
 		end
 
 		pg.UIMgr.GetInstance():LoadingOn()
-		seriesAsync(var0, function()
-			if arg3 then
-				arg3(arg2)
+		seriesAsync(var0_16, function()
+			if arg3_16 then
+				arg3_16(arg2_16)
 			end
 
-			arg0:sendNotification(GAME.ON_APPLY_SELF_THEME_DONE, {
-				id = arg1
+			arg0_1:sendNotification(GAME.ON_APPLY_SELF_THEME_DONE, {
+				id = arg1_16
 			})
 			pg.UIMgr.GetInstance():LoadingOff()
 		end)
 	end)
-	arg0:bind(var0.REMOVE_PAPER, function(arg0, arg1)
-		_courtyard:GetController():RemovePaper(arg1.id)
+	arg0_1:bind(var0_0.REMOVE_PAPER, function(arg0_21, arg1_21)
+		_courtyard:GetController():RemovePaper(arg1_21.id)
 	end)
-	arg0:bind(var0.ON_SET_UP, function(arg0)
-		arg0:SetUp()
+	arg0_1:bind(var0_0.ON_SET_UP, function(arg0_22)
+		arg0_1:SetUp()
 	end)
 end
 
-function var0.AnyFurnitureInFloor(arg0, arg1, arg2)
-	local var0 = arg1:GetThemeList()[arg2]
+function var0_0.AnyFurnitureInFloor(arg0_23, arg1_23, arg2_23)
+	local var0_23 = arg1_23:GetThemeList()[arg2_23]
 
-	if not var0 then
+	if not var0_23 then
 		return false
 	end
 
-	local var1 = var0:GetAllFurniture()
+	local var1_23 = var0_23:GetAllFurniture()
 
-	return table.getCount(var1) > 0
+	return table.getCount(var1_23) > 0
 end
 
-function var0.GetCanPutFurnitureForTheme(arg0, arg1, arg2)
-	local var0 = getProxy(DormProxy).floor
-	local var1 = arg0:GetAllFloorFurnitures(arg1)
-	local var2 = arg2:IsOccupyed(var1, var0)
-	local var3 = {}
-	local var4 = false
+function var0_0.GetCanPutFurnitureForTheme(arg0_24, arg1_24, arg2_24)
+	local var0_24 = getProxy(DormProxy).floor
+	local var1_24 = arg0_24:GetAllFloorFurnitures(arg1_24)
+	local var2_24 = arg2_24:IsOccupyed(var1_24, var0_24)
+	local var3_24 = {}
+	local var4_24 = false
 
-	if var2 then
-		var3 = arg2:GetUsableFurnituresForFloor(var1, var0)
-		var4 = false
+	if var2_24 then
+		var3_24 = arg2_24:GetUsableFurnituresForFloor(var1_24, var0_24)
+		var4_24 = false
 	else
-		local var5 = arg2:GetAllFurniture()
+		local var5_24 = arg2_24:GetAllFurniture()
 
-		for iter0, iter1 in pairs(var5) do
-			table.insert(var3, iter1)
+		for iter0_24, iter1_24 in pairs(var5_24) do
+			table.insert(var3_24, iter1_24)
 		end
 
-		var4 = true
+		var4_24 = true
 	end
 
-	local var6 = arg0:FilterOwnCount(var3)
+	local var6_24 = arg0_24:FilterOwnCount(var3_24)
 
-	table.sort(var6, BackyardThemeFurniture._LoadWeight)
+	table.sort(var6_24, BackyardThemeFurniture._LoadWeight)
 
-	return var6, var4
+	return var6_24, var4_24
 end
 
-function var0.FilterOwnCount(arg0, arg1)
-	local var0 = {}
-	local var1 = {}
-	local var2 = {}
-	local var3 = getProxy(DormProxy):getRawData()
+function var0_0.FilterOwnCount(arg0_25, arg1_25)
+	local var0_25 = {}
+	local var1_25 = {}
+	local var2_25 = {}
+	local var3_25 = getProxy(DormProxy):getRawData()
 
-	for iter0, iter1 in ipairs(arg1) do
-		var1[iter1.configId] = (var1[iter1.configId] or 0) + 1
+	for iter0_25, iter1_25 in ipairs(arg1_25) do
+		var1_25[iter1_25.configId] = (var1_25[iter1_25.configId] or 0) + 1
 
-		if var3:GetOwnFurnitureCount(iter1.configId) >= var1[iter1.configId] then
-			table.insert(var0, iter1)
+		if var3_25:GetOwnFurnitureCount(iter1_25.configId) >= var1_25[iter1_25.configId] then
+			table.insert(var0_25, iter1_25)
 		else
-			table.insert(var2, iter1.id)
+			table.insert(var2_25, iter1_25.id)
 		end
 	end
 
-	for iter2, iter3 in ipairs(var2) do
-		for iter4, iter5 in ipairs(var0) do
-			if iter5.parent == iter3 then
-				iter5.parent = 0
+	for iter2_25, iter3_25 in ipairs(var2_25) do
+		for iter4_25, iter5_25 in ipairs(var0_25) do
+			if iter5_25.parent == iter3_25 then
+				iter5_25.parent = 0
 			end
 		end
 	end
 
-	return var0
+	return var0_25
 end
 
-function var0.GetAllFloorFurnitures(arg0, arg1)
-	local var0 = {}
+function var0_0.GetAllFloorFurnitures(arg0_26, arg1_26)
+	local var0_26 = {}
 
-	for iter0, iter1 in pairs(arg1:GetThemeList()) do
-		for iter2, iter3 in pairs(iter1:GetAllFurniture()) do
-			var0[iter2] = iter3
+	for iter0_26, iter1_26 in pairs(arg1_26:GetThemeList()) do
+		for iter2_26, iter3_26 in pairs(iter1_26:GetAllFurniture()) do
+			var0_26[iter2_26] = iter3_26
 		end
 	end
 
-	return var0
+	return var0_26
 end
 
-function var0.GenUniqueID(arg0, arg1, arg2)
-	local var0 = arg0:GetAllFloorFurnitures(arg1)
-	local var1 = arg1:GetOwnFurnitureCount(arg2)
+function var0_0.GenUniqueID(arg0_27, arg1_27, arg2_27)
+	local var0_27 = arg0_27:GetAllFloorFurnitures(arg1_27)
+	local var1_27 = arg1_27:GetOwnFurnitureCount(arg2_27)
 
-	for iter0 = 0, var1 - 1 do
-		local var2 = BackyardThemeFurniture.GetUniqueId(arg2, iter0)
+	for iter0_27 = 0, var1_27 - 1 do
+		local var2_27 = BackyardThemeFurniture.GetUniqueId(arg2_27, iter0_27)
 
-		if not var0[var2] then
-			return var2
+		if not var0_27[var2_27] then
+			return var2_27
 		end
 	end
 
-	return BackyardThemeFurniture.GetUniqueId(arg2, 0)
+	return BackyardThemeFurniture.GetUniqueId(arg2_27, 0)
 end
 
-function var0.SetUp(arg0)
+function var0_0.SetUp(arg0_28)
 	seriesAsync({
-		function(arg0)
-			local var0 = getProxy(DormProxy)
+		function(arg0_29)
+			local var0_29 = getProxy(DormProxy)
 
-			arg0.dorm = var0:getData()
+			arg0_28.dorm = var0_29:getData()
 
-			arg0.viewComponent:SetDorm(arg0.dorm)
-			arg0.viewComponent:SetThemes(var0:GetCustomThemeTemplates())
-			onNextTick(arg0)
+			arg0_28.viewComponent:SetDorm(arg0_28.dorm)
+			arg0_28.viewComponent:SetThemes(var0_29:GetCustomThemeTemplates())
+			onNextTick(arg0_29)
 		end,
-		function(arg0)
-			if arg0.viewComponent.themes then
-				arg0()
+		function(arg0_30)
+			if arg0_28.viewComponent.themes then
+				arg0_30()
 
 				return
 			end
 
-			arg0.viewComponent:emit(BackYardDecorationMediator.GET_CUSTOM_THEME, arg0)
+			arg0_28.viewComponent:emit(BackYardDecorationMediator.GET_CUSTOM_THEME, arg0_30)
 		end
 	}, function()
-		arg0.viewComponent:InitPages()
+		arg0_28.viewComponent:InitPages()
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_32)
 	return {
 		CourtYardEvent._SYN_FURNITURE,
 		CourtYardEvent._EXIT_MODE,
@@ -310,73 +310,73 @@ function var0.listNotificationInterests(arg0)
 		GAME.ON_APPLY_SELF_THEME_DONE,
 		CourtYardEvent._DRAG_ITEM,
 		CourtYardEvent._DRAG_ITEM_END,
-		var0.START_TAKE_THEME_PHOTO,
-		var0.END_TAKE_THEME_PHOTO
+		var0_0.START_TAKE_THEME_PHOTO,
+		var0_0.END_TAKE_THEME_PHOTO
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_33, arg1_33)
+	local var0_33 = arg1_33:getName()
+	local var1_33 = arg1_33:getBody()
 
-	if var0 == CourtYardEvent._SYN_FURNITURE then
-		local var2 = var1[1]
-		local var3 = var1[2]
-		local var4 = getProxy(DormProxy).floor
-		local var5 = arg0.dorm:GetTheme(var4)
+	if var0_33 == CourtYardEvent._SYN_FURNITURE then
+		local var2_33 = var1_33[1]
+		local var3_33 = var1_33[2]
+		local var4_33 = getProxy(DormProxy).floor
+		local var5_33 = arg0_33.dorm:GetTheme(var4_33)
 
-		for iter0, iter1 in ipairs(var2) do
-			local var6 = var5:GetFurniture(iter1.id)
+		for iter0_33, iter1_33 in ipairs(var2_33) do
+			local var6_33 = var5_33:GetFurniture(iter1_33.id)
 
-			if var6 then
-				var6:UpdatePosition(iter1.position)
-				var6:UpdateDir(iter1.dir)
-				var6:UpdateParent(iter1.parent)
-				var6:UpdateChildList(iter1.child)
-				var6:UpdateFloor(var4)
+			if var6_33 then
+				var6_33:UpdatePosition(iter1_33.position)
+				var6_33:UpdateDir(iter1_33.dir)
+				var6_33:UpdateParent(iter1_33.parent)
+				var6_33:UpdateChildList(iter1_33.child)
+				var6_33:UpdateFloor(var4_33)
 			else
-				local var7 = var5:AddFurniture(iter1, var4)
+				local var7_33 = var5_33:AddFurniture(iter1_33, var4_33)
 			end
 
-			arg0.viewComponent:UpdateDorm(arg0.dorm)
-			arg0.viewComponent:UpdateFurnitrue(arg0.dorm:GetFurniture(iter1.configId))
+			arg0_33.viewComponent:UpdateDorm(arg0_33.dorm)
+			arg0_33.viewComponent:UpdateFurnitrue(arg0_33.dorm:GetFurniture(iter1_33.configId))
 		end
 
-		for iter2, iter3 in ipairs(var3) do
-			local var8 = var5:GetFurniture(iter3)
+		for iter2_33, iter3_33 in ipairs(var3_33) do
+			local var8_33 = var5_33:GetFurniture(iter3_33)
 
-			var5:DeleteFurniture(iter3)
+			var5_33:DeleteFurniture(iter3_33)
 
-			if var8 then
-				arg0.viewComponent:UpdateDorm(arg0.dorm)
-				arg0.viewComponent:UpdateFurnitrue(arg0.dorm:GetFurniture(var8.configId))
+			if var8_33 then
+				arg0_33.viewComponent:UpdateDorm(arg0_33.dorm)
+				arg0_33.viewComponent:UpdateFurnitrue(arg0_33.dorm:GetFurniture(var8_33.configId))
 			end
 		end
-	elseif var0 == DormProxy.THEME_TEMPLATE_ADDED then
-		arg0.viewComponent:CustomThemeAdded(var1.template)
-	elseif var0 == DormProxy.THEME_TEMPLATE_DELTETED then
-		arg0.viewComponent:CustomThemeDeleted(var1.templateId)
-	elseif var0 == GAME.BACKYARD_GET_THEME_TEMPLATE_DONE then
-		local var9 = getProxy(DormProxy)
+	elseif var0_33 == DormProxy.THEME_TEMPLATE_ADDED then
+		arg0_33.viewComponent:CustomThemeAdded(var1_33.template)
+	elseif var0_33 == DormProxy.THEME_TEMPLATE_DELTETED then
+		arg0_33.viewComponent:CustomThemeDeleted(var1_33.templateId)
+	elseif var0_33 == GAME.BACKYARD_GET_THEME_TEMPLATE_DONE then
+		local var9_33 = getProxy(DormProxy)
 
-		arg0.viewComponent:SetThemes(var9:GetCustomThemeTemplates())
-	elseif var0 == GAME.ON_APPLY_SELF_THEME then
-		arg0.viewComponent:OnApplyThemeBefore()
-	elseif var0 == GAME.ON_APPLY_SELF_THEME_DONE then
-		arg0.viewComponent:OnApplyThemeAfter(var1.id)
-	elseif var0 == CourtYardEvent._EXIT_MODE then
-		arg0.viewComponent:emit(BaseUI.ON_CLOSE)
-	elseif var0 == CourtYardEvent._DRAG_ITEM then
-		GetOrAddComponent(arg0.viewComponent._tf, typeof(CanvasGroup)).blocksRaycasts = false
-	elseif var0 == CourtYardEvent._DRAG_ITEM_END then
-		GetOrAddComponent(arg0.viewComponent._tf, typeof(CanvasGroup)).blocksRaycasts = true
-	elseif var0 == var0.START_TAKE_THEME_PHOTO then
-		GetOrAddComponent(arg0.viewComponent._tf, typeof(CanvasGroup)).alpha = 0
-	elseif var0 == var0.END_TAKE_THEME_PHOTO then
-		GetOrAddComponent(arg0.viewComponent._tf, typeof(CanvasGroup)).alpha = 1
-	elseif var0 == CourtYardEvent._FURNITURE_SELECTED then
-		arg0.viewComponent:emit(BackYardDecrationLayer.INNER_SELECTED_FURNITRUE, var1)
+		arg0_33.viewComponent:SetThemes(var9_33:GetCustomThemeTemplates())
+	elseif var0_33 == GAME.ON_APPLY_SELF_THEME then
+		arg0_33.viewComponent:OnApplyThemeBefore()
+	elseif var0_33 == GAME.ON_APPLY_SELF_THEME_DONE then
+		arg0_33.viewComponent:OnApplyThemeAfter(var1_33.id)
+	elseif var0_33 == CourtYardEvent._EXIT_MODE then
+		arg0_33.viewComponent:emit(BaseUI.ON_CLOSE)
+	elseif var0_33 == CourtYardEvent._DRAG_ITEM then
+		GetOrAddComponent(arg0_33.viewComponent._tf, typeof(CanvasGroup)).blocksRaycasts = false
+	elseif var0_33 == CourtYardEvent._DRAG_ITEM_END then
+		GetOrAddComponent(arg0_33.viewComponent._tf, typeof(CanvasGroup)).blocksRaycasts = true
+	elseif var0_33 == var0_0.START_TAKE_THEME_PHOTO then
+		GetOrAddComponent(arg0_33.viewComponent._tf, typeof(CanvasGroup)).alpha = 0
+	elseif var0_33 == var0_0.END_TAKE_THEME_PHOTO then
+		GetOrAddComponent(arg0_33.viewComponent._tf, typeof(CanvasGroup)).alpha = 1
+	elseif var0_33 == CourtYardEvent._FURNITURE_SELECTED then
+		arg0_33.viewComponent:emit(BackYardDecrationLayer.INNER_SELECTED_FURNITRUE, var1_33)
 	end
 end
 
-return var0
+return var0_0

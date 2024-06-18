@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_94 = {}
+var0_0.word_template_94 = {}
 
-local var1 = var0.word_template_94
+local var1_0 = var0_0.word_template_94
 
 function temp()
-	var1.樊 = {
+	var1_0.樊 = {
 		金 = {
 			源 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.反 = {
+	var1_0.反 = {
 		党 = {
 			this = true
 		},
@@ -701,7 +701,7 @@ end
 temp()
 
 function temp()
-	var1.犯 = {
+	var1_0.犯 = {
 		人 = {
 			老 = {
 				婆 = {
@@ -721,7 +721,7 @@ end
 temp()
 
 function temp()
-	var1.饭 = {
+	var1_0.饭 = {
 		岛 = {
 			爱 = {
 				this = true
@@ -778,7 +778,7 @@ end
 temp()
 
 function temp()
-	var1.范 = {
+	var1_0.范 = {
 		長 = {
 			龍 = {
 				this = true
@@ -805,7 +805,7 @@ end
 temp()
 
 function temp()
-	var1.贩 = {
+	var1_0.贩 = {
 		毒 = {
 			this = true
 		},
@@ -853,7 +853,7 @@ end
 temp()
 
 function temp()
-	var1.販 = {
+	var1_0.販 = {
 		毒 = {
 			this = true
 		}

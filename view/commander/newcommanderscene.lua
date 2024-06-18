@@ -1,269 +1,269 @@
-﻿local var0 = class("NewCommanderScene", import("..base.BaseUI"))
+﻿local var0_0 = class("NewCommanderScene", import("..base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "GetCommanderUI"
 end
 
-function var0.init(arg0)
-	arg0.bgTF = arg0:findTF("main/bg")
-	arg0.clickTF = arg0:findTF("click")
-	arg0.paintTF = arg0:findTF("main/paint")
-	arg0.paintTFCG = arg0.paintTF:GetComponent(typeof(CanvasGroup))
-	arg0.infoTF = arg0:findTF("main/info")
-	arg0.leftPanel = arg0:findTF("left_panel")
-	arg0.lockBtn = arg0:findTF("left_panel/btns/lock")
-	arg0.unlockBtn = arg0:findTF("left_panel/btns/unlock")
-	arg0.shareBtn = arg0:findTF("left_panel/btns/share")
-	arg0.nameTF = arg0:findTF("content/name/value", arg0.infoTF):GetComponent(typeof(Text))
-	arg0.nationTF = arg0:findTF("content/nation/value", arg0.infoTF):GetComponent(typeof(Text))
-	arg0.rarityTF = arg0:findTF("content/rarity/value", arg0.infoTF):GetComponent(typeof(Image))
-	arg0.skillTF = arg0:findTF("content/skill/value", arg0.infoTF):GetComponent(typeof(Text))
-	arg0.abilitysTF = arg0:findTF("content/abilitys/attrs", arg0.infoTF)
-	arg0.talentsTF = arg0:findTF("content/talents", arg0.infoTF)
-	arg0.talentsList = UIItemList.New(arg0.talentsTF, arg0.talentsTF:Find("talent"))
-	arg0.dateTF = arg0:findTF("content/copyright/Text", arg0.infoTF)
-	arg0.treePanel = CommanderTreePage.New(arg0._tf, arg0.event)
-	arg0.msgbox = CommanderMsgBoxPage.New(arg0._tf, arg0.event)
-	arg0.antor = arg0._tf:GetComponent(typeof(Animator))
-	arg0.skipBtn = arg0._tf:Find("skip")
-	arg0.getEffect = arg0:findTF("main/effect")
-	arg0.skipAnim = true
+function var0_0.init(arg0_2)
+	arg0_2.bgTF = arg0_2:findTF("main/bg")
+	arg0_2.clickTF = arg0_2:findTF("click")
+	arg0_2.paintTF = arg0_2:findTF("main/paint")
+	arg0_2.paintTFCG = arg0_2.paintTF:GetComponent(typeof(CanvasGroup))
+	arg0_2.infoTF = arg0_2:findTF("main/info")
+	arg0_2.leftPanel = arg0_2:findTF("left_panel")
+	arg0_2.lockBtn = arg0_2:findTF("left_panel/btns/lock")
+	arg0_2.unlockBtn = arg0_2:findTF("left_panel/btns/unlock")
+	arg0_2.shareBtn = arg0_2:findTF("left_panel/btns/share")
+	arg0_2.nameTF = arg0_2:findTF("content/name/value", arg0_2.infoTF):GetComponent(typeof(Text))
+	arg0_2.nationTF = arg0_2:findTF("content/nation/value", arg0_2.infoTF):GetComponent(typeof(Text))
+	arg0_2.rarityTF = arg0_2:findTF("content/rarity/value", arg0_2.infoTF):GetComponent(typeof(Image))
+	arg0_2.skillTF = arg0_2:findTF("content/skill/value", arg0_2.infoTF):GetComponent(typeof(Text))
+	arg0_2.abilitysTF = arg0_2:findTF("content/abilitys/attrs", arg0_2.infoTF)
+	arg0_2.talentsTF = arg0_2:findTF("content/talents", arg0_2.infoTF)
+	arg0_2.talentsList = UIItemList.New(arg0_2.talentsTF, arg0_2.talentsTF:Find("talent"))
+	arg0_2.dateTF = arg0_2:findTF("content/copyright/Text", arg0_2.infoTF)
+	arg0_2.treePanel = CommanderTreePage.New(arg0_2._tf, arg0_2.event)
+	arg0_2.msgbox = CommanderMsgBoxPage.New(arg0_2._tf, arg0_2.event)
+	arg0_2.antor = arg0_2._tf:GetComponent(typeof(Animator))
+	arg0_2.skipBtn = arg0_2._tf:Find("skip")
+	arg0_2.getEffect = arg0_2:findTF("main/effect")
+	arg0_2.skipAnim = true
 
 	if pg.NewGuideMgr.GetInstance():IsBusy() then
-		arg0.skipAnim = false
+		arg0_2.skipAnim = false
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, false, {
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, false, {
 		weight = LayerWeightConst.SECOND_LAYER + 1
 	})
-	setText(arg0:findTF("main/info/content/abilitys/attrs/command/name/Text"), i18n("commander_command_ability"))
-	setText(arg0:findTF("main/info/content/abilitys/attrs/tactic/name/Text"), i18n("commander_tactical_ability"))
-	setText(arg0:findTF("main/info/content/abilitys/attrs/support/name/Text"), i18n("commander_logistics_ability"))
-	setText(arg0:findTF("main/info/content/copyright/title"), i18n("commander_get_commander_coptyright"))
+	setText(arg0_2:findTF("main/info/content/abilitys/attrs/command/name/Text"), i18n("commander_command_ability"))
+	setText(arg0_2:findTF("main/info/content/abilitys/attrs/tactic/name/Text"), i18n("commander_tactical_ability"))
+	setText(arg0_2:findTF("main/info/content/abilitys/attrs/support/name/Text"), i18n("commander_logistics_ability"))
+	setText(arg0_2:findTF("main/info/content/copyright/title"), i18n("commander_get_commander_coptyright"))
 end
 
-function var0.openTreePanel(arg0, arg1)
-	local function var0()
-		arg0.treePanel:ActionInvoke("Show", arg1, LayerWeightConst.SECOND_LAYER + 2)
+function var0_0.openTreePanel(arg0_3, arg1_3)
+	local function var0_3()
+		arg0_3.treePanel:ActionInvoke("Show", arg1_3, LayerWeightConst.SECOND_LAYER + 2)
 	end
 
-	if arg0.treePanel:GetLoaded() then
-		var0()
+	if arg0_3.treePanel:GetLoaded() then
+		var0_3()
 	else
-		arg0.treePanel:Load()
-		arg0.treePanel:CallbackInvoke(var0)
+		arg0_3.treePanel:Load()
+		arg0_3.treePanel:CallbackInvoke(var0_3)
 	end
 end
 
-function var0.closeTreePanel(arg0)
-	arg0.treePanel:ActionInvoke("closeTreePanel")
+function var0_0.closeTreePanel(arg0_5)
+	arg0_5.treePanel:ActionInvoke("closeTreePanel")
 end
 
-function var0.onUIAnimEnd(arg0, arg1)
-	arg0.antor:SetBool("play", true)
+function var0_0.onUIAnimEnd(arg0_6, arg1_6)
+	arg0_6.antor:SetBool("play", true)
 
-	arg0.isAnim = true
+	arg0_6.isAnim = true
 
-	setActive(arg0.clickTF, arg0.skipAnim)
+	setActive(arg0_6.clickTF, arg0_6.skipAnim)
 
-	local var0 = arg0._tf:GetComponent(typeof(DftAniEvent))
+	local var0_6 = arg0_6._tf:GetComponent(typeof(DftAniEvent))
 
-	var0:SetTriggerEvent(function(arg0)
-		if arg0.contextData.commander:isSSR() then
-			arg0:playerEffect()
+	var0_6:SetTriggerEvent(function(arg0_7)
+		if arg0_6.contextData.commander:isSSR() then
+			arg0_6:playerEffect()
 		end
 
-		var0:SetTriggerEvent(nil)
+		var0_6:SetTriggerEvent(nil)
 	end)
-	var0:SetEndEvent(function()
-		arg0.isAnim = false
+	var0_6:SetEndEvent(function()
+		arg0_6.isAnim = false
 
-		setActive(arg0.clickTF, true)
-		var0:SetEndEvent(nil)
-		arg1()
-	end)
-end
-
-function var0.playerEffect(arg0)
-	PoolMgr.GetInstance():GetUI("AL_zhihuimiao_zhipian", true, function(arg0)
-		arg0.effect = arg0
-
-		SetParent(arg0, arg0._tf)
-		setActive(arg0, true)
+		setActive(arg0_6.clickTF, true)
+		var0_6:SetEndEvent(nil)
+		arg1_6()
 	end)
 end
 
-function var0.openMsgBox(arg0, arg1)
-	arg0.isShowMsgBox = true
+function var0_0.playerEffect(arg0_9)
+	PoolMgr.GetInstance():GetUI("AL_zhihuimiao_zhipian", true, function(arg0_10)
+		arg0_9.effect = arg0_10
 
-	local function var0()
-		arg0.msgbox:ActionInvoke("Show", arg1)
+		SetParent(arg0_10, arg0_9._tf)
+		setActive(arg0_10, true)
+	end)
+end
+
+function var0_0.openMsgBox(arg0_11, arg1_11)
+	arg0_11.isShowMsgBox = true
+
+	local function var0_11()
+		arg0_11.msgbox:ActionInvoke("Show", arg1_11)
 	end
 
-	if arg0.msgbox:GetLoaded() then
-		var0()
+	if arg0_11.msgbox:GetLoaded() then
+		var0_11()
 	else
-		arg0.msgbox:Load()
-		arg0.msgbox:CallbackInvoke(var0)
+		arg0_11.msgbox:Load()
+		arg0_11.msgbox:CallbackInvoke(var0_11)
 	end
 end
 
-function var0.closeMsgBox(arg0)
-	arg0.isShowMsgBox = nil
+function var0_0.closeMsgBox(arg0_13)
+	arg0_13.isShowMsgBox = nil
 
-	arg0.msgbox:ActionInvoke("Hide")
+	arg0_13.msgbox:ActionInvoke("Hide")
 end
 
-function var0.didEnter(arg0)
-	arg0:updateInfo()
-	onButton(arg0, arg0.shareBtn, function()
+function var0_0.didEnter(arg0_14)
+	arg0_14:updateInfo()
+	onButton(arg0_14, arg0_14.shareBtn, function()
 		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeCommander, pg.ShareMgr.PANEL_TYPE_PINK, {
 			weight = LayerWeightConst.TOP_LAYER
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.skipBtn, function(arg0)
-		if arg0.isAnim then
+	onButton(arg0_14, arg0_14.skipBtn, function(arg0_16)
+		if arg0_14.isAnim then
 			return
 		end
 
 		getProxy(CommanderProxy).hasSkipFlag = true
 
-		arg0:DoExit()
+		arg0_14:DoExit()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.lockBtn, function()
-		local var0 = getProxy(CommanderProxy):getCommanderById(arg0.contextData.commander.id):getLock()
+	onButton(arg0_14, arg0_14.lockBtn, function()
+		local var0_17 = getProxy(CommanderProxy):getCommanderById(arg0_14.contextData.commander.id):getLock()
 
-		arg0:emit(NewCommanderMediator.ON_LOCK, arg0.contextData.commander.id, 1 - var0)
+		arg0_14:emit(NewCommanderMediator.ON_LOCK, arg0_14.contextData.commander.id, 1 - var0_17)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.unlockBtn, function()
-		local var0 = getProxy(CommanderProxy):getCommanderById(arg0.contextData.commander.id):getLock()
+	onButton(arg0_14, arg0_14.unlockBtn, function()
+		local var0_18 = getProxy(CommanderProxy):getCommanderById(arg0_14.contextData.commander.id):getLock()
 
-		arg0:emit(NewCommanderMediator.ON_LOCK, arg0.contextData.commander.id, 1 - var0)
+		arg0_14:emit(NewCommanderMediator.ON_LOCK, arg0_14.contextData.commander.id, 1 - var0_18)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.clickTF, function()
-		if arg0.isAnim then
-			arg0.antor:SetBool("play", false)
+	onButton(arg0_14, arg0_14.clickTF, function()
+		if arg0_14.isAnim then
+			arg0_14.antor:SetBool("play", false)
 
-			if arg0.contextData.commander:isSSR() and not arg0.effect then
-				arg0:playerEffect()
+			if arg0_14.contextData.commander:isSSR() and not arg0_14.effect then
+				arg0_14:playerEffect()
 			end
 
-			arg0.isAnim = nil
+			arg0_14.isAnim = nil
 		else
-			arg0:DoExit()
+			arg0_14:DoExit()
 		end
 	end, SFX_CANCEL)
 end
 
-function var0.DoExit(arg0)
-	if arg0.contextData.commander:ShouldTipLock() then
-		arg0:openMsgBox({
+function var0_0.DoExit(arg0_20)
+	if arg0_20.contextData.commander:ShouldTipLock() then
+		arg0_20:openMsgBox({
 			content = i18n("commander_lock_tip"),
 			onYes = function()
-				arg0:emit(NewCommanderMediator.ON_LOCK, arg0.contextData.commander.id, 1)
-				arg0:emit(var0.ON_CLOSE)
+				arg0_20:emit(NewCommanderMediator.ON_LOCK, arg0_20.contextData.commander.id, 1)
+				arg0_20:emit(var0_0.ON_CLOSE)
 			end,
 			layer = LayerWeightConst.SECOND_LAYER + 2,
 			onNo = function()
-				arg0:emit(var0.ON_CLOSE)
+				arg0_20:emit(var0_0.ON_CLOSE)
 			end
 		})
 	else
-		arg0:emit(var0.ON_CLOSE)
+		arg0_20:emit(var0_0.ON_CLOSE)
 	end
 end
 
-function var0.updateLockState(arg0)
-	local var0 = getProxy(CommanderProxy):getCommanderById(arg0.contextData.commander.id):getLock()
+function var0_0.updateLockState(arg0_23)
+	local var0_23 = getProxy(CommanderProxy):getCommanderById(arg0_23.contextData.commander.id):getLock()
 
-	setActive(arg0.lockBtn, var0 ~= 0)
-	setActive(arg0.unlockBtn, var0 == 0)
+	setActive(arg0_23.lockBtn, var0_23 ~= 0)
+	setActive(arg0_23.unlockBtn, var0_23 == 0)
 end
 
-function var0.updateInfo(arg0, arg1)
-	local var0 = arg0.contextData.commander
+function var0_0.updateInfo(arg0_24, arg1_24)
+	local var0_24 = arg0_24.contextData.commander
 
-	arg0:updateLockState(var0:getLock())
+	arg0_24:updateLockState(var0_24:getLock())
 
-	arg0.nameTF.text = var0:getName()
-	arg0.nationTF.text = Nation.Nation2Name(var0:getConfig("nationality"))
+	arg0_24.nameTF.text = var0_24:getName()
+	arg0_24.nationTF.text = Nation.Nation2Name(var0_24:getConfig("nationality"))
 
-	local var1 = var0:getSkills()[1]
+	local var1_24 = var0_24:getSkills()[1]
 
-	arg0.skillTF.text = var1:getConfig("name")
+	arg0_24.skillTF.text = var1_24:getConfig("name")
 
-	local var2 = Commander.rarity2Print(var0:getRarity())
+	local var2_24 = Commander.rarity2Print(var0_24:getRarity())
 
-	LoadImageSpriteAsync("CommanderRarity/" .. var2, arg0.rarityTF, true)
-	setCommanderPaintingPrefab(arg0.paintTF, var0:getPainting(), "get")
+	LoadImageSpriteAsync("CommanderRarity/" .. var2_24, arg0_24.rarityTF, true)
+	setCommanderPaintingPrefab(arg0_24.paintTF, var0_24:getPainting(), "get")
 
-	arg0.painting = var0
+	arg0_24.painting = var0_24
 
-	arg0:updateAbilitys()
-	arg0:updateTalents()
-	setText(arg0.dateTF, pg.TimeMgr.GetInstance():CurrentSTimeDesc("%y%m%d"))
+	arg0_24:updateAbilitys()
+	arg0_24:updateTalents()
+	setText(arg0_24.dateTF, pg.TimeMgr.GetInstance():CurrentSTimeDesc("%y%m%d"))
 
-	if arg1 then
-		arg1()
+	if arg1_24 then
+		arg1_24()
 	end
 end
 
-function var0.updateAbilitys(arg0)
-	local var0 = arg0.contextData.commander:getAbilitys()
+function var0_0.updateAbilitys(arg0_25)
+	local var0_25 = arg0_25.contextData.commander:getAbilitys()
 
-	eachChild(arg0.abilitysTF, function(arg0)
-		local var0 = go(arg0).name
-		local var1 = var0[var0]
+	eachChild(arg0_25.abilitysTF, function(arg0_26)
+		local var0_26 = go(arg0_26).name
+		local var1_26 = var0_25[var0_26]
 
-		setText(arg0:Find("slider/point"), var1.value)
+		setText(arg0_26:Find("slider/point"), var1_26.value)
 
-		arg0:Find("slider"):GetComponent(typeof(Slider)).value = var1.value / CommanderConst.MAX_ABILITY
+		arg0_26:Find("slider"):GetComponent(typeof(Slider)).value = var1_26.value / CommanderConst.MAX_ABILITY
 	end)
 end
 
-function var0.updateTalents(arg0)
-	local var0 = arg0.contextData.commander:getTalents()
+function var0_0.updateTalents(arg0_27)
+	local var0_27 = arg0_27.contextData.commander:getTalents()
 
-	arg0.talentsList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = var0[arg1 + 1]
+	arg0_27.talentsList:make(function(arg0_28, arg1_28, arg2_28)
+		if arg0_28 == UIItemList.EventUpdate then
+			local var0_28 = var0_27[arg1_28 + 1]
 
-			setActive(arg2:Find("empty"), not var0)
-			setActive(arg2:Find("icon"), var0)
+			setActive(arg2_28:Find("empty"), not var0_28)
+			setActive(arg2_28:Find("icon"), var0_28)
 
-			if var0 then
-				GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. var0:getConfig("icon"), "", arg2:Find("icon"))
+			if var0_28 then
+				GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. var0_28:getConfig("icon"), "", arg2_28:Find("icon"))
 			end
 
-			onButton(arg0, arg2, function()
-				arg0:openTreePanel(var0)
+			onButton(arg0_27, arg2_28, function()
+				arg0_27:openTreePanel(var0_28)
 			end, SFX_PANEL)
 		end
 	end)
-	arg0.talentsList:align(3)
+	arg0_27.talentsList:align(3)
 end
 
-function var0.onBackPressed(arg0)
-	if arg0.isShowMsgBox then
-		arg0:closeMsgBox()
+function var0_0.onBackPressed(arg0_30)
+	if arg0_30.isShowMsgBox then
+		arg0_30:closeMsgBox()
 
 		return
 	end
 end
 
-function var0.willExit(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, pg.UIMgr.GetInstance().UIMain)
-	arg0.treePanel:Destroy()
-	arg0.msgbox:Destroy()
-	retCommanderPaintingPrefab(arg0.paintTF, arg0.painting:getPainting())
+function var0_0.willExit(arg0_31)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_31._tf, pg.UIMgr.GetInstance().UIMain)
+	arg0_31.treePanel:Destroy()
+	arg0_31.msgbox:Destroy()
+	retCommanderPaintingPrefab(arg0_31.paintTF, arg0_31.painting:getPainting())
 
-	if arg0.effect then
-		PoolMgr.GetInstance():ReturnUI("AL_zhihuimiao_zhipian", arg0.effect)
+	if arg0_31.effect then
+		PoolMgr.GetInstance():ReturnUI("AL_zhihuimiao_zhipian", arg0_31.effect)
 	end
 
-	if arg0.contextData.onExit then
-		arg0.contextData.onExit()
+	if arg0_31.contextData.onExit then
+		arg0_31.contextData.onExit()
 	end
 end
 
-return var0
+return var0_0

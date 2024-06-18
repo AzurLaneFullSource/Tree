@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_178 = {}
+var0_0.word_template_178 = {}
 
-local var1 = var0.word_template_178
+local var1_0 = var0_0.word_template_178
 
 function temp()
-	var1.濫 = {
+	var1_0.濫 = {
 		B = {
 			this = true
 		},
@@ -29,7 +29,7 @@ end
 temp()
 
 function temp()
-	var1.爛 = {
+	var1_0.爛 = {
 		B = {
 			this = true
 		},
@@ -51,7 +51,7 @@ end
 temp()
 
 function temp()
-	var1.狼 = {
+	var1_0.狼 = {
 		弩 = {
 			this = true
 		},
@@ -91,7 +91,7 @@ end
 temp()
 
 function temp()
-	var1.誏 = {
+	var1_0.誏 = {
 		機 = {
 			this = true
 		}
@@ -101,7 +101,7 @@ end
 temp()
 
 function temp()
-	var1.浪 = {
+	var1_0.浪 = {
 		妇 = {
 			this = true
 		},
@@ -168,7 +168,7 @@ end
 temp()
 
 function temp()
-	var1.劳 = {
+	var1_0.劳 = {
 		["+"] = {
 			教 = {
 				["+"] = {
@@ -257,7 +257,7 @@ end
 temp()
 
 function temp()
-	var1.勞 = {
+	var1_0.勞 = {
 		動 = {
 			教 = {
 				養 = {

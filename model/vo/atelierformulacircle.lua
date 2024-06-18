@@ -1,12 +1,12 @@
-﻿local var0 = class("AtelierFormulaCircle", import("model.vo.BaseVO"))
+﻿local var0_0 = class("AtelierFormulaCircle", import("model.vo.BaseVO"))
 
-var0.TYPE = {
+var0_0.TYPE = {
 	BASE = 1,
 	SAIREN = 3,
 	NORMAL = 2,
 	ANY = 4
 }
-var0.ELEMENT_TYPE = {
+var0_0.ELEMENT_TYPE = {
 	PYRO = 1,
 	SAIREN = 5,
 	ELECTRO = 3,
@@ -14,135 +14,135 @@ var0.ELEMENT_TYPE = {
 	CRYO = 2,
 	ANY = 0
 }
-var0.ELEMENT_NAME = {}
+var0_0.ELEMENT_NAME = {}
 
-for iter0, iter1 in pairs(var0.ELEMENT_TYPE) do
-	var0.ELEMENT_NAME[iter1] = iter0
+for iter0_0, iter1_0 in pairs(var0_0.ELEMENT_TYPE) do
+	var0_0.ELEMENT_NAME[iter1_0] = iter0_0
 end
 
-var0.ELEMENT_RING_COLOR = {
-	[var0.ELEMENT_TYPE.ANY] = "FFFED5",
-	[var0.ELEMENT_TYPE.PYRO] = "F74F41",
-	[var0.ELEMENT_TYPE.CRYO] = "64CAFF",
-	[var0.ELEMENT_TYPE.ELECTRO] = "FFDD3F",
-	[var0.ELEMENT_TYPE.ANEMO] = "B0E860",
-	[var0.ELEMENT_TYPE.SAIREN] = "AF97FF"
+var0_0.ELEMENT_RING_COLOR = {
+	[var0_0.ELEMENT_TYPE.ANY] = "FFFED5",
+	[var0_0.ELEMENT_TYPE.PYRO] = "F74F41",
+	[var0_0.ELEMENT_TYPE.CRYO] = "64CAFF",
+	[var0_0.ELEMENT_TYPE.ELECTRO] = "FFDD3F",
+	[var0_0.ELEMENT_TYPE.ANEMO] = "B0E860",
+	[var0_0.ELEMENT_TYPE.SAIREN] = "AF97FF"
 }
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_1)
 	return pg.activity_ryza_recipe_circle
 end
 
-function var0.GetConfigID(arg0)
-	return arg0.configId
+function var0_0.GetConfigID(arg0_2)
+	return arg0_2.configId
 end
 
-function var0.GetIconPath(arg0)
-	return arg0:getConfig("icon")
+function var0_0.GetIconPath(arg0_3)
+	return arg0_3:getConfig("icon")
 end
 
-function var0.GetType(arg0)
-	return arg0:getConfig("type")
+function var0_0.GetType(arg0_4)
+	return arg0_4:getConfig("type")
 end
 
-function var0.GetProp(arg0)
-	return arg0:getConfig("prop")
+function var0_0.GetProp(arg0_5)
+	return arg0_5:getConfig("prop")
 end
 
-function var0.GetElement(arg0)
-	if arg0:GetType() == var0.TYPE.SAIREN then
-		return var0.ELEMENT_TYPE.SAIREN
-	elseif arg0:GetType() == var0.TYPE.ANY then
-		return var0.ELEMENT_TYPE.ANY
+function var0_0.GetElement(arg0_6)
+	if arg0_6:GetType() == var0_0.TYPE.SAIREN then
+		return var0_0.ELEMENT_TYPE.SAIREN
+	elseif arg0_6:GetType() == var0_0.TYPE.ANY then
+		return var0_0.ELEMENT_TYPE.ANY
 	end
 
-	return arg0:GetProp()
+	return arg0_6:GetProp()
 end
 
-function var0.GetElementName(arg0)
-	return var0.ELEMENT_NAME[arg0:GetElement()]
+function var0_0.GetElementName(arg0_7)
+	return var0_0.ELEMENT_NAME[arg0_7:GetElement()]
 end
 
-function var0.GetRingElement(arg0, arg1)
-	local var0 = arg0:GetElement()
+function var0_0.GetRingElement(arg0_8, arg1_8)
+	local var0_8 = arg0_8:GetElement()
 
-	if arg0:GetType() == var0.TYPE.ANY and arg1 then
-		if arg1:GetType() == AtelierMaterial.TYPE.SAIREN then
-			var0 = var0.ELEMENT_TYPE.SAIREN
+	if arg0_8:GetType() == var0_0.TYPE.ANY and arg1_8 then
+		if arg1_8:GetType() == AtelierMaterial.TYPE.SAIREN then
+			var0_8 = var0_0.ELEMENT_TYPE.SAIREN
 		else
-			var0 = arg1:GetProps()[1]
+			var0_8 = arg1_8:GetProps()[1]
 		end
 	end
 
-	return var0
+	return var0_8
 end
 
-function var0.GetElementRingColor(arg0, arg1)
-	local var0 = var0.ELEMENT_RING_COLOR[arg0:GetRingElement(arg1)]
+function var0_0.GetElementRingColor(arg0_9, arg1_9)
+	local var0_9 = var0_0.ELEMENT_RING_COLOR[arg0_9:GetRingElement(arg1_9)]
 
-	return SummerFeastScene.TransformColor(var0)
+	return SummerFeastScene.TransformColor(var0_9)
 end
 
-function var0.GetLevel(arg0)
-	return arg0:getConfig("prop_level")
+function var0_0.GetLevel(arg0_10)
+	return arg0_10:getConfig("prop_level")
 end
 
-function var0.GetLimitItemID(arg0)
-	return arg0:getConfig("ryza_item_id")
+function var0_0.GetLimitItemID(arg0_11)
+	return arg0_11:getConfig("ryza_item_id")
 end
 
-function var0.GetNeighbors(arg0)
-	return arg0:getConfig("circle_connect")
+function var0_0.GetNeighbors(arg0_12)
+	return arg0_12:getConfig("circle_connect")
 end
 
-function var0.GetFormulaId(arg0)
-	return arg0:getConfig("recipe_id")
+function var0_0.GetFormulaId(arg0_13)
+	return arg0_13:getConfig("recipe_id")
 end
 
-function var0.CanUseMaterial(arg0, arg1, arg2)
-	local function var0()
-		if arg2:GetProduction()[1] ~= DROP_TYPE_RYZA_DROP then
+function var0_0.CanUseMaterial(arg0_14, arg1_14, arg2_14)
+	local function var0_14()
+		if arg2_14:GetProduction()[1] ~= DROP_TYPE_RYZA_DROP then
 			return false
 		end
 
-		if arg2:GetProduction()[2] == arg1:GetConfigID() then
+		if arg2_14:GetProduction()[2] == arg1_14:GetConfigID() then
 			return true
 		end
 
-		local var0 = AtelierMaterial.New({
-			configId = arg2:GetProduction()[2]
+		local var0_15 = AtelierMaterial.New({
+			configId = arg2_14:GetProduction()[2]
 		})
 
-		return var0:GetType() == AtelierMaterial.TYPE.NEUTRALIZER and arg1:GetType() == AtelierMaterial.TYPE.NEUTRALIZER and var0:GetLevel() == arg1:GetLevel()
+		return var0_15:GetType() == AtelierMaterial.TYPE.NEUTRALIZER and arg1_14:GetType() == AtelierMaterial.TYPE.NEUTRALIZER and var0_15:GetLevel() == arg1_14:GetLevel()
 	end
 
-	if arg0:GetType() == var0.TYPE.BASE or arg0:GetType() == var0.TYPE.SAIREN then
-		return arg0:GetLimitItemID() == arg1:GetConfigID()
-	elseif arg0:GetType() == var0.TYPE.NORMAL then
-		if arg1:GetType() ~= AtelierMaterial.TYPE.NORMAL and arg1:GetType() ~= AtelierMaterial.TYPE.NEUTRALIZER then
+	if arg0_14:GetType() == var0_0.TYPE.BASE or arg0_14:GetType() == var0_0.TYPE.SAIREN then
+		return arg0_14:GetLimitItemID() == arg1_14:GetConfigID()
+	elseif arg0_14:GetType() == var0_0.TYPE.NORMAL then
+		if arg1_14:GetType() ~= AtelierMaterial.TYPE.NORMAL and arg1_14:GetType() ~= AtelierMaterial.TYPE.NEUTRALIZER then
 			return false
 		end
 
-		if not table.contains(arg1:GetProps(), arg0:GetElement()) then
+		if not table.contains(arg1_14:GetProps(), arg0_14:GetElement()) then
 			return false
 		end
 
-		if var0() then
+		if var0_14() then
 			return false
 		end
 
-		return arg1:GetLevel() == arg0:GetLevel()
-	elseif arg0:GetType() == var0.TYPE.ANY then
-		if arg1:GetType() ~= AtelierMaterial.TYPE.NORMAL and arg1:GetType() ~= AtelierMaterial.TYPE.NEUTRALIZER and arg1:GetType() ~= AtelierMaterial.TYPE.SAIREN then
+		return arg1_14:GetLevel() == arg0_14:GetLevel()
+	elseif arg0_14:GetType() == var0_0.TYPE.ANY then
+		if arg1_14:GetType() ~= AtelierMaterial.TYPE.NORMAL and arg1_14:GetType() ~= AtelierMaterial.TYPE.NEUTRALIZER and arg1_14:GetType() ~= AtelierMaterial.TYPE.SAIREN then
 			return false
 		end
 
-		if var0() then
+		if var0_14() then
 			return false
 		end
 
-		return arg1:GetLevel() == arg0:GetLevel()
+		return arg1_14:GetLevel() == arg0_14:GetLevel()
 	end
 end
 
-return var0
+return var0_0

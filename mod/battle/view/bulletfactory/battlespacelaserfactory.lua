@@ -1,75 +1,75 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = singletonClass("BattleSpaceLaserFactory", var0.Battle.BattleBulletFactory)
+local var0_0 = ys
+local var1_0 = singletonClass("BattleSpaceLaserFactory", var0_0.Battle.BattleBulletFactory)
 
-var1.__name = "BattleSpaceLaserFactory"
-var0.Battle.BattleSpaceLaserFactory = var1
+var1_0.__name = "BattleSpaceLaserFactory"
+var0_0.Battle.BattleSpaceLaserFactory = var1_0
 
-function var1.MakeBullet(arg0)
-	return var0.Battle.BattleLaserArea.New()
+function var1_0.MakeBullet(arg0_1)
+	return var0_0.Battle.BattleLaserArea.New()
 end
 
-function var1.MakeModel(arg0, arg1, arg2)
-	local var0 = arg1:GetBulletData()
-	local var1 = var0:GetTemplate()
-	local var2 = arg0:GetDataProxy()
-	local var3 = arg0:GetBulletPool():InstFX(arg1:GetModleID())
+function var1_0.MakeModel(arg0_2, arg1_2, arg2_2)
+	local var0_2 = arg1_2:GetBulletData()
+	local var1_2 = var0_2:GetTemplate()
+	local var2_2 = arg0_2:GetDataProxy()
+	local var3_2 = arg0_2:GetBulletPool():InstFX(arg1_2:GetModleID())
 
-	if var3 then
-		arg1:AddModel(var3)
+	if var3_2 then
+		arg1_2:AddModel(var3_2)
 	else
-		arg1:AddTempModel(arg0:GetTempGOPool():GetObject())
+		arg1_2:AddTempModel(arg0_2:GetTempGOPool():GetObject())
 	end
 
-	var0.Battle.PlayBattleSFX(var0:GetHitSFX())
+	var0_0.Battle.PlayBattleSFX(var0_2:GetHitSFX())
 
-	local function var4(arg0, arg1, arg2)
-		local var0 = arg0:GetBulletData()
-		local var1 = var0:GetTemplate()
-		local var2 = var0:GetDiveFilter()
-		local var3, var4 = var0:GetCollidedList()
+	local function var4_2(arg0_3, arg1_3, arg2_3)
+		local var0_3 = arg0_3:GetBulletData()
+		local var1_3 = var0_3:GetTemplate()
+		local var2_3 = var0_3:GetDiveFilter()
+		local var3_3, var4_3 = var0_3:GetCollidedList()
 
-		if var0:IsAlert() then
+		if var0_3:IsAlert() then
 			return
 		end
 
-		local var5 = var4[arg1] or 0
+		local var5_3 = var4_3[arg1_3] or 0
 
-		if pg.TimeMgr.GetInstance():GetCombatTime() < var5 + var0:GetHitInterval() then
+		if pg.TimeMgr.GetInstance():GetCombatTime() < var5_3 + var0_3:GetHitInterval() then
 			return
 		end
 
-		local var6 = var1:GetSceneMediator():GetCharacter(arg1):GetUnitData()
+		local var6_3 = var1_0:GetSceneMediator():GetCharacter(arg1_3):GetUnitData()
 
-		if var6:GetCldData().Active then
-			local var7 = false
-			local var8 = var6:GetCurrentOxyState()
+		if var6_3:GetCldData().Active then
+			local var7_3 = false
+			local var8_3 = var6_3:GetCurrentOxyState()
 
-			for iter0, iter1 in ipairs(var2) do
-				if var8 == iter1 then
-					var7 = true
+			for iter0_3, iter1_3 in ipairs(var2_3) do
+				if var8_3 == iter1_3 then
+					var7_3 = true
 				end
 			end
 
-			if not var7 then
-				var2:HandleDamage(var0, var6)
+			if not var7_3 then
+				var2_2:HandleDamage(var0_3, var6_3)
 			end
 		end
 
-		var4[arg1] = pg.TimeMgr.GetInstance():GetCombatTime()
+		var4_3[arg1_3] = pg.TimeMgr.GetInstance():GetCombatTime()
 	end
 
-	local function var5(arg0)
+	local function var5_2(arg0_4)
 		return
 	end
 
-	arg1:SetSpawn(arg2)
-	arg1:SetFXFunc(var4, var5)
-	arg0:GetSceneMediator():AddBullet(arg1)
+	arg1_2:SetSpawn(arg2_2)
+	arg1_2:SetFXFunc(var4_2, var5_2)
+	arg0_2:GetSceneMediator():AddBullet(arg1_2)
 end
 
-function var1.OutRangeFunc(arg0)
-	arg0:ExecuteLifeEndCallback()
-	var1.GetDataProxy():RemoveBulletUnit(arg0:GetUniqueID())
+function var1_0.OutRangeFunc(arg0_5)
+	arg0_5:ExecuteLifeEndCallback()
+	var1_0.GetDataProxy():RemoveBulletUnit(arg0_5:GetUniqueID())
 end

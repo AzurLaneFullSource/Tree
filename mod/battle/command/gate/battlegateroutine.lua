@@ -1,10 +1,10 @@
-﻿local var0 = class("BattleGateRoutine")
+﻿local var0_0 = class("BattleGateRoutine")
 
-ys.Battle.BattleGateRoutine = var0
-var0.__name = "BattleGateRoutine"
+ys.Battle.BattleGateRoutine = var0_0
+var0_0.__name = "BattleGateRoutine"
 
-function var0.Entrance(arg0, arg1)
-	if not arg1.LegalFleet(arg0.mainFleetId) then
+function var0_0.Entrance(arg0_1, arg1_1)
+	if not arg1_1.LegalFleet(arg0_1.mainFleetId) then
 		return
 	end
 
@@ -12,125 +12,125 @@ function var0.Entrance(arg0, arg1)
 		return
 	end
 
-	local var0 = getProxy(PlayerProxy)
-	local var1 = getProxy(BayProxy)
-	local var2 = getProxy(FleetProxy)
-	local var3 = pg.battle_cost_template[SYSTEM_ROUTINE]
-	local var4 = var3.oil_cost > 0
-	local var5 = {}
-	local var6 = 0
-	local var7 = 0
-	local var8 = 0
-	local var9 = 0
-	local var10 = var2:getFleetById(arg0.mainFleetId)
-	local var11 = var1:getSortShipsByFleet(var10)
+	local var0_1 = getProxy(PlayerProxy)
+	local var1_1 = getProxy(BayProxy)
+	local var2_1 = getProxy(FleetProxy)
+	local var3_1 = pg.battle_cost_template[SYSTEM_ROUTINE]
+	local var4_1 = var3_1.oil_cost > 0
+	local var5_1 = {}
+	local var6_1 = 0
+	local var7_1 = 0
+	local var8_1 = 0
+	local var9_1 = 0
+	local var10_1 = var2_1:getFleetById(arg0_1.mainFleetId)
+	local var11_1 = var1_1:getSortShipsByFleet(var10_1)
 
-	for iter0, iter1 in ipairs(var11) do
-		var5[#var5 + 1] = iter1.id
+	for iter0_1, iter1_1 in ipairs(var11_1) do
+		var5_1[#var5_1 + 1] = iter1_1.id
 	end
 
-	local var12 = var10:getStartCost().oil
-	local var13 = var10:GetCostSum().oil
-	local var14 = var0:getData()
+	local var12_1 = var10_1:getStartCost().oil
+	local var13_1 = var10_1:GetCostSum().oil
+	local var14_1 = var0_1:getData()
 
-	if var4 and var13 > var14.oil then
+	if var4_1 and var13_1 > var14_1.oil then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 		return
 	end
 
-	local var15 = arg0.mainFleetId
-	local var16 = arg0.stageId
-	local var17 = pg.expedition_data_template[var16].dungeon_id
-	local var18 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(var17).fleet_prefab
+	local var15_1 = arg0_1.mainFleetId
+	local var16_1 = arg0_1.stageId
+	local var17_1 = pg.expedition_data_template[var16_1].dungeon_id
+	local var18_1 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(var17_1).fleet_prefab
 
-	arg1.ShipVertify()
+	arg1_1.ShipVertify()
 
-	local function var19(arg0)
-		if var4 then
-			var14:consume({
+	local function var19_1(arg0_2)
+		if var4_1 then
+			var14_1:consume({
 				gold = 0,
-				oil = var12
+				oil = var12_1
 			})
 		end
 
-		if var3.enter_energy_cost > 0 and not exFlag then
-			local var0 = pg.gameset.battle_consume_energy.key_value
+		if var3_1.enter_energy_cost > 0 and not exFlag then
+			local var0_2 = pg.gameset.battle_consume_energy.key_value
 
-			for iter0, iter1 in ipairs(var11) do
-				iter1:cosumeEnergy(var0)
-				var1:updateShip(iter1)
+			for iter0_2, iter1_2 in ipairs(var11_1) do
+				iter1_2:cosumeEnergy(var0_2)
+				var1_1:updateShip(iter1_2)
 			end
 		end
 
-		var0:updatePlayer(var14)
+		var0_1:updatePlayer(var14_1)
 
-		local var1 = {
-			mainFleetId = var15,
-			prefabFleet = var18,
-			stageId = var16,
+		local var1_2 = {
+			mainFleetId = var15_1,
+			prefabFleet = var18_1,
+			stageId = var16_1,
 			system = SYSTEM_ROUTINE,
-			token = arg0.key
+			token = arg0_2.key
 		}
 
-		arg1:sendNotification(GAME.BEGIN_STAGE_DONE, var1)
+		arg1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var1_2)
 	end
 
-	local function var20(arg0)
-		arg1:RequestFailStandardProcess(arg0)
+	local function var20_1(arg0_3)
+		arg1_1:RequestFailStandardProcess(arg0_3)
 	end
 
-	BeginStageCommand.SendRequest(SYSTEM_ROUTINE, var5, {
-		var16
-	}, var19, var20)
+	BeginStageCommand.SendRequest(SYSTEM_ROUTINE, var5_1, {
+		var16_1
+	}, var19_1, var20_1)
 end
 
-function var0.Exit(arg0, arg1)
-	local var0 = pg.battle_cost_template[SYSTEM_ROUTINE]
-	local var1 = getProxy(FleetProxy)
-	local var2 = getProxy(BayProxy)
-	local var3 = arg0.statistics._battleScore
-	local var4 = 0
-	local var5 = {}
-	local var6 = var1:getFleetById(arg0.mainFleetId)
-	local var7 = var2:getSortShipsByFleet(var6)
-	local var8 = var6:getEndCost().oil
-	local var9 = arg1.GeneralPackage(arg0, var7)
+function var0_0.Exit(arg0_4, arg1_4)
+	local var0_4 = pg.battle_cost_template[SYSTEM_ROUTINE]
+	local var1_4 = getProxy(FleetProxy)
+	local var2_4 = getProxy(BayProxy)
+	local var3_4 = arg0_4.statistics._battleScore
+	local var4_4 = 0
+	local var5_4 = {}
+	local var6_4 = var1_4:getFleetById(arg0_4.mainFleetId)
+	local var7_4 = var2_4:getSortShipsByFleet(var6_4)
+	local var8_4 = var6_4:getEndCost().oil
+	local var9_4 = arg1_4.GeneralPackage(arg0_4, var7_4)
 
-	local function var10(arg0)
-		arg1.addShipsExp(arg0.ship_exp_list, arg0.statistics, true)
+	local function var10_4(arg0_5)
+		arg1_4.addShipsExp(arg0_5.ship_exp_list, arg0_4.statistics, true)
 
-		arg0.statistics.mvpShipID = arg0.mvp
+		arg0_4.statistics.mvpShipID = arg0_5.mvp
 
-		local var0, var1 = arg1:GeneralLoot(arg0)
-		local var2 = var3 > ys.Battle.BattleConst.BattleScore.C
+		local var0_5, var1_5 = arg1_4:GeneralLoot(arg0_5)
+		local var2_5 = var3_4 > ys.Battle.BattleConst.BattleScore.C
 
-		arg1.GeneralPlayerCosume(SYSTEM_ROUTINE, var2, var8, arg0.player_exp, exFlag)
+		arg1_4.GeneralPlayerCosume(SYSTEM_ROUTINE, var2_5, var8_4, arg0_5.player_exp, exFlag)
 
-		local var3 = getProxy(DailyLevelProxy)
+		local var3_5 = getProxy(DailyLevelProxy)
 
-		if var2 then
-			var3.data[var3.dailyLevelId] = (var3.data[var3.dailyLevelId] or 0) + 1
+		if var2_5 then
+			var3_5.data[var3_5.dailyLevelId] = (var3_5.data[var3_5.dailyLevelId] or 0) + 1
 		end
 
-		if var3 == ys.Battle.BattleConst.BattleScore.S then
-			var3:AddQuickStage(arg0.stageId)
+		if var3_4 == ys.Battle.BattleConst.BattleScore.S then
+			var3_5:AddQuickStage(arg0_4.stageId)
 		end
 
-		local var4 = {
+		local var4_5 = {
 			system = SYSTEM_ROUTINE,
-			statistics = arg0.statistics,
-			score = var3,
-			drops = var0,
+			statistics = arg0_4.statistics,
+			score = var3_4,
+			drops = var0_5,
 			commanderExps = {},
-			result = arg0.result,
-			extraDrops = var1
+			result = arg0_5.result,
+			extraDrops = var1_5
 		}
 
-		arg1:sendNotification(GAME.FINISH_STAGE_DONE, var4)
+		arg1_4:sendNotification(GAME.FINISH_STAGE_DONE, var4_5)
 	end
 
-	arg1:SendRequest(var9, var10)
+	arg1_4:SendRequest(var9_4, var10_4)
 end
 
-return var0
+return var0_0

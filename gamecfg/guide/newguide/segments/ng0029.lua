@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"You've unlocked Comf-Forts!",
 	"You can put a Meowfficer in a Comf-Fort, and it will receive EXP over time!",
 	"Once a day, you can clean the Comf-Forts, play with your Meowfficers, or feed them!",
@@ -21,7 +21,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 0,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/blur_panel/pages/CommanderCatDockUI(Clone)/box/home",
@@ -44,7 +44,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 0,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/CommanderCatUI(Clone)/blur_panel/pages/CommanderCatDockUI(Clone)/box/home",
@@ -70,7 +70,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 41.84,
-				text = var0[2]
+				text = var0_0[2]
 			}
 		},
 		{
@@ -121,7 +121,7 @@ return {
 				mode = 1,
 				posY = 245.9,
 				posX = -382.13,
-				text = var0[3],
+				text = var0_0[3],
 				ui = {
 					path = "OverlayCamera/Overlay/UIMain/CommanderHomeUI(Clone)/bg/bubble"
 				}
@@ -134,7 +134,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 0,
-				text = var0[4]
+				text = var0_0[4]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/CommanderHomeUI(Clone)/bg/bubble/clean",
@@ -155,7 +155,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 0,
-				text = var0[5]
+				text = var0_0[5]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/CommanderHomeUI(Clone)/bg/bubble/feed",
@@ -182,7 +182,7 @@ return {
 				mode = 1,
 				posY = 122.14,
 				posX = -340.6,
-				text = var0[6]
+				text = var0_0[6]
 			}
 		},
 		{
@@ -214,7 +214,7 @@ return {
 				mode = 1,
 				posY = -200,
 				posX = -500,
-				text = var0[7]
+				text = var0_0[7]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/CommanderCatUI(Clone)/blur_panel/left_panel/help_btn",
@@ -233,7 +233,7 @@ return {
 				mode = 1,
 				posY = -200,
 				posX = -500,
-				text = var0[7]
+				text = var0_0[7]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/blur_panel/left_panel/help_btn",

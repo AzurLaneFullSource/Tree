@@ -1,55 +1,55 @@
-﻿local var0 = class("Dorm3dGiftMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("Dorm3dGiftMediator", import("view.base.ContextMediator"))
 
-var0.GIVE_GIFT = "Dorm3dGiftMediator.GIVE_GIFT"
-var0.DO_TALK = "Dorm3dGiftMediator.DO_TALK"
-var0.CHECK_LEVEL_UP = "Dorm3dGiftMediator.CHECK_LEVEL_UP"
+var0_0.GIVE_GIFT = "Dorm3dGiftMediator.GIVE_GIFT"
+var0_0.DO_TALK = "Dorm3dGiftMediator.DO_TALK"
+var0_0.CHECK_LEVEL_UP = "Dorm3dGiftMediator.CHECK_LEVEL_UP"
 
-function var0.register(arg0)
-	arg0:bind(var0.GIVE_GIFT, function(arg0, arg1)
-		arg0:sendNotification(GAME.APARTMENT_GIVE_GIFT, {
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.GIVE_GIFT, function(arg0_2, arg1_2)
+		arg0_1:sendNotification(GAME.APARTMENT_GIVE_GIFT, {
 			count = 1,
-			groupId = arg0.viewComponent.apartment.configId,
-			giftId = arg1
+			groupId = arg0_1.viewComponent.apartment.configId,
+			giftId = arg1_2
 		})
 	end)
-	arg0:bind(var0.DO_TALK, function(arg0, arg1, arg2)
-		arg0:sendNotification(Dorm3dSceneMediator.OTHER_DO_TALK, {
+	arg0_1:bind(var0_0.DO_TALK, function(arg0_3, arg1_3, arg2_3)
+		arg0_1:sendNotification(Dorm3dSceneMediator.OTHER_DO_TALK, {
 			moveCamera = false,
-			talkId = arg1,
-			callback = arg2
+			talkId = arg1_3,
+			callback = arg2_3
 		})
 	end)
-	arg0:bind(var0.CHECK_LEVEL_UP, function(arg0)
-		arg0:sendNotification(Dorm3dSceneMediator.OTHER_CHECK_LEVEL_UP)
+	arg0_1:bind(var0_0.CHECK_LEVEL_UP, function(arg0_4)
+		arg0_1:sendNotification(Dorm3dSceneMediator.OTHER_CHECK_LEVEL_UP)
 	end)
-	arg0.viewComponent:SetApartment(getProxy(ApartmentProxy):getApartment(arg0.contextData.groupId))
+	arg0_1.viewComponent:SetApartment(getProxy(ApartmentProxy):getApartment(arg0_1.contextData.groupId))
 end
 
-function var0.initNotificationHandleDic(arg0)
-	arg0.handleDic = {
-		[ApartmentProxy.UPDATE_APARTMENT] = function(arg0, arg1)
-			local var0 = arg1:getBody()
+function var0_0.initNotificationHandleDic(arg0_5)
+	arg0_5.handleDic = {
+		[ApartmentProxy.UPDATE_APARTMENT] = function(arg0_6, arg1_6)
+			local var0_6 = arg1_6:getBody()
 
-			if var0.configId == arg0.contextData.groupId then
-				arg0.viewComponent:SetApartment(var0)
-				arg0.viewComponent:UpdateFavorPanel()
+			if var0_6.configId == arg0_6.contextData.groupId then
+				arg0_6.viewComponent:SetApartment(var0_6)
+				arg0_6.viewComponent:UpdateFavorPanel()
 			end
 		end,
-		[ApartmentProxy.UPDATE_GIFT_COUNT] = function(arg0, arg1)
-			local var0 = arg1:getBody()
+		[ApartmentProxy.UPDATE_GIFT_COUNT] = function(arg0_7, arg1_7)
+			local var0_7 = arg1_7:getBody()
 
-			arg0.viewComponent:SingleUpdateGift(var0)
+			arg0_7.viewComponent:SingleUpdateGift(var0_7)
 		end,
-		[GAME.APARTMENT_GIVE_GIFT_DONE] = function(arg0, arg1)
-			local var0 = arg1:getBody()
+		[GAME.APARTMENT_GIVE_GIFT_DONE] = function(arg0_8, arg1_8)
+			local var0_8 = arg1_8:getBody()
 
-			arg0.viewComponent:AfterGiveGift(var0)
+			arg0_8.viewComponent:AfterGiveGift(var0_8)
 		end
 	}
 end
 
-function var0.remove(arg0)
+function var0_0.remove(arg0_9)
 	return
 end
 
-return var0
+return var0_0

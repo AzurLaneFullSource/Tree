@@ -1,87 +1,87 @@
-﻿local var0 = class("JamaicaSkinRePage", import("...base.BaseActivityPage"))
+﻿local var0_0 = class("JamaicaSkinRePage", import("...base.BaseActivityPage"))
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("AD")
-	arg0.slider = arg0:findTF("slider", arg0.bg)
-	arg0.step = arg0:findTF("step", arg0.bg)
-	arg0.progress = arg0:findTF("progress", arg0.bg)
-	arg0.awardTF = arg0:findTF("award", arg0.bg)
-	arg0.battleBtn = arg0:findTF("battle_btn", arg0.bg)
-	arg0.getBtn = arg0:findTF("get_btn", arg0.bg)
-	arg0.gotBtn = arg0:findTF("got_btn", arg0.bg)
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.slider = arg0_1:findTF("slider", arg0_1.bg)
+	arg0_1.step = arg0_1:findTF("step", arg0_1.bg)
+	arg0_1.progress = arg0_1:findTF("progress", arg0_1.bg)
+	arg0_1.awardTF = arg0_1:findTF("award", arg0_1.bg)
+	arg0_1.battleBtn = arg0_1:findTF("battle_btn", arg0_1.bg)
+	arg0_1.getBtn = arg0_1:findTF("get_btn", arg0_1.bg)
+	arg0_1.gotBtn = arg0_1:findTF("got_btn", arg0_1.bg)
 end
 
-function var0.OnDataSetting(arg0)
-	local var0 = arg0.activity:getConfig("config_data")
+function var0_0.OnDataSetting(arg0_2)
+	local var0_2 = arg0_2.activity:getConfig("config_data")
 
-	arg0.taskIDList = _.flatten(var0)
-	arg0.dropList = {}
-	arg0.descs = {}
+	arg0_2.taskIDList = _.flatten(var0_2)
+	arg0_2.dropList = {}
+	arg0_2.descs = {}
 
-	for iter0, iter1 in ipairs(arg0.taskIDList) do
-		local var1 = pg.task_data_template[iter1].award_display[1]
+	for iter0_2, iter1_2 in ipairs(arg0_2.taskIDList) do
+		local var1_2 = pg.task_data_template[iter1_2].award_display[1]
 
-		table.insert(arg0.dropList, Clone(var1))
+		table.insert(arg0_2.dropList, Clone(var1_2))
 
-		local var2 = pg.task_data_template[iter1].desc
+		local var2_2 = pg.task_data_template[iter1_2].desc
 
-		table.insert(arg0.descs, var2)
+		table.insert(arg0_2.descs, var2_2)
 	end
 
-	return updateActivityTaskStatus(arg0.activity)
+	return updateActivityTaskStatus(arg0_2.activity)
 end
 
-function var0.OnFirstFlush(arg0)
-	onButton(arg0, arg0.battleBtn, function()
-		arg0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+function var0_0.OnFirstFlush(arg0_3)
+	onButton(arg0_3, arg0_3.battleBtn, function()
+		arg0_3:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.getBtn, function()
-		arg0:emit(ActivityMediator.ON_TASK_SUBMIT, arg0.curTaskVO)
+	onButton(arg0_3, arg0_3.getBtn, function()
+		arg0_3:emit(ActivityMediator.ON_TASK_SUBMIT, arg0_3.curTaskVO)
 	end, SFX_PANEL)
 end
 
-function var0.OnUpdateFlush(arg0)
-	local var0, var1 = getActivityTask(arg0.activity)
+function var0_0.OnUpdateFlush(arg0_6)
+	local var0_6, var1_6 = getActivityTask(arg0_6.activity)
 
-	arg0.curTaskVO = var1
+	arg0_6.curTaskVO = var1_6
 
-	local var2 = var1:getConfig("award_display")[1]
-	local var3 = {
-		type = var2[1],
-		id = var2[2],
-		count = var2[3]
+	local var2_6 = var1_6:getConfig("award_display")[1]
+	local var3_6 = {
+		type = var2_6[1],
+		id = var2_6[2],
+		count = var2_6[3]
 	}
 
-	updateDrop(arg0.awardTF, var3)
-	onButton(arg0, arg0.awardTF, function()
-		arg0:emit(BaseUI.ON_DROP, var3)
+	updateDrop(arg0_6.awardTF, var3_6)
+	onButton(arg0_6, arg0_6.awardTF, function()
+		arg0_6:emit(BaseUI.ON_DROP, var3_6)
 	end, SFX_PANEL)
 
-	local var4 = var1:getProgress()
-	local var5 = var1:getConfig("target_num")
+	local var4_6 = var1_6:getProgress()
+	local var5_6 = var1_6:getConfig("target_num")
 
-	setText(arg0.progress, (var5 <= var4 and setColorStr(var4, COLOR_GREEN) or var4) .. "/" .. var5)
-	setSlider(arg0.slider, 0, var5, var4)
+	setText(arg0_6.progress, (var5_6 <= var4_6 and setColorStr(var4_6, COLOR_GREEN) or var4_6) .. "/" .. var5_6)
+	setSlider(arg0_6.slider, 0, var5_6, var4_6)
 
-	local var6 = table.indexof(arg0.taskIDList, var0, 1)
+	local var6_6 = table.indexof(arg0_6.taskIDList, var0_6, 1)
 
-	setText(arg0.step, var6 .. "/" .. #arg0.taskIDList)
+	setText(arg0_6.step, var6_6 .. "/" .. #arg0_6.taskIDList)
 
-	local var7 = var1:getTaskStatus()
+	local var7_6 = var1_6:getTaskStatus()
 
-	setActive(arg0.battleBtn, var7 == 0)
-	setActive(arg0.getBtn, var7 == 1)
-	setActive(arg0.gotBtn, var7 == 2)
+	setActive(arg0_6.battleBtn, var7_6 == 0)
+	setActive(arg0_6.getBtn, var7_6 == 1)
+	setActive(arg0_6.gotBtn, var7_6 == 2)
 
-	if var7 == 2 then
-		arg0.finishedIndex = var6
+	if var7_6 == 2 then
+		arg0_6.finishedIndex = var6_6
 	else
-		arg0.finishedIndex = var6 - 1
+		arg0_6.finishedIndex = var6_6 - 1
 	end
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_8)
 	return
 end
 
-return var0
+return var0_0

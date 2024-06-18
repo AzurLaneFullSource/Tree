@@ -1,65 +1,65 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleAttr
-local var2 = class("BattleBuffTaunt", var0.Battle.BattleBuffEffect)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleAttr
+local var2_0 = class("BattleBuffTaunt", var0_0.Battle.BattleBuffEffect)
 
-var0.Battle.BattleBuffTaunt = var2
-var2.__name = "BattleBuffTaunt"
+var0_0.Battle.BattleBuffTaunt = var2_0
+var2_0.__name = "BattleBuffTaunt"
 
-function var2.Ctor(arg0, arg1)
-	var2.super.Ctor(arg0, arg1)
+function var2_0.Ctor(arg0_1, arg1_1)
+	var2_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0._tauntActive = false
+	arg0_1._tauntActive = false
 end
 
-function var2.SetArgs(arg0, arg1, arg2)
-	arg0._guardTargetFilter = arg0._tempData.arg_list.guardTarget
-	arg0._handleCloak = arg1:GetCloak() ~= nil
+function var2_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	arg0_2._guardTargetFilter = arg0_2._tempData.arg_list.guardTarget
+	arg0_2._handleCloak = arg1_2:GetCloak() ~= nil
 end
 
-function var2.onTrigger(arg0, arg1, arg2, arg3)
-	if not arg0._handleCloak then
+function var2_0.onTrigger(arg0_3, arg1_3, arg2_3, arg3_3)
+	if not arg0_3._handleCloak then
 		return
 	end
 
-	local var0 = arg0:getTargetList(arg1, arg0._guardTargetFilter, arg0._tempData.arg_list)
-	local var1 = true
+	local var0_3 = arg0_3:getTargetList(arg1_3, arg0_3._guardTargetFilter, arg0_3._tempData.arg_list)
+	local var1_3 = true
 
-	for iter0, iter1 in ipairs(var0) do
-		var1 = var1 and var1.IsCloak(iter1)
+	for iter0_3, iter1_3 in ipairs(var0_3) do
+		var1_3 = var1_3 and var1_0.IsCloak(iter1_3)
 	end
 
-	if not var1 and not arg0._tauntActive then
-		arg0:forceToExpose(arg1)
-	elseif var1 and arg0._tauntActive then
-		arg0:releaseExpose(arg1)
+	if not var1_3 and not arg0_3._tauntActive then
+		arg0_3:forceToExpose(arg1_3)
+	elseif var1_3 and arg0_3._tauntActive then
+		arg0_3:releaseExpose(arg1_3)
 	end
 end
 
-function var2.onRemove(arg0, arg1, arg2, arg3)
-	arg0:releaseExpose(arg1)
+function var2_0.onRemove(arg0_4, arg1_4, arg2_4, arg3_4)
+	arg0_4:releaseExpose(arg1_4)
 end
 
-function var2.forceToExpose(arg0, arg1)
-	if not arg0._handleCloak then
+function var2_0.forceToExpose(arg0_5, arg1_5)
+	if not arg0_5._handleCloak then
 		return
 	end
 
-	arg0._tauntActive = true
+	arg0_5._tauntActive = true
 
-	local var0 = arg1:GetCloak()
+	local var0_5 = arg1_5:GetCloak()
 
-	var0:ForceToMax()
-	var0:UpdateTauntExpose(true)
+	var0_5:ForceToMax()
+	var0_5:UpdateTauntExpose(true)
 end
 
-function var2.releaseExpose(arg0, arg1)
-	if not arg0._handleCloak then
+function var2_0.releaseExpose(arg0_6, arg1_6)
+	if not arg0_6._handleCloak then
 		return
 	end
 
-	arg0._tauntActive = false
+	arg0_6._tauntActive = false
 
-	arg1:GetCloak():UpdateTauntExpose(false)
+	arg1_6:GetCloak():UpdateTauntExpose(false)
 end

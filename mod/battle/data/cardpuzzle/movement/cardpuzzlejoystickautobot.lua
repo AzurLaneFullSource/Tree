@@ -1,67 +1,67 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.CardPuzzleJoyStickAutoBot = class("CardPuzzleJoyStickAutoBot")
+var0_0.Battle.CardPuzzleJoyStickAutoBot = class("CardPuzzleJoyStickAutoBot")
 
-local var1 = var0.Battle.CardPuzzleJoyStickAutoBot
+local var1_0 = var0_0.Battle.CardPuzzleJoyStickAutoBot
 
-var1.__name = "CardPuzzleJoyStickAutoBot"
-var1.RANDOM = "RandomStrategy"
-var1.MOVE_TO = "RandomStrategy"
-var1.CARD_PUZZLE_CONTROL = "CardPuzzleControlStrategy"
+var1_0.__name = "CardPuzzleJoyStickAutoBot"
+var1_0.RANDOM = "RandomStrategy"
+var1_0.MOVE_TO = "RandomStrategy"
+var1_0.CARD_PUZZLE_CONTROL = "CardPuzzleControlStrategy"
 
-function var1.Ctor(arg0, arg1, arg2)
-	arg0._dataProxy = arg1
-	arg0._fleetVO = arg2
+function var1_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1._dataProxy = arg1_1
+	arg0_1._fleetVO = arg2_1
 
-	arg0:init()
+	arg0_1:init()
 end
 
-function var1.UpdateFleetArea(arg0)
-	if arg0._strategy then
-		arg0._strategy:SetBoardBound(arg0._fleetVO:GetFleetBound())
+function var1_0.UpdateFleetArea(arg0_2)
+	if arg0_2._strategy then
+		arg0_2._strategy:SetBoardBound(arg0_2._fleetVO:GetFleetBound())
 	end
 end
 
-function var1.FleetFormationUpdate(arg0)
+function var1_0.FleetFormationUpdate(arg0_3)
 	return
 end
 
-function var1.SetActive(arg0, arg1)
-	arg0._active = arg1
+function var1_0.SetActive(arg0_4, arg1_4)
+	arg0_4._active = arg1_4
 
-	if arg1 then
-		local function var0()
-			return arg0._strategy:Output()
+	if arg1_4 then
+		local function var0_4()
+			return arg0_4._strategy:Output()
 		end
 
-		arg0._fleetVO:SetMotionSource(var0)
+		arg0_4._fleetVO:SetMotionSource(var0_4)
 	else
-		arg0._fleetVO:SetMotionSource()
+		arg0_4._fleetVO:SetMotionSource()
 	end
 end
 
-function var1.SwitchStrategy(arg0, arg1)
-	if arg0._strategy then
-		arg0._strategy:Dispose()
+function var1_0.SwitchStrategy(arg0_6, arg1_6)
+	if arg0_6._strategy then
+		arg0_6._strategy:Dispose()
 	end
 
-	arg1 = arg1 or var1.CARD_PUZZLE_CONTROL
-	arg0._strategy = var0.Battle[arg1].New(arg0._fleetVO)
+	arg1_6 = arg1_6 or var1_0.CARD_PUZZLE_CONTROL
+	arg0_6._strategy = var0_0.Battle[arg1_6].New(arg0_6._fleetVO)
 
-	arg0:UpdateFleetArea()
-	arg0._strategy:Input(arg0._dataProxy:GetFoeShipList(), arg0._dataProxy:GetFoeAircraftList())
+	arg0_6:UpdateFleetArea()
+	arg0_6._strategy:Input(arg0_6._dataProxy:GetFoeShipList(), arg0_6._dataProxy:GetFoeAircraftList())
 end
 
-function var1.init(arg0)
-	arg0:SwitchStrategy()
+function var1_0.init(arg0_7)
+	arg0_7:SwitchStrategy()
 end
 
-function var1.Dispose(arg0)
-	if arg0._strategy then
-		arg0._strategy:Dispose()
+function var1_0.Dispose(arg0_8)
+	if arg0_8._strategy then
+		arg0_8._strategy:Dispose()
 	end
 
-	arg0._dataProxy = nil
+	arg0_8._dataProxy = nil
 end

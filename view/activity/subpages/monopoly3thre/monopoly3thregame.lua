@@ -1,696 +1,696 @@
-﻿local var0 = class("Monopoly3thReGame")
-local var1 = 502041
-local var2 = 502041
-local var3
-local var4
-local var5 = 0.6
-local var6 = 100
-local var7 = "dafuweng_gold"
-local var8 = "dafuweng_oil"
-local var9 = "dafuweng_event"
-local var10 = "dafuweng_walk"
-local var11 = "stand"
-local var12 = "dafuweng_stand"
-local var13 = "dafuweng_jump"
-local var14 = "dafuweng_run"
-local var15 = "dafuweng_touch"
-local var16 = 35
+﻿local var0_0 = class("Monopoly3thReGame")
+local var1_0 = 502041
+local var2_0 = 502041
+local var3_0
+local var4_0
+local var5_0 = 0.6
+local var6_0 = 100
+local var7_0 = "dafuweng_gold"
+local var8_0 = "dafuweng_oil"
+local var9_0 = "dafuweng_event"
+local var10_0 = "dafuweng_walk"
+local var11_0 = "stand"
+local var12_0 = "dafuweng_stand"
+local var13_0 = "dafuweng_jump"
+local var14_0 = "dafuweng_run"
+local var15_0 = "dafuweng_touch"
+local var16_0 = 35
 
-function var0.Ctor(arg0, arg1, arg2, arg3, arg4)
-	arg0._binder = arg1
-	arg0._tf = arg2
-	arg0._event = arg3
-	arg0._configId = arg4
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
+	arg0_1._binder = arg1_1
+	arg0_1._tf = arg2_1
+	arg0_1._event = arg3_1
+	arg0_1._configId = arg4_1
 
-	arg0:initData()
-	arg0:initUI()
-	arg0:initEvent()
+	arg0_1:initData()
+	arg0_1:initUI()
+	arg0_1:initEvent()
 end
 
-function var0.initData(arg0)
-	arg0.leftCount = 0
-	arg0.mapIds = pg.activity_event_monopoly[arg0._configId].map
-	arg0.inAnimatedFlag = false
-	arg0.lastBonusTimes = pg.activity_event_monopoly[arg0._configId].drop_times[1]
-	arg0.randomMoveTiemr = Timer.New(function()
-		arg0:checkPlayerRandomMove()
+function var0_0.initData(arg0_2)
+	arg0_2.leftCount = 0
+	arg0_2.mapIds = pg.activity_event_monopoly[arg0_2._configId].map
+	arg0_2.inAnimatedFlag = false
+	arg0_2.lastBonusTimes = pg.activity_event_monopoly[arg0_2._configId].drop_times[1]
+	arg0_2.randomMoveTiemr = Timer.New(function()
+		arg0_2:checkPlayerRandomMove()
 	end, 15, -1)
-	arg0.awardsTimer = Timer.New(function()
-		if arg0.awardTfs and #arg0.awardTfs > 0 then
-			for iter0 = #arg0.awardTfs, 1, -1 do
-				local var0 = arg0.awardTfs[iter0]
-				local var1 = var0.anchoredPosition
+	arg0_2.awardsTimer = Timer.New(function()
+		if arg0_2.awardTfs and #arg0_2.awardTfs > 0 then
+			for iter0_4 = #arg0_2.awardTfs, 1, -1 do
+				local var0_4 = arg0_2.awardTfs[iter0_4]
+				local var1_4 = var0_4.anchoredPosition
 
-				var1.y = var1.y + 3
+				var1_4.y = var1_4.y + 3
 
-				if var1.y >= 150 then
-					Destroy(table.remove(arg0.awardTfs, iter0))
+				if var1_4.y >= 150 then
+					Destroy(table.remove(arg0_2.awardTfs, iter0_4))
 				else
-					var0.anchoredPosition = var1
+					var0_4.anchoredPosition = var1_4
 				end
 			end
 		end
 	end, 0.0333333333333333, -1)
 
-	arg0.awardsTimer:Start()
+	arg0_2.awardsTimer:Start()
 end
 
-function var0.initUI(arg0)
-	arg0.char = findTF(arg0._tf, "map/char")
+function var0_0.initUI(arg0_5)
+	arg0_5.char = findTF(arg0_5._tf, "map/char")
 
-	setActive(arg0.char, false)
-	setText(findTF(arg0._tf, "desc"), i18n("monopoly3thre_tip"))
+	setActive(arg0_5.char, false)
+	setText(findTF(arg0_5._tf, "desc"), i18n("monopoly3thre_tip"))
 
-	arg0.btnStart = findTF(arg0._tf, "btnStart")
-	arg0.btnAutoStart = findTF(arg0._tf, "btnAutoStart")
+	arg0_5.btnStart = findTF(arg0_5._tf, "btnStart")
+	arg0_5.btnAutoStart = findTF(arg0_5._tf, "btnAutoStart")
 
-	setActive(arg0.btnStart, true)
-	setActive(arg0.btnAutoStart, true)
+	setActive(arg0_5.btnStart, true)
+	setActive(arg0_5.btnAutoStart, true)
 
-	arg0.btnCancelAuto = findTF(arg0._tf, "btnCancelAuto")
+	arg0_5.btnCancelAuto = findTF(arg0_5._tf, "btnCancelAuto")
 
-	setActive(arg0.btnCancelAuto, false)
+	setActive(arg0_5.btnCancelAuto, false)
 
-	arg0.btnHelp = findTF(arg0._tf, "btnHelp")
-	arg0.btnRp = findTF(arg0._tf, "btnRp")
-	arg0.commonAnim = findTF(arg0.btnRp, "rpAni"):GetComponent(typeof(Animator))
-	arg0.labelLeftCountTip = findTF(arg0._tf, "countTip/labelLeftCountTip")
-	arg0.labelLeftCount = findTF(arg0._tf, "countTip/labelLeftCount")
-	arg0.labelDropShip = findTF(arg0._tf, "labelDropShip")
-	arg0.labelLeftRpCount = findTF(arg0._tf, "labelLeftRpCount")
-	arg0.cellPos = findTF(arg0._tf, "map/mask/posCell")
-	arg0.tplCell = findTF(arg0._tf, "map/mask/posCell/tplCell")
-	arg0.mapCells = {}
-	arg0.curCellIndex = nil
-	arg0.groundChildsList = {}
-	arg0.groundMoveRate = {
+	arg0_5.btnHelp = findTF(arg0_5._tf, "btnHelp")
+	arg0_5.btnRp = findTF(arg0_5._tf, "btnRp")
+	arg0_5.commonAnim = findTF(arg0_5.btnRp, "rpAni"):GetComponent(typeof(Animator))
+	arg0_5.labelLeftCountTip = findTF(arg0_5._tf, "countTip/labelLeftCountTip")
+	arg0_5.labelLeftCount = findTF(arg0_5._tf, "countTip/labelLeftCount")
+	arg0_5.labelDropShip = findTF(arg0_5._tf, "labelDropShip")
+	arg0_5.labelLeftRpCount = findTF(arg0_5._tf, "labelLeftRpCount")
+	arg0_5.cellPos = findTF(arg0_5._tf, "map/mask/posCell")
+	arg0_5.tplCell = findTF(arg0_5._tf, "map/mask/posCell/tplCell")
+	arg0_5.mapCells = {}
+	arg0_5.curCellIndex = nil
+	arg0_5.groundChildsList = {}
+	arg0_5.groundMoveRate = {
 		0.1,
 		0.3,
 		1
 	}
-	arg0.awardTf = findTF(arg0._tf, "awardTpl")
-	arg0.awardParent = findTF(arg0.char, "award")
+	arg0_5.awardTf = findTF(arg0_5._tf, "awardTpl")
+	arg0_5.awardParent = findTF(arg0_5.char, "award")
 
-	for iter0 = 1, 3 do
-		local var0 = findTF(arg0._tf, "map/mask/ground" .. iter0)
-		local var1 = {}
+	for iter0_5 = 1, 3 do
+		local var0_5 = findTF(arg0_5._tf, "map/mask/ground" .. iter0_5)
+		local var1_5 = {}
 
-		for iter1 = 1, var0.childCount do
-			table.insert(var1, var0:GetChild(iter1 - 1))
+		for iter1_5 = 1, var0_5.childCount do
+			table.insert(var1_5, var0_5:GetChild(iter1_5 - 1))
 		end
 
-		table.insert(arg0.groundChildsList, var1)
+		table.insert(arg0_5.groundChildsList, var1_5)
 	end
 
-	local var2 = Ship.New({
-		configId = var1,
-		skin_id = var2
+	local var2_5 = Ship.New({
+		configId = var1_0,
+		skin_id = var2_0
 	}):getPrefab()
 
-	PoolMgr.GetInstance():GetSpineChar(var2, true, function(arg0)
-		arg0.model = arg0
-		arg0.model.transform.localScale = Vector3.one
-		arg0.model.transform.localPosition = Vector3.zero
+	PoolMgr.GetInstance():GetSpineChar(var2_5, true, function(arg0_6)
+		arg0_5.model = arg0_6
+		arg0_5.model.transform.localScale = Vector3.one
+		arg0_5.model.transform.localPosition = Vector3.zero
 
-		arg0.model.transform:SetParent(arg0.char, false)
+		arg0_5.model.transform:SetParent(arg0_5.char, false)
 
-		arg0.anim = arg0.model:GetComponent(typeof(SpineAnimUI))
+		arg0_5.anim = arg0_5.model:GetComponent(typeof(SpineAnimUI))
 
-		arg0:changeCharAction(var11, 0, nil)
-		arg0:checkCharActive()
+		arg0_5:changeCharAction(var11_0, 0, nil)
+		arg0_5:checkCharActive()
 	end)
-	arg0.randomMoveTiemr:Start()
+	arg0_5.randomMoveTiemr:Start()
 end
 
-function var0.initEvent(arg0)
-	onButton(arg0._binder, arg0.btnAutoStart, function()
-		setActive(arg0.btnCancelAuto, true)
+function var0_0.initEvent(arg0_7)
+	onButton(arg0_7._binder, arg0_7.btnAutoStart, function()
+		setActive(arg0_7.btnCancelAuto, true)
 
-		arg0.autoFlag = true
+		arg0_7.autoFlag = true
 
-		arg0:start()
+		arg0_7:start()
 	end, SFX_PANEL)
-	onButton(arg0._binder, arg0.btnCancelAuto, function()
-		setActive(arg0.btnCancelAuto, false)
+	onButton(arg0_7._binder, arg0_7.btnCancelAuto, function()
+		setActive(arg0_7.btnCancelAuto, false)
 
-		arg0.autoFlag = false
+		arg0_7.autoFlag = false
 	end, SFX_PANEL)
-	onButton(arg0._binder, arg0.btnStart, function()
-		arg0:start()
+	onButton(arg0_7._binder, arg0_7.btnStart, function()
+		arg0_7:start()
 	end, SFX_PANEL)
-	onButton(arg0._binder, arg0.btnHelp, function()
+	onButton(arg0_7._binder, arg0_7.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_monopoly_3th.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0._binder, arg0.char, function()
-		if not arg0.model or arg0.inAnimatedFlag then
+	onButton(arg0_7._binder, arg0_7.char, function()
+		if not arg0_7.model or arg0_7.inAnimatedFlag then
 			return
 		end
 
-		if LeanTween.isTweening(go(arg0.cellPos)) then
-			LeanTween.cancel(go(arg0.cellPos))
+		if LeanTween.isTweening(go(arg0_7.cellPos)) then
+			LeanTween.cancel(go(arg0_7.cellPos))
 		end
 
-		arg0:changeCharAction(var15, 1, function()
-			arg0:changeCharAction(var11)
+		arg0_7:changeCharAction(var15_0, 1, function()
+			arg0_7:changeCharAction(var11_0)
 		end)
 	end, SFX_PANEL)
-	onButton(arg0._binder, arg0.btnRp, function()
-		if arg0.leftAwardCnt > 0 then
-			arg0._event:emit(Monopoly3thRePage.ON_AWARD)
+	onButton(arg0_7._binder, arg0_7.btnRp, function()
+		if arg0_7.leftAwardCnt > 0 then
+			arg0_7._event:emit(Monopoly3thRePage.ON_AWARD)
 		end
 	end, SFX_PANEL)
 end
 
-function var0.addAwards(arg0, arg1)
-	if not arg0.awardTfs then
-		arg0.awardTfs = {}
+function var0_0.addAwards(arg0_15, arg1_15)
+	if not arg0_15.awardTfs then
+		arg0_15.awardTfs = {}
 	end
 
-	for iter0 = 1, #arg1 do
-		local var0 = arg1[iter0]
-		local var1 = tf(instantiate(go(arg0.awardTf)))
+	for iter0_15 = 1, #arg1_15 do
+		local var0_15 = arg1_15[iter0_15]
+		local var1_15 = tf(instantiate(go(arg0_15.awardTf)))
 
-		setParent(var1, arg0.awardParent)
-		updateDrop(var1, var0)
+		setParent(var1_15, arg0_15.awardParent)
+		updateDrop(var1_15, var0_15)
 
-		var1.anchoredPosition = Vector2(0, 0)
+		var1_15.anchoredPosition = Vector2(0, 0)
 
-		setActive(var1, true)
-		table.insert(arg0.awardTfs, var1)
+		setActive(var1_15, true)
+		table.insert(arg0_15.awardTfs, var1_15)
 	end
 end
 
-function var0.start(arg0)
-	if arg0.inAnimatedFlag then
+function var0_0.start(arg0_16)
+	if arg0_16.inAnimatedFlag then
 		return
 	end
 
-	if arg0.leftCount and arg0.leftCount <= 0 then
+	if arg0_16.leftCount and arg0_16.leftCount <= 0 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_count_noenough"))
 
-		if arg0.autoFlag and not arg0:checkLastBonus() then
-			arg0.autoFlag = false
+		if arg0_16.autoFlag and not arg0_16:checkLastBonus() then
+			arg0_16.autoFlag = false
 
-			setActive(arg0.btnCancelAuto, false)
-			arg0:changeAnimeState(false, true)
+			setActive(arg0_16.btnCancelAuto, false)
+			arg0_16:changeAnimeState(false, true)
 		end
 
 		return
 	end
 
-	arg0:changeAnimeState(true)
-	arg0._event:emit(Monopoly3thRePage.ON_START, arg0.activity.id, function(arg0)
-		if arg0 and arg0 > 0 then
-			arg0.step = arg0
+	arg0_16:changeAnimeState(true)
+	arg0_16._event:emit(Monopoly3thRePage.ON_START, arg0_16.activity.id, function(arg0_17)
+		if arg0_17 and arg0_17 > 0 then
+			arg0_16.step = arg0_17
 
-			arg0:updataUI()
-			arg0:checkCharActive()
+			arg0_16:updataUI()
+			arg0_16:checkCharActive()
 		end
 	end)
 end
 
-function var0.checkPlayerRandomMove(arg0)
-	if not arg0.model or arg0.inAnimatedFlag then
+function var0_0.checkPlayerRandomMove(arg0_18)
+	if not arg0_18.model or arg0_18.inAnimatedFlag then
 		return
 	end
 
 	if math.random() > 0.5 then
-		local var0 = math.random(2, 4)
-		local var1 = 300 * var0
-		local var2 = var0 * 2
-		local var3 = 0
+		local var0_18 = math.random(2, 4)
+		local var1_18 = 300 * var0_18
+		local var2_18 = var0_18 * 2
+		local var3_18 = 0
 
-		arg0:changeCharAction(var10, 0, nil)
-		LeanTween.value(go(arg0.cellPos), 0, var1, var2):setEase(LeanTweenType.linear):setOnUpdate(System.Action_float(function(arg0)
-			arg0:updateMap(arg0 - var3)
+		arg0_18:changeCharAction(var10_0, 0, nil)
+		LeanTween.value(go(arg0_18.cellPos), 0, var1_18, var2_18):setEase(LeanTweenType.linear):setOnUpdate(System.Action_float(function(arg0_19)
+			arg0_18:updateMap(arg0_19 - var3_18)
 
-			var3 = arg0
+			var3_18 = arg0_19
 		end)):setOnComplete(System.Action(function()
-			arg0:changeCharAction(var11, 0, nil)
+			arg0_18:changeCharAction(var11_0, 0, nil)
 		end))
 	else
-		arg0:changeCharAction(var12, 1, function()
-			arg0:changeCharAction(var11)
+		arg0_18:changeCharAction(var12_0, 1, function()
+			arg0_18:changeCharAction(var11_0)
 		end)
 	end
 end
 
-function var0.checkCountStory(arg0, arg1)
-	local var0 = arg0.useCount
-	local var1 = arg0.activity:getDataConfig("story") or {}
-	local var2 = _.detect(var1, function(arg0)
-		return arg0[1] == var0
+function var0_0.checkCountStory(arg0_22, arg1_22)
+	local var0_22 = arg0_22.useCount
+	local var1_22 = arg0_22.activity:getDataConfig("story") or {}
+	local var2_22 = _.detect(var1_22, function(arg0_23)
+		return arg0_23[1] == var0_22
 	end)
 
-	if var2 then
-		pg.NewStoryMgr.GetInstance():Play(var2[2], arg1)
+	if var2_22 then
+		pg.NewStoryMgr.GetInstance():Play(var2_22[2], arg1_22)
 	else
-		arg1()
+		arg1_22()
 	end
 end
 
-function var0.changeAnimeState(arg0, arg1, arg2)
-	if arg1 then
-		arg0.btnStart:GetComponent(typeof(Image)).raycastTarget = false
-		arg0.btnAutoStart:GetComponent(typeof(Image)).raycastTarget = false
-		arg0.inAnimatedFlag = true
+function var0_0.changeAnimeState(arg0_24, arg1_24, arg2_24)
+	if arg1_24 then
+		arg0_24.btnStart:GetComponent(typeof(Image)).raycastTarget = false
+		arg0_24.btnAutoStart:GetComponent(typeof(Image)).raycastTarget = false
+		arg0_24.inAnimatedFlag = true
 	else
-		arg0.inAnimatedFlag = false
-		arg0.btnStart:GetComponent(typeof(Image)).raycastTarget = true
-		arg0.btnAutoStart:GetComponent(typeof(Image)).raycastTarget = true
+		arg0_24.inAnimatedFlag = false
+		arg0_24.btnStart:GetComponent(typeof(Image)).raycastTarget = true
+		arg0_24.btnAutoStart:GetComponent(typeof(Image)).raycastTarget = true
 	end
 
-	if not arg1 and arg0.autoFlag then
-		arg0:start()
-		setActive(arg0.btnStart, false)
-		setActive(arg0.btnAutoStart, false)
+	if not arg1_24 and arg0_24.autoFlag then
+		arg0_24:start()
+		setActive(arg0_24.btnStart, false)
+		setActive(arg0_24.btnAutoStart, false)
 	else
-		setActive(arg0.btnStart, not arg1)
-		setActive(arg0.btnAutoStart, not arg1)
+		setActive(arg0_24.btnStart, not arg1_24)
+		setActive(arg0_24.btnAutoStart, not arg1_24)
 	end
 
-	if not arg1 and not arg0.autoFlag and arg2 then
-		arg0._event:emit(Monopoly3thRePage.ON_STOP, nil, function()
+	if not arg1_24 and not arg0_24.autoFlag and arg2_24 then
+		arg0_24._event:emit(Monopoly3thRePage.ON_STOP, nil, function()
 			return
 		end)
 	end
 end
 
-function var0.checkCharActive(arg0)
-	if arg0.anim then
-		if arg0.effectId and arg0.effectId > 0 then
-			arg0:changeAnimeState(true)
-			arg0:checkEffect(function()
-				arg0:changeAnimeState(false)
-				arg0:checkCharActive()
+function var0_0.checkCharActive(arg0_26)
+	if arg0_26.anim then
+		if arg0_26.effectId and arg0_26.effectId > 0 then
+			arg0_26:changeAnimeState(true)
+			arg0_26:checkEffect(function()
+				arg0_26:changeAnimeState(false)
+				arg0_26:checkCharActive()
 			end)
-		elseif arg0.step and arg0.step > 0 then
-			arg0:changeAnimeState(true)
-			arg0:checkStep(function()
-				arg0:changeAnimeState(false)
-				arg0:checkCharActive()
+		elseif arg0_26.step and arg0_26.step > 0 then
+			arg0_26:changeAnimeState(true)
+			arg0_26:checkStep(function()
+				arg0_26:changeAnimeState(false)
+				arg0_26:checkCharActive()
 			end)
 		else
-			arg0:checkLastBonus()
+			arg0_26:checkLastBonus()
 		end
 	end
 end
 
-function var0.firstUpdata(arg0, arg1)
-	arg0:activityDataUpdata(arg1)
-	arg0:updataUI()
-	arg0:updataChar()
-	arg0:checkCharActive()
-	arg0:checkLastBonus()
+function var0_0.firstUpdata(arg0_29, arg1_29)
+	arg0_29:activityDataUpdata(arg1_29)
+	arg0_29:updataUI()
+	arg0_29:updataChar()
+	arg0_29:checkCharActive()
+	arg0_29:checkLastBonus()
 
-	if arg0.pos and arg0.pos > 0 then
-		arg0:updateMap(arg0.pos * 1100 % 2500)
+	if arg0_29.pos and arg0_29.pos > 0 then
+		arg0_29:updateMap(arg0_29.pos * 1100 % 2500)
 	end
 end
 
-function var0.updataActivity(arg0, arg1)
-	arg0:activityDataUpdata(arg1)
-	arg0:updataUI()
+function var0_0.updataActivity(arg0_30, arg1_30)
+	arg0_30:activityDataUpdata(arg1_30)
+	arg0_30:updataUI()
 end
 
-function var0.checkLastBonus(arg0)
-	if (not arg0.lastBonusFlag or arg0.lastBonusFlag == 0) and arg0.useCount and arg0.useCount >= arg0.lastBonusTimes then
-		arg0._event:emit(Monopoly3thRePage.MONOPOLY_OP_LAST, arg0.activity.id, function(arg0)
-			arg0.lastBonusFlag = 1
+function var0_0.checkLastBonus(arg0_31)
+	if (not arg0_31.lastBonusFlag or arg0_31.lastBonusFlag == 0) and arg0_31.useCount and arg0_31.useCount >= arg0_31.lastBonusTimes then
+		arg0_31._event:emit(Monopoly3thRePage.MONOPOLY_OP_LAST, arg0_31.activity.id, function(arg0_32)
+			arg0_31.lastBonusFlag = 1
 
-			setActive(findTF(arg0.labelDropShip, "get"), false)
-			setActive(findTF(arg0.labelDropShip, "got"), true)
-			setActive(findTF(arg0.labelDropShip, "text"), false)
+			setActive(findTF(arg0_31.labelDropShip, "get"), false)
+			setActive(findTF(arg0_31.labelDropShip, "got"), true)
+			setActive(findTF(arg0_31.labelDropShip, "text"), false)
 
-			if arg0.autoFlag then
-				arg0:start()
+			if arg0_31.autoFlag then
+				arg0_31:start()
 			end
 		end)
 
 		return true
 	end
 
-	if arg0.lastBonusFlag == 1 then
-		setActive(findTF(arg0.labelDropShip, "get"), false)
-		setActive(findTF(arg0.labelDropShip, "got"), true)
-		setActive(findTF(arg0.labelDropShip, "text"), false)
+	if arg0_31.lastBonusFlag == 1 then
+		setActive(findTF(arg0_31.labelDropShip, "get"), false)
+		setActive(findTF(arg0_31.labelDropShip, "got"), true)
+		setActive(findTF(arg0_31.labelDropShip, "text"), false)
 	end
 
 	return false
 end
 
-function var0.activityDataUpdata(arg0, arg1)
-	arg0.activity = arg1
+function var0_0.activityDataUpdata(arg0_33, arg1_33)
+	arg0_33.activity = arg1_33
 
-	local var0 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var1 = arg0.activity.data1
+	local var0_33 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var1_33 = arg0_33.activity.data1
 
-	arg0.totalCnt = math.ceil((var0 - var1) / 86400) * arg0.activity:getDataConfig("daily_time") + arg0.activity.data1_list[1]
-	arg0.useCount = arg0.activity.data1_list[2]
-	arg0.leftCount = arg0.totalCnt - arg0.useCount
-	arg0.turnCnt = arg0.activity.data1_list[3] - 1
-	arg0.leftDropShipCnt = 8 - arg0.turnCnt
+	arg0_33.totalCnt = math.ceil((var0_33 - var1_33) / 86400) * arg0_33.activity:getDataConfig("daily_time") + arg0_33.activity.data1_list[1]
+	arg0_33.useCount = arg0_33.activity.data1_list[2]
+	arg0_33.leftCount = arg0_33.totalCnt - arg0_33.useCount
+	arg0_33.turnCnt = arg0_33.activity.data1_list[3] - 1
+	arg0_33.leftDropShipCnt = 8 - arg0_33.turnCnt
 
-	local var2 = arg0.activity.data2_list[2]
+	local var2_33 = arg0_33.activity.data2_list[2]
 
-	arg0.advanceTotalCnt = #arg1:getDataConfig("reward")
-	arg0.isAdvanceRp = arg0.advanceTotalCnt - var2 > 0
+	arg0_33.advanceTotalCnt = #arg1_33:getDataConfig("reward")
+	arg0_33.isAdvanceRp = arg0_33.advanceTotalCnt - var2_33 > 0
 
-	local var3 = arg0.activity.data2_list[1]
+	local var3_33 = arg0_33.activity.data2_list[1]
 
-	arg0.leftAwardCnt = var3 - var2
-	arg0.advanceRpCount = math.max(0, math.min(var3, arg0.advanceTotalCnt) - var2)
-	arg0.commonRpCount = math.max(0, var3 - arg0.advanceTotalCnt) - math.max(0, var2 - arg0.advanceTotalCnt)
+	arg0_33.leftAwardCnt = var3_33 - var2_33
+	arg0_33.advanceRpCount = math.max(0, math.min(var3_33, arg0_33.advanceTotalCnt) - var2_33)
+	arg0_33.commonRpCount = math.max(0, var3_33 - arg0_33.advanceTotalCnt) - math.max(0, var2_33 - arg0_33.advanceTotalCnt)
 
-	local var4 = arg1:getDataConfig("reward_time")
+	local var4_33 = arg1_33:getDataConfig("reward_time")
 
-	arg0.nextredPacketStep = var4 - arg0.useCount % var4
+	arg0_33.nextredPacketStep = var4_33 - arg0_33.useCount % var4_33
 
-	if arg0.useCount >= var16 then
-		arg0.nextredPacketStep = nil
+	if arg0_33.useCount >= var16_0 then
+		arg0_33.nextredPacketStep = nil
 	end
 
-	arg0.pos = arg0.activity.data2
-	arg0.step = arg0.activity.data3 or 0
-	arg0.effectId = arg0.activity.data4 or 0
-	arg0.lastBonusFlag = arg0.activity.data2_list[3]
+	arg0_33.pos = arg0_33.activity.data2
+	arg0_33.step = arg0_33.activity.data3 or 0
+	arg0_33.effectId = arg0_33.activity.data4 or 0
+	arg0_33.lastBonusFlag = arg0_33.activity.data2_list[3]
 end
 
-function var0.checkStep(arg0, arg1)
-	if arg0.step > 0 then
-		arg0._event:emit(Monopoly3thRePage.ON_MOVE, arg0.activity.id, function(arg0, arg1, arg2)
-			arg0.step = arg0
-			arg0.pos = arg1[#arg1]
-			arg0.effectId = arg2
+function var0_0.checkStep(arg0_34, arg1_34)
+	if arg0_34.step > 0 then
+		arg0_34._event:emit(Monopoly3thRePage.ON_MOVE, arg0_34.activity.id, function(arg0_35, arg1_35, arg2_35)
+			arg0_34.step = arg0_35
+			arg0_34.pos = arg1_35[#arg1_35]
+			arg0_34.effectId = arg2_35
 
 			seriesAsync({
-				function(arg0)
-					local var0 = var14
+				function(arg0_36)
+					local var0_36 = var14_0
 
-					arg0:moveCharWithPaths(arg1, var0, arg0)
+					arg0_34:moveCharWithPaths(arg1_35, var0_36, arg0_36)
 				end,
-				function(arg0)
-					arg0:checkEffect(arg0)
+				function(arg0_37)
+					arg0_34:checkEffect(arg0_37)
 				end
 			}, function()
-				if arg1 then
-					arg1()
+				if arg1_34 then
+					arg1_34()
 				end
 			end)
 		end)
-	elseif arg1 then
-		arg1()
+	elseif arg1_34 then
+		arg1_34()
 	end
 end
 
-function var0.updataUI(arg0)
-	setText(arg0.labelLeftRpCount, "" .. arg0.leftAwardCnt)
+function var0_0.updataUI(arg0_39)
+	setText(arg0_39.labelLeftRpCount, "" .. arg0_39.leftAwardCnt)
 
-	if LeanTween.isTweening(go(arg0.btnRp)) then
-		LeanTween.cancel(go(arg0.btnRp))
+	if LeanTween.isTweening(go(arg0_39.btnRp)) then
+		LeanTween.cancel(go(arg0_39.btnRp))
 	end
 
-	LeanTween.delayedCall(go(arg0.btnRp), 1, System.Action(function()
-		if arg0.commonAnim.isActiveAndEnabled then
-			arg0.commonAnim:SetInteger("count", arg0.leftAwardCnt)
+	LeanTween.delayedCall(go(arg0_39.btnRp), 1, System.Action(function()
+		if arg0_39.commonAnim.isActiveAndEnabled then
+			arg0_39.commonAnim:SetInteger("count", arg0_39.leftAwardCnt)
 		end
 	end))
 
-	local var0 = arg0.lastBonusTimes - arg0.useCount
+	local var0_39 = arg0_39.lastBonusTimes - arg0_39.useCount
 
-	if var0 > 0 then
-		setText(findTF(arg0.labelDropShip, "text"), "" .. var0)
+	if var0_39 > 0 then
+		setText(findTF(arg0_39.labelDropShip, "text"), "" .. var0_39)
 	end
 
-	if arg0.nextredPacketStep and arg0.nextredPacketStep ~= 0 then
-		setText(arg0.labelLeftCountTip, arg0.nextredPacketStep)
-		setActive(arg0.labelLeftCountTip, true)
-		setActive(findTF(arg0._tf, "countTip/ad"), true)
-		setActive(findTF(arg0._tf, "countTip/adB"), false)
+	if arg0_39.nextredPacketStep and arg0_39.nextredPacketStep ~= 0 then
+		setText(arg0_39.labelLeftCountTip, arg0_39.nextredPacketStep)
+		setActive(arg0_39.labelLeftCountTip, true)
+		setActive(findTF(arg0_39._tf, "countTip/ad"), true)
+		setActive(findTF(arg0_39._tf, "countTip/adB"), false)
 	else
-		setText(arg0.labelLeftCountTip, "")
-		setActive(arg0.labelLeftCountTip, false)
-		setActive(findTF(arg0._tf, "countTip/ad"), false)
-		setActive(findTF(arg0._tf, "countTip/adB"), true)
+		setText(arg0_39.labelLeftCountTip, "")
+		setActive(arg0_39.labelLeftCountTip, false)
+		setActive(findTF(arg0_39._tf, "countTip/ad"), false)
+		setActive(findTF(arg0_39._tf, "countTip/adB"), true)
 	end
 
-	setText(arg0.labelLeftCount, arg0.leftCount)
+	setText(arg0_39.labelLeftCount, arg0_39.leftCount)
 end
 
-function var0.updataChar(arg0)
-	if not isActive(arg0.char) then
-		SetActive(arg0.char, true)
-		arg0.char:SetAsLastSibling()
+function var0_0.updataChar(arg0_41)
+	if not isActive(arg0_41.char) then
+		SetActive(arg0_41.char, true)
+		arg0_41.char:SetAsLastSibling()
 	end
 end
 
-function var0.checkEffect(arg0, arg1)
-	if arg0.effectId > 0 then
-		local var0 = pg.activity_event_monopoly_event[arg0.effectId].story
-		local var1 = arg0:getActionName(arg0.pos)
+function var0_0.checkEffect(arg0_42, arg1_42)
+	if arg0_42.effectId > 0 then
+		local var0_42 = pg.activity_event_monopoly_event[arg0_42.effectId].story
+		local var1_42 = arg0_42:getActionName(arg0_42.pos)
 
 		seriesAsync({
-			function(arg0)
-				if var1 then
-					arg0:changeCharAction(var1, 1, function()
-						arg0:changeCharAction(var11, 0, nil)
-						arg0()
+			function(arg0_43)
+				if var1_42 then
+					arg0_42:changeCharAction(var1_42, 1, function()
+						arg0_42:changeCharAction(var11_0, 0, nil)
+						arg0_43()
 					end)
 				else
-					arg0()
+					arg0_43()
 				end
 			end,
-			function(arg0)
-				if var0 and tonumber(var0) ~= 0 then
-					pg.NewStoryMgr.GetInstance():Play(var0, arg0, true, true)
+			function(arg0_45)
+				if var0_42 and tonumber(var0_42) ~= 0 then
+					pg.NewStoryMgr.GetInstance():Play(var0_42, arg0_45, true, true)
 				else
-					arg0()
+					arg0_45()
 				end
 			end,
-			function(arg0)
-				arg0:triggerEfect(arg0)
+			function(arg0_46)
+				arg0_42:triggerEfect(arg0_46)
 			end,
-			function(arg0)
-				arg0:checkCountStory(arg0)
+			function(arg0_47)
+				arg0_42:checkCountStory(arg0_47)
 			end
-		}, arg1)
-	elseif arg1 then
-		arg1()
+		}, arg1_42)
+	elseif arg1_42 then
+		arg1_42()
 	end
 end
 
-function var0.triggerEfect(arg0, arg1)
-	arg0._event:emit(Monopoly3thRePage.ON_TRIGGER, arg0.activity.id, function(arg0, arg1)
-		if arg0 and #arg0 >= 0 then
-			arg0.effectId = arg1
-			arg0.pos = arg0[#arg0]
+function var0_0.triggerEfect(arg0_48, arg1_48)
+	arg0_48._event:emit(Monopoly3thRePage.ON_TRIGGER, arg0_48.activity.id, function(arg0_49, arg1_49)
+		if arg0_49 and #arg0_49 >= 0 then
+			arg0_48.effectId = arg1_49
+			arg0_48.pos = arg0_49[#arg0_49]
 
 			seriesAsync({
-				function(arg0)
-					arg0:moveCharWithPaths(arg0, var10, arg0)
+				function(arg0_50)
+					arg0_48:moveCharWithPaths(arg0_49, var10_0, arg0_50)
 				end
 			}, function()
-				arg1()
+				arg1_48()
 			end)
 		end
 	end)
 end
 
-function var0.moveCharWithPaths(arg0, arg1, arg2, arg3)
-	if not arg1 or #arg1 <= 0 then
-		if arg3 then
-			arg3()
+function var0_0.moveCharWithPaths(arg0_52, arg1_52, arg2_52, arg3_52)
+	if not arg1_52 or #arg1_52 <= 0 then
+		if arg3_52 then
+			arg3_52()
 		end
 
 		return
 	end
 
-	local var0 = {}
+	local var0_52 = {}
 
-	table.insert(var0, function(arg0)
-		local var0 = arg2 ~= var14 and 4 or 2
-		local var1 = 1100
-		local var2 = 0
+	table.insert(var0_52, function(arg0_53)
+		local var0_53 = arg2_52 ~= var14_0 and 4 or 2
+		local var1_53 = 1100
+		local var2_53 = 0
 
-		arg0:createCell(var1)
-		arg0:changeCharAction(arg2, 0, nil)
+		arg0_52:createCell(var1_53)
+		arg0_52:changeCharAction(arg2_52, 0, nil)
 
-		local var3 = var1 / (var0 / 0.6)
-		local var4 = 0
+		local var3_53 = var1_53 / (var0_53 / 0.6)
+		local var4_53 = 0
 
-		if LeanTween.isTweening(go(arg0.cellPos)) then
-			LeanTween.cancel(go(arg0.cellPos))
+		if LeanTween.isTweening(go(arg0_52.cellPos)) then
+			LeanTween.cancel(go(arg0_52.cellPos))
 		end
 
-		LeanTween.value(go(arg0.cellPos), 0, var1, var0):setEase(LeanTweenType.linear):setOnUpdate(System.Action_float(function(arg0)
-			arg0:updateMap(arg0 - var2)
+		LeanTween.value(go(arg0_52.cellPos), 0, var1_53, var0_53):setEase(LeanTweenType.linear):setOnUpdate(System.Action_float(function(arg0_54)
+			arg0_52:updateMap(arg0_54 - var2_53)
 
-			var2 = arg0
+			var2_53 = arg0_54
 		end)):setOnComplete(System.Action(function()
-			arg0()
+			arg0_53()
 		end))
 	end)
-	table.insert(var0, function(arg0)
-		arg0:changeCharAction(var11, 0, nil)
-		arg0()
+	table.insert(var0_52, function(arg0_56)
+		arg0_52:changeCharAction(var11_0, 0, nil)
+		arg0_56()
 	end)
-	seriesAsync(var0, arg3)
+	seriesAsync(var0_52, arg3_52)
 end
 
-function var0.createCell(arg0, arg1)
-	local var0 = arg0.mapIds[arg0.pos]
-	local var1 = pg.activity_event_monopoly_map[var0].icon
-	local var2 = tf(instantiate(go(arg0.tplCell)))
+function var0_0.createCell(arg0_57, arg1_57)
+	local var0_57 = arg0_57.mapIds[arg0_57.pos]
+	local var1_57 = pg.activity_event_monopoly_map[var0_57].icon
+	local var2_57 = tf(instantiate(go(arg0_57.tplCell)))
 
-	var2.localPosition = Vector3(arg1, 0, 0)
+	var2_57.localPosition = Vector3(arg1_57, 0, 0)
 
-	local var3 = GetSpriteFromAtlas("ui/activityuipage/monopoly3thre_atlas", var1)
+	local var3_57 = GetSpriteFromAtlas("ui/activityuipage/monopoly3thre_atlas", var1_57)
 
-	findTF(var2, "icon"):GetComponent(typeof(Image)).sprite = var3
+	findTF(var2_57, "icon"):GetComponent(typeof(Image)).sprite = var3_57
 
-	findTF(var2, "icon"):GetComponent(typeof(Image)):SetNativeSize()
-	setActive(var2, true)
-	setParent(var2, arg0.cellPos)
-	table.insert(arg0.mapCells, var2)
+	findTF(var2_57, "icon"):GetComponent(typeof(Image)):SetNativeSize()
+	setActive(var2_57, true)
+	setParent(var2_57, arg0_57.cellPos)
+	table.insert(arg0_57.mapCells, var2_57)
 end
 
-function var0.updateMap(arg0, arg1)
-	for iter0 = 1, #arg0.mapCells do
-		local var0 = arg0.mapCells[iter0].anchoredPosition
+function var0_0.updateMap(arg0_58, arg1_58)
+	for iter0_58 = 1, #arg0_58.mapCells do
+		local var0_58 = arg0_58.mapCells[iter0_58].anchoredPosition
 
-		var0.x = var0.x - arg1
-		arg0.mapCells[iter0].anchoredPosition = var0
+		var0_58.x = var0_58.x - arg1_58
+		arg0_58.mapCells[iter0_58].anchoredPosition = var0_58
 	end
 
-	if #arg0.mapCells > 0 and arg0.mapCells[1].anchoredPosition.x < -1000 then
-		local var1 = table.remove(arg0.mapCells, 1)
+	if #arg0_58.mapCells > 0 and arg0_58.mapCells[1].anchoredPosition.x < -1000 then
+		local var1_58 = table.remove(arg0_58.mapCells, 1)
 
-		Destroy(var1)
+		Destroy(var1_58)
 	end
 
-	for iter1 = 1, #arg0.groundChildsList do
-		local var2 = arg0.groundMoveRate[iter1]
-		local var3 = arg0.groundChildsList[iter1]
+	for iter1_58 = 1, #arg0_58.groundChildsList do
+		local var2_58 = arg0_58.groundMoveRate[iter1_58]
+		local var3_58 = arg0_58.groundChildsList[iter1_58]
 
-		for iter2 = #var3, 1, -1 do
-			local var4 = var3[iter2]
+		for iter2_58 = #var3_58, 1, -1 do
+			local var4_58 = var3_58[iter2_58]
 
-			var4.anchoredPosition = Vector3(var4.anchoredPosition.x - arg1 * var2, var4.anchoredPosition.y, var4.anchoredPosition.z)
+			var4_58.anchoredPosition = Vector3(var4_58.anchoredPosition.x - arg1_58 * var2_58, var4_58.anchoredPosition.y, var4_58.anchoredPosition.z)
 		end
 	end
 
-	for iter3 = 1, #arg0.groundChildsList do
-		local var5 = arg0.groundChildsList[iter3]
+	for iter3_58 = 1, #arg0_58.groundChildsList do
+		local var5_58 = arg0_58.groundChildsList[iter3_58]
 
-		for iter4 = #var5, 1, -1 do
-			local var6 = var5[iter4]
+		for iter4_58 = #var5_58, 1, -1 do
+			local var6_58 = var5_58[iter4_58]
 
-			if var6.anchoredPosition.x <= -var6.sizeDelta.x and #var5 > 1 then
-				local var7 = table.remove(var5, iter4)
+			if var6_58.anchoredPosition.x <= -var6_58.sizeDelta.x and #var5_58 > 1 then
+				local var7_58 = table.remove(var5_58, iter4_58)
 
-				var7.anchoredPosition = Vector3(var5[#var5].anchoredPosition.x + var5[#var5].sizeDelta.x, var6.anchoredPosition.y, var6.anchoredPosition.z)
+				var7_58.anchoredPosition = Vector3(var5_58[#var5_58].anchoredPosition.x + var5_58[#var5_58].sizeDelta.x, var6_58.anchoredPosition.y, var6_58.anchoredPosition.z)
 
-				table.insert(var5, var7)
+				table.insert(var5_58, var7_58)
 			end
 		end
 	end
 end
 
-function var0.changeCharAction(arg0, arg1, arg2, arg3)
-	if arg0.actionName == arg1 and arg0.actionName ~= var13 then
+function var0_0.changeCharAction(arg0_59, arg1_59, arg2_59, arg3_59)
+	if arg0_59.actionName == arg1_59 and arg0_59.actionName ~= var13_0 then
 		return
 	end
 
-	arg0.actionName = arg1
+	arg0_59.actionName = arg1_59
 
-	arg0.anim:SetActionCallBack(nil)
-	arg0.anim:SetAction(arg1, 0)
-	arg0.anim:SetActionCallBack(function(arg0)
-		if arg0 == "finish" then
-			if arg2 == 1 then
-				arg0.anim:SetActionCallBack(nil)
-				arg0.anim:SetAction(var11, 0)
+	arg0_59.anim:SetActionCallBack(nil)
+	arg0_59.anim:SetAction(arg1_59, 0)
+	arg0_59.anim:SetActionCallBack(function(arg0_60)
+		if arg0_60 == "finish" then
+			if arg2_59 == 1 then
+				arg0_59.anim:SetActionCallBack(nil)
+				arg0_59.anim:SetAction(var11_0, 0)
 			end
 
-			if arg3 then
-				arg3()
+			if arg3_59 then
+				arg3_59()
 			end
 		end
 	end)
 
-	if arg2 ~= 1 and arg3 then
-		arg3()
+	if arg2_59 ~= 1 and arg3_59 then
+		arg3_59()
 	end
 end
 
-function var0.getActionName(arg0, arg1)
-	local var0 = arg0.mapIds[arg1]
-	local var1 = pg.activity_event_monopoly_map[var0].icon
+function var0_0.getActionName(arg0_61, arg1_61)
+	local var0_61 = arg0_61.mapIds[arg1_61]
+	local var1_61 = pg.activity_event_monopoly_map[var0_61].icon
 
-	if var1 == "icon_1" then
-		return var9
-	elseif var1 == "icon_2" then
-		return var7
-	elseif var1 == "icon_3" then
+	if var1_61 == "icon_1" then
+		return var9_0
+	elseif var1_61 == "icon_2" then
+		return var7_0
+	elseif var1_61 == "icon_3" then
 		return nil
-	elseif var1 == "icon_4" then
-		return var9
-	elseif var1 == "icon_5" then
-		return var8
-	elseif var1 == "icon_6" then
-		return var9
+	elseif var1_61 == "icon_4" then
+		return var9_0
+	elseif var1_61 == "icon_5" then
+		return var8_0
+	elseif var1_61 == "icon_6" then
+		return var9_0
 	end
 
-	return var9
+	return var9_0
 end
 
-function var0.onHide(arg0)
+function var0_0.onHide(arg0_62)
 	return
 end
 
-function var0.dispose(arg0)
-	if arg0.model then
-		PoolMgr.GetInstance():ReturnSpineChar(var1, arg0.model)
+function var0_0.dispose(arg0_63)
+	if arg0_63.model then
+		PoolMgr.GetInstance():ReturnSpineChar(var1_0, arg0_63.model)
 	end
 
-	for iter0 = #arg0.mapCells, 1, -1 do
-		Destroy(arg0.mapCells[iter0])
+	for iter0_63 = #arg0_63.mapCells, 1, -1 do
+		Destroy(arg0_63.mapCells[iter0_63])
 	end
 
-	arg0.mapCells = {}
+	arg0_63.mapCells = {}
 
-	if arg0.randomMoveTiemr then
-		if arg0.randomMoveTiemr.running then
-			arg0.randomMoveTiemr:Stop()
+	if arg0_63.randomMoveTiemr then
+		if arg0_63.randomMoveTiemr.running then
+			arg0_63.randomMoveTiemr:Stop()
 		end
 
-		arg0.randomMoveTiemr = nil
+		arg0_63.randomMoveTiemr = nil
 	end
 
-	if LeanTween.isTweening(go(arg0.btnRp)) then
-		LeanTween.cancel(go(arg0.btnRp))
+	if LeanTween.isTweening(go(arg0_63.btnRp)) then
+		LeanTween.cancel(go(arg0_63.btnRp))
 	end
 
-	if LeanTween.isTweening(go(arg0.cellPos)) then
-		LeanTween.cancel(go(arg0.cellPos))
+	if LeanTween.isTweening(go(arg0_63.cellPos)) then
+		LeanTween.cancel(go(arg0_63.cellPos))
 	end
 
-	if arg0.awardsTimer then
-		if arg0.awardsTimer.running then
-			arg0.awardsTimer:Stop()
+	if arg0_63.awardsTimer then
+		if arg0_63.awardsTimer.running then
+			arg0_63.awardsTimer:Stop()
 		end
 
-		arg0.awardsTimer = nil
+		arg0_63.awardsTimer = nil
 	end
 
-	if arg0.awardTfs and #arg0.awardTfs > 0 then
-		for iter1 = #arg0.awardTfs, 1, -1 do
-			Destroy(table.remove(arg0.awardTfs, iter1))
+	if arg0_63.awardTfs and #arg0_63.awardTfs > 0 then
+		for iter1_63 = #arg0_63.awardTfs, 1, -1 do
+			Destroy(table.remove(arg0_63.awardTfs, iter1_63))
 		end
 	end
 end
 
-return var0
+return var0_0

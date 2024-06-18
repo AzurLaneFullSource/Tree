@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_199 = {}
+var0_0.word_template_199 = {}
 
-local var1 = var0.word_template_199
+local var1_0 = var0_0.word_template_199
 
 function temp()
-	var1.媽 = {
+	var1_0.媽 = {
 		this = {
 			this = true
 		},
@@ -37,7 +37,7 @@ end
 temp()
 
 function temp()
-	var1.麻 = {
+	var1_0.麻 = {
 		古 = {
 			this = true,
 			制 = {
@@ -305,7 +305,7 @@ end
 temp()
 
 function temp()
-	var1.嗎 = {
+	var1_0.嗎 = {
 		的 = {
 			this = true
 		},
@@ -318,7 +318,7 @@ end
 temp()
 
 function temp()
-	var1.马 = {
+	var1_0.马 = {
 		鞍 = {
 			山 = {
 				["6"] = {
@@ -595,7 +595,7 @@ end
 temp()
 
 function temp()
-	var1.玛 = {
+	var1_0.玛 = {
 		莉 = {
 			机 = {
 				this = true
@@ -631,7 +631,7 @@ end
 temp()
 
 function temp()
-	var1.码 = {
+	var1_0.码 = {
 		王 = {
 			this = true
 		}
@@ -641,7 +641,7 @@ end
 temp()
 
 function temp()
-	var1.瑪 = {
+	var1_0.瑪 = {
 		麗 = {
 			亞 = {
 				this = true

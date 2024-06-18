@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_140 = {}
+var0_0.word_template_140 = {}
 
-local var1 = var0.word_template_140
+local var1_0 = var0_0.word_template_140
 
 function temp()
-	var1.级 = {
+	var1_0.级 = {
 		别 = {
 			把 = {
 				能 = {
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.极 = {
+	var1_0.极 = {
 		道 = {
 			毁 = {
 				灭 = {
@@ -212,7 +212,7 @@ end
 temp()
 
 function temp()
-	var1.急 = {
+	var1_0.急 = {
 		忙 = {
 			掏 = {
 				出 = {
@@ -237,7 +237,7 @@ end
 temp()
 
 function temp()
-	var1.極 = {
+	var1_0.極 = {
 		品 = {
 			白 = {
 				虎 = {
@@ -269,7 +269,7 @@ end
 temp()
 
 function temp()
-	var1.殛 = {
+	var1_0.殛 = {
 		this = {
 			this = true
 		}
@@ -279,7 +279,7 @@ end
 temp()
 
 function temp()
-	var1.集 = {
+	var1_0.集 = {
 		体 = {
 			罢 = {
 				工 = {
@@ -352,7 +352,7 @@ end
 temp()
 
 function temp()
-	var1.蕺 = {
+	var1_0.蕺 = {
 		this = {
 			this = true
 		}

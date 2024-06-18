@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_201 = {}
+var0_0.word_template_201 = {}
 
-local var1 = var0.word_template_201
+local var1_0 = var0_0.word_template_201
 
 function temp()
-	var1.麥 = {
+	var1_0.麥 = {
 		克 = {
 			斯 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.勱 = {
+	var1_0.勱 = {
 		this = {
 			this = true
 		}
@@ -29,7 +29,7 @@ end
 temp()
 
 function temp()
-	var1.馒 = {
+	var1_0.馒 = {
 		头 = {
 			屄 = {
 				this = true
@@ -41,7 +41,7 @@ end
 temp()
 
 function temp()
-	var1.瞞 = {
+	var1_0.瞞 = {
 		報 = {
 			this = true
 		}
@@ -51,7 +51,7 @@ end
 temp()
 
 function temp()
-	var1.饅 = {
+	var1_0.饅 = {
 		頭 = {
 			屄 = {
 				this = true
@@ -63,7 +63,7 @@ end
 temp()
 
 function temp()
-	var1.满 = {
+	var1_0.满 = {
 		床 = {
 			春 = {
 				色 = {
@@ -150,7 +150,7 @@ end
 temp()
 
 function temp()
-	var1.曼 = {
+	var1_0.曼 = {
 		德 = {
 			拉 = {
 				this = true

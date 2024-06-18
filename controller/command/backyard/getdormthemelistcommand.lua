@@ -1,35 +1,35 @@
-﻿local var0 = class("GetDormThemeListCommand", pm.SimpleCommand)
+﻿local var0_0 = class("GetDormThemeListCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = 0
-	local var2
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = 0
+	local var2_1
 
-	if var0 and type(var0) == "table" then
-		var2 = var0.callback
+	if var0_1 and type(var0_1) == "table" then
+		var2_1 = var0_1.callback
 	else
-		var1 = var0 or 0
+		var1_1 = var0_1 or 0
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(19018, {
-		id = var1
-	}, 19019, function(arg0)
-		local var0 = getProxy(DormProxy)
+		id = var1_1
+	}, 19019, function(arg0_2)
+		local var0_2 = getProxy(DormProxy)
 
-		if var1 == 0 then
-			var0:initThemes(arg0.theme_list or {})
+		if var1_1 == 0 then
+			var0_2:initThemes(arg0_2.theme_list or {})
 		else
-			for iter0, iter1 in ipairs(arg0.theme_list) do
-				var0:updateTheme(iter1)
+			for iter0_2, iter1_2 in ipairs(arg0_2.theme_list) do
+				var0_2:updateTheme(iter1_2)
 			end
 		end
 
-		arg0:sendNotification(GAME.GET_DORMTHEME_DONE)
+		arg0_1:sendNotification(GAME.GET_DORMTHEME_DONE)
 
-		if var2 then
-			var2()
+		if var2_1 then
+			var2_1()
 		end
 	end)
 end
 
-return var0
+return var0_0

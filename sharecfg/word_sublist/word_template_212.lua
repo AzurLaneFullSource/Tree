@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_212 = {}
+var0_0.word_template_212 = {}
 
-local var1 = var0.word_template_212
+local var1_0 = var0_0.word_template_212
 
 function temp()
-	var1.那 = {
+	var1_0.那 = {
 		可 = {
 			汀 = {
 				this = true
@@ -84,7 +84,7 @@ end
 temp()
 
 function temp()
-	var1.纳 = {
+	var1_0.纳 = {
 		粹 = {
 			this = true,
 			中 = {
@@ -106,7 +106,7 @@ end
 temp()
 
 function temp()
-	var1.納 = {
+	var1_0.納 = {
 		粹 = {
 			this = true
 		}
@@ -116,7 +116,7 @@ end
 temp()
 
 function temp()
-	var1.奶 = {
+	var1_0.奶 = {
 		大 = {
 			屄 = {
 				肥 = {
@@ -221,7 +221,7 @@ end
 temp()
 
 function temp()
-	var1.男 = {
+	var1_0.男 = {
 		按 = {
 			摩 = {
 				师 = {
@@ -426,7 +426,7 @@ end
 temp()
 
 function temp()
-	var1.难 = {
+	var1_0.难 = {
 		忘 = {
 			如 = {
 				火 = {
@@ -488,7 +488,7 @@ end
 temp()
 
 function temp()
-	var1.囊 = {
+	var1_0.囊 = {
 		帕 = {
 			拉 = {
 				this = true

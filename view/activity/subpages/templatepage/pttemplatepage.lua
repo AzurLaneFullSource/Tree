@@ -1,146 +1,146 @@
-﻿local var0 = class("PtTemplatePage", import("view.base.BaseActivityPage"))
+﻿local var0_0 = class("PtTemplatePage", import("view.base.BaseActivityPage"))
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("AD")
-	arg0.slider = arg0:findTF("slider", arg0.bg)
-	arg0.step = arg0:findTF("step", arg0.bg)
-	arg0.progress = arg0:findTF("progress", arg0.bg)
-	arg0.displayBtn = arg0:findTF("display_btn", arg0.bg)
-	arg0.awardTF = arg0:findTF("award", arg0.bg)
-	arg0.battleBtn = arg0:findTF("battle_btn", arg0.bg)
-	arg0.getBtn = arg0:findTF("get_btn", arg0.bg)
-	arg0.gotBtn = arg0:findTF("got_btn", arg0.bg)
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.slider = arg0_1:findTF("slider", arg0_1.bg)
+	arg0_1.step = arg0_1:findTF("step", arg0_1.bg)
+	arg0_1.progress = arg0_1:findTF("progress", arg0_1.bg)
+	arg0_1.displayBtn = arg0_1:findTF("display_btn", arg0_1.bg)
+	arg0_1.awardTF = arg0_1:findTF("award", arg0_1.bg)
+	arg0_1.battleBtn = arg0_1:findTF("battle_btn", arg0_1.bg)
+	arg0_1.getBtn = arg0_1:findTF("get_btn", arg0_1.bg)
+	arg0_1.gotBtn = arg0_1:findTF("got_btn", arg0_1.bg)
 end
 
-function var0.OnDataSetting(arg0)
-	if arg0.ptData then
-		arg0.ptData:Update(arg0.activity)
+function var0_0.OnDataSetting(arg0_2)
+	if arg0_2.ptData then
+		arg0_2.ptData:Update(arg0_2.activity)
 	else
-		arg0.ptData = ActivityPtData.New(arg0.activity)
+		arg0_2.ptData = ActivityPtData.New(arg0_2.activity)
 	end
 end
 
-function var0.OnFirstFlush(arg0)
-	onButton(arg0, arg0.displayBtn, function()
-		arg0:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
-			type = arg0.ptData.type,
-			dropList = arg0.ptData.dropList,
-			targets = arg0.ptData.targets,
-			level = arg0.ptData.level,
-			count = arg0.ptData.count,
-			resId = arg0.ptData.resId,
-			unlockStamps = arg0.ptData:GetDayUnlockStamps()
+function var0_0.OnFirstFlush(arg0_3)
+	onButton(arg0_3, arg0_3.displayBtn, function()
+		arg0_3:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
+			type = arg0_3.ptData.type,
+			dropList = arg0_3.ptData.dropList,
+			targets = arg0_3.ptData.targets,
+			level = arg0_3.ptData.level,
+			count = arg0_3.ptData.count,
+			resId = arg0_3.ptData.resId,
+			unlockStamps = arg0_3.ptData:GetDayUnlockStamps()
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.battleBtn, function()
-		local var0
-		local var1
+	onButton(arg0_3, arg0_3.battleBtn, function()
+		local var0_5
+		local var1_5
 
-		if arg0.activity:getConfig("config_client") ~= "" then
-			var0 = arg0.activity:getConfig("config_client").linkActID
+		if arg0_3.activity:getConfig("config_client") ~= "" then
+			var0_5 = arg0_3.activity:getConfig("config_client").linkActID
 
-			if var0 then
-				var1 = getProxy(ActivityProxy):getActivityById(var0)
+			if var0_5 then
+				var1_5 = getProxy(ActivityProxy):getActivityById(var0_5)
 			end
 		end
 
-		if not var0 then
-			arg0:emit(ActivityMediator.BATTLE_OPERA)
-		elseif var1 and not var1:isEnd() then
-			arg0:emit(ActivityMediator.BATTLE_OPERA)
+		if not var0_5 then
+			arg0_3:emit(ActivityMediator.BATTLE_OPERA)
+		elseif var1_5 and not var1_5:isEnd() then
+			arg0_3:emit(ActivityMediator.BATTLE_OPERA)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0.getBtn, function()
-		local var0 = {}
-		local var1 = arg0.ptData:GetAward()
-		local var2 = getProxy(PlayerProxy):getRawData()
-		local var3 = pg.gameset.urpt_chapter_max.description[1]
-		local var4 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var3)
-		local var5, var6 = Task.StaticJudgeOverflow(var2.gold, var2.oil, var4, true, true, {
+	onButton(arg0_3, arg0_3.getBtn, function()
+		local var0_6 = {}
+		local var1_6 = arg0_3.ptData:GetAward()
+		local var2_6 = getProxy(PlayerProxy):getRawData()
+		local var3_6 = pg.gameset.urpt_chapter_max.description[1]
+		local var4_6 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var3_6)
+		local var5_6, var6_6 = Task.StaticJudgeOverflow(var2_6.gold, var2_6.oil, var4_6, true, true, {
 			{
-				var1.type,
-				var1.id,
-				var1.count
+				var1_6.type,
+				var1_6.id,
+				var1_6.count
 			}
 		})
 
-		if var5 then
-			table.insert(var0, function(arg0)
+		if var5_6 then
+			table.insert(var0_6, function(arg0_7)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					type = MSGBOX_TYPE_ITEM_BOX,
 					content = i18n("award_max_warning"),
-					items = var6,
-					onYes = arg0
+					items = var6_6,
+					onYes = arg0_7
 				})
 			end)
 		end
 
-		seriesAsync(var0, function()
-			local var0, var1 = arg0.ptData:GetResProgress()
+		seriesAsync(var0_6, function()
+			local var0_8, var1_8 = arg0_3.ptData:GetResProgress()
 
-			arg0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+			arg0_3:emit(ActivityMediator.EVENT_PT_OPERATION, {
 				cmd = 1,
-				activity_id = arg0.ptData:GetId(),
-				arg1 = var1
+				activity_id = arg0_3.ptData:GetId(),
+				arg1 = var1_8
 			})
 		end)
 	end, SFX_PANEL)
 end
 
-function var0.OnUpdateFlush(arg0)
-	local var0 = arg0.ptData:getTargetLevel()
-	local var1 = arg0.activity:getConfig("config_client").story
+function var0_0.OnUpdateFlush(arg0_9)
+	local var0_9 = arg0_9.ptData:getTargetLevel()
+	local var1_9 = arg0_9.activity:getConfig("config_client").story
 
-	if checkExist(var1, {
-		var0
+	if checkExist(var1_9, {
+		var0_9
 	}, {
 		1
 	}) then
-		pg.NewStoryMgr.GetInstance():Play(var1[var0][1])
+		pg.NewStoryMgr.GetInstance():Play(var1_9[var0_9][1])
 	end
 
-	if arg0.step then
-		local var2, var3, var4 = arg0.ptData:GetLevelProgress()
+	if arg0_9.step then
+		local var2_9, var3_9, var4_9 = arg0_9.ptData:GetLevelProgress()
 
-		setText(arg0.step, var2 .. "/" .. var3)
+		setText(arg0_9.step, var2_9 .. "/" .. var3_9)
 	end
 
-	local var5, var6, var7 = arg0.ptData:GetResProgress()
+	local var5_9, var6_9, var7_9 = arg0_9.ptData:GetResProgress()
 
-	setText(arg0.progress, (var7 >= 1 and setColorStr(var5, COLOR_GREEN) or var5) .. "/" .. var6)
-	setSlider(arg0.slider, 0, 1, var7)
+	setText(arg0_9.progress, (var7_9 >= 1 and setColorStr(var5_9, COLOR_GREEN) or var5_9) .. "/" .. var6_9)
+	setSlider(arg0_9.slider, 0, 1, var7_9)
 
-	local var8 = arg0.ptData:CanGetAward()
-	local var9 = arg0.ptData:CanGetNextAward()
-	local var10 = arg0.ptData:CanGetMorePt()
+	local var8_9 = arg0_9.ptData:CanGetAward()
+	local var9_9 = arg0_9.ptData:CanGetNextAward()
+	local var10_9 = arg0_9.ptData:CanGetMorePt()
 
-	setActive(arg0.battleBtn, var10 and not var8 and var9)
-	setActive(arg0.getBtn, var8)
-	setActive(arg0.gotBtn, not var9)
+	setActive(arg0_9.battleBtn, var10_9 and not var8_9 and var9_9)
+	setActive(arg0_9.getBtn, var8_9)
+	setActive(arg0_9.gotBtn, not var9_9)
 
-	local var11 = arg0.ptData:GetAward()
+	local var11_9 = arg0_9.ptData:GetAward()
 
-	updateDrop(arg0.awardTF, var11)
-	onButton(arg0, arg0.awardTF, function()
-		arg0:emit(BaseUI.ON_DROP, var11)
+	updateDrop(arg0_9.awardTF, var11_9)
+	onButton(arg0_9, arg0_9.awardTF, function()
+		arg0_9:emit(BaseUI.ON_DROP, var11_9)
 	end, SFX_PANEL)
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_11)
 	return
 end
 
-function var0.GetWorldPtData(arg0, arg1)
-	if arg1 <= pg.TimeMgr.GetInstance():GetServerTime() - (ActivityMainScene.Data2Time or 0) then
+function var0_0.GetWorldPtData(arg0_12, arg1_12)
+	if arg1_12 <= pg.TimeMgr.GetInstance():GetServerTime() - (ActivityMainScene.Data2Time or 0) then
 		ActivityMainScene.Data2Time = pg.TimeMgr.GetInstance():GetServerTime()
 
-		arg0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+		arg0_12:emit(ActivityMediator.EVENT_PT_OPERATION, {
 			cmd = 2,
-			activity_id = arg0.ptData:GetId()
+			activity_id = arg0_12.ptData:GetId()
 		})
 	end
 end
 
-return var0
+return var0_0

@@ -1,68 +1,68 @@
-﻿local var0 = class("MainTagsView", import("..base.MainBaseView"))
+﻿local var0_0 = class("MainTagsView", import("..base.MainBaseView"))
 
-function var0.Ctor(arg0, arg1, arg2)
-	var0.super.Ctor(arg0, arg1, arg2)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var0_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 
-	arg0.monthCardTag = findTF(arg0._tf, "monthcard")
-	arg0.sellTag = findTF(arg0._tf, "sell")
-	arg0.skinTag = findTF(arg0._tf, "skin")
-	arg0.buildTag = findTF(arg0._tf, "build")
-	arg0.tecShipGiftTag = findTF(arg0._tf, "tecshipgift")
-	arg0.mallTip = findTF(arg0._tf, "tip")
+	arg0_1.monthCardTag = findTF(arg0_1._tf, "monthcard")
+	arg0_1.sellTag = findTF(arg0_1._tf, "sell")
+	arg0_1.skinTag = findTF(arg0_1._tf, "skin")
+	arg0_1.buildTag = findTF(arg0_1._tf, "build")
+	arg0_1.tecShipGiftTag = findTF(arg0_1._tf, "tecshipgift")
+	arg0_1.mallTip = findTF(arg0_1._tf, "tip")
 end
 
-function var0.Init(arg0)
-	local var0 = {}
+function var0_0.Init(arg0_2)
+	local var0_2 = {}
 
-	table.insert(var0, function(arg0)
-		TagTipHelper.TecShipGiftTip(arg0.tecShipGiftTag)
-		onNextTick(arg0)
+	table.insert(var0_2, function(arg0_3)
+		TagTipHelper.TecShipGiftTip(arg0_2.tecShipGiftTag)
+		onNextTick(arg0_3)
 	end)
-	table.insert(var0, function(arg0)
-		TagTipHelper.MonthCardTagTip(arg0.monthCardTag)
-		onNextTick(arg0)
+	table.insert(var0_2, function(arg0_4)
+		TagTipHelper.MonthCardTagTip(arg0_2.monthCardTag)
+		onNextTick(arg0_4)
 	end)
-	table.insert(var0, function(arg0)
-		TagTipHelper.SkinTagTip(arg0.skinTag)
-		onNextTick(arg0)
+	table.insert(var0_2, function(arg0_5)
+		TagTipHelper.SkinTagTip(arg0_2.skinTag)
+		onNextTick(arg0_5)
 	end)
-	table.insert(var0, function(arg0)
-		TagTipHelper.FuDaiTagTip(arg0.sellTag)
-		onNextTick(arg0)
+	table.insert(var0_2, function(arg0_6)
+		TagTipHelper.FuDaiTagTip(arg0_2.sellTag)
+		onNextTick(arg0_6)
 	end)
-	table.insert(var0, function(arg0)
-		if not arg0:AnyMallTipShowing() then
+	table.insert(var0_2, function(arg0_7)
+		if not arg0_2:AnyMallTipShowing() then
 			TagTipHelper.FreeGiftTag({
-				arg0.mallTip
+				arg0_2.mallTip
 			})
 		else
-			setActive(arg0.mallTip, false)
+			setActive(arg0_2.mallTip, false)
 		end
 
-		onNextTick(arg0)
+		onNextTick(arg0_7)
 	end)
-	table.insert(var0, function(arg0)
-		TagTipHelper.FreeBuildTicketTip(arg0.buildTag)
-		onNextTick(arg0)
+	table.insert(var0_2, function(arg0_8)
+		TagTipHelper.FreeBuildTicketTip(arg0_2.buildTag)
+		onNextTick(arg0_8)
 	end)
-	seriesAsync(var0)
+	seriesAsync(var0_2)
 end
 
-function var0.AnyMallTipShowing(arg0)
-	local var0 = {
-		arg0.monthCardTag,
-		arg0.sellTag,
-		arg0.skinTag,
-		arg0.tecShipGiftTag
+function var0_0.AnyMallTipShowing(arg0_9)
+	local var0_9 = {
+		arg0_9.monthCardTag,
+		arg0_9.sellTag,
+		arg0_9.skinTag,
+		arg0_9.tecShipGiftTag
 	}
 
-	return _.any(var0, function(arg0)
-		return arg0:GetComponent(typeof(Image)).enabled
+	return _.any(var0_9, function(arg0_10)
+		return arg0_10:GetComponent(typeof(Image)).enabled
 	end)
 end
 
-function var0.Refresh(arg0)
-	arg0:Init()
+function var0_0.Refresh(arg0_11)
+	arg0_11:Init()
 end
 
-return var0
+return var0_0

@@ -1,23 +1,23 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("BattleSkillRemoveAllWeapon", var0.Battle.BattleSkillEffect)
+local var0_0 = ys
+local var1_0 = class("BattleSkillRemoveAllWeapon", var0_0.Battle.BattleSkillEffect)
 
-var0.Battle.BattleSkillRemoveAllWeapon = var1
-var1.__name = "BattleSkillRemoveAllWeapon"
+var0_0.Battle.BattleSkillRemoveAllWeapon = var1_0
+var1_0.__name = "BattleSkillRemoveAllWeapon"
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1, lv)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1, lv)
 end
 
-function var1.DoDataEffect(arg0, arg1)
-	arg0:doRemove(arg1)
+function var1_0.DoDataEffect(arg0_2, arg1_2)
+	arg0_2:doRemove(arg1_2)
 end
 
-function var1.DoDataEffectWithoutTarget(arg0, arg1)
-	arg0:doRemove(arg1)
+function var1_0.DoDataEffectWithoutTarget(arg0_3, arg1_3)
+	arg0_3:doRemove(arg1_3)
 end
 
-function var1.doRemove(arg0, arg1)
-	arg1:RemoveAllAutoWeapon()
+function var1_0.doRemove(arg0_4, arg1_4)
+	arg1_4:RemoveAllAutoWeapon()
 end

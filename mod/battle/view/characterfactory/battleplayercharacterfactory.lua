@@ -1,100 +1,100 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = singletonClass("BattlePlayerCharacterFactory", var0.Battle.BattleCharacterFactory)
+local var0_0 = ys
+local var1_0 = singletonClass("BattlePlayerCharacterFactory", var0_0.Battle.BattleCharacterFactory)
 
-var0.Battle.BattlePlayerCharacterFactory = var1
-var1.__name = "BattlePlayerCharacterFactory"
+var0_0.Battle.BattlePlayerCharacterFactory = var1_0
+var1_0.__name = "BattlePlayerCharacterFactory"
 
-function var1.Ctor(arg0)
-	var1.super.Ctor(arg0)
+function var1_0.Ctor(arg0_1)
+	var1_0.super.Ctor(arg0_1)
 
-	arg0.HP_BAR_NAME = var0.Battle.BattleHPBarManager.HP_BAR_FRIENDLY
-	arg0.CD_BAR_NAME = "CDBarContainer/chargeWeaponCD"
-	arg0.CHARGE_AREA_NAME = "ChargeAreaContainer/ChargeArea"
-	arg0.ARROW_BAR_NAME = "EnemyArrowContainer/MainArrow"
-	arg0.SUB_ARROW_BAR = "EnemyArrowContainer/SubArrow"
+	arg0_1.HP_BAR_NAME = var0_0.Battle.BattleHPBarManager.HP_BAR_FRIENDLY
+	arg0_1.CD_BAR_NAME = "CDBarContainer/chargeWeaponCD"
+	arg0_1.CHARGE_AREA_NAME = "ChargeAreaContainer/ChargeArea"
+	arg0_1.ARROW_BAR_NAME = "EnemyArrowContainer/MainArrow"
+	arg0_1.SUB_ARROW_BAR = "EnemyArrowContainer/SubArrow"
 end
 
-function var1.MakeCharacter(arg0)
-	return var0.Battle.BattlePlayerCharacter.New()
+function var1_0.MakeCharacter(arg0_2)
+	return var0_0.Battle.BattlePlayerCharacter.New()
 end
 
-function var1.MakeModel(arg0, arg1, arg2)
-	local var0 = function(arg0)
-		arg1:AddModel(arg0)
+function var1_0.MakeModel(arg0_3, arg1_3, arg2_3)
+	local function var0_3(arg0_4)
+		arg1_3:AddModel(arg0_4)
 
-		local var0 = arg0:GetSceneMediator()
+		local var0_4 = arg0_3:GetSceneMediator()
 
-		arg1:CameraOrthogonal(var0.Battle.BattleCameraUtil.GetInstance():GetCamera())
-		var0:AddPlayerCharacter(arg1)
-		arg0:MakeUIComponentContainer(arg1)
-		arg0:MakeFXContainer(arg1)
-		arg0:MakePopNumPool(arg1)
-		arg0:MakeBloodBar(arg1)
-		arg0:MakeArrowBar(arg1)
-		arg0:MakeWaveFX(arg1)
-		arg0:MakeSmokeFX(arg1)
-		arg0:MakeSkinOrbit(arg1)
+		arg1_3:CameraOrthogonal(var0_0.Battle.BattleCameraUtil.GetInstance():GetCamera())
+		var0_4:AddPlayerCharacter(arg1_3)
+		arg0_3:MakeUIComponentContainer(arg1_3)
+		arg0_3:MakeFXContainer(arg1_3)
+		arg0_3:MakePopNumPool(arg1_3)
+		arg0_3:MakeBloodBar(arg1_3)
+		arg0_3:MakeArrowBar(arg1_3)
+		arg0_3:MakeWaveFX(arg1_3)
+		arg0_3:MakeSmokeFX(arg1_3)
+		arg0_3:MakeSkinOrbit(arg1_3)
 
-		local var1 = arg1:GetUnitData()
+		local var1_4 = arg1_3:GetUnitData()
 
-		if var1:GetCloak() then
-			arg0:MakeCloakBar(arg1)
+		if var1_4:GetCloak() then
+			arg0_3:MakeCloakBar(arg1_3)
 		end
 
-		arg1:UpdateDiveInvisible()
+		arg1_3:UpdateDiveInvisible()
 
-		if #var1:GetTorpedoList() > 0 then
-			arg0:MakeTorpedoTrack(arg1)
+		if #var1_4:GetTorpedoList() > 0 then
+			arg0_3:MakeTorpedoTrack(arg1_3)
 		end
 
-		if var1:GetAimBias() and var1:GetAimBias():GetHost() == var1 then
-			arg0:MakeAimBiasBar(arg1)
+		if var1_4:GetAimBias() and var1_4:GetAimBias():GetHost() == var1_4 then
+			arg0_3:MakeAimBiasBar(arg1_3)
 		end
 	end
 
-	arg0:GetCharacterPool():InstCharacter(arg1:GetModleID(), function(arg0)
-		var0(arg0)
+	arg0_3:GetCharacterPool():InstCharacter(arg1_3:GetModleID(), function(arg0_5)
+		var0_3(arg0_5)
 	end)
 end
 
-function var1.MakeBloodBar(arg0, arg1)
-	local var0 = arg0:GetHPBarPool():GetHPBar(arg0.HP_BAR_NAME)
-	local var1 = var0.transform
+function var1_0.MakeBloodBar(arg0_6, arg1_6)
+	local var0_6 = arg0_6:GetHPBarPool():GetHPBar(arg0_6.HP_BAR_NAME)
+	local var1_6 = var0_6.transform
 
-	LuaHelper.SetTFChildActive(var1, "torpedoIcons", true)
-	arg1:AddHPBar(var0)
+	LuaHelper.SetTFChildActive(var1_6, "torpedoIcons", true)
+	arg1_6:AddHPBar(var0_6)
 end
 
-function var1.MakeAimBiasBar(arg0, arg1)
-	local var0 = arg1._HPBarTf:Find("biasBar")
+function var1_0.MakeAimBiasBar(arg0_7, arg1_7)
+	local var0_7 = arg1_7._HPBarTf:Find("biasBar")
 
-	arg1:AddAimBiasBar(var0)
+	arg1_7:AddAimBiasBar(var0_7)
 end
 
-function var1.MakeChargeArea(arg0, arg1)
-	local var0 = arg0:GetSceneMediator():InstantiateCharacterComponent(arg0.CHARGE_AREA_NAME)
+function var1_0.MakeChargeArea(arg0_8, arg1_8)
+	local var0_8 = arg0_8:GetSceneMediator():InstantiateCharacterComponent(arg0_8.CHARGE_AREA_NAME)
 
-	var0.transform.localEulerAngles = Vector3(60, 0, 0)
+	var0_8.transform.localEulerAngles = Vector3(60, 0, 0)
 
-	arg1:AddChargeArea(var0)
+	arg1_8:AddChargeArea(var0_8)
 end
 
-function var1.MakeTorpedoTrack(arg0, arg1)
-	local var0 = arg0:GetFXPool():GetFX("SquareAlert", arg1:GetTf())
+function var1_0.MakeTorpedoTrack(arg0_9, arg1_9)
+	local var0_9 = arg0_9:GetFXPool():GetFX("SquareAlert", arg1_9:GetTf())
 
-	arg1:AddTorpedoTrack(var0)
+	arg1_9:AddTorpedoTrack(var0_9)
 end
 
-function var1.RemoveCharacter(arg0, arg1, arg2)
-	local var0 = arg0:GetSceneMediator()
+function var1_0.RemoveCharacter(arg0_10, arg1_10, arg2_10)
+	local var0_10 = arg0_10:GetSceneMediator()
 
-	if arg2 and arg2 ~= var0.Battle.BattleConst.UnitDeathReason.KILLED then
+	if arg2_10 and arg2_10 ~= var0_0.Battle.BattleConst.UnitDeathReason.KILLED then
 		-- block empty
 	else
-		var0.Battle.BattleCameraUtil.GetInstance():StartShake(pg.shake_template[var0.Battle.BattleConst.ShakeType.UNIT_DIE])
+		var0_0.Battle.BattleCameraUtil.GetInstance():StartShake(pg.shake_template[var0_0.Battle.BattleConst.ShakeType.UNIT_DIE])
 	end
 
-	var1.super.RemoveCharacter(arg0, arg1, arg2)
+	var1_0.super.RemoveCharacter(arg0_10, arg1_10, arg2_10)
 end

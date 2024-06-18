@@ -1,74 +1,74 @@
 ﻿ys = ys or {}
 
-local var0 = class("Sequence")
+local var0_0 = class("Sequence")
 
-ys.Sequence = var0
-var0.Name = ""
-var0._list = nil
-var0.Center = nil
-var0._wait = false
+ys.Sequence = var0_0
+var0_0.Name = ""
+var0_0._list = nil
+var0_0.Center = nil
+var0_0._wait = false
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0.Name = arg1
-	arg0._list = ys.LinkList.New()
-	arg0.Center = arg2
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.Name = arg1_1
+	arg0_1._list = ys.LinkList.New()
+	arg0_1.Center = arg2_1
 
-	arg2:AddSeq(arg0)
+	arg2_1:AddSeq(arg0_1)
 end
 
-function var0.Dispose(arg0)
-	local var0 = arg0._list.Head
+function var0_0.Dispose(arg0_2)
+	local var0_2 = arg0_2._list.Head
 
-	for iter0 = 1, arg0._list.Count do
-		var0.Data:Dispose()
+	for iter0_2 = 1, arg0_2._list.Count do
+		var0_2.Data:Dispose()
 
-		var0 = var0.Next
+		var0_2 = var0_2.Next
 	end
 
-	arg0._list:Clear()
+	arg0_2._list:Clear()
 end
 
-function var0.Add(arg0, arg1)
-	arg0._list:AddLast(arg1)
+function var0_0.Add(arg0_3, arg1_3)
+	arg0_3._list:AddLast(arg1_3)
 end
 
-function var0.Wait(arg0)
-	arg0._wait = true
+function var0_0.Wait(arg0_4)
+	arg0_4._wait = true
 end
 
-function var0.Resume(arg0)
-	arg0._wait = false
+function var0_0.Resume(arg0_5)
+	arg0_5._wait = false
 end
 
-function var0.Update(arg0)
-	if arg0._wait then
+function var0_0.Update(arg0_6)
+	if arg0_6._wait then
 		return false
 	end
 
-	while arg0._list.Count > 0 do
-		local var0 = arg0._list.Head.Data
+	while arg0_6._list.Count > 0 do
+		local var0_6 = arg0_6._list.Head.Data
 
-		if not var0.Finish then
-			var0:UpdateNode()
+		if not var0_6.Finish then
+			var0_6:UpdateNode()
 
-			if not var0.Finish then
+			if not var0_6.Finish then
 				return false
 			else
-				arg0._list:RemoveFirst()
+				arg0_6._list:RemoveFirst()
 			end
 		else
-			arg0._list:RemoveFirst()
+			arg0_6._list:RemoveFirst()
 		end
 	end
 
 	return true
 end
 
-function var0.IsFinish(arg0)
-	local var0 = arg0._list.Head
+function var0_0.IsFinish(arg0_7)
+	local var0_7 = arg0_7._list.Head
 
-	for iter0 = 1, arg0._list.Count do
-		if not var0.Data.Finish then
+	for iter0_7 = 1, arg0_7._list.Count do
+		if not var0_7.Data.Finish then
 			return false
 		end
 	end

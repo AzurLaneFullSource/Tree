@@ -1,166 +1,166 @@
-﻿local var0 = class("MainUrShipReFetchSequence", import("...base.ContextMediator"))
+﻿local var0_0 = class("MainUrShipReFetchSequence", import("...base.ContextMediator"))
 
-var0.ON_TIME_UP = "MainUrShipReFetchSequence:ON_TIME_UP"
+var0_0.ON_TIME_UP = "MainUrShipReFetchSequence:ON_TIME_UP"
 
-function var0.Ctor(arg0)
-	var0.super.Ctor(arg0, BaseEventLogic.New())
-	pg.m02:registerMediator(arg0)
+function var0_0.Ctor(arg0_1)
+	var0_0.super.Ctor(arg0_1, BaseEventLogic.New())
+	pg.m02:registerMediator(arg0_1)
 end
 
-function var0.Execute(arg0, arg1)
-	local var0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_GRAFTING)
+function var0_0.Execute(arg0_2, arg1_2)
+	local var0_2 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_GRAFTING)
 
-	if #var0 == 0 then
-		arg1()
+	if #var0_2 == 0 then
+		arg1_2()
 
 		return
 	end
 
-	arg0:CheckUrShipAct(var0, arg1)
+	arg0_2:CheckUrShipAct(var0_2, arg1_2)
 end
 
-local function var1(arg0)
-	local var0 = getProxy(ActivityProxy):getActivityById(arg0)
+local function var1_0(arg0_3)
+	local var0_3 = getProxy(ActivityProxy):getActivityById(arg0_3)
 
-	return var0 and not var0:isEnd()
+	return var0_3 and not var0_3:isEnd()
 end
 
-local function var2(arg0)
-	return arg0 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1 or arg0 == ActivityConst.ACTIVITY_TYPE_BUILD or arg0 == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD
+local function var2_0(arg0_4)
+	return arg0_4 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1 or arg0_4 == ActivityConst.ACTIVITY_TYPE_BUILD or arg0_4 == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD
 end
 
-local function var3(arg0)
-	if not arg0 or arg0:isEnd() then
+local function var3_0(arg0_5)
+	if not arg0_5 or arg0_5:isEnd() then
 		return false
 	end
 
-	local var0 = arg0:getConfig("config_id")
+	local var0_5 = arg0_5:getConfig("config_id")
 
-	if var1(var0) then
+	if var1_0(var0_5) then
 		return false
 	end
 
-	local var1 = pg.activity_template[var0]
+	local var1_5 = pg.activity_template[var0_5]
 
-	return var1 and var2(var1.type)
+	return var1_5 and var2_0(var1_5.type)
 end
 
-function var0.CheckUrShipAct(arg0, arg1, arg2)
-	local var0 = {}
+function var0_0.CheckUrShipAct(arg0_6, arg1_6, arg2_6)
+	local var0_6 = {}
 
-	for iter0, iter1 in pairs(arg1) do
-		if var3(iter1) then
-			table.insert(var0, function(arg0)
-				arg0:TryFetchUrShips(iter1, arg0)
+	for iter0_6, iter1_6 in pairs(arg1_6) do
+		if var3_0(iter1_6) then
+			table.insert(var0_6, function(arg0_7)
+				arg0_6:TryFetchUrShips(iter1_6, arg0_7)
 			end)
 		end
 	end
 
-	seriesAsync(var0, arg2)
+	seriesAsync(var0_6, arg2_6)
 end
 
-local function var4(arg0)
-	local var0 = getProxy(ActivityProxy):getActivityById(arg0)
+local function var4_0(arg0_8)
+	local var0_8 = getProxy(ActivityProxy):getActivityById(arg0_8)
 
-	if not var0 or var0:isEnd() then
+	if not var0_8 or var0_8:isEnd() then
 		return false
 	end
 
-	local var1 = var0:getConfig("config_id")
-	local var2 = pg.ship_data_create_exchange[var1]
-	local var3 = var2.exchange_request
-	local var4 = var2.exchange_available_times
-	local var5 = var0.data1
-	local var6 = var0.data2
-	local var7 = math.min(var4, var6 + 1) * var3
+	local var1_8 = var0_8:getConfig("config_id")
+	local var2_8 = pg.ship_data_create_exchange[var1_8]
+	local var3_8 = var2_8.exchange_request
+	local var4_8 = var2_8.exchange_available_times
+	local var5_8 = var0_8.data1
+	local var6_8 = var0_8.data2
+	local var7_8 = math.min(var4_8, var6_8 + 1) * var3_8
 
-	return var6 < var4 and var7 <= var5
+	return var6_8 < var4_8 and var7_8 <= var5_8
 end
 
-function var0.TryFetchUrShips(arg0, arg1, arg2)
-	local function var0()
-		arg0:TryFetchUrShips(arg1, arg2)
+function var0_0.TryFetchUrShips(arg0_9, arg1_9, arg2_9)
+	local function var0_9()
+		arg0_9:TryFetchUrShips(arg1_9, arg2_9)
 	end
 
-	if var4(arg1.id) then
-		arg0:ShowFetchShipMsgbox(arg1.id, var0)
+	if var4_0(arg1_9.id) then
+		arg0_9:ShowFetchShipMsgbox(arg1_9.id, var0_9)
 	else
-		arg2()
+		arg2_9()
 	end
 end
 
-function var0.ShowFetchShipMsgbox(arg0, arg1, arg2)
-	arg0.callback = arg2
-	arg0.page = UrShipRefetchWindow.New(pg.UIMgr.GetInstance().UIMain)
+function var0_0.ShowFetchShipMsgbox(arg0_11, arg1_11, arg2_11)
+	arg0_11.callback = arg2_11
+	arg0_11.page = UrShipRefetchWindow.New(pg.UIMgr.GetInstance().UIMain)
 
-	arg0.page:ExecuteAction("Show", arg1)
+	arg0_11.page:ExecuteAction("Show", arg1_11)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_12)
 	return {
 		GAME.GRAFTING_ACT_OP_DONE,
 		MainUrShipReFetchSequence.ON_TIME_UP
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_13, arg1_13)
+	local var0_13 = arg1_13:getName()
+	local var1_13 = arg1_13:getBody()
 
-	if var0 == GAME.GRAFTING_ACT_OP_DONE and var2(var1.linkActType) then
-		if #var1.awards > 0 then
-			arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1.awards, arg0.callback)
+	if var0_13 == GAME.GRAFTING_ACT_OP_DONE and var2_0(var1_13.linkActType) then
+		if #var1_13.awards > 0 then
+			arg0_13.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_13.awards, arg0_13.callback)
 		else
-			arg0.callback()
+			arg0_13.callback()
 		end
 
-		if arg0.page and arg0.page:GetLoaded() and arg0.page:isShowing() then
-			arg0.page:Hide()
+		if arg0_13.page and arg0_13.page:GetLoaded() and arg0_13.page:isShowing() then
+			arg0_13.page:Hide()
 		end
 
-		arg0.callback = nil
-	elseif var0 == MainUrShipReFetchSequence.ON_TIME_UP then
-		if arg0.page and arg0.page:GetLoaded() and arg0.page:isShowing() then
-			arg0.page:Hide()
+		arg0_13.callback = nil
+	elseif var0_13 == MainUrShipReFetchSequence.ON_TIME_UP then
+		if arg0_13.page and arg0_13.page:GetLoaded() and arg0_13.page:isShowing() then
+			arg0_13.page:Hide()
 		end
 
-		if arg0.callback then
-			arg0.callback()
+		if arg0_13.callback then
+			arg0_13.callback()
 
-			arg0.callback = nil
+			arg0_13.callback = nil
 		end
 	end
 end
 
-function var0.Clear(arg0)
-	if arg0.page then
-		arg0.page:Destroy()
+function var0_0.Clear(arg0_14)
+	if arg0_14.page then
+		arg0_14.page:Destroy()
 
-		arg0.page = nil
+		arg0_14.page = nil
 	end
 end
 
-function var0.Dispose(arg0)
-	pg.m02:removeMediator(arg0.__cname)
-	arg0:Clear()
+function var0_0.Dispose(arg0_15)
+	pg.m02:removeMediator(arg0_15.__cname)
+	arg0_15:Clear()
 end
 
-function var0.addSubLayers(arg0, arg1, arg2, arg3)
-	assert(isa(arg1, Context), "should be an instance of Context")
+function var0_0.addSubLayers(arg0_16, arg1_16, arg2_16, arg3_16)
+	assert(isa(arg1_16, Context), "should be an instance of Context")
 
-	local var0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(NewMainMediator)
+	local var0_16 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(NewMainMediator)
 
-	if arg2 then
-		while var0.parent do
-			var0 = var0.parent
+	if arg2_16 then
+		while var0_16.parent do
+			var0_16 = var0_16.parent
 		end
 	end
 
 	pg.m02:sendNotification(GAME.LOAD_LAYERS, {
-		parentContext = var0,
-		context = arg1,
-		callback = arg3
+		parentContext = var0_16,
+		context = arg1_16,
+		callback = arg3_16
 	})
 end
 
-return var0
+return var0_0

@@ -1,6 +1,6 @@
-﻿local var0 = class("RedPocketShipPage", import("...base.BaseActivityPage"))
-local var1 = 7
-local var2 = {
+﻿local var0_0 = class("RedPocketShipPage", import("...base.BaseActivityPage"))
+local var1_0 = 7
+local var2_0 = {
 	[0] = 705.6,
 	807.608,
 	897.5893,
@@ -11,91 +11,91 @@ local var2 = {
 	1387.6
 }
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("bg")
-	arg0.tip = arg0:findTF("tip")
-	arg0.btn = arg0:findTF("btn")
-	arg0.mainAward = arg0:findTF("main_award")
-	arg0.subAward = arg0:findTF("sub_award")
-	arg0.itemIcon = arg0:findTF("icon")
-	arg0.slider = arg0:findTF("slider")
-	arg0.uilist = UIItemList.New(arg0.subAward, arg0:findTF("1", arg0.subAward))
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("bg")
+	arg0_1.tip = arg0_1:findTF("tip")
+	arg0_1.btn = arg0_1:findTF("btn")
+	arg0_1.mainAward = arg0_1:findTF("main_award")
+	arg0_1.subAward = arg0_1:findTF("sub_award")
+	arg0_1.itemIcon = arg0_1:findTF("icon")
+	arg0_1.slider = arg0_1:findTF("slider")
+	arg0_1.uilist = UIItemList.New(arg0_1.subAward, arg0_1:findTF("1", arg0_1.subAward))
 end
 
-function var0.OnFirstFlush(arg0)
-	local var0 = arg0.activity
+function var0_0.OnFirstFlush(arg0_2)
+	local var0_2 = arg0_2.activity
 
-	onButton(arg0, arg0.tip, function()
+	onButton(arg0_2, arg0_2.tip, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.metalgearsub_help_tip.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.btn, function()
-		arg0:emit(ActivityMediator.GO_SUBMARINE_RUN, var0:getConfig("config_client").stage_ids[math.min(arg0.progess + 1, arg0.maxday)])
+	onButton(arg0_2, arg0_2.btn, function()
+		arg0_2:emit(ActivityMediator.GO_SUBMARINE_RUN, var0_2:getConfig("config_client").stage_ids[math.min(arg0_2.progess + 1, arg0_2.maxday)])
 	end, SFX_PANEL)
 
-	local var1 = Drop.Create(var0:getConfig("config_client")[2])
+	local var1_2 = Drop.Create(var0_2:getConfig("config_client")[2])
 
-	onButton(arg0, arg0.mainAward, function()
-		arg0:emit(BaseUI.ON_DROP, var1)
+	onButton(arg0_2, arg0_2.mainAward, function()
+		arg0_2:emit(BaseUI.ON_DROP, var1_2)
 	end, SFX_PANEL)
 
-	local var2 = var0:getConfig("config_client")[1]
-	local var3 = {
-		type = var2[1],
-		id = var2[2],
-		count = var2[3]
+	local var2_2 = var0_2:getConfig("config_client")[1]
+	local var3_2 = {
+		type = var2_2[1],
+		id = var2_2[2],
+		count = var2_2[3]
 	}
 
-	onButton(arg0, arg0.itemIcon, function()
-		arg0:emit(BaseUI.ON_DROP, var3)
+	onButton(arg0_2, arg0_2.itemIcon, function()
+		arg0_2:emit(BaseUI.ON_DROP, var3_2)
 	end, SFX_PANEL)
-	arg0.uilist:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			if LeanTween.isTweening(arg2) then
-				LeanTween.cancel(arg2)
+	arg0_2.uilist:make(function(arg0_7, arg1_7, arg2_7)
+		if arg0_7 == UIItemList.EventUpdate then
+			if LeanTween.isTweening(arg2_7) then
+				LeanTween.cancel(arg2_7)
 			end
 
-			if arg1 < arg0.progess then
-				setImageAlpha(arg2, 1)
+			if arg1_7 < arg0_2.progess then
+				setImageAlpha(arg2_7, 1)
 			else
-				LeanTween.alpha(arg2, 1, 1):setFrom(0.4):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
+				LeanTween.alpha(arg2_7, 1, 1):setFrom(0.4):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
 			end
-		elseif arg0 == UIItemList.EventExcess and LeanTween.isTweening(arg2) then
-			LeanTween.cancel(arg2)
+		elseif arg0_7 == UIItemList.EventExcess and LeanTween.isTweening(arg2_7) then
+			LeanTween.cancel(arg2_7)
 		end
 	end)
 end
 
-function var0.OnUpdateFlush(arg0)
-	local var0 = arg0.activity
-	local var1 = pg.TimeMgr.GetInstance()
+function var0_0.OnUpdateFlush(arg0_8)
+	local var0_8 = arg0_8.activity
+	local var1_8 = pg.TimeMgr.GetInstance()
 
-	arg0.progess = math.min(var0.data2, var1)
-	arg0.maxday = math.min(var1:DiffDay(var0.data1, var1:GetServerTime()) + 1, var1)
+	arg0_8.progess = math.min(var0_8.data2, var1_0)
+	arg0_8.maxday = math.min(var1_8:DiffDay(var0_8.data1, var1_8:GetServerTime()) + 1, var1_0)
 
-	arg0.uilist:align(math.min(arg0.maxday, var1 - 1))
-	setSlider(arg0.slider, var2[0], var2[var1], var2[arg0.progess])
-	setActive(findTF(arg0.mainAward, "dis"), not var0.data4 or var0.data4 == 0)
-	setActive(findTF(arg0.mainAward, "dis/lock"), arg0.maxday < var1)
-	setActive(findTF(arg0.mainAward, "get"), var0.data4 > 0)
+	arg0_8.uilist:align(math.min(arg0_8.maxday, var1_0 - 1))
+	setSlider(arg0_8.slider, var2_0[0], var2_0[var1_0], var2_0[arg0_8.progess])
+	setActive(findTF(arg0_8.mainAward, "dis"), not var0_8.data4 or var0_8.data4 == 0)
+	setActive(findTF(arg0_8.mainAward, "dis/lock"), arg0_8.maxday < var1_0)
+	setActive(findTF(arg0_8.mainAward, "get"), var0_8.data4 > 0)
 
-	if var0.data4 == 0 and arg0.progess >= var1 then
-		arg0:emit(ActivityMediator.EVENT_OPERATION, {
+	if var0_8.data4 == 0 and arg0_8.progess >= var1_0 then
+		arg0_8:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 3,
-			activity_id = var0.id
+			activity_id = var0_8.id
 		})
-	elseif defaultValue(var0.data2_list[1], 0) > 0 or defaultValue(var0.data2_list[2], 0) > 0 then
-		arg0:emit(ActivityMediator.EVENT_OPERATION, {
+	elseif defaultValue(var0_8.data2_list[1], 0) > 0 or defaultValue(var0_8.data2_list[2], 0) > 0 then
+		arg0_8:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 2,
-			activity_id = var0.id
+			activity_id = var0_8.id
 		})
 	end
 end
 
-function var0.OnDestroy(arg0)
-	clearImageSprite(arg0.bg)
+function var0_0.OnDestroy(arg0_9)
+	clearImageSprite(arg0_9.bg)
 end
 
-return var0
+return var0_0

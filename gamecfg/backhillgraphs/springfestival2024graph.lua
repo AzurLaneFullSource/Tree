@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	Points = {
 		{
 			x = 650.7216,
@@ -61,8 +61,8 @@
 	}
 }
 
-for iter0, iter1 in pairs(var0.Points) do
-	iter1.scale = 0.4
+for iter0_0, iter1_0 in pairs(var0_0.Points) do
+	iter1_0.scale = 0.4
 end
 
-return var0
+return var0_0

@@ -1,230 +1,230 @@
-﻿local var0 = class("BattleGateScenario")
+﻿local var0_0 = class("BattleGateScenario")
 
-ys.Battle.BattleGateScenario = var0
-var0.__name = "BattleGateScenario"
+ys.Battle.BattleGateScenario = var0_0
+var0_0.__name = "BattleGateScenario"
 
-function var0.Entrance(arg0, arg1)
+function var0_0.Entrance(arg0_1, arg1_1)
 	if BeginStageCommand.DockOverload() then
 		getProxy(ChapterProxy):StopAutoFight(ChapterConst.AUTOFIGHT_STOP_REASON.DOCK_OVERLOADED)
 
 		return
 	end
 
-	local var0 = getProxy(PlayerProxy)
-	local var1 = getProxy(BayProxy)
-	local var2 = pg.battle_cost_template[SYSTEM_SCENARIO]
-	local var3 = var2.oil_cost > 0
-	local var4 = {}
-	local var5 = 0
-	local var6 = 0
-	local var7 = 0
-	local var8 = 0
-	local var9 = getProxy(ChapterProxy):getActiveChapter()
-	local var10 = var9.fleet
-	local var11 = var10:getShips(false)
+	local var0_1 = getProxy(PlayerProxy)
+	local var1_1 = getProxy(BayProxy)
+	local var2_1 = pg.battle_cost_template[SYSTEM_SCENARIO]
+	local var3_1 = var2_1.oil_cost > 0
+	local var4_1 = {}
+	local var5_1 = 0
+	local var6_1 = 0
+	local var7_1 = 0
+	local var8_1 = 0
+	local var9_1 = getProxy(ChapterProxy):getActiveChapter()
+	local var10_1 = var9_1.fleet
+	local var11_1 = var10_1:getShips(false)
 
-	for iter0, iter1 in ipairs(var11) do
-		var4[#var4 + 1] = iter1.id
+	for iter0_1, iter1_1 in ipairs(var11_1) do
+		var4_1[#var4_1 + 1] = iter1_1.id
 	end
 
-	local var12, var13 = var9:getFleetCost(var10, arg0.stageId)
-	local var14 = var12.gold
-	local var15 = var12.oil
-	local var16 = var12.gold + var13.gold
-	local var17 = var12.oil + var13.oil
-	local var18 = var0:getData()
+	local var12_1, var13_1 = var9_1:getFleetCost(var10_1, arg0_1.stageId)
+	local var14_1 = var12_1.gold
+	local var15_1 = var12_1.oil
+	local var16_1 = var12_1.gold + var13_1.gold
+	local var17_1 = var12_1.oil + var13_1.oil
+	local var18_1 = var0_1:getData()
 
-	if var3 and var17 > var18.oil then
+	if var3_1 and var17_1 > var18_1.oil then
 		getProxy(ChapterProxy):StopAutoFight(ChapterConst.AUTOFIGHT_STOP_REASON.OIL_LACK)
 
-		if not ItemTipPanel.ShowOilBuyTip(var17) then
+		if not ItemTipPanel.ShowOilBuyTip(var17_1) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 		end
 
 		return
 	end
 
-	local var19 = arg0.stageId
-	local var20 = pg.expedition_data_template[var19].dungeon_id
-	local var21 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(var20).fleet_prefab
+	local var19_1 = arg0_1.stageId
+	local var20_1 = pg.expedition_data_template[var19_1].dungeon_id
+	local var21_1 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(var20_1).fleet_prefab
 
-	arg1.ShipVertify()
+	arg1_1.ShipVertify()
 
-	local var22
+	local var22_1
 
-	if var9:getPlayType() == ChapterConst.TypeExtra then
-		var22 = true
+	if var9_1:getPlayType() == ChapterConst.TypeExtra then
+		var22_1 = true
 	end
 
-	local var23 = var9:GetExtraCostRate()
+	local var23_1 = var9_1:GetExtraCostRate()
 
-	local function var24(arg0)
-		if var3 then
-			var18:consume({
+	local function var24_1(arg0_2)
+		if var3_1 then
+			var18_1:consume({
 				gold = 0,
-				oil = var15
+				oil = var15_1
 			})
 		end
 
-		if var2.enter_energy_cost > 0 and not var22 then
-			local var0 = pg.gameset.battle_consume_energy.key_value * var23
+		if var2_1.enter_energy_cost > 0 and not var22_1 then
+			local var0_2 = pg.gameset.battle_consume_energy.key_value * var23_1
 
-			for iter0, iter1 in ipairs(var4) do
-				local var1 = var1:getShipById(iter1)
+			for iter0_2, iter1_2 in ipairs(var4_1) do
+				local var1_2 = var1_1:getShipById(iter1_2)
 
-				if var1 then
-					var1:cosumeEnergy(var0)
-					var1:updateShip(var1)
+				if var1_2 then
+					var1_2:cosumeEnergy(var0_2)
+					var1_1:updateShip(var1_2)
 				end
 			end
 		end
 
-		var0:updatePlayer(var18)
+		var0_1:updatePlayer(var18_1)
 
-		local var2 = {
-			prefabFleet = var21,
-			stageId = var19,
+		local var2_2 = {
+			prefabFleet = var21_1,
+			stageId = var19_1,
 			system = SYSTEM_SCENARIO,
-			token = arg0.key,
-			exitCallback = arg0.exitCallback
+			token = arg0_2.key,
+			exitCallback = arg0_2.exitCallback
 		}
 
-		arg1:sendNotification(GAME.BEGIN_STAGE_DONE, var2)
+		arg1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var2_2)
 	end
 
-	local function var25(arg0)
-		arg1:RequestFailStandardProcess(arg0)
+	local function var25_1(arg0_3)
+		arg1_1:RequestFailStandardProcess(arg0_3)
 		getProxy(ChapterProxy):StopAutoFight(ChapterConst.AUTOFIGHT_STOP_REASON.UNKNOWN)
 	end
 
-	BeginStageCommand.SendRequest(SYSTEM_SCENARIO, var4, {
-		var19
-	}, var24, var25)
+	BeginStageCommand.SendRequest(SYSTEM_SCENARIO, var4_1, {
+		var19_1
+	}, var24_1, var25_1)
 end
 
-function var0.Exit(arg0, arg1)
-	if arg1.CheaterVertify() then
+function var0_0.Exit(arg0_4, arg1_4)
+	if arg1_4.CheaterVertify() then
 		return
 	end
 
-	local var0 = pg.battle_cost_template[SYSTEM_SCENARIO]
-	local var1 = getProxy(FleetProxy)
-	local var2 = getProxy(ChapterProxy)
-	local var3 = arg0.statistics._battleScore
-	local var4 = 0
-	local var5 = 0
-	local var6 = {}
-	local var7 = var2:getActiveChapter()
-	local var8 = var7.fleet
-	local var9 = var8:getShips(true)
+	local var0_4 = pg.battle_cost_template[SYSTEM_SCENARIO]
+	local var1_4 = getProxy(FleetProxy)
+	local var2_4 = getProxy(ChapterProxy)
+	local var3_4 = arg0_4.statistics._battleScore
+	local var4_4 = 0
+	local var5_4 = 0
+	local var6_4 = {}
+	local var7_4 = var2_4:getActiveChapter()
+	local var8_4 = var7_4.fleet
+	local var9_4 = var8_4:getShips(true)
 
-	for iter0, iter1 in ipairs(var9) do
-		table.insert(var6, iter1)
+	for iter0_4, iter1_4 in ipairs(var9_4) do
+		table.insert(var6_4, iter1_4)
 	end
 
-	local var10 = arg0.stageId
-	local var11, var12 = var7:getFleetCost(var8, var10)
-	local var13 = var12.gold
-	local var14 = var12.oil
-	local var15 = var7:GetExtraCostRate()
+	local var10_4 = arg0_4.stageId
+	local var11_4, var12_4 = var7_4:getFleetCost(var8_4, var10_4)
+	local var13_4 = var12_4.gold
+	local var14_4 = var12_4.oil
+	local var15_4 = var7_4:GetExtraCostRate()
 
-	if arg0.statistics.submarineAid then
-		local var16 = var7:GetSubmarineFleet()
+	if arg0_4.statistics.submarineAid then
+		local var16_4 = var7_4:GetSubmarineFleet()
 
-		if var16 then
-			local var17 = 0
+		if var16_4 then
+			local var17_4 = 0
 
-			for iter2, iter3 in ipairs(var16:getShipsByTeam(TeamType.Submarine, true)) do
-				if arg0.statistics[iter3.id] then
-					table.insert(var6, iter3)
+			for iter2_4, iter3_4 in ipairs(var16_4:getShipsByTeam(TeamType.Submarine, true)) do
+				if arg0_4.statistics[iter3_4.id] then
+					table.insert(var6_4, iter3_4)
 
-					var17 = var17 + iter3:getEndBattleExpend()
+					var17_4 = var17_4 + iter3_4:getEndBattleExpend()
 				end
 			end
 
-			var14 = var14 + math.min(var17, var7:GetLimitOilCost(true)) * var15
+			var14_4 = var14_4 + math.min(var17_4, var7_4:GetLimitOilCost(true)) * var15_4
 		else
 			originalPrint("finish stage error: can not find submarine fleet.")
 		end
 	end
 
-	local var18 = var3 > ys.Battle.BattleConst.BattleScore.C
+	local var18_4 = var3_4 > ys.Battle.BattleConst.BattleScore.C
 
-	var7:writeBack(var18, arg0)
-	var2:updateChapter(var7)
+	var7_4:writeBack(var18_4, arg0_4)
+	var2_4:updateChapter(var7_4)
 
-	local var19 = arg1.GeneralPackage(arg0, var6)
+	local var19_4 = arg1_4.GeneralPackage(arg0_4, var6_4)
 
-	local function var20(arg0)
-		local var0 = var7:getPlayType() == ChapterConst.TypeExtra
+	local function var20_4(arg0_5)
+		local var0_5 = var7_4:getPlayType() == ChapterConst.TypeExtra
 
-		arg1.addShipsExp(arg0.ship_exp_list, arg0.statistics, true)
+		arg1_4.addShipsExp(arg0_5.ship_exp_list, arg0_4.statistics, true)
 
-		local var1 = arg1.GenerateCommanderExp(arg0, var2:getActiveChapter().fleet, var7:GetSubmarineFleet())
+		local var1_5 = arg1_4.GenerateCommanderExp(arg0_5, var2_4:getActiveChapter().fleet, var7_4:GetSubmarineFleet())
 
-		arg0.statistics.mvpShipID = arg0.mvp
+		arg0_4.statistics.mvpShipID = arg0_5.mvp
 
-		local var2, var3 = arg1:GeneralLoot(arg0)
+		local var2_5, var3_5 = arg1_4:GeneralLoot(arg0_5)
 
-		arg1.GeneralPlayerCosume(SYSTEM_SCENARIO, var18, var14, arg0.player_exp, var0)
+		arg1_4.GeneralPlayerCosume(SYSTEM_SCENARIO, var18_4, var14_4, arg0_5.player_exp, var0_5)
 
-		local var4 = {
+		local var4_5 = {
 			system = SYSTEM_SCENARIO,
-			statistics = arg0.statistics,
-			score = var3,
-			drops = var2,
-			commanderExps = var1,
-			result = arg0.result,
-			extraDrops = var3,
-			exitCallback = arg0.exitCallback
+			statistics = arg0_4.statistics,
+			score = var3_4,
+			drops = var2_5,
+			commanderExps = var1_5,
+			result = arg0_5.result,
+			extraDrops = var3_5,
+			exitCallback = arg0_4.exitCallback
 		}
 
-		var2:updateActiveChapterShips()
+		var2_4:updateActiveChapterShips()
 
-		local var5 = var2:getActiveChapter()
+		local var5_5 = var2_4:getActiveChapter()
 
-		var5:writeDrops(var2)
-		var2:updateChapter(var5)
+		var5_5:writeDrops(var2_5)
+		var2_4:updateChapter(var5_5)
 
-		if PlayerConst.CanDropItem(var2) then
-			local var6 = {}
+		if PlayerConst.CanDropItem(var2_5) then
+			local var6_5 = {}
 
-			for iter0, iter1 in ipairs(var2) do
-				table.insert(var6, iter1)
+			for iter0_5, iter1_5 in ipairs(var2_5) do
+				table.insert(var6_5, iter1_5)
 			end
 
-			for iter2, iter3 in ipairs(var3) do
-				iter3.riraty = true
+			for iter2_5, iter3_5 in ipairs(var3_5) do
+				iter3_5.riraty = true
 
-				table.insert(var6, iter3)
+				table.insert(var6_5, iter3_5)
 			end
 
-			local var7 = getProxy(ChapterProxy):getActiveChapter(true)
+			local var7_5 = getProxy(ChapterProxy):getActiveChapter(true)
 
-			if var7 then
-				if var7:isLoop() then
-					getProxy(ChapterProxy):AddExtendChapterDataArray(var7.id, "TotalDrops", var6)
+			if var7_5 then
+				if var7_5:isLoop() then
+					getProxy(ChapterProxy):AddExtendChapterDataArray(var7_5.id, "TotalDrops", var6_5)
 				end
 
-				var7:writeDrops(var6)
+				var7_5:writeDrops(var6_5)
 			end
 		end
 
-		local var8 = var2:getLastUnlockMap().id
-		local var9 = var2:getLastUnlockMap().id
+		local var8_5 = var2_4:getLastUnlockMap().id
+		local var9_5 = var2_4:getLastUnlockMap().id
 
-		if Map.lastMap and var9 ~= var8 and var8 < var9 then
+		if Map.lastMap and var9_5 ~= var8_5 and var8_5 < var9_5 then
 			Map.autoNextPage = true
 		end
 
-		arg1:sendNotification(GAME.CHAPTER_BATTLE_RESULT_REQUEST, {
+		arg1_4:sendNotification(GAME.CHAPTER_BATTLE_RESULT_REQUEST, {
 			callback = function()
-				arg1:sendNotification(GAME.FINISH_STAGE_DONE, var4)
+				arg1_4:sendNotification(GAME.FINISH_STAGE_DONE, var4_5)
 			end
 		})
 	end
 
-	arg1:SendRequest(var19, var20)
+	arg1_4:SendRequest(var19_4, var20_4)
 end
 
-return var0
+return var0_0

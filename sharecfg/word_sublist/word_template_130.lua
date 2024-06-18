@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_130 = {}
+var0_0.word_template_130 = {}
 
-local var1 = var0.word_template_130
+local var1_0 = var0_0.word_template_130
 
 function temp()
-	var1.怙 = {
+	var1_0.怙 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.戽 = {
+	var1_0.戽 = {
 		this = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.祜 = {
+	var1_0.祜 = {
 		this = {
 			this = true
 		}
@@ -37,7 +37,7 @@ end
 temp()
 
 function temp()
-	var1.瓠 = {
+	var1_0.瓠 = {
 		this = {
 			this = true
 		}
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.鹱 = {
+	var1_0.鹱 = {
 		this = {
 			this = true
 		}
@@ -57,7 +57,7 @@ end
 temp()
 
 function temp()
-	var1.護 = {
+	var1_0.護 = {
 		法 = {
 			this = true
 		},
@@ -74,7 +74,7 @@ end
 temp()
 
 function temp()
-	var1.鸌 = {
+	var1_0.鸌 = {
 		this = {
 			this = true
 		}

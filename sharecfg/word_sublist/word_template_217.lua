@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_217 = {}
+var0_0.word_template_217 = {}
 
-local var1 = var0.word_template_217
+local var1_0 = var0_0.word_template_217
 
 function temp()
-	var1.拧 = {
+	var1_0.拧 = {
 		绕 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.妞 = {
+	var1_0.妞 = {
 		妞 = {
 			基 = {
 				地 = {
@@ -31,7 +31,7 @@ end
 temp()
 
 function temp()
-	var1.牛 = {
+	var1_0.牛 = {
 		逼 = {
 			this = true
 		},
@@ -236,7 +236,7 @@ end
 temp()
 
 function temp()
-	var1.扭 = {
+	var1_0.扭 = {
 		动 = {
 			着 = {
 				this = true
@@ -248,7 +248,7 @@ end
 temp()
 
 function temp()
-	var1.农 = {
+	var1_0.农 = {
 		场 = {
 			性 = {
 				爱 = {
@@ -324,7 +324,7 @@ end
 temp()
 
 function temp()
-	var1.浓 = {
+	var1_0.浓 = {
 		精 = {
 			this = true
 		}
@@ -334,7 +334,7 @@ end
 temp()
 
 function temp()
-	var1.儂 = {
+	var1_0.儂 = {
 		著 = {
 			岡 = {
 				巒 = {

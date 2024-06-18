@@ -1,12 +1,12 @@
-﻿local var0 = class("LinerRoomInfoPage", import("view.base.BaseSubView"))
+﻿local var0_0 = class("LinerRoomInfoPage", import("view.base.BaseSubView"))
 
-var0.TYPEWRITE_SPEED = 0.03
-var0.TYPE_EXPLORE = 1
-var0.TYPE_EVENT = 2
-var0.MODE_EVENT_DESC = 1
-var0.MODE_OPTION_DESC = 2
-var0.MODE_ROOM_DESC = 3
-var0.TIME_DIFF_LIST = {
+var0_0.TYPEWRITE_SPEED = 0.03
+var0_0.TYPE_EXPLORE = 1
+var0_0.TYPE_EVENT = 2
+var0_0.MODE_EVENT_DESC = 1
+var0_0.MODE_OPTION_DESC = 2
+var0_0.MODE_ROOM_DESC = 3
+var0_0.TIME_DIFF_LIST = {
 	1,
 	2,
 	3,
@@ -17,7 +17,7 @@ var0.TIME_DIFF_LIST = {
 	13,
 	14
 }
-var0.ICON_LIST = {
+var0_0.ICON_LIST = {
 	2,
 	5,
 	6,
@@ -26,77 +26,77 @@ var0.ICON_LIST = {
 	14
 }
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "LinerRoomInfoPage"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.dotTF = arg0:findTF("frame/bottom/name/Image")
-	arg0.nameTF = arg0:findTF("frame/bottom/name/Text")
-	arg0.iconTF = arg0:findTF("frame/bottom/icon/mask/Image")
-	arg0.descTF = arg0:findTF("frame/bottom/Text")
-	arg0.nextTF = arg0:findTF("frame/bottom/next")
-	arg0.typewrite = GetComponent(arg0.descTF, typeof(Typewriter))
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.dotTF = arg0_2:findTF("frame/bottom/name/Image")
+	arg0_2.nameTF = arg0_2:findTF("frame/bottom/name/Text")
+	arg0_2.iconTF = arg0_2:findTF("frame/bottom/icon/mask/Image")
+	arg0_2.descTF = arg0_2:findTF("frame/bottom/Text")
+	arg0_2.nextTF = arg0_2:findTF("frame/bottom/next")
+	arg0_2.typewrite = GetComponent(arg0_2.descTF, typeof(Typewriter))
 
-	arg0.typewrite:setSpeed(var0.TYPEWRITE_SPEED)
+	arg0_2.typewrite:setSpeed(var0_0.TYPEWRITE_SPEED)
 
-	arg0.optionsTF = arg0:findTF("frame/options")
+	arg0_2.optionsTF = arg0_2:findTF("frame/options")
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0:findTF("mask"), function()
-		arg0:OnClick()
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3:findTF("mask"), function()
+		arg0_3:OnClick()
 	end, SFX_PANEL)
-	onButton(arg0, arg0:findTF("frame/bottom"), function()
-		arg0:OnClick()
+	onButton(arg0_3, arg0_3:findTF("frame/bottom"), function()
+		arg0_3:OnClick()
 	end, SFX_PANEL)
 
-	function arg0.typewrite.endFunc()
-		if arg0.curIndex == #arg0.descList then
-			switch(arg0.mode, {
-				[var0.MODE_EVENT_DESC] = function()
-					setActive(arg0.optionsTF, true)
-					arg0:ShowOptionsAnim()
+	function arg0_3.typewrite.endFunc()
+		if arg0_3.curIndex == #arg0_3.descList then
+			switch(arg0_3.mode, {
+				[var0_0.MODE_EVENT_DESC] = function()
+					setActive(arg0_3.optionsTF, true)
+					arg0_3:ShowOptionsAnim()
 				end,
-				[var0.MODE_OPTION_DESC] = function()
-					pg.TipsMgr.GetInstance():ShowTips(i18n("liner_event_get_tip", arg0.eventName))
+				[var0_0.MODE_OPTION_DESC] = function()
+					pg.TipsMgr.GetInstance():ShowTips(i18n("liner_event_get_tip", arg0_3.eventName))
 				end,
-				[var0.MODE_ROOM_DESC] = function()
-					pg.TipsMgr.GetInstance():ShowTips(i18n("liner_room_get_tip", arg0.room:GetName()))
+				[var0_0.MODE_ROOM_DESC] = function()
+					pg.TipsMgr.GetInstance():ShowTips(i18n("liner_room_get_tip", arg0_3.room:GetName()))
 				end
 			})
 		end
 
-		arg0.isWriting = false
-		arg0.curIndex = arg0.curIndex + 1
+		arg0_3.isWriting = false
+		arg0_3.curIndex = arg0_3.curIndex + 1
 	end
 
-	arg0.optionsUIList = UIItemList.New(arg0.optionsTF, arg0:findTF("tpl", arg0.optionsTF))
+	arg0_3.optionsUIList = UIItemList.New(arg0_3.optionsTF, arg0_3:findTF("tpl", arg0_3.optionsTF))
 
-	arg0.optionsUIList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg1 + 1
-			local var1 = arg0.events[var0]
+	arg0_3.optionsUIList:make(function(arg0_10, arg1_10, arg2_10)
+		if arg0_10 == UIItemList.EventUpdate then
+			local var0_10 = arg1_10 + 1
+			local var1_10 = arg0_3.events[var0_10]
 
-			setText(arg2:Find("Text"), var1:GetOptionName())
-			onButton(arg0, arg2, function()
-				if table.contains(arg0.finishEventIds, var1.id) then
+			setText(arg2_10:Find("Text"), var1_10:GetOptionName())
+			onButton(arg0_3, arg2_10, function()
+				if table.contains(arg0_3.finishEventIds, var1_10.id) then
 					return
 				end
 
-				arg0.isClickEvent = true
+				arg0_3.isClickEvent = true
 
-				arg0:emit(LinerMediator.CLICK_EVENT, {
-					actId = arg0.activity.id,
-					roomId = arg0.room.id,
-					eventId = var1.id,
+				arg0_3:emit(LinerMediator.CLICK_EVENT, {
+					actId = arg0_3.activity.id,
+					roomId = arg0_3.room.id,
+					eventId = var1_10.id,
 					callback = function()
-						arg0.eventName = var1:GetTitle()
+						arg0_3.eventName = var1_10:GetTitle()
 
-						arg0:SetContent(var1:GetOptionDisplay(), var0.MODE_OPTION_DESC)
-						table.insert(arg0.finishEventIds, var1.id)
-						table.remove(arg0.events, var0)
-						arg0.optionsUIList:align(#arg0.events)
+						arg0_3:SetContent(var1_10:GetOptionDisplay(), var0_0.MODE_OPTION_DESC)
+						table.insert(arg0_3.finishEventIds, var1_10.id)
+						table.remove(arg0_3.events, var0_10)
+						arg0_3.optionsUIList:align(#arg0_3.events)
 					end
 				})
 			end, SFX_CONFIRM)
@@ -104,137 +104,137 @@ function var0.OnInit(arg0)
 	end)
 end
 
-function var0.ShowInfo(arg0, arg1, arg2, arg3)
-	arg0.activity = arg1
-	arg0.curTime = arg0.activity:GetCurTime()
-	arg0.room = LinerRoom.New(arg2)
-	arg0.callback = arg3
+function var0_0.ShowInfo(arg0_13, arg1_13, arg2_13, arg3_13)
+	arg0_13.activity = arg1_13
+	arg0_13.curTime = arg0_13.activity:GetCurTime()
+	arg0_13.room = LinerRoom.New(arg2_13)
+	arg0_13.callback = arg3_13
 
-	setText(arg0.nameTF, arg0.room:GetName())
+	setText(arg0_13.nameTF, arg0_13.room:GetName())
 
-	local var0 = tostring(arg2)
+	local var0_13 = tostring(arg2_13)
 
-	setLocalScale(arg0.iconTF, {
+	setLocalScale(arg0_13.iconTF, {
 		x = 0.7,
 		y = 0.7
 	})
 
-	if table.contains(var0.TIME_DIFF_LIST, arg2) then
-		local var1 = arg0.curTime:GetBgType()
+	if table.contains(var0_0.TIME_DIFF_LIST, arg2_13) then
+		local var1_13 = arg0_13.curTime:GetBgType()
 
-		var0 = var0 .. "_" .. var1
+		var0_13 = var0_13 .. "_" .. var1_13
 	end
 
-	if table.contains(var0.ICON_LIST, arg2) then
-		var0 = "icon_" .. var0
+	if table.contains(var0_0.ICON_LIST, arg2_13) then
+		var0_13 = "icon_" .. var0_13
 
-		setLocalScale(arg0.iconTF, {
+		setLocalScale(arg0_13.iconTF, {
 			x = 1,
 			y = 1
 		})
 	end
 
-	setImageSprite(arg0.iconTF, GetSpriteFromAtlas("ui/linermainui_atlas", var0), true)
-	switch(arg0.curTime:GetType(), {
+	setImageSprite(arg0_13.iconTF, GetSpriteFromAtlas("ui/linermainui_atlas", var0_13), true)
+	switch(arg0_13.curTime:GetType(), {
 		[LinerTime.TYPE.EXPLORE] = function()
-			arg0:ShowRoomInfos()
+			arg0_13:ShowRoomInfos()
 		end,
 		[LinerTime.TYPE.EVENT] = function()
-			arg0:ShowEventInfos()
+			arg0_13:ShowEventInfos()
 		end
 	})
-	arg0:Show()
+	arg0_13:Show()
 end
 
-function var0.ShowRoomInfos(arg0)
-	setImageColor(arg0.dotTF, Color.NewHex("FE9400"))
-	setActive(arg0.optionsTF, false)
-	arg0:emit(LinerMediator.CLICK_ROOM, arg0.activity.id, arg0.room.id)
-	arg0:SetContent(arg0.room:GetDescList(), var0.MODE_ROOM_DESC)
+function var0_0.ShowRoomInfos(arg0_16)
+	setImageColor(arg0_16.dotTF, Color.NewHex("FE9400"))
+	setActive(arg0_16.optionsTF, false)
+	arg0_16:emit(LinerMediator.CLICK_ROOM, arg0_16.activity.id, arg0_16.room.id)
+	arg0_16:SetContent(arg0_16.room:GetDescList(), var0_0.MODE_ROOM_DESC)
 end
 
-function var0.ShowEventInfos(arg0)
-	setImageColor(arg0.dotTF, Color.NewHex("4E5BFF"))
+function var0_0.ShowEventInfos(arg0_17)
+	setImageColor(arg0_17.dotTF, Color.NewHex("4E5BFF"))
 
-	local var0 = ""
+	local var0_17 = ""
 
-	arg0.events = {}
-	arg0.finishEventIds = arg0.activity:GetCurEventInfo()[arg0.room.id] or {}
+	arg0_17.events = {}
+	arg0_17.finishEventIds = arg0_17.activity:GetCurEventInfo()[arg0_17.room.id] or {}
 
-	for iter0, iter1 in ipairs(arg0.curTime:GetParamInfo()) do
-		if iter1[1] == arg0.room.id then
-			var0 = HXSet.hxLan(iter1[3])
+	for iter0_17, iter1_17 in ipairs(arg0_17.curTime:GetParamInfo()) do
+		if iter1_17[1] == arg0_17.room.id then
+			var0_17 = HXSet.hxLan(iter1_17[3])
 
-			for iter2, iter3 in ipairs(iter1[4]) do
-				if not table.contains(arg0.finishEventIds, iter3) then
-					table.insert(arg0.events, LinerEvent.New(iter3))
+			for iter2_17, iter3_17 in ipairs(iter1_17[4]) do
+				if not table.contains(arg0_17.finishEventIds, iter3_17) then
+					table.insert(arg0_17.events, LinerEvent.New(iter3_17))
 				end
 			end
 		end
 	end
 
-	arg0:SetContent({
-		var0
-	}, var0.MODE_EVENT_DESC)
-	setActive(arg0.optionsTF, false)
+	arg0_17:SetContent({
+		var0_17
+	}, var0_0.MODE_EVENT_DESC)
+	setActive(arg0_17.optionsTF, false)
 end
 
-function var0.ShowOptionsAnim(arg0)
-	local var0 = {}
+function var0_0.ShowOptionsAnim(arg0_18)
+	local var0_18 = {}
 
-	for iter0 = 1, #arg0.events do
-		table.insert(var0, function(arg0)
-			arg0:managedTween(LeanTween.delayedCall, function()
-				arg0.optionsUIList:align(#arg0.events)
-				arg0()
+	for iter0_18 = 1, #arg0_18.events do
+		table.insert(var0_18, function(arg0_19)
+			arg0_18:managedTween(LeanTween.delayedCall, function()
+				arg0_18.optionsUIList:align(#arg0_18.events)
+				arg0_19()
 			end, 0.066, nil)
 		end)
 	end
 
-	seriesAsync(var0, function()
+	seriesAsync(var0_18, function()
 		return
 	end)
 end
 
-function var0.SetContent(arg0, arg1, arg2)
-	arg0.mode = arg2
-	arg0.curIndex = 1
-	arg0.descList = arg1
+function var0_0.SetContent(arg0_22, arg1_22, arg2_22)
+	arg0_22.mode = arg2_22
+	arg0_22.curIndex = 1
+	arg0_22.descList = arg1_22
 
-	arg0:SetOnePage()
+	arg0_22:SetOnePage()
 end
 
-function var0.SetOnePage(arg0)
-	arg0.isWriting = true
+function var0_0.SetOnePage(arg0_23)
+	arg0_23.isWriting = true
 
-	setActive(arg0.nextTF, arg0.curIndex < #arg0.descList)
-	setText(arg0.descTF, arg0.descList[arg0.curIndex])
-	arg0.typewrite:Play()
+	setActive(arg0_23.nextTF, arg0_23.curIndex < #arg0_23.descList)
+	setText(arg0_23.descTF, arg0_23.descList[arg0_23.curIndex])
+	arg0_23.typewrite:Play()
 end
 
-function var0.OnClick(arg0)
-	if arg0.isWriting then
+function var0_0.OnClick(arg0_24)
+	if arg0_24.isWriting then
 		return
 	end
 
-	if #arg0.descList >= arg0.curIndex then
-		arg0:SetOnePage()
+	if #arg0_24.descList >= arg0_24.curIndex then
+		arg0_24:SetOnePage()
 
 		return
 	end
 
-	if arg0.events and #arg0.events > 0 then
+	if arg0_24.events and #arg0_24.events > 0 then
 		return
 	end
 
-	arg0:Hide()
+	arg0_24:Hide()
 
-	if arg0.callback and (arg0.isClickEvent or arg0.curTime:GetType() == LinerTime.TYPE.EXPLORE) then
-		arg0.callback()
+	if arg0_24.callback and (arg0_24.isClickEvent or arg0_24.curTime:GetType() == LinerTime.TYPE.EXPLORE) then
+		arg0_24.callback()
 
-		arg0.callback = nil
-		arg0.isClickEvent = nil
+		arg0_24.callback = nil
+		arg0_24.isClickEvent = nil
 	end
 end
 
-return var0
+return var0_0

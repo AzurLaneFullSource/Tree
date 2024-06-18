@@ -1,169 +1,169 @@
-﻿local var0 = class("FriendListPage", import("...base.BaseSubView"))
+﻿local var0_0 = class("FriendListPage", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "FriendListUI"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.friendPanel = arg0:findTF("friend_panel")
-	arg0.friendTopTF = arg0:findTF("friend_view_top")
-	arg0.friendCountTF = arg0:findTF("friend_count/Text", arg0.friendTopTF)
-	arg0.friendIndexBtn = arg0:findTF("index_button", arg0.friendTopTF)
-	arg0.friendSortBtn = arg0:findTF("sort_button", arg0.friendTopTF)
-	arg0.sortImgAsc = arg0:findTF("asc", arg0.friendSortBtn)
-	arg0.sortImgDec = arg0:findTF("desc", arg0.friendSortBtn)
-	arg0.sortPanel = arg0:findTF("friend_sort_panel")
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.friendPanel = arg0_2:findTF("friend_panel")
+	arg0_2.friendTopTF = arg0_2:findTF("friend_view_top")
+	arg0_2.friendCountTF = arg0_2:findTF("friend_count/Text", arg0_2.friendTopTF)
+	arg0_2.friendIndexBtn = arg0_2:findTF("index_button", arg0_2.friendTopTF)
+	arg0_2.friendSortBtn = arg0_2:findTF("sort_button", arg0_2.friendTopTF)
+	arg0_2.sortImgAsc = arg0_2:findTF("asc", arg0_2.friendSortBtn)
+	arg0_2.sortImgDec = arg0_2:findTF("desc", arg0_2.friendSortBtn)
+	arg0_2.sortPanel = arg0_2:findTF("friend_sort_panel")
 end
 
-function var0.OnInit(arg0)
-	arg0.dec = false
-	arg0.sortdata = {}
+function var0_0.OnInit(arg0_3)
+	arg0_3.dec = false
+	arg0_3.sortdata = {}
 
-	onButton(arg0, arg0.friendSortBtn, function()
-		arg0.dec = not arg0.dec
-		arg0.contextData.sortData = {
-			data = arg0.sortdata,
-			dec = arg0.dec
+	onButton(arg0_3, arg0_3.friendSortBtn, function()
+		arg0_3.dec = not arg0_3.dec
+		arg0_3.contextData.sortData = {
+			data = arg0_3.sortdata,
+			dec = arg0_3.dec
 		}
 
-		arg0:sortFriends()
+		arg0_3:sortFriends()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.friendIndexBtn, function()
-		arg0:openFriendsSortPanel()
+	onButton(arg0_3, arg0_3.friendIndexBtn, function()
+		arg0_3:openFriendsSortPanel()
 	end, SFX_PANEL)
 end
 
-function var0.UpdateData(arg0, arg1)
-	arg0.friendVOs = arg1.friendVOs or {}
+function var0_0.UpdateData(arg0_6, arg1_6)
+	arg0_6.friendVOs = arg1_6.friendVOs or {}
 
-	if not arg0.isInit then
-		arg0.isInit = true
+	if not arg0_6.isInit then
+		arg0_6.isInit = true
 
-		arg0:initFriendsPage()
-		arg0:initFriendsSortPanel()
+		arg0_6:initFriendsPage()
+		arg0_6:initFriendsSortPanel()
 	else
-		arg0:sortFriends()
+		arg0_6:sortFriends()
 	end
 
-	arg0:updateFriendCount()
+	arg0_6:updateFriendCount()
 end
 
-function var0.initFriendsPage(arg0)
-	arg0.friendItems = {}
-	arg0.friendRect = arg0.friendPanel:Find("mask/view"):GetComponent("LScrollRect")
+function var0_0.initFriendsPage(arg0_7)
+	arg0_7.friendItems = {}
+	arg0_7.friendRect = arg0_7.friendPanel:Find("mask/view"):GetComponent("LScrollRect")
 
-	function arg0.friendRect.onInitItem(arg0)
-		arg0:onInitItem(arg0)
+	function arg0_7.friendRect.onInitItem(arg0_8)
+		arg0_7:onInitItem(arg0_8)
 	end
 
-	function arg0.friendRect.onUpdateItem(arg0, arg1)
-		arg0:onUpdateItem(arg0, arg1)
+	function arg0_7.friendRect.onUpdateItem(arg0_9, arg1_9)
+		arg0_7:onUpdateItem(arg0_9, arg1_9)
 	end
 end
 
-function var0.onInitItem(arg0, arg1)
-	local var0 = FriendListCard.New(arg1)
+function var0_0.onInitItem(arg0_10, arg1_10)
+	local var0_10 = FriendListCard.New(arg1_10)
 
-	onButton(arg0, var0.occuptBtn, function()
-		arg0:emit(FriendMediator.OPEN_CHATROOM, var0.friendVO)
+	onButton(arg0_10, var0_10.occuptBtn, function()
+		arg0_10:emit(FriendMediator.OPEN_CHATROOM, var0_10.friendVO)
 	end, SFX_PANEL)
-	onButton(arg0, var0.deleteBtn, function()
+	onButton(arg0_10, var0_10.deleteBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("remove_friend_tip"),
 			onYes = function()
-				arg0:emit(FriendMediator.DELETE_FRIEND, var0.friendVO.id)
+				arg0_10:emit(FriendMediator.DELETE_FRIEND, var0_10.friendVO.id)
 			end
 		})
 	end, SFX_PANEL)
-	onButton(arg0, var0.resumeBtn, function()
-		arg0:emit(FriendMediator.OPEN_RESUME, var0.friendVO.id)
+	onButton(arg0_10, var0_10.resumeBtn, function()
+		arg0_10:emit(FriendMediator.OPEN_RESUME, var0_10.friendVO.id)
 	end, SFX_PANEL)
-	onButton(arg0, var0.backYardBtn, function()
-		arg0:emit(FriendMediator.VISIT_BACKYARD, var0.friendVO.id)
+	onButton(arg0_10, var0_10.backYardBtn, function()
+		arg0_10:emit(FriendMediator.VISIT_BACKYARD, var0_10.friendVO.id)
 	end, SFX_PANEL)
 
-	arg0.friendItems[arg1] = var0
+	arg0_10.friendItems[arg1_10] = var0_10
 end
 
-function var0.onUpdateItem(arg0, arg1, arg2)
-	local var0 = arg0.friendItems[arg2]
+function var0_0.onUpdateItem(arg0_16, arg1_16, arg2_16)
+	local var0_16 = arg0_16.friendItems[arg2_16]
 
-	if not var0 then
-		arg0:onInitItem(arg2)
+	if not var0_16 then
+		arg0_16:onInitItem(arg2_16)
 
-		var0 = arg0.friendItems[arg2]
+		var0_16 = arg0_16.friendItems[arg2_16]
 	end
 
-	local var1 = arg0.friendVOs[arg1 + 1]
+	local var1_16 = arg0_16.friendVOs[arg1_16 + 1]
 
-	var0:update(var1)
+	var0_16:update(var1_16)
 end
 
-function var0.sortFriends(arg0)
-	if arg0.contextData.sortData then
-		arg0.contextData.sortData.data.func(arg0.friendVOs, arg0.dec)
-		setImageSprite(arg0:findTF("icon", arg0.friendIndexBtn), GetSpriteFromAtlas("ui/friendsui_atlas", arg0.contextData.sortData.data.spr), true)
-		setActive(arg0.sortImgAsc, arg0.dec)
-		setActive(arg0.sortImgDec, not arg0.dec)
+function var0_0.sortFriends(arg0_17)
+	if arg0_17.contextData.sortData then
+		arg0_17.contextData.sortData.data.func(arg0_17.friendVOs, arg0_17.dec)
+		setImageSprite(arg0_17:findTF("icon", arg0_17.friendIndexBtn), GetSpriteFromAtlas("ui/friendsui_atlas", arg0_17.contextData.sortData.data.spr), true)
+		setActive(arg0_17.sortImgAsc, arg0_17.dec)
+		setActive(arg0_17.sortImgDec, not arg0_17.dec)
 	end
 
-	arg0.friendRect:SetTotalCount(#arg0.friendVOs, -1)
+	arg0_17.friendRect:SetTotalCount(#arg0_17.friendVOs, -1)
 end
 
-function var0.updateFriendCount(arg0)
-	setText(arg0.friendCountTF, #arg0.friendVOs .. "/" .. MAX_FRIEND_COUNT)
+function var0_0.updateFriendCount(arg0_18)
+	setText(arg0_18.friendCountTF, #arg0_18.friendVOs .. "/" .. MAX_FRIEND_COUNT)
 end
 
-function var0.initFriendsSortPanel(arg0)
-	local var0 = arg0:findTF("mask/content", arg0.sortPanel)
-	local var1 = arg0:getTpl("tpl", var0)
+function var0_0.initFriendsSortPanel(arg0_19)
+	local var0_19 = arg0_19:findTF("mask/content", arg0_19.sortPanel)
+	local var1_19 = arg0_19:getTpl("tpl", var0_19)
 
-	arg0.friendSortCfg = require("view.friend.FriendSortCfg")
+	arg0_19.friendSortCfg = require("view.friend.FriendSortCfg")
 
-	for iter0, iter1 in ipairs(arg0.friendSortCfg.SORT_TAG) do
-		local var2 = cloneTplTo(var1, var0)
-		local var3 = var2:Find("arr")
+	for iter0_19, iter1_19 in ipairs(arg0_19.friendSortCfg.SORT_TAG) do
+		local var2_19 = cloneTplTo(var1_19, var0_19)
+		local var3_19 = var2_19:Find("arr")
 
-		setImageSprite(var2:Find("Image"), GetSpriteFromAtlas("ui/friendsui_atlas", iter1.spr), true)
-		onToggle(arg0, var2, function(arg0)
-			if arg0 then
-				arg0.sortdata = iter1
-				arg0.contextData.sortData = {
-					data = arg0.sortdata,
-					dec = arg0.dec
+		setImageSprite(var2_19:Find("Image"), GetSpriteFromAtlas("ui/friendsui_atlas", iter1_19.spr), true)
+		onToggle(arg0_19, var2_19, function(arg0_20)
+			if arg0_20 then
+				arg0_19.sortdata = iter1_19
+				arg0_19.contextData.sortData = {
+					data = arg0_19.sortdata,
+					dec = arg0_19.dec
 				}
 
-				arg0:sortFriends()
-				triggerButton(arg0.sortPanel)
+				arg0_19:sortFriends()
+				triggerButton(arg0_19.sortPanel)
 			end
 		end, SFX_PANEL)
 
-		if iter0 == 1 then
-			triggerToggle(var2, true)
+		if iter0_19 == 1 then
+			triggerToggle(var2_19, true)
 		end
 	end
 
-	onButton(arg0, arg0.sortPanel, function()
-		arg0:closeFriendsSortPanel()
+	onButton(arg0_19, arg0_19.sortPanel, function()
+		arg0_19:closeFriendsSortPanel()
 	end, SFX_PANEL)
 end
 
-function var0.openFriendsSortPanel(arg0)
-	if arg0.contextData.sortData then
-		setImageSprite(arg0:findTF("index_button/icon", arg0.sortPanel), GetSpriteFromAtlas("ui/friendsui_atlas", arg0.contextData.sortData.data.spr), true)
+function var0_0.openFriendsSortPanel(arg0_22)
+	if arg0_22.contextData.sortData then
+		setImageSprite(arg0_22:findTF("index_button/icon", arg0_22.sortPanel), GetSpriteFromAtlas("ui/friendsui_atlas", arg0_22.contextData.sortData.data.spr), true)
 	end
 
-	setActive(arg0.sortPanel, true)
+	setActive(arg0_22.sortPanel, true)
 end
 
-function var0.closeFriendsSortPanel(arg0)
-	setActive(arg0.sortPanel, false)
+function var0_0.closeFriendsSortPanel(arg0_23)
+	setActive(arg0_23.sortPanel, false)
 end
 
-function var0.OnDestroy(arg0)
-	for iter0, iter1 in pairs(arg0.friendItems or {}) do
-		iter1:dispose()
+function var0_0.OnDestroy(arg0_24)
+	for iter0_24, iter1_24 in pairs(arg0_24.friendItems or {}) do
+		iter1_24:dispose()
 	end
 end
 
-return var0
+return var0_0

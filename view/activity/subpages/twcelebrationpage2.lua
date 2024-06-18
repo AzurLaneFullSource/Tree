@@ -1,38 +1,38 @@
-﻿local var0 = class("TWCelebrationPage2", import("...base.BaseActivityPage"))
+﻿local var0_0 = class("TWCelebrationPage2", import("...base.BaseActivityPage"))
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("AD")
-	arg0.getBtn = arg0:findTF("AD/get_btn")
-	arg0.gotBtn = arg0:findTF("AD/got_btn")
-	arg0.goBtn = arg0:findTF("AD/battle_btn")
-	arg0.mark = arg0:findTF("AD/mark")
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.getBtn = arg0_1:findTF("AD/get_btn")
+	arg0_1.gotBtn = arg0_1:findTF("AD/got_btn")
+	arg0_1.goBtn = arg0_1:findTF("AD/battle_btn")
+	arg0_1.mark = arg0_1:findTF("AD/mark")
 end
 
-function var0.OnFirstFlush(arg0)
+function var0_0.OnFirstFlush(arg0_2)
 	return
 end
 
-function var0.OnUpdateFlush(arg0)
-	local var0 = arg0.activity:getConfig("config_data")[1]
-	local var1 = getProxy(TaskProxy)
-	local var2 = var1:getTaskById(var0) or var1:getFinishTaskById(var0) or Task.New({
-		id = var0
+function var0_0.OnUpdateFlush(arg0_3)
+	local var0_3 = arg0_3.activity:getConfig("config_data")[1]
+	local var1_3 = getProxy(TaskProxy)
+	local var2_3 = var1_3:getTaskById(var0_3) or var1_3:getFinishTaskById(var0_3) or Task.New({
+		id = var0_3
 	})
-	local var3 = var2:isFinish()
-	local var4 = var2:isReceive()
+	local var3_3 = var2_3:isFinish()
+	local var4_3 = var2_3:isReceive()
 
-	setActive(arg0.getBtn, var2 and var3 and not var4)
-	setActive(arg0.gotBtn, var2 and var4)
-	setActive(arg0.mark, var2 and var4)
-	setActive(arg0.goBtn, var2 and not var3)
-	onButton(arg0, arg0.goBtn, function()
-		arg0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+	setActive(arg0_3.getBtn, var2_3 and var3_3 and not var4_3)
+	setActive(arg0_3.gotBtn, var2_3 and var4_3)
+	setActive(arg0_3.mark, var2_3 and var4_3)
+	setActive(arg0_3.goBtn, var2_3 and not var3_3)
+	onButton(arg0_3, arg0_3.goBtn, function()
+		arg0_3:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.getBtn, function()
-		if var2 and var3 and not var4 then
-			arg0:emit(ActivityMediator.ON_TASK_SUBMIT, var2)
+	onButton(arg0_3, arg0_3.getBtn, function()
+		if var2_3 and var3_3 and not var4_3 then
+			arg0_3:emit(ActivityMediator.ON_TASK_SUBMIT, var2_3)
 		end
 	end, SFX_PANEL)
 end
 
-return var0
+return var0_0

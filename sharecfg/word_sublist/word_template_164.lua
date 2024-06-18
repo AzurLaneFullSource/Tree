@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_164 = {}
+var0_0.word_template_164 = {}
 
-local var1 = var0.word_template_164
+local var1_0 = var0_0.word_template_164
 
 function temp()
-	var1.屦 = {
+	var1_0.屦 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.鋸 = {
+	var1_0.鋸 = {
 		齒 = {
 			通 = {
 				道 = {
@@ -48,7 +48,7 @@ end
 temp()
 
 function temp()
-	var1.屨 = {
+	var1_0.屨 = {
 		this = {
 			this = true
 		}
@@ -58,7 +58,7 @@ end
 temp()
 
 function temp()
-	var1.醵 = {
+	var1_0.醵 = {
 		this = {
 			this = true
 		}
@@ -68,7 +68,7 @@ end
 temp()
 
 function temp()
-	var1.捐 = {
+	var1_0.捐 = {
 		款 = {
 			就 = {
 				像 = {
@@ -86,7 +86,7 @@ end
 temp()
 
 function temp()
-	var1.蠲 = {
+	var1_0.蠲 = {
 		this = {
 			this = true
 		}
@@ -96,7 +96,7 @@ end
 temp()
 
 function temp()
-	var1.桊 = {
+	var1_0.桊 = {
 		this = {
 			this = true
 		}

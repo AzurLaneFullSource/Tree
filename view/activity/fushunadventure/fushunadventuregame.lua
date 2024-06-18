@@ -1,923 +1,923 @@
-﻿local var0 = class("FushunAdventureGame")
-local var1 = false
-local var2 = 0
-local var3 = 1
-local var4 = 2
-local var5 = 3
-local var6 = 4
+﻿local var0_0 = class("FushunAdventureGame")
+local var1_0 = false
+local var2_0 = 0
+local var3_0 = 1
+local var4_0 = 2
+local var5_0 = 3
+local var6_0 = 4
 
-function var0.Ctor(arg0, arg1, arg2, arg3)
-	pg.DelegateInfo.New(arg0)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	pg.DelegateInfo.New(arg0_1)
 
-	arg0.fushunLoader = AutoLoader.New()
-	arg0.state = var2
-	arg0._go = arg1
-	arg0.gameData = arg2
-	arg0.highestScore = (arg3:GetRuntimeData("elements") or {})[1] or 0
+	arg0_1.fushunLoader = AutoLoader.New()
+	arg0_1.state = var2_0
+	arg0_1._go = arg1_1
+	arg0_1.gameData = arg2_1
+	arg0_1.highestScore = (arg3_1:GetRuntimeData("elements") or {})[1] or 0
 
-	arg0:Init()
+	arg0_1:Init()
 end
 
-function var0.SetOnShowResult(arg0, arg1)
-	arg0.OnShowResult = arg1
+function var0_0.SetOnShowResult(arg0_2, arg1_2)
+	arg0_2.OnShowResult = arg1_2
 end
 
-function var0.SetOnLevelUpdate(arg0, arg1)
-	arg0.OnLevelUpdate = arg1
+function var0_0.SetOnLevelUpdate(arg0_3, arg1_3)
+	arg0_3.OnLevelUpdate = arg1_3
 end
 
-function var0.Init(arg0)
-	if arg0.state ~= var2 then
+function var0_0.Init(arg0_4)
+	if arg0_4.state ~= var2_0 then
 		return
 	end
 
-	arg0.state = var4
+	arg0_4.state = var4_0
 
-	arg0:InitMainUI()
+	arg0_4:InitMainUI()
 end
 
-function var0.InitMainUI(arg0)
-	local var0 = arg0._go
+function var0_0.InitMainUI(arg0_5)
+	local var0_5 = arg0_5._go
 
-	onButton(arg0, findTF(var0, "btn_help"), function()
+	onButton(arg0_5, findTF(var0_5, "btn_help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.fushun_adventure_help.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0, findTF(var0, "btn_start"), function()
+	onButton(arg0_5, findTF(var0_5, "btn_start"), function()
 		pg.BgmMgr.GetInstance():StopPlay()
-		arg0:StartGame()
+		arg0_5:StartGame()
 	end, SFX_PANEL)
 
-	arg0.levelList = UIItemList.New(findTF(var0, "levels/scrollrect/content"), findTF(var0, "levels/scrollrect/content/level"))
-	arg0.arrUp = findTF(var0, "levels/arr_up")
-	arg0.arrDown = findTF(var0, "levels/arr_bottom")
+	arg0_5.levelList = UIItemList.New(findTF(var0_5, "levels/scrollrect/content"), findTF(var0_5, "levels/scrollrect/content/level"))
+	arg0_5.arrUp = findTF(var0_5, "levels/arr_up")
+	arg0_5.arrDown = findTF(var0_5, "levels/arr_bottom")
 
-	onScroll(arg0, findTF(var0, "levels/scrollrect"), function(arg0)
-		setActive(arg0.arrUp, arg0.y < 1)
-		setActive(arg0.arrDown, arg0.y > 0)
+	onScroll(arg0_5, findTF(var0_5, "levels/scrollrect"), function(arg0_8)
+		setActive(arg0_5.arrUp, arg0_8.y < 1)
+		setActive(arg0_5.arrDown, arg0_8.y > 0)
 	end)
-	arg0:RefreshLevels()
+	arg0_5:RefreshLevels()
 end
 
-function var0.RefreshLevels(arg0)
-	local var0
+function var0_0.RefreshLevels(arg0_9)
+	local var0_9
 
-	arg0.levelList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			arg2:Find("Text"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/FushunAdventureGame_atlas", "level_" .. arg1 + 1)
+	arg0_9.levelList:make(function(arg0_10, arg1_10, arg2_10)
+		if arg0_10 == UIItemList.EventUpdate then
+			arg2_10:Find("Text"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/FushunAdventureGame_atlas", "level_" .. arg1_10 + 1)
 
-			local var0 = arg0.gameData.count > 0 and 1 or 0
-			local var1 = arg1 >= arg0.gameData.usedtime + var0
+			local var0_10 = arg0_9.gameData.count > 0 and 1 or 0
+			local var1_10 = arg1_10 >= arg0_9.gameData.usedtime + var0_10
 
-			setActive(arg2:Find("lock"), var1)
+			setActive(arg2_10:Find("lock"), var1_10)
 
-			local var2 = arg1 < arg0.gameData.usedtime
+			local var2_10 = arg1_10 < arg0_9.gameData.usedtime
 
-			setActive(arg2:Find("cleared"), var2)
-			setActive(arg2:Find("Text"), not var1)
+			setActive(arg2_10:Find("cleared"), var2_10)
+			setActive(arg2_10:Find("Text"), not var1_10)
 
-			if not var2 and not var0 then
-				var0 = arg1
+			if not var2_10 and not var0_9 then
+				var0_9 = arg1_10
 			end
 
-			arg2:GetComponent(typeof(Image)).enabled = not var1
+			arg2_10:GetComponent(typeof(Image)).enabled = not var1_10
 		end
 	end)
-	arg0.levelList:align(FushunAdventureGameConst.LEVEL_CNT)
-	setActive(findTF(arg0._go, "tip/got"), arg0.gameData.ultimate ~= 0)
+	arg0_9.levelList:align(FushunAdventureGameConst.LEVEL_CNT)
+	setActive(findTF(arg0_9._go, "tip/got"), arg0_9.gameData.ultimate ~= 0)
 
-	if var0 then
-		local var1 = var0 * (arg0.levelList.item.rect.height + 50)
-		local var2 = arg0.levelList.container.anchoredPosition
+	if var0_9 then
+		local var1_9 = var0_9 * (arg0_9.levelList.item.rect.height + 50)
+		local var2_9 = arg0_9.levelList.container.anchoredPosition
 
-		setAnchoredPosition(arg0.levelList.container, {
-			y = var2.y + var1
+		setAnchoredPosition(arg0_9.levelList.container, {
+			y = var2_9.y + var1_9
 		})
 	end
 
-	if arg0.OnLevelUpdate then
-		arg0.OnLevelUpdate()
+	if arg0_9.OnLevelUpdate then
+		arg0_9.OnLevelUpdate()
 	end
 end
 
-function var0.InitGameUI(arg0)
-	local var0 = arg0.gameUI
+function var0_0.InitGameUI(arg0_11)
+	local var0_11 = arg0_11.gameUI
 
-	arg0.btnA = findTF(var0, "UI/A")
-	arg0.btnB = findTF(var0, "UI/B")
-	arg0.btnAEffect = arg0.btnA:Find("effect")
-	arg0.btnBEffect = arg0.btnB:Find("effect")
-	arg0.btnAExEffect = arg0.btnA:Find("effect_ex")
-	arg0.btnBExEffect = arg0.btnB:Find("effect_ex")
-	arg0.keys = {
-		findTF(var0, "UI/keys/1"):GetComponent(typeof(Image)),
-		findTF(var0, "UI/keys/2"):GetComponent(typeof(Image)),
-		findTF(var0, "UI/keys/3"):GetComponent(typeof(Image))
+	arg0_11.btnA = findTF(var0_11, "UI/A")
+	arg0_11.btnB = findTF(var0_11, "UI/B")
+	arg0_11.btnAEffect = arg0_11.btnA:Find("effect")
+	arg0_11.btnBEffect = arg0_11.btnB:Find("effect")
+	arg0_11.btnAExEffect = arg0_11.btnA:Find("effect_ex")
+	arg0_11.btnBExEffect = arg0_11.btnB:Find("effect_ex")
+	arg0_11.keys = {
+		findTF(var0_11, "UI/keys/1"):GetComponent(typeof(Image)),
+		findTF(var0_11, "UI/keys/2"):GetComponent(typeof(Image)),
+		findTF(var0_11, "UI/keys/3"):GetComponent(typeof(Image))
 	}
-	arg0.btnSprites = {
-		arg0.keys[1].sprite,
-		arg0.btnA:GetComponent(typeof(Image)).sprite,
-		arg0.btnB:GetComponent(typeof(Image)).sprite
+	arg0_11.btnSprites = {
+		arg0_11.keys[1].sprite,
+		arg0_11.btnA:GetComponent(typeof(Image)).sprite,
+		arg0_11.btnB:GetComponent(typeof(Image)).sprite
 	}
-	arg0.hearts = {
-		findTF(var0, "UI/heart_score/hearts/1/mark"),
-		findTF(var0, "UI/heart_score/hearts/2/mark"),
-		findTF(var0, "UI/heart_score/hearts/3/mark")
+	arg0_11.hearts = {
+		findTF(var0_11, "UI/heart_score/hearts/1/mark"),
+		findTF(var0_11, "UI/heart_score/hearts/2/mark"),
+		findTF(var0_11, "UI/heart_score/hearts/3/mark")
 	}
-	arg0.numbers = {
-		findTF(var0, "UI/countdown_panel/timer/3"),
-		findTF(var0, "UI/countdown_panel/timer/2"),
-		findTF(var0, "UI/countdown_panel/timer/1")
+	arg0_11.numbers = {
+		findTF(var0_11, "UI/countdown_panel/timer/3"),
+		findTF(var0_11, "UI/countdown_panel/timer/2"),
+		findTF(var0_11, "UI/countdown_panel/timer/1")
 	}
-	arg0.scoreTxt = findTF(var0, "UI/heart_score/score/Text"):GetComponent(typeof(Text))
-	arg0.energyBar = findTF(var0, "UI/ex/bar"):GetComponent(typeof(Image))
-	arg0.energyIcon = findTF(var0, "UI/ex/icon")
-	arg0.energyLight = findTF(var0, "UI/ex/light")
-	arg0.exTipPanel = findTF(var0, "UI/ex_tip_panel")
-	arg0.comboTxt = findTF(var0, "UI/combo/Text"):GetComponent(typeof(Text))
-	arg0.countdownPanel = findTF(var0, "UI/countdown_panel")
-	arg0.resultPanel = findTF(var0, "UI/result_panel")
-	arg0.resultCloseBtn = findTF(arg0.resultPanel, "frame/close")
-	arg0.resultHighestScoreTxt = findTF(arg0.resultPanel, "frame/highest/Text"):GetComponent(typeof(Text))
-	arg0.resultScoreTxt = findTF(arg0.resultPanel, "frame/score/Text"):GetComponent(typeof(Text))
-	arg0.msgboxPanel = findTF(var0, "UI/msg_panel")
-	arg0.exitMsgboxWindow = findTF(arg0.msgboxPanel, "frame/exit_mode")
-	arg0.pauseMsgboxWindow = findTF(arg0.msgboxPanel, "frame/pause_mode")
-	arg0.helpWindow = findTF(var0, "UI/help")
-	arg0.lightTF = findTF(var0, "game/range")
-	arg0.lightMark = arg0.lightTF:Find("Image")
-	arg0.pauseBtn = findTF(var0, "UI/pause")
-	arg0.exitBtn = findTF(var0, "UI/back")
-	arg0.energyBar.fillAmount = 0
+	arg0_11.scoreTxt = findTF(var0_11, "UI/heart_score/score/Text"):GetComponent(typeof(Text))
+	arg0_11.energyBar = findTF(var0_11, "UI/ex/bar"):GetComponent(typeof(Image))
+	arg0_11.energyIcon = findTF(var0_11, "UI/ex/icon")
+	arg0_11.energyLight = findTF(var0_11, "UI/ex/light")
+	arg0_11.exTipPanel = findTF(var0_11, "UI/ex_tip_panel")
+	arg0_11.comboTxt = findTF(var0_11, "UI/combo/Text"):GetComponent(typeof(Text))
+	arg0_11.countdownPanel = findTF(var0_11, "UI/countdown_panel")
+	arg0_11.resultPanel = findTF(var0_11, "UI/result_panel")
+	arg0_11.resultCloseBtn = findTF(arg0_11.resultPanel, "frame/close")
+	arg0_11.resultHighestScoreTxt = findTF(arg0_11.resultPanel, "frame/highest/Text"):GetComponent(typeof(Text))
+	arg0_11.resultScoreTxt = findTF(arg0_11.resultPanel, "frame/score/Text"):GetComponent(typeof(Text))
+	arg0_11.msgboxPanel = findTF(var0_11, "UI/msg_panel")
+	arg0_11.exitMsgboxWindow = findTF(arg0_11.msgboxPanel, "frame/exit_mode")
+	arg0_11.pauseMsgboxWindow = findTF(arg0_11.msgboxPanel, "frame/pause_mode")
+	arg0_11.helpWindow = findTF(var0_11, "UI/help")
+	arg0_11.lightTF = findTF(var0_11, "game/range")
+	arg0_11.lightMark = arg0_11.lightTF:Find("Image")
+	arg0_11.pauseBtn = findTF(var0_11, "UI/pause")
+	arg0_11.exitBtn = findTF(var0_11, "UI/back")
+	arg0_11.energyBar.fillAmount = 0
 end
 
-function var0.EnterAnimation(arg0, arg1)
-	setActive(arg0.countdownPanel, true)
+function var0_0.EnterAnimation(arg0_12, arg1_12)
+	setActive(arg0_12.countdownPanel, true)
 
-	local function var0(arg0)
-		for iter0, iter1 in ipairs(arg0.numbers) do
-			setActive(iter1, iter0 == arg0)
+	local function var0_12(arg0_13)
+		for iter0_13, iter1_13 in ipairs(arg0_12.numbers) do
+			setActive(iter1_13, iter0_13 == arg0_13)
 		end
 	end
 
-	local var1 = 1
+	local var1_12 = 1
 
-	arg0.countdownTimer = Timer.New(function()
-		var1 = var1 + 1
+	arg0_12.countdownTimer = Timer.New(function()
+		var1_12 = var1_12 + 1
 
-		if var1 > 3 then
-			setActive(arg0.countdownPanel, false)
-			arg1()
+		if var1_12 > 3 then
+			setActive(arg0_12.countdownPanel, false)
+			arg1_12()
 		else
-			var0(var1)
+			var0_12(var1_12)
 		end
 	end, 1, 3)
 
-	var0(var1)
+	var0_12(var1_12)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(FushunAdventureGameConst.COUNT_DOWN_VOICE)
-	arg0.countdownTimer:Start()
+	arg0_12.countdownTimer:Start()
 end
 
-function var0.ShowHelpWindow(arg0, arg1)
-	setActive(arg0.helpWindow, true)
-	onButton(arg0, arg0.helpWindow, function()
-		setActive(arg0.helpWindow, false)
+function var0_0.ShowHelpWindow(arg0_15, arg1_15)
+	setActive(arg0_15.helpWindow, true)
+	onButton(arg0_15, arg0_15.helpWindow, function()
+		setActive(arg0_15.helpWindow, false)
 		PlayerPrefs.SetInt("FushunAdventureGame" .. getProxy(PlayerProxy):getRawData().id, 1)
-		arg1()
+		arg1_15()
 	end, SFX_PANEL)
 end
 
-function var0.DisplayKey(arg0)
-	local function var0(arg0, arg1)
-		local var0
+function var0_0.DisplayKey(arg0_17)
+	local function var0_17(arg0_18, arg1_18)
+		local var0_18
 
-		if not arg1 or arg1 == "" then
-			var0 = arg0.btnSprites[1]
-		elseif arg1 == "A" then
-			var0 = arg0.btnSprites[2]
-		elseif arg1 == "B" then
-			var0 = arg0.btnSprites[3]
+		if not arg1_18 or arg1_18 == "" then
+			var0_18 = arg0_17.btnSprites[1]
+		elseif arg1_18 == "A" then
+			var0_18 = arg0_17.btnSprites[2]
+		elseif arg1_18 == "B" then
+			var0_18 = arg0_17.btnSprites[3]
 		end
 
-		if arg0.sprite ~= var0 then
-			arg0.sprite = var0
+		if arg0_18.sprite ~= var0_18 then
+			arg0_18.sprite = var0_18
 		end
 	end
 
-	for iter0, iter1 in ipairs(arg0.keys) do
-		local var1 = string.sub(arg0.key, iter0, iter0) or ""
+	for iter0_17, iter1_17 in ipairs(arg0_17.keys) do
+		local var1_17 = string.sub(arg0_17.key, iter0_17, iter0_17) or ""
 
-		var0(iter1, var1)
+		var0_17(iter1_17, var1_17)
 	end
 end
 
-function var0.DisplayeHearts(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0.hearts) do
-		setActive(iter1, iter0 <= arg1)
+function var0_0.DisplayeHearts(arg0_19, arg1_19)
+	for iter0_19, iter1_19 in ipairs(arg0_19.hearts) do
+		setActive(iter1_19, iter0_19 <= arg1_19)
 	end
 end
 
-function var0.DisplayScore(arg0)
-	arg0.scoreTxt.text = arg0.score
+function var0_0.DisplayScore(arg0_20)
+	arg0_20.scoreTxt.text = arg0_20.score
 end
 
-function var0.DisplayeEnergy(arg0, arg1, arg2)
-	local var0 = math.min(1, arg1 / arg2)
+function var0_0.DisplayeEnergy(arg0_21, arg1_21, arg2_21)
+	local var0_21 = math.min(1, arg1_21 / arg2_21)
 
-	arg0.energyBar.fillAmount = var0
+	arg0_21.energyBar.fillAmount = var0_21
 
-	local var1 = arg0.energyIcon.parent.rect.width * var0
-	local var2 = var1 - arg0.energyIcon.rect.width
+	local var1_21 = arg0_21.energyIcon.parent.rect.width * var0_21
+	local var2_21 = var1_21 - arg0_21.energyIcon.rect.width
 
-	setAnchoredPosition(arg0.energyIcon, {
-		x = math.max(0, var2)
+	setAnchoredPosition(arg0_21.energyIcon, {
+		x = math.max(0, var2_21)
 	})
 
-	local var3 = 0
+	local var3_21 = 0
 
-	if var0 >= 1 then
-		var3 = tf(arg0.energyBar.gameObject).rect.width
-	elseif var1 > 0 then
-		var3 = var1
+	if var0_21 >= 1 then
+		var3_21 = tf(arg0_21.energyBar.gameObject).rect.width
+	elseif var1_21 > 0 then
+		var3_21 = var1_21
 	end
 
-	setActive(arg0.energyLight, var0 >= 0.01)
+	setActive(arg0_21.energyLight, var0_21 >= 0.01)
 
-	arg0.energyLight.sizeDelta = Vector2(var3, arg0.energyLight.sizeDelta.y)
+	arg0_21.energyLight.sizeDelta = Vector2(var3_21, arg0_21.energyLight.sizeDelta.y)
 end
 
-function var0.StartGame(arg0)
-	if arg0.state ~= var4 then
+function var0_0.StartGame(arg0_22)
+	if arg0_22.state ~= var4_0 then
 		return
 	end
 
-	arg0.enemys = {}
-	arg0.hitList = {}
-	arg0.missFlags = {}
-	arg0.score = 0
-	arg0.combo = 0
-	arg0.pause = false
-	arg0.schedule = FushunSchedule.New()
-	arg0.specailSchedule = FushunSchedule.New()
+	arg0_22.enemys = {}
+	arg0_22.hitList = {}
+	arg0_22.missFlags = {}
+	arg0_22.score = 0
+	arg0_22.combo = 0
+	arg0_22.pause = false
+	arg0_22.schedule = FushunSchedule.New()
+	arg0_22.specailSchedule = FushunSchedule.New()
 
-	arg0:LoadScene(function()
-		arg0:EnterGame()
-		pg.BgmMgr.GetInstance():Push(arg0.__cname, FushunAdventureGameConst.GAME_BGM_NAME)
+	arg0_22:LoadScene(function()
+		arg0_22:EnterGame()
+		pg.BgmMgr.GetInstance():Push(arg0_22.__cname, FushunAdventureGameConst.GAME_BGM_NAME)
 	end)
 
-	arg0.state = var5
+	arg0_22.state = var5_0
 end
 
-function var0.LoadScene(arg0, arg1)
+function var0_0.LoadScene(arg0_24, arg1_24)
 	seriesAsync({
-		function(arg0)
-			if arg0.gameUI then
-				setActive(arg0.gameUI, true)
-				arg0()
+		function(arg0_25)
+			if arg0_24.gameUI then
+				setActive(arg0_24.gameUI, true)
+				arg0_25()
 			else
-				arg0.fushunLoader:LoadPrefab("ui/FushunAdventureGame", "", function(arg0)
-					arg0.gameUI = arg0
+				arg0_24.fushunLoader:LoadPrefab("ui/FushunAdventureGame", "", function(arg0_26)
+					arg0_24.gameUI = arg0_26
 
-					arg0.transform:SetParent(arg0._go.transform, false)
-					arg0:InitGameUI()
-					arg0()
+					arg0_26.transform:SetParent(arg0_24._go.transform, false)
+					arg0_24:InitGameUI()
+					arg0_25()
 				end, "FushunAdventureGame")
 			end
 		end,
-		function(arg0)
-			arg0:DisplayeHearts(3)
-			arg0:DisplayScore()
-			arg0:DisplayeEnergy(0, 1)
+		function(arg0_27)
+			arg0_24:DisplayeHearts(3)
+			arg0_24:DisplayScore()
+			arg0_24:DisplayeEnergy(0, 1)
 
 			if not (PlayerPrefs.GetInt("FushunAdventureGame" .. getProxy(PlayerProxy):getRawData().id, 0) > 0) then
-				arg0:ShowHelpWindow(arg0)
+				arg0_24:ShowHelpWindow(arg0_27)
 			else
-				arg0()
+				arg0_27()
 			end
 		end,
-		function(arg0)
+		function(arg0_28)
 			parallelAsync({
-				function(arg0)
-					arg0:EnterAnimation(arg0)
+				function(arg0_29)
+					arg0_24:EnterAnimation(arg0_29)
 				end,
-				function(arg0)
-					arg0.fushunLoader:LoadPrefab("FushunAdventure/fushun", "", function(arg0)
-						arg0.fushun = FushunChar.New(arg0)
+				function(arg0_30)
+					arg0_24.fushunLoader:LoadPrefab("FushunAdventure/fushun", "", function(arg0_31)
+						arg0_24.fushun = FushunChar.New(arg0_31)
 
-						arg0.fushun:SetPosition(FushunAdventureGameConst.FUSHUN_INIT_POSITION)
-						arg0.transform:SetParent(arg0.gameUI.transform:Find("game"), false)
-						arg0()
+						arg0_24.fushun:SetPosition(FushunAdventureGameConst.FUSHUN_INIT_POSITION)
+						arg0_31.transform:SetParent(arg0_24.gameUI.transform:Find("game"), false)
+						arg0_30()
 					end, "fushun")
 				end
-			}, arg0)
+			}, arg0_28)
 		end
-	}, arg1)
+	}, arg1_24)
 end
 
-function var0.EnterGame(arg0)
-	if not arg0.handle then
-		arg0.handle = UpdateBeat:CreateListener(arg0.UpdateGame, arg0)
+function var0_0.EnterGame(arg0_32)
+	if not arg0_32.handle then
+		arg0_32.handle = UpdateBeat:CreateListener(arg0_32.UpdateGame, arg0_32)
 	end
 
-	UpdateBeat:AddListener(arg0.handle)
+	UpdateBeat:AddListener(arg0_32.handle)
 
-	arg0.lightTF.sizeDelta = Vector2(FushunAdventureGameConst.FUSHUN_ATTACK_RANGE, arg0.lightTF.sizeDelta.y)
-	arg0.lightTF.localPosition = Vector2(FushunAdventureGameConst.FUSHUN_ATTACK_DISTANCE + arg0.fushun:GetPosition().x, arg0.lightTF.localPosition.y)
+	arg0_32.lightTF.sizeDelta = Vector2(FushunAdventureGameConst.FUSHUN_ATTACK_RANGE, arg0_32.lightTF.sizeDelta.y)
+	arg0_32.lightTF.localPosition = Vector2(FushunAdventureGameConst.FUSHUN_ATTACK_DISTANCE + arg0_32.fushun:GetPosition().x, arg0_32.lightTF.localPosition.y)
 
-	arg0:SpawnEnemys()
-	arg0:RegisterEventListener()
+	arg0_32:SpawnEnemys()
+	arg0_32:RegisterEventListener()
 
-	arg0.key = ""
+	arg0_32.key = ""
 
-	arg0.fushun:SetOnAnimEnd(function()
-		arg0.key = ""
+	arg0_32.fushun:SetOnAnimEnd(function()
+		arg0_32.key = ""
 
-		arg0:DisplayKey()
+		arg0_32:DisplayKey()
 	end)
 end
 
-function var0.UpdateGame(arg0)
-	if arg0.state == var6 then
-		arg0:ExitGame(true)
+function var0_0.UpdateGame(arg0_34)
+	if arg0_34.state == var6_0 then
+		arg0_34:ExitGame(true)
 
 		return
 	end
 
-	if not arg0.pause then
-		arg0.spawner:Update()
-		arg0:AddDebugInput()
+	if not arg0_34.pause then
+		arg0_34.spawner:Update()
+		arg0_34:AddDebugInput()
 
-		if arg0.fushun:IsDeath() then
-			arg0.fushun:Die()
+		if arg0_34.fushun:IsDeath() then
+			arg0_34.fushun:Die()
 
-			arg0.state = var6
+			arg0_34.state = var6_0
 
 			return
-		elseif arg0.fushun:ShouldInvincible() then
-			arg0:EnterInvincibleMode()
-		elseif arg0.fushun:ShouldVincible() then
-			arg0:ExitInvincibleMode()
+		elseif arg0_34.fushun:ShouldInvincible() then
+			arg0_34:EnterInvincibleMode()
+		elseif arg0_34.fushun:ShouldVincible() then
+			arg0_34:ExitInvincibleMode()
 		end
 
-		local var0 = false
+		local var0_34 = false
 
-		for iter0 = #arg0.enemys, 1, -1 do
-			local var1 = arg0.enemys[iter0]
+		for iter0_34 = #arg0_34.enemys, 1, -1 do
+			local var1_34 = arg0_34.enemys[iter0_34]
 
-			if var1:IsFreeze() then
+			if var1_34:IsFreeze() then
 				-- block empty
-			elseif arg0:CheckEnemyDeath(iter0) then
+			elseif arg0_34:CheckEnemyDeath(iter0_34) then
 				-- block empty
 			else
-				var1:Move()
-				arg0:CheckCollision(arg0.fushun, var1)
+				var1_34:Move()
+				arg0_34:CheckCollision(arg0_34.fushun, var1_34)
 
-				if arg0:CheckAttackRange(var1) then
-					var0 = true
+				if arg0_34:CheckAttackRange(var1_34) then
+					var0_34 = true
 				end
 			end
 		end
 
-		arg0:RangeLightDisplay(var0)
-		arg0:DisplayeEnergy(arg0.fushun:GetEnergy(), arg0.fushun:GetEnergyTarget())
-		arg0.specailSchedule:Update()
+		arg0_34:RangeLightDisplay(var0_34)
+		arg0_34:DisplayeEnergy(arg0_34.fushun:GetEnergy(), arg0_34.fushun:GetEnergyTarget())
+		arg0_34.specailSchedule:Update()
 	else
-		for iter1 = #arg0.enemys, 1, -1 do
-			arg0:CheckEnemyDeath(iter1)
+		for iter1_34 = #arg0_34.enemys, 1, -1 do
+			arg0_34:CheckEnemyDeath(iter1_34)
 		end
 	end
 
-	arg0.schedule:Update()
+	arg0_34.schedule:Update()
 end
 
-function var0.RangeLightDisplay(arg0, arg1)
-	setActive(arg0.lightMark, arg1)
+function var0_0.RangeLightDisplay(arg0_35, arg1_35)
+	setActive(arg0_35.lightMark, arg1_35)
 end
 
-function var0.CheckAttackRange(arg0, arg1)
-	local var0 = arg0.fushun
+function var0_0.CheckAttackRange(arg0_36, arg1_36)
+	local var0_36 = arg0_36.fushun
 
-	return arg1:GetPosition().x <= var0:GetAttackPosition().x
+	return arg1_36:GetPosition().x <= var0_36:GetAttackPosition().x
 end
 
-function var0.CheckEnemyDeath(arg0, arg1)
-	local var0 = false
-	local var1 = arg0.enemys[arg1]
+function var0_0.CheckEnemyDeath(arg0_37, arg1_37)
+	local var0_37 = false
+	local var1_37 = arg0_37.enemys[arg1_37]
 
-	if var1:IsDeath() then
-		if arg0.hitList[var1.index] and not var1:IsEscape() then
-			arg0:AddScore(var1:GetScore())
-			arg0:AddEnergy(var1:GetEnergyScore())
+	if var1_37:IsDeath() then
+		if arg0_37.hitList[var1_37.index] and not var1_37:IsEscape() then
+			arg0_37:AddScore(var1_37:GetScore())
+			arg0_37:AddEnergy(var1_37:GetEnergyScore())
 		end
 
-		var1:Vanish()
-		table.remove(arg0.enemys, arg1)
+		var1_37:Vanish()
+		table.remove(arg0_37.enemys, arg1_37)
 
-		var0 = true
+		var0_37 = true
 	end
 
-	return var0
+	return var0_37
 end
 
-function var0.EnterInvincibleMode(arg0)
-	local var0 = FushunAdventureGameConst.EX_TIP_TIME
-	local var1 = FushunAdventureGameConst.EX_TIME
+function var0_0.EnterInvincibleMode(arg0_38)
+	local var0_38 = FushunAdventureGameConst.EX_TIP_TIME
+	local var1_38 = FushunAdventureGameConst.EX_TIME
 
-	arg0.fushun:Invincible()
-	setActive(arg0.exTipPanel, true)
+	arg0_38.fushun:Invincible()
+	setActive(arg0_38.exTipPanel, true)
 
-	arg0.pause = true
+	arg0_38.pause = true
 
-	blinkAni(arg0.energyBar.gameObject, 0.5, -1)
-	arg0.schedule:AddSchedule(var0, 1, function()
-		setActive(arg0.exTipPanel, false)
-		arg0.spawner:CarzyMode()
+	blinkAni(arg0_38.energyBar.gameObject, 0.5, -1)
+	arg0_38.schedule:AddSchedule(var0_38, 1, function()
+		setActive(arg0_38.exTipPanel, false)
+		arg0_38.spawner:CarzyMode()
 
-		arg0.pause = false
+		arg0_38.pause = false
 
-		arg0.fushun:StartAction("EX")
+		arg0_38.fushun:StartAction("EX")
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(FushunAdventureGameConst.ENTER_EX_VOICE)
 
-		local var0 = arg0.fushun:GetEnergyTarget() / var1
+		local var0_39 = arg0_38.fushun:GetEnergyTarget() / var1_38
 
-		arg0.specailSchedule:AddSchedule(1, var1, function()
-			arg0.fushun:ReduceEnergy(var0)
+		arg0_38.specailSchedule:AddSchedule(1, var1_38, function()
+			arg0_38.fushun:ReduceEnergy(var0_39)
 		end)
 	end)
-	setActive(arg0.btnAExEffect, true)
-	setActive(arg0.btnBExEffect, true)
+	setActive(arg0_38.btnAExEffect, true)
+	setActive(arg0_38.btnBExEffect, true)
 
-	arg0.key = ""
+	arg0_38.key = ""
 
-	arg0:DisplayKey()
+	arg0_38:DisplayKey()
 end
 
-function var0.ExitInvincibleMode(arg0)
-	arg0.fushun:Vincible()
+function var0_0.ExitInvincibleMode(arg0_41)
+	arg0_41.fushun:Vincible()
 
-	arg0.energyBar.color = Color.New(1, 1, 1, 1)
+	arg0_41.energyBar.color = Color.New(1, 1, 1, 1)
 
-	LeanTween.cancel(arg0.energyBar.gameObject)
+	LeanTween.cancel(arg0_41.energyBar.gameObject)
 
-	for iter0, iter1 in ipairs(arg0.enemys) do
-		arg0.hitList[iter1.index] = nil
+	for iter0_41, iter1_41 in ipairs(arg0_41.enemys) do
+		arg0_41.hitList[iter1_41.index] = nil
 
-		iter1:Die()
+		iter1_41:Die()
 	end
 
-	arg0.spawner:NormalMode()
-	setActive(arg0.btnAExEffect, false)
-	setActive(arg0.btnBExEffect, false)
+	arg0_41.spawner:NormalMode()
+	setActive(arg0_41.btnAExEffect, false)
+	setActive(arg0_41.btnBExEffect, false)
 end
 
-function var0.CheckCollision(arg0, arg1, arg2)
-	if var0.IsCollision(arg2.effectCollider2D, arg1.collider2D) then
-		arg1:Hurt()
-		arg2:OnHit()
-		arg0:DisplayeHearts(arg0.fushun:GetHp())
-		arg0:AddCombo(-arg0.combo)
-	elseif arg0.fushun:InvincibleState() and not arg2:IsDeath() and arg2:GetPosition().x <= arg1:GetAttackPosition().x then
-		arg2:Hurt(1)
+function var0_0.CheckCollision(arg0_42, arg1_42, arg2_42)
+	if var0_0.IsCollision(arg2_42.effectCollider2D, arg1_42.collider2D) then
+		arg1_42:Hurt()
+		arg2_42:OnHit()
+		arg0_42:DisplayeHearts(arg0_42.fushun:GetHp())
+		arg0_42:AddCombo(-arg0_42.combo)
+	elseif arg0_42.fushun:InvincibleState() and not arg2_42:IsDeath() and arg2_42:GetPosition().x <= arg1_42:GetAttackPosition().x then
+		arg2_42:Hurt(1)
 
-		arg0.hitList[arg2.index] = true
+		arg0_42.hitList[arg2_42.index] = true
 
-		arg0:AddHitEffect(arg2)
-	elseif var0.IsNearby(arg1:GetPosition(), arg2:GetAttackPosition()) then
-		arg2:Attack()
+		arg0_42:AddHitEffect(arg2_42)
+	elseif var0_0.IsNearby(arg1_42:GetPosition(), arg2_42:GetAttackPosition()) then
+		arg2_42:Attack()
 	end
 end
 
-function var0.AddHitEffect(arg0, arg1)
-	local var0 = arg0.fushun.effectCollider2D.bounds.center
-	local var1 = arg0.gameUI.transform:InverseTransformPoint(var0)
-	local var2 = arg1.collider2D.bounds:GetMin()
-	local var3 = arg0.gameUI.transform:InverseTransformPoint(var2)
-	local var4 = Vector3(var3.x, var1.y, 0)
+function var0_0.AddHitEffect(arg0_43, arg1_43)
+	local var0_43 = arg0_43.fushun.effectCollider2D.bounds.center
+	local var1_43 = arg0_43.gameUI.transform:InverseTransformPoint(var0_43)
+	local var2_43 = arg1_43.collider2D.bounds:GetMin()
+	local var3_43 = arg0_43.gameUI.transform:InverseTransformPoint(var2_43)
+	local var4_43 = Vector3(var3_43.x, var1_43.y, 0)
 
-	arg0.fushunLoader:GetPrefab("FushunAdventure/attack_effect", "", function(arg0)
-		arg0.transform:SetParent(arg0.gameUI.transform, false)
+	arg0_43.fushunLoader:GetPrefab("FushunAdventure/attack_effect", "", function(arg0_44)
+		arg0_44.transform:SetParent(arg0_43.gameUI.transform, false)
 
-		arg0.transform.localPosition = var4
+		arg0_44.transform.localPosition = var4_43
 
-		local var0 = arg0:GetComponent(typeof(DftAniEvent))
+		local var0_44 = arg0_44:GetComponent(typeof(DftAniEvent))
 
-		var0:SetEndEvent(function()
-			var0:SetEndEvent(nil)
-			arg0.fushunLoader:ReturnPrefab(arg0)
+		var0_44:SetEndEvent(function()
+			var0_44:SetEndEvent(nil)
+			arg0_43.fushunLoader:ReturnPrefab(arg0_44)
 		end)
 	end)
-	arg0:ShakeScreen(arg0.gameUI)
+	arg0_43:ShakeScreen(arg0_43.gameUI)
 end
 
-function var0.ShakeScreen(arg0, arg1)
-	if LeanTween.isTweening(arg1) then
-		LeanTween.cancel(arg1)
+function var0_0.ShakeScreen(arg0_46, arg1_46)
+	if LeanTween.isTweening(arg1_46) then
+		LeanTween.cancel(arg1_46)
 	end
 
-	LeanTween.rotateAroundLocal(arg1, Vector3(0, 0, 1), FushunAdventureGameConst.SHAKE_RANGE, FushunAdventureGameConst.SHAKE_TIME):setLoopPingPong(FushunAdventureGameConst.SHAKE_LOOP_CNT):setFrom(-1 * FushunAdventureGameConst.SHAKE_RANGE):setOnComplete(System.Action(function()
-		arg1.transform.localEulerAngles = Vector3(0, 0, 0)
+	LeanTween.rotateAroundLocal(arg1_46, Vector3(0, 0, 1), FushunAdventureGameConst.SHAKE_RANGE, FushunAdventureGameConst.SHAKE_TIME):setLoopPingPong(FushunAdventureGameConst.SHAKE_LOOP_CNT):setFrom(-1 * FushunAdventureGameConst.SHAKE_RANGE):setOnComplete(System.Action(function()
+		arg1_46.transform.localEulerAngles = Vector3(0, 0, 0)
 	end))
 end
 
-function var0.SpawnEnemys(arg0)
-	local var0 = {
+function var0_0.SpawnEnemys(arg0_48)
+	local var0_48 = {
 		FushunBeastChar,
 		FushunEliteBeastChar,
 		FushunEliteBeastChar
 	}
 
-	local function var1(arg0)
-		local var0 = FushunAdventureGameConst.SPEED_ADDITION
-		local var1
+	local function var1_48(arg0_49)
+		local var0_49 = FushunAdventureGameConst.SPEED_ADDITION
+		local var1_49
 
-		for iter0, iter1 in ipairs(var0) do
-			local var2 = iter1[1][1]
-			local var3 = iter1[1][2]
+		for iter0_49, iter1_49 in ipairs(var0_49) do
+			local var2_49 = iter1_49[1][1]
+			local var3_49 = iter1_49[1][2]
 
-			if var2 <= arg0 and arg0 <= var3 then
-				var1 = iter1
+			if var2_49 <= arg0_49 and arg0_49 <= var3_49 then
+				var1_49 = iter1_49
 
 				break
 			end
 		end
 
-		var1 = var1 or var0[#var0]
+		var1_49 = var1_49 or var0_49[#var0_49]
 
-		return var1[2]
+		return var1_49[2]
 	end
 
-	local function var2(arg0)
-		local var0 = arg0.config
-		local var1 = arg0.speed
-		local var2 = arg0.index
-		local var3 = var0[var0.id].New(arg0.go, var2, var0, arg0.fushunLoader)
-		local var4 = var1 + var1(arg0.score)
+	local function var2_48(arg0_50)
+		local var0_50 = arg0_50.config
+		local var1_50 = arg0_50.speed
+		local var2_50 = arg0_50.index
+		local var3_50 = var0_48[var0_50.id].New(arg0_50.go, var2_50, var0_50, arg0_48.fushunLoader)
+		local var4_50 = var1_50 + var1_48(arg0_48.score)
 
-		var0.LOG("  顺序 :", var2, " id :", var0.id, " speed :", var4)
-		var3:SetSpeed(var4)
-		var3:SetPosition(FushunAdventureGameConst.ENEMY_SPAWN_POSITION)
-		table.insert(arg0.enemys, var3)
+		var0_0.LOG("  顺序 :", var2_50, " id :", var0_50.id, " speed :", var4_50)
+		var3_50:SetSpeed(var4_50)
+		var3_50:SetPosition(FushunAdventureGameConst.ENEMY_SPAWN_POSITION)
+		table.insert(arg0_48.enemys, var3_50)
 	end
 
-	arg0.spawner = FuShunEnemySpawner.New(arg0.gameUI.transform:Find("game").transform, var2, arg0.fushunLoader)
+	arg0_48.spawner = FuShunEnemySpawner.New(arg0_48.gameUI.transform:Find("game").transform, var2_48, arg0_48.fushunLoader)
 
-	arg0.spawner:NormalMode()
+	arg0_48.spawner:NormalMode()
 end
 
-function var0.AddScore(arg0, arg1)
-	arg0:AddCombo(1)
+function var0_0.AddScore(arg0_51, arg1_51)
+	arg0_51:AddCombo(1)
 
-	local var0 = arg0.combo >= FushunAdventureGameConst.COMBO_SCORE_TARGET and FushunAdventureGameConst.COMBO_EXTRA_SCORE or 0
+	local var0_51 = arg0_51.combo >= FushunAdventureGameConst.COMBO_SCORE_TARGET and FushunAdventureGameConst.COMBO_EXTRA_SCORE or 0
 
-	arg0.score = arg0.score + arg1 + var0
+	arg0_51.score = arg0_51.score + arg1_51 + var0_51
 
-	arg0:DisplayScore()
-	arg0.spawner:UpdateScore(arg0.score)
+	arg0_51:DisplayScore()
+	arg0_51.spawner:UpdateScore(arg0_51.score)
 end
 
-function var0.AddEnergy(arg0, arg1)
-	arg0.fushun:AddEnergy(arg1)
+function var0_0.AddEnergy(arg0_52, arg1_52)
+	arg0_52.fushun:AddEnergy(arg1_52)
 end
 
-function var0.AddCombo(arg0, arg1)
-	if arg1 > 0 then
-		arg0.fushunLoader:GetPrefab("UI/fushun_combo", "", function(arg0)
-			if not arg0.fushunLoader then
-				Destroy(arg0)
+function var0_0.AddCombo(arg0_53, arg1_53)
+	if arg1_53 > 0 then
+		arg0_53.fushunLoader:GetPrefab("UI/fushun_combo", "", function(arg0_54)
+			if not arg0_53.fushunLoader then
+				Destroy(arg0_54)
 
 				return
 			end
 
-			arg0.transform:SetParent(arg0.gameUI.transform:Find("UI"), false)
+			arg0_54.transform:SetParent(arg0_53.gameUI.transform:Find("UI"), false)
 			Timer.New(function()
-				if not arg0.fushunLoader then
+				if not arg0_53.fushunLoader then
 					return
 				end
 
-				arg0.fushunLoader:ReturnPrefab(arg0)
+				arg0_53.fushunLoader:ReturnPrefab(arg0_54)
 			end, 2, 1):Start()
 		end)
 	end
 
-	arg0.combo = arg0.combo + arg1
-	arg0.comboTxt.text = arg0.combo
+	arg0_53.combo = arg0_53.combo + arg1_53
+	arg0_53.comboTxt.text = arg0_53.combo
 
-	setActive(arg0.comboTxt.gameObject.transform.parent, arg0.combo > 0)
+	setActive(arg0_53.comboTxt.gameObject.transform.parent, arg0_53.combo > 0)
 end
 
-function var0.Action(arg0, arg1)
-	if arg0.fushun:InvincibleState() then
-		arg0:AddScore(FushunAdventureGameConst.EX_CLICK_SCORE)
+function var0_0.Action(arg0_56, arg1_56)
+	if arg0_56.fushun:InvincibleState() then
+		arg0_56:AddScore(FushunAdventureGameConst.EX_CLICK_SCORE)
 	else
-		arg0:OnFushunAttack(arg1)
+		arg0_56:OnFushunAttack(arg1_56)
 	end
 end
 
-function var0.OnFushunAttack(arg0, arg1)
-	if #arg0.key == 3 or arg0.fushun:IsMissState() or arg0.fushun:IsDamageState() then
+function var0_0.OnFushunAttack(arg0_57, arg1_57)
+	if #arg0_57.key == 3 or arg0_57.fushun:IsMissState() or arg0_57.fushun:IsDamageState() then
 		return
 	end
 
-	arg0.key = arg0.key .. arg1
+	arg0_57.key = arg0_57.key .. arg1_57
 
-	arg0:DisplayKey()
+	arg0_57:DisplayKey()
 
-	local var0 = {}
-	local var1 = arg0.fushun
+	local var0_57 = {}
+	local var1_57 = arg0_57.fushun
 
-	for iter0, iter1 in ipairs(arg0.enemys) do
-		if not iter1:WillDeath() and iter1:GetPosition().x <= var1:GetAttackPosition().x then
-			table.insert(var0, iter0)
+	for iter0_57, iter1_57 in ipairs(arg0_57.enemys) do
+		if not iter1_57:WillDeath() and iter1_57:GetPosition().x <= var1_57:GetAttackPosition().x then
+			table.insert(var0_57, iter0_57)
 		end
 	end
 
-	arg0.fushun:TriggerAction(arg0.key, function()
-		if #var0 == 0 then
-			arg0.fushun:Miss()
+	arg0_57.fushun:TriggerAction(arg0_57.key, function()
+		if #var0_57 == 0 then
+			arg0_57.fushun:Miss()
 		end
 
-		arg0.key = ""
+		arg0_57.key = ""
 
-		arg0:DisplayKey()
+		arg0_57:DisplayKey()
 	end)
 
-	if #var0 > 0 then
-		for iter2, iter3 in ipairs(var0) do
-			local var2 = arg0.enemys[iter3]
+	if #var0_57 > 0 then
+		for iter2_57, iter3_57 in ipairs(var0_57) do
+			local var2_57 = arg0_57.enemys[iter3_57]
 
-			var2:Hurt(1)
+			var2_57:Hurt(1)
 
-			arg0.hitList[var2.index] = true
+			arg0_57.hitList[var2_57.index] = true
 
-			arg0:AddHitEffect(var2)
+			arg0_57:AddHitEffect(var2_57)
 		end
 	end
 end
 
-function var0.PauseGame(arg0)
-	arg0.pause = true
+function var0_0.PauseGame(arg0_59)
+	arg0_59.pause = true
 end
 
-function var0.ResumeGame(arg0)
-	arg0.pause = false
+function var0_0.ResumeGame(arg0_60)
+	arg0_60.pause = false
 end
 
-function var0.ExitGame(arg0, arg1)
-	local function var0()
-		arg0:ClearGameScene()
+function var0_0.ExitGame(arg0_61, arg1_61)
+	local function var0_61()
+		arg0_61:ClearGameScene()
 	end
 
-	if arg0.btnA then
-		ClearEventTrigger(arg0.btnA:GetComponent("EventTriggerListener"))
+	if arg0_61.btnA then
+		ClearEventTrigger(arg0_61.btnA:GetComponent("EventTriggerListener"))
 	end
 
-	if arg0.btnB then
-		ClearEventTrigger(arg0.btnB:GetComponent("EventTriggerListener"))
+	if arg0_61.btnB then
+		ClearEventTrigger(arg0_61.btnB:GetComponent("EventTriggerListener"))
 	end
 
-	if arg0.handle then
-		UpdateBeat:RemoveListener(arg0.handle)
+	if arg0_61.handle then
+		UpdateBeat:RemoveListener(arg0_61.handle)
 
-		arg0.handle = nil
+		arg0_61.handle = nil
 	end
 
-	if arg0.schedule then
-		arg0.schedule:Dispose()
+	if arg0_61.schedule then
+		arg0_61.schedule:Dispose()
 
-		arg0.schedule = nil
+		arg0_61.schedule = nil
 	end
 
-	if arg0.specailSchedule then
-		arg0.specailSchedule:Dispose()
+	if arg0_61.specailSchedule then
+		arg0_61.specailSchedule:Dispose()
 
-		arg0.specailSchedule = nil
+		arg0_61.specailSchedule = nil
 	end
 
-	if arg1 then
-		if arg0.OnShowResult then
-			arg0.OnShowResult(arg0.score)
+	if arg1_61 then
+		if arg0_61.OnShowResult then
+			arg0_61.OnShowResult(arg0_61.score)
 		end
 
-		arg0:ShowResultWindow(function()
-			var0()
+		arg0_61:ShowResultWindow(function()
+			var0_61()
 		end)
 	else
-		var0()
+		var0_61()
 	end
 end
 
-function var0.ClearGameScene(arg0)
-	if arg0.fushun then
-		arg0.fushun:Destory()
+function var0_0.ClearGameScene(arg0_64)
+	if arg0_64.fushun then
+		arg0_64.fushun:Destory()
 
-		arg0.fushun = nil
+		arg0_64.fushun = nil
 	end
 
-	if arg0.spawner then
-		arg0.spawner:Dispose()
+	if arg0_64.spawner then
+		arg0_64.spawner:Dispose()
 
-		arg0.spawner = nil
+		arg0_64.spawner = nil
 	end
 
-	if arg0.enemys then
-		for iter0, iter1 in ipairs(arg0.enemys) do
-			iter1:Dispose()
+	if arg0_64.enemys then
+		for iter0_64, iter1_64 in ipairs(arg0_64.enemys) do
+			iter1_64:Dispose()
 		end
 
-		arg0.enemys = nil
+		arg0_64.enemys = nil
 	end
 
-	arg0.state = var4
+	arg0_64.state = var4_0
 
-	if arg0.gameUI then
-		arg0:HideExitMsgbox()
-		arg0:HideResultWindow()
-		arg0:HidePauseMsgbox()
-		setActive(arg0.gameUI, false)
-		pg.BgmMgr.GetInstance():Push(arg0.__cname, FushunAdventureGameConst.BGM_NAME)
+	if arg0_64.gameUI then
+		arg0_64:HideExitMsgbox()
+		arg0_64:HideResultWindow()
+		arg0_64:HidePauseMsgbox()
+		setActive(arg0_64.gameUI, false)
+		pg.BgmMgr.GetInstance():Push(arg0_64.__cname, FushunAdventureGameConst.BGM_NAME)
 	end
 end
 
-function var0.IsStarting(arg0)
-	return arg0.state == var5
+function var0_0.IsStarting(arg0_65)
+	return arg0_65.state == var5_0
 end
 
-function var0.Dispose(arg0)
-	if arg0.countdownTimer then
-		arg0.countdownTimer:Stop()
+function var0_0.Dispose(arg0_66)
+	if arg0_66.countdownTimer then
+		arg0_66.countdownTimer:Stop()
 
-		arg0.countdownTimer = nil
+		arg0_66.countdownTimer = nil
 	end
 
-	arg0:ExitGame()
-	pg.DelegateInfo.Dispose(arg0)
+	arg0_66:ExitGame()
+	pg.DelegateInfo.Dispose(arg0_66)
 
-	if arg0.gameUI then
-		Destroy(arg0.gameUI)
+	if arg0_66.gameUI then
+		Destroy(arg0_66.gameUI)
 
-		arg0.gameUI = nil
+		arg0_66.gameUI = nil
 	end
 
-	arg0._go = nil
-	arg0.btnSprites = nil
-	arg0.state = var2
+	arg0_66._go = nil
+	arg0_66.btnSprites = nil
+	arg0_66.state = var2_0
 
-	arg0.fushunLoader:Clear()
+	arg0_66.fushunLoader:Clear()
 
-	arg0.fushunLoader = nil
-	arg0.OnShowResult = nil
-	arg0.OnLevelUpdate = nil
+	arg0_66.fushunLoader = nil
+	arg0_66.OnShowResult = nil
+	arg0_66.OnLevelUpdate = nil
 end
 
-function var0.AddDebugInput(arg0)
+function var0_0.AddDebugInput(arg0_67)
 	if IsUnityEditor then
 		if Input.GetKeyDown(KeyCode.A) then
-			arg0:OnShowBtnEffect("A", true)
+			arg0_67:OnShowBtnEffect("A", true)
 		end
 
 		if Input.GetKeyUp(KeyCode.A) then
-			arg0:Action("A")
-			arg0:OnShowBtnEffect("A", false)
+			arg0_67:Action("A")
+			arg0_67:OnShowBtnEffect("A", false)
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(FushunAdventureGameConst.A_BTN_VOICE)
 		end
 
 		if Input.GetKeyDown(KeyCode.S) then
-			arg0:OnShowBtnEffect("B", true)
+			arg0_67:OnShowBtnEffect("B", true)
 		end
 
 		if Input.GetKeyUp(KeyCode.S) then
-			arg0:Action("B")
-			arg0:OnShowBtnEffect("B", false)
+			arg0_67:Action("B")
+			arg0_67:OnShowBtnEffect("B", false)
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(FushunAdventureGameConst.B_BTN_VOICE)
 		end
 	end
 end
 
-function var0.RegisterEventListener(arg0)
-	local var0 = arg0.btnA:GetComponent("EventTriggerListener")
+function var0_0.RegisterEventListener(arg0_68)
+	local var0_68 = arg0_68.btnA:GetComponent("EventTriggerListener")
 
-	var0:AddPointDownFunc(function()
-		arg0:OnShowBtnEffect("A", true)
+	var0_68:AddPointDownFunc(function()
+		arg0_68:OnShowBtnEffect("A", true)
 	end)
-	var0:AddPointExitFunc(function()
-		arg0:OnShowBtnEffect("A", false)
+	var0_68:AddPointExitFunc(function()
+		arg0_68:OnShowBtnEffect("A", false)
 	end)
-	var0:AddPointUpFunc(function()
-		if arg0.pause then
+	var0_68:AddPointUpFunc(function()
+		if arg0_68.pause then
 			return
 		end
 
-		arg0:Action("A")
-		arg0:OnShowBtnEffect("A", false)
+		arg0_68:Action("A")
+		arg0_68:OnShowBtnEffect("A", false)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(FushunAdventureGameConst.A_BTN_VOICE)
 	end)
 
-	local var1 = arg0.btnB:GetComponent("EventTriggerListener")
+	local var1_68 = arg0_68.btnB:GetComponent("EventTriggerListener")
 
-	var1:AddPointDownFunc(function()
-		arg0:OnShowBtnEffect("B", true)
+	var1_68:AddPointDownFunc(function()
+		arg0_68:OnShowBtnEffect("B", true)
 	end)
-	var1:AddPointExitFunc(function()
-		arg0:OnShowBtnEffect("B", false)
+	var1_68:AddPointExitFunc(function()
+		arg0_68:OnShowBtnEffect("B", false)
 	end)
-	var1:AddPointUpFunc(function()
-		if arg0.pause then
+	var1_68:AddPointUpFunc(function()
+		if arg0_68.pause then
 			return
 		end
 
-		arg0:Action("B")
-		arg0:OnShowBtnEffect("B", false)
+		arg0_68:Action("B")
+		arg0_68:OnShowBtnEffect("B", false)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(FushunAdventureGameConst.B_BTN_VOICE)
 	end)
-	onButton(arg0, arg0.pauseBtn, function()
-		arg0:ShowPauseMsgbox()
+	onButton(arg0_68, arg0_68.pauseBtn, function()
+		arg0_68:ShowPauseMsgbox()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.exitBtn, function()
-		arg0:ShowExitMsgbox()
+	onButton(arg0_68, arg0_68.exitBtn, function()
+		arg0_68:ShowExitMsgbox()
 	end, SFX_PANEL)
 end
 
-function var0.OnShowBtnEffect(arg0, arg1, arg2)
-	setActive(arg0["btn" .. arg1 .. "Effect"], arg2)
+function var0_0.OnShowBtnEffect(arg0_77, arg1_77, arg2_77)
+	setActive(arg0_77["btn" .. arg1_77 .. "Effect"], arg2_77)
 end
 
-function var0.ShowResultWindow(arg0, arg1)
-	setActive(arg0.resultPanel, true)
-	onButton(arg0, arg0.resultCloseBtn, function()
-		arg0:HideResultWindow()
+function var0_0.ShowResultWindow(arg0_78, arg1_78)
+	setActive(arg0_78.resultPanel, true)
+	onButton(arg0_78, arg0_78.resultCloseBtn, function()
+		arg0_78:HideResultWindow()
 
-		if arg1 then
-			arg1()
+		if arg1_78 then
+			arg1_78()
 		end
 	end, SFX_PANEL)
 
-	arg0.resultHighestScoreTxt.text = arg0.highestScore
-	arg0.resultScoreTxt.text = arg0.score
+	arg0_78.resultHighestScoreTxt.text = arg0_78.highestScore
+	arg0_78.resultScoreTxt.text = arg0_78.score
 
-	if arg0.score > arg0.highestScore then
-		arg0.highestScore = arg0.score
+	if arg0_78.score > arg0_78.highestScore then
+		arg0_78.highestScore = arg0_78.score
 	end
 end
 
-function var0.HideResultWindow(arg0)
-	setActive(arg0.resultPanel, false)
+function var0_0.HideResultWindow(arg0_80)
+	setActive(arg0_80.resultPanel, false)
 end
 
-function var0.ShowPauseMsgbox(arg0)
-	arg0:PauseGame()
-	setActive(arg0.msgboxPanel, true)
-	setActive(arg0.pauseMsgboxWindow, true)
-	setActive(arg0.exitMsgboxWindow, false)
-	onButton(arg0, arg0.pauseMsgboxWindow:Find("continue_btn"), function()
-		arg0:ResumeGame()
-		arg0:HidePauseMsgbox()
+function var0_0.ShowPauseMsgbox(arg0_81)
+	arg0_81:PauseGame()
+	setActive(arg0_81.msgboxPanel, true)
+	setActive(arg0_81.pauseMsgboxWindow, true)
+	setActive(arg0_81.exitMsgboxWindow, false)
+	onButton(arg0_81, arg0_81.pauseMsgboxWindow:Find("continue_btn"), function()
+		arg0_81:ResumeGame()
+		arg0_81:HidePauseMsgbox()
 	end, SFX_PANEL)
 end
 
-function var0.HidePauseMsgbox(arg0)
-	setActive(arg0.msgboxPanel, false)
-	setActive(arg0.pauseMsgboxWindow, false)
+function var0_0.HidePauseMsgbox(arg0_83)
+	setActive(arg0_83.msgboxPanel, false)
+	setActive(arg0_83.pauseMsgboxWindow, false)
 end
 
-function var0.ShowExitMsgbox(arg0)
-	arg0:PauseGame()
-	setActive(arg0.msgboxPanel, true)
-	setActive(arg0.pauseMsgboxWindow, false)
-	setActive(arg0.exitMsgboxWindow, true)
-	onButton(arg0, arg0.exitMsgboxWindow:Find("cancel_btn"), function()
-		arg0:ResumeGame()
-		arg0:HideExitMsgbox()
+function var0_0.ShowExitMsgbox(arg0_84)
+	arg0_84:PauseGame()
+	setActive(arg0_84.msgboxPanel, true)
+	setActive(arg0_84.pauseMsgboxWindow, false)
+	setActive(arg0_84.exitMsgboxWindow, true)
+	onButton(arg0_84, arg0_84.exitMsgboxWindow:Find("cancel_btn"), function()
+		arg0_84:ResumeGame()
+		arg0_84:HideExitMsgbox()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.exitMsgboxWindow:Find("confirm_btn"), function()
-		arg0:HideExitMsgbox()
+	onButton(arg0_84, arg0_84.exitMsgboxWindow:Find("confirm_btn"), function()
+		arg0_84:HideExitMsgbox()
 
-		if arg0.OnShowResult then
-			arg0.OnShowResult(arg0.score)
+		if arg0_84.OnShowResult then
+			arg0_84.OnShowResult(arg0_84.score)
 		end
 
-		arg0:ExitGame()
+		arg0_84:ExitGame()
 	end, SFX_PANEL)
 end
 
-function var0.HideExitMsgbox(arg0)
-	setActive(arg0.msgboxPanel, false)
-	setActive(arg0.exitMsgboxWindow, false)
+function var0_0.HideExitMsgbox(arg0_87)
+	setActive(arg0_87.msgboxPanel, false)
+	setActive(arg0_87.exitMsgboxWindow, false)
 end
 
-function var0.IsCollision(arg0, arg1)
-	return arg0.enabled and arg1.enabled and arg0.gameObject.activeSelf and arg0.bounds:Intersects(arg1.bounds)
+function var0_0.IsCollision(arg0_88, arg1_88)
+	return arg0_88.enabled and arg1_88.enabled and arg0_88.gameObject.activeSelf and arg0_88.bounds:Intersects(arg1_88.bounds)
 end
 
-function var0.IsNearby(arg0, arg1)
-	return arg1.x - arg0.x <= 0
+function var0_0.IsNearby(arg0_89, arg1_89)
+	return arg1_89.x - arg0_89.x <= 0
 end
 
-function var0.LOG(...)
-	if var1 then
+function var0_0.LOG(...)
+	if var1_0 then
 		print(...)
 	end
 end
 
-return var0
+return var0_0

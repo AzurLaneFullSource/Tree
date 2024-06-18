@@ -1,10 +1,10 @@
-﻿local var0 = class("MainOpenSystemSequence")
+﻿local var0_0 = class("MainOpenSystemSequence")
 
-function var0.Execute(arg0, arg1)
-	local var0 = getProxy(PlayerProxy):getRawData()
+function var0_0.Execute(arg0_1, arg1_1)
+	local var0_1 = getProxy(PlayerProxy):getRawData()
 
-	pg.SystemOpenMgr.GetInstance():notification(var0.level)
-	arg1()
+	pg.SystemOpenMgr.GetInstance():notification(var0_1.level)
+	arg1_1()
 end
 
-return var0
+return var0_0

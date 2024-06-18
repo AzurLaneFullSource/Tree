@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_324 = {}
+var0_0.word_template_324 = {}
 
-local var1 = var0.word_template_324
+local var1_0 = var0_0.word_template_324
 
 function temp()
-	var1.因 = {
+	var1_0.因 = {
 		为 = {
 			天 = {
 				天 = {
@@ -63,7 +63,7 @@ end
 temp()
 
 function temp()
-	var1.阴 = {
+	var1_0.阴 = {
 		d = {
 			a = {
 				o = {
@@ -281,7 +281,7 @@ end
 temp()
 
 function temp()
-	var1.殷 = {
+	var1_0.殷 = {
 		彩 = {
 			霞 = {
 				this = true
@@ -296,7 +296,7 @@ end
 temp()
 
 function temp()
-	var1.陰 = {
+	var1_0.陰 = {
 		屄 = {
 			this = true
 		},
@@ -392,7 +392,7 @@ end
 temp()
 
 function temp()
-	var1.吟 = {
+	var1_0.吟 = {
 		稻 = {
 			雁 = {
 				this = true
@@ -411,7 +411,7 @@ end
 temp()
 
 function temp()
-	var1.银 = {
+	var1_0.银 = {
 		行 = {
 			卡 = {
 				复 = {
@@ -559,7 +559,7 @@ end
 temp()
 
 function temp()
-	var1.婬 = {
+	var1_0.婬 = {
 		乱 = {
 			军 = {
 				团 = {

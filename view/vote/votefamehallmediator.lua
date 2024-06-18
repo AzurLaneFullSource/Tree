@@ -1,28 +1,28 @@
-﻿local var0 = class("VoteFameHallMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("VoteFameHallMediator", import("..base.ContextMediator"))
 
-var0.ON_SUBMIT_TASK = "VoteFameHallMediator:ON_SUBMIT_TASK"
+var0_0.ON_SUBMIT_TASK = "VoteFameHallMediator:ON_SUBMIT_TASK"
 
-function var0.register(arg0)
-	arg0:bind(var0.ON_SUBMIT_TASK, function(arg0, arg1)
-		arg0:sendNotification(GAME.SUBMIT_TASK, arg1)
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.ON_SUBMIT_TASK, function(arg0_2, arg1_2)
+		arg0_1:sendNotification(GAME.SUBMIT_TASK, arg1_2)
 	end)
-	arg0.viewComponent:SetPastVoteData(getProxy(VoteProxy):GetPastVoteData())
+	arg0_1.viewComponent:SetPastVoteData(getProxy(VoteProxy):GetPastVoteData())
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_3)
 	return {
 		GAME.SUBMIT_TASK_DONE
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_4, arg1_4)
+	local var0_4 = arg1_4:getName()
+	local var1_4 = arg1_4:getBody()
 
-	if var0 == GAME.SUBMIT_TASK_DONE then
-		arg0.viewComponent:UpdateTips(arg0.viewComponent.year)
-		arg0.viewComponent:UpdateBtnsTip()
+	if var0_4 == GAME.SUBMIT_TASK_DONE then
+		arg0_4.viewComponent:UpdateTips(arg0_4.viewComponent.year)
+		arg0_4.viewComponent:UpdateBtnsTip()
 	end
 end
 
-return var0
+return var0_0

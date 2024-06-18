@@ -1,226 +1,226 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleDataFunction
-local var2 = var0.Battle.BattleConst
-local var3 = var0.Battle.BattleConfig
-local var4 = class("BattleLaserUnit", var0.Battle.BattleWeaponUnit)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleDataFunction
+local var2_0 = var0_0.Battle.BattleConst
+local var3_0 = var0_0.Battle.BattleConfig
+local var4_0 = class("BattleLaserUnit", var0_0.Battle.BattleWeaponUnit)
 
-var0.Battle.BattleLaserUnit = var4
-var4.__name = "BattleLaserUnit"
-var4.STATE_ATTACK = "FIB"
-var4.BEAM_STATE_READY = "beamStateReady"
-var4.BEAM_STATE_OVER_HEAT = "beamStateOverHeat"
+var0_0.Battle.BattleLaserUnit = var4_0
+var4_0.__name = "BattleLaserUnit"
+var4_0.STATE_ATTACK = "FIB"
+var4_0.BEAM_STATE_READY = "beamStateReady"
+var4_0.BEAM_STATE_OVER_HEAT = "beamStateOverHeat"
 
-function var4.Ctor(arg0)
-	var4.super.Ctor(arg0)
+function var4_0.Ctor(arg0_1)
+	var4_0.super.Ctor(arg0_1)
 end
 
-function var4.Clear(arg0)
-	if arg0._alertTimer then
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0._alertTimer)
+function var4_0.Clear(arg0_2)
+	if arg0_2._alertTimer then
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_2._alertTimer)
 	end
 
-	arg0._alertTimer = nil
+	arg0_2._alertTimer = nil
 
-	for iter0, iter1 in ipairs(arg0._beamList) do
-		if iter1:GetBeamState() == iter1.BEAM_STATE_ATTACK then
-			arg0._dataProxy:RemoveAreaOfEffect(iter1:GetAoeData():GetUniqueID())
+	for iter0_2, iter1_2 in ipairs(arg0_2._beamList) do
+		if iter1_2:GetBeamState() == iter1_2.BEAM_STATE_ATTACK then
+			arg0_2._dataProxy:RemoveAreaOfEffect(iter1_2:GetAoeData():GetUniqueID())
 		end
 
-		iter1:ClearBeam()
+		iter1_2:ClearBeam()
 	end
 
-	var4.super.Clear(arg0)
+	var4_0.super.Clear(arg0_2)
 end
 
-function var4.Update(arg0)
-	arg0:UpdateReload()
+function var4_0.Update(arg0_3)
+	arg0_3:UpdateReload()
 
-	if arg0._currentState == arg0.STATE_READY then
-		arg0:updateMovementInfo()
+	if arg0_3._currentState == arg0_3.STATE_READY then
+		arg0_3:updateMovementInfo()
 
-		local var0 = arg0:Tracking()
+		local var0_3 = arg0_3:Tracking()
 
-		if var0 then
-			if arg0._preCastInfo.time ~= nil then
-				arg0:PreCast(var0)
+		if var0_3 then
+			if arg0_3._preCastInfo.time ~= nil then
+				arg0_3:PreCast(var0_3)
 			else
-				arg0._currentState = arg0.STATE_PRECAST_FINISH
+				arg0_3._currentState = arg0_3.STATE_PRECAST_FINISH
 			end
 		end
 	end
 
-	if arg0._currentState == arg0.STATE_PRECAST then
+	if arg0_3._currentState == arg0_3.STATE_PRECAST then
 		-- block empty
-	elseif arg0._currentState == arg0.STATE_PRECAST_FINISH then
-		arg0:updateMovementInfo()
-		arg0:Fire(arg0:Tracking())
+	elseif arg0_3._currentState == arg0_3.STATE_PRECAST_FINISH then
+		arg0_3:updateMovementInfo()
+		arg0_3:Fire(arg0_3:Tracking())
 	end
 
-	if arg0._attackStartTime then
-		arg0:updateMovementInfo()
-		arg0:updateBeamList()
+	if arg0_3._attackStartTime then
+		arg0_3:updateMovementInfo()
+		arg0_3:updateBeamList()
 	end
 end
 
-function var4.DoAttack(arg0, arg1)
-	if arg1 == nil or not arg1:IsAlive() or arg0:outOfFireRange(arg1) then
-		arg1 = nil
+function var4_0.DoAttack(arg0_4, arg1_4)
+	if arg1_4 == nil or not arg1_4:IsAlive() or arg0_4:outOfFireRange(arg1_4) then
+		arg1_4 = nil
 	end
 
-	arg0._attackStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
+	arg0_4._attackStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
 
-	if arg0._tmpData.aim_type == var2.WeaponAimType.AIM and arg1 ~= nil then
-		arg0._aimPos = arg1:GetBeenAimedPosition()
+	if arg0_4._tmpData.aim_type == var2_0.WeaponAimType.AIM and arg1_4 ~= nil then
+		arg0_4._aimPos = arg1_4:GetBeenAimedPosition()
 	end
 
-	arg0:cacheBulletID()
+	arg0_4:cacheBulletID()
 
-	for iter0, iter1 in ipairs(arg0._beamList) do
-		iter1:ChangeBeamState(iter1.BEAM_STATE_READY)
+	for iter0_4, iter1_4 in ipairs(arg0_4._beamList) do
+		iter1_4:ChangeBeamState(iter1_4.BEAM_STATE_READY)
 
-		if var1.GetBarrageTmpDataFromID(iter1:GetBeamInfoID()).first_delay == 0 then
-			arg0:createBeam(iter1)
+		if var1_0.GetBarrageTmpDataFromID(iter1_4:GetBeamInfoID()).first_delay == 0 then
+			arg0_4:createBeam(iter1_4)
 		end
 	end
 
-	var0.Battle.PlayBattleSFX(arg0._tmpData.fire_sfx)
-	arg0:TriggerBuffOnFire()
-	arg0:CheckAndShake()
+	var0_0.Battle.PlayBattleSFX(arg0_4._tmpData.fire_sfx)
+	arg0_4:TriggerBuffOnFire()
+	arg0_4:CheckAndShake()
 end
 
-function var4.SetTemplateData(arg0, arg1)
-	var4.super.SetTemplateData(arg0, arg1)
-	arg0:initBeamList()
+function var4_0.SetTemplateData(arg0_5, arg1_5)
+	var4_0.super.SetTemplateData(arg0_5, arg1_5)
+	arg0_5:initBeamList()
 end
 
-function var4.initBeamList(arg0)
-	local var0 = arg0._tmpData.barrage_ID
-	local var1 = arg0._tmpData.bullet_ID
+function var4_0.initBeamList(arg0_6)
+	local var0_6 = arg0_6._tmpData.barrage_ID
+	local var1_6 = arg0_6._tmpData.bullet_ID
 
-	arg0._alertList = {}
-	arg0._beamList = {}
+	arg0_6._alertList = {}
+	arg0_6._beamList = {}
 
-	for iter0, iter1 in ipairs(var1) do
-		arg0._beamList[iter0] = var0.Battle.BattleBeamUnit.New(iter1, var0[iter0])
+	for iter0_6, iter1_6 in ipairs(var1_6) do
+		arg0_6._beamList[iter0_6] = var0_0.Battle.BattleBeamUnit.New(iter1_6, var0_6[iter0_6])
 	end
 end
 
-function var4.updateBeamList(arg0)
-	local var0 = pg.TimeMgr.GetInstance():GetCombatTime() - arg0._attackStartTime
-	local var1 = 0
+function var4_0.updateBeamList(arg0_7)
+	local var0_7 = pg.TimeMgr.GetInstance():GetCombatTime() - arg0_7._attackStartTime
+	local var1_7 = 0
 
-	for iter0, iter1 in ipairs(arg0._beamList) do
-		if iter1:GetBeamState() == iter1.BEAM_STATE_READY then
-			if var0 > var1.GetBarrageTmpDataFromID(iter1:GetBeamInfoID()).first_delay then
-				arg0:createBeam(iter1)
+	for iter0_7, iter1_7 in ipairs(arg0_7._beamList) do
+		if iter1_7:GetBeamState() == iter1_7.BEAM_STATE_READY then
+			if var0_7 > var1_0.GetBarrageTmpDataFromID(iter1_7:GetBeamInfoID()).first_delay then
+				arg0_7:createBeam(iter1_7)
 			end
-		elseif iter1:GetBeamState() == iter1.BEAM_STATE_ATTACK then
-			if not iter1:IsBeamActive() then
-				iter1:ClearBeam()
+		elseif iter1_7:GetBeamState() == iter1_7.BEAM_STATE_ATTACK then
+			if not iter1_7:IsBeamActive() then
+				iter1_7:ClearBeam()
 
-				var1 = var1 + 1
+				var1_7 = var1_7 + 1
 			else
-				iter1:UpdateBeamPos(arg0._hostPos)
-				iter1:UpdateBeamAngle()
+				iter1_7:UpdateBeamPos(arg0_7._hostPos)
+				iter1_7:UpdateBeamAngle()
 
-				if iter1:CanDealDamage() then
-					arg0:doBeamDamage(iter1)
+				if iter1_7:CanDealDamage() then
+					arg0_7:doBeamDamage(iter1_7)
 				end
 			end
-		elseif iter1:GetBeamState() == iter1.BEAM_STATE_FINISH then
-			var1 = var1 + 1
+		elseif iter1_7:GetBeamState() == iter1_7.BEAM_STATE_FINISH then
+			var1_7 = var1_7 + 1
 		end
 	end
 
-	if var1 == #arg0._beamList then
-		arg0:EnterCoolDown()
+	if var1_7 == #arg0_7._beamList then
+		arg0_7:EnterCoolDown()
 	end
 end
 
-function var4.createBeam(arg0, arg1)
-	local function var0(arg0)
-		for iter0, iter1 in ipairs(arg0) do
-			if iter1.Active then
-				local var0 = arg0._dataProxy:GetUnitList()[iter1.UID]
+function var4_0.createBeam(arg0_8, arg1_8)
+	local function var0_8(arg0_9)
+		for iter0_9, iter1_9 in ipairs(arg0_9) do
+			if iter1_9.Active then
+				local var0_9 = arg0_8._dataProxy:GetUnitList()[iter1_9.UID]
 
-				arg1:AddCldUnit(var0)
+				arg1_8:AddCldUnit(var0_9)
 			end
 		end
 	end
 
-	local function var1(arg0)
-		if arg0.Active then
-			local var0 = arg0._dataProxy:GetUnitList()[arg0.UID]
+	local function var1_8(arg0_10)
+		if arg0_10.Active then
+			local var0_10 = arg0_8._dataProxy:GetUnitList()[arg0_10.UID]
 
-			arg1:RemoveCldUnit(var0)
+			arg1_8:RemoveCldUnit(var0_10)
 		end
 	end
 
-	local var2 = var1.GetBarrageTmpDataFromID(arg1:GetBeamInfoID())
-	local var3 = var1.GetBulletTmpDataFromID(arg1:GetBulletID())
-	local var4 = var2.offset_x
-	local var5 = var2.offset_z
-	local var6 = var2.delta_offset_x
-	local var7 = var2.delta_offset_z
-	local var8 = var2.delay
-	local var9 = arg0._host:GetIFF()
-	local var10 = Vector3(arg0._hostPos.x + var4, 0, arg0._hostPos.z + var5)
-	local var11 = arg0._dataProxy:SpawnLastingCubeArea(var2.AOEField.SURFACE, var9, var10, var6, var7, var8, var0, var1, false, var3.modle_ID)
+	local var2_8 = var1_0.GetBarrageTmpDataFromID(arg1_8:GetBeamInfoID())
+	local var3_8 = var1_0.GetBulletTmpDataFromID(arg1_8:GetBulletID())
+	local var4_8 = var2_8.offset_x
+	local var5_8 = var2_8.offset_z
+	local var6_8 = var2_8.delta_offset_x
+	local var7_8 = var2_8.delta_offset_z
+	local var8_8 = var2_8.delay
+	local var9_8 = arg0_8._host:GetIFF()
+	local var10_8 = Vector3(arg0_8._hostPos.x + var4_8, 0, arg0_8._hostPos.z + var5_8)
+	local var11_8 = arg0_8._dataProxy:SpawnLastingCubeArea(var2_0.AOEField.SURFACE, var9_8, var10_8, var6_8, var7_8, var8_8, var0_8, var1_8, false, var3_8.modle_ID)
 
-	if arg0._aimPos == nil then
-		arg1:SetAimAngle(0)
-	elseif var2.offset_prioritise then
-		arg1:SetAimPosition(arg0._aimPos, var10, var9)
+	if arg0_8._aimPos == nil then
+		arg1_8:SetAimAngle(0)
+	elseif var2_8.offset_prioritise then
+		arg1_8:SetAimPosition(arg0_8._aimPos, var10_8, var9_8)
 	else
-		local var12
+		local var12_8
 
-		if var9 == var3.FRIENDLY_CODE then
-			var12 = math.rad2Deg * math.atan2(arg0._aimPos.z - arg0._hostPos.z, arg0._aimPos.x - arg0._hostPos.x)
-		elseif var9 == var3.FOE_CODE then
-			var12 = math.rad2Deg * math.atan2(arg0._hostPos.z - arg0._aimPos.z, arg0._hostPos.x - arg0._aimPos.x)
+		if var9_8 == var3_0.FRIENDLY_CODE then
+			var12_8 = math.rad2Deg * math.atan2(arg0_8._aimPos.z - arg0_8._hostPos.z, arg0_8._aimPos.x - arg0_8._hostPos.x)
+		elseif var9_8 == var3_0.FOE_CODE then
+			var12_8 = math.rad2Deg * math.atan2(arg0_8._hostPos.z - arg0_8._aimPos.z, arg0_8._hostPos.x - arg0_8._aimPos.x)
 		end
 
-		arg1:SetAimAngle(var12)
+		arg1_8:SetAimAngle(var12_8)
 	end
 
-	if var9 == var3.FRIENDLY_CODE then
-		var11:SetAnchorPointAlignment(var11.ALIGNMENT_LEFT)
-	elseif var9 == var3.FOE_CODE then
-		var11:SetAnchorPointAlignment(var11.ALIGNMENT_RIGHT)
+	if var9_8 == var3_0.FRIENDLY_CODE then
+		var11_8:SetAnchorPointAlignment(var11_8.ALIGNMENT_LEFT)
+	elseif var9_8 == var3_0.FOE_CODE then
+		var11_8:SetAnchorPointAlignment(var11_8.ALIGNMENT_RIGHT)
 	end
 
-	var11:SetFXStatic(true)
-	arg1:SetAoeData(var11)
-	arg1:BeginFocus()
-	arg1:ChangeBeamState(arg1.BEAM_STATE_ATTACK)
+	var11_8:SetFXStatic(true)
+	arg1_8:SetAoeData(var11_8)
+	arg1_8:BeginFocus()
+	arg1_8:ChangeBeamState(arg1_8.BEAM_STATE_ATTACK)
 end
 
-function var4.doBeamDamage(arg0, arg1)
-	arg1:DealDamage()
+function var4_0.doBeamDamage(arg0_11, arg1_11)
+	arg1_11:DealDamage()
 
-	local var0 = arg0:Spawn(arg1:GetBulletID())
-	local var1 = arg1:GetCldUnitList()
+	local var0_11 = arg0_11:Spawn(arg1_11:GetBulletID())
+	local var1_11 = arg1_11:GetCldUnitList()
 
-	for iter0, iter1 in pairs(var1) do
-		if not iter1:IsAlive() or arg1:GetBeamExtraParam().mainFilter == true and iter1:IsMainFleetUnit() then
+	for iter0_11, iter1_11 in pairs(var1_11) do
+		if not iter1_11:IsAlive() or arg1_11:GetBeamExtraParam().mainFilter == true and iter1_11:IsMainFleetUnit() then
 			-- block empty
 		else
-			arg0._dataProxy:HandleDamage(var0, iter1)
+			arg0_11._dataProxy:HandleDamage(var0_11, iter1_11)
 
-			local var2, var3 = var0.Battle.BattleFXPool.GetInstance():GetFX(arg1:GetFXID())
+			local var2_11, var3_11 = var0_0.Battle.BattleFXPool.GetInstance():GetFX(arg1_11:GetFXID())
 
-			pg.EffectMgr.GetInstance():PlayBattleEffect(var2, var3:Add(iter1:GetPosition()), true)
-			var0.Battle.PlayBattleSFX(arg1:GetSFXID())
+			pg.EffectMgr.GetInstance():PlayBattleEffect(var2_11, var3_11:Add(iter1_11:GetPosition()), true)
+			var0_0.Battle.PlayBattleSFX(arg1_11:GetSFXID())
 		end
 	end
 
-	arg0._dataProxy:RemoveBulletUnit(var0:GetUniqueID())
+	arg0_11._dataProxy:RemoveBulletUnit(var0_11:GetUniqueID())
 end
 
-function var4.EnterCoolDown(arg0)
-	arg0._attackStartTime = nil
+function var4_0.EnterCoolDown(arg0_12)
+	arg0_12._attackStartTime = nil
 
-	var4.super.EnterCoolDown(arg0)
+	var4_0.super.EnterCoolDown(arg0_12)
 end

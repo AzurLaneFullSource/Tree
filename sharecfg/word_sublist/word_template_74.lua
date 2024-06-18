@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_74 = {}
+var0_0.word_template_74 = {}
 
-local var1 = var0.word_template_74
+local var1_0 = var0_0.word_template_74
 
 function temp()
-	var1.榱 = {
+	var1_0.榱 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.毳 = {
+	var1_0.毳 = {
 		this = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.村 = {
+	var1_0.村 = {
 		妇 = {
 			挎 = {
 				着 = {
@@ -84,7 +84,7 @@ end
 temp()
 
 function temp()
-	var1.皴 = {
+	var1_0.皴 = {
 		this = {
 			this = true
 		}
@@ -94,7 +94,7 @@ end
 temp()
 
 function temp()
-	var1.存 = {
+	var1_0.存 = {
 		瑞 = {
 			是 = {
 				我 = {
@@ -124,7 +124,7 @@ end
 temp()
 
 function temp()
-	var1.搓 = {
+	var1_0.搓 = {
 		摸 = {
 			着 = {
 				this = true
@@ -150,7 +150,7 @@ end
 temp()
 
 function temp()
-	var1.蹉 = {
+	var1_0.蹉 = {
 		this = {
 			this = true
 		}

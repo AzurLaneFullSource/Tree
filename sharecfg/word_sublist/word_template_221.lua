@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_221 = {}
+var0_0.word_template_221 = {}
 
-local var1 = var0.word_template_221
+local var1_0 = var0_0.word_template_221
 
 function temp()
-	var1.龐 = {
+	var1_0.龐 = {
 		建 = {
 			國 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.跑 = {
+	var1_0.跑 = {
 		灯 = {
 			机 = {
 				this = true
@@ -51,7 +51,7 @@ end
 temp()
 
 function temp()
-	var1.泡 = {
+	var1_0.泡 = {
 		沫 = {
 			經 = {
 				濟 = {
@@ -65,7 +65,7 @@ end
 temp()
 
 function temp()
-	var1.炮 = {
+	var1_0.炮 = {
 		弹 = {
 			壳 = {
 				this = true
@@ -91,7 +91,7 @@ end
 temp()
 
 function temp()
-	var1.陪 = {
+	var1_0.陪 = {
 		伴 = {
 			服 = {
 				务 = {
@@ -151,7 +151,7 @@ end
 temp()
 
 function temp()
-	var1.轡 = {
+	var1_0.轡 = {
 		this = {
 			this = true
 		}
@@ -161,7 +161,7 @@ end
 temp()
 
 function temp()
-	var1.喷 = {
+	var1_0.喷 = {
 		潮 = {
 			this = true
 		},

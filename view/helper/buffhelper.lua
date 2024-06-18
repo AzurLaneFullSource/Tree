@@ -1,223 +1,223 @@
-﻿local var0 = class("BuffHelper")
+﻿local var0_0 = class("BuffHelper")
 
-local function var1(arg0, arg1)
-	if arg1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUFF then
-		if arg1 and not arg1:isEnd() then
-			local var0 = arg1:getConfig("config_id")
-			local var1 = {}
+local function var1_0(arg0_1, arg1_1)
+	if arg1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUFF then
+		if arg1_1 and not arg1_1:isEnd() then
+			local var0_1 = arg1_1:getConfig("config_id")
+			local var1_1 = {}
 
-			if var0 == 0 then
-				var1 = arg1:getConfig("config_data")
+			if var0_1 == 0 then
+				var1_1 = arg1_1:getConfig("config_data")
 			else
-				table.insert(var1, var0)
+				table.insert(var1_1, var0_1)
 			end
 
-			for iter0, iter1 in ipairs(var1) do
-				local var2 = ActivityBuff.New(arg1.id, iter1)
+			for iter0_1, iter1_1 in ipairs(var1_1) do
+				local var2_1 = ActivityBuff.New(arg1_1.id, iter1_1)
 
-				if var2:isActivate() then
-					table.insert(arg0, var2)
+				if var2_1:isActivate() then
+					table.insert(arg0_1, var2_1)
 				end
 			end
 		end
-	elseif arg1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF or arg1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
-		if arg1 and not arg1:isEnd() then
-			local var3 = arg1:GetBuildingIds()
+	elseif arg1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF or arg1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
+		if arg1_1 and not arg1_1:isEnd() then
+			local var3_1 = arg1_1:GetBuildingIds()
 
-			for iter2, iter3 in pairs(var3) do
-				local var4 = pg.activity_event_building[iter3]
+			for iter2_1, iter3_1 in pairs(var3_1) do
+				local var4_1 = pg.activity_event_building[iter3_1]
 
-				if var4 then
-					_.each(var4.buff, function(arg0)
-						local var0 = ActivityBuff.New(arg1.id, arg0)
+				if var4_1 then
+					_.each(var4_1.buff, function(arg0_2)
+						local var0_2 = ActivityBuff.New(arg1_1.id, arg0_2)
 
-						if var0:isActivate() then
-							table.insert(arg0, var0)
+						if var0_2:isActivate() then
+							table.insert(arg0_1, var0_2)
 						end
 					end)
 				end
 			end
 
-			if arg1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
-				local var5 = arg1:GetSceneBuildingId()
+			if arg1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
+				local var5_1 = arg1_1:GetSceneBuildingId()
 
-				if var5 > 0 then
-					local var6 = pg.activity_event_building[var5]
+				if var5_1 > 0 then
+					local var6_1 = pg.activity_event_building[var5_1]
 
-					if var6 then
-						_.each(var6.buff, function(arg0)
-							local var0 = ActivityBuff.New(arg1.id, arg0)
+					if var6_1 then
+						_.each(var6_1.buff, function(arg0_3)
+							local var0_3 = ActivityBuff.New(arg1_1.id, arg0_3)
 
-							if var0:isActivate() then
-								table.insert(arg0, var0)
+							if var0_3:isActivate() then
+								table.insert(arg0_1, var0_3)
 							end
 						end)
 					end
 				end
 			end
 		end
-	elseif arg1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF then
-		if arg1 then
-			local var7 = ActivityPtData.New(arg1)
+	elseif arg1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF then
+		if arg1_1 then
+			local var7_1 = ActivityPtData.New(arg1_1)
 
-			if not arg1:isEnd() and var7:isInBuffTime() then
-				local var8 = arg1.data3_list
+			if not arg1_1:isEnd() and var7_1:isInBuffTime() then
+				local var8_1 = arg1_1.data3_list
 
-				for iter4, iter5 in pairs(var8) do
-					table.insert(arg0, ActivityBuff.New(arg1.id, iter5))
+				for iter4_1, iter5_1 in pairs(var8_1) do
+					table.insert(arg0_1, ActivityBuff.New(arg1_1.id, iter5_1))
 				end
 			end
 		end
-	elseif arg1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ATELIER_LINK and arg1 then
-		local var9 = arg1:GetSlots()
+	elseif arg1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ATELIER_LINK and arg1_1 then
+		local var9_1 = arg1_1:GetSlots()
 
-		for iter6, iter7 in ipairs(var9) do
-			local var10 = iter7[1]
-			local var11 = iter7[2]
+		for iter6_1, iter7_1 in ipairs(var9_1) do
+			local var10_1 = iter7_1[1]
+			local var11_1 = iter7_1[2]
 
-			if var10 > 0 and var11 > 0 then
-				table.insert(arg0, ActivityBuff.New(arg1.id, AtelierMaterial.New({
-					configId = var10
-				}):GetBuffs()[var11]))
+			if var10_1 > 0 and var11_1 > 0 then
+				table.insert(arg0_1, ActivityBuff.New(arg1_1.id, AtelierMaterial.New({
+					configId = var10_1
+				}):GetBuffs()[var11_1]))
 			end
 		end
 	end
 
-	for iter8, iter9 in pairs(arg1:GetBuffList()) do
-		table.insert(arg0, iter9)
+	for iter8_1, iter9_1 in pairs(arg1_1:GetBuffList()) do
+		table.insert(arg0_1, iter9_1)
 	end
 end
 
-function var0.GetAllBuff(arg0)
-	local var0 = {}
-	local var1 = getProxy(PlayerProxy):getRawData()
+function var0_0.GetAllBuff(arg0_4)
+	local var0_4 = {}
+	local var1_4 = getProxy(PlayerProxy):getRawData()
 
-	for iter0, iter1 in ipairs(var1:GetBuffs()) do
-		table.insert(var0, CommonBuff.New(iter1))
+	for iter0_4, iter1_4 in ipairs(var1_4:GetBuffs()) do
+		table.insert(var0_4, CommonBuff.New(iter1_4))
 	end
 
-	local var2 = getProxy(ActivityProxy):getRawData()
+	local var2_4 = getProxy(ActivityProxy):getRawData()
 
-	for iter2, iter3 in pairs(var2) do
+	for iter2_4, iter3_4 in pairs(var2_4) do
 		if (function()
-			if arg0 and arg0.system and arg0.system == SYSTEM_SCENARIO and iter3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ATELIER_LINK then
-				local var0 = getProxy(ChapterProxy):getActiveChapter(true)
-				local var1 = var0 and getProxy(ChapterProxy):getMapById(var0:getConfig("map")) or nil
+			if arg0_4 and arg0_4.system and arg0_4.system == SYSTEM_SCENARIO and iter3_4:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ATELIER_LINK then
+				local var0_5 = getProxy(ChapterProxy):getActiveChapter(true)
+				local var1_5 = var0_5 and getProxy(ChapterProxy):getMapById(var0_5:getConfig("map")) or nil
 
-				if var1 and not AtelierActivity.IsActivityBuffMap(var1) then
+				if var1_5 and not AtelierActivity.IsActivityBuffMap(var1_5) then
 					return false
 				end
 			end
 
 			return true
 		end)() then
-			var1(var0, iter3)
+			var1_0(var0_4, iter3_4)
 		end
 	end
 
-	return var0
+	return var0_4
 end
 
-function var0.GetBackYardExpBuffs()
-	local var0 = {}
-	local var1 = var0.GetAllBuff()
+function var0_0.GetBackYardExpBuffs()
+	local var0_6 = {}
+	local var1_6 = var0_0.GetAllBuff()
 
-	for iter0, iter1 in ipairs(var1) do
-		if iter1:BackYardExpUsage() then
-			table.insert(var0, iter1)
+	for iter0_6, iter1_6 in ipairs(var1_6) do
+		if iter1_6:BackYardExpUsage() then
+			table.insert(var0_6, iter1_6)
 		end
 	end
 
-	return var0
+	return var0_6
 end
 
-function var0.GetShipModExpBuff()
+function var0_0.GetShipModExpBuff()
 	return getProxy(ActivityProxy):getShipModExpActivity()
 end
 
-function var0.GetBackYardPlayerBuffs()
-	local var0 = {}
-	local var1 = getProxy(PlayerProxy):getRawData()
+function var0_0.GetBackYardPlayerBuffs()
+	local var0_8 = {}
+	local var1_8 = getProxy(PlayerProxy):getRawData()
 
-	for iter0, iter1 in ipairs(var1:GetBuffs()) do
-		local var2 = CommonBuff.New(iter1)
+	for iter0_8, iter1_8 in ipairs(var1_8:GetBuffs()) do
+		local var2_8 = CommonBuff.New(iter1_8)
 
-		if var2:BackYardExpUsage() then
-			table.insert(var0, var2)
+		if var2_8:BackYardExpUsage() then
+			table.insert(var0_8, var2_8)
 		end
 	end
 
-	return var0
+	return var0_8
 end
 
-function var0.GetBattleBuffs(arg0)
-	local var0 = {}
-	local var1 = var0.GetAllBuff({
-		system = arg0
+function var0_0.GetBattleBuffs(arg0_9)
+	local var0_9 = {}
+	local var1_9 = var0_0.GetAllBuff({
+		system = arg0_9
 	})
 
-	for iter0, iter1 in ipairs(var1) do
-		if iter1:BattleUsage() then
-			table.insert(var0, iter1)
+	for iter0_9, iter1_9 in ipairs(var1_9) do
+		if iter1_9:BattleUsage() then
+			table.insert(var0_9, iter1_9)
 		end
 	end
 
-	return var0
+	return var0_9
 end
 
-function var0.GetBuffsByActivityType(arg0)
-	local var0 = {}
-	local var1 = getProxy(ActivityProxy):getActivitiesByType(arg0)
+function var0_0.GetBuffsByActivityType(arg0_10)
+	local var0_10 = {}
+	local var1_10 = getProxy(ActivityProxy):getActivitiesByType(arg0_10)
 
-	_.each(var1, function(arg0)
-		var1(var0, arg0)
+	_.each(var1_10, function(arg0_11)
+		var1_0(var0_10, arg0_11)
 	end)
 
-	return var0
+	return var0_10
 end
 
-function var0.GetBuffsForMainUI()
-	local var0 = getProxy(ActivityProxy)
-	local var1 = var0.GetBuffsByActivityType(ActivityConst.ACTIVITY_TYPE_BUFF)
+function var0_0.GetBuffsForMainUI()
+	local var0_12 = getProxy(ActivityProxy)
+	local var1_12 = var0_0.GetBuffsByActivityType(ActivityConst.ACTIVITY_TYPE_BUFF)
 
-	for iter0 = #var1, 1, -1 do
-		if not var1[iter0]:checkShow() then
-			table.remove(var1, iter0)
+	for iter0_12 = #var1_12, 1, -1 do
+		if not var1_12[iter0_12]:checkShow() then
+			table.remove(var1_12, iter0_12)
 		end
 	end
 
-	local var2 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
+	local var2_12 = var0_12:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
 
-	if var2 and not var2:isEnd() then
-		local var3 = var2:getConfig("config_client").bufflist
-		local var4 = getProxy(PlayerProxy):getRawData()
+	if var2_12 and not var2_12:isEnd() then
+		local var3_12 = var2_12:getConfig("config_client").bufflist
+		local var4_12 = getProxy(PlayerProxy):getRawData()
 
-		for iter1, iter2 in pairs(var4.buff_list) do
-			if pg.TimeMgr:GetInstance():GetServerTime() < iter2.timestamp and table.contains(var3, iter2.id) then
-				local var5 = ActivityBuff.New(var2.id, iter2.id, iter2.timestamp)
+		for iter1_12, iter2_12 in pairs(var4_12.buff_list) do
+			if pg.TimeMgr:GetInstance():GetServerTime() < iter2_12.timestamp and table.contains(var3_12, iter2_12.id) then
+				local var5_12 = ActivityBuff.New(var2_12.id, iter2_12.id, iter2_12.timestamp)
 
-				if var5:checkShow() then
-					table.insert(var1, var5)
+				if var5_12:checkShow() then
+					table.insert(var1_12, var5_12)
 				end
 			end
 		end
 	end
 
-	local var6 = getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_3)
+	local var6_12 = getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_3)
 
-	if var6 then
-		local var7 = getProxy(PlayerProxy):getRawData()
-		local var8 = var6:getConfig("config_data")[2]
-		local var9
+	if var6_12 then
+		local var7_12 = getProxy(PlayerProxy):getRawData()
+		local var8_12 = var6_12:getConfig("config_data")[2]
+		local var9_12
 
-		for iter3, iter4 in ipairs(var7.buff_list) do
-			if table.indexof(var8, iter4.id, 1) then
-				if pg.TimeMgr.GetInstance():GetServerTime() < iter4.timestamp then
-					local var10 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
-					local var11 = ActivityBuff.New(var10.id, iter4.id, iter4.timestamp)
+		for iter3_12, iter4_12 in ipairs(var7_12.buff_list) do
+			if table.indexof(var8_12, iter4_12.id, 1) then
+				if pg.TimeMgr.GetInstance():GetServerTime() < iter4_12.timestamp then
+					local var10_12 = var0_12:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
+					local var11_12 = ActivityBuff.New(var10_12.id, iter4_12.id, iter4_12.timestamp)
 
-					if var11:checkShow() then
-						table.insert(var1, var11)
+					if var11_12:checkShow() then
+						table.insert(var1_12, var11_12)
 					end
 				end
 
@@ -226,21 +226,21 @@ function var0.GetBuffsForMainUI()
 		end
 	end
 
-	local var12 = getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_5)
+	local var12_12 = getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_5)
 
-	if var12 then
-		local var13 = getProxy(PlayerProxy):getRawData()
-		local var14 = var12:getConfig("config_data")[2]
-		local var15
+	if var12_12 then
+		local var13_12 = getProxy(PlayerProxy):getRawData()
+		local var14_12 = var12_12:getConfig("config_data")[2]
+		local var15_12
 
-		for iter5, iter6 in ipairs(var13.buff_list) do
-			if table.indexof(var14, iter6.id, 1) then
-				if pg.TimeMgr.GetInstance():GetServerTime() < iter6.timestamp then
-					local var16 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
-					local var17 = ActivityBuff.New(var16.id, iter6.id, iter6.timestamp)
+		for iter5_12, iter6_12 in ipairs(var13_12.buff_list) do
+			if table.indexof(var14_12, iter6_12.id, 1) then
+				if pg.TimeMgr.GetInstance():GetServerTime() < iter6_12.timestamp then
+					local var16_12 = var0_12:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
+					local var17_12 = ActivityBuff.New(var16_12.id, iter6_12.id, iter6_12.timestamp)
 
-					if var17:checkShow() then
-						table.insert(var1, var17)
+					if var17_12:checkShow() then
+						table.insert(var1_12, var17_12)
 					end
 				end
 
@@ -249,7 +249,7 @@ function var0.GetBuffsForMainUI()
 		end
 	end
 
-	return var1
+	return var1_12
 end
 
-return var0
+return var0_0

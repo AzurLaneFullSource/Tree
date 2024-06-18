@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_32 = {}
+var0_0.word_template_32 = {}
 
-local var1 = var0.word_template_32
+local var1_0 = var0_0.word_template_32
 
 function temp()
-	var1.爆 = {
+	var1_0.爆 = {
 		乳 = {
 			this = true,
 			家 = {
@@ -76,7 +76,7 @@ end
 temp()
 
 function temp()
-	var1.蛮 = {
+	var1_0.蛮 = {
 		啾 = {
 			this = true
 		},
@@ -102,7 +102,7 @@ end
 temp()
 
 function temp()
-	var1.彼 = {
+	var1_0.彼 = {
 		女 = {
 			募 = {
 				集 = {
@@ -116,7 +116,7 @@ end
 temp()
 
 function temp()
-	var1.非 = {
+	var1_0.非 = {
 		洲 = {
 			this = true
 		},
@@ -264,7 +264,7 @@ end
 temp()
 
 function temp()
-	var1.美 = {
+	var1_0.美 = {
 		容 = {
 			this = true
 		},
@@ -1265,7 +1265,7 @@ end
 temp()
 
 function temp()
-	var1.不 = {
+	var1_0.不 = {
 		可 = {
 			触 = {
 				賎 = {
@@ -2386,7 +2386,7 @@ end
 temp()
 
 function temp()
-	var1.風 = {
+	var1_0.風 = {
 		俗 = {
 			this = true
 		},

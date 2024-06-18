@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_112 = {}
+var0_0.word_template_112 = {}
 
-local var1 = var0.word_template_112
+local var1_0 = var0_0.word_template_112
 
 function temp()
-	var1.韝 = {
+	var1_0.韝 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.狗 = {
+	var1_0.狗 = {
 		b = {
 			this = true
 		},
@@ -163,7 +163,7 @@ end
 temp()
 
 function temp()
-	var1.购 = {
+	var1_0.购 = {
 		钓 = {
 			鱼 = {
 				岛 = {
@@ -387,7 +387,7 @@ end
 temp()
 
 function temp()
-	var1.够 = {
+	var1_0.够 = {
 		鳋 = {
 			this = true
 		},
@@ -410,7 +410,7 @@ end
 temp()
 
 function temp()
-	var1.彀 = {
+	var1_0.彀 = {
 		this = {
 			this = true
 		}
@@ -420,7 +420,7 @@ end
 temp()
 
 function temp()
-	var1.觏 = {
+	var1_0.觏 = {
 		this = {
 			this = true
 		}
@@ -430,7 +430,7 @@ end
 temp()
 
 function temp()
-	var1.覯 = {
+	var1_0.覯 = {
 		this = {
 			this = true
 		}

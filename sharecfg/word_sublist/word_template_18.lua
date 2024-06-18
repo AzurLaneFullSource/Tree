@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_18 = {}
+var0_0.word_template_18 = {}
 
-local var1 = var0.word_template_18
+local var1_0 = var0_0.word_template_18
 
 function temp()
-	var1.火 = {
+	var1_0.火 = {
 		病 = {
 			this = true
 		},
@@ -176,7 +176,7 @@ end
 temp()
 
 function temp()
-	var1.稼 = {
+	var1_0.稼 = {
 		い = {
 			this = true
 		},
@@ -192,7 +192,7 @@ end
 temp()
 
 function temp()
-	var1.花 = {
+	var1_0.花 = {
 		粉 = {
 			this = true
 		},
@@ -359,7 +359,7 @@ end
 temp()
 
 function temp()
-	var1.会 = {
+	var1_0.会 = {
 		え = {
 			る = {
 				this = true
@@ -533,7 +533,7 @@ end
 temp()
 
 function temp()
-	var1.海 = {
+	var1_0.海 = {
 		豹 = {
 			this = true,
 			M = {
@@ -651,7 +651,7 @@ end
 temp()
 
 function temp()
-	var1.姦 = {
+	var1_0.姦 = {
 		this = {
 			this = true
 		},
@@ -678,7 +678,7 @@ end
 temp()
 
 function temp()
-	var1.官 = {
+	var1_0.官 = {
 		能 = {
 			this = true
 		},

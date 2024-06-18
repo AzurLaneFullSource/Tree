@@ -1,23 +1,23 @@
-﻿local var0 = class("CatteryStyle", import("...BaseVO"))
+﻿local var0_0 = class("CatteryStyle", import("...BaseVO"))
 
-function var0.Ctor(arg0, arg1)
-	arg0.id = arg1.id
-	arg0.configId = arg0.id
-	arg0.own = arg1.own
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.id = arg1_1.id
+	arg0_1.configId = arg0_1.id
+	arg0_1.own = arg1_1.own
 end
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_2)
 	return pg.commander_home_style
 end
 
-function var0.IsOwn(arg0)
-	return arg0.own
+function var0_0.IsOwn(arg0_3)
+	return arg0_3.own
 end
 
-function var0.GetName(arg0, arg1)
-	local var0 = arg0:getConfig("name")
+function var0_0.GetName(arg0_4, arg1_4)
+	local var0_4 = arg0_4:getConfig("name")
 
-	return arg1 and var0 .. "_d" or var0
+	return arg1_4 and var0_4 .. "_d" or var0_4
 end
 
-return var0
+return var0_0

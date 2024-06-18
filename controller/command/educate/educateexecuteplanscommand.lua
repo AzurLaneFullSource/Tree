@@ -1,39 +1,39 @@
-﻿local var0 = class("EducateExecutePlansCommand", pm.SimpleCommand)
+﻿local var0_0 = class("EducateExecutePlansCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1
 
-	var1 = var0 and var0.callback
+	var1_1 = var0_1 and var0_1.callback
 
-	local var2 = getProxy(EducateProxy)
+	local var2_1 = getProxy(EducateProxy)
 
 	pg.ConnectionMgr.GetInstance():Send(27002, {
 		type = 1
-	}, 27003, function(arg0)
-		if arg0.result == 0 then
-			local var0 = var2:GetPlanProxy():GetGridData()
+	}, 27003, function(arg0_2)
+		if arg0_2.result == 0 then
+			local var0_2 = var2_1:GetPlanProxy():GetGridData()
 
-			local function var1()
-				arg0:sendNotification(GAME.EDUCATE_EXECUTE_PLANS_DONE, {
-					gridData = var0,
-					plan_results = arg0.plan_results,
-					events = arg0.events,
-					isSkip = var0.isSkip
+			local function var1_2()
+				arg0_1:sendNotification(GAME.EDUCATE_EXECUTE_PLANS_DONE, {
+					gridData = var0_2,
+					plan_results = arg0_2.plan_results,
+					events = arg0_2.events,
+					isSkip = var0_1.isSkip
 				})
 			end
 
-			var2:ReduceResForPlans()
-			var2:GetPlanProxy():OnExecutePlanDone()
-			var2:GetPlanProxy():UpdateHistory()
-			arg0:sendNotification(GAME.CHANGE_SCENE, SCENE.EDUCATE, {
+			var2_1:ReduceResForPlans()
+			var2_1:GetPlanProxy():OnExecutePlanDone()
+			var2_1:GetPlanProxy():UpdateHistory()
+			arg0_1:sendNotification(GAME.CHANGE_SCENE, SCENE.EDUCATE, {
 				ingoreGuideCheck = true,
-				onEnter = var1
+				onEnter = var1_2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate execute plans error: ", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate execute plans error: ", arg0_2.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

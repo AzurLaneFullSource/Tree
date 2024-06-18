@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_91 = {}
+var0_0.word_template_91 = {}
 
-local var1 = var0.word_template_91
+local var1_0 = var0_0.word_template_91
 
 function temp()
-	var1.墮 = {
+	var1_0.墮 = {
 		淫 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.屙 = {
+	var1_0.屙 = {
 		this = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.俄 = {
+	var1_0.俄 = {
 		國 = {
 			this = true
 		},
@@ -70,7 +70,7 @@ end
 temp()
 
 function temp()
-	var1.莪 = {
+	var1_0.莪 = {
 		this = {
 			this = true
 		}
@@ -80,7 +80,7 @@ end
 temp()
 
 function temp()
-	var1.峨 = {
+	var1_0.峨 = {
 		嵋 = {
 			弹 = {
 				簧 = {
@@ -106,7 +106,7 @@ end
 temp()
 
 function temp()
-	var1.额 = {
+	var1_0.额 = {
 		尔 = {
 			德 = {
 				尼 = {
@@ -120,7 +120,7 @@ end
 temp()
 
 function temp()
-	var1.額 = {
+	var1_0.額 = {
 		爾 = {
 			德 = {
 				尼 = {

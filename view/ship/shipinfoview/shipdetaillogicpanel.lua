@@ -1,5 +1,5 @@
-﻿local var0 = class("ShipDetailLogicPanel", import("...base.BasePanel"))
-local var1 = {
+﻿local var0_0 = class("ShipDetailLogicPanel", import("...base.BasePanel"))
+local var1_0 = {
 	durability = AttributeType.Durability,
 	armor = AttributeType.Armor,
 	reload = AttributeType.Reload,
@@ -17,7 +17,7 @@ local var1 = {
 	consume = AttributeType.Expend,
 	speed = AttributeType.Speed
 }
-local var2 = {
+local var2_0 = {
 	us = {
 		prop_ignore = {
 			luck = {
@@ -183,563 +183,563 @@ local var2 = {
 		hide = {}
 	}
 }
-local var3
-local var4 = 0.5
-local var5 = Vector3(1, 1, 1)
-local var6 = Vector3(1.3, 1.3, 1.3)
+local var3_0
+local var4_0 = 0.5
+local var5_0 = Vector3(1, 1, 1)
+local var6_0 = Vector3(1.3, 1.3, 1.3)
 
-var0.EQUIPMENT_ADDITION = 0
-var0.TECHNOLOGY_ADDITION = 1
-var0.CORE_ADDITION = 2
+var0_0.EQUIPMENT_ADDITION = 0
+var0_0.TECHNOLOGY_ADDITION = 1
+var0_0.CORE_ADDITION = 2
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1.gameObject)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1.gameObject)
 
-	arg0.skillContainer = findTF(arg0._tf, "skills/content")
-	arg0.skillContainerHz = arg0.skillContainer:GetComponent(typeof(HorizontalLayoutGroup))
-	arg0.skillTpl = findTF(arg0.skillContainer, "skill_tpl")
-	arg0.attrs = findTF(arg0._tf, "attrs/property")
-	arg0.powerTxt = findTF(arg0.attrs, "power/value")
-	arg0.levelTxt = findTF(arg0.attrs, "level_bg/level_label/Text")
-	arg0.levelSlider = findTF(arg0.attrs, "level_bg/exp")
-	arg0.expInfo = findTF(arg0.attrs, "level_bg/exp_info")
-	arg0.outline = findTF(arg0.attrs, "level_bg/outline")
-	arg0.levelTip = findTF(arg0.attrs, "level_bg/tip")
-	arg0.levelBg = findTF(arg0.attrs, "level_bg")
-	arg0.expTip = findTF(arg0.attrs, "level_bg/exp_tip")
-	arg0.armorNameTxt = arg0.attrs:Find("icons"):GetChild(1):Find("name")
+	arg0_1.skillContainer = findTF(arg0_1._tf, "skills/content")
+	arg0_1.skillContainerHz = arg0_1.skillContainer:GetComponent(typeof(HorizontalLayoutGroup))
+	arg0_1.skillTpl = findTF(arg0_1.skillContainer, "skill_tpl")
+	arg0_1.attrs = findTF(arg0_1._tf, "attrs/property")
+	arg0_1.powerTxt = findTF(arg0_1.attrs, "power/value")
+	arg0_1.levelTxt = findTF(arg0_1.attrs, "level_bg/level_label/Text")
+	arg0_1.levelSlider = findTF(arg0_1.attrs, "level_bg/exp")
+	arg0_1.expInfo = findTF(arg0_1.attrs, "level_bg/exp_info")
+	arg0_1.outline = findTF(arg0_1.attrs, "level_bg/outline")
+	arg0_1.levelTip = findTF(arg0_1.attrs, "level_bg/tip")
+	arg0_1.levelBg = findTF(arg0_1.attrs, "level_bg")
+	arg0_1.expTip = findTF(arg0_1.attrs, "level_bg/exp_tip")
+	arg0_1.armorNameTxt = arg0_1.attrs:Find("icons"):GetChild(1):Find("name")
 
 	if PLATFORM_CODE == PLATFORM_JP then
-		var3 = var2.jp
+		var3_0 = var2_0.jp
 	elseif PLATFORM_CODE == PLATFORM_KR then
-		var3 = var2.kr
+		var3_0 = var2_0.kr
 	elseif PLATFORM_CODE == PLATFORM_US then
-		var3 = var2.us
+		var3_0 = var2_0.us
 	else
-		var3 = var2.defaut
+		var3_0 = var2_0.defaut
 	end
 
-	local var0 = var3.sort_index
+	local var0_1 = var3_0.sort_index
 
-	for iter0 = 1, #var0 do
-		local var1 = var0[iter0]
-		local var2 = findTF(arg0.attrs, "props/" .. var1)
-		local var3 = findTF(arg0.attrs, "icons/" .. var1)
-		local var4 = pg.gametip["attr_" .. var1].tip
+	for iter0_1 = 1, #var0_1 do
+		local var1_1 = var0_1[iter0_1]
+		local var2_1 = findTF(arg0_1.attrs, "props/" .. var1_1)
+		local var3_1 = findTF(arg0_1.attrs, "icons/" .. var1_1)
+		local var4_1 = pg.gametip["attr_" .. var1_1].tip
 
-		if var4 and string.len(var4) > 0 and var1 ~= "armor" then
-			setText(findTF(var3, "name"), var4)
+		if var4_1 and string.len(var4_1) > 0 and var1_1 ~= "armor" then
+			setText(findTF(var3_1, "name"), var4_1)
 		end
 
-		var2:SetSiblingIndex(iter0 - 1)
-		var3:SetSiblingIndex(iter0 - 1)
+		var2_1:SetSiblingIndex(iter0_1 - 1)
+		var3_1:SetSiblingIndex(iter0_1 - 1)
 	end
 
-	local var5 = var3.hide
+	local var5_1 = var3_0.hide
 
-	for iter1 = 1, #var5 do
-		local var6 = var5[iter1]
-		local var7 = findTF(arg0.attrs, "props/" .. var6)
-		local var8 = findTF(arg0.attrs, "icons/" .. var6)
+	for iter1_1 = 1, #var5_1 do
+		local var6_1 = var5_1[iter1_1]
+		local var7_1 = findTF(arg0_1.attrs, "props/" .. var6_1)
+		local var8_1 = findTF(arg0_1.attrs, "icons/" .. var6_1)
 
-		setActive(var7, false)
-		setActive(var8, false)
+		setActive(var7_1, false)
+		setActive(var8_1, false)
 	end
 
-	local var9 = var3.prop_ignore
+	local var9_1 = var3_0.prop_ignore
 
-	for iter2, iter3 in pairs(var9) do
-		local var10 = findTF(arg0.attrs, "props/" .. iter2)
-		local var11 = findTF(arg0.attrs, "icons/" .. iter2)
+	for iter2_1, iter3_1 in pairs(var9_1) do
+		local var10_1 = findTF(arg0_1.attrs, "props/" .. iter2_1)
+		local var11_1 = findTF(arg0_1.attrs, "icons/" .. iter2_1)
 
-		GetOrAddComponent(var10, typeof(LayoutElement)).ignoreLayout = true
-		GetOrAddComponent(var11, typeof(LayoutElement)).ignoreLayout = true
-		var10.anchorMax = Vector2(0, 1)
-		var10.anchorMin = Vector2(0, 1)
-		var11.anchorMax = Vector2(0, 1)
-		var11.anchorMin = Vector2(0, 1)
-		var10.anchoredPosition = Vector2(iter3[3], iter3[4])
-		var11.anchoredPosition = Vector2(iter3[1], iter3[2])
+		GetOrAddComponent(var10_1, typeof(LayoutElement)).ignoreLayout = true
+		GetOrAddComponent(var11_1, typeof(LayoutElement)).ignoreLayout = true
+		var10_1.anchorMax = Vector2(0, 1)
+		var10_1.anchorMin = Vector2(0, 1)
+		var11_1.anchorMax = Vector2(0, 1)
+		var11_1.anchorMin = Vector2(0, 1)
+		var10_1.anchoredPosition = Vector2(iter3_1[3], iter3_1[4])
+		var11_1.anchoredPosition = Vector2(iter3_1[1], iter3_1[2])
 	end
 end
 
-function var0.attach(arg0, arg1)
-	var0.super.attach(arg0, arg1)
+function var0_0.attach(arg0_2, arg1_2)
+	var0_0.super.attach(arg0_2, arg1_2)
 
-	arg0.evalueToggle = arg0.attrs:Find("evalue_toggle")
-	arg0.evalueIndex = var0.EQUIPMENT_ADDITION
+	arg0_2.evalueToggle = arg0_2.attrs:Find("evalue_toggle")
+	arg0_2.evalueIndex = var0_0.EQUIPMENT_ADDITION
 
-	onToggle(arg0.viewComponent, arg0.evalueToggle, function()
-		arg0.evalueIndex = 1 - arg0.evalueIndex
+	onToggle(arg0_2.viewComponent, arg0_2.evalueToggle, function()
+		arg0_2.evalueIndex = 1 - arg0_2.evalueIndex
 
-		arg0:updateEvalues()
+		arg0_2:updateEvalues()
 	end)
 end
 
-function var0.enableEvent(arg0, arg1)
-	arg0:emit(ShipViewConst.SET_CLICK_ENABLE, arg1)
+function var0_0.enableEvent(arg0_4, arg1_4)
+	arg0_4:emit(ShipViewConst.SET_CLICK_ENABLE, arg1_4)
 end
 
-function var0.flush(arg0, arg1)
-	assert(arg1, "shipVO can not be nil")
+function var0_0.flush(arg0_5, arg1_5)
+	assert(arg1_5, "shipVO can not be nil")
 
-	arg0.shipDataTemplate = pg.ship_data_template[arg1.configId]
-	arg0.shipVO = arg1
+	arg0_5.shipDataTemplate = pg.ship_data_template[arg1_5.configId]
+	arg0_5.shipVO = arg1_5
 
-	arg0:updateShipAttrs()
-	arg0:updateSKills()
-	arg0:updateLevelInfo()
+	arg0_5:updateShipAttrs()
+	arg0_5:updateSKills()
+	arg0_5:updateLevelInfo()
 
-	local var0 = arg1:isMaxStar()
+	local var0_5 = arg1_5:isMaxStar()
 
-	if not var0 and arg0.evalueIndex == var0.TECHNOLOGY_ADDITION then
-		triggerToggle(arg0.evalueToggle, false)
+	if not var0_5 and arg0_5.evalueIndex == var0_0.TECHNOLOGY_ADDITION then
+		triggerToggle(arg0_5.evalueToggle, false)
 	end
 
-	setActive(arg0.evalueToggle, var0)
+	setActive(arg0_5.evalueToggle, var0_5)
 end
 
-function var0.updateEvalues(arg0)
-	if not arg0.additionValues then
+function var0_0.updateEvalues(arg0_6)
+	if not arg0_6.additionValues then
 		return
 	end
 
-	local var0 = table.contains(TeamType.SubShipType, arg0.shipVO:getShipType())
+	local var0_6 = table.contains(TeamType.SubShipType, arg0_6.shipVO:getShipType())
 
-	for iter0, iter1 in pairs(arg0.additionValues.transforms) do
-		if iter0 == AttributeType.Armor or iter0 == AttributeType.Expend or iter0 == AttributeType.HuntingRange and var0 then
-			setText(iter1, "")
-			setActive(iter1, false)
+	for iter0_6, iter1_6 in pairs(arg0_6.additionValues.transforms) do
+		if iter0_6 == AttributeType.Armor or iter0_6 == AttributeType.Expend or iter0_6 == AttributeType.HuntingRange and var0_6 then
+			setText(iter1_6, "")
+			setActive(iter1_6, false)
 		else
-			local var1 = arg0.additionValues[arg0.evalueIndex][iter0] or 0
-			local var2 = arg0.shipVO:getTechNationMaxAddition(iter0)
-			local var3 = arg0.evalueIndex == var0.EQUIPMENT_ADDITION and COLOR_GREEN or COLOR_YELLOW
+			local var1_6 = arg0_6.additionValues[arg0_6.evalueIndex][iter0_6] or 0
+			local var2_6 = arg0_6.shipVO:getTechNationMaxAddition(iter0_6)
+			local var3_6 = arg0_6.evalueIndex == var0_0.EQUIPMENT_ADDITION and COLOR_GREEN or COLOR_YELLOW
 
-			if arg0.evalueIndex == var0.TECHNOLOGY_ADDITION and var1 ~= var2 then
-				var3 = "#B4BFD5FF"
+			if arg0_6.evalueIndex == var0_0.TECHNOLOGY_ADDITION and var1_6 ~= var2_6 then
+				var3_6 = "#B4BFD5FF"
 			end
 
-			setText(iter1, var1 == 0 and "" or setColorStr(" +" .. var1, var3))
-			setActive(iter1, var1 ~= 0)
+			setText(iter1_6, var1_6 == 0 and "" or setColorStr(" +" .. var1_6, var3_6))
+			setActive(iter1_6, var1_6 ~= 0)
 		end
 	end
 end
 
-function var0.updateShipAttrs(arg0)
-	arg0.additionValues = {
-		[var0.EQUIPMENT_ADDITION] = {},
-		[var0.TECHNOLOGY_ADDITION] = {},
+function var0_0.updateShipAttrs(arg0_7)
+	arg0_7.additionValues = {
+		[var0_0.EQUIPMENT_ADDITION] = {},
+		[var0_0.TECHNOLOGY_ADDITION] = {},
 		transforms = {}
 	}
 
-	local var0 = arg0.shipVO
-	local var1 = table.contains(TeamType.SubShipType, var0:getShipType())
-	local var2 = intProperties(var0:isBluePrintShip() and var0:getBluePrint():getShipProperties(var0) or var0:getShipProperties())
-	local var3, var4 = var0:getEquipmentProperties()
-	local var5 = intProperties(var3)
-	local var6 = intProperties(var4)
-	local var7 = var0:getShipCombatPower()
+	local var0_7 = arg0_7.shipVO
+	local var1_7 = table.contains(TeamType.SubShipType, var0_7:getShipType())
+	local var2_7 = intProperties(var0_7:isBluePrintShip() and var0_7:getBluePrint():getShipProperties(var0_7) or var0_7:getShipProperties())
+	local var3_7, var4_7 = var0_7:getEquipmentProperties()
+	local var5_7 = intProperties(var3_7)
+	local var6_7 = intProperties(var4_7)
+	local var7_7 = var0_7:getShipCombatPower()
 
-	FormationUI.tweenNumText(arg0.powerTxt, var7)
+	FormationUI.tweenNumText(arg0_7.powerTxt, var7_7)
 
-	for iter0, iter1 in pairs(var1) do
-		local var8 = findTF(arg0.attrs, "props/" .. iter0)
-		local var9 = findTF(arg0.attrs, "icons/" .. iter0)
-		local var10 = findTF(var8, "value")
-		local var11 = findTF(var8, "add")
-		local var12 = var2[iter1] or 0
-		local var13 = var6[iter1] or 1
-		local var14 = calcFloor(((var5[iter1] or 0) + var12) * var13) - var12
+	for iter0_7, iter1_7 in pairs(var1_0) do
+		local var8_7 = findTF(arg0_7.attrs, "props/" .. iter0_7)
+		local var9_7 = findTF(arg0_7.attrs, "icons/" .. iter0_7)
+		local var10_7 = findTF(var8_7, "value")
+		local var11_7 = findTF(var8_7, "add")
+		local var12_7 = var2_7[iter1_7] or 0
+		local var13_7 = var6_7[iter1_7] or 1
+		local var14_7 = calcFloor(((var5_7[iter1_7] or 0) + var12_7) * var13_7) - var12_7
 
-		setText(var10, var12)
+		setText(var10_7, var12_7)
 
-		arg0.additionValues.transforms[iter1] = var11
-		arg0.additionValues[0][iter1] = var14
-		arg0.additionValues[1][iter1] = var0:getTechNationAddition(iter1)
+		arg0_7.additionValues.transforms[iter1_7] = var11_7
+		arg0_7.additionValues[0][iter1_7] = var14_7
+		arg0_7.additionValues[1][iter1_7] = var0_7:getTechNationAddition(iter1_7)
 
-		if iter1 == AttributeType.Armor then
-			setActive(var10, false)
-			setActive(var11, false)
-			setText(arg0.armorNameTxt, var0:getShipArmorName())
-		elseif iter1 == AttributeType.Expend then
-			setText(findTF(var8, "value"), var0:getBattleTotalExpend())
-			setActive(var11, false)
-		elseif iter1 == AttributeType.HuntingRange then
-			setActive(var9, var1)
-			setActive(var8, var1)
+		if iter1_7 == AttributeType.Armor then
+			setActive(var10_7, false)
+			setActive(var11_7, false)
+			setText(arg0_7.armorNameTxt, var0_7:getShipArmorName())
+		elseif iter1_7 == AttributeType.Expend then
+			setText(findTF(var8_7, "value"), var0_7:getBattleTotalExpend())
+			setActive(var11_7, false)
+		elseif iter1_7 == AttributeType.HuntingRange then
+			setActive(var9_7, var1_7)
+			setActive(var8_7, var1_7)
 
-			if var1 then
-				setActive(var10, false)
-				setActive(var11, false)
+			if var1_7 then
+				setActive(var10_7, false)
+				setActive(var11_7, false)
 			end
-		elseif iter1 == AttributeType.AntiSub then
-			setActive(var9, not var1)
-			setActive(var8, not var1)
-		elseif iter1 == AttributeType.OxyMax or iter1 == AttributeType.Ammo then
-			setActive(var9, var1)
-			setActive(var8, var1)
+		elseif iter1_7 == AttributeType.AntiSub then
+			setActive(var9_7, not var1_7)
+			setActive(var8_7, not var1_7)
+		elseif iter1_7 == AttributeType.OxyMax or iter1_7 == AttributeType.Ammo then
+			setActive(var9_7, var1_7)
+			setActive(var8_7, var1_7)
 
-			if iter1 == AttributeType.Ammo then
-				setText(var10, var0:getShipAmmo())
+			if iter1_7 == AttributeType.Ammo then
+				setText(var10_7, var0_7:getShipAmmo())
 			end
 		end
 	end
 
-	arg0:updateEvalues()
+	arg0_7:updateEvalues()
 end
 
-function var0.updateSKills(arg0)
-	local var0 = arg0.shipVO
-	local var1 = Clone(arg0.shipDataTemplate.buff_list_display)
+function var0_0.updateSKills(arg0_8)
+	local var0_8 = arg0_8.shipVO
+	local var1_8 = Clone(arg0_8.shipDataTemplate.buff_list_display)
 
-	for iter0 = #var1 + 1, 3 do
-		table.insert(var1, false)
+	for iter0_8 = #var1_8 + 1, 3 do
+		table.insert(var1_8, false)
 	end
 
-	setActive(arg0.skillTpl, false)
+	setActive(arg0_8.skillTpl, false)
 
-	local var2 = UIItemList.New(arg0.skillContainer, arg0.skillTpl)
+	local var2_8 = UIItemList.New(arg0_8.skillContainer, arg0_8.skillTpl)
 
-	var2:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = var1[arg1 + 1]
+	var2_8:make(function(arg0_9, arg1_9, arg2_9)
+		if arg0_9 == UIItemList.EventUpdate then
+			local var0_9 = var1_8[arg1_9 + 1]
 
-			if var0 then
-				local var1 = var0:fateSkillChange(var0)
-				local var2 = getSkillConfig(var0:RemapSkillId(var1))
-				local var3 = var0.skills[var1]
+			if var0_9 then
+				local var1_9 = var0_8:fateSkillChange(var0_9)
+				local var2_9 = getSkillConfig(var0_8:RemapSkillId(var1_9))
+				local var3_9 = var0_8.skills[var1_9]
 
-				if var3 and var3.id == 11720 and not var0.transforms[3612] then
-					var3 = nil
+				if var3_9 and var3_9.id == 11720 and not var0_8.transforms[3612] then
+					var3_9 = nil
 				end
 
-				if var3 and var3.id == 14900 and not var0.transforms[16412] then
-					var3 = nil
+				if var3_9 and var3_9.id == 14900 and not var0_8.transforms[16412] then
+					var3_9 = nil
 				end
 
-				arg0:updateSkillTF(arg2, var2, var3)
-				onButton(arg0, arg2, function()
-					arg0:emit(ShipMainMediator.ON_SKILL, var2.id, var3, arg1 + 1)
+				arg0_8:updateSkillTF(arg2_9, var2_9, var3_9)
+				onButton(arg0_8, arg2_9, function()
+					arg0_8:emit(ShipMainMediator.ON_SKILL, var2_9.id, var3_9, arg1_9 + 1)
 				end, SFX_PANEL)
 			else
-				arg0:updateSkillTF(arg2)
-				RemoveComponent(arg2, "Button")
+				arg0_8:updateSkillTF(arg2_9)
+				RemoveComponent(arg2_9, "Button")
 			end
 		end
 	end)
-	var2:align(#var1)
+	var2_8:align(#var1_8)
 end
 
-function var0.updateSkillTF(arg0, arg1, arg2, arg3)
-	local var0 = findTF(arg1, "skill")
-	local var1 = findTF(arg1, "lock")
-	local var2 = findTF(arg1, "unknown")
+function var0_0.updateSkillTF(arg0_11, arg1_11, arg2_11, arg3_11)
+	local var0_11 = findTF(arg1_11, "skill")
+	local var1_11 = findTF(arg1_11, "lock")
+	local var2_11 = findTF(arg1_11, "unknown")
 
-	if arg2 then
-		setActive(var0, true)
-		setActive(var2, false)
-		setActive(var1, not arg3)
-		LoadImageSpriteAsync("skillicon/" .. arg2.icon, findTF(var0, "icon"))
+	if arg2_11 then
+		setActive(var0_11, true)
+		setActive(var2_11, false)
+		setActive(var1_11, not arg3_11)
+		LoadImageSpriteAsync("skillicon/" .. arg2_11.icon, findTF(var0_11, "icon"))
 
-		findTF(var0, "mask/name").anchoredPosition = Vector2(0, 0)
+		findTF(var0_11, "mask/name").anchoredPosition = Vector2(0, 0)
 
-		setScrollText(findTF(var0, "mask/name"), getSkillName(arg2.id))
+		setScrollText(findTF(var0_11, "mask/name"), getSkillName(arg2_11.id))
 
-		local var3 = findTF(var0, "level")
+		local var3_11 = findTF(var0_11, "level")
 
-		setText(var3, "LEVEL: " .. (arg3 and arg3.level or "??"))
+		setText(var3_11, "LEVEL: " .. (arg3_11 and arg3_11.level or "??"))
 	else
-		setActive(var0, false)
-		setActive(var2, true)
-		setActive(var1, false)
+		setActive(var0_11, false)
+		setActive(var2_11, true)
+		setActive(var1_11, false)
 	end
 end
 
-function var0.updateLevelInfo(arg0)
-	local var0 = arg0.shipVO
+function var0_0.updateLevelInfo(arg0_12)
+	local var0_12 = arg0_12.shipVO
 
-	setText(arg0.levelTxt, var0.level)
+	setText(arg0_12.levelTxt, var0_12.level)
 
-	local var1 = var0:getLevelExpConfig()
+	local var1_12 = var0_12:getLevelExpConfig()
 
-	if var0.level ~= var0:getMaxLevel() then
-		setSlider(arg0.levelSlider, 0, var1.exp_interval, var0.exp)
-		setText(arg0.expInfo, var0.exp .. "/" .. var1.exp_interval)
+	if var0_12.level ~= var0_12:getMaxLevel() then
+		setSlider(arg0_12.levelSlider, 0, var1_12.exp_interval, var0_12.exp)
+		setText(arg0_12.expInfo, var0_12.exp .. "/" .. var1_12.exp_interval)
 	else
-		setSlider(arg0.levelSlider, 0, 1, 1)
-		setText(arg0.expInfo, var0.exp .. "/Max")
+		setSlider(arg0_12.levelSlider, 0, 1, 1)
+		setText(arg0_12.expInfo, var0_12.exp .. "/Max")
 	end
 
-	arg0:updateMaxLevel(var0)
-	arg0:UpdateExpTip(var0)
+	arg0_12:updateMaxLevel(var0_12)
+	arg0_12:UpdateExpTip(var0_12)
 end
 
-function var0.UpdateExpTip(arg0, arg1)
-	local var0 = arg1:isReachNextMaxLevel()
-	local var1 = arg1.level >= arg1.maxLevel
+function var0_0.UpdateExpTip(arg0_13, arg1_13)
+	local var0_13 = arg1_13:isReachNextMaxLevel()
+	local var1_13 = arg1_13.level >= arg1_13.maxLevel
 
-	setActive(arg0.expTip, not var0 and not var1)
-	onButton(arg0, arg0.expTip, function()
-		if arg1:isActivityNpc() then
+	setActive(arg0_13.expTip, not var0_13 and not var1_13)
+	onButton(arg0_13, arg0_13.expTip, function()
+		if arg1_13:isActivityNpc() then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("coures_exp_npc_tip"),
 				onYes = function()
-					arg0:emit(ShipViewConst.SHOW_EXP_ITEM_USAGE, arg1)
+					arg0_13:emit(ShipViewConst.SHOW_EXP_ITEM_USAGE, arg1_13)
 				end
 			})
 		else
-			arg0:emit(ShipViewConst.SHOW_EXP_ITEM_USAGE, arg1)
+			arg0_13:emit(ShipViewConst.SHOW_EXP_ITEM_USAGE, arg1_13)
 		end
 	end, SFX_PANEL)
 end
 
-function var0.updateMaxLevel(arg0, arg1)
-	if arg1:isReachNextMaxLevel() then
-		SetActive(arg0.outline, true)
-		setActive(arg0.levelTip, true)
-		blinkAni(arg0.outline, 1.5, -1, 0.1):setFrom(1)
-		blinkAni(arg0.levelTip, 1.5, -1, 0.1):setFrom(1)
+function var0_0.updateMaxLevel(arg0_16, arg1_16)
+	if arg1_16:isReachNextMaxLevel() then
+		SetActive(arg0_16.outline, true)
+		setActive(arg0_16.levelTip, true)
+		blinkAni(arg0_16.outline, 1.5, -1, 0.1):setFrom(1)
+		blinkAni(arg0_16.levelTip, 1.5, -1, 0.1):setFrom(1)
 
-		local var0 = arg1:getNextMaxLevelConsume()
-		local var1 = arg1:getMaxLevel()
-		local var2 = arg1:getNextMaxLevel()
+		local var0_16 = arg1_16:getNextMaxLevelConsume()
+		local var1_16 = arg1_16:getMaxLevel()
+		local var2_16 = arg1_16:getNextMaxLevel()
 
-		onButton(arg0, arg0.levelBg, function()
-			if arg1:isActivityNpc() then
+		onButton(arg0_16, arg0_16.levelBg, function()
+			if arg1_16:isActivityNpc() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("npc_upgrade_max_level"))
 
 				return
 			end
 
-			arg0:emit(ShipViewConst.SHOW_CUSTOM_MSG, {
+			arg0_16:emit(ShipViewConst.SHOW_CUSTOM_MSG, {
 				content = i18n("upgrade_to_next_maxlevel_tip"),
-				content1 = var1 .. "->" .. var2,
-				items = var0,
+				content1 = var1_16 .. "->" .. var2_16,
+				items = var0_16,
 				onYes = function()
-					local var0, var1 = arg1:canUpgradeMaxLevel()
+					local var0_18, var1_18 = arg1_16:canUpgradeMaxLevel()
 
-					if var0 then
-						arg0:emit(ShipViewConst.HIDE_CUSTOM_MSG)
-						arg0:emit(ShipMainMediator.ON_UPGRADE_MAX_LEVEL, arg1.id)
+					if var0_18 then
+						arg0_16:emit(ShipViewConst.HIDE_CUSTOM_MSG)
+						arg0_16:emit(ShipMainMediator.ON_UPGRADE_MAX_LEVEL, arg1_16.id)
 					else
-						pg.TipsMgr.GetInstance():ShowTips(var1)
+						pg.TipsMgr.GetInstance():ShowTips(var1_18)
 					end
 				end
 			})
 		end, SFX_PANEL)
 	else
-		arg0:removeLevelUpTip()
+		arg0_16:removeLevelUpTip()
 	end
 end
 
-function var0.removeLevelUpTip(arg0)
-	SetActive(arg0.outline, false)
-	setActive(arg0.levelTip, false)
+function var0_0.removeLevelUpTip(arg0_19)
+	SetActive(arg0_19.outline, false)
+	setActive(arg0_19.levelTip, false)
 
-	if LeanTween.isTweening(go(arg0.outline)) then
-		LeanTween.cancel(go(arg0.outline))
+	if LeanTween.isTweening(go(arg0_19.outline)) then
+		LeanTween.cancel(go(arg0_19.outline))
 	end
 
-	if LeanTween.isTweening(go(arg0.levelTip)) then
-		LeanTween.cancel(go(arg0.levelTip))
+	if LeanTween.isTweening(go(arg0_19.levelTip)) then
+		LeanTween.cancel(go(arg0_19.levelTip))
 	end
 
-	removeOnButton(arg0.levelBg)
+	removeOnButton(arg0_19.levelBg)
 end
 
-function var0.doLeveUpAnim(arg0, arg1, arg2, arg3)
-	arg0:removeLevelUpTip()
-	arg0:enableEvent(false)
+function var0_0.doLeveUpAnim(arg0_20, arg1_20, arg2_20, arg3_20)
+	arg0_20:removeLevelUpTip()
+	arg0_20:enableEvent(false)
 
-	local var0 = {}
+	local var0_20 = {}
 
-	if arg1.level < arg2.level then
-		local var1 = arg2.level - arg1.level
-		local var2 = arg1:getLevelExpConfig()
+	if arg1_20.level < arg2_20.level then
+		local var1_20 = arg2_20.level - arg1_20.level
+		local var2_20 = arg1_20:getLevelExpConfig()
 
-		for iter0 = 1, var1 do
-			table.insert(var0, function(arg0)
-				TweenValue(arg0.levelSlider, 0, var2.exp_interval, var4, 0, function(arg0)
-					setSlider(arg0.levelSlider, 0, var2.exp_interval, arg0)
-					setText(arg0.expInfo, math.floor(arg0) .. "/" .. var2.exp_interval)
+		for iter0_20 = 1, var1_20 do
+			table.insert(var0_20, function(arg0_21)
+				TweenValue(arg0_20.levelSlider, 0, var2_20.exp_interval, var4_0, 0, function(arg0_22)
+					setSlider(arg0_20.levelSlider, 0, var2_20.exp_interval, arg0_22)
+					setText(arg0_20.expInfo, math.floor(arg0_22) .. "/" .. var2_20.exp_interval)
 				end, function()
-					local var0 = Clone(arg1)
+					local var0_23 = Clone(arg1_20)
 
-					arg1.level = arg1.level + 1
-					var2 = arg1:getLevelExpConfig()
+					arg1_20.level = arg1_20.level + 1
+					var2_20 = arg1_20:getLevelExpConfig()
 
-					arg0:scaleAnim(arg0.levelTxt, var5, var6, var4 / 2, function()
-						if arg1.level == arg2.level then
-							arg0:doAttrAnim(var0, arg2, function()
-								TweenValue(arg0.levelSlider, 0, arg2.exp, var4, 0, function(arg0)
-									setSlider(arg0.levelSlider, 0, var2.exp_interval, arg0)
-									setText(arg0.expInfo, math.floor(arg0) .. "/" .. var2.exp_interval)
-								end, arg0)
+					arg0_20:scaleAnim(arg0_20.levelTxt, var5_0, var6_0, var4_0 / 2, function()
+						if arg1_20.level == arg2_20.level then
+							arg0_20:doAttrAnim(var0_23, arg2_20, function()
+								TweenValue(arg0_20.levelSlider, 0, arg2_20.exp, var4_0, 0, function(arg0_26)
+									setSlider(arg0_20.levelSlider, 0, var2_20.exp_interval, arg0_26)
+									setText(arg0_20.expInfo, math.floor(arg0_26) .. "/" .. var2_20.exp_interval)
+								end, arg0_21)
 							end)
 						else
-							arg0:doAttrAnim(var0, arg1, arg0)
+							arg0_20:doAttrAnim(var0_23, arg1_20, arg0_21)
 						end
 					end, function()
-						setText(arg0.levelTxt, arg1.level)
+						setText(arg0_20.levelTxt, arg1_20.level)
 					end)
 				end)
 			end)
 		end
 	else
-		local var3 = arg2:getLevelExpConfig()
+		local var3_20 = arg2_20:getLevelExpConfig()
 
-		if arg2.exp > arg1.exp then
-			table.insert(var0, function(arg0)
-				TweenValue(arg0.levelSlider, arg1.exp, arg2.exp, var4, 0, function(arg0)
-					setSlider(arg0.levelSlider, 0, var3.exp_interval, arg0)
-					setText(arg0.expInfo, math.floor(arg0) .. "/" .. var3.exp_interval)
-				end, arg0)
+		if arg2_20.exp > arg1_20.exp then
+			table.insert(var0_20, function(arg0_28)
+				TweenValue(arg0_20.levelSlider, arg1_20.exp, arg2_20.exp, var4_0, 0, function(arg0_29)
+					setSlider(arg0_20.levelSlider, 0, var3_20.exp_interval, arg0_29)
+					setText(arg0_20.expInfo, math.floor(arg0_29) .. "/" .. var3_20.exp_interval)
+				end, arg0_28)
 			end)
 		end
 	end
 
-	seriesAsync(var0, function()
-		if arg3 then
-			arg3()
+	seriesAsync(var0_20, function()
+		if arg3_20 then
+			arg3_20()
 		end
 
-		arg0:enableEvent(true)
+		arg0_20:enableEvent(true)
 	end)
 end
 
-function var0.doAttrAnim(arg0, arg1, arg2, arg3)
-	local var0 = intProperties(arg1:getShipProperties())
-	local var1, var2 = arg1:getEquipmentProperties()
-	local var3 = intProperties(arg2:getShipProperties())
-	local var4, var5 = arg2:getEquipmentProperties()
-	local var6 = intProperties(var1)
-	local var7 = intProperties(var2)
-	local var8 = intProperties(var4)
-	local var9 = intProperties(var5)
-	local var10 = {}
-	local var11 = arg2:getShipCombatPower()
-	local var12 = arg1:getShipCombatPower()
+function var0_0.doAttrAnim(arg0_31, arg1_31, arg2_31, arg3_31)
+	local var0_31 = intProperties(arg1_31:getShipProperties())
+	local var1_31, var2_31 = arg1_31:getEquipmentProperties()
+	local var3_31 = intProperties(arg2_31:getShipProperties())
+	local var4_31, var5_31 = arg2_31:getEquipmentProperties()
+	local var6_31 = intProperties(var1_31)
+	local var7_31 = intProperties(var2_31)
+	local var8_31 = intProperties(var4_31)
+	local var9_31 = intProperties(var5_31)
+	local var10_31 = {}
+	local var11_31 = arg2_31:getShipCombatPower()
+	local var12_31 = arg1_31:getShipCombatPower()
 
-	if var12 ~= var11 then
-		table.insert(var10, function(arg0)
-			TweenValue(arg0.powerTxt, var12, var11, var4, 0, function(arg0)
-				setText(arg0.powerTxt, math.floor(arg0))
-			end, arg0)
+	if var12_31 ~= var11_31 then
+		table.insert(var10_31, function(arg0_32)
+			TweenValue(arg0_31.powerTxt, var12_31, var11_31, var4_0, 0, function(arg0_33)
+				setText(arg0_31.powerTxt, math.floor(arg0_33))
+			end, arg0_32)
 		end)
 	end
 
-	for iter0, iter1 in pairs(var1) do
-		local var13 = findTF(arg0.attrs, "props/" .. iter0) or findTF(arg0.attrs, "prop_" .. iter0)
-		local var14 = findTF(arg0.attrs, "icons/" .. iter0) or findTF(arg0.attrs, "icon_" .. iter0)
-		local var15 = findTF(var13, "value")
-		local var16 = findTF(var13, "add")
-		local var17 = var0[iter1] or 0
-		local var18 = var7[iter1] or 1
-		local var19 = var3[iter1] or 0
-		local var20 = var9[iter1] or 1
-		local var21
-		local var22
+	for iter0_31, iter1_31 in pairs(var1_0) do
+		local var13_31 = findTF(arg0_31.attrs, "props/" .. iter0_31) or findTF(arg0_31.attrs, "prop_" .. iter0_31)
+		local var14_31 = findTF(arg0_31.attrs, "icons/" .. iter0_31) or findTF(arg0_31.attrs, "icon_" .. iter0_31)
+		local var15_31 = findTF(var13_31, "value")
+		local var16_31 = findTF(var13_31, "add")
+		local var17_31 = var0_31[iter1_31] or 0
+		local var18_31 = var7_31[iter1_31] or 1
+		local var19_31 = var3_31[iter1_31] or 0
+		local var20_31 = var9_31[iter1_31] or 1
+		local var21_31
+		local var22_31
 
-		if arg0.evalueIndex == var0.EQUIPMENT_ADDITION then
-			var21 = calcFloor(((var6[iter1] or 0) + var17) * var18) - var17
-			var22 = calcFloor(((var8[iter1] or 0) + var19) * var20) - var19
-		elseif arg0.evalueIndex == var0.TECHNOLOGY_ADDITION then
-			var21 = arg1:getTechNationAddition(iter1)
-			var22 = arg2:getTechNationAddition(iter1)
+		if arg0_31.evalueIndex == var0_0.EQUIPMENT_ADDITION then
+			var21_31 = calcFloor(((var6_31[iter1_31] or 0) + var17_31) * var18_31) - var17_31
+			var22_31 = calcFloor(((var8_31[iter1_31] or 0) + var19_31) * var20_31) - var19_31
+		elseif arg0_31.evalueIndex == var0_0.TECHNOLOGY_ADDITION then
+			var21_31 = arg1_31:getTechNationAddition(iter1_31)
+			var22_31 = arg2_31:getTechNationAddition(iter1_31)
 		end
 
-		if var17 ~= 0 then
-			table.insert(var10, function(arg0)
-				TweenValue(var15, var17, var19, var4, 0, function(arg0)
-					setText(var15, math.floor(arg0))
-				end, arg0)
-				arg0:scaleAnim(var15, var5, var6, var4 / 2)
+		if var17_31 ~= 0 then
+			table.insert(var10_31, function(arg0_34)
+				TweenValue(var15_31, var17_31, var19_31, var4_0, 0, function(arg0_35)
+					setText(var15_31, math.floor(arg0_35))
+				end, arg0_34)
+				arg0_31:scaleAnim(var15_31, var5_0, var6_0, var4_0 / 2)
 			end)
 		end
 
-		if var21 < var22 then
-			local var23 = arg0.evalueIndex == var0.EQUIPMENT_ADDITION and COLOR_GREEN or COLOR_YELLOW
+		if var21_31 < var22_31 then
+			local var23_31 = arg0_31.evalueIndex == var0_0.EQUIPMENT_ADDITION and COLOR_GREEN or COLOR_YELLOW
 
-			table.insert(var10, function(arg0)
-				TweenValue(var16, var21, var22, var4, 0, function(arg0)
-					setText(var16, setColorStr("+" .. math.floor(arg0), var23))
-				end, arg0)
-				arg0:scaleAnim(var16, var5, var6, var4 / 2)
+			table.insert(var10_31, function(arg0_36)
+				TweenValue(var16_31, var21_31, var22_31, var4_0, 0, function(arg0_37)
+					setText(var16_31, setColorStr("+" .. math.floor(arg0_37), var23_31))
+				end, arg0_36)
+				arg0_31:scaleAnim(var16_31, var5_0, var6_0, var4_0 / 2)
 			end)
 		end
 
-		setActive(var16, var22 ~= 0)
+		setActive(var16_31, var22_31 ~= 0)
 
-		if iter1 == AttributeType.Armor then
-			setActive(var15, false)
-			setActive(var16, false)
-			setText(arg0.armorNameTxt, arg2:getShipArmorName())
-		elseif iter1 == AttributeType.Expend then
-			local var24 = arg2:getBattleTotalExpend()
-			local var25 = arg1:getBattleTotalExpend()
-			local var26 = findTF(var13, "value")
+		if iter1_31 == AttributeType.Armor then
+			setActive(var15_31, false)
+			setActive(var16_31, false)
+			setText(arg0_31.armorNameTxt, arg2_31:getShipArmorName())
+		elseif iter1_31 == AttributeType.Expend then
+			local var24_31 = arg2_31:getBattleTotalExpend()
+			local var25_31 = arg1_31:getBattleTotalExpend()
+			local var26_31 = findTF(var13_31, "value")
 
-			if var25 ~= var24 then
-				table.insert(var10, function(arg0)
-					TweenValue(var26, var25, var24, var4, 0, function(arg0)
-						setText(var26, math.floor(arg0))
-					end, arg0)
-					arg0:scaleAnim(var26, var5, var6, var4 / 2)
+			if var25_31 ~= var24_31 then
+				table.insert(var10_31, function(arg0_38)
+					TweenValue(var26_31, var25_31, var24_31, var4_0, 0, function(arg0_39)
+						setText(var26_31, math.floor(arg0_39))
+					end, arg0_38)
+					arg0_31:scaleAnim(var26_31, var5_0, var6_0, var4_0 / 2)
 				end)
 			end
 
-			setActive(var16, false)
-		elseif iter1 == AttributeType.OxyMax or iter1 == AttributeType.Tactics then
-			local var27 = table.contains(TeamType.SubShipType, arg2:getShipType())
+			setActive(var16_31, false)
+		elseif iter1_31 == AttributeType.OxyMax or iter1_31 == AttributeType.Tactics then
+			local var27_31 = table.contains(TeamType.SubShipType, arg2_31:getShipType())
 
-			setActive(var14, var27)
-			setActive(var13, var27)
+			setActive(var14_31, var27_31)
+			setActive(var13_31, var27_31)
 
-			if var27 and iter1 == AttributeType.Tactics then
-				local var28, var29 = arg2:getTactics()
+			if var27_31 and iter1_31 == AttributeType.Tactics then
+				local var28_31, var29_31 = arg2_31:getTactics()
 
-				setActive(var15, false)
-				setActive(var16, true)
-				setText(var16, i18n(var29))
+				setActive(var15_31, false)
+				setActive(var16_31, true)
+				setText(var16_31, i18n(var29_31))
 			end
 		end
 	end
 
-	parallelAsync(var10, function()
-		if arg3 then
-			arg3()
+	parallelAsync(var10_31, function()
+		if arg3_31 then
+			arg3_31()
 		end
 	end)
 end
 
-function var0.scaleAnim(arg0, arg1, arg2, arg3, arg4, arg5, arg6)
-	LeanTween.scale(go(arg1), arg3, arg4):setFrom(arg2):setOnComplete(System.Action(function()
-		if arg6 then
-			arg6()
+function var0_0.scaleAnim(arg0_41, arg1_41, arg2_41, arg3_41, arg4_41, arg5_41, arg6_41)
+	LeanTween.scale(go(arg1_41), arg3_41, arg4_41):setFrom(arg2_41):setOnComplete(System.Action(function()
+		if arg6_41 then
+			arg6_41()
 		end
 
-		LeanTween.scale(go(arg1), arg2, arg4):setFrom(arg3):setOnComplete(System.Action(arg5))
+		LeanTween.scale(go(arg1_41), arg2_41, arg4_41):setFrom(arg3_41):setOnComplete(System.Action(arg5_41))
 	end))
 end
 
-function var0.clear(arg0)
-	triggerToggle(arg0.evalueToggle, false)
+function var0_0.clear(arg0_43)
+	triggerToggle(arg0_43.evalueToggle, false)
 
-	if LeanTween.isTweening(go(arg0.levelSlider)) then
-		LeanTween.cancel(go(arg0.levelSlider))
+	if LeanTween.isTweening(go(arg0_43.levelSlider)) then
+		LeanTween.cancel(go(arg0_43.levelSlider))
 	end
 
-	if LeanTween.isTweening(go(arg0.powerTxt)) then
-		LeanTween.cancel(go(arg0.powerTxt))
+	if LeanTween.isTweening(go(arg0_43.powerTxt)) then
+		LeanTween.cancel(go(arg0_43.powerTxt))
 	end
 
-	if LeanTween.isTweening(go(arg0.expInfo)) then
-		LeanTween.cancel(go(arg0.expInfo))
+	if LeanTween.isTweening(go(arg0_43.expInfo)) then
+		LeanTween.cancel(go(arg0_43.expInfo))
 	end
 
-	arg0:removeLevelUpTip()
+	arg0_43:removeLevelUpTip()
 
-	arg0.additionValues = nil
+	arg0_43.additionValues = nil
 end
 
-return var0
+return var0_0

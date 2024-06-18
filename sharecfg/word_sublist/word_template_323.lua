@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_323 = {}
+var0_0.word_template_323 = {}
 
-local var1 = var0.word_template_323
+local var1_0 = var0_0.word_template_323
 
 function temp()
-	var1.抑 = {
+	var1_0.抑 = {
 		制 = {
 			剂 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.译 = {
+	var1_0.译 = {
 		新 = {
 			考 = {
 				试 = {
@@ -36,7 +36,7 @@ end
 temp()
 
 function temp()
-	var1.易 = {
+	var1_0.易 = {
 		丹 = {
 			軒 = {
 				this = true
@@ -48,7 +48,7 @@ end
 temp()
 
 function temp()
-	var1.疫 = {
+	var1_0.疫 = {
 		苗 = {
 			伤 = {
 				害 = {
@@ -79,7 +79,7 @@ end
 temp()
 
 function temp()
-	var1.意 = {
+	var1_0.意 = {
 		志 = {
 			不 = {
 				坚 = {
@@ -108,7 +108,7 @@ end
 temp()
 
 function temp()
-	var1.瘞 = {
+	var1_0.瘞 = {
 		this = {
 			this = true
 		}
@@ -118,7 +118,7 @@ end
 temp()
 
 function temp()
-	var1.議 = {
+	var1_0.議 = {
 		長 = {
 			阿 = {
 				茵 = {

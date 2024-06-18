@@ -1,109 +1,109 @@
-﻿local var0 = class("WorldMediaCollectionFilePreviewLayer", import("view.base.BaseUI"))
+﻿local var0_0 = class("WorldMediaCollectionFilePreviewLayer", import("view.base.BaseUI"))
 
-function var0.__index(arg0, arg1)
-	local var0 = rawget(var0, arg1) or var0.super[arg1]
+function var0_0.__index(arg0_1, arg1_1)
+	local var0_1 = rawget(var0_0, arg1_1) or var0_0.super[arg1_1]
 
-	var0 = var0 or WorldMediaCollectionFileDetailLayer[arg1]
+	var0_1 = var0_1 or WorldMediaCollectionFileDetailLayer[arg1_1]
 
-	return var0
+	return var0_1
 end
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_2)
 	return "WorldMediaCollectionFilePreviewUI"
 end
 
-function var0.init(arg0)
-	arg0.canvasGroup = arg0._tf:GetComponent(typeof(CanvasGroup))
+function var0_0.init(arg0_3)
+	arg0_3.canvasGroup = arg0_3._tf:GetComponent(typeof(CanvasGroup))
 
-	arg0:InitDocument()
+	arg0_3:InitDocument()
 
-	arg0.tipTF = arg0._tf:Find("Tip")
-	arg0.animBar = arg0._tf:Find("Bar")
+	arg0_3.tipTF = arg0_3._tf:Find("Tip")
+	arg0_3.animBar = arg0_3._tf:Find("Bar")
 
-	setActive(arg0.animBar, false)
-	setActive(arg0.document, false)
-	setActive(arg0.tipTF, false)
+	setActive(arg0_3.animBar, false)
+	setActive(arg0_3.document, false)
+	setActive(arg0_3.tipTF, false)
 
-	arg0.loader = AutoLoader.New()
+	arg0_3.loader = AutoLoader.New()
 
-	setText(arg0.animBar:Find("Text"), i18n("world_collection_back"))
+	setText(arg0_3.animBar:Find("Text"), i18n("world_collection_back"))
 end
 
-function var0.didEnter(arg0)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+function var0_0.didEnter(arg0_4)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf)
 
-	local var0 = WorldCollectionProxy.GetCollectionTemplate(arg0.contextData.collectionId)
+	local var0_4 = WorldCollectionProxy.GetCollectionTemplate(arg0_4.contextData.collectionId)
 
-	arg0:SetDocument(var0)
-	setActive(arg0.animBar, true)
+	arg0_4:SetDocument(var0_4)
+	setActive(arg0_4.animBar, true)
 
-	local var1 = arg0.animBar:Find("Anim/Frame/Mask"):GetComponent(typeof(LayoutElement))
-	local var2 = arg0.animBar:Find("Anim/Frame/Mask/Name")
-	local var3 = var2:GetComponent(typeof(Text))
+	local var1_4 = arg0_4.animBar:Find("Anim/Frame/Mask"):GetComponent(typeof(LayoutElement))
+	local var2_4 = arg0_4.animBar:Find("Anim/Frame/Mask/Name")
+	local var3_4 = var2_4:GetComponent(typeof(Text))
 
-	RemoveComponent(var2, typeof(ScrollText))
+	RemoveComponent(var2_4, typeof(ScrollText))
 
-	local var4 = var1.preferredWidth
+	local var4_4 = var1_4.preferredWidth
 
-	var2.pivot = Vector2(0, 0.5)
-	var2.anchorMin = Vector2(0, 0.5)
-	var2.anchorMax = Vector2(0, 0.5)
-	var2.anchoredPosition = Vector2.zero
-	var3.text = tostring(var0.name or "")
-	var1.preferredWidth = math.min(var3.preferredWidth, var4)
+	var2_4.pivot = Vector2(0, 0.5)
+	var2_4.anchorMin = Vector2(0, 0.5)
+	var2_4.anchorMax = Vector2(0, 0.5)
+	var2_4.anchoredPosition = Vector2.zero
+	var3_4.text = tostring(var0_4.name or "")
+	var1_4.preferredWidth = math.min(var3_4.preferredWidth, var4_4)
 
-	local function var5()
-		onButton(arg0, arg0._tf, function()
-			arg0:closeView()
+	local function var5_4()
+		onButton(arg0_4, arg0_4._tf, function()
+			arg0_4:closeView()
 		end)
 	end
 
-	local function var6()
-		if var3.preferredWidth > var4 then
-			var2.pivot = Vector2(0.5, 0.5)
-			var2.anchorMin = Vector2(0.5, 0.5)
-			var2.anchorMax = Vector2(0.5, 0.5)
+	local function var6_4()
+		if var3_4.preferredWidth > var4_4 then
+			var2_4.pivot = Vector2(0.5, 0.5)
+			var2_4.anchorMin = Vector2(0.5, 0.5)
+			var2_4.anchorMax = Vector2(0.5, 0.5)
 
-			setScrollText(var2, var0.name or "")
+			setScrollText(var2_4, var0_4.name or "")
 		end
 	end
 
-	local var7 = arg0.animBar:GetComponent(typeof(DftAniEvent))
+	local var7_4 = arg0_4.animBar:GetComponent(typeof(DftAniEvent))
 
-	removeOnButton(arg0._tf)
+	removeOnButton(arg0_4._tf)
 
-	if var7 then
-		var7:SetTriggerEvent(var6)
-		var7:SetEndEvent(var5)
+	if var7_4 then
+		var7_4:SetTriggerEvent(var6_4)
+		var7_4:SetEndEvent(var5_4)
 	else
-		var6()
-		var5()
+		var6_4()
+		var5_4()
 	end
 
-	onButton(arg0, arg0.animBar:Find("Button"), function()
-		setActive(arg0.animBar, false)
-		setActive(arg0.document, true)
-		setActive(arg0.tipTF, true)
-		var5()
+	onButton(arg0_4, arg0_4.animBar:Find("Button"), function()
+		setActive(arg0_4.animBar, false)
+		setActive(arg0_4.document, true)
+		setActive(arg0_4.tipTF, true)
+		var5_4()
 	end, SFX_PANEL)
 
-	local var8 = WorldCollectionProxy.GetCollectionGroup(var0.id)
-	local var9 = WorldCollectionProxy.GetCollectionFileGroupTemplate(var8)
+	local var8_4 = WorldCollectionProxy.GetCollectionGroup(var0_4.id)
+	local var9_4 = WorldCollectionProxy.GetCollectionFileGroupTemplate(var8_4)
 
-	setImageSprite(arg0.animBar:Find("Anim/Icon"), LoadSprite("ui/WorldMediaCollectionFilePreviewUI_atlas", var9.type))
+	setImageSprite(arg0_4.animBar:Find("Anim/Icon"), LoadSprite("ui/WorldMediaCollectionFilePreviewUI_atlas", var9_4.type))
 end
 
-function var0.willExit(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
-	arg0.loader:Clear()
+function var0_0.willExit(arg0_9)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_9._tf)
+	arg0_9.loader:Clear()
 
-	local var0 = arg0.contextData.callback
+	local var0_9 = arg0_9.contextData.callback
 
-	if var0 then
-		var0()
+	if var0_9 then
+		var0_9()
 	end
 
-	var0.super.willExit(arg0)
+	var0_0.super.willExit(arg0_9)
 end
 
-return var0
+return var0_0

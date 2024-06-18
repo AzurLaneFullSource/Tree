@@ -1,46 +1,46 @@
-﻿local var0 = class("ChatBubblePublic")
+﻿local var0_0 = class("ChatBubblePublic")
 
-function var0.Ctor(arg0, arg1)
-	arg0.tf = tf(arg1)
-	arg0.richText = findTF(arg0.tf, "text"):GetComponent("RichText")
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.tf = tf(arg1_1)
+	arg0_1.richText = findTF(arg0_1.tf, "text"):GetComponent("RichText")
 
-	local var0 = findTF(arg0.tf, "channel")
+	local var0_1 = findTF(arg0_1.tf, "channel")
 
-	if not IsNil(var0) then
-		arg0.channel = var0:GetComponent("Image")
+	if not IsNil(var0_1) then
+		arg0_1.channel = var0_1:GetComponent("Image")
 	end
 end
 
-function var0.update(arg0, arg1)
-	if arg0.data == arg1 then
+function var0_0.update(arg0_2, arg1_2)
+	if arg0_2.data == arg1_2 then
 		return
 	end
 
-	arg0.data = arg1
-	arg0.richText.supportRichText = true
+	arg0_2.data = arg1_2
+	arg0_2.richText.supportRichText = true
 
-	ChatProxy.InjectPublic(arg0.richText, arg1)
-	arg0.richText:AddListener(function(arg0, arg1)
-		arg0:clickItem(arg0, arg1)
+	ChatProxy.InjectPublic(arg0_2.richText, arg1_2)
+	arg0_2.richText:AddListener(function(arg0_3, arg1_3)
+		arg0_2:clickItem(arg0_3, arg1_3)
 	end)
 
-	if arg0.channel then
-		arg0.channel.sprite = GetSpriteFromAtlas("channel", ChatConst.GetChannelSprite(arg1.type) .. "_1920")
+	if arg0_2.channel then
+		arg0_2.channel.sprite = GetSpriteFromAtlas("channel", ChatConst.GetChannelSprite(arg1_2.type) .. "_1920")
 
-		arg0.channel:SetNativeSize()
+		arg0_2.channel:SetNativeSize()
 	end
 end
 
-function var0.clickItem(arg0, arg1, arg2)
-	if arg1 == "clickPlayer" then
+function var0_0.clickItem(arg0_4, arg1_4, arg2_4)
+	if arg1_4 == "clickPlayer" then
 		print("click player : ")
-	elseif arg1 == "clickShip" then
+	elseif arg1_4 == "clickShip" then
 		print("click ship : ")
 	end
 end
 
-function var0.dispose(arg0)
-	arg0.richText:RemoveAllListeners()
+function var0_0.dispose(arg0_5)
+	arg0_5.richText:RemoveAllListeners()
 end
 
-return var0
+return var0_0

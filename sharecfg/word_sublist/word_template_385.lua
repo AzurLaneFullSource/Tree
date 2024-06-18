@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_385 = {}
+var0_0.word_template_385 = {}
 
-local var1 = var0.word_template_385
+local var1_0 = var0_0.word_template_385
 
 function temp()
-	var1.獛 = {
+	var1_0.獛 = {
 		獛 = {
 			熋 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.志 = {
+	var1_0.志 = {
 		国 = {
 			李 = {
 				政 = {
@@ -33,7 +33,7 @@ end
 temp()
 
 function temp()
-	var1.伴 = {
+	var1_0.伴 = {
 		读 = {
 			保 = {
 				镖 = {
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.蒸 = {
+	var1_0.蒸 = {
 		笼 = {
 			天 = {
 				子 = {
@@ -61,7 +61,7 @@ end
 temp()
 
 function temp()
-	var1.笼 = {
+	var1_0.笼 = {
 		太 = {
 			子 = {
 				this = true
@@ -73,7 +73,7 @@ end
 temp()
 
 function temp()
-	var1.狱 = {
+	var1_0.狱 = {
 		中 = {
 			作 = {
 				家 = {
@@ -87,7 +87,7 @@ end
 temp()
 
 function temp()
-	var1.淨 = {
+	var1_0.淨 = {
 		空 = {
 			老 = {
 				法 = {

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_346 = {}
+var0_0.word_template_346 = {}
 
-local var1 = var0.word_template_346
+local var1_0 = var0_0.word_template_346
 
 function temp()
-	var1.证 = {
+	var1_0.证 = {
 		奸 = {
 			会 = {
 				this = true
@@ -56,7 +56,7 @@ end
 temp()
 
 function temp()
-	var1.郑 = {
+	var1_0.郑 = {
 		国 = {
 			光 = {
 				this = true
@@ -113,7 +113,7 @@ end
 temp()
 
 function temp()
-	var1.政 = {
+	var1_0.政 = {
 		变 = {
 			this = true
 		},
@@ -394,7 +394,7 @@ end
 temp()
 
 function temp()
-	var1.鄭 = {
+	var1_0.鄭 = {
 		寶 = {
 			清 = {
 				this = true
@@ -427,7 +427,7 @@ end
 temp()
 
 function temp()
-	var1.之 = {
+	var1_0.之 = {
 		毛 = {
 			太 = {
 				祖 = {
@@ -445,7 +445,7 @@ end
 temp()
 
 function temp()
-	var1.只 = {
+	var1_0.只 = {
 		见 = {
 			那 = {
 				昏 = {
@@ -723,7 +723,7 @@ end
 temp()
 
 function temp()
-	var1.执 = {
+	var1_0.执 = {
 		法 = {
 			犯 = {
 				法 = {

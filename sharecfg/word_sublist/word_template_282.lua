@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_282 = {}
+var0_0.word_template_282 = {}
 
-local var1 = var0.word_template_282
+local var1_0 = var0_0.word_template_282
 
 function temp()
-	var1.桐 = {
+	var1_0.桐 = {
 		岛 = {
 			绘 = {
 				里 = {
@@ -23,7 +23,7 @@ end
 temp()
 
 function temp()
-	var1.统 = {
+	var1_0.统 = {
 		独 = {
 			论 = {
 				坛 = {
@@ -67,7 +67,7 @@ end
 temp()
 
 function temp()
-	var1.捅 = {
+	var1_0.捅 = {
 		鸡 = {
 			局 = {
 				this = true
@@ -95,7 +95,7 @@ end
 temp()
 
 function temp()
-	var1.統 = {
+	var1_0.統 = {
 		獨 = {
 			this = true,
 			論 = {
@@ -113,7 +113,7 @@ end
 temp()
 
 function temp()
-	var1.痛 = {
+	var1_0.痛 = {
 		恨 = {
 			这 = {
 				时 = {
@@ -143,7 +143,7 @@ end
 temp()
 
 function temp()
-	var1.偷 = {
+	var1_0.偷 = {
 		欢 = {
 			this = true
 		},
@@ -247,7 +247,7 @@ end
 temp()
 
 function temp()
-	var1.投 = {
+	var1_0.投 = {
 		毒 = {
 			杀 = {
 				人 = {

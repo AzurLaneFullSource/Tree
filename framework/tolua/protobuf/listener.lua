@@ -1,37 +1,37 @@
-﻿local var0 = setmetatable
+﻿local var0_0 = setmetatable
 
 module("protobuf.listener")
 
-local var1 = {
+local var1_0 = {
 	Modified = function()
 		return
 	end
 }
 
 function NullMessageListener()
-	return var1
+	return var1_0
 end
 
-local var2 = {
-	Modified = function(arg0)
-		if arg0.dirty then
+local var2_0 = {
+	Modified = function(arg0_3)
+		if arg0_3.dirty then
 			return
 		end
 
-		if arg0._parent_message then
-			arg0._parent_message:_Modified()
+		if arg0_3._parent_message then
+			arg0_3._parent_message:_Modified()
 		end
 	end
 }
 
-var2.__index = var2
+var2_0.__index = var2_0
 
-function Listener(arg0)
-	local var0 = {}
+function Listener(arg0_4)
+	local var0_4 = {}
 
-	var0.__mode = "v"
-	var0._parent_message = arg0
-	var0.dirty = false
+	var0_4.__mode = "v"
+	var0_4._parent_message = arg0_4
+	var0_4.dirty = false
 
-	return var0(var0, var2)
+	return var0_0(var0_4, var2_0)
 end

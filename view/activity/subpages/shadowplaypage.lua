@@ -1,38 +1,38 @@
-﻿local var0 = class("ShadowPlayPage", import("...base.BaseActivityPage"))
+﻿local var0_0 = class("ShadowPlayPage", import("...base.BaseActivityPage"))
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("AD")
-	arg0.getBtn = arg0:findTF("AD/get")
-	arg0.gotBtn = arg0:findTF("AD/got")
-	arg0.urlBtn = arg0:findTF("AD/url")
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.getBtn = arg0_1:findTF("AD/get")
+	arg0_1.gotBtn = arg0_1:findTF("AD/got")
+	arg0_1.urlBtn = arg0_1:findTF("AD/url")
 end
 
-function var0.OnFirstFlush(arg0)
-	onButton(arg0, arg0.urlBtn, function()
-		Application.OpenURL(arg0.activity:getConfig("config_client"))
+function var0_0.OnFirstFlush(arg0_2)
+	onButton(arg0_2, arg0_2.urlBtn, function()
+		Application.OpenURL(arg0_2.activity:getConfig("config_client"))
 	end, SFX_PANEL)
 end
 
-function var0.OnUpdateFlush(arg0)
-	local var0 = arg0.activity:getConfig("config_data")[1]
-	local var1 = getProxy(TaskProxy)
-	local var2 = var1:getTaskById(var0) or var1:getFinishTaskById(var0) or Task.New({
-		id = var0
+function var0_0.OnUpdateFlush(arg0_4)
+	local var0_4 = arg0_4.activity:getConfig("config_data")[1]
+	local var1_4 = getProxy(TaskProxy)
+	local var2_4 = var1_4:getTaskById(var0_4) or var1_4:getFinishTaskById(var0_4) or Task.New({
+		id = var0_4
 	})
-	local var3 = var2:isFinish()
-	local var4 = var2:isReceive()
+	local var3_4 = var2_4:isFinish()
+	local var4_4 = var2_4:isReceive()
 
-	setActive(arg0.getBtn, var2 and var3 and not var4)
-	setActive(arg0.gotBtn, var2 and var4)
-	onButton(arg0, arg0.getBtn, function()
-		if var2 and var3 and not var4 then
-			arg0:emit(ActivityMediator.ON_TASK_SUBMIT, var2)
+	setActive(arg0_4.getBtn, var2_4 and var3_4 and not var4_4)
+	setActive(arg0_4.gotBtn, var2_4 and var4_4)
+	onButton(arg0_4, arg0_4.getBtn, function()
+		if var2_4 and var3_4 and not var4_4 then
+			arg0_4:emit(ActivityMediator.ON_TASK_SUBMIT, var2_4)
 		end
 	end, SFX_PANEL)
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_6)
 	return
 end
 
-return var0
+return var0_0

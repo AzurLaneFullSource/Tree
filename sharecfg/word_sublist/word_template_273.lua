@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_273 = {}
+var0_0.word_template_273 = {}
 
-local var1 = var0.word_template_273
+local var1_0 = var0_0.word_template_273
 
 function temp()
-	var1.他 = {
+	var1_0.他 = {
 		半 = {
 			天 = {
 				找 = {
@@ -194,7 +194,7 @@ end
 temp()
 
 function temp()
-	var1.她 = {
+	var1_0.她 = {
 		的 = {
 			m = {
 				m = {
@@ -266,7 +266,7 @@ end
 temp()
 
 function temp()
-	var1.塔 = {
+	var1_0.塔 = {
 		利 = {
 			班 = {
 				this = true
@@ -284,7 +284,7 @@ end
 temp()
 
 function temp()
-	var1.鰨 = {
+	var1_0.鰨 = {
 		this = {
 			this = true
 		}
@@ -294,7 +294,7 @@ end
 temp()
 
 function temp()
-	var1.闥 = {
+	var1_0.闥 = {
 		this = {
 			this = true
 		}
@@ -304,7 +304,7 @@ end
 temp()
 
 function temp()
-	var1.胎 = {
+	var1_0.胎 = {
 		欢 = {
 			姿 = {
 				势 = {
@@ -318,7 +318,7 @@ end
 temp()
 
 function temp()
-	var1.台 = {
+	var1_0.台 = {
 		办 = {
 			this = true
 		},

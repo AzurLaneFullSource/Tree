@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_264 = {}
+var0_0.word_template_264 = {}
 
-local var1 = var0.word_template_264
+local var1_0 = var0_0.word_template_264
 
 function temp()
-	var1.视 = {
+	var1_0.视 = {
 		频 = {
 			m = {
 				m = {
@@ -158,7 +158,7 @@ end
 temp()
 
 function temp()
-	var1.是 = {
+	var1_0.是 = {
 		否 = {
 			你 = {
 				妈 = {
@@ -215,7 +215,7 @@ end
 temp()
 
 function temp()
-	var1.視 = {
+	var1_0.視 = {
 		頻 = {
 			表 = {
 				演 = {
@@ -236,7 +236,7 @@ end
 temp()
 
 function temp()
-	var1.貰 = {
+	var1_0.貰 = {
 		this = {
 			this = true
 		}
@@ -246,7 +246,7 @@ end
 temp()
 
 function temp()
-	var1.释 = {
+	var1_0.释 = {
 		迦 = {
 			牟 = {
 				尼 = {
@@ -270,7 +270,7 @@ end
 temp()
 
 function temp()
-	var1.釋 = {
+	var1_0.釋 = {
 		迦 = {
 			牟 = {
 				尼 = {
@@ -287,7 +287,7 @@ end
 temp()
 
 function temp()
-	var1.收 = {
+	var1_0.收 = {
 		单 = {
 			管 = {
 				猎 = {

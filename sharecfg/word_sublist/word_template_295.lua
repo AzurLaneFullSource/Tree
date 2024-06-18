@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_295 = {}
+var0_0.word_template_295 = {}
 
-local var1 = var0.word_template_295
+local var1_0 = var0_0.word_template_295
 
 function temp()
-	var1.毋 = {
+	var1_0.毋 = {
 		忘 = {
 			this = true,
 			["6"] = {
@@ -90,7 +90,7 @@ end
 temp()
 
 function temp()
-	var1.吾 = {
+	var1_0.吾 = {
 		尔 = {
 			开 = {
 				this = true,
@@ -331,7 +331,7 @@ end
 temp()
 
 function temp()
-	var1.吴 = {
+	var1_0.吴 = {
 		　 = {
 			仪 = {
 				this = true
@@ -488,7 +488,7 @@ end
 temp()
 
 function temp()
-	var1.吳 = {
+	var1_0.吳 = {
 		百 = {
 			益 = {
 				this = true
@@ -576,7 +576,7 @@ end
 temp()
 
 function temp()
-	var1.五 = {
+	var1_0.五 = {
 		百 = {
 			元 = {
 				我 = {
@@ -1276,7 +1276,7 @@ end
 temp()
 
 function temp()
-	var1.午 = {
+	var1_0.午 = {
 		夜 = {
 			this = true,
 			成 = {
@@ -1339,7 +1339,7 @@ end
 temp()
 
 function temp()
-	var1.伍 = {
+	var1_0.伍 = {
 		凡 = {
 			this = true
 		},

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_125 = {}
+var0_0.word_template_125 = {}
 
-local var1 = var0.word_template_125
+local var1_0 = var0_0.word_template_125
 
 function temp()
-	var1.贺 = {
+	var1_0.贺 = {
 		国 = {
 			强 = {
 				this = true
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.賀 = {
+	var1_0.賀 = {
 		國 = {
 			強 = {
 				this = true
@@ -50,7 +50,7 @@ end
 temp()
 
 function temp()
-	var1.赫 = {
+	var1_0.赫 = {
 		蒂 = {
 			彻 = {
 				this = true
@@ -79,7 +79,7 @@ end
 temp()
 
 function temp()
-	var1.黑 = {
+	var1_0.黑 = {
 		暗 = {
 			圣 = {
 				经 = {
@@ -446,7 +446,7 @@ end
 temp()
 
 function temp()
-	var1.嗨 = {
+	var1_0.嗨 = {
 		死 = {
 			总 = {
 				比 = {
@@ -466,7 +466,7 @@ end
 temp()
 
 function temp()
-	var1.狠 = {
+	var1_0.狠 = {
 		肏 = {
 			this = true
 		},
@@ -488,7 +488,7 @@ end
 temp()
 
 function temp()
-	var1.横 = {
+	var1_0.横 = {
 		财 = {
 			暴 = {
 				富 = {

@@ -1,11 +1,11 @@
-﻿local var0 = class("SailBoatGameScene")
-local var1 = 1
-local var2 = 2
-local var3 = 3
-local var4 = 4
-local var5
+﻿local var0_0 = class("SailBoatGameScene")
+local var1_0 = 1
+local var2_0 = 2
+local var3_0 = 3
+local var4_0 = 4
+local var5_0
 
-var0.random_scene_imgs = {
+var0_0.random_scene_imgs = {
 	{
 		content = "scene_background/content/bg_6",
 		icon = {
@@ -20,298 +20,298 @@ var0.random_scene_imgs = {
 	}
 }
 
-function var0.Ctor(arg0, arg1, arg2)
-	var5 = SailBoatGameVo
-	arg0._tf = arg1
-	arg0._event = arg2
-	arg0.sceneMask = findTF(arg0._tf, "sceneMask")
-	arg0.sceneContent = findTF(arg0._tf, "sceneMask/sceneContainer")
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var5_0 = SailBoatGameVo
+	arg0_1._tf = arg1_1
+	arg0_1._event = arg2_1
+	arg0_1.sceneMask = findTF(arg0_1._tf, "sceneMask")
+	arg0_1.sceneContent = findTF(arg0_1._tf, "sceneMask/sceneContainer")
 
-	local function var0(arg0, arg1)
-		if arg0 == SailBoatGameEvent.DESTROY_ENEMY then
-			arg0:destroyEnemy(arg1)
-		elseif arg0 == SailBoatGameEvent.USE_ITEM then
-			arg0._event:emit(SailBoatGameView.ADD_SCORE, {
-				num = arg1.score
+	local function var0_1(arg0_2, arg1_2)
+		if arg0_2 == SailBoatGameEvent.DESTROY_ENEMY then
+			arg0_1:destroyEnemy(arg1_2)
+		elseif arg0_2 == SailBoatGameEvent.USE_ITEM then
+			arg0_1._event:emit(SailBoatGameView.ADD_SCORE, {
+				num = arg1_2.score
 			})
 
-			if arg1.skill then
-				var5.AddSkill()
+			if arg1_2.skill then
+				var5_0.AddSkill()
 			end
-		elseif arg0 == SailBoatGameEvent.PLAYER_DEAD then
-			arg0._event:emit(SailBoatGameView.GAME_OVER)
+		elseif arg0_2 == SailBoatGameEvent.PLAYER_DEAD then
+			arg0_1._event:emit(SailBoatGameView.GAME_OVER)
 		end
 
-		arg0:onSceneEventCall(arg0, arg1)
+		arg0_1:onSceneEventCall(arg0_2, arg1_2)
 	end
 
-	arg0.charControl = SailBoatCharControl.New(arg0.sceneContent, var0)
-	arg0.bgControl = SailBoatBgControl.New(arg0.sceneContent, var0)
-	arg0.itemControl = SailBoatItemControl.New(arg0.sceneContent, var0)
-	arg0.colliderControl = SailBoatColliderControl.New(arg0.sceneContent, var0)
-	arg0.enemyControl = SailBoatEnemyControl.New(arg0.sceneContent, var0)
-	arg0.bulletControl = SailBoatBulletsControl.New(arg0.sceneContent, var0)
-	arg0.effectControl = SailBoatEffectControl.New(arg0.sceneContent, var0)
-	arg0.bgRules = {}
-	arg0.bgTfs = {}
-	arg0.bgTfPool = {}
+	arg0_1.charControl = SailBoatCharControl.New(arg0_1.sceneContent, var0_1)
+	arg0_1.bgControl = SailBoatBgControl.New(arg0_1.sceneContent, var0_1)
+	arg0_1.itemControl = SailBoatItemControl.New(arg0_1.sceneContent, var0_1)
+	arg0_1.colliderControl = SailBoatColliderControl.New(arg0_1.sceneContent, var0_1)
+	arg0_1.enemyControl = SailBoatEnemyControl.New(arg0_1.sceneContent, var0_1)
+	arg0_1.bulletControl = SailBoatBulletsControl.New(arg0_1.sceneContent, var0_1)
+	arg0_1.effectControl = SailBoatEffectControl.New(arg0_1.sceneContent, var0_1)
+	arg0_1.bgRules = {}
+	arg0_1.bgTfs = {}
+	arg0_1.bgTfPool = {}
 
-	for iter0 = 1, #var0.random_scene_imgs do
-		local var1 = var0.random_scene_imgs[iter0]
+	for iter0_1 = 1, #var0_0.random_scene_imgs do
+		local var1_1 = var0_0.random_scene_imgs[iter0_1]
 
-		table.insert(arg0.bgRules, {
+		table.insert(arg0_1.bgRules, {
 			time = 0,
-			ruleData = var1
+			ruleData = var1_1
 		})
 	end
 end
 
-function var0.start(arg0)
-	arg0:showContainer(true)
-	arg0.charControl:start()
-	arg0.bgControl:start()
-	arg0.itemControl:start()
-	arg0.colliderControl:start()
-	arg0.enemyControl:start()
-	arg0.bulletControl:start()
-	arg0.effectControl:start()
+function var0_0.start(arg0_3)
+	arg0_3:showContainer(true)
+	arg0_3.charControl:start()
+	arg0_3.bgControl:start()
+	arg0_3.itemControl:start()
+	arg0_3.colliderControl:start()
+	arg0_3.enemyControl:start()
+	arg0_3.bulletControl:start()
+	arg0_3.effectControl:start()
 
-	arg0.sortIndex = 10
-	arg0.bgImgTpl = var5.GetGameBgTf("bgs/bg_other")
+	arg0_3.sortIndex = 10
+	arg0_3.bgImgTpl = var5_0.GetGameBgTf("bgs/bg_other")
 
-	for iter0 = #arg0.bgTfs, 1, -1 do
-		local var0 = table.remove(arg0.bgTfs, iter0)
+	for iter0_3 = #arg0_3.bgTfs, 1, -1 do
+		local var0_3 = table.remove(arg0_3.bgTfs, iter0_3)
 
-		setActive(var0, false)
-		table.insert(arg0.bgTfPool, var0)
+		setActive(var0_3, false)
+		table.insert(arg0_3.bgTfPool, var0_3)
 	end
 
-	for iter1 = 1, #arg0.bgRules do
-		arg0.bgRules[iter1].time = 0
+	for iter1_3 = 1, #arg0_3.bgRules do
+		arg0_3.bgRules[iter1_3].time = 0
 	end
 end
 
-function var0.step(arg0, arg1)
-	local var0
-	local var1
-	local var2
-	local var3
-	local var4
-	local var5
-	local var6
-	local var7 = os.clock()
+function var0_0.step(arg0_4, arg1_4)
+	local var0_4
+	local var1_4
+	local var2_4
+	local var3_4
+	local var4_4
+	local var5_4
+	local var6_4
+	local var7_4 = os.clock()
 
-	arg0.charControl:step(arg1)
+	arg0_4.charControl:step(arg1_4)
 
-	local var8 = (os.clock() - var7) * 1000
-	local var9 = os.clock()
+	local var8_4 = (os.clock() - var7_4) * 1000
+	local var9_4 = os.clock()
 
-	arg0.bgControl:step(arg1)
+	arg0_4.bgControl:step(arg1_4)
 
-	local var10 = (os.clock() - var9) * 1000
-	local var11 = os.clock()
+	local var10_4 = (os.clock() - var9_4) * 1000
+	local var11_4 = os.clock()
 
-	arg0.itemControl:step(arg1)
+	arg0_4.itemControl:step(arg1_4)
 
-	local var12 = (os.clock() - var11) * 1000
-	local var13 = os.clock()
+	local var12_4 = (os.clock() - var11_4) * 1000
+	local var13_4 = os.clock()
 
-	arg0.colliderControl:step(arg1)
+	arg0_4.colliderControl:step(arg1_4)
 
-	local var14 = (os.clock() - var13) * 1000
-	local var15 = os.clock()
+	local var14_4 = (os.clock() - var13_4) * 1000
+	local var15_4 = os.clock()
 
-	arg0.enemyControl:step(arg1)
+	arg0_4.enemyControl:step(arg1_4)
 
-	local var16 = (os.clock() - var15) * 1000
-	local var17 = os.clock()
+	local var16_4 = (os.clock() - var15_4) * 1000
+	local var17_4 = os.clock()
 
-	arg0.bulletControl:step(arg1)
+	arg0_4.bulletControl:step(arg1_4)
 
-	local var18 = tostring((os.clock() - var17) * 1000, 2)
-	local var19 = os.clock()
+	local var18_4 = tostring((os.clock() - var17_4) * 1000, 2)
+	local var19_4 = os.clock()
 
-	arg0.effectControl:step(arg1)
+	arg0_4.effectControl:step(arg1_4)
 
-	local var20 = (os.clock() - var19) * 1000
-	local var21 = os.clock()
-	local var22 = var5.GetGameEnemys()
-	local var23 = var5.GetGameChar()
-	local var24 = var5.GetGameItems()
+	local var20_4 = (os.clock() - var19_4) * 1000
+	local var21_4 = os.clock()
+	local var22_4 = var5_0.GetGameEnemys()
+	local var23_4 = var5_0.GetGameChar()
+	local var24_4 = var5_0.GetGameItems()
 
-	if not arg0.sortTfs or #arg0.sortTfs ~= #var22 + 1 + #var24 then
-		arg0.sortTfs = {}
+	if not arg0_4.sortTfs or #arg0_4.sortTfs ~= #var22_4 + 1 + #var24_4 then
+		arg0_4.sortTfs = {}
 
-		for iter0 = 1, #var22 do
-			table.insert(arg0.sortTfs, var22[iter0]:getTf())
+		for iter0_4 = 1, #var22_4 do
+			table.insert(arg0_4.sortTfs, var22_4[iter0_4]:getTf())
 		end
 
-		for iter1 = 1, #var24 do
-			table.insert(arg0.sortTfs, var24[iter1]:getTf())
+		for iter1_4 = 1, #var24_4 do
+			table.insert(arg0_4.sortTfs, var24_4[iter1_4]:getTf())
 		end
 
-		table.insert(arg0.sortTfs, var23:getTf())
+		table.insert(arg0_4.sortTfs, var23_4:getTf())
 	end
 
-	if arg0.sortIndex and arg0.sortIndex == 0 then
-		arg0:sortItems(arg0.sortTfs)
+	if arg0_4.sortIndex and arg0_4.sortIndex == 0 then
+		arg0_4:sortItems(arg0_4.sortTfs)
 
-		arg0.sortIndex = 10
+		arg0_4.sortIndex = 10
 	else
-		arg0.sortIndex = arg0.sortIndex - 1
+		arg0_4.sortIndex = arg0_4.sortIndex - 1
 	end
 
-	for iter2 = 1, #arg0.bgRules do
-		if arg0.bgRules[iter2].time <= 0 then
-			arg0.bgRules[iter2].time = math.random(30, 45)
+	for iter2_4 = 1, #arg0_4.bgRules do
+		if arg0_4.bgRules[iter2_4].time <= 0 then
+			arg0_4.bgRules[iter2_4].time = math.random(30, 45)
 
-			local var25 = arg0.bgRules[iter2].ruleData.icon
-			local var26 = var25[math.random(1, #var25)]
-			local var27
+			local var25_4 = arg0_4.bgRules[iter2_4].ruleData.icon
+			local var26_4 = var25_4[math.random(1, #var25_4)]
+			local var27_4
 
-			if #arg0.bgTfPool > 0 then
-				var27 = table.remove(arg0.bgTfPool, 1)
+			if #arg0_4.bgTfPool > 0 then
+				var27_4 = table.remove(arg0_4.bgTfPool, 1)
 			else
-				var27 = tf(instantiate(arg0.bgImgTpl))
+				var27_4 = tf(instantiate(arg0_4.bgImgTpl))
 
-				SetParent(var27, findTF(arg0.sceneContent, arg0.bgRules[iter2].ruleData.content))
+				SetParent(var27_4, findTF(arg0_4.sceneContent, arg0_4.bgRules[iter2_4].ruleData.content))
 			end
 
-			setImageSprite(findTF(var27, "img"), var5.GetBgIcon(var26), true)
-			setActive(var27, true)
-			table.insert(arg0.bgTfs, var27)
+			setImageSprite(findTF(var27_4, "img"), var5_0.GetBgIcon(var26_4), true)
+			setActive(var27_4, true)
+			table.insert(arg0_4.bgTfs, var27_4)
 
-			var27.anchoredPosition = Vector2(math.random(-300, 300), 2000)
-			var27.localEulerAngles = Vector3(0, 0, math.random(1, 360))
+			var27_4.anchoredPosition = Vector2(math.random(-300, 300), 2000)
+			var27_4.localEulerAngles = Vector3(0, 0, math.random(1, 360))
 		end
 
-		arg0.bgRules[iter2].time = arg0.bgRules[iter2].time - arg1
+		arg0_4.bgRules[iter2_4].time = arg0_4.bgRules[iter2_4].time - arg1_4
 	end
 
-	local var28 = var5.GetSceneSpeed()
+	local var28_4 = var5_0.GetSceneSpeed()
 
-	for iter3 = #arg0.bgTfs, 1, -1 do
-		local var29 = arg0.bgTfs[iter3]
+	for iter3_4 = #arg0_4.bgTfs, 1, -1 do
+		local var29_4 = arg0_4.bgTfs[iter3_4]
 
-		if var29.anchoredPosition.y < -2000 then
-			setActive(var29, false)
-			table.insert(arg0.bgTfPool, var29)
-			table.remove(arg0.bgTfs, iter3)
+		if var29_4.anchoredPosition.y < -2000 then
+			setActive(var29_4, false)
+			table.insert(arg0_4.bgTfPool, var29_4)
+			table.remove(arg0_4.bgTfs, iter3_4)
 		else
-			local var30 = var29.anchoredPosition
+			local var30_4 = var29_4.anchoredPosition
 
-			var30.y = var30.y + var28.y
-			var29.anchoredPosition = var30
+			var30_4.y = var30_4.y + var28_4.y
+			var29_4.anchoredPosition = var30_4
 		end
 	end
 end
 
-function var0.destroyEnemy(arg0, arg1)
-	arg0._event:emit(SailBoatGameView.ADD_SCORE, {
-		num = arg1.score
+function var0_0.destroyEnemy(arg0_5, arg1_5)
+	arg0_5._event:emit(SailBoatGameView.ADD_SCORE, {
+		num = arg1_5.score
 	})
 
-	if arg1.boom then
-		arg0:checkBoomDamage(arg1)
+	if arg1_5.boom then
+		arg0_5:checkBoomDamage(arg1_5)
 	end
 end
 
-function var0.checkBoomDamage(arg0, arg1)
-	local var0 = arg1.boom
-	local var1 = arg1.position
-	local var2 = arg1.range
-	local var3 = var5.GetGameChar()
-	local var4 = var5.GetGameEnemys()
-	local var5 = var3:getPosition()
-	local var6 = var3:getConfig("range")
+function var0_0.checkBoomDamage(arg0_6, arg1_6)
+	local var0_6 = arg1_6.boom
+	local var1_6 = arg1_6.position
+	local var2_6 = arg1_6.range
+	local var3_6 = var5_0.GetGameChar()
+	local var4_6 = var5_0.GetGameEnemys()
+	local var5_6 = var3_6:getPosition()
+	local var6_6 = var3_6:getConfig("range")
 
-	if math.abs(var1.x - var5.x) < var2.x + var6.x / 2 and math.abs(var1.y - var5.y) < var2.y + var6.y / 2 then
-		var3:damage({
-			num = var0,
-			position = var1
+	if math.abs(var1_6.x - var5_6.x) < var2_6.x + var6_6.x / 2 and math.abs(var1_6.y - var5_6.y) < var2_6.y + var6_6.y / 2 then
+		var3_6:damage({
+			num = var0_6,
+			position = var1_6
 		})
 	end
 
-	for iter0 = 1, #var4 do
-		local var7 = var4[iter0]
-		local var8 = var7:getPosition()
-		local var9 = var7:getConfig("range")
+	for iter0_6 = 1, #var4_6 do
+		local var7_6 = var4_6[iter0_6]
+		local var8_6 = var7_6:getPosition()
+		local var9_6 = var7_6:getConfig("range")
 
-		if math.abs(var1.x - var8.x) < var2.x + var8.x / 2 and math.abs(var1.y - var8.y) < var2.y + var8.y / 2 and var7:damage({
-			num = var0,
-			position = var1
+		if math.abs(var1_6.x - var8_6.x) < var2_6.x + var8_6.x / 2 and math.abs(var1_6.y - var8_6.y) < var2_6.y + var8_6.y / 2 and var7_6:damage({
+			num = var0_6,
+			position = var1_6
 		}) then
-			arg0:destroyEnemy(var7:getDestroyData())
+			arg0_6:destroyEnemy(var7_6:getDestroyData())
 		end
 	end
 end
 
-function var0.sortItems(arg0, arg1)
-	table.sort(arg1, function(arg0, arg1)
-		local var0 = arg0.anchoredPosition
-		local var1 = arg1.anchoredPosition
+function var0_0.sortItems(arg0_7, arg1_7)
+	table.sort(arg1_7, function(arg0_8, arg1_8)
+		local var0_8 = arg0_8.anchoredPosition
+		local var1_8 = arg1_8.anchoredPosition
 
-		if var0.y > var1.y then
+		if var0_8.y > var1_8.y then
 			return false
-		elseif var0.y < var1.y then
+		elseif var0_8.y < var1_8.y then
 			return true
 		end
 
-		if var0.x > var1.x then
+		if var0_8.x > var1_8.x then
 			return false
-		elseif var0.x < var1.x then
+		elseif var0_8.x < var1_8.x then
 			return true
 		end
 
 		return false
 	end)
 
-	for iter0 = 1, #arg1 do
-		arg1[iter0]:SetSiblingIndex(0)
+	for iter0_7 = 1, #arg1_7 do
+		arg1_7[iter0_7]:SetSiblingIndex(0)
 	end
 end
 
-function var0.useSkill(arg0)
-	arg0.charControl:useSkill()
+function var0_0.useSkill(arg0_9)
+	arg0_9.charControl:useSkill()
 end
 
-function var0.clear(arg0)
+function var0_0.clear(arg0_10)
 	return
 end
 
-function var0.stop(arg0)
+function var0_0.stop(arg0_11)
 	return
 end
 
-function var0.resume(arg0)
+function var0_0.resume(arg0_12)
 	return
 end
 
-function var0.onSceneEventCall(arg0, arg1, arg2)
-	arg0.charControl:onEventCall(arg1, arg2)
-	arg0.bulletControl:onEventCall(arg1, arg2)
-	arg0.effectControl:onEventCall(arg1, arg2)
+function var0_0.onSceneEventCall(arg0_13, arg1_13, arg2_13)
+	arg0_13.charControl:onEventCall(arg1_13, arg2_13)
+	arg0_13.bulletControl:onEventCall(arg1_13, arg2_13)
+	arg0_13.effectControl:onEventCall(arg1_13, arg2_13)
 end
 
-function var0.dispose(arg0)
-	arg0.charControl:dispose()
-	arg0.bgControl:dispose()
-	arg0.itemControl:dispose()
-	arg0.enemyControl:dispose()
+function var0_0.dispose(arg0_14)
+	arg0_14.charControl:dispose()
+	arg0_14.bgControl:dispose()
+	arg0_14.itemControl:dispose()
+	arg0_14.enemyControl:dispose()
 end
 
-function var0.showContainer(arg0, arg1)
-	setActive(arg0.sceneMask, arg1)
+function var0_0.showContainer(arg0_15, arg1_15)
+	setActive(arg0_15.sceneMask, arg1_15)
 end
 
-function var0.press(arg0, arg1, arg2)
-	if arg1 == KeyCode.J and arg2 then
-		arg0.charControl:ableFire()
+function var0_0.press(arg0_16, arg1_16, arg2_16)
+	if arg1_16 == KeyCode.J and arg2_16 then
+		arg0_16.charControl:ableFire()
 	end
 end
 
-function var0.joystickActive(arg0, arg1)
+function var0_0.joystickActive(arg0_17, arg1_17)
 	return
 end
 
-return var0
+return var0_0

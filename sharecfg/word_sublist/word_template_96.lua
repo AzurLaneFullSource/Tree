@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_96 = {}
+var0_0.word_template_96 = {}
 
-local var1 = var0.word_template_96
+local var1_0 = var0_0.word_template_96
 
 function temp()
-	var1.放 = {
+	var1_0.放 = {
 		荡 = {
 			旅 = {
 				店 = {
@@ -129,7 +129,7 @@ end
 temp()
 
 function temp()
-	var1.飞 = {
+	var1_0.飞 = {
 		机 = {
 			上 = {
 				做 = {
@@ -165,7 +165,7 @@ end
 temp()
 
 function temp()
-	var1.飛 = {
+	var1_0.飛 = {
 		揚 = {
 			論 = {
 				壇 = {
@@ -179,7 +179,7 @@ end
 temp()
 
 function temp()
-	var1.菲 = {
+	var1_0.菲 = {
 		律 = {
 			宾 = {
 				太 = {
@@ -197,7 +197,7 @@ end
 temp()
 
 function temp()
-	var1.绯 = {
+	var1_0.绯 = {
 		闻 = {
 			this = true
 		}
@@ -207,7 +207,7 @@ end
 temp()
 
 function temp()
-	var1.扉 = {
+	var1_0.扉 = {
 		之 = {
 			阴 = {
 				this = true
@@ -222,7 +222,7 @@ end
 temp()
 
 function temp()
-	var1.緋 = {
+	var1_0.緋 = {
 		聞 = {
 			this = true
 		}

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_186 = {}
+var0_0.word_template_186 = {}
 
-local var1 = var0.word_template_186
+local var1_0 = var0_0.word_template_186
 
 function temp()
-	var1.练 = {
+	var1_0.练 = {
 		内 = {
 			功 = {
 				学 = {
@@ -39,7 +39,7 @@ end
 temp()
 
 function temp()
-	var1.炼 = {
+	var1_0.炼 = {
 		金 = {
 			师 = {
 				玛 = {
@@ -68,7 +68,7 @@ end
 temp()
 
 function temp()
-	var1.恋 = {
+	var1_0.恋 = {
 		足 = {
 			this = true
 		}
@@ -78,7 +78,7 @@ end
 temp()
 
 function temp()
-	var1.煉 = {
+	var1_0.煉 = {
 		功 = {
 			this = true
 		}
@@ -88,7 +88,7 @@ end
 temp()
 
 function temp()
-	var1.良 = {
+	var1_0.良 = {
 		家 = {
 			兼 = {
 				职 = {
@@ -126,7 +126,7 @@ end
 temp()
 
 function temp()
-	var1.梁 = {
+	var1_0.梁 = {
 		滨 = {
 			this = true
 		},
@@ -268,7 +268,7 @@ end
 temp()
 
 function temp()
-	var1.粮 = {
+	var1_0.粮 = {
 		食 = {
 			局 = {
 				this = true

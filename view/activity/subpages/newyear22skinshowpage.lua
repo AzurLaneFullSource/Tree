@@ -1,5 +1,5 @@
-﻿local var0 = class("NewYear22SkinShowPage", import("...base.BaseActivityPage"))
-local var1 = {
+﻿local var0_0 = class("NewYear22SkinShowPage", import("...base.BaseActivityPage"))
+local var1_0 = {
 	{
 		id = 403101,
 		name = "Y22_adaerbote"
@@ -82,115 +82,115 @@ local var1 = {
 	}
 }
 
-function var0.OnInit(arg0)
-	arg0:findUI()
-	arg0:initData()
+function var0_0.OnInit(arg0_1)
+	arg0_1:findUI()
+	arg0_1:initData()
 end
 
-function var0.findUI(arg0)
-	arg0.paintBackTF = arg0:findTF("Paints/PaintBack")
-	arg0.paintFrontTF = arg0:findTF("Paints/PaintFront")
-	arg0.skinShopBtn = arg0:findTF("BtnShop")
-	arg0.goBtn = arg0:findTF("BtnGO")
+function var0_0.findUI(arg0_2)
+	arg0_2.paintBackTF = arg0_2:findTF("Paints/PaintBack")
+	arg0_2.paintFrontTF = arg0_2:findTF("Paints/PaintFront")
+	arg0_2.skinShopBtn = arg0_2:findTF("BtnShop")
+	arg0_2.goBtn = arg0_2:findTF("BtnGO")
 
-	onButton(arg0, arg0.skinShopBtn, function()
-		arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
+	onButton(arg0_2, arg0_2.skinShopBtn, function()
+		arg0_2:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.goBtn, function()
-		arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.NEWYEAR_BACKHILL_2022)
+	onButton(arg0_2, arg0_2.goBtn, function()
+		arg0_2:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.NEWYEAR_BACKHILL_2022)
 	end, SFX_PANEL)
 end
 
-function var0.initData(arg0)
-	arg0.paintCount = 20
-	arg0.curPaintIndex = 1
-	arg0.paintSwitchTime = 1
-	arg0.paintStaticTime = 3.5
-	arg0.paintStaticCountValue = 0
-	arg0.paintPathPrefix = "NewYear22SkinShowPage/"
+function var0_0.initData(arg0_5)
+	arg0_5.paintCount = 20
+	arg0_5.curPaintIndex = 1
+	arg0_5.paintSwitchTime = 1
+	arg0_5.paintStaticTime = 3.5
+	arg0_5.paintStaticCountValue = 0
+	arg0_5.paintPathPrefix = "NewYear22SkinShowPage/"
 end
 
-function var0.switchNextPaint(arg0)
-	arg0.frameTimer:Stop()
+function var0_0.switchNextPaint(arg0_6)
+	arg0_6.frameTimer:Stop()
 
-	local var0 = arg0.curPaintIndex % arg0.paintCount + 1
-	local var1 = var1[var0].name
-	local var2 = arg0.paintPathPrefix .. var1
-	local var3 = pg.ship_data_statistics[var1[var0].id].name
+	local var0_6 = arg0_6.curPaintIndex % arg0_6.paintCount + 1
+	local var1_6 = var1_0[var0_6].name
+	local var2_6 = arg0_6.paintPathPrefix .. var1_6
+	local var3_6 = pg.ship_data_statistics[var1_0[var0_6].id].name
 
-	setImageSprite(arg0.paintBackTF, LoadSprite(var2, var1))
-	setText(findTF(arg0.paintBackTF, "txt"), var3)
-	setText(findTF(arg0.paintBackTF, "outlineTxt"), var3)
+	setImageSprite(arg0_6.paintBackTF, LoadSprite(var2_6, var1_6))
+	setText(findTF(arg0_6.paintBackTF, "txt"), var3_6)
+	setText(findTF(arg0_6.paintBackTF, "outlineTxt"), var3_6)
 
-	local var4 = GetComponent(arg0.paintFrontTF, typeof(CanvasGroup))
-	local var5 = GetComponent(arg0.paintBackTF, typeof(CanvasGroup))
+	local var4_6 = GetComponent(arg0_6.paintFrontTF, typeof(CanvasGroup))
+	local var5_6 = GetComponent(arg0_6.paintBackTF, typeof(CanvasGroup))
 
-	LeanTween.value(go(arg0.paintFrontTF), 1, 0, arg0.paintSwitchTime):setOnUpdate(System.Action_float(function(arg0)
-		var4.alpha = arg0
-		var5.alpha = 1 - arg0
+	LeanTween.value(go(arg0_6.paintFrontTF), 1, 0, arg0_6.paintSwitchTime):setOnUpdate(System.Action_float(function(arg0_7)
+		var4_6.alpha = arg0_7
+		var5_6.alpha = 1 - arg0_7
 	end)):setOnComplete(System.Action(function()
-		setImageFromImage(arg0.paintFrontTF, arg0.paintBackTF)
+		setImageFromImage(arg0_6.paintFrontTF, arg0_6.paintBackTF)
 
-		var4.alpha = 1
-		var5.alpha = 0
+		var4_6.alpha = 1
+		var5_6.alpha = 0
 
-		setText(findTF(arg0.paintFrontTF, "txt"), var3)
-		setText(findTF(arg0.paintFrontTF, "outlineTxt"), var3)
+		setText(findTF(arg0_6.paintFrontTF, "txt"), var3_6)
+		setText(findTF(arg0_6.paintFrontTF, "outlineTxt"), var3_6)
 
-		arg0.curPaintIndex = var0
+		arg0_6.curPaintIndex = var0_6
 
-		arg0.frameTimer:Start()
+		arg0_6.frameTimer:Start()
 	end))
 end
 
-function var0.OnFirstFlush(arg0)
-	arg0:initPaint()
-	arg0:initTimer()
+function var0_0.OnFirstFlush(arg0_9)
+	arg0_9:initPaint()
+	arg0_9:initTimer()
 end
 
-function var0.initPaint(arg0)
-	local var0 = arg0.curPaintIndex
-	local var1 = (var0 - 1) % arg0.paintCount + 1
-	local var2 = pg.ship_data_statistics[var1[var1].id].name
-	local var3 = var1[var0].name
-	local var4 = arg0.paintPathPrefix .. var3
+function var0_0.initPaint(arg0_10)
+	local var0_10 = arg0_10.curPaintIndex
+	local var1_10 = (var0_10 - 1) % arg0_10.paintCount + 1
+	local var2_10 = pg.ship_data_statistics[var1_0[var1_10].id].name
+	local var3_10 = var1_0[var0_10].name
+	local var4_10 = arg0_10.paintPathPrefix .. var3_10
 
-	setImageSprite(arg0.paintFrontTF, LoadSprite(var4, var3))
-	setText(findTF(arg0.paintFrontTF, "txt"), var2)
-	setText(findTF(arg0.paintFrontTF, "outlineTxt"), var2)
+	setImageSprite(arg0_10.paintFrontTF, LoadSprite(var4_10, var3_10))
+	setText(findTF(arg0_10.paintFrontTF, "txt"), var2_10)
+	setText(findTF(arg0_10.paintFrontTF, "outlineTxt"), var2_10)
 
-	local var5 = pg.ship_data_statistics[var1[var1].id].name
-	local var6 = var1[var1].name
-	local var7 = arg0.paintPathPrefix .. var6
+	local var5_10 = pg.ship_data_statistics[var1_0[var1_10].id].name
+	local var6_10 = var1_0[var1_10].name
+	local var7_10 = arg0_10.paintPathPrefix .. var6_10
 
-	setImageSprite(arg0.paintBackTF, LoadSprite(var7, var6))
-	setText(findTF(arg0.paintBackTF, "txt"), var5)
-	setText(findTF(arg0.paintBackTF, "outlineTxt"), var5)
+	setImageSprite(arg0_10.paintBackTF, LoadSprite(var7_10, var6_10))
+	setText(findTF(arg0_10.paintBackTF, "txt"), var5_10)
+	setText(findTF(arg0_10.paintBackTF, "outlineTxt"), var5_10)
 end
 
-function var0.initTimer(arg0)
-	local var0 = 0.0166666666666667
+function var0_0.initTimer(arg0_11)
+	local var0_11 = 0.0166666666666667
 
-	arg0.paintStaticCountValue = 0
-	arg0.frameTimer = Timer.New(function()
-		arg0.paintStaticCountValue = arg0.paintStaticCountValue + var0
+	arg0_11.paintStaticCountValue = 0
+	arg0_11.frameTimer = Timer.New(function()
+		arg0_11.paintStaticCountValue = arg0_11.paintStaticCountValue + var0_11
 
-		if arg0.paintStaticCountValue >= arg0.paintStaticTime then
-			arg0.paintStaticCountValue = 0
+		if arg0_11.paintStaticCountValue >= arg0_11.paintStaticTime then
+			arg0_11.paintStaticCountValue = 0
 
-			arg0:switchNextPaint()
+			arg0_11:switchNextPaint()
 		end
-	end, var0, -1, false)
+	end, var0_11, -1, false)
 
-	arg0.frameTimer:Start()
+	arg0_11.frameTimer:Start()
 end
 
-function var0.OnDestroy(arg0)
-	if arg0.frameTimer then
-		arg0.frameTimer:Stop()
+function var0_0.OnDestroy(arg0_13)
+	if arg0_13.frameTimer then
+		arg0_13.frameTimer:Stop()
 
-		arg0.frameTimer = nil
+		arg0_13.frameTimer = nil
 	end
 end
 
-return var0
+return var0_0

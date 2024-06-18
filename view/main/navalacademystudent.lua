@@ -1,239 +1,239 @@
-﻿local var0 = class("NavalAcademyStudent")
+﻿local var0_0 = class("NavalAcademyStudent")
 
-var0.ShipState = {
+var0_0.ShipState = {
 	Walk = "Walk",
 	Idle = "Idle",
 	Touch = "Touch"
 }
-var0.normalSpeed = 15
+var0_0.normalSpeed = 15
 
-function var0.Ctor(arg0, arg1)
-	arg0._go = arg1
-	arg0._tf = arg1.transform
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1._go = arg1_1
+	arg0_1._tf = arg1_1.transform
 
-	arg0:init()
+	arg0_1:init()
 end
 
-function var0.init(arg0)
-	arg0.chat = arg0._tf:Find("chat")
-	arg0.chatFace = arg0.chat:Find("face")
-	arg0.chatTask = arg0.chat:Find("task")
-	arg0.chatFight = arg0.chat:Find("fight")
-	arg0.clickArea = arg0._tf:Find("click")
+function var0_0.init(arg0_2)
+	arg0_2.chat = arg0_2._tf:Find("chat")
+	arg0_2.chatFace = arg0_2.chat:Find("face")
+	arg0_2.chatTask = arg0_2.chat:Find("task")
+	arg0_2.chatFight = arg0_2.chat:Find("fight")
+	arg0_2.clickArea = arg0_2._tf:Find("click")
 
-	setActive(arg0.chat, true)
-	setActive(arg0.clickArea, true)
+	setActive(arg0_2.chat, true)
+	setActive(arg0_2.clickArea, true)
 end
 
-function var0.attach(arg0)
-	arg0.exited = false
+function var0_0.attach(arg0_3)
+	arg0_3.exited = false
 
-	setActive(arg0._go, true)
-	pg.DelegateInfo.New(arg0)
+	setActive(arg0_3._go, true)
+	pg.DelegateInfo.New(arg0_3)
 end
 
-function var0.setPathFinder(arg0, arg1)
-	arg0.pathFinder = arg1
+function var0_0.setPathFinder(arg0_4, arg1_4)
+	arg0_4.pathFinder = arg1_4
 end
 
-function var0.setCallBack(arg0, arg1, arg2)
-	arg0.onStateChange = arg1
-	arg0.onTask = arg2
+function var0_0.setCallBack(arg0_5, arg1_5, arg2_5)
+	arg0_5.onStateChange = arg1_5
+	arg0_5.onTask = arg2_5
 end
 
-function var0.updateStudent(arg0, arg1, arg2)
-	if arg1.hide then
-		setActive(arg0._go, false)
+function var0_0.updateStudent(arg0_6, arg1_6, arg2_6)
+	if arg1_6.hide then
+		setActive(arg0_6._go, false)
 
 		return
 	end
 
-	setActive(arg0._go, true)
+	setActive(arg0_6._go, true)
 
-	if arg0.shipVO == nil or arg0.shipVO.configId ~= arg1.configId then
-		if not IsNil(arg0.model) then
-			PoolMgr.GetInstance():ReturnSpineChar(arg0.prefab, arg0.model)
+	if arg0_6.shipVO == nil or arg0_6.shipVO.configId ~= arg1_6.configId then
+		if not IsNil(arg0_6.model) then
+			PoolMgr.GetInstance():ReturnSpineChar(arg0_6.prefab, arg0_6.model)
 		end
 
-		arg0.prefab = arg1:getPrefab()
-		arg0.currentPoint = arg0.pathFinder:getRandomPoint()
+		arg0_6.prefab = arg1_6:getPrefab()
+		arg0_6.currentPoint = arg0_6.pathFinder:getRandomPoint()
 
-		local var0 = arg0.currentPoint.nexts
-		local var1 = var0[math.random(1, #var0)]
+		local var0_6 = arg0_6.currentPoint.nexts
+		local var1_6 = var0_6[math.random(1, #var0_6)]
 
-		arg0.targetPoint = arg0.pathFinder:getPoint(var1)
-		arg0._tf.anchoredPosition = Vector2.New(arg0.currentPoint.x, arg0.currentPoint.y)
+		arg0_6.targetPoint = arg0_6.pathFinder:getPoint(var1_6)
+		arg0_6._tf.anchoredPosition = Vector2.New(arg0_6.currentPoint.x, arg0_6.currentPoint.y)
 
-		local var2 = arg0.prefab
+		local var2_6 = arg0_6.prefab
 
-		PoolMgr.GetInstance():GetSpineChar(var2, true, function(arg0)
-			if var2 ~= arg0.prefab then
-				PoolMgr.GetInstance():ReturnSpineChar(var2, arg0)
+		PoolMgr.GetInstance():GetSpineChar(var2_6, true, function(arg0_7)
+			if var2_6 ~= arg0_6.prefab then
+				PoolMgr.GetInstance():ReturnSpineChar(var2_6, arg0_7)
 
 				return
 			end
 
-			arg0.model = arg0
-			arg0.model.transform.localScale = Vector3(0.5, 0.5, 1)
-			arg0.model.transform.localPosition = Vector3.zero
+			arg0_6.model = arg0_7
+			arg0_6.model.transform.localScale = Vector3(0.5, 0.5, 1)
+			arg0_6.model.transform.localPosition = Vector3.zero
 
-			arg0.model.transform:SetParent(arg0._tf, false)
-			arg0.model.transform:SetSiblingIndex(1)
+			arg0_6.model.transform:SetParent(arg0_6._tf, false)
+			arg0_6.model.transform:SetSiblingIndex(1)
 
-			arg0.anim = arg0.model:GetComponent(typeof(SpineAnimUI))
+			arg0_6.anim = arg0_6.model:GetComponent(typeof(SpineAnimUI))
 
-			arg0:updateState(var0.ShipState.Idle)
-			onButton(arg0, arg0.chat, function()
-				arg0:onClickShip()
+			arg0_6:updateState(var0_0.ShipState.Idle)
+			onButton(arg0_6, arg0_6.chat, function()
+				arg0_6:onClickShip()
 			end)
 		end)
 	end
 
-	onButton(arg0, arg0.clickArea, function()
-		if not IsNil(arg0.model) then
-			arg0:updateState(var0.ShipState.Touch)
+	onButton(arg0_6, arg0_6.clickArea, function()
+		if not IsNil(arg0_6.model) then
+			arg0_6:updateState(var0_0.ShipState.Touch)
 		end
 	end)
 
-	arg0.shipVO = arg1
-	arg0.args = arg2
+	arg0_6.shipVO = arg1_6
+	arg0_6.args = arg2_6
 
-	setActive(arg0.chatFace, false)
-	setActive(arg0.chatTask, false)
-	setActive(arg0.chatFight, false)
+	setActive(arg0_6.chatFace, false)
+	setActive(arg0_6.chatTask, false)
+	setActive(arg0_6.chatFight, false)
 
-	if arg0.shipVO.withShipFace then
-		if arg2.showTips then
-			setActive(arg0.chatTask, true)
-		elseif arg2.currentTask and not arg2.currentTask:isFinish() and arg2.currentTask:getConfig("sub_type") == 29 then
-			setActive(arg0.chatFight, true)
+	if arg0_6.shipVO.withShipFace then
+		if arg2_6.showTips then
+			setActive(arg0_6.chatTask, true)
+		elseif arg2_6.currentTask and not arg2_6.currentTask:isFinish() and arg2_6.currentTask:getConfig("sub_type") == 29 then
+			setActive(arg0_6.chatFight, true)
 		else
-			setActive(arg0.chatFace, true)
+			setActive(arg0_6.chatFace, true)
 		end
 	end
 end
 
-function var0.updateState(arg0, arg1)
-	if arg0.state ~= arg1 then
-		arg0.state = arg1
+function var0_0.updateState(arg0_10, arg1_10)
+	if arg0_10.state ~= arg1_10 then
+		arg0_10.state = arg1_10
 
-		arg0:updateAction()
-		arg0:updateLogic()
+		arg0_10:updateAction()
+		arg0_10:updateLogic()
 
-		if arg0.onStateChange then
-			arg0.onStateChange(arg0.state)
+		if arg0_10.onStateChange then
+			arg0_10.onStateChange(arg0_10.state)
 		end
 	end
 end
 
-function var0.updateAction(arg0)
-	if not IsNil(arg0.anim) then
-		if arg0.state == var0.ShipState.Walk then
-			arg0.anim:SetAction("walk", 0)
-		elseif arg0.state == var0.ShipState.Idle then
-			arg0.anim:SetAction("stand2", 0)
-		elseif arg0.state == var0.ShipState.Touch then
-			arg0.anim:SetAction("touch", 0)
-			arg0.anim:SetActionCallBack(function(arg0)
-				arg0:updateState(var0.ShipState.Idle)
+function var0_0.updateAction(arg0_11)
+	if not IsNil(arg0_11.anim) then
+		if arg0_11.state == var0_0.ShipState.Walk then
+			arg0_11.anim:SetAction("walk", 0)
+		elseif arg0_11.state == var0_0.ShipState.Idle then
+			arg0_11.anim:SetAction("stand2", 0)
+		elseif arg0_11.state == var0_0.ShipState.Touch then
+			arg0_11.anim:SetAction("touch", 0)
+			arg0_11.anim:SetActionCallBack(function(arg0_12)
+				arg0_11:updateState(var0_0.ShipState.Idle)
 			end)
 		end
 	end
 end
 
-function var0.updateLogic(arg0)
-	arg0:clearLogic()
+function var0_0.updateLogic(arg0_13)
+	arg0_13:clearLogic()
 
-	if arg0.state == var0.ShipState.Walk then
-		local var0 = Vector3(arg0._tf.anchoredPosition.x, arg0._tf.anchoredPosition.y, 0)
-		local var1 = Vector3(arg0.targetPoint.x, arg0.targetPoint.y, 0)
-		local var2 = arg0.normalSpeed
-		local var3 = Vector3.Distance(var0, var1) / var2
+	if arg0_13.state == var0_0.ShipState.Walk then
+		local var0_13 = Vector3(arg0_13._tf.anchoredPosition.x, arg0_13._tf.anchoredPosition.y, 0)
+		local var1_13 = Vector3(arg0_13.targetPoint.x, arg0_13.targetPoint.y, 0)
+		local var2_13 = arg0_13.normalSpeed
+		local var3_13 = Vector3.Distance(var0_13, var1_13) / var2_13
 
-		LeanTween.value(arg0._go, 0, 1, var3):setOnUpdate(System.Action_float(function(arg0)
-			arg0._tf.anchoredPosition3D = Vector3.Lerp(var0, var1, arg0)
+		LeanTween.value(arg0_13._go, 0, 1, var3_13):setOnUpdate(System.Action_float(function(arg0_14)
+			arg0_13._tf.anchoredPosition3D = Vector3.Lerp(var0_13, var1_13, arg0_14)
 
-			local var0 = arg0._tf.localScale
-			local var1 = arg0.targetPoint.x > arg0.currentPoint.x and 1 or -1
+			local var0_14 = arg0_13._tf.localScale
+			local var1_14 = arg0_13.targetPoint.x > arg0_13.currentPoint.x and 1 or -1
 
-			var0.x = var1
-			arg0._tf.localScale = var0
+			var0_14.x = var1_14
+			arg0_13._tf.localScale = var0_14
 
-			local var2 = arg0.chat.localScale
+			local var2_14 = arg0_13.chat.localScale
 
-			var2.x = var1
-			arg0.chat.localScale = var2
+			var2_14.x = var1_14
+			arg0_13.chat.localScale = var2_14
 
-			local var3 = arg0.chat.anchoredPosition
+			local var3_14 = arg0_13.chat.anchoredPosition
 
-			var3.x = var1 * math.abs(var3.x)
-			arg0.chat.anchoredPosition = var3
+			var3_14.x = var1_14 * math.abs(var3_14.x)
+			arg0_13.chat.anchoredPosition = var3_14
 		end)):setOnComplete(System.Action(function()
-			arg0.currentPoint = arg0.targetPoint
+			arg0_13.currentPoint = arg0_13.targetPoint
 
-			local var0 = arg0.currentPoint.nexts
-			local var1 = var0[math.random(1, #var0)]
+			local var0_15 = arg0_13.currentPoint.nexts
+			local var1_15 = var0_15[math.random(1, #var0_15)]
 
-			arg0.targetPoint = arg0.pathFinder:getPoint(var1)
+			arg0_13.targetPoint = arg0_13.pathFinder:getPoint(var1_15)
 
-			arg0:updateState(var0.ShipState.Idle)
+			arg0_13:updateState(var0_0.ShipState.Idle)
 		end))
-	elseif arg0.state == var0.ShipState.Idle then
-		arg0.idleTimer = Timer.New(function()
-			arg0:updateState(var0.ShipState.Walk)
+	elseif arg0_13.state == var0_0.ShipState.Idle then
+		arg0_13.idleTimer = Timer.New(function()
+			arg0_13:updateState(var0_0.ShipState.Walk)
 		end, math.random(10, 20), 1)
 
-		arg0.idleTimer:Start()
-	elseif arg0.state == var0.ShipState.Touch then
-		arg0:onClickShip()
+		arg0_13.idleTimer:Start()
+	elseif arg0_13.state == var0_0.ShipState.Touch then
+		arg0_13:onClickShip()
 	end
 end
 
-function var0.onClickShip(arg0)
-	if arg0.onTask then
-		arg0.onTask(arg0.acceptTaskId, arg0.currentTask)
+function var0_0.onClickShip(arg0_17)
+	if arg0_17.onTask then
+		arg0_17.onTask(arg0_17.acceptTaskId, arg0_17.currentTask)
 	end
 end
 
-function var0.clearLogic(arg0)
-	LeanTween.cancel(arg0._go)
+function var0_0.clearLogic(arg0_18)
+	LeanTween.cancel(arg0_18._go)
 
-	if arg0.idleTimer then
-		arg0.idleTimer:Stop()
+	if arg0_18.idleTimer then
+		arg0_18.idleTimer:Stop()
 
-		arg0.idleTimer = nil
+		arg0_18.idleTimer = nil
 	end
 end
 
-function var0.clear(arg0)
-	arg0:clearLogic()
+function var0_0.clear(arg0_19)
+	arg0_19:clearLogic()
 
-	if not IsNil(arg0.model) then
-		arg0.anim:SetActionCallBack(nil)
+	if not IsNil(arg0_19.model) then
+		arg0_19.anim:SetActionCallBack(nil)
 
-		arg0.model.transform.localScale = Vector3.one
+		arg0_19.model.transform.localScale = Vector3.one
 
-		PoolMgr.GetInstance():ReturnSpineChar(arg0.prefab, arg0.model)
+		PoolMgr.GetInstance():ReturnSpineChar(arg0_19.prefab, arg0_19.model)
 	end
 
-	arg0.shipVO = nil
-	arg0.prefab = nil
-	arg0.model = nil
-	arg0.anim = nil
-	arg0.position = nil
-	arg0.currentPoint = nil
-	arg0.targetPoint = nil
-	arg0.state = nil
+	arg0_19.shipVO = nil
+	arg0_19.prefab = nil
+	arg0_19.model = nil
+	arg0_19.anim = nil
+	arg0_19.position = nil
+	arg0_19.currentPoint = nil
+	arg0_19.targetPoint = nil
+	arg0_19.state = nil
 end
 
-function var0.detach(arg0)
-	if not arg0.exited then
-		setActive(arg0._go, false)
-		pg.DelegateInfo.Dispose(arg0)
-		arg0:clear()
+function var0_0.detach(arg0_20)
+	if not arg0_20.exited then
+		setActive(arg0_20._go, false)
+		pg.DelegateInfo.Dispose(arg0_20)
+		arg0_20:clear()
 
-		arg0.exited = true
+		arg0_20.exited = true
 	end
 end
 
-return var0
+return var0_0

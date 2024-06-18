@@ -1,31 +1,31 @@
-﻿local var0 = require("jit")
+﻿local var0_0 = require("jit")
 
-assert(var0.version_num == 20100, "LuaJIT core/library version mismatch")
+assert(var0_0.version_num == 20100, "LuaJIT core/library version mismatch")
 
-local var1 = require("jit.profile")
-local var2 = require("jit.vmdef")
-local var3 = math
-local var4 = pairs
-local var5 = ipairs
-local var6 = tonumber
-local var7 = var3.floor
-local var8 = table.sort
-local var9 = string.format
-local var10 = io.stdout
-local var11
-local var12
-local var13
-local var14
-local var15
-local var16
-local var17
-local var18
-local var19
-local var20
-local var21
-local var22
-local var23
-local var24 = {
+local var1_0 = require("jit.profile")
+local var2_0 = require("jit.vmdef")
+local var3_0 = math
+local var4_0 = pairs
+local var5_0 = ipairs
+local var6_0 = tonumber
+local var7_0 = var3_0.floor
+local var8_0 = table.sort
+local var9_0 = string.format
+local var10_0 = io.stdout
+local var11_0
+local var12_0
+local var13_0
+local var14_0
+local var15_0
+local var16_0
+local var17_0
+local var18_0
+local var19_0
+local var20_0
+local var21_0
+local var22_0
+local var23_0
+local var24_0 = {
 	G = "Garbage Collector",
 	C = "C code",
 	N = "Compiled",
@@ -33,364 +33,364 @@ local var24 = {
 	I = "Interpreted"
 }
 
-local function var25(arg0, arg1, arg2)
-	var23 = var23 + arg1
+local function var25_0(arg0_1, arg1_1, arg2_1)
+	var23_0 = var23_0 + arg1_1
 
-	local var0
-	local var1
-	local var2
+	local var0_1
+	local var1_1
+	local var2_1
 
-	if var14 then
-		if var14 == "v" then
-			var2 = var24[arg2] or arg2
+	if var14_0 then
+		if var14_0 == "v" then
+			var2_1 = var24_0[arg2_1] or arg2_1
 		else
-			var2 = var11:get() or "(none)"
+			var2_1 = var11_0:get() or "(none)"
 		end
 	end
 
-	if var18 then
-		var0 = var1.dumpstack(arg0, var18, var19)
-		var0 = var0:gsub("%[builtin#(%d+)%]", function(arg0)
-			return var2.ffnames[var6(arg0)]
+	if var18_0 then
+		var0_1 = var1_0.dumpstack(arg0_1, var18_0, var19_0)
+		var0_1 = var0_1:gsub("%[builtin#(%d+)%]", function(arg0_2)
+			return var2_0.ffnames[var6_0(arg0_2)]
 		end)
 
-		if var15 == 2 then
-			local var3, var4 = var0:match("(.-) [<>] (.*)")
+		if var15_0 == 2 then
+			local var3_1, var4_1 = var0_1:match("(.-) [<>] (.*)")
 
-			if var4 then
-				var0, var1 = var3, var4
+			if var4_1 then
+				var0_1, var1_1 = var3_1, var4_1
 			end
-		elseif var15 == 3 then
-			var1 = var1.dumpstack(arg0, "l", 1)
+		elseif var15_0 == 3 then
+			var1_1 = var1_0.dumpstack(arg0_1, "l", 1)
 		end
 	end
 
-	local var5
-	local var6
+	local var5_1
+	local var6_1
 
-	if var15 == 1 then
-		if var2 then
-			var5 = var2
+	if var15_0 == 1 then
+		if var2_1 then
+			var5_1 = var2_1
 
-			if var0 then
-				var6 = var0
+			if var0_1 then
+				var6_1 = var0_1
 			end
 		end
-	elseif var0 then
-		var5 = var0
+	elseif var0_1 then
+		var5_1 = var0_1
 
-		if var1 then
-			var6 = var1
-		elseif var2 then
-			var6 = var2
+		if var1_1 then
+			var6_1 = var1_1
+		elseif var2_1 then
+			var6_1 = var2_1
 		end
 	end
 
-	if var5 then
-		local var7 = var21
+	if var5_1 then
+		local var7_1 = var21_0
 
-		var7[var5] = (var7[var5] or 0) + arg1
+		var7_1[var5_1] = (var7_1[var5_1] or 0) + arg1_1
 
-		if var6 then
-			local var8 = var22
-			local var9 = var8[var5]
+		if var6_1 then
+			local var8_1 = var22_0
+			local var9_1 = var8_1[var5_1]
 
-			if not var9 then
-				var9 = {}
-				var8[var5] = var9
+			if not var9_1 then
+				var9_1 = {}
+				var8_1[var5_1] = var9_1
 			end
 
-			var9[var6] = (var9[var6] or 0) + arg1
+			var9_1[var6_1] = (var9_1[var6_1] or 0) + arg1_1
 		end
 	end
 end
 
-local function var26(arg0, arg1, arg2, arg3)
-	local var0 = {}
-	local var1 = 0
+local function var26_0(arg0_3, arg1_3, arg2_3, arg3_3)
+	local var0_3 = {}
+	local var1_3 = 0
 
-	for iter0 in var4(arg0) do
-		var1 = var1 + 1
-		var0[var1] = iter0
+	for iter0_3 in var4_0(arg0_3) do
+		var1_3 = var1_3 + 1
+		var0_3[var1_3] = iter0_3
 	end
 
-	var8(var0, function(arg0, arg1)
-		return arg0[arg0] > arg0[arg1]
+	var8_0(var0_3, function(arg0_4, arg1_4)
+		return arg0_3[arg0_4] > arg0_3[arg1_4]
 	end)
 
-	for iter1 = 1, var1 do
-		local var2 = var0[iter1]
-		local var3 = arg0[var2]
-		local var4 = var7(var3 * 100 / arg2 + 0.5)
+	for iter1_3 = 1, var1_3 do
+		local var2_3 = var0_3[iter1_3]
+		local var3_3 = arg0_3[var2_3]
+		local var4_3 = var7_0(var3_3 * 100 / arg2_3 + 0.5)
 
-		if var4 < var16 then
+		if var4_3 < var16_0 then
 			break
 		end
 
-		if not var17 then
-			var12:write(var9("%s%2d%%  %s\n", arg3, var4, var2))
-		elseif var17 == "r" then
-			var12:write(var9("%s%5d  %s\n", arg3, var3, var2))
+		if not var17_0 then
+			var12_0:write(var9_0("%s%2d%%  %s\n", arg3_3, var4_3, var2_3))
+		elseif var17_0 == "r" then
+			var12_0:write(var9_0("%s%5d  %s\n", arg3_3, var3_3, var2_3))
 		else
-			var12:write(var9("%s %d\n", var2, var3))
+			var12_0:write(var9_0("%s %d\n", var2_3, var3_3))
 		end
 
-		if arg1 then
-			local var5 = arg1[var2]
+		if arg1_3 then
+			local var5_3 = arg1_3[var2_3]
 
-			if var5 then
-				var26(var5, nil, var3, (var15 == 3 or var15 == 1) and "  -- " or var19 < 0 and "  -> " or "  <- ")
+			if var5_3 then
+				var26_0(var5_3, nil, var3_3, (var15_0 == 3 or var15_0 == 1) and "  -- " or var19_0 < 0 and "  -> " or "  <- ")
 			end
 		end
 	end
 end
 
-local function var27(arg0, arg1)
-	local var0 = {}
-	local var1 = 0
+local function var27_0(arg0_5, arg1_5)
+	local var0_5 = {}
+	local var1_5 = 0
 
-	for iter0, iter1 in var4(arg0) do
-		local var2 = var7(iter1 * 100 / arg1 + 0.5)
+	for iter0_5, iter1_5 in var4_0(arg0_5) do
+		local var2_5 = var7_0(iter1_5 * 100 / arg1_5 + 0.5)
 
-		var1 = var3.max(var1, iter1)
+		var1_5 = var3_0.max(var1_5, iter1_5)
 
-		if var2 >= var16 then
-			local var3, var4 = iter0:match("^(.*):(%d+)$")
+		if var2_5 >= var16_0 then
+			local var3_5, var4_5 = iter0_5:match("^(.*):(%d+)$")
 
-			if not var3 then
-				var3 = iter0
-				var4 = 0
+			if not var3_5 then
+				var3_5 = iter0_5
+				var4_5 = 0
 			end
 
-			local var5 = var0[var3]
+			local var5_5 = var0_5[var3_5]
 
-			if not var5 then
-				var5 = {}
-				var0[var3] = var5
-				var0[#var0 + 1] = var3
+			if not var5_5 then
+				var5_5 = {}
+				var0_5[var3_5] = var5_5
+				var0_5[#var0_5 + 1] = var3_5
 			end
 
-			var5[var6(var4)] = var17 and iter1 or var2
+			var5_5[var6_0(var4_5)] = var17_0 and iter1_5 or var2_5
 		end
 	end
 
-	var8(var0)
+	var8_0(var0_5)
 
-	local var6 = " %3d%% | %s\n"
-	local var7 = "      | %s\n"
+	local var6_5 = " %3d%% | %s\n"
+	local var7_5 = "      | %s\n"
 
-	if var17 then
-		local var8 = var3.max(5, var3.ceil(var3.log10(var1)))
+	if var17_0 then
+		local var8_5 = var3_0.max(5, var3_0.ceil(var3_0.log10(var1_5)))
 
-		var6 = "%" .. var8 .. "d | %s\n"
-		var7 = (" "):rep(var8) .. " | %s\n"
+		var6_5 = "%" .. var8_5 .. "d | %s\n"
+		var7_5 = (" "):rep(var8_5) .. " | %s\n"
 	end
 
-	local var9 = var20
+	local var9_5 = var20_0
 
-	for iter2, iter3 in var5(var0) do
-		local var10 = iter3:byte()
+	for iter2_5, iter3_5 in var5_0(var0_5) do
+		local var10_5 = iter3_5:byte()
 
-		if var10 == 40 or var10 == 91 then
-			var12:write(var9("\n====== %s ======\n[Cannot annotate non-file]\n", iter3))
+		if var10_5 == 40 or var10_5 == 91 then
+			var12_0:write(var9_0("\n====== %s ======\n[Cannot annotate non-file]\n", iter3_5))
 
 			break
 		end
 
-		local var11, var12 = io.open(iter3)
+		local var11_5, var12_5 = io.open(iter3_5)
 
-		if not var11 then
-			var12:write(var9("====== ERROR: %s: %s\n", iter3, var12))
+		if not var11_5 then
+			var12_0:write(var9_0("====== ERROR: %s: %s\n", iter3_5, var12_5))
 
 			break
 		end
 
-		var12:write(var9("\n====== %s ======\n", iter3))
+		var12_0:write(var9_0("\n====== %s ======\n", iter3_5))
 
-		local var13 = var0[iter3]
-		local var14 = 1
-		local var15 = false
+		local var13_5 = var0_5[iter3_5]
+		local var14_5 = 1
+		local var15_5 = false
 
-		if var9 ~= 0 then
-			for iter4 = 1, var9 do
-				if var13[iter4] then
-					var15 = true
+		if var9_5 ~= 0 then
+			for iter4_5 = 1, var9_5 do
+				if var13_5[iter4_5] then
+					var15_5 = true
 
-					var12:write("@@ 1 @@\n")
+					var12_0:write("@@ 1 @@\n")
 
 					break
 				end
 			end
 		end
 
-		for iter5 in var11:lines() do
-			if iter5:byte() == 27 then
-				var12:write("[Cannot annotate bytecode file]\n")
+		for iter5_5 in var11_5:lines() do
+			if iter5_5:byte() == 27 then
+				var12_0:write("[Cannot annotate bytecode file]\n")
 
 				break
 			end
 
-			local var16 = var13[var14]
+			local var16_5 = var13_5[var14_5]
 
-			if var9 ~= 0 then
-				local var17 = var13[var14 + var9]
+			if var9_5 ~= 0 then
+				local var17_5 = var13_5[var14_5 + var9_5]
 
-				if var15 then
-					if var17 then
-						var15 = var14 + var9
-					elseif var16 then
-						var15 = var14
-					elseif var14 > var15 + var9 then
-						var15 = false
+				if var15_5 then
+					if var17_5 then
+						var15_5 = var14_5 + var9_5
+					elseif var16_5 then
+						var15_5 = var14_5
+					elseif var14_5 > var15_5 + var9_5 then
+						var15_5 = false
 					end
-				elseif var17 then
-					var15 = var14 + var9
+				elseif var17_5 then
+					var15_5 = var14_5 + var9_5
 
-					var12:write(var9("@@ %d @@\n", var14))
+					var12_0:write(var9_0("@@ %d @@\n", var14_5))
 				end
 
-				if not var15 then
-					goto label0_
+				if not var15_5 then
+					goto label0_5
 				end
 			end
 
-			if var16 then
-				var12:write(var9(var6, var16, iter5))
+			if var16_5 then
+				var12_0:write(var9_0(var6_5, var16_5, iter5_5))
 			else
-				var12:write(var9(var7, iter5))
+				var12_0:write(var9_0(var7_5, iter5_5))
 			end
 
-			::label0_::
+			::label0_5::
 
-			var14 = var14 + 1
+			var14_5 = var14_5 + 1
 		end
 
-		var11:close()
+		var11_5:close()
 	end
 end
 
-local function var28()
-	if var13 then
-		var1.stop()
+local function var28_0()
+	if var13_0 then
+		var1_0.stop()
 
-		local var0 = var23
+		local var0_6 = var23_0
 
-		if var0 == 0 then
-			if var17 ~= true then
-				var12:write("[No samples collected]\n")
+		if var0_6 == 0 then
+			if var17_0 ~= true then
+				var12_0:write("[No samples collected]\n")
 			end
 
 			return
 		end
 
-		if var20 then
-			var27(var21, var0)
+		if var20_0 then
+			var27_0(var21_0, var0_6)
 		else
-			var26(var21, var22, var0, "")
+			var26_0(var21_0, var22_0, var0_6, "")
 		end
 
-		var21 = nil
-		var22 = nil
-		var13 = nil
+		var21_0 = nil
+		var22_0 = nil
+		var13_0 = nil
 	end
 end
 
-local function var29(arg0)
-	local var0 = ""
+local function var29_0(arg0_7)
+	local var0_7 = ""
 
-	arg0 = arg0:gsub("i%d*", function(arg0)
-		var0 = arg0
-
-		return ""
-	end)
-	var16 = 3
-	arg0 = arg0:gsub("m(%d+)", function(arg0)
-		var16 = var6(arg0)
+	arg0_7 = arg0_7:gsub("i%d*", function(arg0_8)
+		var0_7 = arg0_8
 
 		return ""
 	end)
-	var19 = 1
-	arg0 = arg0:gsub("%-?%d+", function(arg0)
-		var19 = var6(arg0)
+	var16_0 = 3
+	arg0_7 = arg0_7:gsub("m(%d+)", function(arg0_9)
+		var16_0 = var6_0(arg0_9)
+
+		return ""
+	end)
+	var19_0 = 1
+	arg0_7 = arg0_7:gsub("%-?%d+", function(arg0_10)
+		var19_0 = var6_0(arg0_10)
 
 		return ""
 	end)
 
-	local var1 = {}
+	local var1_7 = {}
 
-	for iter0 in arg0:gmatch(".") do
-		var1[iter0] = iter0
+	for iter0_7 in arg0_7:gmatch(".") do
+		var1_7[iter0_7] = iter0_7
 	end
 
-	var14 = var1.z or var1.v
+	var14_0 = var1_7.z or var1_7.v
 
-	if var14 == "z" then
-		var11 = require("jit.zone")
+	if var14_0 == "z" then
+		var11_0 = require("jit.zone")
 	end
 
-	local var2 = var1.l or var1.f or var1.F or var14 and "" or "f"
-	local var3 = var1.p or ""
+	local var2_7 = var1_7.l or var1_7.f or var1_7.F or var14_0 and "" or "f"
+	local var3_7 = var1_7.p or ""
 
-	var17 = var1.r
+	var17_0 = var1_7.r
 
-	if var1.s then
-		var15 = 2
+	if var1_7.s then
+		var15_0 = 2
 
-		if var19 == -1 or var1["-"] then
-			var19 = -2
-		elseif var19 == 1 then
-			var19 = 2
+		if var19_0 == -1 or var1_7["-"] then
+			var19_0 = -2
+		elseif var19_0 == 1 then
+			var19_0 = 2
 		end
-	elseif arg0:find("[fF].*l") then
-		var2 = "l"
-		var15 = 3
+	elseif arg0_7:find("[fF].*l") then
+		var2_7 = "l"
+		var15_0 = 3
 	else
-		var15 = (var2 == "" or arg0:find("[zv].*[lfF]")) and 1 or 0
+		var15_0 = (var2_7 == "" or arg0_7:find("[zv].*[lfF]")) and 1 or 0
 	end
 
-	var20 = var1.A and 0 or var1.a and 3
+	var20_0 = var1_7.A and 0 or var1_7.a and 3
 
-	if var20 then
-		var2 = "l"
-		var18 = "pl"
-		var15 = 0
-		var19 = 1
-	elseif var1.G and var2 ~= "" then
-		var18 = var3 .. var2 .. "Z;"
-		var19 = -100
-		var17 = true
-		var16 = 0
-	elseif var2 == "" then
-		var18 = false
+	if var20_0 then
+		var2_7 = "l"
+		var18_0 = "pl"
+		var15_0 = 0
+		var19_0 = 1
+	elseif var1_7.G and var2_7 ~= "" then
+		var18_0 = var3_7 .. var2_7 .. "Z;"
+		var19_0 = -100
+		var17_0 = true
+		var16_0 = 0
+	elseif var2_7 == "" then
+		var18_0 = false
 	else
-		local var4 = var15 == 3 and var1.f or var1.F or var2
+		local var4_7 = var15_0 == 3 and var1_7.f or var1_7.F or var2_7
 
-		var18 = var3 .. var4 .. (var19 >= 0 and "Z < " or "Z > ")
+		var18_0 = var3_7 .. var4_7 .. (var19_0 >= 0 and "Z < " or "Z > ")
 	end
 
-	var21 = {}
-	var22 = {}
-	var23 = 0
+	var21_0 = {}
+	var22_0 = {}
+	var23_0 = 0
 
-	var1.start(var2:lower() .. var0, var25)
+	var1_0.start(var2_7:lower() .. var0_7, var25_0)
 
-	var13 = newproxy(true)
-	getmetatable(var13).__gc = var28
+	var13_0 = newproxy(true)
+	getmetatable(var13_0).__gc = var28_0
 end
 
-local function var30(arg0, arg1)
-	arg1 = arg1 or os.getenv("LUAJIT_PROFILEFILE")
+local function var30_0(arg0_11, arg1_11)
+	arg1_11 = arg1_11 or os.getenv("LUAJIT_PROFILEFILE")
 
-	if arg1 then
-		var12 = arg1 == "-" and var10 or assert(io.open(arg1, "w"))
+	if arg1_11 then
+		var12_0 = arg1_11 == "-" and var10_0 or assert(io.open(arg1_11, "w"))
 	else
-		var12 = var10
+		var12_0 = var10_0
 	end
 
-	var29(arg0 or "f")
+	var29_0(arg0_11 or "f")
 end
 
 return {
-	start = var30,
-	stop = var28
+	start = var30_0,
+	stop = var28_0
 }

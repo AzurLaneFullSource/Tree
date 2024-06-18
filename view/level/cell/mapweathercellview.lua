@@ -1,60 +1,60 @@
-﻿local var0 = class("MapWeatherCellView", import(".StaticCellView"))
+﻿local var0_0 = class("MapWeatherCellView", import(".StaticCellView"))
 
-function var0.Ctor(arg0, ...)
-	var0.super.Ctor(arg0, ...)
+function var0_0.Ctor(arg0_1, ...)
+	var0_0.super.Ctor(arg0_1, ...)
 
-	arg0.weatherPrefabs = {}
+	arg0_1.weatherPrefabs = {}
 end
 
-function var0.GetOrder(arg0)
+function var0_0.GetOrder(arg0_2)
 	return ChapterConst.CellPriorityUpperEffect
 end
 
-function var0.Update(arg0, arg1)
-	if IsNil(arg0.go) then
-		arg0:PrepareBase("weathers" .. arg0.line.row .. "_" .. arg0.line.column)
+function var0_0.Update(arg0_3, arg1_3)
+	if IsNil(arg0_3.go) then
+		arg0_3:PrepareBase("weathers" .. arg0_3.line.row .. "_" .. arg0_3.line.column)
 	end
 
-	for iter0, iter1 in ipairs(arg1) do
-		if not arg0.weatherPrefabs[iter1] then
-			arg0.weatherPrefabs[iter1] = true
+	for iter0_3, iter1_3 in ipairs(arg1_3) do
+		if not arg0_3.weatherPrefabs[iter1_3] then
+			arg0_3.weatherPrefabs[iter1_3] = true
 
-			local var0 = pg.weather_data_template[iter1].icon
+			local var0_3 = pg.weather_data_template[iter1_3].icon
 
-			if var0 and #var0 > 0 then
-				arg0:GetLoader():GetPrefab("ui/" .. var0, var0, function(arg0)
-					setParent(arg0, arg0.tf)
-					setActive(arg0, true)
-					arg0:OnLoadedPrefab(arg0, iter1)
-				end, "Weather" .. iter1)
+			if var0_3 and #var0_3 > 0 then
+				arg0_3:GetLoader():GetPrefab("ui/" .. var0_3, var0_3, function(arg0_4)
+					setParent(arg0_4, arg0_3.tf)
+					setActive(arg0_4, true)
+					arg0_3:OnLoadedPrefab(arg0_4, iter1_3)
+				end, "Weather" .. iter1_3)
 			elseif IsUnityEditor then
-				local var1 = GameObject("weatherID_" .. iter1)
+				local var1_3 = GameObject("weatherID_" .. iter1_3)
 
-				arg0:GetLoader():RegisterLoaded("Weather" .. iter1, var1)
-				setParent(var1, arg0.tf)
-				setActive(var1, true)
+				arg0_3:GetLoader():RegisterLoaded("Weather" .. iter1_3, var1_3)
+				setParent(var1_3, arg0_3.tf)
+				setActive(var1_3, true)
 			end
 		end
 	end
 
-	for iter2, iter3 in pairs(arg0.weatherPrefabs) do
-		if not table.contains(arg1, iter2) then
-			arg0:GetLoader():ClearRequest("Weather" .. iter2)
+	for iter2_3, iter3_3 in pairs(arg0_3.weatherPrefabs) do
+		if not table.contains(arg1_3, iter2_3) then
+			arg0_3:GetLoader():ClearRequest("Weather" .. iter2_3)
 
-			arg0.weatherPrefabs[iter2] = nil
+			arg0_3.weatherPrefabs[iter2_3] = nil
 		end
 	end
 end
 
-function var0.OnLoadedPrefab(arg0, arg1, arg2)
-	if arg2 == ChapterConst.FlagWeatherFog then
-		local var0 = tf(arg1).childCount
-		local var1 = math.random(1, var0)
+function var0_0.OnLoadedPrefab(arg0_5, arg1_5, arg2_5)
+	if arg2_5 == ChapterConst.FlagWeatherFog then
+		local var0_5 = tf(arg1_5).childCount
+		local var1_5 = math.random(1, var0_5)
 
-		for iter0 = 1, var0 do
-			setActive(tf(arg1):GetChild(iter0 - 1), iter0 == var1)
+		for iter0_5 = 1, var0_5 do
+			setActive(tf(arg1_5):GetChild(iter0_5 - 1), iter0_5 == var1_5)
 		end
 	end
 end
 
-return var0
+return var0_0

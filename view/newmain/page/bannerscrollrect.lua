@@ -1,231 +1,231 @@
-﻿local var0 = class("BannerScrollRect")
+﻿local var0_0 = class("BannerScrollRect")
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0.container = arg1
-	arg0.dotContainer = arg2
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.container = arg1_1
+	arg0_1.dotContainer = arg2_1
 
-	local var0 = arg1:Find("item")
+	local var0_1 = arg1_1:Find("item")
 
-	arg0.items = {
-		var0
+	arg0_1.items = {
+		var0_1
 	}
 
-	local var1 = arg2:Find("dot")
+	local var1_1 = arg2_1:Find("dot")
 
-	arg0.dots = {
-		var1
+	arg0_1.dots = {
+		var1_1
 	}
-	arg0.itemWidth = var0.sizeDelta.x
-	arg0.dotStartPosX = var1.localPosition.x
-	arg0.dotWidth = var1.sizeDelta.x
-	arg0.total = 0
-	arg0.index = 1
-	arg0.dragEvent = arg0.container:GetComponent("EventTriggerListener")
+	arg0_1.itemWidth = var0_1.sizeDelta.x
+	arg0_1.dotStartPosX = var1_1.localPosition.x
+	arg0_1.dotWidth = var1_1.sizeDelta.x
+	arg0_1.total = 0
+	arg0_1.index = 1
+	arg0_1.dragEvent = arg0_1.container:GetComponent("EventTriggerListener")
 end
 
-function var0.GetItem(arg0, arg1)
-	local var0 = arg0.items[arg1]
+function var0_0.GetItem(arg0_2, arg1_2)
+	local var0_2 = arg0_2.items[arg1_2]
 
-	if not var0 then
-		local var1 = arg0.items[1]
+	if not var0_2 then
+		local var1_2 = arg0_2.items[1]
 
-		var0 = Object.Instantiate(var1, var1.transform.parent)
-		arg0.items[arg1] = var0
+		var0_2 = Object.Instantiate(var1_2, var1_2.transform.parent)
+		arg0_2.items[arg1_2] = var0_2
 	end
 
-	return var0
+	return var0_2
 end
 
-function var0.GetDot(arg0, arg1)
-	local var0 = arg0.dots[arg1]
+function var0_0.GetDot(arg0_3, arg1_3)
+	local var0_3 = arg0_3.dots[arg1_3]
 
-	if not var0 then
-		local var1 = arg0.dots[1]
+	if not var0_3 then
+		local var1_3 = arg0_3.dots[1]
 
-		var0 = Object.Instantiate(var1, var1.transform.parent)
-		arg0.dots[arg1] = var0
+		var0_3 = Object.Instantiate(var1_3, var1_3.transform.parent)
+		arg0_3.dots[arg1_3] = var0_3
 	end
 
-	return var0
+	return var0_3
 end
 
-function var0.AddChild(arg0)
-	arg0.total = arg0.total + 1
+function var0_0.AddChild(arg0_4)
+	arg0_4.total = arg0_4.total + 1
 
-	local var0 = arg0:GetDot(arg0.total)
-	local var1 = arg0:GetItem(arg0.total)
+	local var0_4 = arg0_4:GetDot(arg0_4.total)
+	local var1_4 = arg0_4:GetItem(arg0_4.total)
 
-	setActive(var1, true)
-	setActive(var0, true)
-	arg0:UpdateItemPosition(arg0.total, var1)
-	arg0:UpdateDotPosition(arg0.total, var0)
+	setActive(var1_4, true)
+	setActive(var0_4, true)
+	arg0_4:UpdateItemPosition(arg0_4.total, var1_4)
+	arg0_4:UpdateDotPosition(arg0_4.total, var0_4)
 
-	return var1
+	return var1_4
 end
 
-function var0.UpdateItemPosition(arg0, arg1, arg2)
-	local var0 = (arg1 - 1) * arg0.itemWidth
+function var0_0.UpdateItemPosition(arg0_5, arg1_5, arg2_5)
+	local var0_5 = (arg1_5 - 1) * arg0_5.itemWidth
 
-	arg2.localPosition = Vector3(var0, arg2.localPosition.y, 0)
+	arg2_5.localPosition = Vector3(var0_5, arg2_5.localPosition.y, 0)
 end
 
-function var0.UpdateDotPosition(arg0, arg1, arg2)
-	local var0 = arg0.dotStartPosX + (arg1 - 1) * (arg0.dotWidth + 15)
+function var0_0.UpdateDotPosition(arg0_6, arg1_6, arg2_6)
+	local var0_6 = arg0_6.dotStartPosX + (arg1_6 - 1) * (arg0_6.dotWidth + 15)
 
-	arg2.localPosition = Vector3(var0, arg2.localPosition.y, 0)
+	arg2_6.localPosition = Vector3(var0_6, arg2_6.localPosition.y, 0)
 end
 
-function var0.SetUp(arg0)
-	if arg0.total == 0 then
-		arg0:Disable()
+function var0_0.SetUp(arg0_7)
+	if arg0_7.total == 0 then
+		arg0_7:Disable()
 
 		return
 	end
 
-	arg0.container.localPosition = Vector3(0, 0, 0)
+	arg0_7.container.localPosition = Vector3(0, 0, 0)
 
-	arg0:ScrollTo(1)
-	arg0:AutoScroll()
-	arg0:AddDrag()
+	arg0_7:ScrollTo(1)
+	arg0_7:AutoScroll()
+	arg0_7:AddDrag()
 end
 
-function var0.AutoScroll(arg0)
-	arg0:RemoveTimer()
+function var0_0.AutoScroll(arg0_8)
+	arg0_8:RemoveTimer()
 
-	arg0.timer = Timer.New(function()
-		local var0 = (arg0.index + 1) % arg0.total
+	arg0_8.timer = Timer.New(function()
+		local var0_9 = (arg0_8.index + 1) % arg0_8.total
 
-		if var0 == 0 then
-			var0 = arg0.total
+		if var0_9 == 0 then
+			var0_9 = arg0_8.total
 		end
 
-		arg0:ScrollTo(var0)
+		arg0_8:ScrollTo(var0_9)
 	end, 5, -1, true)
 
-	arg0.timer:Start()
+	arg0_8.timer:Start()
 end
 
-function var0.ScrollTo(arg0, arg1)
-	local var0 = arg0.index or 1
-	local var1 = (arg1 - 1) * arg0.itemWidth
+function var0_0.ScrollTo(arg0_10, arg1_10)
+	local var0_10 = arg0_10.index or 1
+	local var1_10 = (arg1_10 - 1) * arg0_10.itemWidth
 
-	arg0.animating = true
+	arg0_10.animating = true
 
-	LeanTween.moveLocalX(go(arg0.container), -1 * var1, 0.2):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(function()
-		arg0.animating = false
+	LeanTween.moveLocalX(go(arg0_10.container), -1 * var1_10, 0.2):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(function()
+		arg0_10.animating = false
 	end))
 
-	local var2 = arg0.dots[var0]
+	local var2_10 = arg0_10.dots[var0_10]
 
-	arg0:TriggerDot(var2, false)
+	arg0_10:TriggerDot(var2_10, false)
 
-	local var3 = arg0.dots[arg1]
+	local var3_10 = arg0_10.dots[arg1_10]
 
-	arg0:TriggerDot(var3, true)
+	arg0_10:TriggerDot(var3_10, true)
 
-	arg0.index = arg1
+	arg0_10.index = arg1_10
 end
 
-function var0.TriggerDot(arg0, arg1, arg2)
-	local var0 = arg2 and Color.New(1, 1, 1, 1) or Color.New(0.4, 0.45, 0.55)
+function var0_0.TriggerDot(arg0_12, arg1_12, arg2_12)
+	local var0_12 = arg2_12 and Color.New(1, 1, 1, 1) or Color.New(0.4, 0.45, 0.55)
 
-	arg1:GetComponent(typeof(Image)).color = var0
+	arg1_12:GetComponent(typeof(Image)).color = var0_12
 end
 
-function var0.AddDrag(arg0)
-	local var0 = 0
-	local var1
+function var0_0.AddDrag(arg0_13)
+	local var0_13 = 0
+	local var1_13
 
-	arg0.dragEvent:AddBeginDragFunc(function(arg0, arg1)
-		if arg0.animating then
+	arg0_13.dragEvent:AddBeginDragFunc(function(arg0_14, arg1_14)
+		if arg0_13.animating then
 			return
 		end
 
-		arg0:Puase()
+		arg0_13:Puase()
 
-		var0 = arg1.position.x
-		var1 = arg0.container.localPosition
+		var0_13 = arg1_14.position.x
+		var1_13 = arg0_13.container.localPosition
 	end)
-	arg0.dragEvent:AddDragFunc(function(arg0, arg1)
-		if arg0.animating or not var1 then
+	arg0_13.dragEvent:AddDragFunc(function(arg0_15, arg1_15)
+		if arg0_13.animating or not var1_13 then
 			return
 		end
 
-		local var0 = (arg1.position.x - var0) * 0.5
+		local var0_15 = (arg1_15.position.x - var0_13) * 0.5
 
-		arg0.container.localPosition = Vector3(var1.x + var0, var1.y, 0)
+		arg0_13.container.localPosition = Vector3(var1_13.x + var0_15, var1_13.y, 0)
 	end)
-	arg0.dragEvent:AddDragEndFunc(function(arg0, arg1)
-		if arg0.animating or not var1 then
+	arg0_13.dragEvent:AddDragEndFunc(function(arg0_16, arg1_16)
+		if arg0_13.animating or not var1_13 then
 			return
 		end
 
-		local var0 = arg1.position.x - var0
-		local var1 = math.floor(math.abs(var0 / arg0.itemWidth) + 0.5)
-		local var2 = var0 < 0 and arg0.index + var1 or arg0.index - var1
-		local var3 = math.clamp(var2, 1, arg0.total)
+		local var0_16 = arg1_16.position.x - var0_13
+		local var1_16 = math.floor(math.abs(var0_16 / arg0_13.itemWidth) + 0.5)
+		local var2_16 = var0_16 < 0 and arg0_13.index + var1_16 or arg0_13.index - var1_16
+		local var3_16 = math.clamp(var2_16, 1, arg0_13.total)
 
-		arg0:ScrollTo(var3)
-		arg0:Resume()
+		arg0_13:ScrollTo(var3_16)
+		arg0_13:Resume()
 	end)
 end
 
-function var0.Reset(arg0)
-	arg0:RemoveTimer()
-	ClearEventTrigger(arg0.dragEvent)
-	LeanTween.cancel(go(arg0.container))
+function var0_0.Reset(arg0_17)
+	arg0_17:RemoveTimer()
+	ClearEventTrigger(arg0_17.dragEvent)
+	LeanTween.cancel(go(arg0_17.container))
 
-	arg0.total = 0
-	arg0.index = 1
-	arg0.animating = false
+	arg0_17.total = 0
+	arg0_17.index = 1
+	arg0_17.animating = false
 
-	arg0:Disable()
+	arg0_17:Disable()
 end
 
-function var0.Disable(arg0)
-	for iter0, iter1 in ipairs(arg0.items) do
-		setActive(iter1, false)
+function var0_0.Disable(arg0_18)
+	for iter0_18, iter1_18 in ipairs(arg0_18.items) do
+		setActive(iter1_18, false)
 	end
 
-	for iter2, iter3 in ipairs(arg0.dots) do
-		arg0:TriggerDot(iter3, false)
-		setActive(iter3, false)
+	for iter2_18, iter3_18 in ipairs(arg0_18.dots) do
+		arg0_18:TriggerDot(iter3_18, false)
+		setActive(iter3_18, false)
 	end
 end
 
-function var0.Puase(arg0)
-	arg0:RemoveTimer()
+function var0_0.Puase(arg0_19)
+	arg0_19:RemoveTimer()
 end
 
-function var0.Resume(arg0)
-	if arg0.total == 0 then
+function var0_0.Resume(arg0_20)
+	if arg0_20.total == 0 then
 		return
 	end
 
-	arg0:AutoScroll()
+	arg0_20:AutoScroll()
 end
 
-function var0.RemoveTimer(arg0)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var0_0.RemoveTimer(arg0_21)
+	if arg0_21.timer then
+		arg0_21.timer:Stop()
 
-		arg0.timer = nil
+		arg0_21.timer = nil
 	end
 end
 
-function var0.Dispose(arg0)
-	arg0:Reset()
+function var0_0.Dispose(arg0_22)
+	arg0_22:Reset()
 
-	for iter0, iter1 in ipairs(arg0.items) do
-		Object.Destroy(iter1.gameObject)
+	for iter0_22, iter1_22 in ipairs(arg0_22.items) do
+		Object.Destroy(iter1_22.gameObject)
 	end
 
-	for iter2, iter3 in ipairs(arg0.dots) do
-		Object.Destroy(iter3.gameObject)
+	for iter2_22, iter3_22 in ipairs(arg0_22.dots) do
+		Object.Destroy(iter3_22.gameObject)
 	end
 
-	arg0.items = nil
-	arg0.dots = nil
+	arg0_22.items = nil
+	arg0_22.dots = nil
 end
 
-return var0
+return var0_0

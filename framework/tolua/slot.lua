@@ -1,23 +1,23 @@
-﻿local var0 = setmetatable
-local var1 = {}
+﻿local var0_0 = setmetatable
+local var1_0 = {}
 
-var0(var1, var1)
+var0_0(var1_0, var1_0)
 
-function var1.__call(arg0, ...)
-	if arg0.obj == nil then
-		return arg0.func(...)
+function var1_0.__call(arg0_1, ...)
+	if arg0_1.obj == nil then
+		return arg0_1.func(...)
 	else
-		return arg0.func(arg0.obj, ...)
+		return arg0_1.func(arg0_1.obj, ...)
 	end
 end
 
-function var1.__eq(arg0, arg1)
-	return arg0.func == arg1.func and arg0.obj == arg1.obj
+function var1_0.__eq(arg0_2, arg1_2)
+	return arg0_2.func == arg1_2.func and arg0_2.obj == arg1_2.obj
 end
 
-function slot(arg0, arg1)
-	return var0({
-		func = arg0,
-		obj = arg1
-	}, var1)
+function slot(arg0_3, arg1_3)
+	return var0_0({
+		func = arg0_3,
+		obj = arg1_3
+	}, var1_0)
 end

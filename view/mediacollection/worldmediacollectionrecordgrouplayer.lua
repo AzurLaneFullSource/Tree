@@ -1,199 +1,199 @@
-﻿local var0 = class("WorldMediaCollectionRecordGroupLayer", import(".WorldMediaCollectionTemplateLayer"))
+﻿local var0_0 = class("WorldMediaCollectionRecordGroupLayer", import(".WorldMediaCollectionTemplateLayer"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "WorldMediaCollectionRecordGroupUI"
 end
 
-function var0.OnInit(arg0)
-	arg0.scroll = arg0._tf:Find("ScrollRect")
-	arg0.scrollComp = arg0.scroll:GetComponent("LScrollRect")
+function var0_0.OnInit(arg0_2)
+	arg0_2.scroll = arg0_2._tf:Find("ScrollRect")
+	arg0_2.scrollComp = arg0_2.scroll:GetComponent("LScrollRect")
 
-	setActive(arg0.scroll:Find("Item"), false)
+	setActive(arg0_2.scroll:Find("Item"), false)
 
-	arg0.content = arg0.scroll:Find("Viewport/Content")
-	arg0.progressText = arg0.scroll:Find("ProgressText")
-	arg0.recordTogGroup = arg0:findTF("Toggles", arg0._top)
-	arg0.recordToggles = {
-		arg0:findTF("0", arg0.recordTogGroup),
-		arg0:findTF("1", arg0.recordTogGroup),
-		arg0:findTF("2", arg0.recordTogGroup),
-		arg0:findTF("3", arg0.recordTogGroup)
+	arg0_2.content = arg0_2.scroll:Find("Viewport/Content")
+	arg0_2.progressText = arg0_2.scroll:Find("ProgressText")
+	arg0_2.recordTogGroup = arg0_2:findTF("Toggles", arg0_2._top)
+	arg0_2.recordToggles = {
+		arg0_2:findTF("0", arg0_2.recordTogGroup),
+		arg0_2:findTF("1", arg0_2.recordTogGroup),
+		arg0_2:findTF("2", arg0_2.recordTogGroup),
+		arg0_2:findTF("3", arg0_2.recordTogGroup)
 	}
-	arg0.recordFilterIndex = {
+	arg0_2.recordFilterIndex = {
 		false,
 		false,
 		false
 	}
 
-	_.each(pg.world_collection_record_group.all, function(arg0)
-		local var0 = pg.world_collection_record_group[arg0]
+	_.each(pg.world_collection_record_group.all, function(arg0_3)
+		local var0_3 = pg.world_collection_record_group[arg0_3]
 
-		arg0.recordFilterIndex[var0.type] = true
+		arg0_2.recordFilterIndex[var0_3.type] = true
 	end)
 
-	local var0 = #arg0.recordFilterIndex
-	local var1
+	local var0_2 = #arg0_2.recordFilterIndex
+	local var1_2
 
-	for iter0 = 1, #arg0.recordFilterIndex do
-		setActive(arg0.recordToggles[1 + iter0], arg0.recordFilterIndex[iter0])
+	for iter0_2 = 1, #arg0_2.recordFilterIndex do
+		setActive(arg0_2.recordToggles[1 + iter0_2], arg0_2.recordFilterIndex[iter0_2])
 
-		if not arg0.recordFilterIndex[iter0] then
-			var0 = var0 - 1
+		if not arg0_2.recordFilterIndex[iter0_2] then
+			var0_2 = var0_2 - 1
 		else
-			var1 = var1 or iter0 + 1
+			var1_2 = var1_2 or iter0_2 + 1
 		end
 	end
 
-	setActive(arg0.recordToggles[1], var0 > 1)
+	setActive(arg0_2.recordToggles[1], var0_2 > 1)
 
-	var1 = var0 <= 1 and var1 or 1
+	var1_2 = var0_2 <= 1 and var1_2 or 1
 
-	local var2 = arg0.contextData.toggle or var1
+	local var2_2 = arg0_2.contextData.toggle or var1_2
 
-	arg0.contextData.toggle = nil
+	arg0_2.contextData.toggle = nil
 
-	triggerToggle(arg0.recordToggles[var2], true)
-	arg0:SwitchRecordFilter(var2)
+	triggerToggle(arg0_2.recordToggles[var2_2], true)
+	arg0_2:SwitchRecordFilter(var2_2)
 
-	for iter1, iter2 in ipairs(arg0.recordToggles) do
-		onToggle(arg0, iter2, function(arg0)
-			if not arg0 then
+	for iter1_2, iter2_2 in ipairs(arg0_2.recordToggles) do
+		onToggle(arg0_2, iter2_2, function(arg0_4)
+			if not arg0_4 then
 				return
 			end
 
-			arg0:SwitchRecordFilter(iter1)
-			arg0:RecordFilter()
+			arg0_2:SwitchRecordFilter(iter1_2)
+			arg0_2:RecordFilter()
 		end, SFX_UI_TAG)
 	end
 
-	function arg0.scrollComp.onUpdateItem(arg0, arg1)
-		arg0:OnUpdateGroup(arg0 + 1, arg1)
+	function arg0_2.scrollComp.onUpdateItem(arg0_5, arg1_5)
+		arg0_2:OnUpdateGroup(arg0_5 + 1, arg1_5)
 	end
 
-	arg0.recordGroups = {}
+	arg0_2.recordGroups = {}
 
-	arg0.viewParent:Add2TopContainer(arg0.recordTogGroup)
+	arg0_2.viewParent:Add2TopContainer(arg0_2.recordTogGroup)
 
-	arg0.loader = AutoLoader.New()
+	arg0_2.loader = AutoLoader.New()
 
-	setText(arg0.scroll:Find("ProgressDesc"), i18n("world_collection_3"))
+	setText(arg0_2.scroll:Find("ProgressDesc"), i18n("world_collection_3"))
 end
 
-function var0.Show(arg0)
-	var0.super.Show(arg0)
-	setActive(arg0.recordTogGroup, true)
+function var0_0.Show(arg0_6)
+	var0_0.super.Show(arg0_6)
+	setActive(arg0_6.recordTogGroup, true)
 end
 
-function var0.Hide(arg0)
-	LeanTween.cancel(go(arg0.content))
-	arg0.scrollComp:SetDraggingStatus(false)
-	arg0.scrollComp:StopMovement()
+function var0_0.Hide(arg0_7)
+	LeanTween.cancel(go(arg0_7.content))
+	arg0_7.scrollComp:SetDraggingStatus(false)
+	arg0_7.scrollComp:StopMovement()
 
-	arg0.scrolling = false
+	arg0_7.scrolling = false
 
-	var0.super.Hide(arg0)
-	setActive(arg0.recordTogGroup, false)
-	var0.super.Hide(arg0)
+	var0_0.super.Hide(arg0_7)
+	setActive(arg0_7.recordTogGroup, false)
+	var0_0.super.Hide(arg0_7)
 end
 
-local var1 = {
+local var1_0 = {
 	"img_zhuxian",
 	"img_zhixian",
 	"img_shoujijilu"
 }
 
-function var0.OnUpdateGroup(arg0, arg1, arg2)
-	if arg0.exited then
+function var0_0.OnUpdateGroup(arg0_8, arg1_8, arg2_8)
+	if arg0_8.exited then
 		return
 	end
 
-	local var0 = arg0.recordGroups[arg1]
+	local var0_8 = arg0_8.recordGroups[arg1_8]
 
-	assert(var0, "Not Initialize FileGroup Index " .. arg1)
+	assert(var0_8, "Not Initialize FileGroup Index " .. arg1_8)
 
-	local var1 = tf(arg2)
+	local var1_8 = tf(arg2_8)
 
-	setText(var1:Find("FileIndex"), var0.id)
+	setText(var1_8:Find("FileIndex"), var0_8.id)
 
-	local var2 = var1:Find("NameRect/FileName1")
-	local var3 = GetPerceptualSize(var0.name_abbreviate)
-	local var4
-	local var5
+	local var2_8 = var1_8:Find("NameRect/FileName1")
+	local var3_8 = GetPerceptualSize(var0_8.name_abbreviate)
+	local var4_8
+	local var5_8
 
-	var5.fontSize, var5 = var3 <= 4 and 32 or var3 <= 6 and 28 or 24, var2:GetComponent(typeof(Text))
-	var5.text = var0.name_abbreviate
+	var5_8.fontSize, var5_8 = var3_8 <= 4 and 32 or var3_8 <= 6 and 28 or 24, var2_8:GetComponent(typeof(Text))
+	var5_8.text = var0_8.name_abbreviate
 
-	arg0.loader:GetSprite("ui/WorldMediaCollectionRecordUI_atlas", var1[var0.type], var1:Find("BG"))
+	arg0_8.loader:GetSprite("ui/WorldMediaCollectionRecordUI_atlas", var1_0[var0_8.type], var1_8:Find("BG"))
 
-	local var6 = nowWorld():GetCollectionProxy()
-	local var7 = #var0.child
-	local var8 = _.reduce(var0.child, 0, function(arg0, arg1)
-		local var0 = WorldCollectionProxy.GetCollectionTemplate(arg1)
+	local var6_8 = nowWorld():GetCollectionProxy()
+	local var7_8 = #var0_8.child
+	local var8_8 = _.reduce(var0_8.child, 0, function(arg0_9, arg1_9)
+		local var0_9 = WorldCollectionProxy.GetCollectionTemplate(arg1_9)
 
-		if var0 and WorldMediaCollectionRecordDetailLayer.CheckRecordIsUnlock(var0) then
-			arg0 = arg0 + 1
+		if var0_9 and WorldMediaCollectionRecordDetailLayer.CheckRecordIsUnlock(var0_9) then
+			arg0_9 = arg0_9 + 1
 		end
 
-		return arg0
+		return arg0_9
 	end)
 
-	setText(var1:Find("FileProgress"), var8 .. "/" .. var7)
+	setText(var1_8:Find("FileProgress"), var8_8 .. "/" .. var7_8)
 
-	local var9 = arg0.scroll.rect.width
-	local var10 = arg0.scroll:Find("Item").rect.width
-	local var11 = arg0.content:GetComponent(typeof(HorizontalLayoutGroup))
-	local var12 = var11.padding.left
-	local var13 = var11.spacing
+	local var9_8 = arg0_8.scroll.rect.width
+	local var10_8 = arg0_8.scroll:Find("Item").rect.width
+	local var11_8 = arg0_8.content:GetComponent(typeof(HorizontalLayoutGroup))
+	local var12_8 = var11_8.padding.left
+	local var13_8 = var11_8.spacing
 
-	onButton(arg0, var1, function()
-		arg0.viewParent:ShowRecordGroup(var0.id)
+	onButton(arg0_8, var1_8, function()
+		arg0_8.viewParent:ShowRecordGroup(var0_8.id)
 	end, SFX_PANEL)
 end
 
-function var0.SwitchRecordFilter(arg0, arg1)
-	if arg1 == 1 then
-		arg0.recordFilterIndex = {
+function var0_0.SwitchRecordFilter(arg0_11, arg1_11)
+	if arg1_11 == 1 then
+		arg0_11.recordFilterIndex = {
 			true,
 			true,
 			true
 		}
 	else
-		for iter0 in ipairs(arg0.recordFilterIndex) do
-			arg0.recordFilterIndex[iter0] = arg1 - 1 == iter0
+		for iter0_11 in ipairs(arg0_11.recordFilterIndex) do
+			arg0_11.recordFilterIndex[iter0_11] = arg1_11 - 1 == iter0_11
 		end
 	end
 end
 
-function var0.RecordFilter(arg0)
-	table.clear(arg0.recordGroups)
+function var0_0.RecordFilter(arg0_12)
+	table.clear(arg0_12.recordGroups)
 
-	local var0 = 0
-	local var1 = 0
+	local var0_12 = 0
+	local var1_12 = 0
 
-	_.each(pg.world_collection_record_group.all, function(arg0)
-		local var0 = pg.world_collection_record_group[arg0]
-		local var1 = _.reduce(var0.child, 0, function(arg0, arg1)
-			local var0 = WorldCollectionProxy.GetCollectionTemplate(arg1)
+	_.each(pg.world_collection_record_group.all, function(arg0_13)
+		local var0_13 = pg.world_collection_record_group[arg0_13]
+		local var1_13 = _.reduce(var0_13.child, 0, function(arg0_14, arg1_14)
+			local var0_14 = WorldCollectionProxy.GetCollectionTemplate(arg1_14)
 
-			if var0 and WorldMediaCollectionRecordDetailLayer.CheckRecordIsUnlock(var0) then
-				arg0 = arg0 + 1
+			if var0_14 and WorldMediaCollectionRecordDetailLayer.CheckRecordIsUnlock(var0_14) then
+				arg0_14 = arg0_14 + 1
 			end
 
-			return arg0
+			return arg0_14
 		end)
 
-		var0 = var0 + #var0.child
-		var1 = var1 + var1
+		var0_12 = var0_12 + #var0_13.child
+		var1_12 = var1_12 + var1_13
 
-		if arg0.recordFilterIndex[var0.type] then
-			table.insert(arg0.recordGroups, var0)
+		if arg0_12.recordFilterIndex[var0_13.type] then
+			table.insert(arg0_12.recordGroups, var0_13)
 		end
 	end)
-	setText(arg0.progressText, var1 .. "/" .. var0)
-	table.sort(arg0.recordGroups, function(arg0, arg1)
-		return arg0.id < arg1.id
+	setText(arg0_12.progressText, var1_12 .. "/" .. var0_12)
+	table.sort(arg0_12.recordGroups, function(arg0_15, arg1_15)
+		return arg0_15.id < arg1_15.id
 	end)
-	arg0.scrollComp:SetTotalCount(#arg0.recordGroups)
+	arg0_12.scrollComp:SetTotalCount(#arg0_12.recordGroups)
 end
 
-return var0
+return var0_0

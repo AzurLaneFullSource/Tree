@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_301 = {}
+var0_0.word_template_301 = {}
 
-local var1 = var0.word_template_301
+local var1_0 = var0_0.word_template_301
 
 function temp()
-	var1.鲜 = {
+	var1_0.鲜 = {
 		血 = {
 			洒 = {
 				广 = {
@@ -37,7 +37,7 @@ end
 temp()
 
 function temp()
-	var1.薟 = {
+	var1_0.薟 = {
 		this = {
 			this = true
 		}
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.躚 = {
+	var1_0.躚 = {
 		this = {
 			this = true
 		}
@@ -57,7 +57,7 @@ end
 temp()
 
 function temp()
-	var1.閑 = {
+	var1_0.閑 = {
 		著 = {
 			沒 = {
 				事 = {
@@ -77,7 +77,7 @@ end
 temp()
 
 function temp()
-	var1.蜆 = {
+	var1_0.蜆 = {
 		this = {
 			this = true
 		}
@@ -87,7 +87,7 @@ end
 temp()
 
 function temp()
-	var1.獫 = {
+	var1_0.獫 = {
 		this = {
 			this = true
 		}
@@ -97,7 +97,7 @@ end
 temp()
 
 function temp()
-	var1.蘚 = {
+	var1_0.蘚 = {
 		鮑 = {
 			this = true
 		}

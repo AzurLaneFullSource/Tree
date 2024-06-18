@@ -1,101 +1,101 @@
-﻿local var0 = class("GameHallScene", import("..base.BaseUI"))
+﻿local var0_0 = class("GameHallScene", import("..base.BaseUI"))
 
-var0.open_with_list = false
+var0_0.open_with_list = false
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "GameHallUI"
 end
 
-function var0.init(arg0)
+function var0_0.init(arg0_2)
 	return
 end
 
-function var0.didEnter(arg0)
-	arg0:initTopUI()
-	arg0:initHomeUI()
+function var0_0.didEnter(arg0_3)
+	arg0_3:initTopUI()
+	arg0_3:initHomeUI()
 
-	local var0 = findTF(arg0._tf, "ad/container")
+	local var0_3 = findTF(arg0_3._tf, "ad/container")
 
-	arg0.charController = GameHallContainerUI.New(var0)
-	arg0.freeCoinTf = findTF(var0, "content/top/free")
+	arg0_3.charController = GameHallContainerUI.New(var0_3)
+	arg0_3.freeCoinTf = findTF(var0_3, "content/top/free")
 
-	onButton(arg0, arg0.freeCoinTf, function()
-		local var0 = getProxy(GameRoomProxy):getCoin()
-		local var1 = pg.gameset.game_coin_max.key_value - var0
-		local var2 = pg.gameset.game_coin_initial.key_value
+	onButton(arg0_3, arg0_3.freeCoinTf, function()
+		local var0_4 = getProxy(GameRoomProxy):getCoin()
+		local var1_4 = pg.gameset.game_coin_max.key_value - var0_4
+		local var2_4 = pg.gameset.game_coin_initial.key_value
 
-		if var1 == 0 then
+		if var1_4 == 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("game_icon_max_full"))
-		elseif var1 < var2 then
+		elseif var1_4 < var2_4 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("game_icon_max"),
 				onYes = function()
-					arg0:emit(GameHallMediator.GET_WEEKLY_COIN)
+					arg0_3:emit(GameHallMediator.GET_WEEKLY_COIN)
 				end,
 				onNo = function()
 					return
 				end
 			})
 		else
-			arg0:emit(GameHallMediator.GET_WEEKLY_COIN)
+			arg0_3:emit(GameHallMediator.GET_WEEKLY_COIN)
 		end
 	end, SFX_CONFIRM)
 
-	arg0.listPanelTf = findTF(arg0._tf, "ad/listPanel")
-	arg0.listPanel = GameHallListPanel.New(arg0.listPanelTf, arg0)
+	arg0_3.listPanelTf = findTF(arg0_3._tf, "ad/listPanel")
+	arg0_3.listPanel = GameHallListPanel.New(arg0_3.listPanelTf, arg0_3)
 
-	arg0.listPanel:setVisible(GameHallScene.open_with_list)
+	arg0_3.listPanel:setVisible(GameHallScene.open_with_list)
 
 	GameHallScene.open_with_list = false
-	arg0.exchangePanelTf = findTF(arg0._tf, "ad/exchangePanel")
-	arg0.parentTf = findTF(arg0._tf, "ad")
-	arg0.exchangePanel = GameHallExchangePanel.New(arg0.exchangePanelTf, arg0.parentTf, arg0)
+	arg0_3.exchangePanelTf = findTF(arg0_3._tf, "ad/exchangePanel")
+	arg0_3.parentTf = findTF(arg0_3._tf, "ad")
+	arg0_3.exchangePanel = GameHallExchangePanel.New(arg0_3.exchangePanelTf, arg0_3.parentTf, arg0_3)
 
-	arg0:openExchangePanel(false)
-	arg0:changeTitle(false)
+	arg0_3:openExchangePanel(false)
+	arg0_3:changeTitle(false)
 
-	local var1 = Application.targetFrameRate or 60
+	local var1_3 = Application.targetFrameRate or 60
 
-	if var1 > 60 then
-		var1 = 60
+	if var1_3 > 60 then
+		var1_3 = 60
 	end
 
-	arg0.timer = Timer.New(function()
-		arg0:onTimer()
-	end, 1 / var1, -1)
+	arg0_3.timer = Timer.New(function()
+		arg0_3:onTimer()
+	end, 1 / var1_3, -1)
 
-	arg0.timer:Start()
-	arg0:updateUI()
+	arg0_3.timer:Start()
+	arg0_3:updateUI()
 end
 
-function var0.initTopUI(arg0)
-	arg0.btnBack = findTF(arg0._tf, "ad/topPanel/btnBack")
-	arg0.btnHome = findTF(arg0._tf, "ad/topPanel/btnHome")
-	arg0.btnHelp = findTF(arg0._tf, "ad/topPanel/btnHelp")
-	arg0.btnCoin = findTF(arg0._tf, "ad/topPanel/coin")
-	arg0.textCoin = findTF(arg0._tf, "ad/topPanel/coin/text")
-	arg0.coinMax = pg.gameset.game_coin_max.key_value
-	arg0.textCoinMaxTF = findTF(arg0._tf, "ad/topPanel/coin/max")
+function var0_0.initTopUI(arg0_8)
+	arg0_8.btnBack = findTF(arg0_8._tf, "ad/topPanel/btnBack")
+	arg0_8.btnHome = findTF(arg0_8._tf, "ad/topPanel/btnHome")
+	arg0_8.btnHelp = findTF(arg0_8._tf, "ad/topPanel/btnHelp")
+	arg0_8.btnCoin = findTF(arg0_8._tf, "ad/topPanel/coin")
+	arg0_8.textCoin = findTF(arg0_8._tf, "ad/topPanel/coin/text")
+	arg0_8.coinMax = pg.gameset.game_coin_max.key_value
+	arg0_8.textCoinMaxTF = findTF(arg0_8._tf, "ad/topPanel/coin/max")
 
-	setText(arg0.textCoinMaxTF, "MAX:" .. arg0.coinMax)
-	onButton(arg0, arg0.btnCoin, function()
-		arg0:openExchangePanel(true)
+	setText(arg0_8.textCoinMaxTF, "MAX:" .. arg0_8.coinMax)
+	onButton(arg0_8, arg0_8.btnCoin, function()
+		arg0_8:openExchangePanel(true)
 	end)
-	onButton(arg0, arg0.btnBack, function()
-		if arg0.listPanel:getVisible() then
-			arg0.listPanel:setVisible(false)
-			arg0:changeTitle(false)
-			pg.SystemGuideMgr.GetInstance():Play(arg0)
+	onButton(arg0_8, arg0_8.btnBack, function()
+		if arg0_8.listPanel:getVisible() then
+			arg0_8.listPanel:setVisible(false)
+			arg0_8:changeTitle(false)
+			pg.SystemGuideMgr.GetInstance():Play(arg0_8)
 
 			return
 		end
 
-		arg0:closeView()
+		arg0_8:closeView()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.btnHome, function()
-		arg0:quickExitFunc()
+	onButton(arg0_8, arg0_8.btnHome, function()
+		arg0_8:quickExitFunc()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.btnHelp, function()
+	onButton(arg0_8, arg0_8.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.game_room_help.tip
@@ -103,89 +103,89 @@ function var0.initTopUI(arg0)
 	end, SFX_CANCEL)
 end
 
-function var0.openExchangePanel(arg0, arg1)
-	arg0.exchangePanel:setVisible(arg1)
+function var0_0.openExchangePanel(arg0_13, arg1_13)
+	arg0_13.exchangePanel:setVisible(arg1_13)
 end
 
-function var0.ResUISettings(arg0)
+function var0_0.ResUISettings(arg0_14)
 	return {
 		showType = bit.bor(PlayerResUI.TYPE_OIL, PlayerResUI.TYPE_GOLD)
 	}
 end
 
-function var0.initHomeUI(arg0)
-	arg0.btnShop = findTF(arg0._tf, "ad/btnShop")
-	arg0.btnPlay = findTF(arg0._tf, "ad/btnPlay")
+function var0_0.initHomeUI(arg0_15)
+	arg0_15.btnShop = findTF(arg0_15._tf, "ad/btnShop")
+	arg0_15.btnPlay = findTF(arg0_15._tf, "ad/btnPlay")
 
-	onButton(arg0, arg0.btnPlay, function()
-		arg0.listPanel:setVisible(true)
-		arg0:changeTitle(true)
+	onButton(arg0_15, arg0_15.btnPlay, function()
+		arg0_15.listPanel:setVisible(true)
+		arg0_15:changeTitle(true)
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.btnShop, function()
-		arg0:emit(GameHallMediator.OPEN_GAME_SHOP)
+	onButton(arg0_15, arg0_15.btnShop, function()
+		arg0_15:emit(GameHallMediator.OPEN_GAME_SHOP)
 	end, SFX_CANCEL)
 
-	arg0.topShop = findTF(arg0._tf, "ad/container/content/top/btnShop")
-	arg0.topGame = findTF(arg0._tf, "ad/container/content/top/btnGameList")
+	arg0_15.topShop = findTF(arg0_15._tf, "ad/container/content/top/btnShop")
+	arg0_15.topGame = findTF(arg0_15._tf, "ad/container/content/top/btnGameList")
 
-	onButton(arg0, arg0.topGame, function()
-		arg0.listPanel:setVisible(true)
-		arg0:changeTitle(true)
+	onButton(arg0_15, arg0_15.topGame, function()
+		arg0_15.listPanel:setVisible(true)
+		arg0_15:changeTitle(true)
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.topShop, function()
-		arg0:emit(GameHallMediator.OPEN_GAME_SHOP)
+	onButton(arg0_15, arg0_15.topShop, function()
+		arg0_15:emit(GameHallMediator.OPEN_GAME_SHOP)
 	end, SFX_CANCEL)
 end
 
-function var0.updateUI(arg0)
-	local var0 = getProxy(GameRoomProxy):getWeekly()
+function var0_0.updateUI(arg0_20)
+	local var0_20 = getProxy(GameRoomProxy):getWeekly()
 
-	setActive(arg0.freeCoinTf, var0)
+	setActive(arg0_20.freeCoinTf, var0_20)
 
-	local var1 = getProxy(GameRoomProxy):getCoin()
+	local var1_20 = getProxy(GameRoomProxy):getCoin()
 
-	setText(arg0.textCoin, var1)
+	setText(arg0_20.textCoin, var1_20)
 end
 
-function var0.onTimer(arg0)
-	arg0.charController:step()
+function var0_0.onTimer(arg0_21)
+	arg0_21.charController:step()
 end
 
-function var0.changeTitle(arg0, arg1)
-	setActive(findTF(arg0._tf, "ad/topPanel/title_list"), arg1)
-	setActive(findTF(arg0._tf, "ad/topPanel/title_main"), not arg1)
+function var0_0.changeTitle(arg0_22, arg1_22)
+	setActive(findTF(arg0_22._tf, "ad/topPanel/title_list"), arg1_22)
+	setActive(findTF(arg0_22._tf, "ad/topPanel/title_main"), not arg1_22)
 end
 
-function var0.onBackPressed(arg0)
-	if arg0.listPanel:getVisible() then
-		arg0.listPanel:setVisible(false)
-		arg0:changeTitle(false)
+function var0_0.onBackPressed(arg0_23)
+	if arg0_23.listPanel:getVisible() then
+		arg0_23.listPanel:setVisible(false)
+		arg0_23:changeTitle(false)
 
 		return
 	end
 
-	if arg0.exchangePanel:getVisible() then
-		arg0.exchangePanel:setVisible(false)
+	if arg0_23.exchangePanel:getVisible() then
+		arg0_23.exchangePanel:setVisible(false)
 
 		return
 	end
 
-	arg0:emit(var0.ON_BACK_PRESSED)
+	arg0_23:emit(var0_0.ON_BACK_PRESSED)
 end
 
-function var0.willExit(arg0)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var0_0.willExit(arg0_24)
+	if arg0_24.timer then
+		arg0_24.timer:Stop()
 
-		arg0.timer = nil
+		arg0_24.timer = nil
 	end
 
-	if arg0.listPanel:getVisible() then
+	if arg0_24.listPanel:getVisible() then
 		GameHallScene.open_with_list = true
 	end
 
-	arg0.exchangePanel:dispose()
-	arg0.listPanel:dispose()
+	arg0_24.exchangePanel:dispose()
+	arg0_24.listPanel:dispose()
 end
 
-return var0
+return var0_0

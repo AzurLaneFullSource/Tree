@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_255 = {}
+var0_0.word_template_255 = {}
 
-local var1 = var0.word_template_255
+local var1_0 = var0_0.word_template_255
 
 function temp()
-	var1.善 = {
+	var1_0.善 = {
 		["."] = {
 			恶 = {
 				this = true
@@ -26,7 +26,7 @@ end
 temp()
 
 function temp()
-	var1.伤 = {
+	var1_0.伤 = {
 		追 = {
 			之 = {
 				人 = {
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.赏 = {
+	var1_0.赏 = {
 		波 = {
 			赏 = {
 				穴 = {
@@ -67,7 +67,7 @@ end
 temp()
 
 function temp()
-	var1.上 = {
+	var1_0.上 = {
 		▲ = {
 			份 = {
 				▲ = {
@@ -643,7 +643,7 @@ end
 temp()
 
 function temp()
-	var1.尚 = {
+	var1_0.尚 = {
 		福 = {
 			林 = {
 				this = true
@@ -699,7 +699,7 @@ end
 temp()
 
 function temp()
-	var1.烧 = {
+	var1_0.烧 = {
 		出 = {
 			腐 = {
 				败 = {
@@ -720,7 +720,7 @@ end
 temp()
 
 function temp()
-	var1.少 = {
+	var1_0.少 = {
 		妇 = {
 			this = true,
 			白 = {

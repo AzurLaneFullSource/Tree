@@ -1,38 +1,38 @@
-﻿local var0 = class("MainActLotteryBtn", import(".MainBaseActivityBtn"))
+﻿local var0_0 = class("MainActLotteryBtn", import(".MainBaseActivityBtn"))
 
-function var0.GetEventName(arg0)
+function var0_0.GetEventName(arg0_1)
 	return "event_LanternFestival"
 end
 
-function var0.GetActivityID(arg0)
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
+function var0_0.GetActivityID(arg0_2)
+	local var0_2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
 
-	return var0 and var0.id
+	return var0_2 and var0_2.id
 end
 
-function var0.OnInit(arg0)
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
-	local var1 = var0:getAwardInfos()
-	local var2 = var0:getConfig("config_data")
-	local var3 = _.any(var2, function(arg0)
-		local var0 = ActivityItemPool.New({
-			id = arg0,
-			awards = var1[arg0]
+function var0_0.OnInit(arg0_3)
+	local var0_3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
+	local var1_3 = var0_3:getAwardInfos()
+	local var2_3 = var0_3:getConfig("config_data")
+	local var3_3 = _.any(var2_3, function(arg0_4)
+		local var0_4 = ActivityItemPool.New({
+			id = arg0_4,
+			awards = var1_3[arg0_4]
 		})
-		local var1 = var0:getComsume()
+		local var1_4 = var0_4:getComsume()
 
-		return getProxy(PlayerProxy):getRawData()[id2res(var1.id)] >= var1.count and var0:getleftItemCount() > 0
+		return getProxy(PlayerProxy):getRawData()[id2res(var1_4.id)] >= var1_4.count and var0_4:getleftItemCount() > 0
 	end)
 
-	setActive(arg0._tf:Find("Tip"), var3)
+	setActive(arg0_3._tf:Find("Tip"), var3_3)
 end
 
-function var0.CustomOnClick(arg0)
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
+function var0_0.CustomOnClick(arg0_5)
+	local var0_5 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
 
-	if var0 then
-		arg0:emit(NewMainMediator.SKIP_LOTTERY, var0.id)
+	if var0_5 then
+		arg0_5:emit(NewMainMediator.SKIP_LOTTERY, var0_5.id)
 	end
 end
 
-return var0
+return var0_0

@@ -1,74 +1,74 @@
-﻿local var0 = class("BossRushKurskMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("BossRushKurskMediator", import("view.base.ContextMediator"))
 
-var0.ON_FLEET_SELECT = "BossRushKurskMediator:ON_FLEET_SELECT"
-var0.ON_EXTRA_RANK = "BossRushKurskMediator:ON_EXTRA_RANK"
-var0.GO_ACT_SHOP = "BossRushKurskMediator:GO_ACT_SHOP"
-var0.ON_TASK_SUBMIT = "BossRushKurskMediator:ON_TASK_SUBMIT"
-var0.ON_PERFORM_COMBAT = "BossRushKurskMediator:ON_PERFORM_COMBAT"
+var0_0.ON_FLEET_SELECT = "BossRushKurskMediator:ON_FLEET_SELECT"
+var0_0.ON_EXTRA_RANK = "BossRushKurskMediator:ON_EXTRA_RANK"
+var0_0.GO_ACT_SHOP = "BossRushKurskMediator:GO_ACT_SHOP"
+var0_0.ON_TASK_SUBMIT = "BossRushKurskMediator:ON_TASK_SUBMIT"
+var0_0.ON_PERFORM_COMBAT = "BossRushKurskMediator:ON_PERFORM_COMBAT"
 
-function var0.register(arg0)
-	arg0:bind(var0.ON_FLEET_SELECT, function(arg0, arg1)
-		arg0:addSubLayers(Context.New({
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.ON_FLEET_SELECT, function(arg0_2, arg1_2)
+		arg0_1:addSubLayers(Context.New({
 			mediator = BossRushFleetSelectMediator,
 			viewComponent = BossRushFleetSelectView,
 			data = {
-				seriesData = arg1
+				seriesData = arg1_2
 			}
 		}))
 	end)
-	arg0:bind(var0.ON_EXTRA_RANK, function(arg0)
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.BILLBOARD, {
+	arg0_1:bind(var0_0.ON_EXTRA_RANK, function(arg0_3)
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.BILLBOARD, {
 			page = PowerRank.TYPE_BOSSRUSH
 		})
 	end)
-	arg0:bind(var0.ON_PERFORM_COMBAT, function(arg0, arg1, arg2)
-		arg0:sendNotification(GAME.BEGIN_STAGE, {
+	arg0_1:bind(var0_0.ON_PERFORM_COMBAT, function(arg0_4, arg1_4, arg2_4)
+		arg0_1:sendNotification(GAME.BEGIN_STAGE, {
 			system = SYSTEM_PERFORM,
-			stageId = arg1,
-			exitCallback = arg2
+			stageId = arg1_4,
+			exitCallback = arg2_4
 		})
 	end)
-	arg0:bind(var0.GO_ACT_SHOP, function(arg0, arg1)
-		arg0:addSubLayers(Context.New({
+	arg0_1:bind(var0_0.GO_ACT_SHOP, function(arg0_5, arg1_5)
+		arg0_1:addSubLayers(Context.New({
 			mediator = PtAwardMediator,
 			viewComponent = PtAwardLayer,
 			data = {
-				ptData = arg1,
+				ptData = arg1_5,
 				ptId = pg.gameset.activity_res_id.key_value
 			}
 		}))
 	end)
-	arg0:bind(var0.ON_TASK_SUBMIT, function(arg0, arg1)
-		arg0:sendNotification(GAME.SUBMIT_TASK, arg1.id)
+	arg0_1:bind(var0_0.ON_TASK_SUBMIT, function(arg0_6, arg1_6)
+		arg0_1:sendNotification(GAME.SUBMIT_TASK, arg1_6.id)
 	end)
 
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSSRUSH)
+	local var0_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSSRUSH)
 
-	arg0.viewComponent:SetActivity(var0)
+	arg0_1.viewComponent:SetActivity(var0_1)
 
-	local var1 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)
+	local var1_1 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)
 
-	for iter0, iter1 in ipairs(var1) do
-		if iter1:getDataConfig("pt") == pg.gameset.activity_res_id.key_value then
-			arg0.viewComponent:SetPtActivity(iter1)
+	for iter0_1, iter1_1 in ipairs(var1_1) do
+		if iter1_1:getDataConfig("pt") == pg.gameset.activity_res_id.key_value then
+			arg0_1.viewComponent:SetPtActivity(iter1_1)
 
 			break
 		end
 	end
 
-	arg0.viewComponent:addbubbleMsgBox(function(arg0)
+	arg0_1.viewComponent:addbubbleMsgBox(function(arg0_7)
 		if getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossRushTotalRewardPanelMediator) then
 			return
 		end
 
-		arg0()
+		arg0_7()
 	end)
-	arg0.viewComponent:addbubbleMsgBox(function(arg0)
-		pg.GuildMsgBoxMgr.GetInstance():NotificationForBattle(arg0)
+	arg0_1.viewComponent:addbubbleMsgBox(function(arg0_8)
+		pg.GuildMsgBoxMgr.GetInstance():NotificationForBattle(arg0_8)
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_9)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		GAME.SUBMIT_TASK_DONE,
@@ -77,41 +77,41 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
-	local var2 = arg1:getType()
+function var0_0.handleNotification(arg0_10, arg1_10)
+	local var0_10 = arg1_10:getName()
+	local var1_10 = arg1_10:getBody()
+	local var2_10 = arg1_10:getType()
 
-	if var0 == nil then
+	if var0_10 == nil then
 		-- block empty
-	elseif var0 == GAME.BEGIN_STAGE_DONE then
+	elseif var0_10 == GAME.BEGIN_STAGE_DONE then
 		if not getProxy(ContextProxy):getContextByMediator(BossRushPreCombatMediator) then
-			arg0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1)
+			arg0_10:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_10)
 		end
-	elseif var0 == ActivityProxy.ACTIVITY_UPDATED then
-		local var3 = var1
+	elseif var0_10 == ActivityProxy.ACTIVITY_UPDATED then
+		local var3_10 = var1_10
 
-		if var3 then
-			if var3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BOSSRUSH then
-				arg0.viewComponent:SetActivity(var3)
-				arg0.viewComponent:UpdateView()
-			elseif var3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF and var3:getDataConfig("pt") == pg.gameset.activity_res_id.key_value then
-				arg0.viewComponent:SetPtActivity(var3)
-				arg0.viewComponent:UpdateView()
+		if var3_10 then
+			if var3_10:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BOSSRUSH then
+				arg0_10.viewComponent:SetActivity(var3_10)
+				arg0_10.viewComponent:UpdateView()
+			elseif var3_10:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF and var3_10:getDataConfig("pt") == pg.gameset.activity_res_id.key_value then
+				arg0_10.viewComponent:SetPtActivity(var3_10)
+				arg0_10.viewComponent:UpdateView()
 			end
 		end
-	elseif var0 == GAME.SUBMIT_TASK_DONE then
-		arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1, function()
-			arg0.viewComponent:UpdateTasks(var2)
+	elseif var0_10 == GAME.SUBMIT_TASK_DONE then
+		arg0_10.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_10, function()
+			arg0_10.viewComponent:UpdateTasks(var2_10)
 		end)
-	elseif var0 == BossRushTotalRewardPanelMediator.ON_WILL_EXIT then
-		arg0.viewComponent:resumeBubble()
-		arg0.viewComponent:UpdateView()
+	elseif var0_10 == BossRushTotalRewardPanelMediator.ON_WILL_EXIT then
+		arg0_10.viewComponent:resumeBubble()
+		arg0_10.viewComponent:UpdateView()
 	end
 end
 
-function var0.remove(arg0)
+function var0_0.remove(arg0_12)
 	return
 end
 
-return var0
+return var0_0

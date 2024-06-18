@@ -1,251 +1,251 @@
-﻿local var0 = class("BuildShipScene", import("...base.BaseUI"))
+﻿local var0_0 = class("BuildShipScene", import("...base.BaseUI"))
 
-var0.PAGE_BUILD = 1
-var0.PAGE_QUEUE = 2
-var0.PAGE_SUPPORT = 3
-var0.PAGE_UNSEAM = 4
-var0.PAGE_PRAY = 5
-var0.PAGE_NEWSERVER = 6
-var0.PROJECTS = {
+var0_0.PAGE_BUILD = 1
+var0_0.PAGE_QUEUE = 2
+var0_0.PAGE_SUPPORT = 3
+var0_0.PAGE_UNSEAM = 4
+var0_0.PAGE_PRAY = 5
+var0_0.PAGE_NEWSERVER = 6
+var0_0.PROJECTS = {
 	SPECIAL = "special",
 	ACTIVITY = "new",
 	HEAVY = "heavy",
 	LIGHT = "light"
 }
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "BuildShipUI"
 end
 
-function var0.ResUISettings(arg0)
+function var0_0.ResUISettings(arg0_2)
 	return true
 end
 
-function var0.setPools(arg0, arg1)
-	arg0.pools = {}
+function var0_0.setPools(arg0_3, arg1_3)
+	arg0_3.pools = {}
 
-	for iter0, iter1 in ipairs(arg1) do
-		table.insert(arg0.pools, iter1)
+	for iter0_3, iter1_3 in ipairs(arg1_3) do
+		table.insert(arg0_3.pools, iter1_3)
 	end
 end
 
-function var0.setPlayer(arg0, arg1)
-	arg0.contextData.player = arg1
+function var0_0.setPlayer(arg0_4, arg1_4)
+	arg0_4.contextData.player = arg1_4
 end
 
-function var0.setUseItem(arg0, arg1)
-	arg0.contextData.itemVO = arg1 or Item.New({
+function var0_0.setUseItem(arg0_5, arg1_5)
+	arg0_5.contextData.itemVO = arg1_5 or Item.New({
 		count = 0,
 		id = pg.ship_data_create_material[1].use_item
 	})
 
-	if arg0.poolsPage and arg0.poolsPage:GetLoaded() then
-		arg0.poolsPage:UpdateItem(arg0.contextData.itemVO.count)
+	if arg0_5.poolsPage and arg0_5.poolsPage:GetLoaded() then
+		arg0_5.poolsPage:UpdateItem(arg0_5.contextData.itemVO.count)
 	end
 end
 
-function var0.setStartCount(arg0, arg1)
-	arg0.contextData.startCount = arg1
+function var0_0.setStartCount(arg0_6, arg1_6)
+	arg0_6.contextData.startCount = arg1_6
 end
 
-function var0.setFlagShip(arg0, arg1)
-	arg0.contextData.falgShip = arg1
+function var0_0.setFlagShip(arg0_7, arg1_7)
+	arg0_7.contextData.falgShip = arg1_7
 end
 
-function var0.RefreshActivityBuildPool(arg0, arg1)
-	arg0.poolsPage:RefreshActivityBuildPool(arg1)
+function var0_0.RefreshActivityBuildPool(arg0_8, arg1_8)
+	arg0_8.poolsPage:RefreshActivityBuildPool(arg1_8)
 end
 
-function var0.RefreshFreeBuildActivity(arg0)
-	arg0.poolsPage:RefreshFreeBuildActivity()
-	arg0.poolsPage:UpdateTicket()
+function var0_0.RefreshFreeBuildActivity(arg0_9)
+	arg0_9.poolsPage:RefreshFreeBuildActivity()
+	arg0_9.poolsPage:UpdateTicket()
 end
 
-function var0.RefreshRegularExchangeCount(arg0)
-	arg0.poolsPage:RefreshRegularExchangeCount()
+function var0_0.RefreshRegularExchangeCount(arg0_10)
+	arg0_10.poolsPage:RefreshRegularExchangeCount()
 end
 
-function var0.init(arg0)
+function var0_0.init(arg0_11)
 	Input.multiTouchEnabled = false
-	arg0.blurPanel = arg0:findTF("blur_panel")
-	arg0.topPanel = arg0:findTF("adapt/top", arg0.blurPanel)
-	arg0.backBtn = arg0:findTF("back_btn", arg0.topPanel)
-	arg0.toggles = {
-		arg0:findTF("adapt/left_length/frame/tagRoot/build_btn", arg0.blurPanel),
-		arg0:findTF("adapt/left_length/frame/tagRoot/queue_btn", arg0.blurPanel),
-		arg0:findTF("adapt/left_length/frame/tagRoot/support_btn", arg0.blurPanel),
-		arg0:findTF("adapt/left_length/frame/tagRoot/unseam_btn", arg0.blurPanel),
-		arg0:findTF("adapt/left_length/frame/tagRoot/pray_btn", arg0.blurPanel),
-		arg0:findTF("adapt/left_length/frame/tagRoot/other_build_btn", arg0.blurPanel)
+	arg0_11.blurPanel = arg0_11:findTF("blur_panel")
+	arg0_11.topPanel = arg0_11:findTF("adapt/top", arg0_11.blurPanel)
+	arg0_11.backBtn = arg0_11:findTF("back_btn", arg0_11.topPanel)
+	arg0_11.toggles = {
+		arg0_11:findTF("adapt/left_length/frame/tagRoot/build_btn", arg0_11.blurPanel),
+		arg0_11:findTF("adapt/left_length/frame/tagRoot/queue_btn", arg0_11.blurPanel),
+		arg0_11:findTF("adapt/left_length/frame/tagRoot/support_btn", arg0_11.blurPanel),
+		arg0_11:findTF("adapt/left_length/frame/tagRoot/unseam_btn", arg0_11.blurPanel),
+		arg0_11:findTF("adapt/left_length/frame/tagRoot/pray_btn", arg0_11.blurPanel),
+		arg0_11:findTF("adapt/left_length/frame/tagRoot/other_build_btn", arg0_11.blurPanel)
 	}
-	arg0.tip = arg0.toggles[2]:Find("tip")
-	arg0.contextData.msgbox = BuildShipMsgBox.New(arg0._tf, arg0.event)
-	arg0.contextData.helpWindow = BuildShipHelpWindow.New(arg0._tf, arg0.event)
-	arg0.poolsPage = BuildShipPoolsPage.New(arg0._tf, arg0.event, arg0.contextData)
-	arg0.supportShipPoolPage = SupportShipPoolPage.New(arg0._tf, arg0.event, arg0.contextData)
+	arg0_11.tip = arg0_11.toggles[2]:Find("tip")
+	arg0_11.contextData.msgbox = BuildShipMsgBox.New(arg0_11._tf, arg0_11.event)
+	arg0_11.contextData.helpWindow = BuildShipHelpWindow.New(arg0_11._tf, arg0_11.event)
+	arg0_11.poolsPage = BuildShipPoolsPage.New(arg0_11._tf, arg0_11.event, arg0_11.contextData)
+	arg0_11.supportShipPoolPage = SupportShipPoolPage.New(arg0_11._tf, arg0_11.event, arg0_11.contextData)
 end
 
-function var0.didEnter(arg0)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0.blurPanel, {
+function var0_0.didEnter(arg0_12)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_12.blurPanel, {
 		groupName = LayerWeightConst.GROUP_BUILDSHIPSCENE
 	})
-	onButton(arg0, arg0.backBtn, function()
-		arg0:emit(var0.ON_BACK)
+	onButton(arg0_12, arg0_12.backBtn, function()
+		arg0_12:emit(var0_0.ON_BACK)
 	end, SFX_CANCEL)
 
-	local var0 = arg0:findTF("adapt/left_length/stamp", arg0.blurPanel)
+	local var0_12 = arg0_12:findTF("adapt/left_length/stamp", arg0_12.blurPanel)
 
-	setActive(var0, getProxy(TaskProxy):mingshiTouchFlagEnabled())
-	onButton(arg0, var0, function()
+	setActive(var0_12, getProxy(TaskProxy):mingshiTouchFlagEnabled())
+	onButton(arg0_12, var0_12, function()
 		getProxy(TaskProxy):dealMingshiTouchFlag(11)
 	end, SFX_CONFIRM)
 
-	for iter0, iter1 in ipairs(arg0.toggles) do
-		onToggle(arg0, iter1, function(arg0)
-			arg0:switchPage(iter0, arg0)
+	for iter0_12, iter1_12 in ipairs(arg0_12.toggles) do
+		onToggle(arg0_12, iter1_12, function(arg0_15)
+			arg0_12:switchPage(iter0_12, arg0_15)
 		end, SFX_PANEL)
 	end
 
-	local var1 = getProxy(ActivityProxy)
-	local var2 = var1:getActivityById(ActivityConst.ACTIVITY_PRAY_POOL)
+	local var1_12 = getProxy(ActivityProxy)
+	local var2_12 = var1_12:getActivityById(ActivityConst.ACTIVITY_PRAY_POOL)
 
-	if var2 and not var2:isEnd() then
-		setActive(arg0.toggles[var0.PAGE_PRAY], true)
+	if var2_12 and not var2_12:isEnd() then
+		setActive(arg0_12.toggles[var0_0.PAGE_PRAY], true)
 	else
-		setActive(arg0.toggles[var0.PAGE_PRAY], false)
+		setActive(arg0_12.toggles[var0_0.PAGE_PRAY], false)
 	end
 
-	if underscore.any(arg0.pools, function(arg0)
-		return checkExist(var1:getBuildPoolActivity(arg0), {
+	if underscore.any(arg0_12.pools, function(arg0_16)
+		return checkExist(var1_12:getBuildPoolActivity(arg0_16), {
 			"getConfig",
 			{
 				"type"
 			}
 		}) == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD
 	end) then
-		setActive(arg0.toggles[var0.PAGE_NEWSERVER], true)
+		setActive(arg0_12.toggles[var0_0.PAGE_NEWSERVER], true)
 	else
-		setActive(arg0.toggles[var0.PAGE_NEWSERVER], false)
+		setActive(arg0_12.toggles[var0_0.PAGE_NEWSERVER], false)
 	end
 
-	local var3 = arg0.contextData.page or pg.SeriesGuideMgr.GetInstance():isRunning() and var0.PAGE_BUILD or var0.PAGE_NEWSERVER
+	local var3_12 = arg0_12.contextData.page or pg.SeriesGuideMgr.GetInstance():isRunning() and var0_0.PAGE_BUILD or var0_0.PAGE_NEWSERVER
 
-	if not isActive(arg0.toggles[var3]) then
-		var3 = var0.PAGE_BUILD
+	if not isActive(arg0_12.toggles[var3_12]) then
+		var3_12 = var0_0.PAGE_BUILD
 	end
 
-	triggerToggle(arg0.toggles[var3], true)
-	PoolMgr.GetInstance():GetUI("al_bg01", true, function(arg0)
-		arg0:SetActive(true)
-		setParent(arg0, arg0._tf)
-		arg0.transform:SetAsFirstSibling()
+	triggerToggle(arg0_12.toggles[var3_12], true)
+	PoolMgr.GetInstance():GetUI("al_bg01", true, function(arg0_17)
+		arg0_17:SetActive(true)
+		setParent(arg0_17, arg0_12._tf)
+		arg0_17.transform:SetAsFirstSibling()
 	end)
 	TagTipHelper.SetFreeBuildMark()
 
-	arg0.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(arg0, arg0.blurPanel)
+	arg0_12.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(arg0_12, arg0_12.blurPanel)
 end
 
-function var0.checkPage(arg0)
-	if arg0.contextData.msgbox and arg0.contextData.msgbox:GetLoaded() and arg0.contextData.msgbox:isShowing() then
-		arg0.contextData.msgbox:Hide()
+function var0_0.checkPage(arg0_18)
+	if arg0_18.contextData.msgbox and arg0_18.contextData.msgbox:GetLoaded() and arg0_18.contextData.msgbox:isShowing() then
+		arg0_18.contextData.msgbox:Hide()
 	end
 
-	if arg0.contextData.helpWindow and arg0.contextData.helpWindow:GetLoaded() and arg0.contextData.helpWindow:isShowing() then
-		arg0.contextData.helpWindow:Hide()
+	if arg0_18.contextData.helpWindow and arg0_18.contextData.helpWindow:GetLoaded() and arg0_18.contextData.helpWindow:isShowing() then
+		arg0_18.contextData.helpWindow:Hide()
 	end
 
-	local var0 = getProxy(ActivityProxy)
+	local var0_18 = getProxy(ActivityProxy)
 
-	if underscore.any(arg0.pools, function(arg0)
-		return checkExist(var0:getBuildPoolActivity(arg0), {
+	if underscore.any(arg0_18.pools, function(arg0_19)
+		return checkExist(var0_18:getBuildPoolActivity(arg0_19), {
 			"getConfig",
 			{
 				"type"
 			}
 		}) == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD
 	end) then
-		setActive(arg0.toggles[var0.PAGE_NEWSERVER], true)
+		setActive(arg0_18.toggles[var0_0.PAGE_NEWSERVER], true)
 	else
-		setActive(arg0.toggles[var0.PAGE_NEWSERVER], false)
+		setActive(arg0_18.toggles[var0_0.PAGE_NEWSERVER], false)
 	end
 
-	if not isActive(arg0.toggles[var0.PAGE_NEWSERVER]) and arg0.contextData.page == var0.PAGE_NEWSERVER then
-		triggerToggle(arg0.toggles[var0.PAGE_BUILD], true)
+	if not isActive(arg0_18.toggles[var0_0.PAGE_NEWSERVER]) and arg0_18.contextData.page == var0_0.PAGE_NEWSERVER then
+		triggerToggle(arg0_18.toggles[var0_0.PAGE_BUILD], true)
 	else
-		arg0.poolsPage:Flush(arg0.pools)
+		arg0_18.poolsPage:Flush(arg0_18.pools)
 	end
 end
 
-function var0.switchPage(arg0, arg1, arg2)
-	if arg2 then
-		arg0.contextData.page = arg1 == var0.PAGE_UNSEAM and var0.PAGE_BUILD or arg1
+function var0_0.switchPage(arg0_20, arg1_20, arg2_20)
+	if arg2_20 then
+		arg0_20.contextData.page = arg1_20 == var0_0.PAGE_UNSEAM and var0_0.PAGE_BUILD or arg1_20
 	end
 
-	if arg1 == var0.PAGE_UNSEAM then
-		if arg2 then
-			arg0:emit(BuildShipMediator.OPEN_DESTROY)
+	if arg1_20 == var0_0.PAGE_UNSEAM then
+		if arg2_20 then
+			arg0_20:emit(BuildShipMediator.OPEN_DESTROY)
 		end
-	elseif arg1 == var0.PAGE_QUEUE then
-		if arg2 then
-			arg0:emit(BuildShipMediator.OPEN_PROJECT_LIST)
+	elseif arg1_20 == var0_0.PAGE_QUEUE then
+		if arg2_20 then
+			arg0_20:emit(BuildShipMediator.OPEN_PROJECT_LIST)
 		else
-			arg0:emit(BuildShipMediator.REMOVE_PROJECT_LIST)
+			arg0_20:emit(BuildShipMediator.REMOVE_PROJECT_LIST)
 		end
-	elseif arg1 == var0.PAGE_SUPPORT then
-		arg0.supportShipPoolPage:ExecuteAction("ShowOrHide", arg2)
+	elseif arg1_20 == var0_0.PAGE_SUPPORT then
+		arg0_20.supportShipPoolPage:ExecuteAction("ShowOrHide", arg2_20)
 
-		if arg2 then
-			arg0.supportShipPoolPage:ExecuteAction("Flush")
+		if arg2_20 then
+			arg0_20.supportShipPoolPage:ExecuteAction("Flush")
 		end
-	elseif arg1 == var0.PAGE_BUILD then
-		arg0.poolsPage:ExecuteAction("ShowOrHide", arg2)
+	elseif arg1_20 == var0_0.PAGE_BUILD then
+		arg0_20.poolsPage:ExecuteAction("ShowOrHide", arg2_20)
 
-		if arg2 then
-			arg0.poolsPage:ExecuteAction("Flush", arg0.pools, false)
+		if arg2_20 then
+			arg0_20.poolsPage:ExecuteAction("Flush", arg0_20.pools, false)
 		end
-	elseif arg1 == var0.PAGE_NEWSERVER then
-		arg0.poolsPage:ExecuteAction("ShowOrHide", arg2)
+	elseif arg1_20 == var0_0.PAGE_NEWSERVER then
+		arg0_20.poolsPage:ExecuteAction("ShowOrHide", arg2_20)
 
-		if arg2 then
-			arg0.poolsPage:ExecuteAction("Flush", arg0.pools, true)
+		if arg2_20 then
+			arg0_20.poolsPage:ExecuteAction("Flush", arg0_20.pools, true)
 		end
-	elseif arg1 == var0.PAGE_PRAY then
-		if arg2 then
-			arg0:emit(BuildShipMediator.OPEN_PRAY_PAGE)
+	elseif arg1_20 == var0_0.PAGE_PRAY then
+		if arg2_20 then
+			arg0_20:emit(BuildShipMediator.OPEN_PRAY_PAGE)
 		else
-			arg0:emit(BuildShipMediator.CLOSE_PRAY_PAGE)
+			arg0_20:emit(BuildShipMediator.CLOSE_PRAY_PAGE)
 		end
 	end
 end
 
-function var0.updateQueueTip(arg0, arg1)
-	setActive(arg0.tip, arg1 > 0)
+function var0_0.updateQueueTip(arg0_21, arg1_21)
+	setActive(arg0_21.tip, arg1_21 > 0)
 end
 
-function var0.onBackPressed(arg0)
-	if arg0.contextData.helpWindow:GetLoaded() and arg0.contextData.helpWindow:isShowing() then
-		arg0.contextData.helpWindow:Hide()
+function var0_0.onBackPressed(arg0_22)
+	if arg0_22.contextData.helpWindow:GetLoaded() and arg0_22.contextData.helpWindow:isShowing() then
+		arg0_22.contextData.helpWindow:Hide()
 
 		return
 	end
 
-	if arg0.contextData.msgbox:GetLoaded() and arg0.contextData.msgbox:isShowing() then
-		arg0.contextData.msgbox:Hide()
+	if arg0_22.contextData.msgbox:GetLoaded() and arg0_22.contextData.msgbox:isShowing() then
+		arg0_22.contextData.msgbox:Hide()
 
 		return
 	end
 
-	arg0:emit(var0.ON_BACK_PRESSED)
+	arg0_22:emit(var0_0.ON_BACK_PRESSED)
 end
 
-function var0.willExit(arg0)
+function var0_0.willExit(arg0_23)
 	Input.multiTouchEnabled = true
 
-	arg0.contextData.msgbox:Destroy()
-	arg0.contextData.helpWindow:Destroy()
-	arg0.poolsPage:Destroy()
-	arg0.supportShipPoolPage:Destroy()
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0.blurPanel, arg0._tf)
+	arg0_23.contextData.msgbox:Destroy()
+	arg0_23.contextData.helpWindow:Destroy()
+	arg0_23.poolsPage:Destroy()
+	arg0_23.supportShipPoolPage:Destroy()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_23.blurPanel, arg0_23._tf)
 end
 
-return var0
+return var0_0

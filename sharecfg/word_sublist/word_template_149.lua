@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_149 = {}
+var0_0.word_template_149 = {}
 
-local var1 = var0.word_template_149
+local var1_0 = var0_0.word_template_149
 
 function temp()
-	var1.键 = {
+	var1_0.键 = {
 		定 = {
 			位 = {
 				器 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.賤 = {
+	var1_0.賤 = {
 		this = {
 			this = true
 		},
@@ -54,7 +54,7 @@ end
 temp()
 
 function temp()
-	var1.江 = {
+	var1_0.江 = {
 		C = {
 			o = {
 				r = {
@@ -610,7 +610,7 @@ end
 temp()
 
 function temp()
-	var1.将 = {
+	var1_0.将 = {
 		则 = {
 			民 = {
 				this = true
@@ -622,7 +622,7 @@ end
 temp()
 
 function temp()
-	var1.姜 = {
+	var1_0.姜 = {
 		大 = {
 			明 = {
 				this = true
@@ -649,7 +649,7 @@ end
 temp()
 
 function temp()
-	var1.將 = {
+	var1_0.將 = {
 		則 = {
 			民 = {
 				this = true
@@ -661,7 +661,7 @@ end
 temp()
 
 function temp()
-	var1.僵 = {
+	var1_0.僵 = {
 		贼 = {
 			this = true,
 			民 = {

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_275 = {}
+var0_0.word_template_275 = {}
 
-local var1 = var0.word_template_275
+local var1_0 = var0_0.word_template_275
 
 function temp()
-	var1.谭 = {
+	var1_0.谭 = {
 		豁 = {
 			子 = {
 				this = true
@@ -24,7 +24,7 @@ end
 temp()
 
 function temp()
-	var1.坦 = {
+	var1_0.坦 = {
 		克 = {
 			this = true,
 			车 = {
@@ -194,7 +194,7 @@ end
 temp()
 
 function temp()
-	var1.探 = {
+	var1_0.探 = {
 		测 = {
 			狗 = {
 				this = true
@@ -223,7 +223,7 @@ end
 temp()
 
 function temp()
-	var1.汤 = {
+	var1_0.汤 = {
 		光 = {
 			中 = {
 				this = true
@@ -235,7 +235,7 @@ end
 temp()
 
 function temp()
-	var1.湯 = {
+	var1_0.湯 = {
 		光 = {
 			中 = {
 				this = true
@@ -247,7 +247,7 @@ end
 temp()
 
 function temp()
-	var1.唐 = {
+	var1_0.唐 = {
 		柏 = {
 			橋 = {
 				this = true
@@ -421,7 +421,7 @@ end
 temp()
 
 function temp()
-	var1.膛 = {
+	var1_0.膛 = {
 		线 = {
 			枪 = {
 				this = true

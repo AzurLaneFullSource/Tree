@@ -1,34 +1,34 @@
-﻿local var0 = class("MetaCharacterTacticsLevelUpCommand", pm.SimpleCommand)
+﻿local var0_0 = class("MetaCharacterTacticsLevelUpCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.shipID
-	local var2 = var0.skillID
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.shipID
+	local var2_1 = var0_1.skillID
 
-	print("63309 skill levelup", tostring(var1), tostring(var2))
+	print("63309 skill levelup", tostring(var1_1), tostring(var2_1))
 	pg.ConnectionMgr.GetInstance():Send(63309, {
-		ship_id = var1,
-		skill_id = var2
-	}, 63310, function(arg0)
-		if arg0.result == 0 then
+		ship_id = var1_1,
+		skill_id = var2_1
+	}, 63310, function(arg0_2)
+		if arg0_2.result == 0 then
 			print("63310 skill levelup success")
 
-			local var0 = getProxy(BayProxy)
-			local var1 = var0:getShipById(var1)
+			local var0_2 = getProxy(BayProxy)
+			local var1_2 = var0_2:getShipById(var1_1)
 
-			var1:upSkillLevelForMeta(var2)
-			var0:updateShip(var1)
+			var1_2:upSkillLevelForMeta(var2_1)
+			var0_2:updateShip(var1_2)
 
-			local var2 = arg0.switch_cnt
+			local var2_2 = arg0_2.switch_cnt
 
-			arg0:sendNotification(GAME.TACTICS_META_LEVELUP_SKILL_DONE, {
-				skillID = var2,
-				leftSwitchCount = var2
+			arg0_1:sendNotification(GAME.TACTICS_META_LEVELUP_SKILL_DONE, {
+				skillID = var2_1,
+				leftSwitchCount = var2_2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0_2.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

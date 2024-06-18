@@ -1,25 +1,25 @@
-﻿local var0 = class("LittleOuGenRePage", import(".TemplatePage.PtTemplatePage"))
+﻿local var0_0 = class("LittleOuGenRePage", import(".TemplatePage.PtTemplatePage"))
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
+function var0_0.OnInit(arg0_1)
+	var0_0.super.OnInit(arg0_1)
 
-	arg0.heartTpl = arg0:findTF("HeartTpl", arg0.bg)
-	arg0.heartContainer = arg0:findTF("HeartContainer", arg0.bg)
-	arg0.heartUIItemList = UIItemList.New(arg0.heartContainer, arg0.heartTpl)
+	arg0_1.heartTpl = arg0_1:findTF("HeartTpl", arg0_1.bg)
+	arg0_1.heartContainer = arg0_1:findTF("HeartContainer", arg0_1.bg)
+	arg0_1.heartUIItemList = UIItemList.New(arg0_1.heartContainer, arg0_1.heartTpl)
 
-	arg0.heartUIItemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg1 + 1
-			local var1 = arg0.ptData:GetLevelProgress()
-			local var2 = arg0:findTF("Full", arg2)
+	arg0_1.heartUIItemList:make(function(arg0_2, arg1_2, arg2_2)
+		if arg0_2 == UIItemList.EventUpdate then
+			local var0_2 = arg1_2 + 1
+			local var1_2 = arg0_1.ptData:GetLevelProgress()
+			local var2_2 = arg0_1:findTF("Full", arg2_2)
 
-			setActive(var2, not (var1 < var0))
+			setActive(var2_2, not (var1_2 < var0_2))
 		end
 	end)
 
-	arg0.helpBtn = arg0:findTF("help_btn", arg0.bg)
+	arg0_1.helpBtn = arg0_1:findTF("help_btn", arg0_1.bg)
 
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_1, arg0_1.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.littleEugen_npc.tip
@@ -27,445 +27,445 @@ function var0.OnInit(arg0)
 	end, SFX_PANEL)
 end
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
+function var0_0.OnUpdateFlush(arg0_4)
+	var0_0.super.OnUpdateFlush(arg0_4)
 
-	local var0, var1 = arg0.ptData:GetLevelProgress()
+	local var0_4, var1_4 = arg0_4.ptData:GetLevelProgress()
 
-	arg0.heartUIItemList:align(var1)
+	arg0_4.heartUIItemList:align(var1_4)
 
-	local var2, var3, var4 = arg0.ptData:GetLevelProgress()
-	local var5, var6, var7 = arg0.ptData:GetResProgress()
+	local var2_4, var3_4, var4_4 = arg0_4.ptData:GetLevelProgress()
+	local var5_4, var6_4, var7_4 = arg0_4.ptData:GetResProgress()
 
-	setText(arg0.step, setColorStr(var2, "#f8e6e2") .. " / " .. setColorStr(var3, "#4e2c2b"))
-	setText(arg0.progress, (var7 >= 1 and setColorStr(var5, COLOR_GREEN) or setColorStr(var5, "COLOR_GREEN")) .. "/" .. setColorStr(var6, "#4e2c2b"))
+	setText(arg0_4.step, setColorStr(var2_4, "#f8e6e2") .. " / " .. setColorStr(var3_4, "#4e2c2b"))
+	setText(arg0_4.progress, (var7_4 >= 1 and setColorStr(var5_4, COLOR_GREEN) or setColorStr(var5_4, "COLOR_GREEN")) .. "/" .. setColorStr(var6_4, "#4e2c2b"))
 
-	if arg0.firstSliderInit then
-		if LeanTween.isTweening(go(arg0.slider)) then
-			LeanTween.cancel(go(arg0.slider))
+	if arg0_4.firstSliderInit then
+		if LeanTween.isTweening(go(arg0_4.slider)) then
+			LeanTween.cancel(go(arg0_4.slider))
 		end
 
-		local var8 = GetComponent(arg0.slider, typeof(Slider)).value
-		local var9 = arg0.l1 ~= var2 and 0 or arg0.sliderValue
+		local var8_4 = GetComponent(arg0_4.slider, typeof(Slider)).value
+		local var9_4 = arg0_4.l1 ~= var2_4 and 0 or arg0_4.sliderValue
 
-		LeanTween.value(go(arg0.slider), var9, var7, 1):setOnUpdate(System.Action_float(function(arg0)
-			setSlider(arg0.slider, 0, 1, arg0)
+		LeanTween.value(go(arg0_4.slider), var9_4, var7_4, 1):setOnUpdate(System.Action_float(function(arg0_5)
+			setSlider(arg0_4.slider, 0, 1, arg0_5)
 
-			arg0.sliderValue = arg0
+			arg0_4.sliderValue = arg0_5
 		end))
 	else
-		setSlider(arg0.slider, 0, 1, var7)
+		setSlider(arg0_4.slider, 0, 1, var7_4)
 
-		arg0.firstSliderInit = true
-		arg0.sliderValue = var7
+		arg0_4.firstSliderInit = true
+		arg0_4.sliderValue = var7_4
 	end
 
-	arg0.l1 = var2
+	arg0_4.l1 = var2_4
 
-	arg0:updataTask()
-	arg0:sortTaskGroups()
-	arg0:updateTaskUI()
+	arg0_4:updataTask()
+	arg0_4:sortTaskGroups()
+	arg0_4:updateTaskUI()
 end
 
-function var0.updataTask(arg0)
-	for iter0, iter1 in ipairs(arg0.taskGroups) do
-		for iter2, iter3 in ipairs(iter1.tasks) do
-			local var0 = arg0.taskProxy:getFinishTaskById(iter3.id) and 1 or 0
-			local var1 = arg0.taskProxy:getTaskById(iter3.id)
-			local var2 = 0
+function var0_0.updataTask(arg0_6)
+	for iter0_6, iter1_6 in ipairs(arg0_6.taskGroups) do
+		for iter2_6, iter3_6 in ipairs(iter1_6.tasks) do
+			local var0_6 = arg0_6.taskProxy:getFinishTaskById(iter3_6.id) and 1 or 0
+			local var1_6 = arg0_6.taskProxy:getTaskById(iter3_6.id)
+			local var2_6 = 0
 
-			if var1 then
-				var2 = var1:getProgress()
-				iter1.progress = var2 == 0 and iter1.progress or var2
+			if var1_6 then
+				var2_6 = var1_6:getProgress()
+				iter1_6.progress = var2_6 == 0 and iter1_6.progress or var2_6
 			else
-				var2 = iter1.progress
+				var2_6 = iter1_6.progress
 			end
 
-			iter3.progress = var2
+			iter3_6.progress = var2_6
 
-			if iter3.finish ~= var0 then
-				setActive(iter3.tf, false)
-				table.insert(arg0.taskTplPool, iter3.tf)
+			if iter3_6.finish ~= var0_6 then
+				setActive(iter3_6.tf, false)
+				table.insert(arg0_6.taskTplPool, iter3_6.tf)
 
-				iter3.tf = nil
+				iter3_6.tf = nil
 			end
 
-			iter3.finish = var0
+			iter3_6.finish = var0_6
 		end
 	end
 end
 
-function var0.OnFirstFlush(arg0)
-	var0.super.OnFirstFlush(arg0)
-	onButton(arg0, arg0.battleBtn, function()
-		arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.LEVEL)
+function var0_0.OnFirstFlush(arg0_7)
+	var0_0.super.OnFirstFlush(arg0_7)
+	onButton(arg0_7, arg0_7.battleBtn, function()
+		arg0_7:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.LEVEL)
 	end, SFX_PANEL)
-	arg0:initTask()
-	arg0:sortTaskGroups()
-	arg0:updateTaskUI()
+	arg0_7:initTask()
+	arg0_7:sortTaskGroups()
+	arg0_7:updateTaskUI()
 end
 
-function var0.initTask(arg0)
-	arg0.missionTpl = findTF(arg0.bg, "missionTpl")
+function var0_0.initTask(arg0_9)
+	arg0_9.missionTpl = findTF(arg0_9.bg, "missionTpl")
 
-	setActive(arg0.missionTpl, false)
+	setActive(arg0_9.missionTpl, false)
 
-	arg0.missionContainer = findTF(arg0.bg, "mission/content")
+	arg0_9.missionContainer = findTF(arg0_9.bg, "mission/content")
 
-	local var0 = arg0.activity:getConfig("config_client").task_act_id
-	local var1 = pg.activity_template[var0].config_data[1]
+	local var0_9 = arg0_9.activity:getConfig("config_client").task_act_id
+	local var1_9 = pg.activity_template[var0_9].config_data[1]
 
-	arg0.taskProxy = getProxy(TaskProxy)
-	arg0.taskTplPool = {}
-	arg0.taskScroll = GetComponent(findTF(arg0.bg, "mission"), typeof(ScrollRect))
-	arg0.taskGroups = {}
+	arg0_9.taskProxy = getProxy(TaskProxy)
+	arg0_9.taskTplPool = {}
+	arg0_9.taskScroll = GetComponent(findTF(arg0_9.bg, "mission"), typeof(ScrollRect))
+	arg0_9.taskGroups = {}
 
-	for iter0 = 1, #var1 do
-		local var2 = var1[iter0]
-		local var3 = pg.task_data_template[var2]
+	for iter0_9 = 1, #var1_9 do
+		local var2_9 = var1_9[iter0_9]
+		local var3_9 = pg.task_data_template[var2_9]
 
-		if not var3 then
-			print("task_data_template 不存在任务id : " .. tostring(var2))
+		if not var3_9 then
+			print("task_data_template 不存在任务id : " .. tostring(var2_9))
 		end
 
-		local var4 = var3.type
-		local var5 = var3.sub_type
+		local var4_9 = var3_9.type
+		local var5_9 = var3_9.sub_type
 
-		if var4 == Task.TYPE_ACTIVITY or var4 == Task.TYPE_ACTIVITY_BRANCH then
-			local var6 = arg0:getTaskGroup(var4, var5)
+		if var4_9 == Task.TYPE_ACTIVITY or var4_9 == Task.TYPE_ACTIVITY_BRANCH then
+			local var6_9 = arg0_9:getTaskGroup(var4_9, var5_9)
 
-			arg0:insertTaskToGroup(var2, var3, var6)
+			arg0_9:insertTaskToGroup(var2_9, var3_9, var6_9)
 		end
 	end
 end
 
-function var0.updateTaskUI(arg0)
-	local var0 = 0
+function var0_0.updateTaskUI(arg0_10)
+	local var0_10 = 0
 
-	for iter0 = 1, #arg0.taskGroups do
-		local var1 = arg0.taskGroups[iter0]
-		local var2 = var1.tasks
+	for iter0_10 = 1, #arg0_10.taskGroups do
+		local var1_10 = arg0_10.taskGroups[iter0_10]
+		local var2_10 = var1_10.tasks
 
-		for iter1, iter2 in ipairs(var2) do
-			arg0:updateTaskList(iter1, var0, iter2, var1)
+		for iter1_10, iter2_10 in ipairs(var2_10) do
+			arg0_10:updateTaskList(iter1_10, var0_10, iter2_10, var1_10)
 
-			var0 = var0 + 1
+			var0_10 = var0_10 + 1
 		end
 	end
 
-	local var3 = 0
-	local var4 = 0
+	local var3_10 = 0
+	local var4_10 = 0
 
-	if arg0.scrollToGroup then
-		for iter3, iter4 in ipairs(arg0.taskGroups) do
-			if iter4 == arg0.scrollToGroup then
-				var4 = var3
+	if arg0_10.scrollToGroup then
+		for iter3_10, iter4_10 in ipairs(arg0_10.taskGroups) do
+			if iter4_10 == arg0_10.scrollToGroup then
+				var4_10 = var3_10
 			end
 
-			if iter4.opening then
-				var3 = var3 + #iter4.tasks
+			if iter4_10.opening then
+				var3_10 = var3_10 + #iter4_10.tasks
 			else
-				var3 = var3 + 1
+				var3_10 = var3_10 + 1
 			end
 		end
 
-		arg0.scrollToGroup = nil
+		arg0_10.scrollToGroup = nil
 	end
 
-	if var4 ~= 0 and var3 ~= 0 then
-		scrollTo(arg0.taskScroll, 0, 1 - var4 / var3)
+	if var4_10 ~= 0 and var3_10 ~= 0 then
+		scrollTo(arg0_10.taskScroll, 0, 1 - var4_10 / var3_10)
 	else
-		scrollTo(arg0.taskScroll, 0, 1)
+		scrollTo(arg0_10.taskScroll, 0, 1)
 	end
 end
 
-function var0.updateTaskList(arg0, arg1, arg2, arg3, arg4)
-	if not arg3.show then
+function var0_0.updateTaskList(arg0_11, arg1_11, arg2_11, arg3_11, arg4_11)
+	if not arg3_11.show then
 		return
 	end
 
-	local var0 = arg3.targetNum
-	local var1 = arg3.progress
-	local var2 = arg3.finish == 1
-	local var3 = arg1 == 1
-	local var4 = arg3.desc
-	local var5 = arg3.drop
-	local var6 = arg4.opening
-	local var7 = #arg4.tasks == 1
+	local var0_11 = arg3_11.targetNum
+	local var1_11 = arg3_11.progress
+	local var2_11 = arg3_11.finish == 1
+	local var3_11 = arg1_11 == 1
+	local var4_11 = arg3_11.desc
+	local var5_11 = arg3_11.drop
+	local var6_11 = arg4_11.opening
+	local var7_11 = #arg4_11.tasks == 1
 
-	if not arg3.tf then
-		arg3.tf = arg0:getTaskTfFromPool()
+	if not arg3_11.tf then
+		arg3_11.tf = arg0_11:getTaskTfFromPool()
 	end
 
-	local var8 = findTF(arg3.tf, "AD")
+	local var8_11 = findTF(arg3_11.tf, "AD")
 
-	arg3.tf.sizeDelta = Vector2(778, var3 and 120 or 110)
+	arg3_11.tf.sizeDelta = Vector2(778, var3_11 and 120 or 110)
 
-	setActive(findTF(var8, "bg1"), var3)
-	setActive(findTF(var8, "bg2"), not var3)
+	setActive(findTF(var8_11, "bg1"), var3_11)
+	setActive(findTF(var8_11, "bg2"), not var3_11)
 
-	if var3 then
-		setActive(findTF(var8, "mask1"), var2)
+	if var3_11 then
+		setActive(findTF(var8_11, "mask1"), var2_11)
 	else
-		setActive(findTF(var8, "mask2"), var2)
+		setActive(findTF(var8_11, "mask2"), var2_11)
 	end
 
-	if var2 then
-		setActive(findTF(var8, "pahase"), false)
-		setSlider(findTF(var8, "slider"), 0, 1, 1)
+	if var2_11 then
+		setActive(findTF(var8_11, "pahase"), false)
+		setSlider(findTF(var8_11, "slider"), 0, 1, 1)
 	else
-		setActive(findTF(var8, "pahase"), true)
-		setSlider(findTF(var8, "slider"), 0, 1, var1 / var0)
+		setActive(findTF(var8_11, "pahase"), true)
+		setSlider(findTF(var8_11, "slider"), 0, 1, var1_11 / var0_11)
 	end
 
-	setText(findTF(var8, "desc"), var4)
+	setText(findTF(var8_11, "desc"), var4_11)
 
-	if arg4.subType ~= 33 then
-		setText(findTF(var8, "pahase"), setColorStr(var1, "#95b345") .. "/" .. setColorStr(var0, "#e9c9bd"))
+	if arg4_11.subType ~= 33 then
+		setText(findTF(var8_11, "pahase"), setColorStr(var1_11, "#95b345") .. "/" .. setColorStr(var0_11, "#e9c9bd"))
 	else
-		setText(findTF(var8, "pahase"), "")
+		setText(findTF(var8_11, "pahase"), "")
 	end
 
-	updateDrop(findTF(var8, "award"), var5)
-	onButton(arg0, findTF(var8, "award"), function()
-		arg0:emit(BaseUI.ON_DROP, var5)
+	updateDrop(findTF(var8_11, "award"), var5_11)
+	onButton(arg0_11, findTF(var8_11, "award"), function()
+		arg0_11:emit(BaseUI.ON_DROP, var5_11)
 	end, SFX_PANEL)
-	setActive(findTF(var8, "got"), false)
-	setActive(findTF(var8, "get"), false)
-	setActive(findTF(var8, "go"), false)
+	setActive(findTF(var8_11, "got"), false)
+	setActive(findTF(var8_11, "get"), false)
+	setActive(findTF(var8_11, "go"), false)
 
-	if not var3 then
-		setActive(findTF(var8, "go"), not var2)
-		setActive(findTF(var8, "got"), var2)
-	elseif var2 then
-		setActive(findTF(var8, "got"), true)
-	elseif var0 <= var1 then
-		setActive(findTF(var8, "get"), true)
-		onButton(arg0, findTF(var8, "get"), function()
-			local var0 = arg0.taskProxy:getTaskById(arg3.id)
+	if not var3_11 then
+		setActive(findTF(var8_11, "go"), not var2_11)
+		setActive(findTF(var8_11, "got"), var2_11)
+	elseif var2_11 then
+		setActive(findTF(var8_11, "got"), true)
+	elseif var0_11 <= var1_11 then
+		setActive(findTF(var8_11, "get"), true)
+		onButton(arg0_11, findTF(var8_11, "get"), function()
+			local var0_13 = arg0_11.taskProxy:getTaskById(arg3_11.id)
 
-			if var0 then
-				arg0:emit(ActivityMediator.ON_TASK_SUBMIT, var0)
+			if var0_13 then
+				arg0_11:emit(ActivityMediator.ON_TASK_SUBMIT, var0_13)
 			end
 		end, SFX_CONFIRM)
 
-		if not arg0.nextTickFlag then
+		if not arg0_11.nextTickFlag then
 			onNextTick(function()
-				triggerButton(findTF(var8, "get"))
+				triggerButton(findTF(var8_11, "get"))
 
-				arg0.nextTickFlag = false
+				arg0_11.nextTickFlag = false
 			end)
 
-			arg0.nextTickFlag = true
+			arg0_11.nextTickFlag = true
 		end
 	else
-		setActive(findTF(var8, "go"), true)
-		onButton(arg0, findTF(var8, "go"), function()
-			local var0 = arg0.taskProxy:getTaskById(arg3.id)
+		setActive(findTF(var8_11, "go"), true)
+		onButton(arg0_11, findTF(var8_11, "go"), function()
+			local var0_15 = arg0_11.taskProxy:getTaskById(arg3_11.id)
 
-			if var0 then
-				arg0:emit(ActivityMediator.ON_TASK_GO, var0)
+			if var0_15 then
+				arg0_11:emit(ActivityMediator.ON_TASK_GO, var0_15)
 			end
 		end, SFX_CONFIRM)
 	end
 
-	if var7 or not var3 or var2 and var3 then
-		setActive(findTF(var8, "show"), false)
+	if var7_11 or not var3_11 or var2_11 and var3_11 then
+		setActive(findTF(var8_11, "show"), false)
 	else
-		setActive(findTF(var8, "show"), true)
-		setActive(findTF(var8, "show/on"), var6)
-		setActive(findTF(var8, "show/off"), not var6)
+		setActive(findTF(var8_11, "show"), true)
+		setActive(findTF(var8_11, "show/on"), var6_11)
+		setActive(findTF(var8_11, "show/off"), not var6_11)
 	end
 
-	if var3 then
-		onButton(arg0, findTF(var8, "show"), function()
-			arg0:changeGroupOpening(arg4)
+	if var3_11 then
+		onButton(arg0_11, findTF(var8_11, "show"), function()
+			arg0_11:changeGroupOpening(arg4_11)
 		end, SFX_CONFIRM)
 	end
 
-	setActive(arg3.tf, true)
-	arg3.tf:SetSiblingIndex(arg2)
+	setActive(arg3_11.tf, true)
+	arg3_11.tf:SetSiblingIndex(arg2_11)
 end
 
-function var0.changeGroupOpening(arg0, arg1)
-	arg1.opening = not arg1.opening
+function var0_0.changeGroupOpening(arg0_17, arg1_17)
+	arg1_17.opening = not arg1_17.opening
 
-	for iter0 = 1, #arg1.tasks do
-		local var0 = arg1.tasks[iter0]
+	for iter0_17 = 1, #arg1_17.tasks do
+		local var0_17 = arg1_17.tasks[iter0_17]
 
-		if iter0 == 1 then
-			var0.show = true
+		if iter0_17 == 1 then
+			var0_17.show = true
 		else
-			var0.show = arg1.opening
+			var0_17.show = arg1_17.opening
 		end
 
-		if not var0.show and var0.tf then
-			setActive(var0.tf, false)
-			table.insert(arg0.taskTplPool, var0.tf)
+		if not var0_17.show and var0_17.tf then
+			setActive(var0_17.tf, false)
+			table.insert(arg0_17.taskTplPool, var0_17.tf)
 
-			var0.tf = nil
+			var0_17.tf = nil
 		end
 	end
 
-	arg0.scrollToGroup = arg1
+	arg0_17.scrollToGroup = arg1_17
 
-	arg0:updateTaskUI()
+	arg0_17:updateTaskUI()
 end
 
-function var0.getTaskTfFromPool(arg0)
-	if #arg0.taskTplPool > 0 then
-		return table.remove(arg0.taskTplPool, 1)
+function var0_0.getTaskTfFromPool(arg0_18)
+	if #arg0_18.taskTplPool > 0 then
+		return table.remove(arg0_18.taskTplPool, 1)
 	end
 
-	local var0 = tf(Instantiate(arg0.missionTpl))
+	local var0_18 = tf(Instantiate(arg0_18.missionTpl))
 
-	SetParent(var0, arg0.missionContainer)
+	SetParent(var0_18, arg0_18.missionContainer)
 
-	return var0
+	return var0_18
 end
 
-function var0.getTaskGroup(arg0, arg1, arg2)
-	for iter0 = 1, #arg0.taskGroups do
-		local var0 = arg0.taskGroups[iter0]
+function var0_0.getTaskGroup(arg0_19, arg1_19, arg2_19)
+	for iter0_19 = 1, #arg0_19.taskGroups do
+		local var0_19 = arg0_19.taskGroups[iter0_19]
 
-		if var0.type == arg1 and var0.subType == arg2 then
-			return var0
+		if var0_19.type == arg1_19 and var0_19.subType == arg2_19 then
+			return var0_19
 		end
 	end
 
-	local var1 = {
+	local var1_19 = {
 		opening = false,
 		progress = 0,
-		type = arg1,
-		subType = arg2,
+		type = arg1_19,
+		subType = arg2_19,
 		tasks = {}
 	}
 
-	table.insert(arg0.taskGroups, var1)
+	table.insert(arg0_19.taskGroups, var1_19)
 
-	return var1
+	return var1_19
 end
 
-function var0.insertTaskToGroup(arg0, arg1, arg2, arg3)
-	local var0 = arg3.tasks
+function var0_0.insertTaskToGroup(arg0_20, arg1_20, arg2_20, arg3_20)
+	local var0_20 = arg3_20.tasks
 
-	for iter0 = 1, #var0 do
-		if var0[iter0].id == arg1 then
+	for iter0_20 = 1, #var0_20 do
+		if var0_20[iter0_20].id == arg1_20 then
 			return
 		end
 	end
 
-	local var1 = arg2.target_num
-	local var2 = arg2.desc
-	local var3 = {
-		type = arg2.award_display[1][1],
-		id = arg2.award_display[1][2],
-		count = arg2.award_display[1][3]
+	local var1_20 = arg2_20.target_num
+	local var2_20 = arg2_20.desc
+	local var3_20 = {
+		type = arg2_20.award_display[1][1],
+		id = arg2_20.award_display[1][2],
+		count = arg2_20.award_display[1][3]
 	}
-	local var4 = false
+	local var4_20 = false
 
-	if #arg3.tasks == 0 then
-		var4 = true
+	if #arg3_20.tasks == 0 then
+		var4_20 = true
 	end
 
-	local var5 = arg0.taskProxy:getFinishTaskById(arg1) and 1 or 0
-	local var6 = arg0.taskProxy:getTaskById(arg1)
-	local var7 = 0
+	local var5_20 = arg0_20.taskProxy:getFinishTaskById(arg1_20) and 1 or 0
+	local var6_20 = arg0_20.taskProxy:getTaskById(arg1_20)
+	local var7_20 = 0
 
-	if var6 then
-		var7 = var6:getProgress()
-		arg3.progress = var7 == 0 and arg3.progress or var7
+	if var6_20 then
+		var7_20 = var6_20:getProgress()
+		arg3_20.progress = var7_20 == 0 and arg3_20.progress or var7_20
 	else
-		var7 = arg3.progress
+		var7_20 = arg3_20.progress
 	end
 
-	table.insert(arg3.tasks, {
-		id = arg1,
-		targetNum = var1,
-		show = var4,
-		finish = var5,
-		progress = var7,
-		desc = var2,
-		drop = var3
+	table.insert(arg3_20.tasks, {
+		id = arg1_20,
+		targetNum = var1_20,
+		show = var4_20,
+		finish = var5_20,
+		progress = var7_20,
+		desc = var2_20,
+		drop = var3_20
 	})
 end
 
-function var0.sortTaskGroups(arg0)
-	for iter0, iter1 in ipairs(arg0.taskGroups) do
-		table.sort(iter1.tasks, function(arg0, arg1)
-			if arg0.finish ~= arg1.finish then
-				return arg0.finish < arg1.finish
+function var0_0.sortTaskGroups(arg0_21)
+	for iter0_21, iter1_21 in ipairs(arg0_21.taskGroups) do
+		table.sort(iter1_21.tasks, function(arg0_22, arg1_22)
+			if arg0_22.finish ~= arg1_22.finish then
+				return arg0_22.finish < arg1_22.finish
 			end
 
-			return arg0.targetNum < arg1.targetNum
+			return arg0_22.targetNum < arg1_22.targetNum
 		end)
 	end
 
-	table.sort(arg0.taskGroups, function(arg0, arg1)
-		local var0 = arg0.tasks
-		local var1 = arg1.tasks
-		local var2 = 0
-		local var3 = arg0.tasks[1].id
-		local var4 = 0
-		local var5 = 0
-		local var6 = 0
-		local var7 = arg1.tasks[1].id
-		local var8 = 0
-		local var9 = 0
+	table.sort(arg0_21.taskGroups, function(arg0_23, arg1_23)
+		local var0_23 = arg0_23.tasks
+		local var1_23 = arg1_23.tasks
+		local var2_23 = 0
+		local var3_23 = arg0_23.tasks[1].id
+		local var4_23 = 0
+		local var5_23 = 0
+		local var6_23 = 0
+		local var7_23 = arg1_23.tasks[1].id
+		local var8_23 = 0
+		local var9_23 = 0
 
-		for iter0, iter1 in ipairs(var0) do
-			if var2 == 0 and iter1.finish == 0 and iter1.progress >= iter1.targetNum then
-				var2 = 1
-				var3 = iter1.id
+		for iter0_23, iter1_23 in ipairs(var0_23) do
+			if var2_23 == 0 and iter1_23.finish == 0 and iter1_23.progress >= iter1_23.targetNum then
+				var2_23 = 1
+				var3_23 = iter1_23.id
 			end
 
-			var4 = iter1.finish == 1 and var4 + 1 or var4
+			var4_23 = iter1_23.finish == 1 and var4_23 + 1 or var4_23
 		end
 
-		local var10 = var4 == #var0 and 1 or 0
+		local var10_23 = var4_23 == #var0_23 and 1 or 0
 
-		for iter2, iter3 in ipairs(var1) do
-			if var6 == 0 and iter3.finish == 0 and iter3.progress >= iter3.targetNum then
-				var6 = 1
-				var7 = iter3.id
+		for iter2_23, iter3_23 in ipairs(var1_23) do
+			if var6_23 == 0 and iter3_23.finish == 0 and iter3_23.progress >= iter3_23.targetNum then
+				var6_23 = 1
+				var7_23 = iter3_23.id
 			end
 
-			var8 = iter3.finish == 1 and var8 + 1 or var8
+			var8_23 = iter3_23.finish == 1 and var8_23 + 1 or var8_23
 		end
 
-		local var11 = var8 == #var1 and 1 or 0
+		local var11_23 = var8_23 == #var1_23 and 1 or 0
 
-		if var2 ~= var6 then
-			return var6 < var2
-		elseif var10 ~= var11 then
-			return var10 < var11
+		if var2_23 ~= var6_23 then
+			return var6_23 < var2_23
+		elseif var10_23 ~= var11_23 then
+			return var10_23 < var11_23
 		else
-			return var3 < var7
+			return var3_23 < var7_23
 		end
 	end)
 
-	for iter2, iter3 in ipairs(arg0.taskGroups) do
-		local var0 = iter3.opening
-		local var1 = iter3.tasks
+	for iter2_21, iter3_21 in ipairs(arg0_21.taskGroups) do
+		local var0_21 = iter3_21.opening
+		local var1_21 = iter3_21.tasks
 
-		for iter4 = 1, #var1 do
-			local var2 = var1[iter4]
+		for iter4_21 = 1, #var1_21 do
+			local var2_21 = var1_21[iter4_21]
 
-			if iter4 == 1 then
-				var2.show = true
-			elseif var0 then
-				var2.show = true
+			if iter4_21 == 1 then
+				var2_21.show = true
+			elseif var0_21 then
+				var2_21.show = true
 			else
-				var2.show = false
+				var2_21.show = false
 			end
 		end
 	end
 end
 
-function var0.OnDestroy(arg0)
-	if LeanTween.isTweening(go(arg0.slider)) then
-		LeanTween.cancel(go(arg0.slider))
+function var0_0.OnDestroy(arg0_24)
+	if LeanTween.isTweening(go(arg0_24.slider)) then
+		LeanTween.cancel(go(arg0_24.slider))
 	end
 end
 
-return var0
+return var0_0

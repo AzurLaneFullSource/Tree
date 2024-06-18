@@ -1,37 +1,37 @@
-﻿local var0 = import(".DynamicCellView")
-local var1 = class("OniCellView", var0)
+﻿local var0_0 = import(".DynamicCellView")
+local var1_0 = class("OniCellView", var0_0)
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0.tfShadow = arg0.tf:Find("shadow")
-	arg0.tfIcon = arg0.tf:Find("ship/icon")
+	arg0_1.tfShadow = arg0_1.tf:Find("shadow")
+	arg0_1.tfIcon = arg0_1.tf:Find("ship/icon")
 end
 
-function var1.GetOrder(arg0)
+function var1_0.GetOrder(arg0_2)
 	return ChapterConst.CellPriorityLittle
 end
 
-function var1.SetActive(arg0, arg1)
-	SetActive(arg0.tf, arg1)
+function var1_0.SetActive(arg0_3, arg1_3)
+	SetActive(arg0_3.tf, arg1_3)
 end
 
-function var1.UpdateChampionCell(arg0, arg1, arg2, arg3)
-	local var0 = arg2.trait ~= ChapterConst.TraitLurk and arg1:getChampionVisibility(arg2) and not arg1:existFleet(FleetType.Transport, arg2.row, arg2.column)
-	local var1 = 1
+function var1_0.UpdateChampionCell(arg0_4, arg1_4, arg2_4, arg3_4)
+	local var0_4 = arg2_4.trait ~= ChapterConst.TraitLurk and arg1_4:getChampionVisibility(arg2_4) and not arg1_4:existFleet(FleetType.Transport, arg2_4.row, arg2_4.column)
+	local var1_4 = 1
 
-	_.each(arg1.fleets, function(arg0)
-		if arg2:inAlertRange(arg0.line.row, arg0.line.column) then
-			var1 = var1 + 1
+	_.each(arg1_4.fleets, function(arg0_5)
+		if arg2_4:inAlertRange(arg0_5.line.row, arg0_5.line.column) then
+			var1_4 = var1_4 + 1
 		end
 	end)
-	GetImageSpriteFromAtlasAsync("enemies/sp_" .. var1, "", arg0.tfIcon, true)
+	GetImageSpriteFromAtlasAsync("enemies/sp_" .. var1_4, "", arg0_4.tfIcon, true)
 
-	arg0.tfShadow.localEulerAngles = Vector3(arg1.theme.angle, 0, 0)
+	arg0_4.tfShadow.localEulerAngles = Vector3(arg1_4.theme.angle, 0, 0)
 
-	arg0:RefreshLinePosition(arg1, arg2)
-	arg0:SetActive(var0)
-	existCall(arg3)
+	arg0_4:RefreshLinePosition(arg1_4, arg2_4)
+	arg0_4:SetActive(var0_4)
+	existCall(arg3_4)
 end
 
-return var1
+return var1_0

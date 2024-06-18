@@ -1,71 +1,71 @@
-﻿local var0 = class("CommanderTreePage", import("...base.BaseSubView"))
+﻿local var0_0 = class("CommanderTreePage", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "CommanderTreeUI"
 end
 
-function var0.OnInit(arg0)
-	arg0.treePanel = arg0._tf
-	arg0.treeList = UIItemList.New(arg0:findTF("bg/frame/bg/talents", arg0.treePanel), arg0:findTF("bg/frame/bg/talents/telent", arg0.treePanel))
-	arg0.treeTalentDesTxt = arg0.treePanel:Find("bg/frame/bg/desc/Text"):GetComponent(typeof(Text))
-	arg0.treePanelCloseBtn = arg0:findTF("bg/frame/close_btn", arg0.treePanel)
+function var0_0.OnInit(arg0_2)
+	arg0_2.treePanel = arg0_2._tf
+	arg0_2.treeList = UIItemList.New(arg0_2:findTF("bg/frame/bg/talents", arg0_2.treePanel), arg0_2:findTF("bg/frame/bg/talents/telent", arg0_2.treePanel))
+	arg0_2.treeTalentDesTxt = arg0_2.treePanel:Find("bg/frame/bg/desc/Text"):GetComponent(typeof(Text))
+	arg0_2.treePanelCloseBtn = arg0_2:findTF("bg/frame/close_btn", arg0_2.treePanel)
 
-	setActive(arg0.treePanel, false)
-	onButton(arg0, arg0.treePanel, function()
-		arg0:closeTreePanel()
+	setActive(arg0_2.treePanel, false)
+	onButton(arg0_2, arg0_2.treePanel, function()
+		arg0_2:closeTreePanel()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.treePanelCloseBtn, function()
-		arg0:closeTreePanel()
+	onButton(arg0_2, arg0_2.treePanelCloseBtn, function()
+		arg0_2:closeTreePanel()
 	end, SFX_PANEL)
-	setText(arg0._tf:Find("Text"), i18n("commander_choice_talent_4"))
+	setText(arg0_2._tf:Find("Text"), i18n("commander_choice_talent_4"))
 end
 
-function var0.Show(arg0, arg1, arg2)
-	setActive(arg0.treePanel, true)
-	arg0.treePanel:SetAsLastSibling()
+function var0_0.Show(arg0_5, arg1_5, arg2_5)
+	setActive(arg0_5.treePanel, true)
+	arg0_5.treePanel:SetAsLastSibling()
 
-	local function var0(arg0)
-		arg0.treeTalentDesTxt.text = arg0:getConfig("desc")
+	local function var0_5(arg0_6)
+		arg0_5.treeTalentDesTxt.text = arg0_6:getConfig("desc")
 	end
 
-	local var1 = arg1:getTalentList()
+	local var1_5 = arg1_5:getTalentList()
 
-	arg0.treeList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = CommanderTalent.New({
+	arg0_5.treeList:make(function(arg0_7, arg1_7, arg2_7)
+		if arg0_7 == UIItemList.EventUpdate then
+			local var0_7 = CommanderTalent.New({
 				origin = false,
-				id = var1[arg1 + 1]
+				id = var1_5[arg1_7 + 1]
 			})
 
-			onToggle(arg0, arg2, function(arg0)
-				if arg0 then
-					var0(var0)
+			onToggle(arg0_5, arg2_7, function(arg0_8)
+				if arg0_8 then
+					var0_5(var0_7)
 				end
 			end, SFX_PANEL)
-			setText(arg2:Find("name"), var0:getConfig("name"))
-			triggerToggle(arg2, arg1.id == var0.id)
-			setActive(arg2:Find("curr"), arg1.id == var0.id)
-			setActive(arg2:Find("arr"), arg1 ~= #var1 - 1)
-			GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. var0:getConfig("icon"), "", arg2)
+			setText(arg2_7:Find("name"), var0_7:getConfig("name"))
+			triggerToggle(arg2_7, arg1_5.id == var0_7.id)
+			setActive(arg2_7:Find("curr"), arg1_5.id == var0_7.id)
+			setActive(arg2_7:Find("arr"), arg1_7 ~= #var1_5 - 1)
+			GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. var0_7:getConfig("icon"), "", arg2_7)
 		end
 	end)
-	arg0.treeList:align(#var1)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, false, {
-		weight = arg2 or LayerWeightConst.SECOND_LAYER
+	arg0_5.treeList:align(#var1_5)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_5._tf, false, {
+		weight = arg2_5 or LayerWeightConst.SECOND_LAYER
 	})
 end
 
-function var0.Hide(arg0)
-	arg0:closeTreePanel()
+function var0_0.Hide(arg0_9)
+	arg0_9:closeTreePanel()
 end
 
-function var0.closeTreePanel(arg0)
-	setActive(arg0.treePanel, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, arg0._parentTf)
+function var0_0.closeTreePanel(arg0_10)
+	setActive(arg0_10.treePanel, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_10._tf, arg0_10._parentTf)
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_11)
 	return
 end
 
-return var0
+return var0_0

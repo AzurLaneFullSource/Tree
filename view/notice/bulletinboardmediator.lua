@@ -1,27 +1,27 @@
-﻿local var0 = class("BulletinBoardMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("BulletinBoardMediator", import("..base.ContextMediator"))
 
-var0.SET_STOP_REMIND = "set_stop_remind"
+var0_0.SET_STOP_REMIND = "set_stop_remind"
 
-function var0.register(arg0)
-	local var0 = getProxy(ServerNoticeProxy)
+function var0_0.register(arg0_1)
+	local var0_1 = getProxy(ServerNoticeProxy)
 
-	var0:setStopNewTip()
+	var0_1:setStopNewTip()
 
-	local var1 = var0:getServerNotices(false)
+	local var1_1 = var0_1:getServerNotices(false)
 
-	arg0.viewComponent:setNotices(var1)
-	arg0:bind(arg0.SET_STOP_REMIND, function(arg0, arg1)
-		getProxy(ServerNoticeProxy):setStopRemind(arg1)
+	arg0_1.viewComponent:setNotices(var1_1)
+	arg0_1:bind(arg0_1.SET_STOP_REMIND, function(arg0_2, arg1_2)
+		getProxy(ServerNoticeProxy):setStopRemind(arg1_2)
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_3)
 	return {}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_4, arg1_4)
+	local var0_4 = arg1_4:getName()
+	local var1_4 = arg1_4:getBody()
 end
 
-return var0
+return var0_0

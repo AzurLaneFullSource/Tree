@@ -1,35 +1,35 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConst
-local var2 = class("BattleBuffAddFleetBuff", var0.Battle.BattleBuffEffect)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConst
+local var2_0 = class("BattleBuffAddFleetBuff", var0_0.Battle.BattleBuffEffect)
 
-var0.Battle.BattleBuffAddFleetBuff = var2
-var2.__name = "BattleBuffAddFleetBuff"
+var0_0.Battle.BattleBuffAddFleetBuff = var2_0
+var2_0.__name = "BattleBuffAddFleetBuff"
 
-function var2.Ctor(arg0, arg1)
-	var2.super.Ctor(arg0, arg1)
+function var2_0.Ctor(arg0_1, arg1_1)
+	var2_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var2.SetArgs(arg0, arg1, arg2)
-	arg0._level = arg2:GetLv()
-	arg0._fleetBuffID = arg0._tempData.arg_list.fleet_buff_id
+function var2_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	arg0_2._level = arg2_2:GetLv()
+	arg0_2._fleetBuffID = arg0_2._tempData.arg_list.fleet_buff_id
 end
 
-function var2.onAttach(arg0, arg1, arg2)
-	if arg1:GetUnitType() ~= var1.UnitType.PLAYER_UNIT then
+function var2_0.onAttach(arg0_3, arg1_3, arg2_3)
+	if arg1_3:GetUnitType() ~= var1_0.UnitType.PLAYER_UNIT then
 		return
 	end
 
-	local var0 = var0.Battle.BattleFleetBuffUnit.New(arg0._fleetBuffID)
+	local var0_3 = var0_0.Battle.BattleFleetBuffUnit.New(arg0_3._fleetBuffID)
 
-	arg1:GetFleetVO():AttachFleetBuff(var0)
+	arg1_3:GetFleetVO():AttachFleetBuff(var0_3)
 end
 
-function var2.onRemove(arg0, arg1, arg2)
-	if arg1:GetUnitType() ~= var1.UnitType.PLAYER_UNIT then
+function var2_0.onRemove(arg0_4, arg1_4, arg2_4)
+	if arg1_4:GetUnitType() ~= var1_0.UnitType.PLAYER_UNIT then
 		return
 	end
 
-	arg1:GetFleetVO():RemoveFleetBuff(arg0._fleetBuffID)
+	arg1_4:GetFleetVO():RemoveFleetBuff(arg0_4._fleetBuffID)
 end

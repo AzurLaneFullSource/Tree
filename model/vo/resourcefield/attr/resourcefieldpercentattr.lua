@@ -1,11 +1,11 @@
-﻿local var0 = class("ResourceFieldPercentAttr", import(".ResourceFieldProductAttr"))
+﻿local var0_0 = class("ResourceFieldPercentAttr", import(".ResourceFieldProductAttr"))
 
-function var0.GetProgressDesc(arg0)
-	return arg0.value .. "%" .. "/" .. arg0.maxValue .. "%"
+function var0_0.GetProgressDesc(arg0_1)
+	return arg0_1.value .. "%" .. "/" .. arg0_1.maxValue .. "%"
 end
 
-function var0.GetAdditionDesc(arg0)
-	return arg0.addition .. "%"
+function var0_0.GetAdditionDesc(arg0_2)
+	return arg0_2.addition .. "%"
 end
 
-return var0
+return var0_0

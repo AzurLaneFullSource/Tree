@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_25 = {}
+var0_0.word_template_25 = {}
 
-local var1 = var0.word_template_25
+local var1_0 = var0_0.word_template_25
 
 function temp()
-	var1.春 = {
+	var1_0.春 = {
 		畫 = {
 			this = true
 		},
@@ -159,7 +159,7 @@ end
 temp()
 
 function temp()
-	var1.処 = {
+	var1_0.処 = {
 		女 = {
 			this = true
 		}
@@ -169,7 +169,7 @@ end
 temp()
 
 function temp()
-	var1.商 = {
+	var1_0.商 = {
 		材 = {
 			this = true
 		},
@@ -279,7 +279,7 @@ end
 temp()
 
 function temp()
-	var1.小 = {
+	var1_0.小 = {
 		遣 = {
 			this = true
 		},
@@ -1535,7 +1535,7 @@ end
 temp()
 
 function temp()
-	var1.消 = {
+	var1_0.消 = {
 		費 = {
 			者 = {
 				金 = {
@@ -1646,7 +1646,7 @@ end
 temp()
 
 function temp()
-	var1.証 = {
+	var1_0.証 = {
 		拠 = {
 			金 = {
 				this = true
@@ -1658,7 +1658,7 @@ end
 temp()
 
 function temp()
-	var1.情 = {
+	var1_0.情 = {
 		報 = {
 			商 = {
 				材 = {

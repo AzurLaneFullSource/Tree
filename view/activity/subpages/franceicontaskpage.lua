@@ -1,93 +1,93 @@
-﻿local var0 = class("FranceIconTaskPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var0_0 = class("FranceIconTaskPage", import(".TemplatePage.PtTemplatePage"))
 
-function var0.OnFirstFlush(arg0)
-	var0.super.OnFirstFlush(arg0)
-	setActive(arg0.displayBtn, false)
-	setActive(arg0.awardTF, false)
-	onButton(arg0, arg0.battleBtn, function()
-		arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
+function var0_0.OnFirstFlush(arg0_1)
+	var0_0.super.OnFirstFlush(arg0_1)
+	setActive(arg0_1.displayBtn, false)
+	setActive(arg0_1.awardTF, false)
+	onButton(arg0_1, arg0_1.battleBtn, function()
+		arg0_1:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
 			page = "activity"
 		})
 	end, SFX_PANEL)
 
-	arg0.step = arg0:findTF("AD/switcher/phase2/Image/step")
-	arg0.progress = arg0:findTF("AD/switcher/phase2/Image/progress")
-	arg0.switchBtn = arg0:findTF("AD/switcher/switch_btn")
-	arg0.bar = arg0:findTF("AD/switcher/phase2/Image/barContent/bar")
-	arg0.phases = {
-		arg0:findTF("AD/switcher/phase1"),
-		arg0:findTF("AD/switcher/phase2")
+	arg0_1.step = arg0_1:findTF("AD/switcher/phase2/Image/step")
+	arg0_1.progress = arg0_1:findTF("AD/switcher/phase2/Image/progress")
+	arg0_1.switchBtn = arg0_1:findTF("AD/switcher/switch_btn")
+	arg0_1.bar = arg0_1:findTF("AD/switcher/phase2/Image/barContent/bar")
+	arg0_1.phases = {
+		arg0_1:findTF("AD/switcher/phase1"),
+		arg0_1:findTF("AD/switcher/phase2")
 	}
-	arg0.inPhase2 = false
+	arg0_1.inPhase2 = false
 
-	onToggle(arg0, arg0.switchBtn, function(arg0)
-		if arg0.isSwitching then
+	onToggle(arg0_1, arg0_1.switchBtn, function(arg0_3)
+		if arg0_1.isSwitching then
 			return
 		end
 
-		arg0.inPhase2 = arg0
+		arg0_1.inPhase2 = arg0_3
 
-		arg0:Switch(arg0)
+		arg0_1:Switch(arg0_3)
 	end, SFX_PANEL)
 
-	local var0 = arg0.activity:getConfig("config_client")
+	local var0_1 = arg0_1.activity:getConfig("config_client")
 
-	if pg.TimeMgr.GetInstance():inTime(var0) then
-		triggerToggle(arg0.switchBtn, true)
+	if pg.TimeMgr.GetInstance():inTime(var0_1) then
+		triggerToggle(arg0_1.switchBtn, true)
 	end
 end
 
-function var0.Switch(arg0, arg1)
-	arg0.isSwitching = true
+function var0_0.Switch(arg0_4, arg1_4)
+	arg0_4.isSwitching = true
 
-	local var0 = GetOrAddComponent(arg0.phases[1], typeof(CanvasGroup))
-	local var1 = arg0.phases[1].localPosition
-	local var2 = arg0.phases[2].localPosition
+	local var0_4 = GetOrAddComponent(arg0_4.phases[1], typeof(CanvasGroup))
+	local var1_4 = arg0_4.phases[1].localPosition
+	local var2_4 = arg0_4.phases[2].localPosition
 
-	arg0.phases[2]:SetAsLastSibling()
-	setActive(arg0.phases[1]:Find("Image"), false)
-	LeanTween.moveLocal(go(arg0.phases[1]), var2, 0.4):setOnComplete(System.Action(function()
-		setActive(arg0.phases[1]:Find("label"), true)
+	arg0_4.phases[2]:SetAsLastSibling()
+	setActive(arg0_4.phases[1]:Find("Image"), false)
+	LeanTween.moveLocal(go(arg0_4.phases[1]), var2_4, 0.4):setOnComplete(System.Action(function()
+		setActive(arg0_4.phases[1]:Find("label"), true)
 	end))
-	LeanTween.value(go(arg0.phases[1]), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg0)
-		var0.alpha = arg0
+	LeanTween.value(go(arg0_4.phases[1]), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg0_6)
+		var0_4.alpha = arg0_6
 	end))
-	setActive(arg0.phases[2]:Find("Image"), true)
+	setActive(arg0_4.phases[2]:Find("Image"), true)
 
-	local var3 = GetOrAddComponent(arg0.phases[2], typeof(CanvasGroup))
+	local var3_4 = GetOrAddComponent(arg0_4.phases[2], typeof(CanvasGroup))
 
-	LeanTween.value(go(arg0.phases[2]), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg0)
-		var3.alpha = arg0
+	LeanTween.value(go(arg0_4.phases[2]), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg0_7)
+		var3_4.alpha = arg0_7
 	end))
-	setActive(arg0.phases[2]:Find("label"), false)
-	LeanTween.moveLocal(go(arg0.phases[2]), var1, 0.4):setOnComplete(System.Action(function()
-		arg0.isSwitching = nil
-		arg0.phases[1], arg0.phases[2] = arg0.phases[2], arg0.phases[1]
+	setActive(arg0_4.phases[2]:Find("label"), false)
+	LeanTween.moveLocal(go(arg0_4.phases[2]), var1_4, 0.4):setOnComplete(System.Action(function()
+		arg0_4.isSwitching = nil
+		arg0_4.phases[1], arg0_4.phases[2] = arg0_4.phases[2], arg0_4.phases[1]
 	end))
-	arg0:UpdateAwardGot()
+	arg0_4:UpdateAwardGot()
 end
 
-function var0.UpdateAwardGot(arg0)
-	local var0 = arg0:findTF("switcher/phase2/got", arg0.bg)
-	local var1 = not arg0.ptData:CanGetNextAward() and arg0.inPhase2
+function var0_0.UpdateAwardGot(arg0_9)
+	local var0_9 = arg0_9:findTF("switcher/phase2/got", arg0_9.bg)
+	local var1_9 = not arg0_9.ptData:CanGetNextAward() and arg0_9.inPhase2
 
-	setActive(var0, var1)
+	setActive(var0_9, var1_9)
 end
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
+function var0_0.OnUpdateFlush(arg0_10)
+	var0_0.super.OnUpdateFlush(arg0_10)
 
-	local var0 = arg0.activity:getConfig("config_client")
-	local var1 = pg.TimeMgr.GetInstance():inTime(var0)
+	local var0_10 = arg0_10.activity:getConfig("config_client")
+	local var1_10 = pg.TimeMgr.GetInstance():inTime(var0_10)
 
-	setActive(arg0.battleBtn, isActive(arg0.battleBtn) and var1)
-	arg0:UpdateAwardGot()
+	setActive(arg0_10.battleBtn, isActive(arg0_10.battleBtn) and var1_10)
+	arg0_10:UpdateAwardGot()
 
-	local var2, var3, var4 = arg0.ptData:GetResProgress()
+	local var2_10, var3_10, var4_10 = arg0_10.ptData:GetResProgress()
 
-	setText(arg0.step, var4 >= 1 and setColorStr(var2, "#487CFFFF") or var2)
-	setText(arg0.progress, "/" .. var3)
-	setFillAmount(arg0.bar, var2 / var3)
+	setText(arg0_10.step, var4_10 >= 1 and setColorStr(var2_10, "#487CFFFF") or var2_10)
+	setText(arg0_10.progress, "/" .. var3_10)
+	setFillAmount(arg0_10.bar, var2_10 / var3_10)
 end
 
-return var0
+return var0_0

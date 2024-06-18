@@ -1,57 +1,57 @@
-﻿local var0 = class("MainActDataExpirationReminderSequence")
+﻿local var0_0 = class("MainActDataExpirationReminderSequence")
 
-function var0.Execute(arg0, arg1)
+function var0_0.Execute(arg0_1, arg1_1)
 	seriesAsync({
-		function(arg0)
-			arg0:CheckSkinCouponActivity(arg0)
+		function(arg0_2)
+			arg0_1:CheckSkinCouponActivity(arg0_2)
 		end
-	}, arg1)
+	}, arg1_1)
 end
 
-function var0.CheckSkinCouponActivity(arg0, arg1)
-	local var0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SKIN_COUPON)
+function var0_0.CheckSkinCouponActivity(arg0_3, arg1_3)
+	local var0_3 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SKIN_COUPON)
 
-	if not var0 or #var0 == 0 then
-		arg1()
+	if not var0_3 or #var0_3 == 0 then
+		arg1_3()
 
 		return
 	end
 
-	local var1 = {}
+	local var1_3 = {}
 
-	for iter0, iter1 in ipairs(var0) do
-		if iter1:ShouldTipUsage() then
-			table.insert(var1, function(arg0)
-				iter1:SaveTipTime()
-				arg0:ShowTipMsg(iter1, arg0)
+	for iter0_3, iter1_3 in ipairs(var0_3) do
+		if iter1_3:ShouldTipUsage() then
+			table.insert(var1_3, function(arg0_4)
+				iter1_3:SaveTipTime()
+				arg0_3:ShowTipMsg(iter1_3, arg0_4)
 			end)
 		end
 	end
 
-	seriesAsync(var1, arg1)
+	seriesAsync(var1_3, arg1_3)
 end
 
-function var0.ShowTipMsg(arg0, arg1, arg2)
-	local var0 = arg1:GetCanUsageCnt()
-	local var1 = arg1:GetItemConfig()
-	local var2 = {
+function var0_0.ShowTipMsg(arg0_5, arg1_5, arg2_5)
+	local var0_5 = arg1_5:GetCanUsageCnt()
+	local var1_5 = arg1_5:GetItemConfig()
+	local var2_5 = {
 		{
 			type = DROP_TYPE_ITEM,
-			id = var1.id,
-			count = var0
+			id = var1_5.id,
+			count = var0_5
 		}
 	}
-	local var3 = arg1:GetItemName()
-	local var4 = pg.TimeMgr.GetInstance():STimeDescS(arg1.stopTime, "%m.%d")
+	local var3_5 = arg1_5:GetItemName()
+	local var4_5 = pg.TimeMgr.GetInstance():STimeDescS(arg1_5.stopTime, "%m.%d")
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		hideNo = true,
 		type = MSGBOX_TYPE_ITEM_BOX,
-		content = i18n("skin_discount_timelimit", var3, var4),
-		items = var2,
-		onYes = arg2,
+		content = i18n("skin_discount_timelimit", var3_5, var4_5),
+		items = var2_5,
+		onYes = arg2_5,
 		weight = LayerWeightConst.TOP_LAYER
 	})
 end
 
-return var0
+return var0_0

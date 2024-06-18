@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"HQ is extremely impressed with your performance, Commander. They've given you permission to start working on your second fleet!",
 	"Head to the formation menu to put your second fleet, Fleet 2, together. Tap confirm to head directly there.",
 	"Tap the button on the right to switch to Fleet 2.",
@@ -16,7 +16,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[1]
+				text = var0_0[1]
 			}
 		},
 		{
@@ -27,7 +27,7 @@ return {
 				posY = 0,
 				dir = -1,
 				posX = 0,
-				text = var0[2]
+				text = var0_0[2]
 			}
 		},
 		{
@@ -37,7 +37,7 @@ return {
 				mode = 2,
 				posY = 87,
 				posX = 228.09,
-				text = var0[3]
+				text = var0_0[3]
 			},
 			ui = {
 				hideAnimtor = true,
@@ -59,7 +59,7 @@ return {
 				mode = 2,
 				posY = 121.8,
 				posX = 0,
-				text = var0[4]
+				text = var0_0[4]
 			}
 		},
 		{
@@ -69,7 +69,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[5]
+				text = var0_0[5]
 			}
 		}
 	}

@@ -1,21 +1,21 @@
-﻿local var0 = class("GetRivalInfoCommand", pm.SimpleCommand)
+﻿local var0_0 = class("GetRivalInfoCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
 
 	pg.ConnectionMgr.GetInstance():Send(18104, {
-		id = var0
-	}, 18105, function(arg0)
-		if arg0.info.id == 0 then
+		id = var0_1
+	}, 18105, function(arg0_2)
+		if arg0_2.info.id == 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_get_player_info_erro"))
 		else
-			local var0 = Rival.New(arg0.info)
+			local var0_2 = Rival.New(arg0_2.info)
 
-			arg0:sendNotification(GAME.GET_RIVAL_INFO_DONE, {
-				rival = var0
+			arg0_1:sendNotification(GAME.GET_RIVAL_INFO_DONE, {
+				rival = var0_2
 			})
 		end
 	end)
 end
 
-return var0
+return var0_0

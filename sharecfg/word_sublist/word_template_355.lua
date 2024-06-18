@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_355 = {}
+var0_0.word_template_355 = {}
 
-local var1 = var0.word_template_355
+local var1_0 = var0_0.word_template_355
 
 function temp()
-	var1.轉 = {
+	var1_0.轉 = {
 		法 = {
 			輪 = {
 				this = true
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.庄 = {
+	var1_0.庄 = {
 		闲 = {
 			和 = {
 				破 = {
@@ -48,7 +48,7 @@ end
 temp()
 
 function temp()
-	var1.装 = {
+	var1_0.装 = {
 		B = {
 			this = true
 		},
@@ -82,7 +82,7 @@ end
 temp()
 
 function temp()
-	var1.裝 = {
+	var1_0.裝 = {
 		B = {
 			this = true
 		},
@@ -95,7 +95,7 @@ end
 temp()
 
 function temp()
-	var1.丬 = {
+	var1_0.丬 = {
 		this = {
 			this = true
 		}
@@ -105,7 +105,7 @@ end
 temp()
 
 function temp()
-	var1.壮 = {
+	var1_0.壮 = {
 		阳 = {
 			喷 = {
 				剂 = {
@@ -143,7 +143,7 @@ end
 temp()
 
 function temp()
-	var1.撞 = {
+	var1_0.撞 = {
 		其 = {
 			火 = {
 				车 = {

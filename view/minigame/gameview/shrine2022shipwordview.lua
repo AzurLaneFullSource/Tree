@@ -1,98 +1,98 @@
-﻿local var0 = class("Shrine2022ShipWordView", import("...base.BaseSubView"))
+﻿local var0_0 = class("Shrine2022ShipWordView", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "Shrine2022ShipWordUI"
 end
 
-function var0.OnInit(arg0)
-	arg0:initData()
-	arg0:initUI()
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
-	arg0:Show()
-	arg0:playEnterAni(true)
+function var0_0.OnInit(arg0_2)
+	arg0_2:initData()
+	arg0_2:initUI()
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
+	arg0_2:Show()
+	arg0_2:playEnterAni(true)
 end
 
-function var0.OnDestroy(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
-	arg0:cleanManagedTween()
+function var0_0.OnDestroy(arg0_3)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_3._tf)
+	arg0_3:cleanManagedTween()
 end
 
-function var0.initData(arg0)
-	arg0.curSelectShip = arg0.contextData.curSelectShip
+function var0_0.initData(arg0_4)
+	arg0_4.curSelectShip = arg0_4.contextData.curSelectShip
 end
 
-function var0.initUI(arg0)
-	arg0.bg = arg0:findTF("BG")
-	arg0.wordImg = arg0:findTF("Word")
-	arg0.cloud1 = arg0:findTF("Cloud1")
-	arg0.cloud2 = arg0:findTF("Cloud2")
+function var0_0.initUI(arg0_5)
+	arg0_5.bg = arg0_5:findTF("BG")
+	arg0_5.wordImg = arg0_5:findTF("Word")
+	arg0_5.cloud1 = arg0_5:findTF("Cloud1")
+	arg0_5.cloud2 = arg0_5:findTF("Cloud2")
 
-	local var0 = "shipword_" .. arg0.curSelectShip
-	local var1 = "Shrine2022/" .. var0
+	local var0_5 = "shipword_" .. arg0_5.curSelectShip
+	local var1_5 = "Shrine2022/" .. var0_5
 
-	setImageSprite(arg0.wordImg, LoadSprite(var1, var0), true)
-	onButton(arg0, arg0.bg, function()
-		arg0:closeMySelf()
+	setImageSprite(arg0_5.wordImg, LoadSprite(var1_5, var0_5), true)
+	onButton(arg0_5, arg0_5.bg, function()
+		arg0_5:closeMySelf()
 	end, SFX_PANEL)
 end
 
-function var0.playEnterAni(arg0, arg1, arg2)
-	local var0 = arg1 and 1000 or 0
-	local var1 = arg1 and 0 or 1000
-	local var2 = {
-		x = var0,
-		y = rtf(arg0.cloud1).anchoredPosition.y
+function var0_0.playEnterAni(arg0_7, arg1_7, arg2_7)
+	local var0_7 = arg1_7 and 1000 or 0
+	local var1_7 = arg1_7 and 0 or 1000
+	local var2_7 = {
+		x = var0_7,
+		y = rtf(arg0_7.cloud1).anchoredPosition.y
 	}
-	local var3 = arg1 and -1000 or 0
-	local var4 = arg1 and 0 or -1000
-	local var5 = {
-		x = var3,
-		y = rtf(arg0.cloud2).anchoredPosition.y
+	local var3_7 = arg1_7 and -1000 or 0
+	local var4_7 = arg1_7 and 0 or -1000
+	local var5_7 = {
+		x = var3_7,
+		y = rtf(arg0_7.cloud2).anchoredPosition.y
 	}
-	local var6 = arg1 and 0 or 1
-	local var7 = arg1 and 1 or 0
-	local var8 = {
-		x = var6,
-		y = var6
+	local var6_7 = arg1_7 and 0 or 1
+	local var7_7 = arg1_7 and 1 or 0
+	local var8_7 = {
+		x = var6_7,
+		y = var6_7
 	}
-	local var9 = 0.3
+	local var9_7 = 0.3
 
-	arg0.isPlaying = true
+	arg0_7.isPlaying = true
 
-	arg0:managedTween(LeanTween.value, nil, go(arg0.cloud1), 0, 1, var9):setOnUpdate(System.Action_float(function(arg0)
-		local var0 = var0 + (var1 - var0) * arg0
-		local var1 = var3 + (var4 - var3) * arg0
-		local var2 = var6 + (var7 - var6) * arg0
+	arg0_7:managedTween(LeanTween.value, nil, go(arg0_7.cloud1), 0, 1, var9_7):setOnUpdate(System.Action_float(function(arg0_8)
+		local var0_8 = var0_7 + (var1_7 - var0_7) * arg0_8
+		local var1_8 = var3_7 + (var4_7 - var3_7) * arg0_8
+		local var2_8 = var6_7 + (var7_7 - var6_7) * arg0_8
 
-		var2.x = var0
+		var2_7.x = var0_8
 
-		setAnchoredPosition(arg0.cloud1, var2)
+		setAnchoredPosition(arg0_7.cloud1, var2_7)
 
-		var5.x = var1
+		var5_7.x = var1_8
 
-		setAnchoredPosition(arg0.cloud2, var5)
+		setAnchoredPosition(arg0_7.cloud2, var5_7)
 
-		var8.x = var2
-		var8.y = var2
+		var8_7.x = var2_8
+		var8_7.y = var2_8
 
-		setLocalScale(arg0.wordImg, var8)
+		setLocalScale(arg0_7.wordImg, var8_7)
 	end)):setOnComplete(System.Action(function()
-		arg0.isPlaying = false
+		arg0_7.isPlaying = false
 
-		if arg2 then
-			arg2()
+		if arg2_7 then
+			arg2_7()
 		end
 	end))
 end
 
-function var0.closeMySelf(arg0)
-	if arg0.isPlaying then
+function var0_0.closeMySelf(arg0_10)
+	if arg0_10.isPlaying then
 		return
 	end
 
-	arg0:playEnterAni(false, function()
-		arg0:Destroy()
+	arg0_10:playEnterAni(false, function()
+		arg0_10:Destroy()
 	end)
 end
 
-return var0
+return var0_0

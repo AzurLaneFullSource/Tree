@@ -1,134 +1,134 @@
-﻿local var0 = class("NewMainMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("NewMainMediator", import("..base.ContextMediator"))
 
-var0.GO_SCENE = "NewMainMediator:GO_SCENE"
-var0.OPEN_MAIL = "NewMainMediator:OPEN_MAIL"
-var0.OPEN_NOTICE = "NewMainMediator:OPEN_NOTICE"
-var0.GO_SNAPSHOT = "NewMainMediator:GO_SNAPSHOT"
-var0.OPEN_COMMISION = "NewMainMediator:OPEN_COMMISION"
-var0.OPEN_CHATVIEW = "NewMainMediator:OPEN_CHATVIEW"
-var0.SKIP_SCENE = "NewMainMediator:SKIP_SCENE"
-var0.SKIP_ACTIVITY = "NewMainMediator:SKIP_ACTIVITY"
-var0.SKIP_SHOP = "NewMainMediator:SKIP_SHOP"
-var0.GO_MINI_GAME = "NewMainMediator:GO_MINI_GAME"
-var0.SKIP_ACTIVITY_MAP = "NewMainMediator:SKIP_ACTIVITY_MAP"
-var0.SKIP_ESCORT = "NewMainMediator:SKIP_ESCORT"
-var0.SKIP_INS = "NewMainMediator:SKIP_INS"
-var0.SKIP_LOTTERY = "NewMainMediator:SKIP_LOTTERY"
-var0.GO_SINGLE_ACTIVITY = "NewMainMediator:GO_SINGLE_ACTIVITY"
-var0.REFRESH_VIEW = "NewMainMediator:REFRESH_VIEW"
-var0.OPEN_DORM_SELECT_LAYER = "NewMainMediator.OPEN_DORM_SELECT_LAYER"
+var0_0.GO_SCENE = "NewMainMediator:GO_SCENE"
+var0_0.OPEN_MAIL = "NewMainMediator:OPEN_MAIL"
+var0_0.OPEN_NOTICE = "NewMainMediator:OPEN_NOTICE"
+var0_0.GO_SNAPSHOT = "NewMainMediator:GO_SNAPSHOT"
+var0_0.OPEN_COMMISION = "NewMainMediator:OPEN_COMMISION"
+var0_0.OPEN_CHATVIEW = "NewMainMediator:OPEN_CHATVIEW"
+var0_0.SKIP_SCENE = "NewMainMediator:SKIP_SCENE"
+var0_0.SKIP_ACTIVITY = "NewMainMediator:SKIP_ACTIVITY"
+var0_0.SKIP_SHOP = "NewMainMediator:SKIP_SHOP"
+var0_0.GO_MINI_GAME = "NewMainMediator:GO_MINI_GAME"
+var0_0.SKIP_ACTIVITY_MAP = "NewMainMediator:SKIP_ACTIVITY_MAP"
+var0_0.SKIP_ESCORT = "NewMainMediator:SKIP_ESCORT"
+var0_0.SKIP_INS = "NewMainMediator:SKIP_INS"
+var0_0.SKIP_LOTTERY = "NewMainMediator:SKIP_LOTTERY"
+var0_0.GO_SINGLE_ACTIVITY = "NewMainMediator:GO_SINGLE_ACTIVITY"
+var0_0.REFRESH_VIEW = "NewMainMediator:REFRESH_VIEW"
+var0_0.OPEN_DORM_SELECT_LAYER = "NewMainMediator.OPEN_DORM_SELECT_LAYER"
 
-function var0.register(arg0)
-	arg0:bind(var0.GO_SINGLE_ACTIVITY, function(arg0, arg1)
-		arg0:addSubLayers(Context.New({
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.GO_SINGLE_ACTIVITY, function(arg0_2, arg1_2)
+		arg0_1:addSubLayers(Context.New({
 			mediator = ActivitySingleMediator,
 			viewComponent = ActivitySingleScene,
 			data = {
-				id = arg1
+				id = arg1_2
 			}
 		}))
 	end)
-	arg0:bind(var0.SKIP_LOTTERY, function(arg0, arg1)
-		arg0:addSubLayers(Context.New({
+	arg0_1:bind(var0_0.SKIP_LOTTERY, function(arg0_3, arg1_3)
+		arg0_1:addSubLayers(Context.New({
 			viewComponent = LotteryLayer,
 			mediator = LotteryMediator,
 			data = {
-				activityId = arg1
+				activityId = arg1_3
 			}
 		}))
 	end)
-	arg0:bind(var0.SKIP_INS, function(arg0)
-		arg0:addSubLayers(Context.New({
+	arg0_1:bind(var0_0.SKIP_INS, function(arg0_4)
+		arg0_1:addSubLayers(Context.New({
 			viewComponent = InstagramLayer,
 			mediator = InstagramMediator
 		}))
 	end)
-	arg0:bind(var0.SKIP_ESCORT, function(arg0)
-		local var0 = getProxy(ChapterProxy)
-		local var1 = var0:getMapsByType(Map.ESCORT)[1]
-		local var2 = var0:getActiveChapter()
+	arg0_1:bind(var0_0.SKIP_ESCORT, function(arg0_5)
+		local var0_5 = getProxy(ChapterProxy)
+		local var1_5 = var0_5:getMapsByType(Map.ESCORT)[1]
+		local var2_5 = var0_5:getActiveChapter()
 
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
-			chapterId = var2 and var2:getConfig("map") == var1.id and var2.id or nil,
-			mapIdx = var1.id
+			chapterId = var2_5 and var2_5:getConfig("map") == var1_5.id and var2_5.id or nil,
+			mapIdx = var1_5.id
 		})
 	end)
-	arg0:bind(var0.SKIP_ACTIVITY_MAP, function(arg0)
-		local var0 = getProxy(ChapterProxy)
-		local var1, var2 = var0:getLastMapForActivity()
+	arg0_1:bind(var0_0.SKIP_ACTIVITY_MAP, function(arg0_6)
+		local var0_6 = getProxy(ChapterProxy)
+		local var1_6, var2_6 = var0_6:getLastMapForActivity()
 
-		warning(var1)
-		warning(var1 and var0:getMapById(var1):isUnlock())
+		warning(var1_6)
+		warning(var1_6 and var0_6:getMapById(var1_6):isUnlock())
 
-		if not var1 or not var0:getMapById(var1):isUnlock() then
+		if not var1_6 or not var0_6:getMapById(var1_6):isUnlock() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 		else
-			arg0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
-				chapterId = var2,
-				mapIdx = var1
+			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
+				chapterId = var2_6,
+				mapIdx = var1_6
 			})
 		end
 	end)
-	arg0:bind(var0.SKIP_SHOP, function(arg0, arg1)
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
-			warp = arg1 or NewShopsScene.TYPE_ACTIVITY
+	arg0_1:bind(var0_0.SKIP_SHOP, function(arg0_7, arg1_7)
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
+			warp = arg1_7 or NewShopsScene.TYPE_ACTIVITY
 		})
 	end)
-	arg0:bind(var0.SKIP_ACTIVITY, function(arg0, arg1)
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
-			id = arg1
+	arg0_1:bind(var0_0.SKIP_ACTIVITY, function(arg0_8, arg1_8)
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
+			id = arg1_8
 		})
 	end)
-	arg0:bind(var0.SKIP_SCENE, function(arg0, arg1)
-		arg0:sendNotification(GAME.GO_SCENE, arg1[1], arg1[2])
+	arg0_1:bind(var0_0.SKIP_SCENE, function(arg0_9, arg1_9)
+		arg0_1:sendNotification(GAME.GO_SCENE, arg1_9[1], arg1_9[2])
 	end)
-	arg0:bind(var0.GO_MINI_GAME, function(arg0, arg1)
-		arg0:sendNotification(GAME.GO_MINI_GAME, arg1)
+	arg0_1:bind(var0_0.GO_MINI_GAME, function(arg0_10, arg1_10)
+		arg0_1:sendNotification(GAME.GO_MINI_GAME, arg1_10)
 	end)
-	arg0:bind(var0.GO_SCENE, function(arg0, arg1, arg2)
-		arg0:sendNotification(GAME.GO_SCENE, arg1, arg2)
+	arg0_1:bind(var0_0.GO_SCENE, function(arg0_11, arg1_11, arg2_11)
+		arg0_1:sendNotification(GAME.GO_SCENE, arg1_11, arg2_11)
 	end)
-	arg0:bind(var0.GO_SNAPSHOT, function(arg0)
-		local var0 = arg0.viewComponent.bgView.ship
-		local var1 = var0.skinId
-		local var2 = arg0.viewComponent.paintingView:IsLive2DState()
-		local var3
+	arg0_1:bind(var0_0.GO_SNAPSHOT, function(arg0_12)
+		local var0_12 = arg0_1.viewComponent.bgView.ship
+		local var1_12 = var0_12.skinId
+		local var2_12 = arg0_1.viewComponent.paintingView:IsLive2DState()
+		local var3_12
 
-		if isa(var0, VirtualEducateCharShip) then
-			var3 = var0.educateCharId
-			var2 = false
+		if isa(var0_12, VirtualEducateCharShip) then
+			var3_12 = var0_12.educateCharId
+			var2_12 = false
 		end
 
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.SNAPSHOT, {
-			skinId = var1,
-			live2d = var2,
-			tbId = var3,
-			propose = var0.propose
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.SNAPSHOT, {
+			skinId = var1_12,
+			live2d = var2_12,
+			tbId = var3_12,
+			propose = var0_12.propose
 		})
 	end)
-	arg0:bind(var0.OPEN_MAIL, function(arg0)
+	arg0_1:bind(var0_0.OPEN_MAIL, function(arg0_13)
 		if BATTLE_DEBUG then
-			arg0:sendNotification(GAME.BEGIN_STAGE, {
+			arg0_1:sendNotification(GAME.BEGIN_STAGE, {
 				system = SYSTEM_DEBUG
 			})
 		else
-			arg0:sendNotification(GAME.GO_SCENE, SCENE.MAIL)
+			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.MAIL)
 		end
 	end)
-	arg0:bind(var0.OPEN_NOTICE, function(arg0)
-		arg0:addSubLayers(Context.New({
+	arg0_1:bind(var0_0.OPEN_NOTICE, function(arg0_14)
+		arg0_1:addSubLayers(Context.New({
 			mediator = NewBulletinBoardMediator,
 			viewComponent = NewBulletinBoardLayer
 		}))
 	end)
-	arg0:bind(var0.OPEN_COMMISION, function(arg0)
-		arg0:addSubLayers(Context.New({
+	arg0_1:bind(var0_0.OPEN_COMMISION, function(arg0_15)
+		arg0_1:addSubLayers(Context.New({
 			viewComponent = CommissionInfoLayer,
 			mediator = CommissionInfoMediator
 		}))
 	end)
-	arg0:bind(var0.OPEN_CHATVIEW, function(arg0)
-		arg0:addSubLayers(Context.New({
+	arg0_1:bind(var0_0.OPEN_CHATVIEW, function(arg0_16)
+		arg0_1:addSubLayers(Context.New({
 			mediator = NotificationMediator,
 			viewComponent = NotificationLayer,
 			data = {
@@ -136,13 +136,13 @@ function var0.register(arg0)
 			}
 		}))
 	end)
-	arg0:bind(var0.OPEN_DORM_SELECT_LAYER, function(arg0)
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.DORM3DSELECT)
+	arg0_1:bind(var0_0.OPEN_DORM_SELECT_LAYER, function(arg0_17)
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.DORM3DSELECT)
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
-	local var0 = {
+function var0_0.listNotificationInterests(arg0_18)
+	local var0_18 = {
 		GAME.REMOVE_LAYERS,
 		GAME.GET_GUILD_INFO_DONE,
 		GAME.GET_GUILD_CHAT_LIST_DONE,
@@ -170,55 +170,55 @@ function var0.listNotificationInterests(arg0)
 		TaskProxy.TASK_ADDED,
 		TechnologyConst.UPDATE_REDPOINT_ON_TOP,
 		MiniGameProxy.ON_HUB_DATA_UPDATE,
-		var0.REFRESH_VIEW
+		var0_0.REFRESH_VIEW
 	}
 
-	for iter0, iter1 in pairs(pg.redDotHelper:GetNotifyType()) do
-		for iter2, iter3 in pairs(iter1) do
-			if not table.contains(var0, iter3) then
-				table.insert(var0, iter3)
+	for iter0_18, iter1_18 in pairs(pg.redDotHelper:GetNotifyType()) do
+		for iter2_18, iter3_18 in pairs(iter1_18) do
+			if not table.contains(var0_18, iter3_18) then
+				table.insert(var0_18, iter3_18)
 			end
 		end
 	end
 
-	return var0
+	return var0_18
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_19, arg1_19)
+	local var0_19 = arg1_19:getName()
+	local var1_19 = arg1_19:getBody()
 
-	pg.redDotHelper:Notify(var0)
+	pg.redDotHelper:Notify(var0_19)
 
-	if var0 == GAME.ON_OPEN_INS_LAYER then
-		arg0.viewComponent:emit(var0.SKIP_INS)
-	elseif var0 == NotificationProxy.FRIEND_REQUEST_ADDED or var0 == NotificationProxy.FRIEND_REQUEST_REMOVED or var0 == FriendProxy.FRIEND_NEW_MSG or var0 == FriendProxy.FRIEND_UPDATED or var0 == ChatProxy.NEW_MSG or var0 == GuildProxy.NEW_MSG_ADDED or var0 == GAME.GET_GUILD_INFO_DONE or var0 == GAME.GET_GUILD_CHAT_LIST_DONE then
-		arg0.viewComponent:emit(GAME.ANY_CHAT_MSG_UPDATE)
-	elseif var0 == GAME.BEGIN_STAGE_DONE then
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1)
-	elseif var0 == ChapterProxy.CHAPTER_TIMESUP then
+	if var0_19 == GAME.ON_OPEN_INS_LAYER then
+		arg0_19.viewComponent:emit(var0_0.SKIP_INS)
+	elseif var0_19 == NotificationProxy.FRIEND_REQUEST_ADDED or var0_19 == NotificationProxy.FRIEND_REQUEST_REMOVED or var0_19 == FriendProxy.FRIEND_NEW_MSG or var0_19 == FriendProxy.FRIEND_UPDATED or var0_19 == ChatProxy.NEW_MSG or var0_19 == GuildProxy.NEW_MSG_ADDED or var0_19 == GAME.GET_GUILD_INFO_DONE or var0_19 == GAME.GET_GUILD_CHAT_LIST_DONE then
+		arg0_19.viewComponent:emit(GAME.ANY_CHAT_MSG_UPDATE)
+	elseif var0_19 == GAME.BEGIN_STAGE_DONE then
+		arg0_19:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_19)
+	elseif var0_19 == ChapterProxy.CHAPTER_TIMESUP then
 		MainChapterTimeUpSequence.New():Execute()
-	elseif var0 == TechnologyConst.UPDATE_REDPOINT_ON_TOP then
+	elseif var0_19 == TechnologyConst.UPDATE_REDPOINT_ON_TOP then
 		MainTechnologySequence.New():Execute(function()
 			return
 		end)
-	elseif var0 == GAME.FETCH_NPC_SHIP_DONE then
-		arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1.items, var1.callback)
-	elseif var0 == var0.REFRESH_VIEW then
-		arg0.viewComponent:setVisible(false)
-		arg0.viewComponent:setVisible(true)
-	elseif var0 == GAME.CONFIRM_GET_SHIP then
-		arg0:addSubLayers(Context.New({
+	elseif var0_19 == GAME.FETCH_NPC_SHIP_DONE then
+		arg0_19.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_19.items, var1_19.callback)
+	elseif var0_19 == var0_0.REFRESH_VIEW then
+		arg0_19.viewComponent:setVisible(false)
+		arg0_19.viewComponent:setVisible(true)
+	elseif var0_19 == GAME.CONFIRM_GET_SHIP then
+		arg0_19:addSubLayers(Context.New({
 			mediator = BuildShipRemindMediator,
 			viewComponent = BuildShipRemindLayer,
 			data = {
-				ships = var1.ships
+				ships = var1_19.ships
 			},
-			onRemoved = var1.callback
+			onRemoved = var1_19.callback
 		}))
 	end
 
-	arg0.viewComponent:emit(var0, var1)
+	arg0_19.viewComponent:emit(var0_19, var1_19)
 end
 
-return var0
+return var0_0

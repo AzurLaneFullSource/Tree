@@ -1,183 +1,183 @@
-﻿local var0 = class("MetaPTAwardPreviewLayer", import("...base.BaseUI"))
+﻿local var0_0 = class("MetaPTAwardPreviewLayer", import("...base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "MetaPTAwardPreviewUI"
 end
 
-function var0.init(arg0)
-	arg0:initUITextTips()
-	arg0:initData()
-	arg0:findUI()
-	arg0:addListener()
-	arg0:initScrollList()
+function var0_0.init(arg0_2)
+	arg0_2:initUITextTips()
+	arg0_2:initData()
+	arg0_2:findUI()
+	arg0_2:addListener()
+	arg0_2:initScrollList()
 end
 
-function var0.didEnter(arg0)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, false, {
+function var0_0.didEnter(arg0_3)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, false, {
 		weight = LayerWeightConst.THIRD_LAYER
 	})
-	arg0:updatePTInfo()
-	arg0:updateScrollList()
+	arg0_3:updatePTInfo()
+	arg0_3:updateScrollList()
 end
 
-function var0.willExit(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+function var0_0.willExit(arg0_4)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_4._tf)
 end
 
-function var0.initUITextTips(arg0)
-	local var0 = arg0:findTF("Panel/AwardTpl/PointLight/PointTipText")
-	local var1 = arg0:findTF("Panel/AwardTpl/PointGray/PointTipText")
-	local var2 = arg0:findTF("Panel/AwardTpl/GetText")
-	local var3 = arg0:findTF("Panel/AwardTpl/GotText")
+function var0_0.initUITextTips(arg0_5)
+	local var0_5 = arg0_5:findTF("Panel/AwardTpl/PointLight/PointTipText")
+	local var1_5 = arg0_5:findTF("Panel/AwardTpl/PointGray/PointTipText")
+	local var2_5 = arg0_5:findTF("Panel/AwardTpl/GetText")
+	local var3_5 = arg0_5:findTF("Panel/AwardTpl/GotText")
 
-	setText(var0, i18n("meta_pt_point"))
-	setText(var1, i18n("meta_pt_point"))
-	setText(var2, i18n("meta_award_get"))
-	setText(var3, i18n("meta_award_got"))
+	setText(var0_5, i18n("meta_pt_point"))
+	setText(var1_5, i18n("meta_pt_point"))
+	setText(var2_5, i18n("meta_award_get"))
+	setText(var3_5, i18n("meta_award_got"))
 end
 
-function var0.initData(arg0)
-	arg0.curMetaProgressVO = arg0.contextData.metaProgressVO
-	arg0.ptData = arg0.curMetaProgressVO.metaPtData
-	arg0.itemNum = #arg0.ptData.dropList
+function var0_0.initData(arg0_6)
+	arg0_6.curMetaProgressVO = arg0_6.contextData.metaProgressVO
+	arg0_6.ptData = arg0_6.curMetaProgressVO.metaPtData
+	arg0_6.itemNum = #arg0_6.ptData.dropList
 end
 
-function var0.findUI(arg0)
-	arg0.bg = arg0:findTF("BG")
+function var0_0.findUI(arg0_7)
+	arg0_7.bg = arg0_7:findTF("BG")
 
-	local var0 = arg0:findTF("Panel")
-	local var1 = arg0:findTF("PT", var0)
+	local var0_7 = arg0_7:findTF("Panel")
+	local var1_7 = arg0_7:findTF("PT", var0_7)
 
-	arg0.ptNumText = arg0:findTF("NumText", var1)
-	arg0.ptIcon = arg0:findTF("PTIcon", var1)
-	arg0.scrollViewTF = arg0:findTF("ScrollView", var0)
-	arg0.awardContainerTF = arg0:findTF("ScrollView/Viewport/Content", var0)
-	arg0.awardTpl = arg0:findTF("AwardTpl", var0)
+	arg0_7.ptNumText = arg0_7:findTF("NumText", var1_7)
+	arg0_7.ptIcon = arg0_7:findTF("PTIcon", var1_7)
+	arg0_7.scrollViewTF = arg0_7:findTF("ScrollView", var0_7)
+	arg0_7.awardContainerTF = arg0_7:findTF("ScrollView/Viewport/Content", var0_7)
+	arg0_7.awardTpl = arg0_7:findTF("AwardTpl", var0_7)
 
-	local var2 = arg0:findTF("NotchAdapt")
+	local var2_7 = arg0_7:findTF("NotchAdapt")
 
-	arg0.nextArrow = arg0:findTF("NextBtn", var2)
-	arg0.preArrow = arg0:findTF("PreBtn", var2)
-	arg0.sizeW = GetComponent(arg0.awardTpl, "LayoutElement").preferredWidth
-	arg0.spaceW = GetComponent(arg0.awardContainerTF, "HorizontalLayoutGroup").spacing
-	arg0.leftW = GetComponent(arg0.awardContainerTF, "HorizontalLayoutGroup").padding.left
+	arg0_7.nextArrow = arg0_7:findTF("NextBtn", var2_7)
+	arg0_7.preArrow = arg0_7:findTF("PreBtn", var2_7)
+	arg0_7.sizeW = GetComponent(arg0_7.awardTpl, "LayoutElement").preferredWidth
+	arg0_7.spaceW = GetComponent(arg0_7.awardContainerTF, "HorizontalLayoutGroup").spacing
+	arg0_7.leftW = GetComponent(arg0_7.awardContainerTF, "HorizontalLayoutGroup").padding.left
 end
 
-function var0.addListener(arg0)
-	onButton(arg0, arg0.bg, function()
-		arg0:closeView()
+function var0_0.addListener(arg0_8)
+	onButton(arg0_8, arg0_8.bg, function()
+		arg0_8:closeView()
 	end, SFX_PANEL)
 end
 
-function var0.initScrollList(arg0)
-	arg0.awardUIItemList = UIItemList.New(arg0.awardContainerTF, arg0.awardTpl)
+function var0_0.initScrollList(arg0_10)
+	arg0_10.awardUIItemList = UIItemList.New(arg0_10.awardContainerTF, arg0_10.awardTpl)
 
-	arg0.awardUIItemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			arg0:updateAwardTpl(arg2, arg1 + 1)
+	arg0_10.awardUIItemList:make(function(arg0_11, arg1_11, arg2_11)
+		if arg0_11 == UIItemList.EventUpdate then
+			arg0_10:updateAwardTpl(arg2_11, arg1_11 + 1)
 		end
 	end)
 
-	arg0.scrollRectSC = arg0.scrollViewTF:GetComponent("ScrollRect")
+	arg0_10.scrollRectSC = arg0_10.scrollViewTF:GetComponent("ScrollRect")
 
-	arg0.scrollRectSC.onValueChanged:AddListener(function(arg0)
-		setActive(arg0.preArrow, arg0.x >= 0.01)
-		setActive(arg0.nextArrow, arg0.x <= 0.99)
+	arg0_10.scrollRectSC.onValueChanged:AddListener(function(arg0_12)
+		setActive(arg0_10.preArrow, arg0_12.x >= 0.01)
+		setActive(arg0_10.nextArrow, arg0_12.x <= 0.99)
 	end)
 end
 
-function var0.updateScrollList(arg0)
-	local var0, var1, var2 = arg0.curMetaProgressVO.metaPtData:GetLevelProgress()
+function var0_0.updateScrollList(arg0_13)
+	local var0_13, var1_13, var2_13 = arg0_13.curMetaProgressVO.metaPtData:GetLevelProgress()
 
-	arg0.awardUIItemList:align(var1)
+	arg0_13.awardUIItemList:align(var1_13)
 
-	local var3 = (var0 - 1) * (arg0.sizeW + arg0.spaceW)
+	local var3_13 = (var0_13 - 1) * (arg0_13.sizeW + arg0_13.spaceW)
 
-	setLocalPosition(arg0.awardContainerTF, {
-		x = -var3
+	setLocalPosition(arg0_13.awardContainerTF, {
+		x = -var3_13
 	})
 
-	if var0 > 1 then
-		setActive(arg0.preArrow, true)
+	if var0_13 > 1 then
+		setActive(arg0_13.preArrow, true)
 	end
 end
 
-function var0.updateAwardTpl(arg0, arg1, arg2)
-	local var0 = arg0:findTF("Item", arg1)
-	local var1 = arg0:findTF("mask", var0)
-	local var2 = arg0:findTF("Got", var1)
-	local var3 = arg0:findTF("Lock", var1)
-	local var4 = arg0:findTF("PointLight", arg1)
-	local var5 = arg0:findTF("NumText", var4)
-	local var6 = arg0:findTF("PointGray", arg1)
-	local var7 = arg0:findTF("NumText", var6)
-	local var8 = arg0:findTF("GetText", arg1)
-	local var9 = arg0:findTF("GotText", arg1)
-	local var10 = arg0:findTF("LockText", arg1)
-	local var11 = arg0:findTF("LineTpl", arg1)
-	local var12 = arg0:findTF("LineTpl/Light", arg1)
-	local var13 = arg0:findTF("LineTpl/Dark", arg1)
-	local var14 = arg0.ptData.dropList[arg2]
-	local var15 = arg0.ptData.targets[arg2]
-	local var16 = {
-		type = var14[1],
-		id = var14[2],
-		count = var14[3]
+function var0_0.updateAwardTpl(arg0_14, arg1_14, arg2_14)
+	local var0_14 = arg0_14:findTF("Item", arg1_14)
+	local var1_14 = arg0_14:findTF("mask", var0_14)
+	local var2_14 = arg0_14:findTF("Got", var1_14)
+	local var3_14 = arg0_14:findTF("Lock", var1_14)
+	local var4_14 = arg0_14:findTF("PointLight", arg1_14)
+	local var5_14 = arg0_14:findTF("NumText", var4_14)
+	local var6_14 = arg0_14:findTF("PointGray", arg1_14)
+	local var7_14 = arg0_14:findTF("NumText", var6_14)
+	local var8_14 = arg0_14:findTF("GetText", arg1_14)
+	local var9_14 = arg0_14:findTF("GotText", arg1_14)
+	local var10_14 = arg0_14:findTF("LockText", arg1_14)
+	local var11_14 = arg0_14:findTF("LineTpl", arg1_14)
+	local var12_14 = arg0_14:findTF("LineTpl/Light", arg1_14)
+	local var13_14 = arg0_14:findTF("LineTpl/Dark", arg1_14)
+	local var14_14 = arg0_14.ptData.dropList[arg2_14]
+	local var15_14 = arg0_14.ptData.targets[arg2_14]
+	local var16_14 = {
+		type = var14_14[1],
+		id = var14_14[2],
+		count = var14_14[3]
 	}
 
-	updateDrop(var0, var16, {
+	updateDrop(var0_14, var16_14, {
 		hideName = true
 	})
-	onButton(arg0, var0, function()
-		arg0:emit(BaseUI.ON_DROP, var16)
+	onButton(arg0_14, var0_14, function()
+		arg0_14:emit(BaseUI.ON_DROP, var16_14)
 	end, SFX_PANEL)
-	setText(var5, var15)
-	setText(var7, var15)
-	setText(var10, "PHASE " .. math.floor(var15 / arg0.curMetaProgressVO.unlockPTNum * 100) .. "%")
+	setText(var5_14, var15_14)
+	setText(var7_14, var15_14)
+	setText(var10_14, "PHASE " .. math.floor(var15_14 / arg0_14.curMetaProgressVO.unlockPTNum * 100) .. "%")
 
-	if arg2 < arg0.ptData.level + 1 then
-		setActive(var1, true)
-		setActive(var2, true)
-		setActive(var3, false)
-		setActive(var4, false)
-		setActive(var6, true)
-		setActive(var12, false)
-		setActive(var13, true)
-		setActive(var8, false)
-		setActive(var9, true)
-		setActive(var10, false)
-	elseif var15 > arg0.ptData.count then
-		setActive(var1, true)
-		setActive(var2, false)
-		setActive(var3, true)
-		setActive(var4, false)
-		setActive(var6, true)
-		setActive(var12, false)
-		setActive(var13, true)
-		setActive(var8, false)
-		setActive(var9, false)
-		setActive(var10, true)
+	if arg2_14 < arg0_14.ptData.level + 1 then
+		setActive(var1_14, true)
+		setActive(var2_14, true)
+		setActive(var3_14, false)
+		setActive(var4_14, false)
+		setActive(var6_14, true)
+		setActive(var12_14, false)
+		setActive(var13_14, true)
+		setActive(var8_14, false)
+		setActive(var9_14, true)
+		setActive(var10_14, false)
+	elseif var15_14 > arg0_14.ptData.count then
+		setActive(var1_14, true)
+		setActive(var2_14, false)
+		setActive(var3_14, true)
+		setActive(var4_14, false)
+		setActive(var6_14, true)
+		setActive(var12_14, false)
+		setActive(var13_14, true)
+		setActive(var8_14, false)
+		setActive(var9_14, false)
+		setActive(var10_14, true)
 	else
-		setActive(var1, false)
-		setActive(var2, false)
-		setActive(var3, false)
-		setActive(var4, true)
-		setActive(var6, false)
-		setActive(var12, true)
-		setActive(var13, false)
-		setActive(var8, true)
-		setActive(var9, false)
-		setActive(var10, false)
+		setActive(var1_14, false)
+		setActive(var2_14, false)
+		setActive(var3_14, false)
+		setActive(var4_14, true)
+		setActive(var6_14, false)
+		setActive(var12_14, true)
+		setActive(var13_14, false)
+		setActive(var8_14, true)
+		setActive(var9_14, false)
+		setActive(var10_14, false)
 	end
 
-	if arg2 == 1 then
-		setActive(var11, false)
+	if arg2_14 == 1 then
+		setActive(var11_14, false)
 	end
 end
 
-function var0.updatePTInfo(arg0)
-	setImageSprite(arg0.ptIcon, LoadSprite(arg0.curMetaProgressVO:getPtIconPath()))
-	setText(arg0.ptNumText, arg0.ptData.count)
+function var0_0.updatePTInfo(arg0_16)
+	setImageSprite(arg0_16.ptIcon, LoadSprite(arg0_16.curMetaProgressVO:getPtIconPath()))
+	setText(arg0_16.ptNumText, arg0_16.ptData.count)
 end
 
-return var0
+return var0_0

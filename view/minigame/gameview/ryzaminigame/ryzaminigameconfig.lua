@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	TIME_INTERVAL = 0.0166666666666667,
 	GRASS_CHAGNE_RATE = 0.2,
 	ALL_GAME_TIME = 120,
@@ -77,152 +77,152 @@
 		4,
 		4
 	},
-	CreateInfo = function(arg0)
-		local var0 = {}
+	CreateInfo = function(arg0_1)
+		local var0_1 = {}
 
-		switch(arg0, {
+		switch(arg0_1, {
 			Item = function()
-				var0.targetClass = TargetItem
-				var0.path = "object/Item"
-				var0.parent = "object"
+				var0_1.targetClass = TargetItem
+				var0_1.path = "object/Item"
+				var0_1.parent = "object"
 			end,
 			Bomb = function()
-				var0.targetClass = ObjectBomb
-				var0.path = "object/Bomb"
-				var0.parent = "object"
+				var0_1.targetClass = ObjectBomb
+				var0_1.path = "object/Bomb"
+				var0_1.parent = "object"
 			end,
 			Bush = function()
-				var0.targetClass = ObjectBush
-				var0.path = "object/Bush"
-				var0.parent = "object"
+				var0_1.targetClass = ObjectBush
+				var0_1.path = "object/Bush"
+				var0_1.parent = "object"
 			end,
 			Box = function()
-				var0.targetClass = ObjectBreakable
-				var0.path = "object/Box"
-				var0.parent = "object"
+				var0_1.targetClass = ObjectBreakable
+				var0_1.path = "object/Box"
+				var0_1.parent = "object"
 			end,
 			Grass = function()
-				var0.targetClass = ObjectBreakable
-				var0.path = "object/Grass"
-				var0.parent = "object"
+				var0_1.targetClass = ObjectBreakable
+				var0_1.path = "object/Grass"
+				var0_1.parent = "object"
 			end,
 			Taru = function()
-				var0.targetClass = ObjectBreakable
-				var0.path = "object/Taru"
-				var0.parent = "object"
+				var0_1.targetClass = ObjectBreakable
+				var0_1.path = "object/Taru"
+				var0_1.parent = "object"
 			end,
 			Rock_A = function()
-				var0.targetClass = TargetObject
-				var0.path = "object/Rock_A"
-				var0.parent = "object"
+				var0_1.targetClass = TargetObject
+				var0_1.path = "object/Rock_A"
+				var0_1.parent = "object"
 			end,
 			Rock_B = function()
-				var0.targetClass = ObjectRockB
-				var0.path = "object/Rock_B"
-				var0.parent = "object"
+				var0_1.targetClass = ObjectRockB
+				var0_1.path = "object/Rock_B"
+				var0_1.parent = "object"
 			end,
 			Tree_L = function()
-				var0.targetClass = TargetObject
-				var0.path = "object/Tree_L"
-				var0.parent = "object"
+				var0_1.targetClass = TargetObject
+				var0_1.path = "object/Tree_L"
+				var0_1.parent = "object"
 			end,
 			Tree_S = function()
-				var0.targetClass = TargetObject
-				var0.path = "object/Tree_S"
-				var0.parent = "object"
+				var0_1.targetClass = TargetObject
+				var0_1.path = "object/Tree_S"
+				var0_1.parent = "object"
 			end,
 			Treasure_N = function()
-				var0.targetClass = ObjectTreasureN
-				var0.path = "object/Treasure_N"
-				var0.parent = "object"
+				var0_1.targetClass = ObjectTreasureN
+				var0_1.path = "object/Treasure_N"
+				var0_1.parent = "object"
 			end,
 			Treasure_R = function()
-				var0.targetClass = ObjectTreasureR
-				var0.path = "object/Treasure_R"
-				var0.parent = "object"
+				var0_1.targetClass = ObjectTreasureR
+				var0_1.path = "object/Treasure_R"
+				var0_1.parent = "object"
 			end,
 			Fire = function()
-				var0.targetClass = EffectFire
-				var0.path = "effect/Fire"
-				var0.parent = "effect"
-				var0.order = "low"
+				var0_1.targetClass = EffectFire
+				var0_1.path = "effect/Fire"
+				var0_1.parent = "effect"
+				var0_1.order = "low"
 			end,
 			Impack = function()
-				var0.targetClass = EffectImpack
-				var0.path = "effect/Impack"
-				var0.parent = "effect"
+				var0_1.targetClass = EffectImpack
+				var0_1.path = "effect/Impack"
+				var0_1.parent = "effect"
 			end,
 			Bullet = function()
-				var0.targetClass = EffectBullet
-				var0.path = "effect/Bullet"
-				var0.parent = "effect"
+				var0_1.targetClass = EffectBullet
+				var0_1.path = "effect/Bullet"
+				var0_1.parent = "effect"
 			end,
 			Laser = function()
-				var0.targetClass = EffectLaser
-				var0.path = "effect/Laser"
-				var0.parent = "effect"
+				var0_1.targetClass = EffectLaser
+				var0_1.path = "effect/Laser"
+				var0_1.parent = "effect"
 			end,
 			Ryza = function()
-				var0.targetClass = MoveRyza
-				var0.path = "character/Ryza"
-				var0.parent = "character"
+				var0_1.targetClass = MoveRyza
+				var0_1.path = "character/Ryza"
+				var0_1.parent = "character"
 			end,
 			Scavenger = function()
-				var0.targetClass = EnemyScavenger
-				var0.path = "character/Scavenger"
-				var0.parent = "character"
+				var0_1.targetClass = EnemyScavenger
+				var0_1.path = "character/Scavenger"
+				var0_1.parent = "character"
 			end,
 			BOSS_Scavenger = function()
-				var0.targetClass = EnemyBossScavenger
-				var0.path = "character/BOSS_Scavenger"
-				var0.parent = "character"
+				var0_1.targetClass = EnemyBossScavenger
+				var0_1.path = "character/BOSS_Scavenger"
+				var0_1.parent = "character"
 			end,
 			Chaser = function()
-				var0.targetClass = EnemyChaser
-				var0.path = "character/Chaser"
-				var0.parent = "character"
+				var0_1.targetClass = EnemyChaser
+				var0_1.path = "character/Chaser"
+				var0_1.parent = "character"
 			end,
 			BOSS_Chaser = function()
-				var0.targetClass = EnemyBossChaser
-				var0.path = "character/BOSS_Chaser"
-				var0.parent = "character"
+				var0_1.targetClass = EnemyBossChaser
+				var0_1.path = "character/BOSS_Chaser"
+				var0_1.parent = "character"
 			end,
 			Smasher = function()
-				var0.targetClass = EnemySmasher
-				var0.path = "character/Smasher"
-				var0.parent = "character"
+				var0_1.targetClass = EnemySmasher
+				var0_1.path = "character/Smasher"
+				var0_1.parent = "character"
 			end,
 			BOSS_Smasher = function()
-				var0.targetClass = EnemyBossSmasher
-				var0.path = "character/BOSS_Smasher"
-				var0.parent = "character"
+				var0_1.targetClass = EnemyBossSmasher
+				var0_1.path = "character/BOSS_Smasher"
+				var0_1.parent = "character"
 			end,
 			Conductor = function()
-				var0.targetClass = EnemyConductor
-				var0.path = "character/Conductor"
-				var0.parent = "character"
+				var0_1.targetClass = EnemyConductor
+				var0_1.path = "character/Conductor"
+				var0_1.parent = "character"
 			end,
 			BOSS_Conductor = function()
-				var0.targetClass = EnemyBossConductor
-				var0.path = "character/BOSS_Conductor"
-				var0.parent = "character"
+				var0_1.targetClass = EnemyBossConductor
+				var0_1.path = "character/BOSS_Conductor"
+				var0_1.parent = "character"
 			end,
 			Navigator = function()
-				var0.targetClass = EnemyNavigator
-				var0.path = "character/Navigator"
-				var0.parent = "character"
+				var0_1.targetClass = EnemyNavigator
+				var0_1.path = "character/Navigator"
+				var0_1.parent = "character"
 			end,
 			BOSS_Navigator = function()
-				var0.targetClass = EnemyBossNavigator
-				var0.path = "character/BOSS_Navigator"
-				var0.parent = "character"
+				var0_1.targetClass = EnemyBossNavigator
+				var0_1.path = "character/BOSS_Navigator"
+				var0_1.parent = "character"
 			end
 		})
 
-		return var0.targetClass, var0.path, var0.parent
+		return var0_1.targetClass, var0_1.path, var0_1.parent
 	end
 }
-local var1 = {
+local var1_0 = {
 	{
 		"S",
 		"N"
@@ -232,133 +232,133 @@ local var1 = {
 		"W"
 	}
 }
-local var2 = math.sin(math.pi / 8)
+local var2_0 = math.sin(math.pi / 8)
 
-function var0.GetEightDirMark(arg0)
-	local var0 = {}
+function var0_0.GetEightDirMark(arg0_29)
+	local var0_29 = {}
 
-	for iter0, iter1 in ipairs({
-		arg0.y,
-		arg0.x
+	for iter0_29, iter1_29 in ipairs({
+		arg0_29.y,
+		arg0_29.x
 	}) do
-		if iter1 * iter1 < var2 * var2 then
-			iter1 = 0
+		if iter1_29 * iter1_29 < var2_0 * var2_0 then
+			iter1_29 = 0
 		end
 
-		if iter1 > 0 then
-			var0[iter0] = var1[iter0][1]
-		elseif iter1 < 0 then
-			var0[iter0] = var1[iter0][2]
+		if iter1_29 > 0 then
+			var0_29[iter0_29] = var1_0[iter0_29][1]
+		elseif iter1_29 < 0 then
+			var0_29[iter0_29] = var1_0[iter0_29][2]
 		else
-			var0[iter0] = ""
+			var0_29[iter0_29] = ""
 		end
 	end
 
-	return var0[1] .. var0[2]
+	return var0_29[1] .. var0_29[2]
 end
 
-function var0.GetFourDirMark(arg0)
-	local var0 = {}
-	local var1 = arg0.y * arg0.y < arg0.x * arg0.x and {
+function var0_0.GetFourDirMark(arg0_30)
+	local var0_30 = {}
+	local var1_30 = arg0_30.y * arg0_30.y < arg0_30.x * arg0_30.x and {
 		0,
-		arg0.x
+		arg0_30.x
 	} or {
-		arg0.y,
+		arg0_30.y,
 		0
 	}
 
-	for iter0, iter1 in ipairs(var1) do
-		if iter1 > 0 then
-			var0[iter0] = var1[iter0][1]
-		elseif iter1 < 0 then
-			var0[iter0] = var1[iter0][2]
+	for iter0_30, iter1_30 in ipairs(var1_30) do
+		if iter1_30 > 0 then
+			var0_30[iter0_30] = var1_0[iter0_30][1]
+		elseif iter1_30 < 0 then
+			var0_30[iter0_30] = var1_0[iter0_30][2]
 		else
-			var0[iter0] = ""
+			var0_30[iter0_30] = ""
 		end
 	end
 
-	return var0[1] .. var0[2]
+	return var0_30[1] .. var0_30[2]
 end
 
-function var0.GetDestroyPoint(arg0)
-	local var0 = 0
+function var0_0.GetDestroyPoint(arg0_31)
+	local var0_31 = 0
 
-	if arg0.class == TargetItem then
-		switch(arg0.type, {
+	if arg0_31.class == TargetItem then
+		switch(arg0_31.type, {
 			bomb = function()
-				var0 = 50
+				var0_31 = 50
 			end,
 			power = function()
-				var0 = 50
+				var0_31 = 50
 			end,
 			speed = function()
-				var0 = 50
+				var0_31 = 50
 			end,
 			hp1 = function()
-				var0 = 100
+				var0_31 = 100
 			end,
 			hp2 = function()
-				var0 = 200
+				var0_31 = 200
 			end,
 			spirit = function()
-				var0 = 300
+				var0_31 = 300
 			end
 		})
-	elseif isa(arg0, TargetObject) then
-		switch(arg0.class, {
+	elseif isa(arg0_31, TargetObject) then
+		switch(arg0_31.class, {
 			[ObjectBreakable] = function()
-				var0 = 20
+				var0_31 = 20
 			end,
 			[ObjectRockB] = function()
-				var0 = 50
+				var0_31 = 50
 			end,
 			[ObjectTreasureN] = function()
-				var0 = 200
+				var0_31 = 200
 			end,
 			[ObjectTreasureR] = function()
-				var0 = 500
+				var0_31 = 500
 			end
 		})
-	elseif isa(arg0, MoveEnemy) then
-		switch(arg0.class, {
+	elseif isa(arg0_31, MoveEnemy) then
+		switch(arg0_31.class, {
 			[EnemyScavenger] = function()
-				var0 = 100
+				var0_31 = 100
 			end,
 			[EnemyBossScavenger] = function()
-				var0 = 300
+				var0_31 = 300
 			end,
 			[EnemyChaser] = function()
-				var0 = 100
+				var0_31 = 100
 			end,
 			[EnemyBossChaser] = function()
-				var0 = 500
+				var0_31 = 500
 			end,
 			[EnemyNavigator] = function()
-				var0 = 150
+				var0_31 = 150
 			end,
 			[EnemyBossNavigator] = function()
-				var0 = 600
+				var0_31 = 600
 			end,
 			[EnemySmasher] = function()
-				var0 = 150
+				var0_31 = 150
 			end,
 			[EnemyBossSmasher] = function()
-				var0 = 500
+				var0_31 = 500
 			end,
 			[EnemyConductor] = function()
-				var0 = 200
+				var0_31 = 200
 			end,
 			[EnemyBossConductor] = function()
-				var0 = 600
+				var0_31 = 600
 			end
 		})
 	end
 
-	return var0
+	return var0_31
 end
 
-function var0.GetPassGamePoint(arg0)
-	return math.floor(10000 / math.log(arg0))
+function var0_0.GetPassGamePoint(arg0_52)
+	return math.floor(10000 / math.log(arg0_52))
 end
 
-return var0
+return var0_0

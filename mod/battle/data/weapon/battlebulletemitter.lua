@@ -1,242 +1,242 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = pg
-local var2 = var0.Battle.BattleConst
-local var3 = var0.Battle.BattleDataFunction
-local var4 = math
-local var5 = class("BattleBulletEmitter")
+local var0_0 = ys
+local var1_0 = pg
+local var2_0 = var0_0.Battle.BattleConst
+local var3_0 = var0_0.Battle.BattleDataFunction
+local var4_0 = math
+local var5_0 = class("BattleBulletEmitter")
 
-var0.Battle.BattleBulletEmitter = var5
-var5.__name = "BattleBulletEmitter"
-var5.STATE_ACTIVE = "ACTIVE"
-var5.STATE_STOP = "STOP"
+var0_0.Battle.BattleBulletEmitter = var5_0
+var5_0.__name = "BattleBulletEmitter"
+var5_0.STATE_ACTIVE = "ACTIVE"
+var5_0.STATE_STOP = "STOP"
 
-function var5.Ctor(arg0, arg1, arg2, arg3)
-	arg0._spawnFunc = arg1
-	arg0._stopFunc = arg2
-	arg0._barrageID = arg3
-	arg0._barrageTemp = var3.GetBarrageTmpDataFromID(arg3)
-	arg0._offsetPriority = arg0._barrageTemp.offset_prioritise
-	arg0._isRandomAngle = arg0._barrageTemp.random_angle
-	arg0._timerList = {}
+function var5_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	arg0_1._spawnFunc = arg1_1
+	arg0_1._stopFunc = arg2_1
+	arg0_1._barrageID = arg3_1
+	arg0_1._barrageTemp = var3_0.GetBarrageTmpDataFromID(arg3_1)
+	arg0_1._offsetPriority = arg0_1._barrageTemp.offset_prioritise
+	arg0_1._isRandomAngle = arg0_1._barrageTemp.random_angle
+	arg0_1._timerList = {}
 
-	if arg0._barrageTemp.delta_delay ~= 0 then
-		arg0.PrimalIteration = arg0._advancePrimalIteration
-	elseif arg0._barrageTemp.delay ~= 0 then
-		arg0.PrimalIteration = arg0._averagePrimalIteration
+	if arg0_1._barrageTemp.delta_delay ~= 0 then
+		arg0_1.PrimalIteration = arg0_1._advancePrimalIteration
+	elseif arg0_1._barrageTemp.delay ~= 0 then
+		arg0_1.PrimalIteration = arg0_1._averagePrimalIteration
 	else
-		arg0.PrimalIteration = arg0._nonDelayPrimalIteration
+		arg0_1.PrimalIteration = arg0_1._nonDelayPrimalIteration
 	end
 
-	arg0._primalMax = arg0._barrageTemp.primal_repeat + 1
+	arg0_1._primalMax = arg0_1._barrageTemp.primal_repeat + 1
 
-	function arg0.timerCb(arg0)
-		arg0._timerList[arg0](arg0, arg0)
-	end
-end
-
-function var5.Ready(arg0)
-	arg0._state = arg0.STATE_ACTIVE
-	arg0._seniorCounter = -1
-
-	arg0:ClearAllTimer()
-end
-
-function var5.Fire(arg0, arg1, arg2)
-	arg0._target = arg1
-	arg0._dir = arg2 or var2.UnitDir.RIGHT
-
-	if not arg0._convertedDirBarrage then
-		arg0._convertedDirBarrage = var3.GetConvertedBarrageTableFromID(arg0._barrageID, arg0._dir)[arg0._dir]
-	end
-
-	arg0:SeniorIteration()
-end
-
-function var5.Stop(arg0)
-	arg0._state = arg0.STATE_STOP
-	arg0._target = nil
-
-	arg0:ClearAllTimer()
-	arg0._stopFunc(arg0)
-end
-
-function var5.Interrupt(arg0)
-	arg0._state = arg0.STATE_STOP
-	arg0._target = nil
-
-	arg0:ClearAllTimer()
-end
-
-function var5.Destroy(arg0)
-	arg0._spawnFunc = nil
-	arg0._stopFunc = nil
-	arg0._convertedDirBarrage = nil
-
-	if arg0._timerList then
-		arg0:ClearAllTimer()
+	function arg0_1.timerCb(arg0_2)
+		arg0_1._timerList[arg0_2](arg0_1, arg0_2)
 	end
 end
 
-function var5.GetState(arg0)
-	return arg0._state
+function var5_0.Ready(arg0_3)
+	arg0_3._state = arg0_3.STATE_ACTIVE
+	arg0_3._seniorCounter = -1
+
+	arg0_3:ClearAllTimer()
 end
 
-function var5.ClearAllTimer(arg0)
-	for iter0, iter1 in pairs(arg0._timerList) do
-		var1.TimeMgr.GetInstance():RemoveBattleTimer(iter0)
+function var5_0.Fire(arg0_4, arg1_4, arg2_4)
+	arg0_4._target = arg1_4
+	arg0_4._dir = arg2_4 or var2_0.UnitDir.RIGHT
+
+	if not arg0_4._convertedDirBarrage then
+		arg0_4._convertedDirBarrage = var3_0.GetConvertedBarrageTableFromID(arg0_4._barrageID, arg0_4._dir)[arg0_4._dir]
 	end
 
-	arg0._timerList = {}
+	arg0_4:SeniorIteration()
 end
 
-function var5.GenerateBullet(arg0)
-	local var0 = arg0._convertedDirBarrage[arg0._primalCounter]
-	local var1 = var0.OffsetX
+function var5_0.Stop(arg0_5)
+	arg0_5._state = arg0_5.STATE_STOP
+	arg0_5._target = nil
 
-	arg0._delay = var0.Delay
+	arg0_5:ClearAllTimer()
+	arg0_5._stopFunc(arg0_5)
+end
 
-	local var2
+function var5_0.Interrupt(arg0_6)
+	arg0_6._state = arg0_6.STATE_STOP
+	arg0_6._target = nil
 
-	if arg0._isRandomAngle then
-		var2 = (var4.random() - 0.5) * var0.Angle
+	arg0_6:ClearAllTimer()
+end
+
+function var5_0.Destroy(arg0_7)
+	arg0_7._spawnFunc = nil
+	arg0_7._stopFunc = nil
+	arg0_7._convertedDirBarrage = nil
+
+	if arg0_7._timerList then
+		arg0_7:ClearAllTimer()
+	end
+end
+
+function var5_0.GetState(arg0_8)
+	return arg0_8._state
+end
+
+function var5_0.ClearAllTimer(arg0_9)
+	for iter0_9, iter1_9 in pairs(arg0_9._timerList) do
+		var1_0.TimeMgr.GetInstance():RemoveBattleTimer(iter0_9)
+	end
+
+	arg0_9._timerList = {}
+end
+
+function var5_0.GenerateBullet(arg0_10)
+	local var0_10 = arg0_10._convertedDirBarrage[arg0_10._primalCounter]
+	local var1_10 = var0_10.OffsetX
+
+	arg0_10._delay = var0_10.Delay
+
+	local var2_10
+
+	if arg0_10._isRandomAngle then
+		var2_10 = (var4_0.random() - 0.5) * var0_10.Angle
 	else
-		var2 = var0.Angle
+		var2_10 = var0_10.Angle
 	end
 
-	local var3 = arg0._spawnFunc(var1, var0.OffsetZ, var2, arg0._offsetPriority, arg0._target, arg0._primalCounter)
+	local var3_10 = arg0_10._spawnFunc(var1_10, var0_10.OffsetZ, var2_10, arg0_10._offsetPriority, arg0_10._target, arg0_10._primalCounter)
 
-	if var3 then
-		local var4 = var3.GenerateTransBarrage(arg0._barrageID, arg0._dir, arg0._primalCounter)
+	if var3_10 then
+		local var4_10 = var3_0.GenerateTransBarrage(arg0_10._barrageID, arg0_10._dir, arg0_10._primalCounter)
 
-		var3:SetBarrageTransformTempate(var4)
+		var3_10:SetBarrageTransformTempate(var4_10)
 	end
 
-	arg0:Interation()
+	arg0_10:Interation()
 end
 
-function var5.DelaySeniorFunc(arg0, arg1)
-	var1.TimeMgr.GetInstance():RemoveBattleTimer(arg1)
+function var5_0.DelaySeniorFunc(arg0_11, arg1_11)
+	var1_0.TimeMgr.GetInstance():RemoveBattleTimer(arg1_11)
 
-	arg0._timerList[arg1] = nil
+	arg0_11._timerList[arg1_11] = nil
 
-	arg0:PrimalIteration()
+	arg0_11:PrimalIteration()
 end
 
-function var5.SeniorIteration(arg0)
-	if arg0._state ~= arg0.STATE_ACTIVE then
+function var5_0.SeniorIteration(arg0_12)
+	if arg0_12._state ~= arg0_12.STATE_ACTIVE then
 		return
 	end
 
-	arg0._seniorCounter = arg0._seniorCounter + 1
+	arg0_12._seniorCounter = arg0_12._seniorCounter + 1
 
-	if arg0._seniorCounter > arg0._barrageTemp.senior_repeat then
-		arg0:Stop()
+	if arg0_12._seniorCounter > arg0_12._barrageTemp.senior_repeat then
+		arg0_12:Stop()
 	else
-		arg0:InitParam()
+		arg0_12:InitParam()
 
-		local var0
+		local var0_12
 
-		if arg0._seniorCounter == 0 then
-			var0 = arg0._barrageTemp.first_delay
+		if arg0_12._seniorCounter == 0 then
+			var0_12 = arg0_12._barrageTemp.first_delay
 		else
-			var0 = arg0._barrageTemp.senior_delay
+			var0_12 = arg0_12._barrageTemp.senior_delay
 		end
 
-		if var0 > 0 then
-			local var1 = var1.TimeMgr.GetInstance():AddBattleTimer("spawnBullet", -1, var0, arg0.timerCb, true)
+		if var0_12 > 0 then
+			local var1_12 = var1_0.TimeMgr.GetInstance():AddBattleTimer("spawnBullet", -1, var0_12, arg0_12.timerCb, true)
 
-			arg0._timerList[var1] = arg0.DelaySeniorFunc
+			arg0_12._timerList[var1_12] = arg0_12.DelaySeniorFunc
 		else
-			arg0:PrimalIteration()
+			arg0_12:PrimalIteration()
 		end
 	end
 end
 
-function var5.InitParam(arg0)
-	arg0._delay = arg0._barrageTemp.delay
-	arg0._primalCounter = 1
+function var5_0.InitParam(arg0_13)
+	arg0_13._delay = arg0_13._barrageTemp.delay
+	arg0_13._primalCounter = 1
 end
 
-function var5.Interation(arg0)
-	arg0._primalCounter = arg0._primalCounter + 1
+function var5_0.Interation(arg0_14)
+	arg0_14._primalCounter = arg0_14._primalCounter + 1
 end
 
-function var5.SetTimeScale(arg0, arg1)
-	if arg0._timerList then
-		for iter0, iter1 in pairs(arg0._timerList) do
-			iter0:SetScale(arg1)
+function var5_0.SetTimeScale(arg0_15, arg1_15)
+	if arg0_15._timerList then
+		for iter0_15, iter1_15 in pairs(arg0_15._timerList) do
+			iter0_15:SetScale(arg1_15)
 		end
 	end
 end
 
-function var5.DelayPrimalConst(arg0, arg1)
-	arg0:GenerateBullet()
+function var5_0.DelayPrimalConst(arg0_16, arg1_16)
+	arg0_16:GenerateBullet()
 
-	if arg0._primalCounter > arg0._primalMax then
-		var1.TimeMgr.GetInstance():RemoveBattleTimer(arg1)
+	if arg0_16._primalCounter > arg0_16._primalMax then
+		var1_0.TimeMgr.GetInstance():RemoveBattleTimer(arg1_16)
 
-		arg0._timerList[arg1] = nil
+		arg0_16._timerList[arg1_16] = nil
 
-		arg0:SeniorIteration()
+		arg0_16:SeniorIteration()
 	end
 end
 
-function var5._averagePrimalIteration(arg0)
-	if arg0._state ~= arg0.STATE_ACTIVE then
+function var5_0._averagePrimalIteration(arg0_17)
+	if arg0_17._state ~= arg0_17.STATE_ACTIVE then
 		return
 	end
 
-	local var0 = var1.TimeMgr.GetInstance():AddBattleTimer("spawnBullet", -1, arg0._delay, arg0.timerCb, true)
+	local var0_17 = var1_0.TimeMgr.GetInstance():AddBattleTimer("spawnBullet", -1, arg0_17._delay, arg0_17.timerCb, true)
 
-	arg0._timerList[var0] = arg0.DelayPrimalConst
+	arg0_17._timerList[var0_17] = arg0_17.DelayPrimalConst
 end
 
-function var5.DelayPrimalAdvance(arg0, arg1)
-	var1.TimeMgr.GetInstance():RemoveBattleTimer(arg1)
+function var5_0.DelayPrimalAdvance(arg0_18, arg1_18)
+	var1_0.TimeMgr.GetInstance():RemoveBattleTimer(arg1_18)
 
-	arg0._timerList[arg1] = nil
+	arg0_18._timerList[arg1_18] = nil
 
-	arg0:GenerateBullet()
+	arg0_18:GenerateBullet()
 
-	if arg0._primalCounter > arg0._primalMax then
-		arg0:SeniorIteration()
+	if arg0_18._primalCounter > arg0_18._primalMax then
+		arg0_18:SeniorIteration()
 	else
-		arg0:PrimalIteration()
+		arg0_18:PrimalIteration()
 	end
 end
 
-function var5._advancePrimalIteration(arg0)
-	if arg0._state ~= arg0.STATE_ACTIVE then
+function var5_0._advancePrimalIteration(arg0_19)
+	if arg0_19._state ~= arg0_19.STATE_ACTIVE then
 		return
 	end
 
-	if arg0._delay == 0 then
-		arg0:GenerateBullet()
+	if arg0_19._delay == 0 then
+		arg0_19:GenerateBullet()
 
-		if arg0._primalCounter > arg0._primalMax then
-			arg0:SeniorIteration()
+		if arg0_19._primalCounter > arg0_19._primalMax then
+			arg0_19:SeniorIteration()
 		else
-			arg0:PrimalIteration()
+			arg0_19:PrimalIteration()
 		end
 	else
-		local var0 = var1.TimeMgr.GetInstance():AddBattleTimer("spawnBullet", -1, arg0._delay, arg0.timerCb, true)
+		local var0_19 = var1_0.TimeMgr.GetInstance():AddBattleTimer("spawnBullet", -1, arg0_19._delay, arg0_19.timerCb, true)
 
-		arg0._timerList[var0] = arg0.DelayPrimalAdvance
+		arg0_19._timerList[var0_19] = arg0_19.DelayPrimalAdvance
 	end
 end
 
-function var5._nonDelayPrimalIteration(arg0)
-	if arg0._state ~= arg0.STATE_ACTIVE then
+function var5_0._nonDelayPrimalIteration(arg0_20)
+	if arg0_20._state ~= arg0_20.STATE_ACTIVE then
 		return
 	end
 
-	arg0:GenerateBullet()
+	arg0_20:GenerateBullet()
 
-	if arg0._primalCounter > arg0._primalMax then
-		arg0:SeniorIteration()
+	if arg0_20._primalCounter > arg0_20._primalMax then
+		arg0_20:SeniorIteration()
 	else
-		arg0:PrimalIteration()
+		arg0_20:PrimalIteration()
 	end
 end

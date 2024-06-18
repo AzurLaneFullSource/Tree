@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_153 = {}
+var0_0.word_template_153 = {}
 
-local var1 = var0.word_template_153
+local var1_0 = var0_0.word_template_153
 
 function temp()
-	var1.教 = {
+	var1_0.教 = {
 		练 = {
 			弹 = {
 				this = true
@@ -128,7 +128,7 @@ end
 temp()
 
 function temp()
-	var1.醮 = {
+	var1_0.醮 = {
 		this = {
 			this = true
 		}
@@ -138,7 +138,7 @@ end
 temp()
 
 function temp()
-	var1.疖 = {
+	var1_0.疖 = {
 		this = {
 			this = true
 		}
@@ -148,7 +148,7 @@ end
 temp()
 
 function temp()
-	var1.揭 = {
+	var1_0.揭 = {
 		批 = {
 			書 = {
 				this = true
@@ -160,7 +160,7 @@ end
 temp()
 
 function temp()
-	var1.街 = {
+	var1_0.街 = {
 		坊 = {
 			差 = {
 				人 = {
@@ -211,7 +211,7 @@ end
 temp()
 
 function temp()
-	var1.癤 = {
+	var1_0.癤 = {
 		this = {
 			this = true
 		}
@@ -221,7 +221,7 @@ end
 temp()
 
 function temp()
-	var1.劫 = {
+	var1_0.劫 = {
 		持 = {
 			this = true
 		},

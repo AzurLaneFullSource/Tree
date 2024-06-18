@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_162 = {}
+var0_0.word_template_162 = {}
 
-local var1 = var0.word_template_162
+local var1_0 = var0_0.word_template_162
 
 function temp()
-	var1.救 = {
+	var1_0.救 = {
 		主 = {
 			早 = {
 				已 = {
@@ -34,7 +34,7 @@ end
 temp()
 
 function temp()
-	var1.就 = {
+	var1_0.就 = {
 		爱 = {
 			色 = {
 				this = true
@@ -136,7 +136,7 @@ end
 temp()
 
 function temp()
-	var1.舊 = {
+	var1_0.舊 = {
 		斗 = {
 			篷 = {
 				哨 = {
@@ -152,7 +152,7 @@ end
 temp()
 
 function temp()
-	var1.拘 = {
+	var1_0.拘 = {
 		束 = {
 			調 = {
 				教 = {
@@ -166,7 +166,7 @@ end
 temp()
 
 function temp()
-	var1.狙 = {
+	var1_0.狙 = {
 		击 = {
 			瞄 = {
 				准 = {
@@ -185,7 +185,7 @@ end
 temp()
 
 function temp()
-	var1.局 = {
+	var1_0.局 = {
 		干 = {
 			部 = {
 				拿 = {
@@ -211,7 +211,7 @@ end
 temp()
 
 function temp()
-	var1.菊 = {
+	var1_0.菊 = {
 		地 = {
 			彩 = {
 				子 = {

@@ -1,82 +1,82 @@
-﻿local var0 = class("EquipCodeShareLayer", import("..base.BaseUI"))
+﻿local var0_0 = class("EquipCodeShareLayer", import("..base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "EquipCodeShareUI"
 end
 
-function var0.setShipGroup(arg0, arg1)
-	arg0.shipGroup = arg1
-	arg0.codes = arg1:getEquipCodes()
+function var0_0.setShipGroup(arg0_2, arg1_2)
+	arg0_2.shipGroup = arg1_2
+	arg0_2.codes = arg1_2:getEquipCodes()
 
-	local var0 = {}
+	local var0_2 = {}
 
-	arg0.firstPool = underscore(arg0.codes):chain():filter(function(arg0)
-		return arg0.new == 0 and arg0.state == 0
+	arg0_2.firstPool = underscore(arg0_2.codes):chain():filter(function(arg0_3)
+		return arg0_3.new == 0 and arg0_3.state == 0
 	end):sort(CompareFuncs({
-		function(arg0)
-			return -arg0.like
+		function(arg0_4)
+			return -arg0_4.like
 		end
-	})):first(12):each(function(arg0)
-		var0[arg0.id] = true
+	})):first(12):each(function(arg0_5)
+		var0_2[arg0_5.id] = true
 	end):sort(CompareFuncs({
-		function(arg0)
-			return -arg0.evaPoint
+		function(arg0_6)
+			return -arg0_6.evaPoint
 		end
 	})):value()
-	arg0.oldPool = underscore.filter(arg0.codes, function(arg0)
-		return arg0.new == 0 and not var0[arg0.id]
+	arg0_2.oldPool = underscore.filter(arg0_2.codes, function(arg0_7)
+		return arg0_7.new == 0 and not var0_2[arg0_7.id]
 	end)
-	arg0.newPool = underscore.filter(arg0.codes, function(arg0)
-		return arg0.new == 1
+	arg0_2.newPool = underscore.filter(arg0_2.codes, function(arg0_8)
+		return arg0_8.new == 1
 	end)
 end
 
-local function var1(arg0, arg1, arg2)
-	setActive(arg0:Find("IconTpl"), tobool(arg1))
+local function var1_0(arg0_9, arg1_9, arg2_9)
+	setActive(arg0_9:Find("IconTpl"), tobool(arg1_9))
 
-	if not arg1 then
+	if not arg1_9 then
 		return
 	end
 
-	updateEquipment(arg0:Find("IconTpl"), arg1)
+	updateEquipment(arg0_9:Find("IconTpl"), arg1_9)
 
-	if not arg0:Find("IconTpl/icon_bg/equip_flag") then
+	if not arg0_9:Find("IconTpl/icon_bg/equip_flag") then
 		return
 	end
 
-	setActive(arg0:Find("IconTpl/icon_bg/equip_flag"), arg2)
+	setActive(arg0_9:Find("IconTpl/icon_bg/equip_flag"), arg2_9)
 
-	if not arg2 then
+	if not arg2_9 then
 		return
 	end
 
-	setImageSprite(arg0:Find("IconTpl/icon_bg/equip_flag/Image"), LoadSprite("qicon/" .. arg2:getPainting()))
+	setImageSprite(arg0_9:Find("IconTpl/icon_bg/equip_flag/Image"), LoadSprite("qicon/" .. arg2_9:getPainting()))
 end
 
-local function var2(arg0, arg1, arg2)
-	setActive(arg0:Find("Icon"), arg1)
-	setActive(arg0:Find("IconShadow"), arg1)
+local function var2_0(arg0_10, arg1_10, arg2_10)
+	setActive(arg0_10:Find("Icon"), arg1_10)
+	setActive(arg0_10:Find("IconShadow"), arg1_10)
 
-	if not arg1 then
+	if not arg1_10 then
 		return
 	end
 
-	UpdateSpWeaponSlot(arg0, arg1)
+	UpdateSpWeaponSlot(arg0_10, arg1_10)
 
-	if not arg0:Find("Icon/equip_flag") then
+	if not arg0_10:Find("Icon/equip_flag") then
 		return
 	end
 
-	setActive(arg0:Find("Icon/equip_flag"), arg2)
+	setActive(arg0_10:Find("Icon/equip_flag"), arg2_10)
 
-	if not arg2 then
+	if not arg2_10 then
 		return
 	end
 
-	setImageSprite(arg0:Find("Icon/equip_flag/Image"), LoadSprite("qicon/" .. arg2:getPainting()))
+	setImageSprite(arg0_10:Find("Icon/equip_flag/Image"), LoadSprite("qicon/" .. arg2_10:getPainting()))
 end
 
-local var3 = {
+local var3_0 = {
 	customPanels = {
 		minHeight = 650,
 		labelIndex = {
@@ -97,139 +97,139 @@ local var3 = {
 	}
 }
 
-function var0.init(arg0)
-	onButton(arg0, arg0._tf:Find("BG"), function()
-		arg0:closeView()
+function var0_0.init(arg0_11)
+	onButton(arg0_11, arg0_11._tf:Find("BG"), function()
+		arg0_11:closeView()
 	end, SFX_CANCEL)
 
-	arg0.rtMainPanel = arg0._tf:Find("mainPanel")
+	arg0_11.rtMainPanel = arg0_11._tf:Find("mainPanel")
 
-	onButton(arg0, arg0.rtMainPanel:Find("top_panel/btnBack"), function()
-		arg0:closeView()
+	onButton(arg0_11, arg0_11.rtMainPanel:Find("top_panel/btnBack"), function()
+		arg0_11:closeView()
 	end, SFX_CANCEL)
 
-	arg0.indexData = arg0.indexData or {}
+	arg0_11.indexData = arg0_11.indexData or {}
 
-	local var0 = arg0.rtMainPanel:Find("top_panel/btn_filter")
+	local var0_11 = arg0_11.rtMainPanel:Find("top_panel/btn_filter")
 
-	onButton(arg0, var0, function()
-		arg0:emit(EquipCodeShareMediator.OPEN_TAG_INDEX, setmetatable({
-			indexDatas = Clone(arg0.indexData),
-			callback = function(arg0)
-				arg0.indexData.labelIndex = arg0.labelIndex
+	onButton(arg0_11, var0_11, function()
+		arg0_11:emit(EquipCodeShareMediator.OPEN_TAG_INDEX, setmetatable({
+			indexDatas = Clone(arg0_11.indexData),
+			callback = function(arg0_15)
+				arg0_11.indexData.labelIndex = arg0_15.labelIndex
 
-				local var0 = arg0:isDefaultFilter()
+				local var0_15 = arg0_11:isDefaultFilter()
 
-				setImageAlpha(var0, var0 and 1 or 0)
-				setActive(var0:Find("on"), not var0)
+				setImageAlpha(var0_11, var0_15 and 1 or 0)
+				setActive(var0_11:Find("on"), not var0_15)
 
-				arg0.refreshCount = 0
+				arg0_11.refreshCount = 0
 
-				arg0:refreshCodes()
+				arg0_11:refreshCodes()
 			end
 		}, {
-			__index = var3
+			__index = var3_0
 		}))
 	end, SFX_PANEL)
 
-	arg0.rtShipCard = arg0.rtMainPanel:Find("left_panel/ship_tpl")
+	arg0_11.rtShipCard = arg0_11.rtMainPanel:Find("left_panel/ship_tpl")
 
-	onButton(arg0, arg0.rtMainPanel:Find("left_panel/btn_refresh"), function()
-		arg0:refreshCodes()
+	onButton(arg0_11, arg0_11.rtMainPanel:Find("left_panel/btn_refresh"), function()
+		arg0_11:refreshCodes()
 	end, SFX_PANEL)
 
-	local var1 = arg0.rtMainPanel:Find("right_panel/content/container")
+	local var1_11 = arg0_11.rtMainPanel:Find("right_panel/content/container")
 
-	arg0.itemList = UIItemList.New(var1, var1:Find("tpl"))
+	arg0_11.itemList = UIItemList.New(var1_11, var1_11:Find("tpl"))
 
-	local var2 = pg.equip_data_template
-	local var3 = pg.spweapon_data_statistics
+	local var2_11 = pg.equip_data_template
+	local var3_11 = pg.spweapon_data_statistics
 
-	arg0.itemList:make(function(arg0, arg1, arg2)
-		arg1 = arg1 + 1
+	arg0_11.itemList:make(function(arg0_17, arg1_17, arg2_17)
+		arg1_17 = arg1_17 + 1
 
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg0.filterCodes[arg1]
-			local var1 = {}
-			local var2
-			local var3
-			local var4, var5
+		if arg0_17 == UIItemList.EventUpdate then
+			local var0_17 = arg0_11.filterCodes[arg1_17]
+			local var1_17 = {}
+			local var2_17
+			local var3_17
+			local var4_17, var5_17
 
-			var4, var5, var1[1], var1[2] = unpack(string.split(var0.str, "&"))
+			var4_17, var5_17, var1_17[1], var1_17[2] = unpack(string.split(var0_17.str, "&"))
 
-			for iter0, iter1 in ipairs(parseEquipCode(var4)) do
-				if iter0 == 6 then
-					var2(arg2:Find("left/equipments/SpSlot"), var3[iter1] and SpWeapon.New({
-						id = iter1
+			for iter0_17, iter1_17 in ipairs(parseEquipCode(var4_17)) do
+				if iter0_17 == 6 then
+					var2_0(arg2_17:Find("left/equipments/SpSlot"), var3_11[iter1_17] and SpWeapon.New({
+						id = iter1_17
 					}) or false)
 				else
-					var1(arg2:Find("left/equipments"):GetChild(iter0 - 1), var2[iter1] and Equipment.New({
-						id = iter1
+					var1_0(arg2_17:Find("left/equipments"):GetChild(iter0_17 - 1), var2_11[iter1_17] and Equipment.New({
+						id = iter1_17
 					}) or false)
 				end
 			end
 
-			for iter2, iter3 in ipairs(var1) do
-				setText(arg2:Find("left/tags/" .. iter2 .. "/Text"), i18n("equip_share_label_" .. iter3))
+			for iter2_17, iter3_17 in ipairs(var1_17) do
+				setText(arg2_17:Find("left/tags/" .. iter2_17 .. "/Text"), i18n("equip_share_label_" .. iter3_17))
 			end
 
-			setText(arg2:Find("right/like/Text"), var0.like)
-			onButton(arg0, arg2:Find("right/like/btn_like"), function()
-				if var0.afterLike then
+			setText(arg2_17:Find("right/like/Text"), var0_17.like)
+			onButton(arg0_11, arg2_17:Find("right/like/btn_like"), function()
+				if var0_17.afterLike then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("equipcode_like_limited"))
 				else
-					function arg0.successCallback()
-						arg0.successCallback = nil
+					function arg0_11.successCallback()
+						arg0_11.successCallback = nil
 
-						setText(arg2:Find("right/like/Text"), var0.like)
+						setText(arg2_17:Find("right/like/Text"), var0_17.like)
 					end
 
-					arg0:emit(EquipCodeShareMediator.LIKE_EQUIP_CODE, arg0.shipGroup.id, var0.id)
+					arg0_11:emit(EquipCodeShareMediator.LIKE_EQUIP_CODE, arg0_11.shipGroup.id, var0_17.id)
 				end
 			end, SFX_PANEL)
-			onButton(arg0, arg2:Find("right/like/btn_impeach"), function()
-				arg0.impeachCodeId = var0.id
+			onButton(arg0_11, arg2_17:Find("right/like/btn_impeach"), function()
+				arg0_11.impeachCodeId = var0_17.id
 
-				setActive(arg0.rtMainPanel, false)
-				setActive(arg0.impackPanel, true)
-				triggerToggle(arg0.impackPanel:Find("window/msg_panel/content/options/tpl"), true)
+				setActive(arg0_11.rtMainPanel, false)
+				setActive(arg0_11.impackPanel, true)
+				triggerToggle(arg0_11.impackPanel:Find("window/msg_panel/content/options/tpl"), true)
 			end, SFX_PANEL)
-			onButton(arg0, arg2:Find("right/btn_copy"), function()
-				UniPasteBoard.SetClipBoardString(var4)
+			onButton(arg0_11, arg2_17:Find("right/btn_copy"), function()
+				UniPasteBoard.SetClipBoardString(var4_17)
 				pg.TipsMgr.GetInstance():ShowTips(i18n("equipcode_export_success"))
 			end, SFX_CONFIRM)
 		end
 	end)
-	setText(arg0.rtMainPanel:Find("right_panel/content/nothing/Text_2"), i18n("equipcode_share_listempty"))
-	setText(arg0.rtMainPanel:Find("top_panel/title/name"), i18n("equipcode_share_title"))
-	setText(arg0.rtMainPanel:Find("top_panel/title/name/name_en"), i18n("equipcode_share_titleeng"))
-	arg0:initImpeachPanel()
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, false, {
-		groupName = arg0:getGroupNameFromData(),
-		weight = arg0:getWeightFromData()
+	setText(arg0_11.rtMainPanel:Find("right_panel/content/nothing/Text_2"), i18n("equipcode_share_listempty"))
+	setText(arg0_11.rtMainPanel:Find("top_panel/title/name"), i18n("equipcode_share_title"))
+	setText(arg0_11.rtMainPanel:Find("top_panel/title/name/name_en"), i18n("equipcode_share_titleeng"))
+	arg0_11:initImpeachPanel()
+	pg.UIMgr.GetInstance():BlurPanel(arg0_11._tf, false, {
+		groupName = arg0_11:getGroupNameFromData(),
+		weight = arg0_11:getWeightFromData()
 	})
 end
 
-function var0.refreshLikeCommand(arg0, arg1, arg2)
-	local var0 = underscore.detect(arg0.codes, function(arg0)
-		return arg0.id == arg1
+function var0_0.refreshLikeCommand(arg0_22, arg1_22, arg2_22)
+	local var0_22 = underscore.detect(arg0_22.codes, function(arg0_23)
+		return arg0_23.id == arg1_22
 	end)
 
-	var0.afterLike = true
-	var0.like = var0.like + (arg2 and 1 or 0)
+	var0_22.afterLike = true
+	var0_22.like = var0_22.like + (arg2_22 and 1 or 0)
 
-	existCall(arg0.successCallback)
+	existCall(arg0_22.successCallback)
 end
 
-function var0.initImpeachPanel(arg0)
-	arg0.impackPanel = arg0._tf:Find("impeachPanel")
+function var0_0.initImpeachPanel(arg0_24)
+	arg0_24.impackPanel = arg0_24._tf:Find("impeachPanel")
 
-	setText(arg0.impackPanel:Find("window/top/bg/impeach/title"), i18n("report_sent_title"))
-	onButton(arg0, arg0.impackPanel:Find("window/top/btnBack"), function()
-		arg0:onBackPressed()
+	setText(arg0_24.impackPanel:Find("window/top/bg/impeach/title"), i18n("report_sent_title"))
+	onButton(arg0_24, arg0_24.impackPanel:Find("window/top/btnBack"), function()
+		arg0_24:onBackPressed()
 	end, SFX_CANCEL)
 
-	local var0 = {
+	local var0_24 = {
 		{
 			"equipcode_report_type_1",
 			"equipcode_report_type_1"
@@ -239,179 +239,179 @@ function var0.initImpeachPanel(arg0)
 			"equipcode_report_type_2"
 		}
 	}
-	local var1 = arg0.impackPanel:Find("window/msg_panel/content")
+	local var1_24 = arg0_24.impackPanel:Find("window/msg_panel/content")
 
-	setText(var1:Find("title"), i18n("report_sent_desc"))
+	setText(var1_24:Find("title"), i18n("report_sent_desc"))
 
-	local var2 = UIItemList.New(var1:Find("options"), var1:Find("options/tpl"))
+	local var2_24 = UIItemList.New(var1_24:Find("options"), var1_24:Find("options/tpl"))
 
-	var2:make(function(arg0, arg1, arg2)
-		arg1 = arg1 + 1
+	var2_24:make(function(arg0_26, arg1_26, arg2_26)
+		arg1_26 = arg1_26 + 1
 
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = var0[arg1]
+		if arg0_26 == UIItemList.EventUpdate then
+			local var0_26 = var0_24[arg1_26]
 
-			setText(arg2:Find("Text"), i18n(var0[1]))
-			setText(arg2:Find("Text_2"), i18n(var0[2]))
-			onToggle(arg0, arg2, function(arg0)
-				arg0.impeachOption = arg1
+			setText(arg2_26:Find("Text"), i18n(var0_26[1]))
+			setText(arg2_26:Find("Text_2"), i18n(var0_26[2]))
+			onToggle(arg0_24, arg2_26, function(arg0_27)
+				arg0_24.impeachOption = arg1_26
 			end)
 		end
 	end)
-	var2:align(#var0)
+	var2_24:align(#var0_24)
 
-	local var3 = var1:Find("other/field/input")
+	local var3_24 = var1_24:Find("other/field/input")
 
-	onButton(arg0, arg0.impackPanel:Find("window/button_container/button"), function()
-		arg0:emit(EquipCodeShareMediator.IMPEACH_EQUIP_CODE, arg0.shipGroup.id, arg0.impeachCodeId, arg0.impeachOption)
-		arg0:onBackPressed()
+	onButton(arg0_24, arg0_24.impackPanel:Find("window/button_container/button"), function()
+		arg0_24:emit(EquipCodeShareMediator.IMPEACH_EQUIP_CODE, arg0_24.shipGroup.id, arg0_24.impeachCodeId, arg0_24.impeachOption)
+		arg0_24:onBackPressed()
 	end, SFX_CONFIRM)
 end
 
-function var0.onBackPressed(arg0)
-	if isActive(arg0.impackPanel) then
-		setActive(arg0.rtMainPanel, true)
-		setActive(arg0.impackPanel, false)
+function var0_0.onBackPressed(arg0_29)
+	if isActive(arg0_29.impackPanel) then
+		setActive(arg0_29.rtMainPanel, true)
+		setActive(arg0_29.impackPanel, false)
 
 		return
 	end
 
-	arg0:closeView()
+	arg0_29:closeView()
 end
 
-function var0.didEnter(arg0)
-	arg0:flushShip()
+function var0_0.didEnter(arg0_30)
+	arg0_30:flushShip()
 
-	arg0.refreshCount = 0
+	arg0_30.refreshCount = 0
 
-	arg0:refreshCodes()
+	arg0_30:refreshCodes()
 end
 
-function var0.flushShip(arg0)
-	arg0.head = arg0.rtMainPanel:Find("left_panel/ship_tpl")
-	arg0.iconType = arg0.head:Find("content/main_bg/type_mask/type_icon"):GetComponent(typeof(Image))
-	arg0.imageBg = arg0.head:Find("content/icon_bg"):GetComponent(typeof(Image))
-	arg0.imageFrame = arg0.head:Find("content/main_bg/frame")
-	arg0.iconShip = arg0.head:Find("content/icon"):GetComponent(typeof(Image))
-	arg0.labelName = arg0.head:Find("content/main_bg/name_mask/name"):GetComponent(typeof(Text))
-	arg0.scrollText = arg0.head:Find("content/main_bg/name_mask/name"):GetComponent(typeof(ScrollText))
-	arg0.stars = arg0.head:Find("content/main_bg/stars")
-	arg0.star = arg0.stars:Find("tpl")
+function var0_0.flushShip(arg0_31)
+	arg0_31.head = arg0_31.rtMainPanel:Find("left_panel/ship_tpl")
+	arg0_31.iconType = arg0_31.head:Find("content/main_bg/type_mask/type_icon"):GetComponent(typeof(Image))
+	arg0_31.imageBg = arg0_31.head:Find("content/icon_bg"):GetComponent(typeof(Image))
+	arg0_31.imageFrame = arg0_31.head:Find("content/main_bg/frame")
+	arg0_31.iconShip = arg0_31.head:Find("content/icon"):GetComponent(typeof(Image))
+	arg0_31.labelName = arg0_31.head:Find("content/main_bg/name_mask/name"):GetComponent(typeof(Text))
+	arg0_31.scrollText = arg0_31.head:Find("content/main_bg/name_mask/name"):GetComponent(typeof(ScrollText))
+	arg0_31.stars = arg0_31.head:Find("content/main_bg/stars")
+	arg0_31.star = arg0_31.stars:Find("tpl")
 
-	local var0 = arg0.shipGroup.shipConfig
-	local var1 = arg0.shipGroup:getPainting(arg0.showTrans)
-	local var2 = arg0.shipGroup:rarity2bgPrint(arg0.showTrans)
+	local var0_31 = arg0_31.shipGroup.shipConfig
+	local var1_31 = arg0_31.shipGroup:getPainting(arg0_31.showTrans)
+	local var2_31 = arg0_31.shipGroup:rarity2bgPrint(arg0_31.showTrans)
 
-	setShipCardFrame(arg0.imageFrame, var2, nil)
-	GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. var2, "", arg0.imageBg)
+	setShipCardFrame(arg0_31.imageFrame, var2_31, nil)
+	GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. var2_31, "", arg0_31.imageBg)
 
-	arg0.iconShip.sprite = GetSpriteFromAtlas("shipYardIcon/unknown", "")
+	arg0_31.iconShip.sprite = GetSpriteFromAtlas("shipYardIcon/unknown", "")
 
-	LoadImageSpriteAsync("shipYardIcon/" .. var1, arg0.iconShip)
+	LoadImageSpriteAsync("shipYardIcon/" .. var1_31, arg0_31.iconShip)
 
-	arg0.labelName.text = arg0.shipGroup:getName(arg0.showTrans)
+	arg0_31.labelName.text = arg0_31.shipGroup:getName(arg0_31.showTrans)
 
-	if arg0.scrollText then
-		arg0.scrollText:SetText(arg0.shipGroup:getName(arg0.showTrans))
+	if arg0_31.scrollText then
+		arg0_31.scrollText:SetText(arg0_31.shipGroup:getName(arg0_31.showTrans))
 	end
 
-	local var3 = GetSpriteFromAtlas("shiptype", shipType2print(arg0.shipGroup:getShipType(arg0.showTrans)))
+	local var3_31 = GetSpriteFromAtlas("shiptype", shipType2print(arg0_31.shipGroup:getShipType(arg0_31.showTrans)))
 
-	if not var3 then
-		warning("找不到船形, shipConfigId: " .. var0.id)
+	if not var3_31 then
+		warning("找不到船形, shipConfigId: " .. var0_31.id)
 	end
 
-	arg0.iconType.sprite = var3
+	arg0_31.iconType.sprite = var3_31
 
-	local var4 = pg.ship_data_template[var0.id].star_max
+	local var4_31 = pg.ship_data_template[var0_31.id].star_max
 
-	for iter0 = arg0.stars.childCount, var4 - 1 do
-		local var5 = cloneTplTo(arg0.star, arg0.stars)
+	for iter0_31 = arg0_31.stars.childCount, var4_31 - 1 do
+		local var5_31 = cloneTplTo(arg0_31.star, arg0_31.stars)
 	end
 end
 
-function var0.isDefaultFilter(arg0)
-	return underscore(arg0.indexData):chain():keys():all(function(arg0)
-		return arg0.indexData[arg0] == var3.customPanels[arg0].options[1]
+function var0_0.isDefaultFilter(arg0_32)
+	return underscore(arg0_32.indexData):chain():keys():all(function(arg0_33)
+		return arg0_32.indexData[arg0_33] == var3_0.customPanels[arg0_33].options[1]
 	end):value()
 end
 
-function var0.codesFilter(arg0, arg1)
-	return underscore.filter(arg1, function(arg0)
-		return IndexConst.filterEquipCodeByLable(arg0, arg0.indexData.labelIndex)
+function var0_0.codesFilter(arg0_34, arg1_34)
+	return underscore.filter(arg1_34, function(arg0_35)
+		return IndexConst.filterEquipCodeByLable(arg0_35, arg0_34.indexData.labelIndex)
 	end)
 end
 
-function var0.refreshCodes(arg0)
-	arg0.refreshCount = arg0.refreshCount + 1
-	arg0.filterCodes = {}
+function var0_0.refreshCodes(arg0_36)
+	arg0_36.refreshCount = arg0_36.refreshCount + 1
+	arg0_36.filterCodes = {}
 
-	if arg0.refreshCount > 4 or not arg0:isDefaultFilter() then
-		local var0 = arg0:codesFilter(arg0.codes)
+	if arg0_36.refreshCount > 4 or not arg0_36:isDefaultFilter() then
+		local var0_36 = arg0_36:codesFilter(arg0_36.codes)
 
-		if #var0 > 4 then
-			for iter0 = 1, 4 do
-				local var1 = math.random(#var0)
+		if #var0_36 > 4 then
+			for iter0_36 = 1, 4 do
+				local var1_36 = math.random(#var0_36)
 
-				table.insert(arg0.filterCodes, var0[var1])
-				table.remove(var0, var1)
+				table.insert(arg0_36.filterCodes, var0_36[var1_36])
+				table.remove(var0_36, var1_36)
 			end
 		else
-			arg0.filterCodes = var0
+			arg0_36.filterCodes = var0_36
 		end
 
-		table.sort(arg0.filterCodes, CompareFuncs({
-			function(arg0)
-				return -arg0.like
+		table.sort(arg0_36.filterCodes, CompareFuncs({
+			function(arg0_37)
+				return -arg0_37.like
 			end
 		}, false))
 	else
-		if #arg0.firstPool < 3 then
-			arg0.filterCodes = underscore.rest(arg0.firstPool, 1)
-		elseif #arg0.firstPool < arg0.refreshCount * 3 then
-			local var2 = underscore.rest(arg0.firstPool, 1)
+		if #arg0_36.firstPool < 3 then
+			arg0_36.filterCodes = underscore.rest(arg0_36.firstPool, 1)
+		elseif #arg0_36.firstPool < arg0_36.refreshCount * 3 then
+			local var2_36 = underscore.rest(arg0_36.firstPool, 1)
 
-			for iter1 = 1, 3 do
-				local var3 = math.random(#var2)
+			for iter1_36 = 1, 3 do
+				local var3_36 = math.random(#var2_36)
 
-				table.insert(arg0.filterCodes, var2[var3])
-				table.remove(var2, var3)
+				table.insert(arg0_36.filterCodes, var2_36[var3_36])
+				table.remove(var2_36, var3_36)
 			end
 		else
-			arg0.filterCodes = underscore.slice(arg0.firstPool, (arg0.refreshCount - 1) * 3 + 1, 3)
+			arg0_36.filterCodes = underscore.slice(arg0_36.firstPool, (arg0_36.refreshCount - 1) * 3 + 1, 3)
 		end
 
-		local var4 = {
-			underscore.rest(arg0.newPool, 1),
-			underscore.rest(arg0.oldPool, 1),
-			underscore.filter(arg0.firstPool, function(arg0)
-				return underscore.all(arg0.filterCodes, function(arg0)
-					return arg0.id ~= arg0.id
+		local var4_36 = {
+			underscore.rest(arg0_36.newPool, 1),
+			underscore.rest(arg0_36.oldPool, 1),
+			underscore.filter(arg0_36.firstPool, function(arg0_38)
+				return underscore.all(arg0_36.filterCodes, function(arg0_39)
+					return arg0_39.id ~= arg0_38.id
 				end)
 			end)
 		}
-		local var5
+		local var5_36
 
-		while #arg0.filterCodes < 4 do
-			if var5 and #var5 > 0 then
-				local var6 = math.random(#var5)
+		while #arg0_36.filterCodes < 4 do
+			if var5_36 and #var5_36 > 0 then
+				local var6_36 = math.random(#var5_36)
 
-				table.insert(arg0.filterCodes, var5[var6])
-				table.remove(var5, var6)
-			elseif #var4 > 0 then
-				var5 = table.remove(var4, 1)
+				table.insert(arg0_36.filterCodes, var5_36[var6_36])
+				table.remove(var5_36, var6_36)
+			elseif #var4_36 > 0 then
+				var5_36 = table.remove(var4_36, 1)
 			else
 				break
 			end
 		end
 	end
 
-	arg0.itemList:align(#arg0.filterCodes)
-	setActive(arg0.rtMainPanel:Find("right_panel/content/nothing"), #arg0.filterCodes == 0)
+	arg0_36.itemList:align(#arg0_36.filterCodes)
+	setActive(arg0_36.rtMainPanel:Find("right_panel/content/nothing"), #arg0_36.filterCodes == 0)
 end
 
-function var0.willExit(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+function var0_0.willExit(arg0_40)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_40._tf)
 end
 
-return var0
+return var0_0

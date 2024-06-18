@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_116 = {}
+var0_0.word_template_116 = {}
 
-local var1 = var0.word_template_116
+local var1_0 = var0_0.word_template_116
 
 function temp()
-	var1.觀 = {
+	var1_0.觀 = {
 		世 = {
 			音 = {
 				this = true
@@ -26,7 +26,7 @@ end
 temp()
 
 function temp()
-	var1.管 = {
+	var1_0.管 = {
 		里 = {
 			this = true
 		},
@@ -96,7 +96,7 @@ end
 temp()
 
 function temp()
-	var1.贯 = {
+	var1_0.贯 = {
 		通 = {
 			两 = {
 				级 = {
@@ -112,7 +112,7 @@ end
 temp()
 
 function temp()
-	var1.貫 = {
+	var1_0.貫 = {
 		通 = {
 			兩 = {
 				極 = {
@@ -128,7 +128,7 @@ end
 temp()
 
 function temp()
-	var1.灌 = {
+	var1_0.灌 = {
 		肠 = {
 			this = true,
 			自 = {
@@ -159,7 +159,7 @@ end
 temp()
 
 function temp()
-	var1.光 = {
+	var1_0.光 = {
 		复 = {
 			this = true,
 			武 = {
@@ -280,7 +280,7 @@ end
 temp()
 
 function temp()
-	var1.广 = {
+	var1_0.广 = {
 		场 = {
 			this = true,
 			上 = {

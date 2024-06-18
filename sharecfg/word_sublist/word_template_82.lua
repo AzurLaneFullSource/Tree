@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_82 = {}
+var0_0.word_template_82 = {}
 
-local var1 = var0.word_template_82
+local var1_0 = var0_0.word_template_82
 
 function temp()
-	var1.迪 = {
+	var1_0.迪 = {
 		考 = {
 			谭 = {
 				凯 = {
@@ -48,7 +48,7 @@ end
 temp()
 
 function temp()
-	var1.糴 = {
+	var1_0.糴 = {
 		this = {
 			this = true
 		}
@@ -58,7 +58,7 @@ end
 temp()
 
 function temp()
-	var1.抵 = {
+	var1_0.抵 = {
 		制 = {
 			联 = {
 				通 = {
@@ -110,7 +110,7 @@ end
 temp()
 
 function temp()
-	var1.地 = {
+	var1_0.地 = {
 		磅 = {
 			干 = {
 				扰 = {
@@ -518,7 +518,7 @@ end
 temp()
 
 function temp()
-	var1.弟 = {
+	var1_0.弟 = {
 		大 = {
 			物 = {
 				勃 = {
@@ -548,7 +548,7 @@ end
 temp()
 
 function temp()
-	var1.帝 = {
+	var1_0.帝 = {
 		国 = {
 			T = {
 				W = {
@@ -640,7 +640,7 @@ end
 temp()
 
 function temp()
-	var1.递 = {
+	var1_0.递 = {
 		进 = {
 			民 = {
 				主 = {

@@ -1,6 +1,6 @@
-﻿local var0 = class("CrusingMapInfo")
+﻿local var0_0 = class("CrusingMapInfo")
 
-var0.MapInfo = {
+var0_0.MapInfo = {
 	CrusingMap_0 = {
 		all = 1260,
 		frame = {
@@ -49,7 +49,7 @@ var0.MapInfo = {
 		}
 	}
 }
-var0.VersionInfo = {
+var0_0.VersionInfo = {
 	map_202212 = "CrusingMap_1",
 	map_202308 = "CrusingMap_2",
 	map_202208 = "CrusingMap_1",
@@ -69,29 +69,29 @@ var0.VersionInfo = {
 	map_202402 = "CrusingMap_1"
 }
 
-function var0.GetPhaseFrame(arg0)
-	local var0 = var0.MapInfo[arg0]
+function var0_0.GetPhaseFrame(arg0_1)
+	local var0_1 = var0_0.MapInfo[arg0_1]
 
-	return setmetatable(Clone(var0.frame), {
-		__index = function(arg0, arg1)
-			local var0 = 0
-			local var1 = 100
+	return setmetatable(Clone(var0_1.frame), {
+		__index = function(arg0_2, arg1_2)
+			local var0_2 = 0
+			local var1_2 = 100
 
-			for iter0, iter1 in pairs(arg0) do
-				if iter0 < arg1 and var0 < iter0 then
-					var0 = iter0
+			for iter0_2, iter1_2 in pairs(arg0_2) do
+				if iter0_2 < arg1_2 and var0_2 < iter0_2 then
+					var0_2 = iter0_2
 				end
 
-				if arg1 < iter0 and iter0 < var1 then
-					var1 = iter0
+				if arg1_2 < iter0_2 and iter0_2 < var1_2 then
+					var1_2 = iter0_2
 				end
 			end
 
-			local var2 = (arg1 - var0) / (var1 - var0)
+			local var2_2 = (arg1_2 - var0_2) / (var1_2 - var0_2)
 
-			return (1 - var2) * arg0[var0] + var2 * arg0[var1]
+			return (1 - var2_2) * arg0_2[var0_2] + var2_2 * arg0_2[var1_2]
 		end
-	}), var0.all
+	}), var0_1.all
 end
 
-return var0
+return var0_0

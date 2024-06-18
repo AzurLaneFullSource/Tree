@@ -1,458 +1,458 @@
-﻿local var0 = class("WorldMediaCollectionFileDetailLayer", import(".WorldMediaCollectionSubLayer"))
+﻿local var0_0 = class("WorldMediaCollectionFileDetailLayer", import(".WorldMediaCollectionSubLayer"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "WorldMediaCollectionFileDetailUI"
 end
 
-function var0.OnInit(arg0)
-	assert(arg0.viewParent, "Need assign ViewParent for " .. arg0.__cname)
-	onButton(arg0, arg0._tf:Find("Buttom"), function()
-		arg0.viewParent:Backward()
+function var0_0.OnInit(arg0_2)
+	assert(arg0_2.viewParent, "Need assign ViewParent for " .. arg0_2.__cname)
+	onButton(arg0_2, arg0_2._tf:Find("Buttom"), function()
+		arg0_2.viewParent:Backward()
 	end)
 
-	arg0.anim = arg0._tf:GetComponent(typeof(Animation))
-	arg0.canvasGroup = arg0._tf:GetComponent(typeof(CanvasGroup))
+	arg0_2.anim = arg0_2._tf:GetComponent(typeof(Animation))
+	arg0_2.canvasGroup = arg0_2._tf:GetComponent(typeof(CanvasGroup))
 
-	arg0:InitDocument()
+	arg0_2:InitDocument()
 
-	local var0 = arg0._tf:Find("ArchiveList")
+	local var0_2 = arg0_2._tf:Find("ArchiveList")
 
-	arg0.scrollComp = var0:GetComponent("LScrollRect")
-	arg0.fileChild = {}
-	arg0.fileChildIndex = {}
+	arg0_2.scrollComp = var0_2:GetComponent("LScrollRect")
+	arg0_2.fileChild = {}
+	arg0_2.fileChildIndex = {}
 
-	function arg0.scrollComp.onUpdateItem(arg0, ...)
-		arg0:OnUpdateFile(arg0 + 1, ...)
+	function arg0_2.scrollComp.onUpdateItem(arg0_4, ...)
+		arg0_2:OnUpdateFile(arg0_4 + 1, ...)
 	end
 
-	setActive(var0:Find("Item"), false)
+	setActive(var0_2:Find("Item"), false)
 
-	arg0.loader = AutoLoader.New()
+	arg0_2.loader = AutoLoader.New()
 
-	setText(arg0._tf:Find("ArchiveList/ProgressDesc"), i18n("world_collection_1"))
+	setText(arg0_2._tf:Find("ArchiveList/ProgressDesc"), i18n("world_collection_1"))
 end
 
-function var0.InitDocument(arg0)
-	arg0.document = arg0._tf:Find("Document")
-	arg0.documentContentTF = arg0.document:Find("Viewport/Content")
-	arg0.documentHead = arg0.documentContentTF:Find("Head")
-	arg0.documentBody = arg0.documentContentTF:Find("Body")
-	arg0.documentTitle = arg0.documentHead:Find("Title")
-	arg0.documentRect = arg0.documentBody:Find("Rect")
-	arg0.documentTip = arg0.documentRect:Find("SubTitle")
-	arg0.documentText = arg0.documentRect:Find("Text")
-	arg0.documentImage = arg0.documentRect:Find("Image")
-	arg0.documentStamp = arg0.documentImage:Find("ClassifiedStamp")
+function var0_0.InitDocument(arg0_5)
+	arg0_5.document = arg0_5._tf:Find("Document")
+	arg0_5.documentContentTF = arg0_5.document:Find("Viewport/Content")
+	arg0_5.documentHead = arg0_5.documentContentTF:Find("Head")
+	arg0_5.documentBody = arg0_5.documentContentTF:Find("Body")
+	arg0_5.documentTitle = arg0_5.documentHead:Find("Title")
+	arg0_5.documentRect = arg0_5.documentBody:Find("Rect")
+	arg0_5.documentTip = arg0_5.documentRect:Find("SubTitle")
+	arg0_5.documentText = arg0_5.documentRect:Find("Text")
+	arg0_5.documentImage = arg0_5.documentRect:Find("Image")
+	arg0_5.documentStamp = arg0_5.documentImage:Find("ClassifiedStamp")
 end
 
-function var0.Openning(arg0)
-	arg0.anim:Play("Enter")
-	arg0:Enter()
+function var0_0.Openning(arg0_6)
+	arg0_6.anim:Play("Enter")
+	arg0_6:Enter()
 end
 
-function var0.Enter(arg0)
-	local function var0()
-		local var0 = nowWorld():GetCollectionProxy()
-		local var1 = WorldCollectionProxy.GetCollectionFileGroupTemplate(arg0.contextData.FileGroupIndex)
+function var0_0.Enter(arg0_7)
+	local function var0_7()
+		local var0_8 = nowWorld():GetCollectionProxy()
+		local var1_8 = WorldCollectionProxy.GetCollectionFileGroupTemplate(arg0_7.contextData.FileGroupIndex)
 
-		for iter0, iter1 in ipairs(var1.child) do
-			if var0:IsUnlock(iter1) then
-				return iter0
+		for iter0_8, iter1_8 in ipairs(var1_8.child) do
+			if var0_8:IsUnlock(iter1_8) then
+				return iter0_8
 			end
 		end
 	end
 
-	local var1 = arg0.contextData.SelectedFile or var0()
+	local var1_7 = arg0_7.contextData.SelectedFile or var0_7()
 
-	arg0.contextData.SelectedFile = nil
+	arg0_7.contextData.SelectedFile = nil
 
-	arg0:UpdateView()
-	arg0:SwitchFileIndex(var1)
+	arg0_7:UpdateView()
+	arg0_7:SwitchFileIndex(var1_7)
 end
 
-function var0.Hide(arg0)
-	arg0.canvasGroup.alpha = 1
+function var0_0.Hide(arg0_9)
+	arg0_9.canvasGroup.alpha = 1
 
-	var0.super.Hide(arg0)
+	var0_0.super.Hide(arg0_9)
 end
 
-function var0.UpdateView(arg0)
-	assert(arg0.contextData.FileGroupIndex, "Not Initialize FileGroupIndex")
+function var0_0.UpdateView(arg0_10)
+	assert(arg0_10.contextData.FileGroupIndex, "Not Initialize FileGroupIndex")
 
-	arg0.archiveList = _.map(WorldCollectionProxy.GetCollectionFileGroupTemplate(arg0.contextData.FileGroupIndex).child, function(arg0)
-		return WorldCollectionProxy.GetCollectionTemplate(arg0)
+	arg0_10.archiveList = _.map(WorldCollectionProxy.GetCollectionFileGroupTemplate(arg0_10.contextData.FileGroupIndex).child, function(arg0_11)
+		return WorldCollectionProxy.GetCollectionTemplate(arg0_11)
 	end)
 
-	local var0 = nowWorld():GetCollectionProxy()
-	local var1 = WorldCollectionProxy.GetCollectionFileGroupTemplate(arg0.contextData.FileGroupIndex)
-	local var2 = 0
-	local var3 = #var1.child
+	local var0_10 = nowWorld():GetCollectionProxy()
+	local var1_10 = WorldCollectionProxy.GetCollectionFileGroupTemplate(arg0_10.contextData.FileGroupIndex)
+	local var2_10 = 0
+	local var3_10 = #var1_10.child
 
-	for iter0, iter1 in ipairs(var1.child) do
-		if var0:IsUnlock(iter1) then
-			var2 = var2 + 1
+	for iter0_10, iter1_10 in ipairs(var1_10.child) do
+		if var0_10:IsUnlock(iter1_10) then
+			var2_10 = var2_10 + 1
 		end
 	end
 
-	setText(arg0._tf:Find("ArchiveList/ProgressDesc/ProgressText"), var2 .. "/" .. var3)
-	arg0.scrollComp:SetTotalCount(#arg0.archiveList)
+	setText(arg0_10._tf:Find("ArchiveList/ProgressDesc/ProgressText"), var2_10 .. "/" .. var3_10)
+	arg0_10.scrollComp:SetTotalCount(#arg0_10.archiveList)
 end
 
-local function var1(arg0)
-	return (string.char(226, 133, 160 + (arg0 - 1)))
+local function var1_0(arg0_12)
+	return (string.char(226, 133, 160 + (arg0_12 - 1)))
 end
 
-function var0.OnUpdateFile(arg0, arg1, arg2)
-	if arg0.exited then
+function var0_0.OnUpdateFile(arg0_13, arg1_13, arg2_13)
+	if arg0_13.exited then
 		return
 	end
 
-	local var0 = arg0.archiveList[arg1]
+	local var0_13 = arg0_13.archiveList[arg1_13]
 
-	if arg0.fileChildIndex[arg2] and arg0.fileChildIndex[arg2] ~= arg1 then
-		local var1 = arg0.fileChildIndex[arg2]
+	if arg0_13.fileChildIndex[arg2_13] and arg0_13.fileChildIndex[arg2_13] ~= arg1_13 then
+		local var1_13 = arg0_13.fileChildIndex[arg2_13]
 
-		arg0.fileChild[var1] = nil
+		arg0_13.fileChild[var1_13] = nil
 	end
 
-	arg0.fileChildIndex[arg2] = arg1
-	arg0.fileChild[arg1] = arg2
+	arg0_13.fileChildIndex[arg2_13] = arg1_13
+	arg0_13.fileChild[arg1_13] = arg2_13
 
-	local var2 = nowWorld():GetCollectionProxy()
-	local var3 = tf(arg2)
-	local var4 = WorldCollectionProxy.GetCollectionFileGroupTemplate(arg0.contextData.FileGroupIndex)
-	local var5 = var2:IsUnlock(var0.id)
-	local var6 = arg1 == arg0.contextData.SelectedFile
+	local var2_13 = nowWorld():GetCollectionProxy()
+	local var3_13 = tf(arg2_13)
+	local var4_13 = WorldCollectionProxy.GetCollectionFileGroupTemplate(arg0_13.contextData.FileGroupIndex)
+	local var5_13 = var2_13:IsUnlock(var0_13.id)
+	local var6_13 = arg1_13 == arg0_13.contextData.SelectedFile
 
-	setActive(var3:Find("Selected"), var6)
+	setActive(var3_13:Find("Selected"), var6_13)
 
-	local var7 = string.format("%s %s", shortenString(var4.name or "", 6), var1(var0.group_ID))
+	local var7_13 = string.format("%s %s", shortenString(var4_13.name or "", 6), var1_0(var0_13.group_ID))
 
-	setText(var3:Find("Desc"), setColorStr(var7, var6 and "#000" or COLOR_WHITE))
-	setActive(var3:Find("Desc"), var5)
-	setActive(var3:Find("Icon"), var5)
-	setActive(var3:Find("Cover"), var5)
-	setActive(var3:Find("Locked"), not var5)
-	arg0.loader:GetSprite("ui/WorldMediaCollectionFileDetailUI_atlas", "cover" .. var4.type, var3:Find("Cover"))
-	onButton(arg0, var3, function()
-		if not nowWorld():GetCollectionProxy():IsUnlock(var0.id) then
+	setText(var3_13:Find("Desc"), setColorStr(var7_13, var6_13 and "#000" or COLOR_WHITE))
+	setActive(var3_13:Find("Desc"), var5_13)
+	setActive(var3_13:Find("Icon"), var5_13)
+	setActive(var3_13:Find("Cover"), var5_13)
+	setActive(var3_13:Find("Locked"), not var5_13)
+	arg0_13.loader:GetSprite("ui/WorldMediaCollectionFileDetailUI_atlas", "cover" .. var4_13.type, var3_13:Find("Cover"))
+	onButton(arg0_13, var3_13, function()
+		if not nowWorld():GetCollectionProxy():IsUnlock(var0_13.id) then
 			return
 		end
 
-		arg0:SwitchFileIndex(arg1)
+		arg0_13:SwitchFileIndex(arg1_13)
 	end, SFX_PANEL)
 end
 
-function var0.SwitchFileIndex(arg0, arg1)
-	if arg0.contextData.SelectedFile and arg0.contextData.SelectedFile == arg1 then
+function var0_0.SwitchFileIndex(arg0_15, arg1_15)
+	if arg0_15.contextData.SelectedFile and arg0_15.contextData.SelectedFile == arg1_15 then
 		return
 	end
 
-	local var0 = arg1 and arg0.archiveList[arg1]
+	local var0_15 = arg1_15 and arg0_15.archiveList[arg1_15]
 
-	if var0 and nowWorld():GetCollectionProxy():IsUnlock(var0.id) then
-		local var1 = arg0.contextData.SelectedFile
-		local var2 = arg0.fileChild[var1]
+	if var0_15 and nowWorld():GetCollectionProxy():IsUnlock(var0_15.id) then
+		local var1_15 = arg0_15.contextData.SelectedFile
+		local var2_15 = arg0_15.fileChild[var1_15]
 
-		arg0.contextData.SelectedFile = arg1
+		arg0_15.contextData.SelectedFile = arg1_15
 
-		if var2 then
-			arg0:OnUpdateFile(var1, var2)
+		if var2_15 then
+			arg0_15:OnUpdateFile(var1_15, var2_15)
 		end
 
-		if arg0.fileChild[arg1] then
-			arg0:OnUpdateFile(arg1, arg0.fileChild[arg1])
+		if arg0_15.fileChild[arg1_15] then
+			arg0_15:OnUpdateFile(arg1_15, arg0_15.fileChild[arg1_15])
 		end
 
-		setActive(arg0.document, true)
-		setText(arg0.document:Find("Head/Title"), var0.name)
-		arg0:SetDocument(var0)
+		setActive(arg0_15.document, true)
+		setText(arg0_15.document:Find("Head/Title"), var0_15.name)
+		arg0_15:SetDocument(var0_15)
 	else
-		setActive(arg0.document, false)
+		setActive(arg0_15.document, false)
 	end
 end
 
-function var0.SetDocument(arg0, arg1, arg2)
-	setText(arg0.documentTitle, arg1.name)
+function var0_0.SetDocument(arg0_16, arg1_16, arg2_16)
+	setText(arg0_16.documentTitle, arg1_16.name)
 
-	local var0 = arg1.pic
+	local var0_16 = arg1_16.pic
 
-	if var0 and #var0 > 0 then
-		local var1 = LoadSprite("CollectionFileIllustration/" .. var0, "")
+	if var0_16 and #var0_16 > 0 then
+		local var1_16 = LoadSprite("CollectionFileIllustration/" .. var0_16, "")
 
-		setImageSprite(arg0.documentImage, var1, true)
-		setActive(arg0.documentImage, var1)
+		setImageSprite(arg0_16.documentImage, var1_16, true)
+		setActive(arg0_16.documentImage, var1_16)
 
-		if var1 then
-			setActive(arg0.documentStamp, arg1.is_classified == 1)
+		if var1_16 then
+			setActive(arg0_16.documentStamp, arg1_16.is_classified == 1)
 
-			if arg1.is_classified == 1 then
-				local var2 = WorldCollectionProxy.GetCollectionGroup(arg1.id)
-				local var3 = WorldCollectionProxy.GetCollectionFileGroupTemplate(var2).type
+			if arg1_16.is_classified == 1 then
+				local var2_16 = WorldCollectionProxy.GetCollectionGroup(arg1_16.id)
+				local var3_16 = WorldCollectionProxy.GetCollectionFileGroupTemplate(var2_16).type
 
-				arg0.loader:GetSprite("ui/WorldMediaCollectionFileDetailUI_atlas", "stamp" .. var3, arg0.documentStamp)
+				arg0_16.loader:GetSprite("ui/WorldMediaCollectionFileDetailUI_atlas", "stamp" .. var3_16, arg0_16.documentStamp)
 			end
 		end
 	else
-		setActive(arg0.documentImage, false)
+		setActive(arg0_16.documentImage, false)
 	end
 
-	arg0:SetDocumentText(arg1.content, arg1.subTitle, arg2)
+	arg0_16:SetDocumentText(arg1_16.content, arg1_16.subTitle, arg2_16)
 end
 
-function var0.getTextPreferredHeight(arg0, arg1, arg2)
-	local var0 = arg0.cachedTextGeneratorForLayout
-	local var1 = arg0:GetGenerationSettings(Vector2(arg1, 0))
+function var0_0.getTextPreferredHeight(arg0_17, arg1_17, arg2_17)
+	local var0_17 = arg0_17.cachedTextGeneratorForLayout
+	local var1_17 = arg0_17:GetGenerationSettings(Vector2(arg1_17, 0))
 
-	return ReflectionHelp.RefCallMethod(typeof("UnityEngine.TextGenerator"), "GetPreferredHeight", var0, {
+	return ReflectionHelp.RefCallMethod(typeof("UnityEngine.TextGenerator"), "GetPreferredHeight", var0_17, {
 		typeof("System.String"),
 		typeof("UnityEngine.TextGenerationSettings")
 	}, {
-		arg2,
-		var1
-	}) / arg0.pixelsPerUnit
+		arg2_17,
+		var1_17
+	}) / arg0_17.pixelsPerUnit
 end
 
-function var0.SetDocumentText(arg0, arg1, arg2, arg3)
-	local var0 = arg0.documentRect.rect.width
-	local var1 = isActive(arg0.documentImage)
-	local var2 = var1 and arg0.documentImage.rect.width or 0
-	local var3 = math.max(var0 - var2, 0)
-	local var4 = arg0.documentImage.rect.height
-	local var5 = var1 and var4 + 100 or 0
-	local var6 = arg0.documentText:GetComponent(typeof(Text))
+function var0_0.SetDocumentText(arg0_18, arg1_18, arg2_18, arg3_18)
+	local var0_18 = arg0_18.documentRect.rect.width
+	local var1_18 = isActive(arg0_18.documentImage)
+	local var2_18 = var1_18 and arg0_18.documentImage.rect.width or 0
+	local var3_18 = math.max(var0_18 - var2_18, 0)
+	local var4_18 = arg0_18.documentImage.rect.height
+	local var5_18 = var1_18 and var4_18 + 100 or 0
+	local var6_18 = arg0_18.documentText:GetComponent(typeof(Text))
 
-	var6.text = ""
+	var6_18.text = ""
 
-	local var7 = ""
+	local var7_18 = ""
 
-	local function var8()
-		local var0 = 0
+	local function var8_18()
+		local var0_19 = 0
 
-		if isActive(arg0.documentHead) then
-			var0 = var0 + arg0.documentHead:GetComponent(typeof(LayoutElement)).preferredHeight
+		if isActive(arg0_18.documentHead) then
+			var0_19 = var0_19 + arg0_18.documentHead:GetComponent(typeof(LayoutElement)).preferredHeight
 		end
 
-		local var1 = arg0.documentBody:GetComponent("LayoutGroup")
-		local var2 = var0 + (var1.padding.top + var1.padding.bottom)
+		local var1_19 = arg0_18.documentBody:GetComponent("LayoutGroup")
+		local var2_19 = var0_19 + (var1_19.padding.top + var1_19.padding.bottom)
 
-		setActive(arg0.documentTip, arg2 and #arg2 > 0)
+		setActive(arg0_18.documentTip, arg2_18 and #arg2_18 > 0)
 
-		local var3 = 0
+		local var3_19 = 0
 
-		if arg2 and #arg2 > 0 then
-			local var4 = arg0.documentTip:Find("Text"):GetComponent(typeof(Text))
+		if arg2_18 and #arg2_18 > 0 then
+			local var4_19 = arg0_18.documentTip:Find("Text"):GetComponent(typeof(Text))
 
-			var4.text = arg2
-			var3 = var0.getTextPreferredHeight(var4, var0, arg2)
-			var3 = var3 + arg0.documentRect:GetComponent(typeof(VerticalLayoutGroup)).spacing
-			var2 = var2 + var3
+			var4_19.text = arg2_18
+			var3_19 = var0_0.getTextPreferredHeight(var4_19, var0_18, arg2_18)
+			var3_19 = var3_19 + arg0_18.documentRect:GetComponent(typeof(VerticalLayoutGroup)).spacing
+			var2_19 = var2_19 + var3_19
 		end
 
-		if var1 then
-			arg0.documentImage.anchoredPosition = Vector2(0, -50 - var3)
+		if var1_18 then
+			arg0_18.documentImage.anchoredPosition = Vector2(0, -50 - var3_19)
 		end
 
-		local var5 = var0.getTextPreferredHeight(var6, var0, var7)
-		local var6 = var2 + var5
-		local var7 = arg0.documentContentTF.sizeDelta
+		local var5_19 = var0_0.getTextPreferredHeight(var6_18, var0_18, var7_18)
+		local var6_19 = var2_19 + var5_19
+		local var7_19 = arg0_18.documentContentTF.sizeDelta
 
-		var7.y = var6
-		arg0.documentContentTF.sizeDelta = var7
+		var7_19.y = var6_19
+		arg0_18.documentContentTF.sizeDelta = var7_19
 
-		local var8 = arg0.document:Find("Viewport")
-		local var9 = arg0.document:Find("Arrow")
-		local var10 = var8.rect.height
+		local var8_19 = arg0_18.document:Find("Viewport")
+		local var9_19 = arg0_18.document:Find("Arrow")
+		local var10_19 = var8_19.rect.height
 
-		setActive(var9, var10 < var6)
+		setActive(var9_19, var10_19 < var6_19)
 
-		local var11 = arg0.document:GetComponent(typeof(ScrollRect))
+		local var11_19 = arg0_18.document:GetComponent(typeof(ScrollRect))
 
-		var11.onValueChanged:RemoveAllListeners()
+		var11_19.onValueChanged:RemoveAllListeners()
 
-		arg3 = arg3 or 0
+		arg3_18 = arg3_18 or 0
 
-		local var12 = math.max(var5 - var10, 0) * arg3
+		local var12_19 = math.max(var5_19 - var10_19, 0) * arg3_18
 
-		arg0.documentContentTF.anchoredPosition = Vector2(0, var12)
-		var11.velocity = Vector2.zero
+		arg0_18.documentContentTF.anchoredPosition = Vector2(0, var12_19)
+		var11_19.velocity = Vector2.zero
 
-		if var10 < var6 then
-			onScroll(arg0, arg0.document, function(arg0)
-				setActive(var9, arg0.y > 0.01)
+		if var10_19 < var6_19 then
+			onScroll(arg0_18, arg0_18.document, function(arg0_20)
+				setActive(var9_19, arg0_20.y > 0.01)
 			end)
 		end
 	end
 
-	if not var1 then
-		var7 = arg1
-		var6.text = var7
+	if not var1_18 then
+		var7_18 = arg1_18
+		var6_18.text = var7_18
 
-		var8()
+		var8_18()
 
 		return
 	end
 
-	local var9, var10 = arg0.SplitRichAndLetters(arg1)
-	local var11 = 1
-	local var12 = 1
+	local var9_18, var10_18 = arg0_18.SplitRichAndLetters(arg1_18)
+	local var11_18 = 1
+	local var12_18 = 1
 
-	local function var13(arg0)
-		local var0 = ""
-		local var1 = ""
-		local var2 = {}
+	local function var13_18(arg0_21)
+		local var0_21 = ""
+		local var1_21 = ""
+		local var2_21 = {}
 
-		for iter0 = arg0 and 1 or var12, #var10 do
-			if var10[iter0].start > var9[var11].start then
+		for iter0_21 = arg0_21 and 1 or var12_18, #var10_18 do
+			if var10_18[iter0_21].start > var9_18[var11_18].start then
 				break
 			end
 
-			local var3 = var10[iter0]
+			local var3_21 = var10_18[iter0_21]
 
-			if iter0 == var12 then
-				var12 = var12 + 1
-				var0 = var0 .. var3.value
+			if iter0_21 == var12_18 then
+				var12_18 = var12_18 + 1
+				var0_21 = var0_21 .. var3_21.value
 			end
 
-			if arg0 then
-				if var3.EndTagIndex then
-					var2[#var2 + 1] = var3.EndTagIndex
+			if arg0_21 then
+				if var3_21.EndTagIndex then
+					var2_21[#var2_21 + 1] = var3_21.EndTagIndex
 				else
-					table.remove(var2)
+					table.remove(var2_21)
 				end
 			end
 		end
 
-		local var4 = ""
+		local var4_21 = ""
 
-		if var11 <= #var9 then
-			var4 = var9[var11].value
+		if var11_18 <= #var9_18 then
+			var4_21 = var9_18[var11_18].value
 		end
 
-		for iter1, iter2 in ipairs(var2) do
-			var1 = var10[iter2].value .. var1
+		for iter1_21, iter2_21 in ipairs(var2_21) do
+			var1_21 = var10_18[iter2_21].value .. var1_21
 		end
 
-		var11 = var11 + 1
+		var11_18 = var11_18 + 1
 
-		return var4, var0, var1
+		return var4_21, var0_21, var1_21
 	end
 
-	local var14 = 0
+	local var14_18 = 0
 
-	while var14 < var5 and var11 < #var9 do
-		local var15, var16, var17 = var13(true)
-		local var18 = var7 .. var16 .. var15 .. var17
+	while var14_18 < var5_18 and var11_18 < #var9_18 do
+		local var15_18, var16_18, var17_18 = var13_18(true)
+		local var18_18 = var7_18 .. var16_18 .. var15_18 .. var17_18
 
-		var6.text = var18
+		var6_18.text = var18_18
 
-		if var3 < var6.preferredWidth then
-			var18 = var7 .. "\n" .. var16 .. var15
+		if var3_18 < var6_18.preferredWidth then
+			var18_18 = var7_18 .. "\n" .. var16_18 .. var15_18
 		else
-			var18 = var7 .. var16 .. var15
+			var18_18 = var7_18 .. var16_18 .. var15_18
 		end
 
-		var7 = var18
-		var6.text = var7
-		var14 = var0.getTextPreferredHeight(var6, var6.preferredWidth, var7)
+		var7_18 = var18_18
+		var6_18.text = var7_18
+		var14_18 = var0_0.getTextPreferredHeight(var6_18, var6_18.preferredWidth, var7_18)
 	end
 
-	for iter0 = var11, #var9 do
-		local var19, var20 = var13(false)
+	for iter0_18 = var11_18, #var9_18 do
+		local var19_18, var20_18 = var13_18(false)
 
-		var7 = var7 .. var20 .. var19
+		var7_18 = var7_18 .. var20_18 .. var19_18
 	end
 
-	local var21, var22, var23 = var13(true)
+	local var21_18, var22_18, var23_18 = var13_18(true)
 
-	var7 = var7 .. var23
-	var6.text = var7
+	var7_18 = var7_18 .. var23_18
+	var6_18.text = var7_18
 
-	var8()
+	var8_18()
 end
 
-function var0.SplitRichAndLetters(arg0)
-	local var0 = 1
-	local var1 = "<([^>]*)>"
-	local var2 = {}
-	local var3 = {}
+function var0_0.SplitRichAndLetters(arg0_22)
+	local var0_22 = 1
+	local var1_22 = "<([^>]*)>"
+	local var2_22 = {}
+	local var3_22 = {}
 
 	while true do
-		local var4, var5 = string.find(arg0, var1, var0)
+		local var4_22, var5_22 = string.find(arg0_22, var1_22, var0_22)
 
-		if not var5 then
+		if not var5_22 then
 			break
 		end
 
-		local var6 = string.sub(arg0, var4, var5)
-		local var7 = string.find(var6, "=")
-		local var8 = string.find(var6, "/")
+		local var6_22 = string.sub(arg0_22, var4_22, var5_22)
+		local var7_22 = string.find(var6_22, "=")
+		local var8_22 = string.find(var6_22, "/")
 
-		if not var8 and not var7 then
-			var0 = var5 + 1
+		if not var8_22 and not var7_22 then
+			var0_22 = var5_22 + 1
 		else
-			table.insert(var2, {
-				value = var6,
-				start = var4
+			table.insert(var2_22, {
+				value = var6_22,
+				start = var4_22
 			})
 
-			if var7 then
-				var3[#var3 + 1] = #var2
-			elseif var8 and #var3 > 0 then
-				var2[table.remove(var3)].EndTagIndex = #var2
+			if var7_22 then
+				var3_22[#var3_22 + 1] = #var2_22
+			elseif var8_22 and #var3_22 > 0 then
+				var2_22[table.remove(var3_22)].EndTagIndex = #var2_22
 			end
 
-			local var9 = string.sub(arg0, var5 + 1, -1)
+			local var9_22 = string.sub(arg0_22, var5_22 + 1, -1)
 
-			arg0 = string.sub(arg0, 1, var4 - 1) .. var9
-			var0 = var4
+			arg0_22 = string.sub(arg0_22, 1, var4_22 - 1) .. var9_22
+			var0_22 = var4_22
 		end
 	end
 
-	local var10 = {}
-	local var11 = 1
-	local var12 = false
-	local var13 = 1
+	local var10_22 = {}
+	local var11_22 = 1
+	local var12_22 = false
+	local var13_22 = 1
 
 	while true do
-		local var14, var15 = string.find(arg0, "[\x01-\x7F\xC2-\xF4][\x80-\xBF]*", var11)
+		local var14_22, var15_22 = string.find(arg0_22, "[\x01-\x7F\xC2-\xF4][\x80-\xBF]*", var11_22)
 
-		if not var15 then
-			var10[#var10 + 1] = {
-				value = string.sub(arg0, var13, #arg0),
-				start = var13
+		if not var15_22 then
+			var10_22[#var10_22 + 1] = {
+				value = string.sub(arg0_22, var13_22, #arg0_22),
+				start = var13_22
 			}
 
 			break
 		end
 
-		local var16 = string.sub(arg0, var14, var15)
-		local var17 = false
+		local var16_22 = string.sub(arg0_22, var14_22, var15_22)
+		local var17_22 = false
 
 		if PLATFORM_CODE == PLATFORM_US then
-			local var18 = var16 == " " or var16 == " "
+			local var18_22 = var16_22 == " " or var16_22 == " "
 
-			if var12 ~= var18 then
-				var17 = var14 > 1
+			if var12_22 ~= var18_22 then
+				var17_22 = var14_22 > 1
 			end
 
-			var12 = var18
+			var12_22 = var18_22
 		else
-			var17 = var14 > 1
+			var17_22 = var14_22 > 1
 		end
 
-		if var17 then
-			var10[#var10 + 1] = {
-				value = string.sub(arg0, var13, var14 - 1),
-				start = var13
+		if var17_22 then
+			var10_22[#var10_22 + 1] = {
+				value = string.sub(arg0_22, var13_22, var14_22 - 1),
+				start = var13_22
 			}
-			var13 = var14
+			var13_22 = var14_22
 		end
 
-		var11 = var15 + 1
+		var11_22 = var15_22 + 1
 	end
 
-	return var10, var2
+	return var10_22, var2_22
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_237 = {}
+var0_0.word_template_237 = {}
 
-local var1 = var0.word_template_237
+local var1_0 = var0_0.word_template_237
 
 function temp()
-	var1.巧 = {
+	var1_0.巧 = {
 		克 = {
 			力 = {
 				二 = {
@@ -33,7 +33,7 @@ end
 temp()
 
 function temp()
-	var1.俏 = {
+	var1_0.俏 = {
 		臀 = {
 			摄 = {
 				魄 = {
@@ -52,7 +52,7 @@ end
 temp()
 
 function temp()
-	var1.翘 = {
+	var1_0.翘 = {
 		臀 = {
 			嫩 = {
 				逼 = {
@@ -69,7 +69,7 @@ end
 temp()
 
 function temp()
-	var1.翹 = {
+	var1_0.翹 = {
 		臀 = {
 			嫩 = {
 				逼 = {
@@ -86,7 +86,7 @@ end
 temp()
 
 function temp()
-	var1.切 = {
+	var1_0.切 = {
 		肤 = {
 			之 = {
 				爱 = {
@@ -103,7 +103,7 @@ end
 temp()
 
 function temp()
-	var1.窃 = {
+	var1_0.窃 = {
 		["."] = {
 			听 = {
 				["."] = {
@@ -190,7 +190,7 @@ end
 temp()
 
 function temp()
-	var1.篋 = {
+	var1_0.篋 = {
 		this = {
 			this = true
 		}

@@ -1,221 +1,221 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.SendWindow = class("SendWindow")
+var0_0.SendWindow = class("SendWindow")
 
-local var1 = var0.SendWindow
-local var2
+local var1_0 = var0_0.SendWindow
+local var2_0
 
-function var1.Ctor(arg0, arg1, arg2)
-	arg0.connectionMgr = arg1
-	arg0.packetIdx = defaultValue(arg2, 0)
-	arg0.isSending = false
-	arg0.toSends = {}
-	arg0.retryCount = 0
-	var2 = {}
+function var1_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.connectionMgr = arg1_1
+	arg0_1.packetIdx = defaultValue(arg2_1, 0)
+	arg0_1.isSending = false
+	arg0_1.toSends = {}
+	arg0_1.retryCount = 0
+	var2_0 = {}
 end
 
-function var1.setPacketIdx(arg0, arg1)
-	arg0.packetIdx = arg1
+function var1_0.setPacketIdx(arg0_2, arg1_2)
+	arg0_2.packetIdx = arg1_2
 end
 
-function var1.getPacketIdx(arg0)
-	return arg0.packetIdx
+function var1_0.getPacketIdx(arg0_3)
+	return arg0_3.packetIdx
 end
 
-function var1.incPacketIdx(arg0)
-	arg0.packetIdx = arg0.packetIdx + 1
+function var1_0.incPacketIdx(arg0_4)
+	arg0_4.packetIdx = arg0_4.packetIdx + 1
 end
 
-function var1.Queue(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
-	table.insert(arg0.toSends, {
-		arg1,
-		arg2,
-		arg3,
-		arg4 and function(arg0)
-			table.remove(arg0.toSends, 1)
-			arg4(arg0)
+function var1_0.Queue(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5, arg5_5, arg6_5, arg7_5)
+	table.insert(arg0_5.toSends, {
+		arg1_5,
+		arg2_5,
+		arg3_5,
+		arg4_5 and function(arg0_6)
+			table.remove(arg0_5.toSends, 1)
+			arg4_5(arg0_6)
 
-			if arg0 and arg0.result and arg0.result == 0 then
-				var0.SeriesGuideMgr.GetInstance():receiceProtocol(arg3, arg2, arg0)
+			if arg0_6 and arg0_6.result and arg0_6.result == 0 then
+				var0_0.SeriesGuideMgr.GetInstance():receiceProtocol(arg3_5, arg2_5, arg0_6)
 			end
 		end,
-		arg5,
-		arg6,
-		arg7
+		arg5_5,
+		arg6_5,
+		arg7_5
 	})
 
-	if arg0.isSending then
+	if arg0_5.isSending then
 		return
 	end
 
-	arg0:StartSend()
+	arg0_5:StartSend()
 end
 
-function var1.StartSend(arg0)
-	if #arg0.toSends > 0 then
-		arg0:Send(unpack(arg0.toSends[1]))
+function var1_0.StartSend(arg0_7)
+	if #arg0_7.toSends > 0 then
+		arg0_7:Send(unpack(arg0_7.toSends[1]))
 	else
 		warning("No more packets to send.")
 	end
 end
 
-function var1.Send(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
-	arg0.isSending = true
-	arg0.currentCS = arg1
+function var1_0.Send(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8, arg5_8, arg6_8, arg7_8)
+	arg0_8.isSending = true
+	arg0_8.currentCS = arg1_8
 
-	if arg0.connectionMgr:isConnecting() then
-		arg0.connectionMgr.needStartSend = true
+	if arg0_8.connectionMgr:isConnecting() then
+		arg0_8.connectionMgr.needStartSend = true
 
 		return
 	end
 
-	local var0 = arg0.connectionMgr:getConnection()
+	local var0_8 = arg0_8.connectionMgr:getConnection()
 
-	if not var0 then
-		arg0.connectionMgr.needStartSend = true
+	if not var0_8 then
+		arg0_8.connectionMgr.needStartSend = true
 
-		arg0.connectionMgr:Reconnect(function()
+		arg0_8.connectionMgr:Reconnect(function()
 			return
 		end)
 
 		return
 	end
 
-	arg5 = defaultValue(arg5, true)
-	arg6 = defaultValue(arg6, true)
-	arg7 = defaultValue(arg7, SEND_TIMEOUT)
+	arg5_8 = defaultValue(arg5_8, true)
+	arg6_8 = defaultValue(arg6_8, true)
+	arg7_8 = defaultValue(arg7_8, SEND_TIMEOUT)
 
-	local var1 = arg0:getPacketIdx()
+	local var1_8 = arg0_8:getPacketIdx()
 
-	if arg3 ~= nil then
-		var0.UIMgr.GetInstance():LoadingOn()
+	if arg3_8 ~= nil then
+		var0_0.UIMgr.GetInstance():LoadingOn()
 
-		local var2
+		local var2_8
 
-		if arg5 then
-			var2 = arg3 .. "_" .. var1
+		if arg5_8 then
+			var2_8 = arg3_8 .. "_" .. var1_8
 		else
-			var2 = arg3
+			var2_8 = arg3_8
 		end
 
-		var2[var2] = function(arg0)
-			arg0.isSending = false
+		var2_0[var2_8] = function(arg0_10)
+			arg0_8.isSending = false
 
-			var0.UIMgr.GetInstance():LoadingOff()
-			arg0.connectionMgr:resetHBTimer()
+			var0_0.UIMgr.GetInstance():LoadingOff()
+			arg0_8.connectionMgr:resetHBTimer()
 
-			if arg0.timer then
-				arg0.timer:Stop()
+			if arg0_8.timer then
+				arg0_8.timer:Stop()
 
-				arg0.timer = nil
+				arg0_8.timer = nil
 			end
 
-			arg4(arg0)
+			arg4_8(arg0_10)
 
-			if arg6 and not arg0.isSending and #arg0.toSends > 0 then
-				arg0:StartSend()
+			if arg6_8 and not arg0_8.isSending and #arg0_8.toSends > 0 then
+				arg0_8:StartSend()
 			end
 		end
-		arg0.timer = Timer.New(function()
-			var0.UIMgr.GetInstance():LoadingOff()
+		arg0_8.timer = Timer.New(function()
+			var0_0.UIMgr.GetInstance():LoadingOff()
 
-			var2[var2] = nil
+			var2_0[var2_8] = nil
 
-			arg0:setPacketIdx(var1)
+			arg0_8:setPacketIdx(var1_8)
 
-			if arg0.retryCount > 3 then
-				arg0.connectionMgr.onDisconnected(false, DISCONNECT_TIME_OUT)
+			if arg0_8.retryCount > 3 then
+				arg0_8.connectionMgr.onDisconnected(false, DISCONNECT_TIME_OUT)
 
-				arg0.retryCount = 0
+				arg0_8.retryCount = 0
 			end
 
 			if PLATFORM_CODE == PLATFORM_CHT then
-				arg0.connectionMgr.SwitchProxy()
+				arg0_8.connectionMgr.SwitchProxy()
 			end
 
-			warning("Network is timedOut, resend: " .. var1 .. ", protocal: " .. arg1)
+			warning("Network is timedOut, resend: " .. var1_8 .. ", protocal: " .. arg1_8)
 
-			arg0.retryCount = arg0.retryCount + 1
+			arg0_8.retryCount = arg0_8.retryCount + 1
 
-			arg0:StartSend()
-		end, arg7, 1)
+			arg0_8:StartSend()
+		end, arg7_8, 1)
 
-		arg0.timer:Start()
+		arg0_8.timer:Start()
 	else
-		arg5 = false
+		arg5_8 = false
 	end
 
-	local var3 = var0.Packer.GetInstance():GetProtocolWithName("cs_" .. arg1)
+	local var3_8 = var0_0.Packer.GetInstance():GetProtocolWithName("cs_" .. arg1_8)
 
-	local function var4(arg0, arg1)
-		for iter0, iter1 in pairs(arg1) do
-			assert(arg0[iter0] ~= nil, "key does not exist: " .. iter0)
+	local function var4_8(arg0_12, arg1_12)
+		for iter0_12, iter1_12 in pairs(arg1_12) do
+			assert(arg0_12[iter0_12] ~= nil, "key does not exist: " .. iter0_12)
 
-			if type(iter1) == "table" then
-				for iter2, iter3 in ipairs(iter1) do
-					if arg0[iter0].add then
-						var4(arg0[iter0]:add(), iter3)
+			if type(iter1_12) == "table" then
+				for iter2_12, iter3_12 in ipairs(iter1_12) do
+					if arg0_12[iter0_12].add then
+						var4_8(arg0_12[iter0_12]:add(), iter3_12)
 					else
-						arg0[iter0]:append(iter3)
+						arg0_12[iter0_12]:append(iter3_12)
 					end
 				end
 			else
-				arg0[iter0] = iter1
+				arg0_12[iter0_12] = iter1_12
 			end
 		end
 	end
 
-	local var5 = var3:GetMessage()
+	local var5_8 = var3_8:GetMessage()
 
-	var4(var5, arg2)
+	var4_8(var5_8, arg2_8)
 
-	if arg5 then
-		var0:Send(var0.Packer.GetInstance():Pack(var1, var3:GetId(), var5))
-		originalPrint("Network sent protocol: " .. arg1 .. " with idx: " .. var1)
-		arg0:incPacketIdx()
+	if arg5_8 then
+		var0_8:Send(var0_0.Packer.GetInstance():Pack(var1_8, var3_8:GetId(), var5_8))
+		originalPrint("Network sent protocol: " .. arg1_8 .. " with idx: " .. var1_8)
+		arg0_8:incPacketIdx()
 	else
-		var0:Send(var0.Packer.GetInstance():Pack(0, var3:GetId(), var5))
-		originalPrint("Network sent protocol: " .. arg1 .. " without idx")
+		var0_8:Send(var0_0.Packer.GetInstance():Pack(0, var3_8:GetId(), var5_8))
+		originalPrint("Network sent protocol: " .. arg1_8 .. " without idx")
 	end
 
-	if not arg3 then
-		table.remove(arg0.toSends, 1)
+	if not arg3_8 then
+		table.remove(arg0_8.toSends, 1)
 
-		if #arg0.toSends > 0 then
-			arg0:StartSend()
+		if #arg0_8.toSends > 0 then
+			arg0_8:StartSend()
 		else
-			arg0.isSending = false
+			arg0_8.isSending = false
 		end
 	end
 end
 
-function var1.stopTimer(arg0)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var1_0.stopTimer(arg0_13)
+	if arg0_13.timer then
+		arg0_13.timer:Stop()
 
-		arg0.timer = nil
+		arg0_13.timer = nil
 	end
 end
 
-function var1.onData(arg0)
-	originalPrint("Network Receive idx: " .. arg0.idx .. " cmd: " .. arg0.cmd)
+function var1_0.onData(arg0_14)
+	originalPrint("Network Receive idx: " .. arg0_14.idx .. " cmd: " .. arg0_14.cmd)
 
-	local var0 = var0.Packer.GetInstance():Unpack(arg0.cmd, arg0:getLuaStringBuffer())
-	local var1 = arg0.cmd .. "_" .. arg0.idx
+	local var0_14 = var0_0.Packer.GetInstance():Unpack(arg0_14.cmd, arg0_14:getLuaStringBuffer())
+	local var1_14 = arg0_14.cmd .. "_" .. arg0_14.idx
 
-	if var2[var1] then
-		local var2 = var2[var1]
+	if var2_0[var1_14] then
+		local var2_14 = var2_0[var1_14]
 
-		var2[var1] = nil
+		var2_0[var1_14] = nil
 
-		var2(var0)
-	elseif var2[arg0.cmd] then
-		local var3 = var2[arg0.cmd]
+		var2_14(var0_14)
+	elseif var2_0[arg0_14.cmd] then
+		local var3_14 = var2_0[arg0_14.cmd]
 
-		var2[arg0.cmd] = nil
+		var2_0[arg0_14.cmd] = nil
 
-		var3(var0)
+		var3_14(var0_14)
 	end
 end

@@ -1,6 +1,6 @@
-﻿local var0 = class("WSMapPath", import("...BaseEntity"))
+﻿local var0_0 = class("WSMapPath", import("...BaseEntity"))
 
-var0.Fields = {
+var0_0.Fields = {
 	wsObject = "table",
 	startPos = "table",
 	upOffset = "number",
@@ -12,141 +12,141 @@ var0.Fields = {
 	dirType = "number",
 	step = "number"
 }
-var0.EventStartTrip = "WSMapPath.EventStartTrip"
-var0.EventArrivedStep = "WSMapPath.EventArrivedStep"
-var0.EventArrived = "WSMapPath.EventArrived"
+var0_0.EventStartTrip = "WSMapPath.EventStartTrip"
+var0_0.EventArrivedStep = "WSMapPath.EventArrivedStep"
+var0_0.EventArrived = "WSMapPath.EventArrived"
 
-function var0.Setup(arg0, arg1)
-	arg0.theme = arg1
+function var0_0.Setup(arg0_1, arg1_1)
+	arg0_1.theme = arg1_1
 end
 
-function var0.Dispose(arg0)
-	if arg0.twId then
-		LeanTween.cancel(arg0.twId)
+function var0_0.Dispose(arg0_2)
+	if arg0_2.twId then
+		LeanTween.cancel(arg0_2.twId)
 	end
 
-	arg0:Clear()
+	arg0_2:Clear()
 end
 
-function var0.UpdateObject(arg0, arg1)
-	assert(arg1.GetModelAngles and arg1.UpdateModelAngles and arg1.UpdateModelAction)
+function var0_0.UpdateObject(arg0_3, arg1_3)
+	assert(arg1_3.GetModelAngles and arg1_3.UpdateModelAngles and arg1_3.UpdateModelAction)
 
-	arg0.wsObject = arg1
+	arg0_3.wsObject = arg1_3
 end
 
-function var0.UpdateAction(arg0, arg1)
-	arg0.moveAction = arg1
+function var0_0.UpdateAction(arg0_4, arg1_4)
+	arg0_4.moveAction = arg1_4
 end
 
-function var0.UpdateDirType(arg0, arg1)
-	arg0.dirType = arg1
+function var0_0.UpdateDirType(arg0_5, arg1_5)
+	arg0_5.dirType = arg1_5
 end
 
-function var0.StartMove(arg0, arg1, arg2, arg3)
-	arg0.startPos = arg1
-	arg0.path = arg2
-	arg0.upOffset = arg3 or 0
-	arg0.step = 0
-	arg0.wsObject.isMoving = true
+function var0_0.StartMove(arg0_6, arg1_6, arg2_6, arg3_6)
+	arg0_6.startPos = arg1_6
+	arg0_6.path = arg2_6
+	arg0_6.upOffset = arg3_6 or 0
+	arg0_6.step = 0
+	arg0_6.wsObject.isMoving = true
 
-	arg0.wsObject:UpdateModelAction(arg0.moveAction)
-	arg0:DispatchEvent(var0.EventStartTrip)
-	arg0:MoveStep()
+	arg0_6.wsObject:UpdateModelAction(arg0_6.moveAction)
+	arg0_6:DispatchEvent(var0_0.EventStartTrip)
+	arg0_6:MoveStep()
 end
 
-function var0.MoveStep(arg0)
-	local var0 = arg0.wsObject
-	local var1 = arg0.path
-	local var2 = arg0.step > 0 and var1[arg0.step] or arg0.startPos
-	local var3 = var1[arg0.step + 1]
-	local var4 = var1[#var1]
-	local var5 = var0:GetModelAngles()
+function var0_0.MoveStep(arg0_7)
+	local var0_7 = arg0_7.wsObject
+	local var1_7 = arg0_7.path
+	local var2_7 = arg0_7.step > 0 and var1_7[arg0_7.step] or arg0_7.startPos
+	local var3_7 = var1_7[arg0_7.step + 1]
+	local var4_7 = var1_7[#var1_7]
+	local var5_7 = var0_7:GetModelAngles()
 
-	if arg0.dirType == WorldConst.DirType4 then
-		if var3.column < var2.column then
-			var5.z = 180
-		elseif var3.column > var2.column then
-			var5.z = 0
-		elseif var3.row < var2.row then
-			var5.z = 90
-		elseif var3.row > var2.row then
-			var5.z = 270
+	if arg0_7.dirType == WorldConst.DirType4 then
+		if var3_7.column < var2_7.column then
+			var5_7.z = 180
+		elseif var3_7.column > var2_7.column then
+			var5_7.z = 0
+		elseif var3_7.row < var2_7.row then
+			var5_7.z = 90
+		elseif var3_7.row > var2_7.row then
+			var5_7.z = 270
 		end
 
-		var0:UpdateModelAngles(var5)
-	elseif arg0.dirType == WorldConst.DirType2 then
-		if var3.column < var2.column or var3.column == var2.column and var4.column < var2.column then
-			var5.y = 180
-		elseif var3.column ~= var2.column or var4.column ~= var2.column then
-			var5.y = 0
+		var0_7:UpdateModelAngles(var5_7)
+	elseif arg0_7.dirType == WorldConst.DirType2 then
+		if var3_7.column < var2_7.column or var3_7.column == var2_7.column and var4_7.column < var2_7.column then
+			var5_7.y = 180
+		elseif var3_7.column ~= var2_7.column or var4_7.column ~= var2_7.column then
+			var5_7.y = 0
 		end
 
-		var0:UpdateModelAngles(var5)
+		var0_7:UpdateModelAngles(var5_7)
 	end
 
-	local var6 = arg0.theme:GetLinePosition(var2.row, var2.column)
-	local var7 = arg0.theme:GetLinePosition(var3.row, var3.column)
+	local var6_7 = arg0_7.theme:GetLinePosition(var2_7.row, var2_7.column)
+	local var7_7 = arg0_7.theme:GetLinePosition(var3_7.row, var3_7.column)
 
-	assert(var3.duration, "without move duration")
+	assert(var3_7.duration, "without move duration")
 
-	arg0.twId = LeanTween.value(var0.transform.gameObject, 0, 1, var3.duration):setOnUpdate(System.Action_float(function(arg0)
-		local var0 = Vector3.Lerp(var6, var7, arg0)
-		local var1, var2 = arg0:CalcUpOffset(arg0.step, arg0)
+	arg0_7.twId = LeanTween.value(var0_7.transform.gameObject, 0, 1, var3_7.duration):setOnUpdate(System.Action_float(function(arg0_8)
+		local var0_8 = Vector3.Lerp(var6_7, var7_7, arg0_8)
+		local var1_8, var2_8 = arg0_7:CalcUpOffset(arg0_7.step, arg0_8)
 
-		var0.transform.localPosition = var0 + var1
+		var0_7.transform.localPosition = var0_8 + var1_8
 
-		if var0.rtShadow then
-			var0.rtShadow.localPosition = Vector3(0, -var2, 0)
+		if var0_7.rtShadow then
+			var0_7.rtShadow.localPosition = Vector3(0, -var2_8, 0)
 		end
 	end)):setOnComplete(System.Action(function()
-		arg0.step = arg0.step + 1
+		arg0_7.step = arg0_7.step + 1
 
-		if arg0.step >= #var1 then
-			arg0.twId = nil
+		if arg0_7.step >= #var1_7 then
+			arg0_7.twId = nil
 
-			var0:UpdateModelAction(WorldConst.ActionIdle)
+			var0_7:UpdateModelAction(WorldConst.ActionIdle)
 
-			var0.isMoving = false
+			var0_7.isMoving = false
 
-			arg0:DispatchEvent(var0.EventArrived)
+			arg0_7:DispatchEvent(var0_0.EventArrived)
 		else
-			arg0:DispatchEvent(var0.EventArrivedStep, var3)
+			arg0_7:DispatchEvent(var0_0.EventArrivedStep, var3_7)
 			onDelayTick(function()
-				arg0:MoveStep()
+				arg0_7:MoveStep()
 			end, 0.015)
 		end
 	end)).uniqueId
 
-	arg0:FlushPaused()
+	arg0_7:FlushPaused()
 end
 
-function var0.UpdatePaused(arg0, arg1)
-	if arg0.paused ~= arg1 then
-		arg0.paused = arg1
+function var0_0.UpdatePaused(arg0_11, arg1_11)
+	if arg0_11.paused ~= arg1_11 then
+		arg0_11.paused = arg1_11
 
-		arg0:FlushPaused()
+		arg0_11:FlushPaused()
 	end
 end
 
-function var0.FlushPaused(arg0)
-	if arg0.paused then
-		LeanTween.pause(arg0.twId)
-		arg0.wsObject:UpdateModelAction(WorldConst.ActionIdle)
+function var0_0.FlushPaused(arg0_12)
+	if arg0_12.paused then
+		LeanTween.pause(arg0_12.twId)
+		arg0_12.wsObject:UpdateModelAction(WorldConst.ActionIdle)
 	else
-		LeanTween.resume(arg0.twId)
-		arg0.wsObject:UpdateModelAction(arg0.moveAction)
+		LeanTween.resume(arg0_12.twId)
+		arg0_12.wsObject:UpdateModelAction(arg0_12.moveAction)
 	end
 end
 
-function var0.CalcUpOffset(arg0, arg1, arg2)
-	local var0 = math.sin((arg1 + arg2) / #arg0.path * math.pi)
-	local var1 = math.clamp(var0, 0, 1) * arg0.upOffset
+function var0_0.CalcUpOffset(arg0_13, arg1_13, arg2_13)
+	local var0_13 = math.sin((arg1_13 + arg2_13) / #arg0_13.path * math.pi)
+	local var1_13 = math.clamp(var0_13, 0, 1) * arg0_13.upOffset
 
-	return Vector3(0, arg0.theme.cosAngle * var1, -arg0.theme.sinAngle * var1), var1
+	return Vector3(0, arg0_13.theme.cosAngle * var1_13, -arg0_13.theme.sinAngle * var1_13), var1_13
 end
 
-function var0.IsMoving(arg0)
-	return arg0.twId ~= nil
+function var0_0.IsMoving(arg0_14)
+	return arg0_14.twId ~= nil
 end
 
-return var0
+return var0_0

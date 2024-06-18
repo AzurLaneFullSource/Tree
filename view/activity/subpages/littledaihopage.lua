@@ -1,70 +1,70 @@
-﻿local var0 = class("LittleDaihoPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var0_0 = class("LittleDaihoPage", import(".TemplatePage.PtTemplatePage"))
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
+function var0_0.OnInit(arg0_1)
+	var0_0.super.OnInit(arg0_1)
 
-	arg0.helpBtn = arg0.bg:Find("help_btn")
+	arg0_1.helpBtn = arg0_1.bg:Find("help_btn")
 
-	local var0 = arg0.bg:Find("step_content")
+	local var0_1 = arg0_1.bg:Find("step_content")
 
-	arg0.itemList = UIItemList.New(var0, var0:Find("tpl"))
+	arg0_1.itemList = UIItemList.New(var0_1, var0_1:Find("tpl"))
 end
 
-function var0.OnFirstFlush(arg0)
-	var0.super.OnFirstFlush(arg0)
-	onButton(arg0, arg0.getBtn, function()
-		if arg0.inLT then
+function var0_0.OnFirstFlush(arg0_2)
+	var0_0.super.OnFirstFlush(arg0_2)
+	onButton(arg0_2, arg0_2.getBtn, function()
+		if arg0_2.inLT then
 			return
 		end
 
-		local var0 = {}
-		local var1 = arg0.ptData:GetAward()
-		local var2 = getProxy(PlayerProxy):getRawData()
-		local var3 = pg.gameset.urpt_chapter_max.description[1]
-		local var4 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var3)
-		local var5, var6 = Task.StaticJudgeOverflow(var2.gold, var2.oil, var4, true, true, {
+		local var0_3 = {}
+		local var1_3 = arg0_2.ptData:GetAward()
+		local var2_3 = getProxy(PlayerProxy):getRawData()
+		local var3_3 = pg.gameset.urpt_chapter_max.description[1]
+		local var4_3 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var3_3)
+		local var5_3, var6_3 = Task.StaticJudgeOverflow(var2_3.gold, var2_3.oil, var4_3, true, true, {
 			{
-				var1.type,
-				var1.id,
-				var1.count
+				var1_3.type,
+				var1_3.id,
+				var1_3.count
 			}
 		})
 
-		if var5 then
-			table.insert(var0, function(arg0)
+		if var5_3 then
+			table.insert(var0_3, function(arg0_4)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					type = MSGBOX_TYPE_ITEM_BOX,
 					content = i18n("award_max_warning"),
-					items = var6,
-					onYes = arg0
+					items = var6_3,
+					onYes = arg0_4
 				})
 			end)
 		end
 
-		table.insert(var0, function(arg0)
-			arg0.inLT = true
+		table.insert(var0_3, function(arg0_5)
+			arg0_2.inLT = true
 
-			local var0 = cloneTplTo(arg0.itemList.container:Find("tpl"), arg0.itemList.container)
+			local var0_5 = cloneTplTo(arg0_2.itemList.container:Find("tpl"), arg0_2.itemList.container)
 
-			setLocalScale(var0, Vector2.zero)
-			LeanTween.scale(var0, Vector3.one, 0.6):setEase(LeanTweenType.easeInBack):setOnComplete(System.Action(arg0))
+			setLocalScale(var0_5, Vector2.zero)
+			LeanTween.scale(var0_5, Vector3.one, 0.6):setEase(LeanTweenType.easeInBack):setOnComplete(System.Action(arg0_5))
 		end)
-		table.insert(var0, function(arg0)
-			LeanTween.delayedCall(0.2, System.Action(arg0))
+		table.insert(var0_3, function(arg0_6)
+			LeanTween.delayedCall(0.2, System.Action(arg0_6))
 		end)
-		seriesAsync(var0, function()
-			arg0.inLT = false
+		seriesAsync(var0_3, function()
+			arg0_2.inLT = false
 
-			local var0, var1 = arg0.ptData:GetResProgress()
+			local var0_7, var1_7 = arg0_2.ptData:GetResProgress()
 
-			arg0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+			arg0_2:emit(ActivityMediator.EVENT_PT_OPERATION, {
 				cmd = 1,
-				activity_id = arg0.ptData:GetId(),
-				arg1 = var1
+				activity_id = arg0_2.ptData:GetId(),
+				arg1 = var1_7
 			})
 		end)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_2, arg0_2.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("littleTaihou_npc")
@@ -72,13 +72,13 @@ function var0.OnFirstFlush(arg0)
 	end, SFX_PANEL)
 end
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
-	arg0.itemList:align(arg0.ptData:GetLevel())
+function var0_0.OnUpdateFlush(arg0_9)
+	var0_0.super.OnUpdateFlush(arg0_9)
+	arg0_9.itemList:align(arg0_9.ptData:GetLevel())
 
-	local var0, var1, var2 = arg0.ptData:GetResProgress()
+	local var0_9, var1_9, var2_9 = arg0_9.ptData:GetResProgress()
 
-	setText(arg0.progress, (var2 >= 1 and setColorStr(var0, "#9F413AFF") or var0) .. "/" .. var1)
+	setText(arg0_9.progress, (var2_9 >= 1 and setColorStr(var0_9, "#9F413AFF") or var0_9) .. "/" .. var1_9)
 end
 
-return var0
+return var0_0

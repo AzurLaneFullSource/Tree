@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_365 = {}
+var0_0.word_template_365 = {}
 
-local var1 = var0.word_template_365
+local var1_0 = var0_0.word_template_365
 
 function temp()
-	var1.桺 = {
+	var1_0.桺 = {
 		絲 = {
 			事 = {
 				件 = {
@@ -26,7 +26,7 @@ end
 temp()
 
 function temp()
-	var1.V = {
+	var1_0.V = {
 		I = {
 			I = {
 				I = {
@@ -518,7 +518,7 @@ end
 temp()
 
 function temp()
-	var1.铭 = {
+	var1_0.铭 = {
 		记 = {
 			八 = {
 				酒 = {
@@ -532,7 +532,7 @@ end
 temp()
 
 function temp()
-	var1.履 = {
+	var1_0.履 = {
 		带 = {
 			下 = {
 				的 = {
@@ -550,7 +550,7 @@ end
 temp()
 
 function temp()
-	var1.此 = {
+	var1_0.此 = {
 		木 = {
 			王 = {
 				令 = {
@@ -564,7 +564,7 @@ end
 temp()
 
 function temp()
-	var1.捂 = {
+	var1_0.捂 = {
 		耳 = {
 			凯 = {
 				西 = {
@@ -588,7 +588,7 @@ end
 temp()
 
 function temp()
-	var1["4"] = {
+	var1_0["4"] = {
 		路 = {
 			酒 = {
 				吧 = {

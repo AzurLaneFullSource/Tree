@@ -1,57 +1,57 @@
-﻿local var0 = class("GetChapterDropShipListCommand", pm.SimpleCommand)
+﻿local var0_0 = class("GetChapterDropShipListCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.chapterId
-	local var2 = var0.callback
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.chapterId
+	local var2_1 = var0_1.callback
 
-	assert(var1)
+	assert(var1_1)
 
-	local var3 = getProxy(ChapterProxy)
+	local var3_1 = getProxy(ChapterProxy)
 
-	if not var3.FectchDropShipListFlags then
-		var3.FectchDropShipListFlags = {}
+	if not var3_1.FectchDropShipListFlags then
+		var3_1.FectchDropShipListFlags = {}
 	end
 
-	if not var3.FectchDropShipListFlags[var1] then
+	if not var3_1.FectchDropShipListFlags[var1_1] then
 		pg.ConnectionMgr.GetInstance():Send(13109, {
-			id = var1
-		}, 13110, function(arg0)
-			local var0 = {}
+			id = var1_1
+		}, 13110, function(arg0_2)
+			local var0_2 = {}
 
-			for iter0, iter1 in ipairs(arg0.drop_ship_list) do
-				table.insert(var0, iter1)
+			for iter0_2, iter1_2 in ipairs(arg0_2.drop_ship_list) do
+				table.insert(var0_2, iter1_2)
 			end
 
-			local var1 = var3:getChapterById(var1)
+			local var1_2 = var3_1:getChapterById(var1_1)
 
-			var1:UpdateDropShipList(var0)
+			var1_2:UpdateDropShipList(var0_2)
 
-			var3.FectchDropShipListFlags[var1] = true
+			var3_1.FectchDropShipListFlags[var1_1] = true
 
-			var3:updateChapter(var1)
+			var3_1:updateChapter(var1_2)
 
-			local var2 = var1:GetDropShipList()
+			local var2_2 = var1_2:GetDropShipList()
 
-			if var2 then
-				var2(var2)
+			if var2_1 then
+				var2_1(var2_2)
 			end
 
-			arg0:sendNotification(GAME.GET_CHAPTER_DROP_SHIP_LIST_DONE, {
-				shipIds = var2
+			arg0_1:sendNotification(GAME.GET_CHAPTER_DROP_SHIP_LIST_DONE, {
+				shipIds = var2_2
 			})
 		end)
 	else
-		local var4 = var3:getChapterById(var1):GetDropShipList()
+		local var4_1 = var3_1:getChapterById(var1_1):GetDropShipList()
 
-		if var2 then
-			var2(var4)
+		if var2_1 then
+			var2_1(var4_1)
 		end
 
-		arg0:sendNotification(GAME.GET_CHAPTER_DROP_SHIP_LIST_DONE, {
-			shipIds = var4
+		arg0_1:sendNotification(GAME.GET_CHAPTER_DROP_SHIP_LIST_DONE, {
+			shipIds = var4_1
 		})
 	end
 end
 
-return var0
+return var0_0

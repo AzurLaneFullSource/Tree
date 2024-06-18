@@ -1,91 +1,91 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConst
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConst
 
-var0.Battle.BattleWallData = class("BattleWallData")
-var0.Battle.BattleWallData.__name = "BattleWallData"
+var0_0.Battle.BattleWallData = class("BattleWallData")
+var0_0.Battle.BattleWallData.__name = "BattleWallData"
 
-local var2 = var0.Battle.BattleWallData
+local var2_0 = var0_0.Battle.BattleWallData
 
-var2.CLD_OBJ_TYPE_BULLET = 1
-var2.CLD_OBJ_TYPE_SHIP = 2
+var2_0.CLD_OBJ_TYPE_BULLET = 1
+var2_0.CLD_OBJ_TYPE_SHIP = 2
 
-function var2.Ctor(arg0, arg1, arg2, arg3, arg4, arg5)
-	arg0._id = arg1
-	arg0._host = arg2
-	arg0._cldFun = arg3
-	arg0._cldBox = arg4
-	arg0._cldOffset = arg5
+function var2_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1, arg5_1)
+	arg0_1._id = arg1_1
+	arg0_1._host = arg2_1
+	arg0_1._cldFun = arg3_1
+	arg0_1._cldBox = arg4_1
+	arg0_1._cldOffset = arg5_1
 
-	arg0:InitCldComponent()
+	arg0_1:InitCldComponent()
 end
 
-function var2.InitCldComponent(arg0)
-	local var0 = arg0._cldBox
-	local var1 = arg0._cldOffset
+function var2_0.InitCldComponent(arg0_2)
+	local var0_2 = arg0_2._cldBox
+	local var1_2 = arg0_2._cldOffset
 
-	if var0.range then
-		arg0._cldComponent = var0.Battle.BattleColumnCldComponent.New(var0.range, 5, var1[1], var1[3])
+	if var0_2.range then
+		arg0_2._cldComponent = var0_0.Battle.BattleColumnCldComponent.New(var0_2.range, 5, var1_2[1], var1_2[3])
 	else
-		arg0._cldComponent = var0.Battle.BattleCubeCldComponent.New(var0[1], var0[2], var0[3], var1[1], var1[3])
+		arg0_2._cldComponent = var0_0.Battle.BattleCubeCldComponent.New(var0_2[1], var0_2[2], var0_2[3], var1_2[1], var1_2[3])
 	end
 
-	local var2 = {
-		type = var1.CldType.WALL,
-		UID = arg0:GetUniqueID(),
-		func = arg0:GetCldFunc()
+	local var2_2 = {
+		type = var1_0.CldType.WALL,
+		UID = arg0_2:GetUniqueID(),
+		func = arg0_2:GetCldFunc()
 	}
 
-	arg0._cldComponent:SetCldData(var2)
-	arg0._cldComponent:SetActive(true)
-	arg0:SetCldObjType()
+	arg0_2._cldComponent:SetCldData(var2_2)
+	arg0_2._cldComponent:SetActive(true)
+	arg0_2:SetCldObjType()
 end
 
-function var2.IsActive(arg0)
-	return arg0._host:IsWallActive()
+function var2_0.IsActive(arg0_3)
+	return arg0_3._host:IsWallActive()
 end
 
-function var2.DeactiveCldBox(arg0)
-	arg0._cldComponent:SetActive(false)
+function var2_0.DeactiveCldBox(arg0_4)
+	arg0_4._cldComponent:SetActive(false)
 end
 
-function var2.GetCldBox(arg0)
-	return arg0._cldComponent:GetCldBox(arg0:GetPosition())
+function var2_0.GetCldBox(arg0_5)
+	return arg0_5._cldComponent:GetCldBox(arg0_5:GetPosition())
 end
 
-function var2.GetCldData(arg0)
-	return arg0._cldComponent:GetCldData()
+function var2_0.GetCldData(arg0_6)
+	return arg0_6._cldComponent:GetCldData()
 end
 
-function var2.GetBoxSize(arg0)
-	return arg0._cldComponent:GetCldBoxSize()
+function var2_0.GetBoxSize(arg0_7)
+	return arg0_7._cldComponent:GetCldBoxSize()
 end
 
-function var2.GetHost(arg0)
-	return arg0._host
+function var2_0.GetHost(arg0_8)
+	return arg0_8._host
 end
 
-function var2.GetIFF(arg0)
-	return arg0:GetHost():GetIFF()
+function var2_0.GetIFF(arg0_9)
+	return arg0_9:GetHost():GetIFF()
 end
 
-function var2.GetPosition(arg0)
-	return arg0:GetHost():GetPosition()
+function var2_0.GetPosition(arg0_10)
+	return arg0_10:GetHost():GetPosition()
 end
 
-function var2.GetUniqueID(arg0)
-	return arg0._id
+function var2_0.GetUniqueID(arg0_11)
+	return arg0_11._id
 end
 
-function var2.GetCldFunc(arg0)
-	return arg0._cldFun
+function var2_0.GetCldFunc(arg0_12)
+	return arg0_12._cldFun
 end
 
-function var2.SetCldObjType(arg0, arg1)
-	arg0._cldObjType = arg1 or var2.CLD_OBJ_TYPE_BULLET
+function var2_0.SetCldObjType(arg0_13, arg1_13)
+	arg0_13._cldObjType = arg1_13 or var2_0.CLD_OBJ_TYPE_BULLET
 end
 
-function var2.GetCldObjType(arg0)
-	return arg0._cldObjType
+function var2_0.GetCldObjType(arg0_14)
+	return arg0_14._cldObjType
 end

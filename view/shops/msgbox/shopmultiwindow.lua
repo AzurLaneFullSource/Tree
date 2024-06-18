@@ -1,127 +1,127 @@
-﻿local var0 = class("ShopMultiWindow", import("...base.BaseSubView"))
+﻿local var0_0 = class("ShopMultiWindow", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ShopsUIMsgbox"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.topItem = arg0:findTF("item/panel_bg")
-	arg0.ownerTF = arg0.topItem:Find("left/own")
-	arg0.detailTF = arg0.topItem:Find("left/detail")
-	arg0.nameTF = arg0.topItem:Find("display_panel/name_container/name/Text"):GetComponent(typeof(Text))
-	arg0.descTF = arg0.topItem:Find("display_panel/desc/Text"):GetComponent(typeof(Text))
-	arg0.timeLimitTF = arg0.topItem:Find("time_limit")
-	arg0.bottomItem = arg0:findTF("got/panel_bg/list/item")
-	arg0.itemCountTF = arg0.bottomItem:Find("icon_bg/count"):GetComponent(typeof(Text))
-	arg0.maxBtn = arg0:findTF("count/max")
-	arg0.leftBtn = arg0:findTF("count/number_panel/left")
-	arg0.rightBtn = arg0:findTF("count/number_panel/right")
-	arg0.countTF = arg0:findTF("count/number_panel/value"):GetComponent(typeof(Text))
-	arg0.cancelBtn = arg0:findTF("actions/cancel_button")
-	arg0.confirmBtn = arg0:findTF("actions/confirm_button")
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.topItem = arg0_2:findTF("item/panel_bg")
+	arg0_2.ownerTF = arg0_2.topItem:Find("left/own")
+	arg0_2.detailTF = arg0_2.topItem:Find("left/detail")
+	arg0_2.nameTF = arg0_2.topItem:Find("display_panel/name_container/name/Text"):GetComponent(typeof(Text))
+	arg0_2.descTF = arg0_2.topItem:Find("display_panel/desc/Text"):GetComponent(typeof(Text))
+	arg0_2.timeLimitTF = arg0_2.topItem:Find("time_limit")
+	arg0_2.bottomItem = arg0_2:findTF("got/panel_bg/list/item")
+	arg0_2.itemCountTF = arg0_2.bottomItem:Find("icon_bg/count"):GetComponent(typeof(Text))
+	arg0_2.maxBtn = arg0_2:findTF("count/max")
+	arg0_2.leftBtn = arg0_2:findTF("count/number_panel/left")
+	arg0_2.rightBtn = arg0_2:findTF("count/number_panel/right")
+	arg0_2.countTF = arg0_2:findTF("count/number_panel/value"):GetComponent(typeof(Text))
+	arg0_2.cancelBtn = arg0_2:findTF("actions/cancel_button")
+	arg0_2.confirmBtn = arg0_2:findTF("actions/confirm_button")
 
-	setText(arg0:findTF("got/panel_bg/got_text"), i18n("shops_msgbox_output"))
-	setText(arg0:findTF("count/image_text"), i18n("shops_msgbox_exchange_count"))
-	setText(arg0:findTF("actions/cancel_button/label"), i18n("shop_word_cancel"))
-	setText(arg0:findTF("actions/confirm_button/label"), i18n("shop_word_exchange"))
+	setText(arg0_2:findTF("got/panel_bg/got_text"), i18n("shops_msgbox_output"))
+	setText(arg0_2:findTF("count/image_text"), i18n("shops_msgbox_exchange_count"))
+	setText(arg0_2:findTF("actions/cancel_button/label"), i18n("shop_word_cancel"))
+	setText(arg0_2:findTF("actions/confirm_button/label"), i18n("shop_word_exchange"))
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0.cancelBtn, function()
-		arg0:Close()
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3.cancelBtn, function()
+		arg0_3:Close()
 	end, SFX_PANEL)
-	onButton(arg0, arg0._tf:Find("bg"), function()
-		arg0:Close()
+	onButton(arg0_3, arg0_3._tf:Find("bg"), function()
+		arg0_3:Close()
 	end, SFX_PANEL)
 end
 
-function var0.Open(arg0, arg1, arg2)
-	arg0.opening = true
+function var0_0.Open(arg0_6, arg1_6, arg2_6)
+	arg0_6.opening = true
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
-	arg0:InitWindow(arg1, arg2)
-	arg0:Show()
+	pg.UIMgr.GetInstance():BlurPanel(arg0_6._tf)
+	arg0_6:InitWindow(arg1_6, arg2_6)
+	arg0_6:Show()
 end
 
-function var0.InitWindow(arg0, arg1, arg2)
-	local var0 = {
-		id = arg1:getConfig("commodity_id"),
-		type = arg1:getConfig("commodity_type"),
-		count = arg1:getConfig("num")
+function var0_0.InitWindow(arg0_7, arg1_7, arg2_7)
+	local var0_7 = {
+		id = arg1_7:getConfig("commodity_id"),
+		type = arg1_7:getConfig("commodity_type"),
+		count = arg1_7:getConfig("num")
 	}
 
-	if isa(arg1, ActivityCommodity) then
-		local var1, var2, var3 = arg1:CheckTimeLimit()
+	if isa(arg1_7, ActivityCommodity) then
+		local var1_7, var2_7, var3_7 = arg1_7:CheckTimeLimit()
 
-		setActive(arg0.timeLimitTF, var1)
+		setActive(arg0_7.timeLimitTF, var1_7)
 
-		if var1 and var2 then
-			local var4 = getProxy(ActivityProxy):getActivityById(Item.getConfigData(var0.id).link_id)
+		if var1_7 and var2_7 then
+			local var4_7 = getProxy(ActivityProxy):getActivityById(Item.getConfigData(var0_7.id).link_id)
 
-			setText(arg0:findTF("Text", arg0.timeLimitTF), i18n("eventshop_time_hint", var4:GetEndTimeStrByConfig()))
+			setText(arg0_7:findTF("Text", arg0_7.timeLimitTF), i18n("eventshop_time_hint", var4_7:GetEndTimeStrByConfig()))
 		end
 	end
 
-	local var5 = Drop.New({
-		type = arg1:getConfig("resource_category"),
-		id = arg1:getConfig("resource_type")
+	local var5_7 = Drop.New({
+		type = arg1_7:getConfig("resource_category"),
+		id = arg1_7:getConfig("resource_type")
 	}):getOwnedCount()
-	local var6 = math.max(math.floor(var5 / arg1:getConfig("resource_num")), 1)
+	local var6_7 = math.max(math.floor(var5_7 / arg1_7:getConfig("resource_num")), 1)
 
-	if arg1:getConfig("num_limit") ~= 0 or isa(arg1, QuotaCommodity) then
-		local var7 = arg1:GetPurchasableCnt()
+	if arg1_7:getConfig("num_limit") ~= 0 or isa(arg1_7, QuotaCommodity) then
+		local var7_7 = arg1_7:GetPurchasableCnt()
 
-		var6 = math.min(var6, math.max(0, var7))
+		var6_7 = math.min(var6_7, math.max(0, var7_7))
 	end
 
-	local function var8(arg0)
-		arg0 = math.max(arg0, 1)
-		arg0 = math.min(arg0, var6)
-		arg0.countTF.text = arg0
-		arg0.curCount = arg0
-		arg0.itemCountTF.text = arg0 * arg1:getConfig("num")
+	local function var8_7(arg0_8)
+		arg0_8 = math.max(arg0_8, 1)
+		arg0_8 = math.min(arg0_8, var6_7)
+		arg0_7.countTF.text = arg0_8
+		arg0_7.curCount = arg0_8
+		arg0_7.itemCountTF.text = arg0_8 * arg1_7:getConfig("num")
 	end
 
-	var8(1)
-	updateDrop(arg0.topItem:Find("left/IconTpl"), var0)
-	UpdateOwnDisplay(arg0.ownerTF, var0)
-	RegisterDetailButton(arg0, arg0.detailTF, var0)
+	var8_7(1)
+	updateDrop(arg0_7.topItem:Find("left/IconTpl"), var0_7)
+	UpdateOwnDisplay(arg0_7.ownerTF, var0_7)
+	RegisterDetailButton(arg0_7, arg0_7.detailTF, var0_7)
 
-	arg0.nameTF.text = var0:getConfig("name")
-	arg0.descTF.text = var0.desc or var0:getConfig("desc")
+	arg0_7.nameTF.text = var0_7:getConfig("name")
+	arg0_7.descTF.text = var0_7.desc or var0_7:getConfig("desc")
 
-	updateDrop(arg0.bottomItem, var0)
-	onButton(arg0, arg0.confirmBtn, function()
-		if arg2 then
-			arg2(arg1, arg0.curCount, var0:getConfig("name"))
+	updateDrop(arg0_7.bottomItem, var0_7)
+	onButton(arg0_7, arg0_7.confirmBtn, function()
+		if arg2_7 then
+			arg2_7(arg1_7, arg0_7.curCount, var0_7:getConfig("name"))
 		end
 
-		arg0:Close()
+		arg0_7:Close()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.leftBtn, function()
-		var8(arg0.curCount - 1)
+	onButton(arg0_7, arg0_7.leftBtn, function()
+		var8_7(arg0_7.curCount - 1)
 	end)
-	onButton(arg0, arg0.rightBtn, function()
-		var8(arg0.curCount + 1)
+	onButton(arg0_7, arg0_7.rightBtn, function()
+		var8_7(arg0_7.curCount + 1)
 	end)
-	onButton(arg0, arg0.maxBtn, function()
-		var8(var6)
+	onButton(arg0_7, arg0_7.maxBtn, function()
+		var8_7(var6_7)
 	end)
 end
 
-function var0.Close(arg0)
-	if arg0.opening then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, arg0._parentTf)
-		arg0:Hide()
+function var0_0.Close(arg0_13)
+	if arg0_13.opening then
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_13._tf, arg0_13._parentTf)
+		arg0_13:Hide()
 
-		arg0.opening = false
+		arg0_13.opening = false
 	end
 end
 
-function var0.OnDestroy(arg0)
-	if arg0.opening then
-		arg0:Close()
+function var0_0.OnDestroy(arg0_14)
+	if arg0_14.opening then
+		arg0_14:Close()
 	end
 end
 
-return var0
+return var0_0

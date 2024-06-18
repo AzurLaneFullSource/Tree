@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_376 = {}
+var0_0.word_template_376 = {}
 
-local var1 = var0.word_template_376
+local var1_0 = var0_0.word_template_376
 
 function temp()
-	var1.坏 = {
+	var1_0.坏 = {
 		哥 = {
 			哥 = {
 				a = {
@@ -37,7 +37,7 @@ end
 temp()
 
 function temp()
-	var1.凹 = {
+	var1_0.凹 = {
 		凸 = {
 			视 = {
 				频 = {
@@ -59,7 +59,7 @@ end
 temp()
 
 function temp()
-	var1.盾 = {
+	var1_0.盾 = {
 		卡 = {
 			交 = {
 				易 = {
@@ -73,7 +73,7 @@ end
 temp()
 
 function temp()
-	var1.y = {
+	var1_0.y = {
 		h = {
 			k = {
 				["3"] = {
@@ -133,7 +133,7 @@ end
 temp()
 
 function temp()
-	var1.镁 = {
+	var1_0.镁 = {
 		粉 = {
 			燃 = {
 				烧 = {
@@ -149,7 +149,7 @@ end
 temp()
 
 function temp()
-	var1.H = {
+	var1_0.H = {
 		幼 = {
 			this = true,
 			论 = {
@@ -293,7 +293,7 @@ end
 temp()
 
 function temp()
-	var1.幺 = {
+	var1_0.幺 = {
 		力 = {
 			女 = {
 				福 = {

@@ -1,11 +1,11 @@
-﻿local var0 = class("ReplaceRivalsCommand", pm.SimpleCommand)
+﻿local var0_0 = class("ReplaceRivalsCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = getProxy(MilitaryExerciseProxy)
-	local var1 = var0:getSeasonInfo()
-	local var2 = var1:getconsumeGem()
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = getProxy(MilitaryExerciseProxy)
+	local var1_1 = var0_1:getSeasonInfo()
+	local var2_1 = var1_1:getconsumeGem()
 
-	if var1:getFlashCount() > MAX_REPLACE_RIVAL_COUNT then
+	if var1_1:getFlashCount() > MAX_REPLACE_RIVAL_COUNT then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_refresh_count_insufficient"))
 
 		return
@@ -13,27 +13,27 @@ function var0.execute(arg0, arg1)
 
 	pg.ConnectionMgr.GetInstance():Send(18003, {
 		type = 0
-	}, 18004, function(arg0)
-		if arg0.result == 0 then
-			local var0 = {}
+	}, 18004, function(arg0_2)
+		if arg0_2.result == 0 then
+			local var0_2 = {}
 
-			for iter0, iter1 in ipairs(arg0.target_list) do
-				local var1 = Rival.New(iter1)
+			for iter0_2, iter1_2 in ipairs(arg0_2.target_list) do
+				local var1_2 = Rival.New(iter1_2)
 
-				table.insert(var0, var1)
+				table.insert(var0_2, var1_2)
 			end
 
-			var0:updateRivals(var0)
+			var0_1:updateRivals(var0_2)
 
-			var1 = var0:getSeasonInfo()
+			var1_1 = var0_1:getSeasonInfo()
 
-			var1:increaseFlashCount()
-			var0:updateSeasonInfo(var1)
-			arg0:sendNotification(GAME.REPLACE_RIVALS_DONE, var0)
+			var1_1:increaseFlashCount()
+			var0_1:updateSeasonInfo(var1_1)
+			arg0_1:sendNotification(GAME.REPLACE_RIVALS_DONE, var0_2)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0_2.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

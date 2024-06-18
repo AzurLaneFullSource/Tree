@@ -1,88 +1,88 @@
-﻿local var0 = class("MaoxiV4FramePage", import(".TemplatePage.NewFrameTemplatePage"))
+﻿local var0_0 = class("MaoxiV4FramePage", import(".TemplatePage.NewFrameTemplatePage"))
 
-var0.COLOR = "#1895ff"
+var0_0.COLOR = "#1895ff"
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
+function var0_0.OnInit(arg0_1)
+	var0_0.super.OnInit(arg0_1)
 
-	arg0.switchBtns = {
-		arg0:findTF("switch_btn_1", arg0.switchBtn),
-		arg0:findTF("switch_btn_2", arg0.switchBtn)
+	arg0_1.switchBtns = {
+		arg0_1:findTF("switch_btn_1", arg0_1.switchBtn),
+		arg0_1:findTF("switch_btn_2", arg0_1.switchBtn)
 	}
 end
 
-function var0.OnFirstFlush(arg0)
-	var0.super.OnFirstFlush(arg0)
-	setActive(arg0.switchBtns[1], false)
-	setActive(arg0.switchBtns[2], true)
+function var0_0.OnFirstFlush(arg0_2)
+	var0_0.super.OnFirstFlush(arg0_2)
+	setActive(arg0_2.switchBtns[1], false)
+	setActive(arg0_2.switchBtns[2], true)
 end
 
-function var0.OnUpdateFlush(arg0)
-	local var0 = arg0.activity.data1
-	local var1 = arg0.avatarConfig.target
+function var0_0.OnUpdateFlush(arg0_3)
+	local var0_3 = arg0_3.activity.data1
+	local var1_3 = arg0_3.avatarConfig.target
 
-	var0 = var1 < var0 and var1 or var0
+	var0_3 = var1_3 < var0_3 and var1_3 or var0_3
 
-	local var2 = var0 / var1
+	local var2_3 = var0_3 / var1_3
 
-	setText(arg0.cur, var2 >= 1 and setColorStr(var0, var0.COLOR) or var0)
-	setText(arg0.target, "/" .. var1)
-	setFillAmount(arg0.bar, var2)
+	setText(arg0_3.cur, var2_3 >= 1 and setColorStr(var0_3, var0_0.COLOR) or var0_3)
+	setText(arg0_3.target, "/" .. var1_3)
+	setFillAmount(arg0_3.bar, var2_3)
 
-	local var3 = var1 <= var0
-	local var4 = arg0.activity.data2 >= 1
+	local var3_3 = var1_3 <= var0_3
+	local var4_3 = arg0_3.activity.data2 >= 1
 
-	setActive(arg0.battleBtn, arg0.inPhase2 and not var3)
-	setActive(arg0.getBtn, arg0.inPhase2 and not var4 and var3)
-	setActive(arg0.gotBtn, arg0.inPhase2 and var4)
-	setActive(arg0.gotTag, arg0.inPhase2 and var4)
-	setActive(arg0.cur, not var4 and arg0.inPhase2)
-	setActive(arg0.target, not var4 and arg0.inPhase2)
+	setActive(arg0_3.battleBtn, arg0_3.inPhase2 and not var3_3)
+	setActive(arg0_3.getBtn, arg0_3.inPhase2 and not var4_3 and var3_3)
+	setActive(arg0_3.gotBtn, arg0_3.inPhase2 and var4_3)
+	setActive(arg0_3.gotTag, arg0_3.inPhase2 and var4_3)
+	setActive(arg0_3.cur, not var4_3 and arg0_3.inPhase2)
+	setActive(arg0_3.target, not var4_3 and arg0_3.inPhase2)
 end
 
-function var0.Switch(arg0, arg1)
-	arg0.isSwitching = true
+function var0_0.Switch(arg0_4, arg1_4)
+	arg0_4.isSwitching = true
 
-	setToggleEnabled(arg0.switchBtn, false)
-	setActive(arg0.switchBtns[1], true)
-	setActive(arg0.switchBtns[2], false)
+	setToggleEnabled(arg0_4.switchBtn, false)
+	setActive(arg0_4.switchBtns[1], true)
+	setActive(arg0_4.switchBtns[2], false)
 
-	arg0.switchBtns[1], arg0.switchBtns[2] = arg0.switchBtns[2], arg0.switchBtns[1]
+	arg0_4.switchBtns[1], arg0_4.switchBtns[2] = arg0_4.switchBtns[2], arg0_4.switchBtns[1]
 
-	local var0
-	local var1
+	local var0_4
+	local var1_4
 
-	if arg1 then
-		var0, var1 = arg0.phases[1], arg0.phases[2]
+	if arg1_4 then
+		var0_4, var1_4 = arg0_4.phases[1], arg0_4.phases[2]
 	else
-		var0, var1 = arg0.phases[2], arg0.phases[1]
+		var0_4, var1_4 = arg0_4.phases[2], arg0_4.phases[1]
 	end
 
-	local var2 = GetOrAddComponent(var0, typeof(CanvasGroup))
-	local var3 = var0.localPosition
-	local var4 = var1.localPosition
+	local var2_4 = GetOrAddComponent(var0_4, typeof(CanvasGroup))
+	local var3_4 = var0_4.localPosition
+	local var4_4 = var1_4.localPosition
 
-	var1:SetAsLastSibling()
-	setActive(var0:Find("Image"), false)
-	LeanTween.moveLocal(go(var0), var4, 0.4):setOnComplete(System.Action(function()
-		setActive(var0:Find("label"), true)
+	var1_4:SetAsLastSibling()
+	setActive(var0_4:Find("Image"), false)
+	LeanTween.moveLocal(go(var0_4), var4_4, 0.4):setOnComplete(System.Action(function()
+		setActive(var0_4:Find("label"), true)
 	end))
-	LeanTween.value(go(var0), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg0)
-		var2.alpha = arg0
+	LeanTween.value(go(var0_4), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg0_6)
+		var2_4.alpha = arg0_6
 	end))
-	setActive(var1:Find("Image"), true)
+	setActive(var1_4:Find("Image"), true)
 
-	local var5 = GetOrAddComponent(var1, typeof(CanvasGroup))
+	local var5_4 = GetOrAddComponent(var1_4, typeof(CanvasGroup))
 
-	LeanTween.value(go(var1), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg0)
-		var5.alpha = arg0
+	LeanTween.value(go(var1_4), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg0_7)
+		var5_4.alpha = arg0_7
 	end))
-	setActive(var1:Find("label"), false)
-	LeanTween.moveLocal(go(var1), var3, 0.4):setOnComplete(System.Action(function()
-		arg0.isSwitching = nil
+	setActive(var1_4:Find("label"), false)
+	LeanTween.moveLocal(go(var1_4), var3_4, 0.4):setOnComplete(System.Action(function()
+		arg0_4.isSwitching = nil
 
-		setToggleEnabled(arg0.switchBtn, true)
+		setToggleEnabled(arg0_4.switchBtn, true)
 	end))
 end
 
-return var0
+return var0_0

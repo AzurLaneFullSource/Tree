@@ -1,14 +1,14 @@
-﻿local var0 = class("ReloadSceneCommand", pm.SimpleCommand)
+﻿local var0_0 = class("ReloadSceneCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = getProxy(ContextProxy):popContext()
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = getProxy(ContextProxy):popContext()
 
-	var1:extendData(var0)
-	arg0:sendNotification(GAME.LOAD_SCENE, {
+	var1_1:extendData(var0_1)
+	arg0_1:sendNotification(GAME.LOAD_SCENE, {
 		isReload = true,
-		context = var1
+		context = var1_1
 	})
 end
 
-return var0
+return var0_0

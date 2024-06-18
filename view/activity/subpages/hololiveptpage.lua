@@ -1,101 +1,101 @@
-﻿local var0 = class("HoloLivePtPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var0_0 = class("HoloLivePtPage", import(".TemplatePage.PtTemplatePage"))
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
+function var0_0.OnInit(arg0_1)
+	var0_0.super.OnInit(arg0_1)
 
-	arg0.charImg = arg0:findTF("charImg", arg0.bg)
-	arg0.numImg = arg0:findTF("numImg", arg0.bg)
-	arg0.chapterImg = arg0:findTF("chapterImg", arg0.bg)
-	arg0.spineCharContainer = arg0:findTF("SpineChar", arg0.bg)
-	arg0.scrollTextMask = arg0:findTF("ScrollText", arg0.bg)
-	arg0.scrollTextContainer = arg0:findTF("ScrollText/TextList", arg0.bg)
-	arg0.scrollTextTpl = arg0:findTF("TextTpl", arg0.bg)
+	arg0_1.charImg = arg0_1:findTF("charImg", arg0_1.bg)
+	arg0_1.numImg = arg0_1:findTF("numImg", arg0_1.bg)
+	arg0_1.chapterImg = arg0_1:findTF("chapterImg", arg0_1.bg)
+	arg0_1.spineCharContainer = arg0_1:findTF("SpineChar", arg0_1.bg)
+	arg0_1.scrollTextMask = arg0_1:findTF("ScrollText", arg0_1.bg)
+	arg0_1.scrollTextContainer = arg0_1:findTF("ScrollText/TextList", arg0_1.bg)
+	arg0_1.scrollTextTpl = arg0_1:findTF("TextTpl", arg0_1.bg)
 end
 
-function var0.OnDataSetting(arg0)
-	var0.super.OnDataSetting(arg0)
+function var0_0.OnDataSetting(arg0_2)
+	var0_0.super.OnDataSetting(arg0_2)
 
-	arg0.ptCount = arg0.ptData:GetResProgress()
-	arg0.ptRank = pg.activity_event_pt[arg0.activity.id].pt_list
-	arg0.picNameList = pg.activity_event_pt[arg0.activity.id].pic_list
+	arg0_2.ptCount = arg0_2.ptData:GetResProgress()
+	arg0_2.ptRank = pg.activity_event_pt[arg0_2.activity.id].pt_list
+	arg0_2.picNameList = pg.activity_event_pt[arg0_2.activity.id].pic_list
 end
 
-function var0.OnFirstFlush(arg0)
-	var0.super.OnFirstFlush(arg0)
-	arg0:initScrollTextList()
+function var0_0.OnFirstFlush(arg0_3)
+	var0_0.super.OnFirstFlush(arg0_3)
+	arg0_3:initScrollTextList()
 
-	local var0 = arg0.ptRank[2] - arg0.ptRank[1]
-	local var1 = math.floor(arg0.ptCount / var0) + 1
+	local var0_3 = arg0_3.ptRank[2] - arg0_3.ptRank[1]
+	local var1_3 = math.floor(arg0_3.ptCount / var0_3) + 1
 
-	if var1 > #arg0.picNameList then
-		var1 = #arg0.picNameList
+	if var1_3 > #arg0_3.picNameList then
+		var1_3 = #arg0_3.picNameList
 	end
 
-	local var2 = arg0.picNameList[var1]
+	local var2_3 = arg0_3.picNameList[var1_3]
 
-	LoadSpriteAtlasAsync("ui/activityuipage/hololiveptpage", var2, function(arg0)
-		setImageSprite(arg0.charImg, arg0)
+	LoadSpriteAtlasAsync("ui/activityuipage/hololiveptpage", var2_3, function(arg0_4)
+		setImageSprite(arg0_3.charImg, arg0_4)
 	end)
-	LoadSpriteAtlasAsync("ui/activityuipage/hololiveptpage", "#" .. var1, function(arg0)
-		setImageSprite(arg0.numImg, arg0)
+	LoadSpriteAtlasAsync("ui/activityuipage/hololiveptpage", "#" .. var1_3, function(arg0_5)
+		setImageSprite(arg0_3.numImg, arg0_5)
 	end)
-	LoadSpriteAtlasAsync("ui/activityuipage/hololiveptpage", "jiaobiao_" .. var1, function(arg0)
-		setImageSprite(arg0.chapterImg, arg0)
+	LoadSpriteAtlasAsync("ui/activityuipage/hololiveptpage", "jiaobiao_" .. var1_3, function(arg0_6)
+		setImageSprite(arg0_3.chapterImg, arg0_6)
 	end)
 
-	local var3 = "vtuber_shion"
+	local var3_3 = "vtuber_shion"
 
 	pg.UIMgr.GetInstance():LoadingOn()
-	PoolMgr.GetInstance():GetSpineChar(var3, true, function(arg0)
+	PoolMgr.GetInstance():GetSpineChar(var3_3, true, function(arg0_7)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		arg0.prefab = var3
-		arg0.model = arg0
-		tf(arg0).localScale = Vector3(1, 1, 1)
+		arg0_3.prefab = var3_3
+		arg0_3.model = arg0_7
+		tf(arg0_7).localScale = Vector3(1, 1, 1)
 
-		arg0:GetComponent("SpineAnimUI"):SetAction("stand", 0)
-		setParent(arg0, arg0.spineCharContainer)
+		arg0_7:GetComponent("SpineAnimUI"):SetAction("stand", 0)
+		setParent(arg0_7, arg0_3.spineCharContainer)
 	end)
 end
 
-function var0.OnDestroy(arg0)
-	if arg0.scrollTextTimer then
-		arg0.scrollTextTimer:Stop()
+function var0_0.OnDestroy(arg0_8)
+	if arg0_8.scrollTextTimer then
+		arg0_8.scrollTextTimer:Stop()
 
-		arg0.scrollTextTimer = nil
+		arg0_8.scrollTextTimer = nil
 	end
 
-	if arg0.prefab and arg0.model then
-		PoolMgr.GetInstance():ReturnSpineChar(arg0.prefab, arg0.model)
+	if arg0_8.prefab and arg0_8.model then
+		PoolMgr.GetInstance():ReturnSpineChar(arg0_8.prefab, arg0_8.model)
 
-		arg0.prefab = nil
-		arg0.model = nil
+		arg0_8.prefab = nil
+		arg0_8.model = nil
 	end
 end
 
-function var0.initScrollTextList(arg0)
-	setText(arg0.scrollTextTpl, arg0.activity:getConfig("config_client").scrollStr)
+function var0_0.initScrollTextList(arg0_9)
+	setText(arg0_9.scrollTextTpl, arg0_9.activity:getConfig("config_client").scrollStr)
 
-	local var0 = GetComponent(arg0.scrollTextTpl, "Text").preferredWidth + arg0.scrollTextMask.rect.width + 50
-	local var1 = arg0.scrollTextContainer.localPosition.x - var0
-	local var2 = 50
-	local var3 = 0.0166666666666667
+	local var0_9 = GetComponent(arg0_9.scrollTextTpl, "Text").preferredWidth + arg0_9.scrollTextMask.rect.width + 50
+	local var1_9 = arg0_9.scrollTextContainer.localPosition.x - var0_9
+	local var2_9 = 50
+	local var3_9 = 0.0166666666666667
 
-	UIItemList.New(arg0.scrollTextContainer, arg0.scrollTextTpl):align(2)
+	UIItemList.New(arg0_9.scrollTextContainer, arg0_9.scrollTextTpl):align(2)
 
-	local var4 = arg0.scrollTextContainer:GetChild(1)
+	local var4_9 = arg0_9.scrollTextContainer:GetChild(1)
 
-	arg0.scrollTextTimer = Timer.New(function()
-		local var0 = arg0.scrollTextContainer.localPosition.x - var2 * var3
+	arg0_9.scrollTextTimer = Timer.New(function()
+		local var0_10 = arg0_9.scrollTextContainer.localPosition.x - var2_9 * var3_9
 
-		if var0 <= var1 then
-			var0 = var4.localPosition.x + arg0.scrollTextContainer.localPosition.x
+		if var0_10 <= var1_9 then
+			var0_10 = var4_9.localPosition.x + arg0_9.scrollTextContainer.localPosition.x
 		end
 
-		arg0.scrollTextContainer.localPosition = Vector3(var0, 0, 0)
-	end, var3, -1, true)
+		arg0_9.scrollTextContainer.localPosition = Vector3(var0_10, 0, 0)
+	end, var3_9, -1, true)
 
-	arg0.scrollTextTimer:Start()
+	arg0_9.scrollTextTimer:Start()
 end
 
-return var0
+return var0_0

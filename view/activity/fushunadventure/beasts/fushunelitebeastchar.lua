@@ -1,22 +1,22 @@
-﻿local var0 = class("FushunEliteBeastChar", import(".FushunBeastChar"))
+﻿local var0_0 = class("FushunEliteBeastChar", import(".FushunBeastChar"))
 
-function var0.Hurt(arg0, arg1)
-	if arg0:IsDeath() or arg0:IsEscape() then
+function var0_0.Hurt(arg0_1, arg1_1)
+	if arg0_1:IsDeath() or arg0_1:IsEscape() then
 		return
 	end
 
-	arg0.animatorEvent:SetEndEvent(nil)
-	arg0.animatorEvent:SetEndEvent(function()
-		arg0:Unfreeze()
+	arg0_1.animatorEvent:SetEndEvent(nil)
+	arg0_1.animatorEvent:SetEndEvent(function()
+		arg0_1:Unfreeze()
 	end)
-	arg0:Freeze()
-	arg0:UpdateHp(arg0.hp - arg1)
-	arg0.animator:SetTrigger("damage")
+	arg0_1:Freeze()
+	arg0_1:UpdateHp(arg0_1.hp - arg1_1)
+	arg0_1.animator:SetTrigger("damage")
 end
 
-function var0.UpdateHp(arg0, arg1)
-	var0.super.UpdateHp(arg0, arg1)
-	arg0.animator:SetInteger("hp", arg0.hp)
+function var0_0.UpdateHp(arg0_3, arg1_3)
+	var0_0.super.UpdateHp(arg0_3, arg1_3)
+	arg0_3.animator:SetInteger("hp", arg0_3.hp)
 end
 
-return var0
+return var0_0

@@ -1,24 +1,24 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleSkillChangeDiveState = class("BattleSkillChangeDiveState", var0.Battle.BattleSkillEffect)
-var0.Battle.BattleSkillChangeDiveState.__name = "BattleSkillChangeDiveState"
+var0_0.Battle.BattleSkillChangeDiveState = class("BattleSkillChangeDiveState", var0_0.Battle.BattleSkillEffect)
+var0_0.Battle.BattleSkillChangeDiveState.__name = "BattleSkillChangeDiveState"
 
-local var1 = var0.Battle.BattleSkillChangeDiveState
+local var1_0 = var0_0.Battle.BattleSkillChangeDiveState
 
-function var1.Ctor(arg0, arg1, arg2)
-	var1.super.Ctor(arg0, arg1, arg2)
+function var1_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var1_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 
-	arg0._state = arg0._tempData.arg_list.state
-	arg0._expose = arg0._tempData.arg_list.expose
+	arg0_1._state = arg0_1._tempData.arg_list.state
+	arg0_1._expose = arg0_1._tempData.arg_list.expose
 end
 
-function var1.DoDataEffect(arg0, arg1, arg2)
-	if arg2:IsAlive() then
-		local var0 = arg2:GetOxyState() or arg2:InitOxygen()
+function var1_0.DoDataEffect(arg0_2, arg1_2, arg2_2)
+	if arg2_2:IsAlive() then
+		local var0_2 = arg2_2:GetOxyState() or arg2_2:InitOxygen()
 
-		arg2:ChangeOxygenState(arg0._state)
-		var0:SetForceExpose(arg0._expose)
+		arg2_2:ChangeOxygenState(arg0_2._state)
+		var0_2:SetForceExpose(arg0_2._expose)
 	end
 end

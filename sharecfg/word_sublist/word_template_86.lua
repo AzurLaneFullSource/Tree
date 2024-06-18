@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_86 = {}
+var0_0.word_template_86 = {}
 
-local var1 = var0.word_template_86
+local var1_0 = var0_0.word_template_86
 
 function temp()
-	var1.顶 = {
+	var1_0.顶 = {
 		得 = {
 			好 = {
 				深 = {
@@ -30,7 +30,7 @@ end
 temp()
 
 function temp()
-	var1.頂 = {
+	var1_0.頂 = {
 		頂 = {
 			撞 = {
 				撞 = {
@@ -46,7 +46,7 @@ end
 temp()
 
 function temp()
-	var1.订 = {
+	var1_0.订 = {
 		购 = {
 			this = true,
 			苯 = {
@@ -219,7 +219,7 @@ end
 temp()
 
 function temp()
-	var1.定 = {
+	var1_0.定 = {
 		▲ = {
 			位 = {
 				▲ = {
@@ -314,7 +314,7 @@ end
 temp()
 
 function temp()
-	var1.訂 = {
+	var1_0.訂 = {
 		購 = {
 			this = true
 		}
@@ -324,7 +324,7 @@ end
 temp()
 
 function temp()
-	var1.腚 = {
+	var1_0.腚 = {
 		this = {
 			this = true
 		}
@@ -334,7 +334,7 @@ end
 temp()
 
 function temp()
-	var1.錠 = {
+	var1_0.錠 = {
 		位 = {
 			噐 = {
 				this = true

@@ -1,82 +1,82 @@
-﻿local var0 = class("PassChaptersTemplatePage", import("view.base.BaseActivityPage"))
+﻿local var0_0 = class("PassChaptersTemplatePage", import("view.base.BaseActivityPage"))
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("AD")
-	arg0.slider = arg0:findTF("slider", arg0.bg):GetComponent(typeof(Slider))
-	arg0.step = arg0:findTF("step", arg0.bg):GetComponent(typeof(Text))
-	arg0.progress = arg0:findTF("progress", arg0.bg):GetComponent(typeof(Text))
-	arg0.desc = arg0:findTF("desc", arg0.bg):GetComponent(typeof(Text))
-	arg0.awardTF = arg0:findTF("award", arg0.bg)
-	arg0.battleBtn = arg0:findTF("battle_btn", arg0.bg)
-	arg0.getBtn = arg0:findTF("get_btn", arg0.bg)
-	arg0.gotBtn = arg0:findTF("got_btn", arg0.bg)
-	arg0.buildBtn = arg0:findTF("build_btn", arg0.bg)
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.slider = arg0_1:findTF("slider", arg0_1.bg):GetComponent(typeof(Slider))
+	arg0_1.step = arg0_1:findTF("step", arg0_1.bg):GetComponent(typeof(Text))
+	arg0_1.progress = arg0_1:findTF("progress", arg0_1.bg):GetComponent(typeof(Text))
+	arg0_1.desc = arg0_1:findTF("desc", arg0_1.bg):GetComponent(typeof(Text))
+	arg0_1.awardTF = arg0_1:findTF("award", arg0_1.bg)
+	arg0_1.battleBtn = arg0_1:findTF("battle_btn", arg0_1.bg)
+	arg0_1.getBtn = arg0_1:findTF("get_btn", arg0_1.bg)
+	arg0_1.gotBtn = arg0_1:findTF("got_btn", arg0_1.bg)
+	arg0_1.buildBtn = arg0_1:findTF("build_btn", arg0_1.bg)
 end
 
-function var0.OnDataSetting(arg0)
-	local var0 = getProxy(TaskProxy)
+function var0_0.OnDataSetting(arg0_2)
+	local var0_2 = getProxy(TaskProxy)
 
-	arg0.taskList = arg0.taskList or arg0.activity:getConfig("config_data")
+	arg0_2.taskList = arg0_2.taskList or arg0_2.activity:getConfig("config_data")
 
-	for iter0, iter1 in ipairs(arg0.taskList) do
-		arg0.taskIndex = iter0
-		arg0.taskVO = var0:getTaskVO(iter1)
+	for iter0_2, iter1_2 in ipairs(arg0_2.taskList) do
+		arg0_2.taskIndex = iter0_2
+		arg0_2.taskVO = var0_2:getTaskVO(iter1_2)
 
-		if not arg0.taskVO:isReceive() then
+		if not arg0_2.taskVO:isReceive() then
 			break
 		end
 	end
 
-	assert(arg0.taskVO, "without any taskVO!!!")
+	assert(arg0_2.taskVO, "without any taskVO!!!")
 end
 
-function var0.OnFirstFlush(arg0)
-	onButton(arg0, arg0.battleBtn, function()
-		arg0:emit(ActivityMediator.BATTLE_OPERA)
+function var0_0.OnFirstFlush(arg0_3)
+	onButton(arg0_3, arg0_3.battleBtn, function()
+		arg0_3:emit(ActivityMediator.BATTLE_OPERA)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.getBtn, function()
-		arg0:emit(ActivityMediator.ON_TASK_SUBMIT, arg0.taskVO)
+	onButton(arg0_3, arg0_3.getBtn, function()
+		arg0_3:emit(ActivityMediator.ON_TASK_SUBMIT, arg0_3.taskVO)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.buildBtn, function()
-		arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+	onButton(arg0_3, arg0_3.buildBtn, function()
+		arg0_3:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
 			projectName = BuildShipScene.PROJECTS.ACTIVITY
 		})
 	end, SFX_PANEL)
 end
 
-function var0.OnUpdateFlush(arg0)
-	local var0 = arg0.taskVO:getConfig("award_display")[1]
-	local var1 = {
-		type = var0[1],
-		id = var0[2],
-		count = var0[3]
+function var0_0.OnUpdateFlush(arg0_7)
+	local var0_7 = arg0_7.taskVO:getConfig("award_display")[1]
+	local var1_7 = {
+		type = var0_7[1],
+		id = var0_7[2],
+		count = var0_7[3]
 	}
 
-	updateDrop(arg0.awardTF, var1)
-	onButton(arg0, arg0.awardTF, function()
-		arg0:emit(BaseUI.ON_DROP, var1)
+	updateDrop(arg0_7.awardTF, var1_7)
+	onButton(arg0_7, arg0_7.awardTF, function()
+		arg0_7:emit(BaseUI.ON_DROP, var1_7)
 	end, SFX_PANEL)
 
-	if arg0.step then
-		setText(arg0.step, arg0.taskIndex .. "/" .. #arg0.taskList)
+	if arg0_7.step then
+		setText(arg0_7.step, arg0_7.taskIndex .. "/" .. #arg0_7.taskList)
 	end
 
-	local var2 = arg0.taskVO:getProgress()
-	local var3 = arg0.taskVO:getConfig("target_num")
+	local var2_7 = arg0_7.taskVO:getProgress()
+	local var3_7 = arg0_7.taskVO:getConfig("target_num")
 
-	setText(arg0.desc, arg0.taskVO:getConfig("desc"))
-	setText(arg0.progress, var2 .. "/" .. var3)
-	setSlider(arg0.slider, 0, var3, var2)
+	setText(arg0_7.desc, arg0_7.taskVO:getConfig("desc"))
+	setText(arg0_7.progress, var2_7 .. "/" .. var3_7)
+	setSlider(arg0_7.slider, 0, var3_7, var2_7)
 
-	local var4 = arg0.taskVO:getTaskStatus()
+	local var4_7 = arg0_7.taskVO:getTaskStatus()
 
-	setActive(arg0.battleBtn, var4 == 0)
-	setActive(arg0.getBtn, var4 == 1)
-	setActive(arg0.gotBtn, var4 == 2)
+	setActive(arg0_7.battleBtn, var4_7 == 0)
+	setActive(arg0_7.getBtn, var4_7 == 1)
+	setActive(arg0_7.gotBtn, var4_7 == 2)
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_9)
 	return
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_104 = {}
+var0_0.word_template_104 = {}
 
-local var1 = var0.word_template_104
+local var1_0 = var0_0.word_template_104
 
 function temp()
-	var1.傅 = {
+	var1_0.傅 = {
 		鹏 = {
 			this = true
 		},
@@ -35,7 +35,7 @@ end
 temp()
 
 function temp()
-	var1.富 = {
+	var1_0.富 = {
 		贵 = {
 			在 = {
 				天 = {
@@ -132,7 +132,7 @@ end
 temp()
 
 function temp()
-	var1.缚 = {
+	var1_0.缚 = {
 		美 = {
 			传 = {
 				this = true
@@ -144,7 +144,7 @@ end
 temp()
 
 function temp()
-	var1.噶 = {
+	var1_0.噶 = {
 		伦 = {
 			桑 = {
 				东 = {
@@ -163,7 +163,7 @@ end
 temp()
 
 function temp()
-	var1.该 = {
+	var1_0.该 = {
 		国 = {
 			全 = {
 				国 = {
@@ -321,7 +321,7 @@ end
 temp()
 
 function temp()
-	var1.改 = {
+	var1_0.改 = {
 		表 = {
 			器 = {
 				this = true
@@ -449,7 +449,7 @@ end
 temp()
 
 function temp()
-	var1.甘 = {
+	var1_0.甘 = {
 		油 = {
 			三 = {
 				硝 = {

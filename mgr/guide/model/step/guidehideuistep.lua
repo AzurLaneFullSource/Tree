@@ -1,26 +1,26 @@
-﻿local var0 = class("GuideHideUIStep", import(".GuideStep"))
+﻿local var0_0 = class("GuideHideUIStep", import(".GuideStep"))
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0.nodes = {}
+	arg0_1.nodes = {}
 
-	for iter0, iter1 in ipairs(arg1.hideui) do
-		table.insert(arg0.nodes, {
-			path = iter1.path,
-			delay = iter1.delay or 0,
-			pathIndex = iter1.pathIndex or -1,
-			hideFlag = iter1.ishide
+	for iter0_1, iter1_1 in ipairs(arg1_1.hideui) do
+		table.insert(arg0_1.nodes, {
+			path = iter1_1.path,
+			delay = iter1_1.delay or 0,
+			pathIndex = iter1_1.pathIndex or -1,
+			hideFlag = iter1_1.ishide
 		})
 	end
 end
 
-function var0.GetType(arg0)
+function var0_0.GetType(arg0_2)
 	return GuideStep.TYPE_HIDEUI
 end
 
-function var0.GetHideNodes(arg0)
-	return arg0.nodes
+function var0_0.GetHideNodes(arg0_3)
+	return arg0_3.nodes
 end
 
-return var0
+return var0_0

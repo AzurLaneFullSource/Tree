@@ -1,26 +1,26 @@
-﻿local var0 = class("BackChargeMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("BackChargeMediator", import("..base.ContextMediator"))
 
-var0.CHARGE = "BackChargeMediator:CHARGE"
+var0_0.CHARGE = "BackChargeMediator:CHARGE"
 
-function var0.register(arg0)
-	local var0 = getProxy(PlayerProxy):getData()
+function var0_0.register(arg0_1)
+	local var0_1 = getProxy(PlayerProxy):getData()
 
-	arg0.viewComponent:setPlayer(var0)
+	arg0_1.viewComponent:setPlayer(var0_1)
 
-	local var1 = getProxy(ShopsProxy):getChargedList()
+	local var1_1 = getProxy(ShopsProxy):getChargedList()
 
-	if var1 then
-		arg0.viewComponent:setChargedList(var1)
+	if var1_1 then
+		arg0_1.viewComponent:setChargedList(var1_1)
 	end
 
-	arg0:bind(var0.CHARGE, function(arg0, arg1)
-		arg0:sendNotification(GAME.REFUND_CHHARGE, {
-			shopId = arg1
+	arg0_1:bind(var0_0.CHARGE, function(arg0_2, arg1_2)
+		arg0_1:sendNotification(GAME.REFUND_CHHARGE, {
+			shopId = arg1_2
 		})
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_3)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.CHARGE_SUCCESS,
@@ -28,21 +28,21 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_4, arg1_4)
+	local var0_4 = arg1_4:getName()
+	local var1_4 = arg1_4:getBody()
 
-	if var0 == PlayerProxy.UPDATED then
+	if var0_4 == PlayerProxy.UPDATED then
 		-- block empty
-	elseif var0 == ShopsProxy.CHARGED_LIST_UPDATED then
+	elseif var0_4 == ShopsProxy.CHARGED_LIST_UPDATED then
 		-- block empty
-	elseif var0 == GAME.CHARGE_CONFIRM_FAILED then
+	elseif var0_4 == GAME.CHARGE_CONFIRM_FAILED then
 		-- block empty
-	elseif var0 == GAME.CHARGE_SUCCESS then
-		arg0:sendNotification(GAME.GET_REFUND_INFO)
-	elseif var0 == GAME.REFUND_INFO_UPDATE then
-		arg0.viewComponent:refundUpdate()
+	elseif var0_4 == GAME.CHARGE_SUCCESS then
+		arg0_4:sendNotification(GAME.GET_REFUND_INFO)
+	elseif var0_4 == GAME.REFUND_INFO_UPDATE then
+		arg0_4.viewComponent:refundUpdate()
 	end
 end
 
-return var0
+return var0_0

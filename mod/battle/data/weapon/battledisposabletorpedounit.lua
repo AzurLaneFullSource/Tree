@@ -1,36 +1,36 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleUnitEvent
-local var2 = class("BattleDisposableTorpedoUnit", var0.Battle.BattleManualTorpedoUnit)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleUnitEvent
+local var2_0 = class("BattleDisposableTorpedoUnit", var0_0.Battle.BattleManualTorpedoUnit)
 
-var0.Battle.BattleDisposableTorpedoUnit = var2
-var2.__name = "BattleDisposableTorpedoUnit"
+var0_0.Battle.BattleDisposableTorpedoUnit = var2_0
+var2_0.__name = "BattleDisposableTorpedoUnit"
 
-function var2.Ctor(arg0)
-	var2.super.Ctor(arg0)
+function var2_0.Ctor(arg0_1)
+	var2_0.super.Ctor(arg0_1)
 end
 
-function var2.EnterCoolDown(arg0)
+function var2_0.EnterCoolDown(arg0_2)
 	return
 end
 
-function var2.Fire(arg0)
-	var2.super.Fire(arg0)
-	arg0._playerTorpedoVO:Deduct(arg0)
-	arg0._playerTorpedoVO:DispatchOverLoadChange()
+function var2_0.Fire(arg0_3)
+	var2_0.super.Fire(arg0_3)
+	arg0_3._playerTorpedoVO:Deduct(arg0_3)
+	arg0_3._playerTorpedoVO:DispatchOverLoadChange()
 
 	return true
 end
 
-function var2.OverHeat(arg0)
-	arg0._currentState = arg0.STATE_OVER_HEAT
+function var2_0.OverHeat(arg0_4)
+	arg0_4._currentState = arg0_4.STATE_OVER_HEAT
 end
 
-function var2.GetType(arg0)
-	return var0.Battle.BattleConst.EquipmentType.DISPOSABLE_TORPEDO
+function var2_0.GetType(arg0_5)
+	return var0_0.Battle.BattleConst.EquipmentType.DISPOSABLE_TORPEDO
 end
 
-function var2.createMajorEmitter(arg0, arg1, arg2, arg3, arg4, arg5)
-	return var2.super.createMajorEmitter(arg0, 1, arg2, arg3, arg4, arg5)
+function var2_0.createMajorEmitter(arg0_6, arg1_6, arg2_6, arg3_6, arg4_6, arg5_6)
+	return var2_0.super.createMajorEmitter(arg0_6, 1, arg2_6, arg3_6, arg4_6, arg5_6)
 end

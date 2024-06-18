@@ -1,14 +1,14 @@
-﻿local var0 = class("IdolMedalCollectionMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("IdolMedalCollectionMediator", import("view.base.ContextMediator"))
 
-function var0.register(arg0)
-	arg0:BindEvent()
+function var0_0.register(arg0_1)
+	arg0_1:BindEvent()
 end
 
-function var0.BindEvent(arg0)
+function var0_0.BindEvent(arg0_2)
 	return
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_3)
 	return {
 		GAME.MEMORYBOOK_UNLOCK_DONE,
 		ActivityProxy.ACTIVITY_SHOW_AWARDS,
@@ -16,21 +16,21 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_4, arg1_4)
+	local var0_4 = arg1_4:getName()
+	local var1_4 = arg1_4:getBody()
 
-	if var0 == GAME.MEMORYBOOK_UNLOCK_DONE then
-		arg0.viewComponent:updateAfterSubmit(var1)
-	elseif var0 == ActivityProxy.ACTIVITY_UPDATED then
-		if var1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PUZZLA then
-			arg0.viewComponent:UpdateActivity()
+	if var0_4 == GAME.MEMORYBOOK_UNLOCK_DONE then
+		arg0_4.viewComponent:updateAfterSubmit(var1_4)
+	elseif var0_4 == ActivityProxy.ACTIVITY_UPDATED then
+		if var1_4:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PUZZLA then
+			arg0_4.viewComponent:UpdateActivity()
 		end
-	elseif var0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
-		local var2 = getProxy(ContextProxy):getContextByMediator(ActivityMediator)
+	elseif var0_4 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
+		local var2_4 = getProxy(ContextProxy):getContextByMediator(ActivityMediator)
 
-		arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var1.awards, var1.callback)
+		arg0_4.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_4.awards, var1_4.callback)
 	end
 end
 
-return var0
+return var0_0

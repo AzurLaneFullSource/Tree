@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_348 = {}
+var0_0.word_template_348 = {}
 
-local var1 = var0.word_template_348
+local var1_0 = var0_0.word_template_348
 
 function temp()
-	var1.纸 = {
+	var1_0.纸 = {
 		包 = {
 			梦 = {
 				惊 = {
@@ -30,7 +30,7 @@ end
 temp()
 
 function temp()
-	var1.至 = {
+	var1_0.至 = {
 		尊 = {
 			神 = {
 				油 = {
@@ -44,7 +44,7 @@ end
 temp()
 
 function temp()
-	var1.制 = {
+	var1_0.制 = {
 		冰 = {
 			技 = {
 				术 = {
@@ -419,7 +419,7 @@ end
 temp()
 
 function temp()
-	var1.治 = {
+	var1_0.治 = {
 		安 = {
 			搞 = {
 				乱 = {
@@ -461,7 +461,7 @@ end
 temp()
 
 function temp()
-	var1.桎 = {
+	var1_0.桎 = {
 		梏 = {
 			館 = {
 				this = true
@@ -473,7 +473,7 @@ end
 temp()
 
 function temp()
-	var1.致 = {
+	var1_0.致 = {
 		富 = {
 			基 = {
 				本 = {
@@ -512,7 +512,7 @@ end
 temp()
 
 function temp()
-	var1.智 = {
+	var1_0.智 = {
 		利 = {
 			["2"] = {
 				["2"] = {

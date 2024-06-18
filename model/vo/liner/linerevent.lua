@@ -1,40 +1,40 @@
-﻿local var0 = class("LinerEvent", import("model.vo.BaseVO"))
+﻿local var0_0 = class("LinerEvent", import("model.vo.BaseVO"))
 
-function var0.Ctor(arg0, arg1)
-	arg0.id = arg1
-	arg0.configId = arg0.id
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.id = arg1_1
+	arg0_1.configId = arg0_1.id
 end
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_2)
 	return pg.activity_liner_event
 end
 
-function var0.GetOptionName(arg0)
-	return HXSet.hxLan(arg0:getConfig("option"))
+function var0_0.GetOptionName(arg0_3)
+	return HXSet.hxLan(arg0_3:getConfig("option"))
 end
 
-function var0.GetOptionDisplay(arg0)
-	local var0 = {}
+function var0_0.GetOptionDisplay(arg0_4)
+	local var0_4 = {}
 
-	for iter0, iter1 in ipairs(arg0:getConfig("option_desc_display")) do
-		local var1 = HXSet.hxLan(iter1[1])
+	for iter0_4, iter1_4 in ipairs(arg0_4:getConfig("option_desc_display")) do
+		local var1_4 = HXSet.hxLan(iter1_4[1])
 
-		table.insert(var0, var1)
+		table.insert(var0_4, var1_4)
 	end
 
-	return var0
+	return var0_4
 end
 
-function var0.GetTitle(arg0)
-	return HXSet.hxLan(arg0:getConfig("title"))
+function var0_0.GetTitle(arg0_5)
+	return HXSet.hxLan(arg0_5:getConfig("title"))
 end
 
-function var0.GetLogDesc(arg0)
-	return HXSet.hxLan(arg0:getConfig("option_desc"))
+function var0_0.GetLogDesc(arg0_6)
+	return HXSet.hxLan(arg0_6:getConfig("option_desc"))
 end
 
-function var0.GetReasoningDesc(arg0)
-	return HXSet.hxLan(arg0:getConfig("option_desc_2"))
+function var0_0.GetReasoningDesc(arg0_7)
+	return HXSet.hxLan(arg0_7:getConfig("option_desc_2"))
 end
 
-return var0
+return var0_0

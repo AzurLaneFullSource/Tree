@@ -1,54 +1,54 @@
-﻿local var0 = class("BackYardUploadThemeTemplateCommand", pm.SimpleCommand)
+﻿local var0_0 = class("BackYardUploadThemeTemplateCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody().templateId
-	local var1 = getProxy(DormProxy)
-	local var2 = var1:GetCustomThemeTemplateById(var0)
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody().templateId
+	local var1_1 = getProxy(DormProxy)
+	local var2_1 = var1_1:GetCustomThemeTemplateById(var0_1)
 
-	local function var3(arg0)
+	local function var3_1(arg0_2)
 		pg.UIMgr.GetInstance():LoadingOn()
 		seriesAsync({
-			function(arg0)
-				BackYardThemeTempalteUtil.UploadTexture(var2:GetTextureName(), function(arg0)
-					if arg0 then
-						arg0()
+			function(arg0_3)
+				BackYardThemeTempalteUtil.UploadTexture(var2_1:GetTextureName(), function(arg0_4)
+					if arg0_4 then
+						arg0_3()
 					end
 				end)
 			end,
-			function(arg0)
-				BackYardThemeTempalteUtil.UploadTexture(var2:GetTextureIconName(), function(arg0)
-					if arg0 then
-						arg0()
+			function(arg0_5)
+				BackYardThemeTempalteUtil.UploadTexture(var2_1:GetTextureIconName(), function(arg0_6)
+					if arg0_6 then
+						arg0_5()
 					end
 				end)
 			end
 		}, function()
 			pg.UIMgr.GetInstance():LoadingOff()
-			arg0()
+			arg0_2()
 		end)
 	end
 
-	local function var4(arg0)
-		var2:Upload()
-		var1:UpdateCustomThemeTemplate(var2)
-		arg0:sendNotification(GAME.BACKYARD_UPLOAD_THEME_TEMPLATE_DONE)
+	local function var4_1(arg0_8)
+		var2_1:Upload()
+		var1_1:UpdateCustomThemeTemplate(var2_1)
+		arg0_1:sendNotification(GAME.BACKYARD_UPLOAD_THEME_TEMPLATE_DONE)
 	end
 
-	local function var5()
+	local function var5_1()
 		pg.ConnectionMgr.GetInstance():Send(19111, {
-			pos = var2.pos
-		}, 19112, function(arg0)
-			if arg0.result == 0 then
-				var4(arg0)
+			pos = var2_1.pos
+		}, 19112, function(arg0_10)
+			if arg0_10.result == 0 then
+				var4_1(arg0_10)
 			else
-				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0.result] .. arg0.result)
+				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_10.result] .. arg0_10.result)
 			end
 		end)
 	end
 
-	var3(function()
-		var5()
+	var3_1(function()
+		var5_1()
 	end)
 end
 
-return var0
+return var0_0

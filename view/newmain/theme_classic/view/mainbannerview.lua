@@ -1,71 +1,71 @@
-﻿local var0 = class("MainBannerView", import("...base.MainBaseView"))
+﻿local var0_0 = class("MainBannerView", import("...base.MainBaseView"))
 
-function var0.Ctor(arg0, arg1, arg2)
-	var0.super.Ctor(arg0, arg1, arg2)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var0_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 
-	arg0.scrollSnap = BannerScrollRect.New(findTF(arg1, "mask/content"), findTF(arg1, "dots"))
+	arg0_1.scrollSnap = BannerScrollRect.New(findTF(arg1_1, "mask/content"), findTF(arg1_1, "dots"))
 end
 
-function var0.Init(arg0)
-	local var0 = getProxy(ActivityProxy):getBannerDisplays()
+function var0_0.Init(arg0_2)
+	local var0_2 = getProxy(ActivityProxy):getBannerDisplays()
 
-	arg0:UpdateItems(var0)
+	arg0_2:UpdateItems(var0_2)
 
-	arg0.banners = var0
+	arg0_2.banners = var0_2
 end
 
-function var0.Refresh(arg0)
-	local var0 = getProxy(ActivityProxy):getBannerDisplays()
+function var0_0.Refresh(arg0_3)
+	local var0_3 = getProxy(ActivityProxy):getBannerDisplays()
 
-	if #arg0.banners ~= #var0 then
-		arg0:Clear()
-		arg0:Init()
+	if #arg0_3.banners ~= #var0_3 then
+		arg0_3:Clear()
+		arg0_3:Init()
 	else
-		arg0.scrollSnap:Resume()
+		arg0_3.scrollSnap:Resume()
 	end
 end
 
-function var0.UpdateItems(arg0, arg1)
-	for iter0 = 0, #arg1 - 1 do
-		local var0 = arg1[iter0 + 1]
-		local var1 = arg0.scrollSnap:AddChild()
+function var0_0.UpdateItems(arg0_4, arg1_4)
+	for iter0_4 = 0, #arg1_4 - 1 do
+		local var0_4 = arg1_4[iter0_4 + 1]
+		local var1_4 = arg0_4.scrollSnap:AddChild()
 
-		LoadImageSpriteAsync("activitybanner/" .. var0.pic, var1)
+		LoadImageSpriteAsync("activitybanner/" .. var0_4.pic, var1_4)
 
-		local var2 = var0.type == 3 and tonumber(var0.param) == nil and getProxy(ActivityProxy):readyToAchieveByType(ActivityConst.ACTIVITY_TYPE_LEVELAWARD)
+		local var2_4 = var0_4.type == 3 and tonumber(var0_4.param) == nil and getProxy(ActivityProxy):readyToAchieveByType(ActivityConst.ACTIVITY_TYPE_LEVELAWARD)
 
-		setActive(findTF(var1, "red"), var2)
-		onButton(arg0, var1, function()
-			arg0:Tracking(var0.id)
-			MainBaseActivityBtn.Skip(arg0, var0)
+		setActive(findTF(var1_4, "red"), var2_4)
+		onButton(arg0_4, var1_4, function()
+			arg0_4:Tracking(var0_4.id)
+			MainBaseActivityBtn.Skip(arg0_4, var0_4)
 		end, SFX_MAIN)
 	end
 
-	arg0.scrollSnap:SetUp()
+	arg0_4.scrollSnap:SetUp()
 end
 
-function var0.Tracking(arg0, arg1)
-	TrackConst.TrackingTouchBanner(arg1)
+function var0_0.Tracking(arg0_6, arg1_6)
+	TrackConst.TrackingTouchBanner(arg1_6)
 end
 
-function var0.GetDirection(arg0)
+function var0_0.GetDirection(arg0_7)
 	return Vector2(1, 0)
 end
 
-function var0.Disable(arg0)
-	arg0.scrollSnap:Puase()
+function var0_0.Disable(arg0_8)
+	arg0_8.scrollSnap:Puase()
 end
 
-function var0.Clear(arg0)
-	arg0.scrollSnap:Reset()
+function var0_0.Clear(arg0_9)
+	arg0_9.scrollSnap:Reset()
 end
 
-function var0.Dispose(arg0)
-	var0.super.Dispose(arg0)
-	arg0:Clear()
-	arg0.scrollSnap:Dispose()
+function var0_0.Dispose(arg0_10)
+	var0_0.super.Dispose(arg0_10)
+	arg0_10:Clear()
+	arg0_10.scrollSnap:Dispose()
 
-	arg0.scrollSnap = nil
+	arg0_10.scrollSnap = nil
 end
 
-return var0
+return var0_0

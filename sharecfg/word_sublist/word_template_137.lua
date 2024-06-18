@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_137 = {}
+var0_0.word_template_137 = {}
 
-local var1 = var0.word_template_137
+local var1_0 = var0_0.word_template_137
 
 function temp()
-	var1.或 = {
+	var1_0.或 = {
 		死 = {
 			于 = {
 				拆 = {
@@ -76,7 +76,7 @@ end
 temp()
 
 function temp()
-	var1.货 = {
+	var1_0.货 = {
 		不 = {
 			在 = {
 				["5"] = {
@@ -254,7 +254,7 @@ end
 temp()
 
 function temp()
-	var1.蠖 = {
+	var1_0.蠖 = {
 		this = {
 			this = true
 		}
@@ -264,7 +264,7 @@ end
 temp()
 
 function temp()
-	var1.丌 = {
+	var1_0.丌 = {
 		this = {
 			this = true
 		}
@@ -274,7 +274,7 @@ end
 temp()
 
 function temp()
-	var1.机 = {
+	var1_0.机 = {
 		["8"] = {
 			this = true
 		},
@@ -326,7 +326,7 @@ end
 temp()
 
 function temp()
-	var1.乩 = {
+	var1_0.乩 = {
 		this = {
 			this = true
 		}
@@ -336,7 +336,7 @@ end
 temp()
 
 function temp()
-	var1.肌 = {
+	var1_0.肌 = {
 		安 = {
 			松 = {
 				this = true

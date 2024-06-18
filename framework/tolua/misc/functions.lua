@@ -1,73 +1,73 @@
-﻿local var0 = require
-local var1 = string
-local var2 = table
+﻿local var0_0 = require
+local var1_0 = string
+local var2_0 = table
 
 int64.zero = int64.new(0, 0)
 uint64.zero = uint64.new(0, 0)
 
-function var1.split(arg0, arg1)
-	arg0 = tostring(arg0)
-	arg1 = tostring(arg1)
+function var1_0.split(arg0_1, arg1_1)
+	arg0_1 = tostring(arg0_1)
+	arg1_1 = tostring(arg1_1)
 
-	if arg1 == "" then
+	if arg1_1 == "" then
 		return false
 	end
 
-	local var0 = 0
-	local var1 = {}
+	local var0_1 = 0
+	local var1_1 = {}
 
-	for iter0, iter1 in function()
-		return var1.find(arg0, arg1, var0, true)
+	for iter0_1, iter1_1 in function()
+		return var1_0.find(arg0_1, arg1_1, var0_1, true)
 	end do
-		var2.insert(var1, var1.sub(arg0, var0, iter0 - 1))
+		var2_0.insert(var1_1, var1_0.sub(arg0_1, var0_1, iter0_1 - 1))
 
-		var0 = iter1 + 1
+		var0_1 = iter1_1 + 1
 	end
 
-	var2.insert(var1, var1.sub(arg0, var0))
+	var2_0.insert(var1_1, var1_0.sub(arg0_1, var0_1))
 
-	return var1
+	return var1_1
 end
 
-function import(arg0, arg1)
-	local var0
-	local var1 = arg0
-	local var2 = 1
+function import(arg0_3, arg1_3)
+	local var0_3
+	local var1_3 = arg0_3
+	local var2_3 = 1
 
 	while true do
-		if var1.byte(arg0, var2) ~= 46 then
-			var1 = var1.sub(arg0, var2)
+		if var1_0.byte(arg0_3, var2_3) ~= 46 then
+			var1_3 = var1_0.sub(arg0_3, var2_3)
 
-			if var0 and #var0 > 0 then
-				var1 = var2.concat(var0, ".") .. "." .. var1
+			if var0_3 and #var0_3 > 0 then
+				var1_3 = var2_0.concat(var0_3, ".") .. "." .. var1_3
 			end
 
 			break
 		end
 
-		var2 = var2 + 1
+		var2_3 = var2_3 + 1
 
-		if not var0 then
-			if not arg1 then
-				local var3, var4 = debug.getlocal(3, 1)
+		if not var0_3 then
+			if not arg1_3 then
+				local var3_3, var4_3 = debug.getlocal(3, 1)
 
-				arg1 = var4
+				arg1_3 = var4_3
 			end
 
-			var0 = var1.split(arg1, ".")
+			var0_3 = var1_0.split(arg1_3, ".")
 		end
 
-		var2.remove(var0, #var0)
+		var2_0.remove(var0_3, #var0_3)
 	end
 
-	return var0(var1)
+	return var0_0(var1_3)
 end
 
-function reimport(arg0)
-	local var0 = package
+function reimport(arg0_4)
+	local var0_4 = package
 
-	var0.loaded[arg0] = nil
-	var0.preload[arg0] = nil
+	var0_4.loaded[arg0_4] = nil
+	var0_4.preload[arg0_4] = nil
 
-	return var0(arg0)
+	return var0_0(arg0_4)
 end

@@ -1,49 +1,49 @@
-﻿local var0 = class("RoyalRePtPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var0_0 = class("RoyalRePtPage", import(".TemplatePage.PtTemplatePage"))
 
-function var0.OnInit(arg0)
-	var0.super.OnInit(arg0)
+function var0_0.OnInit(arg0_1)
+	var0_0.super.OnInit(arg0_1)
 
-	arg0.progresses = arg0:findTF("progresses", arg0.bg)
-	arg0.progress_r = arg0:findTF("progress_r", arg0.progresses)
-	arg0.progress_l = arg0:findTF("progress_l", arg0.progresses)
+	arg0_1.progresses = arg0_1:findTF("progresses", arg0_1.bg)
+	arg0_1.progress_r = arg0_1:findTF("progress_r", arg0_1.progresses)
+	arg0_1.progress_l = arg0_1:findTF("progress_l", arg0_1.progresses)
 end
 
-function var0.OnUpdateFlush(arg0)
-	local var0 = arg0.ptData:getTargetLevel()
-	local var1 = arg0.activity:getConfig("config_client").story
+function var0_0.OnUpdateFlush(arg0_2)
+	local var0_2 = arg0_2.ptData:getTargetLevel()
+	local var1_2 = arg0_2.activity:getConfig("config_client").story
 
-	if checkExist(var1, {
-		var0
+	if checkExist(var1_2, {
+		var0_2
 	}, {
 		1
 	}) then
-		pg.NewStoryMgr.GetInstance():Play(var1[var0][1])
+		pg.NewStoryMgr.GetInstance():Play(var1_2[var0_2][1])
 	end
 
-	local var2, var3, var4 = arg0.ptData:GetLevelProgress()
-	local var5, var6, var7 = arg0.ptData:GetResProgress()
+	local var2_2, var3_2, var4_2 = arg0_2.ptData:GetLevelProgress()
+	local var5_2, var6_2, var7_2 = arg0_2.ptData:GetResProgress()
 
-	setText(arg0.step, var2 .. "/" .. var3)
+	setText(arg0_2.step, var2_2 .. "/" .. var3_2)
 
-	local var8 = var7 >= 1 and setColorStr(var5, COLOR_GREEN) or var5
+	local var8_2 = var7_2 >= 1 and setColorStr(var5_2, COLOR_GREEN) or var5_2
 
-	setText(arg0.progress_l, var8 .. "/" .. var6)
-	setSlider(arg0.slider, 0, 1, var7)
+	setText(arg0_2.progress_l, var8_2 .. "/" .. var6_2)
+	setSlider(arg0_2.slider, 0, 1, var7_2)
 
-	local var9 = arg0.ptData:CanGetAward()
-	local var10 = arg0.ptData:CanGetNextAward()
-	local var11 = arg0.ptData:CanGetMorePt()
+	local var9_2 = arg0_2.ptData:CanGetAward()
+	local var10_2 = arg0_2.ptData:CanGetNextAward()
+	local var11_2 = arg0_2.ptData:CanGetMorePt()
 
-	setActive(arg0.battleBtn, var11 and not var9 and var10)
-	setActive(arg0.getBtn, var9)
-	setActive(arg0.gotBtn, not var10)
+	setActive(arg0_2.battleBtn, var11_2 and not var9_2 and var10_2)
+	setActive(arg0_2.getBtn, var9_2)
+	setActive(arg0_2.gotBtn, not var10_2)
 
-	local var12 = arg0.ptData:GetAward()
+	local var12_2 = arg0_2.ptData:GetAward()
 
-	updateDrop(arg0.awardTF, var12)
-	onButton(arg0, arg0.awardTF, function()
-		arg0:emit(BaseUI.ON_DROP, var12)
+	updateDrop(arg0_2.awardTF, var12_2)
+	onButton(arg0_2, arg0_2.awardTF, function()
+		arg0_2:emit(BaseUI.ON_DROP, var12_2)
 	end, SFX_PANEL)
 end
 
-return var0
+return var0_0

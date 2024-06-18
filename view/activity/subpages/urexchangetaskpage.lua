@@ -1,20 +1,20 @@
-﻿local var0 = class("UrExchangeTaskPage", import("...base.BaseActivityPage"))
+﻿local var0_0 = class("UrExchangeTaskPage", import("...base.BaseActivityPage"))
 
-function var0.OnInit(arg0)
-	arg0.uilist = UIItemList.New(arg0:findTF("AD/task_list/content"), arg0:findTF("AD/task_list/content/tpl"))
-	arg0.getBtn = arg0:findTF("AD/get_btn")
-	arg0.gotBtn = arg0:findTF("AD/got_btn")
-	arg0.unfinishBtn = arg0:findTF("AD/unfinish_btn")
+function var0_0.OnInit(arg0_1)
+	arg0_1.uilist = UIItemList.New(arg0_1:findTF("AD/task_list/content"), arg0_1:findTF("AD/task_list/content/tpl"))
+	arg0_1.getBtn = arg0_1:findTF("AD/get_btn")
+	arg0_1.gotBtn = arg0_1:findTF("AD/got_btn")
+	arg0_1.unfinishBtn = arg0_1:findTF("AD/unfinish_btn")
 end
 
-function var0.OnDataSetting(arg0)
-	local var0 = arg0.activity
-	local var1 = var0:getConfig("config_data")[1][1]
+function var0_0.OnDataSetting(arg0_2)
+	local var0_2 = arg0_2.activity
+	local var1_2 = var0_2:getConfig("config_data")[1][1]
 
-	if not arg0:GetTaskById(var1) then
+	if not arg0_2:GetTaskById(var1_2) then
 		pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 1,
-			activity_id = var0.id
+			activity_id = var0_2.id
 		})
 
 		return true
@@ -23,98 +23,98 @@ function var0.OnDataSetting(arg0)
 	end
 end
 
-function var0.OnUpdateFlush(arg0)
-	local var0 = arg0.activity:getConfig("config_data")[1]
-	local var1 = _.map(var0, function(arg0)
-		return arg0:GetTaskById(arg0)
+function var0_0.OnUpdateFlush(arg0_3)
+	local var0_3 = arg0_3.activity:getConfig("config_data")[1]
+	local var1_3 = _.map(var0_3, function(arg0_4)
+		return arg0_3:GetTaskById(arg0_4)
 	end)
-	local var2 = table.remove(var1, #var1)
+	local var2_3 = table.remove(var1_3, #var1_3)
 
-	local function var3(arg0)
-		if arg0:isFinish() and not arg0:isReceive() then
+	local function var3_3(arg0_5)
+		if arg0_5:isFinish() and not arg0_5:isReceive() then
 			return 0
-		elseif arg0:isReceive() then
+		elseif arg0_5:isReceive() then
 			return 2
 		else
 			return 1
 		end
 	end
 
-	table.sort(var1, function(arg0, arg1)
-		return var3(arg0) < var3(arg1)
+	table.sort(var1_3, function(arg0_6, arg1_6)
+		return var3_3(arg0_6) < var3_3(arg1_6)
 	end)
-	arg0.uilist:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			arg0:UpdateTask(arg2, var1[arg1 + 1])
+	arg0_3.uilist:make(function(arg0_7, arg1_7, arg2_7)
+		if arg0_7 == UIItemList.EventUpdate then
+			arg0_3:UpdateTask(arg2_7, var1_3[arg1_7 + 1])
 		end
 	end)
-	arg0.uilist:align(#var1)
+	arg0_3.uilist:align(#var1_3)
 
-	local var4 = var2:isFinish()
-	local var5 = var2:isReceive()
-	local var6 = _.all(var1, function(arg0)
-		return arg0:isFinish() and arg0:isReceive()
+	local var4_3 = var2_3:isFinish()
+	local var5_3 = var2_3:isReceive()
+	local var6_3 = _.all(var1_3, function(arg0_8)
+		return arg0_8:isFinish() and arg0_8:isReceive()
 	end)
-	local var7 = var4 and not var5 and var6
+	local var7_3 = var4_3 and not var5_3 and var6_3
 
-	onButton(arg0, arg0.getBtn, function()
-		if var7 then
-			arg0:emit(ActivityMediator.ON_TASK_SUBMIT, var2)
+	onButton(arg0_3, arg0_3.getBtn, function()
+		if var7_3 then
+			arg0_3:emit(ActivityMediator.ON_TASK_SUBMIT, var2_3)
 		end
 	end, SFX_PANEL)
-	setActive(arg0.getBtn, var7)
-	setActive(arg0.unfinishBtn, not var7 and not var5)
-	setActive(arg0.gotBtn, var5)
+	setActive(arg0_3.getBtn, var7_3)
+	setActive(arg0_3.unfinishBtn, not var7_3 and not var5_3)
+	setActive(arg0_3.gotBtn, var5_3)
 end
 
-function var0.GetTaskById(arg0, arg1)
-	return getProxy(TaskProxy):getTaskById(arg1) or getProxy(TaskProxy):getFinishTaskById(arg1)
+function var0_0.GetTaskById(arg0_10, arg1_10)
+	return getProxy(TaskProxy):getTaskById(arg1_10) or getProxy(TaskProxy):getFinishTaskById(arg1_10)
 end
 
-function var0.UpdateTask(arg0, arg1, arg2)
-	assert(arg2)
-	setText(arg1:Find("Text"), arg2:getConfig("desc"))
+function var0_0.UpdateTask(arg0_11, arg1_11, arg2_11)
+	assert(arg2_11)
+	setText(arg1_11:Find("Text"), arg2_11:getConfig("desc"))
 
-	local var0 = arg2:getConfig("award_display")[1]
+	local var0_11 = arg2_11:getConfig("award_display")[1]
 
-	assert(var0, arg2.id)
-	assert(var0)
+	assert(var0_11, arg2_11.id)
+	assert(var0_11)
 
-	local var1 = {
-		type = var0[1],
-		id = var0[2],
-		count = var0[3]
+	local var1_11 = {
+		type = var0_11[1],
+		id = var0_11[2],
+		count = var0_11[3]
 	}
-	local var2 = arg1:Find("item")
+	local var2_11 = arg1_11:Find("item")
 
-	updateDrop(var2, var1)
-	onButton(arg0, var2, function()
-		arg0:emit(BaseUI.ON_DROP, var1)
+	updateDrop(var2_11, var1_11)
+	onButton(arg0_11, var2_11, function()
+		arg0_11:emit(BaseUI.ON_DROP, var1_11)
 	end, SFX_PANEL)
 
-	local var3 = arg2:isFinish()
-	local var4 = arg2:isReceive()
+	local var3_11 = arg2_11:isFinish()
+	local var4_11 = arg2_11:isReceive()
 
-	setActive(arg1:Find("mark"), var3 and not var4)
+	setActive(arg1_11:Find("mark"), var3_11 and not var4_11)
 
-	if var3 and not var4 then
-		onButton(arg0, arg1, function()
-			arg0:emit(ActivityMediator.ON_TASK_SUBMIT, arg2)
+	if var3_11 and not var4_11 then
+		onButton(arg0_11, arg1_11, function()
+			arg0_11:emit(ActivityMediator.ON_TASK_SUBMIT, arg2_11)
 		end, SFX_PANEL)
 	else
-		removeOnButton(arg1)
+		removeOnButton(arg1_11)
 	end
 
-	setActive(arg1:Find("progress_finish"), var3 and var4)
+	setActive(arg1_11:Find("progress_finish"), var3_11 and var4_11)
 
-	local var5 = arg2:getProgress()
-	local var6 = arg2:getConfig("target_num")
+	local var5_11 = arg2_11:getProgress()
+	local var6_11 = arg2_11:getConfig("target_num")
 
-	setSlider(arg1:Find("progress"), 0, 1, var5 / var6)
+	setSlider(arg1_11:Find("progress"), 0, 1, var5_11 / var6_11)
 
-	local var7 = var3 and "" or var5 .. "/" .. var6
+	local var7_11 = var3_11 and "" or var5_11 .. "/" .. var6_11
 
-	setText(arg1:Find("progress/Text"), var7)
+	setText(arg1_11:Find("progress/Text"), var7_11)
 end
 
-return var0
+return var0_0

@@ -1,48 +1,48 @@
-﻿local var0 = class("NewBattleResultDuelAniamtion")
+﻿local var0_0 = class("NewBattleResultDuelAniamtion")
 
-function var0.Ctor(arg0, arg1, arg2, arg3, arg4, arg5)
-	arg0.playerExp = arg1
-	arg0.playerExpBar = arg2
-	arg0.nextPoint = arg3
-	arg0.oldRank = arg4
-	arg0.season = arg5
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1, arg5_1)
+	arg0_1.playerExp = arg1_1
+	arg0_1.playerExpBar = arg2_1
+	arg0_1.nextPoint = arg3_1
+	arg0_1.oldRank = arg4_1
+	arg0_1.season = arg5_1
 end
 
-function var0.SetUp(arg0, arg1)
+function var0_0.SetUp(arg0_2, arg1_2)
 	parallelAsync({
-		function(arg0)
-			arg0:ScoreAnimation(arg0)
+		function(arg0_3)
+			arg0_2:ScoreAnimation(arg0_3)
 		end,
-		function(arg0)
-			arg0:ScoreBarAnimation(arg0)
+		function(arg0_4)
+			arg0_2:ScoreBarAnimation(arg0_4)
 		end
-	}, arg1)
+	}, arg1_2)
 end
 
-function var0.ScoreAnimation(arg0, arg1)
-	local var0 = NewBattleResultUtil.GetSeasonScoreOffset(arg0.oldRank, arg0.season)
+function var0_0.ScoreAnimation(arg0_5, arg1_5)
+	local var0_5 = NewBattleResultUtil.GetSeasonScoreOffset(arg0_5.oldRank, arg0_5.season)
 
-	LeanTween.value(arg0.playerExp.gameObject, 0, var0, 1.5):setOnUpdate(System.Action_float(function(arg0)
-		arg0.playerExp.text = "+" .. math.ceil(arg0)
-	end)):setOnComplete(System.Action(arg1))
+	LeanTween.value(arg0_5.playerExp.gameObject, 0, var0_5, 1.5):setOnUpdate(System.Action_float(function(arg0_6)
+		arg0_5.playerExp.text = "+" .. math.ceil(arg0_6)
+	end)):setOnComplete(System.Action(arg1_5))
 end
 
-function var0.ScoreBarAnimation(arg0, arg1)
-	local var0 = arg0.season.score / arg0.nextPoint
+function var0_0.ScoreBarAnimation(arg0_7, arg1_7)
+	local var0_7 = arg0_7.season.score / arg0_7.nextPoint
 
-	LeanTween.value(arg0.playerExpBar.gameObject, 0, var0, 1.5):setOnUpdate(System.Action_float(function(arg0)
-		arg0.playerExpBar.fillAmount = arg0
-	end)):setOnComplete(System.Action(arg1))
+	LeanTween.value(arg0_7.playerExpBar.gameObject, 0, var0_7, 1.5):setOnUpdate(System.Action_float(function(arg0_8)
+		arg0_7.playerExpBar.fillAmount = arg0_8
+	end)):setOnComplete(System.Action(arg1_7))
 end
 
-function var0.Dispose(arg0)
-	if LeanTween.isTweening(arg0.playerExp.gameObject) then
-		LeanTween.cancel(arg0.playerExp.gameObject)
+function var0_0.Dispose(arg0_9)
+	if LeanTween.isTweening(arg0_9.playerExp.gameObject) then
+		LeanTween.cancel(arg0_9.playerExp.gameObject)
 	end
 
-	if LeanTween.isTweening(arg0.playerExpBar.gameObject) then
-		LeanTween.cancel(arg0.playerExpBar.gameObject)
+	if LeanTween.isTweening(arg0_9.playerExpBar.gameObject) then
+		LeanTween.cancel(arg0_9.playerExpBar.gameObject)
 	end
 end
 
-return var0
+return var0_0

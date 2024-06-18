@@ -1,11 +1,11 @@
-﻿local var0 = class("ExercisePreCombatLayer", import("view.battle.PreCombatLayer"))
-local var1 = import("..ship.FormationUI")
+﻿local var0_0 = class("ExercisePreCombatLayer", import("view.battle.PreCombatLayer"))
+local var1_0 = import("..ship.FormationUI")
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "PreCombatUI"
 end
 
-function var0.ResUISettings(arg0)
+function var0_0.ResUISettings(arg0_2)
 	return {
 		order = 5,
 		anim = true,
@@ -13,159 +13,159 @@ function var0.ResUISettings(arg0)
 	}
 end
 
-function var0.CommonInit(arg0)
-	var0.super.CommonInit(arg0)
+function var0_0.CommonInit(arg0_3)
+	var0_0.super.CommonInit(arg0_3)
 
-	arg0._ticket = arg0._costContainer:Find("ticket")
+	arg0_3._ticket = arg0_3._costContainer:Find("ticket")
 end
 
-function var0.Register(arg0)
-	arg0._formationLogic:AddLoadComplete(function()
-		if arg0._currentForm ~= var0.FORM_EDIT then
-			arg0._formationLogic:SwitchToPreviewMode()
+function var0_0.Register(arg0_4)
+	arg0_4._formationLogic:AddLoadComplete(function()
+		if arg0_4._currentForm ~= var0_0.FORM_EDIT then
+			arg0_4._formationLogic:SwitchToPreviewMode()
 		end
 	end)
-	arg0._formationLogic:AddHeroInfoModify(function(arg0, arg1, arg2)
-		arg2:SetLocalScale(Vector3(0.65, 0.65, 1))
-		SetActive(arg0, true)
+	arg0_4._formationLogic:AddHeroInfoModify(function(arg0_6, arg1_6, arg2_6)
+		arg2_6:SetLocalScale(Vector3(0.65, 0.65, 1))
+		SetActive(arg0_6, true)
 
-		local var0 = findTF(arg0, "info")
-		local var1 = findTF(var0, "stars")
-		local var2 = arg1.energy <= Ship.ENERGY_MID
-		local var3 = findTF(var0, "energy")
+		local var0_6 = findTF(arg0_6, "info")
+		local var1_6 = findTF(var0_6, "stars")
+		local var2_6 = arg1_6.energy <= Ship.ENERGY_MID
+		local var3_6 = findTF(var0_6, "energy")
 
-		if var2 then
-			local var4, var5 = arg1:getEnergyPrint()
-			local var6 = GetSpriteFromAtlas("energy", var4)
+		if var2_6 then
+			local var4_6, var5_6 = arg1_6:getEnergyPrint()
+			local var6_6 = GetSpriteFromAtlas("energy", var4_6)
 
-			if not var6 then
+			if not var6_6 then
 				warning("找不到疲劳")
 			end
 
-			setImageSprite(var3, var6)
+			setImageSprite(var3_6, var6_6)
 		end
 
-		setActive(var3, var2 and arg0.contextData.system ~= SYSTEM_DUEL)
+		setActive(var3_6, var2_6 and arg0_4.contextData.system ~= SYSTEM_DUEL)
 
-		local var7 = arg1:getStar()
+		local var7_6 = arg1_6:getStar()
 
-		for iter0 = 1, var7 do
-			cloneTplTo(arg0._starTpl, var1)
+		for iter0_6 = 1, var7_6 do
+			cloneTplTo(arg0_4._starTpl, var1_6)
 		end
 
-		local var8 = GetSpriteFromAtlas("shiptype", shipType2print(arg1:getShipType()))
+		local var8_6 = GetSpriteFromAtlas("shiptype", shipType2print(arg1_6:getShipType()))
 
-		if not var8 then
-			warning("找不到船形, shipConfigId: " .. arg1.configId)
+		if not var8_6 then
+			warning("找不到船形, shipConfigId: " .. arg1_6.configId)
 		end
 
-		setImageSprite(findTF(var0, "type"), var8, true)
-		setText(findTF(var0, "frame/lv_contain/lv"), arg1.level)
+		setImageSprite(findTF(var0_6, "type"), var8_6, true)
+		setText(findTF(var0_6, "frame/lv_contain/lv"), arg1_6.level)
 
-		local var9 = var0:Find("expbuff")
+		local var9_6 = var0_6:Find("expbuff")
 
-		setActive(var9, false)
+		setActive(var9_6, false)
 	end)
-	arg0._formationLogic:AddLongPress(function(arg0, arg1, arg2)
-		arg0:emit(ExercisePreCombatMediator.OPEN_SHIP_INFO, arg1.id, arg2)
+	arg0_4._formationLogic:AddLongPress(function(arg0_7, arg1_7, arg2_7)
+		arg0_4:emit(ExercisePreCombatMediator.OPEN_SHIP_INFO, arg1_7.id, arg2_7)
 	end)
-	arg0._formationLogic:AddClick(function(arg0, arg1, arg2)
+	arg0_4._formationLogic:AddClick(function(arg0_8, arg1_8, arg2_8)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_CLICK)
-		arg0:emit(ExercisePreCombatMediator.CHANGE_FLEET_SHIP, arg0, arg2, arg1)
+		arg0_4:emit(ExercisePreCombatMediator.CHANGE_FLEET_SHIP, arg0_8, arg2_8, arg1_8)
 	end)
-	arg0._formationLogic:AddBeginDrag(function(arg0)
-		local var0 = findTF(arg0, "info")
+	arg0_4._formationLogic:AddBeginDrag(function(arg0_9)
+		local var0_9 = findTF(arg0_9, "info")
 
-		SetActive(var0, false)
+		SetActive(var0_9, false)
 	end)
-	arg0._formationLogic:AddEndDrag(function(arg0)
-		local var0 = findTF(arg0, "info")
+	arg0_4._formationLogic:AddEndDrag(function(arg0_10)
+		local var0_10 = findTF(arg0_10, "info")
 
-		SetActive(var0, true)
+		SetActive(var0_10, true)
 	end)
-	arg0._formationLogic:AddShiftOnly(function(arg0)
-		arg0:emit(ExercisePreCombatMediator.CHANGE_FLEET_SHIPS_ORDER, arg0)
+	arg0_4._formationLogic:AddShiftOnly(function(arg0_11)
+		arg0_4:emit(ExercisePreCombatMediator.CHANGE_FLEET_SHIPS_ORDER, arg0_11)
 	end)
-	arg0._formationLogic:AddRemoveShip(function(arg0, arg1)
-		arg0:emit(ExercisePreCombatMediator.REMOVE_SHIP, arg0, arg1)
+	arg0_4._formationLogic:AddRemoveShip(function(arg0_12, arg1_12)
+		arg0_4:emit(ExercisePreCombatMediator.REMOVE_SHIP, arg0_12, arg1_12)
 	end)
-	arg0._formationLogic:AddCheckRemove(function(arg0, arg1, arg2, arg3, arg4)
+	arg0_4._formationLogic:AddCheckRemove(function(arg0_13, arg1_13, arg2_13, arg3_13, arg4_13)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			zIndex = -100,
 			hideNo = false,
-			content = i18n("battle_preCombatLayer_quest_leaveFleet", arg2:getConfigTable().name),
-			onYes = arg1,
-			onNo = arg0
+			content = i18n("battle_preCombatLayer_quest_leaveFleet", arg2_13:getConfigTable().name),
+			onYes = arg1_13,
+			onNo = arg0_13
 		})
 	end)
-	arg0._formationLogic:AddSwitchToDisplayMode(function()
-		arg0._currentForm = var0.FORM_EDIT
-		arg0._checkBtn:GetComponent("Button").interactable = true
+	arg0_4._formationLogic:AddSwitchToDisplayMode(function()
+		arg0_4._currentForm = var0_0.FORM_EDIT
+		arg0_4._checkBtn:GetComponent("Button").interactable = true
 
-		setActive(arg0._checkBtn:Find("save"), true)
-		setActive(arg0._checkBtn:Find("edit"), false)
+		setActive(arg0_4._checkBtn:Find("save"), true)
+		setActive(arg0_4._checkBtn:Find("edit"), false)
 	end)
-	arg0._formationLogic:AddSwitchToShiftMode(function()
-		arg0._checkBtn:GetComponent("Button").interactable = false
+	arg0_4._formationLogic:AddSwitchToShiftMode(function()
+		arg0_4._checkBtn:GetComponent("Button").interactable = false
 	end)
-	arg0._formationLogic:AddSwitchToPreviewMode(function()
-		arg0._currentForm = var0.FORM_PREVIEW
-		arg0._checkBtn:GetComponent("Button").interactable = true
+	arg0_4._formationLogic:AddSwitchToPreviewMode(function()
+		arg0_4._currentForm = var0_0.FORM_PREVIEW
+		arg0_4._checkBtn:GetComponent("Button").interactable = true
 
-		setActive(arg0._checkBtn:Find("save"), false)
-		setActive(arg0._checkBtn:Find("edit"), true)
+		setActive(arg0_4._checkBtn:Find("save"), false)
+		setActive(arg0_4._checkBtn:Find("edit"), true)
 	end)
-	arg0._formationLogic:AddGridTipClick(function(arg0, arg1)
-		arg0:emit(ExercisePreCombatMediator.CHANGE_FLEET_SHIP, nil, arg1, arg0)
+	arg0_4._formationLogic:AddGridTipClick(function(arg0_17, arg1_17)
+		arg0_4:emit(ExercisePreCombatMediator.CHANGE_FLEET_SHIP, nil, arg1_17, arg0_17)
 	end)
 end
 
-function var0.didEnter(arg0)
-	arg0:disableAllStepper()
-	onButton(arg0, arg0._backBtn, function()
-		local var0 = {}
+function var0_0.didEnter(arg0_18)
+	arg0_18:disableAllStepper()
+	onButton(arg0_18, arg0_18._backBtn, function()
+		local var0_19 = {}
 
-		if arg0._currentForm == var0.FORM_EDIT then
-			table.insert(var0, function(arg0)
+		if arg0_18._currentForm == var0_0.FORM_EDIT then
+			table.insert(var0_19, function(arg0_20)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					zIndex = -100,
 					hideNo = false,
 					content = i18n("battle_preCombatLayer_save_confirm"),
 					onYes = function()
-						arg0:emit(ExercisePreCombatMediator.ON_COMMIT_EDIT, function()
+						arg0_18:emit(ExercisePreCombatMediator.ON_COMMIT_EDIT, function()
 							pg.TipsMgr.GetInstance():ShowTips(i18n("battle_preCombatLayer_save_success"))
-							arg0()
+							arg0_20()
 						end)
 					end,
-					onNo = arg0,
+					onNo = arg0_20,
 					weight = LayerWeightConst.TOP_LAYER
 				})
 			end)
 		end
 
-		seriesAsync(var0, function()
-			GetOrAddComponent(arg0._tf, typeof(CanvasGroup)).interactable = false
+		seriesAsync(var0_19, function()
+			GetOrAddComponent(arg0_18._tf, typeof(CanvasGroup)).interactable = false
 
-			arg0:uiExitAnimating()
+			arg0_18:uiExitAnimating()
 			LeanTween.delayedCall(0.3, System.Action(function()
-				arg0:emit(var0.ON_CLOSE)
+				arg0_18:emit(var0_0.ON_CLOSE)
 			end))
 		end)
 	end, SFX_CANCEL)
-	onButton(arg0, arg0._startBtn, function()
-		local var0 = {}
+	onButton(arg0_18, arg0_18._startBtn, function()
+		local var0_25 = {}
 
-		if arg0._currentForm == var0.FORM_EDIT then
-			table.insert(var0, function(arg0)
+		if arg0_18._currentForm == var0_0.FORM_EDIT then
+			table.insert(var0_25, function(arg0_26)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					zIndex = -100,
 					hideNo = false,
 					content = i18n("battle_preCombatLayer_save_march"),
 					onYes = function()
-						arg0:emit(ExercisePreCombatMediator.ON_COMMIT_EDIT, function()
-							arg0._formationLogic:SwitchToPreviewMode()
+						arg0_18:emit(ExercisePreCombatMediator.ON_COMMIT_EDIT, function()
+							arg0_18._formationLogic:SwitchToPreviewMode()
 							pg.TipsMgr.GetInstance():ShowTips(i18n("battle_preCombatLayer_save_success"))
-							arg0()
+							arg0_26()
 						end)
 					end,
 					weight = LayerWeightConst.TOP_LAYER
@@ -173,97 +173,97 @@ function var0.didEnter(arg0)
 			end)
 		end
 
-		seriesAsync(var0, function()
-			arg0:emit(ExercisePreCombatMediator.ON_START, arg0._currentFleetVO.id)
+		seriesAsync(var0_25, function()
+			arg0_18:emit(ExercisePreCombatMediator.ON_START, arg0_18._currentFleetVO.id)
 		end)
 	end, SFX_UI_WEIGHANCHOR)
-	onButton(arg0, arg0._nextPage, function()
-		arg0:emit(ExercisePreCombatMediator.ON_CHANGE_FLEET, arg0._legalFleetIdList[arg0._curFleetIndex + 1])
+	onButton(arg0_18, arg0_18._nextPage, function()
+		arg0_18:emit(ExercisePreCombatMediator.ON_CHANGE_FLEET, arg0_18._legalFleetIdList[arg0_18._curFleetIndex + 1])
 	end, SFX_PANEL)
-	onButton(arg0, arg0._prevPage, function()
-		arg0:emit(ExercisePreCombatMediator.ON_CHANGE_FLEET, arg0._legalFleetIdList[arg0._curFleetIndex - 1])
+	onButton(arg0_18, arg0_18._prevPage, function()
+		arg0_18:emit(ExercisePreCombatMediator.ON_CHANGE_FLEET, arg0_18._legalFleetIdList[arg0_18._curFleetIndex - 1])
 	end, SFX_PANEL)
-	onButton(arg0, arg0._checkBtn, function()
-		if arg0._currentForm == var0.FORM_EDIT then
-			arg0:emit(ExercisePreCombatMediator.ON_COMMIT_EDIT, function()
+	onButton(arg0_18, arg0_18._checkBtn, function()
+		if arg0_18._currentForm == var0_0.FORM_EDIT then
+			arg0_18:emit(ExercisePreCombatMediator.ON_COMMIT_EDIT, function()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("battle_preCombatLayer_save_success"))
-				arg0._formationLogic:SwitchToPreviewMode()
+				arg0_18._formationLogic:SwitchToPreviewMode()
 			end)
-		elseif arg0._currentForm == var0.FORM_PREVIEW then
-			arg0._formationLogic:SwitchToDisplayMode()
+		elseif arg0_18._currentForm == var0_0.FORM_PREVIEW then
+			arg0_18._formationLogic:SwitchToDisplayMode()
 		else
 			assert("currentForm error")
 		end
 	end, SFX_PANEL)
 
-	arg0._currentForm = arg0.contextData.form
-	arg0.contextData.form = nil
+	arg0_18._currentForm = arg0_18.contextData.form
+	arg0_18.contextData.form = nil
 
-	arg0:UpdateFleetView(true)
+	arg0_18:UpdateFleetView(true)
 
-	if arg0._currentForm == var0.FORM_EDIT then
-		arg0._formationLogic:SwitchToDisplayMode()
+	if arg0_18._currentForm == var0_0.FORM_EDIT then
+		arg0_18._formationLogic:SwitchToDisplayMode()
 	else
-		arg0._formationLogic:SwitchToPreviewMode()
+		arg0_18._formationLogic:SwitchToPreviewMode()
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_18._tf)
 
-	if arg0.contextData.system == SYSTEM_DUEL then
-		setActive(arg0._autoToggle, false)
-		setActive(arg0._autoSubToggle, false)
+	if arg0_18.contextData.system == SYSTEM_DUEL then
+		setActive(arg0_18._autoToggle, false)
+		setActive(arg0_18._autoSubToggle, false)
 	else
-		setActive(arg0._autoToggle, true)
-		onToggle(arg0, arg0._autoToggle, function(arg0)
-			arg0:emit(ExercisePreCombatMediator.ON_AUTO, {
-				isOn = not arg0,
-				toggle = arg0._autoToggle
+		setActive(arg0_18._autoToggle, true)
+		onToggle(arg0_18, arg0_18._autoToggle, function(arg0_34)
+			arg0_18:emit(ExercisePreCombatMediator.ON_AUTO, {
+				isOn = not arg0_34,
+				toggle = arg0_18._autoToggle
 			})
 
-			if arg0 and arg0._subUseable == true then
-				setActive(arg0._autoSubToggle, true)
-				onToggle(arg0, arg0._autoSubToggle, function(arg0)
-					arg0:emit(ExercisePreCombatMediator.ON_SUB_AUTO, {
-						isOn = not arg0,
-						toggle = arg0._autoSubToggle
+			if arg0_34 and arg0_18._subUseable == true then
+				setActive(arg0_18._autoSubToggle, true)
+				onToggle(arg0_18, arg0_18._autoSubToggle, function(arg0_35)
+					arg0_18:emit(ExercisePreCombatMediator.ON_SUB_AUTO, {
+						isOn = not arg0_35,
+						toggle = arg0_18._autoSubToggle
 					})
 				end, SFX_PANEL, SFX_PANEL)
-				triggerToggle(arg0._autoSubToggle, ys.Battle.BattleState.IsAutoSubActive())
+				triggerToggle(arg0_18._autoSubToggle, ys.Battle.BattleState.IsAutoSubActive())
 			else
-				setActive(arg0._autoSubToggle, false)
+				setActive(arg0_18._autoSubToggle, false)
 			end
 		end, SFX_PANEL, SFX_PANEL)
-		triggerToggle(arg0._autoToggle, ys.Battle.BattleState.IsAutoBotActive())
+		triggerToggle(arg0_18._autoToggle, ys.Battle.BattleState.IsAutoBotActive())
 	end
 
 	onNextTick(function()
-		arg0:uiStartAnimating()
+		arg0_18:uiStartAnimating()
 	end)
 
-	if arg0._currentForm == var0.FORM_PREVIEW and arg0.contextData.system == SYSTEM_DUEL and #arg0._currentFleetVO.mainShips <= 0 then
-		triggerButton(arg0._checkBtn)
+	if arg0_18._currentForm == var0_0.FORM_PREVIEW and arg0_18.contextData.system == SYSTEM_DUEL and #arg0_18._currentFleetVO.mainShips <= 0 then
+		triggerButton(arg0_18._checkBtn)
 	end
 end
 
-function var0.disableAllStepper(arg0)
-	SetActive(arg0._nextPage, false)
-	SetActive(arg0._prevPage, false)
+function var0_0.disableAllStepper(arg0_37)
+	SetActive(arg0_37._nextPage, false)
+	SetActive(arg0_37._prevPage, false)
 end
 
-function var0.willExit(arg0)
-	if arg0._currentForm == var0.FORM_EDIT then
-		local var0 = getProxy(FleetProxy)
+function var0_0.willExit(arg0_38)
+	if arg0_38._currentForm == var0_0.FORM_EDIT then
+		local var0_38 = getProxy(FleetProxy)
 
-		arg0.contextData.EdittingFleet = var0.EdittingFleet
+		arg0_38.contextData.EdittingFleet = var0_38.EdittingFleet
 
-		var0:abortEditting()
+		var0_38:abortEditting()
 	end
 
-	var0.super.willExit(arg0)
+	var0_0.super.willExit(arg0_38)
 
-	if arg0.tweens then
-		cancelTweens(arg0.tweens)
+	if arg0_38.tweens then
+		cancelTweens(arg0_38.tweens)
 	end
 end
 
-return var0
+return var0_0

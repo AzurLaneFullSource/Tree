@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_1 = {}
+var0_0.word_template_1 = {}
 
-local var1 = var0.word_template_1
+local var1_0 = var0_0.word_template_1
 
 function temp()
-	var1.屏 = {
+	var1_0.屏 = {
 		蔽 = {
 			this = true,
 			词 = {
@@ -40,7 +40,7 @@ end
 temp()
 
 function temp()
-	var1.C = {
+	var1_0.C = {
 		h = {
 			i = {
 				n = {
@@ -249,7 +249,7 @@ end
 temp()
 
 function temp()
-	var1.W = {
+	var1_0.W = {
 		u = {
 			h = {
 				a = {
@@ -414,7 +414,7 @@ end
 temp()
 
 function temp()
-	var1["5"] = {
+	var1_0["5"] = {
 		[" "] = {
 			d = {
 				e = {
@@ -771,7 +771,7 @@ end
 temp()
 
 function temp()
-	var1.F = {
+	var1_0.F = {
 		i = {
 			v = {
 				e = {
@@ -920,7 +920,7 @@ end
 temp()
 
 function temp()
-	var1.c = {
+	var1_0.c = {
 		h = {
 			i = {
 				n = {
@@ -1263,7 +1263,7 @@ end
 temp()
 
 function temp()
-	var1.a = {
+	var1_0.a = {
 		n = {
 			a = {
 				l = {

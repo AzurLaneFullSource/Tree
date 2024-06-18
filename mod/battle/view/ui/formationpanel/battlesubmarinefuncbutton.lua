@@ -1,49 +1,49 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("BattleSubmarineFuncButton", var0.Battle.BattleWeaponButton)
+local var0_0 = ys
+local var1_0 = class("BattleSubmarineFuncButton", var0_0.Battle.BattleWeaponButton)
 
-var0.Battle.BattleSubmarineFuncButton = var1
-var1.__name = "BattleSubmarineFuncButton"
+var0_0.Battle.BattleSubmarineFuncButton = var1_0
+var1_0.__name = "BattleSubmarineFuncButton"
 
-function var1.Ctor(arg0)
-	var0.EventListener.AttachEventListener(arg0)
+function var1_0.Ctor(arg0_1)
+	var0_0.EventListener.AttachEventListener(arg0_1)
 
-	arg0.eventTriggers = {}
+	arg0_1.eventTriggers = {}
 end
 
-function var1.OnfilledEffect(arg0)
-	SetActive(arg0._filledEffect, true)
+function var1_0.OnfilledEffect(arg0_2)
+	SetActive(arg0_2._filledEffect, true)
 end
 
-function var1.SetProgressInfo(arg0, arg1)
-	arg0._progressInfo = arg1
+function var1_0.SetProgressInfo(arg0_3, arg1_3)
+	arg0_3._progressInfo = arg1_3
 
-	arg0._progressInfo:RegisterEventListener(arg0, var0.Battle.BattleEvent.WEAPON_COUNT_PLUS, arg0.OnfilledEffect)
-	arg0._progressInfo:RegisterEventListener(arg0, var0.Battle.BattleEvent.OVER_LOAD_CHANGE, arg0.OnOverLoadChange)
-	arg0:OnOverLoadChange()
-	arg0:SetControllerActive(true)
+	arg0_3._progressInfo:RegisterEventListener(arg0_3, var0_0.Battle.BattleEvent.WEAPON_COUNT_PLUS, arg0_3.OnfilledEffect)
+	arg0_3._progressInfo:RegisterEventListener(arg0_3, var0_0.Battle.BattleEvent.OVER_LOAD_CHANGE, arg0_3.OnOverLoadChange)
+	arg0_3:OnOverLoadChange()
+	arg0_3:SetControllerActive(true)
 end
 
-function var1.Update(arg0)
-	if arg0._progressInfo:GetCurrent() < arg0._progressInfo:GetMax() then
-		arg0:updateProgressBar()
+function var1_0.Update(arg0_4)
+	if arg0_4._progressInfo:GetCurrent() < arg0_4._progressInfo:GetMax() then
+		arg0_4:updateProgressBar()
 	end
 end
 
-function var1.Dispose(arg0)
-	if arg0.eventTriggers then
-		for iter0, iter1 in pairs(arg0.eventTriggers) do
-			ClearEventTrigger(iter0)
+function var1_0.Dispose(arg0_5)
+	if arg0_5.eventTriggers then
+		for iter0_5, iter1_5 in pairs(arg0_5.eventTriggers) do
+			ClearEventTrigger(iter0_5)
 		end
 
-		arg0.eventTriggers = nil
+		arg0_5.eventTriggers = nil
 	end
 
-	arg0._progress = nil
-	arg0._progressBar = nil
+	arg0_5._progress = nil
+	arg0_5._progressBar = nil
 
-	arg0._progressInfo:UnregisterEventListener(arg0, var0.Battle.BattleEvent.OVER_LOAD_CHANGE)
-	arg0._progressInfo:UnregisterEventListener(arg0, var0.Battle.BattleEvent.WEAPON_COUNT_PLUS)
-	var0.EventListener.DetachEventListener(arg0)
+	arg0_5._progressInfo:UnregisterEventListener(arg0_5, var0_0.Battle.BattleEvent.OVER_LOAD_CHANGE)
+	arg0_5._progressInfo:UnregisterEventListener(arg0_5, var0_0.Battle.BattleEvent.WEAPON_COUNT_PLUS)
+	var0_0.EventListener.DetachEventListener(arg0_5)
 end

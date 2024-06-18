@@ -1,17 +1,17 @@
-﻿local var0 = class("CarouselStep", import(".StoryStep"))
+﻿local var0_0 = class("CarouselStep", import(".StoryStep"))
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0.bgs = arg1.bgs
+	arg0_1.bgs = arg1_1.bgs
 end
 
-function var0.GetMode(arg0)
+function var0_0.GetMode(arg0_2)
 	return Story.MODE_CAROUSE
 end
 
-function var0.GetBgs(arg0)
-	return arg0.bgs
+function var0_0.GetBgs(arg0_3)
+	return arg0_3.bgs
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_142 = {}
+var0_0.word_template_142 = {}
 
-local var1 = var0.word_template_142
+local var1_0 = var0_0.word_template_142
 
 function temp()
-	var1.芰 = {
+	var1_0.芰 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.妓 = {
+	var1_0.妓 = {
 		this = {
 			this = true
 		},
@@ -118,7 +118,7 @@ end
 temp()
 
 function temp()
-	var1.季 = {
+	var1_0.季 = {
 		美 = {
 			華 = {
 				this = true
@@ -130,7 +130,7 @@ end
 temp()
 
 function temp()
-	var1.既 = {
+	var1_0.既 = {
 		要 = {
 			紧 = {
 				跟 = {
@@ -194,7 +194,7 @@ end
 temp()
 
 function temp()
-	var1.祭 = {
+	var1_0.祭 = {
 		品 = {
 			少 = {
 				年 = {
@@ -226,7 +226,7 @@ end
 temp()
 
 function temp()
-	var1.寂 = {
+	var1_0.寂 = {
 		寞 = {
 			白 = {
 				领 = {
@@ -271,7 +271,7 @@ end
 temp()
 
 function temp()
-	var1.跽 = {
+	var1_0.跽 = {
 		this = {
 			this = true
 		}

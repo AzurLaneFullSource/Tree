@@ -1,32 +1,32 @@
-﻿local var0 = class("SkinGuide5Page", import("...base.BaseActivityPage"))
-local var1 = {
+﻿local var0_0 = class("SkinGuide5Page", import("...base.BaseActivityPage"))
+local var1_0 = {
 	"guandao",
 	"lafei2",
 	"kelifulan",
 	"xingzuo"
 }
-local var2
-local var3 = "ui/activityuipage/skinguide5page_atlas"
+local var2_0
+local var3_0 = "ui/activityuipage/skinguide5page_atlas"
 
-function var0.OnInit(arg0)
-	arg0.ad = arg0:findTF("AD")
+function var0_0.OnInit(arg0_1)
+	arg0_1.ad = arg0_1:findTF("AD")
 
 	if PLATFORM_CODE == PLATFORM_JP then
-		var2 = {
+		var2_0 = {
 			Vector2(-488, 52),
 			Vector2(-420, -41),
 			Vector2(102, -82),
 			Vector2(-471, -128)
 		}
 	elseif PLATFORM_CODE == PLATFORM_US then
-		var2 = {
+		var2_0 = {
 			Vector2(-480, 189),
 			Vector2(-445, -101),
 			Vector2(-410, -101),
 			Vector2(-354, -108)
 		}
 	else
-		var2 = {
+		var2_0 = {
 			Vector2(-490, 130),
 			Vector2(-400, -128),
 			Vector2(89, 10),
@@ -34,287 +34,287 @@ function var0.OnInit(arg0)
 		}
 	end
 
-	arg0.paint = findTF(arg0.ad, "paint")
-	arg0.paintGot = findTF(arg0.paint, "show/got")
-	arg0.paintAnim = GetComponent(arg0.paint, typeof(Animator))
-	arg0.itemContent = findTF(arg0.ad, "items/content")
-	arg0.itemTpl = findTF(arg0.ad, "items/content/itemTpl")
+	arg0_1.paint = findTF(arg0_1.ad, "paint")
+	arg0_1.paintGot = findTF(arg0_1.paint, "show/got")
+	arg0_1.paintAnim = GetComponent(arg0_1.paint, typeof(Animator))
+	arg0_1.itemContent = findTF(arg0_1.ad, "items/content")
+	arg0_1.itemTpl = findTF(arg0_1.ad, "items/content/itemTpl")
 
-	setActive(arg0.itemTpl, false)
+	setActive(arg0_1.itemTpl, false)
 
-	arg0.iconContent = findTF(arg0.ad, "iconContent")
-	arg0.iconTpl = findTF(arg0.ad, "iconContent/IconTpl")
+	arg0_1.iconContent = findTF(arg0_1.ad, "iconContent")
+	arg0_1.iconTpl = findTF(arg0_1.ad, "iconContent/IconTpl")
 
-	setActive(arg0.iconTpl, false)
+	setActive(arg0_1.iconTpl, false)
 
-	arg0.desc = findTF(arg0.ad, "desc")
-	arg0.got = findTF(arg0.ad, "got")
-	arg0.get = findTF(arg0.ad, "get")
-	arg0.getBound = findTF(arg0.ad, "get_bound")
-	arg0.times = findTF(arg0.ad, "times")
+	arg0_1.desc = findTF(arg0_1.ad, "desc")
+	arg0_1.got = findTF(arg0_1.ad, "got")
+	arg0_1.get = findTF(arg0_1.ad, "get")
+	arg0_1.getBound = findTF(arg0_1.ad, "get_bound")
+	arg0_1.times = findTF(arg0_1.ad, "times")
 
-	onButton(arg0, arg0.get, function()
-		if arg0.selectIndex then
-			local var0 = getProxy(TaskProxy):getTaskById(arg0.skinDatas[arg0.selectIndex].task)
+	onButton(arg0_1, arg0_1.get, function()
+		if arg0_1.selectIndex then
+			local var0_2 = getProxy(TaskProxy):getTaskById(arg0_1.skinDatas[arg0_1.selectIndex].task)
 
-			arg0:emit(ActivityMediator.ON_TASK_SUBMIT, var0)
+			arg0_1:emit(ActivityMediator.ON_TASK_SUBMIT, var0_2)
 		end
 	end, sound, guideData)
 end
 
-function var0.OnDataSetting(arg0)
-	arg0.taskProxy = getProxy(TaskProxy)
-	arg0.taskList = arg0.activity:getConfig("config_data")
-	arg0.totalCnt = #arg0.taskList
+function var0_0.OnDataSetting(arg0_3)
+	arg0_3.taskProxy = getProxy(TaskProxy)
+	arg0_3.taskList = arg0_3.activity:getConfig("config_data")
+	arg0_3.totalCnt = #arg0_3.taskList
 
-	if not arg0.skinDatas then
-		arg0.skinDatas = {}
+	if not arg0_3.skinDatas then
+		arg0_3.skinDatas = {}
 
-		for iter0 = 1, #arg0.taskList do
-			local var0 = arg0.taskList[iter0]
-			local var1 = var1[iter0]
-			local var2 = tf(instantiate(arg0.itemTpl))
+		for iter0_3 = 1, #arg0_3.taskList do
+			local var0_3 = arg0_3.taskList[iter0_3]
+			local var1_3 = var1_0[iter0_3]
+			local var2_3 = tf(instantiate(arg0_3.itemTpl))
 
-			setParent(var2, arg0.itemContent)
-			setActive(var2, true)
-			onButton(arg0, var2, function()
-				arg0:selectItem(iter0)
+			setParent(var2_3, arg0_3.itemContent)
+			setActive(var2_3, true)
+			onButton(arg0_3, var2_3, function()
+				arg0_3:selectItem(iter0_3)
 			end, SFX_CONFIRM)
 
-			GetComponent(var2, typeof(Image)).sprite = GetSpriteFromAtlas(var3, "item_" .. var1)
+			GetComponent(var2_3, typeof(Image)).sprite = GetSpriteFromAtlas(var3_0, "item_" .. var1_3)
 
-			local var3 = tf(Instantiate(arg0.iconTpl))
+			local var3_3 = tf(Instantiate(arg0_3.iconTpl))
 
-			setParent(var3, arg0.iconContent)
-			setActive(var3, true)
+			setParent(var3_3, arg0_3.iconContent)
+			setActive(var3_3, true)
 
-			local var4 = (arg0.taskProxy:getTaskById(var0) or arg0.taskProxy:getFinishTaskById(var0)):getConfig("award_display")[1]
-			local var5 = {
-				type = var4[1],
-				id = var4[2],
-				count = var4[3]
+			local var4_3 = (arg0_3.taskProxy:getTaskById(var0_3) or arg0_3.taskProxy:getFinishTaskById(var0_3)):getConfig("award_display")[1]
+			local var5_3 = {
+				type = var4_3[1],
+				id = var4_3[2],
+				count = var4_3[3]
 			}
 
-			updateDrop(var3, var5)
-			onButton(arg0, var3, function()
-				arg0:emit(BaseUI.ON_DROP, var5)
+			updateDrop(var3_3, var5_3)
+			onButton(arg0_3, var3_3, function()
+				arg0_3:emit(BaseUI.ON_DROP, var5_3)
 			end, SFX_PANEL)
-			table.insert(arg0.skinDatas, {
-				task = var0,
-				name = var1,
-				item = var2,
-				icon = var3
+			table.insert(arg0_3.skinDatas, {
+				task = var0_3,
+				name = var1_3,
+				item = var2_3,
+				icon = var3_3
 			})
 		end
 	end
 end
 
-function var0.selectItem(arg0, arg1)
-	for iter0 = 1, #arg0.skinDatas do
-		local var0 = arg0.skinDatas[iter0].item
+function var0_0.selectItem(arg0_6, arg1_6)
+	for iter0_6 = 1, #arg0_6.skinDatas do
+		local var0_6 = arg0_6.skinDatas[iter0_6].item
 
-		if LeanTween.isTweening(go(var0)) then
+		if LeanTween.isTweening(go(var0_6)) then
 			return
 		end
 	end
 
-	local var1 = 0
+	local var1_6 = 0
 
-	for iter1 = arg1 + 1, #arg0.skinDatas do
-		arg0.skinDatas[iter1].item:SetAsFirstSibling()
-		setActive(arg0.skinDatas[iter1].item, iter1 ~= arg1)
-		setActive(arg0.skinDatas[iter1].icon, iter1 == arg1)
+	for iter1_6 = arg1_6 + 1, #arg0_6.skinDatas do
+		arg0_6.skinDatas[iter1_6].item:SetAsFirstSibling()
+		setActive(arg0_6.skinDatas[iter1_6].item, iter1_6 ~= arg1_6)
+		setActive(arg0_6.skinDatas[iter1_6].icon, iter1_6 == arg1_6)
 
-		arg0.skinDatas[iter1].targetPos = Vector2(var1 * 215, 0)
-		var1 = var1 + 1
+		arg0_6.skinDatas[iter1_6].targetPos = Vector2(var1_6 * 215, 0)
+		var1_6 = var1_6 + 1
 	end
 
-	for iter2 = 1, arg1 do
-		arg0.skinDatas[iter2].item:SetAsFirstSibling()
-		setActive(arg0.skinDatas[iter2].item, iter2 ~= arg1)
-		setActive(arg0.skinDatas[iter2].icon, iter2 == arg1)
+	for iter2_6 = 1, arg1_6 do
+		arg0_6.skinDatas[iter2_6].item:SetAsFirstSibling()
+		setActive(arg0_6.skinDatas[iter2_6].item, iter2_6 ~= arg1_6)
+		setActive(arg0_6.skinDatas[iter2_6].icon, iter2_6 == arg1_6)
 
-		arg0.skinDatas[iter2].targetPos = Vector2(var1 * 215, 0)
-		var1 = var1 + 1
+		arg0_6.skinDatas[iter2_6].targetPos = Vector2(var1_6 * 215, 0)
+		var1_6 = var1_6 + 1
 	end
 
-	local var2 = arg0.skinDatas[arg1].task
-	local var3 = arg0.skinDatas[arg1].task
-	local var4 = arg0.taskProxy:getFinishTaskById(var3)
+	local var2_6 = arg0_6.skinDatas[arg1_6].task
+	local var3_6 = arg0_6.skinDatas[arg1_6].task
+	local var4_6 = arg0_6.taskProxy:getFinishTaskById(var3_6)
 
-	setActive(arg0.get, not var4 and arg0.remainCnt > 0)
-	setActive(arg0.getBound, not var4 and arg0.remainCnt > 0)
-	setActive(arg0.got, var4)
+	setActive(arg0_6.get, not var4_6 and arg0_6.remainCnt > 0)
+	setActive(arg0_6.getBound, not var4_6 and arg0_6.remainCnt > 0)
+	setActive(arg0_6.got, var4_6)
 
-	arg0.paintGot.anchoredPosition = var2[arg1]
+	arg0_6.paintGot.anchoredPosition = var2_0[arg1_6]
 
-	setActive(arg0.paintGot, var4)
+	setActive(arg0_6.paintGot, var4_6)
 
-	local var5 = GetComponent(findTF(arg0.paint, "show"), typeof(Image))
+	local var5_6 = GetComponent(findTF(arg0_6.paint, "show"), typeof(Image))
 
-	var5.sprite = GetSpriteFromAtlas(var3, "bg_" .. arg0.skinDatas[arg1].name)
+	var5_6.sprite = GetSpriteFromAtlas(var3_0, "bg_" .. arg0_6.skinDatas[arg1_6].name)
 
-	var5:SetNativeSize()
+	var5_6:SetNativeSize()
 
-	local var6 = GetComponent(findTF(arg0.paint, "temp"), typeof(Image))
+	local var6_6 = GetComponent(findTF(arg0_6.paint, "temp"), typeof(Image))
 
-	if arg0.selectIndex then
-		var6.sprite = GetSpriteFromAtlas(var3, "bg_" .. arg0.skinDatas[arg0.selectIndex].name)
+	if arg0_6.selectIndex then
+		var6_6.sprite = GetSpriteFromAtlas(var3_0, "bg_" .. arg0_6.skinDatas[arg0_6.selectIndex].name)
 	else
-		var6.sprite = GetSpriteFromAtlas(var3, "bg_" .. arg0.skinDatas[arg1].name)
+		var6_6.sprite = GetSpriteFromAtlas(var3_0, "bg_" .. arg0_6.skinDatas[arg1_6].name)
 	end
 
-	var6:SetNativeSize()
+	var6_6:SetNativeSize()
 
-	if arg0.selectIndex and arg0.selectIndex ~= arg1 then
-		local var7
-		local var8 = (arg0.selectIndex ~= 1 or arg1 ~= #arg0.skinDatas or false) and (arg0.selectIndex == #arg0.skinDatas and arg1 == 1 and true or arg1 > arg0.selectIndex and true or false)
+	if arg0_6.selectIndex and arg0_6.selectIndex ~= arg1_6 then
+		local var7_6
+		local var8_6 = (arg0_6.selectIndex ~= 1 or arg1_6 ~= #arg0_6.skinDatas or false) and (arg0_6.selectIndex == #arg0_6.skinDatas and arg1_6 == 1 and true or arg1_6 > arg0_6.selectIndex and true or false)
 
-		arg0.paintAnim:SetTrigger(var8 and "next" or "pre")
-		arg0:updateItemPos(true, var8)
+		arg0_6.paintAnim:SetTrigger(var8_6 and "next" or "pre")
+		arg0_6:updateItemPos(true, var8_6)
 	else
-		arg0:updateItemPos(false)
+		arg0_6:updateItemPos(false)
 	end
 
-	arg0.selectIndex = arg1
+	arg0_6.selectIndex = arg1_6
 end
 
-function var0.OnFirstFlush(arg0)
-	arg0.usedCnt = arg0.activity:getData1()
-	arg0.unlockCnt = pg.TimeMgr.GetInstance():DiffDay(arg0.activity:getStartTime(), pg.TimeMgr.GetInstance():GetServerTime()) + 1
-	arg0.unlockCnt = arg0.unlockCnt > arg0.totalCnt and arg0.totalCnt or arg0.unlockCnt
-	arg0.remainCnt = arg0.usedCnt >= arg0.totalCnt and 0 or arg0.unlockCnt - arg0.usedCnt
+function var0_0.OnFirstFlush(arg0_7)
+	arg0_7.usedCnt = arg0_7.activity:getData1()
+	arg0_7.unlockCnt = pg.TimeMgr.GetInstance():DiffDay(arg0_7.activity:getStartTime(), pg.TimeMgr.GetInstance():GetServerTime()) + 1
+	arg0_7.unlockCnt = arg0_7.unlockCnt > arg0_7.totalCnt and arg0_7.totalCnt or arg0_7.unlockCnt
+	arg0_7.remainCnt = arg0_7.usedCnt >= arg0_7.totalCnt and 0 or arg0_7.unlockCnt - arg0_7.usedCnt
 
-	setText(arg0.desc, i18n("skin_page_desc", arg0.activity:getConfig("config_id")))
-	setText(findTF(arg0.get, "desc"), i18n("skin_page_sign"))
+	setText(arg0_7.desc, i18n("skin_page_desc", arg0_7.activity:getConfig("config_id")))
+	setText(findTF(arg0_7.get, "desc"), i18n("skin_page_sign"))
 
-	local var0 = 1
+	local var0_7 = 1
 
-	for iter0 = 1, #arg0.skinDatas do
-		local var1 = arg0.skinDatas[iter0].task
+	for iter0_7 = 1, #arg0_7.skinDatas do
+		local var1_7 = arg0_7.skinDatas[iter0_7].task
 
-		if not (arg0.taskProxy:getFinishTaskById(var1) or false) then
-			var0 = var0 or iter0
+		if not (arg0_7.taskProxy:getFinishTaskById(var1_7) or false) then
+			var0_7 = var0_7 or iter0_7
 		end
 	end
 
-	arg0:selectItem(var0)
-	arg0:updateItemData()
+	arg0_7:selectItem(var0_7)
+	arg0_7:updateItemData()
 end
 
-function var0.OnUpdateFlush(arg0)
-	local var0 = 0
+function var0_0.OnUpdateFlush(arg0_8)
+	local var0_8 = 0
 
-	for iter0, iter1 in ipairs(arg0.taskList) do
-		if arg0.taskProxy:getFinishTaskById(iter1) ~= nil then
-			var0 = var0 + 1
+	for iter0_8, iter1_8 in ipairs(arg0_8.taskList) do
+		if arg0_8.taskProxy:getFinishTaskById(iter1_8) ~= nil then
+			var0_8 = var0_8 + 1
 		end
 	end
 
-	if arg0.usedCnt ~= var0 then
-		arg0.usedCnt = var0
+	if arg0_8.usedCnt ~= var0_8 then
+		arg0_8.usedCnt = var0_8
 
-		local var1 = arg0.activity
+		local var1_8 = arg0_8.activity
 
-		var1.data1 = arg0.usedCnt
+		var1_8.data1 = arg0_8.usedCnt
 
-		getProxy(ActivityProxy):updateActivity(var1)
+		getProxy(ActivityProxy):updateActivity(var1_8)
 	end
 
-	arg0.unlockCnt = (pg.TimeMgr.GetInstance():DiffDay(arg0.activity:getStartTime(), pg.TimeMgr.GetInstance():GetServerTime()) + 1) * arg0.activity:getConfig("config_id")
-	arg0.unlockCnt = arg0.unlockCnt > arg0.totalCnt and arg0.totalCnt or arg0.unlockCnt
-	arg0.remainCnt = arg0.usedCnt >= arg0.totalCnt and 0 or arg0.unlockCnt - arg0.usedCnt
+	arg0_8.unlockCnt = (pg.TimeMgr.GetInstance():DiffDay(arg0_8.activity:getStartTime(), pg.TimeMgr.GetInstance():GetServerTime()) + 1) * arg0_8.activity:getConfig("config_id")
+	arg0_8.unlockCnt = arg0_8.unlockCnt > arg0_8.totalCnt and arg0_8.totalCnt or arg0_8.unlockCnt
+	arg0_8.remainCnt = arg0_8.usedCnt >= arg0_8.totalCnt and 0 or arg0_8.unlockCnt - arg0_8.usedCnt
 
-	setText(findTF(arg0.times, "desc"), i18n("last_times_sign", arg0.remainCnt))
+	setText(findTF(arg0_8.times, "desc"), i18n("last_times_sign", arg0_8.remainCnt))
 
-	local var2 = arg0.activity:getConfig("config_client").story
+	local var2_8 = arg0_8.activity:getConfig("config_client").story
 
-	for iter2, iter3 in ipairs(arg0.taskList) do
-		if arg0.taskProxy:getFinishTaskById(iter3) and checkExist(var2, {
-			iter2
+	for iter2_8, iter3_8 in ipairs(arg0_8.taskList) do
+		if arg0_8.taskProxy:getFinishTaskById(iter3_8) and checkExist(var2_8, {
+			iter2_8
 		}, {
 			1
 		}) then
-			pg.NewStoryMgr.GetInstance():Play(var2[iter2][1])
+			pg.NewStoryMgr.GetInstance():Play(var2_8[iter2_8][1])
 		end
 	end
 
-	arg0:selectItem(arg0.selectIndex)
-	arg0:updateItemData()
+	arg0_8:selectItem(arg0_8.selectIndex)
+	arg0_8:updateItemData()
 end
 
-local var4 = 215
+local var4_0 = 215
 
-function var0.updateItemPos(arg0, arg1, arg2)
-	local var0 = Vector2(-var4, 0)
-	local var1 = Vector2((#arg0.skinDatas - 1) * var4, 0)
+function var0_0.updateItemPos(arg0_9, arg1_9, arg2_9)
+	local var0_9 = Vector2(-var4_0, 0)
+	local var1_9 = Vector2((#arg0_9.skinDatas - 1) * var4_0, 0)
 
-	for iter0 = 1, #arg0.skinDatas do
-		local var2 = arg0.skinDatas[iter0].item
+	for iter0_9 = 1, #arg0_9.skinDatas do
+		local var2_9 = arg0_9.skinDatas[iter0_9].item
 
-		if LeanTween.isTweening(go(var2)) then
-			LeanTween.cancel(go(var2))
+		if LeanTween.isTweening(go(var2_9)) then
+			LeanTween.cancel(go(var2_9))
 		end
 
-		local var3 = arg0.skinDatas[iter0].targetPos
+		local var3_9 = arg0_9.skinDatas[iter0_9].targetPos
 
-		if arg1 then
-			local var4 = var2.anchoredPosition
-			local var5 = {}
+		if arg1_9 then
+			local var4_9 = var2_9.anchoredPosition
+			local var5_9 = {}
 
-			if not arg2 and var4.x > var3.x then
-				table.insert(var5, var1)
-				table.insert(var5, var0)
-			elseif arg2 and var4.x < var3.x then
-				table.insert(var5, var0)
-				table.insert(var5, var1)
+			if not arg2_9 and var4_9.x > var3_9.x then
+				table.insert(var5_9, var1_9)
+				table.insert(var5_9, var0_9)
+			elseif arg2_9 and var4_9.x < var3_9.x then
+				table.insert(var5_9, var0_9)
+				table.insert(var5_9, var1_9)
 			end
 
-			table.insert(var5, var3)
-			table.insert(var5, var3)
-			arg0:tweenItem(var2, var5)
+			table.insert(var5_9, var3_9)
+			table.insert(var5_9, var3_9)
+			arg0_9:tweenItem(var2_9, var5_9)
 		else
-			var2.anchoredPosition = var3
+			var2_9.anchoredPosition = var3_9
 		end
 	end
 end
 
-function var0.tweenItem(arg0, arg1, arg2)
-	if #arg2 >= 2 then
-		local var0 = arg1.anchoredPosition
-		local var1 = table.remove(arg2, 1)
-		local var2 = table.remove(arg2, 1)
-		local var3 = math.abs(var1.x - var0.x) / var4 * 0.25
+function var0_0.tweenItem(arg0_10, arg1_10, arg2_10)
+	if #arg2_10 >= 2 then
+		local var0_10 = arg1_10.anchoredPosition
+		local var1_10 = table.remove(arg2_10, 1)
+		local var2_10 = table.remove(arg2_10, 1)
+		local var3_10 = math.abs(var1_10.x - var0_10.x) / var4_0 * 0.25
 
-		LeanTween.value(go(arg1), var0.x, var1.x, var3):setOnUpdate(System.Action_float(function(arg0)
-			var0.x = arg0
-			arg1.anchoredPosition = var0
+		LeanTween.value(go(arg1_10), var0_10.x, var1_10.x, var3_10):setOnUpdate(System.Action_float(function(arg0_11)
+			var0_10.x = arg0_11
+			arg1_10.anchoredPosition = var0_10
 		end)):setOnComplete(System.Action(function()
-			arg1.anchoredPosition = var2
+			arg1_10.anchoredPosition = var2_10
 
-			arg0:tweenItem(arg1, arg2)
+			arg0_10:tweenItem(arg1_10, arg2_10)
 		end))
 	end
 end
 
-function var0.updateItemData(arg0)
-	for iter0 = 1, #arg0.skinDatas do
-		local var0 = arg0.skinDatas[iter0].item
-		local var1 = arg0.skinDatas[iter0].task
-		local var2 = arg0.taskProxy:getFinishTaskById(var1) or false
+function var0_0.updateItemData(arg0_13)
+	for iter0_13 = 1, #arg0_13.skinDatas do
+		local var0_13 = arg0_13.skinDatas[iter0_13].item
+		local var1_13 = arg0_13.skinDatas[iter0_13].task
+		local var2_13 = arg0_13.taskProxy:getFinishTaskById(var1_13) or false
 
-		setActive(findTF(var0, "got"), var2)
+		setActive(findTF(var0_13, "got"), var2_13)
 	end
 end
 
-function var0.OnDestroy(arg0)
-	for iter0 = 1, #arg0.skinDatas do
-		local var0 = arg0.skinDatas[iter0].item
+function var0_0.OnDestroy(arg0_14)
+	for iter0_14 = 1, #arg0_14.skinDatas do
+		local var0_14 = arg0_14.skinDatas[iter0_14].item
 
-		if LeanTween.isTweening(go(var0)) then
-			LeanTween.cancel(go(var0), false)
+		if LeanTween.isTweening(go(var0_14)) then
+			LeanTween.cancel(go(var0_14), false)
 		end
 	end
 end
 
-return var0
+return var0_0

@@ -1,7 +1,7 @@
-﻿local var0 = setmetatable
-local var1 = UpdateBeat
-local var2 = CoUpdateBeat
-local var3 = Time
+﻿local var0_0 = setmetatable
+local var1_0 = UpdateBeat
+local var2_0 = CoUpdateBeat
+local var3_0 = Time
 
 Timer = {
 	loop = 1,
@@ -11,239 +11,239 @@ Timer = {
 	scale = false
 }
 
-local var4 = Timer
-local var5 = {
-	__index = var4
+local var4_0 = Timer
+local var5_0 = {
+	__index = var4_0
 }
 
-function var4.New(arg0, arg1, arg2, arg3)
-	assert(arg1 > 0, "定时器间隔不能小于等于0！：" .. arg1)
+function var4_0.New(arg0_1, arg1_1, arg2_1, arg3_1)
+	assert(arg1_1 > 0, "定时器间隔不能小于等于0！：" .. arg1_1)
 
-	arg3 = arg3 or false
-	arg2 = arg2 or 1
+	arg3_1 = arg3_1 or false
+	arg2_1 = arg2_1 or 1
 
-	return var0({
+	return var0_0({
 		running = false,
-		func = arg0,
-		duration = arg1,
-		time = arg1,
-		loop = arg2,
-		scale = arg3
-	}, var5)
+		func = arg0_1,
+		duration = arg1_1,
+		time = arg1_1,
+		loop = arg2_1,
+		scale = arg3_1
+	}, var5_0)
 end
 
-function var4.Start(arg0)
-	assert(arg0.running == false, "对已经启动的定时器执行启动！")
+function var4_0.Start(arg0_2)
+	assert(arg0_2.running == false, "对已经启动的定时器执行启动！")
 
-	arg0.running = true
-	arg0.paused = nil
+	arg0_2.running = true
+	arg0_2.paused = nil
 
-	if not arg0.handle then
-		arg0.handle = var1:CreateListener(arg0.Update, arg0)
+	if not arg0_2.handle then
+		arg0_2.handle = var1_0:CreateListener(arg0_2.Update, arg0_2)
 	end
 
-	var1:AddListener(arg0.handle)
+	var1_0:AddListener(arg0_2.handle)
 end
 
-function var4.Reset(arg0, arg1, arg2, arg3, arg4)
-	arg0.duration = arg2 or arg0.duration
+function var4_0.Reset(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
+	arg0_3.duration = arg2_3 or arg0_3.duration
 
-	assert(arg0.duration > 0, "定时器间隔不能小于等于0！：" .. arg0.duration)
+	assert(arg0_3.duration > 0, "定时器间隔不能小于等于0！：" .. arg0_3.duration)
 
-	arg0.loop = arg3 or arg0.loop
-	arg0.scale = arg4 or arg0.scale
-	arg0.func = arg1 or arg0.func
-	arg0.time = arg2 or arg0.time
-	arg0.running = false
-	arg0.paused = nil
+	arg0_3.loop = arg3_3 or arg0_3.loop
+	arg0_3.scale = arg4_3 or arg0_3.scale
+	arg0_3.func = arg1_3 or arg0_3.func
+	arg0_3.time = arg2_3 or arg0_3.time
+	arg0_3.running = false
+	arg0_3.paused = nil
 end
 
-function var4.SetScale(arg0, arg1)
-	arg0.scale = arg1
+function var4_0.SetScale(arg0_4, arg1_4)
+	arg0_4.scale = arg1_4
 end
 
-function var4.Stop(arg0)
-	if not arg0.running then
+function var4_0.Stop(arg0_5)
+	if not arg0_5.running then
 		return
 	end
 
-	arg0.running = false
-	arg0.paused = nil
-	arg0.time = 0
+	arg0_5.running = false
+	arg0_5.paused = nil
+	arg0_5.time = 0
 
-	if arg0.handle then
-		var1:RemoveListener(arg0.handle)
+	if arg0_5.handle then
+		var1_0:RemoveListener(arg0_5.handle)
 	end
 end
 
-function var4.Pause(arg0)
-	arg0.paused = true
+function var4_0.Pause(arg0_6)
+	arg0_6.paused = true
 end
 
-function var4.Resume(arg0)
-	arg0.paused = nil
+function var4_0.Resume(arg0_7)
+	arg0_7.paused = nil
 end
 
-function var4.Update(arg0)
-	if not arg0.running or arg0.paused then
+function var4_0.Update(arg0_8)
+	if not arg0_8.running or arg0_8.paused then
 		return
 	end
 
-	local var0 = arg0.scale and var3.deltaTime or var3.unscaledDeltaTime
+	local var0_8 = arg0_8.scale and var3_0.deltaTime or var3_0.unscaledDeltaTime
 
-	arg0.time = arg0.time - var0
+	arg0_8.time = arg0_8.time - var0_8
 
-	local var1 = 0
+	local var1_8 = 0
 
-	while arg0.time <= 0 and var1 < 6 do
-		var1 = var1 + 1
+	while arg0_8.time <= 0 and var1_8 < 6 do
+		var1_8 = var1_8 + 1
 
-		arg0.func(arg0)
+		arg0_8.func(arg0_8)
 
-		if arg0.loop > 0 then
-			arg0.loop = arg0.loop - 1
-			arg0.time = arg0.time + arg0.duration
+		if arg0_8.loop > 0 then
+			arg0_8.loop = arg0_8.loop - 1
+			arg0_8.time = arg0_8.time + arg0_8.duration
 		end
 
-		if arg0.loop == 0 then
-			arg0:Stop()
+		if arg0_8.loop == 0 then
+			arg0_8:Stop()
 
 			return
-		elseif arg0.loop < 0 then
-			arg0.time = arg0.time + arg0.duration
+		elseif arg0_8.loop < 0 then
+			arg0_8.time = arg0_8.time + arg0_8.duration
 		end
 	end
 end
 
 FrameTimer = {}
 
-local var6 = FrameTimer
-local var7 = {
-	__index = var6
+local var6_0 = FrameTimer
+local var7_0 = {
+	__index = var6_0
 }
 
-function var6.New(arg0, arg1, arg2)
-	local var0 = var3.frameCount + arg1
+function var6_0.New(arg0_9, arg1_9, arg2_9)
+	local var0_9 = var3_0.frameCount + arg1_9
 
-	arg2 = arg2 or 1
+	arg2_9 = arg2_9 or 1
 
-	return var0({
+	return var0_0({
 		running = false,
-		func = arg0,
-		loop = arg2,
-		duration = arg1,
-		count = var0
-	}, var7)
+		func = arg0_9,
+		loop = arg2_9,
+		duration = arg1_9,
+		count = var0_9
+	}, var7_0)
 end
 
-function var6.Reset(arg0, arg1, arg2, arg3)
-	arg0.func = arg1
-	arg0.duration = arg2
-	arg0.loop = arg3
-	arg0.count = var3.frameCount + arg2
+function var6_0.Reset(arg0_10, arg1_10, arg2_10, arg3_10)
+	arg0_10.func = arg1_10
+	arg0_10.duration = arg2_10
+	arg0_10.loop = arg3_10
+	arg0_10.count = var3_0.frameCount + arg2_10
 end
 
-function var6.Start(arg0)
-	if not arg0.handle then
-		arg0.handle = var2:CreateListener(arg0.Update, arg0)
+function var6_0.Start(arg0_11)
+	if not arg0_11.handle then
+		arg0_11.handle = var2_0:CreateListener(arg0_11.Update, arg0_11)
 	end
 
-	var2:AddListener(arg0.handle)
+	var2_0:AddListener(arg0_11.handle)
 
-	arg0.running = true
+	arg0_11.running = true
 end
 
-function var6.Stop(arg0)
-	arg0.running = false
+function var6_0.Stop(arg0_12)
+	arg0_12.running = false
 
-	if arg0.handle then
-		var2:RemoveListener(arg0.handle)
+	if arg0_12.handle then
+		var2_0:RemoveListener(arg0_12.handle)
 	end
 end
 
-function var6.Update(arg0)
-	if not arg0.running then
+function var6_0.Update(arg0_13)
+	if not arg0_13.running then
 		return
 	end
 
-	if var3.frameCount >= arg0.count then
-		arg0.func()
+	if var3_0.frameCount >= arg0_13.count then
+		arg0_13.func()
 
-		if arg0.loop > 0 then
-			arg0.loop = arg0.loop - 1
+		if arg0_13.loop > 0 then
+			arg0_13.loop = arg0_13.loop - 1
 		end
 
-		if arg0.loop == 0 then
-			arg0:Stop()
+		if arg0_13.loop == 0 then
+			arg0_13:Stop()
 		else
-			arg0.count = var3.frameCount + arg0.duration
+			arg0_13.count = var3_0.frameCount + arg0_13.duration
 		end
 	end
 end
 
 CoTimer = {}
 
-local var8 = CoTimer
-local var9 = {
-	__index = var8
+local var8_0 = CoTimer
+local var9_0 = {
+	__index = var8_0
 }
 
-function var8.New(arg0, arg1, arg2)
-	arg2 = arg2 or 1
+function var8_0.New(arg0_14, arg1_14, arg2_14)
+	arg2_14 = arg2_14 or 1
 
-	return var0({
+	return var0_0({
 		running = false,
-		duration = arg1,
-		loop = arg2,
-		func = arg0,
-		time = arg1
-	}, var9)
+		duration = arg1_14,
+		loop = arg2_14,
+		func = arg0_14,
+		time = arg1_14
+	}, var9_0)
 end
 
-function var8.Start(arg0)
-	if not arg0.handle then
-		arg0.handle = var2:CreateListener(arg0.Update, arg0)
+function var8_0.Start(arg0_15)
+	if not arg0_15.handle then
+		arg0_15.handle = var2_0:CreateListener(arg0_15.Update, arg0_15)
 	end
 
-	arg0.running = true
+	arg0_15.running = true
 
-	var2:AddListener(arg0.handle)
+	var2_0:AddListener(arg0_15.handle)
 end
 
-function var8.Reset(arg0, arg1, arg2, arg3)
-	arg0.duration = arg2
-	arg0.loop = arg3 or 1
-	arg0.func = arg1
-	arg0.time = arg2
+function var8_0.Reset(arg0_16, arg1_16, arg2_16, arg3_16)
+	arg0_16.duration = arg2_16
+	arg0_16.loop = arg3_16 or 1
+	arg0_16.func = arg1_16
+	arg0_16.time = arg2_16
 end
 
-function var8.Stop(arg0)
-	arg0.running = false
+function var8_0.Stop(arg0_17)
+	arg0_17.running = false
 
-	if arg0.handle then
-		var2:RemoveListener(arg0.handle)
+	if arg0_17.handle then
+		var2_0:RemoveListener(arg0_17.handle)
 	end
 end
 
-function var8.Update(arg0)
-	if not arg0.running then
+function var8_0.Update(arg0_18)
+	if not arg0_18.running then
 		return
 	end
 
-	if arg0.time <= 0 then
-		arg0.func()
+	if arg0_18.time <= 0 then
+		arg0_18.func()
 
-		if arg0.loop > 0 then
-			arg0.loop = arg0.loop - 1
-			arg0.time = arg0.time + arg0.duration
+		if arg0_18.loop > 0 then
+			arg0_18.loop = arg0_18.loop - 1
+			arg0_18.time = arg0_18.time + arg0_18.duration
 		end
 
-		if arg0.loop == 0 then
-			arg0:Stop()
-		elseif arg0.loop < 0 then
-			arg0.time = arg0.time + arg0.duration
+		if arg0_18.loop == 0 then
+			arg0_18:Stop()
+		elseif arg0_18.loop < 0 then
+			arg0_18.time = arg0_18.time + arg0_18.duration
 		end
 	end
 
-	arg0.time = arg0.time - var3.deltaTime
+	arg0_18.time = arg0_18.time - var3_0.deltaTime
 end

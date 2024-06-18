@@ -1,167 +1,167 @@
-﻿local var0 = class("CourtYardFurnitureBaseSlot")
-local var1 = 0
-local var2 = 1
-local var3 = 2
+﻿local var0_0 = class("CourtYardFurnitureBaseSlot")
+local var1_0 = 0
+local var2_0 = 1
+local var3_0 = 2
 
-var0.TYPE_COMMOM = 1
-var0.TYPE_MAIN_SPINE = 2
-var0.TYPE_SPINE_EXTRA = 3
+var0_0.TYPE_COMMOM = 1
+var0_0.TYPE_MAIN_SPINE = 2
+var0_0.TYPE_SPINE_EXTRA = 3
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0.id = arg1
-	arg0.mask = nil
-	arg0.scale = Vector3.one
-	arg0.offset = Vector3.zero
-	arg0.skewValue = Vector3.zero
-	arg0.follower = nil
-	arg0.animatorIndex = 0
-	arg0.animators = {}
-	arg0.bodyMask = nil
-	arg0.name = nil
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.id = arg1_1
+	arg0_1.mask = nil
+	arg0_1.scale = Vector3.one
+	arg0_1.offset = Vector3.zero
+	arg0_1.skewValue = Vector3.zero
+	arg0_1.follower = nil
+	arg0_1.animatorIndex = 0
+	arg0_1.animators = {}
+	arg0_1.bodyMask = nil
+	arg0_1.name = nil
 
-	if not arg2 or arg2 == "" then
-		arg0.state = var3
+	if not arg2_1 or arg2_1 == "" then
+		arg0_1.state = var3_0
 	else
-		arg0.state = var1
+		arg0_1.state = var1_0
 
-		arg0:OnInit(arg2)
+		arg0_1:OnInit(arg2_1)
 	end
 end
 
-function var0.IsEmpty(arg0)
-	return arg0.state == var1
+function var0_0.IsEmpty(arg0_2)
+	return arg0_2.state == var1_0
 end
 
-function var0.IsUsing(arg0)
-	return arg0.state == var2
+function var0_0.IsUsing(arg0_3)
+	return arg0_3.state == var2_0
 end
 
-function var0.Occupy(arg0, arg1, arg2, arg3)
-	if arg0.state == var1 then
-		arg0.user = arg2
-		arg0.owner = arg1
-		arg0.observer = arg3
-		arg0.state = var2
+function var0_0.Occupy(arg0_4, arg1_4, arg2_4, arg3_4)
+	if arg0_4.state == var1_0 then
+		arg0_4.user = arg2_4
+		arg0_4.owner = arg1_4
+		arg0_4.observer = arg3_4
+		arg0_4.state = var2_0
 
-		arg2:WillInteraction(arg0)
-		arg1:WillInteraction(arg0)
-		arg0:OnAwake()
-		arg3:StartInteraction(arg0)
-		arg2:StartInteraction(arg0)
-		arg1:StartInteraction(arg0)
+		arg2_4:WillInteraction(arg0_4)
+		arg1_4:WillInteraction(arg0_4)
+		arg0_4:OnAwake()
+		arg3_4:StartInteraction(arg0_4)
+		arg2_4:StartInteraction(arg0_4)
+		arg1_4:StartInteraction(arg0_4)
 		onNextTick(function()
-			arg0:OnStart()
+			arg0_4:OnStart()
 		end)
 	end
 end
 
-function var0.GetUser(arg0)
-	return arg0.user
+function var0_0.GetUser(arg0_6)
+	return arg0_6.user
 end
 
-function var0.GetOwner(arg0)
-	return arg0.owner
+function var0_0.GetOwner(arg0_7)
+	return arg0_7.owner
 end
 
-function var0.Use(arg0)
-	arg0.state = var2
+function var0_0.Use(arg0_8)
+	arg0_8.state = var2_0
 end
 
-function var0.Empty(arg0)
-	arg0.state = var1
+function var0_0.Empty(arg0_9)
+	arg0_9.state = var1_0
 end
 
-function var0.Clear(arg0, arg1)
-	if arg0.state == var2 then
-		arg0.state = var1
+function var0_0.Clear(arg0_10, arg1_10)
+	if arg0_10.state == var2_0 then
+		arg0_10.state = var1_0
 
-		arg0.observer:WillClearInteraction(arg0, arg1)
-		arg0.user:ClearInteraction(arg0, arg1)
-		arg0.owner:ClearInteraction(arg0, arg1)
-		arg0.observer:ClearInteraction(arg0, arg1)
+		arg0_10.observer:WillClearInteraction(arg0_10, arg1_10)
+		arg0_10.user:ClearInteraction(arg0_10, arg1_10)
+		arg0_10.owner:ClearInteraction(arg0_10, arg1_10)
+		arg0_10.observer:ClearInteraction(arg0_10, arg1_10)
 
-		arg0.user = nil
-		arg0.owner = nil
-		arg0.observer = nil
+		arg0_10.user = nil
+		arg0_10.owner = nil
+		arg0_10.observer = nil
 	end
 end
 
-function var0.Continue(arg0, arg1)
-	arg0:OnContinue(arg1)
+function var0_0.Continue(arg0_11, arg1_11)
+	arg0_11:OnContinue(arg1_11)
 end
 
-function var0.Stop(arg0)
-	arg0:Clear(true)
-	arg0:OnStop()
+function var0_0.Stop(arg0_12)
+	arg0_12:Clear(true)
+	arg0_12:OnStop()
 end
 
-function var0.Reset(arg0)
+function var0_0.Reset(arg0_13)
 	return
 end
 
-function var0.End(arg0)
-	arg0:Clear(false)
-	arg0:OnEnd()
+function var0_0.End(arg0_14)
+	arg0_14:Clear(false)
+	arg0_14:OnEnd()
 end
 
-function var0.GetMask(arg0)
-	return arg0.mask
+function var0_0.GetMask(arg0_15)
+	return arg0_15.mask
 end
 
-function var0.GetScale(arg0)
-	return arg0.scale
+function var0_0.GetScale(arg0_16)
+	return arg0_16.scale
 end
 
-function var0.GetOffset(arg0)
-	return arg0.offset
+function var0_0.GetOffset(arg0_17)
+	return arg0_17.offset
 end
 
-function var0.GetFollower(arg0)
-	return arg0.follower
+function var0_0.GetFollower(arg0_18)
+	return arg0_18.follower
 end
 
-function var0.GetBodyMask(arg0)
-	return arg0.bodyMask
+function var0_0.GetBodyMask(arg0_19)
+	return arg0_19.bodyMask
 end
 
-function var0.GetAnimators(arg0)
-	return arg0.animators
+function var0_0.GetAnimators(arg0_20)
+	return arg0_20.animators
 end
 
-function var0.GetUsingAnimator(arg0)
-	return arg0.animators[arg0.animatorIndex]
+function var0_0.GetUsingAnimator(arg0_21)
+	return arg0_21.animators[arg0_21.animatorIndex]
 end
 
-function var0.GetName(arg0)
-	return arg0.name
+function var0_0.GetName(arg0_22)
+	return arg0_22.name
 end
 
-function var0.GetSkew(arg0)
-	return arg0.skewValue
+function var0_0.GetSkew(arg0_23)
+	return arg0_23.skewValue
 end
 
-function var0.OnInit(arg0, arg1)
+function var0_0.OnInit(arg0_24, arg1_24)
 	return
 end
 
-function var0.OnAwake(arg0)
+function var0_0.OnAwake(arg0_25)
 	return
 end
 
-function var0.OnStart(arg0)
+function var0_0.OnStart(arg0_26)
 	return
 end
 
-function var0.OnStop(arg0)
+function var0_0.OnStop(arg0_27)
 	return
 end
 
-function var0.OnEnd(arg0)
+function var0_0.OnEnd(arg0_28)
 	return
 end
 
-function var0.OnContinue(arg0, arg1)
+function var0_0.OnContinue(arg0_29, arg1_29)
 	return
 end
 
-return var0
+return var0_0

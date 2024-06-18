@@ -1,58 +1,58 @@
-﻿local var0 = class("SVBossProgress", import("view.base.BaseSubView"))
+﻿local var0_0 = class("SVBossProgress", import("view.base.BaseSubView"))
 
-var0.HideView = "SVBossProgress.HideView"
+var0_0.HideView = "SVBossProgress.HideView"
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "SVBossProgress"
 end
 
-function var0.OnLoaded(arg0)
+function var0_0.OnLoaded(arg0_2)
 	return
 end
 
-function var0.OnInit(arg0)
-	arg0.rtFrame = arg0._tf:Find("frame")
-	arg0.rtPanel = arg0.rtFrame:Find("buff_panel/buff_bg")
-	arg0.rtInfo = arg0.rtFrame:Find("buff_panel/info")
+function var0_0.OnInit(arg0_3)
+	arg0_3.rtFrame = arg0_3._tf:Find("frame")
+	arg0_3.rtPanel = arg0_3.rtFrame:Find("buff_panel/buff_bg")
+	arg0_3.rtInfo = arg0_3.rtFrame:Find("buff_panel/info")
 
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:Hide()
 	end, SFX_CANCEL)
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_5)
 	return
 end
 
-function var0.Show(arg0)
-	setLocalScale(arg0.rtFrame, Vector3(0.5, 0.5, 0.5))
-	LeanTween.cancel(go(arg0.rtFrame))
-	LeanTween.scale(arg0.rtFrame, Vector3.one, 0.15)
-	setActive(arg0._tf, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+function var0_0.Show(arg0_6)
+	setLocalScale(arg0_6.rtFrame, Vector3(0.5, 0.5, 0.5))
+	LeanTween.cancel(go(arg0_6.rtFrame))
+	LeanTween.scale(arg0_6.rtFrame, Vector3.one, 0.15)
+	setActive(arg0_6._tf, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_6._tf)
 end
 
-function var0.Hide(arg0)
-	LeanTween.cancel(go(arg0.rtFrame))
-	setActive(arg0._tf, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, arg0._parentTf)
-	arg0:emit(var0.HideView, arg0.callback)
+function var0_0.Hide(arg0_7)
+	LeanTween.cancel(go(arg0_7.rtFrame))
+	setActive(arg0_7._tf, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_7._tf, arg0_7._parentTf)
+	arg0_7:emit(var0_0.HideView, arg0_7.callback)
 end
 
-function var0.Setup(arg0, arg1, arg2)
-	arg0.callback = arg2
+function var0_0.Setup(arg0_8, arg1_8, arg2_8)
+	arg0_8.callback = arg2_8
 
-	local var0 = arg1.drops
-	local var1 = 0
-	local var2 = arg1.total
+	local var0_8 = arg1_8.drops
+	local var1_8 = 0
+	local var2_8 = arg1_8.total
 
-	for iter0, iter1 in ipairs(var0) do
-		var1 = var1 + iter1.count
+	for iter0_8, iter1_8 in ipairs(var0_8) do
+		var1_8 = var1_8 + iter1_8.count
 	end
 
-	setText(arg0._tf:Find("frame/buff_panel/info/name"), i18n("world_boss_drop_title"))
-	setText(arg0._tf:Find("frame/buff_panel/info/value_before"), var2 - var1)
-	setText(arg0._tf:Find("frame/buff_panel/info/value"), var2)
+	setText(arg0_8._tf:Find("frame/buff_panel/info/name"), i18n("world_boss_drop_title"))
+	setText(arg0_8._tf:Find("frame/buff_panel/info/value_before"), var2_8 - var1_8)
+	setText(arg0_8._tf:Find("frame/buff_panel/info/value"), var2_8)
 end
 
-return var0
+return var0_0

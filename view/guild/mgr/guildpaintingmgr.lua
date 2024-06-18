@@ -1,60 +1,60 @@
 ﻿pg = pg or {}
 pg.GuildPaintingMgr = singletonClass("GuildPaintingMgr")
 
-local var0 = pg.GuildPaintingMgr
+local var0_0 = pg.GuildPaintingMgr
 
-function var0.Enter(arg0, arg1)
-	arg0._tf = arg1
+function var0_0.Enter(arg0_1, arg1_1)
+	arg0_1._tf = arg1_1
 end
 
-function var0.Update(arg0, arg1, arg2, arg3)
-	arg0.isShipPainting = arg3
+function var0_0.Update(arg0_2, arg1_2, arg2_2, arg3_2)
+	arg0_2.isShipPainting = arg3_2
 
-	arg0:Show()
+	arg0_2:Show()
 
-	if arg0.name == arg1 then
+	if arg0_2.name == arg1_2 then
 		return
 	end
 
-	arg0:Clear()
+	arg0_2:Clear()
 
-	if arg0.isShipPainting then
-		setPaintingPrefabAsync(arg0._tf, arg1, "chuanwu")
+	if arg0_2.isShipPainting then
+		setPaintingPrefabAsync(arg0_2._tf, arg1_2, "chuanwu")
 	else
-		setGuildPaintingPrefabAsync(arg0._tf, arg1, "chuanwu")
+		setGuildPaintingPrefabAsync(arg0_2._tf, arg1_2, "chuanwu")
 	end
 
-	arg0.name = arg1
+	arg0_2.name = arg1_2
 
-	if arg2 then
-		arg0._tf.localPosition = arg2
-	end
-end
-
-function var0.Show(arg0)
-	if not IsNil(arg0._tf) then
-		setActive(arg0._tf, true)
+	if arg2_2 then
+		arg0_2._tf.localPosition = arg2_2
 	end
 end
 
-function var0.Hide(arg0)
-	if not IsNil(arg0._tf) then
-		setActive(arg0._tf, false)
+function var0_0.Show(arg0_3)
+	if not IsNil(arg0_3._tf) then
+		setActive(arg0_3._tf, true)
 	end
 end
 
-function var0.Clear(arg0)
-	if arg0.name then
-		if arg0.isShipPainting then
-			retPaintingPrefab(arg0._tf, arg0.name)
+function var0_0.Hide(arg0_4)
+	if not IsNil(arg0_4._tf) then
+		setActive(arg0_4._tf, false)
+	end
+end
+
+function var0_0.Clear(arg0_5)
+	if arg0_5.name then
+		if arg0_5.isShipPainting then
+			retPaintingPrefab(arg0_5._tf, arg0_5.name)
 		else
-			retGuildPaintingPrefab(arg0._tf, arg0.name)
+			retGuildPaintingPrefab(arg0_5._tf, arg0_5.name)
 		end
 
-		arg0.name = nil
+		arg0_5.name = nil
 	end
 end
 
-function var0.Exit(arg0)
-	arg0:Clear()
+function var0_0.Exit(arg0_6)
+	arg0_6:Clear()
 end

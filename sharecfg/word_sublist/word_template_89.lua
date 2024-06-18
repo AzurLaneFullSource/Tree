@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_89 = {}
+var0_0.word_template_89 = {}
 
-local var1 = var0.word_template_89
+local var1_0 = var0_0.word_template_89
 
 function temp()
-	var1.读 = {
+	var1_0.读 = {
 		不 = {
 			起 = {
 				选 = {
@@ -34,7 +34,7 @@ end
 temp()
 
 function temp()
-	var1.渎 = {
+	var1_0.渎 = {
 		职 = {
 			this = true
 		}
@@ -44,7 +44,7 @@ end
 temp()
 
 function temp()
-	var1.獨 = {
+	var1_0.獨 = {
 		裁 = {
 			this = true,
 			政 = {
@@ -75,7 +75,7 @@ end
 temp()
 
 function temp()
-	var1.髑 = {
+	var1_0.髑 = {
 		屙 = {
 			民 = {
 				this = true
@@ -87,7 +87,7 @@ end
 temp()
 
 function temp()
-	var1.赌 = {
+	var1_0.赌 = {
 		this = {
 			this = true
 		},
@@ -197,7 +197,7 @@ end
 temp()
 
 function temp()
-	var1.杜 = {
+	var1_0.杜 = {
 		恒 = {
 			岩 = {
 				this = true
@@ -250,7 +250,7 @@ end
 temp()
 
 function temp()
-	var1.肚 = {
+	var1_0.肚 = {
 		脐 = {
 			主 = {
 				席 = {

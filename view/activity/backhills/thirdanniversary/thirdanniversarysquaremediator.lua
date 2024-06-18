@@ -1,70 +1,70 @@
-﻿local var0 = class("ThirdAnniversarySquareMediator", import("..TemplateMV.BackHillMediatorTemplate"))
+﻿local var0_0 = class("ThirdAnniversarySquareMediator", import("..TemplateMV.BackHillMediatorTemplate"))
 
-var0.MINIGAME_OPERATION = "MINIGAME_OPERATION"
-var0.ON_OPEN_TOWERCLIMBING_SIGNED = "ON_OPEN_TOWERCLIMBING_SIGNED"
-var0.ACTIVITY_OPERATION = "ACTIVITY_OPERATION"
+var0_0.MINIGAME_OPERATION = "MINIGAME_OPERATION"
+var0_0.ON_OPEN_TOWERCLIMBING_SIGNED = "ON_OPEN_TOWERCLIMBING_SIGNED"
+var0_0.ACTIVITY_OPERATION = "ACTIVITY_OPERATION"
 
-function var0.register(arg0)
-	arg0:BindEvent()
+function var0_0.register(arg0_1)
+	arg0_1:BindEvent()
 
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF)
+	local var0_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF)
 
-	assert(var0, "Building Activity Not Found")
+	assert(var0_1, "Building Activity Not Found")
 
-	arg0.activity = var0
+	arg0_1.activity = var0_1
 
-	arg0.viewComponent:UpdateActivity(var0)
+	arg0_1.viewComponent:UpdateActivity(var0_1)
 end
 
-function var0.BindEvent(arg0)
-	var0.super.BindEvent(arg0)
-	arg0:bind(var0.ON_OPEN_TOWERCLIMBING_SIGNED, function()
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
+function var0_0.BindEvent(arg0_2)
+	var0_0.super.BindEvent(arg0_2)
+	arg0_2:bind(var0_0.ON_OPEN_TOWERCLIMBING_SIGNED, function()
+		arg0_2:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
 			id = ActivityConst.TOWERCLIMBING_SIGN
 		})
 	end)
-	arg0:bind(var0.ACTIVITY_OPERATION, function(arg0, arg1)
-		assert(arg0.activity, "Cant Initialize Activity")
+	arg0_2:bind(var0_0.ACTIVITY_OPERATION, function(arg0_4, arg1_4)
+		assert(arg0_2.activity, "Cant Initialize Activity")
 
-		arg1.activity_id = arg0.activity.id
+		arg1_4.activity_id = arg0_2.activity.id
 
-		arg0:sendNotification(GAME.ACTIVITY_OPERATION, arg1)
+		arg0_2:sendNotification(GAME.ACTIVITY_OPERATION, arg1_4)
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_5)
 	return {
 		GAME.SEND_MINI_GAME_OP_DONE,
 		ActivityProxy.ACTIVITY_UPDATED
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_6, arg1_6)
+	local var0_6 = arg1_6:getName()
+	local var1_6 = arg1_6:getBody()
 
-	if var0 == GAME.SEND_MINI_GAME_OP_DONE then
-		local var2 = {
-			function(arg0)
-				local var0 = var1.awards
+	if var0_6 == GAME.SEND_MINI_GAME_OP_DONE then
+		local var2_6 = {
+			function(arg0_7)
+				local var0_7 = var1_6.awards
 
-				if #var0 > 0 then
-					arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var0, arg0)
+				if #var0_7 > 0 then
+					arg0_6.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_7, arg0_7)
 				else
-					arg0()
+					arg0_7()
 				end
 			end,
-			function(arg0)
-				arg0.viewComponent:UpdateView()
+			function(arg0_8)
+				arg0_6.viewComponent:UpdateView()
 			end
 		}
 
-		seriesAsync(var2)
-	elseif var0 == ActivityProxy.ACTIVITY_UPDATED and var1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF then
-		arg0.activity = var1
+		seriesAsync(var2_6)
+	elseif var0_6 == ActivityProxy.ACTIVITY_UPDATED and var1_6:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF then
+		arg0_6.activity = var1_6
 
-		arg0.viewComponent:UpdateActivity(var1)
+		arg0_6.viewComponent:UpdateActivity(var1_6)
 	end
 end
 
-return var0
+return var0_0

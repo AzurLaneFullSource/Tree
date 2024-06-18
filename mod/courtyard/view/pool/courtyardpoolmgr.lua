@@ -1,22 +1,22 @@
-﻿local var0 = class("CourtYardPoolMgr")
+﻿local var0_0 = class("CourtYardPoolMgr")
 
-function var0.Init(arg0, arg1, arg2)
-	arg0.pools = {}
-	arg0.root = arg1
+function var0_0.Init(arg0_1, arg1_1, arg2_1)
+	arg0_1.pools = {}
+	arg0_1.root = arg1_1
 
-	local var0 = arg0:GenPool(arg1)
+	local var0_1 = arg0_1:GenPool(arg1_1)
 
-	parallelAsync(var0, arg2)
+	parallelAsync(var0_1, arg2_1)
 end
 
-function var0.GenPool(arg0, arg1)
-	local var0 = {
+function var0_0.GenPool(arg0_2, arg1_2)
+	local var0_2 = {
 		"CourtYardFurniture",
 		"CourtYardGrid",
 		"CourtYardShip",
 		"CourtYardWallGrid"
 	}
-	local var1 = {
+	local var1_2 = {
 		{
 			10,
 			15
@@ -34,93 +34,93 @@ function var0.GenPool(arg0, arg1)
 			8
 		}
 	}
-	local var2 = {
+	local var2_2 = {
 		"Heart"
 	}
-	local var3 = {}
+	local var3_2 = {}
 
-	for iter0, iter1 in ipairs(var0) do
-		table.insert(var3, function(arg0)
-			ResourceMgr.Inst:getAssetAsync("ui/" .. iter1, "", typeof(Object), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0)
-				if arg0.exited then
+	for iter0_2, iter1_2 in ipairs(var0_2) do
+		table.insert(var3_2, function(arg0_3)
+			ResourceMgr.Inst:getAssetAsync("ui/" .. iter1_2, "", typeof(Object), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_4)
+				if arg0_2.exited then
 					return
 				end
 
-				local var0 = var1[iter0]
+				local var0_4 = var1_2[iter0_2]
 
-				arg0.pools[iter1] = CourtYardPool.New(arg1, arg0, unpack(var0))
+				arg0_2.pools[iter1_2] = CourtYardPool.New(arg1_2, arg0_4, unpack(var0_4))
 
-				arg0()
+				arg0_3()
 			end), true, true)
 		end)
 	end
 
-	for iter2, iter3 in ipairs(var2) do
-		table.insert(var3, function(arg0)
-			ResourceMgr.Inst:getAssetAsync("Effect/" .. iter3, "", typeof(Object), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0)
-				if arg0.exited then
+	for iter2_2, iter3_2 in ipairs(var2_2) do
+		table.insert(var3_2, function(arg0_5)
+			ResourceMgr.Inst:getAssetAsync("Effect/" .. iter3_2, "", typeof(Object), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_6)
+				if arg0_2.exited then
 					return
 				end
 
-				if arg0 then
-					arg0.pools[iter3] = CourtYardEffectPool.New(arg1, arg0, 0, 3)
+				if arg0_6 then
+					arg0_2.pools[iter3_2] = CourtYardEffectPool.New(arg1_2, arg0_6, 0, 3)
 				end
 
-				arg0()
+				arg0_5()
 			end), true, true)
 		end)
 	end
 
-	return var3
+	return var3_2
 end
 
-function var0.LoadAsset(arg0, arg1, arg2)
+function var0_0.LoadAsset(arg0_7, arg1_7, arg2_7)
 	return
 end
 
-function var0.GetFurniturePool(arg0)
-	return arg0.pools.CourtYardFurniture
+function var0_0.GetFurniturePool(arg0_8)
+	return arg0_8.pools.CourtYardFurniture
 end
 
-function var0.GetShipPool(arg0)
-	return arg0.pools.CourtYardShip
+function var0_0.GetShipPool(arg0_9)
+	return arg0_9.pools.CourtYardShip
 end
 
-function var0.GetGridPool(arg0)
-	return arg0.pools.CourtYardGrid
+function var0_0.GetGridPool(arg0_10)
+	return arg0_10.pools.CourtYardGrid
 end
 
-function var0.GetWallGridPool(arg0)
-	return arg0.pools.CourtYardWallGrid
+function var0_0.GetWallGridPool(arg0_11)
+	return arg0_11.pools.CourtYardWallGrid
 end
 
-function var0.GetHeartPool(arg0)
-	return arg0.pools.Heart
+function var0_0.GetHeartPool(arg0_12)
+	return arg0_12.pools.Heart
 end
 
-function var0.GetAiXinPool(arg0)
-	return arg0.pools.chengbao_aixin
+function var0_0.GetAiXinPool(arg0_13)
+	return arg0_13.pools.chengbao_aixin
 end
 
-function var0.GetXinXinPool(arg0)
-	return arg0.pools.chengbao_xinxin
+function var0_0.GetXinXinPool(arg0_14)
+	return arg0_14.pools.chengbao_xinxin
 end
 
-function var0.GetYinFuPool(arg0)
-	return arg0.pools.chengbao_yinfu
+function var0_0.GetYinFuPool(arg0_15)
+	return arg0_15.pools.chengbao_yinfu
 end
 
-function var0.GetZzzPool(arg0)
-	return arg0.pools.chengbao_ZZZ
+function var0_0.GetZzzPool(arg0_16)
+	return arg0_16.pools.chengbao_ZZZ
 end
 
-function var0.Dispose(arg0)
-	for iter0, iter1 in pairs(arg0.pools or {}) do
-		iter1:Dispose()
+function var0_0.Dispose(arg0_17)
+	for iter0_17, iter1_17 in pairs(arg0_17.pools or {}) do
+		iter1_17:Dispose()
 	end
 
-	arg0.pools = nil
-	arg0.exited = true
+	arg0_17.pools = nil
+	arg0_17.exited = true
 end
 
-return var0
+return var0_0

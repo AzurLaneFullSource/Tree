@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_277 = {}
+var0_0.word_template_277 = {}
 
-local var1 = var0.word_template_277
+local var1_0 = var0_0.word_template_277
 
 function temp()
-	var1.淘 = {
+	var1_0.淘 = {
 		宝 = {
 			this = true,
 			买 = {
@@ -28,7 +28,7 @@ end
 temp()
 
 function temp()
-	var1.鞀 = {
+	var1_0.鞀 = {
 		this = {
 			this = true
 		}
@@ -38,7 +38,7 @@ end
 temp()
 
 function temp()
-	var1.讨 = {
+	var1_0.讨 = {
 		债 = {
 			复 = {
 				仇 = {
@@ -76,7 +76,7 @@ end
 temp()
 
 function temp()
-	var1.套 = {
+	var1_0.套 = {
 		动 = {
 			this = true,
 			着 = {
@@ -120,7 +120,7 @@ end
 temp()
 
 function temp()
-	var1.謄 = {
+	var1_0.謄 = {
 		this = {
 			this = true
 		}
@@ -130,7 +130,7 @@ end
 temp()
 
 function temp()
-	var1.藤 = {
+	var1_0.藤 = {
 		本 = {
 			绫 = {
 				this = true
@@ -154,7 +154,7 @@ end
 temp()
 
 function temp()
-	var1.騰 = {
+	var1_0.騰 = {
 		訊 = {
 			Φ = {
 				this = true

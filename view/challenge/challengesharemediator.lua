@@ -1,34 +1,34 @@
-﻿local var0 = class("ChallengeShareMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("ChallengeShareMediator", import("..base.ContextMediator"))
 
-function var0.register(arg0)
-	local var0 = arg0.contextData.mode
-	local var1 = getProxy(ChallengeProxy):getUserChallengeInfo(var0)
+function var0_0.register(arg0_1)
+	local var0_1 = arg0_1.contextData.mode
+	local var1_1 = getProxy(ChallengeProxy):getUserChallengeInfo(var0_1)
 
-	arg0.viewComponent:setLevel(var1:getLevel())
+	arg0_1.viewComponent:setLevel(var1_1:getLevel())
 
-	local var2 = {
-		regularFleet = var1:getRegularFleet(),
-		submarineFleet = var1:getSubmarineFleet()
+	local var2_1 = {
+		regularFleet = var1_1:getRegularFleet(),
+		submarineFleet = var1_1:getSubmarineFleet()
 	}
-	local var3 = var2.regularFleet:getShipsByTeam(TeamType.Main, true)[1]
+	local var3_1 = var2_1.regularFleet:getShipsByTeam(TeamType.Main, true)[1]
 
-	arg0.viewComponent:setFlagShipPaint(var3:getPainting())
+	arg0_1.viewComponent:setFlagShipPaint(var3_1:getPainting())
 
-	local var4 = {}
+	local var4_1 = {}
 
-	for iter0, iter1 in ipairs(var2.regularFleet:getShips(true)) do
-		if iter1.id ~= var3.id then
-			table.insert(var4, iter1:getPainting())
+	for iter0_1, iter1_1 in ipairs(var2_1.regularFleet:getShips(true)) do
+		if iter1_1.id ~= var3_1.id then
+			table.insert(var4_1, iter1_1:getPainting())
 		end
 	end
 
-	for iter2, iter3 in ipairs(var2.submarineFleet:getShips(true)) do
-		if iter3.id ~= var3.id then
-			table.insert(var4, iter3:getPainting())
+	for iter2_1, iter3_1 in ipairs(var2_1.submarineFleet:getShips(true)) do
+		if iter3_1.id ~= var3_1.id then
+			table.insert(var4_1, iter3_1:getPainting())
 		end
 	end
 
-	arg0.viewComponent:setShipPaintList(var4)
+	arg0_1.viewComponent:setShipPaintList(var4_1)
 end
 
-return var0
+return var0_0

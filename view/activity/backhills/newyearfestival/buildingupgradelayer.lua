@@ -1,92 +1,92 @@
-﻿local var0 = class("BuildingUpgradeLayer", import("view.base.BaseUI"))
+﻿local var0_0 = class("BuildingUpgradeLayer", import("view.base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "BuildingUpgradePanel"
 end
 
-function var0.init(arg0)
-	arg0.btnUpgrade = arg0:findTF("window/frame/upgrade_btn")
+function var0_0.init(arg0_2)
+	arg0_2.btnUpgrade = arg0_2:findTF("window/frame/upgrade_btn")
 
-	setText(arg0:findTF("window/frame/costback/label"), i18n("word_consume"))
-	setText(arg0:findTF("window/frame/upgrade_btn/Image"), i18n("msgbox_text_upgrade"))
+	setText(arg0_2:findTF("window/frame/costback/label"), i18n("word_consume"))
+	setText(arg0_2:findTF("window/frame/upgrade_btn/Image"), i18n("msgbox_text_upgrade"))
 
-	arg0.loader = AutoLoader.New()
+	arg0_2.loader = AutoLoader.New()
 end
 
-function var0.UpdateActivity(arg0, arg1)
-	arg0.activity = arg1
+function var0_0.UpdateActivity(arg0_3, arg1_3)
+	arg0_3.activity = arg1_3
 end
 
-function var0.didEnter(arg0)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
-	onButton(arg0, arg0:findTF("window/top/btnBack"), function()
-		arg0:closeView()
+function var0_0.didEnter(arg0_4)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf)
+	onButton(arg0_4, arg0_4:findTF("window/top/btnBack"), function()
+		arg0_4:closeView()
 	end)
-	onButton(arg0, arg0:findTF("mengban"), function()
-		arg0:closeView()
+	onButton(arg0_4, arg0_4:findTF("mengban"), function()
+		arg0_4:closeView()
 	end)
-	arg0:Set(arg0.activity)
+	arg0_4:Set(arg0_4.activity)
 end
 
-function var0.Set(arg0, arg1, arg2)
-	arg2 = arg2 or arg0.contextData.buildingID
+function var0_0.Set(arg0_7, arg1_7, arg2_7)
+	arg2_7 = arg2_7 or arg0_7.contextData.buildingID
 
-	local var0 = pg.activity_event_building[arg2]
+	local var0_7 = pg.activity_event_building[arg2_7]
 
-	assert(var0, "Can't Find activity_event_building Config ID: " .. arg2)
+	assert(var0_7, "Can't Find activity_event_building Config ID: " .. arg2_7)
 
-	arg0.contextData.buildingID = arg2
+	arg0_7.contextData.buildingID = arg2_7
 
-	local var1 = #var0.buff
-	local var2 = arg1.data1KeyValueList[2][arg2] or 1
-	local var3 = var0.material[var2]
+	local var1_7 = #var0_7.buff
+	local var2_7 = arg1_7.data1KeyValueList[2][arg2_7] or 1
+	local var3_7 = var0_7.material[var2_7]
 
-	assert(#var3 == 1)
+	assert(#var3_7 == 1)
 
-	local var4 = var3[1][2]
-	local var5 = arg1.data1KeyValueList[1][var4] or 0
-	local var6 = var1 <= var2
-	local var7 = var6 or var5 >= var3[1][3]
+	local var4_7 = var3_7[1][2]
+	local var5_7 = arg1_7.data1KeyValueList[1][var4_7] or 0
+	local var6_7 = var1_7 <= var2_7
+	local var7_7 = var6_7 or var5_7 >= var3_7[1][3]
 
-	setText(arg0:findTF("window/top/name"), var0.name)
-	setText(arg0:findTF("window/top/name/lv"), "Lv." .. var2)
-	setScrollText(arg0:findTF("window/frame/describe/text"), var0.desc)
-	setText(arg0:findTF("window/frame/content/title/lv/current"), "Lv." .. var2)
-	setActive(arg0:findTF("window/frame/content/title/lv/next"), not var6)
+	setText(arg0_7:findTF("window/top/name"), var0_7.name)
+	setText(arg0_7:findTF("window/top/name/lv"), "Lv." .. var2_7)
+	setScrollText(arg0_7:findTF("window/frame/describe/text"), var0_7.desc)
+	setText(arg0_7:findTF("window/frame/content/title/lv/current"), "Lv." .. var2_7)
+	setActive(arg0_7:findTF("window/frame/content/title/lv/next"), not var6_7)
 
-	if not var6 then
-		setText(arg0:findTF("window/frame/content/title/lv/next"), "Lv." .. var2 + 1)
+	if not var6_7 then
+		setText(arg0_7:findTF("window/frame/content/title/lv/next"), "Lv." .. var2_7 + 1)
 	end
 
-	local var8 = var0.buff[var2]
-	local var9 = pg.benefit_buff_template[var8]
+	local var8_7 = var0_7.buff[var2_7]
+	local var9_7 = pg.benefit_buff_template[var8_7]
 
-	assert(var9, "Can't Find benefit_buff_template Config ID: " .. var8)
-	setText(arg0:findTF("window/frame/content/preview/current"), var9.desc)
-	setActive(arg0:findTF("window/frame/content/preview/arrow"), not var6)
-	setActive(arg0:findTF("window/frame/content/preview/next"), not var6)
+	assert(var9_7, "Can't Find benefit_buff_template Config ID: " .. var8_7)
+	setText(arg0_7:findTF("window/frame/content/preview/current"), var9_7.desc)
+	setActive(arg0_7:findTF("window/frame/content/preview/arrow"), not var6_7)
+	setActive(arg0_7:findTF("window/frame/content/preview/next"), not var6_7)
 
-	if not var6 then
-		local var10 = var0.buff[var2 + 1]
-		local var11 = pg.benefit_buff_template[var10]
+	if not var6_7 then
+		local var10_7 = var0_7.buff[var2_7 + 1]
+		local var11_7 = pg.benefit_buff_template[var10_7]
 
-		assert(var11, "Can't Find benefit_buff_template Config ID: " .. var10)
-		setText(arg0:findTF("window/frame/content/preview/next"), var11.desc)
+		assert(var11_7, "Can't Find benefit_buff_template Config ID: " .. var10_7)
+		setText(arg0_7:findTF("window/frame/content/preview/next"), var11_7.desc)
 	end
 
-	arg0.loader:GetSprite(Item.getConfigData(var4).icon, "", arg0:findTF("window/frame/costback/icon"))
-	setText(arg0:findTF("window/frame/costback/cost"), var0.material[var2] or 0)
-	onButton(arg0, arg0.btnUpgrade, function()
+	arg0_7.loader:GetSprite(Item.getConfigData(var4_7).icon, "", arg0_7:findTF("window/frame/costback/icon"))
+	setText(arg0_7:findTF("window/frame/costback/cost"), var0_7.material[var2_7] or 0)
+	onButton(arg0_7, arg0_7.btnUpgrade, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("building_upgrade_tip"),
 			onYes = function()
-				if var6 then
+				if var6_7 then
 					return
-				elseif var7 then
-					arg0:emit(BuildingUpgradeMediator.ACTIVITY_OPERATION, {
+				elseif var7_7 then
+					arg0_7:emit(BuildingUpgradeMediator.ACTIVITY_OPERATION, {
 						cmd = 1,
-						activity_id = arg0.activity.id,
-						arg1 = arg2
+						activity_id = arg0_7.activity.id,
+						arg1 = arg2_7
 					})
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("building_tip"))
@@ -94,12 +94,12 @@ function var0.Set(arg0, arg1, arg2)
 			end
 		})
 	end)
-	setGray(arg0.btnUpgrade, var6)
-	setButtonEnabled(arg0.btnUpgrade, not var6)
+	setGray(arg0_7.btnUpgrade, var6_7)
+	setButtonEnabled(arg0_7.btnUpgrade, not var6_7)
 end
 
-function var0.willExit(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+function var0_0.willExit(arg0_10)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_10._tf)
 end
 
-return var0
+return var0_0

@@ -1,89 +1,89 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConfig
-local var2 = class("BattleFleetBound")
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConfig
+local var2_0 = class("BattleFleetBound")
 
-var0.Battle.BattleFleetBound = var2
-var2.__name = "BattleFleetBound"
+var0_0.Battle.BattleFleetBound = var2_0
+var2_0.__name = "BattleFleetBound"
 
-function var2.Ctor(arg0, arg1)
-	arg0._iff = arg1
+function var2_0.Ctor(arg0_1, arg1_1)
+	arg0_1._iff = arg1_1
 end
 
-function var2.Dispose(arg0)
-	arg0._iff = nil
+function var2_0.Dispose(arg0_2)
+	arg0_2._iff = nil
 end
 
-function var2.GetBound(arg0)
-	return arg0._upperBound, arg0._lowerBound, arg0._absoluteLeft, arg0._absoluteRight, arg0._bufferLeft, arg0._bufferRight
+function var2_0.GetBound(arg0_3)
+	return arg0_3._upperBound, arg0_3._lowerBound, arg0_3._absoluteLeft, arg0_3._absoluteRight, arg0_3._bufferLeft, arg0_3._bufferRight
 end
 
-function var2.GetAbsoluteRight(arg0)
-	return arg0._absoluteRight
+function var2_0.GetAbsoluteRight(arg0_4)
+	return arg0_4._absoluteRight
 end
 
-function var2.ConfigAreaData(arg0, arg1, arg2)
-	arg0._totalArea = setmetatable({}, {
-		__index = arg1
+function var2_0.ConfigAreaData(arg0_5, arg1_5, arg2_5)
+	arg0_5._totalArea = setmetatable({}, {
+		__index = arg1_5
 	})
-	arg0._playerArea = setmetatable({}, {
-		__index = arg2
+	arg0_5._playerArea = setmetatable({}, {
+		__index = arg2_5
 	})
-	arg0._totalLeftBound = arg0._totalArea[1]
-	arg0._totalRightBound = arg0._totalArea[1] + arg0._totalArea[3]
-	arg0._totalUpperBound = arg0._totalArea[2] + arg0._totalArea[4]
-	arg0._totalLowerBound = arg0._totalArea[2]
-	arg0._upperBound = arg0._playerArea[2] + arg0._playerArea[4]
-	arg0._lowerBound = arg0._playerArea[2]
-	arg0._middleLine = arg0._playerArea[1] + arg0._playerArea[3]
+	arg0_5._totalLeftBound = arg0_5._totalArea[1]
+	arg0_5._totalRightBound = arg0_5._totalArea[1] + arg0_5._totalArea[3]
+	arg0_5._totalUpperBound = arg0_5._totalArea[2] + arg0_5._totalArea[4]
+	arg0_5._totalLowerBound = arg0_5._totalArea[2]
+	arg0_5._upperBound = arg0_5._playerArea[2] + arg0_5._playerArea[4]
+	arg0_5._lowerBound = arg0_5._playerArea[2]
+	arg0_5._middleLine = arg0_5._playerArea[1] + arg0_5._playerArea[3]
 end
 
-function var2.SwtichCommon(arg0)
-	if arg0._iff == var1.FRIENDLY_CODE then
-		arg0._absoluteLeft = arg0._playerArea[1]
-		arg0._absoluteRight = var1.MaxRight
-		arg0._bufferLeft = var1.MaxLeft
-		arg0._bufferRight = arg0._middleLine
-	elseif arg0._iff == var1.FOE_CODE then
-		arg0._absoluteLeft = arg0._middleLine
-		arg0._absoluteRight = arg0._totalRightBound
-		arg0._bufferLeft = arg0._middleLine
-		arg0._bufferRight = var1.MaxRight
+function var2_0.SwtichCommon(arg0_6)
+	if arg0_6._iff == var1_0.FRIENDLY_CODE then
+		arg0_6._absoluteLeft = arg0_6._playerArea[1]
+		arg0_6._absoluteRight = var1_0.MaxRight
+		arg0_6._bufferLeft = var1_0.MaxLeft
+		arg0_6._bufferRight = arg0_6._middleLine
+	elseif arg0_6._iff == var1_0.FOE_CODE then
+		arg0_6._absoluteLeft = arg0_6._middleLine
+		arg0_6._absoluteRight = arg0_6._totalRightBound
+		arg0_6._bufferLeft = arg0_6._middleLine
+		arg0_6._bufferRight = var1_0.MaxRight
 	end
 end
 
-function var2.SwtichDuelAggressive(arg0)
-	if arg0._iff == var1.FRIENDLY_CODE then
-		arg0._absoluteLeft = arg0._middleLine
-		arg0._absoluteRight = arg0._totalRightBound
-		arg0._bufferLeft = arg0._middleLine
-		arg0._bufferRight = var1.MaxRight
-	elseif arg0._iff == var1.FOE_CODE then
-		arg0._absoluteLeft = arg0._playerArea[1]
-		arg0._absoluteRight = var1.MaxRight
-		arg0._bufferLeft = var1.MaxLeft
-		arg0._bufferRight = arg0._middleLine
+function var2_0.SwtichDuelAggressive(arg0_7)
+	if arg0_7._iff == var1_0.FRIENDLY_CODE then
+		arg0_7._absoluteLeft = arg0_7._middleLine
+		arg0_7._absoluteRight = arg0_7._totalRightBound
+		arg0_7._bufferLeft = arg0_7._middleLine
+		arg0_7._bufferRight = var1_0.MaxRight
+	elseif arg0_7._iff == var1_0.FOE_CODE then
+		arg0_7._absoluteLeft = arg0_7._playerArea[1]
+		arg0_7._absoluteRight = var1_0.MaxRight
+		arg0_7._bufferLeft = var1_0.MaxLeft
+		arg0_7._bufferRight = arg0_7._middleLine
 	end
 end
 
-function var2.SwtichDBRGL(arg0)
-	if arg0._iff == var1.FRIENDLY_CODE then
-		arg0._absoluteLeft = arg0._playerArea[1]
-		arg0._absoluteRight = arg0._middleLine
-		arg0._bufferLeft = var1.MaxLeft
-		arg0._bufferRight = var1.MaxRight
-	elseif arg0._iff == var1.FOE_CODE then
-		arg0._absoluteLeft = arg0._middleLine
-		arg0._absoluteRight = arg0._totalRightBound
-		arg0._bufferLeft = arg0._middleLine
-		arg0._bufferRight = var1.MaxRight
+function var2_0.SwtichDBRGL(arg0_8)
+	if arg0_8._iff == var1_0.FRIENDLY_CODE then
+		arg0_8._absoluteLeft = arg0_8._playerArea[1]
+		arg0_8._absoluteRight = arg0_8._middleLine
+		arg0_8._bufferLeft = var1_0.MaxLeft
+		arg0_8._bufferRight = var1_0.MaxRight
+	elseif arg0_8._iff == var1_0.FOE_CODE then
+		arg0_8._absoluteLeft = arg0_8._middleLine
+		arg0_8._absoluteRight = arg0_8._totalRightBound
+		arg0_8._bufferLeft = arg0_8._middleLine
+		arg0_8._bufferRight = var1_0.MaxRight
 	end
 end
 
-function var2.FixCardPuzzleInput(arg0, arg1)
-	local var0 = math.clamp(arg1.x, arg0._absoluteLeft, arg0._absoluteRight)
-	local var1 = math.clamp(arg1.z, arg0._lowerBound, arg0._upperBound)
+function var2_0.FixCardPuzzleInput(arg0_9, arg1_9)
+	local var0_9 = math.clamp(arg1_9.x, arg0_9._absoluteLeft, arg0_9._absoluteRight)
+	local var1_9 = math.clamp(arg1_9.z, arg0_9._lowerBound, arg0_9._upperBound)
 
-	arg1:Set(var0, 0, var1)
+	arg1_9:Set(var0_9, 0, var1_9)
 end

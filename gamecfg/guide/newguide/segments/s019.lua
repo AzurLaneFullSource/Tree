@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Weapons enhanced! Firepower increased!！！",
 	"Tap back to stop viewing character details.",
 	"Tap back to leave the dock."
@@ -14,7 +14,7 @@ return {
 				mode = 2,
 				posY = -301,
 				posX = 422,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				hideChildEvent = true,
@@ -52,7 +52,7 @@ return {
 				mode = 2,
 				posY = 211.84,
 				posX = -105.86,
-				text = var0[2]
+				text = var0_0[2]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/blur_panel/adapt/top/back_btn",
@@ -74,7 +74,7 @@ return {
 				mode = 2,
 				posY = 230.33,
 				posX = -231.7,
-				text = var0[3]
+				text = var0_0[3]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/blur_panel/adapt/top/back",

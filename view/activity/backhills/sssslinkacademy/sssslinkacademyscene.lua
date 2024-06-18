@@ -1,10 +1,10 @@
-﻿local var0 = class("SSSSLinkAcademyScene", import("..TemplateMV.BackHillTemplate"))
+﻿local var0_0 = class("SSSSLinkAcademyScene", import("..TemplateMV.BackHillTemplate"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "SSSSLinkAcademyUI"
 end
 
-var0.edge2area = {
+var0_0.edge2area = {
 	default = "map_middle",
 	["2_3"] = "map_front",
 	["4_5"] = "map_front",
@@ -12,136 +12,136 @@ var0.edge2area = {
 	["3_4"] = "map_front"
 }
 
-function var0.init(arg0)
-	arg0.top = arg0:findTF("top")
-	arg0._map = arg0:findTF("map")
+function var0_0.init(arg0_2)
+	arg0_2.top = arg0_2:findTF("top")
+	arg0_2._map = arg0_2:findTF("map")
 
-	for iter0 = 0, arg0._map.childCount - 1 do
-		local var0 = arg0._map:GetChild(iter0)
-		local var1 = go(var0).name
+	for iter0_2 = 0, arg0_2._map.childCount - 1 do
+		local var0_2 = arg0_2._map:GetChild(iter0_2)
+		local var1_2 = go(var0_2).name
 
-		arg0["map_" .. var1] = var0
+		arg0_2["map_" .. var1_2] = var0_2
 	end
 
-	arg0._shipTpl = arg0._map:Find("ship")
-	arg0._upper = arg0:findTF("upper")
+	arg0_2._shipTpl = arg0_2._map:Find("ship")
+	arg0_2._upper = arg0_2:findTF("upper")
 
-	for iter1 = 0, arg0._upper.childCount - 1 do
-		local var2 = arg0._upper:GetChild(iter1)
-		local var3 = go(var2).name
+	for iter1_2 = 0, arg0_2._upper.childCount - 1 do
+		local var2_2 = arg0_2._upper:GetChild(iter1_2)
+		local var3_2 = go(var2_2).name
 
-		arg0["upper_" .. var3] = var2
+		arg0_2["upper_" .. var3_2] = var2_2
 	end
 
-	arg0.containers = {
-		arg0.map_front,
-		arg0.map_middle
+	arg0_2.containers = {
+		arg0_2.map_front,
+		arg0_2.map_middle
 	}
-	arg0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.SSSSLinkAcademyGraph"))
+	arg0_2.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.SSSSLinkAcademyGraph"))
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0:findTF("top/return_btn"), function()
-		arg0:emit(var0.ON_BACK)
+function var0_0.didEnter(arg0_3)
+	onButton(arg0_3, arg0_3:findTF("top/return_btn"), function()
+		arg0_3:emit(var0_0.ON_BACK)
 	end)
-	onButton(arg0, arg0:findTF("top/return_main_btn"), function()
-		arg0:emit(var0.ON_HOME)
+	onButton(arg0_3, arg0_3:findTF("top/return_main_btn"), function()
+		arg0_3:emit(var0_0.ON_HOME)
 	end)
-	onButton(arg0, arg0:findTF("top/help_btn"), function()
+	onButton(arg0_3, arg0_3:findTF("top/help_btn"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.ssss_main_help.tip
 		})
 	end)
-	arg0:BindItemActivityShop()
-	arg0:BindItemSkinShop()
-	arg0:BindItemBuildShip()
-	arg0:BindItemBattle()
+	arg0_3:BindItemActivityShop()
+	arg0_3:BindItemSkinShop()
+	arg0_3:BindItemBuildShip()
+	arg0_3:BindItemBattle()
 
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
+	local var0_3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
 
-	arg0:InitStudents(var0 and var0.id, 3, 4)
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "xiaoyouxi", function()
+	arg0_3:InitStudents(var0_3 and var0_3.id, 3, 4)
+	arg0_3:InitFacilityCross(arg0_3._map, arg0_3._upper, "xiaoyouxi", function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 55)
 	end)
 
-	local var1 = getProxy(ActivityProxy):getActivityById(ActivityConst.SSSS_PT)
+	local var1_3 = getProxy(ActivityProxy):getActivityById(ActivityConst.SSSS_PT)
 
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "huodongye", function()
-		arg0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ACTIVITY, {
-			id = var1 and var1.id
+	arg0_3:InitFacilityCross(arg0_3._map, arg0_3._upper, "huodongye", function()
+		arg0_3:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ACTIVITY, {
+			id = var1_3 and var1_3.id
 		})
 	end)
-	arg0:InitFacilityCross(arg0._map, arg0._upper, "jinianzhang", function()
-		arg0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.SSSS_MEDAL_COLLECTION)
+	arg0_3:InitFacilityCross(arg0_3._map, arg0_3._upper, "jinianzhang", function()
+		arg0_3:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.SSSS_MEDAL_COLLECTION)
 	end)
-	onButton(arg0, arg0.upper_huoyuehuodong, function()
-		arg0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.MONOPOLY_WORLD)
+	onButton(arg0_3, arg0_3.upper_huoyuehuodong, function()
+		arg0_3:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.MONOPOLY_WORLD)
 	end)
-	arg0:UpdateView()
+	arg0_3:UpdateView()
 end
 
-function var0.UpdateView(arg0)
-	local var0 = getProxy(ActivityProxy)
-	local var1
-	local var2 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
-	local var3 = var0.IsMiniActNeedTip(var2 and var2.id)
-	local var4 = arg0.upper_xiaoyouxi:Find("tip")
+function var0_0.UpdateView(arg0_11)
+	local var0_11 = getProxy(ActivityProxy)
+	local var1_11
+	local var2_11 = var0_11:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
+	local var3_11 = var0_0.IsMiniActNeedTip(var2_11 and var2_11.id)
+	local var4_11 = arg0_11.upper_xiaoyouxi:Find("tip")
 
-	setActive(var4, var3)
+	setActive(var4_11, var3_11)
 
-	local var5 = var0:getActivityById(ActivityConst.SSSS_PT)
-	local var6 = arg0.upper_huodongye:Find("tip")
-	local var7 = var5 and var5:readyToAchieve()
+	local var5_11 = var0_11:getActivityById(ActivityConst.SSSS_PT)
+	local var6_11 = arg0_11.upper_huodongye:Find("tip")
+	local var7_11 = var5_11 and var5_11:readyToAchieve()
 
-	setActive(var6, var7)
+	setActive(var6_11, var7_11)
 
-	local var8 = arg0.upper_jinianzhang:Find("tip")
-	local var9 = var0.MedalTip()
+	local var8_11 = arg0_11.upper_jinianzhang:Find("tip")
+	local var9_11 = var0_0.MedalTip()
 
-	setActive(var8, var9)
+	setActive(var8_11, var9_11)
 
-	local var10 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY)
-	local var11 = arg0.upper_huoyuehuodong:Find("tip")
-	local var12 = var10 and var10:readyToAchieve()
+	local var10_11 = var0_11:getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY)
+	local var11_11 = arg0_11.upper_huoyuehuodong:Find("tip")
+	local var12_11 = var10_11 and var10_11:readyToAchieve()
 
-	setActive(var11, var12)
+	setActive(var11_11, var12_11)
 end
 
-function var0.willExit(arg0)
-	arg0:clearStudents()
+function var0_0.willExit(arg0_12)
+	arg0_12:clearStudents()
 end
 
-function var0.MedalTip()
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA)
+function var0_0.MedalTip()
+	local var0_13 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA)
 
-	return Activity.IsActivityReady(var0)
+	return Activity.IsActivityReady(var0_13)
 end
 
-function var0.IsShowMainTip(arg0)
-	local var0 = getProxy(ActivityProxy)
+function var0_0.IsShowMainTip(arg0_14)
+	local var0_14 = getProxy(ActivityProxy)
 
-	local function var1()
-		local var0 = var0:getActivityById(ActivityConst.SSSS_PT)
+	local function var1_14()
+		local var0_15 = var0_14:getActivityById(ActivityConst.SSSS_PT)
 
-		return Activity.IsActivityReady(var0)
+		return Activity.IsActivityReady(var0_15)
 	end
 
-	local var2 = var0.MedalTip()
+	local var2_14 = var0_0.MedalTip()
 
-	local function var3()
-		local var0 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
+	local function var3_14()
+		local var0_16 = var0_14:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
 
-		return Activity.IsActivityReady(var0)
+		return Activity.IsActivityReady(var0_16)
 	end
 
-	local function var4()
-		local var0 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY)
+	local function var4_14()
+		local var0_17 = var0_14:getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY)
 
-		return Activity.IsActivityReady(var0)
+		return Activity.IsActivityReady(var0_17)
 	end
 
-	return var1() or var2() or var3() or var4()
+	return var1_14() or var2_14() or var3_14() or var4_14()
 end
 
-return var0
+return var0_0

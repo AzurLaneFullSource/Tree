@@ -1,34 +1,34 @@
-﻿local var0 = class("ShootingGameMediator", import(".MiniHubMediator"))
+﻿local var0_0 = class("ShootingGameMediator", import(".MiniHubMediator"))
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getName()
+	local var1_1 = arg1_1:getBody()
 
-	if var0 == GAME.SEND_MINI_GAME_OP_DONE and var1.cmd == MiniGameOPCommand.CMD_COMPLETE then
-		local var2 = {
-			function(arg0)
-				local var0 = var1.awards
+	if var0_1 == GAME.SEND_MINI_GAME_OP_DONE and var1_1.cmd == MiniGameOPCommand.CMD_COMPLETE then
+		local var2_1 = {
+			function(arg0_2)
+				local var0_2 = var1_1.awards
 
-				if #var0 > 0 then
-					arg0.viewComponent:emit(BaseUI.ON_ACHIEVE, var0, arg0)
+				if #var0_2 > 0 then
+					arg0_1.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_2, arg0_2)
 				else
-					arg0()
+					arg0_2()
 				end
 			end,
-			function(arg0)
-				arg0.viewComponent:OnGetAwardDone(var1)
-				arg0()
+			function(arg0_3)
+				arg0_1.viewComponent:OnGetAwardDone(var1_1)
+				arg0_3()
 			end
 		}
 
-		arg0.viewComponent:updateAfterFinish()
-		arg0.viewComponent:showResultPanel(var1.awards, function()
-			seriesAsync(var2)
-			arg0.viewComponent:OnSendMiniGameOPDone(var1)
+		arg0_1.viewComponent:updateAfterFinish()
+		arg0_1.viewComponent:showResultPanel(var1_1.awards, function()
+			seriesAsync(var2_1)
+			arg0_1.viewComponent:OnSendMiniGameOPDone(var1_1)
 		end)
 	else
-		var0.super.handleNotification(arg0, arg1)
+		var0_0.super.handleNotification(arg0_1, arg1_1)
 	end
 end
 
-return var0
+return var0_0

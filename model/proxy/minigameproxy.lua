@@ -1,144 +1,144 @@
-﻿local var0 = class("MiniGameProxy", import(".NetProxy"))
+﻿local var0_0 = class("MiniGameProxy", import(".NetProxy"))
 
-var0.ON_HUB_DATA_UPDATE = "on hub data update"
-var0.ON_MINI_GAME_DATA_UPDATE = "on_mini_game_data_update"
+var0_0.ON_HUB_DATA_UPDATE = "on hub data update"
+var0_0.ON_MINI_GAME_DATA_UPDATE = "on_mini_game_data_update"
 
-function var0.register(arg0)
-	arg0.miniGameHubDataDic = {}
-	arg0.miniGameDataDic = {}
+function var0_0.register(arg0_1)
+	arg0_1.miniGameHubDataDic = {}
+	arg0_1.miniGameDataDic = {}
 end
 
-function var0.CheckHasHub(arg0, arg1)
-	return arg0.miniGameHubDataDic[arg1] ~= nil
+function var0_0.CheckHasHub(arg0_2, arg1_2)
+	return arg0_2.miniGameHubDataDic[arg1_2] ~= nil
 end
 
-function var0.GetMiniGameData(arg0, arg1)
-	if arg0.miniGameDataDic[arg1] == nil then
-		local var0 = {
-			id = arg1
+function var0_0.GetMiniGameData(arg0_3, arg1_3)
+	if arg0_3.miniGameDataDic[arg1_3] == nil then
+		local var0_3 = {
+			id = arg1_3
 		}
 
-		arg0.miniGameDataDic[arg1] = MiniGameData.New(var0)
+		arg0_3.miniGameDataDic[arg1_3] = MiniGameData.New(var0_3)
 	end
 
-	return arg0.miniGameDataDic[arg1]
+	return arg0_3.miniGameDataDic[arg1_3]
 end
 
-function var0.GetMiniGameDataByType(arg0, arg1)
-	for iter0, iter1 in pairs(arg0.miniGameDataDic) do
-		if iter1:getConfig("type") == arg1 and iter1:CheckInTime() then
-			return iter1
+function var0_0.GetMiniGameDataByType(arg0_4, arg1_4)
+	for iter0_4, iter1_4 in pairs(arg0_4.miniGameDataDic) do
+		if iter1_4:getConfig("type") == arg1_4 and iter1_4:CheckInTime() then
+			return iter1_4
 		end
 	end
 end
 
-function var0.GetHubByHubId(arg0, arg1)
-	if arg0.miniGameHubDataDic[arg1] == nil then
-		local var0 = {
-			id = arg1
+function var0_0.GetHubByHubId(arg0_5, arg1_5)
+	if arg0_5.miniGameHubDataDic[arg1_5] == nil then
+		local var0_5 = {
+			id = arg1_5
 		}
 
-		arg0.miniGameHubDataDic[arg1] = MiniGameHubData.New(var0)
+		arg0_5.miniGameHubDataDic[arg1_5] = MiniGameHubData.New(var0_5)
 	end
 
-	return arg0.miniGameHubDataDic[arg1]
+	return arg0_5.miniGameHubDataDic[arg1_5]
 end
 
-function var0.GetHubByGameId(arg0, arg1)
-	local var0 = arg0:GetMiniGameData(arg1):getConfig("hub_id")
+function var0_0.GetHubByGameId(arg0_6, arg1_6)
+	local var0_6 = arg0_6:GetMiniGameData(arg1_6):getConfig("hub_id")
 
-	if arg0.miniGameHubDataDic[var0] == nil then
-		local var1 = {
-			id = var0
+	if arg0_6.miniGameHubDataDic[var0_6] == nil then
+		local var1_6 = {
+			id = var0_6
 		}
 
-		arg0.miniGameHubDataDic[var0] = MiniGameHubData.New(var1)
+		arg0_6.miniGameHubDataDic[var0_6] = MiniGameHubData.New(var1_6)
 	end
 
-	return arg0.miniGameHubDataDic[var0]
+	return arg0_6.miniGameHubDataDic[var0_6]
 end
 
-function var0.UpdataHubData(arg0, arg1)
-	local var0 = arg1.id
-	local var1 = arg0:GetHubByHubId(var0)
+function var0_0.UpdataHubData(arg0_7, arg1_7)
+	local var0_7 = arg1_7.id
+	local var1_7 = arg0_7:GetHubByHubId(var0_7)
 
-	var1:UpdateData(arg1)
-	arg0.facade:sendNotification(var0.ON_HUB_DATA_UPDATE, var1)
+	var1_7:UpdateData(arg1_7)
+	arg0_7.facade:sendNotification(var0_0.ON_HUB_DATA_UPDATE, var1_7)
 end
 
-function var0.GetHighScore(arg0, arg1)
-	return arg0:GetHubByGameId(arg1).highScores[arg1] or {}
+function var0_0.GetHighScore(arg0_8, arg1_8)
+	return arg0_8:GetHubByGameId(arg1_8).highScores[arg1_8] or {}
 end
 
-function var0.UpdataHighScore(arg0, arg1, arg2)
-	local var0 = arg0:GetHubByGameId(arg1)
-	local var1 = 0
+function var0_0.UpdataHighScore(arg0_9, arg1_9, arg2_9)
+	local var0_9 = arg0_9:GetHubByGameId(arg1_9)
+	local var1_9 = 0
 
-	if var0.highScores[arg1] and var0.highScores[arg1][1] then
-		var1 = var0.highScores[arg1][1]
+	if var0_9.highScores[arg1_9] and var0_9.highScores[arg1_9][1] then
+		var1_9 = var0_9.highScores[arg1_9][1]
 	end
 
-	if var1 <= arg2[1] then
-		var0.highScores[arg1] = arg2
+	if var1_9 <= arg2_9[1] then
+		var0_9.highScores[arg1_9] = arg2_9
 
-		arg0:UpdataHubData(var0)
+		arg0_9:UpdataHubData(var0_9)
 
-		local var2 = {
-			arg1
+		local var2_9 = {
+			arg1_9
 		}
 
-		for iter0, iter1 in ipairs(arg2) do
-			table.insert(var2, iter1)
+		for iter0_9, iter1_9 in ipairs(arg2_9) do
+			table.insert(var2_9, iter1_9)
 		end
 
-		arg0:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = var0.id,
+		arg0_9:sendNotification(GAME.SEND_MINI_GAME_OP, {
+			hubid = var0_9.id,
 			cmd = MiniGameOPCommand.CMD_HIGH_SCORE,
-			args1 = var2
+			args1 = var2_9
 		})
 	end
 end
 
-function var0.GetRank(arg0, arg1)
-	return arg0:GetMiniGameData(arg1):GetRank()
+function var0_0.GetRank(arg0_10, arg1_10)
+	return arg0_10:GetMiniGameData(arg1_10):GetRank()
 end
 
-function var0.SetRank(arg0, arg1, arg2)
-	arg0:GetMiniGameData(arg1):SetRank(arg2)
+function var0_0.SetRank(arg0_11, arg1_11, arg2_11)
+	arg0_11:GetMiniGameData(arg1_11):SetRank(arg2_11)
 end
 
-function var0.CanFetchRank(arg0, arg1)
-	return arg0:GetMiniGameData(arg1):CanFetchRank()
+function var0_0.CanFetchRank(arg0_12, arg1_12)
+	return arg0_12:GetMiniGameData(arg1_12):CanFetchRank()
 end
 
-function var0.RequestInitData(arg0, arg1, arg2)
-	local var0 = arg0:GetMiniGameData(arg1)
-	local var1 = var0:getConfig("request_data") == 1
+function var0_0.RequestInitData(arg0_13, arg1_13, arg2_13)
+	local var0_13 = arg0_13:GetMiniGameData(arg1_13)
+	local var1_13 = var0_13:getConfig("request_data") == 1
 
-	if arg2 and not var1 then
+	if arg2_13 and not var1_13 then
 		return
 	end
 
-	if var0:CheckInTime() then
-		local var2 = arg0:GetHubByGameId(arg1)
-		local var3 = var0:getConfig("type")
+	if var0_13:CheckInTime() then
+		local var2_13 = arg0_13:GetHubByGameId(arg1_13)
+		local var3_13 = var0_13:getConfig("type")
 
-		if (var3 == MiniGameConst.MG_TYPE_2 or var3 == MiniGameConst.MG_TYPE_3 or var3 == MiniGameConst.MG_TYPE_5) and not var0:GetRuntimeData("fetchData") then
-			arg0:sendNotification(GAME.SEND_MINI_GAME_OP, {
-				hubid = var2.id,
+		if (var3_13 == MiniGameConst.MG_TYPE_2 or var3_13 == MiniGameConst.MG_TYPE_3 or var3_13 == MiniGameConst.MG_TYPE_5) and not var0_13:GetRuntimeData("fetchData") then
+			arg0_13:sendNotification(GAME.SEND_MINI_GAME_OP, {
+				hubid = var2_13.id,
 				cmd = MiniGameOPCommand.CMD_SPECIAL_GAME,
 				args1 = {
-					var0.id,
+					var0_13.id,
 					1
 				}
 			})
-			var0:SetRuntimeData("fetchData", true)
+			var0_13:SetRuntimeData("fetchData", true)
 		end
 	end
 end
 
-function var0.remove(arg0)
+function var0_0.remove(arg0_14)
 	return
 end
 
-return var0
+return var0_0

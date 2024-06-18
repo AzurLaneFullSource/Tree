@@ -1,6 +1,6 @@
-﻿local var0 = class("WSEntranceTpl", import("...BaseEntity"))
+﻿local var0_0 = class("WSEntranceTpl", import("...BaseEntity"))
 
-var0.Fields = {
+var0_0.Fields = {
 	markSigns = "table",
 	portCamp = "number",
 	world = "table",
@@ -10,10 +10,10 @@ var0.Fields = {
 	markTFs = "table",
 	tfArea = "userdata"
 }
-var0.Listeners = {
+var0_0.Listeners = {
 	onUpdateDisplayMarks = "OnUpdateDisplayMarks"
 }
-var0.DisplayOrder = {
+var0_0.DisplayOrder = {
 	"step",
 	"task_main",
 	"task_collecktion",
@@ -25,7 +25,7 @@ var0.DisplayOrder = {
 	"task_following_boss",
 	"task_following"
 }
-var0.prefabName = {
+var0_0.prefabName = {
 	task_main = "DSJ_BX05_3D",
 	buff_a = "buff_a",
 	port_gray_2 = "mark_port_gray_2",
@@ -52,7 +52,7 @@ var0.prefabName = {
 	buff_h2 = "buff_h2",
 	port_mark = "mark_port_tip"
 }
-var0.offsetField = {
+var0_0.offsetField = {
 	task_main = "offset_pos",
 	task = "offset_pos",
 	treasure_sairen = "offset_pos",
@@ -64,152 +64,152 @@ var0.offsetField = {
 	task_following_boss = "offset_pos"
 }
 
-function var0.Build(arg0)
-	arg0.transform = tf(GameObject.New())
+function var0_0.Build(arg0_1)
+	arg0_1.transform = tf(GameObject.New())
 end
 
-function var0.Setup(arg0)
-	pg.DelegateInfo.New(arg0)
-	arg0:Init()
+function var0_0.Setup(arg0_2)
+	pg.DelegateInfo.New(arg0_2)
+	arg0_2:Init()
 end
 
-function var0.Dispose(arg0)
-	pg.DelegateInfo.Dispose(arg0)
-	arg0:RemoveEntranceListener()
+function var0_0.Dispose(arg0_3)
+	pg.DelegateInfo.Dispose(arg0_3)
+	arg0_3:RemoveEntranceListener()
 
-	local var0 = PoolMgr.GetInstance()
+	local var0_3 = PoolMgr.GetInstance()
 
-	for iter0, iter1 in pairs(arg0.markTFs) do
-		iter1.localPosition = Vector3.zero
+	for iter0_3, iter1_3 in pairs(arg0_3.markTFs) do
+		iter1_3.localPosition = Vector3.zero
 
-		var0:ReturnPrefab("world/mark/" .. var0.prefabName[iter0], var0.prefabName[iter0], go(iter1), true)
+		var0_3:ReturnPrefab("world/mark/" .. var0_0.prefabName[iter0_3], var0_0.prefabName[iter0_3], go(iter1_3), true)
 	end
 
-	Destroy(arg0.transform)
-	arg0:Clear()
+	Destroy(arg0_3.transform)
+	arg0_3:Clear()
 end
 
-function var0.Init(arg0)
-	arg0.markTFs = {}
+function var0_0.Init(arg0_4)
+	arg0_4.markTFs = {}
 end
 
-function var0.UpdateEntrance(arg0, arg1, arg2)
-	if arg2 or arg0.entrance ~= arg1 then
-		arg0:RemoveEntranceListener()
-		_.each(arg0.markTFs, function(arg0)
-			setActive(arg0, false)
+function var0_0.UpdateEntrance(arg0_5, arg1_5, arg2_5)
+	if arg2_5 or arg0_5.entrance ~= arg1_5 then
+		arg0_5:RemoveEntranceListener()
+		_.each(arg0_5.markTFs, function(arg0_6)
+			setActive(arg0_6, false)
 		end)
 
-		arg0.entrance = arg1
-		arg0.portCamp = arg0.entrance:HasPort() and pg.world_port_data[arg0.entrance.config.port_map_icon].port_camp or nil
+		arg0_5.entrance = arg1_5
+		arg0_5.portCamp = arg0_5.entrance:HasPort() and pg.world_port_data[arg0_5.entrance.config.port_map_icon].port_camp or nil
 
-		arg0:AddEntranceListener()
-		arg0:InitMarksValue()
+		arg0_5:AddEntranceListener()
+		arg0_5:InitMarksValue()
 
-		arg0.transform.name = arg0.portCamp and "port_" .. arg1.id or arg1:GetColormaskUniqueID()
+		arg0_5.transform.name = arg0_5.portCamp and "port_" .. arg1_5.id or arg1_5:GetColormaskUniqueID()
 
-		arg0:DoUpdateMark(arg0:GetShowMark(), true)
+		arg0_5:DoUpdateMark(arg0_5:GetShowMark(), true)
 	end
 end
 
-function var0.InitMarksValue(arg0)
-	arg0.markSigns = {}
+function var0_0.InitMarksValue(arg0_7)
+	arg0_7.markSigns = {}
 
-	local var0 = arg0.entrance:GetDisplayMarks()
+	local var0_7 = arg0_7.entrance:GetDisplayMarks()
 
-	for iter0, iter1 in pairs(var0) do
-		arg0.markSigns[iter0] = iter1 > 0
+	for iter0_7, iter1_7 in pairs(var0_7) do
+		arg0_7.markSigns[iter0_7] = iter1_7 > 0
 	end
 end
 
-function var0.AddEntranceListener(arg0)
-	if arg0.entrance then
-		arg0.entrance:AddListener(WorldEntrance.EventUpdateDisplayMarks, arg0.onUpdateDisplayMarks)
+function var0_0.AddEntranceListener(arg0_8)
+	if arg0_8.entrance then
+		arg0_8.entrance:AddListener(WorldEntrance.EventUpdateDisplayMarks, arg0_8.onUpdateDisplayMarks)
 	end
 end
 
-function var0.RemoveEntranceListener(arg0)
-	if arg0.entrance then
-		arg0.entrance:RemoveListener(WorldEntrance.EventUpdateDisplayMarks, arg0.onUpdateDisplayMarks)
+function var0_0.RemoveEntranceListener(arg0_9)
+	if arg0_9.entrance then
+		arg0_9.entrance:RemoveListener(WorldEntrance.EventUpdateDisplayMarks, arg0_9.onUpdateDisplayMarks)
 	end
 end
 
-function var0.LoadPrefab(arg0, arg1, arg2)
-	local var0 = PoolMgr.GetInstance()
+function var0_0.LoadPrefab(arg0_10, arg1_10, arg2_10)
+	local var0_10 = PoolMgr.GetInstance()
 
-	var0:GetPrefab("world/mark/" .. var0.prefabName[arg1], var0.prefabName[arg1], true, function(arg0)
-		if arg0.markTFs and not arg0.markTFs[arg1] then
-			arg0.markTFs[arg1] = tf(arg0)
+	var0_10:GetPrefab("world/mark/" .. var0_0.prefabName[arg1_10], var0_0.prefabName[arg1_10], true, function(arg0_11)
+		if arg0_10.markTFs and not arg0_10.markTFs[arg1_10] then
+			arg0_10.markTFs[arg1_10] = tf(arg0_11)
 
-			SetParent(arg0.markTFs[arg1], arg0.transform, false)
+			SetParent(arg0_10.markTFs[arg1_10], arg0_10.transform, false)
 
-			arg0.markTFs[arg1].localPosition = arg0:GetPrefabOffset(arg1)
+			arg0_10.markTFs[arg1_10].localPosition = arg0_10:GetPrefabOffset(arg1_10)
 
-			if arg2 then
-				SetParent(arg0.markTFs[arg1], arg2, true)
+			if arg2_10 then
+				SetParent(arg0_10.markTFs[arg1_10], arg2_10, true)
 			end
 
-			setActive(arg0.markTFs[arg1], true)
+			setActive(arg0_10.markTFs[arg1_10], true)
 		else
-			var0:ReturnPrefab("world/mark/" .. var0.prefabName[arg1], var0.prefabName[arg1], arg0, true)
+			var0_10:ReturnPrefab("world/mark/" .. var0_0.prefabName[arg1_10], var0_0.prefabName[arg1_10], arg0_11, true)
 		end
 	end)
 end
 
-function var0.GetPrefabOffset(arg0, arg1)
-	local var0 = var0.offsetField[arg1] and arg0.entrance.config[var0.offsetField[arg1]] or {
+function var0_0.GetPrefabOffset(arg0_12, arg1_12)
+	local var0_12 = var0_0.offsetField[arg1_12] and arg0_12.entrance.config[var0_0.offsetField[arg1_12]] or {
 		0,
 		0
 	}
 
-	return Vector3(var0[1] / PIXEL_PER_UNIT, 0, var0[2] / PIXEL_PER_UNIT)
+	return Vector3(var0_12[1] / PIXEL_PER_UNIT, 0, var0_12[2] / PIXEL_PER_UNIT)
 end
 
-function var0.UpdateMark(arg0, arg1, arg2)
-	arg0:DoUpdateMark(arg0:GetShowMark(), false)
+function var0_0.UpdateMark(arg0_13, arg1_13, arg2_13)
+	arg0_13:DoUpdateMark(arg0_13:GetShowMark(), false)
 
-	arg0.markSigns[arg1] = arg2
+	arg0_13.markSigns[arg1_13] = arg2_13
 
-	arg0:DoUpdateMark(arg0:GetShowMark(), true)
+	arg0_13:DoUpdateMark(arg0_13:GetShowMark(), true)
 end
 
-function var0.OnUpdateDisplayMarks(arg0, arg1, arg2, arg3, arg4)
-	arg0:UpdateMark(arg3, arg4)
+function var0_0.OnUpdateDisplayMarks(arg0_14, arg1_14, arg2_14, arg3_14, arg4_14)
+	arg0_14:UpdateMark(arg3_14, arg4_14)
 end
 
-function var0.DoUpdateMark(arg0, arg1, arg2, arg3)
-	if arg1 then
-		if arg0.markTFs[arg1] then
-			setActive(arg0.markTFs[arg1], arg2)
-		elseif arg2 then
-			arg0:LoadPrefab(arg1, arg3)
+function var0_0.DoUpdateMark(arg0_15, arg1_15, arg2_15, arg3_15)
+	if arg1_15 then
+		if arg0_15.markTFs[arg1_15] then
+			setActive(arg0_15.markTFs[arg1_15], arg2_15)
+		elseif arg2_15 then
+			arg0_15:LoadPrefab(arg1_15, arg3_15)
 		end
 	end
 end
 
-function var0.GetShowMark(arg0)
-	for iter0, iter1 in ipairs(var0.DisplayOrder) do
-		if arg0.markSigns[iter1] then
-			return iter1
+function var0_0.GetShowMark(arg0_16)
+	for iter0_16, iter1_16 in ipairs(var0_0.DisplayOrder) do
+		if arg0_16.markSigns[iter1_16] then
+			return iter1_16
 		end
 	end
 end
 
-function var0.UpdatePort(arg0, arg1, arg2, arg3)
-	arg0:DoUpdateMark("port_" .. arg0.portCamp, arg1)
-	arg0:DoUpdateMark("port_gray_" .. arg0.portCamp, not arg1)
-	arg0:DoUpdateMark("port_mark", arg2)
-	arg0:DoUpdateMark("port_mark_new", arg3)
+function var0_0.UpdatePort(arg0_17, arg1_17, arg2_17, arg3_17)
+	arg0_17:DoUpdateMark("port_" .. arg0_17.portCamp, arg1_17)
+	arg0_17:DoUpdateMark("port_gray_" .. arg0_17.portCamp, not arg1_17)
+	arg0_17:DoUpdateMark("port_mark", arg2_17)
+	arg0_17:DoUpdateMark("port_mark_new", arg3_17)
 end
 
-function var0.UpdatePressingAward(arg0)
-	local var0 = nowWorld():GetPressingAward(arg0.entrance.id)
+function var0_0.UpdatePressingAward(arg0_18)
+	local var0_18 = nowWorld():GetPressingAward(arg0_18.entrance.id)
 
-	if var0 then
-		local var1 = pg.world_event_complete[var0.id]
+	if var0_18 then
+		local var1_18 = pg.world_event_complete[var0_18.id]
 
-		arg0:DoUpdateMark(var1.map_icon, var0.flag, arg0.tfMap)
+		arg0_18:DoUpdateMark(var1_18.map_icon, var0_18.flag, arg0_18.tfMap)
 	end
 end
 
-return var0
+return var0_0

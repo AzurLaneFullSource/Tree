@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_317 = {}
+var0_0.word_template_317 = {}
 
-local var1 = var0.word_template_317
+local var1_0 = var0_0.word_template_317
 
 function temp()
-	var1.豔 = {
+	var1_0.豔 = {
 		婦 = {
 			淫 = {
 				女 = {
@@ -44,7 +44,7 @@ end
 temp()
 
 function temp()
-	var1.央 = {
+	var1_0.央 = {
 		视 = {
 			不 = {
 				差 = {
@@ -95,7 +95,7 @@ end
 temp()
 
 function temp()
-	var1.阳 = {
+	var1_0.阳 = {
 		光 = {
 			牧 = {
 				场 = {
@@ -167,7 +167,7 @@ end
 temp()
 
 function temp()
-	var1.杨 = {
+	var1_0.杨 = {
 		传 = {
 			堂 = {
 				this = true
@@ -298,7 +298,7 @@ end
 temp()
 
 function temp()
-	var1.洋 = {
+	var1_0.洋 = {
 		地 = {
 			黄 = {
 				毒 = {
@@ -337,7 +337,7 @@ end
 temp()
 
 function temp()
-	var1.陽 = {
+	var1_0.陽 = {
 		具 = {
 			this = true
 		},
@@ -353,7 +353,7 @@ end
 temp()
 
 function temp()
-	var1.楊 = {
+	var1_0.楊 = {
 		懷 = {
 			安 = {
 				this = true

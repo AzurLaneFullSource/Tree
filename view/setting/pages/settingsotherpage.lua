@@ -1,116 +1,116 @@
-﻿local var0 = class("SettingsOtherPage", import(".SettingsOptionPage"))
+﻿local var0_0 = class("SettingsOtherPage", import(".SettingsOptionPage"))
 
-function var0.OnShowTranscode(arg0, arg1)
+function var0_0.OnShowTranscode(arg0_1, arg1_1)
 	if PLATFORM_CODE == PLATFORM_JP then
-		arg0:GetPanel(SettingsAccountJPPanle):showTranscode(arg1)
+		arg0_1:GetPanel(SettingsAccountJPPanle):showTranscode(arg1_1)
 	end
 end
 
-function var0.OnCheckAllAccountState(arg0)
+function var0_0.OnCheckAllAccountState(arg0_2)
 	if PLATFORM_CODE == PLATFORM_JP then
-		arg0:GetPanel(SettingsAccountJPPanle):checkAllAccountState()
+		arg0_2:GetPanel(SettingsAccountJPPanle):checkAllAccountState()
 	elseif PLATFORM_CODE == PLATFORM_US then
-		arg0:GetPanel(SettingsAccountUSPanle):checkAllAccountState_US()
+		arg0_2:GetPanel(SettingsAccountUSPanle):checkAllAccountState_US()
 	end
 end
 
-function var0.OnClearExchangeCode(arg0)
-	local var0 = arg0:GetPanel(SettingsRedeemPanel)
+function var0_0.OnClearExchangeCode(arg0_3)
+	local var0_3 = arg0_3:GetPanel(SettingsRedeemPanel)
 
-	if var0 then
-		var0:ClearExchangeCode()
+	if var0_3 then
+		var0_3:ClearExchangeCode()
 	end
 end
 
-function var0.OnSecondPwdStateChange(arg0)
-	local var0 = arg0:GetPanel(SettingsSecondPwLimitedOpPanle)
+function var0_0.OnSecondPwdStateChange(arg0_4)
+	local var0_4 = arg0_4:GetPanel(SettingsSecondPwLimitedOpPanle)
 
-	if var0 then
-		var0:UpdateBtnsState()
+	if var0_4 then
+		var0_4:UpdateBtnsState()
 	end
 end
 
-function var0.GetPanels(arg0)
-	local var0 = {
+function var0_0.GetPanels(arg0_5)
+	local var0_5 = {
 		SettingsSecondPasswordPanle,
 		SettingsSecondPwLimitedOpPanle
 	}
 
-	if arg0:NeedRedeem() then
-		table.insert(var0, 1, SettingsRedeemPanel)
+	if arg0_5:NeedRedeem() then
+		table.insert(var0_5, 1, SettingsRedeemPanel)
 	end
 
 	if PLATFORM_CODE == PLATFORM_JP then
-		table.insert(var0, 1, SettingsAccountJPPanle)
+		table.insert(var0_5, 1, SettingsAccountJPPanle)
 	end
 
 	if PLATFORM_CODE == PLATFORM_US then
-		table.insert(var0, 1, SettingsAccountUSPanle)
+		table.insert(var0_5, 1, SettingsAccountUSPanle)
 	end
 
 	if PLATFORM_CODE == PLATFORM_CHT then
-		table.insert(var0, 1, SettingsAccountTwPanle)
+		table.insert(var0_5, 1, SettingsAccountTwPanle)
 
 		if CSharpVersion >= 50 then
-			table.insert(var0, SettingsAccountCHTPanle)
+			table.insert(var0_5, SettingsAccountCHTPanle)
 		end
 
-		table.insert(var0, SettingsAgreementCHTPanle)
+		table.insert(var0_5, SettingsAgreementCHTPanle)
 	end
 
 	if PLATFORM_CODE == PLATFORM_CH then
-		table.insert(var0, SettingsAgreementPanle)
+		table.insert(var0_5, SettingsAgreementPanle)
 
-		local var1 = LuaHelper.GetCHPackageType()
+		local var1_5 = LuaHelper.GetCHPackageType()
 
-		if var1 == 1 and CSharpVersion >= 50 and not LOCK_SDK_SERVIVE then
-			table.insert(var0, SettingsServicePanle)
+		if var1_5 == 1 and CSharpVersion >= 50 and not LOCK_SDK_SERVIVE then
+			table.insert(var0_5, SettingsServicePanle)
 		end
 
-		if var1 == 1 or var1 == 3 and pg.SdkMgr.GetInstance():IsHuaweiPackage() then
-			table.insert(var0, SettingsAccountCHPanle)
+		if var1_5 == 1 or var1_5 == 3 and pg.SdkMgr.GetInstance():IsHuaweiPackage() then
+			table.insert(var0_5, SettingsAccountCHPanle)
 		end
 
-		if var1 == 1 and OPEN_EXCEPTION_TEST then
-			table.insert(var0, SettingsTestUploadExceptionPanle)
+		if var1_5 == 1 and OPEN_EXCEPTION_TEST then
+			table.insert(var0_5, SettingsTestUploadExceptionPanle)
 		end
 	end
 
 	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
-		table.insert(var0, SettingsAccountSpecialPanel)
+		table.insert(var0_5, SettingsAccountSpecialPanel)
 	end
 
-	return var0
+	return var0_5
 end
 
-function var0.NeedRedeem(arg0)
-	local var0 = true
+function var0_0.NeedRedeem(arg0_6)
+	local var0_6 = true
 
 	if PLATFORM_CODE == PLATFORM_CH or PLATFORM_CODE == PLATFORM_KR then
 		if PLATFORM == PLATFORM_IPHONEPLAYER then
-			var0 = false
+			var0_6 = false
 		end
 	elseif PLATFORM_CODE == PLATFORM_JP then
 		if PLATFORM == PLATFORM_IPHONEPLAYER then
-			var0 = false
+			var0_6 = false
 		end
 	elseif PLATFORM_CODE == PLATFORM_US then
-		var0 = false
+		var0_6 = false
 	elseif PLATFORM_CODE == PLATFORM_CHT and PLATFORM == PLATFORM_IPHONEPLAYER then
-		var0 = false
+		var0_6 = false
 	end
 
-	return var0
+	return var0_6
 end
 
-function var0.OnInitPanle(arg0)
+function var0_0.OnInitPanle(arg0_7)
 	if PlayerPrefs.GetFloat("firstIntoOtherPanel") == 0 then
-		local var0 = arg0:GetPanel(SettingsSecondPasswordPanle)
+		local var0_7 = arg0_7:GetPanel(SettingsSecondPasswordPanle)
 
-		arg0:ScrollToPanel(var0)
+		arg0_7:ScrollToPanel(var0_7)
 		PlayerPrefs.SetFloat("firstIntoOtherPanel", 1)
 		PlayerPrefs.Save()
 	end
 end
 
-return var0
+return var0_0

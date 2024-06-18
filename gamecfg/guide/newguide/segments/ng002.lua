@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Looks like our port has Submarines too, now!",
 	"This is our first Submarine! Let's start assembling a Submarine Fleet right away!",
 	"Now we've created our first Submarine Fleet!",
@@ -22,7 +22,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 200,
-				text = var0[1]
+				text = var0_0[1]
 			}
 		},
 		{
@@ -89,7 +89,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 200,
-				text = var0[2]
+				text = var0_0[2]
 			}
 		},
 		{
@@ -141,7 +141,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 200,
-				text = var0[3]
+				text = var0_0[3]
 			}
 		},
 		{
@@ -151,7 +151,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 200,
-				text = var0[4]
+				text = var0_0[4]
 			}
 		},
 		{
@@ -189,7 +189,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 200,
-				text = var0[5]
+				text = var0_0[5]
 			}
 		},
 		{

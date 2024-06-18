@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_148 = {}
+var0_0.word_template_148 = {}
 
-local var1 = var0.word_template_148
+local var1_0 = var0_0.word_template_148
 
 function temp()
-	var1.趼 = {
+	var1_0.趼 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.簡 = {
+	var1_0.簡 = {
 		易 = {
 			炸 = {
 				蛋 = {
@@ -44,7 +44,7 @@ end
 temp()
 
 function temp()
-	var1.见 = {
+	var1_0.见 = {
 		车 = {
 			就 = {
 				砸 = {
@@ -150,7 +150,7 @@ end
 temp()
 
 function temp()
-	var1.建 = {
+	var1_0.建 = {
 		国 = {
 			党 = {
 				this = true
@@ -252,7 +252,7 @@ end
 temp()
 
 function temp()
-	var1.贱 = {
+	var1_0.贱 = {
 		this = {
 			this = true
 		},
@@ -280,7 +280,7 @@ end
 temp()
 
 function temp()
-	var1.剑 = {
+	var1_0.剑 = {
 		刺 = {
 			双 = {
 				花 = {
@@ -306,7 +306,7 @@ end
 temp()
 
 function temp()
-	var1.鉴 = {
+	var1_0.鉴 = {
 		别 = {
 			处 = {
 				男 = {

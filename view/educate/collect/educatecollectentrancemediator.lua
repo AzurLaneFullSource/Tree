@@ -1,22 +1,22 @@
-﻿local var0 = class("EducateCollectEntranceMediator", import("..base.EducateContextMediator"))
+﻿local var0_0 = class("EducateCollectEntranceMediator", import("..base.EducateContextMediator"))
 
-function var0.register(arg0)
+function var0_0.register(arg0_1)
 	return
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_2)
 	return {
 		EducateProxy.CLEAR_NEW_TIP
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_3, arg1_3)
+	local var0_3 = arg1_3:getName()
+	local var1_3 = arg1_3:getBody()
 
-	if var0 == EducateProxy.CLEAR_NEW_TIP and var1.index == EducateTipHelper.NEW_MEMORY then
-		arg0.viewComponent:updateMemoryTip()
+	if var0_3 == EducateProxy.CLEAR_NEW_TIP and var1_3.index == EducateTipHelper.NEW_MEMORY then
+		arg0_3.viewComponent:updateMemoryTip()
 	end
 end
 
-return var0
+return var0_0

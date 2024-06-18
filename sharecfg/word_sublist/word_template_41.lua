@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_41 = {}
+var0_0.word_template_41 = {}
 
-local var1 = var0.word_template_41
+local var1_0 = var0_0.word_template_41
 
 function temp()
-	var1.案 = {
+	var1_0.案 = {
 		子 = {
 			未 = {
 				破 = {
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.暗 = {
+	var1_0.暗 = {
 		黑 = {
 			法 = {
 				師 = {
@@ -41,7 +41,7 @@ end
 temp()
 
 function temp()
-	var1.肮 = {
+	var1_0.肮 = {
 		脏 = {
 			美 = {
 				学 = {
@@ -73,7 +73,7 @@ end
 temp()
 
 function temp()
-	var1.骯 = {
+	var1_0.骯 = {
 		髒 = {
 			美 = {
 				學 = {
@@ -87,7 +87,7 @@ end
 temp()
 
 function temp()
-	var1.奥 = {
+	var1_0.奥 = {
 		巴 = {
 			马 = {
 				this = true,
@@ -150,7 +150,7 @@ end
 temp()
 
 function temp()
-	var1.奧 = {
+	var1_0.奧 = {
 		巴 = {
 			馬 = {
 				this = true
@@ -195,7 +195,7 @@ end
 temp()
 
 function temp()
-	var1.嶴 = {
+	var1_0.嶴 = {
 		this = {
 			this = true
 		}

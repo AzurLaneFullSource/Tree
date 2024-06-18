@@ -1,110 +1,110 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConfig
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConfig
 
-var0.Battle.BattleAidWave = class("BattleAidWave", var0.Battle.BattleWaveInfo)
-var0.Battle.BattleAidWave.__name = "BattleAidWave"
+var0_0.Battle.BattleAidWave = class("BattleAidWave", var0_0.Battle.BattleWaveInfo)
+var0_0.Battle.BattleAidWave.__name = "BattleAidWave"
 
-local var2 = var0.Battle.BattleAidWave
+local var2_0 = var0_0.Battle.BattleAidWave
 
-function var2.Ctor(arg0)
-	var2.super.Ctor(arg0)
+function var2_0.Ctor(arg0_1)
+	var2_0.super.Ctor(arg0_1)
 end
 
-function var2.SetWaveData(arg0, arg1)
-	var2.super.SetWaveData(arg0, arg1)
+function var2_0.SetWaveData(arg0_2, arg1_2)
+	var2_0.super.SetWaveData(arg0_2, arg1_2)
 
-	arg0._vanguardUnitList = arg0._param.vanguard_unitList
-	arg0._mainUnitList = arg0._param.main_unitList
-	arg0._subUnitList = arg0._param.sub_unitList
-	arg0._killList = arg0._param.kill_list
+	arg0_2._vanguardUnitList = arg0_2._param.vanguard_unitList
+	arg0_2._mainUnitList = arg0_2._param.main_unitList
+	arg0_2._subUnitList = arg0_2._param.sub_unitList
+	arg0_2._killList = arg0_2._param.kill_list
 end
 
-function var2.DoWave(arg0)
-	var2.super.DoWave(arg0)
+function var2_0.DoWave(arg0_3)
+	var2_0.super.DoWave(arg0_3)
 
-	local var0 = var0.Battle.BattleDataProxy.GetInstance()
+	local var0_3 = var0_0.Battle.BattleDataProxy.GetInstance()
 
-	if arg0._killList ~= nil then
-		local var1 = var0:GetFriendlyShipList()
+	if arg0_3._killList ~= nil then
+		local var1_3 = var0_3:GetFriendlyShipList()
 
-		for iter0, iter1 in ipairs(arg0._killList) do
-			for iter2, iter3 in pairs(var1) do
-				if iter3:GetTemplateID() == iter1 then
-					iter3:Retreat()
+		for iter0_3, iter1_3 in ipairs(arg0_3._killList) do
+			for iter2_3, iter3_3 in pairs(var1_3) do
+				if iter3_3:GetTemplateID() == iter1_3 then
+					iter3_3:Retreat()
 				end
 			end
 		end
 	end
 
-	if arg0._vanguardUnitList ~= nil then
-		for iter4, iter5 in ipairs(arg0._vanguardUnitList) do
-			local var2 = {}
+	if arg0_3._vanguardUnitList ~= nil then
+		for iter4_3, iter5_3 in ipairs(arg0_3._vanguardUnitList) do
+			local var2_3 = {}
 
-			for iter6, iter7 in ipairs(iter5.equipment) do
-				var2[#var2 + 1] = {
+			for iter6_3, iter7_3 in ipairs(iter5_3.equipment) do
+				var2_3[#var2_3 + 1] = {
 					skin = 0,
-					id = iter7
+					id = iter7_3
 				}
 			end
 
-			local var3 = Clone(iter5)
+			local var3_3 = Clone(iter5_3)
 
-			var3.equipment = var2
-			var3.baseProperties = iter5.properties
+			var3_3.equipment = var2_3
+			var3_3.baseProperties = iter5_3.properties
 
-			local var4 = var0:SpawnVanguard(var3, var1.FRIENDLY_CODE)
+			local var4_3 = var0_3:SpawnVanguard(var3_3, var1_0.FRIENDLY_CODE)
 
-			var0.InitUnitWeaponCD(var4)
-			var0:InitAidUnitStatistics(var4)
+			var0_3.InitUnitWeaponCD(var4_3)
+			var0_3:InitAidUnitStatistics(var4_3)
 		end
 	end
 
-	if arg0._mainUnitList ~= nil then
-		for iter8, iter9 in ipairs(arg0._mainUnitList) do
-			local var5 = {}
+	if arg0_3._mainUnitList ~= nil then
+		for iter8_3, iter9_3 in ipairs(arg0_3._mainUnitList) do
+			local var5_3 = {}
 
-			for iter10, iter11 in ipairs(iter9.equipment) do
-				var5[#var5 + 1] = {
+			for iter10_3, iter11_3 in ipairs(iter9_3.equipment) do
+				var5_3[#var5_3 + 1] = {
 					skin = 0,
-					id = iter11
+					id = iter11_3
 				}
 			end
 
-			local var6 = Clone(iter9)
+			local var6_3 = Clone(iter9_3)
 
-			var6.equipment = var5
-			var6.baseProperties = iter9.properties
+			var6_3.equipment = var5_3
+			var6_3.baseProperties = iter9_3.properties
 
-			local var7 = var0:SpawnMain(var6, var1.FRIENDLY_CODE)
+			local var7_3 = var0_3:SpawnMain(var6_3, var1_0.FRIENDLY_CODE)
 
-			var0.InitUnitWeaponCD(var7)
-			var0:InitAidUnitStatistics(var7)
+			var0_3.InitUnitWeaponCD(var7_3)
+			var0_3:InitAidUnitStatistics(var7_3)
 		end
 	end
 
-	if arg0._subUnitList ~= nil then
-		for iter12, iter13 in ipairs(arg0._subUnitList) do
-			local var8 = {}
+	if arg0_3._subUnitList ~= nil then
+		for iter12_3, iter13_3 in ipairs(arg0_3._subUnitList) do
+			local var8_3 = {}
 
-			for iter14, iter15 in ipairs(iter13.equipment) do
-				var8[#var8 + 1] = {
+			for iter14_3, iter15_3 in ipairs(iter13_3.equipment) do
+				var8_3[#var8_3 + 1] = {
 					skin = 0,
-					id = iter15
+					id = iter15_3
 				}
 			end
 
-			local var9 = Clone(iter13)
+			local var9_3 = Clone(iter13_3)
 
-			var9.equipment = var8
-			var9.baseProperties = iter13.properties
+			var9_3.equipment = var8_3
+			var9_3.baseProperties = iter13_3.properties
 
-			local var10 = var0:SpawnSub(var9, var1.FRIENDLY_CODE)
+			local var10_3 = var0_3:SpawnSub(var9_3, var1_0.FRIENDLY_CODE)
 
-			var0:InitAidUnitStatistics(var10)
+			var0_3:InitAidUnitStatistics(var10_3)
 		end
 	end
 
-	arg0:doPass()
+	arg0_3:doPass()
 end

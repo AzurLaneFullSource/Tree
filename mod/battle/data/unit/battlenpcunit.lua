@@ -1,39 +1,39 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleDataFunction
-local var2 = var0.Battle.BattleConst
-local var3 = var0.Battle.BattleFormulas
-local var4 = var0.Battle.BattleAttr
-local var5 = var0.Battle.BattleUnitEvent
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleDataFunction
+local var2_0 = var0_0.Battle.BattleConst
+local var3_0 = var0_0.Battle.BattleFormulas
+local var4_0 = var0_0.Battle.BattleAttr
+local var5_0 = var0_0.Battle.BattleUnitEvent
 
-var0.Battle.BattleNPCUnit = class("BattleNPCUnit", var0.Battle.BattleEnemyUnit)
+var0_0.Battle.BattleNPCUnit = class("BattleNPCUnit", var0_0.Battle.BattleEnemyUnit)
 
-local var6 = var0.Battle.BattleNPCUnit
+local var6_0 = var0_0.Battle.BattleNPCUnit
 
-function var6.SetTemplate(arg0, arg1, arg2)
-	var6.super.SetTemplate(arg0, arg1)
+function var6_0.SetTemplate(arg0_1, arg1_1, arg2_1)
+	var6_0.super.SetTemplate(arg0_1, arg1_1)
 
-	arg0._tmpData = setmetatable({}, {
-		__index = var0.Battle.BattleDataFunction.GetMonsterTmpDataFromID(arg0._tmpID)
+	arg0_1._tmpData = setmetatable({}, {
+		__index = var0_0.Battle.BattleDataFunction.GetMonsterTmpDataFromID(arg0_1._tmpID)
 	})
 
-	if arg2.template then
-		for iter0, iter1 in pairs(arg2.template) do
-			arg0._tmpData[iter0] = iter1
+	if arg2_1.template then
+		for iter0_1, iter1_1 in pairs(arg2_1.template) do
+			arg0_1._tmpData[iter0_1] = iter1_1
 		end
 
-		arg0._tmpData.id = arg1
+		arg0_1._tmpData.id = arg1_1
 	end
 
-	if arg2.attr then
-		var4.SetAttr(arg0, arg2.attr)
+	if arg2_1.attr then
+		var4_0.SetAttr(arg0_1, arg2_1.attr)
 	else
-		arg0:SetAttr()
+		arg0_1:SetAttr()
 	end
 
-	local var0 = arg2.currentHP or arg0:GetMaxHP()
+	local var0_1 = arg2_1.currentHP or arg0_1:GetMaxHP()
 
-	arg0:SetCurrentHP(var0)
-	arg0:InitCldComponent()
+	arg0_1:SetCurrentHP(var0_1)
+	arg0_1:InitCldComponent()
 end

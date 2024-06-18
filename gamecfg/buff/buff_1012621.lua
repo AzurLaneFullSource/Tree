@@ -35,10 +35,10 @@
 						}
 					}
 				},
-				centerPosFun = function(arg0)
+				centerPosFun = function(arg0_1)
 					return Vector3(2.5, -1.8, 0.5)
 				end,
-				rotationFun = function(arg0)
+				rotationFun = function(arg0_2)
 					return Vector3(0, 192, 0)
 				end
 			}
@@ -69,13 +69,13 @@
 						}
 					}
 				},
-				centerPosFun = function(arg0)
-					local var0 = arg0 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST
+				centerPosFun = function(arg0_3)
+					local var0_3 = arg0_3 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST
 
-					return Vector3(math.sin(var0) * 5, -1.5, math.cos(var0) * 3.5)
+					return Vector3(math.sin(var0_3) * 5, -1.5, math.cos(var0_3) * 3.5)
 				end,
-				rotationFun = function(arg0)
-					return Vector3(0, arg0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST - 90, 0)
+				rotationFun = function(arg0_4)
+					return Vector3(0, arg0_4 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST - 90, 0)
 				end
 			}
 		},

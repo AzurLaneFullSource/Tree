@@ -1,33 +1,33 @@
-﻿local var0 = class("CheckHotfixCommand", pm.SimpleCommand)
+﻿local var0_0 = class("CheckHotfixCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody().mediatorName
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody().mediatorName
 
-	if var0 and (string.find(var0, "Combat") or string.find(var0, "Battle")) then
+	if var0_1 and (string.find(var0_1, "Combat") or string.find(var0_1, "Battle")) then
 		return
 	end
 
-	local var1 = getProxy(SettingsProxy)
+	local var1_1 = getProxy(SettingsProxy)
 
 	if PLATFORM_CODE == PLATFORM_US and VersionMgr.Inst:OnProxyUsing() then
 		return
 	end
 
-	local var2 = BundleWizard.Inst:GetGroupMgr("DEFAULT_RES")
+	local var2_1 = BundleWizard.Inst:GetGroupMgr("DEFAULT_RES")
 
-	if var2.CurrentVersion.Major > 0 and (not var1.lastRequestVersionTime or Time.realtimeSinceStartup - var1.lastRequestVersionTime > 1800) then
-		var1.lastRequestVersionTime = Time.realtimeSinceStartup
+	if var2_1.CurrentVersion.Major > 0 and (not var1_1.lastRequestVersionTime or Time.realtimeSinceStartup - var1_1.lastRequestVersionTime > 1800) then
+		var1_1.lastRequestVersionTime = Time.realtimeSinceStartup
 
 		pg.UIMgr.GetInstance():LoadingOn()
 
-		local var3 = true
+		local var3_1 = true
 
-		VersionMgr.Inst:FetchVersion(function(arg0)
+		VersionMgr.Inst:FetchVersion(function(arg0_2)
 			pg.UIMgr.GetInstance():LoadingOff()
 
-			var3 = false
+			var3_1 = false
 
-			if arg0.Major > var2.CurrentVersion.Major or arg0.Major == var2.CurrentVersion.Major and arg0.Minor > var2.CurrentVersion.Minor or arg0.Major == var2.CurrentVersion.Major and arg0.Minor == var2.CurrentVersion.Minor and arg0.Build > var2.CurrentVersion.Build then
+			if arg0_2.Major > var2_1.CurrentVersion.Major or arg0_2.Major == var2_1.CurrentVersion.Major and arg0_2.Minor > var2_1.CurrentVersion.Minor or arg0_2.Major == var2_1.CurrentVersion.Major and arg0_2.Minor == var2_1.CurrentVersion.Minor and arg0_2.Build > var2_1.CurrentVersion.Build then
 				nowWorld().forceLock = true
 
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
@@ -46,15 +46,15 @@ function var0.execute(arg0, arg1)
 			end
 		end)
 		LeanTween.delayedCall(3, System.Action(function()
-			if var3 then
+			if var3_1 then
 				pg.UIMgr.GetInstance():LoadingOff()
 			end
 		end))
 	end
 
-	if var0 and string.find(var0, "LoginMediator") then
-		var1.lastRequestVersionTime = nil
+	if var0_1 and string.find(var0_1, "LoginMediator") then
+		var1_1.lastRequestVersionTime = nil
 	end
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_391 = {}
+var0_0.word_template_391 = {}
 
-local var1 = var0.word_template_391
+local var1_0 = var0_0.word_template_391
 
 function temp()
-	var1.继 = {
+	var1_0.继 = {
 		续 = {
 			当 = {
 				领 = {
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.Ⅹ = {
+	var1_0.Ⅹ = {
 		刂 = {
 			i = {
 				n = {
@@ -54,7 +54,7 @@ end
 temp()
 
 function temp()
-	var1.刈 = {
+	var1_0.刈 = {
 		i = {
 			n = {
 				this = true
@@ -79,7 +79,7 @@ end
 temp()
 
 function temp()
-	var1.傀 = {
+	var1_0.傀 = {
 		儡 = {
 			上 = {
 				位 = {
@@ -93,7 +93,7 @@ end
 temp()
 
 function temp()
-	var1.驸 = {
+	var1_0.驸 = {
 		马 = {
 			爷 = {
 				上 = {
@@ -109,7 +109,7 @@ end
 temp()
 
 function temp()
-	var1.珊 = {
+	var1_0.珊 = {
 		露 = {
 			不 = {
 				幻 = {
@@ -125,7 +125,7 @@ end
 temp()
 
 function temp()
-	var1.Z = {
+	var1_0.Z = {
 		O = {
 			D = {
 				会 = {

@@ -1,27 +1,27 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("BattleCardPuzzleSkillAddBuff", var0.Battle.BattleCardPuzzleSkillEffect)
+local var0_0 = ys
+local var1_0 = class("BattleCardPuzzleSkillAddBuff", var0_0.Battle.BattleCardPuzzleSkillEffect)
 
-var0.Battle.BattleCardPuzzleSkillAddBuff = var1
-var1.__name = "BattleCardPuzzleSkillAddBuff"
+var0_0.Battle.BattleCardPuzzleSkillAddBuff = var1_0
+var1_0.__name = "BattleCardPuzzleSkillAddBuff"
 
-function var1.Ctor(arg0, arg1, arg2)
-	var1.super.Ctor(arg0, arg1, arg2)
+function var1_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var1_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 
-	arg0._buffID = arg0._tempData.arg_list.buff_id
+	arg0_1._buffID = arg0_1._tempData.arg_list.buff_id
 end
 
-function var1.SkillEffectHandler(arg0, arg1)
-	local var0 = arg0:GetTarget()
+function var1_0.SkillEffectHandler(arg0_2, arg1_2)
+	local var0_2 = arg0_2:GetTarget()
 
-	for iter0, iter1 in ipairs(var0) do
-		if iter1:IsAlive() then
-			local var1 = var0.Battle.BattleBuffUnit.New(arg0._buffID, 1, arg0._caster)
+	for iter0_2, iter1_2 in ipairs(var0_2) do
+		if iter1_2:IsAlive() then
+			local var1_2 = var0_0.Battle.BattleBuffUnit.New(arg0_2._buffID, 1, arg0_2._caster)
 
-			iter1:AddBuff(var1)
+			iter1_2:AddBuff(var1_2)
 		end
 	end
 
-	arg0:Finale()
+	arg0_2:Finale()
 end

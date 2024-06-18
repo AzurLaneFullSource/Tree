@@ -1,32 +1,32 @@
-﻿local var0 = class("JapanFifthLoginPage", import(".TemplatePage.LoginTemplatePage"))
+﻿local var0_0 = class("JapanFifthLoginPage", import(".TemplatePage.LoginTemplatePage"))
 
-function var0.OnFirstFlush(arg0)
-	setActive(arg0.item, false)
-	arg0.itemList:make(function(arg0, arg1, arg2)
-		if arg0 == UIItemList.EventUpdate then
-			local var0 = arg0:findTF("item", arg2)
-			local var1 = arg0.config.front_drops[arg1 + 1]
-			local var2 = {
-				type = var1[1],
-				id = var1[2],
-				count = var1[3]
+function var0_0.OnFirstFlush(arg0_1)
+	setActive(arg0_1.item, false)
+	arg0_1.itemList:make(function(arg0_2, arg1_2, arg2_2)
+		if arg0_2 == UIItemList.EventUpdate then
+			local var0_2 = arg0_1:findTF("item", arg2_2)
+			local var1_2 = arg0_1.config.front_drops[arg1_2 + 1]
+			local var2_2 = {
+				type = var1_2[1],
+				id = var1_2[2],
+				count = var1_2[3]
 			}
 
-			updateDrop(var0, var2)
-			onButton(arg0, arg2, function()
-				arg0:emit(BaseUI.ON_DROP, var2)
+			updateDrop(var0_2, var2_2)
+			onButton(arg0_1, arg2_2, function()
+				arg0_1:emit(BaseUI.ON_DROP, var2_2)
 			end, SFX_PANEL)
 
-			local var3 = arg0:findTF("got", arg2)
+			local var3_2 = arg0_1:findTF("got", arg2_2)
 
-			setActive(var3, arg1 < arg0.nday)
+			setActive(var3_2, arg1_2 < arg0_1.nday)
 		end
 	end)
 end
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
-	setText(arg0.bg:Find("Text"), arg0.nday .. "/" .. arg0.Day)
+function var0_0.OnUpdateFlush(arg0_4)
+	var0_0.super.OnUpdateFlush(arg0_4)
+	setText(arg0_4.bg:Find("Text"), arg0_4.nday .. "/" .. arg0_4.Day)
 end
 
-return var0
+return var0_0

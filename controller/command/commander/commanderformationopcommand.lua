@@ -1,196 +1,196 @@
-﻿local var0 = class("CommanderFormationOPCommand", pm.SimpleCommand)
+﻿local var0_0 = class("CommanderFormationOPCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody().data
-	local var1 = var0.FleetType
-	local var2 = getProxy(CommanderProxy)
-	local var3 = getProxy(ChapterProxy)
-	local var4 = getProxy(FleetProxy)
-	local var5 = var0.data
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody().data
+	local var1_1 = var0_1.FleetType
+	local var2_1 = getProxy(CommanderProxy)
+	local var3_1 = getProxy(ChapterProxy)
+	local var4_1 = getProxy(FleetProxy)
+	local var5_1 = var0_1.data
 
-	if var5.type == LevelUIConst.COMMANDER_OP_RENAME then
-		local var6 = var5.id
-		local var7 = var5.str
-		local var8 = var5.onFailed
+	if var5_1.type == LevelUIConst.COMMANDER_OP_RENAME then
+		local var6_1 = var5_1.id
+		local var7_1 = var5_1.str
+		local var8_1 = var5_1.onFailed
 
-		arg0:sendNotification(GAME.SET_COMMANDER_PREFAB_NAME, {
-			id = var6,
-			name = var7,
-			onFailed = var8
+		arg0_1:sendNotification(GAME.SET_COMMANDER_PREFAB_NAME, {
+			id = var6_1,
+			name = var7_1,
+			onFailed = var8_1
 		})
 
 		return
 	end
 
-	if var1 == LevelUIConst.FLEET_TYPE_SELECT then
-		local var9 = var5.id
-		local var10 = var0.fleetId
-		local var11 = var0.chapterId
+	if var1_1 == LevelUIConst.FLEET_TYPE_SELECT then
+		local var9_1 = var5_1.id
+		local var10_1 = var0_1.fleetId
+		local var11_1 = var0_1.chapterId
 
-		if var5.type == LevelUIConst.COMMANDER_OP_RECORD_PREFAB then
-			local var12 = var4:getFleetById(var10):getCommanders()
+		if var5_1.type == LevelUIConst.COMMANDER_OP_RECORD_PREFAB then
+			local var12_1 = var4_1:getFleetById(var10_1):getCommanders()
 
-			arg0:sendNotification(GAME.SET_COMMANDER_PREFAB, {
-				id = var9,
-				commanders = var12
+			arg0_1:sendNotification(GAME.SET_COMMANDER_PREFAB, {
+				id = var9_1,
+				commanders = var12_1
 			})
-		elseif var5.type == LevelUIConst.COMMANDER_OP_USE_PREFAB then
-			arg0:sendNotification(GAME.USE_COMMANDER_PREFBA, {
-				pid = var9,
-				fleetId = var10
+		elseif var5_1.type == LevelUIConst.COMMANDER_OP_USE_PREFAB then
+			arg0_1:sendNotification(GAME.USE_COMMANDER_PREFBA, {
+				pid = var9_1,
+				fleetId = var10_1
 			})
-		elseif var5.type == LevelUIConst.COMMANDER_OP_REST_ALL then
-			local var13 = {
-				function(arg0)
-					arg0:sendNotification(GAME.COOMMANDER_EQUIP_TO_FLEET, {
+		elseif var5_1.type == LevelUIConst.COMMANDER_OP_REST_ALL then
+			local var13_1 = {
+				function(arg0_2)
+					arg0_1:sendNotification(GAME.COOMMANDER_EQUIP_TO_FLEET, {
 						commanderId = 0,
 						pos = 1,
-						fleetId = var10,
-						callback = arg0
+						fleetId = var10_1,
+						callback = arg0_2
 					})
 				end,
-				function(arg0)
-					arg0:sendNotification(GAME.COOMMANDER_EQUIP_TO_FLEET, {
+				function(arg0_3)
+					arg0_1:sendNotification(GAME.COOMMANDER_EQUIP_TO_FLEET, {
 						commanderId = 0,
 						pos = 2,
-						fleetId = var10,
-						callback = arg0
+						fleetId = var10_1,
+						callback = arg0_3
 					})
 				end
 			}
 
-			seriesAsync(var13)
+			seriesAsync(var13_1)
 		end
-	elseif var1 == LevelUIConst.FLEET_TYPE_EDIT then
-		local var14 = var5.id
-		local var15 = var2:getPrefabFleetById(var14)
-		local var16 = var0.index
-		local var17 = var0.chapterId
+	elseif var1_1 == LevelUIConst.FLEET_TYPE_EDIT then
+		local var14_1 = var5_1.id
+		local var15_1 = var2_1:getPrefabFleetById(var14_1)
+		local var16_1 = var0_1.index
+		local var17_1 = var0_1.chapterId
 
-		if var5.type == LevelUIConst.COMMANDER_OP_RECORD_PREFAB then
-			local var18 = var3:getChapterById(var17)
-			local var19 = var18:getEliteFleetCommanders()[var16]
+		if var5_1.type == LevelUIConst.COMMANDER_OP_RECORD_PREFAB then
+			local var18_1 = var3_1:getChapterById(var17_1)
+			local var19_1 = var18_1:getEliteFleetCommanders()[var16_1]
 
-			if table.getCount(var19) == 0 then
+			if table.getCount(var19_1) == 0 then
 				return
 			end
 
-			local var20 = {}
+			local var20_1 = {}
 
-			for iter0 = 1, 2 do
-				local var21 = var19[iter0]
-				local var22 = var2:getCommanderById(var21)
+			for iter0_1 = 1, 2 do
+				local var21_1 = var19_1[iter0_1]
+				local var22_1 = var2_1:getCommanderById(var21_1)
 
-				if var22 then
-					var20[iter0] = var22
+				if var22_1 then
+					var20_1[iter0_1] = var22_1
 				end
 			end
 
-			arg0:sendNotification(GAME.SET_COMMANDER_PREFAB, {
-				id = var14,
-				commanders = var20
+			arg0_1:sendNotification(GAME.SET_COMMANDER_PREFAB, {
+				id = var14_1,
+				commanders = var20_1
 			})
-			var3:updateChapter(var18)
-			arg0:sendNotification(GAME.COMMANDER_ELIT_FORMATION_OP_DONE, {
-				chapterId = var18.id,
-				index = var16
+			var3_1:updateChapter(var18_1)
+			arg0_1:sendNotification(GAME.COMMANDER_ELIT_FORMATION_OP_DONE, {
+				chapterId = var18_1.id,
+				index = var16_1
 			})
-		elseif var5.type == LevelUIConst.COMMANDER_OP_USE_PREFAB then
-			local var23 = {}
+		elseif var5_1.type == LevelUIConst.COMMANDER_OP_USE_PREFAB then
+			local var23_1 = {}
 
-			for iter1 = 1, 2 do
-				local var24 = var15:getCommanderByPos(iter1)
+			for iter1_1 = 1, 2 do
+				local var24_1 = var15_1:getCommanderByPos(iter1_1)
 
-				if var24 then
-					local var25, var26 = Commander.canEquipToEliteChapter(var17, var16, iter1, var24.id)
+				if var24_1 then
+					local var25_1, var26_1 = Commander.canEquipToEliteChapter(var17_1, var16_1, iter1_1, var24_1.id)
 
-					if not var25 then
-						pg.TipsMgr.GetInstance():ShowTips(var26)
+					if not var25_1 then
+						pg.TipsMgr.GetInstance():ShowTips(var26_1)
 
 						return
 					end
 				end
 			end
 
-			local var27 = var3:getChapterById(var17)
-			local var28 = var27:getEliteFleetCommanders()[var16]
+			local var27_1 = var3_1:getChapterById(var17_1)
+			local var28_1 = var27_1:getEliteFleetCommanders()[var16_1]
 
-			if var15:isSameId(var28) then
+			if var15_1:isSameId(var28_1) then
 				return
 			end
 
-			for iter2 = 1, 2 do
-				local var29 = var15:getCommanderByPos(iter2)
+			for iter2_1 = 1, 2 do
+				local var29_1 = var15_1:getCommanderByPos(iter2_1)
 
-				if var29 then
-					arg0:sendNotification(GAME.SELECT_ELIT_CHAPTER_COMMANDER, {
-						chapterId = var17,
-						index = var16,
-						pos = iter2,
-						commanderId = var29.id
+				if var29_1 then
+					arg0_1:sendNotification(GAME.SELECT_ELIT_CHAPTER_COMMANDER, {
+						chapterId = var17_1,
+						index = var16_1,
+						pos = iter2_1,
+						commanderId = var29_1.id
 					})
 				else
-					arg0:sendNotification(GAME.SELECT_ELIT_CHAPTER_COMMANDER, {
-						chapterId = var17,
-						index = var16,
-						pos = iter2
+					arg0_1:sendNotification(GAME.SELECT_ELIT_CHAPTER_COMMANDER, {
+						chapterId = var17_1,
+						index = var16_1,
+						pos = iter2_1
 					})
 				end
 			end
 
-			arg0:sendNotification(GAME.COMMANDER_ELIT_FORMATION_OP_DONE, {
-				chapterId = var27.id,
-				index = var16
+			arg0_1:sendNotification(GAME.COMMANDER_ELIT_FORMATION_OP_DONE, {
+				chapterId = var27_1.id,
+				index = var16_1
 			})
-		elseif var5.type == LevelUIConst.COMMANDER_OP_REST_ALL then
-			local var30 = var3:getChapterById(var17)
+		elseif var5_1.type == LevelUIConst.COMMANDER_OP_REST_ALL then
+			local var30_1 = var3_1:getChapterById(var17_1)
 
-			for iter3 = 1, 2 do
-				arg0:sendNotification(GAME.SELECT_ELIT_CHAPTER_COMMANDER, {
-					chapterId = var17,
-					index = var16,
-					pos = iter3
+			for iter3_1 = 1, 2 do
+				arg0_1:sendNotification(GAME.SELECT_ELIT_CHAPTER_COMMANDER, {
+					chapterId = var17_1,
+					index = var16_1,
+					pos = iter3_1
 				})
 			end
 
-			arg0:sendNotification(GAME.COMMANDER_ELIT_FORMATION_OP_DONE, {
-				chapterId = var30.id,
-				index = var16
+			arg0_1:sendNotification(GAME.COMMANDER_ELIT_FORMATION_OP_DONE, {
+				chapterId = var30_1.id,
+				index = var16_1
 			})
 		end
-	elseif var1 == LevelUIConst.FLEET_TYPE_ACTIVITY then
-		local var31 = var5.id
-		local var32 = var2:getPrefabFleetById(var31)
-		local var33 = var0.fleetId
-		local var34 = var0.actId
+	elseif var1_1 == LevelUIConst.FLEET_TYPE_ACTIVITY then
+		local var31_1 = var5_1.id
+		local var32_1 = var2_1:getPrefabFleetById(var31_1)
+		local var33_1 = var0_1.fleetId
+		local var34_1 = var0_1.actId
 
-		if var5.type == LevelUIConst.COMMANDER_OP_RECORD_PREFAB then
-			local var35 = var4:getActivityFleets()[var34][var33]:getCommanders()
+		if var5_1.type == LevelUIConst.COMMANDER_OP_RECORD_PREFAB then
+			local var35_1 = var4_1:getActivityFleets()[var34_1][var33_1]:getCommanders()
 
-			arg0:sendNotification(GAME.SET_COMMANDER_PREFAB, {
-				id = var31,
-				commanders = var35
+			arg0_1:sendNotification(GAME.SET_COMMANDER_PREFAB, {
+				id = var31_1,
+				commanders = var35_1
 			})
-		elseif var5.type == LevelUIConst.COMMANDER_OP_USE_PREFAB then
-			local var36 = {}
-			local var37 = var4:getActivityFleets()[var34]
-			local var38 = pg.activity_template[var34]
-			local var39 = var38 and var38.type or 0
+		elseif var5_1.type == LevelUIConst.COMMANDER_OP_USE_PREFAB then
+			local var36_1 = {}
+			local var37_1 = var4_1:getActivityFleets()[var34_1]
+			local var38_1 = pg.activity_template[var34_1]
+			local var39_1 = var38_1 and var38_1.type or 0
 
-			local function var40(arg0)
-				for iter0, iter1 in pairs(var37) do
-					local var0 = var33 ~= iter0
+			local function var40_1(arg0_4)
+				for iter0_4, iter1_4 in pairs(var37_1) do
+					local var0_4 = var33_1 ~= iter0_4
 
-					if var39 == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2 or var39 == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
-						var0 = iter0 == ActivityBossMediatorTemplate.GetPairedFleetIndex(var33)
+					if var39_1 == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2 or var39_1 == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
+						var0_4 = iter0_4 == ActivityBossMediatorTemplate.GetPairedFleetIndex(var33_1)
 					end
 
-					if var0 then
-						local var1 = iter1:getCommanders()
+					if var0_4 then
+						local var1_4 = iter1_4:getCommanders()
 
-						for iter2, iter3 in pairs(var1) do
-							if arg0 == iter3.id then
-								return iter0, iter2
+						for iter2_4, iter3_4 in pairs(var1_4) do
+							if arg0_4 == iter3_4.id then
+								return iter0_4, iter2_4
 							end
 						end
 					end
@@ -199,102 +199,102 @@ function var0.execute(arg0, arg1)
 				return nil
 			end
 
-			for iter4 = 1, 2 do
-				local var41 = var32:getCommanderByPos(iter4)
+			for iter4_1 = 1, 2 do
+				local var41_1 = var32_1:getCommanderByPos(iter4_1)
 
-				if var41 then
-					local var42, var43 = var40(var41.id)
+				if var41_1 then
+					local var42_1, var43_1 = var40_1(var41_1.id)
 
-					if var42 and var43 then
-						table.insert(var36, function(arg0)
-							local var0 = var43 == 1 and i18n("commander_main_pos") or i18n("commander_assistant_pos")
-							local var1 = Fleet.DEFAULT_NAME[var42]
+					if var42_1 and var43_1 then
+						table.insert(var36_1, function(arg0_5)
+							local var0_5 = var43_1 == 1 and i18n("commander_main_pos") or i18n("commander_assistant_pos")
+							local var1_5 = Fleet.DEFAULT_NAME[var42_1]
 
 							pg.MsgboxMgr.GetInstance():ShowMsgBox({
-								content = i18n("comander_repalce_tip", var1, var0),
+								content = i18n("comander_repalce_tip", var1_5, var0_5),
 								onYes = function()
-									local var0 = var37[var42]
+									local var0_6 = var37_1[var42_1]
 
-									var0:updateCommanderByPos(var43, nil)
-									var4:updateActivityFleet(var34, var42, var0)
+									var0_6:updateCommanderByPos(var43_1, nil)
+									var4_1:updateActivityFleet(var34_1, var42_1, var0_6)
 
-									local var1 = var37[var33]
+									local var1_6 = var37_1[var33_1]
 
-									var1:updateCommanderByPos(iter4, var41)
-									var4:updateActivityFleet(var34, var33, var1)
-									arg0()
+									var1_6:updateCommanderByPos(iter4_1, var41_1)
+									var4_1:updateActivityFleet(var34_1, var33_1, var1_6)
+									arg0_5()
 								end,
-								onNo = arg0
+								onNo = arg0_5
 							})
 						end)
 					else
-						table.insert(var36, function(arg0)
-							local var0 = var37[var33]
+						table.insert(var36_1, function(arg0_7)
+							local var0_7 = var37_1[var33_1]
 
-							var0:updateCommanderByPos(iter4, var41)
-							var4:updateActivityFleet(var34, var33, var0)
-							arg0()
+							var0_7:updateCommanderByPos(iter4_1, var41_1)
+							var4_1:updateActivityFleet(var34_1, var33_1, var0_7)
+							arg0_7()
 						end)
 					end
 				else
-					table.insert(var36, function(arg0)
-						local var0 = var37[var33]
+					table.insert(var36_1, function(arg0_8)
+						local var0_8 = var37_1[var33_1]
 
-						var0:updateCommanderByPos(iter4, nil)
-						var4:updateActivityFleet(var34, var33, var0)
-						arg0()
+						var0_8:updateCommanderByPos(iter4_1, nil)
+						var4_1:updateActivityFleet(var34_1, var33_1, var0_8)
+						arg0_8()
 					end)
 				end
 			end
 
-			seriesAsync(var36, function()
-				arg0:sendNotification(GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE, {
-					actId = var34,
-					fleetId = var33
+			seriesAsync(var36_1, function()
+				arg0_1:sendNotification(GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE, {
+					actId = var34_1,
+					fleetId = var33_1
 				})
 			end)
-		elseif var5.type == LevelUIConst.COMMANDER_OP_REST_ALL then
-			local var44 = var4:getActivityFleets()[var34][var33]
+		elseif var5_1.type == LevelUIConst.COMMANDER_OP_REST_ALL then
+			local var44_1 = var4_1:getActivityFleets()[var34_1][var33_1]
 
-			for iter5 = 1, 2 do
-				var44:updateCommanderByPos(iter5, nil)
+			for iter5_1 = 1, 2 do
+				var44_1:updateCommanderByPos(iter5_1, nil)
 			end
 
-			var4:updateActivityFleet(var34, var33, var44)
-			arg0:sendNotification(GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE, {
-				actId = var34,
-				fleetId = var33
+			var4_1:updateActivityFleet(var34_1, var33_1, var44_1)
+			arg0_1:sendNotification(GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE, {
+				actId = var34_1,
+				fleetId = var33_1
 			})
 		end
-	elseif var1 == LevelUIConst.FLEET_TYPE_WORLD then
-		local var45 = var5.id
-		local var46 = var2:getPrefabFleetById(var45)
-		local var47 = var0.fleets
-		local var48 = var0.fleetType
-		local var49 = var0.fleetIndex
-		local var50 = var47[var48][var49]
-		local var51 = Fleet.New({
+	elseif var1_1 == LevelUIConst.FLEET_TYPE_WORLD then
+		local var45_1 = var5_1.id
+		local var46_1 = var2_1:getPrefabFleetById(var45_1)
+		local var47_1 = var0_1.fleets
+		local var48_1 = var0_1.fleetType
+		local var49_1 = var0_1.fleetIndex
+		local var50_1 = var47_1[var48_1][var49_1]
+		local var51_1 = Fleet.New({
 			ship_list = {},
-			commanders = var50.commanders
+			commanders = var50_1.commanders
 		})
 
-		if var5.type == LevelUIConst.COMMANDER_OP_RECORD_PREFAB then
-			local var52 = var51:getCommanders()
+		if var5_1.type == LevelUIConst.COMMANDER_OP_RECORD_PREFAB then
+			local var52_1 = var51_1:getCommanders()
 
-			arg0:sendNotification(GAME.SET_COMMANDER_PREFAB, {
-				id = var45,
-				commanders = var52
+			arg0_1:sendNotification(GAME.SET_COMMANDER_PREFAB, {
+				id = var45_1,
+				commanders = var52_1
 			})
-		elseif var5.type == LevelUIConst.COMMANDER_OP_USE_PREFAB then
-			local var53 = {}
+		elseif var5_1.type == LevelUIConst.COMMANDER_OP_USE_PREFAB then
+			local var53_1 = {}
 
-			local function var54(arg0)
-				for iter0, iter1 in pairs(var47) do
-					for iter2, iter3 in pairs(iter1) do
-						if var50 ~= iter3 then
-							for iter4, iter5 in ipairs(iter3.commanders) do
-								if iter5.id == arg0 then
-									return iter0, iter2, iter5.pos
+			local function var54_1(arg0_10)
+				for iter0_10, iter1_10 in pairs(var47_1) do
+					for iter2_10, iter3_10 in pairs(iter1_10) do
+						if var50_1 ~= iter3_10 then
+							for iter4_10, iter5_10 in ipairs(iter3_10.commanders) do
+								if iter5_10.id == arg0_10 then
+									return iter0_10, iter2_10, iter5_10.pos
 								end
 							end
 						end
@@ -304,104 +304,104 @@ function var0.execute(arg0, arg1)
 				return nil
 			end
 
-			for iter6 = 1, 2 do
-				local var55 = var46:getCommanderByPos(iter6)
+			for iter6_1 = 1, 2 do
+				local var55_1 = var46_1:getCommanderByPos(iter6_1)
 
-				if var55 then
-					local var56, var57, var58 = var54(var55.id)
+				if var55_1 then
+					local var56_1, var57_1, var58_1 = var54_1(var55_1.id)
 
-					if var56 and var57 and var58 then
-						table.insert(var53, function(arg0)
-							local var0 = var58 == 1 and i18n("commander_main_pos") or i18n("commander_assistant_pos")
-							local var1 = Fleet.DEFAULT_NAME[var57 + (var56 == FleetType.Submarine and 10 or 0)]
+					if var56_1 and var57_1 and var58_1 then
+						table.insert(var53_1, function(arg0_11)
+							local var0_11 = var58_1 == 1 and i18n("commander_main_pos") or i18n("commander_assistant_pos")
+							local var1_11 = Fleet.DEFAULT_NAME[var57_1 + (var56_1 == FleetType.Submarine and 10 or 0)]
 
 							pg.MsgboxMgr.GetInstance():ShowMsgBox({
-								content = i18n("comander_repalce_tip", var1, var0),
+								content = i18n("comander_repalce_tip", var1_11, var0_11),
 								onYes = function()
-									local var0 = var47[var56][var57]
-									local var1 = Fleet.New({
+									local var0_12 = var47_1[var56_1][var57_1]
+									local var1_12 = Fleet.New({
 										ship_list = {},
-										commanders = var0.commanders
+										commanders = var0_12.commanders
 									})
 
-									var1:updateCommanderByPos(iter6, nil)
+									var1_12:updateCommanderByPos(iter6_1, nil)
 
-									var0.commanders = var1:outputCommanders()
+									var0_12.commanders = var1_12:outputCommanders()
 
-									var51:updateCommanderByPos(iter6, var55)
+									var51_1:updateCommanderByPos(iter6_1, var55_1)
 
-									var50.commanders = var51:outputCommanders()
+									var50_1.commanders = var51_1:outputCommanders()
 
-									arg0()
+									arg0_11()
 								end,
-								onNo = arg0
+								onNo = arg0_11
 							})
 						end)
 					else
-						table.insert(var53, function(arg0)
-							var51:updateCommanderByPos(iter6, var55)
+						table.insert(var53_1, function(arg0_13)
+							var51_1:updateCommanderByPos(iter6_1, var55_1)
 
-							var50.commanders = var51:outputCommanders()
+							var50_1.commanders = var51_1:outputCommanders()
 
-							arg0()
+							arg0_13()
 						end)
 					end
 				else
-					table.insert(var53, function(arg0)
-						var51:updateCommanderByPos(iter6, nil)
+					table.insert(var53_1, function(arg0_14)
+						var51_1:updateCommanderByPos(iter6_1, nil)
 
-						var50.commanders = var51:outputCommanders()
+						var50_1.commanders = var51_1:outputCommanders()
 
-						arg0()
+						arg0_14()
 					end)
 				end
 			end
 
-			seriesAsync(var53, function()
-				arg0:sendNotification(GAME.COMMANDER_WORLD_FORMATION_OP_DONE, {
-					fleet = var51
+			seriesAsync(var53_1, function()
+				arg0_1:sendNotification(GAME.COMMANDER_WORLD_FORMATION_OP_DONE, {
+					fleet = var51_1
 				})
 			end)
-		elseif var5.type == LevelUIConst.COMMANDER_OP_REST_ALL then
-			for iter7 = 1, 2 do
-				var51:updateCommanderByPos(iter7, nil)
+		elseif var5_1.type == LevelUIConst.COMMANDER_OP_REST_ALL then
+			for iter7_1 = 1, 2 do
+				var51_1:updateCommanderByPos(iter7_1, nil)
 			end
 
-			var50.commanders = var51:outputCommanders()
+			var50_1.commanders = var51_1:outputCommanders()
 
-			arg0:sendNotification(GAME.COMMANDER_WORLD_FORMATION_OP_DONE, {
-				fleet = var51
+			arg0_1:sendNotification(GAME.COMMANDER_WORLD_FORMATION_OP_DONE, {
+				fleet = var51_1
 			})
 		end
-	elseif var1 == LevelUIConst.FLEET_TYPE_BOSSRUSH then
-		local var59 = var5.id
-		local var60 = var2:getPrefabFleetById(var59)
-		local var61 = var0.fleetId
-		local var62 = var0.actId
+	elseif var1_1 == LevelUIConst.FLEET_TYPE_BOSSRUSH then
+		local var59_1 = var5_1.id
+		local var60_1 = var2_1:getPrefabFleetById(var59_1)
+		local var61_1 = var0_1.fleetId
+		local var62_1 = var0_1.actId
 
-		if var5.type == LevelUIConst.COMMANDER_OP_RECORD_PREFAB then
-			local var63 = var4:getActivityFleets()[var62][var61]:getCommanders()
+		if var5_1.type == LevelUIConst.COMMANDER_OP_RECORD_PREFAB then
+			local var63_1 = var4_1:getActivityFleets()[var62_1][var61_1]:getCommanders()
 
-			arg0:sendNotification(GAME.SET_COMMANDER_PREFAB, {
-				id = var59,
-				commanders = var63
+			arg0_1:sendNotification(GAME.SET_COMMANDER_PREFAB, {
+				id = var59_1,
+				commanders = var63_1
 			})
-		elseif var5.type == LevelUIConst.COMMANDER_OP_USE_PREFAB then
-			local var64 = {}
-			local var65 = {}
+		elseif var5_1.type == LevelUIConst.COMMANDER_OP_USE_PREFAB then
+			local var64_1 = {}
+			local var65_1 = {}
 
-			_.each(var0.fleets, function(arg0)
-				var65[arg0.id] = arg0
+			_.each(var0_1.fleets, function(arg0_16)
+				var65_1[arg0_16.id] = arg0_16
 			end)
 
-			local function var66(arg0)
-				for iter0, iter1 in pairs(var65) do
-					if var61 ~= iter0 then
-						local var0 = iter1:getCommanders()
+			local function var66_1(arg0_17)
+				for iter0_17, iter1_17 in pairs(var65_1) do
+					if var61_1 ~= iter0_17 then
+						local var0_17 = iter1_17:getCommanders()
 
-						for iter2, iter3 in pairs(var0) do
-							if arg0 == iter3.id then
-								return iter0, iter2
+						for iter2_17, iter3_17 in pairs(var0_17) do
+							if arg0_17 == iter3_17.id then
+								return iter0_17, iter2_17
 							end
 						end
 					end
@@ -410,75 +410,75 @@ function var0.execute(arg0, arg1)
 				return nil
 			end
 
-			for iter8 = 1, 2 do
-				local var67 = var60:getCommanderByPos(iter8)
+			for iter8_1 = 1, 2 do
+				local var67_1 = var60_1:getCommanderByPos(iter8_1)
 
-				if var67 then
-					local var68, var69 = var66(var67.id)
+				if var67_1 then
+					local var68_1, var69_1 = var66_1(var67_1.id)
 
-					if var68 and var69 then
-						table.insert(var64, function(arg0)
-							local var0 = var69 == 1 and i18n("commander_main_pos") or i18n("commander_assistant_pos")
-							local var1 = table.indexof(var0.fleets, var65[var68])
-							local var2 = Fleet.DEFAULT_NAME[var1]
+					if var68_1 and var69_1 then
+						table.insert(var64_1, function(arg0_18)
+							local var0_18 = var69_1 == 1 and i18n("commander_main_pos") or i18n("commander_assistant_pos")
+							local var1_18 = table.indexof(var0_1.fleets, var65_1[var68_1])
+							local var2_18 = Fleet.DEFAULT_NAME[var1_18]
 
 							pg.MsgboxMgr.GetInstance():ShowMsgBox({
-								content = i18n("comander_repalce_tip", var2, var0),
+								content = i18n("comander_repalce_tip", var2_18, var0_18),
 								onYes = function()
-									local var0 = var65[var68]
+									local var0_19 = var65_1[var68_1]
 
-									var0:updateCommanderByPos(var69, nil)
-									var4:updateActivityFleet(var62, var68, var0)
+									var0_19:updateCommanderByPos(var69_1, nil)
+									var4_1:updateActivityFleet(var62_1, var68_1, var0_19)
 
-									local var1 = var65[var61]
+									local var1_19 = var65_1[var61_1]
 
-									var1:updateCommanderByPos(iter8, var67)
-									var4:updateActivityFleet(var62, var61, var1)
-									arg0()
+									var1_19:updateCommanderByPos(iter8_1, var67_1)
+									var4_1:updateActivityFleet(var62_1, var61_1, var1_19)
+									arg0_18()
 								end,
-								onNo = arg0
+								onNo = arg0_18
 							})
 						end)
 					else
-						table.insert(var64, function(arg0)
-							local var0 = var65[var61]
+						table.insert(var64_1, function(arg0_20)
+							local var0_20 = var65_1[var61_1]
 
-							var0:updateCommanderByPos(iter8, var67)
-							var4:updateActivityFleet(var62, var61, var0)
-							arg0()
+							var0_20:updateCommanderByPos(iter8_1, var67_1)
+							var4_1:updateActivityFleet(var62_1, var61_1, var0_20)
+							arg0_20()
 						end)
 					end
 				else
-					table.insert(var64, function(arg0)
-						local var0 = var65[var61]
+					table.insert(var64_1, function(arg0_21)
+						local var0_21 = var65_1[var61_1]
 
-						var0:updateCommanderByPos(iter8, nil)
-						var4:updateActivityFleet(var62, var61, var0)
-						arg0()
+						var0_21:updateCommanderByPos(iter8_1, nil)
+						var4_1:updateActivityFleet(var62_1, var61_1, var0_21)
+						arg0_21()
 					end)
 				end
 			end
 
-			seriesAsync(var64, function()
-				arg0:sendNotification(GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE, {
-					actId = var62,
-					fleetId = var61
+			seriesAsync(var64_1, function()
+				arg0_1:sendNotification(GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE, {
+					actId = var62_1,
+					fleetId = var61_1
 				})
 			end)
-		elseif var5.type == LevelUIConst.COMMANDER_OP_REST_ALL then
-			local var70 = var4:getActivityFleets()[var62][var61]
+		elseif var5_1.type == LevelUIConst.COMMANDER_OP_REST_ALL then
+			local var70_1 = var4_1:getActivityFleets()[var62_1][var61_1]
 
-			for iter9 = 1, 2 do
-				var70:updateCommanderByPos(iter9, nil)
+			for iter9_1 = 1, 2 do
+				var70_1:updateCommanderByPos(iter9_1, nil)
 			end
 
-			var4:updateActivityFleet(var62, var61, var70)
-			arg0:sendNotification(GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE, {
-				actId = var62,
-				fleetId = var61
+			var4_1:updateActivityFleet(var62_1, var61_1, var70_1)
+			arg0_1:sendNotification(GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE, {
+				actId = var62_1,
+				fleetId = var61_1
 			})
 		end
 	end
 end
 
-return var0
+return var0_0

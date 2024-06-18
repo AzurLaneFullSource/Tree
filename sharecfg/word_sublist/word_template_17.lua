@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_17 = {}
+var0_0.word_template_17 = {}
 
-local var1 = var0.word_template_17
+local var1_0 = var0_0.word_template_17
 
 function temp()
-	var1.英 = {
+	var1_0.英 = {
 		会 = {
 			話 = {
 				this = true
@@ -138,7 +138,7 @@ end
 temp()
 
 function temp()
-	var1.円 = {
+	var1_0.円 = {
 		光 = {
 			this = true
 		}
@@ -148,7 +148,7 @@ end
 temp()
 
 function temp()
-	var1.援 = {
+	var1_0.援 = {
 		助 = {
 			this = true,
 			交 = {
@@ -185,7 +185,7 @@ end
 temp()
 
 function temp()
-	var1.王 = {
+	var1_0.王 = {
 		丹 = {
 			this = true,
 			学 = {
@@ -801,7 +801,7 @@ end
 temp()
 
 function temp()
-	var1.億 = {
+	var1_0.億 = {
 		万 = {
 			長 = {
 				者 = {
@@ -815,7 +815,7 @@ end
 temp()
 
 function temp()
-	var1.下 = {
+	var1_0.下 = {
 		着 = {
 			this = true
 		},
@@ -1117,7 +1117,7 @@ end
 temp()
 
 function temp()
-	var1.家 = {
+	var1_0.家 = {
 		出 = {
 			this = true
 		},

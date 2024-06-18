@@ -1,101 +1,101 @@
-﻿local var0 = class("SailBoatEffectControl")
-local var1
+﻿local var0_0 = class("SailBoatEffectControl")
+local var1_0
 
-function var0.Ctor(arg0, arg1, arg2)
-	var1 = SailBoatGameVo
-	arg0._tf = arg1
-	arg0._event = arg2
-	arg0._content = findTF(arg0._tf, "scene_front/content")
-	arg0._effects = {}
-	arg0._effectPool = {}
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var1_0 = SailBoatGameVo
+	arg0_1._tf = arg1_1
+	arg0_1._event = arg2_1
+	arg0_1._content = findTF(arg0_1._tf, "scene_front/content")
+	arg0_1._effects = {}
+	arg0_1._effectPool = {}
 end
 
-function var0.start(arg0)
-	for iter0 = #arg0._effects, 1, -1 do
-		local var0 = table.remove(arg0._effects, iter0)
+function var0_0.start(arg0_2)
+	for iter0_2 = #arg0_2._effects, 1, -1 do
+		local var0_2 = table.remove(arg0_2._effects, iter0_2)
 
-		setActive(var0.tf, false)
-		table.insert(arg0._effectPool, var0)
+		setActive(var0_2.tf, false)
+		table.insert(arg0_2._effectPool, var0_2)
 	end
 end
 
-function var0.step(arg0, arg1)
+function var0_0.step(arg0_3, arg1_3)
 	return
 end
 
-function var0.getEffect(arg0, arg1)
-	if #arg0._effectPool > 0 then
-		for iter0 = 1, #arg0._effectPool do
-			if #arg0._effectPool[iter0].name == arg1 then
-				return (table.remove(arg0._effectPool, iter0))
+function var0_0.getEffect(arg0_4, arg1_4)
+	if #arg0_4._effectPool > 0 then
+		for iter0_4 = 1, #arg0_4._effectPool do
+			if #arg0_4._effectPool[iter0_4].name == arg1_4 then
+				return (table.remove(arg0_4._effectPool, iter0_4))
 			end
 		end
 	end
 
-	local var0 = var1.GetGameEffectTf(arg1)
-	local var1 = {
-		tf = var0,
-		name = arg1
+	local var0_4 = var1_0.GetGameEffectTf(arg1_4)
+	local var1_4 = {
+		tf = var0_4,
+		name = arg1_4
 	}
 
-	GetComponent(findTF(var0, "img"), typeof(DftAniEvent)):SetEndEvent(function()
-		arg0:effectEnd(var1)
+	GetComponent(findTF(var0_4, "img"), typeof(DftAniEvent)):SetEndEvent(function()
+		arg0_4:effectEnd(var1_4)
 	end)
 
-	return var1
+	return var1_4
 end
 
-function var0.onEventCall(arg0, arg1, arg2)
-	if arg1 == SailBoatGameEvent.CREATE_EFFECT then
-		local var0 = arg2.effect
-		local var1 = arg2.direct
-		local var2 = arg2.position
-		local var3 = arg2.content
+function var0_0.onEventCall(arg0_6, arg1_6, arg2_6)
+	if arg1_6 == SailBoatGameEvent.CREATE_EFFECT then
+		local var0_6 = arg2_6.effect
+		local var1_6 = arg2_6.direct
+		local var2_6 = arg2_6.position
+		local var3_6 = arg2_6.content
 
-		arg0:createEffect(var0, var1, var2, var3)
+		arg0_6:createEffect(var0_6, var1_6, var2_6, var3_6)
 	end
 end
 
-function var0.createEffect(arg0, arg1, arg2, arg3, arg4)
-	local var0 = arg0:getEffect(arg1)
+function var0_0.createEffect(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
+	local var0_7 = arg0_7:getEffect(arg1_7)
 
-	if arg2 then
-		var0.tf.localScale = arg2
+	if arg2_7 then
+		var0_7.tf.localScale = arg2_7
 	end
 
-	if arg3 then
-		var0.tf.anchoredPosition = arg3
+	if arg3_7 then
+		var0_7.tf.anchoredPosition = arg3_7
 	end
 
-	if arg4 then
-		SetParent(var0.tf, arg4)
+	if arg4_7 then
+		SetParent(var0_7.tf, arg4_7)
 	else
-		SetParent(var0.tf, arg0._content)
+		SetParent(var0_7.tf, arg0_7._content)
 	end
 
-	setActive(var0.tf, true)
-	table.insert(arg0._effects, var0)
+	setActive(var0_7.tf, true)
+	table.insert(arg0_7._effects, var0_7)
 end
 
-function var0.effectEnd(arg0, arg1)
-	for iter0 = 1, #arg0._effects do
-		if arg0._effects[iter0] == arg1 then
-			local var0 = table.remove(arg0._effects, iter0)
+function var0_0.effectEnd(arg0_8, arg1_8)
+	for iter0_8 = 1, #arg0_8._effects do
+		if arg0_8._effects[iter0_8] == arg1_8 then
+			local var0_8 = table.remove(arg0_8._effects, iter0_8)
 
-			setActive(var0.tf, false)
-			table.insert(arg0._effectPool, var0)
+			setActive(var0_8.tf, false)
+			table.insert(arg0_8._effectPool, var0_8)
 
 			return
 		end
 	end
 end
 
-function var0.dispose(arg0)
+function var0_0.dispose(arg0_9)
 	return
 end
 
-function var0.clear(arg0)
+function var0_0.clear(arg0_10)
 	return
 end
 
-return var0
+return var0_0

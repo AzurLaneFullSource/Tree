@@ -1,33 +1,33 @@
-﻿local var0 = class("ShipBreakResultLayer", import("..base.BaseUI"))
+﻿local var0_0 = class("ShipBreakResultLayer", import("..base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ShipBreakResultUI"
 end
 
-function var0.init(arg0)
-	arg0.frame = arg0:findTF("frame")
-	arg0.attrPanel = arg0:findTF("right_panel/top/attrs")
-	arg0.rarePanel = arg0:findTF("right_panel/top/rare")
-	arg0.paintContain = arg0:findTF("paint")
-	arg0.qCharaContain = arg0:findTF("right_panel/top/q_chara")
-	arg0._chat = arg0:findTF("chat", arg0.paintContain)
+function var0_0.init(arg0_2)
+	arg0_2.frame = arg0_2:findTF("frame")
+	arg0_2.attrPanel = arg0_2:findTF("right_panel/top/attrs")
+	arg0_2.rarePanel = arg0_2:findTF("right_panel/top/rare")
+	arg0_2.paintContain = arg0_2:findTF("paint")
+	arg0_2.qCharaContain = arg0_2:findTF("right_panel/top/q_chara")
+	arg0_2._chat = arg0_2:findTF("chat", arg0_2.paintContain)
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, false, {
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, false, {
 		weight = LayerWeightConst.TOP_LAYER
 	})
 
-	arg0._shake = arg0:findTF("shake_panel")
-	arg0._bg = arg0:findTF("bg", arg0._shake)
-	arg0._paintingShadowTF = arg0:findTF("shadow")
+	arg0_2._shake = arg0_2:findTF("shake_panel")
+	arg0_2._bg = arg0_2:findTF("bg", arg0_2._shake)
+	arg0_2._paintingShadowTF = arg0_2:findTF("shadow")
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0._tf, function()
-		arg0:emit(var0.ON_CLOSE)
+function var0_0.didEnter(arg0_3)
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:emit(var0_0.ON_CLOSE)
 	end, SFX_CANCEL)
 end
 
-local var1 = {
+local var1_0 = {
 	"durability",
 	"cannon",
 	"torpedo",
@@ -35,259 +35,259 @@ local var1 = {
 	"air"
 }
 
-function var0.updateStatistics(arg0)
-	local var0 = arg0.contextData.newShip
-	local var1 = arg0.contextData.oldShip
-	local var2 = intProperties(var0:getShipProperties())
-	local var3 = intProperties(var1:getShipProperties())
-	local var4 = arg0.attrPanel
+function var0_0.updateStatistics(arg0_5)
+	local var0_5 = arg0_5.contextData.newShip
+	local var1_5 = arg0_5.contextData.oldShip
+	local var2_5 = intProperties(var0_5:getShipProperties())
+	local var3_5 = intProperties(var1_5:getShipProperties())
+	local var4_5 = arg0_5.attrPanel
 
-	for iter0, iter1 in ipairs(var1) do
-		local var5 = var4:GetChild(iter0 - 1)
+	for iter0_5, iter1_5 in ipairs(var1_0) do
+		local var5_5 = var4_5:GetChild(iter0_5 - 1)
 
-		setText(var5:Find("name"), AttributeType.Type2Name(iter1))
-		setText(var5:Find("value"), var3[iter1])
-		setText(var5:Find("value1"), var2[iter1])
+		setText(var5_5:Find("name"), AttributeType.Type2Name(iter1_5))
+		setText(var5_5:Find("value"), var3_5[iter1_5])
+		setText(var5_5:Find("value1"), var2_5[iter1_5])
 
-		local var6 = var5:Find("addition")
-		local var7 = var2[iter1] - var3[iter1]
+		local var6_5 = var5_5:Find("addition")
+		local var7_5 = var2_5[iter1_5] - var3_5[iter1_5]
 
-		if var7 == 0 then
-			setActive(var6, false)
+		if var7_5 == 0 then
+			setActive(var6_5, false)
 		else
-			setText(var6, "+" .. var7)
+			setText(var6_5, "+" .. var7_5)
 		end
 	end
 
-	local var8 = var4:GetChild(5)
-	local var9 = var1:getBattleTotalExpend()
-	local var10 = var0:getBattleTotalExpend()
+	local var8_5 = var4_5:GetChild(5)
+	local var9_5 = var1_5:getBattleTotalExpend()
+	local var10_5 = var0_5:getBattleTotalExpend()
 
-	setText(var8:Find("name"), AttributeType.Type2Name(AttributeType.Expend))
-	setText(var8:Find("value"), var9)
-	setText(var8:Find("value1"), var10)
+	setText(var8_5:Find("name"), AttributeType.Type2Name(AttributeType.Expend))
+	setText(var8_5:Find("value"), var9_5)
+	setText(var8_5:Find("value1"), var10_5)
 
-	local var11 = var8:Find("addition")
-	local var12 = math.abs(var10 - var9)
+	local var11_5 = var8_5:Find("addition")
+	local var12_5 = math.abs(var10_5 - var9_5)
 
-	if var12 == 0 then
-		setActive(var11, false)
+	if var12_5 == 0 then
+		setActive(var11_5, false)
 	else
-		setText(var11, "+" .. var12)
+		setText(var11_5, "+" .. var12_5)
 	end
 
-	local var13 = var0:getStar()
-	local var14 = var1:getStar()
-	local var15 = arg0.rarePanel:Find("stars_from")
-	local var16 = arg0.rarePanel:Find("stars_to")
+	local var13_5 = var0_5:getStar()
+	local var14_5 = var1_5:getStar()
+	local var15_5 = arg0_5.rarePanel:Find("stars_from")
+	local var16_5 = arg0_5.rarePanel:Find("stars_to")
 
-	for iter2 = 1, var14 do
-		setActive(var15:GetChild(iter2 - 1), true)
+	for iter2_5 = 1, var14_5 do
+		setActive(var15_5:GetChild(iter2_5 - 1), true)
 	end
 
-	for iter3 = 1, var13 do
-		setActive(var16:GetChild(iter3 - 1), true)
+	for iter3_5 = 1, var13_5 do
+		setActive(var16_5:GetChild(iter3_5 - 1), true)
 	end
 
-	setPaintingPrefabAsync(arg0.paintContain, var0:getPainting(), "chuanwu")
-	setPaintingPrefabAsync(arg0._paintingShadowTF, var0:getPainting(), "chuanwu", function()
-		local var0 = findTF(arg0._paintingShadowTF, "fitter"):GetChild(0)
+	setPaintingPrefabAsync(arg0_5.paintContain, var0_5:getPainting(), "chuanwu")
+	setPaintingPrefabAsync(arg0_5._paintingShadowTF, var0_5:getPainting(), "chuanwu", function()
+		local var0_6 = findTF(arg0_5._paintingShadowTF, "fitter"):GetChild(0)
 
-		var0:GetComponent("Image").color = Color.New(0, 0, 0)
+		var0_6:GetComponent("Image").color = Color.New(0, 0, 0)
 
-		local var1 = findTF(var0, "layers")
+		local var1_6 = findTF(var0_6, "layers")
 
-		if not IsNil(var1) then
-			local var2 = var1:GetComponentsInChildren(typeof(Image))
+		if not IsNil(var1_6) then
+			local var2_6 = var1_6:GetComponentsInChildren(typeof(Image))
 
-			for iter0 = 1, var2.Length do
-				var2[iter0 - 1].color = Color.New(0, 0, 0)
+			for iter0_6 = 1, var2_6.Length do
+				var2_6[iter0_6 - 1].color = Color.New(0, 0, 0)
 			end
 		end
 
-		local var3 = findTF(var0, "face")
+		local var3_6 = findTF(var0_6, "face")
 
-		if not IsNil(var3) then
-			var3:GetComponent("Image").color = Color.New(0, 0, 0)
+		if not IsNil(var3_6) then
+			var3_6:GetComponent("Image").color = Color.New(0, 0, 0)
 		end
 	end)
 
-	local var17 = var0:getPrefab()
+	local var17_5 = var0_5:getPrefab()
 
 	pg.UIMgr.GetInstance():LoadingOn()
-	PoolMgr.GetInstance():GetSpineChar(var17, true, function(arg0)
+	PoolMgr.GetInstance():GetSpineChar(var17_5, true, function(arg0_7)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		arg0.shipPrefab = var17
-		arg0.shipModel = arg0
-		tf(arg0).localScale = Vector3(1, 1, 1)
+		arg0_5.shipPrefab = var17_5
+		arg0_5.shipModel = arg0_7
+		tf(arg0_7).localScale = Vector3(1, 1, 1)
 
-		arg0:GetComponent("SpineAnimUI"):SetAction("stand", 0)
-		setParent(arg0, arg0.qCharaContain)
+		arg0_7:GetComponent("SpineAnimUI"):SetAction("stand", 0)
+		setParent(arg0_7, arg0_5.qCharaContain)
 	end)
-	GetSpriteFromAtlasAsync("newshipbg/bg_" .. var0:rarity2bgPrintForGet(), "", function(arg0)
-		setImageSprite(arg0._tf, arg0, false)
+	GetSpriteFromAtlasAsync("newshipbg/bg_" .. var0_5:rarity2bgPrintForGet(), "", function(arg0_8)
+		setImageSprite(arg0_5._tf, arg0_8, false)
 	end)
 
-	local var18 = var0:getCVIntimacy()
-	local var19, var20, var21 = ShipWordHelper.GetWordAndCV(var0.skinId, ShipWordHelper.WORD_TYPE_UPGRADE, nil, nil, var18)
+	local var18_5 = var0_5:getCVIntimacy()
+	local var19_5, var20_5, var21_5 = ShipWordHelper.GetWordAndCV(var0_5.skinId, ShipWordHelper.WORD_TYPE_UPGRADE, nil, nil, var18_5)
 
-	setWidgetText(arg0._chat, var21)
+	setWidgetText(arg0_5._chat, var21_5)
 
-	local var22 = arg0:findTF("Text", arg0._chat):GetComponent(typeof(Text))
+	local var22_5 = arg0_5:findTF("Text", arg0_5._chat):GetComponent(typeof(Text))
 
-	var22.alignment = #var22.text > CHAT_POP_STR_LEN and TextAnchor.MiddleLeft or TextAnchor.MiddleCenter
-	arg0._chat.transform.localScale = Vector3(0, 0, 1)
-	arg0.delayTId = LeanTween.delayedCall(0.6, System.Action(function()
-		SetActive(arg0._chat, true)
-		LeanTween.scale(rtf(arg0._chat), Vector3.New(1, 1, 1), 0.3):setEase(LeanTweenType.easeOutBack)
-		arg0:voice(var20)
+	var22_5.alignment = #var22_5.text > CHAT_POP_STR_LEN and TextAnchor.MiddleLeft or TextAnchor.MiddleCenter
+	arg0_5._chat.transform.localScale = Vector3(0, 0, 1)
+	arg0_5.delayTId = LeanTween.delayedCall(0.6, System.Action(function()
+		SetActive(arg0_5._chat, true)
+		LeanTween.scale(rtf(arg0_5._chat), Vector3.New(1, 1, 1), 0.3):setEase(LeanTweenType.easeOutBack)
+		arg0_5:voice(var20_5)
 	end)).id
 
-	local var23 = var0
-	local var24 = var23:isBluePrintShip()
-	local var25 = var23:isMetaShip()
+	local var23_5 = var0_5
+	local var24_5 = var23_5:isBluePrintShip()
+	local var25_5 = var23_5:isMetaShip()
 
-	GetSpriteFromAtlasAsync("newshipbg/bg_" .. var23:rarity2bgPrintForGet(), "", function(arg0)
-		setImageSprite(arg0._bg, arg0)
+	GetSpriteFromAtlasAsync("newshipbg/bg_" .. var23_5:rarity2bgPrintForGet(), "", function(arg0_10)
+		setImageSprite(arg0_5._bg, arg0_10)
 	end)
 
-	if var24 then
-		if arg0.metaBg then
-			setActive(arg0.metaBg, false)
+	if var24_5 then
+		if arg0_5.metaBg then
+			setActive(arg0_5.metaBg, false)
 		end
 
-		if arg0.designBg and arg0.designName ~= "raritydesign" .. var23:getRarity() then
-			PoolMgr.GetInstance():ReturnUI(arg0.designName, arg0.designBg)
+		if arg0_5.designBg and arg0_5.designName ~= "raritydesign" .. var23_5:getRarity() then
+			PoolMgr.GetInstance():ReturnUI(arg0_5.designName, arg0_5.designBg)
 
-			arg0.designBg = nil
+			arg0_5.designBg = nil
 		end
 
-		if not arg0.designBg then
-			PoolMgr.GetInstance():GetUI("raritydesign" .. var23:getRarity(), true, function(arg0)
-				arg0.designBg = arg0
-				arg0.designName = "raritydesign" .. var23:getRarity()
+		if not arg0_5.designBg then
+			PoolMgr.GetInstance():GetUI("raritydesign" .. var23_5:getRarity(), true, function(arg0_11)
+				arg0_5.designBg = arg0_11
+				arg0_5.designName = "raritydesign" .. var23_5:getRarity()
 
-				arg0.transform:SetParent(arg0._shake, false)
+				arg0_11.transform:SetParent(arg0_5._shake, false)
 
-				arg0.transform.localPosition = Vector3(1, 1, 1)
-				arg0.transform.localScale = Vector3(1, 1, 1)
+				arg0_11.transform.localPosition = Vector3(1, 1, 1)
+				arg0_11.transform.localScale = Vector3(1, 1, 1)
 
-				arg0.transform:SetSiblingIndex(1)
-				setActive(arg0, true)
+				arg0_11.transform:SetSiblingIndex(1)
+				setActive(arg0_11, true)
 			end)
 		else
-			setActive(arg0.designBg, true)
+			setActive(arg0_5.designBg, true)
 		end
-	elseif var25 then
-		if arg0.designBg then
-			setActive(arg0.designBg, false)
-		end
-
-		if arg0.metaBg and arg0.metaName ~= "raritymeta" .. var23:getRarity() then
-			PoolMgr.GetInstance():ReturnUI(arg0.metaName, arg0.metaBg)
-
-			arg0.metaBg = nil
+	elseif var25_5 then
+		if arg0_5.designBg then
+			setActive(arg0_5.designBg, false)
 		end
 
-		if not arg0.metaBg then
-			PoolMgr.GetInstance():GetUI("raritymeta" .. var23:getRarity(), true, function(arg0)
-				arg0.metaBg = arg0
-				arg0.metaName = "raritymeta" .. var23:getRarity()
+		if arg0_5.metaBg and arg0_5.metaName ~= "raritymeta" .. var23_5:getRarity() then
+			PoolMgr.GetInstance():ReturnUI(arg0_5.metaName, arg0_5.metaBg)
 
-				arg0.transform:SetParent(arg0._shake, false)
+			arg0_5.metaBg = nil
+		end
 
-				arg0.transform.localPosition = Vector3(1, 1, 1)
-				arg0.transform.localScale = Vector3(1, 1, 1)
+		if not arg0_5.metaBg then
+			PoolMgr.GetInstance():GetUI("raritymeta" .. var23_5:getRarity(), true, function(arg0_12)
+				arg0_5.metaBg = arg0_12
+				arg0_5.metaName = "raritymeta" .. var23_5:getRarity()
 
-				arg0.transform:SetSiblingIndex(1)
-				setActive(arg0, true)
+				arg0_12.transform:SetParent(arg0_5._shake, false)
+
+				arg0_12.transform.localPosition = Vector3(1, 1, 1)
+				arg0_12.transform.localScale = Vector3(1, 1, 1)
+
+				arg0_12.transform:SetSiblingIndex(1)
+				setActive(arg0_12, true)
 			end)
 		else
-			setActive(arg0.metaBg, true)
+			setActive(arg0_5.metaBg, true)
 		end
 	else
-		if arg0.designBg then
-			setActive(arg0.designBg, false)
+		if arg0_5.designBg then
+			setActive(arg0_5.designBg, false)
 		end
 
-		if arg0.metaBg then
-			setActive(arg0.metaBg, false)
+		if arg0_5.metaBg then
+			setActive(arg0_5.metaBg, false)
 		end
 	end
 
-	PoolMgr.GetInstance():GetUI("tupo_" .. var23:getRarity(), true, function(arg0)
-		arg0.transform:SetParent(arg0._tf, false)
+	PoolMgr.GetInstance():GetUI("tupo_" .. var23_5:getRarity(), true, function(arg0_13)
+		arg0_13.transform:SetParent(arg0_5._tf, false)
 
-		arg0.transform.localPosition = Vector3(1, 1, 1)
-		arg0.transform.localScale = Vector3(1, 1, 1)
+		arg0_13.transform.localPosition = Vector3(1, 1, 1)
+		arg0_13.transform.localScale = Vector3(1, 1, 1)
 
-		arg0.transform:SetSiblingIndex(4)
-		setActive(arg0, true)
+		arg0_13.transform:SetSiblingIndex(4)
+		setActive(arg0_13, true)
 	end)
-	PoolMgr.GetInstance():GetUI(var23:isMetaShip() and "tupo_meta" or "tupo", true, function(arg0)
-		arg0.transform:SetParent(arg0._tf, false)
+	PoolMgr.GetInstance():GetUI(var23_5:isMetaShip() and "tupo_meta" or "tupo", true, function(arg0_14)
+		arg0_14.transform:SetParent(arg0_5._tf, false)
 
-		arg0.transform.localPosition = Vector3(1, 1, 1)
-		arg0.transform.localScale = Vector3(1, 1, 1)
+		arg0_14.transform.localPosition = Vector3(1, 1, 1)
+		arg0_14.transform.localScale = Vector3(1, 1, 1)
 
-		arg0.transform:SetAsLastSibling()
-		setActive(arg0, true)
+		arg0_14.transform:SetAsLastSibling()
+		setActive(arg0_14, true)
 	end)
 end
 
-function var0.voice(arg0, arg1)
-	if not arg1 then
+function var0_0.voice(arg0_15, arg1_15)
+	if not arg1_15 then
 		return
 	end
 
-	arg0:stopVoice()
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg1)
+	arg0_15:stopVoice()
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg1_15)
 
-	arg0._currentVoice = arg1
+	arg0_15._currentVoice = arg1_15
 end
 
-function var0.stopVoice(arg0)
-	if arg0._currentVoice then
-		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(arg0._currentVoice)
+function var0_0.stopVoice(arg0_16)
+	if arg0_16._currentVoice then
+		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(arg0_16._currentVoice)
 	end
 
-	arg0._currentVoice = nil
+	arg0_16._currentVoice = nil
 end
 
-function var0.recycleSpineChar(arg0)
-	if arg0.shipPrefab and arg0.shipModel then
-		PoolMgr.GetInstance():ReturnSpineChar(arg0.shipPrefab, arg0.shipModel)
+function var0_0.recycleSpineChar(arg0_17)
+	if arg0_17.shipPrefab and arg0_17.shipModel then
+		PoolMgr.GetInstance():ReturnSpineChar(arg0_17.shipPrefab, arg0_17.shipModel)
 
-		arg0.shipPrefab = nil
-		arg0.shipModel = nil
+		arg0_17.shipPrefab = nil
+		arg0_17.shipModel = nil
 	end
 end
 
-function var0.willExit(arg0)
-	if arg0.delayTId then
-		LeanTween.cancel(arg0.delayTId)
+function var0_0.willExit(arg0_18)
+	if arg0_18.delayTId then
+		LeanTween.cancel(arg0_18.delayTId)
 	end
 
-	arg0:recycleSpineChar()
+	arg0_18:recycleSpineChar()
 
-	if arg0.designBg then
-		PoolMgr.GetInstance():ReturnUI(arg0.designName, arg0.designBg)
+	if arg0_18.designBg then
+		PoolMgr.GetInstance():ReturnUI(arg0_18.designName, arg0_18.designBg)
 	end
 
-	if arg0.metaBg then
-		PoolMgr.GetInstance():ReturnUI(arg0.metaName, arg0.metaBg)
+	if arg0_18.metaBg then
+		PoolMgr.GetInstance():ReturnUI(arg0_18.metaName, arg0_18.metaBg)
 	end
 
-	arg0:stopVoice()
+	arg0_18:stopVoice()
 
-	if arg0.loadedCVBankName then
-		pg.CriMgr.UnloadCVBank(arg0.loadedCVBankName)
+	if arg0_18.loadedCVBankName then
+		pg.CriMgr.UnloadCVBank(arg0_18.loadedCVBankName)
 
-		arg0.loadedCVBankName = nil
+		arg0_18.loadedCVBankName = nil
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, pg.UIMgr.GetInstance().UIMain)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_18._tf, pg.UIMgr.GetInstance().UIMain)
 end
 
-return var0
+return var0_0

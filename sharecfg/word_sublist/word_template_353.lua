@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_353 = {}
+var0_0.word_template_353 = {}
 
-local var1 = var0.word_template_353
+local var1_0 = var0_0.word_template_353
 
 function temp()
-	var1.躅 = {
+	var1_0.躅 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.主 = {
+	var1_0.主 = {
 		词 = {
 			： = {
 				鸡 = {
@@ -202,7 +202,7 @@ end
 temp()
 
 function temp()
-	var1.助 = {
+	var1_0.助 = {
 		勃 = {
 			this = true,
 			乳 = {
@@ -248,7 +248,7 @@ end
 temp()
 
 function temp()
-	var1.住 = {
+	var1_0.住 = {
 		房 = {
 			吸 = {
 				髓 = {
@@ -271,7 +271,7 @@ end
 temp()
 
 function temp()
-	var1.注 = {
+	var1_0.注 = {
 		单 = {
 			修 = {
 				改 = {
@@ -317,7 +317,7 @@ end
 temp()
 
 function temp()
-	var1.祝 = {
+	var1_0.祝 = {
 		福 = {
 			达 = {
 				赖 = {
@@ -360,7 +360,7 @@ end
 temp()
 
 function temp()
-	var1.翥 = {
+	var1_0.翥 = {
 		this = {
 			this = true
 		}

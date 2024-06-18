@@ -1,18 +1,18 @@
-﻿local var0 = class("resumeMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("resumeMediator", import("..base.ContextMediator"))
 
-function var0.register(arg0)
-	local var0 = arg0.contextData.player
+function var0_0.register(arg0_1)
+	local var0_1 = arg0_1.contextData.player
 
-	arg0.viewComponent:setPlayerVO(var0)
+	arg0_1.viewComponent:setPlayerVO(var0_1)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_2)
 	return {}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_3, arg1_3)
+	local var0_3 = arg1_3:getName()
+	local var1_3 = arg1_3:getBody()
 end
 
-return var0
+return var0_0

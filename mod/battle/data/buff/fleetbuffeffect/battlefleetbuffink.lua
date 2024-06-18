@@ -1,22 +1,22 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleFleetBuffInk = class("BattleFleetBuffInk", var0.Battle.BattleFleetBuffEffect)
-var0.Battle.BattleFleetBuffInk.__name = "BattleFleetBuffInk"
+var0_0.Battle.BattleFleetBuffInk = class("BattleFleetBuffInk", var0_0.Battle.BattleFleetBuffEffect)
+var0_0.Battle.BattleFleetBuffInk.__name = "BattleFleetBuffInk"
 
-local var1 = var0.Battle.BattleFleetBuffInk
+local var1_0 = var0_0.Battle.BattleFleetBuffInk
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.onAttach(arg0, arg1, arg2)
-	arg1:Blinding(true)
-	arg1:SetWeaponBlock(1)
+function var1_0.onAttach(arg0_2, arg1_2, arg2_2)
+	arg1_2:Blinding(true)
+	arg1_2:SetWeaponBlock(1)
 end
 
-function var1.onRemove(arg0, arg1, arg2)
-	arg1:Blinding(false)
-	arg1:SetWeaponBlock(-1)
+function var1_0.onRemove(arg0_3, arg1_3, arg2_3)
+	arg1_3:Blinding(false)
+	arg1_3:SetWeaponBlock(-1)
 end

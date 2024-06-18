@@ -1,83 +1,83 @@
-﻿local var0 = class("VoteScheduleMediator", import("view.base.ContextMediator"))
+﻿local var0_0 = class("VoteScheduleMediator", import("view.base.ContextMediator"))
 
-var0.GO_RANK = "VoteScheduleMediator:GO_RANK"
-var0.FETCH_RANK = "VoteScheduleMediator:FETCH_RANK"
-var0.ON_VOTE = "VoteScheduleMediator:ON_VOTE"
+var0_0.GO_RANK = "VoteScheduleMediator:GO_RANK"
+var0_0.FETCH_RANK = "VoteScheduleMediator:FETCH_RANK"
+var0_0.ON_VOTE = "VoteScheduleMediator:ON_VOTE"
 
-function var0.register(arg0)
-	arg0:bind(var0.ON_VOTE, function()
-		local var0 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup() or getProxy(VoteProxy):GetOpeningFunVoteGroup()
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.ON_VOTE, function()
+		local var0_2 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup() or getProxy(VoteProxy):GetOpeningFunVoteGroup()
 
-		if not var0 then
+		if not var0_2 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_notStartOrEnd"))
 
 			return
 		end
 
-		arg0:sendNotification(GAME.GO_SCENE, SCENE.VOTE, {
-			voteGroup = var0
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.VOTE, {
+			voteGroup = var0_2
 		})
 	end)
-	arg0:bind(var0.FETCH_RANK, function(arg0, arg1, arg2)
-		arg0:sendNotification(GAME.FETCH_VOTE_RANK, {
-			voteId = arg1,
-			callback = arg2
+	arg0_1:bind(var0_0.FETCH_RANK, function(arg0_3, arg1_3, arg2_3)
+		arg0_1:sendNotification(GAME.FETCH_VOTE_RANK, {
+			voteId = arg1_3,
+			callback = arg2_3
 		})
 	end)
-	arg0:bind(var0.GO_RANK, function(arg0, arg1)
+	arg0_1:bind(var0_0.GO_RANK, function(arg0_4, arg1_4)
 		seriesAsync({
-			function(arg0)
-				arg0:CheckPaintingRes(arg1, arg0)
+			function(arg0_5)
+				arg0_1:CheckPaintingRes(arg1_4, arg0_5)
 			end
 		}, function()
-			arg0:addSubLayers(Context.New({
+			arg0_1:addSubLayers(Context.New({
 				mediator = ContextMediator,
 				viewComponent = VoteRankScene,
 				data = {
-					voteGroup = arg1
+					voteGroup = arg1_4
 				}
 			}))
 		end)
 	end)
 end
 
-function var0.CheckPaintingRes(arg0, arg1, arg2)
-	if arg1 and arg1:isFinalsRace() or arg1:IsFunRace() then
-		local var0 = arg1:GetRankList()
-		local var1 = var0[1]
-		local var2 = var0[2]
-		local var3 = var0[3]
-		local var4 = var1:getPainting()
-		local var5 = var2:getPainting()
-		local var6 = var3:getPainting()
-		local var7 = {
-			var4,
-			var5,
-			var6
+function var0_0.CheckPaintingRes(arg0_7, arg1_7, arg2_7)
+	if arg1_7 and arg1_7:isFinalsRace() or arg1_7:IsFunRace() then
+		local var0_7 = arg1_7:GetRankList()
+		local var1_7 = var0_7[1]
+		local var2_7 = var0_7[2]
+		local var3_7 = var0_7[3]
+		local var4_7 = var1_7:getPainting()
+		local var5_7 = var2_7:getPainting()
+		local var6_7 = var3_7:getPainting()
+		local var7_7 = {
+			var4_7,
+			var5_7,
+			var6_7
 		}
-		local var8 = {}
+		local var8_7 = {}
 
-		for iter0, iter1 in ipairs(var7) do
-			PaintingGroupConst.AddPaintingNameWithFilteMap(var8, iter1)
+		for iter0_7, iter1_7 in ipairs(var7_7) do
+			PaintingGroupConst.AddPaintingNameWithFilteMap(var8_7, iter1_7)
 		end
 
 		PaintingGroupConst.PaintingDownload({
 			isShowBox = true,
-			paintingNameList = var8,
-			finishFunc = arg2
+			paintingNameList = var8_7,
+			finishFunc = arg2_7
 		})
 	else
-		arg2()
+		arg2_7()
 	end
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_8)
 	return {}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_9, arg1_9)
+	local var0_9 = arg1_9:getName()
+	local var1_9 = arg1_9:getBody()
 end
 
-return var0
+return var0_0

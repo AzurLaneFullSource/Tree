@@ -1,6 +1,6 @@
-﻿local var0 = class("RedPacketLayer", import("view.base.BaseUI"))
+﻿local var0_0 = class("RedPacketLayer", import("view.base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	if PLATFORM_CODE == PLATFORM_CHT then
 		return "RedPacket2023UI"
 	else
@@ -8,125 +8,125 @@ function var0.getUIName(arg0)
 	end
 end
 
-function var0.init(arg0)
-	arg0:initData()
-	arg0:findUI()
-	arg0:addListener()
+function var0_0.init(arg0_2)
+	arg0_2:initData()
+	arg0_2:findUI()
+	arg0_2:addListener()
 end
 
-function var0.didEnter(arg0)
-	arg0:updateUI()
-	pg.UIMgr.GetInstance():OverlayPanel(arg0._tf)
+function var0_0.didEnter(arg0_3)
+	arg0_3:updateUI()
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_3._tf)
 end
 
-function var0.willExit(arg0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0._tf)
+function var0_0.willExit(arg0_4)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_4._tf)
 end
 
-function var0.initData(arg0)
-	arg0.activityProxy = getProxy(ActivityProxy)
+function var0_0.initData(arg0_5)
+	arg0_5.activityProxy = getProxy(ActivityProxy)
 
-	local var0 = arg0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKETS)
+	local var0_5 = arg0_5.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKETS)
 
-	arg0.activityID = var0.id
-	arg0.countToStory = {}
+	arg0_5.activityID = var0_5.id
+	arg0_5.countToStory = {}
 
-	local var1 = var0:getConfig("config_client").story
+	local var1_5 = var0_5:getConfig("config_client").story
 
-	if var1 then
-		for iter0, iter1 in ipairs(var1) do
-			arg0.countToStory[iter1[1]] = iter1[2]
+	if var1_5 then
+		for iter0_5, iter1_5 in ipairs(var1_5) do
+			arg0_5.countToStory[iter1_5[1]] = iter1_5[2]
 		end
 	end
 end
 
-function var0.findUI(arg0)
-	arg0.packetBtn = arg0:findTF("Container/PacketBtn")
-	arg0.packetMask = arg0:findTF("Container/PacketBtnMask")
-	arg0.helpBtn = arg0:findTF("Container/HelpBtn")
-	arg0.tagTF = arg0:findTF("tag", arg0.packetBtn)
-	arg0.countTF = arg0:findTF("Container/Count")
-	arg0.specialTF = arg0:findTF("Container/Count/Special")
-	arg0.specialCountText = arg0:findTF("Text", arg0.specialTF)
-	arg0.normalTF = arg0:findTF("Container/Count/Normal")
-	arg0.normalCountText = arg0:findTF("Text", arg0.normalTF)
-	arg0.awardBtnList = {}
+function var0_0.findUI(arg0_6)
+	arg0_6.packetBtn = arg0_6:findTF("Container/PacketBtn")
+	arg0_6.packetMask = arg0_6:findTF("Container/PacketBtnMask")
+	arg0_6.helpBtn = arg0_6:findTF("Container/HelpBtn")
+	arg0_6.tagTF = arg0_6:findTF("tag", arg0_6.packetBtn)
+	arg0_6.countTF = arg0_6:findTF("Container/Count")
+	arg0_6.specialTF = arg0_6:findTF("Container/Count/Special")
+	arg0_6.specialCountText = arg0_6:findTF("Text", arg0_6.specialTF)
+	arg0_6.normalTF = arg0_6:findTF("Container/Count/Normal")
+	arg0_6.normalCountText = arg0_6:findTF("Text", arg0_6.normalTF)
+	arg0_6.awardBtnList = {}
 
-	table.insert(arg0.awardBtnList, arg0:findTF("Container/Award"))
-	table.insert(arg0.awardBtnList, arg0:findTF("Container/Award2"))
+	table.insert(arg0_6.awardBtnList, arg0_6:findTF("Container/Award"))
+	table.insert(arg0_6.awardBtnList, arg0_6:findTF("Container/Award2"))
 
-	arg0.countText = arg0:findTF("Container/CountText")
-	arg0.backBtn = arg0:findTF("Top/BackBtn")
+	arg0_6.countText = arg0_6:findTF("Container/CountText")
+	arg0_6.backBtn = arg0_6:findTF("Top/BackBtn")
 end
 
-function var0.addListener(arg0)
-	onButton(arg0, arg0.backBtn, function()
-		arg0:closeView()
+function var0_0.addListener(arg0_7)
+	onButton(arg0_7, arg0_7.backBtn, function()
+		arg0_7:closeView()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.packetBtn, function()
+	onButton(arg0_7, arg0_7.packetBtn, function()
 		pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 1,
-			activity_id = arg0.activityID
+			activity_id = arg0_7.activityID
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_7, arg0_7.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_chunjie_jiulou.tip
 		})
 	end, SFX_PANEL)
 
-	for iter0, iter1 in ipairs(arg0.awardBtnList) do
-		if iter1 then
-			onButton(arg0, iter1, function()
+	for iter0_7, iter1_7 in ipairs(arg0_7.awardBtnList) do
+		if iter1_7 then
+			onButton(arg0_7, iter1_7, function()
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SKINSHOP)
 			end, SFX_PANEL)
 		end
 	end
 end
 
-function var0.updateUI(arg0)
-	local var0 = arg0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKETS)
-	local var1 = var0.data3
-	local var2 = var0.data1
-	local var3 = math.min(var0.data1, var0.data2)
-	local var4 = var2 - var3
+function var0_0.updateUI(arg0_12)
+	local var0_12 = arg0_12.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKETS)
+	local var1_12 = var0_12.data3
+	local var2_12 = var0_12.data1
+	local var3_12 = math.min(var0_12.data1, var0_12.data2)
+	local var4_12 = var2_12 - var3_12
 
-	print(var4, var3, var2)
-	setActive(arg0.tagTF, var3 > 0)
-	setActive(arg0.normalTF, var4 > 0)
-	setActive(arg0.specialTF, var3 > 0)
-	setActive(arg0.countTF, var2 > 0)
-	setText(arg0.normalCountText, var4)
-	setText(arg0.specialCountText, var3)
-	setActive(arg0.packetBtn, var2 > 0)
-	setActive(arg0.packetMask, not (var2 > 0))
+	print(var4_12, var3_12, var2_12)
+	setActive(arg0_12.tagTF, var3_12 > 0)
+	setActive(arg0_12.normalTF, var4_12 > 0)
+	setActive(arg0_12.specialTF, var3_12 > 0)
+	setActive(arg0_12.countTF, var2_12 > 0)
+	setText(arg0_12.normalCountText, var4_12)
+	setText(arg0_12.specialCountText, var3_12)
+	setActive(arg0_12.packetBtn, var2_12 > 0)
+	setActive(arg0_12.packetMask, not (var2_12 > 0))
 
-	local var5 = var0.data1_list[2]
-	local var6 = var0.data1_list[1]
+	local var5_12 = var0_12.data1_list[2]
+	local var6_12 = var0_12.data1_list[1]
 
-	setText(arg0.countText, var5 .. "/" .. var6)
+	setText(arg0_12.countText, var5_12 .. "/" .. var6_12)
 end
 
-function var0.tryPlayStory(arg0)
-	local var0 = arg0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKETS)
-	local var1 = var0.data3
-	local var2 = var0.data1 - math.min(var0.data1, var0.data2)
-	local var3 = var1 - var0.data2
-	local var4 = arg0.countToStory[var3]
+function var0_0.tryPlayStory(arg0_13)
+	local var0_13 = arg0_13.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKETS)
+	local var1_13 = var0_13.data3
+	local var2_13 = var0_13.data1 - math.min(var0_13.data1, var0_13.data2)
+	local var3_13 = var1_13 - var0_13.data2
+	local var4_13 = arg0_13.countToStory[var3_13]
 
-	if var4 then
-		pg.NewStoryMgr.GetInstance():Play(var4)
+	if var4_13 then
+		pg.NewStoryMgr.GetInstance():Play(var4_13)
 	end
 end
 
-function var0.onSubmitFinished(arg0)
-	arg0:updateUI()
-	arg0:tryPlayStory()
+function var0_0.onSubmitFinished(arg0_14)
+	arg0_14:updateUI()
+	arg0_14:tryPlayStory()
 end
 
-function var0.isShowRedPoint()
+function var0_0.isShowRedPoint()
 	return getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKETS).data1 > 0
 end
 
-return var0
+return var0_0

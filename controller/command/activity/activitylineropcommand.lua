@@ -1,36 +1,36 @@
-﻿local var0 = class("ActivityLinerOPCommand", pm.SimpleCommand)
+﻿local var0_0 = class("ActivityLinerOPCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.callback
-	local var2 = getProxy(ActivityProxy)
-	local var3 = var2:getActivityById(var0.activity_id)
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.callback
+	local var2_1 = getProxy(ActivityProxy)
+	local var3_1 = var2_1:getActivityById(var0_1.activity_id)
 
-	if not var3 or var3:isEnd() then
+	if not var3_1 or var3_1:isEnd() then
 		return
 	end
 
-	local var4 = var0.drop
+	local var4_1 = var0_1.drop
 
-	if var4 then
-		local var5 = getProxy(PlayerProxy):getData()
+	if var4_1 then
+		local var5_1 = getProxy(PlayerProxy):getData()
 
-		if var4.type == DROP_TYPE_RESOURCE and var4.id == 1 and var5:GoldMax(var4.count) then
+		if var4_1.type == DROP_TYPE_RESOURCE and var4_1.id == 1 and var5_1:GoldMax(var4_1.count) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title"))
 
 			return
 		end
 
-		if var4.type == DROP_TYPE_RESOURCE and var4.id == 2 and var5:OilMax(var4.count) then
+		if var4_1.type == DROP_TYPE_RESOURCE and var4_1.id == 2 and var5_1:OilMax(var4_1.count) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title"))
 
 			return
 		end
 
-		if var4.type == DROP_TYPE_ITEM then
-			local var6 = Item.getConfigData(var4.id)
+		if var4_1.type == DROP_TYPE_ITEM then
+			local var6_1 = Item.getConfigData(var4_1.id)
 
-			if var6.type == Item.EXP_BOOK_TYPE and getProxy(BagProxy):getItemCountById(var4.id) + var4.count > var6.max_num then
+			if var6_1.type == Item.EXP_BOOK_TYPE and getProxy(BagProxy):getItemCountById(var4_1.id) + var4_1.count > var6_1.max_num then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("expbook_max_tip_title"))
 
 				return
@@ -39,63 +39,63 @@ function var0.execute(arg0, arg1)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(11202, {
-		activity_id = var0.activity_id,
-		cmd = var0.cmd or 0,
-		arg1 = var0.arg1 or 0,
-		arg2 = var0.arg2 or 0,
+		activity_id = var0_1.activity_id,
+		cmd = var0_1.cmd or 0,
+		arg1 = var0_1.arg1 or 0,
+		arg2 = var0_1.arg2 or 0,
 		arg_list = {}
-	}, 11203, function(arg0)
-		if arg0.result == 0 then
-			local var0 = {}
-			local var1 = PlayerConst.addTranDrop(arg0.award_list)
+	}, 11203, function(arg0_2)
+		if arg0_2.result == 0 then
+			local var0_2 = {}
+			local var1_2 = PlayerConst.addTranDrop(arg0_2.award_list)
 
-			if var0.cmd == 1 then
-				local var2 = var3:GetCurTime()
+			if var0_1.cmd == 1 then
+				local var2_2 = var3_1:GetCurTime()
 
-				switch(var2:GetType(), {
+				switch(var2_2:GetType(), {
 					[LinerTime.TYPE.TARGET] = function()
 						return
 					end,
 					[LinerTime.TYPE.EXPLORE] = function()
-						var3:AddExploredRoom(var0.arg1)
+						var3_1:AddExploredRoom(var0_1.arg1)
 					end,
 					[LinerTime.TYPE.EVENT] = function()
-						var3:AddEvent(var0.arg1, var0.arg2)
+						var3_1:AddEvent(var0_1.arg1, var0_1.arg2)
 					end,
 					[LinerTime.TYPE.STORY] = function()
 						return
 					end
 				})
 
-				if var3:CheckTimeFinish() then
-					var3:UpdateTimeIdx()
-					var3:UpdateRoomIdx(true)
+				if var3_1:CheckTimeFinish() then
+					var3_1:UpdateTimeIdx()
+					var3_1:UpdateRoomIdx(true)
 				end
 
-				if var3:CheckRoomFinish() then
-					var3:UpdateRoomIdx(false)
+				if var3_1:CheckRoomFinish() then
+					var3_1:UpdateRoomIdx(false)
 				end
-			elseif var0.cmd == 2 then
-				var3:AddTimeAwardFlag(var0.arg1)
-			elseif var0.cmd == 3 then
-				var3:AddRoomAwardFlag(var0.arg1)
-			elseif var0.cmd == 4 then
-				var3:AddEventAwardFlag(var0.arg1, var0.arg2)
+			elseif var0_1.cmd == 2 then
+				var3_1:AddTimeAwardFlag(var0_1.arg1)
+			elseif var0_1.cmd == 3 then
+				var3_1:AddRoomAwardFlag(var0_1.arg1)
+			elseif var0_1.cmd == 4 then
+				var3_1:AddEventAwardFlag(var0_1.arg1, var0_1.arg2)
 			end
 
-			var2:updateActivity(var3)
+			var2_1:updateActivity(var3_1)
 
-			if var1 then
-				var1()
+			if var1_1 then
+				var1_1()
 			end
 
-			arg0:sendNotification(GAME.ACTIVITY_LINER_OP_DONE, {
-				awards = var1
+			arg0_1:sendNotification(GAME.ACTIVITY_LINER_OP_DONE, {
+				awards = var1_2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0.result] .. arg0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)
 		end
 	end)
 end
 
-return var0
+return var0_0

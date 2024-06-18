@@ -1,28 +1,28 @@
-﻿local var0 = class("ActivityBossBristolScene", import(".ActivityBossSceneTemplate"))
+﻿local var0_0 = class("ActivityBossBristolScene", import(".ActivityBossSceneTemplate"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ActivityBossBristolUI"
 end
 
-function var0.init(arg0)
-	var0.super.init(arg0)
-	setText(arg0:findTF("ticket/Desc", arg0.top), i18n("word_special_challenge_ticket"))
+function var0_0.init(arg0_2)
+	var0_0.super.init(arg0_2)
+	setText(arg0_2:findTF("ticket/Desc", arg0_2.top), i18n("word_special_challenge_ticket"))
 end
 
-function var0.UpdateDropItems(arg0)
-	for iter0, iter1 in ipairs(arg0.contextData.DisplayItems or {}) do
-		local var0 = arg0:findTF("milestone/item/IconTpl", arg0.barList[iter0])
-		local var1 = {
-			type = arg0.contextData.DisplayItems[5 - iter0][1],
-			id = arg0.contextData.DisplayItems[5 - iter0][2],
-			count = arg0.contextData.DisplayItems[5 - iter0][3]
+function var0_0.UpdateDropItems(arg0_3)
+	for iter0_3, iter1_3 in ipairs(arg0_3.contextData.DisplayItems or {}) do
+		local var0_3 = arg0_3:findTF("milestone/item/IconTpl", arg0_3.barList[iter0_3])
+		local var1_3 = {
+			type = arg0_3.contextData.DisplayItems[5 - iter0_3][1],
+			id = arg0_3.contextData.DisplayItems[5 - iter0_3][2],
+			count = arg0_3.contextData.DisplayItems[5 - iter0_3][3]
 		}
 
-		updateDrop(var0, var1)
-		onButton(arg0, var0, function()
-			arg0:emit(var0.ON_DROP, var1)
+		updateDrop(var0_3, var1_3)
+		onButton(arg0_3, var0_3, function()
+			arg0_3:emit(var0_0.ON_DROP, var1_3)
 		end, SFX_PANEL)
 	end
 end
 
-return var0
+return var0_0

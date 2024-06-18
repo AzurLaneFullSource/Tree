@@ -1,29 +1,29 @@
-﻿local var0 = class("UpgradeStarCommand", pm.SimpleCommand)
+﻿local var0_0 = class("UpgradeStarCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.shipId
-	local var2 = var0.shipIds
-	local var3 = getProxy(BayProxy)
-	local var4 = var3:getShipById(var1)
-	local var5 = pg.ship_data_breakout[var4.configId].breakout_id
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.shipId
+	local var2_1 = var0_1.shipIds
+	local var3_1 = getProxy(BayProxy)
+	local var4_1 = var3_1:getShipById(var1_1)
+	local var5_1 = pg.ship_data_breakout[var4_1.configId].breakout_id
 
-	if var5 == 0 then
+	if var5_1 == 0 then
 		return
 	end
 
-	local var6 = Clone(var4)
+	local var6_1 = Clone(var4_1)
 
-	var6.configId = var5
+	var6_1.configId = var5_1
 
-	for iter0, iter1 in pairs(var4.equipments) do
-		if iter1 and var6:isForbiddenAtPos(iter1, iter0) then
+	for iter0_1, iter1_1 in pairs(var4_1.equipments) do
+		if iter1_1 and var6_1:isForbiddenAtPos(iter1_1, iter0_1) then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("ship_upgrade_unequip_tip", var6:getConfig("name"), "#fad545"),
+				content = i18n("ship_upgrade_unequip_tip", var6_1:getConfig("name"), "#fad545"),
 				onYes = function()
-					arg0:sendNotification(GAME.UNEQUIP_FROM_SHIP, {
-						shipId = var4.id,
-						pos = iter0
+					arg0_1:sendNotification(GAME.UNEQUIP_FROM_SHIP, {
+						shipId = var4_1.id,
+						pos = iter0_1
 					})
 				end
 			})
@@ -32,104 +32,104 @@ function var0.execute(arg0, arg1)
 		end
 	end
 
-	local var7 = Clone(var4)
-	local var8 = {}
+	local var7_1 = Clone(var4_1)
+	local var8_1 = {}
 
-	for iter2, iter3 in ipairs(var2) do
-		local var9 = var3:getShipById(iter3)
+	for iter2_1, iter3_1 in ipairs(var2_1) do
+		local var9_1 = var3_1:getShipById(iter3_1)
 
-		if not var9 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", iter3))
+		if not var9_1 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", iter3_1))
 
 			return
 		end
 
-		table.insert(var8, var9)
+		table.insert(var8_1, var9_1)
 	end
 
-	local var10 = getProxy(CollectionProxy):getShipGroup(var7.groupId)
+	local var10_1 = getProxy(CollectionProxy):getShipGroup(var7_1.groupId)
 
 	pg.ConnectionMgr.GetInstance():Send(12027, {
-		ship_id = var1,
-		material_id_list = var2
-	}, 12028, function(arg0)
-		if arg0.result == 0 then
-			local var0 = getProxy(EquipmentProxy)
+		ship_id = var1_1,
+		material_id_list = var2_1
+	}, 12028, function(arg0_3)
+		if arg0_3.result == 0 then
+			local var0_3 = getProxy(EquipmentProxy)
 
-			for iter0, iter1 in ipairs(var8) do
-				for iter2, iter3 in ipairs(iter1.equipments) do
-					if iter3 then
-						var0:addEquipment(iter3)
+			for iter0_3, iter1_3 in ipairs(var8_1) do
+				for iter2_3, iter3_3 in ipairs(iter1_3.equipments) do
+					if iter3_3 then
+						var0_3:addEquipment(iter3_3)
 					end
 
-					if iter1:getEquipSkin(iter2) ~= 0 then
-						var0:addEquipmentSkin(iter1:getEquipSkin(iter2), 1)
-						iter1:updateEquipmentSkin(iter2, 0)
+					if iter1_3:getEquipSkin(iter2_3) ~= 0 then
+						var0_3:addEquipmentSkin(iter1_3:getEquipSkin(iter2_3), 1)
+						iter1_3:updateEquipmentSkin(iter2_3, 0)
 						pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_unload"))
 					end
 				end
 
-				local var1 = iter1:GetSpWeapon()
+				local var1_3 = iter1_3:GetSpWeapon()
 
-				if var1 then
-					iter1:UpdateSpWeapon(nil)
-					var0:AddSpWeapon(var1)
+				if var1_3 then
+					iter1_3:UpdateSpWeapon(nil)
+					var0_3:AddSpWeapon(var1_3)
 				end
 
-				var3:removeShip(iter1)
+				var3_1:removeShip(iter1_3)
 			end
 
-			local var2 = pg.ship_data_breakout[var4.configId]
+			local var2_3 = pg.ship_data_breakout[var4_1.configId]
 
-			if var2.breakout_id ~= 0 then
-				var4.configId = var2.breakout_id
+			if var2_3.breakout_id ~= 0 then
+				var4_1.configId = var2_3.breakout_id
 
-				local var3 = pg.ship_data_template[var4.configId]
+				local var3_3 = pg.ship_data_template[var4_1.configId]
 
-				for iter4, iter5 in ipairs(var3.buff_list) do
-					if not var4.skills[iter5] then
-						var4.skills[iter5] = {
+				for iter4_3, iter5_3 in ipairs(var3_3.buff_list) do
+					if not var4_1.skills[iter5_3] then
+						var4_1.skills[iter5_3] = {
 							exp = 0,
 							level = 1,
-							id = iter5
+							id = iter5_3
 						}
 					end
 				end
 
-				var4:updateMaxLevel(var3.max_level)
+				var4_1:updateMaxLevel(var3_3.max_level)
 
-				local var4 = pg.ship_data_template[var7.configId].buff_list
+				local var4_3 = pg.ship_data_template[var7_1.configId].buff_list
 
-				for iter6, iter7 in ipairs(var4) do
-					if not table.contains(var3.buff_list, iter7) then
-						var4.skills[iter7] = nil
+				for iter6_3, iter7_3 in ipairs(var4_3) do
+					if not table.contains(var3_3.buff_list, iter7_3) then
+						var4_1.skills[iter7_3] = nil
 					end
 				end
 
-				var3:updateShip(var4)
+				var3_1:updateShip(var4_1)
 			end
 
-			local var5 = getProxy(BagProxy)
+			local var5_3 = getProxy(BagProxy)
 
-			for iter8, iter9 in ipairs(var2.use_item) do
-				var5:removeItemById(iter9[1], iter9[2])
+			for iter8_3, iter9_3 in ipairs(var2_3.use_item) do
+				var5_3:removeItemById(iter9_3[1], iter9_3[2])
 			end
 
-			local var6 = getProxy(PlayerProxy)
-			local var7 = var6:getData()
+			local var6_3 = getProxy(PlayerProxy)
+			local var7_3 = var6_3:getData()
 
-			var7:consume({
-				gold = var2.use_gold
+			var7_3:consume({
+				gold = var2_3.use_gold
 			})
-			var6:updatePlayer(var7)
-			arg0:sendNotification(GAME.UPGRADE_STAR_DONE, {
-				newShip = var4,
-				oldShip = var7
+			var6_3:updatePlayer(var7_3)
+			arg0_1:sendNotification(GAME.UPGRADE_STAR_DONE, {
+				newShip = var4_1,
+				oldShip = var7_1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_upgradeStar_error", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_upgradeStar_error", arg0_3.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

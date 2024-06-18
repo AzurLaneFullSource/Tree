@@ -1,47 +1,47 @@
-﻿local var0 = class("PlayerSummaryInfoMediator", import("...base.ContextMediator"))
+﻿local var0_0 = class("PlayerSummaryInfoMediator", import("...base.ContextMediator"))
 
-var0.GET_PLAYER_SUMMARY_INFO = "PlayerSummaryInfoMediator:GET_PLAYER_SUMMARY_INFO"
+var0_0.GET_PLAYER_SUMMARY_INFO = "PlayerSummaryInfoMediator:GET_PLAYER_SUMMARY_INFO"
 
-function var0.register(arg0)
-	local var0 = getProxy(ActivityProxy)
+function var0_0.register(arg0_1)
+	local var0_1 = getProxy(ActivityProxy)
 
-	arg0:bind(var0.GET_PLAYER_SUMMARY_INFO, function(arg0)
-		local var0 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY)
+	arg0_1:bind(var0_0.GET_PLAYER_SUMMARY_INFO, function(arg0_2)
+		local var0_2 = var0_1:getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY)
 
-		if var0 and not var0:isEnd() then
-			arg0:sendNotification(GAME.GET_PLAYER_SUMMARY_INFO, {
-				activityId = var0.id
+		if var0_2 and not var0_2:isEnd() then
+			arg0_1:sendNotification(GAME.GET_PLAYER_SUMMARY_INFO, {
+				activityId = var0_2.id
 			})
 		end
 	end)
 
-	local var1 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY)
+	local var1_1 = var0_1:getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY)
 
-	arg0.viewComponent:setActivity(var1)
+	arg0_1.viewComponent:setActivity(var1_1)
 
-	local var2 = getProxy(PlayerProxy)
+	local var2_1 = getProxy(PlayerProxy)
 
-	arg0.viewComponent:setPlayer(var2:getData())
+	arg0_1.viewComponent:setPlayer(var2_1:getData())
 
-	local var3 = var2:getSummaryInfo()
+	local var3_1 = var2_1:getSummaryInfo()
 
-	arg0.viewComponent:setSummaryInfo(var3)
+	arg0_1.viewComponent:setSummaryInfo(var3_1)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_3)
 	return {
 		GAME.GET_PLAYER_SUMMARY_INFO_DONE
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_4, arg1_4)
+	local var0_4 = arg1_4:getName()
+	local var1_4 = arg1_4:getBody()
 
-	if var0 == GAME.GET_PLAYER_SUMMARY_INFO_DONE then
-		arg0.viewComponent:setSummaryInfo(var1)
-		arg0.viewComponent:initSummaryInfo()
+	if var0_4 == GAME.GET_PLAYER_SUMMARY_INFO_DONE then
+		arg0_4.viewComponent:setSummaryInfo(var1_4)
+		arg0_4.viewComponent:initSummaryInfo()
 	end
 end
 
-return var0
+return var0_0

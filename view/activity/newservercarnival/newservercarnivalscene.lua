@@ -1,97 +1,97 @@
-﻿local var0 = class("NewServerCarnivalScene", import("...base.BaseUI"))
+﻿local var0_0 = class("NewServerCarnivalScene", import("...base.BaseUI"))
 
-var0.TASK_PAGE = 1
-var0.SHOP_PAGE = 2
-var0.GIFT_PAGE = 3
+var0_0.TASK_PAGE = 1
+var0_0.SHOP_PAGE = 2
+var0_0.GIFT_PAGE = 3
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "NewServerCarnivalUI"
 end
 
-function var0.preload(arg0, arg1)
-	local var0 = {}
+function var0_0.preload(arg0_2, arg1_2)
+	local var0_2 = {}
 
-	table.insert(var0, function(arg0)
+	table.insert(var0_2, function(arg0_3)
 		pg.m02:sendNotification(GAME.GET_NEW_SERVER_SHOP, {
-			callback = function(arg0)
-				arg0:SetNewServerShop(arg0)
-				arg0()
+			callback = function(arg0_4)
+				arg0_2:SetNewServerShop(arg0_4)
+				arg0_3()
 			end
 		})
 	end)
-	parallelAsync(var0, arg1)
+	parallelAsync(var0_2, arg1_2)
 end
 
-function var0.SetNewServerShop(arg0, arg1)
-	arg0.newServerShop = arg1
+function var0_0.SetNewServerShop(arg0_5, arg1_5)
+	arg0_5.newServerShop = arg1_5
 end
 
-function var0.setData(arg0)
-	local var0 = getProxy(ActivityProxy)
-	local var1 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_TASK)
-	local var2 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_SHOP)
-	local var3 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_GIFT)
+function var0_0.setData(arg0_6)
+	local var0_6 = getProxy(ActivityProxy)
+	local var1_6 = var0_6:getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_TASK)
+	local var2_6 = var0_6:getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_SHOP)
+	local var3_6 = var0_6:getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_GIFT)
 
-	if var1 and not var1:isEnd() then
-		arg0.taskActivity = var1
+	if var1_6 and not var1_6:isEnd() then
+		arg0_6.taskActivity = var1_6
 	else
-		arg0.taskActivity = nil
+		arg0_6.taskActivity = nil
 	end
 
-	if var2 and not var2:isEnd() then
-		arg0.shopActivity = var2
+	if var2_6 and not var2_6:isEnd() then
+		arg0_6.shopActivity = var2_6
 	else
-		arg0.shopActivity = nil
+		arg0_6.shopActivity = nil
 	end
 
-	if var3 and not var3:isEnd() then
-		arg0.giftActivity = var3
+	if var3_6 and not var3_6:isEnd() then
+		arg0_6.giftActivity = var3_6
 	else
-		arg0.giftActivity = nil
+		arg0_6.giftActivity = nil
 	end
 
-	arg0.player = getProxy(PlayerProxy):getData()
+	arg0_6.player = getProxy(PlayerProxy):getData()
 end
 
-function var0.init(arg0)
-	arg0.blurPanel = arg0:findTF("blur_panel")
-	arg0.top = arg0:findTF("adapt/top", arg0.blurPanel)
-	arg0.resPanel = arg0:findTF("res", arg0.top)
-	arg0.backBtn = arg0:findTF("back_btn", arg0.top)
-	arg0.helpBtn = arg0:findTF("help_btn", arg0.top)
-	arg0.leftPanel = arg0:findTF("left")
-	arg0.timeTF = arg0:findTF("time", arg0.leftPanel)
-	arg0.toggles = {
-		arg0:findTF("frame/toggle_group/task", arg0.leftPanel),
-		arg0:findTF("frame/toggle_group/shop", arg0.leftPanel),
-		arg0:findTF("frame/toggle_group/gift", arg0.leftPanel)
+function var0_0.init(arg0_7)
+	arg0_7.blurPanel = arg0_7:findTF("blur_panel")
+	arg0_7.top = arg0_7:findTF("adapt/top", arg0_7.blurPanel)
+	arg0_7.resPanel = arg0_7:findTF("res", arg0_7.top)
+	arg0_7.backBtn = arg0_7:findTF("back_btn", arg0_7.top)
+	arg0_7.helpBtn = arg0_7:findTF("help_btn", arg0_7.top)
+	arg0_7.leftPanel = arg0_7:findTF("left")
+	arg0_7.timeTF = arg0_7:findTF("time", arg0_7.leftPanel)
+	arg0_7.toggles = {
+		arg0_7:findTF("frame/toggle_group/task", arg0_7.leftPanel),
+		arg0_7:findTF("frame/toggle_group/shop", arg0_7.leftPanel),
+		arg0_7:findTF("frame/toggle_group/gift", arg0_7.leftPanel)
 	}
-	arg0.main = arg0:findTF("main")
-	arg0.pages = {
-		arg0:findTF("task_container", arg0.main),
-		arg0:findTF("shop_container", arg0.main),
-		arg0:findTF("gift_container", arg0.main)
+	arg0_7.main = arg0_7:findTF("main")
+	arg0_7.pages = {
+		arg0_7:findTF("task_container", arg0_7.main),
+		arg0_7:findTF("shop_container", arg0_7.main),
+		arg0_7:findTF("gift_container", arg0_7.main)
 	}
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0.backBtn, function()
-		arg0:emit(var0.ON_BACK)
+function var0_0.didEnter(arg0_8)
+	onButton(arg0_8, arg0_8.backBtn, function()
+		arg0_8:emit(var0_0.ON_BACK)
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_8, arg0_8.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.newserver_activity_tip.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0:findTF("gem/add_btn", arg0.resPanel), function()
-		local var0 = function()
+	onButton(arg0_8, arg0_8:findTF("gem/add_btn", arg0_8.resPanel), function()
+		local function var0_11()
 			if not pg.m02:hasMediator(ChargeMediator.__cname) then
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
 					wrap = ChargeScene.TYPE_DIAMOND
 				})
 			else
-				pg.m02:sendNotification(var0.GO_MALL)
+				pg.m02:sendNotification(var0_0.GO_MALL)
 			end
 		end
 
@@ -99,154 +99,154 @@ function var0.didEnter(arg0)
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				fontSize = 23,
 				yesText = "text_buy",
-				content = i18n("word_diamond_tip", arg0.player:getFreeGem(), arg0.player:getChargeGem(), arg0.player:getTotalGem()),
-				onYes = var0,
+				content = i18n("word_diamond_tip", arg0_8.player:getFreeGem(), arg0_8.player:getChargeGem(), arg0_8.player:getTotalGem()),
+				onYes = var0_11,
 				alignment = TextAnchor.UpperLeft,
 				weight = LayerWeightConst.TOP_LAYER
 			})
 		else
-			var0()
+			var0_11()
 		end
 	end, SFX_PANEL)
-	arg0:updatePages()
-	arg0:updateTime()
-	setText(arg0:findTF("gem/gem_value", arg0.resPanel), arg0.player:getTotalGem())
+	arg0_8:updatePages()
+	arg0_8:updateTime()
+	setText(arg0_8:findTF("gem/gem_value", arg0_8.resPanel), arg0_8.player:getTotalGem())
 
-	for iter0, iter1 in ipairs(arg0.toggles) do
-		onToggle(arg0, iter1, function(arg0)
-			setActive(arg0.pages[iter0], arg0)
-			arg0:updateLocalRedDotData(iter0)
-			arg0:updatePages()
-			setActive(arg0.resPanel, arg0 and iter0 == var0.GIFT_PAGE)
+	for iter0_8, iter1_8 in ipairs(arg0_8.toggles) do
+		onToggle(arg0_8, iter1_8, function(arg0_13)
+			setActive(arg0_8.pages[iter0_8], arg0_13)
+			arg0_8:updateLocalRedDotData(iter0_8)
+			arg0_8:updatePages()
+			setActive(arg0_8.resPanel, arg0_13 and iter0_8 == var0_0.GIFT_PAGE)
 		end)
 	end
 
-	setActive(arg0.toggles[var0.TASK_PAGE], arg0.taskActivity)
-	setActive(arg0.toggles[var0.SHOP_PAGE], arg0.shopActivity)
-	setActive(arg0.toggles[var0.GIFT_PAGE], arg0.giftActivity)
+	setActive(arg0_8.toggles[var0_0.TASK_PAGE], arg0_8.taskActivity)
+	setActive(arg0_8.toggles[var0_0.SHOP_PAGE], arg0_8.shopActivity)
+	setActive(arg0_8.toggles[var0_0.GIFT_PAGE], arg0_8.giftActivity)
 
-	arg0.page = arg0.taskActivity and var0.TASK_PAGE or var0.SHOP_PAGE
-	arg0.page = arg0.contextData.page and arg0.contextData.page or arg0.page
+	arg0_8.page = arg0_8.taskActivity and var0_0.TASK_PAGE or var0_0.SHOP_PAGE
+	arg0_8.page = arg0_8.contextData.page and arg0_8.contextData.page or arg0_8.page
 
-	triggerToggle(arg0.toggles[arg0.page], true)
+	triggerToggle(arg0_8.toggles[arg0_8.page], true)
 end
 
-function var0.updateShopDedDot(arg0)
-	setActive(arg0:findTF("tip", arg0.toggles[var0.SHOP_PAGE]), arg0.newServerShopPage:isTip())
+function var0_0.updateShopDedDot(arg0_14)
+	setActive(arg0_14:findTF("tip", arg0_14.toggles[var0_0.SHOP_PAGE]), arg0_14.newServerShopPage:isTip())
 end
 
-function var0.updatePages(arg0)
-	if arg0.taskActivity then
-		if not arg0.newServerTaskPage then
-			arg0.newServerTaskPage = NewServerTaskPage.New(arg0.pages[var0.TASK_PAGE], arg0.event, arg0.contextData)
+function var0_0.updatePages(arg0_15)
+	if arg0_15.taskActivity then
+		if not arg0_15.newServerTaskPage then
+			arg0_15.newServerTaskPage = NewServerTaskPage.New(arg0_15.pages[var0_0.TASK_PAGE], arg0_15.event, arg0_15.contextData)
 
-			arg0.newServerTaskPage:Reset()
-			arg0.newServerTaskPage:Load()
+			arg0_15.newServerTaskPage:Reset()
+			arg0_15.newServerTaskPage:Load()
 		end
 
-		setActive(arg0:findTF("tip", arg0.toggles[var0.TASK_PAGE]), arg0.newServerTaskPage:isTip())
+		setActive(arg0_15:findTF("tip", arg0_15.toggles[var0_0.TASK_PAGE]), arg0_15.newServerTaskPage:isTip())
 	end
 
-	if arg0.shopActivity then
-		if not arg0.newServerShopPage then
-			arg0.newServerShopPage = NewServerShopPage.New(arg0.pages[var0.SHOP_PAGE], arg0.event, arg0.contextData)
+	if arg0_15.shopActivity then
+		if not arg0_15.newServerShopPage then
+			arg0_15.newServerShopPage = NewServerShopPage.New(arg0_15.pages[var0_0.SHOP_PAGE], arg0_15.event, arg0_15.contextData)
 
-			arg0.newServerShopPage:Reset()
-			arg0.newServerShopPage:SetShop(arg0.newServerShop)
-			arg0.newServerShopPage:Load()
+			arg0_15.newServerShopPage:Reset()
+			arg0_15.newServerShopPage:SetShop(arg0_15.newServerShop)
+			arg0_15.newServerShopPage:Load()
 		end
 
-		setActive(arg0:findTF("tip", arg0.toggles[var0.SHOP_PAGE]), arg0.newServerShopPage:isTip())
+		setActive(arg0_15:findTF("tip", arg0_15.toggles[var0_0.SHOP_PAGE]), arg0_15.newServerShopPage:isTip())
 	end
 
-	if arg0.giftActivity then
-		if not arg0.newServerGiftPage then
-			arg0.newServerGiftPage = NewServerGiftPage.New(arg0.pages[var0.GIFT_PAGE], arg0.event, arg0.contextData)
+	if arg0_15.giftActivity then
+		if not arg0_15.newServerGiftPage then
+			arg0_15.newServerGiftPage = NewServerGiftPage.New(arg0_15.pages[var0_0.GIFT_PAGE], arg0_15.event, arg0_15.contextData)
 
-			arg0.newServerGiftPage:Reset()
-			arg0.newServerGiftPage:Load()
+			arg0_15.newServerGiftPage:Reset()
+			arg0_15.newServerGiftPage:Load()
 		end
 
-		setActive(arg0:findTF("tip", arg0.toggles[var0.GIFT_PAGE]), arg0.newServerGiftPage:isTip())
+		setActive(arg0_15:findTF("tip", arg0_15.toggles[var0_0.GIFT_PAGE]), arg0_15.newServerGiftPage:isTip())
 	end
 end
 
-function var0.updateLocalRedDotData(arg0, arg1)
-	if arg1 == var0.SHOP_PAGE then
-		if arg0.newServerShopPage:isTip() and PlayerPrefs.GetInt("newserver_shop_first_" .. arg0.player.id) == 0 then
-			PlayerPrefs.SetInt("newserver_shop_first_" .. arg0.player.id, 1)
+function var0_0.updateLocalRedDotData(arg0_16, arg1_16)
+	if arg1_16 == var0_0.SHOP_PAGE then
+		if arg0_16.newServerShopPage:isTip() and PlayerPrefs.GetInt("newserver_shop_first_" .. arg0_16.player.id) == 0 then
+			PlayerPrefs.SetInt("newserver_shop_first_" .. arg0_16.player.id, 1)
 		end
-	elseif arg1 == var0.GIFT_PAGE and arg0.newServerGiftPage:isTip() then
-		PlayerPrefs.SetInt("newserver_gift_first_" .. arg0.player.id, 1)
+	elseif arg1_16 == var0_0.GIFT_PAGE and arg0_16.newServerGiftPage:isTip() then
+		PlayerPrefs.SetInt("newserver_gift_first_" .. arg0_16.player.id, 1)
 	end
 end
 
-function var0.updateTime(arg0)
-	local var0 = pg.TimeMgr.GetInstance()
-	local var1 = (arg0.taskActivity and arg0.taskActivity.stopTime or arg0.shopActivity.stopTime) - var0:GetServerTime()
-	local var2 = math.floor(var1 / 86400)
-	local var3 = math.floor((var1 - var2 * 86400) / 3600)
+function var0_0.updateTime(arg0_17)
+	local var0_17 = pg.TimeMgr.GetInstance()
+	local var1_17 = (arg0_17.taskActivity and arg0_17.taskActivity.stopTime or arg0_17.shopActivity.stopTime) - var0_17:GetServerTime()
+	local var2_17 = math.floor(var1_17 / 86400)
+	local var3_17 = math.floor((var1_17 - var2_17 * 86400) / 3600)
 
-	setText(arg0.timeTF, i18n("newserver_time", var2, var3))
-	setActive(arg0:findTF("title_activity", arg0.timeTF), arg0.taskActivity)
-	setActive(arg0:findTF("title_shop", arg0.timeTF), not arg0.taskActivity)
+	setText(arg0_17.timeTF, i18n("newserver_time", var2_17, var3_17))
+	setActive(arg0_17:findTF("title_activity", arg0_17.timeTF), arg0_17.taskActivity)
+	setActive(arg0_17:findTF("title_shop", arg0_17.timeTF), not arg0_17.taskActivity)
 end
 
-function var0.onUpdateTask(arg0)
-	if arg0.newServerTaskPage then
-		arg0.newServerTaskPage:onUpdateTask()
+function var0_0.onUpdateTask(arg0_18)
+	if arg0_18.newServerTaskPage then
+		arg0_18.newServerTaskPage:onUpdateTask()
 	end
 
-	if arg0.newServerShopPage then
-		arg0.newServerShopPage:UpdateRes()
+	if arg0_18.newServerShopPage then
+		arg0_18.newServerShopPage:UpdateRes()
 	end
 
-	arg0:updatePages()
+	arg0_18:updatePages()
 end
 
-function var0.onUpdatePlayer(arg0, arg1)
-	arg0.player = arg1
+function var0_0.onUpdatePlayer(arg0_19, arg1_19)
+	arg0_19.player = arg1_19
 
-	setText(arg0:findTF("gem/gem_value", arg0.resPanel), arg0.player:getTotalGem())
+	setText(arg0_19:findTF("gem/gem_value", arg0_19.resPanel), arg0_19.player:getTotalGem())
 
-	if arg0.newServerGiftPage then
-		arg0.newServerGiftPage:onUpdatePlayer(arg1)
+	if arg0_19.newServerGiftPage then
+		arg0_19.newServerGiftPage:onUpdatePlayer(arg1_19)
 	end
 end
 
-function var0.onUpdateGift(arg0)
-	if arg0.newServerGiftPage then
-		arg0.newServerGiftPage:onUpdateGift()
+function var0_0.onUpdateGift(arg0_20)
+	if arg0_20.newServerGiftPage then
+		arg0_20.newServerGiftPage:onUpdateGift()
 	end
 
-	arg0:updatePages()
+	arg0_20:updatePages()
 end
 
-function var0.willExit(arg0)
+function var0_0.willExit(arg0_21)
 	return
 end
 
-function var0.isShow()
-	local var0 = getProxy(ActivityProxy)
-	local var1 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_TASK)
-	local var2 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_SHOP)
-	local var3 = var0:getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_GIFT)
+function var0_0.isShow()
+	local var0_22 = getProxy(ActivityProxy)
+	local var1_22 = var0_22:getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_TASK)
+	local var2_22 = var0_22:getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_SHOP)
+	local var3_22 = var0_22:getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_GIFT)
 
-	return var1 and not var1:isEnd() or var2 and not var2:isEnd() or var3 and not var3:isEnd()
+	return var1_22 and not var1_22:isEnd() or var2_22 and not var2_22:isEnd() or var3_22 and not var3_22:isEnd()
 end
 
-function var0.isTip()
-	local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_TASK)
+function var0_0.isTip()
+	local var0_23 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_TASK)
 
-	if var0 and not var0:isEnd() then
-		local var1 = getProxy(TaskProxy)
-		local var2 = var0:getConfig("config_data")
+	if var0_23 and not var0_23:isEnd() then
+		local var1_23 = getProxy(TaskProxy)
+		local var2_23 = var0_23:getConfig("config_data")
 
-		for iter0, iter1 in ipairs(var2) do
-			for iter2, iter3 in ipairs(iter1) do
-				assert(var1:getTaskVO(iter3), "without this task:" .. iter3)
+		for iter0_23, iter1_23 in ipairs(var2_23) do
+			for iter2_23, iter3_23 in ipairs(iter1_23) do
+				assert(var1_23:getTaskVO(iter3_23), "without this task:" .. iter3_23)
 
-				if var1:getTaskVO(iter3):getTaskStatus() == 1 then
+				if var1_23:getTaskVO(iter3_23):getTaskStatus() == 1 then
 					return true
 				end
 			end
@@ -256,4 +256,4 @@ function var0.isTip()
 	return false
 end
 
-return var0
+return var0_0

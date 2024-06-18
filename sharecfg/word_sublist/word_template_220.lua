@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_220 = {}
+var0_0.word_template_220 = {}
 
-local var1 = var0.word_template_220
+local var1_0 = var0_0.word_template_220
 
 function temp()
-	var1.帕 = {
+	var1_0.帕 = {
 		巴 = {
 			拉 = {
 				· = {
@@ -82,7 +82,7 @@ end
 temp()
 
 function temp()
-	var1.拍 = {
+	var1_0.拍 = {
 		遍 = {
 			中 = {
 				国 = {
@@ -168,7 +168,7 @@ end
 temp()
 
 function temp()
-	var1.排 = {
+	var1_0.排 = {
 		华 = {
 			this = true
 		},
@@ -203,7 +203,7 @@ end
 temp()
 
 function temp()
-	var1.哌 = {
+	var1_0.哌 = {
 		啶 = {
 			丙 = {
 				酸 = {
@@ -232,7 +232,7 @@ end
 temp()
 
 function temp()
-	var1.派 = {
+	var1_0.派 = {
 		出 = {
 			所 = {
 				this = true,
@@ -279,7 +279,7 @@ end
 temp()
 
 function temp()
-	var1.潘 = {
+	var1_0.潘 = {
 		國 = {
 			平 = {
 				this = true
@@ -313,7 +313,7 @@ end
 temp()
 
 function temp()
-	var1.蹣 = {
+	var1_0.蹣 = {
 		this = {
 			this = true
 		}

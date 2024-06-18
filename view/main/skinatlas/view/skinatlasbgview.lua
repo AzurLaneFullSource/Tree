@@ -1,74 +1,74 @@
-﻿local var0 = class("SkinAtlasBgView")
+﻿local var0_0 = class("SkinAtlasBgView")
 
-function var0.Ctor(arg0, arg1)
-	arg0._tf = arg1
-	arg0._go = arg1.gameObject
-	arg0.isSpecialBg = false
-	arg0.isloading = false
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1._tf = arg1_1
+	arg0_1._go = arg1_1.gameObject
+	arg0_1.isSpecialBg = false
+	arg0_1.isloading = false
 end
 
-function var0.getUIName(arg0)
-	return arg0.__cname
+function var0_0.getUIName(arg0_2)
+	return arg0_2.__cname
 end
 
-function var0.Init(arg0, arg1, arg2, arg3)
-	arg0.ship = arg1
+function var0_0.Init(arg0_3, arg1_3, arg2_3, arg3_3)
+	arg0_3.ship = arg1_3
 
-	arg0:ClearSpecailBg()
+	arg0_3:ClearSpecailBg()
 
-	local var0 = arg0:getShipBgPrint(arg2)
+	local var0_3 = arg0_3:getShipBgPrint(arg2_3)
 
-	arg0:SetSpecailBg(var0, arg3)
+	arg0_3:SetSpecailBg(var0_3, arg3_3)
 end
 
-function var0.getShipBgPrint(arg0, arg1)
-	local var0 = arg0.ship
+function var0_0.getShipBgPrint(arg0_4, arg1_4)
+	local var0_4 = arg0_4.ship
 
-	if not arg1 then
-		return var0:rarity2bgPrintForGet()
+	if not arg1_4 then
+		return var0_4:rarity2bgPrintForGet()
 	else
-		return var0:getShipBgPrint()
+		return var0_4:getShipBgPrint()
 	end
 end
 
-function var0.SetSpecailBg(arg0, arg1, arg2)
-	arg0.isloading = true
+function var0_0.SetSpecailBg(arg0_5, arg1_5, arg2_5)
+	arg0_5.isloading = true
 
-	pg.DynamicBgMgr.GetInstance():LoadBg(arg0, arg1, arg0._tf.parent, arg0._tf, function(arg0)
-		arg0.isSpecialBg = true
-		arg0.isloading = false
-		arg0.transform.localPosition = Vector3(0, 0, 200)
+	pg.DynamicBgMgr.GetInstance():LoadBg(arg0_5, arg1_5, arg0_5._tf.parent, arg0_5._tf, function(arg0_6)
+		arg0_5.isSpecialBg = true
+		arg0_5.isloading = false
+		arg0_6.transform.localPosition = Vector3(0, 0, 200)
 
-		if arg2 then
-			arg2()
+		if arg2_5 then
+			arg2_5()
 		end
 	end, function()
-		arg0.isloading = false
+		arg0_5.isloading = false
 
-		if arg2 then
-			arg2()
+		if arg2_5 then
+			arg2_5()
 		end
 	end)
 end
 
-function var0.ClearSpecailBg(arg0)
-	if arg0.isSpecialBg then
-		pg.DynamicBgMgr.GetInstance():ClearBg(arg0:getUIName())
+function var0_0.ClearSpecailBg(arg0_8)
+	if arg0_8.isSpecialBg then
+		pg.DynamicBgMgr.GetInstance():ClearBg(arg0_8:getUIName())
 
-		arg0.isSpecialBg = false
+		arg0_8.isSpecialBg = false
 	end
 end
 
-function var0.IsLoading(arg0)
-	return arg0.isloading
+function var0_0.IsLoading(arg0_9)
+	return arg0_9.isloading
 end
 
-function var0.Clear(arg0)
-	arg0:ClearSpecailBg()
+function var0_0.Clear(arg0_10)
+	arg0_10:ClearSpecailBg()
 end
 
-function var0.Dispose(arg0)
-	arg0:Clear()
+function var0_0.Dispose(arg0_11)
+	arg0_11:Clear()
 end
 
-return var0
+return var0_0

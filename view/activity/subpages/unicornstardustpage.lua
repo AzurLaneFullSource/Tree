@@ -1,48 +1,48 @@
-﻿local var0 = class("UnicornStardustPage", import("view.base.BaseActivityPage"))
+﻿local var0_0 = class("UnicornStardustPage", import("view.base.BaseActivityPage"))
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("AD")
-	arg0.textProgress = arg0.bg:Find("progress_text")
-	arg0.btnGo = arg0.bg:Find("btn_go")
-	arg0.got = arg0.bg:Find("got")
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.textProgress = arg0_1.bg:Find("progress_text")
+	arg0_1.btnGo = arg0_1.bg:Find("btn_go")
+	arg0_1.got = arg0_1.bg:Find("got")
 end
 
-function var0.OnDataSetting(arg0)
-	local var0 = getProxy(TaskProxy)
+function var0_0.OnDataSetting(arg0_2)
+	local var0_2 = getProxy(TaskProxy)
 
-	arg0.taskList = arg0.activity:getConfig("config_data")
-	arg0.taskIndex = #arg0.taskList
-	arg0.taskVO = nil
+	arg0_2.taskList = arg0_2.activity:getConfig("config_data")
+	arg0_2.taskIndex = #arg0_2.taskList
+	arg0_2.taskVO = nil
 
-	while arg0.taskIndex > 0 do
-		arg0.taskVO = var0:getTaskVO(arg0.taskList[arg0.taskIndex])
+	while arg0_2.taskIndex > 0 do
+		arg0_2.taskVO = var0_2:getTaskVO(arg0_2.taskList[arg0_2.taskIndex])
 
-		if arg0.taskVO then
+		if arg0_2.taskVO then
 			break
 		end
 
-		arg0.taskIndex = arg0.taskIndex - 1
+		arg0_2.taskIndex = arg0_2.taskIndex - 1
 	end
 end
 
-function var0.OnFirstFlush(arg0)
-	onButton(arg0, arg0.btnGo, function()
-		if arg0.taskVO and not arg0.taskVO:isReceive() then
-			arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK)
+function var0_0.OnFirstFlush(arg0_3)
+	onButton(arg0_3, arg0_3.btnGo, function()
+		if arg0_3.taskVO and not arg0_3.taskVO:isReceive() then
+			arg0_3:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK)
 		else
-			arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.NAVALACADEMYSCENE)
+			arg0_3:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.NAVALACADEMYSCENE)
 		end
 	end, SFX_PANEL)
 end
 
-function var0.OnUpdateFlush(arg0)
-	setText(arg0.textProgress, arg0.taskIndex .. "/" .. #arg0.taskList)
-	setButtonEnabled(arg0.btnGo, arg0.taskIndex < #arg0.taskList)
-	setActive(arg0.got, arg0.taskIndex == #arg0.taskList)
+function var0_0.OnUpdateFlush(arg0_5)
+	setText(arg0_5.textProgress, arg0_5.taskIndex .. "/" .. #arg0_5.taskList)
+	setButtonEnabled(arg0_5.btnGo, arg0_5.taskIndex < #arg0_5.taskList)
+	setActive(arg0_5.got, arg0_5.taskIndex == #arg0_5.taskList)
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_6)
 	return
 end
 
-return var0
+return var0_0

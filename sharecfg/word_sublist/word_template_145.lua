@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_145 = {}
+var0_0.word_template_145 = {}
 
-local var1 = var0.word_template_145
+local var1_0 = var0_0.word_template_145
 
 function temp()
-	var1.駱 = {
+	var1_0.駱 = {
 		海 = {
 			堅 = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.尖 = {
+	var1_0.尖 = {
 		阁 = {
 			列 = {
 				岛 = {
@@ -38,7 +38,7 @@ end
 temp()
 
 function temp()
-	var1.奸 = {
+	var1_0.奸 = {
 		this = {
 			this = true
 		},
@@ -126,7 +126,7 @@ end
 temp()
 
 function temp()
-	var1.坚 = {
+	var1_0.坚 = {
 		决 = {
 			不 = {
 				说 = {
@@ -205,7 +205,7 @@ end
 temp()
 
 function temp()
-	var1.间 = {
+	var1_0.间 = {
 		岛 = {
 			this = true
 		}
@@ -215,7 +215,7 @@ end
 temp()
 
 function temp()
-	var1.戔 = {
+	var1_0.戔 = {
 		this = {
 			this = true
 		}
@@ -225,7 +225,7 @@ end
 temp()
 
 function temp()
-	var1.艰 = {
+	var1_0.艰 = {
 		难 = {
 			的 = {
 				借 = {

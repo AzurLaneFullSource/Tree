@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	Points = {
 		{
 			x = 605,
@@ -49,16 +49,16 @@
 	}
 }
 
-var0.Points[1].scale = 0.55
-var0.Points[2].scale = 0.55
-var0.Points[3].scale = 0.53
-var0.Points[4].scale = 0.53
-var0.Points[5].scale = 0.6
-var0.Points[6].scale = 0.6
-var0.Points[6].outRandom = true
-var0.Points[2].isBan = true
-var0.Points[2].outRandom = true
-var0.Points[3].isBan = true
-var0.Points[3].outRandom = true
+var0_0.Points[1].scale = 0.55
+var0_0.Points[2].scale = 0.55
+var0_0.Points[3].scale = 0.53
+var0_0.Points[4].scale = 0.53
+var0_0.Points[5].scale = 0.6
+var0_0.Points[6].scale = 0.6
+var0_0.Points[6].outRandom = true
+var0_0.Points[2].isBan = true
+var0_0.Points[2].outRandom = true
+var0_0.Points[3].isBan = true
+var0_0.Points[3].outRandom = true
 
-return var0
+return var0_0

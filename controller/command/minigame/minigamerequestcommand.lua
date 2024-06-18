@@ -1,31 +1,31 @@
-﻿local var0 = class("MiniGameRequestCommand", pm.SimpleCommand)
+﻿local var0_0 = class("MiniGameRequestCommand", pm.SimpleCommand)
 
-var0.REQUEST_HUB_DATA = 1
+var0_0.REQUEST_HUB_DATA = 1
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.type
-	local var2 = var0.callback
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.type
+	local var2_1 = var0_1.callback
 
 	pg.ConnectionMgr.GetInstance():Send(26101, {
-		type = var1
-	}, 26102, function(arg0)
-		local var0 = getProxy(MiniGameProxy)
+		type = var1_1
+	}, 26102, function(arg0_2)
+		local var0_2 = getProxy(MiniGameProxy)
 
-		for iter0, iter1 in ipairs(arg0.hubs) do
-			var0:UpdataHubData(iter1)
+		for iter0_2, iter1_2 in ipairs(arg0_2.hubs) do
+			var0_2:UpdataHubData(iter1_2)
 		end
 
-		if var2 then
-			var2()
+		if var2_1 then
+			var2_1()
 		end
 
-		local var1 = getProxy(MiniGameProxy)
+		local var1_2 = getProxy(MiniGameProxy)
 
-		for iter2, iter3 in ipairs(pg.mini_game.all) do
-			var1:RequestInitData(iter3, true)
+		for iter2_2, iter3_2 in ipairs(pg.mini_game.all) do
+			var1_2:RequestInitData(iter3_2, true)
 		end
 	end)
 end
 
-return var0
+return var0_0

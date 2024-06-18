@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Your Support Fleet can aid fellow Guild members during boss battles.",
 	"Let's try adding a ship to your Support Fleet!",
 	"Tap here to edit your Support Fleet.",
@@ -15,7 +15,7 @@ return {
 				mode = 2,
 				posY = -223,
 				posX = 495.2,
-				text = var0[1]
+				text = var0_0[1]
 			}
 		},
 		{
@@ -25,7 +25,7 @@ return {
 				mode = 2,
 				posY = -223,
 				posX = 495.2,
-				text = var0[2]
+				text = var0_0[2]
 			}
 		},
 		{
@@ -35,7 +35,7 @@ return {
 				mode = 2,
 				posY = -223,
 				posX = 495.2,
-				text = var0[3]
+				text = var0_0[3]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/GuildEmptyUI(Clone)/GuildEventPage(Clone)/formation_btn",
@@ -58,7 +58,7 @@ return {
 				mode = 2,
 				posY = 267.65,
 				posX = 17.53,
-				text = var0[4]
+				text = var0_0[4]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/GuildEventFormationUI(Clone)/frame/ship1",

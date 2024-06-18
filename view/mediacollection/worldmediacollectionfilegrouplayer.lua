@@ -1,149 +1,149 @@
-﻿local var0 = class("WorldMediaCollectionFileGroupLayer", import(".WorldMediaCollectionSubLayer"))
+﻿local var0_0 = class("WorldMediaCollectionFileGroupLayer", import(".WorldMediaCollectionSubLayer"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "WorldMediaCollectionFileGroupUI"
 end
 
-function var0.OnInit(arg0)
-	arg0.scroll = arg0._tf:Find("ScrollRect")
-	arg0.scrollComp = arg0.scroll:GetComponent("LScrollRect")
+function var0_0.OnInit(arg0_2)
+	arg0_2.scroll = arg0_2._tf:Find("ScrollRect")
+	arg0_2.scrollComp = arg0_2.scroll:GetComponent("LScrollRect")
 
-	setActive(arg0.scroll:Find("Item"), false)
+	setActive(arg0_2.scroll:Find("Item"), false)
 
-	arg0.content = arg0.scroll:Find("Viewport/Content")
-	arg0.progressText = arg0.scroll:Find("ProgressText")
-	arg0.emptyTip = arg0._tf:Find("EmptyTip")
-	arg0.fileGroups = {}
+	arg0_2.content = arg0_2.scroll:Find("Viewport/Content")
+	arg0_2.progressText = arg0_2.scroll:Find("ProgressText")
+	arg0_2.emptyTip = arg0_2._tf:Find("EmptyTip")
+	arg0_2.fileGroups = {}
 
-	function arg0.scrollComp.onUpdateItem(arg0, ...)
-		arg0:OnUpdateFileGroup(arg0 + 1, ...)
+	function arg0_2.scrollComp.onUpdateItem(arg0_3, ...)
+		arg0_2:OnUpdateFileGroup(arg0_3 + 1, ...)
 	end
 
-	arg0.scrolling = false
-	arg0.blurFlag = nil
+	arg0_2.scrolling = false
+	arg0_2.blurFlag = nil
 
-	setText(arg0.scroll:Find("ProgressDesc"), i18n("world_collection_3"))
+	setText(arg0_2.scroll:Find("ProgressDesc"), i18n("world_collection_3"))
 
-	arg0.loader = AutoLoader.New()
+	arg0_2.loader = AutoLoader.New()
 end
 
-function var0.UpdateGroupList(arg0)
-	local var0 = nowWorld():GetCollectionProxy()
+function var0_0.UpdateGroupList(arg0_4)
+	local var0_4 = nowWorld():GetCollectionProxy()
 
-	table.clear(arg0.fileGroups)
+	table.clear(arg0_4.fileGroups)
 
-	local var1 = 0
-	local var2 = 0
+	local var1_4 = 0
+	local var2_4 = 0
 
-	_.each(pg.world_collection_file_group.all, function(arg0)
-		local var0 = pg.world_collection_file_group[arg0]
-		local var1 = _.reduce(var0.child, 0, function(arg0, arg1)
-			if var0:IsUnlock(arg1) then
-				arg0 = arg0 + 1
+	_.each(pg.world_collection_file_group.all, function(arg0_5)
+		local var0_5 = pg.world_collection_file_group[arg0_5]
+		local var1_5 = _.reduce(var0_5.child, 0, function(arg0_6, arg1_6)
+			if var0_4:IsUnlock(arg1_6) then
+				arg0_6 = arg0_6 + 1
 			end
 
-			return arg0
+			return arg0_6
 		end)
 
-		if var1 > 0 then
-			table.insert(arg0.fileGroups, var0)
+		if var1_5 > 0 then
+			table.insert(arg0_4.fileGroups, var0_5)
 		end
 
-		var1 = var1 + #var0.child
-		var2 = var2 + var1
+		var1_4 = var1_4 + #var0_5.child
+		var2_4 = var2_4 + var1_5
 	end)
 
-	local var3 = #arg0.fileGroups == 0
+	local var3_4 = #arg0_4.fileGroups == 0
 
-	setActive(arg0.emptyTip, var3)
+	setActive(arg0_4.emptyTip, var3_4)
 
-	if var3 then
-		arg0:BlurTip()
+	if var3_4 then
+		arg0_4:BlurTip()
 	else
-		arg0:UnBlurTip()
+		arg0_4:UnBlurTip()
 	end
 
-	setActive(arg0.scroll, not var3)
-	arg0.scrollComp:SetTotalCount(#arg0.fileGroups)
-	setText(arg0.progressText, var2 .. "/" .. var1)
+	setActive(arg0_4.scroll, not var3_4)
+	arg0_4.scrollComp:SetTotalCount(#arg0_4.fileGroups)
+	setText(arg0_4.progressText, var2_4 .. "/" .. var1_4)
 end
 
-function var0.BlurTip(arg0)
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0.emptyTip, {
+function var0_0.BlurTip(arg0_7)
+	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_7.emptyTip, {
 		pbList = {
-			arg0.emptyTip:Find("EmptyTip")
+			arg0_7.emptyTip:Find("EmptyTip")
 		},
 		groupName = LayerWeightConst.GROUP_COLLECTION,
 		weight = LayerWeightConst.BASE_LAYER - 1
 	})
-	arg0.emptyTip:SetSiblingIndex(0)
+	arg0_7.emptyTip:SetSiblingIndex(0)
 
-	arg0.blurFlag = true
+	arg0_7.blurFlag = true
 end
 
-function var0.UnBlurTip(arg0)
-	if arg0.blurFlag then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0.emptyTip, arg0._tf)
+function var0_0.UnBlurTip(arg0_8)
+	if arg0_8.blurFlag then
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_8.emptyTip, arg0_8._tf)
 	end
 
-	arg0.blurFlag = nil
+	arg0_8.blurFlag = nil
 end
 
-function var0.Show(arg0)
-	var0.super.Show(arg0)
+function var0_0.Show(arg0_9)
+	var0_0.super.Show(arg0_9)
 
-	if arg0.blurFlag then
-		arg0:BlurTip()
+	if arg0_9.blurFlag then
+		arg0_9:BlurTip()
 	end
 end
 
-function var0.Hide(arg0)
-	LeanTween.cancel(go(arg0.content))
-	arg0.scrollComp:SetDraggingStatus(false)
-	arg0.scrollComp:StopMovement()
+function var0_0.Hide(arg0_10)
+	LeanTween.cancel(go(arg0_10.content))
+	arg0_10.scrollComp:SetDraggingStatus(false)
+	arg0_10.scrollComp:StopMovement()
 
-	arg0.scrolling = false
+	arg0_10.scrolling = false
 
-	arg0:UnBlurTip()
-	var0.super.Hide(arg0)
+	arg0_10:UnBlurTip()
+	var0_0.super.Hide(arg0_10)
 end
 
-function var0.OnUpdateFileGroup(arg0, arg1, arg2)
-	if arg0.exited then
+function var0_0.OnUpdateFileGroup(arg0_11, arg1_11, arg2_11)
+	if arg0_11.exited then
 		return
 	end
 
-	local var0 = arg0.fileGroups[arg1]
+	local var0_11 = arg0_11.fileGroups[arg1_11]
 
-	assert(var0, "Not Initialize FileGroup Index " .. arg1)
+	assert(var0_11, "Not Initialize FileGroup Index " .. arg1_11)
 
-	local var1 = tf(arg2)
+	local var1_11 = tf(arg2_11)
 
-	setText(var1:Find("FileIndex"), var0.id_2)
-	arg0.loader:GetSprite("ui/WorldMediaCollectionFileUI_atlas", var0.type, var1:Find("BG"))
-	arg0.loader:GetSprite("CollectionFileTitle/" .. var0.name_abbreviate, "", var1:Find("FileTitle"), true)
+	setText(var1_11:Find("FileIndex"), var0_11.id_2)
+	arg0_11.loader:GetSprite("ui/WorldMediaCollectionFileUI_atlas", var0_11.type, var1_11:Find("BG"))
+	arg0_11.loader:GetSprite("CollectionFileTitle/" .. var0_11.name_abbreviate, "", var1_11:Find("FileTitle"), true)
 
-	local var2 = nowWorld():GetCollectionProxy()
-	local var3 = 0
-	local var4 = #var0.child
+	local var2_11 = nowWorld():GetCollectionProxy()
+	local var3_11 = 0
+	local var4_11 = #var0_11.child
 
-	for iter0, iter1 in ipairs(var0.child) do
-		if var2:IsUnlock(iter1) then
-			var3 = var3 + 1
+	for iter0_11, iter1_11 in ipairs(var0_11.child) do
+		if var2_11:IsUnlock(iter1_11) then
+			var3_11 = var3_11 + 1
 		end
 	end
 
-	setText(var1:Find("FileProgress"), var3 .. "/" .. var4)
+	setText(var1_11:Find("FileProgress"), var3_11 .. "/" .. var4_11)
 
-	local var5 = arg0.scroll.rect.width
-	local var6 = arg0.scroll:Find("Item").rect.width
-	local var7 = arg0.content:GetComponent(typeof(HorizontalLayoutGroup))
-	local var8 = var7.padding.left
-	local var9 = var7.spacing
+	local var5_11 = arg0_11.scroll.rect.width
+	local var6_11 = arg0_11.scroll:Find("Item").rect.width
+	local var7_11 = arg0_11.content:GetComponent(typeof(HorizontalLayoutGroup))
+	local var8_11 = var7_11.padding.left
+	local var9_11 = var7_11.spacing
 
-	onButton(arg0, var1, function()
-		arg0.viewParent:OpenDetailLayer(var0.id, true)
+	onButton(arg0_11, var1_11, function()
+		arg0_11.viewParent:OpenDetailLayer(var0_11.id, true)
 	end, SFX_PANEL)
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_375 = {}
+var0_0.word_template_375 = {}
 
-local var1 = var0.word_template_375
+local var1_0 = var0_0.word_template_375
 
 function temp()
-	var1.卅 = {
+	var1_0.卅 = {
 		一 = {
 			周 = {
 				年 = {
@@ -28,7 +28,7 @@ end
 temp()
 
 function temp()
-	var1.件 = {
+	var1_0.件 = {
 		事 = {
 			九 = {
 				八 = {
@@ -64,7 +64,7 @@ end
 temp()
 
 function temp()
-	var1.愿 = {
+	var1_0.愿 = {
 		请 = {
 			this = true
 		},
@@ -87,7 +87,7 @@ end
 temp()
 
 function temp()
-	var1.场 = {
+	var1_0.场 = {
 		清 = {
 			this = true
 		}
@@ -97,7 +97,7 @@ end
 temp()
 
 function temp()
-	var1.兵 = {
+	var1_0.兵 = {
 		截 = {
 			民 = {
 				全 = {
@@ -111,7 +111,7 @@ end
 temp()
 
 function temp()
-	var1.袖 = {
+	var1_0.袖 = {
 		领 = {
 			生 = {
 				学 = {
@@ -125,7 +125,7 @@ end
 temp()
 
 function temp()
-	var1.肆 = {
+	var1_0.肆 = {
 		陆 = {
 			this = true
 		},

@@ -1,152 +1,152 @@
-﻿local var0 = class("EducateSiteOption", import("model.vo.BaseVO"))
+﻿local var0_0 = class("EducateSiteOption", import("model.vo.BaseVO"))
 
-var0.TYPE_SHOP = 1
-var0.TYPE_EVENT = 2
-var0.TYPE_SITE = 3
+var0_0.TYPE_SHOP = 1
+var0_0.TYPE_EVENT = 2
+var0_0.TYPE_SITE = 3
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0.id = arg1
-	arg0.configId = arg0.id
-	arg0.usedCnt = arg2 or 0
-	arg0.remainCnt = arg0:GetOriginalCnt() - arg0.usedCnt
-	arg0.curTime = getProxy(EducateProxy):GetCurTime()
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.id = arg1_1
+	arg0_1.configId = arg0_1.id
+	arg0_1.usedCnt = arg2_1 or 0
+	arg0_1.remainCnt = arg0_1:GetOriginalCnt() - arg0_1.usedCnt
+	arg0_1.curTime = getProxy(EducateProxy):GetCurTime()
 
-	arg0:initTime()
-	arg0:initRefreshTime()
+	arg0_1:initTime()
+	arg0_1:initRefreshTime()
 end
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_2)
 	return pg.child_site_option
 end
 
-function var0.initTime(arg0)
-	if arg0:IsLimitTime() then
-		local var0 = arg0:getConfig("time_limit")
+function var0_0.initTime(arg0_3)
+	if arg0_3:IsLimitTime() then
+		local var0_3 = arg0_3:getConfig("time_limit")
 
-		arg0.startTime, arg0.endTime = EducateHelper.CfgTime2Time(var0)
+		arg0_3.startTime, arg0_3.endTime = EducateHelper.CfgTime2Time(var0_3)
 	end
 end
 
-function var0.initRefreshTime(arg0)
-	if arg0:IsEventType() and arg0:IsCountLimit() then
-		arg0.refreshWeeks = {}
+function var0_0.initRefreshTime(arg0_4)
+	if arg0_4:IsEventType() and arg0_4:IsCountLimit() then
+		arg0_4.refreshWeeks = {}
 
-		local var0 = 9
-		local var1 = 60
-		local var2 = arg0:getConfig("count_limit")[2]
+		local var0_4 = 9
+		local var1_4 = 60
+		local var2_4 = arg0_4:getConfig("count_limit")[2]
 
-		table.insert(arg0.refreshWeeks, var0)
+		table.insert(arg0_4.refreshWeeks, var0_4)
 
-		while var0 < var1 do
-			var0 = var0 + var2
+		while var0_4 < var1_4 do
+			var0_4 = var0_4 + var2_4
 
-			table.insert(arg0.refreshWeeks, var0)
+			table.insert(arg0_4.refreshWeeks, var0_4)
 		end
 	end
 end
 
-function var0.IsShowLimit(arg0)
-	return arg0:getConfig("is_limit") == 1 and arg0.remainCnt > 0
+function var0_0.IsShowLimit(arg0_5)
+	return arg0_5:getConfig("is_limit") == 1 and arg0_5.remainCnt > 0
 end
 
-function var0.IsLimitTime(arg0)
-	return #arg0:getConfig("time_limit") ~= 0
+function var0_0.IsLimitTime(arg0_6)
+	return #arg0_6:getConfig("time_limit") ~= 0
 end
 
-function var0.IsCountLimit(arg0)
-	return arg0:getConfig("count_limit") ~= "" and #arg0:getConfig("count_limit") == 2
+function var0_0.IsCountLimit(arg0_7)
+	return arg0_7:getConfig("count_limit") ~= "" and #arg0_7:getConfig("count_limit") == 2
 end
 
-function var0.IsShow(arg0)
-	if arg0:IsLimitTime() then
-		return EducateHelper.InTime(arg0.curTime, arg0.startTime, arg0.endTime)
+function var0_0.IsShow(arg0_8)
+	if arg0_8:IsLimitTime() then
+		return EducateHelper.InTime(arg0_8.curTime, arg0_8.startTime, arg0_8.endTime)
 	else
 		return true
 	end
 end
 
-function var0.GetType(arg0)
-	return arg0:getConfig("type")
+function var0_0.GetType(arg0_9)
+	return arg0_9:getConfig("type")
 end
 
-function var0.IsEventType(arg0)
-	return arg0:getConfig("type") == var0.TYPE_EVENT
+function var0_0.IsEventType(arg0_10)
+	return arg0_10:getConfig("type") == var0_0.TYPE_EVENT
 end
 
-function var0.IsReplace(arg0)
-	return arg0:getConfig("replace") ~= 0
+function var0_0.IsReplace(arg0_11)
+	return arg0_11:getConfig("replace") ~= 0
 end
 
-function var0.GetCost(arg0)
-	return arg0:getConfig("cost")
+function var0_0.GetCost(arg0_12)
+	return arg0_12:getConfig("cost")
 end
 
-function var0.GetLinkId(arg0)
-	return arg0:getConfig("param")[1]
+function var0_0.GetLinkId(arg0_13)
+	return arg0_13:getConfig("param")[1]
 end
 
-function var0.GetOriginalCnt(arg0)
-	return arg0:IsCountLimit() and arg0:getConfig("count_limit")[1] or 999
+function var0_0.GetOriginalCnt(arg0_14)
+	return arg0_14:IsCountLimit() and arg0_14:getConfig("count_limit")[1] or 999
 end
 
-function var0.GetRemainCnt(arg0)
-	return arg0.remainCnt
+function var0_0.GetRemainCnt(arg0_15)
+	return arg0_15.remainCnt
 end
 
-function var0.GetCntText(arg0)
-	if not arg0:IsCountLimit() then
+function var0_0.GetCntText(arg0_16)
+	if not arg0_16:IsCountLimit() then
 		return ""
 	end
 
-	return string.format("(%d/%d)", arg0.remainCnt, arg0:getConfig("count_limit")[1])
+	return string.format("(%d/%d)", arg0_16.remainCnt, arg0_16:getConfig("count_limit")[1])
 end
 
-function var0.CanTrigger(arg0)
-	return arg0.remainCnt > 0
+function var0_0.CanTrigger(arg0_17)
+	return arg0_17.remainCnt > 0
 end
 
-function var0.ReduceCnt(arg0)
-	arg0.remainCnt = arg0.remainCnt - 1
+function var0_0.ReduceCnt(arg0_18)
+	arg0_18.remainCnt = arg0_18.remainCnt - 1
 end
 
-function var0.IsShowPolaroid(arg0)
-	if #arg0:getConfig("polarid_list") == 0 then
+function var0_0.IsShowPolaroid(arg0_19)
+	if #arg0_19:getConfig("polarid_list") == 0 then
 		return false
 	end
 
-	return underscore.any(arg0:getConfig("polarid_list"), function(arg0)
-		return not getProxy(EducateProxy):IsExistPolaroidByGroup(arg0) and getProxy(EducateProxy):CanGetPolaroidByGroup(arg0)
+	return underscore.any(arg0_19:getConfig("polarid_list"), function(arg0_20)
+		return not getProxy(EducateProxy):IsExistPolaroidByGroup(arg0_20) and getProxy(EducateProxy):CanGetPolaroidByGroup(arg0_20)
 	end)
 end
 
-function var0.GetResults(arg0)
+function var0_0.GetResults(arg0_21)
 	if EducateHelper.IsShowNature() then
-		return arg0:getConfig("result_display")
+		return arg0_21:getConfig("result_display")
 	else
-		return underscore.select(arg0:getConfig("result_display"), function(arg0)
-			return arg0[1] ~= EducateConst.DROP_TYPE_ATTR or not getProxy(EducateProxy):GetCharData():IsPersonalityAttr(arg0[2])
+		return underscore.select(arg0_21:getConfig("result_display"), function(arg0_22)
+			return arg0_22[1] ~= EducateConst.DROP_TYPE_ATTR or not getProxy(EducateProxy):GetCharData():IsPersonalityAttr(arg0_22[2])
 		end)
 	end
 end
 
-function var0.IsResetWeek(arg0, arg1)
-	return table.contains(arg0.refreshWeeks, arg1)
+function var0_0.IsResetWeek(arg0_23, arg1_23)
+	return table.contains(arg0_23.refreshWeeks, arg1_23)
 end
 
-function var0.OnWeekUpdate(arg0, arg1)
-	arg0.curTime = arg1
+function var0_0.OnWeekUpdate(arg0_24, arg1_24)
+	arg0_24.curTime = arg1_24
 
-	arg0:CheckCntReset()
+	arg0_24:CheckCntReset()
 end
 
-function var0.CheckCntReset(arg0)
-	if arg0:IsEventType() and arg0:IsCountLimit() then
-		local var0 = EducateHelper.GetWeekIdxWithTime(arg0.curTime)
+function var0_0.CheckCntReset(arg0_25)
+	if arg0_25:IsEventType() and arg0_25:IsCountLimit() then
+		local var0_25 = EducateHelper.GetWeekIdxWithTime(arg0_25.curTime)
 
-		if arg0:IsResetWeek(var0) then
-			arg0.remainCnt = arg0:GetOriginalCnt()
+		if arg0_25:IsResetWeek(var0_25) then
+			arg0_25.remainCnt = arg0_25:GetOriginalCnt()
 		end
 	end
 end
 
-return var0
+return var0_0

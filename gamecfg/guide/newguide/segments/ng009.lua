@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Tap here to view the Meowfficer's Skills and Talents!",
 	"Tap here to view the stat bonuses received from the Meowfficer!",
 	"You can make the Meowfficer better by Enhancing them and leveling their Talents!"
@@ -13,7 +13,7 @@ return {
 				mode = 1,
 				posY = 100,
 				posX = 200,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/CommanderCatUI(Clone)/blur_panel/pages/CommanderDetailUI(Clone)/info/skill_btn",
@@ -28,7 +28,7 @@ return {
 				mode = 1,
 				posY = 100,
 				posX = 100,
-				text = var0[2]
+				text = var0_0[2]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/CommanderCatUI(Clone)/blur_panel/pages/CommanderDetailUI(Clone)/info/addition_btn",
@@ -43,7 +43,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = -500,
-				text = var0[3]
+				text = var0_0[3]
 			}
 		}
 	}

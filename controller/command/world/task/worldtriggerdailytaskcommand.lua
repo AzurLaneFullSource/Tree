@@ -1,42 +1,42 @@
-﻿local var0 = class("WorldTriggerDailyTaskCommand", pm.SimpleCommand)
+﻿local var0_0 = class("WorldTriggerDailyTaskCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody().taskIds
-	local var1 = nowWorld():GetTaskProxy()
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody().taskIds
+	local var1_1 = nowWorld():GetTaskProxy()
 
 	pg.ConnectionMgr.GetInstance():Send(33415, {
-		task_list = var0
-	}, 33416, function(arg0)
-		if arg0.result == 0 then
-			local var0 = var1:getDailyTaskIds()
+		task_list = var0_1
+	}, 33416, function(arg0_2)
+		if arg0_2.result == 0 then
+			local var0_2 = var1_1:getDailyTaskIds()
 
-			for iter0, iter1 in ipairs(arg0.task_list) do
-				local var1 = WorldTask.New(iter1)
+			for iter0_2, iter1_2 in ipairs(arg0_2.task_list) do
+				local var1_2 = WorldTask.New(iter1_2)
 
-				var1.new = 1
+				var1_2.new = 1
 
-				table.removebyvalue(var0, var1.id)
-				var1:addTask(var1)
+				table.removebyvalue(var0_2, var1_2.id)
+				var1_1:addTask(var1_2)
 
-				if #var1.config.task_op > 0 then
-					pg.NewStoryMgr.GetInstance():Play(var1.config.task_op, nil, true)
+				if #var1_2.config.task_op > 0 then
+					pg.NewStoryMgr.GetInstance():Play(var1_2.config.task_op, nil, true)
 				end
 
-				arg0:sendNotification(GAME.WORLD_TRIGGER_TASK_DONE, {
-					task = var1
+				arg0_1:sendNotification(GAME.WORLD_TRIGGER_TASK_DONE, {
+					task = var1_2
 				})
 			end
 
-			var1:UpdateDailyTaskIds(var0)
-			arg0:sendNotification(GAME.WORLD_TRIGGER_DAILY_TASK_DONE)
-		elseif arg0.result == 6 then
+			var1_1:UpdateDailyTaskIds(var0_2)
+			arg0_1:sendNotification(GAME.WORLD_TRIGGER_DAILY_TASK_DONE)
+		elseif arg0_2.result == 6 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_task_refuse1"))
-		elseif arg0.result == 20 then
+		elseif arg0_2.result == 20 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_sametask_tip"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips("trigger task fail:" .. arg0.result)
+			pg.TipsMgr.GetInstance():ShowTips("trigger task fail:" .. arg0_2.result)
 		end
 	end)
 end
 
-return var0
+return var0_0

@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	CARRY_LOOKAT_RADIUS = 75,
 	CARRY_RADIUS = 50,
 	MAX_WEIGHT = 180,
@@ -504,19 +504,19 @@
 	}
 }
 
-var0.EVENT_ORE_NEW = "ore new"
-var0.EVENT_ORE_DESTROY = "ore destroy"
-var0.EVENT_ORE_EF_MINED = "ore effect mined"
-var0.EVENT_UPDATE_ORE_TARGET = "update ore target"
-var0.EVENT_CHECK_CARRY = "check carry"
-var0.EVENT_DO_CARRY = "do carry"
-var0.EVENT_DELIVER = "deliver"
-var0.EVENT_ENEMY_NEW = "enemy new"
-var0.EVENT_ENEMY_DESTROY = "enemy destroy"
-var0.EVENT_AKASHI_COLLISION = "akashi collision"
-var0.EVENT_AKASHI_HIT = "akashi hit"
-var0.EVENT_PLAY_CONTAINER_HIT = "container hit"
-var0.EVENT_ENEMY_COLLISION = "enemy collision"
-var0.SHOW_AABB = false
+var0_0.EVENT_ORE_NEW = "ore new"
+var0_0.EVENT_ORE_DESTROY = "ore destroy"
+var0_0.EVENT_ORE_EF_MINED = "ore effect mined"
+var0_0.EVENT_UPDATE_ORE_TARGET = "update ore target"
+var0_0.EVENT_CHECK_CARRY = "check carry"
+var0_0.EVENT_DO_CARRY = "do carry"
+var0_0.EVENT_DELIVER = "deliver"
+var0_0.EVENT_ENEMY_NEW = "enemy new"
+var0_0.EVENT_ENEMY_DESTROY = "enemy destroy"
+var0_0.EVENT_AKASHI_COLLISION = "akashi collision"
+var0_0.EVENT_AKASHI_HIT = "akashi hit"
+var0_0.EVENT_PLAY_CONTAINER_HIT = "container hit"
+var0_0.EVENT_ENEMY_COLLISION = "enemy collision"
+var0_0.SHOW_AABB = false
 
-return var0
+return var0_0

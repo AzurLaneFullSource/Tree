@@ -1,57 +1,57 @@
-﻿function string.split(arg0, arg1)
-	arg0 = tostring(arg0)
-	arg1 = tostring(arg1)
+﻿function string.split(arg0_1, arg1_1)
+	arg0_1 = tostring(arg0_1)
+	arg1_1 = tostring(arg1_1)
 
-	if arg1 == "" then
+	if arg1_1 == "" then
 		return false
 	end
 
-	local var0 = 0
-	local var1 = {}
+	local var0_1 = 0
+	local var1_1 = {}
 
-	for iter0, iter1 in function()
-		return string.find(arg0, arg1, var0, true)
+	for iter0_1, iter1_1 in function()
+		return string.find(arg0_1, arg1_1, var0_1, true)
 	end do
-		table.insert(var1, string.sub(arg0, var0, iter0 - 1))
+		table.insert(var1_1, string.sub(arg0_1, var0_1, iter0_1 - 1))
 
-		var0 = iter1 + 1
+		var0_1 = iter1_1 + 1
 	end
 
-	table.insert(var1, string.sub(arg0, var0))
+	table.insert(var1_1, string.sub(arg0_1, var0_1))
 
-	return var1
+	return var1_1
 end
 
-function import(arg0, arg1)
-	local var0
-	local var1 = arg0
-	local var2 = 1
+function import(arg0_3, arg1_3)
+	local var0_3
+	local var1_3 = arg0_3
+	local var2_3 = 1
 
 	while true do
-		if string.byte(arg0, var2) ~= 46 then
-			var1 = string.sub(arg0, var2)
+		if string.byte(arg0_3, var2_3) ~= 46 then
+			var1_3 = string.sub(arg0_3, var2_3)
 
-			if var0 and #var0 > 0 then
-				var1 = table.concat(var0, ".") .. "." .. var1
+			if var0_3 and #var0_3 > 0 then
+				var1_3 = table.concat(var0_3, ".") .. "." .. var1_3
 			end
 
 			break
 		end
 
-		var2 = var2 + 1
+		var2_3 = var2_3 + 1
 
-		if not var0 then
-			if not arg1 then
-				local var3, var4 = debug.getlocal(3, 1)
+		if not var0_3 then
+			if not arg1_3 then
+				local var3_3, var4_3 = debug.getlocal(3, 1)
 
-				arg1 = var4
+				arg1_3 = var4_3
 			end
 
-			var0 = string.split(arg1, ".")
+			var0_3 = string.split(arg1_3, ".")
 		end
 
-		table.remove(var0, #var0)
+		table.remove(var0_3, #var0_3)
 	end
 
-	return require(var1)
+	return require(var1_3)
 end

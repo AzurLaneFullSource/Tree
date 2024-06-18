@@ -1,446 +1,446 @@
-﻿local var0 = class("GameRoomBaseSnackView", import("..BaseMiniGameView"))
+﻿local var0_0 = class("GameRoomBaseSnackView", import("..BaseMiniGameView"))
 
-var0.States_Before = 0
-var0.States_Memory = 1
-var0.States_Select = 2
-var0.States_Finished = 3
-var0.Ani_Close_2_Open = true
-var0.Ani_Open_2_Close = false
-var0.Bubble_Fade_Time = 0.5
-var0.Order_Num = 3
-var0.Snack_Num = 9
+var0_0.States_Before = 0
+var0_0.States_Memory = 1
+var0_0.States_Select = 2
+var0_0.States_Finished = 3
+var0_0.Ani_Close_2_Open = true
+var0_0.Ani_Open_2_Close = false
+var0_0.Bubble_Fade_Time = 0.5
+var0_0.Order_Num = 3
+var0_0.Snack_Num = 9
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "GameRoomSnackUI"
 end
 
-function var0.init(arg0)
-	arg0:initData()
-	arg0:findUI()
-	arg0:initList()
-	arg0:addListener()
+function var0_0.init(arg0_2)
+	arg0_2:initData()
+	arg0_2:findUI()
+	arg0_2:initList()
+	arg0_2:addListener()
 end
 
-function var0.didEnter(arg0)
-	arg0:initTime()
-	arg0:updateSDModel()
-	arg0:setState(var0.States_Before)
+function var0_0.didEnter(arg0_3)
+	arg0_3:initTime()
+	arg0_3:updateSDModel()
+	arg0_3:setState(var0_0.States_Before)
 
-	if arg0:getGameRoomData() then
-		arg0.gameHelpTip = arg0:getGameRoomData().game_help
+	if arg0_3:getGameRoomData() then
+		arg0_3.gameHelpTip = arg0_3:getGameRoomData().game_help
 	end
 end
 
-function var0.OnGetAwardDone(arg0, arg1)
-	if arg1.cmd == MiniGameOPCommand.CMD_COMPLETE then
-		local var0 = arg0:GetMGHubData()
+function var0_0.OnGetAwardDone(arg0_4, arg1_4)
+	if arg1_4.cmd == MiniGameOPCommand.CMD_COMPLETE then
+		local var0_4 = arg0_4:GetMGHubData()
 
-		if var0.ultimate == 0 and var0.usedtime >= var0:getConfig("reward_need") then
+		if var0_4.ultimate == 0 and var0_4.usedtime >= var0_4:getConfig("reward_need") then
 			pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-				hubid = var0.id,
+				hubid = var0_4.id,
 				cmd = MiniGameOPCommand.CMD_ULTIMATE,
 				args1 = {}
 			})
 		end
-	elseif arg1.cmd == MiniGameOPCommand.CMD_ULTIMATE then
+	elseif arg1_4.cmd == MiniGameOPCommand.CMD_ULTIMATE then
 		-- block empty
 	end
 end
 
-function var0.OnSendMiniGameOPDone(arg0)
-	arg0:updateCount()
+function var0_0.OnSendMiniGameOPDone(arg0_5)
+	arg0_5:updateCount()
 
-	local var0 = (getProxy(MiniGameProxy):GetMiniGameData(MiniGameDataCreator.ShrineGameID):GetRuntimeData("count") or 0) + 1
+	local var0_5 = (getProxy(MiniGameProxy):GetMiniGameData(MiniGameDataCreator.ShrineGameID):GetRuntimeData("count") or 0) + 1
 
 	pg.m02:sendNotification(GAME.MODIFY_MINI_GAME_DATA, {
 		id = MiniGameDataCreator.ShrineGameID,
 		map = {
-			count = var0
+			count = var0_5
 		}
 	})
 end
 
-function var0.onBackPressed(arg0)
-	if arg0.state == var0.States_Before then
-		arg0:emit(var0.ON_BACK_PRESSED)
+function var0_0.onBackPressed(arg0_6)
+	if arg0_6.state == var0_0.States_Before then
+		arg0_6:emit(var0_0.ON_BACK_PRESSED)
 
 		return
 	end
 
-	if arg0.timer then
-		arg0.timer:Stop()
+	if arg0_6.timer then
+		arg0_6.timer:Stop()
 	end
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		content = i18n("tips_summergame_exit"),
 		onYes = function()
-			arg0.countTime = 0
+			arg0_6.countTime = 0
 
-			arg0:setState(var0.States_Finished)
+			arg0_6:setState(var0_0.States_Finished)
 		end,
 		onNo = function()
-			arg0.timer:Start()
+			arg0_6.timer:Start()
 		end
 	})
 end
 
-function var0.willExit(arg0)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var0_0.willExit(arg0_9)
+	if arg0_9.timer then
+		arg0_9.timer:Stop()
 	end
 
-	if arg0.prefab and arg0.model then
-		PoolMgr.GetInstance():ReturnSpineChar(arg0.prefab, arg0.model)
+	if arg0_9.prefab and arg0_9.model then
+		PoolMgr.GetInstance():ReturnSpineChar(arg0_9.prefab, arg0_9.model)
 
-		arg0.prefab = nil
-		arg0.model = nil
+		arg0_9.prefab = nil
+		arg0_9.model = nil
 	end
 end
 
-function var0.findUI(arg0)
-	local var0 = arg0:findTF("ForNotch")
+function var0_0.findUI(arg0_10)
+	local var0_10 = arg0_10:findTF("ForNotch")
 
-	arg0.backBtn = arg0:findTF("BackBtn", var0)
-	arg0.helpBtn = arg0:findTF("HelpBtn", var0)
-	arg0.countText = arg0:findTF("Count/CountText", var0)
+	arg0_10.backBtn = arg0_10:findTF("BackBtn", var0_10)
+	arg0_10.helpBtn = arg0_10:findTF("HelpBtn", var0_10)
+	arg0_10.countText = arg0_10:findTF("Count/CountText", var0_10)
 
-	local var1 = arg0:findTF("GameContent")
+	local var1_10 = arg0_10:findTF("GameContent")
 
-	arg0.startBtn = arg0:findTF("StartBtn", var1)
-	arg0.ruleBtn = arg0:findTF("RuleBtn", var1)
+	arg0_10.startBtn = arg0_10:findTF("StartBtn", var1_10)
+	arg0_10.ruleBtn = arg0_10:findTF("RuleBtn", var1_10)
 
-	local var2 = arg0:findTF("Tip", var1)
+	local var2_10 = arg0_10:findTF("Tip", var1_10)
 
-	arg0.considerTipTF = arg0:findTF("ConsiderTip", var2)
-	arg0.considerTimeText = arg0:findTF("TimeText", arg0.considerTipTF)
-	arg0.selectTipTF = arg0:findTF("SelectTip", var2)
-	arg0.selectTimeText = arg0:findTF("TimeText", arg0.selectTipTF)
-	arg0.selectedContainer = arg0:findTF("SelectedContainer", var1)
-	arg0.selectedTpl = arg0:findTF("SelectedTpl", var1)
-	arg0.selectedContainerCG = GetComponent(arg0.selectedContainer, "CanvasGroup")
-	arg0.snackContainer = arg0:findTF("SnackContainer", var1)
-	arg0.animtor = GetComponent(arg0.snackContainer, "Animator")
-	arg0.dftAniEvent = GetComponent(arg0.snackContainer, "DftAniEvent")
+	arg0_10.considerTipTF = arg0_10:findTF("ConsiderTip", var2_10)
+	arg0_10.considerTimeText = arg0_10:findTF("TimeText", arg0_10.considerTipTF)
+	arg0_10.selectTipTF = arg0_10:findTF("SelectTip", var2_10)
+	arg0_10.selectTimeText = arg0_10:findTF("TimeText", arg0_10.selectTipTF)
+	arg0_10.selectedContainer = arg0_10:findTF("SelectedContainer", var1_10)
+	arg0_10.selectedTpl = arg0_10:findTF("SelectedTpl", var1_10)
+	arg0_10.selectedContainerCG = GetComponent(arg0_10.selectedContainer, "CanvasGroup")
+	arg0_10.snackContainer = arg0_10:findTF("SnackContainer", var1_10)
+	arg0_10.animtor = GetComponent(arg0_10.snackContainer, "Animator")
+	arg0_10.dftAniEvent = GetComponent(arg0_10.snackContainer, "DftAniEvent")
 
-	arg0.dftAniEvent:SetEndEvent(function(arg0)
-		arg0:setState(var0.States_Select)
+	arg0_10.dftAniEvent:SetEndEvent(function(arg0_11)
+		arg0_10:setState(var0_0.States_Select)
 	end)
 
-	arg0.spineCharContainer = arg0:findTF("SpineChar", var1)
+	arg0_10.spineCharContainer = arg0_10:findTF("SpineChar", var1_10)
 end
 
-function var0.initData(arg0)
-	arg0.state = nil
-	arg0.orderIDList = {}
-	arg0.selectedIDList = {}
-	arg0.snackIDList = {}
-	arg0.score = 0
-	arg0.packageData = {}
-	arg0.selectedTFList = {}
-	arg0.snackTFList = {}
-	arg0.selectedSnackTFList = {}
+function var0_0.initData(arg0_12)
+	arg0_12.state = nil
+	arg0_12.orderIDList = {}
+	arg0_12.selectedIDList = {}
+	arg0_12.snackIDList = {}
+	arg0_12.score = 0
+	arg0_12.packageData = {}
+	arg0_12.selectedTFList = {}
+	arg0_12.snackTFList = {}
+	arg0_12.selectedSnackTFList = {}
 end
 
-function var0.initTime(arg0)
-	arg0.orginMemoryTime = arg0:GetMGData():getConfig("simple_config_data").memory_time
-	arg0.orginSelectTime = arg0:GetMGData():getConfig("simple_config_data").select_time
-	arg0.countTime = nil
-	arg0.leftTime = arg0.orginSelectTime
+function var0_0.initTime(arg0_13)
+	arg0_13.orginMemoryTime = arg0_13:GetMGData():getConfig("simple_config_data").memory_time
+	arg0_13.orginSelectTime = arg0_13:GetMGData():getConfig("simple_config_data").select_time
+	arg0_13.countTime = nil
+	arg0_13.leftTime = arg0_13.orginSelectTime
 end
 
-function var0.initTimer(arg0, arg1)
-	if arg0.state == var0.States_Memory then
-		arg0.countTime = arg0.orginMemoryTime
-	elseif arg0.state == var0.States_Select then
-		arg0.countTime = arg0.leftTime
+function var0_0.initTimer(arg0_14, arg1_14)
+	if arg0_14.state == var0_0.States_Memory then
+		arg0_14.countTime = arg0_14.orginMemoryTime
+	elseif arg0_14.state == var0_0.States_Select then
+		arg0_14.countTime = arg0_14.leftTime
 	end
 
-	arg0.timer = Timer.New(arg1, 1, -1)
+	arg0_14.timer = Timer.New(arg1_14, 1, -1)
 
-	arg0.timer:Start()
+	arg0_14.timer:Start()
 end
 
-function var0.initList(arg0)
-	for iter0 = 1, var0.Order_Num do
-		local var0 = arg0.selectedContainer:GetChild(iter0 - 1)
+function var0_0.initList(arg0_15)
+	for iter0_15 = 1, var0_0.Order_Num do
+		local var0_15 = arg0_15.selectedContainer:GetChild(iter0_15 - 1)
 
-		arg0.selectedTFList[iter0] = var0
+		arg0_15.selectedTFList[iter0_15] = var0_15
 	end
 
-	for iter1 = 1, var0.Snack_Num do
-		local var1 = arg0.snackContainer:GetChild(iter1 - 1)
+	for iter1_15 = 1, var0_0.Snack_Num do
+		local var1_15 = arg0_15.snackContainer:GetChild(iter1_15 - 1)
 
-		arg0.snackTFList[iter1] = var1
+		arg0_15.snackTFList[iter1_15] = var1_15
 	end
 end
 
-function var0.addListener(arg0)
-	onButton(arg0, arg0.backBtn, function()
-		arg0:onBackPressed()
+function var0_0.addListener(arg0_16)
+	onButton(arg0_16, arg0_16.backBtn, function()
+		arg0_16:onBackPressed()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.startBtn, function()
-		arg0:openCoinLayer(false)
-		arg0:setState(var0.States_Memory)
+	onButton(arg0_16, arg0_16.startBtn, function()
+		arg0_16:openCoinLayer(false)
+		arg0_16:setState(var0_0.States_Memory)
 	end, SFX_PANEL)
-	onButton(arg0, arg0.ruleBtn, function()
+	onButton(arg0_16, arg0_16.ruleBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = arg0.gameHelpTip
+			helps = arg0_16.gameHelpTip
 		})
 	end, SFX_PANEL)
 
-	for iter0 = 1, var0.Snack_Num do
-		local var0 = arg0.snackContainer:GetChild(iter0 - 1)
+	for iter0_16 = 1, var0_0.Snack_Num do
+		local var0_16 = arg0_16.snackContainer:GetChild(iter0_16 - 1)
 
-		onButton(arg0, var0, function()
-			local var0 = arg0.snackIDList[iter0]
-			local var1 = arg0:findTF("SelectedTag", var0)
+		onButton(arg0_16, var0_16, function()
+			local var0_20 = arg0_16.snackIDList[iter0_16]
+			local var1_20 = arg0_16:findTF("SelectedTag", var0_16)
 
-			if isActive(var1) == true then
-				table.removebyvalue(arg0.selectedIDList, var0)
-				arg0:updateSelectedList(arg0.selectedIDList)
+			if isActive(var1_20) == true then
+				table.removebyvalue(arg0_16.selectedIDList, var0_20)
+				arg0_16:updateSelectedList(arg0_16.selectedIDList)
 
-				arg0.selectedSnackTFList[var0] = nil
+				arg0_16.selectedSnackTFList[var0_20] = nil
 
-				setActive(var1, false)
-				arg0:updateSelectedOrderTag()
+				setActive(var1_20, false)
+				arg0_16:updateSelectedOrderTag()
 			else
-				table.insert(arg0.selectedIDList, var0)
-				arg0:updateSelectedList(arg0.selectedIDList)
+				table.insert(arg0_16.selectedIDList, var0_20)
+				arg0_16:updateSelectedList(arg0_16.selectedIDList)
 
-				arg0.selectedSnackTFList[var0] = var0
+				arg0_16.selectedSnackTFList[var0_20] = var0_16
 
-				setActive(var1, true)
-				arg0:updateSelectedOrderTag()
+				setActive(var1_20, true)
+				arg0_16:updateSelectedOrderTag()
 
-				if #arg0.selectedIDList == var0.Order_Num then
-					arg0.timer:Stop()
-					arg0:setState(var0.States_Finished)
+				if #arg0_16.selectedIDList == var0_0.Order_Num then
+					arg0_16.timer:Stop()
+					arg0_16:setState(var0_0.States_Finished)
 				end
 			end
 		end, SFX_PANEL)
 	end
 end
 
-function var0.updateSDModel(arg0)
-	local var0 = getProxy(PlayerProxy):getData()
-	local var1 = getProxy(BayProxy):getShipById(var0.character):getPrefab()
+function var0_0.updateSDModel(arg0_21)
+	local var0_21 = getProxy(PlayerProxy):getData()
+	local var1_21 = getProxy(BayProxy):getShipById(var0_21.character):getPrefab()
 
 	pg.UIMgr.GetInstance():LoadingOn()
-	PoolMgr.GetInstance():GetSpineChar(var1, true, function(arg0)
+	PoolMgr.GetInstance():GetSpineChar(var1_21, true, function(arg0_22)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		arg0.prefab = var1
-		arg0.model = arg0
-		tf(arg0).localScale = Vector3(1, 1, 1)
+		arg0_21.prefab = var1_21
+		arg0_21.model = arg0_22
+		tf(arg0_22).localScale = Vector3(1, 1, 1)
 
-		arg0:GetComponent("SpineAnimUI"):SetAction("stand", 0)
-		setParent(arg0, arg0.spineCharContainer)
+		arg0_22:GetComponent("SpineAnimUI"):SetAction("stand", 0)
+		setParent(arg0_22, arg0_21.spineCharContainer)
 	end)
 end
 
-function var0.updateSelectedList(arg0, arg1)
-	arg1 = arg1 or {}
+function var0_0.updateSelectedList(arg0_23, arg1_23)
+	arg1_23 = arg1_23 or {}
 
-	for iter0 = 1, var0.Order_Num do
-		local var0 = arg0.selectedContainer:GetChild(iter0 - 1)
-		local var1 = arg0:findTF("Empty", var0)
-		local var2 = arg0:findTF("Full", var0)
-		local var3 = arg0:findTF("SnackImg", var2)
+	for iter0_23 = 1, var0_0.Order_Num do
+		local var0_23 = arg0_23.selectedContainer:GetChild(iter0_23 - 1)
+		local var1_23 = arg0_23:findTF("Empty", var0_23)
+		local var2_23 = arg0_23:findTF("Full", var0_23)
+		local var3_23 = arg0_23:findTF("SnackImg", var2_23)
 
-		arg0.selectedTFList[iter0] = var0
+		arg0_23.selectedTFList[iter0_23] = var0_23
 
-		local var4 = arg1[iter0]
+		local var4_23 = arg1_23[iter0_23]
 
-		setActive(var2, var4)
-		setActive(var1, not var4)
+		setActive(var2_23, var4_23)
+		setActive(var1_23, not var4_23)
 
-		if var4 then
-			setImageSprite(var3, GetSpriteFromAtlas("ui/snackui_atlas", "snack_" .. var4))
+		if var4_23 then
+			setImageSprite(var3_23, GetSpriteFromAtlas("ui/snackui_atlas", "snack_" .. var4_23))
 		end
 	end
 end
 
-function var0.updateSnackList(arg0, arg1)
-	for iter0 = 1, var0.Snack_Num do
-		local var0 = arg0.snackContainer:GetChild(iter0 - 1)
-		local var1 = arg0:findTF("SnackImg", var0)
-		local var2 = arg1[iter0]
+function var0_0.updateSnackList(arg0_24, arg1_24)
+	for iter0_24 = 1, var0_0.Snack_Num do
+		local var0_24 = arg0_24.snackContainer:GetChild(iter0_24 - 1)
+		local var1_24 = arg0_24:findTF("SnackImg", var0_24)
+		local var2_24 = arg1_24[iter0_24]
 
-		setImageSprite(var1, GetSpriteFromAtlas("ui/snackui_atlas", "snack_" .. var2))
+		setImageSprite(var1_24, GetSpriteFromAtlas("ui/snackui_atlas", "snack_" .. var2_24))
 
-		local var3 = arg0:findTF("SelectedTag", var0)
+		local var3_24 = arg0_24:findTF("SelectedTag", var0_24)
 
-		setActive(var3, false)
+		setActive(var3_24, false)
 
-		arg0.snackTFList[iter0] = var0
-		iter0 = iter0 + 1
+		arg0_24.snackTFList[iter0_24] = var0_24
+		iter0_24 = iter0_24 + 1
 	end
 end
 
-function var0.updateCount(arg0)
-	setText(arg0.countText, arg0:GetMGHubData().count)
+function var0_0.updateCount(arg0_25)
+	setText(arg0_25.countText, arg0_25:GetMGHubData().count)
 end
 
-function var0.updateSelectedOrderTag(arg0, arg1)
-	for iter0, iter1 in pairs(arg0.selectedSnackTFList) do
-		local var0 = arg0:findTF("SelectedTag", iter1)
+function var0_0.updateSelectedOrderTag(arg0_26, arg1_26)
+	for iter0_26, iter1_26 in pairs(arg0_26.selectedSnackTFList) do
+		local var0_26 = arg0_26:findTF("SelectedTag", iter1_26)
 
-		if arg1 then
-			setActive(var0, false)
+		if arg1_26 then
+			setActive(var0_26, false)
 		else
-			local var1 = table.indexof(arg0.selectedIDList, iter0, 1)
+			local var1_26 = table.indexof(arg0_26.selectedIDList, iter0_26, 1)
 
-			setImageSprite(var0, GetSpriteFromAtlas("ui/snackui_atlas", "order_" .. var1))
+			setImageSprite(var0_26, GetSpriteFromAtlas("ui/snackui_atlas", "order_" .. var1_26))
 		end
 	end
 end
 
-function var0.updateSnackInteractable(arg0, arg1)
-	for iter0, iter1 in ipairs(arg0.snackTFList) do
-		setButtonEnabled(iter1, arg1)
+function var0_0.updateSnackInteractable(arg0_27, arg1_27)
+	for iter0_27, iter1_27 in ipairs(arg0_27.snackTFList) do
+		setButtonEnabled(iter1_27, arg1_27)
 	end
 end
 
-function var0.onStateChange(arg0)
-	if arg0.state == var0.States_Before then
-		setActive(arg0.selectedContainer, false)
-		setActive(arg0.startBtn, true)
-		setActive(arg0.ruleBtn, true)
-		setActive(arg0.considerTipTF, false)
-		setActive(arg0.selectTipTF, false)
-		arg0:updateCount()
-		arg0:updateSnackInteractable(false)
-	elseif arg0.state == var0.States_Memory then
-		setActive(arg0.selectedContainer, true)
-		setActive(arg0.startBtn, false)
-		setActive(arg0.ruleBtn, false)
+function var0_0.onStateChange(arg0_28)
+	if arg0_28.state == var0_0.States_Before then
+		setActive(arg0_28.selectedContainer, false)
+		setActive(arg0_28.startBtn, true)
+		setActive(arg0_28.ruleBtn, true)
+		setActive(arg0_28.considerTipTF, false)
+		setActive(arg0_28.selectTipTF, false)
+		arg0_28:updateCount()
+		arg0_28:updateSnackInteractable(false)
+	elseif arg0_28.state == var0_0.States_Memory then
+		setActive(arg0_28.selectedContainer, true)
+		setActive(arg0_28.startBtn, false)
+		setActive(arg0_28.ruleBtn, false)
 
-		arg0.orderIDList = arg0:randFetch(3, 9)
+		arg0_28.orderIDList = arg0_28:randFetch(3, 9)
 
-		arg0:updateSelectedList(arg0.orderIDList)
+		arg0_28:updateSelectedList(arg0_28.orderIDList)
 
-		arg0.snackIDList = arg0:randFetch(9, 9)
+		arg0_28.snackIDList = arg0_28:randFetch(9, 9)
 
-		arg0:updateSnackList(arg0.snackIDList)
-		arg0:updateSnackInteractable(false)
+		arg0_28:updateSnackList(arg0_28.snackIDList)
+		arg0_28:updateSnackInteractable(false)
 
-		local var0 = function()
-			arg0.countTime = arg0.countTime - 1
+		local function var0_28()
+			arg0_28.countTime = arg0_28.countTime - 1
 
-			setText(arg0.considerTimeText, arg0.countTime)
+			setText(arg0_28.considerTimeText, arg0_28.countTime)
 
-			if arg0.countTime <= 0 then
-				arg0.timer:Stop()
-				arg0.animtor:SetBool("AniSwitch", var0.Ani_Close_2_Open)
+			if arg0_28.countTime <= 0 then
+				arg0_28.timer:Stop()
+				arg0_28.animtor:SetBool("AniSwitch", var0_0.Ani_Close_2_Open)
 			end
 		end
 
-		LeanTween.value(go(arg0.selectedContainer), 0, 1, var0.Bubble_Fade_Time):setOnUpdate(System.Action_float(function(arg0)
-			arg0.selectedContainerCG.alpha = arg0
+		LeanTween.value(go(arg0_28.selectedContainer), 0, 1, var0_0.Bubble_Fade_Time):setOnUpdate(System.Action_float(function(arg0_30)
+			arg0_28.selectedContainerCG.alpha = arg0_30
 		end)):setOnComplete(System.Action(function()
-			setActive(arg0.considerTipTF, true)
-			setActive(arg0.selectTipTF, false)
-			arg0:initTimer(var0)
-			setText(arg0.considerTimeText, arg0.countTime)
+			setActive(arg0_28.considerTipTF, true)
+			setActive(arg0_28.selectTipTF, false)
+			arg0_28:initTimer(var0_28)
+			setText(arg0_28.considerTimeText, arg0_28.countTime)
 		end))
-	elseif arg0.state == var0.States_Select then
-		setActive(arg0.considerTipTF, false)
-		setActive(arg0.selectTipTF, true)
-		arg0:updateSelectedList()
-		arg0:updateSnackInteractable(true)
+	elseif arg0_28.state == var0_0.States_Select then
+		setActive(arg0_28.considerTipTF, false)
+		setActive(arg0_28.selectTipTF, true)
+		arg0_28:updateSelectedList()
+		arg0_28:updateSnackInteractable(true)
 
-		local function var1()
-			arg0.countTime = arg0.countTime - 1
+		local function var1_28()
+			arg0_28.countTime = arg0_28.countTime - 1
 
-			setText(arg0.selectTimeText, arg0.countTime)
+			setText(arg0_28.selectTimeText, arg0_28.countTime)
 
-			if arg0.countTime <= 0 then
-				arg0.timer:Stop()
-				arg0:setState(var0.States_Finished)
+			if arg0_28.countTime <= 0 then
+				arg0_28.timer:Stop()
+				arg0_28:setState(var0_0.States_Finished)
 			end
 		end
 
-		arg0:initTimer(var1)
-		setText(arg0.selectTimeText, arg0.countTime)
-	elseif arg0.state == var0.States_Finished then
-		arg0:updateSnackInteractable(false)
-		LeanTween.value(go(arg0.selectedContainer), 1, 0, var0.Bubble_Fade_Time):setOnUpdate(System.Action_float(function(arg0)
-			arg0.selectedContainerCG.alpha = arg0
+		arg0_28:initTimer(var1_28)
+		setText(arg0_28.selectTimeText, arg0_28.countTime)
+	elseif arg0_28.state == var0_0.States_Finished then
+		arg0_28:updateSnackInteractable(false)
+		LeanTween.value(go(arg0_28.selectedContainer), 1, 0, var0_0.Bubble_Fade_Time):setOnUpdate(System.Action_float(function(arg0_33)
+			arg0_28.selectedContainerCG.alpha = arg0_33
 		end)):setOnComplete(System.Action(function()
-			arg0:openResultView()
+			arg0_28:openResultView()
 		end))
 	end
 end
 
-function var0.openResultView(arg0)
-	arg0.packageData = {
-		orderIDList = arg0.orderIDList,
-		selectedIDList = arg0.selectedIDList,
-		countTime = arg0.countTime,
-		score = arg0.score,
-		correctNumToEXValue = arg0:GetMGData():getConfig("simple_config_data").correct_value,
-		scoreLevel = arg0:GetMGData():getConfig("simple_config_data").score_level,
-		onSubmit = function(arg0)
-			arg0:SendSuccess(arg0.score)
+function var0_0.openResultView(arg0_35)
+	arg0_35.packageData = {
+		orderIDList = arg0_35.orderIDList,
+		selectedIDList = arg0_35.selectedIDList,
+		countTime = arg0_35.countTime,
+		score = arg0_35.score,
+		correctNumToEXValue = arg0_35:GetMGData():getConfig("simple_config_data").correct_value,
+		scoreLevel = arg0_35:GetMGData():getConfig("simple_config_data").score_level,
+		onSubmit = function(arg0_36)
+			arg0_35:SendSuccess(arg0_35.score)
 
-			arg0.score = 0
-			arg0.countTime = nil
-			arg0.leftTime = arg0.orginSelectTime
-			arg0.orderIDList = {}
-			arg0.selectedIDList = {}
-			arg0.snackIDList = {}
+			arg0_35.score = 0
+			arg0_35.countTime = nil
+			arg0_35.leftTime = arg0_35.orginSelectTime
+			arg0_35.orderIDList = {}
+			arg0_35.selectedIDList = {}
+			arg0_35.snackIDList = {}
 
-			arg0:updateSelectedOrderTag(true)
+			arg0_35:updateSelectedOrderTag(true)
 
-			arg0.selectedSnackTFList = {}
+			arg0_35.selectedSnackTFList = {}
 
-			arg0.animtor:SetBool("AniSwitch", var0.Ani_Open_2_Close)
-			arg0:setState(var0.States_Before)
+			arg0_35.animtor:SetBool("AniSwitch", var0_0.Ani_Open_2_Close)
+			arg0_35:setState(var0_0.States_Before)
 		end,
 		onContinue = function()
-			arg0.score = arg0.packageData.score
-			arg0.leftTime = arg0.packageData.countTime
-			arg0.orderIDList = {}
-			arg0.selectedIDList = {}
-			arg0.snackIDList = {}
-			arg0.selectedSnackTFList = {}
+			arg0_35.score = arg0_35.packageData.score
+			arg0_35.leftTime = arg0_35.packageData.countTime
+			arg0_35.orderIDList = {}
+			arg0_35.selectedIDList = {}
+			arg0_35.snackIDList = {}
+			arg0_35.selectedSnackTFList = {}
 
-			arg0.animtor:SetBool("AniSwitch", var0.Ani_Open_2_Close)
-			arg0:setState(var0.States_Memory)
+			arg0_35.animtor:SetBool("AniSwitch", var0_0.Ani_Open_2_Close)
+			arg0_35:setState(var0_0.States_Memory)
 		end
 	}
-	arg0.snackResultView = SnackResultView.New(arg0._tf, arg0.event, arg0.packageData)
+	arg0_35.snackResultView = SnackResultView.New(arg0_35._tf, arg0_35.event, arg0_35.packageData)
 
-	arg0.snackResultView:Reset()
-	arg0.snackResultView:Load()
+	arg0_35.snackResultView:Reset()
+	arg0_35.snackResultView:Load()
 end
 
-function var0.randFetch(arg0, arg1, arg2)
-	local var0 = {}
-	local var1 = {}
+function var0_0.randFetch(arg0_38, arg1_38, arg2_38)
+	local var0_38 = {}
+	local var1_38 = {}
 
-	for iter0 = 1, arg1 do
-		local var2 = math.random(iter0, arg2)
-		local var3 = var1[var2] or var2
+	for iter0_38 = 1, arg1_38 do
+		local var2_38 = math.random(iter0_38, arg2_38)
+		local var3_38 = var1_38[var2_38] or var2_38
 
-		var1[var2] = var1[iter0] or iter0
-		var1[iter0] = var3
+		var1_38[var2_38] = var1_38[iter0_38] or iter0_38
+		var1_38[iter0_38] = var3_38
 
-		table.insert(var0, var3)
+		table.insert(var0_38, var3_38)
 	end
 
-	return var0
+	return var0_38
 end
 
-function var0.setState(arg0, arg1)
-	if arg0.state == arg1 then
+function var0_0.setState(arg0_39, arg1_39)
+	if arg0_39.state == arg1_39 then
 		return
 	end
 
-	arg0.state = arg1
+	arg0_39.state = arg1_39
 
-	arg0:onStateChange()
+	arg0_39:onStateChange()
 end
 
-return var0
+return var0_0

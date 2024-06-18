@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_122 = {}
+var0_0.word_template_122 = {}
 
-local var1 = var0.word_template_122
+local var1_0 = var0_0.word_template_122
 
 function temp()
-	var1.捍 = {
+	var1_0.捍 = {
 		卫 = {
 			粤 = {
 				语 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.悍 = {
+	var1_0.悍 = {
 		妇 = {
 			岗 = {
 				this = true
@@ -33,7 +33,7 @@ end
 temp()
 
 function temp()
-	var1.撖 = {
+	var1_0.撖 = {
 		this = {
 			this = true
 		}
@@ -43,7 +43,7 @@ end
 temp()
 
 function temp()
-	var1.漢 = {
+	var1_0.漢 = {
 		奸 = {
 			this = true
 		}
@@ -53,7 +53,7 @@ end
 temp()
 
 function temp()
-	var1.夯 = {
+	var1_0.夯 = {
 		this = {
 			this = true
 		}
@@ -63,7 +63,7 @@ end
 temp()
 
 function temp()
-	var1.行 = {
+	var1_0.行 = {
 		贿 = {
 			黑 = {
 				名 = {
@@ -88,7 +88,7 @@ end
 temp()
 
 function temp()
-	var1.杭 = {
+	var1_0.杭 = {
 		州 = {
 			富 = {
 				人 = {

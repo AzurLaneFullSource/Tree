@@ -1,73 +1,73 @@
-﻿local var0 = import(".View")
-local var1 = import("..patterns.observer.Observer")
-local var2 = class("Controller")
+﻿local var0_0 = import(".View")
+local var1_0 = import("..patterns.observer.Observer")
+local var2_0 = class("Controller")
 
-function var2.Ctor(arg0, arg1)
-	if var2.instanceMap[arg1] ~= nil then
-		error(var2.MULTITON_MSG)
+function var2_0.Ctor(arg0_1, arg1_1)
+	if var2_0.instanceMap[arg1_1] ~= nil then
+		error(var2_0.MULTITON_MSG)
 	end
 
-	arg0.multitonKey = arg1
-	var2.instanceMap[arg0.multitonKey] = arg0
-	arg0.commandMap = {}
+	arg0_1.multitonKey = arg1_1
+	var2_0.instanceMap[arg0_1.multitonKey] = arg0_1
+	arg0_1.commandMap = {}
 
-	arg0:initializeController()
+	arg0_1:initializeController()
 end
 
-function var2.initializeController(arg0)
-	arg0.view = var0.getInstance(arg0.multitonKey)
+function var2_0.initializeController(arg0_2)
+	arg0_2.view = var0_0.getInstance(arg0_2.multitonKey)
 end
 
-function var2.getInstance(arg0)
-	if arg0 == nil then
+function var2_0.getInstance(arg0_3)
+	if arg0_3 == nil then
 		return nil
 	end
 
-	if var2.instanceMap[arg0] == nil then
-		return var2.New(arg0)
+	if var2_0.instanceMap[arg0_3] == nil then
+		return var2_0.New(arg0_3)
 	else
-		return var2.instanceMap[arg0]
+		return var2_0.instanceMap[arg0_3]
 	end
 end
 
-function var2.executeCommand(arg0, arg1)
-	local var0 = arg0.commandMap[arg1:getName()]
+function var2_0.executeCommand(arg0_4, arg1_4)
+	local var0_4 = arg0_4.commandMap[arg1_4:getName()]
 
-	if var0 == nil then
+	if var0_4 == nil then
 		return
 	end
 
-	local var1 = var0.New()
+	local var1_4 = var0_4.New()
 
-	var1:initializeNotifier(arg0.multitonKey)
-	var1:execute(arg1)
+	var1_4:initializeNotifier(arg0_4.multitonKey)
+	var1_4:execute(arg1_4)
 end
 
-function var2.registerCommand(arg0, arg1, arg2)
-	if arg0.commandMap[arg1] == nil then
-		arg0.view:registerObserver(arg1, var1.New(arg0.executeCommand, arg0))
+function var2_0.registerCommand(arg0_5, arg1_5, arg2_5)
+	if arg0_5.commandMap[arg1_5] == nil then
+		arg0_5.view:registerObserver(arg1_5, var1_0.New(arg0_5.executeCommand, arg0_5))
 	end
 
-	arg0.commandMap[arg1] = arg2
+	arg0_5.commandMap[arg1_5] = arg2_5
 end
 
-function var2.hasCommand(arg0, arg1)
-	return arg0.commandMap[arg1] ~= nil
+function var2_0.hasCommand(arg0_6, arg1_6)
+	return arg0_6.commandMap[arg1_6] ~= nil
 end
 
-function var2.removeCommand(arg0, arg1)
-	if arg0:hasCommand(arg1) then
-		arg0.view:removeObserver(arg1, arg0)
+function var2_0.removeCommand(arg0_7, arg1_7)
+	if arg0_7:hasCommand(arg1_7) then
+		arg0_7.view:removeObserver(arg1_7, arg0_7)
 
-		arg0.commandMap[arg1] = nil
+		arg0_7.commandMap[arg1_7] = nil
 	end
 end
 
-function var2.removeController(arg0)
-	var2.instanceMap[arg0] = nil
+function var2_0.removeController(arg0_8)
+	var2_0.instanceMap[arg0_8] = nil
 end
 
-var2.instanceMap = {}
-var2.MULTITON_MSG = "controller key for this Multiton key already constructed"
+var2_0.instanceMap = {}
+var2_0.MULTITON_MSG = "controller key for this Multiton key already constructed"
 
-return var2
+return var2_0

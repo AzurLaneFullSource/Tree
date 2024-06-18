@@ -1,76 +1,76 @@
-﻿function printf(arg0, ...)
-	print(string.format(tostring(arg0), ...))
+﻿function printf(arg0_1, ...)
+	print(string.format(tostring(arg0_1), ...))
 end
 
-function AssureTable(arg0)
-	if type(arg0) ~= "table" then
-		arg0 = {}
+function AssureTable(arg0_2)
+	if type(arg0_2) ~= "table" then
+		arg0_2 = {}
 	end
 
-	return arg0
+	return arg0_2
 end
 
-function checknumber(arg0, arg1)
-	return tonumber(arg0, arg1) or 0
+function checknumber(arg0_3, arg1_3)
+	return tonumber(arg0_3, arg1_3) or 0
 end
 
-function math.round(arg0)
-	arg0 = checknumber(arg0)
+function math.round(arg0_4)
+	arg0_4 = checknumber(arg0_4)
 
-	return math.floor(arg0 + 0.5)
+	return math.floor(arg0_4 + 0.5)
 end
 
-function checkint(arg0)
-	return math.round(checknumber(arg0))
+function checkint(arg0_5)
+	return math.round(checknumber(arg0_5))
 end
 
-function handler(arg0, arg1)
+function handler(arg0_6, arg1_6)
 	return function(...)
-		return arg1(arg0, ...)
+		return arg1_6(arg0_6, ...)
 	end
 end
 
-function handlerArg1(arg0, arg1, arg2)
+function handlerArg1(arg0_8, arg1_8, arg2_8)
 	return function(...)
-		return arg1(arg0, arg2, ...)
+		return arg1_8(arg0_8, arg2_8, ...)
 	end
 end
 
-local var0 = print
-local var1 = table.concat
-local var2 = table.insert
-local var3 = string.rep
-local var4 = type
-local var5 = pairs
-local var6 = tostring
-local var7 = next
+local var0_0 = print
+local var1_0 = table.concat
+local var2_0 = table.insert
+local var3_0 = string.rep
+local var4_0 = type
+local var5_0 = pairs
+local var6_0 = tostring
+local var7_0 = next
 
-function print_r(arg0)
-	local var0 = {
-		[arg0] = "."
+function print_r(arg0_10)
+	local var0_10 = {
+		[arg0_10] = "."
 	}
 
-	local function var1(arg0, arg1, arg2)
-		local var0 = {}
+	local function var1_10(arg0_11, arg1_11, arg2_11)
+		local var0_11 = {}
 
-		for iter0, iter1 in var5(arg0) do
-			local var1 = var6(iter0)
+		for iter0_11, iter1_11 in var5_0(arg0_11) do
+			local var1_11 = var6_0(iter0_11)
 
-			if var0[iter1] then
-				var2(var0, "+" .. var1 .. " {" .. var0[iter1] .. "}")
-			elseif var4(iter1) == "table" then
-				local var2 = arg2 .. "." .. var1
+			if var0_10[iter1_11] then
+				var2_0(var0_11, "+" .. var1_11 .. " {" .. var0_10[iter1_11] .. "}")
+			elseif var4_0(iter1_11) == "table" then
+				local var2_11 = arg2_11 .. "." .. var1_11
 
-				var0[iter1] = var2
+				var0_10[iter1_11] = var2_11
 
-				var2(var0, "+" .. var1 .. var1(iter1, arg1 .. (var7(arg0, iter0) and "|" or " ") .. var3(" ", #var1), var2))
+				var2_0(var0_11, "+" .. var1_11 .. var1_10(iter1_11, arg1_11 .. (var7_0(arg0_11, iter0_11) and "|" or " ") .. var3_0(" ", #var1_11), var2_11))
 			else
-				var2(var0, "+" .. var1 .. " [" .. var6(iter1) .. "]")
+				var2_0(var0_11, "+" .. var1_11 .. " [" .. var6_0(iter1_11) .. "]")
 			end
 		end
 
-		return var1(var0, "\n" .. arg1)
+		return var1_0(var0_11, "\n" .. arg1_11)
 	end
 
-	var0(var1(arg0, "", ""))
+	var0_0(var1_10(arg0_10, "", ""))
 end

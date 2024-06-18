@@ -1,5 +1,5 @@
-﻿local var0 = class("LaunchBallPlayerControl")
-local var1 = {
+﻿local var0_0 = class("LaunchBallPlayerControl")
+local var1_0 = {
 	{
 		id = 1,
 		name = "Hatsuduki",
@@ -42,35 +42,35 @@ local var1 = {
 		}
 	}
 }
-local var2 = 1
-local var3 = "skill trigger"
-local var4 = "skill passive"
-local var5 = "skill type fire"
-local var6 = "skill type press"
-local var7 = "skill type passive"
+local var2_0 = 1
+local var3_0 = "skill trigger"
+local var4_0 = "skill passive"
+local var5_0 = "skill type fire"
+local var6_0 = "skill type press"
+local var7_0 = "skill type passive"
 
-var0.buff_amulet_back_time = 0.4
-var0.buff_panic_fire_speed = 1
-var0.buff_panic_enemy_rate = 5
-var0.buff_sleep_butterfly_time = 2
-var0.slash_split_time = 0.5
-var0.stop_enemy_time = 10
-var0.buff_amulet_back = 1
-var0.buff_panic = 2
-var0.buff_neglect = 3
-var0.buff_sleep = 4
-var0.buff_time_max = 5
-var0.buff_time_slash = 6
-var0.script_remove_all_enemys = "remove all enemys"
-var0.script_stop_enemy = "script_stop_enemy"
-var0.script_slash = "script_slash"
-var0.player_skill = {
+var0_0.buff_amulet_back_time = 0.4
+var0_0.buff_panic_fire_speed = 1
+var0_0.buff_panic_enemy_rate = 5
+var0_0.buff_sleep_butterfly_time = 2
+var0_0.slash_split_time = 0.5
+var0_0.stop_enemy_time = 10
+var0_0.buff_amulet_back = 1
+var0_0.buff_panic = 2
+var0_0.buff_neglect = 3
+var0_0.buff_sleep = 4
+var0_0.buff_time_max = 5
+var0_0.buff_time_slash = 6
+var0_0.script_remove_all_enemys = "remove all enemys"
+var0_0.script_stop_enemy = "script_stop_enemy"
+var0_0.script_slash = "script_slash"
+var0_0.player_skill = {
 	{
 		cd_time = 0.5,
 		play_time = 0.25,
 		weight = 1,
 		name = "atk",
-		type = var5,
+		type = var5_0,
 		color = {
 			1,
 			2,
@@ -87,11 +87,11 @@ var0.player_skill = {
 		name = "player1skillA",
 		skill_direct = false,
 		weight = 2,
-		type = var6,
+		type = var6_0,
 		buff = {
 			{
 				time = 10,
-				type = var0.buff_amulet_back
+				type = var0_0.buff_amulet_back
 			}
 		}
 	},
@@ -100,11 +100,11 @@ var0.player_skill = {
 		play_time = 0,
 		weight = 0,
 		name = "panic",
-		type = var7,
+		type = var7_0,
 		buff = {
 			{
 				time = 999999,
-				type = var0.buff_panic
+				type = var0_0.buff_panic
 			}
 		}
 	},
@@ -113,11 +113,11 @@ var0.player_skill = {
 		play_time = 1,
 		weight = 0,
 		name = "neglect",
-		type = var7,
+		type = var7_0,
 		buff = {
 			{
 				time = 999999,
-				type = var0.buff_neglect,
+				type = var0_0.buff_neglect,
 				active_rule = {
 					time = 10,
 					play_time = 3.5,
@@ -131,11 +131,11 @@ var0.player_skill = {
 		play_time = 1,
 		weight = 0,
 		name = "sleep",
-		type = var7,
+		type = var7_0,
 		buff = {
 			{
 				time = 999999,
-				type = var0.buff_sleep,
+				type = var0_0.buff_sleep,
 				active_rule = {
 					time = 10,
 					play_time = 3,
@@ -150,8 +150,8 @@ var0.player_skill = {
 		name = "player2SkillA",
 		skill_direct = false,
 		weight = 2,
-		type = var6,
-		script = var0.script_remove_all_enemys,
+		type = var6_0,
+		script = var0_0.script_remove_all_enemys,
 		buff = {}
 	},
 	{
@@ -160,8 +160,8 @@ var0.player_skill = {
 		name = "player3SkillA",
 		skill_direct = false,
 		weight = 2,
-		type = var6,
-		script = var0.script_stop_enemy,
+		type = var6_0,
+		script = var0_0.script_stop_enemy,
 		buff = {}
 	},
 	{
@@ -169,11 +169,11 @@ var0.player_skill = {
 		play_time = 0,
 		weight = 0,
 		name = "player3Time",
-		type = var7,
+		type = var7_0,
 		buff = {
 			{
 				time = 999999,
-				type = var0.buff_time_max
+				type = var0_0.buff_time_max
 			}
 		}
 	},
@@ -184,8 +184,8 @@ var0.player_skill = {
 		skill_direct = true,
 		script_time = 0.5,
 		weight = 2,
-		type = var6,
-		script = var0.script_slash,
+		type = var6_0,
+		script = var0_0.script_slash,
 		effect = {
 			distance = 200,
 			name = "Slash",
@@ -200,18 +200,18 @@ var0.player_skill = {
 		play_time = 0,
 		weight = 0,
 		name = "player4SlashTime",
-		type = var7,
+		type = var7_0,
 		buff = {
 			{
 				time = 999999,
-				type = var0.buff_time_slash
+				type = var0_0.buff_time_slash
 			}
 		}
 	}
 }
 
-local var8 = 270
-local var9 = {
+local var8_0 = 270
+local var9_0 = {
 	{
 		anim_name = "E",
 		range = {
@@ -268,13 +268,13 @@ local var9 = {
 		}
 	}
 }
-local var10 = "Idle"
-local var11 = "Buff"
-local var12 = "Panic"
-local var13 = "Attack"
-local var14 = "Skill_A"
-local var15 = "Skill_B"
-local var16 = {
+local var10_0 = "Idle"
+local var11_0 = "Buff"
+local var12_0 = "Panic"
+local var13_0 = "Attack"
+local var14_0 = "Skill_A"
+local var15_0 = "Skill_B"
+local var16_0 = {
 	{
 		anim_name = "01_Yellow"
 	},
@@ -298,87 +298,87 @@ local var16 = {
 	}
 }
 
-local function var17(arg0, arg1, arg2)
-	local var0 = {
-		ctor = function(arg0)
-			arg0.playerTf = arg0
-			arg0.animator = GetComponent(findTF(arg0.playerTf, "ad/anim"), typeof(Animator))
-			arg0.data = arg1
-			arg0.eventCall = arg2
-			arg0.panicFlag = false
-			arg0.directRange = Clone(var9)
-			arg0.colors = Clone(var16)
-			arg0.skills = {}
+local function var17_0(arg0_1, arg1_1, arg2_1)
+	local var0_1 = {
+		ctor = function(arg0_2)
+			arg0_2.playerTf = arg0_1
+			arg0_2.animator = GetComponent(findTF(arg0_2.playerTf, "ad/anim"), typeof(Animator))
+			arg0_2.data = arg1_1
+			arg0_2.eventCall = arg2_1
+			arg0_2.panicFlag = false
+			arg0_2.directRange = Clone(var9_0)
+			arg0_2.colors = Clone(var16_0)
+			arg0_2.skills = {}
 
-			for iter0 = 1, #arg1.skill do
-				local var0 = var0.player_skill[arg1.skill[iter0]]
+			for iter0_2 = 1, #arg1_1.skill do
+				local var0_2 = var0_0.player_skill[arg1_1.skill[iter0_2]]
 
-				table.insert(arg0.skills, {
-					data = var0,
-					time = var0.cd_time
+				table.insert(arg0_2.skills, {
+					data = var0_2,
+					time = var0_2.cd_time
 				})
 			end
 
-			local var1 = findTF(arg0.playerTf, "ad/change")
+			local var1_2 = findTF(arg0_2.playerTf, "ad/change")
 
-			arg0.changeListener = GetOrAddComponent(var1, typeof(EventTriggerListener))
+			arg0_2.changeListener = GetOrAddComponent(var1_2, typeof(EventTriggerListener))
 
-			arg0.changeListener:AddPointDownFunc(function(arg0, arg1)
-				arg0.eventCall(LaunchBallGameScene.CHANGE_AMULET)
-				arg0:changePlayerStopTime(0)
+			arg0_2.changeListener:AddPointDownFunc(function(arg0_3, arg1_3)
+				arg0_2.eventCall(LaunchBallGameScene.CHANGE_AMULET)
+				arg0_2:changePlayerStopTime(0)
 			end)
 		end,
-		getId = function(arg0)
-			return arg0.data.id
+		getId = function(arg0_4)
+			return arg0_4.data.id
 		end,
-		start = function(arg0)
-			arg0.useSkillTime = nil
-			arg0.buffs = {}
-			arg0.angle = var8
+		start = function(arg0_5)
+			arg0_5.useSkillTime = nil
+			arg0_5.buffs = {}
+			arg0_5.angle = var8_0
 
-			arg0:changePlaying(false)
+			arg0_5:changePlaying(false)
 
-			arg0.panicFlag = false
-			arg0.idleAnimName = arg0:getIdleName()
+			arg0_5.panicFlag = false
+			arg0_5.idleAnimName = arg0_5:getIdleName()
 
-			arg0:playAnim(arg0.idleAnimName)
+			arg0_5:playAnim(arg0_5.idleAnimName)
 
-			LaunchBallGameVo.pressSkill = arg0:getSkillByType(var6)
-			LaunchBallGameVo.buffs = arg0.buffs
+			LaunchBallGameVo.pressSkill = arg0_5:getSkillByType(var6_0)
+			LaunchBallGameVo.buffs = arg0_5.buffs
 
-			for iter0 = 1, #arg0.skills do
-				arg0.skills[iter0].time = arg0.skills[iter0].data.cd_time
+			for iter0_5 = 1, #arg0_5.skills do
+				arg0_5.skills[iter0_5].time = arg0_5.skills[iter0_5].data.cd_time
 
-				if arg0.skills[iter0].data.type == var7 then
-					local var0 = arg0.skills[iter0].data.buff
+				if arg0_5.skills[iter0_5].data.type == var7_0 then
+					local var0_5 = arg0_5.skills[iter0_5].data.buff
 
-					for iter1 = 1, #var0 do
-						table.insert(arg0.buffs, {
-							data = var0[iter1],
-							time = var0[iter1].time
+					for iter1_5 = 1, #var0_5 do
+						table.insert(arg0_5.buffs, {
+							data = var0_5[iter1_5],
+							time = var0_5[iter1_5].time
 						})
 					end
 				end
 			end
 
-			arg0:changePlayerStopTime(0)
+			arg0_5:changePlayerStopTime(0)
 		end,
-		step = function(arg0)
-			if arg0.playTime and arg0.playTime > 0 then
-				arg0.playTime = arg0.playTime - LaunchBallGameVo.deltaTime
+		step = function(arg0_6)
+			if arg0_6.playTime and arg0_6.playTime > 0 then
+				arg0_6.playTime = arg0_6.playTime - LaunchBallGameVo.deltaTime
 
-				if arg0.playTime <= 0 then
-					arg0:changePlaying(false)
+				if arg0_6.playTime <= 0 then
+					arg0_6:changePlaying(false)
 				end
 			end
 
-			if arg0.randomFireTime and arg0.randomFireTime > 0 then
-				arg0.randomFireTime = arg0.randomFireTime - LaunchBallGameVo.deltaTime
+			if arg0_6.randomFireTime and arg0_6.randomFireTime > 0 then
+				arg0_6.randomFireTime = arg0_6.randomFireTime - LaunchBallGameVo.deltaTime
 
-				if arg0.randomFireTime <= 0 then
-					arg0.randomFireTime = nil
+				if arg0_6.randomFireTime <= 0 then
+					arg0_6.randomFireTime = nil
 
-					arg0.eventCall(LaunchBallGameScene.RANDOM_FIRE, {
+					arg0_6.eventCall(LaunchBallGameScene.RANDOM_FIRE, {
 						num = 3,
 						data = {
 							[LaunchBallGameConst.amulet_buff_back] = true
@@ -387,156 +387,156 @@ local function var17(arg0, arg1, arg2)
 				end
 			end
 
-			if arg0.sleepTimeTrigger and arg0.sleepTimeTrigger > 0 then
-				arg0.sleepTimeTrigger = arg0.sleepTimeTrigger - LaunchBallGameVo.deltaTime
+			if arg0_6.sleepTimeTrigger and arg0_6.sleepTimeTrigger > 0 then
+				arg0_6.sleepTimeTrigger = arg0_6.sleepTimeTrigger - LaunchBallGameVo.deltaTime
 
-				if arg0.sleepTimeTrigger <= 0 then
-					arg0.sleepTimeTrigger = nil
+				if arg0_6.sleepTimeTrigger <= 0 then
+					arg0_6.sleepTimeTrigger = nil
 
-					arg0.eventCall(LaunchBallGameScene.SLEEP_TIME_TRIGGER)
+					arg0_6.eventCall(LaunchBallGameScene.SLEEP_TIME_TRIGGER)
 				end
 			end
 
-			if not arg0.isPlaying then
-				local var0 = arg0:getIdleName()
+			if not arg0_6.isPlaying then
+				local var0_6 = arg0_6:getIdleName()
 
-				if arg0.idleAnimName ~= var0 then
-					arg0:playAnim(var0)
+				if arg0_6.idleAnimName ~= var0_6 then
+					arg0_6:playAnim(var0_6)
 
-					arg0.idleAnimName = var0
+					arg0_6.idleAnimName = var0_6
 				end
 			end
 
-			for iter0 = 1, #arg0.skills do
-				if arg0.skills[iter0].time > 0 then
-					arg0.skills[iter0].time = arg0.skills[iter0].time - LaunchBallGameVo.deltaTime
+			for iter0_6 = 1, #arg0_6.skills do
+				if arg0_6.skills[iter0_6].time > 0 then
+					arg0_6.skills[iter0_6].time = arg0_6.skills[iter0_6].time - LaunchBallGameVo.deltaTime
 
-					if arg0.skills[iter0].time <= 0 then
-						arg0.skills[iter0].time = 0
+					if arg0_6.skills[iter0_6].time <= 0 then
+						arg0_6.skills[iter0_6].time = 0
 					end
 				end
 			end
 
-			for iter1 = #arg0.buffs, 1, -1 do
-				local var1 = arg0.buffs[iter1]
+			for iter1_6 = #arg0_6.buffs, 1, -1 do
+				local var1_6 = arg0_6.buffs[iter1_6]
 
-				if var1.time > 0 then
-					var1.time = var1.time - LaunchBallGameVo.deltaTime
+				if var1_6.time > 0 then
+					var1_6.time = var1_6.time - LaunchBallGameVo.deltaTime
 
-					if var1.time <= 0 then
-						table.remove(arg0.buffs, iter1)
+					if var1_6.time <= 0 then
+						table.remove(arg0_6.buffs, iter1_6)
 					end
 				end
 			end
 
-			for iter2 = #arg0.buffs, 1, -1 do
-				local var2 = arg0.buffs[iter2]
+			for iter2_6 = #arg0_6.buffs, 1, -1 do
+				local var2_6 = arg0_6.buffs[iter2_6]
 
-				if var2.data.type == var0.buff_panic then
-					local var3 = false
+				if var2_6.data.type == var0_0.buff_panic then
+					local var3_6 = false
 
 					if LaunchBallGameVo.enemyToEndRate then
-						for iter3 = 1, #LaunchBallGameVo.enemyToEndRate do
-							if not var3 and LaunchBallGameVo.enemyToEndRate[iter3] > var0.buff_panic_enemy_rate then
-								var3 = true
+						for iter3_6 = 1, #LaunchBallGameVo.enemyToEndRate do
+							if not var3_6 and LaunchBallGameVo.enemyToEndRate[iter3_6] > var0_0.buff_panic_enemy_rate then
+								var3_6 = true
 							end
 						end
 					end
 
-					var2.active = var3
+					var2_6.active = var3_6
 
-					if var2.active then
-						local var4 = arg0:getSkillByType(var5)
+					if var2_6.active then
+						local var4_6 = arg0_6:getSkillByType(var5_0)
 
-						if var4.time > 0 then
-							var4.time = var4.time - LaunchBallGameVo.deltaTime * var0.buff_panic_fire_speed
+						if var4_6.time > 0 then
+							var4_6.time = var4_6.time - LaunchBallGameVo.deltaTime * var0_0.buff_panic_fire_speed
 						end
 					end
-				elseif var2.data.type == var0.buff_neglect then
-					arg0:updateBuffStopTime(var2)
-				elseif var2.data.type == var0.buff_sleep then
-					arg0:updateBuffStopTime(var2)
+				elseif var2_6.data.type == var0_0.buff_neglect then
+					arg0_6:updateBuffStopTime(var2_6)
+				elseif var2_6.data.type == var0_0.buff_sleep then
+					arg0_6:updateBuffStopTime(var2_6)
 				else
-					var2.active = true
+					var2_6.active = true
 				end
 			end
 
-			arg0:changePlayerStopTime(arg0.playerStopTime + LaunchBallGameVo.deltaTime)
+			arg0_6:changePlayerStopTime(arg0_6.playerStopTime + LaunchBallGameVo.deltaTime)
 		end,
-		setPlayTime = function(arg0, arg1)
-			if arg1 and arg1 > 0 then
-				print("set play time " .. arg1)
+		setPlayTime = function(arg0_7, arg1_7)
+			if arg1_7 and arg1_7 > 0 then
+				print("set play time " .. arg1_7)
 
-				arg0.isPlaying = true
+				arg0_7.isPlaying = true
 			else
-				print("clear play time" .. arg1)
+				print("clear play time" .. arg1_7)
 
-				arg0.isPlaying = false
+				arg0_7.isPlaying = false
 			end
 
-			arg0.playTime = arg1
+			arg0_7.playTime = arg1_7
 		end,
-		updateBuffStopTime = function(arg0, arg1)
-			if not arg1.active and arg0.playerStopTime > arg1.data.active_rule.time then
-				arg1.active = true
+		updateBuffStopTime = function(arg0_8, arg1_8)
+			if not arg1_8.active and arg0_8.playerStopTime > arg1_8.data.active_rule.time then
+				arg1_8.active = true
 
 				LaunchBallGameVo.AddGameResultData(LaunchBallGameVo.result_use_pass_skill, 1)
-				arg0:setPlayTime(arg1.data.active_rule.play_time)
+				arg0_8:setPlayTime(arg1_8.data.active_rule.play_time)
 
-				arg0.weight = arg1.data.active_rule.weight
+				arg0_8.weight = arg1_8.data.active_rule.weight
 
-				if arg1.data.type == var0.buff_neglect then
-					arg0.randomFireTime = 1.5
+				if arg1_8.data.type == var0_0.buff_neglect then
+					arg0_8.randomFireTime = 1.5
 
-					if arg0:getBuff(var0.buff_panic).active then
-						arg0:playAnim("Skill_B_Panic_Start")
+					if arg0_8:getBuff(var0_0.buff_panic).active then
+						arg0_8:playAnim("Skill_B_Panic_Start")
 					else
-						arg0:playAnim("Skill_B_Start")
+						arg0_8:playAnim("Skill_B_Start")
 					end
-				elseif arg1.data.type == var0.buff_sleep then
-					local var0 = "Trans_Sleep_" .. arg0:getDirectName(arg0.angle)
+				elseif arg1_8.data.type == var0_0.buff_sleep then
+					local var0_8 = "Trans_Sleep_" .. arg0_8:getDirectName(arg0_8.angle)
 
-					arg0:playAnim(var0)
+					arg0_8:playAnim(var0_8)
 				end
 			end
 
-			if arg1.active and arg1.data.type == var0.buff_sleep and not arg0.sleepTimeTrigger then
-				arg0.sleepTimeTrigger = var0.buff_sleep_butterfly_time
+			if arg1_8.active and arg1_8.data.type == var0_0.buff_sleep and not arg0_8.sleepTimeTrigger then
+				arg0_8.sleepTimeTrigger = var0_0.buff_sleep_butterfly_time
 			end
 
-			if arg1.active and arg0.playerStopTime < arg1.data.active_rule.time then
-				arg1.active = false
+			if arg1_8.active and arg0_8.playerStopTime < arg1_8.data.active_rule.time then
+				arg1_8.active = false
 			end
 		end,
-		split = function(arg0, arg1)
-			if arg1.split and arg0:getBuff(var0.buff_time_slash) then
-				local var0 = arg0:getSkillByType(var6)
+		split = function(arg0_9, arg1_9)
+			if arg1_9.split and arg0_9:getBuff(var0_0.buff_time_slash) then
+				local var0_9 = arg0_9:getSkillByType(var6_0)
 
-				if var0 and var0.time > 0 then
-					var0.time = var0.time - var0.slash_split_time
+				if var0_9 and var0_9.time > 0 then
+					var0_9.time = var0_9.time - var0_0.slash_split_time
 				end
 			end
 		end,
-		changePlaying = function(arg0, arg1, arg2)
-			if arg1 then
-				arg0:setPlayTime(arg2.data.play_time)
+		changePlaying = function(arg0_10, arg1_10, arg2_10)
+			if arg1_10 then
+				arg0_10:setPlayTime(arg2_10.data.play_time)
 
-				arg0.weight = arg2.data.weight
+				arg0_10.weight = arg2_10.data.weight
 			else
-				arg0:setPlayTime(0)
+				arg0_10:setPlayTime(0)
 
-				arg0.weight = 0
+				arg0_10.weight = 0
 			end
 
-			if arg0.eventCall then
-				arg0.eventCall(LaunchBallGameScene.PLAYING_CHANGE, arg1)
+			if arg0_10.eventCall then
+				arg0_10.eventCall(LaunchBallGameScene.PLAYING_CHANGE, arg1_10)
 			end
 		end,
-		fire = function(arg0)
-			local var0 = arg0:getSkillByType(var5)
+		fire = function(arg0_11)
+			local var0_11 = arg0_11:getSkillByType(var5_0)
 
-			if arg0:checkSkillAble(var0) then
-				arg0:changePlayerStopTime(0)
+			if arg0_11:checkSkillAble(var0_11) then
+				arg0_11:changePlayerStopTime(0)
 
 				if not LaunchBallGameVo.amulet then
 					print("当前没有可以发射的符咒")
@@ -544,28 +544,28 @@ local function var17(arg0, arg1, arg2)
 					return
 				end
 
-				arg0:appearSkill(var0)
+				arg0_11:appearSkill(var0_11)
 			end
 		end,
-		getSkillByType = function(arg0, arg1)
-			for iter0 = 1, #arg0.skills do
-				local var0 = arg0.skills[iter0]
+		getSkillByType = function(arg0_12, arg1_12)
+			for iter0_12 = 1, #arg0_12.skills do
+				local var0_12 = arg0_12.skills[iter0_12]
 
-				if var0.data.type == arg1 then
-					return var0
+				if var0_12.data.type == arg1_12 then
+					return var0_12
 				end
 			end
 
 			return nil
 		end,
-		checkSkillAble = function(arg0, arg1)
-			if arg1.time > 0 then
-				print("还在cd中 cd = " .. arg1.time)
+		checkSkillAble = function(arg0_13, arg1_13)
+			if arg1_13.time > 0 then
+				print("还在cd中 cd = " .. arg1_13.time)
 
 				return false
 			end
 
-			if arg0.isPlaying and arg1.data.weight <= arg0.weight then
+			if arg0_13.isPlaying and arg1_13.data.weight <= arg0_13.weight then
 				print("权重不够无法覆盖当前的技能")
 
 				return false
@@ -573,358 +573,358 @@ local function var17(arg0, arg1, arg2)
 
 			return true
 		end,
-		appearSkill = function(arg0, arg1)
-			arg0:changePlayerStopTime(0)
-			arg0:changePlaying(true, arg1)
+		appearSkill = function(arg0_14, arg1_14)
+			arg0_14:changePlayerStopTime(0)
+			arg0_14:changePlaying(true, arg1_14)
 
-			arg1.time = arg1.data.cd_time
+			arg1_14.time = arg1_14.data.cd_time
 
-			if arg1.data.type == var5 then
-				local var0 = LaunchBallGameVo.amulet.color
-				local var1 = arg0:getSkillAnimName(arg1, var0)
+			if arg1_14.data.type == var5_0 then
+				local var0_14 = LaunchBallGameVo.amulet.color
+				local var1_14 = arg0_14:getSkillAnimName(arg1_14, var0_14)
 
-				arg0:playAnim(var1)
-				arg0.eventCall(LaunchBallGameScene.FIRE_AMULET)
-			elseif arg1.data.type == var6 then
+				arg0_14:playAnim(var1_14)
+				arg0_14.eventCall(LaunchBallGameScene.FIRE_AMULET)
+			elseif arg1_14.data.type == var6_0 then
 				print("使用了主动技能")
 
-				local var2 = arg0:getSkillAnimName(arg1)
+				local var2_14 = arg0_14:getSkillAnimName(arg1_14)
 
-				arg0:playAnim(var2)
+				arg0_14:playAnim(var2_14)
 
-				arg0.idleAnimName = nil
+				arg0_14.idleAnimName = nil
 
-				if arg0.useSkillTime then
-					local var3 = LaunchBallGameVo.gameStepTime - arg0.useSkillTime
+				if arg0_14.useSkillTime then
+					local var3_14 = LaunchBallGameVo.gameStepTime - arg0_14.useSkillTime
 
-					LaunchBallGameVo.UpdateGameResultData(LaunchBallGameVo.reuslt_double_skill_time, var3)
+					LaunchBallGameVo.UpdateGameResultData(LaunchBallGameVo.reuslt_double_skill_time, var3_14)
 				else
-					arg0.useSkillTime = LaunchBallGameVo.gameStepTime
+					arg0_14.useSkillTime = LaunchBallGameVo.gameStepTime
 				end
 
 				pg.CriMgr.GetInstance():PlaySoundEffect_V3(LaunchBallGameVo.SFX_PRESS_SKILL)
 				LaunchBallGameVo.AddGameResultData(LaunchBallGameVo.result_use_skill, 1)
 			end
 
-			local var4 = arg1.data.buff
+			local var4_14 = arg1_14.data.buff
 
-			if var4 then
-				for iter0 = 1, #var4 do
-					local var5 = var4[iter0]
-					local var6 = var5.time
+			if var4_14 then
+				for iter0_14 = 1, #var4_14 do
+					local var5_14 = var4_14[iter0_14]
+					local var6_14 = var5_14.time
 
-					table.insert(arg0.buffs, {
-						data = var5,
-						time = var6
+					table.insert(arg0_14.buffs, {
+						data = var5_14,
+						time = var6_14
 					})
 				end
 			end
 
-			if arg1.data.script then
-				if arg1.data.script == var0.script_remove_all_enemys then
-					arg0.eventCall(LaunchBallGameScene.SPLIT_ALL_ENEMYS, {
+			if arg1_14.data.script then
+				if arg1_14.data.script == var0_0.script_remove_all_enemys then
+					arg0_14.eventCall(LaunchBallGameScene.SPLIT_ALL_ENEMYS, {
 						time = 1.3,
 						effect = true
 					})
-				elseif arg1.data.script == var0.script_stop_enemy then
-					arg0.eventCall(LaunchBallGameScene.STOP_ENEMY_TIME, {
-						time = var0.stop_enemy_time
+				elseif arg1_14.data.script == var0_0.script_stop_enemy then
+					arg0_14.eventCall(LaunchBallGameScene.STOP_ENEMY_TIME, {
+						time = var0_0.stop_enemy_time
 					})
-				elseif arg1.data.script == var0.script_slash then
-					arg0.eventCall(LaunchBallGameScene.SLASH_ENEMY, {
-						time = arg1.data.script_time,
-						direct = arg0:getDirectName(arg0.angle)
+				elseif arg1_14.data.script == var0_0.script_slash then
+					arg0_14.eventCall(LaunchBallGameScene.SLASH_ENEMY, {
+						time = arg1_14.data.script_time,
+						direct = arg0_14:getDirectName(arg0_14.angle)
 					})
-					arg0.eventCall(LaunchBallGameScene.PLAYER_EFFECT, arg1.data.effect)
+					arg0_14.eventCall(LaunchBallGameScene.PLAYER_EFFECT, arg1_14.data.effect)
 				end
 			end
 		end,
-		getSkillAnimName = function(arg0, arg1, arg2)
-			local var0 = ""
-			local var1
-			local var2
-			local var3
-			local var4
-			local var5 = arg1.data
+		getSkillAnimName = function(arg0_15, arg1_15, arg2_15)
+			local var0_15 = ""
+			local var1_15
+			local var2_15
+			local var3_15
+			local var4_15
+			local var5_15 = arg1_15.data
 
-			if var5.type == var5 then
-				local var6 = var13
-				local var7 = arg0:getBuff(var0.buff_panic)
+			if var5_15.type == var5_0 then
+				local var6_15 = var13_0
+				local var7_15 = arg0_15:getBuff(var0_0.buff_panic)
 
-				if var7 and var7.active then
-					var2 = var12
+				if var7_15 and var7_15.active then
+					var2_15 = var12_0
 				end
 
-				local var8 = arg0:getDirectName(arg0.angle)
+				local var8_15 = arg0_15:getDirectName(arg0_15.angle)
 
-				if arg2 then
-					var4 = arg0:getColorName(arg2)
+				if arg2_15 then
+					var4_15 = arg0_15:getColorName(arg2_15)
 				end
 
-				if var2 then
-					var0 = var6 .. "_" .. var2 .. "_" .. var8 .. "_" .. var4
+				if var2_15 then
+					var0_15 = var6_15 .. "_" .. var2_15 .. "_" .. var8_15 .. "_" .. var4_15
 				else
-					var0 = var6 .. "_" .. var8 .. "_" .. var4
+					var0_15 = var6_15 .. "_" .. var8_15 .. "_" .. var4_15
 				end
-			elseif var5.type == var6 then
-				var0 = var14
+			elseif var5_15.type == var6_0 then
+				var0_15 = var14_0
 
-				if var5.skill_direct then
-					local var9 = arg0:getDirectName(arg0.angle)
+				if var5_15.skill_direct then
+					local var9_15 = arg0_15:getDirectName(arg0_15.angle)
 
-					var0 = var0 .. "_" .. var9
+					var0_15 = var0_15 .. "_" .. var9_15
 				end
 			end
 
-			return var0
+			return var0_15
 		end,
-		getBuff = function(arg0, arg1)
-			for iter0 = 1, #arg0.buffs do
-				if arg0.buffs[iter0].data.type == arg1 then
-					return arg0.buffs[iter0]
+		getBuff = function(arg0_16, arg1_16)
+			for iter0_16 = 1, #arg0_16.buffs do
+				if arg0_16.buffs[iter0_16].data.type == arg1_16 then
+					return arg0_16.buffs[iter0_16]
 				end
 			end
 
 			return nil
 		end,
-		getColorName = function(arg0, arg1)
-			return arg0.colors[arg1].anim_name
+		getColorName = function(arg0_17, arg1_17)
+			return arg0_17.colors[arg1_17].anim_name
 		end,
-		useSkill = function(arg0)
-			local var0 = arg0:getSkillByType(var6)
+		useSkill = function(arg0_18)
+			local var0_18 = arg0_18:getSkillByType(var6_0)
 
-			if not var0 then
+			if not var0_18 then
 				return
 			end
 
-			if arg0:checkSkillAble(var0) then
-				arg0:appearSkill(var0)
+			if arg0_18:checkSkillAble(var0_18) then
+				arg0_18:appearSkill(var0_18)
 			end
 		end,
-		clear = function(arg0)
+		clear = function(arg0_19)
 			return
 		end,
-		setAngle = function(arg0, arg1)
-			arg0:changePlayerStopTime(0)
+		setAngle = function(arg0_20, arg1_20)
+			arg0_20:changePlayerStopTime(0)
 
-			arg0.angle = (LaunchBallGameVo.joyStickData.angle + 360) % 360
+			arg0_20.angle = (LaunchBallGameVo.joyStickData.angle + 360) % 360
 		end,
-		changePlayerStopTime = function(arg0, arg1)
-			if arg0:getBuff(var0.buff_neglect) then
-				if arg0:getBuff(var0.buff_neglect).active and arg0.playTime > 0 then
+		changePlayerStopTime = function(arg0_21, arg1_21)
+			if arg0_21:getBuff(var0_0.buff_neglect) then
+				if arg0_21:getBuff(var0_0.buff_neglect).active and arg0_21.playTime > 0 then
 					return
 				end
-			elseif arg0:getBuff(var0.buff_sleep) and arg0:getBuff(var0.buff_sleep).active and arg0.playTime > 0 then
+			elseif arg0_21:getBuff(var0_0.buff_sleep) and arg0_21:getBuff(var0_0.buff_sleep).active and arg0_21.playTime > 0 then
 				return
 			end
 
-			arg0.playerStopTime = arg1
+			arg0_21.playerStopTime = arg1_21
 		end,
-		playAnim = function(arg0, arg1)
-			print("play anim is " .. arg1)
-			arg0.animator:Play(arg1)
+		playAnim = function(arg0_22, arg1_22)
+			print("play anim is " .. arg1_22)
+			arg0_22.animator:Play(arg1_22)
 		end,
-		getIdleName = function(arg0)
-			local var0 = var10
-			local var1
-			local var2
-			local var3
-			local var4 = arg0:getDirectName(arg0.angle)
-			local var5 = arg0:getBuff(var0.buff_amulet_back)
-			local var6 = arg0:getBuff(var0.buff_panic)
+		getIdleName = function(arg0_23)
+			local var0_23 = var10_0
+			local var1_23
+			local var2_23
+			local var3_23
+			local var4_23 = arg0_23:getDirectName(arg0_23.angle)
+			local var5_23 = arg0_23:getBuff(var0_0.buff_amulet_back)
+			local var6_23 = arg0_23:getBuff(var0_0.buff_panic)
 
-			if var5 and var5.active then
-				var3 = var11
+			if var5_23 and var5_23.active then
+				var3_23 = var11_0
 			end
 
-			if var6 and var6.active then
-				var2 = var12
+			if var6_23 and var6_23.active then
+				var2_23 = var12_0
 			end
 
-			if var3 then
-				var0 = var0 .. "_" .. var3
-			elseif var2 then
-				var0 = var0 .. "_" .. var2
+			if var3_23 then
+				var0_23 = var0_23 .. "_" .. var3_23
+			elseif var2_23 then
+				var0_23 = var0_23 .. "_" .. var2_23
 			end
 
-			if var4 then
-				var0 = var0 .. "_" .. var4
+			if var4_23 then
+				var0_23 = var0_23 .. "_" .. var4_23
 			end
 
-			return var0
+			return var0_23
 		end,
-		getDirectName = function(arg0, arg1)
-			local var0
-			local var1
+		getDirectName = function(arg0_24, arg1_24)
+			local var0_24
+			local var1_24
 
-			for iter0 = 1, #arg0.directRange do
-				local var2 = arg0.directRange[iter0].range
+			for iter0_24 = 1, #arg0_24.directRange do
+				local var2_24 = arg0_24.directRange[iter0_24].range
 
-				if arg1 >= var2[1] and arg1 < var2[2] then
-					var0 = arg0.directRange[iter0].anim_name
-					var1 = arg0.directRange[iter0].direct
+				if arg1_24 >= var2_24[1] and arg1_24 < var2_24[2] then
+					var0_24 = arg0_24.directRange[iter0_24].anim_name
+					var1_24 = arg0_24.directRange[iter0_24].direct
 				end
 			end
 
-			return var0, var1
+			return var0_24, var1_24
 		end,
-		setContent = function(arg0, arg1, arg2)
-			setParent(arg0.playerTf, arg1)
-			setActive(arg0.playerTf, true)
+		setContent = function(arg0_25, arg1_25, arg2_25)
+			setParent(arg0_25.playerTf, arg1_25)
+			setActive(arg0_25.playerTf, true)
 
-			if arg2 then
-				arg0.playerTf.anchoredPosition = arg2
+			if arg2_25 then
+				arg0_25.playerTf.anchoredPosition = arg2_25
 			else
-				arg0.playerTf.anchoredPosition = Vector2(0, 0)
+				arg0_25.playerTf.anchoredPosition = Vector2(0, 0)
 			end
 		end,
-		dispose = function(arg0)
-			if arg0.changeListener then
-				ClearEventTrigger(arg0.changeListener)
+		dispose = function(arg0_26)
+			if arg0_26.changeListener then
+				ClearEventTrigger(arg0_26.changeListener)
 			end
 
-			if arg0.playerTf then
-				Destroy(arg0.playerTf)
+			if arg0_26.playerTf then
+				Destroy(arg0_26.playerTf)
 
-				arg0.playerTf = nil
+				arg0_26.playerTf = nil
 			end
 		end
 	}
 
-	var0:ctor()
+	var0_1:ctor()
 
-	return var0
+	return var0_1
 end
 
-function var0.Ctor(arg0, arg1, arg2, arg3, arg4)
-	arg0._topContent = arg1
-	arg0._content = arg2
-	arg0._tpl = arg3
-	arg0._eventCall = arg4
+function var0_0.Ctor(arg0_27, arg1_27, arg2_27, arg3_27, arg4_27)
+	arg0_27._topContent = arg1_27
+	arg0_27._content = arg2_27
+	arg0_27._tpl = arg3_27
+	arg0_27._eventCall = arg4_27
 end
 
-function var0.setPlayerData(arg0, arg1)
-	if arg0.player and arg0.player:getId() ~= arg1.id then
-		arg0.player:dispose()
+function var0_0.setPlayerData(arg0_28, arg1_28)
+	if arg0_28.player and arg0_28.player:getId() ~= arg1_28.id then
+		arg0_28.player:dispose()
 
-		arg0.player = nil
-		arg0.player = arg0:createPlayer(arg1)
-	elseif not arg0.player then
-		arg0.player = arg0:createPlayer(arg1)
+		arg0_28.player = nil
+		arg0_28.player = arg0_28:createPlayer(arg1_28)
+	elseif not arg0_28.player then
+		arg0_28.player = arg0_28:createPlayer(arg1_28)
 	end
 end
 
-function var0.createPlayer(arg0, arg1)
-	local var0 = tf(instantiate(findTF(arg0._tpl, arg1.tpl)))
-	local var1 = var17(var0, arg1, arg0._eventCall)
+function var0_0.createPlayer(arg0_29, arg1_29)
+	local var0_29 = tf(instantiate(findTF(arg0_29._tpl, arg1_29.tpl)))
+	local var1_29 = var17_0(var0_29, arg1_29, arg0_29._eventCall)
 
-	var1:setContent(arg0._content)
+	var1_29:setContent(arg0_29._content)
 
-	return var1
+	return var1_29
 end
 
-function var0.start(arg0)
-	arg0.playerId = LaunchBallGameVo.selectPlayer
+function var0_0.start(arg0_30)
+	arg0_30.playerId = LaunchBallGameVo.selectPlayer
 
-	arg0:setPlayerData(var1[arg0.playerId])
-	arg0.player:start()
+	arg0_30:setPlayerData(var1_0[arg0_30.playerId])
+	arg0_30.player:start()
 
-	arg0.effects = {}
+	arg0_30.effects = {}
 end
 
-function var0.step(arg0)
+function var0_0.step(arg0_31)
 	if LaunchBallGameVo.joyStickData and LaunchBallGameVo.joyStickData.active and LaunchBallGameVo.joyStickData.angle then
-		arg0.player:setAngle(LaunchBallGameVo.joyStickData.angle)
+		arg0_31.player:setAngle(LaunchBallGameVo.joyStickData.angle)
 	end
 
-	if arg0.effects and #arg0.effects > 0 then
-		for iter0 = #arg0.effects, 1, -1 do
-			local var0 = arg0.effects[iter0].tf
-			local var1 = arg0.effects[iter0].anim
-			local var2 = arg0.effects[iter0].animName
-			local var3 = arg0.effects[iter0].removeTime
+	if arg0_31.effects and #arg0_31.effects > 0 then
+		for iter0_31 = #arg0_31.effects, 1, -1 do
+			local var0_31 = arg0_31.effects[iter0_31].tf
+			local var1_31 = arg0_31.effects[iter0_31].anim
+			local var2_31 = arg0_31.effects[iter0_31].animName
+			local var3_31 = arg0_31.effects[iter0_31].removeTime
 
-			if arg0.effects[iter0].time and arg0.effects[iter0].time > 0 then
-				arg0.effects[iter0].time = arg0.effects[iter0].time - LaunchBallGameVo.deltaTime
+			if arg0_31.effects[iter0_31].time and arg0_31.effects[iter0_31].time > 0 then
+				arg0_31.effects[iter0_31].time = arg0_31.effects[iter0_31].time - LaunchBallGameVo.deltaTime
 
-				if arg0.effects[iter0].time < 0 then
-					arg0.effects[iter0].time = nil
+				if arg0_31.effects[iter0_31].time < 0 then
+					arg0_31.effects[iter0_31].time = nil
 
-					setActive(var0, false)
-					setActive(var0, true)
-					var1:Play(var2)
+					setActive(var0_31, false)
+					setActive(var0_31, true)
+					var1_31:Play(var2_31)
 				end
-			elseif arg0.effects[iter0].removeTime and arg0.effects[iter0].removeTime > 0 then
-				arg0.effects[iter0].removeTime = arg0.effects[iter0].removeTime - LaunchBallGameVo.deltaTime
+			elseif arg0_31.effects[iter0_31].removeTime and arg0_31.effects[iter0_31].removeTime > 0 then
+				arg0_31.effects[iter0_31].removeTime = arg0_31.effects[iter0_31].removeTime - LaunchBallGameVo.deltaTime
 
-				if arg0.effects[iter0].removeTime < 0 then
-					arg0.effects[iter0].removeTime = nil
+				if arg0_31.effects[iter0_31].removeTime < 0 then
+					arg0_31.effects[iter0_31].removeTime = nil
 
-					setActive(var0, false)
-					table.remove(arg0.effects, iter0)
+					setActive(var0_31, false)
+					table.remove(arg0_31.effects, iter0_31)
 				end
 			end
 		end
 	end
 
-	arg0.player:step()
+	arg0_31.player:step()
 end
 
-function var0.eventCall(arg0, arg1, arg2)
-	if arg1 == LaunchBallGameScene.CHANGE_AMULET then
+function var0_0.eventCall(arg0_32, arg1_32, arg2_32)
+	if arg1_32 == LaunchBallGameScene.CHANGE_AMULET then
 		-- block empty
-	elseif arg1 == LaunchBallGameScene.PLAYER_EFFECT then
-		local var0 = arg2
+	elseif arg1_32 == LaunchBallGameScene.PLAYER_EFFECT then
+		local var0_32 = arg2_32
 
-		if var0 then
-			local var1
-			local var2 = var0.name
-			local var3 = findTF(arg0._topContent, "effect/" .. var2)
-			local var4 = GetComponent(findTF(var3, "ad/anim"), typeof(Animator))
-			local var5 = var0.anim
-			local var6 = var0.distance
-			local var7 = Vector2(0, 0)
+		if var0_32 then
+			local var1_32
+			local var2_32 = var0_32.name
+			local var3_32 = findTF(arg0_32._topContent, "effect/" .. var2_32)
+			local var4_32 = GetComponent(findTF(var3_32, "ad/anim"), typeof(Animator))
+			local var5_32 = var0_32.anim
+			local var6_32 = var0_32.distance
+			local var7_32 = Vector2(0, 0)
 
-			if var0.direct then
-				local var8, var9 = arg0.player:getDirectName(arg0.player.angle)
+			if var0_32.direct then
+				local var8_32, var9_32 = arg0_32.player:getDirectName(arg0_32.player.angle)
 
-				var5 = var5 .. "_" .. var8
-				var3.anchoredPosition = Vector2(var9[1] * var6, var9[2] * var6)
+				var5_32 = var5_32 .. "_" .. var8_32
+				var3_32.anchoredPosition = Vector2(var9_32[1] * var6_32, var9_32[2] * var6_32)
 			end
 
-			table.insert(arg0.effects, {
-				tf = var3,
-				anim = var4,
-				time = var0.time,
-				removeTime = var0.remove_time,
-				animName = var5
+			table.insert(arg0_32.effects, {
+				tf = var3_32,
+				anim = var4_32,
+				time = var0_32.time,
+				removeTime = var0_32.remove_time,
+				animName = var5_32
 			})
 		end
-	elseif arg1 == LaunchBallGameScene.SPILT_ENEMY_SCORE then
-		arg0.player:split(arg2)
+	elseif arg1_32 == LaunchBallGameScene.SPILT_ENEMY_SCORE then
+		arg0_32.player:split(arg2_32)
 	end
 end
 
-function var0.press(arg0, arg1)
-	if arg1 == KeyCode.J and arg0.player then
-		arg0.player:fire()
+function var0_0.press(arg0_33, arg1_33)
+	if arg1_33 == KeyCode.J and arg0_33.player then
+		arg0_33.player:fire()
 	end
 end
 
-function var0.joystickActive(arg0, arg1)
-	if not arg1 and arg0.player then
-		arg0.player:fire()
+function var0_0.joystickActive(arg0_34, arg1_34)
+	if not arg1_34 and arg0_34.player then
+		arg0_34.player:fire()
 	end
 end
 
-function var0.useSkill(arg0)
-	if arg0.player then
-		arg0.player:useSkill()
+function var0_0.useSkill(arg0_35)
+	if arg0_35.player then
+		arg0_35.player:useSkill()
 	end
 end
 
-function var0.clear(arg0)
-	arg0.player:clear()
+function var0_0.clear(arg0_36)
+	arg0_36.player:clear()
 end
 
-return var0
+return var0_0

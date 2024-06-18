@@ -1,7 +1,7 @@
-﻿local var0 = class("GatewayNotice", import(".Notice"))
+﻿local var0_0 = class("GatewayNotice", import(".Notice"))
 
-function var0.prefKey(arg0)
-	return "GatewayNotice" .. arg0.id
+function var0_0.prefKey(arg0_1)
+	return "GatewayNotice" .. arg0_1.id
 end
 
-return var0
+return var0_0

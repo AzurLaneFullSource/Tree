@@ -1,116 +1,116 @@
-﻿local var0 = class("BuildShipHelpWindow", import("...base.BaseSubView"))
+﻿local var0_0 = class("BuildShipHelpWindow", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "BuildShipHelpWindowUI"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.shipListTF = arg0:findTF("window/list/scrollview/list", arg0._tf)
-	arg0.shipListTpl = arg0:findTF("window/list/scrollview/item", arg0._tf)
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.shipListTF = arg0_2:findTF("window/list/scrollview/list", arg0_2._tf)
+	arg0_2.shipListTpl = arg0_2:findTF("window/list/scrollview/item", arg0_2._tf)
 
-	setActive(arg0.shipListTpl, false)
+	setActive(arg0_2.shipListTpl, false)
 
-	arg0.tipListTF = arg0:findTF("window/rateList/scrollview/list", arg0._tf)
-	arg0.tipListTpl = arg0:findTF("window/rateList/scrollview/item", arg0._tf)
+	arg0_2.tipListTF = arg0_2:findTF("window/rateList/scrollview/list", arg0_2._tf)
+	arg0_2.tipListTpl = arg0_2:findTF("window/rateList/scrollview/item", arg0_2._tf)
 
-	setText(arg0:findTF("window/confirm_btn/Image/Image (1)"), i18n("text_confirm"))
+	setText(arg0_2:findTF("window/confirm_btn/Image/Image (1)"), i18n("text_confirm"))
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0:findTF("window/close_btn", arg0._tf), function()
-		arg0:Hide()
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3:findTF("window/close_btn", arg0_3._tf), function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0:findTF("window/confirm_btn", arg0._tf), function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3:findTF("window/confirm_btn", arg0_3._tf), function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
 end
 
-function var0.Show(arg0, arg1, arg2, arg3)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, false, {
+function var0_0.Show(arg0_7, arg1_7, arg2_7, arg3_7)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_7._tf, false, {
 		weight = LayerWeightConst.TOP_LAYER
 	})
 
-	arg0.isSupport = arg2 == "support"
+	arg0_7.isSupport = arg2_7 == "support"
 
-	if arg0.isSupport then
-		setText(arg0:findTF("window/rateList/title/Text"), i18n("support_rate_title"))
+	if arg0_7.isSupport then
+		setText(arg0_7:findTF("window/rateList/title/Text"), i18n("support_rate_title"))
 	else
-		setText(arg0:findTF("window/rateList/title/Text"), i18n("build_rate_title"))
+		setText(arg0_7:findTF("window/rateList/title/Text"), i18n("build_rate_title"))
 	end
 
-	arg0:OnShow(arg1, arg3)
-	setActiveViaLayer(arg0._tf, true)
+	arg0_7:OnShow(arg1_7, arg3_7)
+	setActiveViaLayer(arg0_7._tf, true)
 end
 
-function var0.OnShow(arg0, arg1, arg2)
-	arg0.showing = true
+function var0_0.OnShow(arg0_8, arg1_8, arg2_8)
+	arg0_8.showing = true
 
-	local var0 = arg1
-	local var1 = arg0.shipListTF.childCount
+	local var0_8 = arg1_8
+	local var1_8 = arg0_8.shipListTF.childCount
 
-	for iter0 = 1, var1 do
-		local var2 = arg0.shipListTF:GetChild(iter0 - 1)
+	for iter0_8 = 1, var1_8 do
+		local var2_8 = arg0_8.shipListTF:GetChild(iter0_8 - 1)
 
-		if var2 then
-			setActive(var2, false)
+		if var2_8 then
+			setActive(var2_8, false)
 		end
 	end
 
-	local var3 = arg0.tipListTF.childCount
+	local var3_8 = arg0_8.tipListTF.childCount
 
-	for iter1 = 1, var3 do
-		local var4 = arg0.tipListTF:GetChild(iter1 - 1)
+	for iter1_8 = 1, var3_8 do
+		local var4_8 = arg0_8.tipListTF:GetChild(iter1_8 - 1)
 
-		if var4 then
-			setActive(var4, false)
+		if var4_8 then
+			setActive(var4_8, false)
 		end
 	end
 
-	local var5 = getProxy(ActivityProxy)
-	local var6
+	local var5_8 = getProxy(ActivityProxy)
+	local var6_8
 
-	if not arg0.isSupport then
-		if arg2 then
-			var6 = var5:getBuildActivityCfgByID(var0.id)
+	if not arg0_8.isSupport then
+		if arg2_8 then
+			var6_8 = var5_8:getBuildActivityCfgByID(var0_8.id)
 		else
-			var6 = var5:getNoneActBuildActivityCfgByID(var0.id)
+			var6_8 = var5_8:getNoneActBuildActivityCfgByID(var0_8.id)
 		end
 	end
 
-	local var7 = var6 and var6.rate_tip or var0.rate_tip
+	local var7_8 = var6_8 and var6_8.rate_tip or var0_8.rate_tip
 
-	for iter2 = 1, #var7 do
-		local var8
+	for iter2_8 = 1, #var7_8 do
+		local var8_8
 
-		if iter2 <= var3 then
-			var8 = arg0.tipListTF:GetChild(iter2 - 1)
+		if iter2_8 <= var3_8 then
+			var8_8 = arg0_8.tipListTF:GetChild(iter2_8 - 1)
 		else
-			var8 = cloneTplTo(arg0.tipListTpl, arg0.tipListTF)
+			var8_8 = cloneTplTo(arg0_8.tipListTpl, arg0_8.tipListTF)
 		end
 
-		if var8 then
-			setActive(var8, true)
-			setText(var8, HXSet.hxLan(var7[iter2]))
+		if var8_8 then
+			setActive(var8_8, true)
+			setText(var8_8, HXSet.hxLan(var7_8[iter2_8]))
 		end
 	end
 end
 
-function var0.Hide(arg0)
-	arg0.showing = false
+function var0_0.Hide(arg0_9)
+	arg0_9.showing = false
 
-	setActiveViaLayer(arg0._tf, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, arg0._tf)
+	setActiveViaLayer(arg0_9._tf, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_9._tf, arg0_9._tf)
 end
 
-function var0.isShowing(arg0)
-	return arg0.showing
+function var0_0.isShowing(arg0_10)
+	return arg0_10.showing
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_11)
 	return
 end
 
-return var0
+return var0_0

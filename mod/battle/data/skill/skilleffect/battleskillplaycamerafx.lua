@@ -1,28 +1,28 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleFormulas
-local var2 = class("BattleSkillPlayCameraFX", var0.Battle.BattleSkillEffect)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleFormulas
+local var2_0 = class("BattleSkillPlayCameraFX", var0_0.Battle.BattleSkillEffect)
 
-var0.Battle.BattleSkillPlayCameraFX = var2
-var2.__name = "BattleSkillPlayCameraFX"
+var0_0.Battle.BattleSkillPlayCameraFX = var2_0
+var2_0.__name = "BattleSkillPlayCameraFX"
 
-function var2.Ctor(arg0, arg1, arg2)
-	var2.super.Ctor(arg0, arg1, arg2)
+function var2_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var2_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 
-	arg0._FXID = arg0._tempData.arg_list.effect
-	arg0._scale = arg0._tempData.arg_list.scale
-	arg0._order = arg0._tempData.arg_list.order
+	arg0_1._FXID = arg0_1._tempData.arg_list.effect
+	arg0_1._scale = arg0_1._tempData.arg_list.scale
+	arg0_1._order = arg0_1._tempData.arg_list.order
 end
 
-function var2.DoDataEffect(arg0, arg1, arg2)
-	local var0 = arg0.calcCorrdinate(arg0._tempData.arg_list, arg1, arg2)
+function var2_0.DoDataEffect(arg0_2, arg1_2, arg2_2)
+	local var0_2 = arg0_2.calcCorrdinate(arg0_2._tempData.arg_list, arg1_2, arg2_2)
 
-	var0.Battle.BattleDataProxy.GetInstance():SpawnCameraFX(arg0._FXID, var0, arg0._scale, arg0._order)
+	var0_0.Battle.BattleDataProxy.GetInstance():SpawnCameraFX(arg0_2._FXID, var0_2, arg0_2._scale, arg0_2._order)
 end
 
-function var2.DoDataEffectWithoutTarget(arg0, arg1)
-	local var0 = arg0.calcCorrdinate(arg0._tempData.arg_list, arg1)
+function var2_0.DoDataEffectWithoutTarget(arg0_3, arg1_3)
+	local var0_3 = arg0_3.calcCorrdinate(arg0_3._tempData.arg_list, arg1_3)
 
-	var0.Battle.BattleDataProxy.GetInstance():SpawnCameraFX(arg0._FXID, var0, arg0._scale, arg0._order)
+	var0_0.Battle.BattleDataProxy.GetInstance():SpawnCameraFX(arg0_3._FXID, var0_3, arg0_3._scale, arg0_3._order)
 end

@@ -1,65 +1,65 @@
-﻿local var0 = class("ResourceFieldAttr")
+﻿local var0_0 = class("ResourceFieldAttr")
 
-function var0.Ctor(arg0, arg1, arg2, arg3)
-	arg0.name = arg2
-	arg0.config = arg1
-	arg0.attrName = arg3
-	arg0.level = 0
-	arg0.nextLevel = 0
-	arg0.value = 0
-	arg0.nextValue = 0
-	arg0.maxValue = 0
-	arg0.addition = 0
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	arg0_1.name = arg2_1
+	arg0_1.config = arg1_1
+	arg0_1.attrName = arg3_1
+	arg0_1.level = 0
+	arg0_1.nextLevel = 0
+	arg0_1.value = 0
+	arg0_1.nextValue = 0
+	arg0_1.maxValue = 0
+	arg0_1.addition = 0
 end
 
-function var0.Update(arg0, arg1)
-	if arg1 == arg0.level then
+function var0_0.Update(arg0_2, arg1_2)
+	if arg1_2 == arg0_2.level then
 		return
 	end
 
-	arg0.level = arg1
-	arg0.nextLevel = math.min(arg1 + 1, #arg0.config)
+	arg0_2.level = arg1_2
+	arg0_2.nextLevel = math.min(arg1_2 + 1, #arg0_2.config)
 
-	arg0:ReCalcValue()
+	arg0_2:ReCalcValue()
 end
 
-function var0.ReCalcValue(arg0)
-	arg0.value = arg0.config[arg0.level][arg0.attrName]
-	arg0.nextValue = arg0.config[arg0.nextLevel][arg0.attrName]
-	arg0.maxValue = arg0.config[#arg0.config][arg0.attrName]
-	arg0.addition = arg0.nextValue - arg0.value
+function var0_0.ReCalcValue(arg0_3)
+	arg0_3.value = arg0_3.config[arg0_3.level][arg0_3.attrName]
+	arg0_3.nextValue = arg0_3.config[arg0_3.nextLevel][arg0_3.attrName]
+	arg0_3.maxValue = arg0_3.config[#arg0_3.config][arg0_3.attrName]
+	arg0_3.addition = arg0_3.nextValue - arg0_3.value
 end
 
-function var0.GetName(arg0)
-	return arg0.name
+function var0_0.GetName(arg0_4)
+	return arg0_4.name
 end
 
-function var0.IsMaxLevel(arg0)
-	return arg0.level == arg0.nextLevel
+function var0_0.IsMaxLevel(arg0_5)
+	return arg0_5.level == arg0_5.nextLevel
 end
 
-function var0.GetValue(arg0)
-	return arg0.value
+function var0_0.GetValue(arg0_6)
+	return arg0_6.value
 end
 
-function var0.GetNextValue(arg0)
-	return arg0.nextValue
+function var0_0.GetNextValue(arg0_7)
+	return arg0_7.nextValue
 end
 
-function var0.GetMaxValue(arg0)
-	return arg0.maxValue
+function var0_0.GetMaxValue(arg0_8)
+	return arg0_8.maxValue
 end
 
-function var0.GetAddition(arg0)
-	return arg0.addition
+function var0_0.GetAddition(arg0_9)
+	return arg0_9.addition
 end
 
-function var0.GetAdditionDesc(arg0)
-	return arg0.addition
+function var0_0.GetAdditionDesc(arg0_10)
+	return arg0_10.addition
 end
 
-function var0.GetProgressDesc(arg0)
-	return arg0.value .. "/" .. arg0.maxValue
+function var0_0.GetProgressDesc(arg0_11)
+	return arg0_11.value .. "/" .. arg0_11.maxValue
 end
 
-return var0
+return var0_0

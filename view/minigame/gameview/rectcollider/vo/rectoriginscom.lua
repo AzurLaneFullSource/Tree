@@ -1,81 +1,81 @@
-﻿local var0 = class("RectOriginsCom")
+﻿local var0_0 = class("RectOriginsCom")
 
-function var0.Ctor(arg0, arg1)
-	arg0.skinWidth = 0.01
-	arg0.dstBetweenRays = 0.3
-	arg0.horizontalRayCount = 0
-	arg0.verticalRayCount = 0
-	arg0.horizontalRaySpacing = 0
-	arg0.verticalRaySpacing = 0
-	arg0.topLeft = Vector3.zero
-	arg0.topRight = Vector3.zero
-	arg0.bottomLeft = Vector3.zero
-	arg0.bottomRight = Vector3.zero
-	arg0.center = Vector3.zero
-	arg0._collider = arg1
-	arg0.initFlag = false
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.skinWidth = 0.01
+	arg0_1.dstBetweenRays = 0.3
+	arg0_1.horizontalRayCount = 0
+	arg0_1.verticalRayCount = 0
+	arg0_1.horizontalRaySpacing = 0
+	arg0_1.verticalRaySpacing = 0
+	arg0_1.topLeft = Vector3.zero
+	arg0_1.topRight = Vector3.zero
+	arg0_1.bottomLeft = Vector3.zero
+	arg0_1.bottomRight = Vector3.zero
+	arg0_1.center = Vector3.zero
+	arg0_1._collider = arg1_1
+	arg0_1.initFlag = false
 end
 
-function var0.calculateRaySpacing(arg0)
-	local var0 = arg0._collider.bounds
+function var0_0.calculateRaySpacing(arg0_2)
+	local var0_2 = arg0_2._collider.bounds
 
-	var0:Expand(arg0.skinWidth * -2)
+	var0_2:Expand(arg0_2.skinWidth * -2)
 
-	local var1 = var0.size.x
-	local var2 = var0.size.y
+	local var1_2 = var0_2.size.x
+	local var2_2 = var0_2.size.y
 
-	arg0.verticalRayCount = Mathf.Round(var1 / arg0.dstBetweenRays)
-	arg0.horizontalRayCount = Mathf.Round(var2 / arg0.dstBetweenRays)
+	arg0_2.verticalRayCount = Mathf.Round(var1_2 / arg0_2.dstBetweenRays)
+	arg0_2.horizontalRayCount = Mathf.Round(var2_2 / arg0_2.dstBetweenRays)
 
-	if arg0.verticalRayCount <= 1 then
-		arg0.verticalRayCount = 2
+	if arg0_2.verticalRayCount <= 1 then
+		arg0_2.verticalRayCount = 2
 	end
 
-	arg0.horizontalRaySpacing = var0.size.y / (arg0.horizontalRayCount - 1)
-	arg0.verticalRaySpacing = var0.size.x / (arg0.verticalRayCount - 1)
+	arg0_2.horizontalRaySpacing = var0_2.size.y / (arg0_2.horizontalRayCount - 1)
+	arg0_2.verticalRaySpacing = var0_2.size.x / (arg0_2.verticalRayCount - 1)
 end
 
-function var0.updateRaycastOrigins(arg0)
-	if not arg0.initFlag then
-		arg0.initFlag = true
+function var0_0.updateRaycastOrigins(arg0_3)
+	if not arg0_3.initFlag then
+		arg0_3.initFlag = true
 
-		arg0:calculateRaySpacing()
+		arg0_3:calculateRaySpacing()
 	end
 
-	local var0 = arg0._collider.bounds
+	local var0_3 = arg0_3._collider.bounds
 
-	var0:Expand(arg0.skinWidth * -2)
+	var0_3:Expand(arg0_3.skinWidth * -2)
 
-	arg0.bottomLeft.x = var0.min.x
-	arg0.bottomLeft.y = var0.min.y
-	arg0.bottomLeft.z = var0.min.z
-	arg0.bottomRight.x = var0.max.x
-	arg0.bottomRight.y = var0.min.y
-	arg0.bottomRight.z = var0.min.z
-	arg0.topLeft.x = var0.min.x
-	arg0.topLeft.y = var0.max.y
-	arg0.topLeft.z = var0.max.z
-	arg0.topRight.x = var0.max.x
-	arg0.topRight.y = var0.max.y
-	arg0.topRight.z = var0.max.z
-	arg0.center.x = var0.center.x
-	arg0.center.y = var0.center.y
-	arg0.center.z = var0.center.z
+	arg0_3.bottomLeft.x = var0_3.min.x
+	arg0_3.bottomLeft.y = var0_3.min.y
+	arg0_3.bottomLeft.z = var0_3.min.z
+	arg0_3.bottomRight.x = var0_3.max.x
+	arg0_3.bottomRight.y = var0_3.min.y
+	arg0_3.bottomRight.z = var0_3.min.z
+	arg0_3.topLeft.x = var0_3.min.x
+	arg0_3.topLeft.y = var0_3.max.y
+	arg0_3.topLeft.z = var0_3.max.z
+	arg0_3.topRight.x = var0_3.max.x
+	arg0_3.topRight.y = var0_3.max.y
+	arg0_3.topRight.z = var0_3.max.z
+	arg0_3.center.x = var0_3.center.x
+	arg0_3.center.y = var0_3.center.y
+	arg0_3.center.z = var0_3.center.z
 end
 
-function var0.createDebugImg(arg0, arg1, arg2)
-	local var0 = arg0._collider.bounds
+function var0_0.createDebugImg(arg0_4, arg1_4, arg2_4)
+	local var0_4 = arg0_4._collider.bounds
 
-	var0:Expand(arg0.skinWidth * -2)
+	var0_4:Expand(arg0_4.skinWidth * -2)
 
-	arg0.bl = cloneTplTo(arg1, arg2, "bl")
-	arg0.br = cloneTplTo(arg1, arg2, "br")
-	arg0.tl = cloneTplTo(arg1, arg2, "tl")
-	arg0.tr = cloneTplTo(arg1, arg2, "tr")
-	arg0.bl.position = Vector3(var0.min.x, var0.min.y, var0.min.z)
-	arg0.br.position = Vector3(var0.max.x, var0.min.y, var0.min.z)
-	arg0.tl.position = Vector3(var0.min.x, var0.max.y, var0.max.z)
-	arg0.tr.position = Vector3(var0.max.x, var0.max.y, var0.max.z)
+	arg0_4.bl = cloneTplTo(arg1_4, arg2_4, "bl")
+	arg0_4.br = cloneTplTo(arg1_4, arg2_4, "br")
+	arg0_4.tl = cloneTplTo(arg1_4, arg2_4, "tl")
+	arg0_4.tr = cloneTplTo(arg1_4, arg2_4, "tr")
+	arg0_4.bl.position = Vector3(var0_4.min.x, var0_4.min.y, var0_4.min.z)
+	arg0_4.br.position = Vector3(var0_4.max.x, var0_4.min.y, var0_4.min.z)
+	arg0_4.tl.position = Vector3(var0_4.min.x, var0_4.max.y, var0_4.max.z)
+	arg0_4.tr.position = Vector3(var0_4.max.x, var0_4.max.y, var0_4.max.z)
 end
 
-return var0
+return var0_0

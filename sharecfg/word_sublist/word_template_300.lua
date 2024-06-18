@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_300 = {}
+var0_0.word_template_300 = {}
 
-local var1 = var0.word_template_300
+local var1_0 = var0_0.word_template_300
 
 function temp()
-	var1.虾 = {
+	var1_0.虾 = {
 		碌 = {
 			情 = {
 				圣 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.瞎 = {
+	var1_0.瞎 = {
 		话 = {
 			局 = {
 				this = true
@@ -36,7 +36,7 @@ end
 temp()
 
 function temp()
-	var1.侠 = {
+	var1_0.侠 = {
 		医 = {
 			淫 = {
 				者 = {
@@ -52,7 +52,7 @@ end
 temp()
 
 function temp()
-	var1.夏 = {
+	var1_0.夏 = {
 		宝 = {
 			龙 = {
 				this = true
@@ -102,7 +102,7 @@ end
 temp()
 
 function temp()
-	var1.仙 = {
+	var1_0.仙 = {
 		剑 = {
 			私 = {
 				服 = {
@@ -123,7 +123,7 @@ end
 temp()
 
 function temp()
-	var1.先 = {
+	var1_0.先 = {
 		奸 = {
 			后 = {
 				杀 = {
@@ -246,7 +246,7 @@ end
 temp()
 
 function temp()
-	var1.掀 = {
+	var1_0.掀 = {
 		翻 = {
 			警 = {
 				车 = {

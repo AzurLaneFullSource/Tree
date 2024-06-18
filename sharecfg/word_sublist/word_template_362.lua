@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_362 = {}
+var0_0.word_template_362 = {}
 
-local var1 = var0.word_template_362
+local var1_0 = var0_0.word_template_362
 
 function temp()
-	var1.嘴 = {
+	var1_0.嘴 = {
 		边 = {
 			奉 = {
 				献 = {
@@ -30,7 +30,7 @@ end
 temp()
 
 function temp()
-	var1.最 = {
+	var1_0.最 = {
 		不 = {
 			愿 = {
 				开 = {
@@ -353,7 +353,7 @@ end
 temp()
 
 function temp()
-	var1.罪 = {
+	var1_0.罪 = {
 		恶 = {
 			之 = {
 				床 = {
@@ -374,7 +374,7 @@ end
 temp()
 
 function temp()
-	var1.醉 = {
+	var1_0.醉 = {
 		妃 = {
 			粉 = {
 				this = true
@@ -398,7 +398,7 @@ end
 temp()
 
 function temp()
-	var1.尊 = {
+	var1_0.尊 = {
 		爵 = {
 			粉 = {
 				推 = {
@@ -426,7 +426,7 @@ end
 temp()
 
 function temp()
-	var1.嘬 = {
+	var1_0.嘬 = {
 		this = {
 			this = true
 		}
@@ -436,7 +436,7 @@ end
 temp()
 
 function temp()
-	var1.阝 = {
+	var1_0.阝 = {
 		this = {
 			this = true
 		},

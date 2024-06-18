@@ -1,36 +1,36 @@
 ﻿ys = ys or {}
 
-local var0 = class("BattleNodeBuff", ys.Battle.BattleBuffEffect)
+local var0_0 = class("BattleNodeBuff", ys.Battle.BattleBuffEffect)
 
-ys.Battle.BattleNodeBuff = var0
-var0.__name = "BattleNodeBuff"
+ys.Battle.BattleNodeBuff = var0_0
+var0_0.__name = "BattleNodeBuff"
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var0.SetArgs(arg0, arg1, arg2)
-	arg0._rate = arg0._tempData.arg_list.rate
+function var0_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	arg0_2._rate = arg0_2._tempData.arg_list.rate
 end
 
-function var0.onFire(arg0, arg1, arg2)
-	if not ys.Battle.BattleFormulas.IsHappen(arg0._rate) then
+function var0_0.onFire(arg0_3, arg1_3, arg2_3)
+	if not ys.Battle.BattleFormulas.IsHappen(arg0_3._rate) then
 		return
 	end
 
-	local var0 = arg0._tempData.arg_list
-	local var1 = var0.node
-	local var2 = var0.weapon
-	local var3 = ys.Battle.BattleDataProxy.GetInstance():GetSeqCenter()
+	local var0_3 = arg0_3._tempData.arg_list
+	local var1_3 = var0_3.node
+	local var2_3 = var0_3.weapon
+	local var3_3 = ys.Battle.BattleDataProxy.GetInstance():GetSeqCenter()
 
-	for iter0, iter1 in ipairs(arg1:GetAutoWeapons()) do
-		if iter1:GetWeaponId() == var2 then
-			local var4 = var3:NewSeq("buff" .. arg0._id)
-			local var5 = ys.Battle.NodeData.New(arg1, {
-				weapon = iter1
-			}, var4)
+	for iter0_3, iter1_3 in ipairs(arg1_3:GetAutoWeapons()) do
+		if iter1_3:GetWeaponId() == var2_3 then
+			local var4_3 = var3_3:NewSeq("buff" .. arg0_3._id)
+			local var5_3 = ys.Battle.NodeData.New(arg1_3, {
+				weapon = iter1_3
+			}, var4_3)
 
-			pg.NodeMgr.GetInstance():GenNode(var5, pg.BattleNodesCfg[var1], var4)
+			pg.NodeMgr.GetInstance():GenNode(var5_3, pg.BattleNodesCfg[var1_3], var4_3)
 
 			break
 		end

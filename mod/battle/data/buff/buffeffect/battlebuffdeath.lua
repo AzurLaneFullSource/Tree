@@ -1,69 +1,69 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleBuffDeath = class("BattleBuffDeath", var0.Battle.BattleBuffEffect)
-var0.Battle.BattleBuffDeath.__name = "BattleBuffDeath"
+var0_0.Battle.BattleBuffDeath = class("BattleBuffDeath", var0_0.Battle.BattleBuffEffect)
+var0_0.Battle.BattleBuffDeath.__name = "BattleBuffDeath"
 
-local var1 = var0.Battle.BattleBuffDeath
+local var1_0 = var0_0.Battle.BattleBuffDeath
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	local var0 = arg0._tempData.arg_list
+function var1_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	local var0_2 = arg0_2._tempData.arg_list
 
-	if var0.time then
-		arg0._time = var0.time + pg.TimeMgr.GetInstance():GetCombatTime()
+	if var0_2.time then
+		arg0_2._time = var0_2.time + pg.TimeMgr.GetInstance():GetCombatTime()
 	end
 
-	arg0._maxX = var0.maxX
-	arg0._minX = var0.minX
-	arg0._maxY = var0.maxY
-	arg0._minY = var0.minY
-	arg0._countType = var0.countType
-	arg0._instantkill = arg0._tempData.arg_list.instant_kill
+	arg0_2._maxX = var0_2.maxX
+	arg0_2._minX = var0_2.minX
+	arg0_2._maxY = var0_2.maxY
+	arg0_2._minY = var0_2.minY
+	arg0_2._countType = var0_2.countType
+	arg0_2._instantkill = arg0_2._tempData.arg_list.instant_kill
 end
 
-function var1.onAttach(arg0, arg1, arg2, arg3)
-	if arg0._instantkill then
-		arg0:DoDead(arg1)
+function var1_0.onAttach(arg0_3, arg1_3, arg2_3, arg3_3)
+	if arg0_3._instantkill then
+		arg0_3:DoDead(arg1_3)
 	end
 end
 
-function var1.onUpdate(arg0, arg1, arg2, arg3)
-	local var0 = arg3.timeStamp
+function var1_0.onUpdate(arg0_4, arg1_4, arg2_4, arg3_4)
+	local var0_4 = arg3_4.timeStamp
 
-	if arg0._time and var0 > arg0._time then
-		arg1:SetDeathReason(var0.Battle.BattleConst.UnitDeathReason.DESTRUCT)
-		arg0:DoDead(arg1)
+	if arg0_4._time and var0_4 > arg0_4._time then
+		arg1_4:SetDeathReason(var0_0.Battle.BattleConst.UnitDeathReason.DESTRUCT)
+		arg0_4:DoDead(arg1_4)
 	else
-		local var1 = arg1:GetPosition()
+		local var1_4 = arg1_4:GetPosition()
 
-		if arg0._maxX and var1.x >= arg0._maxX then
-			arg1:SetDeathReason(var0.Battle.BattleConst.UnitDeathReason.LEAVE)
-			arg0:DoDead(arg1)
-		elseif arg0._minX and var1.x <= arg0._minX then
-			arg1:SetDeathReason(var0.Battle.BattleConst.UnitDeathReason.LEAVE)
-			arg0:DoDead(arg1)
-		elseif arg0._maxY and var1.z >= arg0._maxY then
-			arg1:SetDeathReason(var0.Battle.BattleConst.UnitDeathReason.LEAVE)
-			arg0:DoDead(arg1)
-		elseif arg0._minY and var1.z <= arg0._minY then
-			arg1:SetDeathReason(var0.Battle.BattleConst.UnitDeathReason.LEAVE)
-			arg0:DoDead(arg1)
+		if arg0_4._maxX and var1_4.x >= arg0_4._maxX then
+			arg1_4:SetDeathReason(var0_0.Battle.BattleConst.UnitDeathReason.LEAVE)
+			arg0_4:DoDead(arg1_4)
+		elseif arg0_4._minX and var1_4.x <= arg0_4._minX then
+			arg1_4:SetDeathReason(var0_0.Battle.BattleConst.UnitDeathReason.LEAVE)
+			arg0_4:DoDead(arg1_4)
+		elseif arg0_4._maxY and var1_4.z >= arg0_4._maxY then
+			arg1_4:SetDeathReason(var0_0.Battle.BattleConst.UnitDeathReason.LEAVE)
+			arg0_4:DoDead(arg1_4)
+		elseif arg0_4._minY and var1_4.z <= arg0_4._minY then
+			arg1_4:SetDeathReason(var0_0.Battle.BattleConst.UnitDeathReason.LEAVE)
+			arg0_4:DoDead(arg1_4)
 		end
 	end
 end
 
-function var1.onBattleBuffCount(arg0, arg1, arg2, arg3)
-	if arg3.countType == arg0._countType then
-		arg0:DoDead(arg1)
+function var1_0.onBattleBuffCount(arg0_5, arg1_5, arg2_5, arg3_5)
+	if arg3_5.countType == arg0_5._countType then
+		arg0_5:DoDead(arg1_5)
 	end
 end
 
-function var1.DoDead(arg0, arg1)
-	arg1:SetCurrentHP(0)
-	arg1:DeadAction()
+function var1_0.DoDead(arg0_6, arg1_6)
+	arg1_6:SetCurrentHP(0)
+	arg1_6:DeadAction()
 end

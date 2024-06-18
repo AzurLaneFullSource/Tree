@@ -1,278 +1,278 @@
-﻿local var0 = class("FeastGiveGiftPage", import("view.base.BaseSubView"))
+﻿local var0_0 = class("FeastGiveGiftPage", import("view.base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "FeastGiveGiftPage"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.mask = arg0:findTF("mask")
-	arg0.back = arg0:findTF("back")
-	arg0.charContainer = arg0:findTF("char")
-	arg0.charRect = arg0:findTF("char/rect")
-	arg0.nameTxt = arg0:findTF("dialogue/name/Text"):GetComponent(typeof(Text))
-	arg0.dialogueTxt = arg0:findTF("dialogue/Text"):GetComponent(typeof(Text))
-	arg0.typer = arg0:findTF("dialogue/Text"):GetComponent(typeof(Typewriter))
-	arg0.giftTr = arg0:findTF("dialogue/item/icon")
-	arg0.effectTr = arg0:findTF("char/effect")
-	arg0.giftTrPos = arg0.giftTr.localPosition
-	arg0.tipTr = arg0:findTF("dialogue/tip"):GetComponent(typeof(Text))
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.mask = arg0_2:findTF("mask")
+	arg0_2.back = arg0_2:findTF("back")
+	arg0_2.charContainer = arg0_2:findTF("char")
+	arg0_2.charRect = arg0_2:findTF("char/rect")
+	arg0_2.nameTxt = arg0_2:findTF("dialogue/name/Text"):GetComponent(typeof(Text))
+	arg0_2.dialogueTxt = arg0_2:findTF("dialogue/Text"):GetComponent(typeof(Text))
+	arg0_2.typer = arg0_2:findTF("dialogue/Text"):GetComponent(typeof(Typewriter))
+	arg0_2.giftTr = arg0_2:findTF("dialogue/item/icon")
+	arg0_2.effectTr = arg0_2:findTF("char/effect")
+	arg0_2.giftTrPos = arg0_2.giftTr.localPosition
+	arg0_2.tipTr = arg0_2:findTF("dialogue/tip"):GetComponent(typeof(Text))
 end
 
-function var0.BindEvents(arg0)
-	arg0.eventId = arg0:bind(FeastScene.ON_GOT_GIFT, function(arg0, arg1)
-		arg0:OnGotGift(arg1)
+function var0_0.BindEvents(arg0_3)
+	arg0_3.eventId = arg0_3:bind(FeastScene.ON_GOT_GIFT, function(arg0_4, arg1_4)
+		arg0_3:OnGotGift(arg1_4)
 	end)
 end
 
-function var0.ClearBindEvents(arg0)
-	if arg0.eventId then
-		arg0:disconnect(arg0.eventId)
+function var0_0.ClearBindEvents(arg0_5)
+	if arg0_5.eventId then
+		arg0_5:disconnect(arg0_5.eventId)
 
-		arg0.eventId = nil
+		arg0_5.eventId = nil
 	end
 end
 
-function var0.OnGotGift(arg0, arg1)
-	if arg0.feastShip then
-		arg0:BlockEvents()
-		setActive(arg0.effectTr, true)
+function var0_0.OnGotGift(arg0_6, arg1_6)
+	if arg0_6.feastShip then
+		arg0_6:BlockEvents()
+		setActive(arg0_6.effectTr, true)
 		seriesAsync({
-			function(arg0)
-				arg0:UpdateGiftState(arg0.feastShip, arg0)
+			function(arg0_7)
+				arg0_6:UpdateGiftState(arg0_6.feastShip, arg0_7)
 			end,
-			function(arg0)
-				onButton(arg0, arg0.mask, function()
-					arg0:UnBlockEvents()
-					arg0()
+			function(arg0_8)
+				onButton(arg0_6, arg0_6.mask, function()
+					arg0_6:UnBlockEvents()
+					arg0_8()
 				end, SFX_PANEL)
 			end,
-			function(arg0)
-				arg0:emit(BaseUI.ON_ACHIEVE, arg1, arg0)
+			function(arg0_10)
+				arg0_6:emit(BaseUI.ON_ACHIEVE, arg1_6, arg0_10)
 			end,
-			function(arg0)
-				local var0 = arg0.feastShip:GetGiftStory()
+			function(arg0_11)
+				local var0_11 = arg0_6.feastShip:GetGiftStory()
 
-				pg.NewStoryMgr.GetInstance():Play(var0, arg0)
+				pg.NewStoryMgr.GetInstance():Play(var0_11, arg0_11)
 			end
 		}, function()
-			setActive(arg0.effectTr, false)
-			arg0:emit(FeastScene.ON_BACK_FEAST)
+			setActive(arg0_6.effectTr, false)
+			arg0_6:emit(FeastScene.ON_BACK_FEAST)
 		end)
 	end
 end
 
-function var0.Show(arg0, arg1)
-	var0.super.Show(arg0)
-	arg0:UnBlockEvents()
-	setActive(arg0.effectTr, false)
+function var0_0.Show(arg0_13, arg1_13)
+	var0_0.super.Show(arg0_13)
+	arg0_13:UnBlockEvents()
+	setActive(arg0_13.effectTr, false)
 
-	arg0.feastShip = arg1
+	arg0_13.feastShip = arg1_13
 
-	arg0:SetTipContent()
+	arg0_13:SetTipContent()
 	seriesAsync({
-		function(arg0)
-			arg0:LoadChar(arg1, arg0)
+		function(arg0_14)
+			arg0_13:LoadChar(arg1_13, arg0_14)
 		end,
-		function(arg0)
-			arg0.giftTr.localPosition = arg0.giftTrPos
+		function(arg0_15)
+			arg0_13.giftTr.localPosition = arg0_13.giftTrPos
 
-			arg0:LoadItem(arg1, arg0)
+			arg0_13:LoadItem(arg1_13, arg0_15)
 		end
 	}, function()
-		arg0:BindEvents()
-		arg0:UpdateShipName(arg1)
-		arg0:UpdateGiftState(arg1)
-		arg0:RegisterEvent()
+		arg0_13:BindEvents()
+		arg0_13:UpdateShipName(arg1_13)
+		arg0_13:UpdateGiftState(arg1_13)
+		arg0_13:RegisterEvent()
 	end)
 end
 
-function var0.SetTipContent(arg0)
-	arg0.tipTr.text = i18n("feast_drag_gift_tip")
+function var0_0.SetTipContent(arg0_17)
+	arg0_17.tipTr.text = i18n("feast_drag_gift_tip")
 end
 
-function var0.CanInterAction(arg0)
-	return not isActive(arg0.mask)
+function var0_0.CanInterAction(arg0_18)
+	return not isActive(arg0_18.mask)
 end
 
-function var0.BlockEvents(arg0)
-	setActive(arg0.mask, true)
+function var0_0.BlockEvents(arg0_19)
+	setActive(arg0_19.mask, true)
 end
 
-function var0.UnBlockEvents(arg0)
-	setActive(arg0.mask, false)
-	removeOnButton(arg0.mask)
+function var0_0.UnBlockEvents(arg0_20)
+	setActive(arg0_20.mask, false)
+	removeOnButton(arg0_20.mask)
 end
 
-function var0.RegisterEvent(arg0)
-	onButton(arg0, arg0.back, function()
-		arg0:Hide()
+function var0_0.RegisterEvent(arg0_21)
+	onButton(arg0_21, arg0_21.back, function()
+		arg0_21:Hide()
 	end, SFX_PANEL)
 end
 
-local function var1(arg0, arg1)
-	local var0 = pg.UIMgr.GetInstance().overlayCameraComp
-	local var1 = arg0:GetComponent("RectTransform")
+local function var1_0(arg0_23, arg1_23)
+	local var0_23 = pg.UIMgr.GetInstance().overlayCameraComp
+	local var1_23 = arg0_23:GetComponent("RectTransform")
 
-	return (LuaHelper.ScreenToLocal(var1, arg1, var0))
+	return (LuaHelper.ScreenToLocal(var1_23, arg1_23, var0_23))
 end
 
-function var0.LoadChar(arg0, arg1, arg2)
-	local var0 = arg1:GetPrefab()
+function var0_0.LoadChar(arg0_24, arg1_24, arg2_24)
+	local var0_24 = arg1_24:GetPrefab()
 
-	PoolMgr.GetInstance():GetPrefab("feastChar/" .. var0, var0, true, function(arg0)
-		if arg0.exited then
-			PoolMgr.GetInstance():ReturnPrefab("feastChar/" .. var0, var0, arg0)
+	PoolMgr.GetInstance():GetPrefab("feastChar/" .. var0_24, var0_24, true, function(arg0_25)
+		if arg0_24.exited then
+			PoolMgr.GetInstance():ReturnPrefab("feastChar/" .. var0_24, var0_24, arg0_25)
 
 			return
 		end
 
-		arg0.transform:SetParent(arg0.charContainer)
+		arg0_25.transform:SetParent(arg0_24.charContainer)
 
-		arg0.transform.localScale = Vector3(1, 1, 0)
-		arg0.transform.localPosition = Vector3(0, 0, 0)
+		arg0_25.transform.localScale = Vector3(1, 1, 0)
+		arg0_25.transform.localPosition = Vector3(0, 0, 0)
 
-		local var0 = arg0:GetComponent(typeof(SpineAnimUI))
+		local var0_25 = arg0_25:GetComponent(typeof(SpineAnimUI))
 
-		arg0.loadedChar = {
-			spineAnimUI = var0,
-			name = var0
+		arg0_24.loadedChar = {
+			spineAnimUI = var0_25,
+			name = var0_24
 		}
 
-		if arg2 then
-			arg2()
+		if arg2_24 then
+			arg2_24()
 		end
 	end)
 end
 
-function var0.LoadItem(arg0, arg1, arg2)
-	local var0 = arg1:GetPrefab()
+function var0_0.LoadItem(arg0_26, arg1_26, arg2_26)
+	local var0_26 = arg1_26:GetPrefab()
 
-	LoadSpriteAsync("FeastCharGift/" .. var0, function(arg0)
-		local var0 = arg0.giftTr:GetComponent(typeof(Image))
+	LoadSpriteAsync("FeastCharGift/" .. var0_26, function(arg0_27)
+		local var0_27 = arg0_26.giftTr:GetComponent(typeof(Image))
 
-		var0.sprite = arg0
+		var0_27.sprite = arg0_27
 
-		var0:SetNativeSize()
-		arg2()
+		var0_27:SetNativeSize()
+		arg2_26()
 	end)
 end
 
-function var0.UpdateShipName(arg0, arg1)
-	arg0.nameTxt.text = arg1:GetShipName()
+function var0_0.UpdateShipName(arg0_28, arg1_28)
+	arg0_28.nameTxt.text = arg1_28:GetShipName()
 end
 
-function var0.UpdateGiftState(arg0, arg1, arg2)
-	arg0:ClearGiftEvent()
+function var0_0.UpdateGiftState(arg0_29, arg1_29, arg2_29)
+	arg0_29:ClearGiftEvent()
 	parallelAsync({
-		function(arg0)
-			arg0:UpdateContent(arg1:GetDialogueForGift(), 4, arg0)
+		function(arg0_30)
+			arg0_29:UpdateContent(arg1_29:GetDialogueForGift(), 4, arg0_30)
 		end,
-		function(arg0)
-			local var0 = arg0.loadedChar.spineAnimUI
+		function(arg0_31)
+			local var0_31 = arg0_29.loadedChar.spineAnimUI
 
-			if not arg1:GotGift() then
-				setActive(arg0.giftTr, true)
-				arg0:AddGiftEvent()
-				var0:SetAction("activity_wait", 0)
+			if not arg1_29:GotGift() then
+				setActive(arg0_29.giftTr, true)
+				arg0_29:AddGiftEvent()
+				var0_31:SetAction("activity_wait", 0)
 			else
-				setActive(arg0.giftTr, false)
-				var0:SetActionCallBack(function(arg0)
-					if arg0 == "finish" then
-						var0:SetActionCallBack(nil)
-						var0:SetAction("activity_wait", 0)
-						arg0()
+				setActive(arg0_29.giftTr, false)
+				var0_31:SetActionCallBack(function(arg0_32)
+					if arg0_32 == "finish" then
+						var0_31:SetActionCallBack(nil)
+						var0_31:SetAction("activity_wait", 0)
+						arg0_31()
 					end
 				end)
-				var0:SetAction("activity_getgift", 0)
+				var0_31:SetAction("activity_getgift", 0)
 			end
 		end
 	}, function()
-		if arg2 then
-			arg2()
+		if arg2_29 then
+			arg2_29()
 		end
 	end)
 end
 
-function var0.UpdateContent(arg0, arg1, arg2, arg3)
-	local var0 = arg2 / System.String.New(arg1).Length
+function var0_0.UpdateContent(arg0_34, arg1_34, arg2_34, arg3_34)
+	local var0_34 = arg2_34 / System.String.New(arg1_34).Length
 
-	arg0.typer:setSpeed(99999)
+	arg0_34.typer:setSpeed(99999)
 
-	arg0.dialogueTxt.text = arg1
+	arg0_34.dialogueTxt.text = arg1_34
 
-	arg0.typer:setSpeed(var0)
+	arg0_34.typer:setSpeed(var0_34)
 
-	function arg0.typer.endFunc()
-		if arg3 then
-			arg3()
+	function arg0_34.typer.endFunc()
+		if arg3_34 then
+			arg3_34()
 		end
 	end
 
-	arg0.typer:Play()
+	arg0_34.typer:Play()
 end
 
-function var0.AddGiftEvent(arg0)
-	local var0 = arg0.giftTr
-	local var1 = GetOrAddComponent(var0, typeof(EventTriggerListener))
-	local var2
+function var0_0.AddGiftEvent(arg0_36)
+	local var0_36 = arg0_36.giftTr
+	local var1_36 = GetOrAddComponent(var0_36, typeof(EventTriggerListener))
+	local var2_36
 
-	var1:AddBeginDragFunc(function()
-		var0:SetAsLastSibling()
+	var1_36:AddBeginDragFunc(function()
+		var0_36:SetAsLastSibling()
 
-		var2 = var0.localPosition
+		var2_36 = var0_36.localPosition
 	end)
-	var1:AddDragFunc(function(arg0, arg1)
-		local var0 = var1(var0.parent, arg1.position)
+	var1_36:AddDragFunc(function(arg0_38, arg1_38)
+		local var0_38 = var1_0(var0_36.parent, arg1_38.position)
 
-		var0.localPosition = var0
+		var0_36.localPosition = var0_38
 	end)
-	var1:AddDragEndFunc(function(arg0, arg1)
-		local var0 = arg0.charRect
-		local var1 = getBounds(var0)
-		local var2 = getBounds(var0)
+	var1_36:AddDragEndFunc(function(arg0_39, arg1_39)
+		local var0_39 = arg0_36.charRect
+		local var1_39 = getBounds(var0_39)
+		local var2_39 = getBounds(var0_36)
 
-		if var1:Intersects(var2) then
-			arg0:Send()
+		if var1_39:Intersects(var2_39) then
+			arg0_36:Send()
 		else
-			var0.localPosition = arg0.giftTrPos
+			var0_36.localPosition = arg0_36.giftTrPos
 		end
 	end)
 end
 
-function var0.ClearGiftEvent(arg0)
-	local var0 = arg0.giftTr
-	local var1 = GetOrAddComponent(var0, typeof(EventTriggerListener))
+function var0_0.ClearGiftEvent(arg0_40)
+	local var0_40 = arg0_40.giftTr
+	local var1_40 = GetOrAddComponent(var0_40, typeof(EventTriggerListener))
 
-	var1:AddBeginDragFunc(nil)
-	var1:AddDragFunc(nil)
-	var1:AddDragEndFunc(nil)
-	var1:RemoveBeginDragFunc()
-	var1:RemoveDragFunc()
-	var1:RemoveDragEndFunc()
+	var1_40:AddBeginDragFunc(nil)
+	var1_40:AddDragFunc(nil)
+	var1_40:AddDragEndFunc(nil)
+	var1_40:RemoveBeginDragFunc()
+	var1_40:RemoveDragFunc()
+	var1_40:RemoveDragEndFunc()
 end
 
-function var0.Send(arg0)
-	local var0 = arg0.feastShip
+function var0_0.Send(arg0_41)
+	local var0_41 = arg0_41.feastShip
 
-	arg0:emit(FeastMediator.GIVE_GIFT, var0.tid)
+	arg0_41:emit(FeastMediator.GIVE_GIFT, var0_41.tid)
 end
 
-function var0.Hide(arg0)
-	var0.super.Hide(arg0)
-	arg0:ClearBindEvents()
+function var0_0.Hide(arg0_42)
+	var0_0.super.Hide(arg0_42)
+	arg0_42:ClearBindEvents()
 
-	if arg0.loadedChar then
-		arg0.loadedChar.spineAnimUI:SetActionCallBack(nil)
-		PoolMgr.GetInstance():ReturnPrefab("feastChar/" .. arg0.loadedChar.name, arg0.loadedChar.name, arg0.loadedChar.spineAnimUI.gameObject)
+	if arg0_42.loadedChar then
+		arg0_42.loadedChar.spineAnimUI:SetActionCallBack(nil)
+		PoolMgr.GetInstance():ReturnPrefab("feastChar/" .. arg0_42.loadedChar.name, arg0_42.loadedChar.name, arg0_42.loadedChar.spineAnimUI.gameObject)
 
-		arg0.loadedChar = nil
+		arg0_42.loadedChar = nil
 	end
 
-	arg0:ClearGiftEvent()
+	arg0_42:ClearGiftEvent()
 end
 
-function var0.OnDestroy(arg0)
+function var0_0.OnDestroy(arg0_43)
 	return
 end
 
-return var0
+return var0_0

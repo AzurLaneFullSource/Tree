@@ -1,64 +1,64 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleBuffFixDamage = class("BattleBuffFixDamage", var0.Battle.BattleBuffEffect)
-var0.Battle.BattleBuffFixDamage.__name = "BattleBuffFixDamage"
+var0_0.Battle.BattleBuffFixDamage = class("BattleBuffFixDamage", var0_0.Battle.BattleBuffEffect)
+var0_0.Battle.BattleBuffFixDamage.__name = "BattleBuffFixDamage"
 
-local var1 = var0.Battle.BattleBuffFixDamage
+local var1_0 = var0_0.Battle.BattleBuffFixDamage
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	arg0._fixProb = arg0._tempData.arg_list.rant or 10000
-	arg0._fixValue = arg0._tempData.arg_list.value
-	arg0._fixRate = arg0._tempData.arg_list.rate
+function var1_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	arg0_2._fixProb = arg0_2._tempData.arg_list.rant or 10000
+	arg0_2._fixValue = arg0_2._tempData.arg_list.value
+	arg0_2._fixRate = arg0_2._tempData.arg_list.rate
 end
 
-function var1.onBeforeTakeDamage(arg0, arg1, arg2, arg3)
-	if not arg0:damageCheck(arg3) then
+function var1_0.onBeforeTakeDamage(arg0_3, arg1_3, arg2_3, arg3_3)
+	if not arg0_3:damageCheck(arg3_3) then
 		return
 	end
 
-	local var0 = arg3.damage
-	local var1 = arg3.damage
+	local var0_3 = arg3_3.damage
+	local var1_3 = arg3_3.damage
 
-	if (arg0._fixProb >= 10000 or var0.Battle.BattleFormulas.IsHappen(arg0._fixProb)) and (arg0._fixValue or arg0._fixRate) then
-		if arg0._fixRate then
-			var1 = math.max(1, var0 * arg0._fixRate)
-			arg3.fixFlag = true
-		elseif var0 > arg0._fixValue then
-			var1 = arg0._fixValue
-			arg3.fixFlag = true
+	if (arg0_3._fixProb >= 10000 or var0_0.Battle.BattleFormulas.IsHappen(arg0_3._fixProb)) and (arg0_3._fixValue or arg0_3._fixRate) then
+		if arg0_3._fixRate then
+			var1_3 = math.max(1, var0_3 * arg0_3._fixRate)
+			arg3_3.fixFlag = true
+		elseif var0_3 > arg0_3._fixValue then
+			var1_3 = arg0_3._fixValue
+			arg3_3.fixFlag = true
 		end
 	end
 
-	local var2 = arg0._tempData.arg_list
-	local var3
-	local var4, var5 = arg1:GetHP()
+	local var2_3 = arg0_3._tempData.arg_list
+	local var3_3
+	local var4_3, var5_3 = arg1_3:GetHP()
 
-	if var2.cap_value then
-		var3 = var2.cap_value
-	elseif var2.cap_hp_rate then
-		var3 = math.floor(var4 * var2.cap_hp_rate)
-	elseif var2.cap_hp_rate_max then
-		var3 = math.floor(var5 * var2.cap_hp_rate_max)
+	if var2_3.cap_value then
+		var3_3 = var2_3.cap_value
+	elseif var2_3.cap_hp_rate then
+		var3_3 = math.floor(var4_3 * var2_3.cap_hp_rate)
+	elseif var2_3.cap_hp_rate_max then
+		var3_3 = math.floor(var5_3 * var2_3.cap_hp_rate_max)
 	end
 
-	if var3 then
-		if var2.cap_ceiling then
-			var3 = math.max(var3, var2.cap_ceiling)
-		elseif var2.cap_ceiling_rate then
-			var3 = math.max(var3, math.floor(var2.cap_ceiling_rate * var5))
+	if var3_3 then
+		if var2_3.cap_ceiling then
+			var3_3 = math.max(var3_3, var2_3.cap_ceiling)
+		elseif var2_3.cap_ceiling_rate then
+			var3_3 = math.max(var3_3, math.floor(var2_3.cap_ceiling_rate * var5_3))
 		end
 
-		if var3 < var1 then
-			arg3.capFlag = true
-			var1 = var3
+		if var3_3 < var1_3 then
+			arg3_3.capFlag = true
+			var1_3 = var3_3
 		end
 	end
 
-	arg3.damage = var1
+	arg3_3.damage = var1_3
 end

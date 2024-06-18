@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_31 = {}
+var0_0.word_template_31 = {}
 
-local var1 = var0.word_template_31
+local var1_0 = var0_0.word_template_31
 
 function temp()
-	var1.肉 = {
+	var1_0.肉 = {
 		棒 = {
 			this = true
 		},
@@ -221,7 +221,7 @@ end
 temp()
 
 function temp()
-	var1.日 = {
+	var1_0.日 = {
 		給 = {
 			this = true
 		},
@@ -829,7 +829,7 @@ end
 temp()
 
 function temp()
-	var1.破 = {
+	var1_0.破 = {
 		産 = {
 			this = true
 		},
@@ -1050,7 +1050,7 @@ end
 temp()
 
 function temp()
-	var1.馬 = {
+	var1_0.馬 = {
 		鹿 = {
 			this = true
 		},
@@ -1124,7 +1124,7 @@ end
 temp()
 
 function temp()
-	var1.買 = {
+	var1_0.買 = {
 		賣 = {
 			人 = {
 				口 = {
@@ -1199,7 +1199,7 @@ end
 temp()
 
 function temp()
-	var1.売 = {
+	var1_0.売 = {
 		春 = {
 			婦 = {
 				this = true
@@ -1214,7 +1214,7 @@ end
 temp()
 
 function temp()
-	var1.白 = {
+	var1_0.白 = {
 		痴 = {
 			this = true
 		},

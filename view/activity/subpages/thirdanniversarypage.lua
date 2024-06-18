@@ -1,159 +1,159 @@
-﻿local var0 = class("ThirdAnniversaryPage", import("...base.BaseActivityPage"))
+﻿local var0_0 = class("ThirdAnniversaryPage", import("...base.BaseActivityPage"))
 
-function var0.OnInit(arg0)
-	arg0:findUI()
-	arg0:initData()
+function var0_0.OnInit(arg0_1)
+	arg0_1:findUI()
+	arg0_1:initData()
 end
 
-function var0.findUI(arg0)
-	arg0.paintBackTF = arg0:findTF("Paints/PaintBack")
-	arg0.paintFrontTF = arg0:findTF("Paints/PaintFront")
-	arg0.skinShopBtn = arg0:findTF("BtnShop")
-	arg0.btnContainer = arg0:findTF("BtnList/Viewport/Content")
+function var0_0.findUI(arg0_2)
+	arg0_2.paintBackTF = arg0_2:findTF("Paints/PaintBack")
+	arg0_2.paintFrontTF = arg0_2:findTF("Paints/PaintFront")
+	arg0_2.skinShopBtn = arg0_2:findTF("BtnShop")
+	arg0_2.btnContainer = arg0_2:findTF("BtnList/Viewport/Content")
 
-	local var0 = arg0.btnContainer.childCount / 2
+	local var0_2 = arg0_2.btnContainer.childCount / 2
 
-	arg0.btnList1 = {}
+	arg0_2.btnList1 = {}
 
-	for iter0 = 0, var0 - 1 do
-		arg0.btnList1[iter0 + 1] = arg0.btnContainer:GetChild(iter0)
+	for iter0_2 = 0, var0_2 - 1 do
+		arg0_2.btnList1[iter0_2 + 1] = arg0_2.btnContainer:GetChild(iter0_2)
 	end
 
-	arg0.btnList2 = {}
+	arg0_2.btnList2 = {}
 
-	for iter1 = 7, 2 * var0 - 1 do
-		arg0.btnList2[#arg0.btnList2 + 1] = arg0.btnContainer:GetChild(iter1)
+	for iter1_2 = 7, 2 * var0_2 - 1 do
+		arg0_2.btnList2[#arg0_2.btnList2 + 1] = arg0_2.btnContainer:GetChild(iter1_2)
 	end
 
-	arg0.gridLayoutGroupCom = GetComponent(arg0.btnContainer, "GridLayoutGroup")
+	arg0_2.gridLayoutGroupCom = GetComponent(arg0_2.btnContainer, "GridLayoutGroup")
 end
 
-function var0.initData(arg0)
-	arg0.paintCount = 14
-	arg0.curPaintIndex = 1
-	arg0.paintSwitchTime = 1
-	arg0.paintStaticTime = 3.5
-	arg0.paintStaticCountValue = 0
-	arg0.paintPathPrefix = "thirdanniversarypage/"
-	arg0.paintNamePrefix = "thirda"
-	arg0.btnCount = arg0.btnContainer.childCount / 2
-	arg0.btnSpeed = 50
-	arg0.btnSizeX = arg0.gridLayoutGroupCom.cellSize.x
-	arg0.btnMarginX = arg0.gridLayoutGroupCom.spacing.x
-	arg0.moveLength = arg0.btnCount * (arg0.btnSizeX + arg0.btnMarginX)
-	arg0.startAnchoredPosX = arg0.btnContainer.anchoredPosition.x
+function var0_0.initData(arg0_3)
+	arg0_3.paintCount = 14
+	arg0_3.curPaintIndex = 1
+	arg0_3.paintSwitchTime = 1
+	arg0_3.paintStaticTime = 3.5
+	arg0_3.paintStaticCountValue = 0
+	arg0_3.paintPathPrefix = "thirdanniversarypage/"
+	arg0_3.paintNamePrefix = "thirda"
+	arg0_3.btnCount = arg0_3.btnContainer.childCount / 2
+	arg0_3.btnSpeed = 50
+	arg0_3.btnSizeX = arg0_3.gridLayoutGroupCom.cellSize.x
+	arg0_3.btnMarginX = arg0_3.gridLayoutGroupCom.spacing.x
+	arg0_3.moveLength = arg0_3.btnCount * (arg0_3.btnSizeX + arg0_3.btnMarginX)
+	arg0_3.startAnchoredPosX = arg0_3.btnContainer.anchoredPosition.x
 end
 
-function var0.switchNextPaint(arg0)
-	arg0.frameTimer:Stop()
+function var0_0.switchNextPaint(arg0_4)
+	arg0_4.frameTimer:Stop()
 
-	local var0 = arg0.curPaintIndex % arg0.paintCount + 1
-	local var1 = arg0.paintNamePrefix .. var0
-	local var2 = arg0.paintPathPrefix .. var1
+	local var0_4 = arg0_4.curPaintIndex % arg0_4.paintCount + 1
+	local var1_4 = arg0_4.paintNamePrefix .. var0_4
+	local var2_4 = arg0_4.paintPathPrefix .. var1_4
 
-	setImageSprite(arg0.paintBackTF, LoadSprite(var2, var1))
-	LeanTween.value(go(arg0.paintFrontTF), 1, 0, arg0.paintSwitchTime):setOnUpdate(System.Action_float(function(arg0)
-		setImageAlpha(arg0.paintFrontTF, arg0)
-		setImageAlpha(arg0.paintBackTF, 1 - arg0)
+	setImageSprite(arg0_4.paintBackTF, LoadSprite(var2_4, var1_4))
+	LeanTween.value(go(arg0_4.paintFrontTF), 1, 0, arg0_4.paintSwitchTime):setOnUpdate(System.Action_float(function(arg0_5)
+		setImageAlpha(arg0_4.paintFrontTF, arg0_5)
+		setImageAlpha(arg0_4.paintBackTF, 1 - arg0_5)
 	end)):setOnComplete(System.Action(function()
-		setImageFromImage(arg0.paintFrontTF, arg0.paintBackTF)
-		setImageAlpha(arg0.paintFrontTF, 1)
-		setImageAlpha(arg0.paintBackTF, 0)
+		setImageFromImage(arg0_4.paintFrontTF, arg0_4.paintBackTF)
+		setImageAlpha(arg0_4.paintFrontTF, 1)
+		setImageAlpha(arg0_4.paintBackTF, 0)
 
-		arg0.curPaintIndex = var0
+		arg0_4.curPaintIndex = var0_4
 
-		arg0.frameTimer:Start()
+		arg0_4.frameTimer:Start()
 	end))
 end
 
-function var0.OnFirstFlush(arg0)
-	arg0:initPaint()
-	arg0:initBtnList(arg0.btnList1)
-	arg0:initBtnList(arg0.btnList2)
-	arg0:initTimer()
+function var0_0.OnFirstFlush(arg0_7)
+	arg0_7:initPaint()
+	arg0_7:initBtnList(arg0_7.btnList1)
+	arg0_7:initBtnList(arg0_7.btnList2)
+	arg0_7:initTimer()
 end
 
-function var0.initPaint(arg0)
-	local var0 = arg0.curPaintIndex
-	local var1 = (var0 - 1) % arg0.paintCount + 1
-	local var2 = arg0.paintNamePrefix .. var0
-	local var3 = arg0.paintPathPrefix .. var2
+function var0_0.initPaint(arg0_8)
+	local var0_8 = arg0_8.curPaintIndex
+	local var1_8 = (var0_8 - 1) % arg0_8.paintCount + 1
+	local var2_8 = arg0_8.paintNamePrefix .. var0_8
+	local var3_8 = arg0_8.paintPathPrefix .. var2_8
 
-	setImageSprite(arg0.paintFrontTF, LoadSprite(var3, var2))
+	setImageSprite(arg0_8.paintFrontTF, LoadSprite(var3_8, var2_8))
 
-	local var4 = arg0.paintNamePrefix .. var1
-	local var5 = arg0.paintPathPrefix .. var4
+	local var4_8 = arg0_8.paintNamePrefix .. var1_8
+	local var5_8 = arg0_8.paintPathPrefix .. var4_8
 
-	setImageSprite(arg0.paintBackTF, LoadSprite(var5, var4))
+	setImageSprite(arg0_8.paintBackTF, LoadSprite(var5_8, var4_8))
 end
 
-function var0.initBtnList(arg0, arg1)
-	onButton(arg0, arg1[1], function()
-		arg0:emit(ActivityMediator.GO_PRAY_POOL)
+function var0_0.initBtnList(arg0_9, arg1_9)
+	onButton(arg0_9, arg1_9[1], function()
+		arg0_9:emit(ActivityMediator.GO_PRAY_POOL)
 	end, SFX_PANEL)
-	onButton(arg0, arg1[2], function()
-		arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SUMMARY)
+	onButton(arg0_9, arg1_9[2], function()
+		arg0_9:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SUMMARY)
 	end, SFX_PANEL)
-	onButton(arg0, arg1[3], function()
-		arg0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.ACTIVITY_TYPE_RETURN_AWARD_ID3)
+	onButton(arg0_9, arg1_9[3], function()
+		arg0_9:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.ACTIVITY_TYPE_RETURN_AWARD_ID3)
 	end, SFX_PANEL)
-	onButton(arg0, arg1[4], function()
-		arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CHARGE, {
+	onButton(arg0_9, arg1_9[4], function()
+		arg0_9:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CHARGE, {
 			wrap = ChargeScene.TYPE_DIAMOND
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg1[5], function()
-		arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.THIRD_ANNIVERSARY_AKIBA)
+	onButton(arg0_9, arg1_9[5], function()
+		arg0_9:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.THIRD_ANNIVERSARY_AKIBA)
 	end, SFX_PANEL)
-	onButton(arg0, arg1[6], function()
-		arg0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.PIZZAHUT_PT_PAGE)
+	onButton(arg0_9, arg1_9[6], function()
+		arg0_9:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.PIZZAHUT_PT_PAGE)
 	end, SFX_PANEL)
-	onButton(arg0, arg1[7], function()
-		arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
+	onButton(arg0_9, arg1_9[7], function()
+		arg0_9:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
 	end, SFX_PANEL)
 end
 
-function var0.initTimer(arg0)
-	local var0 = 0.0166666666666667
+function var0_0.initTimer(arg0_17)
+	local var0_17 = 0.0166666666666667
 
-	arg0.paintStaticCountValue = 0
-	arg0.frameTimer = Timer.New(function()
-		arg0.paintStaticCountValue = arg0.paintStaticCountValue + var0
+	arg0_17.paintStaticCountValue = 0
+	arg0_17.frameTimer = Timer.New(function()
+		arg0_17.paintStaticCountValue = arg0_17.paintStaticCountValue + var0_17
 
-		if arg0.paintStaticCountValue >= arg0.paintStaticTime then
-			arg0.paintStaticCountValue = 0
+		if arg0_17.paintStaticCountValue >= arg0_17.paintStaticTime then
+			arg0_17.paintStaticCountValue = 0
 
-			arg0:switchNextPaint()
+			arg0_17:switchNextPaint()
 		end
-	end, var0, -1, false)
+	end, var0_17, -1, false)
 
-	arg0.frameTimer:Start()
+	arg0_17.frameTimer:Start()
 
-	arg0.frameTimer2 = Timer.New(function()
-		local var0 = arg0.btnContainer.anchoredPosition.x - arg0.btnSpeed * var0
+	arg0_17.frameTimer2 = Timer.New(function()
+		local var0_19 = arg0_17.btnContainer.anchoredPosition.x - arg0_17.btnSpeed * var0_17
 
-		if arg0.startAnchoredPosX - var0 >= arg0.moveLength then
-			var0 = arg0.btnContainer.anchoredPosition.x + arg0.moveLength
+		if arg0_17.startAnchoredPosX - var0_19 >= arg0_17.moveLength then
+			var0_19 = arg0_17.btnContainer.anchoredPosition.x + arg0_17.moveLength
 		end
 
-		arg0.btnContainer.anchoredPosition = Vector3(var0, 0, 0)
-	end, var0, -1, false)
+		arg0_17.btnContainer.anchoredPosition = Vector3(var0_19, 0, 0)
+	end, var0_17, -1, false)
 
-	arg0.frameTimer2:Start()
+	arg0_17.frameTimer2:Start()
 end
 
-function var0.OnDestroy(arg0)
-	if arg0.frameTimer then
-		arg0.frameTimer:Stop()
+function var0_0.OnDestroy(arg0_20)
+	if arg0_20.frameTimer then
+		arg0_20.frameTimer:Stop()
 
-		arg0.frameTimer = nil
+		arg0_20.frameTimer = nil
 	end
 
-	if arg0.frameTimer2 then
-		arg0.frameTimer2:Stop()
+	if arg0_20.frameTimer2 then
+		arg0_20.frameTimer2:Stop()
 
-		arg0.frameTimer2 = nil
+		arg0_20.frameTimer2 = nil
 	end
 end
 
-return var0
+return var0_0

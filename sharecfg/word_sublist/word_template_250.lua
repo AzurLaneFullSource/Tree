@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_250 = {}
+var0_0.word_template_250 = {}
 
-local var1 = var0.word_template_250
+local var1_0 = var0_0.word_template_250
 
 function temp()
-	var1.润 = {
+	var1_0.润 = {
 		色 = {
 			美 = {
 				女 = {
@@ -29,7 +29,7 @@ end
 temp()
 
 function temp()
-	var1.若 = {
+	var1_0.若 = {
 		林 = {
 			菜 = {
 				美 = {
@@ -111,7 +111,7 @@ end
 temp()
 
 function temp()
-	var1.撒 = {
+	var1_0.撒 = {
 		尿 = {
 			this = true
 		},
@@ -167,7 +167,7 @@ end
 temp()
 
 function temp()
-	var1.萨 = {
+	var1_0.萨 = {
 		达 = {
 			姆 = {
 				this = true,
@@ -269,7 +269,7 @@ end
 temp()
 
 function temp()
-	var1.薩 = {
+	var1_0.薩 = {
 		達 = {
 			姆 = {
 				this = true
@@ -288,7 +288,7 @@ end
 temp()
 
 function temp()
-	var1.塞 = {
+	var1_0.塞 = {
 		白 = {
 			this = true
 		},
@@ -386,7 +386,7 @@ end
 temp()
 
 function temp()
-	var1.赛 = {
+	var1_0.赛 = {
 		车 = {
 			风 = {
 				云 = {

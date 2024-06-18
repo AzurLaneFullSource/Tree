@@ -1,86 +1,86 @@
-﻿local var0 = class("RectBaseScript")
+﻿local var0_0 = class("RectBaseScript")
 
-function var0.Ctor(arg0)
-	arg0._weight = 1
-	arg0._loop = false
-	arg0._active = false
-	arg0._scriptTime = 0
-	arg0._overrideAble = false
-	arg0._lateActive = false
-	arg0._name = ""
+function var0_0.Ctor(arg0_1)
+	arg0_1._weight = 1
+	arg0_1._loop = false
+	arg0_1._active = false
+	arg0_1._scriptTime = 0
+	arg0_1._overrideAble = false
+	arg0_1._lateActive = false
+	arg0_1._name = ""
 end
 
-function var0.init(arg0)
+function var0_0.init(arg0_2)
 	return
 end
 
-function var0.setData(arg0, arg1, arg2, arg3)
-	arg0._collisionInfo = arg1
-	arg0._keyInfo = arg2
-	arg0._event = arg3
+function var0_0.setData(arg0_3, arg1_3, arg2_3, arg3_3)
+	arg0_3._collisionInfo = arg1_3
+	arg0_3._keyInfo = arg2_3
+	arg0_3._event = arg3_3
 
-	arg0:onInit()
+	arg0_3:onInit()
 end
 
-function var0.step(arg0)
-	arg0:onStep()
+function var0_0.step(arg0_4)
+	arg0_4:onStep()
 
-	arg0._triggerKey = nil
-	arg0._triggerStatus = nil
+	arg0_4._triggerKey = nil
+	arg0_4._triggerStatus = nil
 end
 
-function var0.addScriptApply(arg0)
-	arg0._collisionInfo:removeScript()
-	arg0._collisionInfo:setScript(arg0, arg0._weight, arg0._scriptTime, arg0._overrideAble)
+function var0_0.addScriptApply(arg0_5)
+	arg0_5._collisionInfo:removeScript()
+	arg0_5._collisionInfo:setScript(arg0_5, arg0_5._weight, arg0_5._scriptTime, arg0_5._overrideAble)
 end
 
-function var0.checkScirptApply(arg0)
-	if not arg0._collisionInfo.script then
-		arg0:addScriptApply()
+function var0_0.checkScirptApply(arg0_6)
+	if not arg0_6._collisionInfo.script then
+		arg0_6:addScriptApply()
 
 		return true
-	elseif arg0._collisionInfo.script ~= arg0 and arg0._collisionInfo.scriptOverrideAble and arg0._collisionInfo.scriptWeight <= arg0._weight then
-		arg0:addScriptApply()
+	elseif arg0_6._collisionInfo.script ~= arg0_6 and arg0_6._collisionInfo.scriptOverrideAble and arg0_6._collisionInfo.scriptWeight <= arg0_6._weight then
+		arg0_6:addScriptApply()
 
 		return true
 	end
 
-	print("当前脚本 " .. arg0._collisionInfo.script._name .. " 中，无法执行" .. arg0._name)
+	print("当前脚本 " .. arg0_6._collisionInfo.script._name .. " 中，无法执行" .. arg0_6._name)
 
 	return false
 end
 
-function var0.onStep(arg0)
+function var0_0.onStep(arg0_7)
 	return
 end
 
-function var0.lateStep(arg0)
-	arg0._lateActive = arg0._active
+function var0_0.lateStep(arg0_8)
+	arg0_8._lateActive = arg0_8._active
 
-	arg0:onLateStep()
+	arg0_8:onLateStep()
 end
 
-function var0.onLateStep(arg0)
+function var0_0.onLateStep(arg0_9)
 	return
 end
 
-function var0.active(arg0, arg1)
-	arg0._active = arg1
+function var0_0.active(arg0_10, arg1_10)
+	arg0_10._active = arg1_10
 end
 
-function var0.onActive(arg0)
+function var0_0.onActive(arg0_11)
 	return
 end
 
-function var0.keyTrigger(arg0, arg1, arg2)
-	arg0._triggerKey = arg1
-	arg0._triggerStatus = arg2
+function var0_0.keyTrigger(arg0_12, arg1_12, arg2_12)
+	arg0_12._triggerKey = arg1_12
+	arg0_12._triggerStatus = arg2_12
 
-	arg0:onTrigger(arg1, arg2)
+	arg0_12:onTrigger(arg1_12, arg2_12)
 end
 
-function var0.getWeight(arg0)
-	return arg0._weight
+function var0_0.getWeight(arg0_13)
+	return arg0_13._weight
 end
 
-return var0
+return var0_0

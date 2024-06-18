@@ -1,849 +1,849 @@
-﻿local var0 = class("WorldInPictureScene", import("...base.BaseUI"))
-local var1 = 0
-local var2 = 1
+﻿local var0_0 = class("WorldInPictureScene", import("...base.BaseUI"))
+local var1_0 = 0
+local var2_0 = 1
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "WorldInPictureUI"
 end
 
-function var0.emit(arg0, ...)
-	if arg0.inAniming then
+function var0_0.emit(arg0_2, ...)
+	if arg0_2.inAniming then
 		return
 	end
 
-	var0.super.emit(arg0, ...)
+	var0_0.super.emit(arg0_2, ...)
 end
 
-function var0.OnOpenCellErro(arg0, arg1)
-	if arg1 then
-		arg0.onkeyTravelProcess = false
+function var0_0.OnOpenCellErro(arg0_3, arg1_3)
+	if arg1_3 then
+		arg0_3.onkeyTravelProcess = false
 
-		arg0:UpdateTravelBtnState()
+		arg0_3:UpdateTravelBtnState()
 	end
 end
 
-function var0.OnOpenCell(arg0, arg1, arg2, arg3)
-	arg0:CloseSelector(arg1, arg2)
-	arg0:HideBox(arg1, arg2)
+function var0_0.OnOpenCell(arg0_4, arg1_4, arg2_4, arg3_4)
+	arg0_4:CloseSelector(arg1_4, arg2_4)
+	arg0_4:HideBox(arg1_4, arg2_4)
 
-	arg0.inAniming = true
+	arg0_4.inAniming = true
 
-	local var0 = arg0.cells[arg1][arg2]
-	local var1 = var0.gameObject.transform.anchoredPosition
+	local var0_4 = arg0_4.cells[arg1_4][arg2_4]
+	local var1_4 = var0_4.gameObject.transform.anchoredPosition
 
-	arg0:DoAnimtion("picture_faguang", var1, function()
-		var0.alpha = 1
+	arg0_4:DoAnimtion("picture_faguang", var1_4, function()
+		var0_4.alpha = 1
 
-		if arg3 and arg0.data:ExistBox(arg1, arg2) then
-			arg0:RpAnim(arg1, arg2)
+		if arg3_4 and arg0_4.data:ExistBox(arg1_4, arg2_4) then
+			arg0_4:RpAnim(arg1_4, arg2_4)
 		end
 
-		arg0:HightLightOpenArea(arg1, arg2)
-		arg0:UpdatePoints()
-		arg0:UpdateSwitcherState()
+		arg0_4:HightLightOpenArea(arg1_4, arg2_4)
+		arg0_4:UpdatePoints()
+		arg0_4:UpdateSwitcherState()
 
-		local var0 = arg0.data:IsFirstTravel()
+		local var0_5 = arg0_4.data:IsFirstTravel()
 
-		arg0:UpdateChar(Vector2(arg1, arg2), not var0)
-		arg0:SaveCharPosition(arg1, arg2)
+		arg0_4:UpdateChar(Vector2(arg1_4, arg2_4), not var0_5)
+		arg0_4:SaveCharPosition(arg1_4, arg2_4)
 
-		arg0.inAniming = false
-		arg0.forceStopTravelPorcess = false
+		arg0_4.inAniming = false
+		arg0_4.forceStopTravelPorcess = false
 
-		if arg3 then
-			local var1 = arg0.onkeyTravelProcess
+		if arg3_4 then
+			local var1_5 = arg0_4.onkeyTravelProcess
 
-			arg0.onkeyTravelProcess = false
+			arg0_4.onkeyTravelProcess = false
 
-			arg0:UpdateTravelBtnState()
+			arg0_4:UpdateTravelBtnState()
 
-			if not var1 or not arg0.data:FindNextTravelable() then
-				arg0:emit(WorldInPictureMediator.RESULT_ONEKEY_AWARD)
-			elseif var1 == true then
-				triggerButton(arg0.onekeyTravelBtn)
+			if not var1_5 or not arg0_4.data:FindNextTravelable() then
+				arg0_4:emit(WorldInPictureMediator.RESULT_ONEKEY_AWARD)
+			elseif var1_5 == true then
+				triggerButton(arg0_4.onekeyTravelBtn)
 			end
 		end
 	end)
 end
 
-function var0.CloseSelector(arg0, arg1, arg2)
-	if arg0.data:IsFirstTravel() then
-		for iter0, iter1 in ipairs(arg0.selectors) do
-			for iter2, iter3 in ipairs(iter1) do
-				iter3.alpha = 0
+function var0_0.CloseSelector(arg0_6, arg1_6, arg2_6)
+	if arg0_6.data:IsFirstTravel() then
+		for iter0_6, iter1_6 in ipairs(arg0_6.selectors) do
+			for iter2_6, iter3_6 in ipairs(iter1_6) do
+				iter3_6.alpha = 0
 			end
 		end
 	else
-		local var0 = arg0.selectors[arg1][arg2]
+		local var0_6 = arg0_6.selectors[arg1_6][arg2_6]
 
-		if var0 and var0.alpha ~= 0 then
-			var0.alpha = 0
+		if var0_6 and var0_6.alpha ~= 0 then
+			var0_6.alpha = 0
 		end
 	end
 end
 
-function var0.HightLightOpenArea(arg0, arg1, arg2)
-	local var0 = {
-		Vector2(arg1 + 1, arg2),
-		Vector2(arg1, arg2 + 1),
-		Vector2(arg1 - 1, arg2),
-		Vector2(arg1, arg2 - 1)
+function var0_0.HightLightOpenArea(arg0_7, arg1_7, arg2_7)
+	local var0_7 = {
+		Vector2(arg1_7 + 1, arg2_7),
+		Vector2(arg1_7, arg2_7 + 1),
+		Vector2(arg1_7 - 1, arg2_7),
+		Vector2(arg1_7, arg2_7 - 1)
 	}
 
-	local function var1(arg0)
-		if arg0.data:IsOpened(arg0.x, arg0.y) or arg0.data:OutSide(arg0.x, arg0.y) then
+	local function var1_7(arg0_8)
+		if arg0_7.data:IsOpened(arg0_8.x, arg0_8.y) or arg0_7.data:OutSide(arg0_8.x, arg0_8.y) then
 			return
 		end
 
-		if not arg0.selectors[arg0.x] or not arg0.selectors[arg0.x][arg0.y] then
-			arg0:CreateSelector(arg0.x, arg0.y)
+		if not arg0_7.selectors[arg0_8.x] or not arg0_7.selectors[arg0_8.x][arg0_8.y] then
+			arg0_7:CreateSelector(arg0_8.x, arg0_8.y)
 		else
-			arg0.selectors[arg0.x][arg0.y].alpha = 1
+			arg0_7.selectors[arg0_8.x][arg0_8.y].alpha = 1
 		end
 	end
 
-	_.each(var0, var1)
+	_.each(var0_7, var1_7)
 end
 
-function var0.RpAnim(arg0, arg1, arg2)
-	local var0 = arg0:GetRedPacket()
+function var0_0.RpAnim(arg0_9, arg1_9, arg2_9)
+	local var0_9 = arg0_9:GetRedPacket()
 
-	var0.anchoredPosition = arg0.cells[arg1][arg2].gameObject.transform.anchoredPosition + Vector2(48, 48)
+	var0_9.anchoredPosition = arg0_9.cells[arg1_9][arg2_9].gameObject.transform.anchoredPosition + Vector2(48, 48)
 
-	LeanTween.value(var0.gameObject, var0.anchoredPosition.y, var0.anchoredPosition.y + 35, 0.75):setOnUpdate(System.Action_float(function(arg0)
-		var0.anchoredPosition = Vector2(var0.anchoredPosition.x, arg0)
+	LeanTween.value(var0_9.gameObject, var0_9.anchoredPosition.y, var0_9.anchoredPosition.y + 35, 0.75):setOnUpdate(System.Action_float(function(arg0_10)
+		var0_9.anchoredPosition = Vector2(var0_9.anchoredPosition.x, arg0_10)
 	end)):setOnComplete(System.Action(function()
-		if arg0.exited then
+		if arg0_9.exited then
 			return
 		end
 
-		setActive(var0, false)
-		table.insert(arg0.redpackets, var0)
+		setActive(var0_9, false)
+		table.insert(arg0_9.redpackets, var0_9)
 	end))
 end
 
-function var0.HideBox(arg0, arg1, arg2)
-	local var0
+function var0_0.HideBox(arg0_12, arg1_12, arg2_12)
+	local var0_12
 
-	if arg0.boxes[arg1] then
-		var0 = arg0.boxes[arg1][arg2]
+	if arg0_12.boxes[arg1_12] then
+		var0_12 = arg0_12.boxes[arg1_12][arg2_12]
 	end
 
-	if var0 then
-		var0.alpha = 0
-	end
-end
-
-function var0.OnDrawAreaErro(arg0, arg1)
-	if arg1 then
-		arg0.onkeyDrawPorcess = false
-
-		arg0:UpdateDrawBtnState()
+	if var0_12 then
+		var0_12.alpha = 0
 	end
 end
 
-function var0.OnDrawArea(arg0, arg1, arg2, arg3)
-	arg0:HideDrawarea(arg1, arg2)
+function var0_0.OnDrawAreaErro(arg0_13, arg1_13)
+	if arg1_13 then
+		arg0_13.onkeyDrawPorcess = false
 
-	arg0.inAniming = true
+		arg0_13:UpdateDrawBtnState()
+	end
+end
 
-	arg0:CreateAnimal(arg1, arg2, false, function(arg0)
-		local var0 = arg0.data:GetDrawAnimData(arg1, arg2)
-		local var1 = arg0.sizeDelta.x * arg0.localScale.x * 0.5 + 90
-		local var2 = arg0.sizeDelta.y * arg0.localScale.y * 0.5
-		local var3 = Vector2(var0[2] + var1, var0[3] - var2)
+function var0_0.OnDrawArea(arg0_14, arg1_14, arg2_14, arg3_14)
+	arg0_14:HideDrawarea(arg1_14, arg2_14)
 
-		arg0:DoAnimtion("picture_bichu", var3, function()
-			LeanTween.value(arg0.gameObject, 0, 1, 0.5):setOnUpdate(System.Action_float(function(arg0)
-				if arg0.exited then
+	arg0_14.inAniming = true
+
+	arg0_14:CreateAnimal(arg1_14, arg2_14, false, function(arg0_15)
+		local var0_15 = arg0_14.data:GetDrawAnimData(arg1_14, arg2_14)
+		local var1_15 = arg0_15.sizeDelta.x * arg0_15.localScale.x * 0.5 + 90
+		local var2_15 = arg0_15.sizeDelta.y * arg0_15.localScale.y * 0.5
+		local var3_15 = Vector2(var0_15[2] + var1_15, var0_15[3] - var2_15)
+
+		arg0_14:DoAnimtion("picture_bichu", var3_15, function()
+			LeanTween.value(arg0_15.gameObject, 0, 1, 0.5):setOnUpdate(System.Action_float(function(arg0_17)
+				if arg0_14.exited then
 					return
 				end
 
-				arg0:GetComponent(typeof(CanvasGroup)).alpha = arg0
+				arg0_15:GetComponent(typeof(CanvasGroup)).alpha = arg0_17
 			end))
-			arg0:UpdatePoints()
+			arg0_14:UpdatePoints()
 
-			arg0.inAniming = false
-			arg0.forceStopDrawPorcess = false
+			arg0_14.inAniming = false
+			arg0_14.forceStopDrawPorcess = false
 
-			if arg3 then
-				local var0 = arg0.onkeyDrawPorcess
+			if arg3_14 then
+				local var0_16 = arg0_14.onkeyDrawPorcess
 
-				arg0.onkeyDrawPorcess = false
+				arg0_14.onkeyDrawPorcess = false
 
-				arg0:UpdateDrawBtnState()
+				arg0_14:UpdateDrawBtnState()
 
-				if not var0 or not arg0.data:FindNextDrawableAreaHead() then
-					arg0:emit(WorldInPictureMediator.RESULT_ONEKEY_AWARD)
-				elseif arg3 and var0 == true then
-					triggerButton(arg0.onekeyDrawBtn)
+				if not var0_16 or not arg0_14.data:FindNextDrawableAreaHead() then
+					arg0_14:emit(WorldInPictureMediator.RESULT_ONEKEY_AWARD)
+				elseif arg3_14 and var0_16 == true then
+					triggerButton(arg0_14.onekeyDrawBtn)
 				end
 			end
 		end)
 	end)
 end
 
-function var0.HideDrawarea(arg0, arg1, arg2)
-	local var0
+function var0_0.HideDrawarea(arg0_18, arg1_18, arg2_18)
+	local var0_18
 
-	if arg0.drawableAare[arg1] then
-		var0 = arg0.drawableAare[arg1][arg2]
+	if arg0_18.drawableAare[arg1_18] then
+		var0_18 = arg0_18.drawableAare[arg1_18][arg2_18]
 	end
 
-	if var0 then
-		var0.alpha = 0
+	if var0_18 then
+		var0_18.alpha = 0
 	end
 end
 
-function var0.SetData(arg0, arg1)
-	arg0.data = arg1
+function var0_0.SetData(arg0_19, arg1_19)
+	arg0_19.data = arg1_19
 end
 
-function var0.init(arg0)
+function var0_0.init(arg0_20)
 	Input.multiTouchEnabled = false
-	arg0.redpacket = arg0:findTF("redpackets/redpacket")
-	arg0.lineHrzTpl = arg0:findTF("lines/line_hrz")
-	arg0.lineVecTpl = arg0:findTF("lines/line_vec")
-	arg0.animalTpl = arg0:findTF("animals/animal")
-	arg0.areaTpl = arg0:findTF("drawablearea/area")
-	arg0.boxTpl = arg0:findTF("boxes/box")
-	arg0.selectorTpl = arg0:findTF("selectors/selector")
-	arg0.tpl = arg0:findTF("grids/grid")
-	arg0.backBtn = arg0:findTF("back")
-	arg0.helpBtn = arg0:findTF("help")
-	arg0.travelPointTxt = arg0:findTF("points/travel"):GetComponent(typeof(Text))
-	arg0.drawPointTxt = arg0:findTF("points/draw"):GetComponent(typeof(Text))
-	arg0.travelProgressTxt = arg0:findTF("progress/travel"):GetComponent(typeof(Text))
-	arg0.drawProgressTxt = arg0:findTF("progress/draw"):GetComponent(typeof(Text))
-	arg0.switchBtn = arg0:findTF("swticher")
-	arg0.onDisable = arg0.switchBtn:Find("on_disable")
-	arg0.btnOn = arg0.switchBtn:Find("on_enable/draw")
-	arg0.btnOff = arg0.switchBtn:Find("on_enable/off")
-	arg0.onekeyTravelBtn = arg0:findTF("onekey_travel")
-	arg0.onekeyTravelingBtn = arg0:findTF("onekey_travel/Image")
-	arg0.onekeyDrawBtn = arg0:findTF("onekey_draw")
-	arg0.onekeyDrawingBtn = arg0:findTF("onekey_draw/Image")
-	arg0.char = arg0:findTF("char/char")
+	arg0_20.redpacket = arg0_20:findTF("redpackets/redpacket")
+	arg0_20.lineHrzTpl = arg0_20:findTF("lines/line_hrz")
+	arg0_20.lineVecTpl = arg0_20:findTF("lines/line_vec")
+	arg0_20.animalTpl = arg0_20:findTF("animals/animal")
+	arg0_20.areaTpl = arg0_20:findTF("drawablearea/area")
+	arg0_20.boxTpl = arg0_20:findTF("boxes/box")
+	arg0_20.selectorTpl = arg0_20:findTF("selectors/selector")
+	arg0_20.tpl = arg0_20:findTF("grids/grid")
+	arg0_20.backBtn = arg0_20:findTF("back")
+	arg0_20.helpBtn = arg0_20:findTF("help")
+	arg0_20.travelPointTxt = arg0_20:findTF("points/travel"):GetComponent(typeof(Text))
+	arg0_20.drawPointTxt = arg0_20:findTF("points/draw"):GetComponent(typeof(Text))
+	arg0_20.travelProgressTxt = arg0_20:findTF("progress/travel"):GetComponent(typeof(Text))
+	arg0_20.drawProgressTxt = arg0_20:findTF("progress/draw"):GetComponent(typeof(Text))
+	arg0_20.switchBtn = arg0_20:findTF("swticher")
+	arg0_20.onDisable = arg0_20.switchBtn:Find("on_disable")
+	arg0_20.btnOn = arg0_20.switchBtn:Find("on_enable/draw")
+	arg0_20.btnOff = arg0_20.switchBtn:Find("on_enable/off")
+	arg0_20.onekeyTravelBtn = arg0_20:findTF("onekey_travel")
+	arg0_20.onekeyTravelingBtn = arg0_20:findTF("onekey_travel/Image")
+	arg0_20.onekeyDrawBtn = arg0_20:findTF("onekey_draw")
+	arg0_20.onekeyDrawingBtn = arg0_20:findTF("onekey_draw/Image")
+	arg0_20.char = arg0_20:findTF("char/char")
 
-	setActive(arg0.char, false)
+	setActive(arg0_20.char, false)
 
-	arg0.selectorContainer = arg0:findTF("selectors"):GetComponent(typeof(CanvasGroup))
-	arg0.drawableAreaContainer = arg0:findTF("drawablearea"):GetComponent(typeof(CanvasGroup))
-	arg0.startPos = arg0.tpl.anchoredPosition
-	arg0.offset = Vector2(0.5, 0.5)
-	arg0.width = arg0.tpl.sizeDelta.x
-	arg0.height = arg0.tpl.sizeDelta.y
-	arg0.cells = {}
-	arg0.selectors = {}
-	arg0.boxes = {}
-	arg0.drawableAare = {}
-	arg0.animals = {}
-	arg0.redpackets = {
-		arg0.redpacket
+	arg0_20.selectorContainer = arg0_20:findTF("selectors"):GetComponent(typeof(CanvasGroup))
+	arg0_20.drawableAreaContainer = arg0_20:findTF("drawablearea"):GetComponent(typeof(CanvasGroup))
+	arg0_20.startPos = arg0_20.tpl.anchoredPosition
+	arg0_20.offset = Vector2(0.5, 0.5)
+	arg0_20.width = arg0_20.tpl.sizeDelta.x
+	arg0_20.height = arg0_20.tpl.sizeDelta.y
+	arg0_20.cells = {}
+	arg0_20.selectors = {}
+	arg0_20.boxes = {}
+	arg0_20.drawableAare = {}
+	arg0_20.animals = {}
+	arg0_20.redpackets = {
+		arg0_20.redpacket
 	}
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0.backBtn, function()
-		if arg0.opType == var1 and arg0.onkeyTravelProcess then
-			arg0.onkeyTravelProcess = false
+function var0_0.didEnter(arg0_21)
+	onButton(arg0_21, arg0_21.backBtn, function()
+		if arg0_21.opType == var1_0 and arg0_21.onkeyTravelProcess then
+			arg0_21.onkeyTravelProcess = false
 
-			arg0:UpdateTravelBtnState()
+			arg0_21:UpdateTravelBtnState()
 
 			return
-		elseif arg0.opType == var2 and arg0.onkeyDrawPorcess then
-			arg0.onkeyDrawPorcess = false
+		elseif arg0_21.opType == var2_0 and arg0_21.onkeyDrawPorcess then
+			arg0_21.onkeyDrawPorcess = false
 
-			arg0:UpdateDrawBtnState()
+			arg0_21:UpdateDrawBtnState()
 
 			return
 		end
 
-		arg0:emit(var0.ON_BACK)
+		arg0_21:emit(var0_0.ON_BACK)
 	end, SFX_CANCEL)
-	onButton(arg0, arg0.helpBtn, function()
+	onButton(arg0_21, arg0_21.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.worldinpicture_help.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0, arg0.onekeyTravelBtn, function()
-		if arg0.forceStopTravelPorcess then
+	onButton(arg0_21, arg0_21.onekeyTravelBtn, function()
+		if arg0_21.forceStopTravelPorcess then
 			return
 		end
 
-		if arg0.data:IsTravelAll() then
+		if arg0_21.data:IsTravelAll() then
 			return
 		end
 
-		if arg0.data:GetTravelPoint() <= 0 then
+		if arg0_21.data:GetTravelPoint() <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("worldinpicture_tavel_point_tip"))
 
 			return
 		end
 
-		if arg0.onkeyTravelProcess then
-			arg0.onkeyTravelProcess = false
-			arg0.forceStopTravelPorcess = true
+		if arg0_21.onkeyTravelProcess then
+			arg0_21.onkeyTravelProcess = false
+			arg0_21.forceStopTravelPorcess = true
 
-			arg0:UpdateTravelBtnState()
+			arg0_21:UpdateTravelBtnState()
 
 			return
 		end
 
-		local var0, var1 = arg0.data:FindNextTravelable()
+		local var0_24, var1_24 = arg0_21.data:FindNextTravelable()
 
-		if var0 and var1 then
-			arg0.onkeyTravelProcess = true
+		if var0_24 and var1_24 then
+			arg0_21.onkeyTravelProcess = true
 
-			arg0:UpdateTravelBtnState()
-			arg0:emit(WorldInPictureMediator.ON_AUTO_TRAVEL, var0.x, var0.y, var1)
+			arg0_21:UpdateTravelBtnState()
+			arg0_21:emit(WorldInPictureMediator.ON_AUTO_TRAVEL, var0_24.x, var0_24.y, var1_24)
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0.onekeyDrawBtn, function()
-		if arg0.forceStopDrawPorcess then
+	onButton(arg0_21, arg0_21.onekeyDrawBtn, function()
+		if arg0_21.forceStopDrawPorcess then
 			return
 		end
 
-		if arg0.data:IsDrawAll() then
+		if arg0_21.data:IsDrawAll() then
 			return
 		end
 
-		if arg0.data:GetDrawPoint() <= 0 then
+		if arg0_21.data:GetDrawPoint() <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("worldinpicture_draw_point_tip"))
 
 			return
 		end
 
-		if arg0.onkeyDrawPorcess then
-			arg0.onkeyDrawPorcess = false
-			arg0.forceStopDrawPorcess = true
+		if arg0_21.onkeyDrawPorcess then
+			arg0_21.onkeyDrawPorcess = false
+			arg0_21.forceStopDrawPorcess = true
 
-			arg0:UpdateDrawBtnState()
+			arg0_21:UpdateDrawBtnState()
 
 			return
 		end
 
-		local var0, var1 = arg0.data:FindNextDrawableAreaHead()
+		local var0_25, var1_25 = arg0_21.data:FindNextDrawableAreaHead()
 
-		if var0 and var1 then
-			arg0.onkeyDrawPorcess = true
+		if var0_25 and var1_25 then
+			arg0_21.onkeyDrawPorcess = true
 
-			arg0:UpdateDrawBtnState()
-			arg0:emit(WorldInPictureMediator.ON_AUTO_DRAW, var0.x, var0.y, var1)
+			arg0_21:UpdateDrawBtnState()
+			arg0_21:emit(WorldInPictureMediator.ON_AUTO_DRAW, var0_25.x, var0_25.y, var1_25)
 		end
 	end, SFX_PANEL)
 
-	arg0.opType = var1
+	arg0_21.opType = var1_0
 
-	onButton(arg0, arg0.onDisable, function()
+	onButton(arg0_21, arg0_21.onDisable, function()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("worldinpicture_not_area_can_draw"))
 	end, SFX_PANEL)
-	onButton(arg0, arg0.btnOn, function()
-		if arg0.opType == var1 and arg0.onkeyTravelProcess then
-			arg0.onkeyTravelProcess = false
+	onButton(arg0_21, arg0_21.btnOn, function()
+		if arg0_21.opType == var1_0 and arg0_21.onkeyTravelProcess then
+			arg0_21.onkeyTravelProcess = false
 
-			arg0:UpdateTravelBtnState()
-
-			return
-		elseif arg0.opType == var2 and arg0.onkeyDrawPorcess then
-			arg0.onkeyDrawPorcess = false
-
-			arg0:UpdateDrawBtnState()
+			arg0_21:UpdateTravelBtnState()
 
 			return
-		end
+		elseif arg0_21.opType == var2_0 and arg0_21.onkeyDrawPorcess then
+			arg0_21.onkeyDrawPorcess = false
 
-		if arg0.inAniming then
+			arg0_21:UpdateDrawBtnState()
+
 			return
 		end
 
-		arg0.opType = var2
+		if arg0_21.inAniming then
+			return
+		end
 
-		arg0:UpdateSwitcherState()
+		arg0_21.opType = var2_0
+
+		arg0_21:UpdateSwitcherState()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.btnOff, function()
-		if arg0.opType == var1 and arg0.onkeyTravelProcess then
-			arg0.onkeyTravelProcess = false
+	onButton(arg0_21, arg0_21.btnOff, function()
+		if arg0_21.opType == var1_0 and arg0_21.onkeyTravelProcess then
+			arg0_21.onkeyTravelProcess = false
 
-			arg0:UpdateTravelBtnState()
-
-			return
-		elseif arg0.opType == var2 and arg0.onkeyDrawPorcess then
-			arg0.onkeyDrawPorcess = false
-
-			arg0:UpdateDrawBtnState()
+			arg0_21:UpdateTravelBtnState()
 
 			return
-		end
+		elseif arg0_21.opType == var2_0 and arg0_21.onkeyDrawPorcess then
+			arg0_21.onkeyDrawPorcess = false
 
-		if arg0.inAniming then
+			arg0_21:UpdateDrawBtnState()
+
 			return
 		end
 
-		arg0.opType = var1
+		if arg0_21.inAniming then
+			return
+		end
 
-		arg0:UpdateSwitcherState()
+		arg0_21.opType = var1_0
+
+		arg0_21:UpdateSwitcherState()
 	end, SFX_PANEL)
-	arg0:UpdateSwitcherState()
-	arg0:InitView()
+	arg0_21:UpdateSwitcherState()
+	arg0_21:InitView()
 end
 
-function var0.UpdateDrawBtnState(arg0)
-	setActive(arg0.onekeyDrawingBtn, arg0.onkeyDrawPorcess)
+function var0_0.UpdateDrawBtnState(arg0_29)
+	setActive(arg0_29.onekeyDrawingBtn, arg0_29.onkeyDrawPorcess)
 end
 
-function var0.UpdateTravelBtnState(arg0)
-	setActive(arg0.onekeyTravelingBtn, arg0.onkeyTravelProcess)
+function var0_0.UpdateTravelBtnState(arg0_30)
+	setActive(arg0_30.onekeyTravelingBtn, arg0_30.onkeyTravelProcess)
 end
 
-function var0.GetRecordCharPos(arg0)
-	local var0 = getProxy(PlayerProxy):getRawData().id
-	local var1 = PlayerPrefs.GetString("WorldInPictureScene_1" .. var0, "0#0")
-	local var2 = string.split(var1, "#")
+function var0_0.GetRecordCharPos(arg0_31)
+	local var0_31 = getProxy(PlayerProxy):getRawData().id
+	local var1_31 = PlayerPrefs.GetString("WorldInPictureScene_1" .. var0_31, "0#0")
+	local var2_31 = string.split(var1_31, "#")
 
-	return Vector2(tonumber(var2[1]), tonumber(var2[2]))
+	return Vector2(tonumber(var2_31[1]), tonumber(var2_31[2]))
 end
 
-function var0.SaveCharPosition(arg0, arg1, arg2)
-	local var0 = getProxy(PlayerProxy):getRawData().id
+function var0_0.SaveCharPosition(arg0_32, arg1_32, arg2_32)
+	local var0_32 = getProxy(PlayerProxy):getRawData().id
 
-	PlayerPrefs.SetString("WorldInPictureScene_1" .. var0, arg1 .. "#" .. arg2)
+	PlayerPrefs.SetString("WorldInPictureScene_1" .. var0_32, arg1_32 .. "#" .. arg2_32)
 	PlayerPrefs.Save()
 end
 
-function var0.moveChar(arg0, arg1, arg2, arg3)
-	if LeanTween.isTweening(go(arg0.char)) then
-		LeanTween.cancel(go(arg0.char))
+function var0_0.moveChar(arg0_33, arg1_33, arg2_33, arg3_33)
+	if LeanTween.isTweening(go(arg0_33.char)) then
+		LeanTween.cancel(go(arg0_33.char))
 	end
 
-	if isActive(arg0.char) then
-		arg0:hideChar(function()
-			arg0:showChar(arg1, arg2, arg3)
+	if isActive(arg0_33.char) then
+		arg0_33:hideChar(function()
+			arg0_33:showChar(arg1_33, arg2_33, arg3_33)
 		end)
 	else
-		arg0:showChar(arg1, arg2, arg3)
+		arg0_33:showChar(arg1_33, arg2_33, arg3_33)
 	end
 end
 
-function var0.showChar(arg0, arg1, arg2, arg3)
-	arg0.char.transform.localPosition = Vector3(arg1, arg2 + 50)
+function var0_0.showChar(arg0_35, arg1_35, arg2_35, arg3_35)
+	arg0_35.char.transform.localPosition = Vector3(arg1_35, arg2_35 + 50)
 
-	setActive(arg0.char, true)
-	LeanTween.value(go(arg0.char), 0, 1, 0.2):setOnUpdate(System.Action_float(function(arg0)
-		GetOrAddComponent(arg0.char, typeof(CanvasGroup)).alpha = arg0
+	setActive(arg0_35.char, true)
+	LeanTween.value(go(arg0_35.char), 0, 1, 0.2):setOnUpdate(System.Action_float(function(arg0_36)
+		GetOrAddComponent(arg0_35.char, typeof(CanvasGroup)).alpha = arg0_36
 	end))
-	LeanTween.moveLocal(go(arg0.char), Vector3(arg1, arg2, 0), 0.2):setOnComplete(System.Action(function()
-		if arg3 then
-			arg3()
+	LeanTween.moveLocal(go(arg0_35.char), Vector3(arg1_35, arg2_35, 0), 0.2):setOnComplete(System.Action(function()
+		if arg3_35 then
+			arg3_35()
 		end
 	end))
 end
 
-function var0.hideChar(arg0, arg1)
-	LeanTween.value(go(arg0.char), 1, 0, 0.2):setOnUpdate(System.Action_float(function(arg0)
-		GetOrAddComponent(arg0.char, typeof(CanvasGroup)).alpha = arg0
+function var0_0.hideChar(arg0_38, arg1_38)
+	LeanTween.value(go(arg0_38.char), 1, 0, 0.2):setOnUpdate(System.Action_float(function(arg0_39)
+		GetOrAddComponent(arg0_38.char, typeof(CanvasGroup)).alpha = arg0_39
 	end))
 
-	local var0 = arg0.char.transform.localPosition
+	local var0_38 = arg0_38.char.transform.localPosition
 
-	LeanTween.moveLocal(go(arg0.char), Vector3(var0.x, var0.y + 50, 0), 0.2):setOnComplete(System.Action(function()
-		setActive(arg0.char, false)
+	LeanTween.moveLocal(go(arg0_38.char), Vector3(var0_38.x, var0_38.y + 50, 0), 0.2):setOnComplete(System.Action(function()
+		setActive(arg0_38.char, false)
 
-		if arg1 then
-			arg1()
+		if arg1_38 then
+			arg1_38()
 		end
 	end))
 end
 
-function var0.UpdateChar(arg0, arg1, arg2)
-	if arg1 == Vector2.zero then
-		setActive(arg0.char, false)
+function var0_0.UpdateChar(arg0_41, arg1_41, arg2_41)
+	if arg1_41 == Vector2.zero then
+		setActive(arg0_41.char, false)
 
 		return
 	end
 
-	if LeanTween.isTweening(arg0.char) then
-		LeanTween.cancel(arg0.char)
+	if LeanTween.isTweening(arg0_41.char) then
+		LeanTween.cancel(arg0_41.char)
 	end
 
-	if arg0.data:IsTravelAll() then
-		setActive(arg0.char, false)
+	if arg0_41.data:IsTravelAll() then
+		setActive(arg0_41.char, false)
 
 		return
 	end
 
-	local var0 = arg0.cells[arg1.x][arg1.y].gameObject.transform.anchoredPosition
-	local var1 = Vector2(var0.x, var0.y - 50)
+	local var0_41 = arg0_41.cells[arg1_41.x][arg1_41.y].gameObject.transform.anchoredPosition
+	local var1_41 = Vector2(var0_41.x, var0_41.y - 50)
 
-	if arg2 then
-		arg0:moveChar(var1.x, var1.y, function()
+	if arg2_41 then
+		arg0_41:moveChar(var1_41.x, var1_41.y, function()
 			return
 		end)
 	else
-		arg0.char.transform.localPosition = var1
+		arg0_41.char.transform.localPosition = var1_41
 	end
 end
 
-function var0.UpdateSwitcherState(arg0)
-	local var0 = arg0.opType == var2
-	local var1 = arg0.data:AnyAreaCanDraw()
+function var0_0.UpdateSwitcherState(arg0_43)
+	local var0_43 = arg0_43.opType == var2_0
+	local var1_43 = arg0_43.data:AnyAreaCanDraw()
 
-	setActive(arg0.btnOff, var0)
-	setActive(arg0.onDisable, not var0 and not var1)
-	setActive(arg0.btnOn, not var0 and var1)
-	setActive(arg0.onekeyTravelBtn, not var0)
-	setActive(arg0.onekeyDrawBtn, var0)
-	setActive(arg0.char, not var0 and not arg0.data:IsTravelAll())
+	setActive(arg0_43.btnOff, var0_43)
+	setActive(arg0_43.onDisable, not var0_43 and not var1_43)
+	setActive(arg0_43.btnOn, not var0_43 and var1_43)
+	setActive(arg0_43.onekeyTravelBtn, not var0_43)
+	setActive(arg0_43.onekeyDrawBtn, var0_43)
+	setActive(arg0_43.char, not var0_43 and not arg0_43.data:IsTravelAll())
 
-	arg0.selectorContainer.alpha = var0 and 0 or 1
-	arg0.drawableAreaContainer.alpha = var0 and 1 or 0
+	arg0_43.selectorContainer.alpha = var0_43 and 0 or 1
+	arg0_43.drawableAreaContainer.alpha = var0_43 and 1 or 0
 
-	if var0 then
-		arg0:UpdateDrawableAreas()
+	if var0_43 then
+		arg0_43:UpdateDrawableAreas()
 	end
 end
 
-function var0.InitView(arg0)
-	local var0, var1 = arg0.data:GetMapRowAndColumn()
-	local var2 = {}
+function var0_0.InitView(arg0_44)
+	local var0_44, var1_44 = arg0_44.data:GetMapRowAndColumn()
+	local var2_44 = {}
 
-	for iter0 = 1, var0 do
-		table.insert(var2, function(arg0)
-			for iter0 = var1, 1, -1 do
-				arg0:CreateCell(iter0, iter0, (iter0 - 1) * var1 + iter0)
+	for iter0_44 = 1, var0_44 do
+		table.insert(var2_44, function(arg0_45)
+			for iter0_45 = var1_44, 1, -1 do
+				arg0_44:CreateCell(iter0_44, iter0_45, (iter0_44 - 1) * var1_44 + iter0_45)
 			end
 
-			onNextTick(arg0)
+			onNextTick(arg0_45)
 		end)
 	end
 
-	seriesAsync(var2, function()
-		arg0:InitLines()
-		arg0:UpdateChar(arg0:GetRecordCharPos())
+	seriesAsync(var2_44, function()
+		arg0_44:InitLines()
+		arg0_44:UpdateChar(arg0_44:GetRecordCharPos())
 	end)
-	arg0:UpdatePoints()
+	arg0_44:UpdatePoints()
 end
 
-function var0.InitLines(arg0)
-	local var0, var1 = arg0.data:GetMapRowAndColumn()
-	local var2 = arg0.tpl.sizeDelta.y * var0 + 10
+function var0_0.InitLines(arg0_47)
+	local var0_47, var1_47 = arg0_47.data:GetMapRowAndColumn()
+	local var2_47 = arg0_47.tpl.sizeDelta.y * var0_47 + 10
 
-	for iter0 = 1, var1 - 1 do
-		local var3 = iter0 == 1 and arg0.lineVecTpl or Object.Instantiate(arg0.lineVecTpl, arg0.lineVecTpl.parent)
+	for iter0_47 = 1, var1_47 - 1 do
+		local var3_47 = iter0_47 == 1 and arg0_47.lineVecTpl or Object.Instantiate(arg0_47.lineVecTpl, arg0_47.lineVecTpl.parent)
 
-		var3.sizeDelta = Vector2(var3.sizeDelta.x, var2)
+		var3_47.sizeDelta = Vector2(var3_47.sizeDelta.x, var2_47)
 
-		local var4 = arg0.cells[1][iter0]
-		local var5 = var4.gameObject.transform.anchoredPosition.x + var4.gameObject.transform.sizeDelta.x * 0.5
+		local var4_47 = arg0_47.cells[1][iter0_47]
+		local var5_47 = var4_47.gameObject.transform.anchoredPosition.x + var4_47.gameObject.transform.sizeDelta.x * 0.5
 
-		var3.anchoredPosition = Vector2(var5 + arg0.offset.x, var3.anchoredPosition.y)
+		var3_47.anchoredPosition = Vector2(var5_47 + arg0_47.offset.x, var3_47.anchoredPosition.y)
 	end
 
-	local var6 = arg0.tpl.sizeDelta.x * var1 + 20
+	local var6_47 = arg0_47.tpl.sizeDelta.x * var1_47 + 20
 
-	for iter1 = 1, var0 - 1 do
-		local var7 = iter1 == 1 and arg0.lineHrzTpl or Object.Instantiate(arg0.lineHrzTpl, arg0.lineHrzTpl.parent)
+	for iter1_47 = 1, var0_47 - 1 do
+		local var7_47 = iter1_47 == 1 and arg0_47.lineHrzTpl or Object.Instantiate(arg0_47.lineHrzTpl, arg0_47.lineHrzTpl.parent)
 
-		var7.sizeDelta = Vector2(var7.sizeDelta.x, var6)
+		var7_47.sizeDelta = Vector2(var7_47.sizeDelta.x, var6_47)
 
-		local var8 = arg0.cells[iter1][1]
-		local var9 = var8.gameObject.transform.anchoredPosition.y - var8.gameObject.transform.sizeDelta.y * 0.5
+		local var8_47 = arg0_47.cells[iter1_47][1]
+		local var9_47 = var8_47.gameObject.transform.anchoredPosition.y - var8_47.gameObject.transform.sizeDelta.y * 0.5
 
-		var7.anchoredPosition = Vector2(var7.anchoredPosition.x, var9 + arg0.offset.y)
+		var7_47.anchoredPosition = Vector2(var7_47.anchoredPosition.x, var9_47 + arg0_47.offset.y)
 	end
 end
 
-function var0.CreateCell(arg0, arg1, arg2, arg3)
-	if arg0.exited then
+function var0_0.CreateCell(arg0_48, arg1_48, arg2_48, arg3_48)
+	if arg0_48.exited then
 		return
 	end
 
-	local var0 = arg2 == 1 and arg1 == 1 and arg0.tpl or Object.Instantiate(arg0.tpl, arg0.tpl.parent).transform
-	local var1 = arg0.startPos.x + (arg2 - 1) * (arg0.width + arg0.offset.x)
-	local var2 = arg0.startPos.y - (arg1 - 1) * (arg0.height + arg0.offset.y)
+	local var0_48 = arg2_48 == 1 and arg1_48 == 1 and arg0_48.tpl or Object.Instantiate(arg0_48.tpl, arg0_48.tpl.parent).transform
+	local var1_48 = arg0_48.startPos.x + (arg2_48 - 1) * (arg0_48.width + arg0_48.offset.x)
+	local var2_48 = arg0_48.startPos.y - (arg1_48 - 1) * (arg0_48.height + arg0_48.offset.y)
 
-	LoadSpriteAtlasAsync("ui/WorldInPicture_atlas", "view_" .. arg3 - 1, function(arg0)
-		if arg0.exited then
+	LoadSpriteAtlasAsync("ui/WorldInPicture_atlas", "view_" .. arg3_48 - 1, function(arg0_49)
+		if arg0_48.exited then
 			return
 		end
 
-		local var0 = var0:GetComponent(typeof(Image))
+		local var0_49 = var0_48:GetComponent(typeof(Image))
 
-		var0.sprite = arg0
+		var0_49.sprite = arg0_49
 
-		var0:SetNativeSize()
+		var0_49:SetNativeSize()
 
-		var0.anchoredPosition = Vector2(var1, var2)
+		var0_48.anchoredPosition = Vector2(var1_48, var2_48)
 
-		arg0:CreateSelector(arg1, arg2)
-		arg0:CreateBox(arg1, arg2)
-		arg0:CreateDrawableArea(arg1, arg2)
-		arg0:CreateAnimal(arg1, arg2, true)
+		arg0_48:CreateSelector(arg1_48, arg2_48)
+		arg0_48:CreateBox(arg1_48, arg2_48)
+		arg0_48:CreateDrawableArea(arg1_48, arg2_48)
+		arg0_48:CreateAnimal(arg1_48, arg2_48, true)
 	end)
 
-	if not arg0.cells[arg1] then
-		arg0.cells[arg1] = {}
+	if not arg0_48.cells[arg1_48] then
+		arg0_48.cells[arg1_48] = {}
 	end
 
-	onButton(arg0, var0, function()
-		if arg0.opType == var1 then
-			if arg0.onkeyTravelProcess then
-				arg0.onkeyTravelProcess = false
+	onButton(arg0_48, var0_48, function()
+		if arg0_48.opType == var1_0 then
+			if arg0_48.onkeyTravelProcess then
+				arg0_48.onkeyTravelProcess = false
 
-				arg0:UpdateTravelBtnState()
+				arg0_48:UpdateTravelBtnState()
 
 				return
 			end
 
-			if arg0.data:IsTravelAll() then
+			if arg0_48.data:IsTravelAll() then
 				return
 			end
 
-			if arg0.data:GetTravelPoint() <= 0 then
+			if arg0_48.data:GetTravelPoint() <= 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("worldinpicture_tavel_point_tip"))
 
 				return
 			end
 
-			if arg0.data:CanSelect(arg1, arg2) then
-				arg0:emit(WorldInPictureMediator.ON_TRAVEL, arg1, arg2, arg3)
+			if arg0_48.data:CanSelect(arg1_48, arg2_48) then
+				arg0_48:emit(WorldInPictureMediator.ON_TRAVEL, arg1_48, arg2_48, arg3_48)
 			end
-		elseif arg0.opType == var2 then
-			if arg0.onkeyDrawPorcess then
-				arg0.onkeyDrawPorcess = false
+		elseif arg0_48.opType == var2_0 then
+			if arg0_48.onkeyDrawPorcess then
+				arg0_48.onkeyDrawPorcess = false
 
-				arg0:UpdateDrawBtnState()
+				arg0_48:UpdateDrawBtnState()
 
 				return
 			end
 
-			if arg0.data:IsDrawAll() then
+			if arg0_48.data:IsDrawAll() then
 				return
 			end
 
-			if arg0.data:GetDrawPoint() <= 0 then
+			if arg0_48.data:GetDrawPoint() <= 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("worldinpicture_draw_point_tip"))
 
 				return
 			end
 
-			if arg0.data:CanDraw(arg1, arg2) then
-				local var0, var1, var2 = arg0.data:Convert2DrawAreaHead(arg1, arg2)
+			if arg0_48.data:CanDraw(arg1_48, arg2_48) then
+				local var0_50, var1_50, var2_50 = arg0_48.data:Convert2DrawAreaHead(arg1_48, arg2_48)
 
-				arg0:emit(WorldInPictureMediator.ON_DRAW, var0, var1, var2)
+				arg0_48:emit(WorldInPictureMediator.ON_DRAW, var0_50, var1_50, var2_50)
 			end
 		end
 	end, SFX_PANEL)
 
-	local var3 = var0:GetComponent(typeof(CanvasGroup))
+	local var3_48 = var0_48:GetComponent(typeof(CanvasGroup))
 
-	var3.alpha = arg0.data:IsOpened(arg1, arg2) and 1 or 0
-	arg0.cells[arg1][arg2] = var3
+	var3_48.alpha = arg0_48.data:IsOpened(arg1_48, arg2_48) and 1 or 0
+	arg0_48.cells[arg1_48][arg2_48] = var3_48
 end
 
-function var0.CreateSelector(arg0, arg1, arg2)
-	if not arg0.data:CanSelect(arg1, arg2) then
+function var0_0.CreateSelector(arg0_51, arg1_51, arg2_51)
+	if not arg0_51.data:CanSelect(arg1_51, arg2_51) then
 		return
 	end
 
-	local var0 = table.getCount(arg0.selectors) == 0 and arg0.selectorTpl or Object.Instantiate(arg0.selectorTpl, arg0.selectorTpl.parent).transform
+	local var0_51 = table.getCount(arg0_51.selectors) == 0 and arg0_51.selectorTpl or Object.Instantiate(arg0_51.selectorTpl, arg0_51.selectorTpl.parent).transform
 
-	var0.anchoredPosition = arg0.cells[arg1][arg2].gameObject.transform.anchoredPosition + Vector2(-5, -4.8)
+	var0_51.anchoredPosition = arg0_51.cells[arg1_51][arg2_51].gameObject.transform.anchoredPosition + Vector2(-5, -4.8)
 
-	local var1 = var0:GetComponent(typeof(CanvasGroup))
+	local var1_51 = var0_51:GetComponent(typeof(CanvasGroup))
 
-	var1.alpha = 1
+	var1_51.alpha = 1
 
-	if not arg0.selectors[arg1] then
-		arg0.selectors[arg1] = {}
+	if not arg0_51.selectors[arg1_51] then
+		arg0_51.selectors[arg1_51] = {}
 	end
 
-	arg0.selectors[arg1][arg2] = var1
+	arg0_51.selectors[arg1_51][arg2_51] = var1_51
 end
 
-function var0.CreateBox(arg0, arg1, arg2)
-	if not arg0.data:ExistBox(arg1, arg2) or arg0.data:IsOpened(arg1, arg2) then
+function var0_0.CreateBox(arg0_52, arg1_52, arg2_52)
+	if not arg0_52.data:ExistBox(arg1_52, arg2_52) or arg0_52.data:IsOpened(arg1_52, arg2_52) then
 		return
 	end
 
-	local var0 = table.getCount(arg0.boxes) == 0 and arg0.boxTpl or Object.Instantiate(arg0.boxTpl, arg0.boxTpl.parent).transform
-	local var1 = var0:GetComponent(typeof(CanvasGroup))
+	local var0_52 = table.getCount(arg0_52.boxes) == 0 and arg0_52.boxTpl or Object.Instantiate(arg0_52.boxTpl, arg0_52.boxTpl.parent).transform
+	local var1_52 = var0_52:GetComponent(typeof(CanvasGroup))
 
-	var1.alpha = 1
-	var0.anchoredPosition = arg0.cells[arg1][arg2].gameObject.transform.anchoredPosition
+	var1_52.alpha = 1
+	var0_52.anchoredPosition = arg0_52.cells[arg1_52][arg2_52].gameObject.transform.anchoredPosition
 
-	if not arg0.boxes[arg1] then
-		arg0.boxes[arg1] = {}
+	if not arg0_52.boxes[arg1_52] then
+		arg0_52.boxes[arg1_52] = {}
 	end
 
-	arg0.boxes[arg1][arg2] = var1
+	arg0_52.boxes[arg1_52][arg2_52] = var1_52
 end
 
-function var0.CreateDrawableArea(arg0, arg1, arg2)
-	local var0 = arg0.data:GetDrawableArea(arg1, arg2)
+function var0_0.CreateDrawableArea(arg0_53, arg1_53, arg2_53)
+	local var0_53 = arg0_53.data:GetDrawableArea(arg1_53, arg2_53)
 
-	if not var0 or arg0.data:IsDrawed(arg1, arg2) then
+	if not var0_53 or arg0_53.data:IsDrawed(arg1_53, arg2_53) then
 		return
 	end
 
-	local var1 = table.getCount(arg0.drawableAare) == 0 and arg0.areaTpl or Object.Instantiate(arg0.areaTpl, arg0.areaTpl.parent).transform
-	local var2 = var0[#var0] - var0[1] + Vector2(1, 1)
-	local var3 = arg0.cells[arg1][arg2]
-	local var4 = arg0.tpl.sizeDelta * 0.5
+	local var1_53 = table.getCount(arg0_53.drawableAare) == 0 and arg0_53.areaTpl or Object.Instantiate(arg0_53.areaTpl, arg0_53.areaTpl.parent).transform
+	local var2_53 = var0_53[#var0_53] - var0_53[1] + Vector2(1, 1)
+	local var3_53 = arg0_53.cells[arg1_53][arg2_53]
+	local var4_53 = arg0_53.tpl.sizeDelta * 0.5
 
-	var1.anchoredPosition = var3.gameObject.transform.anchoredPosition - Vector2(var4.x, -var4.y)
+	var1_53.anchoredPosition = var3_53.gameObject.transform.anchoredPosition - Vector2(var4_53.x, -var4_53.y)
 
-	local var5 = var1:GetComponent(typeof(CanvasGroup))
+	local var5_53 = var1_53:GetComponent(typeof(CanvasGroup))
 
-	var5.alpha = 1
+	var5_53.alpha = 1
 
-	if not arg0.drawableAare[arg1] then
-		arg0.drawableAare[arg1] = {}
+	if not arg0_53.drawableAare[arg1_53] then
+		arg0_53.drawableAare[arg1_53] = {}
 	end
 
-	arg0.drawableAare[arg1][arg2] = var5
+	arg0_53.drawableAare[arg1_53][arg2_53] = var5_53
 end
 
-function var0.UpdateDrawableAreas(arg0)
-	local var0 = arg0.data:GetDrawableAreasState()
+function var0_0.UpdateDrawableAreas(arg0_54)
+	local var0_54 = arg0_54.data:GetDrawableAreasState()
 
-	for iter0, iter1 in ipairs(var0) do
-		local var1 = iter1.position
+	for iter0_54, iter1_54 in ipairs(var0_54) do
+		local var1_54 = iter1_54.position
 
-		if arg0.drawableAare[var1.x] and arg0.drawableAare[var1.x][var1.y] then
-			arg0.drawableAare[var1.x][var1.y].alpha = iter1.open and 1 or 0
+		if arg0_54.drawableAare[var1_54.x] and arg0_54.drawableAare[var1_54.x][var1_54.y] then
+			arg0_54.drawableAare[var1_54.x][var1_54.y].alpha = iter1_54.open and 1 or 0
 		end
 	end
 end
 
-function var0.CreateAnimal(arg0, arg1, arg2, arg3, arg4)
-	if not arg0.data:GetDrawableArea(arg1, arg2) or not arg0.data:IsDrawed(arg1, arg2) then
+function var0_0.CreateAnimal(arg0_55, arg1_55, arg2_55, arg3_55, arg4_55)
+	if not arg0_55.data:GetDrawableArea(arg1_55, arg2_55) or not arg0_55.data:IsDrawed(arg1_55, arg2_55) then
 		return
 	end
 
-	local var0 = table.getCount(arg0.animals) == 0 and arg0.animalTpl or Object.Instantiate(arg0.animalTpl, arg0.animalTpl.parent).transform
-	local var1 = arg0.data:GetDrawAnimData(arg1, arg2)
-	local var2 = Vector2(var1[2], var1[3])
+	local var0_55 = table.getCount(arg0_55.animals) == 0 and arg0_55.animalTpl or Object.Instantiate(arg0_55.animalTpl, arg0_55.animalTpl.parent).transform
+	local var1_55 = arg0_55.data:GetDrawAnimData(arg1_55, arg2_55)
+	local var2_55 = Vector2(var1_55[2], var1_55[3])
 
-	LoadSpriteAtlasAsync("ui/WorldInPicture_atlas", var1[1], function(arg0)
-		if arg0.exited then
+	LoadSpriteAtlasAsync("ui/WorldInPicture_atlas", var1_55[1], function(arg0_56)
+		if arg0_55.exited then
 			return
 		end
 
-		local var0 = var0:GetComponent(typeof(Image))
+		local var0_56 = var0_55:GetComponent(typeof(Image))
 
-		var0.sprite = arg0
+		var0_56.sprite = arg0_56
 
-		var0:SetNativeSize()
+		var0_56:SetNativeSize()
 
-		var0.localScale = Vector3(var1[4] or 1, var1[4] or 1, 1)
+		var0_55.localScale = Vector3(var1_55[4] or 1, var1_55[4] or 1, 1)
 
-		if arg4 then
-			arg4(var0)
+		if arg4_55 then
+			arg4_55(var0_55)
 		end
 	end)
 
-	var0.localScale = Vector3.zero
-	var0.localPosition = var2
+	var0_55.localScale = Vector3.zero
+	var0_55.localPosition = var2_55
 
-	if not arg0.animals[arg1] then
-		arg0.animals[arg1] = {}
+	if not arg0_55.animals[arg1_55] then
+		arg0_55.animals[arg1_55] = {}
 	end
 
-	local var3 = var0:GetComponent(typeof(CanvasGroup))
+	local var3_55 = var0_55:GetComponent(typeof(CanvasGroup))
 
-	var3.alpha = arg3 and 1 or 0
-	arg0.animals[arg1][arg2] = var3
+	var3_55.alpha = arg3_55 and 1 or 0
+	arg0_55.animals[arg1_55][arg2_55] = var3_55
 end
 
-local function var3(arg0, arg1)
-	return "<color=#DAC6B3>" .. arg0 .. "</color><color=#A38052>/" .. arg1 .. "</color>"
+local function var3_0(arg0_57, arg1_57)
+	return "<color=#DAC6B3>" .. arg0_57 .. "</color><color=#A38052>/" .. arg1_57 .. "</color>"
 end
 
-function var0.UpdatePoints(arg0)
-	arg0.travelPointTxt.text = arg0.data:GetTravelPoint()
-	arg0.drawPointTxt.text = arg0.data:GetDrawPoint()
-	arg0.travelProgressTxt.text = var3(arg0.data:GetTravelProgress(), arg0.data:GetMaxTravelCnt())
-	arg0.drawProgressTxt.text = var3(arg0.data:GetDrawProgress(), arg0.data:GetMaxDrawCnt())
+function var0_0.UpdatePoints(arg0_58)
+	arg0_58.travelPointTxt.text = arg0_58.data:GetTravelPoint()
+	arg0_58.drawPointTxt.text = arg0_58.data:GetDrawPoint()
+	arg0_58.travelProgressTxt.text = var3_0(arg0_58.data:GetTravelProgress(), arg0_58.data:GetMaxTravelCnt())
+	arg0_58.drawProgressTxt.text = var3_0(arg0_58.data:GetDrawProgress(), arg0_58.data:GetMaxDrawCnt())
 end
 
-function var0.DoAnimtion(arg0, arg1, arg2, arg3)
-	if arg0.timer then
-		arg0.timer:Stop()
+function var0_0.DoAnimtion(arg0_59, arg1_59, arg2_59, arg3_59)
+	if arg0_59.timer then
+		arg0_59.timer:Stop()
 
-		arg0.timer = nil
+		arg0_59.timer = nil
 	end
 
-	local function var0(arg0)
-		arg0[arg1] = arg0
-		arg0.anchoredPosition = arg2
+	local function var0_59(arg0_60)
+		arg0_59[arg1_59] = arg0_60
+		arg0_60.anchoredPosition = arg2_59
 
-		setActive(arg0, true)
+		setActive(arg0_60, true)
 
-		arg0.timer = Timer.New(function()
-			setActive(arg0, false)
-			arg0.timer:Stop()
+		arg0_59.timer = Timer.New(function()
+			setActive(arg0_60, false)
+			arg0_59.timer:Stop()
 
-			arg0.timer = nil
+			arg0_59.timer = nil
 
-			arg3()
+			arg3_59()
 		end, 0.6, 1)
 
-		arg0.timer:Start()
+		arg0_59.timer:Start()
 	end
 
-	local var1 = arg0[arg1]
+	local var1_59 = arg0_59[arg1_59]
 
-	if not var1 then
-		arg0:LoadEffect(arg1, var0)
+	if not var1_59 then
+		arg0_59:LoadEffect(arg1_59, var0_59)
 	else
-		var0(var1)
+		var0_59(var1_59)
 	end
 end
 
-function var0.GetRedPacket(arg0)
-	if #arg0.redpackets <= 0 then
-		local var0 = Object.Instantiate(arg0.redpacket, arg0.redpacket.parent)
+function var0_0.GetRedPacket(arg0_62)
+	if #arg0_62.redpackets <= 0 then
+		local var0_62 = Object.Instantiate(arg0_62.redpacket, arg0_62.redpacket.parent)
 
-		table.insert(arg0.redpackets, var0.transform)
+		table.insert(arg0_62.redpackets, var0_62.transform)
 	end
 
-	local var1 = table.remove(arg0.redpackets, 1)
+	local var1_62 = table.remove(arg0_62.redpackets, 1)
 
-	setActive(var1, true)
+	setActive(var1_62, true)
 
-	return var1
+	return var1_62
 end
 
-function var0.LoadEffect(arg0, arg1, arg2)
-	ResourceMgr.Inst:getAssetAsync("UI/" .. arg1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0)
-		if arg0.exited then
+function var0_0.LoadEffect(arg0_63, arg1_63, arg2_63)
+	ResourceMgr.Inst:getAssetAsync("UI/" .. arg1_63, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_64)
+		if arg0_63.exited then
 			return
 		end
 
-		arg2(Object.Instantiate(arg0, arg0._tf).transform)
+		arg2_63(Object.Instantiate(arg0_64, arg0_63._tf).transform)
 	end), true, true)
 end
 
-function var0.willExit(arg0)
-	for iter0, iter1 in ipairs(arg0.redpackets) do
-		if LeanTween.isTweening(iter1.gameObject) then
-			LeanTween.cancel(iter1)
+function var0_0.willExit(arg0_65)
+	for iter0_65, iter1_65 in ipairs(arg0_65.redpackets) do
+		if LeanTween.isTweening(iter1_65.gameObject) then
+			LeanTween.cancel(iter1_65)
 		end
 	end
 
-	if LeanTween.isTweening(arg0.char) then
-		LeanTween.cancel(arg0.char)
+	if LeanTween.isTweening(arg0_65.char) then
+		LeanTween.cancel(arg0_65.char)
 	end
 
-	if arg0.timer then
-		arg0.timer:Stop()
+	if arg0_65.timer then
+		arg0_65.timer:Stop()
 
-		arg0.timer = nil
+		arg0_65.timer = nil
 	end
 
 	Input.multiTouchEnabled = true
 end
 
-return var0
+return var0_0

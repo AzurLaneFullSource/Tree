@@ -1,210 +1,210 @@
-﻿local var0 = import(".MapBuilder")
-local var1 = class("MapBuilderSkirmish", var0)
+﻿local var0_0 = import(".MapBuilder")
+local var1_0 = class("MapBuilderSkirmish", var0_0)
 
-function var1.GetType(arg0)
-	return var0.TYPESKIRMISH
+function var1_0.GetType(arg0_1)
+	return var0_0.TYPESKIRMISH
 end
 
-function var1.getUIName(arg0)
+function var1_0.getUIName(arg0_2)
 	return "skirmish_levels"
 end
 
-function var1.Update(arg0, ...)
-	local var0 = arg0._tf
-	local var1 = 0.21875
+function var1_0.Update(arg0_3, ...)
+	local var0_3 = arg0_3._tf
+	local var1_3 = 0.21875
 
-	var0.pivot = Vector2(var1, 1)
-	var0.anchorMin = Vector2(0.5, 1)
-	var0.anchorMax = Vector2(0.5, 1)
+	var0_3.pivot = Vector2(var1_3, 1)
+	var0_3.anchorMin = Vector2(0.5, 1)
+	var0_3.anchorMax = Vector2(0.5, 1)
 
-	local var2 = (var1 - 0.5) * arg0._parentTf.rect.width
+	local var2_3 = (var1_3 - 0.5) * arg0_3._parentTf.rect.width
 
-	var0.anchoredPosition = Vector2(var2, 0)
-	arg0.map.pivot = Vector2(var1, 1)
+	var0_3.anchoredPosition = Vector2(var2_3, 0)
+	arg0_3.map.pivot = Vector2(var1_3, 1)
 
-	local var3 = arg0.map.rect.width / arg0.map.rect.height
-	local var4 = arg0._parentTf.rect.width / arg0._parentTf.rect.height
-	local var5
+	local var3_3 = arg0_3.map.rect.width / arg0_3.map.rect.height
+	local var4_3 = arg0_3._parentTf.rect.width / arg0_3._parentTf.rect.height
+	local var5_3
 
-	if var3 < var4 then
-		var5 = arg0._parentTf.rect.width / arg0._tf.rect.width
+	if var3_3 < var4_3 then
+		var5_3 = arg0_3._parentTf.rect.width / arg0_3._tf.rect.width
 	else
-		var5 = arg0._parentTf.rect.height / arg0._tf.rect.height
+		var5_3 = arg0_3._parentTf.rect.height / arg0_3._tf.rect.height
 	end
 
-	arg0._tf.localScale = Vector3(var5, var5, var5)
+	arg0_3._tf.localScale = Vector3(var5_3, var5_3, var5_3)
 
-	var1.super.Update(arg0, ...)
+	var1_0.super.Update(arg0_3, ...)
 end
 
-local var2 = Vector2(-193.5, 120.6)
-local var3 = Vector2(211.3, 116.5263)
-local var4 = Vector2(0, -622)
-local var5 = Vector2(-114, -372)
+local var2_0 = Vector2(-193.5, 120.6)
+local var3_0 = Vector2(211.3, 116.5263)
+local var4_0 = Vector2(0, -622)
+local var5_0 = Vector2(-114, -372)
 
-function var1.UpdateMapItems(arg0)
-	var1.super.UpdateMapItems(arg0)
+function var1_0.UpdateMapItems(arg0_4)
+	var1_0.super.UpdateMapItems(arg0_4)
 
-	local var0 = getProxy(SkirmishProxy)
+	local var0_4 = getProxy(SkirmishProxy)
 
-	if var0:TryFetchNewTask() then
+	if var0_4:TryFetchNewTask() then
 		return
 	end
 
-	local var1 = arg0._tf
-	local var2 = var1:Find("skirmish_items")
-	local var3 = var1:Find("point_Links")
-	local var4 = var1:Find("levelinfo")
+	local var1_4 = arg0_4._tf
+	local var2_4 = var1_4:Find("skirmish_items")
+	local var3_4 = var1_4:Find("point_Links")
+	local var4_4 = var1_4:Find("levelinfo")
 
-	var0:UpdateSkirmishProgress()
+	var0_4:UpdateSkirmishProgress()
 
-	local var5 = var0:getRawData()
+	local var5_4 = var0_4:getRawData()
 
-	for iter0 = 1, var2.childCount do
-		go(var2:GetChild(iter0 - 1)):SetActive(false)
+	for iter0_4 = 1, var2_4.childCount do
+		go(var2_4:GetChild(iter0_4 - 1)):SetActive(false)
 	end
 
-	for iter1 = 1, var3.childCount do
-		go(var3:GetChild(iter1 - 1)):SetActive(false)
+	for iter1_4 = 1, var3_4.childCount do
+		go(var3_4:GetChild(iter1_4 - 1)):SetActive(false)
 	end
 
-	local var6 = 0
-	local var7 = false
-	local var8 = 0
-	local var9 = 0
+	local var6_4 = 0
+	local var7_4 = false
+	local var8_4 = 0
+	local var9_4 = 0
 
-	for iter2, iter3 in ipairs(var5) do
-		local var10 = iter3
-		local var11 = var2:GetChild(iter2 - 1)
+	for iter2_4, iter3_4 in ipairs(var5_4) do
+		local var10_4 = iter3_4
+		local var11_4 = var2_4:GetChild(iter2_4 - 1)
 
-		if iter2 - 2 >= 0 then
-			go(var3:GetChild(iter2 - 2)):SetActive(var10:GetState() > SkirmishVO.StateActive)
+		if iter2_4 - 2 >= 0 then
+			go(var3_4:GetChild(iter2_4 - 2)):SetActive(var10_4:GetState() > SkirmishVO.StateActive)
 		end
 
-		local var12 = iter3:GetState()
+		local var12_4 = iter3_4:GetState()
 
-		setActive(var11, var12 > SkirmishVO.StateActive)
-		setActive(var11:Find("flag"), var12 == SkirmishVO.StateWorking)
-		setActive(var11:Find("clear"), var12 == SkirmishVO.StateClear)
+		setActive(var11_4, var12_4 > SkirmishVO.StateActive)
+		setActive(var11_4:Find("flag"), var12_4 == SkirmishVO.StateWorking)
+		setActive(var11_4:Find("clear"), var12_4 == SkirmishVO.StateClear)
 
-		var8 = var12 > SkirmishVO.StateInactive and var8 + 1 or var8
-		var9 = var12 == SkirmishVO.StateClear and var9 + 1 or var9
+		var8_4 = var12_4 > SkirmishVO.StateInactive and var8_4 + 1 or var8_4
+		var9_4 = var12_4 == SkirmishVO.StateClear and var9_4 + 1 or var9_4
 
-		if var12 == SkirmishVO.StateWorking then
-			var6 = iter2
+		if var12_4 == SkirmishVO.StateWorking then
+			var6_4 = iter2_4
 		end
 
-		if var10.flagNew then
-			var10.flagNew = nil
+		if var10_4.flagNew then
+			var10_4.flagNew = nil
 
-			if iter2 ~= 1 then
-				go(var11):SetActive(false)
+			if iter2_4 ~= 1 then
+				go(var11_4):SetActive(false)
 
-				var7 = true
+				var7_4 = true
 
-				local var13 = var3:GetChild(iter2 - 2):GetComponent(typeof(Image))
+				local var13_4 = var3_4:GetChild(iter2_4 - 2):GetComponent(typeof(Image))
 
-				var13.fillAmount = 0
+				var13_4.fillAmount = 0
 
-				LeanTween.value(go(var11), 0, 1, 2):setOnUpdate(System.Action_float(function(arg0)
-					var13.fillAmount = arg0
+				LeanTween.value(go(var11_4), 0, 1, 2):setOnUpdate(System.Action_float(function(arg0_5)
+					var13_4.fillAmount = arg0_5
 				end)):setOnComplete(System.Action(function()
-					go(var11):SetActive(true)
-					go(var4):SetActive(true)
+					go(var11_4):SetActive(true)
+					go(var4_4):SetActive(true)
 				end)):setDelay(0.5)
 			end
 		end
 
-		local var14 = var10:getConfig("task_id")
+		local var14_4 = var10_4:getConfig("task_id")
 
-		onButton(arg0.sceneParent, var11, function()
-			if var12 ~= SkirmishVO.StateWorking then
+		onButton(arg0_4.sceneParent, var11_4, function()
+			if var12_4 ~= SkirmishVO.StateWorking then
 				return
 			end
 
-			local var0 = var10:GetType()
-			local var1 = var10:GetEvent()
+			local var0_7 = var10_4:GetType()
+			local var1_7 = var10_4:GetEvent()
 
-			if var0 == SkirmishVO.TypeStoryOrExpedition then
-				if tonumber(var1) then
-					var1 = tonumber(var1)
+			if var0_7 == SkirmishVO.TypeStoryOrExpedition then
+				if tonumber(var1_7) then
+					var1_7 = tonumber(var1_7)
 
-					local var2 = arg0.sceneParent.contextData
+					local var2_7 = arg0_4.sceneParent.contextData
 
-					arg0:InvokeParent("emit", LevelMediator2.ON_PERFORM_COMBAT, var1, function()
-						var2.preparedTaskList = var2.preparedTaskList or {}
+					arg0_4:InvokeParent("emit", LevelMediator2.ON_PERFORM_COMBAT, var1_7, function()
+						var2_7.preparedTaskList = var2_7.preparedTaskList or {}
 
-						table.insert(var2.preparedTaskList, var14)
+						table.insert(var2_7.preparedTaskList, var14_4)
 					end)
 				else
-					pg.NewStoryMgr.GetInstance():Play(var1, function()
-						arg0:InvokeParent("emit", LevelMediator2.ON_SUBMIT_TASK, var14)
+					pg.NewStoryMgr.GetInstance():Play(var1_7, function()
+						arg0_4:InvokeParent("emit", LevelMediator2.ON_SUBMIT_TASK, var14_4)
 					end)
 				end
-			elseif var0 == SkirmishVO.TypeChapter then
-				local var3 = tonumber(var1)
-				local var4 = getProxy(ChapterProxy):getChapterById(var3)
+			elseif var0_7 == SkirmishVO.TypeChapter then
+				local var3_7 = tonumber(var1_7)
+				local var4_7 = getProxy(ChapterProxy):getChapterById(var3_7)
 
-				arg0:InvokeParent("TrySwitchChapter", var4)
+				arg0_4:InvokeParent("TrySwitchChapter", var4_7)
 			end
 		end)
 	end
 
-	if var6 > 0 then
-		setActive(var4, not var7)
+	if var6_4 > 0 then
+		setActive(var4_4, not var7_4)
 
-		local var15 = var2:GetChild(var6 - 1)
+		local var15_4 = var2_4:GetChild(var6_4 - 1)
 
-		var4.anchoredPosition = var15.anchoredPosition:Add(var6 == 3 and var3 or var2)
+		var4_4.anchoredPosition = var15_4.anchoredPosition:Add(var6_4 == 3 and var3_0 or var2_0)
 
-		setActive(var4:Find("line1"), var6 ~= 3)
-		setActive(var4:Find("line2"), var6 == 3)
-		setText(var4:Find("info/position"), string.format("POSITION  %02d", var6))
-		setText(var4:Find("info/name"), var5[var6]:getConfig("name"))
-		onButton(arg0.sceneParent, var4, function()
-			triggerButton(var15)
+		setActive(var4_4:Find("line1"), var6_4 ~= 3)
+		setActive(var4_4:Find("line2"), var6_4 == 3)
+		setText(var4_4:Find("info/position"), string.format("POSITION  %02d", var6_4))
+		setText(var4_4:Find("info/name"), var5_4[var6_4]:getConfig("name"))
+		onButton(arg0_4.sceneParent, var4_4, function()
+			triggerButton(var15_4)
 		end)
 	else
-		setActive(var4, false)
+		setActive(var4_4, false)
 	end
 
-	local var16 = var1:Find("cloud")
+	local var16_4 = var1_4:Find("cloud")
 
-	var16.anchoredPosition = var4
+	var16_4.anchoredPosition = var4_0
 
-	LeanTween.value(go(var16), var4, var5, 30):setOnUpdateVector2(function(arg0)
-		var16.anchoredPosition = arg0
+	LeanTween.value(go(var16_4), var4_0, var5_0, 30):setOnUpdateVector2(function(arg0_11)
+		var16_4.anchoredPosition = arg0_11
 	end)
 
-	arg0.sceneParent.skirmishBar:Find("text"):GetComponent(typeof(Text)).text = var8 - var9
+	arg0_4.sceneParent.skirmishBar:Find("text"):GetComponent(typeof(Text)).text = var8_4 - var9_4
 end
 
-function var1.OnShow(arg0)
-	setActive(arg0.sceneParent.topChapter:Find("type_skirmish"), true)
-	setActive(arg0.sceneParent.skirmishBar, true)
-	setActive(arg0.sceneParent.leftChapter:Find("buttons"), false)
-	setActive(arg0.sceneParent.eventContainer, false)
-	setActive(arg0.sceneParent.rightChapter, false)
+function var1_0.OnShow(arg0_12)
+	setActive(arg0_12.sceneParent.topChapter:Find("type_skirmish"), true)
+	setActive(arg0_12.sceneParent.skirmishBar, true)
+	setActive(arg0_12.sceneParent.leftChapter:Find("buttons"), false)
+	setActive(arg0_12.sceneParent.eventContainer, false)
+	setActive(arg0_12.sceneParent.rightChapter, false)
 end
 
-function var1.OnHide(arg0)
-	setActive(arg0.sceneParent.topChapter:Find("type_skirmish"), false)
-	setActive(arg0.sceneParent.skirmishBar, false)
-	setActive(arg0.sceneParent.leftChapter:Find("buttons"), true)
-	setActive(arg0.sceneParent.eventContainer, true)
-	setActive(arg0.sceneParent.rightChapter, true)
+function var1_0.OnHide(arg0_13)
+	setActive(arg0_13.sceneParent.topChapter:Find("type_skirmish"), false)
+	setActive(arg0_13.sceneParent.skirmishBar, false)
+	setActive(arg0_13.sceneParent.leftChapter:Find("buttons"), true)
+	setActive(arg0_13.sceneParent.eventContainer, true)
+	setActive(arg0_13.sceneParent.rightChapter, true)
 
-	local var0 = arg0._tf:Find("skirmish_items")
+	local var0_13 = arg0_13._tf:Find("skirmish_items")
 
-	for iter0 = 1, var0.childCount do
-		local var1 = var0:GetChild(iter0 - 1)
+	for iter0_13 = 1, var0_13.childCount do
+		local var1_13 = var0_13:GetChild(iter0_13 - 1)
 
-		LeanTween.cancel(go(var1))
+		LeanTween.cancel(go(var1_13))
 	end
 
-	local var2 = arg0._tf:Find("cloud")
+	local var2_13 = arg0_13._tf:Find("cloud")
 
-	LeanTween.cancel(go(var2))
+	LeanTween.cancel(go(var2_13))
 end
 
-return var1
+return var1_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_29 = {}
+var0_0.word_template_29 = {}
 
-local var1 = var0.word_template_29
+local var1_0 = var0_0.word_template_29
 
 function temp()
-	var1.池 = {
+	var1_0.池 = {
 		沼 = {
 			this = true
 		},
@@ -30,7 +30,7 @@ end
 temp()
 
 function temp()
-	var1.痴 = {
+	var1_0.痴 = {
 		this = {
 			this = true
 		},
@@ -75,7 +75,7 @@ end
 temp()
 
 function temp()
-	var1.着 = {
+	var1_0.着 = {
 		エ = {
 			ロ = {
 				this = true
@@ -87,7 +87,7 @@ end
 temp()
 
 function temp()
-	var1.中 = {
+	var1_0.中 = {
 		出 = {
 			し = {
 				this = true
@@ -2891,7 +2891,7 @@ end
 temp()
 
 function temp()
-	var1.低 = {
+	var1_0.低 = {
 		学 = {
 			歴 = {
 				this = true
@@ -2974,7 +2974,7 @@ end
 temp()
 
 function temp()
-	var1.提 = {
+	var1_0.提 = {
 		携 = {
 			this = true
 		},
@@ -3747,7 +3747,7 @@ end
 temp()
 
 function temp()
-	var1.天 = {
+	var1_0.天 = {
 		安 = {
 			門 = {
 				this = true,

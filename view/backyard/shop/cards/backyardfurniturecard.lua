@@ -1,177 +1,177 @@
-﻿local var0 = class("BackYardFurnitureCard")
+﻿local var0_0 = class("BackYardFurnitureCard")
 
-function var0.Ctor(arg0, arg1)
-	arg0._go = arg1
-	arg0._tf = arg1.transform
-	arg0.group = arg0._tf:GetComponent(typeof(CanvasGroup))
-	arg0.icon = findTF(arg0._tf, "icon"):GetComponent(typeof(Image))
-	arg0.comfortableTF = findTF(arg0._tf, "comfortable")
-	arg0.comfortable = findTF(arg0._tf, "comfortable"):GetComponent(typeof(Text))
-	arg0.name = findTF(arg0._tf, "name"):GetComponent(typeof(Text))
-	arg0.themeName = findTF(arg0._tf, "theme"):GetComponent(typeof(Text))
-	arg0.desc = findTF(arg0._tf, "desc"):GetComponent(typeof(Text))
-	arg0.resGold = findTF(arg0._tf, "res/gold")
-	arg0.resGoldTxt = findTF(arg0._tf, "res/gold/Text"):GetComponent(typeof(Text))
-	arg0.resGemTxt = findTF(arg0._tf, "res/gem/Text"):GetComponent(typeof(Text))
-	arg0.resGem = findTF(arg0._tf, "res/gem")
-	arg0.cantPurchase = findTF(arg0._tf, "res/unopen")
-	arg0.countTxt = findTF(arg0._tf, "count"):GetComponent(typeof(Text))
-	arg0.maskTF = findTF(arg0._tf, "mask")
-	arg0.hotTF = findTF(arg0._tf, "hot")
-	arg0.newTF = findTF(arg0._tf, "new")
-	arg0.skinMark = findTF(arg0._tf, "skin_mark")
-	arg0.maskUnOpen = findTF(arg0._tf, "mask1")
-	arg0.countDownTm = findTF(arg0._tf, "time/Text"):GetComponent(typeof(Text))
-	arg0.timerTr = findTF(arg0._tf, "time")
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1._go = arg1_1
+	arg0_1._tf = arg1_1.transform
+	arg0_1.group = arg0_1._tf:GetComponent(typeof(CanvasGroup))
+	arg0_1.icon = findTF(arg0_1._tf, "icon"):GetComponent(typeof(Image))
+	arg0_1.comfortableTF = findTF(arg0_1._tf, "comfortable")
+	arg0_1.comfortable = findTF(arg0_1._tf, "comfortable"):GetComponent(typeof(Text))
+	arg0_1.name = findTF(arg0_1._tf, "name"):GetComponent(typeof(Text))
+	arg0_1.themeName = findTF(arg0_1._tf, "theme"):GetComponent(typeof(Text))
+	arg0_1.desc = findTF(arg0_1._tf, "desc"):GetComponent(typeof(Text))
+	arg0_1.resGold = findTF(arg0_1._tf, "res/gold")
+	arg0_1.resGoldTxt = findTF(arg0_1._tf, "res/gold/Text"):GetComponent(typeof(Text))
+	arg0_1.resGemTxt = findTF(arg0_1._tf, "res/gem/Text"):GetComponent(typeof(Text))
+	arg0_1.resGem = findTF(arg0_1._tf, "res/gem")
+	arg0_1.cantPurchase = findTF(arg0_1._tf, "res/unopen")
+	arg0_1.countTxt = findTF(arg0_1._tf, "count"):GetComponent(typeof(Text))
+	arg0_1.maskTF = findTF(arg0_1._tf, "mask")
+	arg0_1.hotTF = findTF(arg0_1._tf, "hot")
+	arg0_1.newTF = findTF(arg0_1._tf, "new")
+	arg0_1.skinMark = findTF(arg0_1._tf, "skin_mark")
+	arg0_1.maskUnOpen = findTF(arg0_1._tf, "mask1")
+	arg0_1.countDownTm = findTF(arg0_1._tf, "time/Text"):GetComponent(typeof(Text))
+	arg0_1.timerTr = findTF(arg0_1._tf, "time")
 
-	setActive(arg0.timerTr, false)
+	setActive(arg0_1.timerTr, false)
 end
 
-function var0.Update(arg0, arg1)
-	if arg0.group then
-		arg0.group.alpha = 1
+function var0_0.Update(arg0_2, arg1_2)
+	if arg0_2.group then
+		arg0_2.group.alpha = 1
 	end
 
-	arg0.furniture = arg1
+	arg0_2.furniture = arg1_2
 
-	local var0 = HXSet.hxLan(arg1:getConfig("name"))
+	local var0_2 = HXSet.hxLan(arg1_2:getConfig("name"))
 
-	arg0.name.text = shortenString(var0, 9)
-	arg0.themeName.text = shortenString(arg1:GetThemeName(), 7)
-	arg0.desc.text = HXSet.hxLan(arg1:getConfig("describe"))
-	arg0.comfortable.text = "+" .. arg1:getConfig("comfortable")
+	arg0_2.name.text = shortenString(var0_2, 9)
+	arg0_2.themeName.text = shortenString(arg1_2:GetThemeName(), 7)
+	arg0_2.desc.text = HXSet.hxLan(arg1_2:getConfig("describe"))
+	arg0_2.comfortable.text = "+" .. arg1_2:getConfig("comfortable")
 
-	GetSpriteFromAtlasAsync("furnitureicon/" .. arg1:getConfig("icon"), "", function(arg0)
-		if IsNil(arg0.icon) then
+	GetSpriteFromAtlasAsync("furnitureicon/" .. arg1_2:getConfig("icon"), "", function(arg0_3)
+		if IsNil(arg0_2.icon) then
 			return
 		end
 
-		arg0.icon.sprite = arg0
+		arg0_2.icon.sprite = arg0_3
 	end)
 
-	local var1 = arg1:getConfig("count")
-	local var2 = var1 > 1 and arg1.count .. "/" .. var1 or ""
+	local var1_2 = arg1_2:getConfig("count")
+	local var2_2 = var1_2 > 1 and arg1_2.count .. "/" .. var1_2 or ""
 
-	arg0.countTxt.text = var2
+	arg0_2.countTxt.text = var2_2
 
-	local var3 = arg1:canPurchaseByGem()
+	local var3_2 = arg1_2:canPurchaseByGem()
 
-	setActive(arg0.resGem, var3)
+	setActive(arg0_2.resGem, var3_2)
 
-	local var4 = arg1:canPurchaseByDormMoeny()
+	local var4_2 = arg1_2:canPurchaseByDormMoeny()
 
-	setActive(arg0.resGold, var4)
+	setActive(arg0_2.resGold, var4_2)
 
-	local var5 = arg1:canPurchase()
+	local var5_2 = arg1_2:canPurchase()
 
-	if arg0.maskUnOpen then
-		setActive(arg0.maskUnOpen, var5 and (not var3 and not var4 or not arg1:inTime()))
+	if arg0_2.maskUnOpen then
+		setActive(arg0_2.maskUnOpen, var5_2 and (not var3_2 and not var4_2 or not arg1_2:inTime()))
 	end
 
-	arg0.resGoldTxt.text = arg1:getPrice(PlayerConst.ResDormMoney)
-	arg0.resGemTxt.text = arg1:getPrice(PlayerConst.ResDiamond)
+	arg0_2.resGoldTxt.text = arg1_2:getPrice(PlayerConst.ResDormMoney)
+	arg0_2.resGemTxt.text = arg1_2:getPrice(PlayerConst.ResDiamond)
 
-	setActive(arg0.maskTF, not var5)
+	setActive(arg0_2.maskTF, not var5_2)
 
-	local var6 = false
+	local var6_2 = false
 
-	setActive(arg0.hotTF, var6)
+	setActive(arg0_2.hotTF, var6_2)
 
-	local var7 = arg1:IsNew()
+	local var7_2 = arg1_2:IsNew()
 
-	setActive(arg0.newTF, var7 and var5)
+	setActive(arg0_2.newTF, var7_2 and var5_2)
 
-	local var8, var9 = arg1:inTime()
-	local var10 = arg1:isTimeLimit() and var8
+	local var8_2, var9_2 = arg1_2:inTime()
+	local var10_2 = arg1_2:isTimeLimit() and var8_2
 
-	if var10 then
-		arg0:UpdateCountdown(var9)
+	if var10_2 then
+		arg0_2:UpdateCountdown(var9_2)
 	else
-		arg0:DestoryTimer()
+		arg0_2:DestoryTimer()
 
-		arg0.countDownTm.text = ""
+		arg0_2.countDownTm.text = ""
 	end
 
-	setActive(arg0.timerTr, var10)
-	arg0:UpdateSkinType()
+	setActive(arg0_2.timerTr, var10_2)
+	arg0_2:UpdateSkinType()
 end
 
-function var0.UpdateSkinType(arg0)
-	if IsNil(arg0.skinMark) then
+function var0_0.UpdateSkinType(arg0_4)
+	if IsNil(arg0_4.skinMark) then
 		return
 	end
 
-	local var0 = Goods.FurnitureId2Id(arg0.furniture.id)
-	local var1 = Goods.ExistFurniture(var0)
+	local var0_4 = Goods.FurnitureId2Id(arg0_4.furniture.id)
+	local var1_4 = Goods.ExistFurniture(var0_4)
 
-	setActive(arg0.skinMark, var1)
+	setActive(arg0_4.skinMark, var1_4)
 end
 
-function var0.UpdateCountdown(arg0, arg1)
-	local var0 = pg.TimeMgr.GetInstance()
+function var0_0.UpdateCountdown(arg0_5, arg1_5)
+	local var0_5 = pg.TimeMgr.GetInstance()
 
-	arg0:DestoryTimer()
+	arg0_5:DestoryTimer()
 
-	local var1 = var0:Table2ServerTime(arg1)
+	local var1_5 = var0_5:Table2ServerTime(arg1_5)
 
-	arg0.prevStr = ""
-	arg0.updateTimer = Timer.New(function()
-		local var0 = ""
-		local var1 = var0:GetServerTime()
+	arg0_5.prevStr = ""
+	arg0_5.updateTimer = Timer.New(function()
+		local var0_6 = ""
+		local var1_6 = var0_5:GetServerTime()
 
-		if var1 > var1 then
-			arg0.countDownTm.text = ""
+		if var1_6 > var1_5 then
+			arg0_5.countDownTm.text = ""
 
-			setActive(arg0.timerTr, false)
-			arg0:DestoryTimer()
+			setActive(arg0_5.timerTr, false)
+			arg0_5:DestoryTimer()
 
 			return
 		end
 
-		local var2 = var1 - var1
+		local var2_6 = var1_5 - var1_6
 
-		var2 = var2 < 0 and 0 or var2
+		var2_6 = var2_6 < 0 and 0 or var2_6
 
-		local var3 = math.floor(var2 / 86400)
+		local var3_6 = math.floor(var2_6 / 86400)
 
-		if var3 > 0 then
-			var0 = var3 .. i18n("word_date")
+		if var3_6 > 0 then
+			var0_6 = var3_6 .. i18n("word_date")
 		else
-			local var4 = math.floor(var2 / 3600)
+			local var4_6 = math.floor(var2_6 / 3600)
 
-			if var4 > 0 then
-				var0 = var4 .. i18n("word_hour")
+			if var4_6 > 0 then
+				var0_6 = var4_6 .. i18n("word_hour")
 			else
-				local var5 = math.floor(var2 / 60)
+				local var5_6 = math.floor(var2_6 / 60)
 
-				if var5 > 0 then
-					var0 = var5 .. i18n("word_minute")
+				if var5_6 > 0 then
+					var0_6 = var5_6 .. i18n("word_minute")
 				else
-					var0 = var2 .. i18n("word_second")
+					var0_6 = var2_6 .. i18n("word_second")
 				end
 			end
 		end
 
-		if var0 ~= arg0.prevStr then
-			arg0.prevStr = var0
-			arg0.countDownTm.text = var0
+		if var0_6 ~= arg0_5.prevStr then
+			arg0_5.prevStr = var0_6
+			arg0_5.countDownTm.text = var0_6
 		end
 	end, 1, -1)
 
-	arg0.updateTimer:Start()
-	arg0.updateTimer.func()
+	arg0_5.updateTimer:Start()
+	arg0_5.updateTimer.func()
 end
 
-function var0.DestoryTimer(arg0)
-	if arg0.updateTimer then
-		arg0.updateTimer:Stop()
+function var0_0.DestoryTimer(arg0_7)
+	if arg0_7.updateTimer then
+		arg0_7.updateTimer:Stop()
 
-		arg0.updateTimer = nil
+		arg0_7.updateTimer = nil
 	end
 end
 
-function var0.Clear(arg0)
-	arg0:DestoryTimer()
+function var0_0.Clear(arg0_8)
+	arg0_8:DestoryTimer()
 end
 
-return var0
+return var0_0

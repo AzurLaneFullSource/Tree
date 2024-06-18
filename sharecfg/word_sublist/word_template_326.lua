@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_326 = {}
+var0_0.word_template_326 = {}
 
-local var1 = var0.word_template_326
+local var1_0 = var0_0.word_template_326
 
 function temp()
-	var1.桜 = {
+	var1_0.桜 = {
 		井 = {
 			涼 = {
 				子 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.婴 = {
+	var1_0.婴 = {
 		儿 = {
 			被 = {
 				煮 = {
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.罂 = {
+	var1_0.罂 = {
 		粟 = {
 			this = true
 		}
@@ -57,7 +57,7 @@ end
 temp()
 
 function temp()
-	var1.樱 = {
+	var1_0.樱 = {
 		唇 = {
 			this = true
 		},
@@ -106,7 +106,7 @@ end
 temp()
 
 function temp()
-	var1.嬰 = {
+	var1_0.嬰 = {
 		兒 = {
 			湯 = {
 				this = true
@@ -118,7 +118,7 @@ end
 temp()
 
 function temp()
-	var1.罌 = {
+	var1_0.罌 = {
 		粟 = {
 			this = true
 		}
@@ -128,7 +128,7 @@ end
 temp()
 
 function temp()
-	var1.櫻 = {
+	var1_0.櫻 = {
 		井 = {
 			莉 = {
 				亞 = {

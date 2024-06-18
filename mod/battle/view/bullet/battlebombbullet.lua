@@ -1,42 +1,42 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleBulletEvent
-local var2 = var0.Battle.BattleResourceManager
-local var3 = var0.Battle.BattleConfig
-local var4 = class("BattleBombBullet", var0.Battle.BattleBullet)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleBulletEvent
+local var2_0 = var0_0.Battle.BattleResourceManager
+local var3_0 = var0_0.Battle.BattleConfig
+local var4_0 = class("BattleBombBullet", var0_0.Battle.BattleBullet)
 
-var0.Battle.BattleBombBullet = var4
-var4.__name = "BattleBombBullet"
+var0_0.Battle.BattleBombBullet = var4_0
+var4_0.__name = "BattleBombBullet"
 
-function var4.Ctor(arg0)
-	var4.super.Ctor(arg0)
+function var4_0.Ctor(arg0_1)
+	var4_0.super.Ctor(arg0_1)
 end
 
-function var4.Dispose(arg0)
-	if arg0._alert then
-		arg0._alert:Dispose()
+function var4_0.Dispose(arg0_2)
+	if arg0_2._alert then
+		arg0_2._alert:Dispose()
 	end
 
-	var4.super.Dispose(arg0)
+	var4_0.super.Dispose(arg0_2)
 end
 
-function var4.AddBulletEvent(arg0)
-	arg0._bulletData:RegisterEventListener(arg0, var1.EXPLODE, arg0.onBulletExplode)
+function var4_0.AddBulletEvent(arg0_3)
+	arg0_3._bulletData:RegisterEventListener(arg0_3, var1_0.EXPLODE, arg0_3.onBulletExplode)
 end
 
-function var4.RemoveBulletEvent(arg0)
-	arg0._bulletData:UnregisterEventListener(arg0, var1.EXPLODE)
+function var4_0.RemoveBulletEvent(arg0_4)
+	arg0_4._bulletData:UnregisterEventListener(arg0_4, var1_0.EXPLODE)
 end
 
-function var4.onBulletExplode(arg0, arg1)
-	arg0._bulletHitFunc(arg0)
+function var4_0.onBulletExplode(arg0_5, arg1_5)
+	arg0_5._bulletHitFunc(arg0_5)
 end
 
-function var4.UpdatePosition(arg0)
-	local var0 = Vector3.Lerp(arg0._tf.localPosition, arg0:GetPosition(), var3.BulletMotionRate)
+function var4_0.UpdatePosition(arg0_6)
+	local var0_6 = Vector3.Lerp(arg0_6._tf.localPosition, arg0_6:GetPosition(), var3_0.BulletMotionRate)
 
-	arg0._tf.localPosition = var0
+	arg0_6._tf.localPosition = var0_6
 
-	arg0._cacheTFPos:Set(var0.x, var0.y, var0.z)
+	arg0_6._cacheTFPos:Set(var0_6.x, var0_6.y, var0_6.z)
 end

@@ -1,129 +1,129 @@
 ﻿pg = pg or {}
 pg.SceneAnimMgr = singletonClass("SceneAnimMgr")
 
-local var0 = pg.SceneAnimMgr
+local var0_0 = pg.SceneAnimMgr
 
-function var0.Ctor(arg0)
+function var0_0.Ctor(arg0_1)
 	return
 end
 
-function var0.Init(arg0, arg1)
+function var0_0.Init(arg0_2, arg1_2)
 	print("initializing sceneanim manager...")
-	PoolMgr.GetInstance():GetUI("SceneAnimUI", true, function(arg0)
-		arg0._go = arg0
+	PoolMgr.GetInstance():GetUI("SceneAnimUI", true, function(arg0_3)
+		arg0_2._go = arg0_3
 
-		arg0._go:SetActive(false)
+		arg0_2._go:SetActive(false)
 
-		arg0._tf = arg0._go.transform
+		arg0_2._tf = arg0_2._go.transform
 
-		arg0._tf:SetParent(pg.UIMgr.GetInstance().OverlayToast, false)
+		arg0_2._tf:SetParent(pg.UIMgr.GetInstance().OverlayToast, false)
 
-		arg0.container = arg0._tf:Find("container")
+		arg0_2.container = arg0_2._tf:Find("container")
 
-		if arg1 then
-			arg1()
+		if arg1_2 then
+			arg1_2()
 		end
 	end)
 end
 
-function var0.SixthAnniversaryJPCoverGoScene(arg0, arg1)
-	arg0.playing = true
+function var0_0.SixthAnniversaryJPCoverGoScene(arg0_4, arg1_4)
+	arg0_4.playing = true
 
-	setActive(arg0._tf, true)
+	setActive(arg0_4._tf, true)
 
-	local var0 = "SixthAnniversaryJPCoverUI"
+	local var0_4 = "SixthAnniversaryJPCoverUI"
 
-	PoolMgr.GetInstance():GetUI(var0, true, function(arg0)
-		local var0 = arg0.transform
+	PoolMgr.GetInstance():GetUI(var0_4, true, function(arg0_5)
+		local var0_5 = arg0_5.transform
 
-		setParent(var0, arg0.container, false)
-		setActive(var0, true)
+		setParent(var0_5, arg0_4.container, false)
+		setActive(var0_5, true)
 
-		local var1 = var0:Find("houshanyunwu"):GetComponent(typeof(SpineAnimUI))
+		local var1_5 = var0_5:Find("houshanyunwu"):GetComponent(typeof(SpineAnimUI))
 
-		var1:SetActionCallBack(function(arg0)
-			if arg0 == "finish" then
-				PoolMgr.GetInstance():ReturnUI(var0, arg0)
+		var1_5:SetActionCallBack(function(arg0_6)
+			if arg0_6 == "finish" then
+				PoolMgr.GetInstance():ReturnUI(var0_4, arg0_5)
 
-				arg0.playing = nil
+				arg0_4.playing = nil
 
-				setActive(var0, false)
-				setActive(arg0._tf, false)
-			elseif arg0 == "action" then
-				pg.m02:sendNotification(GAME.GO_SCENE, arg1)
+				setActive(var0_5, false)
+				setActive(arg0_4._tf, false)
+			elseif arg0_6 == "action" then
+				pg.m02:sendNotification(GAME.GO_SCENE, arg1_4)
 			end
 		end)
-		var1:SetAction("action", 0)
+		var1_5:SetAction("action", 0)
 	end)
 end
 
-function var0.OtherWorldCoverGoScene(arg0, arg1, arg2)
-	arg0.playing = true
+function var0_0.OtherWorldCoverGoScene(arg0_7, arg1_7, arg2_7)
+	arg0_7.playing = true
 
-	setActive(arg0._tf, true)
+	setActive(arg0_7._tf, true)
 
-	local var0 = "OtherworldCoverUI"
+	local var0_7 = "OtherworldCoverUI"
 
-	PoolMgr.GetInstance():GetUI(var0, true, function(arg0)
-		local var0 = arg0.transform
+	PoolMgr.GetInstance():GetUI(var0_7, true, function(arg0_8)
+		local var0_8 = arg0_8.transform
 
-		setParent(var0, arg0.container, false)
-		setActive(var0, true)
+		setParent(var0_8, arg0_7.container, false)
+		setActive(var0_8, true)
 
-		local var1 = var0:Find("yuncaizhuanchang"):GetComponent(typeof(SpineAnimUI))
+		local var1_8 = var0_8:Find("yuncaizhuanchang"):GetComponent(typeof(SpineAnimUI))
 
-		var1:SetActionCallBack(function(arg0)
-			if arg0 == "finish" then
-				PoolMgr.GetInstance():ReturnUI(var0, arg0)
+		var1_8:SetActionCallBack(function(arg0_9)
+			if arg0_9 == "finish" then
+				PoolMgr.GetInstance():ReturnUI(var0_7, arg0_8)
 
-				arg0.playing = nil
+				arg0_7.playing = nil
 
-				setActive(var0, false)
-				setActive(arg0._tf, false)
-			elseif arg0 == "action" then
-				pg.m02:sendNotification(GAME.GO_SCENE, arg1, arg2)
+				setActive(var0_8, false)
+				setActive(arg0_7._tf, false)
+			elseif arg0_9 == "action" then
+				pg.m02:sendNotification(GAME.GO_SCENE, arg1_7, arg2_7)
 			end
 		end)
-		var1:SetAction("action", 0)
+		var1_8:SetAction("action", 0)
 	end)
 end
 
-function var0.Dorm3DSceneChange(arg0, arg1)
-	setActive(arg0._tf, true)
+function var0_0.Dorm3DSceneChange(arg0_10, arg1_10)
+	setActive(arg0_10._tf, true)
 
-	local var0 = "SixthAnniversaryJPCoverUI"
+	local var0_10 = "SixthAnniversaryJPCoverUI"
 
-	PoolMgr.GetInstance():GetUI(var0, true, function(arg0)
-		local var0 = arg0.transform
+	PoolMgr.GetInstance():GetUI(var0_10, true, function(arg0_11)
+		local var0_11 = arg0_11.transform
 
-		setParent(var0, arg0.container, false)
+		setParent(var0_11, arg0_10.container, false)
 
-		local var1 = var0:Find("houshanyunwu"):GetComponent(typeof(SpineAnimUI))
+		local var1_11 = var0_11:Find("houshanyunwu"):GetComponent(typeof(SpineAnimUI))
 
-		var1:SetActionCallBack(function(arg0)
-			if arg0 == "action" then
-				var1:Pause()
-				arg1(function()
-					var1:Resume()
+		var1_11:SetActionCallBack(function(arg0_12)
+			if arg0_12 == "action" then
+				var1_11:Pause()
+				arg1_10(function()
+					var1_11:Resume()
 				end)
-			elseif arg0 == "finish" then
-				PoolMgr.GetInstance():ReturnUI(var0, arg0)
+			elseif arg0_12 == "finish" then
+				PoolMgr.GetInstance():ReturnUI(var0_10, arg0_11)
 
-				arg0.playing = nil
+				arg0_10.playing = nil
 
-				setActive(arg0._tf, false)
+				setActive(arg0_10._tf, false)
 			end
 		end)
-		var1:SetAction("action", 0)
+		var1_11:SetAction("action", 0)
 	end)
 end
 
-function var0.IsPlaying(arg0)
-	return arg0.playing
+function var0_0.IsPlaying(arg0_14)
+	return arg0_14.playing
 end
 
-function var0.Dispose(arg0)
-	setActive(arg0._tf, false)
+function var0_0.Dispose(arg0_15)
+	setActive(arg0_15._tf, false)
 
-	arg0.playing = nil
+	arg0_15.playing = nil
 end

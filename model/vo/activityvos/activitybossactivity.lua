@@ -1,113 +1,113 @@
-﻿local var0 = class("ActivityBossActivity", import("model.vo.Activity"))
+﻿local var0_0 = class("ActivityBossActivity", import("model.vo.Activity"))
 
-function var0.Ctor(arg0, arg1)
-	var0.super.Ctor(arg0, arg1)
+function var0_0.Ctor(arg0_1, arg1_1)
+	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0.bossHP = 0
-	arg0.milestones = {}
-	arg0.bossConfig = ActivityBossConfig.New({
-		configId = arg0:getConfig("config_id")
+	arg0_1.bossHP = 0
+	arg0_1.milestones = {}
+	arg0_1.bossConfig = ActivityBossConfig.New({
+		configId = arg0_1:getConfig("config_id")
 	})
 end
 
-function var0.GetBossConfig(arg0)
-	return arg0.bossConfig
+function var0_0.GetBossConfig(arg0_2)
+	return arg0_2.bossConfig
 end
 
-function var0.UpdatePublicData(arg0, arg1)
-	arg0.bossHP = arg1.boss_hp or 0
-	arg0.milestones = arg1.milestones or {}
-	arg0.data2 = 1
+function var0_0.UpdatePublicData(arg0_3, arg1_3)
+	arg0_3.bossHP = arg1_3.boss_hp or 0
+	arg0_3.milestones = arg1_3.milestones or {}
+	arg0_3.data2 = 1
 end
 
-function var0.AddStage(arg0, arg1)
-	if table.contains(arg0.data1_list, arg1) then
+function var0_0.AddStage(arg0_4, arg1_4)
+	if table.contains(arg0_4.data1_list, arg1_4) then
 		return
 	end
 
-	table.insert(arg0.data1_list, arg1)
+	table.insert(arg0_4.data1_list, arg1_4)
 end
 
-function var0.IsOilLimit(arg0, arg1)
-	assert(arg1)
+function var0_0.IsOilLimit(arg0_5, arg1_5)
+	assert(arg1_5)
 
-	return table.contains(arg0.data1_list, arg1)
+	return table.contains(arg0_5.data1_list, arg1_5)
 end
 
-function var0.GetBindPtActID(arg0)
-	return (getProxy(ActivityProxy):GetActBossLinkPTActID(arg0.id))
+function var0_0.GetBindPtActID(arg0_6)
+	return (getProxy(ActivityProxy):GetActBossLinkPTActID(arg0_6.id))
 end
 
-function var0.GetBossHP(arg0)
-	return arg0.bossHP
+function var0_0.GetBossHP(arg0_7)
+	return arg0_7.bossHP
 end
 
-function var0.GetMileStones(arg0)
-	return arg0.milestones
+function var0_0.GetMileStones(arg0_8)
+	return arg0_8.milestones
 end
 
-function var0.readyToAchieve(arg0)
-	return arg0.data2 ~= 1
+function var0_0.readyToAchieve(arg0_9)
+	return arg0_9.data2 ~= 1
 end
 
-function var0.GetTickets(arg0)
-	local var0 = {}
+function var0_0.GetTickets(arg0_10)
+	local var0_10 = {}
 
-	for iter0, iter1 in pairs(arg0.data1KeyValueList) do
-		for iter2, iter3 in pairs(iter1) do
-			var0[iter2] = (var0[iter2] or 0) + iter3
+	for iter0_10, iter1_10 in pairs(arg0_10.data1KeyValueList) do
+		for iter2_10, iter3_10 in pairs(iter1_10) do
+			var0_10[iter2_10] = (var0_10[iter2_10] or 0) + iter3_10
 		end
 	end
 
-	return var0
+	return var0_10
 end
 
-function var0.GetStageBonus(arg0, arg1)
-	local var0 = 0
+function var0_0.GetStageBonus(arg0_11, arg1_11)
+	local var0_11 = 0
 
-	for iter0, iter1 in pairs(arg0.data1KeyValueList) do
-		for iter2, iter3 in pairs(iter1) do
-			if iter2 == arg1 then
-				var0 = var0 + iter3
+	for iter0_11, iter1_11 in pairs(arg0_11.data1KeyValueList) do
+		for iter2_11, iter3_11 in pairs(iter1_11) do
+			if iter2_11 == arg1_11 then
+				var0_11 = var0_11 + iter3_11
 			end
 		end
 	end
 
-	return var0
+	return var0_11
 end
 
-function var0.checkBattleTimeInBossAct(arg0)
-	assert(arg0:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2)
+function var0_0.checkBattleTimeInBossAct(arg0_12)
+	assert(arg0_12:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2)
 
-	if arg0:isEnd() then
+	if arg0_12:isEnd() then
 		return false
 	end
 
-	local var0 = arg0.bossConfig:GetBattleTime()
+	local var0_12 = arg0_12.bossConfig:GetBattleTime()
 
-	return pg.TimeMgr.GetInstance():inTime(var0)
+	return pg.TimeMgr.GetInstance():inTime(var0_12)
 end
 
-function var0.GetHighestScore(arg0)
-	return arg0.data1
+function var0_0.GetHighestScore(arg0_13)
+	return arg0_13.data1
 end
 
-function var0.UpdateHighestScore(arg0, arg1)
-	if arg1 <= arg0.data1 then
+function var0_0.UpdateHighestScore(arg0_14, arg1_14)
+	if arg1_14 <= arg0_14.data1 then
 		return false
 	end
 
-	arg0.data1 = arg1
+	arg0_14.data1 = arg1_14
 
 	return true
 end
 
-function var0.GetHistoryBuffs(arg0)
-	return arg0.data2_list
+function var0_0.GetHistoryBuffs(arg0_15)
+	return arg0_15.data2_list
 end
 
-function var0.UpdateHistoryBuffs(arg0, arg1)
-	arg0.data2_list = arg1
+function var0_0.UpdateHistoryBuffs(arg0_16, arg1_16)
+	arg0_16.data2_list = arg1_16
 end
 
-return var0
+return var0_0

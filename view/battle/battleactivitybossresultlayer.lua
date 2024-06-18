@@ -1,167 +1,167 @@
-﻿local var0 = class("BattleActivityBossResultLayer", import(".BattleResultLayer"))
+﻿local var0_0 = class("BattleActivityBossResultLayer", import(".BattleResultLayer"))
 
-function var0.showRightBottomPanel(arg0)
-	local var0 = arg0._blurConatiner:Find("activitybossConfirmPanel")
+function var0_0.showRightBottomPanel(arg0_1)
+	local var0_1 = arg0_1._blurConatiner:Find("activitybossConfirmPanel")
 
-	setActive(var0, true)
-	var0.super.showRightBottomPanel(arg0)
-	SetActive(arg0._rightBottomPanel, false)
+	setActive(var0_1, true)
+	var0_0.super.showRightBottomPanel(arg0_1)
+	SetActive(arg0_1._rightBottomPanel, false)
 
-	local var1 = arg0.contextData.system
-	local var2 = var1 ~= SYSTEM_BOSS_EXPERIMENT
+	local var1_1 = arg0_1.contextData.system
+	local var2_1 = var1_1 ~= SYSTEM_BOSS_EXPERIMENT
 
-	setActive(var0:Find("playAgain"), var2)
-	onButton(arg0, var0:Find("statisticsBtn"), function()
-		setActive(var0:Find("playAgain"), arg0._atkBG.gameObject.activeSelf and var2)
-		triggerButton(arg0._statisticsBtn)
+	setActive(var0_1:Find("playAgain"), var2_1)
+	onButton(arg0_1, var0_1:Find("statisticsBtn"), function()
+		setActive(var0_1:Find("playAgain"), arg0_1._atkBG.gameObject.activeSelf and var2_1)
+		triggerButton(arg0_1._statisticsBtn)
 	end, SFX_PANEL)
-	setText(var0:Find("confirmBtn/Image"), i18n("text_confirm"))
-	onButton(arg0, var0:Find("confirmBtn"), function()
-		triggerButton(arg0._confirmBtn)
+	setText(var0_1:Find("confirmBtn/Image"), i18n("text_confirm"))
+	onButton(arg0_1, var0_1:Find("confirmBtn"), function()
+		triggerButton(arg0_1._confirmBtn)
 	end, SFX_CONFIRM)
-	setText(var0:Find("confirmBtn/Image"), i18n("text_confirm"))
-	setText(var0:Find("playAgain/Image"), i18n("re_battle"))
-	setText(var0:Find("playAgain/bonus/title"), i18n("expedition_extra_drop_tip"))
+	setText(var0_1:Find("confirmBtn/Image"), i18n("text_confirm"))
+	setText(var0_1:Find("playAgain/Image"), i18n("re_battle"))
+	setText(var0_1:Find("playAgain/bonus/title"), i18n("expedition_extra_drop_tip"))
 
-	local var3 = getProxy(FleetProxy):getActivityFleets()[arg0.contextData.actId]
-	local var4 = var0:Find("playAgain/bonus")
-	local var5 = var0:Find("playAgain/ticket")
-	local var6 = getProxy(ActivityProxy):getActivityById(arg0.contextData.actId)
-	local var7 = arg0.contextData.stageId
-	local var8 = var6:getConfig("config_id")
-	local var9 = pg.activity_event_worldboss[var8]
-	local var10 = var9.ticket
-	local var11 = var6:GetStageBonus(var7)
-	local var12 = var6:IsOilLimit(var7)
-	local var13 = 0
-	local var14 = var9.use_oil_limit[arg0.contextData.mainFleetId]
+	local var3_1 = getProxy(FleetProxy):getActivityFleets()[arg0_1.contextData.actId]
+	local var4_1 = var0_1:Find("playAgain/bonus")
+	local var5_1 = var0_1:Find("playAgain/ticket")
+	local var6_1 = getProxy(ActivityProxy):getActivityById(arg0_1.contextData.actId)
+	local var7_1 = arg0_1.contextData.stageId
+	local var8_1 = var6_1:getConfig("config_id")
+	local var9_1 = pg.activity_event_worldboss[var8_1]
+	local var10_1 = var9_1.ticket
+	local var11_1 = var6_1:GetStageBonus(var7_1)
+	local var12_1 = var6_1:IsOilLimit(var7_1)
+	local var13_1 = 0
+	local var14_1 = var9_1.use_oil_limit[arg0_1.contextData.mainFleetId]
 
-	;(function(arg0, arg1)
-		local var0 = arg0:GetCostSum().oil
+	;(function(arg0_4, arg1_4)
+		local var0_4 = arg0_4:GetCostSum().oil
 
-		if arg1 > 0 then
-			var0 = math.min(var0, var14[1])
+		if arg1_4 > 0 then
+			var0_4 = math.min(var0_4, var14_1[1])
 		end
 
-		var13 = var13 + var0
-	end)(var3[arg0.contextData.mainFleetId], var12 and var14[1] or 0)
-	setText(var0:Find("playAgain/Text"), var13)
+		var13_1 = var13_1 + var0_4
+	end)(var3_1[arg0_1.contextData.mainFleetId], var12_1 and var14_1[1] or 0)
+	setText(var0_1:Find("playAgain/Text"), var13_1)
 
-	local var15
-	local var16
+	local var15_1
+	local var16_1
 
-	setActive(var4, var11 > 0)
-	setActive(var5, var11 <= 0)
-	setText(var4:Find("Text"), var11)
+	setActive(var4_1, var11_1 > 0)
+	setActive(var5_1, var11_1 <= 0)
+	setText(var4_1:Find("Text"), var11_1)
 
-	if var11 <= 0 then
-		local var17 = Drop.New({
+	if var11_1 <= 0 then
+		local var17_1 = Drop.New({
 			type = DROP_TYPE_RESOURCE,
-			id = var10
+			id = var10_1
 		}):getIcon()
-		local var18 = GetSpriteFromAtlas(var17, "")
+		local var18_1 = GetSpriteFromAtlas(var17_1, "")
 
-		setImageSprite(var5:Find("icon"), var18)
+		setImageSprite(var5_1:Find("icon"), var18_1)
 
-		local var19 = getProxy(PlayerProxy):getRawData():getResource(var10)
+		local var19_1 = getProxy(PlayerProxy):getRawData():getResource(var10_1)
 
-		var16 = getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1
-		var15 = var19 > 0
+		var16_1 = getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1
+		var15_1 = var19_1 > 0
 
-		local var20 = 1
-		local var21 = var5:Find("checkbox")
+		local var20_1 = 1
+		local var21_1 = var5_1:Find("checkbox")
 
-		if var1 == SYSTEM_BOSS_EXPERIMENT then
-			var20 = 0
+		if var1_1 == SYSTEM_BOSS_EXPERIMENT then
+			var20_1 = 0
 
-			triggerToggle(var21, false)
-			setToggleEnabled(var21, false)
-		elseif var1 == SYSTEM_HP_SHARE_ACT_BOSS then
-			triggerToggle(var21, true)
-			setToggleEnabled(var21, false)
-		elseif var1 == SYSTEM_ACT_BOSS then
-			setToggleEnabled(var21, var15)
-			triggerToggle(var21, var15 and var16)
+			triggerToggle(var21_1, false)
+			setToggleEnabled(var21_1, false)
+		elseif var1_1 == SYSTEM_HP_SHARE_ACT_BOSS then
+			triggerToggle(var21_1, true)
+			setToggleEnabled(var21_1, false)
+		elseif var1_1 == SYSTEM_ACT_BOSS then
+			setToggleEnabled(var21_1, var15_1)
+			triggerToggle(var21_1, var15_1 and var16_1)
 		end
 
-		var19 = var19 < var20 and setColorStr(var19, COLOR_RED) or var19
+		var19_1 = var19_1 < var20_1 and setColorStr(var19_1, COLOR_RED) or var19_1
 
-		setText(var5:Find("Text"), var20 .. "/" .. var19)
-		onToggle(arg0, var21, function(arg0)
-			var16 = arg0
+		setText(var5_1:Find("Text"), var20_1 .. "/" .. var19_1)
+		onToggle(arg0_1, var21_1, function(arg0_5)
+			var16_1 = arg0_5
 
-			getProxy(SettingsProxy):setActBossExchangeTicketTip(arg0 and 1 or 0)
+			getProxy(SettingsProxy):setActBossExchangeTicketTip(arg0_5 and 1 or 0)
 		end, SFX_PANEL, SFX_CANCEL)
 	end
 
-	onButton(arg0, var0:Find("playAgain"), function()
-		if arg0.contextData.isLastBonus then
-			arg0:PassMsgbox("lastBonus", {
+	onButton(arg0_1, var0_1:Find("playAgain"), function()
+		if arg0_1.contextData.isLastBonus then
+			arg0_1:PassMsgbox("lastBonus", {
 				content = i18n("expedition_drop_use_out")
 			})
 
 			return
 		end
 
-		if var1 == SYSTEM_HP_SHARE_ACT_BOSS and not var15 then
+		if var1_1 == SYSTEM_HP_SHARE_ACT_BOSS and not var15_1 then
 			pg.m02:sendNotification(GAME.GO_BACK)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noTicket"))
 
 			return
 		end
 
-		local var0 = pg.battle_cost_template[arg0.contextData.system].oil_cost > 0
-		local var1 = getProxy(PlayerProxy):getRawData().oil
+		local var0_6 = pg.battle_cost_template[arg0_1.contextData.system].oil_cost > 0
+		local var1_6 = getProxy(PlayerProxy):getRawData().oil
 
-		if var0 and var1 < var13 then
-			arg0:PassMsgbox("oil", var13)
+		if var0_6 and var1_6 < var13_1 then
+			arg0_1:PassMsgbox("oil", var13_1)
 
 			return
 		end
 
 		if getProxy(BayProxy):getShipCount() >= getProxy(PlayerProxy):getRawData():getMaxShipBag() then
-			arg0:PassMsgbox("shipCapacity")
+			arg0_1:PassMsgbox("shipCapacity")
 
 			return
 		end
 
-		local var2 = var3[arg0.contextData.mainFleetId]
+		local var2_6 = var3_1[arg0_1.contextData.mainFleetId]
 
-		if _.any(_.values(var2.ships), function(arg0)
-			local var0 = getProxy(BayProxy):getShipById(arg0)
+		if _.any(_.values(var2_6.ships), function(arg0_7)
+			local var0_7 = getProxy(BayProxy):getShipById(arg0_7)
 
-			return var0 and var0.energy == Ship.ENERGY_LOW
+			return var0_7 and var0_7.energy == Ship.ENERGY_LOW
 		end) then
-			arg0:PassMsgbox("energy", var2)
+			arg0_1:PassMsgbox("energy", var2_6)
 
 			return
 		end
 
-		if var1 == SYSTEM_ACT_BOSS and var15 and var16 then
+		if var1_1 == SYSTEM_ACT_BOSS and var15_1 and var16_1 then
 			pg.m02:sendNotification(GAME.ACT_BOSS_EXCHANGE_TICKET, {
-				stageId = var7
+				stageId = var7_1
 			})
 
 			return
 		end
 
-		arg0:emit(NewBattleResultMediator.REENTER_STAGE)
+		arg0_1:emit(NewBattleResultMediator.REENTER_STAGE)
 	end)
 end
 
-function var0.PassMsgbox(arg0, arg1, arg2)
+function var0_0.PassMsgbox(arg0_8, arg1_8, arg2_8)
 	getProxy(ContextProxy):GetPrevContext(1).data.msg = {
-		type = arg1,
-		param = arg2
+		type = arg1_8,
+		param = arg2_8
 	}
 
 	pg.m02:sendNotification(GAME.GO_BACK)
 end
 
-function var0.HideConfirmPanel(arg0)
-	local var0 = arg0._blurConatiner:Find("activitybossConfirmPanel")
+function var0_0.HideConfirmPanel(arg0_9)
+	local var0_9 = arg0_9._blurConatiner:Find("activitybossConfirmPanel")
 
-	setActive(var0, false)
+	setActive(var0_9, false)
 end
 
-return var0
+return var0_0

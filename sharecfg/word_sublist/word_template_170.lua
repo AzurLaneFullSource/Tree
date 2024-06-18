@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_170 = {}
+var0_0.word_template_170 = {}
 
-local var1 = var0.word_template_170
+local var1_0 = var0_0.word_template_170
 
 function temp()
-	var1.緙 = {
+	var1_0.緙 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.肯 = {
+	var1_0.肯 = {
 		德 = {
 			基 = {
 				肯 = {
@@ -55,7 +55,7 @@ end
 temp()
 
 function temp()
-	var1.啃 = {
+	var1_0.啃 = {
 		奶 = {
 			this = true
 		},
@@ -70,7 +70,7 @@ end
 temp()
 
 function temp()
-	var1.掯 = {
+	var1_0.掯 = {
 		this = {
 			this = true
 		}
@@ -80,7 +80,7 @@ end
 temp()
 
 function temp()
-	var1.坑 = {
+	var1_0.坑 = {
 		爹 = {
 			this = true
 		},
@@ -103,7 +103,7 @@ end
 temp()
 
 function temp()
-	var1.空 = {
+	var1_0.空 = {
 		包 = {
 			弹 = {
 				this = true
@@ -204,7 +204,7 @@ end
 temp()
 
 function temp()
-	var1.孔 = {
+	var1_0.孔 = {
 		子 = {
 			去 = {
 				打 = {

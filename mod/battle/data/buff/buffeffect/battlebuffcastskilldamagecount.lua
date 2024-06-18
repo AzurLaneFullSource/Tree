@@ -1,77 +1,77 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleAttr
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleAttr
 
-var0.Battle.BattleBuffCastSkillDamageCount = class("BattleBuffCastSkillDamageCount", var0.Battle.BattleBuffEffect)
-var0.Battle.BattleBuffCastSkillDamageCount.__name = "BattleBuffCastSkillDamageCount"
+var0_0.Battle.BattleBuffCastSkillDamageCount = class("BattleBuffCastSkillDamageCount", var0_0.Battle.BattleBuffEffect)
+var0_0.Battle.BattleBuffCastSkillDamageCount.__name = "BattleBuffCastSkillDamageCount"
 
-local var2 = var0.Battle.BattleBuffCastSkillDamageCount
+local var2_0 = var0_0.Battle.BattleBuffCastSkillDamageCount
 
-var2.FX_TYPE = var0.Battle.BattleBuffEffect.FX_TYPE_CASTER
+var2_0.FX_TYPE = var0_0.Battle.BattleBuffEffect.FX_TYPE_CASTER
 
-function var2.Ctor(arg0, arg1)
-	var2.super.Ctor(arg0, arg1)
+function var2_0.Ctor(arg0_1, arg1_1)
+	var2_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var2.SetArgs(arg0, arg1, arg2)
-	arg0._level = arg2:GetLv()
-	arg0._skillTable = arg0._tempData.arg_list.damage_attr_list
-	arg0._attrTable = {}
+function var2_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	arg0_2._level = arg2_2:GetLv()
+	arg0_2._skillTable = arg0_2._tempData.arg_list.damage_attr_list
+	arg0_2._attrTable = {}
 end
 
-function var2.onTakeDamage(arg0, arg1, arg2, arg3)
-	local var0 = arg3.damageAttr
+function var2_0.onTakeDamage(arg0_3, arg1_3, arg2_3, arg3_3)
+	local var0_3 = arg3_3.damageAttr
 
-	if var0 then
-		local var1 = (arg0._attrTable[var0] or 0) + arg3.damage
+	if var0_3 then
+		local var1_3 = (arg0_3._attrTable[var0_3] or 0) + arg3_3.damage
 
-		arg0._attrTable[var0] = var1
+		arg0_3._attrTable[var0_3] = var1_3
 	end
 end
 
-function var2.onRemove(arg0, arg1, arg2, arg3)
-	local var0 = 0
-	local var1
+function var2_0.onRemove(arg0_4, arg1_4, arg2_4, arg3_4)
+	local var0_4 = 0
+	local var1_4
 
-	for iter0, iter1 in pairs(arg0._attrTable) do
-		if var0 <= iter1 then
-			var0 = iter1
-			var1 = iter0
+	for iter0_4, iter1_4 in pairs(arg0_4._attrTable) do
+		if var0_4 <= iter1_4 then
+			var0_4 = iter1_4
+			var1_4 = iter0_4
 		end
 	end
 
-	if not var1 then
+	if not var1_4 then
 		return
 	end
 
-	local var2 = arg0._skillTable[var1]
+	local var2_4 = arg0_4._skillTable[var1_4]
 
-	arg0._skill = var0.Battle.BattleSkillUnit.GenerateSpell(var2, arg0._level, arg1, arg3)
+	arg0_4._skill = var0_0.Battle.BattleSkillUnit.GenerateSpell(var2_4, arg0_4._level, arg1_4, arg3_4)
 
-	if arg3 and arg3.target then
-		arg0._skill:SetTarget({
-			arg3.target
+	if arg3_4 and arg3_4.target then
+		arg0_4._skill:SetTarget({
+			arg3_4.target
 		})
 	end
 
-	arg0._skill:Cast(arg1, arg0._commander)
+	arg0_4._skill:Cast(arg1_4, arg0_4._commander)
 end
 
-function var2.Interrupt(arg0)
-	var2.super.Interrupt(arg0)
+function var2_0.Interrupt(arg0_5)
+	var2_0.super.Interrupt(arg0_5)
 
-	if arg0._skill then
-		arg0._skill:Interrupt()
+	if arg0_5._skill then
+		arg0_5._skill:Interrupt()
 	end
 end
 
-function var2.Clear(arg0)
-	var2.super.Clear(arg0)
+function var2_0.Clear(arg0_6)
+	var2_0.super.Clear(arg0_6)
 
-	if arg0._skill then
-		arg0._skill:Clear()
+	if arg0_6._skill then
+		arg0_6._skill:Clear()
 
-		arg0._skill = nil
+		arg0_6._skill = nil
 	end
 end

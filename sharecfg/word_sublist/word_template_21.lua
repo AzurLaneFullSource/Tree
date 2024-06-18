@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_21 = {}
+var0_0.word_template_21 = {}
 
-local var1 = var0.word_template_21
+local var1_0 = var0_0.word_template_21
 
 function temp()
-	var1.激 = {
+	var1_0.激 = {
 		流 = {
 			中 = {
 				國 = {
@@ -360,7 +360,7 @@ end
 temp()
 
 function temp()
-	var1.月 = {
+	var1_0.月 = {
 		収 = {
 			this = true
 		},
@@ -527,7 +527,7 @@ end
 temp()
 
 function temp()
-	var1.健 = {
+	var1_0.健 = {
 		康 = {
 			器 = {
 				具 = {
@@ -652,7 +652,7 @@ end
 temp()
 
 function temp()
-	var1.犬 = {
+	var1_0.犬 = {
 		食 = {
 			い = {
 				this = true
@@ -679,7 +679,7 @@ end
 temp()
 
 function temp()
-	var1.見 = {
+	var1_0.見 = {
 		放 = {
 			題 = {
 				this = true
@@ -691,7 +691,7 @@ end
 temp()
 
 function temp()
-	var1.現 = {
+	var1_0.現 = {
 		金 = {
 			this = true,
 			交 = {
@@ -717,7 +717,7 @@ end
 temp()
 
 function temp()
-	var1.胡 = {
+	var1_0.胡 = {
 		耀 = {
 			邦 = {
 				this = true,

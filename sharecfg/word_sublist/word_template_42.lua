@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_42 = {}
+var0_0.word_template_42 = {}
 
-local var1 = var0.word_template_42
+local var1_0 = var0_0.word_template_42
 
 function temp()
-	var1.澳 = {
+	var1_0.澳 = {
 		洲 = {
 			光 = {
 				明 = {
@@ -169,7 +169,7 @@ end
 temp()
 
 function temp()
-	var1.八 = {
+	var1_0.八 = {
 		背 = {
 			飞 = {
 				凫 = {
@@ -998,7 +998,7 @@ end
 temp()
 
 function temp()
-	var1.巴 = {
+	var1_0.巴 = {
 		巴 = {
 			拉 = {
 				的 = {
@@ -1082,7 +1082,7 @@ end
 temp()
 
 function temp()
-	var1.扒 = {
+	var1_0.扒 = {
 		屄 = {
 			this = true
 		},
@@ -1120,7 +1120,7 @@ end
 temp()
 
 function temp()
-	var1.疤 = {
+	var1_0.疤 = {
 		痕 = {
 			治 = {
 				疗 = {
@@ -1134,7 +1134,7 @@ end
 temp()
 
 function temp()
-	var1.拔 = {
+	var1_0.拔 = {
 		屄 = {
 			this = true,
 			自 = {
@@ -1157,7 +1157,7 @@ end
 temp()
 
 function temp()
-	var1.把 = {
+	var1_0.把 = {
 		邓 = {
 			小 = {
 				平 = {

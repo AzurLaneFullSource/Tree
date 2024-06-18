@@ -1,60 +1,60 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("BattleCardPuzzleFleetBuffSetFleetAttr", var0.Battle.BattleFleetBuffEffect)
+local var0_0 = ys
+local var1_0 = class("BattleCardPuzzleFleetBuffSetFleetAttr", var0_0.Battle.BattleFleetBuffEffect)
 
-var0.Battle.BattleCardPuzzleFleetBuffSetFleetAttr = var1
-var1.__name = "BattleCardPuzzleFleetBuffSetFleetAttr"
-var1.FX_TYPE = var0.Battle.BattleBuffEffect.FX_TYPE_MOD_ATTR
+var0_0.Battle.BattleCardPuzzleFleetBuffSetFleetAttr = var1_0
+var1_0.__name = "BattleCardPuzzleFleetBuffSetFleetAttr"
+var1_0.FX_TYPE = var0_0.Battle.BattleBuffEffect.FX_TYPE_MOD_ATTR
 
-function var1.Ctor(arg0, arg1)
-	arg0._tempData = Clone(arg1)
-	arg0._type = arg0._tempData.type
+function var1_0.Ctor(arg0_1, arg1_1)
+	arg0_1._tempData = Clone(arg1_1)
+	arg0_1._type = arg0_1._tempData.type
 
-	arg0:SetActive()
+	arg0_1:SetActive()
 end
 
-function var1.GetEffectType(arg0)
-	return var1.FX_TYPE
+function var1_0.GetEffectType(arg0_2)
+	return var1_0.FX_TYPE
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	var1.super.SetArgs(arg0, arg1, arg2)
+function var1_0.SetArgs(arg0_3, arg1_3, arg2_3)
+	var1_0.super.SetArgs(arg0_3, arg1_3, arg2_3)
 
-	arg0._group = arg0._tempData.arg_list.group or arg0._fleetBuff:GetID()
-	arg0._attr = arg0._tempData.arg_list.attr
-	arg0._number = arg0._tempData.arg_list.number
+	arg0_3._group = arg0_3._tempData.arg_list.group or arg0_3._fleetBuff:GetID()
+	arg0_3._attr = arg0_3._tempData.arg_list.attr
+	arg0_3._number = arg0_3._tempData.arg_list.number
 
-	if arg0._tempData.arg_list.enhance_formula then
-		local var0 = arg0._tempData.arg_list.enhance_formula
+	if arg0_3._tempData.arg_list.enhance_formula then
+		local var0_3 = arg0_3._tempData.arg_list.enhance_formula
 
-		arg0._number = DBGformula.parseFormula(var0, arg1:GetAttrManager()) + arg0._number
+		arg0_3._number = DBGformula.parseFormula(var0_3, arg1_3:GetAttrManager()) + arg0_3._number
 	end
 
-	arg0._cache = arg0._tempData.arg_list.maintain
-	arg0._numberBase = arg0._number
+	arg0_3._cache = arg0_3._tempData.arg_list.maintain
+	arg0_3._numberBase = arg0_3._number
 end
 
-function var1.onRemove(arg0)
-	if arg0._cache then
-		arg0._number = 0
+function var1_0.onRemove(arg0_4)
+	if arg0_4._cache then
+		arg0_4._number = 0
 	end
 
-	arg0:onTrigger()
+	arg0_4:onTrigger()
 end
 
-function var1.GetGroup(arg0)
-	return arg0._group
+function var1_0.GetGroup(arg0_5)
+	return arg0_5._group
 end
 
-function var1.GetNumber(arg0)
-	return arg0._number * arg0._fleetBuff:GetStack()
+function var1_0.GetNumber(arg0_6)
+	return arg0_6._number * arg0_6._fleetBuff:GetStack()
 end
 
-function var1.IsSameAttr(arg0, arg1)
-	return arg0._attr == arg1
+function var1_0.IsSameAttr(arg0_7, arg1_7)
+	return arg0_7._attr == arg1_7
 end
 
-function var1.onTrigger(arg0)
-	arg0._cardPuzzleComponent:UpdateAttrBySet(arg0._attr, arg0:GetNumber())
+function var1_0.onTrigger(arg0_8)
+	arg0_8._cardPuzzleComponent:UpdateAttrBySet(arg0_8._attr, arg0_8:GetNumber())
 end

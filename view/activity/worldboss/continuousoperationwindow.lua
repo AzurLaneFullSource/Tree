@@ -1,11 +1,11 @@
-﻿local var0 = class("ContinuousOperationWindow", import("view.base.BaseUI"))
-local var1 = 15
+﻿local var0_0 = class("ContinuousOperationWindow", import("view.base.BaseUI"))
+local var1_0 = 15
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ContinuousOperationWindowUI"
 end
 
-function var0.ResUISettings(arg0)
+function var0_0.ResUISettings(arg0_2)
 	return {
 		reset = true,
 		gemOffsetX = 628,
@@ -13,119 +13,119 @@ function var0.ResUISettings(arg0)
 	}
 end
 
-function var0.init(arg0)
-	arg0.panel = arg0._tf:Find("window/panel")
-	arg0._countSelect = arg0.panel:Find("content")
-	arg0._pageUtil = PageUtil.New(arg0._countSelect:Find("value_bg/left"), arg0._countSelect:Find("value_bg/right"), arg0._countSelect:Find("max"), arg0._countSelect:Find("value_bg/value"))
-	arg0.consumeText = arg0.panel:Find("content/consume"):GetComponent("RichText")
+function var0_0.init(arg0_3)
+	arg0_3.panel = arg0_3._tf:Find("window/panel")
+	arg0_3._countSelect = arg0_3.panel:Find("content")
+	arg0_3._pageUtil = PageUtil.New(arg0_3._countSelect:Find("value_bg/left"), arg0_3._countSelect:Find("value_bg/right"), arg0_3._countSelect:Find("max"), arg0_3._countSelect:Find("value_bg/value"))
+	arg0_3.consumeText = arg0_3.panel:Find("content/consume"):GetComponent("RichText")
 
-	setText(arg0._tf:Find("window/top/bg/title/title"), i18n("multiple_sorties_title"))
-	setText(arg0._tf:Find("window/top/bg/title/title/title_en"), i18n("multiple_sorties_title_eng"))
-	setText(arg0.panel:Find("content/desc_txt"), i18n("multiple_sorties_times"))
-	setText(arg0.panel:Find("Tip"), i18n("multiple_sorties_tip"))
-	setText(arg0.panel:Find("battle/pic"), i18n("msgbox_text_battle"))
-	setText(arg0.panel:Find("bonus/Text"), i18n("expedition_extra_drop_tip"))
-	setText(arg0.panel:Find("ticket/Text"), i18n("multiple_sorties_challenge_ticket_use"))
+	setText(arg0_3._tf:Find("window/top/bg/title/title"), i18n("multiple_sorties_title"))
+	setText(arg0_3._tf:Find("window/top/bg/title/title/title_en"), i18n("multiple_sorties_title_eng"))
+	setText(arg0_3.panel:Find("content/desc_txt"), i18n("multiple_sorties_times"))
+	setText(arg0_3.panel:Find("Tip"), i18n("multiple_sorties_tip"))
+	setText(arg0_3.panel:Find("battle/pic"), i18n("msgbox_text_battle"))
+	setText(arg0_3.panel:Find("bonus/Text"), i18n("expedition_extra_drop_tip"))
+	setText(arg0_3.panel:Find("ticket/Text"), i18n("multiple_sorties_challenge_ticket_use"))
 end
 
-function var0.SetActivity(arg0, arg1)
-	arg0.activity = arg1
+function var0_0.SetActivity(arg0_4, arg1_4)
+	arg0_4.activity = arg1_4
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0.panel:Find("battle"), function()
-		local var0 = arg0.contextData.battleTimes
+function var0_0.didEnter(arg0_5)
+	onButton(arg0_5, arg0_5.panel:Find("battle"), function()
+		local var0_6 = arg0_5.contextData.battleTimes
 
-		if arg0.contextData.oilCost * var0 > getProxy(PlayerProxy):getRawData().oil then
+		if arg0_5.contextData.oilCost * var0_6 > getProxy(PlayerProxy):getRawData().oil then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 			return
 		end
 
-		arg0:emit(PreCombatMediator.CONTINUOUS_OPERATION)
+		arg0_5:emit(PreCombatMediator.CONTINUOUS_OPERATION)
 	end, SFX_PANEL)
-	onButton(arg0, arg0._tf:Find("window/top/btnBack"), function()
-		arg0:closeView()
+	onButton(arg0_5, arg0_5._tf:Find("window/top/btnBack"), function()
+		arg0_5:closeView()
 	end, SFX_CANCEL)
-	onButton(arg0, arg0._tf:Find("bg"), function()
-		arg0:closeView()
+	onButton(arg0_5, arg0_5._tf:Find("bg"), function()
+		arg0_5:closeView()
 	end, SFX_CANCEL)
 
-	local var0 = getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1
+	local var0_5 = getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1
 
-	arg0.contextData.useTicket = defaultValue(arg0.contextData.useTicket, var0)
+	arg0_5.contextData.useTicket = defaultValue(arg0_5.contextData.useTicket, var0_5)
 
-	triggerToggle(arg0.panel:Find("ticket/checkbox"), var0)
-	onToggle(arg0, arg0.panel:Find("ticket/checkbox"), function(arg0)
-		arg0.contextData.useTicket = arg0
+	triggerToggle(arg0_5.panel:Find("ticket/checkbox"), var0_5)
+	onToggle(arg0_5, arg0_5.panel:Find("ticket/checkbox"), function(arg0_9)
+		arg0_5.contextData.useTicket = arg0_9
 
-		arg0:UpdateContent()
+		arg0_5:UpdateContent()
 	end, SFX_PANEL, SFX_CANCEL)
 
-	local var1 = arg0.activity:getConfig("config_id")
-	local var2 = pg.activity_event_worldboss[var1].ticket
-	local var3 = Drop.New({
+	local var1_5 = arg0_5.activity:getConfig("config_id")
+	local var2_5 = pg.activity_event_worldboss[var1_5].ticket
+	local var3_5 = Drop.New({
 		type = DROP_TYPE_RESOURCE,
-		id = var2
+		id = var2_5
 	}):getIcon()
-	local var4 = LoadSprite(var3, "")
+	local var4_5 = LoadSprite(var3_5, "")
 
-	arg0.consumeText:AddSprite("ticket", var4)
-	setImageSprite(arg0.panel:Find("ticket/Text/Icon"), var4)
-	arg0._pageUtil:setNumUpdate(function(arg0)
-		arg0.contextData.battleTimes = arg0
+	arg0_5.consumeText:AddSprite("ticket", var4_5)
+	setImageSprite(arg0_5.panel:Find("ticket/Text/Icon"), var4_5)
+	arg0_5._pageUtil:setNumUpdate(function(arg0_10)
+		arg0_5.contextData.battleTimes = arg0_10
 
-		arg0:UpdateContent()
+		arg0_5:UpdateContent()
 	end)
-	arg0._pageUtil:setMaxNum(var1)
+	arg0_5._pageUtil:setMaxNum(var1_0)
 
-	arg0.contextData.battleTimes = arg0.contextData.battleTimes or 1
+	arg0_5.contextData.battleTimes = arg0_5.contextData.battleTimes or 1
 
-	arg0._pageUtil:setDefaultNum(arg0.contextData.battleTimes)
-	arg0:UpdateContent()
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+	arg0_5._pageUtil:setDefaultNum(arg0_5.contextData.battleTimes)
+	arg0_5:UpdateContent()
+	pg.UIMgr.GetInstance():BlurPanel(arg0_5._tf)
 end
 
-function var0.UpdateContent(arg0)
-	local var0 = arg0.contextData.battleTimes
-	local var1 = arg0.contextData.stageId
-	local var2 = arg0.activity:getConfig("config_id")
-	local var3 = pg.activity_event_worldboss[var2].ticket
-	local var4 = getProxy(PlayerProxy):getRawData():getResource(var3)
-	local var5 = arg0.activity:GetStageBonus(var1)
-	local var6 = math.clamp(var0 - var5, 0, var4)
-	local var7 = arg0.contextData.useTicket and var6 or 0
-	local var8 = tostring(var5)
+function var0_0.UpdateContent(arg0_11)
+	local var0_11 = arg0_11.contextData.battleTimes
+	local var1_11 = arg0_11.contextData.stageId
+	local var2_11 = arg0_11.activity:getConfig("config_id")
+	local var3_11 = pg.activity_event_worldboss[var2_11].ticket
+	local var4_11 = getProxy(PlayerProxy):getRawData():getResource(var3_11)
+	local var5_11 = arg0_11.activity:GetStageBonus(var1_11)
+	local var6_11 = math.clamp(var0_11 - var5_11, 0, var4_11)
+	local var7_11 = arg0_11.contextData.useTicket and var6_11 or 0
+	local var8_11 = tostring(var5_11)
 
-	if var7 > 0 then
-		var8 = var8 .. setColorStr("+" .. var7, COLOR_GREEN)
+	if var7_11 > 0 then
+		var8_11 = var8_11 .. setColorStr("+" .. var7_11, COLOR_GREEN)
 	end
 
-	setText(arg0.panel:Find("bonus/Number"), var8)
-	setText(arg0.panel:Find("ticket/Number"), var7 .. "/" .. var4)
+	setText(arg0_11.panel:Find("bonus/Number"), var8_11)
+	setText(arg0_11.panel:Find("ticket/Number"), var7_11 .. "/" .. var4_11)
 
-	local var9 = var4 > 0 and var6 > 0
+	local var9_11 = var4_11 > 0 and var6_11 > 0
 
-	setActive(arg0.panel:Find("ticket/checkboxBan"), not var9)
-	setToggleEnabled(arg0.panel:Find("ticket/checkbox"), var9)
+	setActive(arg0_11.panel:Find("ticket/checkboxBan"), not var9_11)
+	setToggleEnabled(arg0_11.panel:Find("ticket/checkbox"), var9_11)
 
-	local var10 = arg0.contextData.oilCost * var0
-	local var11 = i18n("multiple_sorties_cost1", var10)
+	local var10_11 = arg0_11.contextData.oilCost * var0_11
+	local var11_11 = i18n("multiple_sorties_cost1", var10_11)
 
-	if var10 > getProxy(PlayerProxy):getRawData().oil then
-		var11 = string.gsub(var11, "#92fc63", COLOR_RED)
+	if var10_11 > getProxy(PlayerProxy):getRawData().oil then
+		var11_11 = string.gsub(var11_11, "#92fc63", COLOR_RED)
 	end
 
-	if var7 > 0 then
-		var11 = var11 .. i18n("multiple_sorties_cost2", var7)
+	if var7_11 > 0 then
+		var11_11 = var11_11 .. i18n("multiple_sorties_cost2", var7_11)
 	end
 
-	arg0.consumeText.text = var11
+	arg0_11.consumeText.text = var11_11
 end
 
-function var0.willExit(arg0)
-	arg0._pageUtil:Dispose()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+function var0_0.willExit(arg0_12)
+	arg0_12._pageUtil:Dispose()
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_12._tf)
 end
 
-return var0
+return var0_0

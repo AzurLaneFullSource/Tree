@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_270 = {}
+var0_0.word_template_270 = {}
 
-local var1 = var0.word_template_270
+local var1_0 = var0_0.word_template_270
 
 function temp()
-	var1.伺 = {
+	var1_0.伺 = {
 		服 = {
 			器 = {
 				this = true
@@ -34,7 +34,7 @@ end
 temp()
 
 function temp()
-	var1.松 = {
+	var1_0.松 = {
 		坂 = {
 			纱 = {
 				良 = {
@@ -122,7 +122,7 @@ end
 temp()
 
 function temp()
-	var1.宋 = {
+	var1_0.宋 = {
 		爱 = {
 			荣 = {
 				this = true
@@ -172,7 +172,7 @@ end
 temp()
 
 function temp()
-	var1.送 = {
+	var1_0.送 = {
 		上 = {
 			女 = {
 				人 = {
@@ -214,7 +214,7 @@ end
 temp()
 
 function temp()
-	var1.藪 = {
+	var1_0.藪 = {
 		this = {
 			this = true
 		}
@@ -224,7 +224,7 @@ end
 temp()
 
 function temp()
-	var1.苏 = {
+	var1_0.苏 = {
 		波 = {
 			this = true
 		},
@@ -342,7 +342,7 @@ end
 temp()
 
 function temp()
-	var1.酥 = {
+	var1_0.酥 = {
 		软 = {
 			振 = {
 				动 = {

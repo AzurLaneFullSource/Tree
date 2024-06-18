@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_271 = {}
+var0_0.word_template_271 = {}
 
-local var1 = var0.word_template_271
+local var1_0 = var0_0.word_template_271
 
 function temp()
-	var1.蘇 = {
+	var1_0.蘇 = {
 		菲 = {
 			爾 = {
 				this = true
@@ -80,7 +80,7 @@ end
 temp()
 
 function temp()
-	var1.俗 = {
+	var1_0.俗 = {
 		人 = {
 			岛 = {
 				this = true
@@ -92,7 +92,7 @@ end
 temp()
 
 function temp()
-	var1.素 = {
+	var1_0.素 = {
 		人 = {
 			多 = {
 				名 = {
@@ -114,7 +114,7 @@ end
 temp()
 
 function temp()
-	var1.速 = {
+	var1_0.速 = {
 		眠 = {
 			水 = {
 				this = true
@@ -145,7 +145,7 @@ end
 temp()
 
 function temp()
-	var1.溯 = {
+	var1_0.溯 = {
 		水 = {
 			美 = {
 				人 = {
@@ -159,7 +159,7 @@ end
 temp()
 
 function temp()
-	var1.随 = {
+	var1_0.随 = {
 		身 = {
 			带 = {
 				着 = {
@@ -186,7 +186,7 @@ end
 temp()
 
 function temp()
-	var1.碎 = {
+	var1_0.碎 = {
 		片 = {
 			製 = {
 				造 = {

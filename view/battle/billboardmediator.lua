@@ -1,61 +1,61 @@
-﻿local var0 = class("BillboardMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("BillboardMediator", import("..base.ContextMediator"))
 
-var0.FETCH_RANKS = "BillboardMediator:FETCH_RANKS"
-var0.OPEN_RIVAL_INFO = "BillboardMediator:OPEN_RIVAL_INFO"
+var0_0.FETCH_RANKS = "BillboardMediator:FETCH_RANKS"
+var0_0.OPEN_RIVAL_INFO = "BillboardMediator:OPEN_RIVAL_INFO"
 
-function var0.register(arg0)
-	local var0 = getProxy(BillboardProxy)
-	local var1 = arg0.contextData.page or PowerRank.TYPE_POWER
-	local var2 = arg0.contextData.act_id or checkExist(PowerRank:getActivityByRankType(var1), {
+function var0_0.register(arg0_1)
+	local var0_1 = getProxy(BillboardProxy)
+	local var1_1 = arg0_1.contextData.page or PowerRank.TYPE_POWER
+	local var2_1 = arg0_1.contextData.act_id or checkExist(PowerRank:getActivityByRankType(var1_1), {
 		"id"
 	})
-	local var3 = var0:getRankList(var1, var2)
-	local var4 = var0:getPlayerRankData(var1, var2)
+	local var3_1 = var0_1:getRankList(var1_1, var2_1)
+	local var4_1 = var0_1:getPlayerRankData(var1_1, var2_1)
 
-	arg0.viewComponent:updateRankList(var1, var3, var4, var2)
-	arg0:bind(var0.FETCH_RANKS, function(arg0, arg1, arg2)
-		if var0:canFetch(arg1, arg2) then
-			arg0:sendNotification(GAME.GET_POWERRANK, {
-				type = arg1,
-				activityId = arg2
+	arg0_1.viewComponent:updateRankList(var1_1, var3_1, var4_1, var2_1)
+	arg0_1:bind(var0_0.FETCH_RANKS, function(arg0_2, arg1_2, arg2_2)
+		if var0_1:canFetch(arg1_2, arg2_2) then
+			arg0_1:sendNotification(GAME.GET_POWERRANK, {
+				type = arg1_2,
+				activityId = arg2_2
 			})
 		else
-			local var0 = var0:getRankList(arg1, arg2)
-			local var1 = var0:getPlayerRankData(arg1, arg2)
+			local var0_2 = var0_1:getRankList(arg1_2, arg2_2)
+			local var1_2 = var0_1:getPlayerRankData(arg1_2, arg2_2)
 
-			arg0.viewComponent:updateRankList(arg1, var0, var1, arg2)
-			arg0.viewComponent:filter(arg1, arg2)
+			arg0_1.viewComponent:updateRankList(arg1_2, var0_2, var1_2, arg2_2)
+			arg0_1.viewComponent:filter(arg1_2, arg2_2)
 		end
 	end)
-	arg0:bind(var0.OPEN_RIVAL_INFO, function(arg0, arg1)
-		arg0:sendNotification(GAME.GET_RIVAL_INFO, arg1)
+	arg0_1:bind(var0_0.OPEN_RIVAL_INFO, function(arg0_3, arg1_3)
+		arg0_1:sendNotification(GAME.GET_RIVAL_INFO, arg1_3)
 	end)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_4)
 	return {
 		GAME.GET_POWERRANK_DONE,
 		GAME.GET_RIVAL_INFO_DONE
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
+function var0_0.handleNotification(arg0_5, arg1_5)
+	local var0_5 = arg1_5:getName()
+	local var1_5 = arg1_5:getBody()
 
-	if var0 == GAME.GET_POWERRANK_DONE then
-		arg0.viewComponent:updateRankList(var1.type, var1.list, var1.playerRankinfo, var1.activityId)
-		arg0.viewComponent:filter(var1.type, var1.activityId)
-	elseif var0 == GAME.GET_RIVAL_INFO_DONE then
-		arg0:addSubLayers(Context.New({
+	if var0_5 == GAME.GET_POWERRANK_DONE then
+		arg0_5.viewComponent:updateRankList(var1_5.type, var1_5.list, var1_5.playerRankinfo, var1_5.activityId)
+		arg0_5.viewComponent:filter(var1_5.type, var1_5.activityId)
+	elseif var0_5 == GAME.GET_RIVAL_INFO_DONE then
+		arg0_5:addSubLayers(Context.New({
 			viewComponent = RivalInfoLayer,
 			mediator = RivalInfoMediator,
 			data = {
-				rival = var1.rival,
+				rival = var1_5.rival,
 				type = RivalInfoLayer.TYPE_DISPLAY
 			}
 		}))
 	end
 end
 
-return var0
+return var0_0

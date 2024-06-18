@@ -1,10 +1,10 @@
-﻿local var0 = class("GuildMemberInfoPage", import(".GuildMemberBasePage"))
+﻿local var0_0 = class("GuildMemberInfoPage", import(".GuildMemberBasePage"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "GuildMemberInfoPage"
 end
 
-local var1 = {
+local var1_0 = {
 	{
 		value = "shipCount",
 		type = 1,
@@ -50,115 +50,115 @@ local var1 = {
 	}
 }
 
-function var0.OnLoaded(arg0)
-	var0.super.OnLoaded(arg0)
+function var0_0.OnLoaded(arg0_2)
+	var0_0.super.OnLoaded(arg0_2)
 
-	arg0.infonameTF = arg0:findTF("frame/info/name/Text"):GetComponent(typeof(Text))
-	arg0.infoiconTF = arg0:findTF("frame/info/shipicon/icon"):GetComponent(typeof(Image))
-	arg0.infoduty = arg0:findTF("frame/duty"):GetComponent(typeof(Image))
-	arg0.infostarsTF = arg0:findTF("frame/info/shipicon/stars")
-	arg0.infostarTF = arg0:findTF("frame/info/shipicon/stars/star")
-	arg0.infolevelTF = arg0:findTF("frame/info/level/Text"):GetComponent(typeof(Text))
-	arg0.circle = arg0:findTF("frame/info/shipicon/frame")
-	arg0.resumeInfo = arg0:findTF("frame/content")
+	arg0_2.infonameTF = arg0_2:findTF("frame/info/name/Text"):GetComponent(typeof(Text))
+	arg0_2.infoiconTF = arg0_2:findTF("frame/info/shipicon/icon"):GetComponent(typeof(Image))
+	arg0_2.infoduty = arg0_2:findTF("frame/duty"):GetComponent(typeof(Image))
+	arg0_2.infostarsTF = arg0_2:findTF("frame/info/shipicon/stars")
+	arg0_2.infostarTF = arg0_2:findTF("frame/info/shipicon/stars/star")
+	arg0_2.infolevelTF = arg0_2:findTF("frame/info/level/Text"):GetComponent(typeof(Text))
+	arg0_2.circle = arg0_2:findTF("frame/info/shipicon/frame")
+	arg0_2.resumeInfo = arg0_2:findTF("frame/content")
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:Hide()
 	end, SFX_CONFIRM)
 end
 
-function var0.Show(arg0, arg1, arg2, arg3, arg4)
-	arg0.guildVO = arg1
-	arg0.playerVO = arg2
-	arg0.memberVO = arg3
+function var0_0.Show(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5)
+	arg0_5.guildVO = arg1_5
+	arg0_5.playerVO = arg2_5
+	arg0_5.memberVO = arg3_5
 
-	arg0:emit(GuildMemberMediator.OPEN_DESC_INFO, arg3)
+	arg0_5:emit(GuildMemberMediator.OPEN_DESC_INFO, arg3_5)
 
-	if arg4 then
-		arg4()
+	if arg4_5 then
+		arg4_5()
 	end
 end
 
-function var0.Flush(arg0, arg1)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
-	setActive(arg0._tf, true)
-	arg0._tf:SetAsLastSibling()
-	arg0.onShowCallBack(arg0.buttonPos)
+function var0_0.Flush(arg0_6, arg1_6)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_6._tf)
+	setActive(arg0_6._tf, true)
+	arg0_6._tf:SetAsLastSibling()
+	arg0_6.onShowCallBack(arg0_6.buttonPos)
 
-	local var0 = arg0.guildVO
-	local var1 = arg0.memberVO
+	local var0_6 = arg0_6.guildVO
+	local var1_6 = arg0_6.memberVO
 
-	arg0.infonameTF.text = var1.name
+	arg0_6.infonameTF.text = var1_6.name
 
-	local var2 = AttireFrame.attireFrameRes(var1, var1.id == getProxy(PlayerProxy):getRawData().id, AttireConst.TYPE_ICON_FRAME, var1.propose)
+	local var2_6 = AttireFrame.attireFrameRes(var1_6, var1_6.id == getProxy(PlayerProxy):getRawData().id, AttireConst.TYPE_ICON_FRAME, var1_6.propose)
 
-	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var2, var2, true, function(arg0)
-		if IsNil(arg0._tf) then
+	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var2_6, var2_6, true, function(arg0_7)
+		if IsNil(arg0_6._tf) then
 			return
 		end
 
-		if arg0.circle then
-			arg0.name = var2
-			findTF(arg0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
+		if arg0_6.circle then
+			arg0_7.name = var2_6
+			findTF(arg0_7.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
 
-			setParent(arg0, arg0.circle, false)
+			setParent(arg0_7, arg0_6.circle, false)
 		else
-			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var2, var2, arg0)
+			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var2_6, var2_6, arg0_7)
 		end
 	end)
 
-	local var3 = pg.ship_data_statistics[var1.icon]
-	local var4 = Ship.New({
-		configId = var1.icon,
-		skin_id = var1.skinId
+	local var3_6 = pg.ship_data_statistics[var1_6.icon]
+	local var4_6 = Ship.New({
+		configId = var1_6.icon,
+		skin_id = var1_6.skinId
 	})
 
-	LoadSpriteAsync("qicon/" .. var4:getPainting(), function(arg0)
-		if not IsNil(arg0.infoiconTF) then
-			arg0.infoiconTF.sprite = arg0
+	LoadSpriteAsync("qicon/" .. var4_6:getPainting(), function(arg0_8)
+		if not IsNil(arg0_6.infoiconTF) then
+			arg0_6.infoiconTF.sprite = arg0_8
 		end
 	end)
 
-	local var5 = GetSpriteFromAtlas("dutyicon", "icon_" .. var1.duty)
+	local var5_6 = GetSpriteFromAtlas("dutyicon", "icon_" .. var1_6.duty)
 
-	arg0.infoduty.sprite = var5
+	arg0_6.infoduty.sprite = var5_6
 
-	local var6 = arg0.infostarsTF.childCount
+	local var6_6 = arg0_6.infostarsTF.childCount
 
-	for iter0 = var6, var3.star - 1 do
-		cloneTplTo(arg0.infostarTF, arg0.infostarsTF)
+	for iter0_6 = var6_6, var3_6.star - 1 do
+		cloneTplTo(arg0_6.infostarTF, arg0_6.infostarsTF)
 	end
 
-	for iter1 = 1, var6 do
-		local var7 = arg0.infostarsTF:GetChild(iter1 - 1)
+	for iter1_6 = 1, var6_6 do
+		local var7_6 = arg0_6.infostarsTF:GetChild(iter1_6 - 1)
 
-		setActive(var7, iter1 <= var3.star)
+		setActive(var7_6, iter1_6 <= var3_6.star)
 	end
 
-	arg0.infolevelTF.text = "Lv." .. var1.level
+	arg0_6.infolevelTF.text = "Lv." .. var1_6.level
 
-	for iter2, iter3 in ipairs(var1) do
-		local var8 = arg0.resumeInfo:GetChild(iter2 - 1)
+	for iter2_6, iter3_6 in ipairs(var1_0) do
+		local var8_6 = arg0_6.resumeInfo:GetChild(iter2_6 - 1)
 
-		setText(var8:Find("tag"), iter3.tag)
+		setText(var8_6:Find("tag"), iter3_6.tag)
 
-		local var9 = var8:Find("tag (1)")
+		local var9_6 = var8_6:Find("tag (1)")
 
-		if iter3.type == 1 then
-			setText(var9, arg1[iter3.value])
-		elseif iter3.type == 2 then
-			local var10 = math.max(arg1[iter3.value[1]], 1)
-			local var11 = math.max(arg1[iter3.value[2]], 0)
+		if iter3_6.type == 1 then
+			setText(var9_6, arg1_6[iter3_6.value])
+		elseif iter3_6.type == 2 then
+			local var10_6 = math.max(arg1_6[iter3_6.value[1]], 1)
+			local var11_6 = math.max(arg1_6[iter3_6.value[2]], 0)
 
-			setText(var9, string.format("%0.2f", var11 / var10 * 100) .. "%")
-		elseif iter3.type == 3 then
-			local var12 = arg1[iter3.value[1]] or 1
+			setText(var9_6, string.format("%0.2f", var11_6 / var10_6 * 100) .. "%")
+		elseif iter3_6.type == 3 then
+			local var12_6 = arg1_6[iter3_6.value[1]] or 1
 
-			setText(var9, string.format("%0.2f", var12 / getProxy(CollectionProxy):getCollectionTotal() * 100) .. "%")
+			setText(var9_6, string.format("%0.2f", var12_6 / getProxy(CollectionProxy):getCollectionTotal() * 100) .. "%")
 		end
 	end
 end
 
-return var0
+return var0_0

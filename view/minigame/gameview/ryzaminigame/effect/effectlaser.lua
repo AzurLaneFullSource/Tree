@@ -1,39 +1,39 @@
-﻿local var0 = class("EffectLaser", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
+﻿local var0_0 = class("EffectLaser", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
 
-function var0.GetBaseOrder(arg0)
-	if arg0.mark == "N" then
-		return var0.super.GetBaseOrder(arg0)
+function var0_0.GetBaseOrder(arg0_1)
+	if arg0_1.mark == "N" then
+		return var0_0.super.GetBaseOrder(arg0_1)
 	else
 		return 500
 	end
 end
 
-function var0.InitUI(arg0, arg1)
-	arg0.mark = arg1.mark
+function var0_0.InitUI(arg0_2, arg1_2)
+	arg0_2.mark = arg1_2.mark
 
-	arg0:UpdatePos(arg0.pos)
+	arg0_2:UpdatePos(arg0_2.pos)
 
-	local var0 = arg0._tf:Find("scale/" .. arg0.mark)
+	local var0_2 = arg0_2._tf:Find("scale/" .. arg0_2.mark)
 
-	setActive(var0, true)
-	var0:Find("base"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-		arg0:Destroy()
+	setActive(var0_2, true)
+	var0_2:Find("base"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		arg0_2:Destroy()
 	end)
 
-	if arg0.responder:CollideRyza(arg0) then
-		arg0:Calling("hit", {
+	if arg0_2.responder:CollideRyza(arg0_2) then
+		arg0_2:Calling("hit", {
 			1,
-			arg0.realPos
+			arg0_2.realPos
 		}, MoveRyza)
 	end
 end
 
-function var0.GetCollideRange(arg0)
-	local var0
+function var0_0.GetCollideRange(arg0_4)
+	local var0_4
 
-	switch(arg0.mark, {
+	switch(arg0_4.mark, {
 		N = function()
-			var0 = {
+			var0_4 = {
 				{
 					-0.5,
 					0.5
@@ -45,7 +45,7 @@ function var0.GetCollideRange(arg0)
 			}
 		end,
 		S = function()
-			var0 = {
+			var0_4 = {
 				{
 					-0.5,
 					0.5
@@ -57,7 +57,7 @@ function var0.GetCollideRange(arg0)
 			}
 		end,
 		W = function()
-			var0 = {
+			var0_4 = {
 				{
 					-25,
 					-0.5
@@ -69,7 +69,7 @@ function var0.GetCollideRange(arg0)
 			}
 		end,
 		E = function()
-			var0 = {
+			var0_4 = {
 				{
 					0.5,
 					25
@@ -83,8 +83,8 @@ function var0.GetCollideRange(arg0)
 	})
 
 	return {
-		var0
+		var0_4
 	}
 end
 
-return var0
+return var0_0

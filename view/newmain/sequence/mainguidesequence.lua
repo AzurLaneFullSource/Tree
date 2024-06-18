@@ -1,16 +1,16 @@
-﻿local var0 = class("MainGuideSequence")
-local var1 = {
+﻿local var0_0 = class("MainGuideSequence")
+local var1_0 = {
 	{
 		id = "NG002",
 		condition = function()
-			local var0 = getProxy(TaskProxy):getTaskById(10302)
-			local var1 = getProxy(FleetProxy):getFleetById(11)
+			local var0_1 = getProxy(TaskProxy):getTaskById(10302)
+			local var1_1 = getProxy(FleetProxy):getFleetById(11)
 
-			return var0 and var0:isFinish() and not var0:isReceive() and var1:isEmpty()
+			return var0_1 and var0_1:isFinish() and not var0_1:isReceive() and var1_1:isEmpty()
 		end,
 		args = function()
-			return _.any(getProxy(BayProxy):getShips(), function(arg0)
-				return arg0 and arg0.configId == 308031
+			return _.any(getProxy(BayProxy):getShips(), function(arg0_3)
+				return arg0_3 and arg0_3.configId == 308031
 			end) and {} or {
 				1
 			}
@@ -19,18 +19,18 @@ local var1 = {
 	{
 		id = "NG004",
 		condition = function()
-			local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_GUIDE_TASKS)
-			local var1 = var0 and not var0:isEnd()
-			local var2 = false
+			local var0_4 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_GUIDE_TASKS)
+			local var1_4 = var0_4 and not var0_4:isEnd()
+			local var2_4 = false
 
-			if var1 then
-				local var3 = var0:getConfig("config_data")[1]
-				local var4 = getProxy(ChapterProxy):getChapterById(var3)
+			if var1_4 then
+				local var3_4 = var0_4:getConfig("config_data")[1]
+				local var4_4 = getProxy(ChapterProxy):getChapterById(var3_4)
 
-				var2 = var4 and var4:isClear()
+				var2_4 = var4_4 and var4_4:isClear()
 			end
 
-			return var1 and var2
+			return var1_4 and var2_4
 		end,
 		args = function()
 			return {}
@@ -39,9 +39,9 @@ local var1 = {
 	{
 		id = "NG005",
 		condition = function()
-			local var0 = getProxy(PlayerProxy):getRawData().level
+			local var0_6 = getProxy(PlayerProxy):getRawData().level
 
-			return pg.SystemOpenMgr.GetInstance():isOpenSystem(var0, "CommanderCatMediator")
+			return pg.SystemOpenMgr.GetInstance():isOpenSystem(var0_6, "CommanderCatMediator")
 		end,
 		args = function()
 			return {}
@@ -50,9 +50,9 @@ local var1 = {
 	{
 		id = "NG0022",
 		condition = function()
-			local var0 = getProxy(PlayerProxy):getRawData().level
+			local var0_8 = getProxy(PlayerProxy):getRawData().level
 
-			return pg.SystemOpenMgr.GetInstance():isOpenSystem(var0, "EquipmentTransformTreeMediator")
+			return pg.SystemOpenMgr.GetInstance():isOpenSystem(var0_8, "EquipmentTransformTreeMediator")
 		end,
 		args = function()
 			return {}
@@ -70,22 +70,22 @@ local var1 = {
 	{
 		id = "NG0030",
 		condition = function()
-			local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+			local var0_12 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
-			if not tobool(var0) then
+			if not tobool(var0_12) then
 				return false
 			end
 
-			local var1 = getProxy(ChapterProxy)
-			local var2 = var1:getChapterById(1690005)
+			local var1_12 = getProxy(ChapterProxy)
+			local var2_12 = var1_12:getChapterById(1690005)
 
-			return var2 and var2:isClear() and var1:getMapById(var1:getLastMapForActivity())
+			return var2_12 and var2_12:isClear() and var1_12:getMapById(var1_12:getLastMapForActivity())
 		end,
 		args = function()
-			local var0 = getProxy(ChapterProxy)
-			local var1 = var0:getLastMapForActivity()
+			local var0_13 = getProxy(ChapterProxy)
+			local var1_13 = var0_13:getLastMapForActivity()
 
-			return var0:getMapById(var1):getConfig("type") == Map.ACTIVITY_HARD and {
+			return var0_13:getMapById(var1_13):getConfig("type") == Map.ACTIVITY_HARD and {
 				1,
 				3
 			} or {
@@ -101,11 +101,11 @@ local var1 = {
 			return pg.NewStoryMgr.GetInstance():IsPlayed("NG0030")
 		end,
 		args = function()
-			local var0 = PlayerPrefs.GetInt("ryza_task_help_" .. getProxy(PlayerProxy):getRawData().id, 0) == 0
+			local var0_15 = PlayerPrefs.GetInt("ryza_task_help_" .. getProxy(PlayerProxy):getRawData().id, 0) == 0
 
-			warning(var0)
+			warning(var0_15)
 
-			return var0 and {
+			return var0_15 and {
 				1,
 				2
 			} or {
@@ -127,9 +127,9 @@ local var1 = {
 			}
 		end,
 		nextOne = function()
-			local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TASK_RYZA)
+			local var0_18 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TASK_RYZA)
 
-			if var0 and not var0:isEnd() and table.contains(var0.data1_list, 56205) then
+			if var0_18 and not var0_18:isEnd() and table.contains(var0_18.data1_list, 56205) then
 				return "NG0032_2", {}
 			else
 				return nil
@@ -165,66 +165,66 @@ local var1 = {
 	}
 }
 
-function var0.Execute(arg0, arg1)
+function var0_0.Execute(arg0_25, arg1_25)
 	if IsUnityEditor and not ENABLE_GUIDE then
-		if arg1 then
-			arg1()
+		if arg1_25 then
+			arg1_25()
 		end
 
 		return
 	end
 
-	local var0 = _.detect(var1, function(arg0)
-		local var0 = arg0.id
-		local var1 = arg0.condition
+	local var0_25 = _.detect(var1_0, function(arg0_26)
+		local var0_26 = arg0_26.id
+		local var1_26 = arg0_26.condition
 
-		return not pg.NewStoryMgr.GetInstance():IsPlayed(var0) and var1()
+		return not pg.NewStoryMgr.GetInstance():IsPlayed(var0_26) and var1_26()
 	end)
 
-	if not var0 then
-		arg1()
+	if not var0_25 then
+		arg1_25()
 
 		return
 	end
 
-	local var1 = var0.id
-	local var2 = var0.args()
+	local var1_25 = var0_25.id
+	local var2_25 = var0_25.args()
 
 	if pg.SeriesGuideMgr.GetInstance():isRunning() then
-		arg1()
+		arg1_25()
 
 		return
 	end
 
 	if not pg.NewGuideMgr.GetInstance():CanPlay() then
-		arg1()
+		arg1_25()
 
 		return
 	end
 
 	pg.m02:sendNotification(GAME.STORY_UPDATE, {
-		storyId = var1
+		storyId = var1_25
 	})
-	pg.NewGuideMgr.GetInstance():Play(var1, var2, function()
-		if var0.nextOne then
-			local var0, var1 = var0.nextOne()
+	pg.NewGuideMgr.GetInstance():Play(var1_25, var2_25, function()
+		if var0_25.nextOne then
+			local var0_27, var1_27 = var0_25.nextOne()
 
-			arg0:PlayNextOne(var0, var1)
+			arg0_25:PlayNextOne(var0_27, var1_27)
 		end
-	end, arg1)
+	end, arg1_25)
 end
 
-function var0.PlayNextOne(arg0, arg1, arg2)
-	if not arg1 then
+function var0_0.PlayNextOne(arg0_28, arg1_28, arg2_28)
+	if not arg1_28 then
 		return
 	end
 
-	pg.NewGuideMgr.GetInstance():Play(arg1, arg2, function()
+	pg.NewGuideMgr.GetInstance():Play(arg1_28, arg2_28, function()
 		return
 	end)
 	pg.m02:sendNotification(GAME.STORY_UPDATE, {
-		storyId = arg1
+		storyId = arg1_28
 	})
 end
 
-return var0
+return var0_0

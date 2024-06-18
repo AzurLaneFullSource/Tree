@@ -1,47 +1,47 @@
-﻿local var0 = class("BeatMonsterPage", import("....base.BaseActivityPage"))
+﻿local var0_0 = class("BeatMonsterPage", import("....base.BaseActivityPage"))
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("AD")
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("AD")
 end
 
-function var0.OnFirstFlush(arg0)
+function var0_0.OnFirstFlush(arg0_2)
 	return
 end
 
-function var0.OnUpdateFlush(arg0)
-	arg0:Show()
+function var0_0.OnUpdateFlush(arg0_3)
+	arg0_3:Show()
 
-	local var0 = arg0.activity
-	local var1 = arg0:PacketData(var0)
+	local var0_3 = arg0_3.activity
+	local var1_3 = arg0_3:PacketData(var0_3)
 
-	if not arg0.controller then
-		arg0.controller = BeatMonsterController.New()
+	if not arg0_3.controller then
+		arg0_3.controller = BeatMonsterController.New()
 
-		arg0.controller.mediator:SetUI(arg0._go)
-		arg0.controller:SetUp(var1, function(arg0)
-			arg0:emit(ActivityMainScene.LOCK_ACT_MAIN, arg0)
+		arg0_3.controller.mediator:SetUI(arg0_3._go)
+		arg0_3.controller:SetUp(var1_3, function(arg0_4)
+			arg0_3:emit(ActivityMainScene.LOCK_ACT_MAIN, arg0_4)
 		end)
 	else
-		arg0.controller:NetData(var1)
+		arg0_3.controller:NetData(var1_3)
 	end
 end
 
-function var0.PacketData(arg0, arg1)
-	local var0 = arg1:GetDataConfig("hp")
-	local var1 = var0 - arg1.data3
-	local var2 = arg1:GetCountForHitMonster()
-	local var3 = arg1:GetDataConfig("story")
+function var0_0.PacketData(arg0_5, arg1_5)
+	local var0_5 = arg1_5:GetDataConfig("hp")
+	local var1_5 = var0_5 - arg1_5.data3
+	local var2_5 = arg1_5:GetCountForHitMonster()
+	local var3_5 = arg1_5:GetDataConfig("story")
 
 	return {
-		hp = math.max(var1, 0),
-		maxHp = var0,
-		leftCount = var2,
-		storys = var3
+		hp = math.max(var1_5, 0),
+		maxHp = var0_5,
+		leftCount = var2_5,
+		storys = var3_5
 	}
 end
 
-function var0.OnDestroy(arg0)
-	arg0.controller:Dispose()
+function var0_0.OnDestroy(arg0_6)
+	arg0_6.controller:Dispose()
 end
 
-return var0
+return var0_0

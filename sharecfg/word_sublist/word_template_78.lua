@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_78 = {}
+var0_0.word_template_78 = {}
 
-local var1 = var0.word_template_78
+local var1_0 = var0_0.word_template_78
 
 function temp()
-	var1.當 = {
+	var1_0.當 = {
 		官 = {
 			的 = {
 				喜 = {
@@ -43,7 +43,7 @@ end
 temp()
 
 function temp()
-	var1.挡 = {
+	var1_0.挡 = {
 		不 = {
 			住 = {
 				的 = {
@@ -82,7 +82,7 @@ end
 temp()
 
 function temp()
-	var1.档 = {
+	var1_0.档 = {
 		案 = {
 			局 = {
 				this = true
@@ -115,7 +115,7 @@ end
 temp()
 
 function temp()
-	var1.党 = {
+	var1_0.党 = {
 		卑 = {
 			鄙 = {
 				this = true
@@ -473,7 +473,7 @@ end
 temp()
 
 function temp()
-	var1.谠 = {
+	var1_0.谠 = {
 		亡 = {
 			this = true
 		},
@@ -490,7 +490,7 @@ end
 temp()
 
 function temp()
-	var1.黨 = {
+	var1_0.黨 = {
 		都 = {
 			不 = {
 				會 = {
@@ -512,7 +512,7 @@ end
 temp()
 
 function temp()
-	var1.氹 = {
+	var1_0.氹 = {
 		this = {
 			this = true
 		}

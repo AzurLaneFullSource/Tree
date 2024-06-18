@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_342 = {}
+var0_0.word_template_342 = {}
 
-local var1 = var0.word_template_342
+local var1_0 = var0_0.word_template_342
 
 function temp()
-	var1.張 = {
+	var1_0.張 = {
 		伯 = {
 			笠 = {
 				this = true
@@ -99,7 +99,7 @@ end
 temp()
 
 function temp()
-	var1.长 = {
+	var1_0.长 = {
 		安 = {
 			街 = {
 				逆 = {
@@ -309,7 +309,7 @@ end
 temp()
 
 function temp()
-	var1.涨 = {
+	var1_0.涨 = {
 		价 = {
 			就 = {
 				是 = {
@@ -327,7 +327,7 @@ end
 temp()
 
 function temp()
-	var1.掌 = {
+	var1_0.掌 = {
 		权 = {
 			的 = {
 				没 = {
@@ -356,7 +356,7 @@ end
 temp()
 
 function temp()
-	var1.丈 = {
+	var1_0.丈 = {
 		夫 = {
 			外 = {
 				面 = {
@@ -376,7 +376,7 @@ end
 temp()
 
 function temp()
-	var1.帳 = {
+	var1_0.帳 = {
 		號 = {
 			this = true
 		}
@@ -386,7 +386,7 @@ end
 temp()
 
 function temp()
-	var1.賬 = {
+	var1_0.賬 = {
 		號 = {
 			this = true
 		}

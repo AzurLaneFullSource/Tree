@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_247 = {}
+var0_0.word_template_247 = {}
 
-local var1 = var0.word_template_247
+local var1_0 = var0_0.word_template_247
 
 function temp()
-	var1.让 = {
+	var1_0.让 = {
 		大 = {
 			款 = {
 				给 = {
@@ -163,7 +163,7 @@ end
 temp()
 
 function temp()
-	var1.讓 = {
+	var1_0.讓 = {
 		你 = {
 			操 = {
 				this = true
@@ -175,7 +175,7 @@ end
 temp()
 
 function temp()
-	var1.惹 = {
+	var1_0.惹 = {
 		火 = {
 			身 = {
 				材 = {
@@ -194,7 +194,7 @@ end
 temp()
 
 function temp()
-	var1.热 = {
+	var1_0.热 = {
 		比 = {
 			亚 = {
 				this = true
@@ -307,7 +307,7 @@ end
 temp()
 
 function temp()
-	var1.熱 = {
+	var1_0.熱 = {
 		比 = {
 			娅 = {
 				this = true
@@ -351,7 +351,7 @@ end
 temp()
 
 function temp()
-	var1.认 = {
+	var1_0.认 = {
 		识 = {
 			中 = {
 				国 = {
@@ -371,7 +371,7 @@ end
 temp()
 
 function temp()
-	var1.任 = {
+	var1_0.任 = {
 		弼 = {
 			时 = {
 				this = true

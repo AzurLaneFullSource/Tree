@@ -1,93 +1,93 @@
-﻿local var0 = class("ShipCalcHelper")
+﻿local var0_0 = class("ShipCalcHelper")
 
-function var0.CalcDestoryRes(arg0)
-	local var0 = {}
-	local var1 = 0
-	local var2 = 0
-	local var3 = false
+function var0_0.CalcDestoryRes(arg0_1)
+	local var0_1 = {}
+	local var1_1 = 0
+	local var2_1 = 0
+	local var3_1 = false
 
-	for iter0, iter1 in ipairs(arg0) do
-		local var4, var5, var6 = iter1:calReturnRes()
+	for iter0_1, iter1_1 in ipairs(arg0_1) do
+		local var4_1, var5_1, var6_1 = iter1_1:calReturnRes()
 
-		var1 = var1 + var4
-		var2 = var2 + var5
-		var0 = table.mergeArray(var0, underscore.map(var6, function(arg0)
-			return Drop.Create(arg0)
+		var1_1 = var1_1 + var4_1
+		var2_1 = var2_1 + var5_1
+		var0_1 = table.mergeArray(var0_1, underscore.map(var6_1, function(arg0_2)
+			return Drop.Create(arg0_2)
 		end))
 	end
 
-	local var7 = PlayerConst.MergeSameDrops(var0)
+	local var7_1 = PlayerConst.MergeSameDrops(var0_1)
 
-	for iter2 = #var7, 1, -1 do
-		local var8 = var7[iter2]
+	for iter2_1 = #var7_1, 1, -1 do
+		local var8_1 = var7_1[iter2_1]
 
-		if var8.type == DROP_TYPE_VITEM and var8:getConfig("virtual_type") == 20 then
-			local var9, var10 = unpack(pg.gameset.urpt_chapter_max.description)
-			local var11 = math.min(var8.count, var10 - getProxy(BagProxy):GetLimitCntById(var9))
+		if var8_1.type == DROP_TYPE_VITEM and var8_1:getConfig("virtual_type") == 20 then
+			local var9_1, var10_1 = unpack(pg.gameset.urpt_chapter_max.description)
+			local var11_1 = math.min(var8_1.count, var10_1 - getProxy(BagProxy):GetLimitCntById(var9_1))
 
-			var3 = var11 < var8.count
+			var3_1 = var11_1 < var8_1.count
 
-			if var11 > 0 then
-				var8.count = var11
+			if var11_1 > 0 then
+				var8_1.count = var11_1
 			else
-				table.remove(var7, iter2)
+				table.remove(var7_1, iter2_1)
 			end
 		end
 	end
 
-	for iter3, iter4 in pairs(var7) do
-		if iter4.count > 0 and iter4.type == DROP_TYPE_VITEM and Item.getConfigData(iter4.id).virtual_type == 20 then
-			local var12 = iter4.count
-			local var13 = pg.gameset.urpt_chapter_max.description
-			local var14 = var13[1]
-			local var15 = var13[2]
-			local var16 = getProxy(BagProxy):GetLimitCntById(var14)
-			local var17 = math.min(var15 - var16, var12)
+	for iter3_1, iter4_1 in pairs(var7_1) do
+		if iter4_1.count > 0 and iter4_1.type == DROP_TYPE_VITEM and Item.getConfigData(iter4_1.id).virtual_type == 20 then
+			local var12_1 = iter4_1.count
+			local var13_1 = pg.gameset.urpt_chapter_max.description
+			local var14_1 = var13_1[1]
+			local var15_1 = var13_1[2]
+			local var16_1 = getProxy(BagProxy):GetLimitCntById(var14_1)
+			local var17_1 = math.min(var15_1 - var16_1, var12_1)
 
-			var3 = var17 < var12
+			var3_1 = var17_1 < var12_1
 
-			if var17 <= 0 then
-				var7[iter3].count = 0
+			if var17_1 <= 0 then
+				var7_1[iter3_1].count = 0
 			else
-				var7[iter3].count = var17
+				var7_1[iter3_1].count = var17_1
 			end
 		end
 	end
 
-	table.sort(var7, CompareFuncs({
-		function(arg0)
-			return arg0.id
+	table.sort(var7_1, CompareFuncs({
+		function(arg0_3)
+			return arg0_3.id
 		end
 	}))
 
-	return var1, var2, var7, var3
+	return var1_1, var2_1, var7_1, var3_1
 end
 
-function var0.GetEliteAndHightLevelShips(arg0)
-	local var0 = {}
-	local var1 = {}
+function var0_0.GetEliteAndHightLevelShips(arg0_4)
+	local var0_4 = {}
+	local var1_4 = {}
 
-	for iter0, iter1 in ipairs(arg0) do
-		if iter1:getRarity() >= 4 then
-			table.insert(var0, iter1)
-		elseif iter1.level > 1 then
-			table.insert(var1, iter1)
+	for iter0_4, iter1_4 in ipairs(arg0_4) do
+		if iter1_4:getRarity() >= 4 then
+			table.insert(var0_4, iter1_4)
+		elseif iter1_4.level > 1 then
+			table.insert(var1_4, iter1_4)
 		end
 	end
 
-	return var0, var1
+	return var0_4, var1_4
 end
 
-function var0.GetEliteAndHightLevelAndResOverflow(arg0, arg1)
-	local var0 = _.map(arg0, function(arg0)
-		assert(arg1[arg0], arg0)
+function var0_0.GetEliteAndHightLevelAndResOverflow(arg0_5, arg1_5)
+	local var0_5 = _.map(arg0_5, function(arg0_6)
+		assert(arg1_5[arg0_6], arg0_6)
 
-		return arg1[arg0]
+		return arg1_5[arg0_6]
 	end)
-	local var1, var2 = var0.GetEliteAndHightLevelShips(var0)
-	local var3, var4, var5, var6 = var0.CalcDestoryRes(var0)
+	local var1_5, var2_5 = var0_0.GetEliteAndHightLevelShips(var0_5)
+	local var3_5, var4_5, var5_5, var6_5 = var0_0.CalcDestoryRes(var0_5)
 
-	return var1, var2, var6
+	return var1_5, var2_5, var6_5
 end
 
-return var0
+return var0_0

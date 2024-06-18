@@ -1,189 +1,189 @@
-﻿local var0 = class("ChangeShipSkinPage", import("....base.BaseSubView"))
+﻿local var0_0 = class("ChangeShipSkinPage", import("....base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ChangeShipSkinPage"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.confirmBtn = arg0:findTF("window/exchange_btn")
-	arg0.closeBtn = arg0:findTF("window/top/btnBack")
-	arg0.shipCardTpl = arg0._tf:GetComponent("ItemList").prefabItem[0]
-	arg0.shipContent = arg0:findTF("window/sliders/scroll_rect/content")
-	arg0.flagShipToggle = arg0:findTF("window/flag_ship")
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.confirmBtn = arg0_2:findTF("window/exchange_btn")
+	arg0_2.closeBtn = arg0_2:findTF("window/top/btnBack")
+	arg0_2.shipCardTpl = arg0_2._tf:GetComponent("ItemList").prefabItem[0]
+	arg0_2.shipContent = arg0_2:findTF("window/sliders/scroll_rect/content")
+	arg0_2.flagShipToggle = arg0_2:findTF("window/flag_ship")
 
-	setText(arg0:findTF("window/top/title_list/infomation/title"), i18n("chang_ship_skin_window_title"))
-	setText(arg0:findTF("window/please"), i18n("choose_ship_to_wear_this_skin"))
-	setText(arg0:findTF("window/exchange_btn/Image"), i18n("change"))
+	setText(arg0_2:findTF("window/top/title_list/infomation/title"), i18n("chang_ship_skin_window_title"))
+	setText(arg0_2:findTF("window/please"), i18n("choose_ship_to_wear_this_skin"))
+	setText(arg0_2:findTF("window/exchange_btn/Image"), i18n("change"))
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0.confirmBtn, function()
-		arg0:OnConfirm()
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3.confirmBtn, function()
+		arg0_3:OnConfirm()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.closeBtn, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3.closeBtn, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onToggle(arg0, arg0.flagShipToggle, function(arg0)
-		arg0.flagShipMark = arg0
+	onToggle(arg0_3, arg0_3.flagShipToggle, function(arg0_7)
+		arg0_3.flagShipMark = arg0_7
 	end, SFX_PANEL)
 end
 
-function var0.OnConfirm(arg0)
-	if not arg0.selectIds or #arg0.selectIds <= 0 then
+function var0_0.OnConfirm(arg0_8)
+	if not arg0_8.selectIds or #arg0_8.selectIds <= 0 then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("new_skin_no_choose"),
 			onYes = function()
-				arg0:Hide()
+				arg0_8:Hide()
 			end
 		})
 
 		return
 	end
 
-	for iter0, iter1 in ipairs(arg0.selectIds) do
+	for iter0_8, iter1_8 in ipairs(arg0_8.selectIds) do
 		pg.m02:sendNotification(GAME.SET_SHIP_SKIN, {
-			shipId = iter1,
-			skinId = arg0.skin.id
+			shipId = iter1_8,
+			skinId = arg0_8.skin.id
 		})
 	end
 
-	local var0 = arg0.flagShipMark
+	local var0_8 = arg0_8.flagShipMark
 
-	arg0:SetFlagShip(var0)
+	arg0_8:SetFlagShip(var0_8)
 
-	if var0 then
-		local var1 = arg0.selectIds[1]
+	if var0_8 then
+		local var1_8 = arg0_8.selectIds[1]
 
 		pg.m02:sendNotification(GAME.CHANGE_PLAYER_ICON, {
 			skinPage = true,
-			characterId = var1
+			characterId = var1_8
 		})
 	end
 
-	arg0:Hide()
+	arg0_8:Hide()
 end
 
-function var0.Show(arg0, arg1)
-	var0.super.Show(arg0)
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf)
+function var0_0.Show(arg0_10, arg1_10)
+	var0_0.super.Show(arg0_10)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_10._tf)
 
-	arg0.selectIds = {}
-	arg0.skin = arg1
-	arg0.ships = arg0:GetShips(arg1)
+	arg0_10.selectIds = {}
+	arg0_10.skin = arg1_10
+	arg0_10.ships = arg0_10:GetShips(arg1_10)
 
-	local var0 = arg0:GetSetFlagShip()
+	local var0_10 = arg0_10:GetSetFlagShip()
 
-	triggerToggle(arg0.flagShipToggle, var0)
-	arg0:FlushShips()
+	triggerToggle(arg0_10.flagShipToggle, var0_10)
+	arg0_10:FlushShips()
 end
 
-function var0.GetSetFlagShip(arg0)
+function var0_0.GetSetFlagShip(arg0_11)
 	return getProxy(SettingsProxy):GetSetFlagShipForSkinAtlas()
 end
 
-function var0.SetFlagShip(arg0, arg1)
-	getProxy(SettingsProxy):SetFlagShipForSkinAtlas(arg1)
+function var0_0.SetFlagShip(arg0_12, arg1_12)
+	getProxy(SettingsProxy):SetFlagShipForSkinAtlas(arg1_12)
 end
 
-function var0.Sort(arg0, arg1, arg2)
-	local var0 = arg1.skinId == arg0.skin.id and 0 or 1
-	local var1 = arg2.skinId == arg0.skin.id and 0 or 1
+function var0_0.Sort(arg0_13, arg1_13, arg2_13)
+	local var0_13 = arg1_13.skinId == arg0_13.skin.id and 0 or 1
+	local var1_13 = arg2_13.skinId == arg0_13.skin.id and 0 or 1
 
-	if var0 == var1 then
-		if arg1.level == arg2.level then
-			local var2 = arg1:getStar()
-			local var3 = arg2:getStar()
+	if var0_13 == var1_13 then
+		if arg1_13.level == arg2_13.level then
+			local var2_13 = arg1_13:getStar()
+			local var3_13 = arg2_13:getStar()
 
-			if var2 == var3 then
-				local var4 = arg1.inFleet and 1 or 0
-				local var5 = arg2.inFleet and 1 or 0
+			if var2_13 == var3_13 then
+				local var4_13 = arg1_13.inFleet and 1 or 0
+				local var5_13 = arg2_13.inFleet and 1 or 0
 
-				if var4 == var5 then
-					return arg1.createTime < arg2.createTime
+				if var4_13 == var5_13 then
+					return arg1_13.createTime < arg2_13.createTime
 				else
-					return var5 < var4
+					return var5_13 < var4_13
 				end
 			else
-				return var3 < var2
+				return var3_13 < var2_13
 			end
 		else
-			return arg1.level > arg2.level
+			return arg1_13.level > arg2_13.level
 		end
 	else
-		return var1 < var0
+		return var1_13 < var0_13
 	end
 end
 
-function var0.GetShips(arg0, arg1)
-	local var0 = arg1:IsTransSkin()
-	local var1 = arg1:IsProposeSkin()
-	local var2 = getProxy(BayProxy):_findShipsByGroup(arg0.skin:getConfig("ship_group"), var0, var1)
+function var0_0.GetShips(arg0_14, arg1_14)
+	local var0_14 = arg1_14:IsTransSkin()
+	local var1_14 = arg1_14:IsProposeSkin()
+	local var2_14 = getProxy(BayProxy):_findShipsByGroup(arg0_14.skin:getConfig("ship_group"), var0_14, var1_14)
 
-	table.sort(var2, function(arg0, arg1)
-		return arg0:Sort(arg0, arg1)
+	table.sort(var2_14, function(arg0_15, arg1_15)
+		return arg0_14:Sort(arg0_15, arg1_15)
 	end)
 
-	return var2
+	return var2_14
 end
 
-function var0.FlushShips(arg0)
-	local var0 = arg0.ships
+function var0_0.FlushShips(arg0_16)
+	local var0_16 = arg0_16.ships
 
-	local function var1(arg0)
-		for iter0, iter1 in pairs(arg0.selectIds) do
-			if iter1 == arg0.shipVO.id then
-				table.remove(arg0.selectIds, iter0)
+	local function var1_16(arg0_17)
+		for iter0_17, iter1_17 in pairs(arg0_16.selectIds) do
+			if iter1_17 == arg0_17.shipVO.id then
+				table.remove(arg0_16.selectIds, iter0_17)
 
 				break
 			end
 		end
 	end
 
-	removeAllChildren(arg0.shipContent)
+	removeAllChildren(arg0_16.shipContent)
 
-	for iter0, iter1 in ipairs(var0) do
-		local var2 = Object.Instantiate(arg0.shipCardTpl, arg0.shipContent)
-		local var3 = ShipDetailCard.New(var2.gameObject)
+	for iter0_16, iter1_16 in ipairs(var0_16) do
+		local var2_16 = Object.Instantiate(arg0_16.shipCardTpl, arg0_16.shipContent)
+		local var3_16 = ShipDetailCard.New(var2_16.gameObject)
 
-		var3:update(iter1, arg0.skin.id)
+		var3_16:update(iter1_16, arg0_16.skin.id)
 
-		local var4 = iter1.skinId == arg0.skin.id
+		local var4_16 = iter1_16.skinId == arg0_16.skin.id
 
-		setActive(var3.maskStatusOb, var4)
-		setText(var3.maskStatusOb:Find("Text"), "-  " .. i18n("index_CANTUSE") .. "  -")
-		onToggle(arg0, var3.tr, function(arg0)
-			if iter1.skinId == arg0.skin.id then
+		setActive(var3_16.maskStatusOb, var4_16)
+		setText(var3_16.maskStatusOb:Find("Text"), "-  " .. i18n("index_CANTUSE") .. "  -")
+		onToggle(arg0_16, var3_16.tr, function(arg0_18)
+			if iter1_16.skinId == arg0_16.skin.id then
 				return
 			end
 
-			var3:updateSelected(arg0)
+			var3_16:updateSelected(arg0_18)
 
-			if arg0 then
-				table.insert(arg0.selectIds, var3.shipVO.id)
+			if arg0_18 then
+				table.insert(arg0_16.selectIds, var3_16.shipVO.id)
 			else
-				var1(var3)
+				var1_16(var3_16)
 			end
 		end, SFX_PANEL)
 	end
 end
 
-function var0.Hide(arg0)
-	var0.super.Hide(arg0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf, arg0._parentTf)
+function var0_0.Hide(arg0_19)
+	var0_0.super.Hide(arg0_19)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_19._tf, arg0_19._parentTf)
 
-	arg0.selectIds = {}
+	arg0_19.selectIds = {}
 end
 
-function var0.OnDestroy(arg0)
-	if arg0:isShowing() then
-		arg0:Hide()
+function var0_0.OnDestroy(arg0_20)
+	if arg0_20:isShowing() then
+		arg0_20:Hide()
 	end
 
-	arg0.shipCards = nil
-	arg0.selectIds = nil
+	arg0_20.shipCards = nil
+	arg0_20.selectIds = nil
 end
 
-return var0
+return var0_0

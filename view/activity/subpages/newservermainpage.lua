@@ -1,46 +1,46 @@
-﻿local var0 = class("NewServerMainPage", import("...base.BaseActivityPage"))
+﻿local var0_0 = class("NewServerMainPage", import("...base.BaseActivityPage"))
 
-function var0.OnInit(arg0)
-	arg0.bg = arg0:findTF("AD")
-	arg0.time = arg0:findTF("time", arg0.bg)
-	arg0.shopBtn = arg0:findTF("btn_list/shop", arg0.bg)
-	arg0.fightBtn = arg0:findTF("btn_list/fight", arg0.bg)
-	arg0.buildBtn = arg0:findTF("btn_list/build", arg0.bg)
+function var0_0.OnInit(arg0_1)
+	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.time = arg0_1:findTF("time", arg0_1.bg)
+	arg0_1.shopBtn = arg0_1:findTF("btn_list/shop", arg0_1.bg)
+	arg0_1.fightBtn = arg0_1:findTF("btn_list/fight", arg0_1.bg)
+	arg0_1.buildBtn = arg0_1:findTF("btn_list/build", arg0_1.bg)
 end
 
-function var0.OnFirstFlush(arg0)
-	onButton(arg0, arg0.shopBtn, function()
+function var0_0.OnFirstFlush(arg0_2)
+	onButton(arg0_2, arg0_2.shopBtn, function()
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.NEW_SERVER_CARNIVAL, {
 			page = NewServerCarnivalScene.SHOP_PAGE
 		})
 	end)
-	onButton(arg0, arg0.buildBtn, function()
-		local var0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD)
+	onButton(arg0_2, arg0_2.buildBtn, function()
+		local var0_4 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD)
 
-		if var0 and not var0:isEnd() then
-			arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+		if var0_4 and not var0_4:isEnd() then
+			arg0_2:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
 				page = BuildShipScene.PAGE_NEWSERVER
 			})
 		else
-			arg0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT)
+			arg0_2:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT)
 		end
 	end)
-	onButton(arg0, arg0.fightBtn, function()
-		arg0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+	onButton(arg0_2, arg0_2.fightBtn, function()
+		arg0_2:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end)
-	arg0:updateTime()
+	arg0_2:updateTime()
 end
 
-function var0.updateTime(arg0)
-	local var0 = pg.TimeMgr.GetInstance()
-	local var1 = var0:STimeDescS(arg0.activity:getStartTime(), "%m.%d")
-	local var2 = var0:STimeDescS(arg0.activity.stopTime, "%m.%d %H:%M")
+function var0_0.updateTime(arg0_6)
+	local var0_6 = pg.TimeMgr.GetInstance()
+	local var1_6 = var0_6:STimeDescS(arg0_6.activity:getStartTime(), "%m.%d")
+	local var2_6 = var0_6:STimeDescS(arg0_6.activity.stopTime, "%m.%d %H:%M")
 
-	setText(arg0.time, var1 .. " - " .. var2)
+	setText(arg0_6.time, var1_6 .. " - " .. var2_6)
 end
 
-function var0.OnUpdateFlush(arg0)
+function var0_0.OnUpdateFlush(arg0_7)
 	return
 end
 
-return var0
+return var0_0

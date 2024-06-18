@@ -1,62 +1,62 @@
-﻿local var0 = class("TechnologyMediator", import("..base.ContextMediator"))
+﻿local var0_0 = class("TechnologyMediator", import("..base.ContextMediator"))
 
-var0.ON_START = "TechnologyMediator:ON_START"
-var0.ON_FINISHED = "TechnologyMediator:ON_FINISHED"
-var0.ON_REFRESH = "TechnologyMediator:ON_REFRESH"
-var0.ON_STOP = "TechnologyMediator:ON_STOP"
-var0.ON_JOIN_QUEUE = "TechnologyMediator:ON_JOIN_QUEUE"
-var0.ON_FINISH_QUEUE = "TechnologyMediator:ON_FINISH_QUEUE"
-var0.ON_CLICK_SETTINGS_BTN = "TechnologyMediator:ON_CLICK_SETTINGS_BTN"
+var0_0.ON_START = "TechnologyMediator:ON_START"
+var0_0.ON_FINISHED = "TechnologyMediator:ON_FINISHED"
+var0_0.ON_REFRESH = "TechnologyMediator:ON_REFRESH"
+var0_0.ON_STOP = "TechnologyMediator:ON_STOP"
+var0_0.ON_JOIN_QUEUE = "TechnologyMediator:ON_JOIN_QUEUE"
+var0_0.ON_FINISH_QUEUE = "TechnologyMediator:ON_FINISH_QUEUE"
+var0_0.ON_CLICK_SETTINGS_BTN = "TechnologyMediator:ON_CLICK_SETTINGS_BTN"
 
-function var0.register(arg0)
-	arg0:bind(var0.ON_START, function(arg0, arg1)
-		arg0:sendNotification(GAME.START_TECHNOLOGY, {
-			id = arg1.id,
-			pool_id = arg1.pool_id
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.ON_START, function(arg0_2, arg1_2)
+		arg0_1:sendNotification(GAME.START_TECHNOLOGY, {
+			id = arg1_2.id,
+			pool_id = arg1_2.pool_id
 		})
 	end)
-	arg0:bind(var0.ON_FINISHED, function(arg0, arg1)
-		arg0:sendNotification(GAME.FINISH_TECHNOLOGY, {
-			id = arg1.id,
-			pool_id = arg1.pool_id
+	arg0_1:bind(var0_0.ON_FINISHED, function(arg0_3, arg1_3)
+		arg0_1:sendNotification(GAME.FINISH_TECHNOLOGY, {
+			id = arg1_3.id,
+			pool_id = arg1_3.pool_id
 		})
 	end)
-	arg0:bind(var0.ON_REFRESH, function(arg0)
-		arg0:sendNotification(GAME.REFRESH_TECHNOLOGYS)
+	arg0_1:bind(var0_0.ON_REFRESH, function(arg0_4)
+		arg0_1:sendNotification(GAME.REFRESH_TECHNOLOGYS)
 	end)
-	arg0:bind(var0.ON_STOP, function(arg0, arg1)
-		arg0:sendNotification(GAME.STOP_TECHNOLOGY, {
-			id = arg1.id,
-			pool_id = arg1.pool_id
+	arg0_1:bind(var0_0.ON_STOP, function(arg0_5, arg1_5)
+		arg0_1:sendNotification(GAME.STOP_TECHNOLOGY, {
+			id = arg1_5.id,
+			pool_id = arg1_5.pool_id
 		})
 	end)
-	arg0:bind(var0.ON_JOIN_QUEUE, function(arg0, arg1)
-		arg0:sendNotification(GAME.JOIN_QUEUE_TECHNOLOGY, {
-			id = arg1.id,
-			pool_id = arg1.pool_id
+	arg0_1:bind(var0_0.ON_JOIN_QUEUE, function(arg0_6, arg1_6)
+		arg0_1:sendNotification(GAME.JOIN_QUEUE_TECHNOLOGY, {
+			id = arg1_6.id,
+			pool_id = arg1_6.pool_id
 		})
 	end)
-	arg0:bind(var0.ON_FINISH_QUEUE, function(arg0)
-		arg0:sendNotification(GAME.FINISH_QUEUE_TECHNOLOGY)
+	arg0_1:bind(var0_0.ON_FINISH_QUEUE, function(arg0_7)
+		arg0_1:sendNotification(GAME.FINISH_QUEUE_TECHNOLOGY)
 	end)
-	arg0:bind(var0.ON_CLICK_SETTINGS_BTN, function(arg0)
-		arg0:addSubLayers(Context.New({
+	arg0_1:bind(var0_0.ON_CLICK_SETTINGS_BTN, function(arg0_8)
+		arg0_1:addSubLayers(Context.New({
 			viewComponent = TechnologySettingsLayer,
 			mediator = TechnologySettingsMediator
 		}))
 	end)
 
-	local var0 = getProxy(TechnologyProxy)
+	local var0_1 = getProxy(TechnologyProxy)
 
-	arg0.viewComponent:setTechnologys(var0:getTechnologys(), var0.queue)
-	arg0.viewComponent:setRefreshFlag(var0.refreshTechnologysFlag)
+	arg0_1.viewComponent:setTechnologys(var0_1:getTechnologys(), var0_1.queue)
+	arg0_1.viewComponent:setRefreshFlag(var0_1.refreshTechnologysFlag)
 
-	local var1 = getProxy(PlayerProxy):getData()
+	local var1_1 = getProxy(PlayerProxy):getData()
 
-	arg0.viewComponent:setPlayer(var1)
+	arg0_1.viewComponent:setPlayer(var1_1)
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_9)
 	return {
 		GAME.FINISH_TECHNOLOGY_DONE,
 		GAME.REFRESH_TECHNOLOGYS_DONE,
@@ -69,64 +69,64 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = arg1:getName()
+function var0_0.handleNotification(arg0_10, arg1_10)
+	local var0_10 = arg1_10:getBody()
+	local var1_10 = arg1_10:getName()
 
-	if var1 == TechnologyProxy.TECHNOLOGY_UPDATED then
-		arg0.viewComponent:updateTechnology(var0)
-	elseif var1 == GAME.FINISH_TECHNOLOGY_DONE then
-		if #var0.items > 0 then
-			arg0.viewComponent:emit(BaseUI.ON_AWARD, {
+	if var1_10 == TechnologyProxy.TECHNOLOGY_UPDATED then
+		arg0_10.viewComponent:updateTechnology(var0_10)
+	elseif var1_10 == GAME.FINISH_TECHNOLOGY_DONE then
+		if #var0_10.items > 0 then
+			arg0_10.viewComponent:emit(BaseUI.ON_AWARD, {
 				animation = true,
-				items = var0.items
+				items = var0_10.items
 			})
 		end
 
-		arg0:onRefresh()
-	elseif var1 == GAME.FINISH_QUEUE_TECHNOLOGY_DONE then
-		local var2 = {}
+		arg0_10:onRefresh()
+	elseif var1_10 == GAME.FINISH_QUEUE_TECHNOLOGY_DONE then
+		local var2_10 = {}
 
-		for iter0, iter1 in ipairs(var0.dropInfos) do
-			if #iter1 > 0 then
-				table.insert(var2, function(arg0)
-					arg0.viewComponent:emit(BaseUI.ON_AWARD, {
+		for iter0_10, iter1_10 in ipairs(var0_10.dropInfos) do
+			if #iter1_10 > 0 then
+				table.insert(var2_10, function(arg0_11)
+					arg0_10.viewComponent:emit(BaseUI.ON_AWARD, {
 						animation = true,
-						items = iter1,
-						removeFunc = arg0
+						items = iter1_10,
+						removeFunc = arg0_11
 					})
 				end)
 			end
 		end
 
-		seriesAsync(var2, function()
+		seriesAsync(var2_10, function()
 			return
 		end)
-		arg0:onRefresh()
-	elseif var1 == GAME.REFRESH_TECHNOLOGYS_DONE then
-		arg0:onRefresh()
-	elseif var1 == GAME.JOIN_QUEUE_TECHNOLOGY_DONE then
-		arg0:onRefresh()
-	elseif var1 == TechnologyProxy.REFRESH_UPDATED then
-		arg0.viewComponent:setRefreshFlag(var0)
-		arg0.viewComponent:updateRefreshBtn(var0)
-	elseif var1 == PlayerProxy.UPDATED then
-		arg0.viewComponent:setPlayer(var0)
-	elseif var1 == TechnologySettingsMediator.EXIT_CALL then
-		arg0.viewComponent:updatePickUpVersionChange()
+		arg0_10:onRefresh()
+	elseif var1_10 == GAME.REFRESH_TECHNOLOGYS_DONE then
+		arg0_10:onRefresh()
+	elseif var1_10 == GAME.JOIN_QUEUE_TECHNOLOGY_DONE then
+		arg0_10:onRefresh()
+	elseif var1_10 == TechnologyProxy.REFRESH_UPDATED then
+		arg0_10.viewComponent:setRefreshFlag(var0_10)
+		arg0_10.viewComponent:updateRefreshBtn(var0_10)
+	elseif var1_10 == PlayerProxy.UPDATED then
+		arg0_10.viewComponent:setPlayer(var0_10)
+	elseif var1_10 == TechnologySettingsMediator.EXIT_CALL then
+		arg0_10.viewComponent:updatePickUpVersionChange()
 	end
 end
 
-function var0.onRefresh(arg0)
-	arg0.viewComponent:clearTimer()
-	arg0.viewComponent:cancelSelected()
+function var0_0.onRefresh(arg0_13)
+	arg0_13.viewComponent:clearTimer()
+	arg0_13.viewComponent:cancelSelected()
 
-	local var0 = getProxy(TechnologyProxy)
+	local var0_13 = getProxy(TechnologyProxy)
 
-	arg0.viewComponent:setTechnologys(var0:getTechnologys(), var0.queue)
-	arg0.viewComponent:initTechnologys()
-	arg0.viewComponent:initQueue()
-	arg0.viewComponent:updateSettingsBtn()
+	arg0_13.viewComponent:setTechnologys(var0_13:getTechnologys(), var0_13.queue)
+	arg0_13.viewComponent:initTechnologys()
+	arg0_13.viewComponent:initQueue()
+	arg0_13.viewComponent:updateSettingsBtn()
 end
 
-return var0
+return var0_0

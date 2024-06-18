@@ -1,360 +1,360 @@
-﻿local var0 = class("LevelStageTotalRewardPanel", import("view.level.BaseTotalRewardPanel"))
+﻿local var0_0 = class("LevelStageTotalRewardPanel", import("view.level.BaseTotalRewardPanel"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "LevelStageTotalRewardPanel"
 end
 
-local var1 = 0.15
+local var1_0 = 0.15
 
-function var0.init(arg0)
-	var0.super.init(arg0)
+function var0_0.init(arg0_2)
+	var0_0.super.init(arg0_2)
 
-	arg0.itemList = arg0.boxView:Find("Content/ItemGrid")
+	arg0_2.itemList = arg0_2.boxView:Find("Content/ItemGrid")
 
-	local var0 = Instantiate(arg0.itemList:GetComponent(typeof(ItemList)).prefabItem[0])
+	local var0_2 = Instantiate(arg0_2.itemList:GetComponent(typeof(ItemList)).prefabItem[0])
 
-	var0.name = "Icon"
+	var0_2.name = "Icon"
 
-	setParent(var0, arg0.itemList:Find("GridItem/Shell"))
+	setParent(var0_2, arg0_2.itemList:Find("GridItem/Shell"))
 
-	arg0.itemListSub = arg0.boxView:Find("Content/ItemGridSub")
+	arg0_2.itemListSub = arg0_2.boxView:Find("Content/ItemGridSub")
 
-	cloneTplTo(var0, arg0.itemListSub:Find("GridItem/Shell"), var0.name)
+	cloneTplTo(var0_2, arg0_2.itemListSub:Find("GridItem/Shell"), var0_2.name)
 
-	arg0.spList = arg0.window:Find("Fixed/SpList")
+	arg0_2.spList = arg0_2.window:Find("Fixed/SpList")
 
-	arg0.CloneIconTpl(arg0.spList:Find("Item/Active/Item"), "Icon")
-	setText(arg0.boxView:Find("Content/Title/Text"), i18n("battle_end_subtitle1"))
-	setText(arg0.boxView:Find("Content/TitleSub/Text"), i18n("settle_rewards_text"))
+	arg0_2.CloneIconTpl(arg0_2.spList:Find("Item/Active/Item"), "Icon")
+	setText(arg0_2.boxView:Find("Content/Title/Text"), i18n("battle_end_subtitle1"))
+	setText(arg0_2.boxView:Find("Content/TitleSub/Text"), i18n("settle_rewards_text"))
 end
 
-function var0.didEnter(arg0)
-	var0.super.didEnter(arg0)
+function var0_0.didEnter(arg0_3)
+	var0_0.super.didEnter(arg0_3)
 
-	local var0 = arg0.contextData.isAutoFight
-	local var1 = PlayerPrefs.GetInt(AUTO_BATTLE_LABEL, 0) > 0
+	local var0_3 = arg0_3.contextData.isAutoFight
+	local var1_3 = PlayerPrefs.GetInt(AUTO_BATTLE_LABEL, 0) > 0
 
-	if var0 and var1 then
+	if var0_3 and var1_3 then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_AUTO_BATTLE)
 		LuaHelper.Vibrate()
 	end
 
-	local var2 = getProxy(MetaCharacterProxy):getMetaTacticsInfoOnEnd()
+	local var2_3 = getProxy(MetaCharacterProxy):getMetaTacticsInfoOnEnd()
 
-	if var2 and #var2 > 0 then
-		arg0.metaExpView = MetaExpView.New(arg0.window:Find("Layout"), arg0.event, arg0.contextData)
+	if var2_3 and #var2_3 > 0 then
+		arg0_3.metaExpView = MetaExpView.New(arg0_3.window:Find("Layout"), arg0_3.event, arg0_3.contextData)
 
-		local var3 = arg0.metaExpView
+		local var3_3 = arg0_3.metaExpView
 
-		var3:Reset()
-		var3:Load()
-		var3:setData(var2)
-		var3:ActionInvoke("Show")
+		var3_3:Reset()
+		var3_3:Load()
+		var3_3:setData(var2_3)
+		var3_3:ActionInvoke("Show")
 	end
 end
 
-function var0.willExit(arg0)
-	arg0:SkipAnim()
+function var0_0.willExit(arg0_4)
+	arg0_4:SkipAnim()
 
-	if arg0.metaExpView then
-		arg0.metaExpView:Destroy()
+	if arg0_4.metaExpView then
+		arg0_4.metaExpView:Destroy()
 	end
 
-	var0.super.willExit(arg0)
+	var0_0.super.willExit(arg0_4)
 end
 
-function var0.UpdateView(arg0)
-	local var0 = arg0.contextData
+function var0_0.UpdateView(arg0_5)
+	local var0_5 = arg0_5.contextData
 
-	onButton(arg0, arg0._tf:Find("BG"), function()
-		if arg0.isRewardAnimating then
-			arg0:SkipAnim()
+	onButton(arg0_5, arg0_5._tf:Find("BG"), function()
+		if arg0_5.isRewardAnimating then
+			arg0_5:SkipAnim()
 
 			return
 		end
 
-		existCall(var0.onClose)
-		arg0:closeView()
+		existCall(var0_5.onClose)
+		arg0_5:closeView()
 	end)
-	onButton(arg0, arg0.window:Find("Fixed/ButtonGO"), function()
-		if arg0.contextData.spItemID and not (PlayerPrefs.GetInt("autoFight_firstUse_sp", 0) == 1) then
+	onButton(arg0_5, arg0_5.window:Find("Fixed/ButtonGO"), function()
+		if arg0_5.contextData.spItemID and not (PlayerPrefs.GetInt("autoFight_firstUse_sp", 0) == 1) then
 			PlayerPrefs.SetInt("autoFight_firstUse_sp", 1)
 			PlayerPrefs.Save()
 
-			local function var0()
-				arg0.contextData.spItemID = nil
+			local function var0_7()
+				arg0_5.contextData.spItemID = nil
 
-				arg0:UpdateSPItem()
+				arg0_5:UpdateSPItem()
 			end
 
-			arg0:HandleShowMsgBox({
+			arg0_5:HandleShowMsgBox({
 				hideNo = true,
 				content = i18n("autofight_special_operation_tip"),
-				onYes = var0,
-				onNo = var0
+				onYes = var0_7,
+				onNo = var0_7
 			})
 
 			return
 		end
 
-		local var1 = Chapter.GetSPOperationItemCacheKey(arg0.contextData.chapter.id)
+		local var1_7 = Chapter.GetSPOperationItemCacheKey(arg0_5.contextData.chapter.id)
 
-		PlayerPrefs.SetInt(var1, arg0.contextData.spItemID or 0)
+		PlayerPrefs.SetInt(var1_7, arg0_5.contextData.spItemID or 0)
 
-		local var2 = true
+		local var2_7 = true
 
-		arg0:emit(LevelMediator2.ON_RETRACKING, arg0.contextData.chapter, var2)
-		arg0:closeView()
+		arg0_5:emit(LevelMediator2.ON_RETRACKING, arg0_5.contextData.chapter, var2_7)
+		arg0_5:closeView()
 	end, SFX_CONFIRM)
-	onButton(arg0, arg0.window:Find("Fixed/ButtonExit"), function()
-		existCall(var0.onClose)
-		arg0:closeView()
+	onButton(arg0_5, arg0_5.window:Find("Fixed/ButtonExit"), function()
+		existCall(var0_5.onClose)
+		arg0_5:closeView()
 	end, SFX_CANCEL)
-	arg0:UpdateSPItem()
+	arg0_5:UpdateSPItem()
 
-	local var1 = var0.rewards
-	local var2 = var0.resultRewards
-	local var3 = var0.events
-	local var4 = var0.guildTasks
-	local var5 = var0.guildAutoReceives
-	local var6 = var1 and #var1 > 0
-	local var7 = var2 and #var2 > 0
-	local var8 = var3 and #var3 > 0
-	local var9 = var4 and table.getCount(var4) > 0
-	local var10 = var5 and table.getCount(var5) > 0
-	local var11 = true
-	local var12 = {}
+	local var1_5 = var0_5.rewards
+	local var2_5 = var0_5.resultRewards
+	local var3_5 = var0_5.events
+	local var4_5 = var0_5.guildTasks
+	local var5_5 = var0_5.guildAutoReceives
+	local var6_5 = var1_5 and #var1_5 > 0
+	local var7_5 = var2_5 and #var2_5 > 0
+	local var8_5 = var3_5 and #var3_5 > 0
+	local var9_5 = var4_5 and table.getCount(var4_5) > 0
+	local var10_5 = var5_5 and table.getCount(var5_5) > 0
+	local var11_5 = true
+	local var12_5 = {}
 
-	setActive(arg0.boxView:Find("Content/Title"), false)
-	setActive(arg0.itemList, false)
+	setActive(arg0_5.boxView:Find("Content/Title"), false)
+	setActive(arg0_5.itemList, false)
 
-	if var6 then
-		var11 = false
-		arg0.hasRewards = true
+	if var6_5 then
+		var11_5 = false
+		arg0_5.hasRewards = true
 
-		table.insert(var12, function(arg0)
-			setActive(arg0.boxView:Find("Content/Title"), true)
-			setActive(arg0.itemList, true)
-			arg0()
+		table.insert(var12_5, function(arg0_10)
+			setActive(arg0_5.boxView:Find("Content/Title"), true)
+			setActive(arg0_5.itemList, true)
+			arg0_10()
 		end)
 
-		local var13 = CustomIndexLayer.Clone2Full(arg0.itemList, #var1)
+		local var13_5 = CustomIndexLayer.Clone2Full(arg0_5.itemList, #var1_5)
 
-		for iter0, iter1 in ipairs(var13) do
-			local var14 = var1[iter0]
-			local var15 = var13[iter0]
+		for iter0_5, iter1_5 in ipairs(var13_5) do
+			local var14_5 = var1_5[iter0_5]
+			local var15_5 = var13_5[iter0_5]
 
-			updateDrop(var15:Find("Shell/Icon"), var14)
-			onButton(arg0, var15:Find("Shell/Icon"), function()
-				arg0:emit(BaseUI.ON_DROP, var14)
+			updateDrop(var15_5:Find("Shell/Icon"), var14_5)
+			onButton(arg0_5, var15_5:Find("Shell/Icon"), function()
+				arg0_5:emit(BaseUI.ON_DROP, var14_5)
 			end, SFX_PANEL)
 		end
 
-		arg0.isRewardAnimating = true
+		arg0_5.isRewardAnimating = true
 
-		for iter2 = 1, #var1 do
-			local var16 = var13[iter2]
+		for iter2_5 = 1, #var1_5 do
+			local var16_5 = var13_5[iter2_5]
 
-			setActive(var16, false)
-			table.insert(var12, function(arg0)
-				if arg0.exited then
+			setActive(var16_5, false)
+			table.insert(var12_5, function(arg0_12)
+				if arg0_5.exited then
 					return
 				end
 
-				setActive(var16, true)
-				scrollTo(arg0.boxView:Find("Content"), {
+				setActive(var16_5, true)
+				scrollTo(arg0_5.boxView:Find("Content"), {
 					y = 0
 				})
 
-				arg0.LTid = LeanTween.delayedCall(var1, System.Action(arg0)).uniqueId
+				arg0_5.LTid = LeanTween.delayedCall(var1_0, System.Action(arg0_12)).uniqueId
 			end)
 		end
 	end
 
-	setActive(arg0.boxView:Find("Content/TitleSub"), false)
-	setActive(arg0.itemListSub, false)
+	setActive(arg0_5.boxView:Find("Content/TitleSub"), false)
+	setActive(arg0_5.itemListSub, false)
 
-	if var7 then
-		var11 = false
-		arg0.hasResultRewards = true
+	if var7_5 then
+		var11_5 = false
+		arg0_5.hasResultRewards = true
 
-		table.insert(var12, function(arg0)
-			setActive(arg0.boxView:Find("Content/TitleSub"), true)
-			setActive(arg0.itemListSub, true)
-			arg0()
+		table.insert(var12_5, function(arg0_13)
+			setActive(arg0_5.boxView:Find("Content/TitleSub"), true)
+			setActive(arg0_5.itemListSub, true)
+			arg0_13()
 		end)
 
-		local var17 = CustomIndexLayer.Clone2Full(arg0.itemListSub, #var2)
+		local var17_5 = CustomIndexLayer.Clone2Full(arg0_5.itemListSub, #var2_5)
 
-		for iter3, iter4 in ipairs(var17) do
-			local var18 = var2[iter3]
-			local var19 = var17[iter3]
+		for iter3_5, iter4_5 in ipairs(var17_5) do
+			local var18_5 = var2_5[iter3_5]
+			local var19_5 = var17_5[iter3_5]
 
-			updateDrop(var19:Find("Shell/Icon"), var18)
-			onButton(arg0, var19:Find("Shell/Icon"), function()
-				arg0:emit(BaseUI.ON_DROP, var18)
+			updateDrop(var19_5:Find("Shell/Icon"), var18_5)
+			onButton(arg0_5, var19_5:Find("Shell/Icon"), function()
+				arg0_5:emit(BaseUI.ON_DROP, var18_5)
 			end, SFX_PANEL)
 		end
 
-		arg0.isRewardAnimating = true
+		arg0_5.isRewardAnimating = true
 
-		local var20 = {}
+		local var20_5 = {}
 
-		for iter5 = 1, #var2 do
-			local var21 = var17[iter5]
+		for iter5_5 = 1, #var2_5 do
+			local var21_5 = var17_5[iter5_5]
 
-			setActive(var21, false)
-			table.insert(var12, function(arg0)
-				if arg0.exited then
+			setActive(var21_5, false)
+			table.insert(var12_5, function(arg0_15)
+				if arg0_5.exited then
 					return
 				end
 
-				setActive(var21, true)
-				scrollTo(arg0.boxView:Find("Content"), {
+				setActive(var21_5, true)
+				scrollTo(arg0_5.boxView:Find("Content"), {
 					y = 0
 				})
 
-				arg0.LTid = LeanTween.delayedCall(var1, System.Action(arg0)).uniqueId
+				arg0_5.LTid = LeanTween.delayedCall(var1_0, System.Action(arg0_15)).uniqueId
 			end)
 		end
 	end
 
-	setActive(arg0.boxView:Find("Content/TextArea"), false)
+	setActive(arg0_5.boxView:Find("Content/TextArea"), false)
 
-	local var22 = {}
+	local var22_5 = {}
 
-	if var8 then
-		for iter6, iter7 in ipairs(var3) do
-			local var23 = pg.collection_template[iter7] and pg.collection_template[iter7].title or ""
+	if var8_5 then
+		for iter6_5, iter7_5 in ipairs(var3_5) do
+			local var23_5 = pg.collection_template[iter7_5] and pg.collection_template[iter7_5].title or ""
 
-			table.insert(var22, i18n("autofight_entrust", var23))
+			table.insert(var22_5, i18n("autofight_entrust", var23_5))
 		end
 	end
 
-	if var9 then
-		for iter8, iter9 in pairs(var4) do
-			table.insert(var22, i18n("autofight_task", iter9))
+	if var9_5 then
+		for iter8_5, iter9_5 in pairs(var4_5) do
+			table.insert(var22_5, i18n("autofight_task", iter9_5))
 		end
 	end
 
-	if var10 then
-		for iter10, iter11 in pairs(var5) do
-			table.insert(var22, i18n("guild_task_autoaccept_1", iter11))
+	if var10_5 then
+		for iter10_5, iter11_5 in pairs(var5_5) do
+			table.insert(var22_5, i18n("guild_task_autoaccept_1", iter11_5))
 		end
 	end
 
-	if #var22 > 0 then
-		var11 = false
-		arg0.hasEventMsg = true
+	if #var22_5 > 0 then
+		var11_5 = false
+		arg0_5.hasEventMsg = true
 
-		setText(arg0.boxView:Find("Content/TextArea/Text"), table.concat(var22, "\n"))
-		table.insert(var12, function(arg0)
-			setActive(arg0.boxView:Find("Content/TextArea"), true)
-			arg0()
+		setText(arg0_5.boxView:Find("Content/TextArea/Text"), table.concat(var22_5, "\n"))
+		table.insert(var12_5, function(arg0_16)
+			setActive(arg0_5.boxView:Find("Content/TextArea"), true)
+			arg0_16()
 		end)
 	end
 
-	setActive(arg0.boxView, not var11)
-	setActive(arg0.emptyTip, var11)
-	seriesAsync(var12, function()
-		arg0:SkipAnim()
+	setActive(arg0_5.boxView, not var11_5)
+	setActive(arg0_5.emptyTip, var11_5)
+	seriesAsync(var12_5, function()
+		arg0_5:SkipAnim()
 	end)
 end
 
-function var0.UpdateSPItem(arg0)
-	local var0 = getProxy(BagProxy):getItemsByType(Item.SPECIAL_OPERATION_TICKET)
-	local var1 = arg0.contextData.chapter:getConfig("special_operation_list")
+function var0_0.UpdateSPItem(arg0_18)
+	local var0_18 = getProxy(BagProxy):getItemsByType(Item.SPECIAL_OPERATION_TICKET)
+	local var1_18 = arg0_18.contextData.chapter:getConfig("special_operation_list")
 
-	var1 = var1 == "" and {} or var1
+	var1_18 = var1_18 == "" and {} or var1_18
 
-	local var2 = {}
+	local var2_18 = {}
 
-	for iter0, iter1 in ipairs(pg.benefit_buff_template.all) do
-		local var3 = pg.benefit_buff_template[iter1]
+	for iter0_18, iter1_18 in ipairs(pg.benefit_buff_template.all) do
+		local var3_18 = pg.benefit_buff_template[iter1_18]
 
-		if var3.benefit_type == Chapter.OPERATION_BUFF_TYPE_DESC and table.contains(var1, iter1) then
-			table.insert(var2, var3)
+		if var3_18.benefit_type == Chapter.OPERATION_BUFF_TYPE_DESC and table.contains(var1_18, iter1_18) then
+			table.insert(var2_18, var3_18)
 		end
 	end
 
-	local var4 = 1
+	local var4_18 = 1
 
-	setActive(arg0.spList, #var2 ~= 0 and arg0.contextData.chapter:GetRestDailyBonus() == 0)
+	setActive(arg0_18.spList, #var2_18 ~= 0 and arg0_18.contextData.chapter:GetRestDailyBonus() == 0)
 
-	if #var2 == 0 then
+	if #var2_18 == 0 then
 		return
 	end
 
-	UIItemList.StaticAlign(arg0.spList, arg0.spList:GetChild(0), var4, function(arg0, arg1, arg2)
-		if arg0 ~= UIItemList.EventUpdate then
+	UIItemList.StaticAlign(arg0_18.spList, arg0_18.spList:GetChild(0), var4_18, function(arg0_19, arg1_19, arg2_19)
+		if arg0_19 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		local var0 = var2[arg1 + 1]
-		local var1 = tonumber(var0.benefit_condition)
+		local var0_19 = var2_18[arg1_19 + 1]
+		local var1_19 = tonumber(var0_19.benefit_condition)
 
-		setText(arg2:Find("Active/Desc"), var0.desc)
+		setText(arg2_19:Find("Active/Desc"), var0_19.desc)
 
-		local var2 = _.detect(var0, function(arg0)
-			return arg0.configId == var1
+		local var2_19 = _.detect(var0_18, function(arg0_20)
+			return arg0_20.configId == var1_19
 		end)
-		local var3 = var2 and var2.count > 0
+		local var3_19 = var2_19 and var2_19.count > 0
 
-		setActive(arg2:Find("Active"), var3)
-		setActive(arg2:Find("Block"), not var3)
+		setActive(arg2_19:Find("Active"), var3_19)
+		setActive(arg2_19:Find("Block"), not var3_19)
 
-		if not var3 then
-			setText(arg2:Find("Block"):Find("Desc"), i18n("levelScene_select_noitem"))
+		if not var3_19 then
+			setText(arg2_19:Find("Block"):Find("Desc"), i18n("levelScene_select_noitem"))
 
 			return
 		end
 
-		setActive(arg2:Find("Active/Item"), true)
-		updateDrop(arg2:Find("Active/Item/Icon"), Drop.New({
-			id = var1,
+		setActive(arg2_19:Find("Active/Item"), true)
+		updateDrop(arg2_19:Find("Active/Item/Icon"), Drop.New({
+			id = var1_19,
 			type = DROP_TYPE_ITEM,
-			count = var2 and var2.count or 0
+			count = var2_19 and var2_19.count or 0
 		}))
-		onButton(arg0, arg2, function()
-			arg0.contextData.spItemID = not arg0.contextData.spItemID and var1 or nil
+		onButton(arg0_18, arg2_19, function()
+			arg0_18.contextData.spItemID = not arg0_18.contextData.spItemID and var1_19 or nil
 
-			if arg0.contextData.spItemID then
+			if arg0_18.contextData.spItemID then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_select_sp"))
 			end
 
-			arg0:UpdateSPItem()
+			arg0_18:UpdateSPItem()
 		end, SFX_PANEL)
-		onButton(arg0, arg2:Find("Active/Item/Icon"), function()
-			arg0:emit(BaseUI.ON_ITEM, var1)
+		onButton(arg0_18, arg2_19:Find("Active/Item/Icon"), function()
+			arg0_18:emit(BaseUI.ON_ITEM, var1_19)
 		end)
-		setActive(arg2:Find("Active/Checkbox/Mark"), tobool(arg0.contextData.spItemID))
+		setActive(arg2_19:Find("Active/Checkbox/Mark"), tobool(arg0_18.contextData.spItemID))
 	end)
 end
 
-function var0.SkipAnim(arg0)
-	if not arg0.isRewardAnimating then
+function var0_0.SkipAnim(arg0_23)
+	if not arg0_23.isRewardAnimating then
 		return
 	end
 
-	arg0.isRewardAnimating = nil
+	arg0_23.isRewardAnimating = nil
 
-	if arg0.LTid then
-		LeanTween.cancel(arg0.LTid)
+	if arg0_23.LTid then
+		LeanTween.cancel(arg0_23.LTid)
 
-		arg0.LTid = nil
+		arg0_23.LTid = nil
 	end
 
-	eachChild(arg0.itemList, function(arg0)
-		setActive(arg0, true)
+	eachChild(arg0_23.itemList, function(arg0_24)
+		setActive(arg0_24, true)
 	end)
-	eachChild(arg0.itemListSub, function(arg0)
-		setActive(arg0, true)
+	eachChild(arg0_23.itemListSub, function(arg0_25)
+		setActive(arg0_25, true)
 	end)
-	setActive(arg0.boxView:Find("Content/Title"), arg0.hasRewards)
-	setActive(arg0.itemList, arg0.hasRewards)
-	setActive(arg0.boxView:Find("Content/TitleSub"), arg0.hasResultRewards)
-	setActive(arg0.itemListSub, arg0.hasResultRewards)
-	setActive(arg0.boxView:Find("Content/TextArea"), arg0.hasEventMsg)
+	setActive(arg0_23.boxView:Find("Content/Title"), arg0_23.hasRewards)
+	setActive(arg0_23.itemList, arg0_23.hasRewards)
+	setActive(arg0_23.boxView:Find("Content/TitleSub"), arg0_23.hasResultRewards)
+	setActive(arg0_23.itemListSub, arg0_23.hasResultRewards)
+	setActive(arg0_23.boxView:Find("Content/TextArea"), arg0_23.hasEventMsg)
 end
 
-return var0
+return var0_0

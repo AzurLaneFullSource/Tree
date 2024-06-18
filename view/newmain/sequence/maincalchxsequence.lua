@@ -1,8 +1,8 @@
-﻿local var0 = class("MainCalcHxSequence")
+﻿local var0_0 = class("MainCalcHxSequence")
 
-function var0.Execute(arg0, arg1)
+function var0_0.Execute(arg0_1, arg1_1)
 	HXSet.calcLocalizationUse()
-	arg1()
+	arg1_1()
 end
 
-return var0
+return var0_0

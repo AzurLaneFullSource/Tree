@@ -1,126 +1,126 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConfig
-local var2 = class("CardPuzzleBoardClicker")
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConfig
+local var2_0 = class("CardPuzzleBoardClicker")
 
-var0.Battle.CardPuzzleBoardClicker = var2
-var2.__name = "CardPuzzleBoardClicker"
-var2.CLICK_STATE_CLICK = "CLICK_STATE_CLICK"
-var2.CLICK_STATE_DRAG = "CLICK_STATE_DRAG"
-var2.CLICK_STATE_RELEASE = "CLICK_STATE_RELEASE"
-var2.CLICK_STATE_NONE = "CLICK_STATE_NONE"
+var0_0.Battle.CardPuzzleBoardClicker = var2_0
+var2_0.__name = "CardPuzzleBoardClicker"
+var2_0.CLICK_STATE_CLICK = "CLICK_STATE_CLICK"
+var2_0.CLICK_STATE_DRAG = "CLICK_STATE_DRAG"
+var2_0.CLICK_STATE_RELEASE = "CLICK_STATE_RELEASE"
+var2_0.CLICK_STATE_NONE = "CLICK_STATE_NONE"
 
-function var2.Ctor(arg0, arg1)
-	arg0._go = arg1
+function var2_0.Ctor(arg0_1, arg1_1)
+	arg0_1._go = arg1_1
 
-	arg0:Init()
+	arg0_1:Init()
 end
 
-function var2.Init(arg0)
-	SetActive(arg0._go, true)
+function var2_0.Init(arg0_2)
+	SetActive(arg0_2._go, true)
 
-	arg0._distX, arg0._distY = 0, 0
-	arg0._dirX, arg0._dirY = 0, 0
-	arg0._prePress = false
-	arg0._isPress = false
+	arg0_2._distX, arg0_2._distY = 0, 0
+	arg0_2._dirX, arg0_2._dirY = 0, 0
+	arg0_2._prePress = false
+	arg0_2._isPress = false
 
-	local var0 = pg.CameraFixMgr.GetInstance()
+	local var0_2 = pg.CameraFixMgr.GetInstance()
 
-	arg0._screenWidth, arg0._screenHeight = var0:GetCurrentWidth(), var0:GetCurrentHeight()
+	arg0_2._screenWidth, arg0_2._screenHeight = var0_2:GetCurrentWidth(), var0_2:GetCurrentHeight()
 
-	arg0._go:GetComponent("StickController"):SetStickFunc(function(arg0, arg1)
-		arg0:updateStick(arg0, arg1)
+	arg0_2._go:GetComponent("StickController"):SetStickFunc(function(arg0_3, arg1_3)
+		arg0_2:updateStick(arg0_3, arg1_3)
 	end)
 end
 
-function var2.SetCardPuzzleComponent(arg0, arg1)
-	arg0._cardPuzzleInfo = arg1
+function var2_0.SetCardPuzzleComponent(arg0_4, arg1_4)
+	arg0_4._cardPuzzleInfo = arg1_4
 end
 
-function var2.updateStick(arg0, arg1, arg2)
-	if not arg0._cardPuzzleInfo:GetClickEnable() then
+function var2_0.updateStick(arg0_5, arg1_5, arg2_5)
+	if not arg0_5._cardPuzzleInfo:GetClickEnable() then
 		return
 	end
 
-	arg0._initX = false
-	arg0._initY = false
+	arg0_5._initX = false
+	arg0_5._initY = false
 
-	if arg2 == -1 then
-		arg0._startX = nil
-		arg0._startY = nil
-		arg0._isPress = false
+	if arg2_5 == -1 then
+		arg0_5._startX = nil
+		arg0_5._startY = nil
+		arg0_5._isPress = false
 	else
-		arg0._isPress = true
+		arg0_5._isPress = true
 
-		local var0 = arg1.x
-		local var1 = arg1.y
+		local var0_5 = arg1_5.x
+		local var1_5 = arg1_5.y
 
-		if arg0._startX == nil then
-			arg0._startX = var0
-			arg0._startY = var1
-			arg0._initX = true
-			arg0._initY = true
+		if arg0_5._startX == nil then
+			arg0_5._startX = var0_5
+			arg0_5._startY = var1_5
+			arg0_5._initX = true
+			arg0_5._initY = true
 		else
-			local var2 = var0 - arg0._lastPosX
+			local var2_5 = var0_5 - arg0_5._lastPosX
 
-			if var2 * arg0._dirX < 0 then
-				arg0._startX = var0
-				arg0._initX = true
+			if var2_5 * arg0_5._dirX < 0 then
+				arg0_5._startX = var0_5
+				arg0_5._initX = true
 			end
 
-			if var2 ~= 0 then
-				arg0._dirX = var2
+			if var2_5 ~= 0 then
+				arg0_5._dirX = var2_5
 			end
 
-			local var3 = var1 - arg0._lastPosY
+			local var3_5 = var1_5 - arg0_5._lastPosY
 
-			if var3 * arg0._dirY < 0 then
-				arg0._startY = var1
-				arg0._initY = true
+			if var3_5 * arg0_5._dirY < 0 then
+				arg0_5._startY = var1_5
+				arg0_5._initY = true
 			end
 
-			if var3 ~= 0 then
-				arg0._dirY = var3
+			if var3_5 ~= 0 then
+				arg0_5._dirY = var3_5
 			end
 		end
 
-		arg0._distX = (var0 - arg0._startX) / arg0._screenWidth
-		arg0._distY = (var1 - arg0._startY) / arg0._screenHeight
+		arg0_5._distX = (var0_5 - arg0_5._startX) / arg0_5._screenWidth
+		arg0_5._distY = (var1_5 - arg0_5._startY) / arg0_5._screenHeight
 	end
 
-	arg0._lastPosX = arg1.x
-	arg0._lastPosY = arg1.y
+	arg0_5._lastPosX = arg1_5.x
+	arg0_5._lastPosY = arg1_5.y
 
-	local var4
+	local var4_5
 
-	if not arg0._prePress and arg0._isPress then
-		var4 = var2.CLICK_STATE_CLICK
-	elseif arg0._prePress and arg0._isPress then
-		var4 = var2.CLICK_STATE_DRAG
-	elseif arg0._prePress and not arg0._isPress then
-		var4 = var2.CLICK_STATE_RELEASE
+	if not arg0_5._prePress and arg0_5._isPress then
+		var4_5 = var2_0.CLICK_STATE_CLICK
+	elseif arg0_5._prePress and arg0_5._isPress then
+		var4_5 = var2_0.CLICK_STATE_DRAG
+	elseif arg0_5._prePress and not arg0_5._isPress then
+		var4_5 = var2_0.CLICK_STATE_RELEASE
 	else
-		var4 = var2.CLICK_STATE_NONE
+		var4_5 = var2_0.CLICK_STATE_NONE
 	end
 
-	arg0._cardPuzzleInfo:UpdateClickPos(arg0._lastPosX, arg0._lastPosY, var4)
+	arg0_5._cardPuzzleInfo:UpdateClickPos(arg0_5._lastPosX, arg0_5._lastPosY, var4_5)
 
-	arg0._prePress = arg0._isPress
+	arg0_5._prePress = arg0_5._isPress
 end
 
-function var2.GetDistance(arg0)
-	return arg0._distX, arg0._distY
+function var2_0.GetDistance(arg0_6)
+	return arg0_6._distX, arg0_6._distY
 end
 
-function var2.IsFirstPress(arg0)
-	return arg0._initX, arg0._initY
+function var2_0.IsFirstPress(arg0_7)
+	return arg0_7._initX, arg0_7._initY
 end
 
-function var2.IsPress(arg0)
-	return arg0._isPress
+function var2_0.IsPress(arg0_8)
+	return arg0_8._isPress
 end
 
-function var2.Dispose(arg0)
+function var2_0.Dispose(arg0_9)
 	return
 end

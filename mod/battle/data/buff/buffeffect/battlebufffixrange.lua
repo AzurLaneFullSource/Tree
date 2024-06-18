@@ -1,41 +1,41 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleBuffFixRange = class("BattleBuffFixRange", var0.Battle.BattleBuffEffect)
-var0.Battle.BattleBuffFixRange.__name = "BattleBuffFixRange"
+var0_0.Battle.BattleBuffFixRange = class("BattleBuffFixRange", var0_0.Battle.BattleBuffEffect)
+var0_0.Battle.BattleBuffFixRange.__name = "BattleBuffFixRange"
 
-local var1 = var0.Battle.BattleBuffFixRange
+local var1_0 = var0_0.Battle.BattleBuffFixRange
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	arg0._weaponRange = arg0._tempData.arg_list.weaponRange
-	arg0._bulletRange = arg0._tempData.arg_list.bulletRange
-	arg0._minRange = arg0._tempData.arg_list.minRange
-	arg0._bulletRangeOffset = arg0._tempData.arg_list.bulletRangeOffset
+function var1_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	arg0_2._weaponRange = arg0_2._tempData.arg_list.weaponRange
+	arg0_2._bulletRange = arg0_2._tempData.arg_list.bulletRange
+	arg0_2._minRange = arg0_2._tempData.arg_list.minRange
+	arg0_2._bulletRangeOffset = arg0_2._tempData.arg_list.bulletRangeOffset
 end
 
-function var1.onAttach(arg0, arg1)
-	if arg0._weaponRange or arg0._bulletRange or arg0._bulletRangeOffset then
-		arg0:updateBulletRange(arg1, arg0._weaponRange, arg0._bulletRange, arg0._minRange, arg0._bulletRangeOffset)
+function var1_0.onAttach(arg0_3, arg1_3)
+	if arg0_3._weaponRange or arg0_3._bulletRange or arg0_3._bulletRangeOffset then
+		arg0_3:updateBulletRange(arg1_3, arg0_3._weaponRange, arg0_3._bulletRange, arg0_3._minRange, arg0_3._bulletRangeOffset)
 	end
 end
 
-function var1.onRemove(arg0, arg1)
-	arg0:updateBulletRange(arg1)
+function var1_0.onRemove(arg0_4, arg1_4)
+	arg0_4:updateBulletRange(arg1_4)
 end
 
-function var1.updateBulletRange(arg0, arg1, arg2, arg3, arg4, arg5)
-	local var0 = arg1:GetAllWeapon()
+function var1_0.updateBulletRange(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5, arg5_5)
+	local var0_5 = arg1_5:GetAllWeapon()
 
-	for iter0, iter1 in ipairs(var0) do
-		local var1 = iter1:GetEquipmentIndex()
+	for iter0_5, iter1_5 in ipairs(var0_5) do
+		local var1_5 = iter1_5:GetEquipmentIndex()
 
-		if arg0._indexRequire == nil or table.contains(arg0._indexRequire, var1) then
-			iter1:FixWeaponRange(arg2, arg3, arg4, arg5)
+		if arg0_5._indexRequire == nil or table.contains(arg0_5._indexRequire, var1_5) then
+			iter1_5:FixWeaponRange(arg2_5, arg3_5, arg4_5, arg5_5)
 		end
 	end
 end

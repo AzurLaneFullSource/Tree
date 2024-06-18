@@ -1,71 +1,71 @@
-﻿local var0 = class("CourtYardDispatcher")
+﻿local var0_0 = class("CourtYardDispatcher")
 
-function var0.Ctor(arg0, arg1)
-	arg0.host = arg1
-	arg0.__callbacks = {}
-	arg0.__list = {}
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.host = arg1_1
+	arg0_1.__callbacks = {}
+	arg0_1.__list = {}
 end
 
-function var0.GetHost(arg0)
-	return arg0.host
+function var0_0.GetHost(arg0_2)
+	return arg0_2.host
 end
 
-function var0.AddListener(arg0, arg1, arg2)
-	assert(type(arg1) == "string" and type(arg2) == "function")
+function var0_0.AddListener(arg0_3, arg1_3, arg2_3)
+	assert(type(arg1_3) == "string" and type(arg2_3) == "function")
 
-	if not arg0.__callbacks[arg1] then
-		arg0.__callbacks[arg1] = {}
+	if not arg0_3.__callbacks[arg1_3] then
+		arg0_3.__callbacks[arg1_3] = {}
 	end
 
-	table.insert(arg0.__callbacks[arg1], arg2)
+	table.insert(arg0_3.__callbacks[arg1_3], arg2_3)
 end
 
-function var0.RemoveListener(arg0, arg1, arg2)
-	assert(type(arg1) == "string" and type(arg2) == "function")
+function var0_0.RemoveListener(arg0_4, arg1_4, arg2_4)
+	assert(type(arg1_4) == "string" and type(arg2_4) == "function")
 
-	local var0 = arg0.__callbacks[arg1]
+	local var0_4 = arg0_4.__callbacks[arg1_4]
 
-	if var0 then
-		for iter0 = #var0, 1, -1 do
-			if var0[iter0] == arg2 then
-				table.remove(var0, iter0)
+	if var0_4 then
+		for iter0_4 = #var0_4, 1, -1 do
+			if var0_4[iter0_4] == arg2_4 then
+				table.remove(var0_4, iter0_4)
 			end
 		end
 	end
 end
 
-function var0.ClearListener(arg0, arg1)
-	assert(type(arg1) == "string")
+function var0_0.ClearListener(arg0_5, arg1_5)
+	assert(type(arg1_5) == "string")
 
-	arg0.__callbacks[arg1] = nil
+	arg0_5.__callbacks[arg1_5] = nil
 end
 
-function var0.DispatchEvent(arg0, arg1, ...)
-	assert(type(arg1) == "string")
+function var0_0.DispatchEvent(arg0_6, arg1_6, ...)
+	assert(type(arg1_6) == "string")
 
-	local var0 = arg0.__callbacks[arg1]
+	local var0_6 = arg0_6.__callbacks[arg1_6]
 
-	if var0 then
-		local var1 = #var0
+	if var0_6 then
+		local var1_6 = #var0_6
 
-		for iter0 = 1, var1 do
-			arg0.__list[iter0] = var0[iter0]
+		for iter0_6 = 1, var1_6 do
+			arg0_6.__list[iter0_6] = var0_6[iter0_6]
 		end
 
-		for iter1 = 1, var1 do
-			arg0.__list[iter1](arg1, arg0, ...)
+		for iter1_6 = 1, var1_6 do
+			arg0_6.__list[iter1_6](arg1_6, arg0_6, ...)
 		end
 	end
 end
 
-function var0.ClearListeners(arg0)
-	for iter0, iter1 in pairs(arg0.__callbacks) do
-		arg0.__callbacks[iter0] = nil
+function var0_0.ClearListeners(arg0_7)
+	for iter0_7, iter1_7 in pairs(arg0_7.__callbacks) do
+		arg0_7.__callbacks[iter0_7] = nil
 	end
 
-	for iter2, iter3 in ipairs(arg0.__list) do
-		arg0.__list[iter2] = nil
+	for iter2_7, iter3_7 in ipairs(arg0_7.__list) do
+		arg0_7.__list[iter2_7] = nil
 	end
 end
 
-return var0
+return var0_0

@@ -1,9 +1,9 @@
-﻿local var0 = class("ResourceFieldLevelProductAttr", import(".ResourceFieldProductAttr"))
+﻿local var0_0 = class("ResourceFieldLevelProductAttr", import(".ResourceFieldProductAttr"))
 
-function var0.ReCalcValue(arg0)
-	arg0.multiple = arg0.config[arg0.level].hour_time
+function var0_0.ReCalcValue(arg0_1)
+	arg0_1.multiple = arg0_1.config[arg0_1.level].hour_time
 
-	var0.super.ReCalcValue(arg0)
+	var0_0.super.ReCalcValue(arg0_1)
 end
 
-return var0
+return var0_0

@@ -1,50 +1,50 @@
-﻿local var0 = class("IslandProxy", import(".NetProxy"))
+﻿local var0_0 = class("IslandProxy", import(".NetProxy"))
 
-function var0.register(arg0)
-	arg0.nodeDic = nil
-	arg0.timeStamp = 0
+function var0_0.register(arg0_1)
+	arg0_1.nodeDic = nil
+	arg0_1.timeStamp = 0
 end
 
-function var0.CheckValid(arg0)
-	local var0 = pg.TimeMgr.GetInstance()
+function var0_0.CheckValid(arg0_2)
+	local var0_2 = pg.TimeMgr.GetInstance()
 
-	return arg0.nodeDic and var0:IsSameDay(arg0.timeStamp, var0:GetServerTime())
+	return arg0_2.nodeDic and var0_2:IsSameDay(arg0_2.timeStamp, var0_2:GetServerTime())
 end
 
-function var0.GetNodeDic(arg0)
-	if arg0:CheckValid() then
-		return arg0.nodeDic
+function var0_0.GetNodeDic(arg0_3)
+	if arg0_3:CheckValid() then
+		return arg0_3.nodeDic
 	else
 		return {}
 	end
 end
 
-function var0.CheckAndRequest(arg0, arg1)
-	local var0 = {}
-	local var1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND)
+function var0_0.CheckAndRequest(arg0_4, arg1_4)
+	local var0_4 = {}
+	local var1_4 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND)
 
-	if var1 and not var1:isEnd() and not arg0:CheckValid() then
-		table.insert(var0, function(arg0)
-			arg0:sendNotification(GAME.REQUEST_NODE_LIST, {
-				act_id = var1.id,
-				callback = arg0
+	if var1_4 and not var1_4:isEnd() and not arg0_4:CheckValid() then
+		table.insert(var0_4, function(arg0_5)
+			arg0_4:sendNotification(GAME.REQUEST_NODE_LIST, {
+				act_id = var1_4.id,
+				callback = arg0_5
 			})
 		end)
 	end
 
-	seriesAsync(var0, arg1)
+	seriesAsync(var0_4, arg1_4)
 end
 
-function var0.GetNode(arg0, arg1)
-	return arg0.nodeDic[arg1]
+function var0_0.GetNode(arg0_6, arg1_6)
+	return arg0_6.nodeDic[arg1_6]
 end
 
-function var0.GetNodeIds(arg0)
-	local var0 = underscore.keys(arg0.nodeDic)
+function var0_0.GetNodeIds(arg0_7)
+	local var0_7 = underscore.keys(arg0_7.nodeDic)
 
-	table.sort(var0)
+	table.sort(var0_7)
 
-	return var0
+	return var0_7
 end
 
-return var0
+return var0_0

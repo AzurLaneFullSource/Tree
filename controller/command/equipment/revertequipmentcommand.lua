@@ -1,35 +1,35 @@
-﻿local var0 = class("RevertEquipmentCommand", pm.SimpleCommand)
+﻿local var0_0 = class("RevertEquipmentCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody().id
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody().id
 
 	pg.ConnectionMgr.GetInstance():Send(14010, {
-		equip_id = var0
-	}, 14011, function(arg0)
-		if arg0.result == 0 then
-			local var0 = getProxy(EquipmentProxy)
-			local var1 = var0:getEquipmentById(var0)
+		equip_id = var0_1
+	}, 14011, function(arg0_2)
+		if arg0_2.result == 0 then
+			local var0_2 = getProxy(EquipmentProxy)
+			local var1_2 = var0_2:getEquipmentById(var0_1)
 
-			var0:removeEquipmentById(var1.id, 1)
+			var0_2:removeEquipmentById(var1_2.id, 1)
 
-			local var2 = var1:GetRootEquipment()
+			local var2_2 = var1_2:GetRootEquipment()
 
-			var0:addEquipmentById(var2.id, var2.count)
+			var0_2:addEquipmentById(var2_2.id, var2_2.count)
 			getProxy(BagProxy):removeItemById(Item.REVERT_EQUIPMENT_ID, 1)
 
-			local var3 = var1:getRevertAwards()
+			local var3_2 = var1_2:getRevertAwards()
 
-			for iter0, iter1 in pairs(var3) do
-				arg0:sendNotification(GAME.ADD_ITEM, iter1)
+			for iter0_2, iter1_2 in pairs(var3_2) do
+				arg0_1:sendNotification(GAME.ADD_ITEM, iter1_2)
 			end
 
-			arg0:sendNotification(GAME.REVERT_EQUIPMENT_DONE, {
-				awards = var3
+			arg0_1:sendNotification(GAME.REVERT_EQUIPMENT_DONE, {
+				awards = var3_2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("equipment_destroyEquipments", arg0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("equipment_destroyEquipments", arg0_2.result))
 		end
 	end)
 end
 
-return var0
+return var0_0

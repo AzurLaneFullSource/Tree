@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_154 = {}
+var0_0.word_template_154 = {}
 
-local var1 = var0.word_template_154
+local var1_0 = var0_0.word_template_154
 
 function temp()
-	var1.结 = {
+	var1_0.结 = {
 		谠 = {
 			营 = {
 				私 = {
@@ -33,7 +33,7 @@ end
 temp()
 
 function temp()
-	var1.捷 = {
+	var1_0.捷 = {
 		克 = {
 			C = {
 				Z = {
@@ -59,7 +59,7 @@ end
 temp()
 
 function temp()
-	var1.截 = {
+	var1_0.截 = {
 		访 = {
 			this = true
 		},
@@ -82,7 +82,7 @@ end
 temp()
 
 function temp()
-	var1.姐 = {
+	var1_0.姐 = {
 		的 = {
 			穴 = {
 				this = true
@@ -118,7 +118,7 @@ end
 temp()
 
 function temp()
-	var1.解 = {
+	var1_0.解 = {
 		放 = {
 			后 = {
 				this = true
@@ -246,7 +246,7 @@ end
 temp()
 
 function temp()
-	var1.戒 = {
+	var1_0.戒 = {
 		毒 = {
 			所 = {
 				遭 = {
@@ -284,7 +284,7 @@ end
 temp()
 
 function temp()
-	var1.届 = {
+	var1_0.届 = {
 		中 = {
 			央 = {
 				政 = {

@@ -1,163 +1,163 @@
-﻿local var0 = require("jit")
+﻿local var0_0 = require("jit")
 
-assert(var0.version_num == 20100, "LuaJIT core/library version mismatch")
+assert(var0_0.version_num == 20100, "LuaJIT core/library version mismatch")
 
-local var1 = require("jit.util")
-local var2 = require("jit.vmdef")
-local var3 = var1.funcinfo
-local var4 = var1.funcbc
-local var5 = var1.traceinfo
-local var6 = var1.traceir
-local var7 = var1.tracek
-local var8 = var1.tracemc
-local var9 = var1.tracesnap
-local var10 = var1.traceexitstub
-local var11 = var1.ircalladdr
-local var12 = require("bit")
-local var13 = var12.band
-local var14 = var12.rshift
-local var15 = var12.tohex
-local var16 = string.sub
-local var17 = string.gsub
-local var18 = string.format
-local var19 = string.byte
-local var20 = string.rep
-local var21 = type
-local var22 = tostring
-local var23 = io.stdout
-local var24 = io.stderr
-local var25
-local var26
-local var27
-local var28
-local var29
-local var30 = {
+local var1_0 = require("jit.util")
+local var2_0 = require("jit.vmdef")
+local var3_0 = var1_0.funcinfo
+local var4_0 = var1_0.funcbc
+local var5_0 = var1_0.traceinfo
+local var6_0 = var1_0.traceir
+local var7_0 = var1_0.tracek
+local var8_0 = var1_0.tracemc
+local var9_0 = var1_0.tracesnap
+local var10_0 = var1_0.traceexitstub
+local var11_0 = var1_0.ircalladdr
+local var12_0 = require("bit")
+local var13_0 = var12_0.band
+local var14_0 = var12_0.rshift
+local var15_0 = var12_0.tohex
+local var16_0 = string.sub
+local var17_0 = string.gsub
+local var18_0 = string.format
+local var19_0 = string.byte
+local var20_0 = string.rep
+local var21_0 = type
+local var22_0 = tostring
+local var23_0 = io.stdout
+local var24_0 = io.stderr
+local var25_0
+local var26_0
+local var27_0
+local var28_0
+local var29_0
+local var30_0 = {
 	__index = false
 }
-local var31 = {}
-local var32 = 0
+local var31_0 = {}
+local var32_0 = 0
 
-local function var33(arg0, arg1)
-	local var0 = {}
+local function var33_0(arg0_1, arg1_1)
+	local var0_1 = {}
 
-	var30.__index = var0
+	var30_0.__index = var0_1
 
-	if var0.arch:sub(1, 4) == "mips" then
-		var0[var10(arg0, 0)] = "exit"
+	if var0_0.arch:sub(1, 4) == "mips" then
+		var0_1[var10_0(arg0_1, 0)] = "exit"
 
 		return
 	end
 
-	for iter0 = 0, arg1 - 1 do
-		local var1 = var10(arg0, iter0)
+	for iter0_1 = 0, arg1_1 - 1 do
+		local var1_1 = var10_0(arg0_1, iter0_1)
 
-		if var1 < 0 then
-			var1 = var1 + 4294967296
+		if var1_1 < 0 then
+			var1_1 = var1_1 + 4294967296
 		end
 
-		var0[var1] = var22(iter0)
+		var0_1[var1_1] = var22_0(iter0_1)
 	end
 
-	local var2 = var10(arg0, arg1)
+	local var2_1 = var10_0(arg0_1, arg1_1)
 
-	if var2 then
-		var0[var2] = "stack_check"
+	if var2_1 then
+		var0_1[var2_1] = "stack_check"
 	end
 end
 
-local function var34(arg0, arg1)
-	local var0 = var31
+local function var34_0(arg0_2, arg1_2)
+	local var0_2 = var31_0
 
-	if var32 == 0 then
-		local var1 = var2.ircall
+	if var32_0 == 0 then
+		local var1_2 = var2_0.ircall
 
-		for iter0 = 0, #var1 do
-			local var2 = var11(iter0)
+		for iter0_2 = 0, #var1_2 do
+			local var2_2 = var11_0(iter0_2)
 
-			if var2 ~= 0 then
-				if var2 < 0 then
-					var2 = var2 + 4294967296
+			if var2_2 ~= 0 then
+				if var2_2 < 0 then
+					var2_2 = var2_2 + 4294967296
 				end
 
-				var0[var2] = var1[iter0]
+				var0_2[var2_2] = var1_2[iter0_2]
 			end
 		end
 	end
 
-	if var32 == 1000000 then
-		var33(arg0, arg1)
-	elseif arg1 > var32 then
-		for iter1 = var32, arg1 - 1 do
-			local var3 = var10(iter1)
+	if var32_0 == 1000000 then
+		var33_0(arg0_2, arg1_2)
+	elseif arg1_2 > var32_0 then
+		for iter1_2 = var32_0, arg1_2 - 1 do
+			local var3_2 = var10_0(iter1_2)
 
-			if var3 == nil then
-				var33(arg0, arg1)
-				setmetatable(var31, var30)
+			if var3_2 == nil then
+				var33_0(arg0_2, arg1_2)
+				setmetatable(var31_0, var30_0)
 
-				arg1 = 1000000
+				arg1_2 = 1000000
 
 				break
 			end
 
-			if var3 < 0 then
-				var3 = var3 + 4294967296
+			if var3_2 < 0 then
+				var3_2 = var3_2 + 4294967296
 			end
 
-			var0[var3] = var22(iter1)
+			var0_2[var3_2] = var22_0(iter1_2)
 		end
 
-		var32 = arg1
+		var32_0 = arg1_2
 	end
 
-	return var0
+	return var0_2
 end
 
-local function var35(arg0)
-	var28:write(arg0)
+local function var35_0(arg0_3)
+	var28_0:write(arg0_3)
 end
 
-local function var36(arg0)
-	local var0 = var5(arg0)
+local function var36_0(arg0_4)
+	local var0_4 = var5_0(arg0_4)
 
-	if not var0 then
+	if not var0_4 then
 		return
 	end
 
-	local var1, var2, var3 = var8(arg0)
+	local var1_4, var2_4, var3_4 = var8_0(arg0_4)
 
-	if not var1 then
+	if not var1_4 then
 		return
 	end
 
-	if not var26 then
-		var26 = require("jit.dis_" .. var0.arch)
+	if not var26_0 then
+		var26_0 = require("jit.dis_" .. var0_0.arch)
 	end
 
-	if var2 < 0 then
-		var2 = var2 + 4294967296
+	if var2_4 < 0 then
+		var2_4 = var2_4 + 4294967296
 	end
 
-	var28:write("---- TRACE ", arg0, " mcode ", #var1, "\n")
+	var28_0:write("---- TRACE ", arg0_4, " mcode ", #var1_4, "\n")
 
-	local var4 = var26.create(var1, var2, var35)
+	local var4_4 = var26_0.create(var1_4, var2_4, var35_0)
 
-	var4.hexdump = 0
-	var4.symtab = var34(arg0, var0.nexit)
+	var4_4.hexdump = 0
+	var4_4.symtab = var34_0(arg0_4, var0_4.nexit)
 
-	if var3 ~= 0 then
-		var31[var2 + var3] = "LOOP"
+	if var3_4 ~= 0 then
+		var31_0[var2_4 + var3_4] = "LOOP"
 
-		var4:disass(0, var3)
-		var28:write("->LOOP:\n")
-		var4:disass(var3, #var1 - var3)
+		var4_4:disass(0, var3_4)
+		var28_0:write("->LOOP:\n")
+		var4_4:disass(var3_4, #var1_4 - var3_4)
 
-		var31[var2 + var3] = nil
+		var31_0[var2_4 + var3_4] = nil
 	else
-		var4:disass(0, #var1)
+		var4_4:disass(0, #var1_4)
 	end
 end
 
-local var37 = {
+local var37_0 = {
 	[0] = "nil",
 	"fal",
 	"tru",
@@ -183,7 +183,7 @@ local var37 = {
 	"u64",
 	"sfp"
 }
-local var38 = {
+local var38_0 = {
 	[0] = "%s",
 	"%s",
 	"%s",
@@ -210,79 +210,79 @@ local var38 = {
 	"\x1B[35m%s\x1B[m"
 }
 
-local function var39(arg0)
-	return arg0
+local function var39_0(arg0_5)
+	return arg0_5
 end
 
-local function var40(arg0, arg1)
-	return var18(var38[arg1], arg0)
+local function var40_0(arg0_6, arg1_6)
+	return var18_0(var38_0[arg1_6], arg0_6)
 end
 
-local var41 = setmetatable({}, {
-	__index = function(arg0, arg1)
-		local var0 = var40(var37[arg1], arg1)
+local var41_0 = setmetatable({}, {
+	__index = function(arg0_7, arg1_7)
+		local var0_7 = var40_0(var37_0[arg1_7], arg1_7)
 
-		arg0[arg1] = var0
+		arg0_7[arg1_7] = var0_7
 
-		return var0
+		return var0_7
 	end
 })
-local var42 = {
+local var42_0 = {
 	[">"] = "&gt;",
 	["<"] = "&lt;",
 	["&"] = "&amp;"
 }
 
-local function var43(arg0, arg1)
-	arg0 = var17(arg0, "[<>&]", var42)
+local function var43_0(arg0_8, arg1_8)
+	arg0_8 = var17_0(arg0_8, "[<>&]", var42_0)
 
-	return var18("<span class=\"irt_%s\">%s</span>", var37[arg1], arg0)
+	return var18_0("<span class=\"irt_%s\">%s</span>", var37_0[arg1_8], arg0_8)
 end
 
-local var44 = setmetatable({}, {
-	__index = function(arg0, arg1)
-		local var0 = var43(var37[arg1], arg1)
+local var44_0 = setmetatable({}, {
+	__index = function(arg0_9, arg1_9)
+		local var0_9 = var43_0(var37_0[arg1_9], arg1_9)
 
-		arg0[arg1] = var0
+		arg0_9[arg1_9] = var0_9
 
-		return var0
+		return var0_9
 	end
 })
-local var45 = "<style type=\"text/css\">\nbackground { background: #ffffff; color: #000000; }\npre.ljdump {\nfont-size: 10pt;\nbackground: #f0f4ff;\ncolor: #000000;\nborder: 1px solid #bfcfff;\npadding: 0.5em;\nmargin-left: 2em;\nmargin-right: 2em;\n}\nspan.irt_str { color: #00a000; }\nspan.irt_thr, span.irt_fun { color: #404040; font-weight: bold; }\nspan.irt_tab { color: #c00000; }\nspan.irt_udt, span.irt_lud { color: #00c0c0; }\nspan.irt_num { color: #4040c0; }\nspan.irt_int, span.irt_i8, span.irt_u8, span.irt_i16, span.irt_u16 { color: #b040b0; }\n</style>\n"
-local var46
-local var47
-local var48 = {
+local var45_0 = "<style type=\"text/css\">\nbackground { background: #ffffff; color: #000000; }\npre.ljdump {\nfont-size: 10pt;\nbackground: #f0f4ff;\ncolor: #000000;\nborder: 1px solid #bfcfff;\npadding: 0.5em;\nmargin-left: 2em;\nmargin-right: 2em;\n}\nspan.irt_str { color: #00a000; }\nspan.irt_thr, span.irt_fun { color: #404040; font-weight: bold; }\nspan.irt_tab { color: #c00000; }\nspan.irt_udt, span.irt_lud { color: #00c0c0; }\nspan.irt_num { color: #4040c0; }\nspan.irt_int, span.irt_i8, span.irt_u8, span.irt_i16, span.irt_u16 { color: #b040b0; }\n</style>\n"
+local var46_0
+local var47_0
+local var48_0 = {
 	["SLOAD "] = setmetatable({}, {
-		__index = function(arg0, arg1)
-			local var0 = ""
+		__index = function(arg0_10, arg1_10)
+			local var0_10 = ""
 
-			if var13(arg1, 1) ~= 0 then
-				var0 = var0 .. "P"
+			if var13_0(arg1_10, 1) ~= 0 then
+				var0_10 = var0_10 .. "P"
 			end
 
-			if var13(arg1, 2) ~= 0 then
-				var0 = var0 .. "F"
+			if var13_0(arg1_10, 2) ~= 0 then
+				var0_10 = var0_10 .. "F"
 			end
 
-			if var13(arg1, 4) ~= 0 then
-				var0 = var0 .. "T"
+			if var13_0(arg1_10, 4) ~= 0 then
+				var0_10 = var0_10 .. "T"
 			end
 
-			if var13(arg1, 8) ~= 0 then
-				var0 = var0 .. "C"
+			if var13_0(arg1_10, 8) ~= 0 then
+				var0_10 = var0_10 .. "C"
 			end
 
-			if var13(arg1, 16) ~= 0 then
-				var0 = var0 .. "R"
+			if var13_0(arg1_10, 16) ~= 0 then
+				var0_10 = var0_10 .. "R"
 			end
 
-			if var13(arg1, 32) ~= 0 then
-				var0 = var0 .. "I"
+			if var13_0(arg1_10, 32) ~= 0 then
+				var0_10 = var0_10 .. "I"
 			end
 
-			arg0[arg1] = var0
+			arg0_10[arg1_10] = var0_10
 
-			return var0
+			return var0_10
 		end
 	}),
 	["XLOAD "] = {
@@ -296,30 +296,30 @@ local var48 = {
 		"RVU"
 	},
 	["CONV  "] = setmetatable({}, {
-		__index = function(arg0, arg1)
-			local var0 = var47[var13(arg1, 31)]
-			local var1 = var47[var13(var14(arg1, 5), 31)] .. "." .. var0
+		__index = function(arg0_11, arg1_11)
+			local var0_11 = var47_0[var13_0(arg1_11, 31)]
+			local var1_11 = var47_0[var13_0(var14_0(arg1_11, 5), 31)] .. "." .. var0_11
 
-			if var13(arg1, 2048) ~= 0 then
-				var1 = var1 .. " sext"
+			if var13_0(arg1_11, 2048) ~= 0 then
+				var1_11 = var1_11 .. " sext"
 			end
 
-			local var2 = var14(arg1, 14)
+			local var2_11 = var14_0(arg1_11, 14)
 
-			if var2 == 2 then
-				var1 = var1 .. " index"
-			elseif var2 == 3 then
-				var1 = var1 .. " check"
+			if var2_11 == 2 then
+				var1_11 = var1_11 .. " index"
+			elseif var2_11 == 3 then
+				var1_11 = var1_11 .. " check"
 			end
 
-			arg0[arg1] = var1
+			arg0_11[arg1_11] = var1_11
 
-			return var1
+			return var1_11
 		end
 	}),
-	["FLOAD "] = var2.irfield,
-	["FREF  "] = var2.irfield,
-	FPMATH = var2.irfpm,
+	["FLOAD "] = var2_0.irfield,
+	["FREF  "] = var2_0.irfield,
+	FPMATH = var2_0.irfpm,
 	BUFHDR = {
 		[0] = "RESET",
 		"APPEND"
@@ -331,561 +331,561 @@ local var48 = {
 	}
 }
 
-local function var49(arg0)
-	if arg0 == "\n" then
+local function var49_0(arg0_12)
+	if arg0_12 == "\n" then
 		return "\\n"
-	elseif arg0 == "\r" then
+	elseif arg0_12 == "\r" then
 		return "\\r"
-	elseif arg0 == "\t" then
+	elseif arg0_12 == "\t" then
 		return "\\t"
 	else
-		return var18("\\%03d", var19(arg0))
+		return var18_0("\\%03d", var19_0(arg0_12))
 	end
 end
 
-local function var50(arg0, arg1)
-	local var0 = var3(arg0, arg1)
+local function var50_0(arg0_13, arg1_13)
+	local var0_13 = var3_0(arg0_13, arg1_13)
 
-	if var0.loc then
-		return var0.loc
-	elseif var0.ffid then
-		return var2.ffnames[var0.ffid]
-	elseif var0.addr then
-		return var18("C:%x", var0.addr)
+	if var0_13.loc then
+		return var0_13.loc
+	elseif var0_13.ffid then
+		return var2_0.ffnames[var0_13.ffid]
+	elseif var0_13.addr then
+		return var18_0("C:%x", var0_13.addr)
 	else
 		return "(?)"
 	end
 end
 
-local function var51(arg0, arg1, arg2)
-	local var0, var1, var2 = var7(arg0, arg1)
-	local var3 = var21(var0)
-	local var4
+local function var51_0(arg0_14, arg1_14, arg2_14)
+	local var0_14, var1_14, var2_14 = var7_0(arg0_14, arg1_14)
+	local var3_14 = var21_0(var0_14)
+	local var4_14
 
-	if var3 == "number" then
-		if var13(arg2 or 0, 196608) ~= 0 then
-			var4 = var13(arg2, 131072) ~= 0 and "contpc" or "ftsz"
-		elseif var0 == 6.75539944105574e+15 then
-			var4 = "bias"
+	if var3_14 == "number" then
+		if var13_0(arg2_14 or 0, 196608) ~= 0 then
+			var4_14 = var13_0(arg2_14, 131072) ~= 0 and "contpc" or "ftsz"
+		elseif var0_14 == 6.75539944105574e+15 then
+			var4_14 = "bias"
 		else
-			var4 = var18(var0 > 0 and var0 < 1.390671161567e-309 and "%+a" or "%+.14g", var0)
+			var4_14 = var18_0(var0_14 > 0 and var0_14 < 1.390671161567e-309 and "%+a" or "%+.14g", var0_14)
 		end
-	elseif var3 == "string" then
-		var4 = var18(#var0 > 20 and "\"%.20s\"~" or "\"%s\"", var17(var0, "%c", var49))
-	elseif var3 == "function" then
-		var4 = var50(var0)
-	elseif var3 == "table" then
-		var4 = var18("{%p}", var0)
-	elseif var3 == "userdata" then
-		if var1 == 12 then
-			var4 = var18("userdata:%p", var0)
+	elseif var3_14 == "string" then
+		var4_14 = var18_0(#var0_14 > 20 and "\"%.20s\"~" or "\"%s\"", var17_0(var0_14, "%c", var49_0))
+	elseif var3_14 == "function" then
+		var4_14 = var50_0(var0_14)
+	elseif var3_14 == "table" then
+		var4_14 = var18_0("{%p}", var0_14)
+	elseif var3_14 == "userdata" then
+		if var1_14 == 12 then
+			var4_14 = var18_0("userdata:%p", var0_14)
 		else
-			var4 = var18("[%p]", var0)
+			var4_14 = var18_0("[%p]", var0_14)
 
-			if var4 == "[NULL]" then
-				var4 = "NULL"
+			if var4_14 == "[NULL]" then
+				var4_14 = "NULL"
 			end
 		end
-	elseif var1 == 21 then
-		var4 = var16(var22(var0), 1, -3)
+	elseif var1_14 == 21 then
+		var4_14 = var16_0(var22_0(var0_14), 1, -3)
 
-		if var16(var4, 1, 1) ~= "-" then
-			var4 = "+" .. var4
+		if var16_0(var4_14, 1, 1) ~= "-" then
+			var4_14 = "+" .. var4_14
 		end
-	elseif arg2 == 17137663 then
+	elseif arg2_14 == 17137663 then
 		return "----"
 	else
-		var4 = var22(var0)
+		var4_14 = var22_0(var0_14)
 	end
 
-	local var5 = var46(var18("%-4s", var4), var1)
+	local var5_14 = var46_0(var18_0("%-4s", var4_14), var1_14)
 
-	if var2 then
-		var5 = var18("%s @%d", var5, var2)
+	if var2_14 then
+		var5_14 = var18_0("%s @%d", var5_14, var2_14)
 	end
 
-	return var5
+	return var5_14
 end
 
-local function var52(arg0, arg1)
-	local var0 = 2
+local function var52_0(arg0_15, arg1_15)
+	local var0_15 = 2
 
-	for iter0 = 0, arg1[1] - 1 do
-		local var1 = arg1[var0]
+	for iter0_15 = 0, arg1_15[1] - 1 do
+		local var1_15 = arg1_15[var0_15]
 
-		if var14(var1, 24) == iter0 then
-			var0 = var0 + 1
+		if var14_0(var1_15, 24) == iter0_15 then
+			var0_15 = var0_15 + 1
 
-			local var2 = var13(var1, 65535) - 32768
+			local var2_15 = var13_0(var1_15, 65535) - 32768
 
-			if var2 < 0 then
-				var28:write(var51(arg0, var2, var1))
-			elseif var13(var1, 524288) ~= 0 then
-				var28:write(var46(var18("%04d/%04d", var2, var2 + 1), 14))
+			if var2_15 < 0 then
+				var28_0:write(var51_0(arg0_15, var2_15, var1_15))
+			elseif var13_0(var1_15, 524288) ~= 0 then
+				var28_0:write(var46_0(var18_0("%04d/%04d", var2_15, var2_15 + 1), 14))
 			else
-				local var3, var4, var5, var6 = var6(arg0, var2)
+				local var3_15, var4_15, var5_15, var6_15 = var6_0(arg0_15, var2_15)
 
-				var28:write(var46(var18("%04d", var2), var13(var4, 31)))
+				var28_0:write(var46_0(var18_0("%04d", var2_15), var13_0(var4_15, 31)))
 			end
 
-			var28:write(var13(var1, 65536) == 0 and " " or "|")
+			var28_0:write(var13_0(var1_15, 65536) == 0 and " " or "|")
 		else
-			var28:write("---- ")
+			var28_0:write("---- ")
 		end
 	end
 
-	var28:write("]\n")
+	var28_0:write("]\n")
 end
 
-local function var53(arg0)
-	var28:write("---- TRACE ", arg0, " snapshots\n")
+local function var53_0(arg0_16)
+	var28_0:write("---- TRACE ", arg0_16, " snapshots\n")
 
-	for iter0 = 0, 1000000000 do
-		local var0 = var9(arg0, iter0)
+	for iter0_16 = 0, 1000000000 do
+		local var0_16 = var9_0(arg0_16, iter0_16)
 
-		if not var0 then
+		if not var0_16 then
 			break
 		end
 
-		var28:write(var18("#%-3d %04d [ ", iter0, var0[0]))
-		var52(arg0, var0)
+		var28_0:write(var18_0("#%-3d %04d [ ", iter0_16, var0_16[0]))
+		var52_0(arg0_16, var0_16)
 	end
 end
 
-local function var54(arg0, arg1)
-	if not var26 then
-		var26 = require("jit.dis_" .. var0.arch)
+local function var54_0(arg0_17, arg1_17)
+	if not var26_0 then
+		var26_0 = require("jit.dis_" .. var0_0.arch)
 	end
 
-	local var0 = var13(arg0, 255)
-	local var1 = var14(arg0, 8)
+	local var0_17 = var13_0(arg0_17, 255)
+	local var1_17 = var14_0(arg0_17, 8)
 
-	if var0 == 253 or var0 == 254 then
-		return (var1 == 0 or var1 == 255) and " {sink" or var18(" {%04d", arg1 - var1)
+	if var0_17 == 253 or var0_17 == 254 then
+		return (var1_17 == 0 or var1_17 == 255) and " {sink" or var18_0(" {%04d", arg1_17 - var1_17)
 	end
 
-	if arg0 > 255 then
-		return var18("[%x]", var1 * 4)
+	if arg0_17 > 255 then
+		return var18_0("[%x]", var1_17 * 4)
 	end
 
-	if var0 < 128 then
-		return var26.regname(var0)
+	if var0_17 < 128 then
+		return var26_0.regname(var0_17)
 	end
 
 	return ""
 end
 
-local function var55(arg0, arg1)
-	local var0
+local function var55_0(arg0_18, arg1_18)
+	local var0_18
 
-	if arg1 > 0 then
-		local var1, var2, var3, var4 = var6(arg0, arg1)
+	if arg1_18 > 0 then
+		local var1_18, var2_18, var3_18, var4_18 = var6_0(arg0_18, arg1_18)
 
-		if var13(var2, 31) == 0 then
-			arg1 = var3
-			var0 = var51(arg0, var4)
+		if var13_0(var2_18, 31) == 0 then
+			arg1_18 = var3_18
+			var0_18 = var51_0(arg0_18, var4_18)
 		end
 	end
 
-	if arg1 < 0 then
-		var28:write(var18("[0x%x](", tonumber((var7(arg0, arg1)))))
+	if arg1_18 < 0 then
+		var28_0:write(var18_0("[0x%x](", tonumber((var7_0(arg0_18, arg1_18)))))
 	else
-		var28:write(var18("%04d (", arg1))
+		var28_0:write(var18_0("%04d (", arg1_18))
 	end
 
-	return var0
+	return var0_18
 end
 
-local function var56(arg0, arg1)
-	if arg1 < 0 then
-		var28:write(var51(arg0, arg1))
+local function var56_0(arg0_19, arg1_19)
+	if arg1_19 < 0 then
+		var28_0:write(var51_0(arg0_19, arg1_19))
 	else
-		local var0, var1, var2, var3 = var6(arg0, arg1)
-		local var4 = 6 * var14(var1, 8)
+		local var0_19, var1_19, var2_19, var3_19 = var6_0(arg0_19, arg1_19)
+		local var4_19 = 6 * var14_0(var1_19, 8)
 
-		if var16(var2.irnames, var4 + 1, var4 + 6) == "CARG  " then
-			var56(arg0, var2)
+		if var16_0(var2_0.irnames, var4_19 + 1, var4_19 + 6) == "CARG  " then
+			var56_0(arg0_19, var2_19)
 
-			if var3 < 0 then
-				var28:write(" ", var51(arg0, var3))
+			if var3_19 < 0 then
+				var28_0:write(" ", var51_0(arg0_19, var3_19))
 			else
-				var28:write(" ", var18("%04d", var3))
+				var28_0:write(" ", var18_0("%04d", var3_19))
 			end
 		else
-			var28:write(var18("%04d", arg1))
+			var28_0:write(var18_0("%04d", arg1_19))
 		end
 	end
 end
 
-local function var57(arg0, arg1, arg2)
-	local var0 = var5(arg0)
+local function var57_0(arg0_20, arg1_20, arg2_20)
+	local var0_20 = var5_0(arg0_20)
 
-	if not var0 then
+	if not var0_20 then
 		return
 	end
 
-	local var1 = var0.nins
+	local var1_20 = var0_20.nins
 
-	var28:write("---- TRACE ", arg0, " IR\n")
+	var28_0:write("---- TRACE ", arg0_20, " IR\n")
 
-	local var2 = var2.irnames
-	local var3 = 65536
-	local var4
-	local var5
+	local var2_20 = var2_0.irnames
+	local var3_20 = 65536
+	local var4_20
+	local var5_20
 
-	if arg1 then
-		var4 = var9(arg0, 0)
-		var3 = var4[0]
-		var5 = 0
+	if arg1_20 then
+		var4_20 = var9_0(arg0_20, 0)
+		var3_20 = var4_20[0]
+		var5_20 = 0
 	end
 
-	for iter0 = 1, var1 do
-		if var3 <= iter0 then
-			if arg2 then
-				var28:write(var18("....              SNAP   #%-3d [ ", var5))
+	for iter0_20 = 1, var1_20 do
+		if var3_20 <= iter0_20 then
+			if arg2_20 then
+				var28_0:write(var18_0("....              SNAP   #%-3d [ ", var5_20))
 			else
-				var28:write(var18("....        SNAP   #%-3d [ ", var5))
+				var28_0:write(var18_0("....        SNAP   #%-3d [ ", var5_20))
 			end
 
-			var52(arg0, var4)
+			var52_0(arg0_20, var4_20)
 
-			var5 = var5 + 1
-			var4 = var9(arg0, var5)
-			var3 = var4 and var4[0] or 65536
+			var5_20 = var5_20 + 1
+			var4_20 = var9_0(arg0_20, var5_20)
+			var3_20 = var4_20 and var4_20[0] or 65536
 		end
 
-		local var6, var7, var8, var9, var10 = var6(arg0, iter0)
-		local var11 = 6 * var14(var7, 8)
-		local var12 = var13(var7, 31)
-		local var13 = var16(var2, var11 + 1, var11 + 6)
+		local var6_20, var7_20, var8_20, var9_20, var10_20 = var6_0(arg0_20, iter0_20)
+		local var11_20 = 6 * var14_0(var7_20, 8)
+		local var12_20 = var13_0(var7_20, 31)
+		local var13_20 = var16_0(var2_20, var11_20 + 1, var11_20 + 6)
 
-		if var13 == "LOOP  " then
-			if arg2 then
-				var28:write(var18("%04d ------------ LOOP ------------\n", iter0))
+		if var13_20 == "LOOP  " then
+			if arg2_20 then
+				var28_0:write(var18_0("%04d ------------ LOOP ------------\n", iter0_20))
 			else
-				var28:write(var18("%04d ------ LOOP ------------\n", iter0))
+				var28_0:write(var18_0("%04d ------ LOOP ------------\n", iter0_20))
 			end
-		elseif var13 ~= "NOP   " and var13 ~= "CARG  " and (arg2 or var13 ~= "RENAME") then
-			local var14 = var13(var10, 255)
+		elseif var13_20 ~= "NOP   " and var13_20 ~= "CARG  " and (arg2_20 or var13_20 ~= "RENAME") then
+			local var14_20 = var13_0(var10_20, 255)
 
-			if arg2 then
-				var28:write(var18("%04d %-6s", iter0, var54(var10, iter0)))
+			if arg2_20 then
+				var28_0:write(var18_0("%04d %-6s", iter0_20, var54_0(var10_20, iter0_20)))
 			else
-				var28:write(var18("%04d ", iter0))
+				var28_0:write(var18_0("%04d ", iter0_20))
 			end
 
-			var28:write(var18("%s%s %s %s ", (var14 == 254 or var14 == 253) and "}" or var13(var7, 128) == 0 and " " or ">", var13(var7, 64) == 0 and " " or "+", var47[var12], var13))
+			var28_0:write(var18_0("%s%s %s %s ", (var14_20 == 254 or var14_20 == 253) and "}" or var13_0(var7_20, 128) == 0 and " " or ">", var13_0(var7_20, 64) == 0 and " " or "+", var47_0[var12_20], var13_20))
 
-			local var15 = var13(var6, 3)
-			local var16 = var13(var6, 12)
+			local var15_20 = var13_0(var6_20, 3)
+			local var16_20 = var13_0(var6_20, 12)
 
-			if var16(var13, 1, 4) == "CALL" then
-				local var17
+			if var16_0(var13_20, 1, 4) == "CALL" then
+				local var17_20
 
-				if var16 == 4 then
-					var28:write(var18("%-10s  (", var2.ircall[var9]))
+				if var16_20 == 4 then
+					var28_0:write(var18_0("%-10s  (", var2_0.ircall[var9_20]))
 				else
-					var17 = var55(arg0, var9)
+					var17_20 = var55_0(arg0_20, var9_20)
 				end
 
-				if var8 ~= -1 then
-					var56(arg0, var8)
+				if var8_20 ~= -1 then
+					var56_0(arg0_20, var8_20)
 				end
 
-				var28:write(")")
+				var28_0:write(")")
 
-				if var17 then
-					var28:write(" ctype ", var17)
+				if var17_20 then
+					var28_0:write(" ctype ", var17_20)
 				end
-			elseif var13 == "CNEW  " and var9 == -1 then
-				var28:write(var51(arg0, var8))
-			elseif var15 ~= 3 then
-				if var8 < 0 then
-					var28:write(var51(arg0, var8))
+			elseif var13_20 == "CNEW  " and var9_20 == -1 then
+				var28_0:write(var51_0(arg0_20, var8_20))
+			elseif var15_20 ~= 3 then
+				if var8_20 < 0 then
+					var28_0:write(var51_0(arg0_20, var8_20))
 				else
-					var28:write(var18(var15 == 0 and "%04d" or "#%-3d", var8))
+					var28_0:write(var18_0(var15_20 == 0 and "%04d" or "#%-3d", var8_20))
 				end
 
-				if var16 ~= 12 then
-					if var16 == 4 then
-						local var18 = var48[var13]
+				if var16_20 ~= 12 then
+					if var16_20 == 4 then
+						local var18_20 = var48_0[var13_20]
 
-						if var18 and var18[var9] then
-							var28:write("  ", var18[var9])
-						elseif var13 == "UREFO " or var13 == "UREFC " then
-							var28:write(var18("  #%-3d", var14(var9, 8)))
+						if var18_20 and var18_20[var9_20] then
+							var28_0:write("  ", var18_20[var9_20])
+						elseif var13_20 == "UREFO " or var13_20 == "UREFC " then
+							var28_0:write(var18_0("  #%-3d", var14_0(var9_20, 8)))
 						else
-							var28:write(var18("  #%-3d", var9))
+							var28_0:write(var18_0("  #%-3d", var9_20))
 						end
-					elseif var9 < 0 then
-						var28:write("  ", var51(arg0, var9))
+					elseif var9_20 < 0 then
+						var28_0:write("  ", var51_0(arg0_20, var9_20))
 					else
-						var28:write(var18("  %04d", var9))
+						var28_0:write(var18_0("  %04d", var9_20))
 					end
 				end
 			end
 
-			var28:write("\n")
+			var28_0:write("\n")
 		end
 	end
 
-	if var4 then
-		if arg2 then
-			var28:write(var18("....              SNAP   #%-3d [ ", var5))
+	if var4_20 then
+		if arg2_20 then
+			var28_0:write(var18_0("....              SNAP   #%-3d [ ", var5_20))
 		else
-			var28:write(var18("....        SNAP   #%-3d [ ", var5))
+			var28_0:write(var18_0("....        SNAP   #%-3d [ ", var5_20))
 		end
 
-		var52(arg0, var4)
+		var52_0(arg0_20, var4_20)
 	end
 end
 
-local var58 = ""
-local var59 = 0
+local var58_0 = ""
+local var59_0 = 0
 
-local function var60(arg0, arg1)
-	if var21(arg0) == "number" then
-		if var21(arg1) == "function" then
-			arg1 = var50(arg1)
+local function var60_0(arg0_21, arg1_21)
+	if var21_0(arg0_21) == "number" then
+		if var21_0(arg1_21) == "function" then
+			arg1_21 = var50_0(arg1_21)
 		end
 
-		arg0 = var18(var2.traceerr[arg0], arg1)
+		arg0_21 = var18_0(var2_0.traceerr[arg0_21], arg1_21)
 	end
 
-	return arg0
+	return arg0_21
 end
 
-local function var61(arg0, arg1, arg2, arg3, arg4, arg5)
-	if arg0 == "stop" or arg0 == "abort" and var29.a then
-		if var29.i then
-			var57(arg1, var29.s, var29.r and arg0 == "stop")
-		elseif var29.s then
-			var53(arg1)
+local function var61_0(arg0_22, arg1_22, arg2_22, arg3_22, arg4_22, arg5_22)
+	if arg0_22 == "stop" or arg0_22 == "abort" and var29_0.a then
+		if var29_0.i then
+			var57_0(arg1_22, var29_0.s, var29_0.r and arg0_22 == "stop")
+		elseif var29_0.s then
+			var53_0(arg1_22)
 		end
 
-		if var29.m then
-			var36(arg1)
+		if var29_0.m then
+			var36_0(arg1_22)
 		end
 	end
 
-	if arg0 == "start" then
-		if var29.H then
-			var28:write("<pre class=\"ljdump\">\n")
+	if arg0_22 == "start" then
+		if var29_0.H then
+			var28_0:write("<pre class=\"ljdump\">\n")
 		end
 
-		var28:write("---- TRACE ", arg1, " ", arg0)
+		var28_0:write("---- TRACE ", arg1_22, " ", arg0_22)
 
-		if arg4 then
-			var28:write(" ", arg4, "/", arg5 == -1 and "stitch" or arg5)
+		if arg4_22 then
+			var28_0:write(" ", arg4_22, "/", arg5_22 == -1 and "stitch" or arg5_22)
 		end
 
-		var28:write(" ", var50(arg2, arg3), "\n")
-	elseif arg0 == "stop" or arg0 == "abort" then
-		var28:write("---- TRACE ", arg1, " ", arg0)
+		var28_0:write(" ", var50_0(arg2_22, arg3_22), "\n")
+	elseif arg0_22 == "stop" or arg0_22 == "abort" then
+		var28_0:write("---- TRACE ", arg1_22, " ", arg0_22)
 
-		if arg0 == "abort" then
-			var28:write(" ", var50(arg2, arg3), " -- ", var60(arg4, arg5), "\n")
+		if arg0_22 == "abort" then
+			var28_0:write(" ", var50_0(arg2_22, arg3_22), " -- ", var60_0(arg4_22, arg5_22), "\n")
 		else
-			local var0 = var5(arg1)
-			local var1 = var0.link
-			local var2 = var0.linktype
+			local var0_22 = var5_0(arg1_22)
+			local var1_22 = var0_22.link
+			local var2_22 = var0_22.linktype
 
-			if var1 == arg1 or var1 == 0 then
-				var28:write(" -> ", var2, "\n")
-			elseif var2 == "root" then
-				var28:write(" -> ", var1, "\n")
+			if var1_22 == arg1_22 or var1_22 == 0 then
+				var28_0:write(" -> ", var2_22, "\n")
+			elseif var2_22 == "root" then
+				var28_0:write(" -> ", var1_22, "\n")
 			else
-				var28:write(" -> ", var1, " ", var2, "\n")
+				var28_0:write(" -> ", var1_22, " ", var2_22, "\n")
 			end
 		end
 
-		if var29.H then
-			var28:write("</pre>\n\n")
+		if var29_0.H then
+			var28_0:write("</pre>\n\n")
 		else
-			var28:write("\n")
+			var28_0:write("\n")
 		end
 	else
-		if arg0 == "flush" then
-			var31, var32 = {}, 0
+		if arg0_22 == "flush" then
+			var31_0, var32_0 = {}, 0
 		end
 
-		var28:write("---- TRACE ", arg0, "\n\n")
+		var28_0:write("---- TRACE ", arg0_22, "\n\n")
 	end
 
-	var28:flush()
+	var28_0:flush()
 end
 
-local function var62(arg0, arg1, arg2, arg3, arg4)
-	if arg3 ~= var59 then
-		var59 = arg3
-		var58 = var20(" .", arg3)
+local function var62_0(arg0_23, arg1_23, arg2_23, arg3_23, arg4_23)
+	if arg3_23 ~= var59_0 then
+		var59_0 = arg3_23
+		var58_0 = var20_0(" .", arg3_23)
 	end
 
-	local var0
+	local var0_23
 
-	if arg2 >= 0 then
-		var0 = var25(arg1, arg2, var58)
+	if arg2_23 >= 0 then
+		var0_23 = var25_0(arg1_23, arg2_23, var58_0)
 
-		if var29.H then
-			var0 = var17(var0, "[<>&]", var42)
+		if var29_0.H then
+			var0_23 = var17_0(var0_23, "[<>&]", var42_0)
 		end
 	else
-		var0 = "0000 " .. var58 .. " FUNCC      \n"
-		arg4 = arg1
+		var0_23 = "0000 " .. var58_0 .. " FUNCC      \n"
+		arg4_23 = arg1_23
 	end
 
-	if arg2 <= 0 then
-		var28:write(var16(var0, 1, -2), "         ; ", var50(arg1), "\n")
+	if arg2_23 <= 0 then
+		var28_0:write(var16_0(var0_23, 1, -2), "         ; ", var50_0(arg1_23), "\n")
 	else
-		var28:write(var0)
+		var28_0:write(var0_23)
 	end
 
-	if arg2 >= 0 and var13(var4(arg1, arg2), 255) < 16 then
-		var28:write(var25(arg1, arg2 + 1, var58))
+	if arg2_23 >= 0 and var13_0(var4_0(arg1_23, arg2_23), 255) < 16 then
+		var28_0:write(var25_0(arg1_23, arg2_23 + 1, var58_0))
 	end
 end
 
-local function var63(arg0, arg1, arg2, arg3, ...)
-	var28:write("---- TRACE ", arg0, " exit ", arg1, "\n")
+local function var63_0(arg0_24, arg1_24, arg2_24, arg3_24, ...)
+	var28_0:write("---- TRACE ", arg0_24, " exit ", arg1_24, "\n")
 
-	if var29.X then
-		local var0 = {
+	if var29_0.X then
+		local var0_24 = {
 			...
 		}
 
-		if var0.arch == "x64" then
-			for iter0 = 1, arg2 do
-				var28:write(var18(" %016x", var0[iter0]))
+		if var0_0.arch == "x64" then
+			for iter0_24 = 1, arg2_24 do
+				var28_0:write(var18_0(" %016x", var0_24[iter0_24]))
 
-				if iter0 % 4 == 0 then
-					var28:write("\n")
+				if iter0_24 % 4 == 0 then
+					var28_0:write("\n")
 				end
 			end
 		else
-			for iter1 = 1, arg2 do
-				var28:write(" ", var15(var0[iter1]))
+			for iter1_24 = 1, arg2_24 do
+				var28_0:write(" ", var15_0(var0_24[iter1_24]))
 
-				if iter1 % 8 == 0 then
-					var28:write("\n")
+				if iter1_24 % 8 == 0 then
+					var28_0:write("\n")
 				end
 			end
 		end
 
-		if var0.arch == "mips" or var0.arch == "mipsel" then
-			for iter2 = 1, arg3, 2 do
-				var28:write(var18(" %+17.14g", var0[arg2 + iter2]))
+		if var0_0.arch == "mips" or var0_0.arch == "mipsel" then
+			for iter2_24 = 1, arg3_24, 2 do
+				var28_0:write(var18_0(" %+17.14g", var0_24[arg2_24 + iter2_24]))
 
-				if iter2 % 8 == 7 then
-					var28:write("\n")
+				if iter2_24 % 8 == 7 then
+					var28_0:write("\n")
 				end
 			end
 		else
-			for iter3 = 1, arg3 do
-				var28:write(var18(" %+17.14g", var0[arg2 + iter3]))
+			for iter3_24 = 1, arg3_24 do
+				var28_0:write(var18_0(" %+17.14g", var0_24[arg2_24 + iter3_24]))
 
-				if iter3 % 4 == 0 then
-					var28:write("\n")
+				if iter3_24 % 4 == 0 then
+					var28_0:write("\n")
 				end
 			end
 		end
 	end
 end
 
-local function var64()
-	if var27 then
-		var27 = false
+local function var64_0()
+	if var27_0 then
+		var27_0 = false
 
-		var0.attach(var63)
-		var0.attach(var62)
-		var0.attach(var61)
+		var0_0.attach(var63_0)
+		var0_0.attach(var62_0)
+		var0_0.attach(var61_0)
 
-		if var28 and var28 ~= var23 and var28 ~= var24 then
-			var28:close()
+		if var28_0 and var28_0 ~= var23_0 and var28_0 ~= var24_0 then
+			var28_0:close()
 		end
 
-		var28 = nil
+		var28_0 = nil
 	end
 end
 
-local function var65(arg0, arg1)
-	if var27 then
-		var64()
+local function var65_0(arg0_26, arg1_26)
+	if var27_0 then
+		var64_0()
 	end
 
-	local var0 = os.getenv("TERM")
-	local var1 = (var0 and var0:match("color") or os.getenv("COLORTERM")) and "A" or "T"
+	local var0_26 = os.getenv("TERM")
+	local var1_26 = (var0_26 and var0_26:match("color") or os.getenv("COLORTERM")) and "A" or "T"
 
-	arg0 = arg0 and var17(arg0, "[TAH]", function(arg0)
-		var1 = arg0
+	arg0_26 = arg0_26 and var17_0(arg0_26, "[TAH]", function(arg0_27)
+		var1_26 = arg0_27
 
 		return ""
 	end)
 
-	local var2 = {
+	local var2_26 = {
 		i = true,
 		t = true,
 		m = true,
 		b = true
 	}
 
-	if arg0 and arg0 ~= "" then
-		local var3 = var16(arg0, 1, 1)
+	if arg0_26 and arg0_26 ~= "" then
+		local var3_26 = var16_0(arg0_26, 1, 1)
 
-		if var3 ~= "+" and var3 ~= "-" then
-			var2 = {}
+		if var3_26 ~= "+" and var3_26 ~= "-" then
+			var2_26 = {}
 		end
 
-		for iter0 = 1, #arg0 do
-			var2[var16(arg0, iter0, iter0)] = var3 ~= "-"
-		end
-	end
-
-	var29 = var2
-
-	if var2.t or var2.b or var2.i or var2.s or var2.m then
-		var0.attach(var61, "trace")
-	end
-
-	if var2.b then
-		var0.attach(var62, "record")
-
-		if not var25 then
-			var25 = require("jit.bc").line
+		for iter0_26 = 1, #arg0_26 do
+			var2_26[var16_0(arg0_26, iter0_26, iter0_26)] = var3_26 ~= "-"
 		end
 	end
 
-	if var2.x or var2.X then
-		var0.attach(var63, "texit")
+	var29_0 = var2_26
+
+	if var2_26.t or var2_26.b or var2_26.i or var2_26.s or var2_26.m then
+		var0_0.attach(var61_0, "trace")
 	end
 
-	arg1 = arg1 or os.getenv("LUAJIT_DUMPFILE")
+	if var2_26.b then
+		var0_0.attach(var62_0, "record")
 
-	if arg1 then
-		var28 = arg1 == "-" and var23 or assert(io.open(arg1, "w"))
+		if not var25_0 then
+			var25_0 = require("jit.bc").line
+		end
+	end
+
+	if var2_26.x or var2_26.X then
+		var0_0.attach(var63_0, "texit")
+	end
+
+	arg1_26 = arg1_26 or os.getenv("LUAJIT_DUMPFILE")
+
+	if arg1_26 then
+		var28_0 = arg1_26 == "-" and var23_0 or assert(io.open(arg1_26, "w"))
 	else
-		var28 = var23
+		var28_0 = var23_0
 	end
 
-	var2[var1] = true
+	var2_26[var1_26] = true
 
-	if var1 == "A" then
-		var46 = var40
-		var47 = var41
-	elseif var1 == "H" then
-		var46 = var43
-		var47 = var44
+	if var1_26 == "A" then
+		var46_0 = var40_0
+		var47_0 = var41_0
+	elseif var1_26 == "H" then
+		var46_0 = var43_0
+		var47_0 = var44_0
 
-		var28:write(var45)
+		var28_0:write(var45_0)
 	else
-		var46 = var39
-		var47 = var37
+		var46_0 = var39_0
+		var47_0 = var37_0
 	end
 
-	var27 = true
+	var27_0 = true
 end
 
 return {
-	on = var65,
-	off = var64,
-	start = var65
+	on = var65_0,
+	off = var64_0,
+	start = var65_0
 }

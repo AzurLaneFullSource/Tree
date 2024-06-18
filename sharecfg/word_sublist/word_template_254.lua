@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_254 = {}
+var0_0.word_template_254 = {}
 
-local var1 = var0.word_template_254
+local var1_0 = var0_0.word_template_254
 
 function temp()
-	var1.山 = {
+	var1_0.山 = {
 		本 = {
 			惠 = {
 				美 = {
@@ -226,7 +226,7 @@ end
 temp()
 
 function temp()
-	var1.杉 = {
+	var1_0.杉 = {
 		村 = {
 			阳 = {
 				子 = {
@@ -240,7 +240,7 @@ end
 temp()
 
 function temp()
-	var1.删 = {
+	var1_0.删 = {
 		[" "] = {
 			号 = {
 				this = true
@@ -295,7 +295,7 @@ end
 temp()
 
 function temp()
-	var1.舢 = {
+	var1_0.舢 = {
 		舨 = {
 			["9"] = {
 				["2"] = {
@@ -309,7 +309,7 @@ end
 temp()
 
 function temp()
-	var1.煽 = {
+	var1_0.煽 = {
 		动 = {
 			不 = {
 				明 = {
@@ -333,7 +333,7 @@ end
 temp()
 
 function temp()
-	var1.陕 = {
+	var1_0.陕 = {
 		西 = {
 			人 = {
 				射 = {
@@ -370,7 +370,7 @@ end
 temp()
 
 function temp()
-	var1.汕 = {
+	var1_0.汕 = {
 		頭 = {
 			頻 = {
 				傳 = {

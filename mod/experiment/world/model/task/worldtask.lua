@@ -1,15 +1,15 @@
-﻿local var0 = class("WorldTask")
+﻿local var0_0 = class("WorldTask")
 
-var0.STATE_INACTIVE = 0
-var0.STATE_ONGOING = 1
-var0.STATE_FINISHED = 2
-var0.STATE_RECEIVED = 3
+var0_0.STATE_INACTIVE = 0
+var0_0.STATE_ONGOING = 1
+var0_0.STATE_FINISHED = 2
+var0_0.STATE_RECEIVED = 3
 
-local var1 = pg.world_task_data
+local var1_0 = pg.world_task_data
 
-function var0.type2BgColor(arg0)
-	if not var0.Colors then
-		var0.Colors = {
+function var0_0.type2BgColor(arg0_1)
+	if not var0_0.Colors then
+		var0_0.Colors = {
 			"yellow",
 			"red",
 			"blue",
@@ -19,33 +19,33 @@ function var0.type2BgColor(arg0)
 		}
 	end
 
-	return var0.Colors[arg0 + 1]
+	return var0_0.Colors[arg0_1 + 1]
 end
 
-function var0.Ctor(arg0, arg1)
-	arg0.id = arg1.id
-	arg0.configId = arg1.id
-	arg0.progress = arg1.progress or 0
-	arg0.submiteTime = arg1.submite_time or 0
-	arg0.acceptTime = arg1.accept_time or 0
-	arg0.followingEntrance = arg1.event_map_id or 0
+function var0_0.Ctor(arg0_2, arg1_2)
+	arg0_2.id = arg1_2.id
+	arg0_2.configId = arg1_2.id
+	arg0_2.progress = arg1_2.progress or 0
+	arg0_2.submiteTime = arg1_2.submite_time or 0
+	arg0_2.acceptTime = arg1_2.accept_time or 0
+	arg0_2.followingEntrance = arg1_2.event_map_id or 0
 
-	assert(var1[arg0.configId], "unfound config......" .. arg0.configId)
+	assert(var1_0[arg0_2.configId], "unfound config......" .. arg0_2.configId)
 
-	arg0.config = var1[arg0.configId]
-	arg0.new = arg1.new or 0
+	arg0_2.config = var1_0[arg0_2.configId]
+	arg0_2.new = arg1_2.new or 0
 
-	local var0 = nowWorld()
+	local var0_2 = nowWorld()
 
-	if arg0.config.complete_condition == WorldConst.TaskTypeSubmitItem then
-		arg0:updateProgress(var0:GetInventoryProxy():GetItemCount(arg0.config.complete_parameter[1]))
-	elseif arg0.config.complete_condition == WorldConst.TaskTypePressingMap then
-		arg0:updateProgress(var0:GetTargetMapPressingCount(arg0.config.complete_parameter))
+	if arg0_2.config.complete_condition == WorldConst.TaskTypeSubmitItem then
+		arg0_2:updateProgress(var0_2:GetInventoryProxy():GetItemCount(arg0_2.config.complete_parameter[1]))
+	elseif arg0_2.config.complete_condition == WorldConst.TaskTypePressingMap then
+		arg0_2:updateProgress(var0_2:GetTargetMapPressingCount(arg0_2.config.complete_parameter))
 	end
 end
 
-function var0.DebugPrint(arg0)
-	local var0 = {
+function var0_0.DebugPrint(arg0_3)
+	local var0_3 = {
 		"未激活",
 		"进行中",
 		"已完成未提交",
@@ -53,154 +53,154 @@ function var0.DebugPrint(arg0)
 		"已过期"
 	}
 
-	return string.format("任务 [%s] [id: %s] [状态: %s] [进度: %s/%s] [接受时间: %s] [完成时间: %s]", arg0.config.name, arg0.id, var0[arg0:getState() + 1], arg0:getProgress(), arg0:getMaxProgress(), arg0.acceptTime, arg0.submiteTime)
+	return string.format("任务 [%s] [id: %s] [状态: %s] [进度: %s/%s] [接受时间: %s] [完成时间: %s]", arg0_3.config.name, arg0_3.id, var0_3[arg0_3:getState() + 1], arg0_3:getProgress(), arg0_3:getMaxProgress(), arg0_3.acceptTime, arg0_3.submiteTime)
 end
 
-function var0.isNew(arg0)
-	return arg0.new == 1
+function var0_0.isNew(arg0_4)
+	return arg0_4.new == 1
 end
 
-function var0.getState(arg0)
-	if arg0.acceptTime == 0 then
-		return var0.STATE_INACTIVE
-	elseif arg0.submiteTime > 0 then
-		return var0.STATE_RECEIVED
-	elseif arg0:getProgress() >= arg0:getMaxProgress() then
-		return var0.STATE_FINISHED
+function var0_0.getState(arg0_5)
+	if arg0_5.acceptTime == 0 then
+		return var0_0.STATE_INACTIVE
+	elseif arg0_5.submiteTime > 0 then
+		return var0_0.STATE_RECEIVED
+	elseif arg0_5:getProgress() >= arg0_5:getMaxProgress() then
+		return var0_0.STATE_FINISHED
 	else
-		return var0.STATE_ONGOING
+		return var0_0.STATE_ONGOING
 	end
 end
 
-function var0.getMaxProgress(arg0)
-	return arg0.config.complete_parameter_num
+function var0_0.getMaxProgress(arg0_6)
+	return arg0_6.config.complete_parameter_num
 end
 
-function var0.updateProgress(arg0, arg1)
-	arg0.progress = arg1
+function var0_0.updateProgress(arg0_7, arg1_7)
+	arg0_7.progress = arg1_7
 end
 
-function var0.getProgress(arg0)
-	return arg0.progress
+function var0_0.getProgress(arg0_8)
+	return arg0_8.progress
 end
 
-function var0.isAlive(arg0)
-	local var0 = arg0:getState()
+function var0_0.isAlive(arg0_9)
+	local var0_9 = arg0_9:getState()
 
-	return var0 == var0.STATE_ONGOING or var0 == var0.STATE_FINISHED
+	return var0_9 == var0_0.STATE_ONGOING or var0_9 == var0_0.STATE_FINISHED
 end
 
-function var0.isFinished(arg0)
-	return arg0:getState() == var0.STATE_FINISHED
+function var0_0.isFinished(arg0_10)
+	return arg0_10:getState() == var0_0.STATE_FINISHED
 end
 
-function var0.isReceived(arg0)
-	return arg0:getState() == var0.STATE_RECEIVED
+function var0_0.isReceived(arg0_11)
+	return arg0_11:getState() == var0_0.STATE_RECEIVED
 end
 
-function var0.canSubmit(arg0)
-	if arg0:getState() ~= var0.STATE_FINISHED then
+function var0_0.canSubmit(arg0_12)
+	if arg0_12:getState() ~= var0_0.STATE_FINISHED then
 		return false, i18n("this task is not finish or is finished")
 	end
 
 	return true
 end
 
-function var0.commited(arg0)
-	arg0.submiteTime = pg.TimeMgr.GetInstance():GetServerTime()
+function var0_0.commited(arg0_13)
+	arg0_13.submiteTime = pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function var0.GetBgColor(arg0)
-	return var0.type2BgColor(arg0.config.type)
+function var0_0.GetBgColor(arg0_14)
+	return var0_0.type2BgColor(arg0_14.config.type)
 end
 
-function var0.GetDisplayDrops(arg0)
-	local var0 = {}
+function var0_0.GetDisplayDrops(arg0_15)
+	local var0_15 = {}
 
-	_.each(arg0.config.show, function(arg0)
-		table.insert(var0, {
-			type = arg0[1],
-			id = arg0[2],
-			count = arg0[3]
+	_.each(arg0_15.config.show, function(arg0_16)
+		table.insert(var0_15, {
+			type = arg0_16[1],
+			id = arg0_16[2],
+			count = arg0_16[3]
 		})
 	end)
 
-	return var0
+	return var0_15
 end
 
-function var0.GetFollowingAreaId(arg0)
-	local var0 = arg0.config.following_region[1]
+function var0_0.GetFollowingAreaId(arg0_17)
+	local var0_17 = arg0_17.config.following_region[1]
 
-	return var0 and var0 > 0 and var0 or nil
+	return var0_17 and var0_17 > 0 and var0_17 or nil
 end
 
-local var2 = {
+local var2_0 = {
 	[0] = true,
 	[6] = true,
 	[7] = true
 }
 
-function var0.GetFollowingEntrance(arg0)
-	if var2[arg0.config.type] then
-		return arg0.config.following_map[1]
+function var0_0.GetFollowingEntrance(arg0_18)
+	if var2_0[arg0_18.config.type] then
+		return arg0_18.config.following_map[1]
 	else
-		return arg0.followingEntrance > 0 and arg0.followingEntrance or nil
+		return arg0_18.followingEntrance > 0 and arg0_18.followingEntrance or nil
 	end
 end
 
-function var0.IsSpecialType(arg0)
-	return arg0.config.type == 5
+function var0_0.IsSpecialType(arg0_19)
+	return arg0_19.config.type == 5
 end
 
-function var0.IsTypeCollection(arg0)
-	return arg0.config.type == 6
+function var0_0.IsTypeCollection(arg0_20)
+	return arg0_20.config.type == 6
 end
 
-function var0.IsLockMap(arg0)
-	return arg0.config.target_map_lock == 1
+function var0_0.IsLockMap(arg0_21)
+	return arg0_21.config.target_map_lock == 1
 end
 
-function var0.IsAutoSubmit(arg0)
-	return arg0.config.auto_complete == 1
+function var0_0.IsAutoSubmit(arg0_22)
+	return arg0_22.config.auto_complete == 1
 end
 
-function var0.canTrigger(arg0)
-	local var0 = nowWorld()
-	local var1 = WorldTask.New({
-		id = arg0
+function var0_0.canTrigger(arg0_23)
+	local var0_23 = nowWorld()
+	local var1_23 = WorldTask.New({
+		id = arg0_23
 	})
-	local var2 = var0:GetTaskProxy()
+	local var2_23 = var0_23:GetTaskProxy()
 
-	if var2:getTaskById(arg0) then
+	if var2_23:getTaskById(arg0_23) then
 		return false, i18n("world_sametask_tip")
-	elseif var0:GetLevel() < var1.config.need_level then
-		return false, i18n1("舰队总等级需达到（缺gametip）" .. var1.config.need_level)
-	elseif var2.taskFinishCount < var1.config.need_task_complete then
-		return false, i18n1("任务完成数需达到（缺gametip）" .. var1.config.need_task_complete)
+	elseif var0_23:GetLevel() < var1_23.config.need_level then
+		return false, i18n1("舰队总等级需达到（缺gametip）" .. var1_23.config.need_level)
+	elseif var2_23.taskFinishCount < var1_23.config.need_task_complete then
+		return false, i18n1("任务完成数需达到（缺gametip）" .. var1_23.config.need_task_complete)
 	end
 
 	return true
 end
 
-var0.taskSortOrder = {
-	[var0.STATE_INACTIVE] = 2,
-	[var0.STATE_ONGOING] = 1,
-	[var0.STATE_FINISHED] = 0,
-	[var0.STATE_RECEIVED] = 3
+var0_0.taskSortOrder = {
+	[var0_0.STATE_INACTIVE] = 2,
+	[var0_0.STATE_ONGOING] = 1,
+	[var0_0.STATE_FINISHED] = 0,
+	[var0_0.STATE_RECEIVED] = 3
 }
-var0.sortDic = {
-	function(arg0)
-		return var0.taskSortOrder[arg0:getState()]
+var0_0.sortDic = {
+	function(arg0_24)
+		return var0_0.taskSortOrder[arg0_24:getState()]
 	end,
-	function(arg0)
-		return arg0.config.type
+	function(arg0_25)
+		return arg0_25.config.type
 	end,
-	function(arg0)
-		return -arg0.config.priority
+	function(arg0_26)
+		return -arg0_26.config.priority
 	end,
-	function(arg0)
-		return arg0.id
+	function(arg0_27)
+		return arg0_27.id
 	end
 }
 
-return var0
+return var0_0

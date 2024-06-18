@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_115 = {}
+var0_0.word_template_115 = {}
 
-local var1 = var0.word_template_115
+local var1_0 = var0_0.word_template_115
 
 function temp()
-	var1.詿 = {
+	var1_0.詿 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.乖 = {
+	var1_0.乖 = {
 		乖 = {
 			把 = {
 				腿 = {
@@ -35,7 +35,7 @@ end
 temp()
 
 function temp()
-	var1.拐 = {
+	var1_0.拐 = {
 		卖 = {
 			this = true
 		},
@@ -48,7 +48,7 @@ end
 temp()
 
 function temp()
-	var1.怪 = {
+	var1_0.怪 = {
 		骡 = {
 			就 = {
 				象 = {
@@ -68,7 +68,7 @@ end
 temp()
 
 function temp()
-	var1.关 = {
+	var1_0.关 = {
 		键 = {
 			词 = {
 				this = true
@@ -123,7 +123,7 @@ end
 temp()
 
 function temp()
-	var1.观 = {
+	var1_0.观 = {
 		其 = {
 			乳 = {
 				丰 = {
@@ -180,7 +180,7 @@ end
 temp()
 
 function temp()
-	var1.關 = {
+	var1_0.關 = {
 		卓 = {
 			中 = {
 				this = true

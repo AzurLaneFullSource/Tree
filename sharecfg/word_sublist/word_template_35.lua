@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_35 = {}
+var0_0.word_template_35 = {}
 
-local var1 = var0.word_template_35
+local var1_0 = var0_0.word_template_35
 
 function temp()
-	var1.訳 = {
+	var1_0.訳 = {
 		あ = {
 			り = {
 				this = true
@@ -19,7 +19,7 @@ end
 temp()
 
 function temp()
-	var1.友 = {
+	var1_0.友 = {
 		達 = {
 			紹 = {
 				介 = {
@@ -60,7 +60,7 @@ end
 temp()
 
 function temp()
-	var1.誘 = {
+	var1_0.誘 = {
 		拐 = {
 			this = true
 		},
@@ -84,7 +84,7 @@ end
 temp()
 
 function temp()
-	var1.遊 = {
+	var1_0.遊 = {
 		進 = {
 			this = true
 		},
@@ -116,7 +116,7 @@ end
 temp()
 
 function temp()
-	var1.裸 = {
+	var1_0.裸 = {
 		this = {
 			this = true
 		},
@@ -257,7 +257,7 @@ end
 temp()
 
 function temp()
-	var1.乱 = {
+	var1_0.乱 = {
 		交 = {
 			this = true,
 			痴 = {
@@ -345,7 +345,7 @@ end
 temp()
 
 function temp()
-	var1.李 = {
+	var1_0.李 = {
 		洪 = {
 			志 = {
 				this = true

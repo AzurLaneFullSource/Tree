@@ -1,235 +1,235 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.LinkList = class("LinkList")
+var0_0.LinkList = class("LinkList")
 
-local var1 = var0.LinkList
+local var1_0 = var0_0.LinkList
 
-var1.Head = nil
-var1.Tail = nil
-var1.Count = 0
+var1_0.Head = nil
+var1_0.Tail = nil
+var1_0.Count = 0
 
-function var1.Ctor(arg0)
+function var1_0.Ctor(arg0_1)
 	return
 end
 
-function var1.Clear(arg0)
-	arg0.Head = nil
-	arg0.Tail = nil
-	arg0.Count = 0
+function var1_0.Clear(arg0_2)
+	arg0_2.Head = nil
+	arg0_2.Tail = nil
+	arg0_2.Count = 0
 end
 
-function var1.NewNode(arg0, arg1)
+function var1_0.NewNode(arg0_3, arg1_3)
 	return {
-		Data = arg1
+		Data = arg1_3
 	}
 end
 
-function var1.IsEmpty(arg0)
-	return arg0.Count == 0
+function var1_0.IsEmpty(arg0_4)
+	return arg0_4.Count == 0
 end
 
-function var1.AddBefore(arg0, arg1, arg2)
-	if arg1 == nil then
+function var1_0.AddBefore(arg0_5, arg1_5, arg2_5)
+	if arg1_5 == nil then
 		return nil
 	end
 
-	local var0 = arg0:NewNode(arg2)
+	local var0_5 = arg0_5:NewNode(arg2_5)
 
-	if arg1.Before ~= nil then
-		arg1.Before.Next = var0
+	if arg1_5.Before ~= nil then
+		arg1_5.Before.Next = var0_5
 	end
 
-	var0.Before = arg1.Before
-	var0.Next = arg1
-	arg1.Before = var0
+	var0_5.Before = arg1_5.Before
+	var0_5.Next = arg1_5
+	arg1_5.Before = var0_5
 
-	if arg0.Head == arg1 then
-		arg0.Head = var0
+	if arg0_5.Head == arg1_5 then
+		arg0_5.Head = var0_5
 	end
 
-	arg0.Count = arg0.Count + 1
+	arg0_5.Count = arg0_5.Count + 1
 
-	return var0
+	return var0_5
 end
 
-function var1.AddAfter(arg0, arg1, arg2)
-	if arg1 == nil then
+function var1_0.AddAfter(arg0_6, arg1_6, arg2_6)
+	if arg1_6 == nil then
 		return nil
 	end
 
-	local var0 = arg0:NewNode(arg2)
+	local var0_6 = arg0_6:NewNode(arg2_6)
 
-	if arg1.Next ~= nil then
-		arg1.Next.Before = var0
+	if arg1_6.Next ~= nil then
+		arg1_6.Next.Before = var0_6
 	end
 
-	var0.Next = arg1.Next
-	arg1.Next = var0
-	var0.Before = arg1
+	var0_6.Next = arg1_6.Next
+	arg1_6.Next = var0_6
+	var0_6.Before = arg1_6
 
-	if arg0.Tail == arg1 then
-		arg0.Tail = var0
+	if arg0_6.Tail == arg1_6 then
+		arg0_6.Tail = var0_6
 	end
 
-	arg0.Count = arg0.Count + 1
+	arg0_6.Count = arg0_6.Count + 1
 
-	return var0
+	return var0_6
 end
 
-function var1.AddFirst(arg0, arg1)
-	local var0 = arg0:NewNode(arg1)
+function var1_0.AddFirst(arg0_7, arg1_7)
+	local var0_7 = arg0_7:NewNode(arg1_7)
 
-	return arg0:AddNodeFirst(var0)
+	return arg0_7:AddNodeFirst(var0_7)
 end
 
-function var1.AddNodeFirst(arg0, arg1)
-	if arg0.Head ~= nil then
-		arg0.Head.Before = arg1
+function var1_0.AddNodeFirst(arg0_8, arg1_8)
+	if arg0_8.Head ~= nil then
+		arg0_8.Head.Before = arg1_8
 	end
 
-	arg1.Next = arg0.Head
-	arg1.Before = nil
-	arg0.Head = arg1
+	arg1_8.Next = arg0_8.Head
+	arg1_8.Before = nil
+	arg0_8.Head = arg1_8
 
-	if arg0.Tail == nil then
-		arg0.Tail = arg1
+	if arg0_8.Tail == nil then
+		arg0_8.Tail = arg1_8
 	end
 
-	arg0.Count = arg0.Count + 1
+	arg0_8.Count = arg0_8.Count + 1
 
-	return arg1
+	return arg1_8
 end
 
-function var1.AddLast(arg0, arg1)
-	local var0 = arg0:NewNode(arg1)
+function var1_0.AddLast(arg0_9, arg1_9)
+	local var0_9 = arg0_9:NewNode(arg1_9)
 
-	return arg0:AddNodeLast(var0)
+	return arg0_9:AddNodeLast(var0_9)
 end
 
-function var1.AddNodeLast(arg0, arg1)
-	if arg0.Tail ~= nil then
-		arg0.Tail.Next = arg1
+function var1_0.AddNodeLast(arg0_10, arg1_10)
+	if arg0_10.Tail ~= nil then
+		arg0_10.Tail.Next = arg1_10
 	end
 
-	arg1.Before = arg0.Tail
-	arg1.Next = nil
-	arg0.Tail = arg1
+	arg1_10.Before = arg0_10.Tail
+	arg1_10.Next = nil
+	arg0_10.Tail = arg1_10
 
-	if arg0.Head == nil then
-		arg0.Head = arg1
+	if arg0_10.Head == nil then
+		arg0_10.Head = arg1_10
 	end
 
-	arg0.Count = arg0.Count + 1
+	arg0_10.Count = arg0_10.Count + 1
 
-	return arg1
+	return arg1_10
 end
 
-function var1.CopyTo(arg0, arg1, arg2)
-	if arg1 == nil then
+function var1_0.CopyTo(arg0_11, arg1_11, arg2_11)
+	if arg1_11 == nil then
 		return
 	end
 
-	if arg2 == nil then
-		arg2 = 1
+	if arg2_11 == nil then
+		arg2_11 = 1
 	end
 
-	local var0 = arg0.Head
+	local var0_11 = arg0_11.Head
 
-	for iter0 = 1, arg0.Count do
-		table.insert(arg1, arg2, var0.Data)
+	for iter0_11 = 1, arg0_11.Count do
+		table.insert(arg1_11, arg2_11, var0_11.Data)
 
-		var0 = var0.Next
-		arg2 = arg2 + 1
+		var0_11 = var0_11.Next
+		arg2_11 = arg2_11 + 1
 	end
 end
 
-function var1.Find(arg0, arg1)
-	local var0 = arg0.Head
+function var1_0.Find(arg0_12, arg1_12)
+	local var0_12 = arg0_12.Head
 
-	for iter0 = 1, arg0.Count do
-		if var0.Data == arg1 then
-			return var0
+	for iter0_12 = 1, arg0_12.Count do
+		if var0_12.Data == arg1_12 then
+			return var0_12
 		end
 
-		var0 = var0.Next
+		var0_12 = var0_12.Next
 	end
 
 	return nil
 end
 
-function var1.FindLast(arg0, arg1)
-	local var0 = arg0.Tail
+function var1_0.FindLast(arg0_13, arg1_13)
+	local var0_13 = arg0_13.Tail
 
-	for iter0 = 1, arg0.Count do
-		if var0.Data == arg1 then
-			return var0
+	for iter0_13 = 1, arg0_13.Count do
+		if var0_13.Data == arg1_13 then
+			return var0_13
 		end
 
-		var0 = var0.Before
+		var0_13 = var0_13.Before
 	end
 
 	return nil
 end
 
-function var1.RemoveFirst(arg0)
-	arg0:Remove(arg0.Head)
+function var1_0.RemoveFirst(arg0_14)
+	arg0_14:Remove(arg0_14.Head)
 end
 
-function var1.RemoveLast(arg0)
-	arg0:Remove(arg0.Tail)
+function var1_0.RemoveLast(arg0_15)
+	arg0_15:Remove(arg0_15.Tail)
 end
 
-function var1.Remove(arg0, arg1)
-	if arg1 == nil then
+function var1_0.Remove(arg0_16, arg1_16)
+	if arg1_16 == nil then
 		return
 	end
 
-	if arg0.Head == arg1 then
-		arg0.Head = arg1.Next
+	if arg0_16.Head == arg1_16 then
+		arg0_16.Head = arg1_16.Next
 	end
 
-	if arg0.Tail == arg1 then
-		arg0.Tail = arg1.Before
+	if arg0_16.Tail == arg1_16 then
+		arg0_16.Tail = arg1_16.Before
 	end
 
-	if arg1.Next ~= nil then
-		arg1.Next.Before = arg1.Before
+	if arg1_16.Next ~= nil then
+		arg1_16.Next.Before = arg1_16.Before
 	end
 
-	if arg1.Before ~= nil then
-		arg1.Before.Next = arg1.Next
+	if arg1_16.Before ~= nil then
+		arg1_16.Before.Next = arg1_16.Next
 	end
 
-	arg0.Count = arg0.Count - 1
+	arg0_16.Count = arg0_16.Count - 1
 end
 
-function var1.RemoveData(arg0, arg1)
-	local var0 = arg0:Find(arg1)
+function var1_0.RemoveData(arg0_17, arg1_17)
+	local var0_17 = arg0_17:Find(arg1_17)
 
-	arg0:Remove(var0)
+	arg0_17:Remove(var0_17)
 
-	return var0
+	return var0_17
 end
 
-local function var2(arg0, arg1)
-	if arg1 == nil then
-		return arg0.Head
+local function var2_0(arg0_18, arg1_18)
+	if arg1_18 == nil then
+		return arg0_18.Head
 	else
-		return arg1.Next
+		return arg1_18.Next
 	end
 end
 
-function var1.Iterator(arg0)
-	return var2, arg0
+function var1_0.Iterator(arg0_19)
+	return var2_0, arg0_19
 end
 
-function var1.Show(arg0)
+function var1_0.Show(arg0_20)
 	print("-------- list ++ begin --------")
 
-	for iter0 in arg0:Iterator() do
-		print(iter0.Data)
+	for iter0_20 in arg0_20:Iterator() do
+		print(iter0_20.Data)
 	end
 
 	print("-------- list -- end ----------")

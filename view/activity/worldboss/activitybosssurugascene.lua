@@ -1,70 +1,70 @@
-﻿local var0 = class("ActivityBossSurugaScene", import(".ActivityBossSceneTemplate"))
+﻿local var0_0 = class("ActivityBossSurugaScene", import(".ActivityBossSceneTemplate"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ActivityBossUI"
 end
 
-function var0.preload(arg0, arg1)
-	local var0 = PoolMgr.GetInstance()
+function var0_0.preload(arg0_2, arg1_2)
+	local var0_2 = PoolMgr.GetInstance()
 
-	var0:GetPrefab("ui/cysx_fk", "cysx_fk", true, function(arg0)
-		var0:ReturnPrefab("ui/cysx_fk", "cysx_fk", arg0)
-		arg1()
+	var0_2:GetPrefab("ui/cysx_fk", "cysx_fk", true, function(arg0_3)
+		var0_2:ReturnPrefab("ui/cysx_fk", "cysx_fk", arg0_3)
+		arg1_2()
 	end)
 end
 
-function var0.init(arg0)
-	var0.super.init(arg0)
-	setText(arg0.rankTF:Find("title/Text"), i18n("word_billboard"))
+function var0_0.init(arg0_4)
+	var0_0.super.init(arg0_4)
+	setText(arg0_4.rankTF:Find("title/Text"), i18n("word_billboard"))
 
-	arg0.loader = AutoLoader.New()
+	arg0_4.loader = AutoLoader.New()
 end
 
-function var0.didEnter(arg0)
-	var0.super.didEnter(arg0)
-	arg0.loader:GetPrefab("ui/cysx_fk", "cysx_fk", function(arg0)
-		setParent(arg0, arg0.left)
-		setAnchoredPosition(arg0, Vector2(69, 295))
-		arg0.transform:SetAsFirstSibling()
+function var0_0.didEnter(arg0_5)
+	var0_0.super.didEnter(arg0_5)
+	arg0_5.loader:GetPrefab("ui/cysx_fk", "cysx_fk", function(arg0_6)
+		setParent(arg0_6, arg0_5.left)
+		setAnchoredPosition(arg0_6, Vector2(69, 295))
+		arg0_6.transform:SetAsFirstSibling()
 	end)
 end
 
-function var0.UpdateRank(arg0, arg1)
-	arg1 = arg1 or {}
+function var0_0.UpdateRank(arg0_7, arg1_7)
+	arg1_7 = arg1_7 or {}
 
-	for iter0 = 1, #arg0.rankList do
-		local var0 = arg0.rankList[iter0]
+	for iter0_7 = 1, #arg0_7.rankList do
+		local var0_7 = arg0_7.rankList[iter0_7]
 
-		setActive(var0, iter0 <= #arg1)
+		setActive(var0_7, iter0_7 <= #arg1_7)
 
-		if iter0 <= #arg1 then
-			local var1 = var0:Find("name/Text")
+		if iter0_7 <= #arg1_7 then
+			local var1_7 = var0_7:Find("name/Text")
 
-			setText(var1, tostring(arg1[iter0].name))
-			setText(var0:Find("num/Text"), "NO." .. iter0)
+			setText(var1_7, tostring(arg1_7[iter0_7].name))
+			setText(var0_7:Find("num/Text"), "NO." .. iter0_7)
 		end
 	end
 end
 
-function var0.UpdateDropItems(arg0)
-	for iter0, iter1 in ipairs(arg0.contextData.DisplayItems or {}) do
-		local var0 = arg0:findTF("milestone/item", arg0.barList[iter0])
-		local var1 = {
-			type = arg0.contextData.DisplayItems[5 - iter0][1],
-			id = arg0.contextData.DisplayItems[5 - iter0][2],
-			count = arg0.contextData.DisplayItems[5 - iter0][3]
+function var0_0.UpdateDropItems(arg0_8)
+	for iter0_8, iter1_8 in ipairs(arg0_8.contextData.DisplayItems or {}) do
+		local var0_8 = arg0_8:findTF("milestone/item", arg0_8.barList[iter0_8])
+		local var1_8 = {
+			type = arg0_8.contextData.DisplayItems[5 - iter0_8][1],
+			id = arg0_8.contextData.DisplayItems[5 - iter0_8][2],
+			count = arg0_8.contextData.DisplayItems[5 - iter0_8][3]
 		}
 
-		updateDrop(var0, var1)
-		onButton(arg0, var0, function()
-			arg0:emit(var0.ON_DROP, var1)
+		updateDrop(var0_8, var1_8)
+		onButton(arg0_8, var0_8, function()
+			arg0_8:emit(var0_0.ON_DROP, var1_8)
 		end, SFX_PANEL)
 	end
 end
 
-function var0.willExit(arg0)
-	var0.super.willExit(arg0)
-	arg0.loader:Clear()
+function var0_0.willExit(arg0_10)
+	var0_0.super.willExit(arg0_10)
+	arg0_10.loader:Clear()
 end
 
-return var0
+return var0_0

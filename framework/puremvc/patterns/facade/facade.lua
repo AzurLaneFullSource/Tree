@@ -1,153 +1,153 @@
-﻿local var0 = import("...core.Controller")
-local var1 = import("...core.Model")
-local var2 = import("...core.View")
-local var3 = import("..observer.Notification")
-local var4 = class("Facade")
+﻿local var0_0 = import("...core.Controller")
+local var1_0 = import("...core.Model")
+local var2_0 = import("...core.View")
+local var3_0 = import("..observer.Notification")
+local var4_0 = class("Facade")
 
-function var4.Ctor(arg0, arg1)
-	if var4.instanceMap[arg1] ~= nil then
-		error(var4.MULTITON_MSG)
+function var4_0.Ctor(arg0_1, arg1_1)
+	if var4_0.instanceMap[arg1_1] ~= nil then
+		error(var4_0.MULTITON_MSG)
 	end
 
-	arg0:initializeNotifier(arg1)
+	arg0_1:initializeNotifier(arg1_1)
 
-	var4.instanceMap[arg1] = arg0
+	var4_0.instanceMap[arg1_1] = arg0_1
 
-	arg0:initializeFacade()
+	arg0_1:initializeFacade()
 end
 
-function var4.initializeFacade(arg0)
-	arg0:initializeModel()
-	arg0:initializeController()
-	arg0:initializeView()
+function var4_0.initializeFacade(arg0_2)
+	arg0_2:initializeModel()
+	arg0_2:initializeController()
+	arg0_2:initializeView()
 end
 
-function var4.getInstance(arg0)
-	if arg0 == nil then
+function var4_0.getInstance(arg0_3)
+	if arg0_3 == nil then
 		return nil
 	end
 
-	if var4.instanceMap[arg0] == nil then
-		var4.instanceMap[arg0] = var4.New(arg0)
+	if var4_0.instanceMap[arg0_3] == nil then
+		var4_0.instanceMap[arg0_3] = var4_0.New(arg0_3)
 	end
 
-	return var4.instanceMap[arg0]
+	return var4_0.instanceMap[arg0_3]
 end
 
-function var4.initializeController(arg0)
-	if arg0.controller ~= nil then
+function var4_0.initializeController(arg0_4)
+	if arg0_4.controller ~= nil then
 		return
 	end
 
-	arg0.controller = var0.getInstance(arg0.multitonKey)
+	arg0_4.controller = var0_0.getInstance(arg0_4.multitonKey)
 end
 
-function var4.initializeModel(arg0)
-	if arg0.model ~= nil then
+function var4_0.initializeModel(arg0_5)
+	if arg0_5.model ~= nil then
 		return
 	end
 
-	arg0.model = var1.getInstance(arg0.multitonKey)
+	arg0_5.model = var1_0.getInstance(arg0_5.multitonKey)
 end
 
-function var4.initializeView(arg0)
-	if arg0.view ~= nil then
+function var4_0.initializeView(arg0_6)
+	if arg0_6.view ~= nil then
 		return
 	end
 
-	arg0.view = var2.getInstance(arg0.multitonKey)
+	arg0_6.view = var2_0.getInstance(arg0_6.multitonKey)
 end
 
-function var4.registerCommand(arg0, arg1, arg2)
-	assert(arg2)
-	arg0.controller:registerCommand(arg1, arg2)
+function var4_0.registerCommand(arg0_7, arg1_7, arg2_7)
+	assert(arg2_7)
+	arg0_7.controller:registerCommand(arg1_7, arg2_7)
 end
 
-function var4.removeCommand(arg0, arg1)
-	arg0.controller:removeCommand(arg1)
+function var4_0.removeCommand(arg0_8, arg1_8)
+	arg0_8.controller:removeCommand(arg1_8)
 end
 
-function var4.hasCommand(arg0, arg1)
-	return arg0.controller:hasCommand(arg1)
+function var4_0.hasCommand(arg0_9, arg1_9)
+	return arg0_9.controller:hasCommand(arg1_9)
 end
 
-function var4.registerProxy(arg0, arg1)
-	arg0.model:registerProxy(arg1)
+function var4_0.registerProxy(arg0_10, arg1_10)
+	arg0_10.model:registerProxy(arg1_10)
 end
 
-function var4.retrieveProxy(arg0, arg1)
-	return arg0.model:retrieveProxy(arg1)
+function var4_0.retrieveProxy(arg0_11, arg1_11)
+	return arg0_11.model:retrieveProxy(arg1_11)
 end
 
-function var4.removeProxy(arg0, arg1)
-	local var0
+function var4_0.removeProxy(arg0_12, arg1_12)
+	local var0_12
 
-	if arg0.model ~= nil then
-		var0 = arg0.model:removeProxy(arg1)
+	if arg0_12.model ~= nil then
+		var0_12 = arg0_12.model:removeProxy(arg1_12)
 	end
 
-	return var0
+	return var0_12
 end
 
-function var4.hasProxy(arg0, arg1)
-	return arg0.model:hasProxy(arg1)
+function var4_0.hasProxy(arg0_13, arg1_13)
+	return arg0_13.model:hasProxy(arg1_13)
 end
 
-function var4.registerMediator(arg0, arg1)
-	if arg0.view ~= nil then
-		arg0.view:registerMediator(arg1)
-	end
-end
-
-function var4.retrieveMediator(arg0, arg1)
-	return arg0.view:retrieveMediator(arg1)
-end
-
-function var4.removeMediator(arg0, arg1)
-	local var0
-
-	if arg0.view ~= nil then
-		var0 = arg0.view:removeMediator(arg1)
-	end
-
-	return var0
-end
-
-function var4.hasMediator(arg0, arg1)
-	return arg0.view:hasMediator(arg1)
-end
-
-function var4.sendNotification(arg0, arg1, arg2, arg3)
-	arg0:notifyObservers(var3.New(arg1, arg2, arg3))
-end
-
-function var4.notifyObservers(arg0, arg1)
-	if arg0.view ~= nil then
-		arg0.view:notifyObservers(arg1)
+function var4_0.registerMediator(arg0_14, arg1_14)
+	if arg0_14.view ~= nil then
+		arg0_14.view:registerMediator(arg1_14)
 	end
 end
 
-function var4.initializeNotifier(arg0, arg1)
-	arg0.multitonKey = arg1
+function var4_0.retrieveMediator(arg0_15, arg1_15)
+	return arg0_15.view:retrieveMediator(arg1_15)
 end
 
-function var4.hasCore(arg0)
-	return var4.instanceMap[arg0] ~= nil
+function var4_0.removeMediator(arg0_16, arg1_16)
+	local var0_16
+
+	if arg0_16.view ~= nil then
+		var0_16 = arg0_16.view:removeMediator(arg1_16)
+	end
+
+	return var0_16
 end
 
-function var4.removeCore(arg0)
-	if var4.instanceMap[arg0] == nil then
+function var4_0.hasMediator(arg0_17, arg1_17)
+	return arg0_17.view:hasMediator(arg1_17)
+end
+
+function var4_0.sendNotification(arg0_18, arg1_18, arg2_18, arg3_18)
+	arg0_18:notifyObservers(var3_0.New(arg1_18, arg2_18, arg3_18))
+end
+
+function var4_0.notifyObservers(arg0_19, arg1_19)
+	if arg0_19.view ~= nil then
+		arg0_19.view:notifyObservers(arg1_19)
+	end
+end
+
+function var4_0.initializeNotifier(arg0_20, arg1_20)
+	arg0_20.multitonKey = arg1_20
+end
+
+function var4_0.hasCore(arg0_21)
+	return var4_0.instanceMap[arg0_21] ~= nil
+end
+
+function var4_0.removeCore(arg0_22)
+	if var4_0.instanceMap[arg0_22] == nil then
 		return
 	end
 
-	var1.removeModel(arg0)
-	var2.removeView(arg0)
-	var0.removeController(arg0)
+	var1_0.removeModel(arg0_22)
+	var2_0.removeView(arg0_22)
+	var0_0.removeController(arg0_22)
 
-	var4.instanceMap[arg0] = nil
+	var4_0.instanceMap[arg0_22] = nil
 end
 
-var4.instanceMap = {}
-var4.MULTITON_MSG = "Facade instance for this Multiton key already constructed!"
+var4_0.instanceMap = {}
+var4_0.MULTITON_MSG = "Facade instance for this Multiton key already constructed!"
 
-return var4
+return var4_0

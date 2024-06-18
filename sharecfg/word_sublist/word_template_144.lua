@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_144 = {}
+var0_0.word_template_144 = {}
 
-local var1 = var0.word_template_144
+local var1_0 = var0_0.word_template_144
 
 function temp()
-	var1.恝 = {
+	var1_0.恝 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.甲 = {
+	var1_0.甲 = {
 		胺 = {
 			溶 = {
 				液 = {
@@ -122,7 +122,7 @@ end
 temp()
 
 function temp()
-	var1.贾 = {
+	var1_0.贾 = {
 		春 = {
 			一 = {
 				样 = {
@@ -151,7 +151,7 @@ end
 temp()
 
 function temp()
-	var1.假 = {
+	var1_0.假 = {
 		币 = {
 			this = true,
 			["1"] = {
@@ -399,7 +399,7 @@ end
 temp()
 
 function temp()
-	var1.徦 = {
+	var1_0.徦 = {
 		幣 = {
 			this = true
 		},
@@ -412,7 +412,7 @@ end
 temp()
 
 function temp()
-	var1.賈 = {
+	var1_0.賈 = {
 		慶 = {
 			林 = {
 				this = true
@@ -434,7 +434,7 @@ end
 temp()
 
 function temp()
-	var1.驾 = {
+	var1_0.驾 = {
 		照 = {
 			代 = {
 				办 = {

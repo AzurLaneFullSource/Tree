@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	"Use your mission rewards to <color=#ff7d36>build a new ship</color>.",
 	"Tap to build",
 	"This time, try building a <color=#ff7d36>heavy ship</color>!",
@@ -16,7 +16,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[1]
+				text = var0_0[1]
 			},
 			ui = {
 				pathIndex = -1,
@@ -44,7 +44,7 @@ return {
 				mode = 2,
 				posY = 125,
 				posX = -520,
-				text = var0[2]
+				text = var0_0[2]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/blur_panel/adapt/left_length/frame/tagRoot/build_btn",
@@ -66,7 +66,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[3]
+				text = var0_0[3]
 			},
 			ui = {
 				pathIndex = -1,
@@ -93,7 +93,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 205.91,
-				text = var0[4]
+				text = var0_0[4]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/BuildShipUI(Clone)/BuildShipPoolsPageUI(Clone)/gallery/start_btn",
@@ -114,7 +114,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var0[5]
+				text = var0_0[5]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/BuildShipMsgBoxUI(Clone)/window/btns/confirm_btn",

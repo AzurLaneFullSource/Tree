@@ -1,29 +1,29 @@
-﻿local var0 = class("AttireApplyCommand", pm.SimpleCommand)
+﻿local var0_0 = class("AttireApplyCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.id
-	local var2 = var0.type
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.id
+	local var2_1 = var0_1.type
 
-	if not getProxy(AttireProxy):getAttireFrame(var2, var1) then
+	if not getProxy(AttireProxy):getAttireFrame(var2_1, var1_1) then
 		return
 	end
 
-	local var3 = getProxy(PlayerProxy)
-	local var4 = var3:getData()
+	local var3_1 = getProxy(PlayerProxy)
+	local var4_1 = var3_1:getData()
 
 	pg.ConnectionMgr.GetInstance():Send(11005, {
-		id = var1,
-		type = var2
-	}, 11006, function(arg0)
-		if arg0.result == 0 then
-			var4:updateAttireFrame(var2, var1)
-			var3:updatePlayer(var4)
-			arg0:sendNotification(GAME.ATTIRE_APPLY_DONE)
+		id = var1_1,
+		type = var2_1
+	}, 11006, function(arg0_2)
+		if arg0_2.result == 0 then
+			var4_1:updateAttireFrame(var2_1, var1_1)
+			var3_1:updatePlayer(var4_1)
+			arg0_1:sendNotification(GAME.ATTIRE_APPLY_DONE)
 		else
-			print(arg0.result)
+			print(arg0_2.result)
 		end
 	end)
 end
 
-return var0
+return var0_0

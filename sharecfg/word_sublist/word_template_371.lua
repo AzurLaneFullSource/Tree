@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_371 = {}
+var0_0.word_template_371 = {}
 
-local var1 = var0.word_template_371
+local var1_0 = var0_0.word_template_371
 
 function temp()
-	var1.晓 = {
+	var1_0.晓 = {
 		波 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.蜡 = {
+	var1_0.蜡 = {
 		烛 = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.压 = {
+	var1_0.压 = {
 		死 = {
 			this = true
 		},
@@ -54,7 +54,7 @@ end
 temp()
 
 function temp()
-	var1.碾 = {
+	var1_0.碾 = {
 		压 = {
 			this = true
 		},
@@ -74,7 +74,7 @@ end
 temp()
 
 function temp()
-	var1.趁 = {
+	var1_0.趁 = {
 		疫 = {
 			打 = {
 				压 = {
@@ -88,7 +88,7 @@ end
 temp()
 
 function temp()
-	var1.塑 = {
+	var1_0.塑 = {
 		料 = {
 			袋 = {
 				this = true
@@ -100,7 +100,7 @@ end
 temp()
 
 function temp()
-	var1.歹 = {
+	var1_0.歹 = {
 		徒 = {
 			this = true
 		}

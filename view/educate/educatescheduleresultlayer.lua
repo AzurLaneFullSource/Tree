@@ -1,223 +1,223 @@
-﻿local var0 = class("EducateScheduleResultLayer", import(".base.EducateBaseUI"))
+﻿local var0_0 = class("EducateScheduleResultLayer", import(".base.EducateBaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "EducateScheduleResultUI"
 end
 
-function var0.init(arg0)
-	arg0.anim = arg0:findTF("anim_root"):GetComponent(typeof(Animation))
-	arg0.animEvent = arg0:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
-	arg0.inAnimPlaying = true
+function var0_0.init(arg0_2)
+	arg0_2.anim = arg0_2:findTF("anim_root"):GetComponent(typeof(Animation))
+	arg0_2.animEvent = arg0_2:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+	arg0_2.inAnimPlaying = true
 
-	arg0.animEvent:SetEndEvent(function()
-		arg0.inAnimPlaying = false
+	arg0_2.animEvent:SetEndEvent(function()
+		arg0_2.inAnimPlaying = false
 
-		arg0.animEvent:SetEndEvent(function()
-			arg0:emit(var0.ON_CLOSE)
+		arg0_2.animEvent:SetEndEvent(function()
+			arg0_2:emit(var0_0.ON_CLOSE)
 		end)
 	end)
 
-	arg0.windowTF = arg0:findTF("anim_root/window")
-	arg0.personalTF = arg0:findTF("personal", arg0.windowTF)
-	arg0.majorArrTF = arg0:findTF("major", arg0.windowTF)
-	arg0.minorArrTF = arg0:findTF("minor", arg0.windowTF)
-	arg0.resTF = arg0:findTF("res/content", arg0.windowTF)
+	arg0_2.windowTF = arg0_2:findTF("anim_root/window")
+	arg0_2.personalTF = arg0_2:findTF("personal", arg0_2.windowTF)
+	arg0_2.majorArrTF = arg0_2:findTF("major", arg0_2.windowTF)
+	arg0_2.minorArrTF = arg0_2:findTF("minor", arg0_2.windowTF)
+	arg0_2.resTF = arg0_2:findTF("res/content", arg0_2.windowTF)
 
-	setText(arg0:findTF("tip", arg0.windowTF), i18n("child_close_tip"))
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, nil, {
-		groupName = arg0:getGroupNameFromData(),
-		weight = arg0:getWeightFromData() + 1
+	setText(arg0_2:findTF("tip", arg0_2.windowTF), i18n("child_close_tip"))
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, nil, {
+		groupName = arg0_2:getGroupNameFromData(),
+		weight = arg0_2:getWeightFromData() + 1
 	})
 end
 
-function var0.didEnter(arg0)
-	onButton(arg0, arg0._tf, function()
-		arg0:_close()
+function var0_0.didEnter(arg0_5)
+	onButton(arg0_5, arg0_5._tf, function()
+		arg0_5:_close()
 	end, SFX_CANCEL)
 
-	local var0 = arg0.contextData.plan_results or {}
+	local var0_5 = arg0_5.contextData.plan_results or {}
 
-	arg0.result = {}
-	arg0.resResult = {}
-	arg0.drops = {}
+	arg0_5.result = {}
+	arg0_5.resResult = {}
+	arg0_5.drops = {}
 
-	local function var1(arg0)
-		for iter0, iter1 in ipairs(arg0) do
-			table.insert(arg0.drops, iter1)
+	local function var1_5(arg0_7)
+		for iter0_7, iter1_7 in ipairs(arg0_7) do
+			table.insert(arg0_5.drops, iter1_7)
 
-			if iter1.type == EducateConst.DROP_TYPE_ATTR then
-				if not arg0.result[iter1.id] then
-					arg0.result[iter1.id] = 0
+			if iter1_7.type == EducateConst.DROP_TYPE_ATTR then
+				if not arg0_5.result[iter1_7.id] then
+					arg0_5.result[iter1_7.id] = 0
 				end
 
-				arg0.result[iter1.id] = arg0.result[iter1.id] + iter1.number
+				arg0_5.result[iter1_7.id] = arg0_5.result[iter1_7.id] + iter1_7.number
 			end
 
-			if iter1.type == EducateConst.DROP_TYPE_RES then
-				if not arg0.resResult[iter1.id] then
-					arg0.resResult[iter1.id] = 0
+			if iter1_7.type == EducateConst.DROP_TYPE_RES then
+				if not arg0_5.resResult[iter1_7.id] then
+					arg0_5.resResult[iter1_7.id] = 0
 				end
 
-				arg0.resResult[iter1.id] = arg0.resResult[iter1.id] + iter1.number
+				arg0_5.resResult[iter1_7.id] = arg0_5.resResult[iter1_7.id] + iter1_7.number
 			end
 		end
 	end
 
-	for iter0, iter1 in ipairs(var0) do
-		var1(iter1.plan_drops)
-		var1(iter1.event_drops)
-		var1(iter1.spec_event_drops)
+	for iter0_5, iter1_5 in ipairs(var0_5) do
+		var1_5(iter1_5.plan_drops)
+		var1_5(iter1_5.event_drops)
+		var1_5(iter1_5.spec_event_drops)
 	end
 
-	arg0.char = getProxy(EducateProxy):GetCharData()
-	arg0.natureIds = arg0.char:GetAttrIdsByType(EducateChar.ATTR_TYPE_PERSONALITY)
-	arg0.majorIds = arg0.char:GetAttrIdsByType(EducateChar.ATTR_TYPE_MAJOR)
-	arg0.minorIds = arg0.char:GetAttrIdsByType(EducateChar.ATTR_TYPE_MINOR)
-	arg0.resIds = {
+	arg0_5.char = getProxy(EducateProxy):GetCharData()
+	arg0_5.natureIds = arg0_5.char:GetAttrIdsByType(EducateChar.ATTR_TYPE_PERSONALITY)
+	arg0_5.majorIds = arg0_5.char:GetAttrIdsByType(EducateChar.ATTR_TYPE_MAJOR)
+	arg0_5.minorIds = arg0_5.char:GetAttrIdsByType(EducateChar.ATTR_TYPE_MINOR)
+	arg0_5.resIds = {
 		EducateChar.RES_MOOD_ID,
 		EducateChar.RES_MONEY_ID
 	}
 
-	arg0:updatePersonalPanel()
-	arg0:updateMajorPanel()
-	arg0:updateMinorPanel()
-	arg0:updateResPanel()
+	arg0_5:updatePersonalPanel()
+	arg0_5:updateMajorPanel()
+	arg0_5:updateMinorPanel()
+	arg0_5:updateResPanel()
 end
 
-function var0.updatePersonalPanel(arg0)
-	local var0 = EducateHelper.IsShowNature()
+function var0_0.updatePersonalPanel(arg0_8)
+	local var0_8 = EducateHelper.IsShowNature()
 
-	setActive(arg0.personalTF, var0)
+	setActive(arg0_8.personalTF, var0_8)
 
-	if var0 then
-		local var1 = arg0:findTF("content", arg0.natureTF)
+	if var0_8 then
+		local var1_8 = arg0_8:findTF("content", arg0_8.natureTF)
 
-		for iter0, iter1 in ipairs(arg0.natureIds) do
-			local var2 = arg0:findTF(tostring(iter1), arg0.personalTF)
-			local var3 = arg0.char:GetAttrById(iter1)
+		for iter0_8, iter1_8 in ipairs(arg0_8.natureIds) do
+			local var2_8 = arg0_8:findTF(tostring(iter1_8), arg0_8.personalTF)
+			local var3_8 = arg0_8.char:GetAttrById(iter1_8)
 
-			setText(arg0:findTF("old", var2), pg.child_attr[iter1].name .. " " .. var3)
+			setText(arg0_8:findTF("old", var2_8), pg.child_attr[iter1_8].name .. " " .. var3_8)
 
-			local var4 = arg0.result[iter1] or 0
+			local var4_8 = arg0_8.result[iter1_8] or 0
 
-			setActive(arg0:findTF("new", var2), var4 ~= 0)
+			setActive(arg0_8:findTF("new", var2_8), var4_8 ~= 0)
 
-			if var4 ~= 0 then
-				local var5 = var4 > 0 and "39BFFF" or "FF6767"
-				local var6 = var4 > 0 and "+" or ""
+			if var4_8 ~= 0 then
+				local var5_8 = var4_8 > 0 and "39BFFF" or "FF6767"
+				local var6_8 = var4_8 > 0 and "+" or ""
 
-				setText(arg0:findTF("new", var2), var6 .. " " .. var4)
-				setTextColor(arg0:findTF("new", var2), Color.NewHex(var5))
+				setText(arg0_8:findTF("new", var2_8), var6_8 .. " " .. var4_8)
+				setTextColor(arg0_8:findTF("new", var2_8), Color.NewHex(var5_8))
 			end
 		end
 	end
 end
 
-function var0.updateMajorPanel(arg0)
-	for iter0 = 1, arg0.majorArrTF.childCount do
-		local var0 = arg0.majorArrTF:GetChild(iter0 - 1)
-		local var1 = arg0.majorIds[iter0]
+function var0_0.updateMajorPanel(arg0_9)
+	for iter0_9 = 1, arg0_9.majorArrTF.childCount do
+		local var0_9 = arg0_9.majorArrTF:GetChild(iter0_9 - 1)
+		local var1_9 = arg0_9.majorIds[iter0_9]
 
-		GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var1, arg0:findTF("icon_bg/icon", var0), true)
-		setScrollText(arg0:findTF("name_mask/name", var0), pg.child_attr[var1].name)
+		GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var1_9, arg0_9:findTF("icon_bg/icon", var0_9), true)
+		setScrollText(arg0_9:findTF("name_mask/name", var0_9), pg.child_attr[var1_9].name)
 
-		local var2 = arg0.char:GetAttrInfo(var1)
+		local var2_9 = arg0_9.char:GetAttrInfo(var1_9)
 
-		setText(arg0:findTF("grade/Text", var0), var2)
+		setText(arg0_9:findTF("grade/Text", var0_9), var2_9)
 
-		local var3 = arg0.char:GetAttrById(var1)
+		local var3_9 = arg0_9.char:GetAttrById(var1_9)
 
-		setText(arg0:findTF("value_old", var0), var3)
+		setText(arg0_9:findTF("value_old", var0_9), var3_9)
 
-		local var4 = EducateConst.GRADE_2_COLOR[var2][1]
-		local var5 = EducateConst.GRADE_2_COLOR[var2][2]
+		local var4_9 = EducateConst.GRADE_2_COLOR[var2_9][1]
+		local var5_9 = EducateConst.GRADE_2_COLOR[var2_9][2]
 
-		setImageColor(arg0:findTF("gradient", var0), Color.NewHex(var4))
-		setImageColor(arg0:findTF("grade", var0), Color.NewHex(var5))
+		setImageColor(arg0_9:findTF("gradient", var0_9), Color.NewHex(var4_9))
+		setImageColor(arg0_9:findTF("grade", var0_9), Color.NewHex(var5_9))
 
-		local var6 = arg0.result[var1] or 0
-		local var7 = var6 == 0 and "39393C" or "39BFFF"
+		local var6_9 = arg0_9.result[var1_9] or 0
+		local var7_9 = var6_9 == 0 and "39393C" or "39BFFF"
 
-		setActive(arg0:findTF("VX", var0), var6 ~= 0)
-		setImageColor(arg0:findTF("arrow", var0), Color.NewHex(var7))
-		setText(arg0:findTF("value_new", var0), var3 + var6)
-		setTextColor(arg0:findTF("value_new", var0), Color.NewHex(var7))
+		setActive(arg0_9:findTF("VX", var0_9), var6_9 ~= 0)
+		setImageColor(arg0_9:findTF("arrow", var0_9), Color.NewHex(var7_9))
+		setText(arg0_9:findTF("value_new", var0_9), var3_9 + var6_9)
+		setTextColor(arg0_9:findTF("value_new", var0_9), Color.NewHex(var7_9))
 	end
 end
 
-function var0.updateMinorPanel(arg0)
-	for iter0 = 1, arg0.minorArrTF.childCount do
-		local var0 = arg0.minorArrTF:GetChild(iter0 - 1)
-		local var1 = arg0.minorIds[iter0]
+function var0_0.updateMinorPanel(arg0_10)
+	for iter0_10 = 1, arg0_10.minorArrTF.childCount do
+		local var0_10 = arg0_10.minorArrTF:GetChild(iter0_10 - 1)
+		local var1_10 = arg0_10.minorIds[iter0_10]
 
-		GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var1, arg0:findTF("icon", var0), true)
-		setText(arg0:findTF("name", var0), pg.child_attr[var1].name)
+		GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var1_10, arg0_10:findTF("icon", var0_10), true)
+		setText(arg0_10:findTF("name", var0_10), pg.child_attr[var1_10].name)
 
-		local var2 = arg0.char:GetAttrById(var1)
+		local var2_10 = arg0_10.char:GetAttrById(var1_10)
 
-		setText(arg0:findTF("value_add/value_old", var0), var2)
+		setText(arg0_10:findTF("value_add/value_old", var0_10), var2_10)
 
-		local var3 = arg0.result[var1] or 0
+		local var3_10 = arg0_10.result[var1_10] or 0
 
-		setActive(arg0:findTF("VX", var0), var3 ~= 0)
-		setText(arg0:findTF("value_add", var0), "")
+		setActive(arg0_10:findTF("VX", var0_10), var3_10 ~= 0)
+		setText(arg0_10:findTF("value_add", var0_10), "")
 
-		if var3 ~= 0 then
+		if var3_10 ~= 0 then
 			onDelayTick(function()
-				setText(arg0:findTF("value_add", var0), "+" .. var3)
+				setText(arg0_10:findTF("value_add", var0_10), "+" .. var3_10)
 			end, 0.891)
 		end
 	end
 end
 
-function var0.updateResPanel(arg0)
-	for iter0 = 1, #arg0.resIds do
-		local var0 = arg0.resTF:GetChild(iter0 - 1)
-		local var1 = arg0.resIds[iter0]
+function var0_0.updateResPanel(arg0_12)
+	for iter0_12 = 1, #arg0_12.resIds do
+		local var0_12 = arg0_12.resTF:GetChild(iter0_12 - 1)
+		local var1_12 = arg0_12.resIds[iter0_12]
 
-		GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "res_" .. var1, arg0:findTF("icon", var0), true)
-		setText(arg0:findTF("name", var0), pg.child_resource[var1].name)
+		GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "res_" .. var1_12, arg0_12:findTF("icon", var0_12), true)
+		setText(arg0_12:findTF("name", var0_12), pg.child_resource[var1_12].name)
 
-		local var2 = arg0.char:GetResById(var1)
+		local var2_12 = arg0_12.char:GetResById(var1_12)
 
-		if var2 < 0 then
-			var2 = 0
+		if var2_12 < 0 then
+			var2_12 = 0
 		end
 
-		setText(arg0:findTF("value_add/value_old", var0), var2)
+		setText(arg0_12:findTF("value_add/value_old", var0_12), var2_12)
 
-		local var3 = arg0.resResult[var1] or 0
-		local var4 = var3 == 0 and "" or "+" .. var3
+		local var3_12 = arg0_12.resResult[var1_12] or 0
+		local var4_12 = var3_12 == 0 and "" or "+" .. var3_12
 
-		setText(arg0:findTF("value_add", var0), var4)
+		setText(arg0_12:findTF("value_add", var0_12), var4_12)
 	end
 end
 
-function var0._close(arg0)
-	if arg0.inAnimPlaying then
+function var0_0._close(arg0_13)
+	if arg0_13.inAnimPlaying then
 		return
 	end
 
-	arg0.anim:Play("anim_educate_result_out")
+	arg0_13.anim:Play("anim_educate_result_out")
 end
 
-function var0.onBackPressed(arg0)
-	arg0:_close()
+function var0_0.onBackPressed(arg0_14)
+	arg0_14:_close()
 end
 
-function var0.willExit(arg0)
+function var0_0.willExit(arg0_15)
 	getProxy(EducateProxy):OnNextWeek()
-	arg0.animEvent:SetEndEvent(nil)
+	arg0_15.animEvent:SetEndEvent(nil)
 
-	if arg0.drops then
-		EducateHelper.UpdateDropsData(arg0.drops)
+	if arg0_15.drops then
+		EducateHelper.UpdateDropsData(arg0_15.drops)
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0._tf)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_15._tf)
 
-	if arg0.contextData.onExit then
-		arg0.contextData.onExit()
+	if arg0_15.contextData.onExit then
+		arg0_15.contextData.onExit()
 	end
 end
 
-return var0
+return var0_0

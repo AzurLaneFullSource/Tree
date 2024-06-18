@@ -1,40 +1,40 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleUnitEvent
-local var2 = var0.Battle.BattleConfig
-local var3 = class("BattleMainFleetCharacter", var0.Battle.BattlePlayerCharacter)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleUnitEvent
+local var2_0 = var0_0.Battle.BattleConfig
+local var3_0 = class("BattleMainFleetCharacter", var0_0.Battle.BattlePlayerCharacter)
 
-var0.Battle.BattleMainFleetCharacter = var3
-var3.__name = "BattleMainFleetCharacter"
+var0_0.Battle.BattleMainFleetCharacter = var3_0
+var3_0.__name = "BattleMainFleetCharacter"
 
-function var3.Ctor(arg0)
-	var3.super.Ctor(arg0)
+function var3_0.Ctor(arg0_1)
+	var3_0.super.Ctor(arg0_1)
 end
 
-function var3.Update(arg0)
-	var3.super.Update(arg0)
-	arg0:UpdateArrowBarPostition()
+function var3_0.Update(arg0_2)
+	var3_0.super.Update(arg0_2)
+	arg0_2:UpdateArrowBarPostition()
 end
 
-function var3.AddArrowBar(arg0, arg1)
-	var3.super.AddArrowBar(arg0, arg1)
+function var3_0.AddArrowBar(arg0_3, arg1_3)
+	var3_0.super.AddArrowBar(arg0_3, arg1_3)
 
-	local var0 = LoadSprite("qicon/" .. arg0._unitData:GetTemplate().painting) or LoadSprite("heroicon/unknown")
+	local var0_3 = LoadSprite("qicon/" .. arg0_3._unitData:GetTemplate().painting) or LoadSprite("heroicon/unknown")
 
-	setImageSprite(findTF(arg0._arrowBar, "icon"), var0)
+	setImageSprite(findTF(arg0_3._arrowBar, "icon"), var0_3)
 end
 
-function var3.UpdateHPBarPosition(arg0)
-	if not arg0._inViewArea then
-		var3.super.UpdateHPBarPosition(arg0)
+function var3_0.UpdateHPBarPosition(arg0_4)
+	if not arg0_4._inViewArea then
+		var3_0.super.UpdateHPBarPosition(arg0_4)
 	end
 end
 
-function var3.GetReferenceVector(arg0, arg1)
-	if not arg0._inViewArea then
-		return var3.super.GetReferenceVector(arg0, arg1)
+function var3_0.GetReferenceVector(arg0_5, arg1_5)
+	if not arg0_5._inViewArea then
+		return var3_0.super.GetReferenceVector(arg0_5, arg1_5)
 	else
-		return arg0._arrowVector
+		return arg0_5._arrowVector
 	end
 end

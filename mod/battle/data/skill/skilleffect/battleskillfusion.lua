@@ -1,89 +1,89 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleAttr
-local var2 = var0.Battle.BattleTargetChoise
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleAttr
+local var2_0 = var0_0.Battle.BattleTargetChoise
 
-var0.Battle.BattleSkillFusion = class("BattleSkillFusion", var0.Battle.BattleSkillEffect)
-var0.Battle.BattleSkillFusion.__name = "BattleSkillFusion"
+var0_0.Battle.BattleSkillFusion = class("BattleSkillFusion", var0_0.Battle.BattleSkillEffect)
+var0_0.Battle.BattleSkillFusion.__name = "BattleSkillFusion"
 
-local var3 = var0.Battle.BattleSkillFusion
+local var3_0 = var0_0.Battle.BattleSkillFusion
 
-var3.FREEZE_POS = {
+var3_0.FREEZE_POS = {
 	Vector3(-10000, 0, 58),
 	[-1] = Vector3(10000, 0, 58)
 }
 
-function var3.Ctor(arg0, arg1, arg2)
-	var3.super.Ctor(arg0, arg1, arg2)
+function var3_0.Ctor(arg0_1, arg1_1, arg2_1)
+	var3_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 
-	arg0._fusionUnitTempID = arg0._tempData.arg_list.fusion_id
-	arg0._fusionUnitSkinID = arg0._tempData.arg_list.ship_skin_id
-	arg0._elementTagList = arg0._tempData.arg_list.element_tag_list
-	arg0._attrInheritList = arg0._tempData.arg_list.attr_inherit_list
-	arg0._fusionUnitEquipmentList = {}
+	arg0_1._fusionUnitTempID = arg0_1._tempData.arg_list.fusion_id
+	arg0_1._fusionUnitSkinID = arg0_1._tempData.arg_list.ship_skin_id
+	arg0_1._elementTagList = arg0_1._tempData.arg_list.element_tag_list
+	arg0_1._attrInheritList = arg0_1._tempData.arg_list.attr_inherit_list
+	arg0_1._fusionUnitEquipmentList = {}
 
-	for iter0, iter1 in ipairs(arg0._tempData.arg_list.weapon_id_list) do
-		table.insert(arg0._fusionUnitEquipmentList, {
-			id = iter1,
+	for iter0_1, iter1_1 in ipairs(arg0_1._tempData.arg_list.weapon_id_list) do
+		table.insert(arg0_1._fusionUnitEquipmentList, {
+			id = iter1_1,
 			equipment = {
 				weapon_id = {
-					iter1
+					iter1_1
 				}
 			}
 		})
 	end
 
-	arg0._fusionUnitSkillList = {}
+	arg0_1._fusionUnitSkillList = {}
 
-	for iter2, iter3 in ipairs(arg0._tempData.arg_list.buff_list) do
-		table.insert(arg0._fusionUnitSkillList, {
-			id = iter3,
-			level = arg0._level
+	for iter2_1, iter3_1 in ipairs(arg0_1._tempData.arg_list.buff_list) do
+		table.insert(arg0_1._fusionUnitSkillList, {
+			id = iter3_1,
+			level = arg0_1._level
 		})
 	end
 
-	arg0._duration = arg0._tempData.arg_list.duration
+	arg0_1._duration = arg0_1._tempData.arg_list.duration
 end
 
-function var3.DoDataEffect(arg0, arg1, arg2)
-	arg0:doFusion(arg1)
+function var3_0.DoDataEffect(arg0_2, arg1_2, arg2_2)
+	arg0_2:doFusion(arg1_2)
 end
 
-function var3.DoDataEffectWithoutTarget(arg0, arg1, arg2)
-	arg0:doFusion(arg1)
+function var3_0.DoDataEffectWithoutTarget(arg0_3, arg1_3, arg2_3)
+	arg0_3:doFusion(arg1_3)
 end
 
-function var3.doFusion(arg0, arg1)
-	local var0 = var2.TargetAllHelp(arg1)
-	local var1 = var2.TargetShipTag(arg1, {
-		ship_tag_list = arg0._elementTagList
-	}, var0)
-	local var2 = {}
+function var3_0.doFusion(arg0_4, arg1_4)
+	local var0_4 = var2_0.TargetAllHelp(arg1_4)
+	local var1_4 = var2_0.TargetShipTag(arg1_4, {
+		ship_tag_list = arg0_4._elementTagList
+	}, var0_4)
+	local var2_4 = {}
 
-	for iter0, iter1 in ipairs(Ship.PROPERTIES) do
-		var2[iter1] = 1
+	for iter0_4, iter1_4 in ipairs(Ship.PROPERTIES) do
+		var2_4[iter1_4] = 1
 	end
 
-	local var3 = var0.Battle.BattleDataProxy.GetInstance()
-	local var4 = {
+	local var3_4 = var0_0.Battle.BattleDataProxy.GetInstance()
+	local var4_4 = {
 		name = "123",
 		shipGS = 1,
-		id = arg1.id,
-		tmpID = arg0._fusionUnitTempID,
-		skinId = arg0._fusionUnitSkinID,
-		level = var1.GetCurrent(arg1, "formulaLevel"),
-		equipment = arg0._fusionUnitEquipmentList,
-		properties = var2,
-		baseProperties = var2,
+		id = arg1_4.id,
+		tmpID = arg0_4._fusionUnitTempID,
+		skinId = arg0_4._fusionUnitSkinID,
+		level = var1_0.GetCurrent(arg1_4, "formulaLevel"),
+		equipment = arg0_4._fusionUnitEquipmentList,
+		properties = var2_4,
+		baseProperties = var2_4,
 		proficiency = {
 			1,
 			1,
 			1
 		},
-		rarity = arg1:GetRarity(),
-		intimacy = arg1:GetIntimacy(),
-		skills = arg0._fusionUnitSkillList,
+		rarity = arg1_4:GetRarity(),
+		intimacy = arg1_4:GetIntimacy(),
+		skills = arg0_4._fusionUnitSkillList,
 		baseList = {
 			1,
 			1,
@@ -95,67 +95,67 @@ function var3.doFusion(arg0, arg1)
 			0
 		}
 	}
-	local var5 = var3:SpawnFusionUnit(arg1, var4, var1, arg0._attrInheritList)
-	local var6 = var5:GetHP()
-	local var7 = {}
+	local var5_4 = var3_4:SpawnFusionUnit(arg1_4, var4_4, var1_4, arg0_4._attrInheritList)
+	local var6_4 = var5_4:GetHP()
+	local var7_4 = {}
 
-	for iter2, iter3 in ipairs(var1) do
-		if iter3:IsMainFleetUnit() then
-			var7[iter3] = Clone(iter3:GetPosition())
+	for iter2_4, iter3_4 in ipairs(var1_4) do
+		if iter3_4:IsMainFleetUnit() then
+			var7_4[iter3_4] = Clone(iter3_4:GetPosition())
 		end
 
-		var3:FreezeUnit(iter3)
-		iter3:SetPosition(var3.FREEZE_POS[iter3:GetIFF()])
+		var3_4:FreezeUnit(iter3_4)
+		iter3_4:SetPosition(var3_0.FREEZE_POS[iter3_4:GetIFF()])
 	end
 
-	if arg1:IsMainFleetUnit() then
-		var7[arg1] = Clone(arg1:GetPosition())
+	if arg1_4:IsMainFleetUnit() then
+		var7_4[arg1_4] = Clone(arg1_4:GetPosition())
 	end
 
-	var3:FreezeUnit(arg1)
-	arg1:SetPosition(var3.FREEZE_POS[arg1:GetIFF()])
+	var3_4:FreezeUnit(arg1_4)
+	arg1_4:SetPosition(var3_0.FREEZE_POS[arg1_4:GetIFF()])
 
-	arg0._fusionTimer = nil
+	arg0_4._fusionTimer = nil
 
-	local function var8()
-		local var0, var1 = var5:GetHP()
-		local var2 = var1 - var0
-		local var3 = 0
-		local var4 = var5:GetPosition()
-		local var5 = var5:GetAttrByName("hpProvideRate")
+	local function var8_4()
+		local var0_5, var1_5 = var5_4:GetHP()
+		local var2_5 = var1_5 - var0_5
+		local var3_5 = 0
+		local var4_5 = var5_4:GetPosition()
+		local var5_5 = var5_4:GetAttrByName("hpProvideRate")
 
-		if arg1:IsMainFleetUnit() then
-			arg1:SetPosition(var7[arg1])
+		if arg1_4:IsMainFleetUnit() then
+			arg1_4:SetPosition(var7_4[arg1_4])
 		else
-			arg1:SetPosition(Clone(var4))
+			arg1_4:SetPosition(Clone(var4_5))
 		end
 
-		local var6 = math.floor(var2 * var5[arg1:GetAttrByName("id")])
+		local var6_5 = math.floor(var2_5 * var5_5[arg1_4:GetAttrByName("id")])
 
-		var3:HandleDirectDamage(arg1, var6)
-		var3:ActiveFreezeUnit(arg1)
+		var3_4:HandleDirectDamage(arg1_4, var6_5)
+		var3_4:ActiveFreezeUnit(arg1_4)
 
-		for iter0, iter1 in ipairs(var1) do
-			if iter1:IsMainFleetUnit() then
-				iter1:SetPosition(var7[iter1])
+		for iter0_5, iter1_5 in ipairs(var1_4) do
+			if iter1_5:IsMainFleetUnit() then
+				iter1_5:SetPosition(var7_4[iter1_5])
 			else
-				iter1:SetPosition(Clone(var4))
+				iter1_5:SetPosition(Clone(var4_5))
 			end
 
-			local var7 = math.floor(var2 * var5[iter1:GetAttrByName("id")])
+			local var7_5 = math.floor(var2_5 * var5_5[iter1_5:GetAttrByName("id")])
 
-			var3:HandleDirectDamage(iter1, var7)
-			var3:ActiveFreezeUnit(iter1)
+			var3_4:HandleDirectDamage(iter1_5, var7_5)
+			var3_4:ActiveFreezeUnit(iter1_5)
 		end
 
-		var3:DefusionUnit(var5)
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0._fusionTimer)
+		var3_4:DefusionUnit(var5_4)
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_4._fusionTimer)
 	end
 
-	arg0._fusionTimer = pg.TimeMgr.GetInstance():AddBattleTimer("fusionSkillTimer", 0, arg0._duration, var8, true)
+	arg0_4._fusionTimer = pg.TimeMgr.GetInstance():AddBattleTimer("fusionSkillTimer", 0, arg0_4._duration, var8_4, true)
 end
 
-function var3.Clear(arg0)
-	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0._fusionTimer)
-	var3.super.Clear(arg0)
+function var3_0.Clear(arg0_6)
+	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_6._fusionTimer)
+	var3_0.super.Clear(arg0_6)
 end

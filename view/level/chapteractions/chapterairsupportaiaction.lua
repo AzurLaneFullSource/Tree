@@ -1,29 +1,29 @@
-﻿local var0 = class("ChapterAirSupportAIAction", import(".ChapterMissileExplodeAction"))
+﻿local var0_0 = class("ChapterAirSupportAIAction", import(".ChapterMissileExplodeAction"))
 
-function var0.PlayAIAction(arg0, arg1, arg2, arg3)
+function var0_0.PlayAIAction(arg0_1, arg1_1, arg2_1, arg3_1)
 	seriesAsync({
-		function(arg0)
-			arg2.viewComponent:doPlayAnim("AirStrikeBar", function(arg0)
-				setActive(arg0, false)
-				arg0()
+		function(arg0_2)
+			arg2_1.viewComponent:doPlayAnim("AirStrikeBar", function(arg0_3)
+				setActive(arg0_3, false)
+				arg0_2()
 			end)
 		end,
-		function(arg0)
-			table.ParallelIpairsAsync(arg0.cellUpdates, function(arg0, arg1, arg2)
-				local var0 = arg1:GetRawChapterCell(arg1.row, arg1.column)
-				local var1 = var0 and var0.data or 0
-				local var2 = "-" .. (arg1.data - var1) / 100 .. "%"
+		function(arg0_4)
+			table.ParallelIpairsAsync(arg0_1.cellUpdates, function(arg0_5, arg1_5, arg2_5)
+				local var0_5 = arg1_1:GetRawChapterCell(arg1_5.row, arg1_5.column)
+				local var1_5 = var0_5 and var0_5.data or 0
+				local var2_5 = "-" .. (arg1_5.data - var1_5) / 100 .. "%"
 
-				arg2.viewComponent:strikeEnemy(arg1, var2, arg2)
-			end, arg0)
+				arg2_1.viewComponent:strikeEnemy(arg1_5, var2_5, arg2_5)
+			end, arg0_4)
 		end,
-		function(arg0)
-			arg2.viewComponent.levelStageView:SwitchBottomStagePanel(false)
-			arg2.viewComponent.grid:HideAirSupportAimingMark()
-			arg0()
+		function(arg0_6)
+			arg2_1.viewComponent.levelStageView:SwitchBottomStagePanel(false)
+			arg2_1.viewComponent.grid:HideAirSupportAimingMark()
+			arg0_6()
 		end,
-		arg3
+		arg3_1
 	})
 end
 
-return var0
+return var0_0

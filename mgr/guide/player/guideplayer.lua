@@ -1,429 +1,429 @@
-﻿local var0 = class("GuidePlayer")
+﻿local var0_0 = class("GuidePlayer")
 
-function var0.Ctor(arg0, arg1)
-	arg0._tf = arg1
-	arg0.bgCg = arg1:Find("BG"):GetComponent(typeof(CanvasGroup))
-	arg0.windowContainer = arg1:Find("windows")
-	arg0.charContainer = arg1:Find("char")
-	arg0.dialogueWindows = pg.NewGuideMgr.GetInstance().dialogueWindows
-	arg0.counsellors = pg.NewGuideMgr.GetInstance().counsellors
-	arg0.uiFinder = pg.NewGuideMgr.GetInstance().uiFinder
-	arg0.uiDuplicator = pg.NewGuideMgr.GetInstance().uiDuplicator
-	arg0.uiLoader = pg.NewGuideMgr.GetInstance().uiLoader
-	arg0.root = arg1:Find("target")
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1._tf = arg1_1
+	arg0_1.bgCg = arg1_1:Find("BG"):GetComponent(typeof(CanvasGroup))
+	arg0_1.windowContainer = arg1_1:Find("windows")
+	arg0_1.charContainer = arg1_1:Find("char")
+	arg0_1.dialogueWindows = pg.NewGuideMgr.GetInstance().dialogueWindows
+	arg0_1.counsellors = pg.NewGuideMgr.GetInstance().counsellors
+	arg0_1.uiFinder = pg.NewGuideMgr.GetInstance().uiFinder
+	arg0_1.uiDuplicator = pg.NewGuideMgr.GetInstance().uiDuplicator
+	arg0_1.uiLoader = pg.NewGuideMgr.GetInstance().uiLoader
+	arg0_1.root = arg1_1:Find("target")
 end
 
-function var0.Execute(arg0, arg1, arg2)
+function var0_0.Execute(arg0_2, arg1_2, arg2_2)
 	seriesAsync({
-		function(arg0)
-			arg0:HideDialogueWindows()
-			arg0:UpdateStyle(arg1)
-			arg0:DoDelay(arg1, arg0)
+		function(arg0_3)
+			arg0_2:HideDialogueWindows()
+			arg0_2:UpdateStyle(arg1_2)
+			arg0_2:DoDelay(arg1_2, arg0_3)
 		end,
-		function(arg0)
-			arg0:WaitUntilSceneEnter(arg1, arg0)
+		function(arg0_4)
+			arg0_2:WaitUntilSceneEnter(arg1_2, arg0_4)
 		end,
-		function(arg0)
-			arg0:CheckBaseUI(arg1, arg0)
+		function(arg0_5)
+			arg0_2:CheckBaseUI(arg1_2, arg0_5)
 		end,
-		function(arg0)
-			arg0:CheckSprite(arg1, arg0)
+		function(arg0_6)
+			arg0_2:CheckSprite(arg1_2, arg0_6)
 		end,
-		function(arg0)
-			arg0:ShowDialogueWindow(arg1, arg0)
+		function(arg0_7)
+			arg0_2:ShowDialogueWindow(arg1_2, arg0_7)
 		end,
-		function(arg0)
-			arg0:UpdateHighLight(arg1, arg0)
+		function(arg0_8)
+			arg0_2:UpdateHighLight(arg1_2, arg0_8)
 		end,
-		function(arg0)
-			arg0:OnExecution(arg1, arg0)
+		function(arg0_9)
+			arg0_2:OnExecution(arg1_2, arg0_9)
 		end,
-		function(arg0)
-			arg0:RegisterEvent(arg1, arg0)
+		function(arg0_10)
+			arg0_2:RegisterEvent(arg1_2, arg0_10)
 		end,
-		function(arg0)
-			arg0:Clear()
-			arg0()
+		function(arg0_11)
+			arg0_2:Clear()
+			arg0_11()
 		end
-	}, arg2)
+	}, arg2_2)
 end
 
-function var0.CheckBaseUI(arg0, arg1, arg2)
-	if not arg1:ShouldCheckBaseUI() then
-		arg2()
+function var0_0.CheckBaseUI(arg0_12, arg1_12, arg2_12)
+	if not arg1_12:ShouldCheckBaseUI() then
+		arg2_12()
 
 		return
 	end
 
-	arg0:SearchUI(arg1:GetBaseUI(), function(arg0)
-		if not arg0 then
+	arg0_12:SearchUI(arg1_12:GetBaseUI(), function(arg0_13)
+		if not arg0_13 then
 			pg.NewGuideMgr.GetInstance():Stop()
 
 			return
 		end
 
-		arg2()
+		arg2_12()
 	end)
 end
 
-local function var1(arg0, arg1)
-	local var0 = arg0:GetComponent(typeof(Image))
+local function var1_0(arg0_14, arg1_14)
+	local var0_14 = arg0_14:GetComponent(typeof(Image))
 
-	return not (IsNil(var0.sprite) or arg1 and var0.sprite.name == arg1)
+	return not (IsNil(var0_14.sprite) or arg1_14 and var0_14.sprite.name == arg1_14)
 end
 
-function var0.CheckSprite(arg0, arg1, arg2)
-	if not arg1:ShouldCheckSpriteUI() then
-		arg2()
+function var0_0.CheckSprite(arg0_15, arg1_15, arg2_15)
+	if not arg1_15:ShouldCheckSpriteUI() then
+		arg2_15()
 
 		return
 	end
 
-	local var0 = arg1:GetSpriteUI()
+	local var0_15 = arg1_15:GetSpriteUI()
 
-	arg0:SearchUI(var0, function(arg0)
-		if not arg0 then
+	arg0_15:SearchUI(var0_15, function(arg0_16)
+		if not arg0_16 then
 			pg.NewGuideMgr.GetInstance():Stop()
 
 			return
 		end
 
-		local var0 = var0.childPath and arg0:Find(var0.childPath) or arg0
+		local var0_16 = var0_15.childPath and arg0_16:Find(var0_15.childPath) or arg0_16
 
-		arg0:ClearSpriteTimer()
+		arg0_15:ClearSpriteTimer()
 
-		local var1 = 0
-		local var2 = 10
+		local var1_16 = 0
+		local var2_16 = 10
 
-		arg0.spriteTimer = Timer.New(function()
-			var1 = var1 + 1
+		arg0_15.spriteTimer = Timer.New(function()
+			var1_16 = var1_16 + 1
 
-			if var1 == var2 then
-				arg0:ClearSpriteTimer()
+			if var1_16 == var2_16 then
+				arg0_15:ClearSpriteTimer()
 
 				return
 			end
 
-			if var1(var0, var0.defaultName) then
-				arg0:ClearSpriteTimer()
-				arg2()
+			if var1_0(var0_16, var0_15.defaultName) then
+				arg0_15:ClearSpriteTimer()
+				arg2_15()
 			end
 		end, 0.5, -1)
 
-		arg0.spriteTimer:Start()
+		arg0_15.spriteTimer:Start()
 	end)
 end
 
-function var0.ClearSpriteTimer(arg0)
-	if arg0.spriteTimer then
-		arg0.spriteTimer:Stop()
+function var0_0.ClearSpriteTimer(arg0_18)
+	if arg0_18.spriteTimer then
+		arg0_18.spriteTimer:Stop()
 
-		arg0.spriteTimer = nil
+		arg0_18.spriteTimer = nil
 	end
 end
 
-function var0.UpdateStyle(arg0, arg1)
-	arg0.bgCg.alpha = arg1:GetAlpha()
+function var0_0.UpdateStyle(arg0_19, arg1_19)
+	arg0_19.bgCg.alpha = arg1_19:GetAlpha()
 end
 
-function var0.DoDelay(arg0, arg1, arg2)
-	local var0 = arg1:GetDelay()
+function var0_0.DoDelay(arg0_20, arg1_20, arg2_20)
+	local var0_20 = arg1_20:GetDelay()
 
-	if var0 <= 0 then
-		arg2()
+	if var0_20 <= 0 then
+		arg2_20()
 
 		return
 	end
 
-	arg0.delayTimer = Timer.New(arg2, var0, 1)
+	arg0_20.delayTimer = Timer.New(arg2_20, var0_20, 1)
 
-	arg0.delayTimer:Start()
+	arg0_20.delayTimer:Start()
 end
 
-function var0.OnSceneEnter(arg0)
-	if arg0.waitSceneData and pg.NewGuideMgr.GetInstance():ExistScene(arg0.waitSceneData.sceneName) then
-		arg0:ClearWaitUntilSceneTimer()
-		arg0.waitSceneData.callback()
+function var0_0.OnSceneEnter(arg0_21)
+	if arg0_21.waitSceneData and pg.NewGuideMgr.GetInstance():ExistScene(arg0_21.waitSceneData.sceneName) then
+		arg0_21:ClearWaitUntilSceneTimer()
+		arg0_21.waitSceneData.callback()
 
-		arg0.waitSceneData = nil
+		arg0_21.waitSceneData = nil
 	end
 end
 
-function var0.WaitUntilSceneEnter(arg0, arg1, arg2)
-	if not arg1:ShouldWaitScene() then
-		arg2()
+function var0_0.WaitUntilSceneEnter(arg0_22, arg1_22, arg2_22)
+	if not arg1_22:ShouldWaitScene() then
+		arg2_22()
 
 		return
 	end
 
-	arg0:ClearWaitUntilSceneTimer()
+	arg0_22:ClearWaitUntilSceneTimer()
 
-	local var0 = arg1:GetWaitScene()
+	local var0_22 = arg1_22:GetWaitScene()
 
-	if pg.NewGuideMgr.GetInstance():ExistScene(var0) then
-		arg2()
+	if pg.NewGuideMgr.GetInstance():ExistScene(var0_22) then
+		arg2_22()
 	else
-		arg0.waitSceneData = {
-			sceneName = var0,
-			callback = arg2
+		arg0_22.waitSceneData = {
+			sceneName = var0_22,
+			callback = arg2_22
 		}
 
-		arg0:AddWaitUntilSceneTimer()
+		arg0_22:AddWaitUntilSceneTimer()
 	end
 end
 
-function var0.AddWaitUntilSceneTimer(arg0)
-	arg0.waitUntilSceneTimer = Timer.New(function()
-		arg0:ClearWaitUntilSceneTimer()
+function var0_0.AddWaitUntilSceneTimer(arg0_23)
+	arg0_23.waitUntilSceneTimer = Timer.New(function()
+		arg0_23:ClearWaitUntilSceneTimer()
 		pg.NewGuideMgr.GetInstance():Stop()
 	end, 10, 1)
 
-	arg0.waitUntilSceneTimer:Start()
+	arg0_23.waitUntilSceneTimer:Start()
 end
 
-function var0.ClearWaitUntilSceneTimer(arg0)
-	if arg0.waitUntilSceneTimer then
-		arg0.waitUntilSceneTimer:Stop()
+function var0_0.ClearWaitUntilSceneTimer(arg0_25)
+	if arg0_25.waitUntilSceneTimer then
+		arg0_25.waitUntilSceneTimer:Stop()
 
-		arg0.waitUntilSceneTimer = nil
+		arg0_25.waitUntilSceneTimer = nil
 	end
 end
 
-function var0.ShowDialogueWindow(arg0, arg1, arg2)
-	if not arg1:ShouldShowDialogue() then
-		arg0:HideDialogueWindows()
-		arg2()
+function var0_0.ShowDialogueWindow(arg0_26, arg1_26, arg2_26)
+	if not arg1_26:ShouldShowDialogue() then
+		arg0_26:HideDialogueWindows()
+		arg2_26()
 
 		return
 	end
 
-	local var0 = {}
-	local var1 = arg1:GetDialogueType()
+	local var0_26 = {}
+	local var1_26 = arg1_26:GetDialogueType()
 
-	if not arg0.dialogueWindows[var1] then
-		table.insert(var0, function(arg0)
-			arg0:LoadDialogueWindow(var1, arg0)
+	if not arg0_26.dialogueWindows[var1_26] then
+		table.insert(var0_26, function(arg0_27)
+			arg0_26:LoadDialogueWindow(var1_26, arg0_27)
 		end)
 	end
 
-	table.insert(var0, function(arg0)
-		local var0 = arg0.dialogueWindows[var1]
+	table.insert(var0_26, function(arg0_28)
+		local var0_28 = arg0_26.dialogueWindows[var1_26]
 
-		arg0:UpdateDialogue(arg1, var0, arg0)
+		arg0_26:UpdateDialogue(arg1_26, var0_28, arg0_28)
 	end)
-	seriesAsync(var0, arg2)
+	seriesAsync(var0_26, arg2_26)
 end
 
-function var0.UpdateDialogue(arg0, arg1, arg2, arg3)
-	arg0:ActiveDialogueWindow(arg2)
+function var0_0.UpdateDialogue(arg0_29, arg1_29, arg2_29, arg3_29)
+	arg0_29:ActiveDialogueWindow(arg2_29)
 
-	local var0 = arg1:GetStyleData()
+	local var0_29 = arg1_29:GetStyleData()
 
-	setText(arg2:Find("content"), var0.text)
+	setText(arg2_29:Find("content"), var0_29.text)
 
-	arg2.localScale = var0.scale
-	arg2.localPosition = var0.position
-	arg2:Find("content").localScale = var0.scale
+	arg2_29.localScale = var0_29.scale
+	arg2_29.localPosition = var0_29.position
+	arg2_29:Find("content").localScale = var0_29.scale
 
-	local var1 = arg2:Find("hand")
+	local var1_29 = arg2_29:Find("hand")
 
-	if not IsNil(var1) then
-		var1.localPosition = var0.handPosition
-		var1.eulerAngles = var0.handAngle
+	if not IsNil(var1_29) then
+		var1_29.localPosition = var0_29.handPosition
+		var1_29.eulerAngles = var0_29.handAngle
 	end
 
-	local var2 = var0.counsellor
+	local var2_29 = var0_29.counsellor
 
 	seriesAsync({
-		function(arg0)
-			arg0:LoadCounsellor(var2.name, arg0)
+		function(arg0_30)
+			arg0_29:LoadCounsellor(var2_29.name, arg0_30)
 		end,
-		function(arg0)
-			local var0 = arg0.counsellors[var2.name]
+		function(arg0_31)
+			local var0_31 = arg0_29.counsellors[var2_29.name]
 
-			setActive(var0, true)
+			setActive(var0_31, true)
 
-			var0.localPosition = arg2.localPosition + Vector3(var2.position.x, var2.position.y, 0)
-			var0.localScale = Vector3(var2.scale.x, var2.scale.y, 1)
+			var0_31.localPosition = arg2_29.localPosition + Vector3(var2_29.position.x, var2_29.position.y, 0)
+			var0_31.localScale = Vector3(var2_29.scale.x, var2_29.scale.y, 1)
 
-			arg0()
+			arg0_31()
 		end
-	}, arg3)
+	}, arg3_29)
 end
 
-function var0.LoadCounsellor(arg0, arg1, arg2)
-	if not arg0.counsellors[arg1] then
-		ResourceMgr.Inst:getAssetAsync("guideitem/" .. arg1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0)
-			if IsNil(arg0) then
+function var0_0.LoadCounsellor(arg0_32, arg1_32, arg2_32)
+	if not arg0_32.counsellors[arg1_32] then
+		ResourceMgr.Inst:getAssetAsync("guideitem/" .. arg1_32, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_33)
+			if IsNil(arg0_33) then
 				return
 			end
 
-			local var0 = Object.Instantiate(arg0, arg0.charContainer)
+			local var0_33 = Object.Instantiate(arg0_33, arg0_32.charContainer)
 
-			arg0.counsellors[arg1] = var0.transform
+			arg0_32.counsellors[arg1_32] = var0_33.transform
 
-			arg2()
+			arg2_32()
 		end), true, true)
 	else
-		arg2()
+		arg2_32()
 	end
 end
 
-function var0.LoadDialogueWindow(arg0, arg1, arg2)
-	ResourceMgr.Inst:getAssetAsync("guideitem/window_" .. arg1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0)
-		if IsNil(arg0) then
+function var0_0.LoadDialogueWindow(arg0_34, arg1_34, arg2_34)
+	ResourceMgr.Inst:getAssetAsync("guideitem/window_" .. arg1_34, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_35)
+		if IsNil(arg0_35) then
 			return
 		end
 
-		local var0 = Object.Instantiate(arg0, arg0.windowContainer)
+		local var0_35 = Object.Instantiate(arg0_35, arg0_34.windowContainer)
 
-		arg0.dialogueWindows[arg1] = var0.transform
+		arg0_34.dialogueWindows[arg1_34] = var0_35.transform
 
-		if arg2 then
-			arg2()
+		if arg2_34 then
+			arg2_34()
 		end
 	end), true, true)
 end
 
-function var0.ActiveDialogueWindow(arg0, arg1)
-	for iter0, iter1 in pairs(arg0.dialogueWindows) do
-		setActive(iter1, iter1 == arg1)
+function var0_0.ActiveDialogueWindow(arg0_36, arg1_36)
+	for iter0_36, iter1_36 in pairs(arg0_36.dialogueWindows) do
+		setActive(iter1_36, iter1_36 == arg1_36)
 	end
 end
 
-function var0.HideDialogueWindows(arg0)
-	for iter0, iter1 in pairs(arg0.dialogueWindows) do
-		setActive(iter1, false)
+function var0_0.HideDialogueWindows(arg0_37)
+	for iter0_37, iter1_37 in pairs(arg0_37.dialogueWindows) do
+		setActive(iter1_37, false)
 	end
 end
 
-local function var2(arg0, arg1, arg2, arg3)
-	if arg3.type == GuideStep.HIGH_TYPE_GAMEOBJECT then
-		arg0.uiDuplicator:Duplicate(arg2, {
+local function var2_0(arg0_38, arg1_38, arg2_38, arg3_38)
+	if arg3_38.type == GuideStep.HIGH_TYPE_GAMEOBJECT then
+		arg0_38.uiDuplicator:Duplicate(arg2_38, {
 			clearAllEvent = true
 		})
-	elseif arg3.type == GuideStep.HIGH_TYPE_LINE then
-		local var0 = arg1.isWorld and 15 or 55
-		local var1 = arg0._tf:InverseTransformPoint(arg2.position)
-		local var2 = (arg2.pivot.x - 0.5) * var0
-		local var3 = (arg2.pivot.y - 0.5) * var0
-		local var4 = Vector2(arg2.sizeDelta.x + var0, arg2.sizeDelta.y + var0)
+	elseif arg3_38.type == GuideStep.HIGH_TYPE_LINE then
+		local var0_38 = arg1_38.isWorld and 15 or 55
+		local var1_38 = arg0_38._tf:InverseTransformPoint(arg2_38.position)
+		local var2_38 = (arg2_38.pivot.x - 0.5) * var0_38
+		local var3_38 = (arg2_38.pivot.y - 0.5) * var0_38
+		local var4_38 = Vector2(arg2_38.sizeDelta.x + var0_38, arg2_38.sizeDelta.y + var0_38)
 
-		arg0.uiLoader:LoadHighLightArea({
-			position = Vector3(var1.x, var1.y, 0) + Vector3(var2, var3, 0),
-			sizeDelta = var4,
-			pivot = arg2.pivot,
-			isWorld = arg1.isWorld
+		arg0_38.uiLoader:LoadHighLightArea({
+			position = Vector3(var1_38.x, var1_38.y, 0) + Vector3(var2_38, var3_38, 0),
+			sizeDelta = var4_38,
+			pivot = arg2_38.pivot,
+			isWorld = arg1_38.isWorld
 		})
 	end
 end
 
-function var0.UpdateHighLight(arg0, arg1, arg2)
-	local var0 = arg1:GetHighLightTarget()
+function var0_0.UpdateHighLight(arg0_39, arg1_39, arg2_39)
+	local var0_39 = arg1_39:GetHighLightTarget()
 
-	if #var0 <= 0 then
-		arg2()
+	if #var0_39 <= 0 then
+		arg2_39()
 
 		return
 	end
 
-	local var1 = {}
+	local var1_39 = {}
 
-	for iter0, iter1 in ipairs(var0) do
-		table.insert(var1, function(arg0)
-			arg0:SearchUI(iter1, function(arg0)
-				if not arg0 then
+	for iter0_39, iter1_39 in ipairs(var0_39) do
+		table.insert(var1_39, function(arg0_40)
+			arg0_39:SearchUI(iter1_39, function(arg0_41)
+				if not arg0_41 then
 					pg.NewGuideMgr.GetInstance():Stop()
 
 					return
 				end
 
-				var2(arg0, arg1, arg0, iter1)
-				arg0()
+				var2_0(arg0_39, arg1_39, arg0_41, iter1_39)
+				arg0_40()
 			end)
 		end)
 	end
 
-	parallelAsync(var1, arg2)
+	parallelAsync(var1_39, arg2_39)
 end
 
-function var0.SearchUI(arg0, arg1, arg2)
-	arg0.uiFinder:Search({
-		path = arg1.path,
-		delay = arg1.delay,
-		childIndex = arg1.pathIndex,
-		conditionData = arg1.conditionData,
-		callback = arg2
+function var0_0.SearchUI(arg0_42, arg1_42, arg2_42)
+	arg0_42.uiFinder:Search({
+		path = arg1_42.path,
+		delay = arg1_42.delay,
+		childIndex = arg1_42.pathIndex,
+		conditionData = arg1_42.conditionData,
+		callback = arg2_42
 	})
 end
 
-function var0.SearchWithoutDelay(arg0, arg1, arg2)
-	arg0.uiFinder:SearchWithoutDelay({
-		path = arg1.path,
-		delay = arg1.delay,
-		childIndex = arg1.pathIndex,
-		conditionData = arg1.conditionData,
-		callback = arg2
+function var0_0.SearchWithoutDelay(arg0_43, arg1_43, arg2_43)
+	arg0_43.uiFinder:SearchWithoutDelay({
+		path = arg1_43.path,
+		delay = arg1_43.delay,
+		childIndex = arg1_43.pathIndex,
+		conditionData = arg1_43.conditionData,
+		callback = arg2_43
 	})
 end
 
-function var0.RegisterEvent(arg0, arg1, arg2)
-	if arg1:ExistTrigger() then
-		removeOnButton(arg0._tf)
-		arg2()
+function var0_0.RegisterEvent(arg0_44, arg1_44, arg2_44)
+	if arg1_44:ExistTrigger() then
+		removeOnButton(arg0_44._tf)
+		arg2_44()
 
 		return
 	end
 
-	onButton(pg.NewGuideMgr.GetInstance(), arg0._tf, function()
-		if arg1:ShouldGoScene() then
-			pg.m02:sendNotification(GAME.GO_SCENE, SCENE[arg1.sceneName])
-			arg2()
-		elseif arg1:ShouldTriggerOtherTarget() then
-			arg0:SearchUI(arg1:GetOtherTriggerTarget(), function(arg0)
-				triggerButton(arg0)
-				arg2()
+	onButton(pg.NewGuideMgr.GetInstance(), arg0_44._tf, function()
+		if arg1_44:ShouldGoScene() then
+			pg.m02:sendNotification(GAME.GO_SCENE, SCENE[arg1_44.sceneName])
+			arg2_44()
+		elseif arg1_44:ShouldTriggerOtherTarget() then
+			arg0_44:SearchUI(arg1_44:GetOtherTriggerTarget(), function(arg0_46)
+				triggerButton(arg0_46)
+				arg2_44()
 			end)
 		else
-			arg2()
+			arg2_44()
 		end
 	end, SFX_PANEL)
 end
 
-function var0.NextOne(arg0)
-	triggerButton(arg0._tf)
+function var0_0.NextOne(arg0_47)
+	triggerButton(arg0_47._tf)
 end
 
-function var0.HideCounsellors(arg0)
-	for iter0, iter1 in pairs(arg0.counsellors) do
-		setActive(iter1, false)
+function var0_0.HideCounsellors(arg0_48)
+	for iter0_48, iter1_48 in pairs(arg0_48.counsellors) do
+		setActive(iter1_48, false)
 	end
 end
 
-function var0.Clear(arg0)
-	arg0:HideCounsellors()
-	arg0:HideDialogueWindows()
-	arg0:ClearSpriteTimer()
-	removeOnButton(arg0._tf)
-	arg0:OnClear()
+function var0_0.Clear(arg0_49)
+	arg0_49:HideCounsellors()
+	arg0_49:HideDialogueWindows()
+	arg0_49:ClearSpriteTimer()
+	removeOnButton(arg0_49._tf)
+	arg0_49:OnClear()
 
-	if arg0.delayTimer then
-		arg0.delayTimer:Stop()
+	if arg0_49.delayTimer then
+		arg0_49.delayTimer:Stop()
 
-		arg0.delayTimer = nil
+		arg0_49.delayTimer = nil
 	end
 
-	arg0.uiFinder:Clear()
-	arg0.uiDuplicator:Clear()
-	arg0.uiLoader:Clear()
+	arg0_49.uiFinder:Clear()
+	arg0_49.uiDuplicator:Clear()
+	arg0_49.uiLoader:Clear()
 end
 
-function var0.OnExecution(arg0, arg1, arg2)
-	arg2()
+function var0_0.OnExecution(arg0_50, arg1_50, arg2_50)
+	arg2_50()
 end
 
-function var0.OnClear(arg0)
+function var0_0.OnClear(arg0_51)
 	return
 end
 
-return var0
+return var0_0

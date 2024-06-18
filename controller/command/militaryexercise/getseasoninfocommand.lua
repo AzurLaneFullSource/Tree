@@ -1,25 +1,25 @@
-﻿local var0 = class("GetSeasonInfoCommand", pm.SimpleCommand)
+﻿local var0_0 = class("GetSeasonInfoCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
+function var0_0.execute(arg0_1, arg1_1)
 	pg.ConnectionMgr.GetInstance():Send(18001, {
 		type = 0
-	}, 18002, function(arg0)
-		local var0 = SeasonInfo.New(arg0)
-		local var1 = getProxy(MilitaryExerciseProxy)
+	}, 18002, function(arg0_2)
+		local var0_2 = SeasonInfo.New(arg0_2)
+		local var1_2 = getProxy(MilitaryExerciseProxy)
 
-		if var1:getData() then
-			var1:updateSeasonInfo(var0)
+		if var1_2:getData() then
+			var1_2:updateSeasonInfo(var0_2)
 		else
-			var1:addSeasonInfo(var0)
+			var1_2:addSeasonInfo(var0_2)
 		end
 
-		local var2 = getProxy(PlayerProxy)
-		local var3 = var2:getData()
+		local var2_2 = getProxy(PlayerProxy)
+		local var3_2 = var2_2:getData()
 
-		var3:updateScoreAndRank(var0.score, var0.rank)
-		var2:updatePlayer(var3)
-		arg0:sendNotification(GAME.GET_SEASON_INFO_DONE, var0)
+		var3_2:updateScoreAndRank(var0_2.score, var0_2.rank)
+		var2_2:updatePlayer(var3_2)
+		arg0_1:sendNotification(GAME.GET_SEASON_INFO_DONE, var0_2)
 	end)
 end
 
-return var0
+return var0_0

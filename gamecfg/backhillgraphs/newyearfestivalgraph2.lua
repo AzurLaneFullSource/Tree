@@ -1,4 +1,4 @@
-﻿local var0 = {
+﻿local var0_0 = {
 	Points = {
 		[5] = {
 			x = -394.4,
@@ -65,13 +65,13 @@
 	}
 }
 
-var0.Points[4].outRandom = true
-var0.Points[6].outRandom = true
-var0.Points[8].outRandom = true
-var0.Points[10].outRandom = true
+var0_0.Points[4].outRandom = true
+var0_0.Points[6].outRandom = true
+var0_0.Points[8].outRandom = true
+var0_0.Points[10].outRandom = true
 
-for iter0, iter1 in pairs(var0.Points) do
-	iter1.scale = 0.35
+for iter0_0, iter1_0 in pairs(var0_0.Points) do
+	iter1_0.scale = 0.35
 end
 
-return var0
+return var0_0

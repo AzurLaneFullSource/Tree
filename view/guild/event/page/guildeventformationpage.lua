@@ -1,189 +1,189 @@
-﻿local var0 = class("GuildEventFormationPage", import(".GuildEventBasePage"))
+﻿local var0_0 = class("GuildEventFormationPage", import(".GuildEventBasePage"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "GuildEventFormationUI"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.tpl = arg0._go:GetComponent("ItemList").prefabItem[0]
-	arg0.closeBtn = arg0:findTF("frame/close")
-	arg0.sendBtn = arg0:findTF("frame/btn")
-	arg0.sendBtnGray = arg0:findTF("frame/btn/gray")
-	arg0.slots = {
-		arg0:findTF("frame/ship1"),
-		arg0:findTF("frame/ship2")
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.tpl = arg0_2._go:GetComponent("ItemList").prefabItem[0]
+	arg0_2.closeBtn = arg0_2:findTF("frame/close")
+	arg0_2.sendBtn = arg0_2:findTF("frame/btn")
+	arg0_2.sendBtnGray = arg0_2:findTF("frame/btn/gray")
+	arg0_2.slots = {
+		arg0_2:findTF("frame/ship1"),
+		arg0_2:findTF("frame/ship2")
 	}
-	arg0.items = {}
-	arg0.cdTimer = {}
+	arg0_2.items = {}
+	arg0_2.cdTimer = {}
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0.closeBtn, function()
-		arg0:Hide()
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3.closeBtn, function()
+		arg0_3:Hide()
 
-		arg0.contextData.editFleet = nil
+		arg0_3.contextData.editFleet = nil
 	end, SFX_PANEL)
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:Hide()
 
-		arg0.contextData.editFleet = nil
+		arg0_3.contextData.editFleet = nil
 	end, SFX_PANEL)
 end
 
-function var0.OnFleetUpdated(arg0, arg1)
-	arg0.extraData.fleet = arg1
+function var0_0.OnFleetUpdated(arg0_6, arg1_6)
+	arg0_6.extraData.fleet = arg1_6
 
-	arg0:UpdateSlots()
+	arg0_6:UpdateSlots()
 end
 
-function var0.OnFleetFormationDone(arg0)
-	for iter0, iter1 in ipairs(arg0.slots) do
-		arg0:RefreshCdTimer(iter0)
+function var0_0.OnFleetFormationDone(arg0_7)
+	for iter0_7, iter1_7 in ipairs(arg0_7.slots) do
+		arg0_7:RefreshCdTimer(iter0_7)
 	end
 
-	arg0:UpdateSendBtn()
+	arg0_7:UpdateSendBtn()
 end
 
-function var0.OnShow(arg0)
+function var0_0.OnShow(arg0_8)
 	if not getProxy(GuildProxy).isFetchAssaultFleet then
-		arg0:emit(GuildEventMediator.ON_GET_FORMATION)
+		arg0_8:emit(GuildEventMediator.ON_GET_FORMATION)
 	else
-		arg0:UpdateSlots()
+		arg0_8:UpdateSlots()
 	end
 
-	arg0:UpdateSendBtn()
+	arg0_8:UpdateSendBtn()
 end
 
-function var0.UpdateSendBtn(arg0)
-	local var0 = not arg0.contextData.editFleet or arg0.contextData.editFleet and not arg0.extraData.fleet:AnyShipChanged(arg0.contextData.editFleet)
+function var0_0.UpdateSendBtn(arg0_9)
+	local var0_9 = not arg0_9.contextData.editFleet or arg0_9.contextData.editFleet and not arg0_9.extraData.fleet:AnyShipChanged(arg0_9.contextData.editFleet)
 
-	setActive(arg0.sendBtnGray, var0)
+	setActive(arg0_9.sendBtnGray, var0_9)
 
-	if var0 then
-		removeOnButton(arg0.sendBtn)
+	if var0_9 then
+		removeOnButton(arg0_9.sendBtn)
 
 		return
 	end
 
-	onButton(arg0, arg0.sendBtn, function()
-		if arg0.existBossBattle then
+	onButton(arg0_9, arg0_9.sendBtn, function()
+		if arg0_9.existBossBattle then
 			pg.TipsMgr:GetInstance():ShowTips(i18n("guild_formation_erro_in_boss_battle"))
 
 			return
 		end
 
-		arg0:emit(GuildEventMediator.UPDATE_FORMATION)
+		arg0_9:emit(GuildEventMediator.UPDATE_FORMATION)
 	end, SFX_PANEL)
 end
 
-function var0.UpdateSlots(arg0)
-	arg0.fleet = arg0.contextData.editFleet or arg0.extraData.fleet
+function var0_0.UpdateSlots(arg0_11)
+	arg0_11.fleet = arg0_11.contextData.editFleet or arg0_11.extraData.fleet
 
-	local var0 = arg0.fleet
-	local var1 = arg0.guild:GetActiveEvent()
-	local var2 = var1 and var1:GetBossMission()
+	local var0_11 = arg0_11.fleet
+	local var1_11 = arg0_11.guild:GetActiveEvent()
+	local var2_11 = var1_11 and var1_11:GetBossMission()
 
-	arg0.existBossBattle = var2 and var2:IsActive()
+	arg0_11.existBossBattle = var2_11 and var2_11:IsActive()
 
-	for iter0, iter1 in ipairs(arg0.slots) do
-		local var3 = arg0.fleet:GetShipByPos(iter0)
+	for iter0_11, iter1_11 in ipairs(arg0_11.slots) do
+		local var3_11 = arg0_11.fleet:GetShipByPos(iter0_11)
 
-		arg0:UpdateSlot(iter0, iter1, var3)
-		arg0:RefreshCdTimer(iter0)
+		arg0_11:UpdateSlot(iter0_11, iter1_11, var3_11)
+		arg0_11:RefreshCdTimer(iter0_11)
 	end
 end
 
-function var0.ShipIsBattle(arg0, arg1)
-	return arg0.existBossBattle
+function var0_0.ShipIsBattle(arg0_12, arg1_12)
+	return arg0_12.existBossBattle
 end
 
-function var0.UpdateSlot(arg0, arg1, arg2, arg3)
-	local var0 = arg0.guild
-	local var1 = arg2:Find("ship")
-	local var2 = arg2:Find("tag/tag")
+function var0_0.UpdateSlot(arg0_13, arg1_13, arg2_13, arg3_13)
+	local var0_13 = arg0_13.guild
+	local var1_13 = arg2_13:Find("ship")
+	local var2_13 = arg2_13:Find("tag/tag")
 
-	if arg3 then
-		if not var1 then
-			var1 = cloneTplTo(arg0.tpl, arg2)
+	if arg3_13 then
+		if not var1_13 then
+			var1_13 = cloneTplTo(arg0_13.tpl, arg2_13)
 
-			var1:SetAsFirstSibling()
+			var1_13:SetAsFirstSibling()
 		end
 
-		local var3 = arg0.items[arg1] or DockyardShipItem.New(var1)
+		local var3_13 = arg0_13.items[arg1_13] or DockyardShipItem.New(var1_13)
 
-		var3:update(GuildAssaultShip.ConverteFromShip(arg3))
+		var3_13:update(GuildAssaultShip.ConverteFromShip(arg3_13))
 
-		var3.go.name = "ship"
+		var3_13.go.name = "ship"
 
-		setActive(var2, arg0:ShipIsBattle(arg3))
-	elseif var1 then
-		setActive(var1, false)
-		setActive(var2, false)
+		setActive(var2_13, arg0_13:ShipIsBattle(arg3_13))
+	elseif var1_13 then
+		setActive(var1_13, false)
+		setActive(var2_13, false)
 	else
-		setActive(var2, false)
+		setActive(var2_13, false)
 	end
 
-	local var4 = arg3 and var1 or arg2
+	local var4_13 = arg3_13 and var1_13 or arg2_13
 
-	onButton(arg0, var4, function()
-		if not getProxy(GuildProxy):CanFormationPos(arg1) then
+	onButton(arg0_13, var4_13, function()
+		if not getProxy(GuildProxy):CanFormationPos(arg1_13) then
 			return
 		end
 
-		if arg0.existBossBattle then
+		if arg0_13.existBossBattle then
 			pg.TipsMgr:GetInstance():ShowTips(i18n("guild_formation_erro_in_boss_battle"))
 
 			return
 		end
 
-		arg0:emit(GuildEventMediator.ON_SELECT_SHIP, arg1, arg3, arg0.fleet)
+		arg0_13:emit(GuildEventMediator.ON_SELECT_SHIP, arg1_13, arg3_13, arg0_13.fleet)
 	end, SFX_PANEL)
 end
 
-function var0.RefreshCdTimer(arg0, arg1)
-	local var0 = arg0.slots[arg1]
-	local var1 = var0:Find("tag/timer")
-	local var2 = var1:Find("Text"):GetComponent(typeof(Text))
-	local var3 = var0:Find("tag/tag")
-	local var4 = not getProxy(GuildProxy):CanFormationPos(arg1)
+function var0_0.RefreshCdTimer(arg0_15, arg1_15)
+	local var0_15 = arg0_15.slots[arg1_15]
+	local var1_15 = var0_15:Find("tag/timer")
+	local var2_15 = var1_15:Find("Text"):GetComponent(typeof(Text))
+	local var3_15 = var0_15:Find("tag/tag")
+	local var4_15 = not getProxy(GuildProxy):CanFormationPos(arg1_15)
 
-	setActive(var1, false)
-	arg0:RemoveTimer(arg1)
+	setActive(var1_15, false)
+	arg0_15:RemoveTimer(arg1_15)
 
-	if var4 then
-		arg0.cdTimer[arg1] = Timer.New(function()
-			local var0 = getProxy(GuildProxy):GetNextCanFormationTime(arg1) - pg.TimeMgr.GetInstance():GetServerTime()
+	if var4_15 then
+		arg0_15.cdTimer[arg1_15] = Timer.New(function()
+			local var0_16 = getProxy(GuildProxy):GetNextCanFormationTime(arg1_15) - pg.TimeMgr.GetInstance():GetServerTime()
 
-			if var0 > 0 then
-				var2.text = pg.TimeMgr:GetInstance():DescCDTime(var0)
+			if var0_16 > 0 then
+				var2_15.text = pg.TimeMgr:GetInstance():DescCDTime(var0_16)
 			else
-				setActive(var1, false)
-				setActive(var0:Find("tag"), isActive(var3))
+				setActive(var1_15, false)
+				setActive(var0_15:Find("tag"), isActive(var3_15))
 			end
 		end, 1, -1)
 
-		arg0.cdTimer[arg1]:Start()
-		arg0.cdTimer[arg1].func()
-		setActive(var1, true)
+		arg0_15.cdTimer[arg1_15]:Start()
+		arg0_15.cdTimer[arg1_15].func()
+		setActive(var1_15, true)
 	end
 
-	setActive(var0:Find("tag"), isActive(var3) or var4)
+	setActive(var0_15:Find("tag"), isActive(var3_15) or var4_15)
 end
 
-function var0.RemoveTimer(arg0, arg1)
-	if arg0.cdTimer[arg1] then
-		arg0.cdTimer[arg1]:Stop()
+function var0_0.RemoveTimer(arg0_17, arg1_17)
+	if arg0_17.cdTimer[arg1_17] then
+		arg0_17.cdTimer[arg1_17]:Stop()
 
-		arg0.cdTimer[arg1] = nil
-	end
-end
-
-function var0.OnDestroy(arg0)
-	var0.super.OnDestroy(arg0)
-
-	for iter0, iter1 in pairs(arg0.cdTimer) do
-		arg0:RemoveTimer(iter0)
+		arg0_17.cdTimer[arg1_17] = nil
 	end
 end
 
-return var0
+function var0_0.OnDestroy(arg0_18)
+	var0_0.super.OnDestroy(arg0_18)
+
+	for iter0_18, iter1_18 in pairs(arg0_18.cdTimer) do
+		arg0_18:RemoveTimer(iter0_18)
+	end
+end
+
+return var0_0

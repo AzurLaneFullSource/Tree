@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_269 = {}
+var0_0.word_template_269 = {}
 
-local var1 = var0.word_template_269
+local var1_0 = var0_0.word_template_269
 
 function temp()
-	var1.丝 = {
+	var1_0.丝 = {
 		情 = {
 			袜 = {
 				意 = {
@@ -143,7 +143,7 @@ end
 temp()
 
 function temp()
-	var1.私 = {
+	var1_0.私 = {
 		["/"] = {
 			服 = {
 				this = true
@@ -334,7 +334,7 @@ end
 temp()
 
 function temp()
-	var1.思 = {
+	var1_0.思 = {
 		春 = {
 			期 = {
 				少 = {
@@ -416,7 +416,7 @@ end
 temp()
 
 function temp()
-	var1.斯 = {
+	var1_0.斯 = {
 		巴 = {
 			达 = {
 				this = true
@@ -501,7 +501,7 @@ end
 temp()
 
 function temp()
-	var1.絲 = {
+	var1_0.絲 = {
 		襪 = {
 			this = true,
 			高 = {
@@ -534,7 +534,7 @@ end
 temp()
 
 function temp()
-	var1.四 = {
+	var1_0.四 = {
 		百 = {
 			元 = {
 				我 = {
@@ -823,7 +823,7 @@ end
 temp()
 
 function temp()
-	var1.寺 = {
+	var1_0.寺 = {
 		尾 = {
 			祐 = {
 				理 = {

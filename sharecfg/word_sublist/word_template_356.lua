@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_356 = {}
+var0_0.word_template_356 = {}
 
-local var1 = var0.word_template_356
+local var1_0 = var0_0.word_template_356
 
 function temp()
-	var1.隹 = {
+	var1_0.隹 = {
 		this = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.追 = {
+	var1_0.追 = {
 		查 = {
 			国 = {
 				际 = {
@@ -50,7 +50,7 @@ end
 temp()
 
 function temp()
-	var1.椎 = {
+	var1_0.椎 = {
 		名 = {
 			林 = {
 				檎 = {
@@ -69,7 +69,7 @@ end
 temp()
 
 function temp()
-	var1.窀 = {
+	var1_0.窀 = {
 		this = {
 			this = true
 		}
@@ -79,7 +79,7 @@ end
 temp()
 
 function temp()
-	var1.准 = {
+	var1_0.准 = {
 		军 = {
 			事 = {
 				化 = {
@@ -101,7 +101,7 @@ end
 temp()
 
 function temp()
-	var1.捉 = {
+	var1_0.捉 = {
 		奸 = {
 			在 = {
 				床 = {
@@ -121,7 +121,7 @@ end
 temp()
 
 function temp()
-	var1.倬 = {
+	var1_0.倬 = {
 		this = {
 			this = true
 		}

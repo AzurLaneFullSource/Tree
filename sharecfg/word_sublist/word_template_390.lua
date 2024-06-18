@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_390 = {}
+var0_0.word_template_390 = {}
 
-local var1 = var0.word_template_390
+local var1_0 = var0_0.word_template_390
 
 function temp()
-	var1["+"] = {
+	var1_0["+"] = {
 		["1"] = {
 			禾 = {
 				少 = {
@@ -24,7 +24,7 @@ end
 temp()
 
 function temp()
-	var1.谈 = {
+	var1_0.谈 = {
 		校 = {
 			风 = {
 				声 = {
@@ -83,7 +83,7 @@ end
 temp()
 
 function temp()
-	var1.冥 = {
+	var1_0.冥 = {
 		河 = {
 			忆 = {
 				当 = {
@@ -220,7 +220,7 @@ end
 temp()
 
 function temp()
-	var1.铣 = {
+	var1_0.铣 = {
 		法 = {
 			this = true
 		}
@@ -230,7 +230,7 @@ end
 temp()
 
 function temp()
-	var1.梨 = {
+	var1_0.梨 = {
 		可 = {
 			枪 = {
 				this = true
@@ -256,7 +256,7 @@ end
 temp()
 
 function temp()
-	var1.备 = {
+	var1_0.备 = {
 		胎 = {
 			敏 = {
 				尔 = {
@@ -270,7 +270,7 @@ end
 temp()
 
 function temp()
-	var1.圈 = {
+	var1_0.圈 = {
 		宗 = {
 			this = true
 		},

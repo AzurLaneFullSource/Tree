@@ -1,45 +1,45 @@
-﻿local var0 = class("NewBackYardShopMediator", import("...base.ContextMediator"))
+﻿local var0_0 = class("NewBackYardShopMediator", import("...base.ContextMediator"))
 
-var0.ON_SHOPPING = "NewBackYardShopMediator:ON_SHOPPING"
-var0.ON_CHARGE = "NewBackYardShopMediator:ON_CHARGE"
+var0_0.ON_SHOPPING = "NewBackYardShopMediator:ON_SHOPPING"
+var0_0.ON_CHARGE = "NewBackYardShopMediator:ON_CHARGE"
 
-function var0.register(arg0)
-	arg0:bind(var0.ON_SHOPPING, function(arg0, arg1, arg2)
-		arg0:sendNotification(GAME.BUY_FURNITURE, {
-			furnitureIds = arg1,
-			type = arg2
+function var0_0.register(arg0_1)
+	arg0_1:bind(var0_0.ON_SHOPPING, function(arg0_2, arg1_2, arg2_2)
+		arg0_1:sendNotification(GAME.BUY_FURNITURE, {
+			furnitureIds = arg1_2,
+			type = arg2_2
 		})
 	end)
-	arg0:bind(var0.ON_CHARGE, function(arg0, arg1)
-		if arg0.contextData.onDeattch then
-			arg0.contextData.onDeattch = nil
+	arg0_1:bind(var0_0.ON_CHARGE, function(arg0_3, arg1_3)
+		if arg0_1.contextData.onDeattch then
+			arg0_1.contextData.onDeattch = nil
 		end
 
-		local var0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(CourtYardMediator)
+		local var0_3 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(CourtYardMediator)
 
-		if var0 then
-			var0.data.skipToCharge = true
+		if var0_3 then
+			var0_3.data.skipToCharge = true
 		end
 
-		if arg1 == PlayerConst.ResDiamond then
-			arg0:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
+		if arg1_3 == PlayerConst.ResDiamond then
+			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
 				wrap = ChargeScene.TYPE_DIAMOND
 			})
-		elseif arg1 == PlayerConst.ResDormMoney then
-			arg0:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
+		elseif arg1_3 == PlayerConst.ResDormMoney then
+			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
 		end
 	end)
-	arg0.viewComponent:SetDorm(getProxy(DormProxy):getRawData())
-	arg0.viewComponent:SetPlayer(getProxy(PlayerProxy):getRawData())
+	arg0_1.viewComponent:SetDorm(getProxy(DormProxy):getRawData())
+	arg0_1.viewComponent:SetPlayer(getProxy(PlayerProxy):getRawData())
 end
 
-function var0.remove(arg0)
-	if arg0.contextData.onRemove then
-		arg0.contextData.onRemove()
+function var0_0.remove(arg0_4)
+	if arg0_4.contextData.onRemove then
+		arg0_4.contextData.onRemove()
 	end
 end
 
-function var0.listNotificationInterests(arg0)
+function var0_0.listNotificationInterests(arg0_5)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.BUY_FURNITURE_DONE,
@@ -47,18 +47,18 @@ function var0.listNotificationInterests(arg0)
 	}
 end
 
-function var0.handleNotification(arg0, arg1)
-	local var0 = arg1:getName()
-	local var1 = arg1:getBody()
-	local var2 = arg1:getType()
+function var0_0.handleNotification(arg0_6, arg1_6)
+	local var0_6 = arg1_6:getName()
+	local var1_6 = arg1_6:getBody()
+	local var2_6 = arg1_6:getType()
 
-	if var0 == PlayerProxy.UPDATED then
-		arg0.viewComponent:PlayerUpdated(var1)
-	elseif var0 == GAME.BUY_FURNITURE_DONE then
-		arg0.viewComponent:FurnituresUpdated(var2)
-	elseif var0 == DormProxy.DORM_UPDATEED then
-		arg0.viewComponent:DormUpdated(getProxy(DormProxy):getRawData())
+	if var0_6 == PlayerProxy.UPDATED then
+		arg0_6.viewComponent:PlayerUpdated(var1_6)
+	elseif var0_6 == GAME.BUY_FURNITURE_DONE then
+		arg0_6.viewComponent:FurnituresUpdated(var2_6)
+	elseif var0_6 == DormProxy.DORM_UPDATEED then
+		arg0_6.viewComponent:DormUpdated(getProxy(DormProxy):getRawData())
 	end
 end
 
-return var0
+return var0_0

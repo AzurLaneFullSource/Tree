@@ -1,28 +1,28 @@
 ﻿ys = ys or {}
 
-local var0 = ys
+local var0_0 = ys
 
-var0.Battle.BattleBuffDamageWall = class("BattleBuffDamageWall", var0.Battle.BattleBuffShieldWall)
-var0.Battle.BattleBuffDamageWall.__name = "BattleBuffDamageWall"
+var0_0.Battle.BattleBuffDamageWall = class("BattleBuffDamageWall", var0_0.Battle.BattleBuffShieldWall)
+var0_0.Battle.BattleBuffDamageWall.__name = "BattleBuffDamageWall"
 
-local var1 = var0.Battle.BattleBuffDamageWall
+local var1_0 = var0_0.Battle.BattleBuffDamageWall
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0._cldList = {}
+	arg0_1._cldList = {}
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	var1.super.SetArgs(arg0, arg1, arg2)
-	arg0._wall:SetCldObjType(var0.Battle.BattleWallData.CLD_OBJ_TYPE_SHIP)
+function var1_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	var1_0.super.SetArgs(arg0_2, arg1_2, arg2_2)
+	arg0_2._wall:SetCldObjType(var0_0.Battle.BattleWallData.CLD_OBJ_TYPE_SHIP)
 
-	arg0._attr = setmetatable({}, {
-		__index = arg1._attr
+	arg0_2._attr = setmetatable({}, {
+		__index = arg1_2._attr
 	})
-	arg0._atkAttrType = arg0._tempData.arg_list.attack_attribute
-	arg0._damage = arg0._tempData.arg_list.damage
-	arg0._forgeTmp = {
+	arg0_2._atkAttrType = arg0_2._tempData.arg_list.attack_attribute
+	arg0_2._damage = arg0_2._tempData.arg_list.damage
+	arg0_2._forgeTmp = {
 		random_damage_rate = 0,
 		antisub_enhancement = 0,
 		ammo_type = 1,
@@ -47,7 +47,7 @@ function var1.SetArgs(arg0, arg1, arg2)
 		},
 		hit_type = {}
 	}
-	arg0._forgeWeapon = {
+	arg0_2._forgeWeapon = {
 		GetConvertedAtkAttr = function()
 			return 0.01
 		end,
@@ -55,77 +55,77 @@ function var1.SetArgs(arg0, arg1, arg2)
 			return nil
 		end
 	}
-	arg0._forgeWeaponTmp = {
-		attack_attribute = arg0._atkAttrType
+	arg0_2._forgeWeaponTmp = {
+		attack_attribute = arg0_2._atkAttrType
 	}
-	arg0._atkAttr = var0.Battle.BattleAttr.GetAtkAttrByType(arg0._attr, arg0._atkAttrType)
+	arg0_2._atkAttr = var0_0.Battle.BattleAttr.GetAtkAttrByType(arg0_2._attr, arg0_2._atkAttrType)
 end
 
-function var1.onWallCld(arg0, arg1)
-	for iter0, iter1 in ipairs(arg1) do
-		if not table.contains(arg0._cldList, iter1) then
-			arg0._dataProxy:HandleWallDamage(arg0, iter1)
-			table.insert(arg0._cldList, iter1)
+function var1_0.onWallCld(arg0_5, arg1_5)
+	for iter0_5, iter1_5 in ipairs(arg1_5) do
+		if not table.contains(arg0_5._cldList, iter1_5) then
+			arg0_5._dataProxy:HandleWallDamage(arg0_5, iter1_5)
+			table.insert(arg0_5._cldList, iter1_5)
 
-			arg0._count = arg0._count - 1
+			arg0_5._count = arg0_5._count - 1
 
-			if arg0._count <= 0 then
+			if arg0_5._count <= 0 then
 				break
 			end
 		end
 	end
 
-	local var0 = #arg0._cldList
+	local var0_5 = #arg0_5._cldList
 
-	while var0 > 0 do
-		local var1 = arg0._cldList[var0]
+	while var0_5 > 0 do
+		local var1_5 = arg0_5._cldList[var0_5]
 
-		if not table.contains(arg1, var1) then
-			table.remove(arg0._cldList, var0)
+		if not table.contains(arg1_5, var1_5) then
+			table.remove(arg0_5._cldList, var0_5)
 		end
 
-		var0 = var0 - 1
+		var0_5 = var0_5 - 1
 	end
 
-	if arg0._count <= 0 then
-		arg0:Deactive()
+	if arg0_5._count <= 0 then
+		arg0_5:Deactive()
 	end
 end
 
-function var1.GetDamageEnhance(arg0)
+function var1_0.GetDamageEnhance(arg0_6)
 	return 1
 end
 
-function var1.GetHost(arg0)
-	return arg0._unit
+function var1_0.GetHost(arg0_7)
+	return arg0_7._unit
 end
 
-function var1.GetWeaponHostAttr(arg0)
-	return var0.Battle.BattleAttr.GetAttr(arg0)
+function var1_0.GetWeaponHostAttr(arg0_8)
+	return var0_0.Battle.BattleAttr.GetAttr(arg0_8)
 end
 
-function var1.GetWeapon(arg0)
-	return arg0._forgeWeapon
+function var1_0.GetWeapon(arg0_9)
+	return arg0_9._forgeWeapon
 end
 
-function var1.GetWeaponTempData(arg0)
-	return arg0._forgeWeaponTmp
+function var1_0.GetWeaponTempData(arg0_10)
+	return arg0_10._forgeWeaponTmp
 end
 
-function var1.GetWeaponAtkAttr(arg0)
-	return arg0._atkAttr
+function var1_0.GetWeaponAtkAttr(arg0_11)
+	return arg0_11._atkAttr
 end
 
-function var1.GetCorrectedDMG(arg0)
-	return arg0._damage
+function var1_0.GetCorrectedDMG(arg0_12)
+	return arg0_12._damage
 end
 
-function var1.GetTemplate(arg0)
-	return arg0._forgeTmp
+function var1_0.GetTemplate(arg0_13)
+	return arg0_13._forgeTmp
 end
 
-function var1.Clear(arg0)
-	arg0._cldList = nil
+function var1_0.Clear(arg0_14)
+	arg0_14._cldList = nil
 
-	var1.super.Clear(arg0)
+	var1_0.super.Clear(arg0_14)
 end

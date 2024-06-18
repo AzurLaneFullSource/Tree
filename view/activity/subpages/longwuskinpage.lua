@@ -1,12 +1,12 @@
-﻿local var0 = class("LongwuSkinPage", import(".TemplatePage.SkinTemplatePage"))
+﻿local var0_0 = class("LongwuSkinPage", import(".TemplatePage.SkinTemplatePage"))
 
-function var0.OnUpdateFlush(arg0)
-	var0.super.OnUpdateFlush(arg0)
-	setText(arg0.dayTF, setColorStr(arg0.nday, "#fcfbeb"))
+function var0_0.OnUpdateFlush(arg0_1)
+	var0_0.super.OnUpdateFlush(arg0_1)
+	setText(arg0_1.dayTF, setColorStr(arg0_1.nday, "#fcfbeb"))
 end
 
-function var0.GetProgressColor(arg0)
+function var0_0.GetProgressColor(arg0_2)
 	return "#1d5073", "#1d5073"
 end
 
-return var0
+return var0_0

@@ -1,128 +1,128 @@
-﻿local var0 = class("ShipCustomMsgBox", import("...base.BaseSubView"))
+﻿local var0_0 = class("ShipCustomMsgBox", import("...base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ShipCustomMsgBox"
 end
 
-function var0.OnInit(arg0)
-	arg0.customMsgbox = arg0._tf
-	arg0.msgBoxItemPanel = arg0.customMsgbox:Find("frame/bg/item_panel")
-	arg0.msgboxItemContains = arg0.customMsgbox:Find("frame/bg/item_panel/items")
-	arg0.msgBoxItemTpl = arg0.msgboxItemContains:Find("equipmenttpl")
-	arg0.msgBoxItemContent = arg0.customMsgbox:Find("frame/bg/item_panel/content")
-	arg0.msgBoxItemContent1 = arg0.customMsgbox:Find("frame/bg/item_panel/content_num")
-	arg0.msgBoxCancelBtn = arg0.customMsgbox:Find("frame/btns/cancel_btn")
-	arg0.msgBoxConfirmBtn = arg0.customMsgbox:Find("frame/btns/confirm_btn")
-	arg0.msgBoxContent = arg0.customMsgbox:Find("frame/bg/content")
-	arg0.msgBtnBack = arg0.customMsgbox:Find("frame/top/btnBack")
-	arg0.msgBoxTitle = arg0.customMsgbox:Find("frame/top/title_list/infomation/title")
-	arg0.msgBoxTitleEn = arg0.customMsgbox:Find("frame/top/title_list/infomation/title_en")
+function var0_0.OnInit(arg0_2)
+	arg0_2.customMsgbox = arg0_2._tf
+	arg0_2.msgBoxItemPanel = arg0_2.customMsgbox:Find("frame/bg/item_panel")
+	arg0_2.msgboxItemContains = arg0_2.customMsgbox:Find("frame/bg/item_panel/items")
+	arg0_2.msgBoxItemTpl = arg0_2.msgboxItemContains:Find("equipmenttpl")
+	arg0_2.msgBoxItemContent = arg0_2.customMsgbox:Find("frame/bg/item_panel/content")
+	arg0_2.msgBoxItemContent1 = arg0_2.customMsgbox:Find("frame/bg/item_panel/content_num")
+	arg0_2.msgBoxCancelBtn = arg0_2.customMsgbox:Find("frame/btns/cancel_btn")
+	arg0_2.msgBoxConfirmBtn = arg0_2.customMsgbox:Find("frame/btns/confirm_btn")
+	arg0_2.msgBoxContent = arg0_2.customMsgbox:Find("frame/bg/content")
+	arg0_2.msgBtnBack = arg0_2.customMsgbox:Find("frame/top/btnBack")
+	arg0_2.msgBoxTitle = arg0_2.customMsgbox:Find("frame/top/title_list/infomation/title")
+	arg0_2.msgBoxTitleEn = arg0_2.customMsgbox:Find("frame/top/title_list/infomation/title_en")
 
-	SetActive(arg0.customMsgbox, false)
+	SetActive(arg0_2.customMsgbox, false)
 
-	arg0.settings = {}
+	arg0_2.settings = {}
 
-	onButton(arg0, arg0.msgBoxConfirmBtn, function()
-		if arg0.settings.onYes then
-			arg0.settings.onYes()
+	onButton(arg0_2, arg0_2.msgBoxConfirmBtn, function()
+		if arg0_2.settings.onYes then
+			arg0_2.settings.onYes()
 		else
-			arg0:hideCustomMsgBox()
+			arg0_2:hideCustomMsgBox()
 		end
 	end, SFX_PANEL)
-	SetActive(arg0.msgBoxCancelBtn, not defaultValue(arg0.settings.hideNO, false))
-	onButton(arg0, arg0.msgBoxCancelBtn, function()
-		if arg0.settings.onCancel then
-			arg0.settings.onCancel()
+	SetActive(arg0_2.msgBoxCancelBtn, not defaultValue(arg0_2.settings.hideNO, false))
+	onButton(arg0_2, arg0_2.msgBoxCancelBtn, function()
+		if arg0_2.settings.onCancel then
+			arg0_2.settings.onCancel()
 		else
-			arg0:hideCustomMsgBox()
+			arg0_2:hideCustomMsgBox()
 		end
 	end, SFX_PANEL)
-	onButton(arg0, arg0.customMsgbox, function()
-		arg0:hideCustomMsgBox()
+	onButton(arg0_2, arg0_2.customMsgbox, function()
+		arg0_2:hideCustomMsgBox()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.msgBtnBack, function()
-		arg0:hideCustomMsgBox()
+	onButton(arg0_2, arg0_2.msgBtnBack, function()
+		arg0_2:hideCustomMsgBox()
 	end, SFX_CANCEL)
 end
 
-function var0.SetShareData(arg0, arg1)
-	arg0.shareData = arg1
+function var0_0.SetShareData(arg0_7, arg1_7)
+	arg0_7.shareData = arg1_7
 end
 
-function var0.showCustomMsgBox(arg0, arg1)
-	arg0.isShowCustomMsgBox = true
-	arg0.settings = arg1
+function var0_0.showCustomMsgBox(arg0_8, arg1_8)
+	arg0_8.isShowCustomMsgBox = true
+	arg0_8.settings = arg1_8
 
-	setActive(arg0.customMsgbox, true)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0.customMsgbox, {
+	setActive(arg0_8.customMsgbox, true)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_8.customMsgbox, {
 		groupName = LayerWeightConst.GROUP_SHIPINFOUI
 	})
 
-	local var0 = arg1.items and #arg1.items > 0
+	local var0_8 = arg1_8.items and #arg1_8.items > 0
 
-	setActive(arg0.msgBoxItemPanel, var0)
-	setActive(arg0.msgBoxContent, not var0)
+	setActive(arg0_8.msgBoxItemPanel, var0_8)
+	setActive(arg0_8.msgBoxContent, not var0_8)
 
-	if var0 then
-		local var1 = arg1.items
+	if var0_8 then
+		local var1_8 = arg1_8.items
 
-		for iter0 = arg0.msgboxItemContains.childCount + 1, #var1 do
-			cloneTplTo(arg0.msgBoxItemTpl, arg0.msgboxItemContains)
+		for iter0_8 = arg0_8.msgboxItemContains.childCount + 1, #var1_8 do
+			cloneTplTo(arg0_8.msgBoxItemTpl, arg0_8.msgboxItemContains)
 		end
 
-		local var2 = arg0.msgboxItemContains.childCount
+		local var2_8 = arg0_8.msgboxItemContains.childCount
 
-		for iter1 = 1, var2 do
-			local var3 = arg0.msgboxItemContains:GetChild(iter1 - 1)
+		for iter1_8 = 1, var2_8 do
+			local var3_8 = arg0_8.msgboxItemContains:GetChild(iter1_8 - 1)
 
-			SetActive(var3, iter1 <= #var1)
+			SetActive(var3_8, iter1_8 <= #var1_8)
 
-			if iter1 <= #var1 then
-				local var4 = var1[iter1]
+			if iter1_8 <= #var1_8 then
+				local var4_8 = var1_8[iter1_8]
 
-				updateDrop(var3, var4)
+				updateDrop(var3_8, var4_8)
 
-				local var5 = 0
+				local var5_8 = 0
 
-				if var4.type == DROP_TYPE_RESOURCE then
-					var5 = arg0.shareData.player:getResById(var4.id)
-				elseif var4.type == DROP_TYPE_ITEM then
-					var5 = getProxy(BagProxy):getItemCountById(var4.id)
+				if var4_8.type == DROP_TYPE_RESOURCE then
+					var5_8 = arg0_8.shareData.player:getResById(var4_8.id)
+				elseif var4_8.type == DROP_TYPE_ITEM then
+					var5_8 = getProxy(BagProxy):getItemCountById(var4_8.id)
 				end
 
-				local var6 = var4.count
+				local var6_8 = var4_8.count
 
-				var5 = var5 < var6 and "<color=#D6341DFF>" .. var5 .. "</color>" or "<color=#A9F548FF>" .. var5 .. "</color>"
+				var5_8 = var5_8 < var6_8 and "<color=#D6341DFF>" .. var5_8 .. "</color>" or "<color=#A9F548FF>" .. var5_8 .. "</color>"
 
-				setText(var3:Find("icon_bg/count"), var5 .. "/" .. var6)
+				setText(var3_8:Find("icon_bg/count"), var5_8 .. "/" .. var6_8)
 			end
 		end
 
-		setText(arg0.msgBoxItemContent, arg1.content or "")
-		setText(arg0.msgBoxItemContent1, arg1.content1 or "")
+		setText(arg0_8.msgBoxItemContent, arg1_8.content or "")
+		setText(arg0_8.msgBoxItemContent1, arg1_8.content1 or "")
 	else
-		setText(arg0.msgBoxContent, arg1.content or "")
+		setText(arg0_8.msgBoxContent, arg1_8.content or "")
 	end
 
-	if arg1.title then
-		local var7 = arg1.title.title
-		local var8 = arg1.title.titleEn
+	if arg1_8.title then
+		local var7_8 = arg1_8.title.title
+		local var8_8 = arg1_8.title.titleEn
 
-		setText(arg0.msgBoxTitle, var7)
-		setText(arg0.msgBoxTitleEn, var8 or "")
+		setText(arg0_8.msgBoxTitle, var7_8)
+		setText(arg0_8.msgBoxTitleEn, var8_8 or "")
 	end
 end
 
-function var0.hideCustomMsgBox(arg0)
-	arg0.isShowCustomMsgBox = nil
+function var0_0.hideCustomMsgBox(arg0_9)
+	arg0_9.isShowCustomMsgBox = nil
 
-	SetActive(arg0.customMsgbox, false)
+	SetActive(arg0_9.customMsgbox, false)
 end
 
-function var0.OnDestroy(arg0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0.customMsgbox, arg0._tf)
+function var0_0.OnDestroy(arg0_10)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_10.customMsgbox, arg0_10._tf)
 
-	arg0.shareData = nil
+	arg0_10.shareData = nil
 end
 
-return var0
+return var0_0

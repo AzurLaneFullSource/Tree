@@ -1,69 +1,69 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleDataFunction
-local var2 = var0.Battle.BattleAttr
-local var3 = var0.Battle.BattleConst
-local var4 = class("BattleBuffDamageConvert", var0.Battle.BattleBuffEffect)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleDataFunction
+local var2_0 = var0_0.Battle.BattleAttr
+local var3_0 = var0_0.Battle.BattleConst
+local var4_0 = class("BattleBuffDamageConvert", var0_0.Battle.BattleBuffEffect)
 
-var0.Battle.BattleBuffDamageConvert = var4
-var4.__name = "BattleBuffDamageConvert"
-var4.ATTR_PRE = {
-	[var3.WeaponDamageAttr.CANNON] = "injureRatioByCannon",
-	[var3.WeaponDamageAttr.TORPEDO] = "injureRatioByBulletTorpedo",
-	[var3.WeaponDamageAttr.AIR] = "injureRatioByAir"
+var0_0.Battle.BattleBuffDamageConvert = var4_0
+var4_0.__name = "BattleBuffDamageConvert"
+var4_0.ATTR_PRE = {
+	[var3_0.WeaponDamageAttr.CANNON] = "injureRatioByCannon",
+	[var3_0.WeaponDamageAttr.TORPEDO] = "injureRatioByBulletTorpedo",
+	[var3_0.WeaponDamageAttr.AIR] = "injureRatioByAir"
 }
 
-function var4.Ctor(arg0, arg1)
-	var4.super.Ctor(arg0, arg1)
+function var4_0.Ctor(arg0_1, arg1_1)
+	var4_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var4.SetArgs(arg0, arg1, arg2)
-	local var0 = arg0._tempData.arg_list
+function var4_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	local var0_2 = arg0_2._tempData.arg_list
 
-	arg0._convert = var0.convert_rate
-	arg0._duration = var0.duration
-	arg0._buffSkinID = var0.buff_skin_id
-	arg0._attrTable = {}
+	arg0_2._convert = var0_2.convert_rate
+	arg0_2._duration = var0_2.duration
+	arg0_2._buffSkinID = var0_2.buff_skin_id
+	arg0_2._attrTable = {}
 end
 
-function var4.onTakeDamage(arg0, arg1, arg2, arg3)
-	local var0 = arg3.damageAttr
+function var4_0.onTakeDamage(arg0_3, arg1_3, arg2_3, arg3_3)
+	local var0_3 = arg3_3.damageAttr
 
-	if var0 then
-		local var1 = (arg0._attrTable[var0] or 0) + arg3.damage
+	if var0_3 then
+		local var1_3 = (arg0_3._attrTable[var0_3] or 0) + arg3_3.damage
 
-		arg0._attrTable[var0] = var1
+		arg0_3._attrTable[var0_3] = var1_3
 	end
 end
 
-function var4.onRemove(arg0, arg1, arg2)
-	local var0 = 0
-	local var1
+function var4_0.onRemove(arg0_4, arg1_4, arg2_4)
+	local var0_4 = 0
+	local var1_4
 
-	for iter0, iter1 in pairs(arg0._attrTable) do
-		if var0 <= iter1 then
-			var0 = iter1
-			var1 = iter0
+	for iter0_4, iter1_4 in pairs(arg0_4._attrTable) do
+		if var0_4 <= iter1_4 then
+			var0_4 = iter1_4
+			var1_4 = iter0_4
 		end
 	end
 
-	if not var1 then
+	if not var1_4 then
 		return
 	end
 
-	local var2 = var4.ATTR_PRE[var1]
-	local var3 = var4.generateBuff(arg0._buffSkinID, arg0._duration, var2, var0 * arg0._convert)
-	local var4 = var0.Battle.BattleBuffSelfModifyUnit.New(var3.id, 1, arg1, var3)
+	local var2_4 = var4_0.ATTR_PRE[var1_4]
+	local var3_4 = var4_0.generateBuff(arg0_4._buffSkinID, arg0_4._duration, var2_4, var0_4 * arg0_4._convert)
+	local var4_4 = var0_0.Battle.BattleBuffSelfModifyUnit.New(var3_4.id, 1, arg1_4, var3_4)
 
-	arg1:AddBuff(var4)
+	arg1_4:AddBuff(var4_4)
 end
 
-function var4.generateBuff(arg0, arg1, arg2, arg3)
+function var4_0.generateBuff(arg0_5, arg1_5, arg2_5, arg3_5)
 	return {
-		id = arg0,
-		icon = arg0,
-		time = arg1,
+		id = arg0_5,
+		icon = arg0_5,
+		time = arg1_5,
 		blink = {
 			0,
 			0.7,
@@ -79,14 +79,14 @@ function var4.generateBuff(arg0, arg1, arg2, arg3)
 					"onRemove"
 				},
 				arg_list = {
-					attr = arg2,
-					number = arg3,
-					group = arg0
+					attr = arg2_5,
+					number = arg3_5,
+					group = arg0_5
 				}
 			}
 		},
 		{
-			time = arg1
+			time = arg1_5
 		},
 		name = "代码生成buff",
 		init_effect = "jinengchufablue",

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_224 = {}
+var0_0.word_template_224 = {}
 
-local var1 = var0.word_template_224
+local var1_0 = var0_0.word_template_224
 
 function temp()
-	var1.圮 = {
+	var1_0.圮 = {
 		綦 = {
 			this = true
 		}
@@ -17,7 +17,7 @@ end
 temp()
 
 function temp()
-	var1.仳 = {
+	var1_0.仳 = {
 		this = {
 			this = true
 		}
@@ -27,7 +27,7 @@ end
 temp()
 
 function temp()
-	var1.屁 = {
+	var1_0.屁 = {
 		民 = {
 			this = true
 		},
@@ -43,7 +43,7 @@ end
 temp()
 
 function temp()
-	var1.偏 = {
+	var1_0.偏 = {
 		偏 = {
 			没 = {
 				钱 = {
@@ -79,7 +79,7 @@ end
 temp()
 
 function temp()
-	var1.諞 = {
+	var1_0.諞 = {
 		this = {
 			this = true
 		}
@@ -89,7 +89,7 @@ end
 temp()
 
 function temp()
-	var1.片 = {
+	var1_0.片 = {
 		冈 = {
 			未 = {
 				来 = {
@@ -103,7 +103,7 @@ end
 temp()
 
 function temp()
-	var1.騙 = {
+	var1_0.騙 = {
 		我 = {
 			們 = {
 				一 = {

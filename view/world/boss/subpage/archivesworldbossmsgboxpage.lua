@@ -1,50 +1,50 @@
-﻿local var0 = class("ArchivesWorldBossMsgboxPage", import("view.base.BaseSubView"))
+﻿local var0_0 = class("ArchivesWorldBossMsgboxPage", import("view.base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "ArchivesWorldBossMsgboxUI"
 end
 
-function var0.OnLoaded(arg0)
-	arg0.yesBtn = arg0:findTF("Box/ConfirmBtn")
-	arg0.cancelBtn = arg0:findTF("Box/CancelBtn")
-	arg0.contentTxt = arg0:findTF("Box/Text"):GetComponent(typeof(Text))
+function var0_0.OnLoaded(arg0_2)
+	arg0_2.yesBtn = arg0_2:findTF("Box/ConfirmBtn")
+	arg0_2.cancelBtn = arg0_2:findTF("Box/CancelBtn")
+	arg0_2.contentTxt = arg0_2:findTF("Box/Text"):GetComponent(typeof(Text))
 end
 
-function var0.OnInit(arg0)
-	onButton(arg0, arg0._tf, function()
-		arg0:Hide()
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.yesBtn, function()
-		if arg0.onYes then
-			arg0.onYes()
+	onButton(arg0_3, arg0_3.yesBtn, function()
+		if arg0_3.onYes then
+			arg0_3.onYes()
 		end
 
-		arg0:Hide()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0, arg0.cancelBtn, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3.cancelBtn, function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
 end
 
-function var0.Show(arg0, arg1)
-	var0.super.Show(arg0)
+function var0_0.Show(arg0_7, arg1_7)
+	var0_0.super.Show(arg0_7)
 
-	arg0.contentTxt.text = arg1.content
-	arg0.onYes = arg1.onYes
+	arg0_7.contentTxt.text = arg1_7.content
+	arg0_7.onYes = arg1_7.onYes
 end
 
-function var0.Hide(arg0)
-	var0.super.Hide(arg0)
+function var0_0.Hide(arg0_8)
+	var0_0.super.Hide(arg0_8)
 
-	if arg0.onYes then
-		arg0.onYes = nil
+	if arg0_8.onYes then
+		arg0_8.onYes = nil
 	end
 end
 
-function var0.OnDestroy(arg0)
-	if arg0:isShowing() then
-		arg0:Hide()
+function var0_0.OnDestroy(arg0_9)
+	if arg0_9:isShowing() then
+		arg0_9:Hide()
 	end
 end
 
-return var0
+return var0_0

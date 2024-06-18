@@ -1,63 +1,63 @@
-﻿local var0 = class("GraftingActivityOpCommand", pm.SimpleCommand)
+﻿local var0_0 = class("GraftingActivityOpCommand", pm.SimpleCommand)
 
-function var0.execute(arg0, arg1)
-	local var0 = arg1:getBody()
-	local var1 = var0.id
-	local var2 = getProxy(ActivityProxy)
-	local var3 = var2:getActivityById(var1)
+function var0_0.execute(arg0_1, arg1_1)
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.id
+	local var2_1 = getProxy(ActivityProxy)
+	local var3_1 = var2_1:getActivityById(var1_1)
 
-	if not var3 or var3:isEnd() then
+	if not var3_1 or var3_1:isEnd() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 		return
 	end
 
-	local var4 = var3:getConfig("config_id")
-	local var5 = var2:getActivityById(var4)
+	local var4_1 = var3_1:getConfig("config_id")
+	local var5_1 = var2_1:getActivityById(var4_1)
 
-	if var5 and not var5:isEnd() then
+	if var5_1 and not var5_1:isEnd() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_not_start"))
 
 		return
 	end
 
-	local var6 = pg.activity_template[var4].type
+	local var6_1 = pg.activity_template[var4_1].type
 
 	pg.ConnectionMgr.GetInstance():Send(11202, {
-		activity_id = var1,
-		cmd = var0.cmd or 0,
-		arg1 = var0.arg1 or 0,
-		arg2 = var0.arg2 or 0,
+		activity_id = var1_1,
+		cmd = var0_1.cmd or 0,
+		arg1 = var0_1.arg1 or 0,
+		arg2 = var0_1.arg2 or 0,
 		arg_list = {}
-	}, 11203, function(arg0)
-		if arg0.result == 0 then
-			if arg0:IsBuildShipType(var6) then
-				arg0:UpdateActivityForBuildShip(var1)
+	}, 11203, function(arg0_2)
+		if arg0_2.result == 0 then
+			if arg0_1:IsBuildShipType(var6_1) then
+				arg0_1:UpdateActivityForBuildShip(var1_1)
 			end
 
-			local var0 = PlayerConst.addTranDrop(arg0.award_list)
+			local var0_2 = PlayerConst.addTranDrop(arg0_2.award_list)
 
-			arg0:sendNotification(GAME.GRAFTING_ACT_OP_DONE, {
-				linkActType = var6,
-				awards = var0
+			arg0_1:sendNotification(GAME.GRAFTING_ACT_OP_DONE, {
+				linkActType = var6_1,
+				awards = var0_2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0.result] .. arg0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)
 		end
 	end)
 end
 
-function var0.IsBuildShipType(arg0, arg1)
-	return arg1 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1 or arg1 == ActivityConst.ACTIVITY_TYPE_BUILD or arg1 == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD
+function var0_0.IsBuildShipType(arg0_3, arg1_3)
+	return arg1_3 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1 or arg1_3 == ActivityConst.ACTIVITY_TYPE_BUILD or arg1_3 == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD
 end
 
-function var0.UpdateActivityForBuildShip(arg0, arg1)
-	local var0 = getProxy(ActivityProxy)
-	local var1 = var0:getActivityById(arg1)
+function var0_0.UpdateActivityForBuildShip(arg0_4, arg1_4)
+	local var0_4 = getProxy(ActivityProxy)
+	local var1_4 = var0_4:getActivityById(arg1_4)
 
-	var1.data2 = var1.data2 + 1
+	var1_4.data2 = var1_4.data2 + 1
 
-	var0:updateActivity(var1)
+	var0_4:updateActivity(var1_4)
 end
 
-return var0
+return var0_0

@@ -1,65 +1,65 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = class("BattleBuffAddProficiency", var0.Battle.BattleBuffEffect)
+local var0_0 = ys
+local var1_0 = class("BattleBuffAddProficiency", var0_0.Battle.BattleBuffEffect)
 
-var0.Battle.BattleBuffAddProficiency = var1
-var1.__name = "BattleBuffAddProficiency"
+var0_0.Battle.BattleBuffAddProficiency = var1_0
+var1_0.__name = "BattleBuffAddProficiency"
 
-function var1.Ctor(arg0, arg1)
-	var1.super.Ctor(arg0, arg1)
+function var1_0.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var1.SetArgs(arg0, arg1, arg2)
-	arg0._group = arg0._tempData.arg_list.group or arg2:GetID()
-	arg0._weaponLabelList = arg0._tempData.arg_list.label or {}
-	arg0._weaponIndexList = arg0._tempData.arg_list.index
-	arg0._number = arg0._tempData.arg_list.number
+function var1_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	arg0_2._group = arg0_2._tempData.arg_list.group or arg2_2:GetID()
+	arg0_2._weaponLabelList = arg0_2._tempData.arg_list.label or {}
+	arg0_2._weaponIndexList = arg0_2._tempData.arg_list.index
+	arg0_2._number = arg0_2._tempData.arg_list.number
 end
 
-function var1.onAttach(arg0, arg1, arg2)
-	local var0 = arg1:GetAllWeapon()
+function var1_0.onAttach(arg0_3, arg1_3, arg2_3)
+	local var0_3 = arg1_3:GetAllWeapon()
 
-	arg0:calcEnhancement(var0, true)
+	arg0_3:calcEnhancement(var0_3, true)
 end
 
-function var1.onRemove(arg0, arg1, arg2)
-	local var0 = arg1:GetAllWeapon()
+function var1_0.onRemove(arg0_4, arg1_4, arg2_4)
+	local var0_4 = arg1_4:GetAllWeapon()
 
-	arg0:calcEnhancement(var0, false)
+	arg0_4:calcEnhancement(var0_4, false)
 end
 
-function var1.calcEnhancement(arg0, arg1, arg2)
-	local var0 = arg0._number
+function var1_0.calcEnhancement(arg0_5, arg1_5, arg2_5)
+	local var0_5 = arg0_5._number
 
-	if not arg2 then
-		var0 = var0 * -1
+	if not arg2_5 then
+		var0_5 = var0_5 * -1
 	end
 
-	for iter0, iter1 in ipairs(arg1) do
-		local var1 = 1
-		local var2 = iter1:GetEquipmentLabel()
+	for iter0_5, iter1_5 in ipairs(arg1_5) do
+		local var1_5 = 1
+		local var2_5 = iter1_5:GetEquipmentLabel()
 
-		for iter2, iter3 in ipairs(arg0._weaponLabelList) do
-			if not table.contains(var2, iter3) then
-				var1 = 0
+		for iter2_5, iter3_5 in ipairs(arg0_5._weaponLabelList) do
+			if not table.contains(var2_5, iter3_5) then
+				var1_5 = 0
 
 				break
 			end
 		end
 
-		if arg0._weaponIndexList then
-			local var3 = iter1:GetEquipmentIndex()
+		if arg0_5._weaponIndexList then
+			local var3_5 = iter1_5:GetEquipmentIndex()
 
-			if not table.contains(arg0._weaponIndexList, var3) then
-				var1 = var1 * 0
+			if not table.contains(arg0_5._weaponIndexList, var3_5) then
+				var1_5 = var1_5 * 0
 			end
 		end
 
-		if var1 == 1 then
-			local var4 = iter1:GetPotential() + var0
+		if var1_5 == 1 then
+			local var4_5 = iter1_5:GetPotential() + var0_5
 
-			iter1:SetPotentialFactor(var4)
+			iter1_5:SetPotentialFactor(var4_5)
 		end
 	end
 end

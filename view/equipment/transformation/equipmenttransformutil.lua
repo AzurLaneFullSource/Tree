@@ -1,212 +1,212 @@
-﻿local var0 = {}
+﻿local var0_0 = {}
 
-var0.__name = "EquipmentTransformUtil"
+var0_0.__name = "EquipmentTransformUtil"
 
-function var0.SameDrop(arg0, arg1)
-	if arg0.type ~= arg1.type then
+function var0_0.SameDrop(arg0_1, arg1_1)
+	if arg0_1.type ~= arg1_1.type then
 		return false
 	end
 
-	if arg0.type == DROP_TYPE_EQUIP then
-		return EquipmentProxy.SameEquip(arg0.template, arg1.template)
+	if arg0_1.type == DROP_TYPE_EQUIP then
+		return EquipmentProxy.SameEquip(arg0_1.template, arg1_1.template)
 	else
-		return arg0.id == arg1.id
+		return arg0_1.id == arg1_1.id
 	end
 end
 
-function var0.CheckEquipmentFormulasSucceed(arg0, arg1)
-	local var0 = getProxy(PlayerProxy)
-	local var1 = getProxy(BagProxy)
-	local var2 = {}
-	local var3 = arg1
+function var0_0.CheckEquipmentFormulasSucceed(arg0_2, arg1_2)
+	local var0_2 = getProxy(PlayerProxy)
+	local var1_2 = getProxy(BagProxy)
+	local var2_2 = {}
+	local var3_2 = arg1_2
 
-	for iter0, iter1 in ipairs(arg0) do
-		local var4 = pg.equip_upgrade_data[iter1]
-		local var5 = Equipment.GetRevertRewardsStatic(var3)
+	for iter0_2, iter1_2 in ipairs(arg0_2) do
+		local var4_2 = pg.equip_upgrade_data[iter1_2]
+		local var5_2 = Equipment.GetRevertRewardsStatic(var3_2)
 
-		assert(Equipment.CanInBag(var3), "Missing equip_data_template ID: " .. (var3 or "NIL"))
+		assert(Equipment.CanInBag(var3_2), "Missing equip_data_template ID: " .. (var3_2 or "NIL"))
 
-		local var6 = Equipment.CanInBag(var3) and Equipment.getConfigData(var3).destory_gold or 0
+		local var6_2 = Equipment.CanInBag(var3_2) and Equipment.getConfigData(var3_2).destory_gold or 0
 
-		var3 = Equipment.GetEquipRootStatic(var3)
+		var3_2 = Equipment.GetEquipRootStatic(var3_2)
 
-		assert(var4 and var4.upgrade_from == var3, "Transform a non formula equipment, formula " .. (iter1 or -1) .. " equipment " .. (var3 or -1))
+		assert(var4_2 and var4_2.upgrade_from == var3_2, "Transform a non formula equipment, formula " .. (iter1_2 or -1) .. " equipment " .. (var3_2 or -1))
 
-		local var7 = var4.material_consume
+		local var7_2 = var4_2.material_consume
 
-		for iter2, iter3 in ipairs(var7) do
-			local var8 = iter3[1]
-			local var9 = iter3[2]
+		for iter2_2, iter3_2 in ipairs(var7_2) do
+			local var8_2 = iter3_2[1]
+			local var9_2 = iter3_2[2]
 
-			var2[var8] = (var2[var8] or var1:getItemCountById(var8) or 0) - var9
+			var2_2[var8_2] = (var2_2[var8_2] or var1_2:getItemCountById(var8_2) or 0) - var9_2
 
-			if var2[var8] < 0 then
-				local var10 = Item.getConfigData(var8)
+			if var2_2[var8_2] < 0 then
+				local var10_2 = Item.getConfigData(var8_2)
 
-				return false, var10 and var10.name
+				return false, var10_2 and var10_2.name
 			end
 		end
 
-		var2.gold = (var2.gold or var0:getRawData().gold or 0) - var4.coin_consume
+		var2_2.gold = (var2_2.gold or var0_2:getRawData().gold or 0) - var4_2.coin_consume
 
-		if var2.gold < 0 then
+		if var2_2.gold < 0 then
 			return false, Drop.New({
 				type = DROP_TYPE_RESOURCE,
 				id = PlayerConst.ResGold
 			}):getName()
 		end
 
-		for iter4, iter5 in pairs(var5) do
-			if iter4 ~= "gold" then
-				var2[iter4] = (var2[iter4] or 0) + iter5
+		for iter4_2, iter5_2 in pairs(var5_2) do
+			if iter4_2 ~= "gold" then
+				var2_2[iter4_2] = (var2_2[iter4_2] or 0) + iter5_2
 			end
 		end
 
-		var2.gold = (var2.gold or 0) + var6
-		var3 = var4.target_id
+		var2_2.gold = (var2_2.gold or 0) + var6_2
+		var3_2 = var4_2.target_id
 	end
 
 	return true
 end
 
-function var0.CheckTransformFormulasSucceed(arg0, arg1)
-	local var0 = getProxy(PlayerProxy)
-	local var1 = getProxy(BagProxy)
-	local var2 = {
-		gold = var0:getRawData().gold or 0
+function var0_0.CheckTransformFormulasSucceed(arg0_3, arg1_3)
+	local var0_3 = getProxy(PlayerProxy)
+	local var1_3 = getProxy(BagProxy)
+	local var2_3 = {
+		gold = var0_3:getRawData().gold or 0
 	}
-	local var3
+	local var3_3
 
-	if arg1.type == DROP_TYPE_EQUIP then
-		var3 = arg1.id
+	if arg1_3.type == DROP_TYPE_EQUIP then
+		var3_3 = arg1_3.id
 
-		if not arg1.template.shipId then
-			local var4 = getProxy(EquipmentProxy):getEquipmentById(var3)
+		if not arg1_3.template.shipId then
+			local var4_3 = getProxy(EquipmentProxy):getEquipmentById(var3_3)
 
-			if not var4 or var4.count <= 0 then
-				return false, Equipment.getConfigData(var3).name
+			if not var4_3 or var4_3.count <= 0 then
+				return false, Equipment.getConfigData(var3_3).name
 			end
 		end
-	elseif arg1.type == DROP_TYPE_ITEM then
-		if var2.gold < arg1.composeCfg.gold_num then
+	elseif arg1_3.type == DROP_TYPE_ITEM then
+		if var2_3.gold < arg1_3.composeCfg.gold_num then
 			return false, Drop.New({
 				type = DROP_TYPE_RESOURCE,
 				id = PlayerConst.ResGold
 			}):getName()
-		elseif (var1:getItemCountById(arg1.composeCfg.material_id) or 0) < arg1.composeCfg.material_num then
-			return false, Item.getConfigData(arg1.composeCfg.material_id).name
+		elseif (var1_3:getItemCountById(arg1_3.composeCfg.material_id) or 0) < arg1_3.composeCfg.material_num then
+			return false, Item.getConfigData(arg1_3.composeCfg.material_id).name
 		end
 
-		var2.gold = var2.gold - arg1.composeCfg.gold_num
-		var3 = arg1.composeCfg.equip_id
+		var2_3.gold = var2_3.gold - arg1_3.composeCfg.gold_num
+		var3_3 = arg1_3.composeCfg.equip_id
 	end
 
-	assert(var3)
+	assert(var3_3)
 
-	local var5 = var3
+	local var5_3 = var3_3
 
-	for iter0, iter1 in ipairs(arg0) do
-		local var6 = pg.equip_upgrade_data[iter1]
-		local var7 = Equipment.GetRevertRewardsStatic(var5)
+	for iter0_3, iter1_3 in ipairs(arg0_3) do
+		local var6_3 = pg.equip_upgrade_data[iter1_3]
+		local var7_3 = Equipment.GetRevertRewardsStatic(var5_3)
 
-		assert(Equipment.CanInBag(var5), "Missing equip_data_template ID: " .. (var5 or "NIL"))
+		assert(Equipment.CanInBag(var5_3), "Missing equip_data_template ID: " .. (var5_3 or "NIL"))
 
-		local var8 = Equipment.CanInBag(var5) and Equipment.getConfigData(var5).destory_gold or 0
+		local var8_3 = Equipment.CanInBag(var5_3) and Equipment.getConfigData(var5_3).destory_gold or 0
 
-		var5 = Equipment.GetEquipRootStatic(var5)
+		var5_3 = Equipment.GetEquipRootStatic(var5_3)
 
-		assert(var6 and var6.upgrade_from == var5, "Transform a non formula equipment, formula " .. (iter1 or -1) .. " equipment " .. (var5 or -1))
+		assert(var6_3 and var6_3.upgrade_from == var5_3, "Transform a non formula equipment, formula " .. (iter1_3 or -1) .. " equipment " .. (var5_3 or -1))
 
-		local var9 = var6.material_consume
+		local var9_3 = var6_3.material_consume
 
-		for iter2, iter3 in ipairs(var9) do
-			local var10 = iter3[1]
-			local var11 = iter3[2]
+		for iter2_3, iter3_3 in ipairs(var9_3) do
+			local var10_3 = iter3_3[1]
+			local var11_3 = iter3_3[2]
 
-			var2[var10] = (var2[var10] or var1:getItemCountById(var10) or 0) - var11
+			var2_3[var10_3] = (var2_3[var10_3] or var1_3:getItemCountById(var10_3) or 0) - var11_3
 
-			if var2[var10] < 0 then
-				local var12 = Item.getConfigData(var10)
+			if var2_3[var10_3] < 0 then
+				local var12_3 = Item.getConfigData(var10_3)
 
-				return false, var12 and var12.name
+				return false, var12_3 and var12_3.name
 			end
 		end
 
-		var2.gold = var2.gold - var6.coin_consume
+		var2_3.gold = var2_3.gold - var6_3.coin_consume
 
-		if var2.gold < 0 then
+		if var2_3.gold < 0 then
 			return false, Drop.New({
 				type = DROP_TYPE_RESOURCE,
 				id = PlayerConst.ResGold
 			}):getName()
 		end
 
-		for iter4, iter5 in pairs(var7) do
-			if iter4 ~= "gold" then
-				var2[iter4] = (var2[iter4] or var1:getItemCountById(iter4)) + iter5
+		for iter4_3, iter5_3 in pairs(var7_3) do
+			if iter4_3 ~= "gold" then
+				var2_3[iter4_3] = (var2_3[iter4_3] or var1_3:getItemCountById(iter4_3)) + iter5_3
 			end
 		end
 
-		var2.gold = (var2.gold or 0) + var8
-		var5 = var6.target_id
+		var2_3.gold = (var2_3.gold or 0) + var8_3
+		var5_3 = var6_3.target_id
 	end
 
 	return true
 end
 
-function var0.CheckTransformEnoughGold(arg0, arg1)
-	local var0 = getProxy(PlayerProxy)
-	local var1 = getProxy(BagProxy)
-	local var2 = var0:getRawData().gold or 0
-	local var3 = 0
-	local var4 = 0
-	local var5 = true
-	local var6
+function var0_0.CheckTransformEnoughGold(arg0_4, arg1_4)
+	local var0_4 = getProxy(PlayerProxy)
+	local var1_4 = getProxy(BagProxy)
+	local var2_4 = var0_4:getRawData().gold or 0
+	local var3_4 = 0
+	local var4_4 = 0
+	local var5_4 = true
+	local var6_4
 
-	if arg1.type == DROP_TYPE_EQUIP then
-		var6 = arg1.id
-	elseif arg1.type == DROP_TYPE_ITEM then
-		var2 = var2 - arg1.composeCfg.gold_num
-		var4 = var4 + arg1.composeCfg.gold_num
-		var5 = var5 and var2 >= 0
-		var6 = arg1.composeCfg.equip_id
+	if arg1_4.type == DROP_TYPE_EQUIP then
+		var6_4 = arg1_4.id
+	elseif arg1_4.type == DROP_TYPE_ITEM then
+		var2_4 = var2_4 - arg1_4.composeCfg.gold_num
+		var4_4 = var4_4 + arg1_4.composeCfg.gold_num
+		var5_4 = var5_4 and var2_4 >= 0
+		var6_4 = arg1_4.composeCfg.equip_id
 	end
 
-	assert(var6)
+	assert(var6_4)
 
-	local var7 = var6
+	local var7_4 = var6_4
 
-	for iter0, iter1 in ipairs(arg0) do
-		local var8 = pg.equip_upgrade_data[iter1]
-		local var9 = Equipment.GetRevertRewardsStatic(var7)
+	for iter0_4, iter1_4 in ipairs(arg0_4) do
+		local var8_4 = pg.equip_upgrade_data[iter1_4]
+		local var9_4 = Equipment.GetRevertRewardsStatic(var7_4)
 
-		assert(Equipment.CanInBag(var7), "Missing equip_data_template ID: " .. (var7 or "NIL"))
+		assert(Equipment.CanInBag(var7_4), "Missing equip_data_template ID: " .. (var7_4 or "NIL"))
 
-		local var10 = Equipment.CanInBag(var7) and Equipment.getConfigData(var7).destory_gold or 0
+		local var10_4 = Equipment.CanInBag(var7_4) and Equipment.getConfigData(var7_4).destory_gold or 0
 
-		var7 = Equipment.GetEquipRootStatic(var7)
+		var7_4 = Equipment.GetEquipRootStatic(var7_4)
 
-		assert(var8 and var8.upgrade_from == var7, "Transform a non formula equipment, formula " .. (iter1 or -1) .. " equipment " .. (var7 or -1))
+		assert(var8_4 and var8_4.upgrade_from == var7_4, "Transform a non formula equipment, formula " .. (iter1_4 or -1) .. " equipment " .. (var7_4 or -1))
 
-		var2 = var2 - var8.coin_consume
-		var3 = var3 + var8.coin_consume
-		var5 = var5 and var2 >= 0
+		var2_4 = var2_4 - var8_4.coin_consume
+		var3_4 = var3_4 + var8_4.coin_consume
+		var5_4 = var5_4 and var2_4 >= 0
 
-		for iter2, iter3 in pairs(var9) do
-			if iter2 ~= "gold" then
-				var2 = var2 + iter3
+		for iter2_4, iter3_4 in pairs(var9_4) do
+			if iter2_4 ~= "gold" then
+				var2_4 = var2_4 + iter3_4
 			end
 		end
 
-		var2 = var2 + var10
-		var7 = var8.target_id
+		var2_4 = var2_4 + var10_4
+		var7_4 = var8_4.target_id
 	end
 
-	return var5, var3, var4
+	return var5_4, var3_4, var4_4
 end
 
-local function var1(arg0, arg1)
-	local var0 = {
+local function var1_0(arg0_5, arg1_5)
+	local var0_5 = {
 		{
 			"icon_bg/slv"
 		},
@@ -230,15 +230,15 @@ local function var1(arg0, arg1)
 		}
 	}
 
-	for iter0, iter1 in ipairs(var0) do
-		local var1 = arg0:Find(iter1[1])
+	for iter0_5, iter1_5 in ipairs(var0_5) do
+		local var1_5 = arg0_5:Find(iter1_5[1])
 
-		if type ~= iter1[2] and not IsNil(var1) then
-			setActive(var1, false)
+		if type ~= iter1_5[2] and not IsNil(var1_5) then
+			setActive(var1_5, false)
 		end
 	end
 
-	arg0:Find("icon_bg/frame"):GetComponent(typeof(Image)).enabled = true
+	arg0_5:Find("icon_bg/frame"):GetComponent(typeof(Image)).enabled = true
 end
 
-return var0
+return var0_0

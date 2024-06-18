@@ -1,83 +1,83 @@
-﻿local var0 = class("ColorGroup", import(".BaseVO"))
+﻿local var0_0 = class("ColorGroup", import(".BaseVO"))
 
-var0.StateLock = 0
-var0.StateColoring = 1
-var0.StateFinish = 2
-var0.StateAchieved = 3
+var0_0.StateLock = 0
+var0_0.StateColoring = 1
+var0_0.StateFinish = 2
+var0_0.StateAchieved = 3
 
-function var0.Ctor(arg0, arg1)
-	arg0.id = arg1
-	arg0.configId = arg0.id
-	arg0.drops = {}
-	arg0.fills = {}
-	arg0.cells = {}
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.id = arg1_1
+	arg0_1.configId = arg0_1.id
+	arg0_1.drops = {}
+	arg0_1.fills = {}
+	arg0_1.cells = {}
 
-	_.each(arg0:getConfig("cells"), function(arg0)
-		arg0:setCell(arg0[1], arg0[2], arg0[3])
+	_.each(arg0_1:getConfig("cells"), function(arg0_2)
+		arg0_1:setCell(arg0_2[1], arg0_2[2], arg0_2[3])
 	end)
 
-	arg0.colors = _.map(arg0:getConfig("colors"), function(arg0)
-		return Color.New(arg0[1], arg0[2], arg0[3], arg0[4])
+	arg0_1.colors = _.map(arg0_1:getConfig("colors"), function(arg0_3)
+		return Color.New(arg0_3[1], arg0_3[2], arg0_3[3], arg0_3[4])
 	end)
 end
 
-function var0.bindConfigTable(arg0)
+function var0_0.bindConfigTable(arg0_4)
 	return pg.activity_coloring_template
 end
 
-function var0.getState(arg0)
-	return arg0.state
+function var0_0.getState(arg0_5)
+	return arg0_5.state
 end
 
-function var0.setState(arg0, arg1)
-	arg0.state = arg1
+function var0_0.setState(arg0_6, arg1_6)
+	arg0_6.state = arg1_6
 end
 
-function var0.getHasAward(arg0)
-	return arg0.hasAward
+function var0_0.getHasAward(arg0_7)
+	return arg0_7.hasAward
 end
 
-function var0.setHasAward(arg0, arg1)
-	arg0.hasAward = arg1
+function var0_0.setHasAward(arg0_8, arg1_8)
+	arg0_8.hasAward = arg1_8
 end
 
-function var0.getDrops(arg0)
-	return arg0.drops
+function var0_0.getDrops(arg0_9)
+	return arg0_9.drops
 end
 
-function var0.setDrops(arg0, arg1)
-	arg0.drops = arg1
+function var0_0.setDrops(arg0_10, arg1_10)
+	arg0_10.drops = arg1_10
 end
 
-function var0.getFill(arg0, arg1, arg2)
-	return arg0.fills[arg1 .. "_" .. arg2]
+function var0_0.getFill(arg0_11, arg1_11, arg2_11)
+	return arg0_11.fills[arg1_11 .. "_" .. arg2_11]
 end
 
-function var0.setFill(arg0, arg1, arg2, arg3)
-	local var0 = arg1 .. "_" .. arg2
+function var0_0.setFill(arg0_12, arg1_12, arg2_12, arg3_12)
+	local var0_12 = arg1_12 .. "_" .. arg2_12
 
-	if arg3 == 0 then
-		arg0.fills[var0] = nil
+	if arg3_12 == 0 then
+		arg0_12.fills[var0_12] = nil
 	else
-		arg0.fills[var0] = ColorCell.New(arg1, arg2, arg3)
+		arg0_12.fills[var0_12] = ColorCell.New(arg1_12, arg2_12, arg3_12)
 	end
 end
 
-function var0.hasFill(arg0, arg1, arg2)
-	return arg0:getFill(arg1, arg2) ~= nil
+function var0_0.hasFill(arg0_13, arg1_13, arg2_13)
+	return arg0_13:getFill(arg1_13, arg2_13) ~= nil
 end
 
-function var0.clearFill(arg0)
-	arg0.fills = {}
+function var0_0.clearFill(arg0_14)
+	arg0_14.fills = {}
 end
 
-function var0.isAllFill(arg0, arg1)
-	if arg0:canBeCustomised() then
+function var0_0.isAllFill(arg0_15, arg1_15)
+	if arg0_15:canBeCustomised() then
 		return false
 	end
 
-	for iter0, iter1 in pairs(arg0.cells) do
-		if not arg0.fills[iter0] and (not arg1 or iter1.type == arg1) then
+	for iter0_15, iter1_15 in pairs(arg0_15.cells) do
+		if not arg0_15.fills[iter0_15] and (not arg1_15 or iter1_15.type == arg1_15) then
 			return false
 		end
 	end
@@ -85,56 +85,56 @@ function var0.isAllFill(arg0, arg1)
 	return true
 end
 
-function var0.getCell(arg0, arg1, arg2)
-	return arg0.cells[arg1 .. "_" .. arg2]
+function var0_0.getCell(arg0_16, arg1_16, arg2_16)
+	return arg0_16.cells[arg1_16 .. "_" .. arg2_16]
 end
 
-function var0.setCell(arg0, arg1, arg2, arg3)
-	arg0.cells[arg1 .. "_" .. arg2] = ColorCell.New(arg1, arg2, arg3)
+function var0_0.setCell(arg0_17, arg1_17, arg2_17, arg3_17)
+	arg0_17.cells[arg1_17 .. "_" .. arg2_17] = ColorCell.New(arg1_17, arg2_17, arg3_17)
 end
 
-function var0.hasCell(arg0, arg1, arg2)
-	return arg0:getCell(arg1, arg2) ~= nil
+function var0_0.hasCell(arg0_18, arg1_18, arg2_18)
+	return arg0_18:getCell(arg1_18, arg2_18) ~= nil
 end
 
-function var0.canBeCustomised(arg0)
-	return arg0:getConfig("blank") == 1
+function var0_0.canBeCustomised(arg0_19)
+	return arg0_19:getConfig("blank") == 1
 end
 
-function var0.GetAABB(arg0)
-	local var0 = 1000
-	local var1 = 1000
-	local var2 = 0
-	local var3 = 0
+function var0_0.GetAABB(arg0_20)
+	local var0_20 = 1000
+	local var1_20 = 1000
+	local var2_20 = 0
+	local var3_20 = 0
 
-	assert(next(arg0.cells), "Get AABB from empty List")
+	assert(next(arg0_20.cells), "Get AABB from empty List")
 
-	for iter0, iter1 in pairs(arg0.cells) do
-		var0 = math.min(var0, iter1.column)
-		var1 = math.min(var1, iter1.row)
-		var2 = math.max(var2, iter1.column)
-		var3 = math.max(var3, iter1.row)
+	for iter0_20, iter1_20 in pairs(arg0_20.cells) do
+		var0_20 = math.min(var0_20, iter1_20.column)
+		var1_20 = math.min(var1_20, iter1_20.row)
+		var2_20 = math.max(var2_20, iter1_20.column)
+		var3_20 = math.max(var3_20, iter1_20.row)
 	end
 
-	return Vector2(var0, var1), Vector2(var2, var3)
+	return Vector2(var0_20, var1_20), Vector2(var2_20, var3_20)
 end
 
-function var0.HasItem2Fill(arg0, arg1)
-	local var0 = _.map(arg0:getConfig("color_id_list"), function(arg0)
-		return arg1[arg0] or 0
+function var0_0.HasItem2Fill(arg0_21, arg1_21)
+	local var0_21 = _.map(arg0_21:getConfig("color_id_list"), function(arg0_22)
+		return arg1_21[arg0_22] or 0
 	end)
-	local var1, var2 = arg0:GetAABB()
-	local var3 = var2.x - var1.x
-	local var4 = var2.y - var1.y
+	local var1_21, var2_21 = arg0_21:GetAABB()
+	local var3_21 = var2_21.x - var1_21.x
+	local var4_21 = var2_21.y - var1_21.y
 
-	for iter0 = 0, var3 do
-		for iter1 = 0, var4 do
-			local var5 = iter0 + var1.x
-			local var6 = iter1 + var1.y
-			local var7 = arg0:getCell(var5, var6)
+	for iter0_21 = 0, var3_21 do
+		for iter1_21 = 0, var4_21 do
+			local var5_21 = iter0_21 + var1_21.x
+			local var6_21 = iter1_21 + var1_21.y
+			local var7_21 = arg0_21:getCell(var5_21, var6_21)
 
-			if var7 and not arg0:getFill(var5, var6) then
-				return (var0[var7.type] or 0) > 0
+			if var7_21 and not arg0_21:getFill(var5_21, var6_21) then
+				return (var0_21[var7_21.type] or 0) > 0
 			end
 		end
 	end
@@ -142,35 +142,35 @@ function var0.HasItem2Fill(arg0, arg1)
 	return false
 end
 
-function var0.HasEnoughItem2FillAll(arg0, arg1)
-	local var0 = _.map(arg0:getConfig("color_id_list"), function(arg0)
-		return arg1[arg0] or 0
+function var0_0.HasEnoughItem2FillAll(arg0_23, arg1_23)
+	local var0_23 = _.map(arg0_23:getConfig("color_id_list"), function(arg0_24)
+		return arg1_23[arg0_24] or 0
 	end)
-	local var1 = {}
+	local var1_23 = {}
 
-	_.each(arg0:getConfig("cells"), function(arg0)
-		local var0 = arg0[1]
-		local var1 = arg0[2]
-		local var2 = arg0[3]
+	_.each(arg0_23:getConfig("cells"), function(arg0_25)
+		local var0_25 = arg0_25[1]
+		local var1_25 = arg0_25[2]
+		local var2_25 = arg0_25[3]
 
-		if not arg0:getFill(var0, var1) then
-			local var3 = var1[var2] or 0
+		if not arg0_23:getFill(var0_25, var1_25) then
+			local var3_25 = var1_23[var2_25] or 0
 
-			var1[var2] = var3 + 1
+			var1_23[var2_25] = var3_25 + 1
 		end
 	end)
 
-	local var2 = true
+	local var2_23 = true
 
-	for iter0, iter1 in pairs(var1) do
-		if iter1 > (var0[iter0] or 0) then
-			var2 = false
+	for iter0_23, iter1_23 in pairs(var1_23) do
+		if iter1_23 > (var0_23[iter0_23] or 0) then
+			var2_23 = false
 
 			break
 		end
 	end
 
-	return var2
+	return var2_23
 end
 
-return var0
+return var0_0

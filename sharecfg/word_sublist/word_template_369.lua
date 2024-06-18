@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_369 = {}
+var0_0.word_template_369 = {}
 
-local var1 = var0.word_template_369
+local var1_0 = var0_0.word_template_369
 
 function temp()
-	var1.吧 = {
+	var1_0.吧 = {
 		九 = {
 			this = true
 		},
@@ -20,7 +20,7 @@ end
 temp()
 
 function temp()
-	var1.⑤ = {
+	var1_0.⑤ = {
 		⑨ = {
 			碾 = {
 				this = true
@@ -42,7 +42,7 @@ end
 temp()
 
 function temp()
-	var1.拎 = {
+	var1_0.拎 = {
 		着 = {
 			垃 = {
 				圾 = {
@@ -72,7 +72,7 @@ end
 temp()
 
 function temp()
-	var1.燭 = {
+	var1_0.燭 = {
 		光 = {
 			晚 = {
 				會 = {
@@ -86,7 +86,7 @@ end
 temp()
 
 function temp()
-	var1.烛 = {
+	var1_0.烛 = {
 		光 = {
 			晚 = {
 				会 = {
@@ -196,7 +196,7 @@ end
 temp()
 
 function temp()
-	var1.遍 = {
+	var1_0.遍 = {
 		地 = {
 			開 = {
 				蘤 = {
@@ -254,7 +254,7 @@ end
 temp()
 
 function temp()
-	var1.囌 = {
+	var1_0.囌 = {
 		聯 = {
 			解 = {
 				體 = {

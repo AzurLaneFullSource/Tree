@@ -1,151 +1,151 @@
 ﻿EventConst = require("view/event/EventConst")
 
-local var0 = class("EventListItem")
+local var0_0 = class("EventListItem")
 
-function var0.Ctor(arg0, arg1, arg2)
-	arg0.go = arg1
-	arg0.tr = arg1.transform
-	arg0.dispatch = arg2
-	arg0.bgNormal = arg0:findTF("bgNormal$").gameObject
-	arg0.bgEmergence = arg0:findTF("bgEmergence$").gameObject
-	arg0.timeLimit = arg0:findTF("timeLimit$").gameObject
-	arg0.labelLimitTime = arg0:findTF("timeLimit$/labelLimitTime$"):GetComponent("Text")
-	arg0.iconType = arg0:findTF("iconType$"):GetComponent("Image")
-	arg0.iconState = arg0:findTF("iconState$")
-	arg0.activityLimitBg = arg0:findTF("bgAct")
-	arg0.shadow = arg0:findTF("Image"):GetComponent(typeof(Image))
-	arg0.timerBg = arg0:findTF("labelTime$"):GetComponent(typeof(Image))
-	arg0.label = arg0:findTF("labelName$/Image"):GetComponent(typeof(Text))
-	arg0.labelLv = arg0:findTF("level/labelLv$"):GetComponent("Text")
-	arg0.iconTip = arg0:findTF("iconTip$").gameObject
-	arg0.labelName = arg0:findTF("labelName$"):GetComponent("Text")
-	arg0.labelTime = arg0:findTF("labelTime$/Text"):GetComponent("Text")
-	arg0.awardsTr = arg0:findTF("awards$")
-	arg0.specialAward = arg0:findTF("specialAward/item")
-	arg0.awardItem = arg0:findTF("awards$/item").gameObject
-	arg0.mark = arg0:findTF("mark")
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.go = arg1_1
+	arg0_1.tr = arg1_1.transform
+	arg0_1.dispatch = arg2_1
+	arg0_1.bgNormal = arg0_1:findTF("bgNormal$").gameObject
+	arg0_1.bgEmergence = arg0_1:findTF("bgEmergence$").gameObject
+	arg0_1.timeLimit = arg0_1:findTF("timeLimit$").gameObject
+	arg0_1.labelLimitTime = arg0_1:findTF("timeLimit$/labelLimitTime$"):GetComponent("Text")
+	arg0_1.iconType = arg0_1:findTF("iconType$"):GetComponent("Image")
+	arg0_1.iconState = arg0_1:findTF("iconState$")
+	arg0_1.activityLimitBg = arg0_1:findTF("bgAct")
+	arg0_1.shadow = arg0_1:findTF("Image"):GetComponent(typeof(Image))
+	arg0_1.timerBg = arg0_1:findTF("labelTime$"):GetComponent(typeof(Image))
+	arg0_1.label = arg0_1:findTF("labelName$/Image"):GetComponent(typeof(Text))
+	arg0_1.labelLv = arg0_1:findTF("level/labelLv$"):GetComponent("Text")
+	arg0_1.iconTip = arg0_1:findTF("iconTip$").gameObject
+	arg0_1.labelName = arg0_1:findTF("labelName$"):GetComponent("Text")
+	arg0_1.labelTime = arg0_1:findTF("labelTime$/Text"):GetComponent("Text")
+	arg0_1.awardsTr = arg0_1:findTF("awards$")
+	arg0_1.specialAward = arg0_1:findTF("specialAward/item")
+	arg0_1.awardItem = arg0_1:findTF("awards$/item").gameObject
+	arg0_1.mark = arg0_1:findTF("mark")
 
-	SetActive(arg0.mark, false)
+	SetActive(arg0_1.mark, false)
 
-	arg0.ptBonus = EventPtBonus.New(arg0:findTF("bonusPt"))
+	arg0_1.ptBonus = EventPtBonus.New(arg0_1:findTF("bonusPt"))
 end
 
-function var0.Update(arg0, arg1, arg2)
-	arg0.index = arg1
-	arg0.event = arg2
+function var0_0.Update(arg0_2, arg1_2, arg2_2)
+	arg0_2.index = arg1_2
+	arg0_2.event = arg2_2
 
-	arg0:Flush()
+	arg0_2:Flush()
 end
 
-function var0.UpdateTime(arg0)
-	if not arg0.event then
+function var0_0.UpdateTime(arg0_3)
+	if not arg0_3.event then
 		return
 	end
 
-	local var0 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var0_3 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	if arg0.event.state == EventInfo.StateNone then
-		arg0.labelTime.gameObject:SetActive(true)
+	if arg0_3.event.state == EventInfo.StateNone then
+		arg0_3.labelTime.gameObject:SetActive(true)
 
-		arg0.labelTime.text = pg.TimeMgr.GetInstance():DescCDTime(arg0.event.template.collect_time)
-	elseif arg0.event.state == EventInfo.StateActive then
-		arg0.labelTime.gameObject:SetActive(true)
+		arg0_3.labelTime.text = pg.TimeMgr.GetInstance():DescCDTime(arg0_3.event.template.collect_time)
+	elseif arg0_3.event.state == EventInfo.StateActive then
+		arg0_3.labelTime.gameObject:SetActive(true)
 
-		if var0 <= arg0.event.finishTime then
-			arg0.labelTime.text = pg.TimeMgr.GetInstance():DescCDTime(arg0.event.finishTime - var0)
+		if var0_3 <= arg0_3.event.finishTime then
+			arg0_3.labelTime.text = pg.TimeMgr.GetInstance():DescCDTime(arg0_3.event.finishTime - var0_3)
 		else
-			arg0.labelTime.text = "00:00:00"
+			arg0_3.labelTime.text = "00:00:00"
 		end
-	elseif arg0.event.state == EventInfo.StateFinish then
-		arg0.labelTime.gameObject:SetActive(false)
+	elseif arg0_3.event.state == EventInfo.StateFinish then
+		arg0_3.labelTime.gameObject:SetActive(false)
 	end
 
-	local var1 = arg0.event:GetCountDownTime()
+	local var1_3 = arg0_3.event:GetCountDownTime()
 
-	if var1 and var1 >= 0 then
-		arg0.timeLimit:SetActive(true)
+	if var1_3 and var1_3 >= 0 then
+		arg0_3.timeLimit:SetActive(true)
 
-		arg0.labelLimitTime.text = pg.TimeMgr.GetInstance():DescCDTime(var1)
+		arg0_3.labelLimitTime.text = pg.TimeMgr.GetInstance():DescCDTime(var1_3)
 	else
-		arg0.timeLimit:SetActive(false)
+		arg0_3.timeLimit:SetActive(false)
 	end
 
-	SetActive(arg0.mark, arg0.event.state == EventInfo.StateFinish)
+	SetActive(arg0_3.mark, arg0_3.event.state == EventInfo.StateFinish)
 end
 
-function var0.Flush(arg0)
-	arg0.bgNormal:SetActive(arg0.event.template.type ~= 2)
-	arg0.bgEmergence:SetActive(arg0.event.template.type == 2)
+function var0_0.Flush(arg0_4)
+	arg0_4.bgNormal:SetActive(arg0_4.event.template.type ~= 2)
+	arg0_4.bgEmergence:SetActive(arg0_4.event.template.type == 2)
 
-	if arg0.event.state == EventInfo.StateFinish then
-		arg0.iconTip:SetActive(true)
+	if arg0_4.event.state == EventInfo.StateFinish then
+		arg0_4.iconTip:SetActive(true)
 	else
-		arg0.iconTip:SetActive(false)
+		arg0_4.iconTip:SetActive(false)
 	end
 
-	LoadImageSpriteAsync("eventtype/" .. arg0.event.template.icon, arg0.iconType, true)
+	LoadImageSpriteAsync("eventtype/" .. arg0_4.event.template.icon, arg0_4.iconType, true)
 
-	local var0 = arg0.event:IsActivityType()
+	local var0_4 = arg0_4.event:IsActivityType()
 
-	arg0.iconType.transform.localScale = var0 and Vector3.one or Vector3(1.5, 1.5, 1.5)
+	arg0_4.iconType.transform.localScale = var0_4 and Vector3.one or Vector3(1.5, 1.5, 1.5)
 
-	setActive(arg0.activityLimitBg, var0)
-	setActive(arg0.shadow.gameObject, not var0)
+	setActive(arg0_4.activityLimitBg, var0_4)
+	setActive(arg0_4.shadow.gameObject, not var0_4)
 
-	arg0.timerBg.color = var0 and Color.New(0, 0, 0, 0) or Color.New(1, 1, 1, 1)
-	arg0.label.color = var0 and Color.New(0.941176470588235, 0.803921568627451, 1, 1) or Color.New(0.643137254901961, 0.811764705882353, 0.972549019607843, 1)
+	arg0_4.timerBg.color = var0_4 and Color.New(0, 0, 0, 0) or Color.New(1, 1, 1, 1)
+	arg0_4.label.color = var0_4 and Color.New(0.941176470588235, 0.803921568627451, 1, 1) or Color.New(0.643137254901961, 0.811764705882353, 0.972549019607843, 1)
 
-	eachChild(arg0.iconState, function(arg0)
-		setActive(arg0, arg0.gameObject.name == tostring(arg0.event.state))
+	eachChild(arg0_4.iconState, function(arg0_5)
+		setActive(arg0_5, arg0_5.gameObject.name == tostring(arg0_4.event.state))
 	end)
 
-	arg0.labelLv.text = "" .. arg0.event.template.lv
-	arg0.labelName.text = arg0.event.template.title
+	arg0_4.labelLv.text = "" .. arg0_4.event.template.lv
+	arg0_4.labelName.text = arg0_4.event.template.title
 
-	local var1 = arg0.event.template.drop_display
+	local var1_4 = arg0_4.event.template.drop_display
 
-	for iter0 = arg0.awardsTr.childCount, #var1 - 1 do
-		Object.Instantiate(arg0.awardItem).transform:SetParent(arg0.awardsTr, false)
+	for iter0_4 = arg0_4.awardsTr.childCount, #var1_4 - 1 do
+		Object.Instantiate(arg0_4.awardItem).transform:SetParent(arg0_4.awardsTr, false)
 	end
 
-	local var2 = arg0.awardsTr.childCount
+	local var2_4 = arg0_4.awardsTr.childCount
 
-	for iter1 = 0, var2 - 1 do
-		local var3 = arg0.awardsTr:GetChild(iter1)
+	for iter1_4 = 0, var2_4 - 1 do
+		local var3_4 = arg0_4.awardsTr:GetChild(iter1_4)
 
-		if iter1 < #var1 then
-			var3.gameObject:SetActive(true)
+		if iter1_4 < #var1_4 then
+			var3_4.gameObject:SetActive(true)
 
-			local var4 = var1[iter1 + 1]
+			local var4_4 = var1_4[iter1_4 + 1]
 
-			updateDrop(var3, {
-				type = var4.type,
-				id = var4.id,
-				count = var4.nums
+			updateDrop(var3_4, {
+				type = var4_4.type,
+				id = var4_4.id,
+				count = var4_4.nums
 			})
 		else
-			var3.gameObject:SetActive(false)
+			var3_4.gameObject:SetActive(false)
 		end
 	end
 
-	local var5 = table.getCount(arg0.event.template.special_drop) ~= 0
+	local var5_4 = table.getCount(arg0_4.event.template.special_drop) ~= 0
 
-	SetActive(arg0.specialAward, var5)
+	SetActive(arg0_4.specialAward, var5_4)
 
-	if var5 then
-		updateDrop(arg0.specialAward, {
-			type = arg0.event.template.special_drop.type,
-			id = arg0.event.template.special_drop.id
+	if var5_4 then
+		updateDrop(arg0_4.specialAward, {
+			type = arg0_4.event.template.special_drop.type,
+			id = arg0_4.event.template.special_drop.id
 		})
 	end
 end
 
-function var0.Clear(arg0)
+function var0_0.Clear(arg0_6)
 	return
 end
 
-function var0.findTF(arg0, arg1)
-	return findTF(arg0.tr, arg1)
+function var0_0.findTF(arg0_7, arg1_7)
+	return findTF(arg0_7.tr, arg1_7)
 end
 
-return var0
+return var0_0

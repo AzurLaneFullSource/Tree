@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_315 = {}
+var0_0.word_template_315 = {}
 
-local var1 = var0.word_template_315
+local var1_0 = var0_0.word_template_315
 
 function temp()
-	var1.岩 = {
+	var1_0.岩 = {
 		崎 = {
 			杏 = {
 				里 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.盐 = {
+	var1_0.盐 = {
 		奶 = {
 			浴 = {
 				this = true
@@ -148,7 +148,7 @@ end
 temp()
 
 function temp()
-	var1.阎 = {
+	var1_0.阎 = {
 		王 = {
 			this = true
 		}
@@ -158,7 +158,7 @@ end
 temp()
 
 function temp()
-	var1.颜 = {
+	var1_0.颜 = {
 		骑 = {
 			this = true
 		},
@@ -176,7 +176,7 @@ end
 temp()
 
 function temp()
-	var1.閻 = {
+	var1_0.閻 = {
 		明 = {
 			複 = {
 				this = true
@@ -191,7 +191,7 @@ end
 temp()
 
 function temp()
-	var1.顏 = {
+	var1_0.顏 = {
 		騎 = {
 			this = true
 		},
@@ -209,7 +209,7 @@ end
 temp()
 
 function temp()
-	var1.嚴 = {
+	var1_0.嚴 = {
 		家 = {
 			其 = {
 				this = true

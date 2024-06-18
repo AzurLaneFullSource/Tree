@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_203 = {}
+var0_0.word_template_203 = {}
 
-local var1 = var0.word_template_203
+local var1_0 = var0_0.word_template_203
 
 function temp()
-	var1.媒 = {
+	var1_0.媒 = {
 		体 = {
 			是 = {
 				下 = {
@@ -25,7 +25,7 @@ end
 temp()
 
 function temp()
-	var1.每 = {
+	var1_0.每 = {
 		个 = {
 			恐 = {
 				怖 = {
@@ -165,7 +165,7 @@ end
 temp()
 
 function temp()
-	var1.妹 = {
+	var1_0.妹 = {
 		开 = {
 			苞 = {
 				this = true
@@ -310,7 +310,7 @@ end
 temp()
 
 function temp()
-	var1.寐 = {
+	var1_0.寐 = {
 		春 = {
 			卷 = {
 				this = true
@@ -322,7 +322,7 @@ end
 temp()
 
 function temp()
-	var1.媚 = {
+	var1_0.媚 = {
 		姐 = {
 			this = true
 		},
@@ -353,7 +353,7 @@ end
 temp()
 
 function temp()
-	var1.魅 = {
+	var1_0.魅 = {
 		惑 = {
 			巨 = {
 				乳 = {
@@ -367,7 +367,7 @@ end
 temp()
 
 function temp()
-	var1.门 = {
+	var1_0.门 = {
 		朗 = {
 			塔 = {
 				庆 = {

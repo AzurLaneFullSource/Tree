@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_188 = {}
+var0_0.word_template_188 = {}
 
-local var1 = var0.word_template_188
+local var1_0 = var0_0.word_template_188
 
 function temp()
-	var1.列 = {
+	var1_0.列 = {
 		宁 = {
 			this = true
 		},
@@ -20,7 +20,7 @@ end
 temp()
 
 function temp()
-	var1.猎 = {
+	var1_0.猎 = {
 		q = {
 			i = {
 				a = {
@@ -143,7 +143,7 @@ end
 temp()
 
 function temp()
-	var1.獵 = {
+	var1_0.獵 = {
 		q = {
 			i = {
 				a = {
@@ -191,7 +191,7 @@ end
 temp()
 
 function temp()
-	var1.邻 = {
+	var1_0.邻 = {
 		家 = {
 			有 = {
 				女 = {
@@ -218,7 +218,7 @@ end
 temp()
 
 function temp()
-	var1.林 = {
+	var1_0.林 = {
 		保 = {
 			华 = {
 				this = true
@@ -350,7 +350,7 @@ end
 temp()
 
 function temp()
-	var1.临 = {
+	var1_0.临 = {
 		听 = {
 			王 = {
 				this = true
@@ -382,7 +382,7 @@ end
 temp()
 
 function temp()
-	var1.淋 = {
+	var1_0.淋 = {
 		病 = {
 			this = true
 		}

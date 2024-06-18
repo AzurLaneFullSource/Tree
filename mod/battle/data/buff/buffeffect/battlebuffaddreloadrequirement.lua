@@ -1,102 +1,102 @@
 ﻿ys = ys or {}
 
-local var0 = ys
-local var1 = var0.Battle.BattleConst
-local var2 = var0.Battle.BattleAttr
-local var3 = class("BattleBuffAddReloadRequirement", var0.Battle.BattleBuffEffect)
+local var0_0 = ys
+local var1_0 = var0_0.Battle.BattleConst
+local var2_0 = var0_0.Battle.BattleAttr
+local var3_0 = class("BattleBuffAddReloadRequirement", var0_0.Battle.BattleBuffEffect)
 
-var0.Battle.BattleBuffAddReloadRequirement = var3
-var3.__name = "BattleBuffAddReloadRequirement"
+var0_0.Battle.BattleBuffAddReloadRequirement = var3_0
+var3_0.__name = "BattleBuffAddReloadRequirement"
 
-function var3.Ctor(arg0, arg1)
-	var3.super.Ctor(arg0, arg1)
+function var3_0.Ctor(arg0_1, arg1_1)
+	var3_0.super.Ctor(arg0_1, arg1_1)
 end
 
-function var3.SetArgs(arg0, arg1, arg2)
-	arg0._weaponIndex = arg0._tempData.arg_list.index
-	arg0._weaponType = arg0._tempData.arg_list.type
-	arg0._value = arg0._tempData.arg_list.number or 0
-	arg0._convertAttr = arg0._tempData.arg_list.convert_attr
-	arg0._convertValue = arg0._tempData.arg_list.convert_value
+function var3_0.SetArgs(arg0_2, arg1_2, arg2_2)
+	arg0_2._weaponIndex = arg0_2._tempData.arg_list.index
+	arg0_2._weaponType = arg0_2._tempData.arg_list.type
+	arg0_2._value = arg0_2._tempData.arg_list.number or 0
+	arg0_2._convertAttr = arg0_2._tempData.arg_list.convert_attr
+	arg0_2._convertValue = arg0_2._tempData.arg_list.convert_value
 end
 
-function var3.onAttach(arg0, arg1, arg2)
-	local var0 = {}
+function var3_0.onAttach(arg0_3, arg1_3, arg2_3)
+	local var0_3 = {}
 
-	if arg0._weaponType then
-		local var1
+	if arg0_3._weaponType then
+		local var1_3
 
-		if arg0._weaponType == var1.EquipmentType.POINT_HIT_AND_LOCK then
-			var1 = arg1:GetChargeList()
-		elseif arg0._weaponType == var1.EquipmentType.MANUAL_TORPEDO then
-			var1 = arg1:GetTorpedoList()
-		elseif arg0._weaponType == var1.EquipmentType.INTERCEPT_AIRCRAFT or arg0._weaponType == var1.EquipmentType.STRIKE_AIRCRAFT then
-			var1 = arg1:GetHiveList()
-		elseif arg0._weaponType == var1.EquipmentType.AIR_ASSIST then
-			var1 = arg1:GetAirAssistList()
+		if arg0_3._weaponType == var1_0.EquipmentType.POINT_HIT_AND_LOCK then
+			var1_3 = arg1_3:GetChargeList()
+		elseif arg0_3._weaponType == var1_0.EquipmentType.MANUAL_TORPEDO then
+			var1_3 = arg1_3:GetTorpedoList()
+		elseif arg0_3._weaponType == var1_0.EquipmentType.INTERCEPT_AIRCRAFT or arg0_3._weaponType == var1_0.EquipmentType.STRIKE_AIRCRAFT then
+			var1_3 = arg1_3:GetHiveList()
+		elseif arg0_3._weaponType == var1_0.EquipmentType.AIR_ASSIST then
+			var1_3 = arg1_3:GetAirAssistList()
 		else
-			var1 = arg1:GetAutoWeapons()
+			var1_3 = arg1_3:GetAutoWeapons()
 		end
 
-		if var1 then
-			for iter0, iter1 in ipairs(var1) do
-				var0[#var0 + 1] = iter1
+		if var1_3 then
+			for iter0_3, iter1_3 in ipairs(var1_3) do
+				var0_3[#var0_3 + 1] = iter1_3
 			end
 		end
-	elseif arg0._weaponIndex then
-		local var2 = arg1:GetTotalWeapon()
+	elseif arg0_3._weaponIndex then
+		local var2_3 = arg1_3:GetTotalWeapon()
 
-		for iter2, iter3 in ipairs(var2) do
-			if iter3:GetEquipmentIndex() == arg0._weaponIndex then
-				var0[#var0 + 1] = iter3
+		for iter2_3, iter3_3 in ipairs(var2_3) do
+			if iter3_3:GetEquipmentIndex() == arg0_3._weaponIndex then
+				var0_3[#var0_3 + 1] = iter3_3
 			end
 		end
 	else
 		assert(false, "BattleBuffAddReloadRequirement：缺少指定类型或索引")
 	end
 
-	for iter4, iter5 in ipairs(var0) do
-		iter5:AppendReloadFactor(arg2, arg0:calcFactor(arg2:GetCaster()))
+	for iter4_3, iter5_3 in ipairs(var0_3) do
+		iter5_3:AppendReloadFactor(arg2_3, arg0_3:calcFactor(arg2_3:GetCaster()))
 
-		local var3 = iter5:GetReloadFactorList()
-		local var4 = 1
+		local var3_3 = iter5_3:GetReloadFactorList()
+		local var4_3 = 1
 
-		for iter6, iter7 in pairs(var3) do
-			var4 = var4 + iter7
+		for iter6_3, iter7_3 in pairs(var3_3) do
+			var4_3 = var4_3 + iter7_3
 		end
 
-		iter5:FlushReloadMax(var4)
+		iter5_3:FlushReloadMax(var4_3)
 	end
 
-	arg0._targetWeaponList = var0
+	arg0_3._targetWeaponList = var0_3
 end
 
-function var3.onRemove(arg0, arg1, arg2)
-	for iter0, iter1 in ipairs(arg0._targetWeaponList) do
-		iter1:RemoveReloadFactor(arg2)
+function var3_0.onRemove(arg0_4, arg1_4, arg2_4)
+	for iter0_4, iter1_4 in ipairs(arg0_4._targetWeaponList) do
+		iter1_4:RemoveReloadFactor(arg2_4)
 
-		local var0 = iter1:GetReloadFactorList()
-		local var1 = 1
+		local var0_4 = iter1_4:GetReloadFactorList()
+		local var1_4 = 1
 
-		for iter2, iter3 in pairs(var0) do
-			var1 = var1 + iter3
+		for iter2_4, iter3_4 in pairs(var0_4) do
+			var1_4 = var1_4 + iter3_4
 		end
 
-		iter1:FlushReloadMax(var1)
+		iter1_4:FlushReloadMax(var1_4)
 	end
 end
 
-function var3.calcFactor(arg0, arg1)
-	local var0 = arg0._value
-	local var1 = 0
+function var3_0.calcFactor(arg0_5, arg1_5)
+	local var0_5 = arg0_5._value
+	local var1_5 = 0
 
-	if arg0._convertAttr == nil then
+	if arg0_5._convertAttr == nil then
 		-- block empty
-	elseif arg0._convertAttr == "HPRate" or arg0._convertAttr == "DMGRate" then
-		var1 = var2.GetCurrent(arg1, arg0._convertAttr) * arg0._convertValue
+	elseif arg0_5._convertAttr == "HPRate" or arg0_5._convertAttr == "DMGRate" then
+		var1_5 = var2_0.GetCurrent(arg1_5, arg0_5._convertAttr) * arg0_5._convertValue
 	else
-		var1 = var2.GetBase(arg1, arg0._convertAttr) * arg0._convertValue
+		var1_5 = var2_0.GetBase(arg1_5, arg0_5._convertAttr) * arg0_5._convertValue
 	end
 
-	return var0 + var1
+	return var0_5 + var1_5
 end

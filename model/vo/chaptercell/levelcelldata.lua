@@ -1,15 +1,15 @@
-﻿local var0 = class("LevelCellData", import("model.vo.BaseVO"))
+﻿local var0_0 = class("LevelCellData", import("model.vo.BaseVO"))
 
-function var0.GetLine(arg0)
+function var0_0.GetLine(arg0_1)
 	return {
-		row = arg0.row,
-		column = arg0.column
+		row = arg0_1.row,
+		column = arg0_1.column
 	}
 end
 
-function var0.SetLine(arg0, arg1)
-	arg0.row = arg1.row
-	arg0.column = arg1.column
+function var0_0.SetLine(arg0_2, arg1_2)
+	arg0_2.row = arg1_2.row
+	arg0_2.column = arg1_2.column
 end
 
-return var0
+return var0_0

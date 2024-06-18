@@ -1,402 +1,402 @@
-﻿local var0 = class("OtherWorldTaskPage")
-local var1 = 3
-local var2 = 1
-local var3 = "other_world_task_type_daily"
-local var4 = "other_world_task_type_main"
-local var5 = "other_world_task_type_repeat"
-local var6 = "other_world_task_get_all"
-local var7 = "other_world_task_go"
-local var8 = "other_world_task_got"
-local var9 = "other_world_task_get"
-local var10 = "other_world_task_tag_main"
-local var11 = "other_world_task_tag_daily"
-local var12 = "other_world_task_tag_all"
+﻿local var0_0 = class("OtherWorldTaskPage")
+local var1_0 = 3
+local var2_0 = 1
+local var3_0 = "other_world_task_type_daily"
+local var4_0 = "other_world_task_type_main"
+local var5_0 = "other_world_task_type_repeat"
+local var6_0 = "other_world_task_get_all"
+local var7_0 = "other_world_task_go"
+local var8_0 = "other_world_task_got"
+local var9_0 = "other_world_task_get"
+local var10_0 = "other_world_task_tag_main"
+local var11_0 = "other_world_task_tag_daily"
+local var12_0 = "other_world_task_tag_all"
 
-function var0.Ctor(arg0, arg1, arg2, arg3, arg4)
-	arg0.taskPage = arg1
-	arg0.contextData = arg2
-	arg0.taskItemTpl = findTF(arg3, "taskItemTpl")
-	arg0.iconTpl = findTF(arg3, "IconTpl")
-	arg0._event = arg4
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
+	arg0_1.taskPage = arg1_1
+	arg0_1.contextData = arg2_1
+	arg0_1.taskItemTpl = findTF(arg3_1, "taskItemTpl")
+	arg0_1.iconTpl = findTF(arg3_1, "IconTpl")
+	arg0_1._event = arg4_1
 
-	setText(findTF(arg0.taskItemTpl, "btnGo/text"), i18n(var7))
-	setText(findTF(arg0.taskItemTpl, "btnGot/text"), i18n(var8))
-	setText(findTF(arg0.taskItemTpl, "btnGet/text"), i18n(var9))
-	setText(findTF(arg0.taskPage, "leftBtns/btnAll/text"), i18n(var12))
-	setText(findTF(arg0.taskPage, "leftBtns/btnMain/text"), i18n(var10))
-	setText(findTF(arg0.taskPage, "leftBtns/btnDaily/text"), i18n(var11))
-	setText(findTF(arg0.taskPage, "leftBtns/btnAll/text_selected"), i18n(var12))
-	setText(findTF(arg0.taskPage, "leftBtns/btnMain/text_selected"), i18n(var10))
-	setText(findTF(arg0.taskPage, "leftBtns/btnDaily/text_selected"), i18n(var11))
-	setText(findTF(arg0.taskPage, "btnGetAll/text"), i18n(var6))
-	setActive(arg0.taskItemTpl, false)
-	setActive(arg0.iconTpl, false)
+	setText(findTF(arg0_1.taskItemTpl, "btnGo/text"), i18n(var7_0))
+	setText(findTF(arg0_1.taskItemTpl, "btnGot/text"), i18n(var8_0))
+	setText(findTF(arg0_1.taskItemTpl, "btnGet/text"), i18n(var9_0))
+	setText(findTF(arg0_1.taskPage, "leftBtns/btnAll/text"), i18n(var12_0))
+	setText(findTF(arg0_1.taskPage, "leftBtns/btnMain/text"), i18n(var10_0))
+	setText(findTF(arg0_1.taskPage, "leftBtns/btnDaily/text"), i18n(var11_0))
+	setText(findTF(arg0_1.taskPage, "leftBtns/btnAll/text_selected"), i18n(var12_0))
+	setText(findTF(arg0_1.taskPage, "leftBtns/btnMain/text_selected"), i18n(var10_0))
+	setText(findTF(arg0_1.taskPage, "leftBtns/btnDaily/text_selected"), i18n(var11_0))
+	setText(findTF(arg0_1.taskPage, "btnGetAll/text"), i18n(var6_0))
+	setActive(arg0_1.taskItemTpl, false)
+	setActive(arg0_1.iconTpl, false)
 
-	arg0.enterTaskId = nil
-	arg0.enterTaskIds = nil
+	arg0_1.enterTaskId = nil
+	arg0_1.enterTaskIds = nil
 
-	if arg0.contextData.task_id then
-		arg0.enterTaskId = arg0.contextData.task_id or nil
-	elseif arg0.contextData.task_ids then
-		arg0.enterTaskIds = arg0.contextData.task_ids or nil
+	if arg0_1.contextData.task_id then
+		arg0_1.enterTaskId = arg0_1.contextData.task_id or nil
+	elseif arg0_1.contextData.task_ids then
+		arg0_1.enterTaskIds = arg0_1.contextData.task_ids or nil
 	end
 
-	arg0.activityId = ActivityConst.OTHER_WORLD_TASK_ID
-	arg0.hideTask = {}
+	arg0_1.activityId = ActivityConst.OTHER_WORLD_TASK_ID
+	arg0_1.hideTask = {}
 
-	if pg.activity_template[arg0.activityId] then
-		arg0.hideTask = pg.activity_template[arg0.activityId].config_client.hide_task or {}
+	if pg.activity_template[arg0_1.activityId] then
+		arg0_1.hideTask = pg.activity_template[arg0_1.activityId].config_client.hide_task or {}
 	end
 
-	arg0.btnGetAll = findTF(arg0.taskPage, "btnGetAll")
-	arg0.taskTagPanel = findTF(arg0.taskPage, "taskTagPanel")
-	arg0.taskListPanel = findTF(arg0.taskPage, "taskListPanel")
-	arg0.scrollRect = findTF(arg0.taskPage, "taskListPanel/Content"):GetComponent("LScrollRect")
+	arg0_1.btnGetAll = findTF(arg0_1.taskPage, "btnGetAll")
+	arg0_1.taskTagPanel = findTF(arg0_1.taskPage, "taskTagPanel")
+	arg0_1.taskListPanel = findTF(arg0_1.taskPage, "taskListPanel")
+	arg0_1.scrollRect = findTF(arg0_1.taskPage, "taskListPanel/Content"):GetComponent("LScrollRect")
 
-	function arg0.scrollRect.onUpdateItem(arg0, arg1)
-		arg0:onUpdateTaskItem(arg0, arg1)
+	function arg0_1.scrollRect.onUpdateItem(arg0_2, arg1_2)
+		arg0_1:onUpdateTaskItem(arg0_2, arg1_2)
 	end
 
-	arg0.btnAll = findTF(arg0.taskPage, "leftBtns/btnAll")
-	arg0.btnDaily = findTF(arg0.taskPage, "leftBtns/btnDaily")
-	arg0.btnMain = findTF(arg0.taskPage, "leftBtns/btnMain")
+	arg0_1.btnAll = findTF(arg0_1.taskPage, "leftBtns/btnAll")
+	arg0_1.btnDaily = findTF(arg0_1.taskPage, "leftBtns/btnDaily")
+	arg0_1.btnMain = findTF(arg0_1.taskPage, "leftBtns/btnMain")
 
-	onButton(arg0._event, arg0.btnAll, function()
-		arg0:clearTagBtn()
-		setActive(findTF(arg0.btnAll, "bg_selected"), true)
-		setActive(findTF(arg0.btnAll, "text_selected"), true)
-		setActive(findTF(arg0.btnAll, "text"), false)
-		setImageColor(findTF(arg0.btnAll, "bg"), Color.New(1, 0.988235294117647, 0.909803921568627, 1))
-		arg0:showTaskByType()
+	onButton(arg0_1._event, arg0_1.btnAll, function()
+		arg0_1:clearTagBtn()
+		setActive(findTF(arg0_1.btnAll, "bg_selected"), true)
+		setActive(findTF(arg0_1.btnAll, "text_selected"), true)
+		setActive(findTF(arg0_1.btnAll, "text"), false)
+		setImageColor(findTF(arg0_1.btnAll, "bg"), Color.New(1, 0.988235294117647, 0.909803921568627, 1))
+		arg0_1:showTaskByType()
 	end, SFX_CONFIRM)
-	onButton(arg0._event, arg0.btnDaily, function()
-		arg0:clearTagBtn()
-		setActive(findTF(arg0.btnDaily, "bg_selected"), true)
-		setActive(findTF(arg0.btnDaily, "text_selected"), true)
-		setActive(findTF(arg0.btnDaily, "text"), false)
-		setImageColor(findTF(arg0.btnDaily, "bg"), Color.New(1, 0.988235294117647, 0.909803921568627, 1))
-		arg0:showTaskByType(var1)
+	onButton(arg0_1._event, arg0_1.btnDaily, function()
+		arg0_1:clearTagBtn()
+		setActive(findTF(arg0_1.btnDaily, "bg_selected"), true)
+		setActive(findTF(arg0_1.btnDaily, "text_selected"), true)
+		setActive(findTF(arg0_1.btnDaily, "text"), false)
+		setImageColor(findTF(arg0_1.btnDaily, "bg"), Color.New(1, 0.988235294117647, 0.909803921568627, 1))
+		arg0_1:showTaskByType(var1_0)
 	end, SFX_CONFIRM)
-	onButton(arg0._event, arg0.btnMain, function()
-		arg0:clearTagBtn()
-		setActive(findTF(arg0.btnMain, "bg_selected"), true)
-		setActive(findTF(arg0.btnMain, "text_selected"), true)
-		setActive(findTF(arg0.btnMain, "text"), false)
-		setImageColor(findTF(arg0.btnMain, "bg"), Color.New(1, 0.988235294117647, 0.909803921568627, 1))
-		arg0:showTaskByType(var2)
+	onButton(arg0_1._event, arg0_1.btnMain, function()
+		arg0_1:clearTagBtn()
+		setActive(findTF(arg0_1.btnMain, "bg_selected"), true)
+		setActive(findTF(arg0_1.btnMain, "text_selected"), true)
+		setActive(findTF(arg0_1.btnMain, "text"), false)
+		setImageColor(findTF(arg0_1.btnMain, "bg"), Color.New(1, 0.988235294117647, 0.909803921568627, 1))
+		arg0_1:showTaskByType(var2_0)
 	end, SFX_CONFIRM)
-	onButton(arg0._event, arg0.btnGetAll, function()
-		local var0 = arg0.getAllTasks
+	onButton(arg0_1._event, arg0_1.btnGetAll, function()
+		local var0_6 = arg0_1.getAllTasks
 
-		arg0._event:emit(OtherWorldTaskMediator.SUBMIT_TASK_ALL, {
-			activityId = arg0.activityId,
-			ids = var0
+		arg0_1._event:emit(OtherWorldTaskMediator.SUBMIT_TASK_ALL, {
+			activityId = arg0_1.activityId,
+			ids = var0_6
 		})
 	end, SFX_CONFIRM)
 
-	arg0.iconTfs = {}
-	arg0.awards = {}
+	arg0_1.iconTfs = {}
+	arg0_1.awards = {}
 
-	arg0:updateTask()
-	triggerButton(arg0.btnAll, true)
+	arg0_1:updateTask()
+	triggerButton(arg0_1.btnAll, true)
 end
 
-function var0.showTaskByType(arg0, arg1)
-	arg0.tagType = arg1
-	arg0.showTasks = {}
+function var0_0.showTaskByType(arg0_7, arg1_7)
+	arg0_7.tagType = arg1_7
+	arg0_7.showTasks = {}
 
-	if arg1 then
-		for iter0, iter1 in ipairs(arg0.allDisplayTask) do
-			if iter1:getConfig("priority_type") == arg1 then
-				table.insert(arg0.showTasks, iter1)
+	if arg1_7 then
+		for iter0_7, iter1_7 in ipairs(arg0_7.allDisplayTask) do
+			if iter1_7:getConfig("priority_type") == arg1_7 then
+				table.insert(arg0_7.showTasks, iter1_7)
 			end
 		end
 	else
-		arg0.showTasks = arg0.allDisplayTask
+		arg0_7.showTasks = arg0_7.allDisplayTask
 	end
 
-	if arg0.enterTaskId and arg0.enterTaskId > 0 then
-		for iter2 = 1, #arg0.showTasks do
-			if arg0.showTasks[iter2].id == arg0.enterTaskId then
-				arg0.scrollIndex = iter2
+	if arg0_7.enterTaskId and arg0_7.enterTaskId > 0 then
+		for iter2_7 = 1, #arg0_7.showTasks do
+			if arg0_7.showTasks[iter2_7].id == arg0_7.enterTaskId then
+				arg0_7.scrollIndex = iter2_7
 			end
 		end
 	end
 
-	arg0.scrollRect:SetTotalCount(#arg0.showTasks, 0)
+	arg0_7.scrollRect:SetTotalCount(#arg0_7.showTasks, 0)
 
-	if arg0.scrollIndex ~= nil then
-		local var0 = arg0.scrollRect:HeadIndexToValue(arg0.scrollIndex - 1)
+	if arg0_7.scrollIndex ~= nil then
+		local var0_7 = arg0_7.scrollRect:HeadIndexToValue(arg0_7.scrollIndex - 1)
 
-		arg0.scrollRect:ScrollTo(var0)
+		arg0_7.scrollRect:ScrollTo(var0_7)
 	end
 end
 
-function var0.clearTagBtn(arg0)
-	setActive(findTF(arg0.btnAll, "bg_selected"), false)
-	setActive(findTF(arg0.btnDaily, "bg_selected"), false)
-	setActive(findTF(arg0.btnMain, "bg_selected"), false)
-	setActive(findTF(arg0.btnMain, "text_selected"), false)
-	setActive(findTF(arg0.btnDaily, "text_selected"), false)
-	setActive(findTF(arg0.btnAll, "text_selected"), false)
-	setActive(findTF(arg0.btnMain, "text"), true)
-	setActive(findTF(arg0.btnDaily, "text"), true)
-	setActive(findTF(arg0.btnAll, "text"), true)
-	setImageColor(findTF(arg0.btnMain, "bg"), Color.New(0.737254901960784, 0.635294117647059, 0.588235294117647, 1))
-	setImageColor(findTF(arg0.btnDaily, "bg"), Color.New(0.737254901960784, 0.635294117647059, 0.588235294117647, 1))
-	setImageColor(findTF(arg0.btnAll, "bg"), Color.New(0.737254901960784, 0.635294117647059, 0.588235294117647, 1))
+function var0_0.clearTagBtn(arg0_8)
+	setActive(findTF(arg0_8.btnAll, "bg_selected"), false)
+	setActive(findTF(arg0_8.btnDaily, "bg_selected"), false)
+	setActive(findTF(arg0_8.btnMain, "bg_selected"), false)
+	setActive(findTF(arg0_8.btnMain, "text_selected"), false)
+	setActive(findTF(arg0_8.btnDaily, "text_selected"), false)
+	setActive(findTF(arg0_8.btnAll, "text_selected"), false)
+	setActive(findTF(arg0_8.btnMain, "text"), true)
+	setActive(findTF(arg0_8.btnDaily, "text"), true)
+	setActive(findTF(arg0_8.btnAll, "text"), true)
+	setImageColor(findTF(arg0_8.btnMain, "bg"), Color.New(0.737254901960784, 0.635294117647059, 0.588235294117647, 1))
+	setImageColor(findTF(arg0_8.btnDaily, "bg"), Color.New(0.737254901960784, 0.635294117647059, 0.588235294117647, 1))
+	setImageColor(findTF(arg0_8.btnAll, "bg"), Color.New(0.737254901960784, 0.635294117647059, 0.588235294117647, 1))
 end
 
-function var0.onUpdateTaskItem(arg0, arg1, arg2)
-	if arg0.exitFlag then
+function var0_0.onUpdateTaskItem(arg0_9, arg1_9, arg2_9)
+	if arg0_9.exitFlag then
 		return
 	end
 
-	arg1 = arg1 + 1
+	arg1_9 = arg1_9 + 1
 
-	local var0 = arg0.showTasks[arg1]
-	local var1 = var0.id
-	local var2 = var0:getProgress()
-	local var3 = var0:getConfig("desc")
-	local var4 = var0:getConfig("ryza_icon")
-	local var5 = var0:isOver()
-	local var6 = var0:isFinish()
-	local var7 = var0:getTarget()
-	local var8 = var0:isCircle()
-	local var9 = var0:isDaily()
-	local var10 = var0:isSubmit()
-	local var11 = var0:getConfig("sub_type")
-	local var12 = var0:getConfig("type")
-	local var13 = var0:getConfig("priority_type")
+	local var0_9 = arg0_9.showTasks[arg1_9]
+	local var1_9 = var0_9.id
+	local var2_9 = var0_9:getProgress()
+	local var3_9 = var0_9:getConfig("desc")
+	local var4_9 = var0_9:getConfig("ryza_icon")
+	local var5_9 = var0_9:isOver()
+	local var6_9 = var0_9:isFinish()
+	local var7_9 = var0_9:getTarget()
+	local var8_9 = var0_9:isCircle()
+	local var9_9 = var0_9:isDaily()
+	local var10_9 = var0_9:isSubmit()
+	local var11_9 = var0_9:getConfig("sub_type")
+	local var12_9 = var0_9:getConfig("type")
+	local var13_9 = var0_9:getConfig("priority_type")
 
-	setScrollText(findTF(arg2, "desc/text"), var3)
+	setScrollText(findTF(arg2_9, "desc/text"), var3_9)
 
 	if PLATFORM_CODE ~= PLATFORM_CH then
 		-- block empty
 	end
 
-	if not var5 then
-		setText(findTF(arg2, "progressDesc/text"), setColorStr(var2, "#51382E") .. " / " .. setColorStr(var7, "#51382E"))
+	if not var5_9 then
+		setText(findTF(arg2_9, "progressDesc/text"), setColorStr(var2_9, "#51382E") .. " / " .. setColorStr(var7_9, "#51382E"))
 	else
-		setText(findTF(arg2, "progressDesc/text"), "--/--")
+		setText(findTF(arg2_9, "progressDesc/text"), "--/--")
 	end
 
-	setSlider(findTF(arg2, "progressBar"), 0, 1, var5 and 1 or var2 / var7)
+	setSlider(findTF(arg2_9, "progressBar"), 0, 1, var5_9 and 1 or var2_9 / var7_9)
 
-	local var14 = pg.task_data_template[var1].award_display
-	local var15 = findTF(arg2, "awardDisplay/viewport/content")
-	local var16 = var15.childCount
+	local var14_9 = pg.task_data_template[var1_9].award_display
+	local var15_9 = findTF(arg2_9, "awardDisplay/viewport/content")
+	local var16_9 = var15_9.childCount
 
-	if var16 < #var14 then
-		local var17 = #var14 - var16
+	if var16_9 < #var14_9 then
+		local var17_9 = #var14_9 - var16_9
 
-		for iter0 = 1, var17 do
-			local var18 = tf(Instantiate(arg0.iconTpl))
+		for iter0_9 = 1, var17_9 do
+			local var18_9 = tf(Instantiate(arg0_9.iconTpl))
 
-			setParent(var18, var15)
-			setActive(var18, true)
+			setParent(var18_9, var15_9)
+			setActive(var18_9, true)
 		end
 	end
 
-	for iter1 = 1, var15.childCount do
-		local var19 = var15:GetChild(iter1 - 1)
+	for iter1_9 = 1, var15_9.childCount do
+		local var19_9 = var15_9:GetChild(iter1_9 - 1)
 
-		if iter1 <= #var14 then
-			local var20 = var14[iter1]
-			local var21 = {
-				type = var20[1],
-				id = var20[2],
-				count = var20[3]
+		if iter1_9 <= #var14_9 then
+			local var20_9 = var14_9[iter1_9]
+			local var21_9 = {
+				type = var20_9[1],
+				id = var20_9[2],
+				count = var20_9[3]
 			}
 
-			updateDrop(var19, var21)
-			onButton(arg0._event, var19, function()
-				arg0._event:emit(BaseUI.ON_DROP, var21)
+			updateDrop(var19_9, var21_9)
+			onButton(arg0_9._event, var19_9, function()
+				arg0_9._event:emit(BaseUI.ON_DROP, var21_9)
 			end, SFX_PANEL)
-			setActive(var19, true)
+			setActive(var19_9, true)
 		else
-			setActive(var19, false)
+			setActive(var19_9, false)
 		end
 	end
 
-	setActive(findTF(arg2, "btnGo"), not var5 and not var6 and var11 ~= 1006)
-	setActive(findTF(arg2, "btnGet"), not var5 and var6 and not var10)
-	setActive(findTF(arg2, "btnGot"), var6)
-	setSlider(findTF(arg2, "progressBar"), 0, 1, var2 / var7)
+	setActive(findTF(arg2_9, "btnGo"), not var5_9 and not var6_9 and var11_9 ~= 1006)
+	setActive(findTF(arg2_9, "btnGet"), not var5_9 and var6_9 and not var10_9)
+	setActive(findTF(arg2_9, "btnGot"), var6_9)
+	setSlider(findTF(arg2_9, "progressBar"), 0, 1, var2_9 / var7_9)
 
-	local var22
+	local var22_9
 
-	if var13 == var1 then
-		if var12 == 16 and var11 == 20 then
-			var22 = var5
+	if var13_9 == var1_0 then
+		if var12_9 == 16 and var11_9 == 20 then
+			var22_9 = var5_0
 		else
-			var22 = var3
+			var22_9 = var3_0
 		end
 	else
-		var22 = var4
+		var22_9 = var4_0
 	end
 
-	setText(findTF(arg2, "tag/text"), i18n(var22))
-	onButton(arg0._event, findTF(arg2, "btnGo"), function()
-		arg0._event:emit(OtherWorldTaskMediator.TASK_GO, {
-			taskVO = var0
+	setText(findTF(arg2_9, "tag/text"), i18n(var22_9))
+	onButton(arg0_9._event, findTF(arg2_9, "btnGo"), function()
+		arg0_9._event:emit(OtherWorldTaskMediator.TASK_GO, {
+			taskVO = var0_9
 		})
 	end, SFX_CONFIRM)
-	onButton(arg0._event, findTF(arg2, "btnGet"), function()
-		local var0 = var0:getConfig("priority_type")
-		local var1 = var0:getConfig("sub_type")
+	onButton(arg0_9._event, findTF(arg2_9, "btnGet"), function()
+		local var0_12 = var0_9:getConfig("priority_type")
+		local var1_12 = var0_9:getConfig("sub_type")
 
-		arg0._event:emit(OtherWorldTaskMediator.SUBMIT_TASK, {
-			activityId = arg0.activityId,
-			id = var0.id
+		arg0_9._event:emit(OtherWorldTaskMediator.SUBMIT_TASK, {
+			activityId = arg0_9.activityId,
+			id = var0_9.id
 		})
 	end, SFX_CONFIRM)
 
-	if arg1 == 1 then
-		arg0.scrollIndex = nil
+	if arg1_9 == 1 then
+		arg0_9.scrollIndex = nil
 	end
 
-	if arg0.enterTaskId ~= nil and arg0.enterTaskId > 0 then
-		if var1 == arg0.enterTaskId then
-			arg0.enterTaskId = nil
-			arg0.scrollIndex = nil
+	if arg0_9.enterTaskId ~= nil and arg0_9.enterTaskId > 0 then
+		if var1_9 == arg0_9.enterTaskId then
+			arg0_9.enterTaskId = nil
+			arg0_9.scrollIndex = nil
 		end
-	elseif arg0.enterTaskIds and #arg0.enterTaskIds > 0 then
-		for iter2, iter3 in ipairs(arg0.enterTaskIds) do
-			if var1 == iter3 then
-				arg0.enterTaskIds = nil
-				arg0.scrollIndex = nil
+	elseif arg0_9.enterTaskIds and #arg0_9.enterTaskIds > 0 then
+		for iter2_9, iter3_9 in ipairs(arg0_9.enterTaskIds) do
+			if var1_9 == iter3_9 then
+				arg0_9.enterTaskIds = nil
+				arg0_9.scrollIndex = nil
 			end
 		end
 	end
 end
 
-function var0.updateTask(arg0, arg1)
-	arg0.displayTask = {}
-	arg0.allDisplayTask = {}
+function var0_0.updateTask(arg0_13, arg1_13)
+	arg0_13.displayTask = {}
+	arg0_13.allDisplayTask = {}
 
-	local var0 = getProxy(ActivityTaskProxy):getTaskById(arg0.activityId)
+	local var0_13 = getProxy(ActivityTaskProxy):getTaskById(arg0_13.activityId)
 
-	arg0.getAllTasks = {}
+	arg0_13.getAllTasks = {}
 
-	for iter0 = 1, #var0 do
-		local var1 = var0[iter0]
-		local var2 = var1.id
+	for iter0_13 = 1, #var0_13 do
+		local var1_13 = var0_13[iter0_13]
+		local var2_13 = var1_13.id
 
-		if not table.contains(arg0.hideTask, var2) then
-			local var3 = var1:getProgress()
-			local var4 = var1:getTarget()
-			local var5 = var1:getConfig("priority_type")
+		if not table.contains(arg0_13.hideTask, var2_13) then
+			local var3_13 = var1_13:getProgress()
+			local var4_13 = var1_13:getTarget()
+			local var5_13 = var1_13:getConfig("priority_type")
 
-			if not arg0.displayTask[var5] then
-				arg0.displayTask[var5] = {}
+			if not arg0_13.displayTask[var5_13] then
+				arg0_13.displayTask[var5_13] = {}
 			end
 
-			table.insert(arg0.displayTask[var5], var1)
-			table.insert(arg0.allDisplayTask, var1)
+			table.insert(arg0_13.displayTask[var5_13], var1_13)
+			table.insert(arg0_13.allDisplayTask, var1_13)
 
-			if var1:isFinish() and not var1:isOver() then
-				table.insert(arg0.getAllTasks, var2)
+			if var1_13:isFinish() and not var1_13:isOver() then
+				table.insert(arg0_13.getAllTasks, var2_13)
 			end
 		end
 	end
 
-	local var6 = getProxy(ActivityProxy):getActivityById(arg0.activityId)
-	local var7 = {}
+	local var6_13 = getProxy(ActivityProxy):getActivityById(arg0_13.activityId)
+	local var7_13 = {}
 
-	if var6 then
-		var7 = var6.data1_list
+	if var6_13 then
+		var7_13 = var6_13.data1_list
 	end
 
-	if var7 and #var7 > 0 then
-		for iter1 = 1, #var7 do
-			local var8 = var7[iter1]
-			local var9 = ActivityTask.New(arg0.activityId, {
+	if var7_13 and #var7_13 > 0 then
+		for iter1_13 = 1, #var7_13 do
+			local var8_13 = var7_13[iter1_13]
+			local var9_13 = ActivityTask.New(arg0_13.activityId, {
 				progress = 0,
-				id = var8
+				id = var8_13
 			})
 
-			var9:setOver()
+			var9_13:setOver()
 
-			local var10 = var9:getConfig("ryza_type")
+			local var10_13 = var9_13:getConfig("ryza_type")
 
-			if var10 > 0 then
-				if not arg0.displayTask[var10] then
-					arg0.displayTask[var10] = {}
+			if var10_13 > 0 then
+				if not arg0_13.displayTask[var10_13] then
+					arg0_13.displayTask[var10_13] = {}
 				end
 
-				table.insert(arg0.displayTask[var10], var9)
-				table.insert(arg0.allDisplayTask, var9)
+				table.insert(arg0_13.displayTask[var10_13], var9_13)
+				table.insert(arg0_13.allDisplayTask, var9_13)
 			end
 		end
 	end
 
-	local function var11(arg0, arg1)
-		if arg0:isOver() and not arg1:isOver() then
+	local function var11_13(arg0_14, arg1_14)
+		if arg0_14:isOver() and not arg1_14:isOver() then
 			return false
-		elseif not arg0:isOver() and arg1:isOver() then
+		elseif not arg0_14:isOver() and arg1_14:isOver() then
 			return true
 		end
 
-		if arg0:isFinish() and not arg1:isFinish() then
+		if arg0_14:isFinish() and not arg1_14:isFinish() then
 			return true
-		elseif not arg0:isFinish() and arg1:isFinish() then
+		elseif not arg0_14:isFinish() and arg1_14:isFinish() then
 			return false
 		end
 
-		local var0 = arg0:getConfig("priority_type")
-		local var1 = arg1:getConfig("priority_type")
+		local var0_14 = arg0_14:getConfig("priority_type")
+		local var1_14 = arg1_14:getConfig("priority_type")
 
-		if var0 == var2 and var1 == var1 then
+		if var0_14 == var2_0 and var1_14 == var1_0 then
 			return true
-		elseif var0 == var1 and var1 == var2 then
+		elseif var0_14 == var1_0 and var1_14 == var2_0 then
 			return false
 		end
 
-		if arg0:isNew() and not arg1:isNew() then
+		if arg0_14:isNew() and not arg1_14:isNew() then
 			return true
-		elseif not arg0:isNew() and arg1:isNew() then
+		elseif not arg0_14:isNew() and arg1_14:isNew() then
 			return false
 		end
 
-		if arg0.id > arg1.id then
+		if arg0_14.id > arg1_14.id then
 			return false
-		elseif arg0.id < arg1.id then
+		elseif arg0_14.id < arg1_14.id then
 			return true
 		end
 	end
 
-	for iter2, iter3 in pairs(arg0.displayTask) do
-		table.sort(iter3, var11)
+	for iter2_13, iter3_13 in pairs(arg0_13.displayTask) do
+		table.sort(iter3_13, var11_13)
 	end
 
-	table.sort(arg0.allDisplayTask, var11)
+	table.sort(arg0_13.allDisplayTask, var11_13)
 
-	if arg1 then
-		arg0:showTaskByType(arg0.tagType)
+	if arg1_13 then
+		arg0_13:showTaskByType(arg0_13.tagType)
 	end
 
-	if #arg0.getAllTasks > 0 then
-		setActive(arg0.btnGetAll, true)
+	if #arg0_13.getAllTasks > 0 then
+		setActive(arg0_13.btnGetAll, true)
 	else
-		setActive(arg0.btnGetAll, false)
+		setActive(arg0_13.btnGetAll, false)
 	end
 end
 
-function var0.setActive(arg0, arg1)
-	setActive(arg0.taskPage, arg1)
+function var0_0.setActive(arg0_15, arg1_15)
+	setActive(arg0_15.taskPage, arg1_15)
 end
 
-function var0.dispose(arg0)
-	arg0.exitFlag = true
+function var0_0.dispose(arg0_16)
+	arg0_16.exitFlag = true
 
-	for iter0 = 1, #arg0.allDisplayTask do
-		local var0 = arg0.allDisplayTask[iter0]
+	for iter0_16 = 1, #arg0_16.allDisplayTask do
+		local var0_16 = arg0_16.allDisplayTask[iter0_16]
 
-		if var0:isNew() then
-			var0:changeNew()
+		if var0_16:isNew() then
+			var0_16:changeNew()
 		end
 	end
 end
 
-return var0
+return var0_0

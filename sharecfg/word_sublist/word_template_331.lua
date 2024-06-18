@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_331 = {}
+var0_0.word_template_331 = {}
 
-local var1 = var0.word_template_331
+local var1_0 = var0_0.word_template_331
 
 function temp()
-	var1.娱 = {
+	var1_0.娱 = {
 		乐 = {
 			城 = {
 				诚 = {
@@ -47,7 +47,7 @@ end
 temp()
 
 function temp()
-	var1.愚 = {
+	var1_0.愚 = {
 		民 = {
 			教 = {
 				育 = {
@@ -66,7 +66,7 @@ end
 temp()
 
 function temp()
-	var1.舆 = {
+	var1_0.舆 = {
 		论 = {
 			钳 = {
 				制 = {
@@ -80,7 +80,7 @@ end
 temp()
 
 function temp()
-	var1.漁 = {
+	var1_0.漁 = {
 		夫 = {
 			菲 = {
 				斯 = {
@@ -96,7 +96,7 @@ end
 temp()
 
 function temp()
-	var1.輿 = {
+	var1_0.輿 = {
 		論 = {
 			this = true,
 			反 = {
@@ -111,7 +111,7 @@ end
 temp()
 
 function temp()
-	var1.与 = {
+	var1_0.与 = {
 		裙 = {
 			中 = {
 				同 = {
@@ -199,7 +199,7 @@ end
 temp()
 
 function temp()
-	var1.宇 = {
+	var1_0.宇 = {
 		明 = {
 			网 = {
 				this = true

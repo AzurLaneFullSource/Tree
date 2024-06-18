@@ -1,131 +1,131 @@
-﻿local var0 = class("BackyardMsgBoxMgr")
+﻿local var0_0 = class("BackyardMsgBoxMgr")
 
-function var0.Init(arg0, arg1, arg2)
-	arg0.view = arg1
-	arg0.loaded = false
+function var0_0.Init(arg0_1, arg1_1, arg2_1)
+	arg0_1.view = arg1_1
+	arg0_1.loaded = false
 
-	PoolMgr.GetInstance():GetUI("BackYardMsgBox", true, function(arg0)
-		if arg0.exited then
+	PoolMgr.GetInstance():GetUI("BackYardMsgBox", true, function(arg0_2)
+		if arg0_1.exited then
 			return
 		end
 
-		setParent(arg0, pg.UIMgr.GetInstance().UIMain)
+		setParent(arg0_2, pg.UIMgr.GetInstance().UIMain)
 
-		arg0._go = arg0
-		arg0._tf = arg0.transform
-		arg0.frame = findTF(arg0._tf, "msg")
-		arg0.closeBtn = findTF(arg0._tf, "frame/close")
-		arg0.context = findTF(arg0._tf, "msg/Text"):GetComponent(typeof(Text))
-		arg0.cancelBtn = findTF(arg0._tf, "msg/btns/btn2")
-		arg0.confirmBtn = findTF(arg0._tf, "msg/btns/btn1")
-		arg0.helpPanel = findTF(arg0._tf, "help_panel")
-		arg0._helpList = arg0.helpPanel:Find("list")
+		arg0_1._go = arg0_2
+		arg0_1._tf = arg0_2.transform
+		arg0_1.frame = findTF(arg0_1._tf, "msg")
+		arg0_1.closeBtn = findTF(arg0_1._tf, "frame/close")
+		arg0_1.context = findTF(arg0_1._tf, "msg/Text"):GetComponent(typeof(Text))
+		arg0_1.cancelBtn = findTF(arg0_1._tf, "msg/btns/btn2")
+		arg0_1.confirmBtn = findTF(arg0_1._tf, "msg/btns/btn1")
+		arg0_1.helpPanel = findTF(arg0_1._tf, "help_panel")
+		arg0_1._helpList = arg0_1.helpPanel:Find("list")
 
-		setText(arg0._tf:Find("frame/title"), i18n("words_information"))
-		setText(arg0.cancelBtn:Find("Text"), i18n("word_cancel"))
-		setText(arg0.confirmBtn:Find("Text"), i18n("battle_result_confirm"))
+		setText(arg0_1._tf:Find("frame/title"), i18n("words_information"))
+		setText(arg0_1.cancelBtn:Find("Text"), i18n("word_cancel"))
+		setText(arg0_1.confirmBtn:Find("Text"), i18n("battle_result_confirm"))
 
-		arg0.loaded = true
+		arg0_1.loaded = true
 
-		setActive(arg0._tf, false)
-		arg2()
+		setActive(arg0_1._tf, false)
+		arg2_1()
 	end)
-	pg.DelegateInfo.New(arg0.view)
+	pg.DelegateInfo.New(arg0_1.view)
 end
 
-function var0.Show(arg0, arg1)
-	setActive(arg0.frame, true)
-	setActive(arg0.helpPanel, false)
+function var0_0.Show(arg0_3, arg1_3)
+	setActive(arg0_3.frame, true)
+	setActive(arg0_3.helpPanel, false)
 
-	if not arg0.loaded then
+	if not arg0_3.loaded then
 		return
 	end
 
-	arg0.isShowMsg = true
-	arg0.context.text = arg1.content
-	arg0.onYes = arg1.onYes
-	arg0.onNo = arg1.onNo
+	arg0_3.isShowMsg = true
+	arg0_3.context.text = arg1_3.content
+	arg0_3.onYes = arg1_3.onYes
+	arg0_3.onNo = arg1_3.onNo
 
-	arg0:Common(arg1)
+	arg0_3:Common(arg1_3)
 end
 
-function var0.Common(arg0, arg1)
-	onButton(arg0.view, arg0.confirmBtn, function()
-		if arg0.onYes then
-			arg0.onYes()
+function var0_0.Common(arg0_4, arg1_4)
+	onButton(arg0_4.view, arg0_4.confirmBtn, function()
+		if arg0_4.onYes then
+			arg0_4.onYes()
 		end
 
-		arg0:Hide()
-	end, arg1.yesSound or SFX_PANEL)
-	onButton(arg0.view, arg0._tf, function()
-		arg0:Hide()
+		arg0_4:Hide()
+	end, arg1_4.yesSound or SFX_PANEL)
+	onButton(arg0_4.view, arg0_4._tf, function()
+		arg0_4:Hide()
 	end, SFX_PANEL)
-	onButton(arg0.view, arg0.closeBtn, function()
-		arg0:Hide()
+	onButton(arg0_4.view, arg0_4.closeBtn, function()
+		arg0_4:Hide()
 	end, SFX_PANEL)
-	onButton(arg0.view, arg0.cancelBtn, function()
-		if arg0.onNo then
-			arg0.onNo()
+	onButton(arg0_4.view, arg0_4.cancelBtn, function()
+		if arg0_4.onNo then
+			arg0_4.onNo()
 		end
 
-		arg0:Hide()
+		arg0_4:Hide()
 	end, SFX_PANEL)
-	setActive(arg0.cancelBtn, not arg1.hideNo)
-	setActive(arg0._tf, true)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0._tf, {
+	setActive(arg0_4.cancelBtn, not arg1_4.hideNo)
+	setActive(arg0_4._tf, true)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_4._tf, {
 		weight = LayerWeightConst.TOP_LAYER
 	})
 end
 
-function var0.ShowHelp(arg0, arg1)
-	setActive(arg0.frame, false)
-	setActive(arg0.helpPanel, true)
+function var0_0.ShowHelp(arg0_9, arg1_9)
+	setActive(arg0_9.frame, false)
+	setActive(arg0_9.helpPanel, true)
 
-	local var0 = arg1.helps
+	local var0_9 = arg1_9.helps
 
-	for iter0 = #var0, arg0._helpList.childCount - 1 do
-		Destroy(arg0._helpList:GetChild(iter0))
+	for iter0_9 = #var0_9, arg0_9._helpList.childCount - 1 do
+		Destroy(arg0_9._helpList:GetChild(iter0_9))
 	end
 
-	for iter1 = arg0._helpList.childCount, #var0 - 1 do
-		cloneTplTo(arg0._helpTpl, arg0._helpList)
+	for iter1_9 = arg0_9._helpList.childCount, #var0_9 - 1 do
+		cloneTplTo(arg0_9._helpTpl, arg0_9._helpList)
 	end
 
-	for iter2, iter3 in ipairs(var0) do
-		local var1 = arg0._helpList:GetChild(iter2 - 1)
+	for iter2_9, iter3_9 in ipairs(var0_9) do
+		local var1_9 = arg0_9._helpList:GetChild(iter2_9 - 1)
 
-		setActive(var1, true)
+		setActive(var1_9, true)
 
-		local var2 = var1:Find("icon")
+		local var2_9 = var1_9:Find("icon")
 
-		setActive(var2, iter3.icon)
-		setActive(findTF(var1, "line"), iter3.line)
+		setActive(var2_9, iter3_9.icon)
+		setActive(findTF(var1_9, "line"), iter3_9.line)
 
-		local var3 = var1:Find("richText"):GetComponent("RichText")
+		local var3_9 = var1_9:Find("richText"):GetComponent("RichText")
 
-		setText(var1, HXSet.hxLan(iter3.info and SwitchSpecialChar(iter3.info, true) or ""))
+		setText(var1_9, HXSet.hxLan(iter3_9.info and SwitchSpecialChar(iter3_9.info, true) or ""))
 	end
 
-	arg0:Common(arg1)
+	arg0_9:Common(arg1_9)
 end
 
-function var0.Hide(arg0)
-	arg0.onYes = nil
-	arg0.onNo = nil
-	arg0.isShowMsg = false
+function var0_0.Hide(arg0_10)
+	arg0_10.onYes = nil
+	arg0_10.onNo = nil
+	arg0_10.isShowMsg = false
 
-	setActive(arg0._tf, false)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0._tf, pg.UIMgr.GetInstance().UIMain)
+	setActive(arg0_10._tf, false)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_10._tf, pg.UIMgr.GetInstance().UIMain)
 end
 
-function var0.Destroy(arg0)
-	arg0.exited = true
+function var0_0.Destroy(arg0_11)
+	arg0_11.exited = true
 
-	if arg0.isShowMsg then
-		arg0:Hide()
+	if arg0_11.isShowMsg then
+		arg0_11:Hide()
 	end
 
-	PoolMgr.GetInstance():ReturnUI("BackYardMsgBox", arg0._go)
+	PoolMgr.GetInstance():ReturnUI("BackYardMsgBox", arg0_11._go)
 end
 
-return var0
+return var0_0

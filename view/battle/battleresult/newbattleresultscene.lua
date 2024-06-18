@@ -1,155 +1,155 @@
-﻿local var0 = class("NewBattleResultScene", import("view.base.BaseUI"))
+﻿local var0_0 = class("NewBattleResultScene", import("view.base.BaseUI"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "NewBattleResultEmptyUI"
 end
 
-function var0.didEnter(arg0)
-	arg0._parentTf = arg0._tf.parent
+function var0_0.didEnter(arg0_2)
+	arg0_2._parentTf = arg0_2._tf.parent
 
-	arg0:InitData()
-	arg0:Adjustion()
-	arg0:SetUp(arg0.pages)
+	arg0_2:InitData()
+	arg0_2:Adjustion()
+	arg0_2:SetUp(arg0_2.pages)
 
-	if arg0.contextData.needVibrate then
-		arg0:Vibrate()
+	if arg0_2.contextData.needVibrate then
+		arg0_2:Vibrate()
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0._tf, true, {
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, true, {
 		lockGlobalBlur = true,
 		groupName = LayerWeightConst.GROUP_COMBAT
 	})
 	onDelayTick(function()
-		if arg0.contextData.needCloseCamera then
-			arg0:CloseCamera()
+		if arg0_2.contextData.needCloseCamera then
+			arg0_2:CloseCamera()
 		end
 	end, 0.2)
 end
 
-function var0.Adjustion(arg0)
-	local var0 = GetComponent(arg0._tf, typeof(AspectRatioFitter))
+function var0_0.Adjustion(arg0_4)
+	local var0_4 = GetComponent(arg0_4._tf, typeof(AspectRatioFitter))
 
-	var0.enabled = true
-	var0.aspectRatio = pg.CameraFixMgr.GetInstance().targetRatio
-	arg0.camEventId = pg.CameraFixMgr.GetInstance():bind(pg.CameraFixMgr.ASPECT_RATIO_UPDATE, function(arg0, arg1)
-		var0.aspectRatio = arg1
+	var0_4.enabled = true
+	var0_4.aspectRatio = pg.CameraFixMgr.GetInstance().targetRatio
+	arg0_4.camEventId = pg.CameraFixMgr.GetInstance():bind(pg.CameraFixMgr.ASPECT_RATIO_UPDATE, function(arg0_5, arg1_5)
+		var0_4.aspectRatio = arg1_5
 	end)
 end
 
-local function var1(arg0)
+local function var1_0(arg0_6)
 	if getProxy(SettingsProxy):IsDisplayResultPainting() then
 		return
 	end
 
-	for iter0 = #arg0, 1, -1 do
-		if arg0[iter0] == NewBattleResultDisplayPaintingsPage then
-			table.remove(arg0, iter0)
+	for iter0_6 = #arg0_6, 1, -1 do
+		if arg0_6[iter0_6] == NewBattleResultDisplayPaintingsPage then
+			table.remove(arg0_6, iter0_6)
 		end
 	end
 end
 
-function var0.InitData(arg0)
-	arg0.pages = NewBattleResultSystem2Pages[arg0.contextData.system] or {
+function var0_0.InitData(arg0_7)
+	arg0_7.pages = NewBattleResultSystem2Pages[arg0_7.contextData.system] or {
 		NewBattleResultGradePage,
 		NewBattleResultDisplayAwardPage,
 		NewBattleResultDisplayPaintingsPage,
 		NewBattleResultStatisticsPage
 	}
 
-	var1(arg0.pages)
+	var1_0(arg0_7.pages)
 
-	arg0.contextData.oldMainShips = NewBattleResultUtil.RemoveNonStatisticShips(arg0.contextData.oldMainShips, arg0.contextData.statistics)
-	arg0.contextData.newMainShips = NewBattleResultDataExtender.GetNewMainShips(arg0.contextData)
-	arg0.contextData.autoSkipFlag = NewBattleResultDataExtender.GetAutoSkipFlag(arg0.contextData, arg0.contextData.system)
-	arg0.contextData.needVibrate = NewBattleResultDataExtender.NeedVibrate(arg0.contextData.autoSkipFlag)
-	arg0.contextData.needCloseCamera = NewBattleResultDataExtender.NeedCloseCamera(arg0.contextData.system)
-	arg0.contextData.needHelpMessage = NewBattleResultDataExtender.NeedHelpMessage(arg0.contextData.system, arg0.contextData.score)
-	arg0.contextData.expBuff = NewBattleResultDataExtender.GetExpBuffs(arg0.contextData.system)
-	arg0.contextData.buffShips = NewBattleResultDataExtender.GetShipBuffs(arg0.contextData.system)
+	arg0_7.contextData.oldMainShips = NewBattleResultUtil.RemoveNonStatisticShips(arg0_7.contextData.oldMainShips, arg0_7.contextData.statistics)
+	arg0_7.contextData.newMainShips = NewBattleResultDataExtender.GetNewMainShips(arg0_7.contextData)
+	arg0_7.contextData.autoSkipFlag = NewBattleResultDataExtender.GetAutoSkipFlag(arg0_7.contextData, arg0_7.contextData.system)
+	arg0_7.contextData.needVibrate = NewBattleResultDataExtender.NeedVibrate(arg0_7.contextData.autoSkipFlag)
+	arg0_7.contextData.needCloseCamera = NewBattleResultDataExtender.NeedCloseCamera(arg0_7.contextData.system)
+	arg0_7.contextData.needHelpMessage = NewBattleResultDataExtender.NeedHelpMessage(arg0_7.contextData.system, arg0_7.contextData.score)
+	arg0_7.contextData.expBuff = NewBattleResultDataExtender.GetExpBuffs(arg0_7.contextData.system)
+	arg0_7.contextData.buffShips = NewBattleResultDataExtender.GetShipBuffs(arg0_7.contextData.system)
 end
 
-function var0.CloseCamera(arg0)
+function var0_0.CloseCamera(arg0_8)
 	ys.Battle.BattleCameraUtil.GetInstance().ActiveMainCemera(false)
 end
 
-function var0.Vibrate(arg0)
+function var0_0.Vibrate(arg0_9)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_AUTO_BATTLE)
 	LuaHelper.Vibrate()
 end
 
-function var0.SetUp(arg0, arg1)
-	local var0 = {}
+function var0_0.SetUp(arg0_10, arg1_10)
+	local var0_10 = {}
 
-	arg0.history = {}
+	arg0_10.history = {}
 
-	for iter0, iter1 in ipairs(arg1) do
-		table.insert(var0, function(arg0)
-			if arg0.exited then
+	for iter0_10, iter1_10 in ipairs(arg1_10) do
+		table.insert(var0_10, function(arg0_11)
+			if arg0_10.exited then
 				return
 			end
 
-			local var0 = iter1.New(arg0._tf, arg0.event, arg0.contextData)
+			local var0_11 = iter1_10.New(arg0_10._tf, arg0_10.event, arg0_10.contextData)
 
-			var0:ExecuteAction("SetUp", arg0, function()
-				arg0:DestroyHistory()
+			var0_11:ExecuteAction("SetUp", arg0_11, function()
+				arg0_10:DestroyHistory()
 			end)
-			table.insert(arg0.history, var0)
+			table.insert(arg0_10.history, var0_11)
 		end)
 	end
 
-	seriesAsync(var0, function()
-		arg0:GoBack()
+	seriesAsync(var0_10, function()
+		arg0_10:GoBack()
 	end)
 end
 
-function var0.DestroyHistory(arg0)
-	for iter0, iter1 in ipairs(arg0.history) do
-		if not isa(iter1, NewBattleResultStatisticsPage) then
-			iter1:Destroy()
+function var0_0.DestroyHistory(arg0_14)
+	for iter0_14, iter1_14 in ipairs(arg0_14.history) do
+		if not isa(iter1_14, NewBattleResultStatisticsPage) then
+			iter1_14:Destroy()
 		end
 	end
 end
 
-function var0.GoBack(arg0)
-	local function var0()
-		arg0.backSceneHandler = NewBattleResultBackSceneHandler.New(arg0.contextData)
+function var0_0.GoBack(arg0_15)
+	local function var0_15()
+		arg0_15.backSceneHandler = NewBattleResultBackSceneHandler.New(arg0_15.contextData)
 
-		arg0.backSceneHandler:Execute()
+		arg0_15.backSceneHandler:Execute()
 	end
 
-	if arg0.contextData.needHelpMessage then
-		arg0:emit(NewBattleResultMediator.OPEN_FIALED_HELP, var0)
+	if arg0_15.contextData.needHelpMessage then
+		arg0_15:emit(NewBattleResultMediator.OPEN_FIALED_HELP, var0_15)
 	else
-		var0()
+		var0_15()
 	end
 end
 
-function var0.onBackPressed(arg0)
+function var0_0.onBackPressed(arg0_17)
 	return
 end
 
-function var0.willExit(arg0)
-	pg.UIMgr:GetInstance():UnblurPanel(arg0._tf, arg0._parentTf)
+function var0_0.willExit(arg0_18)
+	pg.UIMgr:GetInstance():UnblurPanel(arg0_18._tf, arg0_18._parentTf)
 
-	if arg0.camEventId then
-		pg.CameraFixMgr.GetInstance():disconnect(arg0.camEventId)
+	if arg0_18.camEventId then
+		pg.CameraFixMgr.GetInstance():disconnect(arg0_18.camEventId)
 
-		arg0.camEventId = nil
+		arg0_18.camEventId = nil
 	end
 
-	if arg0.backSceneHandler then
-		arg0.backSceneHandler:Dispose()
+	if arg0_18.backSceneHandler then
+		arg0_18.backSceneHandler:Dispose()
 
-		arg0.backSceneHandler = nil
+		arg0_18.backSceneHandler = nil
 	end
 
-	if arg0.history then
-		for iter0, iter1 in ipairs(arg0.history) do
-			iter1:Destroy()
+	if arg0_18.history then
+		for iter0_18, iter1_18 in ipairs(arg0_18.history) do
+			iter1_18:Destroy()
 		end
 
-		arg0.history = nil
+		arg0_18.history = nil
 	end
 end
 
-return var0
+return var0_0

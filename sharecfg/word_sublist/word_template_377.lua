@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_377 = {}
+var0_0.word_template_377 = {}
 
-local var1 = var0.word_template_377
+local var1_0 = var0_0.word_template_377
 
 function temp()
-	var1.呦 = {
+	var1_0.呦 = {
 		香 = {
 			吧 = {
 				this = true
@@ -26,7 +26,7 @@ end
 temp()
 
 function temp()
-	var1.浩 = {
+	var1_0.浩 = {
 		宇 = {
 			彩 = {
 				票 = {
@@ -141,7 +141,7 @@ end
 temp()
 
 function temp()
-	var1.晶 = {
+	var1_0.晶 = {
 		瑞 = {
 			彩 = {
 				票 = {
@@ -155,7 +155,7 @@ end
 temp()
 
 function temp()
-	var1.迈 = {
+	var1_0.迈 = {
 		博 = {
 			体 = {
 				育 = {
@@ -173,7 +173,7 @@ end
 temp()
 
 function temp()
-	var1.嘀 = {
+	var1_0.嘀 = {
 		咕 = {
 			彩 = {
 				票 = {
@@ -187,7 +187,7 @@ end
 temp()
 
 function temp()
-	var1.暖 = {
+	var1_0.暖 = {
 		暖 = {
 			爱 = {
 				视 = {
@@ -203,7 +203,7 @@ end
 temp()
 
 function temp()
-	var1.妺 = {
+	var1_0.妺 = {
 		也 = {
 			色 = {
 				this = true

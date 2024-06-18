@@ -1,46 +1,46 @@
-﻿local var0 = class("PlayerVitaeAddCard", import(".PlayerVitaeBaseCard"))
+﻿local var0_0 = class("PlayerVitaeAddCard", import(".PlayerVitaeBaseCard"))
 
-function var0.OnInit(arg0)
-	arg0.line1 = arg0._tf:Find("line1")
-	arg0.line2 = arg0._tf:Find("line2")
-	arg0.txt = arg0._tf:Find("Text")
+function var0_0.OnInit(arg0_1)
+	arg0_1.line1 = arg0_1._tf:Find("line1")
+	arg0_1.line2 = arg0_1._tf:Find("line2")
+	arg0_1.txt = arg0_1._tf:Find("Text")
 
-	onButton(arg0, arg0._tf, function()
-		if arg0.inEdit then
+	onButton(arg0_1, arg0_1._tf, function()
+		if arg0_1.inEdit then
 			return
 		end
 
-		if not arg0.canCilick then
+		if not arg0_1.canCilick then
 			return
 		end
 
-		arg0:emit(PlayerVitaeMediator.CHANGE_PAINT, nil)
+		arg0_1:emit(PlayerVitaeMediator.CHANGE_PAINT, nil)
 	end, SFX_PANEL)
 end
 
-function var0.OnUpdate(arg0, arg1, arg2, arg3, arg4)
-	local var0 = arg4 == PlayerVitaeShipsPage.RANDOM_FLAG_SHIP_PAGE
+function var0_0.OnUpdate(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
+	local var0_3 = arg4_3 == PlayerVitaeShipsPage.RANDOM_FLAG_SHIP_PAGE
 
-	arg0.canCilick = not var0
+	arg0_3.canCilick = not var0_3
 
-	setActive(arg0.line1, not var0)
-	setActive(arg0.line2, not var0)
-	setActive(arg0.txt, not var0)
+	setActive(arg0_3.line1, not var0_3)
+	setActive(arg0_3.line2, not var0_3)
+	setActive(arg0_3.txt, not var0_3)
 end
 
-function var0.EditCard(arg0, arg1)
-	arg0.inEdit = arg1
+function var0_0.EditCard(arg0_4, arg1_4)
+	arg0_4.inEdit = arg1_4
 
-	setActive(arg0.mask, arg1)
+	setActive(arg0_4.mask, arg1_4)
 end
 
-function var0.Disable(arg0)
-	var0.super.Disable(arg0)
-	arg0:EditCard(false)
+function var0_0.Disable(arg0_5)
+	var0_0.super.Disable(arg0_5)
+	arg0_5:EditCard(false)
 end
 
-function var0.OnDispose(arg0)
-	arg0:Disable()
+function var0_0.OnDispose(arg0_6)
+	arg0_6:Disable()
 end
 
-return var0
+return var0_0

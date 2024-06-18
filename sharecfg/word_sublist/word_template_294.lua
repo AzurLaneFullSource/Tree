@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_294 = {}
+var0_0.word_template_294 = {}
 
-local var1 = var0.word_template_294
+local var1_0 = var0_0.word_template_294
 
 function temp()
-	var1.我 = {
+	var1_0.我 = {
 		爱 = {
 			阿 = {
 				姨 = {
@@ -1525,7 +1525,7 @@ end
 temp()
 
 function temp()
-	var1.沃 = {
+	var1_0.沃 = {
 		尔 = {
 			开 = {
 				西 = {
@@ -1575,7 +1575,7 @@ end
 temp()
 
 function temp()
-	var1.握 = {
+	var1_0.握 = {
 		紧 = {
 			大 = {
 				印 = {
@@ -1595,7 +1595,7 @@ end
 temp()
 
 function temp()
-	var1.乌 = {
+	var1_0.乌 = {
 		黑 = {
 			阴 = {
 				毛 = {
@@ -1723,7 +1723,7 @@ end
 temp()
 
 function temp()
-	var1.污 = {
+	var1_0.污 = {
 		this = {
 			this = true
 		},
@@ -1744,7 +1744,7 @@ end
 temp()
 
 function temp()
-	var1.巫 = {
+	var1_0.巫 = {
 		女 = {
 			朋 = {
 				友 = {
@@ -1764,7 +1764,7 @@ end
 temp()
 
 function temp()
-	var1.无 = {
+	var1_0.无 = {
 		邦 = {
 			国 = {
 				this = true

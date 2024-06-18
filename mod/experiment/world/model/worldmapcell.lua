@@ -1,6 +1,6 @@
-﻿local var0 = class("WorldMapCell", import("...BaseEntity"))
+﻿local var0_0 = class("WorldMapCell", import("...BaseEntity"))
 
-var0.Fields = {
+var0_0.Fields = {
 	terrainDir = "number",
 	discovered = "boolean",
 	attachments = "table",
@@ -16,88 +16,88 @@ var0.Fields = {
 	terrainStrong = "number",
 	fogLight = "boolean"
 }
-var0.EventAddAttachment = "WorldMapCell.EventAddAttachment"
-var0.EventRemoveAttachment = "WorldMapCell.EventRemoveAttachment"
-var0.EventUpdateInFov = "WorldMapCell.EventUpdateInFov"
-var0.EventUpdateDiscovered = "WorldMapCell.EventUpdateDiscovered"
-var0.EventUpdateFog = "WorldMapCell.EventUpdateFog"
-var0.EventUpdateFogImage = "WorldMapCell.EventUpdateFogImage"
-var0.EventUpdateTerrain = "WorldMapCell.EventUpdateTerrain"
+var0_0.EventAddAttachment = "WorldMapCell.EventAddAttachment"
+var0_0.EventRemoveAttachment = "WorldMapCell.EventRemoveAttachment"
+var0_0.EventUpdateInFov = "WorldMapCell.EventUpdateInFov"
+var0_0.EventUpdateDiscovered = "WorldMapCell.EventUpdateDiscovered"
+var0_0.EventUpdateFog = "WorldMapCell.EventUpdateFog"
+var0_0.EventUpdateFogImage = "WorldMapCell.EventUpdateFogImage"
+var0_0.EventUpdateTerrain = "WorldMapCell.EventUpdateTerrain"
 
-function var0.GetName(arg0, arg1)
-	return "cell_" .. arg0 .. "_" .. arg1
+function var0_0.GetName(arg0_1, arg1_1)
+	return "cell_" .. arg0_1 .. "_" .. arg1_1
 end
 
-var0.TerrainNone = 0
-var0.TerrainStream = 1
-var0.TerrainIce = 2
-var0.TerrainWind = 3
-var0.TerrainFog = 4
-var0.TerrainFire = 5
-var0.TerrainPoison = 6
+var0_0.TerrainNone = 0
+var0_0.TerrainStream = 1
+var0_0.TerrainIce = 2
+var0_0.TerrainWind = 3
+var0_0.TerrainFog = 4
+var0_0.TerrainFire = 5
+var0_0.TerrainPoison = 6
 
-function var0.Build(arg0)
-	arg0.attachments = {}
-	arg0.dir = 0
-	arg0.infov = 0
-	arg0.inLight = 0
-	arg0.fog = false
-	arg0.fogLight = false
-	arg0.fogSairen = false
+function var0_0.Build(arg0_2)
+	arg0_2.attachments = {}
+	arg0_2.dir = 0
+	arg0_2.infov = 0
+	arg0_2.inLight = 0
+	arg0_2.fog = false
+	arg0_2.fogLight = false
+	arg0_2.fogSairen = false
 end
 
-function var0.Setup(arg0, arg1)
-	arg0.row = arg1[1]
-	arg0.column = arg1[2]
-	arg0.walkable = arg1[3]
+function var0_0.Setup(arg0_3, arg1_3)
+	arg0_3.row = arg1_3[1]
+	arg0_3.column = arg1_3[2]
+	arg0_3.walkable = arg1_3[3]
 end
 
-function var0.Dispose(arg0)
-	WPool:ReturnArray(arg0.attachments)
-	arg0:Clear()
+function var0_0.Dispose(arg0_4)
+	WPool:ReturnArray(arg0_4.attachments)
+	arg0_4:Clear()
 end
 
-function var0.AddAttachment(arg0, arg1)
-	assert(not _.any(arg0.attachments, function(arg0)
-		return arg0.row == arg1.row and arg0.column == arg1.column and arg0.type == arg1.type and arg0.id == arg1.id
+function var0_0.AddAttachment(arg0_5, arg1_5)
+	assert(not _.any(arg0_5.attachments, function(arg0_6)
+		return arg0_6.row == arg1_5.row and arg0_6.column == arg1_5.column and arg0_6.type == arg1_5.type and arg0_6.id == arg1_5.id
 	end))
-	assert(arg1.row == arg0.row and arg1.column == arg0.column)
-	assert(WorldMapAttachment.SortOrder[arg1.type], arg1.type .. " : sort order not set.")
+	assert(arg1_5.row == arg0_5.row and arg1_5.column == arg0_5.column)
+	assert(WorldMapAttachment.SortOrder[arg1_5.type], arg1_5.type .. " : sort order not set.")
 
-	local var0 = WorldMapAttachment.SortOrder[arg1.type]
-	local var1 = #arg0.attachments + 1
+	local var0_5 = WorldMapAttachment.SortOrder[arg1_5.type]
+	local var1_5 = #arg0_5.attachments + 1
 
-	for iter0, iter1 in ipairs(arg0.attachments) do
-		if var0 > WorldMapAttachment.SortOrder[iter1.type] then
-			var1 = iter0
+	for iter0_5, iter1_5 in ipairs(arg0_5.attachments) do
+		if var0_5 > WorldMapAttachment.SortOrder[iter1_5.type] then
+			var1_5 = iter0_5
 
 			break
 		end
 	end
 
-	table.insert(arg0.attachments, var1, arg1)
-	arg0:DispatchEvent(var0.EventAddAttachment, arg1)
+	table.insert(arg0_5.attachments, var1_5, arg1_5)
+	arg0_5:DispatchEvent(var0_0.EventAddAttachment, arg1_5)
 
-	if not arg0.discovered and arg1:ShouldMarkAsLurk() then
-		arg1:UpdateLurk(true)
+	if not arg0_5.discovered and arg1_5:ShouldMarkAsLurk() then
+		arg1_5:UpdateLurk(true)
 	end
 end
 
-function var0.RemoveAttachment(arg0, arg1)
-	if arg1 == nil or type(arg1) == "number" then
-		arg1 = arg1 or #arg0.attachments
+function var0_0.RemoveAttachment(arg0_7, arg1_7)
+	if arg1_7 == nil or type(arg1_7) == "number" then
+		arg1_7 = arg1_7 or #arg0_7.attachments
 
-		assert(arg1 >= 1 and arg1 <= #arg0.attachments)
+		assert(arg1_7 >= 1 and arg1_7 <= #arg0_7.attachments)
 
-		local var0 = arg0.attachments[arg1]
+		local var0_7 = arg0_7.attachments[arg1_7]
 
-		table.remove(arg0.attachments, arg1)
-		arg0:DispatchEvent(var0.EventRemoveAttachment, var0)
-		WPool:Return(var0)
-	elseif arg1.class == WorldMapAttachment then
-		for iter0 = #arg0.attachments, 1, -1 do
-			if arg0.attachments[iter0] == arg1 then
-				arg0:RemoveAttachment(iter0)
+		table.remove(arg0_7.attachments, arg1_7)
+		arg0_7:DispatchEvent(var0_0.EventRemoveAttachment, var0_7)
+		WPool:Return(var0_7)
+	elseif arg1_7.class == WorldMapAttachment then
+		for iter0_7 = #arg0_7.attachments, 1, -1 do
+			if arg0_7.attachments[iter0_7] == arg1_7 then
+				arg0_7:RemoveAttachment(iter0_7)
 
 				break
 			end
@@ -105,313 +105,313 @@ function var0.RemoveAttachment(arg0, arg1)
 	end
 end
 
-function var0.ContainsAttachment(arg0, arg1)
-	return _.any(arg0.attachments, function(arg0)
-		return arg0 == arg1
+function var0_0.ContainsAttachment(arg0_8, arg1_8)
+	return _.any(arg0_8.attachments, function(arg0_9)
+		return arg0_9 == arg1_8
 	end)
 end
 
-function var0.GetInFOV(arg0)
-	if arg0.fog then
-		return arg0.fogLight
+function var0_0.GetInFOV(arg0_10)
+	if arg0_10.fog then
+		return arg0_10.fogLight
 	else
-		return arg0.infov > 0 or arg0.inLight > 0
+		return arg0_10.infov > 0 or arg0_10.inLight > 0
 	end
 end
 
-function var0.UpdateInFov(arg0, arg1)
+function var0_0.UpdateInFov(arg0_11, arg1_11)
 	AfterCheck({
 		{
 			function()
-				return arg0:GetInFOV()
+				return arg0_11:GetInFOV()
 			end,
 			function()
-				arg0:DispatchEvent(var0.EventUpdateInFov)
+				arg0_11:DispatchEvent(var0_0.EventUpdateInFov)
 			end
 		}
 	}, function()
-		arg0.infov = arg1
+		arg0_11.infov = arg1_11
 	end)
 end
 
-function var0.ChangeInLight(arg0, arg1)
+function var0_0.ChangeInLight(arg0_15, arg1_15)
 	AfterCheck({
 		{
 			function()
-				return arg0:GetInFOV()
+				return arg0_15:GetInFOV()
 			end,
 			function()
-				arg0:DispatchEvent(var0.EventUpdateInFov)
+				arg0_15:DispatchEvent(var0_0.EventUpdateInFov)
 			end
 		}
 	}, function()
-		arg0.inLight = arg0.inLight + (arg1 and 1 or -1)
+		arg0_15.inLight = arg0_15.inLight + (arg1_15 and 1 or -1)
 	end)
 end
 
-function var0.InFog(arg0)
-	if arg0.fog then
-		return not arg0.fogLight
+function var0_0.InFog(arg0_19)
+	if arg0_19.fog then
+		return not arg0_19.fogLight
 	else
-		return arg0:GetTerrain() == var0.TerrainFog
+		return arg0_19:GetTerrain() == var0_0.TerrainFog
 	end
 end
 
-function var0.LookSairenFog(arg0)
-	return arg0.fogSairen or arg0:IsTerrainSairenFog()
+function var0_0.LookSairenFog(arg0_20)
+	return arg0_20.fogSairen or arg0_20:IsTerrainSairenFog()
 end
 
-function var0.UpdateFog(arg0, arg1, arg2, arg3)
+function var0_0.UpdateFog(arg0_21, arg1_21, arg2_21, arg3_21)
 	AfterCheck({
 		{
 			function()
-				return arg0:GetInFOV()
+				return arg0_21:GetInFOV()
 			end,
 			function()
-				arg0:DispatchEvent(var0.EventUpdateInFov)
+				arg0_21:DispatchEvent(var0_0.EventUpdateInFov)
 			end
 		},
 		{
 			function()
-				return arg0:InFog()
+				return arg0_21:InFog()
 			end,
 			function()
-				arg0:DispatchEvent(var0.EventUpdateFog)
+				arg0_21:DispatchEvent(var0_0.EventUpdateFog)
 			end
 		},
 		{
 			function()
-				return arg0:LookSairenFog()
+				return arg0_21:LookSairenFog()
 			end,
 			function()
-				arg0:DispatchEvent(var0.EventUpdateFogImage)
+				arg0_21:DispatchEvent(var0_0.EventUpdateFogImage)
 			end
 		}
 	}, function()
-		arg0.fog = defaultValue(arg1, arg0.fog)
-		arg0.fogLight = defaultValue(arg2, arg0.fogLight)
-		arg0.fogSairen = defaultValue(arg3, arg0.fogSairen)
+		arg0_21.fog = defaultValue(arg1_21, arg0_21.fog)
+		arg0_21.fogLight = defaultValue(arg2_21, arg0_21.fogLight)
+		arg0_21.fogSairen = defaultValue(arg3_21, arg0_21.fogSairen)
 	end)
 end
 
-function var0.UpdateDiscovered(arg0, arg1)
-	if arg0.discovered ~= arg1 then
-		arg0.discovered = arg1
+function var0_0.UpdateDiscovered(arg0_29, arg1_29)
+	if arg0_29.discovered ~= arg1_29 then
+		arg0_29.discovered = arg1_29
 
-		arg0:DispatchEvent(var0.EventUpdateDiscovered)
+		arg0_29:DispatchEvent(var0_0.EventUpdateDiscovered)
 	end
 end
 
-function var0.GetTerrain(arg0)
-	return arg0.terrain or var0.TerrainNone
+function var0_0.GetTerrain(arg0_30)
+	return arg0_30.terrain or var0_0.TerrainNone
 end
 
-function var0.UpdateTerrain(arg0, arg1, arg2, arg3)
+function var0_0.UpdateTerrain(arg0_31, arg1_31, arg2_31, arg3_31)
 	AfterCheck({
 		{
 			function()
-				return arg0:InFog()
+				return arg0_31:InFog()
 			end,
 			function()
-				arg0:DispatchEvent(var0.EventUpdateFog)
+				arg0_31:DispatchEvent(var0_0.EventUpdateFog)
 			end
 		},
 		{
 			function()
-				return arg0:LookSairenFog()
+				return arg0_31:LookSairenFog()
 			end,
 			function()
-				arg0:DispatchEvent(var0.EventUpdateFogImage)
+				arg0_31:DispatchEvent(var0_0.EventUpdateFogImage)
 			end
 		}
 	}, function()
-		arg0.terrain = arg1
+		arg0_31.terrain = arg1_31
 
-		if arg0.terrain == var0.TerrainStream then
-			assert(arg2)
+		if arg0_31.terrain == var0_0.TerrainStream then
+			assert(arg2_31)
 
-			arg0.terrainDir = arg2
-		elseif arg0.terrain == var0.TerrainWind then
-			assert(arg2 and arg3)
+			arg0_31.terrainDir = arg2_31
+		elseif arg0_31.terrain == var0_0.TerrainWind then
+			assert(arg2_31 and arg3_31)
 
-			arg0.terrainDir = arg2
-			arg0.terrainStrong = arg3
-		elseif arg0.terrain == var0.TerrainFog then
-			arg0.terrainStrong = arg3
-		elseif arg0.terrain == var0.TerrainPoison then
-			arg0.terrainStrong = arg3
+			arg0_31.terrainDir = arg2_31
+			arg0_31.terrainStrong = arg3_31
+		elseif arg0_31.terrain == var0_0.TerrainFog then
+			arg0_31.terrainStrong = arg3_31
+		elseif arg0_31.terrain == var0_0.TerrainPoison then
+			arg0_31.terrainStrong = arg3_31
 		end
 
-		arg0:DispatchEvent(var0.EventUpdateTerrain)
+		arg0_31:DispatchEvent(var0_0.EventUpdateTerrain)
 	end)
 end
 
-function var0.GetAliveAttachments(arg0)
-	return _.filter(arg0.attachments, function(arg0)
-		return arg0:IsAlive()
+function var0_0.GetAliveAttachments(arg0_37)
+	return _.filter(arg0_37.attachments, function(arg0_38)
+		return arg0_38:IsAlive()
 	end)
 end
 
-function var0.GetAliveAttachment(arg0)
-	return _.detect(arg0.attachments, function(arg0)
-		return arg0:IsAlive()
+function var0_0.GetAliveAttachment(arg0_39)
+	return _.detect(arg0_39.attachments, function(arg0_40)
+		return arg0_40:IsAlive()
 	end)
 end
 
-function var0.GetDisplayAttachment(arg0)
-	return _.detect(arg0.attachments, function(arg0)
-		return arg0:IsAlive() and arg0:IsVisible()
+function var0_0.GetDisplayAttachment(arg0_41)
+	return _.detect(arg0_41.attachments, function(arg0_42)
+		return arg0_42:IsAlive() and arg0_42:IsVisible()
 	end)
 end
 
-function var0.GetInterativeAttachment(arg0)
-	return _.detect(arg0.attachments, function(arg0)
-		return WorldMapAttachment.IsInteractiveType(arg0.type) and arg0:IsAlive() and arg0:IsVisible()
+function var0_0.GetInterativeAttachment(arg0_43)
+	return _.detect(arg0_43.attachments, function(arg0_44)
+		return WorldMapAttachment.IsInteractiveType(arg0_44.type) and arg0_44:IsAlive() and arg0_44:IsVisible()
 	end)
 end
 
-function var0.GetEventAttachment(arg0)
-	return _.detect(arg0.attachments, function(arg0)
-		return arg0:IsAlive() and arg0.type == WorldMapAttachment.TypeEvent
+function var0_0.GetEventAttachment(arg0_45)
+	return _.detect(arg0_45.attachments, function(arg0_46)
+		return arg0_46:IsAlive() and arg0_46.type == WorldMapAttachment.TypeEvent
 	end)
 end
 
-function var0.GetCompassAttachment(arg0)
-	local var0 = {}
+function var0_0.GetCompassAttachment(arg0_47)
+	local var0_47 = {}
 
-	for iter0, iter1 in ipairs(arg0.attachments) do
-		table.insert(var0, iter0)
+	for iter0_47, iter1_47 in ipairs(arg0_47.attachments) do
+		table.insert(var0_47, iter0_47)
 	end
 
-	local var1 = _.detect(_.sort(var0, function(arg0, arg1)
-		return (arg0.attachments[arg0].config.compass_index or 0) > (arg0.attachments[arg1].config.compass_index or 0)
-	end), function(arg0)
-		local var0 = arg0.attachments[arg0]
+	local var1_47 = _.detect(_.sort(var0_47, function(arg0_48, arg1_48)
+		return (arg0_47.attachments[arg0_48].config.compass_index or 0) > (arg0_47.attachments[arg1_48].config.compass_index or 0)
+	end), function(arg0_49)
+		local var0_49 = arg0_47.attachments[arg0_49]
 
-		if var0:ShouldMarkAsLurk() then
-			return var0:IsAlive() and var0:IsVisible() and arg0.discovered
-		elseif var0.type == WorldMapAttachment.TypeEvent then
-			return var0:IsAlive() and var0.config.visuality == 0
-		elseif var0.type ~= WorldMapAttachment.TypeFleet and var0.type ~= WorldMapAttachment.TypePort then
-			return var0:IsAlive()
+		if var0_49:ShouldMarkAsLurk() then
+			return var0_49:IsAlive() and var0_49:IsVisible() and arg0_47.discovered
+		elseif var0_49.type == WorldMapAttachment.TypeEvent then
+			return var0_49:IsAlive() and var0_49.config.visuality == 0
+		elseif var0_49.type ~= WorldMapAttachment.TypeFleet and var0_49.type ~= WorldMapAttachment.TypePort then
+			return var0_49:IsAlive()
 		end
 	end)
 
-	return var1 and arg0.attachments[var1]
+	return var1_47 and arg0_47.attachments[var1_47]
 end
 
-function var0.FindAliveAttachment(arg0, arg1)
-	assert(arg1 ~= nil)
+function var0_0.FindAliveAttachment(arg0_50, arg1_50)
+	assert(arg1_50 ~= nil)
 
-	return _.detect(arg0.attachments, function(arg0)
-		return arg0:IsAlive() and arg0.type == arg1
+	return _.detect(arg0_50.attachments, function(arg0_51)
+		return arg0_51:IsAlive() and arg0_51.type == arg1_50
 	end)
 end
 
-function var0.IsTerrainSairenFog(arg0)
-	return arg0.terrain == var0.TerrainFog and arg0.terrainStrong == 0
+function var0_0.IsTerrainSairenFog(arg0_52)
+	return arg0_52.terrain == var0_0.TerrainFog and arg0_52.terrainStrong == 0
 end
 
-function var0.CanLeave(arg0)
-	return arg0.walkable and arg0:GetTerrainObstacleConfig("leave") and underscore.all(arg0.attachments, function(arg0)
-		return not arg0:IsAlive() or arg0:CanLeave()
+function var0_0.CanLeave(arg0_53)
+	return arg0_53.walkable and arg0_53:GetTerrainObstacleConfig("leave") and underscore.all(arg0_53.attachments, function(arg0_54)
+		return not arg0_54:IsAlive() or arg0_54:CanLeave()
 	end)
 end
 
-function var0.CanArrive(arg0)
-	return arg0.walkable and arg0:GetTerrainObstacleConfig("arrive") and underscore.all(arg0.attachments, function(arg0)
-		return not arg0:IsAlive() or arg0:CanArrive()
+function var0_0.CanArrive(arg0_55)
+	return arg0_55.walkable and arg0_55:GetTerrainObstacleConfig("arrive") and underscore.all(arg0_55.attachments, function(arg0_56)
+		return not arg0_56:IsAlive() or arg0_56:CanArrive()
 	end)
 end
 
-function var0.CanPass(arg0)
-	return arg0.walkable and arg0:GetTerrainObstacleConfig("pass") and underscore.all(arg0.attachments, function(arg0)
-		return not arg0:IsAlive() or arg0:CanPass()
+function var0_0.CanPass(arg0_57)
+	return arg0_57.walkable and arg0_57:GetTerrainObstacleConfig("pass") and underscore.all(arg0_57.attachments, function(arg0_58)
+		return not arg0_58:IsAlive() or arg0_58:CanPass()
 	end)
 end
 
-function var0.IsSign(arg0)
-	return _.any(arg0.attachments, function(arg0)
-		return arg0:IsAlive() and arg0:IsSign()
+function var0_0.IsSign(arg0_59)
+	return _.any(arg0_59.attachments, function(arg0_60)
+		return arg0_60:IsAlive() and arg0_60:IsSign()
 	end)
 end
 
-function var0.ExistEnemy(arg0)
-	return tobool(arg0:GetStageEnemy())
+function var0_0.ExistEnemy(arg0_61)
+	return tobool(arg0_61:GetStageEnemy())
 end
 
-function var0.GetStageEnemy(arg0)
-	return _.detect(arg0.attachments, function(arg0)
-		return arg0:IsAlive() and WorldMapAttachment.IsEnemyType(arg0.type)
+function var0_0.GetStageEnemy(arg0_62)
+	return _.detect(arg0_62.attachments, function(arg0_63)
+		return arg0_63:IsAlive() and WorldMapAttachment.IsEnemyType(arg0_63.type)
 	end)
 end
 
-function var0.GetDisplayQuad(arg0)
-	local var0
-	local var1 = arg0:GetDisplayAttachment()
+function var0_0.GetDisplayQuad(arg0_64)
+	local var0_64
+	local var1_64 = arg0_64:GetDisplayAttachment()
 
-	if not arg0:InFog() and var1 then
-		if var1.type == WorldMapAttachment.TypeEvent then
-			local var2 = var1.config.object_icon
+	if not arg0_64:InFog() and var1_64 then
+		if var1_64.type == WorldMapAttachment.TypeEvent then
+			local var2_64 = var1_64.config.object_icon
 
-			if var2 and #var2 > 0 then
-				var0 = var2
+			if var2_64 and #var2_64 > 0 then
+				var0_64 = var2_64
 			end
-		elseif WorldMapAttachment.IsEnemyType(var1.type) then
-			var0 = {
+		elseif WorldMapAttachment.IsEnemyType(var1_64.type) then
+			var0_64 = {
 				"cell_red"
 			}
-		elseif var1.type == WorldMapAttachment.TypePort or var1.type == WorldMapAttachment.TypeBox then
-			var0 = {
+		elseif var1_64.type == WorldMapAttachment.TypePort or var1_64.type == WorldMapAttachment.TypeBox then
+			var0_64 = {
 				"cell_yellow"
 			}
 		end
 	end
 
-	return var0
+	return var0_64
 end
 
-function var0.GetEmotion(arg0)
-	return arg0.terrain == var0.TerrainPoison and WorldConst.PoisonEffect or nil
+function var0_0.GetEmotion(arg0_65)
+	return arg0_65.terrain == var0_0.TerrainPoison and WorldConst.PoisonEffect or nil
 end
 
-function var0.GetScannerAttachment(arg0)
-	local var0 = arg0:GetAliveAttachments()
-	local var1
-	local var2
+function var0_0.GetScannerAttachment(arg0_66)
+	local var0_66 = arg0_66:GetAliveAttachments()
+	local var1_66
+	local var2_66
 
-	for iter0, iter1 in ipairs(var0) do
-		local var3 = iter1:IsScannerAttachment()
+	for iter0_66, iter1_66 in ipairs(var0_66) do
+		local var3_66 = iter1_66:IsScannerAttachment()
 
-		if var3 and (not var1 or var2 < var3) then
-			var1 = iter1
-			var2 = var3
+		if var3_66 and (not var1_66 or var2_66 < var3_66) then
+			var1_66 = iter1_66
+			var2_66 = var3_66
 		end
 	end
 
-	return var1
+	return var1_66
 end
 
-var0.TerrainObstacleConfig = {
+var0_0.TerrainObstacleConfig = {
 	SairenFog = 4,
-	[var0.TerrainNone] = 7,
-	[var0.TerrainStream] = 6,
-	[var0.TerrainIce] = 6,
-	[var0.TerrainWind] = 2,
-	[var0.TerrainFog] = 6,
-	[var0.TerrainFire] = 7,
-	[var0.TerrainPoison] = 7
+	[var0_0.TerrainNone] = 7,
+	[var0_0.TerrainStream] = 6,
+	[var0_0.TerrainIce] = 6,
+	[var0_0.TerrainWind] = 2,
+	[var0_0.TerrainFog] = 6,
+	[var0_0.TerrainFire] = 7,
+	[var0_0.TerrainPoison] = 7
 }
 
-function var0.GetTerrainObstacleConfig(arg0, arg1)
-	local var0 = arg0:IsTerrainSairenFog() and "SairenFog" or arg0:GetTerrain()
-	local var1 = WorldConst.GetObstacleKey(arg1)
+function var0_0.GetTerrainObstacleConfig(arg0_67, arg1_67)
+	local var0_67 = arg0_67:IsTerrainSairenFog() and "SairenFog" or arg0_67:GetTerrain()
+	local var1_67 = WorldConst.GetObstacleKey(arg1_67)
 
-	return bit.band(var0.TerrainObstacleConfig[var0], var1) > 0
+	return bit.band(var0_0.TerrainObstacleConfig[var0_67], var1_67) > 0
 end
 
-function var0.IsMovingTerrain(arg0)
-	return arg0 == var0.TerrainStream or arg0 == var0.TerrainIce or arg0 == var0.TerrainWind
+function var0_0.IsMovingTerrain(arg0_68)
+	return arg0_68 == var0_0.TerrainStream or arg0_68 == var0_0.TerrainIce or arg0_68 == var0_0.TerrainWind
 end
 
-return var0
+return var0_0

@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_283 = {}
+var0_0.word_template_283 = {}
 
-local var1 = var0.word_template_283
+local var1_0 = var0_0.word_template_283
 
 function temp()
-	var1.透 = {
+	var1_0.透 = {
 		s = {
 			h = {
 				i = {
@@ -117,7 +117,7 @@ end
 temp()
 
 function temp()
-	var1.凸 = {
+	var1_0.凸 = {
 		你 = {
 			this = true
 		},
@@ -164,7 +164,7 @@ end
 temp()
 
 function temp()
-	var1.禿 = {
+	var1_0.禿 = {
 		鷹 = {
 			氣 = {
 				槍 = {
@@ -187,7 +187,7 @@ end
 temp()
 
 function temp()
-	var1.秃 = {
+	var1_0.秃 = {
 		鹰 = {
 			q = {
 				q = {
@@ -306,7 +306,7 @@ end
 temp()
 
 function temp()
-	var1.突 = {
+	var1_0.突 = {
 		厥 = {
 			斯 = {
 				坦 = {
@@ -328,7 +328,7 @@ end
 temp()
 
 function temp()
-	var1.图 = {
+	var1_0.图 = {
 		释 = {
 			世 = {
 				界 = {
@@ -400,7 +400,7 @@ end
 temp()
 
 function temp()
-	var1.徒 = {
+	var1_0.徒 = {
 		弟 = {
 			会 = {
 				this = true

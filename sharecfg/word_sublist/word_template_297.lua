@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_297 = {}
+var0_0.word_template_297 = {}
 
-local var1 = var0.word_template_297
+local var1_0 = var0_0.word_template_297
 
 function temp()
-	var1.吸 = {
+	var1_0.吸 = {
 		j = {
 			i = {
 				n = {
@@ -141,7 +141,7 @@ end
 temp()
 
 function temp()
-	var1.希 = {
+	var1_0.希 = {
 		拉 = {
 			克 = {
 				this = true
@@ -263,7 +263,7 @@ end
 temp()
 
 function temp()
-	var1.郗 = {
+	var1_0.郗 = {
 		红 = {
 			this = true
 		}
@@ -273,7 +273,7 @@ end
 temp()
 
 function temp()
-	var1.烯 = {
+	var1_0.烯 = {
 		丙 = {
 			胺 = {
 				this = true
@@ -290,7 +290,7 @@ end
 temp()
 
 function temp()
-	var1.惜 = {
+	var1_0.惜 = {
 		阿 = {
 			尔 = {
 				道 = {
@@ -321,7 +321,7 @@ end
 temp()
 
 function temp()
-	var1.稀 = {
+	var1_0.稀 = {
 		崎 = {
 			优 = {
 				this = true
@@ -344,7 +344,7 @@ end
 temp()
 
 function temp()
-	var1.锡 = {
+	var1_0.锡 = {
 		锋 = {
 			弹 = {
 				簧 = {

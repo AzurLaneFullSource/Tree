@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_98 = {}
+var0_0.word_template_98 = {}
 
-local var1 = var0.word_template_98
+local var1_0 = var0_0.word_template_98
 
 function temp()
-	var1.奋 = {
+	var1_0.奋 = {
 		力 = {
 			堵 = {
 				住 = {
@@ -39,7 +39,7 @@ end
 temp()
 
 function temp()
-	var1.鲼 = {
+	var1_0.鲼 = {
 		this = {
 			this = true
 		}
@@ -49,7 +49,7 @@ end
 temp()
 
 function temp()
-	var1.瀵 = {
+	var1_0.瀵 = {
 		this = {
 			this = true
 		}
@@ -59,7 +59,7 @@ end
 temp()
 
 function temp()
-	var1.鱝 = {
+	var1_0.鱝 = {
 		this = {
 			this = true
 		}
@@ -69,7 +69,7 @@ end
 temp()
 
 function temp()
-	var1.丰 = {
+	var1_0.丰 = {
 		唇 = {
 			艳 = {
 				姬 = {
@@ -130,7 +130,7 @@ end
 temp()
 
 function temp()
-	var1.风 = {
+	var1_0.风 = {
 		洞 = {
 			的 = {
 				弓 = {
@@ -271,7 +271,7 @@ end
 temp()
 
 function temp()
-	var1.封 = {
+	var1_0.封 = {
 		从 = {
 			德 = {
 				this = true

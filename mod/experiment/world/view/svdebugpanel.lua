@@ -1,288 +1,288 @@
-﻿local var0 = class("SVDebugPanel", import("view.base.BaseSubView"))
+﻿local var0_0 = class("SVDebugPanel", import("view.base.BaseSubView"))
 
-function var0.getUIName(arg0)
+function var0_0.getUIName(arg0_1)
 	return "SVDebugPanel"
 end
 
-function var0.OnLoaded(arg0)
+function var0_0.OnLoaded(arg0_2)
 	return
 end
 
-function var0.OnInit(arg0)
-	local var0 = arg0._tf
+function var0_0.OnInit(arg0_3)
+	local var0_3 = arg0_3._tf
 
-	arg0.scrollRect = var0:Find("scrollview"):GetComponent(typeof(ScrollRect))
-	arg0.rtContent = var0:Find("scrollview/viewport/content")
-	arg0.rtText = arg0.rtContent:Find("text")
-	arg0.btnX = var0:Find("panel/x")
+	arg0_3.scrollRect = var0_3:Find("scrollview"):GetComponent(typeof(ScrollRect))
+	arg0_3.rtContent = var0_3:Find("scrollview/viewport/content")
+	arg0_3.rtText = arg0_3.rtContent:Find("text")
+	arg0_3.btnX = var0_3:Find("panel/x")
 
-	onButton(arg0, arg0.btnX, function()
-		arg0:Hide()
+	onButton(arg0_3, arg0_3.btnX, function()
+		arg0_3:Hide()
 	end)
 
-	local var1 = var0:Find("panel/buttons")
-	local var2 = var1:Find("button")
+	local var1_3 = var0_3:Find("panel/buttons")
+	local var2_3 = var1_3:Find("button")
 
-	setActive(arg0.rtText, false)
-	setParent(arg0.rtText, var0, false)
+	setActive(arg0_3.rtText, false)
+	setParent(arg0_3.rtText, var0_3, false)
 
-	local var3 = nowWorld()
-	local var4 = {
+	local var3_3 = nowWorld()
+	local var4_3 = {
 		{
 			name = "清理打印",
 			func = function()
-				for iter0 = arg0.rtContent.childCount - 1, 0, -1 do
-					Destroy(arg0.rtContent:GetChild(iter0))
+				for iter0_5 = arg0_3.rtContent.childCount - 1, 0, -1 do
+					Destroy(arg0_3.rtContent:GetChild(iter0_5))
 				end
 			end
 		},
 		{
 			name = "entity缓存",
 			func = function()
-				arg0:AppendText("-------------------------------------------------------------------------")
-				arg0:AppendText("打印entity缓存信息：")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("打印entity缓存信息：")
 
-				local var0 = {}
+				local var0_6 = {}
 
-				for iter0, iter1 in pairs(WPool.pools) do
-					table.insert(var0, iter0.__cname .. " : " .. #iter1)
+				for iter0_6, iter1_6 in pairs(WPool.pools) do
+					table.insert(var0_6, iter0_6.__cname .. " : " .. #iter1_6)
 				end
 
-				table.sort(var0)
+				table.sort(var0_6)
 
-				for iter2, iter3 in ipairs(var0) do
-					arg0:AppendText(iter3)
+				for iter2_6, iter3_6 in ipairs(var0_6) do
+					arg0_3:AppendText(iter3_6)
 				end
 
-				arg0:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
 			end
 		},
 		{
 			name = "地图信息",
 			func = function()
-				arg0:AppendText("-------------------------------------------------------------------------")
-				arg0:AppendText("当前大世界进度：")
-				arg0:AppendText(tostring(var3:GetProgress()))
-				arg0:AppendText("")
-				arg0:AppendText("当前所在入口信息：")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("当前大世界进度：")
+				arg0_3:AppendText(tostring(var3_3:GetProgress()))
+				arg0_3:AppendText("")
+				arg0_3:AppendText("当前所在入口信息：")
 
-				local var0 = var3:GetActiveEntrance()
+				local var0_7 = var3_3:GetActiveEntrance()
 
-				if var0 then
-					arg0:AppendText(var0:DebugPrint())
+				if var0_7 then
+					arg0_3:AppendText(var0_7:DebugPrint())
 				end
 
-				arg0:AppendText("")
-				arg0:AppendText("当前所在地图信息：")
+				arg0_3:AppendText("")
+				arg0_3:AppendText("当前所在地图信息：")
 
-				local var1 = var3:GetActiveMap()
+				local var1_7 = var3_3:GetActiveMap()
 
-				if var1 then
-					arg0:AppendText(var1:DebugPrint())
+				if var1_7 then
+					arg0_3:AppendText(var1_7:DebugPrint())
 				end
 
-				arg0:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
 			end
 		},
 		{
 			name = "任务信息",
 			func = function()
-				arg0:AppendText("-------------------------------------------------------------------------")
-				arg0:AppendText("任务信息：")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("任务信息：")
 
-				local var0 = var3:GetTaskProxy():getTasks()
+				local var0_8 = var3_3:GetTaskProxy():getTasks()
 
-				for iter0, iter1 in pairs(var0) do
-					arg0:AppendText(iter1:DebugPrint())
+				for iter0_8, iter1_8 in pairs(var0_8) do
+					arg0_3:AppendText(iter1_8:DebugPrint())
 				end
 
-				arg0:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
 			end
 		},
 		{
 			name = "事件信息",
 			func = function()
-				arg0:AppendText("-------------------------------------------------------------------------")
-				arg0:AppendText("事件信息：")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("事件信息：")
 
-				local var0 = var3:GetActiveMap()
+				local var0_9 = var3_3:GetActiveMap()
 
-				if var0 then
-					local var1 = var0:FindAttachments(WorldMapAttachment.TypeEvent)
+				if var0_9 then
+					local var1_9 = var0_9:FindAttachments(WorldMapAttachment.TypeEvent)
 
-					_.each(var1, function(arg0)
-						arg0:AppendText(arg0:DebugPrint())
+					_.each(var1_9, function(arg0_10)
+						arg0_3:AppendText(arg0_10:DebugPrint())
 					end)
 				end
 
-				arg0:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
 			end
 		},
 		{
 			name = "感染事件",
 			func = function()
-				arg0:AppendText("-------------------------------------------------------------------------")
-				arg0:AppendText("感染事件：")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("感染事件：")
 
-				local var0 = var3:GetActiveMap()
+				local var0_11 = var3_3:GetActiveMap()
 
-				if var0 then
-					local var1 = var0:FindAttachments(WorldMapAttachment.TypeEvent)
+				if var0_11 then
+					local var1_11 = var0_11:FindAttachments(WorldMapAttachment.TypeEvent)
 
-					_.each(var1, function(arg0)
-						if arg0.config.infection_value > 0 then
-							arg0:AppendText(arg0:DebugPrint())
+					_.each(var1_11, function(arg0_12)
+						if arg0_12.config.infection_value > 0 then
+							arg0_3:AppendText(arg0_12:DebugPrint())
 						end
 					end)
 				end
 
-				arg0:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
 			end
 		},
 		{
 			name = "路标事件",
 			func = function()
-				arg0:AppendText("-------------------------------------------------------------------------")
-				arg0:AppendText("路标事件：")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("路标事件：")
 
-				local var0 = var3:GetActiveMap()
+				local var0_13 = var3_3:GetActiveMap()
 
-				if var0 then
-					local var1 = var0:FindAttachments(WorldMapAttachment.TypeEvent)
+				if var0_13 then
+					local var1_13 = var0_13:FindAttachments(WorldMapAttachment.TypeEvent)
 
-					_.each(var1, function(arg0)
-						if arg0:IsSign() then
-							arg0:AppendText(arg0:DebugPrint())
+					_.each(var1_13, function(arg0_14)
+						if arg0_14:IsSign() then
+							arg0_3:AppendText(arg0_14:DebugPrint())
 						end
 					end)
 				end
 
-				arg0:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
 			end
 		},
 		{
 			name = "舰队信息",
 			func = function()
-				arg0:AppendText("-------------------------------------------------------------------------")
-				arg0:AppendText("打印舰队信息：")
-				_.each(var3:GetFleets(), function(arg0)
-					arg0:AppendText(arg0:DebugPrint())
+				arg0_3:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("打印舰队信息：")
+				_.each(var3_3:GetFleets(), function(arg0_16)
+					arg0_3:AppendText(arg0_16:DebugPrint())
 				end)
-				arg0:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
 			end
 		},
 		{
 			name = "敌人信息",
 			func = function()
-				arg0:AppendText("-------------------------------------------------------------------------")
-				arg0:AppendText("打印敌人信息：")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("打印敌人信息：")
 
-				local var0 = var3:GetActiveMap()
+				local var0_17 = var3_3:GetActiveMap()
 
-				if var0 then
-					local var1 = var0:FindEnemys()
+				if var0_17 then
+					local var1_17 = var0_17:FindEnemys()
 
-					_.each(var1, function(arg0)
-						arg0:AppendText(arg0:DebugPrint())
+					_.each(var1_17, function(arg0_18)
+						arg0_3:AppendText(arg0_18:DebugPrint())
 					end)
 				end
 
-				arg0:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
 			end
 		},
 		{
 			name = "陷阱信息",
 			func = function()
-				arg0:AppendText("-------------------------------------------------------------------------")
-				arg0:AppendText("打印陷阱信息：")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("打印陷阱信息：")
 
-				local var0 = var3:GetActiveMap()
+				local var0_19 = var3_3:GetActiveMap()
 
-				if var0 then
-					local var1 = var0:FindAttachments(WorldMapAttachment.TypeTrap)
+				if var0_19 then
+					local var1_19 = var0_19:FindAttachments(WorldMapAttachment.TypeTrap)
 
-					_.each(var1, function(arg0)
-						arg0:AppendText(arg0:DebugPrint())
+					_.each(var1_19, function(arg0_20)
+						arg0_3:AppendText(arg0_20:DebugPrint())
 					end)
 				end
 
-				arg0:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
 			end
 		},
 		{
 			name = "场景物件",
 			func = function()
-				arg0:AppendText("-------------------------------------------------------------------------")
-				arg0:AppendText("当前所在地图场景物件信息：")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("当前所在地图场景物件信息：")
 
-				local var0 = var3:GetActiveMap()
+				local var0_21 = var3_3:GetActiveMap()
 
-				if var0 then
-					local var1 = var0:FindAttachments(WorldMapAttachment.TypeArtifact)
+				if var0_21 then
+					local var1_21 = var0_21:FindAttachments(WorldMapAttachment.TypeArtifact)
 
-					_.each(var1, function(arg0)
-						arg0:AppendText(arg0:DebugPrint())
+					_.each(var1_21, function(arg0_22)
+						arg0_3:AppendText(arg0_22:DebugPrint())
 					end)
 				end
 
-				arg0:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
 			end
 		},
 		{
 			name = "一键压制",
 			func = function()
-				arg0:AppendText("-------------------------------------------------------------------------")
-				arg0:AppendText("当前地图压制啦")
+				arg0_3:AppendText("-------------------------------------------------------------------------")
+				arg0_3:AppendText("当前地图压制啦")
 
-				local var0 = var3:GetAtlas()
+				local var0_23 = var3_3:GetAtlas()
 
-				var0:AddPressingMap(var0.activeMapId)
-				arg0:AppendText("-------------------------------------------------------------------------")
+				var0_23:AddPressingMap(var0_23.activeMapId)
+				arg0_3:AppendText("-------------------------------------------------------------------------")
 			end
 		}
 	}
-	local var5 = UIItemList.New(var1, var2)
+	local var5_3 = UIItemList.New(var1_3, var2_3)
 
-	var5:make(function(arg0, arg1, arg2)
-		arg1 = arg1 + 1
+	var5_3:make(function(arg0_24, arg1_24, arg2_24)
+		arg1_24 = arg1_24 + 1
 
-		if arg0 == UIItemList.EventUpdate then
-			setText(arg2:Find("Text"), var4[arg1].name)
-			onButton(arg0, arg2, var4[arg1].func)
+		if arg0_24 == UIItemList.EventUpdate then
+			setText(arg2_24:Find("Text"), var4_3[arg1_24].name)
+			onButton(arg0_3, arg2_24, var4_3[arg1_24].func)
 		end
 	end)
-	var5:align(#var4)
+	var5_3:align(#var4_3)
 end
 
-function var0.OnDestroy(arg0)
-	setParent(arg0.rtText, arg0.rtContent, false)
+function var0_0.OnDestroy(arg0_25)
+	setParent(arg0_25.rtText, arg0_25.rtContent, false)
 end
 
-function var0.Show(arg0)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0._tf)
-	setActive(arg0._tf, true)
+function var0_0.Show(arg0_26)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_26._tf)
+	setActive(arg0_26._tf, true)
 end
 
-function var0.Hide(arg0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0._tf, arg0._parentTf)
-	setActive(arg0._tf, false)
+function var0_0.Hide(arg0_27)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_27._tf, arg0_27._parentTf)
+	setActive(arg0_27._tf, false)
 end
 
-function var0.Setup(arg0)
+function var0_0.Setup(arg0_28)
 	return
 end
 
-function var0.OnClickRichText(arg0, arg1, arg2)
-	if arg1 == "ShipProperty" then
-		local var0 = tonumber(arg2)
-		local var1 = nowWorld():GetShipVO(var0)
+function var0_0.OnClickRichText(arg0_29, arg1_29, arg2_29)
+	if arg1_29 == "ShipProperty" then
+		local var0_29 = tonumber(arg2_29)
+		local var1_29 = nowWorld():GetShipVO(var0_29)
 
-		assert(var1, "ship not exist: " .. var0)
-		arg0:AppendText("-------------------------------------------------------------------------")
-		arg0:AppendText("打印舰娘属性：")
-		arg0:AppendText(string.format("[%s] [id: %s] [config_id: %s]", var1:getName(), var1.id, var1.configId))
+		assert(var1_29, "ship not exist: " .. var0_29)
+		arg0_29:AppendText("-------------------------------------------------------------------------")
+		arg0_29:AppendText("打印舰娘属性：")
+		arg0_29:AppendText(string.format("[%s] [id: %s] [config_id: %s]", var1_29:getName(), var1_29.id, var1_29.configId))
 
-		local var2 = {
+		local var2_29 = {
 			{
 				AttributeType.Durability,
 				"耐久"
@@ -404,34 +404,34 @@ function var0.OnClickRichText(arg0, arg1, arg2)
 				"声呐效果持续时间"
 			}
 		}
-		local var3 = var1:getProperties()
+		local var3_29 = var1_29:getProperties()
 
-		for iter0, iter1 in ipairs(var2) do
-			local var4
+		for iter0_29, iter1_29 in ipairs(var2_29) do
+			local var4_29
 
-			if iter1[1] == AttributeType.Armor then
-				var4 = var1:getShipArmorName()
+			if iter1_29[1] == AttributeType.Armor then
+				var4_29 = var1_29:getShipArmorName()
 			else
-				var4 = var3[iter1[1]]
+				var4_29 = var3_29[iter1_29[1]]
 			end
 
-			if var4 then
-				arg0:AppendText(string.format("\t\t%s[%s] : <color=#A9F548>%s</color>", iter1[1], iter1[2], var4))
+			if var4_29 then
+				arg0_29:AppendText(string.format("\t\t%s[%s] : <color=#A9F548>%s</color>", iter1_29[1], iter1_29[2], var4_29))
 			end
 		end
 
-		arg0:AppendText("-------------------------------------------------------------------------")
+		arg0_29:AppendText("-------------------------------------------------------------------------")
 	end
 end
 
-function var0.AppendText(arg0, arg1)
-	local var0 = cloneTplTo(arg0.rtText, arg0.rtContent, false)
+function var0_0.AppendText(arg0_30, arg1_30)
+	local var0_30 = cloneTplTo(arg0_30.rtText, arg0_30.rtContent, false)
 
-	var0:GetComponent("RichText"):AddListener(function(arg0, arg1)
-		arg0:OnClickRichText(arg0, arg1)
+	var0_30:GetComponent("RichText"):AddListener(function(arg0_31, arg1_31)
+		arg0_30:OnClickRichText(arg0_31, arg1_31)
 	end)
-	setText(var0, arg1)
-	print(arg1)
+	setText(var0_30, arg1_30)
+	print(arg1_30)
 end
 
-return var0
+return var0_0

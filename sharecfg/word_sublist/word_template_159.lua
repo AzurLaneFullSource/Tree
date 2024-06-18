@@ -1,13 +1,13 @@
 ﻿pg = pg or {}
 
-local var0 = pg
+local var0_0 = pg
 
-var0.word_template_159 = {}
+var0_0.word_template_159 = {}
 
-local var1 = var0.word_template_159
+local var1_0 = var0_0.word_template_159
 
 function temp()
-	var1.莖 = {
+	var1_0.莖 = {
 		候 = {
 			佳 = {
 				陰 = {
@@ -21,7 +21,7 @@ end
 temp()
 
 function temp()
-	var1.惊 = {
+	var1_0.惊 = {
 		尘 = {
 			溅 = {
 				血 = {
@@ -67,7 +67,7 @@ end
 temp()
 
 function temp()
-	var1.睛 = {
+	var1_0.睛 = {
 		平 = {
 			this = true
 		}
@@ -77,7 +77,7 @@ end
 temp()
 
 function temp()
-	var1.經 = {
+	var1_0.經 = {
 		典 = {
 			炮 = {
 				圖 = {
@@ -101,7 +101,7 @@ end
 temp()
 
 function temp()
-	var1.井 = {
+	var1_0.井 = {
 		川 = {
 			绘 = {
 				美 = {
@@ -146,7 +146,7 @@ end
 temp()
 
 function temp()
-	var1.颈 = {
+	var1_0.颈 = {
 		乒 = {
 			this = true
 		},
@@ -159,7 +159,7 @@ end
 temp()
 
 function temp()
-	var1.景 = {
+	var1_0.景 = {
 		平 = {
 			this = true
 		},
