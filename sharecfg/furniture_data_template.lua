@@ -18604,7 +18604,15 @@ pg.base.furniture_data_template = {
 		offset = {},
 		canputonGrid = {},
 		can_trigger = {
-			1
+			2,
+			{
+				"song11",
+				"song12"
+			},
+			{
+				"normal",
+				"normal"
+			}
 		},
 		spine = {
 			{

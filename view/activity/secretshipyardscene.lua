@@ -214,7 +214,10 @@ function var0_0.checkTaskFinish(arg0_21)
 end
 
 function var0_0.checkMinigame(arg0_22)
-	return pg.mini_game[var0_0.GAME_ID] ~= nil
+	local var0_22 = pg.mini_game[var0_0.GAME_ID].simple_config_data.show_time
+	local var1_22 = pg.TimeMgr.GetInstance():inTime(var0_22)
+
+	return pg.mini_game[var0_0.GAME_ID] ~= nil and var1_22
 end
 
 function var0_0.willExit(arg0_23)

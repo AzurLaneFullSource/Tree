@@ -37,18 +37,19 @@ function var0_0.init(arg0_2)
 	SetActive(arg0_2._tabTpl, false)
 
 	arg0_2._subTabList = {}
-	arg0_2._detailTitleImg = arg0_2:findTF("bg/content_view/viewport/content/title_img")
+	arg0_2._contentTF = arg0_2:findTF("bg/content_view/viewport/content")
+	arg0_2._detailTitleImg = arg0_2:findTF("title_img", arg0_2._contentTF)
 	arg0_2._detailTitleImgLayoutElement = arg0_2._detailTitleImg:GetComponent(typeof(LayoutElement))
-	arg0_2._detailTitle = arg0_2:findTF("bg/content_view/viewport/content/title")
-	arg0_2._detailTitleTxt = arg0_2:findTF("bg/content_view/viewport/content/title/title_txt/mask/scroll_txt")
-	arg0_2._detailTimeTxt = arg0_2:findTF("bg/content_view/viewport/content/title/time_txt")
-	arg0_2._detailLine = arg0_2:findTF("bg/content_view/viewport/content/line")
-	arg0_2._contentContainer = arg0_2:findTF("bg/content_view/viewport/content/content_container")
-	arg0_2._contentTxtTpl = arg0_2:findTF("bg/content_view/viewport/content/content_txt")
+	arg0_2._detailTitle = arg0_2:findTF("title", arg0_2._contentTF)
+	arg0_2._detailTitleTxt = arg0_2:findTF("title/title_txt/mask/scroll_txt", arg0_2._contentTF)
+	arg0_2._detailTimeTxt = arg0_2:findTF("title/time_txt", arg0_2._contentTF)
+	arg0_2._detailLine = arg0_2:findTF("line", arg0_2._contentTF)
+	arg0_2._contentContainer = arg0_2:findTF("content_container", arg0_2._contentTF)
+	arg0_2._contentTxtTpl = arg0_2:findTF("content_txt", arg0_2._contentTF)
 
 	setActive(arg0_2._contentTxtTpl, false)
 
-	arg0_2._contentBannerTpl = arg0_2:findTF("bg/content_view/viewport/content/content_banner")
+	arg0_2._contentBannerTpl = arg0_2:findTF("content_banner", arg0_2._contentTF)
 
 	setActive(arg0_2._contentBannerTpl, false)
 
@@ -66,8 +67,6 @@ function var0_0.init(arg0_2)
 
 	arg0_2._loadingFlag = {}
 	arg0_2._contentList = {}
-	arg0_2.noticeKeys = {}
-	arg0_2.noticeVersions = {}
 	arg0_2._noticeDic = {
 		{},
 		{},
@@ -78,6 +77,8 @@ function var0_0.init(arg0_2)
 		{},
 		{}
 	}
+	arg0_2.noticeKeys = {}
+	arg0_2.noticeVersions = {}
 	arg0_2.LTList = {}
 end
 
@@ -121,7 +122,7 @@ function var0_0.updateRed(arg0_7)
 end
 
 function var0_0.checkNotice(arg0_8, arg1_8)
-	return arg1_8.type and arg1_8.type > 0 and arg1_8.type < 4 and (arg1_8.paramType == nil or arg1_8.paramType == 1 and type(arg1_8.param) == "string" or arg1_8.paramType == 2 and type(arg1_8.param) == "string" or arg1_8.paramType == 3 and type(arg1_8.param) == "number")
+	return arg1_8.type and arg1_8.type > 0 and arg1_8.type < 4 and (arg1_8.paramType == nil or arg1_8.paramType == 1 and type(arg1_8.param) == "string" or arg1_8.paramType == 2 and type(arg1_8.param) == "string" or arg1_8.paramType == 3 and type(arg1_8.param) == "number" or arg1_8.paramType == 4 and type(arg1_8.param) == "number" and pg.activity_banner_notice[arg1_8.param] ~= nil)
 end
 
 function var0_0.initNotices(arg0_9, arg1_9)
@@ -129,50 +130,27 @@ function var0_0.initNotices(arg0_9, arg1_9)
 	arg0_9.defaultSubTab = arg0_9.contextData.defaultSubTab
 
 	for iter0_9, iter1_9 in pairs(arg1_9) do
-		local var0_9 = string.match(iter1_9.titleImage, "<config.*/>")
-		local var1_9 = Clone(iter1_9)
-		local var2_9 = var0_9 and string.match(var0_9, "link%s*=%s*([^%s]+)") or nil
-		local var3_9 = var0_9 and tonumber(string.match(var0_9, "type%s*=%s*(%d+)")) or nil
-		local var4_9
-
-		if var3_9 then
-			if var3_9 == 1 then
-				var4_9 = string.match(var0_9, "param%s*=%s*'(.*)'")
-			elseif var3_9 == 2 then
-				var4_9 = string.match(var0_9, "param%s*=%s*'(.*)'")
-			elseif var3_9 == 3 then
-				var4_9 = string.match(var0_9, "param%s*=%s*(%d+)")
-				var4_9 = var4_9 and tonumber(var4_9) or var4_9
-			end
-		end
-
-		var1_9.param = var4_9
-		var1_9.link = var2_9
-		var1_9.paramType = var3_9
-		var1_9.titleImage = var0_9 and string.gsub(var1_9.titleImage, var0_9, "") or var1_9.titleImage
-		var1_9.code = var1_9:prefKey()
-
-		if arg0_9:checkNotice(var1_9) then
-			table.insert(arg0_9._noticeDic[var1_9.type], var1_9)
-			table.insert(arg0_9._redDic[var1_9.type], PlayerPrefs.HasKey(var1_9.code))
+		if arg0_9:checkNotice(iter1_9) then
+			table.insert(arg0_9._noticeDic[iter1_9.type], iter1_9)
+			table.insert(arg0_9._redDic[iter1_9.type], PlayerPrefs.HasKey(iter1_9.code))
 		else
-			Debugger.LogWarning("公告配置错误  id = " .. var1_9.id)
+			Debugger.LogWarning("公告配置错误  id = " .. iter1_9.id)
 		end
 	end
 
 	for iter2_9 = 1, 3 do
-		local var5_9 = arg0_9._mainTabContainer:GetChild(iter2_9 - 1)
-		local var6_9 = var5_9:Find("selected"):GetComponent(typeof(Animation))
+		local var0_9 = arg0_9._mainTabContainer:GetChild(iter2_9 - 1)
+		local var1_9 = var0_9:Find("selected"):GetComponent(typeof(Animation))
 
-		setText(var5_9:Find("Text"), i18n(var0_0.MAIN_TAB_GAMETIP[iter2_9]))
-		onToggle(arg0_9, var5_9, function(arg0_10)
+		setText(var0_9:Find("Text"), i18n(var0_0.MAIN_TAB_GAMETIP[iter2_9]))
+		onToggle(arg0_9, var0_9, function(arg0_10)
 			if arg0_10 then
 				if arg0_9.currentMainTab and arg0_9.currentMainTab == iter2_9 then
 					return
 				end
 
 				if arg0_9.currentMainTab then
-					var6_9:Play(arg0_9.currentMainTab > iter2_9 and "anim_BB_toptitle_R_in" or "anim_BB_toptitle_L_in")
+					var1_9:Play(arg0_9.currentMainTab > iter2_9 and "anim_BB_toptitle_R_in" or "anim_BB_toptitle_L_in")
 					arg0_9._bgAnim:Play(arg0_9.currentMainTab > iter2_9 and "anim_BulletinBoard_Rin_change" or "anim_BulletinBoard_Lin_change")
 				end
 
@@ -185,7 +163,7 @@ function var0_0.initNotices(arg0_9, arg1_9)
 		end)
 
 		if #arg0_9._noticeDic[iter2_9] == 0 then
-			setActive(var5_9, false)
+			setActive(var0_9, false)
 		else
 			arg0_9.defaultMainTab = arg0_9.defaultMainTab or iter2_9
 		end
@@ -336,6 +314,8 @@ function var0_0.setNoticeDetail(arg0_18, arg1_18)
 					Application.OpenURL(arg1_18.link)
 					arg0_18:emit(NewBulletinBoardMediator.TRACK_OPEN_URL, arg1_18.track)
 				end
+
+				Debugger.LogWarning("使用了旧的跳转配置格式 id = " .. arg1_18.id)
 			end
 
 			if arg1_18.paramType then
@@ -348,6 +328,10 @@ function var0_0.setNoticeDetail(arg0_18, arg1_18)
 					arg0_18:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.ACTIVITY, {
 						id = arg1_18.param
 					})
+				elseif arg1_18.paramType == 4 then
+					local var0_22 = pg.activity_banner_notice[arg1_18.param].param
+
+					arg0_18:emit(NewBulletinBoardMediator.GO_SCENE, var0_22[1], var0_22[2])
 				end
 			end
 

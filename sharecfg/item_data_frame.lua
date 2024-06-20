@@ -452,11 +452,11 @@ pg.item_data_frame = {
 	},
 	[330] = {
 		time_limit_type = 0,
-		name = "Sigil of the Martyr",
-		gain_by = "绽放于辉光之城 ",
+		name = "Dreambound Martyr",
+		gain_by = "Light of the Martyrium ",
 		id = 330,
 		time_second = 0,
-		desc = "Obtained from an event.",
+		desc = "<color=#ffffff>\"I will continue choosing to protect, even in a transient dream.\"</color>\nGiven to Commanders who participated in the \"Light of the Martyrium\" event.",
 		scene = {}
 	},
 	[406] = {

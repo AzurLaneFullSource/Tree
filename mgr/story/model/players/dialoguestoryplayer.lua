@@ -283,6 +283,10 @@ function var0_0.SetGlitchArtForPortrait(arg0_23)
 end
 
 function var0_0.ClearGlitchArtForPortrait(arg0_24)
+	if not arg0_24.portraitImg then
+		return
+	end
+
 	if arg0_24.portraitImg.material ~= arg0_24.portraitImg.defaultGraphicMaterial then
 		arg0_24.portraitImg.material = arg0_24.portraitImg.defaultGraphicMaterial
 	end
@@ -399,7 +403,7 @@ end
 
 function var0_0.ClearCanMarkNode(arg0_37)
 	if arg0_37.canMarkNode then
-		Object.Destroy(arg0_37.canMarkNode.go)
+		Destroy(arg0_37.canMarkNode.go)
 
 		arg0_37.canMarkNode = nil
 	end
@@ -595,7 +599,7 @@ function var0_0.ClearHeadMask(arg0_50, arg1_50)
 
 	local var1_50 = var0_50:GetChild(0):Find("head_mask")
 
-	Object.Destroy(var1_50.gameObject)
+	Destroy(var1_50.gameObject)
 
 	local var2_50 = arg1_50:GetComponentsInChildren(typeof(Image))
 
@@ -1482,13 +1486,13 @@ local function var11_0(arg0_108)
 			var3_108.material:SetColor("_Color", var4_108)
 		end
 
-		setGray(arg0_108, false, true)
+		setGray(var0_108, false, true)
 		retPaintingPrefab(arg0_108, var0_108.name)
 
 		local var5_108 = var0_108:Find("temp_mask")
 
 		if var5_108 then
-			Destroy(var5_108)
+			Destroy(var5_108.gameObject)
 		end
 	end
 end
@@ -1536,12 +1540,12 @@ function var0_0.ResetMeshPainting(arg0_110, arg1_110)
 			end
 		end
 
-		setGray(arg1_110, false, true)
+		setGray(var0_110, false, true)
 
 		local var5_110 = var0_110:Find("temp_mask")
 
 		if var5_110 then
-			Destroy(var5_110)
+			Destroy(var5_110.gameObject)
 		end
 	end
 end
@@ -1563,17 +1567,8 @@ local function var12_0(arg0_111, arg1_111)
 	local var3_111 = table.getCount(arg0_111.live2dChars) <= 0
 
 	if var1_111 and var3_111 then
-		local var4_111 = arg0_111.front:GetComponent(typeof(GraphicRaycaster))
-
-		if var4_111 then
-			Object.Destroy(var4_111)
-		end
-
-		local var5_111 = arg0_111.front:GetComponent(typeof(Canvas))
-
-		if var5_111 then
-			Object.Destroy(var5_111)
-		end
+		RemoveComponent(arg0_111.front, "GraphicRaycaster")
+		RemoveComponent(arg0_111.front, "Canvas")
 	end
 end
 
@@ -1591,17 +1586,8 @@ local function var13_0(arg0_112, arg1_112)
 	local var2_112 = table.getCount(arg0_112.spinePainings) <= 0
 
 	if var1_112 and var2_112 then
-		local var3_112 = arg0_112.front:GetComponent(typeof(GraphicRaycaster))
-
-		if var3_112 then
-			Object.Destroy(var3_112)
-		end
-
-		local var4_112 = arg0_112.front:GetComponent(typeof(Canvas))
-
-		if var4_112 then
-			Object.Destroy(var4_112)
-		end
+		RemoveComponent(arg0_112.front, "GraphicRaycaster")
+		RemoveComponent(arg0_112.front, "Canvas")
 	end
 end
 
@@ -1704,7 +1690,14 @@ function var0_0.OnWillExit(arg0_121, arg1_121, arg2_121, arg3_121)
 end
 
 function var0_0.OnEnd(arg0_123)
-	arg0_123.conentTxt.fontSize = arg0_123.defualtFontSize
+	if arg0_123.conentTxt then
+		arg0_123.conentTxt.fontSize = arg0_123.defualtFontSize
+		arg0_123.conentTxt.text = ""
+	end
+
+	if arg0_123.nameTxt then
+		arg0_123.nameTxt.text = ""
+	end
 
 	arg0_123:ClearGlitchArtForPortrait()
 	arg0_123:ClearCanMarkNode()
@@ -1716,9 +1709,6 @@ function var0_0.OnEnd(arg0_123)
 	}
 
 	arg0_123:RecyclePainting(var0_123)
-
-	arg0_123.conentTxt.text = ""
-	arg0_123.nameTxt.text = ""
 
 	for iter0_123, iter1_123 in ipairs({
 		"actorLeft",
