@@ -335,7 +335,7 @@ pg.activity_series_enemy = {
 	},
 	[2001] = {
 		pre_chapter = 0,
-		name = "Administrative Building",
+		name = "Admin Building",
 		chapter_name = "Easy",
 		type = 1,
 		pos_x = "0.10703125",
@@ -346,7 +346,7 @@ pg.activity_series_enemy = {
 		id = 2001,
 		ex_count = "",
 		oil = 0,
-		profiles = "Welcome to the administrative building. \nMay you have a productive day. \nMay you never feel pressed for time. \nMay your inner child always be with you.",
+		profiles = "Welcome to the admin building.\nMay you have a productive day.\nMay you never feel pressed for time.\nMay your inner child always be with you.",
 		limitation = {},
 		expedition_id = {
 			1819101
@@ -388,7 +388,7 @@ pg.activity_series_enemy = {
 	},
 	[2002] = {
 		pre_chapter = 2001,
-		name = "Classrooms",
+		name = "School Building",
 		chapter_name = "Normal",
 		type = 1,
 		pos_x = "0.34609375",
@@ -398,7 +398,7 @@ pg.activity_series_enemy = {
 		whether_singlefight = 1,
 		ex_count = "",
 		oil = 0,
-		profiles = "Welcome to the classrooms. \nMay you have a stress-free day. \nMay you bask in the joy of learning. \nMay your inner child always be with you.",
+		profiles = "Welcome to the school building.\nMay you have a stress-free day.\nMay you bask in the joy of learning. \nMay your inner child always be with you.",
 		limitation = {},
 		expedition_id = {
 			1819201,
@@ -457,7 +457,7 @@ pg.activity_series_enemy = {
 	},
 	[2003] = {
 		pre_chapter = 2002,
-		name = "Arts Cluster",
+		name = "Arts Building",
 		chapter_name = "Hard",
 		type = 1,
 		pos_x = "0.50546875",
@@ -467,7 +467,7 @@ pg.activity_series_enemy = {
 		whether_singlefight = 1,
 		ex_count = "",
 		oil = 0,
-		profiles = "Welcome to the arts cluster. \nMay you have a colorful day. \nMay you keep your innocence. \nMay your inner child always be with you.",
+		profiles = "Welcome to the arts building. \nMay you have a colorful day.\nMay you keep your innocence.\nMay your inner child always be with you.",
 		limitation = {},
 		expedition_id = {
 			1819301,
@@ -531,7 +531,7 @@ pg.activity_series_enemy = {
 	},
 	[2004] = {
 		pre_chapter = 2003,
-		name = "Recreational Area",
+		name = "Athletic Field",
 		chapter_name = "SP",
 		type = 2,
 		pos_x = "0.60546875",
@@ -541,7 +541,7 @@ pg.activity_series_enemy = {
 		whether_singlefight = 0,
 		ex_count = "",
 		oil = 0,
-		profiles = "Welcome to the recreational area. \nMay you have an active day. \nMay you feel full of energy. \nMay your inner child always be with you.",
+		profiles = "Welcome to the athletic field.\nMay you have an active day.\nMay you feel full of energy.\nMay your inner child always be with you.",
 		limitation = {},
 		expedition_id = {
 			1819401,
