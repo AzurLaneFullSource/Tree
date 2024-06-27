@@ -16,6 +16,14 @@ function var0_0.didEnter(arg0_3)
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 	arg0_3:UpdateView()
+
+	local var0_3 = arg0_3.contextData.isAutoFight
+	local var1_3 = PlayerPrefs.GetInt(AUTO_BATTLE_LABEL, 0) > 0
+
+	if var0_3 and var1_3 then
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_AUTO_BATTLE)
+		LuaHelper.Vibrate()
+	end
 end
 
 function var0_0.UpdateView(arg0_4)
@@ -44,77 +52,62 @@ function var0_0.UpdateView(arg0_4)
 
 	local var1_4 = var0_4.rewards
 	local var2_4 = {}
+
+	setActive(arg0_4.boxView:Find("Content/TextArea2"), arg0_4.contextData.totalBattleTimes)
+
 	local var3_4 = var1_4 and #var1_4 > 0
+	local var4_4 = CustomIndexLayer.Clone2Full(arg0_4.itemList, #var1_4)
 
-	arg0_4.itemList = arg0_4.boxView:Find("Content/ItemGrid")
+	for iter0_4, iter1_4 in ipairs(var4_4) do
+		local var5_4 = var1_4[iter0_4]
+		local var6_4 = var4_4[iter0_4]
 
-	setActive(arg0_4.boxView:Find("Content/TextArea2"), false)
-	setActive(arg0_4.boxView:Find("Content/ItemGrid2"), false)
-	setActive(arg0_4.boxView:Find("Content/Title"), false)
-	setActive(arg0_4.itemList, false)
+		updateDrop(var6_4:Find("Icon"), var5_4)
+		onButton(arg0_4, var6_4:Find("Icon"), function()
+			arg0_4:emit(BaseUI.ON_DROP, var5_4)
+		end, SFX_PANEL)
+	end
 
 	if var3_4 then
-		arg0_4.hasRewards = true
-
-		table.insert(var2_4, function(arg0_8)
-			setActive(arg0_4.boxView:Find("Content/Title"), true)
-			setActive(arg0_4.itemList, true)
-			arg0_8()
-		end)
-
-		local var4_4 = CustomIndexLayer.Clone2Full(arg0_4.itemList, #var1_4)
-
-		for iter0_4, iter1_4 in ipairs(var4_4) do
-			local var5_4 = var1_4[iter0_4]
-			local var6_4 = var4_4[iter0_4]
-
-			updateDrop(var6_4:Find("Shell/Icon"), var5_4)
-			onButton(arg0_4, var6_4:Find("Shell/Icon"), function()
-				arg0_4:emit(BaseUI.ON_DROP, var5_4)
-			end, SFX_PANEL)
-		end
-
 		arg0_4.isRewardAnimating = true
 
-		local var7_4 = {}
-
 		for iter2_4 = 1, #var1_4 do
-			local var8_4 = var4_4[iter2_4]
+			local var7_4 = var4_4[iter2_4]
 
-			setActive(var8_4, false)
-			table.insert(var2_4, function(arg0_10)
+			setActive(var7_4, false)
+			table.insert(var2_4, function(arg0_9)
 				if arg0_4.exited then
 					return
 				end
 
-				setActive(var8_4, true)
+				setActive(var7_4, true)
 				scrollTo(arg0_4.boxView:Find("Content"), {
 					y = 0
 				})
 
-				arg0_4.LTid = LeanTween.delayedCall(var1_0, System.Action(arg0_10)).uniqueId
+				arg0_4.LTid = LeanTween.delayedCall(var1_0, System.Action(arg0_9)).uniqueId
 			end)
 		end
 	end
 
-	local var9_4 = {}
-	local var10_4 = arg0_4.contextData.stopReason
+	local var8_4 = {}
+	local var9_4 = arg0_4.contextData.stopReason
 
-	if not var10_4 then
+	if not var9_4 then
 		if arg0_4.contextData.isAutoFight then
-			table.insert(var9_4, i18n("multiple_sorties_finish"))
+			table.insert(var8_4, i18n("multiple_sorties_finish"))
 		else
-			table.insert(var9_4, i18n("multiple_sorties_stop"))
+			table.insert(var8_4, i18n("multiple_sorties_stop"))
 		end
 	else
-		table.insert(var9_4, var10_4 .. i18n("multiple_sorties_stop_tip_end"))
+		table.insert(var8_4, var9_4 .. i18n("multiple_sorties_stop_tip_end"))
 	end
 
 	if arg0_4.contextData.totalBattleTimes then
-		table.insert(var9_4, i18n("multiple_sorties_end_status", arg0_4.contextData.totalBattleTimes, arg0_4.contextData.totalBattleTimes - arg0_4.contextData.continuousBattleTimes))
+		table.insert(var8_4, i18n("multiple_sorties_end_status", arg0_4.contextData.totalBattleTimes, arg0_4.contextData.totalBattleTimes - arg0_4.contextData.continuousBattleTimes))
 
-		if #var9_4 > 0 then
-			setText(arg0_4.boxView:Find("Content/TextArea2/Text"), table.concat(var9_4, "\n"))
+		if #var8_4 > 0 then
+			setText(arg0_4.boxView:Find("Content/TextArea2/Text"), table.concat(var8_4, "\n"))
 		end
 	end
 
@@ -123,7 +116,7 @@ function var0_0.UpdateView(arg0_4)
 	end)
 end
 
-function var0_0.willExit(arg0_12)
+function var0_0.willExit(arg0_11)
 	pg.m02:sendNotification(BossRushTotalRewardPanelMediator.ON_WILL_EXIT)
 end
 

@@ -661,6 +661,7 @@ function var0_0.InitBranches(arg0_59, arg1_59, arg2_59, arg3_59, arg4_59)
 				arg0_59.selectedBranchID = arg1_60
 
 				arg0_59:SetBranchCode(arg1_59, arg2_59, var2_60)
+				pg.NewStoryMgr.GetInstance():TrackingOption(arg2_59:GetOptionIndex(), var2_60)
 
 				local var0_61 = arg2_60:GetComponent(typeof(Animation))
 

@@ -42,6 +42,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.id = 0
 	arg0_1.placeholderType = 0
 	arg0_1.defaultTb = arg1_1.defaultTb
+	arg0_1.optionIndex = 0
 end
 
 function var0_0.ShouldShake(arg0_2)
@@ -474,44 +475,52 @@ function var0_0.IsImport(arg0_59)
 	return arg0_59.important
 end
 
-function var0_0.GetOptions(arg0_60)
-	return _.map(arg0_60.options or {}, function(arg0_61)
-		local var0_61 = arg0_61.content
+function var0_0.SetOptionIndex(arg0_60, arg1_60)
+	arg0_60.optionIndex = arg1_60
+end
 
-		if arg0_60:ShouldReplacePlayer() then
-			var0_61 = arg0_60:ReplacePlayerName(var0_61)
+function var0_0.GetOptionIndex(arg0_61)
+	return arg0_61.optionIndex
+end
+
+function var0_0.GetOptions(arg0_62)
+	return _.map(arg0_62.options or {}, function(arg0_63)
+		local var0_63 = arg0_63.content
+
+		if arg0_62:ShouldReplacePlayer() then
+			var0_63 = arg0_62:ReplacePlayerName(var0_63)
 		end
 
-		if arg0_60:ShouldReplaceTb() then
-			var0_61 = arg0_60:ReplaceTbName(var0_61)
+		if arg0_62:ShouldReplaceTb() then
+			var0_63 = arg0_62:ReplaceTbName(var0_63)
 		end
 
-		local var1_61 = HXSet.hxLan(var0_61)
+		local var1_63 = HXSet.hxLan(var0_63)
 
 		return {
-			var1_61,
-			arg0_61.flag
+			var1_63,
+			arg0_63.flag
 		}
 	end)
 end
 
-function var0_0.ShouldJumpToNextScript(arg0_62)
-	return arg0_62.nextScriptName ~= nil
+function var0_0.ShouldJumpToNextScript(arg0_64)
+	return arg0_64.nextScriptName ~= nil
 end
 
-function var0_0.GetNextScriptName(arg0_63)
-	return arg0_63.nextScriptName
+function var0_0.GetNextScriptName(arg0_65)
+	return arg0_65.nextScriptName
 end
 
-function var0_0.ShouldDelayEvent(arg0_64)
-	return arg0_64.eventDelay and arg0_64.eventDelay > 0
+function var0_0.ShouldDelayEvent(arg0_66)
+	return arg0_66.eventDelay and arg0_66.eventDelay > 0
 end
 
-function var0_0.GetEventDelayTime(arg0_65)
-	return arg0_65.eventDelay
+function var0_0.GetEventDelayTime(arg0_67)
+	return arg0_67.eventDelay
 end
 
-function var0_0.GetUsingPaintingNames(arg0_66)
+function var0_0.GetUsingPaintingNames(arg0_68)
 	return {}
 end
 

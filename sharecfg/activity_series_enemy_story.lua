@@ -353,6 +353,142 @@ pg.activity_series_enemy_story = {
 		id = 21,
 		icon = "base5"
 	},
+	[31] = {
+		name = "Song of the Rebel",
+		pos_x = "0.10703125",
+		story = "HUANYINLAIDAOTONGXINXUEYUAN2",
+		type = 1,
+		line = 0,
+		pos_y = "0.157291667",
+		pass_awards = 0,
+		id = 31,
+		icon = "",
+		trigger_type = {
+			1
+		},
+		trigger_value = {
+			0
+		}
+	},
+	[32] = {
+		name = "Band Together",
+		pos_x = "0.34609375",
+		story = "1819601",
+		type = 3,
+		line = 0,
+		pos_y = "0.347916667",
+		pass_awards = 0,
+		id = 32,
+		icon = "",
+		trigger_type = {
+			3
+		},
+		trigger_value = {
+			31
+		}
+	},
+	[33] = {
+		name = "Mega Commander, Arise",
+		pos_x = "0.50546875",
+		story = "1819602",
+		type = 3,
+		line = 0,
+		pos_y = "0.080208333",
+		pass_awards = 0,
+		id = 33,
+		icon = "",
+		trigger_type = {
+			3
+		},
+		trigger_value = {
+			32
+		}
+	},
+	[34] = {
+		name = "Fight on the Athletic Field",
+		pos_x = "0.60546875",
+		story = "1819603",
+		type = 3,
+		line = 0,
+		pos_y = "0.446875",
+		pass_awards = 0,
+		id = 34,
+		icon = "",
+		trigger_type = {
+			3
+		},
+		trigger_value = {
+			33
+		}
+	},
+	[35] = {
+		name = "Save Our Teachers!",
+		pos_x = "0.6265625",
+		story = "HUANYINLAIDAOTONGXINXUEYUAN6",
+		type = 1,
+		line = 0,
+		pos_y = "0.15625",
+		pass_awards = 0,
+		id = 35,
+		icon = "",
+		trigger_type = {
+			3
+		},
+		trigger_value = {
+			34
+		}
+	},
+	[36] = {
+		name = "Let's Get Mischievous!",
+		pos_x = "1.10703125",
+		story = "1819604",
+		type = 3,
+		line = 0,
+		pos_y = "1.157291667",
+		pass_awards = 0,
+		id = 36,
+		icon = "",
+		trigger_type = {
+			3
+		},
+		trigger_value = {
+			35
+		}
+	},
+	[37] = {
+		name = "Out of Control Innocence",
+		pos_x = "1.34609375",
+		story = "1819605",
+		type = 3,
+		line = 0,
+		pos_y = "1.347916667",
+		pass_awards = 0,
+		id = 37,
+		icon = "",
+		trigger_type = {
+			3
+		},
+		trigger_value = {
+			36
+		}
+	},
+	[38] = {
+		name = "Innocence Eternal",
+		pos_x = "1.50546875",
+		story = "HUANYINLAIDAOTONGXINXUEYUAN9",
+		type = 1,
+		line = 0,
+		pos_y = "1.080208333",
+		pass_awards = 0,
+		id = 38,
+		icon = "",
+		trigger_type = {
+			3
+		},
+		trigger_value = {
+			37
+		}
+	},
 	all = {
 		1,
 		2,
@@ -374,6 +510,14 @@ pg.activity_series_enemy_story = {
 		18,
 		19,
 		20,
-		21
+		21,
+		31,
+		32,
+		33,
+		34,
+		35,
+		36,
+		37,
+		38
 	}
 }

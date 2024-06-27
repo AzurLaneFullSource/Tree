@@ -237,32 +237,50 @@ function var0_0.ExecuteOneStepSubmit(arg0_19)
 		var1_19 = arg0_19:filterChoiceTaskVOList(var1_19, var3_19)
 
 		local var0_20 = {}
+		local var1_20 = {}
 
 		for iter0_20 = #var1_19, 1, -1 do
-			local var1_20 = var1_19[iter0_20]
+			local var2_20 = var1_19[iter0_20]
 
-			if var1_20:isAvatarTask() then
-				if not var0_20[var1_20.actId] then
-					var0_20[var1_20.actId] = {}
+			if var2_20:isAvatarTask() then
+				if not var0_20[var2_20:getActId()] then
+					var0_20[var2_20:getActId()] = {}
 				end
 
-				table.insert(var0_20[var1_20.actId], var1_20.id)
+				table.insert(var0_20[var2_20:getActId()], var2_20.id)
+				table.remove(var1_19, iter0_20)
+			elseif var2_20:isActivityTask() then
+				if not var1_20[var2_20:getActId()] then
+					var1_20[var2_20:getActId()] = {}
+				end
+
+				table.insert(var1_20[var2_20:getActId()], var2_20.id)
 				table.remove(var1_19, iter0_20)
 			end
 		end
 
-		for iter1_20, iter2_20 in pairs(var0_20) do
-			if #iter2_20 > 0 then
-				pg.m02:sendNotification(GAME.AVATAR_FRAME_AWARD, {
-					act_id = iter1_20,
-					task_ids = iter2_20,
-					callback = function()
-						var3_19()
-					end
-				})
-				coroutine.yield()
+		local function var3_20(arg0_21)
+			for iter0_21, iter1_21 in pairs(arg0_21) do
+				if #iter1_21 > 0 then
+					pg.m02:sendNotification(GAME.SUBMIT_ACTIVITY_TASK, {
+						act_id = iter0_21,
+						task_ids = iter1_21,
+						callback = function(arg0_22, arg1_22, arg2_22)
+							var3_19()
+						end
+					})
+					coroutine.yield()
+				end
 			end
 		end
+
+		if #var1_19 > 0 then
+			arg0_19:emit(TaskMediator.STORE_ACTIVITY_AWARDS, true)
+		end
+
+		var3_20(var0_20)
+		var3_20(var1_20)
+		arg0_19:emit(TaskMediator.STORE_ACTIVITY_AWARDS, false)
 
 		if #var1_19 > 0 then
 			pg.m02:sendNotification(GAME.MERGE_TASK_ONE_STEP_AWARD, {
@@ -282,151 +300,151 @@ function var0_0.ExecuteOneStepSubmit(arg0_19)
 	end
 end
 
-function var0_0.filterOverflowTaskVOList(arg0_22, arg1_22)
-	local var0_22 = {}
-	local var1_22 = getProxy(PlayerProxy):getData()
-	local var2_22 = pg.gameset.urpt_chapter_max.description[1]
-	local var3_22 = var1_22.gold
-	local var4_22 = var1_22.oil
-	local var5_22 = not LOCK_UR_SHIP and getProxy(BagProxy):GetLimitCntById(var2_22) or 0
-	local var6_22 = pg.gameset.max_gold.key_value
-	local var7_22 = pg.gameset.max_oil.key_value
+function var0_0.filterOverflowTaskVOList(arg0_23, arg1_23)
+	local var0_23 = {}
+	local var1_23 = getProxy(PlayerProxy):getData()
+	local var2_23 = pg.gameset.urpt_chapter_max.description[1]
+	local var3_23 = var1_23.gold
+	local var4_23 = var1_23.oil
+	local var5_23 = not LOCK_UR_SHIP and getProxy(BagProxy):GetLimitCntById(var2_23) or 0
+	local var6_23 = pg.gameset.max_gold.key_value
+	local var7_23 = pg.gameset.max_oil.key_value
 
 	if LOCK_UR_SHIP or not pg.gameset.urpt_chapter_max.description[2] then
-		local var8_22 = 0
+		local var8_23 = 0
 	end
 
-	local var9_22 = false
+	local var9_23 = false
 
-	for iter0_22, iter1_22 in pairs(arg1_22) do
-		local var10_22 = iter1_22:judgeOverflow(var3_22, var4_22, var5_22)
+	for iter0_23, iter1_23 in pairs(arg1_23) do
+		local var10_23 = iter1_23:judgeOverflow(var3_23, var4_23, var5_23)
 
-		if not var10_22 then
-			table.insert(var0_22, iter1_22)
+		if not var10_23 then
+			table.insert(var0_23, iter1_23)
 		end
 
-		if var10_22 then
-			var9_22 = true
+		if var10_23 then
+			var9_23 = true
 		end
 	end
 
-	return var0_22, var9_22
+	return var0_23, var9_23
 end
 
-function var0_0.filterSubmitTaskVOList(arg0_23, arg1_23, arg2_23)
-	local var0_23 = {}
-	local var1_23 = arg1_23
+function var0_0.filterSubmitTaskVOList(arg0_24, arg1_24, arg2_24)
+	local var0_24 = {}
+	local var1_24 = arg1_24
 
-	for iter0_23, iter1_23 in ipairs(var1_23) do
-		if iter1_23:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_ITEM or iter1_23:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_VIRTUAL_ITEM or iter1_23:getConfig("sub_type") == TASK_SUB_TYPE_PLAYER_RES then
-			local var2_23 = DROP_TYPE_ITEM
+	for iter0_24, iter1_24 in ipairs(var1_24) do
+		if iter1_24:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_ITEM or iter1_24:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_VIRTUAL_ITEM or iter1_24:getConfig("sub_type") == TASK_SUB_TYPE_PLAYER_RES then
+			local var2_24 = DROP_TYPE_ITEM
 
-			if iter1_23:getConfig("sub_type") == TASK_SUB_TYPE_PLAYER_RES then
-				var2_23 = DROP_TYPE_RESOURCE
+			if iter1_24:getConfig("sub_type") == TASK_SUB_TYPE_PLAYER_RES then
+				var2_24 = DROP_TYPE_RESOURCE
 			end
 
-			local var3_23 = {
-				type = var2_23,
-				id = tonumber(iter1_23:getConfig("target_id")),
-				count = iter1_23:getConfig("target_num")
+			local var3_24 = {
+				type = var2_24,
+				id = tonumber(iter1_24:getConfig("target_id")),
+				count = iter1_24:getConfig("target_num")
 			}
 
-			local function var4_23()
-				table.insert(var0_23, iter1_23)
-				arg2_23()
+			local function var4_24()
+				table.insert(var0_24, iter1_24)
+				arg2_24()
 			end
 
-			local function var5_23()
-				arg2_23()
+			local function var5_24()
+				arg2_24()
 			end
 
-			local var6_23 = {
+			local var6_24 = {
 				type = MSGBOX_TYPE_ITEM_BOX,
 				content = i18n("sub_item_warning"),
 				items = {
-					var3_23
+					var3_24
 				},
-				onYes = var4_23,
-				onNo = var5_23
+				onYes = var4_24,
+				onNo = var5_24
 			}
 
-			pg.MsgboxMgr.GetInstance():ShowMsgBox(var6_23)
+			pg.MsgboxMgr.GetInstance():ShowMsgBox(var6_24)
 			coroutine.yield()
 		else
-			table.insert(var0_23, iter1_23)
+			table.insert(var0_24, iter1_24)
 		end
 	end
 
-	return var0_23
+	return var0_24
 end
 
-function var0_0.filterChoiceTaskVOList(arg0_26, arg1_26, arg2_26)
-	local var0_26 = {}
-	local var1_26 = arg1_26
+function var0_0.filterChoiceTaskVOList(arg0_27, arg1_27, arg2_27)
+	local var0_27 = {}
+	local var1_27 = arg1_27
 
-	for iter0_26, iter1_26 in ipairs(var1_26) do
-		if iter1_26:isSelectable() then
-			local var2_26 = iter1_26:getConfig("award_choice")
-			local var3_26 = {}
+	for iter0_27, iter1_27 in ipairs(var1_27) do
+		if iter1_27:isSelectable() then
+			local var2_27 = iter1_27:getConfig("award_choice")
+			local var3_27 = {}
 
-			for iter2_26, iter3_26 in ipairs(var2_26) do
-				var3_26[#var3_26 + 1] = {
-					type = iter3_26[1],
-					id = iter3_26[2],
-					count = iter3_26[3],
-					index = iter2_26
+			for iter2_27, iter3_27 in ipairs(var2_27) do
+				var3_27[#var3_27 + 1] = {
+					type = iter3_27[1],
+					id = iter3_27[2],
+					count = iter3_27[3],
+					index = iter2_27
 				}
 			end
 
-			local var4_26
+			local var4_27
 
-			local function var5_26(arg0_27)
-				var4_26 = arg0_27.index
+			local function var5_27(arg0_28)
+				var4_27 = arg0_28.index
 			end
 
-			local function var6_26()
-				if not var4_26 then
+			local function var6_27()
+				if not var4_27 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("no_item_selected_tip"))
 				else
-					local var0_28 = {}
-					local var1_28 = var2_26[var4_26]
+					local var0_29 = {}
+					local var1_29 = var2_27[var4_27]
 
-					for iter0_28, iter1_28 in ipairs(var1_28) do
-						table.insert(var0_28, {
-							type = iter1_28[1],
-							id = iter1_28[2],
-							number = iter1_28[3]
+					for iter0_29, iter1_29 in ipairs(var1_29) do
+						table.insert(var0_29, {
+							type = iter1_29[1],
+							id = iter1_29[2],
+							number = iter1_29[3]
 						})
 					end
 
-					iter1_26.choiceItemList = var0_28
+					iter1_27.choiceItemList = var0_29
 
-					table.insert(var0_26, iter1_26)
-					arg2_26()
+					table.insert(var0_27, iter1_27)
+					arg2_27()
 				end
 			end
 
-			local function var7_26()
-				arg2_26()
+			local function var7_27()
+				arg2_27()
 			end
 
-			local var8_26 = {
+			local var8_27 = {
 				type = MSGBOX_TYPE_ITEM_BOX,
 				content = i18n("select_award_warning"),
-				items = var3_26,
-				itemFunc = var5_26,
-				onYes = var6_26,
-				onNo = var7_26
+				items = var3_27,
+				itemFunc = var5_27,
+				onYes = var6_27,
+				onNo = var7_27
 			}
 
-			pg.MsgboxMgr.GetInstance():ShowMsgBox(var8_26)
+			pg.MsgboxMgr.GetInstance():ShowMsgBox(var8_27)
 			coroutine.yield()
 		else
-			table.insert(var0_26, iter1_26)
+			table.insert(var0_27, iter1_27)
 		end
 	end
 
-	return var0_26
+	return var0_27
 end
 
 return var0_0

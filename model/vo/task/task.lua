@@ -29,6 +29,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.progress = arg1_1.progress or 0
 	arg0_1.acceptTime = arg1_1.accept_time
 	arg0_1.submitTime = arg1_1.submit_time or 0
+	arg0_1._actId = nil
 end
 
 function var0_0.isClientTrigger(arg0_2)
@@ -377,6 +378,18 @@ end
 
 function var0_0.isAvatarTask(arg0_34)
 	return false
+end
+
+function var0_0.getActId(arg0_35)
+	return arg0_35._actId
+end
+
+function var0_0.setActId(arg0_36, arg1_36)
+	arg0_36._actId = arg1_36
+end
+
+function var0_0.isActivityTask(arg0_37)
+	return arg0_37._actId and arg0_37._actId > 0
 end
 
 return var0_0

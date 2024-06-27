@@ -92,17 +92,25 @@ function var0_0.InitSpecialTouch(arg0_6)
 					if math.abs(arg0_6.dragOffset.x) < 200 or math.abs(arg0_6.dragOffset.y) < 200 then
 						arg0_6.dragUp = arg1_9.position
 
-						local var0_9 = arg0_6.uiCam:ScreenToWorldPoint(arg1_9.position)
+						if arg0_6.spinePainting:isInAction() then
+							return
+						end
 
-						for iter0_9 = 1, #arg0_6.specialClickDic do
-							local var1_9 = arg0_6.specialClickDic[iter0_9]
-							local var2_9 = var1_9.tf:InverseTransformPoint(var0_9)
+						if arg0_6.spinePainting:DoDragClick() then
+							return
+						else
+							local var0_9 = arg0_6.uiCam:ScreenToWorldPoint(arg1_9.position)
 
-							if not arg0_6.spinePainting:isInAction() and math.abs(var2_9.x) < var1_9.bound.x / 2 and math.abs(var2_9.y) < var1_9.bound.y / 2 then
-								arg0_6:TriggerEvent(var1_9.name)
-								arg0_6:TriggerPersonalTask(var1_9.task)
+							for iter0_9 = 1, #arg0_6.specialClickDic do
+								local var1_9 = arg0_6.specialClickDic[iter0_9]
+								local var2_9 = var1_9.tf:InverseTransformPoint(var0_9)
 
-								return
+								if math.abs(var2_9.x) < var1_9.bound.x / 2 and math.abs(var2_9.y) < var1_9.bound.y / 2 then
+									arg0_6:TriggerEvent(var1_9.name)
+									arg0_6:TriggerPersonalTask(var1_9.task)
+
+									return
+								end
 							end
 						end
 					end
@@ -144,6 +152,10 @@ function var0_0.InitSpecialTouch(arg0_6)
 			end
 
 			onButton(arg0_6, arg0_7, function()
+				if arg0_6.spinePainting:isInAction() then
+					return
+				end
+
 				local var0_11 = arg0_6:GetSpecialTouchEvent(arg0_7.name)
 
 				if arg0_7.name == "special" then
@@ -185,12 +197,14 @@ function var0_0.OnDisplayWorld(arg0_14, arg1_14)
 
 	if var1_14 ~= "" then
 		arg0_14.spinePainting:SetAction(var1_14, 1)
+		arg0_14.spinePainting:displayWord(true)
 	end
 end
 
 function var0_0.OnDisplayWordEnd(arg0_15)
 	var0_0.super.OnDisplayWordEnd(arg0_15)
 	arg0_15.spinePainting:SetEmptyAction(1)
+	arg0_15.spinePainting:displayWord(false)
 end
 
 function var0_0.OnLongPress(arg0_16)

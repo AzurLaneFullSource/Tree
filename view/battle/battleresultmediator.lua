@@ -431,6 +431,8 @@ function var0_0.register(arg0_1)
 			local var47_6 = var0_6:getCurrentContext():getContextByMediator(ContinuousOperationMediator)
 			local var48_6 = not var47_6 or var47_6.data.autoFlag
 
+			arg0_1.contextData.isAutoFight = var48_6
+
 			if var0_6:getCurrentContext():getContextByMediator(ContinuousOperationMediator) then
 				local var49_6 = pg.GuildMsgBoxMgr.GetInstance()
 
@@ -797,7 +799,7 @@ function var0_0.handleNotification(arg0_30, arg1_30)
 		end
 
 		local var6_30 = var2_30 == SYSTEM_BOSS_RUSH and BossRushBattleResultMediator or BossRushBattleResultMediator
-		local var7_30 = var2_30 == SYSTEM_BOSS_RUSH and BossRushBattleResultLayer or BossRushEXBattleResultLayer
+		local var7_30 = var2_30 == SYSTEM_BOSS_RUSH and BossRushBattleResultLayer or BossRushConst.GetEXBattleResultLayer(var3_30)
 
 		arg0_30:addSubLayers(Context.New({
 			mediator = var6_30,
@@ -807,7 +809,8 @@ function var0_0.handleNotification(arg0_30, arg1_30)
 				system = arg0_30.contextData.system,
 				actId = var3_30,
 				seriesData = var4_30,
-				win = var5_30
+				win = var5_30,
+				isAutoFight = arg0_30.contextData.isAutoFight
 			}
 		}), true)
 		arg0_30.viewComponent:closeView()

@@ -72,6 +72,7 @@ function var0_0.onRegister(arg0_5)
 			})
 		end
 
+		pg.PoolMgr.GetInstance():ClearAllTempCache()
 		arg0_5:sendNotification(GAME.GO_SCENE, SCENE.MAINUI)
 	end)
 	arg0_5:bind(BaseUI.ON_CLOSE, function(arg0_12)

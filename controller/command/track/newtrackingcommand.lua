@@ -8,7 +8,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var4_1 = var0_1.para2 or ""
 	local var5_1 = var0_1.para3 or ""
 
-	print(var1_1, var2_1, var3_1)
+	print(var1_1, var2_1, var3_1, var4_1)
 	pg.ConnectionMgr.GetInstance():Send(10992, {
 		track_type = var1_1,
 		event_id = var2_1,

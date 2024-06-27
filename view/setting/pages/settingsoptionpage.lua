@@ -43,6 +43,7 @@ function var0_0.GetPanels(arg0_5)
 		SettingsRandomFlagShipAndSkinPanel,
 		SettingsStoryAutoPlayPanel,
 		SettingsStorySpeedPanel,
+		SettingsMainScenePanel,
 		SettingsOtherPanel
 	}
 

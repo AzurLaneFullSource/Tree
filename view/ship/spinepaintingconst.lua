@@ -32,8 +32,7 @@ var0_0.ship_drag_datas = {
 			type = 1,
 			lock_layer = true,
 			list = {
-				"dianji",
-				"normal"
+				"touch"
 			}
 		}
 	}

@@ -197,7 +197,7 @@ function var0_0.ExitRushBossSystem(arg0_13, arg1_13, arg2_13)
 	local var2_13 = arg2_13.seriesData
 	local var3_13 = arg1_13.score > ys.Battle.BattleConst.BattleScore.C
 	local var4_13 = var0_13 == SYSTEM_BOSS_RUSH and BossRushBattleResultMediator or BossRushBattleResultMediator
-	local var5_13 = var0_13 == SYSTEM_BOSS_RUSH and BossRushBattleResultLayer or BossRushEXBattleResultLayer
+	local var5_13 = var0_13 == SYSTEM_BOSS_RUSH and BossRushBattleResultLayer or BossRushConst.GetEXBattleResultLayer(var1_13)
 
 	arg0_13:addSubLayers(Context.New({
 		mediator = var4_13,
@@ -207,7 +207,8 @@ function var0_0.ExitRushBossSystem(arg0_13, arg1_13, arg2_13)
 			system = var0_13,
 			actId = var1_13,
 			seriesData = var2_13,
-			win = var3_13
+			win = var3_13,
+			isAutoFight = arg0_13.contextData.isAutoFight
 		}
 	}), true)
 	LoadContextCommand.RemoveLayerByMediator(NewBattleResultMediator)
@@ -451,7 +452,7 @@ function var0_0.ContinuousBossRush(arg0_30, arg1_30, arg2_30, arg3_30, arg4_30, 
 		function(arg0_31)
 			arg0_30:addSubLayers(Context.New({
 				mediator = ChallengePassedMediator,
-				viewComponent = BossRushPassedLayer,
+				viewComponent = BossRushConst.GetPassedLayer(arg2_30),
 				data = {
 					curIndex = arg3_30 - 1,
 					maxIndex = #arg4_30
@@ -488,6 +489,8 @@ function var0_0.CheckBossRushSystem(arg0_33, arg1_33)
 	local var6_33 = var0_33:getCurrentContext():getContextByMediator(ContinuousOperationMediator)
 	local var7_33 = not var6_33 or var6_33.data.autoFlag
 	local var8_33 = not var1_33 or var4_33 > #var5_33 or not var7_33
+
+	arg0_33.contextData.isAutoFight = var7_33
 
 	if not var8_33 then
 		arg0_33:ContinuousBossRush(arg1_33.system, var2_33, var4_33, var5_33, arg1_33.continuousBattleTimes, arg1_33.totalBattleTimes)

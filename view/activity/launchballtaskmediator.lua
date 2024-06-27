@@ -27,7 +27,7 @@ function var0_0.handleNotification(arg0_5, arg1_5)
 	local var0_5 = arg1_5:getName()
 	local var1_5 = arg1_5:getBody()
 
-	if var0_5 == GAME.SUBMIT_AVATAR_TASK_DONE then
+	if var0_5 == GAME.SUBMIT_ACTIVITY_TASK_DONE then
 		if #var1_5.awards > 0 then
 			arg0_5.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_5.awards)
 		end

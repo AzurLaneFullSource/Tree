@@ -93,7 +93,18 @@ function var0_0.AttachOrbit(arg0_6, arg1_6)
 
 					var3_7.transform.localScale = Vector3.one
 					arg0_6._attachmentList[var4_7] = iter1_6.orbit_hidden_action
-					var4_7:GetComponent("Spine.Unity.BoneFollowerGraphic").followBoneRotation = false
+
+					local var5_7 = var4_7:GetComponent("Spine.Unity.BoneFollowerGraphic")
+
+					if iter1_6.orbit_rotate then
+						var5_7.followBoneRotation = true
+
+						local var6_7 = var3_7.transform.localEulerAngles
+
+						var3_7.transform.localEulerAngles = Vector3(var6_7.x, var6_7.y, var6_7.z - 90)
+					else
+						var5_7.followBoneRotation = false
+					end
 
 					if iter1_6.orbit_ui_back == 1 then
 						var4_7:SetParent(arg0_6.modelRoot.transform, false)

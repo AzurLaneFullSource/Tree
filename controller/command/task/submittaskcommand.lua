@@ -56,6 +56,22 @@ function var0_0.execute(arg0_1, arg1_1)
 		return
 	end
 
+	if var9_1:isActivityTask() then
+		pg.m02:sendNotification(GAME.SUBMIT_ACTIVITY_TASK, {
+			act_id = var9_1:getActId(),
+			task_ids = {
+				var2_1
+			},
+			callback = function(arg0_2, arg1_2)
+				if arg0_2 and var1_1 then
+					var1_1(arg0_2)
+				end
+			end
+		})
+
+		return
+	end
+
 	if var4_1:isSubmitting(var2_1) then
 		return
 	else
@@ -65,10 +81,10 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var10_1 = {}
 
 	if var9_1:IsOverflowShipExpItem() and not arg0_1:InTaskScene() then
-		table.insert(var10_1, function(arg0_2)
+		table.insert(var10_1, function(arg0_3)
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("player_expResource_mail_fullBag"),
-				onYes = arg0_2,
+				onYes = arg0_3,
 				onNo = function()
 					var4_1:removeSubmittingTask(var2_1)
 
@@ -84,80 +100,28 @@ function var0_0.execute(arg0_1, arg1_1)
 		pg.ConnectionMgr.GetInstance():Send(20005, {
 			id = var9_1.id,
 			choice_award = var3_1
-		}, 20006, function(arg0_5)
+		}, 20006, function(arg0_6)
 			var4_1:removeSubmittingTask(var2_1)
 
-			if arg0_5.result == 0 then
-				if var9_1:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_ITEM then
-					local var0_5 = tonumber(var9_1:getConfig("target_id"))
-					local var1_5 = var9_1:getConfig("target_num")
-
-					getProxy(BagProxy):removeItemById(tonumber(var0_5), tonumber(var1_5))
-				elseif var9_1:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_VIRTUAL_ITEM then
-					local var2_5 = tonumber(var9_1:getConfig("target_id"))
-					local var3_5 = var9_1:getConfig("target_num")
-
-					getProxy(ActivityProxy):removeVitemById(var2_5, var3_5)
-				elseif var9_1:getConfig("sub_type") == TASK_SUB_TYPE_PLAYER_RES then
-					local var4_5 = tonumber(var9_1:getConfig("target_id"))
-					local var5_5 = var9_1:getConfig("target_num")
-					local var6_5 = getProxy(PlayerProxy)
-					local var7_5 = var6_5:getData()
-
-					var7_5:consume({
-						[id2res(var4_5)] = var5_5
-					})
-					var6_5:updatePlayer(var7_5)
-				end
-
-				var0_0.AddGuildLivness(var9_1)
-
-				local var8_5 = PlayerConst.addTranDrop(arg0_5.award_list, {
+			if arg0_6.result == 0 then
+				local var0_6 = PlayerConst.addTranDrop(arg0_6.award_list, {
 					taskId = var9_1.id
 				})
 
-				if var9_1:getConfig("type") == Task.TYPE_REFLUX then
-					getProxy(RefluxProxy):addPtAfterSubTasks({
-						var9_1
-					})
-				end
-
-				if var9_1:getConfig("type") ~= 8 then
-					var4_1:removeTask(var9_1)
-				else
-					var9_1.submitTime = 1
-
-					var4_1:updateTask(var9_1)
-				end
-
 				if not var5_1 then
-					for iter0_5 = #var8_5, 1, -1 do
-						if var8_5[iter0_5].type == DROP_TYPE_VITEM then
-							table.remove(var8_5, iter0_5)
+					for iter0_6 = #var0_6, 1, -1 do
+						if var0_6[iter0_6].type == DROP_TYPE_VITEM then
+							table.remove(var0_6, iter0_6)
 						end
 					end
 				end
 
-				arg0_1:sendNotification(GAME.SUBMIT_TASK_DONE, var8_5, {
+				pg.m02:sendNotification(GAME.SUBMIT_TASK_DONE, var0_6, {
 					var9_1.id
 				})
-
-				local var9_5 = getProxy(ActivityProxy)
-				local var10_5 = var9_5:getActivityByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST_MONITOR)
-
-				if var10_5 and not var10_5:isEnd() then
-					local var11_5 = var10_5:getConfig("config_data")[1] or {}
-
-					if table.contains(var11_5, var9_1.id) then
-						var9_5:monitorTaskList(var10_5)
-					end
-				end
-
-				if var1_1 then
-					var1_1(true)
-				end
+				var0_0.OnSubmitSuccess(var9_1, var1_1)
 			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("task_submitTask", arg0_5.result))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("task_submitTask", arg0_6.result))
 
 				if var1_1 then
 					var1_1(false)
@@ -167,42 +131,106 @@ function var0_0.execute(arg0_1, arg1_1)
 	end)
 end
 
-function var0_0.AddGuildLivness(arg0_6)
-	if arg0_6:IsGuildAddLivnessType() then
-		local var0_6 = getProxy(GuildProxy)
-		local var1_6 = var0_6:getData()
-		local var2_6 = 0
-		local var3_6 = false
+function var0_0.OnSubmitSuccess(arg0_7, arg1_7)
+	var0_0.CheckTaskSub(arg0_7)
+	var0_0.AddGuildLivness(arg0_7)
+	var0_0.CheckTaskType(arg0_7)
+	var0_0.UpdateActivity(arg0_7)
 
-		if var1_6 and arg0_6:isGuildTask() then
-			var1_6:setWeeklyTaskFlag(1)
+	if arg1_7 then
+		arg1_7(true)
+	end
+end
 
-			local var4_6 = var1_6:getWeeklyTask()
+function var0_0.CheckTaskSub(arg0_8)
+	if arg0_8:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_ITEM then
+		local var0_8 = tonumber(arg0_8:getConfig("target_id"))
+		local var1_8 = arg0_8:getConfig("target_num")
 
-			if var4_6 then
-				var2_6 = var4_6:GetLivenessAddition()
+		getProxy(BagProxy):removeItemById(tonumber(var0_8), tonumber(var1_8))
+	elseif arg0_8:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_VIRTUAL_ITEM then
+		local var2_8 = tonumber(arg0_8:getConfig("target_id"))
+		local var3_8 = arg0_8:getConfig("target_num")
+
+		getProxy(ActivityProxy):removeVitemById(var2_8, var3_8)
+	elseif arg0_8:getConfig("sub_type") == TASK_SUB_TYPE_PLAYER_RES then
+		local var4_8 = tonumber(arg0_8:getConfig("target_id"))
+		local var5_8 = arg0_8:getConfig("target_num")
+		local var6_8 = getProxy(PlayerProxy)
+		local var7_8 = var6_8:getData()
+
+		var7_8:consume({
+			[id2res(var4_8)] = var5_8
+		})
+		var6_8:updatePlayer(var7_8)
+	end
+end
+
+function var0_0.CheckTaskType(arg0_9)
+	if arg0_9:getConfig("type") == Task.TYPE_REFLUX then
+		getProxy(RefluxProxy):addPtAfterSubTasks({
+			arg0_9
+		})
+	end
+
+	if arg0_9:getConfig("type") ~= 8 then
+		getProxy(TaskProxy):removeTask(arg0_9)
+	else
+		arg0_9.submitTime = 1
+
+		getProxy(TaskProxy):updateTask(arg0_9)
+	end
+end
+
+function var0_0.AddGuildLivness(arg0_10)
+	if arg0_10:IsGuildAddLivnessType() then
+		local var0_10 = getProxy(GuildProxy)
+		local var1_10 = var0_10:getData()
+		local var2_10 = 0
+		local var3_10 = false
+
+		if var1_10 and arg0_10:isGuildTask() then
+			var1_10:setWeeklyTaskFlag(1)
+
+			local var4_10 = var1_10:getWeeklyTask()
+
+			if var4_10 then
+				var2_10 = var4_10:GetLivenessAddition()
 			end
 
-			var3_6 = true
-		elseif arg0_6:IsRoutineType() then
-			var2_6 = pg.guildset.new_daily_task_guild_active.key_value
-		elseif arg0_6:IsWeeklyType() then
-			var2_6 = pg.guildset.new_weekly_task_guild_active.key_value
+			var3_10 = true
+		elseif arg0_10:IsRoutineType() then
+			var2_10 = pg.guildset.new_daily_task_guild_active.key_value
+		elseif arg0_10:IsWeeklyType() then
+			var2_10 = pg.guildset.new_weekly_task_guild_active.key_value
 		end
 
-		if var1_6 and var2_6 and var2_6 > 0 then
-			var1_6:getMemberById(getProxy(PlayerProxy):getRawData().id):AddLiveness(var2_6)
+		if var1_10 and var2_10 and var2_10 > 0 then
+			var1_10:getMemberById(getProxy(PlayerProxy):getRawData().id):AddLiveness(var2_10)
 
-			var3_6 = true
+			var3_10 = true
 		end
 
-		if var3_6 then
-			var0_6:updateGuild(var1_6)
+		if var3_10 then
+			var0_10:updateGuild(var1_10)
 		end
 	end
 end
 
-function var0_0.InTaskScene(arg0_7)
+function var0_0.UpdateActivity(arg0_11)
+	local var0_11 = getProxy(ActivityProxy)
+	local var1_11 = var0_11:getActivityByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST_MONITOR)
+
+	if var1_11 and not var1_11:isEnd() then
+		local var2_11 = var1_11:getConfig("config_data")[1] or {}
+
+		if table.contains(var2_11, arg0_11.id) then
+			var0_11:monitorTaskList(var1_11)
+		end
+	end
+end
+
+function var0_0.InTaskScene(arg0_12)
 	return getProxy(ContextProxy):getCurrentContext().mediator == TaskMediator
 end
 

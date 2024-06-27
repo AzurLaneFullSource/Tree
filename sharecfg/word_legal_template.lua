@@ -232,6 +232,9 @@ function temp()
 			["3"] = {
 				["7"] = {
 					this = true
+				},
+				["1"] = {
+					this = true
 				}
 			}
 		}
@@ -4098,6 +4101,15 @@ function temp()
 				i = {
 					o = {
 						n = {
+							this = true
+						}
+					}
+				}
+			},
+			v = {
+				i = {
+					t = {
+						r = {
 							this = true
 						}
 					}
@@ -9068,8 +9080,32 @@ function temp()
 			}
 		},
 		["4"] = {
+			["3"] = {
+				this = true,
+				— = {
+					幼 = {
+						儿 = {
+							园 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
 			["6"] = {
 				this = true
+			},
+			["7"] = {
+				this = true,
+				— = {
+					幼 = {
+						儿 = {
+							园 = {
+								this = true
+							}
+						}
+					}
+				}
 			}
 		},
 		e = {
@@ -9123,6 +9159,129 @@ function temp()
 				e = {
 					this = true
 				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.亚 = {
+		尔 = {
+			薇 = {
+				特 = {
+					— = {
+						幼 = {
+							儿 = {
+								园 = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.埃 = {
+		尔 = {
+			德 = {
+				里 = {
+					奇 = {
+						["-"] = {
+							幼 = {
+								儿 = {
+									园 = {
+										this = true
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.约 = {
+		克 = {
+			公 = {
+				爵 = {
+					— = {
+						幼 = {
+							儿 = {
+								园 = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.小 = {
+		腓 = {
+			特 = {
+				烈 = {
+					this = true
+				}
+			}
+		},
+		贝 = {
+			法 = {
+				this = true
+			}
+		},
+		可 = {
+			畏 = {
+				this = true
+			}
+		},
+		斯 = {
+			佩 = {
+				this = true
+			}
+		},
+		克 = {
+			利 = {
+				夫 = {
+					兰 = {
+						this = true
+					}
+				}
+			}
+		},
+		声 = {
+			望 = {
+				this = true
+			}
+		},
+		齐 = {
+			柏 = {
+				林 = {
+					this = true
+				}
+			}
+		},
+		欧 = {
+			根 = {
+				this = true
 			}
 		}
 	}

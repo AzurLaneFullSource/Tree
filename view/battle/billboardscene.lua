@@ -1,5 +1,11 @@
 ﻿local var0_0 = class("BillboardScene", import("..base.BaseUI"))
 
+var0_0.SINGLE_SHOW = {
+	PowerRank.TYPE_EXTRA_CHAPTER,
+	PowerRank.TYPE_ACT_BOSS_BATTLE,
+	PowerRank.TYPE_BOSSRUSH
+}
+
 function var0_0.getUIName(arg0_1)
 	return "BillboardUI"
 end
@@ -87,7 +93,7 @@ function var0_0.init(arg0_3)
 
 	local var3_3 = arg0_3.contextData.page or PowerRank.TYPE_POWER
 
-	if var3_3 == PowerRank.TYPE_EXTRA_CHAPTER then
+	if table.contains(var0_0.SINGLE_SHOW, var3_3) then
 		setActive(arg0_3.leftPanel, false)
 		setAnchoredPosition(arg0_3.mainPanel, Vector2(0, -35.5))
 

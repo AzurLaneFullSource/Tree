@@ -46,105 +46,113 @@ function var0_0.Register(arg0_2)
 			arg0_2.stopChatFlag = false
 		end
 	end)
+	arg0_2:bind(NewMainScene.ENTER_SILENT_VIEW, function()
+		arg0_2:StopAnimation()
+
+		arg0_2.stopChatFlag = true
+	end)
+	arg0_2:bind(NewMainScene.EXIT_SILENT_VIEW, function()
+		arg0_2.stopChatFlag = false
+	end)
 end
 
-function var0_0.Fold(arg0_9, arg1_9, arg2_9)
-	LeanTween.cancel(go(arg0_9.chatTf))
+function var0_0.Fold(arg0_11, arg1_11, arg2_11)
+	LeanTween.cancel(go(arg0_11.chatTf))
 
-	if not arg1_9 then
-		arg0_9.chatTf.anchoredPosition = arg0_9.chatPos
-	elseif arg2_9 > 0 then
-		local var0_9 = arg0_9.chatTf.anchoredPosition.x
+	if not arg1_11 then
+		arg0_11.chatTf.anchoredPosition = arg0_11.chatPos
+	elseif arg2_11 > 0 then
+		local var0_11 = arg0_11.chatTf.anchoredPosition.x
 
-		LeanTween.value(go(arg0_9.chatTf), var0_9, 0, arg2_9):setOnUpdate(System.Action_float(function(arg0_10)
-			setAnchoredPosition(arg0_9.chatTf, {
-				x = arg0_10
+		LeanTween.value(go(arg0_11.chatTf), var0_11, 0, arg2_11):setOnUpdate(System.Action_float(function(arg0_12)
+			setAnchoredPosition(arg0_11.chatTf, {
+				x = arg0_12
 			})
 		end)):setEase(LeanTweenType.easeInOutExpo)
 	end
 
-	arg0_9.isFoldState = arg1_9
+	arg0_11.isFoldState = arg1_11
 end
 
-function var0_0.Refresh(arg0_11)
-	arg0_11.stopChatFlag = false
+function var0_0.Refresh(arg0_13)
+	arg0_13.stopChatFlag = false
 
-	setActive(arg0_11.chatTxt.gameObject, false)
-	setActive(arg0_11.chatTxt.gameObject, true)
+	setActive(arg0_13.chatTxt.gameObject, false)
+	setActive(arg0_13.chatTxt.gameObject, true)
 end
 
-function var0_0.Disable(arg0_12)
-	arg0_12.stopChatFlag = false
+function var0_0.Disable(arg0_14)
+	arg0_14.stopChatFlag = false
 
-	arg0_12:StopAnimation()
+	arg0_14:StopAnimation()
 end
 
-function var0_0.StartAnimation(arg0_13, arg1_13, arg2_13)
-	if arg0_13.stopChatFlag == true then
+function var0_0.StartAnimation(arg0_15, arg1_15, arg2_15)
+	if arg0_15.stopChatFlag == true then
 		return
 	end
 
-	if LeanTween.isTweening(arg0_13.chatTf.gameObject) then
-		LeanTween.cancel(arg0_13.chatTf.gameObject)
-	end
-
-	local var0_13 = getProxy(SettingsProxy):ShouldShipMainSceneWord() and 1 or 0
-
-	LeanTween.scale(rtf(arg0_13.chatTf.gameObject), Vector3.New(var0_13, var0_13, 1), arg1_13):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
-		LeanTween.scale(rtf(arg0_13.chatTf.gameObject), Vector3.New(0, 0, 1), arg1_13):setEase(LeanTweenType.easeInBack):setDelay(arg1_13 + arg2_13)
-	end))
-end
-
-function var0_0.StopAnimation(arg0_15)
 	if LeanTween.isTweening(arg0_15.chatTf.gameObject) then
 		LeanTween.cancel(arg0_15.chatTf.gameObject)
 	end
 
-	arg0_15.chatTf.localScale = Vector3.zero
+	local var0_15 = getProxy(SettingsProxy):ShouldShipMainSceneWord() and 1 or 0
+
+	LeanTween.scale(rtf(arg0_15.chatTf.gameObject), Vector3.New(var0_15, var0_15, 1), arg1_15):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
+		LeanTween.scale(rtf(arg0_15.chatTf.gameObject), Vector3.New(0, 0, 1), arg1_15):setEase(LeanTweenType.easeInBack):setDelay(arg1_15 + arg2_15)
+	end))
 end
 
-function var0_0.AdjustChatPosition(arg0_16, arg1_16, arg2_16)
-	local var0_16 = arg0_16.chatTxt
-
-	if #var0_16.text > CHAT_POP_STR_LEN then
-		var0_16.alignment = TextAnchor.MiddleLeft
-	else
-		var0_16.alignment = TextAnchor.MiddleCenter
+function var0_0.StopAnimation(arg0_17)
+	if LeanTween.isTweening(arg0_17.chatTf.gameObject) then
+		LeanTween.cancel(arg0_17.chatTf.gameObject)
 	end
 
-	local var1_16 = var0_16.preferredHeight + 26
+	arg0_17.chatTf.localScale = Vector3.zero
+end
 
-	if var1_16 > arg0_16.initChatBgH then
-		arg0_16.chatTextBg.sizeDelta = Vector2.New(arg0_16.chatTextBg.sizeDelta.x, var1_16)
+function var0_0.AdjustChatPosition(arg0_18, arg1_18, arg2_18)
+	local var0_18 = arg0_18.chatTxt
+
+	if #var0_18.text > CHAT_POP_STR_LEN then
+		var0_18.alignment = TextAnchor.MiddleLeft
 	else
-		arg0_16.chatTextBg.sizeDelta = Vector2.New(arg0_16.chatTextBg.sizeDelta.x, arg0_16.initChatBgH)
+		var0_18.alignment = TextAnchor.MiddleCenter
+	end
+
+	local var1_18 = var0_18.preferredHeight + 26
+
+	if var1_18 > arg0_18.initChatBgH then
+		arg0_18.chatTextBg.sizeDelta = Vector2.New(arg0_18.chatTextBg.sizeDelta.x, var1_18)
+	else
+		arg0_18.chatTextBg.sizeDelta = Vector2.New(arg0_18.chatTextBg.sizeDelta.x, arg0_18.initChatBgH)
 	end
 
 	if PLATFORM_CODE == PLATFORM_US then
-		setTextEN(arg0_16.chatTxt, arg2_16)
+		setTextEN(arg0_18.chatTxt, arg2_18)
 	else
-		setText(arg0_16.chatTxt, SwitchSpecialChar(arg2_16))
+		setText(arg0_18.chatTxt, SwitchSpecialChar(arg2_18))
 	end
 
-	arg0_16:RegisterBtn(arg1_16)
+	arg0_18:RegisterBtn(arg1_18)
 end
 
-function var0_0.RegisterBtn(arg0_17, arg1_17)
-	removeOnButton(arg0_17.chatTf)
-	onButton(arg0_17, arg0_17.chatTf, function()
-		if arg1_17 == "mission_complete" or arg1_17 == "mission" then
+function var0_0.RegisterBtn(arg0_19, arg1_19)
+	removeOnButton(arg0_19.chatTf)
+	onButton(arg0_19, arg0_19.chatTf, function()
+		if arg1_19 == "mission_complete" or arg1_19 == "mission" then
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.TASK)
-		elseif arg1_17 == "collection" then
+		elseif arg1_19 == "collection" then
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
-		elseif arg1_17 == "event_complete" then
+		elseif arg1_19 == "event_complete" then
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
 		end
 	end)
 end
 
-function var0_0.Dispose(arg0_19)
-	var0_0.super.Dispose(arg0_19)
-	LeanTween.cancel(arg0_19.chatTf.gameObject)
+function var0_0.Dispose(arg0_21)
+	var0_0.super.Dispose(arg0_21)
+	LeanTween.cancel(arg0_21.chatTf.gameObject)
 end
 
 return var0_0

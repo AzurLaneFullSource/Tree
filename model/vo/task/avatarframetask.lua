@@ -18,7 +18,7 @@ local var4_0 = "avatar_task_ship_1"
 local var5_0 = "avatar_task_ship_2"
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
-	arg0_1.actId = arg1_1
+	arg0_1._actId = arg1_1
 	arg0_1.configId = arg2_1
 	arg0_1.id = arg3_1.id
 	arg0_1.progress = arg3_1.progress or 0
@@ -142,59 +142,63 @@ function var0_0.isAvatarTask(arg0_18)
 	return true
 end
 
-function var0_0.createData(arg0_19, arg1_19, arg2_19)
-	local var0_19
+function var0_0.getActId(arg0_19)
+	return arg0_19._actId
+end
 
-	if arg1_19 == var0_0.type_task_level then
-		local var1_19, var2_19, var3_19, var4_19, var5_19, var6_19 = unpack(arg2_19)
-		local var7_19 = ""
+function var0_0.createData(arg0_20, arg1_20, arg2_20)
+	local var0_20
 
-		if var3_19 > 0 and var3_19 <= #var3_0 then
-			var7_19 = pg.gametip[var3_0[var3_19]].tip
+	if arg1_20 == var0_0.type_task_level then
+		local var1_20, var2_20, var3_20, var4_20, var5_20, var6_20 = unpack(arg2_20)
+		local var7_20 = ""
+
+		if var3_20 > 0 and var3_20 <= #var3_0 then
+			var7_20 = pg.gametip[var3_0[var3_20]].tip
 		end
 
-		local var8_19 = var2_19 * 10 + 1
-		local var9_19 = pg.ship_data_statistics[var8_19].name
-		local var10_19
-		local var11_19
+		local var8_20 = var2_20 * 10 + 1
+		local var9_20 = pg.ship_data_statistics[var8_20].name
+		local var10_20
+		local var11_20
 
-		for iter0_19, iter1_19 in ipairs(var4_19) do
-			assert(pg.chapter_template[iter1_19] ~= nil, "找不到chapterid = " .. iter1_19)
+		for iter0_20, iter1_20 in ipairs(var4_20) do
+			assert(pg.chapter_template[iter1_20] ~= nil, "找不到chapterid = " .. iter1_20)
 
-			var11_19 = var11_19 or {
+			var11_20 = var11_20 or {
 				"ACTIVITY_MAP",
 				{
-					pg.chapter_template[iter1_19].act_id
+					pg.chapter_template[iter1_20].act_id
 				}
 			}
 
-			if not var10_19 then
-				var10_19 = pg.chapter_template[iter1_19].chapter_name
+			if not var10_20 then
+				var10_20 = pg.chapter_template[iter1_20].chapter_name
 			else
-				var10_19 = var10_19 .. "," .. pg.chapter_template[iter1_19].chapter_name
+				var10_20 = var10_20 .. "," .. pg.chapter_template[iter1_20].chapter_name
 			end
 		end
 
-		var0_19 = {
-			target_num = var5_19,
-			award_num = var6_19,
-			scene = var11_19,
-			desc = i18n("avatar_task_level", var7_19, var9_19, var10_19, var5_19)
+		var0_20 = {
+			target_num = var5_20,
+			award_num = var6_20,
+			scene = var11_20,
+			desc = i18n("avatar_task_level", var7_20, var9_20, var10_20, var5_20)
 		}
-	elseif arg1_19 == var0_0.type_task_ship then
-		local var12_19, var13_19, var14_19, var15_19 = unpack(arg2_19)
-		local var16_19 = var13_19 * 10 + 1
-		local var17_19 = pg.ship_data_statistics[var16_19].name
+	elseif arg1_20 == var0_0.type_task_ship then
+		local var12_20, var13_20, var14_20, var15_20 = unpack(arg2_20)
+		local var16_20 = var13_20 * 10 + 1
+		local var17_20 = pg.ship_data_statistics[var16_20].name
 
-		if var14_19 == 1 then
-			var0_19 = {
-				award_num = var15_19,
-				desc = i18n(var4_0, var17_19)
+		if var14_20 == 1 then
+			var0_20 = {
+				award_num = var15_20,
+				desc = i18n(var4_0, var17_20)
 			}
-		elseif var14_19 == 2 then
-			var0_19 = {
-				award_num = var15_19,
-				desc = i18n(var5_0, var17_19),
+		elseif var14_20 == 2 then
+			var0_20 = {
+				award_num = var15_20,
+				desc = i18n(var5_0, var17_20),
 				scene = {
 					"DOCKYARD",
 					{
@@ -205,7 +209,7 @@ function var0_0.createData(arg0_19, arg1_19, arg2_19)
 		end
 	end
 
-	return setmetatable(var0_19, {
+	return setmetatable(var0_20, {
 		__index = {
 			award_num = 1,
 			target_num = 1,

@@ -141,6 +141,8 @@ pg.furniture_data_template = setmetatable({
 			275,
 			276,
 			278,
+			280,
+			281,
 			100002,
 			100003,
 			100004,
@@ -189,6 +191,7 @@ pg.furniture_data_template = setmetatable({
 			100050,
 			100051,
 			100052,
+			100053,
 			200001,
 			200002,
 			200003,
@@ -3225,6 +3228,8 @@ pg.furniture_data_template = setmetatable({
 			265,
 			269,
 			274,
+			280,
+			281,
 			100002,
 			100003,
 			100004,
@@ -3273,6 +3278,7 @@ pg.furniture_data_template = setmetatable({
 			100050,
 			100051,
 			100052,
+			100053,
 			31101,
 			54104,
 			54105
@@ -6214,6 +6220,7 @@ pg.furniture_data_template = setmetatable({
 			275,
 			276,
 			278,
+			280,
 			100002,
 			100004,
 			100005,
@@ -6249,7 +6256,8 @@ pg.furniture_data_template = setmetatable({
 			100049,
 			100050,
 			100051,
-			100052
+			100052,
+			100053
 		},
 		[2] = {
 			120,
@@ -8131,6 +8139,7 @@ pg.furniture_data_template = setmetatable({
 			147,
 			215,
 			233,
+			281,
 			100003,
 			100008,
 			100021,
@@ -9206,6 +9215,8 @@ pg.furniture_data_template = setmetatable({
 		275,
 		276,
 		278,
+		280,
+		281,
 		100002,
 		100003,
 		100004,
@@ -9254,6 +9265,7 @@ pg.furniture_data_template = setmetatable({
 		100050,
 		100051,
 		100052,
+		100053,
 		200001,
 		200002,
 		200003,
@@ -18708,6 +18720,207 @@ pg.base.furniture_data_template = {
 		},
 		interAction_group = {}
 	},
+	[280] = {
+		effect = "",
+		name = "Little Playground Slide",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 0,
+		is_get_time_note = 0,
+		picture = "chuanmo/youeryuanhuati",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Fun for all the kids and the young at heart!",
+		tag = 6,
+		icon = "youeryuanhuatiicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 280,
+		can_rotate = 0,
+		size = {
+			6,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[281] = {
+		effect = "",
+		name = "Little School Bus",
+		gain_by = "",
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A bus heading for Little Academy. Fittingly, it's pretty small.",
+		is_3d_obj = 0,
+		advice = 0,
+		themeId = 0,
+		icon = "youeryuanxiaocheicon",
+		deblocking = 1,
+		level = 1,
+		tag = 6,
+		rarity = 4,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 281,
+		can_rotate = 0,
+		size = {
+			4,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"youeryuanxiaocheB",
+				"normal",
+				nil,
+				1
+			},
+			{
+				"youeryuanxiaocheT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit1",
+						nil,
+						"sit"
+					}
+				},
+				{
+					nil,
+					1,
+					{
+						{
+							"walk1",
+							"walk2",
+							"walk3"
+						},
+						"walk",
+						1
+					}
+				},
+				{
+					1
+				},
+				{
+					{
+						"sit1"
+					},
+					{
+						"sit2"
+					},
+					{
+						"sit3"
+					}
+				}
+			},
+			{
+				{
+					-40.1,
+					28.6
+				},
+				{
+					192,
+					172
+				},
+				"chuanmo/youeryuanxiaoche_mask1"
+			},
+			{
+				30.6,
+				-14.2
+			},
+			{
+				1,
+				1
+			}
+		},
+		spine_extra = {
+			{
+				{
+					{
+						-6.5,
+						34.9
+					},
+					{
+						96,
+						125
+					},
+					"chuanmo/youeryuanxiaoche_mask2"
+				},
+				{
+					5.1,
+					-37
+				},
+				{
+					1,
+					1
+				}
+			},
+			{
+				{
+					{
+						-6.5,
+						34.9
+					},
+					{
+						100,
+						132
+					},
+					"chuanmo/youeryuanxiaoche_mask2"
+				},
+				{
+					5.1,
+					-37
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		followBone = {
+			{
+				"char1",
+				1
+			},
+			{
+				"char2",
+				1
+			},
+			{
+				"char3",
+				1
+			}
+		},
+		interAction_group = {}
+	},
 	[100002] = {
 		effect = "",
 		name = "Air Pump of Friendship",
@@ -22149,6 +22362,109 @@ pg.base.furniture_data_template = {
 		followBone = {
 			"char",
 			1
+		},
+		interAction_group = {}
+	},
+	[100053] = {
+		effect = "",
+		name = "Smart Scale",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "It holds the answer to everything in the universe... as long as it can be weighed.",
+		is_3d_obj = 0,
+		advice = 0,
+		themeId = 0,
+		icon = "mofatianchengicon",
+		deblocking = 1,
+		level = 1,
+		tag = 6,
+		rarity = 4,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 100053,
+		can_rotate = 0,
+		size = {
+			6,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"mofatiancheng",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit1",
+						nil,
+						"sit"
+					}
+				},
+				{},
+				{
+					0
+				},
+				{
+					{
+						"sit1"
+					},
+					{
+						"sit2",
+						"sit3",
+						"sit4",
+						"sit5"
+					}
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		spine_extra = {
+			{
+				{},
+				{
+					0,
+					0
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		followBone = {
+			{
+				"char1",
+				1
+			},
+			{
+				"char2",
+				1
+			}
 		},
 		interAction_group = {}
 	},

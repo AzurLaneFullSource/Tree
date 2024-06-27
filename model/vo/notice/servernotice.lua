@@ -40,7 +40,12 @@ function var0_0.Ctor(arg0_1, arg1_1)
 		end
 	end
 
-	arg0_1.titleImage = var1_1 and string.gsub(arg0_1.titleImage, var1_1, "") or arg0_1.titleImage
+	if var1_1 then
+		local var2_1, var3_1 = string.find(arg0_1.titleImage, var1_1, 1, true)
+
+		arg0_1.titleImage = string.sub(arg0_1.titleImage, var3_1 + 1, -1)
+	end
+
 	arg0_1.code = arg0_1:prefKey()
 end
 

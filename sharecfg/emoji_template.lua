@@ -442,6 +442,32 @@ pg.emoji_template = {
 			1
 		}
 	},
+	{
+		achieve = 1,
+		item_desc = "Sticker: You're mine~ (Can be found in the Default section of chat stickers.)",
+		item_name = "Sticker: You're mine~",
+		id = 35,
+		index = 75,
+		icon = "",
+		pic = "35",
+		desc = "<color=#92fc63>[You're mine~]</color>",
+		type = {
+			1
+		}
+	},
+	{
+		achieve = 1,
+		item_desc = "Sticker: So hot... (Can be found in the Default section of chat stickers.)",
+		item_name = "Sticker: So hot...",
+		id = 36,
+		index = 76,
+		icon = "",
+		pic = "36",
+		desc = "<color=#92fc63>[So hot...]</color>",
+		type = {
+			1
+		}
+	},
 	[41] = {
 		achieve = 0,
 		item_desc = "",
@@ -1608,6 +1634,8 @@ pg.emoji_template = {
 		32,
 		33,
 		34,
+		35,
+		36,
 		41,
 		42,
 		43,

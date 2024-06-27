@@ -25,8 +25,10 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.dateTxt = arg0_2:findTF("adapt/date"):GetComponent(typeof(Text))
 	arg0_2.changeBtn = arg0_2:findTF("change")
 	arg0_2.tips = UIItemList.New(arg0_2:findTF("tips"), arg0_2:findTF("tips/tpl"))
+	arg0_2.chatTr = arg0_2:findTF("chat")
+	arg0_2.chatTxt = arg0_2.chatTr:GetComponent(typeof(Text))
 	arg0_2.changeSkinBtn = MainChangeSkinBtn.New(arg0_2.changeBtn, arg0_2.event)
-	arg0_2.systemTimeUtil = SystemTimeUtil.New()
+	arg0_2.systemTimeUtil = LocalSystemTimeUtil.New()
 	arg0_2.playedList = {}
 end
 
@@ -48,179 +50,214 @@ function var0_0.OnInit(arg0_3)
 	arg0_3:bind(GAME.REMOVE_LAYERS, function(arg0_7, arg1_7)
 		arg0_3:OnRemoveLayer(arg1_7.context)
 	end)
+	arg0_3:bind(MainWordView.SET_CONTENT, function(arg0_8, arg1_8, arg2_8)
+		arg0_3:SetChatTxt(arg2_8)
+	end)
+	arg0_3:bind(MainWordView.START_ANIMATION, function(arg0_9, arg1_9, arg2_9)
+		arg0_3:RemoveChatTimer()
+		arg0_3:AddChatTimer(arg1_9 + arg2_9)
+	end)
+	arg0_3:bind(MainWordView.STOP_ANIMATION, function(arg0_10, arg1_10, arg2_10)
+		arg0_3:RemoveChatTimer()
+		arg0_3:SetChatTxt("")
+	end)
 	arg0_3.changeSkinBtn:Flush()
 end
 
-function var0_0.OnRemoveLayer(arg0_8, arg1_8)
-	if arg1_8.mediator == CommissionInfoMediator or arg1_8.mediator == NotificationMediator then
-		arg0_8:Exit()
+function var0_0.RemoveChatTimer(arg0_11)
+	if arg0_11.chatTimer then
+		arg0_11.chatTimer:Stop()
+
+		arg0_11.chatTimer = nil
 	end
 end
 
-function var0_0.Exit(arg0_9, arg1_9)
-	arg0_9:TrackingSwitchShip()
-	arg0_9.dftAniEvent:SetEndEvent(nil)
-	arg0_9.dftAniEvent:SetEndEvent(function()
-		arg0_9:emit(NewMainScene.EXIT_SILENT_VIEW)
+function var0_0.AddChatTimer(arg0_12, arg1_12)
+	arg0_12.chatTimer = Timer.New(function()
+		arg0_12:SetChatTxt("")
+	end, arg1_12, 1)
 
-		if arg1_9 then
-			arg1_9()
+	arg0_12.chatTimer:Start()
+end
+
+function var0_0.SetChatTxt(arg0_14, arg1_14)
+	setActive(arg0_14.chatTr, arg1_14 and arg1_14 ~= "")
+
+	arg0_14.chatTxt.text = arg1_14 or ""
+end
+
+function var0_0.OnRemoveLayer(arg0_15, arg1_15)
+	if arg1_15.mediator == CommissionInfoMediator or arg1_15.mediator == NotificationMediator then
+		arg0_15:Exit()
+	end
+end
+
+function var0_0.Exit(arg0_16, arg1_16)
+	arg0_16:RemoveChatTimer()
+	arg0_16:TrackingSwitchShip()
+	arg0_16.dftAniEvent:SetEndEvent(nil)
+	arg0_16.dftAniEvent:SetEndEvent(function()
+		arg0_16:emit(NewMainScene.EXIT_SILENT_VIEW)
+
+		if arg1_16 then
+			arg1_16()
 		end
 	end)
-	arg0_9.animationPlayer:Play("anim_silentview_out")
+	arg0_16.animationPlayer:Play("anim_silentview_out")
 end
 
-function var0_0.Tracking(arg0_11, arg1_11)
-	local var0_11 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var1_11 = arg0_11.enterTime
-	local var2_11 = arg0_11.changeSkinCount
-	local var3_11 = arg1_11
+function var0_0.Tracking(arg0_18, arg1_18)
+	local var0_18 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var1_18 = arg0_18.enterTime
+	local var2_18 = arg0_18.changeSkinCount
+	local var3_18 = arg1_18
 
-	TrackConst.TrackingExitSilentView(var1_11, var0_11, var3_11)
+	TrackConst.TrackingExitSilentView(var1_18, var0_18, var3_18)
 end
 
-function var0_0.TrackingSwitchShip(arg0_12)
+function var0_0.TrackingSwitchShip(arg0_19)
 	if not getProxy(PlayerProxy) then
 		return
 	end
 
-	local var0_12 = getProxy(PlayerProxy):getRawData()
+	local var0_19 = getProxy(PlayerProxy):getRawData()
 
-	if not var0_12 then
+	if not var0_19 then
 		return
 	end
 
-	local var1_12 = var0_12:GetFlagShip()
-	local var2_12 = var1_12.skinId
+	local var1_19 = var0_19:GetFlagShip()
+	local var2_19 = var1_19.skinId
 
-	if isa(var1_12, VirtualEducateCharShip) then
-		var2_12 = 0
+	if isa(var1_19, VirtualEducateCharShip) then
+		var2_19 = 0
 	end
 
-	local var3_12 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var4_12 = var3_12 - arg0_12.paintingTime
+	local var3_19 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var4_19 = var3_19 - arg0_19.paintingTime
 
-	TrackConst.TrackingSwitchPainting(var2_12, var4_12)
+	TrackConst.TrackingSwitchPainting(var2_19, var4_19)
 
-	arg0_12.paintingTime = var3_12
+	arg0_19.paintingTime = var3_19
 end
 
-function var0_0.Show(arg0_13)
-	var0_0.super.Show(arg0_13)
-	arg0_13:FlushTips()
-	arg0_13:FlushBattery()
-	arg0_13:FlushTime()
-	arg0_13:FlushDate()
-	arg0_13:AddTimer()
+function var0_0.Show(arg0_20)
+	var0_0.super.Show(arg0_20)
+	arg0_20:FlushTips()
+	arg0_20:FlushBattery()
+	arg0_20:FlushTime()
+	arg0_20:FlushDate()
+	arg0_20:AddTimer()
+	arg0_20:SetChatTxt("")
 
-	arg0_13.changeSkinCount = 0
-	arg0_13.enterTime = pg.TimeMgr.GetInstance():GetServerTime()
-	arg0_13.paintingTime = arg0_13.enterTime
+	arg0_20.changeSkinCount = 0
+	arg0_20.enterTime = pg.TimeMgr.GetInstance():GetServerTime()
+	arg0_20.paintingTime = arg0_20.enterTime
 end
 
-function var0_0.Reset(arg0_14)
-	var0_0.super.Reset(arg0_14)
+function var0_0.Reset(arg0_21)
+	var0_0.super.Reset(arg0_21)
 
-	arg0_14.exited = false
+	arg0_21.exited = false
 end
 
-function var0_0.AddTimer(arg0_15)
-	arg0_15:RemoveTimer()
+function var0_0.AddTimer(arg0_22)
+	arg0_22:RemoveTimer()
 
-	arg0_15.timer = Timer.New(function()
-		arg0_15:FlushTips()
-		arg0_15:FlushBattery()
+	arg0_22.timer = Timer.New(function()
+		arg0_22:FlushTips()
+		arg0_22:FlushBattery()
 	end, 30, -1)
 
-	arg0_15.timer:Start()
+	arg0_22.timer:Start()
 end
 
-function var0_0.RemoveTimer(arg0_17)
-	if arg0_17.timer then
-		arg0_17.timer:Stop()
+function var0_0.RemoveTimer(arg0_24)
+	if arg0_24.timer then
+		arg0_24.timer:Stop()
 
-		arg0_17.timer = nil
+		arg0_24.timer = nil
 	end
 end
 
-function var0_0.FlushTips(arg0_18)
-	local var0_18 = {}
+function var0_0.FlushTips(arg0_25)
+	local var0_25 = {}
 
-	arg0_18:CollectTips(var0_18)
+	arg0_25:CollectTips(var0_25)
 
-	local var1_18 = {}
+	local var1_25 = {}
 
-	arg0_18.tips:make(function(arg0_19, arg1_19, arg2_19)
-		if UIItemList.EventUpdate == arg0_19 then
-			local var0_19 = var0_18[arg1_19 + 1]
-			local var1_19 = GetSpriteFromAtlas("ui/MainUI_atlas", "noti_" .. var0_19.type)
+	arg0_25.tips:make(function(arg0_26, arg1_26, arg2_26)
+		if UIItemList.EventUpdate == arg0_26 then
+			local var0_26 = var0_25[arg1_26 + 1]
+			local var1_26 = GetSpriteFromAtlas("ui/MainUI_atlas", "noti_" .. var0_26.type)
 
-			arg2_19:Find("icon"):GetComponent(typeof(Image)).sprite = var1_19
+			arg2_26:Find("icon"):GetComponent(typeof(Image)).sprite = var1_26
 
-			setText(arg2_19:Find("num"), var0_19.count)
-			setText(arg2_19:Find("Text"), i18n("main_silent_tip_" .. var0_19.type))
-			onButton(arg0_18, arg2_19, function()
-				arg0_18:PlayTipOutAnimation(arg2_19, function()
-					arg0_18:Skip(var0_19.type)
+			setText(arg2_26:Find("num"), var0_26.count)
+			setText(arg2_26:Find("Text"), i18n("main_silent_tip_" .. var0_26.type))
+			onButton(arg0_25, arg2_26, function()
+				arg0_25:PlayTipOutAnimation(arg2_26, function()
+					arg0_25:Skip(var0_26.type)
 				end)
 			end, SFX_PANEL)
-			arg0_18:InsertAnimation(var1_18, arg2_19)
+			arg0_25:InsertAnimation(var1_25, arg2_26)
 		end
 	end)
-	arg0_18.tips:align(#var0_18)
-	seriesAsync(var1_18, function()
+	arg0_25.tips:align(#var0_25)
+	seriesAsync(var1_25, function()
 		return
 	end)
 end
 
-function var0_0.PlayTipOutAnimation(arg0_23, arg1_23, arg2_23)
-	arg0_23.cg.blocksRaycasts = false
+function var0_0.PlayTipOutAnimation(arg0_30, arg1_30, arg2_30)
+	arg0_30.cg.blocksRaycasts = false
 
-	local var0_23 = arg1_23:GetComponent(typeof(Animation))
-	local var1_23 = arg1_23:GetComponent(typeof(DftAniEvent))
+	local var0_30 = arg1_30:GetComponent(typeof(Animation))
+	local var1_30 = arg1_30:GetComponent(typeof(DftAniEvent))
 
-	var1_23:SetEndEvent(nil)
-	var1_23:SetEndEvent(function()
-		arg0_23.cg.blocksRaycasts = true
+	var1_30:SetEndEvent(nil)
+	var1_30:SetEndEvent(function()
+		arg0_30.cg.blocksRaycasts = true
 
-		var1_23:SetEndEvent(nil)
-		arg2_23()
+		var1_30:SetEndEvent(nil)
+		arg2_30()
 	end)
-	var0_23:Play("anim_silentview_tip_out")
+	var0_30:Play("anim_silentview_tip_out")
 end
 
-function var0_0.InsertAnimation(arg0_25, arg1_25, arg2_25)
-	if table.contains(arg0_25.playedList, arg2_25) then
+function var0_0.InsertAnimation(arg0_32, arg1_32, arg2_32)
+	if table.contains(arg0_32.playedList, arg2_32) then
 		return
 	end
 
-	local var0_25 = GetOrAddComponent(arg2_25, typeof(CanvasGroup))
+	local var0_32 = GetOrAddComponent(arg2_32, typeof(CanvasGroup))
 
-	var0_25.alpha = 0
+	var0_32.alpha = 0
 
-	table.insert(arg1_25, function(arg0_26)
-		if arg0_25.exited then
+	table.insert(arg1_32, function(arg0_33)
+		if arg0_32.exited then
 			return
 		end
 
-		var0_25.alpha = 1
+		var0_32.alpha = 1
 
-		arg2_25:GetComponent(typeof(Animation)):Play("anim_silentview_tip_in")
-		onDelayTick(arg0_26, 0.066)
+		arg2_32:GetComponent(typeof(Animation)):Play("anim_silentview_tip_in")
+		onDelayTick(arg0_33, 0.066)
 	end)
-	table.insert(arg0_25.playedList, arg2_25)
+	table.insert(arg0_32.playedList, arg2_32)
 end
 
-function var0_0.Skip(arg0_27, arg1_27)
-	arg0_27:Tracking(var6_0)
-	arg0_27:Exit(function()
-		if arg1_27 == var1_0 then
+function var0_0.Skip(arg0_34, arg1_34)
+	arg0_34:Tracking(var6_0)
+	arg0_34:Exit(function()
+		if arg1_34 == var1_0 then
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
-		elseif arg1_27 == var2_0 then
+		elseif arg1_34 == var2_0 then
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.GETBOAT)
-		elseif arg1_27 == var3_0 then
+		elseif arg1_34 == var3_0 then
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.TECHNOLOGY)
-		elseif arg1_27 == var4_0 then
+		elseif arg1_34 == var4_0 then
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.NAVALACADEMYSCENE, {
 				warp = NavalAcademyScene.WARP_TO_TACTIC
 			})
@@ -228,101 +265,106 @@ function var0_0.Skip(arg0_27, arg1_27)
 	end)
 end
 
-function var0_0.CollectTips(arg0_29, arg1_29)
-	arg0_29:CollectEventTips(arg1_29)
-	arg0_29:CollectBuildTips(arg1_29)
-	arg0_29:CollectTechTips(arg1_29)
-	arg0_29:CollectStudentTips(arg1_29)
+function var0_0.CollectTips(arg0_36, arg1_36)
+	arg0_36:CollectEventTips(arg1_36)
+	arg0_36:CollectBuildTips(arg1_36)
+	arg0_36:CollectTechTips(arg1_36)
+	arg0_36:CollectStudentTips(arg1_36)
 end
 
-function var0_0.CollectEventTips(arg0_30, arg1_30)
-	local var0_30 = getProxy(EventProxy):countByState(EventInfo.StateFinish)
+function var0_0.CollectEventTips(arg0_37, arg1_37)
+	local var0_37 = getProxy(EventProxy):countByState(EventInfo.StateFinish)
 
-	if var0_30 > 0 then
-		table.insert(arg1_30, {
-			count = var0_30,
+	if var0_37 > 0 then
+		table.insert(arg1_37, {
+			count = var0_37,
 			type = var1_0
 		})
 	end
 end
 
-function var0_0.CollectBuildTips(arg0_31, arg1_31)
-	local var0_31 = getProxy(BuildShipProxy):getFinishCount()
+function var0_0.CollectBuildTips(arg0_38, arg1_38)
+	local var0_38 = getProxy(BuildShipProxy):getFinishCount()
 
-	if var0_31 > 0 then
-		table.insert(arg1_31, {
-			count = var0_31,
+	if var0_38 > 0 then
+		table.insert(arg1_38, {
+			count = var0_38,
 			type = var2_0
 		})
 	end
 end
 
-function var0_0.CollectTechTips(arg0_32, arg1_32)
-	local var0_32 = getProxy(TechnologyProxy):getPlanningTechnologys()
-	local var1_32 = 0
+function var0_0.CollectTechTips(arg0_39, arg1_39)
+	local var0_39 = getProxy(TechnologyProxy):getPlanningTechnologys()
+	local var1_39 = 0
 
-	for iter0_32, iter1_32 in pairs(var0_32) do
-		if iter1_32:isCompleted() then
-			var1_32 = var1_32 + 1
+	for iter0_39, iter1_39 in pairs(var0_39) do
+		if iter1_39:isCompleted() then
+			var1_39 = var1_39 + 1
 		end
 	end
 
-	if var1_32 > 0 then
-		table.insert(arg1_32, {
-			count = var1_32,
+	if var1_39 > 0 then
+		table.insert(arg1_39, {
+			count = var1_39,
 			type = var3_0
 		})
 	end
 end
 
-function var0_0.CollectStudentTips(arg0_33, arg1_33)
-	local var0_33 = getProxy(NavalAcademyProxy):RawGetStudentList()
-	local var1_33 = 0
+function var0_0.CollectStudentTips(arg0_40, arg1_40)
+	local var0_40 = getProxy(NavalAcademyProxy):RawGetStudentList()
+	local var1_40 = 0
 
-	for iter0_33, iter1_33 in pairs(var0_33) do
-		if iter1_33:IsFinish() then
-			var1_33 = var1_33 + 1
+	for iter0_40, iter1_40 in pairs(var0_40) do
+		if iter1_40:IsFinish() then
+			var1_40 = var1_40 + 1
 		end
 	end
 
-	if var1_33 > 0 then
-		table.insert(arg1_33, {
-			count = var1_33,
+	if var1_40 > 0 then
+		table.insert(arg1_40, {
+			count = var1_40,
 			type = var4_0
 		})
 	end
 end
 
-function var0_0.FlushBattery(arg0_34)
-	local var0_34 = SystemInfo.batteryLevel
+function var0_0.FlushBattery(arg0_41)
+	local var0_41 = SystemInfo.batteryLevel
 
-	if var0_34 < 0 then
-		var0_34 = 1
+	if var0_41 < 0 then
+		var0_41 = 1
 	end
 
-	local var1_34 = math.floor(var0_34 * 100)
+	local var1_41 = math.floor(var0_41 * 100)
 
-	arg0_34.batteryTxt.text = var1_34 .. "%"
+	arg0_41.batteryTxt.text = var1_41 .. "%"
 
-	local var2_34 = 1 / #arg0_34.electric
+	local var2_41 = 1 / #arg0_41.electric
 
-	for iter0_34, iter1_34 in ipairs(arg0_34.electric) do
-		local var3_34 = var1_34 < (iter0_34 - 1) * var2_34
+	for iter0_41, iter1_41 in ipairs(arg0_41.electric) do
+		local var3_41 = var1_41 < (iter0_41 - 1) * var2_41
 
-		setActive(iter1_34, not var3_34)
+		setActive(iter1_41, not var3_41)
 	end
 end
 
-function var0_0.FlushTime(arg0_35)
-	arg0_35.systemTimeUtil:SetUp(function(arg0_36, arg1_36, arg2_36)
-		local var0_36 = arg0_36 > 12 and arg0_36 - 12 or arg0_36
-
-		if var0_36 < 10 then
-			var0_36 = "0" .. var0_36
+function var0_0.FlushTime(arg0_42)
+	arg0_42.systemTimeUtil:SetUp(function(arg0_43, arg1_43, arg2_43)
+		if SettingsMainScenePanel.IsEnable24HourSystem() then
+			arg0_42.timeEnTxt.color = Color.New(1, 1, 1, 0)
+		else
+			arg0_42.timeEnTxt.color = Color.New(1, 1, 1, 1)
+			arg0_43 = arg0_43 > 12 and arg0_43 - 12 or arg0_43
 		end
 
-		arg0_35.timeTxt.text = var0_36 .. ":" .. arg1_36
-		arg0_35.timeEnTxt.text = arg2_36
+		if arg0_43 < 10 then
+			arg0_43 = "0" .. arg0_43
+		end
+
+		arg0_42.timeTxt.text = arg0_43 .. ":" .. arg1_43
+		arg0_42.timeEnTxt.text = arg2_43
 	end)
 end
 
@@ -350,35 +392,37 @@ local var8_0 = {
 	"DEC"
 }
 
-function var0_0.FlushDate(arg0_37)
-	local var0_37 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d", true)
-	local var1_37 = string.split(var0_37, "/")
-	local var2_37 = var1_37[1]
-	local var3_37 = tonumber(var1_37[2])
-	local var4_37 = var1_37[3]
-	local var5_37 = pg.TimeMgr.GetInstance():GetServerWeek()
-	local var6_37 = {
-		var7_0[var5_37],
-		var8_0[var3_37],
-		var4_37,
-		var2_37
+function var0_0.FlushDate(arg0_44)
+	local var0_44 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d", true)
+	local var1_44 = string.split(var0_44, "/")
+	local var2_44 = var1_44[1]
+	local var3_44 = tonumber(var1_44[2])
+	local var4_44 = var1_44[3]
+	local var5_44 = pg.TimeMgr.GetInstance():GetServerWeek()
+	local var6_44 = {
+		var7_0[var5_44],
+		var8_0[var3_44],
+		var4_44,
+		var2_44
 	}
 
-	arg0_37.dateTxt.text = table.concat(var6_37, " / ")
+	arg0_44.dateTxt.text = table.concat(var6_44, " / ")
 end
 
-function var0_0.OnDestroy(arg0_38)
-	arg0_38.exited = true
+function var0_0.OnDestroy(arg0_45)
+	arg0_45:RemoveChatTimer()
 
-	arg0_38.dftAniEvent:SetEndEvent(nil)
-	arg0_38:RemoveTimer()
-	arg0_38.changeSkinBtn:Dispose()
+	arg0_45.exited = true
 
-	arg0_38.changeSkinBtn = nil
+	arg0_45.dftAniEvent:SetEndEvent(nil)
+	arg0_45:RemoveTimer()
+	arg0_45.changeSkinBtn:Dispose()
 
-	arg0_38.systemTimeUtil:Dispose()
+	arg0_45.changeSkinBtn = nil
 
-	arg0_38.systemTimeUtil = nil
+	arg0_45.systemTimeUtil:Dispose()
+
+	arg0_45.systemTimeUtil = nil
 end
 
 return var0_0

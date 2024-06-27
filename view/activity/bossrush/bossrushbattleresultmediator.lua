@@ -176,12 +176,18 @@ function var0_0.handleNotification(arg0_6, arg1_6)
 end
 
 function var0_0.ShowTotalAward(arg0_14, arg1_14)
-	getProxy(ContextProxy):GetPrevContext(1):addChild(Context.New({
+	local var0_14 = getProxy(ContextProxy):GetPrevContext(1)
+	local var1_14, var2_14 = getProxy(ActivityProxy):GetContinuousTime()
+
+	var0_14:addChild(Context.New({
 		mediator = BossRushTotalRewardPanelMediator,
 		viewComponent = BossRushTotalRewardPanel,
 		data = {
 			isLayer = true,
-			rewards = arg1_14
+			rewards = arg1_14,
+			isAutoFight = arg0_14.contextData.isAutoFight,
+			totalBattleTimes = var2_14,
+			continuousBattleTimes = var1_14
 		}
 	}))
 	arg0_14:sendNotification(GAME.GO_BACK)

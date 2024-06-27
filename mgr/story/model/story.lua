@@ -84,6 +84,8 @@ function var0_0.Ctor(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2, arg5_2)
 		if var5_2:ExistOption() then
 			var1_2 = var1_2 + 1
 
+			var5_2:SetOptionIndex(var1_2)
+
 			if var2_2[var1_2] then
 				var5_2:SetOptionSelCodes(var2_2[var1_2])
 			end

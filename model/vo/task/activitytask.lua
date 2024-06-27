@@ -167,47 +167,43 @@ function var0_0.isDaily(arg0_21)
 	return arg0_21.subType == 415 or arg0_21.subType == 412
 end
 
-function var0_0.IsOverflowShipExpItem(arg0_22)
+function var0_0.ShowOnTaskScene(arg0_22)
 	return false
 end
 
-function var0_0.ShowOnTaskScene(arg0_23)
+function var0_0.getConfig(arg0_23, arg1_23)
+	return arg0_23.configData[arg1_23]
+end
+
+function var0_0.isAvatarTask(arg0_24)
 	return false
 end
 
-function var0_0.getConfig(arg0_24, arg1_24)
-	return arg0_24.configData[arg1_24]
-end
+function var0_0.initConfig(arg0_25)
+	arg0_25.actConfig = pg.activity_template[arg0_25.actId]
 
-function var0_0.isAvatarTask(arg0_25)
-	return false
-end
-
-function var0_0.initConfig(arg0_26)
-	arg0_26.actConfig = pg.activity_template[arg0_26.actId]
-
-	local var0_26 = Activity.Create({
-		id = arg0_26.actId
+	local var0_25 = Activity.Create({
+		id = arg0_25.actId
 	})
 
-	arg0_26.actType = arg0_26.actConfig.type
-	arg0_26.groups = var0_26:GetTaskIdsByDay()
+	arg0_25.actType = arg0_25.actConfig.type
+	arg0_25.groups = var0_25:GetTaskIdsByDay()
 
-	for iter0_26 = 1, #arg0_26.groups do
-		if table.contains(arg0_26.groups[iter0_26], arg0_26.id) then
-			arg0_26.groupIndex = iter0_26
+	for iter0_25 = 1, #arg0_25.groups do
+		if table.contains(arg0_25.groups[iter0_25], arg0_25.id) then
+			arg0_25.groupIndex = iter0_25
 		end
 	end
 
-	arg0_26.configData = pg.task_data_template[arg0_26.id]
-	arg0_26.target = arg0_26.configData.target_num
-	arg0_26.type = arg0_26.configData.type
-	arg0_26.subType = arg0_26.configData.sub_type
-	arg0_26.targetId1 = arg0_26.configData.target_id
-	arg0_26.targetId2 = arg0_26.configData.target_id_2
-	arg0_26.autoCommit = arg0_26.configData.auto_commit == 1
+	arg0_25.configData = pg.task_data_template[arg0_25.id]
+	arg0_25.target = arg0_25.configData.target_num
+	arg0_25.type = arg0_25.configData.type
+	arg0_25.subType = arg0_25.configData.sub_type
+	arg0_25.targetId1 = arg0_25.configData.target_id
+	arg0_25.targetId2 = arg0_25.configData.target_id_2
+	arg0_25.autoCommit = arg0_25.configData.auto_commit == 1
 
-	if arg0_26.actType == ActivityConst.ACTIVITY_TYPE_TASK_RYZA then
+	if arg0_25.actType == ActivityConst.ACTIVITY_TYPE_TASK_RYZA then
 		-- block empty
 	end
 end

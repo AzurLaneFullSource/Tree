@@ -327,7 +327,7 @@ function var0_0.mainHandler(arg0_2, arg1_2)
 	end
 
 	getProxy(NavalAcademyProxy):resetUsedDailyFinishCnt()
-	getProxy(AvatarFrameProxy):clearTimeOut()
+	getProxy(TotalTaskProxy):clearTimeOut()
 	arg0_2:sendNotification(GAME.ZERO_HOUR_OP_DONE)
 	MainRequestActDataSequence.New():RequestRandomDailyTask()
 	;(function()

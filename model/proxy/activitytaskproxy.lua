@@ -85,7 +85,7 @@ function var0_0.checkAutoSubmit(arg0_5)
 		end
 
 		if #var2_5 > 0 then
-			arg0_5:sendNotification(GAME.AVATAR_FRAME_AWARD, {
+			arg0_5:sendNotification(GAME.SUBMIT_ACTIVITY_TASK, {
 				act_id = var0_5,
 				task_ids = var2_5
 			})
@@ -185,21 +185,33 @@ function var0_0.getActTaskTip(arg0_13, arg1_13)
 	return var1_13 > 0
 end
 
-function var0_0.createTask(arg0_14, arg1_14, arg2_14)
-	return (ActivityTask.New(arg1_14, arg2_14))
+function var0_0.getTaskVo(arg0_14, arg1_14, arg2_14)
+	local var0_14 = arg0_14:getTaskById(arg1_14)
+
+	for iter0_14 = 1, #var0_14 do
+		if var0_14[iter0_14].id == arg2_14 then
+			return Clone(var0_14[iter0_14])
+		end
+	end
+
+	return nil
 end
 
-function var0_0.getFinishTasks(arg0_15)
-	local var0_15 = getProxy(ActivityProxy):GetTaskActivities()
-	local var1_15 = {}
+function var0_0.createTask(arg0_15, arg1_15, arg2_15)
+	return (ActivityTask.New(arg1_15, arg2_15))
+end
 
-	_.each(_.map(var0_15, function(arg0_16)
-		return arg0_15:getFinishTasksByActId(arg0_16.id)
-	end), function(arg0_17)
-		table.insertto(var1_15, arg0_17)
+function var0_0.getFinishTasks(arg0_16)
+	local var0_16 = getProxy(ActivityProxy):GetTaskActivities()
+	local var1_16 = {}
+
+	_.each(_.map(var0_16, function(arg0_17)
+		return arg0_16:getFinishTasksByActId(arg0_17.id)
+	end), function(arg0_18)
+		table.insertto(var1_16, arg0_18)
 	end)
 
-	return var1_15
+	return var1_16
 end
 
 return var0_0

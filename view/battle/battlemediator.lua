@@ -150,6 +150,7 @@ function var0_0.register(arg0_1)
 					mediator = BossRushTotalRewardPanelMediator,
 					viewComponent = BossRushTotalRewardPanel,
 					data = {
+						isAutoFight = false,
 						isLayer = true,
 						rewards = var0_9
 					}
