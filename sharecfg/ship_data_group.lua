@@ -1364,6 +1364,9 @@ pg.ship_data_group = setmetatable({
 		[40702] = {
 			385
 		},
+		[40813] = {
+			650
+		},
 		[40810] = {
 			484
 		},
@@ -1399,9 +1402,6 @@ pg.ship_data_group = setmetatable({
 		},
 		[40812] = {
 			528
-		},
-		[40813] = {
-			650
 		},
 		[50101] = {
 			253
@@ -2586,6 +2586,7 @@ pg.ship_data_group = setmetatable({
 			252,
 			482,
 			385,
+			650,
 			484,
 			343,
 			387,
@@ -2598,7 +2599,6 @@ pg.ship_data_group = setmetatable({
 			386,
 			344,
 			528,
-			650,
 			253,
 			254,
 			255,
@@ -3304,6 +3304,7 @@ pg.ship_data_group = setmetatable({
 		252,
 		482,
 		385,
+		650,
 		484,
 		343,
 		387,
@@ -3316,7 +3317,6 @@ pg.ship_data_group = setmetatable({
 		386,
 		344,
 		528,
-		650,
 		253,
 		254,
 		255,
@@ -23853,7 +23853,7 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
-	[484] = {
+	[650] = {
 		type = 8,
 		redirect_id = 101,
 		hide = 0,
@@ -23861,6 +23861,38 @@ pg.base.ship_data_group = {
 		trans_skin = 0,
 		handbook_type = 0,
 		index_id = 457,
+		code = 650,
+		group_type = 40813,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"D",
+			"S",
+			"E",
+			"D",
+			"E",
+			"D"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: Welcome to Little Academy",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[484] = {
+		type = 8,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 4,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 458,
 		code = 484,
 		group_type = 40810,
 		trans_type = 0,
@@ -23902,7 +23934,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 458,
+		index_id = 459,
 		code = 343,
 		group_type = 40802,
 		trans_type = 0,
@@ -23945,7 +23977,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 459,
+		index_id = 460,
 		code = 387,
 		group_type = 40805,
 		trans_type = 0,
@@ -23997,7 +24029,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 460,
+		index_id = 461,
 		code = 341,
 		group_type = 40801,
 		trans_type = 0,
@@ -24033,7 +24065,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 461,
+		index_id = 462,
 		code = 467,
 		group_type = 40809,
 		trans_type = 0,
@@ -24085,7 +24117,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 462,
+		index_id = 463,
 		code = 399,
 		group_type = 40806,
 		trans_type = 0,
@@ -24121,7 +24153,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 463,
+		index_id = 464,
 		code = 416,
 		group_type = 40808,
 		trans_type = 0,
@@ -24164,7 +24196,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 464,
+		index_id = 465,
 		code = 492,
 		group_type = 40811,
 		trans_type = 0,
@@ -24196,7 +24228,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 465,
+		index_id = 466,
 		code = 400,
 		group_type = 40807,
 		trans_type = 0,
@@ -24232,7 +24264,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 466,
+		index_id = 467,
 		code = 386,
 		group_type = 40804,
 		trans_type = 0,
@@ -24284,7 +24316,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 467,
+		index_id = 468,
 		code = 344,
 		group_type = 40803,
 		trans_type = 0,
@@ -24336,7 +24368,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 468,
+		index_id = 469,
 		code = 528,
 		group_type = 40812,
 		trans_type = 0,
@@ -24354,38 +24386,6 @@ pg.base.ship_data_group = {
 		description = {
 			{
 				"Event: Tower of Transcendence",
-				{
-					""
-				},
-				0
-			}
-		}
-	},
-	[650] = {
-		type = 8,
-		redirect_id = 101,
-		hide = 0,
-		nationality = 4,
-		trans_skin = 0,
-		handbook_type = 0,
-		index_id = 469,
-		code = 650,
-		group_type = 40813,
-		trans_type = 0,
-		share_group_id = {},
-		property_hexagon = {
-			"D",
-			"S",
-			"E",
-			"D",
-			"E",
-			"D"
-		},
-		trans_radar_chart = {},
-		trans_skill = {},
-		description = {
-			{
-				"Event: Welcome to Little Academy",
 				{
 					""
 				},
