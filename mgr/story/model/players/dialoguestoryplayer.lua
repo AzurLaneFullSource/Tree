@@ -1554,7 +1554,7 @@ local function var12_0(arg0_111, arg1_111)
 	local var0_111 = arg0_111.live2dChars[arg1_111]
 	local var1_111 = false
 
-	if var0_111 then
+	if var0_111 and var0_111._go then
 		local var2_111 = var0_111._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
 
 		ReflectionHelp.RefSetProperty(typeof("Live2D.Cubism.Rendering.CubismRenderController"), "SortingOrder", var2_111, 0)

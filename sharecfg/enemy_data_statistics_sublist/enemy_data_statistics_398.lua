@@ -1,5 +1,77 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_398 = {
+	[295033] = {
+		cannon = 135,
+		name = "Helena META ",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 214,
+		hit_growth = 0,
+		dodge = 12,
+		base = 90541,
+		durability_growth = 0,
+		antiaircraft = 216,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 60,
+		luck = 10,
+		hit = 40,
+		antisub_growth = 0,
+		air_growth = 0,
+		fog_fx = "",
+		torpedo = 0,
+		durability = 52000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		id = 295033,
+		buff_list = {
+			{
+				ID = 8830,
+				LV = 2
+			}
+		}
+	},
+	[295034] = {
+		cannon = 146,
+		name = "Helena META ",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 227,
+		hit_growth = 0,
+		dodge = 14,
+		base = 90541,
+		durability_growth = 0,
+		antiaircraft = 231,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 60,
+		luck = 10,
+		hit = 45,
+		antisub_growth = 0,
+		air_growth = 0,
+		fog_fx = "",
+		torpedo = 0,
+		durability = 68000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		id = 295034,
+		buff_list = {
+			{
+				ID = 8830,
+				LV = 2
+			}
+		}
+	},
 	[295035] = {
 		cannon = 157,
 		name = "Helena META ",
@@ -857,78 +929,6 @@ pg.enemy_data_statistics_398 = {
 		armor = 0,
 		antisub = 0,
 		id = 295058,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			}
-		}
-	},
-	[295059] = {
-		cannon = 225,
-		name = "Souryuu META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 470,
-		hit_growth = 0,
-		dodge = 28,
-		base = 90536,
-		durability_growth = 0,
-		antiaircraft = 372,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 30,
-		luck = 19,
-		hit = 95,
-		antisub_growth = 0,
-		air_growth = 0,
-		fog_fx = "",
-		torpedo = 0,
-		durability = 1140000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		id = 295059,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			}
-		}
-	},
-	[295060] = {
-		cannon = 235,
-		name = "Souryuu META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 484,
-		hit_growth = 0,
-		dodge = 30,
-		base = 90536,
-		durability_growth = 0,
-		antiaircraft = 386,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 30,
-		luck = 20,
-		hit = 105,
-		antisub_growth = 0,
-		air_growth = 0,
-		fog_fx = "",
-		torpedo = 0,
-		durability = 1380000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		id = 295060,
 		buff_list = {
 			{
 				ID = 8830,

@@ -162,7 +162,7 @@ function var0_0.didEnter(arg0_10)
 	end
 
 	GetComponent(arg0_10.textTip, "RichText"):AddSprite("pt", GetSpriteFromAtlas(Drop.New({
-		type = DROP_TYPE_RESOURCE,
+		type = DROP_TYPE_VITEM,
 		id = arg0_10.ptId
 	}):getIcon(), ""))
 	setText(arg0_10.textTip, i18n(arg0_10.activity:getConfig("config_client").tips[1]))
@@ -209,7 +209,7 @@ function var0_0.didEnter(arg0_10)
 
 	arg0_10:updateMapStatus()
 	LoadImageSpriteAtlasAsync(Drop.New({
-		type = DROP_TYPE_RESOURCE,
+		type = DROP_TYPE_VITEM,
 		id = arg0_10.ptId
 	}):getIcon(), "", arg0_10.sliderPt:Find("Text/icon"), true)
 	arg0_10:updateMapWay()
@@ -508,12 +508,12 @@ function var0_0.openBuyPanel(arg0_42)
 	local var6_42 = var5_42[1]
 	local var7_42 = pg.battlepass_event_pt[var6_42].pt
 	local var8_42 = Drop.New({
-		type = DROP_TYPE_RESOURCE,
-		id = pg.battlepass_event_pt[var6_42].pt,
+		type = DROP_TYPE_VITEM,
+		id = var7_42,
 		count = var5_42[2]
 	})
-	local var9_42 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[var6_42].drop_client_pay, function(arg0_44)
-		return Drop.Create(arg0_44)
+	local var9_42 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[var6_42].award_pay, function(arg0_44)
+		return Drop.Create(pg.battlepass_event_award[arg0_44].drop_client)
 	end))
 	local var10_42 = var1_42:getConfig("gem") + var1_42:getConfig("extra_gem")
 	local var11_42

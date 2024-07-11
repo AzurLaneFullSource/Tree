@@ -1611,5 +1611,13 @@ pg.voice_actor_CN = {
 	[415] = {
 		code = 415,
 		actor_name = "Tomomi Jiena Sumi"
+	},
+	[416] = {
+		code = 416,
+		actor_name = "Yurie Igoma"
+	},
+	[417] = {
+		code = 417,
+		actor_name = "Hina Tachibana"
 	}
 }

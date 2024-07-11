@@ -39640,60 +39640,6 @@ pg.equip_skin_template = {
 			"wash"
 		}
 	},
-	[3001] = {
-		hit_sfx = "",
-		bullet_name = "",
-		name = "观察者之触",
-		type = 1,
-		preview_hit_distance = 0,
-		themeid = 199,
-		orbit_ui = "shebei_chushouui",
-		desc = "观察者——2023年趣味投票最受欢迎的塞壬优胜纪念",
-		ship_config_id = 100011,
-		derivate_boom = "",
-		orbit_rotate = false,
-		miss_sfx = "",
-		orbit_combat_anima_change = "",
-		icon = "99141",
-		orbit_combat = "shebei_chushou",
-		orbit_ui_back = 1,
-		mirror = 0,
-		rarity = 4,
-		ship_skin_id = 0,
-		derivate_bullet = "",
-		fire_fx_name = "",
-		hit_fx_name = "",
-		id = 3001,
-		derivate_torpedo = "",
-		orbit_slg = "",
-		orbit_slg_bound = "",
-		equip_type = {
-			10
-		},
-		weapon_ids = {
-			101,
-			101
-		},
-		orbit_combat_bound = {
-			"face",
-			{
-				-0.23,
-				-1.5,
-				-0.91
-			}
-		},
-		orbit_ui_bound = {
-			"face",
-			{
-				0,
-				82
-			}
-		},
-		orbit_hidden_action = {
-			"sleep",
-			"wash"
-		}
-	},
 	[3002] = {
 		hit_sfx = "",
 		bullet_name = "",
@@ -39741,60 +39687,6 @@ pg.equip_skin_template = {
 			{
 				0,
 				370
-			}
-		},
-		orbit_hidden_action = {
-			"sleep",
-			"wash"
-		}
-	},
-	[3003] = {
-		hit_sfx = "",
-		bullet_name = "",
-		name = "堕天石像鬼",
-		type = 1,
-		preview_hit_distance = 0,
-		themeid = 199,
-		orbit_ui = "shebei_shixiangguiui",
-		desc = " 阿尔及利亚·META——2023年趣味投票最受欢迎的META优胜纪念",
-		ship_config_id = 100011,
-		derivate_boom = "",
-		orbit_rotate = false,
-		miss_sfx = "",
-		orbit_combat_anima_change = "",
-		icon = "99143",
-		orbit_combat = "shebei_shixianggui",
-		orbit_ui_back = 1,
-		mirror = 0,
-		rarity = 4,
-		ship_skin_id = 0,
-		derivate_bullet = "",
-		fire_fx_name = "",
-		hit_fx_name = "",
-		id = 3003,
-		derivate_torpedo = "",
-		orbit_slg = "",
-		orbit_slg_bound = "",
-		equip_type = {
-			10
-		},
-		weapon_ids = {
-			101,
-			101
-		},
-		orbit_combat_bound = {
-			"face",
-			{
-				-0.23,
-				-0.74,
-				-1.35
-			}
-		},
-		orbit_ui_bound = {
-			"face",
-			{
-				-40,
-				146
 			}
 		},
 		orbit_hidden_action = {
@@ -39916,46 +39808,6 @@ pg.equip_skin_template = {
 			54014
 		}
 	},
-	[3007] = {
-		hit_sfx = "",
-		bullet_name = "zidan_suipian",
-		orbit_ui_bound = "",
-		type = 1,
-		preview_hit_distance = 30,
-		name = "情报注入装置",
-		themeid = 199,
-		desc = "海伦娜·META——2023年趣味投票最受欢迎的META优胜纪念",
-		ship_config_id = 100011,
-		derivate_boom = "",
-		orbit_rotate = "",
-		orbit_ui = "",
-		orbit_combat_anima_change = "",
-		icon = "99111",
-		orbit_combat = "",
-		orbit_hidden_action = "",
-		mirror = 0,
-		rarity = 4,
-		miss_sfx = "",
-		orbit_ui_back = 0,
-		ship_skin_id = 0,
-		orbit_combat_bound = "",
-		derivate_bullet = "",
-		fire_fx_name = "",
-		hit_fx_name = "zidan_suipian_hit",
-		id = 3007,
-		derivate_torpedo = "",
-		orbit_slg = "",
-		orbit_slg_bound = "",
-		equip_type = {
-			1,
-			2,
-			3
-		},
-		weapon_ids = {
-			101,
-			101
-		}
-	},
 	[3008] = {
 		hit_sfx = "",
 		bullet_name = "paodan_lingdang",
@@ -39994,160 +39846,6 @@ pg.equip_skin_template = {
 			24000,
 			24000,
 			24000
-		}
-	},
-	[3009] = {
-		hit_sfx = "",
-		bullet_name = "zidan_chaojimaozhua",
-		orbit_ui_bound = "",
-		type = 1,
-		preview_hit_distance = 30,
-		name = "超级猫爪子弹",
-		themeid = 199,
-		desc = "小柴郡——2023年趣味投票最受欢迎的小船优胜纪念",
-		ship_config_id = 100011,
-		derivate_boom = "",
-		orbit_rotate = "",
-		orbit_ui = "",
-		orbit_combat_anima_change = "",
-		icon = "99113",
-		orbit_combat = "",
-		orbit_hidden_action = "",
-		mirror = 0,
-		rarity = 4,
-		miss_sfx = "",
-		orbit_ui_back = 0,
-		ship_skin_id = 0,
-		orbit_combat_bound = "",
-		derivate_bullet = "",
-		fire_fx_name = "",
-		hit_fx_name = "zidan_chaojimaozhua_hit",
-		id = 3009,
-		derivate_torpedo = "",
-		orbit_slg = "",
-		orbit_slg_bound = "",
-		equip_type = {
-			1,
-			2,
-			3
-		},
-		weapon_ids = {
-			101,
-			101
-		}
-	},
-	[3010] = {
-		hit_sfx = "",
-		bullet_name = "feiji_xintiao",
-		orbit_ui_bound = "",
-		type = 1,
-		preview_hit_distance = 0,
-		name = "手绘爱心飞机(鱼雷)",
-		themeid = 199,
-		desc = "小鹩——2023年趣味投票最受欢迎的小船优胜纪念",
-		ship_config_id = 100011,
-		derivate_boom = "",
-		orbit_rotate = "",
-		orbit_ui = "",
-		orbit_combat_anima_change = "",
-		icon = "99132",
-		orbit_combat = "",
-		orbit_hidden_action = "",
-		mirror = 0,
-		rarity = 4,
-		miss_sfx = "",
-		orbit_ui_back = 0,
-		ship_skin_id = 0,
-		orbit_combat_bound = "",
-		derivate_bullet = "",
-		fire_fx_name = "",
-		hit_fx_name = "",
-		id = 3010,
-		derivate_torpedo = "yulei_aixin",
-		orbit_slg = "",
-		orbit_slg_bound = "",
-		equip_type = {
-			8
-		},
-		weapon_ids = {
-			61503,
-			61504
-		}
-	},
-	[3011] = {
-		hit_sfx = "",
-		bullet_name = "feiji_xintiao",
-		orbit_ui_bound = "",
-		type = 1,
-		preview_hit_distance = 0,
-		name = "手绘爱心飞机(战斗)",
-		themeid = 199,
-		desc = "小鹩——2023年趣味投票最受欢迎的小船优胜纪念",
-		ship_config_id = 100011,
-		derivate_boom = "zidan_caihong",
-		orbit_rotate = "",
-		orbit_ui = "",
-		orbit_combat_anima_change = "",
-		icon = "99132",
-		orbit_combat = "",
-		orbit_hidden_action = "",
-		mirror = 0,
-		rarity = 4,
-		miss_sfx = "",
-		orbit_ui_back = 0,
-		ship_skin_id = 0,
-		orbit_combat_bound = "",
-		derivate_bullet = "",
-		fire_fx_name = "",
-		hit_fx_name = "",
-		id = 3011,
-		derivate_torpedo = "",
-		orbit_slg = "",
-		orbit_slg_bound = "",
-		equip_type = {
-			7
-		},
-		weapon_ids = {
-			61505,
-			54010
-		}
-	},
-	[3012] = {
-		hit_sfx = "",
-		bullet_name = "feiji_xintiao",
-		orbit_ui_bound = "",
-		type = 1,
-		preview_hit_distance = 0,
-		name = "手绘爱心飞机(轰炸)",
-		themeid = 199,
-		desc = "小鹩——2023年趣味投票最受欢迎的小船优胜纪念",
-		ship_config_id = 100011,
-		derivate_boom = "zidan_caihong",
-		orbit_rotate = "",
-		orbit_ui = "",
-		orbit_combat_anima_change = "",
-		icon = "99132",
-		orbit_combat = "",
-		orbit_hidden_action = "",
-		mirror = 0,
-		rarity = 4,
-		miss_sfx = "",
-		orbit_ui_back = 0,
-		ship_skin_id = 0,
-		orbit_combat_bound = "",
-		derivate_bullet = "",
-		fire_fx_name = "",
-		hit_fx_name = "",
-		id = 3012,
-		derivate_torpedo = "",
-		orbit_slg = "",
-		orbit_slg_bound = "",
-		equip_type = {
-			9
-		},
-		weapon_ids = {
-			61501,
-			54014
 		}
 	},
 	all = {
@@ -41162,17 +40860,10 @@ pg.equip_skin_template = {
 		2072,
 		2073,
 		2074,
-		3001,
 		3002,
-		3003,
 		3004,
 		3005,
 		3006,
-		3007,
-		3008,
-		3009,
-		3010,
-		3011,
-		3012
+		3008
 	}
 }

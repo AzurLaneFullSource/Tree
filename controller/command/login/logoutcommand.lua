@@ -64,58 +64,6 @@ function var0_0.execute(arg0_1, arg1_1)
 		var2_1:SetLoginedFlag(false)
 	end
 
-	local function var4_1()
-		arg0_1.facade:removeProxy(PlayerProxy.__cname)
-		arg0_1.facade:removeProxy(BayProxy.__cname)
-		arg0_1.facade:removeProxy(FleetProxy.__cname)
-		arg0_1.facade:removeProxy(EquipmentProxy.__cname)
-		arg0_1.facade:removeProxy(ChapterProxy.__cname)
-		arg0_1.facade:removeProxy(WorldProxy.__cname)
-		arg0_1.facade:removeProxy(BagProxy.__cname)
-		arg0_1.facade:removeProxy(TaskProxy.__cname)
-		arg0_1.facade:removeProxy(MailProxy.__cname)
-		arg0_1.facade:removeProxy(NavalAcademyProxy.__cname)
-		arg0_1.facade:removeProxy(DormProxy.__cname)
-		arg0_1.facade:removeProxy(ChatProxy.__cname)
-		arg0_1.facade:removeProxy(FriendProxy.__cname)
-		arg0_1.facade:removeProxy(NotificationProxy.__cname)
-		arg0_1.facade:removeProxy(BuildShipProxy.__cname)
-		arg0_1.facade:removeProxy(CollectionProxy.__cname)
-		arg0_1.facade:removeProxy(EventProxy.__cname)
-		arg0_1.facade:removeProxy(ActivityProxy.__cname)
-		arg0_1.facade:removeProxy(MilitaryExerciseProxy.__cname)
-		arg0_1.facade:removeProxy(ServerNoticeProxy.__cname)
-		arg0_1.facade:removeProxy(DailyLevelProxy.__cname)
-		arg0_1.facade:removeProxy(ShopsProxy.__cname)
-		arg0_1.facade:removeProxy(GuildProxy.__cname)
-		arg0_1.facade:removeProxy(VoteProxy.__cname)
-		arg0_1.facade:removeProxy(ChallengeProxy.__cname)
-		arg0_1.facade:removeProxy(ColoringProxy.__cname)
-		arg0_1.facade:removeProxy(AnswerProxy.__cname)
-		arg0_1.facade:removeProxy(TechnologyProxy.__cname)
-		arg0_1.facade:removeProxy(BillboardProxy.__cname)
-		arg0_1.facade:removeProxy(TechnologyNationProxy.__cname)
-		arg0_1.facade:removeProxy(AttireProxy.__cname)
-		arg0_1.facade:removeProxy(ShipSkinProxy.__cname)
-		arg0_1.facade:removeProxy(PrayProxy.__cname)
-		arg0_1.facade:removeProxy(SecondaryPWDProxy.__cname)
-		arg0_1.facade:removeProxy(SkirmishProxy.__cname)
-		arg0_1.facade:removeProxy(InstagramProxy.__cname)
-		arg0_1.facade:removeProxy(MiniGameProxy.__cname)
-		arg0_1.facade:removeProxy(EmojiProxy.__cname)
-		arg0_1.facade:removeProxy(AppreciateProxy.__cname)
-		arg0_1.facade:removeProxy(MetaCharacterProxy.__cname)
-		arg0_1.facade:removeProxy(AvatarFrameProxy.__cname)
-		arg0_1.facade:removeProxy(TotalTaskProxy.__cname)
-		arg0_1.facade:removeProxy(RefluxProxy.__cname)
-		arg0_1.facade:removeProxy(IslandProxy.__cname)
-		arg0_1.facade:removeProxy(ActivityTaskProxy.__cname)
-		arg0_1.facade:removeProxy(FeastProxy.__cname)
-		arg0_1.facade:removeProxy(EducateProxy.__cname)
-		arg0_1.facade:removeProxy(ApartmentProxy.__cname)
-		arg0_1.facade:removeCommand(GAME.LOAD_SCENE_DONE)
-	end
-
 	arg0_1:sendNotification(GAME.LOAD_SCENE, {
 		context = Context.New({
 			cleanStack = true,
@@ -124,7 +72,13 @@ function var0_0.execute(arg0_1, arg1_1)
 			viewComponent = LoginScene,
 			data = var0_1
 		}),
-		callback = var4_1
+		callback = function()
+			pg.proxyRegister:RemoveProxy(arg0_1.facade)
+
+			pg.proxyRegister = nil
+
+			arg0_1.facade:removeCommand(GAME.LOAD_SCENE_DONE)
+		end
 	})
 
 	if var0_1.code ~= SDK_EXIT_CODE then

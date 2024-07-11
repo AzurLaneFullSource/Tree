@@ -30,8 +30,6 @@ function var0_0.register(arg0_1)
 		elseif arg0_1.data:GetDaysFromRegister() == 6 then
 			pg.TrackerMgr.GetInstance():Tracking(TRACKING_7D_RETENTION)
 		end
-
-		arg0_1:flushTimesListener()
 	end)
 	arg0_1:on(11004, function(arg0_4)
 		if not arg0_1.data then
@@ -92,180 +90,180 @@ function var0_0.register(arg0_1)
 	end)
 end
 
-function var0_0.remove(arg0_9)
-	arg0_9:clearTimesListener()
+function var0_0.timeCall(arg0_9)
+	return {
+		[ProxyRegister.DayCall] = function(arg0_10)
+			local var0_10 = arg0_9:getData()
+
+			var0_10:resetBuyOilCount()
+
+			for iter0_10, iter1_10 in pairs(var0_10.vipCards) do
+				if iter1_10:isExpire() then
+					var0_10.vipCards[iter1_10.id] = nil
+				end
+			end
+
+			arg0_9:updatePlayer(var0_10)
+		end
+	}
 end
 
-function var0_0.getSummaryInfo(arg0_10)
-	return arg0_10.summaryInfo
+function var0_0.remove(arg0_11)
+	return
 end
 
-function var0_0.setSummaryInfo(arg0_11, arg1_11)
-	arg0_11.summaryInfo = arg1_11
+function var0_0.getSummaryInfo(arg0_12)
+	return arg0_12.summaryInfo
 end
 
-function var0_0.flushTimesListener(arg0_12)
-	arg0_12:clearTimesListener()
-
-	local var0_12 = pg.TimeMgr.GetInstance()
-
-	arg0_12.fourClockId = var0_12:AddTimer("daily_four", var0_12:GetNextTime(4, 0, 0) - var0_12:GetServerTime(), 86400, function()
-		arg0_12:sendNotification(GAME.FOUR_HOUR)
-	end)
+function var0_0.setSummaryInfo(arg0_13, arg1_13)
+	arg0_13.summaryInfo = arg1_13
 end
 
-function var0_0.clearTimesListener(arg0_14)
-	if arg0_14.fourClockId then
-		pg.TimeMgr.GetInstance():RemoveTimer(arg0_14.fourClockId)
+function var0_0.updatePlayer(arg0_14, arg1_14)
+	assert(isa(arg1_14, Player), "should be an instance of Player")
 
-		arg0_14.fourClockId = nil
-	end
-end
-
-function var0_0.updatePlayer(arg0_15, arg1_15)
-	assert(isa(arg1_15, Player), "should be an instance of Player")
-
-	if arg0_15.data then
-		arg0_15:sendNotification(GAME.ON_PLAYER_RES_CHANGE, {
-			oldPlayer = arg0_15.data,
-			newPlayer = arg1_15
+	if arg0_14.data then
+		arg0_14:sendNotification(GAME.ON_PLAYER_RES_CHANGE, {
+			oldPlayer = arg0_14.data,
+			newPlayer = arg1_14
 		})
 	end
 
-	arg0_15.data = arg1_15:clone()
+	arg0_14.data = arg1_14:clone()
 
-	arg0_15.data:display("updated")
-	arg0_15:sendNotification(var0_0.UPDATED, arg1_15:clone())
+	arg0_14.data:display("updated")
+	arg0_14:sendNotification(var0_0.UPDATED, arg1_14:clone())
 end
 
-function var0_0.UpdatePlayerRes(arg0_16, arg1_16)
-	if not arg0_16.data then
+function var0_0.UpdatePlayerRes(arg0_15, arg1_15)
+	if not arg0_15.data then
 		return
 	end
 
-	local var0_16 = {}
-	local var1_16 = {}
+	local var0_15 = {}
+	local var1_15 = {}
 
-	for iter0_16, iter1_16 in ipairs(arg1_16) do
-		local var2_16 = id2res(iter1_16.id)
+	for iter0_15, iter1_15 in ipairs(arg1_15) do
+		local var2_15 = id2res(iter1_15.id)
 
-		if iter1_16.count < 0 then
-			var1_16[var2_16] = defaultValue(var1_16[var2_16], 0) - iter1_16.count
+		if iter1_15.count < 0 then
+			var1_15[var2_15] = defaultValue(var1_15[var2_15], 0) - iter1_15.count
 		else
-			var0_16[var2_16] = defaultValue(var0_16[var2_16], 0) + iter1_16.count
+			var0_15[var2_15] = defaultValue(var0_15[var2_15], 0) + iter1_15.count
 		end
 	end
 
-	arg0_16.data:addResources(var0_16)
-	arg0_16.data:consume(var1_16)
-	arg0_16:updatePlayer(arg0_16.data)
+	arg0_15.data:addResources(var0_15)
+	arg0_15.data:consume(var1_15)
+	arg0_15:updatePlayer(arg0_15.data)
 end
 
-function var0_0.updatePlayerMedalDisplay(arg0_17, arg1_17)
-	arg0_17.data.displayTrophyList = arg1_17
+function var0_0.updatePlayerMedalDisplay(arg0_16, arg1_16)
+	arg0_16.data.displayTrophyList = arg1_16
 end
 
-function var0_0.getPlayerId(arg0_18)
-	return arg0_18.data.id
+function var0_0.getPlayerId(arg0_17)
+	return arg0_17.data.id
 end
 
-function var0_0.setFlag(arg0_19, arg1_19, arg2_19)
-	arg0_19._flags[arg1_19] = arg2_19
+function var0_0.setFlag(arg0_18, arg1_18, arg2_18)
+	arg0_18._flags[arg1_18] = arg2_18
 end
 
-function var0_0.getFlag(arg0_20, arg1_20)
-	return arg0_20._flags[arg1_20]
+function var0_0.getFlag(arg0_19, arg1_19)
+	return arg0_19._flags[arg1_19]
 end
 
-function var0_0.isSelf(arg0_21, arg1_21)
-	return arg0_21.data.id == arg1_21
+function var0_0.isSelf(arg0_20, arg1_20)
+	return arg0_20.data.id == arg1_20
 end
 
-function var0_0.setInited(arg0_22, arg1_22)
-	arg0_22.inited = arg1_22
+function var0_0.setInited(arg0_21, arg1_21)
+	arg0_21.inited = arg1_21
 end
 
-function var0_0.getInited(arg0_23)
-	return arg0_23.inited
+function var0_0.getInited(arg0_22)
+	return arg0_22.inited
 end
 
-function var0_0.setRefundInfo(arg0_24, arg1_24)
-	local var0_24
+function var0_0.setRefundInfo(arg0_23, arg1_23)
+	local var0_23
 
-	if arg1_24 and #arg1_24 > 0 then
-		var0_24 = {}
+	if arg1_23 and #arg1_23 > 0 then
+		var0_23 = {}
 
-		for iter0_24, iter1_24 in ipairs(arg1_24) do
-			table.insert(var0_24, {
-				shopId = iter1_24.shop_id,
-				buyTime = iter1_24.buy_time,
-				refundTime = iter1_24.refund_time
+		for iter0_23, iter1_23 in ipairs(arg1_23) do
+			table.insert(var0_23, {
+				shopId = iter1_23.shop_id,
+				buyTime = iter1_23.buy_time,
+				refundTime = iter1_23.refund_time
 			})
 		end
 	end
 
-	arg0_24.refundInfo = var0_24
+	arg0_23.refundInfo = var0_23
 end
 
-function var0_0.getRefundInfo(arg0_25)
-	if not arg0_25.refundInfo then
+function var0_0.getRefundInfo(arg0_24)
+	if not arg0_24.refundInfo then
 		return nil
 	end
 
-	if #arg0_25.refundInfo <= 0 then
+	if #arg0_24.refundInfo <= 0 then
 		return nil
 	end
 
-	return arg0_25.refundInfo
+	return arg0_24.refundInfo
 end
 
-function var0_0.IsShowCommssionTip(arg0_26)
-	local var0_26 = getProxy(EventProxy):hasFinishState()
-	local var1_26 = getProxy(NavalAcademyProxy)
-	local var2_26 = arg0_26:getRawData()
-	local var3_26 = var1_26:GetOilVO()
-	local var4_26 = var1_26:GetGoldVO()
-	local var5_26 = var1_26:GetClassVO()
-	local var6_26 = var3_26:isCommissionNotify(var2_26.oilField)
-	local var7_26 = var4_26:isCommissionNotify(var2_26.goldField)
-	local var8_26 = var5_26:GetGenResCnt()
-	local var9_26 = var5_26:GetEffectAttrs()
-	local var10_26 = 0
+function var0_0.IsShowCommssionTip(arg0_25)
+	local var0_25 = getProxy(EventProxy):hasFinishState()
+	local var1_25 = getProxy(NavalAcademyProxy)
+	local var2_25 = arg0_25:getRawData()
+	local var3_25 = var1_25:GetOilVO()
+	local var4_25 = var1_25:GetGoldVO()
+	local var5_25 = var1_25:GetClassVO()
+	local var6_25 = var3_25:isCommissionNotify(var2_25.oilField)
+	local var7_25 = var4_25:isCommissionNotify(var2_25.goldField)
+	local var8_25 = var5_25:GetGenResCnt()
+	local var9_25 = var5_25:GetEffectAttrs()
+	local var10_25 = 0
 
-	for iter0_26, iter1_26 in ipairs(var9_26) do
-		if iter1_26.attrName == "stock" then
-			var10_26 = iter1_26.value
+	for iter0_25, iter1_25 in ipairs(var9_25) do
+		if iter1_25.attrName == "stock" then
+			var10_25 = iter1_25.value
 		end
 	end
 
-	local var11_26 = NotifyTipHelper.ShouldShowUrTip()
-	local var12_26 = var1_26:getStudents()
-	local var13_26 = 0
+	local var11_25 = NotifyTipHelper.ShouldShowUrTip()
+	local var12_25 = var1_25:getStudents()
+	local var13_25 = 0
 
-	_.each(_.values(var12_26), function(arg0_27)
-		if arg0_27:getFinishTime() <= pg.TimeMgr.GetInstance():GetServerTime() then
-			var13_26 = var13_26 + 1
+	_.each(_.values(var12_25), function(arg0_26)
+		if arg0_26:getFinishTime() <= pg.TimeMgr.GetInstance():GetServerTime() then
+			var13_25 = var13_25 + 1
 		end
 	end)
 
-	local var14_26 = 0
+	local var14_25 = 0
 
-	_.each(getProxy(TechnologyProxy):getPlanningTechnologys(), function(arg0_28)
-		if arg0_28:isCompleted() then
-			var14_26 = var14_26 + 1
+	_.each(getProxy(TechnologyProxy):getPlanningTechnologys(), function(arg0_27)
+		if arg0_27:isCompleted() then
+			var14_25 = var14_25 + 1
 		end
 	end)
 
-	local var15_26 = WorldBossConst.GetCommissionSceneMetaBossBtnState()
-	local var16_26 = CommissionMetaBossBtn.STATE_GET_AWARDS == var15_26 or CommissionMetaBossBtn.STATE_FINSH_BATTLE == var15_26
-	local var17_26 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
-	local var18_26 = false
+	local var15_25 = WorldBossConst.GetCommissionSceneMetaBossBtnState()
+	local var16_25 = CommissionMetaBossBtn.STATE_GET_AWARDS == var15_25 or CommissionMetaBossBtn.STATE_FINSH_BATTLE == var15_25
+	local var17_25 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
+	local var18_25 = false
 
-	if var17_26 and not var17_26:isEnd() then
-		var18_26 = #var17_26:GetCrusingUnreceiveAward() > 0
+	if var17_25 and not var17_25:isEnd() then
+		var18_25 = #var17_25:GetCrusingUnreceiveAward() > 0
 	end
 
-	return var16_26 or var0_26 or var6_26 or var7_26 or var10_26 ~= 0 and var8_26 > var10_26 - 10 or var11_26 or var13_26 > 0 or var14_26 > 0 or var18_26
+	return var16_25 or var0_25 or var6_25 or var7_25 or var10_25 ~= 0 and var8_25 > var10_25 - 10 or var11_25 or var13_25 > 0 or var14_25 > 0 or var18_25
 end
 
 return var0_0

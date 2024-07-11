@@ -84,7 +84,15 @@ function var0_0.register(arg0_1)
 	end)
 end
 
-function var0_0.clearTimeOut(arg0_6)
+function var0_0.timeCall(arg0_6)
+	return {
+		[ProxyRegister.DayCall] = function(arg0_7)
+			arg0_6:clearTimeOut()
+		end
+	}
+end
+
+function var0_0.clearTimeOut(arg0_8)
 	getProxy(AvatarFrameProxy):clearTimeOut()
 	getProxy(TaskProxy):clearTimeOut()
 end

@@ -928,6 +928,10 @@ function var0_0.onWeddingReview(arg0_78, arg1_78)
 
 		arg0_78.exitLoadL2d = true
 	end
+
+	if arg0_78.spinePaintingRoot.childCount > 0 then
+		setActive(arg0_78.commonPainting, not arg0_78.spinePaintingisOn)
+	end
 end
 
 function var0_0.DisplaySpinePainting(arg0_79, arg1_79)

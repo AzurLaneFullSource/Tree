@@ -393,7 +393,7 @@ local var8_0 = {
 }
 
 function var0_0.FlushDate(arg0_44)
-	local var0_44 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d", true)
+	local var0_44 = os.date("%Y/%m/%d")
 	local var1_44 = string.split(var0_44, "/")
 	local var2_44 = var1_44[1]
 	local var3_44 = tonumber(var1_44[2])

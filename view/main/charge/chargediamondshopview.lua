@@ -91,12 +91,12 @@ function var0_0.confirm(arg0_11, arg1_11)
 				local var6_11 = pg.battlepass_event_pt[var5_11].pt
 
 				var3_11 = Drop.New({
-					type = DROP_TYPE_RESOURCE,
-					id = pg.battlepass_event_pt[var5_11].pt,
+					type = DROP_TYPE_VITEM,
+					id = var6_11,
 					count = var4_11[2]
 				})
-				var2_11 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[var5_11].drop_client_pay, function(arg0_13)
-					return Drop.Create(arg0_13)
+				var2_11 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[var5_11].award_pay, function(arg0_13)
+					return Drop.Create(pg.battlepass_event_award[arg0_13].drop_client)
 				end))
 			end
 

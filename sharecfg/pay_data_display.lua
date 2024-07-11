@@ -132,6 +132,10 @@ pg.pay_data_display = setmetatable({
 		2024,
 		2025,
 		2026,
+		2027,
+		2028,
+		2029,
+		2030,
 		139,
 		140,
 		141,
@@ -7112,7 +7116,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name = "Commander Level Boost Pack",
 		name_display = "Commander Level Boost Pack",
-		type_order = 0,
+		type_order = 2,
 		extra_gem = 0,
 		id = 2009,
 		money = 499,
@@ -12256,7 +12260,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name = "Daily Sortie Refuel Pack",
 		name_display = "Daily Sortie Refuel Pack",
-		type_order = 0,
+		type_order = 3,
 		extra_gem = 0,
 		id = 2025,
 		money = 99,
@@ -12410,6 +12414,232 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40023,
+				1
+			}
+		}
+	},
+	[2027] = {
+		subject = "PR Construction Pack - Series 4",
+		limit_group = 4,
+		descrip_extra = "",
+		type = 0,
+		limit_arg = 0,
+		name = "PR Construction Pack - Series 4",
+		name_display = "PR Construction Pack - Series 4",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2027,
+		money = 1599,
+		tag = 2,
+		gem = 0,
+		limit_type = 3,
+		time = "always",
+		picture = "tech4_display",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack9",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "Contains one PR Voucher - Series 4 and 343 General Blueprints - Series 4.",
+		airijp_id = "com.yostaren.azurlane.pack9",
+		extra_service_item = {
+			{
+				2,
+				40139,
+				1
+			},
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				40139,
+				1
+			},
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {}
+	},
+	[2028] = {
+		subject = "PR Voucher & Blueprint Bundle - Series 4",
+		limit_group = 4,
+		descrip_extra = "If you've already built all Series 4 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
+		type = 0,
+		limit_arg = 1,
+		name = "PR Voucher & Blueprint Bundle - Series 4",
+		name_display = "PR Voucher & Blueprint \n         Bundle - Series 4",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2028,
+		money = 1599,
+		tag = 2,
+		gem = 0,
+		limit_type = 3,
+		time = "always",
+		picture = "tech4_promotion",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack9",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "Contains:",
+		airijp_id = "com.yostaren.azurlane.pack9",
+		extra_service_item = {
+			{
+				2,
+				40139,
+				1
+			},
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				40139,
+				1
+			},
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40044,
+				1
+			}
+		}
+	},
+	[2029] = {
+		subject = "PR Voucher - Series 4",
+		limit_group = 4,
+		descrip_extra = "If you've already built all Series 4 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
+		type = 0,
+		limit_arg = 2,
+		name = "PR Voucher - Series 4",
+		name_display = "PR Voucher Pack - Series 4",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2029,
+		money = 999,
+		tag = 2,
+		gem = 0,
+		limit_type = 3,
+		time = "always",
+		picture = "tech4_normal",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack7",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "Contains:",
+		airijp_id = "com.yostaren.azurlane.pack7",
+		extra_service_item = {
+			{
+				2,
+				40139,
+				1
+			}
+		},
+		display = {
+			{
+				2,
+				40139,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40045,
+				1
+			}
+		}
+	},
+	[2030] = {
+		subject = "PR Blueprint Pack - Series 4",
+		limit_group = 4,
+		descrip_extra = "Buy to receive 343 General Blueprints - Series 4.",
+		type = 0,
+		limit_arg = 3,
+		name = "PR Blueprint Pack - Series 4",
+		name_display = "PR Blueprint Pack - Series 4",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2030,
+		money = 699,
+		tag = 2,
+		gem = 0,
+		limit_type = 3,
+		time = "always",
+		picture = "tech4_promotion",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack8",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "Contains:",
+		airijp_id = "com.yostaren.azurlane.pack8",
+		extra_service_item = {
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40046,
 				1
 			}
 		}

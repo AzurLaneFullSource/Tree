@@ -260,7 +260,8 @@ function var0_0._Init(arg0_23, arg1_23, arg2_23)
 		BgStoryPlayer.New(arg1_23),
 		CarouselPlayer.New(arg1_23),
 		VedioStoryPlayer.New(arg1_23),
-		CastStoryPlayer.New(arg1_23)
+		CastStoryPlayer.New(arg1_23),
+		SpAnimStoryPlayer.New(arg1_23)
 	}
 	arg0_23.setSpeedPanel = StorySetSpeedPanel.New(arg0_23._tf)
 	arg0_23.recordPanel = NewStoryRecordPanel.New()

@@ -1041,7 +1041,7 @@ function var0_0.GetCrusingUnreceiveAward(arg0_98)
 		if iter3_98 > arg0_98.data1 then
 			break
 		elseif not var2_98[iter3_98] then
-			table.insert(var1_98, Drop.Create(var0_98.drop_client[iter2_98]))
+			table.insert(var1_98, Drop.Create(pg.battlepass_event_award[var0_98.award[iter2_98]].drop_client))
 		end
 	end
 
@@ -1059,7 +1059,7 @@ function var0_0.GetCrusingUnreceiveAward(arg0_98)
 		if iter7_98 > arg0_98.data1 then
 			break
 		elseif not var3_98[iter7_98] then
-			table.insert(var1_98, Drop.Create(var0_98.drop_client_pay[iter6_98]))
+			table.insert(var1_98, Drop.Create(pg.battlepass_event_award[var0_98.award_pay[iter6_98]].drop_client))
 		end
 	end
 
@@ -1082,8 +1082,8 @@ function var0_0.GetCrusingInfo(arg0_99)
 		table.insert(var2_99, {
 			id = iter2_99,
 			pt = iter3_99,
-			award = var0_99.drop_client[iter2_99],
-			award_pay = var0_99.drop_client_pay[iter2_99],
+			award = pg.battlepass_event_award[var0_99.award[iter2_99]].drop_client,
+			award_pay = pg.battlepass_event_award[var0_99.award_pay[iter2_99]].drop_client,
 			isImportent = var3_99[iter2_99]
 		})
 	end

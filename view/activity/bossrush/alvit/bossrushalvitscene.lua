@@ -97,7 +97,7 @@ function var0_0.getBGM(arg0_15)
 	end
 
 	local var1_15 = var0_15.bgm
-	local var2_15 = var0_15.special_bgm
+	local var2_15 = "story-richang-11"
 	local var3_15 = arg0_15.contextData.displayMode
 
 	if var3_15 == var0_0.DISPLAY.BATTLE then

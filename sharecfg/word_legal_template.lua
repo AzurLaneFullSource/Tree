@@ -4628,6 +4628,23 @@ function temp()
 												}
 											}
 										}
+									},
+									N = {
+										a = {
+											k = {
+												h = {
+													i = {
+														m = {
+															o = {
+																v = {
+																	this = true
+																}
+															}
+														}
+													}
+												}
+											}
+										}
 									}
 								}
 							}
@@ -4912,6 +4929,15 @@ function temp()
 				a = {
 					a = {
 						n = {
+							this = true
+						}
+					}
+				}
+			},
+			y = {
+				a = {
+					r = {
+						d = {
 							this = true
 						}
 					}
@@ -5881,6 +5907,15 @@ function temp()
 										}
 									}
 								}
+							}
+						}
+					}
+				},
+				f = {
+					o = {
+						r = {
+							d = {
+								this = true
 							}
 						}
 					}
@@ -7389,6 +7424,15 @@ function temp()
 				h = {
 					i = {
 						this = true
+					}
+				}
+			},
+			p = {
+				o = {
+					l = {
+						i = {
+							this = true
+						}
 					}
 				}
 			},
@@ -9235,52 +9279,9 @@ end
 temp()
 
 function temp()
-	var1_0.小 = {
-		腓 = {
-			特 = {
-				烈 = {
-					this = true
-				}
-			}
-		},
-		贝 = {
-			法 = {
-				this = true
-			}
-		},
-		可 = {
-			畏 = {
-				this = true
-			}
-		},
-		斯 = {
-			佩 = {
-				this = true
-			}
-		},
-		克 = {
-			利 = {
-				夫 = {
-					兰 = {
-						this = true
-					}
-				}
-			}
-		},
-		声 = {
-			望 = {
-				this = true
-			}
-		},
-		齐 = {
-			柏 = {
-				林 = {
-					this = true
-				}
-			}
-		},
-		欧 = {
-			根 = {
+	var1_0.塔 = {
+		什 = {
+			干 = {
 				this = true
 			}
 		}

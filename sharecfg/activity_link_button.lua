@@ -52,15 +52,12 @@ pg.activity_link_button = {
 	[20] = {
 		type = 2,
 		name = "event_minigame",
+		time = "stop",
 		text_pic = "text_event_minigame",
 		id = 20,
 		group_id = 5,
 		pic = "event_minigame",
 		order = 1,
-		time = {
-			"default",
-			5404
-		},
 		param = {
 			"KINDERGARTEN"
 		}
@@ -189,6 +186,23 @@ pg.activity_link_button = {
 		group_id = 4,
 		order = 1
 	},
+	[104] = {
+		type = 14,
+		name = "event_layer",
+		text_pic = "text_event_layer",
+		id = 104,
+		group_id = 1,
+		pic = "event_layer",
+		order = 1,
+		time = {
+			"default",
+			5404
+		},
+		param = {
+			mediator = "ChildishnessSchoolPtMediator",
+			view = "ChildishnessSchoolPtPage"
+		}
+	},
 	get_id_list_by_name = {
 		event_all = {
 			1,
@@ -227,6 +241,9 @@ pg.activity_link_button = {
 		},
 		event_boss_single = {
 			102
+		},
+		event_layer = {
+			104
 		}
 	},
 	all = {
@@ -243,6 +260,7 @@ pg.activity_link_button = {
 		90,
 		100,
 		101,
-		102
+		102,
+		104
 	}
 }

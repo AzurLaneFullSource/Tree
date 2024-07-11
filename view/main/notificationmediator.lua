@@ -94,6 +94,8 @@ function var0_0.register(arg0_1)
 				elseif arg1_2 == ChatConst.ChannelGuild then
 					arg0_1:sendNotification(GAME.GUILD_SEND_MSG, var9_2)
 				end
+
+				TrackConst.EmojiSend(var9_2)
 			end
 		end
 	end)

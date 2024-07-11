@@ -4052,7 +4052,16 @@ pg.base.ship_skin_template_2 = {
 			"touch_head"
 		},
 		l2d_voice_calibrate = {
-			use_event = true
+			mail = 1,
+			mission_complete = 3,
+			main_1 = 0.7,
+			main_2 = 0.7,
+			home = 3.5,
+			mission = 0.7,
+			touch2 = 0.7,
+			login = 17,
+			touch = 0.7,
+			main_3 = 0.7
 		},
 		l2d_para_range = {
 			ParamAngleX = {

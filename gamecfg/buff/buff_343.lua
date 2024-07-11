@@ -19,6 +19,15 @@
 				add = 0,
 				mul = -500
 			}
+		},
+		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				tag = "naximofubeilianjiansu"
+			}
 		}
 	}
 }

@@ -47,45 +47,37 @@ function var0_0.UpdateActivies(arg0_2, arg1_2, arg2_2)
 		var0_0.UpdateActivity(iter3_2, var0_2[var2_2])
 	end
 
-	for iter4_2, iter5_2 in ipairs(arg0_2.activityProxy:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)) do
-		local var3_2 = pg.battlepass_event_pt[iter5_2.id].pt
+	for iter4_2, iter5_2 in ipairs(arg0_2.activityProxy:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_RETURN_AWARD)) do
+		local var3_2 = pg.activity_template_headhunting[iter5_2.id]
 
-		var0_2[var3_2] = var0_2[var3_2] or arg2_2:getResource(var3_2) - arg1_2:getResource(var3_2)
+		assert(var3_2)
 
-		var0_0.UpdateActivity(iter5_2, var0_2[var3_2])
+		local var4_2 = var3_2.pt
+
+		var0_2[var4_2] = var0_2[var4_2] or arg2_2:getResource(var4_2) - arg1_2:getResource(var4_2)
+
+		var0_0.UpdateActivity(iter5_2, var0_2[var4_2])
 	end
 
-	for iter6_2, iter7_2 in ipairs(arg0_2.activityProxy:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_RETURN_AWARD)) do
-		local var4_2 = pg.activity_template_headhunting[iter7_2.id]
+	for iter6_2, iter7_2 in ipairs(arg0_2.activityProxy:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PIZZA_PT)) do
+		local var5_2 = iter7_2:getDataConfig("pt")
 
-		assert(var4_2)
-
-		local var5_2 = var4_2.pt
+		assert(var5_2)
 
 		var0_2[var5_2] = var0_2[var5_2] or arg2_2:getResource(var5_2) - arg1_2:getResource(var5_2)
 
 		var0_0.UpdateActivity(iter7_2, var0_2[var5_2])
 	end
 
-	for iter8_2, iter9_2 in ipairs(arg0_2.activityProxy:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PIZZA_PT)) do
+	for iter8_2, iter9_2 in ipairs(arg0_2.activityProxy:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)) do
 		local var6_2 = iter9_2:getDataConfig("pt")
 
-		assert(var6_2)
+		if var6_2 > 0 then
+			assert(var6_2)
 
-		var0_2[var6_2] = var0_2[var6_2] or arg2_2:getResource(var6_2) - arg1_2:getResource(var6_2)
+			var0_2[var6_2] = var0_2[var6_2] or arg2_2:getResource(var6_2) - arg1_2:getResource(var6_2)
 
-		var0_0.UpdateActivity(iter9_2, var0_2[var6_2])
-	end
-
-	for iter10_2, iter11_2 in ipairs(arg0_2.activityProxy:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)) do
-		local var7_2 = iter11_2:getDataConfig("pt")
-
-		if var7_2 > 0 then
-			assert(var7_2)
-
-			var0_2[var7_2] = var0_2[var7_2] or arg2_2:getResource(var7_2) - arg1_2:getResource(var7_2)
-
-			var0_0.UpdateActivity(iter11_2, var0_2[var7_2])
+			var0_0.UpdateActivity(iter9_2, var0_2[var6_2])
 		end
 	end
 end
@@ -105,12 +97,6 @@ function var0_0.UpdateActivity(arg0_3, arg1_3)
 	elseif var1_3 == ActivityConst.ACTIVITY_TYPE_BOSS_RANK then
 		if arg1_3 ~= 0 then
 			arg0_3.data1 = arg0_3.data1 + arg1_3
-
-			var0_3:updateActivity(arg0_3)
-		end
-	elseif var1_3 == ActivityConst.ACTIVITY_TYPE_PT_CRUSING then
-		if not arg0_3:isEnd() and arg1_3 ~= 0 then
-			arg0_3.data1 = arg0_3.data1 + math.abs(arg1_3)
 
 			var0_3:updateActivity(arg0_3)
 		end

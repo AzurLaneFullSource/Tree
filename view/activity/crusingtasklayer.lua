@@ -145,7 +145,7 @@ function var0_0.didEnter(arg0_5)
 
 	arg0_5:updatePhaseInfo()
 	LoadImageSpriteAtlasAsync(Drop.New({
-		type = DROP_TYPE_RESOURCE,
+		type = DROP_TYPE_VITEM,
 		id = arg0_5.ptId
 	}):getIcon(), "", arg0_5.sliderPt:Find("icon"), true)
 	onButton(arg0_5, arg0_5.itemQuick, function()

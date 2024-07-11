@@ -45,77 +45,86 @@ function var0_0.register(arg0_1)
 	end)
 end
 
-function var0_0.AddQuickStage(arg0_3, arg1_3)
-	arg0_3.quickStages[arg1_3] = true
+function var0_0.timeCall(arg0_3)
+	return {
+		[ProxyRegister.DayCall] = function(arg0_4)
+			arg0_3:resetDailyCount()
+			arg0_3:clearChaptersDefeatCount()
+		end
+	}
 end
 
-function var0_0.CanQuickBattle(arg0_4, arg1_4)
-	return arg0_4.quickStages[arg1_4] == true
+function var0_0.AddQuickStage(arg0_5, arg1_5)
+	arg0_5.quickStages[arg1_5] = true
 end
 
-function var0_0.clearChaptersDefeatCount(arg0_5)
-	arg0_5.chapterCountList = {}
+function var0_0.CanQuickBattle(arg0_6, arg1_6)
+	return arg0_6.quickStages[arg1_6] == true
 end
 
-function var0_0.ifShowDailyTip(arg0_6)
-	return arg0_6.dailyTip
+function var0_0.clearChaptersDefeatCount(arg0_7)
+	arg0_7.chapterCountList = {}
 end
 
-function var0_0.setDailyTip(arg0_7, arg1_7)
-	arg0_7.dailyTip = arg1_7
+function var0_0.ifShowDailyTip(arg0_8)
+	return arg0_8.dailyTip
 end
 
-function var0_0.getChapterDefeatCount(arg0_8, arg1_8)
-	local var0_8 = _.detect(arg0_8.chapterCountList, function(arg0_9)
-		return arg0_9.id == arg1_8
-	end)
-
-	return var0_8 and var0_8.count or 0
+function var0_0.setDailyTip(arg0_9, arg1_9)
+	arg0_9.dailyTip = arg1_9
 end
 
-function var0_0.updateChapterDefeatCount(arg0_10, arg1_10)
-	local var0_10 = arg0_10:getChapterDefeatCount(arg1_10) + 1
-	local var1_10 = _.detect(arg0_10.chapterCountList, function(arg0_11)
+function var0_0.getChapterDefeatCount(arg0_10, arg1_10)
+	local var0_10 = _.detect(arg0_10.chapterCountList, function(arg0_11)
 		return arg0_11.id == arg1_10
 	end)
 
-	if var1_10 then
-		var1_10.count = var0_10
+	return var0_10 and var0_10.count or 0
+end
+
+function var0_0.updateChapterDefeatCount(arg0_12, arg1_12)
+	local var0_12 = arg0_12:getChapterDefeatCount(arg1_12) + 1
+	local var1_12 = _.detect(arg0_12.chapterCountList, function(arg0_13)
+		return arg0_13.id == arg1_12
+	end)
+
+	if var1_12 then
+		var1_12.count = var0_12
 	else
-		table.insert(arg0_10.chapterCountList, {
-			id = arg1_10,
-			count = var0_10
+		table.insert(arg0_12.chapterCountList, {
+			id = arg1_12,
+			count = var0_12
 		})
 	end
 end
 
-function var0_0.resetDailyCount(arg0_12)
-	local var0_12 = pg.expedition_daily_template
-	local var1_12 = pg.TimeMgr.GetInstance():GetServerWeek() == 1
+function var0_0.resetDailyCount(arg0_14)
+	local var0_14 = pg.expedition_daily_template
+	local var1_14 = pg.TimeMgr.GetInstance():GetServerWeek() == 1
 
-	for iter0_12, iter1_12 in pairs(arg0_12.data) do
-		if var0_12[iter0_12].limit_type == 1 or var0_12[iter0_12].limit_type == 2 and var1_12 then
-			arg0_12.data[iter0_12] = 0
+	for iter0_14, iter1_14 in pairs(arg0_14.data) do
+		if var0_14[iter0_14].limit_type == 1 or var0_14[iter0_14].limit_type == 2 and var1_14 then
+			arg0_14.data[iter0_14] = 0
 		end
 	end
 
-	arg0_12.eliteCount = 0
+	arg0_14.eliteCount = 0
 
-	arg0_12:sendNotification(var0_0.ELITE_QUOTA_UPDATE)
+	arg0_14:sendNotification(var0_0.ELITE_QUOTA_UPDATE)
 end
 
-function var0_0.GetRestEliteCount(arg0_13)
-	return math.max(0, pg.gameset.elite_quota.key_value - arg0_13.eliteCount)
+function var0_0.GetRestEliteCount(arg0_15)
+	return math.max(0, pg.gameset.elite_quota.key_value - arg0_15.eliteCount)
 end
 
-function var0_0.IsEliteEnabled(arg0_14)
-	return arg0_14:GetRestEliteCount() > 0
+function var0_0.IsEliteEnabled(arg0_16)
+	return arg0_16:GetRestEliteCount() > 0
 end
 
-function var0_0.EliteCountPlus(arg0_15)
-	arg0_15.eliteCount = math.min(arg0_15.eliteCount + 1, pg.gameset.elite_quota.key_value)
+function var0_0.EliteCountPlus(arg0_17)
+	arg0_17.eliteCount = math.min(arg0_17.eliteCount + 1, pg.gameset.elite_quota.key_value)
 
-	arg0_15:sendNotification(var0_0.ELITE_QUOTA_UPDATE)
+	arg0_17:sendNotification(var0_0.ELITE_QUOTA_UPDATE)
 end
 
 return var0_0

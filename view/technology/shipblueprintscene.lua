@@ -368,8 +368,14 @@ function var0_0.didEnter(arg0_11)
 			if arg0_32 == UIItemList.EventUpdate then
 				arg2_32.name = "version_" .. arg1_32
 
-				GetImageSpriteFromAtlasAsync("ui/shipblueprintui_atlas", "version_" .. arg1_32, arg2_32:Find("image"))
-				setText(arg2_32:Find("number/Text"), string.format("%02d", arg1_32))
+				GetImageSpriteFromAtlasAsync("ui/shipblueprintui_atlas", "newVersion_" .. arg1_32, arg2_32:Find("image"))
+
+				if arg0_11.version == arg1_32 then
+					setActive(arg2_32:Find("choose"), true)
+				else
+					setActive(arg2_32:Find("choose"), false)
+				end
+
 				onButton(arg0_11, arg2_32, function()
 					arg0_11.version = arg1_32
 
@@ -380,6 +386,7 @@ function var0_0.didEnter(arg0_11)
 					GetImageSpriteFromAtlasAsync("ui/shipblueprintui_atlas", "version_" .. arg0_11.version, arg0_11.versionBtn)
 					arg0_11:initShips()
 					arg0_11:updateVersionBtnTip()
+					var3_11:align(var0_11)
 					pg.UIMgr.GetInstance():UnblurPanel(arg0_11.versionPanel, arg0_11._tf)
 					setActive(arg0_11.versionPanel, false)
 				end, SFX_CANCEL)
@@ -1810,18 +1817,19 @@ function var0_0.updateTasksProgress(arg0_130)
 end
 
 function var0_0.updatePainting(arg0_131)
-	local var0_131 = arg0_131.contextData.shipBluePrintVO:getShipVO()
+	local var0_131 = arg0_131.contextData.shipBluePrintVO:getShipVO():getPainting()
 
-	if arg0_131.lastPaintingName and arg0_131.lastPaintingName ~= var0_131:getPainting() then
+	if PLATFORM_CODE == PLATFORM_CH and checkABExist("painting/" .. var0_131 .. "_blueprint") then
+		var0_131 = var0_131 .. "_blueprint"
+	end
+
+	if arg0_131.lastPaintingName and arg0_131.lastPaintingName ~= var0_131 then
 		retPaintingPrefab(arg0_131.painting, arg0_131.lastPaintingName)
 	end
 
-	local var1_131 = var0_131:getPainting()
+	arg0_131.lastPaintingName = var0_131
 
-	setPaintingPrefab(arg0_131.painting, var1_131, "tuzhi")
-
-	arg0_131.lastPaintingName = var1_131
-
+	setPaintingPrefab(arg0_131.painting, var0_131, "tuzhi")
 	arg0_131:paintBreath()
 end
 

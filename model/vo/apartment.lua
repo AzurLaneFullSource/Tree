@@ -338,10 +338,12 @@ function var0_0.getTouchConfig(arg0_47, arg1_47)
 	end
 
 	local var3_47 = {
-		[0] = envFunc(function()
-			up, donw, left, right, zoom_in, zoom_out = unpack(var0_47.camera_trigger[var2_47])
-		end, {})
+		[0] = {}
 	}
+
+	envFunc(var3_47[0], function()
+		up, donw, left, right, zoom_in, zoom_out = unpack(var0_47.camera_trigger[var2_47])
+	end)
 
 	for iter4_47, iter5_47 in ipairs(var1_47) do
 		local var4_47 = pg.dorm3d_touch_trigger[iter5_47]

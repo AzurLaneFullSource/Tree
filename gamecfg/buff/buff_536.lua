@@ -22,6 +22,15 @@
 			}
 		},
 		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				tag = "naximofubeilianjiansu"
+			}
+		},
+		{
 			type = "BattleBuffAddAttr",
 			trigger = {
 				"onAttach",

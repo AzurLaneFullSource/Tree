@@ -22,7 +22,8 @@
 		{
 			type = "BattleBuffAddAttr",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				attr = "DMG_FROM_TAG_1_T_1",
@@ -32,7 +33,8 @@
 		{
 			type = "BattleBuffAddAttr",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				attr = "DMG_FROM_TAG_1_T_2",
@@ -42,7 +44,8 @@
 		{
 			type = "BattleBuffAddAttr",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				attr = "DMG_FROM_TAG_1_T_3",
@@ -52,7 +55,8 @@
 		{
 			type = "BattleBuffAddAttr",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				attr = "DMG_FROM_TAG_1_T_18",
@@ -62,7 +66,8 @@
 		{
 			type = "BattleBuffAddAttr",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				attr = "DMG_FROM_TAG_1_T_19",
@@ -72,7 +77,8 @@
 		{
 			type = "BattleBuffAddAttr",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				attr = "DMG_FROM_TAG_1_T_20",
@@ -82,7 +88,8 @@
 		{
 			type = "BattleBuffAddAttr",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				attr = "DMG_FROM_TAG_2_T_1",
@@ -92,7 +99,8 @@
 		{
 			type = "BattleBuffAddAttr",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				attr = "DMG_FROM_TAG_2_T_2",
@@ -102,7 +110,8 @@
 		{
 			type = "BattleBuffAddAttr",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				attr = "DMG_FROM_TAG_2_T_3",
@@ -112,7 +121,8 @@
 		{
 			type = "BattleBuffAddAttr",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				attr = "DMG_FROM_TAG_2_T_18",
@@ -122,7 +132,8 @@
 		{
 			type = "BattleBuffAddAttr",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				attr = "DMG_FROM_TAG_2_T_19",
@@ -132,7 +143,8 @@
 		{
 			type = "BattleBuffAddAttr",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				attr = "DMG_FROM_TAG_2_T_20",
@@ -142,7 +154,8 @@
 		{
 			type = "BattleBuffAddAttr",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				attr = "DMG_FROM_TAG_4_T_1",

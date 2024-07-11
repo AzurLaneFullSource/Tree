@@ -257,7 +257,7 @@ function var0_0.commitEdit(arg0_22, arg1_22)
 		var0_22:commitEdittingFleet(arg1_22)
 
 		if arg0_22.contextData.system == SYSTEM_SUB_ROUTINE then
-			-- block empty
+			arg0_22:changeFleet()
 		else
 			arg0_22:changeFleet(1)
 		end

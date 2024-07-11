@@ -200,6 +200,11 @@ function var0_0.Skip(arg0_24, arg1_24)
 		else
 			arg0_24:emit(NewMainMediator.GO_SCENE, SCENE.NEWGUILD)
 		end
+	elseif arg1_24.type == GAMEUI_BANNER_14 then
+		arg0_24:emit(NewMainMediator.OPEN_KINK_BUTTON_LAYER, Context.New({
+			mediator = _G[arg1_24.param.mediator],
+			viewComponent = _G[arg1_24.param.view]
+		}))
 	end
 end
 
