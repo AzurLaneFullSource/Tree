@@ -26,6 +26,13 @@ function var0_0.initNotificationHandleDic(arg0_4)
 			arg0_5.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_5, function()
 				arg0_5.viewComponent:updateTaskLayers()
 			end)
+		end,
+		[GAME.SUBMIT_ACTIVITY_TASK_DONE] = function(arg0_7, arg1_7)
+			local var0_7 = arg1_7:getBody()
+
+			arg0_7.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_7.awards, function()
+				arg0_7.viewComponent:updateTaskLayers()
+			end)
 		end
 	}
 end
