@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChildishnessMainPage", import(".TemplatePage.PreviewTemplatePage"))
+local var0_0 = class("ChildishnessMainPage", import(".TemplatePage.PreviewTemplatePage"))
 
 function var0_0.OnFirstFlush(arg0_1)
 	arg0_1.super.OnFirstFlush(arg0_1)

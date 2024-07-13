@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildTechnology", import("..BaseVO"))
+local var0_0 = class("GuildTechnology", import("..BaseVO"))
 
 var0_0.UPGRADE_TYPE_SELF = 1
 var0_0.UPGRADE_TYPE_PUBLIC = 2

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainRandomFlagShipSequence")
+local var0_0 = class("MainRandomFlagShipSequence")
 
 function var0_0.Execute(arg0_1, arg1_1)
 	local var0_1 = getProxy(SettingsProxy):GetRandomFlagShipList()

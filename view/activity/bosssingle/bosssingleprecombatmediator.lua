@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossSinglePreCombatMediator", import("view.base.ContextMediator"))
+local var0_0 = class("BossSinglePreCombatMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_START = "PreCombatMediator:ON_START"
 var0_0.ON_COMMIT_EDIT = "PreCombatMediator:ON_COMMIT_EDIT"

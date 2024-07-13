@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 1181201,
 	bgm = "battle-boss-tiancheng",
 	stages = {

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.spweapon_upgrade = {
 	{
 		upgrade_use_pt = 20,

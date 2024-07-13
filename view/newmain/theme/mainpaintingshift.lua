@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainPaintingShift")
+local var0_0 = class("MainPaintingShift")
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.meshImageShift = Vector3(arg1_1[1], arg1_1[2], 0) + (arg2_1 or Vector3.zero)

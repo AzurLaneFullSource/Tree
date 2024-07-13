@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewYearHotSpringMediator", import("view.base.ContextMediator"))
+local var0_0 = class("NewYearHotSpringMediator", import("view.base.ContextMediator"))
 
 var0_0.UNLOCK_SLOT = "UNLOCK_SLOT"
 var0_0.OPEN_INFO = "OPEN_INFO"

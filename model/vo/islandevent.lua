@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IslandEvent", import(".BaseVO"))
+local var0_0 = class("IslandEvent", import(".BaseVO"))
 
 function var0_0.bindConfigTable(arg0_1)
 	return pg.activity_map_event_data

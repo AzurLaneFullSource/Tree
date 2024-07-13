@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RawFurnitureData")
+local var0_0 = class("RawFurnitureData")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.config = pg.furniture_data_template[arg1_1.configId]

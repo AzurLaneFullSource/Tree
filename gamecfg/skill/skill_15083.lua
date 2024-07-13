@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "通过DELAY处理CD",
 	cd = 0,

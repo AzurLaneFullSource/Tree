@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023海盗活动 EX逃课机制",
 	cd = 0,

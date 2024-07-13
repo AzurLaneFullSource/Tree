@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommanderPaintingUtil")
+local var0_0 = class("CommanderPaintingUtil")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.rect = arg1_1.parent.rect

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("UrExchangeItemPage", import("...base.BaseActivityPage"))
+local var0_0 = class("UrExchangeItemPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.exchangeBtn = arg0_1:findTF("AD/exchange")

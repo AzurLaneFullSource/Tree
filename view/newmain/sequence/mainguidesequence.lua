@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainGuideSequence")
+local var0_0 = class("MainGuideSequence")
 local var1_0 = {
 	{
 		id = "NG002",

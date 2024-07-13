@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "2023北联SP 剧情战2 战斗一段时间后撤退",
 	init_effect = "",

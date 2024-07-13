@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VoteFinalsRaceShipsPageForRank", import(".VoteFinalsRaceShipsPage"))
+local var0_0 = class("VoteFinalsRaceShipsPageForRank", import(".VoteFinalsRaceShipsPage"))
 
 function var0_0.getUIName(arg0_1)
 	return "FinalsRaceShipsRank"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSAtlasWorld", import(".WSAtlas"))
+local var0_0 = class("WSAtlasWorld", import(".WSAtlas"))
 
 var0_0.Fields = {
 	isDragging = "boolean",

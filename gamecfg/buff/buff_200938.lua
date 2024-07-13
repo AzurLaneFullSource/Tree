@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024阿尔萨斯活动SP 连续召唤浮游炮发射激光 随机落点",
 	time = 3,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChargeTipWindow", import("view.base.BaseSubView"))
+local var0_0 = class("ChargeTipWindow", import("view.base.BaseSubView"))
 
 var0_0.TYPE_MONTH_CARD = "MonthCard"
 var0_0.TYPE_GIFTPACKAGE = "GiftPackage"

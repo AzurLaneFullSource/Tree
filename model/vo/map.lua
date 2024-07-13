@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Map", import(".BaseVO"))
+local var0_0 = class("Map", import(".BaseVO"))
 
 var0_0.INVALID = 0
 var0_0.SCENARIO = 1

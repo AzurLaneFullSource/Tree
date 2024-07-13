@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "旧金山全弹发射弹幕减速15%",
 	time = 5,

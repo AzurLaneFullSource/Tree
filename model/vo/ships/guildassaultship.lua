@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildAssaultShip", import(".CheckCustomNameShip"))
+local var0_0 = class("GuildAssaultShip", import(".CheckCustomNameShip"))
 
 function var0_0.IsOwner(arg0_1)
 	return tonumber(GuildAssaultFleet.GetUserId(arg0_1.id)) == getProxy(PlayerProxy):getRawData().id

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "龙宫机关-生命：敌方占领",
 	time = 0,

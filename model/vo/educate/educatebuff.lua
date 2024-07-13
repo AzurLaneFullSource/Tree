@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateBuff", import("model.vo.BaseVO"))
+local var0_0 = class("EducateBuff", import("model.vo.BaseVO"))
 
 var0_0.TYPE_ATTR = 1
 var0_0.TYPE_RES = 2

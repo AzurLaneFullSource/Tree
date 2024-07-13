@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SculptureMediator", import("view.base.ContextMediator"))
+local var0_0 = class("SculptureMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_UNLOCK_SCULPTURE = "SculptureMediator:ON_UNLOCK_SCULPTURE"
 var0_0.ON_DRAW_SCULPTURE = "SculptureMediator:ON_DRAW_SCULPTURE"

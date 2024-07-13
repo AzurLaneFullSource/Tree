@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑反击BOSS战 第二层破盾处理",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RectCollider")
+local var0_0 = class("RectCollider")
 local var1_0 = 1 / (Application.targetFrameRate or 60)
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)

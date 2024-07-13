@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Check <color=#ff7d36>Commissions</color> here.",
 	"Go to <color=#ff7d36>commissions</color>.",
 	"Here you can see today's available commissions. <color=#ff7d36>Each commission has different times, costs and rewards.</color>",

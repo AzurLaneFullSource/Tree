@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "前排全灭30秒后触发绝地反击效果，随后每15秒触发1次，最多可叠加5次",
 	name = "绝地反击",
 	init_effect = "",

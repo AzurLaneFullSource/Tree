@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Commander! Let me show you how to control your fleet.",
 	"First, <color=#ff7d36>move the joystick</color> to get the fleet moving!",
 	"Characters will <color=#ff7d36>fire their weapons automatically</color>, but you also have more firepower available at your disposal.",

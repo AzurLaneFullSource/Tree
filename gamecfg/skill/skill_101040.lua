@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "联结·阿萨姆",
 	cd = 0,

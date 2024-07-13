@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SecondSummaryPage4", import(".SummaryAnimationPage"))
+local var0_0 = class("SecondSummaryPage4", import(".SummaryAnimationPage"))
 
 var0_0.PerPageCount = 6
 var0_0.PageTypeFurniture = 1

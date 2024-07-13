@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildTechnologyGroup", import("..BaseVO"))
+local var0_0 = class("GuildTechnologyGroup", import("..BaseVO"))
 
 var0_0.STATE_STOP = 0
 var0_0.STATE_START = 1

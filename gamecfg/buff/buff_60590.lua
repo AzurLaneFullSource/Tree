@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "奇怪装置D",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VoteShipItem")
+local var0_0 = class("VoteShipItem")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.go = arg1_1

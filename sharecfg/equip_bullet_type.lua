@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.equip_bullet_type = {
 	{
 		ammo_type = 1,

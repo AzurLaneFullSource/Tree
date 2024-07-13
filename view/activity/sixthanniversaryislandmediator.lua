@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SixthAnniversaryIslandMediator", import("..base.ContextMediator"))
+local var0_0 = class("SixthAnniversaryIslandMediator", import("..base.ContextMediator"))
 
 var0_0.TRIGGER_NODE_EVENT = "SixthAnniversaryIslandMediator.TRIGGER_NODE_EVENT"
 var0_0.OPEN_QTE_GAME = "SixthAnniversaryIslandMediator.OPEN_QTE_GAME"

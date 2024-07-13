@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChildishnessSchoolPtMediator", import("view.base.ContextMediator"))
+local var0_0 = class("ChildishnessSchoolPtMediator", import("view.base.ContextMediator"))
 
 var0_0.EVENT_PT_OPERATION = "event pt op"
 

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2020德系活动D2 五航战支援",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024阿尔萨斯活动 亡语回血",
 	cd = 0,

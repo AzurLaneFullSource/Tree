@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GridGameReView", import("..BaseMiniGameView"))
+local var0_0 = class("GridGameReView", import("..BaseMiniGameView"))
 local var1_0 = false
 local var2_0 = "battle-boss-4"
 local var3_0 = "event:/ui/ddldaoshu2"

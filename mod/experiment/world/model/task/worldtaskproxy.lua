@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldTaskProxy", import("....BaseEntity"))
+local var0_0 = class("WorldTaskProxy", import("....BaseEntity"))
 
 var0_0.Fields = {
 	dailyTimeStemp = "number",

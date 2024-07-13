@@ -1,4 +1,4 @@
-﻿return {
+return {
 	cd = 0,
 	name = "公海舰队活动剧情战 全体回血",
 	painting = 0,

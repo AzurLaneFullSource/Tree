@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.furniture_specail_action = {
 	[60118] = {
 		id = 60118,

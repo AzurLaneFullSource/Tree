@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackyardFeedMediator", import("...base.ContextMediator"))
+local var0_0 = class("BackyardFeedMediator", import("...base.ContextMediator"))
 
 var0_0.USE_FOOD = "BackyardFeedMediator:USE_FOOD"
 var0_0.BUY_FOOD = "BackyardFeedMediator:BUY_FOOD"

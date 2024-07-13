@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023黑阿尔及利亚 链接石柱",
 	cd = 0,

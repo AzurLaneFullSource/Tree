@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipUpgradeMediator2", import("..base.ContextMediator"))
+local var0_0 = class("ShipUpgradeMediator2", import("..base.ContextMediator"))
 
 var0_0.UPGRADE_SHIP = "ShipUpgradeMediator2:UPGRADE_SHIP"
 var0_0.ON_SELECT_SHIP = "ShipUpgradeMediator2:ON_SELECT_SHIP"

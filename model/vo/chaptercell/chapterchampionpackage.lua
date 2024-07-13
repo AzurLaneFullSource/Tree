@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChapterChampionPackage")
+local var0_0 = class("ChapterChampionPackage")
 local var1_0 = {
 	[ChapterConst.AttachOni] = import(".ChapterChampionOni"),
 	[ChapterConst.AttachChampion] = import(".ChapterChampionNormal")

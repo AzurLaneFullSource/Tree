@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022莱莎联动 战斗BUFF 破甲弹幕LV3 破甲效果",
 	time = 8,

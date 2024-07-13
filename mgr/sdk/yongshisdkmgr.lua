@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 local var1_0 = YongshiSdkMgr.inst
 local var2_0 = "com.hkmanjuu.azurlane.gp.mc"
 local var3_0 = "com.hkmanjuu.azurlane.gp"

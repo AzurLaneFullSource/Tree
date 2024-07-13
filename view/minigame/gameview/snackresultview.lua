@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SnackResultView", import("...base.BaseSubView"))
+local var0_0 = class("SnackResultView", import("...base.BaseSubView"))
 
 var0_0.EXTable = {
 	[0] = 0,

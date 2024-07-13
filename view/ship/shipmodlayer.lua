@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipModLayer", import("..base.BaseUI"))
+local var0_0 = class("ShipModLayer", import("..base.BaseUI"))
 local var1_0 = 12
 
 var0_0.IGNORE_ID = 4

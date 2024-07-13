@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushActivity", import("model.vo.Activity"))
+local var0_0 = class("BossRushActivity", import("model.vo.Activity"))
 
 function var0_0.SetSeriesData(arg0_1, arg1_1)
 	getProxy(ActivityProxy):GetBossRushRuntime(arg0_1.id).seriesData = arg1_1

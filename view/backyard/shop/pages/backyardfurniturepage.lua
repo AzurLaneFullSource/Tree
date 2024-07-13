@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardFurniturePage", import(".BackYardShopBasePage"))
+local var0_0 = class("BackYardFurniturePage", import(".BackYardShopBasePage"))
 local var1_0 = Furniture.INDEX_TO_SHOP_TYPE
 
 table.insert(var1_0, 1, {})

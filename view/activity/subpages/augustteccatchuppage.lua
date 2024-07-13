@@ -1,1 +1,1 @@
-﻿return (class("AugustTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage")))
+return (class("AugustTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage")))

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	tilewidth = 248,
 	name = "collider",
 	spacing = 0,

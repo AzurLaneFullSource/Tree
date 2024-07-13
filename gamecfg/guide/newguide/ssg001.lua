@@ -1,4 +1,4 @@
-﻿return {
+return {
 	LevelScene = {
 		{
 			id = "NG002",

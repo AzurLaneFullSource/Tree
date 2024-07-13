@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.GuildPaintingMgr = singletonClass("GuildPaintingMgr")
 
 local var0_0 = pg.GuildPaintingMgr

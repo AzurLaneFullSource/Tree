@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "未能抵达的承诺",
 	cd = 0,

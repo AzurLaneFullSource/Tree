@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushStoryNode", import("model.vo.BaseVO"))
+local var0_0 = class("BossRushStoryNode", import("model.vo.BaseVO"))
 
 var0_0.TRIGGER_TYPE = {
 	PT_GOT = 1,

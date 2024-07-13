@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OtherWorldTempleMediator", import("..base.ContextMediator"))
+local var0_0 = class("OtherWorldTempleMediator", import("..base.ContextMediator"))
 
 var0_0.OPEN_TERMINAL = "OPEN_TERMINAL"
 var0_0.SHOW_CHAR_AWARDS = "SHOW_CHAR_AWARDS"

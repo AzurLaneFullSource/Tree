@@ -1,4 +1,4 @@
-﻿local var0_0 = class("StrengthenBackPanel", import(".MsgboxSubPanel"))
+local var0_0 = class("StrengthenBackPanel", import(".MsgboxSubPanel"))
 
 var0_0.ConfigData = {
 	equipID = 96000,

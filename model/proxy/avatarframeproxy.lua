@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AvatarFrameProxy", import(".NetProxy"))
+local var0_0 = class("AvatarFrameProxy", import(".NetProxy"))
 
 var0_0.FRAME_TASK_UPDATED = "frame task updated"
 var0_0.FRAME_TASK_TIME_OUT = "frame task time out"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GameMediator", pm.Mediator)
+local var0_0 = class("GameMediator", pm.Mediator)
 
 function var0_0.listNotificationInterests(arg0_1)
 	return {

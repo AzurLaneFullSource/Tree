@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "LINKPREHEAT10-1",
 	mode = 2,
 	fadein = 1,

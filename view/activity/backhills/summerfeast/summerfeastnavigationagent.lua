@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SummerFeastNavigationAgent", require("view.main.NavalAcademyStudent"))
+local var0_0 = class("SummerFeastNavigationAgent", require("view.main.NavalAcademyStudent"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.onTransEdge = nil

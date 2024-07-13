@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TrainingCampMediator", import("..base.ContextMediator"))
+local var0_0 = class("TrainingCampMediator", import("..base.ContextMediator"))
 
 var0_0.ON_GET = "TrainingCampMediator:ON_GET"
 var0_0.ON_GO = "TrainingCampMediator:ON_GO"

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	fadeOut = 0,
 	mode = 2,
 	id = "LINKPREHEAT9-1",

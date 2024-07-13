@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Dorm", import("..BaseVO"))
+local var0_0 = class("Dorm", import("..BaseVO"))
 
 var0_0.MAX_FLOOR = 2
 var0_0.MAX_LEVEL = 4

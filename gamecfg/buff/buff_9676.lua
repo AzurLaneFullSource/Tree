@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "14章攻击优先级处理",
 	time = 0,

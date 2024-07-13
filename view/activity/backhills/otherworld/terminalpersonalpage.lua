@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TerminalPersonalPage", import("view.base.BaseSubView"))
+local var0_0 = class("TerminalPersonalPage", import("view.base.BaseSubView"))
 local var1_0 = "otherworld_personal_name"
 
 var0_0.BIND_EVENT_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_EVENT_ID

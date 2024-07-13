@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TaskMediator", import("..base.ContextMediator"))
+local var0_0 = class("TaskMediator", import("..base.ContextMediator"))
 
 var0_0.ON_TASK_SUBMIT = "TaskMediator:ON_TASK_SUBMIT"
 var0_0.ON_TASK_GO = "TaskMediator:ON_TASK_GO"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PlayerVitaeBaseCard")
+local var0_0 = class("PlayerVitaeBaseCard")
 local var1_0 = 160
 local var2_0 = 25
 

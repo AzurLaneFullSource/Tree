@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "白龙剧情战 触发龙宫机关-烈焰技能 buff3：触发技能，显示弹条与弹幕武器开火",
 	time = 0,

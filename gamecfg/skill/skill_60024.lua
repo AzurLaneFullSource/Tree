@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "随机技能-艾尔之光喷薄而出",
 	cd = 0,

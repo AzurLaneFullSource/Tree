@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducatePlanProxy")
+local var0_0 = class("EducatePlanProxy")
 
 var0_0.INDEX2BG = {
 	{

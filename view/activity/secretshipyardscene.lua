@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SecretShipyardScene", import("..base.BaseUI"))
+local var0_0 = class("SecretShipyardScene", import("..base.BaseUI"))
 
 var0_0.optionsPath = {
 	"main/top/btn_home"

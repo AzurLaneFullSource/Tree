@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ProposeMediator", import("..base.ContextMediator"))
+local var0_0 = class("ProposeMediator", import("..base.ContextMediator"))
 
 var0_0.ON_PROPOSE = "ProposeMediator.ON_PROPOSE"
 var0_0.RENAME_SHIP = "ProposeMediator.RENAME_SHIP"

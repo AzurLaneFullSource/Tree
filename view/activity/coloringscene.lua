@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ColoringScene", import("view.base.BaseUI"))
+local var0_0 = class("ColoringScene", import("view.base.BaseUI"))
 local var1_0 = 387
 local var2_0 = 467
 local var3_0 = 812.5

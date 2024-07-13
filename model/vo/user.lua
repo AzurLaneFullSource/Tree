@@ -1,4 +1,4 @@
-﻿local var0_0 = class("User", import(".BaseVO"))
+local var0_0 = class("User", import(".BaseVO"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.type = arg1_1.type

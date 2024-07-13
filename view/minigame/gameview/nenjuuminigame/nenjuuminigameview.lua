@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NenjuuMiniGameView", import("view.miniGame.BaseMiniGameView"))
+local var0_0 = class("NenjuuMiniGameView", import("view.miniGame.BaseMiniGameView"))
 
 function var0_0.getUIName(arg0_1)
 	return "NenjuuMiniGameUI"

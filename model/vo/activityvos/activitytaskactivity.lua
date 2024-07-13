@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityTaskActivity", import("model.vo.ActivityVOs.ITaskActivity"))
+local var0_0 = class("ActivityTaskActivity", import("model.vo.ActivityVOs.ITaskActivity"))
 
 function var0_0.GetFinishedTaskIds(arg0_1)
 	return arg0_1:getData1List()

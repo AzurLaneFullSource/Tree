@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BlackFridayGiftPageInCH", import(".BlackFridayGiftPage"))
+local var0_0 = class("BlackFridayGiftPageInCH", import(".BlackFridayGiftPage"))
 
 var0_0.DAY_COLOR = {
 	"FBFDFE",

@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Let's check out <color=#ffde38>build</color> details!",
 	"Tap <color=#ffde38>queue</color> to see construction progress.",
 	"Construction complete! Now, tap <color=#ffde38>deploy</color>."

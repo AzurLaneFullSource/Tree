@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_random_award_template = {
 	[9] = {
 		resource_category = 1,

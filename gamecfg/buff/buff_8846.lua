@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "毛系V2 余辉支援弹幕LV2",
 	time = 5,

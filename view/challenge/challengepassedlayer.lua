@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChallengePassedLayer", import("..base.BaseUI"))
+local var0_0 = class("ChallengePassedLayer", import("..base.BaseUI"))
 
 var0_0.BOSS_NUM = 5
 var0_0.GROW_TIME = 0.55

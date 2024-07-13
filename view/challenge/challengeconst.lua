@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChallengeConst")
+local var0_0 = class("ChallengeConst")
 
 var0_0.BOSS_NUM = 5
 var0_0.NEED_TO_RESET_SAVELOAD = 1

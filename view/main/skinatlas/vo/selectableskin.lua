@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SelectableSkin")
+local var0_0 = class("SelectableSkin")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.skinId = arg1_1.id

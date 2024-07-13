@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SnowballPage", import("...base.BaseActivityPage"))
+local var0_0 = class("SnowballPage", import("...base.BaseActivityPage"))
 local var1_0 = 14
 local var2_0 = 18
 

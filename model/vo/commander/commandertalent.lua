@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommanderTalent", import("..BaseVO"))
+local var0_0 = class("CommanderTalent", import("..BaseVO"))
 local var1_0 = pg.commander_ability_group
 
 function var0_0.Ctor(arg0_1, arg1_1)

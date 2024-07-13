@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "信浓活动梦境力量支援弹幕——BUFF效果1",
 	time = 30,

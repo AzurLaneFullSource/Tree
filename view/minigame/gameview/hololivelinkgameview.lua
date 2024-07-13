@@ -1,4 +1,4 @@
-﻿local var0_0 = class("HoloLiveLinkGameView", import("..BaseMiniGameView"))
+local var0_0 = class("HoloLiveLinkGameView", import("..BaseMiniGameView"))
 
 var0_0.MAX_ROW = 6
 var0_0.MAX_COLUMN = 11

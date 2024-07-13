@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LanternRiddlesModel")
+local var0_0 = class("LanternRiddlesModel")
 local var1_0 = pg.activity_event_question
 
 function var0_0.Ctor(arg0_1, arg1_1)

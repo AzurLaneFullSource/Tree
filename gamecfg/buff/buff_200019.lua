@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 3,
 	name = "2022意大利活动 尤利安之视",
 	init_effect = "",

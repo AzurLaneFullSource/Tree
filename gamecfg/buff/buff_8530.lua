@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "战术模拟",
 	time = 0,

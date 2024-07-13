@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "古立特 宝多六花Flag",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "测试-拉菲-技能",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TechnologySettingsMediator", import("..base.ContextMediator"))
+local var0_0 = class("TechnologySettingsMediator", import("..base.ContextMediator"))
 
 var0_0.CHANGE_TENDENCY = "TechnologySettingsMediator.CHANGE_TENDENCY"
 var0_0.EXIT_CALL = "TechnologySettingsMediator.EXIT_CALL"

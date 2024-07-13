@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildMissionBattleView")
+local var0_0 = class("GuildMissionBattleView")
 local var1_0 = Vector3(40, -3, 40)
 local var2_0 = 10
 local var3_0 = 1028

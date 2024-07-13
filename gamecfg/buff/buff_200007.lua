@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 15,
 	name = "2022意大利活动 飞空战舰支援SP面",
 	init_effect = "",

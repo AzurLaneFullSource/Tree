@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BeachGuardAsset")
+local var0_0 = class("BeachGuardAsset")
 
 var0_0.ignore_damage = false
 var0_0.ignore_enemy_skill = false

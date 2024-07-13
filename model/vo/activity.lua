@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Activity", import(".BaseVO"))
+local var0_0 = class("Activity", import(".BaseVO"))
 local var1_0
 
 function var0_0.GetType2Class()

@@ -1,4 +1,4 @@
-﻿EventConst = require("view/event/EventConst")
+EventConst = require("view/event/EventConst")
 EventListItem = require("view/event/EventListItem")
 EventDetailPanel = require("view/event/EventDetailPanel")
 

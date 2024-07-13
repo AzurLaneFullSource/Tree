@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022莱莎联动 BOSS技能 冲裂波",
 	time = 1,

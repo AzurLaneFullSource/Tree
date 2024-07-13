@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChargeScene", import("...base.BaseUI"))
+local var0_0 = class("ChargeScene", import("...base.BaseUI"))
 
 var0_0.TYPE_DIAMOND = 1
 var0_0.TYPE_GIFT = 2

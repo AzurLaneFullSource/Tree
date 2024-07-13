@@ -1,4 +1,4 @@
-﻿local var0_0 = class("StackGameView", import("..BaseMiniGameView"))
+local var0_0 = class("StackGameView", import("..BaseMiniGameView"))
 
 var0_0.MINIGAME_HUB_ID = 39
 var0_0.MINIGAME_ID = 47

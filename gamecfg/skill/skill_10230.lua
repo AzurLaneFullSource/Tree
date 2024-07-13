@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "原型舰",
 	cd = 0,

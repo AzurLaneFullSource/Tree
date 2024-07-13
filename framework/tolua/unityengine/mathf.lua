@@ -1,4 +1,4 @@
-﻿local var0_0 = math
+local var0_0 = math
 local var1_0 = var0_0.floor
 local var2_0 = var0_0.abs
 local var3_0 = Mathf

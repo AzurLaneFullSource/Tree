@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Goods", import(".BaseVO"))
+local var0_0 = class("Goods", import(".BaseVO"))
 
 var0_0.TYPE_SHOPSTREET = 1
 var0_0.TYPE_MILITARY = 2

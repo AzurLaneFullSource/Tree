@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "克莱蒙梭剧情战第一波黎塞留支援",
 	cd = 0,

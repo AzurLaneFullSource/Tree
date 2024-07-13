@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardConst")
+local var0_0 = class("CourtYardConst")
 
 var0_0.SYSTEM_DEFAULT = 1
 var0_0.SYSTEM_VISIT = 2

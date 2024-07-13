@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "测试-随机技能-棱镜光束-充能",
 	time = 0,

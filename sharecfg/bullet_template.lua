@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.bullet_template = setmetatable({
 	__name = "bullet_template",
 	all = {

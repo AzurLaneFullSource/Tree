@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PrayPoolMediator", import("..base.ContextMediator"))
+local var0_0 = class("PrayPoolMediator", import("..base.ContextMediator"))
 
 function var0_0.register(arg0_1)
 	arg0_1:bind(PrayPoolConst.CLICK_INDEX_BTN, function(arg0_2, arg1_2)

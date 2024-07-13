@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChapterConst")
+local var0_0 = class("ChapterConst")
 
 var0_0.ExitFromChapter = 0
 var0_0.ExitFromMap = 1

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "赫米忒毒雾",
 	time = 0,

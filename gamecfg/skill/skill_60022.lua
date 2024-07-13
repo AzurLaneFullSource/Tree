@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "随机技能-缩小射线",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SkinMagazinePage4", import("...base.BaseActivityPage"))
+local var0_0 = class("SkinMagazinePage4", import("...base.BaseActivityPage"))
 
 var0_0.TIP_KEY = "SkinMagazinePage2_tip"
 

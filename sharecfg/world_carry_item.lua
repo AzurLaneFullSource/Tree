@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.world_carry_item = {
 	[1001] = {
 		out_story = "W1012",

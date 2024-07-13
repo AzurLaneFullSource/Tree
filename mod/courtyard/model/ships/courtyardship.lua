@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardShip", import("..map.CourtYardDepthItem"))
+local var0_0 = class("CourtYardShip", import("..map.CourtYardDepthItem"))
 
 var0_0.STATE_IDLE = 0
 var0_0.STATE_MOVE = 1

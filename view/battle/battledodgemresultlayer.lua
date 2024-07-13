@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleDodgemResultLayer", import(".BattleResultLayer"))
+local var0_0 = class("BattleDodgemResultLayer", import(".BattleResultLayer"))
 
 function var0_0.didEnter(arg0_1)
 	local var0_1 = arg0_1.contextData.stageId

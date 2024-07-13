@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.transform_data_template = setmetatable({
 	__name = "transform_data_template",
 	all = {

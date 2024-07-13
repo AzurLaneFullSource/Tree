@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Summary", import(".BaseVO"))
+local var0_0 = class("Summary", import(".BaseVO"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	local var0_1 = pg.TimeMgr.GetInstance()

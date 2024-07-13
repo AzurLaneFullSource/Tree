@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "吾妻专属弹幕II强-天运强化",
 	cd = 0,

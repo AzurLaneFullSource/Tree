@@ -1,1 +1,1 @@
-﻿return (class("AersasiPtPage", import(".TemplatePage.PtTemplatePage")))
+return (class("AersasiPtPage", import(".TemplatePage.PtTemplatePage")))

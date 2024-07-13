@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023英系活动 EX 反噬结算",
 	time = 0,

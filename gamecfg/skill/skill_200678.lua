@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 200678,
 	name = "2023 闪乱联动 地脉机关-缭SP 我方控制",
 	cd = 0,

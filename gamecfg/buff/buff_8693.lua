@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "水面减伤护盾",
 	time = 15,

@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Close Reward Menu",
 	"Head back to the main screen."
 }

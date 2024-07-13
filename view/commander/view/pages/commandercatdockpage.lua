@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommanderCatDockPage", import("view.base.BaseSubView"))
+local var0_0 = class("CommanderCatDockPage", import("view.base.BaseSubView"))
 
 var0_0.ON_SORT = "CommanderCatDockPage:ON_SORT"
 

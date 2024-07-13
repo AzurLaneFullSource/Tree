@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OtherWorldTempleScene", import("..base.BaseUI"))
+local var0_0 = class("OtherWorldTempleScene", import("..base.BaseUI"))
 local var1_0 = 3
 local var2_0 = "other_world_temple_toggle_1"
 local var3_0 = "other_world_temple_toggle_2"

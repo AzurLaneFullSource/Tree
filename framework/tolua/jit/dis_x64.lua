@@ -1,4 +1,4 @@
-﻿local var0_0 = require((string.match(..., ".*%.") or "") .. "dis_x86")
+local var0_0 = require((string.match(..., ".*%.") or "") .. "dis_x86")
 
 return {
 	create = var0_0.create64,

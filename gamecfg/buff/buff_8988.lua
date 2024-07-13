@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "darkness",
 	name = "黑反击BOSS战 计数累计触发",
 	time = 0,

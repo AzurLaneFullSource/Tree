@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VoteMediator", import("..base.ContextMediator"))
+local var0_0 = class("VoteMediator", import("..base.ContextMediator"))
 
 var0_0.ON_VOTE = "VoteMediator:ON_VOTE"
 var0_0.ON_FILTER = "VoteMediator:ON_FILTER"

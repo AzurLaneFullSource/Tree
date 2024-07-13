@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SettingsResPage", import(".SettingsOptionPage"))
+local var0_0 = class("SettingsResPage", import(".SettingsOptionPage"))
 
 function var0_0.getUIName(arg0_1)
 	return "SettingsCombinationWithBgPage"

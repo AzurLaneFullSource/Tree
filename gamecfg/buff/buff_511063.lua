@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0.2,
 	name = "紧急维修",
 	init_effect = "",

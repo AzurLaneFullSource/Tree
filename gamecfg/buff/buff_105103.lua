@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "取消读秒技能",
 	init_effect = "",

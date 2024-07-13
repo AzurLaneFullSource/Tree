@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FourthJpPage", import("...base.BaseActivityPage"))
+local var0_0 = class("FourthJpPage", import("...base.BaseActivityPage"))
 local var1_0 = 3
 local var2_0 = 6
 

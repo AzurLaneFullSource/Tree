@@ -1,4 +1,4 @@
-﻿function printf(arg0_1, ...)
+function printf(arg0_1, ...)
 	print(string.format(tostring(arg0_1), ...))
 end
 

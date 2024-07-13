@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CardPairsMediator", import("..base.ContextMediator"))
+local var0_0 = class("CardPairsMediator", import("..base.ContextMediator"))
 
 var0_0.EVENT_OPERATION = "event operation"
 

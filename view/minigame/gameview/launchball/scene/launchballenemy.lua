@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LaunchBallEnemy")
+local var0_0 = class("LaunchBallEnemy")
 local var1_0 = {}
 local var2_0 = 0.35
 local var3_0 = 70

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldAllocateMediator", import("..base.ContextMediator"))
+local var0_0 = class("WorldAllocateMediator", import("..base.ContextMediator"))
 
 function var0_0.register(arg0_1)
 	arg0_1.viewComponent:setItem(arg0_1.contextData.itemVO)

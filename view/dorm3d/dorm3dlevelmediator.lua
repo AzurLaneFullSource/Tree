@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Dorm3dLevelMediator", import("view.base.ContextMediator"))
+local var0_0 = class("Dorm3dLevelMediator", import("view.base.ContextMediator"))
 
 var0_0.CHANGE_SKIN = "Dorm3dLevelMediator.CHANGE_SKIN"
 var0_0.CHAMGE_TIME = "Dorm3dLevelMediator.CHAMGE_TIME"

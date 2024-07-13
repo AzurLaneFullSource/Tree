@@ -1,4 +1,4 @@
-﻿local var0_0 = rawget
+local var0_0 = rawget
 local var1_0 = setmetatable
 local var2_0 = Vector3
 local var3_0 = {

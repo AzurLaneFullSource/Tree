@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SnapshotSceneMediator", import("..base.ContextMediator"))
+local var0_0 = class("SnapshotSceneMediator", import("..base.ContextMediator"))
 
 function var0_0.register(arg0_1)
 	arg0_1:bind(SnapshotScene.SELECT_CHAR_PANEL, function(arg0_2)

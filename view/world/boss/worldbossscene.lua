@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldBossScene", import("...base.BaseUI"))
+local var0_0 = class("WorldBossScene", import("...base.BaseUI"))
 
 var0_0.PAGE_ENTRANCE = 0
 var0_0.PAGE_CHALLENGE = 1

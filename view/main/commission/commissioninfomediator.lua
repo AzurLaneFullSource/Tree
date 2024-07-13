@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommissionInfoMediator", import("...base.ContextMediator"))
+local var0_0 = class("CommissionInfoMediator", import("...base.ContextMediator"))
 
 var0_0.FINISH_EVENT = "CommissionInfoMediator.FINISH_EVENT"
 var0_0.FINISH_CLASS = "CommissionInfoMediator.FINISH_CLASS"

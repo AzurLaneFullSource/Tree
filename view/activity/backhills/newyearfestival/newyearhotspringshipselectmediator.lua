@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewYearHotSpringShipSelectMediator", import("view.base.ContextMediator"))
+local var0_0 = class("NewYearHotSpringShipSelectMediator", import("view.base.ContextMediator"))
 
 var0_0.EXTEND = "NewYearHotSpringShipSelectMediator:EXTEND"
 var0_0.OPEN_CHUANWU = "NewYearHotSpringShipSelectMediator:OPEN_CHUANWU"

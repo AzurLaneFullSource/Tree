@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AttributeType")
+local var0_0 = class("AttributeType")
 
 var0_0.Durability = "durability"
 var0_0.Cannon = "cannon"

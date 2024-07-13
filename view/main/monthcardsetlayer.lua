@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MonthCardSetLayer", import("..base.BaseUI"))
+local var0_0 = class("MonthCardSetLayer", import("..base.BaseUI"))
 
 var0_0.PIECES = 100
 

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023北联SP 敌方支援弹幕SP",
 	cd = 0,

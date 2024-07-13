@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateConst")
+local var0_0 = class("EducateConst")
 
 var0_0.PLANS_DATA_KEY = "EDUCATE_PLAN_"
 var0_0.SKIP_PLANS_ANIM_KEY = "EDUCATE_PLAN_SKIP"

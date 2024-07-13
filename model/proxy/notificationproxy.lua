@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NotificationProxy", import(".NetProxy"))
+local var0_0 = class("NotificationProxy", import(".NetProxy"))
 
 var0_0.FRIEND_REQUEST_ADDED = "note friend request added"
 var0_0.FRIEND_REQUEST_REMOVED = "note friend request removed"

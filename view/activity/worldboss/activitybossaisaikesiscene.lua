@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityBossAisaikesiScene", import(".ActivityBossSceneTemplate"))
+local var0_0 = class("ActivityBossAisaikesiScene", import(".ActivityBossSceneTemplate"))
 
 var0_0.ASKSRemasterStage = 1201204
 

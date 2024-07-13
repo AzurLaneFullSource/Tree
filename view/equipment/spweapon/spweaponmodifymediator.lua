@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpWeaponModifyMediator", ContextMediator)
+local var0_0 = class("SpWeaponModifyMediator", ContextMediator)
 
 var0_0.ON_REFORGE = "ON_REFORGE"
 var0_0.ON_CONFIRM_REFORGE = "ON_CONFIRM_REFORGE"

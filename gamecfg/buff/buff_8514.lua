@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "潘多拉的魔盒",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MusicGameConst")
+local var0_0 = class("MusicGameConst")
 
 var0_0.music_game_data = {
 	{

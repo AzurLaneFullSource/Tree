@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "风帆蛋船 运输船狂热光环",
 	time = 0,

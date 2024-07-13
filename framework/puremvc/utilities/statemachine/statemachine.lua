@@ -1,4 +1,4 @@
-﻿local var0_0 = import("...patterns.mediator.Mediator")
+local var0_0 = import("...patterns.mediator.Mediator")
 local var1_0 = class("StateMachine", var0_0)
 
 var1_0.NAME = "StateMachine"

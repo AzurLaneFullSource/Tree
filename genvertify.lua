@@ -1,4 +1,4 @@
-﻿function GetBattleCheck()
+function GetBattleCheck()
 	return 0
 end
 

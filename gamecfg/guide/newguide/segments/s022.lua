@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Ah, you were defeated! Tap confirm to exit the stage.",
 	"Commander, please Tap <color=#ffde38>Attack</color>",
 	"Choose campaign",

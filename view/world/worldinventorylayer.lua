@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldInventoryLayer", import("..base.BaseUI"))
+local var0_0 = class("WorldInventoryLayer", import("..base.BaseUI"))
 local var1_0 = require("view.equipment.EquipmentSortCfg")
 
 var0_0.PAGE = {

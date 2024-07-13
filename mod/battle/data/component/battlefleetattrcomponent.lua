@@ -1,4 +1,4 @@
-﻿ys = ys or {}
+ys = ys or {}
 ys.Battle.BattleFleetAttrComponent = class("BattleFleetAttrComponent")
 ys.Battle.BattleFleetAttrComponent.__name = "BattleFleetAttrComponent"
 

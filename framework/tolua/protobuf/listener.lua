@@ -1,4 +1,4 @@
-﻿local var0_0 = setmetatable
+local var0_0 = setmetatable
 
 module("protobuf.listener")
 

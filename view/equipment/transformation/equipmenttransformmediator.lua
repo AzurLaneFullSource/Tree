@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EquipmentTransformMediator", import("view.base.ContextMediator"))
+local var0_0 = class("EquipmentTransformMediator", import("view.base.ContextMediator"))
 
 var0_0.TRANSFORM_EQUIP = "transform equip"
 var0_0.UPDATE_NEW_FLAG = "UPDATE NEW FLAG"

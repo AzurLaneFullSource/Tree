@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IslandHistoryPage")
+local var0_0 = class("IslandHistoryPage")
 local var1_0 = 8
 local var2_0 = {
 	{

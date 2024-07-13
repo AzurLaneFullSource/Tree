@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PlayerVitaeEducateAddCard", import(".PlayerVitaeEducateBaseCard"))
+local var0_0 = class("PlayerVitaeEducateAddCard", import(".PlayerVitaeEducateBaseCard"))
 
 function var0_0.Flush(arg0_1)
 	onButton(arg0_1, arg0_1._tf, function()

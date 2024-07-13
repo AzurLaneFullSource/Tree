@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "Q版本战列每10秒跨射攻击后排buff武器",
 	time = 0,

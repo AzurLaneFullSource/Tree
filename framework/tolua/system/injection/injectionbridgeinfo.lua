@@ -1,4 +1,4 @@
-﻿return {
+return {
 	ABEncoder = {
 		Encode = 3671,
 		MoveLeft = 3673,

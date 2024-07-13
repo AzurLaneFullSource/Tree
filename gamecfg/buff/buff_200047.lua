@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑声望二阶段跨射lv1",
 	time = 60,

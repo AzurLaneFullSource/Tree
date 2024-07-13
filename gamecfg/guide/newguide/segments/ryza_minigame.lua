@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "Ryza_MiniGame",
 	events = {
 		{

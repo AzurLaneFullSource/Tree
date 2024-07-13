@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024同盟活动 极寒 航速机动减少",
 	time = 0,

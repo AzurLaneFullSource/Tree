@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.world_event_desc = {
 	[65] = {
 		id = 65,

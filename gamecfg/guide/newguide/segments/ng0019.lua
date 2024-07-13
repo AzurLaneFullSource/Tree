@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Tap here to change Quick Retire settings.",
 	"In the top part, select which ship rarities you would like to prioritize.",
 	"In the bottom part, select what you would like to do for duplicate copies of ships you already own.",

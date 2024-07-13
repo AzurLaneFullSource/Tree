@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MonthSignPage", import("...base.BaseActivityPage"))
+local var0_0 = class("MonthSignPage", import("...base.BaseActivityPage"))
 
 var0_0.SHOW_RE_MONTH_SIGN = "show re month sign award"
 var0_0.MONTH_SIGN_SHOW = {}

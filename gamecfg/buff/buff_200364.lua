@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "Bossbomb",
 	name = "2023伊丽莎白meta 领域崩溃反噬",
 	time = 0,

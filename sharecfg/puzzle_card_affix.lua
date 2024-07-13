@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.puzzle_card_affix = {
 	[100] = {
 		affix_type = 0,

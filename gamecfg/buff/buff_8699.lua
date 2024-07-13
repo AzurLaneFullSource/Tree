@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 2,
 	name = "中飞联动阶段转场",
 	init_effect = "Bossbomb",

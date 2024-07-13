@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IdolMasterView", import("..BaseMiniGameView"))
+local var0_0 = class("IdolMasterView", import("..BaseMiniGameView"))
 local var1_0 = {
 	"idom-THEIDOLM@STER",
 	"idom-GOMYWAY"

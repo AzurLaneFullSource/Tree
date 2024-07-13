@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "克莱蒙梭活动剧情战 总控制BUFF（废弃）",
 	time = 0,

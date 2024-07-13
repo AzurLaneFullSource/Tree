@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 4,
 	name = "2022武藏活动 EX 武藏转阶段后无敌",
 	init_effect = "Bossbomb",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShopBgView")
+local var0_0 = class("ShopBgView")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1._bg = arg1_1

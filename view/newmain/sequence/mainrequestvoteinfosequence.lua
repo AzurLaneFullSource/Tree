@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainRequestVoteInfoSequence")
+local var0_0 = class("MainRequestVoteInfoSequence")
 
 function var0_0.Execute(arg0_1, arg1_1)
 	if not arg0_1:ExistVoteAct() then

@@ -1,4 +1,4 @@
-﻿HXSet = {}
+HXSet = {}
 
 local var0_0 = HXSet
 

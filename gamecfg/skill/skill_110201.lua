@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "弹幕开火",
 	cd = 0,

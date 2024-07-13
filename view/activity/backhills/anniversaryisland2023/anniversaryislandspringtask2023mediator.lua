@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AnniversaryIslandSpringTask2023Mediator", import("view.base.ContextMediator"))
+local var0_0 = class("AnniversaryIslandSpringTask2023Mediator", import("view.base.ContextMediator"))
 
 var0_0.SUBMIT_TASK = "activity submit task "
 var0_0.TASK_GO = "activity task go "

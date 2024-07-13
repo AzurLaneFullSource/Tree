@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 59,
 	furnitures_1 = {
 		{

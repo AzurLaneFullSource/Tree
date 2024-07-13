@@ -1,4 +1,4 @@
-﻿return {
+return {
 	painting = 0,
 	name = "2023 关岛活动 入场动作 精英",
 	cd = 0,

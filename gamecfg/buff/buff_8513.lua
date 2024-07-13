@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "航速提升50%",
 	time = 0,

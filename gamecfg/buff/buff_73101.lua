@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "时间叠加增益",
 	init_effect = "",

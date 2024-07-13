@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GameHallScene", import("..base.BaseUI"))
+local var0_0 = class("GameHallScene", import("..base.BaseUI"))
 
 var0_0.open_with_list = false
 

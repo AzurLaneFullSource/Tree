@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 8,
 	name = "减伤50",
 	init_effect = "jinengchufablue",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RecommendCommodity", import("model.vo.BaseVO"))
+local var0_0 = class("RecommendCommodity", import("model.vo.BaseVO"))
 local var1_0 = 1
 local var2_0 = 2
 

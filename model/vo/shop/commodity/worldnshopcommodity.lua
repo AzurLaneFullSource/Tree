@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldNShopCommodity", import(".BaseCommodity"))
+local var0_0 = class("WorldNShopCommodity", import(".BaseCommodity"))
 
 function var0_0.bindConfigTable(arg0_1)
 	return pg.world_newshop_data

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSMapAttachment", import(".WSMapTransform"))
+local var0_0 = class("WSMapAttachment", import(".WSMapTransform"))
 
 var0_0.Fields = {
 	cell = "table",

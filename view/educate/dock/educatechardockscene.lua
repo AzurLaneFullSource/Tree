@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateCharDockScene", import("view.base.BaseUI"))
+local var0_0 = class("EducateCharDockScene", import("view.base.BaseUI"))
 
 var0_0.ON_CLOSE_VIEW = "EducateCharDockScene.ON_CLOSE_VIEW"
 var0_0.ON_SELECT = "EducateCharDockScene.ON_SELECT"

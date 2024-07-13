@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022莱莎联动 T5极天·黑洞成功命中时对我方全体造成30%最大生命的伤害",
 	time = 3,

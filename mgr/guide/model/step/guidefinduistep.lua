@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuideFindUIStep", import(".GuideStep"))
+local var0_0 = class("GuideFindUIStep", import(".GuideStep"))
 
 var0_0.TRIGGER_TYPE_BUTTON = 1
 var0_0.TRIGGER_TYPE_TOGGLE = 2

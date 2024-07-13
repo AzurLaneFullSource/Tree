@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSMapFleet", import(".WSMapTransform"))
+local var0_0 = class("WSMapFleet", import(".WSMapTransform"))
 
 var0_0.Fields = {
 	rtShadow = "userdata",

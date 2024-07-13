@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Let's check out your <color=#ff7d36>storage</color>.",
 	"Let's see what <color=#ff7d36>designs</color> you currently have!",
 	"Tap here to start <color=#ff7d36>making gear</color>!",

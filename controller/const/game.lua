@@ -1,4 +1,4 @@
-﻿GAME = {
+GAME = {
 	ON_NEW_VOTE_DONE = "on new vote done",
 	CHANGE_PLAYER_ICON_DONE = "chnage player icon done",
 	INFORM = "inform",

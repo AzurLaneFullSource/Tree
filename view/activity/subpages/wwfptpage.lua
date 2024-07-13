@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WWFPtPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("WWFPtPage", import(".TemplatePage.PtTemplatePage"))
 local var1_0 = 6000
 
 function var0_0.OnInit(arg0_1)

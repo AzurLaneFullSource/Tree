@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AnniversarySixInvitationPage", import("...base.BaseActivityPage"))
+local var0_0 = class("AnniversarySixInvitationPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnDataSetting(arg0_1)
 	if arg0_1.ptData then

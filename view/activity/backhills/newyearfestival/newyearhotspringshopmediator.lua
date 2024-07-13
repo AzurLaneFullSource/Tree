@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewYearHotSpringShopMediator", import("view.base.ContextMediator"))
+local var0_0 = class("NewYearHotSpringShopMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_ACT_SHOPPING = "NewYearHotSpringShopMediator:ON_ACT_SHOPPING"
 

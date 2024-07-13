@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "偶像大师联动 fever 增伤BUFF",
 	time = 0,

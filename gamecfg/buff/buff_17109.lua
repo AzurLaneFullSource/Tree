@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "Asanagi铁拳buff",
 	time = 0.3,

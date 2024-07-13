@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipProfileMediator", import("...base.ContextMediator"))
+local var0_0 = class("ShipProfileMediator", import("...base.ContextMediator"))
 
 var0_0.CLICK_ROTATE_BTN = "ShipProfileMediator:CLICK_ROTATE_BTN"
 var0_0.OPEN_CRYPTOLALIA = "ShipProfileMediator:OPEN_CRYPTOLALIA"

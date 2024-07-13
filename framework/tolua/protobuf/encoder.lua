@@ -1,4 +1,4 @@
-﻿local var0_0 = string
+local var0_0 = string
 local var1_0 = table
 local var2_0 = ipairs
 local var3_0 = assert

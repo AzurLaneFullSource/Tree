@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LinkDunHuangPage", import(".JavelinComicSkinPage"))
+local var0_0 = class("LinkDunHuangPage", import(".JavelinComicSkinPage"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.bg = arg0_1:findTF("AD")

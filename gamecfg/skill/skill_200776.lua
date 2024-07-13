@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024同盟活动B 指挥通讯网络 跨队支援3",
 	cd = 0,

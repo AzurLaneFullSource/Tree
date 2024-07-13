@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023克莱蒙梭活动 教皇下属蛋船 孢子爆炸效果",
 	time = 1,

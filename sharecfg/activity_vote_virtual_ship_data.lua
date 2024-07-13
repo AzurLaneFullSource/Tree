@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_vote_virtual_ship_data = {
 	[9979995] = {
 		english_name = "Enterprise.META",

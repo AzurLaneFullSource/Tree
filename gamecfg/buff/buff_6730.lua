@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "DOA联动更换BGM",
 	time = 0,

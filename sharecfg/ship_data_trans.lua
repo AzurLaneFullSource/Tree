@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.ship_data_trans = {
 	[10103] = {
 		skin_id = 101039,

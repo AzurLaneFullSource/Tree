@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMediator", import("..base.ContextMediator"))
+local var0_0 = class("WorldMediator", import("..base.ContextMediator"))
 
 var0_0.OnMapOp = "WorldMediator.OnMapOp"
 var0_0.OnMapReq = "WorldMediator.OnMapReq"

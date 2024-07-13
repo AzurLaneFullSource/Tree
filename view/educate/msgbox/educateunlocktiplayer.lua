@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateUnlockTipLayer", import("..base.EducateBaseUI"))
+local var0_0 = class("EducateUnlockTipLayer", import("..base.EducateBaseUI"))
 
 var0_0.UNLOCK_TYPE_SYSTEM = 1
 var0_0.UNLOCK_TYPE_SITE = 2

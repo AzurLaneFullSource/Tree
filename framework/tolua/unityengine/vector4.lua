@@ -1,4 +1,4 @@
-﻿local var0_0 = Mathf.Clamp
+local var0_0 = Mathf.Clamp
 local var1_0 = Mathf.Sqrt
 local var2_0 = Mathf.Min
 local var3_0 = Mathf.Max

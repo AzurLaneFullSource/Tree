@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SignHalloweenPage", import("...base.BaseActivityPage"))
+local var0_0 = class("SignHalloweenPage", import("...base.BaseActivityPage"))
 local var1_0 = 15
 
 function var0_0.OnInit(arg0_1)

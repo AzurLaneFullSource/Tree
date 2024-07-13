@@ -1,4 +1,4 @@
-﻿return {
+return {
 	effect_list = {
 		{
 			target_choise = "TargetNil",

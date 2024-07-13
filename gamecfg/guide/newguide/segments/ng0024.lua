@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"The META Lab is equipped with three primary functions to increase the strength of META ships: Somatic Activation, Rigging Fortification, and Tactical Research. You can also collect rewards for accumulating Sync Points here!",
 	"Though META ships are a little bit different, increasing their strength should feel familiar. Now, let’s go through how to level their skills!",
 	"Before you can start, they need to learn the skill in the first place.",

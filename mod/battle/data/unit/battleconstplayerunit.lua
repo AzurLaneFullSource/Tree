@@ -1,4 +1,4 @@
-﻿ys.Battle.BattleConstPlayerUnit = class("BattleConstPlayerUnit", ys.Battle.BattlePlayerUnit)
+ys.Battle.BattleConstPlayerUnit = class("BattleConstPlayerUnit", ys.Battle.BattlePlayerUnit)
 ys.Battle.BattleConstPlayerUnit.__name = "BattleConstPlayerUnit"
 
 local var0_0 = ys.Battle.BattleConstPlayerUnit

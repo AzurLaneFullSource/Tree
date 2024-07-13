@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "序章俾斯麦必杀走位",
 	time = 0,

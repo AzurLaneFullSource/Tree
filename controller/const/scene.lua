@@ -1,4 +1,4 @@
-﻿SCENE = {
+SCENE = {
 	SHIPBLUEPRINT = "shipblueprint",
 	WORLDBOSS = "scene worldboss",
 	ANNIVERSARY_ISLAND_BACKHILL_2023 = "anniversary island 2023",

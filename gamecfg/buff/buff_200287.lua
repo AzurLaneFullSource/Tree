@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023英系活动 EX 进入虚弱状态",
 	time = 8,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "声望-全弹发射-延迟1",
 	cd = 60,

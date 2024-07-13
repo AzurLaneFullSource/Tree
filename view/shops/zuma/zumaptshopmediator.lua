@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ZumaPTShopMediator", import("...base.ContextMediator"))
+local var0_0 = class("ZumaPTShopMediator", import("...base.ContextMediator"))
 
 var0_0.OPEN_ZUMA_PT_SHOP_BUY_WINDOW = "ZumaPTShopMediator.OPEN_ZUMA_PT_SHOP_BUY_WINDOW"
 

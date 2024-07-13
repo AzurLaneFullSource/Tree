@@ -1,4 +1,4 @@
-﻿local var0_0 = class("HoloLiveLinkLinkSelectScene", import("view.base.BaseUI"))
+local var0_0 = class("HoloLiveLinkLinkSelectScene", import("view.base.BaseUI"))
 
 var0_0.HOLOLIVE_LINKGAME_HUB_ID = 3
 var0_0.HOLOLIVE_LINKGAME_ID = 7

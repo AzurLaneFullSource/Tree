@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SnapshotItem")
+local var0_0 = class("SnapshotItem")
 
 var0_0.NAME_COLOR = {
 	"#FFFFFFFF",

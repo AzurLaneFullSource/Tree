@@ -1,4 +1,4 @@
-﻿return {
+return {
 	effect_list = {},
 	{
 		desc = "可替代紫色以下舰娘作为改造材料使用",

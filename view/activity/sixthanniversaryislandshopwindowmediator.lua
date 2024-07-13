@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SixthAnniversaryIslandShopWindowMediator", import("..base.ContextMediator"))
+local var0_0 = class("SixthAnniversaryIslandShopWindowMediator", import("..base.ContextMediator"))
 
 var0_0.SHOPPING_CONFIRM = "SixthAnniversaryIslandShopWindowMediator.SHOPPING_CONFIRM"
 

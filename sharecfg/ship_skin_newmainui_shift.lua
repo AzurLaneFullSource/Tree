@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.ship_skin_newmainui_shift = {
 	[403101] = {
 		skin = 403101,

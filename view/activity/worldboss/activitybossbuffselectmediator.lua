@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityBossBuffSelectMediator", import("view.base.ContextMediator"))
+local var0_0 = class("ActivityBossBuffSelectMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_START = "ActivityBossBuffSelectMediator:ON_START"
 var0_0.SHOW_REWARDS = "ActivityBossBuffSelectMediator:SHOW_REWARDS"

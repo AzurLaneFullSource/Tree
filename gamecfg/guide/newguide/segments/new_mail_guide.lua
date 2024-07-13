@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "NEW_MAIL_GUIDE",
 	events = {
 		{

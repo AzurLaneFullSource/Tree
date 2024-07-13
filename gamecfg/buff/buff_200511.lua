@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 5,
 	name = "2023古立特联动复刻 新关卡支援弹幕",
 	init_effect = "",

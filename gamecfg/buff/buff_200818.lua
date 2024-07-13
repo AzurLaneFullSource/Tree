@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024罗德尼meta 触发终结技失败的提示",
 	time = 0.1,

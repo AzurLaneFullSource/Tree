@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 200688,
 	name = "2023 闪乱联动 EX 终结技监听",
 	cd = 0,

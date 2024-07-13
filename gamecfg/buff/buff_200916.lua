@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024偶像活动三期EX 欧根盾（地狱）",
 	time = 0,

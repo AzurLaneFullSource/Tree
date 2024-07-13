@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "毛系V3活动敌方标识TAG",
 	time = 0,

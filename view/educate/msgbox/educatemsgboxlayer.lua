@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateMsgBoxLayer", import("..base.EducateBaseUI"))
+local var0_0 = class("EducateMsgBoxLayer", import("..base.EducateBaseUI"))
 
 var0_0.TYPE_NORMAL = 1
 var0_0.TYPE_SINGLE_ITEM = 2

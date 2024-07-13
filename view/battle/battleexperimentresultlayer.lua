@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleExperimentResultLayer", import(".BattleContributionResultLayer"))
+local var0_0 = class("BattleExperimentResultLayer", import(".BattleContributionResultLayer"))
 
 function var0_0.setPoint(arg0_1)
 	arg0_1._contributionPoint = 0

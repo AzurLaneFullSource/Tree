@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024阿尔萨斯活动 辉光之城-绽放 触发弹幕",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024阿尔萨斯活动 直接遥控上浮",
 	time = 0.5,

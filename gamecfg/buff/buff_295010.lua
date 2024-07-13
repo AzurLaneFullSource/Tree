@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024异世界冒险 潜艇基准线",
 	time = 3,

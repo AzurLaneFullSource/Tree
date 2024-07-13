@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024罗德尼meta 高维行走 BUFF",
 	time = 4,

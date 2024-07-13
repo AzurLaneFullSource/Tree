@@ -1,4 +1,4 @@
-﻿local var0_0 = import("..observer.Notifier")
+local var0_0 = import("..observer.Notifier")
 local var1_0 = class("MacroCommand", var0_0)
 
 function var1_0.Ctor(arg0_1)

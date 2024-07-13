@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "致盲后视野测试",
 	time = 0,

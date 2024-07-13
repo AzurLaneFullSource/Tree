@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "冷却时间缩短",
 	time = 5,

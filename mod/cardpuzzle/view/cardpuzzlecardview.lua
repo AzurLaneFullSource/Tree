@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CardPuzzleCardView")
+local var0_0 = class("CardPuzzleCardView")
 
 var0_0.AFFIX_TYPE = {
 	TAG = 0,

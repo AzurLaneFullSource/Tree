@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CardPuzzleCard", BaseVO)
+local var0_0 = class("CardPuzzleCard", BaseVO)
 
 var0_0.CARD_TYPE = {
 	ATTACK = 1,

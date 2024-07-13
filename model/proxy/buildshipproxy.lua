@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BuildShipProxy", import(".NetProxy"))
+local var0_0 = class("BuildShipProxy", import(".NetProxy"))
 
 var0_0.ADDED = "BuildShipProxy ADDED"
 var0_0.TIMEUP = "BuildShipProxy TIMEUP"

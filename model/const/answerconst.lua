@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AnswerConst")
+local var0_0 = class("AnswerConst")
 
 var0_0.Chinese = 0
 var0_0.Mathematics = 1

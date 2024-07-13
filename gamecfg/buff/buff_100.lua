@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "单纵阵突入",
 	time = 0,

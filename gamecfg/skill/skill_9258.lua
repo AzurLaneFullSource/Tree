@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "龙宫机关-土 武器LV2",
 	cd = 0,

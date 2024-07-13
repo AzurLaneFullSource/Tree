@@ -1,1 +1,1 @@
-﻿return (class("LoginSignRe1Page", import(".TemplatePage.LightLoginTemplatePage")))
+return (class("LoginSignRe1Page", import(".TemplatePage.LightLoginTemplatePage")))

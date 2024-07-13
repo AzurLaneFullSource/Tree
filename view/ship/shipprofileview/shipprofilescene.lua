@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipProfileScene", import("...base.BaseUI"))
+local var0_0 = class("ShipProfileScene", import("...base.BaseUI"))
 
 var0_0.SHOW_SKILL_INFO = "event show skill info"
 var0_0.SHOW_EVALUATION = "event show evalution"

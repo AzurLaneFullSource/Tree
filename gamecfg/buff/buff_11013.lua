@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "铁底湾之夜",
 	init_effect = "jinengchufablue",

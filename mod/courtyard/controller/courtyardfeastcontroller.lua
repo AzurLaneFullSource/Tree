@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardFeastController", import(".CourtYardController"))
+local var0_0 = class("CourtYardFeastController", import(".CourtYardController"))
 
 function var0_0.ShipBubbleInterActionFinish(arg0_1, arg1_1)
 	local var0_1 = arg0_1.storey:GetShip(arg1_1)

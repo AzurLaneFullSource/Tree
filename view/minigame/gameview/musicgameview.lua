@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MusicGameView", import("..BaseMiniGameView"))
+local var0_0 = class("MusicGameView", import("..BaseMiniGameView"))
 local var1_0 = false
 local var2_0 = 0.95
 local var3_0 = 0

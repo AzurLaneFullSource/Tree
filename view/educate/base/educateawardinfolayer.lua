@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateAwardInfoLayer", import("..base.EducateBaseUI"))
+local var0_0 = class("EducateAwardInfoLayer", import("..base.EducateBaseUI"))
 local var1_0 = {
 	Vector2(0, 115),
 	Vector2(0, 162)

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChatProxy", import(".NetProxy"))
+local var0_0 = class("ChatProxy", import(".NetProxy"))
 
 var0_0.NEW_MSG = "ChatProxy public msg"
 

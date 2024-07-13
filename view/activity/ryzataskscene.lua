@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RyzaTaskScene", import("..base.BaseUI"))
+local var0_0 = class("RyzaTaskScene", import("..base.BaseUI"))
 local var1_0 = "ryza_task_level_desc"
 local var2_0 = "ryza_task_tag_explore"
 local var3_0 = "ryza_task_tag_battle"

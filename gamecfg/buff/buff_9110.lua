@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 3,
 	name = "防空模式-LV9",
 	init_effect = "jinengchufablue",

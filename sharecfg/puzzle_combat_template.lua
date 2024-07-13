@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.puzzle_combat_template = {
 	[100] = {
 		description = "Learn about Simulation Battles and how to use Command cards.",

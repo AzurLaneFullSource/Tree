@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommonCommodity", import(".BaseCommodity"))
+local var0_0 = class("CommonCommodity", import(".BaseCommodity"))
 
 function var0_0.InCommodityDiscountTime(arg0_1)
 	local var0_1 = pg.shop_template[arg0_1].discount_time

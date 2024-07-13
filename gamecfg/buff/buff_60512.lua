@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "浮标易伤领域",
 	name = "",
 	init_effect = "",

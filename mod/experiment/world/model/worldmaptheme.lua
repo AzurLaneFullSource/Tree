@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMapTheme", import("...BaseEntity"))
+local var0_0 = class("WorldMapTheme", import("...BaseEntity"))
 
 var0_0.Fields = {
 	sinAngle = "number",

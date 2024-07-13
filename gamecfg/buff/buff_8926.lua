@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "毛系V3 EX空袭反制 启动BUFF",
 	time = 0,

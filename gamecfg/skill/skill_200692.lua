@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 200692,
 	name = "2023 闪乱联动 T5 召唤小怪",
 	cd = 0,

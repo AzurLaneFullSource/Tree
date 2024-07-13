@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateGuideSequence")
+local var0_0 = class("EducateGuideSequence")
 
 var0_0.config = {
 	EducateScene = {

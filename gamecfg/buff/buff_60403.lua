@@ -1,4 +1,4 @@
-﻿return {
+return {
 	color = "red",
 	name = "",
 	time = 0,

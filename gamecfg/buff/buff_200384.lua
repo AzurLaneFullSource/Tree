@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023北联SP 敌方支援弹幕SP",
 	time = 5,

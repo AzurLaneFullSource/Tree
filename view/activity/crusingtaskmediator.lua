@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CrusingTaskMediator", import("view.base.ContextMediator"))
+local var0_0 = class("CrusingTaskMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_TASK_GO = "CrusingTaskMediator.ON_TASK_GO"
 var0_0.ON_TASK_SUBMIT = "CrusingTaskMediator.ON_TASK_SUBMIT"

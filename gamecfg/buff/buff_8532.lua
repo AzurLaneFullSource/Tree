@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "天运拟合BOSS单位减伤",
 	time = 0,

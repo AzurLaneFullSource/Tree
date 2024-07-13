@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "META拉·加利索尼埃锤子buff",
 	time = 0,

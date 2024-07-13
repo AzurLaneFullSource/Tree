@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSPool", import("...BaseEntity"))
+local var0_0 = class("WSPool", import("...BaseEntity"))
 
 var0_0.Fields = {
 	tplDic = "table",

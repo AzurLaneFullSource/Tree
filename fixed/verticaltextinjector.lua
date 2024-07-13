@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 
 local function var1_0(arg0_1)
 	return ReflectionHelp.RefGetField(typeof("UnityEngine.UILineInfo"), "startCharIdx", arg0_1)

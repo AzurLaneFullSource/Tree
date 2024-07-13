@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SettingsRandomFlagShipAndSkinPanel", import(".SettingsBasePanel"))
+local var0_0 = class("SettingsRandomFlagShipAndSkinPanel", import(".SettingsBasePanel"))
 
 var0_0.EVT_UPDTAE = "SettingsRandomFlagShipAndSkinPanel:EVT_UPDTAE"
 var0_0.SHIP_FREQUENTLYUSED = 1

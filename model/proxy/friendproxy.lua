@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FriendProxy", import(".NetProxy"))
+local var0_0 = class("FriendProxy", import(".NetProxy"))
 
 var0_0.FRIEND_ADDED = "FriendProxy friend added"
 var0_0.FRIEND_REMOVED = "FriendProxy friend removed"

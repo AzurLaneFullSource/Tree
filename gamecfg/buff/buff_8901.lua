@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "取消增伤buff",
 	init_effect = "",

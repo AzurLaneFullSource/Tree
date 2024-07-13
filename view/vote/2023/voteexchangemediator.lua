@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VoteExchangeMediator", import("view.base.ContextMediator"))
+local var0_0 = class("VoteExchangeMediator", import("view.base.ContextMediator"))
 
 var0_0.GO_TASK = "VoteExchangeMediator:GO_TASK"
 var0_0.SKIP_TASK = "VoteExchangeMediator:SKIP_TASK"

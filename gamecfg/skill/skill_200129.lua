@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022莱莎联动EX 昏睡之门 召唤小怪",
 	cd = 0,

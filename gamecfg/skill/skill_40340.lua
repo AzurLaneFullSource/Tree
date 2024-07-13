@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "尽忠职守-大世界LV3",
 	cd = 0,

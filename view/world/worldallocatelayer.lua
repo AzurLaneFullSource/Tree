@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldAllocateLayer", import("..base.BaseUI"))
+local var0_0 = class("WorldAllocateLayer", import("..base.BaseUI"))
 
 var0_0.TeamNum = {
 	"FIRST",

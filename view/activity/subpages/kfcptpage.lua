@@ -1,4 +1,4 @@
-﻿local var0_0 = class("KFCPTPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("KFCPTPage", import(".TemplatePage.PtTemplatePage"))
 
 var0_0.SpineCharName = {
 	"lafei_11",

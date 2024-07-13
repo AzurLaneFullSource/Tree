@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022莱莎联动 战斗BUFF 缓回效果LV3",
 	time = 0,

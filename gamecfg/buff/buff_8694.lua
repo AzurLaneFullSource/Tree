@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "信浓活动普通难度潜艇BOSS25秒后上浮",
 	time = 30,

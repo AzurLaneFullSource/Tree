@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AnniversaryIslandComposite2023Scene", import("view.base.BaseUI"))
+local var0_0 = class("AnniversaryIslandComposite2023Scene", import("view.base.BaseUI"))
 
 var0_0.FilterAll = bit.bor(1, 2)
 

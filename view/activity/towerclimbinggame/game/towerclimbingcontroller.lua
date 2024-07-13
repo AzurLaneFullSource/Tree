@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TowerClimbingController")
+local var0_0 = class("TowerClimbingController")
 
 function var0_0.Ctor(arg0_1)
 	arg0_1.view = TowerClimbingView.New(arg0_1)

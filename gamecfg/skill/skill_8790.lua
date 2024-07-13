@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2020德系活动构建者护盾弹条",
 	cd = 0,

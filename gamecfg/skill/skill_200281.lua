@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023英系活动 EX 移除提示信息",
 	cd = 0,

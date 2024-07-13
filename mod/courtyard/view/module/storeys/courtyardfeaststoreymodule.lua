@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardFeastStoreyModule", import(".CourtYardStoreyModule"))
+local var0_0 = class("CourtYardFeastStoreyModule", import(".CourtYardStoreyModule"))
 
 function var0_0.GetDefaultBgm(arg0_1)
 	return pg.voice_bgm.FeastScene.default_bgm

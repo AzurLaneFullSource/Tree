@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ItemResetPanel")
+local var0_0 = class("ItemResetPanel")
 
 var0_0.SINGLE = 1
 var0_0.BATCH = 2

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023克莱蒙梭活动 陆上神国III 弹条",
 	cd = 0,

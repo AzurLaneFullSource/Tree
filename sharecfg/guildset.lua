@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.guildset = {
 	guild_award_consume = {
 		key_args = "",

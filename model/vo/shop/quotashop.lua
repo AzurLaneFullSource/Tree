@@ -1,4 +1,4 @@
-﻿local var0_0 = class("QuotaShop", import(".BaseShop"))
+local var0_0 = class("QuotaShop", import(".BaseShop"))
 
 function var0_0.Ctor(arg0_1)
 	arg0_1.type = ShopArgs.ShopQuota

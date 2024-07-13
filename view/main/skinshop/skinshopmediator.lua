@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SkinShopMediator", import("...base.ContextMediator"))
+local var0_0 = class("SkinShopMediator", import("...base.ContextMediator"))
 
 var0_0.ON_SHOPPING = "SkinShopMediator:ON_SHOPPING"
 var0_0.GO_SHOPS_LAYER = "SkinShopMediator:GO_SHOPS_LAYER"

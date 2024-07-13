@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TrophyGroup")
+local var0_0 = class("TrophyGroup")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1._trophyGroupID = arg1_1

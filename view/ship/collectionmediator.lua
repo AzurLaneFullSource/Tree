@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CollectionMediator", import("..base.ContextMediator"))
+local var0_0 = class("CollectionMediator", import("..base.ContextMediator"))
 
 var0_0.EVENT_OBTAIN_SKIP = "CollectionMediator:EVENT_OBTAIN_SKIP"
 var0_0.EVENT_OPEN_FULL_SCREEN_PIC_VIEW = "CollectionMediator:EVENT_OPEN_FULL_SCREEN_PIC_VIEW"

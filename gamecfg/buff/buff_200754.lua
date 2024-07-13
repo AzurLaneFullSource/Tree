@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023关岛活动D2 召唤物2",
 	time = 1.5,

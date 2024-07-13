@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardFollowerFurniture", import(".CourtYardFurniture"))
+local var0_0 = class("CourtYardFollowerFurniture", import(".CourtYardFurniture"))
 
 function var0_0.InitSlots(arg0_1)
 	arg0_1.ratios = {}

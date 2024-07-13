@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OtherworldTerminalLayer", import("view.base.BaseUI"))
+local var0_0 = class("OtherworldTerminalLayer", import("view.base.BaseUI"))
 
 var0_0.PAGE_PERSONAL = 1
 var0_0.PAGE_ADVENTURE = 2

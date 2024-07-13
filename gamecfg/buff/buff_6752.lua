@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "白鹰精英损管",
 	init_effect = "jinengchufablue",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("World", import("...BaseEntity"))
+local var0_0 = class("World", import("...BaseEntity"))
 
 var0_0.Fields = {
 	colorDic = "table",

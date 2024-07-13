@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BuildingCafeUpgradeLayer", import(".BuildingUpgradeLayer"))
+local var0_0 = class("BuildingCafeUpgradeLayer", import(".BuildingUpgradeLayer"))
 local var1_0 = {
 	17,
 	18

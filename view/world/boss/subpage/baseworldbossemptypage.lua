@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseWorldBossEmptyPage", import("view.base.BaseSubView"))
+local var0_0 = class("BaseWorldBossEmptyPage", import("view.base.BaseSubView"))
 
 var0_0.Listeners = {
 	onPtUpdated = "OnPtUpdated",

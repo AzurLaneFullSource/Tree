@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MetaQuickTacticsMediator", import("...base.ContextMediator"))
+local var0_0 = class("MetaQuickTacticsMediator", import("...base.ContextMediator"))
 
 var0_0.USE_TACTICS_BOOK = "MetaQuickTacticsMediator.USE_TACTICS_BOOK"
 var0_0.OPEN_OVERFLOW_LAYER = "MetaQuickTacticsMediator.OPEN_OVERFLOW_LAYER"

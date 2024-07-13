@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "坚韧与团结之神...?",
 	time = 0,

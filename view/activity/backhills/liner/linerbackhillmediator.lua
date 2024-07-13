@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LinerBackHillMediator", import("..TemplateMV.BackHillMediatorTemplate"))
+local var0_0 = class("LinerBackHillMediator", import("..TemplateMV.BackHillMediatorTemplate"))
 
 var0_0.GO_MINIGAME = "GO_MINIGAME"
 

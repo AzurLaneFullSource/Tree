@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VirtualEducateCharShip", import("model.vo.Ship"))
+local var0_0 = class("VirtualEducateCharShip", import("model.vo.Ship"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.educateCharId = arg1_1

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VirtualBagActivity", import("model.vo.Activity"))
+local var0_0 = class("VirtualBagActivity", import("model.vo.Activity"))
 
 function var0_0.getVitemNumber(arg0_1, arg1_1)
 	return arg0_1.data1KeyValueList[1][arg1_1] or 0

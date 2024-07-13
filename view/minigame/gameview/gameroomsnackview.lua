@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GameRoomSnackView", import(".GameRoomBaseSnackView"))
+local var0_0 = class("GameRoomSnackView", import(".GameRoomBaseSnackView"))
 
 function var0_0.getUIName(arg0_1)
 	return "GameRoomSnackUI"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SurveyPage", import("...base.BaseActivityPage"))
+local var0_0 = class("SurveyPage", import("...base.BaseActivityPage"))
 
 function var0_0.SetEnterTag(arg0_1)
 	PlayerPrefs.SetInt("survey_enter_" .. tostring(arg0_1), 1)

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushFleetSelectView", import("view.base.BaseUI"))
+local var0_0 = class("BossRushFleetSelectView", import("view.base.BaseUI"))
 
 var0_0.fleetNames = {
 	vanguard = 1,

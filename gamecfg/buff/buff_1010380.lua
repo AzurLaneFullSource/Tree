@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "出击时，队伍中Z系驱逐的炮击、机动提高20.0%(满级40.0%)",
 	name = "Z系先驱",
 	init_effect = "",

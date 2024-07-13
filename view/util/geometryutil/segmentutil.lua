@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 local var1_0 = 1e-06
 
 local function var2_0(arg0_1)

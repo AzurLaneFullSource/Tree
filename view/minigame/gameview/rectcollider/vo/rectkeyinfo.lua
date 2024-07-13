@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RectKeyInfo")
+local var0_0 = class("RectKeyInfo")
 
 function var0_0.Ctor(arg0_1)
 	arg0_1._inPutKeyDic = {}

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MapBuilderAtelier", import(".MapBuilderNormal"))
+local var0_0 = class("MapBuilderAtelier", import(".MapBuilderNormal"))
 
 function var0_0.GetType(arg0_1)
 	return MapBuilder.TYPEATELIER

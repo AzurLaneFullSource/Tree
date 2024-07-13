@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldBossInformationMediator", import("..base.ContextMediator"))
+local var0_0 = class("WorldBossInformationMediator", import("..base.ContextMediator"))
 
 var0_0.RETREAT_FLEET = "WorldBossInformationMediator:RETREAT_FLEET"
 var0_0.OnOpenSublayer = "WorldBossInformationMediator:OpenSublayer"

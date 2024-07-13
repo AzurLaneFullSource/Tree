@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducatePlanIndexConst")
+local var0_0 = class("EducatePlanIndexConst")
 
 var0_0.TypeScholl = bit.lshift(1, 0)
 var0_0.TypeInterest = bit.lshift(1, 1)

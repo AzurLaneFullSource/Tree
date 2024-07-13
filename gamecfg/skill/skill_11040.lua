@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "鞍山技能",
 	cd = 0,

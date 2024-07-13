@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CardPuzzleGift", BaseVO)
+local var0_0 = class("CardPuzzleGift", BaseVO)
 
 var0_0.TYPE = {
 	GLOBAL = 1,

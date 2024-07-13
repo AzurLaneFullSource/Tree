@@ -1,4 +1,4 @@
-﻿module("descriptor")
+module("descriptor")
 
 FieldDescriptor = {
 	MAX_CPPTYPE = 10,

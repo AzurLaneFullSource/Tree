@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PublicGuildTechnologyCard", import("..cards.GuildTechnologyCard"))
+local var0_0 = class("PublicGuildTechnologyCard", import("..cards.GuildTechnologyCard"))
 
 function var0_0.Update(arg0_1, arg1_1)
 	local var0_1 = arg1_1.group.id

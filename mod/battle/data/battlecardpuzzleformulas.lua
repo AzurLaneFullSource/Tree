@@ -1,4 +1,4 @@
-﻿ys.Battle.BattleCardPuzzleFormulas = ys.Battle.BattleCardPuzzleFormulas or {}
+ys.Battle.BattleCardPuzzleFormulas = ys.Battle.BattleCardPuzzleFormulas or {}
 
 local var0_0 = ys.Battle.BattleCardPuzzleFormulas
 local var1_0 = ys.Battle.BattleConst

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityPermanentLayer", import("..base.BaseUI"))
+local var0_0 = class("ActivityPermanentLayer", import("..base.BaseUI"))
 
 function var0_0.getUIName(arg0_1)
 	return "ActivitySelectUI"

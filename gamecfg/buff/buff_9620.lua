@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "海雾我方生效buff+挂载敌方buff",
 	init_effect = "",

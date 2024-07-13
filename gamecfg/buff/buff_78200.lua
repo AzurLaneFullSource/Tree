@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "剧情战最终选项 trueend弹幕武器",
 	time = 0,

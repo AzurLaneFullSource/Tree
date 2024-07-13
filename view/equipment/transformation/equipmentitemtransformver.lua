@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EquipmentItemTransformVer", import("view.equipment.EquipmentItem"))
+local var0_0 = class("EquipmentItemTransformVer", import("view.equipment.EquipmentItem"))
 
 function var0_0.update(arg0_1, arg1_1)
 	setActive(arg0_1.equiped, false)

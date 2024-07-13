@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.battlepass_event_pt = {
 	[7001] = {
 		id = 7001,

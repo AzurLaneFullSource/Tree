@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SkinMagazinePage2", import("...base.BaseActivityPage"))
+local var0_0 = class("SkinMagazinePage2", import("...base.BaseActivityPage"))
 
 var0_0.EXPAND_WIDTH = 973
 var0_0.CLOSE_WIDTH = 216

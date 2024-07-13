@@ -1,4 +1,4 @@
-﻿local var0_0 = tonumber
+local var0_0 = tonumber
 local var1_0 = type
 local var2_0 = print
 local var3_0 = error

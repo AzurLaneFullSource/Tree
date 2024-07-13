@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.ship_data_create_exchange = {
 	{
 		exchange_request = 400,

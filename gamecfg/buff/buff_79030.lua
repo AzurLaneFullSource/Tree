@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "毒雾debuff",
 	time = 0,

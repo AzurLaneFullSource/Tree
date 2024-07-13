@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FuShunDamageScript", import("..RectBaseScript"))
+local var0_0 = class("FuShunDamageScript", import("..RectBaseScript"))
 
 function var0_0.onInit(arg0_1)
 	arg0_1._loop = false

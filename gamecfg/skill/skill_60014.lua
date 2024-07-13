@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "伊丽莎白-女王号令-链接",
 	cd = 0,

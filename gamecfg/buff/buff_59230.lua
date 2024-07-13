@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "航空支援（寰昌）",
 	time = 0,

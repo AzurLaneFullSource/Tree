@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "DOA联动 fever BUFF",
 	time = 0,

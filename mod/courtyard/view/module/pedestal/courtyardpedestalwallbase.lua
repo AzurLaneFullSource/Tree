@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardPedestalWallBase", import(".CourtYardPedestalStructure"))
+local var0_0 = class("CourtYardPedestalWallBase", import(".CourtYardPedestalStructure"))
 
 function var0_0.GetAssetPath(arg0_1)
 	return "furnitrues/base/wall_" .. arg0_1.level

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "卡牌点燃debuff",
 	init_effect = "",

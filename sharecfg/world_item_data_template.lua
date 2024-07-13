@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.world_item_data_template = {
 	[100] = {
 		item_transform_item_type = 1,

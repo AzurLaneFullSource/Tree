@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildBasePage", import("...base.BaseSubView"))
+local var0_0 = class("GuildBasePage", import("...base.BaseSubView"))
 
 function var0_0.getUIName(arg0_1)
 	local var0_1, var1_1 = arg0_1:getTargetUI()

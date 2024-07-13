@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "进入战斗时，若旗舰为战列、战巡、航战中的一种,战斗开始后20秒，触发额外弹幕",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewNavalTacticsLockCard", import(".NewNavalTacticsBaseCard"))
+local var0_0 = class("NewNavalTacticsLockCard", import(".NewNavalTacticsBaseCard"))
 
 function var0_0.UnlockCnt2ShopId(arg0_1, arg1_1)
 	return ({

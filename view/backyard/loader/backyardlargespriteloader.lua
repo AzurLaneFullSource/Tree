@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardLargeSpriteLoader")
+local var0_0 = class("BackYardLargeSpriteLoader")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.cnt = arg1_1 or 6

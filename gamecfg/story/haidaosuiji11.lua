@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "HAIDAOSUIJI11",
 	mode = 2,
 	scripts = {

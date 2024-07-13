@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Participating in META Showdowns earns you Sync Points, and accumulating these gives you nice bonus rewards!",
 	"These rewards include things like META Crystals, items needed to Activate META ships, as well as their special Fortification materials.",
 	"Anyway! Check back as soon as you’ve gotten more Sync Points!"

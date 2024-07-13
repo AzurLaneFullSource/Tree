@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "制空权劣势",
 	time = 0,

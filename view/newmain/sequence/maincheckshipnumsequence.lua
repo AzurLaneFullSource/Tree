@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainCheckShipNumSequence")
+local var0_0 = class("MainCheckShipNumSequence")
 
 function var0_0.Execute(arg0_1, arg1_1)
 	local function var0_1(arg0_2)

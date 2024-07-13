@@ -1,4 +1,4 @@
-﻿function prepareLevelExpConfig(arg0_1, arg1_1)
+function prepareLevelExpConfig(arg0_1, arg1_1)
 	arg1_1 = arg1_1 or "exp"
 
 	local var0_1

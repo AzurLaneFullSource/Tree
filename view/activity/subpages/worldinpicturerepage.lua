@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldInPictureRePage", import(".TemplatePage.SkinTemplatePage"))
+local var0_0 = class("WorldInPictureRePage", import(".TemplatePage.SkinTemplatePage"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.bg = arg0_1:findTF("AD")

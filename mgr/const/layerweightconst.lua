@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 
 var0_0.OVERLAY_UI_MAIN = "overlay_ui_main"
 var0_0.OVERLAY_UI_ADAPT = "overlay_ui_adapt"

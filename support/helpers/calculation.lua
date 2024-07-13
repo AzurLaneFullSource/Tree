@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	p = pg.gameset.air_dominance_p.key_value,
 	q = pg.gameset.air_dominance_q.key_value,
 	s = pg.gameset.air_dominance_s.key_value,

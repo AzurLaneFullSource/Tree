@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "海之勇者-大世界Lv3",
 	time = 0,

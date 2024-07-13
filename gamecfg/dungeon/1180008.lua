@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 1180008,
 	map_id = 10001,
 	bgm = "Nagato-map",

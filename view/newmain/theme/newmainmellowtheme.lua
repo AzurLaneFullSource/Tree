@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewMainMellowTheme", import(".NewMainSceneBaseTheme"))
+local var0_0 = class("NewMainMellowTheme", import(".NewMainSceneBaseTheme"))
 
 function var0_0.getUIName(arg0_1)
 	return "NewMainMellowTheme"

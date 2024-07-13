@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.DynamicBgMgr = singletonClass("DynamicBgMgr")
 
 local var0_0 = pg.DynamicBgMgr

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "主炮炮弹修改为高爆弹，主炮进行2次攻击，切换为穿甲弹",
 	name = "专业装填手",
 	init_effect = "",

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "精准狩猎",
 	init_effect = "jinengchufared",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FireworkFactoryView", import("..BaseMiniGameView"))
+local var0_0 = class("FireworkFactoryView", import("..BaseMiniGameView"))
 local var1_0 = Mathf
 
 function var0_0.getUIName(arg0_1)

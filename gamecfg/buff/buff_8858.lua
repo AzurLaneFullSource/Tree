@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "毛系V2 璀璨余晖FLAG",
 	time = 0,

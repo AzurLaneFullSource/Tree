@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AttireFramePanel", import("...base.BaseSubView"))
+local var0_0 = class("AttireFramePanel", import("...base.BaseSubView"))
 
 function var0_0.Card(arg0_1)
 	local var0_1 = {}

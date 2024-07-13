@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "不停出怪2",
 	time = 0,

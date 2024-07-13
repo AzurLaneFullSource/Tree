@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "正面装甲挡10发",
 	time = 0,

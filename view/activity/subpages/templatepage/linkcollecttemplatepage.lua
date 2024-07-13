@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LinkCollectTemplatePage", import("view.base.BaseActivityPage"))
+local var0_0 = class("LinkCollectTemplatePage", import("view.base.BaseActivityPage"))
 
 var0_0.DropType2Name = {
 	[DROP_TYPE_EQUIP] = "equip",

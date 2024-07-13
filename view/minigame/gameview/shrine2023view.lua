@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Shrine2023View", import(".Shrine2022View"))
+local var0_0 = class("Shrine2023View", import(".Shrine2022View"))
 
 function var0_0.IsNeedShowTipWithoutActivityFinalReward()
 	return Shrine2022View.IsNeedShowTipWithoutActivityFinalReward()

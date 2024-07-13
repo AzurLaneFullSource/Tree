@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023海盗活动 异常环境：风眼",
 	time = 3,

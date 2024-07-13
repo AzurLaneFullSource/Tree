@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RivalInfoLayer", import("..base.BaseUI"))
+local var0_0 = class("RivalInfoLayer", import("..base.BaseUI"))
 
 var0_0.TYPE_DISPLAY = 1
 var0_0.TYPE_BATTLE = 2

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TSTask")
+local var0_0 = class("TSTask")
 
 function var0_0.SetJob(arg0_1, arg1_1)
 	arg0_1.job = arg1_1

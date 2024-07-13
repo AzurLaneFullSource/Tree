@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateGrid")
+local var0_0 = class("EducateGrid")
 
 var0_0.TYPE_LOCK = -1
 var0_0.TYPE_EMPTY = 0

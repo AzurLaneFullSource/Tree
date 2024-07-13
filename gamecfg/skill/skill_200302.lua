@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022美系活动EX 恶魔开幕弹1",
 	cd = 0,

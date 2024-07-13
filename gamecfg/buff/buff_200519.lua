@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 5,
 	name = "2023古立特联动复刻 TSS5 第二代 飞船出场弹条",
 	init_effect = "",

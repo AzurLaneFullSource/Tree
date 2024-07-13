@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023关岛活动A1A2 第五类威胁-弱 无差别攻击弹幕",
 	cd = 0,

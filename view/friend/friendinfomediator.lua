@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FriendInfoMediator", import("..base.ContextMediator"))
+local var0_0 = class("FriendInfoMediator", import("..base.ContextMediator"))
 
 var0_0.OPEND_FRIEND = "FriendInfoMediator:OPEND_FRIEND"
 var0_0.OPEN_RESUME = "FriendInfoMediator:OPEN_RESUME"

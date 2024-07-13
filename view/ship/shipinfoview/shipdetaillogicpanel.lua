@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipDetailLogicPanel", import("...base.BasePanel"))
+local var0_0 = class("ShipDetailLogicPanel", import("...base.BasePanel"))
 local var1_0 = {
 	durability = AttributeType.Durability,
 	armor = AttributeType.Armor,

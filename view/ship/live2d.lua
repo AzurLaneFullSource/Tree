@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Live2D")
+local var0_0 = class("Live2D")
 
 var0_0.STATE_LOADING = 0
 var0_0.STATE_INITED = 1

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024阿尔萨斯活动 亡语回血",
 	time = 0.5,

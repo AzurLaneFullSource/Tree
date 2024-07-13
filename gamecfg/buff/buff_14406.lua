@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "内置CD",
 	time = 20,

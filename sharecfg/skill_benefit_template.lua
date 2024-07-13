@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.skill_benefit_template = {
 	[363101] = {
 		skill_id = 3631,

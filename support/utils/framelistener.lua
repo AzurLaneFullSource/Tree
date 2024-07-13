@@ -1,4 +1,4 @@
-﻿FrameListener = class("FrameListener")
+FrameListener = class("FrameListener")
 
 local var0_0 = FrameListener
 

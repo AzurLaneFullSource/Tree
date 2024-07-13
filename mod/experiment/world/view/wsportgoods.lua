@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSPortGoods", import("...BaseEntity"))
+local var0_0 = class("WSPortGoods", import("...BaseEntity"))
 
 var0_0.Fields = {
 	transform = "userdata",

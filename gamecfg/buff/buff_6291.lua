@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "范围扩大II",
 	time = 0,

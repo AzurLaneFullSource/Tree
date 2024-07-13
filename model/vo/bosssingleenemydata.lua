@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossSingleEnemyData", import("model.vo.baseVO"))
+local var0_0 = class("BossSingleEnemyData", import("model.vo.baseVO"))
 
 var0_0.ACTIVIRY_TYPE = {
 	OTHERWORLD = 1

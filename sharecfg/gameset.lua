@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.gameset = {
 	version_major = {
 		description = "",

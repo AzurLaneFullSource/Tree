@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainActDelegationBtnMellowAdapt", import(".MainCommonSpActBtnAdapt"))
+local var0_0 = class("MainActDelegationBtnMellowAdapt", import(".MainCommonSpActBtnAdapt"))
 
 function var0_0.GetContainer(arg0_1)
 	return arg0_1.root:Find("right")

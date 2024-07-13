@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "纳尔逊的旗语",
 	cd = 0,

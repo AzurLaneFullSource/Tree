@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 local var1_0 = System.Reflection.BindingFlags
 local var2_0 = bit.bor(var1_0.Instance, var1_0.Public, var1_0.NonPublic, var1_0.FlattenHierarchy, var1_0.Static)
 

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MedalCollectionTemplateMediator", import("view.base.ContextMediator"))
+local var0_0 = class("MedalCollectionTemplateMediator", import("view.base.ContextMediator"))
 
 var0_0.MEMORYBOOK_UNLOCK = "MEMORYBOOK_UNLOCK"
 

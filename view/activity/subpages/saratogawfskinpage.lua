@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SaratogaWFSkinPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("SaratogaWFSkinPage", import(".TemplatePage.PtTemplatePage"))
 
 function var0_0.OnFirstFlush(arg0_1)
 	onButton(arg0_1, arg0_1.displayBtn, function()

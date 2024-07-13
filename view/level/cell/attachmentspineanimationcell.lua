@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AttachmentSpineAnimationCell", import(".StaticCellView"))
+local var0_0 = class("AttachmentSpineAnimationCell", import(".StaticCellView"))
 
 var0_0.SDPosition = Vector2(0, -15)
 var0_0.SDScale = Vector3(0.4, 0.4, 0.4)

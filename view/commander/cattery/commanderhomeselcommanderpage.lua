@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommanderHomeSelCommanderPage", import(".CommanderHomeBaseSelPage"))
+local var0_0 = class("CommanderHomeSelCommanderPage", import(".CommanderHomeBaseSelPage"))
 
 function var0_0.getUIName(arg0_1)
 	return "CommanderHomeSelCommanderPage"

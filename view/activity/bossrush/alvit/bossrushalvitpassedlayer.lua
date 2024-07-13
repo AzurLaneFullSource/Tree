@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushAlvitPassedLayer", import("view.activity.BossRush.BossRushPassedLayer"))
+local var0_0 = class("BossRushAlvitPassedLayer", import("view.activity.BossRush.BossRushPassedLayer"))
 
 var0_0.GROW_TIME = 0.55
 

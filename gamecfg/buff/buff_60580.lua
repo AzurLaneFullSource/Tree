@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "花青素CyanidinBUFF",
 	time = 0,

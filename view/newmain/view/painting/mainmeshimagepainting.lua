@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainMeshImagePainting", import(".MainBasePainting"))
+local var0_0 = class("MainMeshImagePainting", import(".MainBasePainting"))
 
 var0_0.DEFAULT_HEIGHT = 0
 var0_0.TOUCH_HEIGHT = 20

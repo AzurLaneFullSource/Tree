@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "鲜血诗篇-P3",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "水雷自爆",
 	time = 0,

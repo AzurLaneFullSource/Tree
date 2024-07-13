@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 15,
 	name = "真红の不死鸟",
 	init_effect = "jinengchufared",

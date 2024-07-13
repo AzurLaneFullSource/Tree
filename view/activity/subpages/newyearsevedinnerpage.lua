@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewYearsEveDinnerPage", import(".TemplatePage.SkinTemplatePage"))
+local var0_0 = class("NewYearsEveDinnerPage", import(".TemplatePage.SkinTemplatePage"))
 local var1_0 = 3
 local var2_0 = 2
 local var3_0 = Vector2(760, -144)

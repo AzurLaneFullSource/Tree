@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FragmentShopPage", import(".ShamShopPage"))
+local var0_0 = class("FragmentShopPage", import(".ShamShopPage"))
 
 function var0_0.getUIName(arg0_1)
 	return "FragmentShop"

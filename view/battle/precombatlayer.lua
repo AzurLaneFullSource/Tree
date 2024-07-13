@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PreCombatLayer", import("..base.BaseUI"))
+local var0_0 = class("PreCombatLayer", import("..base.BaseUI"))
 local var1_0 = import("..ship.FormationUI")
 local var2_0 = {
 	[99] = true

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MikasaRepairePage", import("...base.BaseActivityPage"))
+local var0_0 = class("MikasaRepairePage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.layer = arg0_1:findTF("layer")

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "龙宫机关-水：我方占领 TAG",
 	time = 3,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleResultShipCard")
+local var0_0 = class("BattleResultShipCard")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1._expTF = arg1_1

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "额外供氧",
 	time = 0,

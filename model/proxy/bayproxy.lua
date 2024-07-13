@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BayProxy", import(".NetProxy"))
+local var0_0 = class("BayProxy", import(".NetProxy"))
 
 var0_0.SHIP_ADDED = "ship added"
 var0_0.SHIP_REMOVED = "ship removed"

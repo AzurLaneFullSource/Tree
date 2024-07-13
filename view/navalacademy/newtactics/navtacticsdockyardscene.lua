@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NavTacticsDockyardScene", import("view.ship.DockyardScene"))
+local var0_0 = class("NavTacticsDockyardScene", import("view.ship.DockyardScene"))
 local var1_0 = 7
 
 function var0_0.init(arg0_1)

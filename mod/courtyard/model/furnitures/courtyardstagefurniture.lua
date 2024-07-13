@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardStageFurniture", import(".CourtYardCanPutFurniture"))
+local var0_0 = class("CourtYardStageFurniture", import(".CourtYardCanPutFurniture"))
 
 function var0_0.AllowDepthType(arg0_1)
 	return {

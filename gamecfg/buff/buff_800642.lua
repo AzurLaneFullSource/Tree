@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "场地buff",
 	time = 0,

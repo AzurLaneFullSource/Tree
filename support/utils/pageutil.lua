@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PageUtil")
+local var0_0 = class("PageUtil")
 
 PageUtil = var0_0
 

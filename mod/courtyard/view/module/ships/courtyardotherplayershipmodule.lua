@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardOtherPlayerShipModule", import(".CourtYardShipModule"))
+local var0_0 = class("CourtYardOtherPlayerShipModule", import(".CourtYardShipModule"))
 
 function var0_0.Emit(arg0_1, arg1_1, ...)
 	if arg1_1 == "TouchShip" or arg1_1 == "ShipAnimtionFinish" then

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AprilFoolDiscovery2023Page", import(".AprilFoolDiscoveryRePage"))
+local var0_0 = class("AprilFoolDiscovery2023Page", import(".AprilFoolDiscoveryRePage"))
 local var1_0 = "superburin"
 
 function var0_0.OnInit(arg0_1)

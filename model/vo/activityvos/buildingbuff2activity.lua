@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BuildingBuff2Activity", import("model.vo.Activity"))
+local var0_0 = class("BuildingBuff2Activity", import("model.vo.Activity"))
 
 function var0_0.GetBuildingConfigTable(arg0_1, arg1_1)
 	return pg.activity_event_building[arg1_1]

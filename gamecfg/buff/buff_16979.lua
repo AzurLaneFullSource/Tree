@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "克莱蒙梭debuff",
 	time = 5,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "黑亚利桑那 黑潮之泪效果",
 	cd = 0,

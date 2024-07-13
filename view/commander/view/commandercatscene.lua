@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommanderCatScene", import("view.base.BaseUI"))
+local var0_0 = class("CommanderCatScene", import("view.base.BaseUI"))
 
 var0_0.MODE_VIEW = 1
 var0_0.MODE_SELECT = 2

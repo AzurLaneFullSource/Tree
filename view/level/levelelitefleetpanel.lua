@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LevelEliteFleetPanel", import("..base.BasePanel"))
+local var0_0 = class("LevelEliteFleetPanel", import("..base.BasePanel"))
 local var1_0 = {
 	vanguard = 1,
 	submarine = 3,

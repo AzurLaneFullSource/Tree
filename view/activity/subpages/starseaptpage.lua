@@ -1,4 +1,4 @@
-﻿local var0_0 = class("StarSeaPtPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("StarSeaPtPage", import(".TemplatePage.PtTemplatePage"))
 local var1_0 = "#CCB5FF"
 
 function var0_0.OnUpdateFlush(arg0_1)

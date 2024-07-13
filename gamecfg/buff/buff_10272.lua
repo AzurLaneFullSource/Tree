@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "最后的荣耀",
 	init_effect = "jinengchufared",

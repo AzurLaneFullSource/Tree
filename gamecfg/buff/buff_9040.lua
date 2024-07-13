@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "U556切换模式",
 	init_effect = "",

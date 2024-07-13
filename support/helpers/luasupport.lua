@@ -1,4 +1,4 @@
-﻿local var0_0 = print
+local var0_0 = print
 
 function originalPrint(...)
 	if IsUnityEditor then

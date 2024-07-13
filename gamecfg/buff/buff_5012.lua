@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "弱点侦测",
 	time = 15,

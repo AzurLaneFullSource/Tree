@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "heiyilishabai_linyu",
 	name = "2023伊丽莎白meta 领域",
 	time = 0,

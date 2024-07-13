@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSPortTaskDetail", import("...BaseEntity"))
+local var0_0 = class("WSPortTaskDetail", import("...BaseEntity"))
 
 var0_0.Fields = {
 	task = "table",

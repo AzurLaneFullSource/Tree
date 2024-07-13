@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EquipUpgradeLayer", import("..base.BaseUI"))
+local var0_0 = class("EquipUpgradeLayer", import("..base.BaseUI"))
 
 var0_0.CHAT_DURATION_TIME = 0.3
 

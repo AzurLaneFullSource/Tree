@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "触发效果用",
 	init_effect = "",

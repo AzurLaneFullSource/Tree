@@ -1,1 +1,1 @@
-﻿return (class("SeventhAnniversaryMainPage", import(".TemplatePage.PreviewTemplatePage")))
+return (class("SeventhAnniversaryMainPage", import(".TemplatePage.PreviewTemplatePage")))

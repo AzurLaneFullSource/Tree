@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023英系活动 审判机甲-战争 战争突刺！",
 	cd = 0,

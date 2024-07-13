@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackChargeMediator", import("..base.ContextMediator"))
+local var0_0 = class("BackChargeMediator", import("..base.ContextMediator"))
 
 var0_0.CHARGE = "BackChargeMediator:CHARGE"
 

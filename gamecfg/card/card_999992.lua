@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 999992,
 	name = "教程跨射",
 	effect_list = {

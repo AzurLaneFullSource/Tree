@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "防鱼雷隔舱T3",
 	time = 0,

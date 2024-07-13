@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "可被维修目标·监控自身血量",
 	time = 0,

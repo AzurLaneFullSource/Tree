@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022武藏活动 EX 武藏转阶段后无敌",
 	cd = 0,

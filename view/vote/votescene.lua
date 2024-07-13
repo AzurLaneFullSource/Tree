@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VoteScene", import("..base.BaseUI"))
+local var0_0 = class("VoteScene", import("..base.BaseUI"))
 
 var0_0.ShipIndex = {
 	typeIndex = ShipIndexConst.TypeAll,

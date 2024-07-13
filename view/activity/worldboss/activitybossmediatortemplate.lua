@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityBossMediatorTemplate", import("view.base.ContextMediator"))
+local var0_0 = class("ActivityBossMediatorTemplate", import("view.base.ContextMediator"))
 
 var0_0.ON_SUBMIT_TASK = "ActivityBossMediatorTemplate ON_SUBMIT_TASK"
 var0_0.ON_RANK = "ActivityBossMediatorTemplate ON_RANK"

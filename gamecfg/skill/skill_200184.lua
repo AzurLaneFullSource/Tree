@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022莱莎联动 战斗BUFF 破甲弹幕LV2",
 	cd = 0,

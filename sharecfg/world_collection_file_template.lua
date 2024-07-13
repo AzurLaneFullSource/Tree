@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.world_collection_file_template = {
 	[1101] = {
 		id = 1101,

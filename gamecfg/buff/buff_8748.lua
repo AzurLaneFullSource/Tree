@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "2020偶像二期EX 对雷暴AT立场",
 	init_effect = "",

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022莱莎联动SP5 昏睡之门 召唤小怪",
 	time = 3,

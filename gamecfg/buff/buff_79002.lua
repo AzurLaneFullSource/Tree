@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "混乱持续",
 	time = 0,

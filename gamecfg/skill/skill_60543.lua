@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "坚韧与团结之神...？（数值弱）",
 	cd = 0,

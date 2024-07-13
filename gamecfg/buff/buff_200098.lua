@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022异世界勇者活动 带魔王召唤自爆船",
 	time = 14,

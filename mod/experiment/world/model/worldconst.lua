@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldConst")
+local var0_0 = class("WorldConst")
 
 var0_0.Debug = false
 

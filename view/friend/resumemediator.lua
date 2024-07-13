@@ -1,4 +1,4 @@
-﻿local var0_0 = class("resumeMediator", import("..base.ContextMediator"))
+local var0_0 = class("resumeMediator", import("..base.ContextMediator"))
 
 function var0_0.register(arg0_1)
 	local var0_1 = arg0_1.contextData.player

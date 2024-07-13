@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Let's add your new ship to your <color=#ff7d36>formation</color>.",
 	"Commander, do you remember what to do?",
 	"Tap the empty slot in your team to <color=#ff7d36>add</color> another ship.",

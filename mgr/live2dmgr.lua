@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.Live2DMgr = singletonClass("Live2DMgr")
 
 local var0_0 = pg.Live2DMgr

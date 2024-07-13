@@ -1,1 +1,1 @@
-﻿return (class("BuildLoginPage", import(".TemplatePage.LightLoginTemplatePage")))
+return (class("BuildLoginPage", import(".TemplatePage.LightLoginTemplatePage")))

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "EX手动模式禁用部分我方装备技能效果",
 	time = 0,

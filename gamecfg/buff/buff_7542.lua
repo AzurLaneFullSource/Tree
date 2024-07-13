@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "传颂之物后排航空上升3%",
 	init_effect = "jinengchufared",

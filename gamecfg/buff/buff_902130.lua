@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "守卫压制——航空",
 	init_effect = "jinengchufablue",

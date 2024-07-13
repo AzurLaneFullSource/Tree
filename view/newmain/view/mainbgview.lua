@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainBGView", import("..base.MainBaseView"))
+local var0_0 = class("MainBGView", import("..base.MainBaseView"))
 local var1_0 = {
 	{
 		{

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "英系v2潜艇减伤护盾",
 	time = 0,

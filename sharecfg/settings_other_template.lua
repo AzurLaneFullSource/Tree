@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.settings_other_template = {
 	{
 		default = 0,

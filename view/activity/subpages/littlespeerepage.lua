@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LittleSpeeRePage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("LittleSpeeRePage", import(".TemplatePage.PtTemplatePage"))
 
 var0_0.FILL_ANI_TIME = 0.5
 var0_0.IMAGE_ANI_TIME = 0.5

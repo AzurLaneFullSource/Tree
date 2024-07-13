@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "爱碳光波-II",
 	time = 10,

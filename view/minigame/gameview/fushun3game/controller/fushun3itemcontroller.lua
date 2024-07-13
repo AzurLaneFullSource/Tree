@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Fushun3ItemController")
+local var0_0 = class("Fushun3ItemController")
 local var1_0 = 3
 local var2_0 = 100
 

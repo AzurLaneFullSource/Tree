@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023英系活动 圣堂统御装置 弹条",
 	cd = 0,

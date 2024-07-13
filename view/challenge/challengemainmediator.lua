@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChallengeMainMediator", import("..base.ContextMediator"))
+local var0_0 = class("ChallengeMainMediator", import("..base.ContextMediator"))
 
 var0_0.ON_COMMIT_FLEET = "ChallengeMainMediator:ON_COMMIT_FLEET"
 var0_0.ON_FLEET_SHIPINFO = "ChallengeMainMediator:ON_FLEET_SHIPINFO"

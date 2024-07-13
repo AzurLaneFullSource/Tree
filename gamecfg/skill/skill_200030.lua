@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022布吕歇尔SP活动 EX 女武神突刺",
 	cd = 5,

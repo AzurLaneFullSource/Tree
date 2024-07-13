@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "独立·强化弹幕TAG",
 	cd = 0,

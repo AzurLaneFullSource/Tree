@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "DOA联动 fever BUFF",
 	cd = 0,

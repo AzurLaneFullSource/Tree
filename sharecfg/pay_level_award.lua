@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.pay_level_award = setmetatable({
 	__name = "pay_level_award",
 	all = {

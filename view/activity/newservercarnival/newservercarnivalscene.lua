@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewServerCarnivalScene", import("...base.BaseUI"))
+local var0_0 = class("NewServerCarnivalScene", import("...base.BaseUI"))
 
 var0_0.TASK_PAGE = 1
 var0_0.SHOP_PAGE = 2

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	effect_list = {},
 	const_effect_list = {
 		{

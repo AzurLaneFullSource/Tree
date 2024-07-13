@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MaoxiV4TaskPage", import(".TemplatePage.SkinTemplatePage"))
+local var0_0 = class("MaoxiV4TaskPage", import(".TemplatePage.SkinTemplatePage"))
 
 function var0_0.OnUpdateFlush(arg0_1)
 	arg0_1.nday = arg0_1.activity.data3

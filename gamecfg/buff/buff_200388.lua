@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023北联SP 剧情战1 取消黑雾",
 	time = 5,

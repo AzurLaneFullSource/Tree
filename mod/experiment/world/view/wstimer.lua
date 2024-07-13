@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSTimer", import("...BaseEntity"))
+local var0_0 = class("WSTimer", import("...BaseEntity"))
 
 var0_0.Fields = {
 	tweens = "table",

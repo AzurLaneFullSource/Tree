@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AvatarFrameTask", import(".Task"))
+local var0_0 = class("AvatarFrameTask", import(".Task"))
 
 var0_0.type_task_level = "task_level"
 var0_0.type_task_ship = "task_ship"

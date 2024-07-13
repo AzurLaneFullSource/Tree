@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LinerLogBookMediator", import("view.base.ContextMediator"))
+local var0_0 = class("LinerLogBookMediator", import("view.base.ContextMediator"))
 
 var0_0.GET_SCHEDULE_AWARD = "LinerLogBookMediator.GET_SCHEDULE_AWARD"
 var0_0.GET_ROOM_AWARD = "LinerLogBookMediator.GET_ROOM_AWARD"

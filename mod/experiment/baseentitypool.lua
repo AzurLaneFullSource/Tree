@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseEntityPool", import(".BaseEntity"))
+local var0_0 = class("BaseEntityPool", import(".BaseEntity"))
 
 var0_0.Fields = {
 	pools = "table"

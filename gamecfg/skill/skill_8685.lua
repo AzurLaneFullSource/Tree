@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "法系V2加斯科涅技能弹条",
 	cd = 0,

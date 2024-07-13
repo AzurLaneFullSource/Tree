@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022意大利活动 戴克里先之视",
 	cd = 0,

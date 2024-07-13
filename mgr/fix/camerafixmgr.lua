@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.CameraFixMgr = singletonClass("CameraFixMgr", import("view.base.BaseEventLogic"))
 
 local var0_0 = pg.CameraFixMgr

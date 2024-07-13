@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "毛系V3 EX空袭反制 监听我方舰船是否发动空袭",
 	cd = 0,

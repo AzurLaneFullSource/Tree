@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardInteraction")
+local var0_0 = class("CourtYardInteraction")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.host = arg1_1

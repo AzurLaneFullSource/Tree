@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PileGameController")
+local var0_0 = class("PileGameController")
 
 var0_0.STATE_IDLE = 0
 var0_0.STATE_PREPARE = 1

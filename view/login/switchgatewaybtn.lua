@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SwitchGatewayBtn")
+local var0_0 = class("SwitchGatewayBtn")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1._tr = arg1_1

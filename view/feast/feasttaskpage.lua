@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FeastTaskPage", import("view.base.BaseSubView"))
+local var0_0 = class("FeastTaskPage", import("view.base.BaseSubView"))
 
 var0_0.PAGE_PT = 1
 var0_0.PAGE_TASK = 2

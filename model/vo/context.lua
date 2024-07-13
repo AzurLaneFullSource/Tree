@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Context")
+local var0_0 = class("Context")
 
 var0_0.TRANS_TYPE = {
 	CROSS = 1,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022武藏活动 EX 武藏天雷造成百分比伤害",
 	cd = 0,

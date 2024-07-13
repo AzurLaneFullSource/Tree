@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023古立特联动复刻 TSS2 宝多六花 古立特修正光线回血",
 	time = 2.1,

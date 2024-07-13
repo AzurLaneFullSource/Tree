@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ColorGroup", import(".BaseVO"))
+local var0_0 = class("ColorGroup", import(".BaseVO"))
 
 var0_0.StateLock = 0
 var0_0.StateColoring = 1

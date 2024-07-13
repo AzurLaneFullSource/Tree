@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024幼儿园活动 轻巡石膏喵 召唤雕像2",
 	time = 5,

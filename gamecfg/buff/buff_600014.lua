@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 25,
 	name = "巨蟹座 不破之盾",
 	init_effect = "",

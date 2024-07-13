@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 3,
 	name = "2023克莱蒙梭活动 审判庭支援 普通",
 	init_effect = "",

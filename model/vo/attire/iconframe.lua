@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IconFrame", import(".AttireFrame"))
+local var0_0 = class("IconFrame", import(".AttireFrame"))
 
 function var0_0.GetIcon(arg0_1)
 	return "IconFrame/" .. arg0_1

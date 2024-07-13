@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "盾超时消除",
 	cd = 0,

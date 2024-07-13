@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2019年2月世界BOSS单独buff——全力以赴",
 	cd = 0,

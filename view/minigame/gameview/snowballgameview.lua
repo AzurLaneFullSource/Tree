@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SnowballGameView", import("..BaseMiniGameView"))
+local var0_0 = class("SnowballGameView", import("..BaseMiniGameView"))
 local var1_0 = {
 	-1920,
 	-1080,

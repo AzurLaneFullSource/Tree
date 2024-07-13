@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "塔林反击弹减速",
 	time = 5,

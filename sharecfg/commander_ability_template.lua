@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.commander_ability_template = {
 	[101] = {
 		cost = 0,

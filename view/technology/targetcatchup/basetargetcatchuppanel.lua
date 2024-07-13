@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseTargetCatchupPanel", import("...base.BaseUI"))
+local var0_0 = class("BaseTargetCatchupPanel", import("...base.BaseUI"))
 
 var0_0.SELECT_CHAR_LIGHT_FADE_TIME = 0.3
 

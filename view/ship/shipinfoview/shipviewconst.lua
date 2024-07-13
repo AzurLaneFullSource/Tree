@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	PAGE = {
 		EQUIPMENT = 2,
 		DETAIL = 1,

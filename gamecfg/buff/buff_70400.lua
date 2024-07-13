@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "航空提高",
 	init_effect = "",

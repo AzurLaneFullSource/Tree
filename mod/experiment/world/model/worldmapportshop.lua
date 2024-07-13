@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMapPortShop", import("...BaseEntity"))
+local var0_0 = class("WorldMapPortShop", import("...BaseEntity"))
 
 var0_0.Fields = {
 	items = "table",

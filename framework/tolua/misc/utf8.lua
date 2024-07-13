@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	next_raw = function(arg0_1, arg1_1)
 		if not arg1_1 then
 			if #arg0_1 == 0 then

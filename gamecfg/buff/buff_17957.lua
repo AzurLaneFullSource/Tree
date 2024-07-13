@@ -1,4 +1,4 @@
-﻿return {
+return {
 	effect_list = {
 		{
 			type = "BattleBuffRecordShield",

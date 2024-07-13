@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TaskWeekPage", import(".TaskCommonPage"))
+local var0_0 = class("TaskWeekPage", import(".TaskCommonPage"))
 
 var0_0.WEEK_TASK_TYPE_COMMON = 1
 var0_0.WEEK_TASK_TYPE_PT = 2

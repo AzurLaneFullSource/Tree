@@ -1,4 +1,4 @@
-﻿return {
+return {
 	SELECT_TIME = 2.5,
 	NEXT_ROUND_COUNTDOWN = 1.5,
 	SOUND_EFFECT_PP = "ui-mini_pigu3",

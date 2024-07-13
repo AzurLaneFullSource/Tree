@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LinerPassTimePage", import("view.base.BaseSubView"))
+local var0_0 = class("LinerPassTimePage", import("view.base.BaseSubView"))
 
 var0_0.ANIM_TIME = 0.75
 var0_0.DELAY_TIME = 0.5

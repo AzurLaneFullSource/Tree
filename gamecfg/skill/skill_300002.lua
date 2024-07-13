@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "卡牌 敌方维修装置 维修能力",
 	cd = 0,

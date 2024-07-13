@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewSkinShopMediator", import("view.base.ContextMediator"))
+local var0_0 = class("NewSkinShopMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_ATLAS = "NewSkinShopMediator:ON_ATLAS"
 var0_0.ON_INDEX = "NewSkinShopMediator:ON_INDEX"

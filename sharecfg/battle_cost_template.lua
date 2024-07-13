@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.battle_cost_template = {
 	[0] = {
 		end_sink_cost = 0,

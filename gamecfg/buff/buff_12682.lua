@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "jinengchufablue",
 	name = "减伤光环",
 	time = 0,

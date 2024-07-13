@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SkinGuide1Page", import("...base.BaseActivityPage"))
+local var0_0 = class("SkinGuide1Page", import("...base.BaseActivityPage"))
 local var1_0 = "ui/activityuipage/skinguide1page_atlas"
 local var2_0 = {
 	"xiafei",

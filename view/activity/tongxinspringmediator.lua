@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TongXinSpringMediator", import("..base.ContextMediator"))
+local var0_0 = class("TongXinSpringMediator", import("..base.ContextMediator"))
 
 var0_0.UNLOCK_SLOT = "TongXinSpringMediator:UNLOCK_SLOT"
 var0_0.OPEN_CHUANWU = "TongXinSpringMediator:Open chuanwu"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FuShunPowerSpeedScript", import("..RectBaseScript"))
+local var0_0 = class("FuShunPowerSpeedScript", import("..RectBaseScript"))
 local var1_0 = {
 	400,
 	450

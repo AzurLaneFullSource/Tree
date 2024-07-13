@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpWeaponInfoMediator", import("view.base.ContextMediator"))
+local var0_0 = class("SpWeaponInfoMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_DESTROY = "SpWeaponInfoMediator:ON_DESTROY"
 var0_0.ON_EQUIP = "SpWeaponInfoMediator:ON_EQUIP"

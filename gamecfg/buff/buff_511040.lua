@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 5,
 	name = "汲取射线",
 	init_effect = "",

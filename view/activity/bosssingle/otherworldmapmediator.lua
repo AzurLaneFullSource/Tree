@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OtherworldMapMediator", import("view.activity.BossSingle.BossSingleMediatorTemplate"))
+local var0_0 = class("OtherworldMapMediator", import("view.activity.BossSingle.BossSingleMediatorTemplate"))
 
 var0_0.ON_EVENT_TRIGGER = "OtherworldMapMediator.ON_EVENT_TRIGGER"
 

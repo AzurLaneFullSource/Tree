@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "吸血鬼之吻",
 	time = 10,

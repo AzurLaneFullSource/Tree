@@ -1,4 +1,4 @@
-﻿local var0_0 = import(".LevelGrid")
+local var0_0 = import(".LevelGrid")
 local var1_0 = Vector2(-60, 84.8)
 local var2_0 = Vector2(-50, 20)
 

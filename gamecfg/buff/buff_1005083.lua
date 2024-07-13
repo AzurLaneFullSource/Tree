@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "骑士之剑 +",
 	init_effect = "",

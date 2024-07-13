@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.secretary_special_ship = {
 	[1000] = {
 		chuxi = "Fetching data. In the Dragon Empery, the day of the year's final night is known as \"Chúxī\" – meaning \"eve of divide\" – signifying the changing of years. It is a big day when families all get together. Happy Chúxī, Commander. Shall we hang up some fai chun decorations?",

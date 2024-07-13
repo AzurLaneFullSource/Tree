@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 5,
 	name = "爆炸特效",
 	init_effect = "",

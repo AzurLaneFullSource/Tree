@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Live2dConst")
+local var0_0 = class("Live2dConst")
 
 var0_0.UnLoadL2dPating = nil
 

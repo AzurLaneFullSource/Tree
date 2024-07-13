@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.equip_data_by_quality = {
 	{
 		gear_score_addition = 5,

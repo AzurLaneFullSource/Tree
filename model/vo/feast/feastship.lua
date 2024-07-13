@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FeastShip", import("model.vo.Ship"))
+local var0_0 = class("FeastShip", import("model.vo.Ship"))
 
 var0_0.BUBBLE_TYPE_EMPTY = 0
 var0_0.BUBBLE_TYPE_GREET = 1

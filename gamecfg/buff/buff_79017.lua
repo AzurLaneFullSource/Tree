@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "司特莲库斯引力场_本体buff加强",
 	time = 0,

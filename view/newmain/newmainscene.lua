@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewMainScene", import("..base.BaseUI"))
+local var0_0 = class("NewMainScene", import("..base.BaseUI"))
 
 var0_0.THEME_CLASSIC = 1
 var0_0.THEME_MELLOW = 2

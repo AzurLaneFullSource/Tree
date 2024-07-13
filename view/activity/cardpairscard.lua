@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CardPairsCard")
+local var0_0 = class("CardPairsCard")
 
 var0_0.CARD_STATE_BACK = 0
 var0_0.CARD_STATE_FRONT = 1

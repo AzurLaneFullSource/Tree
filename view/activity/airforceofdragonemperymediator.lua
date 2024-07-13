@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AirForceOfDragonEmperyMediator", import("view.base.ContextMediator"))
+local var0_0 = class("AirForceOfDragonEmperyMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_BATTLE = "AirForceOfDragonEmperyMediator ON_BATTLE"
 var0_0.ON_ACTIVITY_OPREATION = "AirForceOfDragonEmperyMediator ON_ACTIVITY_OPREATION"

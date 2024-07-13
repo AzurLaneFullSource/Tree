@@ -1,4 +1,4 @@
-﻿require("Support/Helpers/Include")
+require("Support/Helpers/Include")
 require("Support/Define/Include")
 require("Support/Utils/Include")
 require("Support/Object/Include")

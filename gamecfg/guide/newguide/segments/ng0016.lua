@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Tap here for details on the Harbor Defense mechanic!"
 }
 

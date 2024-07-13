@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildMember", import("..Friend"))
+local var0_0 = class("GuildMember", import("..Friend"))
 local var1_0 = {
 	i18n("guild_word_commder"),
 	i18n("guild_word_deputy_commder"),

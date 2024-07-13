@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RectCollisionHorizontal")
+local var0_0 = class("RectCollisionHorizontal")
 
 var0_0.directUp = Vector3(0, 1, 0)
 var0_0.directDown = Vector3(0, -1, 0)

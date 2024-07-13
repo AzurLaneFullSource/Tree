@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EquipmentSkinLayer", import("..base.BaseUI"))
+local var0_0 = class("EquipmentSkinLayer", import("..base.BaseUI"))
 
 var0_0.DISPLAY = 1
 var0_0.REPLACE = 2

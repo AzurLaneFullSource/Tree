@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "白龙剧情战 触发龙宫机关-回复技能 开火",
 	cd = 0,

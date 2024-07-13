@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022围剿小斯佩 BOSS跨射",
 	time = 3,

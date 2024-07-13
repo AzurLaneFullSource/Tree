@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMediaCollectionRecordDetailLayer", import(".WorldMediaCollectionSubLayer"))
+local var0_0 = class("WorldMediaCollectionRecordDetailLayer", import(".WorldMediaCollectionSubLayer"))
 
 var0_0.TypeStory = 1
 var0_0.TypeBattle = 2

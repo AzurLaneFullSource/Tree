@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewBackYardShipInfoMediator", import("...base.ContextMediator"))
+local var0_0 = class("NewBackYardShipInfoMediator", import("...base.ContextMediator"))
 
 var0_0.EXTEND = "NewBackYardShipInfoMediator:EXTEND"
 var0_0.OPEN_CHUANWU = "NewBackYardShipInfoMediator:OPEN_CHUANWU"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateItem", import("model.vo.BaseVO"))
+local var0_0 = class("EducateItem", import("model.vo.BaseVO"))
 
 var0_0.TYPE_BOOK = 1
 var0_0.TYPE_MUSICAL = 2

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023克莱蒙梭活动 教皇下属蛋船 死亡时释放孢子LV1",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "固定6点",
 	cd = 0,

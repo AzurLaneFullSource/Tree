@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PuzzlaView")
+local var0_0 = class("PuzzlaView")
 local var1_0 = 0.3
 local var2_0 = 0
 local var3_0 = 5

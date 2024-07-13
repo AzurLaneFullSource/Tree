@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 local var1_0 = {
 	TargetObject = function()
 		local var0_1 = class("TargetObject")

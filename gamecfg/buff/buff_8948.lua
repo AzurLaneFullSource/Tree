@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "xuanyun",
 	name = "公海舰队活动 塔干扰-旋涡",
 	time = 0,

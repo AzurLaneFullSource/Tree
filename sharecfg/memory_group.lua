@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.memory_group = setmetatable({
 	__name = "memory_group",
 	all = {

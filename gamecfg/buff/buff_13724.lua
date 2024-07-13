@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "检查自己是不是旗舰",
 	init_effect = "",

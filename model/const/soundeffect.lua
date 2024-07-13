@@ -1,4 +1,4 @@
-﻿SOUND_BACK = "event:/ui/cancel"
+SOUND_BACK = "event:/ui/cancel"
 SFX_MAIN = "event:/ui/main"
 SFX_PANEL = "event:/ui/panel"
 SFX_CONFIRM = "event:/ui/confirm"

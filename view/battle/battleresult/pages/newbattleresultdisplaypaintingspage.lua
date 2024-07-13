@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewBattleResultDisplayPaintingsPage", import("view.base.BaseSubView"))
+local var0_0 = class("NewBattleResultDisplayPaintingsPage", import("view.base.BaseSubView"))
 local var1_0 = 6
 local var2_0 = 295
 

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ValentineQteGameMsgBox")
+local var0_0 = class("ValentineQteGameMsgBox")
 
 var0_0.EXIT_TXT = 1
 var0_0.PAUSE_TXT = 2

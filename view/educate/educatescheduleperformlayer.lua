@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateSchedulePerformLayer", import(".base.EducateBaseUI"))
+local var0_0 = class("EducateSchedulePerformLayer", import(".base.EducateBaseUI"))
 local var1_0 = {
 	"FFFFFF",
 	"79D3FE",

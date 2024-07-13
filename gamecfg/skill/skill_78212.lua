@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "大世界第五章剧情战 黑飞龙空中支援",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipRarity")
+local var0_0 = class("ShipRarity")
 
 var0_0.Gray = 2
 var0_0.Blue = 3

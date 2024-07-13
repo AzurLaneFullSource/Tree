@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MonopolyPtPage", import("...base.BaseActivityPage"))
+local var0_0 = class("MonopolyPtPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
 	onToggle(arg0_1, findTF(arg0_1._tf, "AD/toggle/1"), function()

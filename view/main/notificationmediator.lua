@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NotificationMediator", import("..base.ContextMediator"))
+local var0_0 = class("NotificationMediator", import("..base.ContextMediator"))
 
 var0_0.ON_SEND_PUBLIC = "NotificationMediator:ON_SEND_PUBLIC"
 var0_0.CHANGE_ROOM = "NotificationMediator:CHANGE_ROOM"

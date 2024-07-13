@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "碰撞减速50%",
 	time = 0,

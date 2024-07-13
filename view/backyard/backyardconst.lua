@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardConst")
+local var0_0 = class("BackYardConst")
 
 var0_0.MAX_FLOOR_CNT = 2
 var0_0.SAME_ID_MODIFY_ID = 79000

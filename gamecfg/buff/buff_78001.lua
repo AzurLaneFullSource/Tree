@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "章节火力支援",
 	time = 0,

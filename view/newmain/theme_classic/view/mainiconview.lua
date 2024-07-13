@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainIconView", import("...base.MainBaseView"))
+local var0_0 = class("MainIconView", import("...base.MainBaseView"))
 local var1_0 = 1
 local var2_0 = 2
 

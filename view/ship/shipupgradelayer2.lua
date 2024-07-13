@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipUpgradeLayer2", import("..base.BaseUI"))
+local var0_0 = class("ShipUpgradeLayer2", import("..base.BaseUI"))
 local var1_0 = 3
 
 function var0_0.getUIName(arg0_1)

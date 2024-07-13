@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityLevelConst")
+local var0_0 = class("ActivityLevelConst")
 
 function var0_0.getExtraChapterSocre(arg0_1, arg1_1, arg2_1, arg3_1)
 	if not arg3_1 or arg3_1:isEnd() then

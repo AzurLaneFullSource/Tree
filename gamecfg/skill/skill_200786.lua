@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024罗德尼meta 投影召唤",
 	cd = 0,

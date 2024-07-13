@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DialoguePerformPlayer", import(".BasePerformPlayer"))
+local var0_0 = class("DialoguePerformPlayer", import(".BasePerformPlayer"))
 
 var0_0.TYPEWRITE_SPEED = 0.05
 

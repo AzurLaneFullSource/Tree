@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtyardSpineFurnitureState")
+local var0_0 = class("CourtyardSpineFurnitureState")
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1, arg5_1)
 	arg0_1._tf = arg1_1.transform

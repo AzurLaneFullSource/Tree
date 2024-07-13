@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SenrankaguraMedalScene", import("..base.BaseUI"))
+local var0_0 = class("SenrankaguraMedalScene", import("..base.BaseUI"))
 local var1_0
 local var2_0
 local var3_0 = 4

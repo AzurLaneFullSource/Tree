@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MetaCharacterSynMediator", import("...base.ContextMediator"))
+local var0_0 = class("MetaCharacterSynMediator", import("...base.ContextMediator"))
 
 var0_0.OPEN_PT_GET_WAY_LAYER = "MetaCharacterSynMediator:OPEN_PT_GET_WAY_LAYER"
 

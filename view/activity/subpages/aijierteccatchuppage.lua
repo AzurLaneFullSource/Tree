@@ -1,1 +1,1 @@
-﻿return (class("AijierTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage")))
+return (class("AijierTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage")))

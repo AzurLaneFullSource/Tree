@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑亚利桑那 触发珍珠之泪后试图取消毒奶效果",
 	time = 1,

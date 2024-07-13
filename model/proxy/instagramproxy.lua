@@ -1,4 +1,4 @@
-﻿local var0_0 = class("InstagramProxy", import(".NetProxy"))
+local var0_0 = class("InstagramProxy", import(".NetProxy"))
 local var1_0 = pg.activity_ins_language
 local var2_0 = pg.activity_ins_npc_template
 

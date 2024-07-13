@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FunRaceShipsPage", import("..FinalsRece.VoteFinalsRaceShipsPage"))
+local var0_0 = class("FunRaceShipsPage", import("..FinalsRece.VoteFinalsRaceShipsPage"))
 
 function var0_0.getUIName(arg0_1)
 	local var0_1 = arg0_1.contextData.voteGroup

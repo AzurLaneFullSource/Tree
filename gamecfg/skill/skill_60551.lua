@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "执行50暴露值的空武器",
 	cd = 0,

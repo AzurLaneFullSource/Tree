@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RectKeyTriggerController")
+local var0_0 = class("RectKeyTriggerController")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1._keyInfo = arg1_1

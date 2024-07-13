@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateScheduleMediator", import(".base.EducateContextMediator"))
+local var0_0 = class("EducateScheduleMediator", import(".base.EducateContextMediator"))
 
 var0_0.GET_PLANS = "GET_PLANS"
 var0_0.OPEN_FILTER_LAYER = "OPEN_FILTER_LAYER"

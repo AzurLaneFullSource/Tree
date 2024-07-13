@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldBossFormationLayer", import("..base.BaseUI"))
+local var0_0 = class("WorldBossFormationLayer", import("..base.BaseUI"))
 local var1_0 = import("..ship.FormationUI")
 
 var0_0.FORM_EDIT = "EDIT"

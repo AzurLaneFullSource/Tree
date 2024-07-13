@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "通过装备修改我方缩圈速度",
 	time = 0,

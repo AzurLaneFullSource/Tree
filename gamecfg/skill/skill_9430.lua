@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "古立特联动 梦芽支援弹幕LV3",
 	cd = 0,

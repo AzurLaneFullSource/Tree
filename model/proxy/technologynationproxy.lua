@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TechnologyNationProxy", import(".NetProxy"))
+local var0_0 = class("TechnologyNationProxy", import(".NetProxy"))
 
 function var0_0.register(arg0_1)
 	arg0_1.typeAttrTable = {}

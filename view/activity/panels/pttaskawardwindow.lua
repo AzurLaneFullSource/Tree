@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PtTaskAwardWindow", import(".TaskAwardWindow"))
+local var0_0 = class("PtTaskAwardWindow", import(".TaskAwardWindow"))
 
 local function var1_0(arg0_1)
 	local var0_1 = _.flatten(arg0_1.tasklist)

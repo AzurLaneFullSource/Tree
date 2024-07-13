@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.barrage_template = setmetatable({
 	__name = "barrage_template",
 	all = {

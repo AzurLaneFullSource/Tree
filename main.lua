@@ -1,4 +1,4 @@
-﻿ys = {}
+ys = {}
 pg = {}
 cs = {}
 pg._weak = setmetatable({}, {

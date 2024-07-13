@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.child_resource = {
 	{
 		icon = "10003",

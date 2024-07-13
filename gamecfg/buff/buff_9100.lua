@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 8,
 	name = "强袭号令-LV9",
 	init_effect = "jinengchufared",

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.world_target_data = {
 	[1101] = {
 		id = 1101,

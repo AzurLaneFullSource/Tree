@@ -1,4 +1,4 @@
-﻿return {
+return {
 	{
 		content = "不恰当的游戏昵称"
 	},

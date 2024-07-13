@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_task_permanent = setmetatable({
 	__name = "activity_task_permanent",
 	all = {

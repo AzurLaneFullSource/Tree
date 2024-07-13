@@ -1,4 +1,4 @@
-﻿local var0_0 = class("I56SkinPage", import(".TemplatePage.SkinTemplatePage"))
+local var0_0 = class("I56SkinPage", import(".TemplatePage.SkinTemplatePage"))
 
 function var0_0.OnFirstFlush(arg0_1)
 	arg0_1.uilist:make(function(arg0_2, arg1_2, arg2_2)

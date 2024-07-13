@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IslandMainPage", import(".TemplatePage.PreviewTemplatePage"))
+local var0_0 = class("IslandMainPage", import(".TemplatePage.PreviewTemplatePage"))
 
 function var0_0.initBtn(arg0_1)
 	var0_0.super.initBtn(arg0_1)

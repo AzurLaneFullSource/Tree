@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SettingsAccountSpecialPanel", import(".SettingsBasePanel"))
+local var0_0 = class("SettingsAccountSpecialPanel", import(".SettingsBasePanel"))
 
 function var0_0.GetUIName(arg0_1)
 	return "SettingsAccountSpecial"

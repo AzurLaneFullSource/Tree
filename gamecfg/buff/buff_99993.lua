@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "模拟战敌方后排激活buff",
 	time = 0,

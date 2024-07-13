@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SenrankaguraMedalMediator", import("..base.ContextMediator"))
+local var0_0 = class("SenrankaguraMedalMediator", import("..base.ContextMediator"))
 
 var0_0.SUBMIT_TASK_ALL = "activity submit task all"
 var0_0.SUBMIT_TASK = "activity submit task "

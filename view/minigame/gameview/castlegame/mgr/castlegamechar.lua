@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CastleGameChar")
+local var0_0 = class("CastleGameChar")
 local var1_0 = Vector3(0, 0)
 local var2_0 = "qiye_6_SkeletonData"
 local var3_0 = 3

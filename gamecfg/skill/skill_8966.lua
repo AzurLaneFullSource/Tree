@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "公海舰队活动剧情战 先手必胜弹条",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseMiniGameMediator", import("..base.ContextMediator"))
+local var0_0 = class("BaseMiniGameMediator", import("..base.ContextMediator"))
 
 var0_0.MINI_GAME_SUCCESS = "BaseMiniGameMediator:MINI_GAME_SUCCESS"
 var0_0.MINI_GAME_FAILURE = "BaseMiniGameMediator:MINI_GAME_FAILURE"

@@ -1,4 +1,4 @@
-﻿local var0_0 = "zh-cn"
+local var0_0 = "zh-cn"
 local var1_0 = require("Framework/lang/" .. var0_0)
 
 function l10n(arg0_1)

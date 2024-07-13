@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "序章欧根旋转盾2",
 	time = 20,

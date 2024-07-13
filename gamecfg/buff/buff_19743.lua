@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "副炮射程",
 	time = 0,

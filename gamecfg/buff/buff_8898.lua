@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑苍龙 剑气领域减速效果",
 	time = 0,

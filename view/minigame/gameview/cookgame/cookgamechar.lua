@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CookGameChar")
+local var0_0 = class("CookGameChar")
 local var1_0 = 20
 local var2_0 = 3
 

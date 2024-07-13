@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainBottomPanel", import("...base.MainBasePanel"))
+local var0_0 = class("MainBottomPanel", import("...base.MainBasePanel"))
 
 function var0_0.GetBtns(arg0_1)
 	return {

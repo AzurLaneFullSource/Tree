@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024异世界冒险 剧情战 霞飞祝福之光",
 	time = 0,

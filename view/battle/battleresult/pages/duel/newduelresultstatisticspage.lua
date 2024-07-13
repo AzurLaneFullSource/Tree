@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewDuelResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
+local var0_0 = class("NewDuelResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
 
 function var0_0.UpdatePlayer(arg0_1)
 	local var0_1 = getProxy(PlayerProxy):getRawData()

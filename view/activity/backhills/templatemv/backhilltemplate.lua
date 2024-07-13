@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackHillTemplate", import("view.base.BaseUI"))
+local var0_0 = class("BackHillTemplate", import("view.base.BaseUI"))
 
 function var0_0.getUIName(arg0_1)
 	return arg0_1.UIName

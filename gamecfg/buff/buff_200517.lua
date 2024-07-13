@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "2023古立特联动复刻 TSS5 第二代 飞船被击破效果",
 	init_effect = "",

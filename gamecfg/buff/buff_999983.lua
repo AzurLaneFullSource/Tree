@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "教程 自动速射",
 	time = 0,

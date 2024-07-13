@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseShop", import("..BaseVO"))
+local var0_0 = class("BaseShop", import("..BaseVO"))
 
 function var0_0.IsSameKind(arg0_1, arg1_1)
 	assert(false)

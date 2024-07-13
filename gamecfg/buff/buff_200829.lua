@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024异世界冒险 离场与返回阶段自身加速",
 	time = 0,

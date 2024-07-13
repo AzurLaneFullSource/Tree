@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DexiV4FrameReRePage", import(".TemplatePage.NewFrameTemplatePage"))
+local var0_0 = class("DexiV4FrameReRePage", import(".TemplatePage.NewFrameTemplatePage"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.super.OnInit(arg0_1)

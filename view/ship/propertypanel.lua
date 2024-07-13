@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PropertyPanel")
+local var0_0 = class("PropertyPanel")
 local var1_0 = 24.5
 local var2_0 = {
 	"cannon",

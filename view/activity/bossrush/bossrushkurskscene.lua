@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushKurskScene", import("view.base.BaseUI"))
+local var0_0 = class("BossRushKurskScene", import("view.base.BaseUI"))
 local var1_0 = require("Mgr/Pool/PoolPlural")
 
 var0_0.DISPLAY = {

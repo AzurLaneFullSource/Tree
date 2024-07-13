@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "开局触发-机动提升",
 	cd = 0,

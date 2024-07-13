@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "弹药匮乏TAG",
 	cd = 0,

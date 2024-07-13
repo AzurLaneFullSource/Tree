@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "穿透",
 	init_effect = "",

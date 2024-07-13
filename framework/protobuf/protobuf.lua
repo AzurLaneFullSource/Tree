@@ -1,4 +1,4 @@
-﻿local var0_0 = setmetatable
+local var0_0 = setmetatable
 local var1_0 = rawset
 local var2_0 = rawget
 local var3_0 = error

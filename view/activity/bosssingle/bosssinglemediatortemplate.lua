@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossSingleMediatorTemplate", import("view.base.ContextMediator"))
+local var0_0 = class("BossSingleMediatorTemplate", import("view.base.ContextMediator"))
 
 var0_0.GO_SCENE = "BossSingleMediatorTemplate.GO_SCENE"
 var0_0.GO_SUBLAYER = "BossSingleMediatorTemplate.GO_SUBLAYER"

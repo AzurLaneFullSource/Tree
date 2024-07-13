@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IndexMediator", import("..base.ContextMediator"))
+local var0_0 = class("IndexMediator", import("..base.ContextMediator"))
 
 function var0_0.register(arg0_1)
 	assert(arg0_1.contextData.display)

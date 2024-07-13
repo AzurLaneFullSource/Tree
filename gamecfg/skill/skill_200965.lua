@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024幼儿园活动 剧情战召唤潜艇",
 	cd = 0,

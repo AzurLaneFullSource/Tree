@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "2022武藏活动 海雾弥散 敌我双方航母以外的单位的命中率下降",
 	init_effect = "",

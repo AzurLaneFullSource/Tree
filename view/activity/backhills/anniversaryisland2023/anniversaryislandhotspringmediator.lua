@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AnniversaryIslandHotSpringMediator", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringMediator"))
+local var0_0 = class("AnniversaryIslandHotSpringMediator", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringMediator"))
 
 function var0_0.register(arg0_1)
 	arg0_1:bind(var0_0.OPEN_CHUANWU, function(arg0_2, arg1_2, arg2_2)

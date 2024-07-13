@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.pay_data_display = setmetatable({
 	__name = "pay_data_display",
 	all = {

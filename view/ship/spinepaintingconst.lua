@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpinePaintingConst")
+local var0_0 = class("SpinePaintingConst")
 
 var0_0.drag_type_normal = 1
 var0_0.drag_type_rgb = 2

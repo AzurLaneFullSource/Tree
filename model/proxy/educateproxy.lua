@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateProxy", import(".NetProxy"))
+local var0_0 = class("EducateProxy", import(".NetProxy"))
 
 var0_0.RESOURCE_UPDATED = "EducateProxy.RESOURCE_UPDATED"
 var0_0.ATTR_UPDATED = "EducateProxy.ATTR_UPDATED"

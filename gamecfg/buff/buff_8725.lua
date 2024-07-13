@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "潜艇水面减伤（上浮/下沉间隔15秒）",
 	time = 15,

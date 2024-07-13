@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "信浓活动T6测试者二阶段减伤",
 	time = 0,

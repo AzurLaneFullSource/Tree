@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EffectImpack", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
+local var0_0 = class("EffectImpack", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
 
 function var0_0.InitUI(arg0_1, arg1_1)
 	arg0_1._tf:Find("Lockon"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()

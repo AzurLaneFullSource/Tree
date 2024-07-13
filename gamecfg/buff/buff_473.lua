@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "减速前摇",
 	time = 1,

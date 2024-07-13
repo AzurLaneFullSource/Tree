@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AttireAchievementPanel", import("...base.BaseSubView"))
+local var0_0 = class("AttireAchievementPanel", import("...base.BaseSubView"))
 
 local function var1_0(arg0_1)
 	local var0_1 = {}

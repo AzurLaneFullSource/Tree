@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SettingsMsgBosPage", import("..base.BaseSubView"))
+local var0_0 = class("SettingsMsgBosPage", import("..base.BaseSubView"))
 
 var0_0.ALIGN_CENTER = 0
 var0_0.ALIGN_LEFT = 1

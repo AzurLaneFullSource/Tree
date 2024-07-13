@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpringFestival2023Mediator", import("..TemplateMV.BackHillMediatorTemplate"))
+local var0_0 = class("SpringFestival2023Mediator", import("..TemplateMV.BackHillMediatorTemplate"))
 
 var0_0.MINI_GAME_OPERATOR = "MINI_GAME_OPERATOR"
 var0_0.GO_SCENE = "GO_SCENE"

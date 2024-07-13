@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityBossSPEnemy", import("model.vo.BaseVO"))
+local var0_0 = class("ActivityBossSPEnemy", import("model.vo.BaseVO"))
 
 function var0_0.bindConfigTable(arg0_1)
 	return pg.extraenemy_challenge_template

@@ -1,4 +1,4 @@
-﻿ys = ys or {}
+ys = ys or {}
 pg = pg or {}
 
 local var0_0 = ys

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardVariedInteraction", import(".CourtYardInteraction"))
+local var0_0 = class("CourtYardVariedInteraction", import(".CourtYardInteraction"))
 
 function var0_0.InitData(arg0_1)
 	var0_0.super.InitData(arg0_1)

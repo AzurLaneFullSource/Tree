@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "DOA联动复刻 EX2 进入狂暴",
 	cd = 0,

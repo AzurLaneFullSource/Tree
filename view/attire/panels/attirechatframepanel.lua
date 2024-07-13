@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AttireChatFramePanel", import(".AttireFramePanel"))
+local var0_0 = class("AttireChatFramePanel", import(".AttireFramePanel"))
 local var1_0 = setmetatable
 
 local function var2_0(arg0_1)

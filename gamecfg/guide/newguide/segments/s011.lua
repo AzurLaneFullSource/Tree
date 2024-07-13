@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Why not open up your <color=#ff7d36>Mission Log</color>?",
 	"Collect your <color=#ff7d36>mission rewards.</color>"
 }

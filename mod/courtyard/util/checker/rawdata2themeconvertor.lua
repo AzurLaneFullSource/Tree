@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RawData2ThemeConvertor")
+local var0_0 = class("RawData2ThemeConvertor")
 
 local function var1_0(arg0_1, arg1_1, arg2_1)
 	if arg2_1 then

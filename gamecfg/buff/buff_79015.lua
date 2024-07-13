@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "司特莲库斯雷电buff加强版",
 	time = 0,

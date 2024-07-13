@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024偶像活动三期 花青素Cyanidin组合 BUFF",
 	cd = 0,

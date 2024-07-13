@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ItemUsagePanel")
+local var0_0 = class("ItemUsagePanel")
 
 var0_0.SINGLE = 1
 var0_0.BATCH = 2

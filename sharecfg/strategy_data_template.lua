@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.strategy_data_template = setmetatable({
 	__name = "strategy_data_template",
 	all = {

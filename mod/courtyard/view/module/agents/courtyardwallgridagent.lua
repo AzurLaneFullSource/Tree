@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardWallGridAgent", import(".CourtYardGridAgent"))
+local var0_0 = class("CourtYardWallGridAgent", import(".CourtYardGridAgent"))
 
 function var0_0.Reset(arg0_1, arg1_1)
 	table.clear(arg0_1.grids)

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MonopolyPtScene", import("..base.BaseUI"))
+local var0_0 = class("MonopolyPtScene", import("..base.BaseUI"))
 
 var0_0.story = false
 

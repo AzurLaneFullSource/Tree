@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SixthAnniversaryJPHotSpringScene", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringScene"))
+local var0_0 = class("SixthAnniversaryJPHotSpringScene", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringScene"))
 
 function var0_0.getUIName(arg0_1)
 	return "SixthAnniversaryJPHotSpringUI"

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "光辉buff",
 	time = 0,

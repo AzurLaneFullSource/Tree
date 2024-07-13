@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "默认增加属性",
 	cd = 0,

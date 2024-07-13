@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateHelper")
+local var0_0 = class("EducateHelper")
 
 function var0_0.GetItemAddDrops(arg0_1)
 	local var0_1 = pg.child_item[arg0_1.id].display

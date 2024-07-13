@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PlayerProxy", import(".NetProxy"))
+local var0_0 = class("PlayerProxy", import(".NetProxy"))
 
 var0_0.UPDATED = "PlayerProxy.UPDATED"
 

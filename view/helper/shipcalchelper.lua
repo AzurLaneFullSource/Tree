@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipCalcHelper")
+local var0_0 = class("ShipCalcHelper")
 
 function var0_0.CalcDestoryRes(arg0_1)
 	local var0_1 = {}

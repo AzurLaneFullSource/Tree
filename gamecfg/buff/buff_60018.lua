@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "测试-休斯敦-技能触发被动",
 	time = 0,

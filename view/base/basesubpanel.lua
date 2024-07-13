@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseSubPanel", import("view.base.BaseSubView"))
+local var0_0 = class("BaseSubPanel", import("view.base.BaseSubView"))
 local var1_0 = import("view.util.FuncBuffer")
 local var2_0 = import("view.util.AutoLoader")
 

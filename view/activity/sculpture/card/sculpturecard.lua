@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SculptureCard")
+local var0_0 = class("SculptureCard")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.tr = arg1_1

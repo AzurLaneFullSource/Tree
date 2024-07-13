@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024异世界冒险 剧情战 圣女贞德护盾超时回血",
 	cd = 0,

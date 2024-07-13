@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2020德系活动EX 构建者反击护盾 判断是否被打破",
 	cd = 0,

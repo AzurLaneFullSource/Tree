@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "若旗舰为战列舰，旗舰造成的伤害提高，依据指挥属性",
 	time = 0,

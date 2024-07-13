@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OrientedPathFinding", PathFinding)
+local var0_0 = class("OrientedPathFinding", PathFinding)
 
 OrientedPathFinding = var0_0
 

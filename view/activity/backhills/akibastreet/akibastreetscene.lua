@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AkibaStreetScene", import("..TemplateMV.BackHillTemplate"))
+local var0_0 = class("AkibaStreetScene", import("..TemplateMV.BackHillTemplate"))
 
 var0_0.UIName = "AkibaStreetUI"
 var0_0.edge2area = {

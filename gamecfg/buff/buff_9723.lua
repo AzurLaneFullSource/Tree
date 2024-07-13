@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "公海舰队EX 构建者召唤小怪 第二波",
 	time = 1,

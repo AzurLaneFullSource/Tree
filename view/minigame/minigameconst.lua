@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MiniGameConst")
+local var0_0 = class("MiniGameConst")
 
 var0_0.MG_TYPE_1 = 1
 var0_0.MG_TYPE_2 = 2

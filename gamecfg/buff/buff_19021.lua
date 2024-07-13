@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 15,
 	name = "海之女神",
 	init_effect = "jinengchufared",

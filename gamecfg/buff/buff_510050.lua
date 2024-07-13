@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 10,
 	name = "损管小队",
 	init_effect = "",

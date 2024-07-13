@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildDynamicBG")
+local var0_0 = class("GuildDynamicBG")
 local var1_0 = false
 local var2_0 = false
 local var3_0 = require("view.guild.views.DynamicBG.GuildDynamicBGConfig")

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.ConfigTablePreloadMgr = singletonClass("ConfigTablePreloadMgr")
 
 function pg.ConfigTablePreloadMgr.Init(arg0_1, arg1_1)

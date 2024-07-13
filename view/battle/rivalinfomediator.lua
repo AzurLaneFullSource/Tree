@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RivalInfoMediator", import("..base.ContextMediator"))
+local var0_0 = class("RivalInfoMediator", import("..base.ContextMediator"))
 
 var0_0.START_BATTLE = "RivalInfoMediator:START_BATTLE"
 

@@ -1,4 +1,4 @@
-﻿local var0_0 = coroutine.create
+local var0_0 = coroutine.create
 local var1_0 = coroutine.running
 local var2_0 = coroutine.resume
 local var3_0 = coroutine.yield

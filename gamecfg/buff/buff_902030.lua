@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "压制引导-炮击",
 	time = 0,

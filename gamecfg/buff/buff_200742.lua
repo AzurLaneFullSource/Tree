@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023关岛活动EX 二阶段半血时转三阶段",
 	time = 0,

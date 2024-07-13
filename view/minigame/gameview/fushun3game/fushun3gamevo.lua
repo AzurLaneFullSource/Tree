@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Fushun3GameVo")
+local var0_0 = class("Fushun3GameVo")
 
 var0_0.TimeType = Fushun3GameConst.day_type
 var0_0.TimeFlag = true

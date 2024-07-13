@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VoteStoryUtil")
+local var0_0 = class("VoteStoryUtil")
 
 var0_0.ENTER_SCENE = 1
 var0_0.ENTER_MAIN_STAGE = 2

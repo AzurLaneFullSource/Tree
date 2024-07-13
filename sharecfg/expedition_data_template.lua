@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.expedition_data_template = setmetatable({
 	__name = "expedition_data_template",
 	all = {

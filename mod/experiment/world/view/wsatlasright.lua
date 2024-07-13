@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSAtlasRight", import("...BaseEntity"))
+local var0_0 = class("WSAtlasRight", import("...BaseEntity"))
 
 var0_0.Fields = {
 	btnSettings = "userdata",

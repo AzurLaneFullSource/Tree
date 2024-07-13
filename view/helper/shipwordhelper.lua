@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipWordHelper")
+local var0_0 = class("ShipWordHelper")
 local var1_0 = pg.ship_skin_template
 local var2_0 = pg.ship_skin_words
 local var3_0 = pg.ship_skin_words_extra

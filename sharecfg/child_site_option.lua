@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.child_site_option = {
 	[1102] = {
 		replace = 0,

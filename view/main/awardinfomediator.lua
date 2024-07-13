@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AwardInfoMediator", import("..base.ContextMediator"))
+local var0_0 = class("AwardInfoMediator", import("..base.ContextMediator"))
 
 var0_0.ON_DROP = "AwardInfoMediator:ON_DROP"
 

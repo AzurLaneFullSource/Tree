@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "苍龙META 特殊航空点燃",
 	time = 6.1,

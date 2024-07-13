@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VoteAwardPtWindow", import("view.activity.Panels.PtAwardWindow"))
+local var0_0 = class("VoteAwardPtWindow", import("view.activity.Panels.PtAwardWindow"))
 
 var0_0.TYPE_CURR = 1
 var0_0.TYPE_ACC = 2

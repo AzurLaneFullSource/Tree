@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SettingsBattlePage", import("...base.BaseSubView"))
+local var0_0 = class("SettingsBattlePage", import("...base.BaseSubView"))
 local var1_0 = "joystick_anchorX"
 local var2_0 = "joystick_anchorY"
 local var3_0 = "skill_1_anchorX"

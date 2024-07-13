@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022毛系活动 精神同步flag",
 	time = 0,

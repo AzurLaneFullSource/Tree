@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FleetType")
+local var0_0 = class("FleetType")
 
 var0_0.Unknown = 0
 var0_0.Normal = 1

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023英系活动 EX 开头清除机制应对成功计数",
 	time = 1,

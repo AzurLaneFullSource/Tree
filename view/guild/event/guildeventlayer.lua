@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildEventLayer", import("...base.BaseUI"))
+local var0_0 = class("GuildEventLayer", import("...base.BaseUI"))
 
 var0_0.OPEN_EVENT_INFO = "GuildEventLayer:OPEN_EVENT_INFO"
 var0_0.ON_OPEN_FORMATION = "GuildEventLayer:ON_OPEN_FORMATION"

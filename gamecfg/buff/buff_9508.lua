@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "极夜",
 	init_effect = "",

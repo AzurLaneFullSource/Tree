@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "点火状态结束",
 	cd = 0,

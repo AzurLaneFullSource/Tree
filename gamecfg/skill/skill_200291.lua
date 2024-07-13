@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023英系活动 EX 第二波 跳出循环",
 	cd = 0,

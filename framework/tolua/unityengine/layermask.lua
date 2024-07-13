@@ -1,4 +1,4 @@
-﻿local var0_0 = Layer
+local var0_0 = Layer
 local var1_0 = rawget
 local var2_0 = setmetatable
 local var3_0 = {}

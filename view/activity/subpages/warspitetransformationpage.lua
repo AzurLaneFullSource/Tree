@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WarspiteTransformationPage", import("view.base.BaseActivityPage"))
+local var0_0 = class("WarspiteTransformationPage", import("view.base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.bg = arg0_1:findTF("AD", arg0_1._tf)

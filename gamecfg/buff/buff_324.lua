@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "塔什干ICELF子弹减速",
 	time = 4,
@@ -24,7 +24,8 @@
 		{
 			type = "BattleBuffAddTag",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				tag = "naximofubeilianjiansu"

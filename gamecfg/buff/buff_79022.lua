@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 4,
 	name = "毒伤",
 	init_effect = "",

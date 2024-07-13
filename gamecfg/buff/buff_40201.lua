@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "与主力舰队交战时，旗舰受到伤害降低，依据战术属性",
 	time = 0,

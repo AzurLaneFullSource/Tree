@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "在队伍中时降低旗舰受到的伤害15.0%(满级25.0%)",
 	name = "旗舰掩护-LV8",
 	init_effect = "",

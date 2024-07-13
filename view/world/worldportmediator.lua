@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldPortMediator", import("..base.ContextMediator"))
+local var0_0 = class("WorldPortMediator", import("..base.ContextMediator"))
 
 var0_0.OnOpenBay = "WorldPortMediator.OnOpenBay"
 var0_0.OnTaskGoto = "WorldPortMediator.OnTaskGoto"

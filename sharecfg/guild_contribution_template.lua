@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.guild_contribution_template = {
 	{
 		award_tech_exp = 2,

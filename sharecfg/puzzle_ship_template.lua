@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.puzzle_ship_template = {
 	[202124] = {
 		cannon = 100,

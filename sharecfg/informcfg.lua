@@ -1,4 +1,4 @@
-﻿return {
+return {
 	{
 		content = "Spam: meaningless symbols or characters."
 	},

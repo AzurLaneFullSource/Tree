@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AtelierCompositeCommand", pm.SimpleCommand)
+local var0_0 = class("AtelierCompositeCommand", pm.SimpleCommand)
 
 function var0_0.SerialAsyncUnitl(arg0_1, arg1_1, arg2_1)
 	local var0_1 = 0

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "残废buff装填命中下降",
 	time = 15,

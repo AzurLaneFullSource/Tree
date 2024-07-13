@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldBossInformationLayer", import("view.base.BaseUI"))
+local var0_0 = class("WorldBossInformationLayer", import("view.base.BaseUI"))
 local var1_0 = 25
 local var2_0 = 7.2
 

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "jinengchufablue",
 	name = "龙宫机关-土 减伤BUFF",
 	time = 999,

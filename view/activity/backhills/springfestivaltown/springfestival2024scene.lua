@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpringFestival2024Scene", import("view.activity.BackHills.TemplateMV.BackHillTemplate"))
+local var0_0 = class("SpringFestival2024Scene", import("view.activity.BackHills.TemplateMV.BackHillTemplate"))
 
 function var0_0.getUIName(arg0_1)
 	if PLATFORM_CODE == PLATFORM_CHT then

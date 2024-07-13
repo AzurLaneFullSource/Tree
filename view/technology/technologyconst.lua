@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TechnologyConst")
+local var0_0 = class("TechnologyConst")
 
 var0_0.OPEN_TECHNOLOGY_TREE_SCENE = "TechnologyConst:OPEN_TECHNOLOGY_TREE_SCENE"
 var0_0.OPEN_SHIP_BUFF_DETAIL = "TechnologyConst:OPEN_SHIP_BUFF_DETAIL"

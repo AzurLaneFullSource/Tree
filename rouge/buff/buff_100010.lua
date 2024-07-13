@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "卡牌 追加攻击I",
 	time = 3,

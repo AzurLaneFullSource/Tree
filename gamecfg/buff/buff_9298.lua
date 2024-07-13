@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "白龙剧情战 触发龙宫机关-烈焰技能 buff1：找到最近我方单位，为其添加buff2",
 	time = 0,

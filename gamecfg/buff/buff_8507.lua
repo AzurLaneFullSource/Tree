@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "武器攻击速度加快0.5倍",
 	init_effect = "",

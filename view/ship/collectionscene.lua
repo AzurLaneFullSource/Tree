@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CollectionScene", import("..base.BaseUI"))
+local var0_0 = class("CollectionScene", import("..base.BaseUI"))
 
 var0_0.SHOW_DETAIL = "event show detail"
 var0_0.GET_AWARD = "event get award"

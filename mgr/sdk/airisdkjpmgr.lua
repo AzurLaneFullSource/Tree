@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 local var1_0 = AiriJPSdkMgr.inst
 local var2_0 = AiriJPSdkMgr.AiriSDKInst
 local var3_0 = AiriJPSdkMgr.AiriSdkDataInst

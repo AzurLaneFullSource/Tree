@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0.5,
 	name = "治愈之翼",
 	init_effect = "",

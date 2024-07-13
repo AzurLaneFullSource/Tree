@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommanderProxy", import(".NetProxy"))
+local var0_0 = class("CommanderProxy", import(".NetProxy"))
 
 var0_0.COMMANDER_UPDATED = "CommanderProxy:COMMANDER_UPDATED"
 var0_0.COMMANDER_ADDED = "CommanderProxy:COMMANDER_ADDED"

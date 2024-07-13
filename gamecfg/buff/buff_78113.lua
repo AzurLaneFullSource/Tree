@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "白龙剧情战 触发龙宫机关-屏障技能 buff4：屏障效果",
 	time = 25,

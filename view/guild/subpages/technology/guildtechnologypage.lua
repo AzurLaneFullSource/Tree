@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildTechnologyPage", import("...base.GuildBasePage"))
+local var0_0 = class("GuildTechnologyPage", import("...base.GuildBasePage"))
 
 var0_0.PAGE_DEV = 1
 var0_0.PAGE_UPGRADE = 2

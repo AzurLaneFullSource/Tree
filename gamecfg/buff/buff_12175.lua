@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "最适化武装",
 	init_effect = "",

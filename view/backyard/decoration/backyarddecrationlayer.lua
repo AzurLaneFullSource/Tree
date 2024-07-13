@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardDecrationLayer", import("...base.BaseUI"))
+local var0_0 = class("BackYardDecrationLayer", import("...base.BaseUI"))
 
 var0_0.INNER_SELECTED_FURNITRUE = "BackYardDecrationLayer:INNER_SELECTED_FURNITRUE"
 

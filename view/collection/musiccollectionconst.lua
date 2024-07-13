@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MusicCollectionConst")
+local var0_0 = class("MusicCollectionConst")
 
 var0_0.Version = 2
 var0_0.AutoScrollIndex = 14

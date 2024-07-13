@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "龙宫机关-火 技能弹条",
 	cd = 0,

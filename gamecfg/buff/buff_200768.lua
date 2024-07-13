@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "2024同盟活动EX 地狱模式下逐渐变得脆弱",
 	init_effect = "",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewBattleResultMediator", import("view.base.ContextMediator"))
+local var0_0 = class("NewBattleResultMediator", import("view.base.ContextMediator"))
 
 var0_0.GET_NEW_SHIP = "NewBattleResultMediator:GET_NEW_SHIP"
 var0_0.OPEN_FIALED_HELP = "NewBattleResultMediator:OPEN_FIALED_HELP"

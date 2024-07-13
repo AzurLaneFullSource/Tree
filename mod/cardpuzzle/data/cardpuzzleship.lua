@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CardPuzzleShip", BaseVO)
+local var0_0 = class("CardPuzzleShip", BaseVO)
 
 function var0_0.getShipArmor(arg0_1)
 	return arg0_1:getConfig("armor")

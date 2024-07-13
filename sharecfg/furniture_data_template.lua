@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.furniture_data_template = setmetatable({
 	__name = "furniture_data_template",
 	get_id_list_by_themeId = {

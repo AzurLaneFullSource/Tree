@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CardPuzzleCombatPauseMediator", ContextMediator)
+local var0_0 = class("CardPuzzleCombatPauseMediator", ContextMediator)
 
 var0_0.QUIT_COMBAT = "QUIT_COMBAT"
 var0_0.RESUME_COMBAT = "RESUME_COMBAT"

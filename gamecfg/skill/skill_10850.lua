@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "命运的阴暗面",
 	cd = 0,

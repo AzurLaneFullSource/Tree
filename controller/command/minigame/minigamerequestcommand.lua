@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MiniGameRequestCommand", pm.SimpleCommand)
+local var0_0 = class("MiniGameRequestCommand", pm.SimpleCommand)
 
 var0_0.REQUEST_HUB_DATA = 1
 

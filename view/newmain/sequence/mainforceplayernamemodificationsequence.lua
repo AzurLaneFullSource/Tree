@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainForcePlayerNameModificationSequence")
+local var0_0 = class("MainForcePlayerNameModificationSequence")
 
 function var0_0.Execute(arg0_1, arg1_1)
 	if getProxy(PlayerProxy):getRawData():WhetherServerModifiesName() then

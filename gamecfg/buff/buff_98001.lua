@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "具体效果",
 	time = 0,

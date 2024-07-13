@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023俾斯麦Z活动 革律翁解除合体去除代替承伤效果",
 	cd = 0,

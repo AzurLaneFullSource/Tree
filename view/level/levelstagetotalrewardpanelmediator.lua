@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LevelStageTotalRewardPanelMediator", import("view.base.ContextMediator"))
+local var0_0 = class("LevelStageTotalRewardPanelMediator", import("view.base.ContextMediator"))
 
 function var0_0.register(arg0_1)
 	arg0_1:bind(LevelMediator2.ON_RETRACKING, function(arg0_2, ...)

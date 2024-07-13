@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.skill_world_display = {
 	[3631] = {
 		desc_get = "",

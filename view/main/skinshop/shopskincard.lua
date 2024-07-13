@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShopSkinCard")
+local var0_0 = class("ShopSkinCard")
 local var1_0 = pg.ship_data_group
 local var2_0 = pg.shop_template
 local var3_0 = pg.skin_page_template

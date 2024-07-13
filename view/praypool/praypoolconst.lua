@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PrayPoolConst")
+local var0_0 = class("PrayPoolConst")
 
 var0_0.SWITCH_TO_HOME_PAGE = "SWITCH_TO_HOME_PAGE"
 var0_0.SWITCH_TO_SELECT_POOL_PAGE = "SWITCH_TO_SELECT_POOL_PAGE"

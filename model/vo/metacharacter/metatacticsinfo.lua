@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MetaTacticsInfo")
+local var0_0 = class("MetaTacticsInfo")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	if arg1_1 then

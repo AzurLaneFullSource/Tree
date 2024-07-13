@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TechnologyScene", import("..base.BaseUI"))
+local var0_0 = class("TechnologyScene", import("..base.BaseUI"))
 
 var0_0.PageBase = 1
 var0_0.PageQueue = 2

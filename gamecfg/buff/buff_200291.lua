@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023英系活动 EX 第二波 机制应对成功",
 	time = 1,

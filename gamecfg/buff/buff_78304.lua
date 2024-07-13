@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "最终剧情战用全体撤退buff",
 	time = 0,

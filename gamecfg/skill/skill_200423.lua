@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023俾斯麦Z活动 TS2女灶神meta 召唤小怪 组合3",
 	painting = 0,

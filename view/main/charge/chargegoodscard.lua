@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChargeGoodsCard", import("...shops.cards.GoodsCard"))
+local var0_0 = class("ChargeGoodsCard", import("...shops.cards.GoodsCard"))
 
 function var0_0.update(arg0_1, arg1_1)
 	arg0_1.goodsVO = arg1_1

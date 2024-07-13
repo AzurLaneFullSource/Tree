@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BuildShipPool", import(".BaseVO"))
+local var0_0 = class("BuildShipPool", import(".BaseVO"))
 
 var0_0.BUILD_POOL_MARK_SPECIAL = "special"
 var0_0.BUILD_POOL_MARK_LIGHT = "light"

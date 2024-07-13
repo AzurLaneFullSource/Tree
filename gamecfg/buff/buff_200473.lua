@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023黑阿尔及利亚 部分共计命中施加特殊点燃标记",
 	time = 0,

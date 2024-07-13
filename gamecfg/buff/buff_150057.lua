@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "友方大胆级护甲判别",
 	time = 14,

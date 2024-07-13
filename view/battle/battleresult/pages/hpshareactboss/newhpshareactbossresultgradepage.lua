@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewHpShareActBossResultGradePage", import("..activityBoss.NewActivityBossResultGradePage"))
+local var0_0 = class("NewHpShareActBossResultGradePage", import("..activityBoss.NewActivityBossResultGradePage"))
 
 function var0_0.LoadGrade(arg0_1, arg1_1)
 	local var0_1 = "battlescore/grade_label_clear"

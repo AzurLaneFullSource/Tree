@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipProfileCVLoader")
+local var0_0 = class("ShipProfileCVLoader")
 local var1_0 = pg.ship_skin_words
 
 function var0_0.Ctor(arg0_1)

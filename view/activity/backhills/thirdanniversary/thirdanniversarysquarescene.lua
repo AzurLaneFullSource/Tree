@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ThirdAnniversarySquareScene", import("..TemplateMV.BackHillTemplate"))
+local var0_0 = class("ThirdAnniversarySquareScene", import("..TemplateMV.BackHillTemplate"))
 
 var0_0.UIName = "ThirdAnniversarySquareUI"
 var0_0.HUB_ID = 9

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "十字缔结",
 	init_effect = "jinengchufared",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Guild", import(".base.BaseGuild"))
+local var0_0 = class("Guild", import(".base.BaseGuild"))
 local var1_0 = pg.guild_technology_template
 local var2_0 = pg.guild_operation_template
 local var3_0 = true

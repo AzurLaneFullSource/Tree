@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SecondSummaryPage5", import(".SummaryAnimationPage"))
+local var0_0 = class("SecondSummaryPage5", import(".SummaryAnimationPage"))
 
 function var0_0.OnInit(arg0_1)
 	setText(arg0_1._tf:Find("window_share_1/name"), arg0_1.summaryInfoVO.name)

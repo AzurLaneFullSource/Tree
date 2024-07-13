@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.attribute_info_by_type = {
 	{
 		id = 1,

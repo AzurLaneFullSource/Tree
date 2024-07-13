@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PrayPoolSelectShipView", import("..base.BaseSubView"))
+local var0_0 = class("PrayPoolSelectShipView", import("..base.BaseSubView"))
 
 var0_0.WIDTH_MIN = 328
 var0_0.WIDTH_MAX = 438

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PublicGuild", import("..base.BaseGuild"))
+local var0_0 = class("PublicGuild", import("..base.BaseGuild"))
 local var1_0 = pg.guild_technology_template
 
 function var0_0.Ctor(arg0_1, arg1_1)

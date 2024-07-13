@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Live2dDrag")
+local var0_0 = class("Live2dDrag")
 local var1_0 = 4
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1)

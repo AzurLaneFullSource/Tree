@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "白鹰精英损管-halt",
 	cd = 0,

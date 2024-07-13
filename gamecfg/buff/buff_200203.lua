@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑亚利桑那 触发珍珠之泪时的弹条",
 	time = 0.5,

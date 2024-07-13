@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildMemberBasePage", import("....base.BaseSubView"))
+local var0_0 = class("GuildMemberBasePage", import("....base.BaseSubView"))
 
 function var0_0.SetCallBack(arg0_1, arg1_1, arg2_1)
 	arg0_1.onShowCallBack = arg1_1

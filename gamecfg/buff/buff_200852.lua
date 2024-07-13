@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024异世界冒险 英灵效果 黎塞留",
 	time = 3,

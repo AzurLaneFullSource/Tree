@@ -1,4 +1,4 @@
-﻿function uuid()
+function uuid()
 	local var0_1 = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
 
 	return string.gsub(var0_1, "[xy]", function(arg0_2)

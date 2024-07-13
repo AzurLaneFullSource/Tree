@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023 闪乱联动 地脉机关-阴SP 我方控制",
 	time = 3,

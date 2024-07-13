@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "旗舰掩护-LV8",
 	init_effect = "jinengchufablue",

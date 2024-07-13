@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "大舰队世界boss_1_阶段0",
 	init_effect = "jinengchufared",

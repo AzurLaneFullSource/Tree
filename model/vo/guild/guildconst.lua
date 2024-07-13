@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildConst")
+local var0_0 = class("GuildConst")
 
 var0_0.DEBUG = true
 var0_0.POLICY_TYPE_POWER = 1

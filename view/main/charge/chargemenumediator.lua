@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChargeMenuMediator", import("...base.ContextMediator"))
+local var0_0 = class("ChargeMenuMediator", import("...base.ContextMediator"))
 
 var0_0.GO_SKIN_SHOP = "ChargeMenuMediator:GO_SKIN_SHOP"
 var0_0.GO_SUPPLY_SHOP = "ChargeMenuMediator:GO_SUPPLY_SHOP"

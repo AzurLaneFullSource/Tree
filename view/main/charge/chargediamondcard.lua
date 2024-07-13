@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChargeDiamondCard")
+local var0_0 = class("ChargeDiamondCard")
 
 var0_0.NewTagType = 2
 var0_0.DoubleTagType = 4

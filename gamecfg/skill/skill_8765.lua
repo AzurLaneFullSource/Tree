@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "偶像大师联动 fever 回血BUFF",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "jiasuBUFF",
 	name = "测试-不死鸟-攻击加成",
 	time = 5,

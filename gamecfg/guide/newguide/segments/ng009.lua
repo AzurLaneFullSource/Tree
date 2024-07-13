@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Tap here to view the Meowfficer's Skills and Talents!",
 	"Tap here to view the stat bonuses received from the Meowfficer!",
 	"You can make the Meowfficer better by Enhancing them and leveling their Talents!"

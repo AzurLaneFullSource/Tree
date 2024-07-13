@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GalleryConst")
+local var0_0 = class("GalleryConst")
 
 var0_0.Version = 3
 var0_0.AutoScrollIndex = 41

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "测试卡牌编队BUFF",
 	time = 30,

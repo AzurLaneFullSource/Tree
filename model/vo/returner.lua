@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Returner", import(".PlayerAttire"))
+local var0_0 = class("Returner", import(".PlayerAttire"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	local var0_1 = arg1_1.user or {}

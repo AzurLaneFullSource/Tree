@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_nianshou = {
 	{
 		daily_count = 5,

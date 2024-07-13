@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ObjectBush", import("view.miniGame.gameView.RyzaMiniGame.object.TargetObject"))
+local var0_0 = class("ObjectBush", import("view.miniGame.gameView.RyzaMiniGame.object.TargetObject"))
 
 function var0_0.GetBaseOrder(arg0_1)
 	return 3

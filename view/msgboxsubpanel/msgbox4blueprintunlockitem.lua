@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Msgbox4BlueprintUnlockItem", import(".MsgboxSubPanel"))
+local var0_0 = class("Msgbox4BlueprintUnlockItem", import(".MsgboxSubPanel"))
 
 function var0_0.getUIName(arg0_1)
 	return "Msgbox4BlueprintUnlockItem"

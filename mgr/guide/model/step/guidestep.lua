@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuideStep")
+local var0_0 = class("GuideStep")
 
 var0_0.TYPE_DOFUNC = 0
 var0_0.TYPE_DONOTHING = 1

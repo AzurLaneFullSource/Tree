@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipProfileInformationPage", import("...base.BaseSubView"))
+local var0_0 = class("ShipProfileInformationPage", import("...base.BaseSubView"))
 
 function var0_0.getUIName(arg0_1)
 	return "ShipProfileInformationPage"

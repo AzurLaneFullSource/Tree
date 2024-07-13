@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardPoolMgr")
+local var0_0 = class("CourtYardPoolMgr")
 
 function var0_0.Init(arg0_1, arg1_1, arg2_1)
 	arg0_1.pools = {}

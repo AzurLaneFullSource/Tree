@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TrophyGalleryMediator", import("..base.ContextMediator"))
+local var0_0 = class("TrophyGalleryMediator", import("..base.ContextMediator"))
 
 var0_0.ON_TROPHY_CLAIM = "TrophyGalleryMediator:ON_TROPHY_CLAIM"
 

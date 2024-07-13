@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GameRoomShootingView", import("..BaseMiniGameView"))
+local var0_0 = class("GameRoomShootingView", import("..BaseMiniGameView"))
 
 var0_0.animTime = 0.333333333333333
 var0_0.moveModulus = 120

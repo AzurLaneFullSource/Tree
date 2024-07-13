@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Drop", import(".BaseVO"))
+local var0_0 = class("Drop", import(".BaseVO"))
 
 function var0_0.Create(arg0_1)
 	local var0_1 = {}

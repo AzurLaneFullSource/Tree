@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024阿尔萨斯活动 辉光之城-绽放 触发弹幕",
 	time = 0,

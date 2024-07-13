@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "bossbomb",
 	name = "2023古立特联动复刻 TSS1 南梦芽 古利特召唤 击破变身扣血",
 	time = 3,

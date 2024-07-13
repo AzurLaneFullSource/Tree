@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityPtData")
+local var0_0 = class("ActivityPtData")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.dropList = arg1_1:getDataConfig("drop_client")

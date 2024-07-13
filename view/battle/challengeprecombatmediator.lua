@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChallengePreCombatMediator", import("..base.ContextMediator"))
+local var0_0 = class("ChallengePreCombatMediator", import("..base.ContextMediator"))
 
 var0_0.ON_START = "ChallengePreCombatMediator:ON_START"
 var0_0.ON_SWITCH_SHIP = "ChallengePreCombatMediator:ON_SWITCH_SHIP"

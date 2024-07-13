@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainVoteEntranceBtn", import(".MainBaseSpcailActBtn"))
+local var0_0 = class("MainVoteEntranceBtn", import(".MainBaseSpcailActBtn"))
 
 function var0_0.GetContainer(arg0_1)
 	return arg0_1.root.parent:Find("eventPanel")

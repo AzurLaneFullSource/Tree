@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardThemeTemplateListPage", import("...Shop.pages.BackYardThemePage"))
+local var0_0 = class("BackYardThemeTemplateListPage", import("...Shop.pages.BackYardThemePage"))
 
 var0_0.nextClickRefreshTime = 0
 

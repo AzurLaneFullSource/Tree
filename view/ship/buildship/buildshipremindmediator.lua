@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BuildShipRemindMediator", import("...base.ContextMediator"))
+local var0_0 = class("BuildShipRemindMediator", import("...base.ContextMediator"))
 
 var0_0.SHOW_NEW_SHIP = "BuildShipRemindMediator.SHOW_NEW_SHIP"
 var0_0.ON_LOCK = "BuildShipRemindMediator.ON_LOCK"

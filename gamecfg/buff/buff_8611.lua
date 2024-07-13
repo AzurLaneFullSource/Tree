@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "2019年2月世界BOSS叠加buff",
 	init_effect = "jinengchufablue",

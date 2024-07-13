@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.child_performance = {
 	[101] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA1",

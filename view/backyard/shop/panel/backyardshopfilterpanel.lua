@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardShopFilterPanel", import("...Decoration.panles.BackYardDecorationFilterPanel"))
+local var0_0 = class("BackYardShopFilterPanel", import("...Decoration.panles.BackYardDecorationFilterPanel"))
 
 function var0_0.SortForDecorate(arg0_1, arg1_1, arg2_1)
 	local var0_1 = arg2_1[1]

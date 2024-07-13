@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "古立特联动 貉支援弹幕LV5",
 	cd = 0,

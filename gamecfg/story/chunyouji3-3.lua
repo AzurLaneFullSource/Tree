@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "DAFUWENGEVENT3-3",
 	mode = 2,
 	skipTip = false,

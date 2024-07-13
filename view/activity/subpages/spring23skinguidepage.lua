@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Spring23SkinGuidePage", import("...base.BaseActivityPage"))
+local var0_0 = class("Spring23SkinGuidePage", import("...base.BaseActivityPage"))
 local var1_0 = "ui/activityuipage/spring23skinguidepage_atlas"
 
 function var0_0.OnInit(arg0_1)

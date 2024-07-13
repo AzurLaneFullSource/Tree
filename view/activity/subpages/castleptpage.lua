@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CastlePtPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("CastlePtPage", import(".TemplatePage.PtTemplatePage"))
 
 var0_0.MAIN_ID = ActivityConst.CASTLE_ACT_ID
 

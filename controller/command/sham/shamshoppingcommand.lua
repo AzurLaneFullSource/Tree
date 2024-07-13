@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShamShoppingCommand", pm.SimpleCommand)
+local var0_0 = class("ShamShoppingCommand", pm.SimpleCommand)
 
 var0_0.SHAM_SHOP = 1
 

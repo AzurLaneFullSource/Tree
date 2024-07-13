@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpAnimStoryPlayer", import(".StoryPlayer"))
+local var0_0 = class("SpAnimStoryPlayer", import(".StoryPlayer"))
 
 function var0_0.OnReset(arg0_1, arg1_1, arg2_1, arg3_1)
 	setActive(arg0_1.spAnimPanel, true)

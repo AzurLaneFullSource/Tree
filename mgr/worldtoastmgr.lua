@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.WorldToastMgr = singletonClass("WorldToastMgr")
 
 local var0_0 = pg.WorldToastMgr

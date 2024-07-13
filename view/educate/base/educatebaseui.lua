@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateBaseUI", import("view.base.BaseUI"))
+local var0_0 = class("EducateBaseUI", import("view.base.BaseUI"))
 
 var0_0.EDUCATE_GO_SCENE = "EDUCATE_GO_SCENE"
 var0_0.EDUCATE_CHANGE_SCENE = "EDUCATE_CHANGE_SCENE"

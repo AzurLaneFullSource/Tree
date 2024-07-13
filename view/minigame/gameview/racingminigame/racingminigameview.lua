@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RacingMiniGameView", import("view.miniGame.MiniGameTemplateView"))
+local var0_0 = class("RacingMiniGameView", import("view.miniGame.MiniGameTemplateView"))
 
 var0_0.canSelectStage = false
 

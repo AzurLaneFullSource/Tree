@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.return_task_template = {
 	[56011] = {
 		reward_date = 1,

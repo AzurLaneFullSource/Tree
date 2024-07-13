@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023英系活动 剧情战1 定时触发弹幕",
 	time = 0,

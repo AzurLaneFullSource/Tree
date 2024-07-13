@@ -1,4 +1,4 @@
-﻿local var0_0 = import(".DynamicCellView")
+local var0_0 = import(".DynamicCellView")
 local var1_0 = import(".EggCellView")
 local var2_0 = class("DynamicEggCellView", DecorateClass(var0_0, var1_0))
 

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "受到伤害上升",
 	time = 0,

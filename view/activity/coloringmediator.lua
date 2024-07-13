@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ColoringMediator", import("..base.ContextMediator"))
+local var0_0 = class("ColoringMediator", import("..base.ContextMediator"))
 
 var0_0.EVENT_GO_SCENE = "event go scene"
 var0_0.EVENT_COLORING_CELL = "event coloring cell"

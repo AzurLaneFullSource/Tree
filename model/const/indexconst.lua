@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IndexConst")
+local var0_0 = class("IndexConst")
 
 function var0_0.Flags2Bits(arg0_1)
 	local var0_1 = 0

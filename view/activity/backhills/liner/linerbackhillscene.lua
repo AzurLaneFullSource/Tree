@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LinerBackHillScene", import("..TemplateMV.BackHillTemplate"))
+local var0_0 = class("LinerBackHillScene", import("..TemplateMV.BackHillTemplate"))
 
 var0_0.optionsPath = {
 	"top/btn_home"

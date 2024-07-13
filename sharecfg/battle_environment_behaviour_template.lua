@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.battle_environment_behaviour_template = {
 	[10000] = {
 		id = 10000,

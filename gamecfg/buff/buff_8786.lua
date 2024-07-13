@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "中飞联动一Boss减伤",
 	time = 0,

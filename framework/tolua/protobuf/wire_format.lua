@@ -1,4 +1,4 @@
-﻿local var0_0 = require("pb")
+local var0_0 = require("pb")
 
 module("protobuf.wire_format")
 

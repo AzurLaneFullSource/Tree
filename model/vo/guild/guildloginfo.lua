@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildLogInfo", import("..BaseVO"))
+local var0_0 = class("GuildLogInfo", import("..BaseVO"))
 
 var0_0.CMD_TYPE_JOIN = 1
 var0_0.CMD_TYPE_SET_DUTY = 2

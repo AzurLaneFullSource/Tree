@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainActivityBtnMellowAdapt")
+local var0_0 = class("MainActivityBtnMellowAdapt")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.activityBtn = arg1_1

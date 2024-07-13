@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "活动buff-祭典祈愿效果-战斗减伤提高",
 	time = 0,

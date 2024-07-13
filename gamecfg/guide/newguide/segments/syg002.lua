@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "SYG002",
 	events = {}
 }

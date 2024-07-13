@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AtelierMaterialDetailMediator", import("view.base.ContextMediator"))
+local var0_0 = class("AtelierMaterialDetailMediator", import("view.base.ContextMediator"))
 
 var0_0.SHOW_DETAIL = "SHOW_DETAIL"
 var0_0.GO_RECIPE = "GO_RECIPE"

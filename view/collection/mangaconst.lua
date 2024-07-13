@@ -1,4 +1,4 @@
-﻿MangaConst = {}
+MangaConst = {}
 
 local var0_0 = MangaConst
 

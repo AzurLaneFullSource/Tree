@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WeaponPreviewer")
+local var0_0 = class("WeaponPreviewer")
 local var1_0 = Vector3(0, 1, 40)
 local var2_0 = Vector3(40, 1, 40)
 local var3_0 = Vector3(30, 0, 0)

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "2023俾斯麦Z活动 HTS2女灶神meta 召唤小怪 监听",
 	init_effect = "",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SelfRefreshRedDotNode", import(".RedDotNode"))
+local var0_0 = class("SelfRefreshRedDotNode", import(".RedDotNode"))
 
 function var0_0.Init(arg0_1)
 	var0_0.super.Init(arg0_1)

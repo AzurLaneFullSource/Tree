@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "公海舰队活动 塔干扰-电磁干扰",
 	init_effect = "",

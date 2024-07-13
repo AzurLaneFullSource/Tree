@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "强袭号令-LV9",
 	time = 15,

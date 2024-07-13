@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Fushun3SceneController")
+local var0_0 = class("Fushun3SceneController")
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 	arg0_1._sceneTf = arg2_1

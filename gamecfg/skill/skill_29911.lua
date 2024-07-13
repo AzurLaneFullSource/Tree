@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "专属弹幕",
 	cd = 0,

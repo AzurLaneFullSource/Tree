@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardPlaceableModule", import(".CourtYardBaseModule"))
+local var0_0 = class("CourtYardPlaceableModule", import(".CourtYardBaseModule"))
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.state = 0

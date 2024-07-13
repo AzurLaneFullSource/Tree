@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CrusingMediator", import("view.base.ContextMediator"))
+local var0_0 = class("CrusingMediator", import("view.base.ContextMediator"))
 
 var0_0.UNFROZEN_MAP_UPDATE = "CrusingMediator.UN_FROZEN_MAP_UPDATE"
 var0_0.EVENT_OPEN_TASK = "CrusingMediator.EVENT_OPEN_TASK"

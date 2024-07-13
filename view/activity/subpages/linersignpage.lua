@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LinerSignPage", import("view.base.BaseActivityPage"))
+local var0_0 = class("LinerSignPage", import("view.base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.lockNamed = PLATFORM_CODE == PLATFORM_CH and LOCK_NAMED

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022布吕歇尔SP 史特拉塞定身+弹幕",
 	cd = 0,

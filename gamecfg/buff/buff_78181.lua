@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "大世界剧情战 后勤维修buff",
 	time = 6,

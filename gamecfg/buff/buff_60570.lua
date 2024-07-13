@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "深红AlizarinBUFF",
 	time = 0,

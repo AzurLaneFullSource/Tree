@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMapAttachment", import("...BaseEntity"))
+local var0_0 = class("WorldMapAttachment", import("...BaseEntity"))
 
 var0_0.Fields = {
 	config = "table",

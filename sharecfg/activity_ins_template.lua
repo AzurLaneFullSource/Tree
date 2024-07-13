@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_ins_template = {
 	{
 		ship_group = 30701,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "美系V4 彩蛋倒计时",
 	time = 0,

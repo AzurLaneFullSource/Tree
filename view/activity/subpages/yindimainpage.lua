@@ -1,4 +1,4 @@
-﻿local var0_0 = class("YinDiMainPage", import(".TemplatePage.PreviewTemplatePage"))
+local var0_0 = class("YinDiMainPage", import(".TemplatePage.PreviewTemplatePage"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.bg = arg0_1:findTF("AD")

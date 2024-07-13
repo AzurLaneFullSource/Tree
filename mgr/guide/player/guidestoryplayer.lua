@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuideStoryPlayer", import(".GuidePlayer"))
+local var0_0 = class("GuideStoryPlayer", import(".GuidePlayer"))
 
 function var0_0.OnExecution(arg0_1, arg1_1, arg2_1)
 	local var0_1 = arg1_1:GetStories()

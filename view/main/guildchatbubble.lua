@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildChatBubble", import(".ChatBubble"))
+local var0_0 = class("GuildChatBubble", import(".ChatBubble"))
 
 function var0_0.init(arg0_1)
 	arg0_1.nameTF = findTF(arg0_1.tf, "name_bg/name"):GetComponent("Text")

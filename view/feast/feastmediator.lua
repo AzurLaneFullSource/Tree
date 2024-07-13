@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FeastMediator", import("view.backYard.CourtYardMediator"))
+local var0_0 = class("FeastMediator", import("view.backYard.CourtYardMediator"))
 
 var0_0.SET_UP = "FeastMediator:SET_UP"
 var0_0.MAKE_TICKET = "FeastMediator:MAKE_TICKET"

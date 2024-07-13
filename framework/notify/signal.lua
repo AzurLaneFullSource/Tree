@@ -1,4 +1,4 @@
-﻿local var0_0 = require
+local var0_0 = require
 local var1_0 = setmetatable
 local var2_0 = var0_0("Framework.notify.double-queue")
 local var3_0 = {}

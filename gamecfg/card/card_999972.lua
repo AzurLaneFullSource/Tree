@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 999972,
 	name = "教程后排AOE平射",
 	effect_list = {

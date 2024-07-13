@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Dorm3dPhotoMediator", import("view.base.ContextMediator"))
+local var0_0 = class("Dorm3dPhotoMediator", import("view.base.ContextMediator"))
 
 function var0_0.register(arg0_1)
 	local var0_1 = pg.m02:retrieveMediator(Dorm3dSceneMediator.__cname):getViewComponent()

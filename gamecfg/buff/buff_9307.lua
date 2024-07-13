@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "白龙剧情战 特殊炮击武器技能弹条",
 	init_effect = "jinengchufared",

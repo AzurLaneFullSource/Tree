@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SwichSkinLayer", import("..base.BaseUI"))
+local var0_0 = class("SwichSkinLayer", import("..base.BaseUI"))
 
 function var0_0.setShip(arg0_1, arg1_1)
 	arg0_1.shipVO = arg1_1

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.ship_skin_reward = {
 	[701111] = {
 		id = 701111,

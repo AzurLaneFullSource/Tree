@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "WTrap315",
 	mode = 2,
 	skipTip = false,

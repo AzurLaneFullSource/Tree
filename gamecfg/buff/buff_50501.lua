@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "敌方BOSS 对全航母后排额外攻击",
 	time = 2,

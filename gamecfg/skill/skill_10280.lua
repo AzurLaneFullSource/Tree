@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "“Z”的反击",
 	cd = 0,

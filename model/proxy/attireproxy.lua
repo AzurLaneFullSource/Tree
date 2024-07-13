@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AttireProxy", import(".NetProxy"))
+local var0_0 = class("AttireProxy", import(".NetProxy"))
 
 var0_0.ATTIREFRAME_UPDATED = "AttireProxy:ATTIREFRAME_UPDATED"
 var0_0.ATTIREFRAME_ADDED = "AttireProxy:ATTIREFRAME_ADDED"

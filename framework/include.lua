@@ -1,4 +1,4 @@
-﻿require("Framework/levelExp")
+require("Framework/levelExp")
 require("Framework/i18n")
 require("Framework/Oop/Include")
 require("Framework/Base/Include")

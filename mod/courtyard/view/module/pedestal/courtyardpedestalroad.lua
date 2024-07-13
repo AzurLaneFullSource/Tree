@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardPedestalRoad", import(".CourtYardPedestalStructure"))
+local var0_0 = class("CourtYardPedestalRoad", import(".CourtYardPedestalStructure"))
 local var1_0 = {
 	-920,
 	-1080,

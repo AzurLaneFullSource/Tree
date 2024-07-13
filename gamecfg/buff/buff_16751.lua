@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "俾斯麦Z主炮首轮必暴",
 	time = 0,

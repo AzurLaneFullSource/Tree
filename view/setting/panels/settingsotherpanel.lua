@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SettingsOtherPanel", import(".SettingsNotificationPanel"))
+local var0_0 = class("SettingsOtherPanel", import(".SettingsNotificationPanel"))
 
 function var0_0.GetUIName(arg0_1)
 	return "SettingsOther"

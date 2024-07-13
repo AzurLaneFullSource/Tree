@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "开会处理",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "公海舰队EX 构建者召唤小怪",
 	painting = 0,

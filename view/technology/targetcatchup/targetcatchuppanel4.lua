@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TargetCatchupPanel4", import(".BaseTargetCatchupPanel"))
+local var0_0 = class("TargetCatchupPanel4", import(".BaseTargetCatchupPanel"))
 
 function var0_0.getUIName(arg0_1)
 	return "TargetCatchupPanel4"

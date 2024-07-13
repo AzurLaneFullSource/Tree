@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MapBuilder", import("view.base.BaseSubView"))
+local var0_0 = class("MapBuilder", import("view.base.BaseSubView"))
 
 var0_0.TYPENORMAL = 1
 var0_0.TYPEESCORT = 2

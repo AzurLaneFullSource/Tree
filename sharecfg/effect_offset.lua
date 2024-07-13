@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.effect_offset = {
 	bossguangxiao = {
 		mirror = false,

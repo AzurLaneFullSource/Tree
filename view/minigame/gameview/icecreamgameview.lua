@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IceCreamGameView", import("..BaseMiniGameView"))
+local var0_0 = class("IceCreamGameView", import("..BaseMiniGameView"))
 local var1_0 = "EVENT_ICE_FINISH"
 local var2_0 = "EVENT_UPDATE_WAIT_TIME"
 local var3_0 = 0.05

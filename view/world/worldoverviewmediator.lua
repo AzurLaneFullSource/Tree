@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldOverviewMediator", import("..base.ContextMediator"))
+local var0_0 = class("WorldOverviewMediator", import("..base.ContextMediator"))
 
 var0_0.OnAchieveStar = "WorldOverviewMediator.OnAchieveStar"
 

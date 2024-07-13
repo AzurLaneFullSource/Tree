@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EatFoodPage", import("...base.BaseActivityPage"))
+local var0_0 = class("EatFoodPage", import("...base.BaseActivityPage"))
 local var1_0 = 35
 local var2_0 = 31
 

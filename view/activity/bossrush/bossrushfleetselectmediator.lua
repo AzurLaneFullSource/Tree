@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushFleetSelectMediator", import("view.base.ContextMediator"))
+local var0_0 = class("BossRushFleetSelectMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_OPEN_DECK = "BossRushFleetSelectMediator:ON_OPEN_DECK"
 var0_0.ON_FLEET_SHIPINFO = "BossRushFleetSelectMediator:ON_FLEET_SHIPINFO"

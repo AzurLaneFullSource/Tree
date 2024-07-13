@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "信浓活动 信浓基础航速修正",
 	time = 0,

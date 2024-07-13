@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushRankActivity", import("model.vo.Activity"))
+local var0_0 = class("BossRushRankActivity", import("model.vo.Activity"))
 
 function var0_0.GetScore(arg0_1)
 	return arg0_1.data1

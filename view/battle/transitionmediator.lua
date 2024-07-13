@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TransitionMediator", import("..base.ContextMediator"))
+local var0_0 = class("TransitionMediator", import("..base.ContextMediator"))
 
 var0_0.FINISH = "TransitionMediator:FINISH"
 

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "对重樱群岛单位造成伤害提高25.0%",
 	name = "抗击重樱",
 	init_effect = "",

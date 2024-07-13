@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewYearShrinePage", import("...base.BaseActivityPage"))
+local var0_0 = class("NewYearShrinePage", import("...base.BaseActivityPage"))
 
 var0_0.MAX_COUNT = 7
 var0_0.GO_MINI_GAME_ID = 34

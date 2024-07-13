@@ -1,4 +1,4 @@
-﻿local var0_0 = class("HoloLiveMioPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("HoloLiveMioPage", import(".TemplatePage.PtTemplatePage"))
 
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)

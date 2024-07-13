@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ExpeditionGameMediator", import(".MiniHubMediator"))
+local var0_0 = class("ExpeditionGameMediator", import(".MiniHubMediator"))
 
 function var0_0.listNotificationInterests(arg0_1)
 	local var0_1 = {

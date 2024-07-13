@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.spweapon_type = {
 	{
 		spweapon_type = 1,

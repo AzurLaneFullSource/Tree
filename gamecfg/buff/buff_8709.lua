@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "jinengchufared",
 	name = "英系V2 U81潜行猎杀",
 	time = 10,

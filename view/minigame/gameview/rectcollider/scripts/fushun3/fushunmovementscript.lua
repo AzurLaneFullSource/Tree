@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FuShunMovementScript", import("..RectBaseScript"))
+local var0_0 = class("FuShunMovementScript", import("..RectBaseScript"))
 
 function var0_0.onInit(arg0_1)
 	arg0_1._loop = true

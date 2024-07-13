@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipBluePrintScene", import("..base.BaseUI"))
+local var0_0 = class("ShipBluePrintScene", import("..base.BaseUI"))
 local var1_0 = pg.ship_data_blueprint
 local var2_0 = pg.ship_data_template
 local var3_0 = pg.ship_data_breakout

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "内置CD+最大触发次数处理",
 	init_effect = "",

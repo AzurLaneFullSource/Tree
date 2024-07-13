@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "空中支援时，永久提高下一次空中支援伤害8.0%(满级20.0%)，可叠加3次",
 	name = "鹤之奋进",
 	init_effect = "",

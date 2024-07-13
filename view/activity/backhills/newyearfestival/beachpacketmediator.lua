@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BeachPacketMediator", import("view.base.ContextMediator"))
+local var0_0 = class("BeachPacketMediator", import("view.base.ContextMediator"))
 
 function var0_0.listNotificationInterests(arg0_1)
 	return {

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DialogueStoryPlayer", import(".StoryPlayer"))
+local var0_0 = class("DialogueStoryPlayer", import(".StoryPlayer"))
 local var1_0 = 159
 local var2_0 = 411
 

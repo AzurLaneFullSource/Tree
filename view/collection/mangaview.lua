@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MangaView", import("..base.BaseSubView"))
+local var0_0 = class("MangaView", import("..base.BaseSubView"))
 
 var0_0.MangaGroupName = "MANGA"
 

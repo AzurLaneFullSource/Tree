@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewProbabilitySkinShopScene", import(".NewSkinShopScene"))
+local var0_0 = class("NewProbabilitySkinShopScene", import(".NewSkinShopScene"))
 
 function var0_0.ResUISettings(arg0_1)
 	return false

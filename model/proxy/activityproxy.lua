@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityProxy", import(".NetProxy"))
+local var0_0 = class("ActivityProxy", import(".NetProxy"))
 
 var0_0.ACTIVITY_ADDED = "ActivityProxy ACTIVITY_ADDED"
 var0_0.ACTIVITY_UPDATED = "ActivityProxy ACTIVITY_UPDATED"

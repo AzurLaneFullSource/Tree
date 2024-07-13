@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardFeastPoolMgr", import(".CourtYardPoolMgr"))
+local var0_0 = class("CourtYardFeastPoolMgr", import(".CourtYardPoolMgr"))
 
 function var0_0.GenPool(arg0_1, arg1_1)
 	local var0_1 = var0_0.super.GenPool(arg0_1, arg1_1)

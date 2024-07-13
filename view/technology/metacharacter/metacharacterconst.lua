@@ -1,4 +1,4 @@
-﻿MetaCharacterConst = {}
+MetaCharacterConst = {}
 
 local var0_0 = MetaCharacterConst
 

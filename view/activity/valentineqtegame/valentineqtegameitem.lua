@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ValentineQteGameItem")
+local var0_0 = class("ValentineQteGameItem")
 local var1_0 = {
 	"1",
 	"2",

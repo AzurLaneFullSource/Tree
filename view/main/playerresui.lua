@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PlayerResUI", pm.Mediator)
+local var0_0 = class("PlayerResUI", pm.Mediator)
 
 var0_0.GO_MALL = "PlayerResUI:GO_MALL"
 var0_0.CHANGE_TOUCH_ABLE = "PlayerResUI:CHANGE_TOUCH_ABLE"

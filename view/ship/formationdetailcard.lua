@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FormationDetailCard")
+local var0_0 = class("FormationDetailCard")
 local var1_0 = 0
 local var2_0 = 1
 local var3_0 = 2

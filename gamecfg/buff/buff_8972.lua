@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "公海舰队活动剧情战 新泽西支援弹幕",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSMapQuad", import("...BaseEntity"))
+local var0_0 = class("WSMapQuad", import("...BaseEntity"))
 
 var0_0.Fields = {
 	static = "boolean",

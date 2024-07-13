@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Dorm3dZone", import("model.vo.BaseVO"))
+local var0_0 = class("Dorm3dZone", import("model.vo.BaseVO"))
 
 function var0_0.bindConfigTable(arg0_1)
 	return pg.dorm3d_zone_template

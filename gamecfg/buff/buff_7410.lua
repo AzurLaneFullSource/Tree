@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "贝法 监听BUFF",
 	time = 0,

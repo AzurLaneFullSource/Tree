@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardBasePanel", import("...base.BasePanel"))
+local var0_0 = class("CourtYardBasePanel", import("...base.BasePanel"))
 local var1_0 = 0.5
 local var2_0 = 0
 local var3_0 = 1

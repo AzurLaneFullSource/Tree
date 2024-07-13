@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "肉鸽引导1 平射护盾",
 	time = 999,

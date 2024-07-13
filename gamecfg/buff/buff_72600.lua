@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "对轻母增伤",
 	init_effect = "",

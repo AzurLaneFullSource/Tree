@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "黑企业剧情战斗技能",
 	init_effect = "",

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.drop_data_restore = {
 	{
 		target_type = 7,

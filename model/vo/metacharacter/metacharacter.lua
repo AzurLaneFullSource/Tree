@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MetaCharacter", import("..BaseVO"))
+local var0_0 = class("MetaCharacter", import("..BaseVO"))
 
 function var0_0.bindConfigTable(arg0_1)
 	return pg.ship_strengthen_meta

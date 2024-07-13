@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024愚人节 BOSS满血",
 	time = 3,

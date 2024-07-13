@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "毛系V3 精神同步机制对敌方单位伤害倍率（增伤效果，通过TAG实现）",
 	time = 0,

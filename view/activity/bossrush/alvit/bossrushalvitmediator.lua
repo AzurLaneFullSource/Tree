@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushAlvitMediator", import("view.base.ContextMediator"))
+local var0_0 = class("BossRushAlvitMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_FLEET_SELECT = "BossRushAlvitMediator:ON_FLEET_SELECT"
 var0_0.ON_EXTRA_RANK = "BossRushAlvitMediator:ON_EXTRA_RANK"

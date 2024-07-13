@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewBossExperimentResultStatisticsPage", import("..hpShareActBoss.NewHpShareActBossResultStatisticsPage"))
+local var0_0 = class("NewBossExperimentResultStatisticsPage", import("..hpShareActBoss.NewHpShareActBossResultStatisticsPage"))
 
 function var0_0.GetTicketUseCount(arg0_1)
 	return 0

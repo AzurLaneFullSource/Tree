@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024阿尔萨斯活动 拟态驱逐BOSS 命中光环",
 	time = 0,

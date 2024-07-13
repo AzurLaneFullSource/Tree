@@ -1,4 +1,4 @@
-﻿local var0_0 = class("KindergartenMediator", import("view.base.ContextMediator"))
+local var0_0 = class("KindergartenMediator", import("view.base.ContextMediator"))
 
 var0_0.GO_SCENE = "KindergartenMediator.GO_SCENE"
 var0_0.GO_SUBLAYER = "KindergartenMediator.GO_SUBLAYER"

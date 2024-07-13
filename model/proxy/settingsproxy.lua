@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SettingsProxy", pm.Proxy)
+local var0_0 = class("SettingsProxy", pm.Proxy)
 
 function var0_0.onRegister(arg0_1)
 	arg0_1._isBgmEnble = PlayerPrefs.GetInt("ShipSkinBGM", 1) > 0

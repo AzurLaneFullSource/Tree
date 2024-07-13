@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "纳尔逊的旗语",
 	time = 0,

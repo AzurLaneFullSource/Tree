@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Head to the Lab!",
 	"Now enter the META Lab!",
 	"Here you can claim rewards based on how many Sync Points you’ve accumulated!",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SSSSPtPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("SSSSPtPage", import(".TemplatePage.PtTemplatePage"))
 local var1_0 = {
 	{
 		11,

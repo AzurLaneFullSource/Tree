@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipStatus")
+local var0_0 = class("ShipStatus")
 
 var0_0.flagList = {
 	"inChapter",

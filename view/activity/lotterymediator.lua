@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LotteryMediator", import("..base.ContextMediator"))
+local var0_0 = class("LotteryMediator", import("..base.ContextMediator"))
 
 var0_0.ON_LAUNCH = "LotteryMediator:ON_LAUNCH"
 var0_0.ON_SWITCH = "LotteryMediator:ON_SWITCH"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BasePanel")
+local var0_0 = class("BasePanel")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	assert(arg1_1)

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainGuildSequence")
+local var0_0 = class("MainGuildSequence")
 
 function var0_0.Ctor(arg0_1)
 	arg0_1.ignores = {}

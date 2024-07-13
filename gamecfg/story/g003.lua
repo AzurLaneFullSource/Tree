@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "G003",
 	curtain = true,
 	type = 1,

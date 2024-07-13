@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSBaseCommand")
+local var0_0 = class("WSBaseCommand")
 
 local function var1_0(arg0_1, arg1_1)
 	return arg0_1 ~= nil and type(arg0_1) == arg1_1

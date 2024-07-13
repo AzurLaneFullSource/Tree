@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IslandTaskPage")
+local var0_0 = class("IslandTaskPage")
 local var1_0 = {
 	5,
 	6,

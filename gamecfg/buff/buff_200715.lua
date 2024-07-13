@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑基洛夫BOSS战 曙光联合 机械被消灭使BOSS叠加易伤",
 	time = 0,

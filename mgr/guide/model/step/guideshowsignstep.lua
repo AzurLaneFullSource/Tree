@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuideShowSignStep", import(".GuideStep"))
+local var0_0 = class("GuideShowSignStep", import(".GuideStep"))
 
 var0_0.SIGN_TYPE_2 = 2
 var0_0.SIGN_TYPE_3 = 3

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "约克公爵1技能",
 	time = 6,

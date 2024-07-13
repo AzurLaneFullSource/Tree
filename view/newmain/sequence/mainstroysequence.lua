@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainStroySequence")
+local var0_0 = class("MainStroySequence")
 
 function var0_0.Execute(arg0_1, arg1_1)
 	local var0_1 = {}

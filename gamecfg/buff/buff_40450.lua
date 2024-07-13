@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "队伍中存在任意FF，CL、CA、SFV受到伤害降低，依据战术属性",
 	time = 0,

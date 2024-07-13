@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildMainScene", import("..base.BaseUI"))
+local var0_0 = class("GuildMainScene", import("..base.BaseUI"))
 
 function var0_0.forceGC(arg0_1)
 	return true

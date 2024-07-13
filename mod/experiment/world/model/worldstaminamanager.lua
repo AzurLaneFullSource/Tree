@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldStaminaManager", import("...BaseEntity"))
+local var0_0 = class("WorldStaminaManager", import("...BaseEntity"))
 
 var0_0.Fields = {
 	staminaExchangeTimes = "number",

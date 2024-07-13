@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LevelStageStatusBarTemplate", BaseSubPanel)
+local var0_0 = class("LevelStageStatusBarTemplate", BaseSubPanel)
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.anim = arg0_1._go:GetComponent(typeof(Animator))

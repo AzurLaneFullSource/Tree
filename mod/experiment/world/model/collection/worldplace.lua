@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldPlace")
+local var0_0 = class("WorldPlace")
 local var1_0 = {
 	i18n1("碧蓝"),
 	i18n1("铁血"),

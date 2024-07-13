@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityPermanentMediator", import("..base.ContextMediator"))
+local var0_0 = class("ActivityPermanentMediator", import("..base.ContextMediator"))
 
 var0_0.START_SELECT = "ActivityPermanentMediator.START_SELECT"
 

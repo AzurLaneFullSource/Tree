@@ -1,4 +1,4 @@
-﻿return {
+return {
 	{
 		banner = "summary",
 		event = ActivityMediator.EVENT_GO_SCENE,

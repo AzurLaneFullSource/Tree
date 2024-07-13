@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "海伦娜META雷达定身",
 	time = 0,

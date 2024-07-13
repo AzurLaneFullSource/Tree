@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PlayerVitaeShipCard", import(".PlayerVitaeBaseCard"))
+local var0_0 = class("PlayerVitaeShipCard", import(".PlayerVitaeBaseCard"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.bgImage = arg0_1._tf:Find("bg"):GetComponent(typeof(Image))

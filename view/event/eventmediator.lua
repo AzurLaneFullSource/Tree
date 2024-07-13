@@ -1,4 +1,4 @@
-﻿EventConst = require("view/event/EventConst")
+EventConst = require("view/event/EventConst")
 
 local var0_0 = class("EventMediator", import("..base.ContextMediator"))
 

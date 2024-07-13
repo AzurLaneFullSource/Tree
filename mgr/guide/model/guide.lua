@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Guide")
+local var0_0 = class("Guide")
 
 function var0_0.Data2GuideStep(arg0_1, arg1_1)
 	if arg1_1.hideui then

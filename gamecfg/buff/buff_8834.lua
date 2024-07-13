@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "metaboss保底伤害",
 	time = 1.7,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BeachGuardMenuUI")
+local var0_0 = class("BeachGuardMenuUI")
 local var1_0 = "beach_guard_chaijun"
 local var2_0 = "beach_guard_jianye"
 local var3_0 = "beach_guard_lituoliao"

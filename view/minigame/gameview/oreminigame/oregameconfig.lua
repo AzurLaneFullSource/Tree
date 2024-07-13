@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	CARRY_LOOKAT_RADIUS = 75,
 	CARRY_RADIUS = 50,
 	MAX_WEIGHT = 180,

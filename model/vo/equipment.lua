@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Equipment", import(".BaseVO"))
+local var0_0 = class("Equipment", import(".BaseVO"))
 
 var0_0.EQUIPMENT_STATE_LOCK = 1
 var0_0.EQUIPMENT_STATE_EMPTY = 0

@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Ah, you were defeated! Tap confirm to exit the stage.",
 	"Our next mission is to support the Eagles' aviation fleet combat drills. Tap <color=#ffde38>Attack</color> to get started.",
 	"Choose campaign",

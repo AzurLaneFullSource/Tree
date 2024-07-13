@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushContinuousOperationWindowMediator", import("view.activity.worldboss.ContinuousOperationWindowMediator"))
+local var0_0 = class("BossRushContinuousOperationWindowMediator", import("view.activity.worldboss.ContinuousOperationWindowMediator"))
 
 function var0_0.register(arg0_1)
 	arg0_1:bind(PreCombatMediator.CONTINUOUS_OPERATION, function(arg0_2)

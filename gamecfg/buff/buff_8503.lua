@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "万圣节EX3boss，第2阶段伤害加50%",
 	init_effect = "",

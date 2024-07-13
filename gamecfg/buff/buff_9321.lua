@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "jinengchufablue",
 	name = "白龙无敌锁血撤退",
 	time = 9999,

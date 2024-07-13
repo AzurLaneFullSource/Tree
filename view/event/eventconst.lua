@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 
 var0_0.EVENT_OPEN_DOCK = "event_open_dock"
 var0_0.EVENT_LIST_UPDATE = "event_list_update"

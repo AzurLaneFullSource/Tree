@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 3,
 	name = "2022武藏活动 EX 武藏天雷打击效果",
 	init_effect = "",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RankCard")
+local var0_0 = class("RankCard")
 
 var0_0.TYPE_SELF = 1
 var0_0.TYPE_OTHER = 2

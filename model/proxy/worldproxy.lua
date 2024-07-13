@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldProxy", import(".NetProxy"))
+local var0_0 = class("WorldProxy", import(".NetProxy"))
 
 function var0_0.register(arg0_1)
 	WPool = BaseEntityPool.New()

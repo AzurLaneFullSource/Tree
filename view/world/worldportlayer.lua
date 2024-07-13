@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldPortLayer", import("..base.BaseUI"))
+local var0_0 = class("WorldPortLayer", import("..base.BaseUI"))
 
 var0_0.Listeners = {
 	onUpdateGoods = "OnUpdateGoods",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossAward", import("....BaseEntity"))
+local var0_0 = class("BossAward", import("....BaseEntity"))
 
 var0_0.Fields = {
 	bossId = "number",

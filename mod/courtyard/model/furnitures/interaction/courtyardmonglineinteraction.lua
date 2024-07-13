@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardMonglineInteraction", import(".CourtYardInteraction"))
+local var0_0 = class("CourtYardMonglineInteraction", import(".CourtYardInteraction"))
 
 function var0_0.DoStep(arg0_1)
 	arg0_1.statesCnt[arg0_1.host.user] = 1

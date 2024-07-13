@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OtherWorldTaskLayer", import("..base.BaseUI"))
+local var0_0 = class("OtherWorldTaskLayer", import("..base.BaseUI"))
 
 var0_0.sub_item_warning = "sub_item_warning"
 

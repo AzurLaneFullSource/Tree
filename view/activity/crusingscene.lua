@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CrusingScene", import("view.base.BaseUI"))
+local var0_0 = class("CrusingScene", import("view.base.BaseUI"))
 
 var0_0.optionsPath = {
 	"top/home"

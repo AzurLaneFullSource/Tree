@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PileGameBgMgr")
+local var0_0 = class("PileGameBgMgr")
 
 var0_0.bgMaps = {
 	"1",

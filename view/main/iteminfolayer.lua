@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ItemInfoLayer", import("..base.BaseUI"))
+local var0_0 = class("ItemInfoLayer", import("..base.BaseUI"))
 local var1_0 = 5
 local var2_0 = 11
 local var3_0 = {

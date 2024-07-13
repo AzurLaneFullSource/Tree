@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SettingsAccountCHTPanle", import(".SettingsAccountCHPanle"))
+local var0_0 = class("SettingsAccountCHTPanle", import(".SettingsAccountCHPanle"))
 
 function var0_0.GetTitle(arg0_1)
 	return "注銷"

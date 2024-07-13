@@ -1,4 +1,4 @@
-﻿local var0_0 = 0
+local var0_0 = 0
 
 function HUT_Var1()
 	var0_0 = var0_0 + 2

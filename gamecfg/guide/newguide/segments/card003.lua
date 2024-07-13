@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "Card003",
 	events = {
 		{

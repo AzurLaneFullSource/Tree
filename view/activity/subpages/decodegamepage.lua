@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DecodeGamePage", import(".TemplatePage.SkinTemplatePage"))
+local var0_0 = class("DecodeGamePage", import(".TemplatePage.SkinTemplatePage"))
 local var1_0
 
 function var0_0.OnInit(arg0_1)

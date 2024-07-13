@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateCollectLayerTemplate", import("..base.EducateBaseUI"))
+local var0_0 = class("EducateCollectLayerTemplate", import("..base.EducateBaseUI"))
 
 function var0_0.getUIName(arg0_1)
 	assert(nil, "getUIName方法必须由子类实现")

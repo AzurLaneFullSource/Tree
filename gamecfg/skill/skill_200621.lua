@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023海盗活动 传奇旗舰Lv2",
 	cd = 0,

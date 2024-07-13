@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainActBossSingleBtn", import(".MainBaseActivityBtn"))
+local var0_0 = class("MainActBossSingleBtn", import(".MainBaseActivityBtn"))
 
 function var0_0.GetEventName(arg0_1)
 	return "event_boss_single"

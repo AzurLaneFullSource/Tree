@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SkinVoucherMsgBox", import(".SkinCouponMsgBox"))
+local var0_0 = class("SkinVoucherMsgBox", import(".SkinCouponMsgBox"))
 
 function var0_0.getUIName(arg0_1)
 	return "SkinVoucherMsgBoxUI"

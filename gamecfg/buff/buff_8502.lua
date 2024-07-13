@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 8,
 	name = "万圣节EX2boss，第2阶段减伤60",
 	init_effect = "jinengchufablue",

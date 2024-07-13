@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardRightPanel", import(".CourtYardBasePanel"))
+local var0_0 = class("CourtYardRightPanel", import(".CourtYardBasePanel"))
 
 function var0_0.GetUIName(arg0_1)
 	return "main/rightPanel"

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 10,
 	name = "火力全开-LV8",
 	init_effect = "jinengchufared",

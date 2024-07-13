@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SVFloatPanel", import("view.base.BaseSubView"))
+local var0_0 = class("SVFloatPanel", import("view.base.BaseSubView"))
 
 var0_0.ShowView = "SVFloatPanel.ShowView"
 var0_0.HideView = "SVFloatPanel.HideView"

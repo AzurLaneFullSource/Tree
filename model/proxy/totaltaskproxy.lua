@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TotalTaskProxy", import(".NetProxy"))
+local var0_0 = class("TotalTaskProxy", import(".NetProxy"))
 
 var0_0.TOTAL_TASK_UPDATED = "total task updated"
 var0_0.avatar_task_type = {

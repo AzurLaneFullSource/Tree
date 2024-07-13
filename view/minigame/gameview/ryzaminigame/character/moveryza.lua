@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MoveEnemy", import("view.miniGame.gameView.RyzaMiniGame.character.TargetMove"))
+local var0_0 = class("MoveEnemy", import("view.miniGame.gameView.RyzaMiniGame.character.TargetMove"))
 
 function var0_0.InitUI(arg0_1, arg1_1)
 	arg0_1.hp = arg1_1.hp or 3

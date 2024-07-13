@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AnniversaryIslandSpringTaskSubmitWindowMediator", import("view.base.ContextMediator"))
+local var0_0 = class("AnniversaryIslandSpringTaskSubmitWindowMediator", import("view.base.ContextMediator"))
 
 function var0_0.register(arg0_1)
 	arg0_1:bind(AnniversaryIslandSpringTask2023Mediator.SUBMIT_TASK, function(arg0_2)

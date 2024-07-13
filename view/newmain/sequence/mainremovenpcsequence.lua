@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainRemoveNpcSequence")
+local var0_0 = class("MainRemoveNpcSequence")
 
 function var0_0.Execute(arg0_1, arg1_1)
 	local var0_1 = getProxy(ActivityProxy):getActivityById(ActivityConst.ACT_NPC_SHIP_ID)

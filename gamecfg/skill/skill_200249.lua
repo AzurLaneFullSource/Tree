@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022美系活动D3 第五类威胁-强 无差别攻击弹幕",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "大世界剧情战 天帕岚斯技能",
 	time = 0,

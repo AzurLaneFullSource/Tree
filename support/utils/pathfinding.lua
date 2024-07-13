@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PathFinding")
+local var0_0 = class("PathFinding")
 
 PathFinding = var0_0
 var0_0.PrioNormal = 1

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022美系活动D3 第五类威胁 侵蚀领域易伤",
 	time = 0,

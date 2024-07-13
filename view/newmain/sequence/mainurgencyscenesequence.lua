@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainUrgencySceneSequence")
+local var0_0 = class("MainUrgencySceneSequence")
 
 function var0_0.Execute(arg0_1, arg1_1)
 	local var0_1 = {

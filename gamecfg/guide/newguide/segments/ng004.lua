@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Commander, welcome to Azur Lane! Let’s report to boot camp, now!"
 }
 

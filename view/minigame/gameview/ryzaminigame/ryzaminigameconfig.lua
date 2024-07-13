@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	TIME_INTERVAL = 0.0166666666666667,
 	GRASS_CHAGNE_RATE = 0.2,
 	ALL_GAME_TIME = 120,

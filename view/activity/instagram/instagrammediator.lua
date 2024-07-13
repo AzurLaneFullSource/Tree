@@ -1,4 +1,4 @@
-﻿local var0_0 = class("InstagramMediator", import("...base.ContextMediator"))
+local var0_0 = class("InstagramMediator", import("...base.ContextMediator"))
 
 var0_0.ON_LIKE = "InstagramMediator:ON_LIKE"
 var0_0.ON_SHARE = "InstagramMediator:ON_SHARE"

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.TrackerMgr = singletonClass("TrackerMgr")
 
 local var0_0 = pg.TrackerMgr

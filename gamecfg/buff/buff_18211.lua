@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "吾妻特殊弹幕I-天运强化",
 	time = 0,

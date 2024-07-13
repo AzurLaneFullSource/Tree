@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardPedestalFloorPaper", import(".CourtYardPedestalStructure"))
+local var0_0 = class("CourtYardPedestalFloorPaper", import(".CourtYardPedestalStructure"))
 local var1_0 = {
 	0.5,
 	0.67,

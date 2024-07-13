@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MeritorousShop", import(".BaseShop"))
+local var0_0 = class("MeritorousShop", import(".BaseShop"))
 
 var0_0.REFRESH_TYPE_AUTO = 1
 var0_0.REFRESH_TYPE_MANUAL = 2

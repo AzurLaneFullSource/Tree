@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LanternRiddlesController")
+local var0_0 = class("LanternRiddlesController")
 
 function var0_0.Ctor(arg0_1)
 	arg0_1.model = LanternRiddlesModel.New(arg0_1)

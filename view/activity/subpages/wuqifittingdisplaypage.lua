@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WuQiFittingDisplayPage", import("view.base.BaseActivityPage"))
+local var0_0 = class("WuQiFittingDisplayPage", import("view.base.BaseActivityPage"))
 
 var0_0.blueprintGroupId = 39904
 

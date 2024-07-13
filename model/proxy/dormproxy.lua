@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DormProxy", import(".NetProxy"))
+local var0_0 = class("DormProxy", import(".NetProxy"))
 
 var0_0.DORM_UPDATEED = "DormProxy updated"
 var0_0.LEVEL_UP = "DormProxy level up"

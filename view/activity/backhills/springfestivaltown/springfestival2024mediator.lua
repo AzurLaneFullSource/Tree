@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpringFestival2024Mediator", import("view.activity.BackHills.TemplateMV.BackHillMediatorTemplate"))
+local var0_0 = class("SpringFestival2024Mediator", import("view.activity.BackHills.TemplateMV.BackHillMediatorTemplate"))
 
 var0_0.MINI_GAME_OPERATOR = "MINI_GAME_OPERATOR"
 var0_0.GO_SCENE = "GO_SCENE"

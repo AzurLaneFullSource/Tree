@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateNewCharMediator", import(".base.EducateContextMediator"))
+local var0_0 = class("EducateNewCharMediator", import(".base.EducateContextMediator"))
 
 var0_0.ON_SET_CALL = "EducateNewCharMediator:ON_SET_CALL"
 

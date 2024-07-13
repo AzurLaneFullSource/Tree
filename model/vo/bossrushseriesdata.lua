@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushSeriesData", import("model.vo.baseVO"))
+local var0_0 = class("BossRushSeriesData", import("model.vo.baseVO"))
 
 function var0_0.bindConfigTable(arg0_1)
 	return pg.activity_series_enemy

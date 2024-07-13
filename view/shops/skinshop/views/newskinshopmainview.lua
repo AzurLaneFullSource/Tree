@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewSkinShopMainView", import("view.base.BaseEventLogic"))
+local var0_0 = class("NewSkinShopMainView", import("view.base.BaseEventLogic"))
 
 var0_0.EVT_SHOW_OR_HIDE_PURCHASE_VIEW = "NewSkinShopMainView:EVT_SHOW_OR_HIDE_PURCHASE_VIEW"
 var0_0.EVT_ON_PURCHASE = "NewSkinShopMainView:EVT_ON_PURCHASE"

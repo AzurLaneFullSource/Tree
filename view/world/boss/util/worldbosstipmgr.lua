@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.WorldBossTipMgr = singletonClass("WorldBossTipMgr")
 
 local var0_0 = pg.WorldBossTipMgr

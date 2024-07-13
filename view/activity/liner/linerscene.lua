@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LinerScene", import("view.base.BaseUI"))
+local var0_0 = class("LinerScene", import("view.base.BaseUI"))
 
 var0_0.AUTO_DELAY_TIME = 0.5
 var0_0.SCALE_ANIM_TIME = 0.5

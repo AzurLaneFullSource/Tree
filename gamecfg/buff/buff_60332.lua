@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "循环",
 	time = 0.2,

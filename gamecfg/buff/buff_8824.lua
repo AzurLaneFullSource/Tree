@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "Bossbomb",
 	name = "2020德系活动EX 构建者反击护盾 被打破触发弹幕",
 	time = 3,

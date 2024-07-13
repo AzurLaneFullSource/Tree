@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CmdLevelFormationPanel", import("..base.BasePanel"))
+local var0_0 = class("CmdLevelFormationPanel", import("..base.BasePanel"))
 
 function var0_0.init(arg0_1)
 	arg0_1.descPanel = arg0_1:findTF("desc")

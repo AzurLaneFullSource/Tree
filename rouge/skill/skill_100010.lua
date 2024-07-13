@@ -1,4 +1,4 @@
-﻿return {
+return {
 	cd = 0,
 	name = "卡牌 追加攻击I",
 	painting = 1,

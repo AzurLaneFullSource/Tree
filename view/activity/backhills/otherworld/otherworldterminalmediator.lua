@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OtherworldTerminalMediator", import("view.base.ContextMediator"))
+local var0_0 = class("OtherworldTerminalMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_GET_PT_ALL_AWARD = "OtherworldTerminalMediator.ON_GET_PT_AWARD"
 var0_0.ON_BUFF_LIST_CHANGE = "OtherworldTerminalMediator.ON_BUFF_LIST_CHANGE"

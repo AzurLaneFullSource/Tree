@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VoteScheduleMediator", import("view.base.ContextMediator"))
+local var0_0 = class("VoteScheduleMediator", import("view.base.ContextMediator"))
 
 var0_0.GO_RANK = "VoteScheduleMediator:GO_RANK"
 var0_0.FETCH_RANK = "VoteScheduleMediator:FETCH_RANK"

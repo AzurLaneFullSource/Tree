@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024阿尔萨斯活动SP 死神之影召唤浮游炮1",
 	time = 5,

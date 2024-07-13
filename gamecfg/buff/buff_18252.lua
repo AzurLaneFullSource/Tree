@@ -1,4 +1,4 @@
-﻿return {
+return {
 	blink = {
 		0,
 		0.7,

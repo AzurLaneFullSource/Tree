@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.chapter_pop_template = {
 	[1280001] = {
 		id = 1280001,

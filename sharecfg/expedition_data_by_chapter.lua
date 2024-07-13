@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.expedition_data_by_chapter = {
 	[101] = {
 		map = 1,

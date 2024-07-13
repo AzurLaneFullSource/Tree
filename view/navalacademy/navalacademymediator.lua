@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NavalAcademyMediator", import("..base.ContextMediator"))
+local var0_0 = class("NavalAcademyMediator", import("..base.ContextMediator"))
 
 var0_0.ON_OPEN_CLASSROOM = "NavalAcademyMediator:ON_OPEN_CLASSROOM"
 var0_0.ON_OPEN_COMMANDER = "NavalAcademyMediator:ON_OPEN_COMMANDER"

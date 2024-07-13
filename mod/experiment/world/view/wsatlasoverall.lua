@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSAtlasOverall", import(".WSAtlas"))
+local var0_0 = class("WSAtlasOverall", import(".WSAtlas"))
 
 var0_0.windowSize = Vector2(1747, 776)
 var0_0.Fields = {

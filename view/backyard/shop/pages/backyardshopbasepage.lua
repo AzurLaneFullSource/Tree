@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardShopBasePage", import("....base.BaseSubView"))
+local var0_0 = class("BackYardShopBasePage", import("....base.BaseSubView"))
 
 function var0_0.PlayerUpdated(arg0_1, arg1_1)
 	arg0_1.player = arg1_1

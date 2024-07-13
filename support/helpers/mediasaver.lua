@@ -1,4 +1,4 @@
-﻿MediaSaver = {}
+MediaSaver = {}
 
 local var0_0 = MediaSaver
 

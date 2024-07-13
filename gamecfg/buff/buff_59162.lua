@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "航母以外的单位的命中率下降",
 	init_effect = "",

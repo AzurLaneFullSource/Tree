@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LoginSceneConst")
+local var0_0 = class("LoginSceneConst")
 
 var0_0.DEFINE = {
 	ACCOUNT_BTN = 10,

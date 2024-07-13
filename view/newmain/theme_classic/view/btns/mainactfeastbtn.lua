@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainActFeastBtn", import(".MainBaseActivityBtn"))
+local var0_0 = class("MainActFeastBtn", import(".MainBaseActivityBtn"))
 
 function var0_0.InShowTime(arg0_1)
 	local var0_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST)

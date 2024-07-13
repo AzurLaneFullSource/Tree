@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewServerShopPurchasePanel", import(".GuildShopPurchasePanel"))
+local var0_0 = class("NewServerShopPurchasePanel", import(".GuildShopPurchasePanel"))
 
 function var0_0.Show(arg0_1, arg1_1)
 	local var0_1 = arg1_1:GetConsume()

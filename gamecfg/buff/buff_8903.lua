@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "最后的反击",
 	time = 0,

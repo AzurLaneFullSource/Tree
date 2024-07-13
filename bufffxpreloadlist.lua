@@ -1,4 +1,4 @@
-﻿return {
+return {
 	"gantanhao",
 	"Health",
 	"jineng",

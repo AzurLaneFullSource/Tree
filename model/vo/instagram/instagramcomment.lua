@@ -1,4 +1,4 @@
-﻿local var0_0 = class("InstagramComment", import("..BaseVO"))
+local var0_0 = class("InstagramComment", import("..BaseVO"))
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
 	arg0_1.time = arg1_1.time

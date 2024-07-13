@@ -1,4 +1,4 @@
-﻿require("Mod/Battle/BattleState")
+require("Mod/Battle/BattleState")
 require("Mod/Battle/BattleEvent")
 require("Mod/Battle/BattleUnitEvent")
 require("Mod/Battle/BattleBulletEvent")

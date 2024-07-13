@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SecondaryPasswordLayer", import("..base.BaseUI"))
+local var0_0 = class("SecondaryPasswordLayer", import("..base.BaseUI"))
 
 var0_0.SetView = 1
 var0_0.InputView = 2

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainLanternFestivalBtn", import(".MainBaseActivityBtn"))
+local var0_0 = class("MainLanternFestivalBtn", import(".MainBaseActivityBtn"))
 
 var0_0.LANTERNFESTIVAL_MINIGAME_ID = 64
 

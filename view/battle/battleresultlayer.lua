@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleResultLayer", import("..base.BaseUI"))
+local var0_0 = class("BattleResultLayer", import("..base.BaseUI"))
 
 var0_0.DURATION_MOVE = 0.35
 var0_0.DURATION_WIN_SCALE = 0.4

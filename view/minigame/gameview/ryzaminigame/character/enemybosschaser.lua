@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EnemyBossChaser", import("view.miniGame.gameView.RyzaMiniGame.character.EnemyChaser"))
+local var0_0 = class("EnemyBossChaser", import("view.miniGame.gameView.RyzaMiniGame.character.EnemyChaser"))
 
 var0_0.WeaponName = "Laser"
 var0_0.ConfigSkillCD = 10

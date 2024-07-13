@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024同盟活动EX 瞬移回初始地点",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023英系活动 EX 第三波 应对机制失败 发射惩罚弹幕",
 	cd = 0,

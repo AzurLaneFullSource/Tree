@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BuildShipRegularExchangeMediator", import("...base.ContextMediator"))
+local var0_0 = class("BuildShipRegularExchangeMediator", import("...base.ContextMediator"))
 
 var0_0.EXCHAGNE_SHIP = "BuildShipRegularExchangeMediator.EXCHAGNE_SHIP"
 

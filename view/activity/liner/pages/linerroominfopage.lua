@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LinerRoomInfoPage", import("view.base.BaseSubView"))
+local var0_0 = class("LinerRoomInfoPage", import("view.base.BaseSubView"))
 
 var0_0.TYPEWRITE_SPEED = 0.03
 var0_0.TYPE_EXPLORE = 1

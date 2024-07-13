@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewNavalTacticsLayer", import("...base.BaseUI"))
+local var0_0 = class("NewNavalTacticsLayer", import("...base.BaseUI"))
 
 var0_0.ON_UNLOCK = "NewNavalTacticsLayer:ON_UNLOCK"
 var0_0.ON_ADD_STUDENT = "NewNavalTacticsLayer:ON_ADD_STUDENT"

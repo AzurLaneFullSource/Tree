@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Your Support Fleet can aid fellow Guild members during boss battles.",
 	"Let's try adding a ship to your Support Fleet!",
 	"Tap here to edit your Support Fleet.",

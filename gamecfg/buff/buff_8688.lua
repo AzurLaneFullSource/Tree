@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "法系D3 阿尔及利亚",
 	time = 0,

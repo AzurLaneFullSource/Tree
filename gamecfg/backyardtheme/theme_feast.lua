@@ -1,4 +1,4 @@
-﻿return {
+return {
 	furnitures = {
 		{
 			shipId = 1,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SnapshotSelectCharMediator", import("..base.ContextMediator"))
+local var0_0 = class("SnapshotSelectCharMediator", import("..base.ContextMediator"))
 
 var0_0.SELECT_CHAR = "SnapshotSelectCharMediator.SELECT_CHAR"
 

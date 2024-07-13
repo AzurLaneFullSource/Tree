@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewYearFestival2023Scene", import("..TemplateMV.BackHillTemplate"))
+local var0_0 = class("NewYearFestival2023Scene", import("..TemplateMV.BackHillTemplate"))
 
 var0_0.edge2area = {
 	default = "map_middle",

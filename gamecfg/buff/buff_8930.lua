@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "毛系V3 EX雷击反制 开火",
 	time = 2,

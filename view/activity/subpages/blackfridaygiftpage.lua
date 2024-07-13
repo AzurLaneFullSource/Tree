@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BlackFridayGiftPage", import("...base.BaseActivityPage"))
+local var0_0 = class("BlackFridayGiftPage", import("...base.BaseActivityPage"))
 
 var0_0.DAY_COLOR = {
 	"110C08",

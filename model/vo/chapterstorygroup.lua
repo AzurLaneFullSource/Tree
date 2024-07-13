@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChapterStoryGroup", import("model.vo.BaseVO"))
+local var0_0 = class("ChapterStoryGroup", import("model.vo.BaseVO"))
 
 function var0_0.bindConfigTable(arg0_1)
 	return pg.story_group

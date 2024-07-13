@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "与主力舰队、侦查舰队交战时，提高战列命中，依据战术属性",
 	time = 0,

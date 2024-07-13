@@ -1,4 +1,4 @@
-﻿return {
+return {
 	bpm = 120,
 	short_music_name = "song01",
 	music_name = "bgm-song01",

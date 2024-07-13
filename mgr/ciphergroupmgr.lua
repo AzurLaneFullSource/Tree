@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.CipherGroupMgr = singletonClass("CipherGroupMgr")
 
 local var0_0 = pg.CipherGroupMgr

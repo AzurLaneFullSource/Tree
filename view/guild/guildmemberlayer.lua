@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildMemberLayer", import("..base.BaseUI"))
+local var0_0 = class("GuildMemberLayer", import("..base.BaseUI"))
 
 function var0_0.setGuildVO(arg0_1, arg1_1)
 	arg0_1.guildVO = arg1_1

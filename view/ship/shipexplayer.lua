@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipExpLayer", import("..base.BaseUI"))
+local var0_0 = class("ShipExpLayer", import("..base.BaseUI"))
 
 var0_0.TypeDefault = 0
 var0_0.TypeClass = 1

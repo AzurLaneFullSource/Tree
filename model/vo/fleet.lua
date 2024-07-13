@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Fleet", import(".BaseVO"))
+local var0_0 = class("Fleet", import(".BaseVO"))
 
 var0_0.C_TEAM_NAME = {
 	vanguard = i18n("word_vanguard_fleet"),

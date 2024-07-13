@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "装甲",
 	time = 5,

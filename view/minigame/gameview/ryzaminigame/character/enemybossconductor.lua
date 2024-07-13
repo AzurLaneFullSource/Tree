@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EnemyBossConductor", import("view.miniGame.gameView.RyzaMiniGame.character.EnemyConductor"))
+local var0_0 = class("EnemyBossConductor", import("view.miniGame.gameView.RyzaMiniGame.character.EnemyConductor"))
 
 var0_0.ConfigShildList = {
 	4,

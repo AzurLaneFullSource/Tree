@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MetaCharacterTask")
+local var0_0 = class("MetaCharacterTask")
 
 var0_0.STATE_EMPTY = 1
 var0_0.STATE_START = 2

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "正面装甲无法击破",
 	time = 0,

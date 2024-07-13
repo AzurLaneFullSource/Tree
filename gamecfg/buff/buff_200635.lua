@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023海盗活动T6 流星轰炸",
 	time = 0,

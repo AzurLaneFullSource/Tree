@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "卡牌BOSS 凉月 定时召唤蛋船",
 	painting = 0,

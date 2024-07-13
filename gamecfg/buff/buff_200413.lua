@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 1,
 	name = "2023俾斯麦Z活动 侵蚀等级4 不良效果",
 	init_effect = "",

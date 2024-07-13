@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_event_pt = {
 	[811] = {
 		convert_resource_type = 0,

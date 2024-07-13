@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022莱莎联动 极天·黑洞 蓄力失败",
 	cd = 0,

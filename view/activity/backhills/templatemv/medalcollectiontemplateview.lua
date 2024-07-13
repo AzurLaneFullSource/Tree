@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MedalCollectionTemplateView", import("view.base.BaseUI"))
+local var0_0 = class("MedalCollectionTemplateView", import("view.base.BaseUI"))
 
 var0_0.MEDAL_STATUS_UNACTIVATED = 1
 var0_0.MEDAL_STATUS_ACTIVATED = 2

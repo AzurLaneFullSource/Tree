@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShopsProxy", import(".NetProxy"))
+local var0_0 = class("ShopsProxy", import(".NetProxy"))
 
 var0_0.MERITOROUS_SHOP_UPDATED = "ShopsProxy:MERITOROUS_SHOP_UPDATED"
 var0_0.SHOPPINGSTREET_UPDATE = "ShopsProxy:SHOPPINGSTREET_UPDATE"

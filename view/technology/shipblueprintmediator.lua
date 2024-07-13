@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipBluePrintMediator", import("..base.ContextMediator"))
+local var0_0 = class("ShipBluePrintMediator", import("..base.ContextMediator"))
 
 var0_0.ON_CLICK_SPEEDUP_BTN = "ShipBluePrintMediator:ON_CLICK_SPEEDUP_BTN"
 var0_0.ON_START = "ShipBluePrintMediator:ON_START"

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "生效弹条",
 	cd = 0,

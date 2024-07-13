@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AssignedShipMediator", import("...base.ContextMediator"))
+local var0_0 = class("AssignedShipMediator", import("...base.ContextMediator"))
 
 var0_0.ON_USE_ITEM = "AssignedShipMediator:ON_USE_ITEM"
 

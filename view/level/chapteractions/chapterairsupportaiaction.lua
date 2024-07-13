@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChapterAirSupportAIAction", import(".ChapterMissileExplodeAction"))
+local var0_0 = class("ChapterAirSupportAIAction", import(".ChapterMissileExplodeAction"))
 
 function var0_0.PlayAIAction(arg0_1, arg1_1, arg2_1, arg3_1)
 	seriesAsync({

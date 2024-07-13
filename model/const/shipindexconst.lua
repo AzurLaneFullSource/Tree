@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipIndexConst")
+local var0_0 = class("ShipIndexConst")
 
 var0_0.SortRarity = bit.lshift(1, 0)
 var0_0.SortLevel = bit.lshift(1, 1)

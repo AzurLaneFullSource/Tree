@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "黑企业剧情战斗技能",
 	cd = 0,

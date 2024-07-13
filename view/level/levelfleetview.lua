@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LevelFleetView", import("..base.BaseSubView"))
+local var0_0 = class("LevelFleetView", import("..base.BaseSubView"))
 local var1_0 = {
 	vanguard = 1,
 	submarine = 3,

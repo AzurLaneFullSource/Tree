@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022毛系活动 B面精神同步实体炮弹跨射",
 	cd = 0,

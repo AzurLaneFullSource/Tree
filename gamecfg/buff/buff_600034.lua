@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "狮子座推力",
 	time = 0.5,

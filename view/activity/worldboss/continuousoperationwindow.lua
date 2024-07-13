@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ContinuousOperationWindow", import("view.base.BaseUI"))
+local var0_0 = class("ContinuousOperationWindow", import("view.base.BaseUI"))
 local var1_0 = 15
 
 function var0_0.getUIName(arg0_1)

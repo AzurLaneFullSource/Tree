@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Instagram", import("..BaseVO"))
+local var0_0 = class("Instagram", import("..BaseVO"))
 
 var0_0.TYPE_PLAYER_COMMENT = 1
 var0_0.TYPE_NPC_COMMENT = 2

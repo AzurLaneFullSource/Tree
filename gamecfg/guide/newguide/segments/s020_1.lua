@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Use your mission rewards to <color=#ff7d36>build a new ship</color>.",
 	"You've got enough resources! Tap <color=#ffde38>build</color> to get started.",
 	"Now tap <color=#ff7d36>confirm</color> to build your new ship."

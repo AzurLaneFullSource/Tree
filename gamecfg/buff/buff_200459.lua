@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023俾斯麦Z活动 EX 黑洞引力",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSEntranceTpl", import("...BaseEntity"))
+local var0_0 = class("WSEntranceTpl", import("...BaseEntity"))
 
 var0_0.Fields = {
 	markSigns = "table",

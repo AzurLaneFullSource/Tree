@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PlayerVitaeMediator", import("..base.ContextMediator"))
+local var0_0 = class("PlayerVitaeMediator", import("..base.ContextMediator"))
 
 var0_0.CHANGE_SKIN = "PlayerVitaeMediator:CHANGE_SKIN"
 var0_0.ON_ATTIRE = "PlayerVitaeMediator:ON_ATTIRE"

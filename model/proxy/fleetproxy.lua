@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FleetProxy", import(".NetProxy"))
+local var0_0 = class("FleetProxy", import(".NetProxy"))
 
 var0_0.FLEET_ADDED = "fleet added"
 var0_0.FLEET_UPDATED = "fleet updated"

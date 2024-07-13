@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewServerPTGood", import(".....model.vo.BaseVO"))
+local var0_0 = class("NewServerPTGood", import(".....model.vo.BaseVO"))
 
 var0_0.GoodType = {
 	MultiTotalLimit = 2,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024愚人节 取消锁血",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.beat_game_music = {
 	{
 		content_type = 1,

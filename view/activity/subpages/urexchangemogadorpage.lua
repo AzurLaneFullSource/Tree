@@ -1,4 +1,4 @@
-﻿local var0_0 = class("UrExchangeMogadorPage", import("...base.BaseActivityPage"))
+local var0_0 = class("UrExchangeMogadorPage", import("...base.BaseActivityPage"))
 
 var0_0.SP_FIRST = 1
 var0_0.SP_DAILY = 2

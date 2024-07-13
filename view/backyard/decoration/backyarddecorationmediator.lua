@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardDecorationMediator", import("...base.ContextMediator"))
+local var0_0 = class("BackYardDecorationMediator", import("...base.ContextMediator"))
 
 var0_0.ADD_FURNITURE = "BackYardDecorationMediator:ADD_FURNITURE"
 var0_0.REMOVE_PAPER = "BackYardDecorationMediator:REMOVE_PAPER"

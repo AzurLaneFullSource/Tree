@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewProbabilitySkinShopMediator", import(".NewSkinShopMediator"))
+local var0_0 = class("NewProbabilitySkinShopMediator", import(".NewSkinShopMediator"))
 
 var0_0.OPEN_CHARGE_BIRTHDAY = "NewProbabilitySkinShopMediator:OPEN_CHARGE_BIRTHDAY"
 var0_0.CHARGE = "NewProbabilitySkinShopMediator:CHARGE"

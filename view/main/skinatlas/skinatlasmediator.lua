@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SkinAtlasMediator", import("...base.ContextMediator"))
+local var0_0 = class("SkinAtlasMediator", import("...base.ContextMediator"))
 
 var0_0.OPEN_INDEX = "SkinAtlasMediator:OPEN_INDEX"
 

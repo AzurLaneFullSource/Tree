@@ -1,4 +1,4 @@
-﻿local var0_0 = import("..patterns.observer.Observer")
+local var0_0 = import("..patterns.observer.Observer")
 local var1_0 = class("View")
 
 function var1_0.Ctor(arg0_1, arg1_1)

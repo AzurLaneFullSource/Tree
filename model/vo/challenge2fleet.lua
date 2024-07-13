@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Challenge2Fleet", import(".Fleet"))
+local var0_0 = class("Challenge2Fleet", import(".Fleet"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.id = arg1_1.id

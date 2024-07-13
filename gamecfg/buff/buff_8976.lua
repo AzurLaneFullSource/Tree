@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "水下潜行单位下潜时减伤",
 	time = 0,

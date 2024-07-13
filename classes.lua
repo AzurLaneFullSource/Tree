@@ -1,4 +1,4 @@
-﻿ActivityBeatMonsterNianCommand = import("controller.command.activity.ActivityBeatMonsterNianCommand")
+ActivityBeatMonsterNianCommand = import("controller.command.activity.ActivityBeatMonsterNianCommand")
 ActivityBeUpdatedCommand = import("controller.command.activity.ActivityBeUpdatedCommand")
 ActivityBossExchangeTicketCommand = import("controller.command.activity.ActivityBossExchangeTicketCommand")
 ActivityBossNormalUpdateCommand = import("controller.command.activity.ActivityBossNormalUpdateCommand")

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "反击meta火伤buff",
 	time = 10,

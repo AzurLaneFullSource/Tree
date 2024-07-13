@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipBreakResultMediator", import("..base.ContextMediator"))
+local var0_0 = class("ShipBreakResultMediator", import("..base.ContextMediator"))
 
 function var0_0.register(arg0_1)
 	if arg0_1.contextData.newShip and arg0_1.contextData.oldShip then

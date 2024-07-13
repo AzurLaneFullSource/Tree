@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DeXiQianShaoPtPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("DeXiQianShaoPtPage", import(".TemplatePage.PtTemplatePage"))
 
 function var0_0.OnFirstFlush(arg0_1)
 	arg0_1.awardTF = arg0_1:findTF("switcher/phase2/Image/award", arg0_1.bg)

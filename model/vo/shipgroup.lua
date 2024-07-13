@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipGroup", import(".BaseVO"))
+local var0_0 = class("ShipGroup", import(".BaseVO"))
 
 var0_0.REQ_INTERVAL = 60
 

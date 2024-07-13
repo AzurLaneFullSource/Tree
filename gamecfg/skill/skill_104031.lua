@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "连接着的羁绊-无",
 	cd = 0,

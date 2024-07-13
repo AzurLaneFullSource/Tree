@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.return_giftpack_template = {
 	{
 		pack_type_1 = "",

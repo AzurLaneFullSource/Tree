@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "静寂的狩猎者-大世界LV2",
 	time = 0,

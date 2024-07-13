@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.expedition_challenge_template = {
 	[10001] = {
 		chapter_description = "指挥官，你对自己的作战技巧很有自信吗？那就快来挑战一番吧！",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BlackWhiteGridLayer", import("...base.BaseUI"))
+local var0_0 = class("BlackWhiteGridLayer", import("...base.BaseUI"))
 local var1_0 = "create cell"
 local var2_0 = "reach turn cnt"
 local var3_0 = "cell type changed"

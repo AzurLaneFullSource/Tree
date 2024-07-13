@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "自爆船冲撞自杀buff（无限时）",
 	time = 1,

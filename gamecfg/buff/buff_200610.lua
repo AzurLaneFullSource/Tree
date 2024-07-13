@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023云仙活动 EX 黑龙次数盾击破后大幅度增加BOSS受到的伤害",
 	time = 0,

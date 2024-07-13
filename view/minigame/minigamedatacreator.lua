@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MiniGameDataCreator")
+local var0_0 = class("MiniGameDataCreator")
 
 var0_0.ShrineGameID = 3
 var0_0.FireWorkGameID = 4

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EquipmentMediator", import("..base.ContextMediator"))
+local var0_0 = class("EquipmentMediator", import("..base.ContextMediator"))
 
 var0_0.ON_DESTROY = "EquipmentMediator:ON_DESTROY"
 var0_0.ON_UNEQUIP_EQUIPMENT = "EquipmentMediator:ON_UNEQUIP_EQUIPMENT"

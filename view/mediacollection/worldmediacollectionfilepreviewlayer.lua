@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMediaCollectionFilePreviewLayer", import("view.base.BaseUI"))
+local var0_0 = class("WorldMediaCollectionFilePreviewLayer", import("view.base.BaseUI"))
 
 function var0_0.__index(arg0_1, arg1_1)
 	local var0_1 = rawget(var0_0, arg1_1) or var0_0.super[arg1_1]

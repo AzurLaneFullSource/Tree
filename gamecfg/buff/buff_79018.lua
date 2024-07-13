@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "牵引",
 	time = 0,

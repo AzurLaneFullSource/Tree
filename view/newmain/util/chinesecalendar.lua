@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChineseCalendar")
+local var0_0 = class("ChineseCalendar")
 local var1_0 = 1901
 local var2_0 = 199
 local var3_0 = {

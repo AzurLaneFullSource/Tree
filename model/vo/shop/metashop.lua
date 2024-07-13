@@ -1,1 +1,1 @@
-﻿return (class("MetaShop", import(".ActivityShop")))
+return (class("MetaShop", import(".ActivityShop")))

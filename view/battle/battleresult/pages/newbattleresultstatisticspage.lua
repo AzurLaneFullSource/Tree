@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewBattleResultStatisticsPage", import("view.base.BaseSubView"))
+local var0_0 = class("NewBattleResultStatisticsPage", import("view.base.BaseSubView"))
 local var1_0 = 1
 local var2_0 = 2
 local var3_0 = 0

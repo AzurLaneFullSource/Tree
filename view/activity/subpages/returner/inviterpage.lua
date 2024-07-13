@@ -1,4 +1,4 @@
-﻿local var0_0 = class("InviterPage")
+local var0_0 = class("InviterPage")
 
 var0_0.REFRESH_TIME = 1800
 

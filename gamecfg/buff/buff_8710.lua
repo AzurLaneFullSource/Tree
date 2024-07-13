@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "英系V2 U81潜行猎杀进水持续伤害",
 	time = 24.1,

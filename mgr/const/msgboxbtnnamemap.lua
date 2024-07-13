@@ -1,4 +1,4 @@
-﻿return {
+return {
 	text_forward = "msgbox_text_forward",
 	text_exit = "msgbox_text_exit",
 	text_shop = "msgbox_text_shop",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FushunSchedule")
+local var0_0 = class("FushunSchedule")
 
 function var0_0.Ctor(arg0_1)
 	arg0_1.time = 0

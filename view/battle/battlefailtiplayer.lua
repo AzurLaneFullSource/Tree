@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleFailTipLayer", import("..base.BaseUI"))
+local var0_0 = class("BattleFailTipLayer", import("..base.BaseUI"))
 
 var0_0.PowerUpBtn = {
 	ShipBreakUp = 4,

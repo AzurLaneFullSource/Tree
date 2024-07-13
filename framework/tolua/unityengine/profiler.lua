@@ -1,4 +1,4 @@
-﻿local var0_0 = LuaProfiler
+local var0_0 = LuaProfiler
 local var1_0 = jit and require("jit.vmdef")
 local var2_0 = {
 	event = {

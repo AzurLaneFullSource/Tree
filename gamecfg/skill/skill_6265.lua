@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "精确锁定·改",
 	cd = 0,

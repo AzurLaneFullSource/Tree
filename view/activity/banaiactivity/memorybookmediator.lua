@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MemoryBookMediator", import("...base.ContextMediator"))
+local var0_0 = class("MemoryBookMediator", import("...base.ContextMediator"))
 
 var0_0.ON_UNLOCK = "MemoryBookMediator:ON_UNLOCK"
 var0_0.EVENT_OPERATION = "MemoryBookMediator:EVENT_OPERATION"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BulletinBoardMediator", import("..base.ContextMediator"))
+local var0_0 = class("BulletinBoardMediator", import("..base.ContextMediator"))
 
 var0_0.SET_STOP_REMIND = "set_stop_remind"
 

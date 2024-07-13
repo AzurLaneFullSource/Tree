@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024异世界冒险 飞离屏幕并获得无敌BUFF",
 	time = 1,

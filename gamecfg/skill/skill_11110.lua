@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "约克公爵2技能",
 	cd = 0,

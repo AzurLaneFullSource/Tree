@@ -1,4 +1,4 @@
-﻿local var0_0 = class("InvitedFeastShip", import("model.vo.BaseVO"))
+local var0_0 = class("InvitedFeastShip", import("model.vo.BaseVO"))
 
 var0_0.STATE_EMPTY = 0
 var0_0.STATE_MAKE_TICKET = 1

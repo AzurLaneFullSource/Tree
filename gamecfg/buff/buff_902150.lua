@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "防卫射击",
 	init_effect = "jinengchufared",

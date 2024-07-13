@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.friendly_data_template = {
 	{
 		name = "商船编队",

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "杜尔拉汗-回复效果",
 	time = 16,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChapterProxy", import(".NetProxy"))
+local var0_0 = class("ChapterProxy", import(".NetProxy"))
 
 var0_0.CHAPTER_UPDATED = "ChapterProxy:CHAPTER_UPDATED"
 var0_0.CHAPTER_TIMESUP = "ChapterProxy:CHAPTER_TIMESUP"

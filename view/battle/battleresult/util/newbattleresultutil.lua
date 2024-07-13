@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewBattleResultUtil")
+local var0_0 = class("NewBattleResultUtil")
 
 function var0_0.Score2Grade(arg0_1, arg1_1)
 	local var0_1 = {

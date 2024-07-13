@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2021年底铁血潜艇精英5.5秒后上浮",
 	time = 15,

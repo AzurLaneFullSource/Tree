@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleGateRewardPerform")
+local var0_0 = class("BattleGateRewardPerform")
 
 ys.Battle.BattleGateRewardPerform = var0_0
 var0_0.__name = "BattleGateRewardPerform"

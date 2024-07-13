@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateEndingLayer", import(".EducateCollectLayerTemplate"))
+local var0_0 = class("EducateEndingLayer", import(".EducateCollectLayerTemplate"))
 
 function var0_0.getUIName(arg0_1)
 	return "EducateEndingUI"

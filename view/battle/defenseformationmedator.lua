@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DefenseFormationMedator", import("..base.ContextMediator"))
+local var0_0 = class("DefenseFormationMedator", import("..base.ContextMediator"))
 
 var0_0.OPEN_SHIP_INFO = "DefenseFormationMedator:OPEN_SHIP_INFO"
 var0_0.ON_CHANGE_FLEET = "DefenseFormationMedator:ON_CHANGE_FLEET"

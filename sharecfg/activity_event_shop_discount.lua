@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_event_shop_discount = {
 	[5080] = {
 		max_count = 0,

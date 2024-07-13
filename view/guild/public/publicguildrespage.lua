@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PublicGuildResPage", import("..subPages.main.GuildResPage"))
+local var0_0 = class("PublicGuildResPage", import("..subPages.main.GuildResPage"))
 
 function var0_0.OnInit(arg0_1)
 	local var0_1 = "blue"

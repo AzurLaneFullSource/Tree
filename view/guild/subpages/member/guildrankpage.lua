@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildRankPage", import("...base.GuildBasePage"))
+local var0_0 = class("GuildRankPage", import("...base.GuildBasePage"))
 
 function var0_0.getTargetUI(arg0_1)
 	return "GuildRankBluePage", "GuildRankRedPage"

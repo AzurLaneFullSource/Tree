@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LevelCellData", import("model.vo.BaseVO"))
+local var0_0 = class("LevelCellData", import("model.vo.BaseVO"))
 
 function var0_0.GetLine(arg0_1)
 	return {

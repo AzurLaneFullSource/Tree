@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "美系V4 我方黑海伦娜支援",
 	time = 25,

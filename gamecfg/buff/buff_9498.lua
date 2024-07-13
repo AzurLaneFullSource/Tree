@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "古立特-鱼雷定身",
 	time = 0.5,

@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"HQ is extremely impressed with your performance, Commander. They've given you permission to start working on your second fleet!",
 	"Head to the formation menu to put your second fleet, Fleet 2, together. Tap confirm to head directly there.",
 	"Tap the button on the right to switch to Fleet 2.",

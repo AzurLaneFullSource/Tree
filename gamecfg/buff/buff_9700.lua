@@ -1,4 +1,4 @@
-﻿return {
+return {
 	last_effect_bound_bone = "lamp",
 	name = "探照灯",
 	init_effect = "",

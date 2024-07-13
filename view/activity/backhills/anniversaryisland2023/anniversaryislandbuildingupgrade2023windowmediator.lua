@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AnniversaryIslandBuildingUpgrade2023WindowMediator", import("view.base.ContextMediator"))
+local var0_0 = class("AnniversaryIslandBuildingUpgrade2023WindowMediator", import("view.base.ContextMediator"))
 
 var0_0.ACTIVITY_OPERATION = "ACTIVITY_OPERATION"
 

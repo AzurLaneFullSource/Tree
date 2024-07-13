@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "白龙无敌锁血撤退",
 	name = "剧情战用锁血撤退",
 	init_effect = "",

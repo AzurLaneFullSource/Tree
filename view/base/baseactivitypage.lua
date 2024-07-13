@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseActivityPage", import(".BaseSubView"))
+local var0_0 = class("BaseActivityPage", import(".BaseSubView"))
 
 function var0_0.SetShareData(arg0_1, arg1_1)
 	arg0_1.shareData = arg1_1

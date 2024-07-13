@@ -1,1 +1,1 @@
-﻿return (class("NewMeixiV4frameRePage", import(".TemplatePage.FrameReTemplatePage")))
+return (class("NewMeixiV4frameRePage", import(".TemplatePage.FrameReTemplatePage")))

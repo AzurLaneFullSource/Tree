@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TechnologyTreeNationMediator", import("..base.ContextMediator"))
+local var0_0 = class("TechnologyTreeNationMediator", import("..base.ContextMediator"))
 
 function var0_0.register(arg0_1)
 	arg0_1:bind(TechnologyConst.CLICK_UP_TEC_BTN, function(arg0_2, arg1_2, arg2_2)

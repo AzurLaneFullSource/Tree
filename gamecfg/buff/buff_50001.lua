@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "敌方战列舰跨射攻击后排buff",
 	time = 0,

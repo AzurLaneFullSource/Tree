@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushAlvitFleetSelectView", import("view.activity.BossRush.BossRushFleetSelectView"))
+local var0_0 = class("BossRushAlvitFleetSelectView", import("view.activity.BossRush.BossRushFleetSelectView"))
 
 function var0_0.GetTextColor(arg0_1)
 	return Color.NewHex("1C231F"), Color.NewHex("979A98")

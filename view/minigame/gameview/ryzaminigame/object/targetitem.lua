@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TargetItem", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
+local var0_0 = class("TargetItem", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
 local var1_0 = {
 	hp1 = "4",
 	speed = "3",

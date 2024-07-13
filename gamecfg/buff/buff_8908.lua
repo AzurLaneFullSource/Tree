@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "格奈森瑙meta 锁链减速",
 	time = 1,

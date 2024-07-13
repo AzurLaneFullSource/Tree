@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewBackYardShopMediator", import("...base.ContextMediator"))
+local var0_0 = class("NewBackYardShopMediator", import("...base.ContextMediator"))
 
 var0_0.ON_SHOPPING = "NewBackYardShopMediator:ON_SHOPPING"
 var0_0.ON_CHARGE = "NewBackYardShopMediator:ON_CHARGE"

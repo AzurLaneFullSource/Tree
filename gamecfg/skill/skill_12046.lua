@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "错误盾牌",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "五次堆叠",
 	cd = 0,

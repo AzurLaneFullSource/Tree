@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainChangeSkinBtn", import(".MainBaseBtn"))
+local var0_0 = class("MainChangeSkinBtn", import(".MainBaseBtn"))
 
 function var0_0.OnClick(arg0_1)
 	arg0_1:emit(NewMainScene.ON_CHANGE_SKIN)

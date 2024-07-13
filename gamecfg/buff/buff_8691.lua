@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 4,
 	name = "2020信浓活动测试者换阶段转场",
 	init_effect = "Bossbomb",

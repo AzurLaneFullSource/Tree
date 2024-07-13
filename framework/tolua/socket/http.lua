@@ -1,4 +1,4 @@
-﻿local var0_0 = require("socket")
+local var0_0 = require("socket")
 local var1_0 = require("socket.url")
 local var2_0 = require("ltn12")
 local var3_0 = require("mime")

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "雪之都的孤狼",
 	cd = 0,

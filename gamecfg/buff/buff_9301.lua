@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "白龙剧情战 触发龙宫机关-烈焰技能 buff4：点燃效果",
 	time = 999,

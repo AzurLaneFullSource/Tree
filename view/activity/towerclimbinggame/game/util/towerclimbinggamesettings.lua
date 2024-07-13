@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TowerClimbingGameSettings")
+local var0_0 = class("TowerClimbingGameSettings")
 
 var0_0.BLOCK_NAME = "block"
 var0_0.STAB_NAME = "stab"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommanderCatMediator", import("view.base.ContextMediator"))
+local var0_0 = class("CommanderCatMediator", import("view.base.ContextMediator"))
 
 var0_0.RESERVE_BOX = "CommanderCatMediator:RESERVE_BOX"
 var0_0.OPEN_HOME = "CommanderCatMediator:OPEN_HOME"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSMapCellEffect", import(".WSMapEffect"))
+local var0_0 = class("WSMapCellEffect", import(".WSMapEffect"))
 
 var0_0.Fields = {
 	cell = "table",

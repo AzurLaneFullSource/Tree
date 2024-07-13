@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "英格拉罕回复效果",
 	time = 1,

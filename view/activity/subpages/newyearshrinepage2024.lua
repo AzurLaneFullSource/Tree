@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewYearShrinePage2024", import(".NewYearShrinePage"))
+local var0_0 = class("NewYearShrinePage2024", import(".NewYearShrinePage"))
 
 var0_0.GO_MINI_GAME_ID = 62
 var0_0.GO_BACKHILL_SCENE = SCENE.NEWYEAR_BACKHILL_2024

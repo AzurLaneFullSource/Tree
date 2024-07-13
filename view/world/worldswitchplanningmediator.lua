@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldSwitchPlanningMediator", import("view.base.ContextMediator"))
+local var0_0 = class("WorldSwitchPlanningMediator", import("view.base.ContextMediator"))
 
 var0_0.OnConfirm = "WorldSwitchPlanningMediator.OnConfirm"
 var0_0.OnMove = "WorldSwitchPlanningMediator.OnMove"

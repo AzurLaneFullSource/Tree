@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "神速雪球减速",
 	time = 5,
@@ -23,7 +23,8 @@
 		{
 			type = "BattleBuffAddTag",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				tag = "naximofubeilianjiansu"

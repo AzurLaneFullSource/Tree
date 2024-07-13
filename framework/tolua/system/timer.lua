@@ -1,4 +1,4 @@
-﻿local var0_0 = setmetatable
+local var0_0 = setmetatable
 local var1_0 = UpdateBeat
 local var2_0 = CoUpdateBeat
 local var3_0 = Time

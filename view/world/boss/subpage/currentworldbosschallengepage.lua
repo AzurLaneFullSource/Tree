@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CurrentWorldBossChallengePage", import(".BaseWorldBossChallengePage"))
+local var0_0 = class("CurrentWorldBossChallengePage", import(".BaseWorldBossChallengePage"))
 
 var0_0.Listeners = {
 	onPtUpdated = "OnPtUpdated",

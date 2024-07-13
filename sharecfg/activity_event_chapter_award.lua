@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_event_chapter_award = {
 	[368] = {
 		id = 368,

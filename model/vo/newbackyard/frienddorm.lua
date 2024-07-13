@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FriendDorm", import(".Dorm"))
+local var0_0 = class("FriendDorm", import(".Dorm"))
 
 function var0_0.GetName(arg0_1)
 	if getProxy(PlayerProxy):getRawData():ShouldCheckCustomName() then

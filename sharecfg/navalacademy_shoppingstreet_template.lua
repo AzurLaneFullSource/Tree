@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.navalacademy_shoppingstreet_template = {
 	{
 		special_goods_num = 3,

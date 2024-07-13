@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "教程 自动跨射",
 	time = 0,

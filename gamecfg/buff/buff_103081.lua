@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "双影无双",
 	time = 15,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Apartment", import(".BaseVO"))
+local var0_0 = class("Apartment", import(".BaseVO"))
 
 var0_0.TRIGGER_TOUCH = 1001
 var0_0.TRIGGER_TALK = 1002

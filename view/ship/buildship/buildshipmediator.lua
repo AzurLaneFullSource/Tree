@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BuildShipMediator", import("...base.ContextMediator"))
+local var0_0 = class("BuildShipMediator", import("...base.ContextMediator"))
 
 var0_0.OPEN_DESTROY = "BuildShipMediator OPEN_CHUANWUSTART"
 var0_0.OPEN_START_PROJECT = "BuildShipMediator OPEN_START_PROJECT"

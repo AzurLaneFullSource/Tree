@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PuzzleActivity", import("model.vo.Activity"))
+local var0_0 = class("PuzzleActivity", import("model.vo.Activity"))
 
 function var0_0.GetPicturePuzzleIds(arg0_1)
 	local var0_1 = arg0_1.id

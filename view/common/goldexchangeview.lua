@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GoldExchangeView")
+local var0_0 = class("GoldExchangeView")
 
 var0_0.itemid1 = 12
 var0_0.itemid2 = 24

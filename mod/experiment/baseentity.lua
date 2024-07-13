@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseEntity", import(".BaseDispatcher"))
+local var0_0 = class("BaseEntity", import(".BaseDispatcher"))
 
 var0_0.Fields = {}
 var0_0.Listeners = {}

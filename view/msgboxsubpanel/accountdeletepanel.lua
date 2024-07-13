@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AccountDeletePanel", import(".MsgboxSubPanel"))
+local var0_0 = class("AccountDeletePanel", import(".MsgboxSubPanel"))
 
 var0_0.ConfigData = {}
 

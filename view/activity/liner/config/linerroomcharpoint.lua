@@ -1,4 +1,4 @@
-﻿return {
+return {
 	{
 		type = 1,
 		startPoint = {

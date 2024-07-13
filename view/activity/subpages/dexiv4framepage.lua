@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DexiV4FramePage", import(".TemplatePage.FrameTemplatePage"))
+local var0_0 = class("DexiV4FramePage", import(".TemplatePage.FrameTemplatePage"))
 
 function var0_0.Switch(arg0_1, arg1_1)
 	arg0_1.isSwitching = true

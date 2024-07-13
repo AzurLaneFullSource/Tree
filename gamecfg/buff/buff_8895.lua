@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "heihailunna_qingshilinyu",
 	name = "黑海伦娜 侵蚀领域",
 	time = 0,

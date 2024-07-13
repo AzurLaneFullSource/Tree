@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VolleyballGameView", import("..BaseMiniGameView"))
+local var0_0 = class("VolleyballGameView", import("..BaseMiniGameView"))
 local var1_0 = {
 	"maliluosi_2_DOA",
 	"suixiang_2_doa",

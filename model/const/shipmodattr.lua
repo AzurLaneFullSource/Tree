@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipModAttr")
+local var0_0 = class("ShipModAttr")
 
 var0_0.ID_TO_ATTR = {
 	[2] = AttributeType.Cannon,

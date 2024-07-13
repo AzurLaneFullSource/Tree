@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "英系V3 奇异点波动TYPEB",
 	init_effect = "",

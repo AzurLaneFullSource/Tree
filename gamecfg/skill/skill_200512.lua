@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023古立特联动复刻 新关卡支援弹幕",
 	cd = 0,

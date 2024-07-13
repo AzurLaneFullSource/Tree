@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023俾斯麦Z活动D3 BOSS浮游炮召唤",
 	time = 3,

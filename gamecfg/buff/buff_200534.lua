@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 3,
 	name = "2023克莱蒙梭活动 SP 审判机甲-支配 杂鱼召唤",
 	init_effect = "",

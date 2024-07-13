@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "古立特联动 新条茜支援弹幕LV3",
 	time = 15,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023关岛活动 理事会舰队支援",
 	time = 0,

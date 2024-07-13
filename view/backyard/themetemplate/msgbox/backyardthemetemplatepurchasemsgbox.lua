@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardThemeTemplatePurchaseMsgbox", import("...Shop.msgbox.BackYardThemeMsgBoxPage"))
+local var0_0 = class("BackYardThemeTemplatePurchaseMsgbox", import("...Shop.msgbox.BackYardThemeMsgBoxPage"))
 
 function var0_0.SetUp(arg0_1, arg1_1, arg2_1, arg3_1)
 	arg0_1.dorm = arg2_1

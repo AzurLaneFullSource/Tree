@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EffectFire", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
+local var0_0 = class("EffectFire", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
 
 function var0_0.GetBaseOrder(arg0_1)
 	return "floor"

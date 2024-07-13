@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMapFleet", import(".WorldBaseFleet"))
+local var0_0 = class("WorldMapFleet", import(".WorldBaseFleet"))
 
 var0_0.Fields = {
 	lossFlag = "number",

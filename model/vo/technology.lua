@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Technology", import(".BaseVO"))
+local var0_0 = class("Technology", import(".BaseVO"))
 
 function var0_0.bindConfigTable(arg0_1)
 	return pg.technology_data_template

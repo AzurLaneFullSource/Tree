@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.RedDotMgr = singletonClass("RedDotMgr")
 
 require("Mgr/RedDot/Include")

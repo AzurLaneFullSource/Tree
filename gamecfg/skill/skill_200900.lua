@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024愚人节 BOSS回血",
 	cd = 0,

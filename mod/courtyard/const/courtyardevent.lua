@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardEvent")
+local var0_0 = class("CourtYardEvent")
 
 var0_0.INITED = "CourtYardEvent:INITED"
 var0_0.CREATE_ITEM = "CourtYardEvent:CREATE_ITEM"

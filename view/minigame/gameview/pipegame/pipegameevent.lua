@@ -1,4 +1,4 @@
-﻿this = class("PipeGameEvent")
+this = class("PipeGameEvent")
 this.LEVEL_GAME = "leavel game"
 this.PAUSE_GAME = "pause game "
 this.OPEN_PAUSE_UI = "open pause ui"

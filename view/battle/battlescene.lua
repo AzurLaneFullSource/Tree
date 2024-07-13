@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleScene", import("..base.BaseUI"))
+local var0_0 = class("BattleScene", import("..base.BaseUI"))
 
 var0_0.IN_VIEW_FRIEND_SKILL_OFFSET = Vector3(-5, 0, 6)
 var0_0.IN_VIEW_FOE_SKILL_OFFSET = Vector3(-15, 0, 6)

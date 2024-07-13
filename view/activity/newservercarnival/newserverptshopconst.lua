@@ -1,4 +1,4 @@
-﻿NewServerPTShopConst = {}
+NewServerPTShopConst = {}
 
 local var0_0 = NewServerPTShopConst
 

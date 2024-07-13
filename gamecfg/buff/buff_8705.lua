@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "Darkness",
 	name = "2020年6月世界BOSS叠加buff",
 	time = 0,

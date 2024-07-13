@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldScene", import("..base.BaseUI"))
+local var0_0 = class("WorldScene", import("..base.BaseUI"))
 
 var0_0.SceneOp = "WorldScene.SceneOp"
 var0_0.Listeners = {

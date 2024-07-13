@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IslandTaskScene", import("..base.BaseUI"))
+local var0_0 = class("IslandTaskScene", import("..base.BaseUI"))
 
 var0_0.OPEN_SUBMIT = "open submit"
 var0_0.ryza_task_tag_explore = "ryza_task_tag_explore"

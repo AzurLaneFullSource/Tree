@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.return_pt_template = {
 	{
 		id = 1,

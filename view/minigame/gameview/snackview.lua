@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SnackView", import("..BaseMiniGameView"))
+local var0_0 = class("SnackView", import("..BaseMiniGameView"))
 
 var0_0.States_Before = 0
 var0_0.States_Memory = 1

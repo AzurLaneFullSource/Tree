@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CastleMainMediator", import("..base.ContextMediator"))
+local var0_0 = class("CastleMainMediator", import("..base.ContextMediator"))
 
 var0_0.CASTLE_ACT_OP = "castle act op"
 var0_0.ADD_ITEM = "add item"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FireworkPanelMediator", import("view.base.ContextMediator"))
+local var0_0 = class("FireworkPanelMediator", import("view.base.ContextMediator"))
 
 var0_0.LET_OFF_FIREWORKS = "LET_OFF_FIREWORKS"
 

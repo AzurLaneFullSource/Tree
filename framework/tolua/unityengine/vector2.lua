@@ -1,4 +1,4 @@
-﻿local var0_0 = math.sqrt
+local var0_0 = math.sqrt
 local var1_0 = setmetatable
 local var2_0 = rawget
 local var3_0 = math

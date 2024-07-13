@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "快速起飞",
 	time = 0,

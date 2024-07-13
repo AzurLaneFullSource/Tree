@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NavalTacticsSkillInfoLayer", import(".SkillInfoLayer"))
+local var0_0 = class("NavalTacticsSkillInfoLayer", import(".SkillInfoLayer"))
 
 function var0_0.showBase(arg0_1)
 	var0_0.super.showBase(arg0_1)

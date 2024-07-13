@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "飓风的庇佑",
 	time = 40,

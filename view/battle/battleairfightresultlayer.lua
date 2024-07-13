@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleAirFightResultLayer", import(".BattleResultLayer"))
+local var0_0 = class("BattleAirFightResultLayer", import(".BattleResultLayer"))
 
 function var0_0.getUIName(arg0_1)
 	return "BattleAirFightResultUI"

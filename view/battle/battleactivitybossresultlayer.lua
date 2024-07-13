@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleActivityBossResultLayer", import(".BattleResultLayer"))
+local var0_0 = class("BattleActivityBossResultLayer", import(".BattleResultLayer"))
 
 function var0_0.showRightBottomPanel(arg0_1)
 	local var0_1 = arg0_1._blurConatiner:Find("activitybossConfirmPanel")

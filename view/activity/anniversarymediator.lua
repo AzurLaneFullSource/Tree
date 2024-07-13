@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AnniversaryMediator", import("..base.ContextMediator"))
+local var0_0 = class("AnniversaryMediator", import("..base.ContextMediator"))
 
 var0_0.ON_SUBMIT_TASK = "AnniversaryMediator:ON_SUBMIT_TASK"
 var0_0.TO_TASK = "AnniversaryMediator:TO_TASK"

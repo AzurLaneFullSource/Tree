@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Furniture", import("..BaseVO"))
+local var0_0 = class("Furniture", import("..BaseVO"))
 
 var0_0.TYPE_WALLPAPER = 1
 var0_0.TYPE_FURNITURE = 2

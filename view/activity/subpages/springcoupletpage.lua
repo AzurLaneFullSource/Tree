@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpringCoupletPage", import("...base.BaseActivityPage"))
+local var0_0 = class("SpringCoupletPage", import("...base.BaseActivityPage"))
 local var1_0 = 7
 local var2_0 = 7
 local var3_0 = 7

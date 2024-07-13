@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewYear23SkinShowPage", import("...base.BaseActivityPage"))
+local var0_0 = class("NewYear23SkinShowPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnLoaded(arg0_1)
 	return

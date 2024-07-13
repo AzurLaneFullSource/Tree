@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023意大利共斗 EX难度 大型沙尘龙卷附着特效",
 	time = 0,

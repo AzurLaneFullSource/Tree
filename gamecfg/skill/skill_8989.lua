@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "黑反击BOSS战 破盾弹条提示",
 	cd = 0,

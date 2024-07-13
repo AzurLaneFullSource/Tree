@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Item", import(".BaseVO"))
+local var0_0 = class("Item", import(".BaseVO"))
 
 var0_0.REVERT_EQUIPMENT_ID = 15007
 var0_0.COMMANDER_QUICKLY_TOOL_ID = 20010

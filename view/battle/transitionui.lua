@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Transition", import("..base.BaseUI"))
+local var0_0 = class("Transition", import("..base.BaseUI"))
 
 function var0_0.getUIName(arg0_1)
 	local var0_1 = arg0_1.UIName

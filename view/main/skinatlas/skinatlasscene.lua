@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SkinAtlasScene", import("...base.BaseUI"))
+local var0_0 = class("SkinAtlasScene", import("...base.BaseUI"))
 
 var0_0.PAGE_ALL = -1
 var0_0.ON_NEXT_SKIN = "SkinAtlasScene:ON_NEXT_SKIN"

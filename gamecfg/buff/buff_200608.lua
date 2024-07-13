@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023云仙活动 EX 黑龙次数盾监听",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑反击BOSS战 触发鱼雷施加1层计数",
 	time = 1,

@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"点击help按钮查看每日任务帮助！"
 }
 

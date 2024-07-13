@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EnemyBossScavenger", import("view.miniGame.gameView.RyzaMiniGame.character.EnemyScavenger"))
+local var0_0 = class("EnemyBossScavenger", import("view.miniGame.gameView.RyzaMiniGame.character.EnemyScavenger"))
 
 function var0_0.InitUI(arg0_1, arg1_1)
 	var0_0.super.InitUI(arg0_1, arg1_1)

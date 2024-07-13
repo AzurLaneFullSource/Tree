@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleResultMediator", import("..base.ContextMediator"))
+local var0_0 = class("BattleResultMediator", import("..base.ContextMediator"))
 
 var0_0.ON_BACK_TO_LEVEL_SCENE = "BattleResultMediator.ON_BACK_TO_LEVEL_SCENE"
 var0_0.ON_BACK_TO_DUEL_SCENE = "BattleResultMediator.ON_BACK_TO_DUEL_SCENE"

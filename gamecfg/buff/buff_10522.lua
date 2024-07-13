@@ -1,4 +1,4 @@
-﻿return {
+return {
 	effect_list = {},
 	{
 		desc = "出击时获得3次团队策略—紧急维修(不可升级)"

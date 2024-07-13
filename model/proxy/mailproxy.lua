@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MailProxy", import(".NetProxy"))
+local var0_0 = class("MailProxy", import(".NetProxy"))
 
 var0_0.MAIL_TOTAL = "mail total"
 var0_0.MAIL_OPENNED = "mail openned"

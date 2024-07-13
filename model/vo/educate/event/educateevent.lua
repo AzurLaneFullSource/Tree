@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateEvent", import("model.vo.BaseVO"))
+local var0_0 = class("EducateEvent", import("model.vo.BaseVO"))
 
 var0_0.TYPE_PLAN = 1
 var0_0.TYPE_OPTION = 2

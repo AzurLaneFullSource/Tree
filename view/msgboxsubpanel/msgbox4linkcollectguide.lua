@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Msgbox4LinkCollectGuide", import(".MsgboxSubPanel"))
+local var0_0 = class("Msgbox4LinkCollectGuide", import(".MsgboxSubPanel"))
 
 var0_0.SHOW_TYPE_NORMAL = 1
 var0_0.SHOW_TYPE_LIMIT = 2

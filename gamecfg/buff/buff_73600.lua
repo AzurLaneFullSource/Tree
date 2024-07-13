@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "濒死免疫",
 	time = 0,

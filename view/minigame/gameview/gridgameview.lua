@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GridGameView", import("..BaseMiniGameView"))
+local var0_0 = class("GridGameView", import("..BaseMiniGameView"))
 local var1_0 = "battle-boss-4"
 local var2_0 = "event:/ui/ddldaoshu2"
 local var3_0 = "event:/ui/niujiao"

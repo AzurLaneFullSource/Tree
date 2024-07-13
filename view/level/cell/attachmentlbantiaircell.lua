@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AttachmentLBAntiAirCell", import("view.level.cell.StaticCellView"))
+local var0_0 = class("AttachmentLBAntiAirCell", import("view.level.cell.StaticCellView"))
 
 function var0_0.GetOrder(arg0_1)
 	return ChapterConst.CellPriorityAttachment

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 1730301,
 	stages = {
 		{

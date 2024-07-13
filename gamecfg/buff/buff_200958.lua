@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024威奇塔meta 卫星激光",
 	time = 6,

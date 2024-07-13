@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 60,
 	name = "",
 	init_effect = "jinengchufared",

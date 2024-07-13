@@ -1,4 +1,4 @@
-﻿local var0_0 = singletonClass("WorldGuider", import("....Mod.Experiment.BaseEntity"))
+local var0_0 = singletonClass("WorldGuider", import("....Mod.Experiment.BaseEntity"))
 
 var0_0.Fields = {
 	tempGridPos = "table",

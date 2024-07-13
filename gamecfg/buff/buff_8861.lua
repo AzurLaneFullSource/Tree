@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2021意大利活动 海妖之歌 弹条",
 	time = 0,

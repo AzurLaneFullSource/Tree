@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NotifyTipHelper")
+local var0_0 = class("NotifyTipHelper")
 
 function var0_0.ShouldShowUrTip()
 	return false

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.technology_data_template = {
 	{
 		name = "C-153-MI",

@@ -1,4 +1,4 @@
-﻿local var0_0 = import(".View")
+local var0_0 = import(".View")
 local var1_0 = import("..patterns.observer.Observer")
 local var2_0 = class("Controller")
 

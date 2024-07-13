@@ -1,4 +1,4 @@
-﻿function table.indexof(arg0_1, arg1_1, arg2_1)
+function table.indexof(arg0_1, arg1_1, arg2_1)
 	for iter0_1 = arg2_1 or 1, #arg0_1 do
 		if arg0_1[iter0_1] == arg1_1 then
 			return iter0_1

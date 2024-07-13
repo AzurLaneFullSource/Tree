@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023英系活动 EX BOSS攻击百分比移除发射器血量",
 	time = 1,

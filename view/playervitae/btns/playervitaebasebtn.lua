@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PlayerVitaeBaseBtn")
+local var0_0 = class("PlayerVitaeBaseBtn")
 
 var0_0.HRZ_TYPE = 1
 var0_0.VEC_TYPE = 2

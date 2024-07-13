@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipDetailView", import("...base.BaseSubView"))
+local var0_0 = class("ShipDetailView", import("...base.BaseSubView"))
 local var1_0 = require("view.equipment.EquipmentSortCfg")
 local var2_0 = {
 	equipCampIndex = 2047,

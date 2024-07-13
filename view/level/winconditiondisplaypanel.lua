@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WinConditionDisplayPanel", BaseSubView)
+local var0_0 = class("WinConditionDisplayPanel", BaseSubView)
 
 function var0_0.getUIName(arg0_1)
 	return "WinConditionDisplayPanel"

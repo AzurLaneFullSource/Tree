@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.child_task = {
 	[101] = {
 		arg = 1,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldInventoryProxy", import("...BaseEntity"))
+local var0_0 = class("WorldInventoryProxy", import("...BaseEntity"))
 
 var0_0.Fields = {
 	data = "table"

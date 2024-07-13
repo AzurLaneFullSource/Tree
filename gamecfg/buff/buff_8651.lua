@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "偶像灯光特效",
 	time = 0,

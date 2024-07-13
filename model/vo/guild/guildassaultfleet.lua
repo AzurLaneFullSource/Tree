@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildAssaultFleet", import("..BaseVO"))
+local var0_0 = class("GuildAssaultFleet", import("..BaseVO"))
 
 function var0_0.GetRealId(arg0_1)
 	return tonumber(string.split(tostring(arg0_1), "_")[1])

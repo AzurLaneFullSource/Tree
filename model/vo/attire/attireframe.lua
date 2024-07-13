@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AttireFrame", import("..BaseVO"))
+local var0_0 = class("AttireFrame", import("..BaseVO"))
 
 var0_0.STATE_LOCK = 1
 var0_0.STATE_UNLOCKABLE = 2

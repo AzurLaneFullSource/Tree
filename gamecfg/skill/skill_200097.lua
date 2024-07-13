@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022围剿小斯佩 BOSS跨射",
 	cd = 0,

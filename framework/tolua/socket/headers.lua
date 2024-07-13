@@ -1,4 +1,4 @@
-﻿local var0_0 = require("socket")
+local var0_0 = require("socket")
 
 var0_0.headers = {}
 

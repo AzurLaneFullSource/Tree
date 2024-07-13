@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildShopPage", import(".MilitaryShopPage"))
+local var0_0 = class("GuildShopPage", import(".MilitaryShopPage"))
 
 function var0_0.getUIName(arg0_1)
 	return "GuildShop"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SecretShipyardMediator", import("..base.ContextMediator"))
+local var0_0 = class("SecretShipyardMediator", import("..base.ContextMediator"))
 
 var0_0.GO_MINI_GAME = "go minigame"
 var0_0.SUBMIT_TASK = "submit task"

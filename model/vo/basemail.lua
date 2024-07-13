@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseMail", import(".BaseVO"))
+local var0_0 = class("BaseMail", import(".BaseVO"))
 
 var0_0.ATTACHMENT_UNTAKEN = 1
 var0_0.ATTACHMENT_TAKEN = 2

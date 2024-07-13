@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SelectTechnologyMediator", import("..base.ContextMediator"))
+local var0_0 = class("SelectTechnologyMediator", import("..base.ContextMediator"))
 
 var0_0.ON_BLUEPRINT = "SelectTechnologyMediator:ON_BLUEPRINT"
 var0_0.ON_TECHNOLOGY = "SelectTechnologyMediator:ON_TECHNOLOGY"

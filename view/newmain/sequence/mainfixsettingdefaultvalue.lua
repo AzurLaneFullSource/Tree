@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainFixSettingDefaultValue")
+local var0_0 = class("MainFixSettingDefaultValue")
 
 function var0_0.Execute(arg0_1, arg1_1)
 	local var0_1 = pg.settings_other_template

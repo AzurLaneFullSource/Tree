@@ -1,4 +1,4 @@
-﻿ys = ys or {}
+ys = ys or {}
 ys.Story.StorySleepNode = class("StorySleepNode", ys.ISeqNode)
 
 local var0_0 = ys.Story.StorySleepNode

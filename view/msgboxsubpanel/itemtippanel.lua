@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ItemTipPanel", import(".MsgboxSubPanel"))
+local var0_0 = class("ItemTipPanel", import(".MsgboxSubPanel"))
 
 var0_0.DetailConfig = {}
 

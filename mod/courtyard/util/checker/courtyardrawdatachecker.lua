@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardRawDataChecker")
+local var0_0 = class("CourtYardRawDataChecker")
 
 function var0_0.Check(arg0_1, arg1_1)
 	local var0_1 = {}

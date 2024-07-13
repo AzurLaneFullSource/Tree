@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "古立特联动 宝多六花支援弹幕LV2",
 	cd = 0,

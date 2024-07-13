@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMapOp", import("...BaseEntity"))
+local var0_0 = class("WorldMapOp", import("...BaseEntity"))
 
 var0_0.Fields = {
 	updateAttachmentCells = "table",

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 999971,
 	name = "强袭雷击",
 	effect_list = {

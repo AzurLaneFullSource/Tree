@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FeastDorm", import("model.vo.NewBackYard.Dorm"))
+local var0_0 = class("FeastDorm", import("model.vo.NewBackYard.Dorm"))
 
 var0_0.OP_RANDOM_SHIPS = 0
 var0_0.OP_ENTER = 1

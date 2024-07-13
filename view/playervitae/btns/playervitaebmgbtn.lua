@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PlayerVitaeBMGBtn", import(".PlayerVitaeBaseBtn"))
+local var0_0 = class("PlayerVitaeBMGBtn", import(".PlayerVitaeBaseBtn"))
 
 function var0_0.GetBgName(arg0_1)
 	return "AdmiralUI_atlas", "bgm"

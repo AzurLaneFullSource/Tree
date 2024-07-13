@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "UI20101",
 	mode = 3,
 	noWaitFade = true,

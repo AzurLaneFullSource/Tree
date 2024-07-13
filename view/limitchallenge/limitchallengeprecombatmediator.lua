@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LimitChallengePreCombatMediator", import("view.base.ContextMediator"))
+local var0_0 = class("LimitChallengePreCombatMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_UPDATE_CUSTOM_FLEET = "LimitChallengePreCombatMediator:ON_UPDATE_CUSTOM_FLEET"
 var0_0.ON_START = "LimitChallengePreCombatMediator:ON_START"

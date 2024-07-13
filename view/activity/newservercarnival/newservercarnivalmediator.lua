@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewServerCarnivalMediator", import("...base.ContextMediator"))
+local var0_0 = class("NewServerCarnivalMediator", import("...base.ContextMediator"))
 
 var0_0.TASK_GO = "NewServerCarnivalMediator.TASK_GO"
 var0_0.TASK_SUBMIT = "NewServerCarnivalMediator.TASK_SUBMIT"

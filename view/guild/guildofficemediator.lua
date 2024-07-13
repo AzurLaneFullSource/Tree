@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildOfficeMediator", import("..base.ContextMediator"))
+local var0_0 = class("GuildOfficeMediator", import("..base.ContextMediator"))
 
 var0_0.ON_ACCEPT_TASK = "GuildOfficeMediator:ON_ACCEPT_TASK"
 var0_0.ON_COMMIT = "GuildOfficeMediator:ON_COMMIT"

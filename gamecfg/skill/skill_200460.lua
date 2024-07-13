@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023俾斯麦Z活动 剧情战BOSS 剧情触发器",
 	cd = 0,

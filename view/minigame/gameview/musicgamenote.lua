@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MusicGameNote")
+local var0_0 = class("MusicGameNote")
 
 var0_0.easyTriggerStepTime = nil
 var0_0.type_left = 1

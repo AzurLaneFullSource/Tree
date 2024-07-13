@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FormationUI", import("..base.BaseUI"))
+local var0_0 = class("FormationUI", import("..base.BaseUI"))
 
 var0_0.RADIUS = 60
 var0_0.LONGPRESS_Y = 30

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("StaticCellView", import("view.level.cell.LevelCellView"))
+local var0_0 = class("StaticCellView", import("view.level.cell.LevelCellView"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg0_1)

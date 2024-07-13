@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022莱莎联动 战斗BUFF 损管效果LV3 旗舰控制回血",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("JiuJiuExpeditionGameView", import("...base.BaseUI"))
+local var0_0 = class("JiuJiuExpeditionGameView", import("...base.BaseUI"))
 local var1_0 = 50
 local var2_0 = 153
 local var3_0 = 175

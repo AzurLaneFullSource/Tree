@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "制空权buff-1",
 	cd = 0,

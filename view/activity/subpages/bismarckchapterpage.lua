@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BismarckChapterPage", import("...base.BaseActivityPage"))
+local var0_0 = class("BismarckChapterPage", import("...base.BaseActivityPage"))
 
 var0_0.tabPos = {
 	[1] = 10,

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.game_room_template = {
 	{
 		coin_max = 5,

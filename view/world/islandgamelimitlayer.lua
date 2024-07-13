@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IslandGameLimitLayer", import("view.base.BaseUI"))
+local var0_0 = class("IslandGameLimitLayer", import("view.base.BaseUI"))
 
 var0_0.limit_type_jiujiu = "IslandGameJiuJiuLimitUI"
 var0_0.limit_type_catch = "IslandGameCatchLimitUI"

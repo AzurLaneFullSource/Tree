@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "测试-声望-主炮额外一轮攻击2",
 	time = 0,

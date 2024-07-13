@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardThemePage", import(".BackYardShopBasePage"))
+local var0_0 = class("BackYardThemePage", import(".BackYardShopBasePage"))
 
 function var0_0.getUIName(arg0_1)
 	return "BackYardThemePage"

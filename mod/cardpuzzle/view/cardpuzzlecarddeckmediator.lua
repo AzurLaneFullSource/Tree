@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CardPuzzleCardDeckMediator", ContextMediator)
+local var0_0 = class("CardPuzzleCardDeckMediator", ContextMediator)
 
 var0_0.SHOW_CARD = "SHOW_CARD"
 var0_0.CLOSE_LAYER = "CLOSE_LAYER"

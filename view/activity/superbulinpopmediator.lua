@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SuperBulinPopMediator", import("..base.ContextMediator"))
+local var0_0 = class("SuperBulinPopMediator", import("..base.ContextMediator"))
 
 var0_0.ON_SIMULATION_COMBAT = "event simulation combat"
 

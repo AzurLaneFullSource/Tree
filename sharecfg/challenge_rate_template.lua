@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.challenge_rate_template = {
 	{
 		id = 1,

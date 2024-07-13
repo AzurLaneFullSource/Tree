@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipEquipSkinLogicPanel", import("...base.BasePanel"))
+local var0_0 = class("ShipEquipSkinLogicPanel", import("...base.BasePanel"))
 local var1_0 = 0.2
 
 function var0_0.init(arg0_1)

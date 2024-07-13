@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NavalAcademyStudent")
+local var0_0 = class("NavalAcademyStudent")
 
 var0_0.ShipState = {
 	Walk = "Walk",

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.OSSMgr = singletonClass("OSSMgr")
 
 local var0_0 = pg.OSSMgr

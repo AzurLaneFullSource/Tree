@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "公海舰队活动 塔干扰-燃烧 弹条",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "潜艇下潜点燃抗性",
 	time = 0,

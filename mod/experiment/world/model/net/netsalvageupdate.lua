@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NetSalvageUpdate", import("....BaseEntity"))
+local var0_0 = class("NetSalvageUpdate", import("....BaseEntity"))
 
 var0_0.Fields = {
 	id = "number",

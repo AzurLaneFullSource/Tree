@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewMainMediator", import("..base.ContextMediator"))
+local var0_0 = class("NewMainMediator", import("..base.ContextMediator"))
 
 var0_0.GO_SCENE = "NewMainMediator:GO_SCENE"
 var0_0.OPEN_MAIL = "NewMainMediator:OPEN_MAIL"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChatConst")
+local var0_0 = class("ChatConst")
 
 var0_0.CODE_BANED = 100
 var0_0.CODE_ACTOBSS_MSG_WORD = 1000

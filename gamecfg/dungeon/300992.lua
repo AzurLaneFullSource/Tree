@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 300992,
 	map_id = 100046,
 	bgm = "theme-starsea-explo",

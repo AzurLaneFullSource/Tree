@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑反击BOSS战 监听BUFF",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Story")
+local var0_0 = class("Story")
 
 var0_0.MODE_ASIDE = 1
 var0_0.MODE_DIALOGUE = 2

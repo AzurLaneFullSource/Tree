@@ -1,1 +1,1 @@
-﻿return (class("GongHaiMainPage", import(".TemplatePage.PreviewTemplatePage")))
+return (class("GongHaiMainPage", import(".TemplatePage.PreviewTemplatePage")))

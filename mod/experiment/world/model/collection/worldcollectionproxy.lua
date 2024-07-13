@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldCollectionProxy", import("....BaseEntity"))
+local var0_0 = class("WorldCollectionProxy", import("....BaseEntity"))
 
 var0_0.Fields = {
 	storyGroup = "table",

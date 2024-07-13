@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"For this event, we have a new feature for you! You can read more details by tapping the Help button!"
 }
 

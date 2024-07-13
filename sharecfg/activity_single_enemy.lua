@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_single_enemy = {
 	[1001] = {
 		guardian_limit = 0,

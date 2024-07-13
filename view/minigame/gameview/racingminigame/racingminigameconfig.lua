@@ -1,4 +1,4 @@
-﻿return {
+return {
 	ALL_TIME = 45,
 	BOOST_BUTTON_TYPE_CHANGE = false,
 	Y_OBSTACLE_REDUCE = 0.1,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommanderBox", import("..BaseVO"))
+local var0_0 = class("CommanderBox", import("..BaseVO"))
 
 var0_0.STATE_EMPTY = -1
 var0_0.STATE_WAITING = 0

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.item_data_chat = {
 	[0] = {
 		time_limit_type = 0,

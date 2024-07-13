@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainActInsBtnMellowAdapt", import(".MainDifferentStyleSpActBtnAdapt"))
+local var0_0 = class("MainActInsBtnMellowAdapt", import(".MainDifferentStyleSpActBtnAdapt"))
 
 function var0_0.GetContainer(arg0_1)
 	return arg0_1.root:Find("left")

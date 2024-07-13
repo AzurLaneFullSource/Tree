@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "WORLD107B",
 	mode = 2,
 	once = true,

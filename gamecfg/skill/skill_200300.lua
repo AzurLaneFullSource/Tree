@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023马赛曲SP3 精英浮游炮召唤",
 	cd = 0,

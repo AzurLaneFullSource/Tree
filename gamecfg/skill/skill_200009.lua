@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022意大利活动 选择性镜面海域",
 	cd = 0,

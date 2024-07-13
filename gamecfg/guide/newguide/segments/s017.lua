@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Let's head to the <color=#ff7d36>Dock</color>.",
 	"Select one of your girls and tap to view her details.",
 	"Tap <color=#ff7d36>gear</color> to see what gear she currently has equipped.",

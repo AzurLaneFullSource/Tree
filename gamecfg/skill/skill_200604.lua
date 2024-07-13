@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023云仙活动 剧情战 敌人召唤自爆",
 	painting = 0,

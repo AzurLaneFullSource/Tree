@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "白龙剧情战 触发龙宫机关-屏障技能 buff3：触发技能，显示弹条与弹幕武器开火，并为我方全体添加护盾buff4",
 	time = 0,

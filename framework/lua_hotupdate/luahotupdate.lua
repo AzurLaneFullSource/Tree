@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 
 function var0_0.FailNotify(...)
 	if var0_0.NotifyFunc then

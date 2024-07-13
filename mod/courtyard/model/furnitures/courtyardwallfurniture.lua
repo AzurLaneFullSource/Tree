@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardWallFurniture", import(".CourtYardFurniture"))
+local var0_0 = class("CourtYardWallFurniture", import(".CourtYardFurniture"))
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	pg.furniture_data_template[arg2_1.configId or arg2_1.id].size[2] = 1

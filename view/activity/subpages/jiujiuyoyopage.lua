@@ -1,4 +1,4 @@
-﻿local var0_0 = class("JiujiuYoyoPage", import("...base.BaseActivityPage"))
+local var0_0 = class("JiujiuYoyoPage", import("...base.BaseActivityPage"))
 local var1_0 = PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_CHT
 
 function var0_0.OnInit(arg0_1)

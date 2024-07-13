@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityMainScene", import("..base.BaseUI"))
+local var0_0 = class("ActivityMainScene", import("..base.BaseUI"))
 
 var0_0.LOCK_ACT_MAIN = "ActivityMainScene:LOCK_ACT_MAIN"
 var0_0.UPDATE_ACTIVITY = "ActivityMainScene:UPDATE_ACTIVITY"

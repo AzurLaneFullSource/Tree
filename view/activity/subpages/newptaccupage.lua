@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewPtAccuPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("NewPtAccuPage", import(".TemplatePage.PtTemplatePage"))
 
 var0_0.TIME = 300
 

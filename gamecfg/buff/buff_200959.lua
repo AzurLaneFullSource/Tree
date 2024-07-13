@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024幼儿园活动 战列石膏喵 化学试剂中毒效果",
 	time = 10.1,

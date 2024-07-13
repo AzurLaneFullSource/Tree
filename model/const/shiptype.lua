@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipType")
+local var0_0 = class("ShipType")
 
 var0_0.QuZhu = 1
 var0_0.QingXun = 2

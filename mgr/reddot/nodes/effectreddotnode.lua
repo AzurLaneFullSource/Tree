@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EffectRedDotNode", import(".RedDotNode"))
+local var0_0 = class("EffectRedDotNode", import(".RedDotNode"))
 
 function var0_0.SetData(arg0_1, arg1_1)
 	if IsNil(arg0_1.gameObject) or not isActive(arg0_1.gameObject) then

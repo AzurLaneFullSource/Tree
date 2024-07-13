@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"You can tap the Help button for info on Anti-Sub combat!"
 }
 

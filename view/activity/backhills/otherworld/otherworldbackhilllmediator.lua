@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OtherworldBackHilllMediator", import("view.base.ContextMediator"))
+local var0_0 = class("OtherworldBackHilllMediator", import("view.base.ContextMediator"))
 
 var0_0.MINI_GAME_OPERATOR = "MINI_GAME_OPERATOR"
 var0_0.GO_SCENE = "GO_SCENE"

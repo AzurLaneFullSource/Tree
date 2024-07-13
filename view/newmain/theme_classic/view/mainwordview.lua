@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainWordView", import("...base.MainBaseView"))
+local var0_0 = class("MainWordView", import("...base.MainBaseView"))
 
 var0_0.START_ANIMATION = "MainWordView:ON_ANIMATION"
 var0_0.STOP_ANIMATION = "MainWordView:STOP_ANIMATION"

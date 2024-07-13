@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024罗德尼meta 提示语2",
 	time = 1.2,

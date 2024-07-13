@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "TAG增爆+AP技能强化TAG",
 	cd = 0,

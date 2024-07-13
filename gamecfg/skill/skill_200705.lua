@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 200705,
 	name = "黑基洛夫BOSS战 召唤物复活时补满血",
 	cd = 0,

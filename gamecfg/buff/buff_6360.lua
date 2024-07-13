@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "98式延迟射击装置",
 	time = 0,

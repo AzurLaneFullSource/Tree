@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "无敌撤退",
 	name = "无敌撤退",
 	init_effect = "",

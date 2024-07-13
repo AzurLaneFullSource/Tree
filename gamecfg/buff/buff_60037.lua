@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "测试-运输船-新AI及自杀",
 	time = 0,

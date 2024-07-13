@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "浮岛机场BUFF2 武器LV4",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	[128700] = "LINGDONG07",
 	[251100] = "MIWUZHIXIA1",
 	[247500] = "MAOZIHUODONG16",

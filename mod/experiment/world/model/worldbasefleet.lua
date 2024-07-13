@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldBaseFleet", import("...BaseEntity"))
+local var0_0 = class("WorldBaseFleet", import("...BaseEntity"))
 
 var0_0.Fields = {
 	id = "number",

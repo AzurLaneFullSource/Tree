@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SailBoatChar")
+local var0_0 = class("SailBoatChar")
 local var1_0
 
 var0_0.fire_cd = 0.1

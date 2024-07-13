@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PuzzlaItem")
+local var0_0 = class("PuzzlaItem")
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
 	arg0_1.img = arg1_1:GetComponent(typeof(Image))

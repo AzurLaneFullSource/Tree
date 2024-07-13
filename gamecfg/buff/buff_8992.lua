@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "无法撤退TAG",
 	time = 0,

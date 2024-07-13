@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Fushun3GameView", import("..BaseMiniGameView"))
+local var0_0 = class("Fushun3GameView", import("..BaseMiniGameView"))
 local var1_0 = "event:/ui/ddldaoshu2"
 local var2_0 = "fushun_game3_tip"
 local var3_0 = "event:/ui/taosheng"

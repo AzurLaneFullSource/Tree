@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023黑阿尔及利亚 石柱转阶段",
 	time = 15,

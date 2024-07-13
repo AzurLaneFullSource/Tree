@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "铁血空中支援",
 	init_effect = "",

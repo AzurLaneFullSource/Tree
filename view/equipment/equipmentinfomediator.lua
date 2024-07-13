@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EquipmentInfoMediator", import("..base.ContextMediator"))
+local var0_0 = class("EquipmentInfoMediator", import("..base.ContextMediator"))
 
 var0_0.TYPE_DEFAULT = 1
 var0_0.TYPE_SHIP = 2

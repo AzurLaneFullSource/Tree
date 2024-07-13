@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateBagMediator", import(".base.EducateContextMediator"))
+local var0_0 = class("EducateBagMediator", import(".base.EducateContextMediator"))
 
 function var0_0.register(arg0_1)
 	return

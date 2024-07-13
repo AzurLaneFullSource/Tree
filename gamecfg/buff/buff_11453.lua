@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "过载炮击",
 	init_effect = "",

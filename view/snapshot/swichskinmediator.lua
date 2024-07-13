@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SwichSkinMediator", import("..base.ContextMediator"))
+local var0_0 = class("SwichSkinMediator", import("..base.ContextMediator"))
 
 var0_0.CHANGE_SKIN = "SwichSkinMediator:CHANGE_SKIN"
 var0_0.BUY_ITEM = "SwichSkinMediator:BUY_ITEM"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LinkLinkScene", import("..base.BaseUI"))
+local var0_0 = class("LinkLinkScene", import("..base.BaseUI"))
 
 var0_0.MAX_ROW = 6
 var0_0.MAX_COLUMN = 11

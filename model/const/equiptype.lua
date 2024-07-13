@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EquipType")
+local var0_0 = class("EquipType")
 
 var0_0.CannonQuZhu = 1
 var0_0.CannonQingXun = 2

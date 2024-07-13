@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SettingsRedDotNode", import(".RedDotNode"))
+local var0_0 = class("SettingsRedDotNode", import(".RedDotNode"))
 
 var0_0.CVChecked = false
 var0_0.CanUpdateCV = false

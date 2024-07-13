@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "黑声望蓄力主炮 累计成功次数达标转入自闭模式",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023英系活动 圣堂统御装置-失控 标记",
 	time = 0,

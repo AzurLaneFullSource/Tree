@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewYear24LoginPage", import(".TemplatePage.LoginTemplatePage"))
+local var0_0 = class("NewYear24LoginPage", import(".TemplatePage.LoginTemplatePage"))
 
 function var0_0.OnFirstFlush(arg0_1)
 	setActive(arg0_1.item, false)

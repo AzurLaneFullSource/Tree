@@ -1,4 +1,4 @@
-﻿local var0_0 = class("KillEnemyAwardWindow", import(".PtAwardWindow"))
+local var0_0 = class("KillEnemyAwardWindow", import(".PtAwardWindow"))
 
 local function var1_0(arg0_1, arg1_1, arg2_1, arg3_1)
 	arg0_1.UIlist:make(function(arg0_2, arg1_2, arg2_2)

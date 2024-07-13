@@ -1,4 +1,4 @@
-﻿ChargeConst = {}
+ChargeConst = {}
 
 local var0_0 = ChargeConst
 

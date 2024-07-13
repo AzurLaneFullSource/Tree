@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BuildShip", import(".BaseVO"))
+local var0_0 = class("BuildShip", import(".BaseVO"))
 
 var0_0.INACTIVE = 1
 var0_0.ACTIVE = 2

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuessForkGameView", import("..BaseMiniGameView"))
+local var0_0 = class("GuessForkGameView", import("..BaseMiniGameView"))
 local var1_0 = {
 	100,
 	50

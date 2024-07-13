@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "Liner_1",
 	events = {
 		{

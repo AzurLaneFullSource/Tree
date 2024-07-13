@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "钻孔机强化组件",
 	init_effect = "jinengchufared",

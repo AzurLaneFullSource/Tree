@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.weekly_task_template = {
 	[10001] = {
 		target_id = "0",

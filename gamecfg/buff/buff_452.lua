@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "沙恩META专属破甲",
 	time = 10,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "TBD(VT-8)",
 	time = 0,

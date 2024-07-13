@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CastleMainScene", import("..base.BaseUI"))
+local var0_0 = class("CastleMainScene", import("..base.BaseUI"))
 
 var0_0.optionsPath = {
 	"main/top/btn_home"

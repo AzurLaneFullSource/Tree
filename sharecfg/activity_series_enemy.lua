@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_series_enemy = {
 	[1001] = {
 		pre_chapter = 0,

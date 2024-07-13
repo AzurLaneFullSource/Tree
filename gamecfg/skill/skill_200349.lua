@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023英系活动 剧情战1 定时触发弹幕",
 	cd = 0,

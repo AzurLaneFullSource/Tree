@@ -1,1 +1,1 @@
-﻿return (class("MaoxiV2LoginPage", import(".TemplatePage.LightLoginTemplatePage")))
+return (class("MaoxiV2LoginPage", import(".TemplatePage.LightLoginTemplatePage")))

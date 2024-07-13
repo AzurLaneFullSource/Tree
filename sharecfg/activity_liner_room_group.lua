@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_liner_room_group = {
 	{
 		id = 1,

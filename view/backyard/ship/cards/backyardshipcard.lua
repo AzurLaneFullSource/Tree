@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardShipCard", import(".BackYardBaseCard"))
+local var0_0 = class("BackYardShipCard", import(".BackYardBaseCard"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.info = BackYardFormationCard.New(arg0_1._go)

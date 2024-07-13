@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022美系活动sp 精英浮游炮召唤",
 	time = 3,

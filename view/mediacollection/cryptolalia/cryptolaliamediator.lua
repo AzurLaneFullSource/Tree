@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CryptolaliaMediator", import("view.base.ContextMediator"))
+local var0_0 = class("CryptolaliaMediator", import("view.base.ContextMediator"))
 
 var0_0.UNLOCK = "CryptolaliaMediator:UNLOCK"
 

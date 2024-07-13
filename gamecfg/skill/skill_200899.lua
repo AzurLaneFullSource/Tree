@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024愚人节 自机爆炸",
 	cd = 0,

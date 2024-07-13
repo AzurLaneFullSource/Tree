@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_vote = {
 	[29] = {
 		same_rank_by_id = 0,

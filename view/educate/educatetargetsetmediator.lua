@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateTargetSetMediator", import(".base.EducateContextMediator"))
+local var0_0 = class("EducateTargetSetMediator", import(".base.EducateContextMediator"))
 
 var0_0.ON_TARGET_SET = "EducateTargetSetMediator:ON_TARGET_SET"
 

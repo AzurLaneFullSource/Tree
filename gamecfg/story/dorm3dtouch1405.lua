@@ -1,4 +1,4 @@
-﻿return {
+return {
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,

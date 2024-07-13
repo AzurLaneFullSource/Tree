@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "霞飞共斗一阶段过场锁血",
 	time = 0,

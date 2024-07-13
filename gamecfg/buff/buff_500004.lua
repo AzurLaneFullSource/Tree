@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "宝物buff4",
 	init_effect = "",

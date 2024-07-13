@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "大洋联邦 防空快艇防空光环",
 	time = 0,

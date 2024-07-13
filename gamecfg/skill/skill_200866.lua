@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024异世界冒险 英灵效果 苏维埃同盟",
 	cd = 0,

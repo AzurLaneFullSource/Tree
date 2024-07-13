@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RefluxScene", import("..base.BaseUI"))
+local var0_0 = class("RefluxScene", import("..base.BaseUI"))
 
 var0_0.Sign = 1
 var0_0.Task = 2

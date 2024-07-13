@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SettingsSoundBtn", import(".SettingsDownloadableBtn"))
+local var0_0 = class("SettingsSoundBtn", import(".SettingsDownloadableBtn"))
 
 function var0_0.GetDownloadGroup(arg0_1)
 	return "CV"

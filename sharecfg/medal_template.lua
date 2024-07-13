@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.medal_template = {
 	[10011] = {
 		target_num = 2000,

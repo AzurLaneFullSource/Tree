@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "记录修正-AF 重樱角色在战斗中造成的伤害提升5%，受到的伤害提升5%",
 	time = 0,

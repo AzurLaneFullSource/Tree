@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivitySingleScene", import("..base.BaseUI"))
+local var0_0 = class("ActivitySingleScene", import("..base.BaseUI"))
 
 var0_0.EXIT = "exit"
 

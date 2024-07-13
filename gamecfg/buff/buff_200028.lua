@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "定身触发",
 	time = 7,

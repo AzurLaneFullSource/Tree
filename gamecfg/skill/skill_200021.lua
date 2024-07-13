@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022意大利活动 EX罗马召唤激光发射装置",
 	cd = 0,

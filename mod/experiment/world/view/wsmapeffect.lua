@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSMapEffect", import(".WSMapTransform"))
+local var0_0 = class("WSMapEffect", import(".WSMapTransform"))
 
 var0_0.Fields = {
 	resPath = "string",

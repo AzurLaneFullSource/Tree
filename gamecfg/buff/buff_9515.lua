@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022公海舰队B3 普通人形构建者反击护盾",
 	time = 12.1,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EffectLaser", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
+local var0_0 = class("EffectLaser", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
 
 function var0_0.GetBaseOrder(arg0_1)
 	if arg0_1.mark == "N" then

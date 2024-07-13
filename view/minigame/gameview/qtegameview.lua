@@ -1,4 +1,4 @@
-﻿local var0_0 = class("QTEGameView", import("..BaseMiniGameView"))
+local var0_0 = class("QTEGameView", import("..BaseMiniGameView"))
 
 function var0_0.getUIName(arg0_1)
 	return "QTEGameUI"

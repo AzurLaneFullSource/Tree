@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateScheduleFilterLayer", import(".base.EducateBaseUI"))
+local var0_0 = class("EducateScheduleFilterLayer", import(".base.EducateBaseUI"))
 
 local function var1_0(arg0_1)
 	local var0_1 = Clone(arg0_1)

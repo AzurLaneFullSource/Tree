@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainNoticeBtn", import(".MainBaseBtn"))
+local var0_0 = class("MainNoticeBtn", import(".MainBaseBtn"))
 
 function var0_0.OnClick(arg0_1)
 	if #getProxy(ServerNoticeProxy):getServerNotices(false) > 0 then

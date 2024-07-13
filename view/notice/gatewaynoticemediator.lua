@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GatewayNoticeMediator", import("..base.ContextMediator"))
+local var0_0 = class("GatewayNoticeMediator", import("..base.ContextMediator"))
 
 function var0_0.register(arg0_1)
 	arg0_1:updateNotices()

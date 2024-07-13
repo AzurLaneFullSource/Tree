@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "破甲debuff-武藏",
 	time = 8,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EggCellView", import(".EnemyCellView"))
+local var0_0 = class("EggCellView", import(".EnemyCellView"))
 
 function var0_0.InitEggCellTransform(arg0_1)
 	arg0_1.tfIcon = arg0_1.tf:Find("icon")

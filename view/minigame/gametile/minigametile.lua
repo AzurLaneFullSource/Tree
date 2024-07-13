@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MiniGameTile")
+local var0_0 = class("MiniGameTile")
 
 var0_0.BOOM_GAME = "BoomGame"
 var0_0.SPRING23_GAME = "Spring23Game"

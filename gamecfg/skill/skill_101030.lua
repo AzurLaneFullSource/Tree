@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "限阻破坏",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = import(".DynamicCellView")
+local var0_0 = import(".DynamicCellView")
 local var1_0 = class("OniCellView", var0_0)
 
 function var1_0.Ctor(arg0_1, arg1_1)

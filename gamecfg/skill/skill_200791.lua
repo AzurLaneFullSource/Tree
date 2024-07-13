@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024罗德尼meta 终结技",
 	cd = 0,

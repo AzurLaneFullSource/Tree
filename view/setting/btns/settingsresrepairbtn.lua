@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SettingsResRepairBtn")
+local var0_0 = class("SettingsResRepairBtn")
 
 function var0_0.InitTpl(arg0_1, arg1_1)
 	local var0_1 = arg1_1.tpl

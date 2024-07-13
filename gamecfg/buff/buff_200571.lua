@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "克莱蒙梭剧情战 海伦娜构造之眼探查",
 	time = 1,

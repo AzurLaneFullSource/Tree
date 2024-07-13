@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "允许恢复标记",
 	cd = 0,

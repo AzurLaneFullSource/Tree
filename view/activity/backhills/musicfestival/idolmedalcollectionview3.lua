@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IdolMedalCollectionView3", import(".IdolMedalCollectionView2"))
+local var0_0 = class("IdolMedalCollectionView3", import(".IdolMedalCollectionView2"))
 
 function var0_0.GetContainerPositions(arg0_1)
 	return {

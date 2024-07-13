@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ContinuousOperationRuntimeData")
+local var0_0 = class("ContinuousOperationRuntimeData")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	for iter0_1, iter1_1 in pairs(arg1_1) do

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "2022武藏活动 特定我方角色获得5%属性加成",
 	init_effect = "",

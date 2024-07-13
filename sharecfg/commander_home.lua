@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.commander_home = {
 	{
 		exp_number = 60,

@@ -1,4 +1,4 @@
-﻿local var0_0 = setmetatable
+local var0_0 = setmetatable
 local var1_0 = {}
 
 var0_0(var1_0, var1_0)

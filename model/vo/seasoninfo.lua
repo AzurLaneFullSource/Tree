@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SeasonInfo", import(".BaseVO"))
+local var0_0 = class("SeasonInfo", import(".BaseVO"))
 
 var0_0.RECOVER_UP_COUNT = 5
 var0_0.MAX_FIGHTCOUNT = 10

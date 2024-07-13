@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.shop_furniture_relation = setmetatable({
 	__name = "shop_furniture_relation",
 	get_id_list_by_fur_id = {

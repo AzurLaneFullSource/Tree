@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "瞬移的前置",
 	time = 0,

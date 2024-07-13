@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateNewsLayer", import(".base.EducateBaseUI"))
+local var0_0 = class("EducateNewsLayer", import(".base.EducateBaseUI"))
 local var1_0 = {
 	[EducateSpecialEvent.TAG_ING] = "5ACEFE",
 	[EducateSpecialEvent.TAG_COMING] = "CB99FF",

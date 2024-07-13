@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "UIACT10000",
 	mode = 2,
 	once = true,

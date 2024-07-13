@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"You'll have to train the Meowfficer to get it out of its little box!",
 	"Give the Training button a little tap!",
 	"You can queue up to <color=#A9F548>10</color> Cat Boxes, but only <color=#A9F548>4</color> can be trained at a time!"

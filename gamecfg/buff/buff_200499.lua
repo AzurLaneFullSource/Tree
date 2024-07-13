@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023古立特联动复刻 TSS3 新条茜 怪兽变身",
 	time = 0,

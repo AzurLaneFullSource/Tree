@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.SceneAnimMgr = singletonClass("SceneAnimMgr")
 
 local var0_0 = pg.SceneAnimMgr

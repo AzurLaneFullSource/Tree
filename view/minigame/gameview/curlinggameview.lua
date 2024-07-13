@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CurlingGameView", import("..BaseMiniGameView"))
+local var0_0 = class("CurlingGameView", import("..BaseMiniGameView"))
 local var1_0 = "event:/ui/ddldaoshu2"
 local var2_0 = "event:/ui/taosheng"
 local var3_0 = "event:/ui/minigame_hitcake"

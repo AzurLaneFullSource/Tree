@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 
 if module then
 	mbox = var0_0

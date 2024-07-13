@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "AimEffectUI",
 	name = "海伦娜-舰队之眼",
 	cd = 0,

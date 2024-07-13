@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TrophyGalleryLayer", import("..base.BaseUI"))
+local var0_0 = class("TrophyGalleryLayer", import("..base.BaseUI"))
 
 var0_0.Filter = {
 	"all",

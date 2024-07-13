@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PipeMapControl")
+local var0_0 = class("PipeMapControl")
 local var1_0
 local var2_0 = "left"
 local var3_0 = "right"

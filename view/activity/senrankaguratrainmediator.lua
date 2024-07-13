@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SenrankaguraTrainMediator", import("..base.ContextMediator"))
+local var0_0 = class("SenrankaguraTrainMediator", import("..base.ContextMediator"))
 
 var0_0.LEVEL_UP = "level up"
 var0_0.GET_REWARD = "get reward"

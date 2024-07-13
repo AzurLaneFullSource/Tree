@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "魔方活性",
 	init_effect = "",

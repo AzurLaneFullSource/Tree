@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSWorldInfo", import("...BaseEntity"))
+local var0_0 = class("WSWorldInfo", import("...BaseEntity"))
 
 var0_0.Fields = {
 	powerCount = "userdata",

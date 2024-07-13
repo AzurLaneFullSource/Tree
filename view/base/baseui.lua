@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseUI", import("view.base.BaseEventLogic"))
+local var0_0 = class("BaseUI", import("view.base.BaseEventLogic"))
 
 var0_0.LOADED = "BaseUI:LOADED"
 var0_0.DID_ENTER = "BaseUI:DID_ENTER"

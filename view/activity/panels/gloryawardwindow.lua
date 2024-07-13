@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GloryAwardWindow", import(".PtAwardWindow"))
+local var0_0 = class("GloryAwardWindow", import(".PtAwardWindow"))
 
 local function var1_0(arg0_1)
 	local var0_1 = arg0_1.taskList

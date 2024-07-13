@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "鱼雷艇AI切换",
 	time = 0,

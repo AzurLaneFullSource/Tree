@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PileGameSignedMediator", import("...base.ContextMediator"))
+local var0_0 = class("PileGameSignedMediator", import("...base.ContextMediator"))
 
 var0_0.ON_GET_AWARD = "PileGameSignedMediator:ON_GET_AWARD"
 var0_0.MINIGAME_ID = 5

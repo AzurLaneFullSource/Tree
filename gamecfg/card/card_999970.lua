@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 999970,
 	name = "教程 鱼雷",
 	attr_quote = "",

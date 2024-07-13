@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "2020德系活动 欧根亲王 不破之盾",
 	init_effect = "",

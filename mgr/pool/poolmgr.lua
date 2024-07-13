@@ -1,4 +1,4 @@
-﻿local var0_0 = singletonClass("PoolMgr")
+local var0_0 = singletonClass("PoolMgr")
 
 pg = pg or {}
 pg.PoolMgr = var0_0

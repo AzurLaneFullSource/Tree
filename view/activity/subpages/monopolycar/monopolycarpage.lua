@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MonopolyCarPage", import("....base.BaseActivityPage"))
+local var0_0 = class("MonopolyCarPage", import("....base.BaseActivityPage"))
 
 var0_0.ON_START = "MonopolyGame:ON_START"
 var0_0.ON_MOVE = "MonopolyGame:ON_MOVE"

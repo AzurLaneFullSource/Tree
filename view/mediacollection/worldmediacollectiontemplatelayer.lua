@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMediaCollectionTemplateLayer", import("view.base.BaseSubView"))
+local var0_0 = class("WorldMediaCollectionTemplateLayer", import("view.base.BaseSubView"))
 
 function var0_0.getUIName(arg0_1)
 	assert(false, "Need Assign UIName " .. arg0_1.__cname)

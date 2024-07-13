@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "信浓活动梦境力量支援弹幕",
 	cd = 0,

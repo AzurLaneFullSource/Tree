@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "勇者标枪亿万斩击",
 	cd = 0,

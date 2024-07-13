@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023伊丽莎白meta 领域出现弹条",
 	cd = 0,

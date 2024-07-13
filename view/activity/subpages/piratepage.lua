@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PiratePage", import("view.base.BaseActivityPage"))
+local var0_0 = class("PiratePage", import("view.base.BaseActivityPage"))
 
 var0_0.PROGRESS_TEXT = "%d/7"
 var0_0.DIALOG_DELAY = 15

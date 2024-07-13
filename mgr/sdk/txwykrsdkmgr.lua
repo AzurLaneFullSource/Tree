@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 local var1_0 = TxwyKrSdkMgr.inst
 
 function var0_0.CheckPretest()

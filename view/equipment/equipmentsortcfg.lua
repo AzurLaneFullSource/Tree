@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	index = {
 		{
 			spr = "index_all",

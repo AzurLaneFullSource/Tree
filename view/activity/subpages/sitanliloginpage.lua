@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SitanliLoginPage", import(".TemplatePage.LoginTemplatePage"))
+local var0_0 = class("SitanliLoginPage", import(".TemplatePage.LoginTemplatePage"))
 
 function var0_0.OnDataSetting(arg0_1)
 	arg0_1.config = pg.activity_7_day_sign[arg0_1.activity:getConfig("config_id")]

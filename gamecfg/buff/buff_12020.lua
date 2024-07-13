@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "潜母放飞自带飞机",
 	init_effect = "",

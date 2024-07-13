@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024异世界冒险 剧情战 努比亚人跨射 中毒效果",
 	time = 12.1,

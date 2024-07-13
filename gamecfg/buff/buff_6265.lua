@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "精确锁定·改",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSCommand", import(".WSBaseCommand"))
+local var0_0 = class("WSCommand", import(".WSBaseCommand"))
 local var1_0
 
 function var0_0.Bind(arg0_1)

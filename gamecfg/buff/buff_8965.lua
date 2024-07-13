@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "视野遮蔽5秒",
 	time = 1,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChargeDiamondShopView", import("...base.BaseSubView"))
+local var0_0 = class("ChargeDiamondShopView", import("...base.BaseSubView"))
 
 var0_0.MonthCardID = 1
 

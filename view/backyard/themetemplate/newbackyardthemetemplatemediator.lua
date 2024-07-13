@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewBackYardThemeTemplateMediator", import("...base.ContextMediator"))
+local var0_0 = class("NewBackYardThemeTemplateMediator", import("...base.ContextMediator"))
 
 var0_0.FETCH_ALL_THEME = "NewBackYardThemeTemplateMediator:FETCH_ALL_THEME"
 var0_0.ON_CHARGE = "NewBackYardThemeTemplateMediator:ON_CHARGE"

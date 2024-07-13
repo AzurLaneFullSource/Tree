@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PockySkinPage", import("view.base.BaseActivityPage"))
+local var0_0 = class("PockySkinPage", import("view.base.BaseActivityPage"))
 
 function var0_0.GetCurrentDay()
 	local var0_1 = pg.TimeMgr.GetInstance():GetServerTime()

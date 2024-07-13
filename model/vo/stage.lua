@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Stage", import(".BaseVO"))
+local var0_0 = class("Stage", import(".BaseVO"))
 
 var0_0.SubmarinStage = 15
 

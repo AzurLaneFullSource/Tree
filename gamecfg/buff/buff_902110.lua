@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "储备氧气",
 	init_effect = "jinengchufablue",

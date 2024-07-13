@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChatBubble")
+local var0_0 = class("ChatBubble")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.tf = tf(arg1_1)

@@ -1,4 +1,4 @@
-﻿local var0_0 = type
+local var0_0 = type
 local var1_0 = string.byte
 local var2_0 = string.format
 local var3_0 = string.match

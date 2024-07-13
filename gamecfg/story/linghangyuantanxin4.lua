@@ -1,4 +1,4 @@
-﻿return {
+return {
 	defaultTb = 1006,
 	mode = 2,
 	fadeOut = 1.5,

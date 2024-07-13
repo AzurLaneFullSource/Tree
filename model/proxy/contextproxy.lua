@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ContextProxy", pm.Proxy)
+local var0_0 = class("ContextProxy", pm.Proxy)
 
 function var0_0.getCurrentContext(arg0_1)
 	return arg0_1.data[#arg0_1.data]

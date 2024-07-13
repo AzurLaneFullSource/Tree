@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Our next mission is to support the Eagles' aviation fleet combat drills. Tap <color=#ff7d36>Attack</color> to get started.",
 	"Feeling like you need more firepower? Let's <color=#ff7d36>retreat for now</color> and head back to port!",
 	"Tap <color=#ff7d36>retreat</color>.",

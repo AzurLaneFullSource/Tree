@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Favorite", import(".BaseVO"))
+local var0_0 = class("Favorite", import(".BaseVO"))
 
 var0_0.STATE_AWARD = 1
 var0_0.STATE_WAIT = 2

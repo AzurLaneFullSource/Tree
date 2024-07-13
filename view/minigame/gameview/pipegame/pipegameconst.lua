@@ -1,4 +1,4 @@
-﻿this = class("PipeGameConst")
+this = class("PipeGameConst")
 this.bgm_type_default = 1
 this.bgm_type_main = 2
 this.bgm_type_game = 3

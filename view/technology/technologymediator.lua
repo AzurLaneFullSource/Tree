@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TechnologyMediator", import("..base.ContextMediator"))
+local var0_0 = class("TechnologyMediator", import("..base.ContextMediator"))
 
 var0_0.ON_START = "TechnologyMediator:ON_START"
 var0_0.ON_FINISHED = "TechnologyMediator:ON_FINISHED"

@@ -1,4 +1,4 @@
-﻿ShareCfg = {
+ShareCfg = {
 	["ShareCfg.guild_base_event"] = true,
 	["ShareCfg.roll_attr"] = true,
 	["ShareCfg.furniture_shop_template"] = true,

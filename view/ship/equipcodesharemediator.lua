@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EquipCodeShareMediator", import("..base.ContextMediator"))
+local var0_0 = class("EquipCodeShareMediator", import("..base.ContextMediator"))
 
 var0_0.OPEN_TAG_INDEX = "EquipCodeShareMediator.OPEN_TAG_INDEX"
 var0_0.LIKE_EQUIP_CODE = "EquipCodeShareMediator.LIKE_EQUIP_CODE"

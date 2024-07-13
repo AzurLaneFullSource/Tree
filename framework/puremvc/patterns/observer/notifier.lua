@@ -1,4 +1,4 @@
-﻿local var0_0 = import("..facade.Facade")
+local var0_0 = import("..facade.Facade")
 local var1_0 = class("Notifier")
 
 function var1_0.Ctor(arg0_1)

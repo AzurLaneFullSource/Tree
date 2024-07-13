@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MetaProgress", import("..BaseVO"))
+local var0_0 = class("MetaProgress", import("..BaseVO"))
 
 var0_0.STATE_LESS_PT = 1
 var0_0.STATE_LESS_STORY = 2

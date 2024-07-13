@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AttireScene", import("..base.BaseUI"))
+local var0_0 = class("AttireScene", import("..base.BaseUI"))
 
 var0_0.PAGE_ICONFRAME = 1
 var0_0.PAGE_CHATFRAME = 2

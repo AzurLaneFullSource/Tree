@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TowerClimbingView")
+local var0_0 = class("TowerClimbingView")
 
 local function var1_0(arg0_1, arg1_1, arg2_1)
 	local var0_1 = GetOrAddComponent(arg0_1, "EventTriggerListener")

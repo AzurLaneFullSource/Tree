@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardTransportFurniture", import(".CourtYardFurniture"))
+local var0_0 = class("CourtYardTransportFurniture", import(".CourtYardFurniture"))
 
 function var0_0.InitSlots(arg0_1)
 	table.insert(arg0_1.slots, CourtYardTransportSlot.New(1, arg0_1.config.spine))

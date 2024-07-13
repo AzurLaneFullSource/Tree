@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GameHallMediator", import("..base.ContextMediator"))
+local var0_0 = class("GameHallMediator", import("..base.ContextMediator"))
 
 var0_0.OPEN_MINI_GAME = "open mini game"
 var0_0.OPEN_GAME_SHOP = "open game shop "

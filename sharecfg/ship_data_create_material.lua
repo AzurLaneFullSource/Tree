@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.ship_data_create_material = {
 	{
 		use_gold = 1500,

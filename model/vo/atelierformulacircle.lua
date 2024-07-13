@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AtelierFormulaCircle", import("model.vo.BaseVO"))
+local var0_0 = class("AtelierFormulaCircle", import("model.vo.BaseVO"))
 
 var0_0.TYPE = {
 	BASE = 1,

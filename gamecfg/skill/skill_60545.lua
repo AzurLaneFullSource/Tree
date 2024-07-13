@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "茶会与点心之神...？（数值弱）",
 	cd = 0,

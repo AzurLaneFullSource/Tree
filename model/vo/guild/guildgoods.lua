@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildGoods", import("..BaseVO"))
+local var0_0 = class("GuildGoods", import("..BaseVO"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.configId = arg1_1.id

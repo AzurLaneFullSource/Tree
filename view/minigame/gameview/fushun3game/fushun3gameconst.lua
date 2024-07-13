@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Fushun3GameConst")
+local var0_0 = class("Fushun3GameConst")
 
 var0_0.mini_game_leave = "mini_game_leave"
 var0_0.mini_game_pause = "mini_game_pause"

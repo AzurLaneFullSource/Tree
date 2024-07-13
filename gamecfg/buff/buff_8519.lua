@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "全体回满血",
 	time = 3,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardRandomControllerSlot", import(".CourtYardFurnitureBaseSlot"))
+local var0_0 = class("CourtYardRandomControllerSlot", import(".CourtYardFurnitureBaseSlot"))
 
 function var0_0.OnInit(arg0_1, arg1_1)
 	arg0_1.name = arg1_1[1][1]

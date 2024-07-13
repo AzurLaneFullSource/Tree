@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.naval_academy_theme = {
 	spring = {
 		theme_name = "spring",

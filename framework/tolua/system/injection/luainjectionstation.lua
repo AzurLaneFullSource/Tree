@@ -1,4 +1,4 @@
-﻿local var0_0 = pcall
+local var0_0 = pcall
 local var1_0 = pairs
 local var2_0 = error
 local var3_0 = rawset

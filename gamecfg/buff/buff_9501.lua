@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "活性",
 	time = 0,

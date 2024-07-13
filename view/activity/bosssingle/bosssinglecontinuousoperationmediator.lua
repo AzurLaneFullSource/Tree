@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossSingleContinuousOperationMediator", import("view.base.ContextMediator"))
+local var0_0 = class("BossSingleContinuousOperationMediator", import("view.base.ContextMediator"))
 
 var0_0.CONTINUE_OPERATION = "BossSingleContinuousOperationMediator:CONTINUE_OPERATION"
 var0_0.ON_REENTER = "BossSingleContinuousOperationMediator:ON_REENTER"

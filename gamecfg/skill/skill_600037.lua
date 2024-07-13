@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "3级推条",
 	cd = 0,

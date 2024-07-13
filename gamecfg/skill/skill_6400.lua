@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "智慧模块",
 	cd = 0,

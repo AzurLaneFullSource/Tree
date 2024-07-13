@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainFdConcealablePanel", import(".MainConcealablePanel"))
+local var0_0 = class("MainFdConcealablePanel", import(".MainConcealablePanel"))
 
 function var0_0.FillEmptySlot(arg0_1, arg1_1)
 	for iter0_1 = 1, #arg1_1 do

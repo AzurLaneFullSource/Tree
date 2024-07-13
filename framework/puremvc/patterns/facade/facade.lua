@@ -1,4 +1,4 @@
-﻿local var0_0 = import("...core.Controller")
+local var0_0 = import("...core.Controller")
 local var1_0 = import("...core.Model")
 local var2_0 = import("...core.View")
 local var3_0 = import("..observer.Notification")

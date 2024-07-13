@@ -1,4 +1,4 @@
-﻿local var0_0 = class("JavelinComicSkinPage", import(".TemplatePage.SkinTemplatePage"))
+local var0_0 = class("JavelinComicSkinPage", import(".TemplatePage.SkinTemplatePage"))
 
 var0_0.FADE_OUT_TIME = 1
 

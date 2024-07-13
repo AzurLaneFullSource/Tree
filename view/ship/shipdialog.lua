@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipDialog")
+local var0_0 = class("ShipDialog")
 local var1_0 = 0.3
 local var2_0 = 2
 

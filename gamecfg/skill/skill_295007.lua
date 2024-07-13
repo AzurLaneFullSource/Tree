@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024异世界冒险 英灵效果 伊丽莎白",
 	cd = 0,

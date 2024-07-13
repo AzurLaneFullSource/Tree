@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "公海舰队活动 铁血支援",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ServerLoginCommand", pm.SimpleCommand)
+local var0_0 = class("ServerLoginCommand", pm.SimpleCommand)
 
 var0_0.LoginLastTime = 0
 var0_0.LoginSafeLock = 0

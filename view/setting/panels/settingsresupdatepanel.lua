@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SettingsResUpdatePanel", import(".SettingsBasePanel"))
+local var0_0 = class("SettingsResUpdatePanel", import(".SettingsBasePanel"))
 
 function var0_0.GetUIName(arg0_1)
 	return "SettingsResUpdate"

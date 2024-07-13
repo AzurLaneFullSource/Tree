@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "夜战灯塔点亮时添加flag",
 	time = 0,

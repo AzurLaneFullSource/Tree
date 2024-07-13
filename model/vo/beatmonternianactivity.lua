@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BeatMonterNianActivity", import(".Activity"))
+local var0_0 = class("BeatMonterNianActivity", import(".Activity"))
 
 function var0_0.GetDataConfig(arg0_1, arg1_1)
 	local var0_1 = arg0_1:getConfig("config_id")

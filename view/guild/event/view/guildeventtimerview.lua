@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildEventTimerView")
+local var0_0 = class("GuildEventTimerView")
 
 function var0_0.Flush(arg0_1, arg1_1, arg2_1)
 	arg0_1.text = arg1_1

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "指挥喵buff触发型效果的触发入口",
 	time = 0,

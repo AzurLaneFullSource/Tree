@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MusicFestivalScene3", import("..TemplateMV.BackHillTemplate"))
+local var0_0 = class("MusicFestivalScene3", import("..TemplateMV.BackHillTemplate"))
 
 function var0_0.getUIName(arg0_1)
 	return "MusicFestivalUI3"

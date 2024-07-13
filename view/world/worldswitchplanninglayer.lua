@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldSwitchPlanningLayer", import("view.base.BaseUI"))
+local var0_0 = class("WorldSwitchPlanningLayer", import("view.base.BaseUI"))
 
 var0_0.MODE_DIFFICULT = 0
 var0_0.MODE_SAFE = 1

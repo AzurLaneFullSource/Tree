@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TSTaskQueue")
+local var0_0 = class("TSTaskQueue")
 
 var0_0.MTPF = 0.0333333333333333
 

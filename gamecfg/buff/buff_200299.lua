@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023英系活动 EX BOSS狂热永久增加造成的伤害",
 	time = 0,

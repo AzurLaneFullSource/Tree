@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_ins_language = setmetatable({
 	__name = "activity_ins_language",
 	all = {

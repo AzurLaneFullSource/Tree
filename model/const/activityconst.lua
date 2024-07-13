@@ -1,4 +1,4 @@
-﻿local var0_0 = setmetatable({}, {
+local var0_0 = setmetatable({}, {
 	__index = function(arg0_1, arg1_1)
 		assert(pg.activity_const[arg1_1], "activity_const without key:" .. arg1_1)
 

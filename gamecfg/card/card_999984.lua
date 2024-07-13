@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 999984,
 	name = "教程 循环维修",
 	effect_list = {

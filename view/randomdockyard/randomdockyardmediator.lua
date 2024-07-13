@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RandomDockYardMediator", import("view.base.ContextMediator"))
+local var0_0 = class("RandomDockYardMediator", import("view.base.ContextMediator"))
 
 var0_0.OPEN_INDEX = "RandomDockYardMediator:OPEN_INDEX"
 var0_0.ON_ADD_SHIPS = "RandomDockYardMediator:ON_ADD_SHIPS"

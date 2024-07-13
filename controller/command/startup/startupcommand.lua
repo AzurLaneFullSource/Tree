@@ -1,4 +1,4 @@
-﻿local var0_0 = class("StartupCommand", pm.MacroCommand)
+local var0_0 = class("StartupCommand", pm.MacroCommand)
 
 function var0_0.initializeMacroCommand(arg0_1)
 	arg0_1:addSubCommand(PrepControllerCommand)

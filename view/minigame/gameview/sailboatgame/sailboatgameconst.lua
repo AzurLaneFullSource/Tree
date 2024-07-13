@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SailBoatGameConst")
+local var0_0 = class("SailBoatGameConst")
 
 var0_0.bg_layer_back = 1
 var0_0.bg_layer_mid = 2

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EquipmentTransformTreeScene", import("view.base.BaseUI"))
+local var0_0 = class("EquipmentTransformTreeScene", import("view.base.BaseUI"))
 local var1_0 = require("Mgr/Pool/PoolPlural")
 local var2_0 = "ui/EquipmentTransformTreeUI_atlas"
 

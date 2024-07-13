@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024愚人节 BOSS召唤自爆船 随机位置",
 	cd = 0,

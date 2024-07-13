@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 1220910,
 	map_id = 10001,
 	bgm = "Battle-italy",

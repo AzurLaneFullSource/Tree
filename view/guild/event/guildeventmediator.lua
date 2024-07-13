@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildEventMediator", import("...base.ContextMediator"))
+local var0_0 = class("GuildEventMediator", import("...base.ContextMediator"))
 
 var0_0.ON_ACTIVE_EVENT = "GuildEventMediator:ON_ACTIVE_EVENT"
 var0_0.ON_OPEN_REPORT = "GuildEventMediator:ON_OPEN_REPORT"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleContributionResultLayer", import(".BattleActivityBossResultLayer"))
+local var0_0 = class("BattleContributionResultLayer", import(".BattleActivityBossResultLayer"))
 
 function var0_0.setActId(arg0_1, arg1_1)
 	arg0_1._actID = arg1_1

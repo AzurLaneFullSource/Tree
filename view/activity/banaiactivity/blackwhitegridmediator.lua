@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BlackWhiteGridMediator", import("...base.ContextMediator"))
+local var0_0 = class("BlackWhiteGridMediator", import("...base.ContextMediator"))
 
 var0_0.ON_FINISH = "VirtualSpaceMediator:ON_FINISH"
 var0_0.ON_UPDATE_SCORE = "VirtualSpaceMediator:ON_UPDATE_SCORE"

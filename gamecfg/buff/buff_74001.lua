@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "治疗偷窃",
 	init_effect = "",

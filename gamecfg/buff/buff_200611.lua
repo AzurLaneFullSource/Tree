@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023云仙活动 EX 多次击破次数盾后直接胜利",
 	time = 3,

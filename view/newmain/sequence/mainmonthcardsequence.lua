@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainMonthCardSequence")
+local var0_0 = class("MainMonthCardSequence")
 
 function var0_0.Execute(arg0_1, arg1_1)
 	local var0_1 = MonthCardOutDateTipPanel.GetMonthCardEndDate()

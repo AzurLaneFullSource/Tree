@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "意大利SP 侵扰者召唤电击装置",
 	painting = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023古立特联动复刻 TSS4 公主 二阶段随机弹幕",
 	cd = 0,

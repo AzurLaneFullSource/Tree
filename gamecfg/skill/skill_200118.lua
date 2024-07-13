@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022莱莎联动 BOSS技能 昏睡之门",
 	cd = 0,

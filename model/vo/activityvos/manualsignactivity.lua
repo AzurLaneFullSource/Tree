@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ManualSignActivity", import("model.vo.Activity"))
+local var0_0 = class("ManualSignActivity", import("model.vo.Activity"))
 
 var0_0.OP_SIGN = 1
 var0_0.OP_GET_AWARD = 2

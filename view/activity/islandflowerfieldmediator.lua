@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IslandFlowerFieldMediator", import("..base.ContextMediator"))
+local var0_0 = class("IslandFlowerFieldMediator", import("..base.ContextMediator"))
 
 var0_0.GET_FLOWER_AWARD = "IslandFlowerFieldMediator.GET_FLOWER_AWARD"
 

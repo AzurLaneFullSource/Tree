@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "通用--清除小怪",
 	time = 4,

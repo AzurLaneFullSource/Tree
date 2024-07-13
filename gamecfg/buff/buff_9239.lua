@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "龙宫机关-火 BUFF判断LV3 步骤1",
 	time = 5,

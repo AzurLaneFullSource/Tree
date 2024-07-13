@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewServerShopSingleWindow", import("..msgbox.ShopSingleWindow"))
+local var0_0 = class("NewServerShopSingleWindow", import("..msgbox.ShopSingleWindow"))
 
 function var0_0.InitWindow(arg0_1, arg1_1, arg2_1)
 	local var0_1 = {

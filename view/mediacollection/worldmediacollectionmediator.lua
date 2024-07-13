@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMediaCollectionMediator", ContextMediator)
+local var0_0 = class("WorldMediaCollectionMediator", ContextMediator)
 
 var0_0.BEGIN_STAGE = "WorldMediaCollectionMediator BEGIN_STAGE"
 

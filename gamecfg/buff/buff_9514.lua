@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "白龙剧情锁血24%",
 	name = "白龙剧情锁血24%",
 	init_effect = "",

@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 
 var0_0.__cname = "ResponsableTree"
 var0_0.__ctype = 2

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_const = {
 	TASK_ACTIVITY_ID = {
 		act_id = 16

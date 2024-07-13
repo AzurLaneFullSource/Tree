@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityBossGoriziaScene", import(".ActivityBossSceneTemplate"))
+local var0_0 = class("ActivityBossGoriziaScene", import(".ActivityBossSceneTemplate"))
 
 function var0_0.getUIName(arg0_1)
 	return "ActivityBossGoriziaUI"

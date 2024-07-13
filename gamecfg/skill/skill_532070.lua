@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "自动速射",
 	cd = 0,

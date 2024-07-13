@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OtherWorldTaskPage")
+local var0_0 = class("OtherWorldTaskPage")
 local var1_0 = 3
 local var2_0 = 1
 local var3_0 = "other_world_task_type_daily"

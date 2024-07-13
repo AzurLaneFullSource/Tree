@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSPortTask", import("...BaseEntity"))
+local var0_0 = class("WSPortTask", import("...BaseEntity"))
 
 var0_0.Fields = {
 	btnOnGoing = "userdata",

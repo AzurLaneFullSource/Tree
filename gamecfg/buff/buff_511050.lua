@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 10,
 	name = "熟练装填手",
 	init_effect = "",

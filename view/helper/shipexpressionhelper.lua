@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipExpressionHelper")
+local var0_0 = class("ShipExpressionHelper")
 local var1_0 = pg.ship_skin_expression
 local var2_0 = pg.ship_skin_expression_ex
 local var3_0 = false

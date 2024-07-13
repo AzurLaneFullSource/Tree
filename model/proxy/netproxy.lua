@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NetProxy", pm.Proxy)
+local var0_0 = class("NetProxy", pm.Proxy)
 
 function var0_0.onRegister(arg0_1)
 	arg0_1.event = {}

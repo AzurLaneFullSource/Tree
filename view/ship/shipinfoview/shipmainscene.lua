@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipMainScene", import("...base.BaseUI"))
+local var0_0 = class("ShipMainScene", import("...base.BaseUI"))
 local var1_0 = 0
 local var2_0 = 0.2
 local var3_0 = 0.3

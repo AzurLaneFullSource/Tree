@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainSettingsBtn", import(".MainBaseBtn"))
+local var0_0 = class("MainSettingsBtn", import(".MainBaseBtn"))
 
 function var0_0.OnClick(arg0_1)
 	SettingsRedDotNode.CanUpdateCV = false

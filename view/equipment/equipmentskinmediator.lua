@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EquipmentSkinMediator", import("..base.ContextMediator"))
+local var0_0 = class("EquipmentSkinMediator", import("..base.ContextMediator"))
 
 var0_0.ON_EQUIP = "EquipmentSkinMediator:ON_EQUIP"
 var0_0.ON_UNEQUIP = "EquipmentSkinMediator:ON_UNEQUIP"

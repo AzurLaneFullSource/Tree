@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DockyardFriend")
+local var0_0 = class("DockyardFriend")
 
 var0_0.DetailType0 = 0
 var0_0.DetailType1 = 1

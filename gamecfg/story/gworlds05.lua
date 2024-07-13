@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "GWORLDS05",
 	mode = 2,
 	skipTip = false,

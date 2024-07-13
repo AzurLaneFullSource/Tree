@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "偶像2期更换BGM",
 	time = 0,

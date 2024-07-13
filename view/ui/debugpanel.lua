@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DebugPanel", import("..base.BaseUI"))
+local var0_0 = class("DebugPanel", import("..base.BaseUI"))
 
 function var0_0.Ctor(arg0_1)
 	var0_0.super.Ctor(arg0_1)

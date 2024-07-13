@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "治疗反转",
 	time = 0,

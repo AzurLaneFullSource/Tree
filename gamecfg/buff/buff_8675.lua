@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "构建者护盾",
 	time = 6,

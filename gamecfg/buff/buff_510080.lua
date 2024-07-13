@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "制空强化",
 	init_effect = "",

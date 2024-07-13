@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023 闪乱联动 EX 蓄力监听",
 	time = 10,

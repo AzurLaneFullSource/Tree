@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMediaCollectionEntranceMediator", import("view.base.ContextMediator"))
+local var0_0 = class("WorldMediaCollectionEntranceMediator", import("view.base.ContextMediator"))
 
 var0_0.OPEN_RECALL = "WorldMediaCollectionEntranceMediator:OPEN_RECALL"
 var0_0.OPEN_CRYPTOLALIA = "WorldMediaCollectionEntranceMediator:OPEN_CRYPTOLALIA"

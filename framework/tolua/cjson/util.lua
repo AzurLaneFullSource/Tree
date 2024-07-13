@@ -1,4 +1,4 @@
-﻿local var0_0 = require("cjson")
+local var0_0 = require("cjson")
 
 local function var1_0(arg0_1)
 	local var0_1 = 0

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateScene", import(".base.EducateBaseUI"))
+local var0_0 = class("EducateScene", import(".base.EducateBaseUI"))
 
 function var0_0.getUIName(arg0_1)
 	return "EducateUI"

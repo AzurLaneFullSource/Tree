@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022莱莎联动 SP净化者召唤小怪（三个组合随机一个）",
 	time = 12,

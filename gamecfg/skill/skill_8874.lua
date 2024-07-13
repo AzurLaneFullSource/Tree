@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "记录修正-AF",
 	cd = 0,

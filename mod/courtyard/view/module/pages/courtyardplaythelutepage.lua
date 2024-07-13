@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtyardPlayTheLutePage", import(".CourtYardBaseSubPage"))
+local var0_0 = class("CourtyardPlayTheLutePage", import(".CourtYardBaseSubPage"))
 
 function var0_0.getUIName(arg0_1)
 	return "CourtyardPlayTheLuteui"

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022美系活动 空间净化系统 减少耐久",
 	cd = 0,

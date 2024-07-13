@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Your flagship's <color=#ff7d36>Aerial Support</color> is ready.",
 	"Clear the battlefield! Get ready for <color=#ff7d36>air support</color>!",
 	"Witness the power of our fighters! Use them when you need a leg up. They can also <color=#ff7d36>destroy enemy barrages</color>!"

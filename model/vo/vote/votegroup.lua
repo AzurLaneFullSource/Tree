@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VoteGroup", import("..BaseVO"))
+local var0_0 = class("VoteGroup", import("..BaseVO"))
 
 var0_0.VOTE_STAGE = 1
 var0_0.STTLEMENT_STAGE = 2

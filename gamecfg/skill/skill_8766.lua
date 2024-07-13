@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "偶像大师联动 fever BUFF 镜头效果",
 	cd = 0,

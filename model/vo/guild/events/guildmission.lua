@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildMission", import("...BaseVO"))
+local var0_0 = class("GuildMission", import("...BaseVO"))
 
 function var0_0.CompleteData2FullData(arg0_1)
 	local var0_1 = pg.TimeMgr.GetInstance():GetServerTime()

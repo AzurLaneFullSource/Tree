@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ValentineQteGameView", import("..BaseMiniGameView"))
+local var0_0 = class("ValentineQteGameView", import("..BaseMiniGameView"))
 
 function var0_0.getUIName(arg0_1)
 	return "ValentineQteGamePage"

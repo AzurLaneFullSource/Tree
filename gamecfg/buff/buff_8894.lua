@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑海伦娜 雷达扫描区域易伤效果",
 	time = 0,

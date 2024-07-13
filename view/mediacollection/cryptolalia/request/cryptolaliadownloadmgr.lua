@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CryptolaliaDownloadMgr")
+local var0_0 = class("CryptolaliaDownloadMgr")
 
 var0_0.PROGRESS_FINISH = -99
 var0_0.PROGRESS_ERROR = -100

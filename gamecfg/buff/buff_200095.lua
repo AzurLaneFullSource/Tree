@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022围剿小斯佩 甜品运输船被打爆后出现甜品子弹",
 	time = 0,

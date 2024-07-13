@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "我方随机效果",
 	time = 1,

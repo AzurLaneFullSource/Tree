@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateMemoryLayer", import(".EducateCollectLayerTemplate"))
+local var0_0 = class("EducateMemoryLayer", import(".EducateCollectLayerTemplate"))
 
 function var0_0.getUIName(arg0_1)
 	return "EducateMemoryUI"

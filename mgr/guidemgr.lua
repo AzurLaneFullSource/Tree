@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.GuideMgr = singletonClass("GuideMgr")
 
 local var0_0 = pg.GuideMgr

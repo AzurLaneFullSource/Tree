@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MonopolyGame")
+local var0_0 = class("MonopolyGame")
 local var1_0 = pg.activity_event_monopoly_map
 local var2_0 = pg.activity_event_monopoly_event
 local var3_0 = 501041

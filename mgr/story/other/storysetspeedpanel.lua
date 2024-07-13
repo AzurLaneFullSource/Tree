@@ -1,4 +1,4 @@
-﻿local var0_0 = class("StorySetSpeedPanel")
+local var0_0 = class("StorySetSpeedPanel")
 local var1_0 = Color.New(1, 0.8705, 0.4196, 1)
 local var2_0 = Color.New(1, 1, 1, 1)
 local var3_0 = 0

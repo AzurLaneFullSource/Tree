@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2020德系活动D2 五航战支援",
 	time = 0,

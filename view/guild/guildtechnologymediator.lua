@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildTechnologyMediator", import("..base.ContextMediator"))
+local var0_0 = class("GuildTechnologyMediator", import("..base.ContextMediator"))
 
 var0_0.ON_UPGRADE = "GuildTechnologyMediator:ON_UPGRADE"
 var0_0.ON_START = "GuildTechnologyMediator:ON_START"

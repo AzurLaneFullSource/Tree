@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 200594,
 	name = "2023云仙活动 信仰之河 D面",
 	cd = 0,

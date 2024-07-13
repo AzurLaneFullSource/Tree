@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "随机技能-召唤地狱火",
 	cd = 60,

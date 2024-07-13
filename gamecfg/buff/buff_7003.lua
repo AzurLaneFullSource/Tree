@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "精英怪-旗舰",
 	time = 0,

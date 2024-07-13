@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardSoundAgent", import(".CourtYardAgent"))
+local var0_0 = class("CourtYardSoundAgent", import(".CourtYardAgent"))
 
 function var0_0.Play(arg0_1, arg1_1)
 	if not arg1_1 then

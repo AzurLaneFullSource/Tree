@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AutoLoader")
+local var0_0 = class("AutoLoader")
 local var1_0 = false
 local var2_0 = false
 local var3_0 = import("view.util.RequestPackages.LoadPrefabRequestPackage")

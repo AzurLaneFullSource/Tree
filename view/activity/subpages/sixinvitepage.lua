@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SixInvitePage", import(".FifthInvitePage"))
+local var0_0 = class("SixInvitePage", import(".FifthInvitePage"))
 
 function var0_0.OnDataSetting(arg0_1)
 	arg0_1.ultimate = LaunchBallActivityMgr.GotInvitationFlag(arg0_1.activity.id) and 1 or 0

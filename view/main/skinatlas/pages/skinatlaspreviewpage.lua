@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SkinAtlasPreviewPage", import("....base.BaseSubView"))
+local var0_0 = class("SkinAtlasPreviewPage", import("....base.BaseSubView"))
 
 var0_0.ON_BG_SWITCH_DONE = "SkinAtlasScene:ON_BG_SWITCH_DONE"
 var0_0.ON_L2D_SWITCH_DONE = "SkinAtlasScene:ON_L2D_SWITCH_DONE"

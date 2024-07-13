@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SenrankaguraTrainScene", import("..base.BaseUI"))
+local var0_0 = class("SenrankaguraTrainScene", import("..base.BaseUI"))
 
 var0_0.optionsPath = {
 	"top/btn_home"

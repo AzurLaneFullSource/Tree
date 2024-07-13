@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpringFestivalMainPage", import(".TemplatePage.PreviewTemplatePage"))
+local var0_0 = class("SpringFestivalMainPage", import(".TemplatePage.PreviewTemplatePage"))
 local var1_0 = {
 	1,
 	2,

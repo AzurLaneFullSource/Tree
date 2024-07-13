@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LoadPrefabRequestPackage", import(".RequestPackage"))
+local var0_0 = class("LoadPrefabRequestPackage", import(".RequestPackage"))
 
 function var0_0.__call(arg0_1)
 	if arg0_1.stopped then

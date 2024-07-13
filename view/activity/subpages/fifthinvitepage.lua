@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FifthInvitePage", import(".FourthInvitePage"))
+local var0_0 = class("FifthInvitePage", import(".FourthInvitePage"))
 
 function var0_0.OnFirstFlush(arg0_1)
 	var0_0.super.OnFirstFlush(arg0_1)

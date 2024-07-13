@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 local var1_0 = import(".SegmentUtil")
 local var2_0 = UnityEngine.Vector2
 local var3_0 = 1e-06

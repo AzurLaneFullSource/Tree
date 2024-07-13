@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MilitaryExerciseProxy", import(".NetProxy"))
+local var0_0 = class("MilitaryExerciseProxy", import(".NetProxy"))
 
 var0_0.SEASON_INFO_ADDED = "MilitaryExerciseProxy SEASON_INFO_ADDED"
 var0_0.SEASON_INFO_UPDATED = "MilitaryExerciseProxy SEASON_INFO_UPDATED"

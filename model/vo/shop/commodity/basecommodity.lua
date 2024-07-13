@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseCommodity", import("...BaseVO"))
+local var0_0 = class("BaseCommodity", import("...BaseVO"))
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.id = arg1_1.goods_id or arg1_1.shop_id or arg1_1.id

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TowerClimbingPlayer")
+local var0_0 = class("TowerClimbingPlayer")
 local var1_0 = 0.6
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1)

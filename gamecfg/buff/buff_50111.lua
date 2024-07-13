@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "维修舰Tag",
 	time = 0,

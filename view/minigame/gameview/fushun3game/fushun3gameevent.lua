@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Fushun3GameEvent")
+local var0_0 = class("Fushun3GameEvent")
 
 var0_0.game_over_call = "game over call"
 var0_0.catch_item_call = "catch item call"

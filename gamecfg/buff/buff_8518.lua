@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "三笠boss残血无敌buff",
 	time = 99999,

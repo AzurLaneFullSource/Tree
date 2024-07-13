@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardCalcUtil")
+local var0_0 = class("CourtYardCalcUtil")
 local var1_0 = 78.2
 local var2_0 = 39
 

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PlayerVitaeBGBtn", import(".PlayerVitaeBaseBtn"))
+local var0_0 = class("PlayerVitaeBGBtn", import(".PlayerVitaeBaseBtn"))
 
 function var0_0.GetBgName(arg0_1)
 	if arg0_1:IsHrzType() then

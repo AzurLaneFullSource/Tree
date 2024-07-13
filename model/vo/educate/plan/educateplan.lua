@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducatePlan", import("model.vo.BaseVO"))
+local var0_0 = class("EducatePlan", import("model.vo.BaseVO"))
 
 var0_0.RARITY2BG = {
 	"plan_icon_grey",

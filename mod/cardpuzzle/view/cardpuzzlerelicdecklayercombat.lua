@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CardPuzzleRelicDeckLayerCombat", CardPuzzleRelicDeckLayer)
+local var0_0 = class("CardPuzzleRelicDeckLayerCombat", CardPuzzleRelicDeckLayer)
 
 function var0_0.getUIName(arg0_1)
 	return "CardTowerGiftDeckCombat"

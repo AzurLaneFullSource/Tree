@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GameRoomProxy", import(".NetProxy"))
+local var0_0 = class("GameRoomProxy", import(".NetProxy"))
 
 var0_0.coin_res_id = 11
 var0_0.ticket_res_id = 12

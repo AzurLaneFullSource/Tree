@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.gameroom_shop_template = {
 	{
 		price = 7500,

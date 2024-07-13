@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TerminalAdventurePage", import("view.base.BaseSubView"))
+local var0_0 = class("TerminalAdventurePage", import("view.base.BaseSubView"))
 
 var0_0.BIND_PT_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_PT_ID
 var0_0.BIND_TASK_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_TASK_ID

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PipeRectControll")
+local var0_0 = class("PipeRectControll")
 local var1_0
 local var2_0 = 140
 local var3_0 = 4

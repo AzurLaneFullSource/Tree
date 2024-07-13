@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "主线15章召唤烟幕发生蛋船",
 	painting = 0,

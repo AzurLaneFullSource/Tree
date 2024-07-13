@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "德系V4 EX代行者召唤小怪",
 	time = 10,

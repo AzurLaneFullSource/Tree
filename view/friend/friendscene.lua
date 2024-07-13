@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FriendScene", import("..base.BaseUI"))
+local var0_0 = class("FriendScene", import("..base.BaseUI"))
 
 var0_0.FRIEND_PAGE = 1
 var0_0.SEARCH_PAGE = 2

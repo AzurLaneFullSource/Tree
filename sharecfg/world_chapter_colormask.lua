@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.world_chapter_colormask = {
 	{
 		locked_icon = 0,

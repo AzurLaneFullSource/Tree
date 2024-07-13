@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "后排导驱固有BUFF+隐蔽状态增伤",
 	time = 0,

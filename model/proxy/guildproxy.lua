@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildProxy", import(".NetProxy"))
+local var0_0 = class("GuildProxy", import(".NetProxy"))
 
 var0_0.NEW_GUILD_ADDED = "GuildProxy:NEW_GUILD_ADDED"
 var0_0.GUILD_UPDATED = "GuildProxy:GUILD_UPDATED"

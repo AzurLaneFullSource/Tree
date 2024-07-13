@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.expedition_daily_template = {
 	[101] = {
 		tips = "This stage is not available yet.",

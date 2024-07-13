@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "海伦娜META弹幕特殊易伤",
 	time = 5,

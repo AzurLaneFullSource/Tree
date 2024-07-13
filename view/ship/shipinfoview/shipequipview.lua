@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipEquipView", import("...base.BaseSubView"))
+local var0_0 = class("ShipEquipView", import("...base.BaseSubView"))
 
 var0_0.UNLOCK_EQUIPMENT_SKIN_POS = {
 	1,

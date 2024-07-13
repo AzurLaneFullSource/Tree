@@ -1,4 +1,4 @@
-Ôªølocal var0_0 = UnityEngine
+local var0_0 = UnityEngine
 
 function flog(arg0_1, arg1_1)
 	if arg0_1 and arg1_1 and pg.ConnectionMgr.GetInstance():isConnected() then
@@ -2209,8 +2209,8 @@ function filterSpecChars(arg0_148)
 end
 
 function filterEgyUnicode(arg0_149)
-	arg0_149 = string.gsub(arg0_149, "\xF0\x93[\x80-\x8F][\x80-\xBF]", "")
-	arg0_149 = string.gsub(arg0_149, "\xF0\x93\x90[\x80-\xAF]", "")
+	arg0_149 = string.gsub(arg0_149, "ì[Ä-è][Ä-ø]", "")
+	arg0_149 = string.gsub(arg0_149, "ìê[Ä-Ø]", "")
 
 	return arg0_149
 end
@@ -2451,7 +2451,7 @@ end
 function wordSplit(arg0_164)
 	local var0_164 = {}
 
-	for iter0_164 in arg0_164.gmatch(arg0_164, "[\x01-\x7F\xC2-\xF4][\x80-\xBF]*") do
+	for iter0_164 in arg0_164.gmatch(arg0_164, "[\x01-\x7F¬-Ù][Ä-ø]*") do
 		var0_164[#var0_164 + 1] = iter0_164
 	end
 

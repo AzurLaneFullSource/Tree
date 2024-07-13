@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "巡洋-指挥-雷击I具体效果",
 	time = 0,

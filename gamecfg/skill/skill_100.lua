@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "单纵阵突入",
 	cd = 0,

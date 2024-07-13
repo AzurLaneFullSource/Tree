@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MetaCharacterProxy", import(".NetProxy"))
+local var0_0 = class("MetaCharacterProxy", import(".NetProxy"))
 
 var0_0.METAPROGRESS_UPDATED = "MetaCharacterProxy:METAPROGRESS_UPDATED"
 

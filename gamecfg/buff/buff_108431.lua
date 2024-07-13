@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "巨坦强化组件",
 	init_effect = "jinengchufared",

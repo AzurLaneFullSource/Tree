@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.collection_template = {
 	[101] = {
 		drop_oil_max = 0,

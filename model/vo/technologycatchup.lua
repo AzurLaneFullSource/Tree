@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TechnologyCatchup", import(".BaseVO"))
+local var0_0 = class("TechnologyCatchup", import(".BaseVO"))
 
 var0_0.STATE_UNSELECT = 1
 var0_0.STATE_CATCHUPING = 2

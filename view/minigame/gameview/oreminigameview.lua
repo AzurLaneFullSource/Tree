@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OreMiniGameView", import("view.miniGame.MiniGameTemplateView"))
+local var0_0 = class("OreMiniGameView", import("view.miniGame.MiniGameTemplateView"))
 
 function var0_0.getUIName(arg0_1)
 	return "OreMiniGameUI"

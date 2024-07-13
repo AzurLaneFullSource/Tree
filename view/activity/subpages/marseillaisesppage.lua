@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MarseillaiseSpPage", import(".TemplatePage.SpTemplatePage"))
+local var0_0 = class("MarseillaiseSpPage", import(".TemplatePage.SpTemplatePage"))
 local var1_0 = Vector2(225, -270)
 local var2_0 = Vector2(515, -270)
 

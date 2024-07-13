@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewPlayerScene", import("..base.BaseUI"))
+local var0_0 = class("NewPlayerScene", import("..base.BaseUI"))
 local var1_0 = 0.5
 local var2_0 = -300
 local var3_0 = Vector3(-380, 265, 0)

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MetaCharacterScene", import("...base.BaseUI"))
+local var0_0 = class("MetaCharacterScene", import("...base.BaseUI"))
 
 var0_0.PAGES = {
 	REPAIR = 3,

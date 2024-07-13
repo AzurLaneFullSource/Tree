@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducatePolaroidLayer", import(".EducateCollectLayerTemplate"))
+local var0_0 = class("EducatePolaroidLayer", import(".EducateCollectLayerTemplate"))
 
 function var0_0.getUIName(arg0_1)
 	return "EducatePolaroidUI"

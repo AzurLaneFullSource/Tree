@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.item_data_frame = {
 	[0] = {
 		time_limit_type = 0,

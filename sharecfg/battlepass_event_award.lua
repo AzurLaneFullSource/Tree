@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.battlepass_event_award = {
 	{
 		id = 1,

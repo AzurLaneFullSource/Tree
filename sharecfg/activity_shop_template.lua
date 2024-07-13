@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_shop_template = {
 	[201] = {
 		limit_args = "",

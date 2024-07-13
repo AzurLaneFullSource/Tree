@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.equip_skin_theme_template = {
 	{
 		id = 1,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CombatLoadUI", import("..base.BaseUI"))
+local var0_0 = class("CombatLoadUI", import("..base.BaseUI"))
 
 var0_0._loadObs = nil
 var0_0.LOADING_ANIMA_DISTANCE = 1820

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0.1,
 	name = "弹仓整备",
 	init_effect = "",

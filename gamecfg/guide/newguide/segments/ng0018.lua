@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Tap here to Like this post",
 	"Tap here to Share this post",
 	"Tap here to comment on this post"

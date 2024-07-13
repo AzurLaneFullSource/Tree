@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RefundChargeCommand", pm.SimpleCommand)
+local var0_0 = class("RefundChargeCommand", pm.SimpleCommand)
 
 function var0_0.execute(arg0_1, arg1_1)
 	if (PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP) and not pg.SdkMgr.GetInstance():CheckAiriCanBuy() then

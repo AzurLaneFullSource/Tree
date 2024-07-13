@@ -1,4 +1,4 @@
-﻿local var0_0 = class("JoinGuildMediator", import("..base.ContextMediator"))
+local var0_0 = class("JoinGuildMediator", import("..base.ContextMediator"))
 
 var0_0.APPLY = "JoinGuildMediator:APPLY"
 var0_0.REFRESH = "JoinGuildMediator:REFRESH"

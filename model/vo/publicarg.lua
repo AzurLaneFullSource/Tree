@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PublicArg")
+local var0_0 = class("PublicArg")
 
 var0_0.TypePlayerName = 1
 var0_0.TypeShipId = 2

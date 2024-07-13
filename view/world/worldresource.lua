@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldResource", import("..base.BaseUI"))
+local var0_0 = class("WorldResource", import("..base.BaseUI"))
 
 var0_0.Listeners = {
 	onUpdateInventory = "OnUpdateInventory",

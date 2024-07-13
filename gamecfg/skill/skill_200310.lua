@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022美系活动EX 记忆通道 短延时 随机",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EquipmentsDict")
+local var0_0 = class("EquipmentsDict")
 
 function var0_0.Ctor(arg0_1)
 	local var0_1 = {}

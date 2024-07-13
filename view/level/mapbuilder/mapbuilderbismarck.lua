@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MapBuilderBismarck", import(".MapBuilderShinano"))
+local var0_0 = class("MapBuilderBismarck", import(".MapBuilderShinano"))
 
 function var0_0.GetType(arg0_1)
 	return MapBuilder.TYPEBISMARCK

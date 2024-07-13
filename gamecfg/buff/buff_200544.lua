@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "2023克莱蒙梭活动 陆上神国I 玩家属性压制",
 	init_effect = "",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateExtraAttrMediator", import(".base.EducateContextMediator"))
+local var0_0 = class("EducateExtraAttrMediator", import(".base.EducateContextMediator"))
 
 var0_0.ON_ATTR_ADD = "EducateExtraAttrMediator:ON_ATTR_ADD"
 

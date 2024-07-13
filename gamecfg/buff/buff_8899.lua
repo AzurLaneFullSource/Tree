@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "北方的孤独女王·监控场上友军战列",
 	time = 0,

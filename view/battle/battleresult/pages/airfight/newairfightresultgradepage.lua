@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewAirFightResultGradePage", import("..NewBattleResultGradePage"))
+local var0_0 = class("NewAirFightResultGradePage", import("..NewBattleResultGradePage"))
 
 function var0_0.LoadGrade(arg0_1, arg1_1)
 	local var0_1 = {

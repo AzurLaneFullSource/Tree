@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DailyLevelProxy", import(".NetProxy"))
+local var0_0 = class("DailyLevelProxy", import(".NetProxy"))
 
 var0_0.ELITE_QUOTA_UPDATE = "DailyLevelProxy:ELITE_QUOTA_UPDATE"
 

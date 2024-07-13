@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleGuildBossResultLayer", import(".BattleResultLayer"))
+local var0_0 = class("BattleGuildBossResultLayer", import(".BattleResultLayer"))
 
 function var0_0.showRightBottomPanel(arg0_1)
 	var0_0.super.showRightBottomPanel(arg0_1)

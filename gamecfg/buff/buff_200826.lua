@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024异世界冒险 巨炎龙在屏幕外失去判定",
 	time = 0,

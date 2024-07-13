@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "毛系V3 EX雷击反制 开火",
 	cd = 0,

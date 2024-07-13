@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleChallengeResultLayer", import(".BattleResultLayer"))
+local var0_0 = class("BattleChallengeResultLayer", import(".BattleResultLayer"))
 
 var0_0.DURATION_WIN_FADE_IN = 0.5
 var0_0.DURATION_LOSE_FADE_IN = 1.5

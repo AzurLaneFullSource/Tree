@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "增援2",
 	init_effect = "",

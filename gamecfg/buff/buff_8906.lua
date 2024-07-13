@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "北方的孤独女王·弹条触发器",
 	time = 0,

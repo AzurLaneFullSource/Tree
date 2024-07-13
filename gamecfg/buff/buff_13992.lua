@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "魔王之庇护",
 	time = 0,

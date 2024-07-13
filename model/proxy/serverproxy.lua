@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ServerProxy", import(".NetProxy"))
+local var0_0 = class("ServerProxy", import(".NetProxy"))
 
 var0_0.SERVERS_UPDATED = "ServerProxy:SERVERS_UPDATED"
 

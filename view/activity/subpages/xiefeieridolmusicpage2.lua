@@ -1,4 +1,4 @@
-﻿local var0_0 = class("XiefeierIdolMusicPage2", import("...base.BaseActivityPage"))
+local var0_0 = class("XiefeierIdolMusicPage2", import("...base.BaseActivityPage"))
 local var1_0 = {
 	0.08,
 	0.19,

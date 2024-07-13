@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "2024同盟活动EX 防止乱动",
 	init_effect = "",

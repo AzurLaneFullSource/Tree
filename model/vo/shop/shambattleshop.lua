@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShamBattleShop", import(".MonthlyShop"))
+local var0_0 = class("ShamBattleShop", import(".MonthlyShop"))
 
 var0_0.GoodsType = Goods.TYPE_SHAM_BATTLE
 var0_0.type = ShopArgs.ShopShamBattle

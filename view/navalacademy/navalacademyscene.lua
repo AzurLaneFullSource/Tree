@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NavalAcademyScene", import("..base.BaseUI"))
+local var0_0 = class("NavalAcademyScene", import("..base.BaseUI"))
 
 var0_0.WARP_TO_TACTIC = "WARP_TO_TACTIC"
 

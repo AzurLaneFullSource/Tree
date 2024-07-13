@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SculptureActivity", import("model.vo.Activity"))
+local var0_0 = class("SculptureActivity", import("model.vo.Activity"))
 
 var0_0.STATE_NIL = 0
 var0_0.STATE_UNLOCK = 1

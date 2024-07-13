@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Cattery", import("...BaseVO"))
+local var0_0 = class("Cattery", import("...BaseVO"))
 
 var0_0.STATE_LOCK = 1
 var0_0.STATE_EMPTY = 2

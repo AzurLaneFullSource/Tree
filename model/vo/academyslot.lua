@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AcademySlot", import(".BaseVO"))
+local var0_0 = class("AcademySlot", import(".BaseVO"))
 
 var0_0.STATE_IDLE = "STATE_IDLE"
 var0_0.STATE_IN_CLASS = "STATE_IN_CLASS"

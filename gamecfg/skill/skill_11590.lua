@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "空域控制",
 	cd = 0,

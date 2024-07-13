@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LaunchBallGameMenuUI")
+local var0_0 = class("LaunchBallGameMenuUI")
 
 var0_0.player_item = {
 	{

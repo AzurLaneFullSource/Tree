@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AllBuffDetailMediator", import("..base.ContextMediator"))
+local var0_0 = class("AllBuffDetailMediator", import("..base.ContextMediator"))
 
 var0_0.OPEN_SET_VALUE_LAYER = "AllBuffDetailMediator:OPEN_SET_VALUE_LAYER"
 

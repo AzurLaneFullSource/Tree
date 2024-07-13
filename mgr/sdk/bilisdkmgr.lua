@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 local var1_0 = BilibiliSdkMgr.inst
 local var2_0 = "BLHX24V20210713"
 local var3_0 = "FTBLHX20190524WW"

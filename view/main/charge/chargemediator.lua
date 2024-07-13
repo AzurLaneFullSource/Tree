@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChargeMediator", import("...base.ContextMediator"))
+local var0_0 = class("ChargeMediator", import("...base.ContextMediator"))
 
 var0_0.SWITCH_TO_SHOP = "ChargeMediator:SWITCH_TO_SHOP"
 var0_0.CHARGE = "ChargeMediator:CHARGE"

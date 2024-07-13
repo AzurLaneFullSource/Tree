@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommnaderFleet", import(".BaseVO"))
+local var0_0 = class("CommnaderFleet", import(".BaseVO"))
 
 var0_0.RENAME_CODE_TIME = 60
 

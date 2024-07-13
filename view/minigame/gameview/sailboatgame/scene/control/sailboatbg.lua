@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SailBoatBg")
+local var0_0 = class("SailBoatBg")
 local var1_0 = 1920
 local var2_0 = 1080
 local var3_0 = Vector2(1, 0)

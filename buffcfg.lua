@@ -1,4 +1,4 @@
-﻿pg.buffCfg_tag = {
+pg.buffCfg_tag = {
 	buff_19593 = true,
 	buff_800201 = true,
 	buff_29931 = true,

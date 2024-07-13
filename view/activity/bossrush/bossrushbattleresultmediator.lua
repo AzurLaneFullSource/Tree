@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushBattleResultMediator", import("view.base.ContextMediator"))
+local var0_0 = class("BossRushBattleResultMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_SETTLE = "BossRushBattleResultMediator:ON_SETTLE"
 var0_0.BEGIN_STAGE = "BossRushBattleResultMediator:BEGIN_STAGE"

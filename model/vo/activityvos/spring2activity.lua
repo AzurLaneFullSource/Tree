@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Spring2Activity", import("model.vo.ActivityVOs.ITaskActivity"))
+local var0_0 = class("Spring2Activity", import("model.vo.ActivityVOs.ITaskActivity"))
 
 var0_0.OPERATION_SETSHIP = 1
 

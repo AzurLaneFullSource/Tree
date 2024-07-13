@@ -1,4 +1,4 @@
-﻿local var0_0 = class("StoryRecorder")
+local var0_0 = class("StoryRecorder")
 local var1_0 = "#5ce6ff"
 local var2_0 = "#70747F"
 local var3_0 = "#BCBCBC"

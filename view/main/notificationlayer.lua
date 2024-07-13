@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NotificationLayer", import("..base.BaseUI"))
+local var0_0 = class("NotificationLayer", import("..base.BaseUI"))
 
 var0_0.InitCount = 10
 var0_0.MaxCount = 100

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.world_expedition_data_by_map = {
 	{
 		map = 1,

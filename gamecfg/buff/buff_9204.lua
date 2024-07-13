@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "jinengchufared",
 	name = "龙宫机关-水 技能弹条",
 	time = 10,

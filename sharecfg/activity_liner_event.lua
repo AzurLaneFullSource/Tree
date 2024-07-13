@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_liner_event = {
 	{
 		option_desc = "Prinz Eugen messaged me to come to the maid café.\nToday, before closing time, Nürnberg found a strange slip of paper under a tray on a table.\nThe paper was wet and the writing stained, but you could just about make out the words, \"come\" and \"afar.\"\nEssex, who arrived on the scene, determined based on the ink's splotchiness that it was written sometime after the ship's departure today.\nHow she reached this conclusion, I'm not sure... but her detective outfit strangely lends her an air of credibility.",

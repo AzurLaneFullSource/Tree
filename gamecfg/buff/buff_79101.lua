@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "自爆船冲撞自杀buff_大世界月度Boss特供版",
 	time = 1,

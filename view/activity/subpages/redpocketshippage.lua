@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RedPocketShipPage", import("...base.BaseActivityPage"))
+local var0_0 = class("RedPocketShipPage", import("...base.BaseActivityPage"))
 local var1_0 = 7
 local var2_0 = {
 	[0] = 705.6,

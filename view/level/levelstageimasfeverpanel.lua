@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LevelStageIMasFeverPanel", import("view.base.BaseSubPanel"))
+local var0_0 = class("LevelStageIMasFeverPanel", import("view.base.BaseSubPanel"))
 
 function var0_0.getUIName(arg0_1)
 	return "LevelStageIMasFeverPanel"

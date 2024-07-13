@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldBossProxy", import("....BaseEntity"))
+local var0_0 = class("WorldBossProxy", import("....BaseEntity"))
 local var1_0 = "WorldbossFleet"
 local var2_0 = "WorldbossFleet_for_archives"
 

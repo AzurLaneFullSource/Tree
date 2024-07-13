@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RandomDockYardIndexLayer", import("..common.CustomIndexLayer"))
+local var0_0 = class("RandomDockYardIndexLayer", import("..common.CustomIndexLayer"))
 
 function var0_0.init(arg0_1)
 	var0_0.super.init(arg0_1)

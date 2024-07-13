@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022莱莎联动EX 极天·黑洞 蓄力期间监听",
 	time = 0,

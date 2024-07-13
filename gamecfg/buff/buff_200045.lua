@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "DEF",
 	name = "黑声望 沉寂二阶段BUFF",
 	time = 0,

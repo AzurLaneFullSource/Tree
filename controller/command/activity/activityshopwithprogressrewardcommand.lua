@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityShopWithProgressRewardCommand", pm.SimpleCommand)
+local var0_0 = class("ActivityShopWithProgressRewardCommand", pm.SimpleCommand)
 
 var0_0.SHOW_SHOP_REWARD = "ActivityShopWithProgressRewardCommand Show shop reward"
 

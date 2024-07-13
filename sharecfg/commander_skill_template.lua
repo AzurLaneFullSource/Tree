@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.commander_skill_template = {
 	[10011] = {
 		desc_world = "When assigned to a fleet with 3 DDs: increases your Vanguard's TRP by a moderate amount based on the Tactics stat.",

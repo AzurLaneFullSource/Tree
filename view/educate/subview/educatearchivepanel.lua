@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateArchivePanel", import("...base.BaseSubView"))
+local var0_0 = class("EducateArchivePanel", import("...base.BaseSubView"))
 local var1_0 = 0.005
 
 function var0_0.getUIName(arg0_1)

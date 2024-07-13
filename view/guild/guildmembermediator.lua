@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildMemberMediator", import("..base.ContextMediator"))
+local var0_0 = class("GuildMemberMediator", import("..base.ContextMediator"))
 
 var0_0.OPEN_DESC_INFO = "GuildMemberMediator:OPEN_DESC_INFO"
 var0_0.FIRE = "GuildMemberMediator:FIRE"

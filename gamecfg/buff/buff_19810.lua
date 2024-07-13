@@ -1,4 +1,4 @@
-﻿return {
+return {
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -28,6 +28,16 @@
 			},
 			arg_list = {
 				skill_id = 19810,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAllInStrikeSteady"
+			},
+			arg_list = {
+				buff_id = 19812,
 				target = "TargetSelf"
 			}
 		}

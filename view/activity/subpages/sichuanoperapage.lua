@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SiChuanOperaPage", import(".TemplatePage.LoginTemplatePage"))
+local var0_0 = class("SiChuanOperaPage", import(".TemplatePage.LoginTemplatePage"))
 
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)

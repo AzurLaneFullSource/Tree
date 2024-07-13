@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "大型作战核心区_强力塞壬蛋船buff",
 	time = 0,

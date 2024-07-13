@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023俾斯麦Z活动 剧情战前排格奈meta技能弹幕",
 	time = 0,

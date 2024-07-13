@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "中飞BOSS用buff1",
 	time = 0,

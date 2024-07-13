@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "通过角色挂载到舰队身上的启动BUFF",
 	time = 1,

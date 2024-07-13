@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SkinIndexLayer", import("...common.CustomIndexLayer"))
+local var0_0 = class("SkinIndexLayer", import("...common.CustomIndexLayer"))
 
 var0_0.ExtraL2D = bit.lshift(1, 0)
 var0_0.ExtraDBG = bit.lshift(1, 1)

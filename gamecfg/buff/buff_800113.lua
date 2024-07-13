@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "META海伦娜-单海伦娜出击-领舰减伤",
 	init_effect = "jinengchufablue",

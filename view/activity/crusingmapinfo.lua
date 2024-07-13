@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CrusingMapInfo")
+local var0_0 = class("CrusingMapInfo")
 
 var0_0.MapInfo = {
 	CrusingMap_0 = {

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022美系活动EX 恶魔开幕弹形态2",
 	time = 3.2,

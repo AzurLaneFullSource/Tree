@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BuildShipScene", import("...base.BaseUI"))
+local var0_0 = class("BuildShipScene", import("...base.BaseUI"))
 
 var0_0.PAGE_BUILD = 1
 var0_0.PAGE_QUEUE = 2

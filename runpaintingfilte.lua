@@ -1,4 +1,4 @@
-﻿PaintingfilteConst = {}
+PaintingfilteConst = {}
 
 local var0_0 = PaintingfilteConst
 

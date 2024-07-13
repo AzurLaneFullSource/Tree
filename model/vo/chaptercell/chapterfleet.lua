@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChapterFleet", import(".LevelCellData"))
+local var0_0 = class("ChapterFleet", import(".LevelCellData"))
 
 var0_0.DUTY_CLEANPATH = 1
 var0_0.DUTY_KILLBOSS = 2

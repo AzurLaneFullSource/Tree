@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024同盟活动D 实验型轰炸机支援",
 	time = 2,

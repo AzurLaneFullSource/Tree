@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022莱莎联动EX 生命转换 吸血效果",
 	time = 15,

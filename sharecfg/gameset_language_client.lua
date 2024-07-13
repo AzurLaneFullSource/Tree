@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.gameset_language_client = {
 	アニメキャラソン特典寮舎家具① = {
 		value = "ttttttttttt1"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RollingBallConst")
+local var0_0 = class("RollingBallConst")
 
 var0_0.grid_width = 143
 var0_0.grid_height = 134

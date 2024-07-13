@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildOfficeSelectTaskPage", import("...base.GuildBasePage"))
+local var0_0 = class("GuildOfficeSelectTaskPage", import("...base.GuildBasePage"))
 
 function var0_0.getTargetUI(arg0_1)
 	return "GuildTaskSelectBluePage", "GuildTaskSelectRedPage"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldCollectionMediator", import("..base.ContextMediator"))
+local var0_0 = class("WorldCollectionMediator", import("..base.ContextMediator"))
 
 var0_0.ON_ACHIEVE_STAR = "WorldCollectionMediator.ON_ACHIEVE_STAR"
 var0_0.ON_ACHIEVE_OVERVIEW = "WorldCollectionMediator.ON_ACHIEVE_OVERVIEW"

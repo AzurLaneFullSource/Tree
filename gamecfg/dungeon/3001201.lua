@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 3001201,
 	bgm = "nagato-boss",
 	stages = {

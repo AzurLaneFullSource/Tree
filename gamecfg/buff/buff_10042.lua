@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 8,
 	name = "31节伯克",
 	init_effect = "jinengchufablue",

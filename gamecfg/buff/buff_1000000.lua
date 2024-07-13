@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "提速",
 	time = 240,

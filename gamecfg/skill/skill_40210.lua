@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "奥古喵：战列命中提高",
 	cd = 0,

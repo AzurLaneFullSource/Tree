@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ConfirmEquipmentDeletePanel", import(".MsgboxSubPanel"))
+local var0_0 = class("ConfirmEquipmentDeletePanel", import(".MsgboxSubPanel"))
 
 function var0_0.getUIName(arg0_1)
 	return "EquipDeleteConfirmBox"

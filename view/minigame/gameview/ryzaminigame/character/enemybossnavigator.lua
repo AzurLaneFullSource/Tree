@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EnemyBossNavigator", import("view.miniGame.gameView.RyzaMiniGame.character.EnemyNavigator"))
+local var0_0 = class("EnemyBossNavigator", import("view.miniGame.gameView.RyzaMiniGame.character.EnemyNavigator"))
 
 var0_0.SkillDistance = 10
 

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RyzaMiniGameView", import("view.miniGame.BaseMiniGameView"))
+local var0_0 = class("RyzaMiniGameView", import("view.miniGame.BaseMiniGameView"))
 
 var0_0.EVENT_CREATE = "RyzaMiniGameView.EVENT_CREATE"
 var0_0.EVENT_DESTROY = "RyzaMiniGameView.EVENT_DESTROY"

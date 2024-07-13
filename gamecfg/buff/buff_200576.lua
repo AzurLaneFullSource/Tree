@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023黑神通 登场一定时间后开启减伤",
 	time = 0,

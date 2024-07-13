@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.child_shop_template = {
 	{
 		buy_num = 1,

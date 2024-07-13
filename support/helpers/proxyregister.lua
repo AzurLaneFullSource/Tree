@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ProxyRegister")
+local var0_0 = class("ProxyRegister")
 
 var0_0.SecondCall = "sec"
 var0_0.MinuteCall = "min"

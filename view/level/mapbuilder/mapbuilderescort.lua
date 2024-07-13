@@ -1,4 +1,4 @@
-﻿local var0_0 = import(".MapBuilder")
+local var0_0 = import(".MapBuilder")
 local var1_0 = class("MapBuilderEscort", var0_0)
 
 function var1_0.GetType(arg0_1)

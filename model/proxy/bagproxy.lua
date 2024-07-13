@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BagProxy", import(".NetProxy"))
+local var0_0 = class("BagProxy", import(".NetProxy"))
 
 var0_0.ITEM_UPDATED = "item updated"
 

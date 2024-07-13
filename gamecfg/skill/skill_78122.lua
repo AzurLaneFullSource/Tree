@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "大世界第五章剧情战 女王火力支援",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FeastProxy", import("model.proxy.NetProxy"))
+local var0_0 = class("FeastProxy", import("model.proxy.NetProxy"))
 
 function var0_0.register(arg0_1)
 	return

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "2022布吕歇尔SP 史特拉塞定身+弹幕",
 	init_effect = "",

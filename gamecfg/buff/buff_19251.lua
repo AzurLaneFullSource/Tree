@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "加斯科涅1",
 	time = 9,

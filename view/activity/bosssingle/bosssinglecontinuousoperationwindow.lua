@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossSingleContinuousOperationWindow", import("view.activity.worldboss.ContinuousOperationWindow"))
+local var0_0 = class("BossSingleContinuousOperationWindow", import("view.activity.worldboss.ContinuousOperationWindow"))
 local var1_0 = 15
 
 function var0_0.getUIName(arg0_1)

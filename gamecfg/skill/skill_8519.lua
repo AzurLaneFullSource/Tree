@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "全体回满血",
 	cd = 999999,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022女仆共斗二期 EX难度 阿尔比恩随机爆炸箭（五个中随机一个）",
 	cd = 0,

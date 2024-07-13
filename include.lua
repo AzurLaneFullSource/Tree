@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 ys = ys or {}
 cs = cs or {}
 

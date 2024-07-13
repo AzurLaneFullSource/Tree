@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SetShipSkinCommand", pm.SimpleCommand)
+local var0_0 = class("SetShipSkinCommand", pm.SimpleCommand)
 
 var0_0.SKIN_UPDATED = "skin updated"
 

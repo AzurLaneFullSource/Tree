@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateTargetMediator", import(".base.EducateContextMediator"))
+local var0_0 = class("EducateTargetMediator", import(".base.EducateContextMediator"))
 
 var0_0.ON_TASK_SUBMIT = "EducateTargetMediator:ON_TASK_SUBMIT"
 var0_0.ON_GET_TARGET_AWARD = "EducateTargetMediator:ON_GET_TARGET_AWARD"

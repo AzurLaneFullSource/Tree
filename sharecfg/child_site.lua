@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.child_site = {
 	[110] = {
 		icon = "child_icon_food",

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "随机技能-水晶充能完毕",
 	cd = 0,

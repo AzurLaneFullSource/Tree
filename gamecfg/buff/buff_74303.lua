@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 8,
 	name = "干涉",
 	init_effect = "",

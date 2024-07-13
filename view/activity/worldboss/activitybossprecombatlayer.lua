@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityBossPreCombatLayer", import("view.battle.PreCombatLayer"))
+local var0_0 = class("ActivityBossPreCombatLayer", import("view.battle.PreCombatLayer"))
 local var1_0 = import("view.ship.FormationUI")
 local var2_0 = {
 	[99] = true

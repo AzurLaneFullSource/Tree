@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardThemeMsgBoxForAllPage", import(".BackYardThemeMsgBoxPage"))
+local var0_0 = class("BackYardThemeMsgBoxForAllPage", import(".BackYardThemeMsgBoxPage"))
 
 function var0_0.SetUp(arg0_1, arg1_1, arg2_1, arg3_1)
 	var0_0.super.SetUp(arg0_1, arg1_1, arg2_1, arg3_1)

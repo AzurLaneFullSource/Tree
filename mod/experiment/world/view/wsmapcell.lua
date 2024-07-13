@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSMapCell", import("...BaseEntity"))
+local var0_0 = class("WSMapCell", import("...BaseEntity"))
 
 var0_0.Fields = {
 	cell = "table",

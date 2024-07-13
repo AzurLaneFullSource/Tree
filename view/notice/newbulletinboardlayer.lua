@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewBulletinBoardLayer", import("..base.BaseUI"))
+local var0_0 = class("NewBulletinBoardLayer", import("..base.BaseUI"))
 
 var0_0.CONTENT_TYPE = {
 	BANNER = "BANNER",

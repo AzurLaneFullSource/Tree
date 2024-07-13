@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024偶像活动三期 聚光灯 深红（敌）",
 	time = 10,

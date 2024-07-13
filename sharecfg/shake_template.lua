@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.shake_template = {
 	[0] = {
 		description = "无震动",

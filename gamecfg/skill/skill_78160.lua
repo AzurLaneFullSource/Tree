@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "VIII=XIV连协干扰机制",
 	cd = 0,

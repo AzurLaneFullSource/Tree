@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EquipmentDesignMediator", import("..base.ContextMediator"))
+local var0_0 = class("EquipmentDesignMediator", import("..base.ContextMediator"))
 
 var0_0.MAKE_EQUIPMENT = "EquipmentDesignMediator:MAKE_EQUIPMENT"
 var0_0.OPEN_EQUIPMENTDESIGN_INDEX = "EquipmentDesignMediator:OPEN_EQUIPMENTDESIGN_INDEX"

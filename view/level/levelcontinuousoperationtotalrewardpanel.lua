@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LevelContinuousOperationTotalRewardPanel", import("view.level.LevelStageTotalRewardPanel"))
+local var0_0 = class("LevelContinuousOperationTotalRewardPanel", import("view.level.LevelStageTotalRewardPanel"))
 
 function var0_0.getUIName(arg0_1)
 	return "LevelContinuousOperationTotalRewardPanel"

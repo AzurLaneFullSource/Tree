@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.benefit_buff_template = setmetatable({
 	__name = "benefit_buff_template",
 	all = {

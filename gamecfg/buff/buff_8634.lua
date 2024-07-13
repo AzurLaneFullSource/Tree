@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "U556关卡敌方易伤",
 	time = 0,

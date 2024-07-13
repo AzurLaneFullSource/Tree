@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Msgbox4SpweaponConfirm", import(".MsgboxSubPanel"))
+local var0_0 = class("Msgbox4SpweaponConfirm", import(".MsgboxSubPanel"))
 
 function var0_0.getUIName(arg0_1)
 	return "Msgbox4SpweaponConfirm"

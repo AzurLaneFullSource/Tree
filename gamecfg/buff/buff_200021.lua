@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 3,
 	name = "2022意大利活动 EX罗马召唤激光发射装置",
 	init_effect = "",

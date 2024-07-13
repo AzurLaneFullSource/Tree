@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardBaseThemeTemplate", import("..BaseVO"))
+local var0_0 = class("BackYardBaseThemeTemplate", import("..BaseVO"))
 
 function var0_0.BuildId(arg0_1)
 	return getProxy(PlayerProxy):getRawData().id .. arg0_1

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldInventoryMediator", import("..base.ContextMediator"))
+local var0_0 = class("WorldInventoryMediator", import("..base.ContextMediator"))
 
 var0_0.OnUseItem = "WorldInventoryMediator.OnUseItem"
 var0_0.OnMap = "WorldInventoryMediator.OnMap"

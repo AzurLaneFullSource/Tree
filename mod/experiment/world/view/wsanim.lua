@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSAnim", import("...BaseEntity"))
+local var0_0 = class("WSAnim", import("...BaseEntity"))
 
 var0_0.Fields = {
 	caches = "table"

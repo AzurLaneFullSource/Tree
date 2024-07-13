@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SSSSMedalCollectionView", import("..TemplateMV.MedalCollectionTemplateView"))
+local var0_0 = class("SSSSMedalCollectionView", import("..TemplateMV.MedalCollectionTemplateView"))
 local var1_0 = {
 	"qvzhu",
 	"qingxvn",

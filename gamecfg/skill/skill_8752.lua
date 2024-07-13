@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "中飞联动一阶段小飞机死亡后赋予母舰武器",
 	cd = 0,

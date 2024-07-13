@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "竞技场BUFF触发器",
 	cd = 0,

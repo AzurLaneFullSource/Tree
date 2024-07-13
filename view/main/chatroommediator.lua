@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChatRoomMediator", import("..base.ContextMediator"))
+local var0_0 = class("ChatRoomMediator", import("..base.ContextMediator"))
 
 var0_0.SEND_FRIEND_MSG = "ChatRoomMediator:SEND_FRIEND_MSG"
 var0_0.FETCH_FRIEND_MSG = "ChatRoomMediator:FETCH_FRIEND_MSG"

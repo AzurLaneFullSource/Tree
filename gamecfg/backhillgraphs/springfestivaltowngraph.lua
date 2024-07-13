@@ -1,4 +1,4 @@
-﻿return {
+return {
 	Points = {
 		[9] = {
 			x = -287.3926,

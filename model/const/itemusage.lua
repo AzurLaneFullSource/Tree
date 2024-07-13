@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ItemUsage")
+local var0_0 = class("ItemUsage")
 
 var0_0.UNDEFINED = "usage_undefined"
 var0_0.BOOK = "usage_book"

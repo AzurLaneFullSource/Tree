@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "复纵阵回避",
 	time = 0,

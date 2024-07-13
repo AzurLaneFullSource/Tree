@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewSystemSubmarineRunResultGradePage", import("..dodgem.NewDodgemResultGradePage"))
+local var0_0 = class("NewSystemSubmarineRunResultGradePage", import("..dodgem.NewDodgemResultGradePage"))
 
 function var0_0.GetFlagShip(arg0_1)
 	return Ship.New({

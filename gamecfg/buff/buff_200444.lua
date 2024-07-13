@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "Bodongquan01",
 	name = "2023俾斯麦Z活动 二阶段俾斯麦meta化，添加特效，并受到meta船的额外伤害",
 	time = 0,

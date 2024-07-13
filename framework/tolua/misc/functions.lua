@@ -1,4 +1,4 @@
-﻿local var0_0 = require
+local var0_0 = require
 local var1_0 = string
 local var2_0 = table
 

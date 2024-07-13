@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Responder")
+local var0_0 = class("Responder")
 local var1_0 = {
 	__index = function(arg0_1, arg1_1)
 		arg0_1[arg1_1] = {}

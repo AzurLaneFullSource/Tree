@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShoppingStreet", import(".BaseShop"))
+local var0_0 = class("ShoppingStreet", import(".BaseShop"))
 
 function var0_0.getRiseShopId(arg0_1, arg1_1)
 	for iter0_1, iter1_1 in ipairs(pg.shop_template.all) do

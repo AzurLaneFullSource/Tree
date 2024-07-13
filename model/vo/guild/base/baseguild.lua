@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseGuild", import("...BaseVO"))
+local var0_0 = class("BaseGuild", import("...BaseVO"))
 
 function var0_0.GetTechnologys(arg0_1)
 	assert(false)

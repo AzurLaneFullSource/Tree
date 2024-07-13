@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LaunchBallGameVo")
+local var0_0 = class("LaunchBallGameVo")
 
 var0_0.game_id = nil
 var0_0.hub_id = nil

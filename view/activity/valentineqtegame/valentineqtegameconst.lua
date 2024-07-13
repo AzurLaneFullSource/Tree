@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ValentineQteGameConst")
+local var0_0 = class("ValentineQteGameConst")
 
 var0_0.DEBUG = false
 var0_0.OP_SCORE_GEAR_PERFECT = 1

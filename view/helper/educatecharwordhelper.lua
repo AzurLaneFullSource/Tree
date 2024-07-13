@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateCharWordHelper")
+local var0_0 = class("EducateCharWordHelper")
 
 var0_0.WORD_KEY_CHRISTMAS = "shengdan"
 var0_0.WORD_KEY_NEWYEAR = "xinnian"

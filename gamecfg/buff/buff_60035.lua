@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "测试-萤火虫-幽灵召唤",
 	time = 0,

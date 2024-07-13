@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 2,
 	name = "卡牌发射激光减速自身 持续4秒",
 	init_effect = "",

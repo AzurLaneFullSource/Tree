@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainPaintingView", import("..base.MainBaseView"))
+local var0_0 = class("MainPaintingView", import("..base.MainBaseView"))
 
 var0_0.STATE_PAINTING = 1
 var0_0.STATE_L2D = 2

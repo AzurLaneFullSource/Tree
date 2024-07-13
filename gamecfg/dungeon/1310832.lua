@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 1220832,
 	map_id = 10001,
 	bgm = "xinnong-1",

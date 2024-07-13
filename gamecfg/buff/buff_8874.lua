@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "记录修正-AF",
 	time = 0,

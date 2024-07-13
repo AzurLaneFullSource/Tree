@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMapCell", import("...BaseEntity"))
+local var0_0 = class("WorldMapCell", import("...BaseEntity"))
 
 var0_0.Fields = {
 	terrainDir = "number",

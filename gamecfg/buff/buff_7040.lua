@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "序章俾斯麦撤退",
 	time = 0,

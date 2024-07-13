@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 8,
 	name = "吸引火力",
 	init_effect = "jinengchufablue",

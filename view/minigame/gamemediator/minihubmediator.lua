@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MiniHubMediator", import("..BaseMiniGameMediator"))
+local var0_0 = class("MiniHubMediator", import("..BaseMiniGameMediator"))
 
 function var0_0.register(arg0_1)
 	var0_0.super.register(arg0_1)

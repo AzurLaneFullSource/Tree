@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MetaShopPage", import(".ActivityShopPage"))
+local var0_0 = class("MetaShopPage", import(".ActivityShopPage"))
 
 function var0_0.getUIName(arg0_1)
 	return "MetaShop"

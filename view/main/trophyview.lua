@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TrophyView")
+local var0_0 = class("TrophyView")
 
 var0_0.GRAY_COLOR = Color(0.764, 0.764, 0.764, 0.784)
 

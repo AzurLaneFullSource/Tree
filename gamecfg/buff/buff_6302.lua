@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "高效燃油",
 	time = 0,

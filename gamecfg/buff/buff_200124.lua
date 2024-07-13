@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022莱莎联动 冲裂波爆炸命中 永久降低防御（添加易伤）",
 	time = 0,

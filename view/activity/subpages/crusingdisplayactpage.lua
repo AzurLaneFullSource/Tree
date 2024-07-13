@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CrusingDisplayActPage", import("view.base.BaseActivityPage"))
+local var0_0 = class("CrusingDisplayActPage", import("view.base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.bgBase = arg0_1._tf:Find("bg_base")

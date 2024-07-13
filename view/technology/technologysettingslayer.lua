@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TechnologySettingsLayer", import("..base.BaseUI"))
+local var0_0 = class("TechnologySettingsLayer", import("..base.BaseUI"))
 
 var0_0.TEC_PAGE_TENDENCY = 1
 var0_0.TEC_PAGE_CATCHUP_TARGET1 = 2

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BuffHelper")
+local var0_0 = class("BuffHelper")
 
 local function var1_0(arg0_1, arg1_1)
 	if arg1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUFF then

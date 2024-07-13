@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldBossItemList")
+local var0_0 = class("WorldBossItemList")
 local var1_0 = 18
 local var2_0 = -15
 local var3_0 = 100

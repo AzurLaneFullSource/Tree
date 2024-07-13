@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SkinMagazineSpringPage2", import(".TemplatePage.SkinMagazineTemplatePage"))
+local var0_0 = class("SkinMagazineSpringPage2", import(".TemplatePage.SkinMagazineTemplatePage"))
 
 var0_0.EXPAND_WIDTH = 973
 var0_0.CLOSE_WIDTH = 216

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "WNX04",
 	mode = 2,
 	once = true,

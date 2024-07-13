@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardOutStoreyModule", import(".CourtYardStoreyModule"))
+local var0_0 = class("CourtYardOutStoreyModule", import(".CourtYardStoreyModule"))
 local var1_0 = true
 
 function var0_0.OnInit(arg0_1)

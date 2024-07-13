@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MilitaryExerciseMediator", import("..base.ContextMediator"))
+local var0_0 = class("MilitaryExerciseMediator", import("..base.ContextMediator"))
 
 var0_0.OPEN_RANK = "MilitaryExerciseMediator:OPEN_RANK"
 var0_0.OPEN_SHOP = "MilitaryExerciseMediator:OPEN_SHOP"

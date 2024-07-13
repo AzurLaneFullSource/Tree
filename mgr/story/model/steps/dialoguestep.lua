@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DialogueStep", import(".StoryStep"))
+local var0_0 = class("DialogueStep", import(".StoryStep"))
 
 var0_0.SIDE_LEFT = 0
 var0_0.SIDE_RIGHT = 1

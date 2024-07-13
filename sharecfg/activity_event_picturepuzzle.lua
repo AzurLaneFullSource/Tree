@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_event_picturepuzzle = {
 	[549] = {
 		id = 549,

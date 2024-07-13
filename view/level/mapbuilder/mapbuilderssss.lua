@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MapBuilderSSSS", import(".MapBuilderNormal"))
+local var0_0 = class("MapBuilderSSSS", import(".MapBuilderNormal"))
 local var1_0 = "ssss_buttons"
 
 function var0_0.preload(arg0_1, arg1_1)

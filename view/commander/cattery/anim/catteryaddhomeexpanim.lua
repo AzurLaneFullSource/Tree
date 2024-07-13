@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CatteryAddHomeExpAnim")
+local var0_0 = class("CatteryAddHomeExpAnim")
 local var1_0 = 1
 
 function var0_0.Ctor(arg0_1, arg1_1)

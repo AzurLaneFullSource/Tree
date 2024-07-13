@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "古立特联动 千濑支援弹幕LV4",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ArmorType")
+local var0_0 = class("ArmorType")
 
 var0_0.Light = 1
 var0_0.Medium = 2

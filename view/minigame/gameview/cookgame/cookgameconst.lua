@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CookGameConst")
+local var0_0 = class("CookGameConst")
 
 var0_0.sound_marcopolo_skill = "ui-mini_shine"
 var0_0.sound_serve = "ui-mini_click"

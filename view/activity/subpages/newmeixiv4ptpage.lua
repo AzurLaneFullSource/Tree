@@ -1,1 +1,1 @@
-﻿return (class("NewMeixiV4PtPage", import(".TemplatePage.PtTemplatePage")))
+return (class("NewMeixiV4PtPage", import(".TemplatePage.PtTemplatePage")))

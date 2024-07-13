@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AttireMediator", import("..base.ContextMediator"))
+local var0_0 = class("AttireMediator", import("..base.ContextMediator"))
 
 var0_0.ON_APPLY = "AttireMediator:ON_APPLY"
 var0_0.ON_UNLOCK = "AttireMediator:ON_UNLOCK"

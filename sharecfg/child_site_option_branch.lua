@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.child_site_option_branch = {
 	[11031] = {
 		result = 110300,

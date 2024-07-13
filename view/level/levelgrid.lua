@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LevelGrid", import("..base.BasePanel"))
+local var0_0 = class("LevelGrid", import("..base.BasePanel"))
 local var1_0 = require("Mgr/Pool/PoolPlural")
 
 var0_0.MapDefaultPos = Vector3(420, -1000, -1000)

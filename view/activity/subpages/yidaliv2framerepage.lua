@@ -1,1 +1,1 @@
-﻿return (class("YidaliV2FrameRePage", import(".TemplatePage.FrameReTemplatePage")))
+return (class("YidaliV2FrameRePage", import(".TemplatePage.FrameReTemplatePage")))

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateCharGroupPage", import("view.base.BaseEventLogic"))
+local var0_0 = class("EducateCharGroupPage", import("view.base.BaseEventLogic"))
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 	pg.DelegateInfo.New(arg0_1)

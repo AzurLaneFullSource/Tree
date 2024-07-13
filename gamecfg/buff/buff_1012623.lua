@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "jinengchufablue",
 	name = "属性变更",
 	time = 0,

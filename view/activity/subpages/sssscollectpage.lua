@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SSSSCollectPage", import(".TemplatePage.LinkCollectTemplatePage"))
+local var0_0 = class("SSSSCollectPage", import(".TemplatePage.LinkCollectTemplatePage"))
 local var1_0 = 0.45
 local var2_0 = 0.2
 local var3_0 = 1.2

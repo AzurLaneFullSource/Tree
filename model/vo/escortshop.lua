@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EscortShop", import(".BaseVO"))
+local var0_0 = class("EscortShop", import(".BaseVO"))
 
 function var0_0.Ctor(arg0_1)
 	arg0_1.goods = {}

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TargetMove", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
+local var0_0 = class("TargetMove", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
 
 function var0_0.GetBaseOrder(arg0_1)
 	return 2

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainTechnologySequence")
+local var0_0 = class("MainTechnologySequence")
 
 var0_0.DontNotifyBluePrintTaskAgain = false
 

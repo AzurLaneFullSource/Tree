@@ -1,4 +1,4 @@
-﻿local var0_0 = math
+local var0_0 = math
 local var1_0 = var0_0.sin
 local var2_0 = var0_0.cos
 local var3_0 = var0_0.acos

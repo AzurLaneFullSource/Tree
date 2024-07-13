@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NavalAcademyProxy", import(".NetProxy"))
+local var0_0 = class("NavalAcademyProxy", import(".NetProxy"))
 
 var0_0.COURSE_START = "NavalAcademyProxy:COURSE_START"
 var0_0.COURSE_UPDATED = "NavalAcademyProxy:COURSE_UPDATED"

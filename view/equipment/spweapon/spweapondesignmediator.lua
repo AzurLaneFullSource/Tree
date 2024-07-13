@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpWeaponDesignMediator", import("view.base.ContextMediator"))
+local var0_0 = class("SpWeaponDesignMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_COMPOSITE = "SpWeaponDesignMediator:ON_COMPOSITE"
 var0_0.OPEN_EQUIPMENTDESIGN_INDEX = "SpWeaponDesignMediator:OPEN_EQUIPMENTDESIGN_INDEX"

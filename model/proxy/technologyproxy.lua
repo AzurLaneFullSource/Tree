@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TechnologyProxy", import(".NetProxy"))
+local var0_0 = class("TechnologyProxy", import(".NetProxy"))
 
 var0_0.TECHNOLOGY_UPDATED = "TechnologyProxy:TECHNOLOGY_UPDATED"
 var0_0.BLUEPRINT_ADDED = "TechnologyProxy:BLUEPRINT_ADDED"

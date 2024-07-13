@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PowerRank", import(".PlayerAttire"))
+local var0_0 = class("PowerRank", import(".PlayerAttire"))
 
 var0_0.TYPE_POWER = 1
 var0_0.TYPE_COLLECTION = 2

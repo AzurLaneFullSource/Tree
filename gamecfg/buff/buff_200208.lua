@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑亚利桑那 替换meta",
 	time = 0,

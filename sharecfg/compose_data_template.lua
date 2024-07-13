@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.compose_data_template = {
 	{
 		material_id = 1,

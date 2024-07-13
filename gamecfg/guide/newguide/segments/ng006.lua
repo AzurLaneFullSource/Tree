@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Start by going to the Buy menu to purchase a Cat Box from Akashi!"
 }
 

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "测试-声望-战神-被动触发",
 	time = 0,

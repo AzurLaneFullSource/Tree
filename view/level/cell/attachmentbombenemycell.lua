@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AttachmentBombEnemyCell", import("view.level.cell.StaticCellView"))
+local var0_0 = class("AttachmentBombEnemyCell", import("view.level.cell.StaticCellView"))
 
 var0_0.StateLive = 1
 var0_0.StateDead = 2

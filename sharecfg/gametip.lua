@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.gametip = setmetatable({
 	__name = "gametip"
 }, confMT)

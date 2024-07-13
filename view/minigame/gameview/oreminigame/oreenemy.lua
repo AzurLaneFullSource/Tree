@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OreEnemy")
+local var0_0 = class("OreEnemy")
 
 var0_0.TYPE_RIGHT_TO_LEFT = 1
 var0_0.TYPE_LEFT_TO_RIGHT = 2

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MsgboxLayer", import("view.base.BaseUI"))
+local var0_0 = class("MsgboxLayer", import("view.base.BaseUI"))
 local var1_0 = require("Mgr.const.MsgboxBtnNameMap")
 
 var0_0.BUTTON_BLUE = 1

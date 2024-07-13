@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SailBoatGameEvent")
+local var0_0 = class("SailBoatGameEvent")
 
 var0_0.PLAYER_EVENT_DAMAGE = "player event damage"
 var0_0.BOAT_EVENT_FIRE = "boat event fire"

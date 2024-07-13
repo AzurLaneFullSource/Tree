@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "对空搜索",
 	cd = 0,

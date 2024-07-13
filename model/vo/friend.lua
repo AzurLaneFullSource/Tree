@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Friend", import(".Player"))
+local var0_0 = class("Friend", import(".Player"))
 
 var0_0.ONLINE = 1
 var0_0.OFFLINE = 0

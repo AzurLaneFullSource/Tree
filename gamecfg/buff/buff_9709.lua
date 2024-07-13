@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "雷达增加缩圈效果",
 	time = 0,

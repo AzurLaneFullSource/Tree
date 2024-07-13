@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "jinengchufared",
 	name = "信浓活动 信浓瞬闪移动加速",
 	time = 0,

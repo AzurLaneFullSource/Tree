@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.map_data = {
 	[7000] = {
 		map_id = 7000,

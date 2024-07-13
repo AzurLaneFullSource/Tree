@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SystemTimeUtil")
+local var0_0 = class("SystemTimeUtil")
 
 function var0_0.Ctor(arg0_1)
 	return

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainCrusingActSequence")
+local var0_0 = class("MainCrusingActSequence")
 
 function var0_0.Execute(arg0_1, arg1_1)
 	local var0_1 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)

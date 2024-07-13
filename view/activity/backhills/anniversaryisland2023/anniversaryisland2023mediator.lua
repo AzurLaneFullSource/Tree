@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AnniversaryIsland2023Mediator", import("..TemplateMV.BackHillMediatorTemplate"))
+local var0_0 = class("AnniversaryIsland2023Mediator", import("..TemplateMV.BackHillMediatorTemplate"))
 
 function var0_0.register(arg0_1)
 	var0_0.super.register(arg0_1)

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldTask")
+local var0_0 = class("WorldTask")
 
 var0_0.STATE_INACTIVE = 0
 var0_0.STATE_ONGOING = 1

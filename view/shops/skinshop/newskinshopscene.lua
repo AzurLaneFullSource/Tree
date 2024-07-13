@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewSkinShopScene", import("view.base.BaseUI"))
+local var0_0 = class("NewSkinShopScene", import("view.base.BaseUI"))
 
 var0_0.MODE_OVERVIEW = 1
 var0_0.MODE_EXPERIENCE = 2

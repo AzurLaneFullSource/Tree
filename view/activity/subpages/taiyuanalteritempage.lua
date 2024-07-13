@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TaiyuanAlterItemPage", import(".TemplatePage.SkinTemplatePage"))
+local var0_0 = class("TaiyuanAlterItemPage", import(".TemplatePage.SkinTemplatePage"))
 
 function var0_0.UpdateTask(arg0_1, arg1_1, arg2_1)
 	local var0_1 = arg1_1 + 1

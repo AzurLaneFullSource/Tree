@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 
 local var0_0 = math.max
 local var1_0 = math.min

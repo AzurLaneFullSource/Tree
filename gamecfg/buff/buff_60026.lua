@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "ATK",
 	name = "测试-伊丽莎白-链接",
 	time = 0,

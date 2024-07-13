@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMediaCollectionRecordGroupLayer", import(".WorldMediaCollectionTemplateLayer"))
+local var0_0 = class("WorldMediaCollectionRecordGroupLayer", import(".WorldMediaCollectionTemplateLayer"))
 
 function var0_0.getUIName(arg0_1)
 	return "WorldMediaCollectionRecordGroupUI"

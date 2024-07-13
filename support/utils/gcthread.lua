@@ -1,4 +1,4 @@
-﻿GCThread = singletonClass("GCThread")
+GCThread = singletonClass("GCThread")
 
 local var0_0 = GCThread
 

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CastleGameItem")
+local var0_0 = class("CastleGameItem")
 local var1_0 = 70
 local var2_0 = 300
 local var3_0 = 166

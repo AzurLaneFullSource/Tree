@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WeekTaskProgress", import("..BaseVO"))
+local var0_0 = class("WeekTaskProgress", import("..BaseVO"))
 
 function var0_0.Ctor(arg0_1)
 	return

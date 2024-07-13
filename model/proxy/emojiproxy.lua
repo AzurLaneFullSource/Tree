@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EmojiProxy", import(".NetProxy"))
+local var0_0 = class("EmojiProxy", import(".NetProxy"))
 
 var0_0.NEW_EMOJI_SAVE_TAG = "new_emoji_save_tag_"
 

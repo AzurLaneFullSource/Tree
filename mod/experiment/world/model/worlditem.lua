@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldItem", import(".....model.vo.Item"))
+local var0_0 = class("WorldItem", import(".....model.vo.Item"))
 
 var0_0.UsageBuff = "usage_world_buff"
 var0_0.UsageDrop = "usage_drop"

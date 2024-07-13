@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SummaryPageLoading", import(".SummaryPage"))
+local var0_0 = class("SummaryPageLoading", import(".SummaryPage"))
 local var1_0 = 0.05
 
 function var0_0.OnInit(arg0_1)

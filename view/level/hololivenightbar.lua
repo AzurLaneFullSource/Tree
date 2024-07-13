@@ -1,4 +1,4 @@
-﻿local var0_0 = class("HololiveNightBar", import(".LevelStageStatusBarTemplate"))
+local var0_0 = class("HololiveNightBar", import(".LevelStageStatusBarTemplate"))
 
 function var0_0.getUIName(arg0_1)
 	return "HololiveBarNight"

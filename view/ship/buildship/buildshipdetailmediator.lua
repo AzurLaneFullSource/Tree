@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BuildShipDetailMediator", import("...base.ContextMediator"))
+local var0_0 = class("BuildShipDetailMediator", import("...base.ContextMediator"))
 
 var0_0.ON_QUICK = "BuildShipDetailMediator.ON_QUICK"
 var0_0.LAUNCH_ALL = "BuildShipDetailMediator.LAUNCH_ALL"

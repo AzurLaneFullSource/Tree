@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OreContainerControl")
+local var0_0 = class("OreContainerControl")
 
 var0_0.BREAK_MOVE_TIME = 0.5
 

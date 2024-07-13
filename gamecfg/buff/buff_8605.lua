@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2019年2月世界BOSS三阶段易伤",
 	time = 0,

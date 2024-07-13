@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "ATK",
 	name = "黑声望 暴走二阶段BUFF",
 	time = 0,

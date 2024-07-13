@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleGateHPShareActBoss")
+local var0_0 = class("BattleGateHPShareActBoss")
 
 ys.Battle.BattleGateHPShareActBoss = var0_0
 var0_0.__name = "BattleGateHPShareActBoss"

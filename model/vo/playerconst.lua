@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PlayerConst")
+local var0_0 = class("PlayerConst")
 
 var0_0.ResGold = 1
 var0_0.ResOil = 2

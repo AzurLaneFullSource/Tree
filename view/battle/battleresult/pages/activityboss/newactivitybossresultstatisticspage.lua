@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewActivityBossResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
+local var0_0 = class("NewActivityBossResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
 
 function var0_0.UpdateCommanders(arg0_1, arg1_1)
 	parallelAsync({

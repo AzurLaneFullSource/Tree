@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024异世界冒险 潜艇基准线",
 	cd = 0,

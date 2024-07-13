@@ -1,4 +1,4 @@
-﻿local var0_0 = class("KurskSPPtPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("KurskSPPtPage", import(".TemplatePage.PtTemplatePage"))
 
 function var0_0.OnFirstFlush(arg0_1)
 	var0_0.super.OnFirstFlush(arg0_1)

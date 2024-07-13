@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "血量召唤",
 	time = 0,

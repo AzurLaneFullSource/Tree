@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023 关岛活动EX 一阶段召唤 组合1",
 	painting = 0,

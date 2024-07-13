@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewYear22SkinShowPage", import("...base.BaseActivityPage"))
+local var0_0 = class("NewYear22SkinShowPage", import("...base.BaseActivityPage"))
 local var1_0 = {
 	{
 		id = 403101,

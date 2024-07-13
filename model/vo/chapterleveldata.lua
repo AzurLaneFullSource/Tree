@@ -1,4 +1,4 @@
-﻿local var0_0 = import(".Chapter")
+local var0_0 = import(".Chapter")
 
 function var0_0.update(arg0_1, arg1_1)
 	assert(arg1_1.id == arg0_1.id, "章节ID不一致, 无法更新数据")

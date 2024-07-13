@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "Darkness",
 	name = "大舰队世界boss_1_阶段4",
 	time = 0,

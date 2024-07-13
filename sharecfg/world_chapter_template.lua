@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.world_chapter_template = setmetatable({
 	__name = "world_chapter_template",
 	all = {

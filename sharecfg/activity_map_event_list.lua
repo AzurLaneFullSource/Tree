@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_map_event_list = {
 	[1001] = {
 		node_name = "Lush Jungle",

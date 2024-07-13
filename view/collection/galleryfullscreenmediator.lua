@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GalleryFullScreenMediator", import("..base.ContextMediator"))
+local var0_0 = class("GalleryFullScreenMediator", import("..base.ContextMediator"))
 
 function var0_0.register(arg0_1)
 	return

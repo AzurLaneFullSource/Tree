@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateChar", import("model.vo.BaseVO"))
+local var0_0 = class("EducateChar", import("model.vo.BaseVO"))
 
 var0_0.ATTR_TYPE_MAJOR = 1
 var0_0.ATTR_TYPE_PERSONALITY = 2

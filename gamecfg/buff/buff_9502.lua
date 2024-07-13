@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "海雾",
 	init_effect = "",

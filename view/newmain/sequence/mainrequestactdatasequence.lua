@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainRequestActDataSequence")
+local var0_0 = class("MainRequestActDataSequence")
 
 function var0_0.Execute(arg0_1, arg1_1)
 	arg0_1:RequestReturnAwardAct()

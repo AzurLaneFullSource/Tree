@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.commander_skill_effect_template = {
 	{
 		id = 1,

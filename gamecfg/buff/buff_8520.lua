@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "免疫阵营移动限制",
 	time = 0,

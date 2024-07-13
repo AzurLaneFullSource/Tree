@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AppreciateProxy", import(".NetProxy"))
+local var0_0 = class("AppreciateProxy", import(".NetProxy"))
 
 function var0_0.register(arg0_1)
 	arg0_1:initData()

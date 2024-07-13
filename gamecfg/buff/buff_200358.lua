@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023伊丽莎白meta META特攻",
 	time = 0,

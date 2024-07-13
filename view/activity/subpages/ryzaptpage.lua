@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RyzaPtPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("RyzaPtPage", import(".TemplatePage.PtTemplatePage"))
 local var1_0 = 9
 
 function var0_0.OnInit(arg0_1)

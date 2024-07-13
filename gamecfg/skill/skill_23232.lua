@@ -1,4 +1,4 @@
-﻿return {
+return {
 	aniEffect = {
 		effect = "jineng",
 		offset = {

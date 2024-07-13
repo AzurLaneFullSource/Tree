@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CryptolaliaScrollRectItem")
+local var0_0 = class("CryptolaliaScrollRectItem")
 local var1_0 = Vector3(490, -35, 0)
 local var2_0 = Vector3(297, 297, 0)
 

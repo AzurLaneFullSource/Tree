@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardFeastPedestalModule", import("..CourtYardBaseModule"))
+local var0_0 = class("CourtYardFeastPedestalModule", import("..CourtYardBaseModule"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.storey = arg0_1.data

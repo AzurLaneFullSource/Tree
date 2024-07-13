@@ -1,4 +1,4 @@
-﻿return {
+return {
 	limit = {
 		SYSTEM_DUEL
 	},

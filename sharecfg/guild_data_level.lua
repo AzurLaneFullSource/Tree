@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.guild_data_level = {
 	{
 		exp = 1000,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "S901",
 	type = 2,
 	skippable = true,

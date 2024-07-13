@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ItemShowPanel", import(".MsgboxSubPanel"))
+local var0_0 = class("ItemShowPanel", import(".MsgboxSubPanel"))
 
 var0_0.ConfigData = {
 	equipID = 908601,

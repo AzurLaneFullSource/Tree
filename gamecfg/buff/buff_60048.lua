@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "Health",
 	name = "测试-盾墙-触发",
 	time = 0,

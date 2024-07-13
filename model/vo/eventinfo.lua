@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EventInfo", import(".BaseVO"))
+local var0_0 = class("EventInfo", import(".BaseVO"))
 
 var0_0.StateNone = 0
 var0_0.StateActive = 1

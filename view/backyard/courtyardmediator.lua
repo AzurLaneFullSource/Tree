@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardMediator", import("..base.ContextMediator"))
+local var0_0 = class("CourtYardMediator", import("..base.ContextMediator"))
 
 var0_0.SET_UP = "CourtYardMediator:SET_UP"
 var0_0.RENAME = "CourtYardMediator:RENAME"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BeachGuardAsset")
+local var0_0 = class("BeachGuardAsset")
 
 var0_0.card_asset_path = "beachguardgameassets/char_icon"
 var0_0.cardQ_asset_path = "beachguardgameassets/char_Qicon"

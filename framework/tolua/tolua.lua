@@ -1,4 +1,4 @@
-﻿if jit then
+if jit then
 	if jit.opt then
 		jit.opt.start(3)
 	end

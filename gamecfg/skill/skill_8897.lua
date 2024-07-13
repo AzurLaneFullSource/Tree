@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "黑海伦娜共斗技能弹条",
 	cd = 0,

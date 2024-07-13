@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardThemeTemplateMsgBox", import("....base.BaseSubView"))
+local var0_0 = class("BackYardThemeTemplateMsgBox", import("....base.BaseSubView"))
 
 var0_0.TYPE_TEXT = 1
 var0_0.TYPE_IMAGE = 2

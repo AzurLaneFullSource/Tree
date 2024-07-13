@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "赫米忒_海域风暴debuff",
 	time = 1,

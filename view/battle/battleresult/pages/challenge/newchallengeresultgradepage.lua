@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewChallengeResultGradePage", import("..NewBattleResultGradePage"))
+local var0_0 = class("NewChallengeResultGradePage", import("..NewBattleResultGradePage"))
 
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)

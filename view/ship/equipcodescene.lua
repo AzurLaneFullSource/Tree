@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EquipCodeScene", import("..base.BaseUI"))
+local var0_0 = class("EquipCodeScene", import("..base.BaseUI"))
 
 var0_0.optionsPath = {
 	"adpter/frame/option"

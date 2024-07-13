@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.sham_battle_template = {
 	{
 		map = 90000,

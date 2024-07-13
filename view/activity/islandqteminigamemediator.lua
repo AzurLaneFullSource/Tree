@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IslandQTEMiniGameMediator", import("..base.ContextMediator"))
+local var0_0 = class("IslandQTEMiniGameMediator", import("..base.ContextMediator"))
 
 var0_0.GAME_FINISH = "IslandQTEMiniGameMediator.GAME_FINISH"
 

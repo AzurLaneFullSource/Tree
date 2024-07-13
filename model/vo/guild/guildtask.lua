@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildTask", import("..BaseVO"))
+local var0_0 = class("GuildTask", import("..BaseVO"))
 
 var0_0.STATE_EMPTY = 0
 var0_0.STATE_ONGOING = 2

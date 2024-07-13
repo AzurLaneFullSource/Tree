@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "最终空袭 加成",
 	time = 0,

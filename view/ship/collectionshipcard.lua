@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CollectionShipCard")
+local var0_0 = class("CollectionShipCard")
 
 var0_0.TypeCard = 1
 var0_0.TypeTrans = 2

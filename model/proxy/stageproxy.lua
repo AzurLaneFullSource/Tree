@@ -1,4 +1,4 @@
-﻿local var0_0 = class("StageProxy", import(".NetProxy"))
+local var0_0 = class("StageProxy", import(".NetProxy"))
 
 var0_0.STAGE_ADDED = "stage added"
 var0_0.STAGE_UPDATED = "stage updated"

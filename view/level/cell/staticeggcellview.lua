@@ -1,4 +1,4 @@
-﻿local var0_0 = import(".StaticCellView")
+local var0_0 = import(".StaticCellView")
 local var1_0 = import(".EggCellView")
 local var2_0 = class("StaticEggCellView", DecorateClass(var0_0, var1_0))
 

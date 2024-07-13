@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑亚利桑那 扩散的哀伤",
 	time = 0,

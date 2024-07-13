@@ -1,4 +1,4 @@
-﻿XANA = 4052370
+XANA = 4052370
 
 local function var0_0()
 	local var0_1 = 1 - (PlayerPrefs.GetInt("stage_scratch") or 0)

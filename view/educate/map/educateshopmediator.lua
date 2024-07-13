@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateShopMediator", import("..base.EducateContextMediator"))
+local var0_0 = class("EducateShopMediator", import("..base.EducateContextMediator"))
 
 var0_0.ON_SHOPPING = "ON_SHOPPING"
 

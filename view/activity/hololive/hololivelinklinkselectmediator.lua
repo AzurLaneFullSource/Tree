@@ -1,4 +1,4 @@
-﻿local var0_0 = class("HoloLiveLinkLinkSelectMediator", import("view.base.ContextMediator"))
+local var0_0 = class("HoloLiveLinkLinkSelectMediator", import("view.base.ContextMediator"))
 
 var0_0.HUB_ID = 3
 

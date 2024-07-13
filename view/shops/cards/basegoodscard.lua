@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseGoodsCard")
+local var0_0 = class("BaseGoodsCard")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	pg.DelegateInfo.New(arg0_1)

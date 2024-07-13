@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0.1,
 	name = "纳米编织",
 	init_effect = "",

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 50,
 	name = "神秘的羽衣",
 	init_effect = "jinengchufablue",

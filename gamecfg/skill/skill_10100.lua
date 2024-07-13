@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "爪哇海岸的跳跳鬼",
 	cd = 0,

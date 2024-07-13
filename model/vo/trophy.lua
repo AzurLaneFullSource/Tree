@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Trophy", import(".BaseVO"))
+local var0_0 = class("Trophy", import(".BaseVO"))
 
 var0_0.INTAMACT_TYPE = 1043
 var0_0.COMPLEX_TROPHY_TYPE = 160

@@ -1,4 +1,4 @@
-﻿local var0_0 = debug.getinfo
+local var0_0 = debug.getinfo
 local var1_0 = error
 local var2_0 = rawset
 local var3_0 = rawget

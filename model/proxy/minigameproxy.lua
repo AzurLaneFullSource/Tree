@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MiniGameProxy", import(".NetProxy"))
+local var0_0 = class("MiniGameProxy", import(".NetProxy"))
 
 var0_0.ON_HUB_DATA_UPDATE = "on hub data update"
 var0_0.ON_MINI_GAME_DATA_UPDATE = "on_mini_game_data_update"

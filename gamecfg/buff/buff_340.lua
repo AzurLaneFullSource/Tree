@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "航母空袭降低隐蔽恢复",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuideUILoader")
+local var0_0 = class("GuideUILoader")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.root = arg1_1

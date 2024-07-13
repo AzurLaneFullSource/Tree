@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChapterBoxAction", import(".ChapterCommonAction"))
+local var0_0 = class("ChapterBoxAction", import(".ChapterCommonAction"))
 
 function var0_0.applyTo(arg0_1, arg1_1, arg2_1)
 	if arg2_1 then

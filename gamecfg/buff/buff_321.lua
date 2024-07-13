@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "减速进水9秒",
 	time = 9.1,

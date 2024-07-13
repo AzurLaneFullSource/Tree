@@ -1,4 +1,4 @@
-﻿local var0_0 = class("InstagramNpcComment", import(".InstagramComment"))
+local var0_0 = class("InstagramNpcComment", import(".InstagramComment"))
 local var1_0 = pg.activity_ins_ship_group_template
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SecondSummaryPage6", import(".SummaryAnimationPage"))
+local var0_0 = class("SecondSummaryPage6", import(".SummaryAnimationPage"))
 
 function var0_0.OnInit(arg0_1)
 	local var0_1 = arg0_1.summaryInfoVO.skinId > 0

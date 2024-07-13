@@ -1,4 +1,4 @@
-﻿ys = ys or {}
+ys = ys or {}
 
 local var0_0 = class("BattleNodeBuff", ys.Battle.BattleBuffEffect)
 

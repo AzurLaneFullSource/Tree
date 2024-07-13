@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ObjectTreasureN", import("view.miniGame.gameView.RyzaMiniGame.object.ObjectBreakable"))
+local var0_0 = class("ObjectTreasureN", import("view.miniGame.gameView.RyzaMiniGame.object.ObjectBreakable"))
 
 function var0_0.InitRegister(arg0_1, arg1_1)
 	var0_0.super.InitRegister(arg0_1, arg1_1)

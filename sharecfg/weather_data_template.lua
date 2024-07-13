@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.weather_data_template = {
 	[101] = {
 		buff_desc = "The turbulent sea at night obscures your visibility. Both your vanguard fleet and the enemies will have Concealment Zones, making it harder to land hits.",

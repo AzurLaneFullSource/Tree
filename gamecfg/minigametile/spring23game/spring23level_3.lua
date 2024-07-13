@@ -1,4 +1,4 @@
-﻿return {
+return {
 	tilewidth = 96,
 	height = 11,
 	tileheight = 96,

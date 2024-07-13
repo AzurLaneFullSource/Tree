@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldDailyTaskMediator", import("..base.ContextMediator"))
+local var0_0 = class("WorldDailyTaskMediator", import("..base.ContextMediator"))
 
 var0_0.OnTaskGoto = "WorldDailyTaskMediator.OnTaskGoto"
 var0_0.OnAccepetTask = "WorldDailyTaskMediator.OnAccepetTask"

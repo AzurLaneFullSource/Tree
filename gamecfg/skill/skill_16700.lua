@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "概率提升标记*1",
 	cd = 0,

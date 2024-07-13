@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CatteryDescPage", import("...base.BaseSubView"))
+local var0_0 = class("CatteryDescPage", import("...base.BaseSubView"))
 
 var0_0.CHANGE_STYLE = "CatteryDescPage:CHANGE_STYLE"
 var0_0.CHANGE_COMMANDER = "CatteryDescPage:CHANGE_COMMANDER"

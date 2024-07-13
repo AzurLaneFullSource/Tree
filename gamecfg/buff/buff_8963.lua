@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "公海舰队活动 B3/D3机制弹条",
 	time = 20,

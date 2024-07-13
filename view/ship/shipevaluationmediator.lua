@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipEvaluationMediator", import("..base.ContextMediator"))
+local var0_0 = class("ShipEvaluationMediator", import("..base.ContextMediator"))
 
 function var0_0.register(arg0_1)
 	local var0_1 = getProxy(CollectionProxy)

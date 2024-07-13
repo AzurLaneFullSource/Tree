@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainLeftPanel", import("...base.MainConcealablePanel"))
+local var0_0 = class("MainLeftPanel", import("...base.MainConcealablePanel"))
 
 function var0_0.GetBtns(arg0_1)
 	return {

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "潘多拉的魔盒",
 	cd = 0,

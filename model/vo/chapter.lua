@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Chapter", import(".BaseVO"))
+local var0_0 = class("Chapter", import(".BaseVO"))
 
 var0_0.SelectFleet = 1
 var0_0.CustomFleet = 2

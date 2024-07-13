@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleSubmarineRoutineResultLayer", import(".BattleResultLayer"))
+local var0_0 = class("BattleSubmarineRoutineResultLayer", import(".BattleResultLayer"))
 
 function var0_0.rankAnimaFinish(arg0_1)
 	local var0_1 = arg0_1:findTF("main/conditions")

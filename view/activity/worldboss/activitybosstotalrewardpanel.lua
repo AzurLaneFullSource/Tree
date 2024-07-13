@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityBossTotalRewardPanel", import("view.level.BaseTotalRewardPanel"))
+local var0_0 = class("ActivityBossTotalRewardPanel", import("view.level.BaseTotalRewardPanel"))
 
 function var0_0.getUIName(arg0_1)
 	return "ActivityBossTotalRewardPanel"

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.box_data_template = setmetatable({
 	__name = "box_data_template",
 	all = {

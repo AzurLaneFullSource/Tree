@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BillboardMediator", import("..base.ContextMediator"))
+local var0_0 = class("BillboardMediator", import("..base.ContextMediator"))
 
 var0_0.FETCH_RANKS = "BillboardMediator:FETCH_RANKS"
 var0_0.OPEN_RIVAL_INFO = "BillboardMediator:OPEN_RIVAL_INFO"

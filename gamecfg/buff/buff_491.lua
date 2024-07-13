@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "",
 	time = 3,
@@ -33,7 +33,8 @@
 		{
 			type = "BattleBuffAddTag",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				tag = "naximofubeilianjiansu"

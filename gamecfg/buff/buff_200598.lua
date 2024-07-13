@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023云仙活动 A3/C3 结界护盾BUFF",
 	time = 0,

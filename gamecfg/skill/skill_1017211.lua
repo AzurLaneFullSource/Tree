@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "命中持续效果",
 	cd = 0,

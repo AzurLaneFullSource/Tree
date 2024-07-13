@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.skin_page_template = {
 	{
 		id = 1,

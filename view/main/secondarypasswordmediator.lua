@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SecondaryPasswordMediator", import("view.base.ContextMediator"))
+local var0_0 = class("SecondaryPasswordMediator", import("view.base.ContextMediator"))
 
 var0_0.CONFIRM_PASSWORD = "SecondaryPasswordMediator:CONFIRM_PASSWORD"
 var0_0.SET_PASSWORD = "SecondaryPasswordMediator:SET_PASSWORD"

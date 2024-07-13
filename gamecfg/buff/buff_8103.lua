@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "潜艇run专用反潜状态--护卫舰",
 	time = 0,

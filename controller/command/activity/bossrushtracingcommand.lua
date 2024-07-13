@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushTracingCommand", pm.SimpleCommand)
+local var0_0 = class("BossRushTracingCommand", pm.SimpleCommand)
 
 function var0_0.execute(arg0_1, arg1_1)
 	if BeginStageCommand.DockOverload() then

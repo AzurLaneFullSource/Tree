@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LaunchBallTaskMediator", import("..base.ContextMediator"))
+local var0_0 = class("LaunchBallTaskMediator", import("..base.ContextMediator"))
 
 var0_0.SUBMIT_ALL = "SUBMIT_ALL"
 

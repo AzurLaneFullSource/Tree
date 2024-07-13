@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommanderCatCard")
+local var0_0 = class("CommanderCatCard")
 
 var0_0.MARK_TYPE_CIRCLE = 1
 var0_0.MARK_TYPE_TICK = 2

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 8,
 	name = "所罗门的战神 +",
 	init_effect = "jinengchufablue",

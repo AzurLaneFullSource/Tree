@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommanderHomeLayer", import("...base.BaseUI"))
+local var0_0 = class("CommanderHomeLayer", import("...base.BaseUI"))
 
 var0_0.DESC_PAGE_OPEN = "CommanderHomeLayer:DESC_PAGE_OPEN"
 var0_0.DESC_PAGE_CLOSE = "CommanderHomeLayer:DESC_PAGE_CLOSE"

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "高效燃油",
 	cd = 0,

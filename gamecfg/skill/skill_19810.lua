@@ -1,4 +1,4 @@
-﻿return {
+return {
 	aniEffect = {
 		effect = "jineng",
 		offset = {
@@ -16,16 +16,6 @@
 			arg_list = {
 				weapon_id = 164761
 			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetAllHarm",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 19822,
-				delay = 1.5
-			}
 		}
 	},
 	{
@@ -37,16 +27,6 @@
 				targetAniEffect = "",
 				arg_list = {
 					weapon_id = 164761
-				}
-			},
-			{
-				type = "BattleSkillAddBuff",
-				casterAniEffect = "",
-				target_choise = "TargetAllHarm",
-				targetAniEffect = "",
-				arg_list = {
-					buff_id = 19822,
-					delay = 1.5
 				}
 			}
 		}
@@ -61,16 +41,6 @@
 				arg_list = {
 					weapon_id = 164762
 				}
-			},
-			{
-				type = "BattleSkillAddBuff",
-				casterAniEffect = "",
-				target_choise = "TargetAllHarm",
-				targetAniEffect = "",
-				arg_list = {
-					buff_id = 19822,
-					delay = 1.5
-				}
 			}
 		}
 	},
@@ -83,16 +53,6 @@
 				targetAniEffect = "",
 				arg_list = {
 					weapon_id = 164763
-				}
-			},
-			{
-				type = "BattleSkillAddBuff",
-				casterAniEffect = "",
-				target_choise = "TargetAllHarm",
-				targetAniEffect = "",
-				arg_list = {
-					buff_id = 19822,
-					delay = 1.5
 				}
 			}
 		}
@@ -107,16 +67,6 @@
 				arg_list = {
 					weapon_id = 164764
 				}
-			},
-			{
-				type = "BattleSkillAddBuff",
-				casterAniEffect = "",
-				target_choise = "TargetAllHarm",
-				targetAniEffect = "",
-				arg_list = {
-					buff_id = 19822,
-					delay = 1.5
-				}
 			}
 		}
 	},
@@ -129,16 +79,6 @@
 				targetAniEffect = "",
 				arg_list = {
 					weapon_id = 164765
-				}
-			},
-			{
-				type = "BattleSkillAddBuff",
-				casterAniEffect = "",
-				target_choise = "TargetAllHarm",
-				targetAniEffect = "",
-				arg_list = {
-					buff_id = 19822,
-					delay = 1.5
 				}
 			}
 		}
@@ -153,16 +93,6 @@
 				arg_list = {
 					weapon_id = 164766
 				}
-			},
-			{
-				type = "BattleSkillAddBuff",
-				casterAniEffect = "",
-				target_choise = "TargetAllHarm",
-				targetAniEffect = "",
-				arg_list = {
-					buff_id = 19822,
-					delay = 1.5
-				}
 			}
 		}
 	},
@@ -175,16 +105,6 @@
 				targetAniEffect = "",
 				arg_list = {
 					weapon_id = 164767
-				}
-			},
-			{
-				type = "BattleSkillAddBuff",
-				casterAniEffect = "",
-				target_choise = "TargetAllHarm",
-				targetAniEffect = "",
-				arg_list = {
-					buff_id = 19822,
-					delay = 1.5
 				}
 			}
 		}
@@ -199,16 +119,6 @@
 				arg_list = {
 					weapon_id = 164768
 				}
-			},
-			{
-				type = "BattleSkillAddBuff",
-				casterAniEffect = "",
-				target_choise = "TargetAllHarm",
-				targetAniEffect = "",
-				arg_list = {
-					buff_id = 19822,
-					delay = 1.5
-				}
 			}
 		}
 	},
@@ -222,16 +132,6 @@
 				arg_list = {
 					weapon_id = 164769
 				}
-			},
-			{
-				type = "BattleSkillAddBuff",
-				casterAniEffect = "",
-				target_choise = "TargetAllHarm",
-				targetAniEffect = "",
-				arg_list = {
-					buff_id = 19822,
-					delay = 1.5
-				}
 			}
 		}
 	},
@@ -244,16 +144,6 @@
 				targetAniEffect = "",
 				arg_list = {
 					weapon_id = 164770
-				}
-			},
-			{
-				type = "BattleSkillAddBuff",
-				casterAniEffect = "",
-				target_choise = "TargetAllHarm",
-				targetAniEffect = "",
-				arg_list = {
-					buff_id = 19822,
-					delay = 1.5
 				}
 			}
 		}

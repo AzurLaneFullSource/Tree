@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.equip_upgrade_data = {
 	[4340] = {
 		coin_consume = 500,

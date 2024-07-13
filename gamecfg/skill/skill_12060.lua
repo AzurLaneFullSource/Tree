@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "圣山的幼巫女",
 	cd = 0,

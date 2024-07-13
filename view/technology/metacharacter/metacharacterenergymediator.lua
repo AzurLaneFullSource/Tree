@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MetaCharacterEnergyMediator", import("...base.ContextMediator"))
+local var0_0 = class("MetaCharacterEnergyMediator", import("...base.ContextMediator"))
 
 var0_0.ON_ACTIVATION = "MetaCharacterEnergyMediator:ON_ACTIVATION"
 var0_0.ON_PREVIEW = "MetaCharacterEnergyMediator:ON_PREVIEW"

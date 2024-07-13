@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipProfileLive2dBtn")
+local var0_0 = class("ShipProfileLive2dBtn")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	pg.DelegateInfo.New(arg0_1)

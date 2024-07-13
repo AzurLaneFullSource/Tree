@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.draw_data_template = {
 	{
 		id = 1,

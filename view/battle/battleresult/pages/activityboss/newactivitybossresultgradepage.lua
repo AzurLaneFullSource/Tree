@@ -1,1 +1,1 @@
-﻿return (class("NewActivityBossResultGradePage", import("..NewBattleResultGradePage")))
+return (class("NewActivityBossResultGradePage", import("..NewBattleResultGradePage")))

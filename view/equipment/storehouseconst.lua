@@ -1,4 +1,4 @@
-﻿local var0_0 = class("StoreHouseConst")
+local var0_0 = class("StoreHouseConst")
 
 var0_0.WARP_TO_DESIGN = "WARP_TO_DESIGN"
 var0_0.WARP_TO_MATERIAL = "WARP_TO_MATERIAL"

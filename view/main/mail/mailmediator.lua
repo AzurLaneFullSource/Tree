@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MailMediator", import("view.base.ContextMediator"))
+local var0_0 = class("MailMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_REQUIRE = "MailMediator.ON_REQUIRE"
 var0_0.ON_OPERATION = "MailMediator.ON_OPERATION"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LinerLogSchedulePage", import("view.base.BaseSubView"))
+local var0_0 = class("LinerLogSchedulePage", import("view.base.BaseSubView"))
 
 var0_0.SHOW_TIME_LIST = {
 	{

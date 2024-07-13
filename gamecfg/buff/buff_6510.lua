@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "玉米灯笼",
 	time = 0,

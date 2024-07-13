@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.furniture_shop_template = {
 	[120] = {
 		not_for_sale = 0,

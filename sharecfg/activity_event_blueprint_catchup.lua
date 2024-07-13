@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_event_blueprint_catchup = {
 	{
 		id = 1,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSAtlas", import("...BaseEntity"))
+local var0_0 = class("WSAtlas", import("...BaseEntity"))
 
 var0_0.Fields = {
 	transform = "userdata",

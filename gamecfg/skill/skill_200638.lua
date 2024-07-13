@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023海盗活动T5 加里冒险号辅助发射器 瞬移回场地中央",
 	cd = 0,

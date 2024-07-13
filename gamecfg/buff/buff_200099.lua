@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "勇者标枪消弹斩击",
 	time = 0,

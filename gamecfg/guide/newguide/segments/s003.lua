@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"First, let's <color=#ffde38>lock</color> this character in.",
 	"Let's head back to the main screen again."
 }

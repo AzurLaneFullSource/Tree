@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PizzahutPTPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("PizzahutPTPage", import(".TemplatePage.PtTemplatePage"))
 
 var0_0.FADE_TIME = 0.5
 var0_0.SHOW_TIME = 1

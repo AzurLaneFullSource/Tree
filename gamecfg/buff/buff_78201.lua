@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "白龙剧情战 触发龙宫机关-回复技能 buff2：找到我方旗舰，为其添加buff3",
 	time = 0,

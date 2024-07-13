@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "通用--清除小怪",
 	cd = 0,

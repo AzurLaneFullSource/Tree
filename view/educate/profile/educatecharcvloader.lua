@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateCharCvLoader")
+local var0_0 = class("EducateCharCvLoader")
 
 function var0_0.Play(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
 	arg0_1:Stop()

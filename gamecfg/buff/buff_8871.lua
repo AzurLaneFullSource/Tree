@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "意大利V2 测试者分身合体",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewYearSnackResultView", import(".SnackResultView"))
+local var0_0 = class("NewYearSnackResultView", import(".SnackResultView"))
 
 function var0_0.getUIName(arg0_1)
 	return "NewYearSnackResult"

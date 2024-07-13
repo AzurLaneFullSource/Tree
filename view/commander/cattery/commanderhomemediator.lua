@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommanderHomeMediator", import("...base.ContextMediator"))
+local var0_0 = class("CommanderHomeMediator", import("...base.ContextMediator"))
 
 var0_0.ON_CLEAN = "CommanderHomeMediator:ON_CLEAN"
 var0_0.ON_FEED = "CommanderHomeMediator:ON_FEED"

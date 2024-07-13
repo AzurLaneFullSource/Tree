@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipPreviewLayer", import("..base.BaseUI"))
+local var0_0 = class("ShipPreviewLayer", import("..base.BaseUI"))
 local var1_0 = 12
 local var2_0 = 3
 local var3_0 = Vector3(0, 1, 40)

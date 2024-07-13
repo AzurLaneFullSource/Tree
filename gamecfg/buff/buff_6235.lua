@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "Z字旗·三笠",
 	time = 0,

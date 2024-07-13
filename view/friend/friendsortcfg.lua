@@ -1,4 +1,4 @@
-﻿return {
+return {
 	SORT_TAG = {
 		{
 			spr = "sort_login",

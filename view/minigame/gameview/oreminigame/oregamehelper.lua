@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OreGameHelper")
+local var0_0 = class("OreGameHelper")
 
 local function var1_0(arg0_1)
 	local var0_1 = arg0_1.x * 90 + 90

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "中飞联动一阶段安装武器1",
 	time = 0,

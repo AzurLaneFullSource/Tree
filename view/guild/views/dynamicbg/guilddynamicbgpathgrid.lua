@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildDynamicBgPathGrid")
+local var0_0 = class("GuildDynamicBgPathGrid")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.canWalk = arg1_1.canWalk

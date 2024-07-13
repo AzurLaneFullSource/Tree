@@ -1,4 +1,4 @@
-﻿pg.cardCfg = {
+pg.cardCfg = {
 	card_20001 = require("GameCfg.card.card_20001"),
 	card_999970 = require("GameCfg.card.card_999970"),
 	card_999971 = require("GameCfg.card.card_999971"),

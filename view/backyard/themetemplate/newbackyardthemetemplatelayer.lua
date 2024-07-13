@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewBackYardThemeTemplateLayer", import("...base.BaseUI"))
+local var0_0 = class("NewBackYardThemeTemplateLayer", import("...base.BaseUI"))
 
 local function var1_0(arg0_1, arg1_1, arg2_1)
 	local function var0_1(arg0_2, arg1_2)

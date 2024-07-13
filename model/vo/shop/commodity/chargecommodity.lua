@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChargeCommodity", import(".BaseCommodity"))
+local var0_0 = class("ChargeCommodity", import(".BaseCommodity"))
 
 function var0_0.bindConfigTable(arg0_1)
 	return pg.pay_data_display

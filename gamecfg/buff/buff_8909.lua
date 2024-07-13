@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "关闭敌方单位的角色碰撞（中弹碰撞不影响）",
 	time = 0,

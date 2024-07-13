@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RecordShipEquipmentCommand", pm.SimpleCommand)
+local var0_0 = class("RecordShipEquipmentCommand", pm.SimpleCommand)
 local var1_0 = {
 	"#FFFFFF",
 	"#60a9ff",

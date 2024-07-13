@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldInPictureMediator", import("...base.ContextMediator"))
+local var0_0 = class("WorldInPictureMediator", import("...base.ContextMediator"))
 
 var0_0.ON_TRAVEL = "WorldInPictureMediator:ON_TRAVEL"
 var0_0.ON_DRAW = "WorldInPictureMediator:ON_DRAW"

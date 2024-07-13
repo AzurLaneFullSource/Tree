@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardDecorationFurniturePage", import(".BackYardDecorationBasePage"))
+local var0_0 = class("BackYardDecorationFurniturePage", import(".BackYardDecorationBasePage"))
 
 var0_0.SELECTED_FURNITRUE = "BackYardDecorationFurniturePage:SELECTED_FURNITRUE"
 

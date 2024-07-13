@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ArchivesWorldBossDetailPage", import(".BaseWorldBossDetailPage"))
+local var0_0 = class("ArchivesWorldBossDetailPage", import(".BaseWorldBossDetailPage"))
 
 function var0_0.getUIName(arg0_1)
 	return "ArchivesWorldBossDetailUI"

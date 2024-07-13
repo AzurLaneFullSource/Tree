@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SixthAnniversaryJPDarkMediator", import("view.base.ContextMediator"))
+local var0_0 = class("SixthAnniversaryJPDarkMediator", import("view.base.ContextMediator"))
 
 var0_0.GO_SCENE = "GO_SCENE"
 var0_0.GO_SUBLAYER = "GO_SUBLAYER"

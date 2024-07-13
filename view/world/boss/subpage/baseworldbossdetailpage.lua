@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseWorldBossDetailPage", import("....base.BaseSubView"))
+local var0_0 = class("BaseWorldBossDetailPage", import("....base.BaseSubView"))
 local var1_0 = {
 	[970701] = {
 		-36.45481,

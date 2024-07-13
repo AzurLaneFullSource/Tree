@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewWorldBossResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
+local var0_0 = class("NewWorldBossResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
 
 function var0_0.UpdateGrade(arg0_1)
 	local var0_1 = "battlescore/grade_label_clear"

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "重巡BOSS血量低于30%时获得buff每三秒恢复2%血量直到生命值高于30%结束",
 	time = 0,

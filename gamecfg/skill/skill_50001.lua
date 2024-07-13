@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "敌方战列舰跨射攻击后排buff",
 	cd = 0,

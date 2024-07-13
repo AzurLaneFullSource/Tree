@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MetaRepairItem", import("..BaseVO"))
+local var0_0 = class("MetaRepairItem", import("..BaseVO"))
 
 function var0_0.bindConfigTable(arg0_1)
 	return pg.ship_meta_repair

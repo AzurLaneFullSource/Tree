@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EquipmentSkinPreviewWindow", import("view.ship.ShipPreviewLayer"))
+local var0_0 = class("EquipmentSkinPreviewWindow", import("view.ship.ShipPreviewLayer"))
 
 function var0_0.getUIName(arg0_1)
 	return "EquipSkinPreviewUI"

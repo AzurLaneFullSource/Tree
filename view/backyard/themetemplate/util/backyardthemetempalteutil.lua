@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardThemeTempalteUtil")
+local var0_0 = class("BackYardThemeTempalteUtil")
 local var1_0 = false
 local var2_0 = true
 local var3_0 = 1920

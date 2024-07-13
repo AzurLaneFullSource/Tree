@@ -1,4 +1,4 @@
-﻿LimitChallengeConst = {}
+LimitChallengeConst = {}
 
 local var0_0 = LimitChallengeConst
 

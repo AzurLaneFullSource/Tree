@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "古立特联动 梦芽支援弹幕LV4",
 	time = 5,

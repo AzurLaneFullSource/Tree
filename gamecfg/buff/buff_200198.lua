@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑亚利桑那 黑潮之泪效果",
 	time = 0,

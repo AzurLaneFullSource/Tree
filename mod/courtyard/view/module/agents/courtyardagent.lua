@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardAgent")
+local var0_0 = class("CourtYardAgent")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	setmetatable(arg0_1, {

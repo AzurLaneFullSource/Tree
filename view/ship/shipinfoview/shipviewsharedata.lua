@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipViewShareData")
+local var0_0 = class("ShipViewShareData")
 
 function var0_0.Ctor(arg0_1)
 	arg0_1.shipVO = nil

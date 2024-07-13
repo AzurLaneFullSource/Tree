@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SnapshotSelectCharLayer", import("..base.BaseUI"))
+local var0_0 = class("SnapshotSelectCharLayer", import("..base.BaseUI"))
 
 var0_0.ON_INDEX = "SnapshotSelectCharLayer.ON_INDEX"
 var0_0.SELECT_CHAR = "SnapshotSelectCharLayer.SELECT_CHAR"

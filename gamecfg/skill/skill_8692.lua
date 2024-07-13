@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "清屏触发技能",
 	cd = 0,

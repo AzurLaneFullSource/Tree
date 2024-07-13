@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CardPairsScene", import("..base.BaseUI"))
+local var0_0 = class("CardPairsScene", import("..base.BaseUI"))
 
 var0_0.CARD_NUM = 18
 var0_0.GAME_STATE_BEGIN = 0

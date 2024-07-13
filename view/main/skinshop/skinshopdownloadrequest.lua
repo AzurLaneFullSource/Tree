@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SkinShopDownloadRequest")
+local var0_0 = class("SkinShopDownloadRequest")
 
 function var0_0.Ctor(arg0_1)
 	arg0_1.downloadui = GameObject.Find("/OverlayCamera/Overlay/UIMain/DialogPanel")

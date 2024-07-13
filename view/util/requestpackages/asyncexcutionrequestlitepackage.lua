@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AsyncExcutionRequestLitePackage", import(".RequestPackage"))
+local var0_0 = class("AsyncExcutionRequestLitePackage", import(".RequestPackage"))
 
 var0_0.STATUS = {
 	SUSPEND = 2,

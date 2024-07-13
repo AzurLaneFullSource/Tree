@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MsgboxSubPanel", BaseSubPanel)
+local var0_0 = class("MsgboxSubPanel", BaseSubPanel)
 
 function var0_0.Load(arg0_1)
 	if arg0_1._state ~= var0_0.STATES.NONE then

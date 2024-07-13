@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainCommonSpActBtnAdapt")
+local var0_0 = class("MainCommonSpActBtnAdapt")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.spActBtn = arg1_1

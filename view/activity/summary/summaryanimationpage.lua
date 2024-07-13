@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SummaryAnimationPage", import(".SummaryPage"))
+local var0_0 = class("SummaryAnimationPage", import(".SummaryPage"))
 
 function var0_0.OnInit(arg0_1)
 	assert(false, "must be overwrite")

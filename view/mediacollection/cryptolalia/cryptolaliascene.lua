@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CryptolaliaScene", import("view.base.BaseUI"))
+local var0_0 = class("CryptolaliaScene", import("view.base.BaseUI"))
 
 var0_0.ON_UNLOCK = "CryptolaliaScene:ON_UNLOCK"
 var0_0.ON_DELETE = "CryptolaliaScene:ON_DELETE"

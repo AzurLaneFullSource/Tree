@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardFurniture", import("..map.CourtYardDepthItem"))
+local var0_0 = class("CourtYardFurniture", import("..map.CourtYardDepthItem"))
 
 var0_0.STATE_IDLE = 1
 var0_0.STATE_DRAG = 2

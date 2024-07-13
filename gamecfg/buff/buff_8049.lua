@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "队伍伤害提高30%",
 	init_effect = "jinengchufared",

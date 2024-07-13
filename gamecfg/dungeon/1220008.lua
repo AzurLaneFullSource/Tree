@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 1170008,
 	map_id = 10001,
 	bgm = "ai-fb-inst",

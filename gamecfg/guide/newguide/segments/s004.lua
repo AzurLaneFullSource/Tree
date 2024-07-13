@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Let's add your new ship to your <color=#ff7d36>formation</color>.",
 	"Keep in mind that <color=#ffde38>destroyers, light cruisers, and heavy cruisers</color> may only be deployed to your team's vanguard!",
 	"<color=#ffde38>Carriers and battleships</color> must be placed towards the back in the main fleet.",

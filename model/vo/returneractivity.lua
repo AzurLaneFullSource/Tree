@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ReturnerActivity", import(".Activity"))
+local var0_0 = class("ReturnerActivity", import(".Activity"))
 
 var0_0.TYPE_INVITER = 1
 var0_0.TYPE_RETURNER = 2

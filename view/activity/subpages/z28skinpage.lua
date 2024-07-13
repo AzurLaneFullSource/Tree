@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Z28SkinPage", import(".NewYearSnackPage"))
+local var0_0 = class("Z28SkinPage", import(".NewYearSnackPage"))
 
 function var0_0.OnDataSetting(arg0_1)
 	local var0_1 = arg0_1.activity:getConfig("config_id")

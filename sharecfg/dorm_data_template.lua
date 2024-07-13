@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.dorm_data_template = {
 	{
 		name = "Lv. 1 Room",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AprilFoolDiscovery2024Page", import(".AprilFoolDiscoveryRePage"))
+local var0_0 = class("AprilFoolDiscovery2024Page", import(".AprilFoolDiscoveryRePage"))
 local var1_0 = "goldenawake"
 
 function var0_0.OnInit(arg0_1)

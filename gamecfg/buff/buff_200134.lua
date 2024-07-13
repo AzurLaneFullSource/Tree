@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "Bossbomb",
 	name = "2022莱莎联动EX 二阶段血量监听",
 	time = 3,

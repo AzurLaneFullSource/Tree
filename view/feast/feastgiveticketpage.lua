@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FeastGiveTicketPage", import(".FeastGiveGiftPage"))
+local var0_0 = class("FeastGiveTicketPage", import(".FeastGiveGiftPage"))
 
 function var0_0.BindEvents(arg0_1)
 	arg0_1.eventId = arg0_1:bind(FeastScene.ON_GOT_TICKET, function(arg0_2, arg1_2)

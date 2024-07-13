@@ -1,4 +1,4 @@
-﻿local var0_0 = class("HoloLiveLinkGameMediator", import(".MiniHubMediator"))
+local var0_0 = class("HoloLiveLinkGameMediator", import(".MiniHubMediator"))
 
 function var0_0.handleNotification(arg0_1, arg1_1)
 	local var0_1 = arg1_1:getName()

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ItemInfoMediator", import("..base.ContextMediator"))
+local var0_0 = class("ItemInfoMediator", import("..base.ContextMediator"))
 
 var0_0.USE_ITEM = "ItemInfoMediator:USE_ITEM"
 var0_0.COMPOSE_ITEM = "ItemInfoMediator:COMPOSE_ITEM"

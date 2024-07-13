@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Dorm3dGiftMediator", import("view.base.ContextMediator"))
+local var0_0 = class("Dorm3dGiftMediator", import("view.base.ContextMediator"))
 
 var0_0.GIVE_GIFT = "Dorm3dGiftMediator.GIVE_GIFT"
 var0_0.DO_TALK = "Dorm3dGiftMediator.DO_TALK"

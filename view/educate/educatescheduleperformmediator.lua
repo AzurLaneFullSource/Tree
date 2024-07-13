@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateSchedulePerformMediator", import(".base.EducateContextMediator"))
+local var0_0 = class("EducateSchedulePerformMediator", import(".base.EducateContextMediator"))
 
 var0_0.WEEKDAY_UPDATE = "WEEKDAY_UPDATE"
 

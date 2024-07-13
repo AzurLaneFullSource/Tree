@@ -1,4 +1,4 @@
-﻿local var0_0 = require("Mgr/Pool/PoolUtil")
+local var0_0 = require("Mgr/Pool/PoolUtil")
 local var1_0 = class("PoolPlural")
 local var2_0 = "UnityEngine.GameObject"
 

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushConst")
+local var0_0 = class("BossRushConst")
 
 function var0_0.GetPassedLayer(arg0_1)
 	return switch(arg0_1, {

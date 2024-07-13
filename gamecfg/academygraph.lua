@@ -1,4 +1,4 @@
-﻿AcademyGraph = {
+AcademyGraph = {
 	Points = {
 		[2] = {
 			x = 66,

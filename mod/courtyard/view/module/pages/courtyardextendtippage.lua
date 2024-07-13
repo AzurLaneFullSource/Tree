@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardExtendTipPage", import(".CourtYardBaseSubPage"))
+local var0_0 = class("CourtYardExtendTipPage", import(".CourtYardBaseSubPage"))
 
 function var0_0.getUIName(arg0_1)
 	return "CourtYardExtendTipUI"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CookGameView", import("..BaseMiniGameView"))
+local var0_0 = class("CookGameView", import("..BaseMiniGameView"))
 local var1_0 = "bar-soft"
 local var2_0 = "event:/ui/ddldaoshu2"
 local var3_0 = "event:/ui/break_out_full"

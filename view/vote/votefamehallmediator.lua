@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VoteFameHallMediator", import("..base.ContextMediator"))
+local var0_0 = class("VoteFameHallMediator", import("..base.ContextMediator"))
 
 var0_0.ON_SUBMIT_TASK = "VoteFameHallMediator:ON_SUBMIT_TASK"
 

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AcademyCourse", import(".BaseVO"))
+local var0_0 = class("AcademyCourse", import(".BaseVO"))
 
 var0_0.MaxStudyTime = 43200
 

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChangeChatRoomCommand", pm.SimpleCommand)
+local var0_0 = class("ChangeChatRoomCommand", pm.SimpleCommand)
 local var1_0 = 99
 
 function var0_0.execute(arg0_1, arg1_1)

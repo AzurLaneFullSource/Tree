@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildBossMission", import("...BaseVO"))
+local var0_0 = class("GuildBossMission", import("...BaseVO"))
 
 var0_0.MAIN_FLEET_ID = 1
 var0_0.SUB_FLEET_ID = 11

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023俾斯麦Z活动 一阶段俾斯麦本体被击破直接算作胜利",
 	time = 0.1,

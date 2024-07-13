@@ -1,4 +1,4 @@
-﻿return {
+return {
 	tilewidth = 138,
 	name = "Character",
 	spacing = 0,

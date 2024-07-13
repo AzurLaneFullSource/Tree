@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "gantanhao",
 	name = "测试特效使用",
 	time = 60,

@@ -1,4 +1,4 @@
-ï»¿local var0_0 = class("WorldMediaCollectionFileDetailLayer", import(".WorldMediaCollectionSubLayer"))
+local var0_0 = class("WorldMediaCollectionFileDetailLayer", import(".WorldMediaCollectionSubLayer"))
 
 function var0_0.getUIName(arg0_1)
 	return "WorldMediaCollectionFileDetailUI"
@@ -415,7 +415,7 @@ function var0_0.SplitRichAndLetters(arg0_22)
 	local var13_22 = 1
 
 	while true do
-		local var14_22, var15_22 = string.find(arg0_22, "[\x01-\x7F\xC2-\xF4][\x80-\xBF]*", var11_22)
+		local var14_22, var15_22 = string.find(arg0_22, "[\x01-\x7FÂ-ô][€-¿]*", var11_22)
 
 		if not var15_22 then
 			var10_22[#var10_22 + 1] = {

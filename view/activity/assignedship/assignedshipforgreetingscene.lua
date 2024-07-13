@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AssignedShipForGreetingScene", import(".BaseAssignedShipScene"))
+local var0_0 = class("AssignedShipForGreetingScene", import(".BaseAssignedShipScene"))
 local var1_0 = {
 	select_panel_7 = {
 		Vector2(80, -110),

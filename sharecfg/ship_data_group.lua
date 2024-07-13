@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.ship_data_group = setmetatable({
 	__name = "ship_data_group",
 	get_id_list_by_group_type = {

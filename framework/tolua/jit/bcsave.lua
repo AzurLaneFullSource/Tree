@@ -1,4 +1,4 @@
-﻿local var0_0 = require("jit")
+local var0_0 = require("jit")
 
 assert(var0_0.version_num == 20100, "LuaJIT core/library version mismatch")
 

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "2022武藏活动 SP 武藏转阶段血量监听",
 	init_effect = "",

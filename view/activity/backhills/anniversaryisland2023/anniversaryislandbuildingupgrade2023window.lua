@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AnniversaryIslandBuildingUpgrade2023Window", import("view.base.BaseUI"))
+local var0_0 = class("AnniversaryIslandBuildingUpgrade2023Window", import("view.base.BaseUI"))
 
 function var0_0.getUIName(arg0_1)
 	return "AnniversaryIslandBuildingUpgrade2023Window"

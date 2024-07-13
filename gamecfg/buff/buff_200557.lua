@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "克莱蒙梭剧情战第一波埃塞克斯支援弹条",
 	time = 3,

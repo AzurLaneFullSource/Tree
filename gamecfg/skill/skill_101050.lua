@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "十字缔结",
 	cd = 0,

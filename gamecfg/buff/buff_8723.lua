@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "英系v2潜艇减伤护盾-精英人形",
 	time = 15,

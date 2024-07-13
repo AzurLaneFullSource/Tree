@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023俾斯麦Z活动 革律翁解除合体去除代替承伤效果",
 	time = 1,

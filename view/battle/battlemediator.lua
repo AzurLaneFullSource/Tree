@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleMediator", import("..base.ContextMediator"))
+local var0_0 = class("BattleMediator", import("..base.ContextMediator"))
 
 var0_0.ON_BATTLE_RESULT = "BattleMediator:ON_BATTLE_RESULT"
 var0_0.ON_PAUSE = "BattleMediator:ON_PAUSE"

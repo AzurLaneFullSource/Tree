@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.ship_skin_template = setmetatable({
 	__name = "ship_skin_template",
 	get_id_list_by_ship_group = {

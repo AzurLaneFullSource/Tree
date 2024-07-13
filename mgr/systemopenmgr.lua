@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.SystemOpenMgr = singletonClass("SystemOpenMgr")
 
 local var0_0 = pg.SystemOpenMgr

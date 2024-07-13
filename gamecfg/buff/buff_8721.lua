@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 30,
 	name = "2020英系活动 鱼雷护盾",
 	init_effect = "",

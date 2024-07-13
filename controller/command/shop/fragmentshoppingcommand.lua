@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FragmentShoppingCommand", pm.SimpleCommand)
+local var0_0 = class("FragmentShoppingCommand", pm.SimpleCommand)
 
 var0_0.FRAG_SHOP = 2
 var0_0.FRAG_NORMAL_SHOP = 3

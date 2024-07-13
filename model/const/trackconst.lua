@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TrackConst")
+local var0_0 = class("TrackConst")
 
 function var0_0.GetTrackData(arg0_1, arg1_1, ...)
 	return {

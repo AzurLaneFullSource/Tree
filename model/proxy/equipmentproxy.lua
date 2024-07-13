@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EquipmentProxy", import(".NetProxy"))
+local var0_0 = class("EquipmentProxy", import(".NetProxy"))
 
 var0_0.EQUIPMENT_UPDATED = "equipment updated"
 var0_0.EQUIPMENT_SKIN_UPDATED = "equipment skin updated"

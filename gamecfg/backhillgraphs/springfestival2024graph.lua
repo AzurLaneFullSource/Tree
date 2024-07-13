@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	Points = {
 		{
 			x = 650.7216,

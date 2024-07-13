@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OtherWorldTempleAward")
+local var0_0 = class("OtherWorldTempleAward")
 local var1_0 = "other_world_temple_award_last"
 local var2_0 = "other_world_temple_award_title_1"
 local var3_0 = "other_world_temple_award_title_2"

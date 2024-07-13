@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"All you need do is complete these missions, and the skill will automatically gain EXP.",
 	"On one hand, you can only level their skills one at a time. But on the other, you can level one skill per individual ship at the same time!",
 	"Each ship can only gain up to 30,000 skill EXP a day. On the plus side, the first 60% of that EXP will accumulate twice as fast!"

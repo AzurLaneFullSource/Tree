@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardBaseSubPage")
+local var0_0 = class("CourtYardBaseSubPage")
 
 var0_0.STATES = {
 	DESTROY = 5,

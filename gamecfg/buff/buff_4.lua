@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "损害管制",
 	time = 0,

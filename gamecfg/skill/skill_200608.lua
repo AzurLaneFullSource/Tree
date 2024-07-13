@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 200608,
 	name = "2023云仙活动 EX 黑龙次数盾监听",
 	cd = 0,

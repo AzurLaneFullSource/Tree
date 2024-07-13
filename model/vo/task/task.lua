@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Task", import("..BaseVO"))
+local var0_0 = class("Task", import("..BaseVO"))
 
 var0_0.TYPE_SCENARIO = 1
 var0_0.TYPE_BRANCH = 2

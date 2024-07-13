@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SelectSkinLayer", import(".SkinAtlasScene"))
+local var0_0 = class("SelectSkinLayer", import(".SkinAtlasScene"))
 
 var0_0.MODE_SELECT = 1
 var0_0.MODE_VIEW = 2

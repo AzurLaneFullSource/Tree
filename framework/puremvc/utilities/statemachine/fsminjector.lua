@@ -1,4 +1,4 @@
-﻿local var0_0 = import("...patterns.observer.Notifier")
+local var0_0 = import("...patterns.observer.Notifier")
 local var1_0 = class("FSMInjector", var0_0)
 local var2_0 = import(".StateMachine")
 local var3_0 = import(".State")

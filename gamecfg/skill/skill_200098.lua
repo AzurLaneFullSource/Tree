@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022异世界勇者活动 带魔王召唤自爆船",
 	painting = 0,

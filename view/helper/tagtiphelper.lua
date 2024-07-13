@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TagTipHelper")
+local var0_0 = class("TagTipHelper")
 
 function var0_0.FuDaiTagTip(arg0_1)
 	triggerToggle(arg0_1, false)

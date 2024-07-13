@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MetaCharacterEnergyLayer", import("...base.BaseUI"))
+local var0_0 = class("MetaCharacterEnergyLayer", import("...base.BaseUI"))
 local var1_0 = pg.ship_meta_breakout
 
 function var0_0.getUIName(arg0_1)

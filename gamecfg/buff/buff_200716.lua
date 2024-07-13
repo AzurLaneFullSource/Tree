@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑基洛夫BOSS战 彗星 冷冻雾气范围内减速",
 	time = 0,

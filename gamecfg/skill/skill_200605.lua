@@ -1,4 +1,4 @@
-﻿return {
+return {
 	focus_duration = 1,
 	name = "2023云仙活动 剧情战 云仙蓄力斩",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ResolveEquipmentMediator", import("..base.ContextMediator"))
+local var0_0 = class("ResolveEquipmentMediator", import("..base.ContextMediator"))
 
 var0_0.ON_RESOLVE = "ResolveEquipmentMediator:ON_RESOLVE"
 

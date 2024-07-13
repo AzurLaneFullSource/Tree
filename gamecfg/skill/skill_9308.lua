@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "白龙剧情战 特殊混合弹幕 技能弹条",
 	cd = 0,

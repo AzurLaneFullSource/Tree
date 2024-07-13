@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardThemeOwner", import("model.vo.Player"))
+local var0_0 = class("CourtYardThemeOwner", import("model.vo.Player"))
 
 function var0_0.GetName(arg0_1)
 	if getProxy(PlayerProxy):getRawData():ShouldCheckCustomName() then

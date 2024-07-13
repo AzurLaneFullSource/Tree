@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 5015,
 	bgm = "battle-boss-4",
 	stages = {

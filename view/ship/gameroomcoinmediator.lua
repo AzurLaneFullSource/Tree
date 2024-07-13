@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GameRoomCoinMediator", import("..base.ContextMediator"))
+local var0_0 = class("GameRoomCoinMediator", import("..base.ContextMediator"))
 
 var0_0.CHANGE_VISIBLE = "GameRoomCoinMediator:CHANGE_VISIBLE"
 var0_0.CHANGE_COIN_NUM = "GameRoomCoinMediator:CHANGE COIN COUNT"

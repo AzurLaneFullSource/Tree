@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewCardPuzzleResultGradePage", import("..NewBattleResultGradePage"))
+local var0_0 = class("NewCardPuzzleResultGradePage", import("..NewBattleResultGradePage"))
 
 function var0_0.LoadBG(arg0_1, arg1_1)
 	local var0_1 = "CommonBg"

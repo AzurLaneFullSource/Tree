@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	BLACK_HOLE_RANGE = 2,
 	DECOY_RANGE = 5,
 	TIME_INTERVAL = 0.0166666666666667,

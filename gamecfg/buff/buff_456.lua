@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "复仇专属破甲",
 	time = 8,

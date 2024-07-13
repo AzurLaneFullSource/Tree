@@ -1,4 +1,4 @@
-﻿require("Framework.Protobuf.containers")
+require("Framework.Protobuf.containers")
 require("Framework.Protobuf.wire_format")
 require("Framework.Protobuf.encoder")
 require("Framework.Protobuf.decoder")

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "DOA联动复刻 EX2 使另一个BOSS进入狂暴状态",
 	init_effect = "",

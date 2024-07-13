@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "无畏SB2C对战列战巡航战破甲",
 	time = 1,

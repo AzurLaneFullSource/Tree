@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushPassedLayer", import("view.challenge.ChallengePassedLayer"))
+local var0_0 = class("BossRushPassedLayer", import("view.challenge.ChallengePassedLayer"))
 
 var0_0.GROW_TIME = 0.55
 

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.fleet_tech_template = {
 	[1001] = {
 		cost = 1000,

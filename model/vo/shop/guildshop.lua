@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildShop", import(".BaseShop"))
+local var0_0 = class("GuildShop", import(".BaseShop"))
 
 var0_0.AUTO_REFRESH = 1
 var0_0.MANUAL_REFRESH = 2

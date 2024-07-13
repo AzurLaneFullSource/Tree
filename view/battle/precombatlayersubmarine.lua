@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PreCombatLayerSubmarine", import(".PreCombatLayer"))
+local var0_0 = class("PreCombatLayerSubmarine", import(".PreCombatLayer"))
 local var1_0 = import("..ship.FormationUI")
 
 function var0_0.init(arg0_1)

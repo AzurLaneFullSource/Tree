@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityFleetPanel", import("..level.LevelEliteFleetPanel"))
+local var0_0 = class("ActivityFleetPanel", import("..level.LevelEliteFleetPanel"))
 
 var0_0.ON_OPEN_DOCK = "ActivityFleetPanel:ON_OPEN_DOCK"
 var0_0.ON_FLEET_RECOMMEND = "ActivityFleetPanel:ON_FLEET_RECOMMEND"

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "通用--清除弹幕（包括空袭飞机）",
 	time = 4,

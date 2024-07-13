@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PlayerSummaryInfoMediator", import("...base.ContextMediator"))
+local var0_0 = class("PlayerSummaryInfoMediator", import("...base.ContextMediator"))
 
 var0_0.GET_PLAYER_SUMMARY_INFO = "PlayerSummaryInfoMediator:GET_PLAYER_SUMMARY_INFO"
 

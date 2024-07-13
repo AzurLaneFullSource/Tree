@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseSubView", import("view.base.BaseEventLogic"))
+local var0_0 = class("BaseSubView", import("view.base.BaseEventLogic"))
 
 var0_0.STATES = {
 	DESTROY = 5,

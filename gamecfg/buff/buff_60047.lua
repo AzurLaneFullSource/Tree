@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "测试-随机技能-召唤地狱火",
 	time = 0,

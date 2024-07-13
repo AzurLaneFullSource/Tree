@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ObjectRockB", import("view.miniGame.gameView.RyzaMiniGame.object.ObjectBreakable"))
+local var0_0 = class("ObjectRockB", import("view.miniGame.gameView.RyzaMiniGame.object.ObjectBreakable"))
 
 function var0_0.FirePassability(arg0_1)
 	return arg0_1.isWater and 2 or 1

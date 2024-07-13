@@ -1,4 +1,4 @@
-﻿local var0_0 = class("StoreHouseSceneTransformVer", import("view.base.BaseUI"))
+local var0_0 = class("StoreHouseSceneTransformVer", import("view.base.BaseUI"))
 local var1_0 = require("view.equipment.EquipmentSortCfg")
 local var2_0 = 0
 

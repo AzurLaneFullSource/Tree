@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LaunchBallTaskMgr")
+local var0_0 = class("LaunchBallTaskMgr")
 
 var0_0.type_split = 1
 var0_0.type_series_split = 2

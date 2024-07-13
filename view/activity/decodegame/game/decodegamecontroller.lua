@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DecodeGameController")
+local var0_0 = class("DecodeGameController")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.model = DecodeGameModel.New(arg0_1)

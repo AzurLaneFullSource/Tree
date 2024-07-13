@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "第三阶段",
 	time = 0,

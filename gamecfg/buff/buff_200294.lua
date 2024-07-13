@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023英系活动 EX 第三波 需要打断的情况下 蓄力成功/失败监听",
 	time = 15,

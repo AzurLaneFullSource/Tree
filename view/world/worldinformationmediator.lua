@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldInformationMediator", import("..base.ContextMediator"))
+local var0_0 = class("WorldInformationMediator", import("..base.ContextMediator"))
 
 var0_0.OnTriggerTask = "WorldInformationMediator.OnTriggerTask"
 var0_0.OnSubmitTask = "WorldInformationMediator.OnSubmitTask"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FleetAIAction")
+local var0_0 = class("FleetAIAction")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.actType = arg1_1.act_type

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "运输船直线离场",
 	time = 10,

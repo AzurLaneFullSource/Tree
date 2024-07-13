@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainActLayerBtn", import(".MainBaseActivityBtn"))
+local var0_0 = class("MainActLayerBtn", import(".MainBaseActivityBtn"))
 
 function var0_0.GetEventName(arg0_1)
 	return "event_layer"

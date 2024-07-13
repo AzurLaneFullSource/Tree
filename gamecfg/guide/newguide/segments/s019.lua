@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Weapons enhanced! Firepower increased!！！",
 	"Tap back to stop viewing character details.",
 	"Tap back to leave the dock."

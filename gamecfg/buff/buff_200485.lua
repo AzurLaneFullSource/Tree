@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023意大利共斗 H难度 召唤大型沙尘龙卷-持续追踪",
 	time = 3,

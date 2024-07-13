@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.world_stage_template = {
 	{
 		fleet_num = 2,

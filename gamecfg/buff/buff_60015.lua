@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "Darkness",
 	name = "测试-海伦娜-标记",
 	time = 10,

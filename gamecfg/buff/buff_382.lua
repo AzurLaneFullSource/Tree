@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "布里斯托尔调查",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.property_data_template = {
 	durability = {
 		view = "durability",

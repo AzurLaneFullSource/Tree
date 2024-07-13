@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "鱼雷防御盾",
 	name = "鱼雷防御盾",
 	init_effect = "",

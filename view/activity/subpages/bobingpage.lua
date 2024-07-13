@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BobingPage", import("...base.BaseActivityPage"))
+local var0_0 = class("BobingPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
 	if PLATFORM_CODE == PLATFORM_CHT or PLATFORM_CODE == PLATFORM_CH then

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "潜艇水面减伤（上浮/下沉间隔20秒） 起始间隔21秒",
 	time = 25,

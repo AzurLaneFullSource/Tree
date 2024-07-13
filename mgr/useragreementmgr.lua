@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.UserAgreementMgr = singletonClass("UserAgreementMgr")
 
 local var0_0 = pg.UserAgreementMgr

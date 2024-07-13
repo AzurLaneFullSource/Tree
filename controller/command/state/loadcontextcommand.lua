@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LoadContextCommand", pm.SimpleCommand)
+local var0_0 = class("LoadContextCommand", pm.SimpleCommand)
 
 var0_0.queue = {}
 

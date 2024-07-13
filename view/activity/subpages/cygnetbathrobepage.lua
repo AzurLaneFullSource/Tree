@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CygnetBathrobePage", import("...base.BaseActivityPage"))
+local var0_0 = class("CygnetBathrobePage", import("...base.BaseActivityPage"))
 
 var0_0.MAX_COUNT = 7
 

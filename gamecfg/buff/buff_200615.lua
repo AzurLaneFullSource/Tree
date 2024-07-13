@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023 主线15-4 三阶段亡语",
 	time = 0,

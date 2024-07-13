@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 4001201,
 	bgm = "story-french2",
 	stages = {

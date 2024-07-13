@@ -1,4 +1,4 @@
-﻿ys = ys or {}
+ys = ys or {}
 ys.Story = ys.Story or {}
 ys.Story.NodeData = class("NodeData")
 

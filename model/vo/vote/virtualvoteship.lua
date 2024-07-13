@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VirtualVoteShip", import(".VoteShip"))
+local var0_0 = class("VirtualVoteShip", import(".VoteShip"))
 
 function var0_0.GenConfigId(arg0_1, arg1_1)
 	return arg1_1

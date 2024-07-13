@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FountainBuiding", import(".NavalAcademyBuilding"))
+local var0_0 = class("FountainBuiding", import(".NavalAcademyBuilding"))
 
 function var0_0.GetGameObjectName(arg0_1)
 	return "fountain"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TianHouSkinPage", import("...base.BaseActivityPage"))
+local var0_0 = class("TianHouSkinPage", import("...base.BaseActivityPage"))
 local var1_0 = {
 	[0] = {
 		color = "ffffff",

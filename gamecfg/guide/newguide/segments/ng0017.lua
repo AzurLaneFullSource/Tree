@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"世界boss引导占位"
 }
 

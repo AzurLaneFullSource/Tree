@@ -1,1 +1,1 @@
-﻿return (class("HakuryuuTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage")))
+return (class("HakuryuuTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage")))

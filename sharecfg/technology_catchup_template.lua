@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.technology_catchup_template = {
 	{
 		obtain_max = 300,

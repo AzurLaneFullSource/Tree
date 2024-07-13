@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.mini_game_hub = {
 	{
 		reward = 91494,

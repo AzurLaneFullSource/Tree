@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PlayerVitaeDockyardScene", import("view.ship.DockyardScene"))
+local var0_0 = class("PlayerVitaeDockyardScene", import("view.ship.DockyardScene"))
 
 function var0_0.SortShips(arg0_1, arg1_1)
 	local var0_1 = getProxy(PlayerProxy):getRawData().characters

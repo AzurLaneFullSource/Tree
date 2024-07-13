@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSMapTransform", import(".WSMapObject"))
+local var0_0 = class("WSMapTransform", import(".WSMapObject"))
 
 var0_0.Fields = {
 	transform = "userdata",

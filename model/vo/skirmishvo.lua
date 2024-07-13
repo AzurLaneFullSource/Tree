@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SkirmishVO", import(".BaseVO"))
+local var0_0 = class("SkirmishVO", import(".BaseVO"))
 
 var0_0.TypeStoryOrExpedition = 1
 var0_0.TypeChapter = 2

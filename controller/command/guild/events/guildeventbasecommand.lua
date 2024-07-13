@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildEventBaseCommand", pm.SimpleCommand)
+local var0_0 = class("GuildEventBaseCommand", pm.SimpleCommand)
 
 function var0_0.ExistGuild(arg0_1)
 	if not getProxy(GuildProxy):getRawData() then

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MaoxiV4FramePage", import(".TemplatePage.NewFrameTemplatePage"))
+local var0_0 = class("MaoxiV4FramePage", import(".TemplatePage.NewFrameTemplatePage"))
 
 var0_0.COLOR = "#1895ff"
 

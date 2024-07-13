@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainUrShipReFetchSequence", import("...base.ContextMediator"))
+local var0_0 = class("MainUrShipReFetchSequence", import("...base.ContextMediator"))
 
 var0_0.ON_TIME_UP = "MainUrShipReFetchSequence:ON_TIME_UP"
 

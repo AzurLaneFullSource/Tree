@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_single_event = {
 	[1001] = {
 		story_type = 1,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FleetSkill", import(".BaseVO"))
+local var0_0 = class("FleetSkill", import(".BaseVO"))
 
 var0_0.SystemCommanderNeko = 1
 var0_0.TypeMoveSpeed = "move_speed"

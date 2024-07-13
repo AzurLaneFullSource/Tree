@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LaunchBallPlayerControl")
+local var0_0 = class("LaunchBallPlayerControl")
 local var1_0 = {
 	{
 		id = 1,

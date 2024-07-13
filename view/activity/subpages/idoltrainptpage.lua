@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IdolTrainPtPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("IdolTrainPtPage", import(".TemplatePage.PtTemplatePage"))
 local var1_0 = {
 	"dafeng_idol",
 	"tashigan_idol",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildViewMissionNode")
+local var0_0 = class("GuildViewMissionNode")
 local var1_0 = 200
 local var2_0 = 150
 local var3_0 = 100

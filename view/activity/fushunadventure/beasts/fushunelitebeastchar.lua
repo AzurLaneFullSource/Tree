@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FushunEliteBeastChar", import(".FushunBeastChar"))
+local var0_0 = class("FushunEliteBeastChar", import(".FushunBeastChar"))
 
 function var0_0.Hurt(arg0_1, arg1_1)
 	if arg0_1:IsDeath() or arg0_1:IsEscape() then

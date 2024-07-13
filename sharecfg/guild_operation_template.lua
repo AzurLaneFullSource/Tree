@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.guild_operation_template = {
 	{
 		consume = 1000,

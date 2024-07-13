@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RefluxRequestDataCommand", pm.SimpleCommand)
+local var0_0 = class("RefluxRequestDataCommand", pm.SimpleCommand)
 
 function var0_0.execute(arg0_1)
 	pg.ConnectionMgr.GetInstance():Send(11751, {

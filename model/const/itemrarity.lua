@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ItemRarity")
+local var0_0 = class("ItemRarity")
 
 var0_0.Gray = 1
 var0_0.Blue = 2

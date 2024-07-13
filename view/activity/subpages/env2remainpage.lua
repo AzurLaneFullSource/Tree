@@ -1,1 +1,1 @@
-﻿return (class("ENV2ReMainPage", import(".TemplatePage.PreviewTemplatePage")))
+return (class("ENV2ReMainPage", import(".TemplatePage.PreviewTemplatePage")))

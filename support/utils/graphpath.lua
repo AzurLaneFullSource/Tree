@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GraphPath")
+local var0_0 = class("GraphPath")
 
 GraphPath = var0_0
 

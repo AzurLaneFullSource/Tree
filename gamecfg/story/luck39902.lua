@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "LUCK39902",
 	mode = 2,
 	fadein = 1.5,

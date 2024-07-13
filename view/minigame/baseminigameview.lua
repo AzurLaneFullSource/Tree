@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BaseMiniGameView", import("..base.BaseUI"))
+local var0_0 = class("BaseMiniGameView", import("..base.BaseUI"))
 
 function var0_0.SetExtraData(arg0_1, arg1_1)
 	arg0_1.mg_extraData = arg1_1

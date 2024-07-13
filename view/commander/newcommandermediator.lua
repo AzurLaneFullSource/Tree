@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewCommanderMediator", import("..base.ContextMediator"))
+local var0_0 = class("NewCommanderMediator", import("..base.ContextMediator"))
 
 var0_0.ON_LOCK = "NewCommanderMediator:ON_LOCK"
 

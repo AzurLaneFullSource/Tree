@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Tap to open the Gear R&D interface.",
 	"Here, you can view the R&D pathways for the various pieces of gear you have.",
 	"Drag the screen to view the possible products of each R&D pathway.",

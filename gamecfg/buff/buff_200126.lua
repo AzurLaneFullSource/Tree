@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022莱莎联动 侵蚀之手命中 毒奶效果",
 	time = 15,

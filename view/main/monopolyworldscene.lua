@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MonopolyWorldScene", import("..base.BaseUI"))
+local var0_0 = class("MonopolyWorldScene", import("..base.BaseUI"))
 
 var0_0.ON_START = "MonopolyGame:ON_START"
 var0_0.ON_MOVE = "MonopolyGame:ON_MOVE"

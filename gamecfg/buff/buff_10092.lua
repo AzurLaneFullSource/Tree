@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 8,
 	name = "我是NO.1！-SPBUFF",
 	init_effect = "jinengchufablue",

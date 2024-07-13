@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023关岛活动 UDF维修中心回血光环",
 	cd = 0,

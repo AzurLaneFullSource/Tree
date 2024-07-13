@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpringActivity", import("model.vo.Activity"))
+local var0_0 = class("SpringActivity", import("model.vo.Activity"))
 
 var0_0.ActivityType = ActivityConst.ACTIVITY_TYPE_HOTSPRING
 var0_0.OPERATION_UNLOCK = 1

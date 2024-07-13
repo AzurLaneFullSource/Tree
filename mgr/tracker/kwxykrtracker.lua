@@ -1,4 +1,4 @@
-﻿local var0_0 = class("KwxyKrTracker")
+local var0_0 = class("KwxyKrTracker")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	return

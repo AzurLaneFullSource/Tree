@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "旗舰光环特效",
 	time = 1,

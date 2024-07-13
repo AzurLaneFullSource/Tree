@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.mail_storeroom = {
 	{
 		oil_store = 600000,

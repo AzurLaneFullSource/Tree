@@ -1,4 +1,4 @@
-﻿function tf(arg0_1)
+function tf(arg0_1)
 	return arg0_1.transform
 end
 

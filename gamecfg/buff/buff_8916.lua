@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "布里斯托尔共斗 阶段叠加buff",
 	init_effect = "jinengchufared",

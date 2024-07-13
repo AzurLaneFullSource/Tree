@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.soundstory_template = {
 	{
 		CV_JP = "Manaka Iwami",

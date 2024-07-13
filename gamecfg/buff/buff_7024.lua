@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "序章欧根撤退",
 	time = 0,

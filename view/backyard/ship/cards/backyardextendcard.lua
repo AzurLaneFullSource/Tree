@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardExtendCard", import(".BackYardBaseCard"))
+local var0_0 = class("BackYardExtendCard", import(".BackYardBaseCard"))
 
 function var0_0.OnInit(arg0_1)
 	onButton(arg0_1, arg0_1._content, function()

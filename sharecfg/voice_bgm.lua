@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.voice_bgm = {
 	ActivityMainScene = {
 		default_bgm = "main",

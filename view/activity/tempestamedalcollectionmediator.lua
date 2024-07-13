@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TempestaMedalCollectionMediator", import("..base.ContextMediator"))
+local var0_0 = class("TempestaMedalCollectionMediator", import("..base.ContextMediator"))
 
 var0_0.ON_TASK_SUBMIT = "TempestaMedalCollectionMediator.ON_TASK_SUBMIT"
 var0_0.ON_TASK_GO = "TempestaMedalCollectionMediator.ON_TASK_GO"

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022武藏活动 EX 天碍震星释放",
 	cd = 0,

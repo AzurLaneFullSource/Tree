@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CryptolaliaVedioPlayer")
+local var0_0 = class("CryptolaliaVedioPlayer")
 local var1_0 = 1
 local var2_0 = 2
 local var3_0 = 3

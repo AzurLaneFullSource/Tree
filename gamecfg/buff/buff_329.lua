@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黎塞留特殊标记燃烧",
 	time = 30,

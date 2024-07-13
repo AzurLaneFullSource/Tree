@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "装填号令",
 	cd = 0,

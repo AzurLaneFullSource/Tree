@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "华盛顿条约",
 	time = 0,

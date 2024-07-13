@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSCarryItem", import(".WSMapTransform"))
+local var0_0 = class("WSCarryItem", import(".WSMapTransform"))
 
 var0_0.Fields = {
 	wsMapPath = "table",

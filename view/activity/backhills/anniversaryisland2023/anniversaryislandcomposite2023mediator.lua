@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AnniversaryIslandComposite2023Mediator", import("view.base.ContextMediator"))
+local var0_0 = class("AnniversaryIslandComposite2023Mediator", import("view.base.ContextMediator"))
 
 var0_0.OPEN_FORMULA = "OPEN_FORMULA"
 var0_0.OPEN_STOREHOUSE = "AnniversaryIslandComposite2023Mediator:OPEN_STOREHOUSE"

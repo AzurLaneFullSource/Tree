@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023克莱蒙梭B1 BOSS浮游炮召唤",
 	cd = 0,

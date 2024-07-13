@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "天与海的观测者",
 	cd = 0,

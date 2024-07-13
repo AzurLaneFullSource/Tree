@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022美系活动d3 精英浮游炮召唤",
 	cd = 0,

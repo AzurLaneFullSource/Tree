@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpringFestival2023Scene", import("..TemplateMV.BackHillTemplate"))
+local var0_0 = class("SpringFestival2023Scene", import("..TemplateMV.BackHillTemplate"))
 
 var0_0.Id2EffectName = {
 	[70114] = "yanhua_xiaojiajia",

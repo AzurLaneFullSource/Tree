@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Dorm3dFurniture", import("model.vo.BaseVO"))
+local var0_0 = class("Dorm3dFurniture", import("model.vo.BaseVO"))
 
 var0_0.TYPE = {
 	DECORATION = 3,

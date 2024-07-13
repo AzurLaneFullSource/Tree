@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EmojiLayer", import("..base.BaseUI"))
+local var0_0 = class("EmojiLayer", import("..base.BaseUI"))
 
 var0_0.PageEmojiNums = 8
 var0_0.Frequently_Used_Emoji_Num = 6

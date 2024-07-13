@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ApartmentProxy", import(".NetProxy"))
+local var0_0 = class("ApartmentProxy", import(".NetProxy"))
 
 var0_0.UPDATE_APARTMENT = "ApartmentProxy.UPDATE_APARTMENT"
 var0_0.UPDATE_GIFT_COUNT = "ApartmentProxy.UPDATE_GIFT_COUNT"

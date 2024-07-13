@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Nation")
+local var0_0 = class("Nation")
 
 var0_0.CM = 0
 var0_0.US = 1

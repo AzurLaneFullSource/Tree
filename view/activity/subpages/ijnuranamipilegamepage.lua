@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IJNUranamiPileGamePage", import("view.base.BaseActivityPage"))
+local var0_0 = class("IJNUranamiPileGamePage", import("view.base.BaseActivityPage"))
 
 var0_0.MINIGAME_HUB_ID = 39
 var0_0.MINIGAME_ID = 47

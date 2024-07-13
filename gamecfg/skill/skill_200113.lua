@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2022莱莎联动 SP净化者召唤小怪 组合1",
 	painting = 0,

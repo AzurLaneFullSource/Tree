@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ReturnAwardPage", import("...base.BaseActivityPage"))
+local var0_0 = class("ReturnAwardPage", import("...base.BaseActivityPage"))
 
 var0_0.INVITER = 1
 var0_0.RETURNER = 2

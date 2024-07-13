@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipSkinProxy", import(".NetProxy"))
+local var0_0 = class("ShipSkinProxy", import(".NetProxy"))
 
 var0_0.SHIP_SKINS_UPDATE = "ship skins update"
 var0_0.SHIP_SKIN_EXPIRED = "ship skin expired"

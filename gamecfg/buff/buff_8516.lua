@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "挑战关卡第8关双盾无法击破",
 	time = 0,

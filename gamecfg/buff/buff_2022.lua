@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "装填号令",
 	time = 15,

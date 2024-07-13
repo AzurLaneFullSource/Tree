@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024偶像活动三期 花青素Cyanidin组合 BUFF",
 	time = 13,

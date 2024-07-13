@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainBattleBtn", import(".MainBaseBtn"))
+local var0_0 = class("MainBattleBtn", import(".MainBaseBtn"))
 
 function var0_0.OnClick(arg0_1)
 	local var0_1 = getProxy(ChapterProxy):getActiveChapter()

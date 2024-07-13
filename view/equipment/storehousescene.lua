@@ -1,4 +1,4 @@
-﻿local var0_0 = class("StoreHouseScene", import("view.base.BaseUI"))
+local var0_0 = class("StoreHouseScene", import("view.base.BaseUI"))
 local var1_0 = 1
 local var2_0 = 0
 local var3_0 = 1

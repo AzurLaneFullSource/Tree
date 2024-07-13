@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "S008",
 	mode = 1,
 	occlusion = 2,

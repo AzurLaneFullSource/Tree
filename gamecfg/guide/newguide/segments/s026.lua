@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Commander, please Tap <color=#ff7d36>Attack</color>",
 	"Our fleet is even more perfect now~! We can definitely take down Hornet!",
 	"Tap <color=#ff7d36>Battle</color> to start the battle!"

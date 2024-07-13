@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	[Vector3] = 1,
 	[Quaternion] = 2,
 	[Vector2] = 3,

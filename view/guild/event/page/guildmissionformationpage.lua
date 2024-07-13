@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildMissionFormationPage", import(".GuildEventBasePage"))
+local var0_0 = class("GuildMissionFormationPage", import(".GuildEventBasePage"))
 
 function var0_0.getUIName(arg0_1)
 	return "GuildMissionFormationPage"

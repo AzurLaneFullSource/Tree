@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑亚利桑那 替换玩家原本拥有珍珠之泪的效果",
 	time = 3,

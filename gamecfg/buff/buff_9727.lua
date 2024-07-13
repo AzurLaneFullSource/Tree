@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "主线15章 支援FLAG",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildDynamicFurniture")
+local var0_0 = class("GuildDynamicFurniture")
 
 var0_0.INTERACTION_MODE_SIT = 1
 

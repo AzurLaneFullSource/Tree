@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MailScene", import("view.base.BaseUI"))
+local var0_0 = class("MailScene", import("view.base.BaseUI"))
 local var1_0 = 592
 local var2_0 = 125
 local var3_0 = 9

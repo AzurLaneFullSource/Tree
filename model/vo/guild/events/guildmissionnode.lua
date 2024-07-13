@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildMissionNode", import("...BaseVO"))
+local var0_0 = class("GuildMissionNode", import("...BaseVO"))
 
 var0_0.STATE_DOING = 0
 var0_0.STATE_SUCCESS = 1

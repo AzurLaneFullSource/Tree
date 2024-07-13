@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "点燃缩减效果",
 	time = 0,

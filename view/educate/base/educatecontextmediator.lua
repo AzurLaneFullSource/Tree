@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateContextMediator", import("view.base.ContextMediator"))
+local var0_0 = class("EducateContextMediator", import("view.base.ContextMediator"))
 
 function var0_0.onRegister(arg0_1)
 	var0_0.super.onRegister(arg0_1)

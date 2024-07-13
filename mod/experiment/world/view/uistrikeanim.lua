@@ -1,4 +1,4 @@
-﻿local var0_0 = class("UIStrikeAnim", import(".UIAnim"))
+local var0_0 = class("UIStrikeAnim", import(".UIAnim"))
 
 var0_0.Fields = {
 	spineAnim = "userdata",

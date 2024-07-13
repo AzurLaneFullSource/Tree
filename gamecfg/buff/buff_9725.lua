@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "主线15章召唤烟幕发生蛋船",
 	time = 0,

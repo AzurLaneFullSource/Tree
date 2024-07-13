@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldShopMediator", import("view.base.ContextMediator"))
+local var0_0 = class("WorldShopMediator", import("view.base.ContextMediator"))
 
 var0_0.BUY_ITEM = "WorldShopMediator:BUY_ITEM"
 

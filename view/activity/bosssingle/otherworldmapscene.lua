@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OtherworldMapScene", import("view.activity.BossSingle.BossSingleSceneTemplate"))
+local var0_0 = class("OtherworldMapScene", import("view.activity.BossSingle.BossSingleSceneTemplate"))
 local var1_0 = "otherworld_scroll_value_x"
 local var2_0 = "otherworld_mode"
 

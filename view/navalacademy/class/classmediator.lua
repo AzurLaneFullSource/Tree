@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ClassMediator", import("...base.ContextMediator"))
+local var0_0 = class("ClassMediator", import("...base.ContextMediator"))
 
 var0_0.UPGRADE_FIELD = "ClassMediator:UPGRADE_FIELD"
 

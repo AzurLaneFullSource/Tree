@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "英仙座自带全队维修工具",
 	cd = 0,

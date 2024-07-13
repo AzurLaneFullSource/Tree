@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "塞壬潜伏者水面减伤护盾弹条",
 	cd = 0,

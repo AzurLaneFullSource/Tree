@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "皇家传奇",
 	cd = 0,

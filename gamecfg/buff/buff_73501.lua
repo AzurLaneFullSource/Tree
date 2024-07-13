@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "濒死爆发",
 	init_effect = "",

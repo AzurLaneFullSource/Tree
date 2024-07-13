@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SnapshotScene", import("..base.BaseUI"))
+local var0_0 = class("SnapshotScene", import("..base.BaseUI"))
 
 var0_0.SELECT_CHAR_PANEL = "SnapshotScene.SELECT_CHAR_PANEL"
 var0_0.SHARE_PANEL = "SnapshotScene.SHARE_PANEL"

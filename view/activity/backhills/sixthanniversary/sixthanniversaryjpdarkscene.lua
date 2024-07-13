@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SixthAnniversaryJPDarkScene", import("view.base.BaseUI"))
+local var0_0 = class("SixthAnniversaryJPDarkScene", import("view.base.BaseUI"))
 
 var0_0.STATUS_LOCK = 1
 var0_0.STATUS_FOG = 2

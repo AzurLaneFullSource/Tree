@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SculptureScene", import("view.base.BaseUI"))
+local var0_0 = class("SculptureScene", import("view.base.BaseUI"))
 
 var0_0.OPEN_GRATITUDE_PAGE = "SculptureScene:OPEN_GRATITUDE_PAGE"
 

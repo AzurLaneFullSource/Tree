@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023关岛活动EX 二阶段半血时转三阶段 瞬移回初始",
 	cd = 0,

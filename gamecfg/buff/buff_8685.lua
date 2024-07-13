@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "jinengchufared",
 	name = "法系V2加斯科涅技能弹条",
 	time = 10,

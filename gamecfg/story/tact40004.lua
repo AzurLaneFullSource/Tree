@@ -1,4 +1,4 @@
-﻿return {
+return {
 	fadeOut = 3,
 	mode = 2,
 	id = "TACT40004",

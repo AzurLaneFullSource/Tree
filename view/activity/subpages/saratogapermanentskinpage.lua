@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SaratogaPermanentSkinPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("SaratogaPermanentSkinPage", import(".TemplatePage.PtTemplatePage"))
 
 function var0_0.OnUpdateFlush(arg0_1)
 	var0_0.super.OnUpdateFlush(arg0_1)

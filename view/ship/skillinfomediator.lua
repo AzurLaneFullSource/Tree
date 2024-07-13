@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SkillInfoMediator", import("..base.ContextMediator"))
+local var0_0 = class("SkillInfoMediator", import("..base.ContextMediator"))
 
 var0_0.WARP_TO_TACTIC = "SkillInfoMediator:WARP_TO_TACTIC"
 var0_0.WARP_TO_META_TACTICS = "SkillInfoMediator:WARP_TO_METATASK"

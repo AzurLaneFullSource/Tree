@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AnniversaryIslandSpringShipSelectMediator", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringShipSelectMediator"))
+local var0_0 = class("AnniversaryIslandSpringShipSelectMediator", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringShipSelectMediator"))
 
 function var0_0.register(arg0_1)
 	arg0_1:bind(var0_0.LOOG_PRESS_SHIP, function(arg0_2, arg1_2, arg2_2)

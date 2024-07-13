@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023古立特联动复刻 TSS5 第二代 飞船被击破效果",
 	cd = 0,

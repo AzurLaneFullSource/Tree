@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewDuelResultGradePage", import("..NewBattleResultGradePage"))
+local var0_0 = class("NewDuelResultGradePage", import("..NewBattleResultGradePage"))
 
 function var0_0.UpdateChapterName(arg0_1)
 	local var0_1 = arg0_1.contextData

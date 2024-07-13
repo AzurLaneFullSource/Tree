@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ResourceFieldPercentAttr", import(".ResourceFieldProductAttr"))
+local var0_0 = class("ResourceFieldPercentAttr", import(".ResourceFieldProductAttr"))
 
 function var0_0.GetProgressDesc(arg0_1)
 	return arg0_1.value .. "%" .. "/" .. arg0_1.maxValue .. "%"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Cryptolalia", import("model.vo.BaseVO"))
+local var0_0 = class("Cryptolalia", import("model.vo.BaseVO"))
 
 var0_0.STATE_LOCK = 1
 var0_0.STATE_DOWNLOADABLE = 2

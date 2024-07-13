@@ -1,4 +1,4 @@
-﻿return {
+return {
 	CurrentIconList = {
 		1
 	},

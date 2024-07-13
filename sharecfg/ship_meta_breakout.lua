@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.ship_meta_breakout = setmetatable({
 	__name = "ship_meta_breakout",
 	all = {

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChatMsg", import(".BaseVO"))
+local var0_0 = class("ChatMsg", import(".BaseVO"))
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	assert(arg1_1, "type should be clarified.")

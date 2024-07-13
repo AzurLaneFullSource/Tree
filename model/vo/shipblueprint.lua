@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipBluePrint", import(".BaseVO"))
+local var0_0 = class("ShipBluePrint", import(".BaseVO"))
 
 var0_0.STATE_LOCK = 1
 var0_0.STATE_DEV = 2

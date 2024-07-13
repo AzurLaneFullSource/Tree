@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PlayerVitaeScene", import("..base.BaseUI"))
+local var0_0 = class("PlayerVitaeScene", import("..base.BaseUI"))
 
 var0_0.ON_PAGE_SWTICH = "PlayerVitaeScene:ON_PAGE_SWTICH"
 var0_0.PAGE_DEFAULT = 1

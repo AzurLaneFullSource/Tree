@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "通用--清除弹幕",
 	cd = 0,

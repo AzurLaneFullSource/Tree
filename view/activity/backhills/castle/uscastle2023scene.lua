@@ -1,4 +1,4 @@
-﻿local var0_0 = class("USCastle2023Scene", import("..TemplateMV.BackHillTemplate"))
+local var0_0 = class("USCastle2023Scene", import("..TemplateMV.BackHillTemplate"))
 
 var0_0.EffectName = {
 	"yanhua_01",

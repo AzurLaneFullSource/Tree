@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TerminalGuardianPage", import("view.base.BaseSubView"))
+local var0_0 = class("TerminalGuardianPage", import("view.base.BaseSubView"))
 
 var0_0.BIND_LOTTERY_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_LOTTERY_ID
 var0_0.config = pg.guardian_template

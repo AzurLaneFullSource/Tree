@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CardPuzzleCombatPauseLayer", BaseUI)
+local var0_0 = class("CardPuzzleCombatPauseLayer", BaseUI)
 
 function var0_0.getUIName(arg0_1)
 	return "CardTowerCombatPause"

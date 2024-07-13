@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SleeplessCityPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("SleeplessCityPage", import(".TemplatePage.PtTemplatePage"))
 
 var0_0.COLOR = "#BD3F40"
 

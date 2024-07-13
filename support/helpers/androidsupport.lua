@@ -1,4 +1,4 @@
-﻿PERMISSION_GRANTED = "permission_granted"
+PERMISSION_GRANTED = "permission_granted"
 PERMISSION_NEVER_REMIND = "permission_never_remind"
 PERMISSION_REJECT = "permission_reject"
 ANDROID_CAMERA_PERMISSION = "android.permission.CAMERA"

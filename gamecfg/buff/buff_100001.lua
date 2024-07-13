@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "阶段触发器",
 	time = 0,

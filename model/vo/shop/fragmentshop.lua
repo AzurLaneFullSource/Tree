@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FragmentShop", import(".MonthlyShop"))
+local var0_0 = class("FragmentShop", import(".MonthlyShop"))
 
 var0_0.GoodsType = Goods.TYPE_FRAGMENT
 var0_0.type = ShopArgs.ShopFragment

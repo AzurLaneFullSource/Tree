@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "大世界第五章剧情战 u47潜艇打击",
 	cd = 0,

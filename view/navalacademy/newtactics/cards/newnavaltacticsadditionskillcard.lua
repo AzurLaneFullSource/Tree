@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewNavalTacticsAdditionSkillCard", import(".NewNavalTacticsSkillCard"))
+local var0_0 = class("NewNavalTacticsAdditionSkillCard", import(".NewNavalTacticsSkillCard"))
 
 function var0_0.Update(arg0_1, arg1_1, arg2_1)
 	local var0_1 = arg1_1.level

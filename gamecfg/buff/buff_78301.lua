@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "最终剧情战用敌方小自杀buff",
 	time = 0,

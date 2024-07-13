@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FileDownloadPanel", import(".MsgboxSubPanel"))
+local var0_0 = class("FileDownloadPanel", import(".MsgboxSubPanel"))
 
 function var0_0.getUIName(arg0_1)
 	return "FileDownloadBox"

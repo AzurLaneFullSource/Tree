@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023关岛活动EX 二阶段召唤物3 开场随机落点",
 	cd = 0,

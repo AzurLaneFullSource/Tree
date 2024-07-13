@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AprilFool2022Page", import("view.base.BaseActivityPage"))
+local var0_0 = class("AprilFool2022Page", import("view.base.BaseActivityPage"))
 
 var0_0.Order = {
 	1,

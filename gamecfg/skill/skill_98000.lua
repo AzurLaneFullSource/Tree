@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "复纵阵前进",
 	cd = 0,

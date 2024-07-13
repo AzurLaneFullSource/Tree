@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LaunchBallGameConst")
+local var0_0 = class("LaunchBallGameConst")
 
 var0_0.color_total = 7
 

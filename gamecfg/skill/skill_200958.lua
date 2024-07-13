@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024威奇塔meta 卫星激光",
 	cd = 0,

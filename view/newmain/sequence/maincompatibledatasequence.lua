@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainCompatibleDataSequence")
+local var0_0 = class("MainCompatibleDataSequence")
 
 function var0_0.Execute(arg0_1, arg1_1)
 	seriesAsync({

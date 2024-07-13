@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "传颂之物开场加血2%",
 	time = 0,

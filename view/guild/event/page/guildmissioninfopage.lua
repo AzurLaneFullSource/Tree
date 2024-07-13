@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildMissionInfoPage", import(".GuildEventBasePage"))
+local var0_0 = class("GuildMissionInfoPage", import(".GuildEventBasePage"))
 local var1_0 = 10001
 
 function var0_0.AttrCnt2Desc(arg0_1, arg1_1)

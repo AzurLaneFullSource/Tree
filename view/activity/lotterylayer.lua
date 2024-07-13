@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LotteryLayer", import("..base.BaseUI"))
+local var0_0 = class("LotteryLayer", import("..base.BaseUI"))
 local var1_0 = pg.activity_random_award_template
 local var2_0 = true
 

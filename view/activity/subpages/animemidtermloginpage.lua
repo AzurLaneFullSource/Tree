@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AnimeMidtermLoginPage", import(".TemplatePage.LoginTemplatePage"))
+local var0_0 = class("AnimeMidtermLoginPage", import(".TemplatePage.LoginTemplatePage"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.dayProgressImg = arg0_1:findTF("DayProgress")

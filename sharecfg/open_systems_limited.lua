@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.open_systems_limited = {
 	{
 		scene = "MAINUI",

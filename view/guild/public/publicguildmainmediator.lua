@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PublicGuildMainMediator", import("...base.ContextMediator"))
+local var0_0 = class("PublicGuildMainMediator", import("...base.ContextMediator"))
 
 var0_0.ON_COMMIT = "PublicGuildMainMediator:ON_COMMIT"
 var0_0.UPGRADE_TECH = "PublicGuildMainMediator:UPGRADE_TECH"

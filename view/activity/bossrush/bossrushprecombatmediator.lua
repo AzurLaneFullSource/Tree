@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushPreCombatMediator", import("view.base.ContextMediator"))
+local var0_0 = class("BossRushPreCombatMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_UPDATE_CUSTOM_FLEET = "BossRushPreCombatMediator:ON_UPDATE_CUSTOM_FLEET"
 var0_0.ON_START = "BossRushPreCombatMediator:ON_START"

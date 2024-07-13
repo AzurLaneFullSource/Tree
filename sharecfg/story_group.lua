@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.story_group = {
 	[1740101] = {
 		map = 1740001,

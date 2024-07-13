@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "SG雷达T2",
 	time = 0,

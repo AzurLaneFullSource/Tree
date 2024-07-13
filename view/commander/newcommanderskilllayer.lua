@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewCommanderSkillLayer", import(".CommanderSkillLayer"))
+local var0_0 = class("NewCommanderSkillLayer", import(".CommanderSkillLayer"))
 
 function var0_0.getUIName(arg0_1)
 	return "NewCommanderSkillUI"

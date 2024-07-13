@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldAchievement", import("...BaseEntity"))
+local var0_0 = class("WorldAchievement", import("...BaseEntity"))
 
 var0_0.Fields = {
 	triggers = "table",

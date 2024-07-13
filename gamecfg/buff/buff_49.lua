@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "竞技场我方加成",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.oilfield_template = {
 	{
 		store = 300,

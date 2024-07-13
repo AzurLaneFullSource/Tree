@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TaskProxy", import(".NetProxy"))
+local var0_0 = class("TaskProxy", import(".NetProxy"))
 
 var0_0.TASK_ADDED = "task added"
 var0_0.TASK_UPDATED = "task updated"

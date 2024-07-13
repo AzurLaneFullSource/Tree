@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BattleFailTipMediator", import("..base.ContextMediator"))
+local var0_0 = class("BattleFailTipMediator", import("..base.ContextMediator"))
 
 var0_0.CHAPTER_RETREAT = "BattleFailTipMediator:CHAPTER_RETREAT"
 var0_0.GO_NAVALTACTICS = "BattleFailTipMediator:GO_NAVALTACTICS"

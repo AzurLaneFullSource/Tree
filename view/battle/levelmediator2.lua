@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LevelMediator2", import("..base.ContextMediator"))
+local var0_0 = class("LevelMediator2", import("..base.ContextMediator"))
 
 var0_0.ON_TRACKING = "LevelMediator2:ON_TRACKING"
 var0_0.ON_ELITE_TRACKING = "LevelMediator2:ON_ELITE_TRACKING"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TowerClimbingResMgr")
+local var0_0 = class("TowerClimbingResMgr")
 local var1_0 = {
 	salatuojia = "TowerClimbingPlayer1"
 }

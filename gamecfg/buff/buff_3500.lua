@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "日常关卡技能无效,全弹强化",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LoginMediator", import("..base.ContextMediator"))
+local var0_0 = class("LoginMediator", import("..base.ContextMediator"))
 
 var0_0.ON_LOGIN = "LoginMediator:ON_LOGIN"
 var0_0.ON_REGISTER = "LoginMediator:ON_REGISTER"

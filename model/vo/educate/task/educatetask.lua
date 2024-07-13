@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateTask", import("model.vo.BaseVO"))
+local var0_0 = class("EducateTask", import("model.vo.BaseVO"))
 
 var0_0.SYSTEM_TYPE_MIND = 1
 var0_0.SYSTEM_TYPE_TARGET = 2

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SailBoatGameView", import("..BaseMiniGameView"))
+local var0_0 = class("SailBoatGameView", import("..BaseMiniGameView"))
 
 var0_0.LEVEL_GAME = "leavel game"
 var0_0.PAUSE_GAME = "pause game "

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "克莱蒙梭剧情战迪贝路空袭",
 	cd = 0,

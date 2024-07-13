@@ -1,4 +1,4 @@
-﻿local var0_0 = class("IdolPTPage", import(".TemplatePage.PtTemplatePage"))
+local var0_0 = class("IdolPTPage", import(".TemplatePage.PtTemplatePage"))
 
 var0_0.RefreshTime = 300
 

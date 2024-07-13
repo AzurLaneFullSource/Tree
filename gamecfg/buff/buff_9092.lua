@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 8,
 	name = "所罗门的传说-LV8",
 	init_effect = "jinengchufared",

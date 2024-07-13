@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ZhenhaiMuseumPage", import(".TemplatePage.SkinTemplatePage"))
+local var0_0 = class("ZhenhaiMuseumPage", import(".TemplatePage.SkinTemplatePage"))
 local var1_0 = 7
 local var2_0
 

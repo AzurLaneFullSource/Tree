@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Dorm3dMemorySubView", import("view.base.BaseSubView"))
+local var0_0 = class("Dorm3dMemorySubView", import("view.base.BaseSubView"))
 
 function var0_0.OnLoaded(arg0_1)
 	local var0_1 = arg0_1._tf:Find("list/container")

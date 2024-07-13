@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DecodeGameModel")
+local var0_0 = class("DecodeGameModel")
 
 function var0_0.SetData(arg0_1, arg1_1)
 	arg0_1.data = arg1_1

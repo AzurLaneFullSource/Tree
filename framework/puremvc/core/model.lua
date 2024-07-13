@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Model")
+local var0_0 = class("Model")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	if var0_0.instanceMap[arg1_1] then

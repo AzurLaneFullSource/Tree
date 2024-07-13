@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑声望 蓄力成功/失败监听",
 	time = 0,

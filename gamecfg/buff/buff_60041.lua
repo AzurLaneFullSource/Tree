@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "Darkness",
 	name = "测试-随机技能-缩小射线-缩小",
 	time = 7,

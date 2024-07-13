@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackyardFeedLayer", import("...base.BaseUI"))
+local var0_0 = class("BackyardFeedLayer", import("...base.BaseUI"))
 local var1_0 = {
 	50001,
 	50002,

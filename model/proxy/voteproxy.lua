@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VoteProxy", import(".NetProxy"))
+local var0_0 = class("VoteProxy", import(".NetProxy"))
 
 var0_0.VOTE_ORDER_BOOK_UPDATE = "VoteProxy:VOTE_ORDER_BOOK_UPDATE"
 var0_0.VOTE_ORDER_BOOK_DELETE = "VoteProxy:VOTE_ORDER_BOOK_DELETE"

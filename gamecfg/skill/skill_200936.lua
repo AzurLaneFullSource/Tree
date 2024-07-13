@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024阿尔萨斯活动SP 死神之影召唤浮游炮1",
 	cd = 0,

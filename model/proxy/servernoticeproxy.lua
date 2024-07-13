@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ServerNoticeProxy", import(".NetProxy"))
+local var0_0 = class("ServerNoticeProxy", import(".NetProxy"))
 
 var0_0.SERVER_NOTICES_UPDATE = "server notices update"
 var0_0.KEY_NEWLY_ID = "server_notice.newly_id"

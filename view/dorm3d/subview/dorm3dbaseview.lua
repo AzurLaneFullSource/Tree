@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Dorm3dBaseView", import("view.base.BaseSubView"))
+local var0_0 = class("Dorm3dBaseView", import("view.base.BaseSubView"))
 
 function var0_0.SetApartment(arg0_1, arg1_1, arg2_1)
 	arg0_1.apartment = arg1_1

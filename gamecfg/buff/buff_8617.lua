@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "13章翔鹤死亡",
 	time = 0,

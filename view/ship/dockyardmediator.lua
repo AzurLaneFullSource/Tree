@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DockyardMediator", import("..base.ContextMediator"))
+local var0_0 = class("DockyardMediator", import("..base.ContextMediator"))
 
 var0_0.ON_DESTROY_SHIPS = "DockyardMediator:ON_DESTROY_SHIPS"
 var0_0.ON_SHIP_DETAIL = "DockyardMediator:ON_SHIP_DETAIL"

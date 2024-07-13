@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Are you the new Commander? Welcome to the world of Azur Lane. I'll be your teacher!!",
 	"First, let's build a new ship.",
 	"How about trying to build a <color=#ffde38>light ship</color> first?",

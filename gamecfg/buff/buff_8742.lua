@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 30,
 	name = "信浓活动梦境力量支援弹幕 难度3",
 	init_effect = "",

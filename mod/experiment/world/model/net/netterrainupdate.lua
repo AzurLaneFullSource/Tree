@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NetTerrainUpdate", import("....BaseEntity"))
+local var0_0 = class("NetTerrainUpdate", import("....BaseEntity"))
 
 var0_0.Fields = {
 	row = "number",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AttachmentLBAirport", import("view.level.cell.StaticCellView"))
+local var0_0 = class("AttachmentLBAirport", import("view.level.cell.StaticCellView"))
 
 var0_0.StateOutControl = 1
 var0_0.StateUnderControl = 2

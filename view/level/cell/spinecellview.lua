@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpineCellView")
+local var0_0 = class("SpineCellView")
 
 function var0_0.Ctor(arg0_1)
 	return

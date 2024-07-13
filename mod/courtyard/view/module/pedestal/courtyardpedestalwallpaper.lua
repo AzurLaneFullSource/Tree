@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardPedestalWallPaper", import(".CourtYardPedestalStructure"))
+local var0_0 = class("CourtYardPedestalWallPaper", import(".CourtYardPedestalStructure"))
 
 function var0_0.Update(arg0_1, arg1_1, arg2_1)
 	arg0_1.paper = arg1_1

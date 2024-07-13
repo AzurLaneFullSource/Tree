@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024异世界冒险 剧情战 努比亚人跨射",
 	cd = 0,

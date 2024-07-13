@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "赫米忒全体debuff",
 	cd = 0,

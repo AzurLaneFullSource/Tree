@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023 闪乱联动 T5 召唤小怪",
 	time = 3,

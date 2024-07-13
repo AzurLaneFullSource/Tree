@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Player", import(".PlayerAttire"))
+local var0_0 = class("Player", import(".PlayerAttire"))
 local var1_0 = pg.player_resource
 local var2_0 = var1_0.get_id_list_by_name
 local var3_0

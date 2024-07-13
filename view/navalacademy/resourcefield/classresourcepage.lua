@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ClassResourcePage", import(".ResourcePage"))
+local var0_0 = class("ClassResourcePage", import(".ResourcePage"))
 
 function var0_0.getUIName(arg0_1)
 	return "ClassResourcePage"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GetPowerRankCommand", pm.SimpleCommand)
+local var0_0 = class("GetPowerRankCommand", pm.SimpleCommand)
 local var1_0 = 100
 local var2_0 = 5
 

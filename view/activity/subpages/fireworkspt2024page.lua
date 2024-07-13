@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FireworksPt2024Page", import(".FireworksPtPage"))
+local var0_0 = class("FireworksPt2024Page", import(".FireworksPtPage"))
 
 var0_0.ANIM_SHOW = {
 	{

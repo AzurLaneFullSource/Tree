@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommissionMetaBossBtn")
+local var0_0 = class("CommissionMetaBossBtn")
 
 var0_0.STATE_LOCK = 1
 var0_0.STATE_NORMAL = 2

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SummerRemakePage", import(".TemplatePage.PreviewTemplatePage"))
+local var0_0 = class("SummerRemakePage", import(".TemplatePage.PreviewTemplatePage"))
 
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)

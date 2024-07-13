@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardDecorationFilterPanel", import("....base.BaseSubView"))
+local var0_0 = class("BackYardDecorationFilterPanel", import("....base.BaseSubView"))
 
 var0_0.SORT_MODE = {
 	BY_DEFAULT = 1,

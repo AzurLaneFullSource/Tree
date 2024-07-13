@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewPlayerMediator", import("..base.ContextMediator"))
+local var0_0 = class("NewPlayerMediator", import("..base.ContextMediator"))
 
 var0_0.ON_CREATE = "NewPlayerMediator:ON_CREATE"
 var0_0.ON_SKILLINFO = "NewPlayerMediator:ON_SKILLINFO"

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 1,
 	name = "2023古立特联动复刻 TSS4 公主 一阶段结束",
 	init_effect = "",

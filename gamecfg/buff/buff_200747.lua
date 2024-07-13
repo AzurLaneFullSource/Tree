@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023关岛活动EX 二阶段召唤物2 消失倒计时",
 	time = 15,

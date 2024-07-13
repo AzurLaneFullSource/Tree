@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "距离60以内的单位回血",
 	time = 0,

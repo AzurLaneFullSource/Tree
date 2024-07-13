@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.guild_mission_template = {
 	{
 		award_capital_display = 15,

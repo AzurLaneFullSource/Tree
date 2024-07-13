@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSMapArtifact", import("...BaseEntity"))
+local var0_0 = class("WSMapArtifact", import("...BaseEntity"))
 
 var0_0.Fields = {
 	transform = "userdata",

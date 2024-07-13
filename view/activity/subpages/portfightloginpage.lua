@@ -1,1 +1,1 @@
-﻿return (class("PortFightLoginPage", import(".TemplatePage.LoginTemplatePage")))
+return (class("PortFightLoginPage", import(".TemplatePage.LoginTemplatePage")))

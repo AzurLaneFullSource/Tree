@@ -1,4 +1,4 @@
-﻿local var0_0 = class("JiuJiuExpeditionGameMediator", import("...base.ContextMediator"))
+local var0_0 = class("JiuJiuExpeditionGameMediator", import("...base.ContextMediator"))
 
 var0_0.OPEN_LAYER = "OPEN_LAYER"
 

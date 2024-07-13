@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SecondSummaryPage3", import(".SummaryAnimationPage"))
+local var0_0 = class("SecondSummaryPage3", import(".SummaryAnimationPage"))
 
 function var0_0.OnInit(arg0_1)
 	setActive(arg0_1._tf:Find("propose_panel"), arg0_1.summaryInfoVO.isProPose)

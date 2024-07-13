@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DailyLevelMediator", import("..base.ContextMediator"))
+local var0_0 = class("DailyLevelMediator", import("..base.ContextMediator"))
 
 var0_0.ON_STAGE = "DailyLevelMediator:ON_STAGE"
 var0_0.ON_CHALLENGE = "DailyLevelMediator:ON_CHALLENGE"

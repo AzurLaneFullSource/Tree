@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "浮岛机场BUFF1",
 	time = 0,

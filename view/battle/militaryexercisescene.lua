@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MilitaryExerciseScene", import("..base.BaseUI"))
+local var0_0 = class("MilitaryExerciseScene", import("..base.BaseUI"))
 
 var0_0.TYPE_SHOP = 1
 

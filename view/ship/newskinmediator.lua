@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewSkinMediator", import("..base.ContextMediator"))
+local var0_0 = class("NewSkinMediator", import("..base.ContextMediator"))
 
 var0_0.SET_SKIN = "NewSkinMediator:SET_SKIN"
 var0_0.ON_EXIT = "NewSkinMediator:ON_EXIT"

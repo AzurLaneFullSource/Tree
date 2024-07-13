@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewSettingsMediator", import("..base.ContextMediator"))
+local var0_0 = class("NewSettingsMediator", import("..base.ContextMediator"))
 
 var0_0.SHOW_DESC = "NewSettingsMediator:SHOW_DESC"
 var0_0.ON_LOGOUT = "NewSettingsMediator:ON_LOGOUT"

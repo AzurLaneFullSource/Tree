@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "LINGSHIGUANGTING32",
 	mode = 2,
 	once = true,

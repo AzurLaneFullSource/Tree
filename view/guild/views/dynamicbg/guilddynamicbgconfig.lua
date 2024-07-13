@@ -1,4 +1,4 @@
-﻿return {
+return {
 	gridCnt = {
 		64,
 		7

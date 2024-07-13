@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChargeOrPurchaseHandler", pm.Mediator)
+local var0_0 = class("ChargeOrPurchaseHandler", pm.Mediator)
 
 function var0_0.Ctor(arg0_1)
 	var0_0.super.Ctor(arg0_1)

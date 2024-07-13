@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2019年2月世界BOSS开场碰撞免疫",
 	time = 20,

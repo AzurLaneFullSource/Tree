@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldFleetSelectMediator", import("..base.ContextMediator"))
+local var0_0 = class("WorldFleetSelectMediator", import("..base.ContextMediator"))
 
 var0_0.OnSelectShip = "WorldFleetSelectMediator.OnSelectShip"
 var0_0.OnGO = "WorldFleetSelectMediator.OnGO"

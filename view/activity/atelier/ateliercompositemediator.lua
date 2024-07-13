@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AtelierCompositeMediator", import("view.base.ContextMediator"))
+local var0_0 = class("AtelierCompositeMediator", import("view.base.ContextMediator"))
 
 var0_0.OPEN_FORMULA = "OPEN_FORMULA"
 

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.guild_boss_event = {
 	[90001] = {
 		pic = "b1_1",

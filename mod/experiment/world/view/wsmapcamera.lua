@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WSMapCamera", import("...BaseEntity"))
+local var0_0 = class("WSMapCamera", import("...BaseEntity"))
 
 var0_0.Fields = {
 	map = "table",

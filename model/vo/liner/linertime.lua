@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LinerTime", import("model.vo.BaseVO"))
+local var0_0 = class("LinerTime", import("model.vo.BaseVO"))
 
 var0_0.TYPE = {
 	TARGET = 1,

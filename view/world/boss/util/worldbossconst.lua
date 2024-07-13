@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldBossConst")
+local var0_0 = class("WorldBossConst")
 
 var0_0.WORLD_BOSS_ITEM_ID = 100000
 var0_0.WORLD_PAST_BOSS_ITEM_ID = 100002

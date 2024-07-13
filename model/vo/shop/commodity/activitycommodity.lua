@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityCommodity", import(".BaseCommodity"))
+local var0_0 = class("ActivityCommodity", import(".BaseCommodity"))
 
 function var0_0.bindConfigTable(arg0_1)
 	return pg.activity_shop_template

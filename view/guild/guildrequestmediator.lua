@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildRequestMediator", import("..base.ContextMediator"))
+local var0_0 = class("GuildRequestMediator", import("..base.ContextMediator"))
 
 var0_0.ACCPET = "GuildRequestMediator:ACCPET"
 var0_0.REJECT = "GuildRequestMediator:REJECT"

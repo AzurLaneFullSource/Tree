@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "勇者标枪永久盾牌",
 	time = 0,

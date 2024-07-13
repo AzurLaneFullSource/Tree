@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "蜜月",
 	init_effect = "",

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "LINGHANGYUANYANGCHENGJIHUA34",
 	mode = 2,
 	fadeOut = 1.5,

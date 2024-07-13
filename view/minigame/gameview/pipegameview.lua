@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PipeGameView", import("..BaseMiniGameView"))
+local var0_0 = class("PipeGameView", import("..BaseMiniGameView"))
 local var1_0 = import("view.miniGame.gameView.PipeGame.PipeGameVo")
 
 function var0_0.getUIName(arg0_1)

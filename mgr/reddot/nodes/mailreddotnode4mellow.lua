@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MailRedDotNode4Mellow", import(".RedDotNode"))
+local var0_0 = class("MailRedDotNode4Mellow", import(".RedDotNode"))
 local var1_0 = 99
 
 function var0_0.Ctor(arg0_1, arg1_1)

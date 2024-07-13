@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChapterCell", import(".LevelCellData"))
+local var0_0 = class("ChapterCell", import(".LevelCellData"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.walkable = true

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.fleet_tech_ship_template = {
 	[10102] = {
 		max_star = 5,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024异世界冒险 巨炎龙 免疫减速+不可阻挡",
 	time = 0,

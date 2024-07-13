@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CastleGameRemind")
+local var0_0 = class("CastleGameRemind")
 
 var0_0.remind_type_1 = "remind_type_1"
 var0_0.remind_type_2 = "remind_type_2"

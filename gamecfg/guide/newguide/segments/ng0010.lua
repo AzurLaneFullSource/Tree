@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Tap the help button to check the detailed information of Grand Capture"
 }
 

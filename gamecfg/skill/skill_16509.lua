@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "血量变动",
 	cd = 0,

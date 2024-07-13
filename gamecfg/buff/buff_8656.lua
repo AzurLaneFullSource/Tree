@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "boss mio-akua",
 	time = 0,

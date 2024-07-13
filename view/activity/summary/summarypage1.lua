@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SummaryPage1", import(".SummaryAnimationPage"))
+local var0_0 = class("SummaryPage1", import(".SummaryAnimationPage"))
 
 function var0_0.OnInit(arg0_1)
 	local var0_1 = findTF(arg0_1._go, "name")

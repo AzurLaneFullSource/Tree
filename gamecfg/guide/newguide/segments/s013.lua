@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Let's check out your <color=#ff7d36>storage</color>.",
 	"Tap <color=#ff7d36>to select tech pack</color>.",
 	"Tap <color=#ff7d36>use</color> to open the tech pack."

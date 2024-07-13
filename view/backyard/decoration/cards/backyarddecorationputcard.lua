@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardDecorationPutCard")
+local var0_0 = class("BackYardDecorationPutCard")
 local var1_0 = {
 	"word_furniture",
 	"word_decorate",

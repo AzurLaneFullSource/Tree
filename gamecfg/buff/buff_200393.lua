@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 5,
 	name = "DOA联动复刻 EX2 进入狂暴",
 	init_effect = "",

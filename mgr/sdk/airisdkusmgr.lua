@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 local var1_0 = AiriUSSdkMgr.inst
 local var2_0 = AiriUSSdkMgr.AiriSDKInst
 local var3_0 = AiriUSSdkMgr.AiriSdkDataInst

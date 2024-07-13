@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipProfileExCvBtn", import(".ShipProfileCvBtn"))
+local var0_0 = class("ShipProfileExCvBtn", import(".ShipProfileCvBtn"))
 
 function var0_0.Init(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1, arg5_1)
 	var0_0.super.Init(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)

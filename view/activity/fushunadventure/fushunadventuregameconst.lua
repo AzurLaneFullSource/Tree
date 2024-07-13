@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FushunAdventureGameConst")
+local var0_0 = class("FushunAdventureGameConst")
 
 var0_0.BGM_NAME = "main-chunjie2"
 var0_0.GAME_BGM_NAME = "bgm-cccp3"

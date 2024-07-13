@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DecodeGameConst")
+local var0_0 = class("DecodeGameConst")
 
 var0_0.DISORDER = {
 	11,

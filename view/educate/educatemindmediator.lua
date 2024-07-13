@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateMindMediator", import(".base.EducateContextMediator"))
+local var0_0 = class("EducateMindMediator", import(".base.EducateContextMediator"))
 
 var0_0.ON_TASK_SUBMIT = "EducateMindMediator:ON_TASK_SUBMIT"
 

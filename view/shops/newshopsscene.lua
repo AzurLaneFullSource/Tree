@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewShopsScene", import("..base.BaseUI"))
+local var0_0 = class("NewShopsScene", import("..base.BaseUI"))
 
 var0_0.CATEGORY_ACTIVITY = 1
 var0_0.CATEGORY_MONTH = 2

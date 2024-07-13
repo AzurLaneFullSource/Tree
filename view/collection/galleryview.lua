@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GalleryView", import("..base.BaseSubView"))
+local var0_0 = class("GalleryView", import("..base.BaseSubView"))
 
 var0_0.GalleryPicGroupName = "GALLERY_PIC"
 

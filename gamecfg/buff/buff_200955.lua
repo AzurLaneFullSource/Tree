@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024威奇塔meta 锁链定身+易伤",
 	time = 0.2,

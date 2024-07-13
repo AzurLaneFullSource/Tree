@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpinePainting")
+local var0_0 = class("SpinePainting")
 local var1_0 = require("Mgr/Pool/PoolUtil")
 
 function var0_0.GenerateData(arg0_1)

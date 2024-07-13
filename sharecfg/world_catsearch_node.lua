@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.world_catsearch_node = {
 	[101] = {
 		drop = 1000311,

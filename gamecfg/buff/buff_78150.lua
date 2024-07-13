@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "仲裁机关弹条干扰",
 	time = 0,

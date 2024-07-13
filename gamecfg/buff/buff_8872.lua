@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 4,
 	name = "2021美系活动黑苍龙转阶段",
 	init_effect = "Bossbomb",

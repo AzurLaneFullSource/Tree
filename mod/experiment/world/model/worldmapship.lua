@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMapShip", import("...BaseEntity"))
+local var0_0 = class("WorldMapShip", import("...BaseEntity"))
 
 var0_0.Fields = {
 	fleetId = "number",

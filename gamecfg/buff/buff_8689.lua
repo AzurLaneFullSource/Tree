@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "法系D3 阿尔及利亚",
 	init_effect = "jinengchufared",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MetaRepairEffect", import("..BaseVO"))
+local var0_0 = class("MetaRepairEffect", import("..BaseVO"))
 
 function var0_0.bindConfigTable(arg0_1)
 	return pg.ship_meta_repair_effect

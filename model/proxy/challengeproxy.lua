@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChallengeProxy", import(".NetProxy"))
+local var0_0 = class("ChallengeProxy", import(".NetProxy"))
 
 var0_0.MODE_CASUAL = 0
 var0_0.MODE_INFINITE = 1

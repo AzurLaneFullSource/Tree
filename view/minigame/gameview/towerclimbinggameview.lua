@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TowerClimbingGameView", import("..BaseMiniGameView"))
+local var0_0 = class("TowerClimbingGameView", import("..BaseMiniGameView"))
 
 function var0_0.getUIName(arg0_1)
 	return "TowerClimbingUI"

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainSpineIcon", import(".MainBaseIcon"))
+local var0_0 = class("MainSpineIcon", import(".MainBaseIcon"))
 
 function var0_0.Resume(arg0_1)
 	if arg0_1.spineAnim then

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.SeriesGuideMgr = singletonClass("SeriesGuideMgr")
 
 local var0_0 = pg.SeriesGuideMgr

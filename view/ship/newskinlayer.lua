@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewSkinLayer", import("..base.BaseUI"))
+local var0_0 = class("NewSkinLayer", import("..base.BaseUI"))
 
 var0_0.PAINT_DURATION = 0.35
 var0_0.STAR_DURATION = 0.5

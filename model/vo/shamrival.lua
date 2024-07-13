@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShamRival", import(".Rival"))
+local var0_0 = class("ShamRival", import(".Rival"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.super.Ctor(arg0_1, arg1_1)

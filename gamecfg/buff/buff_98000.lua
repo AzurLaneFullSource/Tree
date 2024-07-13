@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "指挥喵buff第一入口",
 	time = 0,

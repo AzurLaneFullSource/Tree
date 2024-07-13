@@ -1,4 +1,4 @@
-﻿local var0_0 = require("protobuf")
+local var0_0 = require("protobuf")
 local var1_0 = require("common_pb")
 
 module("p50_pb")

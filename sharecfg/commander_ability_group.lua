@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.commander_ability_group = {
 	[10] = {
 		id = 10,

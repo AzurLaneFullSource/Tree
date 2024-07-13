@@ -1,4 +1,4 @@
-﻿function Clone_Copy(arg0_1, arg1_1)
+function Clone_Copy(arg0_1, arg1_1)
 	if type(arg0_1) ~= "table" then
 		return arg0_1
 	elseif arg1_1[arg0_1] then

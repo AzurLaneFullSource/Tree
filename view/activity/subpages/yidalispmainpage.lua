@@ -1,1 +1,1 @@
-﻿return (class("YidaliSPMainPage", import(".TemplatePage.PreviewTemplatePage")))
+return (class("YidaliSPMainPage", import(".TemplatePage.PreviewTemplatePage")))

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChapterTheme")
+local var0_0 = class("ChapterTheme")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.assetSea = arg1_1[1]

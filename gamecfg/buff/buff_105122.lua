@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "WAVE光波-特效",
 	time = 3,

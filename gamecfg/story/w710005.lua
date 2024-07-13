@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "W710005",
 	mode = 2,
 	skipTip = false,

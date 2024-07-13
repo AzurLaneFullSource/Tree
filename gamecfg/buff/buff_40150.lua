@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "先锋舰队只有一艘舰船且为驱逐舰时，战斗力大幅提升，依据指挥属性",
 	time = 0,

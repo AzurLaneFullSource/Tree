@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "大洋联邦 维修舰回血光环",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldDetailMediator", import("..base.ContextMediator"))
+local var0_0 = class("WorldDetailMediator", import("..base.ContextMediator"))
 
 var0_0.OnShipInfo = "WorldDetailMediator:OnShipInfo"
 var0_0.OnCmdSkill = "WorldDetailMediator.OnCmdSkill"

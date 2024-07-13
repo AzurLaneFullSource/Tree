@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022女仆共斗二期 EX难度 阿尔比恩随机箭（五个中随机一个）",
 	time = 0,

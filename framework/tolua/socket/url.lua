@@ -1,4 +1,4 @@
-﻿local var0_0 = require("string")
+local var0_0 = require("string")
 local var1_0 = _G
 local var2_0 = require("table")
 local var3_0 = require("socket")

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.skinshop_spine_scale = {
 	[701023] = {
 		id = 701023,

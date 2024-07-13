@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MetaCharacterTacticsMediator", import("...base.ContextMediator"))
+local var0_0 = class("MetaCharacterTacticsMediator", import("...base.ContextMediator"))
 
 var0_0.GO_TASK = "MetaCharacterTacticsMediator:GO_TASK"
 var0_0.ON_SUBMIT = "MetaCharacterTacticsMediator:ON_SUBMIT"

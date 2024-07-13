@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0.1,
 	name = "过载充能",
 	init_effect = "",

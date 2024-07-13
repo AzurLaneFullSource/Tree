@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VotePreRaceRankPage", import("....base.BaseSubView"))
+local var0_0 = class("VotePreRaceRankPage", import("....base.BaseSubView"))
 
 var0_0.RANK_DISPLAY_COUNT = 15
 

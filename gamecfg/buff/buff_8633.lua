@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "13章指挥舰技能",
 	time = 0,

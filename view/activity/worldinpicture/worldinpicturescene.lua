@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldInPictureScene", import("...base.BaseUI"))
+local var0_0 = class("WorldInPictureScene", import("...base.BaseUI"))
 local var1_0 = 0
 local var2_0 = 1
 

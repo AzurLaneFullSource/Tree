@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Ore")
+local var0_0 = class("Ore")
 
 var0_0.TYPE_SMALL = 1
 var0_0.TYPE_LA = 2

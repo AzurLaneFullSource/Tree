@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateBagLayer", import(".base.EducateBaseUI"))
+local var0_0 = class("EducateBagLayer", import(".base.EducateBaseUI"))
 local var1_0 = "FFFFFF"
 local var2_0 = "939495"
 

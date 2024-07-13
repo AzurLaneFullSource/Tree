@@ -1,4 +1,4 @@
-﻿local var0_0 = class("UrExchangeTaskPage", import("...base.BaseActivityPage"))
+local var0_0 = class("UrExchangeTaskPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.uilist = UIItemList.New(arg0_1:findTF("AD/task_list/content"), arg0_1:findTF("AD/task_list/content/tpl"))

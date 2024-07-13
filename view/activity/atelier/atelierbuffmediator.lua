@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AtelierMediator", import("view.base.ContextMediator"))
+local var0_0 = class("AtelierMediator", import("view.base.ContextMediator"))
 
 function var0_0.register(arg0_1)
 	arg0_1:bind(GAME.UPDATE_ATELIER_BUFF, function(arg0_2, arg1_2)

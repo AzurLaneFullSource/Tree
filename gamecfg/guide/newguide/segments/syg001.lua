@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Let's go to <color=#ff7d36>HQ</color>",
 	"You can visit our <color=#ff7d36>Dorm</color> from here",
 	"Commander, this is your <color=#ff7d36>dorm</color>~! It looks a bit... rough around the edges.",

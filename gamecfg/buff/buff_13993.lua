@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "Z驱减伤",
 	init_effect = "",

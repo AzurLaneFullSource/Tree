@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BlueprintAssignedItemView", import(".AssignedItemView"))
+local var0_0 = class("BlueprintAssignedItemView", import(".AssignedItemView"))
 
 function var0_0.getUIName(arg0_1)
 	return "BlueprintItemAssignedView"

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022美系活动EX 我方群体上BUFF",
 	time = 0.5,

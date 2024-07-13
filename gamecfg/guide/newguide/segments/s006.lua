@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"Our next mission is to support the Eagles' aviation fleet combat drills. Tap <color=#ff7d36>Attack</color> to get started.",
 	"Hornet must be hiding somewhere here. If you can crush her then the sea is yours!",
 	"Commander, we must first test your skills in defeating the enemy vanguard.",

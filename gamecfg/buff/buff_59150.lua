@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "立场发射",
 	init_effect = "",

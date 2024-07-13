@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LinerLogBookLayer", import("view.base.BaseUI"))
+local var0_0 = class("LinerLogBookLayer", import("view.base.BaseUI"))
 
 var0_0.PAGE_SCHEDULE = 1
 var0_0.PAGE_ROOM = 2

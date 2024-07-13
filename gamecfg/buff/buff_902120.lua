@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "旗帜之下",
 	init_effect = "jinengchufablue",

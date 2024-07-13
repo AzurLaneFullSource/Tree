@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "精英怪-强击",
 	time = 0,

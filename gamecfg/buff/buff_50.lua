@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "挑战后排永久无敌",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipEvaluationLayer", import("..base.BaseUI"))
+local var0_0 = class("ShipEvaluationLayer", import("..base.BaseUI"))
 
 var0_0.EVENT_LIKE = "event like"
 var0_0.EVENT_EVA = "event eva"

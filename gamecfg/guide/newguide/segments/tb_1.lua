@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "tb_1",
 	isWorld = false,
 	events = {

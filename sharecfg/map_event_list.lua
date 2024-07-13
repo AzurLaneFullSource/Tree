@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.map_event_list = {
 	[1401] = {
 		help_open = 1,

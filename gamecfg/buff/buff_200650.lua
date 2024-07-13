@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023 闪乱联动 地脉机关-绚 支援武器中毒效果",
 	time = 9.1,

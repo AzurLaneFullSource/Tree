@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.world_SLGbuff_data = {
 	{
 		buff_type = 0,

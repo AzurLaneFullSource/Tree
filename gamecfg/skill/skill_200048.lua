@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "黑声望二阶段跨射lv2",
 	cd = 0,

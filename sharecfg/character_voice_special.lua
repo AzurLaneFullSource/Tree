@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.character_voice_special = {
 	login = {
 		profile_index = 1,

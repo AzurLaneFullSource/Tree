@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BuildShipActivityPool", import(".BuildShipPool"))
+local var0_0 = class("BuildShipActivityPool", import(".BuildShipPool"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg0_1, arg1_1)

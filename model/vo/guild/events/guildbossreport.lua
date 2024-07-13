@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildBossReport", import(".GuildReport"))
+local var0_0 = class("GuildBossReport", import(".GuildReport"))
 
 function var0_0.bindConfigTable(arg0_1)
 	return pg.guild_boss_event

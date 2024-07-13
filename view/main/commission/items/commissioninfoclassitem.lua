@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommissionInfoClassItem", import(".CommissionInfoItem"))
+local var0_0 = class("CommissionInfoClassItem", import(".CommissionInfoItem"))
 
 function var0_0.OnFlush(arg0_1)
 	local var0_1 = getProxy(NavalAcademyProxy):getStudents()

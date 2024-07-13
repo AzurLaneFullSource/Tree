@@ -1,4 +1,4 @@
-﻿local var0_0 = class("StarSeaFramePage", import(".TemplatePage.NewFrameTemplatePage"))
+local var0_0 = class("StarSeaFramePage", import(".TemplatePage.NewFrameTemplatePage"))
 
 function var0_0.OnFirstFlush(arg0_1)
 	for iter0_1, iter1_1 in ipairs(arg0_1.phases) do

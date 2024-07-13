@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SearchFriendCommand", pm.SimpleCommand)
+local var0_0 = class("SearchFriendCommand", pm.SimpleCommand)
 
 var0_0.SEARCH_TYPE_LIST = 1
 var0_0.SEARCH_TYPE_RESUME = 2

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardThemeMsgBoxPage", import(".BackYardFurnitureMsgBoxPage"))
+local var0_0 = class("BackYardThemeMsgBoxPage", import(".BackYardFurnitureMsgBoxPage"))
 
 function var0_0.getUIName(arg0_1)
 	return "ThemeMsgboxPage"

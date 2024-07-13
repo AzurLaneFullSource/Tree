@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PileGameConst")
+local var0_0 = class("PileGameConst")
 
 var0_0.INDEX_WIDTH = 150
 var0_0.SAFE_INDEX_WIDTH = 45

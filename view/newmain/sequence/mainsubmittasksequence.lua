@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainSubmitTaskSequence")
+local var0_0 = class("MainSubmitTaskSequence")
 
 function var0_0.Execute(arg0_1, arg1_1)
 	getProxy(TaskProxy):pushAutoSubmitTask()

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SettingsMainScenePanel", import(".SettingsBasePanel"))
+local var0_0 = class("SettingsMainScenePanel", import(".SettingsBasePanel"))
 
 var0_0.STANDBY_MODE_KEY = "STANDBY_MODE_KEY"
 var0_0.FLAGSHIP_INTERACTION_KEY = "FLAGSHIP_INTERACTION_KEY"

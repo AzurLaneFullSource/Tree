@@ -1,4 +1,4 @@
-﻿local var0_0 = table.remove
+local var0_0 = table.remove
 
 return setmetatable({
 	flush = function(arg0_1)

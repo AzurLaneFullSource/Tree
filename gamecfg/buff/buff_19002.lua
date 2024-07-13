@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "对塞壬加成",
 	time = 0,

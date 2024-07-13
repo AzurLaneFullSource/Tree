@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipRemouldMediator", import("..base.ContextMediator"))
+local var0_0 = class("ShipRemouldMediator", import("..base.ContextMediator"))
 
 var0_0.REMOULD_SHIP = "ShipRemouldMediator:REMOULD_SHIP"
 var0_0.ON_SELECTE_SHIP = "ShipRemouldMediator:ON_SELECTE_SHIP"

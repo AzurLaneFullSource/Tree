@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Ship", import(".BaseVO"))
+local var0_0 = class("Ship", import(".BaseVO"))
 
 var0_0.ENERGY_MID = 40
 var0_0.ENERGY_LOW = 0

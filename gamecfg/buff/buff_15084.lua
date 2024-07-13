@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "",
 	name = "",
 	init_effect = "jinengchufared",

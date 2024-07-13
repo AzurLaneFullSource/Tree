@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RemasterInfoRequestCommand", pm.SimpleCommand)
+local var0_0 = class("RemasterInfoRequestCommand", pm.SimpleCommand)
 
 function var0_0.execute(arg0_1, arg1_1)
 	pg.ConnectionMgr.GetInstance():Send(13505, {

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "法系V2人形特效",
 	time = 0,

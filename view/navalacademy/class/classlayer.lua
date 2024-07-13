@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ClassLayer", import("...base.BaseUI"))
+local var0_0 = class("ClassLayer", import("...base.BaseUI"))
 
 function var0_0.getUIName(arg0_1)
 	return "ClassUI"

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023伊丽莎白meta 亚空间召唤 lv11",
 	time = 0,

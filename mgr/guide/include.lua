@@ -1,4 +1,4 @@
-﻿Guide = import("Mgr.Guide.model.Guide")
+Guide = import("Mgr.Guide.model.Guide")
 GuideDoFunctionStep = import("Mgr.Guide.model.step.GuideDoFunctionStep")
 GuideDoNothingStep = import("Mgr.Guide.model.step.GuideDoNothingStep")
 GuideFindUIStep = import("Mgr.Guide.model.step.GuideFindUIStep")

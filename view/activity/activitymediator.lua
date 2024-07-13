@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityMediator", import("..base.ContextMediator"))
+local var0_0 = class("ActivityMediator", import("..base.ContextMediator"))
 
 var0_0.EVENT_GO_SCENE = "event go scene"
 var0_0.EVENT_OPERATION = "event operation"

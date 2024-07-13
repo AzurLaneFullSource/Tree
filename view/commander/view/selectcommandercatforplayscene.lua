@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SelectCommanderCatForPlayScene", import(".CommanderCatScene"))
+local var0_0 = class("SelectCommanderCatForPlayScene", import(".CommanderCatScene"))
 
 function var0_0.emit(arg0_1, ...)
 	if unpack({

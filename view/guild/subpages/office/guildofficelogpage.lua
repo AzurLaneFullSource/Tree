@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildOfficeLogPage", import("....base.BaseSubView"))
+local var0_0 = class("GuildOfficeLogPage", import("....base.BaseSubView"))
 local var1_0 = {
 	{
 		GuildConst.TYPE_SUPPLY,

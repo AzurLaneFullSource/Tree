@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ShipSkin", import(".BaseVO"))
+local var0_0 = class("ShipSkin", import(".BaseVO"))
 
 var0_0.SKIN_TYPE_DEFAULT = -1
 var0_0.SKIN_TYPE_COMMON_FASHION = 0

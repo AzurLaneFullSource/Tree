@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "黑海伦娜 领域全体敌人获得易伤效果",
 	time = 0,

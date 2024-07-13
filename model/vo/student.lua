@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Student", import(".BaseVO"))
+local var0_0 = class("Student", import(".BaseVO"))
 
 var0_0.WAIT = 1
 var0_0.ATTEND = 2

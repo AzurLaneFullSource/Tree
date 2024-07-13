@@ -1,4 +1,4 @@
-﻿ys.Battle.BattleConfig = ys.Battle.BattleConfig or {}
+ys.Battle.BattleConfig = ys.Battle.BattleConfig or {}
 
 local var0_0 = ys.Battle.BattleConfig
 

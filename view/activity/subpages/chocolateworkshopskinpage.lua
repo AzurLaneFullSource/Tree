@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChocolateWorkshopSkinPage", import(".TemplatePage.SkinTemplatePage"))
+local var0_0 = class("ChocolateWorkshopSkinPage", import(".TemplatePage.SkinTemplatePage"))
 
 var0_0.FADE_TIME = 0.5
 var0_0.SHOW_TIME = 2

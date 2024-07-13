@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "对战巡增伤",
 	init_effect = "",

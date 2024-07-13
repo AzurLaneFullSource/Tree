@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VoteEntranceScene", import("view.base.BaseUI"))
+local var0_0 = class("VoteEntranceScene", import("view.base.BaseUI"))
 
 var0_0.MAIN_STAGE_CLOSE = 0
 var0_0.MAIN_STAGE_OPEN = 1

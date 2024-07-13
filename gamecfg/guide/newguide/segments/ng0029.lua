@@ -1,4 +1,4 @@
-﻿local var0_0 = {
+local var0_0 = {
 	"You've unlocked Comf-Forts!",
 	"You can put a Meowfficer in a Comf-Fort, and it will receive EXP over time!",
 	"Once a day, you can clean the Comf-Forts, play with your Meowfficers, or feed them!",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OreAkashiControl")
+local var0_0 = class("OreAkashiControl")
 
 var0_0.STATUS_NULL = 0
 var0_0.STATUS_WOOD_BOX = 1

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024 同盟活动EX 禁用白鹰损管",
 	painting = 0,

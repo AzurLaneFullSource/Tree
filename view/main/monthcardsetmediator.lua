@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MonthCardSetMediator", import("..base.ContextMediator"))
+local var0_0 = class("MonthCardSetMediator", import("..base.ContextMediator"))
 
 var0_0.ON_SET_RATIO = "MonthCardSetMediator:ON_SET_RATIO"
 

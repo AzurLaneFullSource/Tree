@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MainMetaSkillSequence")
+local var0_0 = class("MainMetaSkillSequence")
 
 function var0_0.Execute(arg0_1, arg1_1)
 	arg1_1 = arg1_1 or function()

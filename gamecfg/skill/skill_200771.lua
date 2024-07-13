@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024同盟活动A 极寒 冰风暴",
 	cd = 0,

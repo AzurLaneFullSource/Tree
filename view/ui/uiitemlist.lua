@@ -1,4 +1,4 @@
-﻿local var0_0 = class("UIItemList")
+local var0_0 = class("UIItemList")
 
 var0_0.EventInit = 1
 var0_0.EventUpdate = 2

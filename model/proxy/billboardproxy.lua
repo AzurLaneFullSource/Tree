@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BillboardProxy", import(".NetProxy"))
+local var0_0 = class("BillboardProxy", import(".NetProxy"))
 
 var0_0.FETCH_LIST_DONE = "BillboardProxy:FETCH_LIST_DONE"
 var0_0.NONTIMER = {}

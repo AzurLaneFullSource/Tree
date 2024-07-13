@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2023伊丽莎白meta 亚空间召唤 lv13",
 	cd = 0,

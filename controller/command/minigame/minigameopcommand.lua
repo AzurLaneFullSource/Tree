@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MiniGameOPCommand", pm.SimpleCommand)
+local var0_0 = class("MiniGameOPCommand", pm.SimpleCommand)
 
 var0_0.CMD_COMPLETE = 1
 var0_0.CMD_ULTIMATE = 2

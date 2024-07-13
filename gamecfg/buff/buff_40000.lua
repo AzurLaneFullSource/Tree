@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "指挥喵触发特殊弹幕",
 	time = 0,

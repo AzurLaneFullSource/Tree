@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommanderBoxCard")
+local var0_0 = class("CommanderBoxCard")
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1._parent = arg1_1

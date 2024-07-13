@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMediaCollectionMemoryDetailLayer", import(".WorldMediaCollectionSubLayer"))
+local var0_0 = class("WorldMediaCollectionMemoryDetailLayer", import(".WorldMediaCollectionSubLayer"))
 
 function var0_0.getUIName(arg0_1)
 	return "WorldMediaCollectionMemoryDetailUI"

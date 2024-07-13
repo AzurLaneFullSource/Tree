@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldMediaCollectionScene", require("view.base.BaseUI"))
+local var0_0 = class("WorldMediaCollectionScene", require("view.base.BaseUI"))
 
 var0_0.PAGE_MEMORTY = 1
 var0_0.PAGE_FILE = 2

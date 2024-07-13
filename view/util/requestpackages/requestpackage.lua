@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RequestPackage")
+local var0_0 = class("RequestPackage")
 
 function var0_0.Start(arg0_1, ...)
 	if arg0_1.__call then

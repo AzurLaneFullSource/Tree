@@ -1,4 +1,4 @@
-﻿return {
+return {
 	short_music_name = "song12",
 	bpm = 180,
 	offset_time = 0,

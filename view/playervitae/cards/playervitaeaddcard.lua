@@ -1,4 +1,4 @@
-﻿local var0_0 = class("PlayerVitaeAddCard", import(".PlayerVitaeBaseCard"))
+local var0_0 = class("PlayerVitaeAddCard", import(".PlayerVitaeBaseCard"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.line1 = arg0_1._tf:Find("line1")

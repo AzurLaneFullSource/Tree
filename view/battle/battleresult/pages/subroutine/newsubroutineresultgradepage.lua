@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewSubRoutineResultGradePage", import("..NewBattleResultGradePage"))
+local var0_0 = class("NewSubRoutineResultGradePage", import("..NewBattleResultGradePage"))
 
 function var0_0.GetGetObjectives(arg0_1)
 	local var0_1 = arg0_1.contextData

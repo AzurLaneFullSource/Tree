@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "新生重樱联合",
 	init_effect = "jinengchufared",

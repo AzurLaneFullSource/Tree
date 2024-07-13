@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CrusingWindowMediator", import("view.base.ContextMediator"))
+local var0_0 = class("CrusingWindowMediator", import("view.base.ContextMediator"))
 
 var0_0.GO_CRUSING = "CrusingWindowMediator.GO_CRUSING"
 

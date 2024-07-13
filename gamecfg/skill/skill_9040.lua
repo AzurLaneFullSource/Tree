@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "U556切换模式",
 	cd = 0,

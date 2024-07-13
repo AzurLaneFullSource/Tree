@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "公海舰队活动剧情战 黑沙恩支援攻击",
 	cd = 0,

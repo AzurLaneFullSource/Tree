@@ -1,4 +1,4 @@
-﻿local var0_0 = rawget
+local var0_0 = rawget
 local var1_0 = setmetatable
 
 RaycastBits = {

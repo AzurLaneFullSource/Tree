@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Monopoly3thGame")
+local var0_0 = class("Monopoly3thGame")
 local var1_0 = 502041
 local var2_0 = 502041
 local var3_0

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChallengeMainScene", import("..base.BaseUI"))
+local var0_0 = class("ChallengeMainScene", import("..base.BaseUI"))
 
 var0_0.BOSS_NUM = 5
 var0_0.FADE_TIME = 5

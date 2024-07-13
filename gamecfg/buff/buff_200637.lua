@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023海盗活动T5 家里冒险号辅助发射器 追踪瞬移",
 	time = 8,

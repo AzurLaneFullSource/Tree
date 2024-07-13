@@ -1,4 +1,4 @@
-﻿local var0_0 = import(".EnemyCellView")
+local var0_0 = import(".EnemyCellView")
 local var1_0 = import(".SpineCellView")
 local var2_0 = class("ChampionCellView", DecorateClass(var0_0, var1_0))
 

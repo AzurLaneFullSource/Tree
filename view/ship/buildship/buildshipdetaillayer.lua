@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BuildShipDetailLayer", import("...base.BaseUI"))
+local var0_0 = class("BuildShipDetailLayer", import("...base.BaseUI"))
 local var1_0 = 10
 local var2_0 = 2
 local var3_0 = 1

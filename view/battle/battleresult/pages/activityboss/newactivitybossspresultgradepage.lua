@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewActivityBossSPResultGradePage", import(".NewActivityBossResultGradePage"))
+local var0_0 = class("NewActivityBossSPResultGradePage", import(".NewActivityBossResultGradePage"))
 
 function var0_0.LoadBGAndGrade(arg0_1, arg1_1)
 	parallelAsync({

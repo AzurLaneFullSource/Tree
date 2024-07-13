@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "卡牌 损管小队",
 	time = 3,

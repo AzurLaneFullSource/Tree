@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "战斗开始30秒后触发游刃有余效果，随后每15秒触发1次，最多可叠加5次",
 	name = "游刃有余",
 	init_effect = "",

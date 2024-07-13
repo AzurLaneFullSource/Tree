@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 5,
 	name = "鬼神演舞",
 	init_effect = "jinengchufablue",

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MonthCardOutDateTipPanel", import(".MsgboxSubPanel"))
+local var0_0 = class("MonthCardOutDateTipPanel", import(".MsgboxSubPanel"))
 
 function var0_0.SetMonthCardEndDateLocal()
 	local var0_1 = getProxy(PlayerProxy):getRawData()

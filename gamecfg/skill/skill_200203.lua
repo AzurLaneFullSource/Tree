@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "黑亚利桑那 替换开炮回复效果",
 	cd = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FeastScene", import("view.base.BaseUI"))
+local var0_0 = class("FeastScene", import("view.base.BaseUI"))
 
 var0_0.PAGE_INVITATION = 1
 var0_0.ON_TASK_UPDATE = "FeastScene:ON_TASK_UPDATE"

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.skill_data_template = setmetatable({
 	__name = "skill_data_template",
 	all = {

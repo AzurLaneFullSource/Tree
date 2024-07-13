@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewSettingsScene", import("..base.BaseUI"))
+local var0_0 = class("NewSettingsScene", import("..base.BaseUI"))
 
 var0_0.PAGE_OTHER = 1
 var0_0.PAGE_OPTION = 2

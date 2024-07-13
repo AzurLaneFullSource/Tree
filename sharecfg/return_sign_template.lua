@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.return_sign_template = {
 	{
 		id = 1,

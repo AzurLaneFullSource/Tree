@@ -1,4 +1,4 @@
-﻿AsideStoryPlayer = import("Mgr.Story.model.Players.AsideStoryPlayer")
+AsideStoryPlayer = import("Mgr.Story.model.Players.AsideStoryPlayer")
 BgStoryPlayer = import("Mgr.Story.model.Players.BgStoryPlayer")
 DialogueStoryPlayer = import("Mgr.Story.model.Players.DialogueStoryPlayer")
 StoryPlayer = import("Mgr.Story.model.Players.StoryPlayer")

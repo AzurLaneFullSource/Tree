@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChatFrame", import(".AttireFrame"))
+local var0_0 = class("ChatFrame", import(".AttireFrame"))
 
 function var0_0.GetIcon(arg0_1)
 	return "ChatFrame/" .. arg0_1

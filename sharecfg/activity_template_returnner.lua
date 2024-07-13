@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_template_returnner = {
 	[300] = {
 		id = 300,

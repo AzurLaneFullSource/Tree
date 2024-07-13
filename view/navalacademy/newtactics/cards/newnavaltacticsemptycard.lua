@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewNavalTacticsEmptyCard", import(".NewNavalTacticsBaseCard"))
+local var0_0 = class("NewNavalTacticsEmptyCard", import(".NewNavalTacticsBaseCard"))
 
 function var0_0.OnInit(arg0_1)
 	onButton(arg0_1, arg0_1._tf, function()

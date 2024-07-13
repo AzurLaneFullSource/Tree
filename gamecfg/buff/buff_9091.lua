@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "所罗门的传说-LV8",
 	time = 15,

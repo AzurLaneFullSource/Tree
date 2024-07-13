@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022莱莎联动 昏睡之门 眩晕效果",
 	time = 5,

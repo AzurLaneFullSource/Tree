@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LaunchBallActivityMgr")
+local var0_0 = class("LaunchBallActivityMgr")
 
 function var0_0.GetRoundCount(arg0_1)
 	local var0_1 = LaunchBallActivityMgr.GetActivityById(arg0_1)

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.enemy_data_statistics_2 = {
 	[50024] = {
 		speed_growth = 10000,

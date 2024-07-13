@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NavalAcademyShipsView")
+local var0_0 = class("NavalAcademyShipsView")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.parent = arg1_1

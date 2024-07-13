@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommonCalcHelper")
+local var0_0 = class("CommonCalcHelper")
 
 function var0_0.CalcDungeonHp(arg0_1, arg1_1)
 	local var0_1 = 0

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("VipCard", import(".BaseVO"))
+local var0_0 = class("VipCard", import(".BaseVO"))
 
 var0_0.MONTH = 1
 

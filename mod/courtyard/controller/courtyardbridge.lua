@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CourtYardBridge")
+local var0_0 = class("CourtYardBridge")
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.core = arg1_1.core

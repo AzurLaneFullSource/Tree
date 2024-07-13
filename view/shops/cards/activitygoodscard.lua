@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityGoodsCard", import(".BaseGoodsCard"))
+local var0_0 = class("ActivityGoodsCard", import(".BaseGoodsCard"))
 
 var0_0.Color = {}
 var0_0.DefaultColor = {

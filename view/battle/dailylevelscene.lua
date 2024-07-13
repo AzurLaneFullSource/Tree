@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DailyLevelScene", import("..base.BaseUI"))
+local var0_0 = class("DailyLevelScene", import("..base.BaseUI"))
 local var1_0 = 3
 local var2_0 = 4
 local var3_0 = 101

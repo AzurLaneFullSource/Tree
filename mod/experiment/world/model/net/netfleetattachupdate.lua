@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NetFleetAttachUpdate", import("....BaseEntity"))
+local var0_0 = class("NetFleetAttachUpdate", import("....BaseEntity"))
 
 var0_0.Fields = {
 	row = "number",

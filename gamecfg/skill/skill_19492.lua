@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "受到空弹影响降低",
 	cd = 0,

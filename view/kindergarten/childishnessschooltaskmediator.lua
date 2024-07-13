@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChildishnessSchoolTaskMediator", import("view.base.ContextMediator"))
+local var0_0 = class("ChildishnessSchoolTaskMediator", import("view.base.ContextMediator"))
 
 var0_0.ON_TASK_GO = "event on task go"
 var0_0.ON_TASK_SUBMIT = "event on task submit"

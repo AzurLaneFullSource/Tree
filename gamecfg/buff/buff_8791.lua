@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2020德系活动 构建者护盾破碎时特效",
 	time = 5,

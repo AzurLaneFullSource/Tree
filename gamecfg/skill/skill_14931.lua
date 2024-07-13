@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 14931,
 	name = "炮击",
 	cd = 0,

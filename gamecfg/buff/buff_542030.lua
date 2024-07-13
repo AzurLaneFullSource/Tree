@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 10,
 	name = "极限充能",
 	init_effect = "",

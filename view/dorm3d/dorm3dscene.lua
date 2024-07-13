@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Dorm3dScene", import("view.base.BaseUI"))
+local var0_0 = class("Dorm3dScene", import("view.base.BaseUI"))
 
 var0_0.CAMERA = {
 	GIFT = 8,

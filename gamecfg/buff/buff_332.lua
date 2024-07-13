@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "Gungnir击中特效",
 	time = 1,

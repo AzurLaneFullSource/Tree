@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "第10章重巡使用盾buff",
 	time = 30,

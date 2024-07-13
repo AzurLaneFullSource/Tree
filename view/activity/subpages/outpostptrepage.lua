@@ -1,4 +1,4 @@
-﻿local var0_0 = class("OutPostPtRePage", import(".TemplatePage.NewFrameTemplatePage"))
+local var0_0 = class("OutPostPtRePage", import(".TemplatePage.NewFrameTemplatePage"))
 local var1_0 = {
 	16851,
 	16852,

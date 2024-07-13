@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "黑反击BOSS战 护盾2",
 	init_effect = "",

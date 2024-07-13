@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "延迟射击",
 	cd = 0,

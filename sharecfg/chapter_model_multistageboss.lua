@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.chapter_model_multistageboss = {
 	[1503] = {
 		boss_expedition_id = {

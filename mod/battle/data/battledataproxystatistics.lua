@@ -1,4 +1,4 @@
-﻿local var0_0 = ys.Battle.BattleDataProxy
+local var0_0 = ys.Battle.BattleDataProxy
 local var1_0 = ys.Battle.BattleEvent
 local var2_0 = ys.Battle.BattleFormulas
 local var3_0 = ys.Battle.BattleConst

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Match3GameView", import("..BaseMiniGameView"))
+local var0_0 = class("Match3GameView", import("..BaseMiniGameView"))
 local var1_0 = 6
 local var2_0 = 7
 local var3_0 = -405

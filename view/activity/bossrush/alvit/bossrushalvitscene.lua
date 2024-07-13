@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BossRushAlvitScene", import("view.base.BaseUI"))
+local var0_0 = class("BossRushAlvitScene", import("view.base.BaseUI"))
 
 var0_0.DISPLAY = {
 	STORY = 2,

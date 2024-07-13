@@ -1,4 +1,4 @@
-﻿local var0_0 = _G
+local var0_0 = _G
 local var1_0 = require("ltn12")
 local var2_0 = require("mime.core")
 local var3_0 = require("io")

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TargetObject", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
+local var0_0 = class("TargetObject", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
 
 function var0_0.CellPassability(arg0_1)
 	return false

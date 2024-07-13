@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.world_newshop_data = {
 	[10101] = {
 		port_id = 1,

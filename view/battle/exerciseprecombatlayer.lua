@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ExercisePreCombatLayer", import("view.battle.PreCombatLayer"))
+local var0_0 = class("ExercisePreCombatLayer", import("view.battle.PreCombatLayer"))
 local var1_0 = import("..ship.FormationUI")
 
 function var0_0.getUIName(arg0_1)

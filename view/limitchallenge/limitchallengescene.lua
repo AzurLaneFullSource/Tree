@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LimitChallengeScene", import("..base.BaseUI"))
+local var0_0 = class("LimitChallengeScene", import("..base.BaseUI"))
 local var1_0 = LimitChallengeConst
 
 function var0_0.getUIName(arg0_1)

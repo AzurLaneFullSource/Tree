@@ -1,1 +1,1 @@
-﻿return (class("MaoxiV4PtPage", import(".TemplatePage.PtTemplatePage")))
+return (class("MaoxiV4PtPage", import(".TemplatePage.PtTemplatePage")))

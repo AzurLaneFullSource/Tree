@@ -1,4 +1,4 @@
-﻿local var0_0 = setmetatable
+local var0_0 = setmetatable
 local var1_0 = xpcall
 local var2_0 = pcall
 local var3_0 = assert

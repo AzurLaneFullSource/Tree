@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateMapMediator", import("..base.EducateContextMediator"))
+local var0_0 = class("EducateMapMediator", import("..base.EducateContextMediator"))
 
 var0_0.ON_SPECIAL_EVENT_TRIGGER = "EducateMapMediator.ON_SPECIAL_EVENT_TRIGGER"
 var0_0.ON_MAP_SITE_OPERATE = "EducateMapMediator.ON_MAP_SITE_OPERATE"

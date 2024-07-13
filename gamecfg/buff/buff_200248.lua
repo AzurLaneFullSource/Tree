@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2022美系活动D2 第五类威胁-弱 无差别攻击弹幕",
 	time = 0,

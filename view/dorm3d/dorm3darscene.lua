@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Dorm3dARScene", import("view.base.BaseUI"))
+local var0_0 = class("Dorm3dARScene", import("view.base.BaseUI"))
 local var1_0 = "dorm3d/scenesres/scenes/arscene/arscene_scene"
 
 function var0_0.getUIName(arg0_1)

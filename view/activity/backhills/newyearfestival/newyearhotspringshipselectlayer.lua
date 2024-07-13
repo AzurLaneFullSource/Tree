@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewYearHotSpringShipSelectLayer", import("view.base.BaseUI"))
+local var0_0 = class("NewYearHotSpringShipSelectLayer", import("view.base.BaseUI"))
 local var1_0 = import(".NewYearHotSpringFormationCard")
 
 function var0_0.getUIName(arg0_1)

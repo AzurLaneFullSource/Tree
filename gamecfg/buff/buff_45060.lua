@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "jinengchufared",
 	name = "指挥喵天赋-水雷魂",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "意大利V2活动 海妖之歌机制开启开关",
 	time = 0,

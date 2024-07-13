@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 10,
 	name = "歼灭模式",
 	init_effect = "jinengchufared",

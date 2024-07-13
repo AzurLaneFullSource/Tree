@@ -1,4 +1,4 @@
-﻿local var0_0 = class("WorldBossMediator", import("...base.ContextMediator"))
+local var0_0 = class("WorldBossMediator", import("...base.ContextMediator"))
 
 var0_0.ON_BATTLE = "WorldBossMediator:ON_BATTLE"
 var0_0.ON_RANK_LIST = "WorldBossMediator:ON_RANK_LIST"

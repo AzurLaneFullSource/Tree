@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BackYardDecorationBasePage", import("....base.BaseSubView"))
+local var0_0 = class("BackYardDecorationBasePage", import("....base.BaseSubView"))
 
 function var0_0.OnLoaded(arg0_1)
 	arg0_1.scrollRect = arg0_1._tf:GetComponent("LScrollRect")

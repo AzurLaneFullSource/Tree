@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 0,
 	name = "北方的孤独女王",
 	init_effect = "jinengchufared",

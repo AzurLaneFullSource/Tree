@@ -1,1 +1,1 @@
-﻿return (class("KitakazeTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage")))
+return (class("KitakazeTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage")))

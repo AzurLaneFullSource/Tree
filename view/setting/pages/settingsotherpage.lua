@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SettingsOtherPage", import(".SettingsOptionPage"))
+local var0_0 = class("SettingsOtherPage", import(".SettingsOptionPage"))
 
 function var0_0.OnShowTranscode(arg0_1, arg1_1)
 	if PLATFORM_CODE == PLATFORM_JP then

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.chapter_defense = {
 	[1250001] = {
 		id = 1250001,

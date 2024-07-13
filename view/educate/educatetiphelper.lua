@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateTipHelper")
+local var0_0 = class("EducateTipHelper")
 
 var0_0.system_save_key = "educate_system_unlcok_tip"
 var0_0.system_tip_list = {

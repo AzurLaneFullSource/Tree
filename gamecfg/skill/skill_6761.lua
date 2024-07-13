@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "华盛顿条约",
 	cd = 0,

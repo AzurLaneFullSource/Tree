@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024异世界冒险 啾莱姆王召唤有翼啾莱姆 初始位置随机",
 	time = 15,

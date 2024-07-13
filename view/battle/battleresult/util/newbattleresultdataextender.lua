@@ -1,4 +1,4 @@
-﻿local var0_0 = class("NewBattleResultDataExtender")
+local var0_0 = class("NewBattleResultDataExtender")
 
 function var0_0.NeedCloseCamera(arg0_1)
 	return arg0_1 ~= SYSTEM_BOSS_RUSH and arg0_1 ~= SYSTEM_BOSS_RUSH_EX and arg0_1 ~= SYSTEM_ACT_BOSS and arg0_1 ~= SYSTEM_WORLD_BOSS and arg0_1 ~= SYSTEM_BOSS_SINGLE

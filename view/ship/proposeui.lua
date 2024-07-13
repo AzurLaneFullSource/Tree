@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ProposeUI", import("..base.BaseUI"))
+local var0_0 = class("ProposeUI", import("..base.BaseUI"))
 local var1_0 = {
 	1,
 	2,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SettingsDormBtn", import(".SettingsDownloadableBtn"))
+local var0_0 = class("SettingsDormBtn", import(".SettingsDownloadableBtn"))
 
 function var0_0.GetDownloadGroup(arg0_1)
 	return "DORM"

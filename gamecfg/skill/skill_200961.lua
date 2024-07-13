@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "2024幼儿园活动 轻巡石膏喵 召唤雕像2",
 	cd = 0,

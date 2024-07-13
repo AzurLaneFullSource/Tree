@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommanderHomeLevelCard")
+local var0_0 = class("CommanderHomeLevelCard")
 local var1_0 = "#9A9898"
 local var2_0 = "#a59897"
 local var3_0 = "#6a5a5a"

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2024罗德尼meta 终结技前最后一次判断",
 	time = 3,

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	time = 3,
 	name = "重点打击",
 	init_effect = "jinengchufared",

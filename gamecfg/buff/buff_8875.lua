@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "记录修正-AF 白鹰角色在战斗中造成的伤害降低5%，受到的伤害降低5%",
 	time = 0,

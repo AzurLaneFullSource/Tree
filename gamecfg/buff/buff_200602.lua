@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023云仙活动 X半影 黑色火球效果 短暂致盲",
 	time = 3,

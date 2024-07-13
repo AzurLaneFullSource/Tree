@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MedalShopPurchasePanel", import(".GuildShopPurchasePanel"))
+local var0_0 = class("MedalShopPurchasePanel", import(".GuildShopPurchasePanel"))
 
 function var0_0.getUIName(arg0_1)
 	return "MedalShopPurchaseMsgUI"

@@ -1,1 +1,1 @@
-﻿return (class("FallenWingMainPage", import(".TemplatePage.PreviewTemplatePage")))
+return (class("FallenWingMainPage", import(".TemplatePage.PreviewTemplatePage")))

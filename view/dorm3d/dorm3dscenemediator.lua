@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Dorm3dSceneMediator", import("view.base.ContextMediator"))
+local var0_0 = class("Dorm3dSceneMediator", import("view.base.ContextMediator"))
 
 var0_0.TRIGGER_FAVOR = "Dorm3dSceneMediator.TRIGGER_FAVOR"
 var0_0.FAVOR_LEVEL_UP = "Dorm3dSceneMediator.FAVOR_LEVEL_UP"

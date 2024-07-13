@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RacePage", import("...base.BaseActivityPage"))
+local var0_0 = class("RacePage", import("...base.BaseActivityPage"))
 local var1_0 = 58
 
 function var0_0.OnInit(arg0_1)

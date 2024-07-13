@@ -1,4 +1,4 @@
-﻿local var0_0 = class("LocalSystemTimeUtil", import(".SystemTimeUtil"))
+local var0_0 = class("LocalSystemTimeUtil", import(".SystemTimeUtil"))
 
 function var0_0.Flush(arg0_1)
 	local var0_1 = os.date("%H:%M:%S")

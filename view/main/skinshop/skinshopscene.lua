@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SkinShopScene", import("...base.BaseUI"))
+local var0_0 = class("SkinShopScene", import("...base.BaseUI"))
 
 var0_0.EVENT_ON_CARD_CLICK = "SkinShopScene:EVENT_ON_CARD_CLICK"
 

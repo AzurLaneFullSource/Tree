@@ -1,4 +1,4 @@
-﻿local var0_0 = class("DOALinkIslandMediator", import("..TemplateMV.BackHillMediatorTemplate"))
+local var0_0 = class("DOALinkIslandMediator", import("..TemplateMV.BackHillMediatorTemplate"))
 
 function var0_0.register(arg0_1)
 	arg0_1:BindEvent()

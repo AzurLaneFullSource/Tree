@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChapterChampionSubmarine", import(".ChapterChampionNormal"))
+local var0_0 = class("ChapterChampionSubmarine", import(".ChapterChampionNormal"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg1_1)

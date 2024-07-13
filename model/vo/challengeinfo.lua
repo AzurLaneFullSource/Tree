@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ChallengeInfo", import(".BaseVO"))
+local var0_0 = class("ChallengeInfo", import(".BaseVO"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1:UpdateChallengeInfo(arg1_1)

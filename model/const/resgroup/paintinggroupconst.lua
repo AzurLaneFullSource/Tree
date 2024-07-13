@@ -1,4 +1,4 @@
-﻿local var0_0 = {}
+local var0_0 = {}
 
 var0_0.PaintingGroupName = "PAINTING"
 var0_0.PaintingMgr = nil

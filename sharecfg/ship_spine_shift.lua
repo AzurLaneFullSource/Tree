@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.ship_spine_shift = {
 	lulutiye_2 = {
 		spine = "lulutiye_2",

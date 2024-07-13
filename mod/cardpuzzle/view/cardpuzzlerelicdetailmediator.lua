@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CardPuzzleRelicDetailMediator", ContextMediator)
+local var0_0 = class("CardPuzzleRelicDetailMediator", ContextMediator)
 
 function var0_0.register(arg0_1)
 	return

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.guild_store = {
 	{
 		goods_rarity = 4,

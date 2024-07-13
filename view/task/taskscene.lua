@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TaskScene", import("..base.BaseUI"))
+local var0_0 = class("TaskScene", import("..base.BaseUI"))
 
 var0_0.PAGE_TYPE_SCENARIO = "scenario"
 var0_0.PAGE_TYPE_BRANCH = "branch"

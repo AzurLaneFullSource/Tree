@@ -1,4 +1,4 @@
-﻿local var0_0 = class("RefluxShopView", import("..base.BaseSubView"))
+local var0_0 = class("RefluxShopView", import("..base.BaseSubView"))
 
 var0_0.GiftPackType = {
 	Gold = 3,

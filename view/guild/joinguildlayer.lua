@@ -1,4 +1,4 @@
-﻿local var0_0 = class("JoinGuildLayer", import("..base.BaseUI"))
+local var0_0 = class("JoinGuildLayer", import("..base.BaseUI"))
 local var1_0 = 30
 local var2_0 = i18n("guild_search_list_max_count", var1_0)
 

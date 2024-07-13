@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Server", import(".BaseVO"))
+local var0_0 = class("Server", import(".BaseVO"))
 
 var0_0.STATUS = {
 	REGISTER_FULL = 3,

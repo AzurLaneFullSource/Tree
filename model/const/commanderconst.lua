@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CommanderConst")
+local var0_0 = class("CommanderConst")
 
 var0_0.TALENT_POINT_LEVEL = 5
 var0_0.TALENT_POINT = 1

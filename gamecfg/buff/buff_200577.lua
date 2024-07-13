@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023黑神通 开场根据敌方阵营个数提升自身属性",
 	time = 3,

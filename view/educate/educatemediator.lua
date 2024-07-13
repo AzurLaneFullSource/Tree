@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateMediator", import(".base.EducateContextMediator"))
+local var0_0 = class("EducateMediator", import(".base.EducateContextMediator"))
 
 var0_0.ON_DEFAULT_TARGET_SET = "EducateMediator:ON_DEFAULT_TARGET_SET"
 var0_0.ON_UPGRADE_FAVOR = "EducateMediator:ON_UPGRADE_FAVOR"

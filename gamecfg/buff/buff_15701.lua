@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "精度上升",
 	time = 0,

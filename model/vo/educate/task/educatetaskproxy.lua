@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateTaskProxy")
+local var0_0 = class("EducateTaskProxy")
 
 var0_0.TASK_ADDED = "EducateTaskProxy.TASK_ADDED"
 var0_0.TASK_REMOVED = "EducateTaskProxy.TASK_REMOVED"

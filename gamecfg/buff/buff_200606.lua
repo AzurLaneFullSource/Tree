@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023云仙活动 剧情战 BOSS剧情杀",
 	time = 5,

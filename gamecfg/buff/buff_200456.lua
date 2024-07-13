@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023俾斯麦Z活动 剧情战女灶神支援BUFF",
 	time = 5,

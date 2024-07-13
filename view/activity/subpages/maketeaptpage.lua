@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MakeTeaPtPage", import(".TemplatePage.SkinTemplatePage"))
+local var0_0 = class("MakeTeaPtPage", import(".TemplatePage.SkinTemplatePage"))
 local var1_0 = 5
 local var2_0 = {
 	"caizhai",

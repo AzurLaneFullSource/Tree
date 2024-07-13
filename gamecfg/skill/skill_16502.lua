@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "oak免死标记-去除",
 	cd = 0,

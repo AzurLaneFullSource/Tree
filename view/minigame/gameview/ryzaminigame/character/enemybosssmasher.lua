@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EnemyBossSmasher", import("view.miniGame.gameView.RyzaMiniGame.character.EnemySmasher"))
+local var0_0 = class("EnemyBossSmasher", import("view.miniGame.gameView.RyzaMiniGame.character.EnemySmasher"))
 
 var0_0.ConfigSkillCount = 5
 

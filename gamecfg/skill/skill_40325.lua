@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "指挥喵触发特殊弹幕",
 	cd = 0,

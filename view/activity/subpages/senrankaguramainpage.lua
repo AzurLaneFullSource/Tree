@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SenrankaguraMainPage", import(".TemplatePage.PreviewTemplatePage"))
+local var0_0 = class("SenrankaguraMainPage", import(".TemplatePage.PreviewTemplatePage"))
 
 var0_0.SWITCH_INTERVAL = 6
 var0_0.SWITCH_TIME = 0.5

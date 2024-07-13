@@ -1,4 +1,4 @@
-﻿local var0_0 = class("BannerScrollRect4Mellow", import(".BannerScrollRect"))
+local var0_0 = class("BannerScrollRect4Mellow", import(".BannerScrollRect"))
 
 function var0_0.UpdateDotPosition(arg0_1, arg1_1, arg2_1)
 	return

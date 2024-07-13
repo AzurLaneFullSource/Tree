@@ -1,4 +1,4 @@
-﻿CameraHelper = {}
+CameraHelper = {}
 
 local var0_0 = CameraHelper
 local var1_0 = YSTool.YSPermissionTool.Inst

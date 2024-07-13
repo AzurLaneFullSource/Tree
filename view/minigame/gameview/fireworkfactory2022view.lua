@@ -1,4 +1,4 @@
-﻿local var0_0 = class("FireworkFactory2022View", import(".FireworkFactoryView"))
+local var0_0 = class("FireworkFactory2022View", import(".FireworkFactoryView"))
 
 function var0_0.getUIName(arg0_1)
 	return "FireworkFactory2022UI"

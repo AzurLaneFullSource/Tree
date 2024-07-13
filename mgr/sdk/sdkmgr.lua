@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.SdkMgr = singletonClass("SdkMgr")
 
 local var0_0 = pg.SdkMgr

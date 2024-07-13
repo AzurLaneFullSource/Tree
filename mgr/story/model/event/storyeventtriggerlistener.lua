@@ -1,4 +1,4 @@
-﻿local var0_0 = class("StoryEventTriggerListener", pm.Mediator)
+local var0_0 = class("StoryEventTriggerListener", pm.Mediator)
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.eventList = arg1_1

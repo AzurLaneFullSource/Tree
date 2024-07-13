@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.emoji_small_template = {
 	{
 		id = 1,

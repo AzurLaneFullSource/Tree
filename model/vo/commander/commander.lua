@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Commander", import("..BaseVO"))
+local var0_0 = class("Commander", import("..BaseVO"))
 local var1_0 = pg.commander_level
 local var2_0 = pg.commander_attribute_template
 local var3_0 = 0

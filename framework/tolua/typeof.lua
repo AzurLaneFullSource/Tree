@@ -1,4 +1,4 @@
-﻿local var0_0 = type
+local var0_0 = type
 local var1_0 = {}
 local var2_0 = tolua.typeof
 local var3_0 = tolua.findtype

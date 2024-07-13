@@ -1,4 +1,4 @@
-﻿local var0_0 = class("ActivityItemPool", import(".BaseVO"))
+local var0_0 = class("ActivityItemPool", import(".BaseVO"))
 local var1_0 = pg.activity_random_award_item
 
 function var0_0.Ctor(arg0_1, arg1_1)

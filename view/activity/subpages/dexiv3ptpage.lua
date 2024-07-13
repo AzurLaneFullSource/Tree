@@ -1,1 +1,1 @@
-﻿return (class("DexiV3PtPage", import(".TemplatePage.PtTemplatePage")))
+return (class("DexiV3PtPage", import(".TemplatePage.PtTemplatePage")))

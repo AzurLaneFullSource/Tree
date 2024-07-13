@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Doa2MedalCollectionView", import("view.base.BaseUI"))
+local var0_0 = class("Doa2MedalCollectionView", import("view.base.BaseUI"))
 
 var0_0.FADE_OUT_TIME = 1
 var0_0.PAGE_NUM = 9

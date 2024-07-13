@@ -1,4 +1,4 @@
-﻿local var0_0 = class("TowerClimbingMediator", import("...base.ContextMediator"))
+local var0_0 = class("TowerClimbingMediator", import("...base.ContextMediator"))
 
 var0_0.ON_FINISH = "TowerClimbingMediator:ON_FINISH"
 var0_0.ON_MODIFY_DATA = "TowerClimbingMediator:ON_MODIFY_DATA"

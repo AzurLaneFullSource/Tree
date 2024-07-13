@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SingleEvent", import("model.vo.BaseVO"))
+local var0_0 = class("SingleEvent", import("model.vo.BaseVO"))
 
 var0_0.EVENT_TYPE = {
 	DAILY = 2,

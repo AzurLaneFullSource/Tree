@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "仲裁机关自身回血",
 	time = 0,

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpineRole")
+local var0_0 = class("SpineRole")
 
 var0_0.STATE_EMPTY = 0
 var0_0.STATE_LOADING = 1

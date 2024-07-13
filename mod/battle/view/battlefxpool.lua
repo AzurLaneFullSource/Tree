@@ -1,4 +1,4 @@
-﻿ys = ys or {}
+ys = ys or {}
 
 local var0_0 = ys
 local var1_0 = pg.effect_offset

@@ -1,4 +1,4 @@
-﻿local var0_0 = class("Prayproxy", import(".NetProxy"))
+local var0_0 = class("Prayproxy", import(".NetProxy"))
 
 var0_0.STATE_HOME = 1
 var0_0.STATE_SELECT_POOL = 2

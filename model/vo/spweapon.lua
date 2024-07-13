@@ -1,4 +1,4 @@
-﻿local var0_0 = class("SpWeapon", import(".BaseVO"))
+local var0_0 = class("SpWeapon", import(".BaseVO"))
 
 var0_0.type = DROP_TYPE_SPWEAPON
 var0_0.CONFIRM_OP_DISCARD = 0

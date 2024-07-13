@@ -1,4 +1,4 @@
-﻿local var0_0 = class("GuildReport", import("...BaseVO"))
+local var0_0 = class("GuildReport", import("...BaseVO"))
 
 var0_0.SCORE_TYPE_S = 1
 var0_0.SCORE_TYPE_A = 2

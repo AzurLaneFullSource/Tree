@@ -1,4 +1,4 @@
-﻿return {
+return {
 	uiEffect = "",
 	name = "活动buff-祭典祈愿效果-战斗伤害提高",
 	cd = 0,

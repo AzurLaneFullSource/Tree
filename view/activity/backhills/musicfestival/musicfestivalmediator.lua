@@ -1,4 +1,4 @@
-﻿local var0_0 = class("MusicFestivalMediator", import("..TemplateMV.BackHillMediatorTemplate"))
+local var0_0 = class("MusicFestivalMediator", import("..TemplateMV.BackHillMediatorTemplate"))
 
 function var0_0.listNotificationInterests(arg0_1)
 	return {

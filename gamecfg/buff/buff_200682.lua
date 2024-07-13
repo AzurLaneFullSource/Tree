@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "2023 闪乱联动 地脉机关-闪 为全体添加减伤护盾 我方效果",
 	time = 10,

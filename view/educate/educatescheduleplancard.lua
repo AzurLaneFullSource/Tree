@@ -1,4 +1,4 @@
-﻿local var0_0 = class("EducateSchedulePlanCard")
+local var0_0 = class("EducateSchedulePlanCard")
 local var1_0 = {
 	top = 0,
 	spacing = 8,

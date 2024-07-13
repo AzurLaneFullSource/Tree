@@ -1,4 +1,4 @@
-﻿local var0_0 = class("CollectionProxy", import(".NetProxy"))
+local var0_0 = class("CollectionProxy", import(".NetProxy"))
 
 var0_0.AWARDS_UPDATE = "awards update"
 var0_0.GROUP_INFO_UPDATE = "group info update"

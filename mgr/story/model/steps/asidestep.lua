@@ -1,4 +1,4 @@
-﻿local var0_0 = class("AsideStep", import(".StoryStep"))
+local var0_0 = class("AsideStep", import(".StoryStep"))
 
 var0_0.ASIDE_TYPE_HRZ = 1
 var0_0.ASIDE_TYPE_VEC = 2
