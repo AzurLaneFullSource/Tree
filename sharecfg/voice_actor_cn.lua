@@ -1619,5 +1619,9 @@ pg.voice_actor_CN = {
 	[417] = {
 		code = 417,
 		actor_name = "Hina Tachibana"
+	},
+	[418] = {
+		code = 418,
+		actor_name = "Megumi Han"
 	}
 }

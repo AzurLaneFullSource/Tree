@@ -2663,6 +2663,10 @@ _G.pg.base.gametip.mail_confirm_cancel_important_flag = {
 	tip = "Unmark as important",
 }
 
+_G.pg.base.gametip.mail_confirm_delete_important_flag = {
+	tip = "Important mail cannot be deleted.",
+}
+
 _G.pg.base.gametip.mail_mail_page = {
 	tip = "Mail",
 }
@@ -2761,6 +2765,10 @@ _G.pg.base.gametip.mail_move_button = {
 
 _G.pg.base.gametip.mail_delet_button = {
 	tip = "Delete",
+}
+
+_G.pg.base.gametip.mail_delet_button_1 = {
+	tip = "Delete Mail",
 }
 
 _G.pg.base.gametip.mail_moveone_button = {
@@ -10074,19 +10082,19 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 }
 
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Rate UP for Alvitr, Z47, and more!",
+	tip = "Get Vanguard guaranteed with every 200 event builds (can be done up to 4 times)!",
 }
 
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "Foch added to standard build pool!",
+	tip = "Shimakaze, Chikuma added to standard build pool!",
 }
 
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "Eskimo added to standard build pool!",
+	tip = "Yura, Umikaze added to standard build pool!",
 }
 
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "Joffre added to standard build pool!",
+	tip = "Shimakaze, Katsuragi added to standard build pool!",
 }
 
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
@@ -11692,12 +11700,24 @@ _G.pg.base.gametip.mail_storeroom_max_2 = {
 	tip = "Please input <color=#238c40>$1</color> to continue.",
 }
 
+_G.pg.base.gametip.mail_storeroom_max_3 = {
+	tip = "Claiming this Oil will put you over your max capacity.",
+}
+
+_G.pg.base.gametip.mail_storeroom_max_4 = {
+	tip = "Claiming these Coins will put you over your max capacity.",
+}
+
 _G.pg.base.gametip.mail_storeroom_addgold = {
 	tip = "Stockpiled Coins:",
 }
 
 _G.pg.base.gametip.mail_storeroom_addoil = {
 	tip = "Stockpiled Oil:",
+}
+
+_G.pg.base.gametip.mail_storeroom_collect = {
+	tip = "After claiming you will receive the following items:",
 }
 
 _G.pg.base.gametip.mail_search = {
@@ -21536,6 +21556,54 @@ _G.pg.base.gametip.loveletter_exchange_button = {
 
 _G.pg.base.gametip.loveletter_exchange_tip3 = {
 	tip = "Replacement successful. Please check your Inbox to receive your new items.",
+}
+
+_G.pg.base.gametip.loveletter_recover_tip1 = {
+	tip = "You need to scan your mail before you can use the resend feature.",
+}
+
+_G.pg.base.gametip.loveletter_recover_tip2 = {
+	tip = "Incorrect character.",
+}
+
+_G.pg.base.gametip.loveletter_recover_tip3 = {
+	tip = "This Valentine's mail already exists in your mailbox or Archive.",
+}
+
+_G.pg.base.gametip.loveletter_recover_tip4 = {
+	tip = "This character was not available during the year selected.",
+}
+
+_G.pg.base.gametip.loveletter_recover_tip5 = {
+	tip = "Your Archive is full. You need to manage your Archive before you can resend mail.",
+}
+
+_G.pg.base.gametip.loveletter_recover_tip6 = {
+	tip = "Your mail has been scanned. You can resend Valentine's mail from $1.",
+}
+
+_G.pg.base.gametip.loveletter_recover_tip7 = {
+	tip = "Your mail has been scanned. Your Valentine's mail already exists in your mailbox or Archive.",
+}
+
+_G.pg.base.gametip.loveletter_recover_bottom1 = {
+	tip = "Scan",
+}
+
+_G.pg.base.gametip.loveletter_recover_bottom2 = {
+	tip = "Resend",
+}
+
+_G.pg.base.gametip.loveletter_recover_bottom3 = {
+	tip = "$1",
+}
+
+_G.pg.base.gametip.loveletter_recover_text1 = {
+	tip = "You can use the <color=#ffde38>resend mail</color> feature to resend <color=#ffde38>$2</color>'s Valentine's Mail from <color=#ffde38>$1</color> to your Archive (without any of the attached items). \n* You can only use the mail resend feature once per commemorative item.",
+}
+
+_G.pg.base.gametip.loveletter_recover_text2 = {
+	tip = "Select the <color=#ffde38>year</color> of the mail you'd like to resend. <color=#ffde38>$1</color>'s Valentine mail from the selected year will be sent to your Archive (without any of the attached items). \n* You can only use the mail resend feature once ",
 }
 
 _G.pg.base.gametip.battle_text_common_1 = {

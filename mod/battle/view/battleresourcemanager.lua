@@ -602,7 +602,7 @@ function var5_0.StartPreload(arg0_50, arg1_50, arg2_50)
 			if PlayerPrefs.GetInt(BATTLE_HIDE_BG, 1) > 0 then
 				var7_50 = checkABExist("painting/" .. var3_50 .. "_n")
 			else
-				var7_50 = PlayerPrefs.GetInt("paint_hide_other_obj_" .. var3_50, 0) ~= 0
+				var7_50 = PlayerPrefs.GetInt("paint_hide_other_obj_" .. var3_50, 0) ~= 0 and checkABExist("painting/" .. var3_50 .. "_n")
 			end
 
 			PoolMgr.GetInstance():GetPainting(var3_50 .. (var7_50 and "_n" or ""), true, function(arg0_54)

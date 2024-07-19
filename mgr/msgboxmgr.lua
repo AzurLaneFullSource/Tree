@@ -12,6 +12,7 @@ var1_0.BUTTON_RETREAT = 5
 var1_0.BUTTON_PREPAGE = 6
 var1_0.BUTTON_NEXTPAGE = 7
 var1_0.BUTTON_BLUE_WITH_ICON = 8
+var1_0.BUTTON_YELLOW = 9
 var1_0.TITLE_INFORMATION = "infomation"
 var1_0.TITLE_SETTING = "setting"
 var1_0.TITLE_WARNING = "warning"
@@ -1127,7 +1128,7 @@ function var1_0.createBtn(arg0_44, arg1_44)
 				var8_44 = nil
 			end
 		end, 1, var9_44)
-		arg0_44.timers.delayTimer = var8_44
+		arg0_44.timers[var3_44] = var8_44
 
 		var8_44:Start()
 		setText(var6_44, var10_44 .. string.format("(%d)", var9_44))

@@ -952,7 +952,7 @@ function var0_0.changeIdleIndex(arg0_54, arg1_54)
 		idle = arg0_54.idleIndex,
 		idle_change = var0_54
 	})
-	print("now idle index is " .. arg1_54)
+	print("now set idle index is " .. arg1_54)
 
 	arg0_54.idleIndex = arg1_54
 

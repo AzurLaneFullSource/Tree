@@ -141825,7 +141825,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "Every 12 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51] = 801235
+			[51] = 801305
 		},
 		world_death_mark = {
 			1
@@ -141841,7 +141841,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "While this ship's HP is above 50.0%, every 8 times this ship fires her Main Guns: reduces this ship's current HP by 5.0% and fires a special barrage with 20.0% increased Crit Rate; when this ship's HP falls below 50.0%, every 4 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51] = 801237
+			[51] = 801307
 		},
 		world_death_mark = {
 			1
@@ -141857,7 +141857,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 12 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 3.0%.",
 		system_transform = {
-			[51] = 801235
+			[51] = 801305
 		},
 		world_death_mark = {
 			1
@@ -141873,7 +141873,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "[Operation Siren]\nWhile this ship's HP is above 50.0%, every 8 times this ship fires her Main Guns: reduces this ship's current HP by 5.0% and fires a special barrage with 20.0% increased Crit Rate; when this ship's HP falls below 50.0%, every 4 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 8.0%.",
 		system_transform = {
-			[51] = 801237
+			[51] = 801307
 		},
 		world_death_mark = {
 			1

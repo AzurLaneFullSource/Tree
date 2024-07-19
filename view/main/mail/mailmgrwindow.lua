@@ -73,6 +73,13 @@ function var0_0.OnInit(arg0_2)
 		end
 	end
 
+	if MailWaterSelect then
+		table.insert(var0_2, Drop.New({
+			id = 50002,
+			type = DROP_TYPE_ITEM
+		}))
+	end
+
 	arg0_2.filterDic = {}
 	arg0_2.rtContent = arg0_2._tf:Find("window/frame/toggle_group/filter/content")
 

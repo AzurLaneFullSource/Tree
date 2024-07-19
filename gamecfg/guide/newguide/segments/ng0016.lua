@@ -15,7 +15,7 @@ return {
 				text = var0_0[1]
 			},
 			ui = {
-				path = "/OverlayCamera/Overlay/UIMain/top/LevelStageView(Clone)/bottom_stage/normal/help_button"
+				path = "/OverlayCamera/Overlay/UIMain/top/LevelStageView(Clone)/bottom_stage/Normal/help_button"
 			}
 		}
 	}

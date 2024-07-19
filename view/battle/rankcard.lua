@@ -64,8 +64,12 @@ function var0_0.update(arg0_2, arg1_2, arg2_2)
 	arg0_2.levelTxt.text = "Lv." .. arg1_2.lv
 
 	setActive(arg0_2.NumImgTF, var1_2 < 4)
+
+	if var1_2 < 4 then
+		setImageSprite(arg0_2.NumImgTF, GetSpriteFromAtlas("billboardframe", "bgn" .. var1_2), true)
+	end
+
 	setImageSprite(arg0_2.frameTF, GetSpriteFromAtlas("billboardframe", "bg" .. var1_2))
-	setImageSprite(arg0_2.NumImgTF, GetSpriteFromAtlas("billboardframe", "bgn" .. var1_2), true)
 
 	local var2_2 = var1_0[var1_2]
 

@@ -82,7 +82,8 @@ function var0_0.register(arg0_1)
 		else
 			arg0_1:sendNotification(GAME.BEGIN_STAGE, {
 				system = SYSTEM_WORLD,
-				stageId = arg1_13
+				stageId = arg1_13,
+				hpRate = arg3_13:GetHP() and arg3_13:GetHP() / arg3_13:GetMaxHP() or nil
 			})
 		end
 	end)

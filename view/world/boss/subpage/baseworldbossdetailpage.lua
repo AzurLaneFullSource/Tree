@@ -112,7 +112,7 @@ function var0_0.OnStart(arg0_10)
 	elseif arg0_10.boss:GetLeftTime() <= 0 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_boss_is_death"))
 	else
-		arg0_10:emit(WorldBossMediator.ON_BATTLE, arg0_10.boss.id)
+		arg0_10:emit(WorldBossMediator.ON_BATTLE, arg0_10.boss.id, false, arg0_10.hpSlider.value)
 	end
 end
 

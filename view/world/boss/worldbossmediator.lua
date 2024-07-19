@@ -96,10 +96,11 @@ function var0_0.register(arg0_1)
 	arg0_1:bind(var0_0.ON_FETCH_BOSS, function(arg0_13)
 		arg0_1:updateBossProxy()
 	end)
-	arg0_1:bind(var0_0.ON_BATTLE, function(arg0_14, arg1_14, arg2_14)
+	arg0_1:bind(var0_0.ON_BATTLE, function(arg0_14, arg1_14, arg2_14, arg3_14)
 		arg0_1:sendNotification(GAME.WORLD_BOSS_START_BATTLE, {
 			bossId = arg1_14,
-			isOther = arg2_14
+			isOther = arg2_14,
+			hpRate = arg3_14 or 1
 		})
 	end)
 	arg0_1:bind(var0_0.ON_RANK_LIST, function(arg0_15, arg1_15)

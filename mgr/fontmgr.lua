@@ -12,22 +12,23 @@ function var0_0.FontMgr.Init(arg0_1, arg1_1)
 	local var0_1 = {}
 
 	for iter0_1, iter1_1 in pairs({
-		crifont = "crifont",
-		remfont = "remfont",
-		heiti = "zhunyuan",
-		treatfont = "treatfont",
 		impact = "impact",
-		chuanjiadanFont = "chuanjiadanFont",
+		remfont = "remfont",
+		lvnumber = "lvnumber",
+		heitibold = "ZhunYuan_Bold",
+		crifont = "crifont",
+		heiti = "zhunyuan",
 		explofont = "explofont",
-		number = "number",
+		bankgthd = "bankgthd",
 		countnumber = "countnumber",
 		weaponcountfont = "weaponcountfont",
 		missfont = "missfont",
+		treatfont = "treatfont",
 		MStiffHei = "MStiffHei",
-		weijichuanFont = "weijichuanFont",
-		bankgthd = "bankgthd",
-		lvnumber = "lvnumber",
-		sourcehanserifcn = "sourcehanserifcn-bold_0"
+		chuanjiadanFont = "chuanjiadanFont",
+		number = "number",
+		sourcehanserifcn = "sourcehanserifcn-bold_0",
+		weijichuanFont = "weijichuanFont"
 	}) do
 		table.insert(var0_1, function(arg0_2)
 			ResourceMgr.Inst:getAssetAsync("font/" .. iter1_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_3)

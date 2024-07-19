@@ -98,23 +98,21 @@ function var0_0.setSelectedShip(arg0_13, arg1_13)
 
 	local var0_13 = ShipType.Type2BattlePrint(arg1_13:getShipType())
 
-	eachChild(arg0_13.rtName:Find("shiptype"), function(arg0_14)
-		setActive(arg0_14, arg0_14.name == var0_13)
-	end)
+	GetImageSpriteFromAtlasAsync("shiptype", var0_13, arg0_13.rtName:Find("shiptype/Image"), true)
 	setText(arg0_13.rtName:Find("name"), arg1_13:getName())
 	setText(arg0_13.rtName:Find("english"), string.upper(arg1_13:getConfig("english_name")))
 	setPaintingPrefabAsync(arg0_13.rtPaint, arg1_13:getPainting(), "huode")
 end
 
-function var0_0.didEnter(arg0_15)
-	arg0_15.iconList:align(#arg0_15.ids)
+function var0_0.didEnter(arg0_14)
+	arg0_14.iconList:align(#arg0_14.ids)
 end
 
-function var0_0.willExit(arg0_16)
-	arg0_16.iconSprites = nil
+function var0_0.willExit(arg0_15)
+	arg0_15.iconSprites = nil
 
-	if arg0_16.shipVO then
-		retPaintingPrefab(arg0_16.rtPaint, arg0_16.shipVO:getPainting())
+	if arg0_15.shipVO then
+		retPaintingPrefab(arg0_15.rtPaint, arg0_15.shipVO:getPainting())
 	end
 end
 
