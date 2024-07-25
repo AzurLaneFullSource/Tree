@@ -26350,7 +26350,17 @@ pg.ship_l2d = {
 				},
 				{
 					8,
-					{}
+					{
+						"touch_idle12",
+						"touch_drag1",
+						"touch_drag2",
+						"touch_drag3",
+						"touch_drag4",
+						"touch_drag5",
+						"touch_drag6",
+						"touch_drag7",
+						"touch_drag8"
+					}
 				},
 				{
 					9,
@@ -26979,6 +26989,7 @@ pg.ship_l2d = {
 			type = 2
 		},
 		action_trigger_active = {
+			idle = 0,
 			enable = {},
 			ignore = {}
 		}
@@ -27023,6 +27034,7 @@ pg.ship_l2d = {
 			type = 2
 		},
 		action_trigger_active = {
+			idle = 0,
 			enable = {},
 			ignore = {}
 		}
@@ -27067,6 +27079,7 @@ pg.ship_l2d = {
 			type = 2
 		},
 		action_trigger_active = {
+			idle = 0,
 			enable = {},
 			ignore = {}
 		}
@@ -27111,6 +27124,7 @@ pg.ship_l2d = {
 			type = 2
 		},
 		action_trigger_active = {
+			idle = 0,
 			enable = {},
 			ignore = {}
 		}
@@ -27155,6 +27169,7 @@ pg.ship_l2d = {
 			type = 2
 		},
 		action_trigger_active = {
+			idle = 0,
 			enable = {},
 			ignore = {}
 		}
@@ -27199,6 +27214,7 @@ pg.ship_l2d = {
 			type = 2
 		},
 		action_trigger_active = {
+			idle = 0,
 			enable = {},
 			ignore = {}
 		}
@@ -27212,7 +27228,7 @@ pg.ship_l2d = {
 		parts_data = "",
 		revert_action_index = 0,
 		draw_able_name = "TouchDrag1",
-		limit_time = 1,
+		limit_time = 0.5,
 		mode = 1,
 		ignore_react = 1,
 		gyro = 0,
@@ -27226,10 +27242,10 @@ pg.ship_l2d = {
 		react_pos_x = 0,
 		parameter = "touch_drag1",
 		shop_action = 0,
-		revert_idle_index = 0,
+		revert_idle_index = 1,
 		ship_skin_id = 207037,
 		gyro_z = 0,
-		smooth = 500,
+		smooth = 180,
 		react_condition = "",
 		range_abs = 0,
 		listener_data = "",
@@ -27310,7 +27326,7 @@ pg.ship_l2d = {
 		parts_data = "",
 		revert_action_index = 0,
 		draw_able_name = "TouchDrag2",
-		limit_time = 1,
+		limit_time = 0.5,
 		mode = 1,
 		ignore_react = 1,
 		gyro = 0,
@@ -27324,10 +27340,10 @@ pg.ship_l2d = {
 		react_pos_x = 0,
 		parameter = "touch_drag2",
 		shop_action = 0,
-		revert_idle_index = 0,
+		revert_idle_index = 1,
 		ship_skin_id = 207037,
 		gyro_z = 0,
-		smooth = 500,
+		smooth = 180,
 		react_condition = "",
 		range_abs = 0,
 		listener_data = "",
@@ -27464,7 +27480,7 @@ pg.ship_l2d = {
 		react_pos_x = 0,
 		parameter = "touch_drag4",
 		shop_action = 0,
-		revert_idle_index = 0,
+		revert_idle_index = 1,
 		start_value = 0,
 		gyro_z = 0,
 		ship_skin_id = 207037,

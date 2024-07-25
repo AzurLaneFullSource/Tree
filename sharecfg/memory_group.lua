@@ -4533,7 +4533,7 @@ pg.base.memory_group = {
 	},
 	[293] = {
 		id = 293,
-		subtype = 2,
+		subtype = 1,
 		icon = "title_event",
 		type = 2,
 		link_event = 5501,

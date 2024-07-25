@@ -396,7 +396,7 @@ end
 
 function var0_0.fillterAction(arg0_17, arg1_17)
 	if type(arg1_17) == "table" then
-		return arg1_17[math.random(1, arg1_17)]
+		return arg1_17[math.random(1, #arg1_17)]
 	else
 		return arg1_17
 	end
