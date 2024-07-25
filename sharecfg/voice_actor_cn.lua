@@ -1623,5 +1623,13 @@ pg.voice_actor_CN = {
 	[418] = {
 		code = 418,
 		actor_name = "Megumi Han"
+	},
+	[419] = {
+		code = 419,
+		actor_name = "Akari Miyazaki"
+	},
+	[420] = {
+		code = 420,
+		actor_name = "Emi Hirayama"
 	}
 }

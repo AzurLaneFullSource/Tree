@@ -32,6 +32,8 @@ function var0_0.StatisticsInit(arg0_1, arg1_1)
 		var0_1.gearScore = iter1_1:GetGearScore()
 		arg0_1._statistics[var0_1.id] = var0_1
 	end
+
+	arg0_1._statistics._autoCount = 0
 end
 
 function var0_0.InitAidUnitStatistics(arg0_2, arg1_2)
@@ -580,4 +582,12 @@ end
 
 function var0_0.CalcAirFightScore(arg0_45)
 	arg0_45._statistics._battleScore = var3_0.BattleScore.S
+end
+
+function var0_0.AutoStatistics(arg0_46, arg1_46)
+	if not arg0_46._statistics._autoInit then
+		arg0_46._statistics._autoInit = not arg1_46 and 1 or 0
+	else
+		arg0_46._statistics._autoCount = arg0_46._statistics._autoCount + 1
+	end
 end

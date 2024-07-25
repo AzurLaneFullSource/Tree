@@ -31,6 +31,9 @@ var2_0.CS_40003_ENEMY_INFO_FIELD = var0_0.FieldDescriptor()
 var2_0.CS_40003_DATA2_FIELD = var0_0.FieldDescriptor()
 var2_0.CS_40003_COMMANDER_ID_LIST_FIELD = var0_0.FieldDescriptor()
 var2_0.CS_40003_OTHERSTATISTICS_FIELD = var0_0.FieldDescriptor()
+var2_0.CS_40003_AUTO_BEFORE_FIELD = var0_0.FieldDescriptor()
+var2_0.CS_40003_AUTO_SWITCH_TIME_FIELD = var0_0.FieldDescriptor()
+var2_0.CS_40003_AUTO_AFTER_FIELD = var0_0.FieldDescriptor()
 SC_40004 = var0_0.Descriptor()
 var2_0.SC_40004_RESULT_FIELD = var0_0.FieldDescriptor()
 var2_0.SC_40004_DROP_INFO_FIELD = var0_0.FieldDescriptor()
@@ -322,6 +325,33 @@ var2_0.CS_40003_OTHERSTATISTICS_FIELD.default_value = {}
 var2_0.CS_40003_OTHERSTATISTICS_FIELD.message_type = STATISTICSINFO
 var2_0.CS_40003_OTHERSTATISTICS_FIELD.type = 11
 var2_0.CS_40003_OTHERSTATISTICS_FIELD.cpp_type = 10
+var2_0.CS_40003_AUTO_BEFORE_FIELD.name = "auto_before"
+var2_0.CS_40003_AUTO_BEFORE_FIELD.full_name = "p40.cs_40003.auto_before"
+var2_0.CS_40003_AUTO_BEFORE_FIELD.number = 16
+var2_0.CS_40003_AUTO_BEFORE_FIELD.index = 15
+var2_0.CS_40003_AUTO_BEFORE_FIELD.label = 2
+var2_0.CS_40003_AUTO_BEFORE_FIELD.has_default_value = false
+var2_0.CS_40003_AUTO_BEFORE_FIELD.default_value = 0
+var2_0.CS_40003_AUTO_BEFORE_FIELD.type = 13
+var2_0.CS_40003_AUTO_BEFORE_FIELD.cpp_type = 3
+var2_0.CS_40003_AUTO_SWITCH_TIME_FIELD.name = "auto_switch_time"
+var2_0.CS_40003_AUTO_SWITCH_TIME_FIELD.full_name = "p40.cs_40003.auto_switch_time"
+var2_0.CS_40003_AUTO_SWITCH_TIME_FIELD.number = 17
+var2_0.CS_40003_AUTO_SWITCH_TIME_FIELD.index = 16
+var2_0.CS_40003_AUTO_SWITCH_TIME_FIELD.label = 2
+var2_0.CS_40003_AUTO_SWITCH_TIME_FIELD.has_default_value = false
+var2_0.CS_40003_AUTO_SWITCH_TIME_FIELD.default_value = 0
+var2_0.CS_40003_AUTO_SWITCH_TIME_FIELD.type = 13
+var2_0.CS_40003_AUTO_SWITCH_TIME_FIELD.cpp_type = 3
+var2_0.CS_40003_AUTO_AFTER_FIELD.name = "auto_after"
+var2_0.CS_40003_AUTO_AFTER_FIELD.full_name = "p40.cs_40003.auto_after"
+var2_0.CS_40003_AUTO_AFTER_FIELD.number = 18
+var2_0.CS_40003_AUTO_AFTER_FIELD.index = 17
+var2_0.CS_40003_AUTO_AFTER_FIELD.label = 2
+var2_0.CS_40003_AUTO_AFTER_FIELD.has_default_value = false
+var2_0.CS_40003_AUTO_AFTER_FIELD.default_value = 0
+var2_0.CS_40003_AUTO_AFTER_FIELD.type = 13
+var2_0.CS_40003_AUTO_AFTER_FIELD.cpp_type = 3
 CS_40003.name = "cs_40003"
 CS_40003.full_name = "p40.cs_40003"
 CS_40003.nested_types = {}
@@ -341,7 +371,10 @@ CS_40003.fields = {
 	var2_0.CS_40003_ENEMY_INFO_FIELD,
 	var2_0.CS_40003_DATA2_FIELD,
 	var2_0.CS_40003_COMMANDER_ID_LIST_FIELD,
-	var2_0.CS_40003_OTHERSTATISTICS_FIELD
+	var2_0.CS_40003_OTHERSTATISTICS_FIELD,
+	var2_0.CS_40003_AUTO_BEFORE_FIELD,
+	var2_0.CS_40003_AUTO_SWITCH_TIME_FIELD,
+	var2_0.CS_40003_AUTO_AFTER_FIELD
 }
 CS_40003.is_extendable = false
 CS_40003.extensions = {}

@@ -16,7 +16,7 @@ function var0_0.preload(arg0_2, arg1_2)
 	local var2_2 = {}
 
 	table.insert(var2_2, function(arg0_3)
-		local var0_3 = CrusingMapInfo.VersionInfo[var0_2:getConfig("config_client").map_name]
+		local var0_3 = pg.battlepass_event_pt[var0_2.id].crusing_map
 
 		var1_2:GetPrefab("crusingmap/" .. var0_3, "", true, function(arg0_4)
 			arg0_2.rtMap = tf(arg0_4)
@@ -26,7 +26,7 @@ function var0_0.preload(arg0_2, arg1_2)
 		end)
 	end)
 	table.insert(var2_2, function(arg0_5)
-		var1_2:GetSpineChar(var0_2:getConfig("config_client").spine_name, true, function(arg0_6)
+		var1_2:GetSpineChar(pg.battlepass_event_pt[var0_2.id].spine_name, true, function(arg0_6)
 			arg0_2.rtModel = tf(arg0_6)
 
 			arg0_5()
@@ -125,7 +125,7 @@ function var0_0.didEnter(arg0_10)
 	onButton(arg0_10, arg0_10.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = i18n(arg0_10.activity:getConfig("config_client").tips[2])
+			helps = i18n("battlepass_main_help_" .. pg.battlepass_event_pt[arg0_10.activity.id].map_name)
 		})
 	end, SFX_PANEL)
 
@@ -165,7 +165,7 @@ function var0_0.didEnter(arg0_10)
 		type = DROP_TYPE_VITEM,
 		id = arg0_10.ptId
 	}):getIcon(), ""))
-	setText(arg0_10.textTip, i18n(arg0_10.activity:getConfig("config_client").tips[1]))
+	setText(arg0_10.textTip, i18n("battlepass_main_tip_" .. pg.battlepass_event_pt[arg0_10.activity.id].map_name))
 
 	local var1_10 = arg0_10.activity.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
 
@@ -223,8 +223,8 @@ function var0_0.willExit(arg0_24)
 	end
 
 	local var0_24 = PoolMgr.GetInstance()
-	local var1_24 = CrusingMapInfo.VersionInfo[arg0_24.activity:getConfig("config_client").map_name]
-	local var2_24 = arg0_24.activity:getConfig("config_client").spine_name
+	local var1_24 = pg.battlepass_event_pt[arg0_24.activity.id].crusing_map
+	local var2_24 = pg.battlepass_event_pt[arg0_24.activity.id].spine_name
 
 	for iter2_24, iter3_24 in ipairs(arg0_24.maps) do
 		setParent(iter3_24.rtLine, iter3_24._tf, true)

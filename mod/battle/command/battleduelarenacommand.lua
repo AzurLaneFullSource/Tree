@@ -49,6 +49,7 @@ function var3_0.DoPrologue(arg0_4)
 		name = var2_4.name,
 		level = var2_4.level
 	})
+	arg0_4._dataProxy:AutoStatistics(1)
 	arg0_4._uiMediator:OpeningEffect(function()
 		arg0_4._state:ChangeState(var0_0.Battle.BattleState.BATTLE_STATE_FIGHT)
 		arg0_4._weaponCommand:ActiveBot(true, false)

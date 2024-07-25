@@ -8,6 +8,7 @@ var0_0.TYPEBISMARCK = 5
 var0_0.TYPESSSS = 6
 var0_0.TYPEATELIER = 7
 var0_0.TYPESENRANKAGURA = 8
+var0_0.TYPESP = 9
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	var0_0.super.Ctor(arg0_1, arg1_1, arg2_1.event, arg2_1.contextData)
@@ -24,6 +25,8 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 				if arg1_2 == "UpdateMapItems" and underscore.any(arg0_1._funcQueue, function(arg0_4)
 					return arg0_4.funcName == arg1_2
 				end) then
+					errorMsg("Multiple Calls of function 'UpdateMapItems' in Mapbuilder")
+
 					return
 				end
 
@@ -56,130 +59,162 @@ function var0_0.Load(arg0_8)
 	local var0_8 = PoolMgr.GetInstance()
 	local var1_8
 
-	parallelAsync({
-		function(arg0_9)
-			var0_8:GetUI(arg0_8:getUIName(), true, function(arg0_10)
-				if arg0_8._state == var0_0.STATES.DESTROY then
-					pg.UIMgr.GetInstance():LoadingOff()
-					var0_8:ReturnUI(arg0_8:getUIName(), arg0_10)
-				else
-					var1_8 = arg0_10
-
-					arg0_9()
-				end
-			end)
-		end,
-		function(arg0_11)
-			arg0_8:preload(arg0_11)
-		end
-	}, function()
-		arg0_8:Loaded(var1_8)
-		arg0_8:Init()
+	var0_8:GetUI(arg0_8:getUIName(), false, function(arg0_9)
+		var1_8 = arg0_9
 	end)
+	arg0_8:Loaded(var1_8)
+	arg0_8:Init()
 end
 
-function var0_0.preload(arg0_13, arg1_13)
-	arg1_13()
+function var0_0.isfrozen(arg0_10)
+	return arg0_10.isFrozen
 end
 
-function var0_0.isfrozen(arg0_14)
-	return arg0_14.isFrozen
-end
-
-function var0_0.DoFunction(arg0_15, arg1_15)
-	arg1_15()
-end
-
-function var0_0.InvokeParent(arg0_16, arg1_16, ...)
-	local var0_16 = arg0_16.sceneParent[arg1_16]
-
-	if var0_16 then
-		return var0_16(arg0_16.sceneParent, ...)
-	end
-end
-
-function var0_0.GetType(arg0_17)
+function var0_0.GetType(arg0_11)
 	return 0
 end
 
-function var0_0.OnLoaded(arg0_18)
-	arg0_18._tf:SetParent(arg0_18.float, false)
-end
-
-function var0_0.Destroy(arg0_19)
-	if arg0_19._state == var0_0.STATES.INITED then
-		arg0_19:Hide()
+function var0_0.Destroy(arg0_12)
+	if arg0_12._state == var0_0.STATES.INITED then
+		arg0_12:Hide()
 	end
 
-	var0_0.super.Destroy(arg0_19)
+	var0_0.super.Destroy(arg0_12)
 end
 
-function var0_0.OnDestroy(arg0_20)
-	arg0_20.tweens = nil
+function var0_0.OnDestroy(arg0_13)
+	arg0_13.tweens = nil
 end
 
-function var0_0.Show(arg0_21)
-	setActive(arg0_21._tf, true)
-	arg0_21:OnShow()
+function var0_0.Show(arg0_14)
+	var0_0.super.Show(arg0_14)
+	arg0_14:OnShow()
 end
 
-function var0_0.Hide(arg0_22)
-	arg0_22:OnHide()
-	setActive(arg0_22._tf, false)
+function var0_0.Hide(arg0_15)
+	arg0_15:OnHide()
+	var0_0.super.Hide(arg0_15)
 end
 
-function var0_0.OnShow(arg0_23)
+function var0_0.OnShow(arg0_16)
 	return
 end
 
-function var0_0.OnHide(arg0_24)
-	for iter0_24, iter1_24 in pairs(arg0_24.tweens) do
-		LeanTween.cancel(iter1_24)
+function var0_0.OnHide(arg0_17)
+	for iter0_17, iter1_17 in pairs(arg0_17.tweens) do
+		LeanTween.cancel(iter1_17)
 	end
 
-	arg0_24.tweens = {}
+	arg0_17.tweens = {}
 end
 
-function var0_0.ShowButtons(arg0_25)
+function var0_0.UpdateMapVO(arg0_18, arg1_18)
+	arg0_18.data = arg1_18
+end
+
+function var0_0.UpdateView(arg0_19)
+	arg0_19:UpdateButtons()
+end
+
+function var0_0.UpdateButtons(arg0_20)
 	return
 end
 
-function var0_0.HideButtons(arg0_26)
+function var0_0.UpdateMapItems(arg0_21)
 	return
 end
 
-function var0_0.Update(arg0_27, arg1_27)
-	arg0_27.data = arg1_27
-end
-
-function var0_0.UpdateButtons(arg0_28)
+function var0_0.HideFloat(arg0_22)
 	return
 end
 
-function var0_0.PostUpdateMap(arg0_29, arg1_29)
+function var0_0.ShowFloat(arg0_23)
 	return
 end
 
-function var0_0.UpdateMapItems(arg0_30)
-	return
+function var0_0.RecordTween(arg0_24, arg1_24, arg2_24)
+	arg0_24.tweens[arg1_24] = arg2_24
 end
 
-function var0_0.RecordTween(arg0_31, arg1_31, arg2_31)
-	arg0_31.tweens[arg1_31] = arg2_31
-end
+function var0_0.DeleteTween(arg0_25, arg1_25)
+	local var0_25 = arg0_25.tweens[arg1_25]
 
-function var0_0.DeleteTween(arg0_32, arg1_32)
-	local var0_32 = arg0_32.tweens[arg1_32]
+	if var0_25 then
+		LeanTween.cancel(var0_25)
 
-	if var0_32 then
-		LeanTween.cancel(var0_32)
-
-		arg0_32.tweens[arg1_32] = nil
+		arg0_25.tweens[arg1_25] = nil
 	end
 end
 
-function var0_0.TryOpenChapter(arg0_33, arg1_33)
-	assert(false)
+function var0_0.UpdateChapterTF(arg0_26, arg1_26)
+	return
+end
+
+function var0_0.TryOpenChapter(arg0_27, arg1_27)
+	errorMsg("Not Implent TryOpenChapter in " .. arg0_27.__cname)
+end
+
+function var0_0.TryOpenChapterInfo(arg0_28, arg1_28, arg2_28, arg3_28)
+	if arg0_28:isfrozen() then
+		return
+	end
+
+	local var0_28 = getProxy(ChapterProxy):getChapterById(arg1_28, true)
+
+	if var0_28.active then
+		arg0_28.sceneParent:switchToChapter(var0_28)
+
+		return
+	end
+
+	if not var0_28:isUnlock() then
+		local var1_28 = var0_28:GetPrevChapterNames()
+
+		if #var1_28 == 1 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_tracking_error_pre", var1_28[1]))
+		else
+			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_tracking_error_pre_2", var1_28[1], var1_28[2]))
+		end
+
+		return
+	end
+
+	if not getProxy(ChapterProxy):getMapById(var0_28:getConfig("map")):isRemaster() and not var0_28:inActTime() then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("battle_levelScene_close"))
+
+		return
+	end
+
+	local var2_28 = var0_28:getConfig("unlocklevel")
+
+	if var2_28 > getProxy(PlayerProxy):getRawData().level then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_chapter_level_limit", var2_28))
+
+		return
+	end
+
+	local var3_28 = getProxy(ChapterProxy):getActiveChapter(true)
+
+	if var3_28 and var3_28.id ~= arg1_28 then
+		arg0_28:emit(LevelMediator2.ON_STRATEGYING_CHAPTER)
+
+		return
+	end
+
+	if var0_28:IsSpChapter() then
+		SettingsProxy.SetActivityMapSPTip()
+		arg0_28:UpdateChapterTF(arg1_28)
+	end
+
+	if not arg3_28 then
+		arg0_28.sceneParent:DisplayLevelInfoPanel(arg1_28, arg2_28)
+	else
+		arg0_28.sceneParent:DisplayLevelInfoSPPanel(arg1_28, arg3_28, arg2_28)
+	end
+end
+
+function var0_0.OnSubmitTaskDone(arg0_29)
+	return
 end
 
 return var0_0

@@ -38461,6 +38461,69 @@ _G.pg.base.ship_data_breakout[901134] = {
 	weapon_ids = {},
 }
 
+_G.pg.base.ship_data_breakout[901141] = {
+	breakout_id = 901142,
+	breakout_view = "Unlock All Out Assault/Main gun efficiency +5%",
+	icon = "10001",
+	id = 901141,
+	level = 10,
+	pre_id = 0,
+	use_char = 90114,
+	use_char_num = 1,
+	use_gold = 1000,
+	use_item = {},
+	weapon_ids = {
+		80331,
+	},
+}
+
+_G.pg.base.ship_data_breakout[901142] = {
+	breakout_id = 901143,
+	breakout_view = "Torpedo base +1/Torpedo preload +1/Main gun efficiency +10%",
+	icon = "10001",
+	id = 901142,
+	level = 30,
+	pre_id = 901141,
+	use_char = 90114,
+	use_char_num = 1,
+	use_gold = 3000,
+	use_item = {},
+	weapon_ids = {
+		106,
+		106,
+	},
+}
+
+_G.pg.base.ship_data_breakout[901143] = {
+	breakout_id = 901144,
+	breakout_view = "Improve All Out Assault/All weapons' efficiency +5%",
+	icon = "10001",
+	id = 901143,
+	level = 70,
+	pre_id = 901142,
+	use_char = 90114,
+	use_char_num = 2,
+	use_gold = 10000,
+	use_item = {},
+	weapon_ids = {
+		80332,
+	},
+}
+
+_G.pg.base.ship_data_breakout[901144] = {
+	breakout_id = 0,
+	breakout_view = "None",
+	icon = "10001",
+	id = 901144,
+	level = 0,
+	pre_id = 901143,
+	use_char = 90114,
+	use_char_num = 0,
+	use_gold = 0,
+	use_item = {},
+	weapon_ids = {},
+}
+
 _G.pg.base.ship_data_breakout[902011] = {
 	breakout_id = 902012,
 	breakout_view = "Unlock All Out Assault Ⅰ/All weapons' efficiency +2%",
@@ -38713,6 +38776,69 @@ _G.pg.base.ship_data_breakout[903024] = {
 	weapon_ids = {},
 }
 
+_G.pg.base.ship_data_breakout[903031] = {
+	breakout_id = 903032,
+	breakout_view = "Unlock All Out Assault/Main gun efficiency +5%",
+	icon = "10001",
+	id = 903031,
+	level = 10,
+	pre_id = 0,
+	use_char = 90303,
+	use_char_num = 1,
+	use_gold = 500,
+	use_item = {},
+	weapon_ids = {
+		78221,
+	},
+}
+
+_G.pg.base.ship_data_breakout[903032] = {
+	breakout_id = 903033,
+	breakout_view = "Torpedo base +1/Torpedo preload +1/Torpedo efficiency +10%",
+	icon = "10001",
+	id = 903032,
+	level = 30,
+	pre_id = 903031,
+	use_char = 90303,
+	use_char_num = 1,
+	use_gold = 1500,
+	use_item = {},
+	weapon_ids = {
+		106,
+		106,
+	},
+}
+
+_G.pg.base.ship_data_breakout[903033] = {
+	breakout_id = 903034,
+	breakout_view = "Improve All Out Assault/Torpedo efficiency +15%",
+	icon = "10001",
+	id = 903033,
+	level = 70,
+	pre_id = 903032,
+	use_char = 90303,
+	use_char_num = 2,
+	use_gold = 2500,
+	use_item = {},
+	weapon_ids = {
+		78222,
+	},
+}
+
+_G.pg.base.ship_data_breakout[903034] = {
+	breakout_id = 0,
+	breakout_view = "None",
+	icon = "10001",
+	id = 903034,
+	level = 0,
+	pre_id = 903033,
+	use_char = 90303,
+	use_char_num = 0,
+	use_gold = 0,
+	use_item = {},
+	weapon_ids = {},
+}
+
 _G.pg.base.ship_data_breakout[904011] = {
 	breakout_id = 904012,
 	breakout_view = "Main gun preload +1/Main gun efficiency +5%",
@@ -38772,6 +38898,71 @@ _G.pg.base.ship_data_breakout[904014] = {
 	level = 0,
 	pre_id = 904013,
 	use_char = 90401,
+	use_char_num = 0,
+	use_gold = 0,
+	use_item = {},
+	weapon_ids = {},
+}
+
+_G.pg.base.ship_data_breakout[904021] = {
+	breakout_id = 904022,
+	breakout_view = "Main gun preload +1/Main gun efficiency +5%",
+	icon = "10001",
+	id = 904021,
+	level = 10,
+	pre_id = 0,
+	use_char = 90402,
+	use_char_num = 1,
+	use_gold = 1000,
+	use_item = {},
+	weapon_ids = {
+		90300,
+	},
+}
+
+_G.pg.base.ship_data_breakout[904022] = {
+	breakout_id = 904023,
+	breakout_view = "Secondary Gun base +2/Main gun efficiency +10%",
+	icon = "10001",
+	id = 904022,
+	level = 30,
+	pre_id = 904021,
+	use_char = 90402,
+	use_char_num = 1,
+	use_gold = 3000,
+	use_item = {},
+	weapon_ids = {
+		101,
+		101,
+		101,
+	},
+}
+
+_G.pg.base.ship_data_breakout[904023] = {
+	breakout_id = 904024,
+	breakout_view = "Main gun base +1/Main gun efficiency +15%",
+	icon = "10001",
+	id = 904023,
+	level = 70,
+	pre_id = 904022,
+	use_char = 90402,
+	use_char_num = 2,
+	use_gold = 10000,
+	use_item = {},
+	weapon_ids = {
+		90300,
+		90300,
+	},
+}
+
+_G.pg.base.ship_data_breakout[904024] = {
+	breakout_id = 0,
+	breakout_view = "None",
+	icon = "10001",
+	id = 904024,
+	level = 0,
+	pre_id = 904023,
+	use_char = 90402,
 	use_char_num = 0,
 	use_gold = 0,
 	use_item = {},

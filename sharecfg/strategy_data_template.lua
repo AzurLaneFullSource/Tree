@@ -262,7 +262,8 @@ pg.strategy_data_template = setmetatable({
 		200926,
 		200928,
 		200930,
-		200931
+		200931,
+		200932
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -3179,6 +3180,17 @@ pg.base.strategy_data_template = {
 		icon = "200908",
 		buff_type = 0,
 		desc = "The battle will initiate in challenge mode if a ship in your fleet has the Enigmata \"D\" equipped when the battle starts. This will increase the difficulty, but also increase the score you gain.\n\n- Challenge Mode Details -\n· Enemies deal significantly more DMG. As time passes, the DMG taken by enemies gradually increases.\n· The skills \"Quick Takeoff\" and \"Fiercer When Cornered\" are rendered ineffective.",
+		arg = {}
+	},
+	[200932] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 200932,
+		icon = "200908",
+		buff_type = 0,
+		desc = "The battle will initiate in challenge mode if a ship in your fleet has the Beaver Squad Tag equipped when the battle starts. This will increase the difficulty, but also increase the score you gain upon completion.\n\n- Challenge Mode Details -\n· Enemies deal significantly more DMG. Their shells ignore shields and penetrate through targets.\n· The effect of the auxiliary gear Eagle Union Elite Damage Control is no longer faction-restricted and will not sink the ship after its effect activates, but the duration of its invulnerability is reduced to 3 seconds.\n· The skills \"Quick Takeoff\" and \"Fiercer When Cornered\" are rendered ineffective.",
 		arg = {}
 	}
 }

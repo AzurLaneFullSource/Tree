@@ -879,6 +879,21 @@ function temp()
 							}
 						}
 					}
+				},
+				a = {
+					s = {
+						b = {
+							o = {
+								u = {
+									r = {
+										g = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -1797,6 +1812,17 @@ function temp()
 										}
 									}
 								}
+							}
+						}
+					}
+				}
+			},
+			p = {
+				l = {
+					e = {
+						i = {
+							x = {
+								this = true
 							}
 						}
 					}
@@ -5828,6 +5854,25 @@ function temp()
 						}
 					}
 				}
+			},
+			A = {
+				u = {
+					d = {
+						a = {
+							c = {
+								i = {
+									e = {
+										u = {
+											x = {
+												this = true
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		},
 		y = {
@@ -7588,7 +7633,18 @@ function temp()
 				u = {
 					m = {
 						i = {
-							this = true
+							this = true,
+							[" "] = {
+								M = {
+									E = {
+										T = {
+											A = {
+												this = true
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
@@ -9271,18 +9327,6 @@ function temp()
 						}
 					}
 				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.塔 = {
-		什 = {
-			干 = {
-				this = true
 			}
 		}
 	}

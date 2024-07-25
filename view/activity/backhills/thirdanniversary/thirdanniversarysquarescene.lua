@@ -173,7 +173,7 @@ function var0_0.didEnter(arg0_7)
 	arg0_7:InitFacilityCross(arg0_7._map, arg0_7._upper, "huanzhuangshandian", function()
 		arg0_7:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.SKINSHOP)
 	end)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_7.top, false)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_7.top)
 end
 
 function var0_0.UpdateActivity(arg0_17, arg1_17)

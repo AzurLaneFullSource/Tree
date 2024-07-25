@@ -190,6 +190,8 @@ pg.memory_group = setmetatable({
 		290,
 		291,
 		292,
+		293,
+		294,
 		501,
 		502,
 		503,
@@ -4527,6 +4529,39 @@ pg.base.memory_group = {
 			3688,
 			3689,
 			3690
+		}
+	},
+	[293] = {
+		id = 293,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5501,
+		title = "Interlude of Illusions",
+		memories = {
+			3701,
+			3702,
+			3703,
+			3704,
+			3705,
+			3706,
+			3707,
+			3708,
+			3709,
+			3710
+		}
+	},
+	[294] = {
+		id = 294,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5504,
+		title = "Port Fashion Collection: Summer Racing",
+		memories = {
+			3711,
+			3712,
+			3713
 		}
 	},
 	[501] = {

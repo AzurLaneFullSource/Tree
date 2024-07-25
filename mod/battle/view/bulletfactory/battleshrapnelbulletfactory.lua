@@ -14,6 +14,8 @@ local var5_0 = var0_0.Battle.BattleShrapnelBulletFactory
 var5_0.INHERIT_NONE = 0
 var5_0.INHERIT_ANGLE = 1
 var5_0.INHERIT_SPEED_NORMALIZE = 2
+var5_0.FRAGILE_DAMAGE_NOT_SPLIT = 1
+var5_0.FRAGILE_NOT_DAMAGE_NOT_SPLIT = 2
 
 function var5_0.Ctor(arg0_1)
 	var5_0.super.Ctor(arg0_1)
@@ -49,9 +51,21 @@ function var5_0.onBulletHitFunc(arg0_4, arg1_4, arg2_4)
 	local var2_4 = var1_4:GetCurrentState()
 	local var3_4 = var1_4:GetTemplate()
 	local var4_4 = var3_4.extra_param.shrapnel
+	local var5_4 = var3_4.extra_param.fragile
+	local var6_4 = var3_4.extra_param.hitSplitOnly
 
-	if var3_4.extra_param.fragile and arg1_4 then
-		var0_0.Battle.BattleCannonBulletFactory.onBulletHitFunc(arg0_4, arg1_4, arg2_4)
+	if not arg1_4 and var6_4 then
+		var0_4:RemoveBulletUnit(var1_4:GetUniqueID())
+
+		return
+	end
+
+	if var5_4 and arg1_4 then
+		if var5_4 == var5_0.FRAGILE_DAMAGE_NOT_SPLIT then
+			var0_0.Battle.BattleCannonBulletFactory.onBulletHitFunc(arg0_4, arg1_4, arg2_4)
+		elseif var5_4 == var5_0.FRAGILE_NOT_DAMAGE_NOT_SPLIT then
+			var0_4:RemoveBulletUnit(var1_4:GetUniqueID())
+		end
 
 		return
 	end
@@ -67,22 +81,22 @@ function var5_0.onBulletHitFunc(arg0_4, arg1_4, arg2_4)
 	end
 
 	if arg1_4 ~= nil and arg2_4 ~= nil then
-		local var5_4
+		local var7_4
 
 		if table.contains(var3_0, arg2_4) then
-			var5_4 = var5_0.GetSceneMediator():GetAircraft(arg1_4)
+			var7_4 = var5_0.GetSceneMediator():GetAircraft(arg1_4)
 		elseif table.contains(var4_0, arg2_4) then
-			var5_4 = var5_0.GetSceneMediator():GetCharacter(arg1_4)
+			var7_4 = var5_0.GetSceneMediator():GetCharacter(arg1_4)
 		end
 
-		local var6_4 = var5_4:GetUnitData()
-		local var7_4 = var5_4:AddFX(arg0_4:GetFXID())
+		local var8_4 = var7_4:GetUnitData()
+		local var9_4 = var7_4:AddFX(arg0_4:GetFXID())
 
-		if var6_4:GetIFF() == var0_4:GetFoeCode() then
-			local var8_4 = var7_4.transform
-			local var9_4 = var8_4.localRotation
+		if var8_4:GetIFF() == var0_4:GetFoeCode() then
+			local var10_4 = var9_4.transform
+			local var11_4 = var10_4.localRotation
 
-			var8_4.localRotation = Vector3(var9_4.x, 180, var9_4.z)
+			var10_4.localRotation = Vector3(var11_4.x, 180, var11_4.z)
 		end
 	end
 

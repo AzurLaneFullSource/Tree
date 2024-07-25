@@ -80,9 +80,7 @@ function var0_0.submitActivity(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4)
 					awards = var0_5
 				})
 			elseif table.contains(TotalTaskProxy.activity_task_type, arg3_4) then
-				local var7_5 = PlayerConst.addTranDrop(arg0_5.award_list, {
-					taskId = task.id
-				})
+				local var7_5 = PlayerConst.addTranDrop(arg0_5.award_list, {})
 
 				for iter2_5 = 1, #arg1_4.task_ids do
 					local var8_5 = arg1_4.task_ids[iter2_5]

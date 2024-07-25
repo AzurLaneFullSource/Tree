@@ -5137,6 +5137,120 @@ pg.base.ship_skin_template_1 = {
 			}
 		}
 	},
+	[101255] = {
+		ship_group = 10125,
+		name = "Blushing Fellow",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 5,
+		shop_id = 71032,
+		painting = "haman_6",
+		illustrator = 1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 14,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "186",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 101255,
+		voice_actor_2 = -1,
+		prefab = "haman_6",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Wh-why do I have to dress like this just to cheer for the Commander... Why not just let me dress how I want? Ugh... It's embarrassing, but everyone else will tease me if I run away, so what do I... Huh?! C-Commander?!",
+		voice_actor = 5,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.186,
+					1.003,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.227,
+					0.986,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.238,
+					1.005,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.389,
+							2.595,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[101259] = {
 		ship_group = 10125,
 		name = "Hammann (Retrofit)",

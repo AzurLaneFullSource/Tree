@@ -48,7 +48,7 @@ function var0_0.didEnter(arg0_5)
 	onButton(arg0_5, arg0_5.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = i18n(arg0_5.activity:getConfig("config_client").tips[3])
+			helps = i18n("cruise_task_help_" .. pg.battlepass_event_pt[arg0_5.activity.id].map_name)
 		})
 	end, SFX_PANEL)
 

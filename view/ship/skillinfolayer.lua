@@ -21,6 +21,9 @@ function var0_0.init(arg0_2)
 	arg0_2.metaBtn = arg0_2:findTF("panel/buttonList/meta_button")
 
 	setText(arg0_2:findTF("Image", arg0_2.metaBtn), i18n("meta_skillbtn_tactics"))
+	setText(arg0_2:findTF("panel/top/title_list/infomation/title"), i18n("words_information"))
+	setText(arg0_2.buttonList:Find("ok_button/Image"), i18n("text_confirm"))
+	setText(arg0_2.buttonList:Find("level_button/Image"), i18n("msgbox_text_upgrade"))
 end
 
 function var0_0.didEnter(arg0_3)
@@ -132,6 +135,37 @@ function var0_0.willExit(arg0_15)
 	if arg0_15.contextData.onExit then
 		arg0_15.contextData.onExit()
 	end
+end
+
+function var0_0.inOutAnim(arg0_16, arg1_16, arg2_16)
+	if arg1_16 then
+		local var0_16 = arg0_16:findTF("panel/bg_decorations"):GetComponent(typeof(Animation))
+
+		var0_16:Stop()
+		var0_16:Play("anim_window_bg")
+
+		local var1_16 = arg0_16:findTF("panel/top"):GetComponent(typeof(Animation))
+
+		var1_16:Stop()
+		var1_16:Play("anim_top")
+
+		local var2_16 = arg0_16:findTF("panel/bg"):GetComponent(typeof(Animation))
+
+		var2_16:Stop()
+		var2_16:Play("anim_content")
+
+		local var3_16 = arg0_16:findTF("bg"):GetComponent(typeof(Animation))
+
+		var3_16:Stop()
+		var3_16:Play("anim_bg_plus")
+
+		local var4_16 = arg0_16:findTF("panel/buttonList"):GetComponent(typeof(Animation))
+
+		var4_16:Stop()
+		var4_16:Play("anim_button_container")
+	end
+
+	arg2_16()
 end
 
 return var0_0

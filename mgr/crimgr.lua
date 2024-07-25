@@ -404,12 +404,12 @@ function var1_0.InitBgmCfg(arg0_57, arg1_57)
 		VersionMgr.Inst:WebRequest(var1_57, function(arg0_60, arg1_60)
 			local var0_60 = var3_57(arg1_60)
 
-			print("content: " .. arg1_60)
-			print("country is: " .. var0_60)
+			originalPrint("content: " .. arg1_60)
+			originalPrint("country is: " .. var0_60)
 
 			arg0_57.isDefaultBGM = var4_57(var0_60)
 
-			print("IP limit: " .. tostring(arg0_57.isDefaultBGM))
+			originalPrint("IP limit: " .. tostring(arg0_57.isDefaultBGM))
 
 			if arg1_57 then
 				arg1_57()

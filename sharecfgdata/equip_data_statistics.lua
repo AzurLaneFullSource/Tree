@@ -130705,6 +130705,59 @@ _G.pg.base.equip_data_statistics[80322] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[80331] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 80331,
+	name = "专属弹幕-果敢I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61671,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80332] = {
+	base = 80331,
+	id = 80332,
+	name = "专属弹幕-果敢II",
+	weapon_id = {
+		61672,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[85000] = {
 	ammo = 3,
 	attribute_2 = "cannon",
@@ -156759,6 +156812,119 @@ _G.pg.base.equip_data_statistics[150331] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[150340] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "A limited-edition coin created in collaboration between the Sardegna Empire and Iris Orthodoxy. It was given only to their most distinguished guests.",
+	icon = "150340",
+	id = 150340,
+	name = "Limited-Edition Joint Exercise Coin",
+	nationality = 0,
+	rarity = 4,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "200",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		60650,
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150341] = {
+	base = 150340,
+	id = 150341,
+	value_1 = "230",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150342] = {
+	base = 150340,
+	id = 150342,
+	value_1 = "260",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150343] = {
+	base = 150340,
+	id = 150343,
+	value_1 = "290",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150344] = {
+	base = 150340,
+	id = 150344,
+	value_1 = "320",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150345] = {
+	base = 150340,
+	id = 150345,
+	value_1 = "350",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150346] = {
+	base = 150340,
+	id = 150346,
+	value_1 = "380",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150347] = {
+	base = 150340,
+	id = 150347,
+	value_1 = "410",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150348] = {
+	base = 150340,
+	id = 150348,
+	value_1 = "440",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150349] = {
+	base = 150340,
+	id = 150349,
+	value_1 = "470",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150350] = {
+	base = 150340,
+	id = 150350,
+	value_1 = "500",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150351] = {
+	anti_siren = 100,
+	base = 150340,
+	id = 150351,
+	value_1 = "530",
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[170001] = {
 	ammo = 10,
 	descrip = "Barrage",
@@ -157805,6 +157971,60 @@ _G.pg.base.equip_data_statistics[170554] = {
 	name = "专属弹幕-那不勒斯鱼雷-特殊副炮联动II",
 	weapon_id = {
 		170554,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[170571] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 170571,
+	name = "构造之理-霞 I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170571,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[170572] = {
+	base = 170571,
+	id = 170572,
+	name = "构造之理-霞 II",
+	weapon_id = {
+		170572,
+		170573,
 	},
 	hidden_skill_id = {},
 }

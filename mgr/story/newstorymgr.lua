@@ -727,7 +727,7 @@ function var0_0.TrackingOption(arg0_70, arg1_70, arg2_70)
 
 	local var0_70 = arg0_70:StoryName2StoryId(arg0_70.storyScript:GetName())
 
-	TrackConst.StoryOption(var0_70, arg1_70 .. "_" .. arg2_70 or 0)
+	TrackConst.StoryOption(var0_70, arg1_70 .. "_" .. (arg2_70 or 0))
 end
 
 function var0_0.ClearStoryEvent(arg0_71)

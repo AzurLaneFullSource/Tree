@@ -19,16 +19,22 @@ function var0_0.GetActivityID(arg0_4)
 end
 
 function var0_0.OnInit(arg0_5)
-	local var0_5 = getProxy(ChapterProxy):IsActivitySPChapterActive() and SettingsProxy.IsShowActivityMapSPTip()
-
-	setActive(arg0_5.tipTr.gameObject, var0_5)
+	setActive(arg0_5.tipTr.gameObject, arg0_5:IsShowTip())
 end
 
-function var0_0.CustomOnClick(arg0_6)
-	local var0_6 = arg0_6:GetActivity()
+function var0_0.IsShowTip(arg0_6)
+	if arg0_6:GetActivityID() == ActivityConst.OTHER_WORLD_TERMINAL_BATTLE_ID then
+		return OtherworldMapScene.IsShowTip()
+	end
 
-	if var0_6 then
-		arg0_6:emit(NewMainMediator.SKIP_ACTIVITY_MAP, var0_6.id)
+	return getProxy(ChapterProxy):IsActivitySPChapterActive() and SettingsProxy.IsShowActivityMapSPTip()
+end
+
+function var0_0.CustomOnClick(arg0_7)
+	local var0_7 = arg0_7:GetActivity()
+
+	if var0_7 then
+		arg0_7:emit(NewMainMediator.SKIP_ACTIVITY_MAP, var0_7.id)
 	end
 end
 

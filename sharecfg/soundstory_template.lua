@@ -494,6 +494,162 @@ pg.soundstory_template = {
 			}
 		}
 	},
+	{
+		CV_JP = "Yuka Nukui",
+		audition_resource_CN = "ss-50602-1",
+		audition_text = "\"Gotten more daring,\" you say? Heehee. Yes, because there's no one else around. Nobody else has to know, right?",
+		story_resource_CN = "soundStory12_CN",
+		story_pic = "",
+		overview = "You and Hwah Jah are playing tag and stumble upon a surprising hiding place – a locker.",
+		name = "Having Fun in Secret",
+		ship_id = 50602,
+		audition_resource_JP = "ss-50602-2",
+		CV_CN = "村雨",
+		id = 12,
+		story_resource_JP = "soundStory12_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					7,
+					25
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					7,
+					31
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		CV_JP = "Kiyono Yasuno",
+		audition_resource_CN = "",
+		audition_text = "Please, little one... Keep me company for the rest of the night.",
+		story_resource_CN = "",
+		story_pic = "",
+		overview = "On a warm summer night, Friedrich Carl invites you to sip some wine and talk about love.",
+		name = "A Tipsy Summer Rendezvous",
+		ship_id = 40314,
+		audition_resource_JP = "ss-40314-1",
+		CV_CN = "",
+		id = 13,
+		story_resource_JP = "soundStory13_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					7,
+					25
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					7,
+					31
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		CV_JP = "Aimi Tanaka",
+		audition_resource_CN = "",
+		audition_text = "Hmm? You say you don't want it, but looks like your body does. Can't resist that smell, right?",
+		story_resource_CN = "",
+		story_pic = "",
+		overview = "You were out treasure hunting and fell into a pit. Then, Royal Fortune appears before you and shows her true colors.",
+		name = "Caught in a Sweet Trap",
+		ship_id = 960001,
+		audition_resource_JP = "ss-960001-1",
+		CV_CN = "",
+		id = 14,
+		story_resource_JP = "soundStory14_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					7,
+					25
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					7,
+					31
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -505,6 +661,9 @@ pg.soundstory_template = {
 		8,
 		9,
 		10,
-		11
+		11,
+		12,
+		13,
+		14
 	}
 }

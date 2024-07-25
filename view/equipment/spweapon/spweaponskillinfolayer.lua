@@ -49,6 +49,9 @@ function var0_0.didEnter(arg0_2)
 
 	arg0_2:showBase()
 	arg0_2:showInfo(false)
+	setText(arg0_2:findTF("panel/top/title_list/infomation/title"), i18n("words_information"))
+	setText(arg0_2.buttonList:Find("ok_button/Image"), i18n("text_confirm"))
+	setText(arg0_2.buttonList:Find("level_button/Image"), i18n("msgbox_text_upgrade"))
 end
 
 function var0_0.flushTypeBtn(arg0_10)

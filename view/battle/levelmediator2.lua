@@ -661,6 +661,12 @@ end
 function var0_0.DidEnterLevelMainUI(arg0_72, arg1_72)
 	arg0_72.viewComponent:setMap(arg1_72)
 
+	if arg0_72.contextData.openChapterId then
+		arg0_72.viewComponent.mapBuilder:TryOpenChapter(arg0_72.contextData.openChapterId)
+
+		arg0_72.contextData.openChapterId = nil
+	end
+
 	local var0_72 = arg0_72.contextData.chapterVO
 
 	if var0_72 and var0_72.active then
@@ -769,6 +775,7 @@ function var0_0.listNotificationInterests(arg0_80)
 		GAME.COOMMANDER_EQUIP_TO_FLEET_DONE,
 		GAME.COMMANDER_ELIT_FORMATION_OP_DONE,
 		GAME.SUBMIT_TASK_DONE,
+		GAME.SUBMIT_ACTIVITY_TASK_DONE,
 		LevelUIConst.CONTINUOUS_OPERATION,
 		var0_0.ON_SPITEM_CHANGED,
 		GAME.GET_REMASTER_TICKETS_DONE,
@@ -837,7 +844,7 @@ function var0_0.handleNotification(arg0_81, arg1_81)
 
 				if var1_81.exittype and var1_81.exittype == ChapterConst.ExitFromMap then
 					arg0_81.viewComponent:setChapter(nil)
-					arg0_81.viewComponent:updateChapterTF(var1_83.id)
+					arg0_81.viewComponent.mapBuilder:UpdateChapterTF(var1_83.id)
 					arg0_81:OnExitChapter(var1_83, var1_81.win, var1_81.extendData)
 
 					return
@@ -1229,7 +1236,7 @@ function var0_0.handleNotification(arg0_81, arg1_81)
 
 		arg0_81.viewComponent:setEliteQuota(var5_81.eliteCount, pg.gameset.elite_quota.key_value)
 	elseif var0_81 == ActivityProxy.ACTIVITY_OPERATION_DONE then
-		arg0_81.viewComponent:updateMapItems()
+		arg0_81.viewComponent.mapBuilder:UpdateMapItems()
 	elseif var0_81 == ActivityProxy.ACTIVITY_UPDATED then
 		if var1_81 and var1_81:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_RANK then
 			arg0_81.viewComponent:updatePtActivity(var1_81)
@@ -1250,7 +1257,7 @@ function var0_0.handleNotification(arg0_81, arg1_81)
 		arg0_81.viewComponent:RefreshFleetSelectView()
 	elseif var0_81 == GAME.SUBMIT_TASK_DONE then
 		if arg0_81.contextData.map and arg0_81.contextData.map:isSkirmish() then
-			arg0_81.viewComponent:updateMapItems()
+			arg0_81.viewComponent.mapBuilder:UpdateMapItems()
 		end
 
 		arg0_81.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_81, function()
@@ -1261,6 +1268,12 @@ function var0_0.handleNotification(arg0_81, arg1_81)
 
 				arg0_81:sendNotification(GAME.SUBMIT_TASK, var0_114)
 			end
+
+			arg0_81.viewComponent.mapBuilder:OnSubmitTaskDone()
+		end)
+	elseif var0_81 == GAME.SUBMIT_ACTIVITY_TASK_DONE then
+		arg0_81.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_81.awards, function()
+			arg0_81.viewComponent.mapBuilder:OnSubmitTaskDone()
 		end)
 	elseif var0_81 == BagProxy.ITEM_UPDATED then
 		local var8_81 = getProxy(BagProxy):getItemsByType(Item.SPECIAL_OPERATION_TICKET)
@@ -1304,134 +1317,134 @@ function var0_0.handleNotification(arg0_81, arg1_81)
 	end
 end
 
-function var0_0.OnExitChapter(arg0_115, arg1_115, arg2_115, arg3_115)
-	assert(arg1_115)
+function var0_0.OnExitChapter(arg0_116, arg1_116, arg2_116, arg3_116)
+	assert(arg1_116)
 	seriesAsync({
-		function(arg0_116)
-			if not arg0_115.contextData.chapterVO then
-				return arg0_116()
+		function(arg0_117)
+			if not arg0_116.contextData.chapterVO then
+				return arg0_117()
 			end
 
-			arg0_115.viewComponent:switchToMap(arg0_116)
+			arg0_116.viewComponent:switchToMap(arg0_117)
 		end,
-		function(arg0_117)
-			arg0_115.viewComponent:addbubbleMsgBox(function()
-				arg0_115.viewComponent:CleanBubbleMsgbox()
-				arg0_117()
+		function(arg0_118)
+			arg0_116.viewComponent:addbubbleMsgBox(function()
+				arg0_116.viewComponent:CleanBubbleMsgbox()
+				arg0_118()
 			end)
 		end,
-		function(arg0_119)
-			if not arg2_115 then
-				return arg0_119()
+		function(arg0_120)
+			if not arg2_116 then
+				return arg0_120()
 			end
 
-			local var0_119 = getProxy(PlayerProxy):getData()
+			local var0_120 = getProxy(PlayerProxy):getData()
 
-			if arg1_115.id == 103 and not var0_119:GetCommonFlag(BATTLE_AUTO_ENABLED) then
-				arg0_115.viewComponent:HandleShowMsgBox({
+			if arg1_116.id == 103 and not var0_120:GetCommonFlag(BATTLE_AUTO_ENABLED) then
+				arg0_116.viewComponent:HandleShowMsgBox({
 					modal = true,
 					hideNo = true,
 					content = i18n("battle_autobot_unlock"),
-					onYes = arg0_119,
-					onNo = arg0_119
+					onYes = arg0_120,
+					onNo = arg0_120
 				})
-				arg0_115.viewComponent:emit(LevelMediator2.NOTICE_AUTOBOT_ENABLED, {})
+				arg0_116.viewComponent:emit(LevelMediator2.NOTICE_AUTOBOT_ENABLED, {})
 
 				return
 			end
 
-			arg0_119()
+			arg0_120()
 		end,
-		function(arg0_120)
-			if not arg2_115 then
-				return arg0_120()
+		function(arg0_121)
+			if not arg2_116 then
+				return arg0_121()
 			end
 
-			if getProxy(ChapterProxy):getMapById(arg1_115:getConfig("map")):isSkirmish() then
-				local var0_120 = arg1_115.id
-				local var1_120 = getProxy(SkirmishProxy):getRawData()
-				local var2_120 = _.detect(var1_120, function(arg0_121)
-					return tonumber(arg0_121:getConfig("event")) == var0_120
+			if getProxy(ChapterProxy):getMapById(arg1_116:getConfig("map")):isSkirmish() then
+				local var0_121 = arg1_116.id
+				local var1_121 = getProxy(SkirmishProxy):getRawData()
+				local var2_121 = _.detect(var1_121, function(arg0_122)
+					return tonumber(arg0_122:getConfig("event")) == var0_121
 				end)
 
-				if not var2_120 then
-					arg0_120()
+				if not var2_121 then
+					arg0_121()
 
 					return
 				end
 
-				local var3_120 = getProxy(TaskProxy)
-				local var4_120 = var2_120:getConfig("task_id")
-				local var5_120 = var3_120:getTaskVO(var4_120)
+				local var3_121 = getProxy(TaskProxy)
+				local var4_121 = var2_121:getConfig("task_id")
+				local var5_121 = var3_121:getTaskVO(var4_121)
 
-				if var5_120 and var5_120:getTaskStatus() == 1 then
-					arg0_115:sendNotification(GAME.SUBMIT_TASK, var4_120)
+				if var5_121 and var5_121:getTaskStatus() == 1 then
+					arg0_116:sendNotification(GAME.SUBMIT_TASK, var4_121)
 
-					if var2_120 == var1_120[#var1_120] then
-						local var6_120 = getProxy(ActivityProxy)
-						local var7_120 = ActivityConst.ACTIVITY_ID_US_SKIRMISH_RE
-						local var8_120 = var6_120:getActivityById(var7_120)
+					if var2_121 == var1_121[#var1_121] then
+						local var6_121 = getProxy(ActivityProxy)
+						local var7_121 = ActivityConst.ACTIVITY_ID_US_SKIRMISH_RE
+						local var8_121 = var6_121:getActivityById(var7_121)
 
-						assert(var8_120, "Missing Skirmish Activity " .. (var7_120 or "NIL"))
+						assert(var8_121, "Missing Skirmish Activity " .. (var7_121 or "NIL"))
 
-						local var9_120 = var8_120:getConfig("config_data")
-						local var10_120 = var9_120[#var9_120][2]
-						local var11_120 = var3_120:getTaskVO(var10_120)
+						local var9_121 = var8_121:getConfig("config_data")
+						local var10_121 = var9_121[#var9_121][2]
+						local var11_121 = var3_121:getTaskVO(var10_121)
 
-						if var11_120 and var11_120:getTaskStatus() < 2 then
-							arg0_115.contextData.TaskToSubmit = var10_120
+						if var11_121 and var11_121:getTaskStatus() < 2 then
+							arg0_116.contextData.TaskToSubmit = var10_121
 						end
 					end
 				end
 			end
 
-			arg0_120()
+			arg0_121()
 		end,
-		function(arg0_122)
-			if not arg2_115 then
-				return arg0_122()
+		function(arg0_123)
+			if not arg2_116 then
+				return arg0_123()
 			end
 
-			local var0_122 = getProxy(ChapterProxy):getMapById(arg1_115:getConfig("map"))
+			local var0_123 = getProxy(ChapterProxy):getMapById(arg1_116:getConfig("map"))
 
-			if var0_122:isRemaster() then
-				local var1_122 = var0_122:getRemaster()
-				local var2_122 = pg.re_map_template[var1_122]
-				local var3_122 = Map.GetRearChaptersOfRemaster(var1_122)
+			if var0_123:isRemaster() then
+				local var1_123 = var0_123:getRemaster()
+				local var2_123 = pg.re_map_template[var1_123]
+				local var3_123 = Map.GetRearChaptersOfRemaster(var1_123)
 
-				assert(var3_122)
+				assert(var3_123)
 
-				if _.any(var3_122, function(arg0_123)
-					return arg0_123 == arg1_115.id
+				if _.any(var3_123, function(arg0_124)
+					return arg0_124 == arg1_116.id
 				end) then
-					local var4_122 = var2_122.memory_group
-					local var5_122 = pg.memory_group[var4_122].memories
+					local var4_123 = var2_123.memory_group
+					local var5_123 = pg.memory_group[var4_123].memories
 
-					if _.any(var5_122, function(arg0_124)
-						return not pg.NewStoryMgr.GetInstance():IsPlayed(pg.memory_template[arg0_124].story, true)
+					if _.any(var5_123, function(arg0_125)
+						return not pg.NewStoryMgr.GetInstance():IsPlayed(pg.memory_template[arg0_125].story, true)
 					end) then
-						_.each(var5_122, function(arg0_125)
-							local var0_125 = pg.memory_template[arg0_125].story
-							local var1_125, var2_125 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(var0_125)
+						_.each(var5_123, function(arg0_126)
+							local var0_126 = pg.memory_template[arg0_126].story
+							local var1_126, var2_126 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(var0_126)
 
-							pg.NewStoryMgr.GetInstance():SetPlayedFlag(var1_125)
+							pg.NewStoryMgr.GetInstance():SetPlayedFlag(var1_126)
 						end)
 						pg.MsgboxMgr.GetInstance():ShowMsgBox({
 							yesText = "text_go",
-							content = i18n("levelScene_remaster_story_tip", pg.memory_group[var4_122].title),
+							content = i18n("levelScene_remaster_story_tip", pg.memory_group[var4_123].title),
 							weight = LayerWeightConst.SECOND_LAYER,
 							onYes = function()
-								arg0_115:sendNotification(GAME.GO_SCENE, SCENE.WORLD_COLLECTION, {
+								arg0_116:sendNotification(GAME.GO_SCENE, SCENE.WORLD_COLLECTION, {
 									page = WorldMediaCollectionScene.PAGE_MEMORTY,
-									memoryGroup = var4_122
+									memoryGroup = var4_123
 								})
 							end,
 							onNo = function()
-								local var0_127 = getProxy(PlayerProxy):getRawData().id
+								local var0_128 = getProxy(PlayerProxy):getRawData().id
 
-								PlayerPrefs.SetInt("MEMORY_GROUP_NOTIFICATION" .. var0_127 .. " " .. var4_122, 1)
+								PlayerPrefs.SetInt("MEMORY_GROUP_NOTIFICATION" .. var0_128 .. " " .. var4_123, 1)
 								PlayerPrefs.Save()
-								arg0_122()
+								arg0_123()
 							end
 						})
 
@@ -1440,294 +1453,294 @@ function var0_0.OnExitChapter(arg0_115, arg1_115, arg2_115, arg3_115)
 				end
 			end
 
-			arg0_122()
+			arg0_123()
 		end,
-		function(arg0_128)
-			if arg0_115.contextData.map and not arg0_115.contextData.map:isUnlock() then
-				arg0_115.viewComponent:emit(var0_0.ON_SWITCH_NORMAL_MAP)
+		function(arg0_129)
+			if arg0_116.contextData.map and not arg0_116.contextData.map:isUnlock() then
+				arg0_116.viewComponent:emit(var0_0.ON_SWITCH_NORMAL_MAP)
 
 				return
 			end
 
-			if not arg3_115 then
-				return arg0_128()
+			if not arg3_116 then
+				return arg0_129()
 			end
 
-			local var0_128 = arg3_115 and arg3_115.AutoFightFlag
-			local var1_128 = {}
+			local var0_129 = arg3_116 and arg3_116.AutoFightFlag
+			local var1_129 = {}
 
-			if arg3_115 and arg3_115.ResultDrops then
-				for iter0_128, iter1_128 in ipairs(arg3_115.ResultDrops) do
-					var1_128 = table.mergeArray(var1_128, iter1_128)
+			if arg3_116 and arg3_116.ResultDrops then
+				for iter0_129, iter1_129 in ipairs(arg3_116.ResultDrops) do
+					var1_129 = table.mergeArray(var1_129, iter1_129)
 				end
 			end
 
-			local var2_128 = {}
+			local var2_129 = {}
 
-			if arg3_115 and arg3_115.TotalDrops then
-				for iter2_128, iter3_128 in ipairs(arg3_115.TotalDrops) do
-					var2_128 = table.mergeArray(var2_128, iter3_128)
+			if arg3_116 and arg3_116.TotalDrops then
+				for iter2_129, iter3_129 in ipairs(arg3_116.TotalDrops) do
+					var2_129 = table.mergeArray(var2_129, iter3_129)
 				end
 			end
 
-			DropResultIntegration(var2_128)
+			DropResultIntegration(var2_129)
 
-			local var3_128 = getProxy(ChapterProxy):GetContinuousData(SYSTEM_SCENARIO)
+			local var3_129 = getProxy(ChapterProxy):GetContinuousData(SYSTEM_SCENARIO)
 
-			if var3_128 then
-				var3_128:MergeDrops(var2_128, var1_128)
-				var3_128:MergeEvents(arg3_115.ListEventNotify, arg3_115.ListGuildEventNotify, arg3_115.ListGuildEventAutoReceiveNotify)
+			if var3_129 then
+				var3_129:MergeDrops(var2_129, var1_129)
+				var3_129:MergeEvents(arg3_116.ListEventNotify, arg3_116.ListGuildEventNotify, arg3_116.ListGuildEventAutoReceiveNotify)
 
-				if arg2_115 then
-					var3_128:ConsumeBattleTime()
+				if arg2_116 then
+					var3_129:ConsumeBattleTime()
 				end
 
-				if var3_128:IsActive() and var3_128:GetRestBattleTime() > 0 then
-					arg0_115.waitingTracking = true
+				if var3_129:IsActive() and var3_129:GetRestBattleTime() > 0 then
+					arg0_116.waitingTracking = true
 
-					arg0_115.viewComponent:emit(var0_0.ON_RETRACKING, arg1_115, var0_128)
+					arg0_116.viewComponent:emit(var0_0.ON_RETRACKING, arg1_116, var0_129)
 
 					return
 				end
 
 				getProxy(ChapterProxy):PopContinuousData(SYSTEM_SCENARIO)
-				arg0_115:DisplayContinuousOperationResult(arg1_115, var3_128)
-				arg0_128()
+				arg0_116:DisplayContinuousOperationResult(arg1_116, var3_129)
+				arg0_129()
 
 				return
 			end
 
-			local var4_128 = var0_128 ~= nil
+			local var4_129 = var0_129 ~= nil
 
-			if not var4_128 and not arg3_115.ResultDrops then
-				return arg0_128()
+			if not var4_129 and not arg3_116.ResultDrops then
+				return arg0_129()
 			end
 
-			local var5_128
-			local var6_128
+			local var5_129
+			local var6_129
 
-			if var4_128 then
-				var5_128 = i18n("autofight_rewards")
-				var6_128 = i18n("total_rewards_subtitle")
+			if var4_129 then
+				var5_129 = i18n("autofight_rewards")
+				var6_129 = i18n("total_rewards_subtitle")
 			else
-				var5_128 = i18n("settle_rewards_title")
-				var6_128 = i18n("settle_rewards_subtitle")
+				var5_129 = i18n("settle_rewards_title")
+				var6_129 = i18n("settle_rewards_subtitle")
 			end
 
-			arg0_115:addSubLayers(Context.New({
+			arg0_116:addSubLayers(Context.New({
 				viewComponent = LevelStageTotalRewardPanel,
 				mediator = LevelStageTotalRewardPanelMediator,
 				data = {
-					title = var5_128,
-					subTitle = var6_128,
-					chapter = arg1_115,
-					onClose = arg0_128,
-					rewards = var2_128,
-					resultRewards = var1_128,
-					events = arg3_115.ListEventNotify,
-					guildTasks = arg3_115.ListGuildEventNotify,
-					guildAutoReceives = arg3_115.ListGuildEventAutoReceiveNotify,
-					isAutoFight = var0_128
+					title = var5_129,
+					subTitle = var6_129,
+					chapter = arg1_116,
+					onClose = arg0_129,
+					rewards = var2_129,
+					resultRewards = var1_129,
+					events = arg3_116.ListEventNotify,
+					guildTasks = arg3_116.ListGuildEventNotify,
+					guildAutoReceives = arg3_116.ListGuildEventAutoReceiveNotify,
+					isAutoFight = var0_129
 				}
 			}), true)
 		end,
-		function(arg0_129)
+		function(arg0_130)
 			if Map.autoNextPage then
 				Map.autoNextPage = nil
 
-				triggerButton(arg0_115.viewComponent.btnNext)
+				triggerButton(arg0_116.viewComponent.btnNext)
 			end
 
-			if arg2_115 then
-				arg0_115.viewComponent:RefreshMapBG()
+			if arg2_116 then
+				arg0_116.viewComponent:RefreshMapBG()
 			end
 
-			arg0_115:TryPlaySubGuide()
+			arg0_116:TryPlaySubGuide()
 		end
 	})
 end
 
-function var0_0.DisplayContinuousWindow(arg0_130, arg1_130, arg2_130, arg3_130, arg4_130)
-	local var0_130 = arg1_130:getConfig("oil")
-	local var1_130 = arg1_130:getPlayType()
-	local var2_130 = 0
-	local var3_130 = 0
+function var0_0.DisplayContinuousWindow(arg0_131, arg1_131, arg2_131, arg3_131, arg4_131)
+	local var0_131 = arg1_131:getConfig("oil")
+	local var1_131 = arg1_131:getPlayType()
+	local var2_131 = 0
+	local var3_131 = 0
 
-	if var1_130 == ChapterConst.TypeMultiStageBoss then
-		local var4_130 = pg.chapter_model_multistageboss[arg1_130.id]
+	if var1_131 == ChapterConst.TypeMultiStageBoss then
+		local var4_131 = pg.chapter_model_multistageboss[arg1_131.id]
 
-		var2_130 = _.reduce(var4_130.boss_refresh, 0, function(arg0_131, arg1_131)
-			return arg0_131 + arg1_131
+		var2_131 = _.reduce(var4_131.boss_refresh, 0, function(arg0_132, arg1_132)
+			return arg0_132 + arg1_132
 		end)
-		var3_130 = #var4_130.boss_refresh
+		var3_131 = #var4_131.boss_refresh
 	else
-		var2_130, var3_130 = arg1_130:getConfig("boss_refresh"), 1
+		var2_131, var3_131 = arg1_131:getConfig("boss_refresh"), 1
 	end
 
-	local var5_130 = arg1_130:getConfig("use_oil_limit")
+	local var5_131 = arg1_131:getConfig("use_oil_limit")
 
-	table.Foreach(arg2_130, function(arg0_132, arg1_132)
-		local var0_132 = arg4_130[arg0_132]
+	table.Foreach(arg2_131, function(arg0_133, arg1_133)
+		local var0_133 = arg4_131[arg0_133]
 
-		if var0_132 == ChapterFleet.DUTY_IDLE then
+		if var0_133 == ChapterFleet.DUTY_IDLE then
 			return
 		end
 
-		local var1_132 = arg1_132:GetCostSum().oil
+		local var1_133 = arg1_133:GetCostSum().oil
 
-		if var0_132 == ChapterFleet.DUTY_KILLALL then
-			local var2_132 = var5_130[1] or 0
-			local var3_132 = var1_132
+		if var0_133 == ChapterFleet.DUTY_KILLALL then
+			local var2_133 = var5_131[1] or 0
+			local var3_133 = var1_133
 
-			if var2_132 > 0 then
-				var3_132 = math.min(var3_132, var2_132)
+			if var2_133 > 0 then
+				var3_133 = math.min(var3_133, var2_133)
 			end
 
-			local var4_132 = var5_130[2] or 0
-			local var5_132 = var1_132
+			local var4_133 = var5_131[2] or 0
+			local var5_133 = var1_133
 
-			if var4_132 > 0 then
-				var5_132 = math.min(var5_132, var4_132)
+			if var4_133 > 0 then
+				var5_133 = math.min(var5_133, var4_133)
 			end
 
-			var0_130 = var0_130 + var3_132 * var2_130 + var5_132 * var3_130
-		elseif var0_132 == ChapterFleet.DUTY_CLEANPATH then
-			local var6_132 = var5_130[1] or 0
-			local var7_132 = var1_132
+			var0_131 = var0_131 + var3_133 * var2_131 + var5_133 * var3_131
+		elseif var0_133 == ChapterFleet.DUTY_CLEANPATH then
+			local var6_133 = var5_131[1] or 0
+			local var7_133 = var1_133
 
-			if var6_132 > 0 then
-				var7_132 = math.min(var7_132, var6_132)
+			if var6_133 > 0 then
+				var7_133 = math.min(var7_133, var6_133)
 			end
 
-			var0_130 = var0_130 + var7_132 * var2_130
-		elseif var0_132 == ChapterFleet.DUTY_KILLBOSS then
-			local var8_132 = var5_130[2] or 0
-			local var9_132 = var1_132
+			var0_131 = var0_131 + var7_133 * var2_131
+		elseif var0_133 == ChapterFleet.DUTY_KILLBOSS then
+			local var8_133 = var5_131[2] or 0
+			local var9_133 = var1_133
 
-			if var8_132 > 0 then
-				var9_132 = math.min(var9_132, var8_132)
+			if var8_133 > 0 then
+				var9_133 = math.min(var9_133, var8_133)
 			end
 
-			var0_130 = var0_130 + var9_132 * var3_130
+			var0_131 = var0_131 + var9_133 * var3_131
 		end
 	end)
 
-	local var6_130 = arg1_130:GetMaxBattleCount()
-	local var7_130 = arg3_130 and arg3_130 > 0
-	local var8_130 = arg1_130:GetSpItems()
-	local var9_130 = var8_130[1] and var8_130[1].count or 0
-	local var10_130 = var8_130[1] and var8_130[1].id or 0
-	local var11_130 = arg1_130:GetRestDailyBonus()
+	local var6_131 = arg1_131:GetMaxBattleCount()
+	local var7_131 = arg3_131 and arg3_131 > 0
+	local var8_131 = arg1_131:GetSpItems()
+	local var9_131 = var8_131[1] and var8_131[1].count or 0
+	local var10_131 = var8_131[1] and var8_131[1].id or 0
+	local var11_131 = arg1_131:GetRestDailyBonus()
 
-	arg0_130:addSubLayers(Context.New({
+	arg0_131:addSubLayers(Context.New({
 		mediator = LevelContinuousOperationWindowMediator,
 		viewComponent = LevelContinuousOperationWindow,
 		data = {
-			maxCount = var6_130,
-			oilCost = var0_130,
-			chapter = arg1_130,
+			maxCount = var6_131,
+			oilCost = var0_131,
+			chapter = arg1_131,
 			extraRate = {
 				rate = 2,
-				enabled = var7_130,
-				extraCount = var9_130,
-				spItemId = var10_130,
-				freeBonus = var11_130
+				enabled = var7_131,
+				extraCount = var9_131,
+				spItemId = var10_131,
+				freeBonus = var11_131
 			}
 		}
 	}))
 end
 
-function var0_0.DisplayContinuousOperationResult(arg0_133, arg1_133, arg2_133)
-	local var0_133 = i18n("autofight_rewards")
-	local var1_133 = i18n("total_rewards_subtitle")
+function var0_0.DisplayContinuousOperationResult(arg0_134, arg1_134, arg2_134)
+	local var0_134 = i18n("autofight_rewards")
+	local var1_134 = i18n("total_rewards_subtitle")
 
-	arg0_133:addSubLayers(Context.New({
+	arg0_134:addSubLayers(Context.New({
 		viewComponent = LevelContinuousOperationTotalRewardPanel,
 		mediator = LevelStageTotalRewardPanelMediator,
 		data = {
-			title = var0_133,
-			subTitle = var1_133,
-			chapter = arg1_133,
-			rewards = arg2_133:GetDrops(),
-			resultRewards = arg2_133:GetSettlementDrops(),
-			continuousData = arg2_133,
-			events = arg2_133:GetEvents(1),
-			guildTasks = arg2_133:GetEvents(2),
-			guildAutoReceives = arg2_133:GetEvents(3)
+			title = var0_134,
+			subTitle = var1_134,
+			chapter = arg1_134,
+			rewards = arg2_134:GetDrops(),
+			resultRewards = arg2_134:GetSettlementDrops(),
+			continuousData = arg2_134,
+			events = arg2_134:GetEvents(1),
+			guildTasks = arg2_134:GetEvents(2),
+			guildAutoReceives = arg2_134:GetEvents(3)
 		}
 	}), true)
 end
 
-function var0_0.OnEventUpdate(arg0_134, arg1_134)
-	local var0_134 = getProxy(EventProxy)
+function var0_0.OnEventUpdate(arg0_135, arg1_135)
+	local var0_135 = getProxy(EventProxy)
 
-	arg0_134.viewComponent:updateEvent(var0_134)
+	arg0_135.viewComponent:updateEvent(var0_135)
 
-	if pg.SystemOpenMgr.GetInstance():isOpenSystem(arg0_134.player.level, "EventMediator") and var0_134.eventForMsg then
-		local var1_134 = var0_134.eventForMsg.id or 0
-		local var2_134 = getProxy(ChapterProxy):getActiveChapter(true)
+	if pg.SystemOpenMgr.GetInstance():isOpenSystem(arg0_135.player.level, "EventMediator") and var0_135.eventForMsg then
+		local var1_135 = var0_135.eventForMsg.id or 0
+		local var2_135 = getProxy(ChapterProxy):getActiveChapter(true)
 
-		if var2_134 and var2_134:IsAutoFight() then
-			getProxy(ChapterProxy):AddExtendChapterDataArray(var2_134.id, "ListEventNotify", var1_134)
-			existCall(arg1_134)
+		if var2_135 and var2_135:IsAutoFight() then
+			getProxy(ChapterProxy):AddExtendChapterDataArray(var2_135.id, "ListEventNotify", var1_135)
+			existCall(arg1_135)
 		else
-			local var3_134 = pg.collection_template[var1_134] and pg.collection_template[var1_134].title or ""
+			local var3_135 = pg.collection_template[var1_135] and pg.collection_template[var1_135].title or ""
 
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				modal = false,
 				hideNo = true,
-				content = i18n("event_special_update", var3_134),
+				content = i18n("event_special_update", var3_135),
 				weight = LayerWeightConst.SECOND_LAYER,
-				onYes = arg1_134,
-				onNo = arg1_134
+				onYes = arg1_135,
+				onNo = arg1_135
 			})
 		end
 
-		var0_134.eventForMsg = nil
+		var0_135.eventForMsg = nil
 	else
-		existCall(arg1_134)
+		existCall(arg1_135)
 	end
 end
 
-function var0_0.onTimeUp(arg0_135)
-	local var0_135 = getProxy(ChapterProxy):getActiveChapter()
+function var0_0.onTimeUp(arg0_136)
+	local var0_136 = getProxy(ChapterProxy):getActiveChapter()
 
-	if var0_135 and not var0_135:inWartime() then
-		local function var1_135()
-			arg0_135:sendNotification(GAME.CHAPTER_OP, {
+	if var0_136 and not var0_136:inWartime() then
+		local function var1_136()
+			arg0_136:sendNotification(GAME.CHAPTER_OP, {
 				type = ChapterConst.OpRetreat
 			})
 		end
 
-		if arg0_135.contextData.chapterVO then
+		if arg0_136.contextData.chapterVO then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				modal = true,
 				hideNo = true,
 				content = i18n("battle_preCombatMediator_timeout"),
-				onYes = var1_135,
-				onNo = var1_135
+				onYes = var1_136,
+				onNo = var1_136
 			})
 		else
-			var1_135()
+			var1_136()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_chapter_timeout"))
 		end
 	end
 end
 
-function var0_0.getDockCallbackFuncs(arg0_137, arg1_137, arg2_137, arg3_137, arg4_137)
-	local var0_137 = getProxy(ChapterProxy)
+function var0_0.getDockCallbackFuncs(arg0_138, arg1_138, arg2_138, arg3_138, arg4_138)
+	local var0_138 = getProxy(ChapterProxy)
 
-	local function var1_137(arg0_138, arg1_138)
-		local var0_138, var1_138 = ShipStatus.ShipStatusCheck("inElite", arg0_138, arg1_138, {
-			inElite = arg3_137:getConfig("formation")
+	local function var1_138(arg0_139, arg1_139)
+		local var0_139, var1_139 = ShipStatus.ShipStatusCheck("inElite", arg0_139, arg1_139, {
+			inElite = arg3_138:getConfig("formation")
 		})
 
-		if not var0_138 then
-			return var0_138, var1_138
+		if not var0_139 then
+			return var0_139, var1_139
 		end
 
-		for iter0_138, iter1_138 in pairs(arg1_137) do
-			if arg0_138:isSameKind(iter0_138) then
+		for iter0_139, iter1_139 in pairs(arg1_138) do
+			if arg0_139:isSameKind(iter0_139) then
 				return false, i18n("ship_formationMediator_changeNameError_sameShip")
 			end
 		end
@@ -1735,46 +1748,46 @@ function var0_0.getDockCallbackFuncs(arg0_137, arg1_137, arg2_137, arg3_137, arg
 		return true
 	end
 
-	local function var2_137(arg0_139, arg1_139, arg2_139)
-		arg1_139()
+	local function var2_138(arg0_140, arg1_140, arg2_140)
+		arg1_140()
 	end
 
-	local function var3_137(arg0_140)
-		local var0_140 = arg3_137:getEliteFleetList()[arg4_137]
+	local function var3_138(arg0_141)
+		local var0_141 = arg3_138:getEliteFleetList()[arg4_138]
 
-		if arg2_137 then
-			local var1_140 = table.indexof(var0_140, arg2_137.id)
+		if arg2_138 then
+			local var1_141 = table.indexof(var0_141, arg2_138.id)
 
-			assert(var1_140)
+			assert(var1_141)
 
-			if arg0_140[1] then
-				var0_140[var1_140] = arg0_140[1]
+			if arg0_141[1] then
+				var0_141[var1_141] = arg0_141[1]
 			else
-				table.remove(var0_140, var1_140)
+				table.remove(var0_141, var1_141)
 			end
 		else
-			table.insert(var0_140, arg0_140[1])
+			table.insert(var0_141, arg0_141[1])
 		end
 
-		var0_137:updateChapter(arg3_137)
-		var0_137:duplicateEliteFleet(arg3_137)
+		var0_138:updateChapter(arg3_138)
+		var0_138:duplicateEliteFleet(arg3_138)
 	end
 
-	return var1_137, var2_137, var3_137
+	return var1_138, var2_138, var3_138
 end
 
-function var0_0.getSupportDockCallbackFuncs(arg0_141, arg1_141, arg2_141, arg3_141)
-	local var0_141 = getProxy(ChapterProxy)
+function var0_0.getSupportDockCallbackFuncs(arg0_142, arg1_142, arg2_142, arg3_142)
+	local var0_142 = getProxy(ChapterProxy)
 
-	local function var1_141(arg0_142, arg1_142)
-		local var0_142, var1_142 = ShipStatus.ShipStatusCheck("inSupport", arg0_142, arg1_142)
+	local function var1_142(arg0_143, arg1_143)
+		local var0_143, var1_143 = ShipStatus.ShipStatusCheck("inSupport", arg0_143, arg1_143)
 
-		if not var0_142 then
-			return var0_142, var1_142
+		if not var0_143 then
+			return var0_143, var1_143
 		end
 
-		for iter0_142, iter1_142 in pairs(arg1_141) do
-			if arg0_142:isSameKind(iter0_142) then
+		for iter0_143, iter1_143 in pairs(arg1_142) do
+			if arg0_143:isSameKind(iter0_143) then
 				return false, i18n("ship_formationMediator_changeNameError_sameShip")
 			end
 		end
@@ -1782,146 +1795,146 @@ function var0_0.getSupportDockCallbackFuncs(arg0_141, arg1_141, arg2_141, arg3_1
 		return true
 	end
 
-	local function var2_141(arg0_143, arg1_143, arg2_143)
-		arg1_143()
+	local function var2_142(arg0_144, arg1_144, arg2_144)
+		arg1_144()
 	end
 
-	local function var3_141(arg0_144)
-		local var0_144 = arg3_141:getSupportFleet()
+	local function var3_142(arg0_145)
+		local var0_145 = arg3_142:getSupportFleet()
 
-		if arg2_141 then
-			local var1_144 = table.indexof(var0_144, arg2_141.id)
+		if arg2_142 then
+			local var1_145 = table.indexof(var0_145, arg2_142.id)
 
-			assert(var1_144)
+			assert(var1_145)
 
-			if arg0_144[1] then
-				var0_144[var1_144] = arg0_144[1]
+			if arg0_145[1] then
+				var0_145[var1_145] = arg0_145[1]
 			else
-				table.remove(var0_144, var1_144)
+				table.remove(var0_145, var1_145)
 			end
 		else
-			table.insert(var0_144, arg0_144[1])
+			table.insert(var0_145, arg0_145[1])
 		end
 
-		var0_141:updateChapter(arg3_141)
-		var0_141:duplicateSupportFleet(arg3_141)
+		var0_142:updateChapter(arg3_142)
+		var0_142:duplicateSupportFleet(arg3_142)
 	end
 
-	return var1_141, var2_141, var3_141
+	return var1_142, var2_142, var3_142
 end
 
-function var0_0.playAIActions(arg0_145, arg1_145, arg2_145, arg3_145)
-	if not arg0_145.viewComponent.grid then
-		arg3_145()
+function var0_0.playAIActions(arg0_146, arg1_146, arg2_146, arg3_146)
+	if not arg0_146.viewComponent.grid then
+		arg3_146()
 
 		return
 	end
 
-	local var0_145 = getProxy(ChapterProxy)
-	local var1_145
+	local var0_146 = getProxy(ChapterProxy)
+	local var1_146
 
-	local function var2_145()
-		if var1_145 and coroutine.status(var1_145) == "suspended" then
-			local var0_146, var1_146 = coroutine.resume(var1_145)
+	local function var2_146()
+		if var1_146 and coroutine.status(var1_146) == "suspended" then
+			local var0_147, var1_147 = coroutine.resume(var1_146)
 
-			assert(var0_146, debug.traceback(var1_145, var1_146))
+			assert(var0_147, debug.traceback(var1_146, var1_147))
 
-			if not var0_146 then
-				arg0_145.viewComponent:unfrozen(-1)
-				arg0_145:sendNotification(GAME.CHAPTER_OP, {
+			if not var0_147 then
+				arg0_146.viewComponent:unfrozen(-1)
+				arg0_146:sendNotification(GAME.CHAPTER_OP, {
 					type = ChapterConst.OpRequest
 				})
 			end
 		end
 	end
 
-	var1_145 = coroutine.create(function()
-		arg0_145.viewComponent:frozen()
+	var1_146 = coroutine.create(function()
+		arg0_146.viewComponent:frozen()
 
-		local var0_147 = {}
-		local var1_147 = arg2_145 or 0
+		local var0_148 = {}
+		local var1_148 = arg2_146 or 0
 
-		for iter0_147, iter1_147 in ipairs(arg1_145) do
-			local var2_147 = arg0_145.contextData.chapterVO
-			local var3_147, var4_147 = iter1_147:applyTo(var2_147, true)
+		for iter0_148, iter1_148 in ipairs(arg1_146) do
+			local var2_148 = arg0_146.contextData.chapterVO
+			local var3_148, var4_148 = iter1_148:applyTo(var2_148, true)
 
-			assert(var3_147, var4_147)
-			iter1_147:PlayAIAction(arg0_145.contextData.chapterVO, arg0_145, function()
-				local var0_148, var1_148, var2_148 = iter1_147:applyTo(var2_147, false)
+			assert(var3_148, var4_148)
+			iter1_148:PlayAIAction(arg0_146.contextData.chapterVO, arg0_146, function()
+				local var0_149, var1_149, var2_149 = iter1_148:applyTo(var2_148, false)
 
-				if var0_148 then
-					var0_145:updateChapter(var2_147, var1_148)
+				if var0_149 then
+					var0_146:updateChapter(var2_148, var1_149)
 
-					var1_147 = bit.bor(var1_147, var2_148 or 0)
+					var1_148 = bit.bor(var1_148, var2_149 or 0)
 				end
 
-				onNextTick(var2_145)
+				onNextTick(var2_146)
 			end)
 			coroutine.yield()
 
-			if isa(iter1_147, FleetAIAction) and iter1_147.actType == ChapterConst.ActType_Poison and var2_147:existFleet(FleetType.Normal, iter1_147.line.row, iter1_147.line.column) then
-				local var5_147 = var2_147:getFleetIndex(FleetType.Normal, iter1_147.line.row, iter1_147.line.column)
+			if isa(iter1_148, FleetAIAction) and iter1_148.actType == ChapterConst.ActType_Poison and var2_148:existFleet(FleetType.Normal, iter1_148.line.row, iter1_148.line.column) then
+				local var5_148 = var2_148:getFleetIndex(FleetType.Normal, iter1_148.line.row, iter1_148.line.column)
 
-				table.insert(var0_147, var5_147)
+				table.insert(var0_148, var5_148)
 			end
 		end
 
-		local var6_147 = bit.band(var1_147, ChapterConst.DirtyAutoAction)
+		local var6_148 = bit.band(var1_148, ChapterConst.DirtyAutoAction)
 
-		var1_147 = bit.band(var1_147, bit.bnot(ChapterConst.DirtyAutoAction))
+		var1_148 = bit.band(var1_148, bit.bnot(ChapterConst.DirtyAutoAction))
 
-		if var1_147 ~= 0 then
-			local var7_147 = arg0_145.contextData.chapterVO
+		if var1_148 ~= 0 then
+			local var7_148 = arg0_146.contextData.chapterVO
 
-			var0_145:updateChapter(var7_147, var1_147)
+			var0_146:updateChapter(var7_148, var1_148)
 		end
 
 		seriesAsync({
-			function(arg0_149)
-				if var6_147 ~= 0 then
-					arg0_145.viewComponent.levelStageView:tryAutoAction(arg0_149)
+			function(arg0_150)
+				if var6_148 ~= 0 then
+					arg0_146.viewComponent.levelStageView:tryAutoAction(arg0_150)
 				else
-					arg0_149()
+					arg0_150()
 				end
 			end,
-			function(arg0_150)
-				table.ParallelIpairsAsync(var0_147, function(arg0_151, arg1_151, arg2_151)
-					arg0_145.viewComponent.grid:showFleetPoisonDamage(arg1_151, arg2_151)
-				end, arg0_150)
+			function(arg0_151)
+				table.ParallelIpairsAsync(var0_148, function(arg0_152, arg1_152, arg2_152)
+					arg0_146.viewComponent.grid:showFleetPoisonDamage(arg1_152, arg2_152)
+				end, arg0_151)
 			end,
-			function(arg0_152)
-				arg3_145()
-				arg0_145.viewComponent:unfrozen()
+			function(arg0_153)
+				arg3_146()
+				arg0_146.viewComponent:unfrozen()
 			end
 		})
 	end)
 
-	var2_145()
+	var2_146()
 end
 
-function var0_0.saveSubState(arg0_153, arg1_153)
-	local var0_153 = getProxy(PlayerProxy):getRawData().id
+function var0_0.saveSubState(arg0_154, arg1_154)
+	local var0_154 = getProxy(PlayerProxy):getRawData().id
 
-	PlayerPrefs.SetInt("chapter_submarine_ai_type_" .. var0_153, arg1_153 + 1)
+	PlayerPrefs.SetInt("chapter_submarine_ai_type_" .. var0_154, arg1_154 + 1)
 	PlayerPrefs.Save()
 end
 
-function var0_0.loadSubState(arg0_154, arg1_154)
-	local var0_154 = getProxy(PlayerProxy):getRawData().id
-	local var1_154 = PlayerPrefs.GetInt("chapter_submarine_ai_type_" .. var0_154, 1) - 1
-	local var2_154 = math.clamp(var1_154, 0, 1)
+function var0_0.loadSubState(arg0_155, arg1_155)
+	local var0_155 = getProxy(PlayerProxy):getRawData().id
+	local var1_155 = PlayerPrefs.GetInt("chapter_submarine_ai_type_" .. var0_155, 1) - 1
+	local var2_155 = math.clamp(var1_155, 0, 1)
 
-	if var2_154 ~= arg1_154 then
-		arg0_154.viewComponent:emit(LevelMediator2.ON_OP, {
+	if var2_155 ~= arg1_155 then
+		arg0_155.viewComponent:emit(LevelMediator2.ON_OP, {
 			type = ChapterConst.OpSubState,
-			arg1 = var2_154
+			arg1 = var2_155
 		})
 	end
 end
 
-function var0_0.remove(arg0_155)
-	arg0_155:removeSubLayers(LevelContinuousOperationWindowMediator)
-	var0_0.super.remove(arg0_155)
+function var0_0.remove(arg0_156)
+	arg0_156:removeSubLayers(LevelContinuousOperationWindowMediator)
+	var0_0.super.remove(arg0_156)
 end
 
 return var0_0

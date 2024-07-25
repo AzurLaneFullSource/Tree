@@ -10082,7 +10082,7 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 }
 
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Get Vanguard guaranteed with every 200 event builds (can be done up to 4 times)!",
+	tip = "Rate UP for Strasbourg, Dupleix!",
 }
 
 _G.pg.base.gametip.buildship_heavy_tip = {
@@ -19013,6 +19013,26 @@ _G.pg.base.gametip.cruise_task_help_2406 = {
 	},
 }
 
+_G.pg.base.gametip.battlepass_main_tip_2408 = {
+	tip = "Complete Cruise Missions between 8/1/2024 00:00 – 9/30/2024 23:59 to receive <color=#854747>La Kasumi META</color> and other rewards!",
+}
+
+_G.pg.base.gametip.battlepass_main_help_2408 = {
+	tip = {
+		{
+			info = "Cruise Missions Seasonal Campaign\n8/1/2024 00:00 – 9/30/2024 23:59\n\n- Overview -\n\"Cruise Missions\" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.\nAdditionally, you can unlock an additional set of \"Fair Winds Cruise\" rewards by purchasing the \"Fair Winds Cruise Pass\" item from Akashi's shop.\nKasumi META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfit for Roma, \"Vacation Upon the Tiber.\"\n\n- How to Play -\n· Two types of missions will be released at the same time at the start of the campaign season:\na) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.\nb) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.\n· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.\n· If you purchase a Fair Winds Cruise Pass, you will automatically receive 15 levels worth of progress (1500 Progress Pts).\n· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:\na) Cruise Rewards - Rewards that can be obtained based on the total number of accumulated Progress Pts. There are a total of 100 levels.\nb) Fair Winds Rewards - An additional set of rewards that will be unlocked when you purchase a Fair Winds Cruise Pass. As with the regular Cruise Rewards, there are a total of 100 levels, and they can be collected alongside Cruise Rewards at the same Progress level.\n· When the campaign season ends, your Progress Pts will be reset.\n\n- Tips - \n· Play at your own pace\nCruise Missions have a total of 100 Progress levels, and are not meant to be cleared in one session. We recommend that you complete them at your own pace.\n\n· Fair Winds Cruise Pass\nIf. you purchase a Fair Winds Cruise Pass from Akashi's shop, you will automatically earn 1500 Progress Pts and unlock access to valuable rewards. Furthermore, there is an exclusive outfit available only through the Fair Winds rewards, so please plan accordingly.\n\n· Skipping Missions (not recommended)\nYou can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.\nWe do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.\nAny purchased Cruise Mission Vouchers will remain even after the campaign season ends.",
+		},
+	},
+}
+
+_G.pg.base.gametip.cruise_task_help_2408 = {
+	tip = {
+		{
+			info = "- Regarding Cruise Missions - \n· Two types of missions will be released at the same time at the start of the campaign season:\na) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.\nb) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.\n\n· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.\n\n· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.\nWe do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.\nAny purchased Cruise Mission Vouchers will remain even after the campaign season ends.",
+		},
+	},
+}
+
 _G.pg.base.gametip.attrset_reset = {
 	tip = "Reset",
 }
@@ -21616,6 +21636,10 @@ _G.pg.base.gametip.battle_text_common_2 = {
 
 _G.pg.base.gametip.battle_text_common_3 = {
 	tip = "<color=#f1f102>The enemy's DMG dealt is greatly increased, but their DMG taken increases over time.</color>",
+}
+
+_G.pg.base.gametip.battle_text_common_4 = {
+	tip = "<color=#f1f102>Enemies deal significantly more DMG. Their shells ignore shields and penetrate through targets.</color>",
 }
 
 _G.pg.base.gametip.battle_text_yingxiv4_1 = {
@@ -25877,5 +25901,119 @@ _G.pg.base.gametip["202406_main_help"] = {
 			info = "- Overview -\nThe Welcome to Little Academy event is available from <color=#92fc63>June 27th to July 10th</color>!\nComplete missions, build your fleets, and clear the event stages to collect Colorful Doodles and earn rewards!\n\n· Tap the bottom left button to switch between story and operation modes.\n· In operation mode, build your fleets and take on the SP stage to receive Colorful Doodles. Accumulate these to earn rewards, including the Elite shipgirl <color=#92fc63>U-31</color> and the limited gear <color=#92fc63>533mm Improved Quadruple Magnetic Torpedo Mount</color>!\n· From the homework menu, you can view and claim rewards for any event missions you've accomplished.\n· Go to story mode to read the fun event story. Read it to the end to receive a special gear skin.\n· Head to the playground and position your shipgirls to let them recover their Morale more quickly.\n· Use little star construction vouchers to upgrade the event buildings.",
 		},
 	},
+}
+
+_G.pg.base.gametip.MonopolyCar2024Game_title1 = {
+	tip = "Laps",
+}
+
+_G.pg.base.gametip.MonopolyCar2024Game_title2 = {
+	tip = "Progress",
+}
+
+_G.pg.base.gametip.help_monopoly_car2024 = {
+	tip = {
+		{
+			info = "- Overview -",
+		},
+		{
+			info = "Log in daily during the event to receive three dice rolls, allowing you to accelerate on the board. Clearing event-limited daily missions can give you up to another two extra dice rolls.",
+		},
+		{
+			info = "You can pick one of three shipgirls as your crew at the starting location. She will comment on your progress, based on how many tiles you advanced or what type of tile you landed on.",
+		},
+		{
+			info = "Once you've finished three laps around the track, you'll receive a limited piece of furniture. Each lap finished with a different crewmate will also reward you with 2,000 Coins.",
+		},
+		{
+			info = "The effects of each tile is as follows:",
+		},
+		{
+			info = " : Obtain a sum of Coins;",
+			icon = {
+				atlas = "attricon",
+				path = "saichejinbi",
+				posX = 0,
+				posY = 0,
+				scale = 0.19,
+			},
+		},
+		{
+			info = " : Obtain a sum of Oil;",
+			icon = {
+				atlas = "attricon",
+				path = "saicheshiyou",
+				posX = 0,
+				posY = 0,
+				scale = 0.19,
+			},
+		},
+		{
+			info = " : Trigger a random event;",
+			icon = {
+				atlas = "attricon",
+				path = "saicheminyun",
+				posX = 0,
+				posY = 0,
+				scale = 0.19,
+			},
+		},
+		{
+			info = " : Obtain a random reward;",
+			icon = {
+				atlas = "attricon",
+				path = "saichedaoju",
+				posX = 0,
+				posY = 0,
+				scale = 0.19,
+			},
+		},
+		{
+			info = " : Trigger a random movement-based event;",
+			icon = {
+				atlas = "attricon",
+				path = "saicheteshu",
+				posX = 0,
+				posY = 0,
+				scale = 0.19,
+			},
+		},
+	},
+}
+
+_G.pg.base.gametip.MonopolyCar2024Game_pick_tip = {
+	tip = "You can pick a crewmate at the starting line. Completing a lap with a crewmate can yield a reward.",
+}
+
+_G.pg.base.gametip.MonopolyCar2024Game_sel_label = {
+	tip = "Choose",
+}
+
+_G.pg.base.gametip.MonopolyCar2024Game_total_award_title = {
+	tip = "Total Obtained",
+}
+
+_G.pg.base.gametip.MonopolyCar2024Game_lock_auto_tip = {
+	tip = "Accelerate 10 times to unlock auto-advance mode (progress: $1).",
+}
+
+_G.pg.base.gametip.MonopolyCar2024Game_open_auto_tip = {
+	tip = "You have unlocked auto-advance mode. You will automatically pick a new crewmate when you pass the starting line.",
+}
+
+_G.pg.base.gametip.MonopolyCar2024Game_total_num_tip = {
+	tip = "Attempts: $1",
+}
+
+_G.pg.base.gametip.sitelasibao_expup_name = {
+	tip = "EXP Boost",
+}
+
+_G.pg.base.gametip.sitelasibao_expup_desc = {
+	tip = "During the event period, <color=#92fc63>Strasbourg, L'Audacieux, Dupleix, Z23, Hermione, and Pompeo Magno</color> receive <color=#92fc63>20% more EXP</color> from sorties.",
+}
+
+_G.pg.base.gametip.levelScene_tracking_error_pre_2 = {
+	tip = "Unlocked by clearing $1 or $2.",
 }
 

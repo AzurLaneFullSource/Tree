@@ -43,6 +43,7 @@ function var0_0.Show(arg0_7, arg1_7, arg2_7, arg3_7)
 
 	arg0_7:OnShow(arg1_7, arg3_7)
 	setActiveViaLayer(arg0_7._tf, true)
+	arg0_7:PlayOpenAnimation()
 end
 
 function var0_0.OnShow(arg0_8, arg1_8, arg2_8)
@@ -111,6 +112,33 @@ end
 
 function var0_0.OnDestroy(arg0_11)
 	return
+end
+
+function var0_0.PlayOpenAnimation(arg0_12)
+	local var0_12 = arg0_12:findTF("window/bg_decorations"):GetComponent(typeof(Animation))
+
+	var0_12:Stop()
+	var0_12:Play("anim_window_bg")
+
+	local var1_12 = arg0_12:findTF("window/title"):GetComponent(typeof(Animation))
+
+	var1_12:Stop()
+	var1_12:Play("anim_top")
+
+	local var2_12 = arg0_12:findTF("window"):GetComponent(typeof(Animation))
+
+	var2_12:Stop()
+	var2_12:Play("anim_content")
+
+	local var3_12 = arg0_12:findTF("print"):GetComponent(typeof(Animation))
+
+	var3_12:Stop()
+	var3_12:Play("anim_bg_plus")
+
+	local var4_12 = arg0_12:findTF("window/confirm_btn"):GetComponent(typeof(Animation))
+
+	var4_12:Stop()
+	var4_12:Play("anim_button_container")
 end
 
 return var0_0

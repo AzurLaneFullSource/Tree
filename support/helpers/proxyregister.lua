@@ -5,7 +5,7 @@ var0_0.MinuteCall = "min"
 var0_0.HourCall = "hour"
 var0_0.DayCall = "day"
 
-function var0_0.Ctor(arg0_1, arg1_1)
+function var0_0.Ctor(arg0_1)
 	arg0_1.data = {}
 	arg0_1.callDic = {
 		[var0_0.SecondCall] = {},
@@ -13,12 +13,6 @@ function var0_0.Ctor(arg0_1, arg1_1)
 		[var0_0.HourCall] = {},
 		[var0_0.DayCall] = {}
 	}
-	arg0_1.dateMark = pg.TimeMgr.GetInstance():CurrentSTimeDesc("*t", true)
-
-	for iter0_1, iter1_1 in ipairs(arg1_1) do
-		arg0_1:AddProxy(unpack(iter1_1))
-	end
-
 	arg0_1.timer = CoTimer.New(function()
 		arg0_1:Dispatcher()
 	end, 1, -1)
@@ -38,55 +32,65 @@ function var0_0.AddProxy(arg0_3, arg1_3, arg2_3, ...)
 	end
 end
 
-function var0_0.RgisterProxy(arg0_4, arg1_4)
-	for iter0_4, iter1_4 in ipairs(arg0_4.data) do
-		arg1_4:registerProxy(iter1_4)
+function var0_0.RgisterProxy(arg0_4, arg1_4, arg2_4)
+	for iter0_4, iter1_4 in ipairs(arg2_4) do
+		arg0_4:AddProxy(unpack(iter1_4))
 	end
 
-	arg0_4.timer:Start()
+	for iter2_4, iter3_4 in ipairs(arg0_4.data) do
+		arg1_4:registerProxy(iter3_4)
+	end
 end
 
 function var0_0.RemoveProxy(arg0_5, arg1_5)
 	for iter0_5, iter1_5 in ipairs(arg0_5.data) do
 		arg1_5:removeProxy(iter1_5.__cname)
 	end
-
-	arg0_5.timer:Stop()
 end
 
-function var0_0.Dispatcher(arg0_6)
-	local var0_6 = {}
-	local var1_6 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("*t", true)
+function var0_0.Start(arg0_6)
+	arg0_6.dateMark = pg.TimeMgr.GetInstance():CurrentSTimeDesc("*t", true)
 
-	for iter0_6, iter1_6 in ipairs({
+	arg0_6.timer:Start()
+end
+
+function var0_0.Stop(arg0_7)
+	arg0_7.timer:Stop()
+end
+
+function var0_0.Dispatcher(arg0_8)
+	local var0_8 = {}
+	local var1_8 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("*t", true)
+
+	for iter0_8, iter1_8 in ipairs({
 		var0_0.SecondCall,
 		var0_0.MinuteCall,
 		var0_0.HourCall,
 		var0_0.DayCall
 	}) do
-		if iter1_6 == var0_0.DayCall then
-			if arg0_6.dateMark[iter1_6] ~= var1_6[iter1_6] then
-				if arg0_6.dayProto or arg0_6.dayCount and arg0_6.dayCount <= 0 then
-					var0_6[iter1_6] = var1_6[iter1_6]
-					arg0_6.dateMark[iter1_6] = var1_6[iter1_6]
-				elseif arg0_6.dayCount then
-					arg0_6.dayCount = arg0_6.dayCount - 1
+		if iter1_8 == var0_0.DayCall then
+			if arg0_8.dateMark[iter1_8] ~= var1_8[iter1_8] then
+				if arg0_8.dayProto or arg0_8.dayCount and arg0_8.dayCount <= 0 then
+					var0_8[iter1_8] = var1_8[iter1_8]
+					arg0_8.dateMark[iter1_8] = var1_8[iter1_8]
+				elseif arg0_8.dayCount then
+					arg0_8.dayCount = arg0_8.dayCount - 1
 				else
-					arg0_6.dayCount = 30
+					arg0_8.dayCount = 30
 				end
 			else
-				arg0_6.dayProto = nil
-				arg0_6.dayCount = nil
+				arg0_8.dayProto = nil
+				arg0_8.dayCount = nil
 			end
-		elseif arg0_6.dateMark[iter1_6] ~= var1_6[iter1_6] then
-			var0_6[iter1_6] = var1_6[iter1_6]
-			arg0_6.dateMark[iter1_6] = var1_6[iter1_6]
+		elseif arg0_8.dateMark[iter1_8] ~= var1_8[iter1_8] then
+			var0_8[iter1_8] = var1_8[iter1_8]
+			arg0_8.dateMark[iter1_8] = var1_8[iter1_8]
 		end
 	end
 
-	for iter2_6, iter3_6 in pairs(var0_6) do
-		for iter4_6, iter5_6 in ipairs(arg0_6.callDic[iter2_6]) do
-			iter5_6(iter3_6)
+	for iter2_8, iter3_8 in pairs(var0_8) do
+		for iter4_8, iter5_8 in ipairs(arg0_8.callDic[iter2_8]) do
+			iter5_8(iter3_8, var1_8)
 		end
 	end
 end

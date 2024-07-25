@@ -216,12 +216,16 @@ function var3_0.stackRequire(arg0_25, arg1_25)
 	end
 end
 
-function var3_0.fleetAttrRequire(arg0_26, arg1_26)
+function var3_0.fleetAttrRequire(arg0_26, arg1_26, arg2_26)
 	if arg0_26._fleetAttrRequire then
-		if arg1_26:GetFleetVO() then
-			local var0_26 = arg1_26:GetFleetVO():GetFleetAttr()
+		local var0_26, var1_26 = string.find(arg0_26._fleetAttrRequire, "%p+")
 
-			return var1_0.parseCompare(arg0_26._fleetAttrRequire, var0_26)
+		if string.sub(arg0_26._fleetAttrRequire, 1, var0_26 - 1) ~= arg2_26 then
+			return false
+		elseif arg1_26:GetFleetVO() then
+			local var2_26 = arg1_26:GetFleetVO():GetFleetAttr()
+
+			return var1_0.parseCompare(arg0_26._fleetAttrRequire, var2_26)
 		else
 			return false
 		end

@@ -171,7 +171,7 @@ function var1_0.castSkill(arg0_8, arg1_8, arg2_8, arg3_8)
 		return "check attach data"
 	end
 
-	if not arg0_8:fleetAttrRequire(arg1_8) then
+	if arg0_8._fleetAttrRequire and arg2_8 and not arg0_8:fleetAttrRequire(arg1_8, arg2_8.attr) then
 		return "check fleet attr"
 	end
 

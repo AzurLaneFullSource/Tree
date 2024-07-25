@@ -291,6 +291,7 @@ function var0_0.UpdateFashionDetail(arg0_17, arg1_17)
 		setGray(var0_17.confirm, true)
 	elseif var9_17 then
 		setActive(var0_17.change, true)
+		setGray(var0_17.confirm, false)
 	elseif var6_17 then
 		setActive(var0_17.buy, true)
 		setGray(var0_17.confirm, var7_17 or var11_17)

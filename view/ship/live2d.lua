@@ -212,6 +212,7 @@ local function var14_0(arg0_14, arg1_14, arg2_14)
 		local var4_14 = arg2_14.activeData
 		local var5_14 = arg2_14.focus
 		local var6_14 = arg2_14.react
+		local var7_14 = var4_14.idle_focus
 
 		if (not var1_14 or var1_14 == "") and var2_14 then
 			var2_14(var9_0(arg0_14))
@@ -226,14 +227,24 @@ local function var14_0(arg0_14, arg1_14, arg2_14)
 				action = var1_14
 			})
 
-			local var7_14 = var11_0(arg0_14, var1_14, var5_14 or false)
+			if var7_14 and var7_14 == 1 and (not var1_14 or var1_14 == "") then
+				var1_14 = "idle"
 
-			if var7_14 then
+				arg0_14:changeIdleIndex(var4_14.idle and var4_14.idle or 0)
+			end
+
+			local var8_14 = var11_0(arg0_14, var1_14, var5_14 or false)
+
+			if var8_14 then
 				arg0_14:applyActiveData(arg2_14)
 			end
 
+			if var7_14 and var7_14 == 1 then
+				arg0_14:live2dActionChange(false)
+			end
+
 			if var2_14 then
-				var2_14(var7_14)
+				var2_14(var8_14)
 			end
 		end
 	elseif arg1_14 == Live2D.EVENT_ACTION_ABLE then
@@ -689,6 +700,7 @@ function var0_0.loadLive2dData(arg0_37)
 	end
 
 	local var0_37, var1_37 = Live2dConst.GetL2dSaveData(arg0_37.live2dData:GetShipSkinConfig().id, arg0_37.live2dData.ship.id)
+	local var2_37 = Live2dConst.GetDragActionIndex(var1_37, arg0_37.live2dData:GetShipSkinConfig().id, arg0_37.live2dData.ship.id) or 1
 
 	if var0_37 then
 		arg0_37:changeIdleIndex(var0_37)
@@ -704,26 +716,30 @@ function var0_0.loadLive2dData(arg0_37)
 
 	if var1_37 and var1_37 > 0 then
 		if pg.ship_l2d[var1_37] then
-			local var2_37 = pg.ship_l2d[var1_37].action_trigger_active
+			local var3_37 = pg.ship_l2d[var1_37].action_trigger_active
 
-			if var0_37 and var2_37.idle_enable and #var2_37.idle_enable > 0 then
-				for iter1_37, iter2_37 in ipairs(var2_37.idle_enable) do
+			if var0_37 and var3_37.idle_enable and #var3_37.idle_enable > 0 then
+				for iter1_37, iter2_37 in ipairs(var3_37.idle_enable) do
 					if iter2_37[1] == var0_37 then
 						arg0_37.enablePlayActions = iter2_37[2]
 					end
 				end
+			elseif var2_37 and var2_37 >= 1 and var3_37.active_list then
+				arg0_37.enablePlayActions = var3_37.active_list[var2_37].enable and var3_37.active_list[var2_37].enable or {}
 			else
-				arg0_37.enablePlayActions = var2_37.enable and var2_37.enable or {}
+				arg0_37.enablePlayActions = var3_37.enable and var3_37.enable or {}
 			end
 
-			if var0_37 and var2_37.idle_ignore and #var2_37.idle_ignore > 0 then
-				for iter3_37, iter4_37 in ipairs(var2_37.idle_ignore) do
+			if var0_37 and var3_37.idle_ignore and #var3_37.idle_ignore > 0 then
+				for iter3_37, iter4_37 in ipairs(var3_37.idle_ignore) do
 					if iter4_37[1] == var0_37 then
 						arg0_37.ignorePlayActions = iter4_37[2]
 					end
 				end
+			elseif var2_37 and var2_37 >= 1 and var3_37.active_list then
+				arg0_37.ignorePlayActions = var3_37.active_list[var2_37].ignore and var3_37.active_list[var2_37].ignore or {}
 			else
-				arg0_37.ignorePlayActions = var2_37.ignore and var2_37.ignore or {}
+				arg0_37.ignorePlayActions = var3_37.ignore and var3_37.ignore or {}
 			end
 		end
 	else
@@ -884,6 +900,9 @@ function var0_0.applyActiveData(arg0_53, arg1_53)
 	local var3_53 = var0_53.idle_ignore
 	local var4_53 = var0_53.ignore
 	local var5_53 = var0_53.idle and var0_53.idle or arg1_53.idle
+
+	print("active data idle = " .. tostring(var5_53))
+
 	local var6_53 = var0_53.repeatFlag
 
 	if var1_53 and #var1_53 >= 0 then

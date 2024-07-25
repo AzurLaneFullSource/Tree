@@ -326,7 +326,6 @@ var0_0.DirtyCellFlag = 64
 var0_0.DirtyBase = 128
 var0_0.DirtyChampionPosition = 256
 var0_0.DirtyFloatItems = 512
-var0_0.DirtyMapItems = 1024
 var0_0.KizunaJammingEngage = 1
 var0_0.KizunaJammingDodge = 2
 var0_0.StatusDay = 3

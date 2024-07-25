@@ -446,7 +446,8 @@ function var0_0.ShowOrHideChatWindow(arg0_39, arg1_39)
 			pg.UIMgr.GetInstance():OverlayPanelPB(arg0_39.chatPanel, {
 				pbList = {
 					arg0_39.chatPanel
-				}
+				},
+				weight = LayerWeightConst.TOP_LAYER
 			})
 
 			arg0_39.chatPanelAnchoredPositionX = arg0_39.chatPanel.anchoredPosition.x

@@ -245281,3 +245281,163 @@ _G.pg.base.aircraft_template[3169074] = {
 	},
 }
 
+_G.pg.base.aircraft_template[3171006] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 108,
+	dodge = 1,
+	dodge_limit = 0,
+	hp_growth = 2760,
+	icon = "FL-282",
+	id = 3171006,
+	max_hp = 400,
+	model_ID = "FL-282",
+	name = "【2024斯特拉斯堡活动T2】BOSS 科隆 直升机（浮游炮逻辑）",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 70,
+	type = 1,
+	funnel_behavior = {
+		exist = 20,
+		stay = 2,
+	},
+	weapon_ID = {
+		3171007,
+		3171008,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3178006] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 108,
+	dodge = 1,
+	dodge_limit = 0,
+	hp_growth = 2760,
+	icon = "FL-282",
+	id = 3178006,
+	max_hp = 400,
+	model_ID = "FL-282",
+	name = "【2024斯特拉斯堡活动HT2】BOSS 科隆 直升机（浮游炮逻辑）",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 70,
+	type = 1,
+	funnel_behavior = {
+		exist = 20,
+		stay = 2,
+	},
+	weapon_ID = {
+		3178007,
+		3178008,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+

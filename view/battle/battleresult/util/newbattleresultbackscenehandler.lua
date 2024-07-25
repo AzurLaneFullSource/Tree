@@ -270,32 +270,30 @@ local function var1_0()
 end
 
 function var0_0.ShowExtraChapterActSocre(arg0_18, arg1_18)
-	local var0_18 = getProxy(ChapterProxy)
-	local var1_18 = var0_18:getActiveChapter()
-	local var2_18 = var1_18 and var0_18:getMapById(var1_18:getConfig("map"))
-	local var3_18 = var1_0()
+	local var0_18 = getProxy(ChapterProxy):getActiveChapter()
+	local var1_18 = var1_0()
 
-	for iter0_18, iter1_18 in ipairs(var3_18) do
-		local var4_18 = iter1_18:getConfig("config_data")
-		local var5_18 = arg1_18.stageId
+	for iter0_18, iter1_18 in ipairs(var1_18) do
+		local var2_18 = iter1_18:getConfig("config_data")
+		local var3_18 = arg1_18.stageId
 
-		if var4_18[1] == var5_18 and var2_18 and var2_18:isActExtra() then
-			local var6_18 = math.floor(arg1_18.statistics._totalTime)
-			local var7_18 = ActivityLevelConst.getShipsPower(arg1_18.prefabFleet or arg1_18.oldMainShips)
-			local var8_18, var9_18 = ActivityLevelConst.getExtraChapterSocre(var5_18, var6_18, var7_18, iter1_18)
-			local var10_18 = var9_18 < var8_18 and i18n("extra_chapter_record_updated") or i18n("extra_chapter_record_not_updated")
+		if var2_18[1] == var3_18 and var0_18:IsEXChapter() then
+			local var4_18 = math.floor(arg1_18.statistics._totalTime)
+			local var5_18 = ActivityLevelConst.getShipsPower(arg1_18.prefabFleet or arg1_18.oldMainShips)
+			local var6_18, var7_18 = ActivityLevelConst.getExtraChapterSocre(var3_18, var4_18, var5_18, iter1_18)
+			local var8_18 = var7_18 < var6_18 and i18n("extra_chapter_record_updated") or i18n("extra_chapter_record_not_updated")
 
-			if var9_18 < var8_18 then
-				iter1_18.data1 = var8_18
+			if var7_18 < var6_18 then
+				iter1_18.data1 = var6_18
 
 				getProxy(ActivityProxy):updateActivity(iter1_18)
 
-				var9_18 = var8_18
+				var7_18 = var6_18
 			end
 
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = true,
-				content = i18n("extra_chapter_socre_tip", var8_18, var9_18, var10_18),
+				content = i18n("extra_chapter_socre_tip", var6_18, var7_18, var8_18),
 				weight = LayerWeightConst.SECOND_LAYER
 			})
 		end

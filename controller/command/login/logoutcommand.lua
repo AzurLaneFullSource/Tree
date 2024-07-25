@@ -73,6 +73,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			data = var0_1
 		}),
 		callback = function()
+			pg.proxyRegister:Stop()
 			pg.proxyRegister:RemoveProxy(arg0_1.facade)
 
 			pg.proxyRegister = nil

@@ -12414,46 +12414,140 @@ pg.activity_ins_template = {
 		ship_group = 40406,
 		name = "Hervör alvitr",
 		sculpture = "yaerweite_2",
-		message_persist = "",
-		picture_persist = "",
+		message_persist = "ins_479",
+		picture_persist = "https://blhxusstatic.yo-star.com/pic/20240627_1Uf7RMpHWug7EvOH_yaerweite.png",
 		group_id = 479,
 		id = 479,
-		is_active = 1,
-		time_persist = {},
-		npc_discuss_persist = {}
+		is_active = 0,
+		time_persist = {
+			{
+				2024,
+				6,
+				27
+			},
+			{
+				12,
+				30,
+				17
+			}
+		},
+		npc_discuss_persist = {
+			4613,
+			4617,
+			4620
+		}
 	},
 	[480] = {
 		ship_group = 40147,
 		name = "☆WildeKatze47☆",
 		sculpture = "z47",
-		message_persist = "",
-		picture_persist = "",
+		message_persist = "ins_480",
+		picture_persist = "https://blhxusstatic.yo-star.com/pic/20240627_jH7TcsiABaWjjyd0_Z47.png",
 		group_id = 480,
 		id = 480,
-		is_active = 1,
-		time_persist = {},
-		npc_discuss_persist = {}
+		is_active = 0,
+		time_persist = {
+			{
+				2024,
+				6,
+				28
+			},
+			{
+				11,
+				27,
+				21
+			}
+		},
+		npc_discuss_persist = {
+			4629,
+			4632,
+			4635
+		}
 	},
 	[481] = {
 		ship_group = 40813,
 		name = "Unbeschwert31",
 		sculpture = "u31",
-		message_persist = "",
-		picture_persist = "",
+		message_persist = "ins_481",
+		picture_persist = "https://blhxusstatic.yo-star.com/pic/20240627_tKkfixw8mixmrOUf_U31.png",
 		group_id = 481,
 		id = 481,
-		is_active = 1,
-		time_persist = {},
-		npc_discuss_persist = {}
+		is_active = 0,
+		time_persist = {
+			{
+				2024,
+				6,
+				29
+			},
+			{
+				15,
+				16,
+				21
+			}
+		},
+		npc_discuss_persist = {
+			4644,
+			4647
+		}
 	},
 	[482] = {
 		ship_group = 40143,
 		name = "Z·DEVIL·43",
 		sculpture = "z43",
-		message_persist = "",
-		picture_persist = "",
+		message_persist = "ins_482",
+		picture_persist = "https://blhxusstatic.yo-star.com/pic/20240627_zAEDujqiYNiiTLmm_Z43.png",
 		group_id = 482,
 		id = 482,
+		is_active = 0,
+		time_persist = {
+			{
+				2024,
+				6,
+				30
+			},
+			{
+				13,
+				42,
+				21
+			}
+		},
+		npc_discuss_persist = {
+			4655,
+			4660
+		}
+	},
+	[483] = {
+		ship_group = 90402,
+		name = "Strasbourg",
+		sculpture = "sitelasibao",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 483,
+		id = 483,
+		is_active = 1,
+		time_persist = {},
+		npc_discuss_persist = {}
+	},
+	[484] = {
+		ship_group = 90303,
+		name = "Dupleix",
+		sculpture = "dipulaikesi",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 484,
+		id = 484,
+		is_active = 1,
+		time_persist = {},
+		npc_discuss_persist = {}
+	},
+	[485] = {
+		ship_group = 60108,
+		name = "Alfredo ",
+		sculpture = "aerfuleiduo",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 485,
+		id = 485,
 		is_active = 1,
 		time_persist = {},
 		npc_discuss_persist = {}
@@ -12931,6 +13025,9 @@ pg.activity_ins_template = {
 		479,
 		480,
 		481,
-		482
+		482,
+		483,
+		484,
+		485
 	}
 }

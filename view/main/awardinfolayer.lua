@@ -193,180 +193,204 @@ function var0_0.didEnter(arg0_10)
 			arg0_10.enterCallback = nil
 		end
 	end)
+
+	if arg0_10.contextData.auto then
+		arg0_10:AddCloseTimer()
+	end
 end
 
-function var0_0.onUIAnimEnd(arg0_18, arg1_18)
-	arg0_18.enterCallback = arg1_18
+function var0_0.RemoveCloseTimer(arg0_18)
+	if arg0_18.closeTimer then
+		arg0_18.closeTimer:Stop()
+
+		arg0_18.closeTimer = nil
+	end
 end
 
-function var0_0.onBackPressed(arg0_19)
-	if LeanTween.isTweening(go(arg0_19._itemsWindow)) then
+function var0_0.AddCloseTimer(arg0_19)
+	arg0_19:RemoveCloseTimer()
+
+	arg0_19.closeTimer = Timer.New(function()
+		arg0_19:RemoveCloseTimer()
+		triggerButton(arg0_19._tf)
+	end, arg0_19.contextData.auto or 2, 1)
+
+	arg0_19.closeTimer:Start()
+end
+
+function var0_0.onUIAnimEnd(arg0_21, arg1_21)
+	arg0_21.enterCallback = arg1_21
+end
+
+function var0_0.onBackPressed(arg0_22)
+	if LeanTween.isTweening(go(arg0_22._itemsWindow)) then
 		return
 	end
 
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-	triggerButton(arg0_19._tf)
+	triggerButton(arg0_22._tf)
 end
 
-local function var4_0(arg0_20, arg1_20)
-	local var0_20 = pg.ship_data_statistics[arg1_20.id]
-	local var1_20 = Ship.New({
-		configId = arg1_20.id
+local function var4_0(arg0_23, arg1_23)
+	local var0_23 = pg.ship_data_statistics[arg1_23.id]
+	local var1_23 = Ship.New({
+		configId = arg1_23.id
 	})
 
-	var1_20.virgin = arg1_20.virgin
+	var1_23.virgin = arg1_23.virgin
 
-	setScrollText(findTF(arg0_20, "content/info/name_mask/name"), var1_20:GetColorName())
-	flushShipCard(arg0_20, var1_20)
+	setScrollText(findTF(arg0_23, "content/info/name_mask/name"), var1_23:GetColorName())
+	flushShipCard(arg0_23, var1_23)
 
-	local var2_20 = findTF(arg0_20, "content/front/new")
+	local var2_23 = findTF(arg0_23, "content/front/new")
 
-	setActive(var2_20, arg1_20.virgin)
+	setActive(var2_23, arg1_23.virgin)
 end
 
-function var0_0.displayAwards(arg0_21)
-	assert(#arg0_21.awards ~= 0, "items数量不能为0")
-	removeAllChildren(arg0_21.container)
+function var0_0.displayAwards(arg0_24)
+	assert(#arg0_24.awards ~= 0, "items数量不能为0")
+	removeAllChildren(arg0_24.container)
 
-	for iter0_21 = 1, #arg0_21.awards do
-		if arg0_21.title ~= var0_0.TITLE.SHIP then
-			cloneTplTo(arg0_21.itemTpl, arg0_21.container)
+	for iter0_24 = 1, #arg0_24.awards do
+		if arg0_24.title ~= var0_0.TITLE.SHIP then
+			cloneTplTo(arg0_24.itemTpl, arg0_24.container)
 		else
-			local var0_21 = cloneTplTo(arg0_21.shipTpl, arg0_21.container)
+			local var0_24 = cloneTplTo(arg0_24.shipTpl, arg0_24.container)
 
-			cloneTplTo(arg0_21.shipCardTpl, var0_21, "ship_tpl")
+			cloneTplTo(arg0_24.shipCardTpl, var0_24, "ship_tpl")
 		end
 	end
 
-	if arg0_21.title ~= var0_0.TITLE.SHIP then
-		for iter1_21 = 1, #arg0_21.awards do
-			local var1_21 = arg0_21.container:GetChild(iter1_21 - 1):Find("bg")
-			local var2_21 = arg0_21.awards[iter1_21]
+	if arg0_24.title ~= var0_0.TITLE.SHIP then
+		for iter1_24 = 1, #arg0_24.awards do
+			local var1_24 = arg0_24.container:GetChild(iter1_24 - 1):Find("bg")
+			local var2_24 = arg0_24.awards[iter1_24]
 
-			if var2_21.type == DROP_TYPE_SHIP then
-				arg0_21.hasShip = true
+			if var2_24.type == DROP_TYPE_SHIP then
+				arg0_24.hasShip = true
 			end
 
-			updateDrop(var1_21, var2_21, {
+			updateDrop(var1_24, var2_24, {
 				fromAwardLayer = true
 			})
-			setActive(findTF(var1_21, "icon_bg/bonus"), var2_21.riraty)
-			setActive(findTF(var1_21, "icon_bg/bonus_catchup"), var2_21.catchupTag)
-			setActive(findTF(var1_21, "icon_bg/bonus_event"), var2_21.catchupActTag)
+			setActive(findTF(var1_24, "icon_bg/bonus"), var2_24.riraty)
+			setActive(findTF(var1_24, "icon_bg/bonus_catchup"), var2_24.catchupTag)
+			setActive(findTF(var1_24, "icon_bg/bonus_event"), var2_24.catchupActTag)
 
-			local var3_21 = findTF(var1_21, "name")
-			local var4_21 = findTF(var1_21, "name_mask")
+			local var3_24 = findTF(var1_24, "name")
+			local var4_24 = findTF(var1_24, "name_mask")
 
-			setActive(var3_21, false)
-			setActive(var4_21, true)
-			setScrollText(findTF(var1_21, "name_mask/name"), var2_21.name or getText(var3_21))
-			onButton(arg0_21, var1_21, function()
-				if arg0_21.tweeningId then
+			setActive(var3_24, false)
+			setActive(var4_24, true)
+			setScrollText(findTF(var1_24, "name_mask/name"), var2_24.name or getText(var3_24))
+			onButton(arg0_24, var1_24, function()
+				if arg0_24.tweeningId then
 					return
 				end
 
-				arg0_21:emit(AwardInfoMediator.ON_DROP, var2_21)
+				arg0_24:emit(AwardInfoMediator.ON_DROP, var2_24)
 			end, SFX_PANEL)
 		end
 	else
-		for iter2_21 = 1, #arg0_21.awards do
-			local var5_21 = arg0_21.container:GetChild(iter2_21 - 1):Find("ship_tpl")
-			local var6_21 = arg0_21.awards[iter2_21]
+		for iter2_24 = 1, #arg0_24.awards do
+			local var5_24 = arg0_24.container:GetChild(iter2_24 - 1):Find("ship_tpl")
+			local var6_24 = arg0_24.awards[iter2_24]
 
-			var4_0(var5_21, var6_21)
+			var4_0(var5_24, var6_24)
 
-			local var7_21 = var6_21.reMetaSpecialItemVO
+			local var7_24 = var6_24.reMetaSpecialItemVO
 
-			if var7_21 then
-				local var8_21 = cloneTplTo(arg0_21.metaRepeatAwardTF, var5_21)
+			if var7_24 then
+				local var8_24 = cloneTplTo(arg0_24.metaRepeatAwardTF, var5_24)
 
-				setLocalPosition(var8_21, Vector3.zero)
-				setLocalScale(var8_21, Vector3.zero)
+				setLocalPosition(var8_24, Vector3.zero)
+				setLocalScale(var8_24, Vector3.zero)
 
-				local var9_21 = arg0_21:findTF("item_tpl/bg", var8_21)
+				local var9_24 = arg0_24:findTF("item_tpl/bg", var8_24)
 
-				updateDrop(var9_21, var7_21)
-				setActive(var9_21:Find("name"), false)
-				setActive(var9_21:Find("name_mask"), true)
-				var9_21:Find("name_mask/name"):GetComponent("ScrollText"):SetText(var7_21.cfg.name)
+				updateDrop(var9_24, var7_24)
+				setActive(var9_24:Find("name"), false)
+				setActive(var9_24:Find("name_mask"), true)
+				var9_24:Find("name_mask/name"):GetComponent("ScrollText"):SetText(var7_24.cfg.name)
 
-				local function var10_21()
-					arg0_21:managedTween(LeanTween.value, nil, go(var8_21), 0, 1, 0.3):setOnUpdate(System.Action_float(function(arg0_24)
-						setLocalScale(var8_21, {
-							x = arg0_24,
-							y = arg0_24
+				local function var10_24()
+					arg0_24:managedTween(LeanTween.value, nil, go(var8_24), 0, 1, 0.3):setOnUpdate(System.Action_float(function(arg0_27)
+						setLocalScale(var8_24, {
+							x = arg0_27,
+							y = arg0_27
 						})
 					end)):setOnComplete(System.Action(function()
-						setLocalScale(var8_21, Vector3.one)
+						setLocalScale(var8_24, Vector3.one)
 					end))
 				end
 
-				arg0_21:managedTween(LeanTween.delayedCall, var10_21, 0.3, nil)
+				arg0_24:managedTween(LeanTween.delayedCall, var10_24, 0.3, nil)
 			end
 
-			if #arg0_21.awards > 5 then
-				if iter2_21 <= 5 then
-					var5_21.anchoredPosition = Vector2.New(-50, 0)
+			if #arg0_24.awards > 5 then
+				if iter2_24 <= 5 then
+					var5_24.anchoredPosition = Vector2.New(-50, 0)
 				else
-					var5_21.anchoredPosition = Vector2.New(50, 0)
+					var5_24.anchoredPosition = Vector2.New(50, 0)
 				end
 			end
 		end
 	end
 end
 
-function var0_0.ShowOrHideSpriteMask(arg0_26, arg1_26)
-	if isActive(arg0_26.spriteMask) == arg1_26 then
+function var0_0.ShowOrHideSpriteMask(arg0_29, arg1_29)
+	if isActive(arg0_29.spriteMask) == arg1_29 then
 		return
 	end
 
-	setActive(arg0_26.spriteMask, arg1_26)
+	setActive(arg0_29.spriteMask, arg1_29)
 end
 
-function var0_0.willExit(arg0_27)
-	setActive(arg0_27.spriteMask, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_27._tf)
+function var0_0.willExit(arg0_30)
+	arg0_30:RemoveCloseTimer()
+	setActive(arg0_30.spriteMask, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_30._tf)
 
-	if arg0_27.title ~= var0_0.TITLE.SHIP then
-		for iter0_27 = 0, arg0_27.container.childCount - 1 do
-			clearDrop(arg0_27.container:GetChild(iter0_27):Find("bg"))
+	if arg0_30.title ~= var0_0.TITLE.SHIP then
+		for iter0_30 = 0, arg0_30.container.childCount - 1 do
+			clearDrop(arg0_30.container:GetChild(iter0_30):Find("bg"))
 		end
 	end
 
-	if arg0_27.blinks and #arg0_27.blinks > 0 then
-		for iter1_27, iter2_27 in pairs(arg0_27.blinks) do
-			if not IsNil(iter2_27) then
-				Destroy(iter2_27)
+	if arg0_30.blinks and #arg0_30.blinks > 0 then
+		for iter1_30, iter2_30 in pairs(arg0_30.blinks) do
+			if not IsNil(iter2_30) then
+				Destroy(iter2_30)
 			end
 		end
 	end
 
-	if arg0_27.contextData.removeFunc then
-		arg0_27.contextData.removeFunc()
+	if arg0_30.contextData.removeFunc then
+		arg0_30.contextData.removeFunc()
 
-		arg0_27.contextData.removeFunc = nil
+		arg0_30.contextData.removeFunc = nil
 	end
 end
 
-function var0_0.updateSpriteMaskScale(arg0_28)
+function var0_0.updateSpriteMaskScale(arg0_31)
 	onNextTick(function()
-		if arg0_28.exited then
+		if arg0_31.exited then
 			return
 		end
 
-		setLocalScale(arg0_28.spriteMask, Vector3(arg0_28.spriteMask.rect.width / WHITE_DOT_SIZE * PIXEL_PER_UNIT, arg0_28.spriteMask.rect.height / WHITE_DOT_SIZE * PIXEL_PER_UNIT, 1))
+		setLocalScale(arg0_31.spriteMask, Vector3(arg0_31.spriteMask.rect.width / WHITE_DOT_SIZE * PIXEL_PER_UNIT, arg0_31.spriteMask.rect.height / WHITE_DOT_SIZE * PIXEL_PER_UNIT, 1))
 	end)
 end
 
-function var0_0.checkPaintingRes(arg0_30, arg1_30)
-	local var0_30 = PaintingGroupConst.GetPaintingNameListForAwardList(arg0_30.awards)
-	local var1_30 = {
+function var0_0.checkPaintingRes(arg0_33, arg1_33)
+	local var0_33 = PaintingGroupConst.GetPaintingNameListForAwardList(arg0_33.awards)
+	local var1_33 = {
 		isShowBox = false,
-		paintingNameList = var0_30,
-		finishFunc = arg1_30
+		paintingNameList = var0_33,
+		finishFunc = arg1_33
 	}
 
-	PaintingGroupConst.PaintingDownload(var1_30)
+	PaintingGroupConst.PaintingDownload(var1_33)
 end
 
 return var0_0

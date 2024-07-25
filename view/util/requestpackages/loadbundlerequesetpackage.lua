@@ -24,7 +24,7 @@ function var0_0.__call(arg0_1)
 					arg0_2(arg0_4)
 				end)
 			end, function(...)
-				debug.traceback(...)
+				errorMsg(debug.traceback(...))
 				pg.UIMgr.GetInstance():LoadingOff()
 			end)
 		end,
