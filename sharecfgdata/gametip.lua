@@ -19014,7 +19014,7 @@ _G.pg.base.gametip.cruise_task_help_2406 = {
 }
 
 _G.pg.base.gametip.battlepass_main_tip_2408 = {
-	tip = "Complete Cruise Missions between 8/1/2024 00:00 – 9/30/2024 23:59 to receive <color=#854747>La Kasumi META</color> and other rewards!",
+	tip = "Complete Cruise Missions between 8/1/2024 00:00 – 9/30/2024 23:59 to receive <color=#854747>Kasumi META</color> and other rewards!",
 }
 
 _G.pg.base.gametip.battlepass_main_help_2408 = {

@@ -627,6 +627,12 @@ function var0_0.CheckMove(arg0_73, arg1_73)
 	seriesAsync({
 		function(arg0_74)
 			arg0_73:emit(MonopolyCar2024Mediator.ON_MOVE, arg0_73.actId, function(arg0_75, arg1_75, arg2_75)
+				if not arg0_75 or not arg1_75 or not arg2_75 then
+					warning(arg0_75, arg1_75, arg2_75)
+
+					return
+				end
+
 				var0_73 = arg1_75
 
 				arg0_74()
