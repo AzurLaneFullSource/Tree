@@ -695,6 +695,10 @@ function var0_0.OnStart(arg0_67)
 end
 
 function var0_0.TrackingStart(arg0_68)
+	if not getProxy(PlayerProxy) or not getProxy(PlayerProxy):getRawData() then
+		return
+	end
+
 	arg0_68.trackFlag = false
 
 	if not arg0_68.storyScript then

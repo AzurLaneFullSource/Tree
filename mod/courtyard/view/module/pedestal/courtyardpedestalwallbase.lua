@@ -8,4 +8,8 @@ function var0_0.OnLoaded(arg0_2, arg1_2)
 	arg1_2.transform:SetAsFirstSibling()
 end
 
+function var0_0.GetParent(arg0_3)
+	return arg0_3.parent._tf:Find("base")
+end
+
 return var0_0

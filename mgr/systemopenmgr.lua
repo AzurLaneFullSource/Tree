@@ -31,7 +31,7 @@ function pm.Facade.sendNotification(arg0_2, arg1_2, arg2_2, arg3_2)
 			end
 		end
 
-		if HXSet.isHxSkin() and var1_2 == "SkinShopMediator" then
+		if HXSet.isHxSkin() and var1_2 == "NewSkinShopMediator" then
 			return
 		end
 

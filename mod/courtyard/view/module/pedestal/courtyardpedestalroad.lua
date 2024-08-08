@@ -41,4 +41,8 @@ function var0_0.OnLoaded(arg0_2, arg1_2)
 	tf(arg1_2):SetSiblingIndex(0)
 end
 
+function var0_0.GetParent(arg0_5)
+	return arg0_5.parent._tf:Find("base")
+end
+
 return var0_0

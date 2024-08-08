@@ -33873,6 +33873,60 @@ pg.equip_skin_template = {
 			"wash"
 		}
 	},
+	[4020] = {
+		hit_sfx = "",
+		bullet_name = "",
+		name = "Crimson Kitsune Mask",
+		type = 1,
+		preview_hit_distance = 0,
+		themeid = 47,
+		orbit_ui = "shebei_zhuhongjiamianui",
+		desc = "Put on the mask and be whisked away to a crimson dream.",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "1",
+		miss_sfx = "",
+		orbit_combat_anima_change = "",
+		icon = "100072",
+		orbit_combat = "shebei_zhuhongjiamian",
+		orbit_ui_back = 0,
+		mirror = 0,
+		rarity = 4,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 4020,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				2.22,
+				-0.25,
+				-2.93
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				-10,
+				0
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	},
 	[1001] = {
 		hit_sfx = "",
 		bullet_name = "Nep_bullet_shizi",
@@ -40891,6 +40945,7 @@ pg.equip_skin_template = {
 		4017,
 		4018,
 		4019,
+		4020,
 		1001,
 		1002,
 		1003,

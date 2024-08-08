@@ -28,33 +28,37 @@ function var0_0.GetAssetPath(arg0_2)
 	end
 end
 
-function var0_0.OnLoaded(arg0_3, arg1_3)
-	rtf(arg1_3).sizeDelta = Vector2(1888, 944)
-	rtf(arg1_3).anchorMin = Vector2(0.5, 1)
-	rtf(arg1_3).anchorMax = Vector2(0.5, 1)
-	rtf(arg1_3).pivot = Vector2(0.5, 1)
-	rtf(arg1_3).localScale = Vector3(1, 1, 1)
-
-	setAnchoredPosition(rtf(arg1_3), Vector3(0, -280, 0))
-
-	if arg0_3.paper and arg0_3.paper:GetObjType() == CourtYardConst.OBJ_TYPE_SPINE then
-		arg0_3:InitSpine(arg1_3)
-	end
-
-	local var0_3 = arg0_3:GetRect():GetSiblingIndex()
-
-	tf(arg1_3):SetSiblingIndex(var0_3)
-
-	local var1_3 = var1_0[arg0_3.level]
-
-	arg1_3.transform.localScale = Vector3(var1_3, var1_3, 1)
+function var0_0.GetParent(arg0_3)
+	return arg0_3.parent._tf:Find("paper")
 end
 
-function var0_0.InitSpine(arg0_4, arg1_4)
-	local var0_4, var1_4 = arg0_4.paper:GetSpineNameAndAction()
+function var0_0.OnLoaded(arg0_4, arg1_4)
+	rtf(arg1_4).sizeDelta = Vector2(1888, 944)
+	rtf(arg1_4).anchorMin = Vector2(0.5, 1)
+	rtf(arg1_4).anchorMax = Vector2(0.5, 1)
+	rtf(arg1_4).pivot = Vector2(0.5, 1)
+	rtf(arg1_4).localScale = Vector3(1, 1, 1)
 
-	if var1_4 then
-		GetOrAddComponent(tf(arg1_4):GetChild(0), typeof(SpineAnimUI)):SetAction(var1_4, 0)
+	setAnchoredPosition(rtf(arg1_4), Vector3(0, -280, 0))
+
+	if arg0_4.paper and arg0_4.paper:GetObjType() == CourtYardConst.OBJ_TYPE_SPINE then
+		arg0_4:InitSpine(arg1_4)
+	end
+
+	local var0_4 = arg0_4:GetRect():GetSiblingIndex()
+
+	tf(arg1_4):SetSiblingIndex(var0_4)
+
+	local var1_4 = var1_0[arg0_4.level]
+
+	arg1_4.transform.localScale = Vector3(var1_4, var1_4, 1)
+end
+
+function var0_0.InitSpine(arg0_5, arg1_5)
+	local var0_5, var1_5 = arg0_5.paper:GetSpineNameAndAction()
+
+	if var1_5 then
+		GetOrAddComponent(tf(arg1_5):GetChild(0), typeof(SpineAnimUI)):SetAction(var1_5, 0)
 	end
 end
 

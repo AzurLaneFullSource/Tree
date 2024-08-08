@@ -17858,6 +17858,7 @@ _G.pg.base.ship_data_template[105091] = {
 	},
 	buff_list_display = {
 		10320,
+		17980,
 	},
 	hide_buff_list = {
 		340,
@@ -17902,6 +17903,7 @@ _G.pg.base.ship_data_template[105092] = {
 	},
 	buff_list_display = {
 		10320,
+		17980,
 	},
 	hide_buff_list = {
 		1,
@@ -17947,6 +17949,7 @@ _G.pg.base.ship_data_template[105093] = {
 	},
 	buff_list_display = {
 		10320,
+		17980,
 	},
 	hide_buff_list = {
 		1,
@@ -17992,6 +17995,7 @@ _G.pg.base.ship_data_template[105094] = {
 	},
 	buff_list_display = {
 		10320,
+		17980,
 	},
 	hide_buff_list = {
 		2,

@@ -182,7 +182,7 @@ function var0_0.addListener(arg0_18)
 	end, SFX_PANEL)
 	onButton(arg0_18, arg0_18.supplyShopBtn, function()
 		arg0_18:emit(ChargeMenuMediator.GO_SUPPLY_SHOP, {
-			warp = NewShopsScene.TYPE_SHOP_STREET
+			warp = NewShopsScene.TYPE_ACTIVITY
 		})
 	end, SFX_PANEL)
 end

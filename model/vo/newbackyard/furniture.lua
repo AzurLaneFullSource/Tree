@@ -195,6 +195,11 @@ end
 
 function var0_0.inTime(arg0_22)
 	local var0_22 = arg0_22:getConfig("time")
+	local var1_22 = arg0_22:getConfig("collaboration_furniture_time")
+
+	if var1_22 ~= "" and var1_22 ~= var0_22 then
+		return false
+	end
 
 	return pg.TimeMgr.GetInstance():inTime(var0_22)
 end

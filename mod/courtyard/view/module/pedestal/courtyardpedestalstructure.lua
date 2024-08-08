@@ -83,7 +83,7 @@ function var0_0.Load(arg0_11, arg1_11)
 
 		arg0_11.state = var4_0
 
-		local var0_12 = Object.Instantiate(arg0_12, arg0_11.parent._tf)
+		local var0_12 = Object.Instantiate(arg0_12, arg0_11:GetParent())
 
 		arg0_11:OnLoaded(var0_12)
 
@@ -91,39 +91,43 @@ function var0_0.Load(arg0_11, arg1_11)
 	end), true, true)
 end
 
-function var0_0.SetDirty(arg0_13)
-	if arg0_13.isDirty then
-		arg0_13.state = var3_0
+function var0_0.GetParent(arg0_13)
+	return arg0_13.parent._tf
+end
+
+function var0_0.SetDirty(arg0_14)
+	if arg0_14.isDirty then
+		arg0_14.state = var3_0
 	end
 end
 
-function var0_0.ReLoad(arg0_14)
-	arg0_14:Load(function()
-		arg0_14:Unload()
+function var0_0.ReLoad(arg0_15)
+	arg0_15:Load(function()
+		arg0_15:Unload()
 	end)
 end
 
-function var0_0.Unload(arg0_16)
-	if not IsNil(arg0_16.asset) then
-		Object.Destroy(arg0_16.asset)
+function var0_0.Unload(arg0_17)
+	if not IsNil(arg0_17.asset) then
+		Object.Destroy(arg0_17.asset)
 	end
 
-	arg0_16.asset = nil
-	arg0_16.state = var1_0
+	arg0_17.asset = nil
+	arg0_17.state = var1_0
 end
 
-function var0_0.Dispose(arg0_17)
-	pg.DelegateInfo.Dispose(arg0_17)
-	arg0_17:Unload()
+function var0_0.Dispose(arg0_18)
+	pg.DelegateInfo.Dispose(arg0_18)
+	arg0_18:Unload()
 
-	arg0_17.state = var5_0
+	arg0_18.state = var5_0
 end
 
-function var0_0.OnLoaded(arg0_18)
+function var0_0.OnLoaded(arg0_19)
 	return
 end
 
-function var0_0.GetAssetPath(arg0_19)
+function var0_0.GetAssetPath(arg0_20)
 	assert(false, "overwrite me !!!")
 end
 

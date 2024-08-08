@@ -107,8 +107,13 @@ function var0_0.InitImage(arg0_13, arg1_13)
 		return
 	end
 
+	arg0_13.imgName = var0_13
+
 	LoadSpriteAtlasAsync(arg0_13:ResPath() .. "/" .. var0_13, "", function(arg0_14)
-		arg0_13.imgName = var0_13
+		if IsNil(arg0_13.image) then
+			return
+		end
+
 		arg0_13.image.sprite = arg0_14
 
 		arg0_13.image:SetNativeSize()
@@ -125,106 +130,100 @@ function var0_0.InitSubImage(arg0_15)
 		return
 	end
 
-	LoadSpriteAtlasAsync(arg0_15:ResPath() .. "/" .. var0_15, "", function(arg0_16)
-		arg0_15.subImgName = var0_15
-		arg0_15.subImage.sprite = arg0_16
+	arg0_15.subImgName = var0_15
 
-		arg0_15.subImage:SetNativeSize()
-	end)
+	GetImageSpriteFromAtlasAsync(arg0_15:ResPath() .. "/" .. var0_15, "", arg0_15.subImage, true)
 end
 
-function var0_0.GetTipImage(arg0_17)
+function var0_0.GetTipImage(arg0_16)
 	return "tip"
 end
 
-function var0_0.InitTipImage(arg0_18)
-	local var0_18 = arg0_18:GetTipImage()
+function var0_0.InitTipImage(arg0_17)
+	local var0_17 = arg0_17:GetTipImage()
 
-	if not var0_18 or var0_18 == arg0_18.tipImageName then
+	if not var0_17 or var0_17 == arg0_17.tipImageName then
 		return
 	end
 
-	LoadSpriteAtlasAsync("LinkButton/" .. var0_18, "", function(arg0_19)
-		arg0_18.tipImageName = var0_18
-		arg0_18.tipTr.sprite = arg0_19
+	arg0_17.tipImageName = var0_17
 
-		arg0_18.tipTr:SetNativeSize()
-	end)
+	GetImageSpriteFromAtlasAsync("LinkButton/" .. var0_17, "", arg0_17.tipTr, true)
 end
 
-function var0_0.UpdatePosition(arg0_20, arg1_20)
-	local var0_20 = -20
-	local var1_20 = -150 - (arg1_20 - 1) * (arg0_20._tf.sizeDelta.y + var0_20)
+function var0_0.UpdatePosition(arg0_18, arg1_18)
+	local var0_18 = -20
+	local var1_18 = -150 - (arg1_18 - 1) * (arg0_18._tf.sizeDelta.y + var0_18)
 
-	arg0_20._tf.anchoredPosition = Vector2(arg0_20._tf.anchoredPosition.x, var1_20, 0)
+	arg0_18._tf.anchoredPosition = Vector2(arg0_18._tf.anchoredPosition.x, var1_18, 0)
 end
 
-function var0_0.Clear(arg0_21)
+function var0_0.Clear(arg0_19)
+	if arg0_19._tf then
+		setActive(arg0_19._tf, false)
+	end
+end
+
+function var0_0.emit(arg0_20, ...)
+	arg0_20.event:emit(...)
+end
+
+function var0_0.Dispose(arg0_21)
+	pg.DelegateInfo.Dispose(arg0_21)
+
 	if arg0_21._tf then
-		setActive(arg0_21._tf, false)
+		Destroy(arg0_21._tf.gameObject)
+
+		arg0_21._tf = nil
 	end
 end
 
-function var0_0.emit(arg0_22, ...)
-	arg0_22.event:emit(...)
-end
-
-function var0_0.Dispose(arg0_23)
-	pg.DelegateInfo.Dispose(arg0_23)
-
-	if arg0_23._tf then
-		Destroy(arg0_23._tf.gameObject)
-
-		arg0_23._tf = nil
-	end
-end
-
-function var0_0.Skip(arg0_24, arg1_24)
-	if arg1_24.type == GAMEUI_BANNER_1 then
-		Application.OpenURL(arg1_24.param)
-	elseif arg1_24.type == GAMEUI_BANNER_2 then
-		arg0_24:emit(NewMainMediator.SKIP_SCENE, arg1_24.param)
-	elseif arg1_24.type == GAMEUI_BANNER_3 then
-		arg0_24:emit(NewMainMediator.SKIP_ACTIVITY, tonumber(arg1_24.param))
-	elseif arg1_24.type == GAMEUI_BANNER_4 then
-		arg0_24:emit(NewMainMediator.SKIP_SHOP, arg1_24.param)
-	elseif arg1_24.type == GAMEUI_BANNER_5 then
+function var0_0.Skip(arg0_22, arg1_22)
+	if arg1_22.type == GAMEUI_BANNER_1 then
+		Application.OpenURL(arg1_22.param)
+	elseif arg1_22.type == GAMEUI_BANNER_2 then
+		arg0_22:emit(NewMainMediator.SKIP_SCENE, arg1_22.param)
+	elseif arg1_22.type == GAMEUI_BANNER_3 then
+		arg0_22:emit(NewMainMediator.SKIP_ACTIVITY, tonumber(arg1_22.param))
+	elseif arg1_22.type == GAMEUI_BANNER_4 then
+		arg0_22:emit(NewMainMediator.SKIP_SHOP, arg1_22.param)
+	elseif arg1_22.type == GAMEUI_BANNER_5 then
 		-- block empty
-	elseif arg1_24.type == GAMEUI_BANNER_6 then
-		arg0_24:emit(NewMainMediator.GO_SCENE, SCENE.SELTECHNOLOGY)
-	elseif arg1_24.type == GAMEUI_BANNER_7 then
-		arg0_24:emit(NewMainMediator.GO_MINI_GAME, arg1_24.param[1])
-	elseif arg1_24.type == GAMEUI_BANNER_8 then
+	elseif arg1_22.type == GAMEUI_BANNER_6 then
+		arg0_22:emit(NewMainMediator.GO_SCENE, SCENE.SELTECHNOLOGY)
+	elseif arg1_22.type == GAMEUI_BANNER_7 then
+		arg0_22:emit(NewMainMediator.GO_MINI_GAME, arg1_22.param[1])
+	elseif arg1_22.type == GAMEUI_BANNER_8 then
 		if getProxy(GuildProxy):getRawData() then
-			arg0_24:emit(NewMainMediator.GO_SCENE, SCENE.GUILD)
+			arg0_22:emit(NewMainMediator.GO_SCENE, SCENE.GUILD)
 		else
-			arg0_24:emit(NewMainMediator.GO_SCENE, SCENE.NEWGUILD)
+			arg0_22:emit(NewMainMediator.GO_SCENE, SCENE.NEWGUILD)
 		end
-	elseif arg1_24.type == GAMEUI_BANNER_14 then
-		arg0_24:emit(NewMainMediator.OPEN_KINK_BUTTON_LAYER, Context.New({
-			mediator = _G[arg1_24.param.mediator],
-			viewComponent = _G[arg1_24.param.view]
+	elseif arg1_22.type == GAMEUI_BANNER_14 then
+		arg0_22:emit(NewMainMediator.OPEN_KINK_BUTTON_LAYER, Context.New({
+			mediator = _G[arg1_22.param.mediator],
+			viewComponent = _G[arg1_22.param.view]
 		}))
 	end
 end
 
-function var0_0.ResPath(arg0_25)
+function var0_0.ResPath(arg0_23)
 	return "LinkButton"
 end
 
-function var0_0.GetActivityID(arg0_26)
+function var0_0.GetActivityID(arg0_24)
 	assert(false, "策划配置default类型 必须重写这个方法")
 end
 
-function var0_0.CustomOnClick(arg0_27)
+function var0_0.CustomOnClick(arg0_25)
 	assert(false, "策划配置type = 0 这个按钮必须自己定义跳转行为")
 end
 
-function var0_0.GetEventName(arg0_28)
+function var0_0.GetEventName(arg0_26)
 	assert(false, "overwrite me !!!")
 end
 
-function var0_0.OnInit(arg0_29)
+function var0_0.OnInit(arg0_27)
 	return
 end
 

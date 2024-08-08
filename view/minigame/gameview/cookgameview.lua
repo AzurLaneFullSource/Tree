@@ -10,7 +10,7 @@ local var8_0 = {
 	time_up = 0.5,
 	cake_num = 5,
 	extend_time = 10,
-	char_path = "ui/minigameui/cookgameassets",
+	char_path = "ui/minigameui/",
 	speed_num = 3,
 	path = "ui/minigameui/" .. var5_0
 }

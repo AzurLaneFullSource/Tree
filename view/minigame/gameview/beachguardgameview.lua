@@ -11,6 +11,7 @@ var0_0.READY_START = "ready start"
 var0_0.COUNT_DOWN = "count down"
 var0_0.STORE_SERVER = "store server"
 var0_0.SUBMIT_GAME_SUCCESS = "submit game success"
+var0_0.OPEN_BOOK = "open book"
 var0_0.RECYCLES_CHAR = "RECYCLES CHAR"
 var0_0.RECYCLES_CHAR_CANCEL = "RECYCLES CHAR CANCEL"
 var0_0.DRAG_CHAR = "DRAG CHAR"
@@ -64,10 +65,13 @@ function var0_0.initData(arg0_4)
 	arg0_4.timer = Timer.New(function()
 		arg0_4:onTimer()
 	end, 1 / var6_0, -1)
+
+	local var0_4 = arg0_4:GetMGData().id
+
 	arg0_4.gameData = {
 		path = "ui/minigameui/beachguardgameui_atlas",
 		game_time = var4_0,
-		drop = pg.mini_game[arg0_4:GetMGData().id].simple_config_data.drop,
+		drop = pg.mini_game[var0_4].simple_config_data.drop,
 		total_times = arg0_4:GetMGHubData():getConfig("reward_need"),
 		rule_tip = var5_0,
 		asset = BeachGuardAsset.New(arg0_4._tf)
@@ -123,7 +127,7 @@ function var0_0.initEvent(arg0_6)
 	arg0_6:bind(BeachGuardGameView.SHOW_RULE, function(arg0_16, arg1_16, arg2_16)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = pg.gametip[arg0_6.gameData.rule_tip].tip
+			helps = pg.gametip[var5_0].tip
 		})
 	end)
 	arg0_6:bind(BeachGuardGameView.READY_START, function(arg0_17, arg1_17, arg2_17)

@@ -38,9 +38,11 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 		arg0_1._event:emit(PipeGameEvent.CLOSE_GAME)
 	end, SFX_CANCEL)
 	onButton(arg0_1._event, findTF(arg0_1.menuUI, "btnRule"), function()
+		arg0_1._event:emit(PipeGameEvent.SHOW_RULE, true)
 		setActive(arg0_1.imgHelp, true)
 	end, SFX_CANCEL)
 	onButton(arg0_1._event, arg0_1.imgHelp, function()
+		arg0_1._event:emit(PipeGameEvent.SHOW_RULE, false)
 		setActive(arg0_1.imgHelp, false)
 	end, SFX_CANCEL)
 
@@ -92,83 +94,90 @@ function var0_0.show(arg0_11, arg1_11)
 	setActive(arg0_11.menuUI, arg1_11)
 end
 
-function var0_0.update(arg0_12, arg1_12)
-	arg0_12.mgHubData = arg1_12
+function var0_0.setGameRoomUI(arg0_12, arg1_12)
+	if arg1_12 then
+		setActive(findTF(arg0_12.menuUI, "lastTimes"), false)
+		setActive(findTF(arg0_12.menuUI, "btnRank"), false)
+	end
+end
 
-	local var0_12 = arg0_12:getGameUsedTimes(arg1_12)
-	local var1_12 = arg0_12:getGameTimes(arg1_12)
+function var0_0.update(arg0_13, arg1_13)
+	arg0_13.mgHubData = arg1_13
 
-	setText(arg0_12.textLastTimes, var1_12)
+	local var0_13 = arg0_13:getGameUsedTimes(arg1_13)
+	local var1_13 = arg0_13:getGameTimes(arg1_13)
 
-	for iter0_12 = 1, 7 do
-		setActive(findTF(arg0_12.battleItems[iter0_12], "state_open"), false)
-		setActive(findTF(arg0_12.battleItems[iter0_12], "state_closed"), false)
-		setActive(findTF(arg0_12.battleItems[iter0_12], "state_clear"), false)
-		setActive(findTF(arg0_12.battleItems[iter0_12], "state_current"), false)
+	setText(arg0_13.textLastTimes, var1_13)
 
-		if iter0_12 <= var0_12 then
-			SetParent(arg0_12.dropItems[iter0_12], findTF(arg0_12.battleItems[iter0_12], "state_clear/icon"))
-			setActive(arg0_12.dropItems[iter0_12], true)
-			setActive(findTF(arg0_12.battleItems[iter0_12], "state_clear"), true)
-		elseif iter0_12 == var0_12 + 1 and var1_12 >= 1 then
-			setActive(findTF(arg0_12.battleItems[iter0_12], "state_current"), true)
-			SetParent(arg0_12.dropItems[iter0_12], findTF(arg0_12.battleItems[iter0_12], "state_current/icon"))
-			setActive(arg0_12.dropItems[iter0_12], true)
-		elseif var0_12 < iter0_12 and iter0_12 <= var0_12 + var1_12 then
-			setActive(findTF(arg0_12.battleItems[iter0_12], "state_open"), true)
-			SetParent(arg0_12.dropItems[iter0_12], findTF(arg0_12.battleItems[iter0_12], "state_open/icon"))
-			setActive(arg0_12.dropItems[iter0_12], true)
+	for iter0_13 = 1, 7 do
+		setActive(findTF(arg0_13.battleItems[iter0_13], "state_open"), false)
+		setActive(findTF(arg0_13.battleItems[iter0_13], "state_closed"), false)
+		setActive(findTF(arg0_13.battleItems[iter0_13], "state_clear"), false)
+		setActive(findTF(arg0_13.battleItems[iter0_13], "state_current"), false)
+
+		if iter0_13 <= var0_13 then
+			SetParent(arg0_13.dropItems[iter0_13], findTF(arg0_13.battleItems[iter0_13], "state_clear/icon"))
+			setActive(arg0_13.dropItems[iter0_13], true)
+			setActive(findTF(arg0_13.battleItems[iter0_13], "state_clear"), true)
+		elseif iter0_13 == var0_13 + 1 and var1_13 >= 1 then
+			setActive(findTF(arg0_13.battleItems[iter0_13], "state_current"), true)
+			SetParent(arg0_13.dropItems[iter0_13], findTF(arg0_13.battleItems[iter0_13], "state_current/icon"))
+			setActive(arg0_13.dropItems[iter0_13], true)
+		elseif var0_13 < iter0_13 and iter0_13 <= var0_13 + var1_13 then
+			setActive(findTF(arg0_13.battleItems[iter0_13], "state_open"), true)
+			SetParent(arg0_13.dropItems[iter0_13], findTF(arg0_13.battleItems[iter0_13], "state_open/icon"))
+			setActive(arg0_13.dropItems[iter0_13], true)
 		else
-			setActive(findTF(arg0_12.battleItems[iter0_12], "state_closed"), true)
-			SetParent(arg0_12.dropItems[iter0_12], findTF(arg0_12.battleItems[iter0_12], "state_closed/icon"))
-			setActive(arg0_12.dropItems[iter0_12], true)
+			setActive(findTF(arg0_13.battleItems[iter0_13], "state_closed"), true)
+			SetParent(arg0_13.dropItems[iter0_13], findTF(arg0_13.battleItems[iter0_13], "state_closed/icon"))
+			setActive(arg0_13.dropItems[iter0_13], true)
 		end
 	end
 
-	local var2_12 = 1 - (var0_12 - 3 < 0 and 0 or var0_12 - 3) / (arg0_12.totalTimes - 4)
+	local var2_13 = 1 - (var0_13 - 3 < 0 and 0 or var0_13 - 3) / (arg0_13.totalTimes - 4)
 
-	if var2_12 > 1 then
-		var2_12 = 1
+	if var2_13 > 1 then
+		var2_13 = 1
 	end
 
-	scrollTo(arg0_12.battleScrollRect, 0, var2_12)
+	scrollTo(arg0_13.battleScrollRect, 0, var2_13)
 end
 
-function var0_0.CheckGet(arg0_13)
-	local var0_13 = arg0_13.mgHubData
+function var0_0.CheckGet(arg0_14)
+	local var0_14 = arg0_14.mgHubData
 
-	setActive(findTF(arg0_13.menuUI, "got"), false)
+	setActive(findTF(arg0_14.menuUI, "got"), false)
 
-	local var1_13 = arg0_13:getUltimate(var0_13)
+	local var1_14 = arg0_14:getUltimate(var0_14)
 
-	if var1_13 and var1_13 ~= 0 then
-		setActive(findTF(arg0_13.menuUI, "got"), true)
+	if var1_14 and var1_14 ~= 0 then
+		setActive(findTF(arg0_14.menuUI, "got"), true)
 	end
 
-	if var1_13 == 0 then
-		if var1_0.total_times > arg0_13:getGameUsedTimes(var0_13) then
+	if var1_14 == 0 then
+		if var1_0.total_times > arg0_14:getGameUsedTimes(var0_14) then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = var0_13.id,
+			hubid = var0_14.id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
-		setActive(findTF(arg0_13.menuUI, "got"), true)
+		setActive(findTF(arg0_14.menuUI, "got"), true)
 	end
 end
 
-function var0_0.getGameTimes(arg0_14, arg1_14)
-	return arg1_14.count
+function var0_0.getGameTimes(arg0_15, arg1_15)
+	return arg1_15.count
 end
 
-function var0_0.getGameUsedTimes(arg0_15, arg1_15)
-	return arg1_15.usedtime
+function var0_0.getGameUsedTimes(arg0_16, arg1_16)
+	return arg1_16.usedtime
 end
 
-function var0_0.getUltimate(arg0_16, arg1_16)
-	return arg1_16.ultimate
+function var0_0.getUltimate(arg0_17, arg1_17)
+	return arg1_17.ultimate
 end
 
 return var0_0

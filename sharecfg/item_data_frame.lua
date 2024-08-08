@@ -459,6 +459,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>\"I will continue choosing to protect, even in a transient dream.\"</color>\nGiven to Commanders who participated in the \"Light of the Martyrium\" event.",
 		scene = {}
 	},
+	[331] = {
+		time_limit_type = 0,
+		name = "Resplendent Heart",
+		gain_by = "",
+		id = 331,
+		time_second = 0,
+		desc = "Obtained from an event.",
+		scene = {}
+	},
 	[406] = {
 		time_limit_type = 0,
 		name = "Hall of Fame: Laffey ",
@@ -727,6 +736,7 @@ pg.item_data_frame = {
 		328,
 		329,
 		330,
+		331,
 		406,
 		411,
 		412,

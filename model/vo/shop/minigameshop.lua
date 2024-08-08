@@ -78,7 +78,11 @@ function var0_0.GetCommodities(arg0_8)
 		local var1_9 = arg1_9:CanPurchase() and 1 or 0
 
 		if var0_9 == var1_9 then
-			return arg0_9:getConfig("order") < arg1_9:getConfig("order")
+			if arg0_9:getConfig("order") ~= arg1_9:getConfig("order") then
+				return arg0_9:getConfig("order") < arg1_9:getConfig("order")
+			else
+				return arg0_9:getConfig("id") < arg1_9:getConfig("id")
+			end
 		else
 			return var1_9 < var0_9
 		end

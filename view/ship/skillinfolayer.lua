@@ -23,7 +23,6 @@ function var0_0.init(arg0_2)
 	setText(arg0_2:findTF("Image", arg0_2.metaBtn), i18n("meta_skillbtn_tactics"))
 	setText(arg0_2:findTF("panel/top/title_list/infomation/title"), i18n("words_information"))
 	setText(arg0_2.buttonList:Find("ok_button/Image"), i18n("text_confirm"))
-	setText(arg0_2.buttonList:Find("level_button/Image"), i18n("msgbox_text_upgrade"))
 end
 
 function var0_0.didEnter(arg0_3)

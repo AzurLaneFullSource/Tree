@@ -1,6 +1,6 @@
 local var0_0 = class("FushunBeastChar")
 
-function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 	arg0_1._go = arg1_1
 	arg0_1._tf = arg1_1.transform
 	arg0_1.index = arg2_1
@@ -20,7 +20,6 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
 	arg0_1.collider2D = arg0_1._tf:GetComponent(typeof(UnityEngine.Collider2D))
 	arg0_1.effectCollider2D = arg0_1._tf:Find("effect"):GetComponent(typeof(UnityEngine.Collider2D))
 	arg0_1.hpBar = UIItemList.New(arg1_1.transform:Find("hp"), arg1_1.transform:Find("hp/tpl"))
-	arg0_1.fushunLoader = arg4_1
 
 	arg0_1:MakeHpBar()
 end
@@ -165,7 +164,10 @@ end
 function var0_0.Dispose(arg0_28)
 	arg0_28.animatorEvent:SetTriggerEvent(nil)
 	arg0_28.animatorEvent:SetEndEvent(nil)
-	arg0_28.fushunLoader:ReturnPrefab("FushunAdventure/" .. arg0_28.name, "", arg0_28._go, false)
+
+	if arg0_28._go then
+		Destroy(arg0_28._go)
+	end
 
 	arg0_28._go = nil
 	arg0_28._tf = nil

@@ -45,6 +45,8 @@ end
 function var0_0.initData(arg0_4)
 	LaunchBallGameVo.Init(arg0_4:GetMGData().id, arg0_4:GetMGHubData().id)
 
+	LaunchBallGameVo.game_room_flag = false
+
 	local var0_4 = LaunchBallGameVo.frameRate
 
 	if var0_4 > 60 then

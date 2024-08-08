@@ -10,6 +10,7 @@ var0_0.rule_tip = "launchball_minigame_help"
 var0_0.frameRate = Application.targetFrameRate or 60
 var0_0.ui_atlas = "ui/minigameui/launchballgameui_atlas"
 var0_0.game_ui = "LaunchBallGameUI"
+var0_0.game_room_ui = "GameRoomLaunchUI"
 var0_0.SFX_COUNT_DOWN = "event:/ui/ddldaoshu2"
 var0_0.launchball_minigame_select = "launchball_minigame_select"
 var0_0.launchball_minigame_un_select = "launchball_minigame_un_select"

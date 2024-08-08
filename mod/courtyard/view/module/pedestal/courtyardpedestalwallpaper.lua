@@ -24,37 +24,41 @@ function var0_0.GetAssetPath(arg0_2)
 	end
 end
 
-function var0_0.OnLoaded(arg0_3, arg1_3)
-	rtf(arg1_3).anchorMin = Vector2(0.5, 1)
-	rtf(arg1_3).anchorMax = Vector2(0.5, 1)
-	rtf(arg1_3).pivot = Vector2(0.5, 1)
-	rtf(arg1_3).localScale = Vector3(1, 1, 1)
-
-	local var0_3 = arg0_3.paper:GetObjType()
-
-	if var0_3 == CourtYardConst.OBJ_TYPE_COMMOM then
-		arg0_3:InitCommon(arg1_3)
-	elseif var0_3 == CourtYardConst.OBJ_TYPE_SPINE then
-		arg0_3:InitSpine(arg1_3)
-	end
-
-	tf(arg1_3):SetSiblingIndex(1)
+function var0_0.GetParent(arg0_3)
+	return arg0_3.parent._tf:Find("paper")
 end
 
-function var0_0.InitCommon(arg0_4, arg1_4)
-	setAnchoredPosition(arg1_4, {
+function var0_0.OnLoaded(arg0_4, arg1_4)
+	rtf(arg1_4).anchorMin = Vector2(0.5, 1)
+	rtf(arg1_4).anchorMax = Vector2(0.5, 1)
+	rtf(arg1_4).pivot = Vector2(0.5, 1)
+	rtf(arg1_4).localScale = Vector3(1, 1, 1)
+
+	local var0_4 = arg0_4.paper:GetObjType()
+
+	if var0_4 == CourtYardConst.OBJ_TYPE_COMMOM then
+		arg0_4:InitCommon(arg1_4)
+	elseif var0_4 == CourtYardConst.OBJ_TYPE_SPINE then
+		arg0_4:InitSpine(arg1_4)
+	end
+
+	tf(arg1_4):SetSiblingIndex(1)
+end
+
+function var0_0.InitCommon(arg0_5, arg1_5)
+	setAnchoredPosition(arg1_5, {
 		x = 0,
 		y = -6
 	})
 end
 
-function var0_0.InitSpine(arg0_5, arg1_5)
-	setAnchoredPosition(arg1_5, Vector3(0, -10, 0))
+function var0_0.InitSpine(arg0_6, arg1_6)
+	setAnchoredPosition(arg1_6, Vector3(0, -10, 0))
 
-	local var0_5, var1_5 = arg0_5.paper:GetSpineNameAndAction()
+	local var0_6, var1_6 = arg0_6.paper:GetSpineNameAndAction()
 
-	if var1_5 then
-		GetOrAddComponent(tf(arg1_5):GetChild(0), typeof(SpineAnimUI)):SetAction(var1_5, 0)
+	if var1_6 then
+		GetOrAddComponent(tf(arg1_6):GetChild(0), typeof(SpineAnimUI)):SetAction(var1_6, 0)
 	end
 end
 

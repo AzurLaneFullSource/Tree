@@ -26,6 +26,7 @@ function var0_0.Ctor(arg0_5, arg1_5)
 	pg.DelegateInfo.New(arg0_5)
 
 	arg0_5.controller = arg1_5
+	arg0_5.roomTip = pg.gametip.towerclimbing_gametip.tip
 end
 
 function var0_0.SetUI(arg0_6, arg1_6)
@@ -62,7 +63,7 @@ function var0_0.OnEnter(arg0_7, arg1_7)
 	onButton(arg0_7, arg0_7.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = pg.gametip.towerclimbing_gametip.tip
+			helps = arg0_7.roomTip
 		})
 	end, SFX_PANEL)
 	onButton(arg0_7, arg0_7.exitGameBtn, function()
@@ -266,30 +267,34 @@ function var0_0.SetHighScore(arg0_35, arg1_35)
 	arg0_35.highScores = arg1_35
 end
 
-function var0_0.ActivePanel(arg0_36, arg1_36, arg2_36)
-	if arg2_36 then
-		pg.UIMgr.GetInstance():BlurPanel(arg1_36)
-	else
-		pg.UIMgr.GetInstance():UnblurPanel(arg1_36, arg0_36._tf)
-	end
-
-	setActive(arg1_36, arg2_36)
+function var0_0.setRoomTip(arg0_36, arg1_36)
+	arg0_36.roomTip = arg1_36
 end
 
-function var0_0.onBackPressed(arg0_37)
-	if arg0_37.inDownCnt then
+function var0_0.ActivePanel(arg0_37, arg1_37, arg2_37)
+	if arg2_37 then
+		pg.UIMgr.GetInstance():BlurPanel(arg1_37)
+	else
+		pg.UIMgr.GetInstance():UnblurPanel(arg1_37, arg0_37._tf)
+	end
+
+	setActive(arg1_37, arg2_37)
+end
+
+function var0_0.onBackPressed(arg0_38)
+	if arg0_38.inDownCnt then
 		return true
 	end
 
-	if arg0_37.controller.IsStarting then
-		arg0_37:ShowQuitPanel()
+	if arg0_38.controller.IsStarting then
+		arg0_38:ShowQuitPanel()
 
 		return true
 	end
 
-	if isActive(arg0_37.resultPanel) then
-		arg0_37:ActivePanel(arg0_37.resultPanel, false)
-		arg0_37.controller:ExitGame()
+	if isActive(arg0_38.resultPanel) then
+		arg0_38:ActivePanel(arg0_38.resultPanel, false)
+		arg0_38.controller:ExitGame()
 
 		return true
 	end
@@ -297,19 +302,19 @@ function var0_0.onBackPressed(arg0_37)
 	return false
 end
 
-function var0_0.Dispose(arg0_38)
-	if arg0_38.timer then
-		arg0_38.timer:Stop()
+function var0_0.Dispose(arg0_39)
+	if arg0_39.timer then
+		arg0_39.timer:Stop()
 
-		arg0_38.timer = nil
+		arg0_39.timer = nil
 	end
 
-	var2_0(arg0_38.jumpBtn)
-	arg0_38:ClearSlip(arg0_38.moveBtn)
-	pg.DelegateInfo.Dispose(arg0_38)
+	var2_0(arg0_39.jumpBtn)
+	arg0_39:ClearSlip(arg0_39.moveBtn)
+	pg.DelegateInfo.Dispose(arg0_39)
 
-	if arg0_38.map then
-		arg0_38.map:Dispose()
+	if arg0_39.map then
+		arg0_39.map:Dispose()
 	end
 end
 

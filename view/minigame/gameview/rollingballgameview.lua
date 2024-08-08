@@ -165,7 +165,7 @@ function var0_0.showCountStart(arg0_12, arg1_12)
 
 		seriesAsync({
 			function(arg0_14)
-				GetSpriteFromAtlasAsync("ui/rollingBallGame_atlas", "count_" .. var0_13, function(arg0_15)
+				GetSpriteFromAtlasAsync(RollingBallConst.ui_atlas, "count_" .. var0_13, function(arg0_15)
 					setImageSprite(var1_13, arg0_15, true)
 				end)
 				LeanTween.value(go(var1_13), 0, 1, 0.5):setOnUpdate(System.Action_float(function(arg0_16)

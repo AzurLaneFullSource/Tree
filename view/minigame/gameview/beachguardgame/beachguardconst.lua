@@ -984,6 +984,21 @@ var0_0.chapter_data = {
 			7,
 			8
 		}
+	},
+	{
+		id = 8,
+		fog = true,
+		map = 1,
+		show_card = {
+			2,
+			1,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8
+		}
 	}
 }
 var0_0.map_data = {
@@ -2731,6 +2746,344 @@ var0_0.chapater_enemy = {
 			},
 			{
 				time = 70,
+				create = 300922
+			},
+			{
+				time = 70,
+				create = 301113
+			},
+			{
+				time = 70,
+				create = 301214
+			},
+			{
+				time = 70,
+				create = 301115
+			},
+			{
+				time = 80,
+				create = 81
+			},
+			{
+				time = 81,
+				create = 82
+			},
+			{
+				time = 82,
+				create = 86
+			},
+			{
+				create = 81,
+				time = 85,
+				stop = 105,
+				step = {
+					5,
+					10
+				}
+			},
+			{
+				create = 83,
+				time = 86,
+				stop = 106,
+				step = {
+					10,
+					15
+				}
+			},
+			{
+				time = 113,
+				create = 301013,
+				comming = true
+			},
+			{
+				time = 115,
+				create = 301211
+			},
+			{
+				time = 115,
+				create = 301112
+			},
+			{
+				time = 115,
+				create = 301313
+			},
+			{
+				time = 115,
+				create = 301214
+			},
+			{
+				time = 115,
+				create = 301315
+			},
+			{
+				time = 120,
+				create = 86
+			},
+			{
+				time = 120,
+				create = 64
+			},
+			{
+				time = 120,
+				create = 84
+			},
+			{
+				time = 120,
+				create = 85
+			},
+			{
+				time = 120,
+				create = 86
+			},
+			{
+				time = 125,
+				create = 301112
+			},
+			{
+				time = 125,
+				create = 301214
+			},
+			{
+				time = 125,
+				create = 301112
+			},
+			{
+				time = 125,
+				create = 301313
+			},
+			{
+				time = 125,
+				create = 301315
+			},
+			{
+				time = 130,
+				create = 84
+			},
+			{
+				time = 130,
+				create = 85
+			},
+			{
+				time = 130,
+				create = 86
+			},
+			{
+				time = 143,
+				create = 301013,
+				comming = true
+			},
+			{
+				create = 100,
+				time = 145,
+				stop = 165,
+				step = {
+					10,
+					10
+				}
+			},
+			{
+				time = 168,
+				create = 301013,
+				comming = true
+			},
+			{
+				create = 101,
+				time = 170,
+				stop = 190,
+				step = {
+					9,
+					9
+				}
+			},
+			{
+				time = 193,
+				create = 301013,
+				comming = true
+			},
+			{
+				create = 102,
+				time = 195,
+				stop = 215,
+				step = {
+					8,
+					8
+				}
+			},
+			{
+				time = 218,
+				create = 301013,
+				comming = true
+			},
+			{
+				create = 103,
+				time = 220,
+				stop = 240,
+				step = {
+					7,
+					7
+				}
+			},
+			{
+				time = 243,
+				create = 301013,
+				comming = true
+			},
+			{
+				create = 104,
+				time = 245,
+				stop = 265,
+				step = {
+					6,
+					6
+				}
+			},
+			{
+				time = 268,
+				create = 301013,
+				comming = true
+			},
+			{
+				create = 105,
+				time = 270,
+				stop = 290,
+				step = {
+					5,
+					5
+				}
+			},
+			{
+				time = 297,
+				create = 301013,
+				comming = true
+			},
+			{
+				create = 106,
+				time = 300,
+				stop = 330,
+				step = {
+					5,
+					5
+				}
+			},
+			{
+				time = 333,
+				create = 301013,
+				comming = true
+			},
+			{
+				create = 107,
+				time = 335,
+				stop = 365,
+				step = {
+					5,
+					5
+				}
+			},
+			{
+				time = 368,
+				create = 301013,
+				comming = true
+			},
+			{
+				create = 108,
+				time = 370,
+				stop = 400,
+				step = {
+					5,
+					5
+				}
+			},
+			{
+				time = 403,
+				create = 301013,
+				comming = true
+			},
+			{
+				create = 109,
+				time = 405,
+				stop = 435,
+				step = {
+					5,
+					5
+				}
+			},
+			{
+				time = 438,
+				create = 301013,
+				comming = true
+			},
+			{
+				create = 110,
+				time = 440,
+				stop = 470,
+				step = {
+					5,
+					5
+				}
+			},
+			{
+				time = 473,
+				create = 301013,
+				comming = true
+			},
+			{
+				create = 111,
+				time = 475,
+				stop = 505,
+				step = {
+					5,
+					5
+				}
+			},
+			{
+				time = 508,
+				create = 301013,
+				comming = true
+			},
+			{
+				create = 112,
+				time = 510,
+				stop = 9999,
+				step = {
+					3,
+					3
+				}
+			}
+		}
+	},
+	{
+		id = 9,
+		init_goods = 2000,
+		time = 0,
+		data = {
+			{
+				create = 80,
+				time = 10,
+				stop = 80,
+				step = {
+					15,
+					15
+				}
+			},
+			{
+				create = 81,
+				time = 15,
+				stop = 85,
+				step = {
+					15,
+					15
+				}
+			},
+			{
+				time = 25,
+				create = 301013
+			},
+			{
+				time = 40,
+				create = 301011
+			},
+			{
+				time = 50,
 				create = 300922
 			},
 			{

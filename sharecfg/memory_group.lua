@@ -192,6 +192,7 @@ pg.memory_group = setmetatable({
 		292,
 		293,
 		294,
+		295,
 		501,
 		502,
 		503,
@@ -290,6 +291,7 @@ pg.memory_group = setmetatable({
 		598,
 		599,
 		600,
+		601,
 		1000,
 		1001,
 		1002
@@ -4564,6 +4566,23 @@ pg.base.memory_group = {
 			3713
 		}
 	},
+	[295] = {
+		id = 295,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 5512,
+		title = "Crimson Prelusion",
+		memories = {
+			3731,
+			3732,
+			3733,
+			3734,
+			3735,
+			3736,
+			3737
+		}
+	},
 	[501] = {
 		id = 501,
 		subtype = 0,
@@ -6241,6 +6260,23 @@ pg.base.memory_group = {
 			3695,
 			3696,
 			3697
+		}
+	},
+	[601] = {
+		id = 601,
+		subtype = 0,
+		icon = "title_chara_bulaimodun",
+		type = 3,
+		link_event = 0,
+		title = "Consultation Corner's Day Off",
+		memories = {
+			3721,
+			3722,
+			3723,
+			3724,
+			3725,
+			3726,
+			3727
 		}
 	},
 	[1000] = {

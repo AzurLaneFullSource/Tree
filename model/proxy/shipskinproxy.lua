@@ -184,9 +184,11 @@ function var0_0.GetAllSkins(arg0_27)
 
 		var1_27(var0_29)
 
-		local var1_29, var2_29 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[arg0_29].time)
+		local var1_29 = pg.shop_template[arg0_29].collaboration_skin_time
+		local var2_29 = var1_29 == "" or var1_29 == pg.shop_template[arg0_29].time
+		local var3_29, var4_29 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[arg0_29].time)
 
-		if var1_29 then
+		if var2_29 and var3_29 then
 			table.insert(var0_27, var0_29)
 		end
 	end

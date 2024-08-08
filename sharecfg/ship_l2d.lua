@@ -1023,7 +1023,7 @@ pg.ship_l2d = {
 			1
 		},
 		action_trigger = {
-			action = "touch_idle",
+			action = "touch_drag",
 			num = 1,
 			time = 0.5,
 			type = 1

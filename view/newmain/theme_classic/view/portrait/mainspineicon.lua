@@ -7,7 +7,7 @@ function var0_0.Resume(arg0_1)
 end
 
 function var0_0.Pause(arg0_2)
-	if not IsNil(arg0_2.spineAnim) then
+	if arg0_2.spineAnim and not IsNil(arg0_2.spineAnim) and arg0_2.spineAnim.Pause ~= nil then
 		arg0_2.spineAnim:Pause()
 	end
 end

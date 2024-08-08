@@ -58,7 +58,9 @@ end
 function var1_0.ContinuePlay(arg0_7)
 	arg0_7.isDirty = false
 
-	var0_0.CriMgr.GetInstance():PlayBGM(arg0_7._now)
+	if arg0_7._now then
+		var0_0.CriMgr.GetInstance():PlayBGM(arg0_7._now)
+	end
 end
 
 function var1_0.TempPlay(arg0_8, arg1_8)
