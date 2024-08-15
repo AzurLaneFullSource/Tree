@@ -14,7 +14,13 @@ return {
 			target_choise = "TargetNil",
 			targetAniEffect = "",
 			arg_list = {
-				weapon_id = 3098001
+				emitter = "BattleBulletEmitter",
+				weapon_id = 3098001,
+				attack_attribute_convert = {
+					attr_type = "fleetGS",
+					A = 80,
+					B = 400
+				}
 			}
 		}
 	}

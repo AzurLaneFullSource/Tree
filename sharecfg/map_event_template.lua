@@ -20743,6 +20743,150 @@ pg.map_event_template = {
 		},
 		effect = {}
 	},
+	[913] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 3,
+		preinstall = 1,
+		c_type = 0,
+		id = 913,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "pizibao_boss",
+		address = {
+			2,
+			0
+		},
+		effect = {}
+	},
+	[914] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 3,
+		preinstall = 1,
+		c_type = 0,
+		id = 914,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "pizibao_boss",
+		address = {
+			2,
+			0
+		},
+		effect = {}
+	},
+	[915] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 2,
+		preinstall = 3,
+		c_type = 0,
+		id = 915,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "fazhen01",
+		address = {
+			2,
+			3
+		},
+		effect = {}
+	},
+	[916] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 2,
+		preinstall = 3,
+		c_type = 0,
+		id = 916,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "fazhen01",
+		address = {
+			2,
+			3
+		},
+		effect = {}
+	},
+	[917] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 3,
+		preinstall = 3,
+		c_type = 0,
+		id = 917,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "pizibao_boss",
+		address = {
+			6,
+			0
+		},
+		effect = {}
+	},
+	[918] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 2,
+		preinstall = 3,
+		c_type = 0,
+		id = 918,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "pizibao_zhiyuan",
+		address = {
+			8,
+			1
+		},
+		effect = {}
+	},
+	[919] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 2,
+		preinstall = 3,
+		c_type = 0,
+		id = 919,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "pizibao_zhiyuan",
+		address = {
+			0,
+			1
+		},
+		effect = {}
+	},
+	[920] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 2,
+		preinstall = 3,
+		c_type = 0,
+		id = 920,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "pizibao_zhiyuan",
+		address = {
+			8,
+			4
+		},
+		effect = {}
+	},
 	all = {
 		20,
 		21,
@@ -21613,6 +21757,14 @@ pg.map_event_template = {
 		909,
 		910,
 		911,
-		912
+		912,
+		913,
+		914,
+		915,
+		916,
+		917,
+		918,
+		919,
+		920
 	}
 }

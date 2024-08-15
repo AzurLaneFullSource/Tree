@@ -50,6 +50,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.locationAnim = arg0_1.locationTr:GetComponent(typeof(Animation))
 	arg0_1.locationAniEvent = arg0_1.locationTr:GetComponent(typeof(DftAniEvent))
 	arg0_1.iconImage = arg0_1:findTF("front/icon"):GetComponent(typeof(Image))
+	arg0_1.topEffectTr = arg0_1:findTF("top/effect")
 	arg0_1.dialogueWin = nil
 	arg0_1.bgs = {}
 	arg0_1.branchCodeList = {}

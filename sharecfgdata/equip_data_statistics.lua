@@ -4911,6 +4911,61 @@ _G.pg.base.equip_data_statistics[491] = {
 	},
 }
 
+_G.pg.base.equip_data_statistics[492] = {
+	ammo = 9,
+	attribute_2 = "antisub",
+	damage = "186 ~ 372",
+	descrip = "No description",
+	icon = "1",
+	id = 492,
+	name = "埃尔德里奇改造 自带刺猬弹（强化）",
+	nationality = 1,
+	rarity = 5,
+	speciality = "<[ASW]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 14,
+	value_2 = 45,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {
+		{
+			7,
+			9008,
+		},
+	},
+	equip_info = {
+		1,
+		2,
+		6,
+		10,
+		11,
+		12,
+	},
+	weapon_id = {
+		468,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		20,
+		21,
+	},
+	part_sub = {
+		1,
+		2,
+		20,
+		21,
+	},
+	equip_parameters = {},
+	label = {
+		"DC",
+	},
+}
+
 _G.pg.base.equip_data_statistics[500] = {
 	ammo = 10,
 	attribute_1 = "dodge",
@@ -130758,6 +130813,59 @@ _G.pg.base.equip_data_statistics[80332] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[80341] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 80341,
+	name = "专属弹幕-法戈I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170581,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80342] = {
+	base = 80341,
+	id = 80342,
+	name = "专属弹幕-法戈II",
+	weapon_id = {
+		170582,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[85000] = {
 	ammo = 3,
 	attribute_2 = "cannon",
@@ -156923,6 +157031,169 @@ _G.pg.base.equip_data_statistics[150351] = {
 	id = 150351,
 	value_1 = "530",
 	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150360] = {
+	ammo = 10,
+	attribute_1 = "cannon",
+	attribute_2 = "antiaircraft",
+	descrip = "A mass-produced, speedy cargo drone. It boasts excellent navigational ability and reliability.",
+	icon = "150360",
+	id = 150360,
+	name = "Fargo Direct Drone",
+	nationality = 1,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "15",
+	value_2 = 8,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		60660,
+	},
+	hidden_skill_id = {
+		201017,
+	},
+	part_main = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		10,
+		11,
+		12,
+		13,
+		18,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		10,
+		11,
+		12,
+		13,
+		18,
+		19,
+		20,
+		21,
+	},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150361] = {
+	base = 150360,
+	id = 150361,
+	value_1 = "16",
+}
+
+_G.pg.base.equip_data_statistics[150362] = {
+	base = 150360,
+	id = 150362,
+	value_1 = "17",
+	value_2 = 9,
+}
+
+_G.pg.base.equip_data_statistics[150363] = {
+	base = 150360,
+	id = 150363,
+	value_1 = "18",
+	value_2 = 10,
+}
+
+_G.pg.base.equip_data_statistics[150364] = {
+	base = 150360,
+	id = 150364,
+	value_1 = "19",
+	value_2 = 11,
+}
+
+_G.pg.base.equip_data_statistics[150365] = {
+	base = 150360,
+	id = 150365,
+	value_1 = "20",
+	value_2 = 12,
+}
+
+_G.pg.base.equip_data_statistics[150366] = {
+	base = 150360,
+	id = 150366,
+	value_1 = "21",
+	value_2 = 13,
+}
+
+_G.pg.base.equip_data_statistics[150367] = {
+	base = 150360,
+	id = 150367,
+	value_1 = "22",
+	value_2 = 14,
+}
+
+_G.pg.base.equip_data_statistics[150368] = {
+	base = 150360,
+	id = 150368,
+	value_1 = "23",
+	value_2 = 16,
+}
+
+_G.pg.base.equip_data_statistics[150369] = {
+	base = 150360,
+	id = 150369,
+	value_1 = "24",
+	value_2 = 18,
+}
+
+_G.pg.base.equip_data_statistics[150370] = {
+	base = 150360,
+	id = 150370,
+	value_1 = "25",
+	value_2 = 20,
+}
+
+_G.pg.base.equip_data_statistics[150371] = {
+	anti_siren = 100,
+	base = 150360,
+	id = 150371,
+	value_1 = "26",
+	value_2 = 22,
+}
+
+_G.pg.base.equip_data_statistics[150372] = {
+	anti_siren = 200,
+	base = 150360,
+	id = 150372,
+	value_1 = "27",
+	value_2 = 24,
+}
+
+_G.pg.base.equip_data_statistics[150373] = {
+	anti_siren = 300,
+	base = 150360,
+	id = 150373,
+	value_1 = "28",
+	value_2 = 26,
 }
 
 _G.pg.base.equip_data_statistics[170001] = {

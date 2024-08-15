@@ -145,6 +145,9 @@ pg.furniture_data_template = setmetatable({
 			281,
 			282,
 			283,
+			284,
+			285,
+			286,
 			100002,
 			100003,
 			100004,
@@ -3164,6 +3167,26 @@ pg.furniture_data_template = setmetatable({
 			312115,
 			312301,
 			312302
+		},
+		[113] = {
+			313001,
+			313002,
+			313101,
+			313102,
+			313103,
+			313104,
+			313105,
+			313106,
+			313107,
+			313108,
+			313109,
+			313110,
+			313111,
+			313112,
+			313113,
+			313301,
+			313302,
+			313303
 		}
 	},
 	get_id_list_by_tag = {
@@ -3255,6 +3278,8 @@ pg.furniture_data_template = setmetatable({
 			280,
 			281,
 			282,
+			285,
+			286,
 			100002,
 			100003,
 			100004,
@@ -3362,7 +3387,8 @@ pg.furniture_data_template = setmetatable({
 			275,
 			276,
 			278,
-			283
+			283,
+			284
 		},
 		[7] = {
 			211,
@@ -3555,7 +3581,8 @@ pg.furniture_data_template = setmetatable({
 			310116,
 			311116,
 			312114,
-			312115
+			312115,
+			313113
 		},
 		[4] = {
 			1001,
@@ -3655,7 +3682,8 @@ pg.furniture_data_template = setmetatable({
 			309001,
 			310001,
 			311001,
-			312001
+			312001,
+			313001
 		},
 		[3] = {
 			1002,
@@ -3756,7 +3784,8 @@ pg.furniture_data_template = setmetatable({
 			309002,
 			310002,
 			311002,
-			312002
+			312002,
+			313002
 		},
 		{
 			1101,
@@ -5641,7 +5670,19 @@ pg.furniture_data_template = setmetatable({
 			312110,
 			312111,
 			312112,
-			312113
+			312113,
+			313101,
+			313102,
+			313103,
+			313104,
+			313105,
+			313106,
+			313107,
+			313108,
+			313109,
+			313110,
+			313111,
+			313112
 		},
 		{
 			1108,
@@ -6144,7 +6185,10 @@ pg.furniture_data_template = setmetatable({
 			310309,
 			310310,
 			312301,
-			312302
+			312302,
+			313301,
+			313302,
+			313303
 		}
 	},
 	get_id_list_by_type = {
@@ -6268,6 +6312,9 @@ pg.furniture_data_template = setmetatable({
 			278,
 			280,
 			283,
+			284,
+			285,
+			286,
 			100002,
 			100004,
 			100005,
@@ -8192,7 +8239,20 @@ pg.furniture_data_template = setmetatable({
 			312111,
 			312112,
 			312113,
-			312114
+			312114,
+			313101,
+			313102,
+			313103,
+			313104,
+			313105,
+			313106,
+			313107,
+			313108,
+			313109,
+			313110,
+			313111,
+			313112,
+			313113
 		},
 		[11] = {
 			131,
@@ -8362,7 +8422,8 @@ pg.furniture_data_template = setmetatable({
 			309001,
 			310001,
 			311001,
-			312001
+			312001,
+			313001
 		},
 		{
 			1002,
@@ -8463,7 +8524,8 @@ pg.furniture_data_template = setmetatable({
 			309002,
 			310002,
 			311002,
-			312002
+			312002,
+			313002
 		},
 		[5] = {
 			1101,
@@ -9106,7 +9168,10 @@ pg.furniture_data_template = setmetatable({
 			310308,
 			310309,
 			310310,
-			312302
+			312302,
+			313301,
+			313302,
+			313303
 		},
 		[8] = {
 			17121
@@ -9287,6 +9352,9 @@ pg.furniture_data_template = setmetatable({
 		281,
 		282,
 		283,
+		284,
+		285,
+		286,
 		100002,
 		100003,
 		100004,
@@ -12105,7 +12173,25 @@ pg.furniture_data_template = setmetatable({
 		312114,
 		312115,
 		312301,
-		312302
+		312302,
+		313001,
+		313002,
+		313101,
+		313102,
+		313103,
+		313104,
+		313105,
+		313106,
+		313107,
+		313108,
+		313109,
+		313110,
+		313111,
+		313112,
+		313113,
+		313301,
+		313302,
+		313303
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -19132,6 +19218,225 @@ pg.base.furniture_data_template = {
 		canputonGrid = {},
 		can_trigger = {
 			1
+		},
+		interAction_group = {}
+	},
+	[284] = {
+		effect = "",
+		name = "Break the Storm, Sail Onward",
+		gain_by = "铁翼擎风",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 1,
+		themeId = 0,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Break through the storm and sail toward the future. Though the path ahead of us may be long, we will never stop. Awarded to Commanders who displayed excellence during the \"Windborne Steel Wings\" event.",
+		tag = 8,
+		icon = "chongpofengbaoxunzhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 5,
+		deblocking = 1,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 284,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"chongpofengbaoxunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[285] = {
+		effect = "",
+		name = "Pioneers of the Prairie",
+		gain_by = "荒野假日开拓记",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 1,
+		themeId = 0,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "The train of freedom sets forth into the untamed wilds. Given to Commanders who participated in the Wild West Vacation Log event.",
+		tag = 6,
+		icon = "zhengqihuocheicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 285,
+		can_rotate = 0,
+		size = {
+			6,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"zhengqihuoche",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[286] = {
+		effect = "",
+		name = "Party for Pioneers",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "As the day comes to an end, we gather here to celebrate. Enjoy the feast and let the songs of joy fill the air!",
+		is_3d_obj = 0,
+		advice = 0,
+		themeId = 0,
+		icon = "niuzaicanzhuoicon",
+		deblocking = 1,
+		level = 1,
+		tag = 6,
+		rarity = 5,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 286,
+		can_rotate = 0,
+		size = {
+			7,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"niuzaicanzhuoB",
+				"normal"
+			},
+			{
+				"niuzaicanzhuoT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		spine_extra = {
+			{
+				{},
+				{
+					0,
+					0
+				},
+				{
+					1,
+					1
+				}
+			},
+			{
+				{},
+				{
+					0,
+					0
+				},
+				{
+					1,
+					1
+				}
+			},
+			{
+				{},
+				{
+					0,
+					0
+				},
+				{
+					1,
+					1
+				}
+			},
+			{
+				{},
+				{
+					0,
+					0
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		followBone = {
+			{
+				"char1",
+				1
+			},
+			{
+				"char2",
+				-1
+			},
+			{
+				"char3",
+				-1
+			},
+			{
+				"char4",
+				1
+			},
+			{
+				"char5",
+				-1
+			}
 		},
 		interAction_group = {}
 	},
@@ -144127,6 +144432,777 @@ pg.base.furniture_data_template = {
 		can_rotate = 0,
 		size = {
 			6,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313001] = {
+		icon = "dibanxbicon",
+		name = "Saloon Flooring",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		themeId = 113,
+		picture = "xb/dibanxb",
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		spine_extra = "",
+		level = 1,
+		describe = "Don't get too rowdy in here, alright?",
+		rarity = 4,
+		advice = 0,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		id = 313001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313002] = {
+		icon = "qiangbixbicon",
+		name = "Saloon Wallpaper",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		themeId = 113,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		spine_extra = "",
+		level = 5,
+		describe = "Don't get too rowdy in here, alright?",
+		rarity = 4,
+		advice = 0,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		id = 313002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbixb",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[313101] = {
+		effect = "",
+		name = "Saloon Round Table",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 113,
+		is_get_time_note = 0,
+		picture = "xb/dayuanzhuoxb",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Drinks and a game of poker go together like bread and butter.",
+		tag = 1,
+		icon = "dayuanzhuoxbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 313101,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313102] = {
+		effect = "",
+		name = "Saloon Waitressjuu",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 113,
+		is_get_time_note = 0,
+		picture = "xb/fuwujiuxb",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Howdy huuun! What can I get for ya?",
+		tag = 1,
+		icon = "fuwujiuxbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 313102,
+		can_rotate = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313103] = {
+		effect = "",
+		name = "Saloon Stool",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "xb/gaojiaoyixb",
+		is_get_time_note = 0,
+		themeId = 113,
+		count = 3,
+		is_3d_obj = 0,
+		describe = "Take a seat, order a drink, and let's hear your story.",
+		tag = 1,
+		icon = "gaojiaoyixbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 313103,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					7.3,
+					35.2
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313104] = {
+		effect = "",
+		name = "Saloon Sheriffjuu",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 113,
+		is_get_time_note = 0,
+		picture = "xb/jingguanjiuxb",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "The long arm of the law 'round these parts – or should I say, the short stub of the law.",
+		tag = 1,
+		icon = "jingguanjiuxbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 313104,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313105] = {
+		effect = "",
+		name = "Saloon Staircase",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 113,
+		is_get_time_note = 0,
+		picture = "xb/loutixb",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "No fighting up there either, ya hear?",
+		tag = 1,
+		icon = "loutixbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 313105,
+		can_rotate = 0,
+		size = {
+			5,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313106] = {
+		effect = "",
+		name = "Saloon Barrel Stool",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "xb/mutongyixb",
+		is_get_time_note = 0,
+		themeId = 113,
+		count = 6,
+		is_3d_obj = 0,
+		describe = "It's a bucket! It's a stool! No, it's a barrel!",
+		tag = 1,
+		icon = "mutongyixbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 313106,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					6.4,
+					45.9
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313107] = {
+		effect = "",
+		name = "Saloon Chair (Back)",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 113,
+		is_get_time_note = 0,
+		picture = "xb/yizi1xb",
+		count = 2,
+		is_3d_obj = 0,
+		describe = "Don't even think about throwing this thing to start a brawl.",
+		tag = 1,
+		icon = "yizi1xbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 313107,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313108] = {
+		effect = "",
+		name = "Saloon Chair (Front)",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "xb/yizi2xb",
+		is_get_time_note = 0,
+		themeId = 113,
+		count = 3,
+		is_3d_obj = 0,
+		describe = "Don't even think about throwing this thing to start a brawl.",
+		tag = 1,
+		icon = "yizi2xbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 313108,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					23.3,
+					20.1
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313109] = {
+		effect = "",
+		name = "Saloon Barrel Table",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 113,
+		is_get_time_note = 0,
+		picture = "xb/jiutongzhuoxb",
+		count = 2,
+		is_3d_obj = 0,
+		describe = "You've gotta make do with what's available.",
+		tag = 1,
+		icon = "jiutongzhuoxbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 313109,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313110] = {
+		effect = "",
+		name = "Inconspicuous Barrels",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 113,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A perfectly normal set of barrels. Not hiding anything, no sir.",
+		tag = 1,
+		icon = "zhuangshitongxbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 313110,
+		can_rotate = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zhuangshitongxb",
+				"normal",
+				{
+					"action1",
+					false,
+					{
+						"action2"
+					}
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[313111] = {
+		effect = "",
+		name = "Saloon Wanted Posters",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 113,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Chicken dinner, wanted dead or alive... preferably still warm, at least.",
+		tag = 1,
+		icon = "tongjilingxbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 313111,
+		can_rotate = 1,
+		size = {
+			2,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"tongjilingxb",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[313112] = {
+		effect = "",
+		name = "Saloon Counter",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 113,
+		is_get_time_note = 0,
+		picture = "xb/bataixb",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Whether you want a refill or to spill your life story, the bartender has you covered.",
+		tag = 1,
+		icon = "bataixbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 313112,
+		can_rotate = 0,
+		size = {
+			4,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313113] = {
+		effect = "",
+		name = "Legendary Revolvers",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Said to have once belonged to Billy the Juu. You feel the aura of an outlaw emanating from them.",
+		themeId = 113,
+		icon = "shouqiangjiaxbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 313113,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shouqiangjiaxbB",
+				"normal"
+			},
+			{
+				"shouqiangjiaxbT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"walk"
+					},
+					{
+						"yun"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[313301] = {
+		effect = "",
+		name = "Saloon Drinks Shelf",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 113,
+		is_get_time_note = 0,
+		picture = "xb/jiujiaxb",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Whiskey? Vodka? Or maybe just a bit of orange juice?",
+		tag = 5,
+		icon = "jiujiaxbicon",
+		spine_extra = "",
+		level = 5,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 2,
+		canputon = 0,
+		id = 313301,
+		can_rotate = 0,
+		size = {
+			6,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313302] = {
+		effect = "",
+		name = "Saloon Frame",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 113,
+		is_get_time_note = 0,
+		picture = "xb/guahuaxb",
+		count = 2,
+		is_3d_obj = 0,
+		describe = "It says the tavern was established a whooping one week ago.",
+		tag = 5,
+		icon = "guahuaxbicon",
+		spine_extra = "",
+		level = 5,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 2,
+		canputon = 0,
+		id = 313302,
+		can_rotate = 0,
+		size = {
+			2,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313303] = {
+		effect = "",
+		name = "Saloon Storage",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 113,
+		is_get_time_note = 0,
+		picture = "xb/chuguixb",
+		count = 2,
+		is_3d_obj = 0,
+		describe = "These are not for sale, so keep your hands off.",
+		tag = 5,
+		icon = "chuguixbicon",
+		spine_extra = "",
+		level = 5,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 2,
+		canputon = 0,
+		id = 313303,
+		can_rotate = 0,
+		size = {
+			4,
 			0
 		},
 		offset = {},

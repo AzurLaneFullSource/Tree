@@ -109,7 +109,7 @@ function var0_0.init(arg0_4)
 
 	local var2_4 = findTF(arg0_4.selectview, "bg")
 
-	LoadSpriteAtlasAsync("ui/musicgameother_atlas", "selectbg", function(arg0_6)
+	LoadSpriteAtlasAsync("ui/minigameui/musicgameother_atlas", "selectbg", function(arg0_6)
 		GetComponent(var2_4, typeof(Image)).sprite = arg0_6
 
 		setActive(var2_4, true)
@@ -206,7 +206,7 @@ function var0_0.didEnter(arg0_7)
 		arg0_7.game_playingflag = false
 
 		arg0_7:effect_play("nothing")
-		LoadSpriteAtlasAsync("ui/musicgameother_atlas", "pause_" .. arg0_7.musicData.picture, function(arg0_15)
+		LoadSpriteAtlasAsync("ui/minigameui/musicgameother_atlas", "pause_" .. arg0_7.musicData.picture, function(arg0_15)
 			setImageSprite(arg0_7.pauseview:Find("bottom/song"), arg0_15, true)
 		end)
 		GetComponent(arg0_7.pauseview:Find("bottom/img"), typeof(Image)):SetNativeSize()
@@ -752,7 +752,7 @@ function var0_0.loadSDModel(arg0_43, arg1_43)
 			local var3_43 = iter0_43
 
 			if arg0_43.musicData.ships[iter0_43] and arg0_43.musicData.ships[iter0_43] ~= "" and arg0_43.musicData.ships[iter0_43] ~= "none" then
-				LoadSpriteAtlasAsync("ui/musicgameother_atlas", "light" .. arg0_43.musicLight, function(arg0_44)
+				LoadSpriteAtlasAsync("ui/minigameui/musicgameother_atlas", "light" .. arg0_43.musicLight, function(arg0_44)
 					setActive(findTF(arg0_43._tf, "Spinelist/" .. var3_43 .. "/light"), true)
 					setImageSprite(findTF(arg0_43._tf, "Spinelist/" .. var3_43 .. "/light"), arg0_44, true)
 				end)
@@ -1494,10 +1494,10 @@ function var0_0.Firstshow(arg0_85, arg1_85, arg2_85, arg3_85)
 	arg0_85.count = 0
 
 	setActive(arg1_85, true)
-	LoadSpriteAtlasAsync("ui/musicgameother_atlas", "help1", function(arg0_86)
+	LoadSpriteAtlasAsync("ui/minigameui/musicgameother_atlas", "help1", function(arg0_86)
 		GetComponent(findTF(arg0_85.firstview, "num/img1"), typeof(Image)).sprite = arg0_86
 	end)
-	LoadSpriteAtlasAsync("ui/musicgameother_atlas", "help2", function(arg0_87)
+	LoadSpriteAtlasAsync("ui/minigameui/musicgameother_atlas", "help2", function(arg0_87)
 		GetComponent(findTF(arg0_85.firstview, "num/img2"), typeof(Image)).sprite = arg0_87
 	end)
 
@@ -1624,7 +1624,7 @@ function var0_0.locadScoreView(arg0_93)
 	local var0_93 = findTF(arg0_93.scoreview, "bg")
 
 	setImageColor(var0_93, Color(0, 0, 0))
-	LoadSpriteAtlasAsync("ui/musicgameother_atlas", "scoreBg" .. arg0_93.musicBg, function(arg0_94)
+	LoadSpriteAtlasAsync("ui/minigameui/musicgameother_atlas", "scoreBg" .. arg0_93.musicBg, function(arg0_94)
 		if var0_93 then
 			GetComponent(var0_93, typeof(Image)).sprite = arg0_94
 
@@ -1675,8 +1675,8 @@ function var0_0.locadScoreView(arg0_93)
 	if var7_93 then
 		local var8_93 = {}
 
-		PaintingConst.AddPaintingNameWithFilteMap(var8_93, var7_93)
-		PaintingConst.PaintingDownload({
+		PaintingGroupConst.AddPaintingNameWithFilteMap(var8_93, var7_93)
+		PaintingGroupConst.PaintingDownload({
 			isShowBox = false,
 			paintingNameList = var8_93,
 			finishFunc = function()

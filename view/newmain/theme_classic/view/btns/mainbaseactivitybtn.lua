@@ -1,11 +1,12 @@
 local var0_0 = class("MainBaseActivityBtn")
 
-function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
 	arg0_1.tpl = arg1_1
 
 	pg.DelegateInfo.New(arg0_1)
 
 	arg0_1.event = arg2_1
+	arg0_1.hideSubImg = arg4_1
 
 	if arg3_1 then
 		arg0_1._tf = arg0_1.tpl
@@ -122,6 +123,12 @@ function var0_0.InitImage(arg0_13, arg1_13)
 end
 
 function var0_0.InitSubImage(arg0_15)
+	if arg0_15.hideSubImg then
+		setActive(arg0_15.subImage.gameObject, false)
+
+		return
+	end
+
 	local var0_15 = arg0_15.config.text_pic
 
 	setActive(arg0_15.subImage.gameObject, var0_15 ~= nil and var0_15 ~= "")

@@ -1631,5 +1631,21 @@ pg.voice_actor_CN = {
 	[420] = {
 		code = 420,
 		actor_name = "Emi Hirayama"
+	},
+	[421] = {
+		code = 421,
+		actor_name = "Yuka Saito"
+	},
+	[422] = {
+		code = 422,
+		actor_name = "Makoto Koichi"
+	},
+	[423] = {
+		code = 423,
+		actor_name = "Akane Misaka"
+	},
+	[424] = {
+		code = 424,
+		actor_name = "Yuina Ito"
 	}
 }

@@ -96,6 +96,7 @@ function var0_0.Ctor(arg0_2, arg1_2)
 	arg0_2.hideRecordIco = arg1_2.hideRecordIco
 	arg0_2.paingtingScale = arg1_2.actorScale
 	arg0_2.hidePainting = arg1_2.withoutPainting
+	arg0_2.hidePaintingWithName = arg1_2.hidePainting
 	arg0_2.actorShadow = arg1_2.actorShadow
 	arg0_2.actorAlpha = arg1_2.actorAlpha
 	arg0_2.showNPainting = arg1_2.hidePaintObj
@@ -113,6 +114,15 @@ function var0_0.Ctor(arg0_2, arg1_2)
 	arg0_2.glitchArtForPortrait = arg1_2.portraitNoise
 
 	if arg0_2.hidePainting or arg0_2.actor == nil then
+		arg0_2.actor = nil
+		arg0_2.hideOtherPainting = true
+	end
+
+	if arg0_2.hidePaintingWithName or arg0_2.actor == nil then
+		if arg0_2.actorName == nil then
+			arg0_2.actorName = arg0_2:GetName()
+		end
+
 		arg0_2.actor = nil
 		arg0_2.hideOtherPainting = true
 	end

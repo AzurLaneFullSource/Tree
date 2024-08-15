@@ -82,55 +82,25 @@ function var0_0.submitActivity(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4)
 			elseif table.contains(TotalTaskProxy.activity_task_type, arg3_4) then
 				local var7_5 = PlayerConst.addTranDrop(arg0_5.award_list, {})
 
-				for iter2_5 = 1, #arg1_4.task_ids do
-					local var8_5 = arg1_4.task_ids[iter2_5]
-					local var9_5 = pg.task_data_template[var8_5]
-					local var10_5 = var9_5.award_display
-					local var11_5 = var9_5.type
-					local var12_5 = var9_5.sub_type
-					local var13_5 = tonumber(var9_5.target_id)
-					local var14_5 = tonumber(var9_5.target_id_2)
-					local var15_5 = var9_5.target_num
-					local var16_5 = getProxy(ActivityProxy):getActivityById(arg1_4.act_id)
-
-					if var11_5 == 6 and var16_5 then
-						assert(var16_5)
-
-						local var17_5 = var16_5:GetFinishedTaskIds()
-
-						if not table.contains(var17_5, var8_5) then
-							table.insert(var17_5, var8_5)
-							getProxy(ActivityProxy):updateActivity(var16_5)
-						end
-					end
-
-					if var11_5 == 6 and var12_5 == 1006 and pg.activity_drop_type[var13_5] then
-						local var18_5 = pg.activity_drop_type[var13_5].activity_id
-						local var19_5 = getProxy(ActivityProxy):getActivityById(var18_5)
-
-						if var19_5 then
-							var19_5:subVitemNumber(var14_5, var15_5)
-							getProxy(ActivityProxy):updateActivity(var19_5)
-						end
-					end
-				end
-
-				for iter3_5, iter4_5 in ipairs(arg2_4) do
-					SubmitTaskCommand.OnSubmitSuccess(iter4_5)
+				for iter2_5, iter3_5 in ipairs(arg2_4) do
+					arg0_4:updateTaskActivityData(iter3_5.id, arg1_4.act_id)
+					arg0_4:updateTaskBagData(iter3_5.id, arg1_4.act_id)
+					SubmitTaskCommand.OnSubmitSuccess(iter3_5)
 				end
 
 				arg0_4:sendNotification(GAME.SUBMIT_ACTIVITY_TASK_DONE, {
 					awards = var7_5
 				})
 			elseif table.contains(TotalTaskProxy.normal_task_type, arg3_4) then
-				local var20_5 = PlayerConst.addTranDrop(arg0_5.award_list, {})
+				local var8_5 = PlayerConst.addTranDrop(arg0_5.award_list, {})
 
-				for iter5_5, iter6_5 in ipairs(arg2_4) do
-					SubmitTaskCommand.OnSubmitSuccess(iter6_5)
+				for iter4_5, iter5_5 in ipairs(arg2_4) do
+					arg0_4:updateTaskBagData(iter5_5.id, arg1_4.act_id)
+					SubmitTaskCommand.OnSubmitSuccess(iter5_5)
 				end
 
 				arg0_4:sendNotification(GAME.SUBMIT_ACTIVITY_TASK_DONE, {
-					awards = var20_5
+					awards = var8_5
 				})
 			end
 
@@ -147,59 +117,111 @@ function var0_0.submitActivity(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4)
 	end)
 end
 
-function var0_0.filterOverflowTaskVOList(arg0_6, arg1_6)
-	local var0_6 = {}
-	local var1_6 = getProxy(PlayerProxy):getData()
-	local var2_6 = pg.gameset.urpt_chapter_max.description[1]
-	local var3_6 = var1_6.gold
-	local var4_6 = var1_6.oil
-	local var5_6 = not LOCK_UR_SHIP and getProxy(BagProxy):GetLimitCntById(var2_6) or 0
-	local var6_6 = pg.gameset.max_gold.key_value
-	local var7_6 = pg.gameset.max_oil.key_value
+function var0_0.updateTaskActivityData(arg0_6, arg1_6, arg2_6)
+	local var0_6 = pg.task_data_template[arg1_6]
+	local var1_6 = var0_6.type
+	local var2_6 = var0_6.sub_type
+	local var3_6 = getProxy(ActivityProxy):getActivityById(arg2_6)
 
-	if LOCK_UR_SHIP or not pg.gameset.urpt_chapter_max.description[2] then
-		local var8_6 = 0
-	end
+	if var3_6 and var1_6 == 6 then
+		assert(var3_6)
 
-	local var9_6 = false
+		local var4_6 = var3_6:GetFinishedTaskIds()
 
-	for iter0_6, iter1_6 in pairs(arg1_6) do
-		local var10_6 = iter1_6:judgeOverflow(var3_6, var4_6, var5_6)
-
-		if not var10_6 then
-			table.insert(var0_6, iter1_6)
-		end
-
-		if var10_6 then
-			var9_6 = true
+		if not table.contains(var4_6, arg1_6) then
+			table.insert(var4_6, arg1_6)
+			getProxy(ActivityProxy):updateActivity(var3_6)
 		end
 	end
-
-	return var0_6, var9_6
 end
 
-function var0_0.getAwardNum(arg0_7, arg1_7, arg2_7)
-	for iter0_7 = 1, #AvatarFrameTask.fillter_task_type do
-		local var0_7 = AvatarFrameTask.fillter_task_type[iter0_7]
-		local var1_7 = arg1_7[var0_7]
+local var1_0 = {
+	{
+		6,
+		1006
+	},
+	{
+		16,
+		1006
+	}
+}
 
-		for iter1_7, iter2_7 in ipairs(var1_7) do
-			if arg2_7 == iter2_7[1] then
-				if var0_7 == AvatarFrameTask.type_task_level then
-					return iter2_7[6]
-				elseif var0_7 == AvatarFrameTask.type_task_ship then
-					return iter2_7[4]
+function var0_0.updateTaskBagData(arg0_7, arg1_7, arg2_7)
+	local var0_7 = pg.task_data_template[arg1_7]
+	local var1_7 = tonumber(var0_7.target_id)
+	local var2_7 = tonumber(var0_7.target_id_2)
+	local var3_7 = var0_7.target_num
+	local var4_7 = var0_7.type
+	local var5_7 = var0_7.sub_type
+
+	if pg.activity_drop_type[var1_7] then
+		for iter0_7, iter1_7 in ipairs(var1_0) do
+			if var4_7 == iter1_7[1] and var5_7 == iter1_7[2] then
+				local var6_7 = pg.activity_drop_type[var1_7].activity_id
+				local var7_7 = getProxy(ActivityProxy):getActivityById(var6_7)
+
+				if var7_7 then
+					var7_7:subVitemNumber(var2_7, var3_7)
+					getProxy(ActivityProxy):updateActivity(var7_7)
+				end
+			end
+		end
+	end
+end
+
+function var0_0.filterOverflowTaskVOList(arg0_8, arg1_8)
+	local var0_8 = {}
+	local var1_8 = getProxy(PlayerProxy):getData()
+	local var2_8 = pg.gameset.urpt_chapter_max.description[1]
+	local var3_8 = var1_8.gold
+	local var4_8 = var1_8.oil
+	local var5_8 = not LOCK_UR_SHIP and getProxy(BagProxy):GetLimitCntById(var2_8) or 0
+	local var6_8 = pg.gameset.max_gold.key_value
+	local var7_8 = pg.gameset.max_oil.key_value
+
+	if LOCK_UR_SHIP or not pg.gameset.urpt_chapter_max.description[2] then
+		local var8_8 = 0
+	end
+
+	local var9_8 = false
+
+	for iter0_8, iter1_8 in pairs(arg1_8) do
+		local var10_8 = iter1_8:judgeOverflow(var3_8, var4_8, var5_8)
+
+		if not var10_8 then
+			table.insert(var0_8, iter1_8)
+		end
+
+		if var10_8 then
+			var9_8 = true
+		end
+	end
+
+	return var0_8, var9_8
+end
+
+function var0_0.getAwardNum(arg0_9, arg1_9, arg2_9)
+	for iter0_9 = 1, #AvatarFrameTask.fillter_task_type do
+		local var0_9 = AvatarFrameTask.fillter_task_type[iter0_9]
+		local var1_9 = arg1_9[var0_9]
+
+		for iter1_9, iter2_9 in ipairs(var1_9) do
+			if arg2_9 == iter2_9[1] then
+				if var0_9 == AvatarFrameTask.type_task_level then
+					return iter2_9[6]
+				elseif var0_9 == AvatarFrameTask.type_task_ship then
+					return iter2_9[4]
 				end
 			end
 		end
 	end
 
-	print("找不到taskId:" .. arg2_7)
+	print("找不到taskId:" .. arg2_9)
 
 	return 0
 end
 
-function var0_0.InTaskScene(arg0_8)
+function var0_0.InTaskScene(arg0_10)
 	return getProxy(ContextProxy):getCurrentContext().mediator == TaskMediator
 end
 

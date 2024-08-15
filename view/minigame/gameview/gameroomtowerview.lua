@@ -38,8 +38,6 @@ function var0_0.Start(arg0_6)
 	arg0_6.controller.view:SetUI(arg0_6._go)
 
 	local function var0_6(arg0_9, arg1_9, arg2_9, arg3_9)
-		local var0_9 = arg0_6:GetMGData():GetRuntimeData("elements")
-
 		arg0_6.sendSuccessFlag = true
 
 		arg0_6:SendSuccess(arg0_9)
@@ -57,13 +55,16 @@ function var0_0.Start(arg0_6)
 end
 
 function var0_0.updateHighScore(arg0_11)
-	local var0_11 = arg0_11:GetMGData():GetRuntimeData("elements") or {}
+	local var0_11 = getProxy(GameRoomProxy):getRoomScore(arg0_11:getGameRoomData().id)
+	local var1_11 = {
+		var0_11,
+		var0_11,
+		var0_11
+	} or {}
 
 	if arg0_11.controller then
-		-- block empty
+		arg0_11.controller:updateHighScore(var1_11)
 	end
-
-	arg0_11.controller:updateHighScore(var0_11)
 end
 
 function var0_0.OnSendMiniGameOPDone(arg0_12, arg1_12)
@@ -81,9 +82,9 @@ function var0_0.GetTowerClimbingPageAndScore(arg0_14)
 	local var0_14 = 0
 	local var1_14 = 1
 	local var2_14 = {
-		0,
-		0,
-		0
+		arg0_14,
+		arg0_14,
+		arg0_14
 	}
 
 	return var0_14, var1_14, var2_14
@@ -100,12 +101,11 @@ end
 function var0_0.PackData(arg0_17)
 	local var0_17 = arg0_17._tf.rect.width
 	local var1_17 = arg0_17._tf.rect.height
-	local var2_17 = arg0_17:GetMGData():GetRuntimeData("elements")
-	local var3_17, var4_17, var5_17 = var0_0.GetTowerClimbingPageAndScore(var2_17)
+	local var2_17, var3_17, var4_17 = var0_0.GetTowerClimbingPageAndScore(getProxy(GameRoomProxy):getRoomScore(arg0_17:getGameRoomData().id))
 
-	print(var3_17, "-", var4_17)
+	print(var2_17, "-", var3_17)
 
-	local var6_17 = var0_0.GetAwardScores()
+	local var5_17 = var0_0.GetAwardScores()
 
 	return {
 		shipId = 107031,
@@ -113,10 +113,10 @@ function var0_0.PackData(arg0_17)
 		life = 3,
 		screenWidth = var0_17,
 		screenHeight = var1_17,
-		higestscore = var3_17,
-		pageIndex = var4_17,
-		mapScores = var5_17,
-		awards = var6_17
+		higestscore = var2_17,
+		pageIndex = var3_17,
+		mapScores = var4_17,
+		awards = var5_17
 	}
 end
 

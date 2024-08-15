@@ -997,39 +997,38 @@ function var0_0.showSettlement(arg0_78)
 	setActive(arg0_78.settlementUI, true)
 	GetComponent(findTF(arg0_78.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-	local var0_78 = arg0_78:GetMGData():GetRuntimeData("elements")
-	local var1_78 = arg0_78.scoreNum
-	local var2_78 = var0_78 and #var0_78 > 0 and var0_78[1] or 0
-	local var3_78 = arg0_78.otherScoreNum or 0
+	local var0_78 = arg0_78.scoreNum
+	local var1_78 = getProxy(GameRoomProxy):getRoomScore(arg0_78:getGameRoomData().id)
+	local var2_78 = arg0_78.otherScoreNum or 0
 
-	setActive(findTF(arg0_78.settlementUI, "ad/new"), var2_78 < var1_78)
+	setActive(findTF(arg0_78.settlementUI, "ad/new"), var1_78 < var0_78)
 
-	if var2_78 <= var1_78 then
-		var2_78 = var1_78
+	if var1_78 <= var0_78 then
+		var1_78 = var0_78
 
 		arg0_78:StoreDataToServer({
-			var2_78
+			var1_78
 		})
 	end
 
-	local var4_78 = findTF(arg0_78.settlementUI, "ad/highText")
-	local var5_78 = findTF(arg0_78.settlementUI, "ad/currentText")
-	local var6_78 = findTF(arg0_78.settlementUI, "ad/otherText")
+	local var3_78 = findTF(arg0_78.settlementUI, "ad/highText")
+	local var4_78 = findTF(arg0_78.settlementUI, "ad/currentText")
+	local var5_78 = findTF(arg0_78.settlementUI, "ad/otherText")
 
-	setText(var4_78, var2_78)
-	setText(var5_78, var1_78)
-	setText(var6_78, var3_78)
+	setText(var3_78, var1_78)
+	setText(var4_78, var0_78)
+	setText(var5_78, var2_78)
 
 	if arg0_78:getGameTimes() and arg0_78:getGameTimes() > 0 then
 		arg0_78.sendSuccessFlag = true
 
-		arg0_78:SendSuccess(var1_78)
+		arg0_78:SendSuccess(var0_78)
 	end
 
-	if var3_78 < var1_78 then
+	if var2_78 < var0_78 then
 		setActive(findTF(arg0_78.settlementUI, "ad/win"), true)
 		setActive(findTF(arg0_78.settlementUI, "ad/defeat"), false)
-	elseif var1_78 < var3_78 then
+	elseif var0_78 < var2_78 then
 		setActive(findTF(arg0_78.settlementUI, "ad/win"), false)
 		setActive(findTF(arg0_78.settlementUI, "ad/defeat"), true)
 	else
@@ -1037,37 +1036,37 @@ function var0_0.showSettlement(arg0_78)
 		setActive(findTF(arg0_78.settlementUI, "ad/defeat"), false)
 	end
 
-	local var7_78 = {}
+	local var6_78 = {}
 
-	table.insert(var7_78, {
+	table.insert(var6_78, {
 		name = "player",
 		char_id = var8_0.playerChar
 	})
-	table.insert(var7_78, {
+	table.insert(var6_78, {
 		name = "partner",
 		char_id = var8_0.partnerChar
 	})
-	table.insert(var7_78, {
+	table.insert(var6_78, {
 		name = "enemy1",
 		char_id = var8_0.enemy1Char
 	})
-	table.insert(var7_78, {
+	table.insert(var6_78, {
 		name = "enemy2",
 		char_id = var8_0.enemy2Char
 	})
 
-	for iter0_78 = 1, #var7_78 do
-		local var8_78 = var7_78[iter0_78].char_id
-		local var9_78 = findTF(arg0_78.settlementUI, "ad/" .. var7_78[iter0_78].name)
-		local var10_78 = arg0_78:getCharData(var8_78, "icon")
-		local var11_78 = arg0_78:getCharData(var8_78, "pos")
+	for iter0_78 = 1, #var6_78 do
+		local var7_78 = var6_78[iter0_78].char_id
+		local var8_78 = findTF(arg0_78.settlementUI, "ad/" .. var6_78[iter0_78].name)
+		local var9_78 = arg0_78:getCharData(var7_78, "icon")
+		local var10_78 = arg0_78:getCharData(var7_78, "pos")
 
-		GetSpriteFromAtlasAsync("ui/minigameui/" .. var5_0, var10_78, function(arg0_79)
-			local var0_79 = findTF(var9_78, "mask/img")
+		GetSpriteFromAtlasAsync("ui/minigameui/" .. var5_0, var9_78, function(arg0_79)
+			local var0_79 = findTF(var8_78, "mask/img")
 
 			setActive(var0_79, true)
 
-			var0_79.anchoredPosition = var11_78
+			var0_79.anchoredPosition = var10_78
 
 			setImageSprite(var0_79, arg0_79, true)
 		end)

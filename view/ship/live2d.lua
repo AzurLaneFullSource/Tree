@@ -51,6 +51,7 @@ var0_0.EVENT_CHANGE_IDLE_INDEX = "event change idle index"
 var0_0.relation_type_drag_x = 101
 var0_0.relation_type_drag_y = 102
 var0_0.relation_type_action_index = 103
+var0_0.relation_type_idle = 104
 
 local var6_0 = {
 	CubismParameterBlendMode.Override,
@@ -174,7 +175,7 @@ local function var11_0(arg0_11, arg1_11, arg2_11)
 	if not arg0_11.isPlaying or arg2_11 then
 		local var1_11 = var1_0.action2Id[arg1_11]
 
-		print("action id " .. tostring(arg1_11) .. " play action " .. tostring(var1_11))
+		print("action id " .. tostring(arg1_11) .. " → 开始播放动作" .. tostring(var1_11))
 
 		if var1_11 then
 			arg0_11.playActionName = arg1_11
@@ -275,19 +276,19 @@ local function var14_0(arg0_14, arg1_14, arg2_14)
 	end
 end
 
-local function var15_0(arg0_15)
+local function var15_0(arg0_15, arg1_15)
 	if not arg0_15._l2dCharEnable then
 		return
 	end
 
-	if arg0_15._readlyToStop then
+	if arg0_15._readlyToStop and not arg1_15 then
 		return
 	end
 
 	arg0_15._listenerParametersValue = {}
 
 	if arg0_15._listenerStepIndex and arg0_15._listenerStepIndex == 0 then
-		arg0_15._listenerStepIndex = 10
+		arg0_15._listenerStepIndex = 5
 
 		for iter0_15, iter1_15 in ipairs(arg0_15._listenerParameters) do
 			arg0_15._listenerParametersValue[iter1_15.name] = iter1_15.Value
@@ -672,7 +673,10 @@ function var0_0.SetVisible(arg0_34, arg1_34)
 		arg0_34:loadLive2dData()
 	else
 		arg0_34:saveLive2dData()
+		arg0_34:loadLive2dData()
 	end
+
+	var15_0(arg0_34, true)
 
 	arg0_34._animator.speed = 1
 end
@@ -686,6 +690,7 @@ function var0_0.loadLive2dData(arg0_37)
 		if arg0_37.drags then
 			for iter0_37 = 1, #arg0_37.drags do
 				arg0_37.drags[iter0_37]:clearData()
+				arg0_37.drags[iter0_37]:loadL2dFinal()
 			end
 		end
 
@@ -693,8 +698,6 @@ function var0_0.loadLive2dData(arg0_37)
 		arg0_37._animator:Play("idle")
 
 		arg0_37.saveActionAbleId = nil
-
-		var15_0(arg0_37)
 
 		return
 	end
@@ -750,10 +753,9 @@ function var0_0.loadLive2dData(arg0_37)
 	if arg0_37.drags then
 		for iter5_37 = 1, #arg0_37.drags do
 			arg0_37.drags[iter5_37]:loadData()
+			arg0_37.drags[iter5_37]:loadL2dFinal()
 		end
 	end
-
-	var15_0(arg0_37)
 end
 
 function var0_0.saveLive2dData(arg0_38)

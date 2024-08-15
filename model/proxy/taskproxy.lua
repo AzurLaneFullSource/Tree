@@ -348,6 +348,10 @@ function var0_0.removeTaskById(arg0_34, arg1_34)
 		return
 	end
 
+	if var0_34:isCircle() then
+		return
+	end
+
 	arg0_34.finishData[arg1_34] = arg0_34.data[arg1_34]:clone()
 	arg0_34.finishData[arg1_34].submitTime = pg.TimeMgr.GetInstance():GetServerTime()
 	arg0_34.data[arg1_34] = nil

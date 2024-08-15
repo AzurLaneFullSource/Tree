@@ -1293,7 +1293,10 @@ function var9_0.SpawnNPC(arg0_63, arg1_63, arg2_63)
 	arg0_63._unitList[var0_63] = var4_63
 
 	arg0_63._cldSystem:InitShipCld(var4_63)
-	var4_63:SummonSickness(var3_0.SUMMONING_SICKNESS_DURATION)
+
+	local var7_63 = arg1_63.sickness or var3_0.SUMMONING_SICKNESS_DURATION
+
+	var4_63:SummonSickness(var7_63)
 	var4_63:SetMoveCast(arg1_63.moveCast == true)
 
 	arg0_63._minionShipList[var0_63] = var4_63
@@ -1302,16 +1305,16 @@ function var9_0.SpawnNPC(arg0_63, arg1_63, arg2_63)
 		var0_0.Battle.BattleUnitPhaseSwitcher.New(var4_63):SetTemplateData(arg1_63.phase)
 	end
 
-	local var7_63 = {
+	local var8_63 = {
 		type = var1_63,
 		unit = var4_63,
 		bossData = arg1_63.bossData,
 		extraInfo = arg1_63.extraInfo
 	}
 
-	arg0_63:DispatchEvent(var0_0.Event.New(var1_0.ADD_UNIT, var7_63))
+	arg0_63:DispatchEvent(var0_0.Event.New(var1_0.ADD_UNIT, var8_63))
 
-	local function var8_63(arg0_64)
+	local function var9_63(arg0_64)
 		for iter0_64, iter1_64 in ipairs(arg0_64) do
 			local var0_64
 			local var1_64
@@ -1331,11 +1334,11 @@ function var9_0.SpawnNPC(arg0_63, arg1_63, arg2_63)
 		end
 	end
 
-	local var9_63 = var4_63:GetTemplate().buff_list
-	local var10_63 = arg1_63.buffList or {}
+	local var10_63 = var4_63:GetTemplate().buff_list
+	local var11_63 = arg1_63.buffList or {}
 
-	var8_63(var9_63)
-	var8_63(var10_63)
+	var9_63(var10_63)
+	var9_63(var11_63)
 	var4_63:CheckWeaponInitial()
 
 	return var4_63

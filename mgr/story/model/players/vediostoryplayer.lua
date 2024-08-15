@@ -8,14 +8,14 @@ local function var1_0(arg0_2)
 	return PathMgr.getAssetBundle("originsource/cpk/" .. arg0_2 .. ".cpk")
 end
 
-function var0_0.RegisterTrigger(arg0_3, arg1_3, arg2_3, arg3_3)
-	local var0_3 = arg2_3:GetVedioPath()
+function var0_0.RegisetEvent(arg0_3, arg1_3, arg2_3)
+	local var0_3 = arg1_3:GetVedioPath()
 
-	arg0_3:CheckAndPlay(arg2_3, var0_3, arg3_3)
+	arg0_3:CheckAndPlay(arg1_3, var0_3, arg2_3)
 end
 
 function var0_0.CheckAndPlay(arg0_4, arg1_4, arg2_4, arg3_4)
-	if not PathMgr.FileExists(var1_0(arg2_4)) then
+	if not IsUnityEditor and not PathMgr.FileExists(var1_0(arg2_4)) then
 		arg3_4()
 
 		return

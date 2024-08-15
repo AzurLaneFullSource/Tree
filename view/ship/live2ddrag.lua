@@ -82,6 +82,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.offsetDragTargetY = arg0_1.startValue
 	arg0_1.parameterComAdd = true
 	arg0_1.reactConditionFlag = false
+	arg0_1.loadL2dStep = true
 end
 
 function var0_0.onListenerEvent(arg0_2, arg1_2, arg2_2)
@@ -460,6 +461,8 @@ function var0_0.stepParameter(arg0_24)
 	arg0_24:updateParameterValue()
 	arg0_24:updateRelationValue()
 	arg0_24:checkReset()
+
+	arg0_24.loadL2dStep = false
 end
 
 function var0_0.updateParameterUpdateFlag(arg0_25)
@@ -630,33 +633,64 @@ function var0_0.updateRelationValue(arg0_31)
 		local var0_31 = iter1_31.data
 		local var1_31 = var0_31.type
 		local var2_31 = var0_31.relation_value
-		local var3_31
+		local var3_31 = var0_31.target
 		local var4_31
 		local var5_31
 
 		if var1_31 == Live2D.relation_type_drag_x then
-			var3_31 = arg0_31.offsetDragX or iter1_31.start or arg0_31.startValue or 0
+			var4_31 = arg0_31.offsetDragX or iter1_31.start or arg0_31.startValue or 0
 			var5_31 = true
 		elseif var1_31 == Live2D.relation_type_drag_y then
-			var3_31 = arg0_31.offsetDragY or iter1_31.start or arg0_31.startValue or 0
+			var4_31 = arg0_31.offsetDragY or iter1_31.start or arg0_31.startValue or 0
 			var5_31 = true
 		elseif var1_31 == Live2D.relation_type_action_index then
-			var3_31 = var2_31[arg0_31.actionListIndex]
-			var3_31 = var3_31 or 0
+			var4_31 = var2_31[arg0_31.actionListIndex]
+			var4_31 = var4_31 or 0
 			var5_31 = true
+		elseif var1_31 == Live2D.relation_type_idle then
+			if arg0_31.loadL2dStep and arg0_31.l2dIdleIndex == var0_31.idle then
+				var5_31 = true
+			end
+
+			if arg0_31.l2dIsPlaying then
+				if arg0_31.l2dPlayActionName == arg0_31.actionTrigger.action then
+					arg0_31.relationActive = true
+				end
+			else
+				arg0_31.relationActive = false
+				arg0_31.relationCountTime = nil
+			end
+
+			if not var5_31 and arg0_31.relationActive and arg0_31.l2dIdleIndex == var0_31.idle then
+				if not arg0_31.relationCountTime then
+					arg0_31.relationCountTime = Time.GetTimestamp() + var0_31.time
+				end
+
+				if arg0_31.relationCountTime and Time.GetTimestamp() >= arg0_31.relationCountTime then
+					var5_31 = true
+				end
+			end
 		else
-			var3_31 = arg0_31.parameterTargetValue
+			var4_31 = arg0_31.parameterTargetValue
 			var5_31 = false
 		end
 
-		local var6_31 = iter1_31.value or arg0_31.startValue
-		local var7_31 = arg0_31:fixRelationParameter(var3_31, var0_31)
-		local var8_31 = iter1_31.parameterSmooth or 0
-		local var9_31 = var0_31.smooth and var0_31.smooth / 1000 or arg0_31.smooth
-		local var10_31, var11_31 = Mathf.SmoothDamp(var6_31, var7_31, var8_31, var9_31)
+		local var6_31
+		local var7_31
 
-		iter1_31.value = var10_31
-		iter1_31.parameterSmooth = var11_31
+		if var3_31 then
+			var6_31 = var3_31
+		else
+			local var8_31 = arg0_31:fixRelationParameter(var4_31, var0_31)
+			local var9_31 = iter1_31.value or arg0_31.startValue
+			local var10_31 = iter1_31.parameterSmooth or 0
+			local var11_31 = var0_31.smooth and var0_31.smooth / 1000 or arg0_31.smooth
+
+			var6_31, var7_31 = Mathf.SmoothDamp(var9_31, var8_31, var10_31, var11_31)
+		end
+
+		iter1_31.value = var6_31
+		iter1_31.parameterSmooth = var7_31
 		iter1_31.enable = var5_31
 		iter1_31.comId = arg0_31.id
 	end
@@ -1003,27 +1037,31 @@ function var0_0.loadData(arg0_48)
 	end
 end
 
-function var0_0.clearData(arg0_49)
-	if arg0_49.revert == -1 then
-		arg0_49.actionListIndex = 1
+function var0_0.loadL2dFinal(arg0_49)
+	arg0_49.loadL2dStep = true
+end
 
-		arg0_49:setParameterValue(arg0_49.startValue)
-		arg0_49:setTargetValue(arg0_49.startValue)
+function var0_0.clearData(arg0_50)
+	if arg0_50.revert == -1 then
+		arg0_50.actionListIndex = 1
+
+		arg0_50:setParameterValue(arg0_50.startValue)
+		arg0_50:setTargetValue(arg0_50.startValue)
 	end
 end
 
-function var0_0.setTriggerActionFlag(arg0_50, arg1_50)
-	arg0_50.isTriggerAtion = arg1_50
+function var0_0.setTriggerActionFlag(arg0_51, arg1_51)
+	arg0_51.isTriggerAtion = arg1_51
 end
 
-function var0_0.dispose(arg0_51)
-	arg0_51._active = false
-	arg0_51._parameterCom = nil
-	arg0_51.parameterValue = arg0_51.startValue
-	arg0_51.parameterTargetValue = 0
-	arg0_51.parameterSmooth = 0
-	arg0_51.mouseInputDown = Vector2(0, 0)
-	arg0_51.live2dData = nil
+function var0_0.dispose(arg0_52)
+	arg0_52._active = false
+	arg0_52._parameterCom = nil
+	arg0_52.parameterValue = arg0_52.startValue
+	arg0_52.parameterTargetValue = 0
+	arg0_52.parameterSmooth = 0
+	arg0_52.mouseInputDown = Vector2(0, 0)
+	arg0_52.live2dData = nil
 end
 
 return var0_0

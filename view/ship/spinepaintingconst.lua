@@ -2,7 +2,7 @@ local var0_0 = class("SpinePaintingConst")
 
 var0_0.drag_type_normal = 1
 var0_0.drag_type_rgb = 2
-var0_0.click_type_list = 1
+var0_0.drag_type_list = 3
 var0_0.ship_drag_datas = {
 	gaoxiong_6 = {
 		multiple_face = {},
@@ -29,10 +29,19 @@ var0_0.ship_drag_datas = {
 		multiple_face = {},
 		drag_data = {},
 		drag_click_data = {
-			type = 1,
+			type = 3,
 			lock_layer = true,
 			list = {
 				"touch"
+			}
+		}
+	},
+	kaiersheng_3 = {
+		multiple_face = {},
+		drag_click_data = {
+			type = 1,
+			name = {
+				"kaiersheng_3"
 			}
 		}
 	}

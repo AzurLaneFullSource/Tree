@@ -28,7 +28,8 @@ function var0_0.GetType2Class()
 		[ActivityConst.ACTIVITY_TYPE_MANUAL_SIGN] = ManualSignActivity,
 		[ActivityConst.ACTIVITY_TYPE_BOSSSINGLE] = BossSingleActivity,
 		[ActivityConst.ACTIVITY_TYPE_EVENT_SINGLE] = SingleEventActivity,
-		[ActivityConst.ACTIVITY_TYPE_LINER] = LinerActivity
+		[ActivityConst.ACTIVITY_TYPE_LINER] = LinerActivity,
+		[ActivityConst.ACTIVITY_TYPE_TOWN] = TownActivity
 	}
 
 	return var1_0

@@ -171,7 +171,21 @@ function var5_0.bulletSplit(arg0_6, arg1_6)
 				end
 
 				if var14_6 then
-					local var7_7 = var0_0.Battle.BattleTargetChoise.TargetHarmNearest(var0_6)[1]
+					local var7_7
+					local var8_7 = var0_6:GetWeapon():GetHost()
+
+					if type(var14_6) == "table" and var8_7 then
+						local var9_7 = iter1_6.reaimParam
+						local var10_7
+
+						for iter0_7, iter1_7 in ipairs(var14_6) do
+							var10_7 = var0_0.Battle.BattleTargetChoise[iter1_7](var8_7, var9_7, var10_7)
+						end
+
+						var7_7 = var10_7[1]
+					else
+						var7_7 = var0_0.Battle.BattleTargetChoise.TargetHarmNearest(var0_6)[1]
+					end
 
 					if var7_7 == nil then
 						var0_7:SetRotateInfo(nil, var6_7, arg2_7)

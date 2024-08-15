@@ -25,12 +25,19 @@ end
 function var2_0.DoSummon(arg0_4, arg1_4, arg2_4)
 	local var0_4 = var0_0.Battle.BattleDataProxy.GetInstance()
 	local var1_4 = arg1_4:GetIFF()
+	local var2_4
 
 	if arg1_4:GetUnitType() == var1_0.UnitType.PLAYER_UNIT then
-		local var2_4 = var0_4:SpawnNPC(arg0_4._spawnData, arg1_4)
+		var2_4 = var0_4:SpawnNPC(arg0_4._spawnData, arg1_4)
 	else
 		local var3_4 = arg1_4:GetWaveIndex()
 
-		var0_4:SpawnMonster(arg0_4._spawnData, var3_4, var1_0.UnitType.ENEMY_UNIT, var1_4):SetMaster(arg1_4)
+		var2_4 = var0_4:SpawnMonster(arg0_4._spawnData, var3_4, var1_0.UnitType.ENEMY_UNIT, var1_4)
+
+		var2_4:SetMaster(arg1_4)
+	end
+
+	if arg0_4._spawnData.damageSrcWarp then
+		var0_0.Battle.BattleAttr.SetCurrent(var2_4, "id", nil)
 	end
 end

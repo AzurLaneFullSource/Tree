@@ -68,6 +68,7 @@ function var0_0.PlayCpkMovie(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, arg5_4, arg
 		if arg0_4._criUsm then
 			arg0_4._criUsm.player:SetVolume(PlayerPrefs.GetFloat("bgm_vol", DEFAULT_BGMVOLUME))
 			arg0_4._criUsm.player:SetShaderDispatchCallback(function(arg0_8, arg1_8)
+				arg0_4:CheckRatioFitter()
 				arg0_4:checkBgmStop(arg0_8)
 
 				return nil
@@ -77,6 +78,7 @@ function var0_0.PlayCpkMovie(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, arg5_4, arg
 		if arg0_4._criCpk then
 			arg0_4._criCpk.player:SetVolume(PlayerPrefs.GetFloat("bgm_vol", DEFAULT_BGMVOLUME))
 			arg0_4._criCpk.player:SetShaderDispatchCallback(function(arg0_9, arg1_9)
+				arg0_4:CheckRatioFitter()
 				arg0_4:checkBgmStop(arg0_9)
 
 				return nil
@@ -129,6 +131,7 @@ function var0_0.PlayCpkMovie(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, arg5_4, arg
 
 			setParent(arg0_12, arg0_4._parentTF)
 
+			arg0_4._ratioFitter = arg0_12:GetComponent("AspectRatioFitter")
 			arg0_4._mainTF = arg0_12
 
 			pg.UIMgr.GetInstance():OverlayPanel(arg0_4._mainTF.transform, arg7_4)
@@ -153,47 +156,54 @@ function var0_0.PlayCpkMovie(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, arg5_4, arg
 	end
 end
 
-function var0_0.checkBgmStop(arg0_13, arg1_13)
-	if arg0_13._onPlaying then
-		local var0_13 = arg1_13.numAudioStreams
+function var0_0.CheckRatioFitter(arg0_13)
+	if arg0_13._ratioFitter then
+		arg0_13._ratioFitter.enabled = true
+		arg0_13._ratioFitter = nil
+	end
+end
 
-		if var0_13 and var0_13 > 0 then
+function var0_0.checkBgmStop(arg0_14, arg1_14)
+	if arg0_14._onPlaying then
+		local var0_14 = arg1_14.numAudioStreams
+
+		if var0_14 and var0_14 > 0 then
 			pg.BgmMgr.GetInstance():StopPlay()
 
-			arg0_13._stopGameBGM = true
+			arg0_14._stopGameBGM = true
 		end
 	end
 end
 
-function var0_0.DisposeCpkMovie(arg0_14)
-	if arg0_14._onPlaying then
-		if arg0_14._mainTF then
-			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_14._mainTF.transform, arg0_14._tf)
-			Destroy(arg0_14._mainTF)
+function var0_0.DisposeCpkMovie(arg0_15)
+	if arg0_15._onPlaying then
+		if arg0_15._mainTF then
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_15._mainTF.transform, arg0_15._tf)
+			Destroy(arg0_15._mainTF)
 
-			if arg0_14._animator ~= nil then
-				arg0_14._animator.enabled = false
+			if arg0_15._animator ~= nil then
+				arg0_15._animator.enabled = false
 			end
 
-			if arg0_14._timer ~= nil then
-				arg0_14._timer:Stop()
+			if arg0_15._timer ~= nil then
+				arg0_15._timer:Stop()
 
-				arg0_14._timer = nil
+				arg0_15._timer = nil
 			end
 
-			if arg0_14._criUsm then
-				arg0_14._criUsm:Stop()
+			if arg0_15._criUsm then
+				arg0_15._criUsm:Stop()
 			end
 
-			if arg0_14._stopGameBGM then
+			if arg0_15._stopGameBGM then
 				pg.BgmMgr.GetInstance():ContinuePlay()
 			end
 
-			arg0_14._onPlaying = false
+			arg0_15._onPlaying = false
 
-			pg.DelegateInfo.Dispose(arg0_14)
+			pg.DelegateInfo.Dispose(arg0_15)
 		end
 
-		arg0_14:Reset()
+		arg0_15:Reset()
 	end
 end

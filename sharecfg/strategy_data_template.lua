@@ -263,7 +263,14 @@ pg.strategy_data_template = setmetatable({
 		200928,
 		200930,
 		200931,
-		200932
+		200932,
+		200979,
+		200980,
+		200983,
+		200984,
+		200987,
+		200990,
+		200999
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -3191,6 +3198,83 @@ pg.base.strategy_data_template = {
 		icon = "200908",
 		buff_type = 0,
 		desc = "The battle will initiate in challenge mode if a ship in your fleet has the Beaver Squad Tag equipped when the battle starts. This will increase the difficulty, but also increase the score you gain upon completion.\n\n- Challenge Mode Details -\n· Enemies deal significantly more DMG. Their shells ignore shields and penetrate through targets.\n· The effect of the auxiliary gear Eagle Union Elite Damage Control is no longer faction-restricted and will not sink the ship after its effect activates, but the duration of its invulnerability is reduced to 3 seconds.\n· The skills \"Quick Takeoff\" and \"Fiercer When Cornered\" are rendered ineffective.",
+		arg = {}
+	},
+	[200979] = {
+		buff_id = 200979,
+		name = "Crimson Illusion",
+		iconSize = "",
+		type = 10,
+		id = 200979,
+		icon = "200979",
+		buff_type = 0,
+		desc = "A crimson illusion envelops the battlefield. \nWhen the battle starts, for 15s, the efficacy of all your ships' healing effects decreases by 10% and the enemy's DMG dealt increases by 5%.",
+		arg = {}
+	},
+	[200980] = {
+		buff_id = 200980,
+		name = "The Storm",
+		iconSize = "",
+		type = 10,
+		id = 200980,
+		icon = "200980",
+		buff_type = 0,
+		desc = "The Storm is raging. \nBoth sides' Hit Rate decreases by 5% and their SPD decreases by 3.",
+		arg = {}
+	},
+	[200983] = {
+		buff_id = 0,
+		name = "Crimson Shade",
+		iconSize = "",
+		type = 10,
+		id = 200983,
+		icon = "200983",
+		buff_type = 0,
+		desc = "The crimson Shadow of Corruption stares you down. \nDuring battle, the enemy receives supporting barrages at regular intervals.",
+		arg = {}
+	},
+	[200984] = {
+		buff_id = 200984,
+		name = "Freezing Rain Rocket Support",
+		iconSize = "",
+		type = 10,
+		id = 200984,
+		icon = "200984",
+		buff_type = 0,
+		desc = "The Dongyus are providing covering fire! \nDuring battle, your fleet receives special supporting barrages that freeze the enemy at regular intervals.",
+		arg = {}
+	},
+	[200987] = {
+		buff_id = 200987,
+		name = "Freezing Rain Rocket Support",
+		iconSize = "",
+		type = 10,
+		id = 200987,
+		icon = "200984",
+		buff_type = 0,
+		desc = "The Dongyus are providing covering fire! \nDuring battle, your fleet receives special supporting barrages that freeze the enemy at regular intervals.",
+		arg = {}
+	},
+	[200990] = {
+		buff_id = 200990,
+		name = "Freezing Rain Rocket Support",
+		iconSize = "",
+		type = 10,
+		id = 200990,
+		icon = "200984",
+		buff_type = 0,
+		desc = "The Dongyus are providing covering fire! \nDuring battle, your fleet receives special supporting barrages that freeze the enemy at regular intervals.",
+		arg = {}
+	},
+	[200999] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 200999,
+		icon = "200908",
+		buff_type = 0,
+		desc = "The battle will initiate in challenge mode if a ship in your fleet has the Fargo Direct Drone equipped when the battle starts. This will increase the difficulty, but also increase the score you gain upon completion.\n\n- Challenge Mode Details -\n· Enemies deal significantly more DMG. Their shells ignore shields and penetrate through targets.\n· If the enemy's HP is above a set value, Dongyu Arsenal Ships will appear on the left side of the screen and support your fleet. The Dongyus have their own HP bars and provide potent supporting fire, but they are especially vulnerable to certain enemy barrages.",
 		arg = {}
 	}
 }

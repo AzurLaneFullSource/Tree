@@ -364,6 +364,12 @@ function var0_0.setBg(arg0_27)
 
 		var0_27:SetParent(arg0_27.bgImg.transform, false)
 		var0_27:SetAsFirstSibling()
+
+		local var1_27 = arg0_27.criBgGo:GetComponent("AspectRatioFitter")
+
+		if var1_27 then
+			var1_27.enabled = true
+		end
 	end
 end
 

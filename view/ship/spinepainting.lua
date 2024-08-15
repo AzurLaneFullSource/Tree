@@ -223,16 +223,7 @@ function var0_0.updateDragClick(arg0_22)
 
 	local var0_22 = arg0_22.shipDragData.drag_click_data
 
-	if var0_22.type == SpinePaintingConst.click_type_list then
-		arg0_22.clickActionList = Clone(var0_22.list)
-		arg0_22.lockLayer = var0_22.lock_layer
-
-		arg0_22:checkListAction()
-
-		return true
-	end
-
-	return false
+	return arg0_22:checkSpecialDrag(var0_22)
 end
 
 function var0_0.checkListAction(arg0_23)
@@ -255,8 +246,16 @@ function var0_0.displayWord(arg0_25, arg1_25)
 end
 
 function var0_0.DoDragTouch(arg0_26)
+	if arg0_26.inAction or arg0_26._displayWord then
+		return false
+	else
+		arg0_26.inAction = true
+	end
+
 	if arg0_26:isDragShip() then
-		arg0_26:updateDragTouch()
+		local var0_26 = arg0_26.shipDragData.drag_data
+
+		arg0_26:checkSpecialDrag(var0_26)
 	end
 end
 
@@ -268,195 +267,204 @@ function var0_0.isDragShip(arg0_27)
 	return false
 end
 
-function var0_0.updateDragTouch(arg0_28)
-	if arg0_28.inAction then
-		return
-	else
-		arg0_28.inAction = true
-	end
+function var0_0.checkSpecialDrag(arg0_28, arg1_28)
+	local var0_28 = arg1_28.type
 
-	local var0_28 = arg0_28.shipDragData.drag_data
+	if var0_28 == SpinePaintingConst.drag_type_normal or var0_28 == SpinePaintingConst.drag_type_rgb then
+		arg0_28:doDragChange(arg1_28)
+	elseif var0_28 == SpinePaintingConst.drag_type_list then
+		arg0_28.clickActionList = Clone(arg1_28.list)
+		arg0_28.lockLayer = arg1_28.lock_layer
 
-	if not arg0_28.idleName or arg0_28.idleName ~= "ex" then
-		arg0_28.idleName = "ex"
+		arg0_28:checkListAction()
 
-		local var1_28 = var0_28.type
-		local var2_28 = var0_28.name
-
-		if var1_28 == SpinePaintingConst.drag_type_normal then
-			arg0_28:SetActionWithFinishCallback("drag", 0, function()
-				arg0_28:changeSpecialIdle(arg0_28.idleName)
-			end)
-		elseif var1_28 == SpinePaintingConst.drag_type_rgb then
-			arg0_28._baseMaterial = arg0_28._skeletonGraphic.material
-
-			arg0_28:getSpineMaterial("SkeletonGraphicDefaultRGBSplit", function(arg0_30)
-				arg0_28._skeletonGraphic.material = arg0_30
-
-				LeanTween.delayedCall(go(arg0_28._tf), 0.5, System.Action(function()
-					arg0_28._skeletonGraphic.material = arg0_28._baseMaterial
-
-					arg0_28:changeSpecialIdle(arg0_28.idleName)
-				end))
-			end)
-		end
-	elseif arg0_28.idleName == "ex" then
-		arg0_28.idleName = "normal"
-
-		local var3_28 = var0_28.type
-		local var4_28 = var0_28.name
-
-		if var3_28 == SpinePaintingConst.drag_type_normal then
-			arg0_28:SetActionWithFinishCallback("drag_ex", 0, function()
-				arg0_28:changeSpecialIdle(arg0_28.idleName)
-			end)
-		elseif var3_28 == SpinePaintingConst.drag_type_rgb then
-			arg0_28._baseMaterial = arg0_28._skeletonGraphic.material
-
-			arg0_28:getSpineMaterial("SkeletonGraphicDefaultRGBSplit", function(arg0_33)
-				arg0_28._skeletonGraphic.material = arg0_33
-
-				LeanTween.delayedCall(go(arg0_28._tf), 0.5, System.Action(function()
-					arg0_28._skeletonGraphic.material = arg0_28._baseMaterial
-
-					arg0_28:changeSpecialIdle(arg0_28.idleName)
-				end))
-			end)
-		end
-	end
-end
-
-function var0_0.getSpineMaterial(arg0_35, arg1_35, arg2_35)
-	if not arg0_35._materialDic then
-		arg0_35._materialDic = {}
-	end
-
-	if arg0_35._materialDic[arg1_35] then
-		arg2_35(arg0_35._materialDic[arg1_35])
-	end
-
-	PoolMgr:GetInstance():LoadAsset("spinematerials", arg1_35, false, typeof(Material), function(arg0_36)
-		arg0_35._materialDic[arg1_35] = arg0_36
-
-		arg2_35(arg0_35._materialDic[arg1_35])
-	end, false)
-end
-
-function var0_0.changeSpecialIdle(arg0_37, arg1_37)
-	arg0_37:SetAction(arg1_37, 0)
-
-	local var0_37 = tostring(arg0_37.mainSpineAnim.name) .. "_" .. tostring(arg0_37._spinePaintingData.ship.id)
-
-	PlayerPrefs.SetString(var0_37, arg1_37)
-
-	arg0_37.inAction = false
-end
-
-function var0_0.SetAction(arg0_38, arg1_38, arg2_38, arg3_38)
-	if arg0_38:getMultipFaceFlag() then
-		arg1_38 = arg0_38:getMultipFaceAction(arg1_38, arg2_38)
-	end
-
-	if arg0_38.lockLayer and not arg3_38 then
-		return
-	end
-
-	if not arg1_38 then
-		return
-	end
-
-	if arg0_38.idleName and arg1_38 == arg0_38:getNormalName() then
-		arg1_38 = arg0_38.idleName
-	end
-
-	for iter0_38, iter1_38 in ipairs(arg0_38.spineAnimList) do
-		iter1_38:SetAction(arg1_38, arg2_38)
-	end
-end
-
-function var0_0.isInAction(arg0_39)
-	return arg0_39.inAction
-end
-
-function var0_0.SetActionWithFinishCallback(arg0_40, arg1_40, arg2_40, arg3_40, arg4_40)
-	arg0_40.inAction = true
-
-	arg0_40:SetAction(arg1_40, arg2_40, arg4_40)
-
-	if arg0_40.mainSpineAnim then
-		arg0_40.mainSpineAnim:SetActionCallBack(function(arg0_41)
-			if arg0_41 == "finish" and arg3_40 then
-				arg0_40.inAction = false
-
-				arg0_40.mainSpineAnim:SetActionCallBack(nil)
-				arg3_40()
-			end
-		end)
-		arg0_40.mainSpineAnim:SetAction(arg1_40, 0)
-	end
-end
-
-function var0_0.SetEmptyAction(arg0_42, arg1_42)
-	arg0_42:SetVisible(true)
-
-	for iter0_42, iter1_42 in ipairs(arg0_42.spineAnimList) do
-		local var0_42 = iter1_42:GetAnimationState()
-
-		if var0_42 then
-			var0_42:SetEmptyAnimation(arg1_42, 0)
-			GetComponent(iter1_42.transform, "SkeletonGraphic"):Update(Time.deltaTime)
-		end
-	end
-end
-
-function var0_0.getMultipFaceFlag(arg0_43)
-	if arg0_43.shipDragData and arg0_43.shipDragData.multiple_face then
-		return table.contains(arg0_43.shipDragData.multiple_face, arg0_43.mainSpineAnim.name)
+		return true
 	end
 
 	return false
 end
 
-function var0_0.getMultipFaceAction(arg0_44, arg1_44, arg2_44)
-	if arg0_44:getMultipFaceFlag() and arg0_44.idleName == "ex" and arg2_44 == 1 then
-		if arg0_44.inAction then
+function var0_0.doDragChange(arg0_29, arg1_29)
+	if not arg0_29.idleName or arg0_29.idleName ~= "ex" then
+		arg0_29.idleName = "ex"
+
+		local var0_29 = arg1_29.type
+		local var1_29 = arg1_29.name
+
+		if var0_29 == SpinePaintingConst.drag_type_normal then
+			arg0_29:SetActionWithFinishCallback("drag", 0, function()
+				arg0_29:changeSpecialIdle(arg0_29.idleName)
+			end)
+		elseif var0_29 == SpinePaintingConst.drag_type_rgb then
+			arg0_29._baseMaterial = arg0_29._skeletonGraphic.material
+
+			arg0_29:getSpineMaterial("SkeletonGraphicDefaultRGBSplit", function(arg0_31)
+				arg0_29._skeletonGraphic.material = arg0_31
+
+				LeanTween.delayedCall(go(arg0_29._tf), 0.5, System.Action(function()
+					arg0_29._skeletonGraphic.material = arg0_29._baseMaterial
+
+					arg0_29:changeSpecialIdle(arg0_29.idleName)
+				end))
+			end)
+		end
+	elseif arg0_29.idleName == "ex" then
+		arg0_29.idleName = "normal"
+
+		local var2_29 = arg1_29.type
+		local var3_29 = arg1_29.name
+
+		if var2_29 == SpinePaintingConst.drag_type_normal then
+			arg0_29:SetActionWithFinishCallback("drag_ex", 0, function()
+				arg0_29:changeSpecialIdle(arg0_29.idleName)
+			end)
+		elseif var2_29 == SpinePaintingConst.drag_type_rgb then
+			arg0_29._baseMaterial = arg0_29._skeletonGraphic.material
+
+			arg0_29:getSpineMaterial("SkeletonGraphicDefaultRGBSplit", function(arg0_34)
+				arg0_29._skeletonGraphic.material = arg0_34
+
+				LeanTween.delayedCall(go(arg0_29._tf), 0.5, System.Action(function()
+					arg0_29._skeletonGraphic.material = arg0_29._baseMaterial
+
+					arg0_29:changeSpecialIdle(arg0_29.idleName)
+				end))
+			end)
+		end
+	end
+end
+
+function var0_0.getSpineMaterial(arg0_36, arg1_36, arg2_36)
+	if not arg0_36._materialDic then
+		arg0_36._materialDic = {}
+	end
+
+	if arg0_36._materialDic[arg1_36] then
+		arg2_36(arg0_36._materialDic[arg1_36])
+	end
+
+	PoolMgr:GetInstance():LoadAsset("spinematerials", arg1_36, false, typeof(Material), function(arg0_37)
+		arg0_36._materialDic[arg1_36] = arg0_37
+
+		arg2_36(arg0_36._materialDic[arg1_36])
+	end, false)
+end
+
+function var0_0.changeSpecialIdle(arg0_38, arg1_38)
+	arg0_38:SetAction(arg1_38, 0)
+
+	local var0_38 = tostring(arg0_38.mainSpineAnim.name) .. "_" .. tostring(arg0_38._spinePaintingData.ship.id)
+
+	PlayerPrefs.SetString(var0_38, arg1_38)
+
+	arg0_38.inAction = false
+end
+
+function var0_0.SetAction(arg0_39, arg1_39, arg2_39, arg3_39)
+	if arg0_39:getMultipFaceFlag() then
+		arg1_39 = arg0_39:getMultipFaceAction(arg1_39, arg2_39)
+	end
+
+	if arg0_39.lockLayer and not arg3_39 then
+		return
+	end
+
+	if not arg1_39 then
+		return
+	end
+
+	if arg0_39.idleName and arg1_39 == arg0_39:getNormalName() then
+		arg1_39 = arg0_39.idleName
+	end
+
+	for iter0_39, iter1_39 in ipairs(arg0_39.spineAnimList) do
+		iter1_39:SetAction(arg1_39, arg2_39)
+	end
+end
+
+function var0_0.isInAction(arg0_40)
+	return arg0_40.inAction
+end
+
+function var0_0.SetActionWithFinishCallback(arg0_41, arg1_41, arg2_41, arg3_41, arg4_41)
+	arg0_41.inAction = true
+
+	arg0_41:SetAction(arg1_41, arg2_41, arg4_41)
+
+	if arg0_41.mainSpineAnim then
+		arg0_41.mainSpineAnim:SetActionCallBack(function(arg0_42)
+			if arg0_42 == "finish" and arg3_41 then
+				arg0_41.inAction = false
+
+				arg0_41.mainSpineAnim:SetActionCallBack(nil)
+				arg3_41()
+			end
+		end)
+		arg0_41.mainSpineAnim:SetAction(arg1_41, 0)
+	end
+end
+
+function var0_0.SetEmptyAction(arg0_43, arg1_43)
+	arg0_43:SetVisible(true)
+
+	for iter0_43, iter1_43 in ipairs(arg0_43.spineAnimList) do
+		local var0_43 = iter1_43:GetAnimationState()
+
+		if var0_43 then
+			var0_43:SetEmptyAnimation(arg1_43, 0)
+			GetComponent(iter1_43.transform, "SkeletonGraphic"):Update(Time.deltaTime)
+		end
+	end
+end
+
+function var0_0.getMultipFaceFlag(arg0_44)
+	if arg0_44.shipDragData and arg0_44.shipDragData.multiple_face then
+		return table.contains(arg0_44.shipDragData.multiple_face, arg0_44.mainSpineAnim.name)
+	end
+
+	return false
+end
+
+function var0_0.getMultipFaceAction(arg0_45, arg1_45, arg2_45)
+	if arg0_45:getMultipFaceFlag() and arg0_45.idleName == "ex" and arg2_45 == 1 then
+		if arg0_45.inAction then
 			return nil
 		end
 
-		local var0_44 = tonumber(arg1_44)
+		local var0_45 = tonumber(arg1_45)
 
-		if var0_44 then
-			arg1_44 = tostring(var0_44 + 5)
+		if var0_45 then
+			arg1_45 = tostring(var0_45 + 5)
 		end
 	end
 
-	return arg1_44
+	return arg1_45
 end
 
-function var0_0.Dispose(arg0_45)
-	arg0_45._materialDic = {}
+function var0_0.Dispose(arg0_46)
+	arg0_46._materialDic = {}
 
-	if arg0_45._spinePaintingData then
-		arg0_45._spinePaintingData:Clear()
+	if arg0_46._spinePaintingData then
+		arg0_46._spinePaintingData:Clear()
 	end
 
-	arg0_45._loader:Clear()
+	arg0_46._loader:Clear()
 
-	if arg0_45._go ~= nil then
-		var1_0.Destroy(arg0_45._go)
+	if arg0_46._go ~= nil then
+		var1_0.Destroy(arg0_46._go)
 	end
 
-	if arg0_45._bgEffectGo ~= nil then
-		var1_0.Destroy(arg0_45._bgEffectGo)
+	if arg0_46._bgEffectGo ~= nil then
+		var1_0.Destroy(arg0_46._bgEffectGo)
 	end
 
-	arg0_45._go = nil
-	arg0_45._tf = nil
-	arg0_45._bgEffectGo = nil
-	arg0_45._bgEffectTf = nil
+	arg0_46._go = nil
+	arg0_46._tf = nil
+	arg0_46._bgEffectGo = nil
+	arg0_46._bgEffectTf = nil
 
-	if arg0_45.spineAnim then
-		arg0_45.spineAnim:SetActionCallBack(nil)
+	if arg0_46.spineAnim then
+		arg0_46.spineAnim:SetActionCallBack(nil)
 	end
 end
 

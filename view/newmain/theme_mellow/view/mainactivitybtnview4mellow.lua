@@ -4,7 +4,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	var0_0.super.Ctor(arg0_1, arg1_1, arg2_1)
 
 	arg0_1.mapEventTr = arg1_1:Find("right/1/act/act_battle")
-	arg0_1.mapBtn = MainActivityBtnMellowAdapt.New(MainActMapBtn.New(arg0_1.mapEventTr, arg0_1.event, true))
+	arg0_1.mapBtn = MainActivityBtnMellowAdapt.New(MainActMapBtn.New(arg0_1.mapEventTr, arg0_1.event, true, true))
 end
 
 function var0_0.InitBtns(arg0_2)
