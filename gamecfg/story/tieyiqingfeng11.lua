@@ -501,7 +501,7 @@ return {
 			dir = 1,
 			nameColor = "#BDBDBD",
 			actor = 9702070,
-			say = "——「ËşÁŃśřşóˇŰËé°É」",
+			say = "ALHY AOLT HWHYA",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -699,7 +699,7 @@ return {
 			dir = 1,
 			nameColor = "#BDBDBD",
 			actor = 9702070,
-			say = "——「ĎűÉ˘」",
+			say = "KPZHWWLHY",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
