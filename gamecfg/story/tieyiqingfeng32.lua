@@ -1151,9 +1151,9 @@ return {
 			}
 		},
 		{
-			asideType = 1,
+			blackBg = true,
 			mode = 1,
-			bgName = "bg_tieyiqingfeng_5",
+			asideType = 1,
 			bgm = "theme-designfleet-vii",
 			flashout = {
 				black = true,
@@ -1200,10 +1200,10 @@ return {
 			}
 		},
 		{
-			asideType = 1,
-			mode = 1,
-			bgName = "bg_tieyiqingfeng_5",
 			bgm = "theme-designfleet-vii",
+			mode = 1,
+			asideType = 1,
+			blackBg = true,
 			soundeffect = "event:/ui/fengling",
 			flashout = {
 				black = true,

@@ -4076,7 +4076,7 @@ pg.base.transform_data_template = {
 	},
 	[2810] = {
 		use_gold = 5000,
-		name = "Firepower Enhancement Ⅱ",
+		name = "Firepower Enhancement Ⅲ",
 		star_limit = 6,
 		id = 2810,
 		max_level = 3,
@@ -4190,7 +4190,7 @@ pg.base.transform_data_template = {
 		skin_id = 0,
 		use_ship = 1,
 		level_limit = 90,
-		descrip = "习得技能【电气功率MAX！】",
+		descrip = " ",
 		icon = "skill_red",
 		skill_id = 150320,
 		condition_id = {

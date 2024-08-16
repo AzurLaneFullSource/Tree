@@ -156,38 +156,49 @@ function var0_0.handleNotification(arg0_13, arg1_13)
 
 				seriesAsync({
 					function(arg0_15)
-						local var0_15 = var0_14.unlock_story
-
-						if var0_15 ~= "" then
-							pg.NewStoryMgr.GetInstance():Play(var0_15, arg0_15)
-						else
-							arg0_15()
-						end
+						arg0_13.viewComponent:OnTownUpgrade(arg0_15)
 					end,
 					function(arg0_16)
-						local var0_16 = var0_14.unlock_work
+						local var0_16 = var0_14.unlock_story
 
-						if #var0_16[1] > 0 or #var0_16[2] > 0 then
+						if var0_16 ~= "" then
+							pg.NewStoryMgr.GetInstance():Play(var0_16, arg0_16)
+						else
+							arg0_16()
+						end
+					end,
+					function(arg0_17)
+						local var0_17 = var0_14.unlock_work
+
+						if #var0_17[1] > 0 or #var0_17[2] > 0 then
 							arg0_13:addSubLayers(Context.New({
 								mediator = TownUnlockMediator,
 								viewComponent = TownUnlockLayer,
 								data = {
-									newIds = var0_16[1],
-									limitIds = var0_16[2],
-									removeFunc = arg0_16
+									newIds = var0_17[1],
+									limitIds = var0_17[2],
+									removeFunc = arg0_17
 								}
 							}))
 						else
-							arg0_16()
+							arg0_17()
 						end
 					end
 				}, function()
 					return
 				end)
-				arg0_13.viewComponent:OnTownUpgrade()
 			end,
 			[TownActivity.OPERATION.UPGRADE_PLACE] = function()
-				arg0_13.viewComponent:UpdateInfoPage()
+				seriesAsync({
+					function(arg0_20)
+						arg0_13.viewComponent:OnPlaceUpgrade(arg0_20)
+					end,
+					function(arg0_21)
+						arg0_13.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_13.awards)
+					end
+				}, function()
+					return
+				end)
 			end,
 			[TownActivity.OPERATION.CHANGE_SHIPS] = function()
 				arg0_13.viewComponent:UpdateShips()
@@ -195,9 +206,9 @@ function var0_0.handleNotification(arg0_13, arg1_13)
 			end,
 			[TownActivity.OPERATION.CLICK_BUBBLE] = function()
 				arg0_13.viewComponent:UpdateBubbles()
+				arg0_13.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_13.awards)
 			end
 		})
-		arg0_13.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_13.awards)
 	elseif var0_13 == ActivityProxy.ACTIVITY_UPDATED and var1_13:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TOWN then
 		arg0_13.activity = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN)
 

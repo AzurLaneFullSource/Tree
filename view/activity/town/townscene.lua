@@ -283,42 +283,46 @@ function var0_0.OnExpUpdate(arg0_31)
 	arg0_31.infoPage:ExecuteAction("OnExpUpdate")
 end
 
-function var0_0.OnTownUpgrade(arg0_32)
-	arg0_32.infoPage:ExecuteAction("OnTownUpgrade")
+function var0_0.OnTownUpgrade(arg0_32, arg1_32)
+	arg0_32.infoPage:ExecuteAction("OnTownUpgrade", arg1_32)
 end
 
-function var0_0.willExit(arg0_33)
-	arg0_33.infoPage:Destroy()
+function var0_0.OnPlaceUpgrade(arg0_33, arg1_33)
+	arg0_33.infoPage:ExecuteAction("OnPlaceUpgrade", arg1_33)
+end
 
-	arg0_33.infoPage = nil
+function var0_0.willExit(arg0_34)
+	arg0_34.infoPage:Destroy()
 
-	if arg0_33.timer then
-		arg0_33.timer:Stop()
+	arg0_34.infoPage = nil
 
-		arg0_33.timer = nil
+	if arg0_34.timer then
+		arg0_34.timer:Stop()
+
+		arg0_34.timer = nil
 	end
 
-	arg0_33:CleanSpines()
+	arg0_34:CleanSpines()
 end
 
-function var0_0.ShowEntranceTip(arg0_34)
-	local var0_34 = arg0_34 or getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN)
-
-	if not var0_34 or var0_34:isEnd() then
-		return false
-	end
-
-	return var0_0.ShowMainTip(var0_34) or var0_34:ShowBubbleTip()
-end
-
-function var0_0.ShowMainTip(arg0_35)
+function var0_0.ShowEntranceTip(arg0_35)
 	local var0_35 = arg0_35 or getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN)
 
 	if not var0_35 or var0_35:isEnd() then
 		return false
 	end
 
-	return var0_35:CanCostGold() or var0_35:HasEmptySlot()
+	return var0_0.ShowMainTip(var0_35) or var0_35:ShowBubbleTip()
+end
+
+function var0_0.ShowMainTip(arg0_36)
+	local var0_36 = arg0_36 or getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN)
+
+	if not var0_36 or var0_36:isEnd() then
+		return false
+	end
+
+	return var0_36:CanCostGold() or var0_36:HasEmptySlot()
 end
 
 return var0_0
