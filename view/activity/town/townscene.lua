@@ -1,55 +1,20 @@
 local var0_0 = class("TownScene", import("view.base.BaseUI"))
 
 var0_0.RANDOM_POS = {
-	{
-		x = 111.3,
-		y = 150
-	},
-	{
-		x = -235.9,
-		y = 113.2
-	},
-	{
-		x = 570,
-		y = 424.5
-	},
-	{
-		x = -790.3,
-		y = 569.9
-	},
-	{
-		x = -440.7,
-		y = -26.8
-	},
-	{
-		x = -1206.2,
-		y = 2
-	},
-	{
-		x = -705.8,
-		y = -379
-	},
-	{
-		x = -1021.7,
-		y = -153.9
-	},
-	{
-		x = -385.6,
-		y = -479.7
-	},
-	{
-		x = 367.1,
-		y = -749
-	},
-	{
-		x = 107.6,
-		y = -684.9
-	},
-	{
-		x = 338.7,
-		y = 150
-	}
+	Vector2.New(111.3, 150),
+	Vector2.New(-235.9, 113.2),
+	Vector2.New(570, 424.5),
+	Vector2.New(-790.3, 569.9),
+	Vector2.New(-440.7, -26.8),
+	Vector2.New(-1206.2, 2),
+	Vector2.New(-705.8, -379),
+	Vector2.New(-1021.7, -153.9),
+	Vector2.New(-385.6, -479.7),
+	Vector2.New(367.1, -749),
+	Vector2.New(107.6, -684.9),
+	Vector2.New(338.7, 150)
 }
+var0_0.STATIC_POS = Vector2.New(-440.7, -26.8)
 var0_0.SDScale = 0.5
 
 function var0_0.getUIName(arg0_1)
@@ -94,7 +59,6 @@ function var0_0.didEnter(arg0_4)
 
 	arg0_4.timeCfg = arg0_4.activity:getConfig("config_client").endingtime
 	arg0_4.spineRoles = {}
-	arg0_4.randomPos = arg0_4:GetRandomPos()
 
 	arg0_4:UpdateShips()
 
@@ -149,7 +113,7 @@ function var0_0.GetRandomPos(arg0_15)
 
 	local var1_15 = {}
 
-	for iter1_15 = 1, 9 do
+	for iter1_15 = 1, 8 do
 		table.insert(var1_15, var0_0.RANDOM_POS[var0_15[iter1_15]])
 	end
 
@@ -191,6 +155,8 @@ function var0_0.UpdateGold(arg0_20)
 end
 
 function var0_0.UpdateBubbles(arg0_21)
+	arg0_21.bubblesPosList = {}
+
 	for iter0_21, iter1_21 in ipairs(arg0_21.shipIds) do
 		if iter1_21 > 0 and getProxy(BayProxy):RawGetShipById(iter1_21) then
 			local var0_21 = arg0_21.activity:GetBubbleCntByPos(iter0_21)
@@ -199,6 +165,7 @@ function var0_0.UpdateBubbles(arg0_21)
 			setActive(var1_21, var0_21 > 0)
 
 			if var0_21 > 0 then
+				table.insert(arg0_21.bubblesPosList, iter0_21)
 				eachChild(var1_21, function(arg0_22)
 					setActive(arg0_22, tonumber(arg0_22.name) == var0_21)
 				end)
@@ -209,6 +176,8 @@ end
 
 function var0_0.UpdateShips(arg0_23)
 	arg0_23:CleanSpines()
+
+	arg0_23.randomPos = Clone(var0_0.RANDOM_POS)
 
 	for iter0_23, iter1_23 in ipairs(arg0_23.shipIds) do
 		arg0_23:UpdateShip(iter0_23, iter1_23)
@@ -232,8 +201,21 @@ function var0_0.UpdateShip(arg0_24, arg1_24, arg2_24)
 
 	var0_24 = var0_24 or cloneTplTo(arg0_24.slotTpl, arg0_24.slotTFs, arg1_24)
 
-	setAnchoredPosition(var0_24, arg0_24.randomPos[arg1_24])
+	if arg0_24.activity:GetBubbleCntByPos(arg1_24) > 0 and table.contains(arg0_24.randomPos, var0_0.STATIC_POS) then
+		setAnchoredPosition(var0_24, var0_0.STATIC_POS)
+		table.removebyvalue(arg0_24.randomPos, var0_0.STATIC_POS)
+	else
+		local var2_24 = arg0_24.randomPos[#arg0_24.randomPos]
+
+		setAnchoredPosition(var0_24, var2_24)
+		table.removebyvalue(arg0_24.randomPos, var2_24)
+	end
+
 	onButton(arg0_24, arg0_24:findTF("bubble", var0_24), function()
+		if not arg0_24.bubblesPosList or #arg0_24.bubblesPosList <= 0 then
+			return
+		end
+
 		if arg0_24.activity:HasMaxGold() then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("town_gold_tip"),
@@ -242,27 +224,27 @@ function var0_0.UpdateShip(arg0_24, arg1_24, arg2_24)
 				end
 			})
 		else
-			arg0_24:emit(TownMediator.CLICK_BUBBLE, arg1_24)
+			arg0_24:emit(TownMediator.CLICK_BUBBLE, arg0_24.bubblesPosList)
 		end
 	end, SFX_PANEL)
 
-	local var2_24 = SpineRole.New()
+	local var3_24 = SpineRole.New()
 
-	var2_24:SetData(var1_24:getPrefab())
-	var2_24:Load(function()
-		local var0_27 = var2_24.modelRoot
+	var3_24:SetData(var1_24:getPrefab())
+	var3_24:Load(function()
+		local var0_27 = var3_24.modelRoot
 
 		var0_27.name = "model"
 		var0_27.transform.localScale = Vector2.New(var0_0.SDScale, var0_0.SDScale)
 		rtf(var0_27).sizeDelta = Vector2.New(200, 500)
 
 		SetParent(var0_27, var0_24)
-		var2_24:SetAction("stand")
+		var3_24:SetAction("stand")
 		var0_27.transform:SetAsFirstSibling()
 		setActive(var0_24, true)
 	end, true)
 
-	arg0_24.spineRoles[arg1_24] = var2_24
+	arg0_24.spineRoles[arg1_24] = var3_24
 end
 
 function var0_0.CleanSpines(arg0_28)

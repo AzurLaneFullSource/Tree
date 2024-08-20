@@ -26,7 +26,7 @@ function var0_0.register(arg0_1)
 		arg0_1:sendNotification(GAME.ACTIVITY_TOWN_OP, {
 			activity_id = arg0_1.activity.id,
 			cmd = TownActivity.OPERATION.CLICK_BUBBLE,
-			arg1 = arg1_5
+			arg_list = arg1_5
 		})
 	end)
 

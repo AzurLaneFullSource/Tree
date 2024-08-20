@@ -282,7 +282,9 @@ function var0_0.OnChangeShips(arg0_26, arg1_26)
 end
 
 function var0_0.OnGetBubbleAward(arg0_27, arg1_27, arg2_27)
-	arg0_27.slotData[arg1_27]:ResetStartTime(arg2_27)
+	for iter0_27, iter1_27 in ipairs(arg1_27) do
+		arg0_27.slotData[iter1_27]:ResetStartTime(arg2_27[iter0_27])
+	end
 end
 
 function var0_0.OnSettleGold(arg0_28, arg1_28)

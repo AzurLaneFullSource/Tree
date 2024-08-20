@@ -99,8 +99,8 @@ return {
 			}
 		},
 		{
+			actor = 608010,
 			side = 2,
-			actorName = "Torricelli",
 			bgName = "bg_renaya",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -347,8 +347,8 @@ return {
 			}
 		},
 		{
+			actor = 608010,
 			side = 2,
-			actorName = "Torricelli",
 			bgName = "bg_firedust_5",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",

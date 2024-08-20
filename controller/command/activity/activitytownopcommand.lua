@@ -15,6 +15,7 @@ function var0_0.execute(arg0_1, arg1_1)
 		cmd = var0_1.cmd or 0,
 		arg1 = var0_1.arg1 or 0,
 		arg2 = var0_1.arg2 or 0,
+		arg_list = var0_1.arg_list or {},
 		kvargs1 = var0_1.kvargs1
 	}, 11203, function(arg0_2)
 		if arg0_2.result == 0 then
@@ -34,7 +35,7 @@ function var0_0.execute(arg0_1, arg1_1)
 					var3_1:OnChangeShips(var0_1.kvargs1)
 				end,
 				[TownActivity.OPERATION.CLICK_BUBBLE] = function()
-					var3_1:OnGetBubbleAward(var0_1.arg1, arg0_2.number[1])
+					var3_1:OnGetBubbleAward(var0_1.arg_list, arg0_2.number)
 				end,
 				[TownActivity.OPERATION.SETTLE_GOLD] = function()
 					var3_1:OnSettleGold(arg0_2.number[1])
