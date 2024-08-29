@@ -3348,307 +3348,714 @@ pg.enemy_data_statistics_34 = {
 		random_nub = {},
 		buff_list = {}
 	},
-	[611] = {
-		cannon = 22,
-		speed = 16,
-		battle_unit_type = 60,
+	[90975] = {
+		cannon = 0,
+		name = "Spawn of Corruption - Usagi",
+		type = 1,
 		speed_growth = 0,
-		pilot_ai_template_id = 10001,
-		air = 0,
-		rarity = 4,
-		dodge = 9,
-		id = 611,
-		cannon_growth = 2000,
-		fog_fx = "",
-		reload_growth = 0,
-		dodge_growth = 126,
-		luck = 0,
-		star = 5,
-		hit = 14,
-		antisub_growth = 0,
 		air_growth = 0,
-		reload = 150,
-		base = 90206,
-		durability = 580,
-		armor_growth = 0,
-		torpedo_growth = 3456,
-		luck_growth = 0,
-		hit_growth = 210,
-		armor = 0,
-		torpedo = 42,
-		durability_growth = 28200,
-		antisub = 0,
-		antiaircraft = 44,
-		antiaircraft_growth = 3600,
-		appear_fx = {
-			"bossguangxiao",
-			"appearQ"
-		},
-		hp_bar = {
-			200,
-			4
-		},
-		equipment_list = {
-			100201,
-			311072,
-			311075,
-			311076
-		}
-	},
-	[612] = {
-		cannon = 24,
-		battle_unit_type = 65,
-		fog_fx = "",
-		speed_growth = 0,
-		pilot_ai_template_id = 10001,
 		air = 0,
-		speed = 16,
-		dodge = 4,
-		luck = 0,
-		id = 612,
-		cannon_growth = 3000,
-		reload_growth = 0,
-		dodge_growth = 66,
-		reload = 150,
-		star = 5,
-		hit = 14,
+		battle_unit_type = 49,
+		durability = 99999,
+		armor = 0,
+		friendly_cld = 0,
+		id = 90975,
+		bubble_fx = "",
+		dodge_growth = 0,
+		icon = "chongying_m_quzhu",
+		star = 0,
+		fog_fx = "",
 		antisub_growth = 0,
-		air_growth = 0,
-		rarity = 4,
-		base = 90222,
-		durability = 800,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 0,
+		icon_type = 1,
 		armor_growth = 0,
 		torpedo_growth = 0,
-		luck_growth = 0,
-		hit_growth = 210,
-		armor = 0,
-		torpedo = 0,
-		durability_growth = 32400,
-		antisub = 0,
-		antiaircraft = 57,
-		antiaircraft_growth = 4680,
-		smoke = {
-			{
-				70,
-				{
-					{
-						"smoke",
-						{
-							0.59,
-							0.87,
-							0.28
-						}
-					}
-				}
-			},
-			{
-				40,
-				{
-					{
-						"smoke",
-						{
-							-0.83,
-							2.62,
-							1.31
-						}
-					}
-				}
-			}
-		},
-		appear_fx = {
-			"bossguangxiao",
-			"appearQ"
-		},
-		equipment_list = {
-			100201,
-			311077,
-			311078,
-			311089
-		},
-		buff_list = {
-			{
-				ID = 50510,
-				LV = 1
-			}
-		}
-	},
-	[613] = {
-		cannon = 35,
-		antiaircraft_growth = 5148,
-		hit_growth = 210,
-		speed_growth = 0,
-		pilot_ai_template_id = 10001,
-		air = 50,
-		rarity = 5,
-		dodge = 6,
-		luck = 0,
-		id = 613,
-		cannon_growth = 0,
-		reload_growth = 0,
-		dodge_growth = 90,
-		reload = 150,
-		star = 6,
-		hit = 14,
-		antisub_growth = 0,
-		air_growth = 2000,
-		fog_fx = "",
-		base = 90239,
-		durability = 800,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		speed = 18,
-		armor = 0,
-		torpedo = 0,
-		durability_growth = 36000,
-		antisub = 0,
-		antiaircraft = 62,
-		battle_unit_type = 70,
-		smoke = {
-			{
-				70,
-				{
-					{
-						"smoke",
-						{
-							-1.39,
-							1,
-							-0.21
-						}
-					}
-				}
-			},
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							1.326,
-							1.256,
-							-0.046
-						}
-					}
-				}
-			},
-			{
-				40,
-				{
-					{
-						"smoke",
-						{
-							-0.487,
-							2,
-							-0.16
-						}
-					}
-				}
-			}
-		},
-		appear_fx = {
-			"bossguangxiao",
-			"appearQ"
-		},
-		hp_bar = {
-			200,
-			4
-		},
-		equipment_list = {
-			100201,
-			311079,
-			311081,
-			311082,
-			311083,
-			311090
-		}
-	},
-	[614] = {
-		cannon = 35,
-		battle_unit_type = 70,
-		fog_fx = "",
-		speed_growth = 0,
-		pilot_ai_template_id = 10001,
-		air = 50,
-		speed = 18,
-		dodge = 6,
-		id = 614,
-		cannon_growth = 0,
-		rarity = 5,
-		reload_growth = 0,
-		dodge_growth = 90,
-		armor = 0,
-		star = 6,
-		hit = 14,
-		antisub_growth = 0,
-		air_growth = 2000,
-		reload = 150,
-		base = 90240,
-		durability = 800,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		hit_growth = 210,
-		luck = 0,
-		torpedo = 0,
-		durability_growth = 36000,
-		antisub = 0,
-		antiaircraft = 62,
-		antiaircraft_growth = 5148,
-		appear_fx = {
-			"bossguangxiao",
-			"appearQ"
-		},
-		equipment_list = {
-			100201,
-			311084,
-			311086,
-			311087,
-			311088,
-			311091
-		}
-	},
-	[621] = {
-		cannon = 300,
-		battle_unit_type = 60,
-		fog_fx = "",
-		speed_growth = 0,
-		pilot_ai_template_id = 10001,
-		air = 0,
+		hit_growth = 0,
 		speed = 15,
-		dodge = 9,
-		id = 621,
-		cannon_growth = 4117,
-		rarity = 3,
-		reload_growth = 0,
-		dodge_growth = 126,
-		armor = 0,
-		star = 4,
-		hit = 14,
-		antisub_growth = 0,
-		air_growth = 0,
-		reload = 150,
-		base = 90201,
-		durability = 900,
-		armor_growth = 0,
-		torpedo_growth = 3419,
-		luck_growth = 0,
-		hit_growth = 210,
 		luck = 0,
-		torpedo = 226,
-		durability_growth = 32000,
 		antisub = 0,
-		antiaircraft = 27,
-		antiaircraft_growth = 3520,
-		appear_fx = {
-			"bossguangxiao",
-			"appearQ"
+		scale = 180,
+		wave_fx = "",
+		prefab = "chongying_m_quzhu",
+		cannon_growth = 0,
+		pilot_ai_template_id = 20005,
+		reload = 150,
+		dodge = 0,
+		reload_growth = 0,
+		hit = 0,
+		nationality = 95,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		armor_type = 1,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
 		},
-		equipment_list = {
-			100201,
-			312044,
-			312045,
-			312046,
-			312047
-		}
+		prefab_offset = {
+			0,
+			0,
+			0
+		},
+		cld_box = {
+			13,
+			7.5,
+			8
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.35,
+					1.02,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.35,
+					1.02,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.06,
+					0.15,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.35,
+					1.02,
+					0
+				}
+			}
+		},
+		smoke = {},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		specific_fx_scale = {},
+		appear_fx = {
+			"appearsmall"
+		},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			200,
+			3
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
+	},
+	[90976] = {
+		cannon = 0,
+		name = "Spawn of Corruption - Neko",
+		type = 2,
+		speed_growth = 0,
+		air_growth = 0,
+		air = 0,
+		battle_unit_type = 49,
+		durability = 99999,
+		armor = 0,
+		friendly_cld = 0,
+		id = 90976,
+		bubble_fx = "",
+		dodge_growth = 0,
+		icon = "chongying_m_qingxun",
+		star = 0,
+		fog_fx = "",
+		antisub_growth = 0,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 0,
+		icon_type = 2,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		hit_growth = 0,
+		speed = 15,
+		luck = 0,
+		antisub = 0,
+		scale = 180,
+		wave_fx = "",
+		prefab = "chongying_m_qingxun",
+		cannon_growth = 0,
+		pilot_ai_template_id = 20005,
+		reload = 150,
+		dodge = 0,
+		reload_growth = 0,
+		hit = 0,
+		nationality = 95,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		armor_type = 1,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		prefab_offset = {
+			0,
+			0,
+			0
+		},
+		cld_box = {
+			13,
+			7.5,
+			8
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					2.07,
+					1.24,
+					0
+				}
+			},
+			vicegun = {
+				{
+					2.07,
+					1.24,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.13,
+					0.14,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					2.07,
+					1.24,
+					0
+				}
+			}
+		},
+		smoke = {},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		specific_fx_scale = {},
+		appear_fx = {
+			"appearsmall"
+		},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			200,
+			4
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
+	},
+	[90977] = {
+		cannon = 0,
+		name = "Spawn of Corruption - Oni",
+		type = 3,
+		speed_growth = 0,
+		air_growth = 0,
+		air = 0,
+		battle_unit_type = 49,
+		durability = 99999,
+		armor = 0,
+		friendly_cld = 1,
+		id = 90977,
+		bubble_fx = "",
+		dodge_growth = 0,
+		icon = "chongying_m_zhongxun",
+		star = 0,
+		fog_fx = "",
+		antisub_growth = 0,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 0,
+		icon_type = 3,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		hit_growth = 0,
+		speed = 15,
+		luck = 0,
+		antisub = 0,
+		scale = 200,
+		wave_fx = "",
+		prefab = "chongying_m_zhongxun",
+		cannon_growth = 0,
+		pilot_ai_template_id = 20004,
+		reload = 150,
+		dodge = 0,
+		reload_growth = 0,
+		hit = 0,
+		nationality = 95,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		armor_type = 2,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		prefab_offset = {
+			0,
+			0,
+			0
+		},
+		cld_box = {
+			15,
+			7.5,
+			9
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1,
+					1,
+					0
+				}
+			},
+			vicegun = {
+				{
+					2.91,
+					2,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.85,
+					0.15,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.21,
+					2,
+					0
+				}
+			}
+		},
+		smoke = {},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		specific_fx_scale = {},
+		appear_fx = {
+			"appearsmall"
+		},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			200,
+			5
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
+	},
+	[90978] = {
+		cannon = 0,
+		name = "Spawn of Corruption - Kitsune",
+		type = 5,
+		speed_growth = 0,
+		air_growth = 0,
+		air = 0,
+		battle_unit_type = 49,
+		durability = 99999,
+		armor = 0,
+		friendly_cld = 1,
+		id = 90978,
+		bubble_fx = "",
+		dodge_growth = 0,
+		icon = "chongying_m_zhanlie",
+		star = 0,
+		fog_fx = "",
+		antisub_growth = 0,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 0,
+		icon_type = 5,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		hit_growth = 0,
+		speed = 15,
+		luck = 0,
+		antisub = 0,
+		scale = 230,
+		wave_fx = "",
+		prefab = "chongying_m_zhanlie",
+		cannon_growth = 0,
+		pilot_ai_template_id = 20004,
+		reload = 150,
+		dodge = 0,
+		reload_growth = 0,
+		hit = 0,
+		nationality = 95,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		armor_type = 3,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		prefab_offset = {
+			0,
+			0,
+			0
+		},
+		cld_box = {
+			18.7,
+			7.5,
+			9
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.188,
+					0.917,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.694,
+					0.853,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.088,
+					0.917,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.096,
+					3.156,
+					0
+				}
+			}
+		},
+		smoke = {},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		specific_fx_scale = {},
+		appear_fx = {
+			"appearsmall"
+		},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			200,
+			5.5
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
+	},
+	[90979] = {
+		cannon = 0,
+		name = "Spawn of Corruption - Ootori",
+		type = 7,
+		speed_growth = 0,
+		air_growth = 0,
+		air = 0,
+		battle_unit_type = 49,
+		durability = 99999,
+		armor = 0,
+		friendly_cld = 1,
+		id = 90979,
+		bubble_fx = "",
+		dodge_growth = 0,
+		icon = "chongying_m_hangmu",
+		star = 0,
+		fog_fx = "",
+		antisub_growth = 0,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 0,
+		icon_type = 7,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		hit_growth = 0,
+		speed = 15,
+		luck = 0,
+		antisub = 0,
+		scale = 260,
+		wave_fx = "",
+		prefab = "chongying_m_hangmu",
+		cannon_growth = 0,
+		pilot_ai_template_id = 20004,
+		reload = 150,
+		dodge = 0,
+		reload_growth = 0,
+		hit = 0,
+		nationality = 95,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		armor_type = 2,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		prefab_offset = {
+			0,
+			0,
+			0
+		},
+		cld_box = {
+			18.7,
+			7.5,
+			9
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.2,
+					1.08,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.07,
+					0.1,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.51,
+					2.88,
+					0
+				}
+			},
+			plane = {
+				{
+					2.08,
+					3.91,
+					0
+				}
+			}
+		},
+		smoke = {},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		specific_fx_scale = {},
+		appear_fx = {
+			"appearsmall"
+		},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			200,
+			6
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
 	}
 }

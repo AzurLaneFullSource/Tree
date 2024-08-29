@@ -1,4 +1,7 @@
 local var0_0 = class("SubmitActiveTaskCommand", pm.SimpleCommand)
+local var1_0 = {
+	59599
+}
 
 function var0_0.execute(arg0_1, arg1_1)
 	local var0_1 = arg1_1:getBody() or {}
@@ -80,7 +83,7 @@ function var0_0.submitActivity(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4)
 					awards = var0_5
 				})
 			elseif table.contains(TotalTaskProxy.activity_task_type, arg3_4) then
-				local var7_5 = PlayerConst.addTranDrop(arg0_5.award_list, {})
+				var0_5 = PlayerConst.addTranDrop(arg0_5.award_list, {})
 
 				for iter2_5, iter3_5 in ipairs(arg2_4) do
 					arg0_4:updateTaskActivityData(iter3_5.id, arg1_4.act_id)
@@ -89,19 +92,31 @@ function var0_0.submitActivity(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4)
 				end
 
 				arg0_4:sendNotification(GAME.SUBMIT_ACTIVITY_TASK_DONE, {
-					awards = var7_5
-				})
+					awards = var0_5
+				}, arg1_4.task_ids)
 			elseif table.contains(TotalTaskProxy.normal_task_type, arg3_4) then
-				local var8_5 = PlayerConst.addTranDrop(arg0_5.award_list, {})
+				var0_5 = PlayerConst.addTranDrop(arg0_5.award_list, {})
 
-				for iter4_5, iter5_5 in ipairs(arg2_4) do
-					arg0_4:updateTaskBagData(iter5_5.id, arg1_4.act_id)
-					SubmitTaskCommand.OnSubmitSuccess(iter5_5)
+				for iter4_5 = #var0_5, 1, -1 do
+					if table.contains(var1_0, var0_5[iter4_5].id) then
+						table.remove(var0_5, iter4_5)
+					end
+				end
+
+				for iter5_5, iter6_5 in ipairs(arg2_4) do
+					arg0_4:updateTaskBagData(iter6_5.id, arg1_4.act_id)
+					SubmitTaskCommand.OnSubmitSuccess(iter6_5)
 				end
 
 				arg0_4:sendNotification(GAME.SUBMIT_ACTIVITY_TASK_DONE, {
-					awards = var8_5
-				})
+					awards = var0_5
+				}, arg1_4.task_ids)
+			end
+
+			if var0_5 and #var0_5 >= 0 then
+				arg0_4:sendNotification(GAME.SUBMIT_TASK_AWARD_DOWN, {
+					awards = var0_5
+				}, arg1_4.task_ids)
 			end
 
 			if arg4_4 then
@@ -135,7 +150,7 @@ function var0_0.updateTaskActivityData(arg0_6, arg1_6, arg2_6)
 	end
 end
 
-local var1_0 = {
+local var2_0 = {
 	{
 		6,
 		1006
@@ -155,7 +170,7 @@ function var0_0.updateTaskBagData(arg0_7, arg1_7, arg2_7)
 	local var5_7 = var0_7.sub_type
 
 	if pg.activity_drop_type[var1_7] then
-		for iter0_7, iter1_7 in ipairs(var1_0) do
+		for iter0_7, iter1_7 in ipairs(var2_0) do
 			if var4_7 == iter1_7[1] and var5_7 == iter1_7[2] then
 				local var6_7 = pg.activity_drop_type[var1_7].activity_id
 				local var7_7 = getProxy(ActivityProxy):getActivityById(var6_7)

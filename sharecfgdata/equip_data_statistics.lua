@@ -117546,6 +117546,56 @@ _G.pg.base.equip_data_statistics[61102] = {
 	skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[61103] = {
+	ammo = 10,
+	descrip = "Aircraft Carrier Airstrike",
+	icon = "1",
+	id = 61103,
+	name = "航空攻击展示-瑞凤I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 99,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61103,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[61104] = {
+	base = 61103,
+	id = 61104,
+	name = "航空攻击展示-瑞凤II",
+	weapon_id = {
+		61104,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[61105] = {
+	base = 61103,
+	id = 61105,
+	name = "航空攻击展示-瑞凤III",
+	weapon_id = {
+		61105,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[61501] = {
 	ammo = 10,
 	descrip = "Used during airstrikes",

@@ -18,7 +18,7 @@ function var0_0.preload(arg0_3, arg1_3)
 
 	seriesAsync({
 		function(arg0_4)
-			buildTempAB("ui/LoginUI2_atlas", function(arg0_5)
+			AssetBundleHelper.loadAssetBundleAsync("ui/LoginUI2_atlas", function(arg0_5)
 				table.insert(arg0_3.iconSpries, arg0_5:LoadAssetSync("statu_green", typeof(Sprite), true, false))
 				table.insert(arg0_3.iconSpries, arg0_5:LoadAssetSync("statu_gray", typeof(Sprite), true, false))
 				table.insert(arg0_3.iconSpries, arg0_5:LoadAssetSync("statu_red", typeof(Sprite), true, false))

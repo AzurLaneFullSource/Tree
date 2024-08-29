@@ -31,6 +31,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.acceptTime = arg1_1.accept_time
 	arg0_1.submitTime = arg1_1.submit_time or 0
 	arg0_1._actId = nil
+	arg0_1._autoSubmit = false
 end
 
 function var0_0.isClientTrigger(arg0_2)
@@ -402,20 +403,34 @@ function var0_0.ShowOnTaskScene(arg0_35)
 	return var0_35
 end
 
-function var0_0.isAvatarTask(arg0_36)
+function var0_0.setTaskFinish(arg0_36)
+	arg0_36.submitTime = 1
+
+	arg0_36:updateProgress(arg0_36:getConfig("target_num"))
+end
+
+function var0_0.isAvatarTask(arg0_37)
 	return false
 end
 
-function var0_0.getActId(arg0_37)
-	return arg0_37._actId
+function var0_0.getActId(arg0_38)
+	return arg0_38._actId
 end
 
-function var0_0.setActId(arg0_38, arg1_38)
-	arg0_38._actId = arg1_38
+function var0_0.setActId(arg0_39, arg1_39)
+	arg0_39._actId = arg1_39
 end
 
-function var0_0.isActivityTask(arg0_39)
-	return arg0_39._actId and arg0_39._actId > 0
+function var0_0.isActivityTask(arg0_40)
+	return arg0_40._actId and arg0_40._actId > 0
+end
+
+function var0_0.setAutoSubmit(arg0_41, arg1_41)
+	arg0_41._autoSubmit = arg1_41
+end
+
+function var0_0.getAutoSubmit(arg0_42)
+	return arg0_42._autoSubmit
 end
 
 return var0_0

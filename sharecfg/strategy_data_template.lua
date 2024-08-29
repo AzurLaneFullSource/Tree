@@ -270,7 +270,12 @@ pg.strategy_data_template = setmetatable({
 		200984,
 		200987,
 		200990,
-		200999
+		200999,
+		201021,
+		201022,
+		201024,
+		201027,
+		201029
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -3275,6 +3280,61 @@ pg.base.strategy_data_template = {
 		icon = "200908",
 		buff_type = 0,
 		desc = "The battle will initiate in challenge mode if a ship in your fleet has the Fargo Direct Drone equipped when the battle starts. This will increase the difficulty, but also increase the score you gain upon completion.\n\n- Challenge Mode Details -\n· Enemies deal significantly more DMG. Their shells ignore shields and penetrate through targets.\n· If the enemy's HP is above a set value, Dongyu Arsenal Ships will appear on the left side of the screen and support your fleet. The Dongyus have their own HP bars and provide potent supporting fire, but they are especially vulnerable to certain enemy barrages.",
+		arg = {}
+	},
+	[201021] = {
+		buff_id = 201021,
+		name = "Shrouded Crimson Realm",
+		iconSize = "",
+		type = 10,
+		id = 201021,
+		icon = "201021",
+		buff_type = 0,
+		desc = "\"Soon, my dear sister, we will reunite.\" \nWhen the battle starts, for 15s, decreases all your ships' RLD by 5% and increases the enemy's RLD by 10%.",
+		arg = {}
+	},
+	[201022] = {
+		buff_id = 0,
+		name = "Shrouded Crimson Realm",
+		iconSize = "",
+		type = 10,
+		id = 201022,
+		icon = "201021",
+		buff_type = 0,
+		desc = "\"Soon, my dear sister, we will reunite.\" \nWhen the battle starts, for 15s, decreases all your ships' RLD by 5% and increases the enemy's RLD by 10%.",
+		arg = {}
+	},
+	[201024] = {
+		buff_id = 201024,
+		name = "Musashi's Thunder",
+		iconSize = "",
+		type = 10,
+		id = 201024,
+		icon = "200070",
+		buff_type = 0,
+		desc = "\"Thunderhead on lake's reflection, by my heavenly blade, unleash thy lightning.\"\nDuring battle, supporting barrages that inflict DMG proportional to the enemy's max HP will appear.",
+		arg = {}
+	},
+	[201027] = {
+		buff_id = 201027,
+		name = "Mikasa's Resolve",
+		iconSize = "",
+		type = 10,
+		id = 201027,
+		icon = "200057",
+		buff_type = 0,
+		desc = "\"I am the final line of defense! This is as close as you'll get!\" \nIncreases your ship's ACC and EVA by 5%. Supporting barrages will appear at regular intervals.",
+		arg = {}
+	},
+	[201029] = {
+		buff_id = 201029,
+		name = "Kaga's Duty",
+		iconSize = "",
+		type = 10,
+		id = 201029,
+		icon = "201029",
+		buff_type = 0,
+		desc = "\"Even if it means dooming myself to hell, I will protect you to the bitter end.\"\nSupporting barrages will appear at regular intervals. The effects of the Shrouded Crimson Realm modifier are negated.",
 		arg = {}
 	}
 }

@@ -1,6 +1,230 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_14 = {
+	[506019] = {
+		ship_group = 50601,
+		name = "Chen Hai (Retrofit)",
+		hand_id = 9,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 9,
+		shop_id = 0,
+		painting = "zhenhai_g",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9997,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 2,
+		id = 506019,
+		voice_actor_2 = -1,
+		prefab = "zhenhai_g",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Just as promised, I present myself before you in a brand new form. Heehee... Since we have plenty of time, why don't you come take a seat, enjoy the fragrance of tea with me, and envision our future?",
+		voice_actor = 56,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.26,
+					1.52,
+					0
+				}
+			},
+			plane = {
+				{
+					1.24,
+					1.54,
+					0
+				}
+			},
+			cannon = {
+				{
+					1.49,
+					1.11,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.34,
+					1.11,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.26,
+							2.36,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[506020] = {
+		ship_group = 50602,
+		name = "Hwah Jah",
+		hand_id = 9,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "huajia",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 506020,
+		voice_actor_2 = -1,
+		prefab = "huajia",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Seaplane carrier – Hwah Jah.",
+		voice_actor = 354,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.25,
+					1.37,
+					0
+				}
+			},
+			plane = {
+				{
+					1.06,
+					1.24,
+					0
+				}
+			},
+			cannon = {
+				{
+					1.35,
+					1.11,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.34,
+					1.11,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.36,
+							2.36,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[506021] = {
 		ship_group = 50602,
 		name = "The Festive Undead",
@@ -12474,232 +12698,6 @@ pg.base.ship_skin_template_14 = {
 						{
 							-0.441,
 							2.327,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[702034] = {
-		ship_group = 70203,
-		name = "Melody of the White Cavalier",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 4,
-		shop_id = 70860,
-		painting = "qiabayefu_5",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 7,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "159",
-		spine_use_live2d = 0,
-		spine_action_offset = "",
-		skin_type = 0,
-		id = 702034,
-		voice_actor_2 = -1,
-		prefab = "qiabayefu_5",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Why are you here... Oh, that was rude of me to ask. Maybe you just wanted a change of scenery, or you were drawn by the music. Or maybe my feelings have reached you... I think I like the sound of that one the most. Hehehe.",
-		voice_actor = 223,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.076,
-					1.138,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.005,
-					1,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.001,
-					1,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.441,
-							2.327,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[702040] = {
-		ship_group = 70204,
-		name = "Kirov",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "jiluofu",
-		illustrator = 1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 702040,
-		voice_actor_2 = -1,
-		prefab = "jiluofu",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Kirov-Class cruiser—Kirov",
-		voice_actor = 28,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					2.009,
-					1.338,
-					0
-				}
-			},
-			vicegun = {
-				{
-					2.005,
-					1.364,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					2,
-					1.326,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.526,
-							2.357,
 							0
 						}
 					}

@@ -102,7 +102,7 @@ function var0_0.timeCall(arg0_12)
 	}
 end
 
-function var0_0.initTaskInfo(arg0_14, arg1_14, arg2_14)
+function var0_0.initTaskInfo(arg0_14, arg1_14, arg2_14, arg3_14)
 	for iter0_14, iter1_14 in ipairs(arg1_14) do
 		local var0_14 = Task.New(iter1_14)
 
@@ -121,13 +121,31 @@ function var0_0.initTaskInfo(arg0_14, arg1_14, arg2_14)
 			Debugger.LogWarning("Missing Task Config, id :" .. tostring(iter1_14.id))
 		end
 	end
+
+	if arg3_14 and #arg3_14 > 0 then
+		for iter2_14, iter3_14 in ipairs(arg3_14) do
+			local var1_14 = Task.New({
+				id = iter3_14
+			})
+
+			if var1_14:getConfigTable() ~= nil then
+				var1_14:display("loaded")
+
+				arg0_14.finishData[var1_14.id] = var1_14
+
+				var1_14:setActId(arg2_14)
+				var1_14:setTaskFinish()
+			else
+				pg.TipsMgr.GetInstance():ShowTips(i18n("task_notfound_error") .. tostring(iter3_14.id))
+				Debugger.LogWarning("Missing Task Config, id :" .. tostring(iter3_14.id))
+			end
+		end
+	end
 end
 
 function var0_0.updateProgress(arg0_15, arg1_15)
 	for iter0_15, iter1_15 in ipairs(arg1_15) do
 		local var0_15 = arg0_15.data[iter1_15.id]
-
-		print("任务id" .. iter1_15.id .. "更新")
 
 		if var0_15 ~= nil then
 			local var1_15 = var0_15:isFinish()
@@ -143,8 +161,8 @@ function var0_0.updateProgress(arg0_15, arg1_15)
 	end
 end
 
-function var0_0.initActData(arg0_16, arg1_16, arg2_16)
-	arg0_16:initTaskInfo(arg2_16, arg1_16)
+function var0_0.initActData(arg0_16, arg1_16, arg2_16, arg3_16)
+	arg0_16:initTaskInfo(arg2_16, arg1_16, arg3_16)
 end
 
 function var0_0.updateActProgress(arg0_17, arg1_17, arg2_17)
@@ -483,7 +501,8 @@ function var0_0.pushAutoSubmitTask(arg0_44)
 end
 
 function var0_0.checkAutoSubmitTask(arg0_45, arg1_45)
-	if arg1_45:getConfig("auto_commit") == 1 and arg1_45:isFinish() then
+	if arg1_45:getConfig("auto_commit") == 1 and arg1_45:isFinish() and not arg1_45:getAutoSubmit() then
+		arg1_45:setAutoSubmit(true)
 		arg0_45:sendNotification(GAME.SUBMIT_TASK, arg1_45.id)
 	end
 end

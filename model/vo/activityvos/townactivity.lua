@@ -364,6 +364,7 @@ function var0_0.subVitemNumber(arg0_37, arg1_37, arg2_37)
 	assert(pg.item_virtual_data_statistics[arg1_37].link_id == arg0_37.id)
 
 	arg0_37.settleGold = math.max(0, arg0_37.settleGold - arg2_37)
+	arg0_37.totalGold = arg0_37.settleGold
 end
 
 function var0_0.addVitemNumber(arg0_38, arg1_38, arg2_38)

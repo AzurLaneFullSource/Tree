@@ -19,7 +19,7 @@ function var0_0.Ctor(arg0_1)
 	arg0_1.singleIndex = 0
 	arg0_1.paintingCount = 0
 	arg0_1.commanderPaintingCount = 0
-	arg0_1.preloads = {
+	arg0_1.preloadSprites = {
 		shiptype = {
 			"battle_hangmu",
 			"battle_qingxun",
@@ -113,10 +113,20 @@ function var0_0.Ctor(arg0_1)
 			"express_2",
 			"express_3",
 			"express_4"
-		},
-		shipstatus = {},
-		channel = {},
-		["painting/mat"] = {}
+		}
+	}
+	arg0_1.preloadAbs = {
+		"shipstatus",
+		"channel",
+		"painting/mat",
+		"ui/commonui_atlas",
+		"skinicon",
+		"attricon",
+		"artresource/effect/chuanwukuang/duang_6_mask",
+		"artresource/effect/communicationjamming/line5",
+		"artresource/effect/communicationjamming/line6",
+		"artresource/effect/wupinkuang/iconcolorfulmask",
+		"artresource/effect/wupinkuang/iconcolorfulwave01"
 	}
 	arg0_1.ui_tempCache = {}
 end
@@ -125,7 +135,7 @@ function var0_0.Init(arg0_2, arg1_2)
 	print("initializing pool manager...")
 
 	local var0_2 = 0
-	local var1_2 = table.getCount(arg0_2.preloads)
+	local var1_2 = table.getCount(arg0_2.preloadSprites) + #arg0_2.preloadAbs
 
 	local function var2_2()
 		var0_2 = var0_2 + 1
@@ -135,7 +145,7 @@ function var0_0.Init(arg0_2, arg1_2)
 		end
 	end
 
-	for iter0_2, iter1_2 in pairs(arg0_2.preloads) do
+	for iter0_2, iter1_2 in pairs(arg0_2.preloadSprites) do
 		if #iter1_2 > 0 then
 			local var3_2 = typeof(Sprite)
 			local var4_2 = false
@@ -144,7 +154,7 @@ function var0_0.Init(arg0_2, arg1_2)
 				return
 			end
 
-			buildTempAB(iter0_2, function(arg0_5)
+			AssetBundleHelper.loadAssetBundleAsync(iter0_2, function(arg0_5)
 				for iter0_5, iter1_5 in ipairs(iter1_2) do
 					local var0_5 = arg0_5:LoadAssetSync(iter1_5, var3_2, var4_2, false)
 					local var1_5 = iter0_2
@@ -167,11 +177,13 @@ function var0_0.Init(arg0_2, arg1_2)
 
 				var2_2()
 			end)
-		else
-			buildTempAB(iter0_2, function(arg0_6)
-				var2_2()
-			end)
 		end
+	end
+
+	for iter2_2, iter3_2 in ipairs(arg0_2.preloadAbs) do
+		AssetBundleHelper.loadAssetBundleAsync(iter3_2, function(arg0_6)
+			var2_2()
+		end)
 	end
 end
 
@@ -606,7 +618,7 @@ function var0_0.DestroyAllSprite(arg0_44)
 	local var1_44 = typeof(Sprite)
 
 	for iter0_44, iter1_44 in pairs(arg0_44.pools_pack) do
-		if iter1_44.type == var1_44 and not arg0_44.preloads[iter0_44] then
+		if iter1_44.type == var1_44 and not arg0_44.preloadSprites[iter0_44] then
 			var0_44[iter0_44] = iter1_44
 		end
 	end

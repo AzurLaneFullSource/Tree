@@ -197,6 +197,7 @@ pg.furniture_data_template = setmetatable({
 			100051,
 			100052,
 			100053,
+			100054,
 			100064,
 			200001,
 			200002,
@@ -3329,6 +3330,7 @@ pg.furniture_data_template = setmetatable({
 			100051,
 			100052,
 			100053,
+			100054,
 			100064,
 			31101,
 			54104,
@@ -6351,7 +6353,8 @@ pg.furniture_data_template = setmetatable({
 			100050,
 			100051,
 			100052,
-			100053
+			100053,
+			100054
 		},
 		[2] = {
 			120,
@@ -9404,6 +9407,7 @@ pg.furniture_data_template = setmetatable({
 		100051,
 		100052,
 		100053,
+		100054,
 		100064,
 		200001,
 		200002,
@@ -22984,6 +22988,98 @@ pg.base.furniture_data_template = {
 				"char2",
 				1
 			}
+		},
+		interAction_group = {}
+	},
+	[100054] = {
+		effect = "",
+		name = "Magic Bread",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "How does the dough rise? It's a yeast-ery...",
+		is_3d_obj = 0,
+		advice = 0,
+		themeId = 0,
+		icon = "mofamianbaoicon",
+		deblocking = 1,
+		level = 1,
+		tag = 6,
+		rarity = 4,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 100054,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"mofamianbaoB",
+				"normal"
+			},
+			{
+				"mofamianbaoT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"stand2"
+					},
+					{
+						"yun"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		spine_extra = {
+			{
+				{},
+				{
+					0,
+					0
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		followBone = {
+			"char",
+			1
 		},
 		interAction_group = {}
 	},

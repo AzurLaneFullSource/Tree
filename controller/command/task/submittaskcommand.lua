@@ -120,6 +120,11 @@ function var0_0.execute(arg0_1, arg1_1)
 				pg.m02:sendNotification(GAME.SUBMIT_TASK_DONE, var0_6, {
 					var9_1.id
 				})
+				pg.m02:sendNotification(GAME.SUBMIT_TASK_AWARD_DOWN, {
+					awards = var0_6
+				}, {
+					var9_1.id
+				})
 			else
 				pg.TipsMgr.GetInstance():ShowTips(errorTip("task_submitTask", arg0_6.result))
 

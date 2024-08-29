@@ -1226,7 +1226,7 @@ function var0_0.updateActivityBtns(arg0_80)
 		setActive(arg0_80.actEliteBtn, var11_80 and var5_80 ~= Map.ACTIVITY_HARD)
 		setActive(arg0_80.actNormalBtn, var5_80 ~= Map.ACTIVITY_EASY)
 		setActive(arg0_80.actExtraRank, var5_80 == Map.ACT_EXTRA)
-		setActive(arg0_80.actExchangeShopBtn, not ActivityConst.HIDE_PT_PANELS and not var2_80 and var1_80)
+		setActive(arg0_80.actExchangeShopBtn, not ActivityConst.HIDE_PT_PANELS and not var2_80 and var1_80 and arg0_80:IsActShopActive())
 		setActive(arg0_80.ptTotal, not ActivityConst.HIDE_PT_PANELS and not var2_80 and var1_80 and arg0_80.ptActivity and not arg0_80.ptActivity:isEnd())
 		arg0_80:updateActivityRes()
 	else
@@ -3603,96 +3603,111 @@ function var0_0.RecordLastMapOnExit(arg0_300)
 	end
 end
 
-function var0_0.willExit(arg0_301)
-	arg0_301:ClearMapTransitions()
-	arg0_301.loader:Clear()
+function var0_0.IsActShopActive(arg0_301)
+	local var0_301 = pg.gameset.activity_res_id.key_value
+	local var1_301 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
 
-	if arg0_301.contextData.chapterVO then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_301.topPanel, arg0_301._tf)
+	if var1_301 and not var1_301:isEnd() and var1_301:getConfig("config_client").resId == var0_301 then
+		return true
+	end
+
+	if _.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function(arg0_302)
+		return not arg0_302:isEnd() and arg0_302:getConfig("config_client").pt_id == var0_301
+	end) then
+		return true
+	end
+end
+
+function var0_0.willExit(arg0_303)
+	arg0_303:ClearMapTransitions()
+	arg0_303.loader:Clear()
+
+	if arg0_303.contextData.chapterVO then
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_303.topPanel, arg0_303._tf)
 		pg.playerResUI:SetActive({
 			active = false
 		})
 	end
 
-	if arg0_301.levelFleetView and arg0_301.levelFleetView.selectIds then
-		arg0_301.contextData.selectedFleetIDs = {}
+	if arg0_303.levelFleetView and arg0_303.levelFleetView.selectIds then
+		arg0_303.contextData.selectedFleetIDs = {}
 
-		for iter0_301, iter1_301 in pairs(arg0_301.levelFleetView.selectIds) do
-			for iter2_301, iter3_301 in pairs(iter1_301) do
-				arg0_301.contextData.selectedFleetIDs[#arg0_301.contextData.selectedFleetIDs + 1] = iter3_301
+		for iter0_303, iter1_303 in pairs(arg0_303.levelFleetView.selectIds) do
+			for iter2_303, iter3_303 in pairs(iter1_303) do
+				arg0_303.contextData.selectedFleetIDs[#arg0_303.contextData.selectedFleetIDs + 1] = iter3_303
 			end
 		end
 	end
 
-	arg0_301:destroyChapterPanel()
-	arg0_301:DestroyLevelInfoSPPanel()
-	arg0_301:destroyFleetEdit()
-	arg0_301:destroyCommanderPanel()
-	arg0_301:DestroyLevelStageView()
-	arg0_301:hideRepairWindow()
-	arg0_301:hideStrategyInfo()
-	arg0_301:hideRemasterPanel()
-	arg0_301:hideSpResult()
-	arg0_301:destroyGrid()
-	arg0_301:destroyAmbushWarn()
-	arg0_301:destroyAirStrike()
-	arg0_301:destroyTorpedo()
-	arg0_301:destroyStrikeAnim()
-	arg0_301:destroyTracking()
-	arg0_301:destroyUIAnims()
+	arg0_303:destroyChapterPanel()
+	arg0_303:DestroyLevelInfoSPPanel()
+	arg0_303:destroyFleetEdit()
+	arg0_303:destroyCommanderPanel()
+	arg0_303:DestroyLevelStageView()
+	arg0_303:hideRepairWindow()
+	arg0_303:hideStrategyInfo()
+	arg0_303:hideRemasterPanel()
+	arg0_303:hideSpResult()
+	arg0_303:destroyGrid()
+	arg0_303:destroyAmbushWarn()
+	arg0_303:destroyAirStrike()
+	arg0_303:destroyTorpedo()
+	arg0_303:destroyStrikeAnim()
+	arg0_303:destroyTracking()
+	arg0_303:destroyUIAnims()
 	PoolMgr.GetInstance():DestroyPrefab("chapter/cell_quad_mark", "")
 	PoolMgr.GetInstance():DestroyPrefab("chapter/cell_quad", "")
 	PoolMgr.GetInstance():DestroyPrefab("chapter/cell", "")
 	PoolMgr.GetInstance():DestroyPrefab("chapter/plane", "")
 
-	for iter4_301, iter5_301 in pairs(arg0_301.mbDict) do
-		iter5_301:Destroy()
+	for iter4_303, iter5_303 in pairs(arg0_303.mbDict) do
+		iter5_303:Destroy()
 	end
 
-	arg0_301.mbDict = nil
+	arg0_303.mbDict = nil
 
-	for iter6_301, iter7_301 in pairs(arg0_301.tweens) do
-		LeanTween.cancel(iter7_301)
+	for iter6_303, iter7_303 in pairs(arg0_303.tweens) do
+		LeanTween.cancel(iter7_303)
 	end
 
-	arg0_301.tweens = nil
+	arg0_303.tweens = nil
 
-	if arg0_301.cloudTimer then
-		_.each(arg0_301.cloudTimer, function(arg0_302)
-			LeanTween.cancel(arg0_302)
+	if arg0_303.cloudTimer then
+		_.each(arg0_303.cloudTimer, function(arg0_304)
+			LeanTween.cancel(arg0_304)
 		end)
 
-		arg0_301.cloudTimer = nil
+		arg0_303.cloudTimer = nil
 	end
 
-	if arg0_301.newChapterCDTimer then
-		arg0_301.newChapterCDTimer:Stop()
+	if arg0_303.newChapterCDTimer then
+		arg0_303.newChapterCDTimer:Stop()
 
-		arg0_301.newChapterCDTimer = nil
+		arg0_303.newChapterCDTimer = nil
 	end
 
-	for iter8_301, iter9_301 in ipairs(arg0_301.damageTextActive) do
-		LeanTween.cancel(iter9_301)
+	for iter8_303, iter9_303 in ipairs(arg0_303.damageTextActive) do
+		LeanTween.cancel(iter9_303)
 	end
 
-	LeanTween.cancel(go(arg0_301.avoidText))
+	LeanTween.cancel(go(arg0_303.avoidText))
 
-	arg0_301.map.localScale = Vector3.one
-	arg0_301.map.pivot = Vector2(0.5, 0.5)
-	arg0_301.float.localScale = Vector3.one
-	arg0_301.float.pivot = Vector2(0.5, 0.5)
+	arg0_303.map.localScale = Vector3.one
+	arg0_303.map.pivot = Vector2(0.5, 0.5)
+	arg0_303.float.localScale = Vector3.one
+	arg0_303.float.pivot = Vector2(0.5, 0.5)
 
-	for iter10_301, iter11_301 in ipairs(arg0_301.mapTFs) do
-		clearImageSprite(iter11_301)
+	for iter10_303, iter11_303 in ipairs(arg0_303.mapTFs) do
+		clearImageSprite(iter11_303)
 	end
 
-	_.each(arg0_301.cloudRTFs, function(arg0_303)
-		clearImageSprite(arg0_303)
+	_.each(arg0_303.cloudRTFs, function(arg0_305)
+		clearImageSprite(arg0_305)
 	end)
 	PoolMgr.GetInstance():DestroyAllSprite()
-	Destroy(arg0_301.enemyTpl)
-	arg0_301:RecordLastMapOnExit()
-	arg0_301.levelRemasterView:Destroy()
+	Destroy(arg0_303.enemyTpl)
+	arg0_303:RecordLastMapOnExit()
+	arg0_303.levelRemasterView:Destroy()
 end
 
 return var0_0

@@ -1,6 +1,234 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_16 = {
+	[901131] = {
+		ship_group = 90113,
+		name = "Little Red Riding Hood's Worries",
+		hand_id = 5,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70709,
+		painting = "buqu_2",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 19,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "158",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 901131,
+		voice_actor_2 = -1,
+		prefab = "buqu_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "What a farce, making a proud Templar Knight portray a helpless little girl... Why am I lying here, you ask? Hmph. Because Le Malin asserted this is the best way to get in touch with my \"vulnerable side\"...",
+		voice_actor = 325,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.511,
+					1.041,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.233,
+					0.994,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.054,
+					0.027,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.537,
+					1.095,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.499,
+							2.26,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[901132] = {
+		ship_group = 90113,
+		name = "Temp in Low Temperatures",
+		hand_id = 5,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 2,
+		shop_id = 70815,
+		painting = "buqu_3",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 3,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "165",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 901132,
+		voice_actor_2 = -1,
+		prefab = "buqu_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Hmm... Traveling by foot from here would be quickest. Ah... It's snowing. Hmph! A little snow and wind can scarcely faze a noble Templar Knight! I'll be back shortly!",
+		voice_actor = 325,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.91,
+					1.41,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.91,
+					1.35,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.054,
+					0.027,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.75,
+					1.39,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.499,
+							2.186,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[901140] = {
 		ship_group = 90114,
 		name = "L'Audacieux",
@@ -12749,209 +12977,6 @@ pg.base.ship_skin_template_16 = {
 						{
 							-0.346,
 							2.301,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900203] = {
-		ship_group = 900203,
-		name = "Gascogne μ",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "jiasikenie_idolns",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 900203,
-		voice_actor_2 = -1,
-		prefab = "jiasikenie_idol",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "No description",
-		voice_actor = 98,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.114,
-					0.924,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.02,
-					-0.02,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.135,
-					0.929,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.51,
-							2.33,
-							-0.16
-						}
-					}
-				}
-			}
-		}
-	},
-	[900204] = {
-		ship_group = 900204,
-		name = "Akagi μ",
-		hand_id = 2,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "chicheng_idolns",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 900204,
-		voice_actor_2 = -1,
-		prefab = "chicheng_idol",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "No description",
-		voice_actor = 44,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			antiaircraft = {
-				{
-					1.381,
-					1.021,
-					0
-				}
-			},
-			plane = {
-				{
-					1.362,
-					1.012,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.342,
-							2.332,
 							0
 						}
 					}

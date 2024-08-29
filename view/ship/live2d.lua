@@ -857,13 +857,7 @@ function var0_0.TriggerAction(arg0_49, arg1_49, arg2_49, arg3_49, arg4_49)
 	arg0_49.finishActionCB = arg2_49
 	arg0_49.animEventCB = arg4_49
 
-	local var0_49 = var11_0(arg0_49, arg1_49, arg3_49)
-
-	if arg0_49.animEventCB then
-		arg0_49.animEventCB(var0_49)
-
-		arg0_49.animEventCB = nil
-	end
+	return (var11_0(arg0_49, arg1_49, arg3_49))
 end
 
 function var0_0.Reset(arg0_50)

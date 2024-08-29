@@ -471,10 +471,10 @@ pg.item_data_frame = {
 	[331] = {
 		time_limit_type = 0,
 		name = "Resplendent Heart",
-		gain_by = "",
+		gain_by = "Windborne Steel Wings",
 		id = 331,
 		time_second = 0,
-		desc = "<color=#ffffff>A resplendent heart that never stops. A gale of iron blowing through the waves.</color> \nGiven to Commanders who participated in the Windborne Steel Wings event.",
+		desc = "<color=#ffffff>A resplendent heart that never stops. A gale of iron blowing through the waves.</color>\nGiven to Commanders who participated in the Windborne Steel Wings event.",
 		scene = {}
 	},
 	[406] = {

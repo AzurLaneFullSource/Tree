@@ -12,7 +12,7 @@ function var0_0.__call(arg0_1)
 			local var0_2 = arg0_1.path
 
 			xpcall(function()
-				buildTempAB(var0_2, function(arg0_4)
+				AssetBundleHelper.loadAssetBundleAsync(var0_2, function(arg0_4)
 					pg.UIMgr.GetInstance():LoadingOff()
 
 					if arg0_1.stopped then

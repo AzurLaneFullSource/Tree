@@ -14,7 +14,7 @@ return {
 			},
 			arg_list = {
 				attr = "cri",
-				number = 0.01
+				number = 0.1
 			}
 		},
 		{
@@ -24,7 +24,7 @@ return {
 			},
 			arg_list = {
 				attr = "criDamage",
-				number = 0.01
+				number = 0.1
 			}
 		}
 	},
@@ -37,7 +37,7 @@ return {
 				},
 				arg_list = {
 					attr = "cri",
-					number = 0.01
+					number = 0.1
 				}
 			},
 			{
@@ -47,31 +47,7 @@ return {
 				},
 				arg_list = {
 					attr = "criDamage",
-					number = 0.01
-				}
-			}
-		}
-	},
-	{
-		effect_list = {
-			{
-				type = "BattleBuffAddBulletAttr",
-				trigger = {
-					"onBulletCreate"
-				},
-				arg_list = {
-					attr = "cri",
-					number = 0.0111
-				}
-			},
-			{
-				type = "BattleBuffAddBulletAttr",
-				trigger = {
-					"onBulletCreate"
-				},
-				arg_list = {
-					attr = "criDamage",
-					number = 0.0111
+					number = 0.1
 				}
 			}
 		}
@@ -85,7 +61,7 @@ return {
 				},
 				arg_list = {
 					attr = "cri",
-					number = 0.0122
+					number = 0.111
 				}
 			},
 			{
@@ -95,7 +71,7 @@ return {
 				},
 				arg_list = {
 					attr = "criDamage",
-					number = 0.0122
+					number = 0.111
 				}
 			}
 		}
@@ -109,7 +85,7 @@ return {
 				},
 				arg_list = {
 					attr = "cri",
-					number = 0.0133
+					number = 0.122
 				}
 			},
 			{
@@ -119,7 +95,7 @@ return {
 				},
 				arg_list = {
 					attr = "criDamage",
-					number = 0.0133
+					number = 0.122
 				}
 			}
 		}
@@ -133,7 +109,7 @@ return {
 				},
 				arg_list = {
 					attr = "cri",
-					number = 0.0144
+					number = 0.133
 				}
 			},
 			{
@@ -143,7 +119,7 @@ return {
 				},
 				arg_list = {
 					attr = "criDamage",
-					number = 0.0144
+					number = 0.133
 				}
 			}
 		}
@@ -157,7 +133,7 @@ return {
 				},
 				arg_list = {
 					attr = "cri",
-					number = 0.0155
+					number = 0.144
 				}
 			},
 			{
@@ -167,7 +143,7 @@ return {
 				},
 				arg_list = {
 					attr = "criDamage",
-					number = 0.0155
+					number = 0.144
 				}
 			}
 		}
@@ -181,7 +157,7 @@ return {
 				},
 				arg_list = {
 					attr = "cri",
-					number = 0.0166
+					number = 0.155
 				}
 			},
 			{
@@ -191,7 +167,7 @@ return {
 				},
 				arg_list = {
 					attr = "criDamage",
-					number = 0.0166
+					number = 0.155
 				}
 			}
 		}
@@ -205,7 +181,7 @@ return {
 				},
 				arg_list = {
 					attr = "cri",
-					number = 0.0177
+					number = 0.166
 				}
 			},
 			{
@@ -215,7 +191,7 @@ return {
 				},
 				arg_list = {
 					attr = "criDamage",
-					number = 0.0177
+					number = 0.166
 				}
 			}
 		}
@@ -229,7 +205,7 @@ return {
 				},
 				arg_list = {
 					attr = "cri",
-					number = 0.0188
+					number = 0.177
 				}
 			},
 			{
@@ -239,7 +215,7 @@ return {
 				},
 				arg_list = {
 					attr = "criDamage",
-					number = 0.0188
+					number = 0.177
 				}
 			}
 		}
@@ -253,7 +229,7 @@ return {
 				},
 				arg_list = {
 					attr = "cri",
-					number = 0.02
+					number = 0.188
 				}
 			},
 			{
@@ -263,7 +239,31 @@ return {
 				},
 				arg_list = {
 					attr = "criDamage",
-					number = 0.02
+					number = 0.188
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddBulletAttr",
+				trigger = {
+					"onBulletCreate"
+				},
+				arg_list = {
+					attr = "cri",
+					number = 0.2
+				}
+			},
+			{
+				type = "BattleBuffAddBulletAttr",
+				trigger = {
+					"onBulletCreate"
+				},
+				arg_list = {
+					attr = "criDamage",
+					number = 0.2
 				}
 			}
 		}

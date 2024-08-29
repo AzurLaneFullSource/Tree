@@ -79,7 +79,7 @@ function var0_0.set(arg0_4, arg1_4, arg2_4)
 			return
 		end
 
-		if var3_4 ~= 1 then
+		if var3_4 ~= 1 or #var1_4 == 1 then
 			return
 		end
 
