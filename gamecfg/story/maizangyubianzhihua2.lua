@@ -935,10 +935,10 @@ return {
 		{
 			actor = 306040,
 			side = 2,
-			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_191",
 			hidePaintObj = true,
 			dir = 1,
-			blackBg = true,
+			nameColor = "#A9F548FF",
 			say = "Chirp! You actually got it on the first try!",
 			typewriter = {
 				speed = 0.05,
@@ -965,10 +965,10 @@ return {
 		{
 			actor = 307060,
 			side = 2,
-			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_191",
 			hidePaintObj = true,
 			dir = 1,
-			blackBg = true,
+			nameColor = "#A9F548FF",
 			say = "Shhh! Be quiet! And don't freak me out like that...",
 			typewriter = {
 				speed = 0.05,
@@ -983,11 +983,11 @@ return {
 		{
 			expression = 2,
 			side = 2,
-			actor = 306040,
+			bgName = "star_level_bg_191",
 			hidePaintObj = true,
 			dir = 1,
-			blackBg = true,
 			nameColor = "#A9F548FF",
+			actor = 306040,
 			say = "It's okay! They can't hear us from the inside.",
 			typewriter = {
 				speed = 0.05,
@@ -997,10 +997,10 @@ return {
 		{
 			actor = 306040,
 			side = 2,
-			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_191",
 			hidePaintObj = true,
 			dir = 1,
-			blackBg = true,
+			nameColor = "#A9F548FF",
 			say = "How'd your investigation go? Did you find anything?",
 			typewriter = {
 				speed = 0.05,
@@ -1010,10 +1010,10 @@ return {
 		{
 			actor = 307060,
 			side = 2,
-			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_191",
 			hidePaintObj = true,
 			dir = 1,
-			blackBg = true,
+			nameColor = "#A9F548FF",
 			say = "I found SOMETHING, but I can't talk about it here. Why? Are you leaving the mountain already?",
 			typewriter = {
 				speed = 0.05,
@@ -1023,10 +1023,10 @@ return {
 		{
 			actor = 306040,
 			side = 2,
-			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_191",
 			hidePaintObj = true,
 			dir = 1,
-			blackBg = true,
+			nameColor = "#A9F548FF",
 			say = "Yep! Shiranui said something came up so she couldn't play with me. Are you gonna stay?",
 			typewriter = {
 				speed = 0.05,
@@ -1036,10 +1036,10 @@ return {
 		{
 			actor = 307060,
 			side = 2,
-			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_191",
 			hidePaintObj = true,
 			dir = 1,
-			blackBg = true,
+			nameColor = "#A9F548FF",
 			say = "Nah, I think I'll leave as well. Let's go.",
 			typewriter = {
 				speed = 0.05,

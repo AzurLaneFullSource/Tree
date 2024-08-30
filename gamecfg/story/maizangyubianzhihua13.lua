@@ -1039,7 +1039,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 305050,
-			say = "{playername}.Our Commander.",
+			say = "{playername}. Our Commander.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
