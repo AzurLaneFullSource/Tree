@@ -2173,6 +2173,9 @@ pg.ship_data_group = setmetatable({
 		},
 		[970106] = {
 			30036
+		},
+		[970506] = {
+			30037
 		}
 	},
 	get_id_list_by_handbook_type = {
@@ -2906,7 +2909,8 @@ pg.ship_data_group = setmetatable({
 			30033,
 			30034,
 			30035,
-			30036
+			30036,
+			30037
 		}
 	},
 	all = {
@@ -3633,7 +3637,8 @@ pg.ship_data_group = setmetatable({
 		30033,
 		30034,
 		30035,
-		30036
+		30036,
+		30037
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -33861,6 +33866,41 @@ pg.base.ship_data_group = {
 					"METACHARACTER",
 					{
 						autoOpenShipConfigID = 9701061
+					}
+				},
+				0
+			}
+		}
+	},
+	[30037] = {
+		type = 5,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 97,
+		trans_skin = 0,
+		handbook_type = 3,
+		index_id = 30037,
+		code = 30037,
+		group_type = 970506,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"S",
+			"E",
+			"E",
+			"D",
+			"D",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"META Lab - Coordinate Analysis",
+				{
+					"METACHARACTER",
+					{
+						autoOpenShipConfigID = 9705061
 					}
 				},
 				0

@@ -1,0 +1,172 @@
+return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onTorpedoWeaponBulletCreate"
+			},
+			arg_list = {
+				attr = "criDamage",
+				number = 0.1
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddBulletAttr",
+				trigger = {
+					"onTorpedoWeaponBulletCreate"
+				},
+				arg_list = {
+					attr = "criDamage",
+					number = 0.1
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddBulletAttr",
+				trigger = {
+					"onTorpedoWeaponBulletCreate"
+				},
+				arg_list = {
+					attr = "criDamage",
+					number = 0.111
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddBulletAttr",
+				trigger = {
+					"onTorpedoWeaponBulletCreate"
+				},
+				arg_list = {
+					attr = "criDamage",
+					number = 0.122
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddBulletAttr",
+				trigger = {
+					"onTorpedoWeaponBulletCreate"
+				},
+				arg_list = {
+					attr = "criDamage",
+					number = 0.133
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddBulletAttr",
+				trigger = {
+					"onTorpedoWeaponBulletCreate"
+				},
+				arg_list = {
+					attr = "criDamage",
+					number = 0.144
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddBulletAttr",
+				trigger = {
+					"onTorpedoWeaponBulletCreate"
+				},
+				arg_list = {
+					attr = "criDamage",
+					number = 0.155
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddBulletAttr",
+				trigger = {
+					"onTorpedoWeaponBulletCreate"
+				},
+				arg_list = {
+					attr = "criDamage",
+					number = 0.166
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddBulletAttr",
+				trigger = {
+					"onTorpedoWeaponBulletCreate"
+				},
+				arg_list = {
+					attr = "criDamage",
+					number = 0.177
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddBulletAttr",
+				trigger = {
+					"onTorpedoWeaponBulletCreate"
+				},
+				arg_list = {
+					attr = "criDamage",
+					number = 0.188
+				}
+			}
+		}
+	},
+	{
+		effect_list = {
+			{
+				type = "BattleBuffAddBulletAttr",
+				trigger = {
+					"onTorpedoWeaponBulletCreate"
+				},
+				arg_list = {
+					attr = "criDamage",
+					number = 0.2
+				}
+			}
+		}
+	},
+	desc_get = "",
+	name = "终结旅程",
+	init_effect = "jinengchufared",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "鱼雷暴击率提高$1，暴击伤害提高50.0%",
+	stack = 1,
+	id = 1090291,
+	icon = 2050,
+	last_effect = ""
+}

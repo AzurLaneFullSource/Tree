@@ -34680,6 +34680,60 @@ pg.equip_skin_template = {
 			"wash"
 		}
 	},
+	[4040] = {
+		hit_sfx = "",
+		bullet_name = "",
+		name = "Scarlet Kitsune Mask",
+		type = 1,
+		preview_hit_distance = 0,
+		themeid = 47,
+		orbit_ui = "shebei_canghonghumianui",
+		desc = "Don the mask and enter a dream of red.",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = false,
+		miss_sfx = "",
+		orbit_combat_anima_change = "",
+		icon = "100074",
+		orbit_combat = "shebei_canghonghumian",
+		orbit_ui_back = 0,
+		mirror = 0,
+		rarity = 4,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 4040,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				0.26,
+				2.26,
+				-2.93
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				2.43,
+				-7.26
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	},
 	[1001] = {
 		hit_sfx = "",
 		bullet_name = "Nep_bullet_shizi",
@@ -41718,6 +41772,7 @@ pg.equip_skin_template = {
 		4037,
 		4038,
 		4039,
+		4040,
 		1001,
 		1002,
 		1003,

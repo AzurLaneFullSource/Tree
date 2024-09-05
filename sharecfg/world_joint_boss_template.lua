@@ -297,7 +297,7 @@ pg.world_joint_boss_template = {
 		}
 	},
 	{
-		state = "stop",
+		state = "always",
 		name = "Queen Elizabeth META",
 		painting = "yilishabainvwang",
 		boss_level_id = 136,
@@ -559,6 +559,64 @@ pg.world_joint_boss_template = {
 			1
 		}
 	},
+	{
+		item_id = 100000,
+		name = "Nagato META",
+		painting = "changmen",
+		boss_level_id = 226,
+		id = 16,
+		meta_id = 970506,
+		description = {
+			{
+				"The Moon Waxes and Wanes",
+				1,
+				"The battlefield cycles between the <color=#92fc63>Waxing Moon and Waning Moon states</color> every 15s.\nIn the Waxing Moon state, Nagato META's DMG dealt increases by 20%, and the potency of your fleet's healing effects increases by 100%.\nIn the Waning Moon state, Nagato META's DMG dealt decreases by 20%, and the potency of your fleet's healing effects decreases by 50%."
+			},
+			{
+				"The Flowers Bloom and Fall",
+				2,
+				"Creates a barrier around the battlefield which <color=#92fc63>has different effects depending on if the Waxing Moon or Waning Moon state is active</color>.\nIn the Waxing Moon state, all your ships inside the barrier take less DMG.\nIn the Waning Moon state, all your ships inside the barrier gradually lose HP."
+			}
+		},
+		state = {
+			{
+				{
+					2024,
+					9,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					12,
+					12
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		p_offset = {
+			-50,
+			680,
+			1,
+			1
+		},
+		p_offset_other = {
+			630,
+			620,
+			1,
+			1
+		}
+	},
 	all = {
 		1,
 		2,
@@ -574,6 +632,7 @@ pg.world_joint_boss_template = {
 		12,
 		13,
 		14,
-		15
+		15,
+		16
 	}
 }

@@ -23,7 +23,12 @@ function var0_0.execute(arg0_1, arg1_1)
 		for iter2_1, iter3_1 in ipairs(var0_1.task_ids) do
 			local var5_1 = getProxy(TaskProxy):getTaskById(iter3_1)
 
-			table.insert(var3_1, var5_1)
+			if getProxy(TaskProxy):isSubmitting(iter3_1) then
+				-- block empty
+			else
+				getProxy(TaskProxy):addSubmittingTask(iter3_1)
+				table.insert(var3_1, var5_1)
+			end
 		end
 	end
 

@@ -28,7 +28,9 @@ function var0_0.execute(arg0_1, arg1_1)
 		elseif arg0_2.result == 2013 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("evaluate_ban_word"))
 		elseif arg0_2.result == 40 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("report_cannot_comment"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("report_cannot_comment_level_2"))
+		elseif arg0_2.result == 41 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("report_cannot_comment_level_1", arg0_2.need_level))
 		else
 			pg.TipsMgr.GetInstance():ShowTips(errorTip("eva_ship", arg0_2.result))
 		end

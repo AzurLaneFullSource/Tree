@@ -222,8 +222,6 @@ function var1_0.onData(arg0_10)
 end
 
 function var1_0.onError(arg0_11)
-	var0_0.UIMgr.GetInstance():LoadingOff()
-
 	arg0_11 = tostring(arg0_11)
 
 	var2_0("Network Error: " .. arg0_11)

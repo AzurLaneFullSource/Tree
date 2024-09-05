@@ -14335,6 +14335,36 @@ _G.pg.base.item_data_statistics[21036] = {
 	combination_display = {},
 }
 
+_G.pg.base.item_data_statistics[21037] = {
+	compose_number = 0,
+	display = "An item that increases the potential of Nagato META. Used in the META Lab during Somatic Activation.",
+	display_effect = "",
+	icon = "Props/21037",
+	id = 21037,
+	is_world = 0,
+	limit = "[]",
+	link_id = 0,
+	max_num = 0,
+	name = "META Crystal – Nagato META",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 4,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
 _G.pg.base.item_data_statistics[21101] = {
 	compose_number = 0,
 	display = "Rare equipment used to improve the firepower capabilities of META ships during Restoration.",
@@ -14905,6 +14935,36 @@ _G.pg.base.item_data_statistics[21915] = {
 	combination_display = {},
 }
 
+_G.pg.base.item_data_statistics[21916] = {
+	compose_number = 0,
+	display = "Sync Points for Nagato META.",
+	display_effect = "",
+	icon = "Props/21916",
+	id = 21916,
+	is_world = 0,
+	limit = "[]",
+	link_id = 0,
+	max_num = 0,
+	name = "Synchronization Point – Nagato META",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 4,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
 _G.pg.base.item_data_statistics[30001] = {
 	compose_number = 0,
 	display = "Contains a Rare piece of submarine gear:\nLow chance to receive <color=#60a9ff>Rare gear</color>\nHigh chance to receive Common gear",
@@ -14973,7 +15033,7 @@ _G.pg.base.item_data_statistics[30011] = {
 
 _G.pg.base.item_data_statistics[30012] = {
 	compose_number = 5,
-	display = "May contain 1 piece of Rare Eagle faction gear:\nLow chance to receive <color=#60a9ff>Rare gear</color>\nHigh chance to receive Common gear\nMay combine <color=#ffde38>5</color> to craft <color=#ffde38>1</color> <color=#966af6>T3 Eagle Tech Pack</color>",
+	display = "May contain 1 piece of Rare Eagle Union faction gear:\n40% chance to receive <color=#3dc6ff>Rare gear</color>.\n60% chance to receive Common gear.\nYou may combine <color=#ffde38>5</color> to craft <color=#ffde38>1</color> <color=#d797ff>T3 Eagle Tech Pack</color>.",
 	display_effect = "OpenBox",
 	icon = "Props/30002",
 	id = 30012,
@@ -15006,7 +15066,7 @@ _G.pg.base.item_data_statistics[30012] = {
 
 _G.pg.base.item_data_statistics[30013] = {
 	compose_number = 0,
-	display = "May contain 1 piece of Elite Eagle faction gear:\nLow chance to receive <color=#966af6>Elite gear</color>\nHigh chance to receive <color=#60a9ff>Rare gear</color>",
+	display = "May contain 1 piece of Elite Eagle Union faction gear:\n25% chance to receive <color=#d797ff>Elite gear</color>.\n75% chance to receive <color=#3dc6ff>Rare gear</color>.",
 	display_effect = "OpenBox",
 	icon = "Props/30003",
 	id = 30013,
@@ -15039,7 +15099,7 @@ _G.pg.base.item_data_statistics[30013] = {
 
 _G.pg.base.item_data_statistics[30014] = {
 	compose_number = 0,
-	display = "May contain 1 piece of Super Rare Eagle faction gear:\nLow chance to receive <color=#fff157>Super Rare gear</color>\nHigh chance to receive <color=#966af6>Elite gear</color>",
+	display = "May contain 1 piece of Super Rare Eagle Union faction gear:\n15% chance to receive <color=#ffde38>Super Rare gear</color>.\n85% chance to receive <color=#d797ff>Elite gear</color>.",
 	display_effect = "OpenBox",
 	icon = "Props/30004",
 	id = 30014,
@@ -15138,7 +15198,7 @@ _G.pg.base.item_data_statistics[30021] = {
 
 _G.pg.base.item_data_statistics[30022] = {
 	compose_number = 5,
-	display = "May contain 1 piece of Rare Royal Navy faction gear:\nLow chance to receive <color=#60a9ff>Rare gear</color>\nHigh chance to receive Common gear\nMay combine <color=#ffde38>5</color> to craft <color=#ffde38>1</color> <color=#966af6>T3 Royal Tech Pack</color>",
+	display = "May contain 1 piece of Rare Royal Navy faction gear:\n40% chance to receive <color=#3dc6ff>Rare gear</color>.\n60% chance to receive Common gear.\nYou may combine <color=#ffde38>5</color> to craft <color=#ffde38>1</color> <color=#d797ff>T3 Royal Tech Pack</color>.",
 	display_effect = "OpenBox",
 	icon = "Props/30002",
 	id = 30022,
@@ -15171,7 +15231,7 @@ _G.pg.base.item_data_statistics[30022] = {
 
 _G.pg.base.item_data_statistics[30023] = {
 	compose_number = 0,
-	display = "May contain 1 piece of Elite Royal Navy faction gear:\nLow chance to receive <color=#966af6>Elite gear</color>\nHigh chance to receive <color=#60a9ff>Rare gear</color>",
+	display = "May contain 1 piece of Elite Royal Navy faction gear:\n25% chance to receive <color=#d797ff>Elite gear</color>.\n75% chance to receive <color=#3dc6ff>Rare gear</color>.",
 	display_effect = "OpenBox",
 	icon = "Props/30003",
 	id = 30023,
@@ -15204,7 +15264,7 @@ _G.pg.base.item_data_statistics[30023] = {
 
 _G.pg.base.item_data_statistics[30024] = {
 	compose_number = 0,
-	display = "May contain 1 piece of Super Rare Royal Navy faction gear:\nLow chance to receive <color=#fff157>Super Rare gear</color>\nHigh chance to receive <color=#966af6>Elite gear</color>",
+	display = "May contain 1 piece of Super Rare Royal Navy faction gear:\n15% chance to receive <color=#ffde38>Super Rare gear</color>.\n85% chance to receive <color=#d797ff>Elite gear</color>.",
 	display_effect = "OpenBox",
 	icon = "Props/30004",
 	id = 30024,
@@ -15303,7 +15363,7 @@ _G.pg.base.item_data_statistics[30031] = {
 
 _G.pg.base.item_data_statistics[30032] = {
 	compose_number = 5,
-	display = "May contain 1 piece of Rare Sakura Empire faction gear:\nLow chance to receive <color=#60a9ff>Rare gear</color>\nHigh chance to receive Common gear\nMay combine <color=#ffde38>5</color> to craft <color=#ffde38>1</color> <color=#966af6>T3 Sakura Tech Pack</color>",
+	display = "May contain 1 piece of Rare Sakura Empire faction gear:\n40% chance to receive <color=#3dc6ff>Rare gear</color>.\n60% chance to receive Common gear.\nYou may combine <color=#ffde38>5</color> to craft <color=#ffde38>1</color> <color=#d797ff>T3 Sakura Tech Pack</color>.",
 	display_effect = "OpenBox",
 	icon = "Props/30002",
 	id = 30032,
@@ -15336,7 +15396,7 @@ _G.pg.base.item_data_statistics[30032] = {
 
 _G.pg.base.item_data_statistics[30033] = {
 	compose_number = 0,
-	display = "May contain 1 piece of Elite Sakura Empire faction gear:\nLow chance to receive <color=#966af6>Elite gear</color>\nHigh chance to receive <color=#60a9ff>Rare gear</color>",
+	display = "May contain 1 piece of Elite Sakura Empire faction gear:\n25% chance to receive <color=#d797ff>Elite gear</color>.\n75% chance to receive <color=#3dc6ff>Rare gear</color>.",
 	display_effect = "OpenBox",
 	icon = "Props/30003",
 	id = 30033,
@@ -15369,7 +15429,7 @@ _G.pg.base.item_data_statistics[30033] = {
 
 _G.pg.base.item_data_statistics[30034] = {
 	compose_number = 0,
-	display = "May contain 1 piece of Super Rare Sakura Empire faction gear:\nLow chance to receive <color=#fff157>Super Rare gear</color>\nHigh chance to receive <color=#966af6>Elite gear</color>",
+	display = "May contain 1 piece of Super Rare Sakura Empire faction gear:\n15% chance to receive <color=#ffde38>Super Rare gear</color>.\n85% chance to receive <color=#d797ff>Elite gear</color>.",
 	display_effect = "OpenBox",
 	icon = "Props/30004",
 	id = 30034,
@@ -15435,7 +15495,7 @@ _G.pg.base.item_data_statistics[30035] = {
 
 _G.pg.base.item_data_statistics[30041] = {
 	compose_number = 5,
-	display = "Contains 1 piece of Common Ironblood faction gear:\nContains Common gear\nMay combine <color=#ffde38>5</color> to craft <color=#ffde38>1</color> <color=#60a9ff>T2 Ironblood Tech Pack</color>",
+	display = "Contains 1 piece of Common Ironblood faction gear:\nContains Common gear\nMay combine <color=#ffde38>5</color> to craft <color=#ffde38>1</color> <color=#3dc6ff>T2 Ironblood Tech Pack</color>",
 	display_effect = "OpenBox",
 	icon = "Props/30001",
 	id = 30041,
@@ -15443,7 +15503,7 @@ _G.pg.base.item_data_statistics[30041] = {
 	limit = "[]",
 	link_id = 0,
 	max_num = 0,
-	name = "T1 Ironblood Tech Pack",
+	name = "T1 Iron Blood Tech Pack",
 	open_directly = 0,
 	order = 0,
 	other_item_cost = "[]",
@@ -15468,7 +15528,7 @@ _G.pg.base.item_data_statistics[30041] = {
 
 _G.pg.base.item_data_statistics[30042] = {
 	compose_number = 5,
-	display = "May contain 1 piece of Rare Ironblood faction gear:\nLow chance to receive <color=#60a9ff>Rare gear</color>\nHigh chance to receive Common gear\nMay combine <color=#ffde38>5</color> to craft <color=#ffde38>1</color> <color=#966af6>T3 Ironblood Tech Pack</color>",
+	display = "May contain 1 piece of Rare Iron Blood faction gear:\n40% chance to receive <color=#3dc6ff>Rare gear</color>.\n60% chance to receive Common gear.\nYou may combine <color=#ffde38>5</color> to craft <color=#ffde38>1</color> <color=#d797ff>T3 Iron Blood Tech Pack</color>.",
 	display_effect = "OpenBox",
 	icon = "Props/30002",
 	id = 30042,
@@ -15476,7 +15536,7 @@ _G.pg.base.item_data_statistics[30042] = {
 	limit = "[]",
 	link_id = 0,
 	max_num = 0,
-	name = "T2 Ironblood Tech Pack",
+	name = "T2 Iron Blood Tech Pack",
 	open_directly = 0,
 	order = 0,
 	other_item_cost = "[]",
@@ -15501,7 +15561,7 @@ _G.pg.base.item_data_statistics[30042] = {
 
 _G.pg.base.item_data_statistics[30043] = {
 	compose_number = 0,
-	display = "May contain 1 piece of Elite Ironblood faction gear:\nLow chance to receive <color=#966af6>Elite gear</color>\nHigh chance to receive <color=#60a9ff>Rare gear</color>",
+	display = "May contain 1 piece of Elite Iron Blood faction gear:\n25% chance to receive <color=#d797ff>Elite gear</color>.\n75% chance to receive <color=#3dc6ff>Rare gear</color>.",
 	display_effect = "OpenBox",
 	icon = "Props/30003",
 	id = 30043,
@@ -15509,7 +15569,7 @@ _G.pg.base.item_data_statistics[30043] = {
 	limit = "[]",
 	link_id = 0,
 	max_num = 0,
-	name = "T3 Ironblood Tech Pack",
+	name = "T3 Iron Blood Tech Pack",
 	open_directly = 0,
 	order = 0,
 	other_item_cost = "[]",
@@ -15534,7 +15594,7 @@ _G.pg.base.item_data_statistics[30043] = {
 
 _G.pg.base.item_data_statistics[30044] = {
 	compose_number = 0,
-	display = "May contain 1 piece of Super Rare Ironblood faction gear:\nLow chance to receive <color=#fff157>Super Rare gear</color>\nHigh chance to receive <color=#966af6>Elite gear</color>",
+	display = "May contain 1 piece of Super Rare Iron Blood faction gear:\n15% chance to receive <color=#ffde38>Super Rare gear</color>.\n85% chance to receive <color=#d797ff>Elite gear</color>.",
 	display_effect = "OpenBox",
 	icon = "Props/30004",
 	id = 30044,
@@ -15542,7 +15602,7 @@ _G.pg.base.item_data_statistics[30044] = {
 	limit = "[]",
 	link_id = 0,
 	max_num = 0,
-	name = "T4 Ironblood Tech Pack",
+	name = "T4 Iron Blood Tech Pack",
 	open_directly = 0,
 	order = 0,
 	other_item_cost = "[]",
@@ -15567,7 +15627,7 @@ _G.pg.base.item_data_statistics[30044] = {
 
 _G.pg.base.item_data_statistics[30045] = {
 	compose_number = 0,
-	display = "Contains 1 piece of Super Rare Ironblood faction gear:\nGuaranteed to receive <color=#fff157>Super Rare gear</color>",
+	display = "Contains 1 piece of Super Rare Ironblood faction gear:\nGuaranteed to receive <color=#ffde38>Super Rare gear</color>",
 	display_effect = "OpenBox",
 	icon = "Props/30005",
 	id = 30045,
@@ -15575,7 +15635,7 @@ _G.pg.base.item_data_statistics[30045] = {
 	limit = "[]",
 	link_id = 0,
 	max_num = 0,
-	name = "T5 Ironblood Tech Pack",
+	name = "T5 Iron Blood Tech Pack",
 	open_directly = 0,
 	order = 0,
 	other_item_cost = "[]",
@@ -16684,6 +16744,39 @@ _G.pg.base.item_data_statistics[30205] = {
 	virtual_type = 0,
 	display_icon = {},
 	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
+_G.pg.base.item_data_statistics[30206] = {
+	compose_number = 0,
+	display = "Contains 1 piece of Elite Sakura Empire faction gear:\n100% chance to receive <color=#d797ff>Elite gear</color>.",
+	display_effect = "OpenBox",
+	icon = "Props/30206",
+	id = 30206,
+	is_world = 0,
+	limit = "[]",
+	link_id = 0,
+	max_num = 0,
+	name = "T3 Sakura Tech Pack (Display Sample)",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 5,
+	usage = "usage_drop",
+	usage_arg = "79721",
+	virtual_type = 0,
+	display_icon = {},
+	price = {
+		1,
+		100,
+	},
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},

@@ -247,6 +247,11 @@ pg.task_meta_data_template = setmetatable({
 		100313,
 		100314,
 		100315,
+		100321,
+		100322,
+		100323,
+		100324,
+		100325,
 		200001,
 		200002,
 		200003,
@@ -334,7 +339,11 @@ pg.task_meta_data_template = setmetatable({
 		200221,
 		200222,
 		200223,
-		200224
+		200224,
+		200231,
+		200232,
+		200233,
+		200234
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2299,6 +2308,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100321] = {
+		target_id_2 = "970506",
+		sub_type = 180,
+		desc = "Win 1 Operation Siren battle with Nagato META in your fleet.",
+		id = 100321,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100322] = {
+		target_id_2 = "970506",
+		sub_type = 180,
+		desc = "Defeat a Lv. 30+ fleet with Nagato META in your fleet.",
+		id = 100322,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100323] = {
+		target_id_2 = "970506",
+		sub_type = 180,
+		desc = "Defeat a Lv. 55+ fleet with Nagato META in your fleet.",
+		id = 100323,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100324] = {
+		target_id_2 = "970506",
+		sub_type = 180,
+		desc = "Defeat a Lv. 80+ fleet with Nagato META in your fleet.",
+		id = 100324,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100325] = {
+		target_id_2 = "970506",
+		sub_type = 180,
+		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Nagato META in your fleet.",
+		id = 100325,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -3000,6 +3049,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Kasumi META in your fleet.",
 		id = 200224,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200231] = {
+		target_id_2 = "970506",
+		sub_type = 302,
+		desc = "Win 1 Operation Siren battle with Nagato META in your fleet.",
+		id = 200231,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200232] = {
+		target_id_2 = "970506",
+		sub_type = 302,
+		desc = "Defeat a Lv. 70+ fleet in Operation Siren with Nagato META in your fleet.",
+		id = 200232,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200233] = {
+		target_id_2 = "970506",
+		sub_type = 302,
+		desc = "Defeat a Lv. 90+ fleet in Operation Siren with Nagato META in your fleet.",
+		id = 200233,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200234] = {
+		target_id_2 = "970506",
+		sub_type = 302,
+		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Nagato META in your fleet.",
+		id = 200234,
 		target_num = 1,
 		target_id = "100"
 	}

@@ -93,124 +93,153 @@ function var0_0.IsLegalForPlay(arg0_9, arg1_9, arg2_9, arg3_9, arg4_9)
 		return false, nil
 	end
 
+	if not arg0_9:CheckFullExp(arg1_9, arg2_9) then
+		return false, i18n("commander_exp_limit")
+	end
+
 	return true
 end
 
-function var0_0.CheckFormation(arg0_10, arg1_10, arg2_10, arg3_10)
-	local var0_10 = getProxy(FleetProxy)
-	local var1_10 = var0_10:getCommanders()
-	local var2_10 = _.detect(var1_10, function(arg0_11)
-		return arg1_10.id == arg0_11.commanderId
+function var0_0.SimulateAddCommanderExp(arg0_10, arg1_10, arg2_10)
+	local var0_10 = Clone(arg1_10)
+
+	var0_10:addExp(arg2_10)
+
+	return var0_10, arg1_10
+end
+
+function var0_0.CheckFullExp(arg0_11, arg1_11, arg2_11)
+	local var0_11 = {}
+	local var1_11 = arg0_11.pages[CommanderCatScene.PAGE_DOCK]
+
+	if var1_11 and var1_11.selectedList then
+		var0_11 = var1_11.selectedList
+	end
+
+	local var2_11, var3_11 = CommanderCatUtil.GetSkillExpAndCommanderExp(arg1_11, var0_11)
+
+	if arg0_11:SimulateAddCommanderExp(arg1_11, var2_11):isMaxLevel() then
+		return false
+	end
+
+	return true
+end
+
+function var0_0.CheckFormation(arg0_12, arg1_12, arg2_12, arg3_12)
+	local var0_12 = getProxy(FleetProxy)
+	local var1_12 = var0_12:getCommanders()
+	local var2_12 = _.detect(var1_12, function(arg0_13)
+		return arg1_12.id == arg0_13.commanderId
 	end)
 
-	if not var2_10 then
+	if not var2_12 then
 		return true
 	end
 
-	arg0_10.contextData.msgBox:ExecuteAction("Show", {
+	arg0_12.contextData.msgBox:ExecuteAction("Show", {
 		content = i18n("commander_material_is_in_fleet_tip"),
 		onYes = function()
 			pg.m02:sendNotification(GAME.COOMMANDER_EQUIP_TO_FLEET, {
 				commanderId = 0,
-				fleetId = var2_10.fleetId,
-				pos = var2_10.pos,
+				fleetId = var2_12.fleetId,
+				pos = var2_12.pos,
 				callback = function()
-					var1_10 = var0_10:getCommanders()
+					var1_12 = var0_12:getCommanders()
 
-					if arg2_10 then
-						arg2_10()
+					if arg2_12 then
+						arg2_12()
 					end
 				end
 			})
 		end,
-		onNo = arg3_10,
-		onClose = arg3_10
+		onNo = arg3_12,
+		onClose = arg3_12
 	})
 
 	return false
 end
 
-function var0_0.CheckGuild(arg0_14, arg1_14, arg2_14, arg3_14)
-	local var0_14 = getProxy(GuildProxy):getRawData()
+function var0_0.CheckGuild(arg0_16, arg1_16, arg2_16, arg3_16)
+	local var0_16 = getProxy(GuildProxy):getRawData()
 
-	if not var0_14 or not var0_14:ExistCommander(arg1_14.id) then
-		return true
-	end
-
-	arg0_14.contextData.msgBox:ExecuteAction("Show", {
-		content = i18n("commander_is_in_guild"),
-		onYes = function()
-			local var0_15 = var0_14:GetActiveEvent()
-
-			if not var0_15 then
-				return
-			end
-
-			local var1_15 = var0_15:GetBossMission()
-
-			if not var1_15 or not var1_15:IsActive() then
-				return
-			end
-
-			local var2_15 = var1_15:GetFleetCommanderId(arg1_14.id)
-
-			if not var2_15 then
-				return
-			end
-
-			local var3_15 = Clone(var2_15)
-			local var4_15 = var3_15:GetCommanderPos(arg1_14.id)
-
-			if not var4_15 then
-				return
-			end
-
-			var3_15:RemoveCommander(var4_15)
-			pg.m02:sendNotification(GAME.GUILD_UPDATE_BOSS_FORMATION, {
-				force = true,
-				editFleet = {
-					[var3_15.id] = var3_15
-				},
-				callback = arg2_14
-			})
-		end,
-		onNo = arg3_14,
-		onClose = arg3_14
-	})
-
-	return false
-end
-
-function var0_0.CheckExtra(arg0_16, arg1_16, arg2_16, arg3_16)
-	local var0_16 = getProxy(FleetProxy)
-	local var1_16 = var0_16:getCommanders()
-	local var2_16 = var0_16:GetExtraCommanders()
-	local var3_16 = _.detect(var2_16, function(arg0_17)
-		return arg1_16.id == arg0_17.commanderId
-	end)
-
-	if not var3_16 then
+	if not var0_16 or not var0_16:ExistCommander(arg1_16.id) then
 		return true
 	end
 
 	arg0_16.contextData.msgBox:ExecuteAction("Show", {
-		content = i18n("commander_material_is_in_fleet_tip"),
+		content = i18n("commander_is_in_guild"),
 		onYes = function()
-			pg.m02:sendNotification(GAME.COOMMANDER_EQUIP_TO_FLEET, {
-				commanderId = 0,
-				fleetId = var3_16.fleetId,
-				pos = var3_16.pos,
-				callback = function()
-					var1_16 = var0_16:getCommanders()
+			local var0_17 = var0_16:GetActiveEvent()
 
-					if arg2_16 then
-						arg2_16()
-					end
-				end
+			if not var0_17 then
+				return
+			end
+
+			local var1_17 = var0_17:GetBossMission()
+
+			if not var1_17 or not var1_17:IsActive() then
+				return
+			end
+
+			local var2_17 = var1_17:GetFleetCommanderId(arg1_16.id)
+
+			if not var2_17 then
+				return
+			end
+
+			local var3_17 = Clone(var2_17)
+			local var4_17 = var3_17:GetCommanderPos(arg1_16.id)
+
+			if not var4_17 then
+				return
+			end
+
+			var3_17:RemoveCommander(var4_17)
+			pg.m02:sendNotification(GAME.GUILD_UPDATE_BOSS_FORMATION, {
+				force = true,
+				editFleet = {
+					[var3_17.id] = var3_17
+				},
+				callback = arg2_16
 			})
 		end,
 		onNo = arg3_16,
 		onClose = arg3_16
+	})
+
+	return false
+end
+
+function var0_0.CheckExtra(arg0_18, arg1_18, arg2_18, arg3_18)
+	local var0_18 = getProxy(FleetProxy)
+	local var1_18 = var0_18:getCommanders()
+	local var2_18 = var0_18:GetExtraCommanders()
+	local var3_18 = _.detect(var2_18, function(arg0_19)
+		return arg1_18.id == arg0_19.commanderId
+	end)
+
+	if not var3_18 then
+		return true
+	end
+
+	arg0_18.contextData.msgBox:ExecuteAction("Show", {
+		content = i18n("commander_material_is_in_fleet_tip"),
+		onYes = function()
+			pg.m02:sendNotification(GAME.COOMMANDER_EQUIP_TO_FLEET, {
+				commanderId = 0,
+				fleetId = var3_18.fleetId,
+				pos = var3_18.pos,
+				callback = function()
+					var1_18 = var0_18:getCommanders()
+
+					if arg2_18 then
+						arg2_18()
+					end
+				end
+			})
+		end,
+		onNo = arg3_18,
+		onClose = arg3_18
 	})
 
 	return false

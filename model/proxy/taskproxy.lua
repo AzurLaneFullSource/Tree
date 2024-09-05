@@ -64,8 +64,6 @@ function var0_0.register(arg0_1)
 	end)
 	arg0_1:on(20103, function(arg0_9)
 		for iter0_9, iter1_9 in ipairs(arg0_9.id) do
-			print("add sub task ", iter1_9)
-
 			local var0_9 = WeekPtTask.New({
 				progress = 0,
 				id = iter1_9
@@ -263,7 +261,7 @@ function var0_0.addTask(arg0_25, arg1_25)
 	arg0_25.data[arg1_25.id]:display("added")
 	arg0_25.data[arg1_25.id]:onAdded()
 	arg0_25.facade:sendNotification(var0_0.TASK_ADDED, arg1_25:clone())
-	arg0_25:checkAutoSubmitTask(arg1_25)
+	arg0_25:checkAutoSubmitTask(arg0_25.data[arg1_25.id])
 end
 
 function var0_0.updateTask(arg0_26, arg1_26)
@@ -278,7 +276,7 @@ function var0_0.updateTask(arg0_26, arg1_26)
 
 	arg0_26.data[arg1_26.id]:display("updated")
 	arg0_26.facade:sendNotification(var0_0.TASK_UPDATED, arg1_26:clone())
-	arg0_26:checkAutoSubmitTask(arg1_26)
+	arg0_26:checkAutoSubmitTask(arg0_26.data[arg1_26.id])
 end
 
 function var0_0.getTasks(arg0_27)
