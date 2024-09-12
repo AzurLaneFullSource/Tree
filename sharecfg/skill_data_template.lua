@@ -1197,6 +1197,7 @@ pg.skill_data_template = setmetatable({
 		150450,
 		150460,
 		150470,
+		150475,
 		150480,
 		150490,
 		150500,
@@ -98121,7 +98122,7 @@ pg.base.skill_data_template = {
 	},
 	[150440] = {
 		desc_get = "",
-		name = "",
+		name = "Final Bound",
 		id = 150440,
 		type = 1,
 		max_level = 10,
@@ -98561,6 +98562,20 @@ pg.base.skill_data_template = {
 			}
 		}
 	},
+	[150475] = {
+		desc_get = "",
+		name = "破一役以破全局-跨队效果",
+		id = 150475,
+		type = 1,
+		max_level = 10,
+		desc = "",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
 	[150480] = {
 		desc_get = "",
 		name = "From Phoenixes Sistren, Flames Given",
@@ -98754,7 +98769,7 @@ pg.base.skill_data_template = {
 		id = 150490,
 		type = 3,
 		max_level = 10,
-		desc = "Increases this ship's TRP and RLD by $1. Every 20s: $2 chance to fire a $3 special torpedo barrage (DMG is based on the skill's level).",
+		desc = "Increases this ship's TRP and RLD by $1. Every 5s: $2 chance to fire a $3 special torpedo barrage (DMG is based on the skill's level).",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -98896,7 +98911,7 @@ pg.base.skill_data_template = {
 		id = 150500,
 		type = 2,
 		max_level = 10,
-		desc = "5s after the battle starts: lays sea mines that damage the enemy (DMG is based on the skill's level). Once per battle, when this ship's HP falls below 20.0% as a result of DMG taken: restores $2 of this ship's max HP.",
+		desc = "5s after the battle starts: lays $1 sea mines that damage the enemy (DMG is based on the skill's level). Once per battle, when this ship's HP falls below 20.0% as a result of DMG taken: restores $2 of this ship's max HP.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -98993,7 +99008,7 @@ pg.base.skill_data_template = {
 		id = 150510,
 		type = 1,
 		max_level = 10,
-		desc = "15s after the battle starts, and every 20s after that: fires a $1 special barrage (DMG is based on the skill's level). Enemies hit by this barrage take $2 increased torpedo DMG from this ship for 8s. When this ship's torpedoes hit an enemy: decreases that enemy's SPD by 3 for 5s.",
+		desc = "15s after the battle starts, and every 20s after that: fires a $1 special barrage (DMG is based on the skill's level). Enemies hit by this barrage take $2 increased torpedo DMG from this ship for 8s. When this ship's torpedoes hit an enemy: decreases that",
 		system_transform = {},
 		world_death_mark = {
 			1

@@ -30,6 +30,8 @@ function var0_0.register(arg0_1)
 		elseif arg0_1.data:GetDaysFromRegister() == 6 then
 			pg.TrackerMgr.GetInstance():Tracking(TRACKING_7D_RETENTION)
 		end
+
+		var0_3:updateAttireFrame(AttireConst.TYPE_COMBAT_UI_STYLE, arg0_3.battle_ui or 0)
 	end)
 	arg0_1:on(11004, function(arg0_4)
 		if not arg0_1.data then

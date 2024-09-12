@@ -3914,7 +3914,7 @@ _G.pg.base.shop_template[31080] = {
 
 _G.pg.base.shop_template[31943] = {
 	collaboration_skin_time = "",
-	desc = "7000物资兑换1个0912梦乐园外观装备箱",
+	desc = "Exchange 7000 Coins for 1 Dream Park Gear Skin Box",
 	discount = 0,
 	genre = "shopping_street",
 	group = 0,

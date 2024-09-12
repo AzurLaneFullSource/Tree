@@ -235,7 +235,7 @@ function var0_0.updateCharge(arg0_3, arg1_3, arg2_3, arg3_3)
 	arg0_3.iconTF.sprite = GetSpriteFromAtlas("chargeicon/1", "")
 
 	LoadSpriteAsync("chargeicon/" .. arg1_3:getConfig("picture"), function(arg0_5)
-		if arg0_5 then
+		if arg0_5 and not IsNil(arg0_3.iconTF) then
 			arg0_3.iconTF.sprite = arg0_5
 
 			arg0_3.iconTF:SetNativeSize()
@@ -366,7 +366,7 @@ function var0_0.updateGemItem(arg0_6, arg1_6, arg2_6)
 		arg0_6.iconTF.sprite = GetSpriteFromAtlas("chargeicon/1", "")
 
 		LoadSpriteAsync(var15_6.icon, function(arg0_8)
-			if arg0_8 then
+			if arg0_8 and not IsNil(arg0_6.iconTF) then
 				arg0_6.iconTF.sprite = arg0_8
 
 				arg0_6.iconTF:SetNativeSize()

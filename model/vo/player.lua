@@ -208,8 +208,6 @@ function var0_0.Ctor(arg0_8, arg1_8)
 	arg0_8.attireInfo = {}
 	arg0_8.attireInfo[AttireConst.TYPE_ICON_FRAME] = arg0_8.iconFrame
 	arg0_8.attireInfo[AttireConst.TYPE_CHAT_FRAME] = arg0_8.chatFrame
-
-	arg0_8:updateAttireFrame(AttireConst.TYPE_COMBAT_UI_STYLE, arg1_8.battle_ui or 0)
 end
 
 function var0_0.updateAttireFrame(arg0_9, arg1_9, arg2_9)

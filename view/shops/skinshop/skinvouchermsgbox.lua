@@ -12,6 +12,9 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.discountPriceBtn = arg0_2:findTF("window/button_container/discount_price")
 
 	setText(arg0_2._tf:Find("window/top/bg/infomation/title"), i18n("title_info"))
+
+	arg0_2.tipBar = arg0_2:findTF("window/frame/tipBar")
+	arg0_2.tipText = arg0_2:findTF("Text", arg0_2.tipBar)
 end
 
 function var0_0.RegisterBtn(arg0_3, arg1_3)
@@ -51,6 +54,7 @@ function var0_0.UpdateContent(arg0_6, arg1_6)
 
 	setActive(arg0_6.realPriceBtn, not arg0_6.prevSelId)
 	setActive(arg0_6.discountPriceBtn, arg0_6.prevSelId)
+	arg0_6:SetTipText(arg1_6.skinId)
 end
 
 function var0_0.UpdateItem(arg0_7, arg1_7)
@@ -115,6 +119,42 @@ function var0_0.Hide(arg0_12)
 	for iter0_12, iter1_12 in pairs(arg0_12.itemTrs) do
 		removeOnToggle(iter1_12)
 		triggerToggle(iter1_12, false)
+	end
+end
+
+function var0_0.SetTipText(arg0_13, arg1_13)
+	local var0_13 = pg.ship_skin_template[arg1_13].ship_group
+	local var1_13 = pg.gameset.no_share_skin_tip.description
+	local var2_13
+	local var3_13
+
+	for iter0_13, iter1_13 in ipairs(var1_13) do
+		for iter2_13, iter3_13 in ipairs(iter1_13) do
+			if var0_13 == iter3_13[1] then
+				var2_13 = iter1_13
+				var3_13 = iter2_13
+
+				break
+			end
+		end
+	end
+
+	setActive(arg0_13.tipBar, var3_13)
+
+	if var3_13 then
+		local var4_13 = ""
+
+		for iter4_13, iter5_13 in ipairs(var2_13) do
+			if iter4_13 ~= var3_13 then
+				if var4_13 == "" then
+					var4_13 = i18n(iter5_13[2])
+				else
+					var4_13 = var4_13 .. "、" .. i18n(iter5_13[2])
+				end
+			end
+		end
+
+		setText(arg0_13.tipText, i18n("no_share_skin_gametip", i18n(var2_13[var3_13][2]), var4_13))
 	end
 end
 

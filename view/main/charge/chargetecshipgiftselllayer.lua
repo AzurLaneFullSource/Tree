@@ -30,9 +30,9 @@ function var0_0.initData(arg0_5)
 
 	for iter0_5, iter1_5 in ipairs(arg0_5.goodVOList) do
 		if iter1_5:getConfig("limit_arg") == 1 then
-			arg0_5.normalGoodVO = iter1_5
-		elseif iter1_5:getConfig("limit_arg") == 2 then
 			arg0_5.highGoodVO = iter1_5
+		elseif iter1_5:getConfig("limit_arg") == 2 then
+			arg0_5.normalGoodVO = iter1_5
 		elseif iter1_5:getConfig("limit_arg") == 3 then
 			arg0_5.upGoodVO = iter1_5
 		end
@@ -111,14 +111,14 @@ function var0_0.updateGiftTF(arg0_11, arg1_11, arg2_11)
 	local var13_11 = arg2_11:getConfig("limit_arg") == 3
 	local var14_11 = ChargeConst.getBuyCount(arg0_11.chargedList, arg0_11.normalGoodVO.id) > 0
 
-	setActive(var0_11, var11_11)
-	setActive(var1_11, not var11_11)
-	setActive(var2_11, var11_11 and not var14_11)
-	setActive(var3_11, var12_11)
+	setActive(var0_11, var12_11)
+	setActive(var1_11, not var12_11)
+	setActive(var2_11, var12_11 and not var14_11)
+	setActive(var3_11, var11_11)
 	setActive(var4_11, var13_11)
-	setActive(var5_11, var11_11 and var14_11)
+	setActive(var5_11, var12_11 and var14_11)
 
-	if var11_11 and var14_11 then
+	if var12_11 and var14_11 then
 		setGray(arg1_11, true, true)
 	end
 

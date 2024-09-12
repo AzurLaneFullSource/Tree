@@ -2851,7 +2851,30 @@ function temp()
 						a = {
 							n = {
 								d = {
-									this = true
+									this = true,
+									[" "] = {
+										["("] = {
+											R = {
+												e = {
+													t = {
+														r = {
+															o = {
+																f = {
+																	i = {
+																		t = {
+																			[")"] = {
+																				this = true
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
 								}
 							}
 						}
@@ -7483,7 +7506,18 @@ function temp()
 							}
 						},
 						o = {
-							this = true
+							this = true,
+							[" "] = {
+								M = {
+									E = {
+										T = {
+											A = {
+												this = true
+											}
+										}
+									}
+								}
+							}
 						}
 					},
 					n = {
@@ -9193,6 +9227,13 @@ function temp()
 	var1_0.Z = {
 		u = {
 			i = {
+				h = {
+					o = {
+						u = {
+							this = true
+						}
+					}
+				},
 				k = {
 					a = {
 						k = {

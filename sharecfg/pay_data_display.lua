@@ -5446,7 +5446,7 @@ pg.base.pay_data_display = {
 	[73] = {
 		name = "Dreamland Lucky Bag A",
 		limit_group = 0,
-		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack. ",
+		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack.",
 		type = 1,
 		subject = "Dreamland Lucky Bag A",
 		limit_arg = 1,
@@ -5560,7 +5560,7 @@ pg.base.pay_data_display = {
 	[74] = {
 		name = "Fashion Collection Lucky Bag Rerun",
 		limit_group = 0,
-		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack. ",
+		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack.",
 		type = 1,
 		subject = "Fashion Collection Lucky Bag Rerun",
 		limit_arg = 1,
@@ -5674,7 +5674,7 @@ pg.base.pay_data_display = {
 	[75] = {
 		name = "Dreamland Lucky Bag B",
 		limit_group = 0,
-		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack. ",
+		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack.",
 		type = 1,
 		subject = "Dreamland Lucky Bag B",
 		limit_arg = 1,
@@ -5788,7 +5788,7 @@ pg.base.pay_data_display = {
 	[76] = {
 		name = "Autumn Classics Lucky Box Rerun",
 		limit_group = 0,
-		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack. ",
+		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack.",
 		type = 1,
 		subject = "Autumn Classics Lucky Box Rerun",
 		limit_arg = 1,
@@ -13436,7 +13436,6 @@ pg.base.pay_data_display = {
 		tag = 2,
 		gem = 0,
 		limit_type = 5,
-		time = "always",
 		picture = "ui1",
 		skin_inquire_relation = 0,
 		id_str = "com.yostaren.azurlane.pack12",
@@ -13449,6 +13448,32 @@ pg.base.pay_data_display = {
 				31,
 				103,
 				1
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					9,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
 			}
 		},
 		display = {
@@ -13479,7 +13504,6 @@ pg.base.pay_data_display = {
 		tag = 2,
 		gem = 0,
 		limit_type = 5,
-		time = "always",
 		picture = "ui1",
 		skin_inquire_relation = 0,
 		id_str = "com.yostaren.azurlane.pack12",
@@ -13492,6 +13516,32 @@ pg.base.pay_data_display = {
 				31,
 				103,
 				1
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					9,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
 			}
 		},
 		display = {
@@ -13528,7 +13578,6 @@ pg.base.pay_data_display = {
 		tag = 2,
 		gem = 0,
 		limit_type = 5,
-		time = "always",
 		picture = "ui1",
 		skin_inquire_relation = 0,
 		id_str = "com.yostaren.azurlane.pack13",
@@ -13546,6 +13595,32 @@ pg.base.pay_data_display = {
 				1,
 				14,
 				3060
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					9,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
 			}
 		},
 		display = {

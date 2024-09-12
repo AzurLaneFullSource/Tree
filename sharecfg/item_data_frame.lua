@@ -480,7 +480,7 @@ pg.item_data_frame = {
 	[332] = {
 		time_limit_type = 0,
 		name = "Flames of Resurrection",
-		gain_by = "唤醒苍红之炎",
+		gain_by = "Ode of Everblooming Crimson",
 		id = 332,
 		time_second = 0,
 		desc = "<color=#ffffff>\"The phoenix dances when the fox roars, bathing in flames and receiving new flesh. Though lives change, memories do not.\"</color> \nGiven to Commanders who participated in the Ode of Everblooming Crimson event.",

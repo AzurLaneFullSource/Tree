@@ -3354,7 +3354,7 @@ pg.base.strategy_data_template = {
 		id = 201090,
 		icon = "201090",
 		buff_type = 0,
-		desc = "During battle, your Main Fleet ships take 20% less Burn DMG and their SPD increases by 5%.\nIf your fleet consists of 4 or more Sakura Empire ships, supporting barrages will fire 15s after the battle starts.",
+		desc = "During battle, your Main Fleet ships take 20% less Burn DMG and their EVA increases by 5%.\nIf your fleet consists of 4 or more Sakura Empire ships, supporting barrages will fire 15s after the battle starts.",
 		arg = {}
 	},
 	[201094] = {
