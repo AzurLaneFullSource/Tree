@@ -191,38 +191,22 @@ end
 function var0_0.OnCharge(arg0_16, arg1_16)
 	if arg1_16:isChargeType() then
 		local var0_16 = arg1_16:getConfig("tag")
-		local var1_16 = underscore.map(arg1_16:getConfig("extra_service_item"), function(arg0_17)
-			return {
-				type = arg0_17[1],
-				id = arg0_17[2],
-				count = arg0_17[3]
-			}
-		end)
+		local var1_16 = arg1_16:GetExtraServiceItem()
 		local var2_16
 		local var3_16
-		local var4_16 = arg1_16:getConfig("gem") + arg1_16:getConfig("extra_gem")
-
-		if var4_16 > 0 then
-			table.insert(var1_16, {
-				id = 4,
-				type = 1,
-				count = var4_16
-			})
-		end
-
-		local var5_16 = i18n("charge_title_getitem")
-		local var6_16
-		local var7_16 = {
+		local var4_16 = i18n("charge_title_getitem")
+		local var5_16
+		local var6_16 = {
 			isChargeType = true,
 			icon = "chargeicon/" .. arg1_16:getConfig("picture"),
 			name = arg1_16:getConfig("name_display"),
-			tipExtra = var5_16,
+			tipExtra = var4_16,
 			extraItems = var1_16,
 			price = arg1_16:getConfig("money"),
 			isLocalPrice = arg1_16:IsLocalPrice(),
 			tagType = var0_16,
 			isMonthCard = arg1_16:isMonthCard(),
-			tipBonus = var6_16,
+			tipBonus = var5_16,
 			bonusItem = var3_16,
 			extraDrop = var2_16,
 			descExtra = arg1_16:getConfig("descrip_extra"),
@@ -236,16 +220,16 @@ function var0_0.OnCharge(arg0_16, arg1_16)
 			end
 		}
 
-		arg0_16:emit(ActivityMediator.OPEN_CHARGE_ITEM_PANEL, var7_16)
+		arg0_16:emit(ActivityMediator.OPEN_CHARGE_ITEM_PANEL, var6_16)
 	else
-		local var8_16 = {}
-		local var9_16 = arg1_16:getConfig("effect_args")
-		local var10_16 = Item.getConfigData(var9_16[1])
-		local var11_16 = var10_16.display_icon
+		local var7_16 = {}
+		local var8_16 = arg1_16:getConfig("effect_args")
+		local var9_16 = Item.getConfigData(var8_16[1])
+		local var10_16 = var9_16.display_icon
 
-		if type(var11_16) == "table" then
-			for iter0_16, iter1_16 in ipairs(var11_16) do
-				table.insert(var8_16, {
+		if type(var10_16) == "table" then
+			for iter0_16, iter1_16 in ipairs(var10_16) do
+				table.insert(var7_16, {
 					type = iter1_16[1],
 					id = iter1_16[2],
 					count = iter1_16[3]
@@ -253,19 +237,19 @@ function var0_0.OnCharge(arg0_16, arg1_16)
 			end
 		end
 
-		local var12_16 = {
+		local var11_16 = {
 			isMonthCard = false,
 			isChargeType = false,
 			isLocalPrice = false,
-			icon = var10_16.icon,
-			name = var10_16.name,
+			icon = var9_16.icon,
+			name = var9_16.name,
 			tipExtra = i18n("charge_title_getitem"),
-			extraItems = var8_16,
+			extraItems = var7_16,
 			price = arg1_16:getConfig("resource_num"),
 			tagType = arg1_16:getConfig("tag"),
 			onYes = function()
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					content = i18n("charge_scene_buy_confirm", arg1_16:getConfig("resource_num"), var10_16.name),
+					content = i18n("charge_scene_buy_confirm", arg1_16:getConfig("resource_num"), var9_16.name),
 					onYes = function()
 						arg0_16:emit(ActivityMediator.BUY_ITEM, arg1_16.id, 1)
 					end
@@ -273,11 +257,11 @@ function var0_0.OnCharge(arg0_16, arg1_16)
 			end
 		}
 
-		arg0_16:emit(ActivityMediator.OPEN_CHARGE_ITEM_PANEL, var12_16)
+		arg0_16:emit(ActivityMediator.OPEN_CHARGE_ITEM_PANEL, var11_16)
 	end
 end
 
-function var0_0.OnDestroy(arg0_21)
+function var0_0.OnDestroy(arg0_20)
 	return
 end
 

@@ -267,6 +267,8 @@ function var3_0.GetCurrentWeaponIconIndex(arg0_27)
 end
 
 function var3_0.Plus(arg0_28, arg1_28)
+	local var0_28 = arg0_28._count
+
 	arg0_28._count = arg0_28._count + 1
 
 	arg0_28:DispatchCountChange()
@@ -274,10 +276,10 @@ function var3_0.Plus(arg0_28, arg1_28)
 
 	arg0_28._readyList[#arg0_28._readyList + 1] = arg1_28
 
-	local var0_28 = var0_0.Event.New(var0_0.Battle.BattleEvent.WEAPON_COUNT_PLUS)
+	local var1_28 = var0_0.Event.New(var0_0.Battle.BattleEvent.WEAPON_COUNT_PLUS)
 
-	arg0_28:DispatchEvent(var0_28)
-	arg0_28:DispatchOverLoadChange()
+	arg0_28:DispatchEvent(var1_28)
+	arg0_28:DispatchOverLoadChange(var0_28)
 end
 
 function var3_0.Deduct(arg0_29, arg1_29)
@@ -299,7 +301,7 @@ function var3_0.Deduct(arg0_29, arg1_29)
 		arg0_29._current = 0
 	end
 
-	arg0_29:DispatchOverLoadChange()
+	arg0_29:DispatchOverLoadChange(nil, true)
 end
 
 function var3_0.InitialDeduct(arg0_30, arg1_30)
@@ -369,8 +371,11 @@ function var3_0.DispatchTotalChange(arg0_35, arg1_35)
 	arg0_35:DispatchEvent(var0_35)
 end
 
-function var3_0.DispatchOverLoadChange(arg0_36)
-	local var0_36 = var0_0.Event.New(var0_0.Battle.BattleEvent.OVER_LOAD_CHANGE)
+function var3_0.DispatchOverLoadChange(arg0_36, arg1_36, arg2_36)
+	local var0_36 = var0_0.Event.New(var0_0.Battle.BattleEvent.OVER_LOAD_CHANGE, {
+		preCast = arg1_36,
+		postCast = arg2_36
+	})
 
 	arg0_36:DispatchEvent(var0_36)
 end

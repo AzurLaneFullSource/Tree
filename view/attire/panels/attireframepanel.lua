@@ -155,9 +155,10 @@ function var0_0.OnUpdateItem(arg0_19, arg1_19, arg2_19)
 	end
 
 	local var1_19 = arg0_19.displayVOs[arg1_19 + 1]
-	local var2_19 = arg1_19 < arg0_19.scolrect.content:GetComponent(typeof(GridLayoutGroup)).constraintCount
+	local var2_19 = arg0_19.scolrect.content:GetComponent(typeof(GridLayoutGroup))
+	local var3_19 = arg1_19 < var2_19.constraintCount
 
-	var0_19:Update(var1_19, arg0_19.playerVO, var2_19)
+	var0_19:Update(var1_19, arg0_19.playerVO, var3_19, arg1_19, var2_19.constraintCount)
 end
 
 function var0_0.Update(arg0_20, arg1_20, arg2_20)

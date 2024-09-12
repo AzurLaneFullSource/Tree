@@ -86,6 +86,10 @@ pg.ship_meta_breakout = setmetatable({
 		9704042,
 		9704043,
 		9704044,
+		9704051,
+		9704052,
+		9704053,
+		9704054,
 		9705011,
 		9705012,
 		9705013,
@@ -1487,6 +1491,73 @@ pg.base.ship_meta_breakout = {
 		id = 9704044,
 		item1 = 21014,
 		pre_id = 9704043,
+		weapon_ids = {}
+	},
+	[9704051] = {
+		breakout_view = "Unlock Cinders of Hope - Hiei/Main gun base +1/Main gun efficiency +5%",
+		gold = 1000,
+		breakout_id = 9704052,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9704051,
+		item1 = 21038,
+		pre_id = 0,
+		weapon_ids = {
+			34000,
+			34000
+		}
+	},
+	[9704052] = {
+		breakout_view = "Secondary Gun base +2/Main gun efficiency +10%",
+		gold = 3000,
+		breakout_id = 9704053,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9704052,
+		item1 = 21038,
+		pre_id = 9704051,
+		weapon_ids = {
+			101,
+			101,
+			101
+		}
+	},
+	[9704053] = {
+		breakout_view = "Improve Cinders of Hope - Hiei/Main gun base +1/Main gun efficiency +15%",
+		gold = 10000,
+		breakout_id = 9704054,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9704053,
+		item1 = 21038,
+		pre_id = 9704052,
+		weapon_ids = {
+			34000,
+			34000,
+			34000
+		}
+	},
+	[9704054] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9704054,
+		item1 = 21038,
+		pre_id = 9704053,
 		weapon_ids = {}
 	},
 	[9705011] = {

@@ -45,6 +45,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	LevelMediator2.prevRefreshBossTimeTime = nil
 	ActivityMainScene.FetchReturnersTime = nil
 	ActivityMainScene.Data2Time = nil
+	COMBAT_SKIN_KEY = nil
 
 	pg.BrightnessMgr.GetInstance():ExitManualMode()
 	pg.SeriesGuideMgr.GetInstance():dispose()

@@ -181,6 +181,7 @@ function var0_0.OnInitItem(arg0_18, arg1_18)
 		arg0_18:ClickCard(var0_18.data)
 
 		arg0_18.prevCard = var0_18
+		arg0_18.prevBossId = var0_18.bossId
 	end, SFX_PANEL)
 
 	arg0_18.cards[arg1_18] = var0_18
@@ -198,6 +199,12 @@ function var0_0.OnUpdateItem(arg0_20, arg1_20, arg2_20)
 	local var1_20 = arg0_20.displays[arg1_20 + 1]
 
 	var0_20:Update(var1_20)
+
+	if arg0_20.prevBossId and arg0_20.prevBossId == var0_20.bossId then
+		var0_20:Select()
+	else
+		var0_20:UnSelect()
+	end
 
 	if arg1_20 == 0 and not arg0_20.isInit then
 		triggerButton(var0_20._tf)

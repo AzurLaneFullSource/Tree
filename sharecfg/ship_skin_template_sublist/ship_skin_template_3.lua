@@ -1,218 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_3 = {
-	[103130] = {
-		ship_group = 10313,
-		name = "Minneapolis",
-		hand_id = 16,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "mingniabolisi",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 103130,
-		voice_actor_2 = -1,
-		prefab = "mingniabolisi",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "New Orleans class Heavy Cruiser— Minneapolis, hull number CA-36.",
-		voice_actor = 153,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.619,
-					0.953,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.654,
-					1.041,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.155,
-					0.084,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.625,
-							2.427,
-							0.14
-						}
-					}
-				}
-			}
-		}
-	},
-	[103131] = {
-		ship_group = 10313,
-		name = "Wild Huntress Schoolgirl",
-		hand_id = 16,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 1,
-		shop_id = 70113,
-		painting = "mingniabolisi_2",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 4,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "103",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 103131,
-		voice_actor_2 = -1,
-		prefab = "mingniabolisi_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Textbooks, pencils and erasers... hey, must students always pay attention in class... Commander? Can you arrange for us to get more extracurricular activities?",
-		voice_actor = 153,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.95,
-					0.91,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.91,
-					0.94,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.17,
-					0.04,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.6,
-							2.33,
-							0.14
-						}
-					}
-				}
-			}
-		}
-	},
 	[103132] = {
 		ship_group = 10313,
 		name = "eXtreme Games",
@@ -5310,6 +5098,111 @@ pg.base.ship_skin_template_3 = {
 						{
 							-0.592,
 							2.35,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[105109] = {
+		ship_group = 10510,
+		name = "Maryland (Retrofit)",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 9,
+		shop_id = 0,
+		painting = "malilan_g",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 2,
+		id = 105109,
+		voice_actor_2 = -1,
+		prefab = "malilan_g",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "My retrofit is capital-D done! Hah, I generally know what's changed – the details, I'll discover in live battles! That alright with you?",
+		voice_actor = 162,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.46,
+					1.14,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.46,
+					1.14,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.46,
+					1.14,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.72,
+							2.341,
 							0
 						}
 					}
@@ -12461,6 +12354,206 @@ pg.base.ship_skin_template_3 = {
 			"mail",
 			"touch_body",
 			"touch_head"
+		}
+	},
+	[107093] = {
+		ship_group = 10709,
+		name = "Brush and Ink",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 3,
+		shop_id = 70484,
+		painting = "aisaikesi_5",
+		illustrator = 8,
+		l2d_voice_calibrate = "",
+		shop_type_id = 3,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "144",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 107093,
+		voice_actor_2 = -1,
+		prefab = "aisaikesi_5",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "The Dragon Empery's attire and tools of calligraphy... I see, just wearing this outfit makes me feel more scholarly and artistic! I shall put forth my best effort to prepare for the port's Spring Festival!",
+		voice_actor = 149,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			4
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.766,
+					0.999,
+					0
+				}
+			},
+			plane = {
+				{
+					1.765,
+					0.999,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.41,
+							2.37,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[107094] = {
+		ship_group = 10709,
+		name = "Detective Essex",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "1102",
+		l2d_ignore_drag = 0,
+		group_index = 4,
+		shop_id = 70734,
+		painting = "aisaikesi_6",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9999,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "154",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 107094,
+		voice_actor_2 = -1,
+		prefab = "aisaikesi_6",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "My eagle has gone missing... Just as Enterprise said, there's something strange going on in this port–– Wait, I definitely smell a case in the making! Commander, let's get to the bottom of this together!",
+		voice_actor = 149,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.048,
+					1.32,
+					0
+				}
+			},
+			plane = {
+				{
+					1.368,
+					0.472,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.761,
+							1.98,
+							0
+						}
+					}
+				}
+			}
 		}
 	}
 }

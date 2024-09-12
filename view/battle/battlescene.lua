@@ -25,7 +25,7 @@ var0_0.SIDE_ALIGNMENT = {
 local var1_0
 
 function var0_0.getUIName(arg0_1)
-	return "CombatUI"
+	return "CombatUI" .. ys.Battle.BattleState.GetCombatSkinKey()
 end
 
 function var0_0.getBGM(arg0_2)
@@ -168,16 +168,27 @@ function var0_0.SkillHrzPop(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
 		end
 
 		var1_7 = arg0_7._skillFloatCMDPool
-		var2_7 = var0_7:GetCommanderHrzIcon(arg3_7)
+
+		if ys.Battle.BattleState.GetCombatSkinKey() == "Standard" then
+			var2_7 = var0_7:GetCommanderHrzIcon(arg3_7)
+		else
+			var2_7 = var0_7:GetCommanderIcon(arg3_7)
+		end
 	else
 		var1_7 = arg0_7._skillFloatPool
 
 		if arg2_7:GetUnitType() == ys.Battle.BattleConst.UnitType.PLAYER_UNIT then
 			local var3_7 = arg4_7 or arg2_7:GetTemplate().painting
 
-			var2_7 = var0_7:GetCharacterIcon(var3_7)
-		else
+			if ys.Battle.BattleState.GetCombatSkinKey() == "Standard" then
+				var2_7 = var0_7:GetCharacterIcon(var3_7)
+			else
+				var2_7 = var0_7:GetCharacterSquareIcon(var3_7)
+			end
+		elseif ys.Battle.BattleState.GetCombatSkinKey() == "Standard" then
 			var2_7 = var0_7:GetCharacterIcon(pg.enemy_data_statistics[arg2_7:GetTemplateID()].icon)
+		else
+			var2_7 = var0_7:GetCharacterSquareIcon(pg.enemy_data_statistics[arg2_7:GetTemplateID()].icon)
 		end
 	end
 
@@ -188,7 +199,7 @@ function var0_0.SkillHrzPop(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
 
 	setText(findTF(var5_7, "skill/skill_name/Text"), HXSet.hxLan(arg1_7))
 
-	local var6_7 = findTF(var5_7, "skill/icon")
+	local var6_7 = findTF(var5_7, "skill/icon_mask/icon")
 	local var7_7 = findTF(var5_7, "skill/skill_name")
 
 	var6_7:GetComponent(typeof(Image)).sprite = var2_7
@@ -380,11 +391,18 @@ function var0_0.didEnter(arg0_16)
 		arg0_16:emit(BattleMediator.ON_PAUSE)
 	end, SFX_CONFIRM)
 
-	local var1_16 = arg0_16:findTF("chatBtn")
+	arg0_16._chatBtn = arg0_16:findTF("chatBtn")
 
-	onButton(arg0_16, var1_16, function()
+	local var1_16 = arg0_16._chatBtn:GetComponent(typeof(Animation))
+
+	onButton(arg0_16, arg0_16._chatBtn, function()
 		arg0_16:emit(BattleMediator.ON_CHAT, arg0_16:findTF("chatContainer"))
-		setActive(var1_16, false)
+
+		if not var1_16 then
+			setActive(arg0_16._chatBtn, false)
+		else
+			var1_16:Play("chatbtn_out")
+		end
 	end)
 	onToggle(arg0_16, arg0_16:findTF("AutoBtn"), function(arg0_20)
 		local var0_20 = var0_16:GetBattleType()
@@ -395,7 +413,18 @@ function var0_0.didEnter(arg0_16)
 			system = var0_20
 		})
 		var0_16:ActiveBot(ys.Battle.BattleState.IsAutoBotActive(var0_20))
-		setActive(var1_16, var0_16:ChatUseable())
+
+		if var0_16:ChatUseable() then
+			setActive(arg0_16._chatBtn, true)
+
+			if var1_16 then
+				var1_16:Play("chatbtn_in")
+			end
+		elseif var1_16 then
+			var1_16:Play("chatbtn_out")
+		else
+			setActive(arg0_16._chatBtn, false)
+		end
 	end, SFX_PANEL, SFX_PANEL)
 	onButton(arg0_16, arg0_16:findTF("CardPuzzleConsole/relic/bg"), function()
 		local var0_21 = var0_16:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE):GetCardPuzzleComponent():GetRelicList()
@@ -452,7 +481,7 @@ function var0_0.didEnter(arg0_16)
 		triggerButton(arg0_16:findTF("PauseBtn"))
 	end
 
-	setActive(var1_16, var0_16:ChatUseable())
+	setActive(arg0_16._chatBtn, var0_16:ChatUseable())
 end
 
 function var0_0.onBackPressed(arg0_25)
@@ -603,11 +632,34 @@ function var0_0.initPauseWindow(arg0_31)
 
 	onButton(arg0_31, arg0_31.leaveBtn, function()
 		arg0_31:emit(BattleMediator.ON_LEAVE)
+
+		local var0_33 = arg0_31.leaveBtn:GetComponent(typeof(Animation))
+
+		if var0_33 then
+			var0_33:Play("msgbox_btn_blink")
+		end
 	end)
 	onButton(arg0_31, arg0_31.continueBtn, function()
-		setActive(arg0_31.pauseWindow, false)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_31.pauseWindow, arg0_31._tf)
-		var1_31:Resume()
+		local var0_34 = arg0_31.continueBtn:GetComponent(typeof(Animation))
+
+		if var0_34 then
+			var0_34:Play("msgbox_btn_blink")
+		end
+
+		local var1_34 = arg0_31.pauseWindow:GetComponent(typeof(Animation))
+
+		if var1_34 then
+			var1_34:Play("msgbox_out")
+			arg0_31.pauseWindow:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg0_35)
+				setActive(arg0_31.pauseWindow, false)
+				pg.UIMgr.GetInstance():UnblurPanel(arg0_31.pauseWindow, arg0_31._tf)
+				var1_31:Resume()
+			end)
+		else
+			setActive(arg0_31.pauseWindow, false)
+			pg.UIMgr.GetInstance():UnblurPanel(arg0_31.pauseWindow, arg0_31._tf)
+			var1_31:Resume()
+		end
 	end)
 	onButton(arg0_31, arg0_31:findTF("help", arg0_31.pauseWindow), function()
 		if BATTLE_DEBUG and PLATFORM == 7 then
@@ -631,89 +683,100 @@ function var0_0.initPauseWindow(arg0_31)
 	setActive(arg0_31.pauseWindow, false)
 end
 
-function var0_0.updatePauseWindow(arg0_38)
-	if not arg0_38.pauseWindow then
+function var0_0.updatePauseWindow(arg0_39)
+	if not arg0_39.pauseWindow then
 		return
 	end
 
-	setActive(arg0_38.pauseWindow, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_38.pauseWindow, nil, {
+	setActive(arg0_39.pauseWindow, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_39.pauseWindow, nil, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 
-	local var0_38 = ys.Battle.BattleState.GetInstance():GetProxyByName(ys.Battle.BattleDataProxy.__name)
-	local var1_38 = var0_38:GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE)
-	local var2_38 = var1_38:GetMainList()
-	local var3_38 = var1_38:GetScoutList()
+	local var0_39 = ys.Battle.BattleState.GetInstance():GetProxyByName(ys.Battle.BattleDataProxy.__name)
+	local var1_39 = var0_39:GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE)
+	local var2_39 = var1_39:GetMainList()
+	local var3_39 = var1_39:GetScoutList()
 
-	local function var4_38(arg0_39, arg1_39, arg2_39)
-		if not arg0_39 then
+	local function var4_39(arg0_40, arg1_40, arg2_40)
+		if not arg0_40 then
 			return
 		end
 
-		for iter0_39 = 1, #arg0_39 do
-			local var0_39 = arg0_39[iter0_39].id
+		for iter0_40 = 1, #arg0_40 do
+			local var0_40 = arg0_40[iter0_40].id
 
-			if var1_38:GetFreezeShipByID(var0_39) then
-				local var1_39 = var1_38:GetFreezeShipByID(var0_39)
+			if var1_39:GetFreezeShipByID(var0_40) then
+				local var1_40 = var1_39:GetFreezeShipByID(var0_40)
 
-				setSlider(arg2_39[iter0_39]:Find("blood"), 0, 1, var1_39:GetHPRate())
-				SetActive(arg2_39[iter0_39]:Find("mask"), false)
-			elseif var1_38:GetShipByID(var0_39) then
-				local var2_39 = var1_38:GetShipByID(var0_39)
+				setSlider(arg2_40[iter0_40]:Find("blood"), 0, 1, var1_40:GetHPRate())
+				SetActive(arg2_40[iter0_40]:Find("mask"), false)
+			elseif var1_39:GetShipByID(var0_40) then
+				local var2_40 = var1_39:GetShipByID(var0_40)
 
-				setSlider(arg2_39[iter0_39]:Find("blood"), 0, 1, var2_39:GetHPRate())
-				SetActive(arg2_39[iter0_39]:Find("mask"), false)
+				setSlider(arg2_40[iter0_40]:Find("blood"), 0, 1, var2_40:GetHPRate())
+				SetActive(arg2_40[iter0_40]:Find("mask"), false)
 			else
-				setSlider(arg2_39[iter0_39]:Find("blood"), 0, 1, 0)
-				SetActive(arg2_39[iter0_39]:Find("mask"), true)
+				setSlider(arg2_40[iter0_40]:Find("blood"), 0, 1, 0)
+				SetActive(arg2_40[iter0_40]:Find("mask"), true)
 			end
 		end
 	end
 
-	var4_38(arg0_38._mainShipVOs, var2_38, arg0_38.mainTFs)
-	var4_38(arg0_38._vanShipVOs, var3_38, arg0_38.vanTFs)
-	setText(arg0_38.LeftTime, ys.Battle.BattleTimerView.formatTime(math.floor(var0_38:GetCountDown())))
+	var4_39(arg0_39._mainShipVOs, var2_39, arg0_39.mainTFs)
+	var4_39(arg0_39._vanShipVOs, var3_39, arg0_39.vanTFs)
+	setText(arg0_39.LeftTime, ys.Battle.BattleTimerView.formatTime(math.floor(var0_39:GetCountDown())))
 end
 
-function var0_0.AddUIFX(arg0_40, arg1_40, arg2_40)
-	arg2_40 = arg2_40 or 1
+function var0_0.AddUIFX(arg0_41, arg1_41, arg2_41)
+	arg2_41 = arg2_41 or 1
 
-	local var0_40 = arg2_40 > 0
+	local var0_41 = arg2_41 > 0
 
-	arg1_40 = tf(arg1_40)
+	arg1_41 = tf(arg1_41)
 
-	local var1_40 = var0_40 and arg0_40._fxContainerUpper or arg0_40._fxContainerBottom
+	local var1_41 = var0_41 and arg0_41._fxContainerUpper or arg0_41._fxContainerBottom
 
-	arg1_40:SetParent(var1_40)
-	pg.ViewUtils.SetSortingOrder(arg1_40, arg0_40._canvasOrder + arg2_40)
-	pg.ViewUtils.SetLayer(arg1_40, Layer.UI)
+	arg1_41:SetParent(var1_41)
+	pg.ViewUtils.SetSortingOrder(arg1_41, arg0_41._canvasOrder + arg2_41)
+	pg.ViewUtils.SetLayer(arg1_41, Layer.UI)
 
-	return var1_40.localScale
+	return var1_41.localScale
 end
 
-function var0_0.OnCloseChat(arg0_41)
-	local var0_41 = arg0_41:findTF("chatBtn")
+function var0_0.OnCloseChat(arg0_42)
+	local var0_42 = ys.Battle.BattleState.GetInstance():IsBotActive()
+	local var1_42 = arg0_42._chatBtn:GetComponent(typeof(Animation))
 
-	setActive(var0_41, ys.Battle.BattleState.GetInstance():IsBotActive())
+	if var0_42 then
+		setActive(arg0_42._chatBtn, true)
+
+		if var1_42 then
+			var1_42:Play("chatbtn_in")
+		end
+	elseif var1_42 then
+		var1_42:Play("chatbtn_out")
+	else
+		setActive(arg0_42._chatBtn, false)
+	end
 end
 
-function var0_0.clear(arg0_42)
-	arg0_42._preSkillTF = nil
-	arg0_42._preCommanderSkillTF = nil
-	arg0_42._commanderSkillList = nil
-	arg0_42._skillPaintings = nil
-	arg0_42._currentPainting = nil
+function var0_0.clear(arg0_43)
+	arg0_43._preSkillTF = nil
+	arg0_43._preCommanderSkillTF = nil
+	arg0_43._commanderSkillList = nil
+	arg0_43._skillPaintings = nil
+	arg0_43._currentPainting = nil
 
-	Destroy(arg0_42._paintingUI)
+	Destroy(arg0_43._paintingUI)
 end
 
-function var0_0.willExit(arg0_43)
-	arg0_43._skillFloatPool:Dispose()
-	arg0_43._skillFloatCMDPool:Dispose()
+function var0_0.willExit(arg0_44)
+	arg0_44._skillFloatPool:Dispose()
+	arg0_44._skillFloatCMDPool:Dispose()
 	ys.Battle.BattleState.GetInstance():ExitBattle()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_43.pauseWindow, arg0_43._tf)
-	pg.CameraFixMgr.GetInstance():disconnect(arg0_43.camEventId)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_44.pauseWindow, arg0_44._tf)
+	pg.CameraFixMgr.GetInstance():disconnect(arg0_44.camEventId)
 end
 
 return var0_0

@@ -524,67 +524,33 @@ function var0_0.confirm(arg0_30, arg1_30)
 		local var1_30 = var0_30 and 4 or arg1_30:getConfig("tag")
 
 		if arg1_30:isMonthCard() or arg1_30:isGiftBox() or arg1_30:isItemBox() or arg1_30:isPassItem() then
-			local var2_30 = underscore.map(arg1_30:getConfig("extra_service_item"), function(arg0_31)
-				return Drop.Create(arg0_31)
-			end)
-			local var3_30
+			local var2_30 = arg1_30:GetExtraServiceItem()
+			local var3_30 = arg1_30:GetExtraDrop()
+			local var4_30 = arg1_30:GetBonusItem()
+			local var5_30
+			local var6_30
 
 			if arg1_30:isPassItem() then
-				local var4_30 = arg1_30:getConfig("sub_display")
-				local var5_30 = var4_30[1]
-				local var6_30 = pg.battlepass_event_pt[var5_30].pt
-
-				var3_30 = Drop.New({
-					type = DROP_TYPE_VITEM,
-					id = var6_30,
-					count = var4_30[2]
-				})
-				var2_30 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[var5_30].award_pay, function(arg0_32)
-					return Drop.Create(pg.battlepass_event_award[arg0_32].drop_client)
-				end))
-			end
-
-			local var7_30 = arg1_30:getConfig("gem") + arg1_30:getConfig("extra_gem")
-			local var8_30
-
-			if arg1_30:isMonthCard() then
-				var8_30 = Drop.New({
-					type = DROP_TYPE_RESOURCE,
-					id = PlayerConst.ResDiamond,
-					count = var7_30
-				})
-			elseif var7_30 > 0 then
-				table.insert(var2_30, Drop.New({
-					type = DROP_TYPE_RESOURCE,
-					id = PlayerConst.ResDiamond,
-					count = var7_30
-				}))
-			end
-
-			local var9_30
-			local var10_30
-
-			if arg1_30:isPassItem() then
-				var9_30 = i18n("battlepass_pay_tip")
+				var5_30 = i18n("battlepass_pay_tip")
 			elseif arg1_30:isMonthCard() then
-				var9_30 = i18n("charge_title_getitem_month")
-				var10_30 = i18n("charge_title_getitem_soon")
+				var5_30 = i18n("charge_title_getitem_month")
+				var6_30 = i18n("charge_title_getitem_soon")
 			else
-				var9_30 = i18n("charge_title_getitem")
+				var5_30 = i18n("charge_title_getitem")
 			end
 
-			local var11_30 = {
+			local var7_30 = {
 				isChargeType = true,
 				icon = "chargeicon/" .. arg1_30:getConfig("picture"),
 				name = arg1_30:getConfig("name_display"),
-				tipExtra = var9_30,
+				tipExtra = var5_30,
 				extraItems = var2_30,
 				price = arg1_30:getConfig("money"),
 				isLocalPrice = arg1_30:IsLocalPrice(),
 				tagType = var1_30,
 				isMonthCard = arg1_30:isMonthCard(),
-				tipBonus = var10_30,
-				bonusItem = var8_30,
+				tipBonus = var6_30,
+				bonusItem = var4_30,
 				extraDrop = var3_30,
 				descExtra = arg1_30:getConfig("descrip_extra"),
 				limitArgs = arg1_30:getConfig("limit_args"),
@@ -599,25 +565,25 @@ function var0_0.confirm(arg0_30, arg1_30)
 				end
 			}
 
-			arg0_30:emit(RefluxMediator.OPEN_CHARGE_ITEM_PANEL, var11_30)
+			arg0_30:emit(RefluxMediator.OPEN_CHARGE_ITEM_PANEL, var7_30)
 		elseif arg1_30:isGem() then
-			local var12_30 = arg1_30:getConfig("money")
-			local var13_30 = arg1_30:getConfig("gem")
+			local var8_30 = arg1_30:getConfig("money")
+			local var9_30 = arg1_30:getConfig("gem")
 
 			if var0_30 then
-				var13_30 = var13_30 + arg1_30:getConfig("gem")
+				var9_30 = var9_30 + arg1_30:getConfig("gem")
 			else
-				var13_30 = var13_30 + arg1_30:getConfig("extra_gem")
+				var9_30 = var9_30 + arg1_30:getConfig("extra_gem")
 			end
 
-			local var14_30 = {
+			local var10_30 = {
 				isChargeType = true,
 				icon = "chargeicon/" .. arg1_30:getConfig("picture"),
 				name = arg1_30:getConfig("name_display"),
 				price = arg1_30:getConfig("money"),
 				isLocalPrice = arg1_30:IsLocalPrice(),
 				tagType = var1_30,
-				normalTip = i18n("charge_start_tip", var12_30, var13_30),
+				normalTip = i18n("charge_start_tip", var8_30, var9_30),
 				onYes = function()
 					if ChargeConst.isNeedSetBirth() then
 						arg0_30:emit(RefluxMediator.OPEN_CHARGE_BIRTHDAY)
@@ -629,43 +595,43 @@ function var0_0.confirm(arg0_30, arg1_30)
 				end
 			}
 
-			arg0_30:emit(RefluxMediator.OPEN_CHARGE_ITEM_BOX, var14_30)
+			arg0_30:emit(RefluxMediator.OPEN_CHARGE_ITEM_BOX, var10_30)
 		end
 	else
-		local var15_30 = {}
-		local var16_30 = arg1_30:getConfig("effect_args")
-		local var17_30 = Item.getConfigData(var16_30[1])
-		local var18_30 = var17_30.display_icon
+		local var11_30 = {}
+		local var12_30 = arg1_30:getConfig("effect_args")
+		local var13_30 = Item.getConfigData(var12_30[1])
+		local var14_30 = var13_30.display_icon
 
-		if type(var18_30) == "table" then
-			for iter0_30, iter1_30 in ipairs(var18_30) do
-				table.insert(var15_30, Drop.Create(iter1_30))
+		if type(var14_30) == "table" then
+			for iter0_30, iter1_30 in ipairs(var14_30) do
+				table.insert(var11_30, Drop.Create(iter1_30))
 			end
 		end
 
-		local var19_30 = arg1_30:getConfig("resource_type") == var0_0.Special_ID_Gold
-		local var20_30
+		local var15_30 = arg1_30:getConfig("resource_type") == var0_0.Special_ID_Gold
+		local var16_30
 
-		if var19_30 then
-			var20_30 = i18n("charge_scene_buy_confirm_gold", arg1_30:getConfig("resource_num"), var17_30.name)
+		if var15_30 then
+			var16_30 = i18n("charge_scene_buy_confirm_gold", arg1_30:getConfig("resource_num"), var13_30.name)
 		else
-			var20_30 = i18n("charge_scene_buy_confirm", arg1_30:getConfig("resource_num"), var17_30.name)
+			var16_30 = i18n("charge_scene_buy_confirm", arg1_30:getConfig("resource_num"), var13_30.name)
 		end
 
-		local var21_30 = {
+		local var17_30 = {
 			isMonthCard = false,
 			isChargeType = false,
 			isLocalPrice = false,
-			icon = var17_30.icon,
-			name = var17_30.name,
+			icon = var13_30.icon,
+			name = var13_30.name,
 			tipExtra = i18n("charge_title_getitem"),
-			extraItems = var15_30,
+			extraItems = var11_30,
 			price = arg1_30:getConfig("resource_num"),
 			tagType = arg1_30:getConfig("tag"),
-			isForceGold = var19_30,
+			isForceGold = var15_30,
 			onYes = function()
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					content = var20_30,
+					content = var16_30,
 					onYes = function()
 						pg.m02:sendNotification(GAME.SHOPPING, {
 							count = 1,
@@ -676,39 +642,39 @@ function var0_0.confirm(arg0_30, arg1_30)
 			end
 		}
 
-		arg0_30:emit(RefluxMediator.OPEN_CHARGE_ITEM_PANEL, var21_30)
+		arg0_30:emit(RefluxMediator.OPEN_CHARGE_ITEM_PANEL, var17_30)
 	end
 end
 
 function var0_0.getAllRefluxPackID()
-	local var0_37 = {}
+	local var0_35 = {}
 
-	for iter0_37, iter1_37 in ipairs(pg.return_giftpack_template.all) do
-		local var1_37 = pg.return_giftpack_template[iter1_37]
-		local var2_37 = var1_37.pack_type_1
-		local var3_37 = var1_37.pack_type_2
-		local var4_37 = var1_37.pack_type_3
+	for iter0_35, iter1_35 in ipairs(pg.return_giftpack_template.all) do
+		local var1_35 = pg.return_giftpack_template[iter1_35]
+		local var2_35 = var1_35.pack_type_1
+		local var3_35 = var1_35.pack_type_2
+		local var4_35 = var1_35.pack_type_3
 
-		if type(var2_37) == "table" then
-			for iter2_37, iter3_37 in pairs(var2_37) do
-				table.insert(var0_37, iter3_37)
+		if type(var2_35) == "table" then
+			for iter2_35, iter3_35 in pairs(var2_35) do
+				table.insert(var0_35, iter3_35)
 			end
 		end
 
-		if type(var3_37) == "table" then
-			for iter4_37, iter5_37 in pairs(var3_37) do
-				table.insert(var0_37, iter5_37)
+		if type(var3_35) == "table" then
+			for iter4_35, iter5_35 in pairs(var3_35) do
+				table.insert(var0_35, iter5_35)
 			end
 		end
 
-		if type(var4_37) == "table" then
-			for iter6_37, iter7_37 in pairs(var4_37) do
-				table.insert(var0_37, iter7_37)
+		if type(var4_35) == "table" then
+			for iter6_35, iter7_35 in pairs(var4_35) do
+				table.insert(var0_35, iter7_35)
 			end
 		end
 	end
 
-	return var0_37
+	return var0_35
 end
 
 return var0_0

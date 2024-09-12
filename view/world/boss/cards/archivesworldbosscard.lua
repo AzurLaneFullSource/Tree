@@ -98,6 +98,7 @@ function var0_0.Flush(arg0_3)
 end
 
 function var0_0.Select(arg0_4)
+	arg0_4:UnSelect()
 	setActive(arg0_4.arrTr, true)
 	LeanTween.value(arg0_4.arrTr.gameObject, arg0_4.arrLpos.x, arg0_4.arrLpos.x - 20, 0.9):setOnUpdate(System.Action_float(function(arg0_5)
 		arg0_4.arrTr.localPosition = Vector3(arg0_5, arg0_4.arrLpos.y, 0)

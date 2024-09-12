@@ -198,7 +198,7 @@ function var2_0.InitBtns(arg0_6)
 
 		local var24_6 = arg0_6._subStriveBtn:GetSkin()
 
-		arg0_6:setSkillButtonPreferences(var24_6, 4)
+		arg0_6.SetSkillButtonPreferences(var24_6, 4)
 		arg0_6._subStriveBtn:ConfigCallback(var1_6, var23_6, var1_6, var0_6)
 		arg0_6._subStriveBtn:SetProgressInfo(var22_6)
 		table.insert(arg0_6._activeBtnList, arg0_6._subStriveBtn)
@@ -207,7 +207,7 @@ function var2_0.InitBtns(arg0_6)
 	local var25_6 = var0_0.Battle.BattleWeaponButton.New()
 	local var26_6 = cloneTplTo(arg0_6._progressSkin, arg0_6._buttonContainer)
 
-	arg0_6:setSkillButtonPreferences(var26_6, 2)
+	arg0_6.SetSkillButtonPreferences(var26_6, 2)
 	var25_6:ConfigSkin(var26_6)
 	var25_6:SwitchIcon(10)
 	var25_6:SwitchIconEffect(2)
@@ -231,7 +231,7 @@ function var2_0.generateCommonButton(arg0_22, arg1_22)
 
 	var1_22.name = "Skill_" .. arg1_22
 
-	arg0_22:setSkillButtonPreferences(var1_22, arg1_22)
+	arg0_22.SetSkillButtonPreferences(var1_22, arg1_22)
 	var0_22:ConfigSkin(var1_22)
 	var0_22:SwitchIcon(arg1_22)
 	var0_22:SwitchIconEffect(arg1_22)
@@ -337,11 +337,11 @@ function var2_0.SubRoutineButton(arg0_28)
 	table.insert(arg0_28._delayAnimaList, arg0_28._torpedoBtn)
 	table.insert(arg0_28._delayAnimaList, arg0_28._shiftBtn)
 	table.insert(arg0_28._delayAnimaList, arg0_28._specialBtn)
-	arg0_28:setSkillButtonPreferences(arg0_28._diveBtn:GetSkin(), 1)
-	arg0_28:setSkillButtonPreferences(arg0_28._floatBtn:GetSkin(), 1)
-	arg0_28:setSkillButtonPreferences(arg0_28._torpedoBtn:GetSkin(), 2)
-	arg0_28:setSkillButtonPreferences(arg0_28._shiftBtn:GetSkin(), 3)
-	arg0_28:setSkillButtonPreferences(arg0_28._specialBtn:GetSkin(), 4)
+	arg0_28.SetSkillButtonPreferences(arg0_28._diveBtn:GetSkin(), 1)
+	arg0_28.SetSkillButtonPreferences(arg0_28._floatBtn:GetSkin(), 1)
+	arg0_28.SetSkillButtonPreferences(arg0_28._torpedoBtn:GetSkin(), 2)
+	arg0_28.SetSkillButtonPreferences(arg0_28._shiftBtn:GetSkin(), 3)
+	arg0_28.SetSkillButtonPreferences(arg0_28._specialBtn:GetSkin(), 4)
 end
 
 function var2_0.AirFightButton(arg0_29)
@@ -356,7 +356,7 @@ function var2_0.AirFightButton(arg0_29)
 
 		if var1_29 then
 			table.insert(arg0_29._activeBtnList, iter1_29)
-			arg0_29:setSkillButtonPreferences(iter1_29:GetSkin(), var1_29)
+			arg0_29.SetSkillButtonPreferences(iter1_29:GetSkin(), var1_29)
 		end
 	end
 end
@@ -420,12 +420,12 @@ function var2_0.Update(arg0_35)
 	end
 end
 
-function var2_0.setSkillButtonPreferences(arg0_36, arg1_36, arg2_36)
-	local var0_36 = var1_0.SKILL_BUTTON_DEFAULT_PREFERENCE[arg2_36]
-	local var1_36 = PlayerPrefs.GetFloat("skill_" .. arg2_36 .. "_scale", var0_36.scale)
-	local var2_36 = PlayerPrefs.GetFloat("skill_" .. arg2_36 .. "_anchorX", var0_36.x)
-	local var3_36 = PlayerPrefs.GetFloat("skill_" .. arg2_36 .. "_anchorY", var0_36.y)
-	local var4_36 = arg1_36.transform
+function var2_0.SetSkillButtonPreferences(arg0_36, arg1_36)
+	local var0_36 = var1_0.SKILL_BUTTON_DEFAULT_PREFERENCE[arg1_36]
+	local var1_36 = PlayerPrefs.GetFloat("skill_" .. arg1_36 .. "_scale", var0_36.scale)
+	local var2_36 = PlayerPrefs.GetFloat("skill_" .. arg1_36 .. "_anchorX", var0_36.x)
+	local var3_36 = PlayerPrefs.GetFloat("skill_" .. arg1_36 .. "_anchorY", var0_36.y)
+	local var4_36 = arg0_36.transform
 
 	var4_36.localScale = Vector3(var1_36, var1_36, 0)
 	var4_36.anchorMin = Vector2(var2_36, var3_36)

@@ -90,51 +90,37 @@ function var0_0.updateForMonthTF(arg0_4, arg1_4, arg2_4)
 		setActive(var7_4, not arg1_4:IsLocalPrice())
 	end
 
-	local var9_4 = arg1_4:getConfig("display")
+	local var9_4 = arg1_4:GetDropList()
 
-	if #var9_4 == 0 then
-		var9_4 = arg1_4:getConfig("extra_service_item")
-	end
+	if #var9_4 > 0 then
+		local var10_4 = UIItemList.New(var4_4, var3_4)
 
-	if var9_4 and #var9_4 > 0 then
-		local var10_4 = {}
-
-		for iter0_4, iter1_4 in ipairs(var9_4) do
-			table.insert(var10_4, {
-				type = iter1_4[1],
-				id = iter1_4[2],
-				count = iter1_4[3]
-			})
-		end
-
-		local var11_4 = UIItemList.New(var4_4, var3_4)
-
-		var11_4:make(function(arg0_5, arg1_5, arg2_5)
+		var10_4:make(function(arg0_5, arg1_5, arg2_5)
 			if arg0_5 == UIItemList.EventUpdate then
-				updateDrop(arg2_5, var10_4[arg1_5 + 1])
+				updateDrop(arg2_5, var9_4[arg1_5 + 1])
 			end
 		end)
-		var11_4:align(#var10_4)
+		var10_4:align(#var9_4)
 	end
 
-	local var12_4 = arg2_4:getCardById(VipCard.MONTH)
+	local var11_4 = arg2_4:getCardById(VipCard.MONTH)
 
-	if var12_4 and not var12_4:isExpire() then
-		local var13_4 = var12_4:getLeftDate()
-		local var14_4 = pg.TimeMgr.GetInstance():GetServerTime()
-		local var15_4 = math.floor((var13_4 - var14_4) / 86400)
-		local var16_4 = arg1_4:getConfig("limit_arg") or 0
+	if var11_4 and not var11_4:isExpire() then
+		local var12_4 = var11_4:getLeftDate()
+		local var13_4 = pg.TimeMgr.GetInstance():GetServerTime()
+		local var14_4 = math.floor((var12_4 - var13_4) / 86400)
+		local var15_4 = arg1_4:getConfig("limit_arg") or 0
 
-		setActive(var5_4, var16_4 < var15_4)
-		setText(var6_4, i18n("charge_month_card_lefttime_tip", var15_4))
+		setActive(var5_4, var15_4 < var14_4)
+		setText(var6_4, i18n("charge_month_card_lefttime_tip", var14_4))
 	else
 		setActive(var5_4, false)
 	end
 
-	local var17_4 = MonthCardOutDateTipPanel.GetShowMonthCardTag()
+	local var16_4 = MonthCardOutDateTipPanel.GetShowMonthCardTag()
 
-	setActive(arg0_4.monthTF:Find("monthcard_tag"), var17_4)
-	setActive(arg0_4.monthTF:Find("NewTag"), not var17_4)
+	setActive(arg0_4.monthTF:Find("monthcard_tag"), var16_4)
+	setActive(arg0_4.monthTF:Find("NewTag"), not var16_4)
 	onButton(arg0_4.parentContext, var0_4, function()
 		triggerButton(arg0_4.tr)
 	end, SFX_PANEL)

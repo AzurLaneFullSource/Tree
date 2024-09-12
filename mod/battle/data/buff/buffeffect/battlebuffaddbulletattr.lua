@@ -19,6 +19,7 @@ function var1_0.SetArgs(arg0_2, arg1_2, arg2_2)
 	arg0_2._weaponIndexList = arg0_2._tempData.arg_list.index
 	arg0_2._numberBase = arg0_2._number
 	arg0_2._displacementConvert = arg0_2._tempData.arg_list.displacement_convert
+	arg0_2._displacementDynamic = arg0_2._tempData.arg_list.displacement_convert_dynamic
 end
 
 function var1_0.onStack(arg0_3, arg1_3, arg2_3)
@@ -49,12 +50,12 @@ function var1_0.onManualBulletCreate(arg0_6, arg1_6, arg2_6, arg3_6)
 	arg0_6:calcBulletAttr(arg3_6)
 end
 
-function var1_0.onBulletCollide(arg0_7, arg1_7, arg2_7, arg3_7)
+function var1_0.onBulletCollideBefore(arg0_7, arg1_7, arg2_7, arg3_7)
 	if not arg0_7:equipIndexRequire(arg3_7.equipIndex) then
 		return
 	end
 
-	arg0_7:displacementConvert(arg3_7)
+	arg0_7:displacementConvert(arg3_7, arg1_7)
 	arg0_7:calcBulletAttr(arg3_7)
 end
 
@@ -63,7 +64,7 @@ function var1_0.onBombBulletBang(arg0_8, arg1_8, arg2_8, arg3_8)
 		return
 	end
 
-	arg0_8:displacementConvert(arg3_8)
+	arg0_8:displacementConvert(arg3_8, arg1_8)
 	arg0_8:calcBulletAttr(arg3_8)
 end
 
@@ -72,22 +73,42 @@ function var1_0.onTorpedoBulletBang(arg0_9, arg1_9, arg2_9, arg3_9)
 		return
 	end
 
-	arg0_9:displacementConvert(arg3_9)
+	arg0_9:displacementConvert(arg3_9, arg1_9)
 	arg0_9:calcBulletAttr(arg3_9)
 end
 
-function var1_0.displacementConvert(arg0_10, arg1_10)
-	local var0_10 = arg1_10._bullet:GetCurrentDistance()
-	local var1_10 = arg0_10._displacementConvert.base
-	local var2_10 = arg0_10._displacementConvert.rate
-	local var3_10 = arg0_10._displacementConvert.max
+function var1_0.displacementConvert(arg0_10, arg1_10, arg2_10)
+	local var0_10 = arg1_10._bullet
 
-	if var2_10 > 0 then
-		arg0_10._number = math.min(math.max(var0_10 - var1_10, 0) * var2_10, var3_10)
-	elseif var2_10 < 0 then
-		arg0_10._number = math.min(math.max(0, var3_10 + (var0_10 - var1_10) * var2_10), var3_10)
-	elseif var2_10 == 0 then
-		arg0_10._number = 0
+	if arg0_10._displacementConvert then
+		local var1_10 = var0_10:GetCurrentDistance()
+		local var2_10 = arg0_10._displacementConvert.base
+		local var3_10 = arg0_10._displacementConvert.rate
+		local var4_10 = arg0_10._displacementConvert.max
+
+		if var3_10 > 0 then
+			arg0_10._number = math.min(math.max(var1_10 - var2_10, 0) * var3_10, var4_10)
+		elseif var3_10 < 0 then
+			arg0_10._number = math.min(math.max(0, var4_10 + (var1_10 - var2_10) * var3_10), var4_10)
+		elseif var3_10 == 0 then
+			arg0_10._number = 0
+		end
+	elseif arg0_10._displacementDynamic then
+		local var5_10 = arg0_10._displacementDynamic.check_caster
+		local var6_10 = arg0_10._displacementDynamic.base
+		local var7_10 = arg0_10._displacementDynamic.rate
+		local var8_10 = arg0_10._displacementDynamic.max
+		local var9_10 = arg0_10:getTargetList(arg2_10, var5_10, arg0_10._displacementDynamic)
+
+		if var9_10 and #var9_10 > 0 then
+			local var10_10 = var9_10[1]:GetPosition()
+			local var11_10 = var0_10:GetPosition()
+			local var12_10 = Vector3.Distance(var10_10, var11_10)
+
+			arg0_10._number = math.min(math.max(var12_10 - var6_10, 0) * var7_10, var8_10)
+		else
+			arg0_10._number = 0
+		end
 	end
 end
 

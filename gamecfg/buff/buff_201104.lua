@@ -1,0 +1,76 @@
+return {
+	init_effect = "",
+	name = "2024天城航母活动 EX 一阶段转场",
+	time = 2.5,
+	color = "yellow",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 201104,
+	icon = 201104,
+	last_effect = "Bossbomb",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				skill_id = 201103,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				skill_id = 8692,
+				target = "TargetHarmFarthest"
+			}
+		},
+		{
+			type = "BattleBuffSetBattleUnitType",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				value = -100
+			}
+		},
+		{
+			type = "BattleBuffFixDamage",
+			trigger = {
+				"onBeforeTakeDamage"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				value = 0
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				quota = 1,
+				target = "TargetSelf",
+				time = 1,
+				skill_id = 201104
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onRemove"
+			},
+			arg_list = {
+				buff_id = 200440,
+				target = "TargetSelf"
+			}
+		}
+	}
+}

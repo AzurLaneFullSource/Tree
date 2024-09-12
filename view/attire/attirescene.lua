@@ -11,7 +11,7 @@ end
 function var0_0.setAttires(arg0_2, arg1_2)
 	arg0_2.rawAttireVOs = arg1_2
 
-	arg0_2:updateTips(getProxy(AttireProxy):needTip())
+	arg0_2:updateTips(getProxy(AttireProxy):needTip(arg1_2))
 end
 
 function var0_0.setPlayer(arg0_3, arg1_3)
@@ -24,12 +24,14 @@ function var0_0.init(arg0_4)
 	arg0_4.toggles = {
 		arg0_4:findTF("adapt/left_length/frame/tagRoot/iconframe", arg0_4.blurPanel),
 		arg0_4:findTF("adapt/left_length/frame/tagRoot/chatframe", arg0_4.blurPanel),
-		arg0_4:findTF("adapt/left_length/frame/tagRoot/achievement", arg0_4.blurPanel)
+		arg0_4:findTF("adapt/left_length/frame/tagRoot/achievement", arg0_4.blurPanel),
+		arg0_4:findTF("adapt/left_length/frame/tagRoot/combatUI", arg0_4.blurPanel)
 	}
 	arg0_4.panels = {
 		AttireIconFramePanel.New(arg0_4._tf, arg0_4.event, arg0_4.contextData),
 		AttireChatFramePanel.New(arg0_4._tf, arg0_4.event, arg0_4.contextData),
-		AttireAchievementPanel.New(arg0_4._tf, arg0_4.event, arg0_4.contextData)
+		AttireAchievementPanel.New(arg0_4._tf, arg0_4.event, arg0_4.contextData),
+		AttireCombatUIPanel.New(arg0_4._tf, arg0_4.event, arg0_4.contextData)
 	}
 end
 
@@ -74,9 +76,17 @@ function var0_0.updateTips(arg0_10, arg1_10)
 	end
 end
 
-function var0_0.willExit(arg0_11)
-	for iter0_11, iter1_11 in ipairs(arg0_11.panels) do
-		iter1_11:Destroy()
+function var0_0.onBackPressed(arg0_11)
+	if arg0_11.panels[arg0_11.page].onBackPressed and arg0_11.panels[arg0_11.page]:onBackPressed() then
+		-- block empty
+	else
+		var0_0.super.onBackPressed(arg0_11)
+	end
+end
+
+function var0_0.willExit(arg0_12)
+	for iter0_12, iter1_12 in ipairs(arg0_12.panels) do
+		iter1_12:Destroy()
 	end
 end
 

@@ -12,6 +12,7 @@ var0_0.OPEN_CHARGE_BIRTHDAY = "ChargeMediator:OPEN_CHARGE_BIRTHDAY"
 var0_0.OPEN_USER_AGREE = "ChargeMediator:OPEN_USER_AGREE"
 var0_0.VIEW_SKIN_PROBABILITY = "ChargeMediator:VIEW_SKIN_PROBABILITY"
 var0_0.OPEN_TEC_SHIP_GIFT_SELL_LAYER = "ChargeMediator:OPEN_TEC_SHIP_GIFT_SELL_LAYER"
+var0_0.OPEN_BATTLE_UI_SELL_LAYER = "ChargeMediator:OPEN_BATTLE_UI_SELL_LAYER"
 
 function var0_0.register(arg0_1)
 	local var0_1 = getProxy(PlayerProxy):getData()
@@ -92,9 +93,19 @@ function var0_0.register(arg0_1)
 			}
 		}))
 	end)
+	arg0_1:bind(var0_0.OPEN_BATTLE_UI_SELL_LAYER, function(arg0_14, arg1_14, arg2_14)
+		arg0_1:addSubLayers(Context.New({
+			mediator = ChargeBattleUISellMediator,
+			viewComponent = ChargeBattleUISellLayer,
+			data = {
+				showGoodVO = arg1_14,
+				chargedList = arg2_14
+			}
+		}))
+	end)
 end
 
-function var0_0.listNotificationInterests(arg0_14)
+function var0_0.listNotificationInterests(arg0_15)
 	return {
 		PlayerProxy.UPDATED,
 		ShopsProxy.FIRST_CHARGE_IDS_UPDATED,
@@ -110,97 +121,97 @@ function var0_0.listNotificationInterests(arg0_14)
 	}
 end
 
-function var0_0.handleNotification(arg0_15, arg1_15)
-	local var0_15 = arg1_15:getName()
-	local var1_15 = arg1_15:getBody()
+function var0_0.handleNotification(arg0_16, arg1_16)
+	local var0_16 = arg1_16:getName()
+	local var1_16 = arg1_16:getBody()
 
-	if var0_15 == PlayerProxy.UPDATED then
-		arg0_15.viewComponent:setPlayer(var1_15)
-		arg0_15.viewComponent:updateNoRes()
-	elseif var0_15 == ShopsProxy.FIRST_CHARGE_IDS_UPDATED then
-		arg0_15.viewComponent:setFirstChargeIds(var1_15)
-		arg0_15.viewComponent:updateCurSubView()
-	elseif var0_15 == ShopsProxy.CHARGED_LIST_UPDATED then
-		arg0_15.viewComponent:setChargedList(var1_15)
-		arg0_15.viewComponent:updateCurSubView()
-	elseif var0_15 == GAME.CHARGE_CONFIRM_FAILED then
-		getProxy(ShopsProxy):chargeFailed(var1_15.payId, var1_15.bsId)
-	elseif var0_15 == GAME.SHOPPING_DONE then
-		if var1_15.awards and #var1_15.awards > 0 then
-			arg0_15.viewComponent:unBlurView()
-			arg0_15.viewComponent:emit(BaseUI.ON_AWARD, {
-				items = var1_15.awards
+	if var0_16 == PlayerProxy.UPDATED then
+		arg0_16.viewComponent:setPlayer(var1_16)
+		arg0_16.viewComponent:updateNoRes()
+	elseif var0_16 == ShopsProxy.FIRST_CHARGE_IDS_UPDATED then
+		arg0_16.viewComponent:setFirstChargeIds(var1_16)
+		arg0_16.viewComponent:updateCurSubView()
+	elseif var0_16 == ShopsProxy.CHARGED_LIST_UPDATED then
+		arg0_16.viewComponent:setChargedList(var1_16)
+		arg0_16.viewComponent:updateCurSubView()
+	elseif var0_16 == GAME.CHARGE_CONFIRM_FAILED then
+		getProxy(ShopsProxy):chargeFailed(var1_16.payId, var1_16.bsId)
+	elseif var0_16 == GAME.SHOPPING_DONE then
+		if var1_16.awards and #var1_16.awards > 0 then
+			arg0_16.viewComponent:unBlurView()
+			arg0_16.viewComponent:emit(BaseUI.ON_AWARD, {
+				items = var1_16.awards
 			})
 		end
 
-		local var2_15 = var1_15.normalList
-		local var3_15 = var1_15.normalGroupList
+		local var2_16 = var1_16.normalList
+		local var3_16 = var1_16.normalGroupList
 
-		if var2_15 then
-			arg0_15.viewComponent:setNormalList(var2_15)
+		if var2_16 then
+			arg0_16.viewComponent:setNormalList(var2_16)
 		end
 
-		if var3_15 then
-			arg0_15.viewComponent:setNormalGroupList(var3_15)
+		if var3_16 then
+			arg0_16.viewComponent:setNormalGroupList(var3_16)
 		end
 
-		local var4_15 = pg.shop_template[var1_15.id]
+		local var4_16 = pg.shop_template[var1_16.id]
 
-		arg0_15.viewComponent:checkBuyDone(var1_15.id)
-		arg0_15.viewComponent:updateCurSubView()
-		arg0_15.viewComponent:checkFreeGiftTag()
-	elseif var0_15 == GAME.USE_ITEM_DONE then
-		if table.getCount(var1_15) ~= 0 then
-			arg0_15.viewComponent:emit(BaseUI.ON_AWARD, {
-				items = var1_15
+		arg0_16.viewComponent:checkBuyDone(var1_16.id)
+		arg0_16.viewComponent:updateCurSubView()
+		arg0_16.viewComponent:checkFreeGiftTag()
+	elseif var0_16 == GAME.USE_ITEM_DONE then
+		if table.getCount(var1_16) ~= 0 then
+			arg0_16.viewComponent:emit(BaseUI.ON_AWARD, {
+				items = var1_16
 			})
 		end
-	elseif var0_15 == GAME.GET_CHARGE_LIST_DONE then
-		local var5_15 = var1_15.firstChargeIds
-		local var6_15 = var1_15.chargedList
-		local var7_15 = var1_15.normalList
-		local var8_15 = var1_15.normalGroupList
+	elseif var0_16 == GAME.GET_CHARGE_LIST_DONE then
+		local var5_16 = var1_16.firstChargeIds
+		local var6_16 = var1_16.chargedList
+		local var7_16 = var1_16.normalList
+		local var8_16 = var1_16.normalGroupList
 
-		if var5_15 then
-			arg0_15.viewComponent:setFirstChargeIds(var5_15)
+		if var5_16 then
+			arg0_16.viewComponent:setFirstChargeIds(var5_16)
 		end
 
-		if var6_15 then
-			arg0_15.viewComponent:setChargedList(var6_15)
+		if var6_16 then
+			arg0_16.viewComponent:setChargedList(var6_16)
 		end
 
-		if var7_15 then
-			arg0_15.viewComponent:setNormalList(var7_15)
+		if var7_16 then
+			arg0_16.viewComponent:setNormalList(var7_16)
 		end
 
-		if var8_15 then
-			arg0_15.viewComponent:setNormalGroupList(var8_15)
+		if var8_16 then
+			arg0_16.viewComponent:setNormalGroupList(var8_16)
 		end
 
-		if var5_15 or var6_15 or var7_15 or var8_15 then
-			arg0_15.viewComponent:updateCurSubView()
+		if var5_16 or var6_16 or var7_16 or var8_16 then
+			arg0_16.viewComponent:updateCurSubView()
 		end
 
-		arg0_15.viewComponent:checkFreeGiftTag()
-	elseif var0_15 == GAME.CLICK_MING_SHI_SUCCESS then
-		arg0_15.viewComponent:playHeartEffect()
-	elseif var0_15 == PlayerResUI.GO_MALL then
-		local var9_15 = ChargeScene.TYPE_DIAMOND
+		arg0_16.viewComponent:checkFreeGiftTag()
+	elseif var0_16 == GAME.CLICK_MING_SHI_SUCCESS then
+		arg0_16.viewComponent:playHeartEffect()
+	elseif var0_16 == PlayerResUI.GO_MALL then
+		local var9_16 = ChargeScene.TYPE_DIAMOND
 
-		if var1_15 then
-			var9_15 = var1_15.type or ChargeScene.TYPE_DIAMOND
+		if var1_16 then
+			var9_16 = var1_16.type or ChargeScene.TYPE_DIAMOND
 		end
 
-		arg0_15.viewComponent:switchSubViewByTogger(var9_15)
-		arg0_15.viewComponent:updateNoRes(var1_15 and var1_15.noRes or nil)
-	elseif var0_15 == GAME.CHARGE_SUCCESS then
-		arg0_15.viewComponent:checkBuyDone("damonds")
+		arg0_16.viewComponent:switchSubViewByTogger(var9_16)
+		arg0_16.viewComponent:updateNoRes(var1_16 and var1_16.noRes or nil)
+	elseif var0_16 == GAME.CHARGE_SUCCESS then
+		arg0_16.viewComponent:checkBuyDone("damonds")
 
-		local var10_15 = Goods.Create({
-			shop_id = var1_15.shopId
+		local var10_16 = Goods.Create({
+			shop_id = var1_16.shopId
 		}, Goods.TYPE_CHARGE)
 
-		arg0_15.viewComponent:OnChargeSuccess(var10_15)
+		arg0_16.viewComponent:OnChargeSuccess(var10_16)
 	end
 end
 

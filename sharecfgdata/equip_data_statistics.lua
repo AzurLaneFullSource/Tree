@@ -117596,6 +117596,56 @@ _G.pg.base.equip_data_statistics[61105] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[61111] = {
+	ammo = 10,
+	descrip = "Aircraft Carrier Airstrike",
+	icon = "1",
+	id = 61111,
+	name = "航空攻击展示-天城I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 99,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61111,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[61112] = {
+	base = 61111,
+	id = 61112,
+	name = "航空攻击展示-天城II",
+	weapon_id = {
+		61112,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[61113] = {
+	base = 61111,
+	id = 61113,
+	name = "航空攻击展示-天城II",
+	weapon_id = {
+		61113,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[61501] = {
 	ammo = 10,
 	descrip = "Used during airstrikes",
@@ -130912,6 +130962,59 @@ _G.pg.base.equip_data_statistics[80342] = {
 	name = "专属弹幕-法戈II",
 	weapon_id = {
 		170582,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[80351] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 80351,
+	name = "专属弹幕-渡良濑I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61681,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80352] = {
+	base = 80351,
+	id = 80352,
+	name = "专属弹幕-渡良濑II",
+	weapon_id = {
+		61682,
 	},
 	hidden_skill_id = {},
 }

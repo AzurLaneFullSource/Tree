@@ -112,14 +112,26 @@ function var7_0.OpeningEffect(arg0_12, arg1_12, arg2_12)
 		end
 	end
 
-	arg0_12._ui._go:GetComponent("DftAniEvent"):SetEndEvent(function(arg0_13)
+	local var3_12 = arg0_12._ui._go:GetComponent("DftAniEvent")
+
+	if var3_12 then
+		var3_12:SetEndEvent(function(arg0_13)
+			arg0_12._uiMGR:SetActive(true)
+			arg0_12:EnableComponent(true)
+
+			if arg1_12 then
+				arg1_12()
+			end
+		end)
+	else
 		arg0_12._uiMGR:SetActive(true)
 		arg0_12:EnableComponent(true)
 
 		if arg1_12 then
 			arg1_12()
 		end
-	end)
+	end
+
 	SetActive(arg0_12._ui._go, true)
 	arg0_12._skillView:ButtonInitialAnima()
 end
@@ -136,7 +148,7 @@ function var7_0.InitJoystick(arg0_15)
 	local var1_15 = arg0_15._joystick
 	local var2_15 = Screen.dpi / CameraMgr.instance.finalWidth * 5
 
-	if var2_15 <= 0 then
+	if PLATFORM == PLATFORM_WINDOWSEDITOR or var2_15 <= 0 then
 		var2_15 = 1
 	end
 

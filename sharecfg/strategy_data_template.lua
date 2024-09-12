@@ -275,7 +275,16 @@ pg.strategy_data_template = setmetatable({
 		201022,
 		201024,
 		201027,
-		201029
+		201029,
+		201090,
+		201094,
+		201097,
+		201100,
+		205001,
+		205002,
+		205003,
+		205004,
+		205005
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -3335,6 +3344,105 @@ pg.base.strategy_data_template = {
 		icon = "201029",
 		buff_type = 0,
 		desc = "\"Even if it means dooming myself to hell, I will protect you to the bitter end.\"\nSupporting barrages will appear at regular intervals. The effects of the Shrouded Crimson Realm modifier are negated.",
+		arg = {}
+	},
+	[201090] = {
+		buff_id = 201090,
+		name = "World Segment",
+		iconSize = "",
+		type = 10,
+		id = 201090,
+		icon = "201090",
+		buff_type = 0,
+		desc = "During battle, your Main Fleet ships take 20% less Burn DMG and their SPD increases by 5%.\nIf your fleet consists of 4 or more Sakura Empire ships, supporting barrages will fire 15s after the battle starts.",
+		arg = {}
+	},
+	[201094] = {
+		buff_id = 201094,
+		name = "Naraka's Depths",
+		iconSize = "",
+		type = 10,
+		id = 201094,
+		icon = "201094",
+		buff_type = 0,
+		desc = "During battle, your META ships deal 10% more DMG and receive 10% additional healing, but all non-META ships take 5% more DMG and receive 8% less healing.",
+		arg = {}
+	},
+	[201097] = {
+		buff_id = 201097,
+		name = "Twinflamed Inferno",
+		iconSize = "",
+		type = 10,
+		id = 201097,
+		icon = "201097",
+		buff_type = 0,
+		desc = "During battle, supporting barrages will be launched, inflicting all enemies hit with a special Burn ailment that deals DMG based on their max HP.",
+		arg = {}
+	},
+	[201100] = {
+		buff_id = 0,
+		name = "Challenge Conditions",
+		iconSize = "",
+		type = 10,
+		id = 201100,
+		icon = "200908",
+		buff_type = 0,
+		desc = "- Hard Mode Details -\nEnemies deal significantly more DMG. Their shells ignore shields and penetrate through targets.\n· During battle, Jadeite Shadows and Crimson Shadows take significantly less DMG from AP ammo, semi-AP ammo, and torpedoes, but their Burn DMG taken is increased.\n· When the enemy's HP drops below a set value, a magic circle will spawn on the field. Activating all magic circles will provide your fleet with supporting attacks.\n· The skills \"Operation Rainbow\" and \"Fiercer When Cornered\" are rendered ineffective.",
+		arg = {}
+	},
+	[205001] = {
+		buff_id = 205001,
+		name = "活动关卡标志A",
+		iconSize = "",
+		type = 10,
+		id = 205001,
+		icon = "",
+		buff_type = 0,
+		desc = "仅用作标记",
+		arg = {}
+	},
+	[205002] = {
+		buff_id = 205002,
+		name = "活动关卡标志B",
+		iconSize = "",
+		type = 10,
+		id = 205002,
+		icon = "",
+		buff_type = 0,
+		desc = "仅用作标记",
+		arg = {}
+	},
+	[205003] = {
+		buff_id = 205003,
+		name = "活动关卡标志C",
+		iconSize = "",
+		type = 10,
+		id = 205003,
+		icon = "",
+		buff_type = 0,
+		desc = "仅用作标记",
+		arg = {}
+	},
+	[205004] = {
+		buff_id = 205004,
+		name = "活动关卡标志D",
+		iconSize = "",
+		type = 10,
+		id = 205004,
+		icon = "",
+		buff_type = 0,
+		desc = "仅用作标记",
+		arg = {}
+	},
+	[205005] = {
+		buff_id = 205005,
+		name = "活动关卡标志SP",
+		iconSize = "",
+		type = 10,
+		id = 205005,
+		icon = "",
+		buff_type = 0,
+		desc = "仅用作标记",
 		arg = {}
 	}
 }

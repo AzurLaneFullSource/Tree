@@ -499,11 +499,12 @@ function var0_0.register(arg0_1)
 			}
 		}))
 	end)
-	arg0_1:bind(var0_0.ON_PERFORM_COMBAT, function(arg0_53, arg1_53, arg2_53)
+	arg0_1:bind(var0_0.ON_PERFORM_COMBAT, function(arg0_53, arg1_53, arg2_53, arg3_53)
 		arg0_1:sendNotification(GAME.BEGIN_STAGE, {
 			system = SYSTEM_PERFORM,
 			stageId = arg1_53,
-			exitCallback = arg2_53
+			exitCallback = arg2_53,
+			memory = arg3_53
 		})
 	end)
 	arg0_1:bind(var0_0.ON_CLICK_RECEIVE_REMASTER_TICKETS_BTN, function(arg0_54)

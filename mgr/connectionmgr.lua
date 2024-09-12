@@ -30,7 +30,7 @@ function var1_0.Connect(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
 	var0_0.UIMgr.GetInstance():LoadingOn()
 	var3_0.onConnected:AddListener(function()
 		var0_0.UIMgr.GetInstance():LoadingOff()
-		var2_0("Network Connected.")
+		originalPrint("Network Connected.")
 
 		var5_0 = arg1_1
 		var6_0 = arg2_1
@@ -142,6 +142,7 @@ function var1_0.Reconnect(arg0_5, arg1_5)
 
 				var0_6:setLastLogin(var1_6)
 				arg1_5()
+				var4_0:RemoveLoginPacket()
 
 				if var12_0 ~= DISCONNECT_TIME_OUT and var4_0:getPacketIdx() > 0 then
 					arg0_5.needStartSend = false
@@ -186,7 +187,7 @@ function var1_0.Reconnect(arg0_5, arg1_5)
 end
 
 function var1_0.onDisconnected(arg0_9, arg1_9)
-	var2_0("Network onDisconnected: " .. tostring(arg0_9))
+	originalPrint("Network onDisconnected: " .. tostring(arg0_9))
 
 	var12_0 = arg1_9
 
@@ -224,7 +225,7 @@ end
 function var1_0.onError(arg0_11)
 	arg0_11 = tostring(arg0_11)
 
-	var2_0("Network Error: " .. arg0_11)
+	originalPrint("Network Error: " .. arg0_11)
 
 	if var3_0 then
 		var3_0:Dispose()
@@ -333,7 +334,7 @@ function var1_0.Disconnect(arg0_20)
 
 	var8_0 = {}
 
-	var2_0("Manually Disconnect !!!")
+	originalPrint("Manually Disconnect !!!")
 
 	if var3_0 then
 		var3_0:Dispose()

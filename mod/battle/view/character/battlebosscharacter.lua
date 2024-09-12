@@ -228,8 +228,8 @@ function var2_0.UpdateHpBar(arg0_13)
 	arg0_13._bossBarInfoList[var1_13].progressImage.fillAmount = var2_13
 
 	if arg0_13._activeVernier then
-		arg0_13._vernier.anchorMin = Vector2(currentRate, 0.5)
-		arg0_13._vernier.anchorMax = Vector2(currentRate, 0.5)
+		arg0_13._vernier.anchorMin = Vector2(var2_13, 0.5)
+		arg0_13._vernier.anchorMax = Vector2(var2_13, 0.5)
 	end
 
 	arg0_13:SetHPBarCountText(var3_13)

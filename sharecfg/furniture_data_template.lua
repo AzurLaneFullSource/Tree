@@ -148,6 +148,8 @@ pg.furniture_data_template = setmetatable({
 			284,
 			285,
 			286,
+			287,
+			288,
 			100002,
 			100003,
 			100004,
@@ -3188,6 +3190,23 @@ pg.furniture_data_template = setmetatable({
 			313301,
 			313302,
 			313303
+		},
+		[114] = {
+			314001,
+			314002,
+			314101,
+			314102,
+			314103,
+			314104,
+			314105,
+			314106,
+			314107,
+			314108,
+			314109,
+			314110,
+			314111,
+			314112,
+			314113
 		}
 	},
 	get_id_list_by_tag = {
@@ -3281,6 +3300,7 @@ pg.furniture_data_template = setmetatable({
 			282,
 			285,
 			286,
+			288,
 			100002,
 			100003,
 			100004,
@@ -3390,7 +3410,8 @@ pg.furniture_data_template = setmetatable({
 			276,
 			278,
 			283,
-			284
+			284,
+			287
 		},
 		[7] = {
 			211,
@@ -3584,7 +3605,8 @@ pg.furniture_data_template = setmetatable({
 			311116,
 			312114,
 			312115,
-			313113
+			313113,
+			314113
 		},
 		[4] = {
 			1001,
@@ -3685,7 +3707,8 @@ pg.furniture_data_template = setmetatable({
 			310001,
 			311001,
 			312001,
-			313001
+			313001,
+			314001
 		},
 		[3] = {
 			1002,
@@ -3787,7 +3810,8 @@ pg.furniture_data_template = setmetatable({
 			310002,
 			311002,
 			312002,
-			313002
+			313002,
+			314002
 		},
 		{
 			1101,
@@ -5684,7 +5708,18 @@ pg.furniture_data_template = setmetatable({
 			313109,
 			313110,
 			313111,
-			313112
+			313112,
+			314101,
+			314102,
+			314103,
+			314104,
+			314105,
+			314106,
+			314107,
+			314108,
+			314109,
+			314110,
+			314111
 		},
 		{
 			1108,
@@ -6190,7 +6225,8 @@ pg.furniture_data_template = setmetatable({
 			312302,
 			313301,
 			313302,
-			313303
+			313303,
+			314112
 		}
 	},
 	get_id_list_by_type = {
@@ -6317,6 +6353,8 @@ pg.furniture_data_template = setmetatable({
 			284,
 			285,
 			286,
+			287,
+			288,
 			100002,
 			100004,
 			100005,
@@ -8255,7 +8293,18 @@ pg.furniture_data_template = setmetatable({
 			313110,
 			313111,
 			313112,
-			313113
+			313113,
+			314101,
+			314102,
+			314103,
+			314104,
+			314106,
+			314107,
+			314108,
+			314109,
+			314110,
+			314111,
+			314113
 		},
 		[11] = {
 			131,
@@ -8426,7 +8475,8 @@ pg.furniture_data_template = setmetatable({
 			310001,
 			311001,
 			312001,
-			313001
+			313001,
+			314001
 		},
 		{
 			1002,
@@ -8528,7 +8578,8 @@ pg.furniture_data_template = setmetatable({
 			310002,
 			311002,
 			312002,
-			313002
+			313002,
+			314002
 		},
 		[5] = {
 			1101,
@@ -9174,7 +9225,8 @@ pg.furniture_data_template = setmetatable({
 			312302,
 			313301,
 			313302,
-			313303
+			313303,
+			314112
 		},
 		[8] = {
 			17121
@@ -9189,7 +9241,8 @@ pg.furniture_data_template = setmetatable({
 			94103,
 			97105,
 			97119,
-			307108
+			307108,
+			314105
 		},
 		[10] = {
 			28306,
@@ -9358,6 +9411,8 @@ pg.furniture_data_template = setmetatable({
 		284,
 		285,
 		286,
+		287,
+		288,
 		100002,
 		100003,
 		100004,
@@ -12195,7 +12250,22 @@ pg.furniture_data_template = setmetatable({
 		313113,
 		313301,
 		313302,
-		313303
+		313303,
+		314001,
+		314002,
+		314101,
+		314102,
+		314103,
+		314104,
+		314105,
+		314106,
+		314107,
+		314108,
+		314109,
+		314110,
+		314111,
+		314112,
+		314113
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -19441,6 +19511,119 @@ pg.base.furniture_data_template = {
 				"char5",
 				-1
 			}
+		},
+		interAction_group = {}
+	},
+	[287] = {
+		effect = "",
+		name = "An Instant of Naraka",
+		gain_by = "唤醒苍红之炎",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 1,
+		themeId = 0,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Gone are the people, and all that remains is this scene. Memories form this gap in Naraka. \nGiven to Commanders who participated in the Ode of Everblooming Crimson event.",
+		tag = 8,
+		icon = "fukongdaoxunzhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 5,
+		deblocking = 1,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 287,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"fukongdaoxunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[288] = {
+		effect = "",
+		name = "Moon Rabbit Stage",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "This fortuitous day has come once more! Come up on the stage and dance with the rabbits!",
+		themeId = 0,
+		icon = "yuebingwutaiicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 6,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 288,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yuebingwutaiB",
+				"normal"
+			},
+			{
+				"yuebingwutaiT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
 		},
 		interAction_group = {}
 	},
@@ -145305,6 +145488,933 @@ pg.base.furniture_data_template = {
 		canputonGrid = {},
 		can_trigger = {
 			0
+		},
+		interAction_group = {}
+	},
+	[314001] = {
+		icon = "dibanmlyicon",
+		name = "Dream Park Flooring",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		themeId = 114,
+		picture = "mly/dibanmly",
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		spine_extra = "",
+		level = 1,
+		describe = "Alice herself once walked on these tiles.",
+		rarity = 4,
+		advice = 0,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		id = 314001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[314002] = {
+		icon = "qiangbimlyicon",
+		name = "Dream Park Wallpaper",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		themeId = 114,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		spine_extra = "",
+		level = 5,
+		describe = "It's bigger on the inside!",
+		rarity = 4,
+		advice = 0,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		id = 314002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbimly",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[314101] = {
+		effect = "",
+		name = "Jelly Blob Chairs",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "mly/changyimly",
+		is_get_time_note = 0,
+		themeId = 114,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A very springy place to sit. Don't worry, it's vegan.",
+		tag = 1,
+		icon = "changyimlyicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 314101,
+		can_rotate = 0,
+		size = {
+			1,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					23.3,
+					20.1
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[314102] = {
+		effect = "",
+		name = "Star Fence",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 114,
+		is_get_time_note = 0,
+		picture = "mly/langanmly",
+		count = 2,
+		is_3d_obj = 0,
+		describe = "Star-studded? Why, yes!",
+		tag = 1,
+		icon = "langanmlyicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 314102,
+		can_rotate = 0,
+		size = {
+			1,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[314103] = {
+		effect = "",
+		name = "Dream Park Signpost",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 114,
+		is_get_time_note = 0,
+		picture = "mly/lubiaomly",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "This would point you in the way of the attractions... if it was legible.",
+		tag = 1,
+		icon = "lubiaomlyicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 314103,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[314104] = {
+		effect = "",
+		name = "Dream Park Manjuus",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 114,
+		is_get_time_note = 0,
+		picture = "mly/paiduijiumly",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "What are they lining up for? Better get in line and find out.",
+		tag = 1,
+		icon = "paiduijiumlyicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 314104,
+		can_rotate = 0,
+		size = {
+			2,
+			8
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[314105] = {
+		effect = "",
+		name = "Dream Park Entrance",
+		gain_by = "",
+		type = 9,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 114,
+		is_get_time_note = 0,
+		picture = "mly/rukoumly",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "The admission isn't free... but what if you were to DREAM that the admission WAS free?",
+		tag = 1,
+		icon = "rukoumlyicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 1,
+		id = 314105,
+		can_rotate = 0,
+		size = {
+			7,
+			1
+		},
+		offset = {
+			0,
+			0
+		},
+		canputonGrid = {
+			{
+				1,
+				0
+			},
+			{
+				2,
+				0
+			},
+			{
+				3,
+				0
+			},
+			{
+				4,
+				0
+			},
+			{
+				5,
+				0
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[314106] = {
+		effect = "",
+		name = "Dream Park Cup Bath",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "mly/yugangmly",
+		is_get_time_note = 0,
+		themeId = 114,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A bath, beverage, and biscuit all in one. Take that, shower eaters!",
+		tag = 1,
+		icon = "yugangmlyicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 314106,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"wash",
+				{
+					2.4,
+					-87.5
+				},
+				{
+					-1,
+					1
+				},
+				"mly/yugangmly_using",
+				0,
+				{
+					{
+						2,
+						64.5
+					},
+					{
+						236.2,
+						288.1
+					},
+					"mly/yugangmly_mask"
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[314107] = {
+		effect = "",
+		name = "Ferris Wheel of Dreams",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "You can enjoy the best view in the whole park at the top.",
+		is_3d_obj = 0,
+		advice = 0,
+		themeId = 114,
+		icon = "motianlunmlyicon",
+		deblocking = 1,
+		level = 1,
+		tag = 1,
+		rarity = 4,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 314107,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"motianlunmlyB",
+				"normal"
+			},
+			{
+				"motianlunmlyT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{
+				{
+					16.6,
+					36.96
+				},
+				{
+					194,
+					268
+				},
+				"mly/motianlunmly_mask"
+			},
+			{
+				-22,
+				-50
+			},
+			{
+				1,
+				1
+			}
+		},
+		spine_extra = {
+			{
+				{
+					{
+						16.6,
+						36.96
+					},
+					{
+						194,
+						268
+					},
+					"mly/motianlunmly_mask"
+				},
+				{
+					-22,
+					-50
+				},
+				{
+					1,
+					1
+				}
+			},
+			{
+				{
+					{
+						16.6,
+						36.96
+					},
+					{
+						194,
+						268
+					},
+					"mly/motianlunmly_mask"
+				},
+				{
+					-22,
+					-50
+				},
+				{
+					1,
+					1
+				}
+			},
+			{
+				{
+					{
+						16.6,
+						36.96
+					},
+					{
+						194,
+						268
+					},
+					"mly/motianlunmly_mask"
+				},
+				{
+					-22,
+					-50
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		followBone = {
+			{
+				"char4",
+				1
+			},
+			{
+				"char3",
+				1
+			},
+			{
+				"char2",
+				1
+			},
+			{
+				"char1",
+				1
+			}
+		},
+		interAction_group = {}
+	},
+	[314108] = {
+		effect = "",
+		name = "Dream Park Pond",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "You might catch a fallen star or two, and we're not talking about celebrities past their prime!",
+		themeId = 114,
+		icon = "diaoyudianmlyicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 314108,
+		can_rotate = 0,
+		size = {
+			8,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"diaoyudianmlyB",
+				"normal"
+			},
+			{
+				"diaoyudianmlyT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[314109] = {
+		effect = "",
+		name = "Dream Park Slide",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "The park recommends not shouting \"weee!\" on the way down since water will splash into your mouth.",
+		themeId = 114,
+		icon = "huatimlyicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 314109,
+		can_rotate = 0,
+		size = {
+			7,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"huatimlyB",
+				"normal"
+			},
+			{
+				"huatimlyT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit",
+						1,
+						"sit"
+					},
+					{
+						"tuozhuai2"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{
+				{
+					-100,
+					225
+				},
+				{
+					532.3,
+					413
+				},
+				"mly/huatimly_mask"
+			},
+			{
+				80,
+				-173
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[314110] = {
+		effect = "",
+		name = "Dream Park Carousel",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "\"Time to twirl,\" as one girl said.",
+		themeId = 114,
+		icon = "mumamlyicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 314110,
+		can_rotate = 0,
+		size = {
+			7,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"mumamlyB",
+				"normal"
+			},
+			{
+				"mumamlyT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[314111] = {
+		effect = "",
+		name = "Dream Park Fountain",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 114,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Close your eyes and make a wish, and the fairy grandmanjuu might make it come true.",
+		tag = 1,
+		icon = "penquanmlyicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 314111,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"penquanmly",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[314112] = {
+		effect = "",
+		name = "Castle Entrance",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 114,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Visitors are required to display their invitations.",
+		tag = 5,
+		icon = "chengmenmlyicon",
+		spine_extra = "",
+		level = 5,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 2,
+		canputon = 0,
+		id = 314112,
+		can_rotate = 0,
+		size = {
+			8,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"chengmenmly",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[314113] = {
+		effect = "",
+		name = "Spooky Food Cart",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Sometimes you get hungry while dreaming, and that's when this thing conveniently (but eerily!) appears behind you. Their food is top notch.",
+		themeId = 114,
+		icon = "canchemlyicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 314113,
+		can_rotate = 0,
+		size = {
+			8,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"canchemly",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance1",
+						nil,
+						"dance"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				},
+				{
+					{
+						"dance1",
+						"dance2",
+						"dance3"
+					}
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
 		},
 		interAction_group = {}
 	}

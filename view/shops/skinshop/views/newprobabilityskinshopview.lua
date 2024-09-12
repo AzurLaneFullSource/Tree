@@ -86,24 +86,8 @@ end
 
 function var0_0.OnCharge(arg0_10, arg1_10)
 	local var0_10 = arg1_10
-	local var1_10 = underscore.map(var0_10:getConfig("extra_service_item"), function(arg0_11)
-		return {
-			type = arg0_11[1],
-			id = arg0_11[2],
-			count = arg0_11[3]
-		}
-	end)
-	local var2_10 = var0_10:getConfig("gem") + var0_10:getConfig("extra_gem")
-
-	if var2_10 > 0 then
-		table.insert(var1_10, {
-			id = 4,
-			type = 1,
-			count = var2_10
-		})
-	end
-
-	local var3_10 = {
+	local var1_10 = var0_10:GetExtraServiceItem()
+	local var2_10 = {
 		isMonthCard = false,
 		isChargeType = true,
 		icon = "chargeicon/" .. var0_10:getConfig("picture"),
@@ -124,14 +108,14 @@ function var0_0.OnCharge(arg0_10, arg1_10)
 		end
 	}
 
-	arg0_10:emit(NewProbabilitySkinShopMediator.OPEN_CHARGE_ITEM_PANEL, var3_10)
+	arg0_10:emit(NewProbabilitySkinShopMediator.OPEN_CHARGE_ITEM_PANEL, var2_10)
 end
 
-function var0_0.UpdateTip(arg0_13)
-	arg0_13.tipTxt.text = i18n("probabilityskinshop_tip")
+function var0_0.UpdateTip(arg0_12)
+	arg0_12.tipTxt.text = i18n("probabilityskinshop_tip")
 end
 
-function var0_0.OnDestroy(arg0_14)
+function var0_0.OnDestroy(arg0_13)
 	return
 end
 

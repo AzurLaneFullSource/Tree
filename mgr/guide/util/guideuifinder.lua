@@ -53,16 +53,25 @@ local function var1_0(arg0_6, arg1_6)
 end
 
 local function var2_0(arg0_7)
-	local var0_7 = GameObject.Find(arg0_7.path)
+	local var0_7 = arg0_7.path
 
-	if var0_7 and arg0_7.childIndex and arg0_7.childIndex == "#" then
-		return var1_0(var0_7.transform)
-	elseif var0_7 and arg0_7.childIndex and arg0_7.childIndex == -999 then
-		return var1_0(var0_7.transform, 0)
-	elseif var0_7 and arg0_7.childIndex and arg0_7.childIndex >= 0 then
-		return var1_0(var0_7.transform, arg0_7.childIndex)
-	elseif var0_7 then
-		return var0_7.transform
+	if string.match(var0_7, "/CombatUI%(Clone%)/") then
+		local var1_7 = var0_7
+		local var2_7 = ys.Battle.BattleState.GetCombatSkinKey()
+
+		var0_7 = string.gsub(var0_7, "CombatUI%(Clone%)", "CombatUI" .. var2_7 .. "(Clone)")
+	end
+
+	local var3_7 = GameObject.Find(var0_7)
+
+	if var3_7 and arg0_7.childIndex and arg0_7.childIndex == "#" then
+		return var1_0(var3_7.transform)
+	elseif var3_7 and arg0_7.childIndex and arg0_7.childIndex == -999 then
+		return var1_0(var3_7.transform, 0)
+	elseif var3_7 and arg0_7.childIndex and arg0_7.childIndex >= 0 then
+		return var1_0(var3_7.transform, arg0_7.childIndex)
+	elseif var3_7 then
+		return var3_7.transform
 	end
 
 	return nil

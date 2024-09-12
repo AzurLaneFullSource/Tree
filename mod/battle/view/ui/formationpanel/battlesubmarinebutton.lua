@@ -23,14 +23,23 @@ function var1_0.ConfigSkin(arg0_3, arg1_3)
 	arg0_3._filledEffect.gameObject:SetActive(false)
 end
 
-function var1_0.Update(arg0_4)
+function var1_0.ConfigCallback(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4)
+	local function var0_4()
+		arg2_4()
+		quickCheckAndPlayAnimator(arg0_4._skin, "weapon_button_use")
+	end
+
+	var1_0.super.ConfigCallback(arg0_4, arg1_4, var0_4, arg3_4, arg4_4)
+end
+
+function var1_0.Update(arg0_6)
 	return
 end
 
-function var1_0.updateProgressBar(arg0_5)
+function var1_0.updateProgressBar(arg0_7)
 	return
 end
 
-function var1_0.OnfilledEffect(arg0_6)
+function var1_0.OnfilledEffect(arg0_8)
 	return
 end

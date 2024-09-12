@@ -1651,5 +1651,13 @@ pg.voice_actor_CN = {
 	[425] = {
 		code = 425,
 		actor_name = "Hika Tsukishiro"
+	},
+	[426] = {
+		code = 426,
+		actor_name = "Hina Suguta"
+	},
+	[427] = {
+		code = 427,
+		actor_name = "Ayano Shibuya"
 	}
 }

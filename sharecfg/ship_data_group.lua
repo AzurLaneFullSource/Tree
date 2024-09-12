@@ -938,6 +938,9 @@ pg.ship_data_group = setmetatable({
 		[30190] = {
 			608
 		},
+		[30191] = {
+			663
+		},
 		[30157] = {
 			296
 		},
@@ -980,6 +983,9 @@ pg.ship_data_group = setmetatable({
 		[30214] = {
 			310
 		},
+		[30226] = {
+			662
+		},
 		[30210] = {
 			188
 		},
@@ -1003,6 +1009,9 @@ pg.ship_data_group = setmetatable({
 		},
 		[30224] = {
 			635
+		},
+		[30225] = {
+			661
 		},
 		[30301] = {
 			190
@@ -1177,6 +1186,9 @@ pg.ship_data_group = setmetatable({
 		},
 		[30712] = {
 			520
+		},
+		[30715] = {
+			660
 		},
 		[30801] = {
 			338
@@ -2176,6 +2188,9 @@ pg.ship_data_group = setmetatable({
 		},
 		[970506] = {
 			30037
+		},
+		[970405] = {
+			30038
 		}
 	},
 	get_id_list_by_handbook_type = {
@@ -2492,6 +2507,7 @@ pg.ship_data_group = setmetatable({
 			567,
 			607,
 			608,
+			663,
 			296,
 			297,
 			449,
@@ -2506,6 +2522,7 @@ pg.ship_data_group = setmetatable({
 			308,
 			309,
 			310,
+			662,
 			188,
 			189,
 			382,
@@ -2514,6 +2531,7 @@ pg.ship_data_group = setmetatable({
 			322,
 			324,
 			635,
+			661,
 			190,
 			191,
 			192,
@@ -2572,6 +2590,7 @@ pg.ship_data_group = setmetatable({
 			231,
 			639,
 			520,
+			660,
 			338,
 			396,
 			339,
@@ -2910,7 +2929,8 @@ pg.ship_data_group = setmetatable({
 			30034,
 			30035,
 			30036,
-			30037
+			30037,
+			30038
 		}
 	},
 	all = {
@@ -3226,6 +3246,7 @@ pg.ship_data_group = setmetatable({
 		567,
 		607,
 		608,
+		663,
 		296,
 		297,
 		449,
@@ -3240,6 +3261,7 @@ pg.ship_data_group = setmetatable({
 		308,
 		309,
 		310,
+		662,
 		188,
 		189,
 		382,
@@ -3248,6 +3270,7 @@ pg.ship_data_group = setmetatable({
 		322,
 		324,
 		635,
+		661,
 		190,
 		191,
 		192,
@@ -3306,6 +3329,7 @@ pg.ship_data_group = setmetatable({
 		231,
 		639,
 		520,
+		660,
 		338,
 		396,
 		339,
@@ -3638,7 +3662,8 @@ pg.ship_data_group = setmetatable({
 		30034,
 		30035,
 		30036,
-		30037
+		30037,
+		30038
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -8451,12 +8476,12 @@ pg.base.ship_data_group = {
 		redirect_id = 101,
 		hide = 0,
 		nationality = 1,
-		trans_skin = 0,
+		trans_skin = 105109,
 		handbook_type = 0,
 		index_id = 104,
 		code = 61,
 		group_type = 10510,
-		trans_type = 0,
+		trans_type = 5,
 		share_group_id = {},
 		property_hexagon = {
 			"A",
@@ -8466,8 +8491,17 @@ pg.base.ship_data_group = {
 			"D",
 			"A"
 		},
-		trans_radar_chart = {},
-		trans_skill = {},
+		trans_radar_chart = {
+			"A",
+			"E",
+			"E",
+			"D",
+			"B",
+			"A"
+		},
+		trans_skill = {
+			150440
+		},
 		description = {
 			{
 				"Event: Fallen Wings",
@@ -18062,6 +18096,38 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
+	[663] = {
+		type = 1,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 3,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 307,
+		code = 663,
+		group_type = 30191,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"D",
+			"A",
+			"E",
+			"A",
+			"D",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: 唤醒苍红之炎",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
 	[296] = {
 		type = 1,
 		redirect_id = 101,
@@ -18698,6 +18764,38 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
+	[662] = {
+		type = 2,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 3,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 329,
+		code = 662,
+		group_type = 30226,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"C",
+			"B",
+			"E",
+			"B",
+			"B",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: 唤醒苍红之炎",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
 	[188] = {
 		type = 2,
 		redirect_id = 101,
@@ -19025,6 +19123,38 @@ pg.base.ship_data_group = {
 		description = {
 			{
 				"Event: Heart-Linking Harmony",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[661] = {
+		type = 2,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 3,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 337,
+		code = 661,
+		group_type = 30225,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"C",
+			"A",
+			"E",
+			"B",
+			"B",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: 唤醒苍红之炎",
 				{
 					""
 				},
@@ -21507,6 +21637,38 @@ pg.base.ship_data_group = {
 						projectName = "special",
 						page = 1
 					}
+				},
+				0
+			}
+		}
+	},
+	[660] = {
+		type = 7,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 3,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 381,
+		code = 660,
+		group_type = 30715,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"E",
+			"E",
+			"S",
+			"B",
+			"B",
+			"S"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"占坑",
+				{
+					""
 				},
 				0
 			}
@@ -33902,6 +34064,38 @@ pg.base.ship_data_group = {
 					{
 						autoOpenShipConfigID = 9705061
 					}
+				},
+				0
+			}
+		}
+	},
+	[30038] = {
+		type = 5,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 97,
+		trans_skin = 0,
+		handbook_type = 3,
+		index_id = 30038,
+		code = 30038,
+		group_type = 970405,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"C",
+			"C",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: 唤醒苍红之风",
+				{
+					""
 				},
 				0
 			}

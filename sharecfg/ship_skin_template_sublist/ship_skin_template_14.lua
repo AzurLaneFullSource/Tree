@@ -1,6 +1,120 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_14 = {
+	[506012] = {
+		ship_group = 50601,
+		name = "Cerulean Ripples",
+		hand_id = 9,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 2,
+		shop_id = 70754,
+		painting = "zhenhai_3",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 7,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "161",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 506012,
+		voice_actor_2 = -1,
+		prefab = "zhenhai_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Oh my, if it isn't the Commander... Have you also come to escape the heat? What a serendipitous meeting... Or, did you perhaps have some other goal in mind? Heehee...",
+		voice_actor = 56,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			4
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.117,
+					1.273,
+					0
+				}
+			},
+			plane = {
+				{
+					0.924,
+					0.894,
+					0
+				}
+			},
+			cannon = {
+				{
+					1.129,
+					0.986,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.082,
+					1.029,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.805,
+							1.806,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[506013] = {
 		ship_group = 50601,
 		name = "Sylvan Garden's Embroidery",

@@ -23,17 +23,17 @@ end
 function var0_0.initData(arg0_5)
 	arg0_5.showGoodVO = arg0_5.contextData.showGoodVO
 	arg0_5.chargedList = arg0_5.contextData.chargedList
-	arg0_5.goodVOList = arg0_5.showGoodVO:getSameGroupTecShipGift()
+	arg0_5.goodVOList = arg0_5.showGoodVO:getSameLimitGroupTecGoods()
 	arg0_5.normalGoodVO = nil
 	arg0_5.highGoodVO = nil
 	arg0_5.upGoodVO = nil
 
 	for iter0_5, iter1_5 in ipairs(arg0_5.goodVOList) do
-		if iter1_5:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.Normal then
+		if iter1_5:getConfig("limit_arg") == 1 then
 			arg0_5.normalGoodVO = iter1_5
-		elseif iter1_5:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.High then
+		elseif iter1_5:getConfig("limit_arg") == 2 then
 			arg0_5.highGoodVO = iter1_5
-		elseif iter1_5:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.Up then
+		elseif iter1_5:getConfig("limit_arg") == 3 then
 			arg0_5.upGoodVO = iter1_5
 		end
 	end
@@ -106,9 +106,9 @@ function var0_0.updateGiftTF(arg0_11, arg1_11, arg2_11)
 	local var8_11 = arg0_11:findTF("Desc1", arg1_11)
 	local var9_11 = arg0_11:findTF("Desc2", arg1_11)
 	local var10_11 = arg0_11:findTF("List", arg1_11)
-	local var11_11 = arg2_11:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.Normal
-	local var12_11 = arg2_11:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.High
-	local var13_11 = arg2_11:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.Up
+	local var11_11 = arg2_11:getConfig("limit_arg") == 1
+	local var12_11 = arg2_11:getConfig("limit_arg") == 2
+	local var13_11 = arg2_11:getConfig("limit_arg") == 3
 	local var14_11 = ChargeConst.getBuyCount(arg0_11.chargedList, arg0_11.normalGoodVO.id) > 0
 
 	setActive(var0_11, var11_11)

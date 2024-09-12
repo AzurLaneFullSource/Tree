@@ -61,7 +61,10 @@ var2_0.SC_11003_MARRY_SHIP_FIELD = var0_0.FieldDescriptor()
 var2_0.SC_11003_TAKING_SHIP_LIST_FIELD = var0_0.FieldDescriptor()
 var2_0.SC_11003_SOUNDSTORY_FIELD = var0_0.FieldDescriptor()
 var2_0.SC_11003_CHILD_DISPLAY_FIELD = var0_0.FieldDescriptor()
+var2_0.SC_11003_COVER_FIELD = var0_0.FieldDescriptor()
 var2_0.SC_11003_MAIL_STOREROOM_LV_FIELD = var0_0.FieldDescriptor()
+var2_0.SC_11003_BATTLE_UI_LIST_FIELD = var0_0.FieldDescriptor()
+var2_0.SC_11003_BATTLE_UI_FIELD = var0_0.FieldDescriptor()
 SC_11004 = var0_0.Descriptor()
 var2_0.SC_11004_RESOURCE_LIST_FIELD = var0_0.FieldDescriptor()
 CS_11005 = var0_0.Descriptor()
@@ -123,6 +126,10 @@ var2_0.CS_11029_INT_ARG1_FIELD = var0_0.FieldDescriptor()
 var2_0.CS_11029_INT_ARG2_FIELD = var0_0.FieldDescriptor()
 var2_0.CS_11029_INT_ARG3_FIELD = var0_0.FieldDescriptor()
 var2_0.CS_11029_STR_ARG1_FIELD = var0_0.FieldDescriptor()
+CS_11030 = var0_0.Descriptor()
+var2_0.CS_11030_LIVINGAREA_COVER_ID_FIELD = var0_0.FieldDescriptor()
+SC_11031 = var0_0.Descriptor()
+var2_0.SC_11031_RESULT_FIELD = var0_0.FieldDescriptor()
 CS_11100 = var0_0.Descriptor()
 var2_0.CS_11100_CMD_FIELD = var0_0.FieldDescriptor()
 var2_0.CS_11100_ARG1_FIELD = var0_0.FieldDescriptor()
@@ -289,6 +296,7 @@ var2_0.NOTICEINFO_CONTENT_FIELD = var0_0.FieldDescriptor()
 var2_0.NOTICEINFO_TAG_TYPE_FIELD = var0_0.FieldDescriptor()
 var2_0.NOTICEINFO_ICON_FIELD = var0_0.FieldDescriptor()
 var2_0.NOTICEINFO_TRACK_FIELD = var0_0.FieldDescriptor()
+var2_0.NOTICEINFO_PRIORITY_FIELD = var0_0.FieldDescriptor()
 CARDINFO = var0_0.Descriptor()
 var2_0.CARDINFO_TYPE_FIELD = var0_0.FieldDescriptor()
 var2_0.CARDINFO_LEFT_DATE_FIELD = var0_0.FieldDescriptor()
@@ -382,6 +390,9 @@ var2_0.SC_11756_AWARD_LIST_FIELD = var0_0.FieldDescriptor()
 SHIP_TAKING_DATA = var0_0.Descriptor()
 var2_0.SHIP_TAKING_DATA_UID_FIELD = var0_0.FieldDescriptor()
 var2_0.SHIP_TAKING_DATA_ISNEW_FIELD = var0_0.FieldDescriptor()
+LIVINGAREA_COVER = var0_0.Descriptor()
+var2_0.LIVINGAREA_COVER_ID_FIELD = var0_0.FieldDescriptor()
+var2_0.LIVINGAREA_COVER_COVERS_FIELD = var0_0.FieldDescriptor()
 var2_0.SC_11000_TIMESTAMP_FIELD.name = "timestamp"
 var2_0.SC_11000_TIMESTAMP_FIELD.full_name = "p11.sc_11000.timestamp"
 var2_0.SC_11000_TIMESTAMP_FIELD.number = 1
@@ -889,15 +900,43 @@ var2_0.SC_11003_CHILD_DISPLAY_FIELD.has_default_value = false
 var2_0.SC_11003_CHILD_DISPLAY_FIELD.default_value = 0
 var2_0.SC_11003_CHILD_DISPLAY_FIELD.type = 13
 var2_0.SC_11003_CHILD_DISPLAY_FIELD.cpp_type = 3
+var2_0.SC_11003_COVER_FIELD.name = "cover"
+var2_0.SC_11003_COVER_FIELD.full_name = "p11.sc_11003.cover"
+var2_0.SC_11003_COVER_FIELD.number = 47
+var2_0.SC_11003_COVER_FIELD.index = 46
+var2_0.SC_11003_COVER_FIELD.label = 2
+var2_0.SC_11003_COVER_FIELD.has_default_value = false
+var2_0.SC_11003_COVER_FIELD.default_value = nil
+var2_0.SC_11003_COVER_FIELD.message_type = LIVINGAREA_COVER
+var2_0.SC_11003_COVER_FIELD.type = 11
+var2_0.SC_11003_COVER_FIELD.cpp_type = 10
 var2_0.SC_11003_MAIL_STOREROOM_LV_FIELD.name = "mail_storeroom_lv"
 var2_0.SC_11003_MAIL_STOREROOM_LV_FIELD.full_name = "p11.sc_11003.mail_storeroom_lv"
 var2_0.SC_11003_MAIL_STOREROOM_LV_FIELD.number = 48
-var2_0.SC_11003_MAIL_STOREROOM_LV_FIELD.index = 46
+var2_0.SC_11003_MAIL_STOREROOM_LV_FIELD.index = 47
 var2_0.SC_11003_MAIL_STOREROOM_LV_FIELD.label = 2
 var2_0.SC_11003_MAIL_STOREROOM_LV_FIELD.has_default_value = false
 var2_0.SC_11003_MAIL_STOREROOM_LV_FIELD.default_value = 0
 var2_0.SC_11003_MAIL_STOREROOM_LV_FIELD.type = 13
 var2_0.SC_11003_MAIL_STOREROOM_LV_FIELD.cpp_type = 3
+var2_0.SC_11003_BATTLE_UI_LIST_FIELD.name = "battle_ui_list"
+var2_0.SC_11003_BATTLE_UI_LIST_FIELD.full_name = "p11.sc_11003.battle_ui_list"
+var2_0.SC_11003_BATTLE_UI_LIST_FIELD.number = 49
+var2_0.SC_11003_BATTLE_UI_LIST_FIELD.index = 48
+var2_0.SC_11003_BATTLE_UI_LIST_FIELD.label = 3
+var2_0.SC_11003_BATTLE_UI_LIST_FIELD.has_default_value = false
+var2_0.SC_11003_BATTLE_UI_LIST_FIELD.default_value = {}
+var2_0.SC_11003_BATTLE_UI_LIST_FIELD.type = 13
+var2_0.SC_11003_BATTLE_UI_LIST_FIELD.cpp_type = 3
+var2_0.SC_11003_BATTLE_UI_FIELD.name = "battle_ui"
+var2_0.SC_11003_BATTLE_UI_FIELD.full_name = "p11.sc_11003.battle_ui"
+var2_0.SC_11003_BATTLE_UI_FIELD.number = 50
+var2_0.SC_11003_BATTLE_UI_FIELD.index = 49
+var2_0.SC_11003_BATTLE_UI_FIELD.label = 2
+var2_0.SC_11003_BATTLE_UI_FIELD.has_default_value = false
+var2_0.SC_11003_BATTLE_UI_FIELD.default_value = 0
+var2_0.SC_11003_BATTLE_UI_FIELD.type = 13
+var2_0.SC_11003_BATTLE_UI_FIELD.cpp_type = 3
 SC_11003.name = "sc_11003"
 SC_11003.full_name = "p11.sc_11003"
 SC_11003.nested_types = {}
@@ -949,7 +988,10 @@ SC_11003.fields = {
 	var2_0.SC_11003_TAKING_SHIP_LIST_FIELD,
 	var2_0.SC_11003_SOUNDSTORY_FIELD,
 	var2_0.SC_11003_CHILD_DISPLAY_FIELD,
-	var2_0.SC_11003_MAIL_STOREROOM_LV_FIELD
+	var2_0.SC_11003_COVER_FIELD,
+	var2_0.SC_11003_MAIL_STOREROOM_LV_FIELD,
+	var2_0.SC_11003_BATTLE_UI_LIST_FIELD,
+	var2_0.SC_11003_BATTLE_UI_FIELD
 }
 SC_11003.is_extendable = false
 SC_11003.extensions = {}
@@ -1515,6 +1557,42 @@ CS_11029.fields = {
 }
 CS_11029.is_extendable = false
 CS_11029.extensions = {}
+var2_0.CS_11030_LIVINGAREA_COVER_ID_FIELD.name = "livingarea_cover_id"
+var2_0.CS_11030_LIVINGAREA_COVER_ID_FIELD.full_name = "p11.cs_11030.livingarea_cover_id"
+var2_0.CS_11030_LIVINGAREA_COVER_ID_FIELD.number = 1
+var2_0.CS_11030_LIVINGAREA_COVER_ID_FIELD.index = 0
+var2_0.CS_11030_LIVINGAREA_COVER_ID_FIELD.label = 2
+var2_0.CS_11030_LIVINGAREA_COVER_ID_FIELD.has_default_value = false
+var2_0.CS_11030_LIVINGAREA_COVER_ID_FIELD.default_value = 0
+var2_0.CS_11030_LIVINGAREA_COVER_ID_FIELD.type = 13
+var2_0.CS_11030_LIVINGAREA_COVER_ID_FIELD.cpp_type = 3
+CS_11030.name = "cs_11030"
+CS_11030.full_name = "p11.cs_11030"
+CS_11030.nested_types = {}
+CS_11030.enum_types = {}
+CS_11030.fields = {
+	var2_0.CS_11030_LIVINGAREA_COVER_ID_FIELD
+}
+CS_11030.is_extendable = false
+CS_11030.extensions = {}
+var2_0.SC_11031_RESULT_FIELD.name = "result"
+var2_0.SC_11031_RESULT_FIELD.full_name = "p11.sc_11031.result"
+var2_0.SC_11031_RESULT_FIELD.number = 1
+var2_0.SC_11031_RESULT_FIELD.index = 0
+var2_0.SC_11031_RESULT_FIELD.label = 2
+var2_0.SC_11031_RESULT_FIELD.has_default_value = false
+var2_0.SC_11031_RESULT_FIELD.default_value = 0
+var2_0.SC_11031_RESULT_FIELD.type = 13
+var2_0.SC_11031_RESULT_FIELD.cpp_type = 3
+SC_11031.name = "sc_11031"
+SC_11031.full_name = "p11.sc_11031"
+SC_11031.nested_types = {}
+SC_11031.enum_types = {}
+SC_11031.fields = {
+	var2_0.SC_11031_RESULT_FIELD
+}
+SC_11031.is_extendable = false
+SC_11031.extensions = {}
 var2_0.CS_11100_CMD_FIELD.name = "cmd"
 var2_0.CS_11100_CMD_FIELD.full_name = "p11.cs_11100.cmd"
 var2_0.CS_11100_CMD_FIELD.number = 1
@@ -3087,6 +3165,15 @@ var2_0.NOTICEINFO_TRACK_FIELD.has_default_value = false
 var2_0.NOTICEINFO_TRACK_FIELD.default_value = ""
 var2_0.NOTICEINFO_TRACK_FIELD.type = 9
 var2_0.NOTICEINFO_TRACK_FIELD.cpp_type = 9
+var2_0.NOTICEINFO_PRIORITY_FIELD.name = "priority"
+var2_0.NOTICEINFO_PRIORITY_FIELD.full_name = "p11.noticeinfo.priority"
+var2_0.NOTICEINFO_PRIORITY_FIELD.number = 11
+var2_0.NOTICEINFO_PRIORITY_FIELD.index = 10
+var2_0.NOTICEINFO_PRIORITY_FIELD.label = 2
+var2_0.NOTICEINFO_PRIORITY_FIELD.has_default_value = false
+var2_0.NOTICEINFO_PRIORITY_FIELD.default_value = 0
+var2_0.NOTICEINFO_PRIORITY_FIELD.type = 13
+var2_0.NOTICEINFO_PRIORITY_FIELD.cpp_type = 3
 NOTICEINFO.name = "noticeinfo"
 NOTICEINFO.full_name = "p11.noticeinfo"
 NOTICEINFO.nested_types = {}
@@ -3101,7 +3188,8 @@ NOTICEINFO.fields = {
 	var2_0.NOTICEINFO_CONTENT_FIELD,
 	var2_0.NOTICEINFO_TAG_TYPE_FIELD,
 	var2_0.NOTICEINFO_ICON_FIELD,
-	var2_0.NOTICEINFO_TRACK_FIELD
+	var2_0.NOTICEINFO_TRACK_FIELD,
+	var2_0.NOTICEINFO_PRIORITY_FIELD
 }
 NOTICEINFO.is_extendable = false
 NOTICEINFO.extensions = {}
@@ -3995,6 +4083,34 @@ SHIP_TAKING_DATA.fields = {
 }
 SHIP_TAKING_DATA.is_extendable = false
 SHIP_TAKING_DATA.extensions = {}
+var2_0.LIVINGAREA_COVER_ID_FIELD.name = "id"
+var2_0.LIVINGAREA_COVER_ID_FIELD.full_name = "p11.livingarea_cover.id"
+var2_0.LIVINGAREA_COVER_ID_FIELD.number = 1
+var2_0.LIVINGAREA_COVER_ID_FIELD.index = 0
+var2_0.LIVINGAREA_COVER_ID_FIELD.label = 2
+var2_0.LIVINGAREA_COVER_ID_FIELD.has_default_value = false
+var2_0.LIVINGAREA_COVER_ID_FIELD.default_value = 0
+var2_0.LIVINGAREA_COVER_ID_FIELD.type = 13
+var2_0.LIVINGAREA_COVER_ID_FIELD.cpp_type = 3
+var2_0.LIVINGAREA_COVER_COVERS_FIELD.name = "covers"
+var2_0.LIVINGAREA_COVER_COVERS_FIELD.full_name = "p11.livingarea_cover.covers"
+var2_0.LIVINGAREA_COVER_COVERS_FIELD.number = 2
+var2_0.LIVINGAREA_COVER_COVERS_FIELD.index = 1
+var2_0.LIVINGAREA_COVER_COVERS_FIELD.label = 3
+var2_0.LIVINGAREA_COVER_COVERS_FIELD.has_default_value = false
+var2_0.LIVINGAREA_COVER_COVERS_FIELD.default_value = {}
+var2_0.LIVINGAREA_COVER_COVERS_FIELD.type = 13
+var2_0.LIVINGAREA_COVER_COVERS_FIELD.cpp_type = 3
+LIVINGAREA_COVER.name = "livingarea_cover"
+LIVINGAREA_COVER.full_name = "p11.livingarea_cover"
+LIVINGAREA_COVER.nested_types = {}
+LIVINGAREA_COVER.enum_types = {}
+LIVINGAREA_COVER.fields = {
+	var2_0.LIVINGAREA_COVER_ID_FIELD,
+	var2_0.LIVINGAREA_COVER_COVERS_FIELD
+}
+LIVINGAREA_COVER.is_extendable = false
+LIVINGAREA_COVER.extensions = {}
 activityinfo = var0_0.Message(ACTIVITYINFO)
 benefitbuff = var0_0.Message(BENEFITBUFF)
 cardinfo = var0_0.Message(CARDINFO)
@@ -4013,6 +4129,7 @@ cs_11023 = var0_0.Message(CS_11023)
 cs_11025 = var0_0.Message(CS_11025)
 cs_11027 = var0_0.Message(CS_11027)
 cs_11029 = var0_0.Message(CS_11029)
+cs_11030 = var0_0.Message(CS_11030)
 cs_11100 = var0_0.Message(CS_11100)
 cs_11202 = var0_0.Message(CS_11202)
 cs_11204 = var0_0.Message(CS_11204)
@@ -4043,6 +4160,7 @@ ins_npc = var0_0.Message(INS_NPC)
 ins_player = var0_0.Message(INS_PLAYER)
 keyvalue = var0_0.Message(KEYVALUE)
 keyvaluelist = var0_0.Message(KEYVALUELIST)
+livingarea_cover = var0_0.Message(LIVINGAREA_COVER)
 mulkeyvalue = var0_0.Message(MULKEYVALUE)
 noticeinfo = var0_0.Message(NOTICEINFO)
 resource = var0_0.Message(RESOURCE)
@@ -4063,6 +4181,7 @@ sc_11022 = var0_0.Message(SC_11022)
 sc_11024 = var0_0.Message(SC_11024)
 sc_11026 = var0_0.Message(SC_11026)
 sc_11028 = var0_0.Message(SC_11028)
+sc_11031 = var0_0.Message(SC_11031)
 sc_11101 = var0_0.Message(SC_11101)
 sc_11200 = var0_0.Message(SC_11200)
 sc_11201 = var0_0.Message(SC_11201)

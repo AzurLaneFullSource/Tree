@@ -27,7 +27,8 @@ function var0_0.InitBtns(arg0_2)
 		MainActMedalCollectionBtn.New(arg0_2.actBtnTpl, arg0_2.event),
 		MainActSenranBtn.New(arg0_2.actBtnTpl, arg0_2.event),
 		MainActBossSingleBtn.New(arg0_2.actBtnTpl, arg0_2.event),
-		MainActLayerBtn.New(arg0_2.actBtnTpl, arg0_2.event)
+		MainActLayerBtn.New(arg0_2.actBtnTpl, arg0_2.event),
+		MainActDreamlandBtn.New(arg0_2.actBtnTpl, arg0_2.event)
 	}
 	arg0_2.specailBtns = {
 		MainActInsBtn.New(arg0_2._tf, arg0_2.event),
@@ -36,7 +37,8 @@ function var0_0.InitBtns(arg0_2)
 		MainActNewServerBtn.New(arg0_2._tf, arg0_2.event),
 		MainActDelegationBtn.New(arg0_2._tf, arg0_2.event),
 		MainIslandActDelegationBtn.New(arg0_2._tf, arg0_2.event),
-		MainVoteEntranceBtn.New(arg0_2._tf, arg0_2.event)
+		MainVoteEntranceBtn.New(arg0_2._tf, arg0_2.event),
+		MainActCompensatBtn.New(arg0_2._tf, arg0_2.event)
 	}
 
 	if pg.SdkMgr.GetInstance():CheckAudit() then
@@ -65,68 +67,55 @@ function var0_0.Register(arg0_3)
 	arg0_3:bind(GAME.ZERO_HOUR_OP_DONE, function(arg0_9)
 		arg0_3:Refresh()
 	end)
+	arg0_3:bind(CompensateProxy.UPDATE_ATTACHMENT_COUNT, function(arg0_10)
+		arg0_3:Refresh()
+	end)
+	arg0_3:bind(CompensateProxy.All_Compensate_Remove, function(arg0_11)
+		arg0_3:Refresh()
+	end)
 end
 
-function var0_0.GetBtn(arg0_10, arg1_10)
-	for iter0_10, iter1_10 in ipairs(arg0_10.activityBtns) do
-		if isa(iter1_10, arg1_10) then
-			return iter1_10
+function var0_0.GetBtn(arg0_12, arg1_12)
+	for iter0_12, iter1_12 in ipairs(arg0_12.activityBtns) do
+		if isa(iter1_12, arg1_12) then
+			return iter1_12
 		end
 	end
 
-	for iter2_10, iter3_10 in ipairs(arg0_10.specailBtns) do
-		if isa(iter3_10, arg1_10) then
-			return iter3_10
+	for iter2_12, iter3_12 in ipairs(arg0_12.specailBtns) do
+		if isa(iter3_12, arg1_12) then
+			return iter3_12
 		end
 	end
 
 	return nil
 end
 
-function var0_0.OnRemoveLayer(arg0_11, arg1_11)
-	local var0_11
+function var0_0.OnRemoveLayer(arg0_13, arg1_13)
+	local var0_13
 
-	if arg1_11.mediator == LotteryMediator then
-		var0_11 = arg0_11:GetBtn(MainActLotteryBtn)
-	elseif arg1_11.mediator == InstagramMediator then
-		var0_11 = arg0_11:GetBtn(MainActInsBtn)
+	if arg1_13.mediator == LotteryMediator then
+		var0_13 = arg0_13:GetBtn(MainActLotteryBtn)
+	elseif arg1_13.mediator == InstagramMediator then
+		var0_13 = arg0_13:GetBtn(MainActInsBtn)
 	end
 
-	if var0_11 and var0_11:InShowTime() then
-		var0_11:OnInit()
+	if var0_13 and var0_13:InShowTime() then
+		var0_13:OnInit()
 	end
 end
 
-function var0_0.Init(arg0_12)
-	arg0_12:Flush()
+function var0_0.Init(arg0_14)
+	arg0_14:Flush()
 
-	arg0_12.isInit = true
+	arg0_14.isInit = true
 end
 
-function var0_0.FilterActivityBtns(arg0_13)
-	local var0_13 = {}
-	local var1_13 = {}
-
-	for iter0_13, iter1_13 in ipairs(arg0_13.activityBtns) do
-		if iter1_13:InShowTime() then
-			table.insert(var0_13, iter1_13)
-		else
-			table.insert(var1_13, iter1_13)
-		end
-	end
-
-	table.sort(var0_13, function(arg0_14, arg1_14)
-		return arg0_14.config.group_id < arg1_14.config.group_id
-	end)
-
-	return var0_13, var1_13
-end
-
-function var0_0.FilterSpActivityBtns(arg0_15)
+function var0_0.FilterActivityBtns(arg0_15)
 	local var0_15 = {}
 	local var1_15 = {}
 
-	for iter0_15, iter1_15 in ipairs(arg0_15.specailBtns) do
+	for iter0_15, iter1_15 in ipairs(arg0_15.activityBtns) do
 		if iter1_15:InShowTime() then
 			table.insert(var0_15, iter1_15)
 		else
@@ -134,92 +123,111 @@ function var0_0.FilterSpActivityBtns(arg0_15)
 		end
 	end
 
+	table.sort(var0_15, function(arg0_16, arg1_16)
+		return arg0_16.config.group_id < arg1_16.config.group_id
+	end)
+
 	return var0_15, var1_15
 end
 
-function var0_0.Flush(arg0_16)
-	if arg0_16.checkNotchRatio ~= NotchAdapt.CheckNotchRatio then
-		arg0_16.checkNotchRatio = NotchAdapt.CheckNotchRatio
-		arg0_16.initPos = nil
-	end
-
-	local var0_16, var1_16 = arg0_16:FilterActivityBtns()
-
-	for iter0_16, iter1_16 in ipairs(var0_16) do
-		iter1_16:Init(iter0_16)
-	end
-
-	for iter2_16, iter3_16 in ipairs(var1_16) do
-		iter3_16:Clear()
-	end
-
-	local var2_16 = #var0_16
-
-	assert(var2_16 <= 4, "活动按钮不能超过4个")
-
-	local var3_16 = var2_16 <= 3
-	local var4_16 = var3_16 and 1 or 0.85
-	local var5_16 = var3_16 and 390 or 420
-
-	arg0_16._tf.localScale = Vector3(var4_16, var4_16, 1)
-	arg0_16.initPos = arg0_16.initPos or arg0_16._tf.localPosition
-	arg0_16._tf.localPosition = Vector3(arg0_16.initPos.x, var5_16, 0)
-
-	local var6_16, var7_16 = arg0_16:FilterSpActivityBtns()
-
-	for iter4_16, iter5_16 in pairs(var6_16) do
-		iter5_16:Init(not var3_16)
-	end
-
-	for iter6_16, iter7_16 in pairs(var7_16) do
-		iter7_16:Clear()
-	end
-end
-
-function var0_0.Refresh(arg0_17)
-	if not arg0_17.isInit then
-		return
-	end
-
-	arg0_17:Flush()
+function var0_0.FilterSpActivityBtns(arg0_17)
+	local var0_17 = {}
+	local var1_17 = {}
 
 	for iter0_17, iter1_17 in ipairs(arg0_17.specailBtns) do
 		if iter1_17:InShowTime() then
-			iter1_17:Refresh()
+			table.insert(var0_17, iter1_17)
+		else
+			table.insert(var1_17, iter1_17)
+		end
+	end
+
+	return var0_17, var1_17
+end
+
+function var0_0.Flush(arg0_18)
+	if arg0_18.checkNotchRatio ~= NotchAdapt.CheckNotchRatio then
+		arg0_18.checkNotchRatio = NotchAdapt.CheckNotchRatio
+		arg0_18.initPos = nil
+	end
+
+	local var0_18, var1_18 = arg0_18:FilterActivityBtns()
+
+	for iter0_18, iter1_18 in ipairs(var0_18) do
+		iter1_18:Init(iter0_18)
+	end
+
+	for iter2_18, iter3_18 in ipairs(var1_18) do
+		iter3_18:Clear()
+	end
+
+	local var2_18 = #var0_18
+
+	assert(var2_18 <= 4, "活动按钮不能超过4个")
+
+	local var3_18 = var2_18 <= 3
+	local var4_18 = var3_18 and 1 or 0.85
+	local var5_18 = var3_18 and 390 or 420
+
+	arg0_18._tf.localScale = Vector3(var4_18, var4_18, 1)
+	arg0_18.initPos = arg0_18.initPos or arg0_18._tf.localPosition
+	arg0_18._tf.localPosition = Vector3(arg0_18.initPos.x, var5_18, 0)
+
+	local var6_18, var7_18 = arg0_18:FilterSpActivityBtns()
+
+	for iter4_18, iter5_18 in pairs(var6_18) do
+		iter5_18:Init(not var3_18)
+	end
+
+	for iter6_18, iter7_18 in pairs(var7_18) do
+		iter7_18:Clear()
+	end
+end
+
+function var0_0.Refresh(arg0_19)
+	if not arg0_19.isInit then
+		return
+	end
+
+	arg0_19:Flush()
+
+	for iter0_19, iter1_19 in ipairs(arg0_19.specailBtns) do
+		if iter1_19:InShowTime() then
+			iter1_19:Refresh()
 		end
 	end
 end
 
-function var0_0.Disable(arg0_18)
-	for iter0_18, iter1_18 in ipairs(arg0_18.specailBtns) do
-		if iter1_18:InShowTime() then
-			iter1_18:Disable()
+function var0_0.Disable(arg0_20)
+	for iter0_20, iter1_20 in ipairs(arg0_20.specailBtns) do
+		if iter1_20:InShowTime() then
+			iter1_20:Disable()
 		end
 	end
 end
 
-function var0_0.Dispose(arg0_19)
-	var0_0.super.Dispose(arg0_19)
-	arg0_19.linkBtnTopFoldableHelper:Dispose()
+function var0_0.Dispose(arg0_21)
+	var0_0.super.Dispose(arg0_21)
+	arg0_21.linkBtnTopFoldableHelper:Dispose()
 
-	for iter0_19, iter1_19 in ipairs(arg0_19.activityBtns) do
-		iter1_19:Dispose()
+	for iter0_21, iter1_21 in ipairs(arg0_21.activityBtns) do
+		iter1_21:Dispose()
 	end
 
-	for iter2_19, iter3_19 in ipairs(arg0_19.specailBtns) do
-		iter3_19:Dispose()
+	for iter2_21, iter3_21 in ipairs(arg0_21.specailBtns) do
+		iter3_21:Dispose()
 	end
 
-	arg0_19.specailBtns = nil
-	arg0_19.activityBtns = nil
+	arg0_21.specailBtns = nil
+	arg0_21.activityBtns = nil
 end
 
-function var0_0.Fold(arg0_20, arg1_20, arg2_20)
-	var0_0.super.Fold(arg0_20, arg1_20, arg2_20)
-	arg0_20.linkBtnTopFoldableHelper:Fold(arg1_20, arg2_20)
+function var0_0.Fold(arg0_22, arg1_22, arg2_22)
+	var0_0.super.Fold(arg0_22, arg1_22, arg2_22)
+	arg0_22.linkBtnTopFoldableHelper:Fold(arg1_22, arg2_22)
 end
 
-function var0_0.GetDirection(arg0_21)
+function var0_0.GetDirection(arg0_23)
 	return Vector2(1, 0)
 end
 

@@ -10,6 +10,7 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.toggle = arg0_2:findTF("frame")
 	arg0_2.title = arg0_2:findTF("frame/title")
 	arg0_2.text = arg0_2:findTF("frame/bg/Text"):GetComponent(typeof(Text))
+	arg0_2.tipText = arg0_2:findTF("frame/bg/tipText")
 	arg0_2.textWithGift = arg0_2:findTF("frame/gift_bg/Text"):GetComponent(typeof(Text))
 	arg0_2.dropsList = UIItemList.New(arg0_2:findTF("frame/gift_bg/gift/drops"), arg0_2:findTF("frame/gift_bg/gift/drops/item"))
 end
@@ -66,6 +67,7 @@ function var0_0.Flush(arg0_9, arg1_9)
 
 	var2_9.text = i18n("skin_shop_buy_confirm", var6_9, var4_9, var5_9)
 
+	arg0_9:SetTipText(arg1_9:getSkinId())
 	arg0_9:FlushGift(var0_9)
 end
 
@@ -88,17 +90,53 @@ function var0_0.FlushGift(arg0_10, arg1_10)
 	arg0_10.dropsList:align(#arg1_10)
 end
 
-function var0_0.Hide(arg0_13)
-	var0_0.super.Hide(arg0_13)
-	arg0_13:emit(NewSkinShopMainView.EVT_SHOW_OR_HIDE_PURCHASE_VIEW, false)
+function var0_0.SetTipText(arg0_13, arg1_13)
+	local var0_13 = pg.ship_skin_template[arg1_13].ship_group
+	local var1_13 = pg.gameset.no_share_skin_tip.description
+	local var2_13
+	local var3_13
+
+	for iter0_13, iter1_13 in ipairs(var1_13) do
+		for iter2_13, iter3_13 in ipairs(iter1_13) do
+			if var0_13 == iter3_13[1] then
+				var2_13 = iter1_13
+				var3_13 = iter2_13
+
+				break
+			end
+		end
+	end
+
+	setActive(arg0_13.tipText, var3_13)
+
+	if var3_13 then
+		local var4_13 = ""
+
+		for iter4_13, iter5_13 in ipairs(var2_13) do
+			if iter4_13 ~= var3_13 then
+				if var4_13 == "" then
+					var4_13 = i18n(iter5_13[2])
+				else
+					var4_13 = var4_13 .. "、" .. i18n(iter5_13[2])
+				end
+			end
+		end
+
+		setText(arg0_13.tipText, i18n("no_share_skin_gametip", i18n(var2_13[var3_13][2]), var4_13))
+	end
+end
+
+function var0_0.Hide(arg0_14)
+	var0_0.super.Hide(arg0_14)
+	arg0_14:emit(NewSkinShopMainView.EVT_SHOW_OR_HIDE_PURCHASE_VIEW, false)
 	setAnchoredPosition(pg.playerResUI.gemAddBtn, {
 		x = -155
 	})
 
-	arg0_13.commodity = nil
+	arg0_14.commodity = nil
 end
 
-function var0_0.OnDestroy(arg0_14)
+function var0_0.OnDestroy(arg0_15)
 	return
 end
 

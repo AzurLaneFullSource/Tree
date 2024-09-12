@@ -268,6 +268,8 @@ function var0_0.UpdateFurnitureState(arg0_20, arg1_20, arg2_20, arg3_20)
 	else
 		var0_20:OnCanPlace()
 	end
+
+	var0_20:OnUpdateScale(arg1_20)
 end
 
 function var0_0.ResetFurnitureSelectedState(arg0_22, arg1_22)

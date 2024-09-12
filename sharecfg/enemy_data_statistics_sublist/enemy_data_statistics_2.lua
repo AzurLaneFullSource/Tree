@@ -1,30 +1,5 @@
 pg = pg or {}
 pg.enemy_data_statistics_2 = {
-	[50025] = {
-		speed_growth = 10000,
-		name = "Geryon",
-		durability_growth = 7200,
-		cannon_growth = 7200,
-		luck_growth = 10000,
-		fog_fx = "",
-		hit_growth = 7200,
-		reload_growth = 7200,
-		dodge_growth = 10000,
-		antisub_growth = 0,
-		air_growth = 0,
-		base = 50021,
-		armor_growth = 0,
-		torpedo_growth = 7200,
-		bubble_fx = "",
-		antiaircraft_growth = 7200,
-		id = 50025,
-		specific_fx_scale = {},
-		appear_fx = {},
-		equipment_list = {},
-		random_equipment_list = {},
-		random_nub = {},
-		buff_list = {}
-	},
 	[50026] = {
 		speed_growth = 10000,
 		name = "Geryon",
@@ -944,5 +919,189 @@ pg.enemy_data_statistics_2 = {
 		id = 50060,
 		reload_growth = 10000,
 		dodge_growth = 10000
+	},
+	[50061] = {
+		cannon = 0,
+		name = "Bunbun Strikers",
+		type = 1,
+		speed_growth = 0,
+		air_growth = 0,
+		air = 0,
+		battle_unit_type = 49,
+		durability = 600,
+		armor = 0,
+		friendly_cld = 0,
+		id = 50061,
+		bubble_fx = "",
+		dodge_growth = 2500,
+		icon = "lafeiII_wurenji",
+		star = 0,
+		fog_fx = "",
+		antisub_growth = 0,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 10000,
+		icon_type = 5,
+		armor_growth = 0,
+		torpedo_growth = 5000,
+		hit_growth = 5000,
+		speed = 28,
+		luck = 0,
+		antisub = 0,
+		scale = 100,
+		wave_fx = "",
+		prefab = "lafeiII_wurenji",
+		cannon_growth = 5000,
+		pilot_ai_template_id = 10001,
+		reload = 0,
+		dodge = 0,
+		reload_growth = 5000,
+		hit = 0,
+		nationality = 1,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 5000,
+		armor_type = 1,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		prefab_offset = {
+			0,
+			0,
+			0
+		},
+		cld_box = {
+			4,
+			1.6,
+			1.6
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.097,
+					1.231,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.78,
+							0.55,
+							-0.21
+						}
+					}
+				}
+			},
+			{
+				40,
+				{
+					{
+						"smoke",
+						{
+							0.51,
+							2.28,
+							2.1
+						}
+					}
+				}
+			}
+		},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		specific_fx_scale = {},
+		appear_fx = {},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			150,
+			2
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
+	},
+	[50062] = {
+		torpedo_growth = 5500,
+		name = "Bunbun Strikers",
+		luck_growth = 10000,
+		cannon_growth = 5500,
+		hit_growth = 5500,
+		fog_fx = "",
+		reload_growth = 5500,
+		dodge_growth = 2750,
+		antisub_growth = 0,
+		air_growth = 0,
+		base = 50061,
+		durability = 620,
+		armor_growth = 0,
+		durability_growth = 0,
+		bubble_fx = "",
+		antiaircraft_growth = 5500,
+		id = 50062,
+		specific_fx_scale = {},
+		appear_fx = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
 	}
 }
