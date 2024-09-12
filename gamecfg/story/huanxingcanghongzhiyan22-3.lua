@@ -124,7 +124,7 @@ return {
 			dir = 1,
 			nameColor = "#FFC960",
 			actor = 9705060,
-			say = "All I will tell you is this – Amagi will be revived. Not by you, but by $1.",
+			say = "All I will tell you is this – Amagi will be revived. Not by you, but by {playername}.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
