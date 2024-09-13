@@ -20,7 +20,7 @@ end
 
 function var0_0.OnLoaded(arg0_3)
 	setParent(arg0_3._tf, arg0_3._parentTf)
-	arg0_3._tf:SetSiblingIndex(5)
+	arg0_3._tf:SetSiblingIndex(4)
 end
 
 function var0_0.OnInit(arg0_4)

@@ -98365,7 +98365,7 @@ pg.base.skill_data_template = {
 		id = 150460,
 		type = 3,
 		max_level = 10,
-		desc = "Increases this ship's AVI by $1. \nWhile this ship is afloat: increases the DMG dealt by your submarines' torpedoes, surface ships' torpedoes, and aircrafts' torpedoes by $1, and decreases the enemy's FP, TRP, AVI, AA, and EVA by $2; each stack of Phoenix Flame on the enemy applies another instance of this debuff to that enemy.",
+		desc = "Increases this ship's AVI by $1. \nWhile this ship is afloat: increases the torpedo DMG dealt by your Sakura Empire ships (including submarines' torpedoes, surface ships' torpedoes, and aircrafts' torpedoes) by $1, and decreases the enemy's FP, TRP, AVI, AA, and EVA by $2; each stack of Phoenix Flame on the enemy applies another instance of this debuff to that enemy.",
 		system_transform = {},
 		world_death_mark = {
 			1

@@ -58,11 +58,12 @@ return {
 		{
 			type = "BattleBuffAddBuff",
 			trigger = {
-				"onFriendlyShipDying"
+				"onUpdate"
 			},
 			arg_list = {
 				buff_id = 201087,
-				target = "TargetSelf"
+				target = "TargetSelf",
+				time = 0.2
 			}
 		}
 	}

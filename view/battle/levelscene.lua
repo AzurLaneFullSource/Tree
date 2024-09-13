@@ -1667,14 +1667,15 @@ function var0_0.updateMap(arg0_115, arg1_115)
 		setActive(var4_115, var4_115.name == var3_115)
 	end
 
+	arg0_115:SwitchMapBG(var0_115, arg1_115)
+	arg0_115:PlayBGM()
+
 	local var5_115 = arg0_115.contextData.map:getConfig("ui_type")
 
 	arg0_115:SwitchMapBuilder(var5_115)
 	arg0_115.mapBuilder:UpdateMapVO(var0_115)
 	arg0_115.mapBuilder:UpdateView()
 	arg0_115.mapBuilder:UpdateMapItems()
-	arg0_115:SwitchMapBG(var0_115, arg1_115)
-	arg0_115:PlayBGM()
 end
 
 function var0_0.UpdateSwitchMapButton(arg0_116)
@@ -2299,10 +2300,10 @@ function var0_0.switchToMap(arg0_177, arg1_177)
 	end
 
 	arg0_177:SwitchMapBG(arg0_177.contextData.map)
+	arg0_177:PlayBGM()
 	arg0_177.mapBuilder:Show()
 	arg0_177.mapBuilder:UpdateView()
 	arg0_177.mapBuilder:UpdateMapItems()
-	arg0_177:PlayBGM()
 	pg.UIMgr.GetInstance():UnblurPanel(arg0_177.topPanel, arg0_177._tf)
 	pg.playerResUI:SetActive({
 		active = false

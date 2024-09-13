@@ -112,26 +112,14 @@ function var7_0.OpeningEffect(arg0_12, arg1_12, arg2_12)
 		end
 	end
 
-	local var3_12 = arg0_12._ui._go:GetComponent("DftAniEvent")
-
-	if var3_12 then
-		var3_12:SetEndEvent(function(arg0_13)
-			arg0_12._uiMGR:SetActive(true)
-			arg0_12:EnableComponent(true)
-
-			if arg1_12 then
-				arg1_12()
-			end
-		end)
-	else
+	LeanTween.delayedCall(var5_0.COMBAT_DELAY_ACTIVE, System.Action(function()
 		arg0_12._uiMGR:SetActive(true)
 		arg0_12:EnableComponent(true)
 
 		if arg1_12 then
 			arg1_12()
 		end
-	end
-
+	end))
 	SetActive(arg0_12._ui._go, true)
 	arg0_12._skillView:ButtonInitialAnima()
 end
