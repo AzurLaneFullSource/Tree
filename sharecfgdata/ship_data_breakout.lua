@@ -44090,8 +44090,7 @@ _G.pg.base.ship_data_breakout[11000072] = {
 	use_gold = 1500,
 	use_item = {},
 	weapon_ids = {
-		106,
-		106,
+		33000,
 	},
 }
 
@@ -44107,7 +44106,7 @@ _G.pg.base.ship_data_breakout[11000073] = {
 	use_gold = 2500,
 	use_item = {},
 	weapon_ids = {
-		106,
+		33000,
 		106,
 	},
 }

@@ -26,6 +26,7 @@ var1_0.TypeValentineQte = 17
 var1_0.TypeBossRushEX = 18
 var1_0.TypeTWCelebrationShare = 5000
 var1_0.TypeCardTower = 17
+var1_0.TypeDorm3dPhoto = 19
 var1_0.PANEL_TYPE_BLACK = 1
 var1_0.PANEL_TYPE_PINK = 2
 var1_0.ANCHORS_TYPE = {
@@ -68,6 +69,11 @@ function var1_0.Init(arg0_1)
 		arg0_1.go:SetActive(false)
 
 		arg0_1.tr = arg0_2.transform
+
+		local var0_2 = var0_0.UIMgr.GetInstance().OverlayMain
+
+		setParent(arg0_1.tr, var0_2.transform, false)
+
 		arg0_1.panelBlack = arg0_1.tr:Find("panel")
 		arg0_1.panelPink = arg0_1.tr:Find("panel_pink")
 		arg0_1.deckTF = arg0_1.tr:Find("deck")
@@ -78,15 +84,36 @@ function var1_0.Init(arg0_1)
 		arg0_1.logo = arg0_1.tr:Find("deck/logo")
 
 		GetComponent(arg0_1.logo, "Image"):SetNativeSize()
+		var0_0.DelegateInfo.New(arg0_1)
 	end)
 
-	arg0_1.screenshot = Application.persistentDataPath .. "/screen_scratch/last_picture_for_share.jpg"
+	arg0_1.screenshotPath = Application.persistentDataPath .. "/screen_scratch/last_picture_for_share.jpg"
 	arg0_1.cacheComps = {}
 	arg0_1.cacheShowComps = {}
 	arg0_1.cacheMoveComps = {}
 end
 
-function var1_0.Share(arg0_3, arg1_3, arg2_3, arg3_3)
+function var1_0.UpdateDeck(arg0_3, arg1_3)
+	local var0_3 = getProxy(PlayerProxy):getRawData()
+	local var1_3 = getProxy(UserProxy):getRawData()
+	local var2_3 = getProxy(ServerProxy):getRawData()[var1_3 and var1_3.server or 0]
+	local var3_3 = var0_3 and var0_3.name or ""
+	local var4_3 = var2_3 and var2_3.name or ""
+
+	setText(arg1_3:Find("name/value"), var3_3)
+	setText(arg1_3:Find("server/value"), var4_3)
+	setText(arg1_3:Find("lv/value"), var0_3.level)
+
+	if PLATFORM_CODE == PLATFORM_CHT or PLATFORM_CODE == PLATFORM_CH then
+		setActive(arg1_3:Find("code_bg"), true)
+	else
+		setActive(arg1_3:Find("code_bg"), false)
+	end
+end
+
+function var1_0.Share(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4)
+	arg0_4.noBlur = arg4_4
+
 	if PLATFORM_CODE == PLATFORM_CHT and not CheckPermissionGranted(ANDROID_WRITE_EXTERNAL_PERMISSION) then
 		var0_0.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n1("指揮官，碧藍航線需要存儲權限才能分享是否打開？"),
@@ -100,221 +127,272 @@ function var1_0.Share(arg0_3, arg1_3, arg2_3, arg3_3)
 		return
 	end
 
-	local var0_3 = LuaHelper.GetCHPackageType()
+	local var0_4 = LuaHelper.GetCHPackageType()
 
-	if not IsUnityEditor and PLATFORM_CODE == PLATFORM_CH and var0_3 ~= PACKAGE_TYPE_BILI then
+	if not IsUnityEditor and PLATFORM_CODE == PLATFORM_CH and var0_4 ~= PACKAGE_TYPE_BILI then
 		var0_0.TipsMgr.GetInstance():ShowTips("指挥官，当前平台不支持分享功能哦")
 
 		return
 	end
 
-	if IsNil(arg0_3.go) then
-		arg0_3:Init()
-	end
+	arg0_4:Init()
 
-	arg2_3 = arg2_3 or var1_0.PANEL_TYPE_BLACK
+	local var1_4 = var0_0.share_template[arg1_4]
 
-	if arg2_3 == var1_0.PANEL_TYPE_BLACK then
-		arg0_3.panel = arg0_3.panelBlack
-	elseif arg2_3 == var1_0.PANEL_TYPE_PINK then
-		arg0_3.panel = arg0_3.panelPink
-	end
+	assert(var1_4, "share_template not exist: " .. arg1_4)
 
-	setActive(arg0_3.panelBlack, arg2_3 == var1_0.PANEL_TYPE_BLACK)
-	setActive(arg0_3.panelPink, arg2_3 == var1_0.PANEL_TYPE_PINK)
-
-	local var1_3 = var0_0.share_template[arg1_3]
-
-	assert(var1_3, "share_template not exist: " .. arg1_3)
-
-	local var2_3 = getProxy(PlayerProxy):getRawData()
-	local var3_3 = getProxy(UserProxy):getRawData()
-	local var4_3 = getProxy(ServerProxy):getRawData()[var3_3 and var3_3.server or 0]
-	local var5_3 = var2_3 and var2_3.name or ""
-	local var6_3 = var4_3 and var4_3.name or ""
-	local var7_3 = arg0_3.deckTF
-	local var8_3 = arg0_3.ANCHORS_TYPE[var1_3.deck] or {
+	local var2_4 = arg0_4.deckTF
+	local var3_4 = arg0_4.ANCHORS_TYPE[var1_4.deck] or {
 		0.5,
 		0.5,
 		0.5,
 		0.5
 	}
 
-	var7_3.anchorMin = Vector2(var8_3[1], var8_3[2])
-	var7_3.anchorMax = Vector2(var8_3[3], var8_3[4])
+	var2_4.anchorMin = Vector2(var3_4[1], var3_4[2])
+	var2_4.anchorMax = Vector2(var3_4[3], var3_4[4])
+	var2_4.anchoredPosition3D = Vector3(var1_4.qrcode_location[1], var1_4.qrcode_location[2], -100)
+	var2_4.anchoredPosition = Vector2(var1_4.qrcode_location[1], var1_4.qrcode_location[2])
 
-	setText(var7_3:Find("name/value"), var5_3)
-	setText(var7_3:Find("server/value"), var6_3)
-	setText(var7_3:Find("lv/value"), var2_3.level)
-
-	if PLATFORM_CODE == PLATFORM_CHT or PLATFORM_CODE == PLATFORM_CH then
-		setActive(var7_3:Find("code_bg"), true)
-	else
-		setActive(var7_3:Find("code_bg"), false)
-	end
-
-	local var9_3 = GameObject.Find(var1_3.camera):GetComponent(typeof(Camera))
-	local var10_3 = var9_3.transform:GetChild(0)
-
-	var7_3.anchoredPosition3D = Vector3(var1_3.qrcode_location[1], var1_3.qrcode_location[2], -100)
-	var7_3.anchoredPosition = Vector2(var1_3.qrcode_location[1], var1_3.qrcode_location[2])
-
-	_.each(var1_3.hidden_comps, function(arg0_5)
-		local var0_5 = GameObject.Find(arg0_5)
-
-		if not IsNil(var0_5) and var0_5.activeSelf then
-			table.insert(arg0_3.cacheComps, var0_5)
-			var0_5:SetActive(false)
-		end
-	end)
-	_.each(var1_3.show_comps, function(arg0_6)
+	arg0_4:UpdateDeck(var2_4)
+	_.each(var1_4.hidden_comps, function(arg0_6)
 		local var0_6 = GameObject.Find(arg0_6)
 
-		if not IsNil(var0_6) and not var0_6.activeSelf then
-			table.insert(arg0_3.cacheShowComps, var0_6)
-			var0_6:SetActive(true)
+		if not IsNil(var0_6) and var0_6.activeSelf then
+			table.insert(arg0_4.cacheComps, var0_6)
+			var0_6:SetActive(false)
 		end
 	end)
-	_.each(var1_3.move_comps, function(arg0_7)
-		local var0_7 = GameObject.Find(arg0_7.path)
+	_.each(var1_4.show_comps, function(arg0_7)
+		local var0_7 = GameObject.Find(arg0_7)
 
-		if not IsNil(var0_7) then
-			local var1_7 = var0_7.transform.anchoredPosition.x
-			local var2_7 = var0_7.transform.anchoredPosition.y
-			local var3_7 = arg0_7.x
-			local var4_7 = arg0_7.y
+		if not IsNil(var0_7) and not var0_7.activeSelf then
+			table.insert(arg0_4.cacheShowComps, var0_7)
+			var0_7:SetActive(true)
+		end
+	end)
+	_.each(var1_4.move_comps, function(arg0_8)
+		local var0_8 = GameObject.Find(arg0_8.path)
 
-			table.insert(arg0_3.cacheMoveComps, {
-				var0_7,
-				var1_7,
-				var2_7
+		if not IsNil(var0_8) then
+			local var1_8 = var0_8.transform.anchoredPosition.x
+			local var2_8 = var0_8.transform.anchoredPosition.y
+			local var3_8 = arg0_8.x
+			local var4_8 = arg0_8.y
+
+			table.insert(arg0_4.cacheMoveComps, {
+				var0_8,
+				var1_8,
+				var2_8
 			})
-			setAnchoredPosition(var0_7, {
-				x = var3_7,
-				y = var4_7
+			setAnchoredPosition(var0_8, {
+				x = var3_8,
+				y = var4_8
 			})
 		end
 	end)
-	SetParent(var7_3, var10_3, false)
-	var7_3:SetAsLastSibling()
 
-	local var11_3 = ScreenShooter.New(Screen.width, Screen.height, TextureFormat.ARGB32)
+	local var4_4 = GameObject.Find(var1_4.camera):GetComponent(typeof(Camera)).transform:GetChild(0)
+
+	SetParent(var2_4, var4_4, false)
+	var2_4:SetAsLastSibling()
+	arg0_4:ShotAndSave(arg1_4)
+	SetParent(var2_4, arg0_4.tr, false)
+
+	local var5_4 = arg0_4:ShowSharePanel(arg1_4, arg2_4, arg3_4, arg4_4)
+
+	_.each(arg0_4.cacheComps, function(arg0_9)
+		arg0_9:SetActive(true)
+	end)
+
+	arg0_4.cacheComps = {}
+
+	_.each(arg0_4.cacheShowComps, function(arg0_10)
+		arg0_10:SetActive(false)
+	end)
+
+	arg0_4.cacheShowComps = {}
+
+	_.each(arg0_4.cacheMoveComps, function(arg0_11)
+		setAnchoredPosition(arg0_11[1], {
+			x = arg0_11[2],
+			y = arg0_11[3]
+		})
+	end)
+
+	arg0_4.cacheMoveComps = {}
+
+	if not var5_4 then
+		arg0_4:Dispose()
+	end
+end
+
+function var1_0.ShotAndSave(arg0_12, arg1_12)
+	local var0_12 = var0_0.share_template[arg1_12]
+
+	assert(var0_12, "share_template not exist: " .. arg1_12)
+
+	local var1_12 = LuaHelper.GetCHPackageType()
+	local var2_12 = GameObject.Find(var0_12.camera):GetComponent(typeof(Camera))
+	local var3_12 = ScreenShooter.New(Screen.width, Screen.height, TextureFormat.ARGB32)
 
 	if (PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US) and var0_0.SdkMgr.GetInstance():GetIsPlatform() then
-		local var12_3 = arg0_3:TakeTexture(arg1_3, var11_3, var9_3)
+		local var4_12 = arg0_12:TakeTexture(arg1_12, var3_12, var2_12)
+		local var5_12 = Tex2DExtension.EncodeToJPG(var4_12)
 
-		var0_0.SdkMgr.GetInstance():GameShare(var1_3.description, var12_3)
-		var0_0.UIMgr.GetInstance():LoadingOn()
-		onDelayTick(function()
-			var0_0.UIMgr.GetInstance():LoadingOff()
-		end, 2)
+		arg0_12:SaveImageWithBytes(var5_12)
+
+		return true
 	elseif PLATFORM_CODE == PLATFORM_CHT then
-		arg0_3:TakePhoto(arg1_3, var11_3, var9_3)
-		var0_0.SdkMgr.GetInstance():ShareImg(arg0_3.screenshot, function()
-			return
-		end)
-	elseif PLATFORM_CODE == PLATFORM_CH and var0_3 == PACKAGE_TYPE_BILI then
-		if arg0_3:TakePhoto(arg1_3, var11_3, var9_3) then
-			var0_0.SdkMgr.GetInstance():GameShare(var1_3.description, arg0_3.screenshot)
+		if arg0_12:TakePhoto(arg1_12, var3_12, var2_12) then
+			return true
 		end
-	elseif arg0_3:TakePhoto(arg1_3, var11_3, var9_3) then
-		print("截图位置: " .. arg0_3.screenshot)
-		arg0_3:Show(var1_3, arg3_3)
+	elseif PLATFORM_CODE == PLATFORM_CH and var1_12 == PACKAGE_TYPE_BILI then
+		if arg0_12:TakePhoto(arg1_12, var3_12, var2_12) then
+			return true
+		end
+	elseif arg0_12:TakePhoto(arg1_12, var3_12, var2_12) then
+		return true
 	elseif PLATFORM_CODE == PLATFORM_CHT then
 		var0_0.TipsMgr.GetInstance():ShowTips("截圖失敗")
 	else
 		var0_0.TipsMgr.GetInstance():ShowTips("截图失败")
 	end
-
-	SetParent(var7_3, arg0_3.tr, false)
-	_.each(arg0_3.cacheComps, function(arg0_10)
-		arg0_10:SetActive(true)
-	end)
-
-	arg0_3.cacheComps = {}
-
-	_.each(arg0_3.cacheShowComps, function(arg0_11)
-		arg0_11:SetActive(false)
-	end)
-
-	arg0_3.cacheShowComps = {}
-
-	_.each(arg0_3.cacheMoveComps, function(arg0_12)
-		setAnchoredPosition(arg0_12[1], {
-			x = arg0_12[2],
-			y = arg0_12[3]
-		})
-	end)
-
-	arg0_3.cacheMoveComps = {}
 end
 
-function var1_0.TakeTexture(arg0_13, arg1_13, arg2_13, arg3_13)
-	if arg1_13 == var1_0.TypeValentineQte then
-		local var0_13 = System.Collections.Generic.List_UnityEngine_Camera()
-		local var1_13 = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
-		local var2_13 = GameObject.Find("OverlayCamera"):GetComponent(typeof(Camera))
+function var1_0.ShowSharePanel(arg0_13, arg1_13, arg2_13, arg3_13, arg4_13)
+	arg0_13.noBlur = arg4_13
 
-		var0_13:Add(var1_13)
-		var0_13:Add(var2_13)
+	local var0_13 = var0_0.share_template[arg1_13]
 
-		local var3_13 = arg2_13:TakePhotoMultiCam(var0_13)
+	assert(var0_13, "share_template not exist: " .. arg1_13)
 
-		return (arg2_13:EncodeToJPG(var3_13))
+	local var1_13 = LuaHelper.GetCHPackageType()
+
+	if (PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US) and var0_0.SdkMgr.GetInstance():GetIsPlatform() then
+		local var2_13 = System.IO.File.ReadAllBytes(arg0_13.screenshotPath)
+		local var3_13 = UnityEngine.Texture2D.New(Screen.width, Screen.height, TextureFormat.ARGB32, false)
+
+		Tex2DExtension.LoadImage(var3_13, var2_13)
+		var0_0.SdkMgr.GetInstance():GameShare(var0_13.description, var3_13)
+		var0_0.UIMgr.GetInstance():LoadingOn()
+		onDelayTick(function()
+			var0_0.UIMgr.GetInstance():LoadingOff()
+		end, 2)
+	elseif PLATFORM_CODE == PLATFORM_CHT then
+		var0_0.SdkMgr.GetInstance():ShareImg(arg0_13.screenshotPath, function()
+			return
+		end)
+	elseif PLATFORM_CODE == PLATFORM_CH and var1_13 == PACKAGE_TYPE_BILI then
+		var0_0.SdkMgr.GetInstance():GameShare(var0_13.description, arg0_13.screenshotPath)
 	else
-		local var4_13 = arg2_13:TakePhoto(arg3_13)
+		arg0_13:ShowOwnUI(arg1_13, arg2_13, arg3_13, arg4_13)
 
-		return (arg2_13:EncodeToJPG(var4_13))
+		return true
 	end
 end
 
-function var1_0.TakePhoto(arg0_14, arg1_14, arg2_14, arg3_14)
-	if arg1_14 == var1_0.TypeValentineQte then
-		local var0_14 = System.Collections.Generic.List_UnityEngine_Camera()
-		local var1_14 = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
-		local var2_14 = GameObject.Find("OverlayCamera"):GetComponent(typeof(Camera))
+function var1_0.TakeTexture(arg0_16, arg1_16, arg2_16, arg3_16)
+	if arg1_16 == var1_0.TypeValentineQte then
+		local var0_16 = System.Collections.Generic.List_UnityEngine_Camera()
+		local var1_16 = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
+		local var2_16 = GameObject.Find("OverlayCamera"):GetComponent(typeof(Camera))
 
-		var0_14:Add(var1_14)
-		var0_14:Add(var2_14)
+		var0_16:Add(var1_16)
+		var0_16:Add(var2_16)
 
-		return arg2_14:TakeMultiCam(var0_14, arg0_14.screenshot)
+		local var3_16 = arg2_16:TakePhotoMultiCam(var0_16)
+
+		return (arg2_16:EncodeToJPG(var3_16))
 	else
-		return arg2_14:Take(arg3_14, arg0_14.screenshot)
+		local var4_16 = arg2_16:TakePhoto(arg3_16)
+
+		return (arg2_16:EncodeToJPG(var4_16))
 	end
 end
 
-function var1_0.Show(arg0_15, arg1_15, arg2_15)
-	arg0_15.go:SetActive(true)
-	var0_0.UIMgr.GetInstance():BlurPanel(arg0_15.panel, true, arg2_15)
-	var0_0.DelegateInfo.New(arg0_15)
+function var1_0.TakePhoto(arg0_17, arg1_17, arg2_17, arg3_17)
+	if arg1_17 == var1_0.TypeValentineQte then
+		local var0_17 = System.Collections.Generic.List_UnityEngine_Camera()
+		local var1_17 = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
+		local var2_17 = GameObject.Find("OverlayCamera"):GetComponent(typeof(Camera))
 
-	local function var0_15()
-		arg0_15.go:SetActive(false)
-		var0_0.UIMgr.GetInstance():UnblurPanel(arg0_15.panel, arg0_15.tr)
-		PoolMgr.GetInstance():ReturnUI("ShareUI", arg0_15.go)
-		var0_0.DelegateInfo.Dispose(arg0_15)
+		var0_17:Add(var1_17)
+		var0_17:Add(var2_17)
 
-		arg0_15.go = nil
-		arg0_15.tr = nil
-		arg0_15.panel = nil
+		return arg2_17:TakeMultiCam(var0_17, arg0_17.screenshotPath)
+	else
+		return arg2_17:Take(arg3_17, arg0_17.screenshotPath)
+	end
+end
+
+function var1_0.ShowOwnUI(arg0_18, arg1_18, arg2_18, arg3_18, arg4_18)
+	arg0_18.noBlur = arg4_18
+
+	local var0_18 = var0_0.share_template[arg1_18]
+
+	assert(var0_18, "share_template not exist: " .. arg1_18)
+	arg0_18.go:SetActive(true)
+	setActive(arg0_18.deckTF, false)
+
+	arg2_18 = arg2_18 or var1_0.PANEL_TYPE_BLACK
+
+	if arg2_18 == var1_0.PANEL_TYPE_BLACK then
+		arg0_18.panel = arg0_18.panelBlack
+	elseif arg2_18 == var1_0.PANEL_TYPE_PINK then
+		arg0_18.panel = arg0_18.panelPink
 	end
 
-	onButton(arg0_15, arg0_15.panel:Find("main/top/btnBack"), var0_15)
-	onButton(arg0_15, arg0_15.panel:Find("main/buttons/weibo"), function()
-		var0_15()
+	setActive(arg0_18.panelBlack, arg2_18 == var1_0.PANEL_TYPE_BLACK)
+	setActive(arg0_18.panelPink, arg2_18 == var1_0.PANEL_TYPE_PINK)
+
+	if not arg4_18 then
+		var0_0.UIMgr.GetInstance():BlurPanel(arg0_18.panel, true, arg3_18)
+	end
+
+	local function var1_18()
+		arg0_18:Dispose()
+	end
+
+	onButton(arg0_18, arg0_18.panel:Find("main/top/btnBack"), var1_18)
+	onButton(arg0_18, arg0_18.panel:Find("main/buttons/weibo"), function()
+		var1_18()
 	end)
-	onButton(arg0_15, arg0_15.panel:Find("main/buttons/weixin"), function()
-		var0_15()
+	onButton(arg0_18, arg0_18.panel:Find("main/buttons/weixin"), function()
+		var1_18()
 	end)
 
 	if PLATFORM_CODE == PLATFORM_KR then
-		onButton(arg0_15, arg0_15.panel:Find("main/buttons/facebook"), function()
-			var0_0.SdkMgr.GetInstance():ShareImg(arg0_15.screenshot, function(arg0_20, arg1_20)
-				if arg0_20 and arg1_20 == 0 then
+		onButton(arg0_18, arg0_18.panel:Find("main/buttons/facebook"), function()
+			var0_0.SdkMgr.GetInstance():ShareImg(arg0_18.screenshotPath, function(arg0_23, arg1_23)
+				if arg0_23 and arg1_23 == 0 then
 					var0_0.TipsMgr.GetInstance():ShowTips(i18n("share_success"))
 				end
 			end)
-			var0_15()
+			var1_18()
 		end)
 	end
+end
+
+function var1_0.Dispose(arg0_24)
+	arg0_24.go:SetActive(false)
+
+	if arg0_24.panel and not arg0_24.noBlur then
+		var0_0.UIMgr.GetInstance():UnblurPanel(arg0_24.panel, arg0_24.tr)
+	end
+
+	PoolMgr.GetInstance():ReturnUI("ShareUI", arg0_24.go)
+	var0_0.DelegateInfo.Dispose(arg0_24)
+
+	arg0_24.go = nil
+	arg0_24.tr = nil
+	arg0_24.panel = nil
+end
+
+function var1_0.SaveImageWithBytes(arg0_25, arg1_25)
+	BackYardThemeTempalteUtil.CheckSaveDirectory()
+
+	local var0_25 = arg0_25.screenshotPath
+
+	System.IO.File.WriteAllBytes(var0_25, arg1_25)
 end

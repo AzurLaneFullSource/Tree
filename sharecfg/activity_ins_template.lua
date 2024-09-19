@@ -12733,13 +12733,28 @@ pg.activity_ins_template = {
 		ship_group = 30604,
 		name = "Zuihō",
 		sculpture = "ruifeng",
-		message_persist = "",
-		picture_persist = "",
+		message_persist = "ins_491",
+		picture_persist = "https://blhxusstatic.yo-star.com/pic/20240829_KTliljI5u68CzFml_ruifeng.png",
 		group_id = 491,
 		id = 491,
-		is_active = 1,
-		time_persist = {},
-		npc_discuss_persist = {}
+		is_active = 0,
+		time_persist = {
+			{
+				2024,
+				8,
+				29
+			},
+			{
+				12,
+				17,
+				17
+			}
+		},
+		npc_discuss_persist = {
+			4803,
+			4808,
+			4812
+		}
 	},
 	[492] = {
 		ship_group = 20702,
@@ -12833,6 +12848,54 @@ pg.activity_ins_template = {
 		picture_persist = "",
 		group_id = 499,
 		id = 499,
+		is_active = 1,
+		time_persist = {},
+		npc_discuss_persist = {}
+	},
+	[500] = {
+		ship_group = 20220,
+		name = "forMaster_Sirius",
+		sculpture = "tianlangxing_5",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 500,
+		id = 500,
+		is_active = 1,
+		time_persist = {},
+		npc_discuss_persist = {}
+	},
+	[501] = {
+		ship_group = 31901,
+		name = "Kashino",
+		sculpture = "jianye_5",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 501,
+		id = 501,
+		is_active = 1,
+		time_persist = {},
+		npc_discuss_persist = {}
+	},
+	[502] = {
+		ship_group = 30606,
+		name = "Ryūjō",
+		sculpture = "longxiang_4",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 502,
+		id = 502,
+		is_active = 1,
+		time_persist = {},
+		npc_discuss_persist = {}
+	},
+	[503] = {
+		ship_group = 30510,
+		name = "Musashi",
+		sculpture = "wuzang_3",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 503,
+		id = 503,
 		is_active = 1,
 		time_persist = {},
 		npc_discuss_persist = {}
@@ -13327,6 +13390,10 @@ pg.activity_ins_template = {
 		496,
 		497,
 		498,
-		499
+		499,
+		500,
+		501,
+		502,
+		503
 	}
 }

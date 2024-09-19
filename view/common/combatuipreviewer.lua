@@ -208,7 +208,7 @@ function var0_0.load(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, arg5_4)
 
 			setImageSprite(var8_6, var7_6)
 			setImageSprite(findTF(arg0_4.bossHPBar, "BossIcon/icon"), var6_6)
-			setText(findTF(arg0_4.bossHPBar, "BossName"), ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(arg0_4.enemyVO.configId).name)
+			setText(findTF(arg0_4.bossHPBar, "BossNameBG/BossName"), ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(arg0_4.enemyVO.configId).name)
 			setActive(arg0_4.rawImage, true)
 			arg0_4.mainCameraGO:SetActive(false)
 			pg.TimeMgr.GetInstance():ResumeBattleTimer()

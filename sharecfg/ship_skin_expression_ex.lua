@@ -18605,5 +18605,53 @@ pg.ship_skin_expression_ex = {
 				"6"
 			}
 		}
+	},
+	tiancheng = {
+		feeling1 = "",
+		feeling3 = "",
+		main_1 = "",
+		main_2 = "",
+		expedition = "",
+		win_mvp = "",
+		home = "",
+		mission = "",
+		lose = "",
+		feeling4 = "",
+		painting = "tiancheng",
+		skill = "",
+		mail = "",
+		touch = "",
+		main_3 = "",
+		profile = "",
+		upgrade = "",
+		mission_complete = "",
+		headtouch = "",
+		feeling2 = "",
+		battle = "",
+		detail = "",
+		login = {
+			{
+				1100,
+				"2"
+			}
+		},
+		main_ex = {
+			{
+				1100,
+				"1|2"
+			}
+		},
+		touch2 = {
+			{
+				1100,
+				"3"
+			}
+		},
+		feeling5 = {
+			{
+				1100,
+				"2"
+			}
+		}
 	}
 }

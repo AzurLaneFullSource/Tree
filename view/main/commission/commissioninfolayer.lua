@@ -227,7 +227,7 @@ function var0_0.OnPlayerUpdate(arg0_28, arg1_28)
 	end
 
 	if var1_28.goldField ~= var0_28.goldField then
-		arg0_28:UpdateOilRes(var1_28)
+		arg0_28:UpdateGoldRes(var1_28)
 	end
 
 	if var1_28.expField ~= var0_28.expField then

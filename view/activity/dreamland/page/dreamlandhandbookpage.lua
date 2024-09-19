@@ -120,6 +120,10 @@ function var0_0.SwitchPage(arg0_13, arg1_13)
 	elseif arg1_13 == var2_0 then
 		arg0_13:HideTip()
 		arg0_13:UpdateExplorePage()
+
+		if arg0_13.gameData:MarkExploreState() then
+			arg0_13:UpdateTip()
+		end
 	end
 end
 

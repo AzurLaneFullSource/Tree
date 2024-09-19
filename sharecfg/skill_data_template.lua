@@ -99008,7 +99008,7 @@ pg.base.skill_data_template = {
 		id = 150510,
 		type = 1,
 		max_level = 10,
-		desc = "15s after the battle starts, and every 20s after that: fires a $1 special barrage (DMG is based on the skill's level). Enemies hit by this barrage take $2 increased torpedo DMG from this ship for 8s. When this ship's torpedoes hit an enemy: decreases that",
+		desc = "15s after the battle starts, and every 20s after that: fires a $1 special barrage (DMG is based on the skill's level). Enemies hit by this barrage take $2 increased torpedo DMG from this ship for 8s. When this ship's torpedoes hit an enemy: decreases that enemy's SPD by $3 for 5s.",
 		system_transform = {},
 		world_death_mark = {
 			1
