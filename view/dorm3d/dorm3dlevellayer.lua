@@ -225,6 +225,7 @@ function var0_0.ShowTimeSelectWindow(arg0_20)
 	triggerToggle(var0_20:Find("bottom/toggle_lock"), PlayerPrefs.GetInt(ApartmentProxy.GetTimePPName(), 1) == 0)
 	onButton(arg0_20, var0_20:Find("bottom/btn_confirm"), function()
 		warning(arg0_20.contextData.timeIndex, arg0_20.selectTimeIndex)
+		pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_day_night_switching" .. arg0_20.selectTimeIndex))
 
 		if arg0_20.contextData.timeIndex == arg0_20.selectTimeIndex then
 			return

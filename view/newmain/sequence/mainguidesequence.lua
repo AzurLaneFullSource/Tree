@@ -183,21 +183,27 @@ function var0_0.Execute(arg0_27, arg1_27)
 		return
 	end
 
-	local var0_27 = _.detect(var1_0, function(arg0_28)
+	local var0_27 = getProxy(ContextProxy):getCurrentContext()
+
+	if var0_27 and var0_27.mediator.__cname ~= "NewMainMediator" then
+		return
+	end
+
+	local var1_27 = _.detect(var1_0, function(arg0_28)
 		local var0_28 = arg0_28.id
 		local var1_28 = arg0_28.condition
 
 		return not pg.NewStoryMgr.GetInstance():IsPlayed(var0_28) and var1_28()
 	end)
 
-	if not var0_27 then
+	if not var1_27 then
 		arg1_27()
 
 		return
 	end
 
-	local var1_27 = var0_27.id
-	local var2_27 = var0_27.args()
+	local var2_27 = var1_27.id
+	local var3_27 = var1_27.args()
 
 	if pg.SeriesGuideMgr.GetInstance():isRunning() then
 		arg1_27()
@@ -212,20 +218,20 @@ function var0_0.Execute(arg0_27, arg1_27)
 	end
 
 	pg.m02:sendNotification(GAME.STORY_UPDATE, {
-		storyId = var1_27
+		storyId = var2_27
 	})
 
-	if var1_27 == "DORM3D_GUIDE_01" then
-		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(1, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var1_27)))
+	if var2_27 == "DORM3D_GUIDE_01" then
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(1, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var2_27)))
 	end
 
-	pg.NewGuideMgr.GetInstance():Play(var1_27, var2_27, function()
-		if var1_27 == "DORM3D_GUIDE_01" then
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(2, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var1_27)))
+	pg.NewGuideMgr.GetInstance():Play(var2_27, var3_27, function()
+		if var2_27 == "DORM3D_GUIDE_01" then
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(2, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var2_27)))
 		end
 
-		if var0_27.nextOne then
-			local var0_29, var1_29 = var0_27.nextOne()
+		if var1_27.nextOne then
+			local var0_29, var1_29 = var1_27.nextOne()
 
 			arg0_27:PlayNextOne(var0_29, var1_29)
 		end

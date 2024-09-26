@@ -40,8 +40,6 @@ function var0_0.GetShopID(arg0_7)
 				return var2_7
 			end
 		elseif var3_7.group_type == 2 then
-			warning(var1_7, var3_7.group_limit)
-
 			if var1_7 < var3_7.group_limit then
 				return var2_7
 			end

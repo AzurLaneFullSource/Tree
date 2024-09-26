@@ -19,8 +19,6 @@ function var0_0.register(arg0_1)
 	}
 
 	arg0_1:on(28000, function(arg0_2)
-		warning("28000")
-
 		arg0_1.stamina = getDorm3dGameset("daily_vigor_max")[1] - arg0_2.daily_vigor_max
 
 		for iter0_2, iter1_2 in ipairs(arg0_2.gifts) do
@@ -77,8 +75,6 @@ function var0_0.InitGiftDaily(arg0_7)
 			local var1_7 = pg.shop_template[var0_7.shop_id[1]].group
 
 			if var1_7 ~= 0 then
-				warning("init", var0_7.id, var1_7, getProxy(ShopsProxy):GetGroupPayCount(var1_7))
-
 				arg0_7.shopCount.dailyGift[var0_7.id] = getProxy(ShopsProxy):GetGroupPayCount(var1_7)
 			end
 		end
@@ -161,8 +157,6 @@ function var0_0.isGiveGiftDone(arg0_18, arg1_18)
 end
 
 function var0_0.GetGiftShopCount(arg0_19, arg1_19)
-	warning("wcnmb", arg1_19, arg0_19.shopCount.dailyGift[arg1_19])
-
 	return arg0_19.shopCount.dailyGift[arg1_19] or arg0_19.shopCount.permanentGift[arg1_19] or 0
 end
 

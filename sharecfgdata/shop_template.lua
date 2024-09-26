@@ -66272,6 +66272,7 @@ _G.pg.base.shop_template[270110] = {
 	collaboration_skin_time = "",
 	desc = "沙滩邀请天狼星解锁",
 	discount = 100,
+	discount_time = "always",
 	effect_args = "",
 	genre = "",
 	group = 0,
@@ -66289,32 +66290,6 @@ _G.pg.base.shop_template[270110] = {
 	time_second = 0,
 	type = 32,
 	type_order = 0,
-	discount_time = {
-		{
-			{
-				2018,
-				5,
-				24,
-			},
-			{
-				0,
-				0,
-				0,
-			},
-		},
-		{
-			{
-				2024,
-				10,
-				1,
-			},
-			{
-				23,
-				59,
-				59,
-			},
-		},
-	},
 	limit_args = {},
 }
 

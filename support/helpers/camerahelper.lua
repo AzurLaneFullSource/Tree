@@ -4,11 +4,11 @@ local var0_0 = CameraHelper
 local var1_0 = YSTool.YSPermissionTool.Inst
 
 function var0_0.IsAndroid()
-	return getProxy(UserProxy):GetCacheGatewayInServerLogined() == PLATFORM_ANDROID
+	return PLATFORM == PLATFORM_ANDROID
 end
 
 function var0_0.IsIOS()
-	return getProxy(UserProxy):GetCacheGatewayInServerLogined() == PLATFORM_IPHONEPLAYER
+	return PLATFORM == PLATFORM_IPHONEPLAYER
 end
 
 function var0_0.RequestCamera(arg0_3, arg1_3)
