@@ -24,6 +24,18 @@ pg.item_data_battleui = {
 		icon = "101",
 		scene = {}
 	},
+	[102] = {
+		key = "SkinNormal_20240912",
+		name = "赛博纪元",
+		desc = "采用赛博朋克风格的设计，充满了动态效果与光影变化，为热爱科幻风格的指挥官提供沉浸式的体验。",
+		display_icon = "ui_102",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "世界巡游十九期获取",
+		id = 102,
+		icon = "102",
+		scene = {}
+	},
 	[103] = {
 		key = "SkinNormal_20240913",
 		name = "Iridescent Fantasy",
@@ -39,6 +51,7 @@ pg.item_data_battleui = {
 	all = {
 		0,
 		101,
+		102,
 		103
 	}
 }

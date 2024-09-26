@@ -8,49 +8,45 @@ function var0_0.GetName(arg0_2)
 	return arg0_2:getConfig("name")
 end
 
-function var0_0.GetShipGroupId(arg0_3)
-	return arg0_3:getConfig("char_id")
+function var0_0.IsGlobal(arg0_3)
+	return arg0_3:getConfig("is_global") == 1
 end
 
-function var0_0.IsGlobal(arg0_4)
-	return arg0_4:getConfig("is_global") == 1
+function var0_0.GetWatchCameraName(arg0_4)
+	return arg0_4:getConfig("watch_camera")
 end
 
-function var0_0.GetWatchCameraName(arg0_5)
-	return arg0_5:getConfig("watch_camera")
+function var0_0.GetSlotIDList(arg0_5)
+	return pg.dorm3d_furniture_slot_template.get_id_list_by_zone_id[arg0_5.configId] or {}
 end
 
-function var0_0.GetSlotIDList(arg0_6)
-	return pg.dorm3d_furniture_slot_template.get_id_list_by_zone_id[arg0_6.configId] or {}
+function var0_0.SetSlots(arg0_6, arg1_6)
+	arg0_6.slots = arg1_6
 end
 
-function var0_0.SetSlots(arg0_7, arg1_7)
-	arg0_7.slots = arg1_7
+function var0_0.GetSlots(arg0_7)
+	return arg0_7.slots or {}
 end
 
-function var0_0.GetSlots(arg0_8)
-	return arg0_8.slots or {}
-end
+function var0_0.GetTypePriorities(arg0_8)
+	local var0_8 = arg0_8:getConfig("type_prioritys")
 
-function var0_0.GetTypePriorities(arg0_9)
-	local var0_9 = arg0_9:getConfig("type_prioritys")
-
-	if var0_9 == nil or var0_9 == "" then
+	if var0_8 == nil or var0_8 == "" then
 		return {}
 	end
 
-	return var0_9
+	return var0_8
 end
 
-function var0_0.SortTypes(arg0_10, arg1_10)
-	local var0_10 = arg0_10:GetTypePriorities()
+function var0_0.SortTypes(arg0_9, arg1_9)
+	local var0_9 = arg0_9:GetTypePriorities()
 
-	table.sort(arg1_10, CompareFuncs({
-		function(arg0_11)
-			return table.indexof(var0_10, arg0_11) or 99
+	table.sort(arg1_9, CompareFuncs({
+		function(arg0_10)
+			return table.indexof(var0_9, arg0_10) or 99
 		end,
-		function(arg0_12)
-			return -arg0_12
+		function(arg0_11)
+			return -arg0_11
 		end
 	}))
 end

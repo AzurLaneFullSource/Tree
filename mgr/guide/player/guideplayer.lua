@@ -234,21 +234,29 @@ function var0_0.UpdateDialogue(arg0_29, arg1_29, arg2_29, arg3_29)
 
 	local var2_29 = var0_29.counsellor
 
-	seriesAsync({
-		function(arg0_30)
-			arg0_29:LoadCounsellor(var2_29.name, arg0_30)
-		end,
-		function(arg0_31)
-			local var0_31 = arg0_29.counsellors[var2_29.name]
+	if var2_29 then
+		seriesAsync({
+			function(arg0_30)
+				arg0_29:LoadCounsellor(var2_29.name, arg0_30)
+			end,
+			function(arg0_31)
+				local var0_31 = arg0_29.counsellors[var2_29.name]
 
-			setActive(var0_31, true)
+				setActive(var0_31, true)
 
-			var0_31.localPosition = arg2_29.localPosition + Vector3(var2_29.position.x, var2_29.position.y, 0)
-			var0_31.localScale = Vector3(var2_29.scale.x, var2_29.scale.y, 1)
+				var0_31.localPosition = arg2_29.localPosition + Vector3(var2_29.position.x, var2_29.position.y, 0)
+				var0_31.localScale = Vector3(var2_29.scale.x, var2_29.scale.y, 1)
 
-			arg0_31()
+				arg0_31()
+			end
+		}, arg3_29)
+	else
+		for iter0_29, iter1_29 in pairs(arg0_29.counsellors) do
+			setActive(iter1_29, false)
 		end
-	}, arg3_29)
+
+		arg3_29()
+	end
 end
 
 function var0_0.LoadCounsellor(arg0_32, arg1_32, arg2_32)
@@ -303,17 +311,14 @@ local function var2_0(arg0_38, arg1_38, arg2_38, arg3_38)
 			clearAllEvent = true
 		})
 	elseif arg3_38.type == GuideStep.HIGH_TYPE_LINE then
-		local var0_38 = arg1_38.isWorld and 15 or 55
+		local var0_38 = arg2_38.rect
 		local var1_38 = arg0_38._tf:InverseTransformPoint(arg2_38.position)
-		local var2_38 = (arg2_38.pivot.x - 0.5) * var0_38
-		local var3_38 = (arg2_38.pivot.y - 0.5) * var0_38
-		local var4_38 = Vector2(arg2_38.sizeDelta.x + var0_38, arg2_38.sizeDelta.y + var0_38)
 
 		arg0_38.uiLoader:LoadHighLightArea({
-			position = Vector3(var1_38.x, var1_38.y, 0) + Vector3(var2_38, var3_38, 0),
-			sizeDelta = var4_38,
-			pivot = arg2_38.pivot,
-			isWorld = arg1_38.isWorld
+			position = Vector3(var1_38.x, var1_38.y, 0) + Vector3(var0_38.x, var0_38.y, 0),
+			size = Vector2(var0_38.width, var0_38.height),
+			length = arg1_38:GetHighlightLength(),
+			name = arg1_38:GetHighlightName()
 		})
 	end
 end

@@ -106,7 +106,8 @@ function var0_0.Ctor(arg0_1)
 			"frame_npc",
 			"frame_prop",
 			"frame_prop_meta",
-			"frame_skin"
+			"frame_skin",
+			"frame_dorm"
 		},
 		energy = {
 			"express_1",
@@ -338,367 +339,341 @@ function var0_0.GetUI(arg0_16, arg1_16, arg2_16, arg3_16)
 	end, var2_16)
 end
 
-function var0_0.BuildUIPlural(arg0_19, arg1_19, arg2_19)
+function var0_0.ReturnUI(arg0_19, arg1_19, arg2_19)
 	local var0_19 = "ui/" .. arg1_19
 	local var1_19 = var0_19 .. arg1_19
 
-	if arg0_19.pools_plural[var1_19] then
-		return
-	end
-
-	local var2_19 = table.contains(var6_0, arg1_19) and 3 or 1
-	local var3_19 = table.contains(var7_0, arg1_19) or table.contains(var8_0, arg1_19)
-
-	arg0_19:LoadAsset(var0_19, arg1_19, true, typeof(Object), function(arg0_20)
-		if arg0_20 == nil then
-			Debugger.LogError("can not find asset: " .. var0_19 .. " : " .. arg1_19)
-
-			return
+	if IsNil(arg2_19) then
+		Debugger.LogError(debug.traceback("empty go: " .. arg1_19))
+	elseif arg0_19.pools_plural[var1_19] then
+		if table.indexof(var6_0, arg1_19) then
+			arg2_19.transform:SetParent(arg0_19.root, false)
 		end
 
-		if not arg0_19.pools_plural[var1_19] then
-			arg0_19.pools_plural[var1_19] = var1_0.New(arg0_20, var2_19)
-		end
-
-		existCall(arg2_19)
-	end, var3_19)
-end
-
-function var0_0.ReturnUI(arg0_21, arg1_21, arg2_21)
-	local var0_21 = "ui/" .. arg1_21
-	local var1_21 = var0_21 .. arg1_21
-
-	if IsNil(arg2_21) then
-		Debugger.LogError(debug.traceback("empty go: " .. arg1_21))
-	elseif arg0_21.pools_plural[var1_21] then
-		if table.indexof(var6_0, arg1_21) then
-			arg2_21.transform:SetParent(arg0_21.root, false)
-		end
-
-		if table.indexof(var7_0, arg1_21) or arg0_21.ui_tempCache[arg1_21] then
-			setActiveViaLayer(arg2_21.transform, false)
-			arg0_21.pools_plural[var1_21]:Enqueue(arg2_21)
-		elseif table.indexof(var8_0, arg1_21) then
-			setActiveViaLayer(arg2_21.transform, false)
-			arg2_21:GetComponent(typeof(UIArchiver)):Clear()
-			arg0_21.pools_plural[var1_21]:Enqueue(arg2_21)
+		if table.indexof(var7_0, arg1_19) or arg0_19.ui_tempCache[arg1_19] then
+			setActiveViaLayer(arg2_19.transform, false)
+			arg0_19.pools_plural[var1_19]:Enqueue(arg2_19)
+		elseif table.indexof(var8_0, arg1_19) then
+			setActiveViaLayer(arg2_19.transform, false)
+			arg2_19:GetComponent(typeof(UIArchiver)):Clear()
+			arg0_19.pools_plural[var1_19]:Enqueue(arg2_19)
 		else
-			arg0_21.pools_plural[var1_21]:Enqueue(arg2_21, true)
+			arg0_19.pools_plural[var1_19]:Enqueue(arg2_19, true)
 
-			if arg0_21.pools_plural[var1_21]:AllReturned() and (not arg0_21.callbacks[var1_21] or #arg0_21.callbacks[var1_21] == 0) then
-				var5_0:ClearBundleRef(var0_21, true, true)
-				arg0_21.pools_plural[var1_21]:Clear()
+			if arg0_19.pools_plural[var1_19]:AllReturned() and (not arg0_19.callbacks[var1_19] or #arg0_19.callbacks[var1_19] == 0) then
+				var5_0:ClearBundleRef(var0_19, true, true)
+				arg0_19.pools_plural[var1_19]:Clear()
 
-				arg0_21.pools_plural[var1_21] = nil
+				arg0_19.pools_plural[var1_19] = nil
 			end
 		end
 	else
-		var4_0.Destroy(arg2_21)
+		var4_0.Destroy(arg2_19)
 	end
 end
 
-function var0_0.HasCacheUI(arg0_22, arg1_22)
-	local var0_22 = ("ui/" .. arg1_22) .. arg1_22
+function var0_0.HasCacheUI(arg0_20, arg1_20)
+	local var0_20 = ("ui/" .. arg1_20) .. arg1_20
 
-	return arg0_22.pools_plural[var0_22] ~= nil
+	return arg0_20.pools_plural[var0_20] ~= nil
 end
 
-function var0_0.PreloadUI(arg0_23, arg1_23, arg2_23)
-	local var0_23 = {}
-	local var1_23 = ("ui/" .. arg1_23) .. arg1_23
+function var0_0.PreloadUI(arg0_21, arg1_21, arg2_21)
+	local var0_21 = {}
+	local var1_21 = ("ui/" .. arg1_21) .. arg1_21
 
-	if not arg0_23.pools_plural[var1_23] then
-		table.insert(var0_23, function(arg0_24)
-			arg0_23:GetUI(arg1_23, true, function(arg0_25)
-				arg0_23.pools_plural[var1_23]:Enqueue(arg0_25)
-				arg0_24()
+	if not arg0_21.pools_plural[var1_21] then
+		table.insert(var0_21, function(arg0_22)
+			arg0_21:GetUI(arg1_21, true, function(arg0_23)
+				arg0_21.pools_plural[var1_21]:Enqueue(arg0_23)
+				arg0_22()
 			end)
 		end)
 	end
 
-	seriesAsync(var0_23, arg2_23)
+	seriesAsync(var0_21, arg2_21)
 end
 
-function var0_0.AddTempCache(arg0_26, arg1_26)
-	arg0_26.ui_tempCache[arg1_26] = true
+function var0_0.AddTempCache(arg0_24, arg1_24)
+	arg0_24.ui_tempCache[arg1_24] = true
 end
 
-function var0_0.DelTempCache(arg0_27, arg1_27)
-	arg0_27.ui_tempCache[arg1_27] = nil
+function var0_0.DelTempCache(arg0_25, arg1_25)
+	arg0_25.ui_tempCache[arg1_25] = nil
 end
 
-function var0_0.ClearAllTempCache(arg0_28)
-	for iter0_28, iter1_28 in pairs(arg0_28.ui_tempCache) do
-		if iter1_28 then
-			local var0_28 = "ui/" .. iter0_28
-			local var1_28 = var0_28 .. iter0_28
+function var0_0.ClearAllTempCache(arg0_26)
+	for iter0_26, iter1_26 in pairs(arg0_26.ui_tempCache) do
+		if iter1_26 then
+			local var0_26 = "ui/" .. iter0_26
+			local var1_26 = var0_26 .. iter0_26
 
-			if arg0_28.pools_plural[var1_28] then
-				var5_0:ClearBundleRef(var0_28, true, true)
-				arg0_28.pools_plural[var1_28]:Clear()
+			if arg0_26.pools_plural[var1_26] then
+				var5_0:ClearBundleRef(var0_26, true, true)
+				arg0_26.pools_plural[var1_26]:Clear()
 
-				arg0_28.pools_plural[var1_28] = nil
+				arg0_26.pools_plural[var1_26] = nil
 			end
 		end
 	end
 end
 
-function var0_0.PreloadPainting(arg0_29, arg1_29, arg2_29)
-	local var0_29 = {}
-	local var1_29 = ("painting/" .. arg1_29) .. arg1_29
+function var0_0.PreloadPainting(arg0_27, arg1_27, arg2_27)
+	local var0_27 = {}
+	local var1_27 = ("painting/" .. arg1_27) .. arg1_27
 
-	if not arg0_29.pools_plural[var1_29] then
-		table.insert(var0_29, function(arg0_30)
-			arg0_29:GetPainting(arg1_29, true, function(arg0_31)
-				arg0_29.pools_plural[var1_29]:Enqueue(arg0_31)
-				arg0_30()
+	if not arg0_27.pools_plural[var1_27] then
+		table.insert(var0_27, function(arg0_28)
+			arg0_27:GetPainting(arg1_27, true, function(arg0_29)
+				arg0_27.pools_plural[var1_27]:Enqueue(arg0_29)
+				arg0_28()
 			end)
 		end)
 	end
 
-	seriesAsync(var0_29, arg2_29)
+	seriesAsync(var0_27, arg2_27)
 end
 
-function var0_0.GetPainting(arg0_32, arg1_32, arg2_32, arg3_32)
-	local var0_32 = "painting/" .. arg1_32
-	local var1_32 = var0_32 .. arg1_32
+function var0_0.GetPainting(arg0_30, arg1_30, arg2_30, arg3_30)
+	local var0_30 = "painting/" .. arg1_30
+	local var1_30 = var0_30 .. arg1_30
 
-	arg0_32:FromPlural(var0_32, arg1_32, arg2_32, 1, function(arg0_33)
-		arg0_33:SetActive(true)
+	arg0_30:FromPlural(var0_30, arg1_30, arg2_30, 1, function(arg0_31)
+		arg0_31:SetActive(true)
 
-		if ShipExpressionHelper.DefaultFaceless(arg1_32) then
-			setActive(tf(arg0_33):Find("face"), true)
+		if ShipExpressionHelper.DefaultFaceless(arg1_30) then
+			setActive(tf(arg0_31):Find("face"), true)
 		end
 
-		arg3_32(arg0_33)
+		arg3_30(arg0_31)
 	end, true)
 end
 
-function var0_0.ReturnPainting(arg0_34, arg1_34, arg2_34)
-	local var0_34 = ("painting/" .. arg1_34) .. arg1_34
+function var0_0.ReturnPainting(arg0_32, arg1_32, arg2_32)
+	local var0_32 = ("painting/" .. arg1_32) .. arg1_32
 
-	if IsNil(arg2_34) then
-		Debugger.LogError(debug.traceback("empty go: " .. arg1_34))
-	elseif arg0_34.pools_plural[var0_34] then
-		setActiveViaLayer(arg2_34, true)
+	if IsNil(arg2_32) then
+		Debugger.LogError(debug.traceback("empty go: " .. arg1_32))
+	elseif arg0_32.pools_plural[var0_32] then
+		setActiveViaLayer(arg2_32, true)
 
-		local var1_34 = tf(arg2_34):Find("face")
+		local var1_32 = tf(arg2_32):Find("face")
 
-		if var1_34 then
-			setActive(var1_34, false)
+		if var1_32 then
+			setActive(var1_32, false)
 		end
 
-		arg2_34:SetActive(false)
-		arg2_34.transform:SetParent(arg0_34.root, false)
-		arg0_34.pools_plural[var0_34]:Enqueue(arg2_34)
-		arg0_34:ExcessPainting()
+		arg2_32:SetActive(false)
+		arg2_32.transform:SetParent(arg0_32.root, false)
+		arg0_32.pools_plural[var0_32]:Enqueue(arg2_32)
+		arg0_32:ExcessPainting()
 	else
-		var4_0.Destroy(arg2_34, true)
+		var4_0.Destroy(arg2_32, true)
 	end
 end
 
-function var0_0.ExcessPainting(arg0_35)
-	local var0_35 = 0
-	local var1_35 = 4
-	local var2_35 = {}
+function var0_0.ExcessPainting(arg0_33)
+	local var0_33 = 0
+	local var1_33 = 4
+	local var2_33 = {}
 
-	for iter0_35, iter1_35 in pairs(arg0_35.pools_plural) do
-		local var3_35 = string.find(iter0_35, "painting/")
+	for iter0_33, iter1_33 in pairs(arg0_33.pools_plural) do
+		local var3_33 = string.find(iter0_33, "painting/")
 
-		if var3_35 and var3_35 >= 1 then
-			table.insert(var2_35, iter0_35)
+		if var3_33 and var3_33 >= 1 then
+			table.insert(var2_33, iter0_33)
 		end
 	end
 
-	if var1_35 < #var2_35 then
-		table.sort(var2_35, function(arg0_36, arg1_36)
-			return arg0_35.pools_plural[arg0_36].index > arg0_35.pools_plural[arg1_36].index
+	if var1_33 < #var2_33 then
+		table.sort(var2_33, function(arg0_34, arg1_34)
+			return arg0_33.pools_plural[arg0_34].index > arg0_33.pools_plural[arg1_34].index
 		end)
 
-		for iter2_35 = var1_35 + 1, #var2_35 do
-			local var4_35 = var2_35[iter2_35]
+		for iter2_33 = var1_33 + 1, #var2_33 do
+			local var4_33 = var2_33[iter2_33]
 
-			arg0_35.pools_plural[var4_35]:Clear(true)
+			arg0_33.pools_plural[var4_33]:Clear(true)
 
-			arg0_35.pools_plural[var4_35] = nil
+			arg0_33.pools_plural[var4_33] = nil
 		end
 
 		var5_0:unloadUnusedAssetBundles()
 
-		arg0_35.paintingCount = arg0_35.paintingCount + 1
+		arg0_33.paintingCount = arg0_33.paintingCount + 1
 
-		if arg0_35.paintingCount > 10 then
-			arg0_35.paintingCount = 0
+		if arg0_33.paintingCount > 10 then
+			arg0_33.paintingCount = 0
 
 			var5_0.Inst:ResUnloadAsync()
 		end
 	end
 end
 
-function var0_0.GetPaintingWithPrefix(arg0_37, arg1_37, arg2_37, arg3_37, arg4_37)
-	local var0_37 = arg4_37 .. arg1_37
-	local var1_37 = var0_37 .. arg1_37
+function var0_0.GetPaintingWithPrefix(arg0_35, arg1_35, arg2_35, arg3_35, arg4_35)
+	local var0_35 = arg4_35 .. arg1_35
+	local var1_35 = var0_35 .. arg1_35
 
-	arg0_37:FromPlural(var0_37, arg1_37, arg2_37, 1, function(arg0_38)
-		arg0_38:SetActive(true)
+	arg0_35:FromPlural(var0_35, arg1_35, arg2_35, 1, function(arg0_36)
+		arg0_36:SetActive(true)
 
-		if ShipExpressionHelper.DefaultFaceless(arg1_37) then
-			setActive(tf(arg0_38):Find("face"), true)
+		if ShipExpressionHelper.DefaultFaceless(arg1_35) then
+			setActive(tf(arg0_36):Find("face"), true)
 		end
 
-		arg3_37(arg0_38)
+		arg3_35(arg0_36)
 	end, true)
 end
 
-function var0_0.ReturnPaintingWithPrefix(arg0_39, arg1_39, arg2_39, arg3_39)
-	local var0_39 = (arg3_39 .. arg1_39) .. arg1_39
+function var0_0.ReturnPaintingWithPrefix(arg0_37, arg1_37, arg2_37, arg3_37)
+	local var0_37 = (arg3_37 .. arg1_37) .. arg1_37
 
-	if IsNil(arg2_39) then
-		Debugger.LogError(debug.traceback("empty go: " .. arg1_39))
-	elseif arg0_39.pools_plural[var0_39] then
-		setActiveViaLayer(arg2_39, true)
+	if IsNil(arg2_37) then
+		Debugger.LogError(debug.traceback("empty go: " .. arg1_37))
+	elseif arg0_37.pools_plural[var0_37] then
+		setActiveViaLayer(arg2_37, true)
 
-		local var1_39 = tf(arg2_39):Find("face")
+		local var1_37 = tf(arg2_37):Find("face")
 
-		if var1_39 then
-			setActive(var1_39, false)
+		if var1_37 then
+			setActive(var1_37, false)
 		end
 
-		arg2_39:SetActive(false)
-		arg2_39.transform:SetParent(arg0_39.root, false)
-		arg0_39.pools_plural[var0_39]:Enqueue(arg2_39)
-		arg0_39:ExcessPainting()
+		arg2_37:SetActive(false)
+		arg2_37.transform:SetParent(arg0_37.root, false)
+		arg0_37.pools_plural[var0_37]:Enqueue(arg2_37)
+		arg0_37:ExcessPainting()
 	else
-		var4_0.Destroy(arg2_39, true)
+		var4_0.Destroy(arg2_37, true)
 	end
 end
 
-function var0_0.GetSprite(arg0_40, arg1_40, arg2_40, arg3_40, arg4_40)
-	arg0_40:FromObjPack(arg1_40, tostring(arg2_40), arg3_40, typeof(Sprite), function(arg0_41)
-		arg4_40(arg0_41)
+function var0_0.GetSprite(arg0_38, arg1_38, arg2_38, arg3_38, arg4_38)
+	arg0_38:FromObjPack(arg1_38, tostring(arg2_38), arg3_38, typeof(Sprite), function(arg0_39)
+		arg4_38(arg0_39)
 	end)
 end
 
-function var0_0.DecreasSprite(arg0_42, arg1_42, arg2_42)
-	local var0_42 = arg1_42
+function var0_0.DecreasSprite(arg0_40, arg1_40, arg2_40)
+	local var0_40 = arg1_40
+	local var1_40 = typeof(Sprite)
+
+	if arg0_40.pools_pack[var0_40] and arg0_40.pools_pack[var0_40].type == var1_40 then
+		if arg0_40.pools_pack[var0_40]:Remove(arg2_40) then
+			var5_0:ClearBundleRef(var0_40, false, false)
+		end
+
+		if arg0_40.pools_pack[var0_40]:GetAmount() <= 0 then
+			arg0_40.pools_pack[var0_40]:Clear()
+
+			arg0_40.pools_pack[var0_40] = nil
+		end
+	end
+end
+
+function var0_0.DestroySprite(arg0_41, arg1_41)
+	local var0_41 = arg1_41
+	local var1_41 = typeof(Sprite)
+
+	if arg0_41.pools_pack[var0_41] and arg0_41.pools_pack[var0_41].type == var1_41 then
+		local var2_41 = arg0_41.pools_pack[var0_41]:GetAmount()
+
+		arg0_41.pools_pack[var0_41]:Clear()
+
+		arg0_41.pools_pack[var0_41] = nil
+
+		for iter0_41 = 1, var2_41 do
+			var5_0:ClearBundleRef(var0_41, false, false)
+		end
+	end
+end
+
+function var0_0.DestroyAllSprite(arg0_42)
+	local var0_42 = {}
 	local var1_42 = typeof(Sprite)
 
-	if arg0_42.pools_pack[var0_42] and arg0_42.pools_pack[var0_42].type == var1_42 then
-		if arg0_42.pools_pack[var0_42]:Remove(arg2_42) then
-			var5_0:ClearBundleRef(var0_42, false, false)
-		end
-
-		if arg0_42.pools_pack[var0_42]:GetAmount() <= 0 then
-			arg0_42.pools_pack[var0_42]:Clear()
-
-			arg0_42.pools_pack[var0_42] = nil
-		end
-	end
-end
-
-function var0_0.DestroySprite(arg0_43, arg1_43)
-	local var0_43 = arg1_43
-	local var1_43 = typeof(Sprite)
-
-	if arg0_43.pools_pack[var0_43] and arg0_43.pools_pack[var0_43].type == var1_43 then
-		local var2_43 = arg0_43.pools_pack[var0_43]:GetAmount()
-
-		arg0_43.pools_pack[var0_43]:Clear()
-
-		arg0_43.pools_pack[var0_43] = nil
-
-		for iter0_43 = 1, var2_43 do
-			var5_0:ClearBundleRef(var0_43, false, false)
-		end
-	end
-end
-
-function var0_0.DestroyAllSprite(arg0_44)
-	local var0_44 = {}
-	local var1_44 = typeof(Sprite)
-
-	for iter0_44, iter1_44 in pairs(arg0_44.pools_pack) do
-		if iter1_44.type == var1_44 and not arg0_44.preloadSprites[iter0_44] then
-			var0_44[iter0_44] = iter1_44
+	for iter0_42, iter1_42 in pairs(arg0_42.pools_pack) do
+		if iter1_42.type == var1_42 and not arg0_42.preloadSprites[iter0_42] then
+			var0_42[iter0_42] = iter1_42
 		end
 	end
 
-	for iter2_44, iter3_44 in pairs(var0_44) do
-		local var2_44 = arg0_44.pools_pack[iter2_44]:GetAmount()
+	for iter2_42, iter3_42 in pairs(var0_42) do
+		local var2_42 = arg0_42.pools_pack[iter2_42]:GetAmount()
 
-		arg0_44.pools_pack[iter2_44]:Clear()
+		arg0_42.pools_pack[iter2_42]:Clear()
 
-		arg0_44.pools_pack[iter2_44] = nil
+		arg0_42.pools_pack[iter2_42] = nil
 
-		for iter4_44 = 1, var2_44 do
-			var5_0:ClearBundleRef(iter2_44, false, false)
+		for iter4_42 = 1, var2_42 do
+			var5_0:ClearBundleRef(iter2_42, false, false)
 		end
 	end
 
 	var5_0:unloadUnusedAssetBundles()
 end
 
-function var0_0.DisplayPoolPacks(arg0_45)
-	local var0_45 = ""
+function var0_0.DisplayPoolPacks(arg0_43)
+	local var0_43 = ""
 
-	for iter0_45, iter1_45 in pairs(arg0_45.pools_pack) do
-		for iter2_45, iter3_45 in pairs(iter1_45.items) do
-			if #var0_45 > 0 then
-				var0_45 = var0_45 .. "\n"
+	for iter0_43, iter1_43 in pairs(arg0_43.pools_pack) do
+		for iter2_43, iter3_43 in pairs(iter1_43.items) do
+			if #var0_43 > 0 then
+				var0_43 = var0_43 .. "\n"
 			end
 
-			local var1_45 = _.map({
-				iter0_45,
+			local var1_43 = _.map({
+				iter0_43,
 				"assetName:",
-				iter2_45,
+				iter2_43,
 				"type:",
-				iter1_45.type.FullName
-			}, function(arg0_46)
-				return tostring(arg0_46)
+				iter1_43.type.FullName
+			}, function(arg0_44)
+				return tostring(arg0_44)
 			end)
 
-			var0_45 = var0_45 .. " " .. table.concat(var1_45, " ")
+			var0_43 = var0_43 .. " " .. table.concat(var1_43, " ")
 		end
 	end
 
-	warning(var0_45)
+	warning(var0_43)
 end
 
-function var0_0.SpriteMemUsage(arg0_47)
-	local var0_47 = 0
-	local var1_47 = 9.5367431640625e-07
-	local var2_47 = typeof(Sprite)
+function var0_0.SpriteMemUsage(arg0_45)
+	local var0_45 = 0
+	local var1_45 = 9.5367431640625e-07
+	local var2_45 = typeof(Sprite)
 
-	for iter0_47, iter1_47 in pairs(arg0_47.pools_pack) do
-		if iter1_47.type == var2_47 then
-			local var3_47 = {}
+	for iter0_45, iter1_45 in pairs(arg0_45.pools_pack) do
+		if iter1_45.type == var2_45 then
+			local var3_45 = {}
 
-			for iter2_47, iter3_47 in pairs(iter1_47.items) do
-				local var4_47 = iter3_47.texture
-				local var5_47 = var4_47.name
+			for iter2_45, iter3_45 in pairs(iter1_45.items) do
+				local var4_45 = iter3_45.texture
+				local var5_45 = var4_45.name
 
-				if not var3_47[var5_47] then
-					local var6_47 = 4
-					local var7_47 = var4_47.format
+				if not var3_45[var5_45] then
+					local var6_45 = 4
+					local var7_45 = var4_45.format
 
-					if var7_47 == TextureFormat.RGB24 then
-						var6_47 = 3
-					elseif var7_47 == TextureFormat.ARGB4444 or var7_47 == TextureFormat.RGBA4444 then
-						var6_47 = 2
-					elseif var7_47 == TextureFormat.DXT5 or var7_47 == TextureFormat.ETC2_RGBA8 then
-						var6_47 = 1
-					elseif var7_47 == TextureFormat.PVRTC_RGB4 or var7_47 == TextureFormat.PVRTC_RGBA4 or var7_47 == TextureFormat.ETC_RGB4 or var7_47 == TextureFormat.ETC2_RGB or var7_47 == TextureFormat.DXT1 then
-						var6_47 = 0.5
+					if var7_45 == TextureFormat.RGB24 then
+						var6_45 = 3
+					elseif var7_45 == TextureFormat.ARGB4444 or var7_45 == TextureFormat.RGBA4444 then
+						var6_45 = 2
+					elseif var7_45 == TextureFormat.DXT5 or var7_45 == TextureFormat.ETC2_RGBA8 then
+						var6_45 = 1
+					elseif var7_45 == TextureFormat.PVRTC_RGB4 or var7_45 == TextureFormat.PVRTC_RGBA4 or var7_45 == TextureFormat.ETC_RGB4 or var7_45 == TextureFormat.ETC2_RGB or var7_45 == TextureFormat.DXT1 then
+						var6_45 = 0.5
 					end
 
-					var0_47 = var0_47 + var4_47.width * var4_47.height * var6_47 * var1_47
-					var3_47[var5_47] = true
+					var0_45 = var0_45 + var4_45.width * var4_45.height * var6_45 * var1_45
+					var3_45[var5_45] = true
 				end
 			end
 		end
 	end
 
-	return var0_47
+	return var0_45
 end
 
 local var9_0 = 64
@@ -708,230 +683,230 @@ local var10_0 = {
 	"world/"
 }
 
-function var0_0.GetPrefab(arg0_48, arg1_48, arg2_48, arg3_48, arg4_48, arg5_48)
-	local var0_48 = arg1_48 .. arg2_48
+function var0_0.GetPrefab(arg0_46, arg1_46, arg2_46, arg3_46, arg4_46, arg5_46)
+	local var0_46 = arg1_46 .. arg2_46
 
-	arg0_48:FromPlural(arg1_48, arg2_48, arg3_48, arg5_48 or var9_0, function(arg0_49)
-		if string.find(arg1_48, "emoji/") == 1 then
-			local var0_49 = arg0_49:GetComponent(typeof(CriManaEffectUI))
+	arg0_46:FromPlural(arg1_46, arg2_46, arg3_46, arg5_46 or var9_0, function(arg0_47)
+		if string.find(arg1_46, "emoji/") == 1 then
+			local var0_47 = arg0_47:GetComponent(typeof(CriManaEffectUI))
 
-			if var0_49 then
-				var0_49:Pause(false)
+			if var0_47 then
+				var0_47:Pause(false)
 			end
 		end
 
-		arg0_49:SetActive(true)
-		tf(arg0_49):SetParent(arg0_48.root, false)
-		arg4_48(arg0_49)
+		arg0_47:SetActive(true)
+		tf(arg0_47):SetParent(arg0_46.root, false)
+		arg4_46(arg0_47)
 	end, true)
 end
 
-function var0_0.ReturnPrefab(arg0_50, arg1_50, arg2_50, arg3_50, arg4_50)
-	local var0_50 = arg1_50 .. arg2_50
+function var0_0.ReturnPrefab(arg0_48, arg1_48, arg2_48, arg3_48, arg4_48)
+	local var0_48 = arg1_48 .. arg2_48
 
-	if IsNil(arg3_50) then
-		Debugger.LogError(debug.traceback("empty go: " .. arg2_50))
-	elseif arg0_50.pools_plural[var0_50] then
-		if string.find(arg1_50, "emoji/") == 1 then
-			local var1_50 = arg3_50:GetComponent(typeof(CriManaEffectUI))
+	if IsNil(arg3_48) then
+		Debugger.LogError(debug.traceback("empty go: " .. arg2_48))
+	elseif arg0_48.pools_plural[var0_48] then
+		if string.find(arg1_48, "emoji/") == 1 then
+			local var1_48 = arg3_48:GetComponent(typeof(CriManaEffectUI))
 
-			if var1_50 then
-				var1_50:Pause(true)
+			if var1_48 then
+				var1_48:Pause(true)
 			end
 		end
 
-		arg3_50:SetActive(false)
-		arg3_50.transform:SetParent(arg0_50.root, false)
-		arg0_50.pools_plural[var0_50]:Enqueue(arg3_50)
+		arg3_48:SetActive(false)
+		arg3_48.transform:SetParent(arg0_48.root, false)
+		arg0_48.pools_plural[var0_48]:Enqueue(arg3_48)
 
-		if arg4_50 and arg0_50.pools_plural[var0_50].balance <= 0 and (not arg0_50.callbacks[var0_50] or #arg0_50.callbacks[var0_50] == 0) then
-			arg0_50:DestroyPrefab(arg1_50, arg2_50)
+		if arg4_48 and arg0_48.pools_plural[var0_48].balance <= 0 and (not arg0_48.callbacks[var0_48] or #arg0_48.callbacks[var0_48] == 0) then
+			arg0_48:DestroyPrefab(arg1_48, arg2_48)
 		end
 	else
-		var4_0.Destroy(arg3_50)
+		var4_0.Destroy(arg3_48)
 	end
 end
 
-function var0_0.DestroyPrefab(arg0_51, arg1_51, arg2_51)
-	local var0_51 = arg1_51 .. arg2_51
+function var0_0.DestroyPrefab(arg0_49, arg1_49, arg2_49)
+	local var0_49 = arg1_49 .. arg2_49
 
-	if arg0_51.pools_plural[var0_51] then
-		arg0_51.pools_plural[var0_51]:Clear()
+	if arg0_49.pools_plural[var0_49] then
+		arg0_49.pools_plural[var0_49]:Clear()
 
-		arg0_51.pools_plural[var0_51] = nil
+		arg0_49.pools_plural[var0_49] = nil
 
-		var5_0:ClearBundleRef(arg1_51, true, false)
+		var5_0:ClearBundleRef(arg1_49, true, false)
 	end
 end
 
-function var0_0.DestroyAllPrefab(arg0_52)
-	local var0_52 = {}
+function var0_0.DestroyAllPrefab(arg0_50)
+	local var0_50 = {}
 
-	for iter0_52, iter1_52 in pairs(arg0_52.pools_plural) do
-		if _.any(var10_0, function(arg0_53)
-			return string.find(iter0_52, arg0_53) == 1
+	for iter0_50, iter1_50 in pairs(arg0_50.pools_plural) do
+		if _.any(var10_0, function(arg0_51)
+			return string.find(iter0_50, arg0_51) == 1
 		end) then
-			iter1_52:Clear()
-			var5_0:ClearBundleRef(iter0_52, true, false)
-			table.insert(var0_52, iter0_52)
+			iter1_50:Clear()
+			var5_0:ClearBundleRef(iter0_50, true, false)
+			table.insert(var0_50, iter0_50)
 		end
 	end
 
-	_.each(var0_52, function(arg0_54)
-		arg0_52.pools_plural[arg0_54] = nil
+	_.each(var0_50, function(arg0_52)
+		arg0_50.pools_plural[arg0_52] = nil
 	end)
 end
 
-function var0_0.DisplayPluralPools(arg0_55)
-	local var0_55 = ""
+function var0_0.DisplayPluralPools(arg0_53)
+	local var0_53 = ""
 
-	for iter0_55, iter1_55 in pairs(arg0_55.pools_plural) do
-		if #var0_55 > 0 then
-			var0_55 = var0_55 .. "\n"
+	for iter0_53, iter1_53 in pairs(arg0_53.pools_plural) do
+		if #var0_53 > 0 then
+			var0_53 = var0_53 .. "\n"
 		end
 
-		local var1_55 = _.map({
-			iter0_55,
+		local var1_53 = _.map({
+			iter0_53,
 			"balance",
-			iter1_55.balance,
+			iter1_53.balance,
 			"currentItmes",
-			#iter1_55.items
-		}, function(arg0_56)
-			return tostring(arg0_56)
+			#iter1_53.items
+		}, function(arg0_54)
+			return tostring(arg0_54)
 		end)
 
-		var0_55 = var0_55 .. " " .. table.concat(var1_55, " ")
+		var0_53 = var0_53 .. " " .. table.concat(var1_53, " ")
 	end
 
-	warning(var0_55)
+	warning(var0_53)
 end
 
-function var0_0.GetPluralStatus(arg0_57, arg1_57)
-	if not arg0_57.pools_plural[arg1_57] then
+function var0_0.GetPluralStatus(arg0_55, arg1_55)
+	if not arg0_55.pools_plural[arg1_55] then
 		return "NIL"
 	end
 
-	local var0_57 = arg0_57.pools_plural[arg1_57]
-	local var1_57 = _.map({
-		arg1_57,
+	local var0_55 = arg0_55.pools_plural[arg1_55]
+	local var1_55 = _.map({
+		arg1_55,
 		"balance",
-		var0_57.balance,
+		var0_55.balance,
 		"currentItmes",
-		#var0_57.items
+		#var0_55.items
 	}, tostring)
 
-	return table.concat(var1_57, " ")
+	return table.concat(var1_55, " ")
 end
 
-function var0_0.FromPlural(arg0_58, arg1_58, arg2_58, arg3_58, arg4_58, arg5_58, arg6_58)
-	local var0_58 = arg1_58 .. arg2_58
+function var0_0.FromPlural(arg0_56, arg1_56, arg2_56, arg3_56, arg4_56, arg5_56, arg6_56)
+	local var0_56 = arg1_56 .. arg2_56
 
-	local function var1_58()
-		local var0_59 = arg0_58.pools_plural[var0_58]
+	local function var1_56()
+		local var0_57 = arg0_56.pools_plural[var0_56]
 
-		var0_59.index = arg0_58.pluralIndex
-		arg0_58.pluralIndex = arg0_58.pluralIndex + 1
+		var0_57.index = arg0_56.pluralIndex
+		arg0_56.pluralIndex = arg0_56.pluralIndex + 1
 
-		arg5_58(var0_59:Dequeue())
+		arg5_56(var0_57:Dequeue())
 	end
 
-	if not arg0_58.pools_plural[var0_58] then
-		arg0_58:LoadAsset(arg1_58, arg2_58, arg3_58, typeof(Object), function(arg0_60)
-			if arg0_60 == nil then
-				Debugger.LogError("can not find asset: " .. arg1_58 .. " : " .. arg2_58)
+	if not arg0_56.pools_plural[var0_56] then
+		arg0_56:LoadAsset(arg1_56, arg2_56, arg3_56, typeof(Object), function(arg0_58)
+			if arg0_58 == nil then
+				Debugger.LogError("can not find asset: " .. arg1_56 .. " : " .. arg2_56)
 
 				return
 			end
 
-			if not arg0_58.pools_plural[var0_58] then
-				arg0_58.pools_plural[var0_58] = var1_0.New(arg0_60, arg4_58)
+			if not arg0_56.pools_plural[var0_56] then
+				arg0_56.pools_plural[var0_56] = var1_0.New(arg0_58, arg4_56)
 			end
 
-			var1_58()
-		end, arg6_58)
+			var1_56()
+		end, arg6_56)
 	else
-		var1_58()
+		var1_56()
 	end
 end
 
-function var0_0.FromObjPack(arg0_61, arg1_61, arg2_61, arg3_61, arg4_61, arg5_61)
-	local var0_61 = arg1_61
+function var0_0.FromObjPack(arg0_59, arg1_59, arg2_59, arg3_59, arg4_59, arg5_59)
+	local var0_59 = arg1_59
 
-	if not arg0_61.pools_pack[var0_61] or not arg0_61.pools_pack[var0_61]:Get(arg2_61) then
-		arg0_61:LoadAsset(arg1_61, arg2_61, arg3_61, arg4_61, function(arg0_62)
-			if arg0_62 == nil then
-				Debugger.LogError("can not find asset: " .. arg1_61 .. " : " .. arg2_61)
+	if not arg0_59.pools_pack[var0_59] or not arg0_59.pools_pack[var0_59]:Get(arg2_59) then
+		arg0_59:LoadAsset(arg1_59, arg2_59, arg3_59, arg4_59, function(arg0_60)
+			if arg0_60 == nil then
+				Debugger.LogError("can not find asset: " .. arg1_59 .. " : " .. arg2_59)
 
 				return
 			end
 
-			if not arg0_61.pools_pack[var0_61] then
-				arg0_61.pools_pack[var0_61] = var3_0.New(arg4_61)
+			if not arg0_59.pools_pack[var0_59] then
+				arg0_59.pools_pack[var0_59] = var3_0.New(arg4_59)
 			end
 
-			if not arg0_61.pools_pack[var0_61]:Get(arg2_61) then
-				arg0_61.pools_pack[var0_61]:Set(arg2_61, arg0_62)
+			if not arg0_59.pools_pack[var0_59]:Get(arg2_59) then
+				arg0_59.pools_pack[var0_59]:Set(arg2_59, arg0_60)
 			end
 
-			arg5_61(arg0_62)
+			arg5_59(arg0_60)
 		end, false)
 	else
-		arg5_61(arg0_61.pools_pack[var0_61]:Get(arg2_61))
+		arg5_59(arg0_59.pools_pack[var0_59]:Get(arg2_59))
 	end
 end
 
-function var0_0.LoadAsset(arg0_63, arg1_63, arg2_63, arg3_63, arg4_63, arg5_63, arg6_63)
-	arg1_63, arg2_63 = HXSet.autoHxShiftPath(arg1_63, arg2_63)
+function var0_0.LoadAsset(arg0_61, arg1_61, arg2_61, arg3_61, arg4_61, arg5_61, arg6_61)
+	arg1_61, arg2_61 = HXSet.autoHxShiftPath(arg1_61, arg2_61)
 
-	local var0_63 = arg1_63 .. arg2_63
+	local var0_61 = arg1_61 .. arg2_61
 
-	if arg0_63.callbacks[var0_63] then
-		if not arg3_63 then
+	if arg0_61.callbacks[var0_61] then
+		if not arg3_61 then
 			errorMsg("Sync Loading after async operation")
 		end
 
-		table.insert(arg0_63.callbacks[var0_63], arg5_63)
-	elseif arg3_63 then
-		arg0_63.callbacks[var0_63] = {
-			arg5_63
+		table.insert(arg0_61.callbacks[var0_61], arg5_61)
+	elseif arg3_61 then
+		arg0_61.callbacks[var0_61] = {
+			arg5_61
 		}
 
-		var5_0:getAssetAsync(arg1_63, arg2_63, arg4_63, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_64)
-			if arg0_63.callbacks[var0_63] then
-				local var0_64 = arg0_63.callbacks[var0_63]
+		var5_0:getAssetAsync(arg1_61, arg2_61, arg4_61, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_62)
+			if arg0_61.callbacks[var0_61] then
+				local var0_62 = arg0_61.callbacks[var0_61]
 
-				arg0_63.callbacks[var0_63] = nil
+				arg0_61.callbacks[var0_61] = nil
 
-				while next(var0_64) do
-					table.remove(var0_64)(arg0_64)
+				while next(var0_62) do
+					table.remove(var0_62)(arg0_62)
 				end
 			end
-		end), arg6_63, false)
+		end), arg6_61, false)
 	else
-		arg5_63(var5_0:getAssetSync(arg1_63, arg2_63, arg4_63, arg6_63, false))
+		arg5_61(var5_0:getAssetSync(arg1_61, arg2_61, arg4_61, arg6_61, false))
 	end
 end
 
-function var0_0.PrintPools(arg0_65)
-	local var0_65 = ""
+function var0_0.PrintPools(arg0_63)
+	local var0_63 = ""
 
-	for iter0_65, iter1_65 in pairs(arg0_65.pools_plural) do
-		var0_65 = var0_65 .. "\n" .. iter0_65
+	for iter0_63, iter1_63 in pairs(arg0_63.pools_plural) do
+		var0_63 = var0_63 .. "\n" .. iter0_63
 	end
 
-	warning(var0_65)
+	warning(var0_63)
 end
 
-function var0_0.PrintObjPack(arg0_66)
-	local var0_66 = ""
+function var0_0.PrintObjPack(arg0_64)
+	local var0_64 = ""
 
-	for iter0_66, iter1_66 in pairs(arg0_66.pools_pack) do
-		for iter2_66, iter3_66 in pairs(iter1_66.items) do
-			var0_66 = var0_66 .. "\n" .. iter0_66 .. " " .. iter2_66
+	for iter0_64, iter1_64 in pairs(arg0_64.pools_pack) do
+		for iter2_64, iter3_64 in pairs(iter1_64.items) do
+			var0_64 = var0_64 .. "\n" .. iter0_64 .. " " .. iter2_64
 		end
 	end
 
-	warning(var0_66)
+	warning(var0_64)
 end
 
 return var0_0

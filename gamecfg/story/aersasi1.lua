@@ -21,6 +21,10 @@ return {
 			nameColor = "#A9F548FF",
 			say = "A girl was prancing down the corridor to the Commander's office.",
 			bgm = "story-richang-6",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
 			flashout = {
 				black = true,
 				dur = 1,
@@ -45,7 +49,11 @@ return {
 			bgName = "star_level_bg_511",
 			hidePaintObj = true,
 			say = "Though her eyes were covered by a mask, her wide smile and the cheerful tune she hummed gave away her mood.",
-			fontsize = 39
+			fontsize = 39,
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 3,
@@ -56,7 +64,11 @@ return {
 			actor = 805030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "Hmm-hm-hmm-hm♪"
+			say = "Hmm-hm-hmm-hm♪",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 5,
@@ -67,17 +79,25 @@ return {
 			actor = 805030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "Oh, Alsace, so cool you'll be♪"
+			say = "Oh, Alsace, so cool you'll be♪",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			actor = 805030,
-			nameColor = "#A9F548FF",
+			side = 2,
 			bgName = "star_level_bg_511",
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			nameColor = "#A9F548FF",
 			say = "Purging baddies all so fearlessly♪",
-			fontsize = 39
+			fontsize = 39,
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 4,
@@ -88,7 +108,11 @@ return {
 			actor = 805030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "And today you are the secretary♪"
+			say = "And today you are the secretary♪",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 2,
@@ -99,7 +123,11 @@ return {
 			actor = 901060,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "H-hi, Alsace. Good morning."
+			say = "H-hi, Alsace. Good morning.",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 6,
@@ -110,17 +138,25 @@ return {
 			actor = 901050,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "About to start working as the secretary, huh? Maaan, you're so lucky."
+			say = "About to start working as the secretary, huh? Maaan, you're so lucky.",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			actor = 805030,
-			nameColor = "#A9F548FF",
+			side = 2,
 			bgName = "star_level_bg_511",
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			nameColor = "#A9F548FF",
 			say = "Affirmative! The Commander wills it. You needn't be envious, Fleuret – work hard, and one is sure you'll get your own opportunity.",
-			fontsize = 39
+			fontsize = 39,
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			side = 2,
@@ -128,7 +164,11 @@ return {
 			bgName = "star_level_bg_511",
 			hidePaintObj = true,
 			say = "Alsace addressed the two little knights before her with marked sincerity.",
-			fontsize = 39
+			fontsize = 39,
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 3,
@@ -139,7 +179,11 @@ return {
 			actor = 901060,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "Um, speaking of hard work... Thanks for the help earlier."
+			say = "Um, speaking of hard work... Thanks for the help earlier.",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 3,
@@ -150,7 +194,11 @@ return {
 			actor = 901050,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "Alsace is the one who helped you? When you spilled a drink and poked a hole through the wall when you tried to clean it up."
+			say = "Alsace is the one who helped you? When you spilled a drink and poked a hole through the wall when you tried to clean it up.",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 4,
@@ -161,7 +209,11 @@ return {
 			actor = 901060,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "Yeah. If it wasn't for her, the Commander would've found out and thought I was worthless..."
+			say = "Yeah. If it wasn't for her, the Commander would've found out and thought I was worthless...",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 2,
@@ -172,7 +224,11 @@ return {
 			actor = 901050,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "That explains the paint you both had all over your clothes."
+			say = "That explains the paint you both had all over your clothes.",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 1,
@@ -183,17 +239,25 @@ return {
 			actor = 901050,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "Hey, if it happens again, just call the Manjuu repair team. Besides, the Commander's image of you wouldn't shatter like that over a small mistake."
+			say = "Hey, if it happens again, just call the Manjuu repair team. Besides, the Commander's image of you wouldn't shatter like that over a small mistake.",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			actor = 901060,
-			nameColor = "#A9F548FF",
+			side = 2,
 			bgName = "star_level_bg_511",
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			nameColor = "#A9F548FF",
 			say = "Y-yeah, you're right...",
-			fontsize = 39
+			fontsize = 39,
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 5,
@@ -204,7 +268,11 @@ return {
 			actor = 805030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "You can always come to this one if you have a problem that needs solving."
+			say = "You can always come to this one if you have a problem that needs solving.",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 3,
@@ -215,17 +283,25 @@ return {
 			actor = 805030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "As the Commander's blade and protector, protecting the port, too, falls under one's umbrella!"
+			say = "As the Commander's blade and protector, protecting the port, too, falls under one's umbrella!",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			actor = 805030,
-			nameColor = "#A9F548FF",
+			side = 2,
 			bgName = "star_level_bg_511",
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			nameColor = "#A9F548FF",
 			say = "Now, one needs to get moving.",
-			fontsize = 39
+			fontsize = 39,
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			side = 2,
@@ -233,7 +309,11 @@ return {
 			bgName = "star_level_bg_511",
 			hidePaintObj = true,
 			say = "Alsace bowed her head and excused herself, then resumed humming her tune as she proceeded down the corridor.",
-			fontsize = 39
+			fontsize = 39,
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			side = 2,
@@ -241,7 +321,11 @@ return {
 			bgName = "star_level_bg_511",
 			hidePaintObj = true,
 			say = "Fleuret lingered in place, watching Alsace move forward with a tinge of nervousness.",
-			fontsize = 39
+			fontsize = 39,
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 3,
@@ -252,17 +336,25 @@ return {
 			actor = 901050,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "Isn't she, like, SUPER sensitive to the Commander? She's probably gonna overheat and break down as soon as she gets near."
+			say = "Isn't she, like, SUPER sensitive to the Commander? She's probably gonna overheat and break down as soon as she gets near.",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			actor = 901060,
-			nameColor = "#A9F548FF",
+			side = 2,
 			bgName = "star_level_bg_511",
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			nameColor = "#A9F548FF",
 			say = "I-I think she'll be okay!",
-			fontsize = 39
+			fontsize = 39,
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 8,
@@ -273,7 +365,11 @@ return {
 			actor = 901060,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "I walked by her room the other day, and I heard her trying to build up tolerance by saying, \"Commander, Commander\" over and over."
+			say = "I walked by her room the other day, and I heard her trying to build up tolerance by saying, \"Commander, Commander\" over and over.",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 3,
@@ -284,7 +380,11 @@ return {
 			actor = 901050,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "\"Build up tolerance.\" Yeah, right..."
+			say = "\"Build up tolerance.\" Yeah, right...",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 7,
@@ -295,15 +395,23 @@ return {
 			actor = 901050,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "But you know what? I'll choose to have faith in her self-control and the Commander's smarts!"
+			say = "But you know what? I'll choose to have faith in her self-control and the Commander's smarts!",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			bgName = "bg_story_task_2",
 			hidePaintObj = true,
 			say = "Port - Office",
 			fontsize = 39,
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
 			flashout = {
 				black = true,
 				dur = 1,
@@ -328,17 +436,25 @@ return {
 			bgName = "bg_story_task_2",
 			hidePaintObj = true,
 			say = "Following a knock on the door, Alsace quietly comes into my office.",
-			fontsize = 39
+			fontsize = 39,
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			actor = 805030,
-			nameColor = "#A9F548FF",
+			side = 2,
 			bgName = "bg_story_task_2",
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			nameColor = "#A9F548FF",
 			say = "This one is battleship Alsace – Sacrament of the Unified Orthodoxy, an unreachable dream, and guardian of the Holy See.",
-			fontsize = 39
+			fontsize = 39,
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
 			expression = 4,
@@ -349,7 +465,11 @@ return {
 			actor = 805030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "One has trained and become secretary perfection embodied! Now, Commander, one awaits your orders!"
+			say = "One has trained and become secretary perfection embodied! Now, Commander, one awaits your orders!",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		}
 	}
 }

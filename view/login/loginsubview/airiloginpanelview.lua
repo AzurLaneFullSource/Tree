@@ -41,7 +41,6 @@ function var0_0.OnInit(arg0_4)
 	arg0_4.amazonLoginBtn_en = arg0_4:findTF("amazon_login_en", arg0_4.enLoginCon)
 
 	setActive(arg0_4.clearTranscodeBtn, not LOCK_CLEAR_ACCOUNT)
-	setActive(arg0_4.twitterLoginBtn, PLATFORM_CODE == PLATFORM_JP)
 	setActive(arg0_4.transcodeLoginBtn, PLATFORM_CODE == PLATFORM_JP)
 	setActive(arg0_4.touristLoginBtn, false)
 	setActive(arg0_4.yostarLoginBtn, PLATFORM_CODE == PLATFORM_JP)
@@ -59,6 +58,8 @@ function var0_0.OnInit(arg0_4)
 	setActive(arg0_4.yostarLoginBtn_en, PLATFORM_CODE == PLATFORM_US)
 	setActive(arg0_4.appleLoginBtn_en, PLATFORM_CODE == PLATFORM_US and pg.SdkMgr.GetInstance():GetChannelUID() == "1")
 	setActive(arg0_4.amazonLoginBtn_en, PLATFORM_CODE == PLATFORM_US and pg.SdkMgr.GetInstance():GetChannelUID() == "3")
+	setActive(arg0_4.twitterLoginBtn, false)
+	setActive(arg0_4.twitterToggleTf, false)
 	arg0_4:InitEvent()
 end
 
@@ -112,9 +113,6 @@ function var0_0.InitEvent(arg0_5)
 	onButton(arg0_5, arg0_5.amazonLoginBtn, function()
 		pg.SdkMgr.GetInstance():LoginWithSocial(AIRI_PLATFORM_AMAZON)
 	end)
-	onButton(arg0_5, arg0_5.twitterLoginBtn, function()
-		pg.SdkMgr.GetInstance():LoginWithSocial(AIRI_PLATFORM_TWITTER)
-	end)
 	onButton(arg0_5, arg0_5.yostarLoginBtn, function()
 		arg0_5:emit(LoginSceneConst.SWITCH_SUB_VIEW, {
 			LoginSceneConst.DEFINE.YOSTAR_ALERT_VIEW,
@@ -159,28 +157,29 @@ function var0_0.InitEvent(arg0_5)
 		var0_5()
 	end)
 	onButton(arg0_5, arg0_5.alertSureBtn, function()
-		local var0_25 = getToggleState(arg0_5.twitterToggleTf)
-		local var1_25 = getToggleState(arg0_5.transcodeToggleTf)
-		local var2_25 = getToggleState(arg0_5.touristToggleTf)
-		local var3_25 = getToggleState(arg0_5.appleToggleTf)
-		local var4_25 = getToggleState(arg0_5.amazonToggleTf)
-		local var5_25 = getToggleState(arg0_5.yostarToggleTf)
+		local var0_24 = getToggleState(arg0_5.twitterToggleTf)
+		local var1_24 = false
+		local var2_24 = getToggleState(arg0_5.transcodeToggleTf)
+		local var3_24 = getToggleState(arg0_5.touristToggleTf)
+		local var4_24 = getToggleState(arg0_5.appleToggleTf)
+		local var5_24 = getToggleState(arg0_5.amazonToggleTf)
+		local var6_24 = getToggleState(arg0_5.yostarToggleTf)
 
-		if var0_25 then
+		if var1_24 then
 			pg.SdkMgr.GetInstance():LoginWithSocial(AIRI_PLATFORM_TWITTER)
-		elseif var1_25 then
+		elseif var2_24 then
 			arg0_5:emit(LoginSceneConst.SWITCH_SUB_VIEW, {
 				LoginSceneConst.DEFINE.TRANSCODE_ALERT_VIEW,
 				LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW,
 				LoginSceneConst.DEFINE.PRESS_TO_LOGIN
 			})
-		elseif var2_25 then
+		elseif var3_24 then
 			pg.SdkMgr.GetInstance():LoginWithDevice()
-		elseif var3_25 then
+		elseif var4_24 then
 			pg.SdkMgr.GetInstance():LoginWithSocial(AIRI_PLATFORM_APPLE)
-		elseif var4_25 then
+		elseif var5_24 then
 			pg.SdkMgr.GetInstance():LoginWithSocial(AIRI_PLATFORM_AMAZON)
-		elseif var5_25 then
+		elseif var6_24 then
 			arg0_5:emit(LoginSceneConst.SWITCH_SUB_VIEW, {
 				LoginSceneConst.DEFINE.YOSTAR_ALERT_VIEW,
 				LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW,
@@ -190,15 +189,9 @@ function var0_0.InitEvent(arg0_5)
 
 		var0_5()
 	end)
-
-	if PLATFORM_CODE == PLATFORM_JP then
-		local var2_5 = pg.SdkMgr.GetInstance():GetChannelUID() == "3" and arg0_5.amazonToggleTf or arg0_5.twitterToggleTf
-
-		triggerToggle(var2_5, true)
-	end
 end
 
-function var0_0.OnDestroy(arg0_26)
+function var0_0.OnDestroy(arg0_25)
 	return
 end
 

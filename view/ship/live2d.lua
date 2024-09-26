@@ -530,6 +530,7 @@ local function var17_0(arg0_28, arg1_28)
 	arg0_28._tf.localPosition = arg0_28.live2dData.position
 	arg0_28.liveCom = arg1_28:GetComponent(typeof(Live2dChar))
 	arg0_28._animator = arg1_28:GetComponent(typeof(Animator))
+	arg0_28.cubismModelCom = arg1_28:GetComponent("Live2D.Cubism.Core.CubismModel")
 	arg0_28.animationClipNames = {}
 
 	if arg0_28._animator and arg0_28._animator.runtimeAnimatorController then
@@ -666,6 +667,8 @@ function var0_0.SetVisible(arg0_34, arg1_34)
 				arg0_34:setReactPos(false)
 			end
 		end, 1)
+
+		arg0_34.cubismModelCom.enabled = true
 	else
 		var11_0(arg0_34, "idle", true)
 
@@ -680,6 +683,8 @@ function var0_0.SetVisible(arg0_34, arg1_34)
 				end
 			end
 		end, 3)
+
+		arg0_34.cubismModelCom.enabled = false
 	end
 
 	if arg1_34 then

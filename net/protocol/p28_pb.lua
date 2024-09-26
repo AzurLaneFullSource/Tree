@@ -8,6 +8,17 @@ local var2_0 = {}
 SC_28000 = var0_0.Descriptor()
 var2_0.SC_28000_GIFTS_FIELD = var0_0.FieldDescriptor()
 var2_0.SC_28000_SHIPS_FIELD = var0_0.FieldDescriptor()
+var2_0.SC_28000_GIFT_DAILY_FIELD = var0_0.FieldDescriptor()
+var2_0.SC_28000_GIFT_PERMANENT_FIELD = var0_0.FieldDescriptor()
+var2_0.SC_28000_FURNITURE_DAILY_FIELD = var0_0.FieldDescriptor()
+var2_0.SC_28000_FURNITURE_PERMANENT_FIELD = var0_0.FieldDescriptor()
+var2_0.SC_28000_DAILY_VIGOR_MAX_FIELD = var0_0.FieldDescriptor()
+var2_0.SC_28000_ROOMS_FIELD = var0_0.FieldDescriptor()
+CS_28001 = var0_0.Descriptor()
+var2_0.CS_28001_ROOM_ID_FIELD = var0_0.FieldDescriptor()
+SC_28002 = var0_0.Descriptor()
+var2_0.SC_28002_RESULT_FIELD = var0_0.FieldDescriptor()
+var2_0.SC_28002_ROOM_FIELD = var0_0.FieldDescriptor()
 CS_28003 = var0_0.Descriptor()
 var2_0.CS_28003_SHIP_GROUP_FIELD = var0_0.FieldDescriptor()
 var2_0.CS_28003_TRIGGER_ID_FIELD = var0_0.FieldDescriptor()
@@ -17,8 +28,9 @@ CS_28005 = var0_0.Descriptor()
 var2_0.CS_28005_SHIP_GROUP_FIELD = var0_0.FieldDescriptor()
 SC_28006 = var0_0.Descriptor()
 var2_0.SC_28006_RESULT_FIELD = var0_0.FieldDescriptor()
+var2_0.SC_28006_DROP_LIST_FIELD = var0_0.FieldDescriptor()
 CS_28007 = var0_0.Descriptor()
-var2_0.CS_28007_SHIP_GROUP_FIELD = var0_0.FieldDescriptor()
+var2_0.CS_28007_ROOM_ID_FIELD = var0_0.FieldDescriptor()
 var2_0.CS_28007_FURNITURES_FIELD = var0_0.FieldDescriptor()
 SC_28008 = var0_0.Descriptor()
 var2_0.SC_28008_RESULT_FIELD = var0_0.FieldDescriptor()
@@ -28,8 +40,9 @@ var2_0.CS_28009_GIFTS_FIELD = var0_0.FieldDescriptor()
 SC_28010 = var0_0.Descriptor()
 var2_0.SC_28010_RESULT_FIELD = var0_0.FieldDescriptor()
 CS_28011 = var0_0.Descriptor()
-var2_0.CS_28011_SHIP_GROUP_FIELD = var0_0.FieldDescriptor()
+var2_0.CS_28011_ROOM_ID_FIELD = var0_0.FieldDescriptor()
 var2_0.CS_28011_COLLECTION_ID_FIELD = var0_0.FieldDescriptor()
+var2_0.CS_28011_SHIP_GROUP_FIELD = var0_0.FieldDescriptor()
 SC_28012 = var0_0.Descriptor()
 var2_0.SC_28012_RESULT_FIELD = var0_0.FieldDescriptor()
 CS_28013 = var0_0.Descriptor()
@@ -42,6 +55,15 @@ var2_0.CS_28015_DIALOG_ID_FIELD = var0_0.FieldDescriptor()
 SC_28016 = var0_0.Descriptor()
 var2_0.SC_28016_RESULT_FIELD = var0_0.FieldDescriptor()
 var2_0.SC_28016_DROP_LIST_FIELD = var0_0.FieldDescriptor()
+CS_28017 = var0_0.Descriptor()
+var2_0.CS_28017_TYPE_FIELD = var0_0.FieldDescriptor()
+SC_28018 = var0_0.Descriptor()
+var2_0.SC_28018_RESULT_FIELD = var0_0.FieldDescriptor()
+CS_28019 = var0_0.Descriptor()
+var2_0.CS_28019_ROOM_ID_FIELD = var0_0.FieldDescriptor()
+var2_0.CS_28019_SHIP_GROUP_FIELD = var0_0.FieldDescriptor()
+SC_28020 = var0_0.Descriptor()
+var2_0.SC_28020_RESULT_FIELD = var0_0.FieldDescriptor()
 APARTMENT_GIVE_GIFT = var0_0.Descriptor()
 var2_0.APARTMENT_GIVE_GIFT_GIFT_ID_FIELD = var0_0.FieldDescriptor()
 var2_0.APARTMENT_GIVE_GIFT_NUMBER_FIELD = var0_0.FieldDescriptor()
@@ -55,14 +77,24 @@ var2_0.APARTMENT_SHIP_FAVOR_LV_FIELD = var0_0.FieldDescriptor()
 var2_0.APARTMENT_SHIP_FAVOR_EXP_FIELD = var0_0.FieldDescriptor()
 var2_0.APARTMENT_SHIP_REGULAR_TRIGGER_FIELD = var0_0.FieldDescriptor()
 var2_0.APARTMENT_SHIP_DAILY_FAVOR_FIELD = var0_0.FieldDescriptor()
-var2_0.APARTMENT_SHIP_FURNITURES_FIELD = var0_0.FieldDescriptor()
-var2_0.APARTMENT_SHIP_COLLECTIONS_FIELD = var0_0.FieldDescriptor()
 var2_0.APARTMENT_SHIP_DIALOGUES_FIELD = var0_0.FieldDescriptor()
 var2_0.APARTMENT_SHIP_SKINS_FIELD = var0_0.FieldDescriptor()
 var2_0.APARTMENT_SHIP_CUR_SKIN_FIELD = var0_0.FieldDescriptor()
+APARTMENT_ROOM = var0_0.Descriptor()
+var2_0.APARTMENT_ROOM_ID_FIELD = var0_0.FieldDescriptor()
+var2_0.APARTMENT_ROOM_FURNITURES_FIELD = var0_0.FieldDescriptor()
+var2_0.APARTMENT_ROOM_COLLECTIONS_FIELD = var0_0.FieldDescriptor()
+var2_0.APARTMENT_ROOM_SHIPS_FIELD = var0_0.FieldDescriptor()
 APARTMENT_FURNITURE = var0_0.Descriptor()
 var2_0.APARTMENT_FURNITURE_FURNITURE_ID_FIELD = var0_0.FieldDescriptor()
 var2_0.APARTMENT_FURNITURE_SLOT_ID_FIELD = var0_0.FieldDescriptor()
+APARTMENT_GIFT_SHOP = var0_0.Descriptor()
+var2_0.APARTMENT_GIFT_SHOP_GIFT_ID_FIELD = var0_0.FieldDescriptor()
+var2_0.APARTMENT_GIFT_SHOP_COUNT_FIELD = var0_0.FieldDescriptor()
+CS_28090 = var0_0.Descriptor()
+var2_0.CS_28090_TRACK_TYP_FIELD = var0_0.FieldDescriptor()
+var2_0.CS_28090_INT_ARGS_FIELD = var0_0.FieldDescriptor()
+var2_0.CS_28090_STR_ARGS_FIELD = var0_0.FieldDescriptor()
 var2_0.SC_28000_GIFTS_FIELD.name = "gifts"
 var2_0.SC_28000_GIFTS_FIELD.full_name = "p28.sc_28000.gifts"
 var2_0.SC_28000_GIFTS_FIELD.number = 1
@@ -83,16 +115,128 @@ var2_0.SC_28000_SHIPS_FIELD.default_value = {}
 var2_0.SC_28000_SHIPS_FIELD.message_type = APARTMENT_SHIP
 var2_0.SC_28000_SHIPS_FIELD.type = 11
 var2_0.SC_28000_SHIPS_FIELD.cpp_type = 10
+var2_0.SC_28000_GIFT_DAILY_FIELD.name = "gift_daily"
+var2_0.SC_28000_GIFT_DAILY_FIELD.full_name = "p28.sc_28000.gift_daily"
+var2_0.SC_28000_GIFT_DAILY_FIELD.number = 3
+var2_0.SC_28000_GIFT_DAILY_FIELD.index = 2
+var2_0.SC_28000_GIFT_DAILY_FIELD.label = 3
+var2_0.SC_28000_GIFT_DAILY_FIELD.has_default_value = false
+var2_0.SC_28000_GIFT_DAILY_FIELD.default_value = {}
+var2_0.SC_28000_GIFT_DAILY_FIELD.message_type = APARTMENT_GIFT_SHOP
+var2_0.SC_28000_GIFT_DAILY_FIELD.type = 11
+var2_0.SC_28000_GIFT_DAILY_FIELD.cpp_type = 10
+var2_0.SC_28000_GIFT_PERMANENT_FIELD.name = "gift_permanent"
+var2_0.SC_28000_GIFT_PERMANENT_FIELD.full_name = "p28.sc_28000.gift_permanent"
+var2_0.SC_28000_GIFT_PERMANENT_FIELD.number = 4
+var2_0.SC_28000_GIFT_PERMANENT_FIELD.index = 3
+var2_0.SC_28000_GIFT_PERMANENT_FIELD.label = 3
+var2_0.SC_28000_GIFT_PERMANENT_FIELD.has_default_value = false
+var2_0.SC_28000_GIFT_PERMANENT_FIELD.default_value = {}
+var2_0.SC_28000_GIFT_PERMANENT_FIELD.message_type = APARTMENT_GIFT_SHOP
+var2_0.SC_28000_GIFT_PERMANENT_FIELD.type = 11
+var2_0.SC_28000_GIFT_PERMANENT_FIELD.cpp_type = 10
+var2_0.SC_28000_FURNITURE_DAILY_FIELD.name = "furniture_daily"
+var2_0.SC_28000_FURNITURE_DAILY_FIELD.full_name = "p28.sc_28000.furniture_daily"
+var2_0.SC_28000_FURNITURE_DAILY_FIELD.number = 5
+var2_0.SC_28000_FURNITURE_DAILY_FIELD.index = 4
+var2_0.SC_28000_FURNITURE_DAILY_FIELD.label = 3
+var2_0.SC_28000_FURNITURE_DAILY_FIELD.has_default_value = false
+var2_0.SC_28000_FURNITURE_DAILY_FIELD.default_value = {}
+var2_0.SC_28000_FURNITURE_DAILY_FIELD.message_type = APARTMENT_GIFT_SHOP
+var2_0.SC_28000_FURNITURE_DAILY_FIELD.type = 11
+var2_0.SC_28000_FURNITURE_DAILY_FIELD.cpp_type = 10
+var2_0.SC_28000_FURNITURE_PERMANENT_FIELD.name = "furniture_permanent"
+var2_0.SC_28000_FURNITURE_PERMANENT_FIELD.full_name = "p28.sc_28000.furniture_permanent"
+var2_0.SC_28000_FURNITURE_PERMANENT_FIELD.number = 6
+var2_0.SC_28000_FURNITURE_PERMANENT_FIELD.index = 5
+var2_0.SC_28000_FURNITURE_PERMANENT_FIELD.label = 3
+var2_0.SC_28000_FURNITURE_PERMANENT_FIELD.has_default_value = false
+var2_0.SC_28000_FURNITURE_PERMANENT_FIELD.default_value = {}
+var2_0.SC_28000_FURNITURE_PERMANENT_FIELD.message_type = APARTMENT_GIFT_SHOP
+var2_0.SC_28000_FURNITURE_PERMANENT_FIELD.type = 11
+var2_0.SC_28000_FURNITURE_PERMANENT_FIELD.cpp_type = 10
+var2_0.SC_28000_DAILY_VIGOR_MAX_FIELD.name = "daily_vigor_max"
+var2_0.SC_28000_DAILY_VIGOR_MAX_FIELD.full_name = "p28.sc_28000.daily_vigor_max"
+var2_0.SC_28000_DAILY_VIGOR_MAX_FIELD.number = 7
+var2_0.SC_28000_DAILY_VIGOR_MAX_FIELD.index = 6
+var2_0.SC_28000_DAILY_VIGOR_MAX_FIELD.label = 2
+var2_0.SC_28000_DAILY_VIGOR_MAX_FIELD.has_default_value = false
+var2_0.SC_28000_DAILY_VIGOR_MAX_FIELD.default_value = 0
+var2_0.SC_28000_DAILY_VIGOR_MAX_FIELD.type = 13
+var2_0.SC_28000_DAILY_VIGOR_MAX_FIELD.cpp_type = 3
+var2_0.SC_28000_ROOMS_FIELD.name = "rooms"
+var2_0.SC_28000_ROOMS_FIELD.full_name = "p28.sc_28000.rooms"
+var2_0.SC_28000_ROOMS_FIELD.number = 8
+var2_0.SC_28000_ROOMS_FIELD.index = 7
+var2_0.SC_28000_ROOMS_FIELD.label = 3
+var2_0.SC_28000_ROOMS_FIELD.has_default_value = false
+var2_0.SC_28000_ROOMS_FIELD.default_value = {}
+var2_0.SC_28000_ROOMS_FIELD.message_type = APARTMENT_ROOM
+var2_0.SC_28000_ROOMS_FIELD.type = 11
+var2_0.SC_28000_ROOMS_FIELD.cpp_type = 10
 SC_28000.name = "sc_28000"
 SC_28000.full_name = "p28.sc_28000"
 SC_28000.nested_types = {}
 SC_28000.enum_types = {}
 SC_28000.fields = {
 	var2_0.SC_28000_GIFTS_FIELD,
-	var2_0.SC_28000_SHIPS_FIELD
+	var2_0.SC_28000_SHIPS_FIELD,
+	var2_0.SC_28000_GIFT_DAILY_FIELD,
+	var2_0.SC_28000_GIFT_PERMANENT_FIELD,
+	var2_0.SC_28000_FURNITURE_DAILY_FIELD,
+	var2_0.SC_28000_FURNITURE_PERMANENT_FIELD,
+	var2_0.SC_28000_DAILY_VIGOR_MAX_FIELD,
+	var2_0.SC_28000_ROOMS_FIELD
 }
 SC_28000.is_extendable = false
 SC_28000.extensions = {}
+var2_0.CS_28001_ROOM_ID_FIELD.name = "room_id"
+var2_0.CS_28001_ROOM_ID_FIELD.full_name = "p28.cs_28001.room_id"
+var2_0.CS_28001_ROOM_ID_FIELD.number = 1
+var2_0.CS_28001_ROOM_ID_FIELD.index = 0
+var2_0.CS_28001_ROOM_ID_FIELD.label = 2
+var2_0.CS_28001_ROOM_ID_FIELD.has_default_value = false
+var2_0.CS_28001_ROOM_ID_FIELD.default_value = 0
+var2_0.CS_28001_ROOM_ID_FIELD.type = 13
+var2_0.CS_28001_ROOM_ID_FIELD.cpp_type = 3
+CS_28001.name = "cs_28001"
+CS_28001.full_name = "p28.cs_28001"
+CS_28001.nested_types = {}
+CS_28001.enum_types = {}
+CS_28001.fields = {
+	var2_0.CS_28001_ROOM_ID_FIELD
+}
+CS_28001.is_extendable = false
+CS_28001.extensions = {}
+var2_0.SC_28002_RESULT_FIELD.name = "result"
+var2_0.SC_28002_RESULT_FIELD.full_name = "p28.sc_28002.result"
+var2_0.SC_28002_RESULT_FIELD.number = 1
+var2_0.SC_28002_RESULT_FIELD.index = 0
+var2_0.SC_28002_RESULT_FIELD.label = 2
+var2_0.SC_28002_RESULT_FIELD.has_default_value = false
+var2_0.SC_28002_RESULT_FIELD.default_value = 0
+var2_0.SC_28002_RESULT_FIELD.type = 13
+var2_0.SC_28002_RESULT_FIELD.cpp_type = 3
+var2_0.SC_28002_ROOM_FIELD.name = "room"
+var2_0.SC_28002_ROOM_FIELD.full_name = "p28.sc_28002.room"
+var2_0.SC_28002_ROOM_FIELD.number = 2
+var2_0.SC_28002_ROOM_FIELD.index = 1
+var2_0.SC_28002_ROOM_FIELD.label = 2
+var2_0.SC_28002_ROOM_FIELD.has_default_value = false
+var2_0.SC_28002_ROOM_FIELD.default_value = nil
+var2_0.SC_28002_ROOM_FIELD.message_type = APARTMENT_ROOM
+var2_0.SC_28002_ROOM_FIELD.type = 11
+var2_0.SC_28002_ROOM_FIELD.cpp_type = 10
+SC_28002.name = "sc_28002"
+SC_28002.full_name = "p28.sc_28002"
+SC_28002.nested_types = {}
+SC_28002.enum_types = {}
+SC_28002.fields = {
+	var2_0.SC_28002_RESULT_FIELD,
+	var2_0.SC_28002_ROOM_FIELD
+}
+SC_28002.is_extendable = false
+SC_28002.extensions = {}
 var2_0.CS_28003_SHIP_GROUP_FIELD.name = "ship_group"
 var2_0.CS_28003_SHIP_GROUP_FIELD.full_name = "p28.cs_28003.ship_group"
 var2_0.CS_28003_SHIP_GROUP_FIELD.number = 1
@@ -166,24 +310,35 @@ var2_0.SC_28006_RESULT_FIELD.has_default_value = false
 var2_0.SC_28006_RESULT_FIELD.default_value = 0
 var2_0.SC_28006_RESULT_FIELD.type = 13
 var2_0.SC_28006_RESULT_FIELD.cpp_type = 3
+var2_0.SC_28006_DROP_LIST_FIELD.name = "drop_list"
+var2_0.SC_28006_DROP_LIST_FIELD.full_name = "p28.sc_28006.drop_list"
+var2_0.SC_28006_DROP_LIST_FIELD.number = 2
+var2_0.SC_28006_DROP_LIST_FIELD.index = 1
+var2_0.SC_28006_DROP_LIST_FIELD.label = 3
+var2_0.SC_28006_DROP_LIST_FIELD.has_default_value = false
+var2_0.SC_28006_DROP_LIST_FIELD.default_value = {}
+var2_0.SC_28006_DROP_LIST_FIELD.message_type = var1_0.DROPINFO
+var2_0.SC_28006_DROP_LIST_FIELD.type = 11
+var2_0.SC_28006_DROP_LIST_FIELD.cpp_type = 10
 SC_28006.name = "sc_28006"
 SC_28006.full_name = "p28.sc_28006"
 SC_28006.nested_types = {}
 SC_28006.enum_types = {}
 SC_28006.fields = {
-	var2_0.SC_28006_RESULT_FIELD
+	var2_0.SC_28006_RESULT_FIELD,
+	var2_0.SC_28006_DROP_LIST_FIELD
 }
 SC_28006.is_extendable = false
 SC_28006.extensions = {}
-var2_0.CS_28007_SHIP_GROUP_FIELD.name = "ship_group"
-var2_0.CS_28007_SHIP_GROUP_FIELD.full_name = "p28.cs_28007.ship_group"
-var2_0.CS_28007_SHIP_GROUP_FIELD.number = 1
-var2_0.CS_28007_SHIP_GROUP_FIELD.index = 0
-var2_0.CS_28007_SHIP_GROUP_FIELD.label = 2
-var2_0.CS_28007_SHIP_GROUP_FIELD.has_default_value = false
-var2_0.CS_28007_SHIP_GROUP_FIELD.default_value = 0
-var2_0.CS_28007_SHIP_GROUP_FIELD.type = 13
-var2_0.CS_28007_SHIP_GROUP_FIELD.cpp_type = 3
+var2_0.CS_28007_ROOM_ID_FIELD.name = "room_id"
+var2_0.CS_28007_ROOM_ID_FIELD.full_name = "p28.cs_28007.room_id"
+var2_0.CS_28007_ROOM_ID_FIELD.number = 1
+var2_0.CS_28007_ROOM_ID_FIELD.index = 0
+var2_0.CS_28007_ROOM_ID_FIELD.label = 2
+var2_0.CS_28007_ROOM_ID_FIELD.has_default_value = false
+var2_0.CS_28007_ROOM_ID_FIELD.default_value = 0
+var2_0.CS_28007_ROOM_ID_FIELD.type = 13
+var2_0.CS_28007_ROOM_ID_FIELD.cpp_type = 3
 var2_0.CS_28007_FURNITURES_FIELD.name = "furnitures"
 var2_0.CS_28007_FURNITURES_FIELD.full_name = "p28.cs_28007.furnitures"
 var2_0.CS_28007_FURNITURES_FIELD.number = 2
@@ -199,7 +354,7 @@ CS_28007.full_name = "p28.cs_28007"
 CS_28007.nested_types = {}
 CS_28007.enum_types = {}
 CS_28007.fields = {
-	var2_0.CS_28007_SHIP_GROUP_FIELD,
+	var2_0.CS_28007_ROOM_ID_FIELD,
 	var2_0.CS_28007_FURNITURES_FIELD
 }
 CS_28007.is_extendable = false
@@ -269,15 +424,15 @@ SC_28010.fields = {
 }
 SC_28010.is_extendable = false
 SC_28010.extensions = {}
-var2_0.CS_28011_SHIP_GROUP_FIELD.name = "ship_group"
-var2_0.CS_28011_SHIP_GROUP_FIELD.full_name = "p28.cs_28011.ship_group"
-var2_0.CS_28011_SHIP_GROUP_FIELD.number = 1
-var2_0.CS_28011_SHIP_GROUP_FIELD.index = 0
-var2_0.CS_28011_SHIP_GROUP_FIELD.label = 2
-var2_0.CS_28011_SHIP_GROUP_FIELD.has_default_value = false
-var2_0.CS_28011_SHIP_GROUP_FIELD.default_value = 0
-var2_0.CS_28011_SHIP_GROUP_FIELD.type = 13
-var2_0.CS_28011_SHIP_GROUP_FIELD.cpp_type = 3
+var2_0.CS_28011_ROOM_ID_FIELD.name = "room_id"
+var2_0.CS_28011_ROOM_ID_FIELD.full_name = "p28.cs_28011.room_id"
+var2_0.CS_28011_ROOM_ID_FIELD.number = 1
+var2_0.CS_28011_ROOM_ID_FIELD.index = 0
+var2_0.CS_28011_ROOM_ID_FIELD.label = 2
+var2_0.CS_28011_ROOM_ID_FIELD.has_default_value = false
+var2_0.CS_28011_ROOM_ID_FIELD.default_value = 0
+var2_0.CS_28011_ROOM_ID_FIELD.type = 13
+var2_0.CS_28011_ROOM_ID_FIELD.cpp_type = 3
 var2_0.CS_28011_COLLECTION_ID_FIELD.name = "collection_id"
 var2_0.CS_28011_COLLECTION_ID_FIELD.full_name = "p28.cs_28011.collection_id"
 var2_0.CS_28011_COLLECTION_ID_FIELD.number = 2
@@ -287,13 +442,23 @@ var2_0.CS_28011_COLLECTION_ID_FIELD.has_default_value = false
 var2_0.CS_28011_COLLECTION_ID_FIELD.default_value = 0
 var2_0.CS_28011_COLLECTION_ID_FIELD.type = 13
 var2_0.CS_28011_COLLECTION_ID_FIELD.cpp_type = 3
+var2_0.CS_28011_SHIP_GROUP_FIELD.name = "ship_group"
+var2_0.CS_28011_SHIP_GROUP_FIELD.full_name = "p28.cs_28011.ship_group"
+var2_0.CS_28011_SHIP_GROUP_FIELD.number = 3
+var2_0.CS_28011_SHIP_GROUP_FIELD.index = 2
+var2_0.CS_28011_SHIP_GROUP_FIELD.label = 2
+var2_0.CS_28011_SHIP_GROUP_FIELD.has_default_value = false
+var2_0.CS_28011_SHIP_GROUP_FIELD.default_value = 0
+var2_0.CS_28011_SHIP_GROUP_FIELD.type = 13
+var2_0.CS_28011_SHIP_GROUP_FIELD.cpp_type = 3
 CS_28011.name = "cs_28011"
 CS_28011.full_name = "p28.cs_28011"
 CS_28011.nested_types = {}
 CS_28011.enum_types = {}
 CS_28011.fields = {
-	var2_0.CS_28011_SHIP_GROUP_FIELD,
-	var2_0.CS_28011_COLLECTION_ID_FIELD
+	var2_0.CS_28011_ROOM_ID_FIELD,
+	var2_0.CS_28011_COLLECTION_ID_FIELD,
+	var2_0.CS_28011_SHIP_GROUP_FIELD
 }
 CS_28011.is_extendable = false
 CS_28011.extensions = {}
@@ -408,6 +573,88 @@ SC_28016.fields = {
 }
 SC_28016.is_extendable = false
 SC_28016.extensions = {}
+var2_0.CS_28017_TYPE_FIELD.name = "type"
+var2_0.CS_28017_TYPE_FIELD.full_name = "p28.cs_28017.type"
+var2_0.CS_28017_TYPE_FIELD.number = 1
+var2_0.CS_28017_TYPE_FIELD.index = 0
+var2_0.CS_28017_TYPE_FIELD.label = 2
+var2_0.CS_28017_TYPE_FIELD.has_default_value = false
+var2_0.CS_28017_TYPE_FIELD.default_value = 0
+var2_0.CS_28017_TYPE_FIELD.type = 13
+var2_0.CS_28017_TYPE_FIELD.cpp_type = 3
+CS_28017.name = "cs_28017"
+CS_28017.full_name = "p28.cs_28017"
+CS_28017.nested_types = {}
+CS_28017.enum_types = {}
+CS_28017.fields = {
+	var2_0.CS_28017_TYPE_FIELD
+}
+CS_28017.is_extendable = false
+CS_28017.extensions = {}
+var2_0.SC_28018_RESULT_FIELD.name = "result"
+var2_0.SC_28018_RESULT_FIELD.full_name = "p28.sc_28018.result"
+var2_0.SC_28018_RESULT_FIELD.number = 1
+var2_0.SC_28018_RESULT_FIELD.index = 0
+var2_0.SC_28018_RESULT_FIELD.label = 2
+var2_0.SC_28018_RESULT_FIELD.has_default_value = false
+var2_0.SC_28018_RESULT_FIELD.default_value = 0
+var2_0.SC_28018_RESULT_FIELD.type = 13
+var2_0.SC_28018_RESULT_FIELD.cpp_type = 3
+SC_28018.name = "sc_28018"
+SC_28018.full_name = "p28.sc_28018"
+SC_28018.nested_types = {}
+SC_28018.enum_types = {}
+SC_28018.fields = {
+	var2_0.SC_28018_RESULT_FIELD
+}
+SC_28018.is_extendable = false
+SC_28018.extensions = {}
+var2_0.CS_28019_ROOM_ID_FIELD.name = "room_id"
+var2_0.CS_28019_ROOM_ID_FIELD.full_name = "p28.cs_28019.room_id"
+var2_0.CS_28019_ROOM_ID_FIELD.number = 1
+var2_0.CS_28019_ROOM_ID_FIELD.index = 0
+var2_0.CS_28019_ROOM_ID_FIELD.label = 2
+var2_0.CS_28019_ROOM_ID_FIELD.has_default_value = false
+var2_0.CS_28019_ROOM_ID_FIELD.default_value = 0
+var2_0.CS_28019_ROOM_ID_FIELD.type = 13
+var2_0.CS_28019_ROOM_ID_FIELD.cpp_type = 3
+var2_0.CS_28019_SHIP_GROUP_FIELD.name = "ship_group"
+var2_0.CS_28019_SHIP_GROUP_FIELD.full_name = "p28.cs_28019.ship_group"
+var2_0.CS_28019_SHIP_GROUP_FIELD.number = 2
+var2_0.CS_28019_SHIP_GROUP_FIELD.index = 1
+var2_0.CS_28019_SHIP_GROUP_FIELD.label = 2
+var2_0.CS_28019_SHIP_GROUP_FIELD.has_default_value = false
+var2_0.CS_28019_SHIP_GROUP_FIELD.default_value = 0
+var2_0.CS_28019_SHIP_GROUP_FIELD.type = 13
+var2_0.CS_28019_SHIP_GROUP_FIELD.cpp_type = 3
+CS_28019.name = "cs_28019"
+CS_28019.full_name = "p28.cs_28019"
+CS_28019.nested_types = {}
+CS_28019.enum_types = {}
+CS_28019.fields = {
+	var2_0.CS_28019_ROOM_ID_FIELD,
+	var2_0.CS_28019_SHIP_GROUP_FIELD
+}
+CS_28019.is_extendable = false
+CS_28019.extensions = {}
+var2_0.SC_28020_RESULT_FIELD.name = "result"
+var2_0.SC_28020_RESULT_FIELD.full_name = "p28.sc_28020.result"
+var2_0.SC_28020_RESULT_FIELD.number = 1
+var2_0.SC_28020_RESULT_FIELD.index = 0
+var2_0.SC_28020_RESULT_FIELD.label = 2
+var2_0.SC_28020_RESULT_FIELD.has_default_value = false
+var2_0.SC_28020_RESULT_FIELD.default_value = 0
+var2_0.SC_28020_RESULT_FIELD.type = 13
+var2_0.SC_28020_RESULT_FIELD.cpp_type = 3
+SC_28020.name = "sc_28020"
+SC_28020.full_name = "p28.sc_28020"
+SC_28020.nested_types = {}
+SC_28020.enum_types = {}
+SC_28020.fields = {
+	var2_0.SC_28020_RESULT_FIELD
+}
+SC_28020.is_extendable = false
+SC_28020.extensions = {}
 var2_0.APARTMENT_GIVE_GIFT_GIFT_ID_FIELD.name = "gift_id"
 var2_0.APARTMENT_GIVE_GIFT_GIFT_ID_FIELD.full_name = "p28.apartment_give_gift.gift_id"
 var2_0.APARTMENT_GIVE_GIFT_GIFT_ID_FIELD.number = 1
@@ -519,29 +766,10 @@ var2_0.APARTMENT_SHIP_DAILY_FAVOR_FIELD.has_default_value = false
 var2_0.APARTMENT_SHIP_DAILY_FAVOR_FIELD.default_value = 0
 var2_0.APARTMENT_SHIP_DAILY_FAVOR_FIELD.type = 13
 var2_0.APARTMENT_SHIP_DAILY_FAVOR_FIELD.cpp_type = 3
-var2_0.APARTMENT_SHIP_FURNITURES_FIELD.name = "furnitures"
-var2_0.APARTMENT_SHIP_FURNITURES_FIELD.full_name = "p28.apartment_ship.furnitures"
-var2_0.APARTMENT_SHIP_FURNITURES_FIELD.number = 6
-var2_0.APARTMENT_SHIP_FURNITURES_FIELD.index = 5
-var2_0.APARTMENT_SHIP_FURNITURES_FIELD.label = 3
-var2_0.APARTMENT_SHIP_FURNITURES_FIELD.has_default_value = false
-var2_0.APARTMENT_SHIP_FURNITURES_FIELD.default_value = {}
-var2_0.APARTMENT_SHIP_FURNITURES_FIELD.message_type = APARTMENT_FURNITURE
-var2_0.APARTMENT_SHIP_FURNITURES_FIELD.type = 11
-var2_0.APARTMENT_SHIP_FURNITURES_FIELD.cpp_type = 10
-var2_0.APARTMENT_SHIP_COLLECTIONS_FIELD.name = "collections"
-var2_0.APARTMENT_SHIP_COLLECTIONS_FIELD.full_name = "p28.apartment_ship.collections"
-var2_0.APARTMENT_SHIP_COLLECTIONS_FIELD.number = 7
-var2_0.APARTMENT_SHIP_COLLECTIONS_FIELD.index = 6
-var2_0.APARTMENT_SHIP_COLLECTIONS_FIELD.label = 3
-var2_0.APARTMENT_SHIP_COLLECTIONS_FIELD.has_default_value = false
-var2_0.APARTMENT_SHIP_COLLECTIONS_FIELD.default_value = {}
-var2_0.APARTMENT_SHIP_COLLECTIONS_FIELD.type = 13
-var2_0.APARTMENT_SHIP_COLLECTIONS_FIELD.cpp_type = 3
 var2_0.APARTMENT_SHIP_DIALOGUES_FIELD.name = "dialogues"
 var2_0.APARTMENT_SHIP_DIALOGUES_FIELD.full_name = "p28.apartment_ship.dialogues"
-var2_0.APARTMENT_SHIP_DIALOGUES_FIELD.number = 8
-var2_0.APARTMENT_SHIP_DIALOGUES_FIELD.index = 7
+var2_0.APARTMENT_SHIP_DIALOGUES_FIELD.number = 6
+var2_0.APARTMENT_SHIP_DIALOGUES_FIELD.index = 5
 var2_0.APARTMENT_SHIP_DIALOGUES_FIELD.label = 3
 var2_0.APARTMENT_SHIP_DIALOGUES_FIELD.has_default_value = false
 var2_0.APARTMENT_SHIP_DIALOGUES_FIELD.default_value = {}
@@ -549,8 +777,8 @@ var2_0.APARTMENT_SHIP_DIALOGUES_FIELD.type = 13
 var2_0.APARTMENT_SHIP_DIALOGUES_FIELD.cpp_type = 3
 var2_0.APARTMENT_SHIP_SKINS_FIELD.name = "skins"
 var2_0.APARTMENT_SHIP_SKINS_FIELD.full_name = "p28.apartment_ship.skins"
-var2_0.APARTMENT_SHIP_SKINS_FIELD.number = 9
-var2_0.APARTMENT_SHIP_SKINS_FIELD.index = 8
+var2_0.APARTMENT_SHIP_SKINS_FIELD.number = 7
+var2_0.APARTMENT_SHIP_SKINS_FIELD.index = 6
 var2_0.APARTMENT_SHIP_SKINS_FIELD.label = 3
 var2_0.APARTMENT_SHIP_SKINS_FIELD.has_default_value = false
 var2_0.APARTMENT_SHIP_SKINS_FIELD.default_value = {}
@@ -558,8 +786,8 @@ var2_0.APARTMENT_SHIP_SKINS_FIELD.type = 13
 var2_0.APARTMENT_SHIP_SKINS_FIELD.cpp_type = 3
 var2_0.APARTMENT_SHIP_CUR_SKIN_FIELD.name = "cur_skin"
 var2_0.APARTMENT_SHIP_CUR_SKIN_FIELD.full_name = "p28.apartment_ship.cur_skin"
-var2_0.APARTMENT_SHIP_CUR_SKIN_FIELD.number = 10
-var2_0.APARTMENT_SHIP_CUR_SKIN_FIELD.index = 9
+var2_0.APARTMENT_SHIP_CUR_SKIN_FIELD.number = 8
+var2_0.APARTMENT_SHIP_CUR_SKIN_FIELD.index = 7
 var2_0.APARTMENT_SHIP_CUR_SKIN_FIELD.label = 2
 var2_0.APARTMENT_SHIP_CUR_SKIN_FIELD.has_default_value = false
 var2_0.APARTMENT_SHIP_CUR_SKIN_FIELD.default_value = 0
@@ -575,14 +803,61 @@ APARTMENT_SHIP.fields = {
 	var2_0.APARTMENT_SHIP_FAVOR_EXP_FIELD,
 	var2_0.APARTMENT_SHIP_REGULAR_TRIGGER_FIELD,
 	var2_0.APARTMENT_SHIP_DAILY_FAVOR_FIELD,
-	var2_0.APARTMENT_SHIP_FURNITURES_FIELD,
-	var2_0.APARTMENT_SHIP_COLLECTIONS_FIELD,
 	var2_0.APARTMENT_SHIP_DIALOGUES_FIELD,
 	var2_0.APARTMENT_SHIP_SKINS_FIELD,
 	var2_0.APARTMENT_SHIP_CUR_SKIN_FIELD
 }
 APARTMENT_SHIP.is_extendable = false
 APARTMENT_SHIP.extensions = {}
+var2_0.APARTMENT_ROOM_ID_FIELD.name = "id"
+var2_0.APARTMENT_ROOM_ID_FIELD.full_name = "p28.apartment_room.id"
+var2_0.APARTMENT_ROOM_ID_FIELD.number = 1
+var2_0.APARTMENT_ROOM_ID_FIELD.index = 0
+var2_0.APARTMENT_ROOM_ID_FIELD.label = 2
+var2_0.APARTMENT_ROOM_ID_FIELD.has_default_value = false
+var2_0.APARTMENT_ROOM_ID_FIELD.default_value = 0
+var2_0.APARTMENT_ROOM_ID_FIELD.type = 13
+var2_0.APARTMENT_ROOM_ID_FIELD.cpp_type = 3
+var2_0.APARTMENT_ROOM_FURNITURES_FIELD.name = "furnitures"
+var2_0.APARTMENT_ROOM_FURNITURES_FIELD.full_name = "p28.apartment_room.furnitures"
+var2_0.APARTMENT_ROOM_FURNITURES_FIELD.number = 2
+var2_0.APARTMENT_ROOM_FURNITURES_FIELD.index = 1
+var2_0.APARTMENT_ROOM_FURNITURES_FIELD.label = 3
+var2_0.APARTMENT_ROOM_FURNITURES_FIELD.has_default_value = false
+var2_0.APARTMENT_ROOM_FURNITURES_FIELD.default_value = {}
+var2_0.APARTMENT_ROOM_FURNITURES_FIELD.message_type = APARTMENT_FURNITURE
+var2_0.APARTMENT_ROOM_FURNITURES_FIELD.type = 11
+var2_0.APARTMENT_ROOM_FURNITURES_FIELD.cpp_type = 10
+var2_0.APARTMENT_ROOM_COLLECTIONS_FIELD.name = "collections"
+var2_0.APARTMENT_ROOM_COLLECTIONS_FIELD.full_name = "p28.apartment_room.collections"
+var2_0.APARTMENT_ROOM_COLLECTIONS_FIELD.number = 3
+var2_0.APARTMENT_ROOM_COLLECTIONS_FIELD.index = 2
+var2_0.APARTMENT_ROOM_COLLECTIONS_FIELD.label = 3
+var2_0.APARTMENT_ROOM_COLLECTIONS_FIELD.has_default_value = false
+var2_0.APARTMENT_ROOM_COLLECTIONS_FIELD.default_value = {}
+var2_0.APARTMENT_ROOM_COLLECTIONS_FIELD.type = 13
+var2_0.APARTMENT_ROOM_COLLECTIONS_FIELD.cpp_type = 3
+var2_0.APARTMENT_ROOM_SHIPS_FIELD.name = "ships"
+var2_0.APARTMENT_ROOM_SHIPS_FIELD.full_name = "p28.apartment_room.ships"
+var2_0.APARTMENT_ROOM_SHIPS_FIELD.number = 4
+var2_0.APARTMENT_ROOM_SHIPS_FIELD.index = 3
+var2_0.APARTMENT_ROOM_SHIPS_FIELD.label = 3
+var2_0.APARTMENT_ROOM_SHIPS_FIELD.has_default_value = false
+var2_0.APARTMENT_ROOM_SHIPS_FIELD.default_value = {}
+var2_0.APARTMENT_ROOM_SHIPS_FIELD.type = 13
+var2_0.APARTMENT_ROOM_SHIPS_FIELD.cpp_type = 3
+APARTMENT_ROOM.name = "apartment_room"
+APARTMENT_ROOM.full_name = "p28.apartment_room"
+APARTMENT_ROOM.nested_types = {}
+APARTMENT_ROOM.enum_types = {}
+APARTMENT_ROOM.fields = {
+	var2_0.APARTMENT_ROOM_ID_FIELD,
+	var2_0.APARTMENT_ROOM_FURNITURES_FIELD,
+	var2_0.APARTMENT_ROOM_COLLECTIONS_FIELD,
+	var2_0.APARTMENT_ROOM_SHIPS_FIELD
+}
+APARTMENT_ROOM.is_extendable = false
+APARTMENT_ROOM.extensions = {}
 var2_0.APARTMENT_FURNITURE_FURNITURE_ID_FIELD.name = "furniture_id"
 var2_0.APARTMENT_FURNITURE_FURNITURE_ID_FIELD.full_name = "p28.apartment_furniture.furniture_id"
 var2_0.APARTMENT_FURNITURE_FURNITURE_ID_FIELD.number = 1
@@ -611,10 +886,79 @@ APARTMENT_FURNITURE.fields = {
 }
 APARTMENT_FURNITURE.is_extendable = false
 APARTMENT_FURNITURE.extensions = {}
+var2_0.APARTMENT_GIFT_SHOP_GIFT_ID_FIELD.name = "gift_id"
+var2_0.APARTMENT_GIFT_SHOP_GIFT_ID_FIELD.full_name = "p28.apartment_gift_shop.gift_id"
+var2_0.APARTMENT_GIFT_SHOP_GIFT_ID_FIELD.number = 1
+var2_0.APARTMENT_GIFT_SHOP_GIFT_ID_FIELD.index = 0
+var2_0.APARTMENT_GIFT_SHOP_GIFT_ID_FIELD.label = 2
+var2_0.APARTMENT_GIFT_SHOP_GIFT_ID_FIELD.has_default_value = false
+var2_0.APARTMENT_GIFT_SHOP_GIFT_ID_FIELD.default_value = 0
+var2_0.APARTMENT_GIFT_SHOP_GIFT_ID_FIELD.type = 13
+var2_0.APARTMENT_GIFT_SHOP_GIFT_ID_FIELD.cpp_type = 3
+var2_0.APARTMENT_GIFT_SHOP_COUNT_FIELD.name = "count"
+var2_0.APARTMENT_GIFT_SHOP_COUNT_FIELD.full_name = "p28.apartment_gift_shop.count"
+var2_0.APARTMENT_GIFT_SHOP_COUNT_FIELD.number = 2
+var2_0.APARTMENT_GIFT_SHOP_COUNT_FIELD.index = 1
+var2_0.APARTMENT_GIFT_SHOP_COUNT_FIELD.label = 2
+var2_0.APARTMENT_GIFT_SHOP_COUNT_FIELD.has_default_value = false
+var2_0.APARTMENT_GIFT_SHOP_COUNT_FIELD.default_value = 0
+var2_0.APARTMENT_GIFT_SHOP_COUNT_FIELD.type = 13
+var2_0.APARTMENT_GIFT_SHOP_COUNT_FIELD.cpp_type = 3
+APARTMENT_GIFT_SHOP.name = "apartment_gift_shop"
+APARTMENT_GIFT_SHOP.full_name = "p28.apartment_gift_shop"
+APARTMENT_GIFT_SHOP.nested_types = {}
+APARTMENT_GIFT_SHOP.enum_types = {}
+APARTMENT_GIFT_SHOP.fields = {
+	var2_0.APARTMENT_GIFT_SHOP_GIFT_ID_FIELD,
+	var2_0.APARTMENT_GIFT_SHOP_COUNT_FIELD
+}
+APARTMENT_GIFT_SHOP.is_extendable = false
+APARTMENT_GIFT_SHOP.extensions = {}
+var2_0.CS_28090_TRACK_TYP_FIELD.name = "track_typ"
+var2_0.CS_28090_TRACK_TYP_FIELD.full_name = "p28.cs_28090.track_typ"
+var2_0.CS_28090_TRACK_TYP_FIELD.number = 1
+var2_0.CS_28090_TRACK_TYP_FIELD.index = 0
+var2_0.CS_28090_TRACK_TYP_FIELD.label = 2
+var2_0.CS_28090_TRACK_TYP_FIELD.has_default_value = false
+var2_0.CS_28090_TRACK_TYP_FIELD.default_value = 0
+var2_0.CS_28090_TRACK_TYP_FIELD.type = 13
+var2_0.CS_28090_TRACK_TYP_FIELD.cpp_type = 3
+var2_0.CS_28090_INT_ARGS_FIELD.name = "int_args"
+var2_0.CS_28090_INT_ARGS_FIELD.full_name = "p28.cs_28090.int_args"
+var2_0.CS_28090_INT_ARGS_FIELD.number = 2
+var2_0.CS_28090_INT_ARGS_FIELD.index = 1
+var2_0.CS_28090_INT_ARGS_FIELD.label = 3
+var2_0.CS_28090_INT_ARGS_FIELD.has_default_value = false
+var2_0.CS_28090_INT_ARGS_FIELD.default_value = {}
+var2_0.CS_28090_INT_ARGS_FIELD.type = 5
+var2_0.CS_28090_INT_ARGS_FIELD.cpp_type = 1
+var2_0.CS_28090_STR_ARGS_FIELD.name = "str_args"
+var2_0.CS_28090_STR_ARGS_FIELD.full_name = "p28.cs_28090.str_args"
+var2_0.CS_28090_STR_ARGS_FIELD.number = 3
+var2_0.CS_28090_STR_ARGS_FIELD.index = 2
+var2_0.CS_28090_STR_ARGS_FIELD.label = 3
+var2_0.CS_28090_STR_ARGS_FIELD.has_default_value = false
+var2_0.CS_28090_STR_ARGS_FIELD.default_value = {}
+var2_0.CS_28090_STR_ARGS_FIELD.type = 9
+var2_0.CS_28090_STR_ARGS_FIELD.cpp_type = 9
+CS_28090.name = "cs_28090"
+CS_28090.full_name = "p28.cs_28090"
+CS_28090.nested_types = {}
+CS_28090.enum_types = {}
+CS_28090.fields = {
+	var2_0.CS_28090_TRACK_TYP_FIELD,
+	var2_0.CS_28090_INT_ARGS_FIELD,
+	var2_0.CS_28090_STR_ARGS_FIELD
+}
+CS_28090.is_extendable = false
+CS_28090.extensions = {}
 apartment_furniture = var0_0.Message(APARTMENT_FURNITURE)
 apartment_gift = var0_0.Message(APARTMENT_GIFT)
+apartment_gift_shop = var0_0.Message(APARTMENT_GIFT_SHOP)
 apartment_give_gift = var0_0.Message(APARTMENT_GIVE_GIFT)
+apartment_room = var0_0.Message(APARTMENT_ROOM)
 apartment_ship = var0_0.Message(APARTMENT_SHIP)
+cs_28001 = var0_0.Message(CS_28001)
 cs_28003 = var0_0.Message(CS_28003)
 cs_28005 = var0_0.Message(CS_28005)
 cs_28007 = var0_0.Message(CS_28007)
@@ -622,7 +966,11 @@ cs_28009 = var0_0.Message(CS_28009)
 cs_28011 = var0_0.Message(CS_28011)
 cs_28013 = var0_0.Message(CS_28013)
 cs_28015 = var0_0.Message(CS_28015)
+cs_28017 = var0_0.Message(CS_28017)
+cs_28019 = var0_0.Message(CS_28019)
+cs_28090 = var0_0.Message(CS_28090)
 sc_28000 = var0_0.Message(SC_28000)
+sc_28002 = var0_0.Message(SC_28002)
 sc_28004 = var0_0.Message(SC_28004)
 sc_28006 = var0_0.Message(SC_28006)
 sc_28008 = var0_0.Message(SC_28008)
@@ -630,3 +978,5 @@ sc_28010 = var0_0.Message(SC_28010)
 sc_28012 = var0_0.Message(SC_28012)
 sc_28014 = var0_0.Message(SC_28014)
 sc_28016 = var0_0.Message(SC_28016)
+sc_28018 = var0_0.Message(SC_28018)
+sc_28020 = var0_0.Message(SC_28020)

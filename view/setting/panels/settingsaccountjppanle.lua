@@ -29,6 +29,8 @@ function var0_0.OnInit(arg0_4)
 	arg0_4.twitterUnlinkBtn = findTF(var2_4, "unlink_twitter")
 	arg0_4.twitterLinkSign = findTF(var2_4, "twitter_status")
 
+	setActive(var2_4, false)
+
 	local var3_4 = findTF(arg0_4.accountTwitterUI, "btn_layout/apple_con")
 
 	arg0_4.appleBtn = findTF(var3_4, "bind_apple")
@@ -156,6 +158,9 @@ function var0_0.checkAccountTwitterView(arg0_21)
 	setActive(arg0_21.twitterUnlinkBtn, var0_21)
 	setActive(arg0_21.twitterLinkSign, var0_21)
 	setActive(arg0_21.twitterBtn, not var0_21)
+	setActive(arg0_21.twitterUnlinkBtn, false)
+	setActive(arg0_21.twitterLinkSign, false)
+	setActive(arg0_21.twitterBtn, false)
 
 	if var0_21 then
 		setText(arg0_21.twitterLinkSign, i18n("twitter_link_title", pg.SdkMgr.GetInstance():GetSocialName(AIRI_PLATFORM_TWITTER)))

@@ -23,7 +23,7 @@ function var0_0.init(arg0_2)
 	})
 
 	arg0_2.awards = _.select(arg0_2.contextData.items or {}, function(arg0_3)
-		return arg0_3.type ~= DROP_TYPE_ICON_FRAME and arg0_3.type ~= DROP_TYPE_CHAT_FRAME
+		return arg0_3.type ~= DROP_TYPE_ICON_FRAME and arg0_3.type ~= DROP_TYPE_CHAT_FRAME and arg0_3.type ~= DROP_TYPE_LIVINGAREA_COVER
 	end)
 	arg0_2._itemsWindow = arg0_2._tf:Find("items")
 	arg0_2.spriteMask = arg0_2._itemsWindow:Find("SpriteMask")

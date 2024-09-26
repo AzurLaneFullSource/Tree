@@ -9,6 +9,8 @@ var0_0.TYPE_SHOWSIGN = 5
 var0_0.TYPE_STORY = 6
 var0_0.DIALOGUE_BLUE = 1
 var0_0.DIALOGUE_WHITE = 2
+var0_0.DIALOGUE_WORLD = 3
+var0_0.DIALOGUE_DORM = 4
 var0_0.HIGH_TYPE_LINE = 1
 var0_0.HIGH_TYPE_GAMEOBJECT = 2
 
@@ -17,13 +19,13 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.waitScene = arg1_1.waitScene
 	arg0_1.code = arg1_1.code
 	arg0_1.alpha = arg1_1.alpha
+	arg0_1.isWorld = defaultValue(arg1_1.isWorld, true)
 	arg0_1.styleData = arg0_1:GenStyleData(arg1_1.style)
 	arg0_1.highLightData = arg0_1:GenHighLightData(arg1_1.style)
 	arg0_1.baseUI = arg0_1:GenSearchData(arg1_1.baseui)
 	arg0_1.spriteUI = arg0_1:GenSpriteSearchData(arg1_1.spriteui)
 	arg0_1.sceneName = arg1_1.style and arg1_1.style.scene
 	arg0_1.otherTriggerTarget = arg1_1.style and arg1_1.style.trigger
-	arg0_1.isWorld = defaultValue(arg1_1.isWorld, true)
 end
 
 function var0_0.UpdateIsWorld(arg0_2, arg1_2)
@@ -115,14 +117,23 @@ function var0_0.GenStyleData(arg0_15, arg1_15)
 		return nil
 	end
 
-	return {
-		mode = arg1_15.mode,
-		text = HXSet.hxLan(arg1_15.text or ""),
-		counsellor = {
+	local var0_15
+
+	if arg1_15.mode == var0_0.DIALOGUE_DORM then
+		var0_15 = nil
+		arg1_15.dir = 1
+	else
+		var0_15 = {
 			name = var1_0(arg0_15, arg1_15),
 			position = var2_0(arg0_15, arg1_15),
 			scale = var3_0(arg1_15)
-		},
+		}
+	end
+
+	return {
+		mode = arg1_15.mode,
+		text = HXSet.hxLan(arg1_15.text or ""),
+		counsellor = var0_15,
 		scale = arg1_15.dir == 1 and Vector3(1, 1, 1) or Vector3(-1, 1, 1),
 		position = Vector2(arg1_15.posX or 0, arg1_15.posY or 0),
 		handPosition = arg1_15.handPos and Vector3(arg1_15.handPos.x, arg1_15.handPos.y, 0) or Vector3(-267, -96, 0),
@@ -130,119 +141,139 @@ function var0_0.GenStyleData(arg0_15, arg1_15)
 	}
 end
 
-function var0_0.GetStyleData(arg0_16)
-	return arg0_16.styleData
+function var0_0.GetHighlightName(arg0_16)
+	if arg0_16:GetDialogueType() == var0_0.DIALOGUE_DORM then
+		return "wShowArea4"
+	elseif arg0_16.isWorld then
+		return "wShowArea"
+	else
+		return "wShowArea1"
+	end
 end
 
-function var0_0.GenHighLightData(arg0_17, arg1_17)
-	local function var0_17(arg0_18)
-		local var0_18 = arg0_17:GenSearchData(arg0_18)
+function var0_0.GetHighlightLength(arg0_17)
+	if arg0_17:GetDialogueType() == var0_0.DIALOGUE_DORM then
+		return 50
+	elseif arg0_17.isWorld then
+		return 15
+	else
+		return 55
+	end
+end
 
-		var0_18.type = arg0_18.lineMode or var0_0.HIGH_TYPE_GAMEOBJECT
+function var0_0.GetStyleData(arg0_18)
+	return arg0_18.styleData
+end
 
-		return var0_18
+function var0_0.GenHighLightData(arg0_19, arg1_19)
+	local function var0_19(arg0_20)
+		local var0_20 = arg0_19:GenSearchData(arg0_20)
+
+		var0_20.type = arg0_20.lineMode or var0_0.HIGH_TYPE_GAMEOBJECT
+
+		return var0_20
 	end
 
-	local var1_17 = {}
+	local var1_19 = {}
 
-	if arg1_17 and arg1_17.ui then
-		table.insert(var1_17, var0_17(arg1_17.ui))
-	elseif arg1_17 and arg1_17.uiset then
-		for iter0_17, iter1_17 in ipairs(arg1_17.uiset) do
-			table.insert(var1_17, var0_17(iter1_17))
+	if arg1_19 and arg1_19.ui then
+		table.insert(var1_19, var0_19(arg1_19.ui))
+	elseif arg1_19 and arg1_19.uiset then
+		for iter0_19, iter1_19 in ipairs(arg1_19.uiset) do
+			table.insert(var1_19, var0_19(iter1_19))
 		end
-	elseif arg1_17 and arg1_17.uiFunc then
-		local var2_17 = arg1_17.uiFunc()
+	elseif arg1_19 and arg1_19.uiFunc then
+		local var2_19 = arg1_19.uiFunc()
 
-		for iter2_17, iter3_17 in ipairs(var2_17) do
-			table.insert(var1_17, var0_17(iter3_17))
+		for iter2_19, iter3_19 in ipairs(var2_19) do
+			table.insert(var1_19, var0_19(iter3_19))
 		end
 	end
 
-	return var1_17
+	return var1_19
 end
 
-function var0_0.ShouldHighLightTarget(arg0_19)
-	return #arg0_19.highLightData > 0
+function var0_0.ShouldHighLightTarget(arg0_21)
+	return #arg0_21.highLightData > 0
 end
 
-function var0_0.GetHighLightTarget(arg0_20)
-	return arg0_20.highLightData
+function var0_0.GetHighLightTarget(arg0_22)
+	return arg0_22.highLightData
 end
 
-function var0_0.ExistTrigger(arg0_21)
-	local var0_21 = arg0_21:GetType()
+function var0_0.ExistTrigger(arg0_23)
+	local var0_23 = arg0_23:GetType()
 
-	return var0_21 == var0_0.TYPE_FINDUI or var0_21 == var0_0.TYPE_STORY
+	return var0_23 == var0_0.TYPE_FINDUI or var0_23 == var0_0.TYPE_STORY
 end
 
-function var0_0.ShouldGoScene(arg0_22)
-	return arg0_22.sceneName and arg0_22.sceneName ~= ""
+function var0_0.ShouldGoScene(arg0_24)
+	return arg0_24.sceneName and arg0_24.sceneName ~= ""
 end
 
-function var0_0.GetSceneName(arg0_23)
-	return arg0_23.sceneName
+function var0_0.GetSceneName(arg0_25)
+	return arg0_25.sceneName
 end
 
-function var0_0.ShouldTriggerOtherTarget(arg0_24)
-	return arg0_24.otherTriggerTarget ~= nil
+function var0_0.ShouldTriggerOtherTarget(arg0_26)
+	return arg0_26.otherTriggerTarget ~= nil
 end
 
-function var0_0.GetOtherTriggerTarget(arg0_25)
-	local var0_25 = arg0_25.otherTriggerTarget
+function var0_0.GetOtherTriggerTarget(arg0_27)
+	local var0_27 = arg0_27.otherTriggerTarget
 
-	return arg0_25:GenSearchData(var0_25)
+	return arg0_27:GenSearchData(var0_27)
 end
 
-function var0_0.GenSearchData(arg0_26, arg1_26)
-	if not arg1_26 then
+function var0_0.GenSearchData(arg0_28, arg1_28)
+	if not arg1_28 then
 		return nil
 	end
 
-	local var0_26 = arg1_26.path
+	local var0_28 = arg1_28.path
 
-	if arg1_26.dynamicPath then
-		var0_26 = arg1_26.dynamicPath()
+	if arg1_28.dynamicPath then
+		var0_28 = arg1_28.dynamicPath()
 	end
 
 	return {
-		path = var0_26,
-		delay = arg1_26.delay,
-		pathIndex = arg1_26.pathIndex,
-		conditionData = arg1_26.conditionData
+		path = var0_28,
+		delay = arg1_28.delay,
+		pathIndex = arg1_28.pathIndex,
+		conditionData = arg1_28.conditionData
 	}
 end
 
-function var0_0.GenSpriteSearchData(arg0_27, arg1_27)
-	if not arg1_27 then
+function var0_0.GenSpriteSearchData(arg0_29, arg1_29)
+	if not arg1_29 then
 		return nil
 	end
 
-	local var0_27 = arg0_27:GenSearchData(arg1_27)
+	local var0_29 = arg0_29:GenSearchData(arg1_29)
 
-	var0_27.defaultName = arg1_27.defaultName
-	var0_27.childPath = arg1_27.childPath
+	var0_29.defaultName = arg1_29.defaultName
+	var0_29.childPath = arg1_29.childPath
 
-	return var0_27
+	return var0_29
 end
 
-function var0_0.ShouldCheckBaseUI(arg0_28)
-	return arg0_28.baseUI ~= nil
+function var0_0.ShouldCheckBaseUI(arg0_30)
+	return arg0_30.baseUI ~= nil
 end
 
-function var0_0.GetBaseUI(arg0_29)
-	return arg0_29.baseUI
+function var0_0.GetBaseUI(arg0_31)
+	return arg0_31.baseUI
 end
 
-function var0_0.ShouldCheckSpriteUI(arg0_30)
-	return arg0_30.spriteUI ~= nil
+function var0_0.ShouldCheckSpriteUI(arg0_32)
+	return arg0_32.spriteUI ~= nil
 end
 
-function var0_0.GetSpriteUI(arg0_31)
-	return arg0_31.spriteUI
+function var0_0.GetSpriteUI(arg0_33)
+	return arg0_33.spriteUI
 end
 
-function var0_0.GetType(arg0_32)
+function var0_0.GetType(arg0_34)
 	assert(false, "overwrite me!!!")
 end
 

@@ -852,7 +852,7 @@ function var0_0.playOpening(arg0_71, arg1_71)
 
 	local var1_71 = "star_level_unlock_anim_" .. var0_71
 
-	if PathMgr.FileExists(PathMgr.getAssetBundle("ui/skinunlockanim/" .. var1_71)) then
+	if checkABExist("ui/skinunlockanim/" .. var1_71) then
 		pg.CpkPlayMgr.GetInstance():PlayCpkMovie(function()
 			return
 		end, function()

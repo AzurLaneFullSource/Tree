@@ -29,18 +29,19 @@ function var0_0.execute(arg0_1, arg1_1)
 			var4_1:changeGiftCount(var2_1, -var3_1)
 
 			local var0_2 = pg.dorm3d_gift[var2_1].favor_trigger_id
+			local var1_2, var2_2 = var4_1:triggerFavor(var1_1, var0_2)
 
-			var5_1 = var4_1:getApartment(var1_1)
-
-			local var1_2 = var5_1:addFavor(var0_2)
-
-			var4_1:updateApartment(var5_1)
 			arg0_1:sendNotification(GAME.APARTMENT_TRIGGER_FAVOR_DONE, {
+				isGift = true,
 				triggerId = var0_2,
+				cost = var2_2,
 				delta = var1_2,
 				apartment = var5_1
 			})
-			arg0_1:sendNotification(GAME.APARTMENT_GIVE_GIFT_DONE, var2_1)
+			arg0_1:sendNotification(GAME.APARTMENT_GIVE_GIFT_DONE, {
+				groupId = var1_1,
+				giftId = var2_1
+			})
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)
 		end

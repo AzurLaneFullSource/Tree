@@ -33,6 +33,10 @@ end
 
 QualitySettings.vSyncCount = 0
 
+UnityEngine.Physics.IgnoreLayerCollision(21, LayerMask.NameToLayer("Default"))
+tolua.loadassembly("com.blhx.builtin-pipeline.runtime")
+Dorm3dRoomTemplateScene.InitDefautQuality()
+Dorm3dRoomTemplateScene.SettingQuality()
 ReflectionHelp.RefSetField(typeof("ResourceMgr"), "_asyncMax", ResourceMgr.Inst, 30)
 
 tf(GameObject.Find("EventSystem")):GetComponent(typeof(EventSystem)).sendNavigationEvents = false
@@ -187,10 +191,20 @@ function OnApplicationExit()
 		return
 	end
 
-	local var16_4 = nowWorld()
+	local var16_4 = checkExist(pg.NewStyleMsgboxMgr.GetInstance(), {
+		"_tf"
+	})
 
-	if var16_4 and var16_4.staminaMgr:IsShowing() then
-		var16_4.staminaMgr:Hide()
+	if var16_4 and isActive(var16_4) then
+		pg.NewStyleMsgboxMgr.GetInstance():Hide()
+
+		return
+	end
+
+	local var17_4 = nowWorld()
+
+	if var17_4 and var17_4.staminaMgr:IsShowing() then
+		var17_4.staminaMgr:Hide()
 
 		return
 	end
@@ -245,64 +259,73 @@ local function var1_0(arg0_12)
 			pg.MsgboxMgr.GetInstance():Init(arg0_17)
 		end,
 		function(arg0_18)
-			pg.SystemOpenMgr.GetInstance():Init(arg0_18)
+			pg.NewStyleMsgboxMgr.GetInstance():Init(arg0_18)
 		end,
 		function(arg0_19)
-			pg.SystemGuideMgr.GetInstance():Init(arg0_19)
+			pg.SystemOpenMgr.GetInstance():Init(arg0_19)
 		end,
 		function(arg0_20)
-			pg.NewGuideMgr.GetInstance():Init(arg0_20)
+			pg.SystemGuideMgr.GetInstance():Init(arg0_20)
 		end,
 		function(arg0_21)
-			pg.SeriesGuideMgr.GetInstance():Init(arg0_21)
+			pg.NewGuideMgr.GetInstance():Init(arg0_21)
 		end,
 		function(arg0_22)
-			pg.ToastMgr.GetInstance():Init(arg0_22)
+			pg.SeriesGuideMgr.GetInstance():Init(arg0_22)
 		end,
 		function(arg0_23)
-			pg.WorldToastMgr.GetInstance():Init(arg0_23)
+			pg.ToastMgr.GetInstance():Init(arg0_23)
 		end,
 		function(arg0_24)
-			pg.SecondaryPWDMgr.GetInstance():Init(arg0_24)
+			pg.WorldToastMgr.GetInstance():Init(arg0_24)
 		end,
 		function(arg0_25)
-			pg.ShipFlagMgr.GetInstance():Init(arg0_25)
+			pg.SecondaryPWDMgr.GetInstance():Init(arg0_25)
 		end,
 		function(arg0_26)
-			pg.NewStoryMgr.GetInstance():Init(arg0_26)
+			pg.ShipFlagMgr.GetInstance():Init(arg0_26)
 		end,
 		function(arg0_27)
-			pg.RedDotMgr.GetInstance():Init(arg0_27)
+			pg.NewStoryMgr.GetInstance():Init(arg0_27)
 		end,
 		function(arg0_28)
-			pg.UserAgreementMgr.GetInstance():Init(arg0_28)
+			pg.RedDotMgr.GetInstance():Init(arg0_28)
 		end,
 		function(arg0_29)
-			pg.BrightnessMgr.GetInstance():Init(arg0_29)
+			pg.UserAgreementMgr.GetInstance():Init(arg0_29)
 		end,
 		function(arg0_30)
-			pg.ConfigTablePreloadMgr.GetInstance():Init(arg0_30)
+			pg.BrightnessMgr.GetInstance():Init(arg0_30)
 		end,
 		function(arg0_31)
-			pg.CameraFixMgr.GetInstance():Init(arg0_31)
+			pg.ConfigTablePreloadMgr.GetInstance():Init(arg0_31)
 		end,
 		function(arg0_32)
-			pg.BgmMgr.GetInstance():Init(arg0_32)
+			pg.CameraFixMgr.GetInstance():Init(arg0_32)
 		end,
 		function(arg0_33)
-			pg.FileDownloadMgr.GetInstance():Init(arg0_33)
+			pg.BgmMgr.GetInstance():Init(arg0_33)
 		end,
 		function(arg0_34)
-			pg.RepairResMgr.GetInstance():Init(arg0_34)
+			pg.FileDownloadMgr.GetInstance():Init(arg0_34)
 		end,
 		function(arg0_35)
-			pg.NodeCanvasMgr.GetInstance():Init(arg0_35)
+			pg.RepairResMgr.GetInstance():Init(arg0_35)
 		end,
 		function(arg0_36)
-			pg.SceneAnimMgr.GetInstance():Init(arg0_36)
+			pg.NodeCanvasMgr.GetInstance():Init(arg0_36)
 		end,
 		function(arg0_37)
-			pg.PerformMgr.GetInstance():Init(arg0_37)
+			pg.SceneAnimMgr.GetInstance():Init(arg0_37)
+		end,
+		function(arg0_38)
+			pg.PerformMgr.GetInstance():Init(arg0_38)
+		end,
+		function(arg0_39)
+			pg.ClickEffectMgr.GetInstance():Init(arg0_39)
+		end,
+		function(arg0_40)
+			pg.CameraRTMgr.GetInstance():Init(arg0_40)
 		end
 	}, arg0_12)
 end
@@ -312,25 +335,24 @@ local var2_0 = os.clock()
 seriesAsync({
 	var0_0,
 	var1_0
-}, function(arg0_38)
+}, function(arg0_41)
 	pg.SdkMgr.GetInstance():QueryWithProduct()
 	print("loading cost: " .. os.clock() - var2_0)
 	VersionMgr.Inst:DestroyUI()
 
-	local var0_38 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
+	local var0_41 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
 
-	if not IsNil(var0_38) then
-		Object.Destroy(var0_38)
+	if not IsNil(var0_41) then
+		Object.Destroy(var0_41)
 	end
 
 	Screen.sleepTimeout = SleepTimeout.SystemSetting
 
 	pg.UIMgr.GetInstance():displayLoadingBG(true)
-	pg.UIMgr.GetInstance():LoadingOn()
 
-	if arg0_38 then
-		pg.UIMgr.GetInstance():Loading(arg0_38)
-		error(arg0_38)
+	if arg0_41 then
+		pg.UIMgr.GetInstance():Loading(arg0_41)
+		error(arg0_41)
 
 		return
 	end
@@ -345,4 +367,13 @@ seriesAsync({
 	pg.playerResUI = PlayerResUI.New()
 
 	pg.SdkMgr.GetInstance():GoSDkLoginScene()
+	pg.UIMgr.GetInstance():AddDebugButton("Device Info", function()
+		originalPrint("+++++++++++graphicsDeviceVendorID:" .. SystemInfo.graphicsDeviceVendorID)
+		DevicePerformanceUtil.GetDevicePerformanceLevel()
+		originalPrint("CPU核心:" .. SystemInfo.processorCount)
+		originalPrint("显存:" .. SystemInfo.graphicsMemorySize)
+		originalPrint("内存:" .. SystemInfo.systemMemorySize)
+		originalPrint("主频:" .. SystemInfo.processorFrequency)
+		originalPrint("+++++++++++")
+	end)
 end)

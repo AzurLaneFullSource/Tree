@@ -82,6 +82,10 @@ function var0_0.GetSignResName(arg0_7, arg1_7)
 		var0_7 = "wClickArea"
 	elseif arg1_7 == 5 then
 		var0_7 = "wShowArea"
+	elseif arg1_7 == 7 then
+		var0_7 = "wShowArea4Click"
+	elseif arg1_7 == 8 then
+		var0_7 = "wShowArea4Click_borderless"
 	end
 
 	return var0_7

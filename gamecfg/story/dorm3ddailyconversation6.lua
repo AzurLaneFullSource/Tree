@@ -1,6 +1,7 @@
 return {
-	hideRecord = true,
+	fadeOut = 1.5,
 	dialogbox = 2,
+	hideRecord = true,
 	mode = 2,
 	alpha = 0,
 	id = "DORM3DDAILYCONVERSATION6",
@@ -8,31 +9,12 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			say = "主人，今天想要和天狼星探讨什么呢？",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			},
-			options = {
-				{
-					content = "当然是关于“爱”的话题",
-					flag = 1
-				},
-				{
-					content = "——天狼星以为我会这么说吗？",
-					flag = 2
-				}
-			}
-		},
-		{
-			say = "……！！",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "原、原来主人已经看穿了天狼星的想法吗……真不愧是您，我敏锐的主人。",
+			side = 2,
+			actorName = "Sirius",
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "I take it you're aware of the stereotype that everyone from the Royal Islands loves tea parties.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -43,9 +25,15 @@ return {
 					op_list = {
 						{
 							param = "Play",
-							name = "shy",
+							name = "sikao2",
 							time = 0,
-							type = "action"
+							type = "action",
+							skip = true
+						},
+						{
+							skip = false,
+							time = 1,
+							type = "wait"
 						}
 					}
 				},
@@ -56,7 +44,35 @@ return {
 			}
 		},
 		{
-			say = "如果主人下次想探讨这个话题，天狼星……也是随时都可以的……",
+			actor = 0,
+			side = 2,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			say = "Do YOU like them?",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			side = 2,
+			actorName = "Sirius",
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "If I had to say, I think I like being the security at a tea party more than the tea party itself.",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			side = 2,
+			actorName = "Sirius",
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "I want to be the one who protects the tranquility and calm of moments such as those.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

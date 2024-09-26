@@ -64,6 +64,9 @@ function var0_0.UpdateValue(arg0_8)
 	local var1_8 = var0_8 > 0 and "<color=#92FC63FF>" .. var0_8 .. "</color>/" or "<color=#FF5C5CFF>" .. var0_8 .. "</color>/"
 
 	arg0_8.exchagneCnt.text = var1_8 .. arg0_8.maxCnt
+
+	setActive(arg0_8:findTF("got/top/exchange"), arg0_8.maxCnt ~= 0)
+
 	arg0_8.consumeCnt.text = arg0_8.data.price * #arg0_8.selectedList
 end
 
@@ -166,7 +169,7 @@ function var0_0.PressMinusBtn(arg0_19, arg1_19, arg2_19)
 end
 
 function var0_0.PressAddBtn(arg0_20, arg1_20, arg2_20)
-	if #arg0_20.selectedList == arg0_20.maxCnt then
+	if #arg0_20.selectedList == arg0_20.maxCnt and arg0_20.maxCnt ~= 0 then
 		return
 	end
 

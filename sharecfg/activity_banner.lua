@@ -5,15 +5,14 @@ pg.activity_banner = {
 		pic = "temp3",
 		type = 2,
 		param = {
-			"scene skinshop",
-			{}
+			"dorm 3d select"
 		},
 		time = {
 			{
 				{
 					2024,
 					9,
-					19
+					26
 				},
 				{
 					0,
@@ -25,7 +24,7 @@ pg.activity_banner = {
 				{
 					2024,
 					10,
-					2
+					10
 				},
 				{
 					23,
@@ -37,6 +36,80 @@ pg.activity_banner = {
 	},
 	{
 		id = 2,
+		pic = "temp5",
+		type = 2,
+		param = {
+			"scene dockyard",
+			{
+				mode = "overview"
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					9,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					10,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 3,
+		pic = "temp6",
+		type = 2,
+		param = {
+			"scene charge",
+			{
+				wrap = 2
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					9,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					10,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 4,
 		pic = "temp7",
 		type = 2,
 		param = {
@@ -73,39 +146,7 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "5581",
-		id = 3,
-		pic = "temp8",
-		type = 3,
-		time = {
-			{
-				{
-					2024,
-					9,
-					12
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					9,
-					29
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		id = 4,
+		id = 5,
 		pic = "temp1",
 		type = 2,
 		param = {
@@ -142,8 +183,43 @@ pg.activity_banner = {
 		}
 	},
 	{
+		id = 6,
+		pic = "temp4",
+		type = 2,
+		param = {
+			"crusing",
+			{}
+		},
+		time = {
+			{
+				{
+					2024,
+					10,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					10,
+					10
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
 		param = "5562",
-		id = 5,
+		id = 7,
 		pic = "temp2",
 		type = 3,
 		time = {
@@ -174,96 +250,19 @@ pg.activity_banner = {
 		}
 	},
 	{
-		id = 6,
-		pic = "temp4",
-		type = 2,
-		param = {
-			"scene charge",
-			{
-				wrap = 2
-			}
-		},
-		time = {
-			{
-				{
-					2024,
-					9,
-					12
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					10,
-					2
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		id = 7,
-		pic = "temp5",
-		type = 2,
-		param = {
-			"scene get boat",
-			{
-				projectName = "new",
-				page = 1
-			}
-		},
-		time = {
-			{
-				{
-					2024,
-					9,
-					12
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					10,
-					2
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
 		id = 8,
-		pic = "temp6",
+		pic = "temp8",
 		type = 2,
 		param = {
-			"scene charge",
-			{
-				wrap = 2
-			}
+			"crusing",
+			{}
 		},
 		time = {
 			{
 				{
 					2024,
-					9,
-					12
+					10,
+					1
 				},
 				{
 					0,
@@ -275,7 +274,7 @@ pg.activity_banner = {
 				{
 					2024,
 					10,
-					2
+					10
 				},
 				{
 					23,
@@ -286,18 +285,16 @@ pg.activity_banner = {
 		}
 	},
 	{
+		param = "5583",
 		id = 9,
 		pic = "temp9",
-		type = 2,
-		param = {
-			"scene court yard"
-		},
+		type = 3,
 		time = {
 			{
 				{
 					2024,
 					9,
-					12
+					26
 				},
 				{
 					0,
@@ -309,7 +306,7 @@ pg.activity_banner = {
 				{
 					2024,
 					10,
-					2
+					10
 				},
 				{
 					23,
@@ -321,35 +318,10 @@ pg.activity_banner = {
 	},
 	[90] = {
 		param = "",
-		id = 90,
-		pic = "temp99",
+		time = "stop",
 		type = 9,
-		time = {
-			{
-				{
-					2024,
-					9,
-					19
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					10,
-					2
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
+		id = 90,
+		pic = "temp99"
 	},
 	[91] = {
 		param = "",
@@ -367,35 +339,10 @@ pg.activity_banner = {
 	},
 	[99] = {
 		param = "",
-		id = 99,
-		pic = "limit_skin",
+		time = "stop",
 		type = 12,
-		time = {
-			{
-				{
-					2024,
-					9,
-					12
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					10,
-					2
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
+		id = 99,
+		pic = "limit_skin"
 	},
 	[100] = {
 		param = "Osmanthus Cake|A sweet and aromatic cake said to have come from the Moon Palace! Delicious! <color=#6dd329>(Increase EXP by 5 for 60 minutes)</color>",
@@ -447,15 +394,15 @@ pg.activity_banner = {
 		[2] = {
 			1,
 			2,
+			3,
 			4,
+			5,
 			6,
-			7,
-			8,
-			9
+			8
 		},
 		[3] = {
-			3,
-			5
+			7,
+			9
 		},
 		[9] = {
 			90,

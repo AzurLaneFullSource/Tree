@@ -12,6 +12,8 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.scene = arg1_1.scene
 	arg0_1.onRemoved = arg1_1.onRemoved
 	arg0_1.cleanStack = defaultValue(arg1_1.cleanStack, false)
+	arg0_1.cleanChild = defaultValue(arg1_1.cleanChild, false)
+	arg0_1.irregularSequence = defaultValue(arg1_1.irregularSequence, false)
 	arg0_1.data = arg1_1.data or {}
 	arg0_1.parent = arg1_1.parent
 	arg0_1.children = {}
@@ -63,9 +65,7 @@ end
 
 function var0_0.retriveLastChild(arg0_8)
 	for iter0_8 = #arg0_8.children, 1, -1 do
-		if not arg0_8.children[iter0_8].data.isSubView then
-			return arg0_8.children[iter0_8]:retriveLastChild()
-		end
+		return arg0_8.children[iter0_8]:retriveLastChild()
 	end
 
 	return arg0_8

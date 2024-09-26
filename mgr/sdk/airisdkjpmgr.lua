@@ -498,7 +498,7 @@ function BindYostarPassResult(arg0_61, arg1_61)
 	}
 
 	if var0_0.AiriResultCodeHandler(var0_61) then
-		pg.TipsMgr.GetInstance():ShowTips("Bind Success.")
+		pg.TipsMgr.GetInstance():ShowTips(i18n("new_airi_error_code_0"))
 	end
 end
 
@@ -534,12 +534,18 @@ function var0_0.AiriResultCodeHandler(arg0_64)
 
 		originalPrint("SDK Error Code:" .. var0_64)
 
-		local var3_64 = i18n("new_airi_error_code_" .. var0_64)
+		local var3_64 = var2_0:GetSDKRecommendedErrorMsg(var0_64, Airisdk.LanguageType.MSG_JP)
 
-		if string.find(var3_64, "UndefinedLanguage") then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("new_airi_error_code_other") .. var1_64)
+		if var3_64 and string.len(var3_64) > 0 then
+			pg.TipsMgr.GetInstance():ShowTips(var3_64)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(var3_64 .. var1_64)
+			local var4_64 = i18n("new_airi_error_code_" .. var0_64)
+
+			if string.find(var4_64, "UndefinedLanguage") then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("new_airi_error_code_other") .. var1_64)
+			else
+				pg.TipsMgr.GetInstance():ShowTips(var4_64 .. var1_64)
+			end
 		end
 	end
 

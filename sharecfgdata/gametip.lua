@@ -1143,7 +1143,7 @@ _G.pg.base.gametip.word_recommend = {
 }
 
 _G.pg.base.gametip.word_wallpaper = {
-	tip = "Wall\npaper",
+	tip = "Wallpapers",
 }
 
 _G.pg.base.gametip.word_furniture = {
@@ -1151,7 +1151,7 @@ _G.pg.base.gametip.word_furniture = {
 }
 
 _G.pg.base.gametip.word_decorate = {
-	tip = "Décor",
+	tip = "Decorations",
 }
 
 _G.pg.base.gametip.word_special = {
@@ -1167,7 +1167,7 @@ _G.pg.base.gametip.word_wall = {
 }
 
 _G.pg.base.gametip.word_floorpaper = {
-	tip = "Floor",
+	tip = "Flooring",
 }
 
 _G.pg.base.gametip.word_collection = {
@@ -1355,7 +1355,7 @@ _G.pg.base.gametip.word_sell_out = {
 }
 
 _G.pg.base.gametip.word_sell_lock = {
-	tip = "Lock",
+	tip = "Unavailable",
 }
 
 _G.pg.base.gametip.word_diamond_tip = {
@@ -1375,7 +1375,7 @@ _G.pg.base.gametip.word_fit = {
 }
 
 _G.pg.base.gametip.word_equipment_skin = {
-	tip = "外装",
+	tip = "Gear Skin",
 }
 
 _G.pg.base.gametip.word_activity = {
@@ -3016,7 +3016,7 @@ _G.pg.base.gametip.coloring_erase_warning = {
 }
 
 _G.pg.base.gametip.coloring_lock = {
-	tip = "Locked",
+	tip = "Unavailable",
 }
 
 _G.pg.base.gametip.coloring_wait_open = {
@@ -7769,7 +7769,7 @@ _G.pg.base.gametip.ship_remould_need_star = {
 }
 
 _G.pg.base.gametip.ship_remould_finished = {
-	tip = "Completed",
+	tip = "Complete",
 }
 
 _G.pg.base.gametip.ship_remould_no_item = {
@@ -8809,7 +8809,7 @@ _G.pg.base.gametip.word_status_inEvent = {
 }
 
 _G.pg.base.gametip.word_status_inEventFinished = {
-	tip = "Completed",
+	tip = "Complete",
 }
 
 _G.pg.base.gametip.word_status_inTactics = {
@@ -9680,7 +9680,7 @@ _G.pg.base.gametip.touch_head = {
 }
 
 _G.pg.base.gametip.touch_body = {
-	tip = "Touch",
+	tip = "Interact",
 }
 
 _G.pg.base.gametip.touch_special = {
@@ -14467,7 +14467,7 @@ _G.pg.base.gametip.tec_target_catchup_finish_4 = {
 }
 
 _G.pg.base.gametip.tec_target_catchup_dr_finish_tip = {
-	tip = "Catch-Up Complete",
+	tip = "Complete",
 }
 
 _G.pg.base.gametip.tec_target_catchup_all_finish_tip = {
@@ -15064,7 +15064,7 @@ _G.pg.base.gametip.guild_get_report_failed = {
 }
 
 _G.pg.base.gametip.guild_report_get_all = {
-	tip = "Collect All",
+	tip = "Claim All",
 }
 
 _G.pg.base.gametip.guild_can_not_get_tip = {
@@ -16980,7 +16980,7 @@ _G.pg.base.gametip.story_autoplay_setting_label = {
 }
 
 _G.pg.base.gametip.story_autoplay_setting_1 = {
-	tip = "Disabled",
+	tip = "Back",
 }
 
 _G.pg.base.gametip.story_autoplay_setting_2 = {
@@ -17299,7 +17299,7 @@ _G.pg.base.gametip.activity_permanent_tips4 = {
 }
 
 _G.pg.base.gametip.activity_permanent_finished = {
-	tip = "Completed",
+	tip = "Complete",
 }
 
 _G.pg.base.gametip.idolmaster_main = {
@@ -18342,7 +18342,7 @@ _G.pg.base.gametip.noacceleration_tips = {
 }
 
 _G.pg.base.gametip.word_shipskin = {
-	tip = "Motif",
+	tip = "Special",
 }
 
 _G.pg.base.gametip.settings_sound_title_bgm = {
@@ -18410,7 +18410,7 @@ _G.pg.base.gametip.settings_battle_Btn_cancel = {
 }
 
 _G.pg.base.gametip.settings_pwd_label_close = {
-	tip = "Disabled",
+	tip = "Back",
 }
 
 _G.pg.base.gametip.settings_pwd_label_open = {
@@ -19041,6 +19041,26 @@ _G.pg.base.gametip.cruise_task_help_2408 = {
 	},
 }
 
+_G.pg.base.gametip.battlepass_main_tip_2410 = {
+	tip = "Complete seasonal missions <icon name=pt w=0.5 h=0.5/> during the 2024.10.1 - 2024.11.30 Cruise Mission season and obtain rewards such as <color=#854747>Houshou META</color> and more!",
+}
+
+_G.pg.base.gametip.battlepass_main_help_2410 = {
+	tip = {
+		{
+			info = "Cruise Missions Seasonal Campaign\n10/1/2024 00:00 – 11/30/2024 23:59\n\n- Overview -\n\"Cruise Missions\" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.\nAdditionally, you can unlock an additional set of \"Fair Winds Cruise\" rewards by purchasing the \"Fair Winds Cruise Pass\" item from Akashi's shop.\nHoushou META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfit for Suffren, \"Unrivaled Winsomeness.\"\n\n- How to Play -\n· Two types of missions will be released at the same time at the start of the campaign season:\na) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.\nb) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.\n· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.\n· If you purchase a Fair Winds Cruise Pass, you will automatically receive 15 levels worth of progress (1500 Progress Pts).\n· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:\na) Cruise Rewards - Rewards that can be obtained based on the total number of accumulated Progress Pts. There are a total of 100 levels.\nb) Fair Winds Rewards - An additional set of rewards that will be unlocked when you purchase a Fair Winds Cruise Pass. As with the regular Cruise Rewards, there are a total of 100 levels, and they can be collected alongside Cruise Rewards at the same Progress level.\n· When the campaign season ends, your Progress Pts will be reset.\n\n- Tips - \n· Play at your own pace\nCruise Missions have a total of 100 Progress levels, and are not meant to be cleared in one session. We recommend that you complete them at your own pace.\n\n· Fair Winds Cruise Pass\nIf you purchase a Fair Winds Cruise Pass from Akashi's shop, you will automatically earn 1500 Progress Pts and unlock access to valuable rewards. Furthermore, there is an exclusive outfit available only through the Fair Winds rewards, so please plan accordingly.\n\n· Skipping Missions (not recommended)\nYou can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.\nWe do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.\nAny purchased Cruise Mission Vouchers will remain even after the campaign season ends.",
+		},
+	},
+}
+
+_G.pg.base.gametip.cruise_task_help_2410 = {
+	tip = {
+		{
+			info = "- Regarding Cruise Missions - \n· Two types of missions will be released at the same time at the start of the campaign season:\na) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.\nb) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.\n\n· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.\n\n· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.\nWe do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.\nAny purchased Cruise Mission Vouchers will remain even after the campaign season ends.",
+		},
+	},
+}
+
 _G.pg.base.gametip.attrset_reset = {
 	tip = "Reset",
 }
@@ -19135,7 +19155,7 @@ _G.pg.base.gametip.backyard_food_shop_tip = {
 }
 
 _G.pg.base.gametip.dorm_2f_lock = {
-	tip = "Locked",
+	tip = "Unavailable",
 }
 
 _G.pg.base.gametip.word_get_way = {
@@ -20746,7 +20766,7 @@ _G.pg.base.gametip.ryza_task_get = {
 }
 
 _G.pg.base.gametip.ryza_task_get_all = {
-	tip = "Collect All",
+	tip = "Claim All",
 }
 
 _G.pg.base.gametip.ryza_task_confirm = {
@@ -22927,7 +22947,7 @@ _G.pg.base.gametip.feast_label_give_gift = {
 }
 
 _G.pg.base.gametip.feast_label_give_gift_finish = {
-	tip = "Gift Sent",
+	tip = "Already given",
 }
 
 _G.pg.base.gametip.feast_label_make_ticket_tip = {
@@ -22947,7 +22967,7 @@ _G.pg.base.gametip.feast_res_window_title = {
 }
 
 _G.pg.base.gametip.feast_res_window_go_label = {
-	tip = "Go",
+	tip = "Confirm",
 }
 
 _G.pg.base.gametip.feast_tip = {
@@ -24299,7 +24319,7 @@ _G.pg.base.gametip.roll_room6 = {
 }
 
 _G.pg.base.gametip.roll_room7 = {
-	tip = "Dining Room",
+	tip = "Dining Area",
 }
 
 _G.pg.base.gametip.roll_room8 = {
@@ -24863,6 +24883,30 @@ _G.pg.base.gametip.senrankagura_backhill_help = {
 			info = "- Overview -\nThe Ninja Scrolls: Azur Flash is available between <color=#92fc63>November 23rd and December 6th.</color>\n\n- Details -\n1. Complete event stages and missions to receive Castle Tickets, the event currency.\nCastle Tickets can be spent in the event exchange shop for various rewards, including the SR collaboration character Ikaruga.\nYou can also claim the Elite collaboration character Murasaki as a milestone reward for collecting enough Castle Tickets.\n2. The Missions Board lists new event missions every day. Complete these missions to receive Shinobi Teachings and the time-limited furniture Shinobi Sliding Doors.\n3. The Ninja Scrolls has special missions available for each character. Complete these missions to receive Shinobi Teachings, Augment Modules for the new characters, and the special furniture Akashi Castle Scroll.\n4. The Ninjutsu Dojo is where you can spend your Shinobi Teachings to raise the Dojo's attribute level. Raise it high enough to receive the SR collaboration character Homura.\n5. The New Skins button takes you to the skin shop.\n6. The Limited Construction button takes you to the build screen.",
 		},
 	},
+}
+
+_G.pg.base.gametip.dorm3d_furnitrue_type_wallpaper = {
+	tip = "Wallpapers",
+}
+
+_G.pg.base.gametip.dorm3d_furnitrue_type_floor = {
+	tip = "Flooring",
+}
+
+_G.pg.base.gametip.dorm3d_furnitrue_type_decoration = {
+	tip = "Decorations",
+}
+
+_G.pg.base.gametip.dorm3d_furnitrue_type_bed = {
+	tip = "Beds",
+}
+
+_G.pg.base.gametip.dorm3d_furnitrue_type_couch = {
+	tip = "Couches",
+}
+
+_G.pg.base.gametip.dorm3d_furnitrue_type_table = {
+	tip = "Tables",
 }
 
 _G.pg.base.gametip.vote_lable_not_start = {
@@ -25588,6 +25632,78 @@ _G.pg.base.gametip.idol3rd_practice = {
 	},
 }
 
+_G.pg.base.gametip.dorm3d_furniture_window_acesses = {
+	tip = "Obtained By",
+}
+
+_G.pg.base.gametip.dorm3d_furniture_count = {
+	tip = "Amount: $1",
+}
+
+_G.pg.base.gametip.dorm3d_furniture_used = {
+	tip = "<color=#00a3ef>[Placed]</color>",
+}
+
+_G.pg.base.gametip.dorm3d_furniture_unfit = {
+	tip = "Unusable",
+}
+
+_G.pg.base.gametip.dorm3d_waiting = {
+	tip = "Setting Up",
+}
+
+_G.pg.base.gametip.dorm3d_daily_favor = {
+	tip = "Daily Bonus Intimacy",
+}
+
+_G.pg.base.gametip.dorm3d_favor_level = {
+	tip = "Intimacy Lv.:",
+}
+
+_G.pg.base.gametip.dorm3d_time_choose = {
+	tip = "Select Time",
+}
+
+_G.pg.base.gametip.dorm3d_now_time = {
+	tip = "Current Time",
+}
+
+_G.pg.base.gametip.dorm3d_is_auto_time = {
+	tip = "Day & Night Auto-Switch",
+}
+
+_G.pg.base.gametip.dorm3d_clothing_choose = {
+	tip = "Select Clothes",
+}
+
+_G.pg.base.gametip.dorm3d_now_clothing = {
+	tip = "Current",
+}
+
+_G.pg.base.gametip.dorm3d_talk = {
+	tip = "Talk",
+}
+
+_G.pg.base.gametip.dorm3d_touch = {
+	tip = "Interact",
+}
+
+_G.pg.base.gametip.dorm3d_gift = {
+	tip = "Gift",
+}
+
+_G.pg.base.gametip.dorm3d_gift_owner_num = {
+	tip = "Amount: ",
+}
+
+_G.pg.base.gametip.dorm3d_unlock_tips = {
+	tip = "Unlocked at Intimacy $1",
+}
+
+_G.pg.base.gametip.dorm3d_daily_favor_tips = {
+	tip = "Daily Bonus Intimacy",
+}
+
 _G.pg.base.gametip.main_silent_tip_1 = {
 	tip = "team(s) back from commission",
 }
@@ -26089,6 +26205,230 @@ _G.pg.base.gametip.award_max_warning_minigame = {
 	tip = "Any rewards that <color=#ff5c5c>exceed your max storage capacity</color> will be discarded if you claim them. Do you wish to continue?",
 }
 
+_G.pg.base.gametip.dorm3d_photo_len = {
+	tip = "Camera",
+}
+
+_G.pg.base.gametip.dorm3d_photo_depthoffield = {
+	tip = "Blur",
+}
+
+_G.pg.base.gametip.dorm3d_photo_focusdistance = {
+	tip = "Blur Distance",
+}
+
+_G.pg.base.gametip.dorm3d_photo_focusstrength = {
+	tip = "Blur Intensity",
+}
+
+_G.pg.base.gametip.dorm3d_photo_paramaters = {
+	tip = "Parameters",
+}
+
+_G.pg.base.gametip.dorm3d_photo_postexposure = {
+	tip = "Exposure",
+}
+
+_G.pg.base.gametip.dorm3d_photo_saturation = {
+	tip = "Saturation",
+}
+
+_G.pg.base.gametip.dorm3d_photo_contrast = {
+	tip = "Contrast",
+}
+
+_G.pg.base.gametip.dorm3d_photo_Others = {
+	tip = "Misc.",
+}
+
+_G.pg.base.gametip.dorm3d_photo_hidecharacter = {
+	tip = "Hide Character",
+}
+
+_G.pg.base.gametip.dorm3d_photo_facecamera = {
+	tip = "Face Camera",
+}
+
+_G.pg.base.gametip.dorm3d_photo_lighting = {
+	tip = "Lighting",
+}
+
+_G.pg.base.gametip.dorm3d_photo_filter = {
+	tip = "Filter",
+}
+
+_G.pg.base.gametip.dorm3d_photo_alpha = {
+	tip = "Transparency",
+}
+
+_G.pg.base.gametip.dorm3d_photo_strength = {
+	tip = "Depth",
+}
+
+_G.pg.base.gametip.dorm3d_photo_regular_anim = {
+	tip = "Default",
+}
+
+_G.pg.base.gametip.dorm3d_photo_special_anim = {
+	tip = "Special",
+}
+
+_G.pg.base.gametip.dorm3d_photo_animspeed = {
+	tip = "Action $1x",
+}
+
+_G.pg.base.gametip.dorm3d_photo_furniture_lock = {
+	tip = "dorm3d_photo_furniture_lock",
+}
+
+_G.pg.base.gametip.dorm3d_shop_gift = {
+	tip = "Would you like to spend $1 <color=#169fff>$2</color> to purchase <color=#169fff>$3</color>?",
+}
+
+_G.pg.base.gametip.dorm3d_shop_gift_tip = {
+	tip = "<color=#7c7e81>Purchasing this will unlock a <color=#169fff>special story vignette</color>.</color>",
+}
+
+_G.pg.base.gametip.word_unlock = {
+	tip = "Unlocked",
+}
+
+_G.pg.base.gametip.word_lock = {
+	tip = "Unavailable",
+}
+
+_G.pg.base.gametip.dorm3d_collect_favor_plus = {
+	tip = "Bonus: Intimacy+",
+}
+
+_G.pg.base.gametip.dorm3d_collect_nothing = {
+	tip = "- No items obtained -",
+}
+
+_G.pg.base.gametip.dorm3d_collect_locked = {
+	tip = "Unlocked at Intimacy $1",
+}
+
+_G.pg.base.gametip.dorm3d_collect_not_found = {
+	tip = "Obtainable at $1",
+}
+
+_G.pg.base.gametip.dorm3d_sirius_table = {
+	tip = "Dining Area",
+}
+
+_G.pg.base.gametip.dorm3d_sirius_chair = {
+	tip = "Living Area",
+}
+
+_G.pg.base.gametip.dorm3d_sirius_bed = {
+	tip = "Bedroom",
+}
+
+_G.pg.base.gametip.dorm3d_sirius_bath = {
+	tip = "Changing Room",
+}
+
+_G.pg.base.gametip.dorm3d_collection_beach = {
+	tip = "Beach",
+}
+
+_G.pg.base.gametip.dorm3d_reload_unlock = {
+	tip = "- Locked -",
+}
+
+_G.pg.base.gametip.dorm3d_reload_unlock_name = {
+	tip = "???",
+}
+
+_G.pg.base.gametip.dorm3d_reload_favor = {
+	tip = "Intimacy Story",
+}
+
+_G.pg.base.gametip.dorm3d_reload_gift = {
+	tip = "Personal Gift Story",
+}
+
+_G.pg.base.gametip.dorm3d_collect_unlock = {
+	tip = "- Locked -",
+}
+
+_G.pg.base.gametip.dorm3d_pledge_favor = {
+	tip = "Oathing a character increases their Intimacy by 100.",
+}
+
+_G.pg.base.gametip.dorm3d_own_favor = {
+	tip = "Owning a character increases their Intimacy by 100.",
+}
+
+_G.pg.base.gametip.dorm3d_role_choose = {
+	tip = "Choose Room",
+}
+
+_G.pg.base.gametip.dorm3d_beach_buy = {
+	tip = "Would you like to spend <color=#39bfff>$1</color> to unlock the <color=#169fff>beach</color>?",
+}
+
+_G.pg.base.gametip.dorm3d_beach_role = {
+	tip = "Unlocking this will let you move <color=#39bfff>$1</color> here.",
+}
+
+_G.pg.base.gametip.dorm3d_beach_download = {
+	tip = "You need to download $1 MB worth of assets.",
+}
+
+_G.pg.base.gametip.dorm3d_role_check_in = {
+	tip = "Would you like to unlock <color=#39bfff>$1</color>'s room?",
+}
+
+_G.pg.base.gametip.dorm3d_data_choose = {
+	tip = "Choose Date",
+}
+
+_G.pg.base.gametip.dorm3d_role_manage = {
+	tip = "Manage Quarters",
+}
+
+_G.pg.base.gametip.dorm3d_role_manage_role = {
+	tip = "Characters",
+}
+
+_G.pg.base.gametip.dorm3d_role_manage_public_area = {
+	tip = "Common Area",
+}
+
+_G.pg.base.gametip.dorm3d_data_go = {
+	tip = "Select a character to put in the <color=#39bfff>$1</color>.",
+}
+
+_G.pg.base.gametip.dorm3d_role_assets_delete = {
+	tip = "Would you like to temporarily delete the assets related to <color=#39bfff>$1</color>'s room?",
+}
+
+_G.pg.base.gametip.dorm3d_role_assets_download = {
+	tip = "Would you like to unlock <color=#39bfff>$1</color>'s room? \nYou will need to <color=#848484>download $2 MB worth of assets</color>.",
+}
+
+_G.pg.base.gametip.volleyball_end_tip = {
+	tip = "You had a nice evening with Sirius.",
+}
+
+_G.pg.base.gametip.volleyball_end_award = {
+	tip = "Energy -1, Intimacy with Sirius +40",
+}
+
+_G.pg.base.gametip.sure_exit_volleyball = {
+	tip = "Would you like to end the minigame?",
+}
+
+_G.pg.base.gametip.dorm3d_photo_active_zone = {
+	tip = "$1 Area Exclusive",
+}
+
+_G.pg.base.gametip.apartment_level_unenough = {
+	tip = "Unlocks at Intimacy Lv. $1",
+}
+
 _G.pg.base.gametip.help_dorm3d_info = {
 	tip = {
 		{
@@ -26143,6 +26483,54 @@ _G.pg.base.gametip.help_dorm3d_info = {
 			y = 1024,
 		},
 	},
+}
+
+_G.pg.base.gametip.dorm3d_shop_gift_already_given = {
+	tip = "You have already given this gift.",
+}
+
+_G.pg.base.gametip.dorm3d_shop_gift_not_owned = {
+	tip = "You don't own this gift.",
+}
+
+_G.pg.base.gametip.dorm3d_select_tip = {
+	tip = "Move to Common Area ",
+}
+
+_G.pg.base.gametip.dorm3d_volleyball_title = {
+	tip = "Beach",
+}
+
+_G.pg.base.gametip.dorm3d_minigame_again = {
+	tip = "Again",
+}
+
+_G.pg.base.gametip.dorm3d_minigame_close = {
+	tip = "Back",
+}
+
+_G.pg.base.gametip.dorm3d_data_Invite_lack = {
+	tip = "You don't have enough characters to move.",
+}
+
+_G.pg.base.gametip.dorm3d_item_num = {
+	tip = "Obtained:",
+}
+
+_G.pg.base.gametip.dorm3d_collect_not_owned = {
+	tip = "You don't own this item.",
+}
+
+_G.pg.base.gametip.dorm3d_furniture_sure_save = {
+	tip = "Would you like to save furniture arrangement?",
+}
+
+_G.pg.base.gametip.dorm3d_furniture_save_success = {
+	tip = "Furniture arrangement has been saved.",
+}
+
+_G.pg.base.gametip.dorm3d_removable = {
+	tip = "(Drag on the left side of the screen to move closer to the character.)",
 }
 
 _G.pg.base.gametip.report_cannot_comment_level_1 = {
@@ -26311,5 +26699,249 @@ _G.pg.base.gametip.attire_combatui_preview = {
 
 _G.pg.base.gametip.attire_combatui_confirm = {
 	tip = "Apply",
+}
+
+_G.pg.base.gametip.grapihcs3d_setting_quality = {
+	tip = "Graphics Quality",
+}
+
+_G.pg.base.gametip.grapihcs3d_setting_quality_option_low = {
+	tip = "Low",
+}
+
+_G.pg.base.gametip.grapihcs3d_setting_quality_option_medium = {
+	tip = "Medium",
+}
+
+_G.pg.base.gametip.grapihcs3d_setting_quality_option_high = {
+	tip = "High",
+}
+
+_G.pg.base.gametip.grapihcs3d_setting_quality_option_custom = {
+	tip = "Custom",
+}
+
+_G.pg.base.gametip.grapihcs3d_setting_universal = {
+	tip = "Typical 3D Settings",
+}
+
+_G.pg.base.gametip.grapihcs3d_setting_gpgpu_warning = {
+	tip = "When toggled ON, this app may crash on some devices.",
+}
+
+_G.pg.base.gametip.dorm3d_shop_tag1 = {
+	tip = "Unlocks Exclusive Interaction",
+}
+
+_G.pg.base.gametip.dorm3d_shop_tag2 = {
+	tip = "Unlocks Photo Actions",
+}
+
+_G.pg.base.gametip.dorm3d_shop_tag3 = {
+	tip = "Unlocks Actions in Heartbeat Mode",
+}
+
+_G.pg.base.gametip.dorm3d_shop_tag4 = {
+	tip = "Unlocks Special Story Vignette",
+}
+
+_G.pg.base.gametip.dorm3d_shop_tag5 = {
+	tip = "Unlocks Conversation Topic",
+}
+
+_G.pg.base.gametip.dorm3d_shop_tag6 = {
+	tip = "Unlocks Minigame",
+}
+
+_G.pg.base.gametip.dorm3d_system_switch = {
+	tip = "Setting up the quarters...",
+}
+
+_G.pg.base.gametip.dorm3d_beach_switch = {
+	tip = "Setting up the beach...",
+}
+
+_G.pg.base.gametip.dorm3d_AR_switch = {
+	tip = "The AR feature is undergoing maintenance...",
+}
+
+_G.pg.base.gametip.dorm3d_invite_confirm_original = {
+	tip = "Would you like to spend <color=#39bfff>$2</color> $1 and unlock <color=#39bfff>$3</color>'s placement in the $4?",
+}
+
+_G.pg.base.gametip.dorm3d_invite_confirm_discount = {
+	tip = "Would you like to spend <color=#39bfff>$2</color> $1 ($3 before discount) and unlock $5's placement in the <color=#39bfff>$4</color>?",
+}
+
+_G.pg.base.gametip.dorm3d_invite_confirm_free = {
+	tip = "Would you like to obtain $4's placement in the <color=#39bfff>$3</color> $1 <color=#fc4670><size=34>for free</size></color> ($2 before discount)?",
+}
+
+_G.pg.base.gametip.dorm3d_purchase_confirm_original = {
+	tip = "Would you like to spend <color=#39bfff>$2</color> $1 to purchase <color=#39bfff>$3</color>?",
+}
+
+_G.pg.base.gametip.dorm3d_purchase_confirm_discount = {
+	tip = "Would you like to spend <color=#39bfff>$2</color> $1 ($3 before discount) to purchase <color=#39bfff>$4</color>?",
+}
+
+_G.pg.base.gametip.dorm3d_purchase_confirm_free = {
+	tip = "Would you like to obtain <color=#39bfff>$3</color> $1<color=#fc4670><size=34>for free</size></color> ($2 before discount)?",
+}
+
+_G.pg.base.gametip.dorm3d_purchase_confirm_tip = {
+	tip = "Excl.",
+}
+
+_G.pg.base.gametip.cruise_phase_title = {
+	tip = "Phase",
+}
+
+_G.pg.base.gametip.cruise_title_2410 = {
+	tip = "Cruise Missions S19",
+}
+
+_G.pg.base.gametip.battlepass_main_time_title = {
+	tip = "Time Remaining:",
+}
+
+_G.pg.base.gametip.cruise_shop_no_open = {
+	tip = "Available at Oct 1st 00:00",
+}
+
+_G.pg.base.gametip.cruise_btn_pay = {
+	tip = "Unlock Bonus Rewards",
+}
+
+_G.pg.base.gametip.cruise_btn_all = {
+	tip = "Claim All",
+}
+
+_G.pg.base.gametip.task_go = {
+	tip = "Confirm",
+}
+
+_G.pg.base.gametip.task_got = {
+	tip = "Complete",
+}
+
+_G.pg.base.gametip.cruise_shop_title_skin = {
+	tip = "Skin",
+}
+
+_G.pg.base.gametip.cruise_shop_title_equip_skin = {
+	tip = "Gear Skin",
+}
+
+_G.pg.base.gametip.cruise_shop_lock_tip = {
+	tip = "Reach Seasonal Cruise Mission Lv. 50",
+}
+
+_G.pg.base.gametip.cruise_shop_limit_tip = {
+	tip = "Buyable This Month:",
+}
+
+_G.pg.base.gametip.cruise_limit_count = {
+	tip = "You cannot purchase any more for this month.",
+}
+
+_G.pg.base.gametip.cruise_title_2408 = {
+	tip = "Cruise Missions S18",
+}
+
+_G.pg.base.gametip.cruise_shop_title = {
+	tip = "Revisitor Shop",
+}
+
+_G.pg.base.gametip.dorm3d_favor_level_story = {
+	tip = "Special Story",
+}
+
+_G.pg.base.gametip.dorm3d_already_gifted = {
+	tip = "Already given",
+}
+
+_G.pg.base.gametip.dorm3d_story_unlock_tip = {
+	tip = "Story unlocked",
+}
+
+_G.pg.base.gametip.dorm3d_skin_locked = {
+	tip = "Outfit Unavailable",
+}
+
+_G.pg.base.gametip.dorm3d_photo_no_role = {
+	tip = "Character Unavailable",
+}
+
+_G.pg.base.gametip.dorm3d_furniture_locked = {
+	tip = "Furniture Unavailable",
+}
+
+_G.pg.base.gametip.dorm3d_accompany_locked = {
+	tip = "Unavailable",
+}
+
+_G.pg.base.gametip.dorm3d_role_locked = {
+	tip = "You must unlock this character first.",
+}
+
+_G.pg.base.gametip.dorm3d_volleyball_button = {
+	tip = "Beach Volleyball",
+}
+
+_G.pg.base.gametip.dorm3d_minigame_button1 = {
+	tip = "Minigame",
+}
+
+_G.pg.base.gametip.dorm3d_collection_title_en = {
+	tip = "Azur Lane",
+}
+
+_G.pg.base.gametip.dorm3d_collection_cost_tip = {
+	tip = "Accompanying her for 5 minutes will result in <icon name=stamina/>Energy -1 and Intimacy <color=#fc4670>+40</color>",
+}
+
+_G.pg.base.gametip.dorm3d_gift_story_unlock = {
+	tip = "Special Story Unlocked",
+}
+
+_G.pg.base.gametip.dorm3d_furniture_replace_tip = {
+	tip = "Please place the corresponding furniture.",
+}
+
+_G.pg.base.gametip.dorm3d_recall_locked = {
+	tip = "Unavailable?",
+}
+
+_G.pg.base.gametip.dorm3d_gift_maximum = {
+	tip = "You have reached the limit.",
+}
+
+_G.pg.base.gametip.dorm3d_need_construct_item = {
+	tip = "Insufficient permits.",
+}
+
+_G.pg.base.gametip.AR_plane_check = {
+	tip = "Please detect a level surface.",
+}
+
+_G.pg.base.gametip.AR_plane_long_press_to_summon = {
+	tip = "Tap and hold on a level surface to invite a character.",
+}
+
+_G.pg.base.gametip.AR_plane_distance_near = {
+	tip = "The character will be hidden if the distance between you is too short.",
+}
+
+_G.pg.base.gametip.AR_plane_summon_fail_by_near = {
+	tip = "Could not invite character; distance too short.",
+}
+
+_G.pg.base.gametip.AR_plane_summon_success = {
+	tip = "Character invited.",
+}
+
+_G.pg.base.gametip.dorm3d_day_night_switching = {
+	tip = "Already in time period: $1",
 }
 

@@ -27,7 +27,7 @@ function var0_0.ShaderMgr.Init(arg0_1, arg1_1)
 	end
 
 	local function var4_1(arg0_6)
-		ResourceMgr.Inst:LoadShaderAndCached("builtinpipeline/shaders", arg0_6, false, false)
+		ResourceMgr.Inst:LoadShaderAndCached("custom_builtin", arg0_6, false, false)
 	end
 
 	local var5_1 = {

@@ -45,6 +45,7 @@ function var0_0.execute(arg0_1, arg1_1)
 
 		var6_2.refreshChargeList = false
 
+		getProxy(ApartmentProxy):InitGiftDaily()
 		arg0_1:sendNotification(GAME.GET_CHARGE_LIST_DONE, {
 			chargedList = var0_2,
 			firstChargeIds = var2_2,

@@ -844,7 +844,8 @@ function var0_0.IsShowTipById(arg0_70)
 		[ActivityConst.WWF_TASK_ID] = WWFPtPage.IsShowRed,
 		[ActivityConst.NEWMEIXIV4_SKIRMISH_ID] = NewMeixiV4SkirmishPage.IsShowRed,
 		[ActivityConst.JIUJIU_YOYO_ID] = JiujiuYoyoPage.IsShowRed,
-		[ActivityConst.SENRANKAGURA_TRAIN_ACT_ID] = SenrankaguraTrainScene.IsShowRed
+		[ActivityConst.SENRANKAGURA_TRAIN_ACT_ID] = SenrankaguraTrainScene.IsShowRed,
+		[ActivityConst.DORM_SIGN_ID] = DormSignPage.IsShowRed
 	}
 
 	local var0_70 = var0_0.ShowTipTableById[arg0_70.id]
@@ -885,6 +886,10 @@ function var0_0.isShow(arg0_78)
 		return var6_78 > var6_78 - _.reduce(var4_78.goodsId, 0, function(arg0_80, arg1_80)
 			return arg0_80 + getProxy(ShopsProxy):getActivityShopById(var4_78.shopId):GetCommodityById(arg1_80):GetPurchasableCnt()
 		end)
+	elseif arg0_78:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TASK_RYZA and table.contains({
+		ActivityConst.DORM_SIGN_ID
+	}, arg0_78:getConfig("id")) then
+		return #getProxy(ActivityProxy):getActivityById(arg0_78:getConfig("id")):getConfig("config_data") ~= #getProxy(ActivityTaskProxy):getFinishTaskById(arg0_78:getConfig("id"))
 	end
 
 	return true

@@ -21,6 +21,11 @@ function var0_0.execute(arg0_1, arg1_1)
 		dialog_id = var1_1
 	}, 28016, function(arg0_2)
 		if arg0_2.result == 0 then
+			if pg.dorm3d_recall.get_id_list_by_story_id[var1_1] and not var5_1.talkDic[var1_1] then
+				PlayerPrefs.SetInt("apartment_collection_recall", var1_1)
+			end
+
+			var5_1 = var4_1:getApartment(var3_1)
 			var5_1.talkDic[var1_1] = true
 
 			var4_1:updateApartment(var5_1)

@@ -21,7 +21,7 @@ function var0_0.didEnter(arg0_3)
 	end)
 
 	arg0_3.awards = _.select(arg0_3.contextData.items or {}, function(arg0_6)
-		return arg0_6.type ~= DROP_TYPE_ICON_FRAME and arg0_6.type ~= DROP_TYPE_CHAT_FRAME
+		return arg0_6.type ~= DROP_TYPE_ICON_FRAME and arg0_6.type ~= DROP_TYPE_CHAT_FRAME and arg0_6.type ~= DROP_TYPE_LIVINGAREA_COVER
 	end)
 
 	local var0_3 = UIItemList

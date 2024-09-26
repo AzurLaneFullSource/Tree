@@ -343,6 +343,10 @@ function var0_0.Stop(arg0_29)
 		return
 	end
 
+	if arg0_29.currPlayer and arg0_29.currPlayer:WaitForEvent() then
+		return
+	end
+
 	arg0_29.state = var5_0
 
 	for iter0_29, iter1_29 in ipairs(arg0_29.players) do
@@ -635,6 +639,8 @@ end
 function var0_0.ForEscPress(arg0_64)
 	if arg0_64.recordPanel:IsShowing() then
 		arg0_64.recordPanel:Hide()
+	elseif arg0_64.currPlayer and arg0_64.currPlayer:WaitForEvent() or arg0_64.currPlayer and arg0_64.storyScript and arg0_64.storyScript.hideSkip then
+		-- block empty
 	else
 		arg0_64:TriggerSkipBtn()
 	end
@@ -925,8 +931,13 @@ function var0_0.Quit(arg0_89)
 	arg0_89.recordPanel:Dispose()
 	arg0_89.setSpeedPanel:Dispose()
 
+	if arg0_89.currPlayer and arg0_89.currPlayer:WaitForEvent() then
+		arg0_89:Clear()
+	end
+
 	arg0_89.state = var7_0
 	arg0_89.storyScript = nil
+	arg0_89.currPlayer = nil
 	arg0_89.playQueue = {}
 	arg0_89.playedList = {}
 	arg0_89.scenes = {}

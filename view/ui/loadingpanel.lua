@@ -70,12 +70,18 @@ end
 local var1_0 = 0
 
 function var0_0.on(arg0_12, arg1_12)
-	arg1_12 = defaultValue(arg1_12, true)
+	arg0_12.displayIndicator = defaultValue(arg0_12.displayIndicator, true) and arg1_12
 
 	setImageAlpha(arg0_12._tf, arg1_12 and 0.01 or 0)
 
-	if not arg1_12 then
+	if not arg0_12.displayIndicator then
 		setActive(arg0_12.indicator, arg1_12)
+
+		if arg0_12.delayTimer then
+			pg.TimeMgr.GetInstance():RemoveTimer(arg0_12.delayTimer)
+
+			arg0_12.delayTimer = nil
+		end
 	elseif not arg0_12.delayTimer then
 		arg0_12.delayTimer = pg.TimeMgr.GetInstance():AddTimer("loading", 1, 0, function()
 			setImageAlpha(arg0_12._tf, 0.2)
@@ -83,29 +89,31 @@ function var0_0.on(arg0_12, arg1_12)
 		end)
 	end
 
-	var1_0 = var1_0 + 1
-
-	if var1_0 > 0 then
+	if var1_0 * (var1_0 + 1) == 0 then
 		setActive(arg0_12._go, true)
 		arg0_12._go.transform:SetAsLastSibling()
 	end
+
+	var1_0 = var1_0 + 1
 end
 
 function var0_0.off(arg0_14)
-	if var1_0 > 0 then
-		var1_0 = var1_0 - 1
+	if var1_0 * (var1_0 - 1) == 0 then
+		setActive(arg0_14._go, false)
+		setActive(arg0_14.indicator, false)
 
-		if var1_0 == 0 then
-			setActive(arg0_14._go, false)
-			setActive(arg0_14.indicator, false)
+		arg0_14.displayIndicator = true
 
-			if arg0_14.delayTimer then
-				pg.TimeMgr.GetInstance():RemoveTimer(arg0_14.delayTimer)
+		if arg0_14.delayTimer then
+			pg.TimeMgr.GetInstance():RemoveTimer(arg0_14.delayTimer)
 
-				arg0_14.delayTimer = nil
-			end
+			arg0_14.delayTimer = nil
 		end
 	end
+
+	var1_0 = var1_0 - 1
+
+	assert(var1_0 >= 0)
 end
 
 function var0_0.displayBG(arg0_15, arg1_15)

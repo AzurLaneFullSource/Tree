@@ -51,6 +51,11 @@ function var0_0.OnInit(arg0_4)
 		container = arg0_4.containerTF,
 		iconSP = getImageSprite(arg0_4.iconTF:Find("MANGA"))
 	})
+	arg0_4.dormBtn = SettingsDormBtn.New({
+		tpl = arg0_4.tpl,
+		container = arg0_4.containerTF,
+		iconSP = getImageSprite(arg0_4.iconTF:Find("DORM"))
+	})
 	arg0_4.repairBtn = SettingsResRepairBtn.New({
 		tpl = arg0_4.tpl,
 		container = arg0_4.containerTF,
@@ -85,6 +90,10 @@ function var0_0.Dispose(arg0_5)
 		arg0_5.mangaBtn:Dispose()
 
 		arg0_5.mangaBtn = nil
+
+		arg0_5.dormBtn:Dispose()
+
+		arg0_5.dormBtn = nil
 
 		if arg0_5.mainGroupBtn then
 			arg0_5.mainGroupBtn:Dispose()

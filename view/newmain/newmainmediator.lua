@@ -59,9 +59,6 @@ function var0_0.register(arg0_1)
 		local var0_6 = getProxy(ChapterProxy)
 		local var1_6, var2_6 = var0_6:getLastMapForActivity()
 
-		warning(var1_6)
-		warning(var1_6 and var0_6:getMapById(var1_6):isUnlock())
-
 		if not var1_6 or not var0_6:getMapById(var1_6):isUnlock() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 		else
@@ -179,6 +176,7 @@ function var0_0.listNotificationInterests(arg0_20)
 		TechnologyConst.UPDATE_REDPOINT_ON_TOP,
 		MiniGameProxy.ON_HUB_DATA_UPDATE,
 		var0_0.REFRESH_VIEW,
+		GAME.CHANGE_LIVINGAREA_COVER_DONE,
 		CompensateProxy.UPDATE_ATTACHMENT_COUNT,
 		CompensateProxy.All_Compensate_Remove
 	}
@@ -226,6 +224,8 @@ function var0_0.handleNotification(arg0_21, arg1_21)
 			},
 			onRemoved = var1_21.callback
 		}))
+	elseif var0_21 == GAME.CHANGE_LIVINGAREA_COVER_DONE then
+		arg0_21.viewComponent:emit(NewMainScene.UPDATE_COVER)
 	end
 
 	arg0_21.viewComponent:emit(var0_21, var1_21)

@@ -141,17 +141,9 @@ function var0_0.updateTaskActivityData(arg0_6, arg1_6, arg2_6)
 	local var0_6 = pg.task_data_template[arg1_6]
 	local var1_6 = var0_6.type
 	local var2_6 = var0_6.sub_type
-	local var3_6 = getProxy(ActivityProxy):getActivityById(arg2_6)
 
-	if var3_6 and var1_6 == 6 then
-		assert(var3_6)
-
-		local var4_6 = var3_6:GetFinishedTaskIds()
-
-		if not table.contains(var4_6, arg1_6) then
-			table.insert(var4_6, arg1_6)
-			getProxy(ActivityProxy):updateActivity(var3_6)
-		end
+	if getProxy(ActivityProxy):getActivityById(arg2_6) and var1_6 == 6 then
+		getProxy(ActivityTaskProxy):finishActTask(arg2_6, arg1_6)
 	end
 end
 

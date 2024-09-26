@@ -245,21 +245,9 @@ function var0_0.initShip(arg0_26)
 	arg0_26.chatBg = arg0_26:findTF("main/character/chat/chatbgtop")
 	arg0_26.chatText = arg0_26:findTF("Text", arg0_26.chat)
 	rtf(arg0_26.chat).localScale = Vector3.New(0, 0, 1)
-	arg0_26.initChatBgH = arg0_26.chatText.sizeDelta.y
-	arg0_26.initfontSize = arg0_26.chatText:GetComponent(typeof(Text)).fontSize
+	arg0_26.initChatBgH = arg0_26.chatBg.sizeDelta.y
 	arg0_26.initChatTextH = arg0_26.chatText.sizeDelta.y
 	arg0_26.initfontSize = arg0_26.chatText:GetComponent(typeof(Text)).fontSize
-
-	if PLATFORM_CODE == PLATFORM_US then
-		local var0_26 = GetComponent(arg0_26.chatText, typeof(Text))
-
-		var0_26.lineSpacing = 1.1
-		var0_26.fontSize = 25
-	end
-
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_26.chat, {
-		groupName = LayerWeightConst.GROUP_SHIPINFOUI
-	})
 end
 
 function var0_0.initPages(arg0_27)
@@ -456,6 +444,9 @@ function var0_0.didEnter(arg0_40)
 	onButton(arg0_40, arg0_40.energyTF, function()
 		arg0_40:showEnergyDesc()
 	end)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_40.chat, {
+		groupName = LayerWeightConst.GROUP_SHIPINFOUI
+	})
 	pg.UIMgr.GetInstance():OverlayPanel(arg0_40.blurPanel, {
 		groupName = LayerWeightConst.GROUP_SHIPINFOUI
 	})
@@ -685,50 +676,48 @@ function var0_0.displayShipWord(arg0_66, arg1_66, arg2_66)
 
 		arg0_66.chat:SetAsLastSibling()
 
-		local var1_66 = arg0_66.chatText:GetComponent(typeof(Text))
-
 		if findTF(arg0_66.nowPainting, "fitter").childCount > 0 then
 			ShipExpressionHelper.SetExpression(findTF(arg0_66.nowPainting, "fitter"):GetChild(0), arg0_66.paintingCode, arg1_66, var0_66)
 		end
 
-		local var2_66, var3_66, var4_66 = ShipWordHelper.GetWordAndCV(arg0_66.shipVO.skinId, arg1_66, nil, nil, var0_66)
-		local var5_66 = arg0_66.chatText:GetComponent(typeof(Text))
+		local var1_66, var2_66, var3_66 = ShipWordHelper.GetWordAndCV(arg0_66.shipVO.skinId, arg1_66, nil, nil, var0_66)
+		local var4_66 = arg0_66.chatText:GetComponent(typeof(Text))
 
 		if PLATFORM_CODE ~= PLATFORM_US then
-			setText(arg0_66.chatText, SwitchSpecialChar(var4_66))
+			setText(arg0_66.chatText, SwitchSpecialChar(var3_66))
 		else
-			var5_66.fontSize = arg0_66.initfontSize
+			var4_66.fontSize = arg0_66.initfontSize
 
-			setTextEN(arg0_66.chatText, var4_66)
+			setTextEN(arg0_66.chatText, var3_66)
 
-			while var5_66.preferredHeight > arg0_66.initChatTextH do
-				var5_66.fontSize = var5_66.fontSize - 2
+			while var4_66.preferredHeight > arg0_66.initChatTextH do
+				var4_66.fontSize = var4_66.fontSize - 2
 
-				setTextEN(arg0_66.chatText, var4_66)
+				setTextEN(arg0_66.chatText, var3_66)
 
-				if var5_66.fontSize < 20 then
+				if var4_66.fontSize < 20 then
 					break
 				end
 			end
 		end
 
-		if #var5_66.text > CHAT_POP_STR_LEN then
-			var5_66.alignment = TextAnchor.MiddleLeft
+		if #var4_66.text > CHAT_POP_STR_LEN then
+			var4_66.alignment = TextAnchor.MiddleLeft
 		else
-			var5_66.alignment = TextAnchor.MiddleCenter
+			var4_66.alignment = TextAnchor.MiddleCenter
 		end
 
-		local var6_66 = var5_66.preferredHeight + 120
+		local var5_66 = var4_66.preferredHeight + 120
 
-		if var6_66 > arg0_66.initChatBgH then
-			arg0_66.chatBg.sizeDelta = Vector2.New(arg0_66.chatBg.sizeDelta.x, var6_66)
+		if var5_66 > arg0_66.initChatBgH then
+			arg0_66.chatBg.sizeDelta = Vector2.New(arg0_66.chatBg.sizeDelta.x, var5_66)
 		else
 			arg0_66.chatBg.sizeDelta = Vector2.New(arg0_66.chatBg.sizeDelta.x, arg0_66.initChatBgH)
 		end
 
-		local var7_66 = var4_0
+		local var6_66 = var4_0
 
-		local function var8_66()
+		local function var7_66()
 			if arg0_66.chatFlag then
 				if arg0_66.chatani1Id then
 					LeanTween.cancel(arg0_66.chatani1Id)
@@ -740,25 +729,25 @@ function var0_0.displayShipWord(arg0_66, arg1_66, arg2_66)
 			end
 
 			arg0_66.chatani1Id = LeanTween.scale(rtf(arg0_66.chat.gameObject), Vector3.New(1, 1, 1), var3_0):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
-				arg0_66.chatani2Id = LeanTween.scale(rtf(arg0_66.chat.gameObject), Vector3.New(0, 0, 1), var3_0):setEase(LeanTweenType.easeInBack):setDelay(var3_0 + var7_66):setOnComplete(System.Action(function()
+				arg0_66.chatani2Id = LeanTween.scale(rtf(arg0_66.chat.gameObject), Vector3.New(0, 0, 1), var3_0):setEase(LeanTweenType.easeInBack):setDelay(var3_0 + var6_66):setOnComplete(System.Action(function()
 					arg0_66.chatFlag = nil
 				end)).uniqueId
 			end)).uniqueId
 		end
 
-		if var3_66 then
+		if var2_66 then
 			arg0_66:StopPreVoice()
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var3_66, function(arg0_70)
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var2_66, function(arg0_70)
 				if arg0_70 then
-					var7_66 = arg0_70:GetLength() * 0.001
+					var6_66 = arg0_70:GetLength() * 0.001
 				end
 
-				var8_66()
+				var7_66()
 			end)
 
-			arg0_66.preVoiceContent = var3_66
+			arg0_66.preVoiceContent = var2_66
 		else
-			var8_66()
+			var7_66()
 		end
 	end
 end
@@ -1009,7 +998,7 @@ function var0_0.loadPainting(arg0_85, arg1_85, arg2_85)
 		iter1_85.localScale = Vector3(1, 1, 1)
 	end
 
-	if arg0_85.LoadShipVOId and not arg2_85 and arg0_85.LoadShipVOId == arg0_85.shipVO.id and arg0_85.LoadPaintingCode == arg1_85 then
+	if arg0_85.LoadShipVOId and not arg2_85 and arg0_85.LoadShipVOId == arg0_85.shipVO.id and arg0_85.LoadPaintingCode == arg1_85 and not arg2_85 then
 		return
 	end
 
@@ -1100,15 +1089,13 @@ function var0_0.loadSkinBg(arg0_93, arg1_93, arg2_93, arg3_93, arg4_93)
 		arg0_93.isMeta = arg3_93
 
 		if arg0_93.isDesign then
-			if arg0_93.bgEffect then
-				for iter0_93, iter1_93 in pairs(arg0_93.bgEffect) do
-					setActive(iter1_93, false)
-				end
+			if arg0_93.metaBg then
+				setActive(arg0_93.metaBg, false)
 			end
 
 			if arg0_93.bgEffect then
-				for iter2_93, iter3_93 in pairs(arg0_93.bgEffect) do
-					setActive(iter3_93, false)
+				for iter0_93, iter1_93 in pairs(arg0_93.bgEffect) do
+					setActive(iter1_93, false)
 				end
 			end
 
@@ -1170,14 +1157,14 @@ function var0_0.loadSkinBg(arg0_93, arg1_93, arg2_93, arg3_93, arg4_93)
 				setActive(arg0_93.metaBg, false)
 			end
 
-			for iter4_93 = 1, 5 do
+			for iter2_93 = 1, 5 do
 				local var0_93 = arg0_93.shipVO:getRarity()
 
-				if arg0_93.bgEffect[iter4_93] then
-					setActive(arg0_93.bgEffect[iter4_93], iter4_93 == var0_93 and ShipViewConst.currentPage ~= ShipViewConst.PAGE.REMOULD and not arg4_93)
-				elseif var0_93 > 2 and var0_93 == iter4_93 and not arg4_93 then
+				if arg0_93.bgEffect[iter2_93] then
+					setActive(arg0_93.bgEffect[iter2_93], iter2_93 == var0_93 and ShipViewConst.currentPage ~= ShipViewConst.PAGE.REMOULD and not arg4_93)
+				elseif var0_93 > 2 and var0_93 == iter2_93 and not arg4_93 then
 					PoolMgr.GetInstance():GetUI("al_bg02_" .. var0_93 - 1, true, function(arg0_96)
-						arg0_93.bgEffect[iter4_93] = arg0_96
+						arg0_93.bgEffect[iter2_93] = arg0_96
 
 						arg0_96.transform:SetParent(arg0_93._tf, false)
 

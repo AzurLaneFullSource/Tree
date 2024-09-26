@@ -3,6 +3,7 @@ local var0_0 = class("NewMainScene", import("..base.BaseUI"))
 var0_0.THEME_CLASSIC = 1
 var0_0.THEME_MELLOW = 2
 var0_0.OPEN_LIVEAREA = "NewMainScene:OPEN_LIVEAREA"
+var0_0.UPDATE_COVER = "NewMainScene:UPDATE_COVER"
 var0_0.FOLD = "NewMainScene:FOLD"
 var0_0.CHAT_STATE_CHANGE = "NewMainScene:CHAT_STATE_CHANGE"
 var0_0.ON_CHANGE_SKIN = "NewMainScene:ON_CHANGE_SKIN"

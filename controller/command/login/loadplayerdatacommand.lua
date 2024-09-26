@@ -241,6 +241,10 @@ function var0_0.execute(arg0_1, arg1_1)
 		{
 			ApartmentProxy,
 			true
+		},
+		{
+			LivingAreaCoverProxy,
+			true
 		}
 	})
 	pg.ConnectionMgr.GetInstance():setPacketIdx(1)
@@ -300,6 +304,12 @@ function var0_0.execute(arg0_1, arg1_1)
 
 		if MainCheckShipNumSequence.New():Check(arg0_2.ship_count) then
 			arg0_1:sendNotification(GAME.LOAD_PLAYER_DATA_DONE)
+		end
+
+		if Dorm3dRoomTemplateScene.FirstDefaultSetting then
+			arg0_1:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGraphics(Dorm3dRoomTemplateScene.FirstDefaultSetting))
+
+			Dorm3dRoomTemplateScene.FirstDefaultSetting = nil
 		end
 	end, nil, 60)
 end

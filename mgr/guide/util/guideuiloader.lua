@@ -10,16 +10,19 @@ function var0_0.Load(arg0_2, arg1_2, arg2_2)
 end
 
 function var0_0.LoadHighLightArea(arg0_3, arg1_3)
-	local var0_3 = arg1_3.isWorld and "wShowArea" or "wShowArea1"
+	local var0_3 = arg1_3.name
 
 	arg0_3:Load(var0_3, function(arg0_4)
 		if not arg1_3 then
 			return
 		end
 
-		arg0_4.sizeDelta = arg1_3.sizeDelta
-		arg0_4.pivot = arg1_3.pivot
-		arg0_4.localPosition = arg1_3.position
+		local var0_4 = arg0_4.pivot
+
+		arg0_4.localPosition = arg1_3.position + Vector3(var0_4.x * arg1_3.size.x, var0_4.y * arg1_3.size.y, 0)
+		arg0_4.anchorMin = Vector2(0.5, 0.5)
+		arg0_4.anchorMax = Vector2(0.5, 0.5)
+		arg0_4.sizeDelta = arg1_3.size + Vector2.one * arg1_3.length * 2
 	end)
 end
 

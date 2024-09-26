@@ -35,6 +35,7 @@ function var0_0.OnStart(arg0_2, arg1_2)
 	arg0_2.conentTxt = arg0_2:findTF("content", arg0_2.dialogueWin):GetComponent(typeof(Text))
 	arg0_2.typewriter = arg0_2:findTF("content", arg0_2.dialogueWin):GetComponent(typeof(Typewriter))
 	arg0_2.nameTr = arg0_2:findTF("content/name", arg0_2.dialogueWin)
+	arg0_2.tag4Dialog2 = arg0_2:findTF("content/tag", arg0_2.dialogueWin)
 	arg0_2.nameTxt = arg0_2:findTF("Text", arg0_2.nameTr):GetComponent(typeof(Text))
 	arg0_2.portraitTr = arg0_2:findTF("portrait", arg0_2.dialogueWin)
 	arg0_2.portraitImg = arg0_2.portraitTr:GetComponent(typeof(Image))
@@ -1406,23 +1407,30 @@ function var0_0.UpdateContent(arg0_102, arg1_102, arg2_102)
 		var0_102()
 	end
 
-	local var3_102, var4_102, var5_102, var6_102 = arg0_102:GetSideTF(arg1_102:GetSide())
+	local var3_102 = false
+	local var4_102, var5_102, var6_102, var7_102 = arg0_102:GetSideTF(arg1_102:GetSide())
 
-	if var4_102 then
-		local var7_102 = arg1_102:GetNameWithColor()
-		local var8_102 = var7_102 and var7_102 ~= ""
+	if var5_102 then
+		local var8_102 = arg1_102:GetNameWithColor()
+		local var9_102 = var8_102 and var8_102 ~= ""
 
-		setActive(var4_102, var8_102)
+		var3_102 = var9_102
 
-		if var8_102 then
-			local var9_102 = arg1_102:GetNameColorCode()
+		setActive(var5_102, var9_102)
 
-			var4_102:Find("Text"):GetComponent(typeof(Outline)).effectColor = Color.NewHex(var9_102)
+		if var9_102 then
+			local var10_102 = arg1_102:GetNameColorCode()
+
+			var5_102:Find("Text"):GetComponent(typeof(Outline)).effectColor = Color.NewHex(var10_102)
 		end
 
-		var5_102.text = var7_102
+		var6_102.text = var8_102
 
-		setText(var5_102.gameObject.transform:Find("subText"), arg1_102:GetSubActorName())
+		setText(var6_102.gameObject.transform:Find("subText"), arg1_102:GetSubActorName())
+	end
+
+	if arg0_102.script:IsDialogueStyle2() then
+		setActive(arg0_102.tag4Dialog2, not var3_102)
 	end
 end
 

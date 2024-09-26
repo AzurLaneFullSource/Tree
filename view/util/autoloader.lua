@@ -52,7 +52,7 @@ function var0_0.GetPrefab(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 	end)
 
 	if var1_0 then
-		print("AutoLoader Loading Path: " .. arg1_3 .. " Name: " .. arg2_3 .. " ;")
+		warning("AutoLoader Loading Path: " .. arg1_3 .. " Name: " .. arg2_3 .. " ;")
 	end
 
 	arg0_3._loadingRequest[arg4_3] = var1_3
@@ -85,7 +85,7 @@ function var0_0.GetPrefabBYStopLoading(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5)
 	end)
 
 	if var1_0 then
-		print("AutoLoader Loading Path: " .. arg1_5 .. " Name: " .. arg2_5 .. " ;")
+		warning("AutoLoader Loading Path: " .. arg1_5 .. " Name: " .. arg2_5 .. " ;")
 	end
 
 	arg0_5._loadingRequest[arg4_5] = var1_5
@@ -143,7 +143,7 @@ function var0_0.GetSpine(arg0_10, arg1_10, arg2_10, arg3_10)
 	end)
 
 	if var1_0 then
-		print("AutoLoader Loading Spine: " .. arg1_10 .. " ;")
+		warning("AutoLoader Loading Spine: " .. arg1_10 .. " ;")
 	end
 
 	arg0_10._loadingRequest[arg3_10] = var1_10
@@ -197,7 +197,7 @@ function var0_0.GetSpriteDirect(arg0_16, arg1_16, arg2_16, arg3_16, arg4_16)
 	end)
 
 	if var1_0 then
-		print("AutoLoader Loading Atlas: " .. arg1_16 .. " Name: " .. arg2_16 .. " ;")
+		warning("AutoLoader Loading Atlas: " .. arg1_16 .. " Name: " .. arg2_16 .. " ;")
 	end
 
 	arg0_16._loadingRequest[arg4_16] = var1_16
@@ -230,7 +230,7 @@ function var0_0.LoadPrefab(arg0_19, arg1_19, arg2_19, arg3_19, arg4_19)
 	end)
 
 	if var1_0 then
-		print("AutoLoader Loading Once Path: " .. arg1_19 .. " Name: " .. arg2_19 .. " ;")
+		warning("AutoLoader Loading Once Path: " .. arg1_19 .. " Name: " .. arg2_19 .. " ;")
 	end
 
 	arg0_19._loadingRequest[arg4_19] = var1_19
@@ -262,7 +262,7 @@ function var0_0.LoadLive2D(arg0_21, arg1_21, arg2_21, arg3_21)
 	end)
 
 	if var1_0 then
-		print("AutoLoader Loading Live2D Once Path: " .. var3_21 .. " Name: " .. arg1_21 .. " ;")
+		warning("AutoLoader Loading Live2D Once Path: " .. var3_21 .. " Name: " .. arg1_21 .. " ;")
 	end
 
 	arg0_21._loadingRequest[arg3_21] = var5_21
@@ -294,7 +294,7 @@ function var0_0.LoadSprite(arg0_23, arg1_23, arg2_23, arg3_23, arg4_23)
 	end)
 
 	if var1_0 then
-		print("AutoLoader Loading Once Path: " .. arg1_23 .. " Name: " .. arg2_23 .. " ;")
+		warning("AutoLoader Loading Once Path: " .. arg1_23 .. " Name: " .. arg2_23 .. " ;")
 	end
 
 	arg0_23._loadingRequest[var1_23] = var3_23
@@ -321,7 +321,7 @@ function var0_0.LoadReference(arg0_25, arg1_25, arg2_25, arg3_25, arg4_25, arg5_
 	end)
 
 	if var1_0 then
-		print("AutoLoader Loading Once Path: " .. arg1_25 .. " Name: " .. arg2_25 .. " ;")
+		warning("AutoLoader Loading Once Path: " .. arg1_25 .. " Name: " .. arg2_25 .. " ;")
 	end
 
 	arg0_25._loadingRequest[arg5_25] = var1_25
@@ -346,7 +346,7 @@ function var0_0.LoadBundle(arg0_28, arg1_28, arg2_28)
 	end)
 
 	if var1_0 then
-		print("AutoLoader Loading Bundle: " .. arg1_28 .. " ;")
+		warning("AutoLoader Loading Bundle: " .. arg1_28 .. " ;")
 	end
 
 	arg0_28._loadingRequest[var0_28] = var2_28
@@ -371,7 +371,7 @@ function var0_0.ClearRequest(arg0_32, arg1_32, arg2_32)
 		if var2_0 then
 			local var0_32 = arg0_32._loadingRequest[arg1_32]
 
-			print("AutoLoader Unload loading Path: " .. var0_32.path .. " Name: " .. var0_32.name .. " ;")
+			warning("AutoLoader Unload loading Path: " .. var0_32.path .. " Name: " .. var0_32.name .. " ;")
 		end
 
 		arg0_32._loadingRequest[arg1_32]:Stop()
@@ -385,13 +385,15 @@ function var0_0.ClearRequest(arg0_32, arg1_32, arg2_32)
 				local var1_32 = arg0_32._returnRequest[arg1_32]
 
 				if isa(var1_32, var11_0) then
-					print("AutoLoader Unload Spine: " .. var1_32.name .. " ;")
+					warning("AutoLoader Unload Spine: " .. var1_32.name .. " ;")
 				elseif isa(var1_32, var13_0) then
-					print("AutoLoader Unload Atlas: " .. var1_32.path .. " ;")
+					warning("AutoLoader Unload Atlas: " .. var1_32.path .. " ;")
 				elseif isa(var1_32, var12_0) then
-					print("AutoLoader Unload Bundle: " .. var1_32.path .. " ;")
+					warning("AutoLoader Unload Bundle: " .. var1_32.path .. " ;")
 				elseif isa(var1_32, var10_0) then
-					print("AutoLoader Unload Path: " .. var1_32.path .. " Name: " .. var1_32.name .. " ;")
+					warning("AutoLoader Unload Path: " .. var1_32.path .. " Name: " .. var1_32.name .. " ;")
+				else
+					warning("Not Handle " .. var1_32.__cname .. " " .. (var1_32.name or "NIL"))
 				end
 			end
 

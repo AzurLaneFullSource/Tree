@@ -776,6 +776,7 @@ function var0_0.willExit(arg0_44)
 	arg0_44._skillFloatCMDPool:Dispose()
 	ys.Battle.BattleState.GetInstance():ExitBattle()
 	pg.UIMgr.GetInstance():UnblurPanel(arg0_44.pauseWindow, arg0_44._tf)
+	ys.Battle.BattleCameraUtil.GetInstance().ActiveMainCemera(false)
 	pg.CameraFixMgr.GetInstance():disconnect(arg0_44.camEventId)
 end
 

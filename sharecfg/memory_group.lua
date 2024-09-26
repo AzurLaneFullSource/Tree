@@ -201,6 +201,7 @@ pg.memory_group = setmetatable({
 		301,
 		302,
 		303,
+		304,
 		501,
 		502,
 		503,
@@ -4810,6 +4811,17 @@ pg.base.memory_group = {
 		title = "Dancing Her Heart Out",
 		memories = {
 			3908
+		}
+	},
+	[304] = {
+		id = 304,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 0,
+		title = "宿舍焕新计划！",
+		memories = {
+			3921
 		}
 	},
 	[501] = {

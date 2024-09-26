@@ -28,14 +28,18 @@ function var0_0.ShowSingleItemBox(arg0_6, arg1_6)
 
 	updateDrop(var0_6, arg1_6.drop)
 
-	local var1_6 = arg1_6.name or arg1_6.drop.cfg.name or ""
+	local var1_6 = arg1_6.drop:getConfig("rarity")
 
-	setText(arg0_6._tf:Find("Window/Name"), var1_6)
+	GetImageSpriteFromAtlasAsync("weaponframes", "dorm3d_" .. ItemRarity.Rarity2Print(var1_6), var0_6)
+
+	local var2_6 = arg1_6.name or arg1_6.drop.cfg.name or ""
+
+	setText(arg0_6._tf:Find("Window/Name"), var2_6)
 	setText(arg0_6._tf:Find("Window/Count"), i18n("child_msg_owned", setColorStr(arg1_6.drop.count, "#39bfff")))
 
-	local var2_6 = arg0_6._tf:Find("Window/Content")
+	local var3_6 = arg0_6._tf:Find("Window/Content")
 
-	setText(var2_6, arg1_6.drop.cfg.desc)
+	setText(var3_6, arg1_6.drop.cfg.desc)
 end
 
 function var0_0.ShowCommonObtainWindow(arg0_7, arg1_7)

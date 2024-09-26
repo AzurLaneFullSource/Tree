@@ -320,95 +320,101 @@ function var0_0.selectActivity(arg0_34, arg1_34)
 	end
 end
 
-function var0_0.verifyTabs(arg0_35, arg1_35)
-	local var0_35 = arg0_35:getActivityIndex(arg1_35) or 1
-	local var1_35 = arg0_35.tabs:GetChild(var0_35 - 1)
-
-	triggerToggle(var1_35, true)
-end
-
-function var0_0.loadActivityPanel(arg0_36, arg1_36, arg2_36)
-	local var0_36 = arg2_36:getConfig("type")
-	local var1_36
-
-	if var1_36 and arg1_36 then
-		arg0_36:emit(ActivityMediator.OPEN_LAYER, var1_36)
-	elseif var1_36 and not arg1_36 then
-		arg0_36:emit(ActivityMediator.CLOSE_LAYER, var1_36.mediator)
-	else
-		originalPrint("------活动id为" .. arg2_36.id .. "类型为" .. arg2_36:getConfig("type") .. "的页面不存在")
+function var0_0.checkAutoHideActivity(arg0_35)
+	if arg0_35.activity and not arg0_35.activity:isShow() then
+		arg0_35:removeActivity(arg0_35.activity.id)
 	end
 end
 
-function var0_0.getBonusWindow(arg0_37, arg1_37, arg2_37)
-	local var0_37 = arg0_37:findTF(arg1_37)
+function var0_0.verifyTabs(arg0_36, arg1_36)
+	local var0_36 = arg0_36:getActivityIndex(arg1_36) or 1
+	local var1_36 = arg0_36.tabs:GetChild(var0_36 - 1)
 
-	if not var0_37 then
-		PoolMgr.GetInstance():GetUI("ActivitybonusWindow", true, function(arg0_38)
-			SetParent(arg0_38, arg0_37._tf, false)
+	triggerToggle(var1_36, true)
+end
 
-			arg0_38.name = arg1_37
+function var0_0.loadActivityPanel(arg0_37, arg1_37, arg2_37)
+	local var0_37 = arg2_37:getConfig("type")
+	local var1_37
 
-			arg2_37(arg0_38)
+	if var1_37 and arg1_37 then
+		arg0_37:emit(ActivityMediator.OPEN_LAYER, var1_37)
+	elseif var1_37 and not arg1_37 then
+		arg0_37:emit(ActivityMediator.CLOSE_LAYER, var1_37.mediator)
+	else
+		originalPrint("------活动id为" .. arg2_37.id .. "类型为" .. arg2_37:getConfig("type") .. "的页面不存在")
+	end
+end
+
+function var0_0.getBonusWindow(arg0_38, arg1_38, arg2_38)
+	local var0_38 = arg0_38:findTF(arg1_38)
+
+	if not var0_38 then
+		PoolMgr.GetInstance():GetUI("ActivitybonusWindow", true, function(arg0_39)
+			SetParent(arg0_39, arg0_38._tf, false)
+
+			arg0_39.name = arg1_38
+
+			arg2_38(arg0_39)
 		end)
 	else
-		arg2_37(var0_37)
+		arg2_38(var0_38)
 	end
 end
 
-function var0_0.ShowWindow(arg0_39, arg1_39, arg2_39)
-	local var0_39 = arg1_39.__cname
+function var0_0.ShowWindow(arg0_40, arg1_40, arg2_40)
+	local var0_40 = arg1_40.__cname
 
-	if not arg0_39.windowList[var0_39] then
-		arg0_39:getBonusWindow(var0_39, function(arg0_40)
-			arg0_39.windowList[var0_39] = arg1_39.New(tf(arg0_40), arg0_39)
+	if not arg0_40.windowList[var0_40] then
+		arg0_40:getBonusWindow(var0_40, function(arg0_41)
+			arg0_40.windowList[var0_40] = arg1_40.New(tf(arg0_41), arg0_40)
 
-			arg0_39.windowList[var0_39]:Show(arg2_39)
+			arg0_40.windowList[var0_40]:Show(arg2_40)
 		end)
 	else
-		arg0_39.windowList[var0_39]:Show(arg2_39)
+		arg0_40.windowList[var0_40]:Show(arg2_40)
 	end
 end
 
-function var0_0.HideWindow(arg0_41, arg1_41)
-	local var0_41 = arg1_41.__cname
+function var0_0.HideWindow(arg0_42, arg1_42)
+	local var0_42 = arg1_42.__cname
 
-	if not arg0_41.windowList[var0_41] then
+	if not arg0_42.windowList[var0_42] then
 		return
 	end
 
-	arg0_41.windowList[var0_41]:Hide()
+	arg0_42.windowList[var0_42]:Hide()
 end
 
-function var0_0.ShowAwardWindow(arg0_42, arg1_42, arg2_42, arg3_42)
-	arg0_42.awardWindow:ExecuteAction("Flush", arg1_42, arg2_42, arg3_42)
+function var0_0.ShowAwardWindow(arg0_43, arg1_43, arg2_43, arg3_43)
+	arg0_43.awardWindow:ExecuteAction("Flush", arg1_43, arg2_43, arg3_43)
 end
 
-function var0_0.OnChargeSuccess(arg0_43, arg1_43)
-	arg0_43.chargeTipWindow:ExecuteAction("Show", arg1_43)
+function var0_0.OnChargeSuccess(arg0_44, arg1_44)
+	arg0_44.chargeTipWindow:ExecuteAction("Show", arg1_44)
 end
 
-function var0_0.willExit(arg0_44)
-	arg0_44.shareData = nil
+function var0_0.willExit(arg0_45)
+	arg0_45.shareData = nil
 
-	for iter0_44, iter1_44 in pairs(arg0_44.pageDic) do
-		iter1_44:Destroy()
+	for iter0_45, iter1_45 in pairs(arg0_45.pageDic) do
+		iter1_45:Destroy()
 	end
 
-	for iter2_44, iter3_44 in pairs(arg0_44.windowList) do
-		iter3_44:Dispose()
+	for iter2_45, iter3_45 in pairs(arg0_45.windowList) do
+		iter3_45:Dispose()
 	end
 
-	if arg0_44.awardWindow then
-		arg0_44.awardWindow:Destroy()
+	if arg0_45.awardWindow then
+		arg0_45.awardWindow:Destroy()
 
-		arg0_44.awardWindow = nil
+		arg0_45.awardWindow = nil
 	end
 
-	if arg0_44.chargeTipWindow then
-		arg0_44.chargeTipWindow:Destroy()
+	if arg0_45.chargeTipWindow then
+		arg0_45.chargeTipWindow:Destroy()
 
-		arg0_44.chargeTipWindow = nil
+		arg0_45.chargeTipWindow = nil
 	end
 end
 

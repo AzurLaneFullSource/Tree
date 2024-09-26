@@ -39,186 +39,255 @@ function var0_0.Ctor(arg0_1, arg1_1)
 end
 
 function var0_0.update(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2)
-	arg0_2.goodsVO = arg1_2
+	if arg1_2:Selectable() then
+		arg0_2:updateSelectable(arg1_2, arg2_2, arg3_2, arg4_2)
+	else
+		arg0_2:updateSingle(arg1_2, arg2_2, arg3_2, arg4_2)
+	end
+end
 
-	local var0_2 = arg0_2.goodsVO:CheckCntLimit()
-	local var1_2 = var0_2 and not arg0_2.goodsVO:CheckArgLimit()
+function var0_0.updateSingle(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
+	arg0_3.goodsVO = arg1_3
 
-	setActive(arg0_2.mask, not var0_2 or var1_2)
-	setActive(arg0_2.selloutTag, not var0_2)
+	local var0_3 = arg0_3.goodsVO:CheckCntLimit()
+	local var1_3 = var0_3 and not arg0_3.goodsVO:CheckArgLimit()
 
-	if arg0_2.limitPassTag then
-		setActive(arg0_2.limitPassTag, false)
+	setActive(arg0_3.mask, not var0_3 or var1_3)
+	setActive(arg0_3.selloutTag, not var0_3)
+
+	if arg0_3.limitPassTag then
+		setActive(arg0_3.limitPassTag, false)
 	end
 
-	removeOnButton(arg0_2.mask)
+	removeOnButton(arg0_3.mask)
 
-	if var1_2 then
-		local var2_2, var3_2, var4_2 = arg0_2.goodsVO:CheckArgLimit()
+	if var1_3 then
+		local var2_3, var3_3, var4_3 = arg0_3.goodsVO:CheckArgLimit()
 
-		if var3_2 == "pass" then
-			setActive(arg0_2.limitPassTag, true)
-			setText(findTF(arg0_2.limitPassTag, "Text"), i18n("eventshop_unlock_info", var4_2))
-			onButton(arg0_2, arg0_2.mask, function()
-				pg.TipsMgr.GetInstance():ShowTips(i18n("eventshop_unlock_hint", var4_2))
+		if var3_3 == "pass" then
+			setActive(arg0_3.limitPassTag, true)
+			setText(findTF(arg0_3.limitPassTag, "Text"), i18n("eventshop_unlock_info", var4_3))
+			onButton(arg0_3, arg0_3.mask, function()
+				pg.TipsMgr.GetInstance():ShowTips(i18n("eventshop_unlock_hint", var4_3))
 			end, SFX_PANEL)
-		elseif var3_2 == 1 or var3_2 == 2 then
-			setText(arg0_2.unexchangeTag, var4_2)
+		elseif var3_3 == 1 or var3_3 == 2 or var3_3 == ShopArgs.LIMIT_ARGS_UNIQUE_SHIP then
+			setText(arg0_3.unexchangeTag, var4_3)
 
-			local var5_2 = ""
+			local var5_3 = ""
 
-			if var3_2 == 1 then
-				var5_2 = "LIMIT"
+			if var3_3 == 1 or var3_3 == ShopArgs.LIMIT_ARGS_UNIQUE_SHIP then
+				var5_3 = "LIMIT"
 			end
 
-			if var3_2 == 2 then
-				var5_2 = "LOCK"
+			if var3_3 == 2 then
+				var5_3 = "LOCK"
 			end
 
-			setText(arg0_2.unexchangeTag:Find("sellout_tag_en"), var5_2)
-			setActive(arg0_2.unexchangeTag, true)
+			setText(arg0_3.unexchangeTag:Find("sellout_tag_en"), var5_3)
+			setActive(arg0_3.unexchangeTag, true)
 		end
 	end
 
-	local var6_2 = Drop.New({
-		type = arg1_2:getConfig("commodity_type"),
-		id = arg1_2:getConfig("commodity_id"),
-		count = arg1_2:getConfig("num")
+	local var6_3 = Drop.New({
+		type = arg1_3:getConfig("commodity_type"),
+		id = arg1_3:getConfig("commodity_id"),
+		count = arg1_3:getConfig("num")
 	})
 
-	updateDrop(arg0_2.itemTF, var6_2)
-	setActive(arg0_2.limitTimeSellTF, false)
+	updateDrop(arg0_3.itemTF, var6_3)
+	setActive(arg0_3.limitTimeSellTF, false)
 
-	if var0_2 then
-		local var7_2, var8_2, var9_2 = arg0_2.goodsVO:CheckTimeLimit()
+	if var0_3 then
+		local var7_3, var8_3, var9_3 = arg0_3.goodsVO:CheckTimeLimit()
 
-		setActive(arg0_2.limitTimeSellTF, var7_2 and var8_2)
+		setActive(arg0_3.limitTimeSellTF, var7_3 and var8_3)
 
-		if var7_2 and not var8_2 then
-			setActive(arg0_2.mask, true)
-			setActive(arg0_2.sellEndTag, true)
-			removeOnButton(arg0_2.mask)
-			onButton(arg0_2, arg0_2.mask, function()
-				if var9_2 then
-					pg.TipsMgr.GetInstance():ShowTips(i18n("tip_build_ticket_exchange_expired", var6_2:getName()))
+		if var7_3 and not var8_3 then
+			setActive(arg0_3.mask, true)
+			setActive(arg0_3.sellEndTag, true)
+			removeOnButton(arg0_3.mask)
+			onButton(arg0_3, arg0_3.mask, function()
+				if var9_3 then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("tip_build_ticket_exchange_expired", var6_3:getName()))
 				end
 			end, SFX_PANEL)
 		end
 	end
 
 	GetSpriteFromAtlasAsync(Drop.New({
-		type = arg1_2:getConfig("resource_category"),
-		id = arg1_2:getConfig("resource_type")
-	}):getIcon(), "", function(arg0_5)
-		arg0_2.resIconTF.sprite = arg0_5
+		type = arg1_3:getConfig("resource_category"),
+		id = arg1_3:getConfig("resource_type")
+	}):getIcon(), "", function(arg0_6)
+		arg0_3.resIconTF.sprite = arg0_6
 	end)
 
-	arg0_2.countTF.text = arg1_2:getConfig("resource_num")
+	arg0_3.countTF.text = arg1_3:getConfig("resource_num")
 
-	local var10_2 = var6_2:getName() or "??"
+	local var10_3 = var6_3:getName() or "??"
 
-	if string.match(var10_2, "(%d+)") then
-		setText(arg0_2.nameTxt, shortenString(var10_2, 5))
+	if string.match(var10_3, "(%d+)") then
+		setText(arg0_3.nameTxt, shortenString(var10_3, 5))
 	else
-		setText(arg0_2.nameTxt, shortenString(var10_2, 6))
+		setText(arg0_3.nameTxt, shortenString(var10_3, 6))
 	end
 
-	local var11_2 = arg1_2:getConfig("num_limit")
+	local var11_3 = arg1_3:getConfig("num_limit")
 
-	if var11_2 == 0 then
-		arg0_2.limitCountTF.text = i18n("common_no_limit")
+	if var11_3 == 0 then
+		arg0_3.limitCountTF.text = i18n("common_no_limit")
 	else
-		local var12_2 = arg1_2:GetPurchasableCnt()
+		local var12_3 = arg1_3:GetPurchasableCnt()
 
-		arg0_2.limitCountTF.text = math.max(var12_2, 0) .. "/" .. var11_2
+		arg0_3.limitCountTF.text = math.max(var12_3, 0) .. "/" .. var11_3
 	end
 
-	local var13_2 = var0_0.Color[arg2_2] or var0_0.DefaultColor
+	local var13_3 = var0_0.Color[arg2_3] or var0_0.DefaultColor
 
-	arg0_2.limitCountTF.color = arg3_2 or Color.New(unpack(var13_2))
-	arg0_2.limitCountLabelTF.color = arg3_2 or Color.New(unpack(var13_2))
-	arg4_2 = arg4_2 or Color.New(0, 0, 0, 1)
+	arg0_3.limitCountTF.color = arg3_3 or Color.New(unpack(var13_3))
+	arg0_3.limitCountLabelTF.color = arg3_3 or Color.New(unpack(var13_3))
+	arg4_3 = arg4_3 or Color.New(0, 0, 0, 1)
 
-	if GetComponent(arg0_2.limitCountTF, typeof(Outline)) then
-		setOutlineColor(arg0_2.limitCountTF, arg4_2)
+	if GetComponent(arg0_3.limitCountTF, typeof(Outline)) then
+		setOutlineColor(arg0_3.limitCountTF, arg4_3)
 	end
 
-	if GetComponent(arg0_2.limitCountLabelTF, typeof(Outline)) then
-		setOutlineColor(arg0_2.limitCountLabelTF, arg4_2)
+	if GetComponent(arg0_3.limitCountLabelTF, typeof(Outline)) then
+		setOutlineColor(arg0_3.limitCountLabelTF, arg4_3)
 	end
 end
 
-function var0_0.setAsLastSibling(arg0_6)
-	arg0_6.tr:SetAsLastSibling()
-end
+function var0_0.updateSelectable(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
+	arg0_7.goodsVO = arg1_7
 
-function var0_0.StaticUpdate(arg0_7, arg1_7, arg2_7, arg3_7)
-	local var0_7 = tf(arg0_7)
-	local var1_7 = findTF(var0_7, "item")
-	local var2_7 = findTF(var0_7, "item/name_mask/name")
-	local var3_7 = findTF(var0_7, "item/consume/contain/icon"):GetComponent(typeof(Image))
-	local var4_7 = var0_7:Find("mask")
-	local var5_7 = var0_7:Find("mask/tag/sellout_tag")
-	local var6_7 = findTF(var0_7, "item/consume/contain/Text"):GetComponent(typeof(Text))
-	local var7_7 = findTF(var0_7, "item/discount")
-
-	setActive(var7_7, false)
-
-	local var8_7 = findTF(var0_7, "item/count_contain/count"):GetComponent(typeof(Text))
-	local var9_7 = findTF(var0_7, "item/count_contain/label"):GetComponent(typeof(Text))
-	local var10_7, var11_7 = arg1_7:canPurchase()
-
-	setActive(var4_7, not var10_7)
-	setActive(var5_7, not var10_7)
-
-	local var12_7 = Drop.New({
-		type = arg1_7:getConfig("commodity_type"),
-		id = arg1_7:getConfig("commodity_id"),
-		count = arg1_7:getConfig("num")
+	local var0_7 = Drop.New({
+		count = 1,
+		type = DROP_TYPE_ITEM,
+		id = arg1_7:getConfig("commodity_id_list_show")
 	})
 
-	updateDrop(var1_7, var12_7)
+	updateDrop(arg0_7.itemTF, var0_7)
+	setActive(arg0_7.mask, false)
+	setActive(arg0_7.selloutTag, fasle)
 
-	local var13_7 = var12_7:getConfig("name") or "??"
-
-	var6_7.text = arg1_7:getConfig("resource_num")
-
-	if string.match(var13_7, "(%d+)") then
-		setText(var2_7, shortenString(var13_7, 5))
-	else
-		setText(var2_7, shortenString(var13_7, 6))
+	if arg0_7.limitPassTag then
+		setActive(arg0_7.limitPassTag, false)
 	end
 
-	var3_7.sprite = GetSpriteFromAtlas(Drop.New({
+	removeOnButton(arg0_7.mask)
+	setActive(arg0_7.limitTimeSellTF, false)
+	GetSpriteFromAtlasAsync(Drop.New({
 		type = arg1_7:getConfig("resource_category"),
 		id = arg1_7:getConfig("resource_type")
+	}):getIcon(), "", function(arg0_8)
+		arg0_7.resIconTF.sprite = arg0_8
+	end)
+
+	arg0_7.countTF.text = arg1_7:getConfig("resource_num")
+
+	local var1_7 = var0_7:getName() or "??"
+
+	if string.match(var1_7, "(%d+)") then
+		setText(arg0_7.nameTxt, shortenString(var1_7, 5))
+	else
+		setText(arg0_7.nameTxt, shortenString(var1_7, 6))
+	end
+
+	local var2_7 = arg1_7:getConfig("num_limit")
+
+	if var2_7 == 0 then
+		arg0_7.limitCountTF.text = i18n("common_no_limit")
+	else
+		local var3_7 = arg1_7:GetPurchasableCnt()
+
+		arg0_7.limitCountTF.text = math.max(var3_7, 0) .. "/" .. var2_7
+	end
+
+	local var4_7 = var0_0.Color[arg2_7] or var0_0.DefaultColor
+
+	arg0_7.limitCountTF.color = arg3_7 or Color.New(unpack(var4_7))
+	arg0_7.limitCountLabelTF.color = arg3_7 or Color.New(unpack(var4_7))
+	arg4_7 = arg4_7 or Color.New(0, 0, 0, 1)
+
+	if GetComponent(arg0_7.limitCountTF, typeof(Outline)) then
+		setOutlineColor(arg0_7.limitCountTF, arg4_7)
+	end
+
+	if GetComponent(arg0_7.limitCountLabelTF, typeof(Outline)) then
+		setOutlineColor(arg0_7.limitCountLabelTF, arg4_7)
+	end
+end
+
+function var0_0.setAsLastSibling(arg0_9)
+	arg0_9.tr:SetAsLastSibling()
+end
+
+function var0_0.StaticUpdate(arg0_10, arg1_10, arg2_10, arg3_10)
+	local var0_10 = tf(arg0_10)
+	local var1_10 = findTF(var0_10, "item")
+	local var2_10 = findTF(var0_10, "item/name_mask/name")
+	local var3_10 = findTF(var0_10, "item/consume/contain/icon"):GetComponent(typeof(Image))
+	local var4_10 = var0_10:Find("mask")
+	local var5_10 = var0_10:Find("mask/tag/sellout_tag")
+	local var6_10 = findTF(var0_10, "item/consume/contain/Text"):GetComponent(typeof(Text))
+	local var7_10 = findTF(var0_10, "item/discount")
+
+	setActive(var7_10, false)
+
+	local var8_10 = findTF(var0_10, "item/count_contain/count"):GetComponent(typeof(Text))
+	local var9_10 = findTF(var0_10, "item/count_contain/label"):GetComponent(typeof(Text))
+	local var10_10, var11_10 = arg1_10:canPurchase()
+
+	setActive(var4_10, not var10_10)
+	setActive(var5_10, not var10_10)
+
+	local var12_10 = Drop.New({
+		type = arg1_10:getConfig("commodity_type"),
+		id = arg1_10:getConfig("commodity_id"),
+		count = arg1_10:getConfig("num")
+	})
+
+	updateDrop(var1_10, var12_10)
+
+	local var13_10 = var12_10:getConfig("name") or "??"
+
+	var6_10.text = arg1_10:getConfig("resource_num")
+
+	if string.match(var13_10, "(%d+)") then
+		setText(var2_10, shortenString(var13_10, 5))
+	else
+		setText(var2_10, shortenString(var13_10, 6))
+	end
+
+	var3_10.sprite = GetSpriteFromAtlas(Drop.New({
+		type = arg1_10:getConfig("resource_category"),
+		id = arg1_10:getConfig("resource_type")
 	}):getIcon(), "")
 
-	if arg1_7:getConfig("num_limit") == 0 then
-		var8_7.text = i18n("common_no_limit")
+	if arg1_10:getConfig("num_limit") == 0 then
+		var8_10.text = i18n("common_no_limit")
 	else
-		local var14_7 = arg1_7:getConfig("num_limit")
+		local var14_10 = arg1_10:getConfig("num_limit")
 
-		if var12_7.type == DROP_TYPE_SKIN and not var10_7 then
-			var8_7.text = "0/" .. var14_7
+		if var12_10.type == DROP_TYPE_SKIN and not var10_10 then
+			var8_10.text = "0/" .. var14_10
 		else
-			var8_7.text = var14_7 - arg1_7.buyCount .. "/" .. var14_7
+			var8_10.text = var14_10 - arg1_10.buyCount .. "/" .. var14_10
 		end
 	end
 
-	local var15_7 = var0_0.Color[arg2_7] or var0_0.DefaultColor
+	local var15_10 = var0_0.Color[arg2_10] or var0_0.DefaultColor
 
-	var8_7.color = arg3_7 or Color.New(var15_7[1], var15_7[2], var15_7[3], 1)
-	var9_7.color = arg3_7 or Color.New(var15_7[1], var15_7[2], var15_7[3], 1)
+	var8_10.color = arg3_10 or Color.New(var15_10[1], var15_10[2], var15_10[3], 1)
+	var9_10.color = arg3_10 or Color.New(var15_10[1], var15_10[2], var15_10[3], 1)
 
-	if arg1_7:getConfig("num_limit") >= 99 then
-		var9_7.text = i18n("shop_label_unlimt_cnt")
-		var8_7.text = ""
+	if arg1_10:getConfig("num_limit") >= 99 then
+		var9_10.text = i18n("shop_label_unlimt_cnt")
+		var8_10.text = ""
 	end
 end
 
-function var0_0.OnDispose(arg0_8)
-	arg0_8.goodsVO = nil
+function var0_0.OnDispose(arg0_11)
+	arg0_11.goodsVO = nil
 end
 
 return var0_0

@@ -17,6 +17,8 @@ var0_0.TYPE_NEW_SERVER = 15
 var0_0.TYPE_MINI_GAME = 16
 var0_0.TYPE_QUOTA = 17
 var0_0.TYPE_WORLD_NSHOP = 18
+var0_0.TYPE_CRUISE = 19
+var0_0.TYPE_ACTIVITY_SELECTABLE = 20
 var0_0.GEM = 0
 var0_0.GIFT_BOX = 1
 var0_0.MONTH_CARD = 2
@@ -67,35 +69,38 @@ local var1_0 = {
 	end,
 	[var0_0.TYPE_WORLD_NSHOP] = function(arg0_12, arg1_12)
 		return WorldNShopCommodity.New(arg0_12, arg1_12)
+	end,
+	[var0_0.TYPE_ACTIVITY_SELECTABLE] = function(arg0_13, arg1_13)
+		return ActivitySelectableCommodity.New(arg0_13, arg1_13)
 	end
 }
 
-function var0_0.Create(arg0_13, arg1_13)
-	return switch(arg1_13, var1_0, function(arg0_14, arg1_14)
-		return CommonCommodity.New(arg0_14, arg1_14)
-	end, arg0_13, arg1_13)
+function var0_0.Create(arg0_14, arg1_14)
+	return switch(arg1_14, var1_0, function(arg0_15, arg1_15)
+		return CommonCommodity.New(arg0_15, arg1_15)
+	end, arg0_14, arg1_14)
 end
 
-function var0_0.ExistFurniture(arg0_15)
-	return pg.shop_furniture_relation[arg0_15] ~= nil
+function var0_0.ExistFurniture(arg0_16)
+	return pg.shop_furniture_relation[arg0_16] ~= nil
 end
 
-function var0_0.Id2FurnitureId(arg0_16)
-	return pg.shop_furniture_relation[arg0_16].fur_id
+function var0_0.Id2FurnitureId(arg0_17)
+	return pg.shop_furniture_relation[arg0_17].fur_id
 end
 
-function var0_0.FurnitureId2Id(arg0_17)
-	local var0_17 = pg.shop_furniture_relation.get_id_list_by_fur_id[arg0_17]
+function var0_0.FurnitureId2Id(arg0_18)
+	local var0_18 = pg.shop_furniture_relation.get_id_list_by_fur_id[arg0_18]
 
-	return var0_17 and var0_17[1]
+	return var0_18 and var0_18[1]
 end
 
-function var0_0.GetFurnitureConfig(arg0_18)
-	return pg.shop_furniture_relation[arg0_18]
+function var0_0.GetFurnitureConfig(arg0_19)
+	return pg.shop_furniture_relation[arg0_19]
 end
 
-function var0_0.Id2ShipSkinId(arg0_19)
-	return pg.shop_template[arg0_19].effect_args[1]
+function var0_0.Id2ShipSkinId(arg0_20)
+	return pg.shop_template[arg0_20].effect_args[1]
 end
 
 return var0_0

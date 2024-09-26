@@ -57,8 +57,12 @@ end
 function var0_0.onUpdateTask(arg0_7, arg1_7, arg2_7)
 	var0_0.super.onUpdateTask(arg0_7, arg1_7, arg2_7)
 
+	local var0_7 = arg0_7.taskCards[arg2_7]
+
+	arg2_7.name = var0_7.taskVO.id
+
 	if arg1_7 == 0 then
-		arg0_7.taskCards[arg2_7].tip.anchoredPosition3D = Vector3(-5, -25)
+		var0_7.tip.anchoredPosition3D = Vector3(-5, -25)
 	end
 end
 
@@ -152,95 +156,99 @@ function var0_0.Flush(arg0_16, arg1_16)
 		end
 	end
 
-	table.sort(arg0_16.taskVOs, function(arg0_17, arg1_17)
-		local var0_17 = arg0_17:getTaskStatus(arg0_17)
-		local var1_17 = arg1_17:getTaskStatus(arg1_17)
-
-		if var0_17 == var1_17 then
-			return (arg0_17.isWeekTask and 0 or 1) > (arg1_17.isWeekTask and 0 or 1)
-		else
-			return var1_17 < var0_17
+	table.sort(arg0_16.taskVOs, CompareFuncs({
+		function(arg0_17)
+			return -arg0_17:getTaskStatus(arg0_17)
+		end,
+		function(arg0_18)
+			return pg.NewGuideMgr.GetInstance():IsBusy() and arg0_18.id == getDorm3dGameset("drom3d_weekly_task")[1] and 0 or 1
+		end,
+		function(arg0_19)
+			return arg0_19.isWeekTask and 1 or 0
+		end,
+		function(arg0_20)
+			return arg0_20.id
 		end
-	end)
+	}))
 	arg0_16:Show()
 	arg0_16._scrollView:SetTotalCount(#arg0_16.taskVOs, -1)
 end
 
-function var0_0.UpdateWeekProgress(arg0_18, arg1_18)
-	arg0_18:UpdateWeekProgressGetBtn(arg1_18)
+function var0_0.UpdateWeekProgress(arg0_21, arg1_21)
+	arg0_21:UpdateWeekProgressGetBtn(arg1_21)
 
-	arg0_18.phaseTxt.text = arg1_18:GetPhase() .. "/" .. arg1_18:GetTotalPhase()
+	arg0_21.phaseTxt.text = arg1_21:GetPhase() .. "/" .. arg1_21:GetTotalPhase()
 
-	local var0_18 = arg1_18:GetProgress()
-	local var1_18 = arg1_18:GetTarget()
+	local var0_21 = arg1_21:GetProgress()
+	local var1_21 = arg1_21:GetTarget()
 
-	arg0_18.progressSlider.value = var0_18 / var1_18
-	arg0_18.progressTxt.text = var0_18 .. "/" .. var1_18
+	arg0_21.progressSlider.value = var0_21 / var1_21
+	arg0_21.progressTxt.text = var0_21 .. "/" .. var1_21
 
-	local var2_18 = arg1_18:GetDropList()
+	local var2_21 = arg1_21:GetDropList()
 
-	arg0_18.awardList:make(function(arg0_19, arg1_19, arg2_19)
-		if arg0_19 == UIItemList.EventUpdate then
-			local var0_19 = var2_18[arg1_19 + 1]
-			local var1_19 = {
-				type = var0_19[1],
-				id = var0_19[2],
-				count = var0_19[3]
+	arg0_21.awardList:make(function(arg0_22, arg1_22, arg2_22)
+		if arg0_22 == UIItemList.EventUpdate then
+			local var0_22 = var2_21[arg1_22 + 1]
+			local var1_22 = {
+				type = var0_22[1],
+				id = var0_22[2],
+				count = var0_22[3]
 			}
 
-			updateDrop(arg2_19, var1_19)
-			onButton(arg0_18, arg2_19, function()
-				arg0_18:emit(TaskMediator.ON_DROP, var1_19)
+			updateDrop(arg2_22, var1_22)
+			onButton(arg0_21, arg2_22, function()
+				arg0_21:emit(TaskMediator.ON_DROP, var1_22)
 			end, SFX_PANEL)
 		end
 	end)
-	arg0_18.awardList:align(#var2_18)
+	arg0_21.awardList:align(#var2_21)
 end
 
-function var0_0.UpdateWeekProgressGetBtn(arg0_21, arg1_21)
-	local var0_21 = arg1_21:CanUpgrade()
+function var0_0.UpdateWeekProgressGetBtn(arg0_24, arg1_24)
+	local var0_24 = arg1_24:CanUpgrade()
 
-	setGray(arg0_21.getBtn, not var0_21, false)
-	setActive(arg0_21.getBtnEnableTF, var0_21)
-	setActive(arg0_21.getBtnDisableTF, not var0_21)
-	setActive(arg0_21.tip, var0_21)
-	onButton(arg0_21, arg0_21.getBtn, function()
-		if var0_21 then
-			arg0_21:JudgeOverflow(arg1_21, function()
-				arg0_21:emit(TaskMediator.ON_SUBMIT_WEEK_PROGREE)
+	setGray(arg0_24.getBtn, not var0_24, false)
+	setActive(arg0_24.getBtnEnableTF, var0_24)
+	setActive(arg0_24.getBtnDisableTF, not var0_24)
+	setActive(arg0_24.tip, var0_24)
+	onButton(arg0_24, arg0_24.getBtn, function()
+		if var0_24 then
+			arg0_24:JudgeOverflow(arg1_24, function()
+				arg0_24:emit(TaskMediator.ON_SUBMIT_WEEK_PROGREE)
 			end)
 		end
 	end, SFX_PANEL)
 end
 
-function var0_0.JudgeOverflow(arg0_24, arg1_24, arg2_24)
-	local var0_24 = getProxy(PlayerProxy):getRawData()
-	local var1_24 = pg.gameset.urpt_chapter_max.description[1]
-	local var2_24 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var1_24)
-	local var3_24 = arg1_24:GetDropList()
-	local var4_24, var5_24 = Task.StaticJudgeOverflow(var0_24.gold, var0_24.oil, var2_24, true, true, var3_24)
+function var0_0.JudgeOverflow(arg0_27, arg1_27, arg2_27)
+	local var0_27 = getProxy(PlayerProxy):getRawData()
+	local var1_27 = pg.gameset.urpt_chapter_max.description[1]
+	local var2_27 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var1_27)
+	local var3_27 = arg1_27:GetDropList()
+	local var4_27, var5_27 = Task.StaticJudgeOverflow(var0_27.gold, var0_27.oil, var2_27, true, true, var3_27)
 
-	if var4_24 then
+	if var4_27 then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_ITEM_BOX,
 			content = i18n("award_max_warning"),
-			items = var5_24,
-			onYes = arg2_24
+			items = var5_27,
+			onYes = arg2_27
 		})
 	else
-		arg2_24()
+		arg2_27()
 	end
 end
 
-function var0_0.OnDestroy(arg0_25)
-	arg0_25._scrollView.onValueChanged:RemoveAllListeners()
+function var0_0.OnDestroy(arg0_28)
+	arg0_28._scrollView.onValueChanged:RemoveAllListeners()
 end
 
-function var0_0.RefreshWeekTaskPageBefore(arg0_26, arg1_26)
-	local var0_26 = arg0_26:GetCard(arg1_26)
+function var0_0.RefreshWeekTaskPageBefore(arg0_29, arg1_29)
+	local var0_29 = arg0_29:GetCard(arg1_29)
 
-	if var0_26 then
-		setActive(var0_26._go, false)
+	if var0_29 then
+		setActive(var0_29._go, false)
 	end
 end
 
