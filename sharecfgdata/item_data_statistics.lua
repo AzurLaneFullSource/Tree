@@ -34842,7 +34842,7 @@ _G.pg.base.item_data_statistics[30545] = {
 
 _G.pg.base.item_data_statistics[30546] = {
 	compose_number = 0,
-	display = "使用后可从「红月之夜」主题外观装备中任意选择一种获得1个",
+	display = "Can be used to receive one Blood Moon-themed gear skin of your choosing.",
 	display_effect = "",
 	icon = "Props/appearanceboxhongyuezixuan",
 	id = 30546,
@@ -34850,7 +34850,7 @@ _G.pg.base.item_data_statistics[30546] = {
 	limit = "[]",
 	link_id = 0,
 	max_num = 0,
-	name = "定向外观装备箱(红月)",
+	name = "Selection Gear Box (Blood Moon)",
 	open_directly = 0,
 	order = 0,
 	other_item_cost = "[]",

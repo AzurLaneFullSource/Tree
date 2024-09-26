@@ -4819,7 +4819,7 @@ pg.base.memory_group = {
 		icon = "title_event",
 		type = 2,
 		link_event = 0,
-		title = "宿舍焕新计划！",
+		title = "The Dorm Extension Project",
 		memories = {
 			3921
 		}
