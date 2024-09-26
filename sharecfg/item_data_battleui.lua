@@ -26,12 +26,12 @@ pg.item_data_battleui = {
 	},
 	[102] = {
 		key = "SkinNormal_20240912",
-		name = "赛博纪元",
-		desc = "采用赛博朋克风格的设计，充满了动态效果与光影变化，为热爱科幻风格的指挥官提供沉浸式的体验。",
+		name = "Cyber",
+		desc = "A UI for enthusiasts of science-fiction. Features some animations and light effects in places.",
 		display_icon = "ui_102",
 		is_unlock = 1,
 		rare = 3,
-		unlock = "世界巡游十九期获取",
+		unlock = "Cruise Missions S19",
 		id = 102,
 		icon = "102",
 		scene = {}

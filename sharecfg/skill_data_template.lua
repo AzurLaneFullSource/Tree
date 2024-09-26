@@ -148161,11 +148161,11 @@ pg.base.skill_data_template = {
 	},
 	[801455] = {
 		desc_get = "",
-		name = "湮烬之核·{namecode:89}I",
+		name = "Smoldering Core - Houshou I",
 		id = 801455,
 		type = 3,
 		max_level = 1,
-		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低2%",
+		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 2.0%.",
 		system_transform = {
 			[51] = 801455
 		},
@@ -148177,11 +148177,11 @@ pg.base.skill_data_template = {
 	},
 	[801457] = {
 		desc_get = "",
-		name = "湮烬之核·{namecode:89}II",
+		name = "Smoldering Core - Houshou II",
 		id = 801457,
 		type = 3,
 		max_level = 1,
-		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低6%",
+		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 6.0%.",
 		system_transform = {
 			[51] = 801457
 		},

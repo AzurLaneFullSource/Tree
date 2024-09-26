@@ -3828,7 +3828,7 @@ pg.fleet_tech_ship_class = {
 	},
 	[970604] = {
 		shiptype = 6,
-		name = "凤翔·META",
+		name = "Houshou META",
 		nation = 97,
 		id = 970604,
 		t_level_1 = 3,
