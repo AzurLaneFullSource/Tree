@@ -244,38 +244,40 @@ function var0_0.DelDir(arg0_19)
 		var0_19 = var0_19 .. "/"
 	end
 
-	warning(var1_19)
-	warning(var0_19)
+	originalPrint("fullCacheDirPath", tostring(var0_19))
+	originalPrint("shortDirPath:", tostring(arg0_19))
+	originalPrint("fullDirPath", tostring(var1_19))
 
 	local var2_19 = {}
 	local var3_19 = System.IO.Directory
 	local var4_19 = ReflectionHelp.RefGetField(typeof("System.IO.SearchOption"), "AllDirectories", nil)
 
-	warning(tostring(var3_19.Exists(var1_19)))
+	originalPrint("fullDirPath Exist:", tostring(var3_19.Exists(var1_19)))
 
 	if var3_19.Exists(var1_19) then
 		local var5_19 = var3_19.GetFiles(var1_19, "*", var4_19)
 
-		warning(var5_19.Length)
-
 		for iter0_19 = 0, var5_19.Length - 1 do
-			local var6_19 = var5_19[iter0_19]:gsub("\\", "/"):gsub("^" .. var0_19, "")
+			local var6_19 = var5_19[iter0_19]:gsub("\\", "/")
+			local var7_19 = string.sub(var6_19, #var0_19 + 1)
 
-			warning(var6_19)
-			table.insert(var2_19, var6_19)
+			table.insert(var2_19, var7_19)
 		end
 	end
 
-	local var7_19 = #var2_19
+	originalPrint("filePathList first:", tostring(var2_19[1]))
+	originalPrint("filePathList last:", tostring(var2_19[#var2_19]))
 
-	if var7_19 > 0 then
-		local var8_19 = System.Array.CreateInstance(typeof(System.String), var7_19)
+	local var8_19 = #var2_19
 
-		for iter1_19 = 0, var7_19 - 1 do
-			var8_19[iter1_19] = var2_19[iter1_19 + 1]
+	if var8_19 > 0 then
+		local var9_19 = System.Array.CreateInstance(typeof(System.String), var8_19)
+
+		for iter1_19 = 0, var8_19 - 1 do
+			var9_19[iter1_19] = var2_19[iter1_19 + 1]
 		end
 
-		var0_0.GetDormMgr():DelFile(var8_19)
+		var0_0.GetDormMgr():DelFile(var9_19)
 	end
 end
 

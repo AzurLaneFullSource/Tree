@@ -132,7 +132,7 @@ pg.dorm3d_favor_trigger = {
 		is_repeat = 1,
 		type = 1,
 		id = 1015,
-		num = 10,
+		num = 40,
 		is_daily_max = 1
 	},
 	[1016] = {
@@ -141,7 +141,7 @@ pg.dorm3d_favor_trigger = {
 		is_repeat = 1,
 		type = 1,
 		id = 1016,
-		num = 20,
+		num = 80,
 		is_daily_max = 2
 	},
 	[1017] = {
@@ -150,7 +150,7 @@ pg.dorm3d_favor_trigger = {
 		is_repeat = 1,
 		type = 1,
 		id = 1017,
-		num = 30,
+		num = 120,
 		is_daily_max = 3
 	},
 	[1018] = {

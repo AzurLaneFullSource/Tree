@@ -7290,7 +7290,7 @@ pg.base.pay_data_display = {
 		first_pay_double = 0,
 		extra_gem = 0,
 		descrip = "Purchase to immediately gain 1,500 Progress Points, and also unlock additional Fair Winds Cruise rewards.",
-		airijp_id = "com.yostarjp.azurlane.seasonpass19",
+		airijp_id = "com.yostaren.azurlane.passport21",
 		extra_service_item = {
 			{
 				1,

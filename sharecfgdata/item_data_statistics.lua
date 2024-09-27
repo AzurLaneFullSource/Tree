@@ -25336,7 +25336,7 @@ _G.pg.base.item_data_statistics[30423] = {
 
 _G.pg.base.item_data_statistics[30424] = {
 	compose_number = 0,
-	display = "Lets you choose one of the following gear skins: Forerunner UAV (Torpedo), Forerunner UAV (Fighter), Forerunner UAV (Bomber).",
+	display = "Use to receive 1 Forerunner UAV (Torpedo), 1 Forerunner UAV (Fighter), and 1 Forerunner UAV (Bomber).",
 	display_effect = "",
 	icon = "Equips/96808",
 	id = 30424,

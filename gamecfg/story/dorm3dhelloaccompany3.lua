@@ -15,7 +15,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			say = "What's the matter, my honourable Master?\nI can always make your bed for you when you're feeling tired.",
-			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_wait_table1",
+			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_wait_bed1",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
