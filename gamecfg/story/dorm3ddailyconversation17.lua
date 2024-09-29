@@ -11,7 +11,7 @@ return {
 		{
 			optionFlag = 1,
 			side = 0,
-			say = "!!!!!选项放第一句 say是什么呢？!!!!!!",
+			say = "Is there something on your mind?s",
 			hidePaintObj = true,
 			options = {
 				{

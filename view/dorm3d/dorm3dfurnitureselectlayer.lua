@@ -567,7 +567,7 @@ function var0_0.UpdateViewFurnitureItem(arg0_53, arg1_53)
 		end
 	end)
 
-	local var7_53 = var1_53.template:GetShopID()
+	local var7_53 = var1_53.count == 0 and var1_53.template:GetShopID() or nil
 
 	setActive(var2_53:Find("GO"), var7_53)
 

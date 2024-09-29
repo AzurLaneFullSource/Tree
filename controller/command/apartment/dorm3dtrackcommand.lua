@@ -41,13 +41,14 @@ function var0_0.execute(arg0_1, arg1_1)
 	})
 end
 
-function var0_0.BuildDataEnter(arg0_4, arg1_4)
+function var0_0.BuildDataEnter(arg0_4, arg1_4, arg2_4)
 	return {
 		trackType = var0_0.TYPE_DORM_ENTER,
 		args = {
 			arg0_4,
-			arg1_4 or 0,
-			Count = 2
+			arg1_4,
+			arg2_4 or 0,
+			Count = 3
 		}
 	}
 end

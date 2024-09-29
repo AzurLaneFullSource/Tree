@@ -535,6 +535,10 @@ function var0_0.TryDownloadResource(arg0_52, arg1_52, arg2_52)
 					pg.TipsMgr.GetInstance():ShowTips("dorm resource download complete !")
 				end
 
+				if arg0_52.exited then
+					return
+				end
+
 				if arg0_52.roomDic[var0_52.configId] then
 					arg0_52:UpdateIconState(var0_52.configId)
 				end
