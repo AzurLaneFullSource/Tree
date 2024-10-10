@@ -83,6 +83,7 @@ function var0_0.RefreshEnemyTplIcons(arg0_7, arg1_7, arg2_7)
 end
 
 function var0_0.Clear(arg0_10)
+	LevelCellView.Clear(arg0_10)
 	arg0_10.ClearExtraEffects(arg0_10)
 end
 

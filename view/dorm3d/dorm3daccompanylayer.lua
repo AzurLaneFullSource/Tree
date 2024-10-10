@@ -61,9 +61,11 @@ function var0_0.didEnter(arg0_6)
 			end
 		end
 	end)
+	pg.BrightnessMgr.GetInstance():SetScreenNeverSleep(true)
 end
 
 function var0_0.willExit(arg0_9)
+	pg.BrightnessMgr.GetInstance():SetScreenNeverSleep(false)
 	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_9.rtPanel, arg0_9.rtLayer)
 end
 

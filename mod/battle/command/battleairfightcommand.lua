@@ -27,9 +27,35 @@ function var3_0.DoPrologue(arg0_4)
 
 	local function var0_4()
 		arg0_4._uiMediator:OpeningEffect(function()
-			arg0_4._dataProxy:SetupCalculateDamage(var0_0.Battle.BattleFormulas.FriendInvincibleDamage)
+			local var0_6 = var0_0.Battle.BattleFormulas
+			local var1_6 = var0_6.CreateContextCalculateDamage()
+
+			local function var2_6(arg0_7, arg1_7, ...)
+				local var0_7 = arg1_7:GetIFF()
+
+				if var0_7 == var0_0.Battle.BattleConfig.FRIENDLY_CODE then
+					return 1, {
+						isMiss = false,
+						isCri = false,
+						isDamagePrevent = false
+					}
+				elseif var0_7 == var0_0.Battle.BattleConfig.FOE_CODE then
+					return var1_6(arg0_7, arg1_7, ...)
+				end
+			end
+
+			local function var3_6(arg0_8, arg1_8)
+				local var0_8, var1_8 = var0_6.CalculateCrashDamage(arg0_8, arg1_8)
+				local var2_8 = 1
+
+				var1_8 = arg1_8:GetIFF() == var0_0.Battle.BattleConfig.FRIENDLY_CODE and 1 or var1_8
+
+				return var2_8, var1_8
+			end
+
+			arg0_4._dataProxy:SetupCalculateDamage(var2_6)
 			arg0_4._dataProxy:SetupDamageKamikazeShip(var0_0.Battle.BattleFormulas.CalcDamageLockS2M)
-			arg0_4._dataProxy:SetupDamageCrush(var0_0.Battle.BattleFormulas.FriendInvincibleCrashDamage)
+			arg0_4._dataProxy:SetupDamageCrush(var3_6)
 			arg0_4._uiMediator:ShowTimer()
 			arg0_4._state:ChangeState(var0_0.Battle.BattleState.BATTLE_STATE_FIGHT)
 			arg0_4._waveUpdater:Start()
@@ -42,58 +68,54 @@ function var3_0.DoPrologue(arg0_4)
 
 	local var1_4 = arg0_4._state:GetSceneMediator()
 
-	var1_4:InitPopScorePool()
-	var1_4:EnablePopContainer(var0_0.Battle.BattlePopNumManager.CONTAINER_HP, false)
-	var1_4:EnablePopContainer(var0_0.Battle.BattlePopNumManager.CONTAINER_SCORE, false)
-	var1_4:EnablePopContainer(var0_0.Battle.BattleHPBarManager.ROOT_NAME, false)
 	arg0_4._uiMediator:ShowAirFightScoreBar()
 end
 
-function var3_0.initWaveModule(arg0_7)
-	local function var0_7(arg0_8, arg1_8, arg2_8)
-		arg0_7._dataProxy:SpawnMonster(arg0_8, arg1_8, arg2_8, var0_0.Battle.BattleConfig.FOE_CODE)
+function var3_0.initWaveModule(arg0_9)
+	local function var0_9(arg0_10, arg1_10, arg2_10)
+		arg0_9._dataProxy:SpawnMonster(arg0_10, arg1_10, arg2_10, var0_0.Battle.BattleConfig.FOE_CODE)
 	end
 
-	local function var1_7()
-		if arg0_7._vertifyFail then
+	local function var1_9()
+		if arg0_9._vertifyFail then
 			pg.m02:sendNotification(GAME.CHEATER_MARK, {
-				reason = arg0_7._vertifyFail
+				reason = arg0_9._vertifyFail
 			})
 
 			return
 		end
 
-		arg0_7._dataProxy:CalcAirFightScore()
-		arg0_7._state:BattleEnd()
+		arg0_9._dataProxy:CalcAirFightScore()
+		arg0_9._state:BattleEnd()
 	end
 
-	arg0_7._waveUpdater = var0_0.Battle.BattleWaveUpdater.New(var0_7, nil, var1_7, nil)
+	arg0_9._waveUpdater = var0_0.Battle.BattleWaveUpdater.New(var0_9, nil, var1_9, nil)
 end
 
-function var3_0.onBattleDataInitFinished(arg0_10)
-	arg0_10._dataProxy:AirFightInit()
+function var3_0.onBattleDataInitFinished(arg0_12)
+	arg0_12._dataProxy:AirFightInit()
 
-	local var0_10 = arg0_10._userFleet:GetScoutList()
+	local var0_12 = arg0_12._userFleet:GetScoutList()
 
-	for iter0_10, iter1_10 in ipairs(var0_10) do
-		iter1_10:HideWaveFx()
-	end
-end
-
-function var3_0.RegisterUnitEvent(arg0_11, arg1_11, ...)
-	var3_0.super.RegisterUnitEvent(arg0_11, arg1_11, ...)
-
-	if arg1_11:GetUnitType() == var0_0.Battle.BattleConst.UnitType.PLAYER_UNIT then
-		arg1_11:RegisterEventListener(arg0_11, var1_0.UPDATE_HP, arg0_11.onPlayerHPUpdate)
+	for iter0_12, iter1_12 in ipairs(var0_12) do
+		iter1_12:HideWaveFx()
 	end
 end
 
-function var3_0.UnregisterUnitEvent(arg0_12, arg1_12, ...)
-	if arg1_12:GetUnitType() == var0_0.Battle.BattleConst.UnitType.PLAYER_UNIT then
-		arg1_12:UnregisterEventListener(arg0_12, var1_0.UPDATE_HP)
+function var3_0.RegisterUnitEvent(arg0_13, arg1_13, ...)
+	var3_0.super.RegisterUnitEvent(arg0_13, arg1_13, ...)
+
+	if arg1_13:GetUnitType() == var0_0.Battle.BattleConst.UnitType.PLAYER_UNIT then
+		arg1_13:RegisterEventListener(arg0_13, var1_0.UPDATE_HP, arg0_13.onPlayerHPUpdate)
+	end
+end
+
+function var3_0.UnregisterUnitEvent(arg0_14, arg1_14, ...)
+	if arg1_14:GetUnitType() == var0_0.Battle.BattleConst.UnitType.PLAYER_UNIT then
+		arg1_14:UnregisterEventListener(arg0_14, var1_0.UPDATE_HP)
 	end
 
-	var3_0.super.UnregisterUnitEvent(arg0_12, arg1_12, ...)
+	var3_0.super.UnregisterUnitEvent(arg0_14, arg1_14, ...)
 end
 
 var3_0.ShipType2Point = {
@@ -103,22 +125,22 @@ var3_0.ShipType2Point = {
 }
 var3_0.BeenHitDecreasePoint = 10
 
-function var3_0.onWillDie(arg0_13, arg1_13)
-	local var0_13 = arg1_13.Dispatcher
-	local var1_13 = var0_13:GetDeathReason()
-	local var2_13 = var0_13:GetTemplate().type
+function var3_0.onWillDie(arg0_15, arg1_15)
+	local var0_15 = arg1_15.Dispatcher
+	local var1_15 = var0_15:GetDeathReason()
+	local var2_15 = var0_15:GetTemplate().type
 
-	if var1_13 == var0_0.Battle.BattleConst.UnitDeathReason.CRUSH or var1_13 == var0_0.Battle.BattleConst.UnitDeathReason.KILLED then
-		local var3_13 = var3_0.ShipType2Point[var2_13]
+	if var1_15 == var0_0.Battle.BattleConst.UnitDeathReason.CRUSH or var1_15 == var0_0.Battle.BattleConst.UnitDeathReason.KILLED then
+		local var3_15 = var3_0.ShipType2Point[var2_15]
 
-		if var3_13 and var3_13 > 0 then
-			arg0_13._dataProxy:AddAirFightScore(var3_13)
+		if var3_15 and var3_15 > 0 then
+			arg0_15._dataProxy:AddAirFightScore(var3_15)
 		end
 	end
 end
 
-function var3_0.onPlayerHPUpdate(arg0_14, arg1_14)
-	if arg1_14.Data.dHP <= 0 then
-		arg0_14._dataProxy:DecreaseAirFightScore(var3_0.BeenHitDecreasePoint * -arg1_14.Data.dHP)
+function var3_0.onPlayerHPUpdate(arg0_16, arg1_16)
+	if arg1_16.Data.dHP <= 0 then
+		arg0_16._dataProxy:DecreaseAirFightScore(var3_0.BeenHitDecreasePoint * -arg1_16.Data.dHP)
 	end
 end

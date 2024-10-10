@@ -2,15 +2,12 @@ return {
 	init_effect = "",
 	name = "中飞联动一我方移速",
 	time = 0,
+	picture = "",
+	desc = "",
 	stack = 1,
 	id = 8781,
-	picture = "",
 	icon = 8780,
-	desc = "",
-	last_effect = {
-		"plane_shadow",
-		"plane_yinzhang_single"
-	},
+	last_effect = "plane_shadow",
 	effect_list = {
 		{
 			type = "BattleBuffFixVelocity",

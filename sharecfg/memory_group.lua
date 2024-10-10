@@ -302,6 +302,7 @@ pg.memory_group = setmetatable({
 		600,
 		601,
 		602,
+		603,
 		1000,
 		1001,
 		1002
@@ -6535,6 +6536,23 @@ pg.base.memory_group = {
 			3915,
 			3916,
 			3917
+		}
+	},
+	[603] = {
+		id = 603,
+		subtype = 0,
+		icon = "title_chara_weidahao",
+		type = 3,
+		link_event = 0,
+		title = "Set Sail - Treasure Voyage!",
+		memories = {
+			3931,
+			3932,
+			3933,
+			3934,
+			3935,
+			3936,
+			3937
 		}
 	},
 	[1000] = {
