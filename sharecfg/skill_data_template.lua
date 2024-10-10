@@ -155856,7 +155856,7 @@ pg.base.skill_data_template = {
 		id = 1011000,
 		type = 1,
 		max_level = 10,
-		desc = "Increases this ship's FP by $3. Every 20s: $1 chance to fire a $2 powerful barrage. 10s after the battle starts, and every 20s after that: fires a $2 arcing barrage; the activation chance for the powerful barrage increases by 30.0% and its power is increased if any of the targets hit by the arcing barrage meets one of the following conditions: \n1) The target hit is a BB or a BC;\n2) The target hit is sunk within 3s;\nThe DMG of both these barrages is based on the skill's level.",
+		desc = "Increases this ship's FP by $3. Every 20s: $1 chance to fire a $2 powerful barrage. 10s after the battle starts, and every 20s after that: fires a $2 arcing barrage; the activation chance for the next powerful barrage increases by 30.0% and its power is increased if any of the targets hit by the arcing barrage meets one of the following conditions: \n1) The target hit is a BB or a BC;\n2) The target hit is sunk within 3s;\nThe DMG of both these barrages is based on the skill's level.",
 		system_transform = {
 			[3] = 1011001
 		},

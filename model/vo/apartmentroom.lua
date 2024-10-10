@@ -103,7 +103,7 @@ function var0_0.getDownloadNeedSize(arg0_11)
 	local var2_11 = table.mergeArray(var0_11, var1_11)
 	local var3_11, var4_11 = DormGroupConst.CalcDormListSize(var2_11)
 
-	return var0_11, var1_11
+	return var3_11, var4_11
 end
 
 function var0_0.getState(arg0_12)
