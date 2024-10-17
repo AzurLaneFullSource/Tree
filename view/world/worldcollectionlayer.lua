@@ -244,7 +244,12 @@ function var0_0.UpdateEntranceFilter(arg0_27, arg1_27)
 
 	local var0_27 = defaultValue(arg0_27.entranceIndexDic[arg0_27.contextData.entranceId], 1)
 
-	arg0_27:ScrollAndSelectEntrance(var0_27)
+	if arg0_27.achEntranceList[var0_27] then
+		arg0_27:ScrollAndSelectEntrance(var0_27)
+	else
+		setActive(arg0_27.entrancePanel:Find("page_left"), false)
+		setActive(arg0_27.entrancePanel:Find("page_right"), false)
+	end
 end
 
 function var0_0.UpdateGetAllAwardBtn(arg0_29)
@@ -292,6 +297,10 @@ function var0_0.UpdateAchievement(arg0_31, arg1_31, arg2_31)
 end
 
 function var0_0.GetAwardIndex(arg0_32, arg1_32)
+	if #arg0_32.achEntranceList == 0 then
+		return nil
+	end
+
 	local var0_32 = arg0_32.entrancePos[#arg0_32.achEntranceList] - 1
 
 	if arg1_32 then

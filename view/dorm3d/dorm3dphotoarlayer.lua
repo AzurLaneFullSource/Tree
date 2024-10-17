@@ -317,7 +317,7 @@ function var0_0.didEnter(arg0_7)
 				NotificationMgr.Inst:PlayShutterSound()
 			end
 
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCamera(arg0_7.room:GetConfigID(), 3, Dorm3dCameraAnim.New({
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCamera(arg0_7.groupId, 3, arg0_7.room:GetConfigID(), Dorm3dCameraAnim.New({
 				configId = arg0_7.animID
 			}):GetStateName()))
 		end

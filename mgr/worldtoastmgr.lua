@@ -15,7 +15,7 @@ var0_0.Type2PictrueName = {
 }
 
 function var0_0.Init(arg0_1, arg1_1)
-	PoolMgr.GetInstance():GetUI("WorldTaskFloatUI", true, function(arg0_2)
+	LoadAndInstantiateAsync("ui", "WorldTaskFloatUI", function(arg0_2)
 		arg0_1._go = arg0_2
 
 		arg0_1._go:SetActive(false)
@@ -29,7 +29,7 @@ function var0_0.Init(arg0_1, arg1_1)
 		if arg1_1 then
 			arg1_1()
 		end
-	end)
+	end, true, true)
 end
 
 function var0_0.ShowToast(arg0_3, arg1_3, arg2_3)
@@ -82,6 +82,4 @@ function var0_0.Dispose(arg0_8)
 	LeanTween.cancel(arg0_8.twId)
 
 	arg0_8.displayList = nil
-
-	PoolMgr.GetInstance():ReturnUI("WorldTaskFloatUI", arg0_8._go)
 end

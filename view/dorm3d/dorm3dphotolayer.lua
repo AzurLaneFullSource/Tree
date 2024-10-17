@@ -277,7 +277,7 @@ function var0_0.didEnter(arg0_6)
 							configId = arg0_6.animID
 						})
 
-						pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCamera(arg0_6.room:GetConfigID(), 2, Dorm3dTrackCommand.BuildCameraMsg(var0_26:GetName(), var1_26:GetStateName(), arg0_6.cameraSettings.depthOfField.focusDistance.value, arg0_6.cameraSettings.depthOfField.blurRadius.value, arg0_6.cameraSettings.postExposure.value, arg0_6.cameraSettings.contrast.value, arg0_6.cameraSettings.saturate.value)))
+						pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCamera(arg0_6.scene.apartment:GetConfigID(), 2, arg0_6.room:GetConfigID(), Dorm3dTrackCommand.BuildCameraMsg(var0_26:GetName(), var1_26:GetStateName(), arg0_6.cameraSettings.depthOfField.focusDistance.value, arg0_6.cameraSettings.depthOfField.blurRadius.value, arg0_6.cameraSettings.postExposure.value, arg0_6.cameraSettings.contrast.value, arg0_6.cameraSettings.saturate.value)))
 					end
 				})
 			end))
@@ -316,7 +316,7 @@ function var0_0.didEnter(arg0_6)
 				configId = arg0_6.animID
 			})
 
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCamera(arg0_6.room:GetConfigID(), 1, Dorm3dTrackCommand.BuildCameraMsg(var0_33:GetName(), var1_33:GetStateName(), arg0_6.cameraSettings.depthOfField.focusDistance.value, arg0_6.cameraSettings.depthOfField.blurRadius.value, arg0_6.cameraSettings.postExposure.value, arg0_6.cameraSettings.contrast.value, arg0_6.cameraSettings.saturate.value)))
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCamera(arg0_6.scene.apartment:GetConfigID(), 1, arg0_6.room:GetConfigID(), Dorm3dTrackCommand.BuildCameraMsg(var0_33:GetName(), var1_33:GetStateName(), arg0_6.cameraSettings.depthOfField.focusDistance.value, arg0_6.cameraSettings.depthOfField.blurRadius.value, arg0_6.cameraSettings.postExposure.value, arg0_6.cameraSettings.contrast.value, arg0_6.cameraSettings.saturate.value)))
 		end
 
 		local var3_30 = ScreenShooter.New(Screen.width, Screen.height, TextureFormat.ARGB32):TakePhoto(arg0_6.mainCamera)

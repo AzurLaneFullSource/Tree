@@ -146,6 +146,7 @@ pg.pay_data_display = setmetatable({
 		2032,
 		2033,
 		2034,
+		2035,
 		139,
 		140,
 		141,
@@ -7813,7 +7814,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "Commander Level Boost Pack",
 		show_group = "",
-		type_order = 5,
+		type_order = 7,
 		extra_service = 3,
 		money = 499,
 		id = 2009,
@@ -13009,7 +13010,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "Daily Sortie Refuel Pack",
 		show_group = "",
-		type_order = 4,
+		type_order = 6,
 		extra_service = 3,
 		money = 99,
 		id = 2025,
@@ -13719,6 +13720,105 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40049,
+				1
+			}
+		}
+	},
+	[2035] = {
+		name = "Outfit Selection Pack (Ulrich von Hutten)",
+		limit_group = 0,
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		subject = "Outfit Selection Pack (Ulrich von Hutten)",
+		limit_arg = 1,
+		name_display = "Outfit Selection Pack (Ulrich von Hutten)",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 1799,
+		id = 2035,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		sub_display = "",
+		picture = "huteng_package",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack14",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains an Outfit Selection Voucher, Wisdom Cubes, T2 EXP Data Packs, and more.",
+		airijp_id = "com.yostaren.azurlane.pack14",
+		extra_service_item = {
+			{
+				2,
+				59554,
+				1
+			},
+			{
+				2,
+				20001,
+				40
+			},
+			{
+				1,
+				1,
+				30000
+			},
+			{
+				2,
+				16502,
+				50
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					10,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					11,
+					13
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				59554,
+				1
+			},
+			{
+				2,
+				20001,
+				40
+			},
+			{
+				2,
+				16502,
+				50
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40050,
 				1
 			}
 		}

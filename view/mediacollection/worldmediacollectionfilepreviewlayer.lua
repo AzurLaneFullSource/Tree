@@ -18,6 +18,9 @@ function var0_0.init(arg0_3)
 	arg0_3:InitDocument()
 
 	arg0_3.tipTF = arg0_3._tf:Find("Tip")
+
+	setText(arg0_3.tipTF, i18n("world_file_tip"))
+
 	arg0_3.animBar = arg0_3._tf:Find("Bar")
 
 	setActive(arg0_3.animBar, false)

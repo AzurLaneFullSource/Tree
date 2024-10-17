@@ -463,6 +463,10 @@ pg.expedition_data_by_map = setmetatable({
 		2100402,
 		2100411,
 		2100412,
+		2100421,
+		2100422,
+		2100431,
+		2100432,
 		2200000,
 		2200010,
 		2200020,
@@ -14297,7 +14301,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4471,
+		on_activity = 5597,
 		ui_type = 1,
 		bg = "Map_1660001",
 		story_id = "",
@@ -14346,7 +14350,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4471,
+		on_activity = 5597,
 		ui_type = 1,
 		bg = "Map_1660002",
 		story_id = "",
@@ -14395,7 +14399,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4471,
+		on_activity = 5597,
 		ui_type = 1,
 		bg = "Map_1660003",
 		story_id = "",
@@ -14444,7 +14448,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4471,
+		on_activity = 5597,
 		ui_type = 1,
 		bg = "Map_1660004",
 		story_id = "",
@@ -14493,7 +14497,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4471,
+		on_activity = 5597,
 		ui_type = 1,
 		bg = "Map_1660005",
 		story_id = "",
@@ -14542,7 +14546,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4471,
+		on_activity = 5597,
 		ui_type = 1,
 		bg = "Map_1660005",
 		story_id = "",
@@ -24329,6 +24333,202 @@ pg.base.expedition_data_by_map = {
 		story_inactive_color = "",
 		animtor = 1,
 		bind_map = 2100402,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100421] = {
+		map = 2100421,
+		name = "Tower of Transcendence - Pt. 1|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "story-midgard",
+		enter_story = "NIZHUANCAIHONGZHITA1",
+		ani_name = "Map_1600001",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		default_background = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1600001",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 1600011,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100422] = {
+		map = 2100422,
+		name = "Tower of Transcendence - Pt. 2|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "battle-midgard-hunting",
+		enter_story = "NIZHUANCAIHONGZHITA16",
+		ani_name = "Map_1600002",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		default_background = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1600002",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 1600012,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100431] = {
+		map = 2100431,
+		name = "Tower of Transcendence - Pt. 1|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "story-midgard",
+		enter_story = "NIZHUANCAIHONGZHITA1",
+		ani_name = "Map_1600003",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		default_background = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1600003",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 1600001,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100432] = {
+		map = 2100432,
+		name = "Tower of Transcendence - Pt. 2|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "battle-midgard-hunting",
+		enter_story = "NIZHUANCAIHONGZHITA16",
+		ani_name = "Map_1600004",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		default_background = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1600004",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 1600002,
 		clouds_pos = {
 			{
 				332,

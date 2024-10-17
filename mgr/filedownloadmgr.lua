@@ -9,7 +9,7 @@ local var2_0 = FileDownloadConst
 
 function var1_0.Init(arg0_1, arg1_1)
 	print("initializing filedownloadmgr manager...")
-	PoolMgr.GetInstance():GetUI("FileDownloadUI", true, function(arg0_2)
+	LoadAndInstantiateAsync("ui", "FileDownloadUI", function(arg0_2)
 		arg0_1._go = arg0_2
 
 		arg0_1._go:SetActive(false)
@@ -20,7 +20,7 @@ function var1_0.Init(arg0_1, arg1_1)
 		arg0_1:initUI()
 		arg0_1:initUITextTips()
 		arg1_1()
-	end)
+	end, true, true)
 end
 
 function var1_0.Main(arg0_3, arg1_3)

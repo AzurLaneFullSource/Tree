@@ -127,9 +127,9 @@ function var0_0.UpdateSkinItem(arg0_10, arg1_10, arg2_10)
 			return
 		end
 
-		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("charge_scene_buy_confirm", var0_10:GetPrice(), var0_10:GetName()),
-			onYes = function()
+		pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_COMMON_MSGBOX, {
+			contentText = i18n("charge_scene_buy_confirm", var0_10:GetPrice(), var0_10:GetName()),
+			onConfirm = function()
 				if getProxy(PlayerProxy):getData():getTotalGem() < var0_10:GetPrice() then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
@@ -167,27 +167,38 @@ function var0_0.UpdateEquipSkinItem(arg0_14, arg1_14, arg2_14)
 			return
 		end
 
-		arg0_14.contextData.windowForESkin:ExecuteAction("Open", var0_14, function(arg0_16, arg1_16, arg2_16)
+		local function var0_15()
 			if arg0_14.remainCnt <= 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("cruise_limit_count"))
 
 				return
 			end
 
-			if not var3_14 then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
-
-				return
-			end
-
-			if getProxy(PlayerProxy):getData():getTotalGem() < arg0_16:GetPrice() * arg1_16 then
+			if getProxy(PlayerProxy):getData():getTotalGem() < var0_14:GetPrice() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 				return
 			end
 
-			arg0_14:emit(WorldCruiseMediator.ON_CRUISE_SHOPPING, arg0_16.id, arg1_16)
-		end)
+			arg0_14:emit(WorldCruiseMediator.ON_CRUISE_SHOPPING, var0_14.id, 1)
+		end
+
+		pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_COMMON_DROP, {
+			drop = var1_14,
+			btnList = {
+				{
+					type = pg.NewStyleMsgboxMgr.BUTTON_TYPE.cancel,
+					name = i18n("msgbox_text_cancel"),
+					sound = SFX_CANCEL
+				},
+				{
+					type = pg.NewStyleMsgboxMgr.BUTTON_TYPE.confirm,
+					name = i18n("text_exchange"),
+					func = var0_15,
+					sound = SFX_CONFIRM
+				}
+			}
+		})
 	end, SFX_CONFIRM)
 end
 

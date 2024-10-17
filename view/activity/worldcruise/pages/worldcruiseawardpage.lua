@@ -38,7 +38,7 @@ function var0_0.OnInit(arg0_5)
 		arg0_5:GetAllAward()
 	end, SFX_CONFIRM)
 	onButton(arg0_5, arg0_5.btnPay, function()
-		arg0_5:OpenBuyPanel()
+		arg0_5.contextData.windowForCharge:ExecuteAction("ShowBuyWindow")
 	end, SFX_CONFIRM)
 
 	local var0_5 = arg0_5.scrollCom.onValueChanged
@@ -76,7 +76,7 @@ function var0_0.Flush(arg0_9, arg1_9)
 	setActive(arg0_9.btnPay, not arg0_9.isPay)
 
 	if not arg0_9.isPay then
-		local var1_9 = arg0_9:GetPassID()
+		local var1_9 = WorldCruiseChargePage.GetPassID()
 
 		if not pg.TimeMgr.GetInstance():inTime(pg.pay_data_display[var1_9].time) then
 			setActive(arg0_9.btnPay, false)
@@ -126,7 +126,9 @@ function var0_0.UpdateAwardInfo(arg0_14, arg1_14, arg2_14, arg3_14)
 	local var1_14 = Drop.Create(arg3_14.award)
 
 	onButton(arg0_14, arg2_14:Find("base"), function()
-		arg0_14:emit(BaseUI.ON_DROP, var1_14)
+		arg0_14:emit(BaseUI.ON_NEW_STYLE_DROP, {
+			drop = var1_14
+		})
 	end, SFX_CONFIRM)
 	updateDrop(arg2_14:Find("base/mask/IconTpl"), var1_14)
 	setActive(arg2_14:Find("base/frame_skin"), arg0_14:IsSkinFrame(var1_14.type))
@@ -139,7 +141,9 @@ function var0_0.UpdateAwardInfo(arg0_14, arg1_14, arg2_14, arg3_14)
 	local var2_14 = Drop.Create(arg3_14.award_pay)
 
 	onButton(arg0_14, arg2_14:Find("pay"), function()
-		arg0_14:emit(BaseUI.ON_DROP, var2_14)
+		arg0_14:emit(BaseUI.ON_NEW_STYLE_DROP, {
+			drop = var2_14
+		})
 	end, SFX_CONFIRM)
 	updateDrop(arg2_14:Find("pay/mask/IconTpl"), var2_14)
 	setActive(arg2_14:Find("pay/frame_skin"), arg0_14:IsSkinFrame(var2_14.type))
@@ -185,9 +189,9 @@ function var0_0.GetAllAward(arg0_18)
 
 		if arg0_18:CheckLimitMax(var0_18) then
 			table.insert(var1_18, function(arg0_19)
-				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					content = i18n("player_expResource_mail_fullBag"),
-					onYes = arg0_19
+				pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_COMMON_MSGBOX, {
+					contentText = i18n("player_expResource_mail_fullBag"),
+					onConfirm = arg0_19
 				})
 			end)
 		end
@@ -226,61 +230,7 @@ function var0_0.CheckLimitMax(arg0_21, arg1_21)
 	return false
 end
 
-function var0_0.OpenBuyPanel(arg0_22)
-	local var0_22 = arg0_22:GetPassID()
-	local var1_22 = Goods.Create({
-		shop_id = var0_22
-	}, Goods.TYPE_CHARGE)
-	local var2_22 = var1_22:getConfig("tag")
-	local var3_22 = var1_22:GetExtraServiceItem()
-	local var4_22 = var1_22:GetExtraDrop()
-	local var5_22
-	local var6_22
-	local var7_22
-	local var8_22 = i18n("battlepass_pay_tip")
-	local var9_22 = {
-		isChargeType = true,
-		icon = "chargeicon/" .. var1_22:getConfig("picture"),
-		name = var1_22:getConfig("name_display"),
-		tipExtra = var8_22,
-		extraItems = var3_22,
-		price = var1_22:getConfig("money"),
-		isLocalPrice = var1_22:IsLocalPrice(),
-		tagType = var2_22,
-		isMonthCard = var1_22:isMonthCard(),
-		tipBonus = var7_22,
-		bonusItem = var5_22,
-		extraDrop = var4_22,
-		descExtra = var1_22:getConfig("descrip_extra"),
-		onYes = function()
-			if ChargeConst.isNeedSetBirth() then
-				arg0_22:emit(WorldCruiseMediator.EVENT_OPEN_BIRTHDAY)
-			else
-				pg.m02:sendNotification(GAME.CHARGE_OPERATION, {
-					shopId = var1_22.id
-				})
-			end
-		end
-	}
-
-	arg0_22:emit(WorldCruiseMediator.EVENT_GO_CHARGE, var9_22)
-end
-
-function var0_0.GetPassID(arg0_24)
-	local var0_24 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
-
-	if var0_24 and not var0_24:isEnd() then
-		for iter0_24, iter1_24 in ipairs(pg.pay_data_display.all) do
-			local var1_24 = pg.pay_data_display[iter1_24]
-
-			if var1_24.sub_display and type(var1_24.sub_display) == "table" and var1_24.sub_display[1] == var0_24.id then
-				return iter1_24
-			end
-		end
-	end
-end
-
-function var0_0.OnDestroy(arg0_25)
+function var0_0.OnDestroy(arg0_22)
 	return
 end
 

@@ -131,10 +131,10 @@ function var0_0.didEnter(arg0_10)
 	arg0_10:bind(NewMainScene.OPEN_LIVEAREA, function(arg0_17)
 		arg0_10.liveAreaPage:ExecuteAction("Show")
 	end)
-	arg0_10:SetUp()
+	arg0_10:SetUp(false, true)
 end
 
-function var0_0.SetUp(arg0_18, arg1_18)
+function var0_0.SetUp(arg0_18, arg1_18, arg2_18)
 	arg0_18.mainCG.blocksRaycasts = false
 	arg0_18.isInit = false
 	arg0_18.resAnimFlag = false
@@ -185,6 +185,10 @@ function var0_0.SetUp(arg0_18, arg1_18)
 		arg0_18:emit(var0_0.ON_ENTER_DONE)
 
 		arg0_18.mainCG.blocksRaycasts = true
+
+		if arg2_18 then
+			gcAll()
+		end
 	end)
 end
 

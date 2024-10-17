@@ -221,7 +221,6 @@ function GoLoginScene()
 	end
 
 	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LOGIN)
-	gcAll()
 end
 
 function SDKLogined(arg0_34, arg1_34, arg2_34, arg3_34)

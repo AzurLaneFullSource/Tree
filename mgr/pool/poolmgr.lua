@@ -121,6 +121,8 @@ function var0_0.Ctor(arg0_1)
 		"channel",
 		"painting/mat",
 		"ui/commonui_atlas",
+		"ui/share/msgbox_atlas",
+		"ui/share/world_common_atlas",
 		"skinicon",
 		"attricon",
 		"artresource/effect/chuanwukuang/duang_6_mask",
@@ -310,9 +312,6 @@ local var7_0 = {
 	"ItemInfoUI",
 	"ShipDetailView",
 	"LevelFleetSelectView",
-	"ToastUI",
-	"MsgBox",
-	"TipPanel",
 	"Loading",
 	"WorldUI"
 }

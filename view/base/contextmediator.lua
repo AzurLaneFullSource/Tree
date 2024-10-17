@@ -464,6 +464,38 @@ function var0_0.commonBind(arg0_37)
 					}
 				}
 			}))
+		end,
+		[BaseUI.ON_NEW_STYLE_DROP] = function(arg0_50, arg1_50, arg2_50)
+			pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_COMMON_DROP, setmetatable(arg2_50, {
+				__index = {
+					blurParams = {
+						weight = LayerWeightConst.TOP_LAYER
+					}
+				}
+			}))
+		end,
+		[BaseUI.ON_NEW_STYLE_ITEMS] = function(arg0_51, arg1_51, arg2_51)
+			pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_COMMON_ITEMS, setmetatable(arg2_51, {
+				__index = {
+					btnList = {
+						{
+							type = pg.NewStyleMsgboxMgr.BUTTON_TYPE.confirm,
+							name = i18n("msgbox_text_confirm"),
+							sound = SFX_CONFIRM
+						}
+					},
+					blurParams = {
+						weight = LayerWeightConst.TOP_LAYER
+					},
+					items = arg2_51.itemList,
+					content = arg2_51.content,
+					itemFunc = function(arg0_52)
+						arg0_51.viewComponent:emit(BaseUI.ON_NEW_STYLE_DROP, {
+							drop = arg0_52
+						})
+					end
+				}
+			}))
 		end
 	}
 
@@ -474,120 +506,120 @@ function var0_0.commonBind(arg0_37)
 	end
 end
 
-function var0_0.register(arg0_51)
+function var0_0.register(arg0_54)
 	return
 end
 
-function var0_0.onUIAvalible(arg0_52)
+function var0_0.onUIAvalible(arg0_55)
 	return
 end
 
-function var0_0.setContextData(arg0_53, arg1_53)
-	arg0_53.contextData = arg1_53
+function var0_0.setContextData(arg0_56, arg1_56)
+	arg0_56.contextData = arg1_56
 end
 
-function var0_0.bind(arg0_54, arg1_54, arg2_54)
-	arg0_54.viewComponent.event:connect(arg1_54, arg2_54)
-	table.insert(arg0_54.event, {
-		event = arg1_54,
-		callback = arg2_54
+function var0_0.bind(arg0_57, arg1_57, arg2_57)
+	arg0_57.viewComponent.event:connect(arg1_57, arg2_57)
+	table.insert(arg0_57.event, {
+		event = arg1_57,
+		callback = arg2_57
 	})
 end
 
-function var0_0.onRemove(arg0_55)
-	arg0_55:remove()
+function var0_0.onRemove(arg0_58)
+	arg0_58:remove()
 
-	for iter0_55, iter1_55 in ipairs(arg0_55.event) do
-		arg0_55.viewComponent.event:disconnect(iter1_55.event, iter1_55.callback)
+	for iter0_58, iter1_58 in ipairs(arg0_58.event) do
+		arg0_58.viewComponent.event:disconnect(iter1_58.event, iter1_58.callback)
 	end
 
-	arg0_55.event = {}
+	arg0_58.event = {}
 end
 
-function var0_0.remove(arg0_56)
+function var0_0.remove(arg0_59)
 	return
 end
 
-function var0_0.addSubLayers(arg0_57, arg1_57, arg2_57, arg3_57, arg4_57)
-	assert(isa(arg1_57, Context), "should be an instance of Context")
+function var0_0.addSubLayers(arg0_60, arg1_60, arg2_60, arg3_60, arg4_60)
+	assert(isa(arg1_60, Context), "should be an instance of Context")
 
-	local var0_57 = arg0_57:GetContext()
+	local var0_60 = arg0_60:GetContext()
 
-	if arg2_57 then
-		while var0_57.parent do
-			var0_57 = var0_57.parent
+	if arg2_60 then
+		while var0_60.parent do
+			var0_60 = var0_60.parent
 		end
 	end
 
-	local var1_57 = {
-		parentContext = var0_57,
-		context = arg1_57,
-		callback = arg3_57
+	local var1_60 = {
+		parentContext = var0_60,
+		context = arg1_60,
+		callback = arg3_60
 	}
 
-	var1_57 = arg4_57 and table.merge(var1_57, arg4_57) or var1_57
+	var1_60 = arg4_60 and table.merge(var1_60, arg4_60) or var1_60
 
-	arg0_57:sendNotification(GAME.LOAD_LAYERS, var1_57)
+	arg0_60:sendNotification(GAME.LOAD_LAYERS, var1_60)
 end
 
-function var0_0.GetContext(arg0_58)
-	return getProxy(ContextProxy):getCurrentContext():getContextByMediator(arg0_58.class)
+function var0_0.GetContext(arg0_61)
+	return getProxy(ContextProxy):getCurrentContext():getContextByMediator(arg0_61.class)
 end
 
-function var0_0.blockEvents(arg0_59)
-	if arg0_59.event then
-		for iter0_59, iter1_59 in ipairs(arg0_59.event) do
-			arg0_59.viewComponent.event:block(iter1_59.event, iter1_59.callback)
+function var0_0.blockEvents(arg0_62)
+	if arg0_62.event then
+		for iter0_62, iter1_62 in ipairs(arg0_62.event) do
+			arg0_62.viewComponent.event:block(iter1_62.event, iter1_62.callback)
 		end
 	end
 end
 
-function var0_0.unblockEvents(arg0_60)
-	if arg0_60.event then
-		for iter0_60, iter1_60 in ipairs(arg0_60.event) do
-			arg0_60.viewComponent.event:unblock(iter1_60.event, iter1_60.callback)
+function var0_0.unblockEvents(arg0_63)
+	if arg0_63.event then
+		for iter0_63, iter1_63 in ipairs(arg0_63.event) do
+			arg0_63.viewComponent.event:unblock(iter1_63.event, iter1_63.callback)
 		end
 	end
 end
 
-function var0_0.onBackPressed(arg0_61, arg1_61)
+function var0_0.onBackPressed(arg0_64, arg1_64)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	local var0_61 = getProxy(ContextProxy)
+	local var0_64 = getProxy(ContextProxy)
 
-	if arg1_61 then
-		local var1_61 = var0_61:getContextByMediator(arg0_61.class).parent
+	if arg1_64 then
+		local var1_64 = var0_64:getContextByMediator(arg0_64.class).parent
 
-		if var1_61 then
-			local var2_61 = pg.m02:retrieveMediator(var1_61.mediator.__cname)
+		if var1_64 then
+			local var2_64 = pg.m02:retrieveMediator(var1_64.mediator.__cname)
 
-			if var2_61 and var2_61.viewComponent then
-				var2_61.viewComponent:onBackPressed()
+			if var2_64 and var2_64.viewComponent then
+				var2_64.viewComponent:onBackPressed()
 			end
 		end
 	else
-		arg0_61.viewComponent:closeView()
+		arg0_64.viewComponent:closeView()
 	end
 end
 
-function var0_0.removeSubLayers(arg0_62, arg1_62, arg2_62)
-	assert(isa(arg1_62, var0_0), "should be a ContextMediator Class")
+function var0_0.removeSubLayers(arg0_65, arg1_65, arg2_65)
+	assert(isa(arg1_65, var0_0), "should be a ContextMediator Class")
 
-	local var0_62 = getProxy(ContextProxy):getContextByMediator(arg0_62.class or arg0_62)
+	local var0_65 = getProxy(ContextProxy):getContextByMediator(arg0_65.class or arg0_65)
 
-	if not var0_62 then
+	if not var0_65 then
 		return
 	end
 
-	local var1_62 = var0_62:getContextByMediator(arg1_62)
+	local var1_65 = var0_65:getContextByMediator(arg1_65)
 
-	if not var1_62 then
+	if not var1_65 then
 		return
 	end
 
-	arg0_62:sendNotification(GAME.REMOVE_LAYERS, {
-		context = var1_62,
-		callback = arg2_62
+	arg0_65:sendNotification(GAME.REMOVE_LAYERS, {
+		context = var1_65,
+		callback = arg2_65
 	})
 end
 

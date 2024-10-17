@@ -52,7 +52,7 @@ local var2_0 = require("Mgr.const.MsgboxBtnNameMap")
 
 function var1_0.Init(arg0_1, arg1_1)
 	print("initializing msgbox manager...")
-	PoolMgr.GetInstance():GetUI("MsgBox", true, function(arg0_2)
+	LoadAndInstantiateAsync("ui", "MsgBox", function(arg0_2)
 		arg0_1._go = arg0_2
 
 		arg0_1._go:SetActive(false)
@@ -145,7 +145,7 @@ function var1_0.Init(arg0_1, arg1_1)
 		arg0_1.timers = {}
 
 		arg1_1()
-	end)
+	end, true, true)
 end
 
 function var1_0.getMsgBoxOb(arg0_3)

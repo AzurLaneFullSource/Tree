@@ -217,9 +217,13 @@ end
 function var0_0.SetCommonBg(arg0_18, arg1_18)
 	setActive(arg0_18._tf, true)
 
-	local var0_18 = LoadSprite("commonbg/" .. arg1_18, "")
+	local var0_18 = arg0_18._tf:GetComponent(typeof(Image)).sprite
 
-	setImageSprite(arg0_18._tf, var0_18)
+	setImageSprite(arg0_18._tf, LoadSprite("commonbg/" .. arg1_18, ""))
+
+	if var0_18 then
+		Resources.UnloadAsset(var0_18.texture)
+	end
 end
 
 function var0_0.ClearSpecailBg(arg0_19)

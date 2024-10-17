@@ -46,7 +46,7 @@ var0_0.ToastInfo = {
 }
 
 function var0_0.Init(arg0_1, arg1_1)
-	PoolMgr.GetInstance():GetUI("ToastUI", true, function(arg0_2)
+	LoadAndInstantiateAsync("ui", "ToastUI", function(arg0_2)
 		arg0_1._go = arg0_2
 
 		arg0_1._go:SetActive(false)
@@ -91,7 +91,7 @@ function var0_0.Init(arg0_1, arg1_1)
 		if arg1_1 then
 			arg1_1()
 		end
-	end)
+	end, true, true)
 end
 
 function var0_0.ResetUIDandHistory(arg0_3)

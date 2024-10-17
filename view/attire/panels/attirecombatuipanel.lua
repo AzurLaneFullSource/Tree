@@ -143,12 +143,11 @@ end
 function var0_0.OnUpdateItem(arg0_16, arg1_16, arg2_16)
 	var0_0.super.OnUpdateItem(arg0_16, arg1_16, arg2_16)
 
-	local var0_16 = arg0_16.contextData.iconFrameId or arg0_16.displayVOs[1].id
+	local var0_16 = arg0_16.playerVO:getAttireByType(AttireConst.TYPE_COMBAT_UI_STYLE)
 	local var1_16 = arg0_16.cards[arg2_16]
 
 	if var1_16.uiStyle.id == var0_16 then
 		triggerButton(var1_16._go)
-		var1_16:UpdateSelected(true)
 	end
 end
 

@@ -66,936 +66,948 @@ function setText(arg0_12, arg1_12)
 	arg0_12:GetComponent(typeof(Text)).text = tostring(arg1_12)
 end
 
-function setScrollText(arg0_13, arg1_13)
+function setTextInNewStyleBox(arg0_13, arg1_13)
 	if not arg1_13 then
 		return
 	end
 
-	arg0_13:GetComponent("ScrollText"):SetText(tostring(arg1_13))
+	for iter0_13, iter1_13 in pairs(pg.NewStyleMsgboxMgr.COLOR_MAP) do
+		arg1_13 = string.gsub(arg1_13, iter0_13, iter1_13)
+	end
+
+	arg0_13:GetComponent(typeof(Text)).text = tostring(arg1_13)
 end
 
-function setTextEN(arg0_14, arg1_14)
+function setScrollText(arg0_14, arg1_14)
 	if not arg1_14 then
 		return
 	end
 
-	arg1_14 = splitByWordEN(arg1_14, arg0_14)
-	arg0_14:GetComponent(typeof(Text)).text = tostring(arg1_14)
+	arg0_14:GetComponent("ScrollText"):SetText(tostring(arg1_14))
 end
 
-function setBestFitTextEN(arg0_15, arg1_15, arg2_15)
+function setTextEN(arg0_15, arg1_15)
 	if not arg1_15 then
 		return
 	end
 
-	local var0_15 = arg0_15:GetComponent(typeof(RectTransform))
-	local var1_15 = arg0_15:GetComponent(typeof(Text))
-	local var2_15 = arg2_15 or 20
-	local var3_15 = var0_15.rect.width
-	local var4_15 = var0_15.rect.height
-
-	while var2_15 > 0 do
-		var1_15.fontSize = var2_15
-
-		local var5_15 = splitByWordEN(arg1_15, arg0_15)
-
-		var1_15.text = tostring(var5_15)
-
-		if var3_15 >= var1_15.preferredWidth and var4_15 >= var1_15.preferredHeight then
-			break
-		end
-
-		var2_15 = var2_15 - 1
-	end
+	arg1_15 = splitByWordEN(arg1_15, arg0_15)
+	arg0_15:GetComponent(typeof(Text)).text = tostring(arg1_15)
 end
 
-function setTextFont(arg0_16, arg1_16)
+function setBestFitTextEN(arg0_16, arg1_16, arg2_16)
 	if not arg1_16 then
 		return
 	end
 
-	arg0_16:GetComponent(typeof(Text)).font = arg1_16
+	local var0_16 = arg0_16:GetComponent(typeof(RectTransform))
+	local var1_16 = arg0_16:GetComponent(typeof(Text))
+	local var2_16 = arg2_16 or 20
+	local var3_16 = var0_16.rect.width
+	local var4_16 = var0_16.rect.height
+
+	while var2_16 > 0 do
+		var1_16.fontSize = var2_16
+
+		local var5_16 = splitByWordEN(arg1_16, arg0_16)
+
+		var1_16.text = tostring(var5_16)
+
+		if var3_16 >= var1_16.preferredWidth and var4_16 >= var1_16.preferredHeight then
+			break
+		end
+
+		var2_16 = var2_16 - 1
+	end
 end
 
-function getText(arg0_17)
-	return arg0_17:GetComponent(typeof(Text)).text
-end
-
-function setInputText(arg0_18, arg1_18)
-	if not arg1_18 then
+function setTextFont(arg0_17, arg1_17)
+	if not arg1_17 then
 		return
 	end
 
-	arg0_18:GetComponent(typeof(InputField)).text = arg1_18
+	arg0_17:GetComponent(typeof(Text)).font = arg1_17
 end
 
-function getInputText(arg0_19)
-	return arg0_19:GetComponent(typeof(InputField)).text
+function getText(arg0_18)
+	return arg0_18:GetComponent(typeof(Text)).text
 end
 
-function onInputEndEdit(arg0_20, arg1_20, arg2_20)
-	local var0_20 = arg1_20:GetComponent(typeof(InputField)).onEndEdit
+function setInputText(arg0_19, arg1_19)
+	if not arg1_19 then
+		return
+	end
 
-	pg.DelegateInfo.Add(arg0_20, var0_20)
-	var0_20:RemoveAllListeners()
-	var0_20:AddListener(arg2_20)
+	arg0_19:GetComponent(typeof(InputField)).text = arg1_19
 end
 
-function activateInputField(arg0_21)
-	arg0_21:GetComponent(typeof(InputField)):ActivateInputField()
+function getInputText(arg0_20)
+	return arg0_20:GetComponent(typeof(InputField)).text
 end
 
-function setButtonText(arg0_22, arg1_22, arg2_22)
-	setWidgetText(arg0_22, arg1_22, arg2_22)
+function onInputEndEdit(arg0_21, arg1_21, arg2_21)
+	local var0_21 = arg1_21:GetComponent(typeof(InputField)).onEndEdit
+
+	pg.DelegateInfo.Add(arg0_21, var0_21)
+	var0_21:RemoveAllListeners()
+	var0_21:AddListener(arg2_21)
 end
 
-function setWidgetText(arg0_23, arg1_23, arg2_23)
-	arg2_23 = arg2_23 or "Text"
-	arg2_23 = findTF(arg0_23, arg2_23)
-
-	setText(arg2_23, arg1_23)
+function activateInputField(arg0_22)
+	arg0_22:GetComponent(typeof(InputField)):ActivateInputField()
 end
 
-function setWidgetTextEN(arg0_24, arg1_24, arg2_24)
+function setButtonText(arg0_23, arg1_23, arg2_23)
+	setWidgetText(arg0_23, arg1_23, arg2_23)
+end
+
+function setWidgetText(arg0_24, arg1_24, arg2_24)
 	arg2_24 = arg2_24 or "Text"
 	arg2_24 = findTF(arg0_24, arg2_24)
 
-	setTextEN(arg2_24, arg1_24)
+	setText(arg2_24, arg1_24)
+end
+
+function setWidgetTextEN(arg0_25, arg1_25, arg2_25)
+	arg2_25 = arg2_25 or "Text"
+	arg2_25 = findTF(arg0_25, arg2_25)
+
+	setTextEN(arg2_25, arg1_25)
 end
 
 local var0_0
 local var1_0 = true
 local var2_0 = -1
 
-function onButton(arg0_25, arg1_25, arg2_25, arg3_25, arg4_25)
-	local var0_25 = GetOrAddComponent(arg1_25, typeof(Button))
+function onButton(arg0_26, arg1_26, arg2_26, arg3_26, arg4_26)
+	local var0_26 = GetOrAddComponent(arg1_26, typeof(Button))
 
-	assert(var0_25, "could not found Button component on " .. arg1_25.name)
-	assert(arg2_25, "callback should exist")
+	assert(var0_26, "could not found Button component on " .. arg1_26.name)
+	assert(arg2_26, "callback should exist")
 
-	local var1_25 = var0_25.onClick
+	local var1_26 = var0_26.onClick
 
-	pg.DelegateInfo.Add(arg0_25, var1_25)
-	var1_25:RemoveAllListeners()
-	var1_25:AddListener(function()
+	pg.DelegateInfo.Add(arg0_26, var1_26)
+	var1_26:RemoveAllListeners()
+	var1_26:AddListener(function()
 		if var2_0 == Time.frameCount and Input.touchCount > 1 then
 			return
 		end
 
 		var2_0 = Time.frameCount
 
-		if arg3_25 and var1_0 then
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg3_25)
+		if arg3_26 and var1_0 then
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg3_26)
 		end
 
-		arg2_25()
+		arg2_26()
 	end)
 end
 
-function removeOnButton(arg0_27)
-	local var0_27 = arg0_27:GetComponent(typeof(Button))
+function removeOnButton(arg0_28)
+	local var0_28 = arg0_28:GetComponent(typeof(Button))
 
-	if var0_27 ~= nil then
-		var0_27.onClick:RemoveAllListeners()
+	if var0_28 ~= nil then
+		var0_28.onClick:RemoveAllListeners()
 	end
 end
 
-function removeAllOnButton(arg0_28)
-	local var0_28 = arg0_28:GetComponentsInChildren(typeof(Button))
-
-	for iter0_28 = 1, var0_28.Length do
-		local var1_28 = var0_28[iter0_28 - 1]
-
-		if var1_28 ~= nil then
-			var1_28.onClick:RemoveAllListeners()
-		end
-	end
-end
-
-function ClearAllText(arg0_29)
-	local var0_29 = arg0_29:GetComponentsInChildren(typeof(Text))
+function removeAllOnButton(arg0_29)
+	local var0_29 = arg0_29:GetComponentsInChildren(typeof(Button))
 
 	for iter0_29 = 1, var0_29.Length do
 		local var1_29 = var0_29[iter0_29 - 1]
 
 		if var1_29 ~= nil then
-			var1_29.text = ""
+			var1_29.onClick:RemoveAllListeners()
 		end
 	end
 end
 
-function onLongPressTrigger(arg0_30, arg1_30, arg2_30, arg3_30)
-	local var0_30 = GetOrAddComponent(arg1_30, typeof(UILongPressTrigger))
+function ClearAllText(arg0_30)
+	local var0_30 = arg0_30:GetComponentsInChildren(typeof(Text))
 
-	assert(var0_30, "could not found UILongPressTrigger component on " .. arg1_30.name)
-	assert(arg2_30, "callback should exist")
+	for iter0_30 = 1, var0_30.Length do
+		local var1_30 = var0_30[iter0_30 - 1]
 
-	local var1_30 = var0_30.onLongPressed
+		if var1_30 ~= nil then
+			var1_30.text = ""
+		end
+	end
+end
 
-	pg.DelegateInfo.Add(arg0_30, var1_30)
-	var1_30:RemoveAllListeners()
-	var1_30:AddListener(function()
-		if arg3_30 then
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg3_30)
+function onLongPressTrigger(arg0_31, arg1_31, arg2_31, arg3_31)
+	local var0_31 = GetOrAddComponent(arg1_31, typeof(UILongPressTrigger))
+
+	assert(var0_31, "could not found UILongPressTrigger component on " .. arg1_31.name)
+	assert(arg2_31, "callback should exist")
+
+	local var1_31 = var0_31.onLongPressed
+
+	pg.DelegateInfo.Add(arg0_31, var1_31)
+	var1_31:RemoveAllListeners()
+	var1_31:AddListener(function()
+		if arg3_31 then
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg3_31)
 		end
 
-		arg2_30()
+		arg2_31()
 	end)
 end
 
-function removeOnLongPressTrigger(arg0_32)
-	local var0_32 = arg0_32:GetComponent(typeof(UILongPressTrigger))
+function removeOnLongPressTrigger(arg0_33)
+	local var0_33 = arg0_33:GetComponent(typeof(UILongPressTrigger))
 
-	if var0_32 ~= nil then
-		var0_32.onLongPressed:RemoveAllListeners()
+	if var0_33 ~= nil then
+		var0_33.onLongPressed:RemoveAllListeners()
 	end
 end
 
-function setButtonEnabled(arg0_33, arg1_33)
-	GetComponent(arg0_33, typeof(Button)).interactable = arg1_33
+function setButtonEnabled(arg0_34, arg1_34)
+	GetComponent(arg0_34, typeof(Button)).interactable = arg1_34
 end
 
-function setToggleEnabled(arg0_34, arg1_34)
-	GetComponent(arg0_34, typeof(Toggle)).interactable = arg1_34
+function setToggleEnabled(arg0_35, arg1_35)
+	GetComponent(arg0_35, typeof(Toggle)).interactable = arg1_35
 end
 
-function setSliderEnable(arg0_35, arg1_35)
-	GetComponent(arg0_35, typeof(Slider)).interactable = arg1_35
+function setSliderEnable(arg0_36, arg1_36)
+	GetComponent(arg0_36, typeof(Slider)).interactable = arg1_36
 end
 
-function triggerButton(arg0_36)
-	local var0_36 = GetComponent(arg0_36, typeof(Button))
+function triggerButton(arg0_37)
+	local var0_37 = GetComponent(arg0_37, typeof(Button))
 
 	var1_0 = false
 	var2_0 = -1
 
-	var0_36.onClick:Invoke()
+	var0_37.onClick:Invoke()
 
 	var1_0 = true
 end
 
 local var3_0 = true
 
-function onToggle(arg0_37, arg1_37, arg2_37, arg3_37, arg4_37)
-	local var0_37 = GetComponent(arg1_37, typeof(Toggle))
+function onToggle(arg0_38, arg1_38, arg2_38, arg3_38, arg4_38)
+	local var0_38 = GetComponent(arg1_38, typeof(Toggle))
 
-	assert(arg2_37, "callback should exist")
+	assert(arg2_38, "callback should exist")
 
-	local var1_37 = var0_37.onValueChanged
+	local var1_38 = var0_38.onValueChanged
 
-	var1_37:RemoveAllListeners()
-	pg.DelegateInfo.Add(arg0_37, var1_37)
-	var1_37:AddListener(function(arg0_38)
+	var1_38:RemoveAllListeners()
+	pg.DelegateInfo.Add(arg0_38, var1_38)
+	var1_38:AddListener(function(arg0_39)
 		if var3_0 then
-			if arg0_38 and arg3_37 and var0_37.isOn == arg0_38 then
-				arg3_37 = SFX_UI_TAG
+			if arg0_39 and arg3_38 and var0_38.isOn == arg0_39 then
+				arg3_38 = SFX_UI_TAG
 
-				pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg3_37)
-			elseif not arg0_38 and arg4_37 then
-				pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg4_37)
+				pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg3_38)
+			elseif not arg0_39 and arg4_38 then
+				pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg4_38)
 			end
 		end
 
-		arg2_37(arg0_38)
+		arg2_38(arg0_39)
 	end)
 
-	local var2_37 = GetComponent(arg1_37, typeof(UIToggleEvent))
+	local var2_38 = GetComponent(arg1_38, typeof(UIToggleEvent))
 
-	if not IsNil(var2_37) then
-		var2_37:Rebind()
+	if not IsNil(var2_38) then
+		var2_38:Rebind()
 	end
 end
 
-function removeOnToggle(arg0_39)
-	local var0_39 = GetComponent(arg0_39, typeof(Toggle))
-
-	if var0_39 ~= nil then
-		var0_39.onValueChanged:RemoveAllListeners()
-	end
-end
-
-function triggerToggle(arg0_40, arg1_40)
+function removeOnToggle(arg0_40)
 	local var0_40 = GetComponent(arg0_40, typeof(Toggle))
 
-	var3_0 = false
-	arg1_40 = tobool(arg1_40)
-
-	if var0_40.isOn ~= arg1_40 then
-		var0_40.isOn = arg1_40
-	else
-		var0_40.onValueChanged:Invoke(arg1_40)
+	if var0_40 ~= nil then
+		var0_40.onValueChanged:RemoveAllListeners()
 	end
-
-	var3_0 = true
 end
 
-function triggerToggleWithoutNotify(arg0_41, arg1_41)
+function triggerToggle(arg0_41, arg1_41)
 	local var0_41 = GetComponent(arg0_41, typeof(Toggle))
 
 	var3_0 = false
 	arg1_41 = tobool(arg1_41)
 
-	LuaHelper.ChangeToggleValueWithoutNotify(var0_41, arg1_41)
+	if var0_41.isOn ~= arg1_41 then
+		var0_41.isOn = arg1_41
+	else
+		var0_41.onValueChanged:Invoke(arg1_41)
+	end
 
 	var3_0 = true
 end
 
-function onSlider(arg0_42, arg1_42, arg2_42)
-	local var0_42 = GetComponent(arg1_42, typeof(Slider)).onValueChanged
+function triggerToggleWithoutNotify(arg0_42, arg1_42)
+	local var0_42 = GetComponent(arg0_42, typeof(Toggle))
 
-	assert(arg2_42, "callback should exist")
-	var0_42:RemoveAllListeners()
-	pg.DelegateInfo.Add(arg0_42, var0_42)
-	var0_42:AddListener(arg2_42)
+	var3_0 = false
+	arg1_42 = tobool(arg1_42)
+
+	LuaHelper.ChangeToggleValueWithoutNotify(var0_42, arg1_42)
+
+	var3_0 = true
 end
 
-function setSlider(arg0_43, arg1_43, arg2_43, arg3_43)
-	local var0_43 = GetComponent(arg0_43, typeof(Slider))
+function onSlider(arg0_43, arg1_43, arg2_43)
+	local var0_43 = GetComponent(arg1_43, typeof(Slider)).onValueChanged
 
-	assert(var0_43, "slider should exist")
-
-	var0_43.minValue = arg1_43
-	var0_43.maxValue = arg2_43
-	var0_43.value = arg3_43
+	assert(arg2_43, "callback should exist")
+	var0_43:RemoveAllListeners()
+	pg.DelegateInfo.Add(arg0_43, var0_43)
+	var0_43:AddListener(arg2_43)
 end
 
-function eachChild(arg0_44, arg1_44)
-	local var0_44 = tf(arg0_44)
+function setSlider(arg0_44, arg1_44, arg2_44, arg3_44)
+	local var0_44 = GetComponent(arg0_44, typeof(Slider))
 
-	for iter0_44 = var0_44.childCount - 1, 0, -1 do
-		arg1_44(var0_44:GetChild(iter0_44))
+	assert(var0_44, "slider should exist")
+
+	var0_44.minValue = arg1_44
+	var0_44.maxValue = arg2_44
+	var0_44.value = arg3_44
+end
+
+function eachChild(arg0_45, arg1_45)
+	local var0_45 = tf(arg0_45)
+
+	for iter0_45 = var0_45.childCount - 1, 0, -1 do
+		arg1_45(var0_45:GetChild(iter0_45))
 	end
 end
 
-function removeAllChildren(arg0_45)
-	eachChild(arg0_45, function(arg0_46)
-		tf(arg0_46).transform:SetParent(nil, false)
-		Destroy(arg0_46)
+function removeAllChildren(arg0_46)
+	eachChild(arg0_46, function(arg0_47)
+		tf(arg0_47).transform:SetParent(nil, false)
+		Destroy(arg0_47)
 	end)
 end
 
-function scrollTo(arg0_47, arg1_47, arg2_47)
+function scrollTo(arg0_48, arg1_48, arg2_48)
 	Canvas.ForceUpdateCanvases()
 
-	local var0_47 = GetComponent(arg0_47, typeof(ScrollRect))
-	local var1_47 = Vector2(arg1_47 or var0_47.normalizedPosition.x, arg2_47 or var0_47.normalizedPosition.y)
+	local var0_48 = GetComponent(arg0_48, typeof(ScrollRect))
+	local var1_48 = Vector2(arg1_48 or var0_48.normalizedPosition.x, arg2_48 or var0_48.normalizedPosition.y)
 
 	onNextTick(function()
-		if not IsNil(arg0_47) then
-			var0_47.normalizedPosition = var1_47
+		if not IsNil(arg0_48) then
+			var0_48.normalizedPosition = var1_48
 
-			var0_47.onValueChanged:Invoke(var1_47)
+			var0_48.onValueChanged:Invoke(var1_48)
 		end
 	end)
 end
 
-function scrollToBottom(arg0_49)
-	scrollTo(arg0_49, 0, 0)
+function scrollToBottom(arg0_50)
+	scrollTo(arg0_50, 0, 0)
 end
 
-function onScroll(arg0_50, arg1_50, arg2_50)
-	local var0_50 = GetComponent(arg1_50, typeof(ScrollRect)).onValueChanged
+function onScroll(arg0_51, arg1_51, arg2_51)
+	local var0_51 = GetComponent(arg1_51, typeof(ScrollRect)).onValueChanged
 
-	assert(arg2_50, "callback should exist")
-	var0_50:RemoveAllListeners()
-	pg.DelegateInfo.Add(arg0_50, var0_50)
-	var0_50:AddListener(arg2_50)
+	assert(arg2_51, "callback should exist")
+	var0_51:RemoveAllListeners()
+	pg.DelegateInfo.Add(arg0_51, var0_51)
+	var0_51:AddListener(arg2_51)
 end
 
-function ClearEventTrigger(arg0_51)
-	arg0_51:RemovePointClickFunc()
-	arg0_51:RemovePointDownFunc()
-	arg0_51:RemovePointEnterFunc()
-	arg0_51:RemovePointExitFunc()
-	arg0_51:RemovePointUpFunc()
-	arg0_51:RemoveCheckDragFunc()
-	arg0_51:RemoveBeginDragFunc()
-	arg0_51:RemoveDragFunc()
-	arg0_51:RemoveDragEndFunc()
-	arg0_51:RemoveDropFunc()
-	arg0_51:RemoveScrollFunc()
-	arg0_51:RemoveSelectFunc()
-	arg0_51:RemoveUpdateSelectFunc()
-	arg0_51:RemoveMoveFunc()
+function ClearEventTrigger(arg0_52)
+	arg0_52:RemovePointClickFunc()
+	arg0_52:RemovePointDownFunc()
+	arg0_52:RemovePointEnterFunc()
+	arg0_52:RemovePointExitFunc()
+	arg0_52:RemovePointUpFunc()
+	arg0_52:RemoveCheckDragFunc()
+	arg0_52:RemoveBeginDragFunc()
+	arg0_52:RemoveDragFunc()
+	arg0_52:RemoveDragEndFunc()
+	arg0_52:RemoveDropFunc()
+	arg0_52:RemoveScrollFunc()
+	arg0_52:RemoveSelectFunc()
+	arg0_52:RemoveUpdateSelectFunc()
+	arg0_52:RemoveMoveFunc()
 end
 
-function ClearLScrollrect(arg0_52)
-	arg0_52.onStart = nil
-	arg0_52.onInitItem = nil
-	arg0_52.onUpdateItem = nil
-	arg0_52.onReturnItem = nil
+function ClearLScrollrect(arg0_53)
+	arg0_53.onStart = nil
+	arg0_53.onInitItem = nil
+	arg0_53.onUpdateItem = nil
+	arg0_53.onReturnItem = nil
 end
 
-function GetComponent(arg0_53, arg1_53)
-	return (arg0_53:GetComponent(arg1_53))
+function GetComponent(arg0_54, arg1_54)
+	return (arg0_54:GetComponent(arg1_54))
 end
 
-function GetOrAddComponent(arg0_54, arg1_54)
-	assert(arg0_54, "objectOrTransform not found: " .. debug.traceback())
+function GetOrAddComponent(arg0_55, arg1_55)
+	assert(arg0_55, "objectOrTransform not found: " .. debug.traceback())
 
-	local var0_54 = arg1_54
+	local var0_55 = arg1_55
 
-	if type(arg1_54) == "string" then
-		assert(_G[arg1_54], arg1_54 .. " not exist in Global")
+	if type(arg1_55) == "string" then
+		assert(_G[arg1_55], arg1_55 .. " not exist in Global")
 
-		var0_54 = typeof(_G[arg1_54])
+		var0_55 = typeof(_G[arg1_55])
 	end
 
-	return LuaHelper.GetOrAddComponentForLua(arg0_54, var0_54)
+	return LuaHelper.GetOrAddComponentForLua(arg0_55, var0_55)
 end
 
-function RemoveComponent(arg0_55, arg1_55)
-	local var0_55 = arg0_55:GetComponent(arg1_55)
-
-	if var0_55 then
-		Object.Destroy(var0_55)
-	end
-end
-
-function SetCompomentEnabled(arg0_56, arg1_56, arg2_56)
+function RemoveComponent(arg0_56, arg1_56)
 	local var0_56 = arg0_56:GetComponent(arg1_56)
 
-	assert(var0_56, "compoment not found")
-
-	var0_56.enabled = tobool(arg2_56)
+	if var0_56 then
+		Object.Destroy(var0_56)
+	end
 end
 
-function GetInChildren(arg0_57, arg1_57)
-	local function var0_57(arg0_58, arg1_58)
-		if not arg0_58 then
+function SetCompomentEnabled(arg0_57, arg1_57, arg2_57)
+	local var0_57 = arg0_57:GetComponent(arg1_57)
+
+	assert(var0_57, "compoment not found")
+
+	var0_57.enabled = tobool(arg2_57)
+end
+
+function GetInChildren(arg0_58, arg1_58)
+	local function var0_58(arg0_59, arg1_59)
+		if not arg0_59 then
 			return nil
 		end
 
-		if arg0_58.name == arg1_58 then
-			return arg0_58
+		if arg0_59.name == arg1_59 then
+			return arg0_59
 		end
 
-		for iter0_58 = 0, arg0_58.childCount - 1 do
-			local var0_58 = arg0_58:GetChild(iter0_58)
+		for iter0_59 = 0, arg0_59.childCount - 1 do
+			local var0_59 = arg0_59:GetChild(iter0_59)
 
-			if arg1_58 == var0_58.name then
-				return var0_58
+			if arg1_59 == var0_59.name then
+				return var0_59
 			end
 
-			local var1_58 = var0_57(var0_58, arg1_58)
+			local var1_59 = var0_58(var0_59, arg1_59)
 
-			if var1_58 then
-				return var1_58
+			if var1_59 then
+				return var1_59
 			end
 		end
 
 		return nil
 	end
 
-	return var0_57(arg0_57, arg1_57)
+	return var0_58(arg0_58, arg1_58)
 end
 
-function onNextTick(arg0_59)
-	FrameTimer.New(arg0_59, 1, 1):Start()
+function onNextTick(arg0_60)
+	FrameTimer.New(arg0_60, 1, 1):Start()
 end
 
-function onDelayTick(arg0_60, arg1_60)
-	Timer.New(arg0_60, arg1_60, 1):Start()
+function onDelayTick(arg0_61, arg1_61)
+	Timer.New(arg0_61, arg1_61, 1):Start()
 end
 
-function seriesAsync(arg0_61, arg1_61, ...)
-	local var0_61 = 0
-	local var1_61 = #arg0_61
-	local var2_61
+function seriesAsync(arg0_62, arg1_62, ...)
+	local var0_62 = 0
+	local var1_62 = #arg0_62
+	local var2_62
 
-	local function var3_61(...)
-		var0_61 = var0_61 + 1
+	local function var3_62(...)
+		var0_62 = var0_62 + 1
 
-		if var0_61 <= var1_61 then
-			arg0_61[var0_61](var3_61, ...)
-		elseif var0_61 == var1_61 + 1 and arg1_61 then
-			arg1_61(...)
+		if var0_62 <= var1_62 then
+			arg0_62[var0_62](var3_62, ...)
+		elseif var0_62 == var1_62 + 1 and arg1_62 then
+			arg1_62(...)
 		end
 	end
 
-	var3_61(...)
+	var3_62(...)
 end
 
-function seriesAsyncExtend(arg0_63, arg1_63, ...)
-	local var0_63
+function seriesAsyncExtend(arg0_64, arg1_64, ...)
+	local var0_64
 
-	local function var1_63(...)
-		if #arg0_63 > 0 then
-			table.remove(arg0_63, 1)(var1_63, ...)
-		elseif arg1_63 then
-			arg1_63(...)
+	local function var1_64(...)
+		if #arg0_64 > 0 then
+			table.remove(arg0_64, 1)(var1_64, ...)
+		elseif arg1_64 then
+			arg1_64(...)
 		end
 	end
 
-	var1_63(...)
+	var1_64(...)
 end
 
-function parallelAsync(arg0_65, arg1_65)
-	local var0_65 = #arg0_65
+function parallelAsync(arg0_66, arg1_66)
+	local var0_66 = #arg0_66
 
-	local function var1_65()
-		var0_65 = var0_65 - 1
+	local function var1_66()
+		var0_66 = var0_66 - 1
 
-		if var0_65 == 0 and arg1_65 then
-			arg1_65()
+		if var0_66 == 0 and arg1_66 then
+			arg1_66()
 		end
 	end
 
-	if var0_65 > 0 then
-		for iter0_65, iter1_65 in ipairs(arg0_65) do
-			iter1_65(var1_65)
+	if var0_66 > 0 then
+		for iter0_66, iter1_66 in ipairs(arg0_66) do
+			iter1_66(var1_66)
 		end
-	elseif arg1_65 then
-		arg1_65()
+	elseif arg1_66 then
+		arg1_66()
 	end
 end
 
-function limitedParallelAsync(arg0_67, arg1_67, arg2_67)
-	local var0_67 = #arg0_67
-	local var1_67 = var0_67
+function limitedParallelAsync(arg0_68, arg1_68, arg2_68)
+	local var0_68 = #arg0_68
+	local var1_68 = var0_68
 
-	if var1_67 == 0 then
-		arg2_67()
+	if var1_68 == 0 then
+		arg2_68()
 
 		return
 	end
 
-	local var2_67 = math.min(arg1_67, var0_67)
-	local var3_67
+	local var2_68 = math.min(arg1_68, var0_68)
+	local var3_68
 
-	local function var4_67()
-		var1_67 = var1_67 - 1
+	local function var4_68()
+		var1_68 = var1_68 - 1
 
-		if var1_67 == 0 then
-			arg2_67()
-		elseif var2_67 + 1 <= var0_67 then
-			var2_67 = var2_67 + 1
+		if var1_68 == 0 then
+			arg2_68()
+		elseif var2_68 + 1 <= var0_68 then
+			var2_68 = var2_68 + 1
 
-			arg0_67[var2_67](var4_67)
+			arg0_68[var2_68](var4_68)
 		end
 	end
 
-	for iter0_67 = 1, var2_67 do
-		arg0_67[iter0_67](var4_67)
+	for iter0_68 = 1, var2_68 do
+		arg0_68[iter0_68](var4_68)
 	end
 end
 
-function waitUntil(arg0_69, arg1_69)
-	local var0_69
+function waitUntil(arg0_70, arg1_70)
+	local var0_70
 
-	var0_69 = FrameTimer.New(function()
-		if arg0_69() then
-			arg1_69()
-			var0_69:Stop()
+	var0_70 = FrameTimer.New(function()
+		if arg0_70() then
+			arg1_70()
+			var0_70:Stop()
 
 			return
 		end
 	end, 1, -1)
 
-	var0_69:Start()
+	var0_70:Start()
 
-	return var0_69
+	return var0_70
 end
 
-function setImageSprite(arg0_71, arg1_71, arg2_71)
-	if IsNil(arg0_71) then
+function setImageSprite(arg0_72, arg1_72, arg2_72)
+	if IsNil(arg0_72) then
 		assert(false)
 
 		return
 	end
 
-	local var0_71 = GetComponent(arg0_71, typeof(Image))
+	local var0_72 = GetComponent(arg0_72, typeof(Image))
 
-	if IsNil(var0_71) then
+	if IsNil(var0_72) then
 		return
 	end
 
-	var0_71.sprite = arg1_71
+	var0_72.sprite = arg1_72
 
-	if arg2_71 then
-		var0_71:SetNativeSize()
+	if arg2_72 then
+		var0_72:SetNativeSize()
 	end
 end
 
-function clearImageSprite(arg0_72)
-	GetComponent(arg0_72, typeof(Image)).sprite = nil
+function clearImageSprite(arg0_73)
+	GetComponent(arg0_73, typeof(Image)).sprite = nil
 end
 
-function getImageSprite(arg0_73)
-	local var0_73 = GetComponent(arg0_73, typeof(Image))
+function getImageSprite(arg0_74)
+	local var0_74 = GetComponent(arg0_74, typeof(Image))
 
-	return var0_73 and var0_73.sprite
+	return var0_74 and var0_74.sprite
 end
 
-function tex2sprite(arg0_74)
-	return UnityEngine.Sprite.Create(arg0_74, UnityEngine.Rect.New(0, 0, arg0_74.width, arg0_74.height), Vector2(0.5, 0.5), 100)
+function tex2sprite(arg0_75)
+	return UnityEngine.Sprite.Create(arg0_75, UnityEngine.Rect.New(0, 0, arg0_75.width, arg0_75.height), Vector2(0.5, 0.5), 100)
 end
 
-function setFillAmount(arg0_75, arg1_75)
-	GetComponent(arg0_75, typeof(Image)).fillAmount = arg1_75
+function setFillAmount(arg0_76, arg1_76)
+	GetComponent(arg0_76, typeof(Image)).fillAmount = arg1_76
 end
 
-function string2vector3(arg0_76)
-	local var0_76 = string.split(arg0_76, ",")
+function string2vector3(arg0_77)
+	local var0_77 = string.split(arg0_77, ",")
 
-	return Vector3(var0_76[1], var0_76[2], var0_76[3])
+	return Vector3(var0_77[1], var0_77[2], var0_77[3])
 end
 
-function getToggleState(arg0_77)
-	return arg0_77:GetComponent(typeof(Toggle)).isOn
+function getToggleState(arg0_78)
+	return arg0_78:GetComponent(typeof(Toggle)).isOn
 end
 
-function setLocalPosition(arg0_78, arg1_78)
-	local var0_78 = tf(arg0_78).localPosition
+function setLocalPosition(arg0_79, arg1_79)
+	local var0_79 = tf(arg0_79).localPosition
 
-	arg1_78.x = arg1_78.x or var0_78.x
-	arg1_78.y = arg1_78.y or var0_78.y
-	arg1_78.z = arg1_78.z or var0_78.z
-	tf(arg0_78).localPosition = arg1_78
+	arg1_79.x = arg1_79.x or var0_79.x
+	arg1_79.y = arg1_79.y or var0_79.y
+	arg1_79.z = arg1_79.z or var0_79.z
+	tf(arg0_79).localPosition = arg1_79
 end
 
-function setAnchoredPosition(arg0_79, arg1_79)
-	local var0_79 = rtf(arg0_79)
-	local var1_79 = var0_79.anchoredPosition
-
-	arg1_79.x = arg1_79.x or var1_79.x
-	arg1_79.y = arg1_79.y or var1_79.y
-	var0_79.anchoredPosition = arg1_79
-end
-
-function setAnchoredPosition3D(arg0_80, arg1_80)
+function setAnchoredPosition(arg0_80, arg1_80)
 	local var0_80 = rtf(arg0_80)
-	local var1_80 = var0_80.anchoredPosition3D
+	local var1_80 = var0_80.anchoredPosition
 
 	arg1_80.x = arg1_80.x or var1_80.x
 	arg1_80.y = arg1_80.y or var1_80.y
-	arg1_80.z = arg1_80.y or var1_80.z
-	var0_80.anchoredPosition3D = arg1_80
+	var0_80.anchoredPosition = arg1_80
 end
 
-function getAnchoredPosition(arg0_81)
-	return rtf(arg0_81).anchoredPosition
+function setAnchoredPosition3D(arg0_81, arg1_81)
+	local var0_81 = rtf(arg0_81)
+	local var1_81 = var0_81.anchoredPosition3D
+
+	arg1_81.x = arg1_81.x or var1_81.x
+	arg1_81.y = arg1_81.y or var1_81.y
+	arg1_81.z = arg1_81.y or var1_81.z
+	var0_81.anchoredPosition3D = arg1_81
 end
 
-function setLocalScale(arg0_82, arg1_82)
-	local var0_82 = tf(arg0_82).localScale
-
-	arg1_82.x = arg1_82.x or var0_82.x
-	arg1_82.y = arg1_82.y or var0_82.y
-	arg1_82.z = arg1_82.z or var0_82.z
-	tf(arg0_82).localScale = arg1_82
+function getAnchoredPosition(arg0_82)
+	return rtf(arg0_82).anchoredPosition
 end
 
-function setLocalRotation(arg0_83, arg1_83)
-	local var0_83 = tf(arg0_83).localRotation
+function setLocalScale(arg0_83, arg1_83)
+	local var0_83 = tf(arg0_83).localScale
 
 	arg1_83.x = arg1_83.x or var0_83.x
 	arg1_83.y = arg1_83.y or var0_83.y
 	arg1_83.z = arg1_83.z or var0_83.z
-	tf(arg0_83).localRotation = arg1_83
+	tf(arg0_83).localScale = arg1_83
 end
 
-function setLocalEulerAngles(arg0_84, arg1_84)
-	local var0_84 = tf(arg0_84).localEulerAngles
+function setLocalRotation(arg0_84, arg1_84)
+	local var0_84 = tf(arg0_84).localRotation
 
 	arg1_84.x = arg1_84.x or var0_84.x
 	arg1_84.y = arg1_84.y or var0_84.y
 	arg1_84.z = arg1_84.z or var0_84.z
-	tf(arg0_84).localEulerAngles = arg1_84
+	tf(arg0_84).localRotation = arg1_84
 end
 
-function ActivateInputField(arg0_85)
-	GetComponent(arg0_85, typeof(InputField)):ActivateInputField()
+function setLocalEulerAngles(arg0_85, arg1_85)
+	local var0_85 = tf(arg0_85).localEulerAngles
+
+	arg1_85.x = arg1_85.x or var0_85.x
+	arg1_85.y = arg1_85.y or var0_85.y
+	arg1_85.z = arg1_85.z or var0_85.z
+	tf(arg0_85).localEulerAngles = arg1_85
 end
 
-function onInputChanged(arg0_86, arg1_86, arg2_86)
-	local var0_86 = GetComponent(arg1_86, typeof(InputField)).onValueChanged
-
-	var0_86:RemoveAllListeners()
-	pg.DelegateInfo.Add(arg0_86, var0_86)
-	var0_86:AddListener(arg2_86)
+function ActivateInputField(arg0_86)
+	GetComponent(arg0_86, typeof(InputField)):ActivateInputField()
 end
 
-function getImageColor(arg0_87)
-	return GetComponent(arg0_87, typeof(Image)).color
+function onInputChanged(arg0_87, arg1_87, arg2_87)
+	local var0_87 = GetComponent(arg1_87, typeof(InputField)).onValueChanged
+
+	var0_87:RemoveAllListeners()
+	pg.DelegateInfo.Add(arg0_87, var0_87)
+	var0_87:AddListener(arg2_87)
 end
 
-function setImageColor(arg0_88, arg1_88)
-	GetComponent(arg0_88, typeof(Image)).color = arg1_88
+function getImageColor(arg0_88)
+	return GetComponent(arg0_88, typeof(Image)).color
 end
 
-function getImageAlpha(arg0_89)
-	return GetComponent(arg0_89, typeof(Image)).color.a
+function setImageColor(arg0_89, arg1_89)
+	GetComponent(arg0_89, typeof(Image)).color = arg1_89
 end
 
-function setImageAlpha(arg0_90, arg1_90)
-	local var0_90 = GetComponent(arg0_90, typeof(Image))
-	local var1_90 = var0_90.color
-
-	var1_90.a = arg1_90
-	var0_90.color = var1_90
+function getImageAlpha(arg0_90)
+	return GetComponent(arg0_90, typeof(Image)).color.a
 end
 
-function getImageRaycastTarget(arg0_91)
-	return GetComponent(arg0_91, typeof(Image)).raycastTarget
+function setImageAlpha(arg0_91, arg1_91)
+	local var0_91 = GetComponent(arg0_91, typeof(Image))
+	local var1_91 = var0_91.color
+
+	var1_91.a = arg1_91
+	var0_91.color = var1_91
 end
 
-function setImageRaycastTarget(arg0_92, arg1_92)
-	GetComponent(arg0_92, typeof(Image)).raycastTarget = tobool(arg1_92)
+function getImageRaycastTarget(arg0_92)
+	return GetComponent(arg0_92, typeof(Image)).raycastTarget
 end
 
-function getCanvasGroupAlpha(arg0_93)
-	return GetComponent(arg0_93, typeof(CanvasGroup)).alpha
+function setImageRaycastTarget(arg0_93, arg1_93)
+	GetComponent(arg0_93, typeof(Image)).raycastTarget = tobool(arg1_93)
 end
 
-function setCanvasGroupAlpha(arg0_94, arg1_94)
-	GetComponent(arg0_94, typeof(CanvasGroup)).alpha = arg1_94
+function getCanvasGroupAlpha(arg0_94)
+	return GetComponent(arg0_94, typeof(CanvasGroup)).alpha
 end
 
-function setActiveViaLayer(arg0_95, arg1_95)
-	UIUtil.SetUIActiveViaLayer(go(arg0_95), arg1_95)
+function setCanvasGroupAlpha(arg0_95, arg1_95)
+	GetComponent(arg0_95, typeof(CanvasGroup)).alpha = arg1_95
 end
 
-function setActiveViaCG(arg0_96, arg1_96)
-	UIUtil.SetUIActiveViaCG(go(arg0_96), arg1_96)
+function setActiveViaLayer(arg0_96, arg1_96)
+	UIUtil.SetUIActiveViaLayer(go(arg0_96), arg1_96)
 end
 
-function getTextColor(arg0_97)
-	return GetComponent(arg0_97, typeof(Text)).color
+function setActiveViaCG(arg0_97, arg1_97)
+	UIUtil.SetUIActiveViaCG(go(arg0_97), arg1_97)
 end
 
-function setTextColor(arg0_98, arg1_98)
-	GetComponent(arg0_98, typeof(Text)).color = arg1_98
+function getTextColor(arg0_98)
+	return GetComponent(arg0_98, typeof(Text)).color
 end
 
-function getTextAlpha(arg0_99)
-	return GetComponent(arg0_99, typeof(Text)).color.a
+function setTextColor(arg0_99, arg1_99)
+	GetComponent(arg0_99, typeof(Text)).color = arg1_99
 end
 
-function setTextAlpha(arg0_100, arg1_100)
-	local var0_100 = GetComponent(arg0_100, typeof(Text))
-	local var1_100 = var0_100.color
-
-	var1_100.a = arg1_100
-	var0_100.color = var1_100
+function getTextAlpha(arg0_100)
+	return GetComponent(arg0_100, typeof(Text)).color.a
 end
 
-function setSizeDelta(arg0_101, arg1_101)
-	local var0_101 = GetComponent(arg0_101, typeof(RectTransform))
+function setTextAlpha(arg0_101, arg1_101)
+	local var0_101 = GetComponent(arg0_101, typeof(Text))
+	local var1_101 = var0_101.color
 
-	if not var0_101 then
+	var1_101.a = arg1_101
+	var0_101.color = var1_101
+end
+
+function setSizeDelta(arg0_102, arg1_102)
+	local var0_102 = GetComponent(arg0_102, typeof(RectTransform))
+
+	if not var0_102 then
 		return
 	end
 
-	local var1_101 = var0_101.sizeDelta
+	local var1_102 = var0_102.sizeDelta
 
-	var1_101.x = arg1_101.x
-	var1_101.y = arg1_101.y
-	var0_101.sizeDelta = var1_101
+	var1_102.x = arg1_102.x
+	var1_102.y = arg1_102.y
+	var0_102.sizeDelta = var1_102
 end
 
-function getOutlineColor(arg0_102)
-	return GetComponent(arg0_102, typeof(Outline)).effectColor
+function getOutlineColor(arg0_103)
+	return GetComponent(arg0_103, typeof(Outline)).effectColor
 end
 
-function setOutlineColor(arg0_103, arg1_103)
-	GetComponent(arg0_103, typeof(Outline)).effectColor = arg1_103
+function setOutlineColor(arg0_104, arg1_104)
+	GetComponent(arg0_104, typeof(Outline)).effectColor = arg1_104
 end
 
-function pressPersistTrigger(arg0_104, arg1_104, arg2_104, arg3_104, arg4_104, arg5_104, arg6_104, arg7_104)
-	arg6_104 = defaultValue(arg6_104, 0.25)
+function pressPersistTrigger(arg0_105, arg1_105, arg2_105, arg3_105, arg4_105, arg5_105, arg6_105, arg7_105)
+	arg6_105 = defaultValue(arg6_105, 0.25)
 
-	assert(arg6_104 > 0, "maxSpeed less than zero")
-	assert(arg0_104, "should exist objectOrTransform")
+	assert(arg6_105 > 0, "maxSpeed less than zero")
+	assert(arg0_105, "should exist objectOrTransform")
 
-	local var0_104 = GetOrAddComponent(arg0_104, typeof(EventTriggerListener))
+	local var0_105 = GetOrAddComponent(arg0_105, typeof(EventTriggerListener))
 
-	assert(arg2_104, "should exist callback")
+	assert(arg2_105, "should exist callback")
 
-	local var1_104
+	local var1_105
 
-	local function var2_104()
-		if var1_104 then
-			var1_104:Stop()
+	local function var2_105()
+		if var1_105 then
+			var1_105:Stop()
 
-			var1_104 = nil
+			var1_105 = nil
 
-			existCall(arg3_104)
+			existCall(arg3_105)
 		end
 	end
 
-	var0_104:AddPointDownFunc(function()
-		var1_104 = Timer.New(function()
-			if arg5_104 then
-				local var0_107 = math.max(var1_104.duration - arg1_104 / 10, arg6_104)
+	var0_105:AddPointDownFunc(function()
+		var1_105 = Timer.New(function()
+			if arg5_105 then
+				local var0_108 = math.max(var1_105.duration - arg1_105 / 10, arg6_105)
 
-				var1_104.duration = var0_107
+				var1_105.duration = var0_108
 			end
 
-			existCall(arg2_104, var2_104)
-		end, arg1_104, -1)
+			existCall(arg2_105, var2_105)
+		end, arg1_105, -1)
 
-		var1_104:Start()
+		var1_105:Start()
 
-		if arg4_104 then
-			var1_104.func()
+		if arg4_105 then
+			var1_105.func()
 		end
 
-		if arg7_104 and var1_0 then
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg7_104)
+		if arg7_105 and var1_0 then
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg7_105)
 		end
 	end)
-	var0_104:AddPointUpFunc(var2_104)
+	var0_105:AddPointUpFunc(var2_105)
 
-	return var0_104
+	return var0_105
 end
 
-function getSpritePivot(arg0_108)
-	local var0_108 = arg0_108.bounds
-	local var1_108 = -var0_108.center.x / var0_108.extents.x / 2 + 0.5
-	local var2_108 = -var0_108.center.y / var0_108.extents.y / 2 + 0.5
+function getSpritePivot(arg0_109)
+	local var0_109 = arg0_109.bounds
+	local var1_109 = -var0_109.center.x / var0_109.extents.x / 2 + 0.5
+	local var2_109 = -var0_109.center.y / var0_109.extents.y / 2 + 0.5
 
-	return Vector2(var1_108, var2_108)
+	return Vector2(var1_109, var2_109)
 end
 
-function resetAspectRatio(arg0_109)
-	local var0_109 = GetComponent(arg0_109, "Image")
+function resetAspectRatio(arg0_110)
+	local var0_110 = GetComponent(arg0_110, "Image")
 
-	GetComponent(arg0_109, "AspectRatioFitter").aspectRatio = var0_109.preferredWidth / var0_109.preferredHeight
+	GetComponent(arg0_110, "AspectRatioFitter").aspectRatio = var0_110.preferredWidth / var0_110.preferredHeight
 end
 
-function cloneTplTo(arg0_110, arg1_110, arg2_110)
-	local var0_110 = tf(Instantiate(arg0_110))
+function cloneTplTo(arg0_111, arg1_111, arg2_111)
+	local var0_111 = tf(Instantiate(arg0_111))
 
-	var0_110:SetParent(tf(arg1_110), false)
-	SetActive(var0_110, true)
+	var0_111:SetParent(tf(arg1_111), false)
+	SetActive(var0_111, true)
 
-	if arg2_110 then
-		var0_110.name = arg2_110
+	if arg2_111 then
+		var0_111.name = arg2_111
 	end
 
-	return var0_110
+	return var0_111
 end
 
-function setGray(arg0_111, arg1_111, arg2_111)
-	if arg1_111 then
-		local var0_111 = GetOrAddComponent(arg0_111, "UIGrayScale")
-
-		var0_111.Recursive = defaultValue(arg2_111, true)
-		var0_111.enabled = true
-	else
-		RemoveComponent(arg0_111, "UIGrayScale")
-	end
-end
-
-function setBlackMask(arg0_112, arg1_112, arg2_112)
+function setGray(arg0_112, arg1_112, arg2_112)
 	if arg1_112 then
-		arg2_112 = arg2_112 or {}
+		local var0_112 = GetOrAddComponent(arg0_112, "UIGrayScale")
 
-		local var0_112 = GetOrAddComponent(arg0_112, "UIMaterialAdjuster")
-
-		var0_112.Recursive = tobool(defaultValue(arg2_112.recursive, true))
-
-		local var1_112 = Material.New(pg.ShaderMgr.GetInstance():GetShader("M02/Unlit Colored_Alpha_UI"))
-
-		var1_112:SetColor("_Color", arg2_112.color or Color(0, 0, 0, 0.2))
-
-		var0_112.adjusterMaterial = var1_112
+		var0_112.Recursive = defaultValue(arg2_112, true)
 		var0_112.enabled = true
 	else
-		RemoveComponent(arg0_112, "UIMaterialAdjuster")
+		RemoveComponent(arg0_112, "UIGrayScale")
 	end
 end
 
-function blockBlackMask(arg0_113, arg1_113, arg2_113)
+function setBlackMask(arg0_113, arg1_113, arg2_113)
 	if arg1_113 then
+		arg2_113 = arg2_113 or {}
+
 		local var0_113 = GetOrAddComponent(arg0_113, "UIMaterialAdjuster")
 
-		var0_113.Recursive = tobool(defaultValue(arg2_113, true))
-		var0_113.enabled = false
+		var0_113.Recursive = tobool(defaultValue(arg2_113.recursive, true))
+
+		local var1_113 = Material.New(pg.ShaderMgr.GetInstance():GetShader("M02/Unlit Colored_Alpha_UI"))
+
+		var1_113:SetColor("_Color", arg2_113.color or Color(0, 0, 0, 0.2))
+
+		var0_113.adjusterMaterial = var1_113
+		var0_113.enabled = true
 	else
 		RemoveComponent(arg0_113, "UIMaterialAdjuster")
 	end
 end
 
-function long2int(arg0_114)
-	local var0_114, var1_114 = int64.tonum2(arg0_114)
+function blockBlackMask(arg0_114, arg1_114, arg2_114)
+	if arg1_114 then
+		local var0_114 = GetOrAddComponent(arg0_114, "UIMaterialAdjuster")
 
-	return var0_114
+		var0_114.Recursive = tobool(defaultValue(arg2_114, true))
+		var0_114.enabled = false
+	else
+		RemoveComponent(arg0_114, "UIMaterialAdjuster")
+	end
 end
 
-function OnSliderWithButton(arg0_115, arg1_115, arg2_115)
-	local var0_115 = arg1_115:GetComponent("Slider")
+function long2int(arg0_115)
+	local var0_115, var1_115 = int64.tonum2(arg0_115)
 
-	var0_115.onValueChanged:RemoveAllListeners()
-	pg.DelegateInfo.Add(arg0_115, var0_115.onValueChanged)
-	var0_115.onValueChanged:AddListener(arg2_115)
+	return var0_115
+end
 
-	local var1_115 = (var0_115.maxValue - var0_115.minValue) * 0.1
+function OnSliderWithButton(arg0_116, arg1_116, arg2_116)
+	local var0_116 = arg1_116:GetComponent("Slider")
 
-	onButton(arg0_115, arg1_115:Find("up"), function()
-		var0_115.value = math.clamp(var0_115.value + var1_115, var0_115.minValue, var0_115.maxValue)
+	var0_116.onValueChanged:RemoveAllListeners()
+	pg.DelegateInfo.Add(arg0_116, var0_116.onValueChanged)
+	var0_116.onValueChanged:AddListener(arg2_116)
+
+	local var1_116 = (var0_116.maxValue - var0_116.minValue) * 0.1
+
+	onButton(arg0_116, arg1_116:Find("up"), function()
+		var0_116.value = math.clamp(var0_116.value + var1_116, var0_116.minValue, var0_116.maxValue)
 	end, SFX_PANEL)
-	onButton(arg0_115, arg1_115:Find("down"), function()
-		var0_115.value = math.clamp(var0_115.value - var1_115, var0_115.minValue, var0_115.maxValue)
+	onButton(arg0_116, arg1_116:Find("down"), function()
+		var0_116.value = math.clamp(var0_116.value - var1_116, var0_116.minValue, var0_116.maxValue)
 	end, SFX_PANEL)
 end
 
-function addSlip(arg0_118, arg1_118, arg2_118, arg3_118, arg4_118)
-	local var0_118 = GetOrAddComponent(arg1_118, "EventTriggerListener")
-	local var1_118
-	local var2_118 = 0
-	local var3_118 = 50
+function addSlip(arg0_119, arg1_119, arg2_119, arg3_119, arg4_119)
+	local var0_119 = GetOrAddComponent(arg1_119, "EventTriggerListener")
+	local var1_119
+	local var2_119 = 0
+	local var3_119 = 50
 
-	var0_118:AddPointDownFunc(function()
-		var2_118 = 0
-		var1_118 = nil
+	var0_119:AddPointDownFunc(function()
+		var2_119 = 0
+		var1_119 = nil
 	end)
-	var0_118:AddDragFunc(function(arg0_120, arg1_120)
-		local var0_120 = arg1_120.position
+	var0_119:AddDragFunc(function(arg0_121, arg1_121)
+		local var0_121 = arg1_121.position
 
-		if not var1_118 then
-			var1_118 = var0_120
+		if not var1_119 then
+			var1_119 = var0_121
 		end
 
-		if arg0_118 == SLIP_TYPE_HRZ then
-			var2_118 = var0_120.x - var1_118.x
-		elseif arg0_118 == SLIP_TYPE_VERT then
-			var2_118 = var0_120.y - var1_118.y
+		if arg0_119 == SLIP_TYPE_HRZ then
+			var2_119 = var0_121.x - var1_119.x
+		elseif arg0_119 == SLIP_TYPE_VERT then
+			var2_119 = var0_121.y - var1_119.y
 		end
 	end)
-	var0_118:AddPointUpFunc(function(arg0_121, arg1_121)
-		if var2_118 < -var3_118 then
-			if arg3_118 then
-				arg3_118()
+	var0_119:AddPointUpFunc(function(arg0_122, arg1_122)
+		if var2_119 < -var3_119 then
+			if arg3_119 then
+				arg3_119()
 			end
-		elseif var2_118 > var3_118 then
-			if arg2_118 then
-				arg2_118()
+		elseif var2_119 > var3_119 then
+			if arg2_119 then
+				arg2_119()
 			end
-		elseif arg4_118 then
-			arg4_118()
+		elseif arg4_119 then
+			arg4_119()
 		end
 	end)
 end
 
 function getSizeRate()
-	local var0_122 = pg.UIMgr.GetInstance().LevelMain.transform.rect
-	local var1_122 = UnityEngine.Screen
+	local var0_123 = pg.UIMgr.GetInstance().LevelMain.transform.rect
+	local var1_123 = UnityEngine.Screen
 
-	return Vector2.New(var0_122.width / var1_122.width, var0_122.height / var1_122.height), var0_122.width, var0_122.height
+	return Vector2.New(var0_123.width / var1_123.width, var0_123.height / var1_123.height), var0_123.width, var0_123.height
 end
 
 function IsUsingWifi()
 	return Application.internetReachability == UnityEngine.NetworkReachability.ReachableViaLocalAreaNetwork
 end
 
-function getSceneRootTFDic(arg0_124)
-	local var0_124 = {}
+function getSceneRootTFDic(arg0_125)
+	local var0_125 = {}
 
-	table.IpairsCArray(arg0_124:GetRootGameObjects(), function(arg0_125, arg1_125)
-		var0_124[arg1_125.name] = arg1_125.transform
+	table.IpairsCArray(arg0_125:GetRootGameObjects(), function(arg0_126, arg1_126)
+		var0_125[arg1_126.name] = arg1_126.transform
 	end)
 
-	return var0_124
+	return var0_125
 end
