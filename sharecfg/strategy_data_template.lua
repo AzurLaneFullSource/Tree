@@ -3396,7 +3396,7 @@ pg.base.strategy_data_template = {
 	},
 	[201149] = {
 		buff_id = 201149,
-		name = "海上风暴 ",
+		name = "Howling Storm",
 		iconSize = "",
 		type = 10,
 		id = 201149,

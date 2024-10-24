@@ -147839,7 +147839,7 @@ _G.pg.base.item_virtual_data_statistics[58997] = {
 	is_world = 0,
 	link_id = 0,
 	max_num = 0,
-	name = "外观装备(恐怖狂潮)",
+	name = "Gear Skin Box (Halloween Horrors)",
 	order = 0,
 	rarity = 4,
 	replace_item = 0,
@@ -163810,7 +163810,7 @@ _G.pg.base.item_virtual_data_statistics[65034] = {
 }
 
 _G.pg.base.item_virtual_data_statistics[65035] = {
-	display = "用于「飓风与沉眠之海」活动兑换，活动结束后将会消失",
+	display = "Used to exchange for items in \"Tempesta and the Sleeping Sea.\" Will be removed after the event ends.",
 	drop_gold_max = 0,
 	drop_oil_max = 0,
 	icon = "Props/65035",

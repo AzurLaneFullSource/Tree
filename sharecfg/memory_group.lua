@@ -4844,7 +4844,7 @@ pg.base.memory_group = {
 		subtype = 2,
 		icon = "title_event",
 		type = 2,
-		link_event = 0,
+		link_event = 5625,
 		title = "Tempesta and the Sleeping Sea",
 		memories = {
 			3951,
@@ -4876,7 +4876,7 @@ pg.base.memory_group = {
 		subtype = 3,
 		icon = "title_event",
 		type = 2,
-		link_event = 0,
+		link_event = 5623,
 		title = "Sails and Spooks",
 		memories = {
 			3981,

@@ -12,13 +12,14 @@ local var2_0 = {
 local var3_0 = 60
 local var4_0 = "ui/eatfoodgameui_atlas"
 local var5_0 = 67
-local var6_0 = 4
-local var7_0 = 3
-local var8_0 = {
+local var6_0
+local var7_0 = 4
+local var8_0 = 3
+local var9_0 = {
 	0,
 	630
 }
-local var9_0 = {
+local var10_0 = {
 	150,
 	120,
 	100,
@@ -35,7 +36,7 @@ local var9_0 = {
 	100,
 	70
 }
-local var10_0 = {
+local var11_0 = {
 	8,
 	10,
 	15,
@@ -55,7 +56,7 @@ local var10_0 = {
 	18,
 	20
 }
-local var11_0 = {
+local var12_0 = {
 	{
 		-50,
 		50
@@ -117,31 +118,31 @@ local var11_0 = {
 		90
 	}
 }
-local var12_0 = 400
-local var13_0 = 0
-local var14_0 = "event touch"
-local var15_0 = {
+local var13_0 = 400
+local var14_0 = 0
+local var15_0 = "event touch"
+local var16_0 = {
 	35,
 	100
 }
-local var16_0 = {
+local var17_0 = {
 	300,
 	10
 }
-local var17_0 = {
+local var18_0 = {
 	"add_1",
 	"add_2"
 }
-local var18_0 = {
+local var19_0 = {
 	1000
 }
-local var19_0 = {
+local var20_0 = {
 	-100
 }
-local var20_0 = {
+local var21_0 = {
 	"sub_1"
 }
-local var21_0 = {
+local var22_0 = {
 	{
 		126,
 		530,
@@ -158,22 +159,22 @@ local var21_0 = {
 		3
 	}
 }
-local var22_0 = {
+local var23_0 = {
 	300,
 	10,
 	-100
 }
-local var23_0 = {
+local var24_0 = {
 	"add_1",
 	"add_2",
 	"sub_1"
 }
-local var24_0 = 0.8
-local var25_0 = 0.05
-local var26_0 = 1.4
-local var27_0 = 100
+local var25_0 = 0.8
+local var26_0 = 0.05
+local var27_0 = 1.4
+local var28_0 = 100
 
-local function var28_0(arg0_1, arg1_1)
+local function var29_0(arg0_1, arg1_1)
 	local var0_1 = {
 		ctor = function(arg0_2)
 			arg0_2._tf = arg0_1
@@ -186,24 +187,24 @@ local function var28_0(arg0_1, arg1_1)
 			setActive(arg0_2.sliderTouch, true)
 
 			arg0_2.sliderRange = findTF(arg0_2._tf, "range")
-			arg0_2.sliderRange.anchoredPosition = Vector2(0, var12_0)
+			arg0_2.sliderRange.anchoredPosition = Vector2(0, var13_0)
 		end,
 		start = function(arg0_3)
 			arg0_3.sliderIndex = 1
-			arg0_3.nextSliderTime = var7_0
-			arg0_3.sliderTouchPos = Vector2(var8_0[1], 0)
+			arg0_3.nextSliderTime = var8_0
+			arg0_3.sliderTouchPos = Vector2(var9_0[1], 0)
 
 			arg0_3:setSliderBarVisible(false)
 		end,
 		step = function(arg0_4)
 			if arg0_4.nextSliderTime then
-				arg0_4.nextSliderTime = arg0_4.nextSliderTime - Time.deltaTime
+				arg0_4.nextSliderTime = arg0_4.nextSliderTime - var6_0
 
 				if arg0_4.nextSliderTime <= 0 then
 					arg0_4:setSliderBarVisible(true)
 					arg0_4:startSliderBar()
 
-					arg0_4.nextSliderTime = arg0_4.nextSliderTime + var6_0
+					arg0_4.nextSliderTime = arg0_4.nextSliderTime + var7_0
 				end
 			end
 
@@ -211,7 +212,7 @@ local function var28_0(arg0_1, arg1_1)
 				arg0_4.sliderTouchPos.y = arg0_4.sliderTouchPos.y + arg0_4.speed
 				arg0_4.sliderTouch.anchoredPosition = arg0_4.sliderTouchPos
 
-				if arg0_4.sliderTouchPos.y > var8_0[2] then
+				if arg0_4.sliderTouchPos.y > var9_0[2] then
 					arg0_4:touch(false)
 				end
 			end
@@ -220,17 +221,17 @@ local function var28_0(arg0_1, arg1_1)
 			setActive(arg0_5._tf, arg1_5)
 		end,
 		startSliderBar = function(arg0_6)
-			if arg0_6.sliderIndex > #var9_0 then
-				arg0_6.sliderIndex = #var9_0
+			if arg0_6.sliderIndex > #var10_0 then
+				arg0_6.sliderIndex = #var10_0
 			end
 
-			arg0_6.sliderWidth = var9_0[arg0_6.sliderIndex]
-			arg0_6.speed = var10_0[arg0_6.sliderIndex]
-			arg0_6.speed = var10_0[arg0_6.sliderIndex]
-			arg0_6.sliderTouchPos.y = var8_0[1]
+			arg0_6.sliderWidth = var10_0[arg0_6.sliderIndex]
+			arg0_6.speed = var11_0[arg0_6.sliderIndex]
+			arg0_6.speed = var11_0[arg0_6.sliderIndex]
+			arg0_6.sliderTouchPos.y = var9_0[1]
 			arg0_6.sliderBeginning = true
 			arg0_6.sliderRange.sizeDelta = Vector2(arg0_6.sliderRange.sizeDelta.x, arg0_6.sliderWidth)
-			arg0_6.sliderRange.anchoredPosition = Vector2(0, var12_0 + math.random(var11_0[arg0_6.sliderIndex][1], var11_0[arg0_6.sliderIndex][2]))
+			arg0_6.sliderRange.anchoredPosition = Vector2(0, var13_0 + math.random(var12_0[arg0_6.sliderIndex][1], var12_0[arg0_6.sliderIndex][2]))
 		end,
 		touch = function(arg0_7, arg1_7)
 			if not arg0_7.sliderBeginning then
@@ -249,23 +250,23 @@ local function var28_0(arg0_1, arg1_1)
 			local var5_7 = arg0_7.sliderTouchPos.y
 
 			if math.abs(arg0_7.sliderTouchPos.y - arg0_7.sliderRange.anchoredPosition.y) < arg0_7.sliderWidth / 2 then
-				var1_7, var2_7 = var22_0[1], 1
+				var1_7, var2_7 = var23_0[1], 1
 				arg0_7.sliderIndex = arg0_7.sliderIndex + 1
 				var0_7 = true
 			else
-				for iter0_7, iter1_7 in ipairs(var21_0) do
+				for iter0_7, iter1_7 in ipairs(var22_0) do
 					if var5_7 >= iter1_7[1] and var5_7 <= iter1_7[2] then
 						var4_7 = iter1_7[3]
 					end
 				end
 
-				var1_7, var2_7 = var22_0[var4_7], var4_7
-				arg0_7.nextSliderTime = arg0_7.nextSliderTime + var13_0
+				var1_7, var2_7 = var23_0[var4_7], var4_7
+				arg0_7.nextSliderTime = arg0_7.nextSliderTime + var14_0
 				var0_7 = false
 			end
 
 			pg.CriMgr.GetInstance():PlaySE_V3(var1_0[var4_7])
-			arg0_7._event:emit(var14_0, {
+			arg0_7._event:emit(var15_0, {
 				flag = var0_7,
 				score = var1_7,
 				hit_index = var2_7,
@@ -275,12 +276,12 @@ local function var28_0(arg0_1, arg1_1)
 			end)
 		end,
 		getSubScore = function(arg0_9, arg1_9)
-			local var0_9 = var19_0[1]
+			local var0_9 = var20_0[1]
 			local var1_9 = 1
 
-			for iter0_9 = #var18_0, 1, -1 do
-				if arg1_9 < var18_0[iter0_9] then
-					var0_9 = var19_0[iter0_9]
+			for iter0_9 = #var19_0, 1, -1 do
+				if arg1_9 < var19_0[iter0_9] then
+					var0_9 = var20_0[iter0_9]
 					var1_9 = iter0_9
 
 					return var0_9, var1_9
@@ -291,11 +292,11 @@ local function var28_0(arg0_1, arg1_1)
 		end,
 		getScore = function(arg0_10, arg1_10)
 			local var0_10 = 0
-			local var1_10 = #var15_0
+			local var1_10 = #var16_0
 
-			for iter0_10 = 1, #var15_0 do
-				if arg1_10 < var15_0[iter0_10] then
-					var0_10 = var16_0[iter0_10]
+			for iter0_10 = 1, #var16_0 do
+				if arg1_10 < var16_0[iter0_10] then
+					var0_10 = var17_0[iter0_10]
 					var1_10 = iter0_10
 
 					print("hit range" .. arg1_10)
@@ -329,7 +330,7 @@ function var0_0.didEnter(arg0_13)
 end
 
 function var0_0.initEvent(arg0_14)
-	arg0_14:bind(var14_0, function(arg0_15, arg1_15, arg2_15)
+	arg0_14:bind(var15_0, function(arg0_15, arg1_15, arg2_15)
 		if arg1_15.score and arg1_15.score ~= 0 then
 			arg0_14:addScore(arg1_15.score, arg1_15.hit_index, arg1_15.hit_area)
 		end
@@ -343,8 +344,14 @@ function var0_0.initData(arg0_16)
 		var0_16 = 60
 	end
 
+	arg0_16.stepCount = 1 / var0_16 * 0.9
+	arg0_16.realTimeStartUp = Time.realtimeSinceStartup
 	arg0_16.timer = Timer.New(function()
-		arg0_16:onTimer()
+		if Time.realtimeSinceStartup - arg0_16.realTimeStartUp > arg0_16.stepCount then
+			arg0_16:onTimer()
+
+			arg0_16.realTimeStartUp = Time.realtimeSinceStartup
+		end
 	end, 1 / var0_16, -1)
 end
 
@@ -390,7 +397,7 @@ function var0_0.initGameUI(arg0_20)
 
 	setActive(arg0_20.sceneScoreTf, false)
 
-	arg0_20.sliderController = var28_0(findTF(arg0_20.sceneTf, "collider"), arg0_20)
+	arg0_20.sliderController = var29_0(findTF(arg0_20.sceneTf, "collider"), arg0_20)
 end
 
 function var0_0.Update(arg0_23)
@@ -459,11 +466,11 @@ function var0_0.addScore(arg0_29, arg1_29, arg2_29, arg3_29)
 		local var1_29
 
 		if arg1_29 >= 0 then
-			setActive(findTF(arg0_29.sceneScoreTf, "anim/" .. var23_0[arg3_29]), true)
+			setActive(findTF(arg0_29.sceneScoreTf, "anim/" .. var24_0[arg3_29]), true)
 
 			var1_29 = true
 		else
-			setActive(findTF(arg0_29.sceneScoreTf, "anim/" .. var23_0[arg3_29]), true)
+			setActive(findTF(arg0_29.sceneScoreTf, "anim/" .. var24_0[arg3_29]), true)
 
 			var1_29 = false
 		end
@@ -483,8 +490,9 @@ function var0_0.onTimer(arg0_30)
 end
 
 function var0_0.gameStep(arg0_31)
-	arg0_31.gameTime = arg0_31.gameTime - Time.deltaTime
-	arg0_31.gameStepTime = arg0_31.gameStepTime + Time.deltaTime
+	var6_0 = Time.realtimeSinceStartup - arg0_31.realTimeStartUp
+	arg0_31.gameTime = arg0_31.gameTime - var6_0
+	arg0_31.gameStepTime = arg0_31.gameStepTime + var6_0
 
 	if arg0_31.gameTime < 0 then
 		arg0_31.gameTime = 0
@@ -505,6 +513,8 @@ end
 
 function var0_0.timerStart(arg0_32)
 	if not arg0_32.timer.running then
+		arg0_32.realTimeStartUp = Time.realtimeSinceStartup
+
 		arg0_32.timer:Start()
 	end
 end
@@ -543,7 +553,7 @@ end
 
 function var0_0.showSettlement(arg0_37)
 	arg0_37:emit(EatFoodMediator.GAME_RESULT, {
-		win = arg0_37.scoreNum >= var27_0,
+		win = arg0_37.scoreNum >= var28_0,
 		score = arg0_37.scoreNum
 	})
 	setActive(arg0_37.settlementUI, true)

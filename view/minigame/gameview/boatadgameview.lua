@@ -41,19 +41,19 @@ function var0_0.initData(arg0_5)
 	var1_0.Init(arg0_5:GetMGData().id, arg0_5:GetMGHubData().id)
 	var1_0.SetGameTpl(findTF(arg0_5._tf, "tpl"))
 
-	local var0_5 = var1_0.frameRate
+	local var0_5 = Application.targetFrameRate
 
 	if var0_5 > 60 then
 		var0_5 = 60
 	end
 
-	arg0_5.stepCount = 1 / var0_5
+	arg0_5.stepCount = 1 / var0_5 * 0.9
 	arg0_5.realTimeStartUp = Time.realtimeSinceStartup
 	arg0_5.timer = Timer.New(function()
 		if Time.realtimeSinceStartup - arg0_5.realTimeStartUp > arg0_5.stepCount then
-			arg0_5.realTimeStartUp = Time.realtimeSinceStartup
-
 			arg0_5:onTimer()
+
+			arg0_5.realTimeStartUp = Time.realtimeSinceStartup
 		end
 	end, 1 / var0_5, -1)
 end
@@ -288,12 +288,16 @@ end
 
 function var0_0.timerStart(arg0_32)
 	if not arg0_32.timer.running then
+		arg0_32.realTimeStartUp = Time.realtimeSinceStartup
+
 		arg0_32.timer:Start()
 	end
 end
 
 function var0_0.timerResume(arg0_33)
 	if not arg0_33.timer.running then
+		arg0_33.realTimeStartUp = Time.realtimeSinceStartup
+
 		arg0_33.timer:Start()
 	end
 
@@ -309,11 +313,7 @@ function var0_0.timerStop(arg0_34)
 end
 
 function var0_0.stepRunTimeData(arg0_35)
-	local var0_35 = Time.deltaTime
-
-	if var0_35 > 0.016 then
-		var0_35 = 0.016
-	end
+	local var0_35 = Time.realtimeSinceStartup - arg0_35.realTimeStartUp
 
 	var1_0.gameTime = var1_0.gameTime - var0_35
 	var1_0.gameStepTime = var1_0.gameStepTime + var0_35

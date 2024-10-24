@@ -1128,7 +1128,7 @@ pg.activity_sp_story = {
 	[68] = {
 		story_type = 1,
 		pre_event = "",
-		name = "EP1-1 罗盘的指引",
+		name = "EP1-1 Guided by the Compass",
 		unlock_conditions = "",
 		change_prefab = "",
 		change_background = "bg_jufengv1_2",
@@ -1139,7 +1139,7 @@ pg.activity_sp_story = {
 	},
 	[69] = {
 		story_type = 1,
-		name = "EP1-2 与大海盗的重逢",
+		name = "EP1-2 Pirate Reunion",
 		unlock_conditions = "Clear EP1-1.",
 		change_bgm = "theme-tempest-up",
 		change_prefab = "",
@@ -1158,7 +1158,7 @@ pg.activity_sp_story = {
 	},
 	[70] = {
 		story_type = 1,
-		name = "EP1-3 集结！飓风船团！",
+		name = "EP1-3 The Gang's All Here",
 		unlock_conditions = "Clear EP1-2.",
 		change_bgm = "theme-tempest",
 		change_prefab = "",
@@ -1177,7 +1177,7 @@ pg.activity_sp_story = {
 	},
 	[71] = {
 		story_type = 2,
-		name = "EP1-4 寻宝猎人",
+		name = "EP1-4 The Treasure Hunters",
 		unlock_conditions = "Clear EP1-3.",
 		change_bgm = "story-temepest-2",
 		change_prefab = "",
@@ -1196,7 +1196,7 @@ pg.activity_sp_story = {
 	},
 	[72] = {
 		story_type = 1,
-		name = "EP2-1 复生与永生",
+		name = "EP2-1 Rebirth and Eternal Life",
 		unlock_conditions = "Clear EP1-4.",
 		change_bgm = "story-temepest-2",
 		change_prefab = "",
@@ -1215,7 +1215,7 @@ pg.activity_sp_story = {
 	},
 	[73] = {
 		story_type = 2,
-		name = "EP2-2 浮动宝库",
+		name = "EP2-2 The Treasure Ship Cruises By",
 		unlock_conditions = "Clear EP2-1.",
 		change_bgm = "theme-tempest-up",
 		change_prefab = "",
@@ -1234,7 +1234,7 @@ pg.activity_sp_story = {
 	},
 	[74] = {
 		story_type = 1,
-		name = "EP2-3 船团新人",
+		name = "EP2-3 A New Face",
 		unlock_conditions = "Clear EP2-2.",
 		change_bgm = "theme-SeaAndSun-soft",
 		change_prefab = "",
@@ -1253,7 +1253,7 @@ pg.activity_sp_story = {
 	},
 	[75] = {
 		story_type = 1,
-		name = "EP2-4 淅淅索索",
+		name = "EP2-4 Crawling Around",
 		unlock_conditions = "Clear EP2-3.",
 		change_bgm = "theme-tempest",
 		change_prefab = "",
@@ -1272,8 +1272,8 @@ pg.activity_sp_story = {
 	},
 	[76] = {
 		story_type = 1,
-		name = "EP3-1 新的线索",
-		unlock_conditions = "完成EP2-4",
+		name = "EP3-1 Promising Lead",
+		unlock_conditions = "Clear EP2-4.",
 		change_bgm = "battle-nightmare-theme",
 		change_prefab = "",
 		change_background = "bg_jufengv2_1",
@@ -1291,7 +1291,7 @@ pg.activity_sp_story = {
 	},
 	[77] = {
 		story_type = 1,
-		name = "EP3-2 沉眠之海",
+		name = "EP3-2 The Sleeping Sea",
 		unlock_conditions = "Clear EP3-1.",
 		change_bgm = "battle-nightmare-theme",
 		change_prefab = "",
@@ -1310,7 +1310,7 @@ pg.activity_sp_story = {
 	},
 	[78] = {
 		story_type = 2,
-		name = "EP3-3 风雨祭司",
+		name = "EP3-3 The Priest of Wind and Rain",
 		unlock_conditions = "Clear EP3-2.",
 		change_bgm = "battle-nightmare-theme",
 		change_prefab = "",
@@ -1329,8 +1329,8 @@ pg.activity_sp_story = {
 	},
 	[79] = {
 		story_type = 1,
-		name = "EP3-4 圣殿与风暴",
-		unlock_conditions = "完成EP3-3",
+		name = "EP3-4 The Storm and the Temple",
+		unlock_conditions = "Clear EP3-3.",
 		change_bgm = "story-temepest-2",
 		change_prefab = "",
 		change_background = "star_level_bg_525",
@@ -1348,8 +1348,8 @@ pg.activity_sp_story = {
 	},
 	[80] = {
 		story_type = 1,
-		name = "EP4-1 深海魔物",
-		unlock_conditions = "完成EP3-4",
+		name = "EP4-1 The Abyssal Being",
+		unlock_conditions = "Clear EP3-4.",
 		change_bgm = "story-temepest-2",
 		change_prefab = "",
 		change_background = "bg_jufengv2_cg6",
@@ -1367,7 +1367,7 @@ pg.activity_sp_story = {
 	},
 	[81] = {
 		story_type = 2,
-		name = "EP4-2 寂静之灵",
+		name = "EP4-2 Silent Souls",
 		unlock_conditions = "Clear EP4-1.",
 		change_bgm = "battle-nightmare-theme",
 		change_prefab = "",
@@ -1386,7 +1386,7 @@ pg.activity_sp_story = {
 	},
 	[82] = {
 		story_type = 1,
-		name = "EP4-3 女神的主机",
+		name = "EP4-3 Central Unit of the Goddess",
 		unlock_conditions = "Clear EP4-2.",
 		change_bgm = "battle-nightmare-theme",
 		change_prefab = "",
@@ -1405,7 +1405,7 @@ pg.activity_sp_story = {
 	},
 	[83] = {
 		story_type = 1,
-		name = "EP4-4 船团的决定",
+		name = "EP4-4 The Choice is Tempesta's",
 		unlock_conditions = "Clear EP4-3.",
 		change_bgm = "theme-ganjisawai",
 		change_prefab = "",
@@ -1424,8 +1424,8 @@ pg.activity_sp_story = {
 	},
 	[84] = {
 		story_type = 1,
-		name = "EP5-1 风的另一面",
-		unlock_conditions = "完成EP4-4",
+		name = "EP5-1 The Storm Approaches",
+		unlock_conditions = "Clear EP4-4.",
 		change_bgm = "theme-ganjisawai",
 		change_prefab = "",
 		change_background = "bg_jufengv2_cg7",
@@ -1443,7 +1443,7 @@ pg.activity_sp_story = {
 	},
 	[85] = {
 		story_type = 1,
-		name = "EP5-2 风雨齐奏",
+		name = "EP5-2 Echoes of the Wind and Rain",
 		unlock_conditions = "Clear EP5-1.",
 		change_bgm = "theme-SeaAndSun-soft",
 		change_prefab = "",
@@ -1462,7 +1462,7 @@ pg.activity_sp_story = {
 	},
 	[86] = {
 		story_type = 1,
-		name = "EP5-3 罗盘的回归",
+		name = "EP5-3 Back in My Hand",
 		unlock_conditions = "Clear EP5-2.",
 		change_bgm = "story-temepest-1",
 		change_prefab = "",
@@ -1481,7 +1481,7 @@ pg.activity_sp_story = {
 	},
 	[87] = {
 		story_type = 1,
-		name = "EX-1 沉眠之海的故事",
+		name = "EX-1 The Tale of the Sleeping Sea",
 		unlock_conditions = "Clear EP5-3.",
 		change_bgm = "theme-tempest-up",
 		change_prefab = "",
@@ -1500,7 +1500,7 @@ pg.activity_sp_story = {
 	},
 	[88] = {
 		story_type = 1,
-		name = "EX-2 飓风的信使",
+		name = "EX-2 Tempesta's Messenger",
 		unlock_conditions = "Clear EX-1.",
 		change_bgm = "theme-ganjisawai",
 		change_prefab = "",
@@ -1519,7 +1519,7 @@ pg.activity_sp_story = {
 	},
 	[89] = {
 		story_type = 1,
-		name = "EX-3 祭司与神使",
+		name = "EX-3 A Priest and The Servant",
 		unlock_conditions = "Clear EX-2.",
 		change_bgm = "battle-nightmare-theme",
 		change_prefab = "Map_1860001",
