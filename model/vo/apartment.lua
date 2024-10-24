@@ -6,6 +6,9 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.favor = arg1_1.favor_exp
 	arg0_1.daily = arg1_1.daily_favor
 	arg0_1.skinId = arg1_1.cur_skin
+	arg0_1.callName = arg1_1.name
+	arg0_1.setCallCd = arg1_1.name_cd
+	arg0_1.setCallTimeStamp = pg.TimeMgr.GetInstance():GetServerTime()
 	arg0_1.skinList = {}
 
 	table.insert(arg0_1.skinList, arg0_1:getConfig("skin_model"))
@@ -111,101 +114,100 @@ function var0_0.GetSkinModelID(arg0_14, arg1_14)
 	return var0_14
 end
 
-function var0_0.getTalkingList(arg0_16, arg1_16)
-	return underscore.filter(pg.dorm3d_dialogue_group.get_id_list_by_char_id[arg0_16.configId], function(arg0_17)
-		local var0_17 = pg.dorm3d_dialogue_group[arg0_17]
+function var0_0.GetCallName(arg0_16)
+	return arg0_16.callName and #arg0_16.callName > 0 and arg0_16.callName or pg.dorm3d_dorm_template[arg0_16.configId].default_appellation
+end
 
-		return (not arg1_16.typeDic or tobool(arg1_16.typeDic[var0_17.type])) and (not arg1_16.roomId or var0_17.room_id == 0 or arg1_16.roomId == var0_17.room_id) and (not arg1_16.unplay or not arg0_16.talkDic[arg0_17]) and (not arg1_16.unlock or ApartmentProxy.CheckUnlockConfig(var0_17.unlock))
+function var0_0.GetSetCallCd(arg0_17)
+	if pg.TimeMgr.GetInstance():GetServerTime() >= arg0_17.setCallCd then
+		return 0
+	end
+
+	return arg0_17.setCallCd - pg.TimeMgr.GetInstance():GetServerTime()
+end
+
+function var0_0.getTalkingList(arg0_18, arg1_18)
+	return underscore.filter(pg.dorm3d_dialogue_group.get_id_list_by_char_id[arg0_18.configId], function(arg0_19)
+		local var0_19 = pg.dorm3d_dialogue_group[arg0_19]
+
+		return (not arg1_18.typeDic or tobool(arg1_18.typeDic[var0_19.type])) and (not arg1_18.roomId or var0_19.room_id == 0 or arg1_18.roomId == var0_19.room_id) and (not arg1_18.unplay or not arg0_18.talkDic[arg0_19]) and (not arg1_18.unlock or ApartmentProxy.CheckUnlockConfig(var0_19.unlock))
 	end)
 end
 
-function var0_0.getForceEnterTalking(arg0_18, arg1_18)
-	return arg0_18:getTalkingList({
+function var0_0.getForceEnterTalking(arg0_20, arg1_20)
+	return arg0_20:getTalkingList({
 		unlock = true,
 		unplay = true,
 		typeDic = {
 			[100] = true
 		},
-		roomId = arg1_18
+		roomId = arg1_20
 	})
 end
 
 var0_0.ENTER_TALK_TYPE_DIC = {
-	[101] = function(arg0_19, arg1_19)
+	[101] = function(arg0_21, arg1_21)
 		return PlayerPrefs.GetString("DORM3D_DAILY_ENTER", "") ~= pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d")
 	end,
-	[102] = function(arg0_20, arg1_20)
-		return underscore.any(arg0_20, function(arg0_21)
-			return getProxy(ActivityProxy):IsActivityNotEnd(arg0_21)
+	[102] = function(arg0_22, arg1_22)
+		return underscore.any(arg0_22, function(arg0_23)
+			return getProxy(ActivityProxy):IsActivityNotEnd(arg0_23)
 		end)
 	end,
-	[103] = function(arg0_22, arg1_22)
-		return PlayerPrefs.GetInt("dorm3d_enter_count_" .. arg1_22, 0) > arg0_22[1]
+	[103] = function(arg0_24, arg1_24)
+		return PlayerPrefs.GetInt("dorm3d_enter_count_" .. arg1_24, 0) > arg0_24[1]
 	end,
-	[104] = function(arg0_23, arg1_23)
+	[104] = function(arg0_25, arg1_25)
 		return true
 	end
 }
 
-function var0_0.getEnterTalking(arg0_24, arg1_24)
-	local var0_24
+function var0_0.getEnterTalking(arg0_26, arg1_26)
+	local var0_26
 
-	for iter0_24, iter1_24 in ipairs(arg0_24:getTalkingList({
+	for iter0_26, iter1_26 in ipairs(arg0_26:getTalkingList({
 		unlock = true,
 		typeDic = var0_0.ENTER_TALK_TYPE_DIC,
-		roomId = arg1_24
+		roomId = arg1_26
 	})) do
-		local var1_24 = pg.dorm3d_dialogue_group[iter1_24]
+		local var1_26 = pg.dorm3d_dialogue_group[iter1_26]
 
-		if switch(var1_24.type, var0_0.ENTER_TALK_TYPE_DIC, function(arg0_25)
+		if switch(var1_26.type, var0_0.ENTER_TALK_TYPE_DIC, function(arg0_27)
 			return false
-		end, var1_24.trigger_config, arg0_24.configId) then
-			if not var0_24 or var1_24.type < pg.dorm3d_dialogue_group[var0_24[1]].type then
-				var0_24 = {
-					iter1_24
+		end, var1_26.trigger_config, arg0_26.configId) then
+			if not var0_26 or var1_26.type < pg.dorm3d_dialogue_group[var0_26[1]].type then
+				var0_26 = {
+					iter1_26
 				}
-			elseif var1_24.type == pg.dorm3d_dialogue_group[var0_24[1]].type then
-				table.insert(var0_24, iter1_24)
+			elseif var1_26.type == pg.dorm3d_dialogue_group[var0_26[1]].type then
+				table.insert(var0_26, iter1_26)
 			end
 		end
 	end
 
-	return var0_24 or {}
+	return var0_26 or {}
 end
 
-function var0_0.getFurnitureTalking(arg0_26, arg1_26, arg2_26)
-	return underscore.filter(arg0_26:getTalkingList({
+function var0_0.getFurnitureTalking(arg0_28, arg1_28, arg2_28)
+	return underscore.filter(arg0_28:getTalkingList({
 		unlock = true,
 		typeDic = {
 			[200] = true
 		},
-		roomId = arg1_26
-	}), function(arg0_27)
-		local var0_27 = pg.dorm3d_dialogue_group[arg0_27]
-
-		return var0_27.trigger_config == "" or var0_27.trigger_config == arg2_26
-	end)
-end
-
-function var0_0.getZoneTalking(arg0_28, arg1_28, arg2_28)
-	return underscore.filter(arg0_28:getTalkingList({
-		unlock = true,
-		unplay = true,
-		typeDic = {
-			[300] = true
-		},
 		roomId = arg1_28
 	}), function(arg0_29)
-		return pg.dorm3d_dialogue_group[arg0_29].trigger_config == arg2_28
+		local var0_29 = pg.dorm3d_dialogue_group[arg0_29]
+
+		return var0_29.trigger_config == "" or var0_29.trigger_config == arg2_28
 	end)
 end
 
-function var0_0.getDistanceTalking(arg0_30, arg1_30, arg2_30)
+function var0_0.getZoneTalking(arg0_30, arg1_30, arg2_30)
 	return underscore.filter(arg0_30:getTalkingList({
 		unlock = true,
 		unplay = true,
 		typeDic = {
-			[550] = true
+			[300] = true
 		},
 		roomId = arg1_30
 	}), function(arg0_31)
@@ -213,41 +215,54 @@ function var0_0.getDistanceTalking(arg0_30, arg1_30, arg2_30)
 	end)
 end
 
-function var0_0.getSpecialTalking(arg0_32, arg1_32)
-	return arg0_32:getTalkingList({
+function var0_0.getDistanceTalking(arg0_32, arg1_32, arg2_32)
+	return underscore.filter(arg0_32:getTalkingList({
+		unlock = true,
+		unplay = true,
+		typeDic = {
+			[550] = true
+		},
+		roomId = arg1_32
+	}), function(arg0_33)
+		return pg.dorm3d_dialogue_group[arg0_33].trigger_config == arg2_32
+	end)
+end
+
+function var0_0.getSpecialTalking(arg0_34, arg1_34)
+	return arg0_34:getTalkingList({
 		unlock = true,
 		unplay = true,
 		typeDic = {
 			[700] = true
 		},
-		roomId = arg1_32
+		roomId = arg1_34
 	})
 end
 
-function var0_0.getGiftIds(arg0_33)
-	local var0_33 = pg.dorm3d_gift.get_id_list_by_ship_group_id
+function var0_0.getGiftIds(arg0_35)
+	local var0_35 = pg.dorm3d_gift.get_id_list_by_ship_group_id
 
-	return table.mergeArray(var0_33[0], var0_33[arg0_33.configId] or {})
+	return table.mergeArray(var0_35[0], var0_35[arg0_35.configId] or {})
 end
 
-function var0_0.needDownload(arg0_34)
-	local var0_34, var1_34 = ApartmentRoom.New({
-		id = arg0_34:getConfig("bind_room")
+function var0_0.needDownload(arg0_36)
+	local var0_36, var1_36 = ApartmentRoom.New({
+		id = arg0_36:getConfig("bind_room")
 	}):getDownloadNameList()
 
-	return #var0_34 > 0 or #var1_34 > 0
+	return #var0_36 > 0 or #var1_36 > 0
 end
 
-function var0_0.filterUnlockTalkList(arg0_35, arg1_35)
-	return underscore.filter(arg1_35, function(arg0_36)
-		return ApartmentProxy.CheckUnlockConfig(pg.dorm3d_dialogue_group[arg0_36].unlock)
+function var0_0.filterUnlockTalkList(arg0_37, arg1_37)
+	return underscore.filter(arg1_37, function(arg0_38)
+		return ApartmentProxy.CheckUnlockConfig(pg.dorm3d_dialogue_group[arg0_38].unlock)
 	end)
 end
 
-function var0_0.getIconTip(arg0_37, arg1_37)
-	if #arg0_37:getForceEnterTalking(arg1_37) > 0 then
+function var0_0.getIconTip(arg0_39, arg1_39)
+	if #arg0_39:getForceEnterTalking(arg1_39) > 0 then
 		return "main"
-	elseif getProxy(ApartmentProxy):getApartmentGiftCount(arg0_37.configId) then
+	elseif getProxy(ApartmentProxy):getApartmentGiftCount(arg0_39.configId) then
 		return "gift"
 	elseif false then
 		return "furnitrue"
@@ -258,14 +273,14 @@ function var0_0.getIconTip(arg0_37, arg1_37)
 	end
 end
 
-function var0_0.getGroupConfig(arg0_38, arg1_38)
-	if not arg1_38 or arg1_38 == "" then
+function var0_0.getGroupConfig(arg0_40, arg1_40)
+	if not arg1_40 or arg1_40 == "" then
 		return nil
 	end
 
-	for iter0_38, iter1_38 in ipairs(arg1_38) do
-		if iter1_38[1] == arg0_38 then
-			return iter1_38[2]
+	for iter0_40, iter1_40 in ipairs(arg1_40) do
+		if iter1_40[1] == arg0_40 then
+			return iter1_40[2]
 		end
 	end
 

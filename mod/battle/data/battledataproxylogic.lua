@@ -196,12 +196,10 @@ function var0_0.HandleDirectDamage(arg0_9, arg1_9, arg2_9, arg3_9, arg4_9)
 	local var3_9 = arg1_9:UpdateHP(arg2_9 * -1, var1_9)
 	local var4_9 = arg1_9:IsAlive()
 
-	if arg3_9 then
-		arg0_9:DamageStatistics(var0_9, var2_9, -var3_9)
+	arg0_9:DamageStatistics(var0_9, var2_9, -var3_9)
 
-		if not var4_9 then
-			arg0_9:KillCountStatistics(var0_9, var2_9)
-		end
+	if not var4_9 and var0_9 then
+		arg0_9:KillCountStatistics(var0_9, var2_9)
 	end
 
 	if not var4_9 then
@@ -226,7 +224,7 @@ function var0_0.obituary(arg0_10, arg1_10, arg2_10, arg3_10)
 						killer = arg3_10
 					})
 				elseif not arg1_10:GetWorldDeathMark() then
-					iter1_10:TriggerBuff(var3_0.BuffEffectType.ON_FRIENDLY_SHIP_DYING, {
+					iter1_10:TriggerBuff(var3_0.BuffEffectType.ON_TEAMMATE_SHIP_DYING, {
 						unit = arg1_10,
 						killer = arg3_10
 					})

@@ -3,7 +3,7 @@ return {
 	dialogbox = 2,
 	mode = 2,
 	alpha = 0,
-	id = "DORM3DHELLO15",
+	id = "DORM3DHELLO16",
 	hideSkip = true,
 	hideAuto = true,
 	scripts = {

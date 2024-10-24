@@ -18,6 +18,7 @@ function var1_0.SetArgs(arg0_2, arg1_2, arg2_2)
 
 	arg0_2._corruptRate = var0_2.corruptRate or 1
 	arg0_2._damageRate = var0_2.damageRate or 1
+	arg0_2._proxy = var0_0.Battle.BattleDataProxy.GetInstance()
 end
 
 function var1_0.onTakeHealing(arg0_3, arg1_3, arg2_3, arg3_3)
@@ -30,13 +31,7 @@ function var1_0.onTakeHealing(arg0_3, arg1_3, arg2_3, arg3_3)
 
 	arg3_3.damage = var0_3 - var1_3
 
-	local var2_3 = math.ceil(var1_3 * arg0_3._damageRate) * -1
-	local var3_3 = {
-		isMiss = false,
-		isCri = false,
-		isHeal = false,
-		isShare = false
-	}
+	local var2_3 = math.ceil(var1_3 * arg0_3._damageRate)
 
-	arg1_3:UpdateHP(var2_3, var3_3)
+	arg0_3._proxy:HandleDirectDamage(arg1_3, var2_3)
 end

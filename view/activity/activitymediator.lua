@@ -213,13 +213,7 @@ function var0_0.register(arg0_1)
 			var1_25 = var4_25 and var4_25:getConfig("map")
 
 			if not var4_25 then
-				local var5_25 = Map.lastMap and var3_25:getMapById(Map.lastMap)
-
-				if var5_25 and var5_25:isUnlock() then
-					var1_25 = Map.lastMap
-				else
-					var1_25 = var3_25:getLastUnlockMap().id
-				end
+				var1_25 = var3_25:GetLastNormalMap()
 			end
 
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {

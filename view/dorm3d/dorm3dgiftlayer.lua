@@ -190,6 +190,13 @@ function var0_0.UpdateGift(arg0_19, arg1_19, arg2_19, arg3_19)
 		onButton(arg0_19, var0_19:Find("info/lack"), function()
 			Dorm3dGift.SetViewedFlag(arg2_19)
 			setActive(var0_19:Find("info/lack/tip"), false)
+
+			if not var6_19:CheckBuyLimit() then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_shop_gift_owned"))
+
+				return
+			end
+
 			arg0_19:emit(Dorm3dGiftMediator.SHOW_SHOPPING_CONFIRM_WINDOW, {
 				content = {
 					icon = "<icon name=" .. var8_19:GetResIcon() .. " w=1.1 h=1.1/>",

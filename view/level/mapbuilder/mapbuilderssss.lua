@@ -22,7 +22,7 @@ function var0_0.OnInit(arg0_2)
 			return
 		end
 
-		arg0_2:emit(LevelUIConst.SWITCH_CHALLENGE_MAP)
+		arg0_2:emit(LevelUIConst.SWITCH_ACT_MAP, Map.ACTIVITY_HARD)
 	end, SFX_PANEL)
 	onButton(arg0_2, arg0_2.missionBtn, function()
 		if arg0_2:isfrozen() then

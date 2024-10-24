@@ -10632,6 +10632,108 @@ pg.auto_pilot_template = {
 			}
 		}
 	},
+	[70274] = {
+		id = 70274,
+		name = "2024风帆二期活动 怪群刷新靠左",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 3,
+				param = {
+					Z1 = 30,
+					Z2 = 80,
+					X2 = -5,
+					moveCount = 240,
+					duration = -1,
+					X1 = -20,
+					stopCount = 60
+				}
+			}
+		}
+	},
+	[70275] = {
+		id = 70275,
+		name = "2024风帆二期活动 怪群刷新靠右",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 3,
+				param = {
+					Z1 = 30,
+					Z2 = 80,
+					X2 = 5,
+					moveCount = 240,
+					duration = -1,
+					X1 = -10,
+					stopCount = 60
+				}
+			}
+		}
+	},
+	[70276] = {
+		id = 70276,
+		name = "2024风帆二期活动 我方支援船移动",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 2,
+				param = {
+					x = 30,
+					z = 0
+				}
+			},
+			{
+				index = 2,
+				to = 1,
+				type = 3,
+				param = {
+					Z1 = 62,
+					Z2 = 48,
+					X2 = -53,
+					moveCount = 240,
+					duration = -1,
+					X1 = -63,
+					stopCount = 90
+				}
+			}
+		}
+	},
+	[70277] = {
+		id = 70277,
+		name = "2024风帆二期活动 剧情战我方潜艇移动",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 2,
+				param = {
+					x = 30,
+					z = 0
+				}
+			},
+			{
+				index = 2,
+				to = 1,
+				type = 5,
+				param = {
+					Z1 = 15,
+					Z2 = -15,
+					X2 = 10,
+					moveCount = 240,
+					duration = -1,
+					X1 = -10,
+					stopCount = 90
+				}
+			}
+		}
+	},
 	[75001] = {
 		id = 75001,
 		name = "弹幕挑战1boss",

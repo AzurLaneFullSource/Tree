@@ -1,9 +1,8 @@
 return {
-	painting = 0,
+	id = 201083,
 	name = "2024天城航母活动B3 赤城meta 灵体召唤",
 	cd = 0,
-	action = true,
-	id = 201083,
+	painting = 0,
 	effect_list = {
 		{
 			target_choise = "TargetNil",

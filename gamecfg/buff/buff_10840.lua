@@ -3,7 +3,7 @@ return {
 		{
 			type = "BattleBuffCastSkill",
 			trigger = {
-				"onFriendlyShipDying"
+				"onTeammateShipDying"
 			},
 			arg_list = {
 				maxTargetNumber = 1,

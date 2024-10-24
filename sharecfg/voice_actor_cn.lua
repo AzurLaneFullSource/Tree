@@ -1659,5 +1659,25 @@ pg.voice_actor_CN = {
 	[427] = {
 		code = 427,
 		actor_name = "Ayano Shibuya"
+	},
+	[428] = {
+		code = 428,
+		actor_name = "Sora Tokui"
+	},
+	[429] = {
+		code = 429,
+		actor_name = "Tsubame Yuzuki"
+	},
+	[430] = {
+		code = 430,
+		actor_name = "Konomi Inagaki"
+	},
+	[431] = {
+		code = 431,
+		actor_name = "Ryouko Jyuni"
+	},
+	[432] = {
+		code = 432,
+		actor_name = "Asuka Shioiri"
 	}
 }

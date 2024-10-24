@@ -3,7 +3,7 @@ local var0_0 = class("SecretShipyardScene", import("..base.BaseUI"))
 var0_0.optionsPath = {
 	"main/top/btn_home"
 }
-var0_0.ACT_ID = 5023
+var0_0.ACT_ID = 5625
 var0_0.GAME_ID = 59
 var0_0.ANIMATIONS = {
 	"Phase_00",

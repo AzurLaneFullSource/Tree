@@ -5,9 +5,7 @@ function var0_0.GetContainer(arg0_1)
 end
 
 function var0_0.InShowTime(arg0_2)
-	local var0_2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_INSTAGRAM)
-
-	return var0_2 and not var0_2:isEnd()
+	return true
 end
 
 function var0_0.GetUIName(arg0_3)
@@ -21,7 +19,7 @@ end
 function var0_0.OnInit(arg0_5)
 	arg0_5.animator = arg0_5._tf:Find("icon"):GetComponent(typeof(Animator))
 
-	local var0_5 = getProxy(InstagramProxy):ShouldShowTip()
+	local var0_5 = getProxy(InstagramProxy):ShouldShowTip() or getProxy(InstagramChatProxy):ShouldShowTip()
 
 	arg0_5.animator.enabled = var0_5
 

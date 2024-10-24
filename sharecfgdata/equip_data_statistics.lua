@@ -131019,6 +131019,218 @@ _G.pg.base.equip_data_statistics[80352] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[80361] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 80361,
+	name = "专属弹幕-和睦I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170601,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80362] = {
+	base = 80361,
+	id = 80362,
+	name = "专属弹幕-和睦II",
+	weapon_id = {
+		170602,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[80371] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 80371,
+	name = "专属弹幕-幻想号I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170611,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80372] = {
+	base = 80371,
+	id = 80372,
+	name = "专属弹幕-幻想号II",
+	weapon_id = {
+		170612,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[80381] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 80381,
+	name = "专属弹幕-海豚I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170621,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80382] = {
+	base = 80381,
+	id = 80382,
+	name = "专属弹幕-海豚II",
+	weapon_id = {
+		170622,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[80391] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 80391,
+	name = "专属弹幕-朴茨茅斯冒险号I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170631,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80392] = {
+	base = 80391,
+	id = 80392,
+	name = "专属弹幕-朴茨茅斯冒险号II",
+	weapon_id = {
+		170632,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[85000] = {
 	ammo = 3,
 	attribute_2 = "cannon",
@@ -157350,6 +157562,400 @@ _G.pg.base.equip_data_statistics[150373] = {
 	value_2 = 26,
 }
 
+_G.pg.base.equip_data_statistics[150380] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	attribute_2 = "reload",
+	descrip = "A chest filled with gold and gems!",
+	icon = "150380",
+	id = 150380,
+	name = "Chest Full of Treasure",
+	nationality = 96,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "250",
+	value_2 = 3,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		60680,
+	},
+	hidden_skill_id = {},
+	part_main = {
+		22,
+		23,
+		24,
+	},
+	part_sub = {
+		22,
+		23,
+		24,
+	},
+	equip_parameters = {},
+	label = {
+		"MOT",
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150381] = {
+	base = 150380,
+	id = 150381,
+	value_1 = "280",
+}
+
+_G.pg.base.equip_data_statistics[150382] = {
+	base = 150380,
+	id = 150382,
+	value_1 = "310",
+	value_2 = 4,
+}
+
+_G.pg.base.equip_data_statistics[150383] = {
+	base = 150380,
+	id = 150383,
+	value_1 = "340",
+	value_2 = 5,
+}
+
+_G.pg.base.equip_data_statistics[150384] = {
+	base = 150380,
+	id = 150384,
+	value_1 = "370",
+	value_2 = 6,
+}
+
+_G.pg.base.equip_data_statistics[150385] = {
+	base = 150380,
+	id = 150385,
+	value_1 = "400",
+	value_2 = 6,
+}
+
+_G.pg.base.equip_data_statistics[150386] = {
+	base = 150380,
+	id = 150386,
+	value_1 = "430",
+	value_2 = 7,
+}
+
+_G.pg.base.equip_data_statistics[150387] = {
+	base = 150380,
+	id = 150387,
+	value_1 = "460",
+	value_2 = 8,
+}
+
+_G.pg.base.equip_data_statistics[150388] = {
+	base = 150380,
+	id = 150388,
+	value_1 = "490",
+	value_2 = 9,
+}
+
+_G.pg.base.equip_data_statistics[150389] = {
+	base = 150380,
+	id = 150389,
+	value_1 = "520",
+	value_2 = 9,
+}
+
+_G.pg.base.equip_data_statistics[150390] = {
+	base = 150380,
+	id = 150390,
+	value_1 = "550",
+	value_2 = 10,
+}
+
+_G.pg.base.equip_data_statistics[150391] = {
+	anti_siren = 100,
+	base = 150380,
+	id = 150391,
+	value_1 = "580",
+	value_2 = 11,
+}
+
+_G.pg.base.equip_data_statistics[150392] = {
+	anti_siren = 200,
+	base = 150380,
+	id = 150392,
+	value_1 = "610",
+	value_2 = 12,
+}
+
+_G.pg.base.equip_data_statistics[150393] = {
+	anti_siren = 300,
+	base = 150380,
+	id = 150393,
+	value_1 = "640",
+	value_2 = 13,
+}
+
+_G.pg.base.equip_data_statistics[150400] = {
+	ammo = 10,
+	attribute_1 = "cannon",
+	attribute_2 = "hit",
+	descrip = "专注于人员打击的特殊炮弹，夺船必备！ ",
+	icon = "150400",
+	id = 150400,
+	name = "Grapeshot",
+	nationality = 96,
+	rarity = 4,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "14",
+	value_2 = 4,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		60700,
+	},
+	hidden_skill_id = {},
+	part_main = {
+		22,
+		23,
+		24,
+	},
+	part_sub = {
+		22,
+		23,
+		24,
+	},
+	equip_parameters = {},
+	label = {
+		"MOT",
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150401] = {
+	base = 150400,
+	id = 150401,
+	value_1 = "16",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150402] = {
+	base = 150400,
+	id = 150402,
+	value_1 = "18",
+	value_2 = 5,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150403] = {
+	base = 150400,
+	id = 150403,
+	value_1 = "20",
+	value_2 = 5,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150404] = {
+	base = 150400,
+	id = 150404,
+	value_1 = "22",
+	value_2 = 6,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150405] = {
+	base = 150400,
+	id = 150405,
+	value_1 = "24",
+	value_2 = 7,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150406] = {
+	base = 150400,
+	id = 150406,
+	value_1 = "26",
+	value_2 = 7,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150407] = {
+	base = 150400,
+	id = 150407,
+	value_1 = "28",
+	value_2 = 8,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150408] = {
+	base = 150400,
+	id = 150408,
+	value_1 = "30",
+	value_2 = 8,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150409] = {
+	base = 150400,
+	id = 150409,
+	value_1 = "32",
+	value_2 = 9,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150410] = {
+	base = 150400,
+	id = 150410,
+	value_1 = "35",
+	value_2 = 10,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150411] = {
+	anti_siren = 100,
+	base = 150400,
+	id = 150411,
+	value_1 = "38",
+	value_2 = 10,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150420] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "An intoxicating beverage that lets you forget about the troubles of the pirate life.",
+	icon = "150420",
+	id = 150420,
+	name = "Rum Keg",
+	nationality = 96,
+	rarity = 4,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "200",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		60720,
+	},
+	hidden_skill_id = {},
+	part_main = {
+		22,
+		23,
+		24,
+	},
+	part_sub = {
+		22,
+		23,
+		24,
+	},
+	equip_parameters = {},
+	label = {
+		"MOT",
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150421] = {
+	base = 150420,
+	id = 150421,
+	value_1 = "230",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150422] = {
+	base = 150420,
+	id = 150422,
+	value_1 = "260",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150423] = {
+	base = 150420,
+	id = 150423,
+	value_1 = "290",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150424] = {
+	base = 150420,
+	id = 150424,
+	value_1 = "320",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150425] = {
+	base = 150420,
+	id = 150425,
+	value_1 = "350",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150426] = {
+	base = 150420,
+	id = 150426,
+	value_1 = "380",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150427] = {
+	base = 150420,
+	id = 150427,
+	value_1 = "410",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150428] = {
+	base = 150420,
+	id = 150428,
+	value_1 = "440",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150429] = {
+	base = 150420,
+	id = 150429,
+	value_1 = "470",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150430] = {
+	base = 150420,
+	id = 150430,
+	value_1 = "500",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150431] = {
+	anti_siren = 100,
+	base = 150420,
+	id = 150431,
+	value_1 = "530",
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[170001] = {
 	ammo = 10,
 	descrip = "Barrage",
@@ -160728,6 +161334,58 @@ _G.pg.base.equip_data_statistics[3165001] = {
 		3165001,
 	},
 	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[3217501] = {
+	ammo = 2,
+	anti_siren = 300,
+	attribute_2 = "cannon",
+	damage = "78 x 6",
+	descrip = "An Age of Sail demi-cannon imbued with a strange power.",
+	icon = "150100",
+	id = 3217501,
+	name = "【2024风帆二期剧情战】我方后排加农炮",
+	nationality = 96,
+	rarity = 5,
+	speciality = "<[VOL]>",
+	tech = 3,
+	torpedo_ammo = 0,
+	type = 4,
+	value_2 = 45,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {
+		1,
+	},
+	ammo_info = {
+		{
+			2,
+			1351,
+		},
+	},
+	equip_info = {
+		1,
+		2,
+		6,
+		10,
+		11,
+		12,
+	},
+	weapon_id = {
+		3217501,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		24,
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"MOT",
+		"SF",
+		"MG",
+	},
 }
 
 _G.pg.base.equip_data_statistics[800000] = {

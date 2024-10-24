@@ -113,40 +113,6 @@ function var0_0.execute(arg0_1, arg1_1)
 
 				return
 			end
-
-			local var16_1 = iter3_1
-
-			if type(var16_1) == "table" and (var3_1.type == DROP_TYPE_DORM3D_FURNITURE or var3_1.type == DROP_TYPE_DORM3D_GIFT) and (var16_1[1] == "dailycount" or var16_1[1] == "count") then
-				local var17_1 = 0
-
-				if var3_1.type == DROP_TYPE_DORM3D_FURNITURE then
-					var17_1 = getProxy(ApartmentProxy):GetFurnitureShopCount(var3_1.effect_args[1])
-				elseif var3_1.type == DROP_TYPE_DORM3D_GIFT then
-					var17_1 = getProxy(ApartmentProxy):GetGiftShopCount(var3_1.effect_args[1])
-				end
-
-				if var17_1 >= var16_1[3] then
-					pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
-
-					return
-				end
-			end
-		end
-	end
-
-	if var3_1.group_limit > 0 and (var3_1.type == DROP_TYPE_DORM3D_FURNITURE or var3_1.type == DROP_TYPE_DORM3D_GIFT) then
-		local var18_1 = 0
-
-		if var3_1.type == DROP_TYPE_DORM3D_FURNITURE then
-			var18_1 = getProxy(ApartmentProxy):GetFurnitureShopCount(var3_1.effect_args[1])
-		elseif var3_1.type == DROP_TYPE_DORM3D_GIFT then
-			var18_1 = getProxy(ApartmentProxy):GetGiftShopCount(var3_1.effect_args[1])
-		end
-
-		if var18_1 >= var3_1.group_limit then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
-
-			return
 		end
 	end
 
@@ -155,7 +121,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	end
 
 	if var12_1 > var5_1[id2res(var3_1.resource_type)] then
-		local var19_1 = Drop.New({
+		local var16_1 = Drop.New({
 			type = DROP_TYPE_RESOURCE,
 			id = var3_1.resource_type
 		}):getName()
@@ -171,15 +137,15 @@ function var0_0.execute(arg0_1, arg1_1)
 		elseif var3_1.resource_type == 4 or var3_1.resource_type == 14 then
 			GoShoppingMsgBox(i18n("switch_to_shop_tip_3", i18n("word_gem")), ChargeScene.TYPE_DIAMOND)
 		elseif not ItemTipPanel.ShowItemTip(DROP_TYPE_RESOURCE, var3_1.resource_type) then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("buyProp_noResource_error", var19_1))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("buyProp_noResource_error", var16_1))
 		end
 
 		return
 	end
 
-	local var20_1 = {}
+	local var17_1 = {}
 
-	table.insert(var20_1, function(arg0_5)
+	table.insert(var17_1, function(arg0_5)
 		if var3_1.genre == ShopArgs.GiftPackage or var3_1.genre == ShopArgs.NewServerShop then
 			local var0_5 = Drop.New({
 				count = 1,
@@ -222,7 +188,7 @@ function var0_0.execute(arg0_1, arg1_1)
 
 		arg0_5()
 	end)
-	seriesAsync(var20_1, function()
+	seriesAsync(var17_1, function()
 		pg.ConnectionMgr.GetInstance():Send(16001, {
 			id = var1_1,
 			number = var2_1

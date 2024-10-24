@@ -644,7 +644,8 @@ function var0_0.OnCVBtnClick(arg0_50, arg1_50)
 					parallelAsync({
 						function(arg0_52)
 							arg0_50:RemoveLive2DTimer()
-							arg0_50.l2dChar:TriggerAction(var0_51, arg0_52)
+
+							arg0_50.l2dActioning = arg0_50.l2dChar:TriggerAction(var0_51, arg0_52)
 						end,
 						function(arg0_53)
 							arg0_50:PlayVoice(arg1_50, var3_51)
@@ -657,7 +658,8 @@ function var0_0.OnCVBtnClick(arg0_50, arg1_50)
 					seriesAsync({
 						function(arg0_55)
 							arg0_50:RemoveLive2DTimer()
-							arg0_50.l2dChar:TriggerAction(var0_51, arg0_55, nil, function(arg0_56)
+
+							arg0_50.l2dActioning = arg0_50.l2dChar:TriggerAction(var0_51, arg0_55, nil, function(arg0_56)
 								arg0_50:PlayVoice(arg1_50, var3_51)
 								arg0_50:ShowDailogue(arg1_50, var3_51, arg0_55)
 							end)

@@ -41,8 +41,8 @@ function var0_0.register(arg0_1)
 	end)
 	arg0_1:bind(var0_0.SKIP_INS, function(arg0_4)
 		arg0_1:addSubLayers(Context.New({
-			viewComponent = InstagramLayer,
-			mediator = InstagramMediator
+			viewComponent = InstagramMainUI,
+			mediator = InstagramMainMediator
 		}))
 	end)
 	arg0_1:bind(var0_0.SKIP_ESCORT, function(arg0_5)
@@ -178,7 +178,8 @@ function var0_0.listNotificationInterests(arg0_20)
 		var0_0.REFRESH_VIEW,
 		GAME.CHANGE_LIVINGAREA_COVER_DONE,
 		CompensateProxy.UPDATE_ATTACHMENT_COUNT,
-		CompensateProxy.All_Compensate_Remove
+		CompensateProxy.All_Compensate_Remove,
+		GAME.ACT_INSTAGRAM_CHAT_DONE
 	}
 
 	for iter0_20, iter1_20 in pairs(pg.redDotHelper:GetNotifyType()) do
@@ -226,6 +227,12 @@ function var0_0.handleNotification(arg0_21, arg1_21)
 		}))
 	elseif var0_21 == GAME.CHANGE_LIVINGAREA_COVER_DONE then
 		arg0_21.viewComponent:emit(NewMainScene.UPDATE_COVER)
+	elseif var0_21 == GAME.ACT_INSTAGRAM_CHAT_DONE and var1_21.operation == ActivityConst.INSTAGRAM_CHAT_ACTIVATE_TOPIC then
+		local var2_21 = arg0_21.viewComponent:GetFlagShip()
+
+		if arg0_21.viewComponent.theme then
+			arg0_21.viewComponent.theme:Refresh(var2_21)
+		end
 	end
 
 	arg0_21.viewComponent:emit(var0_21, var1_21)

@@ -1796,6 +1796,21 @@ pg.ship_data_group = setmetatable({
 		[960006] = {
 			612
 		},
+		[960007] = {
+			664
+		},
+		[960008] = {
+			665
+		},
+		[960009] = {
+			666
+		},
+		[960010] = {
+			667
+		},
+		[960011] = {
+			668
+		},
 		[1010001] = {
 			10001
 		},
@@ -2795,7 +2810,12 @@ pg.ship_data_group = setmetatable({
 			610,
 			611,
 			614,
-			612
+			612,
+			664,
+			665,
+			666,
+			667,
+			668
 		},
 		{
 			10001,
@@ -3536,6 +3556,11 @@ pg.ship_data_group = setmetatable({
 		611,
 		614,
 		612,
+		664,
+		665,
+		666,
+		667,
+		668,
 		10001,
 		10002,
 		10003,
@@ -29723,6 +29748,166 @@ pg.base.ship_data_group = {
 		description = {
 			{
 				"Event: Tempesta and the Fountain of Youth",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[664] = {
+		type = 24,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 96,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 598,
+		code = 664,
+		group_type = 960007,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"C",
+			"E",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: 飓风与沉眠之海",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[665] = {
+		type = 23,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 96,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 599,
+		code = 665,
+		group_type = 960008,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"C",
+			"E",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: 飓风与沉眠之海",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[666] = {
+		type = 22,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 96,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 600,
+		code = 666,
+		group_type = 960009,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"C",
+			"E",
+			"E",
+			"C",
+			"E",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: 飓风与沉眠之海",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[667] = {
+		type = 23,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 96,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 601,
+		code = 667,
+		group_type = 960010,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"B",
+			"E",
+			"E",
+			"C",
+			"E",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: 飓风与沉眠之海",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[668] = {
+		type = 22,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 96,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 602,
+		code = 668,
+		group_type = 960011,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"C",
+			"E",
+			"E",
+			"C",
+			"E",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: 飓风与沉眠之海",
 				{
 					""
 				},

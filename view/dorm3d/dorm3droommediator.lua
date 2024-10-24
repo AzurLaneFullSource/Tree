@@ -25,6 +25,7 @@ var0_0.GUIDE_CHECK_LEVEL_UP = "Dorm3dRoomMediator.GUIDE_CHECK_LEVEL_UP"
 var0_0.Camera_Pinch_Value_Change = "Dorm3dRoomMediator.Camera_Pinch_Value_Change"
 var0_0.ENTER_VOLLEYBALL = "Dorm3dRoomMediator.ENTER_VOLLEYBALL"
 var0_0.ON_DROP_CLIENT = "Dorm3dRoomMediator.ON_DROP_CLIENT"
+var0_0.UPDATE_FAVOR_DISPLAY = "Dorm3dRoomMediator.UPDATE_FAVOR_DISPLAY"
 
 function var0_0.register(arg0_1)
 	arg0_1:bind(var0_0.TRIGGER_FAVOR, function(arg0_2, arg1_2, arg2_2)
@@ -220,92 +221,101 @@ function var0_0.initNotificationHandleDic(arg0_30)
 		[var0_0.OTHER_DO_TALK] = function(arg0_37, arg1_37)
 			local var0_37 = arg1_37:getBody()
 
-			arg0_37.viewComponent:DoTalk(var0_37.talkId, var0_37.callback)
-		end,
-		[var0_0.OTHER_POP_UNLOCK] = function(arg0_38, arg1_38)
-			local var0_38 = arg1_38:getBody()
+			arg0_37.viewComponent.inReplayTalk = true
 
-			arg0_38.viewComponent:AddUnlockDisplay(var0_38)
-		end,
-		[GAME.APARTMENT_DO_TALK_DONE] = function(arg0_39, arg1_39)
-			arg0_39.viewComponent:UpdateBtnState()
-		end,
-		[GAME.APARTMENT_COLLECTION_ITEM_DONE] = function(arg0_40, arg1_40)
-			local var0_40 = arg1_40:getBody()
+			arg0_37.viewComponent:DoTalk(var0_37.talkId, function()
+				arg0_37.viewComponent.inReplayTalk = false
 
-			arg0_40:addSubLayers(Context.New({
+				existCall(var0_37.callback)
+			end)
+		end,
+		[var0_0.OTHER_POP_UNLOCK] = function(arg0_39, arg1_39)
+			local var0_39 = arg1_39:getBody()
+
+			arg0_39.viewComponent:AddUnlockDisplay(var0_39)
+		end,
+		[GAME.APARTMENT_DO_TALK_DONE] = function(arg0_40, arg1_40)
+			arg0_40.viewComponent:UpdateBtnState()
+		end,
+		[GAME.APARTMENT_COLLECTION_ITEM_DONE] = function(arg0_41, arg1_41)
+			local var0_41 = arg1_41:getBody()
+
+			arg0_41:addSubLayers(Context.New({
 				viewComponent = Dorm3dCollectAwardLayer,
 				mediator = Dorm3dCollectAwardMediator,
 				data = {
-					itemId = var0_40.itemId,
-					isNew = var0_40.isNew
+					itemId = var0_41.itemId,
+					isNew = var0_41.isNew
 				}
 			}))
-			arg0_40.viewComponent:UpdateBtnState()
+			arg0_41.viewComponent:UpdateBtnState()
 		end,
-		[var0_0.CHAMGE_TIME_RELOAD_SCENE] = function(arg0_41, arg1_41)
-			local var0_41 = arg1_41:getBody()
+		[var0_0.CHAMGE_TIME_RELOAD_SCENE] = function(arg0_42, arg1_42)
+			local var0_42 = arg1_42:getBody()
 
-			arg0_41.contextData.timeIndex = var0_41.timeIndex
+			arg0_42.contextData.timeIndex = var0_42.timeIndex
 
-			arg0_41.viewComponent:SwitchDayNight(arg0_41.contextData.timeIndex)
+			arg0_42.viewComponent:SwitchDayNight(arg0_42.contextData.timeIndex)
 			onNextTick(function()
-				arg0_41.viewComponent:RefreshSlots()
+				arg0_42.viewComponent:RefreshSlots()
 			end)
-			arg0_41.viewComponent:UpdateContactState()
+			arg0_42.viewComponent:UpdateContactState()
 		end,
-		[GAME.APARTMENT_GIVE_GIFT_DONE] = function(arg0_43, arg1_43)
-			local var0_43 = arg1_43:getBody()
+		[GAME.APARTMENT_GIVE_GIFT_DONE] = function(arg0_44, arg1_44)
+			local var0_44 = arg1_44:getBody()
 
-			arg0_43.viewComponent:PlayHeartFX(var0_43.groupId)
-			arg0_43.viewComponent:UpdateBtnState()
+			arg0_44.viewComponent:PlayHeartFX(var0_44.groupId)
+			arg0_44.viewComponent:UpdateBtnState()
 		end,
-		[var0_0.GUIDE_CLICK_LADY] = function(arg0_44, arg1_44)
+		[var0_0.GUIDE_CLICK_LADY] = function(arg0_45, arg1_45)
 			warning("this.GUIDE_CLICK_LADY")
-			arg0_44.viewComponent:EnterWatchMode()
+			arg0_45.viewComponent:EnterWatchMode()
 		end,
-		[var0_0.GUIDE_CHECK_GUIDE] = function(arg0_45, arg1_45)
-			arg0_45.viewComponent:CheckGuide()
+		[var0_0.GUIDE_CHECK_GUIDE] = function(arg0_46, arg1_46)
+			arg0_46.viewComponent:CheckGuide()
 		end,
-		[var0_0.GUIDE_CHECK_LEVEL_UP] = function(arg0_46, arg1_46)
-			arg0_46.viewComponent:CheckLevelUp()
+		[var0_0.GUIDE_CHECK_LEVEL_UP] = function(arg0_47, arg1_47)
+			arg0_47.viewComponent:CheckLevelUp()
 		end,
-		[ApartmentProxy.UPDATE_ROOM] = function(arg0_47, arg1_47)
-			local var0_47 = arg1_47:getBody()
-
-			if var0_47:GetConfigID() == arg0_47.viewComponent.room:GetConfigID() then
-				arg0_47.viewComponent:SetRoom(var0_47)
-			end
-		end,
-		[Dorm3dInviteMediator.ON_DORM] = function(arg0_48, arg1_48)
+		[ApartmentProxy.UPDATE_ROOM] = function(arg0_48, arg1_48)
 			local var0_48 = arg1_48:getBody()
 
-			arg0_48:sendNotification(GAME.CHANGE_SCENE, SCENE.DORM3D_ROOM, var0_48)
+			if var0_48:GetConfigID() == arg0_48.viewComponent.room:GetConfigID() then
+				arg0_48.viewComponent:SetRoom(var0_48)
+			end
 		end,
-		[EatFoodMediator.HIT_AREA] = function(arg0_49, arg1_49)
+		[Dorm3dInviteMediator.ON_DORM] = function(arg0_49, arg1_49)
 			local var0_49 = arg1_49:getBody()
 
-			arg0_49.viewComponent:HandleGameNotification(EatFoodMediator.HIT_AREA, var0_49)
+			arg0_49:sendNotification(GAME.CHANGE_SCENE, SCENE.DORM3D_ROOM, var0_49)
 		end,
-		[EatFoodMediator.RESULT] = function(arg0_50, arg1_50)
+		[EatFoodMediator.HIT_AREA] = function(arg0_50, arg1_50)
 			local var0_50 = arg1_50:getBody()
 
-			arg0_50.viewComponent:HandleGameNotification(EatFoodMediator.RESULT, var0_50)
+			arg0_50.viewComponent:HandleGameNotification(EatFoodMediator.HIT_AREA, var0_50)
 		end,
-		[EatFoodMediator.LEAVE_GAME] = function(arg0_51, arg1_51)
+		[EatFoodMediator.RESULT] = function(arg0_51, arg1_51)
 			local var0_51 = arg1_51:getBody()
 
-			arg0_51.viewComponent:HandleGameNotification(EatFoodMediator.LEAVE_GAME, var0_51)
+			arg0_51.viewComponent:HandleGameNotification(EatFoodMediator.RESULT, var0_51)
 		end,
-		[ApartmentProxy.ZERO_HOUR_REFRESH] = function(arg0_52, arg1_52)
+		[EatFoodMediator.LEAVE_GAME] = function(arg0_52, arg1_52)
 			local var0_52 = arg1_52:getBody()
 
-			arg0_52.viewComponent:UpdateFavorDisplay()
+			arg0_52.viewComponent:HandleGameNotification(EatFoodMediator.LEAVE_GAME, var0_52)
+		end,
+		[ApartmentProxy.ZERO_HOUR_REFRESH] = function(arg0_53, arg1_53)
+			local var0_53 = arg1_53:getBody()
+
+			arg0_53.viewComponent:UpdateFavorDisplay()
+		end,
+		[var0_0.UPDATE_FAVOR_DISPLAY] = function(arg0_54, arg1_54)
+			arg0_54.viewComponent:UpdateFavorDisplay()
 		end
 	}
 end
 
-function var0_0.remove(arg0_53)
+function var0_0.remove(arg0_55)
 	return
 end
 

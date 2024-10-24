@@ -23,14 +23,12 @@ function var0_0.init(arg0_4)
 
 	arg0_4.downloadmgr = BulletinBoardMgr.Inst
 	arg0_4.listTF = arg0_4:findTF("list")
-	arg0_4.listAnimationPlayer = arg0_4._tf:GetComponent(typeof(Animation))
-	arg0_4.listDftAniEvent = arg0_4._tf:GetComponent(typeof(DftAniEvent))
 	arg0_4.mainTF = arg0_4:findTF("main")
-	arg0_4.closeBtn = arg0_4:findTF("close_btn")
-	arg0_4.helpBtn = arg0_4:findTF("list/bg/help")
+	arg0_4.closeBtn = arg0_4:findTF("closeBtn")
 	arg0_4.noMsgTF = arg0_4:findTF("list/bg/no_msg")
+	arg0_4.scrollBarTF = arg0_4:findTF("list/bg/scroll_bar")
 	arg0_4.list = arg0_4:findTF("list/bg/scrollrect"):GetComponent("LScrollRect")
-	arg0_4.imageTF = arg0_4:findTF("main/left_panel/Image"):GetComponent(typeof(RawImage))
+	arg0_4.imageTF = arg0_4:findTF("main/left_panel/mask/Image"):GetComponent(typeof(RawImage))
 	arg0_4.likeBtn = arg0_4:findTF("main/left_panel/heart")
 	arg0_4.bubbleTF = arg0_4:findTF("main/left_panel/bubble")
 	arg0_4.planeTF = arg0_4:findTF("main/left_panel/plane")
@@ -44,11 +42,15 @@ function var0_0.init(arg0_4)
 	arg0_4.commentPanel = arg0_4:findTF("main/right_panel/last/bg2")
 	arg0_4.optionalPanel = arg0_4:findTF("main/right_panel/last/bg2/option")
 	arg0_4.scroll = arg0_4:findTF("main/right_panel/center/bottom/scroll")
+
+	setText(arg0_4:findTF("closeBtn/Text"), i18n("word_back"))
+
 	arg0_4.sprites = {}
 	arg0_4.timers = {}
 	arg0_4.toDownloadList = {}
 
 	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf, false, {
+		groupName = "Instagram",
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 end
@@ -97,327 +99,326 @@ function var0_0.SetImageByUrl(arg0_5, arg1_5, arg2_5, arg3_5)
 end
 
 function var0_0.didEnter(arg0_7)
-	arg0_7.animTF:GetComponent(typeof(UIEventTrigger)).didEnter:AddListener(function()
-		arg0_7:SetUp()
-	end)
+	arg0_7:SetUp()
 
 	arg0_7.cards = {}
 
-	function arg0_7.list.onInitItem(arg0_9)
-		local var0_9 = InstagramCard.New(arg0_9, arg0_7)
+	function arg0_7.list.onInitItem(arg0_8)
+		local var0_8 = InstagramCard.New(arg0_8, arg0_7)
 
-		onButton(arg0_7, var0_9._go, function()
-			arg0_7:EnterDetail(var0_9.instagram)
+		onButton(arg0_7, var0_8._go, function()
+			arg0_7:EnterDetail(var0_8.instagram)
 		end, SFX_PANEL)
 
-		arg0_7.cards[arg0_9] = var0_9
+		arg0_7.cards[arg0_8] = var0_8
 	end
 
-	function arg0_7.list.onUpdateItem(arg0_11, arg1_11)
-		local var0_11 = arg0_7.cards[arg1_11]
+	function arg0_7.list.onUpdateItem(arg0_10, arg1_10)
+		local var0_10 = arg0_7.cards[arg1_10]
 
-		if not var0_11 then
-			var0_11 = InstagramCard.New(arg1_11)
-			arg0_7.cards[arg1_11] = var0_11
+		if not var0_10 then
+			var0_10 = InstagramCard.New(arg1_10)
+			arg0_7.cards[arg1_10] = var0_10
 		end
 
-		local var1_11 = arg0_7.display[arg0_11 + 1]
-		local var2_11 = arg0_7.instagramVOById[var1_11.id]
+		local var1_10 = arg0_7.display[arg0_10 + 1]
+		local var2_10 = arg0_7.instagramVOById[var1_10.id]
 
-		var0_11:Update(var2_11)
+		var0_10:Update(var2_10)
 	end
 
 	arg0_7:InitList()
 end
 
-function var0_0.SetUp(arg0_12)
-	onButton(arg0_12, arg0_12.closeBtn, function()
-		arg0_12:OnClose()
-	end, SFX_PANEL)
-	onButton(arg0_12, arg0_12.helpBtn, function()
-		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			type = MSGBOX_TYPE_HELP,
-			helps = pg.gametip.music_juus.tip
-		})
-	end, SFX_PANEL)
-	onButton(arg0_12, arg0_12._tf, function()
-		arg0_12:OnClose()
+function var0_0.SetUp(arg0_11)
+	setActive(arg0_11.listTF, true)
+	setActive(arg0_11.mainTF, false)
+	setActive(arg0_11.closeBtn, false)
+	onButton(arg0_11, arg0_11.closeBtn, function()
+		if arg0_11.inDetail then
+			arg0_11:ExitDetail()
+		end
 	end, SFX_PANEL)
 end
 
-function var0_0.OnClose(arg0_16)
-	if arg0_16.inDetail then
-		arg0_16:ExitDetail()
-	else
-		arg0_16:PlayExitAnimation(function()
-			arg0_16:emit(var0_0.ON_CLOSE)
-		end)
-	end
-end
-
-function var0_0.InitList(arg0_18)
-	arg0_18.display = _.map(arg0_18.messages, function(arg0_19)
+function var0_0.InitList(arg0_13)
+	arg0_13.display = _.map(arg0_13.messages, function(arg0_14)
 		return {
-			time = arg0_19:GetLasterUpdateTime(),
-			id = arg0_19.id,
-			order = arg0_19:GetSortIndex()
+			time = arg0_14:GetLasterUpdateTime(),
+			id = arg0_14.id,
+			order = arg0_14:GetSortIndex()
 		}
 	end)
 
-	table.sort(arg0_18.display, function(arg0_20, arg1_20)
-		if arg0_20.order == arg1_20.order then
-			return arg0_20.id > arg1_20.id
+	table.sort(arg0_13.display, function(arg0_15, arg1_15)
+		if arg0_15.order == arg1_15.order then
+			return arg0_15.id > arg1_15.id
 		else
-			return arg0_20.order > arg1_20.order
+			return arg0_15.order > arg1_15.order
 		end
 	end)
-	arg0_18.list:SetTotalCount(#arg0_18.display)
-	setActive(arg0_18.noMsgTF, #arg0_18.display == 0)
+	arg0_13.list:SetTotalCount(#arg0_13.display)
+	setActive(arg0_13.noMsgTF, #arg0_13.display == 0)
+	setActive(arg0_13.scrollBarTF, not #arg0_13.display == 0)
 end
 
-function var0_0.UpdateInstagram(arg0_21, arg1_21, arg2_21)
-	for iter0_21, iter1_21 in pairs(arg0_21.cards) do
-		if iter1_21.instagram and iter1_21.instagram.id == arg1_21 then
-			iter1_21:Update(arg0_21.instagramVOById[arg1_21], arg2_21)
+function var0_0.UpdateInstagram(arg0_16, arg1_16, arg2_16)
+	for iter0_16, iter1_16 in pairs(arg0_16.cards) do
+		if iter1_16.instagram and iter1_16.instagram.id == arg1_16 then
+			iter1_16:Update(arg0_16.instagramVOById[arg1_16], arg2_16)
 		end
 	end
 end
 
-function var0_0.EnterDetail(arg0_22, arg1_22)
-	arg0_22.contextData.instagram = arg1_22
+function var0_0.EnterDetail(arg0_17, arg1_17)
+	arg0_17.contextData.instagram = arg1_17
 
-	arg0_22:InitDetailPage()
+	arg0_17:InitDetailPage()
 
-	arg0_22.inDetail = true
+	arg0_17.inDetail = true
 
-	pg.SystemGuideMgr.GetInstance():Play(arg0_22)
-	arg0_22:RefreshInstagram()
-	arg0_22.listAnimationPlayer:Play("anim_snsLoad_list_out")
-	scrollTo(arg0_22.scroll, 0, 1)
+	setActive(arg0_17.listTF, false)
+	setActive(arg0_17.mainTF, true)
+	setActive(arg0_17.closeBtn, true)
+	pg.SystemGuideMgr.GetInstance():Play(arg0_17)
+	arg0_17:RefreshInstagram()
+	scrollTo(arg0_17.scroll, 0, 1)
 end
 
-function var0_0.ExitDetail(arg0_23)
-	local var0_23 = arg0_23.contextData.instagram
+function var0_0.ExitDetail(arg0_18)
+	local var0_18 = arg0_18.contextData.instagram
 
-	if var0_23 and not var0_23:IsReaded() then
-		arg0_23:emit(InstagramMediator.ON_READED, var0_23.id)
+	if var0_18 and not var0_18:IsReaded() then
+		arg0_18:emit(InstagramMediator.ON_READED, var0_18.id)
 	end
 
-	arg0_23.contextData.instagram = nil
-	arg0_23.inDetail = false
+	arg0_18.contextData.instagram = nil
+	arg0_18.inDetail = false
 
-	arg0_23:CloseCommentPanel()
-	arg0_23.listAnimationPlayer:Play("anim_snsLoad_list_in")
+	setActive(arg0_18.listTF, true)
+	setActive(arg0_18.mainTF, false)
+	setActive(arg0_18.closeBtn, false)
+	arg0_18:CloseCommentPanel()
 end
 
-function var0_0.RefreshInstagram(arg0_24)
-	local var0_24 = arg0_24.contextData.instagram
-	local var1_24 = var0_24:GetFastestRefreshTime()
+function var0_0.RefreshInstagram(arg0_19)
+	local var0_19 = arg0_19.contextData.instagram
+	local var1_19 = var0_19:GetFastestRefreshTime()
 
-	if var1_24 and var1_24 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
-		arg0_24:emit(InstagramMediator.ON_REPLY_UPDATE, var0_24.id)
+	if var1_19 and var1_19 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
+		arg0_19:emit(InstagramMediator.ON_REPLY_UPDATE, var0_19.id)
 	end
 end
 
-function var0_0.InitDetailPage(arg0_25)
-	local var0_25 = arg0_25.contextData.instagram
+function var0_0.InitDetailPage(arg0_20)
+	local var0_20 = arg0_20.contextData.instagram
 
-	arg0_25:SetImageByUrl(var0_25:GetImage(), arg0_25.imageTF)
-	onButton(arg0_25, arg0_25.planeTF, function()
-		arg0_25:emit(InstagramMediator.ON_SHARE, var0_25.id)
+	arg0_20:SetImageByUrl(var0_20:GetImage(), arg0_20.imageTF)
+	onButton(arg0_20, arg0_20.planeTF, function()
+		arg0_20:emit(InstagramMediator.ON_SHARE, var0_20.id)
 	end, SFX_PANEL)
 
-	arg0_25.pushTimeTxt.text = var0_25:GetPushTime()
+	arg0_20.pushTimeTxt.text = var0_20:GetPushTime()
 
-	setImageSprite(arg0_25.iconTF, LoadSprite("qicon/" .. var0_25:GetIcon()), false)
+	setImageSprite(arg0_20.iconTF, LoadSprite("qicon/" .. var0_20:GetIcon()), false)
 
-	arg0_25.nameTxt.text = var0_25:GetName()
-	arg0_25.contentTxt.text = var0_25:GetContent()
+	arg0_20.nameTxt.text = var0_20:GetName()
+	arg0_20.contentTxt.text = var0_20:GetContent()
 
-	onToggle(arg0_25, arg0_25.commentPanel, function(arg0_27)
-		if arg0_27 then
-			arg0_25:OpenCommentPanel()
+	onToggle(arg0_20, arg0_20.commentPanel, function(arg0_22)
+		if arg0_22 then
+			arg0_20:OpenCommentPanel()
 		else
-			arg0_25:CloseCommentPanel()
+			arg0_20:CloseCommentPanel()
 		end
 	end, SFX_PANEL)
-	arg0_25:UpdateLikeBtn()
-	arg0_25:UpdateCommentList()
+	arg0_20:UpdateLikeBtn()
+	arg0_20:UpdateCommentList()
 end
 
-function var0_0.UpdateLikeBtn(arg0_28)
-	local var0_28 = arg0_28.contextData.instagram
-	local var1_28 = var0_28:IsLiking()
+function var0_0.UpdateLikeBtn(arg0_23)
+	local var0_23 = arg0_23.contextData.instagram
+	local var1_23 = var0_23:IsLiking()
 
-	if not var1_28 then
-		onButton(arg0_28, arg0_28.likeBtn, function()
-			arg0_28:emit(InstagramMediator.ON_LIKE, var0_28.id)
+	if not var1_23 then
+		onButton(arg0_23, arg0_23.likeBtn, function()
+			arg0_23:emit(InstagramMediator.ON_LIKE, var0_23.id)
 		end, SFX_PANEL)
 	else
-		removeOnButton(arg0_28.likeBtn)
+		removeOnButton(arg0_23.likeBtn)
 	end
 
-	setActive(arg0_28.likeBtn:Find("heart"), var1_28)
+	setActive(arg0_23.likeBtn:Find("heart"), var1_23)
 
-	arg0_28.likeBtn:GetComponent(typeof(Image)).enabled = not var1_28
-	arg0_28.likeCntTxt.text = i18n("ins_word_like", var0_28:GetLikeCnt())
+	arg0_23.likeBtn:GetComponent(typeof(Image)).enabled = not var1_23
+	arg0_23.likeCntTxt.text = i18n("ins_word_like", var0_23:GetLikeCnt())
 end
 
-function var0_0.UpdateCommentList(arg0_30)
-	local var0_30 = arg0_30.contextData.instagram
+function var0_0.UpdateCommentList(arg0_25)
+	local var0_25 = arg0_25.contextData.instagram
 
-	if not var0_30 then
+	if not var0_25 then
 		return
 	end
 
-	local var1_30, var2_30 = var0_30:GetCanDisplayComments()
+	local var1_25, var2_25 = var0_25:GetCanDisplayComments()
 
-	table.sort(var1_30, function(arg0_31, arg1_31)
-		return arg0_31.time < arg1_31.time
+	table.sort(var1_25, function(arg0_26, arg1_26)
+		return arg0_26.time < arg1_26.time
 	end)
-	arg0_30.commentList:make(function(arg0_32, arg1_32, arg2_32)
-		if arg0_32 == UIItemList.EventUpdate then
-			local var0_32 = var1_30[arg1_32 + 1]
-			local var1_32 = var0_32:HasReply()
+	arg0_25.commentList:make(function(arg0_27, arg1_27, arg2_27)
+		if arg0_27 == UIItemList.EventUpdate then
+			local var0_27 = var1_25[arg1_27 + 1]
+			local var1_27 = var0_27:HasReply()
 
-			setText(arg2_32:Find("main/reply"), var0_32:GetReplyBtnTxt())
+			setText(arg2_27:Find("main/reply"), var0_27:GetReplyBtnTxt())
 
-			local var2_32 = var0_32:GetContent()
-			local var3_32 = SwitchSpecialChar(var2_32)
+			local var2_27 = var0_27:GetContent()
+			local var3_27 = SwitchSpecialChar(var2_27)
 
-			setText(arg2_32:Find("main/content"), HXSet.hxLan(var3_32))
-			setText(arg2_32:Find("main/bubble/Text"), var0_32:GetReplyCnt())
-			setText(arg2_32:Find("main/time"), var0_32:GetTime())
+			setText(arg2_27:Find("main/content"), HXSet.hxLan(var3_27))
+			setText(arg2_27:Find("main/bubble/Text"), var0_27:GetReplyCnt())
+			setText(arg2_27:Find("main/time"), var0_27:GetTime())
 
-			if var0_32:GetType() == Instagram.TYPE_PLAYER_COMMENT then
-				local var4_32, var5_32 = var0_32:GetIcon()
+			if var0_27:GetType() == Instagram.TYPE_PLAYER_COMMENT then
+				local var4_27, var5_27 = var0_27:GetIcon()
 
-				setImageSprite(arg2_32:Find("main/head/icon"), GetSpriteFromAtlas(var4_32, var5_32))
+				setImageSprite(arg2_27:Find("main/head/icon"), GetSpriteFromAtlas(var4_27, var5_27))
 			else
-				setImageSprite(arg2_32:Find("main/head/icon"), LoadSprite("qicon/" .. var0_32:GetIcon()), false)
+				setImageSprite(arg2_27:Find("main/head/icon"), LoadSprite("qicon/" .. var0_27:GetIcon()), false)
 			end
 
-			if var1_32 then
-				onToggle(arg0_30, arg2_32:Find("main/bubble"), function(arg0_33)
-					setActive(arg2_32:Find("replys"), arg0_33)
+			if var1_27 then
+				onToggle(arg0_25, arg2_27:Find("main/bubble"), function(arg0_28)
+					setActive(arg2_27:Find("replys"), arg0_28)
 				end, SFX_PANEL)
-				arg0_30:UpdateReplys(arg2_32, var0_32)
-				triggerToggle(arg2_32:Find("main/bubble"), true)
+				arg0_25:UpdateReplys(arg2_27, var0_27)
+				triggerToggle(arg2_27:Find("main/bubble"), true)
 			else
-				setActive(arg2_32:Find("replys"), false)
-				triggerToggle(arg2_32:Find("main/bubble"), false)
+				setActive(arg2_27:Find("replys"), false)
+				triggerToggle(arg2_27:Find("main/bubble"), false)
 			end
 
-			arg2_32:Find("main/bubble"):GetComponent(typeof(Toggle)).enabled = var1_32
+			arg2_27:Find("main/bubble"):GetComponent(typeof(Toggle)).enabled = var1_27
 		end
 	end)
-	setActive(arg0_30.centerTF, false)
-	setActive(arg0_30.centerTF, true)
+	setActive(arg0_25.centerTF, false)
+	setActive(arg0_25.centerTF, true)
 	Canvas.ForceUpdateCanvases()
-	arg0_30.commentList:align(#var1_30)
+	arg0_25.commentList:align(#var1_25)
 end
 
-function var0_0.UpdateReplys(arg0_34, arg1_34, arg2_34)
-	local var0_34, var1_34 = arg2_34:GetCanDisplayReply()
-	local var2_34 = UIItemList.New(arg1_34:Find("replys"), arg1_34:Find("replys/sub"))
+function var0_0.UpdateReplys(arg0_29, arg1_29, arg2_29)
+	local var0_29, var1_29 = arg2_29:GetCanDisplayReply()
+	local var2_29 = UIItemList.New(arg1_29:Find("replys"), arg1_29:Find("replys/sub"))
 
-	table.sort(var0_34, function(arg0_35, arg1_35)
-		if arg0_35.level == arg1_35.level then
-			if arg0_35.time == arg1_35.time then
-				return arg0_35.id < arg1_35.id
+	table.sort(var0_29, function(arg0_30, arg1_30)
+		if arg0_30.level == arg1_30.level then
+			if arg0_30.time == arg1_30.time then
+				return arg0_30.id < arg1_30.id
 			else
-				return arg0_35.time < arg1_35.time
+				return arg0_30.time < arg1_30.time
 			end
 		else
-			return arg0_35.level < arg1_35.level
+			return arg0_30.level < arg1_30.level
 		end
 	end)
-	var2_34:make(function(arg0_36, arg1_36, arg2_36)
-		if arg0_36 == UIItemList.EventUpdate then
-			local var0_36 = var0_34[arg1_36 + 1]
+	var2_29:make(function(arg0_31, arg1_31, arg2_31)
+		if arg0_31 == UIItemList.EventUpdate then
+			local var0_31 = var0_29[arg1_31 + 1]
 
-			setImageSprite(arg2_36:Find("head/icon"), LoadSprite("qicon/" .. var0_36:GetIcon()), false)
+			setImageSprite(arg2_31:Find("head/icon"), LoadSprite("qicon/" .. var0_31:GetIcon()), false)
 
-			local var1_36 = var0_36:GetContent()
-			local var2_36 = SwitchSpecialChar(var1_36)
+			local var1_31 = var0_31:GetContent()
+			local var2_31 = SwitchSpecialChar(var1_31)
 
-			setText(arg2_36:Find("content"), HXSet.hxLan(var2_36))
+			setText(arg2_31:Find("content"), HXSet.hxLan(var2_31))
 		end
 	end)
-	var2_34:align(#var0_34)
+	var2_29:align(#var0_29)
 end
 
-function var0_0.OpenCommentPanel(arg0_37)
-	local var0_37 = arg0_37.contextData.instagram
+function var0_0.OpenCommentPanel(arg0_32)
+	local var0_32 = arg0_32.contextData.instagram
 
-	if not var0_37:CanOpenComment() then
+	if not var0_32:CanOpenComment() then
 		return
 	end
 
-	setActive(arg0_37.optionalPanel, true)
+	setActive(arg0_32.optionalPanel, true)
 
-	local var1_37 = var0_37:GetOptionComment()
+	local var1_32 = var0_32:GetOptionComment()
 
-	arg0_37.commentPanel.sizeDelta = Vector2(642.6, (#var1_37 + 1) * 150)
+	arg0_32.commentPanel:GetComponent(typeof(Image)).enabled = true
+	arg0_32.commentPanel.sizeDelta = Vector2(0, #var1_32 * 142 + 60)
 
-	local var2_37 = UIItemList.New(arg0_37.optionalPanel, arg0_37.optionalPanel:Find("option1"))
+	local var2_32 = UIItemList.New(arg0_32.optionalPanel, arg0_32.optionalPanel:Find("option1"))
 
-	var2_37:make(function(arg0_38, arg1_38, arg2_38)
-		if arg0_38 == UIItemList.EventUpdate then
-			local var0_38 = arg1_38 + 1
-			local var1_38 = var1_37[var0_38].text
-			local var2_38 = var1_37[var0_38].id
-			local var3_38 = var1_37[var0_38].index
+	var2_32:make(function(arg0_33, arg1_33, arg2_33)
+		if arg0_33 == UIItemList.EventUpdate then
+			local var0_33 = arg1_33 + 1
+			local var1_33 = var1_32[var0_33].text
+			local var2_33 = var1_32[var0_33].id
+			local var3_33 = var1_32[var0_33].index
 
-			setText(arg2_38:Find("Text"), HXSet.hxLan(var1_38))
-			onButton(arg0_37, arg2_38, function()
-				arg0_37:emit(InstagramMediator.ON_COMMENT, var0_37.id, var3_38, var2_38)
-				arg0_37:CloseCommentPanel()
+			setText(arg2_33:Find("Text"), HXSet.hxLan(var1_33))
+			onButton(arg0_32, arg2_33, function()
+				arg0_32:emit(InstagramMediator.ON_COMMENT, var0_32.id, var3_33, var2_33)
+				arg0_32:CloseCommentPanel()
 			end, SFX_PANEL)
 		end
 	end)
-	var2_37:align(#var1_37)
+	var2_32:align(#var1_32)
 end
 
-function var0_0.CloseCommentPanel(arg0_40)
-	arg0_40.commentPanel.sizeDelta = Vector2(642.6, 150)
+function var0_0.CloseCommentPanel(arg0_35)
+	arg0_35.commentPanel:GetComponent(typeof(Image)).enabled = false
+	arg0_35.commentPanel.sizeDelta = Vector2(0, 0)
 
-	setActive(arg0_40.optionalPanel, false)
+	setActive(arg0_35.optionalPanel, false)
 end
 
-function var0_0.onBackPressed(arg0_41)
-	if arg0_41.inDetail then
-		arg0_41:ExitDetail()
+function var0_0.onBackPressed(arg0_36)
+	if arg0_36.inDetail then
+		arg0_36:ExitDetail()
 
 		return
 	end
 
-	var0_0.super.onBackPressed(arg0_41)
+	arg0_36:emit(InstagramMediator.CLOSE_ALL)
 end
 
-function var0_0.willExit(arg0_42)
-	for iter0_42, iter1_42 in ipairs(arg0_42.toDownloadList or {}) do
-		arg0_42.downloadmgr:StopLoader(iter1_42)
+function var0_0.CloseDetail(arg0_37)
+	if arg0_37.inDetail then
+		arg0_37:ExitDetail()
+
+		return
+	end
+end
+
+function var0_0.willExit(arg0_38)
+	for iter0_38, iter1_38 in ipairs(arg0_38.toDownloadList or {}) do
+		arg0_38.downloadmgr:StopLoader(iter1_38)
 	end
 
-	arg0_42.toDownloadList = {}
+	arg0_38.toDownloadList = {}
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_42._tf, pg.UIMgr.GetInstance()._normalUIMain)
-	arg0_42:ExitDetail()
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_38._tf, pg.UIMgr.GetInstance()._normalUIMain)
+	arg0_38:ExitDetail()
 
-	for iter2_42, iter3_42 in pairs(arg0_42.sprites) do
-		if not IsNil(iter3_42) then
-			Object.Destroy(iter3_42)
+	for iter2_38, iter3_38 in pairs(arg0_38.sprites) do
+		if not IsNil(iter3_38) then
+			Object.Destroy(iter3_38)
 		end
 	end
 
-	arg0_42.sprites = nil
+	arg0_38.sprites = nil
 
-	for iter4_42, iter5_42 in pairs(arg0_42.cards) do
-		iter5_42:Dispose()
+	for iter4_38, iter5_38 in pairs(arg0_38.cards) do
+		iter5_38:Dispose()
 	end
 
-	arg0_42.cards = {}
+	arg0_38.cards = {}
 end
 
 return var0_0

@@ -51,21 +51,39 @@ function var0_0.set(arg0_4, arg1_4, arg2_4)
 	setActive(arg0_4.btnSwitchNormal, #var1_4 > 1 and var3_4 == 1)
 	setActive(arg0_4.btnSwitchHard, #var1_4 > 1 and var3_4 == 2)
 
-	local var6_4 = var3_4 == 1 and Color.NewHex("FFDE38") or Color.white
+	if #var1_4 > 1 then
+		local var6_4 = var3_4 == 1 and arg0_4.btnSwitchNormal or arg0_4.btnSwitchHard
 
-	setTextColor(arg0_4:findTF("title_index", arg0_4.txTitle), var6_4)
-	setTextColor(arg0_4:findTF("title", arg0_4.txTitle), var6_4)
-	setTextColor(arg0_4:findTF("title_en", arg0_4.txTitle), var6_4)
+		for iter4_4 = 1, 2 do
+			local var7_4 = var6_4:Find("Bonus" .. iter4_4)
+			local var8_4 = getProxy(ChapterProxy):getChapterById(var1_4[iter4_4], true)
+			local var9_4 = var8_4:GetDailyBonusQuota()
 
-	local var7_4 = var0_4:getConfig("boss_expedition_id")
+			setActive(var7_4, var9_4)
 
-	if var0_4:getPlayType() == ChapterConst.TypeMultiStageBoss then
-		var7_4 = pg.chapter_model_multistageboss[var0_4.id].boss_expedition_id
+			if var9_4 then
+				local var10_4 = getProxy(ChapterProxy):getMapById(var8_4:getConfig("map")):getConfig("type") == Map.ACTIVITY_HARD and "bonus_us_hard" or "bonus_us"
+
+				arg0_4.loader:GetSprite("ui/levelmainscene_atlas", var10_4, var7_4)
+			end
+		end
 	end
 
-	local var8_4 = pg.expedition_data_template[var7_4[#var7_4]].level
+	local var11_4 = var3_4 == 1 and Color.NewHex("FFDE38") or Color.white
 
-	setText(arg0_4.levelBanner:Find("Text"), "LV " .. var8_4)
+	setTextColor(arg0_4:findTF("title_index", arg0_4.txTitle), var11_4)
+	setTextColor(arg0_4:findTF("title", arg0_4.txTitle), var11_4)
+	setTextColor(arg0_4:findTF("title_en", arg0_4.txTitle), var11_4)
+
+	local var12_4 = var0_4:getConfig("boss_expedition_id")
+
+	if var0_4:getPlayType() == ChapterConst.TypeMultiStageBoss then
+		var12_4 = pg.chapter_model_multistageboss[var0_4.id].boss_expedition_id
+	end
+
+	local var13_4 = pg.expedition_data_template[var12_4[#var12_4]].level
+
+	setText(arg0_4.levelBanner:Find("Text"), "LV " .. var13_4)
 	onButton(arg0_4, arg0_4.btnSwitchNormal:Find("Switch"), function()
 		arg0_4:emit(LevelUIConst.SWITCH_SPCHAPTER_DIFFICULTY, var4_4)
 		arg0_4:set(var4_4)

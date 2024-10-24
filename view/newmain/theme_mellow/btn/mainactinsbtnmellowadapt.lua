@@ -5,7 +5,7 @@ function var0_0.GetContainer(arg0_1)
 end
 
 function var0_0.OnInit(arg0_2)
-	local var0_2 = getProxy(InstagramProxy):ShouldShowTip()
+	local var0_2 = getProxy(InstagramProxy):ShouldShowTip() or getProxy(InstagramChatProxy):ShouldShowTip()
 
 	setActive(arg0_2._tf:Find("tip"), var0_2)
 

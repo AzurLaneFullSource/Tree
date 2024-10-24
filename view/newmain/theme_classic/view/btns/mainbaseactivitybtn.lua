@@ -211,6 +211,8 @@ function var0_0.Skip(arg0_22, arg1_22)
 			mediator = _G[arg1_22.param.mediator],
 			viewComponent = _G[arg1_22.param.view]
 		}))
+	elseif arg1_22.type == GAMEUI_BANNER_15 then
+		arg0_22:emit(NewMainMediator.SKIP_INS)
 	end
 end
 

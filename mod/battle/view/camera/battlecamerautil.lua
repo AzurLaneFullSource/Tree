@@ -239,8 +239,14 @@ function var4_0.BulletTime(arg0_24, arg1_24, arg2_24, arg3_24)
 	arg0_24:DispatchEvent(var0_0.Event.New(var2_0.BULLET_TIME, var0_24))
 	var0_0.Battle.BattleState.GetInstance():ScaleTimer(arg2_24)
 
-	if arg0_24._uiMediator and arg0_24._uiMediator:GetAppearFX() ~= nil then
-		arg0_24._uiMediator:GetAppearFX():GetComponent(typeof(Animator)).speed = 1 / (arg2_24 or 1)
+	if arg0_24._uiMediator then
+		local var1_24 = 1 / (arg2_24 or 1)
+
+		arg0_24._uiMediator:ScaleUISpeed(var1_24)
+
+		if arg0_24._uiMediator:GetAppearFX() ~= nil then
+			arg0_24._uiMediator:GetAppearFX():GetComponent(typeof(Animator)).speed = var1_24
+		end
 	end
 end
 

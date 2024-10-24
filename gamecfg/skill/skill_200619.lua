@@ -39,7 +39,7 @@ return {
 							switchTo = 2,
 							index = 1,
 							switchType = 1,
-							setAI = 70227
+							setAI = 70276
 						},
 						{
 							index = 2,

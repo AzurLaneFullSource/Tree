@@ -280,6 +280,10 @@ pg.strategy_data_template = setmetatable({
 		201094,
 		201097,
 		201100,
+		201149,
+		201152,
+		201155,
+		201157,
 		205001,
 		205002,
 		205003,
@@ -3388,6 +3392,50 @@ pg.base.strategy_data_template = {
 		icon = "200908",
 		buff_type = 0,
 		desc = "- Hard Mode Details -\nEnemies deal significantly more DMG. Their shells ignore shields and penetrate through targets.\n· During battle, Jadeite Shadows and Crimson Shadows take significantly less DMG from AP ammo, semi-AP ammo, and torpedoes, but their Burn DMG taken is increased.\n· When the enemy's HP drops below a set value, a magic circle will spawn on the field. Activating all magic circles will provide your fleet with supporting attacks.\n· The skills \"Operation Rainbow\" and \"Fiercer When Cornered\" are rendered ineffective.",
+		arg = {}
+	},
+	[201149] = {
+		buff_id = 201149,
+		name = "海上风暴 ",
+		iconSize = "",
+		type = 10,
+		id = 201149,
+		icon = "200627",
+		buff_type = 0,
+		desc = "The fleet has entered the storm. All non-Tempesta ships have their SPD decreased by 3 and EVA decreased by 5.0%. Tempesta ships deal 10.0% more DMG.",
+		arg = {}
+	},
+	[201152] = {
+		buff_id = 201152,
+		name = "Silent Sea",
+		iconSize = "",
+		type = 10,
+		id = 201152,
+		icon = "201152",
+		buff_type = 0,
+		desc = "The fleet has entered the Sleeping Sea. The HP recovery effects of all non-Tempesta ships are 10.0% less potent. Tempesta ships take 10.0% less DMG.",
+		arg = {}
+	},
+	[201155] = {
+		buff_id = 201155,
+		name = "Mercy of the Goddess",
+		iconSize = "",
+		type = 10,
+		id = 201155,
+		icon = "201155",
+		buff_type = 0,
+		desc = "25s after the battle begins: your fleet gains supporting barrages and recovers HP gradually over 15s.",
+		arg = {}
+	},
+	[201157] = {
+		buff_id = 201157,
+		name = "Fancy's Might",
+		iconSize = "",
+		type = 10,
+		id = 201157,
+		icon = "201157",
+		buff_type = 0,
+		desc = "Fancy is supporting your fleet. At regular intervals, her tentacles will attack a random enemy and inflict Armor Break.",
 		arg = {}
 	},
 	[205001] = {

@@ -407,13 +407,16 @@ function var0_0.onEventCallback(arg0_18, arg1_18, arg2_18, arg3_18)
 			var3_18 = arg0_18.actionTrigger.target or nil
 			var6_18 = arg0_18.actionTrigger.target_focus == 1 and true or false
 
-			if (arg0_18.actionTrigger.circle or nil) and var3_18 and var3_18 == arg0_18.parameterTargetValue then
-				var3_18 = arg0_18.startValue
-			end
+			local var8_18 = arg0_18.actionTrigger.circle or nil
 
 			var4_18 = arg0_18.actionTrigger.react or nil
 
+			if var8_18 and var3_18 and var3_18 == arg0_18.parameterTargetValue then
+				var3_18 = arg0_18.startValue
+			end
+
 			arg0_18:triggerAction()
+			arg0_18:setTriggerActionFlag(false)
 			arg0_18:stopDrag()
 		end
 
@@ -1014,7 +1017,7 @@ function var0_0.isActionTriggerAble(arg0_51)
 	end
 
 	if not arg0_51.actionTrigger or arg0_51.actionTrigger == "" then
-		return
+		return false
 	end
 
 	if arg0_51.nextTriggerTime - Time.deltaTime >= 0 then
@@ -1059,11 +1062,11 @@ function var0_0.updateStateData(arg0_52, arg1_52)
 	end
 
 	if arg0_52.l2dIdleIndex and arg0_52.idleOn and #arg0_52.idleOn > 0 then
-		arg0_52.reactConditionFlag = table.contains(arg0_52.idleOn, arg0_52.l2dIdleIndex)
+		arg0_52.reactConditionFlag = not table.contains(arg0_52.idleOn, arg0_52.l2dIdleIndex)
 	end
 
 	if arg0_52.l2dIdleIndex and arg0_52.idleOff and #arg0_52.idleOff > 0 then
-		arg0_52.reactConditionFlag = not table.contains(arg0_52.idleOff, arg0_52.l2dIdleIndex)
+		arg0_52.reactConditionFlag = table.contains(arg0_52.idleOff, arg0_52.l2dIdleIndex)
 	end
 end
 

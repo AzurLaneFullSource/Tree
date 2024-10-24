@@ -12,15 +12,14 @@ function var0_0.OnInit(arg0_3)
 	var0_0.super.OnInit(arg0_3)
 
 	arg0_3.progressText = arg0_3._tf:Find("Story/Desc/Digit")
+	arg0_3.mapSwitchList = arg0_3._tf:Find("Battle/MapItems/List")
 end
 
 function var0_0.UpdateButtons(arg0_4)
 	var0_0.super.UpdateButtons(arg0_4)
 
 	if arg0_4.contextData.displayMode == var0_0.DISPLAY.BATTLE then
-		arg0_4.sceneParent:updateDifficultyBtns()
-		arg0_4.sceneParent:updateActivityBtns()
-		arg0_4.sceneParent:UpdateSwitchMapButton()
+		arg0_4:UpdateSwitchMapButtons()
 	else
 		arg0_4.sceneParent:HideBtns()
 	end
@@ -59,190 +58,131 @@ function var0_0.UpdateBattle(arg0_6)
 	end)
 end
 
-function var0_0.UpdateMapItem(arg0_8, arg1_8, arg2_8)
-	local var0_8 = arg2_8:getConfigTable()
+function var0_0.UpdateSwitchMapButtons(arg0_8)
+	local var0_8 = arg0_8.contextData.map
+	local var1_8 = var0_8:isRemaster()
+	local var2_8
 
-	setAnchoredPosition(arg1_8, {
-		x = arg0_8.mapWidth * var0_8.pos_x,
-		y = arg0_8.mapHeight * var0_8.pos_y
-	})
+	if var1_8 then
+		var2_8 = getProxy(ChapterProxy):getRemasterMaps(var0_8.remasterId)
+	else
+		var2_8 = getProxy(ChapterProxy):getMapsByActivities()
+	end
 
-	local var1_8 = findTF(arg1_8, "main")
+	local var3_8 = _.select(var2_8, function(arg0_9)
+		return arg0_9:getMapType() ~= Map.ACTIVITY_HARD
+	end)
 
-	setActive(var1_8, true)
-
-	local var2_8 = findTF(var1_8, "circle/fordark")
-	local var3_8 = findTF(var1_8, "info/bk/fordark")
-
-	setActive(var2_8, var0_8.icon_outline == 1)
-	setActive(var3_8, var0_8.icon_outline == 1)
-
-	local var4_8 = arg0_8.chapterGroupDict[arg2_8.id]
-
-	assert(var4_8)
-
-	local var5_8 = {
-		"Lock",
-		"Normal",
-		"Hard"
-	}
-	local var6_8 = 1
-
-	if arg2_8:isUnlock() then
-		var6_8 = 2
-
-		if #var4_8.list > 1 then
-			var6_8 = table.indexof(var4_8.list, arg2_8.id) + 1
-		elseif arg2_8:IsSpChapter() or arg2_8:IsEXChapter() then
-			var6_8 = 3
-		elseif arg0_8.contextData.map:isHardMap() then
-			var6_8 = 3
+	UIItemList.StaticAlign(arg0_8.mapSwitchList, arg0_8.mapSwitchList:GetChild(0), #var3_8, function(arg0_10, arg1_10, arg2_10)
+		if arg0_10 ~= UIItemList.EventUpdate then
+			return
 		end
-	end
 
-	local var7_8 = findTF(var1_8, "circle/bk")
+		local var0_10 = var3_8[arg1_10 + 1]
+		local var1_10 = var0_10:getMapType()
 
-	for iter0_8, iter1_8 in ipairs(var5_8) do
-		setActive(var7_8:Find(iter1_8), iter0_8 == var6_8)
-	end
+		setActive(arg2_10:Find("Unselect"), var0_10.id ~= var0_8.id)
+		setActive(arg2_10:Find("Selected"), var0_10.id == var0_8.id)
+		setActive(arg2_10:Find("Tip"), false)
 
-	local var8_8 = findTF(var1_8, "circle/clear_flag")
-	local var9_8 = findTF(var1_8, "circle/lock")
-	local var10_8 = findTF(var1_8, "circle/progress")
-	local var11_8 = findTF(var1_8, "circle/progress_text")
-	local var12_8 = findTF(var1_8, "circle/stars")
-	local var13_8 = string.split(var0_8.name, "|")
+		local var2_10
 
-	setText(findTF(var1_8, "info/bk/title_form/title_index"), var0_8.chapter_name .. "  ")
-	setText(findTF(var1_8, "info/bk/title_form/title"), var13_8[1])
-	setText(findTF(var1_8, "info/bk/title_form/title_en"), var13_8[2] or "")
-	setFillAmount(var10_8, arg2_8.progress / 100)
-	setText(var11_8, string.format("%d%%", arg2_8.progress))
-	setActive(var12_8, arg2_8:existAchieve())
+		if var1_10 == Map.ACT_EXTRA then
+			if var0_10:getChapters()[1]:IsSpChapter() then
+				var2_10 = i18n("levelscene_mapselect_sp")
 
-	if arg2_8:existAchieve() then
-		for iter2_8, iter3_8 in ipairs(arg2_8.achieves) do
-			local var14_8 = ChapterConst.IsAchieved(iter3_8)
-			local var15_8 = var12_8:GetChild(iter2_8 - 1):Find("light")
-
-			setActive(var15_8, var14_8)
-
-			for iter4_8, iter5_8 in ipairs(var5_8) do
-				if iter5_8 ~= "Lock" then
-					setActive(var15_8:Find(iter5_8), iter4_8 == var6_8)
-				end
+				setActive(arg2_10:Find("Tip"), var0_10.id ~= var0_8.id and getProxy(ChapterProxy):IsActivitySPChapterActive() and SettingsProxy.IsShowActivityMapSPTip())
+			else
+				var2_10 = i18n("levelscene_mapselect_ex")
 			end
+		else
+			local var3_10 = var0_10.id % 10
+
+			assert(var3_10 == 1 or var3_10 == 2)
+
+			var2_10 = i18n("levelscene_mapselect_part" .. var3_10)
 		end
+
+		setText(arg2_10:Find("Unselect/Text"), var2_10)
+		setText(arg2_10:Find("Selected/Text"), var2_10)
+
+		local var4_10, var5_10 = var0_10:isUnlock()
+		local var6_10 = getProxy(PlayerProxy):getRawData().id
+		local var7_10
+
+		if var4_10 then
+			var7_10 = PlayerPrefs.GetInt("MapFirstUnlock" .. var0_10.id .. "_" .. var6_10, 0) == 0
+		end
+
+		setActive(arg2_10:Find("Unselect/Lock"), not var4_10 or var7_10)
+		onButton(arg0_8, arg2_10, function()
+			if var0_10.id == var0_8.id then
+				return
+			end
+
+			if var4_10 then
+				arg0_8:emit(LevelUIConst.SET_MAP, var0_10.id)
+			else
+				pg.TipsMgr.GetInstance():ShowTips(var5_10)
+			end
+		end, SFX_PANEL)
+	end)
+
+	local var4_8 = var0_8:getConfig("type")
+
+	setActive(arg0_8.sceneParent.actExtraRank, var4_8 == Map.ACT_EXTRA and _.any(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_EXTRA_CHAPTER_RANK), function(arg0_12)
+		if not arg0_12 or arg0_12:isEnd() then
+			return
+		end
+
+		local var0_12 = arg0_12:getConfig("config_data")[1]
+
+		return _.any(var0_8:getChapters(), function(arg0_13)
+			return arg0_13:IsEXChapter() and arg0_13:getConfig("boss_expedition_id") == var0_12
+		end)
+	end))
+	setActive(arg0_8.sceneParent.actExchangeShopBtn, not ActivityConst.HIDE_PT_PANELS and not var1_8 and arg0_8.sceneParent:IsActShopActive())
+	setActive(arg0_8.sceneParent.ptTotal, not ActivityConst.HIDE_PT_PANELS and not var1_8 and arg0_8.sceneParent.ptActivity and not arg0_8.sceneParent.ptActivity:isEnd())
+	arg0_8.sceneParent:updateActivityRes()
+	arg0_8.sceneParent:updateCountDown()
+end
+
+function var0_0.PlayEnterAnim(arg0_14)
+	local var0_14 = arg0_14.contextData.map
+	local var1_14 = var0_14:isRemaster()
+	local var2_14
+
+	if var1_14 then
+		var2_14 = getProxy(ChapterProxy):getRemasterMaps(var0_14.remasterId)
+	else
+		var2_14 = getProxy(ChapterProxy):getMapsByActivities()
 	end
 
-	local var16_8 = findTF(var1_8, "info/bk/BG")
+	local var3_14 = _.select(var2_14, function(arg0_15)
+		return arg0_15:getMapType() ~= Map.ACTIVITY_HARD
+	end)
 
-	for iter6_8, iter7_8 in ipairs(var5_8) do
-		setActive(var16_8:Find(iter7_8), iter6_8 == var6_8)
-	end
+	UIItemList.StaticAlign(arg0_14.mapSwitchList, arg0_14.mapSwitchList:GetChild(0), #var3_14, function(arg0_16, arg1_16, arg2_16)
+		if arg0_16 ~= UIItemList.EventUpdate then
+			return
+		end
 
-	setActive(findTF(var1_8, "HardEffect"), var6_8 == 3)
+		local var0_16 = var3_14[arg1_16 + 1]
+		local var1_16, var2_16 = var0_16:isUnlock()
+		local var3_16 = getProxy(PlayerProxy):getRawData().id
+		local var4_16
 
-	local var17_8 = not arg2_8.active and arg2_8:isClear()
-	local var18_8 = not arg2_8.active and not arg2_8:isUnlock()
+		if var1_16 then
+			var4_16 = PlayerPrefs.GetInt("MapFirstUnlock" .. var0_16.id .. "_" .. var3_16, 0) == 0
+		end
 
-	setActive(var8_8, var17_8)
-	setActive(var9_8, var18_8)
-	setActive(var11_8, not var17_8 and not var18_8)
-	arg0_8:DeleteTween("fighting" .. arg2_8.id)
+		setActive(arg2_16:Find("Unselect/Lock"), not var1_16 or var4_16)
 
-	local var19_8 = findTF(var1_8, "circle/fighting")
-
-	setText(findTF(var19_8, "Text"), i18n("tag_level_fighting"))
-
-	local var20_8 = findTF(var1_8, "circle/oni")
-
-	setText(findTF(var20_8, "Text"), i18n("tag_level_oni"))
-
-	local var21_8 = findTF(var1_8, "circle/narrative")
-
-	setText(findTF(var21_8, "Text"), i18n("tag_level_narrative"))
-	setActive(var19_8, false)
-	setActive(var20_8, false)
-	setActive(var21_8, false)
-
-	local var22_8
-	local var23_8
-
-	if arg2_8:getConfig("chapter_tag") == 1 then
-		var22_8 = var21_8
-	end
-
-	if arg2_8.active then
-		var22_8 = arg2_8:existOni() and var20_8 or var19_8
-	end
-
-	if var22_8 then
-		setActive(var22_8, true)
-
-		local var24_8 = GetOrAddComponent(var22_8, "CanvasGroup")
-
-		var24_8.alpha = 1
-
-		arg0_8:RecordTween("fighting" .. arg2_8.id, LeanTween.alphaCanvas(var24_8, 0, 0.5):setFrom(1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId)
-	end
-
-	local var25_8 = findTF(var1_8, "triesLimit")
-	local var26_8 = arg2_8:isTriesLimit()
-
-	setActive(var25_8, var26_8)
-
-	if var26_8 then
-		local var27_8 = arg2_8:getConfig("count")
-		local var28_8 = var27_8 - arg2_8:getTodayDefeatCount() .. "/" .. var27_8
-
-		setText(var25_8:Find("label"), i18n("levelScene_chapter_count_tip"))
-		setText(var25_8:Find("Text"), setColorStr(var28_8, var27_8 <= arg2_8:getTodayDefeatCount() and COLOR_RED or COLOR_GREEN))
-
-		local var29_8 = getProxy(ChapterProxy):IsActivitySPChapterActive() and SettingsProxy.IsShowActivityMapSPTip()
-
-		setActive(var25_8:Find("TipRect"), var29_8)
-	end
-
-	local var30_8 = arg2_8:GetDailyBonusQuota()
-	local var31_8 = findTF(var1_8, "mark")
-
-	setActive(var31_8:Find("bonus"), var30_8)
-	setActive(var31_8, var30_8)
-
-	if var30_8 then
-		local var32_8 = var31_8:GetComponent(typeof(CanvasGroup))
-		local var33_8 = arg0_8.contextData.map:getConfig("type") == Map.ACTIVITY_HARD and "bonus_us_hard" or "bonus_us"
-
-		arg0_8.sceneParent.loader:GetSprite("ui/levelmainscene_atlas", var33_8, var31_8:Find("bonus"))
-		LeanTween.cancel(go(var31_8), true)
-
-		local var34_8 = var31_8.anchoredPosition.y
-
-		var32_8.alpha = 0
-
-		LeanTween.value(go(var31_8), 0, 1, 0.2):setOnUpdate(System.Action_float(function(arg0_9)
-			var32_8.alpha = arg0_9
-
-			local var0_9 = var31_8.anchoredPosition
-
-			var0_9.y = var34_8 * arg0_9
-			var31_8.anchoredPosition = var0_9
-		end)):setOnComplete(System.Action(function()
-			var32_8.alpha = 1
-
-			local var0_10 = var31_8.anchoredPosition
-
-			var0_10.y = var34_8
-			var31_8.anchoredPosition = var0_10
-		end)):setEase(LeanTweenType.easeOutSine):setDelay(0.7)
-	end
-
-	local var35_8 = arg2_8.id
-
-	onButton(arg0_8, var1_8, function()
-		arg0_8:TryOpenChapterInfo(var35_8, nil, var4_8.list)
-	end, SFX_UI_WEIGHANCHOR_SELECT)
+		if var4_16 then
+			quickPlayAnimation(arg2_16:Find("Unselect"), "anim_spfullui_unlock")
+			PlayerPrefs.SetInt("MapFirstUnlock" .. var0_16.id .. "_" .. var3_16, 1)
+		end
+	end)
 end
 
 return var0_0

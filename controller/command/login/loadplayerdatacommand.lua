@@ -199,6 +199,10 @@ function var0_0.execute(arg0_1, arg1_1)
 			true
 		},
 		{
+			InstagramChatProxy,
+			true
+		},
+		{
 			AppreciateProxy,
 			true
 		},
@@ -294,6 +298,9 @@ function var0_0.execute(arg0_1, arg1_1)
 			arg0_1:sendNotification(GAME.EDUCATE_REQUEST)
 		end
 
+		arg0_1:sendNotification(GAME.ACT_INSTAGRAM_CHAT, {
+			operation = ActivityConst.INSTAGRAM_CHAT_GET_DATA
+		})
 		pg.SdkMgr.GetInstance():BindCPU()
 		pg.SecondaryPWDMgr.GetInstance():FetchData()
 		MonthCardOutDateTipPanel.SetMonthCardEndDateLocal()

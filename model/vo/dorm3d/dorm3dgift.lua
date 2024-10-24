@@ -51,43 +51,63 @@ function var0_0.GetShopID(arg0_7)
 	return var0_7[#var0_7]
 end
 
-function var0_0.NeedViewTip(arg0_8)
-	local var0_8 = var0_0.bindConfigTable()
-	local var1_8 = _.keys(var0_8.get_id_list_by_ship_group_id)
+function var0_0.CheckBuyLimit(arg0_8)
+	local var0_8 = arg0_8:GetShopID()
+	local var1_8 = pg.shop_template[var0_8]
+	local var2_8 = getProxy(ApartmentProxy):GetGiftShopCount(var1_8.effect_args[1])
 
-	return _.any(var1_8, function(arg0_9)
-		if arg0_9 == 0 then
+	if var1_8.limit_args then
+		local var3_8 = var1_8.limit_args[1]
+
+		if type(var3_8) == "table" and (var3_8[1] == "dailycount" or var3_8[1] == "count") and var2_8 >= var3_8[3] then
+			return false
+		end
+	end
+
+	if var1_8.group_limit > 0 and var2_8 >= var1_8.group_limit then
+		return false
+	end
+
+	return true
+end
+
+function var0_0.NeedViewTip(arg0_9)
+	local var0_9 = var0_0.bindConfigTable()
+	local var1_9 = _.keys(var0_9.get_id_list_by_ship_group_id)
+
+	return _.any(var1_9, function(arg0_10)
+		if arg0_10 == 0 then
 			return
 		end
 
-		if arg0_8 and arg0_8 > 0 and arg0_9 ~= arg0_8 then
+		if arg0_9 and arg0_9 > 0 and arg0_10 ~= arg0_9 then
 			return
 		end
 
-		local var0_9 = var0_8.get_id_list_by_ship_group_id[arg0_9]
+		local var0_10 = var0_9.get_id_list_by_ship_group_id[arg0_10]
 
-		return _.any(var0_9, function(arg0_10)
+		return _.any(var0_10, function(arg0_11)
 			return Dorm3dGift.New({
-				configId = arg0_10
-			}):GetShopID() and not getProxy(ApartmentProxy):isGiveGiftDone(arg0_10) and Dorm3dGift.GetViewedFlag(arg0_10) == 0
+				configId = arg0_11
+			}):GetShopID() and not getProxy(ApartmentProxy):isGiveGiftDone(arg0_11) and Dorm3dGift.GetViewedFlag(arg0_11) == 0
 		end)
 	end)
 end
 
-function var0_0.GetViewedFlag(arg0_11)
-	local var0_11 = getProxy(PlayerProxy):getRawData().id
+function var0_0.GetViewedFlag(arg0_12)
+	local var0_12 = getProxy(PlayerProxy):getRawData().id
 
-	return PlayerPrefs.GetInt(var0_11 .. "_dorm3dGiftViewed_" .. arg0_11, 0)
+	return PlayerPrefs.GetInt(var0_12 .. "_dorm3dGiftViewed_" .. arg0_12, 0)
 end
 
-function var0_0.SetViewedFlag(arg0_12)
-	if var0_0.GetViewedFlag(arg0_12) > 0 then
+function var0_0.SetViewedFlag(arg0_13)
+	if var0_0.GetViewedFlag(arg0_13) > 0 then
 		return
 	end
 
-	local var0_12 = getProxy(PlayerProxy):getRawData().id
+	local var0_13 = getProxy(PlayerProxy):getRawData().id
 
-	PlayerPrefs.SetInt(var0_12 .. "_dorm3dGiftViewed_" .. arg0_12, 1)
+	PlayerPrefs.SetInt(var0_13 .. "_dorm3dGiftViewed_" .. arg0_13, 1)
 
 	return true
 end

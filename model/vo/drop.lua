@@ -278,7 +278,7 @@ function var0_0.InitSwitch()
 		[DROP_TYPE_COMMANDER_CAT] = function(arg0_41)
 			local var0_41 = pg.commander_data_template[arg0_41.id]
 
-			arg0_41.desc = ""
+			arg0_41.desc = var0_41.desc
 
 			return var0_41
 		end,

@@ -150,6 +150,7 @@ pg.furniture_data_template = setmetatable({
 			286,
 			287,
 			288,
+			289,
 			100002,
 			100003,
 			100004,
@@ -201,6 +202,7 @@ pg.furniture_data_template = setmetatable({
 			100053,
 			100054,
 			100055,
+			100056,
 			100064,
 			200001,
 			200002,
@@ -3208,6 +3210,23 @@ pg.furniture_data_template = setmetatable({
 			314111,
 			314112,
 			314113
+		},
+		[115] = {
+			315001,
+			315002,
+			315101,
+			315102,
+			315103,
+			315104,
+			315105,
+			315106,
+			315107,
+			315108,
+			315109,
+			315110,
+			315111,
+			315112,
+			315113
 		}
 	},
 	get_id_list_by_tag = {
@@ -3353,6 +3372,7 @@ pg.furniture_data_template = setmetatable({
 			100053,
 			100054,
 			100055,
+			100056,
 			100064,
 			31101,
 			54104,
@@ -3413,7 +3433,8 @@ pg.furniture_data_template = setmetatable({
 			278,
 			283,
 			284,
-			287
+			287,
+			289
 		},
 		[7] = {
 			211,
@@ -3608,7 +3629,8 @@ pg.furniture_data_template = setmetatable({
 			312114,
 			312115,
 			313113,
-			314113
+			314113,
+			315113
 		},
 		[4] = {
 			1001,
@@ -3710,7 +3732,8 @@ pg.furniture_data_template = setmetatable({
 			311001,
 			312001,
 			313001,
-			314001
+			314001,
+			315001
 		},
 		[3] = {
 			1002,
@@ -3813,7 +3836,8 @@ pg.furniture_data_template = setmetatable({
 			311002,
 			312002,
 			313002,
-			314002
+			314002,
+			315002
 		},
 		{
 			1101,
@@ -5721,7 +5745,19 @@ pg.furniture_data_template = setmetatable({
 			314108,
 			314109,
 			314110,
-			314111
+			314111,
+			315101,
+			315102,
+			315103,
+			315104,
+			315105,
+			315106,
+			315107,
+			315108,
+			315109,
+			315110,
+			315111,
+			315112
 		},
 		{
 			1108,
@@ -6357,6 +6393,7 @@ pg.furniture_data_template = setmetatable({
 			286,
 			287,
 			288,
+			289,
 			100002,
 			100004,
 			100005,
@@ -6395,7 +6432,8 @@ pg.furniture_data_template = setmetatable({
 			100052,
 			100053,
 			100054,
-			100055
+			100055,
+			100056
 		},
 		[2] = {
 			120,
@@ -8307,7 +8345,20 @@ pg.furniture_data_template = setmetatable({
 			314109,
 			314110,
 			314111,
-			314113
+			314113,
+			315101,
+			315102,
+			315103,
+			315104,
+			315105,
+			315106,
+			315107,
+			315108,
+			315109,
+			315110,
+			315111,
+			315112,
+			315113
 		},
 		[11] = {
 			131,
@@ -8479,7 +8530,8 @@ pg.furniture_data_template = setmetatable({
 			311001,
 			312001,
 			313001,
-			314001
+			314001,
+			315001
 		},
 		{
 			1002,
@@ -8582,7 +8634,8 @@ pg.furniture_data_template = setmetatable({
 			311002,
 			312002,
 			313002,
-			314002
+			314002,
+			315002
 		},
 		[5] = {
 			1101,
@@ -9416,6 +9469,7 @@ pg.furniture_data_template = setmetatable({
 		286,
 		287,
 		288,
+		289,
 		100002,
 		100003,
 		100004,
@@ -9467,6 +9521,7 @@ pg.furniture_data_template = setmetatable({
 		100053,
 		100054,
 		100055,
+		100056,
 		100064,
 		200001,
 		200002,
@@ -12269,7 +12324,22 @@ pg.furniture_data_template = setmetatable({
 		314110,
 		314111,
 		314112,
-		314113
+		314113,
+		315001,
+		315002,
+		315101,
+		315102,
+		315103,
+		315104,
+		315105,
+		315106,
+		315107,
+		315108,
+		315109,
+		315110,
+		315111,
+		315112,
+		315113
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -19631,6 +19701,49 @@ pg.base.furniture_data_template = {
 		},
 		interAction_group = {}
 	},
+	[289] = {
+		effect = "",
+		name = "Silent Whirlpool Containment Device",
+		gain_by = "飓风与沉眠之海",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 1,
+		themeId = 0,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A strange energy body recovered from the Sleeping Sea. It now churns silently inside the container.",
+		tag = 8,
+		icon = "fengfan2xunzhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 5,
+		deblocking = 1,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 289,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"fengfan2xunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
 	[100002] = {
 		effect = "",
 		name = "Air Pump of Friendship",
@@ -23347,6 +23460,80 @@ pg.base.furniture_data_template = {
 		followBone = {
 			"char",
 			1
+		},
+		interAction_group = {}
+	},
+	[100056] = {
+		effect = "",
+		name = "Holographic Bridge",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Attention, all units! The enemy's gates are directly below us!",
+		themeId = 0,
+		icon = "zhandouzhihuixitongicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 6,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 100056,
+		can_rotate = 0,
+		size = {
+			5,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zhandouzhihuixitongB",
+				"normal"
+			},
+			{
+				"zhandouzhihuixitongT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
 		},
 		interAction_group = {}
 	},
@@ -146487,6 +146674,745 @@ pg.base.furniture_data_template = {
 						"dance1",
 						"dance2",
 						"dance3"
+					}
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[315001] = {
+		icon = "dibangbicon",
+		name = "Shadowy Flooring",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		themeId = 115,
+		picture = "gb/dibangb",
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		spine_extra = "",
+		level = 1,
+		describe = "The tiles feel and look ancient, almost as though they've been here longer than humans have.",
+		rarity = 4,
+		advice = 0,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		id = 315001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[315002] = {
+		icon = "qiangbigbicon",
+		name = "Shadowy Wallpaper",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		themeId = 115,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		spine_extra = "",
+		level = 5,
+		describe = "Be glad it's not a full moon tonight.",
+		rarity = 4,
+		advice = 0,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		id = 315002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbigb",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[315101] = {
+		effect = "",
+		name = "Creepy Castle",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 115,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "They say that under the castle lies the darkest dungeon in all the land.",
+		tag = 1,
+		icon = "baoxianggbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 315101,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"baoxianggb",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[315102] = {
+		effect = "",
+		name = "Shadowy Statue",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 115,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "This one may be an ancient guardian.",
+		tag = 1,
+		icon = "chengbaogbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 315102,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"chengbaogb",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[315103] = {
+		effect = "",
+		name = "Shadowy Mimic",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 115,
+		is_get_time_note = 0,
+		picture = "gb/diaoxianggb",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Treasure can be enticing, but never jump headfirst into a chest!",
+		tag = 1,
+		icon = "diaoxianggbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 315103,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[315104] = {
+		effect = "",
+		name = "Shadowy Ship",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 115,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "\"You best start believing in ghost stories. You're in one.\"",
+		tag = 1,
+		icon = "fanchuangbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 315104,
+		can_rotate = 0,
+		size = {
+			2,
+			8
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"fanchuangb",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[315105] = {
+		effect = "",
+		name = "Shadowy House 1",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 115,
+		is_get_time_note = 0,
+		picture = "gb/fangwu1gb",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Surely no one lives in such a worn, old house, right? But the lights are on...",
+		tag = 1,
+		icon = "fangwu1gbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 315105,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[315106] = {
+		effect = "",
+		name = "Shadowy House 2",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 115,
+		is_get_time_note = 0,
+		picture = "gb/fangwu2gb",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Whoever lives here must love spiders... or themselves be a spider.",
+		tag = 1,
+		icon = "fangwu2gbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 315106,
+		can_rotate = 0,
+		size = {
+			3,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[315107] = {
+		effect = "",
+		name = "Shadowy Dock",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 115,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Where terrors from the deep lay down their anchors.",
+		tag = 1,
+		icon = "gangkougbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 315107,
+		can_rotate = 0,
+		size = {
+			5,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"gangkougb",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[315108] = {
+		effect = "",
+		name = "Shadowy Signboard",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 115,
+		is_get_time_note = 0,
+		picture = "gb/gonggaolangb",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Filled with posters of missing people and commissions to take down sea monsters.",
+		tag = 1,
+		icon = "gonggaolangbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 315108,
+		can_rotate = 0,
+		size = {
+			2,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[315109] = {
+		effect = "",
+		name = "Shadowy Reef",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Sometimes it's not what lurks under the surface that you should be afraid of.",
+		themeId = 115,
+		icon = "jiaoshigbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 315109,
+		can_rotate = 0,
+		size = {
+			4,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jiaoshigbB",
+				"normal"
+			},
+			{
+				"jiaoshigbT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance"
+					},
+					{
+						"tuozhuai2"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[315110] = {
+		effect = "",
+		name = "Shadowy Altar",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 2,
+		is_3d_obj = 0,
+		describe = "Only the fates know what purpose it serves.",
+		themeId = 115,
+		icon = "jiuguangbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 315110,
+		can_rotate = 0,
+		size = {
+			4,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jiuguangbB",
+				"normal"
+			},
+			{
+				"jiuguangbT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[315111] = {
+		effect = "",
+		name = "Shadowy Tavern",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 115,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Likely the best place to seek refuge from the frightening night.",
+		tag = 1,
+		icon = "shuconggbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 315111,
+		can_rotate = 0,
+		size = {
+			4,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shuconggb",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[315112] = {
+		effect = "",
+		name = "Shadowy Bushes",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "There may be valuable clues hidden in there...",
+		themeId = 115,
+		icon = "zawuduigbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 315112,
+		can_rotate = 0,
+		size = {
+			2,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zawuduigbB",
+				"normal"
+			},
+			{
+				"zawuduigbT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sleep"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[315113] = {
+		effect = "",
+		name = "Creepy Streetlight",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Such a dim light can scarcely ward off the darkness.",
+		themeId = 115,
+		icon = "jitangbicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 315113,
+		can_rotate = 0,
+		size = {
+			5,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jitangbB",
+				"normal"
+			},
+			{
+				"jitangbT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"action1",
+						nil,
+						"tuozhuai2"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				},
+				{
+					{
+						"action1",
+						"action2",
+						"action3"
 					}
 				}
 			},

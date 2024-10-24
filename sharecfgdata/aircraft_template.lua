@@ -79826,6 +79826,374 @@ _G.pg.base.aircraft_template[165420] = {
 	},
 }
 
+_G.pg.base.aircraft_template[165511] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 1,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1605,
+	icon = "huixing",
+	id = 165511,
+	max_hp = 42,
+	model_ID = "xiafei_yingxing",
+	name = "冈依沙瓦号祈雨Lv1",
+	nationality = 2,
+	scale = 1,
+	spawn_brownian = 1,
+	speed = 60,
+	type = 3,
+	weapon_ID = {
+		165521,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0,
+			},
+			{
+				0.82,
+				2.04,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0.64,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[165512] = {
+	base = 165511,
+	hp_growth = 1846,
+	id = 165512,
+	max_hp = 48,
+	name = "冈依沙瓦号祈雨Lv2",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165522,
+	},
+}
+
+_G.pg.base.aircraft_template[165513] = {
+	base = 165511,
+	hp_growth = 2087,
+	id = 165513,
+	max_hp = 54,
+	name = "冈依沙瓦号祈雨Lv3",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165523,
+	},
+}
+
+_G.pg.base.aircraft_template[165514] = {
+	base = 165511,
+	hp_growth = 2327,
+	id = 165514,
+	max_hp = 61,
+	name = "冈依沙瓦号祈雨Lv4",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165524,
+	},
+}
+
+_G.pg.base.aircraft_template[165515] = {
+	base = 165511,
+	hp_growth = 2568,
+	id = 165515,
+	max_hp = 67,
+	name = "冈依沙瓦号祈雨Lv5",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165525,
+	},
+}
+
+_G.pg.base.aircraft_template[165516] = {
+	base = 165511,
+	hp_growth = 2809,
+	id = 165516,
+	max_hp = 73,
+	name = "冈依沙瓦号祈雨Lv6",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165526,
+	},
+}
+
+_G.pg.base.aircraft_template[165517] = {
+	base = 165511,
+	hp_growth = 3050,
+	id = 165517,
+	max_hp = 79,
+	name = "冈依沙瓦号祈雨Lv7",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165527,
+	},
+}
+
+_G.pg.base.aircraft_template[165518] = {
+	base = 165511,
+	hp_growth = 3290,
+	id = 165518,
+	max_hp = 86,
+	name = "冈依沙瓦号祈雨Lv8",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165528,
+	},
+}
+
+_G.pg.base.aircraft_template[165519] = {
+	base = 165511,
+	hp_growth = 3531,
+	id = 165519,
+	max_hp = 92,
+	name = "冈依沙瓦号祈雨Lv9",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165529,
+	},
+}
+
+_G.pg.base.aircraft_template[165520] = {
+	base = 165511,
+	hp_growth = 3772,
+	id = 165520,
+	max_hp = 98,
+	name = "冈依沙瓦号祈雨Lv10",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165530,
+	},
+}
+
+_G.pg.base.aircraft_template[165531] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 1,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1605,
+	icon = "huixing",
+	id = 165531,
+	max_hp = 42,
+	model_ID = "xiafei_yingxing",
+	name = "冈依沙瓦号爆金币Lv1",
+	nationality = 2,
+	scale = 1,
+	spawn_brownian = 1,
+	speed = 60,
+	type = 3,
+	weapon_ID = {
+		165541,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0,
+			},
+			{
+				0.82,
+				2.04,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0.64,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[165532] = {
+	base = 165531,
+	hp_growth = 1846,
+	id = 165532,
+	max_hp = 48,
+	name = "冈依沙瓦号爆金币Lv2",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165542,
+	},
+}
+
+_G.pg.base.aircraft_template[165533] = {
+	base = 165531,
+	hp_growth = 2087,
+	id = 165533,
+	max_hp = 54,
+	name = "冈依沙瓦号爆金币Lv3",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165543,
+	},
+}
+
+_G.pg.base.aircraft_template[165534] = {
+	base = 165531,
+	hp_growth = 2327,
+	id = 165534,
+	max_hp = 61,
+	name = "冈依沙瓦号爆金币Lv4",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165544,
+	},
+}
+
+_G.pg.base.aircraft_template[165535] = {
+	base = 165531,
+	hp_growth = 2568,
+	id = 165535,
+	max_hp = 67,
+	name = "冈依沙瓦号爆金币Lv5",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165545,
+	},
+}
+
+_G.pg.base.aircraft_template[165536] = {
+	base = 165531,
+	hp_growth = 2809,
+	id = 165536,
+	max_hp = 73,
+	name = "冈依沙瓦号爆金币Lv6",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165546,
+	},
+}
+
+_G.pg.base.aircraft_template[165537] = {
+	base = 165531,
+	hp_growth = 3050,
+	id = 165537,
+	max_hp = 79,
+	name = "冈依沙瓦号爆金币Lv7",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165547,
+	},
+}
+
+_G.pg.base.aircraft_template[165538] = {
+	base = 165531,
+	hp_growth = 3290,
+	id = 165538,
+	max_hp = 86,
+	name = "冈依沙瓦号爆金币Lv8",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165548,
+	},
+}
+
+_G.pg.base.aircraft_template[165539] = {
+	base = 165531,
+	hp_growth = 3531,
+	id = 165539,
+	max_hp = 92,
+	name = "冈依沙瓦号爆金币Lv9",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165549,
+	},
+}
+
+_G.pg.base.aircraft_template[165540] = {
+	base = 165531,
+	hp_growth = 3772,
+	id = 165540,
+	max_hp = 98,
+	name = "冈依沙瓦号爆金币Lv10",
+	spawn_brownian = 1,
+	weapon_ID = {
+		165550,
+	},
+}
+
 _G.pg.base.aircraft_template[200101] = {
 	ACC_growth = 0,
 	AP_growth = 2000,
@@ -255035,6 +255403,82 @@ _G.pg.base.aircraft_template[3207537] = {
 		},
 		{
 			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3218501] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 1,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 3772,
+	icon = "huixing",
+	id = 3218501,
+	max_hp = 98,
+	model_ID = "xiafei_yingxing",
+	name = "【2024风帆二期】我方支援弹幕 光明女神的怜悯 隐形飞机",
+	nationality = 2,
+	scale = 1,
+	spawn_brownian = 1,
+	speed = 60,
+	type = 3,
+	weapon_ID = {
+		3218502,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0,
+			},
+			{
+				0.82,
+				2.04,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0.64,
 			0,
 			0,
 		},

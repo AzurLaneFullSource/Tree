@@ -4,7 +4,6 @@ local var0_0 = TimelineSupport
 
 function var0_0.InitTimeline(arg0_1)
 	var0_0.DynamicBinding(arg0_1)
-	var0_0.InitSubtitle()
 	var0_0.InitCriAtomTrack(arg0_1)
 end
 
@@ -38,35 +37,58 @@ function var0_0.DynamicBinding(arg0_2)
 	end)
 end
 
-function var0_0.InitSubtitle()
+function var0_0.InitSubtitle(arg0_6, arg1_6)
 	local var0_6 = GameObject.Find("[subtitle]")
 
 	if var0_6 then
 		var0_6:GetComponent(typeof(Canvas)).worldCamera = pg.UIMgr.GetInstance().overlayCameraComp
 	end
-end
 
-function var0_0.CheckTrackType(arg0_7, arg1_7)
-	return tostring(arg0_7:GetType()) == arg1_7
-end
+	eachChild(arg0_6, function(arg0_7)
+		local var0_7 = arg0_7:GetComponent(typeof(UnityEngine.Playables.PlayableDirector))
 
-function var0_0.InitCriAtomTrack(arg0_8)
-	eachChild(arg0_8, function(arg0_9)
-		local var0_9 = arg0_9:GetComponent(typeof(UnityEngine.Playables.PlayableDirector))
-
-		if not var0_9 then
+		if not var0_7 then
 			return
 		end
 
-		table.IpairsCArray(TimelineHelper.GetTimelineTracks(var0_9), function(arg0_10, arg1_10)
-			if var0_0.CheckTrackType(arg1_10, "CriTimeline.Atom.CriAtomTrack") then
-				local var0_10 = ReflectionHelp.RefCallMethod(typeof("CriTimeline.Atom.CriAtomTrack"), "GetClips", arg1_10)
+		table.IpairsCArray(TimelineHelper.GetTimelineTracks(var0_7), function(arg0_8, arg1_8)
+			if var0_0.CheckTrackType(arg1_8, "Lens.Gameplay.Tools.SubtitleTrack") then
+				local var0_8 = ReflectionHelp.RefCallMethod(typeof("Lens.Gameplay.Tools.SubtitleTrack"), "GetClips", arg1_8)
 
-				table.IpairsCArray(var0_10, function(arg0_11, arg1_11)
-					local var0_11 = ReflectionHelp.RefGetProperty(arg1_11:GetType(), "asset", arg1_11)
-					local var1_11 = ReflectionHelp.RefGetField(typeof("CriTimeline.Atom.CriAtomClip"), "cueSheet", var0_11)
+				table.IpairsCArray(var0_8, function(arg0_9, arg1_9)
+					local var0_9 = ReflectionHelp.RefGetProperty(arg1_9:GetType(), "asset", arg1_9)
+					local var1_9 = ReflectionHelp.RefGetField(var0_9:GetType(), "behaviour", var0_9)
+					local var2_9 = ReflectionHelp.RefGetField(var1_9:GetType(), "subtitle", var1_9)
+					local var3_9 = string.gsub(var2_9, "{dorm3d}", arg1_6)
 
-					pg.CriMgr.GetInstance():LoadCueSheet(var1_11)
+					ReflectionHelp.RefSetField(var1_9:GetType(), "subtitle", var1_9, var3_9)
+				end)
+			end
+		end)
+	end)
+end
+
+function var0_0.CheckTrackType(arg0_10, arg1_10)
+	return tostring(arg0_10:GetType()) == arg1_10
+end
+
+function var0_0.InitCriAtomTrack(arg0_11)
+	eachChild(arg0_11, function(arg0_12)
+		local var0_12 = arg0_12:GetComponent(typeof(UnityEngine.Playables.PlayableDirector))
+
+		if not var0_12 then
+			return
+		end
+
+		table.IpairsCArray(TimelineHelper.GetTimelineTracks(var0_12), function(arg0_13, arg1_13)
+			if var0_0.CheckTrackType(arg1_13, "CriTimeline.Atom.CriAtomTrack") then
+				local var0_13 = ReflectionHelp.RefCallMethod(typeof("CriTimeline.Atom.CriAtomTrack"), "GetClips", arg1_13)
+
+				table.IpairsCArray(var0_13, function(arg0_14, arg1_14)
+					local var0_14 = ReflectionHelp.RefGetProperty(arg1_14:GetType(), "asset", arg1_14)
+					local var1_14 = ReflectionHelp.RefGetField(typeof("CriTimeline.Atom.CriAtomClip"), "cueSheet", var0_14)
+
+					pg.CriMgr.GetInstance():LoadCueSheet(var1_14)
 				end)
 			end
 		end)
