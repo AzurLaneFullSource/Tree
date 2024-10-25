@@ -436,9 +436,9 @@ return {
 				}
 			},
 			{
-				tmpID = 900461,
-				configId = 900461,
-				skinId = 9600010,
+				tmpID = 900462,
+				configId = 900462,
+				skinId = 9600040,
 				id = 2,
 				level = 100,
 				equipment = {
@@ -461,15 +461,11 @@ return {
 				},
 				skills = {
 					{
-						id = 16180,
+						id = 17160,
 						level = 10
 					},
 					{
-						id = 16190,
-						level = 10
-					},
-					{
-						id = 29962,
+						id = 30132,
 						level = 10
 					}
 				}

@@ -59,6 +59,10 @@ function var0_0.didEnter(arg0_3)
 		})
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3.gameButton, function()
+		if not arg0_3:checkTaskFinish() or not arg0_3:checkMinigame() then
+			return
+		end
+
 		arg0_3:emit(SecretShipyardMediator.GO_MINI_GAME, var0_0.GAME_ID)
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3.gameButtonLock, function()
