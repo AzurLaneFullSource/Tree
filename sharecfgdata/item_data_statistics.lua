@@ -12928,7 +12928,7 @@ _G.pg.base.item_data_statistics[18126] = {
 
 _G.pg.base.item_data_statistics[18127] = {
 	compose_number = 0,
-	display = "A field performance report on a top secret piece of ordnance. Used in the<color=#92fc63>Gear Laboratory</color>.",
+	display = "A field performance report on a top secret piece of ordnance. Used in the <color=#92fc63>Gear Laboratory</color>.",
 	display_effect = "",
 	icon = "Props/18127",
 	id = 18127,

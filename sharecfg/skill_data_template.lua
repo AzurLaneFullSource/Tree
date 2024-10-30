@@ -96029,7 +96029,7 @@ pg.base.skill_data_template = {
 		id = 150260,
 		type = 3,
 		max_level = 10,
-		desc = "Increases this ship's FP and ACC by $1 and increases your Vichya Dominion Vanguard ships' FP and AA by $2. Enemies hit by this ship's Main Guns take 5.0% increases cannon and aircraft DMG from your Vichya Dominion ships for 6s.",
+		desc = "Increases this ship's FP and ACC by $1 and increases your Vichya Dominion Vanguard ships' FP and AA by $2. Enemies hit by this ship's Main Guns take 5.0% increasesd cannon and aircraft DMG from your Vichya Dominion ships for 6s.",
 		system_transform = {},
 		world_death_mark = {
 			1
