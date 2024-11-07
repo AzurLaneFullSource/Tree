@@ -46,9 +46,9 @@ function var0_0.didEnter(arg0_3)
 
 		local var3_3 = arg0_3.metaExpView
 
+		var3_3:setData(var2_3)
 		var3_3:Reset()
 		var3_3:Load()
-		var3_3:setData(var2_3)
 		var3_3:ActionInvoke("Show")
 	end
 end

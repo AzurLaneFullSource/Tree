@@ -1110,8 +1110,6 @@ function var0_0.initMetaBtn(arg0_74)
 		if not arg0_74.metaExpView then
 			arg0_74.metaExpView = BattleResultMetaExpView.New(arg0_74._blurConatiner, arg0_74.event, arg0_74.contextData)
 
-			arg0_74.metaExpView:Reset()
-			arg0_74.metaExpView:Load()
 			arg0_74.metaExpView:setData(var0_74, function()
 				if arg0_74.metaBtn then
 					setActive(arg0_74.metaBtn, true)
@@ -1119,6 +1117,8 @@ function var0_0.initMetaBtn(arg0_74)
 
 				arg0_74.metaExpView = nil
 			end)
+			arg0_74.metaExpView:Reset()
+			arg0_74.metaExpView:Load()
 			arg0_74.metaExpView:ActionInvoke("Show")
 			arg0_74.metaExpView:ActionInvoke("openPanel")
 		end

@@ -100640,7 +100640,7 @@ pg.base.skill_data_template = {
 	},
 	[18010] = {
 		desc_get = "",
-		name = "MKV-Class AP Shells 194/160+",
+		name = "MKV-Class AP Shells+",
 		id = 18010,
 		type = 1,
 		max_level = 10,
