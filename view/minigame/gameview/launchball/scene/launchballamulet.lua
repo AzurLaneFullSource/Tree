@@ -85,9 +85,9 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1, arg5_1)
 		local var0_1 = iter0_1
 		local var1_1 = iter1_1.name
 		local var2_1 = iter1_1.animator
-		local var3_1 = ResourceMgr.Inst:getAssetSync(LaunchBallGameVo.ui_atlas, var2_1 .. "L", typeof(RuntimeAnimatorController), false, false)
-		local var4_1 = ResourceMgr.Inst:getAssetSync(LaunchBallGameVo.ui_atlas, var2_1 .. "S", typeof(RuntimeAnimatorController), false, false)
-		local var5_1 = ResourceMgr.Inst:getAssetSync(LaunchBallGameVo.ui_atlas, var2_1 .. "EF", typeof(RuntimeAnimatorController), false, false)
+		local var3_1 = LoadAny(LaunchBallGameVo.ui_atlas, var2_1 .. "L", typeof(RuntimeAnimatorController))
+		local var4_1 = LoadAny(LaunchBallGameVo.ui_atlas, var2_1 .. "S", typeof(RuntimeAnimatorController))
+		local var5_1 = LoadAny(LaunchBallGameVo.ui_atlas, var2_1 .. "EF", typeof(RuntimeAnimatorController))
 
 		table.insert(arg0_1.amuletLAnimators, {
 			animator = var3_1,

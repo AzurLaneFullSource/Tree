@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "主人，您的脸有些红呢……是因为工作方面的应酬导致的吗？",
 			typewriter = {
@@ -57,7 +57,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			optionFlag = 1,
 			say = "摸上去也很烫……要不要Sirius帮您降降温呢？",
@@ -73,7 +73,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			optionFlag = 2,
 			say = "那，要不要Sirius帮您降降温呢？",
@@ -89,7 +89,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "主人，请您放松一些，Sirius要解开您的制服……",
 			typewriter = {
@@ -121,7 +121,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "您的制服系得很规整，布料又厚实，这也是导致您体温上升的原因之一呢。",
 			typewriter = {
@@ -130,7 +130,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "接下来Sirius会用毛巾包裹住冰块，为您擦拭身体。",
 			typewriter = {
@@ -172,7 +172,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "完全不会哦！",
 			typewriter = {
@@ -204,7 +204,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "如果主人担心着凉的话，Sirius会用自己的体温给主人保暖的！",
 			typewriter = {
@@ -243,7 +243,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "您只要安心接受Sirius的侍奉就好了，我骄傲的主人。",
 			typewriter = {

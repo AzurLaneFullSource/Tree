@@ -17,7 +17,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "并不会哦，我的主人。",
 			typewriter = {
@@ -49,7 +49,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "不过，Sirius之前提过，希望让主人把路上看到的花送给我。",
 			typewriter = {
@@ -58,7 +58,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "要不要干脆借这个机会，尝试一下插花呢？这样主人也不会觉得房间布置单调了。",
 			typewriter = {
@@ -100,7 +100,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			optionFlag = 1,
 			say = "嗯……不算会，只是勉强了解一点点。",
@@ -110,7 +110,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			optionFlag = 2,
 			say = "为主人提供舒适和赏心悦目的居家环境，是女仆的分内之事。",
@@ -120,7 +120,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "虽然是Sirius提出的插花，但我其实并不擅长呢……",
 			typewriter = {
@@ -129,7 +129,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "不过提出这种自己并不擅长的事，也是因为Sirius实在太想和主人一起做了……！",
 			typewriter = {
@@ -161,7 +161,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "果然……还请您惩罚Sirius这个厚脸皮的女仆吧，我的主人。",
 			typewriter = {
@@ -193,7 +193,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "Sirius已经做好了接受惩罚的准备……！",
 			typewriter = {

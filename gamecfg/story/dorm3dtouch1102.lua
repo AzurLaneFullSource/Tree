@@ -2,15 +2,18 @@ return {
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DTOUCH1102",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "My honourable Master, are you drawn to my attire?",
+			say = "My honourable {dorm3d}, are you drawn to my attire?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

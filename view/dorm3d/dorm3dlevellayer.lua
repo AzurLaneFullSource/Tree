@@ -117,7 +117,7 @@ function var0_0.init(arg0_2)
 	arg0_2.callInput:GetComponent(typeof(InputField)).onValueChanged:AddListener(function()
 		arg0_2.renameReset = false
 	end)
-	setActive(arg0_2.rtLevelPanel:Find("bg/left/rot"), PLATFORM_CODE == PLATFORM_CH)
+	setActive(arg0_2.rtLevelPanel:Find("bg/left/rot"), not var0_0.IsLockNamed())
 	arg0_2:InitItemList()
 end
 
@@ -258,181 +258,189 @@ function var0_0.didEnter(arg0_24)
 	arg0_24:UpdateRed()
 end
 
+function var0_0.IsLockNamed()
+	return PLATFORM_CODE ~= PLATFORM_CH and DORM_LOCK_NAMED
+end
+
 function var0_0.IsShowRed()
+	if var0_0.IsLockNamed() then
+		return false
+	end
+
 	return PlayerPrefs.GetInt(var0_0.PLAYERPREFS_KEY, 0) == 0
 end
 
-function var0_0.UpdateRed(arg0_26)
-	setActive(arg0_26.rtLevelPanel:Find("bg/left/rot/red"), var0_0.IsShowRed())
-	arg0_26:emit(Dorm3dLevelMediator.UPDATE_FAVOR_DISPLAY)
+function var0_0.UpdateRed(arg0_27)
+	setActive(arg0_27.rtLevelPanel:Find("bg/left/rot/red"), var0_0.IsShowRed())
+	arg0_27:emit(Dorm3dLevelMediator.UPDATE_FAVOR_DISPLAY)
 end
 
-function var0_0.UpdateName(arg0_27)
-	local var0_27 = arg0_27.apartment:GetCallName()
-	local var1_27, var2_27 = utf8_to_unicode(var0_27)
-	local var3_27 = var2_27 <= var0_0.NAME_SHORT_SIZE
+function var0_0.UpdateName(arg0_28)
+	local var0_28 = arg0_28.apartment:GetCallName()
+	local var1_28, var2_28 = utf8_to_unicode(var0_28)
+	local var3_28 = var2_28 <= var0_0.NAME_SHORT_SIZE
 
-	setActive(arg0_27.nameShort, var3_27)
-	setActive(arg0_27.nameLong, not var3_27)
-	setText(var3_27 and arg0_27.nameShort:Find("Text") or arg0_27.nameLong:Find("Text"), var0_27)
+	setActive(arg0_28.nameShort, var3_28)
+	setActive(arg0_28.nameLong, not var3_28)
+	setText(var3_28 and arg0_28.nameShort:Find("Text") or arg0_28.nameLong:Find("Text"), var0_28)
 end
 
-function var0_0.ShowRenameWindow(arg0_28)
-	setActive(arg0_28._tf:Find("bg"), false)
-	setActive(arg0_28._tf:Find("btn_back"), false)
-	setActive(arg0_28.rtLevelPanel, false)
-	setActive(arg0_28.rtRenameWindow, true)
-	setActive(arg0_28.blurPanel, true)
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_28.blurPanel, {
+function var0_0.ShowRenameWindow(arg0_29)
+	setActive(arg0_29._tf:Find("bg"), false)
+	setActive(arg0_29._tf:Find("btn_back"), false)
+	setActive(arg0_29.rtLevelPanel, false)
+	setActive(arg0_29.rtRenameWindow, true)
+	setActive(arg0_29.blurPanel, true)
+	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_29.blurPanel, {
 		pbList = {
-			arg0_28.blurPanel
+			arg0_29.blurPanel
 		},
 		groupName = LayerWeightConst.GROUP_DORM3D,
-		weight = arg0_28:getWeightFromData() + 1
+		weight = arg0_29:getWeightFromData() + 1
 	})
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_28.rtRenameWindow, {
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_29.rtRenameWindow, {
 		groupName = LayerWeightConst.GROUP_DORM3D,
-		weight = arg0_28:getWeightFromData() + 1
+		weight = arg0_29:getWeightFromData() + 1
 	})
-	setInputText(arg0_28.callInput, arg0_28.apartment:GetCallName())
+	setInputText(arg0_29.callInput, arg0_29.apartment:GetCallName())
 
-	local var0_28 = arg0_28.apartment:GetSetCallCd()
-	local var1_28
+	local var0_29 = arg0_29.apartment:GetSetCallCd()
+	local var1_29
 
-	if var0_28 > 3600 then
-		var1_28 = math.floor(var0_28 / 3600) .. i18n("word_hour")
-	elseif var0_28 > 60 then
-		var1_28 = math.floor(var0_28 / 60) .. i18n("word_minute")
+	if var0_29 > 3600 then
+		var1_29 = math.floor(var0_29 / 3600) .. i18n("word_hour")
+	elseif var0_29 > 60 then
+		var1_29 = math.floor(var0_29 / 60) .. i18n("word_minute")
 	else
-		var1_28 = var0_28 .. i18n("word_second")
+		var1_29 = var0_29 .. i18n("word_second")
 	end
 
-	setText(arg0_28.rtRenameWindow:Find("panel/time"), var0_28 == 0 and i18n("dorm3d_appellation_interval") or i18n("dorm3d_appellation_cd", var1_28))
+	setText(arg0_29.rtRenameWindow:Find("panel/time"), var0_29 == 0 and i18n("dorm3d_appellation_interval") or i18n("dorm3d_appellation_cd", var1_29))
 	PlayerPrefs.SetInt(var0_0.PLAYERPREFS_KEY, 1)
-	arg0_28:UpdateRed()
+	arg0_29:UpdateRed()
 end
 
-function var0_0.CloseRenameWindow(arg0_29)
-	setActive(arg0_29._tf:Find("bg"), true)
-	setActive(arg0_29._tf:Find("btn_back"), true)
-	setActive(arg0_29.rtLevelPanel, true)
-	setActive(arg0_29.rtRenameWindow, false)
-	setActive(arg0_29.blurPanel, false)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_29.blurPanel, arg0_29._tf)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_29.rtRenameWindow, arg0_29._tf)
-	arg0_29:UpdateName()
+function var0_0.CloseRenameWindow(arg0_30)
+	setActive(arg0_30._tf:Find("bg"), true)
+	setActive(arg0_30._tf:Find("btn_back"), true)
+	setActive(arg0_30.rtLevelPanel, true)
+	setActive(arg0_30.rtRenameWindow, false)
+	setActive(arg0_30.blurPanel, false)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_30.blurPanel, arg0_30._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_30.rtRenameWindow, arg0_30._tf)
+	arg0_30:UpdateName()
 end
 
-function var0_0.ShowTimeSelectWindow(arg0_30)
-	local var0_30 = arg0_30.rtTimeSelectWindow:Find("panel")
+function var0_0.ShowTimeSelectWindow(arg0_31)
+	local var0_31 = arg0_31.rtTimeSelectWindow:Find("panel")
 
-	setText(var0_30:Find("title"), i18n("dorm3d_time_choose"))
+	setText(var0_31:Find("title"), i18n("dorm3d_time_choose"))
 
-	for iter0_30, iter1_30 in ipairs({
+	for iter0_31, iter1_31 in ipairs({
 		"day",
 		"night"
 	}) do
-		local var1_30 = var0_30:Find("content/" .. iter1_30)
+		local var1_31 = var0_31:Find("content/" .. iter1_31)
 
-		setText(var1_30:Find("now/Text"), i18n("dorm3d_now_time"))
-		setActive(var1_30:Find("now"), iter0_30 == arg0_30.contextData.timeIndex)
-		onToggle(arg0_30, var1_30, function(arg0_31)
-			if arg0_31 == true then
-				arg0_30.selectTimeIndex = iter0_30
+		setText(var1_31:Find("now/Text"), i18n("dorm3d_now_time"))
+		setActive(var1_31:Find("now"), iter0_31 == arg0_31.contextData.timeIndex)
+		onToggle(arg0_31, var1_31, function(arg0_32)
+			if arg0_32 == true then
+				arg0_31.selectTimeIndex = iter0_31
 			end
 
-			quickPlayAnimation(var1_30, arg0_31 and "anim_dorm3d_timeselect_click" or "anim_dorm3d_timeselect_unclick")
+			quickPlayAnimation(var1_31, arg0_32 and "anim_dorm3d_timeselect_click" or "anim_dorm3d_timeselect_unclick")
 		end, SFX_PANEL)
 	end
 
-	triggerToggle(var0_30:Find("content"):GetChild(arg0_30.contextData.timeIndex - 1), true)
-	setText(var0_30:Find("bottom/toggle_lock/Text"), i18n("dorm3d_is_auto_time"))
-	onToggle(arg0_30, var0_30:Find("bottom/toggle_lock"), function(arg0_32)
-		if arg0_32 then
+	triggerToggle(var0_31:Find("content"):GetChild(arg0_31.contextData.timeIndex - 1), true)
+	setText(var0_31:Find("bottom/toggle_lock/Text"), i18n("dorm3d_is_auto_time"))
+	onToggle(arg0_31, var0_31:Find("bottom/toggle_lock"), function(arg0_33)
+		if arg0_33 then
 			PlayerPrefs.SetInt(ApartmentProxy.GetTimePPName(), 0)
 		else
-			PlayerPrefs.SetInt(ApartmentProxy.GetTimePPName(), arg0_30.contextData.timeIndex)
+			PlayerPrefs.SetInt(ApartmentProxy.GetTimePPName(), arg0_31.contextData.timeIndex)
 		end
 
-		quickPlayAnimation(var0_30:Find("bottom/toggle_lock"), arg0_32 and "anim_dorm3d_timeselect_bottom_on" or "anim_dorm3d_timeselect_bottom_off")
+		quickPlayAnimation(var0_31:Find("bottom/toggle_lock"), arg0_33 and "anim_dorm3d_timeselect_bottom_on" or "anim_dorm3d_timeselect_bottom_off")
 	end, SFX_PANEL)
-	triggerToggle(var0_30:Find("bottom/toggle_lock"), PlayerPrefs.GetInt(ApartmentProxy.GetTimePPName(), 1) == 0)
-	onButton(arg0_30, var0_30:Find("bottom/btn_confirm"), function()
-		warning(arg0_30.contextData.timeIndex, arg0_30.selectTimeIndex)
-		pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_day_night_switching" .. arg0_30.selectTimeIndex))
+	triggerToggle(var0_31:Find("bottom/toggle_lock"), PlayerPrefs.GetInt(ApartmentProxy.GetTimePPName(), 1) == 0)
+	onButton(arg0_31, var0_31:Find("bottom/btn_confirm"), function()
+		warning(arg0_31.contextData.timeIndex, arg0_31.selectTimeIndex)
+		pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_day_night_switching" .. arg0_31.selectTimeIndex))
 
-		if arg0_30.contextData.timeIndex == arg0_30.selectTimeIndex then
+		if arg0_31.contextData.timeIndex == arg0_31.selectTimeIndex then
 			return
 		else
 			if PlayerPrefs.GetInt(ApartmentProxy.GetTimePPName(), 1) ~= 0 then
-				PlayerPrefs.SetInt(ApartmentProxy.GetTimePPName(), arg0_30.selectTimeIndex)
+				PlayerPrefs.SetInt(ApartmentProxy.GetTimePPName(), arg0_31.selectTimeIndex)
 			end
 
-			triggerButton(arg0_30.rtTimeSelectWindow:Find("bg"))
-			arg0_30:emit(Dorm3dLevelMediator.CHAMGE_TIME, arg0_30.selectTimeIndex)
+			triggerButton(arg0_31.rtTimeSelectWindow:Find("bg"))
+			arg0_31:emit(Dorm3dLevelMediator.CHAMGE_TIME, arg0_31.selectTimeIndex)
 		end
 	end, SFX_CONFIRM)
-	setActive(arg0_30.rtTimeSelectWindow, true)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_30.rtTimeSelectWindow, {
+	setActive(arg0_31.rtTimeSelectWindow, true)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_31.rtTimeSelectWindow, {
 		weight = LayerWeightConst.SECOND_LAYER,
 		groupName = LayerWeightConst.GROUP_DORM3D
 	})
 end
 
-function var0_0.ShowSkinSelectWindow(arg0_34)
-	local var0_34 = arg0_34.rtSkinSelectWindow:Find("panel")
+function var0_0.ShowSkinSelectWindow(arg0_35)
+	local var0_35 = arg0_35.rtSkinSelectWindow:Find("panel")
 
-	setText(var0_34:Find("title"), i18n("dorm3d_clothing_choose"))
-	UIItemList.StaticAlign(var0_34:Find("content"), var0_34:Find("content/tpl"), #arg0_34.apartment.skinList, function(arg0_35, arg1_35, arg2_35)
-		arg1_35 = arg1_35 + 1
+	setText(var0_35:Find("title"), i18n("dorm3d_clothing_choose"))
+	UIItemList.StaticAlign(var0_35:Find("content"), var0_35:Find("content/tpl"), #arg0_35.apartment.skinList, function(arg0_36, arg1_36, arg2_36)
+		arg1_36 = arg1_36 + 1
 
-		if arg0_35 == UIItemList.EventUpdate then
-			local var0_35 = arg0_34.apartment.skinList[arg1_35]
+		if arg0_36 == UIItemList.EventUpdate then
+			local var0_36 = arg0_35.apartment.skinList[arg1_36]
 
-			if var0_35 == 0 then
-				var0_35 = arg0_34.apartment:getConfig("skin_model")
+			if var0_36 == 0 then
+				var0_36 = arg0_35.apartment:getConfig("skin_model")
 			end
 
-			GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/apartment_skin_%d", var0_35), "", arg2_35:Find("Image"))
-			GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/apartment_skin_name_%s", pg.dorm3d_resource[var0_35].picture), "", arg2_35:Find("name"))
-			setText(arg2_35:Find("select/now/Text"), i18n("dorm3d_now_clothing"))
-			setActive(arg2_35:Find("select/now"), arg0_34.apartment:getSkinId() == var0_35)
-			onToggle(arg0_34, arg2_35, function(arg0_36)
-				if arg0_36 == true then
-					arg0_34.selectSkinId = var0_35
+			GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/apartment_skin_%d", var0_36), "", arg2_36:Find("Image"))
+			GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/apartment_skin_name_%s", pg.dorm3d_resource[var0_36].picture), "", arg2_36:Find("name"))
+			setText(arg2_36:Find("select/now/Text"), i18n("dorm3d_now_clothing"))
+			setActive(arg2_36:Find("select/now"), arg0_35.apartment:getSkinId() == var0_36)
+			onToggle(arg0_35, arg2_36, function(arg0_37)
+				if arg0_37 == true then
+					arg0_35.selectSkinId = var0_36
 				end
 			end, SFX_PANEL)
-			triggerToggle(arg2_35, arg0_34.apartment:getSkinId() == var0_35)
+			triggerToggle(arg2_36, arg0_35.apartment:getSkinId() == var0_36)
 		end
 	end)
-	setText(var0_34:Find("bottom/btn_confirm/Text"), i18n("word_ok"))
-	onButton(arg0_34, var0_34:Find("bottom/btn_confirm"), function()
-		triggerButton(arg0_34.rtSkinSelectWindow:Find("bg"))
+	setText(var0_35:Find("bottom/btn_confirm/Text"), i18n("word_ok"))
+	onButton(arg0_35, var0_35:Find("bottom/btn_confirm"), function()
+		triggerButton(arg0_35.rtSkinSelectWindow:Find("bg"))
 
-		if arg0_34.apartment:getSkinId() ~= arg0_34.selectSkinId then
-			arg0_34:emit(Dorm3dLevelMediator.CHANGE_SKIN, arg0_34.apartment.configId, arg0_34.selectSkinId)
+		if arg0_35.apartment:getSkinId() ~= arg0_35.selectSkinId then
+			arg0_35:emit(Dorm3dLevelMediator.CHANGE_SKIN, arg0_35.apartment.configId, arg0_35.selectSkinId)
 		end
 	end, SFX_CONFIRM)
-	setActive(arg0_34.rtSkinSelectWindow, true)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_34.rtSkinSelectWindow, {
+	setActive(arg0_35.rtSkinSelectWindow, true)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_35.rtSkinSelectWindow, {
 		weight = LayerWeightConst.SECOND_LAYER,
 		groupName = LayerWeightConst.GROUP_DORM3D
 	})
 end
 
-function var0_0.onBackPressed(arg0_38)
-	if isActive(arg0_38.rtSkinSelectWindow) then
-		triggerButton(arg0_38.rtSkinSelectWindow:Find("bg"))
-	elseif isActive(arg0_38.rtTimeSelectWindow) then
-		triggerButton(arg0_38.rtTimeSelectWindow:Find("bg"))
-	elseif isActive(arg0_38.rtRenameWindow) then
-		triggerButton(arg0_38.rtRenameWindow:Find("panel/cancel"))
+function var0_0.onBackPressed(arg0_39)
+	if isActive(arg0_39.rtSkinSelectWindow) then
+		triggerButton(arg0_39.rtSkinSelectWindow:Find("bg"))
+	elseif isActive(arg0_39.rtTimeSelectWindow) then
+		triggerButton(arg0_39.rtTimeSelectWindow:Find("bg"))
+	elseif isActive(arg0_39.rtRenameWindow) then
+		triggerButton(arg0_39.rtRenameWindow:Find("panel/cancel"))
 	else
-		var0_0.super.onBackPressed(arg0_38)
+		var0_0.super.onBackPressed(arg0_39)
 	end
 end
 
-function var0_0.willExit(arg0_39)
+function var0_0.willExit(arg0_40)
 	return
 end
 

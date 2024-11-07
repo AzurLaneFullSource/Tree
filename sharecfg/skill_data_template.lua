@@ -2402,6 +2402,7 @@ pg.skill_data_template = setmetatable({
 		10150580,
 		10150640,
 		10150600,
+		1019020,
 		1090010,
 		1090020,
 		1090030,
@@ -2432,7 +2433,8 @@ pg.skill_data_template = setmetatable({
 		1090280,
 		1090290,
 		1090310,
-		1090320
+		1090320,
+		1090330
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -149685,11 +149687,11 @@ pg.base.skill_data_template = {
 	},
 	[901010] = {
 		desc_get = "",
-		name = "Slash Attack - Spread",
+		name = "Special Slash - Spread",
 		id = 901010,
 		type = 1,
 		max_level = 1,
-		desc = "The ship in the frontmost position of your Vanguard performs a slash attack. Slash attack pattern, range, and DMG are based on the number of ships equipped with slash attack gear, the ships' hull type, and the equipped module's effects.",
+		desc = "The ship in the frontmost position of your Vanguard performs a slash attack. Slash attack pattern, range, and DMG are based on the number of Vanguard ships equipped with slash attack gear, the ships' hull type, and the equipped module's effects.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -158257,6 +158259,148 @@ pg.base.skill_data_template = {
 			}
 		}
 	},
+	[1019020] = {
+		desc_get = "",
+		name = "Goddess of the Sea+",
+		id = 1019020,
+		type = 2,
+		max_level = 10,
+		desc = "Increases this ship's Crit Rate by $2. Every 10s: fires a $3 special barrage (DMG is based on the skill's level) and deploys a barrier (lasts 5s) that can negate DMG equal to 5.0% of this ship's max HP. Once per battle, when this ship's HP falls below 20.0% as a result of DMG taken: restores $1 of this ship's max HP and increases this ship's RLD by 30.0% until the battle ends.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"15%",
+				"25%"
+			},
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"15.0%",
+					"+1.1%"
+				},
+				{
+					"16.1%",
+					"+1.1%"
+				},
+				{
+					"17.2%",
+					"+1.1%"
+				},
+				{
+					"18.3%",
+					"+1.1%"
+				},
+				{
+					"19.4%",
+					"+1.1%"
+				},
+				{
+					"20.5%",
+					"+1.1%"
+				},
+				{
+					"21.6%",
+					"+1.1%"
+				},
+				{
+					"22.7%",
+					"+1.1%"
+				},
+				{
+					"23.8%",
+					"+1.2%"
+				},
+				{
+					"25.0%"
+				}
+			},
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
 	[1090010] = {
 		desc_get = "",
 		name = "Fleet Carrier - Glorious",
@@ -162191,6 +162335,103 @@ pg.base.skill_data_template = {
 				},
 				{
 					"5.0%"
+				}
+			}
+		}
+	},
+	[1090330] = {
+		desc_get = "",
+		name = "Torpedo Command - Shiratsuyu",
+		id = 1090330,
+		type = 3,
+		max_level = 10,
+		desc = "Increases your Vanguard's TRP by $1 (does not stack with similar skills). Every 5s: fires a $2 special torpedo barrage (DMG is based on the skill's level and this ship's TRP stat).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5%",
+				"15%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
 				}
 			}
 		}

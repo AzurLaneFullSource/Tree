@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "这上面难道有什么连Sirius都未曾察觉的特殊之处吗？",
 			typewriter = {

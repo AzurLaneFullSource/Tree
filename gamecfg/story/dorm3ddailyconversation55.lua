@@ -7,14 +7,17 @@ return {
 	id = "DORM3DDAILYCONVERSATION55",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "Master, it's sweltering today. Shall we have some ice cream to cool off?",
+			say = "{dorm3d}, it's sweltering today. Shall we have some ice cream to cool off?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -56,7 +59,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -68,7 +71,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,

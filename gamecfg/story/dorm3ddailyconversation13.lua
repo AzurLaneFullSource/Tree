@@ -7,6 +7,9 @@ return {
 	id = "DORM3DDAILYCONVERSATION13",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			actor = 0,
@@ -21,11 +24,11 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "Heehee. I'm simply very good at detecting your footsteps and your presence, Master.",
+			say = "Heehee. I'm simply very good at detecting your footsteps and your presence, {dorm3d}.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -56,7 +59,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,

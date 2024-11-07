@@ -465,7 +465,7 @@ function var0_0.createCharData(arg0_15, arg1_15)
 				end
 
 				if var8_15 then
-					local var9_15 = ResourceMgr.Inst:getAssetSync(var7_15, var8_15, typeof(RuntimeAnimatorController), false, false)
+					local var9_15 = LoadAny(var7_15, var8_15, typeof(RuntimeAnimatorController))
 
 					table.insert(var2_15, {
 						runtimeAnimator = var9_15,
@@ -478,7 +478,7 @@ function var0_0.createCharData(arg0_15, arg1_15)
 		for iter2_15 = 0, var5_15 do
 			for iter3_15 = 0, arg0_15._gameData.speed_num do
 				local var10_15 = var6_15 .. "_L" .. iter2_15 .. "_" .. iter3_15
-				local var11_15 = ResourceMgr.Inst:getAssetSync(var7_15, var10_15, typeof(RuntimeAnimatorController), false, false)
+				local var11_15 = LoadAny(var7_15, var10_15, typeof(RuntimeAnimatorController))
 
 				table.insert(var2_15, {
 					runtimeAnimator = var11_15,
@@ -489,7 +489,7 @@ function var0_0.createCharData(arg0_15, arg1_15)
 	else
 		for iter4_15 = 0, var5_15 do
 			local var12_15 = var6_15 .. "_L" .. iter4_15
-			local var13_15 = ResourceMgr.Inst:getAssetSync(var7_15, var12_15, typeof(RuntimeAnimatorController), false, false)
+			local var13_15 = LoadAny(var7_15, var12_15, typeof(RuntimeAnimatorController))
 
 			table.insert(var2_15, {
 				runtimeAnimator = var13_15,

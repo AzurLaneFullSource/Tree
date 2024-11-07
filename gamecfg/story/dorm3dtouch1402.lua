@@ -2,15 +2,18 @@ return {
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DTOUCH1402",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "I will shoulder the responsibility of protecting you, my honourable Master. No ne'er-do-wells shall come near you.",
+			say = "I will shoulder the responsibility of protecting you, my honourable {dorm3d}. No ne'er-do-wells shall come near you.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

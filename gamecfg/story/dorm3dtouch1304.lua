@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "I-is this to your liking? Shall I strike a different pose?",
 			typewriter = {

@@ -7,14 +7,17 @@ return {
 	id = "DORM3DDAILYCONVERSATION25",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "Master, could I ask you to take a picture with me?",
+			say = "{dorm3d}, could I ask you to take a picture with me?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -55,11 +58,11 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "Thank you, my kind Master!",
+			say = "Thank you, my kind {dorm3d}!",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -67,7 +70,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,

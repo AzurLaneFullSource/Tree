@@ -17,7 +17,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "欸？",
 			typewriter = {
@@ -49,7 +49,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "关于这点，之前是为了要适应战斗的节奏，Sirius可以利用碎片时间完成休息。",
 			typewriter = {
@@ -58,7 +58,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "这个习惯也一直保留了下来，所以现在在主人面前也不会流露出疲态。",
 			typewriter = {
@@ -76,7 +76,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "啊，原来如此，Sirius明白了。",
 			typewriter = {
@@ -118,7 +118,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "主人认为赖床是非常重要的乐趣，那么，您应该有会赖床的时候。",
 			typewriter = {
@@ -150,7 +150,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "为了让Sirius也体会到这种乐趣……主人今天应该就会留在这里，教会我这种体验。",
 			typewriter = {
@@ -159,7 +159,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "Sirius现在就去准备床铺，以便让您有足够舒适的赖床体验，我……骄傲的主人。",
 			typewriter = {

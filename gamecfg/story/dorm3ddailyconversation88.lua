@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "嗯？您想知道Sirius是不是已经忘记了怎么跳舞……？",
 			typewriter = {
@@ -40,7 +40,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "当然没有忘记！",
 			typewriter = {
@@ -49,7 +49,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "主人，Sirius可是一刻都没有疏于练习哦。",
 			typewriter = {
@@ -88,7 +88,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "如果您还愿意让Sirius成为您的舞伴的话……",
 			typewriter = {
@@ -107,7 +107,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "太好了！那……Sirius想占用您一点时间，来复习与您的双人舞。",
 			typewriter = {
@@ -146,7 +146,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "如果您觉得单纯跳舞有些乏味的话，还可以直接……",
 			typewriter = {
@@ -155,7 +155,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "欸？您现在只想和Sirius跳舞？呜……好、好吧……！",
 			typewriter = {

@@ -25,7 +25,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "欸？是主人您比较怕热吗？",
 			typewriter = {
@@ -57,7 +57,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "抱歉！是Sirius的疏忽……还请您原谅我的冒失。",
 			typewriter = {
@@ -89,7 +89,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "不过，Sirius之前从其他人那里听来了一个降温的技巧。",
 			typewriter = {
@@ -104,7 +104,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "就是——如果觉得热的话，就立刻去洗热水澡。",
 			typewriter = {
@@ -136,7 +136,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "洗完的瞬间就会觉得十分凉爽哦！",
 			typewriter = {
@@ -145,7 +145,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "那么，就由Sirius来伺候主人沐浴吧。",
 			typewriter = {
@@ -154,7 +154,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "还请您不要乱动，Sirius要来为您脱下身上的制服了哦~",
 			typewriter = {

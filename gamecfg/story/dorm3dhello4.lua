@@ -2,15 +2,18 @@ return {
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DHELLO4",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "Good day, my honourable Master. I've been waiting for you here all day. Oh, no... I don't mind even the longest waits, as long as I get to serve you at the end of it.",
+			say = "Good day, my honourable {dorm3d}. I've been waiting for you here all day. Oh, no... I don't mind even the longest waits, as long as I get to serve you at the end of it.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

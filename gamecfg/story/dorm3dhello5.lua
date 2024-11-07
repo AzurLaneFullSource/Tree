@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "Heehee, I knew you'd be here at this time, so I already made preparations to serve you. Hmm... How do I put this? It may be a sort of... unspoken communication between the two of us.",
 			typewriter = {

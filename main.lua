@@ -48,6 +48,8 @@ if IsUnityEditor then
 
 		time:Start()
 		print("luaIdeDebugFunc")
+
+		ResourceMgr.Inst.enableAssetNameFinder = false
 	end
 end
 
@@ -79,6 +81,10 @@ end
 
 function OnApplicationExit()
 	originalPrint("OnApplicationExit")
+
+	if pg.GameTrackerMgr then
+		pg.GameTrackerMgr.GetInstance():Synchronization()
+	end
 
 	if pg.FileDownloadMgr.GetInstance():IsRunning() then
 		return
@@ -326,6 +332,9 @@ local function var1_0(arg0_12)
 		end,
 		function(arg0_40)
 			pg.CameraRTMgr.GetInstance():Init(arg0_40)
+		end,
+		function(arg0_41)
+			pg.GameTrackerMgr.GetInstance():Init(arg0_41)
 		end
 	}, arg0_12)
 end
@@ -335,24 +344,24 @@ local var2_0 = os.clock()
 seriesAsync({
 	var0_0,
 	var1_0
-}, function(arg0_41)
+}, function(arg0_42)
 	pg.SdkMgr.GetInstance():QueryWithProduct()
 	print("loading cost: " .. os.clock() - var2_0)
 	VersionMgr.Inst:DestroyUI()
 
-	local var0_41 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
+	local var0_42 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
 
-	if not IsNil(var0_41) then
-		Object.Destroy(var0_41)
+	if not IsNil(var0_42) then
+		Object.Destroy(var0_42)
 	end
 
 	Screen.sleepTimeout = SleepTimeout.SystemSetting
 
 	pg.UIMgr.GetInstance():displayLoadingBG(true)
 
-	if arg0_41 then
-		pg.UIMgr.GetInstance():Loading(arg0_41)
-		error(arg0_41)
+	if arg0_42 then
+		pg.UIMgr.GetInstance():Loading(arg0_42)
+		error(arg0_42)
 
 		return
 	end

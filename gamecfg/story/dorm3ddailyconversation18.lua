@@ -7,14 +7,17 @@ return {
 	id = "DORM3DDAILYCONVERSATION18",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "Master, you're always busy with something, so I'd like to make some vegetable juice to supplement your nutrient intake!",
+			say = "{dorm3d}, you're always busy with something, so I'd like to make some vegetable juice to supplement your nutrient intake!",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -55,7 +58,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -67,7 +70,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,

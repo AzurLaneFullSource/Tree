@@ -2,13 +2,16 @@ return {
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DGIFTFEEDBACK2",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "Oh! With this toolbox, my cleaning efficiency will go through the roof!",
 			typewriter = {
@@ -18,8 +21,8 @@ return {
 		},
 		{
 			nameColor = "#FFFFFF",
-			actorName = "Sirius",
-			say = "My honourable Master, thank you very much. I will use this to keep your room spotless.",
+			actorName = 20220,
+			say = "My honourable {dorm3d}, thank you very much. I will use this to keep your room spotless.",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_wait_table1",
 			typewriter = {
 				speed = 0.05,

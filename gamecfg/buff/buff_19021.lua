@@ -1,5 +1,5 @@
 return {
-	time = 15,
+	time = 0,
 	name = "海之女神",
 	init_effect = "jinengchufared",
 	color = "red",

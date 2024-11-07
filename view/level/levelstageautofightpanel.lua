@@ -64,7 +64,6 @@ function var0_0.OnInit(arg0_8)
 
 	setText(arg0_8.restTime:Find("Text"), var1_8[1])
 	setText(arg0_8.restTime:Find("Text (2)"), var1_8[2])
-	arg0_8.loader:LoadBundle("ui/levelstageview_atlas")
 end
 
 function var0_0.UpdateAutoFightMark(arg0_11)
@@ -94,7 +93,7 @@ function var0_0.UpdateContinuousOperation(arg0_12)
 		setActive(arg0_12.restTime, true)
 
 		if not arg0_12.isCO then
-			setImageSprite(arg0_12.btnOn, LoadSprite("ui/levelstageview_atlas", "continuous_operation_on"))
+			arg0_12.loader:GetSprite("ui/levelstageview_atlas", "continuous_operation_on", arg0_12.btnOn)
 
 			arg0_12.isCO = true
 		end
@@ -102,7 +101,7 @@ function var0_0.UpdateContinuousOperation(arg0_12)
 		setActive(arg0_12.restTime, false)
 
 		if arg0_12.isCO then
-			setImageSprite(arg0_12.btnOn, LoadSprite("ui/levelstageview_atlas", "auto_fight_on"))
+			arg0_12.loader:GetSprite("ui/levelstageview_atlas", "continuous_operation_on", arg0_12.btnOn)
 
 			arg0_12.isCO = false
 		end

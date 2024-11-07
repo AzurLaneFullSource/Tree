@@ -119,7 +119,7 @@ function var0_0.GetCallName(arg0_16)
 end
 
 function var0_0.GetSetCallCd(arg0_17)
-	if pg.TimeMgr.GetInstance():GetServerTime() >= arg0_17.setCallCd then
+	if not arg0_17.setCallCd or pg.TimeMgr.GetInstance():GetServerTime() >= arg0_17.setCallCd then
 		return 0
 	end
 

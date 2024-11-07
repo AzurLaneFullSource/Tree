@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "您说在闲暇之余，阅读了一些以皇家过去真实存在的案件为蓝本撰写的侦探小说……",
 			typewriter = {
@@ -47,7 +47,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "欸？想让Sirius猜猜看是什么故事蓝本？",
 			typewriter = {
@@ -56,7 +56,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "我猜是……“开膛手”？",
 			typewriter = {
@@ -95,7 +95,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "答对了吗？呵呵，那就好。",
 			typewriter = {
@@ -104,7 +104,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "毕竟最为有名的便是“开膛手”的案件呢。",
 			typewriter = {
@@ -136,7 +136,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "将他人生命轻易夺走，是“开膛手”永远无法洗涮掉的罪孽。",
 			typewriter = {
@@ -145,7 +145,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "从个人角度上说，Sirius其实不希望有更多娱乐化这类存在的内容呢……",
 			typewriter = {
@@ -154,7 +154,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "欸？您说突然变得不太像Sirius了吗？",
 			typewriter = {
@@ -193,7 +193,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "唔，也许是和主人您在一起的时间变久了，连思考的方式也受到了影响呢。",
 			typewriter = {

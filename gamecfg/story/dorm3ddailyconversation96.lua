@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "…………",
 			typewriter = {
@@ -54,7 +54,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "主人，Sirius有个问题想要问您——",
 			typewriter = {
@@ -63,7 +63,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "请问您吃过“红豆”这种食物吗？",
 			typewriter = {
@@ -81,7 +81,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "唔……不知道她们是如何“制服”这种奇怪的食物的。",
 			typewriter = {
@@ -113,7 +113,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "无论怎么处理都是硬硬的，完全不知道该如何是好……",
 			typewriter = {
@@ -131,7 +131,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "因、因为听说重樱有在一些特殊场合结束之后，用红豆饭庆祝的习俗。",
 			typewriter = {
@@ -170,7 +170,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "所以Sirius想学习如何做好红豆饭……",
 			typewriter = {
@@ -179,7 +179,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "您说还早？欸……怎、怎么会……又是Sirius迫不及待了吗……",
 			typewriter = {
@@ -218,7 +218,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "嗯？您说只是节日还早？",
 			typewriter = {
@@ -227,7 +227,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "啊……Sirius明白了，我骄傲的主人。",
 			typewriter = {

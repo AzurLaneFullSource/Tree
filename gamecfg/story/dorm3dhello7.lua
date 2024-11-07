@@ -2,15 +2,18 @@ return {
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DHELLO7",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "Seeing you has truly brightened up my day, Master. Do you feel the same...?",
+			say = "Seeing you has truly brightened up my day, {dorm3d}. Do you feel the same...?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -7,14 +7,17 @@ return {
 	id = "DORM3DHELLOACCOMPANYBEACH1",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "Whew... Master...\nThe water feels so nice and cooling. Won't you come and have a dip?",
+			say = "Whew... {dorm3d}...\nThe water feels so nice and cooling. Won't you come and have a dip?",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_wait_table1",
 			typewriter = {
 				speed = 0.05,

@@ -4,8 +4,6 @@ local var0_0 = pg
 
 var0_0.FontMgr = singletonClass("FontMgr")
 
-local var1_0 = var0_0.FontMgr
-
 function var0_0.FontMgr.Init(arg0_1, arg1_1)
 	print("initializing font manager...")
 
@@ -31,13 +29,11 @@ function var0_0.FontMgr.Init(arg0_1, arg1_1)
 		weijichuanFont = "weijichuanFont"
 	}) do
 		table.insert(var0_1, function(arg0_2)
-			ResourceMgr.Inst:loadAssetBundleAsync("font/" .. iter1_1, function(arg0_3)
+			AssetBundleHelper.loadAssetBundleAsync("font/" .. iter1_1, function(arg0_3)
 				arg0_2()
 			end)
 		end)
 	end
-
-	arg0_1.fonts = {}
 
 	parallelAsync(var0_1, function(arg0_4)
 		arg1_1(arg0_4)

@@ -7,6 +7,9 @@ return {
 	id = "DORM3DDAILYCONVERSATION38",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			actor = 0,
@@ -21,11 +24,11 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "Oh. It appears that you're suffering from a kind of hypersomnia that manifests as the temperature drops, Master.",
+			say = "Oh. It appears that you're suffering from a kind of hypersomnia that manifests as the temperature drops, {dorm3d}.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -56,7 +59,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -68,7 +71,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,

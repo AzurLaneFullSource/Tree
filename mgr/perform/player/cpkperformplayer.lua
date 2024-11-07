@@ -44,7 +44,7 @@ function var0_0.Play(arg0_3, arg1_3, arg2_3, arg3_3)
 	local var1_3 = arg1_3.param[2] or 3
 
 	if checkABExist("educateanim/" .. var0_3) then
-		ResourceMgr.Inst:getAssetAsync("educateanim/" .. var0_3, var0_3, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_4)
+		ResourceMgr.Inst:getAssetAsync("educateanim/" .. var0_3, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_4)
 			local var0_4 = Object.Instantiate(arg0_4, arg0_3.cpkParentTF)
 
 			setActive(arg0_3.bgTF, true)

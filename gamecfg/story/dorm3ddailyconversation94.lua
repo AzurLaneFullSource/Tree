@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "主人是想了解，Sirius是从什么时候开始对您怀抱这样的情愫的？",
 			typewriter = {
@@ -47,7 +47,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "从知道，并亲眼见到您这位传闻中的指挥官开始……",
 			typewriter = {
@@ -56,7 +56,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "Sirius就已经怀抱着这样的心情了。",
 			typewriter = {
@@ -65,7 +65,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "您会觉得这样太突然了吗？",
 			typewriter = {
@@ -97,7 +97,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "只是现在与您的关系已经发展到……再提到突然的话，也不太合适呢。",
 			typewriter = {
@@ -106,7 +106,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "嗯？您是说Sirius变得更主动，会表达自己的情绪了吗？",
 			typewriter = {
@@ -115,7 +115,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "这些转变都是因为您的存在，我骄傲的主人。",
 			typewriter = {
@@ -154,7 +154,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "啊，对了，还有一个方面的转变……之后……呵呵。",
 			typewriter = {

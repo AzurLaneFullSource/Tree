@@ -2,15 +2,18 @@ return {
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DTOUCH1401",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "Would you mind patting my head more, my honourable Master? It makes me feel loved.",
+			say = "Would you mind patting my head more, my honourable {dorm3d}? It makes me feel loved.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

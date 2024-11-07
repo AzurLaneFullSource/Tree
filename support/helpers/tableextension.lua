@@ -158,255 +158,265 @@ function table.IpairsCArray(arg0_13, arg1_13)
 	end
 end
 
-function table.SerialIpairsAsync(arg0_14, arg1_14, arg2_14)
-	if type(arg0_14) ~= "table" then
+function table.CArrayToArray(arg0_14)
+	local var0_14 = {}
+
+	for iter0_14 = 0, arg0_14.Length - 1 do
+		table.insert(var0_14, arg0_14[iter0_14])
+	end
+
+	return var0_14
+end
+
+function table.SerialIpairsAsync(arg0_15, arg1_15, arg2_15)
+	if type(arg0_15) ~= "table" then
 		return
 	end
 
-	local var0_14
-	local var1_14
-	local var2_14
-	local var3_14, var4_14
+	local var0_15
+	local var1_15
+	local var2_15
+	local var3_15, var4_15
 
-	var3_14, arg0_14, var4_14 = ipairs(arg0_14)
+	var3_15, arg0_15, var4_15 = ipairs(arg0_15)
 
-	local var5_14
+	local var5_15
 
-	local function var6_14()
-		var4_14, var1_14 = var3_14(arg0_14, var4_14)
+	local function var6_15()
+		var4_15, var1_15 = var3_15(arg0_15, var4_15)
 
-		if var4_14 == nil then
-			if arg2_14 then
-				arg2_14()
+		if var4_15 == nil then
+			if arg2_15 then
+				arg2_15()
 			end
 		else
-			arg1_14(var4_14, var1_14, var6_14)
+			arg1_15(var4_15, var1_15, var6_15)
 		end
 	end
 
-	var6_14()
+	var6_15()
 end
 
-function table.ParallelIpairsAsync(arg0_16, arg1_16, arg2_16)
-	if type(arg0_16) ~= "table" then
+function table.ParallelIpairsAsync(arg0_17, arg1_17, arg2_17)
+	if type(arg0_17) ~= "table" then
 		return
 	end
 
-	local var0_16
-	local var1_16
-	local var2_16
-	local var3_16, var4_16
+	local var0_17
+	local var1_17
+	local var2_17
+	local var3_17, var4_17
 
-	var3_16, arg0_16, var4_16 = ipairs(arg0_16)
+	var3_17, arg0_17, var4_17 = ipairs(arg0_17)
 
-	local var5_16 = 0
-	local var6_16 = 1
+	local var5_17 = 0
+	local var6_17 = 1
 
-	local function var7_16()
-		var5_16 = var5_16 + 1
+	local function var7_17()
+		var5_17 = var5_17 + 1
 
-		if var5_16 == var6_16 then
-			existCall(arg2_16)
+		if var5_17 == var6_17 then
+			existCall(arg2_17)
 		end
 	end
 
 	while true do
-		local var8_16
+		local var8_17
 
-		var4_16, var8_16 = var3_16(arg0_16, var4_16)
+		var4_17, var8_17 = var3_17(arg0_17, var4_17)
 
-		if var4_16 == nil then
+		if var4_17 == nil then
 			break
 		end
 
-		var6_16 = var6_16 + 1
+		var6_17 = var6_17 + 1
 
-		arg1_16(var4_16, var8_16, var7_16)
+		arg1_17(var4_17, var8_17, var7_17)
 	end
 
-	var7_16()
+	var7_17()
 end
 
-function table.Find(arg0_18, arg1_18)
-	for iter0_18, iter1_18 in pairs(arg0_18) do
-		if arg1_18(iter0_18, iter1_18) then
-			return iter1_18, iter0_18
-		end
-	end
-end
-
-function table.Checkout(arg0_19, arg1_19)
+function table.Find(arg0_19, arg1_19)
 	for iter0_19, iter1_19 in pairs(arg0_19) do
-		local var0_19 = arg1_19(iter0_19, iter1_19)
-
-		if var0_19 ~= nil then
-			return var0_19
+		if arg1_19(iter0_19, iter1_19) then
+			return iter1_19, iter0_19
 		end
 	end
 end
 
-function table.getCount(arg0_20)
-	local var0_20 = 0
-
+function table.Checkout(arg0_20, arg1_20)
 	for iter0_20, iter1_20 in pairs(arg0_20) do
-		var0_20 = var0_20 + 1
-	end
+		local var0_20 = arg1_20(iter0_20, iter1_20)
 
-	return var0_20
+		if var0_20 ~= nil then
+			return var0_20
+		end
+	end
 end
 
-function table.merge(arg0_21, arg1_21)
-	if not arg1_21 or not arg0_21 then
+function table.getCount(arg0_21)
+	local var0_21 = 0
+
+	for iter0_21, iter1_21 in pairs(arg0_21) do
+		var0_21 = var0_21 + 1
+	end
+
+	return var0_21
+end
+
+function table.merge(arg0_22, arg1_22)
+	if not arg1_22 or not arg0_22 then
 		return
 	end
 
-	for iter0_21, iter1_21 in pairs(arg1_21) do
-		arg0_21[iter0_21] = iter1_21
+	for iter0_22, iter1_22 in pairs(arg1_22) do
+		arg0_22[iter0_22] = iter1_22
 	end
 
-	return arg0_21
+	return arg0_22
 end
 
-function table.mergeArray(arg0_22, arg1_22, arg2_22)
-	local var0_22 = {}
-	local var1_22 = {}
+function table.mergeArray(arg0_23, arg1_23, arg2_23)
+	local var0_23 = {}
+	local var1_23 = {}
 
-	local function var2_22(arg0_23)
-		for iter0_23, iter1_23 in ipairs(arg0_23) do
-			if arg2_22 and var0_22[iter1_23] then
+	local function var2_23(arg0_24)
+		for iter0_24, iter1_24 in ipairs(arg0_24) do
+			if arg2_23 and var0_23[iter1_24] then
 				-- block empty
 			else
-				table.insert(var1_22, iter1_23)
+				table.insert(var1_23, iter1_24)
 
-				var0_22[iter1_23] = true
+				var0_23[iter1_24] = true
 			end
 		end
 	end
 
-	var2_22(arg0_22)
-	var2_22(arg1_22)
+	var2_23(arg0_23)
+	var2_23(arg1_23)
 
-	return var1_22
+	return var1_23
 end
 
-function table.clean(arg0_24)
-	for iter0_24 = #arg0_24, 1, -1 do
-		table.remove(arg0_24, iter0_24)
+function table.clean(arg0_25)
+	for iter0_25 = #arg0_25, 1, -1 do
+		table.remove(arg0_25, iter0_25)
 	end
 end
 
-function table.shallowCopy(arg0_25)
-	if type(arg0_25) ~= "table" then
-		return arg0_25
+function table.shallowCopy(arg0_26)
+	if type(arg0_26) ~= "table" then
+		return arg0_26
 	end
 
-	local var0_25 = {}
+	local var0_26 = {}
 
-	for iter0_25, iter1_25 in pairs(arg0_25) do
-		var0_25[iter0_25] = iter1_25
+	for iter0_26, iter1_26 in pairs(arg0_26) do
+		var0_26[iter0_26] = iter1_26
 	end
 
-	return var0_25
+	return var0_26
 end
 
-function table.getIndex(arg0_26, arg1_26)
-	for iter0_26, iter1_26 in ipairs(arg0_26) do
-		if arg1_26(iter1_26) then
-			return iter0_26
+function table.getIndex(arg0_27, arg1_27)
+	for iter0_27, iter1_27 in ipairs(arg0_27) do
+		if arg1_27(iter1_27) then
+			return iter0_27
 		end
 	end
 end
 
-function table.map(arg0_27, arg1_27)
-	local var0_27 = {}
+function table.map(arg0_28, arg1_28)
+	local var0_28 = {}
 
-	for iter0_27, iter1_27 in pairs(arg0_27) do
-		var0_27[iter0_27] = arg1_27(iter1_27)
+	for iter0_28, iter1_28 in pairs(arg0_28) do
+		var0_28[iter0_28] = arg1_28(iter1_28)
 	end
 
-	return var0_27
+	return var0_28
 end
 
-function table.lastof(arg0_28)
-	return arg0_28[#arg0_28]
+function table.lastof(arg0_29)
+	return arg0_29[#arg0_29]
 end
 
-function table.dichotomyInsert(arg0_29, arg1_29, arg2_29)
-	arg2_29 = defaultValue(arg2_29, function(arg0_30)
-		return arg0_30
+function table.dichotomyInsert(arg0_30, arg1_30, arg2_30)
+	arg2_30 = defaultValue(arg2_30, function(arg0_31)
+		return arg0_31
 	end)
 
-	assert(type(arg2_29) == "function")
+	assert(type(arg2_30) == "function")
 
-	local var0_29 = {}
-	local var1_29 = 1
-	local var2_29 = #arg0_29
-	local var3_29
+	local var0_30 = {}
+	local var1_30 = 1
+	local var2_30 = #arg0_30
+	local var3_30
 
-	local function var4_29(arg0_31)
-		var0_29[arg0_31] = var0_29[arg0_31] or arg2_29(arg0_31)
+	local function var4_30(arg0_32)
+		var0_30[arg0_32] = var0_30[arg0_32] or arg2_30(arg0_32)
 
-		return var0_29[arg0_31]
+		return var0_30[arg0_32]
 	end
 
-	while var1_29 < var2_29 do
-		local var5_29 = math.floor((var1_29 + var2_29) / 2)
+	while var1_30 < var2_30 do
+		local var5_30 = math.floor((var1_30 + var2_30) / 2)
 
-		if var4_29(arg0_29[var5_29]) < var4_29(arg1_29) then
-			var1_29 = var5_29 + 1
+		if var4_30(arg0_30[var5_30]) < var4_30(arg1_30) then
+			var1_30 = var5_30 + 1
 		else
-			var2_29 = var5_29
+			var2_30 = var5_30
 		end
 	end
 
-	table.insert(arg0_29, var1_29, arg1_29)
+	table.insert(arg0_30, var1_30, arg1_30)
 end
 
-function table.CastToString(arg0_32)
-	if arg0_32 == nil then
+function table.CastToString(arg0_33)
+	if arg0_33 == nil then
 		return "nil"
 	end
 
-	if type(arg0_32) == "string" then
-		return "'" .. tostring(arg0_32) .. "'"
+	if type(arg0_33) == "string" then
+		return "'" .. tostring(arg0_33) .. "'"
 	end
 
-	if type(arg0_32) ~= "table" then
-		return tostring(arg0_32)
+	if type(arg0_33) ~= "table" then
+		return tostring(arg0_33)
 	end
 
-	local var0_32 = "{"
-	local var1_32 = #arg0_32
-	local var2_32 = false
+	local var0_33 = "{"
+	local var1_33 = #arg0_33
+	local var2_33 = false
 
-	for iter0_32, iter1_32 in ipairs(arg0_32) do
-		if var2_32 then
-			var0_32 = var0_32 .. ","
+	for iter0_33, iter1_33 in ipairs(arg0_33) do
+		if var2_33 then
+			var0_33 = var0_33 .. ","
 		end
 
-		var2_32 = true
-		var0_32 = var0_32 .. table.CastToString(iter1_32)
+		var2_33 = true
+		var0_33 = var0_33 .. table.CastToString(iter1_33)
 	end
 
-	for iter2_32, iter3_32 in pairs(arg0_32) do
-		if type(iter2_32) == "number" then
-			if var1_32 < iter2_32 then
-				if var2_32 then
-					var0_32 = var0_32 .. ","
+	for iter2_33, iter3_33 in pairs(arg0_33) do
+		if type(iter2_33) == "number" then
+			if var1_33 < iter2_33 then
+				if var2_33 then
+					var0_33 = var0_33 .. ","
 				end
 
-				var2_32 = true
-				var0_32 = var0_32 .. string.format("[%s]=%s", iter2_32, table.CastToString(iter3_32))
+				var2_33 = true
+				var0_33 = var0_33 .. string.format("[%s]=%s", iter2_33, table.CastToString(iter3_33))
 			end
 		else
-			if var2_32 then
-				var0_32 = var0_32 .. ","
+			if var2_33 then
+				var0_33 = var0_33 .. ","
 			end
 
-			var2_32 = true
-			var0_32 = var0_32 .. string.format("%s=%s", iter2_32, table.CastToString(iter3_32))
+			var2_33 = true
+			var0_33 = var0_33 .. string.format("%s=%s", iter2_33, table.CastToString(iter3_33))
 		end
 	end
 
-	return var0_32 .. "}"
+	return var0_33 .. "}"
 end

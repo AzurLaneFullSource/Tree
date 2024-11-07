@@ -2,16 +2,18 @@ return {
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DHELLO3",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			actorName = "Sirius",
-			say = "Your coming is the greatest praise a maid can ask for. My honourable Master, I swear that I will not disappoint you.",
-			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_hello3",
+			say = "Your coming is the greatest praise a maid can ask for. My honourable {dorm3d}, I swear that I will not disappoint you.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

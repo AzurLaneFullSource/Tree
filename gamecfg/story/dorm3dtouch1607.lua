@@ -13,7 +13,7 @@ return {
 		{
 			nameColor = "#FFFFFF",
 			actorName = 20220,
-			say = "How would you like me to serve you, my honourable Master?",
+			say = "How would you like me to serve you, my honourable {dorm3d}?",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone/touch22",
 			typewriter = {
 				speed = 0.05,

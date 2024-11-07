@@ -2,16 +2,18 @@ return {
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DHELLO8",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			actorName = "Sirius",
-			say = "I'm so happy to get to see you, honourable Master! I'll serve you will all my heart and soul today. Whether it be brewing tea, massages, or... Heehee, I'll readily respond to any of your requests.",
-			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_hello8",
+			say = "I'm so happy to get to see you, honourable {dorm3d}! I'll serve you will all my heart and soul today. Whether it be brewing tea, massages, or... Heehee, I'll readily respond to any of your requests.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

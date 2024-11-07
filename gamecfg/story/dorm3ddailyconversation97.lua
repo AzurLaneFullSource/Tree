@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "主人，您平时会做备忘录……或者别的记录吗？",
 			typewriter = {
@@ -50,7 +50,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "原来是这样啊。",
 			typewriter = {
@@ -82,7 +82,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "您作为指挥官，真是辛苦……",
 			typewriter = {
@@ -91,7 +91,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "其实，Sirius最近也尝试在做一些记录清单了。",
 			typewriter = {
@@ -100,7 +100,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "但是不知道以什么格式记录比较好。",
 			typewriter = {
@@ -141,7 +141,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "如果是以工作文书的规格对待，会显得有些太生疏了。",
 			typewriter = {
@@ -150,7 +150,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "毕竟Sirius想记录下来的是，您在一些事情上的喜好和习惯，以便更好地侍奉您。",
 			typewriter = {
@@ -192,7 +192,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "很有必要哦，让您有舒适的体验也是Sirius的职责和追求所在！",
 			typewriter = {
@@ -231,7 +231,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "就这么决定了……记录格式的事，Sirius还是自己独立完成比较好！",
 			typewriter = {

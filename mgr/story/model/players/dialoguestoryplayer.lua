@@ -361,7 +361,7 @@ function var0_0.OnEnter(arg0_28, arg1_28, arg2_28, arg3_28)
 end
 
 local function var5_0(arg0_31, arg1_31)
-	ResourceMgr.Inst:getAssetAsync("Story/" .. arg0_31, arg0_31, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_32)
+	ResourceMgr.Inst:getAssetAsync("Story/" .. arg0_31, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_32)
 		arg1_31(arg0_32)
 	end), true, true)
 end

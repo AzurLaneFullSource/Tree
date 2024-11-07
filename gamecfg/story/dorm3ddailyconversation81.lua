@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "嗯……",
 			typewriter = {
@@ -46,7 +46,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "在想云朵的形状。",
 			typewriter = {
@@ -55,7 +55,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "Sirius在您来之前，在走廊上看云。",
 			typewriter = {
@@ -64,7 +64,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "因为听其他人说，在看云的时候所见到的云朵形状，就代表着人内心最期待的事物。",
 			typewriter = {
@@ -79,7 +79,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "主人……您是在明知故问哦。",
 			typewriter = {

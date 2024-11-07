@@ -7,6 +7,9 @@ return {
 	id = "DORM3DDAILYCONVERSATION34",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			optionFlag = 1,
@@ -22,11 +25,11 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "I will gladly accompany you, my honourable Master! You aren't, um... feeling bored, are you?",
+			say = "I will gladly accompany you, my honourable {dorm3d}! You aren't, um... feeling bored, are you?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -67,7 +70,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,

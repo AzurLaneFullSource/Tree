@@ -409,7 +409,7 @@ function var0_0.SwitchPool(arg0_38, arg1_38)
 	end
 
 	local var5_38 = arg1_38:GetMark()
-	local var6_38 = GetSpriteFromAtlas("ui/BuildShipUI_atlas", "sub_title_" .. var5_38)
+	local var6_38 = GetSpriteFromAtlas("ui/BuildShipUI_atlas", string.format("Assets/ArtResource/UI/BuildShipUI/new/sub_title_%s.png", var5_38))
 
 	arg0_38:findTF("gallery/bg/type"):GetComponent(typeof(Image)).sprite = var6_38
 

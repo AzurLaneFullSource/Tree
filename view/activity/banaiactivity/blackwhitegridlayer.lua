@@ -1066,6 +1066,8 @@ function var0_0.preload(arg0_124, arg1_124)
 				var17_0[iter0_125][iter1_125] = var0_125
 			end
 		end
+
+		ResourceMgr.Inst:ClearBundleRef("ui/blackwhitegrid_atlas", false, false)
 	end)
 
 	arg0_124.bgSprite = nil

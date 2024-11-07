@@ -227,7 +227,7 @@ function var5_0.LoadSpineAsset(arg0_26, arg1_26, arg2_26)
 	local var0_26 = arg0_26.GetCharacterPath(arg1_26)
 
 	if not PoolMgr.GetInstance():IsSpineSkelCached(arg1_26) then
-		ResourceMgr.Inst:getAssetAsync(var0_26, arg1_26 .. "_SkeletonData", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_27)
+		ResourceMgr.Inst:getAssetAsync(var0_26, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_27)
 			arg2_26(arg0_27)
 		end), true, true)
 	else
@@ -252,7 +252,7 @@ function var5_0.InstAirCharacter(arg0_28, arg1_28, arg2_28)
 
 		arg2_28(var3_28)
 	else
-		ResourceMgr.Inst:getAssetAsync(var0_28, arg1_28, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_29)
+		ResourceMgr.Inst:getAssetAsync(var0_28, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_29)
 			if not arg0_28._poolRoot then
 				var4_0.Destroy(arg0_29)
 
@@ -308,7 +308,7 @@ function var5_0.InstBullet(arg0_30, arg1_30, arg2_30)
 
 		return true
 	else
-		ResourceMgr.Inst:getAssetAsync(var0_30, arg1_30, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_31)
+		ResourceMgr.Inst:getAssetAsync(var0_30, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_31)
 			if arg0_30._poolRoot then
 				var4_0.Destroy(arg0_31)
 
@@ -343,7 +343,7 @@ function var5_0.InstFX(arg0_32, arg1_32, arg2_32)
 
 		var1_32 = arg0_32:popPool(var3_32, arg2_32)
 	else
-		ResourceMgr.Inst:getAssetAsync(var0_32, arg1_32, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_33)
+		ResourceMgr.Inst:getAssetAsync(var0_32, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_33)
 			if not arg0_32._poolRoot then
 				var4_0.Destroy(arg0_33)
 
@@ -378,7 +378,7 @@ function var5_0.InstOrbit(arg0_34, arg1_34)
 
 		var1_34 = arg0_34:popPool(var3_34)
 	else
-		ResourceMgr.Inst:getAssetAsync(var0_34, arg1_34, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_35)
+		ResourceMgr.Inst:getAssetAsync(var0_34, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_35)
 			if not arg0_34._poolRoot then
 				var4_0.Destroy(arg0_35)
 
@@ -587,7 +587,7 @@ function var5_0.StartPreload(arg0_52, arg1_52, arg2_52)
 		elseif string.find(iter6_52, "shiptype/") then
 			local var6_52 = string.split(iter6_52, "/")[2]
 
-			ResourceMgr.Inst:getAssetAsync("shiptype", var6_52, typeof(Sprite), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_55)
+			GetSpriteFromAtlasAsync("shiptype", var6_52, function(arg0_55)
 				if arg0_55 == nil then
 					originalPrint("资源预加载失败，检查以下目录：>>" .. iter6_52 .. "<<")
 				else
@@ -603,7 +603,7 @@ function var5_0.StartPreload(arg0_52, arg1_52, arg2_52)
 				end
 
 				var2_52()
-			end), true, true)
+			end)
 		elseif string.find(iter6_52, "painting/") then
 			local var7_52 = false
 
@@ -678,7 +678,7 @@ function var5_0.StartPreload(arg0_52, arg1_52, arg2_52)
 				var2_52()
 			end, true, true)
 		else
-			ResourceMgr.Inst:getAssetAsync(iter6_52, var3_52, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_59)
+			ResourceMgr.Inst:getAssetAsync(iter6_52, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_59)
 				if arg0_59 == nil then
 					originalPrint("资源预加载失败，检查以下目录：>>" .. iter6_52 .. "<<")
 				else

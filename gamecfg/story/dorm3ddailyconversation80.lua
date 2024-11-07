@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "Sirius最近在尝试将皇家的传统美食与东煌的特色风味融合，做一道特殊的融合料理。",
 			typewriter = {
@@ -50,7 +50,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "是的。Sirius听说东煌有一道叫做“剁椒鱼头”的料理，而皇家也有吃鱼的传统……",
 			typewriter = {
@@ -59,7 +59,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "Sirius就在尝试将“剁椒”这种风味，融入仰望星空派。",
 			typewriter = {
@@ -81,7 +81,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "主人？您的脸色突然变得有些差劲……",
 			typewriter = {
@@ -122,7 +122,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "唔，还停留在制作仰望星空派的部分。",
 			typewriter = {
@@ -131,7 +131,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "每次烤出来的派，都不太尽如人意呢……",
 			typewriter = {

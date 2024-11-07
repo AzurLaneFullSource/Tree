@@ -25,7 +25,7 @@ function var0_0.CheckAndPlay(arg0_4, arg1_4, arg2_4, arg3_4)
 end
 
 function var0_0.PlayVedio(arg0_5, arg1_5, arg2_5, arg3_5)
-	ResourceMgr.Inst:getAssetAsync("Story/" .. arg2_5, arg2_5, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_6)
+	ResourceMgr.Inst:getAssetAsync("Story/" .. arg2_5, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_6)
 		if arg0_5.stop then
 			return
 		end

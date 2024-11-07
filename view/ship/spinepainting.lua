@@ -347,7 +347,7 @@ function var0_0.getSpineMaterial(arg0_36, arg1_36, arg2_36)
 		arg0_36._materialDic[arg1_36] = arg0_37
 
 		arg2_36(arg0_36._materialDic[arg1_36])
-	end, false)
+	end, true)
 end
 
 function var0_0.changeSpecialIdle(arg0_38, arg1_38)

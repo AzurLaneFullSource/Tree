@@ -306,6 +306,7 @@ pg.memory_group = setmetatable({
 		601,
 		602,
 		603,
+		604,
 		1000,
 		1001,
 		1002
@@ -6617,6 +6618,23 @@ pg.base.memory_group = {
 			3935,
 			3936,
 			3937
+		}
+	},
+	[604] = {
+		id = 604,
+		subtype = 0,
+		icon = "title_chara_hao",
+		type = 3,
+		link_event = 0,
+		title = "Our Sweet Cookies",
+		memories = {
+			3991,
+			3992,
+			3993,
+			3994,
+			3995,
+			3996,
+			3997
 		}
 	},
 	[1000] = {

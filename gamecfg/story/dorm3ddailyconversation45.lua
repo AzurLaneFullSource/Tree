@@ -7,10 +7,13 @@ return {
 	id = "DORM3DDAILYCONVERSATION45",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -45,7 +48,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -57,11 +60,11 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "What about you, Master? How long have you felt this way about me?",
+			say = "What about you, {dorm3d}? How long have you felt this way about me?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -79,11 +82,11 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "I wasn't expecting to hear an answer... I am truly overjoyed, my honourable Master.",
+			say = "I wasn't expecting to hear an answer... I am truly overjoyed, my honourable {dorm3d}.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

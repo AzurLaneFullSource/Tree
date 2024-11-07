@@ -18,7 +18,7 @@ function var1_0.InstantiateBullet(arg0_3, arg1_3, arg2_3)
 	if arg0_3._bulletResCache[arg1_3] ~= nil then
 		arg2_3(arg0_3._bulletResCache[arg1_3])
 	else
-		ResourceMgr.Inst:getAssetAsync("Item/" .. arg1_3, arg1_3, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_4)
+		ResourceMgr.Inst:getAssetAsync("Item/" .. arg1_3, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_4)
 			assert(arg0_4, "子弹资源加载失败：" .. arg1_3)
 			arg2_3(arg0_4)
 

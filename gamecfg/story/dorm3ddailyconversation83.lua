@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "现在好像还不是泡温泉的季节呢……",
 			typewriter = {
@@ -50,7 +50,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			optionFlag = 1,
 			say = "主人，您想去泡温泉吗？",
@@ -60,7 +60,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			optionFlag = 2,
 			say = "确实呢，只要有一颗想泡温泉的心，季节也不是问题。",
@@ -70,7 +70,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "不过……现在去泡温泉的话，应该就体会不到在汤泉中欣赏红枫的惬意了吧。",
 			typewriter = {
@@ -79,7 +79,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "嗯？您说这样的话听起来不像是Sirius会说的……",
 			typewriter = {
@@ -111,7 +111,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "因为这是Sirius偶然间从重樱的同伴们那里听来的，我敏锐的主人。",
 			typewriter = {
@@ -120,7 +120,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "如果可以的话，请您允许Sirius的小小请求。",
 			typewriter = {
@@ -129,7 +129,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "Sirius想在最合适的季节中与您一同……并且侍奉在您左右。",
 			typewriter = {

@@ -7,14 +7,17 @@ return {
 	id = "DORM3DDAILYCONVERSATION40",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "Oh? What is that comb for, Master? Are you going to graciously comb my hair?",
+			say = "Oh? What is that comb for, {dorm3d}? Are you going to graciously comb my hair?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -45,7 +48,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -57,7 +60,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -69,11 +72,11 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "N-never mind! Please go ahead and comb my hair, my honourable Master!",
+			say = "N-never mind! Please go ahead and comb my hair, my honourable {dorm3d}!",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

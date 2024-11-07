@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "主人，您身为指挥官，因为工作方面的需要也游历过许多国家……",
 			typewriter = {
@@ -47,7 +47,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "可以告诉Sirius，您眼中最美丽的风景在哪里吗？",
 			typewriter = {
@@ -56,7 +56,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "Sirius会想办法让这里接近您记忆中的风景，这样您每次来也会觉得更惬意一些。",
 			typewriter = {
@@ -74,7 +74,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "是与您相处的每天，每个时刻。",
 			typewriter = {
@@ -113,7 +113,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "只要您出现在Sirius的视线范围内，那对Sirius而言就是最美丽的风景。",
 			typewriter = {
@@ -131,7 +131,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "Sirius只是将心中的答案如实地传达给了您哦。",
 			typewriter = {
@@ -170,7 +170,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "无论何时何地，只要您出现，您耀眼的光芒就会成为Sirius眼中最美丽也是最极致的风景。",
 			typewriter = {
@@ -179,7 +179,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "请让我一直看着这样的风景和光芒……",
 			typewriter = {
@@ -218,7 +218,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "也请让我永远永远，陪在您的身边——我骄傲的主人。",
 			typewriter = {

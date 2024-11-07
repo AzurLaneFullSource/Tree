@@ -170,7 +170,7 @@ function var0_0.register(arg0_1)
 		local var0_20 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_UR_EXCHANGE)
 
 		if var0_20 and not var0_20:isEnd() and getProxy(ShopsProxy):getActivityShopById(var0_20:getConfig("config_client").shopId):GetCommodityById(var0_20:getConfig("config_client").goodsId[1]):getConfig("commodity_id") == arg1_20 then
-			TrackConst.TrackingUrExchangeFetch(arg1_20, 1)
+			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildUrRedeem(arg1_20, 1))
 		end
 	end)
 	arg0_1.viewComponent:SetShops(arg0_1.contextData.shops)

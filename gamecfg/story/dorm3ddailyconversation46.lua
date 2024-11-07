@@ -7,14 +7,17 @@ return {
 	id = "DORM3DDAILYCONVERSATION46",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "Master, I've given the carpet a thorough cleaning. It should be comfortable to sit and relax on from time to time.",
+			say = "{dorm3d}, I've given the carpet a thorough cleaning. It should be comfortable to sit and relax on from time to time.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -45,7 +48,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,

@@ -78,7 +78,7 @@ function var0_0.AttachOrbit(arg0_6, arg1_6)
 		if var2_6 ~= "" then
 			local var3_6 = ys.Battle.BattleResourceManager.GetOrbitPath(var2_6)
 
-			ResourceMgr.Inst:getAssetAsync(var3_6, var2_6, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_7)
+			ResourceMgr.Inst:getAssetAsync(var3_6, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_7)
 				if arg0_6.state == var0_0.STATE_DISPOSE then
 					-- block empty
 				else

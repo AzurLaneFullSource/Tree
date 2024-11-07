@@ -12,6 +12,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	end
 
 	pg.TrackerMgr.GetInstance():Tracking(TRACKING_ROLE_LOGOUT)
+	pg.GameTrackerMgr.GetInstance():Synchronization()
 
 	local var1_1 = ys.Battle.BattleState.GetInstance()
 

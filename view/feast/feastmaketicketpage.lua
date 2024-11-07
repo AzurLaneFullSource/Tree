@@ -69,7 +69,7 @@ function var0_0.Show(arg0_7, arg1_7)
 end
 
 function var0_0.LoadPuzzleRes(arg0_10, arg1_10, arg2_10)
-	ResourceMgr.Inst:getAssetAsync("FeastPuzzle/" .. arg1_10, arg1_10, typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_11)
+	ResourceMgr.Inst:getAssetAsync("FeastPuzzle/" .. arg1_10, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_11)
 		if arg0_10.exited then
 			return
 		end

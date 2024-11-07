@@ -2,15 +2,18 @@ return {
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DHELLO11",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "Honourable Master, how would you like to spend the day with your loyal maid? I'm prepared to meet any of your desires!",
+			say = "Honourable {dorm3d}, how would you like to spend the day with your loyal maid? I'm prepared to meet any of your desires!",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

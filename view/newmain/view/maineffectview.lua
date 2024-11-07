@@ -65,7 +65,7 @@ function var0_0.LoadEffect(arg0_7, arg1_7, arg2_7)
 		setActive(var0_7, true)
 		arg2_7(var0_7)
 	else
-		ResourceMgr.Inst:getAssetAsync("Effect/" .. arg1_7, arg1_7, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_8)
+		ResourceMgr.Inst:getAssetAsync("Effect/" .. arg1_7, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_8)
 			if arg0_7.exited then
 				return
 			end

@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "这间宿舍的感觉怎么样……？",
 			typewriter = {
@@ -40,7 +40,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "很好哦……因为和您的见面频率和独处时间都大大增加了，所以Sirius觉得很幸福。",
 			typewriter = {
@@ -49,7 +49,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "不过还是有一点不太方便呢。",
 			typewriter = {
@@ -87,7 +87,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "就是……夜间想要侍奉主人的话……（小声）",
 			typewriter = {
@@ -102,7 +102,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "……不，好像没什么不方便的，是Sirius没想明白。",
 			typewriter = {
@@ -134,7 +134,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "……呵呵。",
 			typewriter = {

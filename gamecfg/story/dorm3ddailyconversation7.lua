@@ -7,14 +7,17 @@ return {
 	id = "DORM3DDAILYCONVERSATION7",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "Master, I've taken up practicing flower arrangement. If you don't mind, could you give me some feedback on my work later?",
+			say = "{dorm3d}, I've taken up practicing flower arrangement. If you don't mind, could you give me some feedback on my work later?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -51,7 +54,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -63,7 +66,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,

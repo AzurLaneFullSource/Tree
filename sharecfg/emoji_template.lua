@@ -975,6 +975,526 @@ pg.emoji_template = {
 			3
 		}
 	},
+	[201] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 201,
+		index = 1,
+		icon = "",
+		pic = "line_part2_1",
+		desc = "<color=#92fc63>[Arrested]</color>",
+		type = {
+			1
+		}
+	},
+	[202] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 202,
+		index = 2,
+		icon = "",
+		pic = "line_part2_2",
+		desc = "<color=#92fc63>[Get hyped!]</color>",
+		type = {
+			1
+		}
+	},
+	[203] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 203,
+		index = 3,
+		icon = "",
+		pic = "line_part2_3",
+		desc = "<color=#92fc63>[Taking a break]</color>",
+		type = {
+			1
+		}
+	},
+	[204] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 204,
+		index = 4,
+		icon = "",
+		pic = "line_part2_4",
+		desc = "<color=#92fc63>[Are you dumb?]</color>",
+		type = {
+			1
+		}
+	},
+	[205] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 205,
+		index = 5,
+		icon = "",
+		pic = "line_part2_5",
+		desc = "<color=#92fc63>[Not enough speed!]</color>",
+		type = {
+			1
+		}
+	},
+	[206] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 206,
+		index = 6,
+		icon = "",
+		pic = "line_part2_6",
+		desc = "<color=#92fc63>[Huggy]</color>",
+		type = {
+			1
+		}
+	},
+	[207] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 207,
+		index = 7,
+		icon = "",
+		pic = "line_part2_7",
+		desc = "<color=#92fc63>[Care to try dying?]</color>",
+		type = {
+			1
+		}
+	},
+	[208] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 208,
+		index = 8,
+		icon = "",
+		pic = "line_part2_8",
+		desc = "<color=#92fc63>[Victory!]</color>",
+		type = {
+			1
+		}
+	},
+	[209] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 209,
+		index = 9,
+		icon = "",
+		pic = "line_part2_9",
+		desc = "<color=#92fc63>[I hate everything]</color>",
+		type = {
+			1
+		}
+	},
+	[210] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 210,
+		index = 10,
+		icon = "",
+		pic = "line_part2_10",
+		desc = "<color=#92fc63>[We're rooting for you!]</color>",
+		type = {
+			1
+		}
+	},
+	[211] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 211,
+		index = 11,
+		icon = "",
+		pic = "line_part2_11",
+		desc = "<color=#92fc63>[That's correct]</color>",
+		type = {
+			1
+		}
+	},
+	[212] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 212,
+		index = 12,
+		icon = "",
+		pic = "line_part2_12",
+		desc = "<color=#92fc63>[Oh?]</color>",
+		type = {
+			1
+		}
+	},
+	[213] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 213,
+		index = 13,
+		icon = "",
+		pic = "line_part2_13",
+		desc = "<color=#92fc63>[It's an expression of love]</color>",
+		type = {
+			1
+		}
+	},
+	[214] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 214,
+		index = 14,
+		icon = "",
+		pic = "line_part2_14",
+		desc = "<color=#92fc63>[!?]</color>",
+		type = {
+			1
+		}
+	},
+	[215] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 215,
+		index = 15,
+		icon = "",
+		pic = "line_part2_15",
+		desc = "<color=#92fc63>[Mission complete]</color>",
+		type = {
+			1
+		}
+	},
+	[216] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 216,
+		index = 16,
+		icon = "",
+		pic = "line_part2_16",
+		desc = "<color=#92fc63>[Scrub?]</color>",
+		type = {
+			1
+		}
+	},
+	[217] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 217,
+		index = 17,
+		icon = "",
+		pic = "line_part2_17",
+		desc = "<color=#92fc63>[TOO HOT!]</color>",
+		type = {
+			1
+		}
+	},
+	[218] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 218,
+		index = 18,
+		icon = "",
+		pic = "line_part2_18",
+		desc = "<color=#92fc63>[Refined taste]</color>",
+		type = {
+			1
+		}
+	},
+	[219] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 219,
+		index = 19,
+		icon = "",
+		pic = "line_part2_19",
+		desc = "<color=#92fc63>[A toast!]</color>",
+		type = {
+			1
+		}
+	},
+	[220] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 220,
+		index = 20,
+		icon = "",
+		pic = "line_part2_20",
+		desc = "<color=#92fc63>[CUTE!]</color>",
+		type = {
+			1
+		}
+	},
+	[221] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 221,
+		index = 21,
+		icon = "",
+		pic = "line_part2_21",
+		desc = "<color=#92fc63>[Stop looking!]</color>",
+		type = {
+			1
+		}
+	},
+	[222] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 222,
+		index = 22,
+		icon = "",
+		pic = "line_part2_22",
+		desc = "<color=#92fc63>[Kill on sight]</color>",
+		type = {
+			1
+		}
+	},
+	[223] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 223,
+		index = 23,
+		icon = "",
+		pic = "line_part2_23",
+		desc = "<color=#92fc63>[NEET 4 LYFE]</color>",
+		type = {
+			1
+		}
+	},
+	[224] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 224,
+		index = 24,
+		icon = "",
+		pic = "line_part2_24",
+		desc = "<color=#92fc63>[Looking forward to it]</color>",
+		type = {
+			1
+		}
+	},
+	[225] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 225,
+		index = 25,
+		icon = "",
+		pic = "line_part2_25",
+		desc = "<color=#92fc63>[No such thing]</color>",
+		type = {
+			1
+		}
+	},
+	[226] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 226,
+		index = 26,
+		icon = "",
+		pic = "line_part2_26",
+		desc = "<color=#92fc63>[Welcome back!]</color>",
+		type = {
+			1
+		}
+	},
+	[227] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 227,
+		index = 27,
+		icon = "",
+		pic = "line_part2_27",
+		desc = "<color=#92fc63>[Ahaha...]</color>",
+		type = {
+			1
+		}
+	},
+	[228] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 228,
+		index = 28,
+		icon = "",
+		pic = "line_part2_28",
+		desc = "<color=#92fc63>[Just woke up!]</color>",
+		type = {
+			1
+		}
+	},
+	[229] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 229,
+		index = 29,
+		icon = "",
+		pic = "line_part2_29",
+		desc = "<color=#92fc63>[I care not]</color>",
+		type = {
+			1
+		}
+	},
+	[230] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 230,
+		index = 30,
+		icon = "",
+		pic = "line_part2_30",
+		desc = "<color=#92fc63>[Having problems?]</color>",
+		type = {
+			1
+		}
+	},
+	[231] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 231,
+		index = 31,
+		icon = "",
+		pic = "line_part2_31",
+		desc = "<color=#92fc63>[Excellent!]</color>",
+		type = {
+			1
+		}
+	},
+	[232] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 232,
+		index = 32,
+		icon = "",
+		pic = "line_part2_32",
+		desc = "<color=#92fc63>[Why? Why's that?]</color>",
+		type = {
+			1
+		}
+	},
+	[233] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 233,
+		index = 33,
+		icon = "",
+		pic = "line_part2_33",
+		desc = "<color=#92fc63>[Thanks for your patronyage]</color>",
+		type = {
+			1
+		}
+	},
+	[234] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 234,
+		index = 34,
+		icon = "",
+		pic = "line_part2_34",
+		desc = "<color=#92fc63>[♪]</color>",
+		type = {
+			1
+		}
+	},
+	[235] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 235,
+		index = 35,
+		icon = "",
+		pic = "line_part2_35",
+		desc = "<color=#92fc63>[If you say so...]</color>",
+		type = {
+			1
+		}
+	},
+	[236] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 236,
+		index = 36,
+		icon = "",
+		pic = "line_part2_36",
+		desc = "<color=#92fc63>[Delish...]</color>",
+		type = {
+			1
+		}
+	},
+	[237] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 237,
+		index = 37,
+		icon = "",
+		pic = "line_part2_37",
+		desc = "<color=#92fc63>[Pierce the heavens!]</color>",
+		type = {
+			1
+		}
+	},
+	[238] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 238,
+		index = 38,
+		icon = "",
+		pic = "line_part2_38",
+		desc = "<color=#92fc63>[I beat the gacha]</color>",
+		type = {
+			1
+		}
+	},
+	[239] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 239,
+		index = 39,
+		icon = "",
+		pic = "line_part2_39",
+		desc = "<color=#92fc63>[I'm the best!]</color>",
+		type = {
+			1
+		}
+	},
+	[240] = {
+		achieve = 0,
+		item_desc = "",
+		item_name = "",
+		id = 240,
+		index = 40,
+		icon = "",
+		pic = "line_part2_40",
+		desc = "<color=#92fc63>[Large portion]</color>",
+		type = {
+			1
+		}
+	},
 	[241] = {
 		achieve = 1,
 		item_desc = "Sticker: Time for Elevenses. This sticker can be found in the default tab of the chat stickers menu.",
@@ -1753,6 +2273,46 @@ pg.emoji_template = {
 		112,
 		113,
 		114,
+		201,
+		202,
+		203,
+		204,
+		205,
+		206,
+		207,
+		208,
+		209,
+		210,
+		211,
+		212,
+		213,
+		214,
+		215,
+		216,
+		217,
+		218,
+		219,
+		220,
+		221,
+		222,
+		223,
+		224,
+		225,
+		226,
+		227,
+		228,
+		229,
+		230,
+		231,
+		232,
+		233,
+		234,
+		235,
+		236,
+		237,
+		238,
+		239,
+		240,
 		241,
 		242,
 		243,

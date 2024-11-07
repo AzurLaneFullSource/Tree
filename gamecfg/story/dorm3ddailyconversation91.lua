@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "……主人？",
 			typewriter = {
@@ -17,7 +17,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "就算Sirius的料理水平再怎么不尽如人意，也绝对不会用微波炉泡茶的！",
 			typewriter = {
@@ -55,7 +55,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "当然！要泡茶的话，一定要用水壶把水烧开。",
 			typewriter = {
@@ -87,7 +87,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "绝对不可以接一杯水然后放进微波炉加热哦！",
 			typewriter = {
@@ -96,7 +96,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "您该不会……想这么试试吧？",
 			typewriter = {
@@ -115,7 +115,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "呼……那就好。",
 			typewriter = {
@@ -154,7 +154,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "开个玩笑而已，不过没想到Sirius的反应意外地有趣……",
 			typewriter = {
@@ -163,7 +163,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			optionFlag = 2,
 			say = "其它任何事都可以，唯独在这件事上，请恕Sirius无法妥协。",
@@ -209,7 +209,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "欸？原来您是在和Sirius开玩笑啊……",
 			typewriter = {
@@ -218,7 +218,7 @@ return {
 			}
 		},
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "差点就要做好毁掉厨房也不能让您这样做的觉悟了……",
 			typewriter = {

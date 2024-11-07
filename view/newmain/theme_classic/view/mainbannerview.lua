@@ -45,7 +45,7 @@ function var0_0.UpdateItems(arg0_4, arg1_4)
 end
 
 function var0_0.Tracking(arg0_6, arg1_6)
-	TrackConst.TrackingTouchBanner(arg1_6)
+	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildTouchBanner(arg1_6))
 end
 
 function var0_0.GetDirection(arg0_7)

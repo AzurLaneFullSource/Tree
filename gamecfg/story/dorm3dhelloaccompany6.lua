@@ -7,14 +7,17 @@ return {
 	id = "DORM3DHELLOACCOMPANY6",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "Would you like to join me, my honourable Master?\nI have tea and biscuits ready for you.",
+			say = "Would you like to join me, my honourable {dorm3d}?\nI have tea and biscuits ready for you.",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_wait_table1",
 			typewriter = {
 				speed = 0.05,

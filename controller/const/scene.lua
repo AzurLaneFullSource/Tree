@@ -1268,6 +1268,7 @@ local var1_0 = {
 
 		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataEnter(var2_208, 1))
 		getProxy(ApartmentProxy):RecordEnterTime()
+		getProxy(ApartmentProxy):InitGiftDaily()
 
 		local var3_208 = arg0_208.context.onRemoved
 
@@ -1291,37 +1292,33 @@ local var1_0 = {
 		else
 			arg1_210()
 		end
-	end,
-	Dorm3dGiftMediator = function(arg0_211, arg1_211)
-		getProxy(ApartmentProxy):InitGiftDaily()
-		arg1_211()
 	end
 }
 
-function SCENE.CheckPreloadData(arg0_212, arg1_212)
-	local var0_212 = {}
+function SCENE.CheckPreloadData(arg0_211, arg1_211)
+	local var0_211 = {}
 
-	table.insert(var0_212, function(arg0_213)
-		switch(arg0_212.context.mediator.__cname, var1_0, function(arg0_214, arg1_214)
-			arg1_214()
-		end, arg0_212, arg0_213)
+	table.insert(var0_211, function(arg0_212)
+		switch(arg0_211.context.mediator.__cname, var1_0, function(arg0_213, arg1_213)
+			arg1_213()
+		end, arg0_211, arg0_212)
 	end)
 
-	local var1_212 = arg0_212.context.viewComponent:loadingQueue()
+	local var1_211 = arg0_211.context.viewComponent:loadingQueue()
 
-	if var1_212 then
-		table.insert(var0_212, function(arg0_215)
-			local var0_215 = arg0_212.context.data
+	if var1_211 then
+		table.insert(var0_211, function(arg0_214)
+			local var0_214 = arg0_211.context.data
 
-			arg0_212.context.irregularSequence = true
+			arg0_211.context.irregularSequence = true
 
-			var1_212(function(arg0_216)
-				var0_215.resumeCallback = arg0_216
+			var1_211(function(arg0_215)
+				var0_214.resumeCallback = arg0_215
 
-				arg0_215()
+				arg0_214()
 			end)
 		end)
 	end
 
-	seriesAsync(var0_212, arg1_212)
+	seriesAsync(var0_211, arg1_211)
 end

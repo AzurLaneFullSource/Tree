@@ -7,14 +7,17 @@ return {
 	id = "DORM3DHELLOACCOMPANY4",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "Whew... Hm? Shall we do something together, Master?",
+			say = "Whew... Hm? Shall we do something together, {dorm3d}?",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_wait_bed2",
 			typewriter = {
 				speed = 0.05,

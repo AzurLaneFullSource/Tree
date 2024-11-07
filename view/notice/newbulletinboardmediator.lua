@@ -19,7 +19,7 @@ function var0_0.register(arg0_1)
 		arg0_1:sendNotification(GAME.GO_SCENE, arg1_3, ...)
 	end)
 	arg0_1:bind(var0_0.TRACK_OPEN_URL, function(arg0_4, arg1_4)
-		TrackConst.Track(TrackConst.TRACK_NEW_BULLETIN_OPEN_URL, TrackConst.EVENT_NEW_BULLETIN_OPEN_URL, arg1_4)
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildNotice(arg1_4))
 	end)
 end
 

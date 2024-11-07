@@ -2,16 +2,18 @@ return {
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DHELLO6",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			actorName = "Sirius",
-			say = "My honourable Master, I just brewed some black tea. Would you like to partake? After you've had a drink, I'd be happy to provide you with further service.",
-			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_hello6",
+			say = "My honourable {dorm3d}, I just brewed some black tea. Would you like to partake? After you've had a drink, I'd be happy to provide you with further service.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
