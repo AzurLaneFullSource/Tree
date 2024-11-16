@@ -1054,21 +1054,25 @@ function var0_0.getUIName(arg0_123)
 end
 
 function var0_0.preload(arg0_124, arg1_124)
+	local var0_124 = {}
+
+	for iter0_124 = 0, 4 do
+		for iter1_124 = 0, 2 do
+			table.insert(var0_124, iter0_124 .. "_" .. iter1_124)
+		end
+	end
+
 	var17_0 = {}
 
-	AssetBundleHelper.loadAssetBundleAsync("ui/blackwhitegrid_atlas", function(arg0_125)
+	AssetBundleHelper.LoadManyAssets("ui/blackwhitegrid_atlas", var0_124, nil, true, function(arg0_125)
 		for iter0_125 = 0, 4 do
 			var17_0[iter0_125] = {}
 
 			for iter1_125 = 0, 2 do
-				local var0_125 = arg0_125:LoadAssetSync(iter0_125 .. "_" .. iter1_125, nil, true, false)
-
-				var17_0[iter0_125][iter1_125] = var0_125
+				var17_0[iter0_125][iter1_125] = arg0_125[iter0_125 .. "_" .. iter1_125]
 			end
 		end
-
-		ResourceMgr.Inst:ClearBundleRef("ui/blackwhitegrid_atlas", false, false)
-	end)
+	end, true)
 
 	arg0_124.bgSprite = nil
 

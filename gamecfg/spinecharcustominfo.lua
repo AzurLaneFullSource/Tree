@@ -10,10 +10,7 @@ function this.GetCharMaterial(arg0_1)
 	local var0_1
 
 	if table.contains(var0_0.SpineCharCustomInfo.char_material_default_alpha, arg0_1) then
-		PoolMgr:GetInstance():LoadAsset("spinematerials", "CharDefaultAlpha", false, typeof(Material), function(arg0_2)
-			var0_1 = arg0_2
-		end, true)
-
+		var0_1 = LoadAny("spinematerials", "CharDefaultAlpha", typeof(Material))
 		var0_1.name = "SkeletonGraphicDefault"
 	end
 

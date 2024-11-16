@@ -573,14 +573,13 @@ return {
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "???",
-			actor = 900407,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900407,
+			actorName = "???",
 			hidePaintObj = true,
 			say = "He's not the only wild one. You're using your private jet to implement said plan, Dr. Anzeel.",
 			painting = {
@@ -729,14 +728,13 @@ return {
 			}
 		},
 		{
-			expression = 0,
-			side = 2,
-			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			actorName = "???",
 			actor = 900407,
 			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_170",
 			hidePaintObj = true,
+			side = 2,
+			actorName = "???",
+			oldPhoto = true,
 			say = "We have around two hours until we're out of signal range.",
 			typewriter = {
 				speed = 0.05,
@@ -823,14 +821,13 @@ return {
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "???",
-			actor = 900332,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900332,
+			actorName = "???",
 			hidePaintObj = true,
 			say = "Ugh, stoooooop!",
 			painting = {
@@ -863,14 +860,13 @@ return {
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "???",
-			actor = 900332,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900332,
+			actorName = "???",
 			hidePaintObj = true,
 			say = "Look, I came up with it on the spot and just threw the idea out there! I told you not to take it seriously!",
 			painting = {
@@ -883,14 +879,13 @@ return {
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "???",
-			actor = 900332,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900332,
+			actorName = "???",
 			hidePaintObj = true,
 			say = "Forget about it, will you? It's not worth remembering.",
 			painting = {
@@ -903,14 +898,13 @@ return {
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "???",
-			actor = 900332,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900332,
+			actorName = "???",
 			hidePaintObj = true,
 			say = "Of course. Sorry for getting us sidetracked. Let's get back on topic.",
 			painting = {
@@ -923,14 +917,13 @@ return {
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "???",
-			actor = 900332,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900332,
+			actorName = "???",
 			hidePaintObj = true,
 			say = "Sovetsky Soyuz, the ship with a name that was never fully constructed...",
 			painting = {

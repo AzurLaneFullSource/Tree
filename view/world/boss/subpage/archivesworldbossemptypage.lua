@@ -63,8 +63,9 @@ function var0_0.OnUpdate(arg0_7)
 	if var1_7 then
 		local var2_7 = arg0_7.noItem:GetComponent(typeof(Image))
 
-		var2_7.sprite = GetSpriteFromAtlas("ui/WorldBossUI_atlas", var1_7)
-
+		GetSpriteFromAtlasAsync("ui/WorldBossUI_atlas", var1_7, function(arg0_8)
+			var2_7.sprite = arg0_8
+		end)
 		var2_7:SetNativeSize()
 	end
 
@@ -82,24 +83,24 @@ function var0_0.OnUpdate(arg0_7)
 	arg0_7.archivesWorldbossBtn:Flush()
 end
 
-function var0_0.OnUpdateRes(arg0_8)
-	if not arg0_8.progressTxt then
+function var0_0.OnUpdateRes(arg0_9)
+	if not arg0_9.progressTxt then
 		return
 	end
 
-	local var0_8, var1_8, var2_8 = WorldBossConst.GetAchieveBossConsume()
-	local var3_8 = WorldBossConst.GetAchieveBossItemProgress()
+	local var0_9, var1_9, var2_9 = WorldBossConst.GetAchieveBossConsume()
+	local var3_9 = WorldBossConst.GetAchieveBossItemProgress()
 
-	arg0_8.progressTxt.text = var3_8 .. "/" .. var2_8
+	arg0_9.progressTxt.text = var3_9 .. "/" .. var2_9
 end
 
-function var0_0.OnDestroy(arg0_9)
-	var0_0.super.OnDestroy(arg0_9)
+function var0_0.OnDestroy(arg0_10)
+	var0_0.super.OnDestroy(arg0_10)
 
-	if arg0_9.archivesWorldbossBtn then
-		arg0_9.archivesWorldbossBtn:Dispose()
+	if arg0_10.archivesWorldbossBtn then
+		arg0_10.archivesWorldbossBtn:Dispose()
 
-		arg0_9.archivesWorldbossBtn = nil
+		arg0_10.archivesWorldbossBtn = nil
 	end
 end
 

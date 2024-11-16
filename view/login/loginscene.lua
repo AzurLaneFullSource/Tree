@@ -18,13 +18,20 @@ function var0_0.preload(arg0_3, arg1_3)
 
 	seriesAsync({
 		function(arg0_4)
-			AssetBundleHelper.loadAssetBundleAsync("ui/LoginUI2_atlas", function(arg0_5)
-				table.insert(arg0_3.iconSpries, arg0_5:LoadAssetSync("statu_green", typeof(Sprite), true, false))
-				table.insert(arg0_3.iconSpries, arg0_5:LoadAssetSync("statu_gray", typeof(Sprite), true, false))
-				table.insert(arg0_3.iconSpries, arg0_5:LoadAssetSync("statu_red", typeof(Sprite), true, false))
-				table.insert(arg0_3.iconSpries, arg0_5:LoadAssetSync("statu_org", typeof(Sprite), true, false))
+			local var0_4 = {
+				"statu_green",
+				"statu_gray",
+				"statu_red",
+				"statu_org"
+			}
+
+			AssetBundleHelper.LoadManyAssets("ui/LoginUI2_atlas", var0_4, typeof(Sprite), true, function(arg0_5)
+				for iter0_5, iter1_5 in ipairs(var0_4) do
+					table.insert(arg0_3.iconSpries, arg0_5[iter1_5])
+				end
+
 				arg0_4()
-			end)
+			end, true)
 		end,
 		function(arg0_6)
 			arg0_3.isCriBg, arg0_3.bgPath, arg0_3.bgmName, arg0_3.isOpPlay, arg0_3.opVersion = getLoginConfig()

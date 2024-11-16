@@ -200,7 +200,7 @@ pg.world_collection_file_template = {
 	},
 	[3205] = {
 		id = 3205,
-		name = "Terorrism and Arrest",
+		name = "Terrorism and Arrest",
 		subTitle = "",
 		is_classified = 0,
 		group_ID = 5,

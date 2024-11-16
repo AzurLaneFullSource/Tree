@@ -3882,13 +3882,13 @@ function var0_0.GetMiniGameHubData()
 end
 
 function var0_0.LoadSkeletonData(arg0_8, arg1_8)
-	PoolMgr.GetInstance():LoadAsset(var0_0.ui_atlas, arg0_8, true, typeof(Object), function(arg0_9)
+	LoadAnyAsync(var0_0.ui_atlas, arg0_8, typeof(Object), function(arg0_9)
 		if arg0_9 then
 			local var0_9 = SpineAnimUI.AnimChar(arg0_8, arg0_9)
 
 			arg1_8(var0_9)
 		end
-	end, true)
+	end)
 end
 
 function var0_0.getBeachMap(arg0_10)

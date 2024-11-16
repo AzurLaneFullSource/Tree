@@ -1,5 +1,10 @@
 local var0_0 = class("PuzzleActivity", import("model.vo.Activity"))
 
+var0_0.CMD_COMPLETE = 1
+var0_0.CMD_ACTIVATE = 2
+var0_0.CMD_UNLCOK_TIP = 3
+var0_0.CMD_EARN_EXTRA = 4
+
 function var0_0.GetPicturePuzzleIds(arg0_1)
 	local var0_1 = arg0_1.id
 	local var1_1 = pg.activity_event_picturepuzzle[var0_1]

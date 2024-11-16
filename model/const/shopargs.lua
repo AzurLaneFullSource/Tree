@@ -33,6 +33,7 @@ var0_0.WorldCollection = "world_collection_task"
 var0_0.NewServerShop = "new_server_shop"
 var0_0.CruiseSkin = "cruise_skin"
 var0_0.CruiseGearSkin = "cruise_gearskin"
+var0_0.BlackFridayShop = "black_friday_shop"
 var0_0.ShopStreet = 1
 var0_0.MilitaryShop = 2
 var0_0.ShopActivity = 3

@@ -1,29 +1,36 @@
-local var0_0 = require("Mgr/Pool/PoolUtil")
-local var1_0 = class("PoolObjPack")
+local var0_0 = class("PoolObjPack")
 
-function var1_0.Ctor(arg0_1, arg1_1)
-	arg0_1.type = arg1_1
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+	arg0_1.key = arg1_1
+	arg0_1.ab = arg2_1
 	arg0_1.items = {}
+	arg0_1.typeDic = {}
 end
 
-function var1_0.Get(arg0_2, arg1_2)
+function var0_0.Get(arg0_2, arg1_2, arg2_2)
+	if not arg0_2.items[arg1_2] then
+		arg0_2.items[arg1_2] = arg0_2.ab:LoadAssetSync(arg1_2, arg2_2, false, false)
+		arg0_2.typeDic[arg1_2] = arg2_2
+	end
+
 	return arg0_2.items[arg1_2]
 end
 
-function var1_0.Set(arg0_3, arg1_3, arg2_3)
-	arg0_3.items[arg1_3] = arg2_3
+function var0_0.Remove(arg0_3, arg1_3)
+	return table.removebykey(arg0_3.items, arg1_3)
 end
 
-function var1_0.Remove(arg0_4, arg1_4)
-	return table.removebykey(arg0_4.items, arg1_4)
+function var0_0.GetAmount(arg0_4)
+	return table.getCount(arg0_4.items)
 end
 
-function var1_0.GetAmount(arg0_5)
-	return table.getCount(arg0_5.items)
+function var0_0.Clear(arg0_5)
+	arg0_5.items = nil
+	arg0_5.typeDic = nil
+
+	arg0_5.ab:Dispose()
+
+	arg0_5.ab = nil
 end
 
-function var1_0.Clear(arg0_6)
-	arg0_6.items = nil
-end
-
-return var1_0
+return var0_0

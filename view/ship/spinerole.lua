@@ -86,32 +86,37 @@ function var0_0.AttachOrbit(arg0_6, arg1_6)
 					local var1_7 = iter1_6[var0_7][1]
 					local var2_7 = iter1_6[var0_7][2]
 					local var3_7 = Object.Instantiate(arg0_7)
+					local var4_7 = var3_7:GetComponentsInChildren(typeof(Spine.Unity.SkeletonGraphic))
+
+					for iter0_7 = 1, var4_7.Length do
+						var4_7[iter0_7 - 1].raycastTarget = false
+					end
 
 					var3_7.transform.localPosition = Vector2(var2_7[1], var2_7[2])
 
-					local var4_7 = SpineAnimUI.AddFollower(var1_7, arg0_6.model.transform, var3_7.transform)
+					local var5_7 = SpineAnimUI.AddFollower(var1_7, arg0_6.model.transform, var3_7.transform)
 
 					var3_7.transform.localScale = Vector3.one
-					arg0_6._attachmentList[var4_7] = iter1_6.orbit_hidden_action
+					arg0_6._attachmentList[var5_7] = iter1_6.orbit_hidden_action
 
-					local var5_7 = var4_7:GetComponent("Spine.Unity.BoneFollowerGraphic")
+					local var6_7 = var5_7:GetComponent("Spine.Unity.BoneFollowerGraphic")
 
 					if iter1_6.orbit_rotate then
-						var5_7.followBoneRotation = true
+						var6_7.followBoneRotation = true
 
-						local var6_7 = var3_7.transform.localEulerAngles
+						local var7_7 = var3_7.transform.localEulerAngles
 
-						var3_7.transform.localEulerAngles = Vector3(var6_7.x, var6_7.y, var6_7.z - 90)
+						var3_7.transform.localEulerAngles = Vector3(var7_7.x, var7_7.y, var7_7.z - 90)
 					else
-						var5_7.followBoneRotation = false
+						var6_7.followBoneRotation = false
 					end
 
 					if iter1_6.orbit_ui_back == 1 then
-						var4_7:SetParent(arg0_6.modelRoot.transform, false)
-						var4_7:SetAsFirstSibling()
+						var5_7:SetParent(arg0_6.modelRoot.transform, false)
+						var5_7:SetAsFirstSibling()
 					else
-						var4_7:SetParent(arg0_6.modelRoot.transform, false)
-						var4_7:SetAsLastSibling()
+						var5_7:SetParent(arg0_6.modelRoot.transform, false)
+						var5_7:SetAsLastSibling()
 					end
 
 					SetActive(var3_7, arg0_6._visible)

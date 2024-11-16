@@ -20,29 +20,32 @@ function var0_0.Exit(arg0_2, arg1_2)
 	local var0_2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE)
 
 	if arg0_2.statistics._battleScore >= ys.Battle.BattleConst.BattleScore.B and var0_2 and not var0_2:isEnd() then
-		local var1_2 = 0
-		local var2_2 = var0_2:getConfig("config_client")[1]
+		local var1_2 = var0_2:GetMaxProgress()
+		local var2_2 = var0_2:GetPerDayCount()
+		local var3_2 = var0_2:GetPerLevelProgress()
+		local var4_2 = var1_2 / var3_2
+		local var5_2 = 0
 
-		for iter0_2 = 1, var2_2 do
-			var1_2 = var1_2 + (var0_2:getKVPList(1, iter0_2) or 0)
+		for iter0_2 = 1, var4_2 do
+			var5_2 = var5_2 + (var0_2:getKVPList(1, iter0_2) or 0)
 		end
 
-		local var3_2 = pg.TimeMgr.GetInstance()
-		local var4_2 = var3_2:DiffDay(var0_2.data1, var3_2:GetServerTime()) + 1
+		local var6_2 = pg.TimeMgr.GetInstance()
+		local var7_2 = var6_2:DiffDay(var0_2.data1, var6_2:GetServerTime()) + 1
 
-		if var1_2 < math.min(var4_2 * 2, var2_2 * 3) then
-			local var5_2 = arg0_2.stageId
-			local var6_2 = var0_2:getConfig("config_client")[2]
-			local var7_2 = table.indexof(var6_2, var5_2)
-			local var8_2 = math.floor((var7_2 - 1) / (#var6_2 / var2_2)) + 1
-			local var9_2 = var0_2:getKVPList(1, var8_2) or 0
-			local var10_2 = var0_2:getKVPList(2, var8_2) == 1
+		if var5_2 < math.min(var7_2 * var2_2, var1_2) then
+			local var8_2 = arg0_2.stageId
+			local var9_2 = var0_2:getConfig("config_client").stages
+			local var10_2 = table.indexof(var9_2, var8_2)
+			local var11_2 = math.floor((var10_2 - 1) / math.floor(#var9_2 / var4_2)) + 1
+			local var12_2 = var0_2:getKVPList(1, var11_2) or 0
+			local var13_2 = var0_2:getKVPList(2, var11_2) == 1
 
-			if var9_2 < 3 and not var10_2 then
+			if var12_2 < var3_2 and not var13_2 then
 				arg1_2:sendNotification(GAME.ACTIVITY_OPERATION, {
 					cmd = 1,
 					activity_id = var0_2 and var0_2.id,
-					arg1 = var8_2,
+					arg1 = var11_2,
 					statistics = arg0_2.statistics
 				})
 

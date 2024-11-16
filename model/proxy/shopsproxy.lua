@@ -53,6 +53,8 @@ function var0_0.register(arg0_1)
 			table.insert(arg0_1.freeGiftIdList, iter1_1)
 		end
 	end
+
+	arg0_1.newServerShopList = {}
 end
 
 function var0_0.timeCall(arg0_4)
@@ -409,12 +411,12 @@ function var0_0.UpdateMetaShopGoods(arg0_50, arg1_50, arg2_50)
 	})
 end
 
-function var0_0.SetNewServerShop(arg0_51, arg1_51)
-	arg0_51.newServerShop = arg1_51
+function var0_0.SetNewServerShop(arg0_51, arg1_51, arg2_51)
+	arg0_51.newServerShopList[arg1_51] = arg2_51
 end
 
-function var0_0.GetNewServerShop(arg0_52)
-	return arg0_52.newServerShop
+function var0_0.GetNewServerShop(arg0_52, arg1_52)
+	return arg0_52.newServerShopList[arg1_52]
 end
 
 function var0_0.SetMedalShop(arg0_53, arg1_53)

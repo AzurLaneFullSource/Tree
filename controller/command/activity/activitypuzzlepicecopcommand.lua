@@ -19,7 +19,7 @@ function var0_0.execute(arg0_1, arg1_1)
 		return
 	end
 
-	if var2_1 == 1 then
+	if var2_1 == PuzzleActivity.CMD_COMPLETE then
 		if #var6_1.data2_list > #var7_1.pickup_picturepuzzle + #var7_1.drop_picturepuzzle then
 			return
 		end
@@ -29,20 +29,20 @@ function var0_0.execute(arg0_1, arg1_1)
 		end
 
 		arg0_1:sendNotification(GAME.ACTIVITY_OPERATION, {
-			cmd = 1,
-			activity_id = var3_1
+			activity_id = var3_1,
+			cmd = PuzzleActivity.CMD_COMPLETE
 		})
 
 		return
-	elseif var2_1 == 2 then
-		if not var0_1.isPickUp and not table.contains(var6_1.data1_list, var1_1) then
+	elseif var2_1 == PuzzleActivity.CMD_ACTIVATE then
+		if not table.contains(var6_1.data1_list, var1_1) and not table.contains(var7_1.pickup_picturepuzzle, var1_1) then
 			return
 		end
 
 		if table.contains(var6_1.data2_list, var1_1) then
 			return
 		end
-	elseif var2_1 == 3 then
+	elseif var2_1 == PuzzleActivity.CMD_UNLCOK_TIP then
 		if table.contains(var6_1.data3_list, var1_1) then
 			return
 		end
@@ -52,7 +52,7 @@ function var0_0.execute(arg0_1, arg1_1)
 
 			return
 		end
-	elseif var2_1 == 4 then
+	elseif var2_1 == PuzzleActivity.CMD_EARN_EXTRA then
 		if var6_1.data1 ~= 1 then
 			return
 		end
@@ -75,15 +75,15 @@ function var0_0.execute(arg0_1, arg1_1)
 		if arg0_2.result == 0 then
 			var6_1 = getProxy(ActivityProxy):getActivityById(var3_1)
 
-			if var2_1 == 1 then
+			if var2_1 == PuzzleActivity.CMD_COMPLETE then
 				var6_1.data1 = 1
-			elseif var2_1 == 2 then
+			elseif var2_1 == PuzzleActivity.CMD_ACTIVATE then
 				table.insert(var6_1.data2_list, var1_1)
-			elseif var2_1 == 3 then
+			elseif var2_1 == PuzzleActivity.CMD_UNLCOK_TIP then
 				table.insert(var6_1.data3_list, var1_1)
 
 				var6_1.data2 = pg.TimeMgr.GetInstance():GetServerTime() + var7_1.cd
-			elseif var2_1 == 4 then
+			elseif var2_1 == PuzzleActivity.CMD_EARN_EXTRA then
 				var6_1.data1 = 2
 			end
 

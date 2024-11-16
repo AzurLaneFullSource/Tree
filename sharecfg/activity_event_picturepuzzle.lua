@@ -4,7 +4,6 @@ pg.activity_event_picturepuzzle = {
 		id = 549,
 		chapter = 1360001,
 		cd = 1200,
-		define = 0,
 		pickup_picturepuzzle = {
 			60031,
 			60033,
@@ -56,10 +55,9 @@ pg.activity_event_picturepuzzle = {
 		}
 	},
 	[758] = {
-		define = 0,
+		id = 758,
 		chapter = 0,
 		cd = 0,
-		id = 758,
 		pickup_views = "",
 		pickup_picturepuzzle = {},
 		drop_picturepuzzle = {
@@ -81,10 +79,9 @@ pg.activity_event_picturepuzzle = {
 		auto_finish_args = {}
 	},
 	[783] = {
-		define = 0,
+		id = 783,
 		chapter = 0,
 		cd = 0,
-		id = 783,
 		pickup_views = "",
 		pickup_picturepuzzle = {},
 		drop_picturepuzzle = {
@@ -111,7 +108,6 @@ pg.activity_event_picturepuzzle = {
 		id = 935,
 		chapter = 1360001,
 		cd = 1200,
-		define = 0,
 		pickup_picturepuzzle = {
 			60031,
 			60033,
@@ -166,10 +162,9 @@ pg.activity_event_picturepuzzle = {
 		}
 	},
 	[959] = {
-		define = 1,
+		id = 959,
 		chapter = 0,
 		cd = 0,
-		id = 959,
 		pickup_views = "",
 		pickup_picturepuzzle = {},
 		drop_picturepuzzle = {
@@ -188,10 +183,9 @@ pg.activity_event_picturepuzzle = {
 		auto_finish_args = {}
 	},
 	[4058] = {
-		define = 0,
+		id = 4058,
 		chapter = 0,
 		cd = 0,
-		id = 4058,
 		pickup_views = "",
 		pickup_picturepuzzle = {},
 		drop_picturepuzzle = {
@@ -215,10 +209,9 @@ pg.activity_event_picturepuzzle = {
 		auto_finish_args = {}
 	},
 	[4178] = {
-		define = 0,
+		id = 4178,
 		chapter = 0,
 		cd = 0,
-		id = 4178,
 		pickup_views = "",
 		pickup_picturepuzzle = {},
 		drop_picturepuzzle = {
@@ -240,10 +233,9 @@ pg.activity_event_picturepuzzle = {
 		auto_finish_args = {}
 	},
 	[4669] = {
-		define = 0,
+		id = 4669,
 		chapter = 0,
 		cd = 0,
-		id = 4669,
 		pickup_views = "",
 		pickup_picturepuzzle = {},
 		drop_picturepuzzle = {
@@ -263,7 +255,6 @@ pg.activity_event_picturepuzzle = {
 		id = 4733,
 		chapter = 1360004,
 		cd = 600,
-		define = 0,
 		pickup_picturepuzzle = {
 			60307,
 			60309,
@@ -322,10 +313,9 @@ pg.activity_event_picturepuzzle = {
 		}
 	},
 	[4779] = {
-		define = 0,
+		id = 4779,
 		chapter = 0,
 		cd = 0,
-		id = 4779,
 		pickup_views = "",
 		pickup_picturepuzzle = {},
 		drop_picturepuzzle = {
@@ -353,10 +343,9 @@ pg.activity_event_picturepuzzle = {
 		auto_finish_args = {}
 	},
 	[4889] = {
-		define = 1,
+		id = 4889,
 		chapter = 0,
 		cd = 0,
-		id = 4889,
 		pickup_views = "",
 		pickup_picturepuzzle = {},
 		drop_picturepuzzle = {
@@ -378,10 +367,9 @@ pg.activity_event_picturepuzzle = {
 		auto_finish_args = {}
 	},
 	[4935] = {
-		define = 0,
+		id = 4935,
 		chapter = 0,
 		cd = 0,
-		id = 4935,
 		pickup_views = "",
 		pickup_picturepuzzle = {},
 		drop_picturepuzzle = {
@@ -403,10 +391,9 @@ pg.activity_event_picturepuzzle = {
 		auto_finish_args = {}
 	},
 	[5093] = {
-		define = 0,
+		id = 5093,
 		chapter = 0,
 		cd = 0,
-		id = 5093,
 		pickup_views = "",
 		pickup_picturepuzzle = {},
 		drop_picturepuzzle = {
@@ -426,7 +413,6 @@ pg.activity_event_picturepuzzle = {
 		id = 5267,
 		chapter = 1360005,
 		cd = 600,
-		define = 0,
 		pickup_picturepuzzle = {
 			60472,
 			60474,
@@ -492,10 +478,9 @@ pg.activity_event_picturepuzzle = {
 		}
 	},
 	[5309] = {
-		define = 0,
+		id = 5309,
 		chapter = 0,
 		cd = 0,
-		id = 5309,
 		pickup_views = "",
 		pickup_picturepuzzle = {},
 		drop_picturepuzzle = {

@@ -59,12 +59,11 @@ return {
 			}
 		},
 		{
-			expression = 4,
+			actor = 501020,
 			side = 2,
 			bgName = "star_level_bg_153",
 			factiontag = "Thrillseeker and Daredevil",
 			dir = 1,
-			actor = 501020,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "Achoo! Talk about a scene transition!",

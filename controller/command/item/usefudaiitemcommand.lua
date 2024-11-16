@@ -27,7 +27,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			local var0_2 = {}
 
 			var4_1:removeItemById(var1_1, var2_1)
-			assert(var5_1:getConfig("usage") == ItemUsage.DROP or var5_1:getConfig("usage") == ItemUsage.DROP_TEMPLATE, "未处理类型")
+			assert(var5_1:getConfig("usage") == ItemUsage.DROP or var5_1:getConfig("usage") == ItemUsage.DROP_TEMPLATE or var5_1:getConfig("usage") == ItemUsage.RANDOM_SKIN, "未处理类型")
 			existCall(var3_1, PlayerConst.addTranDrop(arg0_2.drop_list))
 		else
 			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0_2.result))

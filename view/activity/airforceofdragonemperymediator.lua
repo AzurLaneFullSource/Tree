@@ -16,6 +16,7 @@ function var0_0.register(arg0_1)
 
 	local var0_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE)
 
+	var0_1:RecordTip()
 	arg0_1.viewComponent:SetActivityData(var0_1)
 end
 

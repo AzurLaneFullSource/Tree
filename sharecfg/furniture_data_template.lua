@@ -151,6 +151,7 @@ pg.furniture_data_template = setmetatable({
 			287,
 			288,
 			289,
+			291,
 			100002,
 			100003,
 			100004,
@@ -3321,6 +3322,7 @@ pg.furniture_data_template = setmetatable({
 			285,
 			286,
 			288,
+			291,
 			100002,
 			100003,
 			100004,
@@ -6452,6 +6454,7 @@ pg.furniture_data_template = setmetatable({
 			238,
 			240,
 			242,
+			291,
 			200001,
 			200002,
 			200003,
@@ -9470,6 +9473,7 @@ pg.furniture_data_template = setmetatable({
 		287,
 		288,
 		289,
+		291,
 		100002,
 		100003,
 		100004,
@@ -19741,6 +19745,86 @@ pg.base.furniture_data_template = {
 				"fengfan2xunzhang",
 				"normal"
 			}
+		},
+		interAction_group = {}
+	},
+	[291] = {
+		effect = "",
+		name = "Traditional Garapon Wheel",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Pull the lever and you might get a big prize!",
+		themeId = 0,
+		icon = "choujiangtuicheicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 6,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 291,
+		can_rotate = 0,
+		size = {
+			4,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"choujiangtuiche",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance1",
+						nil,
+						"dance"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				},
+				{
+					{
+						"dance1",
+						"dance2",
+						"dance3"
+					}
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
 		},
 		interAction_group = {}
 	},

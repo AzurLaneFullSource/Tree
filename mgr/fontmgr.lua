@@ -29,7 +29,7 @@ function var0_0.FontMgr.Init(arg0_1, arg1_1)
 		weijichuanFont = "weijichuanFont"
 	}) do
 		table.insert(var0_1, function(arg0_2)
-			AssetBundleHelper.loadAssetBundleAsync("font/" .. iter1_1, function(arg0_3)
+			AssetBundleHelper.StoreAssetBundle("font/" .. iter1_1, true, false, function(arg0_3)
 				arg0_2()
 			end)
 		end)

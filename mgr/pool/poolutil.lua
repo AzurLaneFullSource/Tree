@@ -6,10 +6,6 @@ function var0_0.Destroy(arg0_1, arg1_1)
 	local var0_1 = UIUtil.IsGameObject(arg0_1)
 	local var1_1 = var0_1 and UIUtil.IsPrefab(arg0_1)
 
-	if var0_1 and var0_0.clearSprites and not arg1_1 then
-		UIUtil.ClearTextureRef(arg0_1)
-	end
-
 	if var0_1 and not var1_1 then
 		Object.Destroy(arg0_1)
 	end

@@ -93,7 +93,7 @@ function var0_0.GetPrice(arg0_9)
 	if arg0_9:isDisCount() then
 		if arg0_9:IsItemDiscountType() then
 			var0_9 = SkinCouponActivity.StaticGetNewPrice(var1_9)
-			var2_9 = (var0_9 - newPrice) / var0_9 * 100
+			var2_9 = (var1_9 - var0_9) / var1_9 * 100
 		else
 			var2_9 = arg0_9:getConfig("discount")
 			var0_9 = var1_9 * (100 - var2_9) / 100

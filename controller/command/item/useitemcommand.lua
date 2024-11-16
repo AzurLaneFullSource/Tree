@@ -57,7 +57,7 @@ function var0_0.execute(arg0_1, arg1_1)
 					id = var1_1,
 					count = var2_1
 				})
-			elseif var6_1 == ItemUsage.DROP or var6_1 == ItemUsage.DROP_TEMPLATE or var6_1 == ItemUsage.DROP_APPOINTED or var6_1 == ItemUsage.INVITATION or var6_1 == ItemUsage.SKIN_SELECT then
+			elseif var6_1 == ItemUsage.DROP or var6_1 == ItemUsage.DROP_TEMPLATE or var6_1 == ItemUsage.DROP_APPOINTED or var6_1 == ItemUsage.INVITATION or var6_1 == ItemUsage.SKIN_SELECT or var6_1 == ItemUsage.RANDOM_SKIN then
 				var0_2 = PlayerConst.addTranDrop(arg0_2.drop_list)
 			elseif var6_1 == ItemUsage.SKIN_SHOP_DISCOUNT then
 				var0_2 = PlayerConst.addTranDrop(arg0_2.drop_list)

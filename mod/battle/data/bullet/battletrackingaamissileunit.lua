@@ -172,7 +172,7 @@ function var3_0.InitSpeed(arg0_10, arg1_10)
 	if arg0_10:IsTracker() then
 		local var2_10 = arg0_10._accTable.tracker
 
-		arg0_10._trackAngle = var2_10.angular
+		arg0_10._trackAngle = 360
 		arg0_10._trackDist = var2_10.range
 
 		if var2_10.angular then

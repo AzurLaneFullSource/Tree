@@ -251,37 +251,38 @@ function SetActionCallback(arg0_30, arg1_30)
 end
 
 function emojiText(arg0_31, arg1_31)
-	local var0_31 = AssetBundleHelper.loadAssetBundleSync("emojis")
-	local var1_31 = GetComponent(arg0_31, "TextMesh")
-	local var2_31 = GetComponent(arg0_31, "MeshRenderer")
-	local var3_31 = Shader.Find("UI/Unlit/Transparent")
-	local var4_31 = var2_31.materials
-	local var5_31 = {
-		var4_31[0]
+	local var0_31 = GetComponent(arg0_31, "TextMesh")
+	local var1_31 = GetComponent(arg0_31, "MeshRenderer")
+	local var2_31 = Shader.Find("UI/Unlit/Transparent")
+	local var3_31 = var1_31.materials
+	local var4_31 = {
+		var3_31[0]
 	}
-	local var6_31 = {}
-	local var7_31 = 0
+	local var5_31 = {}
+	local var6_31 = 0
+	local var7_31 = {}
+	local var8_31 = string.gsub(arg1_31, "#(%d+)#", function(arg0_32)
+		if not var5_31[arg0_32] then
+			var6_31 = var6_31 + 1
+			var7_31["emoji" .. arg0_32] = Material.New(var2_31)
 
-	var1_31.text = string.gsub(arg1_31, "#(%d+)#", function(arg0_32)
-		if not var6_31[arg0_32] then
-			var7_31 = var7_31 + 1
+			table.insert(var4_31, mat)
 
-			local var0_32 = Material.New(var3_31)
+			var5_31[arg0_32] = var6_31
 
-			var0_32.mainTexture = var0_31:LoadAssetSync("emoji" .. arg0_32, false, false)
-
-			table.insert(var5_31, var0_32)
-
-			var6_31[arg0_32] = var7_31
-
-			local var1_32 = var7_31
+			local var0_32 = var6_31
 		end
 
-		return "<quad material=" .. var7_31 .. " />"
+		return "<quad material=" .. var6_31 .. " />"
 	end)
-	var2_31.materials = var5_31
+	local var9_31 = AssetBundleHelper.LoadManyAssets("emojis", underscore.keys(var7_31), nil, false, nil, true)
 
-	ResourceMgr.Inst:ClearBundleRef("emojis", false, false)
+	for iter0_31, iter1_31 in pairs(var7_31) do
+		iter1_31.mainTexture = var9_31[iter0_31]
+	end
+
+	var0_31.text = var8_31
+	var1_31.materials = var4_31
 end
 
 function setPaintingImg(arg0_33, arg1_33)

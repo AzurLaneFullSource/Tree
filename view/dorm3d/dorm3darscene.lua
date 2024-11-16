@@ -201,7 +201,7 @@ function var0_0.HXCharacter(arg0_19, arg1_19)
 			var1_20 = true
 
 			local var1_21, var2_21 = unpack(arg0_19.hxMatDict[var0_21])
-			local var3_21 = var1_21:LoadAssetSync(var2_21, typeof(Material), true, false)
+			local var3_21 = var1_21:LoadAssetSync(var2_21, typeof(Material), false, false)
 
 			var0_20[arg0_21] = var3_21
 

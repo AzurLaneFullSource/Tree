@@ -138,7 +138,11 @@ function var0_0.UpdateSwitchMapButtons(arg0_8)
 		local var0_12 = arg0_12:getConfig("config_data")[1]
 
 		return _.any(var0_8:getChapters(), function(arg0_13)
-			return arg0_13:IsEXChapter() and arg0_13:getConfig("boss_expedition_id") == var0_12
+			if not arg0_13:IsEXChapter() then
+				return false
+			end
+
+			return table.contains(arg0_13:getConfig("boss_expedition_id"), var0_12)
 		end)
 	end))
 	setActive(arg0_8.sceneParent.actExchangeShopBtn, not ActivityConst.HIDE_PT_PANELS and not var1_8 and arg0_8.sceneParent:IsActShopActive())

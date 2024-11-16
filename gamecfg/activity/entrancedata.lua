@@ -310,6 +310,8 @@ return {
 			SCENE.AIRFORCE_DRAGONEMPERY
 		},
 		isShow = function()
+			do return false end
+
 			local var0_27 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE)
 
 			return var0_27 and not var0_27:isEnd()
@@ -318,17 +320,7 @@ return {
 			local var0_28 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE)
 
 			if var0_28 and not var0_28:isEnd() then
-				local var1_28 = 0
-				local var2_28 = var0_28:getConfig("config_client")[1]
-
-				for iter0_28 = 1, var2_28 do
-					var1_28 = var1_28 + (var0_28:getKVPList(1, iter0_28) or 0)
-				end
-
-				local var3_28 = pg.TimeMgr.GetInstance()
-				local var4_28 = var3_28:DiffDay(var0_28.data1, var3_28:GetServerTime()) + 1
-
-				return var1_28 < math.min(var4_28 * 2, var2_28 * 3)
+				return var0_28:readyToAchieve()
 			end
 		end
 	},

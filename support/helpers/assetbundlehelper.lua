@@ -2,189 +2,126 @@ AssetBundleHelper = {}
 
 local var0_0 = AssetBundleHelper
 
-var0_0.abMetatable = {
-	__index = {
-		LoadAssetSync = function(arg0_1, arg1_1, ...)
-			arg1_1 = arg0_1:ChangeAssetName(arg1_1)
-
-			if EDITOR_TOOL then
-				return ResourceMgr.Inst:getAssetSync(arg0_1.path, arg1_1, ...)
-			else
-				return ResourceMgr.Inst:LoadAssetSync(arg0_1.ab, arg1_1, ...)
-			end
-		end,
-		LoadAssetAsync = function(arg0_2, arg1_2, arg2_2, arg3_2, ...)
-			arg1_2 = arg0_2:ChangeAssetName(arg1_2)
-
-			if EDITOR_TOOL then
-				return ResourceMgr.Inst:getAssetAsync(arg0_2.path, arg1_2, arg2_2, UnityEngine.Events.UnityAction_UnityEngine_Object(arg3_2), ...)
-			else
-				return ResourceMgr.Inst:LoadAssetAsync(arg0_2.ab, arg1_2, arg2_2, UnityEngine.Events.UnityAction_UnityEngine_Object(arg3_2), ...)
-			end
-		end,
-		GetAllAssetNames = function(arg0_3)
-			if EDITOR_TOOL then
-				return table.CArrayToArray(ReflectionHelp.RefCallMethod(typeof(ResourceMgr), "GetAssetBundleAllAssetNames", ResourceMgr.Inst, {
-					typeof("System.String")
-				}, {
-					arg0_3.path
-				}))
-			else
-				return table.CArrayToArray(arg0_3.ab:GetAllAssetNames())
-			end
-		end,
-		ChangeAssetName = function(arg0_4, arg1_4)
-			if arg1_4 == nil or arg1_4 == "" or string.find(arg1_4, "/") then
-				return arg1_4 or ""
-			elseif not var0_0.bundleDic[arg0_4.path] then
-				arg0_4:BuildAssetNameDic()
-			end
-
-			return var0_0.bundleDic[arg0_4.path][string.lower(arg1_4)] or arg1_4
-		end,
-		BuildAssetNameDic = function(arg0_5)
-			if var0_0.bundleDic[arg0_5.path] then
-				return
-			end
-
-			var0_0.BuildAssetNameDic(arg0_5.path, arg0_5:GetAllAssetNames())
-		end
-	}
-}
-
-function var0_0.loadAssetBundleSync(arg0_6)
-	local var0_6 = setmetatable({
-		path = string.lower(arg0_6)
-	}, var0_0.abMetatable)
-
+function var0_0.GetClass()
 	if EDITOR_TOOL then
-		return var0_6
+		return pg.AssetBundleEditor
 	else
-		var0_6.ab = ResourceMgr.Inst:loadAssetBundleSync(arg0_6)
-
-		return var0_6
+		return pg.AssetBundle
 	end
 end
 
-function var0_0.loadAssetBundleAsync(arg0_7, arg1_7)
-	local var0_7 = setmetatable({
-		path = string.lower(arg0_7)
-	}, var0_0.abMetatable)
+function var0_0.LoadAssetBundle(arg0_2, arg1_2, arg2_2, arg3_2)
+	local var0_2 = var0_0.GetClass().New(string.lower(arg0_2))
 
+	var0_2:Load(arg1_2, arg2_2, arg3_2)
+
+	return var0_2
+end
+
+function var0_0.UnloadAssetBundle(arg0_3, arg1_3, arg2_3)
 	if EDITOR_TOOL then
-		onNextTick(function()
-			arg1_7(var0_7)
-		end)
+		-- block empty
 	else
-		ResourceMgr.Inst:loadAssetBundleAsync(arg0_7, function(arg0_9)
-			var0_7.ab = arg0_9
-
-			arg1_7(var0_7)
-		end)
+		ResourceMgr.Inst:ClearBundleRef(arg0_3, defaultValue(arg1_3, false), defaultValue(arg2_3, false))
 	end
 end
 
-function var0_0.loadAssetBundle(arg0_10, arg1_10, arg2_10)
-	local var0_10 = setmetatable({
-		path = string.lower(arg0_10)
-	}, var0_0.abMetatable)
-
-	if arg1_10 then
-		if EDITOR_TOOL then
-			onNextTick(function()
-				arg2_10(var0_10)
-			end)
+function var0_0.AutoUnloadAssetBundle(arg0_4, arg1_4)
+	onNextTick(function()
+		if arg1_4 then
+			arg0_4:ClearDependenciesBundle()
 		else
-			ResourceMgr.Inst:loadAssetBundleAsync(arg0_10, function(arg0_12)
-				var0_10.ab = arg0_12
-
-				arg2_10(var0_10)
-			end)
+			arg0_4:Dispose()
 		end
-	elseif EDITOR_TOOL then
-		return var0_10
+	end)
+end
+
+function var0_0.LoadAsset(arg0_6, arg1_6, arg2_6, arg3_6, arg4_6, arg5_6)
+	if arg3_6 then
+		AssetBundleHelper.LoadAssetBundle(arg0_6, arg3_6, true, function(arg0_7)
+			arg0_7:LoadAssetAsync(arg1_6, arg2_6, function(arg0_8)
+				arg4_6(arg0_8)
+				var0_0.AutoUnloadAssetBundle(arg0_7, arg5_6)
+			end, false, false)
+		end)
 	else
-		var0_10.ab = ResourceMgr.Inst:loadAssetBundleSync(arg0_10)
+		local var0_6 = AssetBundleHelper.LoadAssetBundle(arg0_6, arg3_6, true)
+		local var1_6 = var0_6:LoadAssetSync(arg1_6, arg2_6, false, false)
 
-		existCall(arg2_10, var0_10)
+		existCall(arg4_6, var1_6)
+		var0_0.AutoUnloadAssetBundle(var0_6, arg5_6)
 
-		return var0_10
+		return var1_6
 	end
 end
 
-function var0_0.LoadAsset(arg0_13, arg1_13, arg2_13, arg3_13, arg4_13, arg5_13)
-	if EDITOR_TOOL then
-		if arg3_13 then
-			AssetBundleHelper.loadAssetBundleAsync(arg0_13, function(arg0_14)
-				arg0_14:LoadAssetAsync(arg1_13, arg2_13, arg4_13, arg5_13, false)
-			end)
-		else
-			local var0_13 = AssetBundleHelper.loadAssetBundleSync(arg0_13):LoadAssetSync(arg1_13, arg2_13, arg5_13, false)
+function var0_0.LoadManyAssets(arg0_9, arg1_9, arg2_9, arg3_9, arg4_9, arg5_9)
+	local var0_9 = {}
 
-			existCall(arg4_13, var0_13)
+	if arg3_9 then
+		AssetBundleHelper.LoadAssetBundle(arg0_9, arg3_9, true, function(arg0_10)
+			parallelAsync(underscore.map(arg1_9, function(arg0_11)
+				return function(arg0_12)
+					arg0_10:LoadAssetAsync(arg0_11, arg2_9, function(arg0_13)
+						var0_9[arg0_11] = arg0_13
 
-			return var0_13
-		end
-	elseif arg3_13 then
-		local var1_13 = table.CArrayToArray(ResourceMgr.Inst:GetAllDependencies(arg0_13))
-
-		parallelAsync(underscore.map(var1_13, function(arg0_15)
-			return function(arg0_16)
-				AssetBundleHelper.loadAssetBundleAsync(arg0_15, arg0_16)
-			end
-		end), function()
-			AssetBundleHelper.loadAssetBundleAsync(arg0_13, function(arg0_18)
-				arg0_18:LoadAssetAsync(arg1_13, arg2_13, arg4_13, arg5_13, false)
-				onNextTick(function()
-					for iter0_19, iter1_19 in ipairs(var1_13) do
-						ResourceMgr.Inst:ClearBundleRef(iter1_19, false)
-					end
-				end)
+						arg0_12()
+					end, false, false)
+				end
+			end), function()
+				arg4_9(var0_9)
+				var0_0.AutoUnloadAssetBundle(arg0_10, arg5_9)
 			end)
 		end)
 	else
-		local var2_13 = table.CArrayToArray(ResourceMgr.Inst:GetAllDependencies(arg0_13))
+		local var1_9 = AssetBundleHelper.LoadAssetBundle(arg0_9, arg3_9, true)
 
-		for iter0_13, iter1_13 in ipairs(var2_13) do
-			AssetBundleHelper.loadAssetBundleSync(iter1_13)
+		for iter0_9, iter1_9 in ipairs(arg1_9) do
+			var0_9[iter1_9] = var1_9:LoadAssetSync(iter1_9, arg2_9, false, false)
 		end
 
-		local var3_13 = AssetBundleHelper.loadAssetBundleSync(arg0_13):LoadAssetSync(arg1_13, arg2_13, arg5_13, false)
+		existCall(arg4_9, var0_9)
+		var0_0.AutoUnloadAssetBundle(var1_9, arg5_9)
 
-		existCall(arg4_13, var3_13)
-		onNextTick(function()
-			for iter0_20, iter1_20 in ipairs(var2_13) do
-				ResourceMgr.Inst:ClearBundleRef(iter1_20, false)
-			end
-		end)
-
-		return var3_13
+		return var0_9
 	end
+end
+
+local var1_0 = {}
+
+function var0_0.StoreAssetBundle(arg0_15, arg1_15, arg2_15, arg3_15)
+	var1_0[arg0_15] = var1_0[arg0_15] or {}
+
+	table.insert(var1_0[arg0_15], var0_0.LoadAssetBundle(arg0_15, arg1_15, arg2_15, arg3_15))
+end
+
+function var0_0.UnstoreAssetBundle(arg0_16, arg1_16)
+	table.remove(var1_0[arg0_16]):Dispose(arg1_16)
 end
 
 var0_0.bundleDic = {}
 var0_0.bundleCount = 0
 
-function var0_0.BuildAssetNameDic(arg0_21, arg1_21)
-	if var0_0.bundleDic[arg0_21] then
+function var0_0.BuildAssetNameDic(arg0_17, arg1_17)
+	if var0_0.bundleDic[arg0_17] then
 		return
 	end
 
-	local var0_21 = {}
+	local var0_17 = {}
 
-	for iter0_21, iter1_21 in ipairs(arg1_21) do
-		local var1_21 = string.lower(iter1_21)
+	for iter0_17, iter1_17 in ipairs(arg1_17) do
+		local var1_17 = string.lower(iter1_17)
 
-		var0_21[var1_21] = iter1_21
+		var0_17[var1_17] = iter1_17
 
-		local var2_21 = GetFileName(var1_21)
+		local var2_17 = GetFileName(var1_17)
 
-		var0_21[var2_21] = iter1_21
+		var0_17[var2_17] = iter1_17
 
-		local var3_21 = string.split(var2_21, ".")[1]
+		local var3_17 = string.split(var2_17, ".")[1]
 
-		if var3_21 then
-			var0_21[var3_21] = iter1_21
+		if var3_17 then
+			var0_17[var3_17] = iter1_17
 		end
 	end
 
@@ -194,7 +131,7 @@ function var0_0.BuildAssetNameDic(arg0_21, arg1_21)
 	end
 
 	var0_0.bundleCount = var0_0.bundleCount + 1
-	var0_0.bundleDic[arg0_21] = var0_21
+	var0_0.bundleDic[arg0_17] = var0_17
 end
 
 return var0_0

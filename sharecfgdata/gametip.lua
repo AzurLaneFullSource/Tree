@@ -10088,7 +10088,7 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 }
 
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Rate UP for Roma, Leonardo da Vincil!",
+	tip = "Get Musashi guaranteed with every 200 event builds (can be done up to 4 times)!",
 }
 
 _G.pg.base.gametip.buildship_heavy_tip = {
@@ -27121,5 +27121,21 @@ _G.pg.base.gametip.juuschat_background_tip1 = {
 
 _G.pg.base.gametip.juuschat_background_tip2 = {
 	tip = "You don't own this skin.",
+}
+
+_G.pg.base.gametip.drom3d_memory_limit_tip = {
+	tip = "Your device's specs are below the recommended level. You may experience crashes while playing.",
+}
+
+_G.pg.base.gametip.blackfriday_main_tip = {
+	tip = {
+		{
+			info = "- Overview -\n· The 2024 Black Friday Akashi's Fire Sale (Part 2) is available between<color=#92fc63>November 14th and December 4th</color>.\n· Event Missions\nComplete event missions to get Black Friday PT.\n· Event Shops\nUse Black Friday PT, Gems and Coins in PT Shop, Gem Shop, and Coin Shop respectively to purchase items.\n· Gift Packs\nEvery day until November 20th, a new Daily Free Pack and a new Daily Paid Pack are unlocked.",
+		},
+	},
+}
+
+_G.pg.base.gametip.blackfriday_shop_tip = {
+	tip = "Unlocks on $1 at $2",
 }
 
