@@ -5,7 +5,7 @@ function var0_0.__call(arg0_1)
 		return
 	end
 
-	ResourceMgr.Inst:getAssetAsync(arg0_1.path, arg0_1.name, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_2)
+	LoadAnyAsync(arg0_1.path, arg0_1.name, nil, function(arg0_2)
 		if arg0_1.stopped then
 			return
 		end
@@ -15,7 +15,7 @@ function var0_0.__call(arg0_1)
 
 			arg0_1.onLoaded(var0_2)
 		end
-	end), true, false)
+	end)
 
 	return arg0_1
 end

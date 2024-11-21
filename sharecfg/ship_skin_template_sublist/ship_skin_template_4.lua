@@ -1,302 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_4 = {
-	[107110] = {
-		ship_group = 10711,
-		name = "Intrepid",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "wuwei",
-		illustrator = 8,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 107110,
-		voice_actor_2 = -1,
-		prefab = "wuwei",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Essex-class aircraft carrier – Intrepid, Hull Number CV-11.",
-		voice_actor = 225,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			antiaircraft = {
-				{
-					1.483,
-					1.215,
-					0
-				}
-			},
-			plane = {
-				{
-					1.438,
-					1.204,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.41,
-							2.37,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[107111] = {
-		ship_group = 10711,
-		name = "One Intrepid Pitch",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 1,
-		shop_id = 70332,
-		painting = "wuwei_2",
-		illustrator = 8,
-		l2d_voice_calibrate = "",
-		shop_type_id = 13,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "132",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 107111,
-		voice_actor_2 = -1,
-		prefab = "wuwei_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "There's been a lot of inter-port meets recently... But before I can join a team with my other Eagle Union colleagues, I've got to up my game first! So, Commander, mind training with me?",
-		voice_actor = 225,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			antiaircraft = {
-				{
-					1.352,
-					1.153,
-					0
-				}
-			},
-			plane = {
-				{
-					1.337,
-					1.258,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.41,
-							2.37,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[107120] = {
-		ship_group = 10712,
-		name = "Hornet II",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "dahuangfengII",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 107120,
-		voice_actor_2 = -1,
-		prefab = "dahuangfengII",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Essex-class aircraft carrier – Hornet II, Hull Number CV-12.",
-		voice_actor = 24,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			antiaircraft = {
-				{
-					1.483,
-					1.215,
-					0
-				}
-			},
-			plane = {
-				{
-					1.438,
-					1.01,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.41,
-							2.37,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[107121] = {
 		ship_group = 10712,
 		name = "Racing Across the Waves!",
@@ -12374,6 +12078,456 @@ pg.base.ship_skin_template_4 = {
 						{
 							-0.5,
 							2.271,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[201250] = {
+		ship_group = 20125,
+		name = "Jersey",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "zexi",
+		illustrator = 40,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 201250,
+		voice_actor_2 = -1,
+		prefab = "zexi",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "J-class destroyer – Jersey, Hull Number F72!",
+		voice_actor = 177,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.84,
+					0.74,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.84,
+					0.74,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.23,
+					0.1,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.84,
+					0.74,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				40,
+				{
+					{
+						"smoke",
+						{
+							-0.32,
+							2.43,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[201260] = {
+		ship_group = 20126,
+		name = "Matchless",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "wudi",
+		illustrator = 40,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 201260,
+		voice_actor_2 = -1,
+		prefab = "wudi",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "M-class destroyer – Matchless (G52.)",
+		voice_actor = 92,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.08,
+					0.93,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.04,
+					0.88,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.18,
+					0.11,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.06,
+					0.84,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.37,
+							2.38,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[201261] = {
+		ship_group = 20126,
+		name = "Escort Me Please!",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70194,
+		painting = "wudi_2",
+		illustrator = 40,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "113",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 201261,
+		voice_actor_2 = -1,
+		prefab = "wudi_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Ah, Commander, over here! Hm, you're going to take care of all the plans for today's date? In that case, I look forward to seeing just how suave you can be! Hehe~",
+		voice_actor = 92,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.002,
+					0.936,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.884,
+					0.88,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.012,
+					0.026,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.892,
+					0.876,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.37,
+							2.38,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[201270] = {
+		ship_group = 20127,
+		name = "Musketeer",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "huoqiangshou",
+		illustrator = 40,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 201270,
+		voice_actor_2 = -1,
+		prefab = "huoqiangshou",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "M-class destroyer – Musketeer (G86.)",
+		voice_actor = 92,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.84,
+					0.74,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.84,
+					0.74,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.23,
+					0.1,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.84,
+					0.74,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				40,
+				{
+					{
+						"smoke",
+						{
+							-0.32,
+							2.43,
 							0
 						}
 					}

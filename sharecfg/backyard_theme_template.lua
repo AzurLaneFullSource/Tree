@@ -4560,6 +4560,43 @@ pg.backyard_theme_template = {
 			315112
 		}
 	},
+	[116] = {
+		Cfg_1 = 5,
+		name = "Princess Style ",
+		hot = 1,
+		is_view = 1,
+		id = 116,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "Live like a fairy-tale princess! ",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "tolthemeicon",
+		deblocking = 1,
+		order = 117,
+		ids = {
+			316001,
+			316002,
+			316101,
+			316104,
+			316105,
+			316107,
+			316109,
+			316112,
+			316114,
+			316115,
+			316116,
+			316117,
+			316118,
+			316121,
+			316122,
+			316301,
+			316302,
+			316304,
+			316305
+		}
+	},
 	all = {
 		1,
 		2,
@@ -4663,6 +4700,7 @@ pg.backyard_theme_template = {
 		112,
 		113,
 		114,
-		115
+		115,
+		116
 	}
 }

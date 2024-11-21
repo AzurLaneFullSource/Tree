@@ -79,6 +79,7 @@ pg.pay_data_display = setmetatable({
 		1016,
 		1017,
 		1018,
+		1019,
 		2001,
 		2002,
 		2003,
@@ -150,6 +151,7 @@ pg.pay_data_display = setmetatable({
 		2033,
 		2034,
 		2035,
+		2036,
 		5011,
 		5012,
 		5013,
@@ -7680,6 +7682,82 @@ pg.base.pay_data_display = {
 		limit_args = {},
 		drop_item = {}
 	},
+	[1019] = {
+		name = "Fair Winds Cruise Pass (2024.12)",
+		limit_group = 0,
+		descrip_extra = "You must complete certain missions to obtain these rewards.",
+		type = 0,
+		subject = "Fair Winds Cruise Pass",
+		limit_arg = 1,
+		name_display = "Fair Winds Cruise Pass",
+		show_group = "",
+		type_order = 4,
+		extra_service = 4,
+		money = 999,
+		id = 1019,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "battlepass_1",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.passport22",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Purchase to immediately gain 1,500 Progress Points, and also unlock additional Fair Winds Cruise rewards.",
+		airijp_id = "com.yostaren.azurlane.passport22",
+		extra_service_item = {
+			{
+				1,
+				4020,
+				1500
+			},
+			{
+				8,
+				65057,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					12,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					1,
+					31
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				1,
+				4020,
+				1500
+			}
+		},
+		sub_display = {
+			7020,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
 	[2001] = {
 		name = "PR Construction Pack - Series 1",
 		limit_group = 1,
@@ -14154,6 +14232,115 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40050,
+				1
+			}
+		}
+	},
+	[2036] = {
+		name = "Skill Book Pack (2024.11)",
+		limit_group = 0,
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		subject = "Skill Book Pack",
+		limit_arg = 4,
+		name_display = "Skill Book Pack",
+		show_group = "",
+		type_order = 0,
+		extra_service = 3,
+		money = 299,
+		id = 2036,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "boxSkill",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack15",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Buy to receive a large amount of Skill Books.",
+		airijp_id = "com.yostaren.azurlane.pack15",
+		extra_service_item = {
+			{
+				2,
+				16004,
+				1
+			},
+			{
+				2,
+				16014,
+				1
+			},
+			{
+				2,
+				16024,
+				1
+			},
+			{
+				2,
+				16003,
+				3
+			},
+			{
+				2,
+				16013,
+				3
+			},
+			{
+				2,
+				16023,
+				3
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					11,
+					21
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					4,
+					16
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				16004,
+				1
+			},
+			{
+				2,
+				16014,
+				1
+			},
+			{
+				2,
+				16024,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40023,
 				1
 			}
 		}

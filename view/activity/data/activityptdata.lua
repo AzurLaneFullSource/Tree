@@ -336,23 +336,39 @@ function var0_0.GetLastAward(arg0_35)
 	}
 end
 
+function var0_0.GetMaxAvailableTargetIndex(arg0_36)
+	for iter0_36 = arg0_36.availableTargetIndex or 1, #arg0_36.targets do
+		if arg0_36.count >= arg0_36.targets[iter0_36] then
+			arg0_36.availableTargetIndex = iter0_36
+		else
+			break
+		end
+	end
+
+	return arg0_36.availableTargetIndex or 0
+end
+
+function var0_0.GetAllAvailableAwards(arg0_37)
+	return _.slice(arg0_37.dropList, math.min(arg0_37:GetLevel() + 1, arg0_37:GetMaxAvailableTargetIndex()), arg0_37:GetMaxAvailableTargetIndex() - arg0_37:GetLevel())
+end
+
 var0_0.STATE_LOCK = 1
 var0_0.STATE_CAN_GET = 2
 var0_0.STATE_GOT = 3
 
-function var0_0.GetDroptItemState(arg0_36, arg1_36)
-	if arg1_36 > arg0_36:GetCurrLevel() then
+function var0_0.GetDroptItemState(arg0_38, arg1_38)
+	if arg1_38 > arg0_38:GetCurrLevel() then
 		return var0_0.STATE_LOCK
-	elseif arg0_36:IsGotLevelAward(arg1_36) then
+	elseif arg0_38:IsGotLevelAward(arg1_38) then
 		return var0_0.STATE_GOT
 	else
 		return var0_0.STATE_CAN_GET
 	end
 end
 
-function var0_0.AnyAwardCanGet(arg0_37)
-	for iter0_37, iter1_37 in ipairs(arg0_37.targets) do
-		if arg0_37:GetDroptItemState(iter0_37) == var0_0.STATE_CAN_GET then
+function var0_0.AnyAwardCanGet(arg0_39)
+	for iter0_39, iter1_39 in ipairs(arg0_39.targets) do
+		if arg0_39:GetDroptItemState(iter0_39) == var0_0.STATE_CAN_GET then
 			return true
 		end
 	end

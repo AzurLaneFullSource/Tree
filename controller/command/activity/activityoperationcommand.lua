@@ -572,6 +572,30 @@ function var0_0.updateActivityData(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 		end
 
 		getProxy(ActivityProxy):updateActivity(arg3_3)
+	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_PUZZLE_CONNECT then
+		local var46_3 = getProxy(ActivityProxy)
+		local var47_3 = arg3_3.data1_list
+		local var48_3 = arg3_3.data2_list
+		local var49_3 = arg3_3.data3_list
+
+		if arg1_3.cmd == 1 then
+			local var50_3 = pg.activity_tolove_jigsaw[arg1_3.arg1].need[2]
+			local var51_3 = pg.player_resource[var50_3].name
+			local var52_3 = pg.activity_tolove_jigsaw[arg1_3.arg1].need[3]
+			local var53_3 = var1_3:getData()
+
+			var53_3:consume({
+				[var51_3] = var52_3
+			})
+			var1_3:updatePlayer(var53_3)
+			table.insert(var47_3, arg1_3.arg1)
+		elseif arg1_3.cmd == 2 then
+			table.insert(var48_3, arg1_3.arg1)
+		elseif arg1_3.cmd == 3 then
+			table.insert(var49_3, arg1_3.arg1)
+		end
+
+		var46_3:updateActivity(arg3_3)
 	end
 
 	return arg3_3

@@ -83,47 +83,51 @@ function var0_0.UpdateSwitchMapButtons(arg0_8)
 
 		setActive(arg2_10:Find("Unselect"), var0_10.id ~= var0_8.id)
 		setActive(arg2_10:Find("Selected"), var0_10.id == var0_8.id)
-		setActive(arg2_10:Find("Tip"), false)
 
 		local var2_10
+		local var3_10 = var0_10:getConfig("map_name")
 
-		if var1_10 == Map.ACT_EXTRA then
+		if #(var3_10 or "") > 0 then
+			var2_10 = i18n(var3_10)
+		elseif var1_10 == Map.ACT_EXTRA then
 			if var0_10:getChapters()[1]:IsSpChapter() then
 				var2_10 = i18n("levelscene_mapselect_sp")
-
-				setActive(arg2_10:Find("Tip"), var0_10.id ~= var0_8.id and getProxy(ChapterProxy):IsActivitySPChapterActive() and SettingsProxy.IsShowActivityMapSPTip())
 			else
 				var2_10 = i18n("levelscene_mapselect_ex")
 			end
 		else
-			local var3_10 = var0_10.id % 10
+			local var4_10 = var0_10.id % 10
 
-			assert(var3_10 == 1 or var3_10 == 2)
+			assert(var4_10 == 1 or var4_10 == 2)
 
-			var2_10 = i18n("levelscene_mapselect_part" .. var3_10)
+			var2_10 = i18n("levelscene_mapselect_part" .. var4_10)
+		end
+
+		if var1_10 == Map.ACT_EXTRA and var0_10:getChapters()[1]:IsSpChapter() then
+			setActive(arg2_10:Find("Tip"), var0_10.id ~= var0_8.id and getProxy(ChapterProxy):IsActivitySPChapterActive() and SettingsProxy.IsShowActivityMapSPTip())
 		end
 
 		setText(arg2_10:Find("Unselect/Text"), var2_10)
 		setText(arg2_10:Find("Selected/Text"), var2_10)
 
-		local var4_10, var5_10 = var0_10:isUnlock()
-		local var6_10 = getProxy(PlayerProxy):getRawData().id
-		local var7_10
+		local var5_10, var6_10 = var0_10:isUnlock()
+		local var7_10 = getProxy(PlayerProxy):getRawData().id
+		local var8_10
 
-		if var4_10 then
-			var7_10 = PlayerPrefs.GetInt("MapFirstUnlock" .. var0_10.id .. "_" .. var6_10, 0) == 0
+		if var5_10 then
+			var8_10 = PlayerPrefs.GetInt("MapFirstUnlock" .. var0_10.id .. "_" .. var7_10, 0) == 0
 		end
 
-		setActive(arg2_10:Find("Unselect/Lock"), not var4_10 or var7_10)
+		setActive(arg2_10:Find("Unselect/Lock"), not var5_10 or var8_10)
 		onButton(arg0_8, arg2_10, function()
 			if var0_10.id == var0_8.id then
 				return
 			end
 
-			if var4_10 then
+			if var5_10 then
 				arg0_8:emit(LevelUIConst.SET_MAP, var0_10.id)
 			else
-				pg.TipsMgr.GetInstance():ShowTips(var5_10)
+				pg.TipsMgr.GetInstance():ShowTips(var6_10)
 			end
 		end, SFX_PANEL)
 	end)

@@ -284,6 +284,7 @@ pg.strategy_data_template = setmetatable({
 		201152,
 		201155,
 		201157,
+		201158,
 		205001,
 		205002,
 		205003,
@@ -3436,6 +3437,17 @@ pg.base.strategy_data_template = {
 		icon = "201157",
 		buff_type = 0,
 		desc = "Fancy is supporting your fleet. At regular intervals, her tentacles will attack a random enemy and inflict Armor Break.",
+		arg = {}
+	},
+	[201158] = {
+		buff_id = 0,
+		name = "Challenge Conditions",
+		iconSize = "",
+		type = 10,
+		id = 201158,
+		icon = "200908",
+		buff_type = 0,
+		desc = "- Hard Mode Details -\n· Enemies deal significantly more DMG. Their shells ignore shields and penetrate through targets, but their DMG taken also increases the more time elapses.\n· Some enemy attacks take on a quiz format.\n· The skills \"Operation Rainbow\" and \"Fiercer When Cornered\" are rendered ineffective.",
 		arg = {}
 	},
 	[205001] = {

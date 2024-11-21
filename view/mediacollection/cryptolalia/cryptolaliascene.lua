@@ -24,7 +24,7 @@ function var0_0.init(arg0_3)
 	arg0_3.timeLimit = arg0_3:findTF("Main/cd/timelimit")
 	arg0_3.timeTxt = arg0_3:findTF("Main/cd/timelimit/Text"):GetComponent(typeof(Text))
 	arg0_3.nameTxt = arg0_3:findTF("Main/name"):GetComponent(typeof(Text))
-	arg0_3.authorTxt = arg0_3:findTF("Main/name/author"):GetComponent(typeof(Text))
+	arg0_3.authorTxt = arg0_3:findTF("Main/author"):GetComponent(typeof(Text))
 	arg0_3.descTxt = arg0_3:findTF("Main/desc"):GetComponent(typeof(Text))
 	arg0_3.signatureImg = arg0_3:findTF("Main/desc/signature"):GetComponent(typeof(Image))
 	arg0_3.auditionTxt = arg0_3:findTF("Main/audition/mask/Text"):GetComponent("ScrollText")
@@ -144,7 +144,7 @@ function var0_0.OnItemSelected(arg0_13, arg1_13)
 		return
 	end
 
-	if not arg0_13.langType or not var0_13:ExistLang(arg0_13.langType) then
+	if not arg0_13.langType or not var0_13:ExistLang(arg0_13.langType) or arg0_13.selectedIndex ~= arg1_13 then
 		arg0_13.langType = var0_13:GetDefaultLangType()
 	end
 
@@ -346,10 +346,12 @@ function var0_0.RegisterEvent(arg0_18)
 
 		if arg0_18.auditionFlag then
 			arg0_18:PlayAudition(var0_32)
+			pg.BgmMgr.GetInstance():StopPlay()
 		else
 			arg0_18:ClearAuditionTimer()
 			arg0_18.soundPlayer:Stop()
 			arg0_18.auditionEffect:Play("anim_line_reset")
+			pg.BgmMgr.GetInstance():ContinuePlay()
 		end
 
 		arg0_18:UpdateAudition(arg0_18.auditionFlag)
@@ -486,13 +488,14 @@ function var0_0.PlayVedio(arg0_43, arg1_43)
 		pg.BgmMgr.GetInstance():StopPlay()
 
 		local var1_43 = var0_43:GetCpkName(arg0_43.langType)
-		local var2_43 = CryptolaliaVedioPlayer.New(arg0_43._tf)
+		local var2_43 = var0_43:GetCaptionsColor()
+		local var3_43 = CryptolaliaVedioPlayer.New(arg0_43._tf)
 
-		var2_43:Play(var1_43, function()
+		var3_43:Play(var1_43, var2_43, function()
 			pg.BgmMgr.GetInstance():ContinuePlay()
 		end)
 
-		arg0_43.player = var2_43
+		arg0_43.player = var3_43
 	end
 end
 

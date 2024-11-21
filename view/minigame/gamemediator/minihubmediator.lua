@@ -64,7 +64,9 @@ function var0_0.OnMiniGameFailure(arg0_4, arg1_4)
 end
 
 function var0_0.listNotificationInterests(arg0_5)
-	local var0_5 = {}
+	local var0_5 = {
+		GAME.SUBMIT_ACTIVITY_TASK_DONE
+	}
 
 	table.insertto(var0_5, var0_0.super.listNotificationInterests(arg0_5))
 
@@ -73,6 +75,17 @@ end
 
 function var0_0.handleNotification(arg0_6, arg1_6)
 	var0_0.super.handleNotification(arg0_6, arg1_6)
+
+	local var0_6 = arg1_6:getName()
+	local var1_6 = arg1_6:getBody()
+
+	if var0_6 == GAME.SUBMIT_ACTIVITY_TASK_DONE then
+		arg0_6.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_6.awards)
+
+		if arg0_6.viewComponent.ShowTask then
+			arg0_6.viewComponent:ShowTask()
+		end
+	end
 end
 
 return var0_0

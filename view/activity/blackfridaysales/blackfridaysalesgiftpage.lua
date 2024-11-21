@@ -314,26 +314,32 @@ end
 
 function var0_0.isTip(arg0_25)
 	local var0_25 = false
-	local var1_25 = Clone(arg0_25.giftList[1])
 
-	arg0_25.normalList = getProxy(ShopsProxy):GetNormalList()
+	local function var1_25(arg0_26)
+		local var0_26 = false
+		local var1_26 = Clone(arg0_25.giftList[arg0_26])
 
-	for iter0_25, iter1_25 in ipairs(var1_25) do
-		if not iter1_25:isChargeType() then
-			local var2_25 = ChargeConst.getBuyCount(arg0_25.chargedList, iter1_25.id)
+		for iter0_26, iter1_26 in ipairs(var1_26) do
+			if iter1_26:isChargeType() then
+				count = ChargeConst.getBuyCount(arg0_25.chargedList, iter1_26.id)
+			else
+				count = ChargeConst.getBuyCount(arg0_25.normalList, iter1_26.id)
+			end
 
-			iter1_25:updateBuyCount(var2_25)
+			iter1_26:updateBuyCount(count)
 
-			if iter1_25:canPurchase() then
-				var0_25 = true
+			if iter1_26:canPurchase() then
+				var0_26 = true
 			end
 		end
+
+		return var0_26
 	end
 
-	return var0_25
+	return var1_25(1) or var1_25(2)
 end
 
-function var0_0.OnDestroy(arg0_26)
+function var0_0.OnDestroy(arg0_27)
 	return
 end
 

@@ -114,6 +114,10 @@ pg.ship_meta_breakout = setmetatable({
 		9705062,
 		9705063,
 		9705064,
+		9705071,
+		9705072,
+		9705073,
+		9705074,
 		9706011,
 		9706012,
 		9706013,
@@ -1963,6 +1967,73 @@ pg.base.ship_meta_breakout = {
 		id = 9705064,
 		item1 = 21037,
 		pre_id = 9705063,
+		weapon_ids = {}
+	},
+	[9705071] = {
+		breakout_view = "Unlock Cinders of Hope - Giulio Cesare/Main gun base +1/Main gun efficiency +5%",
+		gold = 500,
+		breakout_id = 9705072,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9705071,
+		item1 = 21040,
+		pre_id = 0,
+		weapon_ids = {
+			95480,
+			95480
+		}
+	},
+	[9705072] = {
+		breakout_view = "Secondary Gun base +2/Main gun efficiency +10%",
+		gold = 1500,
+		breakout_id = 9705073,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9705072,
+		item1 = 21040,
+		pre_id = 9705071,
+		weapon_ids = {
+			101,
+			101,
+			101
+		}
+	},
+	[9705073] = {
+		breakout_view = "Improve Cinders of Hope - Giulio Cesare/Main gun base +1/Main gun efficiency +15%",
+		gold = 2500,
+		breakout_id = 9705074,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9705073,
+		item1 = 21040,
+		pre_id = 9705072,
+		weapon_ids = {
+			95480,
+			95480,
+			95480
+		}
+	},
+	[9705074] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9705074,
+		item1 = 21040,
+		pre_id = 9705073,
 		weapon_ids = {}
 	},
 	[9706011] = {

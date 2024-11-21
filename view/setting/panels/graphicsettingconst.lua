@@ -47,8 +47,9 @@ var0_0.settings = {
 	},
 	{
 		CsharpValue = "msaaSamples",
-		playerPrefsname = "msaaSamples",
+		special = true,
 		cfgId = 5,
+		playerPrefsname = "msaaSamples",
 		EnumType = "MSAASamples",
 		Enum = {
 			None = 1,
@@ -210,6 +211,10 @@ function var0_0.HandleCustomSetting()
 			if iter1_1.childList ~= nil and var4_1 == 1 then
 				print(123)
 			else
+				if iter1_1.special then
+					var4_1 = 1
+				end
+
 				for iter2_1, iter3_1 in pairs(iter1_1.Enum) do
 					if iter3_1 == var4_1 then
 						var4_1 = iter2_1

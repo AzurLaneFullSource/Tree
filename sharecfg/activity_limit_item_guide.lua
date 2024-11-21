@@ -732,6 +732,539 @@ pg.activity_limit_item_guide = {
 			}
 		}
 	},
+	[49] = {
+		id = 49,
+		activity = 5690,
+		count = 1,
+		type = 3,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 150440,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"puzzle connect"
+				},
+				"Complete the 1st request of Help Me, Miss Lala!"
+			}
+		}
+	},
+	[50] = {
+		id = 50,
+		activity = 5690,
+		count = 1,
+		type = 3,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 150460,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"puzzle connect"
+				},
+				"Complete the 2nd request of Help Me, Miss Lala!"
+			}
+		}
+	},
+	[51] = {
+		id = 51,
+		activity = 5690,
+		count = 1,
+		type = 3,
+		is_new = 0,
+		count_storage = 0,
+		drop_id = 150480,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"puzzle connect"
+				},
+				"Complete the 3rd request of Help Me, Miss Lala!"
+			}
+		}
+	},
+	[52] = {
+		id = 52,
+		activity = 5690,
+		count = 1,
+		type = 3,
+		is_new = 0,
+		count_storage = 0,
+		drop_id = 150500,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"puzzle connect"
+				},
+				"Complete the 4th request of Help Me, Miss Lala!"
+			}
+		}
+	},
+	[53] = {
+		id = 53,
+		activity = 5690,
+		count = 1,
+		type = 3,
+		is_new = 0,
+		count_storage = 0,
+		drop_id = 150520,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"puzzle connect"
+				},
+				"Complete the 5th request of Help Me, Miss Lala!"
+			}
+		}
+	},
+	[54] = {
+		id = 54,
+		activity = 5690,
+		count = 1,
+		type = 3,
+		is_new = 0,
+		count_storage = 0,
+		drop_id = 150540,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"puzzle connect"
+				},
+				"Complete the 6th request of Help Me, Miss Lala!"
+			}
+		}
+	},
+	[55] = {
+		id = 55,
+		activity = 5690,
+		count = 1,
+		type = 3,
+		is_new = 0,
+		count_storage = 0,
+		drop_id = 150560,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"puzzle connect"
+				},
+				"Complete the 7th request of Help Me, Miss Lala!"
+			}
+		}
+	},
+	[56] = {
+		id = 56,
+		activity = 5690,
+		count = 1,
+		type = 5,
+		is_new = 0,
+		count_storage = 0,
+		drop_id = 316103,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"TOLOVE_COLLAB_BACKHILL"
+				},
+				"Complete event missions"
+			}
+		}
+	},
+	[57] = {
+		id = 57,
+		activity = 5690,
+		count = 1,
+		type = 5,
+		is_new = 0,
+		count_storage = 0,
+		drop_id = 316120,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"TOLOVE_COLLAB_BACKHILL"
+				},
+				"Complete event missions"
+			}
+		}
+	},
+	[58] = {
+		id = 58,
+		activity = 5690,
+		count = 1,
+		type = 5,
+		is_new = 0,
+		count_storage = 1,
+		drop_id = 316106,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene level"
+				},
+				"Unlock the whole event stage story"
+			}
+		}
+	},
+	[59] = {
+		id = 59,
+		activity = 5690,
+		count = 1,
+		type = 5,
+		is_new = 0,
+		count_storage = 1,
+		drop_id = 316123,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene court yard",
+					{}
+				},
+				"Buy in the furniture shop"
+			}
+		}
+	},
+	[60] = {
+		id = 60,
+		activity = 5690,
+		count = 1,
+		type = 5,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 316307,
+		order = 0,
+		link_params = {
+			{
+				7,
+				{
+					69
+				},
+				"Tick Tick Kaboom-kun"
+			}
+		}
+	},
+	[61] = {
+		id = 61,
+		activity = 5690,
+		count = 1,
+		type = 5,
+		is_new = 0,
+		count_storage = 1,
+		drop_id = 316309,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"TOLOVE_COLLAB_BACKHILL"
+				},
+				"Complete event missions"
+			}
+		}
+	},
+	[62] = {
+		id = 62,
+		activity = 5690,
+		count = 1,
+		type = 5,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 316303,
+		order = 0,
+		link_params = {
+			{
+				7,
+				{
+					69
+				},
+				"Tick Tick Kaboom-kun"
+			}
+		}
+	},
+	[63] = {
+		id = 63,
+		activity = 5690,
+		count = 1,
+		type = 5,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 316306,
+		order = 0,
+		link_params = {
+			{
+				7,
+				{
+					69
+				},
+				"Tick Tick Kaboom-kun"
+			}
+		}
+	},
+	[64] = {
+		id = 64,
+		activity = 5690,
+		count = 1,
+		type = 5,
+		is_new = 0,
+		count_storage = 1,
+		drop_id = 316308,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"TOLOVE_COLLAB_BACKHILL"
+				},
+				"Complete event missions"
+			}
+		}
+	},
+	[65] = {
+		id = 65,
+		activity = 5690,
+		count = 1,
+		type = 5,
+		is_new = 0,
+		count_storage = 0,
+		drop_id = 316110,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"TOLOVE_COLLAB_BACKHILL"
+				},
+				"Complete event missions"
+			}
+		}
+	},
+	[66] = {
+		id = 66,
+		activity = 5690,
+		count = 1,
+		type = 5,
+		is_new = 0,
+		count_storage = 0,
+		drop_id = 316111,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"TOLOVE_COLLAB_BACKHILL"
+				},
+				"Complete event missions"
+			}
+		}
+	},
+	[67] = {
+		id = 67,
+		activity = 5690,
+		count = 1,
+		type = 5,
+		is_new = 0,
+		count_storage = 0,
+		drop_id = 316119,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"TOLOVE_COLLAB_BACKHILL"
+				},
+				"Complete event missions"
+			}
+		}
+	},
+	[68] = {
+		id = 68,
+		activity = 5690,
+		count = 1,
+		type = 5,
+		is_new = 0,
+		count_storage = 0,
+		drop_id = 316108,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"TOLOVE_COLLAB_BACKHILL"
+				},
+				"Complete event missions"
+			}
+		}
+	},
+	[69] = {
+		id = 69,
+		activity = 5690,
+		count = 1,
+		type = 5,
+		is_new = 0,
+		count_storage = 0,
+		drop_id = 316102,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"TOLOVE_COLLAB_BACKHILL"
+				},
+				"Complete event missions"
+			}
+		}
+	},
+	[70] = {
+		id = 70,
+		activity = 5690,
+		count = 1,
+		type = 5,
+		is_new = 0,
+		count_storage = 0,
+		drop_id = 316113,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"TOLOVE_COLLAB_BACKHILL"
+				},
+				"Complete event missions"
+			}
+		}
+	},
+	[71] = {
+		id = 71,
+		activity = 5690,
+		count = 1,
+		type = 21,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 13660,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"TOLOVE_COLLAB_BACKHILL"
+				},
+				"Complete missions related to Help Me, Miss Lala!"
+			}
+		}
+	},
+	[72] = {
+		id = 72,
+		activity = 5690,
+		count = 1,
+		type = 21,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 13680,
+		order = 0,
+		link_params = {
+			{
+				7,
+				{
+					69
+				},
+				"Tick Tick Kaboom-kun"
+			}
+		}
+	},
+	[73] = {
+		id = 73,
+		activity = 5690,
+		count = 1,
+		type = 21,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 13700,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"TOLOVE_COLLAB_BACKHILL"
+				},
+				"Complete event missions"
+			}
+		}
+	},
+	[74] = {
+		id = 74,
+		activity = 5690,
+		count = 1,
+		type = 21,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 13720,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"TOLOVE_COLLAB_BACKHILL"
+				},
+				"Complete event missions"
+			}
+		}
+	},
+	[75] = {
+		id = 75,
+		activity = 5690,
+		count = 1,
+		type = 21,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 13740,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"TOLOVE_COLLAB_BACKHILL"
+				},
+				"Complete event missions"
+			}
+		}
+	},
+	[76] = {
+		id = 76,
+		activity = 5690,
+		count = 1,
+		type = 21,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 13760,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"TOLOVE_COLLAB_BACKHILL"
+				},
+				"Complete event missions"
+			}
+		}
+	},
 	get_id_list_by_activity = {
 		[4937] = {
 			1,
@@ -771,6 +1304,36 @@ pg.activity_limit_item_guide = {
 			46,
 			47,
 			48
+		},
+		[5690] = {
+			49,
+			50,
+			51,
+			52,
+			53,
+			54,
+			55,
+			56,
+			57,
+			58,
+			59,
+			60,
+			61,
+			62,
+			63,
+			64,
+			65,
+			66,
+			67,
+			68,
+			69,
+			70,
+			71,
+			72,
+			73,
+			74,
+			75,
+			76
 		}
 	},
 	all = {
@@ -810,6 +1373,34 @@ pg.activity_limit_item_guide = {
 		45,
 		46,
 		47,
-		48
+		48,
+		49,
+		50,
+		51,
+		52,
+		53,
+		54,
+		55,
+		56,
+		57,
+		58,
+		59,
+		60,
+		61,
+		62,
+		63,
+		64,
+		65,
+		66,
+		67,
+		68,
+		69,
+		70,
+		71,
+		72,
+		73,
+		74,
+		75,
+		76
 	}
 }

@@ -13,7 +13,7 @@ function var0_0.preload(arg0_2, arg1_2)
 
 	for iter0_2, iter1_2 in ipairs(arg0_2.ids) do
 		table.insert(var0_2, function(arg0_3)
-			GetSpriteFromAtlasAsync("RegularExchangeIcon", string.format("Assets/ArtResource/Atlas/RegularExchangeIcon/%d.png", iter1_2), function(arg0_4)
+			GetSpriteFromAtlasAsync("RegularExchangeIcon", tostring(iter1_2), function(arg0_4)
 				arg0_2.iconSprites[iter1_2] = arg0_4
 
 				arg0_3()

@@ -105,6 +105,7 @@ function var0_0.ReturnModel(arg0_10)
 end
 
 function var0_0.LoadScene(arg0_11, arg1_11)
+	gcAll(true)
 	SceneOpMgr.Inst:LoadSceneAsync("scenes/worldmap3d", "worldmap3d", LoadSceneMode.Additive, function(arg0_12, arg1_12)
 		arg0_11.transform = tf(arg0_12:GetRootGameObjects()[0])
 

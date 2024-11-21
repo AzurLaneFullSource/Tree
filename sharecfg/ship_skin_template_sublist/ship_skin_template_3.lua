@@ -1,218 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_3 = {
-	[103140] = {
-		ship_group = 10314,
-		name = "San Francisco",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "jiujinshan",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 103140,
-		voice_actor_2 = -1,
-		prefab = "jiujinshan",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "New Orleans-class heavy cruiser – San Francisco, Hull Number CA-38.",
-		voice_actor = 275,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.266,
-					1.151,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.301,
-					1.144,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.03,
-					0.003,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.596,
-							2.323,
-							0.14
-						}
-					}
-				}
-			}
-		}
-	},
-	[103141] = {
-		ship_group = 10314,
-		name = "Funny Bunny!",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "1102",
-		l2d_ignore_drag = 0,
-		group_index = 1,
-		shop_id = 70546,
-		painting = "jiujinshan_3",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 16,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "145",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 103141,
-		voice_actor_2 = -1,
-		prefab = "jiujinshan_3",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Music! Lights! Refreshments! We're all set! Welcome to San Francisco's party! Come and enjoy yourself!",
-		voice_actor = 275,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.062,
-					1.166,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.075,
-					1.103,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.001,
-					0.003,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.625,
-							2.35,
-							0.14
-						}
-					}
-				}
-			}
-		}
-	},
 	[103142] = {
 		ship_group = 10314,
 		name = "It's Showtime!",
@@ -5729,22 +5517,22 @@ pg.base.ship_skin_template_3 = {
 		bound_bone = {
 			cannon = {
 				{
-					1.32,
-					1.26,
+					1.41,
+					0.98,
 					0
 				}
 			},
 			vicegun = {
 				{
-					1.21,
-					1.15,
+					1.41,
+					1,
 					0
 				}
 			},
 			antiaircraft = {
 				{
-					1.23,
-					1.43,
+					0.51,
+					2.37,
 					0
 				}
 			}
@@ -12796,6 +12584,302 @@ pg.base.ship_skin_template_3 = {
 			},
 			{
 				1.3
+			}
+		}
+	},
+	[107110] = {
+		ship_group = 10711,
+		name = "Intrepid",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "wuwei",
+		illustrator = 8,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 107110,
+		voice_actor_2 = -1,
+		prefab = "wuwei",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Essex-class aircraft carrier – Intrepid, Hull Number CV-11.",
+		voice_actor = 225,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.483,
+					1.215,
+					0
+				}
+			},
+			plane = {
+				{
+					1.438,
+					1.204,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.41,
+							2.37,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[107111] = {
+		ship_group = 10711,
+		name = "One Intrepid Pitch",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70332,
+		painting = "wuwei_2",
+		illustrator = 8,
+		l2d_voice_calibrate = "",
+		shop_type_id = 13,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "132",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 107111,
+		voice_actor_2 = -1,
+		prefab = "wuwei_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "There's been a lot of inter-port meets recently... But before I can join a team with my other Eagle Union colleagues, I've got to up my game first! So, Commander, mind training with me?",
+		voice_actor = 225,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			4
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.352,
+					1.153,
+					0
+				}
+			},
+			plane = {
+				{
+					1.337,
+					1.258,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.41,
+							2.37,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[107120] = {
+		ship_group = 10712,
+		name = "Hornet II",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "dahuangfengII",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 107120,
+		voice_actor_2 = -1,
+		prefab = "dahuangfengII",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Essex-class aircraft carrier – Hornet II, Hull Number CV-12.",
+		voice_actor = 24,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.483,
+					1.215,
+					0
+				}
+			},
+			plane = {
+				{
+					1.438,
+					1.01,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.41,
+							2.37,
+							0
+						}
+					}
+				}
 			}
 		}
 	}

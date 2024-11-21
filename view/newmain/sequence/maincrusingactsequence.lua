@@ -25,7 +25,7 @@ function var0_0.ShowWindow(arg0_4, arg1_4)
 		parentContext = getProxy(ContextProxy):getCurrentContext(),
 		context = Context.New({
 			mediator = CrusingWindowMediator,
-			viewComponent = CrusingWindowLayer,
+			viewComponent = CrusingWindowLayer2,
 			data = {
 				onClose = arg1_4
 			}

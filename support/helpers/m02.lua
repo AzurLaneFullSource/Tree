@@ -4656,7 +4656,7 @@ end
 
 function checkABExist(arg0_331)
 	if EDITOR_TOOL then
-		return PathMgr.FileExists(PathMgr.getAssetBundle(arg0_331)) or ResourceMgr.Inst:AssetExist(arg0_331)
+		return ResourceMgr.Inst:AssetExist(arg0_331)
 	else
 		return PathMgr.FileExists(PathMgr.getAssetBundle(arg0_331))
 	end

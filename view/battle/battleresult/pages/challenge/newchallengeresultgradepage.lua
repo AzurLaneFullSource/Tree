@@ -56,7 +56,7 @@ end
 
 function var0_0.LoadChallengeRes(arg0_6, arg1_6)
 	setActive(arg0_6.bgTr:Find("ResultEffect/Tips"), false)
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/Challenge", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_7)
+	LoadAnyAsync("BattleResultItems/Challenge", "", nil, function(arg0_7)
 		if arg0_6.exited or IsNil(arg0_7) then
 			if arg1_6 then
 				arg1_6()
@@ -70,7 +70,7 @@ function var0_0.LoadChallengeRes(arg0_6, arg1_6)
 		if arg1_6 then
 			arg1_6()
 		end
-	end), true, true)
+	end)
 end
 
 function var0_0.UpdateChallengeInfo(arg0_8, arg1_8)

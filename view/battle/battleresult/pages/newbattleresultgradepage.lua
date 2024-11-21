@@ -132,7 +132,7 @@ function var0_0.UpdateChapterName(arg0_17)
 end
 
 function var0_0.LoadEffects(arg0_18, arg1_18)
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/ResultEffect", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_19)
+	LoadAnyAsync("BattleResultItems/ResultEffect", "", nil, function(arg0_19)
 		if arg0_18.exited or IsNil(arg0_19) then
 			if arg1_18 then
 				arg1_18()
@@ -152,7 +152,7 @@ function var0_0.LoadEffects(arg0_18, arg1_18)
 		if arg1_18 then
 			arg1_18()
 		end
-	end), true, true)
+	end)
 end
 
 function var0_0.PlayEnterAnimation(arg0_20, arg1_20)
@@ -197,7 +197,7 @@ end
 function var0_0.LoadBG(arg0_29, arg1_29)
 	local var0_29 = NewBattleResultUtil.Score2Bg(arg0_29.contextData.score)
 
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. var0_29, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_30)
+	LoadAnyAsync("BattleResultItems/" .. var0_29, "", nil, function(arg0_30)
 		if arg0_29.exited or IsNil(arg0_30) then
 			if arg1_29 then
 				arg1_29()
@@ -215,7 +215,7 @@ function var0_0.LoadBG(arg0_29, arg1_29)
 		if arg1_29 then
 			arg1_29()
 		end
-	end), false, false)
+	end)
 end
 
 function var0_0.LoadGrade(arg0_31, arg1_31)

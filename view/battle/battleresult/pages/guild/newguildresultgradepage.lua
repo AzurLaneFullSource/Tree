@@ -3,7 +3,7 @@ local var0_0 = class("NewGuildResultGradePage", import("..NewBattleResultGradePa
 function var0_0.LoadBG(arg0_1, arg1_1)
 	local var0_1 = "Victory"
 
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. var0_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_2)
+	LoadAnyAsync("BattleResultItems/" .. var0_1, "", nil, function(arg0_2)
 		if arg0_1.exited or IsNil(arg0_2) then
 			if arg1_1 then
 				arg1_1()
@@ -17,7 +17,7 @@ function var0_0.LoadBG(arg0_1, arg1_1)
 		if arg1_1 then
 			arg1_1()
 		end
-	end), false, false)
+	end)
 end
 
 function var0_0.LoadGrade(arg0_3, arg1_3)

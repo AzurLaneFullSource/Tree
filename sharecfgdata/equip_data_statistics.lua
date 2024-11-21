@@ -157956,6 +157956,928 @@ _G.pg.base.equip_data_statistics[150431] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[150440] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	attribute_2 = "luck",
+	descrip = "Cooks tasty food at a molecular level!",
+	icon = "150440",
+	id = 150440,
+	name = "Bubbly-Boily Chef",
+	nationality = 111,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "200",
+	value_2 = 1,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		60730,
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150441] = {
+	base = 150440,
+	id = 150441,
+	value_1 = "230",
+}
+
+_G.pg.base.equip_data_statistics[150442] = {
+	base = 150440,
+	id = 150442,
+	value_1 = "260",
+}
+
+_G.pg.base.equip_data_statistics[150443] = {
+	base = 150440,
+	id = 150443,
+	value_1 = "290",
+}
+
+_G.pg.base.equip_data_statistics[150444] = {
+	base = 150440,
+	id = 150444,
+	value_1 = "320",
+}
+
+_G.pg.base.equip_data_statistics[150445] = {
+	base = 150440,
+	id = 150445,
+	value_1 = "350",
+}
+
+_G.pg.base.equip_data_statistics[150446] = {
+	base = 150440,
+	id = 150446,
+	value_1 = "380",
+}
+
+_G.pg.base.equip_data_statistics[150447] = {
+	base = 150440,
+	id = 150447,
+	value_1 = "410",
+}
+
+_G.pg.base.equip_data_statistics[150448] = {
+	base = 150440,
+	id = 150448,
+	value_1 = "440",
+}
+
+_G.pg.base.equip_data_statistics[150449] = {
+	base = 150440,
+	id = 150449,
+	value_1 = "470",
+}
+
+_G.pg.base.equip_data_statistics[150450] = {
+	base = 150440,
+	id = 150450,
+	value_1 = "500",
+	value_2 = 2,
+}
+
+_G.pg.base.equip_data_statistics[150451] = {
+	anti_siren = 100,
+	base = 150440,
+	id = 150451,
+	value_1 = "530",
+	value_2 = 2,
+}
+
+_G.pg.base.equip_data_statistics[150452] = {
+	anti_siren = 200,
+	base = 150440,
+	id = 150452,
+	value_1 = "560",
+	value_2 = 2,
+}
+
+_G.pg.base.equip_data_statistics[150453] = {
+	anti_siren = 300,
+	base = 150440,
+	id = 150453,
+	value_1 = "590",
+	value_2 = 2,
+}
+
+_G.pg.base.equip_data_statistics[150460] = {
+	ammo = 10,
+	attribute_1 = "dodge",
+	attribute_2 = "hit",
+	descrip = "Reads customers' minds and hearts. It might backfire if you use it for evil!",
+	icon = "150460",
+	id = 150460,
+	name = "Sales Boosta-Bot",
+	nationality = 111,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "6",
+	value_2 = 16,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		60740,
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150461] = {
+	base = 150460,
+	id = 150461,
+	value_1 = "7",
+}
+
+_G.pg.base.equip_data_statistics[150462] = {
+	base = 150460,
+	id = 150462,
+	value_1 = "7",
+	value_2 = 17,
+}
+
+_G.pg.base.equip_data_statistics[150463] = {
+	base = 150460,
+	id = 150463,
+	value_1 = "8",
+	value_2 = 18,
+}
+
+_G.pg.base.equip_data_statistics[150464] = {
+	base = 150460,
+	id = 150464,
+	value_1 = "9",
+	value_2 = 19,
+}
+
+_G.pg.base.equip_data_statistics[150465] = {
+	base = 150460,
+	id = 150465,
+	value_1 = "10",
+	value_2 = 20,
+}
+
+_G.pg.base.equip_data_statistics[150466] = {
+	base = 150460,
+	id = 150466,
+	value_1 = "11",
+	value_2 = 21,
+}
+
+_G.pg.base.equip_data_statistics[150467] = {
+	base = 150460,
+	id = 150467,
+	value_1 = "12",
+	value_2 = 22,
+}
+
+_G.pg.base.equip_data_statistics[150468] = {
+	base = 150460,
+	id = 150468,
+	value_1 = "13",
+	value_2 = 23,
+}
+
+_G.pg.base.equip_data_statistics[150469] = {
+	base = 150460,
+	id = 150469,
+	value_1 = "14",
+	value_2 = 24,
+}
+
+_G.pg.base.equip_data_statistics[150470] = {
+	base = 150460,
+	id = 150470,
+	value_1 = "15",
+	value_2 = 25,
+}
+
+_G.pg.base.equip_data_statistics[150471] = {
+	anti_siren = 100,
+	base = 150460,
+	id = 150471,
+	value_1 = "16",
+	value_2 = 26,
+}
+
+_G.pg.base.equip_data_statistics[150472] = {
+	anti_siren = 200,
+	base = 150460,
+	id = 150472,
+	value_1 = "17",
+	value_2 = 27,
+}
+
+_G.pg.base.equip_data_statistics[150473] = {
+	anti_siren = 300,
+	base = 150460,
+	id = 150473,
+	value_1 = "18",
+	value_2 = 28,
+}
+
+_G.pg.base.equip_data_statistics[150480] = {
+	ammo = 10,
+	attribute_1 = "dodge",
+	attribute_2 = "speed",
+	descrip = "Erases your presence entirely! Just don't use it too much, or else...",
+	icon = "150480",
+	id = 150480,
+	name = "Sneaky-Stealthy Prowler",
+	nationality = 111,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "13",
+	value_2 = 1,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		60750,
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150481] = {
+	base = 150480,
+	id = 150481,
+	value_1 = "14",
+}
+
+_G.pg.base.equip_data_statistics[150482] = {
+	base = 150480,
+	id = 150482,
+	value_1 = "15",
+}
+
+_G.pg.base.equip_data_statistics[150483] = {
+	base = 150480,
+	id = 150483,
+	value_1 = "16",
+	value_2 = 2,
+}
+
+_G.pg.base.equip_data_statistics[150484] = {
+	base = 150480,
+	id = 150484,
+	value_1 = "17",
+	value_2 = 2,
+}
+
+_G.pg.base.equip_data_statistics[150485] = {
+	base = 150480,
+	id = 150485,
+	value_1 = "18",
+	value_2 = 2,
+}
+
+_G.pg.base.equip_data_statistics[150486] = {
+	base = 150480,
+	id = 150486,
+	value_1 = "20",
+	value_2 = 3,
+}
+
+_G.pg.base.equip_data_statistics[150487] = {
+	base = 150480,
+	id = 150487,
+	value_1 = "22",
+	value_2 = 3,
+}
+
+_G.pg.base.equip_data_statistics[150488] = {
+	base = 150480,
+	id = 150488,
+	value_1 = "24",
+	value_2 = 4,
+}
+
+_G.pg.base.equip_data_statistics[150489] = {
+	base = 150480,
+	id = 150489,
+	value_1 = "26",
+	value_2 = 4,
+}
+
+_G.pg.base.equip_data_statistics[150490] = {
+	base = 150480,
+	id = 150490,
+	value_1 = "28",
+	value_2 = 5,
+}
+
+_G.pg.base.equip_data_statistics[150491] = {
+	anti_siren = 100,
+	base = 150480,
+	id = 150491,
+	value_1 = "30",
+	value_2 = 5,
+}
+
+_G.pg.base.equip_data_statistics[150492] = {
+	anti_siren = 200,
+	base = 150480,
+	id = 150492,
+	value_1 = "32",
+	value_2 = 5,
+}
+
+_G.pg.base.equip_data_statistics[150493] = {
+	anti_siren = 300,
+	base = 150480,
+	id = 150493,
+	value_1 = "34",
+	value_2 = 5,
+}
+
+_G.pg.base.equip_data_statistics[150500] = {
+	ammo = 10,
+	attribute_1 = "hit",
+	attribute_2 = "cannon",
+	descrip = "Suppresses fatigue AND makes you feel like you're having fun! Perfect for overtime.",
+	icon = "150500",
+	id = 150500,
+	name = "All Work, All Play Robot",
+	nationality = 111,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "10",
+	value_2 = 6,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		60760,
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150501] = {
+	base = 150500,
+	id = 150501,
+	value_1 = "11",
+	value_2 = 7,
+}
+
+_G.pg.base.equip_data_statistics[150502] = {
+	base = 150500,
+	id = 150502,
+	value_1 = "13",
+	value_2 = 8,
+}
+
+_G.pg.base.equip_data_statistics[150503] = {
+	base = 150500,
+	id = 150503,
+	value_1 = "14",
+	value_2 = 9,
+}
+
+_G.pg.base.equip_data_statistics[150504] = {
+	base = 150500,
+	id = 150504,
+	value_1 = "16",
+	value_2 = 10,
+}
+
+_G.pg.base.equip_data_statistics[150505] = {
+	base = 150500,
+	id = 150505,
+	value_1 = "17",
+	value_2 = 11,
+}
+
+_G.pg.base.equip_data_statistics[150506] = {
+	base = 150500,
+	id = 150506,
+	value_1 = "19",
+	value_2 = 12,
+}
+
+_G.pg.base.equip_data_statistics[150507] = {
+	base = 150500,
+	id = 150507,
+	value_1 = "20",
+	value_2 = 13,
+}
+
+_G.pg.base.equip_data_statistics[150508] = {
+	base = 150500,
+	id = 150508,
+	value_1 = "22",
+	value_2 = 14,
+}
+
+_G.pg.base.equip_data_statistics[150509] = {
+	base = 150500,
+	id = 150509,
+	value_1 = "23",
+	value_2 = 15,
+}
+
+_G.pg.base.equip_data_statistics[150510] = {
+	base = 150500,
+	id = 150510,
+	value_1 = "25",
+	value_2 = 17,
+}
+
+_G.pg.base.equip_data_statistics[150511] = {
+	anti_siren = 100,
+	base = 150500,
+	id = 150511,
+	value_1 = "26",
+	value_2 = 18,
+}
+
+_G.pg.base.equip_data_statistics[150512] = {
+	anti_siren = 200,
+	base = 150500,
+	id = 150512,
+	value_1 = "28",
+	value_2 = 19,
+}
+
+_G.pg.base.equip_data_statistics[150513] = {
+	anti_siren = 300,
+	base = 150500,
+	id = 150513,
+	value_1 = "29",
+	value_2 = 20,
+}
+
+_G.pg.base.equip_data_statistics[150520] = {
+	ammo = 10,
+	attribute_1 = "cannon",
+	descrip = "Shoots a beam that makes the target grow fast!",
+	icon = "150520",
+	id = 150520,
+	name = "Speedy Sprouty Botanist",
+	nationality = 111,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "10",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		60770,
+	},
+	hidden_skill_id = {},
+	part_main = {
+		3,
+		4,
+		5,
+		10,
+		13,
+		18,
+		19,
+	},
+	part_sub = {
+		3,
+		4,
+		5,
+		10,
+		13,
+		18,
+		19,
+	},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150521] = {
+	base = 150520,
+	id = 150521,
+	value_1 = "12",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150522] = {
+	base = 150520,
+	id = 150522,
+	value_1 = "14",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150523] = {
+	base = 150520,
+	id = 150523,
+	value_1 = "16",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150524] = {
+	base = 150520,
+	id = 150524,
+	value_1 = "18",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150525] = {
+	base = 150520,
+	id = 150525,
+	value_1 = "20",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150526] = {
+	base = 150520,
+	id = 150526,
+	value_1 = "22",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150527] = {
+	base = 150520,
+	id = 150527,
+	value_1 = "24",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150528] = {
+	base = 150520,
+	id = 150528,
+	value_1 = "26",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150529] = {
+	base = 150520,
+	id = 150529,
+	value_1 = "28",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150530] = {
+	base = 150520,
+	id = 150530,
+	value_1 = "30",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150531] = {
+	anti_siren = 100,
+	base = 150520,
+	id = 150531,
+	value_1 = "32",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150532] = {
+	anti_siren = 200,
+	base = 150520,
+	id = 150532,
+	value_1 = "34",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150533] = {
+	anti_siren = 300,
+	base = 150520,
+	id = 150533,
+	value_1 = "35",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150540] = {
+	ammo = 10,
+	attribute_1 = "cannon",
+	attribute_2 = "hit",
+	descrip = "Monitors the user's emotions to regularly create the vibe of a thriller flick!",
+	icon = "150540",
+	id = 150540,
+	name = "Spooky Scary Specter",
+	nationality = 111,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "18",
+	value_2 = 4,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		60780,
+	},
+	hidden_skill_id = {},
+	part_main = {
+		4,
+		5,
+		10,
+		13,
+	},
+	part_sub = {
+		4,
+		5,
+		10,
+		13,
+	},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150541] = {
+	base = 150540,
+	id = 150541,
+	value_1 = "20",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150542] = {
+	base = 150540,
+	id = 150542,
+	value_1 = "23",
+	value_2 = 5,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150543] = {
+	base = 150540,
+	id = 150543,
+	value_1 = "26",
+	value_2 = 5,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150544] = {
+	base = 150540,
+	id = 150544,
+	value_1 = "28",
+	value_2 = 6,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150545] = {
+	base = 150540,
+	id = 150545,
+	value_1 = "31",
+	value_2 = 7,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150546] = {
+	base = 150540,
+	id = 150546,
+	value_1 = "34",
+	value_2 = 7,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150547] = {
+	base = 150540,
+	id = 150547,
+	value_1 = "36",
+	value_2 = 8,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150548] = {
+	base = 150540,
+	id = 150548,
+	value_1 = "39",
+	value_2 = 8,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150549] = {
+	base = 150540,
+	id = 150549,
+	value_1 = "42",
+	value_2 = 9,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150550] = {
+	base = 150540,
+	id = 150550,
+	value_1 = "45",
+	value_2 = 10,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150551] = {
+	anti_siren = 100,
+	base = 150540,
+	id = 150551,
+	value_1 = "47",
+	value_2 = 10,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150552] = {
+	anti_siren = 200,
+	base = 150540,
+	id = 150552,
+	value_1 = "50",
+	value_2 = 11,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150553] = {
+	anti_siren = 300,
+	base = 150540,
+	id = 150553,
+	value_1 = "53",
+	value_2 = 11,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150560] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "Gives you an intense royal aura. It works for people who aren't royalty, too!",
+	icon = "150560",
+	id = 150560,
+	name = "More-y Glory Aura Booster",
+	nationality = 111,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "250",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		60790,
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150561] = {
+	base = 150560,
+	id = 150561,
+	value_1 = "280",
+}
+
+_G.pg.base.equip_data_statistics[150562] = {
+	base = 150560,
+	id = 150562,
+	value_1 = "310",
+}
+
+_G.pg.base.equip_data_statistics[150563] = {
+	base = 150560,
+	id = 150563,
+	value_1 = "340",
+}
+
+_G.pg.base.equip_data_statistics[150564] = {
+	base = 150560,
+	id = 150564,
+	value_1 = "370",
+}
+
+_G.pg.base.equip_data_statistics[150565] = {
+	base = 150560,
+	id = 150565,
+	value_1 = "400",
+}
+
+_G.pg.base.equip_data_statistics[150566] = {
+	base = 150560,
+	id = 150566,
+	value_1 = "430",
+}
+
+_G.pg.base.equip_data_statistics[150567] = {
+	base = 150560,
+	id = 150567,
+	value_1 = "460",
+}
+
+_G.pg.base.equip_data_statistics[150568] = {
+	base = 150560,
+	id = 150568,
+	value_1 = "490",
+}
+
+_G.pg.base.equip_data_statistics[150569] = {
+	base = 150560,
+	id = 150569,
+	value_1 = "520",
+}
+
+_G.pg.base.equip_data_statistics[150570] = {
+	base = 150560,
+	id = 150570,
+	value_1 = "550",
+}
+
+_G.pg.base.equip_data_statistics[150571] = {
+	anti_siren = 100,
+	base = 150560,
+	id = 150571,
+	value_1 = "580",
+}
+
+_G.pg.base.equip_data_statistics[150572] = {
+	anti_siren = 200,
+	base = 150560,
+	id = 150572,
+	value_1 = "610",
+}
+
+_G.pg.base.equip_data_statistics[150573] = {
+	anti_siren = 300,
+	base = 150560,
+	id = 150573,
+	value_1 = "640",
+}
+
 _G.pg.base.equip_data_statistics[170001] = {
 	ammo = 10,
 	descrip = "Barrage",
@@ -161385,6 +162307,123 @@ _G.pg.base.equip_data_statistics[3217501] = {
 		"MOT",
 		"SF",
 		"MG",
+	},
+}
+
+_G.pg.base.equip_data_statistics[3227202] = {
+	base = 43160,
+	id = 3227202,
+	name = "【2024tolove联动 剧情战】菈菈 重巡主炮",
+	weapon_id = {
+		3227202,
+	},
+}
+
+_G.pg.base.equip_data_statistics[3227203] = {
+	base = 11260,
+	id = 3227203,
+	name = "【2024tolove联动 剧情战】菈菈 重巡副炮",
+	weapon_id = {
+		3227203,
+	},
+}
+
+_G.pg.base.equip_data_statistics[3227204] = {
+	base = 90160,
+	id = 3227204,
+	name = "【2024tolove联动 剧情战】娜娜 驱逐主炮",
+	weapon_id = {
+		3227204,
+	},
+}
+
+_G.pg.base.equip_data_statistics[3227205] = {
+	base = 5660,
+	id = 3227205,
+	name = "【2024tolove联动 剧情战】娜娜 驱逐鱼雷",
+	weapon_id = {
+		3227205,
+	},
+}
+
+_G.pg.base.equip_data_statistics[3227206] = {
+	base = 32260,
+	id = 3227206,
+	name = "【2024tolove联动 剧情战】梦梦 轻巡主炮",
+	weapon_id = {
+		3227206,
+	},
+}
+
+_G.pg.base.equip_data_statistics[3227207] = {
+	base = 5640,
+	id = 3227207,
+	name = "【2024tolove联动 剧情战】梦梦 轻巡鱼雷",
+	weapon_id = {
+		3227207,
+	},
+}
+
+_G.pg.base.equip_data_statistics[3227208] = {
+	base = 44500,
+	id = 3227208,
+	name = "【2024tolove联动 剧情战】金色暗影 战列主炮",
+	weapon_id = {
+		3227208,
+	},
+}
+
+_G.pg.base.equip_data_statistics[3227209] = {
+	base = 32260,
+	id = 3227209,
+	name = "【2024tolove联动 剧情战】金色暗影 战列副炮",
+	weapon_id = {
+		3227209,
+	},
+}
+
+_G.pg.base.equip_data_statistics[3227210] = {
+	base = 34180,
+	id = 3227210,
+	name = "【2024tolove联动 剧情战】春菜 战巡主炮",
+	weapon_id = {
+		3227210,
+	},
+}
+
+_G.pg.base.equip_data_statistics[3227211] = {
+	base = 32360,
+	id = 3227211,
+	name = "【2024tolove联动 剧情战】春菜 战巡副炮",
+	weapon_id = {
+		3227211,
+	},
+}
+
+_G.pg.base.equip_data_statistics[3227212] = {
+	base = 47160,
+	id = 3227212,
+	name = "【2024tolove联动 剧情战】唯 战斗机",
+	weapon_id = {
+		3227212,
+	},
+}
+
+_G.pg.base.equip_data_statistics[3227213] = {
+	base = 49040,
+	id = 3227213,
+	name = "【2024tolove联动 剧情战】唯 轰炸机",
+	weapon_id = {
+		3227213,
+	},
+}
+
+_G.pg.base.equip_data_statistics[3227214] = {
+	base = 38240,
+	id = 3227214,
+	name = "【2024tolove联动 剧情战】唯 鱼雷机",
+	weapon_id = {
+		3227214,
 	},
 }
 

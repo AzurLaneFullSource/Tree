@@ -40,6 +40,8 @@ function var0_0.OnInit(arg0_3)
 	arg0_3.confirmBtn = arg0_3.selectedTF:Find("panel/animroot/ok")
 	arg0_3.dragBtn = CourtYardStoreyDragBtn.New(arg0_3.selectedTF:Find("panel/animroot"), arg0_3.rectTF)
 	arg0_3.effectContainer = arg0_3._tf:Find("effects")
+	arg0_3.floor = arg0_3.rectTF:Find("floor")
+	arg0_3.wall = arg0_3.rectTF:Find("wall")
 
 	local var0_3 = arg0_3.rootTF:Find("white"):GetComponent(typeof(Image)).material
 	local var1_3 = arg0_3.rootTF:Find("green"):GetComponent(typeof(Image)).material
@@ -691,106 +693,122 @@ function var0_0.Item2Module(arg0_70, arg1_70)
 end
 
 function var0_0.RefreshDepth(arg0_71)
+	eachChild(arg0_71.wall, function(arg0_72)
+		setParent(arg0_72, arg0_71.floor)
+	end)
+
+	local var0_71 = {}
+
 	for iter0_71, iter1_71 in ipairs(arg0_71.data:GetItems()) do
-		arg0_71:Item2Module(iter1_71):SetSiblingIndex(iter0_71 - 1)
+		local var1_71 = arg0_71:Item2Module(iter1_71)
+
+		if isa(iter1_71, CourtYardWallFurniture) then
+			table.insert(var0_71, var1_71)
+		end
+
+		var1_71:SetSiblingIndex(iter0_71 - 1)
+	end
+
+	for iter2_71, iter3_71 in pairs(var0_71) do
+		setParent(iter3_71._tf, arg0_71.wall)
 	end
 end
 
-function var0_0.RefreshMatDepth(arg0_72)
-	for iter0_72, iter1_72 in ipairs(arg0_72.data:GetMatItems()) do
-		arg0_72:Item2Module(iter1_72):SetSiblingIndex(iter0_72 - 1)
+function var0_0.RefreshMatDepth(arg0_73)
+	for iter0_73, iter1_73 in ipairs(arg0_73.data:GetMatItems()) do
+		arg0_73:Item2Module(iter1_73):SetSiblingIndex(iter0_73 - 1)
 	end
 end
 
-function var0_0.OnTakePhoto(arg0_73)
-	GetOrAddComponent(arg0_73.selectedTF, typeof(CanvasGroup)).alpha = 0
+function var0_0.OnTakePhoto(arg0_74)
+	GetOrAddComponent(arg0_74.selectedTF, typeof(CanvasGroup)).alpha = 0
 
-	local var0_73 = Vector3(0.6, 0.6, 1)
+	local var0_74 = Vector3(0.6, 0.6, 1)
 
-	arg0_73.bgScale = arg0_73.bg.localScale
-	arg0_73.bg.localScale = var0_73
+	arg0_74.bgScale = arg0_74.bg.localScale
+	arg0_74.bg.localScale = var0_74
 
-	if arg0_73.bg.localPosition ~= Vector3(0, -100, 0) then
-		arg0_73.bgPos = arg0_73.bg.localPosition
-		arg0_73.bg.localPosition = Vector3(0, -100, 0)
+	if arg0_74.bg.localPosition ~= Vector3(0, -100, 0) then
+		arg0_74.bgPos = arg0_74.bg.localPosition
+		arg0_74.bg.localPosition = Vector3(0, -100, 0)
 	end
 end
 
-function var0_0.OnEndTakePhoto(arg0_74)
-	GetOrAddComponent(arg0_74.selectedTF, typeof(CanvasGroup)).alpha = 1
+function var0_0.OnEndTakePhoto(arg0_75)
+	GetOrAddComponent(arg0_75.selectedTF, typeof(CanvasGroup)).alpha = 1
 
-	if arg0_74.bgScale then
-		arg0_74.bg.localScale = arg0_74.bgScale
+	if arg0_75.bgScale then
+		arg0_75.bg.localScale = arg0_75.bgScale
 	end
 
-	if arg0_74.bgPos then
-		arg0_74.bg.localPosition = arg0_74.bgPos
+	if arg0_75.bgPos then
+		arg0_75.bg.localPosition = arg0_75.bgPos
 	end
 end
 
-function var0_0.OnDispose(arg0_75)
-	arg0_75.exited = true
+function var0_0.OnDispose(arg0_76)
+	arg0_76.exited = true
 
-	arg0_75.dftAniEvent:SetEndEvent(nil)
+	arg0_76.dftAniEvent:SetEndEvent(nil)
 
-	for iter0_75, iter1_75 in pairs(arg0_75.modules) do
-		iter1_75:Dispose()
+	for iter0_76, iter1_76 in pairs(arg0_76.modules) do
+		iter1_76:Dispose()
 	end
 
-	arg0_75.modules = nil
+	arg0_76.modules = nil
 
-	for iter2_75, iter3_75 in pairs(arg0_75.factorys) do
-		iter3_75:Dispose()
+	for iter2_76, iter3_76 in pairs(arg0_76.factorys) do
+		iter3_76:Dispose()
 	end
 
-	arg0_75.factorys = nil
+	arg0_76.factorys = nil
 
-	arg0_75.dragBtn:Dispose()
+	arg0_76.dragBtn:Dispose()
 
-	arg0_75.dragBtn = nil
+	arg0_76.dragBtn = nil
 
-	for iter4_75, iter5_75 in pairs(arg0_75.gridAgents) do
-		iter5_75:Dispose()
+	for iter4_76, iter5_76 in pairs(arg0_76.gridAgents) do
+		iter5_76:Dispose()
 	end
 
-	arg0_75.gridAgents = nil
+	arg0_76.gridAgents = nil
 
 	if var1_0 then
-		arg0_75.mapDebug:Dispose()
+		arg0_76.mapDebug:Dispose()
 	end
 
-	if arg0_75.pedestalModule then
-		arg0_75.pedestalModule:Dispose()
+	if arg0_76.pedestalModule then
+		arg0_76.pedestalModule:Dispose()
 
-		arg0_75.pedestalModule = nil
+		arg0_76.pedestalModule = nil
 	end
 
-	arg0_75.effectAgent:Dispose()
+	arg0_76.effectAgent:Dispose()
 
-	arg0_75.effectAgent = nil
+	arg0_76.effectAgent = nil
 
-	arg0_75.soundAgent:Dispose()
+	arg0_76.soundAgent:Dispose()
 
-	arg0_75.soundAgent = nil
+	arg0_76.soundAgent = nil
 
-	arg0_75.bgAgent:Dispose()
+	arg0_76.bgAgent:Dispose()
 
-	arg0_75.bgAgent = nil
+	arg0_76.bgAgent = nil
 
-	arg0_75.bgmAgent:Dispose()
+	arg0_76.bgmAgent:Dispose()
 
-	arg0_75.bgmAgent = nil
+	arg0_76.bgmAgent = nil
 
-	arg0_75.descPage:Destroy()
+	arg0_76.descPage:Destroy()
 
-	arg0_75.descPage = nil
+	arg0_76.descPage = nil
 
-	arg0_75.playTheLutePage:Destroy()
+	arg0_76.playTheLutePage:Destroy()
 
-	arg0_75.playTheLutePage = nil
+	arg0_76.playTheLutePage = nil
 
-	if not IsNil(arg0_75._go) then
-		Object.Destroy(arg0_75._go)
+	if not IsNil(arg0_76._go) then
+		Object.Destroy(arg0_76._go)
 	end
 end
 

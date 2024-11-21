@@ -3,7 +3,7 @@ local var0_0 = class("NewDodgemResultGradePage", import("..NewBattleResultGradeP
 function var0_0.LoadBG(arg0_1, arg1_1)
 	local var0_1 = "CommonBg"
 
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. var0_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_2)
+	LoadAnyAsync("BattleResultItems/" .. var0_1, "", nil, function(arg0_2)
 		if arg0_1.exited or IsNil(arg0_2) then
 			if arg1_1 then
 				arg1_1()
@@ -17,7 +17,7 @@ function var0_0.LoadBG(arg0_1, arg1_1)
 		if arg1_1 then
 			arg1_1()
 		end
-	end), false, false)
+	end)
 end
 
 function var0_0.RegisterEvent(arg0_3, arg1_3)
@@ -76,7 +76,7 @@ function var0_0.GetGetObjectives(arg0_12)
 end
 
 function var0_0.LoadPainitingContainer(arg0_13, arg1_13)
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/Painting", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_14)
+	LoadAny("BattleResultItems/Painting", "", nil, function(arg0_14)
 		if arg0_13.exited then
 			return
 		end
@@ -84,7 +84,7 @@ function var0_0.LoadPainitingContainer(arg0_13, arg1_13)
 		local var0_14 = Object.Instantiate(arg0_14, arg0_13.bgTr)
 
 		arg0_13:UpdatePainting(var0_14, arg1_13)
-	end), true, true)
+	end)
 end
 
 function var0_0.UpdatePainting(arg0_15, arg1_15, arg2_15)

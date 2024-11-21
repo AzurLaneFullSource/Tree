@@ -1,134 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_2 = {
-	[102030] = {
-		ship_group = 10203,
-		name = "Brooklyn",
-		hand_id = 3,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "bulukelin",
-		illustrator = 7,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 102030,
-		voice_actor_2 = -1,
-		prefab = "bulukelin",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Brooklyn-class Light Cruiser – Brooklyn, Hull Number CL-40!",
-		voice_actor = 64,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.789,
-					0.501,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.789,
-					0.501,
-					0
-				},
-				{
-					-0.238,
-					0.927,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					-0.457,
-					1.102,
-					0
-				},
-				{
-					-0.834,
-					1.234,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				70,
-				{
-					{
-						"smoke",
-						{
-							0.39,
-							0.41,
-							0
-						}
-					}
-				}
-			},
-			{
-				30,
-				{
-					{
-						"smoke",
-						{
-							-0.61,
-							0.53,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[102040] = {
 		ship_group = 10204,
 		name = "Phoenix",
@@ -13052,6 +12924,218 @@ pg.base.ship_skin_template_2 = {
 						{
 							-0.625,
 							2.427,
+							0.14
+						}
+					}
+				}
+			}
+		}
+	},
+	[103140] = {
+		ship_group = 10314,
+		name = "San Francisco",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "jiujinshan",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 103140,
+		voice_actor_2 = -1,
+		prefab = "jiujinshan",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "New Orleans-class heavy cruiser – San Francisco, Hull Number CA-38.",
+		voice_actor = 275,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.266,
+					1.151,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.301,
+					1.144,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.03,
+					0.003,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.596,
+							2.323,
+							0.14
+						}
+					}
+				}
+			}
+		}
+	},
+	[103141] = {
+		ship_group = 10314,
+		name = "Funny Bunny!",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "1102",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70546,
+		painting = "jiujinshan_3",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 16,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "145",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 103141,
+		voice_actor_2 = -1,
+		prefab = "jiujinshan_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Music! Lights! Refreshments! We're all set! Welcome to San Francisco's party! Come and enjoy yourself!",
+		voice_actor = 275,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.062,
+					1.166,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.075,
+					1.103,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.001,
+					0.003,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.625,
+							2.35,
 							0.14
 						}
 					}

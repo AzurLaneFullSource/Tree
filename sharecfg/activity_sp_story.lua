@@ -1536,6 +1536,324 @@ pg.activity_sp_story = {
 			}
 		}
 	},
+	[90] = {
+		story_type = 1,
+		pre_event = "",
+		name = "EPS-1 The Journey Begins",
+		unlock_conditions = "",
+		change_prefab = "",
+		change_background = "bg_tolove_1",
+		story = "WEIXIANFAMINGPOJINZHONGGUANQIA1",
+		change_bgm = "story-richang-refreshing",
+		id = 90,
+		lock = ""
+	},
+	[91] = {
+		story_type = 1,
+		name = "EP1-1 Questy MacGuffin",
+		unlock_conditions = "Clear EP1-1.",
+		change_bgm = "story-richang-refreshing",
+		change_prefab = "",
+		change_background = "bg_tolove_1",
+		id = 91,
+		story = "WEIXIANFAMINGPOJINZHONGGUANQIA2",
+		pre_event = {
+			90
+		},
+		lock = {
+			{
+				4,
+				90
+			}
+		}
+	},
+	[92] = {
+		story_type = 1,
+		name = "EP1-2 A Rigging Test Drive",
+		unlock_conditions = "Clear EP1-2.",
+		change_bgm = "story-richang-refreshing",
+		change_prefab = "",
+		change_background = "bg_tolove_1",
+		id = 92,
+		story = "WEIXIANFAMINGPOJINZHONGGUANQIA3",
+		pre_event = {
+			91
+		},
+		lock = {
+			{
+				4,
+				91
+			}
+		}
+	},
+	[93] = {
+		story_type = 2,
+		name = "EP1-3 The Royal Navy Strikes",
+		unlock_conditions = "Clear EP1-3.",
+		change_bgm = "story-richang-refreshing",
+		change_prefab = "",
+		change_background = "bg_tolove_1",
+		id = 93,
+		story = "1878001",
+		pre_event = {
+			92
+		},
+		lock = {
+			{
+				4,
+				92
+			}
+		}
+	},
+	[94] = {
+		story_type = 1,
+		name = "EP1-4 A Queen's Invitation",
+		unlock_conditions = "Clear EP1-4.",
+		change_bgm = "story-richang-refreshing",
+		change_prefab = "",
+		change_background = "bg_tolove_1",
+		id = 94,
+		story = "WEIXIANFAMINGPOJINZHONGGUANQIA5",
+		pre_event = {
+			93
+		},
+		lock = {
+			{
+				4,
+				93
+			}
+		}
+	},
+	[95] = {
+		story_type = 1,
+		name = "EP2-1 They Return",
+		unlock_conditions = "Clear EP2-1.",
+		change_bgm = "story-richang-refreshing",
+		change_prefab = "",
+		change_background = "bg_tolove_1",
+		id = 95,
+		story = "WEIXIANFAMINGPOJINZHONGGUANQIA6",
+		pre_event = {
+			94
+		},
+		lock = {
+			{
+				4,
+				94
+			}
+		}
+	},
+	[96] = {
+		story_type = 2,
+		name = "EP2-2 The Doppelganger's Challenge",
+		unlock_conditions = "Clear EP2-2.",
+		change_bgm = "story-richang-refreshing",
+		change_prefab = "",
+		change_background = "bg_tolove_1",
+		id = 96,
+		story = "1878002",
+		pre_event = {
+			95
+		},
+		lock = {
+			{
+				4,
+				95
+			}
+		}
+	},
+	[97] = {
+		story_type = 1,
+		name = "EP2-3 Tea Time",
+		unlock_conditions = "Clear EP2-3.",
+		change_bgm = "story-richang-refreshing",
+		change_prefab = "",
+		change_background = "bg_tolove_1",
+		id = 97,
+		story = "WEIXIANFAMINGPOJINZHONGGUANQIA8",
+		pre_event = {
+			96
+		},
+		lock = {
+			{
+				4,
+				96
+			}
+		}
+	},
+	[98] = {
+		story_type = 1,
+		name = "EPS-2 The Next Step",
+		unlock_conditions = "Clear EPS-2.",
+		change_bgm = "story-richang-refreshing",
+		change_prefab = "",
+		change_background = "star_level_bg_115",
+		id = 98,
+		story = "WEIXIANFAMINGPOJINZHONGGUANQIA9",
+		pre_event = {
+			97
+		},
+		lock = {
+			{
+				4,
+				97
+			}
+		}
+	},
+	[99] = {
+		story_type = 1,
+		name = "EP3-1 First Checkpoint",
+		unlock_conditions = "Clear EP3-1.",
+		change_bgm = "tl-battle-inst",
+		change_prefab = "",
+		change_background = "bg_tolove_2",
+		id = 99,
+		story = "WEIXIANFAMINGPOJINZHONGGUANQIA10",
+		pre_event = {
+			98
+		},
+		lock = {
+			{
+				4,
+				98
+			}
+		}
+	},
+	[100] = {
+		story_type = 1,
+		name = "EP3-2 Second Checkpoint",
+		unlock_conditions = "Clear EP3-2.",
+		change_bgm = "tl-battle-inst",
+		change_prefab = "",
+		change_background = "bg_tolove_2",
+		id = 100,
+		story = "WEIXIANFAMINGPOJINZHONGGUANQIA11",
+		pre_event = {
+			98
+		},
+		lock = {
+			{
+				4,
+				99
+			}
+		}
+	},
+	[101] = {
+		story_type = 1,
+		name = "EP3-3 Third Checkpoint",
+		unlock_conditions = "Clear EP3-3.",
+		change_bgm = "tl-battle-inst",
+		change_prefab = "",
+		change_background = "bg_tolove_2",
+		id = 101,
+		story = "WEIXIANFAMINGPOJINZHONGGUANQIA12",
+		pre_event = {
+			98
+		},
+		lock = {
+			{
+				4,
+				100
+			}
+		}
+	},
+	[102] = {
+		story_type = 2,
+		name = "EP3-4 Balance Update",
+		unlock_conditions = "Clear EP3-4.",
+		change_bgm = "tl-battle-inst",
+		change_prefab = "",
+		change_background = "bg_tolove_2",
+		id = 102,
+		story = "1878003",
+		pre_event = {
+			99,
+			100,
+			101
+		},
+		lock = {
+			{
+				4,
+				101
+			}
+		}
+	},
+	[103] = {
+		story_type = 1,
+		name = "EP4-1 Back at Sea",
+		unlock_conditions = "Clear EP4-1.",
+		change_bgm = "tl-battle-inst",
+		change_prefab = "",
+		change_background = "bg_tolove_2",
+		id = 103,
+		story = "WEIXIANFAMINGPOJINZHONGGUANQIA14",
+		pre_event = {
+			102
+		},
+		lock = {
+			{
+				4,
+				102
+			}
+		}
+	},
+	[104] = {
+		story_type = 2,
+		name = "EP4-2 Turning the Tables",
+		unlock_conditions = "Clear EP4-2.",
+		change_bgm = "tl-battle-inst",
+		change_prefab = "",
+		change_background = "bg_tolove_2",
+		id = 104,
+		story = "1878004",
+		pre_event = {
+			103
+		},
+		lock = {
+			{
+				4,
+				103
+			}
+		}
+	},
+	[105] = {
+		story_type = 2,
+		name = "EP5-1 The Final Challenge",
+		unlock_conditions = "Clear EP5-1.",
+		change_bgm = "tl-battle-inst",
+		change_prefab = "",
+		change_background = "bg_tolove_2",
+		id = 105,
+		story = "1878005",
+		pre_event = {
+			104
+		},
+		lock = {
+			{
+				4,
+				104
+			}
+		}
+	},
+	[106] = {
+		story_type = 1,
+		name = "EPS-3 The Epilogue's Only Just Begun",
+		unlock_conditions = "Clear EPS-3.",
+		change_bgm = "tl-battle",
+		change_prefab = "",
+		change_background = "bg_tolove_3",
+		id = 106,
+		story = "WEIXIANFAMINGPOJINZHONGGUANQIA17",
+		pre_event = {
+			105
+		},
+		lock = {
+			{
+				4,
+				105
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -1618,6 +1936,23 @@ pg.activity_sp_story = {
 		86,
 		87,
 		88,
-		89
+		89,
+		90,
+		91,
+		92,
+		93,
+		94,
+		95,
+		96,
+		97,
+		98,
+		99,
+		100,
+		101,
+		102,
+		103,
+		104,
+		105,
+		106
 	}
 }

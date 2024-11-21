@@ -27,7 +27,7 @@ function var0_0.LoadHighLightArea(arg0_3, arg1_3)
 end
 
 function var0_0.LoadRes(arg0_5, arg1_5, arg2_5)
-	ResourceMgr.Inst:getAssetAsync("guideitem/" .. arg1_5, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_6)
+	LoadAnyAsync("guideitem/" .. arg1_5, "", nil, function(arg0_6)
 		if IsNil(arg0_6) then
 			return
 		end
@@ -39,7 +39,7 @@ function var0_0.LoadRes(arg0_5, arg1_5, arg2_5)
 		if arg2_5 then
 			arg2_5(var0_6)
 		end
-	end), true, true)
+	end)
 end
 
 function var0_0.Clear(arg0_7)
