@@ -317,6 +317,8 @@ function var0_0.execute(arg0_1, arg1_1)
 			arg0_1:sendNotification(GAME.LOAD_PLAYER_DATA_DONE)
 		end
 
+		pg.GameTrackerMgr.GetInstance():FetchCache()
+
 		if Dorm3dRoomTemplateScene.FirstDefaultSetting then
 			arg0_1:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGraphics(Dorm3dRoomTemplateScene.FirstDefaultSetting))
 
