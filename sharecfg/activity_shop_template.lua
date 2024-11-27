@@ -32367,6 +32367,77 @@ pg.activity_shop_template = {
 			}
 		}
 	},
+	[12023] = {
+		commodity_id_list = "",
+		resource_category = 2,
+		activity = 7104,
+		commodity_id = 9705021,
+		commodity_id_list_show = 0,
+		num = 1,
+		num_limit = 1,
+		commodity_type = 4,
+		resource_type = 21000,
+		id = 12023,
+		resource_num = 60,
+		order = 3,
+		limit_args = {
+			{
+				"uniqueship",
+				970502
+			},
+			{
+				2,
+				{
+					{
+						2024,
+						12,
+						1
+					},
+					{
+						0,
+						0,
+						0
+					}
+				}
+			}
+		}
+	},
+	[12024] = {
+		commodity_id_list = "",
+		resource_category = 2,
+		activity = 7104,
+		commodity_id = 21010,
+		commodity_id_list_show = 0,
+		num = 1,
+		num_limit = 4,
+		commodity_type = 2,
+		resource_type = 21000,
+		id = 12024,
+		resource_num = 30,
+		order = 4,
+		limit_args = {
+			{
+				1,
+				970502,
+				1
+			},
+			{
+				2,
+				{
+					{
+						2024,
+						12,
+						1
+					},
+					{
+						0,
+						0,
+						0
+					}
+				}
+			}
+		}
+	},
 	get_id_list_by_commodity_type = {
 		[4] = {
 			201,
@@ -32501,7 +32572,8 @@ pg.activity_shop_template = {
 			11006,
 			12017,
 			12018,
-			12019
+			12019,
+			12023
 		},
 		[3] = {
 			202,
@@ -34256,7 +34328,8 @@ pg.activity_shop_template = {
 			12016,
 			12020,
 			12021,
-			12022
+			12022,
+			12024
 		},
 		{
 			421,
@@ -36643,6 +36716,8 @@ pg.activity_shop_template = {
 		12019,
 		12020,
 		12021,
-		12022
+		12022,
+		12023,
+		12024
 	}
 }

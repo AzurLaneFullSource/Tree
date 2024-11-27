@@ -602,7 +602,7 @@ function var0_0.loadXGM(arg0_50, arg1_50)
 	if arg0_50.xgm then
 		arg1_50()
 	else
-		arg0_50.autoLoader:LoadPrefab("ui/minigameui/qtegameuiasync_atlas", "xiongguimao", function(arg0_51)
+		arg0_50.autoLoader:LoadPrefab("ui/minigameui/qtegameuiasync_atlas", "xiongguimaoTpl", function(arg0_51)
 			arg0_50.xgm = tf(arg0_51)
 			arg0_50.xgmSpine = arg0_50.xgm:GetComponent("SpineAnimUI")
 			arg0_50.xgmSklGraphic = arg0_50.xgm:GetComponent("SkeletonGraphic")

@@ -19984,16 +19984,16 @@ pg.base.furniture_data_template = {
 		picture = "",
 		is_get_time_note = 1,
 		themeId = 0,
-		deblocking = 1,
-		is_3d_obj = 0,
 		count = 1,
+		is_3d_obj = 0,
+		describe = "Let's ride a spaceship to new adventures!",
 		tag = 8,
 		icon = "tolovexunzhangicon",
 		spine_extra = "",
 		level = 1,
-		describe = "Let's ride a spaceship to new adventures!",
-		rarity = 5,
 		advice = 0,
+		rarity = 5,
+		deblocking = 1,
 		comfortable = 0,
 		spine_action_replace = "",
 		belong = 1,
@@ -20007,17 +20007,16 @@ pg.base.furniture_data_template = {
 		offset = {},
 		canputonGrid = {},
 		can_trigger = {
-			1
+			2,
+			{
+				"story-richang-rosy-short"
+			}
 		},
 		spine = {
 			{
 				"tolovexunzhang",
 				"normal"
 			}
-		},
-		interaction_bgm = {
-			0,
-			"story-richang-rosy-short"
 		},
 		interAction_group = {}
 	},

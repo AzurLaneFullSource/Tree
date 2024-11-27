@@ -48,10 +48,23 @@ pg.item_data_battleui = {
 		icon = "103",
 		scene = {}
 	},
+	[104] = {
+		key = "SkinNormal_20241107",
+		name = "Neon",
+		desc = "Augment your combat experience with neon lights and rhythmic light beams.",
+		display_icon = "Ui_104",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "Cruise Missions S20",
+		id = 104,
+		icon = "104",
+		scene = {}
+	},
 	all = {
 		0,
 		101,
 		102,
-		103
+		103,
+		104
 	}
 }
