@@ -17,7 +17,9 @@ function var0_0.GetActivityID(arg0_2)
 end
 
 function var0_0.OnClick(arg0_3)
-	if getProxy(ActivityProxy):getActivityById(arg0_3:GetActivityID()):isEnd() then
+	local var0_3 = getProxy(ActivityProxy):getActivityById(ActivityConst.TOLOVE_MINIGAME_TASK_ID)
+
+	if var0_3 == nil or var0_3:isEnd() then
 		pg.m02:sendNotification(GAME.LOAD_LAYERS, {
 			parentContext = getProxy(ContextProxy):getCurrentContext(),
 			context = Context.New({
@@ -32,9 +34,13 @@ function var0_0.OnClick(arg0_3)
 end
 
 function var0_0.OnInit(arg0_4)
-	local var0_4 = ToLoveCollabBackHillScene.IsShowMainTip()
+	local var0_4 = getProxy(ActivityProxy):getActivityById(ActivityConst.TOLOVE_MINIGAME_TASK_ID)
 
-	setActive(arg0_4.tipTr.gameObject, var0_4)
+	if var0_4 ~= nil and not var0_4:isEnd() then
+		local var1_4 = ToLoveCollabBackHillScene.IsShowMainTip()
+
+		setActive(arg0_4.tipTr.gameObject, var1_4)
+	end
 end
 
 return var0_0

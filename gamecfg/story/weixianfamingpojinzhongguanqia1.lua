@@ -9,7 +9,7 @@ return {
 			bgName = "star_level_bg_106",
 			nameColor = "#A9F548FF",
 			say = "Somewhere, on one distant, unknown island...",
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

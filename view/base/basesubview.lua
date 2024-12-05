@@ -142,116 +142,130 @@ function var0_0.ActionInvoke(arg0_11, arg1_11, ...)
 	arg0_11:HandleFuncQueue()
 end
 
-function var0_0.CallbackInvoke(arg0_12, arg1_12, ...)
-	arg0_12._funcQueue[#arg0_12._funcQueue + 1] = {
-		func = arg1_12,
+function var0_0.ActionInvokeExclusive(arg0_12, arg1_12, ...)
+	local var0_12 = #arg0_12._funcQueue
+
+	while var0_12 > 0 do
+		if arg0_12._funcQueue[var0_12].funcName == arg1_12 then
+			table.remove(arg0_12._funcQueue, var0_12)
+		end
+
+		var0_12 = var0_12 - 1
+	end
+
+	arg0_12:ActionInvoke(arg1_12, ...)
+end
+
+function var0_0.CallbackInvoke(arg0_13, arg1_13, ...)
+	arg0_13._funcQueue[#arg0_13._funcQueue + 1] = {
+		func = arg1_13,
 		params = packEx(...)
 	}
 
-	arg0_12:HandleFuncQueue()
+	arg0_13:HandleFuncQueue()
 end
 
-function var0_0.ExecuteAction(arg0_13, arg1_13, ...)
-	arg0_13:Load()
-	arg0_13:ActionInvoke(arg1_13, ...)
+function var0_0.ExecuteAction(arg0_14, arg1_14, ...)
+	arg0_14:Load()
+	arg0_14:ActionInvoke(arg1_14, ...)
 end
 
-function var0_0.GetLoaded(arg0_14)
-	return arg0_14._state >= var0_0.STATES.LOADED
+function var0_0.GetLoaded(arg0_15)
+	return arg0_15._state >= var0_0.STATES.LOADED
 end
 
-function var0_0.CheckState(arg0_15, arg1_15)
-	return arg0_15._state == arg1_15
+function var0_0.CheckState(arg0_16, arg1_16)
+	return arg0_16._state == arg1_16
 end
 
-function var0_0.Show(arg0_16)
-	setActive(arg0_16._tf, true)
-	arg0_16:ShowOrHideResUI(true)
-	arg0_16:PlayBGM()
+function var0_0.Show(arg0_17)
+	setActive(arg0_17._tf, true)
+	arg0_17:ShowOrHideResUI(true)
+	arg0_17:PlayBGM()
 end
 
-function var0_0.Hide(arg0_17)
-	setActive(arg0_17._tf, false)
-	arg0_17:ShowOrHideResUI(false)
-	arg0_17:StopBgm()
+function var0_0.Hide(arg0_18)
+	setActive(arg0_18._tf, false)
+	arg0_18:ShowOrHideResUI(false)
+	arg0_18:StopBgm()
 end
 
-function var0_0.isShowing(arg0_18)
-	return arg0_18._tf and isActive(arg0_18._tf)
+function var0_0.isShowing(arg0_19)
+	return arg0_19._tf and isActive(arg0_19._tf)
 end
 
-function var0_0.getBGM(arg0_19, arg1_19)
-	return getBgm(arg1_19 or arg0_19.__cname)
+function var0_0.getBGM(arg0_20, arg1_20)
+	return getBgm(arg1_20 or arg0_20.__cname)
 end
 
-function var0_0.PlayBGM(arg0_20)
-	local var0_20 = arg0_20:getBGM()
+function var0_0.PlayBGM(arg0_21)
+	local var0_21 = arg0_21:getBGM()
 
-	if var0_20 then
-		pg.BgmMgr.GetInstance():Push(arg0_20.__cname, var0_20)
+	if var0_21 then
+		pg.BgmMgr.GetInstance():Push(arg0_21.__cname, var0_21)
 	end
 end
 
-function var0_0.StopBgm(arg0_21)
-	pg.BgmMgr.GetInstance():Pop(arg0_21.__cname)
+function var0_0.StopBgm(arg0_22)
+	pg.BgmMgr.GetInstance():Pop(arg0_22.__cname)
 end
 
-function var0_0.findTF(arg0_22, arg1_22, arg2_22)
-	assert(arg0_22._tf, "transform should exist")
+function var0_0.findTF(arg0_23, arg1_23, arg2_23)
+	assert(arg0_23._tf, "transform should exist")
 
-	return findTF(arg2_22 or arg0_22._tf, arg1_22)
+	return findTF(arg2_23 or arg0_23._tf, arg1_23)
 end
 
-function var0_0.getTpl(arg0_23, arg1_23, arg2_23)
-	local var0_23 = arg0_23:findTF(arg1_23, arg2_23)
+function var0_0.getTpl(arg0_24, arg1_24, arg2_24)
+	local var0_24 = arg0_24:findTF(arg1_24, arg2_24)
 
-	var0_23:SetParent(arg0_23._tf, false)
-	SetActive(var0_23, false)
+	var0_24:SetParent(arg0_24._tf, false)
+	SetActive(var0_24, false)
 
-	return var0_23
+	return var0_24
 end
 
-function var0_0.getUIName(arg0_24)
+function var0_0.getUIName(arg0_25)
 	return nil
 end
 
-function var0_0.OnLoaded(arg0_25)
+function var0_0.OnLoaded(arg0_26)
 	return
 end
 
-function var0_0.OnInit(arg0_26)
+function var0_0.OnInit(arg0_27)
 	return
 end
 
-function var0_0.OnDestroy(arg0_27)
+function var0_0.OnDestroy(arg0_28)
 	return
 end
 
-function var0_0.ResUISettings(arg0_28)
+function var0_0.ResUISettings(arg0_29)
 	return nil
 end
 
-function var0_0.ShowOrHideResUI(arg0_29, arg1_29)
-	local var0_29 = arg0_29:ResUISettings()
+function var0_0.ShowOrHideResUI(arg0_30, arg1_30)
+	local var0_30 = arg0_30:ResUISettings()
 
-	if not var0_29 then
+	if not var0_30 then
 		return
 	end
 
-	if var0_29 == true then
-		var0_29 = {
+	if var0_30 == true then
+		var0_30 = {
 			anim = true,
 			showType = PlayerResUI.TYPE_ALL
 		}
 	end
 
 	pg.playerResUI:SetActive(setmetatable({
-		active = arg1_29,
-		weight = var0_29.weight,
-		groupName = var0_29.groupName,
-		canvasOrder = var0_29.order or false
+		active = arg1_30,
+		weight = var0_30.weight,
+		groupName = var0_30.groupName,
+		canvasOrder = var0_30.order or false
 	}, {
-		__index = var0_29
+		__index = var0_30
 	}))
 end
 

@@ -8996,6 +8996,754 @@ pg.world_task_data = {
 		},
 		reset_task = {}
 	},
+	[10070] = {
+		server_type = 4,
+		name = "File Mission 116-1",
+		continuity = 1,
+		type = 6,
+		log_text = "",
+		intimacy = 0,
+		sharing = 1,
+		id = 10070,
+		complete_condition = 8,
+		exp = 0,
+		rare_task_text = "Proceed to the target zone and defeat all Siren fleets to unlock confidential files.",
+		priority = 10,
+		complete_stage = 0,
+		complete_parameter_num = 1,
+		target_map_lock = 0,
+		task_ed = "",
+		description = "Clear the zone to unlock confidential files.",
+		item_retrieve = 1,
+		need_level = 0,
+		auto_complete = 1,
+		task_icon = "",
+		rare_task_icon = "tbniang",
+		task_op = "",
+		countdown = 0,
+		drop = 1003771,
+		rank = 0,
+		task_panel_BG = "",
+		need_task_complete = 0,
+		condition_text = "",
+		task_random_enter = {
+			54
+		},
+		task_target_map = {},
+		following_region = {},
+		following_map = {
+			54
+		},
+		following_random = {
+			20020
+		},
+		task_event = {},
+		complete_parameter = {
+			2501000
+		},
+		next_task = {
+			10071
+		},
+		task_goto = {
+			3
+		},
+		show = {
+			{
+				12,
+				2100030,
+				1
+			},
+			{
+				12,
+				2100021,
+				2
+			},
+			{
+				2,
+				150002,
+				2
+			},
+			{
+				2,
+				150001,
+				2
+			}
+		},
+		reset_task = {}
+	},
+	[10071] = {
+		server_type = 4,
+		name = "File Mission 116-2",
+		continuity = 1,
+		type = 6,
+		log_text = "",
+		intimacy = 0,
+		sharing = 1,
+		id = 10071,
+		complete_condition = 8,
+		exp = 0,
+		rare_task_text = "Proceed to the target zone and defeat all Siren fleets to unlock confidential files.",
+		priority = 10,
+		complete_stage = 0,
+		complete_parameter_num = 1,
+		target_map_lock = 0,
+		task_ed = "",
+		description = "Clear the zone to unlock confidential files.",
+		item_retrieve = 1,
+		need_level = 0,
+		auto_complete = 1,
+		task_icon = "",
+		rare_task_icon = "tbniang",
+		task_op = "",
+		countdown = 0,
+		drop = 1003772,
+		rank = 0,
+		task_panel_BG = "",
+		need_task_complete = 0,
+		condition_text = "",
+		task_random_enter = {
+			53
+		},
+		task_target_map = {},
+		following_region = {},
+		following_map = {
+			53
+		},
+		following_random = {
+			20020
+		},
+		task_event = {},
+		complete_parameter = {
+			2501000
+		},
+		next_task = {
+			10072
+		},
+		task_goto = {
+			3
+		},
+		show = {
+			{
+				12,
+				2100030,
+				1
+			},
+			{
+				12,
+				2100021,
+				2
+			},
+			{
+				2,
+				150002,
+				2
+			},
+			{
+				2,
+				150001,
+				2
+			}
+		},
+		reset_task = {}
+	},
+	[10072] = {
+		server_type = 4,
+		name = "File Mission 116-3",
+		continuity = 1,
+		type = 6,
+		log_text = "",
+		intimacy = 0,
+		sharing = 1,
+		id = 10072,
+		complete_condition = 8,
+		exp = 0,
+		rare_task_text = "Proceed to the target zone and defeat all Siren fleets to unlock confidential files.",
+		priority = 10,
+		complete_stage = 0,
+		complete_parameter_num = 1,
+		target_map_lock = 0,
+		task_ed = "",
+		description = "Clear the zone to unlock confidential files.",
+		item_retrieve = 1,
+		need_level = 0,
+		auto_complete = 1,
+		task_icon = "",
+		rare_task_icon = "tbniang",
+		task_op = "",
+		countdown = 0,
+		drop = 1003773,
+		rank = 0,
+		task_panel_BG = "",
+		need_task_complete = 0,
+		condition_text = "",
+		task_random_enter = {
+			51
+		},
+		task_target_map = {},
+		following_region = {},
+		following_map = {
+			51
+		},
+		following_random = {
+			20020
+		},
+		task_event = {},
+		complete_parameter = {
+			2501000
+		},
+		next_task = {
+			10073
+		},
+		task_goto = {
+			3
+		},
+		show = {
+			{
+				12,
+				2100030,
+				1
+			},
+			{
+				12,
+				2100021,
+				2
+			},
+			{
+				2,
+				150002,
+				2
+			},
+			{
+				2,
+				150001,
+				2
+			}
+		},
+		reset_task = {}
+	},
+	[10073] = {
+		server_type = 4,
+		name = "File Mission 116-4",
+		continuity = 1,
+		type = 6,
+		log_text = "",
+		intimacy = 0,
+		sharing = 1,
+		id = 10073,
+		complete_condition = 8,
+		exp = 0,
+		rare_task_text = "Proceed to the target zone and defeat all Siren fleets to unlock confidential files.",
+		priority = 10,
+		complete_stage = 0,
+		complete_parameter_num = 1,
+		target_map_lock = 0,
+		task_ed = "",
+		description = "Clear the zone to unlock confidential files.",
+		item_retrieve = 1,
+		need_level = 0,
+		auto_complete = 1,
+		task_icon = "",
+		rare_task_icon = "tbniang",
+		task_op = "",
+		countdown = 0,
+		drop = 1003774,
+		rank = 0,
+		task_panel_BG = "",
+		need_task_complete = 0,
+		condition_text = "",
+		task_random_enter = {
+			32
+		},
+		task_target_map = {},
+		following_region = {},
+		following_map = {
+			32
+		},
+		following_random = {
+			20020
+		},
+		task_event = {},
+		complete_parameter = {
+			2501000
+		},
+		next_task = {
+			10074
+		},
+		task_goto = {
+			3
+		},
+		show = {
+			{
+				12,
+				2100030,
+				1
+			},
+			{
+				12,
+				2100021,
+				2
+			},
+			{
+				2,
+				150002,
+				2
+			},
+			{
+				2,
+				150001,
+				2
+			}
+		},
+		reset_task = {}
+	},
+	[10074] = {
+		server_type = 4,
+		name = "File Mission 116-5",
+		continuity = 1,
+		type = 6,
+		log_text = "",
+		intimacy = 0,
+		sharing = 1,
+		id = 10074,
+		complete_condition = 8,
+		exp = 0,
+		rare_task_text = "Proceed to the target zone and defeat all Siren fleets to unlock confidential files.",
+		priority = 10,
+		complete_stage = 0,
+		complete_parameter_num = 1,
+		target_map_lock = 0,
+		task_ed = "",
+		description = "Clear the zone to unlock confidential files.",
+		item_retrieve = 1,
+		need_level = 0,
+		auto_complete = 1,
+		task_icon = "",
+		rare_task_icon = "tbniang",
+		task_op = "",
+		countdown = 0,
+		drop = 1003775,
+		rank = 0,
+		task_panel_BG = "",
+		need_task_complete = 0,
+		condition_text = "",
+		task_random_enter = {
+			25
+		},
+		task_target_map = {},
+		following_region = {},
+		following_map = {
+			25
+		},
+		following_random = {
+			20020
+		},
+		task_event = {},
+		complete_parameter = {
+			2501000
+		},
+		next_task = {
+			10075
+		},
+		task_goto = {
+			3
+		},
+		show = {
+			{
+				12,
+				2100030,
+				1
+			},
+			{
+				12,
+				2100021,
+				2
+			},
+			{
+				2,
+				150002,
+				2
+			},
+			{
+				2,
+				150001,
+				2
+			}
+		},
+		reset_task = {}
+	},
+	[10075] = {
+		server_type = 4,
+		name = "File Mission 116-6",
+		continuity = 1,
+		type = 6,
+		log_text = "",
+		intimacy = 0,
+		sharing = 1,
+		id = 10075,
+		complete_condition = 8,
+		exp = 0,
+		rare_task_text = "Proceed to the target zone and defeat all Siren fleets to unlock confidential files.",
+		priority = 10,
+		complete_stage = 0,
+		complete_parameter_num = 1,
+		target_map_lock = 0,
+		task_ed = "",
+		description = "Clear the zone to unlock confidential files.",
+		item_retrieve = 1,
+		need_level = 0,
+		auto_complete = 1,
+		task_icon = "",
+		rare_task_icon = "tbniang",
+		task_op = "",
+		countdown = 0,
+		drop = 1003776,
+		rank = 0,
+		task_panel_BG = "",
+		need_task_complete = 0,
+		condition_text = "",
+		task_random_enter = {
+			23
+		},
+		task_target_map = {},
+		following_region = {},
+		following_map = {
+			23
+		},
+		following_random = {
+			20021
+		},
+		task_event = {},
+		complete_parameter = {
+			2501001
+		},
+		next_task = {
+			10076
+		},
+		task_goto = {
+			3
+		},
+		show = {
+			{
+				12,
+				2100030,
+				1
+			},
+			{
+				12,
+				2100021,
+				5
+			},
+			{
+				2,
+				150002,
+				3
+			},
+			{
+				2,
+				150001,
+				5
+			}
+		},
+		reset_task = {}
+	},
+	[10076] = {
+		server_type = 4,
+		name = "File Mission 116-7",
+		continuity = 1,
+		type = 6,
+		log_text = "",
+		intimacy = 0,
+		sharing = 1,
+		id = 10076,
+		complete_condition = 8,
+		exp = 0,
+		rare_task_text = "Proceed to the target zone and defeat all Siren fleets to unlock confidential files.",
+		priority = 10,
+		complete_stage = 0,
+		complete_parameter_num = 1,
+		target_map_lock = 0,
+		task_ed = "",
+		description = "Clear the zone to unlock confidential files.",
+		item_retrieve = 1,
+		need_level = 0,
+		auto_complete = 1,
+		task_icon = "",
+		rare_task_icon = "tbniang",
+		task_op = "",
+		countdown = 0,
+		drop = 1003777,
+		rank = 0,
+		task_panel_BG = "",
+		need_task_complete = 0,
+		condition_text = "",
+		task_random_enter = {
+			83
+		},
+		task_target_map = {},
+		following_region = {},
+		following_map = {
+			83
+		},
+		following_random = {
+			20021
+		},
+		task_event = {},
+		complete_parameter = {
+			2501001
+		},
+		next_task = {
+			10077
+		},
+		task_goto = {
+			3
+		},
+		show = {
+			{
+				12,
+				2100030,
+				1
+			},
+			{
+				12,
+				2100021,
+				5
+			},
+			{
+				2,
+				150002,
+				3
+			},
+			{
+				2,
+				150001,
+				5
+			}
+		},
+		reset_task = {}
+	},
+	[10077] = {
+		server_type = 4,
+		name = "File Mission 116-8 116-9",
+		continuity = 1,
+		type = 6,
+		log_text = "",
+		intimacy = 0,
+		sharing = 1,
+		id = 10077,
+		complete_condition = 8,
+		exp = 0,
+		rare_task_text = "Proceed to the target zone and defeat all Siren fleets to unlock confidential files.",
+		priority = 10,
+		complete_stage = 0,
+		complete_parameter_num = 1,
+		target_map_lock = 0,
+		task_ed = "",
+		description = "Clear the zone to unlock confidential files.",
+		item_retrieve = 1,
+		need_level = 0,
+		auto_complete = 1,
+		task_icon = "",
+		rare_task_icon = "tbniang",
+		task_op = "",
+		countdown = 0,
+		drop = 1003778,
+		rank = 0,
+		task_panel_BG = "",
+		need_task_complete = 0,
+		condition_text = "",
+		task_random_enter = {
+			85
+		},
+		task_target_map = {},
+		following_region = {},
+		following_map = {
+			85
+		},
+		following_random = {
+			20021
+		},
+		task_event = {},
+		complete_parameter = {
+			2501001
+		},
+		next_task = {
+			10078
+		},
+		task_goto = {
+			3
+		},
+		show = {
+			{
+				12,
+				2100030,
+				1
+			},
+			{
+				12,
+				2100021,
+				5
+			},
+			{
+				2,
+				150002,
+				3
+			},
+			{
+				2,
+				150001,
+				5
+			}
+		},
+		reset_task = {}
+	},
+	[10078] = {
+		server_type = 4,
+		name = "File Mission 144-11",
+		continuity = 1,
+		type = 6,
+		log_text = "",
+		intimacy = 0,
+		sharing = 1,
+		id = 10078,
+		complete_condition = 8,
+		exp = 0,
+		rare_task_text = "Proceed to the target zone and defeat all Siren fleets to unlock confidential files.",
+		priority = 10,
+		complete_stage = 0,
+		complete_parameter_num = 1,
+		target_map_lock = 0,
+		task_ed = "",
+		description = "Clear the zone to unlock confidential files.",
+		item_retrieve = 1,
+		need_level = 0,
+		auto_complete = 1,
+		task_icon = "",
+		rare_task_icon = "tbniang",
+		task_op = "",
+		countdown = 0,
+		drop = 1003779,
+		rank = 0,
+		task_panel_BG = "",
+		need_task_complete = 0,
+		condition_text = "",
+		task_random_enter = {
+			82
+		},
+		task_target_map = {},
+		following_region = {},
+		following_map = {
+			82
+		},
+		following_random = {
+			20021
+		},
+		task_event = {},
+		complete_parameter = {
+			2501001
+		},
+		next_task = {
+			10079
+		},
+		task_goto = {
+			3
+		},
+		show = {
+			{
+				12,
+				2100030,
+				1
+			},
+			{
+				12,
+				2100021,
+				5
+			},
+			{
+				2,
+				150002,
+				3
+			},
+			{
+				2,
+				150001,
+				5
+			}
+		},
+		reset_task = {}
+	},
+	[10079] = {
+		server_type = 4,
+		name = "File Mission 146-9",
+		continuity = 1,
+		type = 6,
+		log_text = "",
+		intimacy = 0,
+		sharing = 1,
+		id = 10079,
+		complete_condition = 8,
+		exp = 0,
+		rare_task_text = "Proceed to the target zone and defeat all Siren fleets to unlock confidential files.",
+		priority = 10,
+		complete_stage = 0,
+		complete_parameter_num = 1,
+		target_map_lock = 0,
+		task_ed = "",
+		description = "Clear the zone to unlock confidential files.",
+		item_retrieve = 1,
+		need_level = 0,
+		auto_complete = 1,
+		task_icon = "",
+		rare_task_icon = "tbniang",
+		task_op = "",
+		countdown = 0,
+		drop = 1003780,
+		rank = 0,
+		task_panel_BG = "",
+		need_task_complete = 0,
+		condition_text = "",
+		task_random_enter = {
+			91
+		},
+		task_target_map = {},
+		following_region = {},
+		following_map = {
+			91
+		},
+		following_random = {
+			20022
+		},
+		task_event = {},
+		complete_parameter = {
+			2501002
+		},
+		next_task = {},
+		task_goto = {
+			3
+		},
+		show = {
+			{
+				12,
+				2100030,
+				1
+			},
+			{
+				2,
+				30915,
+				1
+			},
+			{
+				12,
+				2100021,
+				5
+			},
+			{
+				2,
+				150002,
+				5
+			}
+		},
+		reset_task = {}
+	},
 	[210000] = {
 		server_type = 3,
 		name = "Ocean Cleanup I",
@@ -12283,6 +13031,16 @@ pg.world_task_data = {
 		10067,
 		10068,
 		10069,
+		10070,
+		10071,
+		10072,
+		10073,
+		10074,
+		10075,
+		10076,
+		10077,
+		10078,
+		10079,
 		210000,
 		210100,
 		210200,

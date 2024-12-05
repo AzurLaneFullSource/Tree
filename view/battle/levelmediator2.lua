@@ -984,8 +984,6 @@ function var0_0.handleNotification(arg0_81, arg1_81)
 				end
 
 				if var1_81.id then
-					getProxy(ChapterProxy):StopAutoFight(ChapterConst.AUTOFIGHT_STOP_REASON.BATTLE_FAILED)
-
 					return
 				end
 

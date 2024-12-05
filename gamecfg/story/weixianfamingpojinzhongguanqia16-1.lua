@@ -8,7 +8,7 @@ return {
 			side = 2,
 			bgName = "bg_tolove_2",
 			say = "With everyone's help, Golden Darkness was able to rescue Yui and Haruna.",
-			bgm = "tl-battle",
+			bgm = "story-richang-6",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

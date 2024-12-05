@@ -20,7 +20,7 @@ return {
 			side = 2,
 			bgName = "bg_tolove_2",
 			say = "An exploration team consisting of Nana, Yui, Liverpool, Devonshire, and Nubian searched the nearby sea.",
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

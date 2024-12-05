@@ -1442,6 +1442,14 @@ function var0_0.willExit(arg0_135)
 		arg0_135.timerAnim = nil
 	end
 
+	local var0_135 = arg0_135.scene.apartment:GetConfigID()
+	local var1_135 = arg0_135.scene.ladyDict[var0_135]
+	local var2_135 = var1_135.skinIdList
+
+	if var1_135.skinId ~= var2_135[1] then
+		arg0_135.scene.SwitchCharacterSkin(var1_135, var0_135, var2_135[1])
+	end
+
 	if arg0_135.animSpeed ~= 1 then
 		arg0_135.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "SetCharacterAnimSpeed", 1)
 	end

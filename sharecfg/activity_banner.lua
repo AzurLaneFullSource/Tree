@@ -5,15 +5,14 @@ pg.activity_banner = {
 		pic = "temp1",
 		type = 2,
 		param = {
-			"scene Cryptolalia",
-			{}
+			"scene dailylevel"
 		},
 		time = {
 			{
 				{
 					2024,
-					11,
-					21
+					12,
+					5
 				},
 				{
 					0,
@@ -24,8 +23,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					11,
-					27
+					12,
+					11
 				},
 				{
 					23,
@@ -40,15 +39,18 @@ pg.activity_banner = {
 		pic = "temp2",
 		type = 2,
 		param = {
-			"scene skinshop",
-			{}
+			"scene equip",
+			{
+				designPage = 2,
+				warp = "WARP_TO_DESIGN"
+			}
 		},
 		time = {
 			{
 				{
 					2024,
-					11,
-					21
+					12,
+					5
 				},
 				{
 					0,
@@ -60,7 +62,7 @@ pg.activity_banner = {
 				{
 					2024,
 					12,
-					4
+					11
 				},
 				{
 					23,
@@ -73,41 +75,17 @@ pg.activity_banner = {
 	{
 		id = 3,
 		pic = "temp3",
+		time = "stop",
 		type = 2,
 		param = {
 			"scene skinshop",
 			{}
-		},
-		time = {
-			{
-				{
-					2024,
-					11,
-					21
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					12,
-					4
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	},
 	{
 		id = 4,
 		pic = "temp4",
+		time = "stop",
 		type = 2,
 		param = {
 			"scene get boat",
@@ -115,100 +93,24 @@ pg.activity_banner = {
 				projectName = "new",
 				page = 1
 			}
-		},
-		time = {
-			{
-				{
-					2024,
-					11,
-					21
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					12,
-					4
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	},
 	{
 		id = 5,
 		pic = "temp5",
+		time = "stop",
 		type = 2,
 		param = {
 			"puzzle connect"
-		},
-		time = {
-			{
-				{
-					2024,
-					11,
-					21
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					12,
-					4
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	},
 	{
 		id = 6,
 		pic = "temp6",
+		time = "stop",
 		type = 2,
 		param = {
 			"TOLOVE_COLLAB_BACKHILL"
-		},
-		time = {
-			{
-				{
-					2024,
-					11,
-					21
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					12,
-					4
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	},
 	{
@@ -235,7 +137,7 @@ pg.activity_banner = {
 				{
 					2024,
 					12,
-					12
+					11
 				},
 				{
 					23,
@@ -248,35 +150,10 @@ pg.activity_banner = {
 	{
 		id = 8,
 		pic = "temp8",
+		time = "stop",
 		type = 2,
 		param = {
 			"scene court yard"
-		},
-		time = {
-			{
-				{
-					2024,
-					11,
-					21
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					12,
-					4
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	},
 	{
@@ -290,8 +167,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					11,
-					21
+					12,
+					1
 				},
 				{
 					0,
@@ -303,7 +180,7 @@ pg.activity_banner = {
 				{
 					2024,
 					12,
-					5
+					11
 				},
 				{
 					23,
@@ -315,35 +192,10 @@ pg.activity_banner = {
 	},
 	[90] = {
 		param = "",
-		id = 90,
-		pic = "temp99",
+		time = "stop",
 		type = 9,
-		time = {
-			{
-				{
-					2024,
-					11,
-					21
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					12,
-					4
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
+		id = 90,
+		pic = "temp99"
 	},
 	[91] = {
 		param = "",
@@ -361,35 +213,10 @@ pg.activity_banner = {
 	},
 	[99] = {
 		param = "",
-		id = 99,
-		pic = "limit_skin",
+		time = "stop",
 		type = 12,
-		time = {
-			{
-				{
-					2024,
-					11,
-					21
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					12,
-					4
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
+		id = 99,
+		pic = "limit_skin"
 	},
 	[100] = {
 		param = "Osmanthus Cake|A sweet and aromatic cake said to have come from the Moon Palace! Delicious! <color=#6dd329>(Increase EXP by 5 for 60 minutes)</color>",

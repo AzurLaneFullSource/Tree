@@ -3325,19 +3325,19 @@ function temp()
 						}
 					}
 				},
-				i = {
-					c = {
-						a = {
-							this = true
-						}
-					}
-				},
 				a = {
 					r = {
 						c = {
 							h = {
 								this = true
 							}
+						}
+					}
+				},
+				i = {
+					c = {
+						a = {
+							this = true
 						}
 					}
 				}
@@ -9666,60 +9666,6 @@ function temp()
 					}
 				}
 			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.贝 = {
-		尔 = {
-			法 = {
-				斯 = {
-					特 = {
-						this = true
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.伊 = {
-		丽 = {
-			莎 = {
-				白 = {
-					女 = {
-						王 = {
-							this = true
-						}
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.前 = {
-		卫 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.君 = {
-		主 = {
-			this = true
 		}
 	}
 end

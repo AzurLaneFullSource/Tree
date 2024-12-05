@@ -26256,39 +26256,42 @@ pg.ship_l2d = {
 		}
 	},
 	[20703701] = {
-		id = 20703701,
 		relation_parameter = "",
+		ignore_react = 1,
 		gyro_y = 0,
 		limit_time = 0,
 		drag_direct = 0,
 		parts_data = "",
 		revert_action_index = 0,
 		draw_able_name = "TouchDrag8",
-		ignore_react = 1,
-		mode = 1,
 		offset_x = 0,
+		mode = 1,
+		save_parameter = 0,
 		gyro = 0,
 		gyro_x = 0,
 		react_pos_y = 0,
-		action_trigger = "",
-		revert = -1,
-		save_parameter = 0,
 		start_value = 0,
+		revert = -1,
+		ship_skin_id = 207037,
 		ignore_action = 1,
 		react_pos_x = 0,
 		parameter = "touch_drag8",
 		shop_action = 0,
 		revert_idle_index = 0,
-		ship_skin_id = 207037,
 		gyro_z = 0,
 		smooth = 100,
-		react_condition = "",
+		id = 20703701,
 		range_abs = 0,
 		offset_y = 0,
 		revert_smooth = 100,
 		range = {
 			-1,
 			1
+		},
+		react_condition = {
+			idle_off = {
+				2
+			}
 		},
 		listener_data = {
 			type = 1,
@@ -26341,6 +26344,10 @@ pg.ship_l2d = {
 					}
 				}
 			}
+		},
+		action_trigger = {
+			change_focus = false,
+			type = 7
 		},
 		action_trigger_active = {
 			idle_enable = {

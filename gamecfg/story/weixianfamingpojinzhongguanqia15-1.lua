@@ -8,7 +8,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_504",
 			say = "Using the coordinates displayed on Questy MacGuffin, the group charged into an unfamiliar sea region.",
-			bgm = "tl-theme-2",
+			bgm = "story-richang-7",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

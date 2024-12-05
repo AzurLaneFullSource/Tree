@@ -4,7 +4,7 @@ return {
 	fadeOut = 1.5,
 	scripts = {
 		{
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			side = 2,
 			bgName = "bg_tolove_2",
 			nameColor = "#A9F548FF",

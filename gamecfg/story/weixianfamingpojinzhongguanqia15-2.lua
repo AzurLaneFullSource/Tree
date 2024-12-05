@@ -8,7 +8,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_504",
 			say = "After a hard-fought battle, the Royal Navy had finally reached their destination.",
-			bgm = "tl-theme-2",
+			bgm = "story-richang-7",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

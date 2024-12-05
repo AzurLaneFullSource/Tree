@@ -68384,6 +68384,39 @@ _G.pg.base.shop_template[100106] = {
 	},
 }
 
+_G.pg.base.shop_template[100107] = {
+	collaboration_skin_time = "",
+	desc = "档案坐标记录仪8",
+	discount = 0,
+	genre = "world_collection_task",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 100107,
+	limit_args2 = "",
+	num = 1,
+	order = 1,
+	resource_num = 800,
+	resource_type = 3002,
+	tag = 0,
+	time = "always",
+	time_second = 0,
+	type = 20,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			1,
+		},
+	},
+	effect_args = {
+		2057,
+		10070,
+	},
+}
+
 _G.pg.base.shop_template[105001] = {
 	collaboration_skin_time = "",
 	desc = "通行证复刻-约克城换装",

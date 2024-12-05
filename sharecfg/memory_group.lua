@@ -311,6 +311,7 @@ pg.memory_group = setmetatable({
 		602,
 		603,
 		604,
+		605,
 		1000,
 		1001,
 		1002
@@ -6711,6 +6712,23 @@ pg.base.memory_group = {
 			3995,
 			3996,
 			3997
+		}
+	},
+	[605] = {
+		id = 605,
+		subtype = 0,
+		icon = "title_chara_lvzuofu",
+		type = 3,
+		link_event = 0,
+		title = "Sweet Dreams, Come Back to Me",
+		memories = {
+			4061,
+			4062,
+			4063,
+			4064,
+			4065,
+			4066,
+			4067
 		}
 	},
 	[1000] = {

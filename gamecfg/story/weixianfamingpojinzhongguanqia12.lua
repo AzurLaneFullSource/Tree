@@ -25,7 +25,7 @@ return {
 			bgName = "bg_tolove_2",
 			hidePaintObj = true,
 			say = "The main force of the exploration fleet – Lala, Golden Darkness, Queen Elizabeth, and Belfast – proceeded toward the third checkpoint.",
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

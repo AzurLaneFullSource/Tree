@@ -135,9 +135,14 @@ function var0_0.onListenerEvent(arg0_2, arg1_2, arg2_2)
 
 							local var14_2 = arg0_2:fixParameterTargetValue(var13_2, arg0_2.range, arg0_2.rangeAbs, arg0_2.dragDirect)
 
-							arg0_2:setTargetValue(var14_2)
-							arg0_2:setParameterValue(var14_2)
-							print("数值变更为" .. arg0_2.parameterTargetValue)
+							if arg0_2.actionTrigger.change_focus == false then
+								arg0_2.prepareTargetValue = var14_2
+
+								print(arg0_2.parameterName .. "等待动作结束后的target赋值" .. arg0_2.parameterTargetValue)
+							else
+								arg0_2:setTargetValue(var14_2)
+								print(arg0_2.parameterName .. " 数值变更为" .. arg0_2.parameterTargetValue)
+							end
 						end
 
 						if var12_2 and var12_2 > 0 then
@@ -155,6 +160,11 @@ function var0_0.onListenerEvent(arg0_2, arg1_2, arg2_2)
 
 			if var15_2 == 1 and var6_2 then
 				local var17_2 = arg0_2.parameterTargetValue
+
+				if arg0_2.prepareTargetValue ~= nil then
+					var17_2 = arg0_2.prepareTargetValue
+				end
+
 				local var18_2
 
 				for iter1_2 = 1, #var16_2 do
@@ -680,6 +690,12 @@ function var0_0.updateReactValue(arg0_32)
 end
 
 function var0_0.updateParameterValue(arg0_33)
+	if arg0_33.prepareTargetValue and not arg0_33.l2dIsPlaying then
+		arg0_33:setTargetValue(arg0_33.prepareTargetValue)
+
+		arg0_33.prepareTargetValue = nil
+	end
+
 	if arg0_33._parameterUpdateFlag and arg0_33.parameterValue ~= arg0_33.parameterTargetValue then
 		if math.abs(arg0_33.parameterValue - arg0_33.parameterTargetValue) < 0.01 then
 			arg0_33:setParameterValue(arg0_33.parameterTargetValue)

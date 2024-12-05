@@ -31,6 +31,10 @@ function var0_0.OpSwitchMap(arg0_5, arg1_5, arg2_5)
 		local var2_5 = var0_5:GetActiveEntrance()
 		local var3_5 = var0_5:GetActiveMap()
 
+		if World.ReplacementMapType(var2_5, var3_5) == "complete_chapter" and getProxy(SettingsProxy):GetWorldFlag("auto_save_area") then
+			PlayerPrefs.SetInt("autoBotIsAcitve" .. AutoBotCommand.GetAutoBotMark(SYSTEM_WORLD), 1)
+		end
+
 		var0_5:TriggerAutoFight(var0_5.isAutoSwitch or World.ReplacementMapType(var2_5, var3_5) == "complete_chapter" and getProxy(SettingsProxy):GetWorldFlag("auto_save_area"))
 		arg0_5:OpSetInMap(true, arg2_5)
 	elseif arg1_5.destMapId ~= var1_5.id or arg1_5.destGridId ~= var1_5.gid then
@@ -52,6 +56,10 @@ function var0_0.OpSwitchMap(arg0_5, arg1_5, arg2_5)
 
 			local var0_9 = var0_5:GetActiveEntrance()
 			local var1_9 = var0_5:GetActiveMap()
+
+			if World.ReplacementMapType(var0_9, var1_9) == "complete_chapter" and getProxy(SettingsProxy):GetWorldFlag("auto_save_area") then
+				PlayerPrefs.SetInt("autoBotIsAcitve" .. AutoBotCommand.GetAutoBotMark(SYSTEM_WORLD), 1)
+			end
 
 			var0_5:TriggerAutoFight(var0_5.isAutoSwitch or World.ReplacementMapType(var0_9, var1_9) == "complete_chapter" and getProxy(SettingsProxy):GetWorldFlag("auto_save_area"))
 			assert(var1_9, "active map not exist")

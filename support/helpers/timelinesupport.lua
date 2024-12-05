@@ -60,59 +60,75 @@ function var0_0.InitSubtitle(arg0_9, arg1_9)
 
 	var0_0.EachSubDirector(arg0_9, function(arg0_10, arg1_10)
 		if var0_0.CheckTrackType(arg1_10, "Lens.Gameplay.Tools.SubtitleTrack") then
-			local var0_10 = ReflectionHelp.RefCallMethod(typeof("Lens.Gameplay.Tools.SubtitleTrack"), "GetClips", arg1_10)
+			if EDITOR_TOOL then
+				local function var0_10(arg0_11)
+					local var0_11 = tonumber(arg0_11)
 
-			table.IpairsCArray(var0_10, function(arg0_11, arg1_11)
-				local var0_11 = ReflectionHelp.RefGetProperty(arg1_11:GetType(), "asset", arg1_11)
-				local var1_11 = ReflectionHelp.RefGetField(var0_11:GetType(), "behaviour", var0_11)
-				local var2_11 = tonumber(ReflectionHelp.RefGetField(var1_11:GetType(), "subtitle", var1_11))
+					if not var0_11 then
+						return arg0_11
+					end
 
-				if not var2_11 then
-					return
+					local var1_11 = pg.dorm3d_subtitle[var0_11].subtitle
+
+					return (string.gsub(var1_11, "$dorm3d", arg1_9))
 				end
 
-				local var3_11 = pg.dorm3d_subtitle[var2_11].subtitle
-				local var4_11 = string.gsub(var3_11, "$dorm3d", arg1_9)
+				Lens.Gameplay.Tools.SubtitleMixer.func = var0_10
+			else
+				local var1_10 = ReflectionHelp.RefCallMethod(typeof("Lens.Gameplay.Tools.SubtitleTrack"), "GetClips", arg1_10)
 
-				ReflectionHelp.RefSetField(var1_11:GetType(), "subtitle", var1_11, var4_11)
+				table.IpairsCArray(var1_10, function(arg0_12, arg1_12)
+					local var0_12 = ReflectionHelp.RefGetProperty(arg1_12:GetType(), "asset", arg1_12)
+					local var1_12 = ReflectionHelp.RefGetField(var0_12:GetType(), "behaviour", var0_12)
+					local var2_12 = tonumber(ReflectionHelp.RefGetField(var1_12:GetType(), "subtitle", var1_12))
+
+					if not var2_12 then
+						return
+					end
+
+					local var3_12 = pg.dorm3d_subtitle[var2_12].subtitle
+					local var4_12 = string.gsub(var3_12, "$dorm3d", arg1_9)
+
+					ReflectionHelp.RefSetField(var1_12:GetType(), "subtitle", var1_12, var4_12)
+				end)
+			end
+		end
+	end)
+end
+
+function var0_0.CheckTrackType(arg0_13, arg1_13)
+	return tostring(arg0_13:GetType()) == arg1_13
+end
+
+function var0_0.InitCriAtomTrack(arg0_14)
+	var0_0.EachSubDirector(arg0_14, function(arg0_15, arg1_15)
+		if var0_0.CheckTrackType(arg1_15, "CriTimeline.Atom.CriAtomTrack") then
+			local var0_15 = ReflectionHelp.RefCallMethod(typeof("CriTimeline.Atom.CriAtomTrack"), "GetClips", arg1_15)
+
+			table.IpairsCArray(var0_15, function(arg0_16, arg1_16)
+				local var0_16 = ReflectionHelp.RefGetProperty(arg1_16:GetType(), "asset", arg1_16)
+				local var1_16 = ReflectionHelp.RefGetField(typeof("CriTimeline.Atom.CriAtomClip"), "cueSheet", var0_16)
+
+				pg.CriMgr.GetInstance():LoadCueSheet(var1_16)
 			end)
 		end
 	end)
 end
 
-function var0_0.CheckTrackType(arg0_12, arg1_12)
-	return tostring(arg0_12:GetType()) == arg1_12
+function var0_0.UnloadPlayable(arg0_17)
+	var0_0.UnloadCriAtomTrack(arg0_17)
 end
 
-function var0_0.InitCriAtomTrack(arg0_13)
-	var0_0.EachSubDirector(arg0_13, function(arg0_14, arg1_14)
-		if var0_0.CheckTrackType(arg1_14, "CriTimeline.Atom.CriAtomTrack") then
-			local var0_14 = ReflectionHelp.RefCallMethod(typeof("CriTimeline.Atom.CriAtomTrack"), "GetClips", arg1_14)
+function var0_0.UnloadCriAtomTrack(arg0_18)
+	var0_0.EachSubDirector(arg0_18, function(arg0_19, arg1_19)
+		if var0_0.CheckTrackType(arg1_19, "CriTimeline.Atom.CriAtomTrack") then
+			local var0_19 = ReflectionHelp.RefCallMethod(typeof("CriTimeline.Atom.CriAtomTrack"), "GetClips", arg1_19)
 
-			table.IpairsCArray(var0_14, function(arg0_15, arg1_15)
-				local var0_15 = ReflectionHelp.RefGetProperty(arg1_15:GetType(), "asset", arg1_15)
-				local var1_15 = ReflectionHelp.RefGetField(typeof("CriTimeline.Atom.CriAtomClip"), "cueSheet", var0_15)
+			table.IpairsCArray(var0_19, function(arg0_20, arg1_20)
+				local var0_20 = ReflectionHelp.RefGetProperty(arg1_20:GetType(), "asset", arg1_20)
+				local var1_20 = ReflectionHelp.RefGetField(typeof("CriTimeline.Atom.CriAtomClip"), "cueSheet", var0_20)
 
-				pg.CriMgr.GetInstance():LoadCueSheet(var1_15)
-			end)
-		end
-	end)
-end
-
-function var0_0.UnloadPlayable(arg0_16)
-	var0_0.UnloadCriAtomTrack(arg0_16)
-end
-
-function var0_0.UnloadCriAtomTrack(arg0_17)
-	var0_0.EachSubDirector(arg0_17, function(arg0_18, arg1_18)
-		if var0_0.CheckTrackType(arg1_18, "CriTimeline.Atom.CriAtomTrack") then
-			local var0_18 = ReflectionHelp.RefCallMethod(typeof("CriTimeline.Atom.CriAtomTrack"), "GetClips", arg1_18)
-
-			table.IpairsCArray(var0_18, function(arg0_19, arg1_19)
-				local var0_19 = ReflectionHelp.RefGetProperty(arg1_19:GetType(), "asset", arg1_19)
-				local var1_19 = ReflectionHelp.RefGetField(typeof("CriTimeline.Atom.CriAtomClip"), "cueSheet", var0_19)
-
-				pg.CriMgr.GetInstance():UnloadCueSheet(var1_19)
+				pg.CriMgr.GetInstance():UnloadCueSheet(var1_20)
 			end)
 		end
 	end)

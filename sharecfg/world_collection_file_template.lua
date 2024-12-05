@@ -828,6 +828,87 @@ pg.world_collection_file_template = {
 		content = "To Dr. Anzeel:\nI understand your concerns, but unfortunately, we don't have enough time left.\nOur experiments in the Bermudas over the past few days have attracted the attention of the Revolutionary Front.\nWe have reliable intel that the Northern Parliament submarines that went missing just a few days prior have appeared in our vicinity. Additionally, the RF has mobilized its fleet stationed in the Antilles. I suspect that, in a matter of days to weeks, we will be surrounded by our \"friendly\" neighbors who plan to conduct exercises \"with no particular target in mind.\"\nOur problems also don't end there. Firstly, the army's opinions are divided on how to ensure your safety in light of the RF's activity. Secondly, the issue of how to move the large equipment you need for your investigation to the salvage site is also still being carefully evaluated. After all, our goals will be completely exposed once the RF sees the equipment.\nIn any case, I will try my best to get you permission for an on-site investigation, but best case scenario, it'll have to occur simultaneously with the salvage operation.\nLet's keep our fingers crossed.\nBest,\nJohn",
 		pic = ""
 	},
+	[11601] = {
+		id = 11601,
+		name = "Breaking the Sound Barrier",
+		subTitle = "",
+		is_classified = 0,
+		group_ID = 1,
+		content = "...The supersonic passenger plane has made its triumphant return!\n\nJust today, the Supernova, a supersonic passenger aircraft developed by the OXS Trade Alliance, completed its first voyage. Many of the passengers described their experience as \"dream-like\".\n\nAccording to Dr. Colette, the deputy chief engineer of the project, the Supernova uses the OXS Aviation Group's prized Echo-series engines, said to be able to reduce noise levels during supersonic flight to a level lower than normal aircraft and suppress aircraft vibrations to the point of being virtually unnoticeable.\n\nIn response to market demands, many airlines have already expressed interest in adding this model to their fleet. Though aviation safety experts still express their concerns due to painful lessons from the last century's supersonic aircraft accidents, it seems that there is no force that can prevent the Supernova from becoming a global success.",
+		pic = "11601"
+	},
+	[11602] = {
+		id = 11602,
+		name = "PMC Commercial",
+		subTitle = "",
+		is_classified = 0,
+		group_ID = 2,
+		content = "(Rotwolf Industries Security Solutions Advertisement)\n\n- Does this look familiar to you?\n\n- As the new Cold War rapidly intensifies, chaos is breaking out all over the world!\n\n- And, it could happen too, right here in your neighborhood.\n\n- However, you can avert this problem by making the wisest decision of your life.\n\n- Choose Rotwolf Security Group!\n\n- Let us provide you and your loved ones with the highest level of security services!\n\n- The Red Wolves will protect your way of life!\n\n–––(Cheerful music)–––\n\n...And now, we're back with more breaking news.\n\nThe chaotic situation unfolding in Africa continues to worsen. According to our local correspondent on the ground there...",
+		pic = "11602"
+	},
+	[11603] = {
+		id = 11603,
+		name = "Next-Generation Rigging",
+		subTitle = "",
+		is_classified = 0,
+		group_ID = 3,
+		content = "…The heated debate over next-generation KAN-SEN rigging continues to rage.\n\nThe Croweheed Group announced in a press release that the official name for this novel type of armament will be \"Type II Rigging.\" Compared to the previous type, \"Type II Rigging\" has achieved comprehensive smartification in the areas of electronic warfare, battlefield awareness, fleetwide data-linking, informatization, and decision-making efficiency.\n\nMilitary experts point out that should these advancements be realized, the already-powerful KAN-SEN would ride the wave of informatization to ever-greater heights of combat effectiveness.\n\nHowever, at the present moment, the feasibility of this technology is still hotly contested. According to the Croweheed Group's public documents, rigging modification and upgrade support for the members of the Federal Navy, including KAN-SEN Enterprise, remains one of the company's main business priorities...",
+		pic = "11603"
+	},
+	[11604] = {
+		id = 11604,
+		name = "Merlin's Orb",
+		subTitle = "",
+		is_classified = 0,
+		group_ID = 4,
+		content = "…An unexpected partnership has just been announced!\n\nAccording to a spokesperson at Lord Military Industries, negotiations have concluded regarding the joint development project between Lord Military Industries and the Wesker Group, and a formal announcement is slated to be made next month.\n\nIn response to this news, the stock prices of both Lord Military Industries and the Wesker Group have skyrocketed. According to inside sources, the project is related to the Royal Navy's next-generation aircraft carrier plan, the first of such in half a century since the last Queen Elizabeth-class aircraft carrier. Many analysts point out that this suggests the Royal Navy is strengthening its own naval warfare capabilities as a critical strategic goal amid the trend of the Oceanic Federation's continued decline.\n\nAdditionally, some sources have revealed that the Royal Navy itself holds high expectations for this project, and have already given it an internal codename: \"Merlin's Orb.\"",
+		pic = "11604"
+	},
+	[11605] = {
+		id = 11605,
+		name = "Lineup Renewal",
+		subTitle = "",
+		is_classified = 0,
+		group_ID = 5,
+		content = "120mm smoothbore gun to end production.\n\nRheinische Heavy Industries has just annouced that it plans to complete the renewal of its \"New Era\" lineup by the end of Q4 this year, meaning that all production lines for 120mm smoothbore guns, which have been in operation for nearly a century, will be shut down by the end of this year.\n\nAccording to the plans released by Rheinische Heavy Industries, all remaining 120mm smoothbore gun production lines will be shut down, sold, or converted into the more advanced 140mm smoothbore gun production lines.\n\nAdditionally, based on materials provided by the company, the 140mm smoothbore gun will be adopted as the main armament of the Leopard IV tank and the Cube-powered Leopard V tank. Military experts point out that the Leopard V, which is about to enter production shortly, completely supersedes the older Leopard III model currently in service in terms of performance, and all Leopard III tanks equipped with 120mm smoothbore guns will also be retired over the next few years.",
+		pic = "11605"
+	},
+	[11606] = {
+		id = 11606,
+		name = "Flight Accident",
+		subTitle = "",
+		is_classified = 0,
+		group_ID = 6,
+		content = "…Zaou Heavy Industries' new fighter jet has encountered a problem. Footage from the scene has been leaked!\n\nIn the footage, the test aircraft's engine suddenly cuts out right before landing. Fortunately, the pilot is able to deal with the problem appropriately at the last moment, and comes to a safe landing on the runway. Though the aircraft did eventually stray off the runway and flip over, the aircraft's main structure remained almost completely intact.\n\nThe test pilot also survived the incident, and it has been confirmed that he escaped the cockpit on his own and was subsequently rushed to the hospital. At the time of writing, the test pilot's current whereabouts are still unknown.\n\nAccording to materials provided by Zaou Heavy Industries, the new aircraft is still in an experimental phase and uses an innovative Cube-powered system that differs from the existing hybrid systems found throughout the world. However, the occurrence of this accident has once again raised questions regarding the reliability of the Cube-powered fighter jet.\n\nZaou Heavy Industries has refused to take questions concerning this matter.",
+		pic = "11606"
+	},
+	[11607] = {
+		id = 11607,
+		name = "Reversal of Fortunes",
+		subTitle = "",
+		is_classified = 0,
+		group_ID = 7,
+		content = "Prukk Technology's financial report attracts attention!\n\nPrukk Technology's performance in each quarter of this last fiscal year, as seen in the full-year financial report that was just released, is turning heads. According to IR information, the company's Q4 losses decreased by 70%, and its full-year loss profit and net loss decreased by 33.67%.\n\nOnline commentators have pointed out that the company's improved performance tracks with the ongoing \"retro\" trend. Due to the continued troubles of Cube-powered technology and soaring gas prices, electric cars, which had once been abandoned by the public, are once again increasing in sales. Many people are mocking the \"sturdy and conservative\" Prukk as being the biggest winner of the era because it was \"outdated enough.\"\n\nHowever, many investors remain cautious about this shift. The company's CEO has stated that he is \"confident that the company will turn its financial results into a profit by Q3 of next year,\" but at the same time, there are also reports indicating no changes to the planned layoffs.",
+		pic = "11607"
+	},
+	[11608] = {
+		id = 11608,
+		name = "Restructuring Plan",
+		subTitle = "",
+		is_classified = 0,
+		group_ID = 8,
+		content = "...After the meeting today, the Northern Parliament made a major announcement that it would be reorganizing the Perun Design Bureau. This name should not be completely unfamiliar to our readers: the Perun Design Bureau was one of the Northern Parliament's largest fighter aircraft design bureaus over the last century, and the Orbital fighter, a craft still operated by the Northern Parliament today, is one of the bureau's crowning achievements.\n\nAt the end of the last century, due to a shift in the Northern Parliament's changing national strategic policy, Perun was deemed to be underperforming, and was subjected to business restructuring. Some of its structures were merged into the Zimurya Design Bureau, while the remaining departments were closed down.\n\nHowever, the reorganization of the Perun Design Bureau is likely not a completely unexpected move by the Northern Parliament of today. With the ever-growing possibility of war on the horizon, the Northern Parliament is also under pressure to regain technological superiority in the fields of aeronautics and deep space...",
+		pic = "11608"
+	},
+	[11609] = {
+		id = 11609,
+		name = "Excerpts from a Cutting-Edge Tech Forum",
+		subTitle = "",
+		is_classified = 0,
+		group_ID = 9,
+		content = "......\n\nThread: Leaked footage from the Northern Parliament's latest experimental weapon!\n\nNo. 1 Anonymous (ID:LcFjifOpm) 11:00\n\nSo damn cool! I analyzed it frame by frame, and it's definitely a floating battleship!\n\nNo. 2 Anonymous (ID:JkfAHvlAf) 11:01\n\nIs that the one that Perun and Zimurya were rumored to be developing jointly?\n\nNo. 3 Anonymous (ID:CkLaghlH) 11:02\n\n10 years in development, and all it can do is float a little over 10m? absolute garbage.\n\nNo. 4 Anonymous (ID:JkfAHvlAf) 11:01\n\nDude, it can FLOAT a little over 10 meters. We're not that far off from Cosmos Trek-tier spaceships now!\n\nNo. 5 Anonymous (ID:CkLaghlH) 11:03\n\nlmao, keep dreaming\n\nNo. 6 Anonymous (ID:JkfAHvlAf) 11:04\n\n[User's post has been blocked]\n\nNo. 7 Anonymous (ID:LcFjifOpm) 11:05\n\n[User's post has been blocked]\n\n......",
+		pic = "11609"
+	},
 	[13101] = {
 		id = 13101,
 		name = "Communication Log: Tsunami Warning",
@@ -1230,8 +1311,8 @@ pg.world_collection_file_template = {
 		subTitle = "Confidentiality Level: V",
 		is_classified = 0,
 		group_ID = 9,
-		content = "————————Confidentiality Level: V————————\nDecisions regarding the \"Bermuda Incident\" are as follows:\n- We will continue to extend the previous set of emergency measures, further expand the search area in the Bermuda waters, and make every effort to rescue the injured.\n- Collaborate with DHS and other relevant agencies and block all information related to the incident.\n- Suspend and investigate General Garfield, whose position will temporarily be replaced by Lt. Gen. Dominic Fairfax.\n- Ensure the personal safety of Dr. Anzeel and her research team, but suspend all KAN-SEN research.\n- Per latest agreement, the Revolutionary Front will be allowed to participate in search and rescue operations in the Bermuda waters. No one shall disrupt any joint search and rescue operations with the Revolutionary Front\n\nSigned,\n\nFrank Neville\nNational Secretary of Defense",
-		pic = ""
+		content = "————————Confidentiality Level: V————————\nDecisions regarding the Incident in the Bermudas (hereafter referred to as the \"Richard Incident\"):\n- Continue to ramp up the previous series of emergency measures, further expand the search area in the Bermuda waters, and make every effort to rescue the injured.\n- Work with related departments to suppress all information related to this incident.\n- Suspend General Garfield and launch an investigation, with Vice-Admiral Fairfax temporarily taking over his duties.\n- Ensure the safety of Dr. Anzeel and her research team, but suspend all research on \"KAN-SEN\" by the team.\n- Per the latest agreement, allow the R.F. to participate in search-and-rescue operations in the Bermuda area. No department or unit is to impede the R.F.'s search-and-rescue efforts.\nSigned: George Frank (Department of Defense)",
+		pic = "14601"
 	},
 	[14410] = {
 		id = 14410,
@@ -1241,6 +1322,15 @@ pg.world_collection_file_template = {
 		group_ID = 10,
 		content = "————————Confidentiality Level: V————————\nRegarding the basic layout of the \"Richard Incident\", as well as subsequent decisions\n–––\n......\nAt this point, we have largely finished our investigation into the sequence of events surrounding the Richard Incident. What we can now confirm is that the 'Bon Homme Richard' launched an offensive on all present warships after coming in contact with an important cargo, codenamed 'Pandora's Box'. Multiple eyewitness testimonies at the time compared this offensive to a \"natural disaster\" of some sort.\nAfter the chain of command collapsed, Cpt. John Archer led the survivors in a counterattack alongside the Revolutionary Front fleet, successfully neutralizing the 'Bon Homme Richard' after several hours of fierce fighting. Marines stationed aboard the nuclear-powered aircraft carrier, Enterprise, likely retrieved 'Pandora's Box' during that time, and approximately forty minutes after the operation ended, Cpt. Archer and carrier Enterprise disengaged from the fleet and attempted to plunge into the depths of the ocean.\n......\nCrucially, the cause of the erratic behavior exhibited by the 'Bon Homme Richard' as well as by Cpt. John Archer remains unknown. In order to determine the truth in a thorough manner, the Investigation Committee recommends the following actions:\n1. Launch a formal investigation into Cpt. John Archer.\n2. Send additional salvage teams to recover as much related wreckage as possible to determine the whereabouts of 'Pandora's Box' as quickly as possible.\n3. Set up a new technical analysis team and allow some members of the 'Dusk' team who have passed background checks to join the team.\n4. Add communication channels to ensure that the reporting of key evidence continues to be smooth and efficient.\n......\nSignature (Investigation Committee): Victor Herbert\nSignature (Investigation Technical Appraisal Mission): Nicholas Lawyer\nSignature (Oceanic Federation Military Advisory Group): Eutopia Savoy\nSignature (Representative of the Eagle Union Nat'l Armed Forces): Shepherd Kingsley",
 		pic = "14410"
+	},
+	[14411] = {
+		id = 14411,
+		name = "Resolution on the Bermuda Incident",
+		subTitle = "Confidentiality Level: V",
+		is_classified = 0,
+		group_ID = 11,
+		content = "————————Confidentiality Level: V————————\nSource: Samos Investigation Committee Headquarters – L2 South Conference Room recording device\n—————\n…....\nLieutenant Isaac:\n- So, what you're telling me is, we ended up in a war with some kind of \"supernatural force\" and suffered devastating losses... but Colonel Archer led the survivors in the fight and succeeded inrepelling this force.\nLieutenant General Herbert:\n- That's enough. I've already said what I needed to say. If we think about this rationally, no matter how absurd something might seem, with enough solid evidence, we must accept the possibility that even the absurd might be true.\n- However, that doesn't explain Colonel Archer's subsequent display of abnormal behavior. We need more evidence to understand why he made that decision.\n- ...Hmm? Is there a problem?\nLieutenant Isaac:\n- General, the salvage operation is proceeding smoothly. However, the postmortem continues to be difficult\n- Well, as you know, most of the cutting-edge experts in the field of Cube technology more or less have some level of personal acquaintance with Dr. Anzeel... and as for General Shepherd, the chairman of the investigation committee...\nLieutenant General Herbert:\n- That stubborn old fossil. Nick, we need a real technical team.\nLieutenant General Nicholas:\n- That's not something we can decide on the spot, but...\n- Lieutenant, I've heard that there's going to be a formal meeting later, so let's take care of that first. Adjourned.",
+		pic = "14412"
 	},
 	[14601] = {
 		id = 14601,
@@ -1313,6 +1403,15 @@ pg.world_collection_file_template = {
 		group_ID = 8,
 		content = "————————Confidentiality Level: V————————\n......\nAs of now, the actions of the Enterprise and of John Archer have been thoroughly investigated. The following facts are certain: Captain John Archer upheld his duties until his final breath, saving the lives of some 3,300 people aboard the ship as well as the rest of the Eagle Union fleet, at the cost of his own. For the above reason, the Joint Chief of Staff, Department of Defense, and Oval Office have all agreed that there is no evidence to consider these actions a voluntary defection, and instead, that John Archer be honored for his courage and will.\n\nIn light of Captain Archer's achievements in quelling the rebellion of the Bon Homme Richard and the importance of maintaining the dignity of the Oceanic Federation, the Investigation Committee makes the following recommendations for the handling of Captain John Archer's case:\n\n1) Let it be determined that Captain John Archer handled the crisis with great courage and utmost professionalism, tragically meeting his end along with his ship.\n2) Let it be determined that Captain John Archer demonstrated great courage during the incident, sacrificing himself to save as many lives as possible.\n3) Posthumously award Captain John Archer with the Medal of Honor and Naval Cross, and give him a proper burial in the National Cemetery.\n\nIn light of the damage caused by the cargo known as \"Pandora's Box,\" the Investigation Committee makes the following recommendations:\n\n1) Establish a Work Safety Team on top of existing foundations, with the purpose of evaluating the safety of all such related items.\n2) To strengthen safety precautions, all work related to the wreckage must be done under the authorization of the Investigation Committee and supervision of the Work Safety Team.\n...\nSignature (Investigation Committee): Victor Herbert\nSignature (Investigation Technical Appraisal Mission): Nicholas Lawyer\nSignature (Technical Expertise Advisory Panel): Jonathan Travis\nSignature (Samos Medical Centre): Dermot Lambert\nSignature (Oceanic Federation Military Advisory Group): Eutopia Savoy\nSignature (Representative of the Eagle Union Nat'l Armed Forces): Shepherd Kingsley",
 		pic = "14608"
+	},
+	[14609] = {
+		id = 14609,
+		name = "Personal Diary of Lieutenant General Nicholas ",
+		subTitle = "Confidentiality Level: V",
+		is_classified = 0,
+		group_ID = 9,
+		content = "————————Confidentiality Level: V————————\n…\nI don't think this is a very sound idea.\nThough Herbert Sr. wasn't able to gather the experts he wanted, the rest of the proposal, namely forming a special investigation team, was approved by the committee.\nI don't know if he's happy with these results, but... Honestly, I don't think this new investigation team is up to snuff. First of all, there's the old daredevil Jonathan Travis, who's known more for his dramatic flair than his bona fides as a Cube tech expert. Then, there's Dermot Lambert, the psychologist who always looks like he's attending a funeral. Maybe he's the one who needs a psychologist.\nThen, there's... Well, whatever. For me, the only outstanding person there is the aircraft carrier officer, Savoy. The only reminder that half of the Oceanic Federation is supposed to come from the other side of the pond: Europa, the land of geniuses. Oh look, seems like Sardegna's produced a second Garibaldi. Meanwhile, we...\nWe just lost John Archer, damnit.\nI know what Herbert Sr.'s thinking. He won't allow the investigation committee to pin any crimes on Archer's name. But, he's jumping the gun. Frankly, the difference in ability among the members of this investigation team is greater than the difference between the climate of Antarctica and the Sahara Desert.\nOh wait, there's not much left of the Saharas by now.\nI guess we'll just have to see what happens.",
+		pic = ""
 	},
 	all = {
 		1101,
@@ -1407,6 +1506,15 @@ pg.world_collection_file_template = {
 		11504,
 		11505,
 		11506,
+		11601,
+		11602,
+		11603,
+		11604,
+		11605,
+		11606,
+		11607,
+		11608,
+		11609,
 		13101,
 		13102,
 		13103,
@@ -1453,6 +1561,7 @@ pg.world_collection_file_template = {
 		14408,
 		14409,
 		14410,
+		14411,
 		14601,
 		14602,
 		14603,
@@ -1460,6 +1569,7 @@ pg.world_collection_file_template = {
 		14605,
 		14606,
 		14607,
-		14608
+		14608,
+		14609
 	}
 }

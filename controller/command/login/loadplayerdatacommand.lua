@@ -253,6 +253,10 @@ function var0_0.execute(arg0_1, arg1_1)
 		{
 			LivingAreaCoverProxy,
 			true
+		},
+		{
+			GMTProxy,
+			true
 		}
 	})
 	pg.ConnectionMgr.GetInstance():setPacketIdx(1)

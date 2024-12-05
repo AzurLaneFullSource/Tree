@@ -418,7 +418,7 @@ return {
 			}
 		},
 		{
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			side = 2,
 			bgName = "bg_tolove_1",
 			nameColor = "#A9F548FF",

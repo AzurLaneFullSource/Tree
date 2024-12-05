@@ -8,7 +8,7 @@ return {
 			side = 2,
 			bgName = "bg_tolove_1",
 			say = "Shortly after...",
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

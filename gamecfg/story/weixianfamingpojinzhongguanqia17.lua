@@ -8,7 +8,7 @@ return {
 			side = 2,
 			bgName = "bg_tolove_1",
 			say = "When the Lala doppelganger was fully destroyed, Energy Stones started raining out of her shattered core.",
-			bgm = "tl-theme-1",
+			bgm = "story-richang-8",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -1,5 +1,7 @@
 local var0_0 = class("SettingsNotificationPanel", import(".SettingsBasePanel"))
 
+var0_0.UPDATE_ALARM_PANEL = "SettingsNotificationPanel.UPDATE_ALARM_PANEL"
+
 function var0_0.GetUIName(arg0_1)
 	return "SettingsNotifications"
 end
@@ -20,60 +22,87 @@ function var0_0.OnInit(arg0_4)
 			arg0_4:UpdateItem(arg1_5 + 1, arg2_5)
 		end
 	end)
+	arg0_4:UpdateAndroidAlarm()
 end
 
-function var0_0.UpdateItem(arg0_6, arg1_6, arg2_6)
-	local var0_6 = arg0_6.list[arg1_6]
+function var0_0.UpdateAndroidAlarm(arg0_6)
+	arg0_6.alarmBtn = arg0_6._tf:Find("android_alarm_btn")
+	arg0_6.alarmPanel = arg0_6._tf:Find("android_alarm_panel")
 
-	arg2_6:Find("mask/Text"):GetComponent("ScrollText"):SetText(var0_6.title)
-	onButton(arg0_6, arg2_6:Find("mask/Text"), function()
-		pg.m02:sendNotification(NewSettingsMediator.SHOW_DESC, var0_6)
-	end, SFX_PANEL)
-	removeOnToggle(arg2_6:Find("on"))
+	local var0_6 = CameraHelper.IsAndroid()
+	local var1_6 = NotificationMgr.Inst:CanScheduleExactAlarms()
 
-	if arg0_6:GetDefaultValue(var0_6) then
-		triggerToggle(arg2_6:Find("on"), true)
+	if not var0_6 or LOCK_ANDROID_EXACT_ALARM then
+		setActive(arg0_6.alarmBtn, false)
+		setActive(arg0_6.alarmPanel, false)
+	elseif not var1_6 then
+		setActive(arg0_6.alarmBtn, true)
+		setActive(arg0_6.alarmPanel, true)
+
+		arg0_6.alarmPanelTipText = arg0_6.alarmPanel:Find("tip/Text")
+
+		setText(arg0_6.alarmPanelTipText, i18n("notify_clock_tip"))
+		onButton(arg0_6, arg0_6.alarmBtn, function()
+			NotificationMgr.Inst:RequestScheduleExactAlarms()
+		end, SFX_PANEL)
 	else
-		triggerToggle(arg2_6:Find("off"), true)
+		setActive(arg0_6.alarmBtn, false)
+		setActive(arg0_6.alarmPanel, false)
+	end
+end
+
+function var0_0.UpdateItem(arg0_8, arg1_8, arg2_8)
+	local var0_8 = arg0_8.list[arg1_8]
+
+	arg2_8:Find("mask/Text"):GetComponent("ScrollText"):SetText(var0_8.title)
+	onButton(arg0_8, arg2_8:Find("mask/Text"), function()
+		pg.m02:sendNotification(NewSettingsMediator.SHOW_DESC, var0_8)
+	end, SFX_PANEL)
+	removeOnToggle(arg2_8:Find("on"))
+
+	if arg0_8:GetDefaultValue(var0_8) then
+		triggerToggle(arg2_8:Find("on"), true)
+	else
+		triggerToggle(arg2_8:Find("off"), true)
 	end
 
-	onToggle(arg0_6, arg2_6:Find("on"), function(arg0_8)
-		arg0_6:OnItemSwitch(var0_6, arg0_8)
+	onToggle(arg0_8, arg2_8:Find("on"), function(arg0_10)
+		arg0_8:OnItemSwitch(var0_8, arg0_10)
 	end, SFX_UI_TAG, SFX_UI_CANCEL)
-	arg0_6:OnUpdateItem(var0_6)
-	arg0_6:OnUpdateItemWithTr(var0_6, arg2_6)
+	arg0_8:OnUpdateItem(var0_8)
+	arg0_8:OnUpdateItemWithTr(var0_8, arg2_8)
 end
 
-function var0_0.OnUpdateItem(arg0_9, arg1_9)
+function var0_0.OnUpdateItem(arg0_11, arg1_11)
 	return
 end
 
-function var0_0.OnUpdateItemWithTr(arg0_10, arg1_10, arg2_10)
+function var0_0.OnUpdateItemWithTr(arg0_12, arg1_12, arg2_12)
 	return
 end
 
-function var0_0.OnItemSwitch(arg0_11, arg1_11, arg2_11)
-	pg.PushNotificationMgr.GetInstance():setSwitch(arg1_11.id, arg2_11)
+function var0_0.OnItemSwitch(arg0_13, arg1_13, arg2_13)
+	pg.PushNotificationMgr.GetInstance():setSwitch(arg1_13.id, arg2_13)
 end
 
-function var0_0.GetDefaultValue(arg0_12, arg1_12)
-	return pg.PushNotificationMgr.GetInstance():isEnabled(arg1_12.id)
+function var0_0.GetDefaultValue(arg0_14, arg1_14)
+	return pg.PushNotificationMgr.GetInstance():isEnabled(arg1_14.id)
 end
 
-function var0_0.GetList(arg0_13)
-	local var0_13 = {}
+function var0_0.GetList(arg0_15)
+	local var0_15 = {}
 
-	for iter0_13, iter1_13 in ipairs(pg.push_data_template.all) do
-		table.insert(var0_13, pg.push_data_template[iter1_13])
+	for iter0_15, iter1_15 in ipairs(pg.push_data_template.all) do
+		table.insert(var0_15, pg.push_data_template[iter1_15])
 	end
 
-	return var0_13
+	return var0_15
 end
 
-function var0_0.OnUpdate(arg0_14)
-	arg0_14.list = arg0_14:GetList()
+function var0_0.OnUpdate(arg0_16)
+	arg0_16.list = arg0_16:GetList()
 
-	arg0_14.uilist:align(#arg0_14.list)
+	arg0_16.uilist:align(#arg0_16.list)
 end
 
 return var0_0
