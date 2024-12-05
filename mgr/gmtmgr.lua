@@ -9,76 +9,124 @@ var0_0.TYPE_PAINTING = 8
 var0_0.TYPE_CIPHER = 16
 
 function var0_0.Init(arg0_1, arg1_1)
+	arg0_1._gmtTimer = Timer.New(function()
+		arg0_1:onTimer()
+	end, 1, -1)
+
 	if arg1_1 then
 		arg1_1()
 	end
 end
 
-function var0_0.initUI(arg0_2, arg1_2)
-	if arg0_2._go == nil then
-		PoolMgr.GetInstance():GetUI("GMTUI", true, function(arg0_3)
-			arg0_2._go = arg0_3
+function var0_0.initUI(arg0_3, arg1_3)
+	if arg0_3._go == nil then
+		PoolMgr.GetInstance():GetUI("GMTUI", true, function(arg0_4)
+			arg0_3._go = arg0_4
 
-			arg0_2._go:SetActive(false)
+			arg0_3._go:SetActive(false)
 
-			arg0_2._textTf = findTF(arg0_2._go, "ad/text")
+			arg0_3._textTf = findTF(arg0_3._go, "ad/text")
 
-			local var0_3 = GameObject.Find("OverlayCamera/Overlay/UITop")
+			local var0_4 = GameObject.Find("OverlayCamera/Overlay/UITop")
 
-			arg0_2._go.transform:SetParent(var0_3.transform, false)
+			arg0_3._go.transform:SetParent(var0_4.transform, false)
 
-			arg0_2._animator = GetComponent(arg0_2._go, typeof(Animator))
+			arg0_3._animator = GetComponent(arg0_3._go, typeof(Animator))
 
-			arg1_2()
+			arg1_3()
 		end)
 	end
 end
 
-function var0_0.showGMT(arg0_4, arg1_4)
-	arg0_4._subTime = arg1_4 - pg.TimeMgr:GetInstance():GetServerTime()
+function var0_0.onTimer(arg0_5)
+	arg0_5._subTime = arg0_5._gmtTime - pg.TimeMgr:GetInstance():GetServerTime()
 
-	if arg0_4._go == nil then
-		arg0_4:initUI(function()
-			arg0_4:showTip()
+	if arg0_5._go == nil then
+		arg0_5:initUI(function()
+			arg0_5:showTip()
 		end)
 	else
-		arg0_4:showTip()
+		arg0_5:showTip()
+	end
+
+	if arg0_5._subTime < 0 and arg0_5._gmtTimer.running then
+		arg0_5._gmtTimer:Stop()
+		arg0_5._go:SetActive(false)
 	end
 end
 
-function var0_0.showTip(arg0_6)
-	arg0_6._go:SetActive(false)
-	arg0_6._go:SetActive(true)
+function var0_0.showGMT(arg0_7, arg1_7)
+	local var0_7 = pg.gameset.maintenance_message.description
 
-	if arg0_6._subTime >= 10 then
-		arg0_6._animator:SetTrigger("once")
-	elseif not arg0_6._triggerStop then
-		arg0_6._triggerStop = true
+	arg0_7._onceTime = Clone(var0_7[1])
+	arg0_7._repeatTime = Clone(var0_7[2])
+	arg0_7._gmtTime = arg1_7
 
-		arg0_6._animator:SetTrigger("repeat")
+	if not arg0_7._gmtTimer.running then
+		arg0_7._gmtTimer:Start()
 	end
 
-	local var0_6 = arg0_6:getTimeTip()
+	arg0_7.focusShowTip = true
 
-	setText(arg0_6._textTf, var0_6)
+	arg0_7:onTimer()
 end
 
-function var0_0.getTimeTip(arg0_7)
-	if arg0_7._subTime > 0 then
-		local var0_7 = math.floor(arg0_7._subTime / 3600)
-		local var1_7 = math.floor(arg0_7._subTime / 60)
-		local var2_7 = arg0_7._subTime % 60
-		local var3_7
+function var0_0.showTip(arg0_8)
+	local var0_8 = false
 
-		if var0_7 > 0 then
-			var3_7 = tostring(var0_7) .. i18n("word_hour")
-		elseif var1_7 > 0 then
-			var3_7 = tostring(var1_7) .. i18n("word_minute")
+	if arg0_8.focusShowTip then
+		var0_8 = true
+		arg0_8.focusShowTip = false
+	end
+
+	if arg0_8._subTime <= arg0_8._repeatTime then
+		var0_8 = true
+	else
+		for iter0_8 = #arg0_8._onceTime, 1, -1 do
+			if arg0_8._subTime <= arg0_8._onceTime[iter0_8] then
+				table.remove(arg0_8._onceTime, iter0_8)
+
+				var0_8 = true
+			end
+		end
+	end
+
+	if not var0_8 then
+		return
+	end
+
+	arg0_8._go:SetActive(false)
+	arg0_8._go:SetActive(true)
+
+	if arg0_8._subTime > arg0_8._repeatTime then
+		arg0_8._animator:SetTrigger("once")
+	elseif not arg0_8._triggerStop then
+		arg0_8._triggerStop = true
+
+		arg0_8._animator:SetTrigger("repeat")
+	end
+
+	local var1_8 = arg0_8:getTimeTip()
+
+	setText(arg0_8._textTf, var1_8)
+end
+
+function var0_0.getTimeTip(arg0_9)
+	if arg0_9._subTime > 0 then
+		local var0_9 = math.floor(arg0_9._subTime / 3600)
+		local var1_9 = math.floor(arg0_9._subTime / 60)
+		local var2_9 = arg0_9._subTime % 60
+		local var3_9
+
+		if var0_9 > 0 then
+			var3_9 = tostring(var0_9) .. i18n("word_hour")
+		elseif var1_9 > 0 then
+			var3_9 = tostring(var1_9) .. i18n("word_minute")
 		else
-			var3_7 = tostring(var2_7) .. i18n("word_second")
+			var3_9 = tostring(var2_9) .. i18n("word_second")
 		end
 
-		return i18n("maintenance_message_text", var3_7)
+		return i18n("maintenance_message_text", var3_9)
 	end
 
 	return i18n("maintenance_message_stop_text")

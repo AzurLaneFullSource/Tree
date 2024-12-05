@@ -1136,9 +1136,9 @@ function var0_0.SetBackgroundPanel(arg0_61, arg1_61)
 				LoadImageSpriteAsync("herohrzicon/" .. var2_63, arg2_63:Find("skinMask/skin"), false)
 				setScrollText(arg2_63:Find("skinMask/Panel/mask/Text"), var0_63.name)
 
-				local var3_63 = var0_63.skin_type ~= ShipSkin.SKIN_TYPE_DEFAULT and not getProxy(ShipSkinProxy):hasSkin(var0_63.id)
+				local var3_63 = getProxy(ShipSkinProxy):hasSkin(var0_63.id) or var0_63.skin_type == ShipSkin.SKIN_TYPE_DEFAULT or var0_63.skin_type == ShipSkin.SKIN_TYPE_PROPOSE or var0_63.skin_type == ShipSkin.SKIN_TYPE_REMAKE
 
-				SetActive(arg2_63:Find("lockFrame"), var3_63)
+				SetActive(arg2_63:Find("lockFrame"), not var3_63)
 				SetActive(arg2_63:Find("selectedFrame"), arg1_61.skinId == var1_63)
 				SetActive(arg2_63:Find("selected"), arg1_61.skinId == var1_63)
 
@@ -1147,7 +1147,7 @@ function var0_0.SetBackgroundPanel(arg0_61, arg1_61)
 				end
 
 				onButton(arg0_61, arg2_63, function()
-					if not var3_63 then
+					if var3_63 then
 						SetActive(arg2_63:Find("selectedFrame"), true)
 
 						for iter0_64 = 1, #arg1_61.skins do

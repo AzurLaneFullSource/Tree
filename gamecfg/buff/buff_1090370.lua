@@ -96,7 +96,7 @@ return {
 				},
 				arg_list = {
 					rant = 4650,
-					skill_id = 21090357,
+					skill_id = 1090357,
 					target = "TargetSelf"
 				}
 			}
