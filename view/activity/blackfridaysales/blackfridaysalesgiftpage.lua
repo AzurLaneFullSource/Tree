@@ -320,8 +320,9 @@ end
 
 function var0_0.isTip(arg0_25)
 	local var0_25 = false
+	local var1_25 = pg.TimeMgr.GetInstance()
 
-	local function var1_25(arg0_26)
+	local function var2_25(arg0_26)
 		local var0_26 = false
 		local var1_26 = Clone(arg0_25.giftList[arg0_26])
 
@@ -334,7 +335,7 @@ function var0_0.isTip(arg0_25)
 
 			iter1_26:updateBuyCount(count)
 
-			if iter1_26:canPurchase() then
+			if iter1_26:canPurchase() and not iter1_26:isChargeType() and var1_25:inTime(iter1_26:getConfig("time")) then
 				var0_26 = true
 			end
 		end
@@ -342,7 +343,7 @@ function var0_0.isTip(arg0_25)
 		return var0_26
 	end
 
-	return var1_25(1) or var1_25(2)
+	return var2_25(1) or var2_25(2)
 end
 
 function var0_0.OnDestroy(arg0_27)

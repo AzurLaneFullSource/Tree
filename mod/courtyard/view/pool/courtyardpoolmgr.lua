@@ -47,8 +47,9 @@ function var0_0.GenPool(arg0_2, arg1_2)
 				end
 
 				local var0_4 = var1_2[iter0_2]
+				local var1_4 = Object.Instantiate(arg0_4)
 
-				arg0_2.pools[iter1_2] = CourtYardPool.New(arg1_2, arg0_4, unpack(var0_4))
+				arg0_2.pools[iter1_2] = CourtYardPool.New(arg1_2, var1_4, unpack(var0_4))
 
 				arg0_3()
 			end), true, true)
@@ -62,8 +63,10 @@ function var0_0.GenPool(arg0_2, arg1_2)
 					return
 				end
 
-				if arg0_6 then
-					arg0_2.pools[iter3_2] = CourtYardEffectPool.New(arg1_2, arg0_6, 0, 3)
+				if Object.Instantiate(arg0_6) then
+					local var0_6 = Object.Instantiate(arg0_6)
+
+					arg0_2.pools[iter3_2] = CourtYardEffectPool.New(arg1_2, var0_6, 0, 3)
 				end
 
 				arg0_5()
