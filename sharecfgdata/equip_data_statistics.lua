@@ -158878,6 +158878,119 @@ _G.pg.base.equip_data_statistics[150573] = {
 	value_1 = "640",
 }
 
+_G.pg.base.equip_data_statistics[150580] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "A handkerchief that Memphis always keeps with her. She worked hard to embroider her own name onto it.",
+	icon = "150580",
+	id = 150580,
+	name = "Precious Handkerchief",
+	nationality = 1,
+	rarity = 4,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "200",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		60800,
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150581] = {
+	base = 150580,
+	id = 150581,
+	value_1 = "230",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150582] = {
+	base = 150580,
+	id = 150582,
+	value_1 = "260",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150583] = {
+	base = 150580,
+	id = 150583,
+	value_1 = "290",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150584] = {
+	base = 150580,
+	id = 150584,
+	value_1 = "320",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150585] = {
+	base = 150580,
+	id = 150585,
+	value_1 = "350",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150586] = {
+	base = 150580,
+	id = 150586,
+	value_1 = "380",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150587] = {
+	base = 150580,
+	id = 150587,
+	value_1 = "410",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150588] = {
+	base = 150580,
+	id = 150588,
+	value_1 = "440",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150589] = {
+	base = 150580,
+	id = 150589,
+	value_1 = "470",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150590] = {
+	base = 150580,
+	id = 150590,
+	value_1 = "500",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150591] = {
+	anti_siren = 100,
+	base = 150580,
+	id = 150591,
+	value_1 = "530",
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[170001] = {
 	ammo = 10,
 	descrip = "Barrage",

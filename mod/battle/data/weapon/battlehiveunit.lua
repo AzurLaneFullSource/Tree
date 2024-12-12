@@ -134,6 +134,11 @@ end
 
 function var3_0.SpwanAircraft(arg0_10, arg1_10)
 	local var0_10 = arg0_10._dataProxy:CreateAircraft(arg0_10._host, arg0_10._tmpData.id, arg0_10:GetPotential(), arg0_10._skinID)
+
+	if arg0_10:GetStandHost() then
+		var0_10:SetAttr(arg0_10:GetStandHost())
+	end
+
 	local var1_10 = arg0_10:GetBaseAngle() + arg1_10
 	local var2_10 = math.deg2Rad * var1_10
 	local var3_10 = Vector3(math.cos(var2_10), 0, math.sin(var2_10))

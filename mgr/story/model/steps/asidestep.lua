@@ -39,10 +39,13 @@ end
 
 function var0_0.GetSequence(arg0_4)
 	local var0_4 = {}
+	local var1_4 = arg0_4:ShouldReplacePlayer()
 
 	for iter0_4, iter1_4 in ipairs(arg0_4.sequence or {}) do
+		local var2_4 = var1_4 and arg0_4:ReplacePlayerName(iter1_4[1]) or iter1_4[1]
+
 		table.insert(var0_4, {
-			iter1_4[1],
+			HXSet.hxLan(var2_4),
 			iter1_4[2]
 		})
 	end

@@ -13,6 +13,14 @@ function var0_0.OnLoaded(arg0_2)
 		arg0_2:findTF("pagefooter/gemShop"),
 		arg0_2:findTF("pagefooter/coinShop")
 	}
+
+	setText(arg0_2:findTF("pagefooter/coinShop/Text"), i18n("blackfriday_coinshop"))
+	setText(arg0_2:findTF("pagefooter/coinShop/mark"), i18n("blackfriday_coinshop"))
+	setText(arg0_2:findTF("pagefooter/gemShop/Text"), i18n("blackfriday_gemshop"))
+	setText(arg0_2:findTF("pagefooter/gemShop/mark"), i18n("blackfriday_gemshop"))
+	setText(arg0_2:findTF("pagefooter/ptShop/Text"), i18n("blackfriday_ptshop"))
+	setText(arg0_2:findTF("pagefooter/ptShop/mark"), i18n("blackfriday_ptshop"))
+
 	arg0_2.ress = {
 		arg0_2:findTF("res_pt/icon_pt"),
 		arg0_2:findTF("res_pt/icon_gem"),
@@ -208,7 +216,13 @@ function var0_0.SwitchTab(arg0_22, arg1_22)
 	setActive(arg0_22.resTF, true)
 	arg0_22:UpdateRes()
 
-	arg0_22.displays = arg0_22.shop:GetGoodsByTabs(arg1_22)
+	local var0_22 = arg0_22.shop:GetGoodsByTabs(arg1_22)
+
+	if arg0_22.shop:GetTabCount() <= 1 then
+		setActive(arg0_22:findTF("pagefooter"), false)
+	end
+
+	arg0_22.displays = var0_22
 
 	table.sort(arg0_22.displays, function(arg0_23, arg1_23)
 		return arg0_23.id < arg1_23.id

@@ -37622,8 +37622,8 @@ _G.pg.base.shop_template[70728] = {
 		{
 			{
 				2024,
-				11,
-				14,
+				12,
+				12,
 			},
 			{
 				0,
@@ -37635,7 +37635,7 @@ _G.pg.base.shop_template[70728] = {
 			{
 				2024,
 				12,
-				4,
+				18,
 			},
 			{
 				23,
@@ -42632,8 +42632,8 @@ _G.pg.base.shop_template[70845] = {
 		{
 			{
 				2024,
-				11,
-				14,
+				12,
+				12,
 			},
 			{
 				0,
@@ -42645,7 +42645,7 @@ _G.pg.base.shop_template[70845] = {
 			{
 				2024,
 				12,
-				4,
+				18,
 			},
 			{
 				23,
@@ -46428,8 +46428,8 @@ _G.pg.base.shop_template[70937] = {
 		{
 			{
 				2024,
-				11,
-				14,
+				12,
+				12,
 			},
 			{
 				0,
@@ -46439,9 +46439,9 @@ _G.pg.base.shop_template[70937] = {
 		},
 		{
 			{
-				2024,
-				12,
-				4,
+				2025,
+				1,
+				1,
 			},
 			{
 				23,
@@ -46480,8 +46480,8 @@ _G.pg.base.shop_template[70938] = {
 		{
 			{
 				2024,
-				11,
-				14,
+				12,
+				12,
 			},
 			{
 				0,
@@ -46491,9 +46491,9 @@ _G.pg.base.shop_template[70938] = {
 		},
 		{
 			{
-				2024,
-				12,
-				4,
+				2025,
+				1,
+				1,
 			},
 			{
 				23,
@@ -50416,7 +50416,7 @@ _G.pg.base.shop_template[71026] = {
 	id = 71026,
 	limit_args2 = "",
 	num = 1,
-	order = 2,
+	order = 6,
 	resource_num = 1180,
 	resource_type = 14,
 	tag = 2,
@@ -50468,7 +50468,7 @@ _G.pg.base.shop_template[71027] = {
 	id = 71027,
 	limit_args2 = "",
 	num = 1,
-	order = 2,
+	order = 6,
 	resource_num = 880,
 	resource_type = 14,
 	tag = 2,
@@ -50520,7 +50520,7 @@ _G.pg.base.shop_template[71028] = {
 	id = 71028,
 	limit_args2 = "",
 	num = 1,
-	order = 2,
+	order = 6,
 	resource_num = 780,
 	resource_type = 14,
 	tag = 2,
@@ -50572,7 +50572,7 @@ _G.pg.base.shop_template[71029] = {
 	id = 71029,
 	limit_args2 = "",
 	num = 1,
-	order = 3,
+	order = 6,
 	resource_num = 980,
 	resource_type = 14,
 	tag = 2,
@@ -50624,7 +50624,7 @@ _G.pg.base.shop_template[71030] = {
 	id = 71030,
 	limit_args2 = "",
 	num = 1,
-	order = 1,
+	order = 6,
 	resource_num = 900,
 	resource_type = 14,
 	tag = 2,
@@ -50676,7 +50676,7 @@ _G.pg.base.shop_template[71031] = {
 	id = 71031,
 	limit_args2 = "",
 	num = 1,
-	order = 2,
+	order = 6,
 	resource_num = 1100,
 	resource_type = 14,
 	tag = 2,
@@ -50728,7 +50728,7 @@ _G.pg.base.shop_template[71032] = {
 	id = 71032,
 	limit_args2 = "",
 	num = 1,
-	order = 3,
+	order = 6,
 	resource_num = 780,
 	resource_type = 14,
 	tag = 2,

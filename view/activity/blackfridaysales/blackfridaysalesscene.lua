@@ -72,10 +72,19 @@ function var0_0.init(arg0_7)
 	arg0_7.helpBtn = arg0_7:findTF("help_btn", arg0_7.top)
 	arg0_7.leftPanel = arg0_7:findTF("left")
 	arg0_7.timeTF = arg0_7:findTF("time", arg0_7.leftPanel)
+
+	local var0_7 = arg0_7:findTF("frame/toggle_group/task", arg0_7.leftPanel)
+	local var1_7 = arg0_7:findTF("frame/toggle_group/shop", arg0_7.leftPanel)
+	local var2_7 = arg0_7:findTF("frame/toggle_group/gift", arg0_7.leftPanel)
+
+	setText(var0_7:Find("Image"), i18n("blackfriday_task"))
+	setText(var1_7:Find("Image"), i18n("blackfriday_shop"))
+	setText(var2_7:Find("Image"), i18n("blackfriday_gift"))
+
 	arg0_7.toggles = {
-		arg0_7:findTF("frame/toggle_group/task", arg0_7.leftPanel),
-		arg0_7:findTF("frame/toggle_group/shop", arg0_7.leftPanel),
-		arg0_7:findTF("frame/toggle_group/gift", arg0_7.leftPanel)
+		var0_7,
+		var1_7,
+		var2_7
 	}
 	arg0_7.main = arg0_7:findTF("main")
 	arg0_7.pages = {
@@ -96,7 +105,7 @@ function var0_0.didEnter(arg0_8)
 			helps = pg.gametip.blackfriday_main_tip.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0_8, arg0_8:findTF("gem/add_btn", arg0_8.resPanel), function()
+	onButton(arg0_8, arg0_8:findTF("gem", arg0_8.resPanel), function()
 		local function var0_11()
 			if not pg.m02:hasMediator(ChargeMediator.__cname) then
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
@@ -200,9 +209,7 @@ function var0_0.updateTime(arg0_17)
 	local var2_17 = math.floor(var1_17 / 86400)
 	local var3_17 = math.floor((var1_17 - var2_17 * 86400) / 3600)
 
-	setText(arg0_17.timeTF, i18n("newserver_time", var2_17, var3_17))
-	setActive(arg0_17:findTF("title_activity", arg0_17.timeTF), arg0_17.taskActivity)
-	setActive(arg0_17:findTF("title_shop", arg0_17.timeTF), not arg0_17.taskActivity)
+	setText(arg0_17.timeTF, i18n("time_remaining_tip") .. i18n("newserver_time", var2_17, var3_17))
 end
 
 function var0_0.onUpdateTask(arg0_18)

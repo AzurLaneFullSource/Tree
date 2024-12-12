@@ -150,6 +150,10 @@ pg.ship_meta_breakout = setmetatable({
 		9707042,
 		9707043,
 		9707044,
+		9707051,
+		9707052,
+		9707053,
+		9707054,
 		9708011,
 		9708012,
 		9708013,
@@ -2586,6 +2590,75 @@ pg.base.ship_meta_breakout = {
 		id = 9707044,
 		item1 = 21033,
 		pre_id = 9707043,
+		weapon_ids = {}
+	},
+	[9707051] = {
+		breakout_view = "Unlock Flickering Light - Taihou/All Dive Bombers +1/Dive Bomber Efficiency +5%",
+		gold = 1000,
+		breakout_id = 9707052,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9707051,
+		item1 = 21041,
+		pre_id = 0,
+		weapon_ids = {
+			60331,
+			54014
+		}
+	},
+	[9707052] = {
+		breakout_view = "Hangar Capacity +1/All Torpedo Bombers +1/Fighter Efficiency +10%",
+		gold = 3000,
+		breakout_id = 9707053,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9707052,
+		item1 = 21041,
+		pre_id = 9707051,
+		weapon_ids = {
+			60332,
+			54014,
+			60332,
+			54014
+		}
+	},
+	[9707053] = {
+		breakout_view = "Upgrade Flickering Light - Taihou/All Aircraft +1/Torpedo Bomber Efficiency +15%",
+		gold = 10000,
+		breakout_id = 9707054,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9707053,
+		item1 = 21041,
+		pre_id = 9707052,
+		weapon_ids = {
+			60333,
+			54015,
+			60333,
+			54015
+		}
+	},
+	[9707054] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9707054,
+		item1 = 21041,
+		pre_id = 9707053,
 		weapon_ids = {}
 	},
 	[9708011] = {

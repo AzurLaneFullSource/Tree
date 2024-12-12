@@ -267,6 +267,11 @@ pg.task_meta_data_template = setmetatable({
 		100353,
 		100354,
 		100355,
+		100361,
+		100362,
+		100363,
+		100364,
+		100365,
 		200001,
 		200002,
 		200003,
@@ -370,7 +375,11 @@ pg.task_meta_data_template = setmetatable({
 		200261,
 		200262,
 		200263,
-		200264
+		200264,
+		200271,
+		200272,
+		200273,
+		200274
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2495,6 +2504,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100361] = {
+		target_id_2 = "970705",
+		sub_type = 180,
+		desc = "Win 1 battle with Taihou META in your fleet.",
+		id = 100361,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100362] = {
+		target_id_2 = "970705",
+		sub_type = 180,
+		desc = "Defeat a Lv. 30+ fleet with Taihou META in your fleet.",
+		id = 100362,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100363] = {
+		target_id_2 = "970705",
+		sub_type = 180,
+		desc = "Defeat a Lv. 55+ fleet with Taihou META in your fleet.",
+		id = 100363,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100364] = {
+		target_id_2 = "970705",
+		sub_type = 180,
+		desc = "Defeat a Lv. 80+ fleet with Taihou META in your fleet.",
+		id = 100364,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100365] = {
+		target_id_2 = "970705",
+		sub_type = 180,
+		desc = "Defeat a Lv. 100+ fleet with Taihou META in your fleet.",
+		id = 100365,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -3324,6 +3373,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "In Operation Siren, defeat a level 100+ enemy fleet with a fleet that includes Giulio Cesare META.",
 		id = 200264,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200271] = {
+		target_id_2 = "970705",
+		sub_type = 302,
+		desc = "Win 1 Operation Siren battle with Taihou META in your fleet.",
+		id = 200271,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200272] = {
+		target_id_2 = "970705",
+		sub_type = 302,
+		desc = "Defeat a Lv. 70+ fleet in Operation Siren with Taihou META in your fleet.",
+		id = 200272,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200273] = {
+		target_id_2 = "970705",
+		sub_type = 302,
+		desc = "Defeat a Lv. 90+ fleet in Operation Siren with Taihou META in your fleet.",
+		id = 200273,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200274] = {
+		target_id_2 = "970705",
+		sub_type = 302,
+		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Taihou META in your fleet.",
+		id = 200274,
 		target_num = 1,
 		target_id = "100"
 	}

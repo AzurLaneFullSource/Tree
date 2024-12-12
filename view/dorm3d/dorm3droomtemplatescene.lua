@@ -1004,6 +1004,12 @@ function var0_0.InitCharacter(arg0_67, arg1_67, arg2_67)
 	table.IpairsCArray(var1_67, function(arg0_69, arg1_69)
 		if arg1_69.name == "BodyCollider" then
 			arg1_67.ladyCollider = arg1_69
+
+			setActive(arg1_69, true)
+		elseif arg1_69.name == "SafeCollider" then
+			arg1_67.ladySafeCollider = arg1_69
+
+			setActive(arg1_69, false)
 		elseif arg1_69.name == "Interest" then
 			arg1_67.ladyInterestRoot = arg1_69
 		elseif arg1_69.name == "Head Center" then
@@ -2611,6 +2617,7 @@ function var0_0.EnterPhotoMode(arg0_221, arg1_221, arg2_221)
 			var0_224.ladyAnimator:Update(0)
 			var0_224:ResetCharPoint(arg1_221:GetWatchCameraName())
 			arg0_221:SyncInterestTransform(var0_224)
+			setActive(var0_224.ladySafeCollider, true)
 
 			local var1_224 = arg0_221.cameras[var0_0.CAMERA.PHOTO]
 			local var2_224 = var1_224.m_XAxis
@@ -2646,7 +2653,11 @@ function var0_0.ExitPhotoMode(arg0_227)
 		end,
 		function(arg0_229)
 			arg0_227:RevertCameraOrbit()
+
+			local var0_229 = arg0_227.ladyDict[arg0_227.apartment:GetConfigID()]
+
 			arg0_227:SwitchAnim(var0_0.ANIM.IDLE)
+			setActive(var0_229.ladySafeCollider, false)
 			onNextTick(function()
 				arg0_227:ChangeCharacterPosition()
 			end)
@@ -2658,10 +2669,10 @@ function var0_0.ExitPhotoMode(arg0_227)
 				arg0_227.contextData.photoFreeMode = nil
 			end
 
-			local var0_229 = arg0_227.cameras[var0_0.CAMERA.POV]
+			local var1_229 = arg0_227.cameras[var0_0.CAMERA.POV]
 
-			arg0_227:RegisterCameraBlendFinished(var0_229, arg0_229)
-			arg0_227:ActiveCamera(var0_229)
+			arg0_227:RegisterCameraBlendFinished(var1_229, arg0_229)
+			arg0_227:ActiveCamera(var1_229)
 		end,
 		function(arg0_231)
 			arg0_227:ShowBlackScreen(false, arg0_231)

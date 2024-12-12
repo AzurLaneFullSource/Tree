@@ -5,7 +5,6 @@ _G.pg.base.item_data_statistics[1] = {
 	icon = "Equips/5200",
 	id = 1,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Quintuple 533mm Torpedo Design",
@@ -26,6 +25,7 @@ _G.pg.base.item_data_statistics[1] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[2] = {
@@ -35,7 +35,6 @@ _G.pg.base.item_data_statistics[2] = {
 	icon = "Equips/1600",
 	id = 2,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Rammer Design",
@@ -56,6 +55,7 @@ _G.pg.base.item_data_statistics[2] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[3] = {
@@ -65,7 +65,6 @@ _G.pg.base.item_data_statistics[3] = {
 	icon = "Equips/1700",
 	id = 3,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Hydraulic Steering Gear Design",
@@ -86,6 +85,7 @@ _G.pg.base.item_data_statistics[3] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[4] = {
@@ -95,7 +95,6 @@ _G.pg.base.item_data_statistics[4] = {
 	icon = "Equips/1900",
 	id = 4,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Navy Camouflage Design",
@@ -116,6 +115,7 @@ _G.pg.base.item_data_statistics[4] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[5] = {
@@ -125,7 +125,6 @@ _G.pg.base.item_data_statistics[5] = {
 	icon = "Equips/2500",
 	id = 5,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Fire Suppressor Design",
@@ -146,6 +145,7 @@ _G.pg.base.item_data_statistics[5] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[6] = {
@@ -155,7 +155,6 @@ _G.pg.base.item_data_statistics[6] = {
 	icon = "Equips/5000",
 	id = 6,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 533mm Torpedo Design",
@@ -176,6 +175,7 @@ _G.pg.base.item_data_statistics[6] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[7] = {
@@ -185,7 +185,6 @@ _G.pg.base.item_data_statistics[7] = {
 	icon = "Equips/6000",
 	id = 7,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 12.7mm AA Gun Design",
@@ -206,6 +205,7 @@ _G.pg.base.item_data_statistics[7] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[8] = {
@@ -215,7 +215,6 @@ _G.pg.base.item_data_statistics[8] = {
 	icon = "Equips/7000",
 	id = 8,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Single 152mm Main Gun Design",
@@ -236,6 +235,7 @@ _G.pg.base.item_data_statistics[8] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[9] = {
@@ -245,7 +245,6 @@ _G.pg.base.item_data_statistics[9] = {
 	icon = "Equips/11000",
 	id = 9,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 76mm Artillery Design",
@@ -266,6 +265,7 @@ _G.pg.base.item_data_statistics[9] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10] = {
@@ -275,7 +275,6 @@ _G.pg.base.item_data_statistics[10] = {
 	icon = "Equips/12000",
 	id = 10,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 152mm Main Gun Design",
@@ -296,6 +295,7 @@ _G.pg.base.item_data_statistics[10] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11] = {
@@ -305,7 +305,6 @@ _G.pg.base.item_data_statistics[11] = {
 	icon = "Equips/13000",
 	id = 11,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 203mm Main Gun Design",
@@ -326,6 +325,7 @@ _G.pg.base.item_data_statistics[11] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[12] = {
@@ -335,7 +335,6 @@ _G.pg.base.item_data_statistics[12] = {
 	icon = "Equips/14100",
 	id = 12,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 356mm Main Gun Design",
@@ -356,6 +355,7 @@ _G.pg.base.item_data_statistics[12] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13] = {
@@ -365,7 +365,6 @@ _G.pg.base.item_data_statistics[13] = {
 	icon = "Equips/16000",
 	id = 13,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 20mm AA Oerlikon Design",
@@ -386,6 +385,7 @@ _G.pg.base.item_data_statistics[13] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[14] = {
@@ -395,7 +395,6 @@ _G.pg.base.item_data_statistics[14] = {
 	icon = "Equips/17000",
 	id = 14,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 F2A Buffalo Design",
@@ -416,6 +415,7 @@ _G.pg.base.item_data_statistics[14] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15] = {
@@ -425,7 +425,6 @@ _G.pg.base.item_data_statistics[15] = {
 	icon = "Equips/18000",
 	id = 15,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 TBD Devastator Design",
@@ -446,6 +445,7 @@ _G.pg.base.item_data_statistics[15] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16] = {
@@ -455,7 +455,6 @@ _G.pg.base.item_data_statistics[16] = {
 	icon = "Equips/19000",
 	id = 16,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 SBD Dauntless Design",
@@ -476,6 +475,7 @@ _G.pg.base.item_data_statistics[16] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17] = {
@@ -485,7 +485,6 @@ _G.pg.base.item_data_statistics[17] = {
 	icon = "Equips/21000",
 	id = 17,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Single 102mm Secondary Gun Design",
@@ -506,6 +505,7 @@ _G.pg.base.item_data_statistics[17] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18] = {
@@ -515,7 +515,6 @@ _G.pg.base.item_data_statistics[18] = {
 	icon = "Equips/21100",
 	id = 18,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 102mm Secondary Gun Design",
@@ -536,6 +535,7 @@ _G.pg.base.item_data_statistics[18] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[19] = {
@@ -545,7 +545,6 @@ _G.pg.base.item_data_statistics[19] = {
 	icon = "Equips/21300",
 	id = 19,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Single 120mm Main Gun Design",
@@ -566,6 +565,7 @@ _G.pg.base.item_data_statistics[19] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[20] = {
@@ -575,7 +575,6 @@ _G.pg.base.item_data_statistics[20] = {
 	icon = "Equips/22000",
 	id = 20,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Single 152mm Secondary Gun Design",
@@ -596,6 +595,7 @@ _G.pg.base.item_data_statistics[20] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21] = {
@@ -605,7 +605,6 @@ _G.pg.base.item_data_statistics[21] = {
 	icon = "Equips/26000",
 	id = 21,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 40mm Pom Pom Gun Design",
@@ -626,6 +625,7 @@ _G.pg.base.item_data_statistics[21] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[22] = {
@@ -635,7 +635,6 @@ _G.pg.base.item_data_statistics[22] = {
 	icon = "Equips/29000",
 	id = 22,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Blackburn Skua Design",
@@ -656,6 +655,7 @@ _G.pg.base.item_data_statistics[22] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[23] = {
@@ -665,7 +665,6 @@ _G.pg.base.item_data_statistics[23] = {
 	icon = "Equips/31100",
 	id = 23,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Single 120mm Main Gun Design",
@@ -686,6 +685,7 @@ _G.pg.base.item_data_statistics[23] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[24] = {
@@ -695,7 +695,6 @@ _G.pg.base.item_data_statistics[24] = {
 	icon = "Equips/32000",
 	id = 24,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Single 140mm Main Gun Design",
@@ -716,6 +715,7 @@ _G.pg.base.item_data_statistics[24] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[25] = {
@@ -725,7 +725,6 @@ _G.pg.base.item_data_statistics[25] = {
 	icon = "Equips/34000",
 	id = 25,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 356mm Mounted Gun Design",
@@ -746,6 +745,7 @@ _G.pg.base.item_data_statistics[25] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[26] = {
@@ -755,7 +755,6 @@ _G.pg.base.item_data_statistics[26] = {
 	icon = "Equips/35000",
 	id = 26,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 610mm Torpedo Design",
@@ -776,6 +775,7 @@ _G.pg.base.item_data_statistics[26] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[27] = {
@@ -785,7 +785,6 @@ _G.pg.base.item_data_statistics[27] = {
 	icon = "Equips/36100",
 	id = 27,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 25mm AA Gun Design",
@@ -806,6 +805,7 @@ _G.pg.base.item_data_statistics[27] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[28] = {
@@ -815,7 +815,6 @@ _G.pg.base.item_data_statistics[28] = {
 	icon = "Equips/37000",
 	id = 28,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 A5M Claude Design",
@@ -836,6 +835,7 @@ _G.pg.base.item_data_statistics[28] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[29] = {
@@ -845,7 +845,6 @@ _G.pg.base.item_data_statistics[29] = {
 	icon = "Equips/38000",
 	id = 29,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Nakajima B5N Design",
@@ -866,6 +865,7 @@ _G.pg.base.item_data_statistics[29] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30] = {
@@ -875,7 +875,6 @@ _G.pg.base.item_data_statistics[30] = {
 	icon = "Equips/41000",
 	id = 30,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Single 127mm Main Gun Design",
@@ -896,6 +895,7 @@ _G.pg.base.item_data_statistics[30] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[31] = {
@@ -905,7 +905,6 @@ _G.pg.base.item_data_statistics[31] = {
 	icon = "Equips/46000",
 	id = 31,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Quadruple 20mm Machine Gun Design",
@@ -926,6 +925,7 @@ _G.pg.base.item_data_statistics[31] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[32] = {
@@ -935,7 +935,6 @@ _G.pg.base.item_data_statistics[32] = {
 	icon = "Equips/46100",
 	id = 32,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 37mm AA 70K Design",
@@ -956,6 +955,7 @@ _G.pg.base.item_data_statistics[32] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[33] = {
@@ -965,7 +965,6 @@ _G.pg.base.item_data_statistics[33] = {
 	icon = "Equips/41100",
 	id = 33,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Twin 128mm Dual Gun Design",
@@ -986,6 +985,7 @@ _G.pg.base.item_data_statistics[33] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[34] = {
@@ -995,7 +995,6 @@ _G.pg.base.item_data_statistics[34] = {
 	icon = "Equips/43100",
 	id = 34,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Triple 283mm Main Gun (SK C/28) Design",
@@ -1016,6 +1015,7 @@ _G.pg.base.item_data_statistics[34] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[35] = {
@@ -1025,7 +1025,6 @@ _G.pg.base.item_data_statistics[35] = {
 	icon = "Equips/44000",
 	id = 35,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Triple 283mm Main Gun (SK C/34) Design",
@@ -1046,6 +1045,7 @@ _G.pg.base.item_data_statistics[35] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[36] = {
@@ -1055,7 +1055,6 @@ _G.pg.base.item_data_statistics[36] = {
 	icon = "Equips/45000",
 	id = 36,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Triple 533mm Magnetic Torpedo Design",
@@ -1076,6 +1075,7 @@ _G.pg.base.item_data_statistics[36] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[37] = {
@@ -1085,7 +1085,6 @@ _G.pg.base.item_data_statistics[37] = {
 	icon = "Equips/47000",
 	id = 37,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 BF-109T Fighter Design",
@@ -1106,6 +1105,7 @@ _G.pg.base.item_data_statistics[37] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[38] = {
@@ -1115,7 +1115,6 @@ _G.pg.base.item_data_statistics[38] = {
 	icon = "Equips/49000",
 	id = 38,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Ju-87C Dive Bomber Design",
@@ -1136,6 +1135,7 @@ _G.pg.base.item_data_statistics[38] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[39] = {
@@ -1145,7 +1145,6 @@ _G.pg.base.item_data_statistics[39] = {
 	icon = "Equips/37300",
 	id = 39,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 A7M Reppü Design",
@@ -1166,6 +1165,7 @@ _G.pg.base.item_data_statistics[39] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40] = {
@@ -1175,7 +1175,6 @@ _G.pg.base.item_data_statistics[40] = {
 	icon = "Equips/38200",
 	id = 40,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Aichi B7A Ryusei Design",
@@ -1196,6 +1195,7 @@ _G.pg.base.item_data_statistics[40] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41] = {
@@ -1205,7 +1205,6 @@ _G.pg.base.item_data_statistics[41] = {
 	icon = "Equips/39200",
 	id = 41,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Aichi E16A Zuiun Design",
@@ -1226,6 +1225,7 @@ _G.pg.base.item_data_statistics[41] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42] = {
@@ -1235,7 +1235,6 @@ _G.pg.base.item_data_statistics[42] = {
 	icon = "Equips/27200",
 	id = 42,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Sea Gladiator Design",
@@ -1256,6 +1255,7 @@ _G.pg.base.item_data_statistics[42] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43] = {
@@ -1265,7 +1265,6 @@ _G.pg.base.item_data_statistics[43] = {
 	icon = "Equips/5300",
 	id = 43,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 550mm Torpedo Design",
@@ -1286,6 +1285,7 @@ _G.pg.base.item_data_statistics[43] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[44] = {
@@ -1295,7 +1295,6 @@ _G.pg.base.item_data_statistics[44] = {
 	icon = "Equips/6100",
 	id = 44,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 100mm AA Gun Design",
@@ -1316,6 +1315,7 @@ _G.pg.base.item_data_statistics[44] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[45] = {
@@ -1325,7 +1325,6 @@ _G.pg.base.item_data_statistics[45] = {
 	icon = "Equips/2900",
 	id = 45,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Basic Sonar T2 Design",
@@ -1346,6 +1345,7 @@ _G.pg.base.item_data_statistics[45] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[46] = {
@@ -1355,7 +1355,6 @@ _G.pg.base.item_data_statistics[46] = {
 	icon = "Equips/3000",
 	id = 46,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Improved Sonar T1 Design",
@@ -1376,6 +1375,7 @@ _G.pg.base.item_data_statistics[46] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[47] = {
@@ -1385,7 +1385,6 @@ _G.pg.base.item_data_statistics[47] = {
 	icon = "Equips/4000",
 	id = 47,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Basic Depth Charges T3 Design",
@@ -1406,6 +1405,7 @@ _G.pg.base.item_data_statistics[47] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[48] = {
@@ -1415,7 +1415,6 @@ _G.pg.base.item_data_statistics[48] = {
 	icon = "Equips/4100",
 	id = 48,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Improved Depth Charges T2 Design",
@@ -1436,6 +1435,7 @@ _G.pg.base.item_data_statistics[48] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[49] = {
@@ -1445,7 +1445,6 @@ _G.pg.base.item_data_statistics[49] = {
 	icon = "Equips/15000",
 	id = 49,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only Mark 14 Torpedo T2 Design",
@@ -1466,6 +1465,7 @@ _G.pg.base.item_data_statistics[49] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[50] = {
@@ -1475,7 +1475,6 @@ _G.pg.base.item_data_statistics[50] = {
 	icon = "Equips/15100",
 	id = 50,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only Mark 16 Torpedo T1 Design",
@@ -1496,6 +1495,7 @@ _G.pg.base.item_data_statistics[50] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[51] = {
@@ -1505,7 +1505,6 @@ _G.pg.base.item_data_statistics[51] = {
 	icon = "Equips/35400",
 	id = 51,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only Type 92 Electric Torpedo T2 Design",
@@ -1526,6 +1525,7 @@ _G.pg.base.item_data_statistics[51] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[52] = {
@@ -1535,7 +1535,6 @@ _G.pg.base.item_data_statistics[52] = {
 	icon = "Equips/35500",
 	id = 52,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only Type 95 Oxygen Torpedo T1 Design",
@@ -1556,6 +1555,7 @@ _G.pg.base.item_data_statistics[52] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[53] = {
@@ -1565,7 +1565,6 @@ _G.pg.base.item_data_statistics[53] = {
 	icon = "Equips/45300",
 	id = 53,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only G7a Torpedo T2 Design",
@@ -1586,6 +1585,7 @@ _G.pg.base.item_data_statistics[53] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[54] = {
@@ -1595,7 +1595,6 @@ _G.pg.base.item_data_statistics[54] = {
 	icon = "Equips/45400",
 	id = 54,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only G7e Homing Torpedo T1 Design",
@@ -1616,6 +1615,7 @@ _G.pg.base.item_data_statistics[54] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[55] = {
@@ -1625,7 +1625,6 @@ _G.pg.base.item_data_statistics[55] = {
 	icon = "Equips/5500",
 	id = 55,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only 550mm 24V Torpedo T2 Design",
@@ -1646,6 +1645,7 @@ _G.pg.base.item_data_statistics[55] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[56] = {
@@ -1655,7 +1655,6 @@ _G.pg.base.item_data_statistics[56] = {
 	icon = "Equips/50000",
 	id = 56,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Single 130mm Main Gun (Mle 1924) T3 Design",
@@ -1676,6 +1675,7 @@ _G.pg.base.item_data_statistics[56] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[57] = {
@@ -1685,7 +1685,6 @@ _G.pg.base.item_data_statistics[57] = {
 	icon = "Equips/50200",
 	id = 57,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Triple 152mm Main Gun (Mle 1930) T3 Design",
@@ -1706,6 +1705,7 @@ _G.pg.base.item_data_statistics[57] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[58] = {
@@ -1715,7 +1715,6 @@ _G.pg.base.item_data_statistics[58] = {
 	icon = "Equips/50300",
 	id = 58,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Quadruple 330mm Main Gun (Mle 1931) T2 Design",
@@ -1736,6 +1735,7 @@ _G.pg.base.item_data_statistics[58] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59] = {
@@ -1745,7 +1745,6 @@ _G.pg.base.item_data_statistics[59] = {
 	icon = "Equips/55000",
 	id = 59,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Triple 381mm Main Gun (M1934) T1 Design",
@@ -1766,6 +1765,7 @@ _G.pg.base.item_data_statistics[59] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60] = {
@@ -1775,7 +1775,6 @@ _G.pg.base.item_data_statistics[60] = {
 	icon = "Equips/55100",
 	id = 60,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Single 90mm High-Angle Gun (M1939) T1 Design",
@@ -1796,6 +1795,7 @@ _G.pg.base.item_data_statistics[60] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[61] = {
@@ -1805,7 +1805,6 @@ _G.pg.base.item_data_statistics[61] = {
 	icon = "Equips/55200",
 	id = 61,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 203mm Main Gun (M1927) T1 Design",
@@ -1826,6 +1825,7 @@ _G.pg.base.item_data_statistics[61] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[62] = {
@@ -1835,7 +1835,6 @@ _G.pg.base.item_data_statistics[62] = {
 	icon = "Equips/55300",
 	id = 62,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 203mm Main Gun (M1924) T2 Design",
@@ -1856,6 +1855,7 @@ _G.pg.base.item_data_statistics[62] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[63] = {
@@ -1865,7 +1865,6 @@ _G.pg.base.item_data_statistics[63] = {
 	icon = "Equips/55400",
 	id = 63,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 120mm Main Gun (M1936) T2 Design",
@@ -1886,6 +1885,7 @@ _G.pg.base.item_data_statistics[63] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[64] = {
@@ -1895,7 +1895,6 @@ _G.pg.base.item_data_statistics[64] = {
 	icon = "Equips/55460",
 	id = 64,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 120mm Main Gun (M1933) T0 Design",
@@ -1916,6 +1915,7 @@ _G.pg.base.item_data_statistics[64] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[65] = {
@@ -1925,7 +1925,6 @@ _G.pg.base.item_data_statistics[65] = {
 	icon = "Equips/55480",
 	id = 65,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Triple 320mm Main Gun (M1934) T0 Design",
@@ -1946,6 +1945,7 @@ _G.pg.base.item_data_statistics[65] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[66] = {
@@ -1955,7 +1955,6 @@ _G.pg.base.item_data_statistics[66] = {
 	icon = "Equips/55500",
 	id = 66,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 37mm AA Gun (M1932) T2 Design",
@@ -1976,6 +1975,7 @@ _G.pg.base.item_data_statistics[66] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[67] = {
@@ -1985,7 +1985,6 @@ _G.pg.base.item_data_statistics[67] = {
 	icon = "Equips/28300",
 	id = 67,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Fairey Albacore T2 Design",
@@ -2006,6 +2005,7 @@ _G.pg.base.item_data_statistics[67] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[68] = {
@@ -2015,7 +2015,6 @@ _G.pg.base.item_data_statistics[68] = {
 	icon = "Equips/32300",
 	id = 68,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 152mm Main Gun T2 Design ",
@@ -2036,6 +2035,7 @@ _G.pg.base.item_data_statistics[68] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[70] = {
@@ -2045,7 +2045,6 @@ _G.pg.base.item_data_statistics[70] = {
 	icon = "Equips/85120",
 	id = 70,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Triple 152mm Main Gun (B-38 MK5) Design",
@@ -2066,6 +2065,7 @@ _G.pg.base.item_data_statistics[70] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[71] = {
@@ -2075,7 +2075,6 @@ _G.pg.base.item_data_statistics[71] = {
 	icon = "Equips/85240",
 	id = 71,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Twin 100mm AA Gun (B-54) Design",
@@ -2096,6 +2095,7 @@ _G.pg.base.item_data_statistics[71] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[73] = {
@@ -2105,7 +2105,6 @@ _G.pg.base.item_data_statistics[73] = {
 	icon = "Equips/85300",
 	id = 73,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Triple 406mm Main Gun (B-37 MK1) Design",
@@ -2126,6 +2125,7 @@ _G.pg.base.item_data_statistics[73] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[74] = {
@@ -2135,7 +2135,6 @@ _G.pg.base.item_data_statistics[74] = {
 	icon = "Equips/85360",
 	id = 74,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Twin 100mm DP AA Gun (B-34 MZ-14) Design",
@@ -2156,6 +2155,7 @@ _G.pg.base.item_data_statistics[74] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[75] = {
@@ -2165,7 +2165,6 @@ _G.pg.base.item_data_statistics[75] = {
 	icon = "Equips/85420",
 	id = 75,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 305mm Main Gun (M1907) Design",
@@ -2186,6 +2185,7 @@ _G.pg.base.item_data_statistics[75] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[76] = {
@@ -2195,7 +2195,6 @@ _G.pg.base.item_data_statistics[76] = {
 	icon = "Equips/85440",
 	id = 76,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 152mm Main Gun (M1892) Design",
@@ -2216,6 +2215,7 @@ _G.pg.base.item_data_statistics[76] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[77] = {
@@ -2225,7 +2225,6 @@ _G.pg.base.item_data_statistics[77] = {
 	icon = "Equips/85180",
 	id = 77,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Single 37mm AA Gun (70-K) Design",
@@ -2246,6 +2245,7 @@ _G.pg.base.item_data_statistics[77] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[78] = {
@@ -2255,7 +2255,6 @@ _G.pg.base.item_data_statistics[78] = {
 	icon = "Equips/50700",
 	id = 78,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Single 138.6mm Main Gun (Mle 1927) T2 Design",
@@ -2276,6 +2275,7 @@ _G.pg.base.item_data_statistics[78] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[79] = {
@@ -2285,7 +2285,6 @@ _G.pg.base.item_data_statistics[79] = {
 	icon = "Equips/50780",
 	id = 79,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 155mm Main Gun (Mle 1920) T0 Design",
@@ -2306,6 +2305,7 @@ _G.pg.base.item_data_statistics[79] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[80] = {
@@ -2315,7 +2315,6 @@ _G.pg.base.item_data_statistics[80] = {
 	icon = "Equips/50800",
 	id = 80,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Single 155mm Secondary Gun (Mle 1920) T0 Design",
@@ -2336,6 +2335,7 @@ _G.pg.base.item_data_statistics[80] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81] = {
@@ -2345,7 +2345,6 @@ _G.pg.base.item_data_statistics[81] = {
 	icon = "Equips/50820",
 	id = 81,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gourdou-Leseurre GL.2 Fighter T0 Design",
@@ -2366,6 +2365,7 @@ _G.pg.base.item_data_statistics[81] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[82] = {
@@ -2375,7 +2375,6 @@ _G.pg.base.item_data_statistics[82] = {
 	icon = "Equips/50840",
 	id = 82,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Pierre Levasseur PL.7 Torpedo Bomber T0 Design",
@@ -2396,6 +2395,7 @@ _G.pg.base.item_data_statistics[82] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[83] = {
@@ -2405,7 +2405,6 @@ _G.pg.base.item_data_statistics[83] = {
 	icon = "Equips/50860",
 	id = 83,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 203mm Main Gun (Mle 1931) T1 Design",
@@ -2426,6 +2425,7 @@ _G.pg.base.item_data_statistics[83] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[1001] = {
@@ -2435,7 +2435,6 @@ _G.pg.base.item_data_statistics[1001] = {
 	icon = "Props/potechi",
 	id = 1001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Chips Combo",
@@ -2456,6 +2455,7 @@ _G.pg.base.item_data_statistics[1001] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[1002] = {
@@ -2465,7 +2465,6 @@ _G.pg.base.item_data_statistics[1002] = {
 	icon = "Equips/640",
 	id = 1002,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Z's Faith",
@@ -2486,6 +2485,7 @@ _G.pg.base.item_data_statistics[1002] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[1003] = {
@@ -2495,7 +2495,6 @@ _G.pg.base.item_data_statistics[1003] = {
 	icon = "props/z23",
 	id = 1003,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Z23's Medals",
@@ -2516,6 +2515,7 @@ _G.pg.base.item_data_statistics[1003] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[1004] = {
@@ -2525,7 +2525,6 @@ _G.pg.base.item_data_statistics[1004] = {
 	icon = "props/giftbox",
 	id = 1004,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Christmas Gift",
@@ -2546,6 +2545,7 @@ _G.pg.base.item_data_statistics[1004] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[1005] = {
@@ -2555,7 +2555,6 @@ _G.pg.base.item_data_statistics[1005] = {
 	icon = "props/manjuuema",
 	id = 1005,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prayer for the New Year ",
@@ -2576,6 +2575,7 @@ _G.pg.base.item_data_statistics[1005] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[1006] = {
@@ -2585,7 +2585,6 @@ _G.pg.base.item_data_statistics[1006] = {
 	icon = "props/lingdang",
 	id = 1006,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Bells from {namecode:79}",
@@ -2606,6 +2605,7 @@ _G.pg.base.item_data_statistics[1006] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[1007] = {
@@ -2615,7 +2615,6 @@ _G.pg.base.item_data_statistics[1007] = {
 	icon = "props/nepitem",
 	id = 1007,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Vert Medal",
@@ -2636,6 +2635,7 @@ _G.pg.base.item_data_statistics[1007] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[1008] = {
@@ -2645,7 +2645,6 @@ _G.pg.base.item_data_statistics[1008] = {
 	icon = "Equips/640",
 	id = 1008,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Z Conviction ",
@@ -2666,6 +2665,7 @@ _G.pg.base.item_data_statistics[1008] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[1010] = {
@@ -2675,7 +2675,6 @@ _G.pg.base.item_data_statistics[1010] = {
 	icon = "Props/zuozhanbaogao",
 	id = 1010,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Mission Report ",
@@ -2696,6 +2695,7 @@ _G.pg.base.item_data_statistics[1010] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[1011] = {
@@ -2705,7 +2705,6 @@ _G.pg.base.item_data_statistics[1011] = {
 	icon = "Props/zuozhanbaogao",
 	id = 1011,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Operation Report",
@@ -2726,6 +2725,7 @@ _G.pg.base.item_data_statistics[1011] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[1013] = {
@@ -2735,7 +2735,6 @@ _G.pg.base.item_data_statistics[1013] = {
 	icon = "props/lingdang",
 	id = 1013,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Bells from {namecode:79}",
@@ -2756,6 +2755,7 @@ _G.pg.base.item_data_statistics[1013] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[1014] = {
@@ -2765,7 +2765,6 @@ _G.pg.base.item_data_statistics[1014] = {
 	icon = "props/giftbox",
 	id = 1014,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Christmas Gift",
@@ -2786,6 +2785,7 @@ _G.pg.base.item_data_statistics[1014] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[1501] = {
@@ -2795,7 +2795,6 @@ _G.pg.base.item_data_statistics[1501] = {
 	icon = "props/Honorary",
 	id = 1501,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Honorary Yostar CMD",
@@ -2816,6 +2815,7 @@ _G.pg.base.item_data_statistics[1501] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[1502] = {
@@ -2825,7 +2825,6 @@ _G.pg.base.item_data_statistics[1502] = {
 	icon = "props/Honorary2",
 	id = 1502,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "1st Anniversary Souvenir Badge",
@@ -2846,6 +2845,7 @@ _G.pg.base.item_data_statistics[1502] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10000] = {
@@ -2855,7 +2855,6 @@ _G.pg.base.item_data_statistics[10000] = {
 	icon = "Equips/1000",
 	id = 10000,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Repair Toolkit Design",
@@ -2876,6 +2875,7 @@ _G.pg.base.item_data_statistics[10000] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10001] = {
@@ -2885,7 +2885,6 @@ _G.pg.base.item_data_statistics[10001] = {
 	icon = "Equips/1100",
 	id = 10001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Air Radar Design",
@@ -2906,6 +2905,7 @@ _G.pg.base.item_data_statistics[10001] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10002] = {
@@ -2915,7 +2915,6 @@ _G.pg.base.item_data_statistics[10002] = {
 	icon = "Equips/1200",
 	id = 10002,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Fire-Control Radar Design",
@@ -2936,6 +2935,7 @@ _G.pg.base.item_data_statistics[10002] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10003] = {
@@ -2945,7 +2945,6 @@ _G.pg.base.item_data_statistics[10003] = {
 	icon = "Equips/1300",
 	id = 10003,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Anti-Torpedo Bulge Design",
@@ -2966,6 +2965,7 @@ _G.pg.base.item_data_statistics[10003] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10004] = {
@@ -2975,7 +2975,6 @@ _G.pg.base.item_data_statistics[10004] = {
 	icon = "Equips/1400",
 	id = 10004,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Steam Catapult Design",
@@ -2996,6 +2995,7 @@ _G.pg.base.item_data_statistics[10004] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10005] = {
@@ -3005,7 +3005,6 @@ _G.pg.base.item_data_statistics[10005] = {
 	icon = "Equips/1500",
 	id = 10005,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 SG Radar Design",
@@ -3026,6 +3025,7 @@ _G.pg.base.item_data_statistics[10005] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10006] = {
@@ -3035,7 +3035,6 @@ _G.pg.base.item_data_statistics[10006] = {
 	icon = "Equips/1800",
 	id = 10006,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Advanced Boiler Design",
@@ -3056,6 +3055,7 @@ _G.pg.base.item_data_statistics[10006] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10007] = {
@@ -3065,7 +3065,6 @@ _G.pg.base.item_data_statistics[10007] = {
 	icon = "Equips/2000",
 	id = 10007,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Fuel Filter Design",
@@ -3086,6 +3085,7 @@ _G.pg.base.item_data_statistics[10007] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10008] = {
@@ -3095,7 +3095,6 @@ _G.pg.base.item_data_statistics[10008] = {
 	icon = "Equips/2100",
 	id = 10008,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Aviation Oil Tank Design",
@@ -3116,6 +3115,7 @@ _G.pg.base.item_data_statistics[10008] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10009] = {
@@ -3125,7 +3125,6 @@ _G.pg.base.item_data_statistics[10009] = {
 	icon = "Equips/2200",
 	id = 10009,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Autoloader Design",
@@ -3146,6 +3145,7 @@ _G.pg.base.item_data_statistics[10009] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10010] = {
@@ -3155,7 +3155,6 @@ _G.pg.base.item_data_statistics[10010] = {
 	icon = "Equips/2300",
 	id = 10010,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Gyroscope Design",
@@ -3176,6 +3175,7 @@ _G.pg.base.item_data_statistics[10010] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10011] = {
@@ -3185,7 +3185,6 @@ _G.pg.base.item_data_statistics[10011] = {
 	icon = "Equips/2400",
 	id = 10011,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Repair Tools Design",
@@ -3206,6 +3205,7 @@ _G.pg.base.item_data_statistics[10011] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10012] = {
@@ -3215,7 +3215,6 @@ _G.pg.base.item_data_statistics[10012] = {
 	icon = "Equips/2600",
 	id = 10012,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Type 93 Pure Oxygen Torpedo Design",
@@ -3236,6 +3235,7 @@ _G.pg.base.item_data_statistics[10012] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10013] = {
@@ -3245,7 +3245,6 @@ _G.pg.base.item_data_statistics[10013] = {
 	icon = "Equips/2700",
 	id = 10013,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 533mm Magnetic Torpedo Design",
@@ -3266,6 +3265,7 @@ _G.pg.base.item_data_statistics[10013] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10014] = {
@@ -3275,7 +3275,6 @@ _G.pg.base.item_data_statistics[10014] = {
 	icon = "Equips/5100",
 	id = 10014,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Quadruple 533mm Torpedo Design",
@@ -3296,6 +3295,7 @@ _G.pg.base.item_data_statistics[10014] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10015] = {
@@ -3305,7 +3305,6 @@ _G.pg.base.item_data_statistics[10015] = {
 	icon = "Equips/5200",
 	id = 10015,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Quintuple 533mm Torpedo Design",
@@ -3326,6 +3325,7 @@ _G.pg.base.item_data_statistics[10015] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10016] = {
@@ -3335,7 +3335,6 @@ _G.pg.base.item_data_statistics[10016] = {
 	icon = "Equips/11100",
 	id = 10016,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Single 127mm Main Gun Design",
@@ -3356,6 +3355,7 @@ _G.pg.base.item_data_statistics[10016] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10017] = {
@@ -3365,7 +3365,6 @@ _G.pg.base.item_data_statistics[10017] = {
 	icon = "Equips/11200",
 	id = 10017,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Twin 127mm Dual Gun Design",
@@ -3386,6 +3385,7 @@ _G.pg.base.item_data_statistics[10017] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10018] = {
@@ -3395,7 +3395,6 @@ _G.pg.base.item_data_statistics[10018] = {
 	icon = "Equips/12100",
 	id = 10018,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 152mm Main Gun Design",
@@ -3416,6 +3415,7 @@ _G.pg.base.item_data_statistics[10018] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10019] = {
@@ -3425,7 +3425,6 @@ _G.pg.base.item_data_statistics[10019] = {
 	icon = "Equips/13100",
 	id = 10019,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 203mm Advanced Main Gun Design",
@@ -3446,6 +3445,7 @@ _G.pg.base.item_data_statistics[10019] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10021] = {
@@ -3455,7 +3455,6 @@ _G.pg.base.item_data_statistics[10021] = {
 	icon = "Equips/14200",
 	id = 10021,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 406mm MK5 Main Gun Design",
@@ -3476,6 +3475,7 @@ _G.pg.base.item_data_statistics[10021] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10022] = {
@@ -3485,7 +3485,6 @@ _G.pg.base.item_data_statistics[10022] = {
 	icon = "Equips/14300",
 	id = 10022,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 406mm MK6 Main Gun Design",
@@ -3506,6 +3505,7 @@ _G.pg.base.item_data_statistics[10022] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10024] = {
@@ -3515,7 +3515,6 @@ _G.pg.base.item_data_statistics[10024] = {
 	icon = "Equips/16100",
 	id = 10024,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 20mm AA Oerlikon Design",
@@ -3536,6 +3535,7 @@ _G.pg.base.item_data_statistics[10024] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10025] = {
@@ -3545,7 +3545,6 @@ _G.pg.base.item_data_statistics[10025] = {
 	icon = "Equips/16200",
 	id = 10025,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Quadruple 28mm Chicago Piano Design",
@@ -3566,6 +3565,7 @@ _G.pg.base.item_data_statistics[10025] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10026] = {
@@ -3575,7 +3575,6 @@ _G.pg.base.item_data_statistics[10026] = {
 	icon = "Equips/16300",
 	id = 10026,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 40mm Bofors Gun Design",
@@ -3596,6 +3595,7 @@ _G.pg.base.item_data_statistics[10026] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10027] = {
@@ -3605,7 +3605,6 @@ _G.pg.base.item_data_statistics[10027] = {
 	icon = "Equips/16400",
 	id = 10027,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Quadruple 40mm Bofors Gun Design",
@@ -3626,6 +3625,7 @@ _G.pg.base.item_data_statistics[10027] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10028] = {
@@ -3635,7 +3635,6 @@ _G.pg.base.item_data_statistics[10028] = {
 	icon = "Equips/17100",
 	id = 10028,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 F4F Wildcat Design",
@@ -3656,6 +3655,7 @@ _G.pg.base.item_data_statistics[10028] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10029] = {
@@ -3665,7 +3665,6 @@ _G.pg.base.item_data_statistics[10029] = {
 	icon = "Equips/17200",
 	id = 10029,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 F4U Corsair Design",
@@ -3686,6 +3685,7 @@ _G.pg.base.item_data_statistics[10029] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10030] = {
@@ -3695,7 +3695,6 @@ _G.pg.base.item_data_statistics[10030] = {
 	icon = "Equips/17300",
 	id = 10030,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 F6F Hellcat Design",
@@ -3716,6 +3715,7 @@ _G.pg.base.item_data_statistics[10030] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10031] = {
@@ -3725,7 +3725,6 @@ _G.pg.base.item_data_statistics[10031] = {
 	icon = "Equips/18100",
 	id = 10031,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 TBF Avenger Design",
@@ -3746,6 +3745,7 @@ _G.pg.base.item_data_statistics[10031] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10032] = {
@@ -3755,7 +3755,6 @@ _G.pg.base.item_data_statistics[10032] = {
 	icon = "Equips/19100",
 	id = 10032,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 SB2C Helldiver Design",
@@ -3776,6 +3775,7 @@ _G.pg.base.item_data_statistics[10032] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10033] = {
@@ -3785,7 +3785,6 @@ _G.pg.base.item_data_statistics[10033] = {
 	icon = "Equips/19200",
 	id = 10033,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 BTD-1 Destroyer Design",
@@ -3806,6 +3805,7 @@ _G.pg.base.item_data_statistics[10033] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10034] = {
@@ -3815,7 +3815,6 @@ _G.pg.base.item_data_statistics[10034] = {
 	icon = "Equips/21200",
 	id = 10034,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 102mm Secondary Gun Design",
@@ -3836,6 +3835,7 @@ _G.pg.base.item_data_statistics[10034] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10035] = {
@@ -3845,7 +3845,6 @@ _G.pg.base.item_data_statistics[10035] = {
 	icon = "Equips/21400",
 	id = 10035,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 120mm Main Gun Design",
@@ -3866,6 +3865,7 @@ _G.pg.base.item_data_statistics[10035] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10036] = {
@@ -3875,7 +3875,6 @@ _G.pg.base.item_data_statistics[10036] = {
 	icon = "Equips/21500",
 	id = 10036,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 134mm AA Gun Design",
@@ -3896,6 +3895,7 @@ _G.pg.base.item_data_statistics[10036] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10037] = {
@@ -3905,7 +3905,6 @@ _G.pg.base.item_data_statistics[10037] = {
 	icon = "Equips/22100",
 	id = 10037,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 152mm Main Gun Design",
@@ -3926,6 +3925,7 @@ _G.pg.base.item_data_statistics[10037] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10038] = {
@@ -3935,7 +3935,6 @@ _G.pg.base.item_data_statistics[10038] = {
 	icon = "Equips/23000",
 	id = 10038,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 203mm Main Gun Design",
@@ -3956,6 +3955,7 @@ _G.pg.base.item_data_statistics[10038] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10039] = {
@@ -3965,7 +3965,6 @@ _G.pg.base.item_data_statistics[10039] = {
 	icon = "Equips/24000",
 	id = 10039,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Quadruple 356mm Main Gun Design",
@@ -3986,6 +3985,7 @@ _G.pg.base.item_data_statistics[10039] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10040] = {
@@ -3995,7 +3995,6 @@ _G.pg.base.item_data_statistics[10040] = {
 	icon = "Equips/24100",
 	id = 10040,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 381mm Main Gun Design",
@@ -4016,6 +4015,7 @@ _G.pg.base.item_data_statistics[10040] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10041] = {
@@ -4025,7 +4025,6 @@ _G.pg.base.item_data_statistics[10041] = {
 	icon = "Equips/24200",
 	id = 10041,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Triple 406mm Main Gun Design",
@@ -4046,6 +4045,7 @@ _G.pg.base.item_data_statistics[10041] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10042] = {
@@ -4055,7 +4055,6 @@ _G.pg.base.item_data_statistics[10042] = {
 	icon = "Equips/26100",
 	id = 10042,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Quadruple 40mm Pom Pom Gun Design",
@@ -4076,6 +4075,7 @@ _G.pg.base.item_data_statistics[10042] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10043] = {
@@ -4085,7 +4085,6 @@ _G.pg.base.item_data_statistics[10043] = {
 	icon = "Equips/26200",
 	id = 10043,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Octuple 40mm Pom Pom Gun Design",
@@ -4106,6 +4105,7 @@ _G.pg.base.item_data_statistics[10043] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10044] = {
@@ -4115,7 +4115,6 @@ _G.pg.base.item_data_statistics[10044] = {
 	icon = "Equips/26300",
 	id = 10044,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 76mm AA Gun Design",
@@ -4136,6 +4135,7 @@ _G.pg.base.item_data_statistics[10044] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10045] = {
@@ -4145,7 +4145,6 @@ _G.pg.base.item_data_statistics[10045] = {
 	icon = "Equips/26400",
 	id = 10045,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 102mm AA Gun Design",
@@ -4166,6 +4165,7 @@ _G.pg.base.item_data_statistics[10045] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10046] = {
@@ -4175,7 +4175,6 @@ _G.pg.base.item_data_statistics[10046] = {
 	icon = "Equips/26500",
 	id = 10046,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Twin 113mm AA Gun Design",
@@ -4196,6 +4195,7 @@ _G.pg.base.item_data_statistics[10046] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10047] = {
@@ -4205,7 +4205,6 @@ _G.pg.base.item_data_statistics[10047] = {
 	icon = "Equips/27000",
 	id = 10047,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Spitfire Design",
@@ -4226,6 +4225,7 @@ _G.pg.base.item_data_statistics[10047] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10048] = {
@@ -4235,7 +4235,6 @@ _G.pg.base.item_data_statistics[10048] = {
 	icon = "Equips/27100",
 	id = 10048,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Seafang Design",
@@ -4256,6 +4255,7 @@ _G.pg.base.item_data_statistics[10048] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10049] = {
@@ -4265,7 +4265,6 @@ _G.pg.base.item_data_statistics[10049] = {
 	icon = "Equips/28000",
 	id = 10049,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Swordfish Design",
@@ -4286,6 +4285,7 @@ _G.pg.base.item_data_statistics[10049] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10050] = {
@@ -4295,7 +4295,6 @@ _G.pg.base.item_data_statistics[10050] = {
 	icon = "Equips/28100",
 	id = 10050,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Barracuda Design",
@@ -4316,6 +4315,7 @@ _G.pg.base.item_data_statistics[10050] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10051] = {
@@ -4325,7 +4325,6 @@ _G.pg.base.item_data_statistics[10051] = {
 	icon = "Equips/29100",
 	id = 10051,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Fairey Fulmar Design",
@@ -4346,6 +4345,7 @@ _G.pg.base.item_data_statistics[10051] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10052] = {
@@ -4355,7 +4355,6 @@ _G.pg.base.item_data_statistics[10052] = {
 	icon = "Equips/31000",
 	id = 10052,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Twin 100mm (Type 98) AA Gun Design",
@@ -4376,6 +4375,7 @@ _G.pg.base.item_data_statistics[10052] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10053] = {
@@ -4385,7 +4385,6 @@ _G.pg.base.item_data_statistics[10053] = {
 	icon = "Equips/31200",
 	id = 10053,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 127mm Mounted Gun Design",
@@ -4406,6 +4405,7 @@ _G.pg.base.item_data_statistics[10053] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10054] = {
@@ -4415,7 +4415,6 @@ _G.pg.base.item_data_statistics[10054] = {
 	icon = "Equips/32100",
 	id = 10054,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 140mm Mounted Gun Design",
@@ -4436,6 +4435,7 @@ _G.pg.base.item_data_statistics[10054] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10055] = {
@@ -4445,7 +4445,6 @@ _G.pg.base.item_data_statistics[10055] = {
 	icon = "Equips/32200",
 	id = 10055,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Triple 155mm Mounted Gun Design",
@@ -4466,6 +4465,7 @@ _G.pg.base.item_data_statistics[10055] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10056] = {
@@ -4475,7 +4475,6 @@ _G.pg.base.item_data_statistics[10056] = {
 	icon = "Equips/33000",
 	id = 10056,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 203mm Mounted Gun Design",
@@ -4496,6 +4495,7 @@ _G.pg.base.item_data_statistics[10056] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10057] = {
@@ -4505,7 +4505,6 @@ _G.pg.base.item_data_statistics[10057] = {
 	icon = "Equips/34100",
 	id = 10057,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 410mm Mounted Gun Design",
@@ -4526,6 +4525,7 @@ _G.pg.base.item_data_statistics[10057] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10059] = {
@@ -4535,7 +4535,6 @@ _G.pg.base.item_data_statistics[10059] = {
 	icon = "Equips/35100",
 	id = 10059,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 610mm Torpedo Design",
@@ -4556,6 +4555,7 @@ _G.pg.base.item_data_statistics[10059] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10060] = {
@@ -4565,7 +4565,6 @@ _G.pg.base.item_data_statistics[10060] = {
 	icon = "Equips/35200",
 	id = 10060,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Quadruple 610mm Torpedo Design",
@@ -4586,6 +4585,7 @@ _G.pg.base.item_data_statistics[10060] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10062] = {
@@ -4595,7 +4595,6 @@ _G.pg.base.item_data_statistics[10062] = {
 	icon = "Equips/36200",
 	id = 10062,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 25mm Mounted AA Gun Design",
@@ -4616,6 +4615,7 @@ _G.pg.base.item_data_statistics[10062] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10063] = {
@@ -4625,7 +4625,6 @@ _G.pg.base.item_data_statistics[10063] = {
 	icon = "Equips/36300",
 	id = 10063,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 25mm Mounted AA Gun Design",
@@ -4646,6 +4645,7 @@ _G.pg.base.item_data_statistics[10063] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10064] = {
@@ -4655,7 +4655,6 @@ _G.pg.base.item_data_statistics[10064] = {
 	icon = "Equips/36400",
 	id = 10064,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 40mm AA Vickers Gun Design",
@@ -4676,6 +4675,7 @@ _G.pg.base.item_data_statistics[10064] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10065] = {
@@ -4685,7 +4685,6 @@ _G.pg.base.item_data_statistics[10065] = {
 	icon = "Equips/36600",
 	id = 10065,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 127mm Mounted AA Gun Design",
@@ -4706,6 +4705,7 @@ _G.pg.base.item_data_statistics[10065] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10066] = {
@@ -4715,7 +4715,6 @@ _G.pg.base.item_data_statistics[10066] = {
 	icon = "Equips/37100",
 	id = 10066,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 A6M2 Zero Design",
@@ -4736,6 +4735,7 @@ _G.pg.base.item_data_statistics[10066] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10067] = {
@@ -4745,7 +4745,6 @@ _G.pg.base.item_data_statistics[10067] = {
 	icon = "Equips/37200",
 	id = 10067,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 A6M5 Zero Design",
@@ -4766,6 +4765,7 @@ _G.pg.base.item_data_statistics[10067] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10068] = {
@@ -4775,7 +4775,6 @@ _G.pg.base.item_data_statistics[10068] = {
 	icon = "Equips/38100",
 	id = 10068,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Nakajima B6N Tenzan Design",
@@ -4796,6 +4795,7 @@ _G.pg.base.item_data_statistics[10068] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10069] = {
@@ -4805,7 +4805,6 @@ _G.pg.base.item_data_statistics[10069] = {
 	icon = "Equips/39000",
 	id = 10069,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Aichi D3A Type 99 Design",
@@ -4826,6 +4825,7 @@ _G.pg.base.item_data_statistics[10069] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10070] = {
@@ -4835,7 +4835,6 @@ _G.pg.base.item_data_statistics[10070] = {
 	icon = "Equips/39100",
 	id = 10070,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 D4Y Suisei Design",
@@ -4856,6 +4855,7 @@ _G.pg.base.item_data_statistics[10070] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10071] = {
@@ -4865,7 +4865,6 @@ _G.pg.base.item_data_statistics[10071] = {
 	icon = "Equips/42000",
 	id = 10071,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Single 150mm Main Gun (SK C/28) Design",
@@ -4886,6 +4885,7 @@ _G.pg.base.item_data_statistics[10071] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10072] = {
@@ -4895,7 +4895,6 @@ _G.pg.base.item_data_statistics[10072] = {
 	icon = "Equips/42100",
 	id = 10072,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 150mm Main Gun (SK C/25) Design",
@@ -4916,6 +4915,7 @@ _G.pg.base.item_data_statistics[10072] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10073] = {
@@ -4925,7 +4925,6 @@ _G.pg.base.item_data_statistics[10073] = {
 	icon = "Equips/42200",
 	id = 10073,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 150mm Main Gun (TKC 36) Design",
@@ -4946,6 +4945,7 @@ _G.pg.base.item_data_statistics[10073] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10074] = {
@@ -4955,7 +4955,6 @@ _G.pg.base.item_data_statistics[10074] = {
 	icon = "Equips/43000",
 	id = 10074,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Twin 203mm Main Gun (SK C) Design",
@@ -4976,6 +4975,7 @@ _G.pg.base.item_data_statistics[10074] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10075] = {
@@ -4985,7 +4985,6 @@ _G.pg.base.item_data_statistics[10075] = {
 	icon = "Equips/44000",
 	id = 10075,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 283mm Main Gun (SK C/34) Design",
@@ -5006,6 +5005,7 @@ _G.pg.base.item_data_statistics[10075] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10076] = {
@@ -5015,7 +5015,6 @@ _G.pg.base.item_data_statistics[10076] = {
 	icon = "Equips/44100",
 	id = 10076,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Twin 380mm Main Gun (SK C) Design",
@@ -5036,6 +5035,7 @@ _G.pg.base.item_data_statistics[10076] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10077] = {
@@ -5045,7 +5045,6 @@ _G.pg.base.item_data_statistics[10077] = {
 	icon = "Equips/46200",
 	id = 10077,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 37mm AA 70K Design",
@@ -5066,6 +5065,7 @@ _G.pg.base.item_data_statistics[10077] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10078] = {
@@ -5075,7 +5075,6 @@ _G.pg.base.item_data_statistics[10078] = {
 	icon = "Equips/46300",
 	id = 10078,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Twin 105mm AA Gun (SK C) Design",
@@ -5096,6 +5095,7 @@ _G.pg.base.item_data_statistics[10078] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10079] = {
@@ -5105,7 +5105,6 @@ _G.pg.base.item_data_statistics[10079] = {
 	icon = "Equips/41100",
 	id = 10079,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 128mm Dual Gun Design",
@@ -5126,6 +5125,7 @@ _G.pg.base.item_data_statistics[10079] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10080] = {
@@ -5135,7 +5135,6 @@ _G.pg.base.item_data_statistics[10080] = {
 	icon = "Equips/43100",
 	id = 10080,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 283mm Main Gun (SK C/28) Design",
@@ -5156,6 +5155,7 @@ _G.pg.base.item_data_statistics[10080] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10081] = {
@@ -5165,7 +5165,6 @@ _G.pg.base.item_data_statistics[10081] = {
 	icon = "Equips/45000",
 	id = 10081,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 533mm Magnetic Torpedo Design",
@@ -5186,6 +5185,7 @@ _G.pg.base.item_data_statistics[10081] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10082] = {
@@ -5195,7 +5195,6 @@ _G.pg.base.item_data_statistics[10082] = {
 	icon = "Equips/45100",
 	id = 10082,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Quadruple 533mm Magnetic Torpedo Design",
@@ -5216,6 +5215,7 @@ _G.pg.base.item_data_statistics[10082] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10083] = {
@@ -5225,7 +5225,6 @@ _G.pg.base.item_data_statistics[10083] = {
 	icon = "Equips/45200",
 	id = 10083,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Quintuple 533mm Magnetic Torpedo Design",
@@ -5246,6 +5245,7 @@ _G.pg.base.item_data_statistics[10083] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10084] = {
@@ -5255,7 +5255,6 @@ _G.pg.base.item_data_statistics[10084] = {
 	icon = "Equips/47000",
 	id = 10084,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 BF-109T Fighter Design",
@@ -5276,6 +5275,7 @@ _G.pg.base.item_data_statistics[10084] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10085] = {
@@ -5285,7 +5285,6 @@ _G.pg.base.item_data_statistics[10085] = {
 	icon = "Equips/47100",
 	id = 10085,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Messerschmitt Me-155A Design",
@@ -5306,6 +5305,7 @@ _G.pg.base.item_data_statistics[10085] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10086] = {
@@ -5315,7 +5315,6 @@ _G.pg.base.item_data_statistics[10086] = {
 	icon = "Equips/49000",
 	id = 10086,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Ju-87C Dive Bomber Design",
@@ -5336,6 +5335,7 @@ _G.pg.base.item_data_statistics[10086] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10087] = {
@@ -5345,7 +5345,6 @@ _G.pg.base.item_data_statistics[10087] = {
 	icon = "Equips/37300",
 	id = 10087,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 A7M Reppü Design",
@@ -5366,6 +5365,7 @@ _G.pg.base.item_data_statistics[10087] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10088] = {
@@ -5375,7 +5375,6 @@ _G.pg.base.item_data_statistics[10088] = {
 	icon = "Equips/38200",
 	id = 10088,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Aichi B7A Ryusei Design",
@@ -5396,6 +5395,7 @@ _G.pg.base.item_data_statistics[10088] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10089] = {
@@ -5405,7 +5405,6 @@ _G.pg.base.item_data_statistics[10089] = {
 	icon = "Equips/39200",
 	id = 10089,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Aichi E16A Zuiun Design",
@@ -5426,6 +5425,7 @@ _G.pg.base.item_data_statistics[10089] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10090] = {
@@ -5435,7 +5435,6 @@ _G.pg.base.item_data_statistics[10090] = {
 	icon = "Equips/5400",
 	id = 10090,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 550mm Torpedo Design",
@@ -5456,6 +5455,7 @@ _G.pg.base.item_data_statistics[10090] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10091] = {
@@ -5465,7 +5465,6 @@ _G.pg.base.item_data_statistics[10091] = {
 	icon = "Equips/2900",
 	id = 10091,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Basic Sonar T3 Design",
@@ -5486,6 +5485,7 @@ _G.pg.base.item_data_statistics[10091] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10092] = {
@@ -5495,7 +5495,6 @@ _G.pg.base.item_data_statistics[10092] = {
 	icon = "Equips/3000",
 	id = 10092,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Improved Sonar T2 Design",
@@ -5516,6 +5515,7 @@ _G.pg.base.item_data_statistics[10092] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10093] = {
@@ -5525,7 +5525,6 @@ _G.pg.base.item_data_statistics[10093] = {
 	icon = "Equips/4100",
 	id = 10093,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Improved Depth Charges T3 Design",
@@ -5546,6 +5545,7 @@ _G.pg.base.item_data_statistics[10093] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10094] = {
@@ -5555,7 +5555,6 @@ _G.pg.base.item_data_statistics[10094] = {
 	icon = "Equips/15000",
 	id = 10094,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only Mark 14 Torpedo T3 Design",
@@ -5576,6 +5575,7 @@ _G.pg.base.item_data_statistics[10094] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10095] = {
@@ -5585,7 +5585,6 @@ _G.pg.base.item_data_statistics[10095] = {
 	icon = "Equips/15100",
 	id = 10095,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only Mark 16 Torpedo T2 Design",
@@ -5606,6 +5605,7 @@ _G.pg.base.item_data_statistics[10095] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10096] = {
@@ -5615,7 +5615,6 @@ _G.pg.base.item_data_statistics[10096] = {
 	icon = "Equips/35400",
 	id = 10096,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only Type 92 Electric Torpedo T3 Design",
@@ -5636,6 +5635,7 @@ _G.pg.base.item_data_statistics[10096] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10097] = {
@@ -5645,7 +5645,6 @@ _G.pg.base.item_data_statistics[10097] = {
 	icon = "Equips/35500",
 	id = 10097,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only Type 95 Oxygen Torpedo T2 Design",
@@ -5666,6 +5665,7 @@ _G.pg.base.item_data_statistics[10097] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10098] = {
@@ -5675,7 +5675,6 @@ _G.pg.base.item_data_statistics[10098] = {
 	icon = "Equips/45300",
 	id = 10098,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only G7a Torpedo T3 Design",
@@ -5696,6 +5695,7 @@ _G.pg.base.item_data_statistics[10098] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10099] = {
@@ -5705,7 +5705,6 @@ _G.pg.base.item_data_statistics[10099] = {
 	icon = "Equips/45400",
 	id = 10099,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only G7e Homing Torpedo T2 Design",
@@ -5726,6 +5725,7 @@ _G.pg.base.item_data_statistics[10099] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10100] = {
@@ -5735,7 +5735,6 @@ _G.pg.base.item_data_statistics[10100] = {
 	icon = "Equips/5500",
 	id = 10100,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only 550mm 24V Torpedo T3 Design",
@@ -5756,6 +5755,7 @@ _G.pg.base.item_data_statistics[10100] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10101] = {
@@ -5765,7 +5765,6 @@ _G.pg.base.item_data_statistics[10101] = {
 	icon = "Equips/50100",
 	id = 10101,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Single 138.6mm Main Gun (Mle 1929) T2 Design",
@@ -5786,6 +5785,7 @@ _G.pg.base.item_data_statistics[10101] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10102] = {
@@ -5795,7 +5795,6 @@ _G.pg.base.item_data_statistics[10102] = {
 	icon = "Equips/50300",
 	id = 10102,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Quadruple 330mm Main Gun (Mle 1931) T3 Design",
@@ -5816,6 +5815,7 @@ _G.pg.base.item_data_statistics[10102] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10103] = {
@@ -5825,7 +5825,6 @@ _G.pg.base.item_data_statistics[10103] = {
 	icon = "Equips/50400",
 	id = 10103,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Quadruple 380mm Main Gun (Mle 1935) T2 Design",
@@ -5846,6 +5845,7 @@ _G.pg.base.item_data_statistics[10103] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10104] = {
@@ -5855,7 +5855,6 @@ _G.pg.base.item_data_statistics[10104] = {
 	icon = "Equips/55000",
 	id = 10104,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Triple 381mm Main Gun (M1934) T2 Design",
@@ -5876,6 +5875,7 @@ _G.pg.base.item_data_statistics[10104] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10105] = {
@@ -5885,7 +5885,6 @@ _G.pg.base.item_data_statistics[10105] = {
 	icon = "Equips/55100",
 	id = 10105,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Single 90mm High-Angle Gun (M1939) T2 Design",
@@ -5906,6 +5905,7 @@ _G.pg.base.item_data_statistics[10105] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10106] = {
@@ -5915,7 +5915,6 @@ _G.pg.base.item_data_statistics[10106] = {
 	icon = "Equips/55200",
 	id = 10106,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 203mm Main Gun (M1927) T2 Design",
@@ -5936,6 +5935,7 @@ _G.pg.base.item_data_statistics[10106] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10107] = {
@@ -5945,7 +5945,6 @@ _G.pg.base.item_data_statistics[10107] = {
 	icon = "Equips/55300",
 	id = 10107,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 203mm Main Gun (M1924) T3 Design",
@@ -5966,6 +5965,7 @@ _G.pg.base.item_data_statistics[10107] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10108] = {
@@ -5975,7 +5975,6 @@ _G.pg.base.item_data_statistics[10108] = {
 	icon = "Equips/55400",
 	id = 10108,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 120mm Main Gun (M1936) T3 Design",
@@ -5996,6 +5995,7 @@ _G.pg.base.item_data_statistics[10108] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10109] = {
@@ -6005,7 +6005,6 @@ _G.pg.base.item_data_statistics[10109] = {
 	icon = "Equips/55500",
 	id = 10109,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 37mm AA Gun (M1932) T3 Design",
@@ -6026,6 +6025,7 @@ _G.pg.base.item_data_statistics[10109] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10110] = {
@@ -6035,7 +6035,6 @@ _G.pg.base.item_data_statistics[10110] = {
 	icon = "Equips/28300",
 	id = 10110,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Fairey Albacore T3 Design",
@@ -6056,6 +6055,7 @@ _G.pg.base.item_data_statistics[10110] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10111] = {
@@ -6065,7 +6065,6 @@ _G.pg.base.item_data_statistics[10111] = {
 	icon = "Equips/32300",
 	id = 10111,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 152mm Main Gun T3 Design ",
@@ -6086,6 +6085,7 @@ _G.pg.base.item_data_statistics[10111] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10113] = {
@@ -6095,7 +6095,6 @@ _G.pg.base.item_data_statistics[10113] = {
 	icon = "Equips/85120",
 	id = 10113,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Triple 152mm Main Gun (B-38 MK5) Design",
@@ -6116,6 +6115,7 @@ _G.pg.base.item_data_statistics[10113] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10114] = {
@@ -6125,7 +6125,6 @@ _G.pg.base.item_data_statistics[10114] = {
 	icon = "Equips/85240",
 	id = 10114,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 100mm AA Gun (B-54) Design",
@@ -6146,6 +6145,7 @@ _G.pg.base.item_data_statistics[10114] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10116] = {
@@ -6155,7 +6155,6 @@ _G.pg.base.item_data_statistics[10116] = {
 	icon = "Equips/85300",
 	id = 10116,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Triple 406mm Main Gun (B-37 MK1) Design",
@@ -6176,6 +6175,7 @@ _G.pg.base.item_data_statistics[10116] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10117] = {
@@ -6185,7 +6185,6 @@ _G.pg.base.item_data_statistics[10117] = {
 	icon = "Equips/85360",
 	id = 10117,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 100mm DP AA Gun (B-34 MZ-14) Design",
@@ -6206,6 +6205,7 @@ _G.pg.base.item_data_statistics[10117] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10118] = {
@@ -6215,7 +6215,6 @@ _G.pg.base.item_data_statistics[10118] = {
 	icon = "Equips/85180",
 	id = 10118,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Single 37mm AA Gun (70-K) Design",
@@ -6236,6 +6235,7 @@ _G.pg.base.item_data_statistics[10118] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10119] = {
@@ -6245,7 +6245,6 @@ _G.pg.base.item_data_statistics[10119] = {
 	icon = "Equips/50700",
 	id = 10119,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Single 138.6mm Main Gun (Mle 1927) T3 Design",
@@ -6266,6 +6265,7 @@ _G.pg.base.item_data_statistics[10119] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10120] = {
@@ -6275,7 +6275,6 @@ _G.pg.base.item_data_statistics[10120] = {
 	icon = "Equips/50860",
 	id = 10120,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 203mm Main Gun (Mle 1931) T2 Design",
@@ -6296,6 +6295,7 @@ _G.pg.base.item_data_statistics[10120] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10121] = {
@@ -6305,7 +6305,6 @@ _G.pg.base.item_data_statistics[10121] = {
 	icon = "Equips/25100",
 	id = 10121,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only Mark VIII Torpedo T3 Design ",
@@ -6326,6 +6325,7 @@ _G.pg.base.item_data_statistics[10121] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10122] = {
@@ -6335,7 +6335,6 @@ _G.pg.base.item_data_statistics[10122] = {
 	icon = "Equips/7200",
 	id = 10122,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Single 130mm Main Gun Design",
@@ -6356,6 +6355,7 @@ _G.pg.base.item_data_statistics[10122] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10123] = {
@@ -6365,7 +6365,6 @@ _G.pg.base.item_data_statistics[10123] = {
 	icon = "Equips/55720",
 	id = 10123,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "G.50 Freccia Fighter T3 Design",
@@ -6386,6 +6385,7 @@ _G.pg.base.item_data_statistics[10123] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10124] = {
@@ -6395,7 +6395,6 @@ _G.pg.base.item_data_statistics[10124] = {
 	icon = "Equips/55800",
 	id = 10124,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Re.2001 Ariete Fighter T3 Design",
@@ -6416,6 +6415,7 @@ _G.pg.base.item_data_statistics[10124] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[10125] = {
@@ -6425,7 +6425,6 @@ _G.pg.base.item_data_statistics[10125] = {
 	icon = "Equips/55920",
 	id = 10125,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "135mm Twin Main Gun Mount Model 1938 T2 Design",
@@ -6446,6 +6445,7 @@ _G.pg.base.item_data_statistics[10125] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11000] = {
@@ -6455,7 +6455,6 @@ _G.pg.base.item_data_statistics[11000] = {
 	icon = "Equips/1000",
 	id = 11000,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Repair Toolkit Design",
@@ -6476,6 +6475,7 @@ _G.pg.base.item_data_statistics[11000] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11001] = {
@@ -6485,7 +6485,6 @@ _G.pg.base.item_data_statistics[11001] = {
 	icon = "Equips/1400",
 	id = 11001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Steam Catapult Design",
@@ -6506,6 +6505,7 @@ _G.pg.base.item_data_statistics[11001] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11002] = {
@@ -6515,7 +6515,6 @@ _G.pg.base.item_data_statistics[11002] = {
 	icon = "Equips/1500",
 	id = 11002,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 SG Radar Design",
@@ -6536,6 +6535,7 @@ _G.pg.base.item_data_statistics[11002] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11003] = {
@@ -6545,7 +6545,6 @@ _G.pg.base.item_data_statistics[11003] = {
 	icon = "Equips/2600",
 	id = 11003,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Type 93 Pure Oxygen Torpedo Design",
@@ -6566,6 +6565,7 @@ _G.pg.base.item_data_statistics[11003] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11004] = {
@@ -6575,7 +6575,6 @@ _G.pg.base.item_data_statistics[11004] = {
 	icon = "Equips/2700",
 	id = 11004,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 533mm Magnetic Torpedo Design",
@@ -6596,6 +6595,7 @@ _G.pg.base.item_data_statistics[11004] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11005] = {
@@ -6605,7 +6605,6 @@ _G.pg.base.item_data_statistics[11005] = {
 	icon = "Equips/5200",
 	id = 11005,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Quintuple 533mm Torpedo Design",
@@ -6626,6 +6625,7 @@ _G.pg.base.item_data_statistics[11005] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11006] = {
@@ -6635,7 +6635,6 @@ _G.pg.base.item_data_statistics[11006] = {
 	icon = "Equips/11200",
 	id = 11006,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 127mm Dual Gun Design",
@@ -6656,6 +6655,7 @@ _G.pg.base.item_data_statistics[11006] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11009] = {
@@ -6665,7 +6665,6 @@ _G.pg.base.item_data_statistics[11009] = {
 	icon = "Equips/16400",
 	id = 11009,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Quadruple 40mm Bofors Gun Design",
@@ -6686,6 +6685,7 @@ _G.pg.base.item_data_statistics[11009] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11010] = {
@@ -6695,7 +6695,6 @@ _G.pg.base.item_data_statistics[11010] = {
 	icon = "Equips/17300",
 	id = 11010,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 F6F Hellcat Design",
@@ -6716,6 +6715,7 @@ _G.pg.base.item_data_statistics[11010] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11011] = {
@@ -6725,7 +6725,6 @@ _G.pg.base.item_data_statistics[11011] = {
 	icon = "Equips/19200",
 	id = 11011,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 BTD-1 Destroyer Design",
@@ -6746,6 +6745,7 @@ _G.pg.base.item_data_statistics[11011] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11012] = {
@@ -6755,7 +6755,6 @@ _G.pg.base.item_data_statistics[11012] = {
 	icon = "Equips/24000",
 	id = 11012,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Quadruple 356mm Main Gun Design",
@@ -6776,6 +6775,7 @@ _G.pg.base.item_data_statistics[11012] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11013] = {
@@ -6785,7 +6785,6 @@ _G.pg.base.item_data_statistics[11013] = {
 	icon = "Equips/24200",
 	id = 11013,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 406mm Main Gun Design",
@@ -6806,6 +6805,7 @@ _G.pg.base.item_data_statistics[11013] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11014] = {
@@ -6815,7 +6815,6 @@ _G.pg.base.item_data_statistics[11014] = {
 	icon = "Equips/26200",
 	id = 11014,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Octuple 40mm Pom Pom Gun Design",
@@ -6836,6 +6835,7 @@ _G.pg.base.item_data_statistics[11014] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11015] = {
@@ -6845,7 +6845,6 @@ _G.pg.base.item_data_statistics[11015] = {
 	icon = "Equips/26500",
 	id = 11015,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 113mm AA Gun Design",
@@ -6866,6 +6865,7 @@ _G.pg.base.item_data_statistics[11015] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11016] = {
@@ -6875,7 +6875,6 @@ _G.pg.base.item_data_statistics[11016] = {
 	icon = "Equips/27100",
 	id = 11016,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Seafang Design",
@@ -6896,6 +6895,7 @@ _G.pg.base.item_data_statistics[11016] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11017] = {
@@ -6905,7 +6905,6 @@ _G.pg.base.item_data_statistics[11017] = {
 	icon = "Equips/28100",
 	id = 11017,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Barracuda Design",
@@ -6926,6 +6925,7 @@ _G.pg.base.item_data_statistics[11017] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11018] = {
@@ -6935,7 +6935,6 @@ _G.pg.base.item_data_statistics[11018] = {
 	icon = "Equips/31000",
 	id = 11018,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 100mm (Type 98) AA Gun Design",
@@ -6956,6 +6955,7 @@ _G.pg.base.item_data_statistics[11018] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11019] = {
@@ -6965,7 +6965,6 @@ _G.pg.base.item_data_statistics[11019] = {
 	icon = "Equips/32200",
 	id = 11019,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 155mm Mounted Gun Design",
@@ -6986,6 +6985,7 @@ _G.pg.base.item_data_statistics[11019] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11021] = {
@@ -6995,7 +6995,6 @@ _G.pg.base.item_data_statistics[11021] = {
 	icon = "Equips/35200",
 	id = 11021,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Quadruple 610mm Torpedo Design",
@@ -7016,6 +7015,7 @@ _G.pg.base.item_data_statistics[11021] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11023] = {
@@ -7025,7 +7025,6 @@ _G.pg.base.item_data_statistics[11023] = {
 	icon = "Equips/37200",
 	id = 11023,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 A6M5 Zero Design",
@@ -7046,6 +7045,7 @@ _G.pg.base.item_data_statistics[11023] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11024] = {
@@ -7055,7 +7055,6 @@ _G.pg.base.item_data_statistics[11024] = {
 	icon = "Equips/39100",
 	id = 11024,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 D4Y Suisei Design",
@@ -7076,6 +7075,7 @@ _G.pg.base.item_data_statistics[11024] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11025] = {
@@ -7085,7 +7085,6 @@ _G.pg.base.item_data_statistics[11025] = {
 	icon = "Equips/43000",
 	id = 11025,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 203mm Main Gun (SK C/28) Design",
@@ -7106,6 +7105,7 @@ _G.pg.base.item_data_statistics[11025] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11026] = {
@@ -7115,7 +7115,6 @@ _G.pg.base.item_data_statistics[11026] = {
 	icon = "Equips/44100",
 	id = 11026,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 380mm Main Gun (SK C) Design",
@@ -7136,6 +7135,7 @@ _G.pg.base.item_data_statistics[11026] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11027] = {
@@ -7145,7 +7145,6 @@ _G.pg.base.item_data_statistics[11027] = {
 	icon = "Equips/46300",
 	id = 11027,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Twin 105mm AA Gun (SK C) Design",
@@ -7166,6 +7165,7 @@ _G.pg.base.item_data_statistics[11027] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11028] = {
@@ -7175,7 +7175,6 @@ _G.pg.base.item_data_statistics[11028] = {
 	icon = "Equips/540",
 	id = 11028,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Peculiar Material",
@@ -7196,6 +7195,7 @@ _G.pg.base.item_data_statistics[11028] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11029] = {
@@ -7205,7 +7205,6 @@ _G.pg.base.item_data_statistics[11029] = {
 	icon = "Equips/45100",
 	id = 11029,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Quadruple 533mm Magnetic Torpedo Design",
@@ -7226,6 +7225,7 @@ _G.pg.base.item_data_statistics[11029] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11030] = {
@@ -7235,7 +7235,6 @@ _G.pg.base.item_data_statistics[11030] = {
 	icon = "Equips/45200",
 	id = 11030,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Quintuple 533mm Magnetic Torpedo Design",
@@ -7256,6 +7255,7 @@ _G.pg.base.item_data_statistics[11030] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11031] = {
@@ -7265,7 +7265,6 @@ _G.pg.base.item_data_statistics[11031] = {
 	icon = "Equips/47100",
 	id = 11031,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Messerschmitt Me-155A Design",
@@ -7286,6 +7285,7 @@ _G.pg.base.item_data_statistics[11031] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11032] = {
@@ -7295,7 +7295,6 @@ _G.pg.base.item_data_statistics[11032] = {
 	icon = "Equips/37300",
 	id = 11032,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 A7M Reppü Design",
@@ -7316,6 +7315,7 @@ _G.pg.base.item_data_statistics[11032] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11033] = {
@@ -7325,7 +7325,6 @@ _G.pg.base.item_data_statistics[11033] = {
 	icon = "Equips/38200",
 	id = 11033,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Aichi B7A Ryusei Design",
@@ -7346,6 +7345,7 @@ _G.pg.base.item_data_statistics[11033] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11034] = {
@@ -7355,7 +7355,6 @@ _G.pg.base.item_data_statistics[11034] = {
 	icon = "Equips/3000",
 	id = 11034,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Improved Sonar T3 Design",
@@ -7376,6 +7375,7 @@ _G.pg.base.item_data_statistics[11034] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11035] = {
@@ -7385,7 +7385,6 @@ _G.pg.base.item_data_statistics[11035] = {
 	icon = "Equips/15100",
 	id = 11035,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only Mark 16 Torpedo T3 Design",
@@ -7406,6 +7405,7 @@ _G.pg.base.item_data_statistics[11035] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11036] = {
@@ -7415,7 +7415,6 @@ _G.pg.base.item_data_statistics[11036] = {
 	icon = "Equips/35500",
 	id = 11036,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only Type 95 Oxygen Torpedo T3 Design",
@@ -7436,6 +7435,7 @@ _G.pg.base.item_data_statistics[11036] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11037] = {
@@ -7445,7 +7445,6 @@ _G.pg.base.item_data_statistics[11037] = {
 	icon = "Equips/45400",
 	id = 11037,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine-only G7e Homing Torpedo T3 Design",
@@ -7466,6 +7465,7 @@ _G.pg.base.item_data_statistics[11037] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11038] = {
@@ -7475,7 +7475,6 @@ _G.pg.base.item_data_statistics[11038] = {
 	icon = "Equips/50100",
 	id = 11038,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Single 138.6mm Main Gun (Mle 1929) T3 Design",
@@ -7496,6 +7495,7 @@ _G.pg.base.item_data_statistics[11038] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11039] = {
@@ -7505,7 +7505,6 @@ _G.pg.base.item_data_statistics[11039] = {
 	icon = "Equips/50400",
 	id = 11039,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Quadruple 380mm Main Gun (Mle 1935) T3 Design",
@@ -7526,6 +7525,7 @@ _G.pg.base.item_data_statistics[11039] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11040] = {
@@ -7535,7 +7535,6 @@ _G.pg.base.item_data_statistics[11040] = {
 	icon = "Equips/55100",
 	id = 11040,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Single 90mm High-Angle Gun (M1939) T3 Design",
@@ -7556,6 +7555,7 @@ _G.pg.base.item_data_statistics[11040] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11041] = {
@@ -7565,7 +7565,6 @@ _G.pg.base.item_data_statistics[11041] = {
 	icon = "Equips/55200",
 	id = 11041,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 203mm Main Gun (M1927) T3 Design",
@@ -7586,6 +7585,7 @@ _G.pg.base.item_data_statistics[11041] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11042] = {
@@ -7595,7 +7595,6 @@ _G.pg.base.item_data_statistics[11042] = {
 	icon = "Equips/85000",
 	id = 11042,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "B-13 Twin 130mm B-2LM Main Gun T3 Design",
@@ -7616,6 +7615,7 @@ _G.pg.base.item_data_statistics[11042] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11043] = {
@@ -7625,7 +7625,6 @@ _G.pg.base.item_data_statistics[11043] = {
 	icon = "Equips/85120",
 	id = 11043,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Triple 152mm Main Gun (B-38 MK5) Design ",
@@ -7646,6 +7645,7 @@ _G.pg.base.item_data_statistics[11043] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11046] = {
@@ -7655,7 +7655,6 @@ _G.pg.base.item_data_statistics[11046] = {
 	icon = "Equips/50860",
 	id = 11046,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 203mm Main Gun (Mle 1931) T3 Design ",
@@ -7676,6 +7675,7 @@ _G.pg.base.item_data_statistics[11046] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11047] = {
@@ -7685,7 +7685,6 @@ _G.pg.base.item_data_statistics[11047] = {
 	icon = "Equips/37400",
 	id = 11047,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Kawanishi N1K3-A Shiden Kai 2 T0 Design ",
@@ -7706,6 +7705,7 @@ _G.pg.base.item_data_statistics[11047] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11048] = {
@@ -7715,7 +7715,6 @@ _G.pg.base.item_data_statistics[11048] = {
 	icon = "Equips/55600",
 	id = 11048,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Triple 152mm Model 1934 Main Gun T3 Design",
@@ -7736,6 +7735,7 @@ _G.pg.base.item_data_statistics[11048] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11049] = {
@@ -7745,7 +7745,6 @@ _G.pg.base.item_data_statistics[11049] = {
 	icon = "Equips/55000",
 	id = 11049,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Triple 381mm M1934 Main Gun T3 Design",
@@ -7766,6 +7765,7 @@ _G.pg.base.item_data_statistics[11049] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11050] = {
@@ -7775,7 +7775,6 @@ _G.pg.base.item_data_statistics[11050] = {
 	icon = "Equips/15240",
 	id = 11050,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "533mm Quintuple Torpedo Mount Mk 17 T0 Design",
@@ -7796,6 +7795,7 @@ _G.pg.base.item_data_statistics[11050] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11051] = {
@@ -7805,7 +7805,6 @@ _G.pg.base.item_data_statistics[11051] = {
 	icon = "Equips/27320",
 	id = 11051,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Sea Hornet T0 Design",
@@ -7826,6 +7825,7 @@ _G.pg.base.item_data_statistics[11051] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11052] = {
@@ -7835,7 +7835,6 @@ _G.pg.base.item_data_statistics[11052] = {
 	icon = "Equips/51240",
 	id = 11052,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Bréguet BR.810 Design",
@@ -7856,6 +7855,7 @@ _G.pg.base.item_data_statistics[11052] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11053] = {
@@ -7865,7 +7865,6 @@ _G.pg.base.item_data_statistics[11053] = {
 	icon = "Equips/27300",
 	id = 11053,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Sea Fury T0 Design",
@@ -7886,6 +7885,7 @@ _G.pg.base.item_data_statistics[11053] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11054] = {
@@ -7895,7 +7895,6 @@ _G.pg.base.item_data_statistics[11054] = {
 	icon = "Equips/17440",
 	id = 11054,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "F6F Hellcat (HVAR-Mounted) T0 Design",
@@ -7916,6 +7915,7 @@ _G.pg.base.item_data_statistics[11054] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11055] = {
@@ -7925,7 +7925,6 @@ _G.pg.base.item_data_statistics[11055] = {
 	icon = "Equips/150040",
 	id = 11055,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Old Heavy Cannon Design",
@@ -7946,6 +7945,7 @@ _G.pg.base.item_data_statistics[11055] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[11056] = {
@@ -7955,7 +7955,6 @@ _G.pg.base.item_data_statistics[11056] = {
 	icon = "Equips/150100",
 	id = 11056,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Old Demi-Cannon T3 Design",
@@ -7976,6 +7975,7 @@ _G.pg.base.item_data_statistics[11056] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13000] = {
@@ -7985,7 +7985,6 @@ _G.pg.base.item_data_statistics[13000] = {
 	icon = "Equips/24300",
 	id = 13000,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T0 Twin 381mm Main Gun - Variant Design",
@@ -8006,6 +8005,7 @@ _G.pg.base.item_data_statistics[13000] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13001] = {
@@ -8015,7 +8015,6 @@ _G.pg.base.item_data_statistics[13001] = {
 	icon = "Equips/24160",
 	id = 13001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T0 Prototype Triple 381mm AA Gun Design",
@@ -8036,6 +8035,7 @@ _G.pg.base.item_data_statistics[13001] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13002] = {
@@ -8045,7 +8045,6 @@ _G.pg.base.item_data_statistics[13002] = {
 	icon = "Equips/34100",
 	id = 13002,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T0 410mm Mounted Gun (Type 3 Shell) Design",
@@ -8066,6 +8065,7 @@ _G.pg.base.item_data_statistics[13002] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13003] = {
@@ -8075,7 +8075,6 @@ _G.pg.base.item_data_statistics[13003] = {
 	icon = "Equips/34180",
 	id = 13003,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T0 Prototype Triple 410mm Mounted Gun Design",
@@ -8096,6 +8095,7 @@ _G.pg.base.item_data_statistics[13003] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13004] = {
@@ -8105,7 +8105,6 @@ _G.pg.base.item_data_statistics[13004] = {
 	icon = "Equips/43060",
 	id = 13004,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T0 Prototype Triple 203mm Main Gun (SK C) Design",
@@ -8126,6 +8125,7 @@ _G.pg.base.item_data_statistics[13004] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13005] = {
@@ -8135,7 +8135,6 @@ _G.pg.base.item_data_statistics[13005] = {
 	icon = "Equips/7300",
 	id = 13005,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T0 Prototype Triple 203mm AA Gun Design",
@@ -8156,6 +8155,7 @@ _G.pg.base.item_data_statistics[13005] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13006] = {
@@ -8165,7 +8165,6 @@ _G.pg.base.item_data_statistics[13006] = {
 	icon = "Equips/22260",
 	id = 13006,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T0 Prototype Triple 152mm AA Gun Design",
@@ -8186,6 +8185,7 @@ _G.pg.base.item_data_statistics[13006] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13007] = {
@@ -8195,7 +8195,6 @@ _G.pg.base.item_data_statistics[13007] = {
 	icon = "Equips/26600",
 	id = 13007,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T0 Twin 40mm Bofors STAAG Design",
@@ -8216,6 +8215,7 @@ _G.pg.base.item_data_statistics[13007] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13008] = {
@@ -8225,7 +8225,6 @@ _G.pg.base.item_data_statistics[13008] = {
 	icon = "Equips/36560",
 	id = 13008,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T0 100mm Mounted AA Gun Design",
@@ -8246,6 +8245,7 @@ _G.pg.base.item_data_statistics[13008] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13009] = {
@@ -8255,7 +8255,6 @@ _G.pg.base.item_data_statistics[13009] = {
 	icon = "Equips/1160",
 	id = 13009,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T0 High Performance Air Radar Design",
@@ -8276,6 +8275,7 @@ _G.pg.base.item_data_statistics[13009] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13010] = {
@@ -8285,7 +8285,6 @@ _G.pg.base.item_data_statistics[13010] = {
 	icon = "Equips/1760",
 	id = 13010,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T0 High Performance Hydraulic Steering Gear Design",
@@ -8306,6 +8305,7 @@ _G.pg.base.item_data_statistics[13010] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13011] = {
@@ -8315,7 +8315,6 @@ _G.pg.base.item_data_statistics[13011] = {
 	icon = "Equips/26620",
 	id = 13011,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 40mm Bofors \"Hazemeyer\" AA Gun T0 Design ",
@@ -8336,6 +8335,7 @@ _G.pg.base.item_data_statistics[13011] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13012] = {
@@ -8345,7 +8345,6 @@ _G.pg.base.item_data_statistics[13012] = {
 	icon = "Equips/14500",
 	id = 13012,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Twin 457mm Main Gun (18\" MKA) T0 Design",
@@ -8366,6 +8365,7 @@ _G.pg.base.item_data_statistics[13012] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13013] = {
@@ -8375,7 +8375,6 @@ _G.pg.base.item_data_statistics[13013] = {
 	icon = "Equips/44200",
 	id = 13013,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Twin 406mm Main Gun (SK C/34) T0 Design",
@@ -8396,6 +8395,7 @@ _G.pg.base.item_data_statistics[13013] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13014] = {
@@ -8405,7 +8405,6 @@ _G.pg.base.item_data_statistics[13014] = {
 	icon = "Equips/12200",
 	id = 13014,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Triple 152mm Main Gun (DP MK17) T0 Design",
@@ -8426,6 +8425,7 @@ _G.pg.base.item_data_statistics[13014] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13015] = {
@@ -8435,7 +8435,6 @@ _G.pg.base.item_data_statistics[13015] = {
 	icon = "Equips/36700",
 	id = 13015,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype 40mm AA Gun (Type 5) T0 Design",
@@ -8456,6 +8455,7 @@ _G.pg.base.item_data_statistics[13015] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13016] = {
@@ -8465,7 +8465,6 @@ _G.pg.base.item_data_statistics[13016] = {
 	icon = "Equips/33100",
 	id = 13016,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Triple 310mm Main Gun (Type 0) T0 Design",
@@ -8486,6 +8485,7 @@ _G.pg.base.item_data_statistics[13016] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13017] = {
@@ -8495,7 +8495,6 @@ _G.pg.base.item_data_statistics[13017] = {
 	icon = "Equips/50600",
 	id = 13017,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 37mm AA Gun (Mle 1936) T0 Design",
@@ -8516,6 +8515,7 @@ _G.pg.base.item_data_statistics[13017] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13018] = {
@@ -8525,7 +8525,6 @@ _G.pg.base.item_data_statistics[13018] = {
 	icon = "Equips/23100",
 	id = 13018,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Twin 234mm Main Gun (9.2\" MK XII) T0 Design",
@@ -8546,6 +8545,7 @@ _G.pg.base.item_data_statistics[13018] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13019] = {
@@ -8555,7 +8555,6 @@ _G.pg.base.item_data_statistics[13019] = {
 	icon = "Equips/23120",
 	id = 13019,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Triple 234mm Main Gun (9.2\" MK XII) T0 Design",
@@ -8576,6 +8575,7 @@ _G.pg.base.item_data_statistics[13019] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13020] = {
@@ -8585,7 +8585,6 @@ _G.pg.base.item_data_statistics[13020] = {
 	icon = "Equips/21600",
 	id = 13020,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Twin 114mm DP (4.5\" MK IV) T0 Design",
@@ -8606,6 +8605,7 @@ _G.pg.base.item_data_statistics[13020] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13021] = {
@@ -8615,7 +8615,6 @@ _G.pg.base.item_data_statistics[13021] = {
 	icon = "Equips/26660",
 	id = 13021,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Sextuple Bofors 40mm AA Gun T0 Design",
@@ -8636,6 +8635,7 @@ _G.pg.base.item_data_statistics[13021] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13022] = {
@@ -8645,7 +8645,6 @@ _G.pg.base.item_data_statistics[13022] = {
 	icon = "Equips/44300",
 	id = 13022,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Triple 305mm Main Gun (SK C/39) T0 Design",
@@ -8666,6 +8665,7 @@ _G.pg.base.item_data_statistics[13022] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13023] = {
@@ -8675,7 +8675,6 @@ _G.pg.base.item_data_statistics[13023] = {
 	icon = "Equips/51000",
 	id = 13023,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Triple 406mm/50 Main Gun T0 Design",
@@ -8696,6 +8695,7 @@ _G.pg.base.item_data_statistics[13023] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13024] = {
@@ -8705,7 +8705,6 @@ _G.pg.base.item_data_statistics[13024] = {
 	icon = "Equips/1260",
 	id = 13024,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "High Performance Fire Control Radar T0 Design",
@@ -8726,6 +8725,7 @@ _G.pg.base.item_data_statistics[13024] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13025] = {
@@ -8735,7 +8735,6 @@ _G.pg.base.item_data_statistics[13025] = {
 	icon = "Equips/44400",
 	id = 13025,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Triple 305mm SK C/39 Main Gun T0 Design",
@@ -8756,6 +8755,7 @@ _G.pg.base.item_data_statistics[13025] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13026] = {
@@ -8765,7 +8765,6 @@ _G.pg.base.item_data_statistics[13026] = {
 	icon = "Equips/47160",
 	id = 13026,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype BF-109G T0 Design",
@@ -8786,6 +8785,7 @@ _G.pg.base.item_data_statistics[13026] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13027] = {
@@ -8795,7 +8795,6 @@ _G.pg.base.item_data_statistics[13027] = {
 	icon = "Equips/55160",
 	id = 13027,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Twin 90mm Model 1939 High Angle Gun T0 Design",
@@ -8816,6 +8815,7 @@ _G.pg.base.item_data_statistics[13027] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13028] = {
@@ -8825,7 +8825,6 @@ _G.pg.base.item_data_statistics[13028] = {
 	icon = "Equips/55900",
 	id = 13028,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Triple 406mm Model 1940 Main Gun T0 Design",
@@ -8846,6 +8845,7 @@ _G.pg.base.item_data_statistics[13028] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13029] = {
@@ -8855,7 +8855,6 @@ _G.pg.base.item_data_statistics[13029] = {
 	icon = "Equips/38300",
 	id = 13029,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Saiun Kai T0 Design",
@@ -8876,6 +8875,7 @@ _G.pg.base.item_data_statistics[13029] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13030] = {
@@ -8885,7 +8885,6 @@ _G.pg.base.item_data_statistics[13030] = {
 	icon = "Equips/39340",
 	id = 13030,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Tenrai T0 Design",
@@ -8906,6 +8905,7 @@ _G.pg.base.item_data_statistics[13030] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13031] = {
@@ -8915,7 +8915,6 @@ _G.pg.base.item_data_statistics[13031] = {
 	icon = "Equips/22280",
 	id = 13031,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Quadruple 152mm Main Gun Mount Design",
@@ -8936,6 +8935,7 @@ _G.pg.base.item_data_statistics[13031] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13032] = {
@@ -8945,7 +8945,6 @@ _G.pg.base.item_data_statistics[13032] = {
 	icon = "Equips/50360",
 	id = 13032,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Quadruple 330mm Mle 1931 (CB Only) Main Gun Mount Design",
@@ -8966,6 +8965,7 @@ _G.pg.base.item_data_statistics[13032] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13033] = {
@@ -8975,7 +8975,6 @@ _G.pg.base.item_data_statistics[13033] = {
 	icon = "Equips/85540",
 	id = 13033,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Su-2 Design",
@@ -8996,6 +8995,7 @@ _G.pg.base.item_data_statistics[13033] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13034] = {
@@ -9005,7 +9005,6 @@ _G.pg.base.item_data_statistics[13034] = {
 	icon = "Equips/85560",
 	id = 13034,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype VIT-2 (VK-107) Design",
@@ -9026,6 +9025,7 @@ _G.pg.base.item_data_statistics[13034] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13035] = {
@@ -9035,7 +9035,6 @@ _G.pg.base.item_data_statistics[13035] = {
 	icon = "Equips/46400",
 	id = 13035,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Quadruple 30mm AA Gun Mount Design",
@@ -9056,6 +9055,7 @@ _G.pg.base.item_data_statistics[13035] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13036] = {
@@ -9065,7 +9065,6 @@ _G.pg.base.item_data_statistics[13036] = {
 	icon = "Equips/56100",
 	id = 13036,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Twin 130mm Model 1936 Main Gun Mount Design",
@@ -9086,6 +9085,7 @@ _G.pg.base.item_data_statistics[13036] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13037] = {
@@ -9095,7 +9095,6 @@ _G.pg.base.item_data_statistics[13037] = {
 	icon = "Equips/14540",
 	id = 13037,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Triple 406mm Mk6 Main Gun Mount T0 Design",
@@ -9116,6 +9115,7 @@ _G.pg.base.item_data_statistics[13037] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13038] = {
@@ -9125,7 +9125,6 @@ _G.pg.base.item_data_statistics[13038] = {
 	icon = "Equips/43160",
 	id = 13038,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Triple 203mm SKC Main Gun Mount T0 Design",
@@ -9146,6 +9145,7 @@ _G.pg.base.item_data_statistics[13038] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13039] = {
@@ -9155,7 +9155,6 @@ _G.pg.base.item_data_statistics[13039] = {
 	icon = "Equips/32360",
 	id = 13039,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Triple 150mm Type 5 High-Angle Gun Mount T0 Design",
@@ -9176,6 +9175,7 @@ _G.pg.base.item_data_statistics[13039] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13040] = {
@@ -9185,7 +9185,6 @@ _G.pg.base.item_data_statistics[13040] = {
 	icon = "Equips/42360",
 	id = 13040,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Twin 150mm TbtsK C42T Main Gun Mount T0 Design",
@@ -9206,6 +9205,7 @@ _G.pg.base.item_data_statistics[13040] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13041] = {
@@ -9215,7 +9215,6 @@ _G.pg.base.item_data_statistics[13041] = {
 	icon = "Equips/50480",
 	id = 13041,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Triple 380mm Mle 1935 Main Gun Mount T0 Design",
@@ -9236,6 +9235,7 @@ _G.pg.base.item_data_statistics[13041] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13042] = {
@@ -9245,7 +9245,6 @@ _G.pg.base.item_data_statistics[13042] = {
 	icon = "Equips/46420",
 	id = 13042,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype 55mm Gerät 58 AA Gun Mount T0 Design",
@@ -9266,6 +9265,7 @@ _G.pg.base.item_data_statistics[13042] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13043] = {
@@ -9275,7 +9275,6 @@ _G.pg.base.item_data_statistics[13043] = {
 	icon = "Equips/85600",
 	id = 13043,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Carrier-Based La-9 T0 Design",
@@ -9296,6 +9295,7 @@ _G.pg.base.item_data_statistics[13043] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13044] = {
@@ -9305,7 +9305,6 @@ _G.pg.base.item_data_statistics[13044] = {
 	icon = "Equips/85620",
 	id = 13044,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype VIT-2 (Mode Change) T0 Design",
@@ -9326,6 +9325,7 @@ _G.pg.base.item_data_statistics[13044] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13045] = {
@@ -9335,7 +9335,6 @@ _G.pg.base.item_data_statistics[13045] = {
 	icon = "Equips/56120",
 	id = 13045,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Triple 254mm Model 1939 Main Gun Mount T0 Design",
@@ -9356,6 +9355,7 @@ _G.pg.base.item_data_statistics[13045] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13046] = {
@@ -9365,7 +9365,6 @@ _G.pg.base.item_data_statistics[13046] = {
 	icon = "Equips/55660",
 	id = 13046,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Triple 152mm Model 1936 Main Gun Mount T0 Design",
@@ -9386,6 +9385,7 @@ _G.pg.base.item_data_statistics[13046] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13047] = {
@@ -9395,7 +9395,6 @@ _G.pg.base.item_data_statistics[13047] = {
 	icon = "Equips/17460",
 	id = 13047,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype F8F Bearcat (Float) T0 Design",
@@ -9416,6 +9415,7 @@ _G.pg.base.item_data_statistics[13047] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[13048] = {
@@ -9425,7 +9425,6 @@ _G.pg.base.item_data_statistics[13048] = {
 	icon = "Equips/34320",
 	id = 13048,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Twin 410mm mod.A Main Gun Mount T0 Design",
@@ -9446,6 +9445,7 @@ _G.pg.base.item_data_statistics[13048] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[14001] = {
@@ -9455,7 +9455,6 @@ _G.pg.base.item_data_statistics[14001] = {
 	icon = "Props/14001",
 	id = 14001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Weapon Blueprint - Series 1",
@@ -9538,6 +9537,7 @@ _G.pg.base.item_data_statistics[14001] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[14002] = {
@@ -9547,7 +9547,6 @@ _G.pg.base.item_data_statistics[14002] = {
 	icon = "Props/14002",
 	id = 14002,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Weapon Blueprint - Series 2",
@@ -9620,6 +9619,7 @@ _G.pg.base.item_data_statistics[14002] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[14003] = {
@@ -9629,7 +9629,6 @@ _G.pg.base.item_data_statistics[14003] = {
 	icon = "Props/14003",
 	id = 14003,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Weapon Blueprint - Series 3",
@@ -9702,6 +9701,7 @@ _G.pg.base.item_data_statistics[14003] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[14004] = {
@@ -9711,7 +9711,6 @@ _G.pg.base.item_data_statistics[14004] = {
 	icon = "Props/14004",
 	id = 14004,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Weapon Blueprint - Series 4",
@@ -9784,6 +9783,7 @@ _G.pg.base.item_data_statistics[14004] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[14005] = {
@@ -9793,7 +9793,6 @@ _G.pg.base.item_data_statistics[14005] = {
 	icon = "Props/14005",
 	id = 14005,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Weapon Blueprint - Series 5",
@@ -9866,6 +9865,7 @@ _G.pg.base.item_data_statistics[14005] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[14006] = {
@@ -9875,7 +9875,6 @@ _G.pg.base.item_data_statistics[14006] = {
 	icon = "Props/14006",
 	id = 14006,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Weapon Blueprint - Series 6",
@@ -9948,6 +9947,7 @@ _G.pg.base.item_data_statistics[14006] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15001] = {
@@ -9957,7 +9957,6 @@ _G.pg.base.item_data_statistics[15001] = {
 	icon = "Props/medal",
 	id = 15001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Medal of Honor",
@@ -9978,6 +9977,7 @@ _G.pg.base.item_data_statistics[15001] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15002] = {
@@ -9987,7 +9987,6 @@ _G.pg.base.item_data_statistics[15002] = {
 	icon = "Props/nengyuanshi",
 	id = 15002,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Energy Stone",
@@ -10008,6 +10007,7 @@ _G.pg.base.item_data_statistics[15002] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15003] = {
@@ -10017,7 +10017,6 @@ _G.pg.base.item_data_statistics[15003] = {
 	icon = "Props/15003",
 	id = 15003,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Quick Finisher",
@@ -10038,6 +10037,7 @@ _G.pg.base.item_data_statistics[15003] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15004] = {
@@ -10047,7 +10047,6 @@ _G.pg.base.item_data_statistics[15004] = {
 	icon = "Props/nengyuanshi",
 	id = 15004,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Rest Accelerant",
@@ -10068,6 +10067,7 @@ _G.pg.base.item_data_statistics[15004] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15005] = {
@@ -10077,7 +10077,6 @@ _G.pg.base.item_data_statistics[15005] = {
 	icon = "Props/kuojian_",
 	id = 15005,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Expansion License",
@@ -10098,6 +10097,7 @@ _G.pg.base.item_data_statistics[15005] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15006] = {
@@ -10107,7 +10107,6 @@ _G.pg.base.item_data_statistics[15006] = {
 	icon = "Props/ring",
 	id = 15006,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Promise Ring",
@@ -10128,6 +10127,7 @@ _G.pg.base.item_data_statistics[15006] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15008] = {
@@ -10137,7 +10137,6 @@ _G.pg.base.item_data_statistics[15008] = {
 	icon = "Props/15008",
 	id = 15008,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Cognitive Chips ",
@@ -10158,6 +10157,7 @@ _G.pg.base.item_data_statistics[15008] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15009] = {
@@ -10167,7 +10167,6 @@ _G.pg.base.item_data_statistics[15009] = {
 	icon = "Props/15009",
 	id = 15009,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Identity Change Certification ",
@@ -10188,6 +10187,7 @@ _G.pg.base.item_data_statistics[15009] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15010] = {
@@ -10197,7 +10197,6 @@ _G.pg.base.item_data_statistics[15010] = {
 	icon = "Props/15010",
 	id = 15010,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Distress Signal Reception Device (Obsolete)",
@@ -10218,6 +10217,7 @@ _G.pg.base.item_data_statistics[15010] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15011] = {
@@ -10227,7 +10227,6 @@ _G.pg.base.item_data_statistics[15011] = {
 	icon = "Props/tiara",
 	id = 15011,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Unity Tiara ",
@@ -10248,6 +10247,7 @@ _G.pg.base.item_data_statistics[15011] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15012] = {
@@ -10257,7 +10257,6 @@ _G.pg.base.item_data_statistics[15012] = {
 	icon = "Props/15012",
 	id = 15012,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Cognitive Array",
@@ -10278,6 +10277,7 @@ _G.pg.base.item_data_statistics[15012] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15013] = {
@@ -10287,7 +10287,6 @@ _G.pg.base.item_data_statistics[15013] = {
 	icon = "Props/15013",
 	id = 15013,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Cruise Missions Voucher",
@@ -10308,6 +10307,7 @@ _G.pg.base.item_data_statistics[15013] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15014] = {
@@ -10317,7 +10317,6 @@ _G.pg.base.item_data_statistics[15014] = {
 	icon = "Props/15014",
 	id = 15014,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Augment Module Core",
@@ -10338,6 +10337,7 @@ _G.pg.base.item_data_statistics[15014] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15015] = {
@@ -10347,7 +10347,6 @@ _G.pg.base.item_data_statistics[15015] = {
 	icon = "Props/15015",
 	id = 15015,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Augment Module Stone T1",
@@ -10370,6 +10369,7 @@ _G.pg.base.item_data_statistics[15015] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15016] = {
@@ -10379,7 +10379,6 @@ _G.pg.base.item_data_statistics[15016] = {
 	icon = "Props/15016",
 	id = 15016,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Augment Module Stone T2",
@@ -10402,6 +10401,7 @@ _G.pg.base.item_data_statistics[15016] = {
 	usage_arg = {
 		100,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15017] = {
@@ -10411,7 +10411,6 @@ _G.pg.base.item_data_statistics[15017] = {
 	icon = "Props/15017",
 	id = 15017,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Augment Module Stone T3",
@@ -10434,6 +10433,7 @@ _G.pg.base.item_data_statistics[15017] = {
 	usage_arg = {
 		1000,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15020] = {
@@ -10443,7 +10443,6 @@ _G.pg.base.item_data_statistics[15020] = {
 	icon = "Props/15019",
 	id = 15020,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Augment Module Conversion Stone T1",
@@ -10464,6 +10463,7 @@ _G.pg.base.item_data_statistics[15020] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15021] = {
@@ -10473,7 +10473,6 @@ _G.pg.base.item_data_statistics[15021] = {
 	icon = "Props/15020",
 	id = 15021,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Augment Module Conversion Stone T2",
@@ -10494,6 +10493,7 @@ _G.pg.base.item_data_statistics[15021] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[15022] = {
@@ -10503,7 +10503,6 @@ _G.pg.base.item_data_statistics[15022] = {
 	icon = "Props/15022",
 	id = 15022,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Beach Area Permit",
@@ -10524,6 +10523,7 @@ _G.pg.base.item_data_statistics[15022] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16001] = {
@@ -10533,7 +10533,6 @@ _G.pg.base.item_data_statistics[16001] = {
 	icon = "Props/16001",
 	id = 16001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Offensive Skill Book",
@@ -10559,6 +10558,7 @@ _G.pg.base.item_data_statistics[16001] = {
 		1,
 		50,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16002] = {
@@ -10568,7 +10568,6 @@ _G.pg.base.item_data_statistics[16002] = {
 	icon = "Props/16002",
 	id = 16002,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Offensive Skill Book",
@@ -10594,6 +10593,7 @@ _G.pg.base.item_data_statistics[16002] = {
 		1,
 		50,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16003] = {
@@ -10603,7 +10603,6 @@ _G.pg.base.item_data_statistics[16003] = {
 	icon = "Props/16003",
 	id = 16003,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Offensive Skill Book",
@@ -10629,6 +10628,7 @@ _G.pg.base.item_data_statistics[16003] = {
 		1,
 		50,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16004] = {
@@ -10638,7 +10638,6 @@ _G.pg.base.item_data_statistics[16004] = {
 	icon = "Props/16004",
 	id = 16004,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T4 Offensive Skill Book",
@@ -10664,6 +10663,7 @@ _G.pg.base.item_data_statistics[16004] = {
 		1,
 		100,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16011] = {
@@ -10673,7 +10673,6 @@ _G.pg.base.item_data_statistics[16011] = {
 	icon = "Props/16011",
 	id = 16011,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Defensive Skill Book",
@@ -10699,6 +10698,7 @@ _G.pg.base.item_data_statistics[16011] = {
 		2,
 		50,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16012] = {
@@ -10708,7 +10708,6 @@ _G.pg.base.item_data_statistics[16012] = {
 	icon = "Props/16012",
 	id = 16012,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Defensive Skill Book",
@@ -10734,6 +10733,7 @@ _G.pg.base.item_data_statistics[16012] = {
 		2,
 		50,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16013] = {
@@ -10743,7 +10743,6 @@ _G.pg.base.item_data_statistics[16013] = {
 	icon = "Props/16013",
 	id = 16013,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Defensive Skill Book",
@@ -10769,6 +10768,7 @@ _G.pg.base.item_data_statistics[16013] = {
 		2,
 		50,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16014] = {
@@ -10778,7 +10778,6 @@ _G.pg.base.item_data_statistics[16014] = {
 	icon = "Props/16014",
 	id = 16014,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T4 Defensive Skill Book",
@@ -10804,6 +10803,7 @@ _G.pg.base.item_data_statistics[16014] = {
 		2,
 		100,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16021] = {
@@ -10813,7 +10813,6 @@ _G.pg.base.item_data_statistics[16021] = {
 	icon = "Props/16021",
 	id = 16021,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Support Skill Book",
@@ -10839,6 +10838,7 @@ _G.pg.base.item_data_statistics[16021] = {
 		3,
 		50,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16022] = {
@@ -10848,7 +10848,6 @@ _G.pg.base.item_data_statistics[16022] = {
 	icon = "Props/16022",
 	id = 16022,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Support Skill Book",
@@ -10874,6 +10873,7 @@ _G.pg.base.item_data_statistics[16022] = {
 		3,
 		50,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16023] = {
@@ -10883,7 +10883,6 @@ _G.pg.base.item_data_statistics[16023] = {
 	icon = "Props/16023",
 	id = 16023,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Support Skill Book",
@@ -10909,6 +10908,7 @@ _G.pg.base.item_data_statistics[16023] = {
 		3,
 		50,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16024] = {
@@ -10918,7 +10918,6 @@ _G.pg.base.item_data_statistics[16024] = {
 	icon = "Props/16024",
 	id = 16024,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T4 Support Skill Book",
@@ -10944,6 +10943,7 @@ _G.pg.base.item_data_statistics[16024] = {
 		3,
 		100,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16031] = {
@@ -10953,7 +10953,6 @@ _G.pg.base.item_data_statistics[16031] = {
 	icon = "Props/16031",
 	id = 16031,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 META Universal Skill Book",
@@ -10974,6 +10973,7 @@ _G.pg.base.item_data_statistics[16031] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16032] = {
@@ -10983,7 +10983,6 @@ _G.pg.base.item_data_statistics[16032] = {
 	icon = "Props/16032",
 	id = 16032,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 META Universal Skill Book",
@@ -11004,6 +11003,7 @@ _G.pg.base.item_data_statistics[16032] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16033] = {
@@ -11013,7 +11013,6 @@ _G.pg.base.item_data_statistics[16033] = {
 	icon = "Props/16033",
 	id = 16033,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 META Universal Skill Book",
@@ -11034,6 +11033,7 @@ _G.pg.base.item_data_statistics[16033] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16501] = {
@@ -11043,7 +11043,6 @@ _G.pg.base.item_data_statistics[16501] = {
 	icon = "Props/16501",
 	id = 16501,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 3000,
 	name = "T1 EXP Data Pack",
@@ -11064,6 +11063,7 @@ _G.pg.base.item_data_statistics[16501] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[16502] = {
@@ -11073,7 +11073,6 @@ _G.pg.base.item_data_statistics[16502] = {
 	icon = "Props/16502",
 	id = 16502,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 500,
 	name = "T2 EXP Data Pack",
@@ -11094,6 +11093,7 @@ _G.pg.base.item_data_statistics[16502] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17001] = {
@@ -11103,7 +11103,6 @@ _G.pg.base.item_data_statistics[17001] = {
 	icon = "Props/17001",
 	id = 17001,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 General Part",
@@ -11124,6 +11123,7 @@ _G.pg.base.item_data_statistics[17001] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17002] = {
@@ -11133,7 +11133,6 @@ _G.pg.base.item_data_statistics[17002] = {
 	icon = "Props/17002",
 	id = 17002,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 General Part",
@@ -11154,6 +11153,7 @@ _G.pg.base.item_data_statistics[17002] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17003] = {
@@ -11163,7 +11163,6 @@ _G.pg.base.item_data_statistics[17003] = {
 	icon = "Props/17003",
 	id = 17003,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 General Part",
@@ -11184,6 +11183,7 @@ _G.pg.base.item_data_statistics[17003] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17004] = {
@@ -11193,7 +11193,6 @@ _G.pg.base.item_data_statistics[17004] = {
 	icon = "Props/17004",
 	id = 17004,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T4 General Part",
@@ -11214,6 +11213,7 @@ _G.pg.base.item_data_statistics[17004] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17011] = {
@@ -11223,7 +11223,6 @@ _G.pg.base.item_data_statistics[17011] = {
 	icon = "Props/17011",
 	id = 17011,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Main Gun Part",
@@ -11244,6 +11243,7 @@ _G.pg.base.item_data_statistics[17011] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17012] = {
@@ -11253,7 +11253,6 @@ _G.pg.base.item_data_statistics[17012] = {
 	icon = "Props/17012",
 	id = 17012,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Main Gun Part",
@@ -11274,6 +11273,7 @@ _G.pg.base.item_data_statistics[17012] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17013] = {
@@ -11283,7 +11283,6 @@ _G.pg.base.item_data_statistics[17013] = {
 	icon = "Props/17013",
 	id = 17013,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Main Gun Part",
@@ -11304,6 +11303,7 @@ _G.pg.base.item_data_statistics[17013] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17014] = {
@@ -11313,7 +11313,6 @@ _G.pg.base.item_data_statistics[17014] = {
 	icon = "Props/17014",
 	id = 17014,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T4 Main Gun Part",
@@ -11334,6 +11333,7 @@ _G.pg.base.item_data_statistics[17014] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17021] = {
@@ -11343,7 +11343,6 @@ _G.pg.base.item_data_statistics[17021] = {
 	icon = "Props/17021",
 	id = 17021,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Torpedo Part",
@@ -11364,6 +11363,7 @@ _G.pg.base.item_data_statistics[17021] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17022] = {
@@ -11373,7 +11373,6 @@ _G.pg.base.item_data_statistics[17022] = {
 	icon = "Props/17022",
 	id = 17022,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Torpedo Part",
@@ -11394,6 +11393,7 @@ _G.pg.base.item_data_statistics[17022] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17023] = {
@@ -11403,7 +11403,6 @@ _G.pg.base.item_data_statistics[17023] = {
 	icon = "Props/17023",
 	id = 17023,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Torpedo Part",
@@ -11424,6 +11423,7 @@ _G.pg.base.item_data_statistics[17023] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17024] = {
@@ -11433,7 +11433,6 @@ _G.pg.base.item_data_statistics[17024] = {
 	icon = "Props/17024",
 	id = 17024,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T4 Torpedo Part",
@@ -11454,6 +11453,7 @@ _G.pg.base.item_data_statistics[17024] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17031] = {
@@ -11463,7 +11463,6 @@ _G.pg.base.item_data_statistics[17031] = {
 	icon = "Props/17031",
 	id = 17031,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Anti-Air Gun Part",
@@ -11484,6 +11483,7 @@ _G.pg.base.item_data_statistics[17031] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17032] = {
@@ -11493,7 +11493,6 @@ _G.pg.base.item_data_statistics[17032] = {
 	icon = "Props/17032",
 	id = 17032,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Anti-Air Gun Part",
@@ -11514,6 +11513,7 @@ _G.pg.base.item_data_statistics[17032] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17033] = {
@@ -11523,7 +11523,6 @@ _G.pg.base.item_data_statistics[17033] = {
 	icon = "Props/17033",
 	id = 17033,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Anti-Air Gun Part",
@@ -11544,6 +11543,7 @@ _G.pg.base.item_data_statistics[17033] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17034] = {
@@ -11553,7 +11553,6 @@ _G.pg.base.item_data_statistics[17034] = {
 	icon = "Props/17034",
 	id = 17034,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T4 Anti-Air Gun Part",
@@ -11574,6 +11573,7 @@ _G.pg.base.item_data_statistics[17034] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17041] = {
@@ -11583,7 +11583,6 @@ _G.pg.base.item_data_statistics[17041] = {
 	icon = "Props/17041",
 	id = 17041,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Aircraft Part",
@@ -11604,6 +11603,7 @@ _G.pg.base.item_data_statistics[17041] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17042] = {
@@ -11613,7 +11613,6 @@ _G.pg.base.item_data_statistics[17042] = {
 	icon = "Props/17042",
 	id = 17042,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Aircraft Part",
@@ -11634,6 +11633,7 @@ _G.pg.base.item_data_statistics[17042] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17043] = {
@@ -11643,7 +11643,6 @@ _G.pg.base.item_data_statistics[17043] = {
 	icon = "Props/17043",
 	id = 17043,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Aircraft Part",
@@ -11664,6 +11663,7 @@ _G.pg.base.item_data_statistics[17043] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17044] = {
@@ -11673,7 +11673,6 @@ _G.pg.base.item_data_statistics[17044] = {
 	icon = "Props/17044",
 	id = 17044,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T4 Aircraft Part",
@@ -11694,6 +11693,7 @@ _G.pg.base.item_data_statistics[17044] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17990] = {
@@ -11703,7 +11703,6 @@ _G.pg.base.item_data_statistics[17990] = {
 	icon = "Props/17990",
 	id = 17990,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prototype Gear Upgrade Part",
@@ -11724,6 +11723,7 @@ _G.pg.base.item_data_statistics[17990] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[17991] = {
@@ -11733,7 +11733,6 @@ _G.pg.base.item_data_statistics[17991] = {
 	icon = "Props/17991",
 	id = 17991,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Specialized Gear Upgrade Part",
@@ -11754,6 +11753,7 @@ _G.pg.base.item_data_statistics[17991] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18000] = {
@@ -11763,7 +11763,6 @@ _G.pg.base.item_data_statistics[18000] = {
 	icon = "Props/nengyuanshi",
 	id = 18000,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Retrofit Blueprint Plate",
@@ -11784,6 +11783,7 @@ _G.pg.base.item_data_statistics[18000] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18001] = {
@@ -11793,7 +11793,6 @@ _G.pg.base.item_data_statistics[18001] = {
 	icon = "Props/18001",
 	id = 18001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Destroyer Retrofit Blueprint",
@@ -11814,6 +11813,7 @@ _G.pg.base.item_data_statistics[18001] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18002] = {
@@ -11823,7 +11823,6 @@ _G.pg.base.item_data_statistics[18002] = {
 	icon = "Props/18002",
 	id = 18002,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Destroyer Retrofit Blueprint",
@@ -11844,6 +11843,7 @@ _G.pg.base.item_data_statistics[18002] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18003] = {
@@ -11853,7 +11853,6 @@ _G.pg.base.item_data_statistics[18003] = {
 	icon = "Props/18003",
 	id = 18003,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Destroyer Retrofit Blueprint",
@@ -11874,6 +11873,7 @@ _G.pg.base.item_data_statistics[18003] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18011] = {
@@ -11883,7 +11883,6 @@ _G.pg.base.item_data_statistics[18011] = {
 	icon = "Props/18011",
 	id = 18011,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Cruiser Retrofit Blueprint",
@@ -11904,6 +11903,7 @@ _G.pg.base.item_data_statistics[18011] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18012] = {
@@ -11913,7 +11913,6 @@ _G.pg.base.item_data_statistics[18012] = {
 	icon = "Props/18012",
 	id = 18012,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Cruiser Retrofit Blueprint",
@@ -11934,6 +11933,7 @@ _G.pg.base.item_data_statistics[18012] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18013] = {
@@ -11943,7 +11943,6 @@ _G.pg.base.item_data_statistics[18013] = {
 	icon = "Props/18013",
 	id = 18013,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Cruiser Retrofit Blueprint",
@@ -11964,6 +11963,7 @@ _G.pg.base.item_data_statistics[18013] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18021] = {
@@ -11973,7 +11973,6 @@ _G.pg.base.item_data_statistics[18021] = {
 	icon = "Props/18021",
 	id = 18021,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Battleship Retrofit Blueprint",
@@ -11994,6 +11993,7 @@ _G.pg.base.item_data_statistics[18021] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18022] = {
@@ -12003,7 +12003,6 @@ _G.pg.base.item_data_statistics[18022] = {
 	icon = "Props/18022",
 	id = 18022,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Battleship Retrofit Blueprint",
@@ -12024,6 +12023,7 @@ _G.pg.base.item_data_statistics[18022] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18023] = {
@@ -12033,7 +12033,6 @@ _G.pg.base.item_data_statistics[18023] = {
 	icon = "Props/18023",
 	id = 18023,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Battleship Retrofit Blueprint",
@@ -12054,6 +12053,7 @@ _G.pg.base.item_data_statistics[18023] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18031] = {
@@ -12063,7 +12063,6 @@ _G.pg.base.item_data_statistics[18031] = {
 	icon = "Props/18031",
 	id = 18031,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Carrier Retrofit Blueprint",
@@ -12084,6 +12083,7 @@ _G.pg.base.item_data_statistics[18031] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18032] = {
@@ -12093,7 +12093,6 @@ _G.pg.base.item_data_statistics[18032] = {
 	icon = "Props/18032",
 	id = 18032,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Carrier Retrofit Blueprint",
@@ -12114,6 +12113,7 @@ _G.pg.base.item_data_statistics[18032] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18033] = {
@@ -12123,7 +12123,6 @@ _G.pg.base.item_data_statistics[18033] = {
 	icon = "Props/18033",
 	id = 18033,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Carrier Retrofit Blueprint",
@@ -12144,6 +12143,7 @@ _G.pg.base.item_data_statistics[18033] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18101] = {
@@ -12153,7 +12153,6 @@ _G.pg.base.item_data_statistics[18101] = {
 	icon = "Props/18101",
 	id = 18101,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Refined Metals",
@@ -12174,6 +12173,7 @@ _G.pg.base.item_data_statistics[18101] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18102] = {
@@ -12183,7 +12183,6 @@ _G.pg.base.item_data_statistics[18102] = {
 	icon = "Props/18102",
 	id = 18102,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Specially Smelted Metals",
@@ -12204,6 +12203,7 @@ _G.pg.base.item_data_statistics[18102] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18103] = {
@@ -12213,7 +12213,6 @@ _G.pg.base.item_data_statistics[18103] = {
 	icon = "Props/18103",
 	id = 18103,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Ultra High-Purity Metals",
@@ -12234,6 +12233,7 @@ _G.pg.base.item_data_statistics[18103] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18104] = {
@@ -12243,7 +12243,6 @@ _G.pg.base.item_data_statistics[18104] = {
 	icon = "Props/18104",
 	id = 18104,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Consumer-Grade Electronic Components",
@@ -12264,6 +12263,7 @@ _G.pg.base.item_data_statistics[18104] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18105] = {
@@ -12273,7 +12273,6 @@ _G.pg.base.item_data_statistics[18105] = {
 	icon = "Props/18105",
 	id = 18105,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Industrial-Grade Electronic Components",
@@ -12294,6 +12293,7 @@ _G.pg.base.item_data_statistics[18105] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18106] = {
@@ -12303,7 +12303,6 @@ _G.pg.base.item_data_statistics[18106] = {
 	icon = "Props/18106",
 	id = 18106,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Military-Grade Electronic Components",
@@ -12324,6 +12323,7 @@ _G.pg.base.item_data_statistics[18106] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18107] = {
@@ -12333,7 +12333,6 @@ _G.pg.base.item_data_statistics[18107] = {
 	icon = "Props/18107",
 	id = 18107,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Unbranded Gunpowder",
@@ -12354,6 +12353,7 @@ _G.pg.base.item_data_statistics[18107] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18108] = {
@@ -12363,7 +12363,6 @@ _G.pg.base.item_data_statistics[18108] = {
 	icon = "Props/18108",
 	id = 18108,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Poudre B Gunpowder",
@@ -12384,6 +12383,7 @@ _G.pg.base.item_data_statistics[18108] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18109] = {
@@ -12393,7 +12393,6 @@ _G.pg.base.item_data_statistics[18109] = {
 	icon = "Props/18109",
 	id = 18109,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "HBX Blend Gunpowder",
@@ -12414,6 +12413,7 @@ _G.pg.base.item_data_statistics[18109] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18110] = {
@@ -12423,7 +12423,6 @@ _G.pg.base.item_data_statistics[18110] = {
 	icon = "Props/18110",
 	id = 18110,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Natural Rubber",
@@ -12444,6 +12443,7 @@ _G.pg.base.item_data_statistics[18110] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18111] = {
@@ -12453,7 +12453,6 @@ _G.pg.base.item_data_statistics[18111] = {
 	icon = "Props/18111",
 	id = 18111,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synthetic Elastic Materials",
@@ -12474,6 +12473,7 @@ _G.pg.base.item_data_statistics[18111] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18112] = {
@@ -12483,7 +12483,6 @@ _G.pg.base.item_data_statistics[18112] = {
 	icon = "Props/18112",
 	id = 18112,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "High-Durability Elastomers",
@@ -12504,6 +12503,7 @@ _G.pg.base.item_data_statistics[18112] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18113] = {
@@ -12513,7 +12513,6 @@ _G.pg.base.item_data_statistics[18113] = {
 	icon = "Props/18113",
 	id = 18113,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Conductive Metals",
@@ -12534,6 +12533,7 @@ _G.pg.base.item_data_statistics[18113] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18114] = {
@@ -12543,7 +12543,6 @@ _G.pg.base.item_data_statistics[18114] = {
 	icon = "Props/18114",
 	id = 18114,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Superconductive Metals",
@@ -12564,6 +12563,7 @@ _G.pg.base.item_data_statistics[18114] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18115] = {
@@ -12573,7 +12573,6 @@ _G.pg.base.item_data_statistics[18115] = {
 	icon = "Props/18115",
 	id = 18115,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lightweight Alloys",
@@ -12594,6 +12593,7 @@ _G.pg.base.item_data_statistics[18115] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18116] = {
@@ -12603,7 +12603,6 @@ _G.pg.base.item_data_statistics[18116] = {
 	icon = "Props/18116",
 	id = 18116,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Corrosion-Resistant Alloys",
@@ -12624,6 +12623,7 @@ _G.pg.base.item_data_statistics[18116] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18117] = {
@@ -12633,7 +12633,6 @@ _G.pg.base.item_data_statistics[18117] = {
 	icon = "Props/18117",
 	id = 18117,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "SR Main Gun Design Plans",
@@ -12654,6 +12653,7 @@ _G.pg.base.item_data_statistics[18117] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18118] = {
@@ -12663,7 +12663,6 @@ _G.pg.base.item_data_statistics[18118] = {
 	icon = "Props/18118",
 	id = 18118,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "UR Main Gun Design Plans",
@@ -12684,6 +12683,7 @@ _G.pg.base.item_data_statistics[18118] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18119] = {
@@ -12693,7 +12693,6 @@ _G.pg.base.item_data_statistics[18119] = {
 	icon = "Props/18119",
 	id = 18119,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "SR Torpedo Design Plans",
@@ -12714,6 +12713,7 @@ _G.pg.base.item_data_statistics[18119] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18120] = {
@@ -12723,7 +12723,6 @@ _G.pg.base.item_data_statistics[18120] = {
 	icon = "Props/18120",
 	id = 18120,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "UR Torpedo Design Plans",
@@ -12744,6 +12743,7 @@ _G.pg.base.item_data_statistics[18120] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18121] = {
@@ -12753,7 +12753,6 @@ _G.pg.base.item_data_statistics[18121] = {
 	icon = "Props/18121",
 	id = 18121,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "SR Anti-Air Gun Design Plans",
@@ -12774,6 +12773,7 @@ _G.pg.base.item_data_statistics[18121] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18122] = {
@@ -12783,7 +12783,6 @@ _G.pg.base.item_data_statistics[18122] = {
 	icon = "Props/18122",
 	id = 18122,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "UR Anti-Air Gun Design Plans",
@@ -12804,6 +12803,7 @@ _G.pg.base.item_data_statistics[18122] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18123] = {
@@ -12813,7 +12813,6 @@ _G.pg.base.item_data_statistics[18123] = {
 	icon = "Props/18123",
 	id = 18123,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "SR Aircraft Design Plans",
@@ -12834,6 +12833,7 @@ _G.pg.base.item_data_statistics[18123] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18124] = {
@@ -12843,7 +12843,6 @@ _G.pg.base.item_data_statistics[18124] = {
 	icon = "Props/18124",
 	id = 18124,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "UR Aircraft Design Plans",
@@ -12864,6 +12863,7 @@ _G.pg.base.item_data_statistics[18124] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18125] = {
@@ -12873,7 +12873,6 @@ _G.pg.base.item_data_statistics[18125] = {
 	icon = "Props/18125",
 	id = 18125,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Ordnance Testing Report",
@@ -12894,6 +12893,7 @@ _G.pg.base.item_data_statistics[18125] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18126] = {
@@ -12903,7 +12903,6 @@ _G.pg.base.item_data_statistics[18126] = {
 	icon = "Props/18126",
 	id = 18126,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Ordnance Testing Report",
@@ -12924,6 +12923,7 @@ _G.pg.base.item_data_statistics[18126] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[18127] = {
@@ -12933,7 +12933,6 @@ _G.pg.base.item_data_statistics[18127] = {
 	icon = "Props/18127",
 	id = 18127,
 	is_world = 1,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Ordnance Testing Report",
@@ -12954,6 +12953,7 @@ _G.pg.base.item_data_statistics[18127] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[20001] = {
@@ -12963,7 +12963,6 @@ _G.pg.base.item_data_statistics[20001] = {
 	icon = "Props/20001",
 	id = 20001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Wisdom Cube",
@@ -12987,6 +12986,7 @@ _G.pg.base.item_data_statistics[20001] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[20010] = {
@@ -12996,7 +12996,6 @@ _G.pg.base.item_data_statistics[20010] = {
 	icon = "Props/20010",
 	id = 20010,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Cat Box Quick Finisher",
@@ -13019,6 +13018,7 @@ _G.pg.base.item_data_statistics[20010] = {
 	usage_arg = {
 		1200,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[20011] = {
@@ -13028,7 +13028,6 @@ _G.pg.base.item_data_statistics[20011] = {
 	icon = "Props/20011",
 	id = 20011,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Rare Cat Box",
@@ -13052,6 +13051,7 @@ _G.pg.base.item_data_statistics[20011] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[20012] = {
@@ -13061,7 +13061,6 @@ _G.pg.base.item_data_statistics[20012] = {
 	icon = "Props/20012",
 	id = 20012,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Elite Cat Box",
@@ -13085,6 +13084,7 @@ _G.pg.base.item_data_statistics[20012] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[20013] = {
@@ -13094,7 +13094,6 @@ _G.pg.base.item_data_statistics[20013] = {
 	icon = "Props/20013",
 	id = 20013,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Super Rare Cat Box",
@@ -13118,6 +13117,7 @@ _G.pg.base.item_data_statistics[20013] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[20101] = {
@@ -13127,7 +13127,6 @@ _G.pg.base.item_data_statistics[20101] = {
 	icon = "Props/20101",
 	id = 20101,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Combat Data Pack - Series 1",
@@ -13151,6 +13150,7 @@ _G.pg.base.item_data_statistics[20101] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[20102] = {
@@ -13160,7 +13160,6 @@ _G.pg.base.item_data_statistics[20102] = {
 	icon = "Props/20102",
 	id = 20102,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Combat Data Pack - Series 2",
@@ -13184,6 +13183,7 @@ _G.pg.base.item_data_statistics[20102] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[20103] = {
@@ -13193,7 +13193,6 @@ _G.pg.base.item_data_statistics[20103] = {
 	icon = "Props/20103",
 	id = 20103,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Combat Data Pack - Series 3",
@@ -13217,6 +13216,7 @@ _G.pg.base.item_data_statistics[20103] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[20104] = {
@@ -13226,7 +13226,6 @@ _G.pg.base.item_data_statistics[20104] = {
 	icon = "Props/20104",
 	id = 20104,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Combat Data Pack - Series 4",
@@ -13250,6 +13249,7 @@ _G.pg.base.item_data_statistics[20104] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[20105] = {
@@ -13259,7 +13259,6 @@ _G.pg.base.item_data_statistics[20105] = {
 	icon = "Props/20105",
 	id = 20105,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Combat Data Pack - Series 5",
@@ -13283,6 +13282,7 @@ _G.pg.base.item_data_statistics[20105] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21000] = {
@@ -13292,7 +13292,6 @@ _G.pg.base.item_data_statistics[21000] = {
 	icon = "Props/21000",
 	id = 21000,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Crystal Fragment",
@@ -13313,6 +13312,7 @@ _G.pg.base.item_data_statistics[21000] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21001] = {
@@ -13322,7 +13322,6 @@ _G.pg.base.item_data_statistics[21001] = {
 	icon = "Props/21001",
 	id = 21001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal - Hiryuu ",
@@ -13343,6 +13342,7 @@ _G.pg.base.item_data_statistics[21001] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21002] = {
@@ -13352,7 +13352,6 @@ _G.pg.base.item_data_statistics[21002] = {
 	icon = "Props/21002",
 	id = 21002,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal - Ark Royal",
@@ -13373,6 +13372,7 @@ _G.pg.base.item_data_statistics[21002] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21003] = {
@@ -13382,7 +13382,6 @@ _G.pg.base.item_data_statistics[21003] = {
 	icon = "Props/21003",
 	id = 21003,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Helena",
@@ -13403,6 +13402,7 @@ _G.pg.base.item_data_statistics[21003] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21004] = {
@@ -13412,7 +13412,6 @@ _G.pg.base.item_data_statistics[21004] = {
 	icon = "Props/21004",
 	id = 21004,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Souryuu",
@@ -13433,6 +13432,7 @@ _G.pg.base.item_data_statistics[21004] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21005] = {
@@ -13442,7 +13442,6 @@ _G.pg.base.item_data_statistics[21005] = {
 	icon = "Props/21005",
 	id = 21005,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Fusou",
@@ -13463,6 +13462,7 @@ _G.pg.base.item_data_statistics[21005] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21006] = {
@@ -13472,7 +13472,6 @@ _G.pg.base.item_data_statistics[21006] = {
 	icon = "Props/21006",
 	id = 21006,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Hiyou",
@@ -13493,6 +13492,7 @@ _G.pg.base.item_data_statistics[21006] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21007] = {
@@ -13502,7 +13502,6 @@ _G.pg.base.item_data_statistics[21007] = {
 	icon = "Props/21007",
 	id = 21007,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Gneisenau",
@@ -13523,6 +13522,7 @@ _G.pg.base.item_data_statistics[21007] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21008] = {
@@ -13532,7 +13532,6 @@ _G.pg.base.item_data_statistics[21008] = {
 	icon = "Props/21008",
 	id = 21008,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Junyou",
@@ -13553,6 +13552,7 @@ _G.pg.base.item_data_statistics[21008] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21009] = {
@@ -13562,7 +13562,6 @@ _G.pg.base.item_data_statistics[21009] = {
 	icon = "Props/21009",
 	id = 21009,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Scharnhorst",
@@ -13583,6 +13582,7 @@ _G.pg.base.item_data_statistics[21009] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21010] = {
@@ -13592,7 +13592,6 @@ _G.pg.base.item_data_statistics[21010] = {
 	icon = "Props/21010",
 	id = 21010,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Yamashiro",
@@ -13613,6 +13612,7 @@ _G.pg.base.item_data_statistics[21010] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21011] = {
@@ -13622,7 +13622,6 @@ _G.pg.base.item_data_statistics[21011] = {
 	icon = "Props/21011",
 	id = 21011,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Memphis",
@@ -13643,6 +13642,7 @@ _G.pg.base.item_data_statistics[21011] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21012] = {
@@ -13652,7 +13652,6 @@ _G.pg.base.item_data_statistics[21012] = {
 	icon = "Props/21012",
 	id = 21012,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Repulse",
@@ -13673,6 +13672,7 @@ _G.pg.base.item_data_statistics[21012] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21013] = {
@@ -13682,7 +13682,6 @@ _G.pg.base.item_data_statistics[21013] = {
 	icon = "Props/21013",
 	id = 21013,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Trento",
@@ -13703,6 +13702,7 @@ _G.pg.base.item_data_statistics[21013] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21014] = {
@@ -13712,7 +13712,6 @@ _G.pg.base.item_data_statistics[21014] = {
 	icon = "Props/21014",
 	id = 21014,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Renown",
@@ -13733,6 +13732,7 @@ _G.pg.base.item_data_statistics[21014] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21015] = {
@@ -13742,7 +13742,6 @@ _G.pg.base.item_data_statistics[21015] = {
 	icon = "Props/21015",
 	id = 21015,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Hunter",
@@ -13763,6 +13762,7 @@ _G.pg.base.item_data_statistics[21015] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21016] = {
@@ -13772,7 +13772,6 @@ _G.pg.base.item_data_statistics[21016] = {
 	icon = "Props/21016",
 	id = 21016,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Fortune",
@@ -13793,6 +13792,7 @@ _G.pg.base.item_data_statistics[21016] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21017] = {
@@ -13802,7 +13802,6 @@ _G.pg.base.item_data_statistics[21017] = {
 	icon = "Props/21017",
 	id = 21017,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Arizona",
@@ -13823,6 +13822,7 @@ _G.pg.base.item_data_statistics[21017] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21018] = {
@@ -13832,7 +13832,6 @@ _G.pg.base.item_data_statistics[21018] = {
 	icon = "Props/21018",
 	id = 21018,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Sheffield",
@@ -13853,6 +13852,7 @@ _G.pg.base.item_data_statistics[21018] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21019] = {
@@ -13862,7 +13862,6 @@ _G.pg.base.item_data_statistics[21019] = {
 	icon = "Props/21019",
 	id = 21019,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Queen Elizabeth",
@@ -13883,6 +13882,7 @@ _G.pg.base.item_data_statistics[21019] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21020] = {
@@ -13892,7 +13892,6 @@ _G.pg.base.item_data_statistics[21020] = {
 	icon = "Props/21020",
 	id = 21020,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – La Galissonnière",
@@ -13913,6 +13912,7 @@ _G.pg.base.item_data_statistics[21020] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21021] = {
@@ -13922,7 +13922,6 @@ _G.pg.base.item_data_statistics[21021] = {
 	icon = "Props/21021",
 	id = 21021,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – U-556",
@@ -13943,6 +13942,7 @@ _G.pg.base.item_data_statistics[21021] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21022] = {
@@ -13952,7 +13952,6 @@ _G.pg.base.item_data_statistics[21022] = {
 	icon = "Props/21022",
 	id = 21022,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Vestal",
@@ -13973,6 +13972,7 @@ _G.pg.base.item_data_statistics[21022] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21023] = {
@@ -13982,7 +13982,6 @@ _G.pg.base.item_data_statistics[21023] = {
 	icon = "Props/21023",
 	id = 21023,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Algérie",
@@ -14003,6 +14002,7 @@ _G.pg.base.item_data_statistics[21023] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21024] = {
@@ -14012,7 +14012,6 @@ _G.pg.base.item_data_statistics[21024] = {
 	icon = "Props/21024",
 	id = 21024,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Hatakaze META",
@@ -14033,6 +14032,7 @@ _G.pg.base.item_data_statistics[21024] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21025] = {
@@ -14042,7 +14042,6 @@ _G.pg.base.item_data_statistics[21025] = {
 	icon = "Props/21025",
 	id = 21025,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Jintsuu",
@@ -14063,6 +14062,7 @@ _G.pg.base.item_data_statistics[21025] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21026] = {
@@ -14072,7 +14072,6 @@ _G.pg.base.item_data_statistics[21026] = {
 	icon = "Props/21026",
 	id = 21026,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Princeton",
@@ -14093,6 +14092,7 @@ _G.pg.base.item_data_statistics[21026] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21027] = {
@@ -14102,7 +14102,6 @@ _G.pg.base.item_data_statistics[21027] = {
 	icon = "Props/21027",
 	id = 21027,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Erebus",
@@ -14123,6 +14122,7 @@ _G.pg.base.item_data_statistics[21027] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21028] = {
@@ -14132,7 +14132,6 @@ _G.pg.base.item_data_statistics[21028] = {
 	icon = "Props/21028",
 	id = 21028,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Kirov",
@@ -14153,6 +14152,7 @@ _G.pg.base.item_data_statistics[21028] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21029] = {
@@ -14162,7 +14162,6 @@ _G.pg.base.item_data_statistics[21029] = {
 	icon = "Props/21029",
 	id = 21029,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Kimberly",
@@ -14183,6 +14182,7 @@ _G.pg.base.item_data_statistics[21029] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21030] = {
@@ -14192,7 +14192,6 @@ _G.pg.base.item_data_statistics[21030] = {
 	icon = "Props/21030",
 	id = 21030,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Pamiat' Merkuria",
@@ -14213,6 +14212,7 @@ _G.pg.base.item_data_statistics[21030] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21031] = {
@@ -14222,7 +14222,6 @@ _G.pg.base.item_data_statistics[21031] = {
 	icon = "Props/21031",
 	id = 21031,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Rodney META",
@@ -14243,6 +14242,7 @@ _G.pg.base.item_data_statistics[21031] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21032] = {
@@ -14252,7 +14252,6 @@ _G.pg.base.item_data_statistics[21032] = {
 	icon = "Props/21032",
 	id = 21032,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Vampire META",
@@ -14273,6 +14272,7 @@ _G.pg.base.item_data_statistics[21032] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21033] = {
@@ -14282,7 +14282,6 @@ _G.pg.base.item_data_statistics[21033] = {
 	icon = "Props/21033",
 	id = 21033,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Béarn META",
@@ -14303,6 +14302,7 @@ _G.pg.base.item_data_statistics[21033] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21034] = {
@@ -14312,7 +14312,6 @@ _G.pg.base.item_data_statistics[21034] = {
 	icon = "Props/21034",
 	id = 21034,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Foch META",
@@ -14333,6 +14332,7 @@ _G.pg.base.item_data_statistics[21034] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21035] = {
@@ -14342,7 +14342,6 @@ _G.pg.base.item_data_statistics[21035] = {
 	icon = "Props/21035",
 	id = 21035,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Wichita META",
@@ -14363,6 +14362,7 @@ _G.pg.base.item_data_statistics[21035] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21036] = {
@@ -14372,7 +14372,6 @@ _G.pg.base.item_data_statistics[21036] = {
 	icon = "Props/21036",
 	id = 21036,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Kasumi META",
@@ -14393,6 +14392,7 @@ _G.pg.base.item_data_statistics[21036] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21037] = {
@@ -14402,7 +14402,6 @@ _G.pg.base.item_data_statistics[21037] = {
 	icon = "Props/21037",
 	id = 21037,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Nagato META",
@@ -14423,6 +14422,7 @@ _G.pg.base.item_data_statistics[21037] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21038] = {
@@ -14432,7 +14432,6 @@ _G.pg.base.item_data_statistics[21038] = {
 	icon = "Props/21038",
 	id = 21038,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Hiei META",
@@ -14453,6 +14452,7 @@ _G.pg.base.item_data_statistics[21038] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21039] = {
@@ -14462,7 +14462,6 @@ _G.pg.base.item_data_statistics[21039] = {
 	icon = "Props/21039",
 	id = 21039,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Houshou META",
@@ -14483,6 +14482,7 @@ _G.pg.base.item_data_statistics[21039] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21040] = {
@@ -14492,7 +14492,6 @@ _G.pg.base.item_data_statistics[21040] = {
 	icon = "Props/21040",
 	id = 21040,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "META Crystal – Giulio Cesare META",
@@ -14513,6 +14512,37 @@ _G.pg.base.item_data_statistics[21040] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
+}
+
+_G.pg.base.item_data_statistics[21041] = {
+	compose_number = 0,
+	display = "An item that increases the potential of Taihou META. Used in the META Lab during Somatic Activation.",
+	display_effect = "",
+	icon = "Props/21041",
+	id = 21041,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "META Crystal – Taihou META",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 4,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21101] = {
@@ -14522,7 +14552,6 @@ _G.pg.base.item_data_statistics[21101] = {
 	icon = "Props/21101",
 	id = 21101,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Crystallized Heat-Resistant Steel",
@@ -14543,6 +14572,7 @@ _G.pg.base.item_data_statistics[21101] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21111] = {
@@ -14552,7 +14582,6 @@ _G.pg.base.item_data_statistics[21111] = {
 	icon = "Props/21111",
 	id = 21111,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Nanoceramic Alloy",
@@ -14573,6 +14602,7 @@ _G.pg.base.item_data_statistics[21111] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21121] = {
@@ -14582,7 +14612,6 @@ _G.pg.base.item_data_statistics[21121] = {
 	icon = "Props/21121",
 	id = 21121,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Neuroplastic Prosthetic Arm",
@@ -14603,6 +14632,7 @@ _G.pg.base.item_data_statistics[21121] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21131] = {
@@ -14612,7 +14642,6 @@ _G.pg.base.item_data_statistics[21131] = {
 	icon = "Props/21131",
 	id = 21131,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Supercavitation Generator",
@@ -14633,6 +14662,7 @@ _G.pg.base.item_data_statistics[21131] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21901] = {
@@ -14642,7 +14672,6 @@ _G.pg.base.item_data_statistics[21901] = {
 	icon = "Props/21901",
 	id = 21901,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point – Hiryuu META",
@@ -14663,6 +14692,7 @@ _G.pg.base.item_data_statistics[21901] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21902] = {
@@ -14672,7 +14702,6 @@ _G.pg.base.item_data_statistics[21902] = {
 	icon = "Props/21902",
 	id = 21902,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point - Ark Royal META",
@@ -14693,6 +14722,7 @@ _G.pg.base.item_data_statistics[21902] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21903] = {
@@ -14702,7 +14732,6 @@ _G.pg.base.item_data_statistics[21903] = {
 	icon = "Props/21903",
 	id = 21903,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point – Helena META",
@@ -14723,6 +14752,7 @@ _G.pg.base.item_data_statistics[21903] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21904] = {
@@ -14732,7 +14762,6 @@ _G.pg.base.item_data_statistics[21904] = {
 	icon = "Props/21904",
 	id = 21904,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point – Souryuu META",
@@ -14753,6 +14782,7 @@ _G.pg.base.item_data_statistics[21904] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21905] = {
@@ -14762,7 +14792,6 @@ _G.pg.base.item_data_statistics[21905] = {
 	icon = "Props/21905",
 	id = 21905,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point – Gneisenau META",
@@ -14783,6 +14812,7 @@ _G.pg.base.item_data_statistics[21905] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21906] = {
@@ -14792,7 +14822,6 @@ _G.pg.base.item_data_statistics[21906] = {
 	icon = "Props/21906",
 	id = 21906,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point – Scharnhorst META",
@@ -14813,6 +14842,7 @@ _G.pg.base.item_data_statistics[21906] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21907] = {
@@ -14822,7 +14852,6 @@ _G.pg.base.item_data_statistics[21907] = {
 	icon = "Props/21907",
 	id = 21907,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point – Repulse META",
@@ -14843,6 +14872,7 @@ _G.pg.base.item_data_statistics[21907] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21908] = {
@@ -14852,7 +14882,6 @@ _G.pg.base.item_data_statistics[21908] = {
 	icon = "Props/21908",
 	id = 21908,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point – Renown META",
@@ -14873,6 +14902,7 @@ _G.pg.base.item_data_statistics[21908] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21909] = {
@@ -14882,7 +14912,6 @@ _G.pg.base.item_data_statistics[21909] = {
 	icon = "Props/21909",
 	id = 21909,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point – Arizona META",
@@ -14903,6 +14932,7 @@ _G.pg.base.item_data_statistics[21909] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21910] = {
@@ -14912,7 +14942,6 @@ _G.pg.base.item_data_statistics[21910] = {
 	icon = "Props/21910",
 	id = 21910,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point – Queen Elizabeth META",
@@ -14933,6 +14962,7 @@ _G.pg.base.item_data_statistics[21910] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21911] = {
@@ -14942,7 +14972,6 @@ _G.pg.base.item_data_statistics[21911] = {
 	icon = "Props/21911",
 	id = 21911,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point – Algérie META",
@@ -14963,6 +14992,7 @@ _G.pg.base.item_data_statistics[21911] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21912] = {
@@ -14972,7 +15002,6 @@ _G.pg.base.item_data_statistics[21912] = {
 	icon = "Props/21912",
 	id = 21912,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point – Jintsuu META",
@@ -14993,6 +15022,7 @@ _G.pg.base.item_data_statistics[21912] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21913] = {
@@ -15002,7 +15032,6 @@ _G.pg.base.item_data_statistics[21913] = {
 	icon = "Props/21913",
 	id = 21913,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point – Kirov META",
@@ -15023,6 +15052,7 @@ _G.pg.base.item_data_statistics[21913] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21914] = {
@@ -15032,7 +15062,6 @@ _G.pg.base.item_data_statistics[21914] = {
 	icon = "Props/21914",
 	id = 21914,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point – Rodney META",
@@ -15053,6 +15082,7 @@ _G.pg.base.item_data_statistics[21914] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21915] = {
@@ -15062,7 +15092,6 @@ _G.pg.base.item_data_statistics[21915] = {
 	icon = "Props/21915",
 	id = 21915,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point – Wichita META",
@@ -15083,6 +15112,7 @@ _G.pg.base.item_data_statistics[21915] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[21916] = {
@@ -15092,7 +15122,6 @@ _G.pg.base.item_data_statistics[21916] = {
 	icon = "Props/21916",
 	id = 21916,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Synchronization Point – Nagato META",
@@ -15113,6 +15142,37 @@ _G.pg.base.item_data_statistics[21916] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
+}
+
+_G.pg.base.item_data_statistics[21917] = {
+	compose_number = 0,
+	display = "Sync Points for Taihou META.",
+	display_effect = "",
+	icon = "Props/21917",
+	id = 21917,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Synchronization Point – Taihou META",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 4,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30001] = {
@@ -15122,7 +15182,6 @@ _G.pg.base.item_data_statistics[30001] = {
 	icon = "Props/30000",
 	id = 30001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Submarine Starter Supplies Box",
@@ -15146,6 +15205,7 @@ _G.pg.base.item_data_statistics[30001] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30011] = {
@@ -15155,7 +15215,6 @@ _G.pg.base.item_data_statistics[30011] = {
 	icon = "Props/30001",
 	id = 30011,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Eagle Tech Pack",
@@ -15179,6 +15238,7 @@ _G.pg.base.item_data_statistics[30011] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30012] = {
@@ -15188,7 +15248,6 @@ _G.pg.base.item_data_statistics[30012] = {
 	icon = "Props/30002",
 	id = 30012,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Eagle Tech Pack",
@@ -15212,6 +15271,7 @@ _G.pg.base.item_data_statistics[30012] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30013] = {
@@ -15221,7 +15281,6 @@ _G.pg.base.item_data_statistics[30013] = {
 	icon = "Props/30003",
 	id = 30013,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Eagle Tech Pack",
@@ -15245,6 +15304,7 @@ _G.pg.base.item_data_statistics[30013] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30014] = {
@@ -15254,7 +15314,6 @@ _G.pg.base.item_data_statistics[30014] = {
 	icon = "Props/30004",
 	id = 30014,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T4 Eagle Tech Pack",
@@ -15278,6 +15337,7 @@ _G.pg.base.item_data_statistics[30014] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30015] = {
@@ -15287,7 +15347,6 @@ _G.pg.base.item_data_statistics[30015] = {
 	icon = "Props/30005",
 	id = 30015,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T5 Eagle Tech Pack",
@@ -15311,6 +15370,7 @@ _G.pg.base.item_data_statistics[30015] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30021] = {
@@ -15320,7 +15380,6 @@ _G.pg.base.item_data_statistics[30021] = {
 	icon = "Props/30001",
 	id = 30021,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Royal Tech Pack",
@@ -15344,6 +15403,7 @@ _G.pg.base.item_data_statistics[30021] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30022] = {
@@ -15353,7 +15413,6 @@ _G.pg.base.item_data_statistics[30022] = {
 	icon = "Props/30002",
 	id = 30022,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Royal Tech Pack",
@@ -15377,6 +15436,7 @@ _G.pg.base.item_data_statistics[30022] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30023] = {
@@ -15386,7 +15446,6 @@ _G.pg.base.item_data_statistics[30023] = {
 	icon = "Props/30003",
 	id = 30023,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Royal Tech Pack",
@@ -15410,6 +15469,7 @@ _G.pg.base.item_data_statistics[30023] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30024] = {
@@ -15419,7 +15479,6 @@ _G.pg.base.item_data_statistics[30024] = {
 	icon = "Props/30004",
 	id = 30024,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T4 Royal Tech Pack",
@@ -15443,6 +15502,7 @@ _G.pg.base.item_data_statistics[30024] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30025] = {
@@ -15452,7 +15512,6 @@ _G.pg.base.item_data_statistics[30025] = {
 	icon = "Props/30005",
 	id = 30025,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T5 Royal Tech Pack",
@@ -15476,6 +15535,7 @@ _G.pg.base.item_data_statistics[30025] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30031] = {
@@ -15485,7 +15545,6 @@ _G.pg.base.item_data_statistics[30031] = {
 	icon = "Props/30001",
 	id = 30031,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Sakura Tech Pack",
@@ -15509,6 +15568,7 @@ _G.pg.base.item_data_statistics[30031] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30032] = {
@@ -15518,7 +15578,6 @@ _G.pg.base.item_data_statistics[30032] = {
 	icon = "Props/30002",
 	id = 30032,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Sakura Tech Pack",
@@ -15542,6 +15601,7 @@ _G.pg.base.item_data_statistics[30032] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30033] = {
@@ -15551,7 +15611,6 @@ _G.pg.base.item_data_statistics[30033] = {
 	icon = "Props/30003",
 	id = 30033,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Sakura Tech Pack",
@@ -15575,6 +15634,7 @@ _G.pg.base.item_data_statistics[30033] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30034] = {
@@ -15584,7 +15644,6 @@ _G.pg.base.item_data_statistics[30034] = {
 	icon = "Props/30004",
 	id = 30034,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T4 Sakura Tech Pack",
@@ -15608,6 +15667,7 @@ _G.pg.base.item_data_statistics[30034] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30035] = {
@@ -15617,7 +15677,6 @@ _G.pg.base.item_data_statistics[30035] = {
 	icon = "Props/30005",
 	id = 30035,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T5 Sakura Tech Pack",
@@ -15641,6 +15700,7 @@ _G.pg.base.item_data_statistics[30035] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30041] = {
@@ -15650,7 +15710,6 @@ _G.pg.base.item_data_statistics[30041] = {
 	icon = "Props/30001",
 	id = 30041,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Iron Blood Tech Pack",
@@ -15674,6 +15733,7 @@ _G.pg.base.item_data_statistics[30041] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30042] = {
@@ -15683,7 +15743,6 @@ _G.pg.base.item_data_statistics[30042] = {
 	icon = "Props/30002",
 	id = 30042,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Iron Blood Tech Pack",
@@ -15707,6 +15766,7 @@ _G.pg.base.item_data_statistics[30042] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30043] = {
@@ -15716,7 +15776,6 @@ _G.pg.base.item_data_statistics[30043] = {
 	icon = "Props/30003",
 	id = 30043,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Iron Blood Tech Pack",
@@ -15740,6 +15799,7 @@ _G.pg.base.item_data_statistics[30043] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30044] = {
@@ -15749,7 +15809,6 @@ _G.pg.base.item_data_statistics[30044] = {
 	icon = "Props/30004",
 	id = 30044,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T4 Iron Blood Tech Pack",
@@ -15773,6 +15832,7 @@ _G.pg.base.item_data_statistics[30044] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30045] = {
@@ -15782,7 +15842,6 @@ _G.pg.base.item_data_statistics[30045] = {
 	icon = "Props/30005",
 	id = 30045,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T5 Iron Blood Tech Pack",
@@ -15806,6 +15865,7 @@ _G.pg.base.item_data_statistics[30045] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30103] = {
@@ -15815,7 +15875,6 @@ _G.pg.base.item_data_statistics[30103] = {
 	icon = "Props/30103",
 	id = 30103,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Parts Pack",
@@ -15839,6 +15898,7 @@ _G.pg.base.item_data_statistics[30103] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30111] = {
@@ -15848,7 +15908,6 @@ _G.pg.base.item_data_statistics[30111] = {
 	icon = "Props/30111",
 	id = 30111,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Universal T1 Part",
@@ -15921,6 +15980,7 @@ _G.pg.base.item_data_statistics[30111] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30112] = {
@@ -15930,7 +15990,6 @@ _G.pg.base.item_data_statistics[30112] = {
 	icon = "Props/30112",
 	id = 30112,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Universal T2 Part",
@@ -16003,6 +16062,7 @@ _G.pg.base.item_data_statistics[30112] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30113] = {
@@ -16012,7 +16072,6 @@ _G.pg.base.item_data_statistics[30113] = {
 	icon = "Props/30113",
 	id = 30113,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Universal T3 Part",
@@ -16085,6 +16144,7 @@ _G.pg.base.item_data_statistics[30113] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30114] = {
@@ -16094,7 +16154,6 @@ _G.pg.base.item_data_statistics[30114] = {
 	icon = "Props/30114",
 	id = 30114,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Universal T4 Part",
@@ -16167,6 +16226,7 @@ _G.pg.base.item_data_statistics[30114] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30121] = {
@@ -16176,7 +16236,6 @@ _G.pg.base.item_data_statistics[30121] = {
 	icon = "Props/30121",
 	id = 30121,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Oil Reserve Supply (1000) ",
@@ -16207,6 +16266,7 @@ _G.pg.base.item_data_statistics[30121] = {
 		0,
 		1000,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30122] = {
@@ -16216,7 +16276,6 @@ _G.pg.base.item_data_statistics[30122] = {
 	icon = "Props/30122",
 	id = 30122,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "石油储备箱(500)",
@@ -16247,6 +16306,7 @@ _G.pg.base.item_data_statistics[30122] = {
 		0,
 		500,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30132] = {
@@ -16256,7 +16316,6 @@ _G.pg.base.item_data_statistics[30132] = {
 	icon = "Props/30132",
 	id = 30132,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 General Retrofit Blueprint",
@@ -16319,6 +16378,7 @@ _G.pg.base.item_data_statistics[30132] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30133] = {
@@ -16328,7 +16388,6 @@ _G.pg.base.item_data_statistics[30133] = {
 	icon = "Props/30133",
 	id = 30133,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 General Retrofit Blueprint",
@@ -16391,6 +16450,7 @@ _G.pg.base.item_data_statistics[30133] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30202] = {
@@ -16400,7 +16460,6 @@ _G.pg.base.item_data_statistics[30202] = {
 	icon = "Props/30202",
 	id = 30202,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "SR Gear Development Pack ",
@@ -16643,6 +16702,7 @@ _G.pg.base.item_data_statistics[30202] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30203] = {
@@ -16652,7 +16712,6 @@ _G.pg.base.item_data_statistics[30203] = {
 	icon = "Props/30203",
 	id = 30203,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Lab Development Pack ",
@@ -16745,6 +16804,7 @@ _G.pg.base.item_data_statistics[30203] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30204] = {
@@ -16754,7 +16814,6 @@ _G.pg.base.item_data_statistics[30204] = {
 	icon = "Props/30204",
 	id = 30204,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Development Pack - Support Campaign",
@@ -16867,6 +16926,7 @@ _G.pg.base.item_data_statistics[30204] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30205] = {
@@ -16876,7 +16936,6 @@ _G.pg.base.item_data_statistics[30205] = {
 	icon = "Props/30205",
 	id = 30205,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Iris Orthodoxy Gear Development Pack",
@@ -16897,6 +16956,7 @@ _G.pg.base.item_data_statistics[30205] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30206] = {
@@ -16906,7 +16966,6 @@ _G.pg.base.item_data_statistics[30206] = {
 	icon = "Props/30206",
 	id = 30206,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Sakura Tech Pack (Display Sample)",
@@ -16930,6 +16989,7 @@ _G.pg.base.item_data_statistics[30206] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30301] = {
@@ -16939,7 +16999,6 @@ _G.pg.base.item_data_statistics[30301] = {
 	icon = "Props/chrisgift",
 	id = 30301,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Akashi's Christmas Present ",
@@ -16983,6 +17042,7 @@ _G.pg.base.item_data_statistics[30301] = {
 		300,
 		200,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30302] = {
@@ -16992,7 +17052,6 @@ _G.pg.base.item_data_statistics[30302] = {
 	icon = "Props/appearancebox",
 	id = 30302,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box",
@@ -17122,6 +17181,7 @@ _G.pg.base.item_data_statistics[30302] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30303] = {
@@ -17131,7 +17191,6 @@ _G.pg.base.item_data_statistics[30303] = {
 	icon = "Props/appearanceboxnep",
 	id = 30303,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Neptune) ",
@@ -17231,6 +17290,7 @@ _G.pg.base.item_data_statistics[30303] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30304] = {
@@ -17240,7 +17300,6 @@ _G.pg.base.item_data_statistics[30304] = {
 	icon = "Props/appearanceboxchspr",
 	id = 30304,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Spring Festival)",
@@ -17350,6 +17409,7 @@ _G.pg.base.item_data_statistics[30304] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30305] = {
@@ -17359,7 +17419,6 @@ _G.pg.base.item_data_statistics[30305] = {
 	icon = "Props/appearanceboxkaixue",
 	id = 30305,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (School Festival)",
@@ -17469,6 +17528,7 @@ _G.pg.base.item_data_statistics[30305] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30306] = {
@@ -17478,7 +17538,6 @@ _G.pg.base.item_data_statistics[30306] = {
 	icon = "Props/appearancebox",
 	id = 30306,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box",
@@ -17608,6 +17667,7 @@ _G.pg.base.item_data_statistics[30306] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30307] = {
@@ -17617,7 +17677,6 @@ _G.pg.base.item_data_statistics[30307] = {
 	icon = "Props/appearanceboxsummer",
 	id = 30307,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (End of Summer) ",
@@ -17732,6 +17791,7 @@ _G.pg.base.item_data_statistics[30307] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30309] = {
@@ -17741,7 +17801,6 @@ _G.pg.base.item_data_statistics[30309] = {
 	icon = "Props/appearancebox",
 	id = 30309,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box",
@@ -17871,6 +17930,7 @@ _G.pg.base.item_data_statistics[30309] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30310] = {
@@ -17880,7 +17940,6 @@ _G.pg.base.item_data_statistics[30310] = {
 	icon = "Props/appearanceboxxiaozhu",
 	id = 30310,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Boar) ",
@@ -17995,6 +18054,7 @@ _G.pg.base.item_data_statistics[30310] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30311] = {
@@ -18004,7 +18064,6 @@ _G.pg.base.item_data_statistics[30311] = {
 	icon = "Props/appearanceboxhuangjia",
 	id = 30311,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Royal) ",
@@ -18119,6 +18178,7 @@ _G.pg.base.item_data_statistics[30311] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30312] = {
@@ -18128,7 +18188,6 @@ _G.pg.base.item_data_statistics[30312] = {
 	icon = "Props/appearanceboxchspr",
 	id = 30312,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Lunar New Year) ",
@@ -18238,6 +18297,7 @@ _G.pg.base.item_data_statistics[30312] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30313] = {
@@ -18247,7 +18307,6 @@ _G.pg.base.item_data_statistics[30313] = {
 	icon = "Props/appearanceboxai",
 	id = 30313,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Equipment Skin Box (Kizuna AI) ",
@@ -18367,6 +18426,7 @@ _G.pg.base.item_data_statistics[30313] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30314] = {
@@ -18376,7 +18436,6 @@ _G.pg.base.item_data_statistics[30314] = {
 	icon = "Props/appearanceboxsading",
 	id = 30314,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Sardegna) ",
@@ -18491,6 +18550,7 @@ _G.pg.base.item_data_statistics[30314] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30315] = {
@@ -18500,7 +18560,6 @@ _G.pg.base.item_data_statistics[30315] = {
 	icon = "Props/appearanceboxouxiang",
 	id = 30315,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Polaris) ",
@@ -18615,6 +18674,7 @@ _G.pg.base.item_data_statistics[30315] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30316] = {
@@ -18624,7 +18684,6 @@ _G.pg.base.item_data_statistics[30316] = {
 	icon = "Props/appearanceboxhololive",
 	id = 30316,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Hololive)",
@@ -18739,6 +18798,7 @@ _G.pg.base.item_data_statistics[30316] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30317] = {
@@ -18748,7 +18808,6 @@ _G.pg.base.item_data_statistics[30317] = {
 	icon = "Props/appearanceboxbeilian",
 	id = 30317,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Northern) ",
@@ -18863,6 +18922,7 @@ _G.pg.base.item_data_statistics[30317] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30318] = {
@@ -18872,7 +18932,6 @@ _G.pg.base.item_data_statistics[30318] = {
 	icon = "Props/appearanceboxbaiying",
 	id = 30318,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Union) ",
@@ -18987,6 +19046,7 @@ _G.pg.base.item_data_statistics[30318] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30319] = {
@@ -18996,7 +19056,6 @@ _G.pg.base.item_data_statistics[30319] = {
 	icon = "Props/appearanceboxfaxi",
 	id = 30319,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Iris) ",
@@ -19111,6 +19170,7 @@ _G.pg.base.item_data_statistics[30319] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30320] = {
@@ -19120,7 +19180,6 @@ _G.pg.base.item_data_statistics[30320] = {
 	icon = "Props/appearanceboxyiyuan",
 	id = 30320,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Hospital) ",
@@ -19235,6 +19294,7 @@ _G.pg.base.item_data_statistics[30320] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30321] = {
@@ -19244,7 +19304,6 @@ _G.pg.base.item_data_statistics[30321] = {
 	icon = "Props/appearanceboxchongying",
 	id = 30321,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Sakura) ",
@@ -19359,6 +19418,7 @@ _G.pg.base.item_data_statistics[30321] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30322] = {
@@ -19368,7 +19428,6 @@ _G.pg.base.item_data_statistics[30322] = {
 	icon = "Props/appearanceboxjichang",
 	id = 30322,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Shining Stars) ",
@@ -19483,6 +19542,7 @@ _G.pg.base.item_data_statistics[30322] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30323] = {
@@ -19492,7 +19552,6 @@ _G.pg.base.item_data_statistics[30323] = {
 	icon = "Props/appearanceboxdoa",
 	id = 30323,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Venus Vacation) ",
@@ -19607,6 +19666,7 @@ _G.pg.base.item_data_statistics[30323] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30324] = {
@@ -19616,7 +19676,6 @@ _G.pg.base.item_data_statistics[30324] = {
 	icon = "Props/appearanceboxtiexue",
 	id = 30324,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Iron Blood) ",
@@ -19731,6 +19790,7 @@ _G.pg.base.item_data_statistics[30324] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30325] = {
@@ -19740,7 +19800,6 @@ _G.pg.base.item_data_statistics[30325] = {
 	icon = "Props/appearanceboxchunjie",
 	id = 30325,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Spring Festival)",
@@ -19855,6 +19914,7 @@ _G.pg.base.item_data_statistics[30325] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30326] = {
@@ -19864,7 +19924,6 @@ _G.pg.base.item_data_statistics[30326] = {
 	icon = "Props/appearanceboxyouleyuan",
 	id = 30326,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Manjuu Theme Park)",
@@ -19979,6 +20038,7 @@ _G.pg.base.item_data_statistics[30326] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30327] = {
@@ -19988,7 +20048,6 @@ _G.pg.base.item_data_statistics[30327] = {
 	icon = "Props/appearanceboxidolmaster",
 	id = 30327,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (The Idolmaster) ",
@@ -20103,6 +20162,7 @@ _G.pg.base.item_data_statistics[30327] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30328] = {
@@ -20112,7 +20172,6 @@ _G.pg.base.item_data_statistics[30328] = {
 	icon = "Props/appearanceboxniuzai",
 	id = 30328,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Cowboy Essentials) ",
@@ -20227,6 +20286,7 @@ _G.pg.base.item_data_statistics[30328] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30329] = {
@@ -20236,7 +20296,6 @@ _G.pg.base.item_data_statistics[30329] = {
 	icon = "Props/appearanceboxshuishangleyuan",
 	id = 30329,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Floating Funland) ",
@@ -20351,6 +20410,7 @@ _G.pg.base.item_data_statistics[30329] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30330] = {
@@ -20360,7 +20420,6 @@ _G.pg.base.item_data_statistics[30330] = {
 	icon = "Props/appearanceboxssss",
 	id = 30330,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (SSSS) ",
@@ -20475,6 +20534,7 @@ _G.pg.base.item_data_statistics[30330] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30331] = {
@@ -20484,7 +20544,6 @@ _G.pg.base.item_data_statistics[30331] = {
 	icon = "Props/appearanceboxnvpu",
 	id = 30331,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Café) ",
@@ -20599,6 +20658,7 @@ _G.pg.base.item_data_statistics[30331] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30332] = {
@@ -20608,7 +20668,6 @@ _G.pg.base.item_data_statistics[30332] = {
 	icon = "Props/appearanceboxhunianchunjie",
 	id = 30332,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Spring Festival 2022)",
@@ -20723,6 +20782,7 @@ _G.pg.base.item_data_statistics[30332] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30333] = {
@@ -20732,7 +20792,6 @@ _G.pg.base.item_data_statistics[30333] = {
 	icon = "Props/appearanceboxhongyue",
 	id = 30333,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Blood Moon)",
@@ -20847,6 +20906,7 @@ _G.pg.base.item_data_statistics[30333] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30334] = {
@@ -20856,7 +20916,6 @@ _G.pg.base.item_data_statistics[30334] = {
 	icon = "Props/appearanceboxdonghuangshishang",
 	id = 30334,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Empery Chic)",
@@ -20971,6 +21030,7 @@ _G.pg.base.item_data_statistics[30334] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30335] = {
@@ -20980,7 +21040,6 @@ _G.pg.base.item_data_statistics[30335] = {
 	icon = "Props/appearanceboxtonghua",
 	id = 30335,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Fairy Tale)",
@@ -21095,6 +21154,7 @@ _G.pg.base.item_data_statistics[30335] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30336] = {
@@ -21104,7 +21164,6 @@ _G.pg.base.item_data_statistics[30336] = {
 	icon = "Props/appearanceboxwudao",
 	id = 30336,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Stage Dance)",
@@ -21219,6 +21278,7 @@ _G.pg.base.item_data_statistics[30336] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30337] = {
@@ -21228,7 +21288,6 @@ _G.pg.base.item_data_statistics[30337] = {
 	icon = "Props/appearanceboxdexibulvxieer",
 	id = 30337,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Iron Blood)",
@@ -21343,6 +21402,7 @@ _G.pg.base.item_data_statistics[30337] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30338] = {
@@ -21352,7 +21412,6 @@ _G.pg.base.item_data_statistics[30338] = {
 	icon = "Props/appearanceboxxueyuanji",
 	id = 30338,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Academy Festival)",
@@ -21467,6 +21526,7 @@ _G.pg.base.item_data_statistics[30338] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30339] = {
@@ -21476,7 +21536,6 @@ _G.pg.base.item_data_statistics[30339] = {
 	icon = "Props/appearanceboxwansheng",
 	id = 30339,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Halloween)",
@@ -21591,6 +21650,7 @@ _G.pg.base.item_data_statistics[30339] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30340] = {
@@ -21600,7 +21660,6 @@ _G.pg.base.item_data_statistics[30340] = {
 	icon = "Props/appearanceboxlaisha",
 	id = 30340,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Atelier Ryza)",
@@ -21715,6 +21774,7 @@ _G.pg.base.item_data_statistics[30340] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30341] = {
@@ -21724,7 +21784,6 @@ _G.pg.base.item_data_statistics[30341] = {
 	icon = "Props/equipskin_drop_display",
 	id = 30341,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box (Atelier Ryza)",
@@ -21836,6 +21895,7 @@ _G.pg.base.item_data_statistics[30341] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30342] = {
@@ -21845,7 +21905,6 @@ _G.pg.base.item_data_statistics[30342] = {
 	icon = "Props/appearanceboxjiari",
 	id = 30342,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Beach Holiday)",
@@ -21960,6 +22019,7 @@ _G.pg.base.item_data_statistics[30342] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30343] = {
@@ -21969,7 +22029,6 @@ _G.pg.base.item_data_statistics[30343] = {
 	icon = "Props/appearanceboxtunianchunjie",
 	id = 30343,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Empery Gourmet)",
@@ -22084,6 +22143,7 @@ _G.pg.base.item_data_statistics[30343] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30344] = {
@@ -22093,7 +22153,6 @@ _G.pg.base.item_data_statistics[30344] = {
 	icon = "Props/appearanceboxhuangjiajiaoshi",
 	id = 30344,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Royal Academy)",
@@ -22208,6 +22267,7 @@ _G.pg.base.item_data_statistics[30344] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30345] = {
@@ -22217,7 +22277,6 @@ _G.pg.base.item_data_statistics[30345] = {
 	icon = "Props/appearanceboxhaidaomaoxian",
 	id = 30345,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Deserted Island)",
@@ -22332,6 +22391,7 @@ _G.pg.base.item_data_statistics[30345] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30346] = {
@@ -22341,7 +22401,6 @@ _G.pg.base.item_data_statistics[30346] = {
 	icon = "Props/appearanceboxbangongshiguang",
 	id = 30346,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (On the Job)",
@@ -22456,6 +22515,7 @@ _G.pg.base.item_data_statistics[30346] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30347] = {
@@ -22465,7 +22525,6 @@ _G.pg.base.item_data_statistics[30347] = {
 	icon = "Props/appearanceboxxiarimenghuan",
 	id = 30347,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Midsummer Night Dreamin')",
@@ -22580,6 +22639,7 @@ _G.pg.base.item_data_statistics[30347] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30348] = {
@@ -22589,7 +22649,6 @@ _G.pg.base.item_data_statistics[30348] = {
 	icon = "Props/appearanceboxyeyou",
 	id = 30348,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Spirits Eve)",
@@ -22704,6 +22763,7 @@ _G.pg.base.item_data_statistics[30348] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30349] = {
@@ -22713,7 +22773,6 @@ _G.pg.base.item_data_statistics[30349] = {
 	icon = "Props/appearanceboxhaidaopirate",
 	id = 30349,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Pirate)",
@@ -22828,6 +22887,7 @@ _G.pg.base.item_data_statistics[30349] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30350] = {
@@ -22837,7 +22897,6 @@ _G.pg.base.item_data_statistics[30350] = {
 	icon = "Props/appearanceboxshanluan",
 	id = 30350,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Kagura)",
@@ -22952,6 +23011,7 @@ _G.pg.base.item_data_statistics[30350] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30351] = {
@@ -22961,7 +23021,6 @@ _G.pg.base.item_data_statistics[30351] = {
 	icon = "Props/appearanceboxyedian",
 	id = 30351,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Night Club)",
@@ -23076,6 +23135,7 @@ _G.pg.base.item_data_statistics[30351] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30352] = {
@@ -23085,7 +23145,6 @@ _G.pg.base.item_data_statistics[30352] = {
 	icon = "Props/appearanceboxxianxia",
 	id = 30352,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Mythical Trove)",
@@ -23200,6 +23259,7 @@ _G.pg.base.item_data_statistics[30352] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30353] = {
@@ -23209,7 +23269,6 @@ _G.pg.base.item_data_statistics[30353] = {
 	icon = "Props/appearanceboxzuiedushi",
 	id = 30353,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Thieville)",
@@ -23324,6 +23383,7 @@ _G.pg.base.item_data_statistics[30353] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30354] = {
@@ -23333,7 +23393,6 @@ _G.pg.base.item_data_statistics[30354] = {
 	icon = "Props/appearanceboxyishijiemaoxian",
 	id = 30354,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (RPG Adventure)",
@@ -23448,6 +23507,7 @@ _G.pg.base.item_data_statistics[30354] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30355] = {
@@ -23457,7 +23517,6 @@ _G.pg.base.item_data_statistics[30355] = {
 	icon = "Props/appearanceboxgongming",
 	id = 30355,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (HLH)",
@@ -23572,6 +23631,7 @@ _G.pg.base.item_data_statistics[30355] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30356] = {
@@ -23581,7 +23641,6 @@ _G.pg.base.item_data_statistics[30356] = {
 	icon = "Props/appearanceboxyoulun",
 	id = 30356,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Cruise)",
@@ -23696,6 +23755,7 @@ _G.pg.base.item_data_statistics[30356] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30357] = {
@@ -23705,7 +23765,6 @@ _G.pg.base.item_data_statistics[30357] = {
 	icon = "Props/equipskin_drop_display",
 	id = 30357,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box (Cruise)",
@@ -23817,6 +23876,7 @@ _G.pg.base.item_data_statistics[30357] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30358] = {
@@ -23826,7 +23886,6 @@ _G.pg.base.item_data_statistics[30358] = {
 	icon = "Props/appearanceboxtongxin",
 	id = 30358,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Little)",
@@ -23941,6 +24000,7 @@ _G.pg.base.item_data_statistics[30358] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30359] = {
@@ -23950,7 +24010,6 @@ _G.pg.base.item_data_statistics[30359] = {
 	icon = "Props/appearanceboxxibu",
 	id = 30359,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Wild West)",
@@ -24065,6 +24124,7 @@ _G.pg.base.item_data_statistics[30359] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30360] = {
@@ -24074,7 +24134,6 @@ _G.pg.base.item_data_statistics[30360] = {
 	icon = "Props/appearanceboxmenghuanleyuan",
 	id = 30360,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Dream Park)",
@@ -24189,6 +24248,7 @@ _G.pg.base.item_data_statistics[30360] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30361] = {
@@ -24198,7 +24258,6 @@ _G.pg.base.item_data_statistics[30361] = {
 	icon = "Props/appearanceboxguiguai",
 	id = 30361,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Halloween Horrors)",
@@ -24313,6 +24372,7 @@ _G.pg.base.item_data_statistics[30361] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30362] = {
@@ -24322,7 +24382,6 @@ _G.pg.base.item_data_statistics[30362] = {
 	icon = "Props/appearanceboxtolove",
 	id = 30362,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (To LOVE-Ru)",
@@ -24437,6 +24496,7 @@ _G.pg.base.item_data_statistics[30362] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30401] = {
@@ -24446,7 +24506,6 @@ _G.pg.base.item_data_statistics[30401] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30401,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -24488,6 +24547,7 @@ _G.pg.base.item_data_statistics[30401] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30402] = {
@@ -24497,7 +24557,6 @@ _G.pg.base.item_data_statistics[30402] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30402,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -24539,6 +24598,7 @@ _G.pg.base.item_data_statistics[30402] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30403] = {
@@ -24548,7 +24608,6 @@ _G.pg.base.item_data_statistics[30403] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30403,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -24590,6 +24649,7 @@ _G.pg.base.item_data_statistics[30403] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30404] = {
@@ -24599,7 +24659,6 @@ _G.pg.base.item_data_statistics[30404] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30404,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -24641,6 +24700,7 @@ _G.pg.base.item_data_statistics[30404] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30405] = {
@@ -24650,7 +24710,6 @@ _G.pg.base.item_data_statistics[30405] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30405,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -24692,6 +24751,7 @@ _G.pg.base.item_data_statistics[30405] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30406] = {
@@ -24701,7 +24761,6 @@ _G.pg.base.item_data_statistics[30406] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30406,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -24743,6 +24802,7 @@ _G.pg.base.item_data_statistics[30406] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30407] = {
@@ -24752,7 +24812,6 @@ _G.pg.base.item_data_statistics[30407] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30407,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -24804,6 +24863,7 @@ _G.pg.base.item_data_statistics[30407] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30408] = {
@@ -24813,7 +24873,6 @@ _G.pg.base.item_data_statistics[30408] = {
 	icon = "Equips/96331",
 	id = 30408,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Fantastic Phoenix",
@@ -24850,6 +24909,7 @@ _G.pg.base.item_data_statistics[30408] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30409] = {
@@ -24859,7 +24919,6 @@ _G.pg.base.item_data_statistics[30409] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30409,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -24901,6 +24960,7 @@ _G.pg.base.item_data_statistics[30409] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30410] = {
@@ -24910,7 +24970,6 @@ _G.pg.base.item_data_statistics[30410] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30410,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -24952,6 +25011,7 @@ _G.pg.base.item_data_statistics[30410] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30411] = {
@@ -24961,7 +25021,6 @@ _G.pg.base.item_data_statistics[30411] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30411,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -25013,6 +25072,7 @@ _G.pg.base.item_data_statistics[30411] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30412] = {
@@ -25022,7 +25082,6 @@ _G.pg.base.item_data_statistics[30412] = {
 	icon = "Equips/96531",
 	id = 30412,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Thunder's Fury",
@@ -25059,6 +25118,7 @@ _G.pg.base.item_data_statistics[30412] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30413] = {
@@ -25068,7 +25128,6 @@ _G.pg.base.item_data_statistics[30413] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30413,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -25110,6 +25169,7 @@ _G.pg.base.item_data_statistics[30413] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30414] = {
@@ -25119,7 +25179,6 @@ _G.pg.base.item_data_statistics[30414] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30414,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -25171,6 +25230,7 @@ _G.pg.base.item_data_statistics[30414] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30415] = {
@@ -25180,7 +25240,6 @@ _G.pg.base.item_data_statistics[30415] = {
 	icon = "Equips/96631",
 	id = 30415,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Pixel Rolling Thunder",
@@ -25217,6 +25276,7 @@ _G.pg.base.item_data_statistics[30415] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30416] = {
@@ -25226,7 +25286,6 @@ _G.pg.base.item_data_statistics[30416] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30416,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -25268,6 +25327,7 @@ _G.pg.base.item_data_statistics[30416] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30417] = {
@@ -25277,7 +25337,6 @@ _G.pg.base.item_data_statistics[30417] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30417,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -25319,6 +25378,7 @@ _G.pg.base.item_data_statistics[30417] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30418] = {
@@ -25328,7 +25388,6 @@ _G.pg.base.item_data_statistics[30418] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30418,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -25370,6 +25429,7 @@ _G.pg.base.item_data_statistics[30418] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30419] = {
@@ -25379,7 +25439,6 @@ _G.pg.base.item_data_statistics[30419] = {
 	icon = "Equips/96731",
 	id = 30419,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Fire Dragon Plane",
@@ -25416,6 +25475,7 @@ _G.pg.base.item_data_statistics[30419] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30420] = {
@@ -25425,7 +25485,6 @@ _G.pg.base.item_data_statistics[30420] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30420,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -25477,6 +25536,7 @@ _G.pg.base.item_data_statistics[30420] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30421] = {
@@ -25486,7 +25546,6 @@ _G.pg.base.item_data_statistics[30421] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30421,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -25528,6 +25587,7 @@ _G.pg.base.item_data_statistics[30421] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30422] = {
@@ -25537,7 +25597,6 @@ _G.pg.base.item_data_statistics[30422] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30422,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -25579,6 +25638,7 @@ _G.pg.base.item_data_statistics[30422] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30423] = {
@@ -25588,7 +25648,6 @@ _G.pg.base.item_data_statistics[30423] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30423,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -25640,6 +25699,7 @@ _G.pg.base.item_data_statistics[30423] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30424] = {
@@ -25649,7 +25709,6 @@ _G.pg.base.item_data_statistics[30424] = {
 	icon = "Equips/96808",
 	id = 30424,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Forerunner UAV",
@@ -25686,6 +25745,7 @@ _G.pg.base.item_data_statistics[30424] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30425] = {
@@ -25695,7 +25755,6 @@ _G.pg.base.item_data_statistics[30425] = {
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 30425,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Random Gear Skin Box",
@@ -25737,6 +25796,7 @@ _G.pg.base.item_data_statistics[30425] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30501] = {
@@ -25746,7 +25806,6 @@ _G.pg.base.item_data_statistics[30501] = {
 	icon = "Props/appearanceboxxiamozixuan",
 	id = 30501,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Development Pack (Late Summer)",
@@ -25949,6 +26008,7 @@ _G.pg.base.item_data_statistics[30501] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30502] = {
@@ -25958,7 +26018,6 @@ _G.pg.base.item_data_statistics[30502] = {
 	icon = "Props/appearanceboxchsprzixuan",
 	id = 30502,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (LNY)",
@@ -26151,6 +26210,7 @@ _G.pg.base.item_data_statistics[30502] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30503] = {
@@ -26160,7 +26220,6 @@ _G.pg.base.item_data_statistics[30503] = {
 	icon = "Props/appearanceboxkaixuezixuan",
 	id = 30503,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (School Festival)",
@@ -26343,6 +26402,7 @@ _G.pg.base.item_data_statistics[30503] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30504] = {
@@ -26352,7 +26412,6 @@ _G.pg.base.item_data_statistics[30504] = {
 	icon = "Props/appearanceboxdonghuangshishangzixuan",
 	id = 30504,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Empery Chic)",
@@ -26555,6 +26614,7 @@ _G.pg.base.item_data_statistics[30504] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30505] = {
@@ -26564,7 +26624,6 @@ _G.pg.base.item_data_statistics[30505] = {
 	icon = "Props/appearanceboxhuangjiazixuan",
 	id = 30505,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Royal)",
@@ -26767,6 +26826,7 @@ _G.pg.base.item_data_statistics[30505] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30506] = {
@@ -26776,7 +26836,6 @@ _G.pg.base.item_data_statistics[30506] = {
 	icon = "Props/appearanceboxtonghuazixuan",
 	id = 30506,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Fairy Tale)",
@@ -26979,6 +27038,7 @@ _G.pg.base.item_data_statistics[30506] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30507] = {
@@ -26988,7 +27048,6 @@ _G.pg.base.item_data_statistics[30507] = {
 	icon = "Props/appearanceboxwudaozixuan",
 	id = 30507,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Stage Dance)",
@@ -27191,6 +27250,7 @@ _G.pg.base.item_data_statistics[30507] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30508] = {
@@ -27200,7 +27260,6 @@ _G.pg.base.item_data_statistics[30508] = {
 	icon = "Props/appearanceboxsadingzixuan",
 	id = 30508,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Sardegna)",
@@ -27403,6 +27462,7 @@ _G.pg.base.item_data_statistics[30508] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30509] = {
@@ -27412,7 +27472,6 @@ _G.pg.base.item_data_statistics[30509] = {
 	icon = "Props/appearanceboxdexibulvxieerzixuan",
 	id = 30509,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Iron Blood)",
@@ -27615,6 +27674,7 @@ _G.pg.base.item_data_statistics[30509] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30510] = {
@@ -27624,7 +27684,6 @@ _G.pg.base.item_data_statistics[30510] = {
 	icon = "Props/appearanceboxxueyuanjizixuan",
 	id = 30510,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Academy Festival)",
@@ -27827,6 +27886,7 @@ _G.pg.base.item_data_statistics[30510] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30511] = {
@@ -27836,7 +27896,6 @@ _G.pg.base.item_data_statistics[30511] = {
 	icon = "Props/appearanceboxbeilianzixuan",
 	id = 30511,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Northern)",
@@ -28039,6 +28098,7 @@ _G.pg.base.item_data_statistics[30511] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30512] = {
@@ -28048,7 +28108,6 @@ _G.pg.base.item_data_statistics[30512] = {
 	icon = "Props/appearanceboxwanshengzixuan",
 	id = 30512,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Halloween)",
@@ -28251,6 +28310,7 @@ _G.pg.base.item_data_statistics[30512] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30513] = {
@@ -28260,7 +28320,6 @@ _G.pg.base.item_data_statistics[30513] = {
 	icon = "Props/appearanceboxlaishazixuan",
 	id = 30513,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Atelier Ryza)",
@@ -28463,6 +28522,7 @@ _G.pg.base.item_data_statistics[30513] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30514] = {
@@ -28472,7 +28532,6 @@ _G.pg.base.item_data_statistics[30514] = {
 	icon = "Props/appearanceboxbaiyingzixuan",
 	id = 30514,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Eagle Union)",
@@ -28675,19 +28734,19 @@ _G.pg.base.item_data_statistics[30514] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30515] = {
 	compose_number = 0,
-	display = "使用后可从「星辰无垠」主题外观装备中任意选择一种获得1个",
+	display = "Can be used to receive 1 gear skin of your choosing from the Power of the Stars set. Note: You may only possess up to 9 copies of any given gear skin.",
 	display_effect = "",
 	icon = "Props/appearanceboxxingchen",
 	id = 30515,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
-	name = "定向外观装备箱(星辰无垠)",
+	name = "Selection Gear Skin Box (Power of the Stars)",
 	open_directly = 0,
 	order = 0,
 	other_item_cost = "[]",
@@ -28837,6 +28896,73 @@ _G.pg.base.item_data_statistics[30515] = {
 			1,
 		},
 	},
+	limit = {
+		{
+			9,
+			2001,
+			9,
+		},
+		{
+			9,
+			2002,
+			9,
+		},
+		{
+			9,
+			2003,
+			9,
+		},
+		{
+			9,
+			2004,
+			9,
+		},
+		{
+			9,
+			2005,
+			9,
+		},
+		{
+			9,
+			2006,
+			9,
+		},
+		{
+			9,
+			2007,
+			9,
+		},
+		{
+			9,
+			2008,
+			9,
+		},
+		{
+			9,
+			2009,
+			9,
+		},
+		{
+			9,
+			2010,
+			9,
+		},
+		{
+			9,
+			2011,
+			9,
+		},
+		{
+			9,
+			2012,
+			9,
+		},
+		{
+			9,
+			2013,
+			9,
+		},
+	},
 }
 
 _G.pg.base.item_data_statistics[30516] = {
@@ -28846,7 +28972,6 @@ _G.pg.base.item_data_statistics[30516] = {
 	icon = "Props/appearanceboxjiarizixuan",
 	id = 30516,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Beach Holiday)",
@@ -29049,6 +29174,7 @@ _G.pg.base.item_data_statistics[30516] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30517] = {
@@ -29058,7 +29184,6 @@ _G.pg.base.item_data_statistics[30517] = {
 	icon = "Props/appearanceboxtunianchunjiezixuan",
 	id = 30517,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Empery Gourmet)",
@@ -29261,6 +29386,7 @@ _G.pg.base.item_data_statistics[30517] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30518] = {
@@ -29270,7 +29396,6 @@ _G.pg.base.item_data_statistics[30518] = {
 	icon = "Props/appearanceboxfaxizixuan",
 	id = 30518,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Iris)",
@@ -29473,6 +29598,7 @@ _G.pg.base.item_data_statistics[30518] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30519] = {
@@ -29482,7 +29608,6 @@ _G.pg.base.item_data_statistics[30519] = {
 	icon = "Props/appearanceboxhuangjiajiaoshizixuan",
 	id = 30519,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Royal Academy)",
@@ -29685,6 +29810,7 @@ _G.pg.base.item_data_statistics[30519] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30520] = {
@@ -29694,7 +29820,6 @@ _G.pg.base.item_data_statistics[30520] = {
 	icon = "Props/appearanceboxyiyuanzixuan",
 	id = 30520,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Medical Supplies)",
@@ -29897,6 +30022,7 @@ _G.pg.base.item_data_statistics[30520] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30521] = {
@@ -29906,7 +30032,6 @@ _G.pg.base.item_data_statistics[30521] = {
 	icon = "Props/appearanceboxdoazixuan",
 	id = 30521,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Venus Vacation)",
@@ -30109,6 +30234,7 @@ _G.pg.base.item_data_statistics[30521] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30522] = {
@@ -30118,7 +30244,6 @@ _G.pg.base.item_data_statistics[30522] = {
 	icon = "Props/appearanceboxhaidaomaoxianzixuan",
 	id = 30522,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Deserted Island)",
@@ -30321,6 +30446,7 @@ _G.pg.base.item_data_statistics[30522] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30523] = {
@@ -30330,7 +30456,6 @@ _G.pg.base.item_data_statistics[30523] = {
 	icon = "Props/appearanceboxchongyingzixuan",
 	id = 30523,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Sakura)",
@@ -30533,6 +30658,7 @@ _G.pg.base.item_data_statistics[30523] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30524] = {
@@ -30542,7 +30668,6 @@ _G.pg.base.item_data_statistics[30524] = {
 	icon = "Props/appearanceboxyouleyuanzixuan",
 	id = 30524,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Manjuu Theme Park)",
@@ -30745,6 +30870,7 @@ _G.pg.base.item_data_statistics[30524] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30525] = {
@@ -30754,7 +30880,6 @@ _G.pg.base.item_data_statistics[30525] = {
 	icon = "Props/appearanceboxbangongshiguangzixuan",
 	id = 30525,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (On the Job)",
@@ -30957,6 +31082,7 @@ _G.pg.base.item_data_statistics[30525] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30526] = {
@@ -30966,7 +31092,6 @@ _G.pg.base.item_data_statistics[30526] = {
 	icon = "Props/appearanceboxtiexuezixuan",
 	id = 30526,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Iron Blood)",
@@ -31169,6 +31294,7 @@ _G.pg.base.item_data_statistics[30526] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30527] = {
@@ -31178,7 +31304,6 @@ _G.pg.base.item_data_statistics[30527] = {
 	icon = "Props/appearanceboxsssszixuan",
 	id = 30527,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (SSSS)",
@@ -31381,6 +31506,7 @@ _G.pg.base.item_data_statistics[30527] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30528] = {
@@ -31390,7 +31516,6 @@ _G.pg.base.item_data_statistics[30528] = {
 	icon = "Props/appearanceboxxiarimenghuanzixuan",
 	id = 30528,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Midsummer Night Dreamin')",
@@ -31593,6 +31718,7 @@ _G.pg.base.item_data_statistics[30528] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30529] = {
@@ -31602,7 +31728,6 @@ _G.pg.base.item_data_statistics[30529] = {
 	icon = "Props/appearanceboxyeyouzixuan",
 	id = 30529,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Spirits Eve)",
@@ -31805,6 +31930,7 @@ _G.pg.base.item_data_statistics[30529] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30530] = {
@@ -31814,7 +31940,6 @@ _G.pg.base.item_data_statistics[30530] = {
 	icon = "Props/appearanceboxchunjiezixuan",
 	id = 30530,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Spring Festival)",
@@ -32017,6 +32142,7 @@ _G.pg.base.item_data_statistics[30530] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30531] = {
@@ -32026,7 +32152,6 @@ _G.pg.base.item_data_statistics[30531] = {
 	icon = "Props/appearanceboxhaidaopiratezixuan",
 	id = 30531,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Pirate)",
@@ -32229,6 +32354,7 @@ _G.pg.base.item_data_statistics[30531] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30532] = {
@@ -32238,7 +32364,6 @@ _G.pg.base.item_data_statistics[30532] = {
 	icon = "Props/appearanceboxshuishangleyuanzixuan",
 	id = 30532,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Floating Funland)",
@@ -32441,6 +32566,7 @@ _G.pg.base.item_data_statistics[30532] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30533] = {
@@ -32450,7 +32576,6 @@ _G.pg.base.item_data_statistics[30533] = {
 	icon = "Props/appearanceboxshanluanzixuan",
 	id = 30533,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Kagura)",
@@ -32653,6 +32778,7 @@ _G.pg.base.item_data_statistics[30533] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30534] = {
@@ -32662,7 +32788,6 @@ _G.pg.base.item_data_statistics[30534] = {
 	icon = "Props/appearanceboxyedianzixuan",
 	id = 30534,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Night Club)",
@@ -32865,6 +32990,7 @@ _G.pg.base.item_data_statistics[30534] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30535] = {
@@ -32874,7 +33000,6 @@ _G.pg.base.item_data_statistics[30535] = {
 	icon = "Props/appearanceboxxianxiazixuan",
 	id = 30535,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Mythical Trove)",
@@ -33077,6 +33202,7 @@ _G.pg.base.item_data_statistics[30535] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30536] = {
@@ -33086,7 +33212,6 @@ _G.pg.base.item_data_statistics[30536] = {
 	icon = "Props/appearanceboxniuzaizixuan",
 	id = 30536,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Cowboy Essentials)",
@@ -33289,6 +33414,7 @@ _G.pg.base.item_data_statistics[30536] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30537] = {
@@ -33298,7 +33424,6 @@ _G.pg.base.item_data_statistics[30537] = {
 	icon = "Props/appearanceboxzuiedushizixuan",
 	id = 30537,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Thieville)",
@@ -33501,6 +33626,7 @@ _G.pg.base.item_data_statistics[30537] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30538] = {
@@ -33510,7 +33636,6 @@ _G.pg.base.item_data_statistics[30538] = {
 	icon = "Props/appearanceboxyishijiemaoxianzixuan",
 	id = 30538,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (RPG Adventure)",
@@ -33713,6 +33838,7 @@ _G.pg.base.item_data_statistics[30538] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30539] = {
@@ -33722,7 +33848,6 @@ _G.pg.base.item_data_statistics[30539] = {
 	icon = "Props/appearanceboxgongmingzixuan",
 	id = 30539,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (HLH)",
@@ -33925,6 +34050,7 @@ _G.pg.base.item_data_statistics[30539] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30540] = {
@@ -33934,7 +34060,6 @@ _G.pg.base.item_data_statistics[30540] = {
 	icon = "Props/appearanceboxyoulunzixuan",
 	id = 30540,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Cruise)",
@@ -34137,6 +34262,7 @@ _G.pg.base.item_data_statistics[30540] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30541] = {
@@ -34146,7 +34272,6 @@ _G.pg.base.item_data_statistics[30541] = {
 	icon = "Props/appearanceboxnvpuzixuan",
 	id = 30541,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Café)",
@@ -34349,6 +34474,7 @@ _G.pg.base.item_data_statistics[30541] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30542] = {
@@ -34358,7 +34484,6 @@ _G.pg.base.item_data_statistics[30542] = {
 	icon = "Props/appearanceboxtongxinzixuan",
 	id = 30542,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gear Skin Box (Little)",
@@ -34561,6 +34686,7 @@ _G.pg.base.item_data_statistics[30542] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30543] = {
@@ -34570,7 +34696,6 @@ _G.pg.base.item_data_statistics[30543] = {
 	icon = "Props/appearanceboxchunjiezixuan22",
 	id = 30543,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (LNY 2022)",
@@ -34773,6 +34898,7 @@ _G.pg.base.item_data_statistics[30543] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30544] = {
@@ -34782,7 +34908,6 @@ _G.pg.base.item_data_statistics[30544] = {
 	icon = "Props/appearanceboxxibuzixuan",
 	id = 30544,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Wild West)",
@@ -34985,6 +35110,7 @@ _G.pg.base.item_data_statistics[30544] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30545] = {
@@ -34994,7 +35120,6 @@ _G.pg.base.item_data_statistics[30545] = {
 	icon = "Props/appearanceboxmenghuanleyuanzixuan",
 	id = 30545,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Dream Park)",
@@ -35197,6 +35322,7 @@ _G.pg.base.item_data_statistics[30545] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30546] = {
@@ -35206,7 +35332,6 @@ _G.pg.base.item_data_statistics[30546] = {
 	icon = "Props/appearanceboxhongyuezixuan",
 	id = 30546,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Box (Blood Moon)",
@@ -35409,6 +35534,7 @@ _G.pg.base.item_data_statistics[30546] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30547] = {
@@ -35418,7 +35544,6 @@ _G.pg.base.item_data_statistics[30547] = {
 	icon = "Props/appearanceboxguiguaizixuan",
 	id = 30547,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Halloween Horrors)",
@@ -35621,6 +35746,7 @@ _G.pg.base.item_data_statistics[30547] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30548] = {
@@ -35630,7 +35756,6 @@ _G.pg.base.item_data_statistics[30548] = {
 	icon = "Props/appearanceboxtolovezixuan",
 	id = 30548,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (To LOVE-Ru)",
@@ -35833,6 +35958,7 @@ _G.pg.base.item_data_statistics[30548] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30549] = {
@@ -35842,7 +35968,6 @@ _G.pg.base.item_data_statistics[30549] = {
 	icon = "Props/appearanceboxdonghuangshishangzixuan",
 	id = 30549,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Empery Chic)",
@@ -36045,6 +36170,7 @@ _G.pg.base.item_data_statistics[30549] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30900] = {
@@ -36054,7 +36180,6 @@ _G.pg.base.item_data_statistics[30900] = {
 	icon = "Props/Wsuijibujian",
 	id = 30900,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Universal T4 Part",
@@ -36127,6 +36252,7 @@ _G.pg.base.item_data_statistics[30900] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30911] = {
@@ -36136,7 +36262,6 @@ _G.pg.base.item_data_statistics[30911] = {
 	icon = "Props/Wsucaixiang3",
 	id = 30911,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T1 Custom Gear Lab Material Pack",
@@ -36199,6 +36324,7 @@ _G.pg.base.item_data_statistics[30911] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30912] = {
@@ -36208,7 +36334,6 @@ _G.pg.base.item_data_statistics[30912] = {
 	icon = "Props/Wsucaixiang2",
 	id = 30912,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T2 Custom Gear Lab Material Pack",
@@ -36291,6 +36416,7 @@ _G.pg.base.item_data_statistics[30912] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30913] = {
@@ -36300,7 +36426,6 @@ _G.pg.base.item_data_statistics[30913] = {
 	icon = "Props/30913",
 	id = 30913,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "T3 Custom Gear Lab Material Pack",
@@ -36383,6 +36508,7 @@ _G.pg.base.item_data_statistics[30913] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30914] = {
@@ -36392,7 +36518,6 @@ _G.pg.base.item_data_statistics[30914] = {
 	icon = "Props/Wshejitujin",
 	id = 30914,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "SR Gear Design Plans",
@@ -36455,6 +36580,7 @@ _G.pg.base.item_data_statistics[30914] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[30915] = {
@@ -36464,7 +36590,6 @@ _G.pg.base.item_data_statistics[30915] = {
 	icon = "Props/Wshejitucai",
 	id = 30915,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "UR Gear Design Plans",
@@ -36527,6 +36652,7 @@ _G.pg.base.item_data_statistics[30915] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40000] = {
@@ -36536,7 +36662,6 @@ _G.pg.base.item_data_statistics[40000] = {
 	icon = "ChargeIcon/box3",
 	id = 40000,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Weekly Free Supplies Pack ",
@@ -36592,6 +36717,7 @@ _G.pg.base.item_data_statistics[40000] = {
 		0,
 		4000,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40004] = {
@@ -36601,7 +36727,6 @@ _G.pg.base.item_data_statistics[40004] = {
 	icon = "ChargeIcon/box4",
 	id = 40004,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Construction Supplies",
@@ -36642,6 +36767,7 @@ _G.pg.base.item_data_statistics[40004] = {
 		15000,
 		0,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40005] = {
@@ -36651,7 +36777,6 @@ _G.pg.base.item_data_statistics[40005] = {
 	icon = "ChargeIcon/boxLv10",
 	id = 40005,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lv. 10 Pack (Old)",
@@ -36698,6 +36823,7 @@ _G.pg.base.item_data_statistics[40005] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40006] = {
@@ -36707,7 +36833,6 @@ _G.pg.base.item_data_statistics[40006] = {
 	icon = "ChargeIcon/boxLv20",
 	id = 40006,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lv. 20 Pack (Old)",
@@ -36754,6 +36879,7 @@ _G.pg.base.item_data_statistics[40006] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40007] = {
@@ -36763,7 +36889,6 @@ _G.pg.base.item_data_statistics[40007] = {
 	icon = "ChargeIcon/boxLv30",
 	id = 40007,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lv. 30 Pack (Old)",
@@ -36825,6 +36950,7 @@ _G.pg.base.item_data_statistics[40007] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40008] = {
@@ -36834,7 +36960,6 @@ _G.pg.base.item_data_statistics[40008] = {
 	icon = "ChargeIcon/boxLv50",
 	id = 40008,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lv. 50 Pack (Old)",
@@ -36896,6 +37021,7 @@ _G.pg.base.item_data_statistics[40008] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40009] = {
@@ -36905,7 +37031,6 @@ _G.pg.base.item_data_statistics[40009] = {
 	icon = "ChargeIcon/boxDaily",
 	id = 40009,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Supplies Pack",
@@ -36951,6 +37076,7 @@ _G.pg.base.item_data_statistics[40009] = {
 		8000,
 		0,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40012] = {
@@ -36960,7 +37086,6 @@ _G.pg.base.item_data_statistics[40012] = {
 	icon = "Props/support1",
 	id = 40012,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "New Commanders Support Pack I",
@@ -37022,6 +37147,7 @@ _G.pg.base.item_data_statistics[40012] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40013] = {
@@ -37031,7 +37157,6 @@ _G.pg.base.item_data_statistics[40013] = {
 	icon = "Props/support2",
 	id = 40013,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "New Commanders Support Pack II",
@@ -37118,6 +37243,7 @@ _G.pg.base.item_data_statistics[40013] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40014] = {
@@ -37127,7 +37253,6 @@ _G.pg.base.item_data_statistics[40014] = {
 	icon = "Props/support3",
 	id = 40014,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "New Commanders Support Pack III",
@@ -37219,6 +37344,7 @@ _G.pg.base.item_data_statistics[40014] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40015] = {
@@ -37228,7 +37354,6 @@ _G.pg.base.item_data_statistics[40015] = {
 	icon = "Props/support4",
 	id = 40015,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "New Commanders Support Pack IV",
@@ -37310,6 +37435,7 @@ _G.pg.base.item_data_statistics[40015] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40016] = {
@@ -37319,7 +37445,6 @@ _G.pg.base.item_data_statistics[40016] = {
 	icon = "ChargeIcon/tech1_promotion",
 	id = 40016,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Voucher & Blueprint Bundle - Series 1",
@@ -37351,6 +37476,7 @@ _G.pg.base.item_data_statistics[40016] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40017] = {
@@ -37360,7 +37486,6 @@ _G.pg.base.item_data_statistics[40017] = {
 	icon = "ChargeIcon/tech1_normal",
 	id = 40017,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Voucher - Series 1",
@@ -37387,6 +37512,7 @@ _G.pg.base.item_data_statistics[40017] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40018] = {
@@ -37396,7 +37522,6 @@ _G.pg.base.item_data_statistics[40018] = {
 	icon = "ChargeIcon/tech1_promotion",
 	id = 40018,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Blueprint Pack - Series 1",
@@ -37423,6 +37548,7 @@ _G.pg.base.item_data_statistics[40018] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40019] = {
@@ -37432,7 +37558,6 @@ _G.pg.base.item_data_statistics[40019] = {
 	icon = "ChargeIcon/tech2_promotion",
 	id = 40019,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Voucher & Blueprint Bundle - Series 2",
@@ -37464,6 +37589,7 @@ _G.pg.base.item_data_statistics[40019] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40020] = {
@@ -37473,7 +37599,6 @@ _G.pg.base.item_data_statistics[40020] = {
 	icon = "ChargeIcon/tech2_normal",
 	id = 40020,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Voucher - Series 2",
@@ -37500,6 +37625,7 @@ _G.pg.base.item_data_statistics[40020] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40021] = {
@@ -37509,7 +37635,6 @@ _G.pg.base.item_data_statistics[40021] = {
 	icon = "ChargeIcon/tech2_promotion",
 	id = 40021,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Blueprint Pack - Series 2",
@@ -37536,6 +37661,7 @@ _G.pg.base.item_data_statistics[40021] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40022] = {
@@ -37545,7 +37671,6 @@ _G.pg.base.item_data_statistics[40022] = {
 	icon = "ChargeIcon/lv_70",
 	id = 40022,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Commander Level Boost Pack",
@@ -37732,6 +37857,7 @@ _G.pg.base.item_data_statistics[40022] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40023] = {
@@ -37741,7 +37867,6 @@ _G.pg.base.item_data_statistics[40023] = {
 	icon = "ChargeIcon/boxSkill",
 	id = 40023,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Skill Book Pack",
@@ -37793,6 +37918,7 @@ _G.pg.base.item_data_statistics[40023] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40026] = {
@@ -37802,7 +37928,6 @@ _G.pg.base.item_data_statistics[40026] = {
 	icon = "ChargeIcon/tech3_promotion",
 	id = 40026,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Voucher & Blueprint Bundle - Series 3",
@@ -37834,6 +37959,7 @@ _G.pg.base.item_data_statistics[40026] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40027] = {
@@ -37843,7 +37969,6 @@ _G.pg.base.item_data_statistics[40027] = {
 	icon = "ChargeIcon/tech3_normal",
 	id = 40027,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Voucher - Series 3",
@@ -37870,6 +37995,7 @@ _G.pg.base.item_data_statistics[40027] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40028] = {
@@ -37879,7 +38005,6 @@ _G.pg.base.item_data_statistics[40028] = {
 	icon = "ChargeIcon/tech3_promotion",
 	id = 40028,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Blueprint Pack - Series 3",
@@ -37906,6 +38031,7 @@ _G.pg.base.item_data_statistics[40028] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40029] = {
@@ -37915,7 +38041,6 @@ _G.pg.base.item_data_statistics[40029] = {
 	icon = "ChargeIcon/dongzhi3",
 	id = 40029,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Premium Winter Gift Pack",
@@ -37967,6 +38092,7 @@ _G.pg.base.item_data_statistics[40029] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40031] = {
@@ -37976,7 +38102,6 @@ _G.pg.base.item_data_statistics[40031] = {
 	icon = "ChargeIcon/mofangzhiyuan1",
 	id = 40031,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Wisdom Cube Supply Pack I",
@@ -38003,6 +38128,7 @@ _G.pg.base.item_data_statistics[40031] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40032] = {
@@ -38012,7 +38138,6 @@ _G.pg.base.item_data_statistics[40032] = {
 	icon = "ChargeIcon/mofangzhiyuan2",
 	id = 40032,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Wisdom Cube Supply Pack II",
@@ -38039,6 +38164,7 @@ _G.pg.base.item_data_statistics[40032] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40033] = {
@@ -38048,7 +38174,6 @@ _G.pg.base.item_data_statistics[40033] = {
 	icon = "ChargeIcon/mofangzhiyuan3",
 	id = 40033,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Wisdom Cube Supply Pack III",
@@ -38075,6 +38200,7 @@ _G.pg.base.item_data_statistics[40033] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40034] = {
@@ -38084,7 +38210,6 @@ _G.pg.base.item_data_statistics[40034] = {
 	icon = "ChargeIcon/zhouchang1",
 	id = 40034,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Monthly Cognitive Pack",
@@ -38116,6 +38241,7 @@ _G.pg.base.item_data_statistics[40034] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40035] = {
@@ -38125,7 +38251,6 @@ _G.pg.base.item_data_statistics[40035] = {
 	icon = "ChargeIcon/newboxLv10",
 	id = 40035,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lv. 10 Pack",
@@ -38191,6 +38316,7 @@ _G.pg.base.item_data_statistics[40035] = {
 		0,
 		800,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40036] = {
@@ -38200,7 +38326,6 @@ _G.pg.base.item_data_statistics[40036] = {
 	icon = "ChargeIcon/newboxLv20",
 	id = 40036,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lv. 20 Pack",
@@ -38271,6 +38396,7 @@ _G.pg.base.item_data_statistics[40036] = {
 		0,
 		1600,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40037] = {
@@ -38280,7 +38406,6 @@ _G.pg.base.item_data_statistics[40037] = {
 	icon = "ChargeIcon/newboxLv30",
 	id = 40037,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lv. 30 Pack",
@@ -38347,6 +38472,7 @@ _G.pg.base.item_data_statistics[40037] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40038] = {
@@ -38356,7 +38482,6 @@ _G.pg.base.item_data_statistics[40038] = {
 	icon = "ChargeIcon/newboxLv40",
 	id = 40038,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lv. 40 Pack",
@@ -38428,6 +38553,7 @@ _G.pg.base.item_data_statistics[40038] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40039] = {
@@ -38437,7 +38563,6 @@ _G.pg.base.item_data_statistics[40039] = {
 	icon = "ChargeIcon/newboxLv50",
 	id = 40039,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lv. 50 Pack",
@@ -38509,6 +38634,7 @@ _G.pg.base.item_data_statistics[40039] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40040] = {
@@ -38518,7 +38644,6 @@ _G.pg.base.item_data_statistics[40040] = {
 	icon = "ChargeIcon/newboxLv60",
 	id = 40040,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lv. 60 Pack",
@@ -38585,6 +38710,7 @@ _G.pg.base.item_data_statistics[40040] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40041] = {
@@ -38594,7 +38720,6 @@ _G.pg.base.item_data_statistics[40041] = {
 	icon = "ChargeIcon/newboxLv70",
 	id = 40041,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lv. 70 Pack",
@@ -38661,6 +38786,7 @@ _G.pg.base.item_data_statistics[40041] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40042] = {
@@ -38670,7 +38796,6 @@ _G.pg.base.item_data_statistics[40042] = {
 	icon = "ChargeIcon/newboxLv80",
 	id = 40042,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lv. 80 Pack",
@@ -38737,6 +38862,7 @@ _G.pg.base.item_data_statistics[40042] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40043] = {
@@ -38746,7 +38872,6 @@ _G.pg.base.item_data_statistics[40043] = {
 	icon = "ChargeIcon/richang",
 	id = 40043,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Sortie Refuel Pack",
@@ -38778,6 +38903,7 @@ _G.pg.base.item_data_statistics[40043] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40044] = {
@@ -38787,7 +38913,6 @@ _G.pg.base.item_data_statistics[40044] = {
 	icon = "ChargeIcon/tech4_promotion",
 	id = 40044,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Voucher & Blueprint Bundle - Series 4",
@@ -38819,6 +38944,7 @@ _G.pg.base.item_data_statistics[40044] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40045] = {
@@ -38828,7 +38954,6 @@ _G.pg.base.item_data_statistics[40045] = {
 	icon = "ChargeIcon/tech4_normal",
 	id = 40045,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Voucher - Series 4",
@@ -38855,6 +38980,7 @@ _G.pg.base.item_data_statistics[40045] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40046] = {
@@ -38864,7 +38990,6 @@ _G.pg.base.item_data_statistics[40046] = {
 	icon = "ChargeIcon/tech4_promotion",
 	id = 40046,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Blueprint Pack - Series 4",
@@ -38891,6 +39016,7 @@ _G.pg.base.item_data_statistics[40046] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40047] = {
@@ -38900,7 +39026,6 @@ _G.pg.base.item_data_statistics[40047] = {
 	icon = "ChargeIcon/daofeng_package",
 	id = 40047,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Outfit Selection Pack (Shimakaze)",
@@ -38942,6 +39067,7 @@ _G.pg.base.item_data_statistics[40047] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40048] = {
@@ -38951,7 +39077,6 @@ _G.pg.base.item_data_statistics[40048] = {
 	icon = "ChargeIcon/ui1",
 	id = 40048,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Iridescent Fantasy Pack (Basic)",
@@ -38978,6 +39103,7 @@ _G.pg.base.item_data_statistics[40048] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40049] = {
@@ -38987,7 +39113,6 @@ _G.pg.base.item_data_statistics[40049] = {
 	icon = "ChargeIcon/ui1",
 	id = 40049,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Iridescent Fantasy Pack (Premium)",
@@ -39019,6 +39144,7 @@ _G.pg.base.item_data_statistics[40049] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40050] = {
@@ -39028,7 +39154,6 @@ _G.pg.base.item_data_statistics[40050] = {
 	icon = "ChargeIcon/huteng_package",
 	id = 40050,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Outfit Selection Pack (Ulrich von Hutten)",
@@ -39070,6 +39195,7 @@ _G.pg.base.item_data_statistics[40050] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40100] = {
@@ -39079,7 +39205,6 @@ _G.pg.base.item_data_statistics[40100] = {
 	icon = "ChargeIcon/ringbox",
 	id = 40100,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Promise Crate",
@@ -39106,6 +39231,7 @@ _G.pg.base.item_data_statistics[40100] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40102] = {
@@ -39115,7 +39241,6 @@ _G.pg.base.item_data_statistics[40102] = {
 	icon = "ChargeIcon/box4",
 	id = 40102,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Red Dyed Raiders Supplies",
@@ -39146,6 +39271,7 @@ _G.pg.base.item_data_statistics[40102] = {
 		0,
 		2000,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40103] = {
@@ -39155,7 +39281,6 @@ _G.pg.base.item_data_statistics[40103] = {
 	icon = "ChargeIcon/box4",
 	id = 40103,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Decor Tokens Pack",
@@ -39187,6 +39312,7 @@ _G.pg.base.item_data_statistics[40103] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40104] = {
@@ -39196,7 +39322,6 @@ _G.pg.base.item_data_statistics[40104] = {
 	icon = "ChargeIcon/box4",
 	id = 40104,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Limited Build Supplies",
@@ -39237,6 +39362,7 @@ _G.pg.base.item_data_statistics[40104] = {
 		15000,
 		0,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40105] = {
@@ -39246,7 +39372,6 @@ _G.pg.base.item_data_statistics[40105] = {
 	icon = "ChargeIcon/box4",
 	id = 40105,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Limited Strategic Supplies",
@@ -39277,6 +39402,7 @@ _G.pg.base.item_data_statistics[40105] = {
 		0,
 		2000,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40106] = {
@@ -39286,7 +39412,6 @@ _G.pg.base.item_data_statistics[40106] = {
 	icon = "ChargeIcon/boxFur",
 	id = 40106,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Decor Tokens Pack",
@@ -39318,6 +39443,7 @@ _G.pg.base.item_data_statistics[40106] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40107] = {
@@ -39327,7 +39453,6 @@ _G.pg.base.item_data_statistics[40107] = {
 	icon = "ChargeIcon/box4",
 	id = 40107,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Limited Raiders Supplies",
@@ -39358,6 +39483,7 @@ _G.pg.base.item_data_statistics[40107] = {
 		0,
 		3000,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40108] = {
@@ -39367,7 +39493,6 @@ _G.pg.base.item_data_statistics[40108] = {
 	icon = "ChargeIcon/box4",
 	id = 40108,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Limited Construction Supplies",
@@ -39408,6 +39533,7 @@ _G.pg.base.item_data_statistics[40108] = {
 		15000,
 		0,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40109] = {
@@ -39417,7 +39543,6 @@ _G.pg.base.item_data_statistics[40109] = {
 	icon = "ChargeIcon/box4",
 	id = 40109,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Divergent Chessboard Supplies",
@@ -39448,6 +39573,7 @@ _G.pg.base.item_data_statistics[40109] = {
 		0,
 		3000,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40113] = {
@@ -39457,7 +39583,6 @@ _G.pg.base.item_data_statistics[40113] = {
 	icon = "ChargeIcon/box4",
 	id = 40113,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Fallen Wings Strategic Supplies",
@@ -39488,6 +39613,7 @@ _G.pg.base.item_data_statistics[40113] = {
 		0,
 		2000,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40114] = {
@@ -39497,7 +39623,6 @@ _G.pg.base.item_data_statistics[40114] = {
 	icon = "ChargeIcon/box4",
 	id = 40114,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Fallen Wings Construction Supplies",
@@ -39538,6 +39663,7 @@ _G.pg.base.item_data_statistics[40114] = {
 		15000,
 		0,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40117] = {
@@ -39547,7 +39673,6 @@ _G.pg.base.item_data_statistics[40117] = {
 	icon = "ChargeIcon/boxOil",
 	id = 40117,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Limited Strategic Supplies",
@@ -39578,6 +39703,7 @@ _G.pg.base.item_data_statistics[40117] = {
 		0,
 		2000,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40118] = {
@@ -39587,7 +39713,6 @@ _G.pg.base.item_data_statistics[40118] = {
 	icon = "ChargeIcon/boxBuild",
 	id = 40118,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Limited Build Supplies",
@@ -39628,6 +39753,7 @@ _G.pg.base.item_data_statistics[40118] = {
 		15000,
 		0,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40119] = {
@@ -39637,7 +39763,6 @@ _G.pg.base.item_data_statistics[40119] = {
 	icon = "ChargeIcon/boxChips",
 	id = 40119,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Cognitive Chip Pack ",
@@ -39664,6 +39789,7 @@ _G.pg.base.item_data_statistics[40119] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40121] = {
@@ -39673,7 +39799,6 @@ _G.pg.base.item_data_statistics[40121] = {
 	icon = "ChargeIcon/boxExp",
 	id = 40121,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shipgirl EXP Pack (Campaign)",
@@ -39700,6 +39825,7 @@ _G.pg.base.item_data_statistics[40121] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40122] = {
@@ -39709,7 +39835,6 @@ _G.pg.base.item_data_statistics[40122] = {
 	icon = "ChargeIcon/boxSkill_newserver",
 	id = 40122,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Skill Book Pack (Campaign)",
@@ -39761,6 +39886,7 @@ _G.pg.base.item_data_statistics[40122] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40124] = {
@@ -39770,7 +39896,6 @@ _G.pg.base.item_data_statistics[40124] = {
 	icon = "Props/research1",
 	id = 40124,
 	is_world = 0,
-	limit = "[{ship_unlock,29901},{ship_unlock,29902},{ship_unlock,39901},{ship_unlock,39902},{ship_unlock,49901},{ship_unlock,89901}]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Voucher - Series 1",
@@ -39817,6 +39942,32 @@ _G.pg.base.item_data_statistics[40124] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {
+		{
+			ship_unlock,
+			29901,
+		},
+		{
+			ship_unlock,
+			29902,
+		},
+		{
+			ship_unlock,
+			39901,
+		},
+		{
+			ship_unlock,
+			39902,
+		},
+		{
+			ship_unlock,
+			49901,
+		},
+		{
+			ship_unlock,
+			89901,
+		},
+	},
 }
 
 _G.pg.base.item_data_statistics[40125] = {
@@ -39826,7 +39977,6 @@ _G.pg.base.item_data_statistics[40125] = {
 	icon = "Props/research2",
 	id = 40125,
 	is_world = 0,
-	limit = "[{ship_unlock,19901},{ship_unlock,19902},{ship_unlock,39903},{ship_unlock,99901}]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Voucher - Series 2",
@@ -39873,6 +40023,24 @@ _G.pg.base.item_data_statistics[40125] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {
+		{
+			ship_unlock,
+			19901,
+		},
+		{
+			ship_unlock,
+			19902,
+		},
+		{
+			ship_unlock,
+			39903,
+		},
+		{
+			ship_unlock,
+			99901,
+		},
+	},
 }
 
 _G.pg.base.item_data_statistics[40127] = {
@@ -39882,7 +40050,6 @@ _G.pg.base.item_data_statistics[40127] = {
 	icon = "ChargeIcon/boxBuild_newserver",
 	id = 40127,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Limited Build Supplies (Campaign)",
@@ -39919,6 +40086,7 @@ _G.pg.base.item_data_statistics[40127] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40128] = {
@@ -39928,7 +40096,6 @@ _G.pg.base.item_data_statistics[40128] = {
 	icon = "ChargeIcon/boxBuild2",
 	id = 40128,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Limited Build Supplies II",
@@ -39965,6 +40132,7 @@ _G.pg.base.item_data_statistics[40128] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40129] = {
@@ -39974,7 +40142,6 @@ _G.pg.base.item_data_statistics[40129] = {
 	icon = "ChargeIcon/support5",
 	id = 40129,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Commander Support Pack",
@@ -40041,6 +40208,7 @@ _G.pg.base.item_data_statistics[40129] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40130] = {
@@ -40050,7 +40218,6 @@ _G.pg.base.item_data_statistics[40130] = {
 	icon = "Props/research3",
 	id = 40130,
 	is_world = 0,
-	limit = "[{ship_unlock,29903},{ship_unlock,49903},{ship_unlock,49904},{ship_unlock,89902}]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Voucher - Series 3",
@@ -40097,6 +40264,24 @@ _G.pg.base.item_data_statistics[40130] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {
+		{
+			ship_unlock,
+			29903,
+		},
+		{
+			ship_unlock,
+			49903,
+		},
+		{
+			ship_unlock,
+			49904,
+		},
+		{
+			ship_unlock,
+			89902,
+		},
+	},
 }
 
 _G.pg.base.item_data_statistics[40131] = {
@@ -40106,7 +40291,6 @@ _G.pg.base.item_data_statistics[40131] = {
 	icon = "ChargeIcon/pack_free",
 	id = 40131,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Free Pack (Day 1)",
@@ -40142,6 +40326,7 @@ _G.pg.base.item_data_statistics[40131] = {
 		0,
 		150,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40132] = {
@@ -40151,7 +40336,6 @@ _G.pg.base.item_data_statistics[40132] = {
 	icon = "ChargeIcon/pack_free",
 	id = 40132,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Free Pack (Day 2)",
@@ -40187,6 +40371,7 @@ _G.pg.base.item_data_statistics[40132] = {
 		0,
 		150,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40133] = {
@@ -40196,7 +40381,6 @@ _G.pg.base.item_data_statistics[40133] = {
 	icon = "ChargeIcon/pack_free",
 	id = 40133,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Free Pack (Day 3)",
@@ -40232,6 +40416,7 @@ _G.pg.base.item_data_statistics[40133] = {
 		0,
 		150,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40134] = {
@@ -40241,7 +40426,6 @@ _G.pg.base.item_data_statistics[40134] = {
 	icon = "ChargeIcon/pack_free",
 	id = 40134,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Free Pack (Day 4)",
@@ -40277,6 +40461,7 @@ _G.pg.base.item_data_statistics[40134] = {
 		0,
 		150,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40135] = {
@@ -40286,7 +40471,6 @@ _G.pg.base.item_data_statistics[40135] = {
 	icon = "ChargeIcon/pack_free",
 	id = 40135,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Free Pack (Day 5)",
@@ -40322,6 +40506,7 @@ _G.pg.base.item_data_statistics[40135] = {
 		0,
 		150,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40136] = {
@@ -40331,7 +40516,6 @@ _G.pg.base.item_data_statistics[40136] = {
 	icon = "ChargeIcon/pack_free",
 	id = 40136,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Free Pack (Day 6)",
@@ -40367,6 +40551,7 @@ _G.pg.base.item_data_statistics[40136] = {
 		0,
 		150,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40137] = {
@@ -40376,7 +40561,6 @@ _G.pg.base.item_data_statistics[40137] = {
 	icon = "ChargeIcon/pack_free",
 	id = 40137,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Free Pack (Day 7)",
@@ -40412,6 +40596,7 @@ _G.pg.base.item_data_statistics[40137] = {
 		0,
 		150,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40138] = {
@@ -40421,7 +40606,6 @@ _G.pg.base.item_data_statistics[40138] = {
 	icon = "ChargeIcon/boxBuild",
 	id = 40138,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Limited Build Supplies",
@@ -40462,6 +40646,7 @@ _G.pg.base.item_data_statistics[40138] = {
 		15000,
 		0,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40139] = {
@@ -40471,7 +40656,6 @@ _G.pg.base.item_data_statistics[40139] = {
 	icon = "Props/research4",
 	id = 40139,
 	is_world = 0,
-	limit = "[{ship_unlock,19903},{ship_unlock,49906},{ship_unlock,69901}]",
 	link_id = 0,
 	max_num = 0,
 	name = "PR Voucher - Series 4",
@@ -40518,6 +40702,20 @@ _G.pg.base.item_data_statistics[40139] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {
+		{
+			ship_unlock,
+			19903,
+		},
+		{
+			ship_unlock,
+			49906,
+		},
+		{
+			ship_unlock,
+			69901,
+		},
+	},
 }
 
 _G.pg.base.item_data_statistics[40701] = {
@@ -40527,7 +40725,6 @@ _G.pg.base.item_data_statistics[40701] = {
 	icon = "ChargeIcon/huiliuwuzi1",
 	id = 40701,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Homecoming Supply Pack",
@@ -40559,6 +40756,7 @@ _G.pg.base.item_data_statistics[40701] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40702] = {
@@ -40568,7 +40766,6 @@ _G.pg.base.item_data_statistics[40702] = {
 	icon = "ChargeIcon/huiliuzuanshi1",
 	id = 40702,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Luxurious Homecoming Pack",
@@ -40600,6 +40797,7 @@ _G.pg.base.item_data_statistics[40702] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40703] = {
@@ -40609,7 +40807,6 @@ _G.pg.base.item_data_statistics[40703] = {
 	icon = "ChargeIcon/huiliuwuzi2",
 	id = 40703,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Homecoming Supply Pack",
@@ -40641,6 +40838,7 @@ _G.pg.base.item_data_statistics[40703] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40704] = {
@@ -40650,7 +40848,6 @@ _G.pg.base.item_data_statistics[40704] = {
 	icon = "ChargeIcon/huiliuzuanshi2",
 	id = 40704,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Luxurious Homecoming Pack",
@@ -40682,6 +40879,7 @@ _G.pg.base.item_data_statistics[40704] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40705] = {
@@ -40691,7 +40889,6 @@ _G.pg.base.item_data_statistics[40705] = {
 	icon = "ChargeIcon/huiliuwuzi3",
 	id = 40705,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Homecoming Supply Pack",
@@ -40728,6 +40925,7 @@ _G.pg.base.item_data_statistics[40705] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40706] = {
@@ -40737,7 +40935,6 @@ _G.pg.base.item_data_statistics[40706] = {
 	icon = "ChargeIcon/huiliuzuanshi3",
 	id = 40706,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Luxurious Homecoming Pack",
@@ -40774,6 +40971,7 @@ _G.pg.base.item_data_statistics[40706] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40707] = {
@@ -40783,7 +40981,6 @@ _G.pg.base.item_data_statistics[40707] = {
 	icon = "ChargeIcon/huiliuwuzi4",
 	id = 40707,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Homecoming Supply Pack",
@@ -40815,6 +41012,7 @@ _G.pg.base.item_data_statistics[40707] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40708] = {
@@ -40824,7 +41022,6 @@ _G.pg.base.item_data_statistics[40708] = {
 	icon = "ChargeIcon/huiliuzuanshi4",
 	id = 40708,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Luxurious Homecoming Pack",
@@ -40856,6 +41053,7 @@ _G.pg.base.item_data_statistics[40708] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40709] = {
@@ -40865,7 +41063,6 @@ _G.pg.base.item_data_statistics[40709] = {
 	icon = "ChargeIcon/huiliuwuzi5",
 	id = 40709,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Homecoming Supply Pack",
@@ -40897,6 +41094,7 @@ _G.pg.base.item_data_statistics[40709] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40710] = {
@@ -40906,7 +41104,6 @@ _G.pg.base.item_data_statistics[40710] = {
 	icon = "ChargeIcon/huiliuzuanshi5",
 	id = 40710,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Luxurious Homecoming Pack",
@@ -40938,6 +41135,7 @@ _G.pg.base.item_data_statistics[40710] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40711] = {
@@ -40947,7 +41145,6 @@ _G.pg.base.item_data_statistics[40711] = {
 	icon = "ChargeIcon/huiliuwuzi6",
 	id = 40711,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Homecoming Supply Pack",
@@ -40979,6 +41176,7 @@ _G.pg.base.item_data_statistics[40711] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40712] = {
@@ -40988,7 +41186,6 @@ _G.pg.base.item_data_statistics[40712] = {
 	icon = "ChargeIcon/huiliuzuanshi6",
 	id = 40712,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Luxurious Homecoming Pack",
@@ -41020,6 +41217,7 @@ _G.pg.base.item_data_statistics[40712] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40713] = {
@@ -41029,7 +41227,6 @@ _G.pg.base.item_data_statistics[40713] = {
 	icon = "ChargeIcon/huiliuwuzi7",
 	id = 40713,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Homecoming Supply Pack",
@@ -41061,6 +41258,7 @@ _G.pg.base.item_data_statistics[40713] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40714] = {
@@ -41070,7 +41268,6 @@ _G.pg.base.item_data_statistics[40714] = {
 	icon = "ChargeIcon/huiliuzuanshi7",
 	id = 40714,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Luxurious Homecoming Pack",
@@ -41102,6 +41299,7 @@ _G.pg.base.item_data_statistics[40714] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40715] = {
@@ -41111,7 +41309,6 @@ _G.pg.base.item_data_statistics[40715] = {
 	icon = "ChargeIcon/huiliuwuzi8",
 	id = 40715,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Homecoming Supply Pack",
@@ -41143,6 +41340,7 @@ _G.pg.base.item_data_statistics[40715] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40716] = {
@@ -41152,7 +41350,6 @@ _G.pg.base.item_data_statistics[40716] = {
 	icon = "ChargeIcon/huiliuzuanshi8",
 	id = 40716,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Luxurious Homecoming Pack",
@@ -41184,6 +41381,7 @@ _G.pg.base.item_data_statistics[40716] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40717] = {
@@ -41193,7 +41391,6 @@ _G.pg.base.item_data_statistics[40717] = {
 	icon = "ChargeIcon/huiliuwuzi9",
 	id = 40717,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Homecoming Supply Pack",
@@ -41225,6 +41422,7 @@ _G.pg.base.item_data_statistics[40717] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40718] = {
@@ -41234,7 +41432,6 @@ _G.pg.base.item_data_statistics[40718] = {
 	icon = "ChargeIcon/huiliuzuanshi9",
 	id = 40718,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Luxurious Homecoming Pack",
@@ -41266,6 +41463,7 @@ _G.pg.base.item_data_statistics[40718] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40719] = {
@@ -41275,7 +41473,6 @@ _G.pg.base.item_data_statistics[40719] = {
 	icon = "ChargeIcon/huiliuwuzi10",
 	id = 40719,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Homecoming Supply Pack",
@@ -41307,6 +41504,7 @@ _G.pg.base.item_data_statistics[40719] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40720] = {
@@ -41316,7 +41514,6 @@ _G.pg.base.item_data_statistics[40720] = {
 	icon = "ChargeIcon/huiliuzuanshi10",
 	id = 40720,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Luxurious Homecoming Pack",
@@ -41348,6 +41545,7 @@ _G.pg.base.item_data_statistics[40720] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40721] = {
@@ -41357,7 +41555,6 @@ _G.pg.base.item_data_statistics[40721] = {
 	icon = "ChargeIcon/huiliuwuzi11",
 	id = 40721,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Homecoming Supply Pack",
@@ -41389,6 +41586,7 @@ _G.pg.base.item_data_statistics[40721] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40722] = {
@@ -41398,7 +41596,6 @@ _G.pg.base.item_data_statistics[40722] = {
 	icon = "ChargeIcon/huiliuzuanshi11",
 	id = 40722,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Luxurious Homecoming Pack",
@@ -41430,6 +41627,7 @@ _G.pg.base.item_data_statistics[40722] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40723] = {
@@ -41439,7 +41637,6 @@ _G.pg.base.item_data_statistics[40723] = {
 	icon = "ChargeIcon/huiliuwuzi12",
 	id = 40723,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Homecoming Supply Pack",
@@ -41471,6 +41668,7 @@ _G.pg.base.item_data_statistics[40723] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40724] = {
@@ -41480,7 +41678,6 @@ _G.pg.base.item_data_statistics[40724] = {
 	icon = "ChargeIcon/huiliuzuanshi12",
 	id = 40724,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Luxurious Homecoming Pack",
@@ -41512,6 +41709,7 @@ _G.pg.base.item_data_statistics[40724] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40725] = {
@@ -41521,7 +41719,6 @@ _G.pg.base.item_data_statistics[40725] = {
 	icon = "ChargeIcon/huiliuwuzi13",
 	id = 40725,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Homecoming Supply Pack",
@@ -41553,6 +41750,7 @@ _G.pg.base.item_data_statistics[40725] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40726] = {
@@ -41562,7 +41760,6 @@ _G.pg.base.item_data_statistics[40726] = {
 	icon = "ChargeIcon/huiliuzuanshi13",
 	id = 40726,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Luxurious Homecoming Pack",
@@ -41594,6 +41791,7 @@ _G.pg.base.item_data_statistics[40726] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40727] = {
@@ -41603,7 +41801,6 @@ _G.pg.base.item_data_statistics[40727] = {
 	icon = "ChargeIcon/huiliuwuzi14",
 	id = 40727,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Homecoming Supply Pack",
@@ -41635,6 +41832,7 @@ _G.pg.base.item_data_statistics[40727] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40728] = {
@@ -41644,7 +41842,6 @@ _G.pg.base.item_data_statistics[40728] = {
 	icon = "ChargeIcon/huiliuzuanshi14",
 	id = 40728,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Luxurious Homecoming Pack",
@@ -41676,6 +41873,7 @@ _G.pg.base.item_data_statistics[40728] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40903] = {
@@ -41685,7 +41883,6 @@ _G.pg.base.item_data_statistics[40903] = {
 	icon = "Props/fudai51",
 	id = 40903,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shougatsu Lucky Bag (2019) ",
@@ -41737,6 +41934,7 @@ _G.pg.base.item_data_statistics[40903] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40904] = {
@@ -41746,7 +41944,6 @@ _G.pg.base.item_data_statistics[40904] = {
 	icon = "Props/fudai52",
 	id = 40904,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lunar New Year Lucky Bag (2019) ",
@@ -41798,6 +41995,7 @@ _G.pg.base.item_data_statistics[40904] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40905] = {
@@ -41807,7 +42005,6 @@ _G.pg.base.item_data_statistics[40905] = {
 	icon = "Props/lihe1",
 	id = 40905,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Scherzo Lucky Box ",
@@ -41859,6 +42056,7 @@ _G.pg.base.item_data_statistics[40905] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40906] = {
@@ -41868,7 +42066,6 @@ _G.pg.base.item_data_statistics[40906] = {
 	icon = "Props/fudai58",
 	id = 40906,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Full Dress Lucky Bag ",
@@ -41920,6 +42117,7 @@ _G.pg.base.item_data_statistics[40906] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40908] = {
@@ -41929,7 +42127,6 @@ _G.pg.base.item_data_statistics[40908] = {
 	icon = "Props/fudai1",
 	id = 40908,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shougatsu Lucky Bag (2020) ",
@@ -41986,6 +42183,7 @@ _G.pg.base.item_data_statistics[40908] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40909] = {
@@ -41995,7 +42193,6 @@ _G.pg.base.item_data_statistics[40909] = {
 	icon = "Props/fudai2",
 	id = 40909,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lunar New Year Lucky Bag (2020) ",
@@ -42052,6 +42249,7 @@ _G.pg.base.item_data_statistics[40909] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40910] = {
@@ -42061,7 +42259,6 @@ _G.pg.base.item_data_statistics[40910] = {
 	icon = "Props/lihe1",
 	id = 40910,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Exquisite Lucky Bag 2020 ",
@@ -42118,6 +42315,7 @@ _G.pg.base.item_data_statistics[40910] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40911] = {
@@ -42127,7 +42325,6 @@ _G.pg.base.item_data_statistics[40911] = {
 	icon = "Props/lihe3",
 	id = 40911,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "2020 Party Dress Lucky Box",
@@ -42184,6 +42381,7 @@ _G.pg.base.item_data_statistics[40911] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40912] = {
@@ -42193,7 +42391,6 @@ _G.pg.base.item_data_statistics[40912] = {
 	icon = "Props/fudai3",
 	id = 40912,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shougatsu Lucky Bag 2021 ",
@@ -42250,6 +42447,7 @@ _G.pg.base.item_data_statistics[40912] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40913] = {
@@ -42259,7 +42457,6 @@ _G.pg.base.item_data_statistics[40913] = {
 	icon = "Props/fudai4",
 	id = 40913,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lunar New Year Lucky Bag (2021)",
@@ -42316,6 +42513,7 @@ _G.pg.base.item_data_statistics[40913] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40914] = {
@@ -42325,7 +42523,6 @@ _G.pg.base.item_data_statistics[40914] = {
 	icon = "Props/lihe6",
 	id = 40914,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Exquisite Lucky Box 2021 ",
@@ -42382,6 +42579,7 @@ _G.pg.base.item_data_statistics[40914] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40915] = {
@@ -42391,7 +42589,6 @@ _G.pg.base.item_data_statistics[40915] = {
 	icon = "Props/lihe6",
 	id = 40915,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "2021 Party Dress Lucky Box",
@@ -42448,6 +42645,7 @@ _G.pg.base.item_data_statistics[40915] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40916] = {
@@ -42457,7 +42655,6 @@ _G.pg.base.item_data_statistics[40916] = {
 	icon = "Props/fudai6",
 	id = 40916,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shougatsu Lucky Box 2022 ",
@@ -42514,6 +42711,7 @@ _G.pg.base.item_data_statistics[40916] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40917] = {
@@ -42523,7 +42721,6 @@ _G.pg.base.item_data_statistics[40917] = {
 	icon = "Props/fudai7",
 	id = 40917,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lunar New Year Lucky Bag (2022)",
@@ -42580,6 +42777,7 @@ _G.pg.base.item_data_statistics[40917] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40918] = {
@@ -42589,7 +42787,6 @@ _G.pg.base.item_data_statistics[40918] = {
 	icon = "SquareIcon/kebu_2",
 	id = 40918,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Sunlight, Seaspray, and Sanctity",
@@ -42616,6 +42813,7 @@ _G.pg.base.item_data_statistics[40918] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40919] = {
@@ -42625,7 +42823,6 @@ _G.pg.base.item_data_statistics[40919] = {
 	icon = "Props/lihe8",
 	id = 40919,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Exquisite Lucky Box 2022",
@@ -42682,6 +42879,7 @@ _G.pg.base.item_data_statistics[40919] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40920] = {
@@ -42691,7 +42889,6 @@ _G.pg.base.item_data_statistics[40920] = {
 	icon = "Props/lihe8",
 	id = 40920,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "2022 Party Dress Lucky Box",
@@ -42748,6 +42945,7 @@ _G.pg.base.item_data_statistics[40920] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40921] = {
@@ -42757,7 +42955,6 @@ _G.pg.base.item_data_statistics[40921] = {
 	icon = "Props/support6",
 	id = 40921,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Welcome Back Pack",
@@ -42854,6 +43051,7 @@ _G.pg.base.item_data_statistics[40921] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40922] = {
@@ -42863,7 +43061,6 @@ _G.pg.base.item_data_statistics[40922] = {
 	icon = "Props/lihe10",
 	id = 40922,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Winter Swimsuit Lucky Bag 2022 A",
@@ -42920,6 +43117,7 @@ _G.pg.base.item_data_statistics[40922] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40923] = {
@@ -42929,7 +43127,6 @@ _G.pg.base.item_data_statistics[40923] = {
 	icon = "Props/lihe11",
 	id = 40923,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Winter Swimsuit Lucky Bag 2022 B",
@@ -42986,6 +43183,7 @@ _G.pg.base.item_data_statistics[40923] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40924] = {
@@ -42995,7 +43193,6 @@ _G.pg.base.item_data_statistics[40924] = {
 	icon = "Props/fudaiqp1",
 	id = 40924,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Lucky Bag 2023 A",
@@ -43052,6 +43249,7 @@ _G.pg.base.item_data_statistics[40924] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40925] = {
@@ -43061,7 +43259,6 @@ _G.pg.base.item_data_statistics[40925] = {
 	icon = "Props/fudaiqp2",
 	id = 40925,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Lucky Bag 2023 B",
@@ -43118,6 +43315,7 @@ _G.pg.base.item_data_statistics[40925] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40926] = {
@@ -43127,7 +43325,6 @@ _G.pg.base.item_data_statistics[40926] = {
 	icon = "Props/lihecn6ss",
 	id = 40926,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Swimsuit Lucky Bag 2023",
@@ -43184,6 +43381,7 @@ _G.pg.base.item_data_statistics[40926] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40927] = {
@@ -43193,7 +43391,6 @@ _G.pg.base.item_data_statistics[40927] = {
 	icon = "Props/lihecn6lf",
 	id = 40927,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Exquisite Lucky Box 2023",
@@ -43250,6 +43447,7 @@ _G.pg.base.item_data_statistics[40927] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40928] = {
@@ -43259,7 +43457,6 @@ _G.pg.base.item_data_statistics[40928] = {
 	icon = "Props/lihejp6ss",
 	id = 40928,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Fashion Collection Lucky Bag",
@@ -43316,6 +43513,7 @@ _G.pg.base.item_data_statistics[40928] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40929] = {
@@ -43325,7 +43523,6 @@ _G.pg.base.item_data_statistics[40929] = {
 	icon = "Props/lihejp6lf",
 	id = 40929,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Autumn Classics Lucky Box",
@@ -43382,6 +43579,7 @@ _G.pg.base.item_data_statistics[40929] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40951] = {
@@ -43391,7 +43589,6 @@ _G.pg.base.item_data_statistics[40951] = {
 	icon = "Props/usfudai1",
 	id = 40951,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Nep's Lucky Bag ",
@@ -43443,6 +43640,7 @@ _G.pg.base.item_data_statistics[40951] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40952] = {
@@ -43452,7 +43650,6 @@ _G.pg.base.item_data_statistics[40952] = {
 	icon = "Props/usfudai2",
 	id = 40952,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Black Friday Lucky Bag ",
@@ -43514,6 +43711,7 @@ _G.pg.base.item_data_statistics[40952] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40953] = {
@@ -43523,7 +43721,6 @@ _G.pg.base.item_data_statistics[40953] = {
 	icon = "Props/fudai0",
 	id = 40953,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Christmas Lucky Bag ",
@@ -43575,6 +43772,7 @@ _G.pg.base.item_data_statistics[40953] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40954] = {
@@ -43584,7 +43782,6 @@ _G.pg.base.item_data_statistics[40954] = {
 	icon = "Props/fudai49",
 	id = 40954,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Heartthrob Pack",
@@ -43626,6 +43823,7 @@ _G.pg.base.item_data_statistics[40954] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40955] = {
@@ -43635,7 +43833,6 @@ _G.pg.base.item_data_statistics[40955] = {
 	icon = "Props/fudai50",
 	id = 40955,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Santa's Lucky Sack (Daily)",
@@ -43682,6 +43879,7 @@ _G.pg.base.item_data_statistics[40955] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40956] = {
@@ -43691,7 +43889,6 @@ _G.pg.base.item_data_statistics[40956] = {
 	icon = "ChargeIcon/box4",
 	id = 40956,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Decor Tokens Pack\n(Crimson Echoes)",
@@ -43723,6 +43920,7 @@ _G.pg.base.item_data_statistics[40956] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40957] = {
@@ -43732,7 +43930,6 @@ _G.pg.base.item_data_statistics[40957] = {
 	icon = "ChargeIcon/box4",
 	id = 40957,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lunar New Year Limited Build Supplies",
@@ -43769,6 +43966,7 @@ _G.pg.base.item_data_statistics[40957] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40958] = {
@@ -43778,7 +43976,6 @@ _G.pg.base.item_data_statistics[40958] = {
 	icon = "Props/fudai53",
 	id = 40958,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Glacier Blast ",
@@ -43830,6 +44027,7 @@ _G.pg.base.item_data_statistics[40958] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40959] = {
@@ -43839,7 +44037,6 @@ _G.pg.base.item_data_statistics[40959] = {
 	icon = "Props/fudai54",
 	id = 40959,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Hanami Lucky Bag ",
@@ -43891,6 +44088,7 @@ _G.pg.base.item_data_statistics[40959] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40960] = {
@@ -43900,7 +44098,6 @@ _G.pg.base.item_data_statistics[40960] = {
 	icon = "Props/fudai55",
 	id = 40960,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Research Supply (daily) ",
@@ -43947,6 +44144,7 @@ _G.pg.base.item_data_statistics[40960] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40961] = {
@@ -43956,7 +44154,6 @@ _G.pg.base.item_data_statistics[40961] = {
 	icon = "Props/lihe1",
 	id = 40961,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Skin Box",
@@ -43983,6 +44180,7 @@ _G.pg.base.item_data_statistics[40961] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40962] = {
@@ -43992,7 +44190,6 @@ _G.pg.base.item_data_statistics[40962] = {
 	icon = "Props/fudai56",
 	id = 40962,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "1st Anniversary Lucky Bag ",
@@ -44044,6 +44241,7 @@ _G.pg.base.item_data_statistics[40962] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40963] = {
@@ -44053,7 +44251,6 @@ _G.pg.base.item_data_statistics[40963] = {
 	icon = "Props/fudai57",
 	id = 40963,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Yukata Lucky Bag ",
@@ -44105,6 +44302,7 @@ _G.pg.base.item_data_statistics[40963] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40964] = {
@@ -44114,7 +44312,6 @@ _G.pg.base.item_data_statistics[40964] = {
 	icon = "Props/fudai59",
 	id = 40964,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Black Friday Lucky Box ",
@@ -44171,6 +44368,7 @@ _G.pg.base.item_data_statistics[40964] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40965] = {
@@ -44180,7 +44378,6 @@ _G.pg.base.item_data_statistics[40965] = {
 	icon = "Props/fudai60",
 	id = 40965,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Christmas Lucky Bag ",
@@ -44232,6 +44429,7 @@ _G.pg.base.item_data_statistics[40965] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40966] = {
@@ -44241,7 +44439,6 @@ _G.pg.base.item_data_statistics[40966] = {
 	icon = "Props/fudai61",
 	id = 40966,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Crimson Echoes' Lucky Bag",
@@ -44293,6 +44490,7 @@ _G.pg.base.item_data_statistics[40966] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40967] = {
@@ -44302,7 +44500,6 @@ _G.pg.base.item_data_statistics[40967] = {
 	icon = "Props/fudai63",
 	id = 40967,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Skybound Oratorio Lucky Bag ",
@@ -44354,6 +44551,7 @@ _G.pg.base.item_data_statistics[40967] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40968] = {
@@ -44363,7 +44561,6 @@ _G.pg.base.item_data_statistics[40968] = {
 	icon = "Props/fudai64",
 	id = 40968,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Aurora Noctis Lucky Bag ",
@@ -44415,6 +44612,7 @@ _G.pg.base.item_data_statistics[40968] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40969] = {
@@ -44424,7 +44622,6 @@ _G.pg.base.item_data_statistics[40969] = {
 	icon = "Props/fudai65",
 	id = 40969,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Summer Scherzo Lucky Bag ",
@@ -44476,6 +44673,7 @@ _G.pg.base.item_data_statistics[40969] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40970] = {
@@ -44485,7 +44683,6 @@ _G.pg.base.item_data_statistics[40970] = {
 	icon = "Props/fudai66",
 	id = 40970,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shining Star Lucky Bag ",
@@ -44542,6 +44739,7 @@ _G.pg.base.item_data_statistics[40970] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40971] = {
@@ -44551,7 +44749,6 @@ _G.pg.base.item_data_statistics[40971] = {
 	icon = "Props/fudai67",
 	id = 40971,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Azur Black Friday Lucky Box ",
@@ -44608,6 +44805,7 @@ _G.pg.base.item_data_statistics[40971] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40972] = {
@@ -44617,7 +44815,6 @@ _G.pg.base.item_data_statistics[40972] = {
 	icon = "Props/fudai68",
 	id = 40972,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Crimson Black Friday Lucky Box ",
@@ -44674,6 +44871,7 @@ _G.pg.base.item_data_statistics[40972] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40973] = {
@@ -44683,7 +44881,6 @@ _G.pg.base.item_data_statistics[40973] = {
 	icon = "Props/fudai69",
 	id = 40973,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Dawn's Rime Lucky Pack",
@@ -44740,6 +44937,7 @@ _G.pg.base.item_data_statistics[40973] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40974] = {
@@ -44749,7 +44947,6 @@ _G.pg.base.item_data_statistics[40974] = {
 	icon = "Props/fudai70",
 	id = 40974,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daedalian Hymn's Lucky Bag",
@@ -44806,6 +45003,7 @@ _G.pg.base.item_data_statistics[40974] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40975] = {
@@ -44815,7 +45013,6 @@ _G.pg.base.item_data_statistics[40975] = {
 	icon = "Props/fudai71",
 	id = 40975,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Microlayer Medley Lucky Box 2021",
@@ -44872,6 +45069,7 @@ _G.pg.base.item_data_statistics[40975] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40976] = {
@@ -44881,7 +45079,6 @@ _G.pg.base.item_data_statistics[40976] = {
 	icon = "Props/fudai72",
 	id = 40976,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Black Friday Lucky Music Box",
@@ -44938,6 +45135,7 @@ _G.pg.base.item_data_statistics[40976] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40977] = {
@@ -44947,7 +45145,6 @@ _G.pg.base.item_data_statistics[40977] = {
 	icon = "Props/fudai73",
 	id = 40977,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Abyssal Refrain Lucky Pack",
@@ -45004,6 +45201,7 @@ _G.pg.base.item_data_statistics[40977] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40978] = {
@@ -45013,7 +45211,6 @@ _G.pg.base.item_data_statistics[40978] = {
 	icon = "Props/fudai74",
 	id = 40978,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Crimson Offering Lucky Chalice",
@@ -45070,6 +45267,7 @@ _G.pg.base.item_data_statistics[40978] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40979] = {
@@ -45079,7 +45277,6 @@ _G.pg.base.item_data_statistics[40979] = {
 	icon = "Props/fudai75",
 	id = 40979,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Aquilifer's Ballade Lucky Box",
@@ -45136,6 +45333,7 @@ _G.pg.base.item_data_statistics[40979] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40980] = {
@@ -45145,7 +45343,6 @@ _G.pg.base.item_data_statistics[40980] = {
 	icon = "Props/fudai76",
 	id = 40980,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "4th Anniversary Lucky Box",
@@ -45202,6 +45399,7 @@ _G.pg.base.item_data_statistics[40980] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40981] = {
@@ -45211,7 +45409,6 @@ _G.pg.base.item_data_statistics[40981] = {
 	icon = "Props/fudai77",
 	id = 40981,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Black Friday Lucky Bag (2022)",
@@ -45268,6 +45465,7 @@ _G.pg.base.item_data_statistics[40981] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40983] = {
@@ -45277,7 +45475,6 @@ _G.pg.base.item_data_statistics[40983] = {
 	icon = "Props/fudai78",
 	id = 40983,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "New Semester Lucky Pack",
@@ -45334,6 +45531,7 @@ _G.pg.base.item_data_statistics[40983] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40984] = {
@@ -45343,7 +45541,6 @@ _G.pg.base.item_data_statistics[40984] = {
 	icon = "Props/fudai79",
 	id = 40984,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Onsen Souvenir Lucky Bag",
@@ -45400,6 +45597,7 @@ _G.pg.base.item_data_statistics[40984] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40985] = {
@@ -45409,7 +45607,6 @@ _G.pg.base.item_data_statistics[40985] = {
 	icon = "Props/fudai80",
 	id = 40985,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Office Hour Lucky Box",
@@ -45466,6 +45663,7 @@ _G.pg.base.item_data_statistics[40985] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40986] = {
@@ -45475,7 +45673,6 @@ _G.pg.base.item_data_statistics[40986] = {
 	icon = "Props/fudai81",
 	id = 40986,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "5th Anniversary Lucky Box",
@@ -45532,6 +45729,7 @@ _G.pg.base.item_data_statistics[40986] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40987] = {
@@ -45541,7 +45739,6 @@ _G.pg.base.item_data_statistics[40987] = {
 	icon = "Props/fudai82",
 	id = 40987,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Halloween Lucky Box 2023",
@@ -45598,6 +45795,7 @@ _G.pg.base.item_data_statistics[40987] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40988] = {
@@ -45607,7 +45805,6 @@ _G.pg.base.item_data_statistics[40988] = {
 	icon = "Props/pack_198",
 	id = 40988,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Choose-Your-Own Gift Pack I",
@@ -45674,6 +45871,7 @@ _G.pg.base.item_data_statistics[40988] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40989] = {
@@ -45683,7 +45881,6 @@ _G.pg.base.item_data_statistics[40989] = {
 	icon = "Props/pack_328",
 	id = 40989,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Choose-Your-Own Gift Pack II",
@@ -45745,6 +45942,7 @@ _G.pg.base.item_data_statistics[40989] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40990] = {
@@ -45754,7 +45952,6 @@ _G.pg.base.item_data_statistics[40990] = {
 	icon = "Props/pack_day1",
 	id = 40990,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Paid Pack (Day 1)",
@@ -45786,6 +45983,7 @@ _G.pg.base.item_data_statistics[40990] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40991] = {
@@ -45795,7 +45993,6 @@ _G.pg.base.item_data_statistics[40991] = {
 	icon = "Props/pack_day2",
 	id = 40991,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Paid Pack (Day 2)",
@@ -45822,6 +46019,7 @@ _G.pg.base.item_data_statistics[40991] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40992] = {
@@ -45831,7 +46029,6 @@ _G.pg.base.item_data_statistics[40992] = {
 	icon = "Props/pack_day3",
 	id = 40992,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Paid Pack (Day 3)",
@@ -45863,6 +46060,7 @@ _G.pg.base.item_data_statistics[40992] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40993] = {
@@ -45872,7 +46070,6 @@ _G.pg.base.item_data_statistics[40993] = {
 	icon = "Props/pack_day4",
 	id = 40993,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Paid Pack (Day 4)",
@@ -45904,6 +46101,7 @@ _G.pg.base.item_data_statistics[40993] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40994] = {
@@ -45913,7 +46111,6 @@ _G.pg.base.item_data_statistics[40994] = {
 	icon = "Props/pack_day5",
 	id = 40994,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Paid Pack (Day 5)",
@@ -45940,6 +46137,7 @@ _G.pg.base.item_data_statistics[40994] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40995] = {
@@ -45949,7 +46147,6 @@ _G.pg.base.item_data_statistics[40995] = {
 	icon = "Props/pack_day6",
 	id = 40995,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Paid Pack (Day 6)",
@@ -45981,6 +46178,7 @@ _G.pg.base.item_data_statistics[40995] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40996] = {
@@ -45990,7 +46188,6 @@ _G.pg.base.item_data_statistics[40996] = {
 	icon = "Props/pack_day7",
 	id = 40996,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Paid Pack (Day 7)",
@@ -46022,6 +46219,7 @@ _G.pg.base.item_data_statistics[40996] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[40997] = {
@@ -46031,7 +46229,6 @@ _G.pg.base.item_data_statistics[40997] = {
 	icon = "Props/fudai83",
 	id = 40997,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Black Friday Lucky Bag (2023)",
@@ -46088,6 +46285,7 @@ _G.pg.base.item_data_statistics[40997] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41201] = {
@@ -46097,7 +46295,6 @@ _G.pg.base.item_data_statistics[41201] = {
 	icon = "SquareIcon/gin",
 	id = 41201,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46118,6 +46315,7 @@ _G.pg.base.item_data_statistics[41201] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41202] = {
@@ -46127,7 +46325,6 @@ _G.pg.base.item_data_statistics[41202] = {
 	icon = "SquareIcon/kin",
 	id = 41202,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46148,6 +46345,7 @@ _G.pg.base.item_data_statistics[41202] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41203] = {
@@ -46157,7 +46355,6 @@ _G.pg.base.item_data_statistics[41203] = {
 	icon = "SquareIcon/kaxin",
 	id = 41203,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46178,6 +46375,7 @@ _G.pg.base.item_data_statistics[41203] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41204] = {
@@ -46187,7 +46385,6 @@ _G.pg.base.item_data_statistics[41204] = {
 	icon = "SquareIcon/tangsi",
 	id = 41204,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46208,6 +46405,7 @@ _G.pg.base.item_data_statistics[41204] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41205] = {
@@ -46217,7 +46415,6 @@ _G.pg.base.item_data_statistics[41205] = {
 	icon = "SquareIcon/gelideli",
 	id = 41205,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46238,6 +46435,7 @@ _G.pg.base.item_data_statistics[41205] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41206] = {
@@ -46247,7 +46445,6 @@ _G.pg.base.item_data_statistics[41206] = {
 	icon = "SquareIcon/keleiwen",
 	id = 41206,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46268,6 +46465,7 @@ _G.pg.base.item_data_statistics[41206] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41207] = {
@@ -46277,7 +46475,6 @@ _G.pg.base.item_data_statistics[41207] = {
 	icon = "SquareIcon/maikaoer",
 	id = 41207,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46298,6 +46495,7 @@ _G.pg.base.item_data_statistics[41207] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41208] = {
@@ -46307,7 +46505,6 @@ _G.pg.base.item_data_statistics[41208] = {
 	icon = "SquareIcon/moli",
 	id = 41208,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46328,6 +46525,7 @@ _G.pg.base.item_data_statistics[41208] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41209] = {
@@ -46337,7 +46535,6 @@ _G.pg.base.item_data_statistics[41209] = {
 	icon = "SquareIcon/fulaiche",
 	id = 41209,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46358,6 +46555,7 @@ _G.pg.base.item_data_statistics[41209] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41210] = {
@@ -46367,7 +46565,6 @@ _G.pg.base.item_data_statistics[41210] = {
 	icon = "SquareIcon/aosiben",
 	id = 41210,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46388,6 +46585,7 @@ _G.pg.base.item_data_statistics[41210] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41211] = {
@@ -46397,7 +46595,6 @@ _G.pg.base.item_data_statistics[41211] = {
 	icon = "SquareIcon/saqieer",
 	id = 41211,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46418,6 +46615,7 @@ _G.pg.base.item_data_statistics[41211] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41212] = {
@@ -46427,7 +46625,6 @@ _G.pg.base.item_data_statistics[41212] = {
 	icon = "SquareIcon/aolike",
 	id = 41212,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46448,6 +46645,7 @@ _G.pg.base.item_data_statistics[41212] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41213] = {
@@ -46457,7 +46655,6 @@ _G.pg.base.item_data_statistics[41213] = {
 	icon = "SquareIcon/fute",
 	id = 41213,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46478,6 +46675,7 @@ _G.pg.base.item_data_statistics[41213] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41214] = {
@@ -46487,7 +46685,6 @@ _G.pg.base.item_data_statistics[41214] = {
 	icon = "SquareIcon/sipengsi",
 	id = 41214,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46508,6 +46705,7 @@ _G.pg.base.item_data_statistics[41214] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41215] = {
@@ -46517,7 +46715,6 @@ _G.pg.base.item_data_statistics[41215] = {
 	icon = "SquareIcon/bensen",
 	id = 41215,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46538,6 +46735,7 @@ _G.pg.base.item_data_statistics[41215] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41216] = {
@@ -46547,7 +46745,6 @@ _G.pg.base.item_data_statistics[41216] = {
 	icon = "SquareIcon/lafei",
 	id = 41216,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46568,6 +46765,7 @@ _G.pg.base.item_data_statistics[41216] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41217] = {
@@ -46577,7 +46775,6 @@ _G.pg.base.item_data_statistics[41217] = {
 	icon = "SquareIcon/ximusi",
 	id = 41217,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46598,6 +46795,7 @@ _G.pg.base.item_data_statistics[41217] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41218] = {
@@ -46607,7 +46805,6 @@ _G.pg.base.item_data_statistics[41218] = {
 	icon = "SquareIcon/haman",
 	id = 41218,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46628,6 +46825,7 @@ _G.pg.base.item_data_statistics[41218] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41219] = {
@@ -46637,7 +46835,6 @@ _G.pg.base.item_data_statistics[41219] = {
 	icon = "SquareIcon/aierdeliqi",
 	id = 41219,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46658,6 +46855,7 @@ _G.pg.base.item_data_statistics[41219] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41220] = {
@@ -46667,7 +46865,6 @@ _G.pg.base.item_data_statistics[41220] = {
 	icon = "SquareIcon/aomaha",
 	id = 41220,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46688,6 +46885,7 @@ _G.pg.base.item_data_statistics[41220] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41221] = {
@@ -46697,7 +46895,6 @@ _G.pg.base.item_data_statistics[41221] = {
 	icon = "SquareIcon/luoli",
 	id = 41221,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46718,6 +46915,7 @@ _G.pg.base.item_data_statistics[41221] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41222] = {
@@ -46727,7 +46925,6 @@ _G.pg.base.item_data_statistics[41222] = {
 	icon = "SquareIcon/bulukelin",
 	id = 41222,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46748,6 +46945,7 @@ _G.pg.base.item_data_statistics[41222] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41223] = {
@@ -46757,7 +46955,6 @@ _G.pg.base.item_data_statistics[41223] = {
 	icon = "SquareIcon/feinikesi",
 	id = 41223,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46778,6 +46975,7 @@ _G.pg.base.item_data_statistics[41223] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41224] = {
@@ -46787,7 +46985,6 @@ _G.pg.base.item_data_statistics[41224] = {
 	icon = "SquareIcon/hailunna",
 	id = 41224,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46808,6 +47005,7 @@ _G.pg.base.item_data_statistics[41224] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41225] = {
@@ -46817,7 +47015,6 @@ _G.pg.base.item_data_statistics[41225] = {
 	icon = "SquareIcon/yatelanda",
 	id = 41225,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46838,6 +47035,7 @@ _G.pg.base.item_data_statistics[41225] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41226] = {
@@ -46847,7 +47045,6 @@ _G.pg.base.item_data_statistics[41226] = {
 	icon = "SquareIcon/zhunuo",
 	id = 41226,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46868,6 +47065,7 @@ _G.pg.base.item_data_statistics[41226] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41227] = {
@@ -46877,7 +47075,6 @@ _G.pg.base.item_data_statistics[41227] = {
 	icon = "SquareIcon/shengdiyage",
 	id = 41227,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46898,6 +47095,7 @@ _G.pg.base.item_data_statistics[41227] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41228] = {
@@ -46907,7 +47105,6 @@ _G.pg.base.item_data_statistics[41228] = {
 	icon = "SquareIcon/kelifulan",
 	id = 41228,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46928,6 +47125,7 @@ _G.pg.base.item_data_statistics[41228] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41229] = {
@@ -46937,7 +47135,6 @@ _G.pg.base.item_data_statistics[41229] = {
 	icon = "SquareIcon/gelunbiya",
 	id = 41229,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46958,6 +47155,7 @@ _G.pg.base.item_data_statistics[41229] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41230] = {
@@ -46967,7 +47165,6 @@ _G.pg.base.item_data_statistics[41230] = {
 	icon = "SquareIcon/pengsakela",
 	id = 41230,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -46988,6 +47185,7 @@ _G.pg.base.item_data_statistics[41230] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41231] = {
@@ -46997,7 +47195,6 @@ _G.pg.base.item_data_statistics[41231] = {
 	icon = "SquareIcon/yanhucheng",
 	id = 41231,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47018,6 +47215,7 @@ _G.pg.base.item_data_statistics[41231] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41232] = {
@@ -47027,7 +47225,6 @@ _G.pg.base.item_data_statistics[41232] = {
 	icon = "SquareIcon/beianpudun",
 	id = 41232,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47048,6 +47245,7 @@ _G.pg.base.item_data_statistics[41232] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41233] = {
@@ -47057,7 +47255,6 @@ _G.pg.base.item_data_statistics[41233] = {
 	icon = "SquareIcon/zhijiage",
 	id = 41233,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47078,6 +47275,7 @@ _G.pg.base.item_data_statistics[41233] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41234] = {
@@ -47087,7 +47285,6 @@ _G.pg.base.item_data_statistics[41234] = {
 	icon = "SquareIcon/xiusidun",
 	id = 41234,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47108,6 +47305,7 @@ _G.pg.base.item_data_statistics[41234] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41235] = {
@@ -47117,7 +47315,6 @@ _G.pg.base.item_data_statistics[41235] = {
 	icon = "SquareIcon/botelan",
 	id = 41235,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47138,6 +47335,7 @@ _G.pg.base.item_data_statistics[41235] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41236] = {
@@ -47147,7 +47345,6 @@ _G.pg.base.item_data_statistics[41236] = {
 	icon = "SquareIcon/bolisi",
 	id = 41236,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47168,6 +47365,7 @@ _G.pg.base.item_data_statistics[41236] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41237] = {
@@ -47177,7 +47375,6 @@ _G.pg.base.item_data_statistics[41237] = {
 	icon = "SquareIcon/asituoliya",
 	id = 41237,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47198,6 +47395,7 @@ _G.pg.base.item_data_statistics[41237] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41238] = {
@@ -47207,7 +47405,6 @@ _G.pg.base.item_data_statistics[41238] = {
 	icon = "SquareIcon/kunxi",
 	id = 41238,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47228,6 +47425,7 @@ _G.pg.base.item_data_statistics[41238] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41239] = {
@@ -47237,7 +47435,6 @@ _G.pg.base.item_data_statistics[41239] = {
 	icon = "SquareIcon/wensensi",
 	id = 41239,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47258,6 +47455,7 @@ _G.pg.base.item_data_statistics[41239] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41240] = {
@@ -47267,7 +47465,6 @@ _G.pg.base.item_data_statistics[41240] = {
 	icon = "SquareIcon/weiqita",
 	id = 41240,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47288,6 +47485,7 @@ _G.pg.base.item_data_statistics[41240] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41241] = {
@@ -47297,7 +47495,6 @@ _G.pg.base.item_data_statistics[41241] = {
 	icon = "SquareIcon/neihuada",
 	id = 41241,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47318,6 +47515,7 @@ _G.pg.base.item_data_statistics[41241] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41242] = {
@@ -47327,7 +47525,6 @@ _G.pg.base.item_data_statistics[41242] = {
 	icon = "SquareIcon/ekelahema",
 	id = 41242,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47348,6 +47545,7 @@ _G.pg.base.item_data_statistics[41242] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41243] = {
@@ -47357,7 +47555,6 @@ _G.pg.base.item_data_statistics[41243] = {
 	icon = "SquareIcon/binxifaniya",
 	id = 41243,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47378,6 +47575,7 @@ _G.pg.base.item_data_statistics[41243] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41244] = {
@@ -47387,7 +47585,6 @@ _G.pg.base.item_data_statistics[41244] = {
 	icon = "SquareIcon/yalisangna",
 	id = 41244,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47408,6 +47605,7 @@ _G.pg.base.item_data_statistics[41244] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41245] = {
@@ -47417,7 +47615,6 @@ _G.pg.base.item_data_statistics[41245] = {
 	icon = "SquareIcon/tiannaxi",
 	id = 41245,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47438,6 +47635,7 @@ _G.pg.base.item_data_statistics[41245] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41246] = {
@@ -47447,7 +47645,6 @@ _G.pg.base.item_data_statistics[41246] = {
 	icon = "SquareIcon/jialifuniya",
 	id = 41246,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47468,6 +47665,7 @@ _G.pg.base.item_data_statistics[41246] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41247] = {
@@ -47477,7 +47675,6 @@ _G.pg.base.item_data_statistics[41247] = {
 	icon = "SquareIcon/keluoladuo",
 	id = 41247,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47498,6 +47695,7 @@ _G.pg.base.item_data_statistics[41247] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41248] = {
@@ -47507,7 +47705,6 @@ _G.pg.base.item_data_statistics[41248] = {
 	icon = "SquareIcon/malilan",
 	id = 41248,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47528,6 +47725,7 @@ _G.pg.base.item_data_statistics[41248] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41249] = {
@@ -47537,7 +47735,6 @@ _G.pg.base.item_data_statistics[41249] = {
 	icon = "SquareIcon/xifujiniya",
 	id = 41249,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47558,6 +47755,7 @@ _G.pg.base.item_data_statistics[41249] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41250] = {
@@ -47567,7 +47765,6 @@ _G.pg.base.item_data_statistics[41250] = {
 	icon = "SquareIcon/beikaluolaina",
 	id = 41250,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47588,6 +47785,7 @@ _G.pg.base.item_data_statistics[41250] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41251] = {
@@ -47597,7 +47795,6 @@ _G.pg.base.item_data_statistics[41251] = {
 	icon = "SquareIcon/huashengdun",
 	id = 41251,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47618,6 +47815,7 @@ _G.pg.base.item_data_statistics[41251] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41252] = {
@@ -47627,7 +47825,6 @@ _G.pg.base.item_data_statistics[41252] = {
 	icon = "SquareIcon/nandaketa",
 	id = 41252,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47648,6 +47845,7 @@ _G.pg.base.item_data_statistics[41252] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41253] = {
@@ -47657,7 +47855,6 @@ _G.pg.base.item_data_statistics[41253] = {
 	icon = "SquareIcon/changdao",
 	id = 41253,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47678,6 +47875,7 @@ _G.pg.base.item_data_statistics[41253] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41254] = {
@@ -47687,7 +47885,6 @@ _G.pg.base.item_data_statistics[41254] = {
 	icon = "SquareIcon/boge",
 	id = 41254,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47708,6 +47905,7 @@ _G.pg.base.item_data_statistics[41254] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41255] = {
@@ -47717,7 +47915,6 @@ _G.pg.base.item_data_statistics[41255] = {
 	icon = "SquareIcon/lanli",
 	id = 41255,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47738,6 +47935,7 @@ _G.pg.base.item_data_statistics[41255] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41256] = {
@@ -47747,7 +47945,6 @@ _G.pg.base.item_data_statistics[41256] = {
 	icon = "SquareIcon/liekexingdun",
 	id = 41256,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47768,6 +47965,7 @@ _G.pg.base.item_data_statistics[41256] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41257] = {
@@ -47777,7 +47975,6 @@ _G.pg.base.item_data_statistics[41257] = {
 	icon = "SquareIcon/salatuojia",
 	id = 41257,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47798,6 +47995,7 @@ _G.pg.base.item_data_statistics[41257] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41258] = {
@@ -47807,7 +48005,6 @@ _G.pg.base.item_data_statistics[41258] = {
 	icon = "SquareIcon/tujizhe",
 	id = 41258,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47828,6 +48025,7 @@ _G.pg.base.item_data_statistics[41258] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41259] = {
@@ -47837,7 +48035,6 @@ _G.pg.base.item_data_statistics[41259] = {
 	icon = "SquareIcon/yuekecheng",
 	id = 41259,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47858,6 +48055,7 @@ _G.pg.base.item_data_statistics[41259] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41260] = {
@@ -47867,7 +48065,6 @@ _G.pg.base.item_data_statistics[41260] = {
 	icon = "SquareIcon/qiye",
 	id = 41260,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47888,6 +48085,7 @@ _G.pg.base.item_data_statistics[41260] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41261] = {
@@ -47897,7 +48095,6 @@ _G.pg.base.item_data_statistics[41261] = {
 	icon = "SquareIcon/dahuangfeng",
 	id = 41261,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47918,6 +48115,7 @@ _G.pg.base.item_data_statistics[41261] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41262] = {
@@ -47927,7 +48125,6 @@ _G.pg.base.item_data_statistics[41262] = {
 	icon = "SquareIcon/hufeng",
 	id = 41262,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47948,6 +48145,7 @@ _G.pg.base.item_data_statistics[41262] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41263] = {
@@ -47957,7 +48155,6 @@ _G.pg.base.item_data_statistics[41263] = {
 	icon = "SquareIcon/zaoshen",
 	id = 41263,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -47978,6 +48175,7 @@ _G.pg.base.item_data_statistics[41263] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41264] = {
@@ -47987,7 +48185,6 @@ _G.pg.base.item_data_statistics[41264] = {
 	icon = "SquareIcon/nvjiang",
 	id = 41264,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48008,6 +48205,7 @@ _G.pg.base.item_data_statistics[41264] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41265] = {
@@ -48017,7 +48215,6 @@ _G.pg.base.item_data_statistics[41265] = {
 	icon = "SquareIcon/akasita",
 	id = 41265,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48038,6 +48235,7 @@ _G.pg.base.item_data_statistics[41265] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41266] = {
@@ -48047,7 +48245,6 @@ _G.pg.base.item_data_statistics[41266] = {
 	icon = "SquareIcon/rexin",
 	id = 41266,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48068,6 +48265,7 @@ _G.pg.base.item_data_statistics[41266] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41267] = {
@@ -48077,7 +48275,6 @@ _G.pg.base.item_data_statistics[41267] = {
 	icon = "SquareIcon/xiaolietuquan",
 	id = 41267,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48098,6 +48295,7 @@ _G.pg.base.item_data_statistics[41267] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41268] = {
@@ -48107,7 +48305,6 @@ _G.pg.base.item_data_statistics[41268] = {
 	icon = "SquareIcon/dadouquan",
 	id = 41268,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48128,6 +48325,7 @@ _G.pg.base.item_data_statistics[41268] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41269] = {
@@ -48137,7 +48335,6 @@ _G.pg.base.item_data_statistics[41269] = {
 	icon = "SquareIcon/huixing",
 	id = 41269,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48158,6 +48355,7 @@ _G.pg.base.item_data_statistics[41269] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41270] = {
@@ -48167,7 +48365,6 @@ _G.pg.base.item_data_statistics[41270] = {
 	icon = "SquareIcon/xinyue",
 	id = 41270,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48188,6 +48385,7 @@ _G.pg.base.item_data_statistics[41270] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41271] = {
@@ -48197,7 +48395,6 @@ _G.pg.base.item_data_statistics[41271] = {
 	icon = "SquareIcon/xiaotiane",
 	id = 41271,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48218,6 +48415,7 @@ _G.pg.base.item_data_statistics[41271] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41272] = {
@@ -48227,7 +48425,6 @@ _G.pg.base.item_data_statistics[41272] = {
 	icon = "SquareIcon/huti",
 	id = 41272,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48248,6 +48445,7 @@ _G.pg.base.item_data_statistics[41272] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41273] = {
@@ -48257,7 +48455,6 @@ _G.pg.base.item_data_statistics[41273] = {
 	icon = "SquareIcon/mingyunnvshen",
 	id = 41273,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48278,6 +48475,7 @@ _G.pg.base.item_data_statistics[41273] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41274] = {
@@ -48287,7 +48485,6 @@ _G.pg.base.item_data_statistics[41274] = {
 	icon = "SquareIcon/gelunweier",
 	id = 41274,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48308,6 +48505,7 @@ _G.pg.base.item_data_statistics[41274] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41275] = {
@@ -48317,7 +48515,6 @@ _G.pg.base.item_data_statistics[41275] = {
 	icon = "SquareIcon/yinghuochong",
 	id = 41275,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48338,6 +48535,7 @@ _G.pg.base.item_data_statistics[41275] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41276] = {
@@ -48347,7 +48545,6 @@ _G.pg.base.item_data_statistics[41276] = {
 	icon = "SquareIcon/biaoqiang",
 	id = 41276,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48368,6 +48565,7 @@ _G.pg.base.item_data_statistics[41276] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41277] = {
@@ -48377,7 +48575,6 @@ _G.pg.base.item_data_statistics[41277] = {
 	icon = "SquareIcon/tianhou",
 	id = 41277,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48398,6 +48595,7 @@ _G.pg.base.item_data_statistics[41277] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41278] = {
@@ -48407,7 +48605,6 @@ _G.pg.base.item_data_statistics[41278] = {
 	icon = "SquareIcon/xixuegui",
 	id = 41278,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48428,6 +48625,7 @@ _G.pg.base.item_data_statistics[41278] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41279] = {
@@ -48437,7 +48635,6 @@ _G.pg.base.item_data_statistics[41279] = {
 	icon = "SquareIcon/liande",
 	id = 41279,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48458,6 +48655,7 @@ _G.pg.base.item_data_statistics[41279] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41280] = {
@@ -48467,7 +48665,6 @@ _G.pg.base.item_data_statistics[41280] = {
 	icon = "SquareIcon/ajilisi",
 	id = 41280,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48488,6 +48685,7 @@ _G.pg.base.item_data_statistics[41280] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41281] = {
@@ -48497,7 +48695,6 @@ _G.pg.base.item_data_statistics[41281] = {
 	icon = "SquareIcon/ajiakesi",
 	id = 41281,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48518,6 +48715,7 @@ _G.pg.base.item_data_statistics[41281] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41282] = {
@@ -48527,7 +48725,6 @@ _G.pg.base.item_data_statistics[41282] = {
 	icon = "SquareIcon/xiefeierde",
 	id = 41282,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48548,6 +48745,7 @@ _G.pg.base.item_data_statistics[41282] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41283] = {
@@ -48557,7 +48755,6 @@ _G.pg.base.item_data_statistics[41283] = {
 	icon = "SquareIcon/aidingbao",
 	id = 41283,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48578,6 +48775,7 @@ _G.pg.base.item_data_statistics[41283] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41284] = {
@@ -48587,7 +48785,6 @@ _G.pg.base.item_data_statistics[41284] = {
 	icon = "SquareIcon/beierfasite",
 	id = 41284,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48608,6 +48805,7 @@ _G.pg.base.item_data_statistics[41284] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41285] = {
@@ -48617,7 +48815,6 @@ _G.pg.base.item_data_statistics[41285] = {
 	icon = "SquareIcon/aruituosha",
 	id = 41285,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48638,6 +48835,7 @@ _G.pg.base.item_data_statistics[41285] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41286] = {
@@ -48647,7 +48845,6 @@ _G.pg.base.item_data_statistics[41286] = {
 	icon = "SquareIcon/jialadiya",
 	id = 41286,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48668,6 +48865,7 @@ _G.pg.base.item_data_statistics[41286] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41287] = {
@@ -48677,7 +48875,6 @@ _G.pg.base.item_data_statistics[41287] = {
 	icon = "SquareIcon/ouruola",
 	id = 41287,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48698,6 +48895,7 @@ _G.pg.base.item_data_statistics[41287] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41288] = {
@@ -48707,7 +48905,6 @@ _G.pg.base.item_data_statistics[41288] = {
 	icon = "SquareIcon/lundun",
 	id = 41288,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48728,6 +48925,7 @@ _G.pg.base.item_data_statistics[41288] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41289] = {
@@ -48737,7 +48935,6 @@ _G.pg.base.item_data_statistics[41289] = {
 	icon = "SquareIcon/shiluopujun",
 	id = 41289,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48758,6 +48955,7 @@ _G.pg.base.item_data_statistics[41289] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41290] = {
@@ -48767,7 +48965,6 @@ _G.pg.base.item_data_statistics[41290] = {
 	icon = "SquareIcon/kente",
 	id = 41290,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48788,6 +48985,7 @@ _G.pg.base.item_data_statistics[41290] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41291] = {
@@ -48797,7 +48995,6 @@ _G.pg.base.item_data_statistics[41291] = {
 	icon = "SquareIcon/safuke",
 	id = 41291,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48818,6 +49015,7 @@ _G.pg.base.item_data_statistics[41291] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41292] = {
@@ -48827,7 +49025,6 @@ _G.pg.base.item_data_statistics[41292] = {
 	icon = "SquareIcon/nuofuke",
 	id = 41292,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48848,6 +49045,7 @@ _G.pg.base.item_data_statistics[41292] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41293] = {
@@ -48857,7 +49055,6 @@ _G.pg.base.item_data_statistics[41293] = {
 	icon = "SquareIcon/duosaitejun",
 	id = 41293,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48878,6 +49075,7 @@ _G.pg.base.item_data_statistics[41293] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41294] = {
@@ -48887,7 +49085,6 @@ _G.pg.base.item_data_statistics[41294] = {
 	icon = "SquareIcon/yueke",
 	id = 41294,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48908,6 +49105,7 @@ _G.pg.base.item_data_statistics[41294] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41295] = {
@@ -48917,7 +49115,6 @@ _G.pg.base.item_data_statistics[41295] = {
 	icon = "SquareIcon/aikesaite",
 	id = 41295,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48938,6 +49135,7 @@ _G.pg.base.item_data_statistics[41295] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41296] = {
@@ -48947,7 +49145,6 @@ _G.pg.base.item_data_statistics[41296] = {
 	icon = "SquareIcon/susaikesi",
 	id = 41296,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48968,6 +49165,7 @@ _G.pg.base.item_data_statistics[41296] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41297] = {
@@ -48977,7 +49175,6 @@ _G.pg.base.item_data_statistics[41297] = {
 	icon = "SquareIcon/shengwang",
 	id = 41297,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -48998,6 +49195,7 @@ _G.pg.base.item_data_statistics[41297] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41298] = {
@@ -49007,7 +49205,6 @@ _G.pg.base.item_data_statistics[41298] = {
 	icon = "SquareIcon/fanji",
 	id = 41298,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49028,6 +49225,7 @@ _G.pg.base.item_data_statistics[41298] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41299] = {
@@ -49037,7 +49235,6 @@ _G.pg.base.item_data_statistics[41299] = {
 	icon = "SquareIcon/hude",
 	id = 41299,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49058,6 +49255,7 @@ _G.pg.base.item_data_statistics[41299] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41300] = {
@@ -49067,7 +49265,6 @@ _G.pg.base.item_data_statistics[41300] = {
 	icon = "SquareIcon/yilishabai",
 	id = 41300,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49088,6 +49285,7 @@ _G.pg.base.item_data_statistics[41300] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41301] = {
@@ -49097,7 +49295,6 @@ _G.pg.base.item_data_statistics[41301] = {
 	icon = "SquareIcon/yanzhan",
 	id = 41301,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49118,6 +49315,7 @@ _G.pg.base.item_data_statistics[41301] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41302] = {
@@ -49127,7 +49325,6 @@ _G.pg.base.item_data_statistics[41302] = {
 	icon = "SquareIcon/naerxun",
 	id = 41302,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49148,6 +49345,7 @@ _G.pg.base.item_data_statistics[41302] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41303] = {
@@ -49157,7 +49355,6 @@ _G.pg.base.item_data_statistics[41303] = {
 	icon = "SquareIcon/luodeni",
 	id = 41303,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49178,6 +49375,7 @@ _G.pg.base.item_data_statistics[41303] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41304] = {
@@ -49187,7 +49385,6 @@ _G.pg.base.item_data_statistics[41304] = {
 	icon = "SquareIcon/weiershiqinwang",
 	id = 41304,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49208,6 +49405,7 @@ _G.pg.base.item_data_statistics[41304] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41305] = {
@@ -49217,7 +49415,6 @@ _G.pg.base.item_data_statistics[41305] = {
 	icon = "SquareIcon/yuekegongjue",
 	id = 41305,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49238,6 +49435,7 @@ _G.pg.base.item_data_statistics[41305] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41306] = {
@@ -49247,7 +49445,6 @@ _G.pg.base.item_data_statistics[41306] = {
 	icon = "SquareIcon/jingjishen",
 	id = 41306,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49268,6 +49465,7 @@ _G.pg.base.item_data_statistics[41306] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41307] = {
@@ -49277,7 +49475,6 @@ _G.pg.base.item_data_statistics[41307] = {
 	icon = "SquareIcon/dujiaoshou",
 	id = 41307,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49298,6 +49495,7 @@ _G.pg.base.item_data_statistics[41307] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41308] = {
@@ -49307,7 +49505,6 @@ _G.pg.base.item_data_statistics[41308] = {
 	icon = "SquareIcon/huangjiafangzhou",
 	id = 41308,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49328,6 +49525,7 @@ _G.pg.base.item_data_statistics[41308] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41309] = {
@@ -49337,7 +49535,6 @@ _G.pg.base.item_data_statistics[41309] = {
 	icon = "SquareIcon/guanghui",
 	id = 41309,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49358,6 +49555,7 @@ _G.pg.base.item_data_statistics[41309] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41310] = {
@@ -49367,7 +49565,6 @@ _G.pg.base.item_data_statistics[41310] = {
 	icon = "SquareIcon/shengli",
 	id = 41310,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49388,6 +49585,7 @@ _G.pg.base.item_data_statistics[41310] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41311] = {
@@ -49397,7 +49595,6 @@ _G.pg.base.item_data_statistics[41311] = {
 	icon = "SquareIcon/guangrong",
 	id = 41311,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49418,6 +49615,7 @@ _G.pg.base.item_data_statistics[41311] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41312] = {
@@ -49427,7 +49625,6 @@ _G.pg.base.item_data_statistics[41312] = {
 	icon = "SquareIcon/heianjie",
 	id = 41312,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49448,6 +49645,7 @@ _G.pg.base.item_data_statistics[41312] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41313] = {
@@ -49457,7 +49655,6 @@ _G.pg.base.item_data_statistics[41313] = {
 	icon = "SquareIcon/kongbu",
 	id = 41313,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49478,6 +49675,7 @@ _G.pg.base.item_data_statistics[41313] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41314] = {
@@ -49487,7 +49685,6 @@ _G.pg.base.item_data_statistics[41314] = {
 	icon = "SquareIcon/abeikelongbi",
 	id = 41314,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49508,6 +49705,7 @@ _G.pg.base.item_data_statistics[41314] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41315] = {
@@ -49517,7 +49715,6 @@ _G.pg.base.item_data_statistics[41315] = {
 	icon = "SquareIcon/chuixue",
 	id = 41315,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49538,6 +49735,7 @@ _G.pg.base.item_data_statistics[41315] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41316] = {
@@ -49547,7 +49745,6 @@ _G.pg.base.item_data_statistics[41316] = {
 	icon = "SquareIcon/lingbo",
 	id = 41316,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49568,6 +49765,7 @@ _G.pg.base.item_data_statistics[41316] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41317] = {
@@ -49577,7 +49775,6 @@ _G.pg.base.item_data_statistics[41317] = {
 	icon = "SquareIcon/xiao",
 	id = 41317,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49598,6 +49795,7 @@ _G.pg.base.item_data_statistics[41317] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41318] = {
@@ -49607,7 +49805,6 @@ _G.pg.base.item_data_statistics[41318] = {
 	icon = "SquareIcon/lei",
 	id = 41318,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49628,6 +49825,7 @@ _G.pg.base.item_data_statistics[41318] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41319] = {
@@ -49637,7 +49835,6 @@ _G.pg.base.item_data_statistics[41319] = {
 	icon = "SquareIcon/dian",
 	id = 41319,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49658,6 +49855,7 @@ _G.pg.base.item_data_statistics[41319] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41320] = {
@@ -49667,7 +49865,6 @@ _G.pg.base.item_data_statistics[41320] = {
 	icon = "SquareIcon/bailu",
 	id = 41320,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49688,6 +49885,7 @@ _G.pg.base.item_data_statistics[41320] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41321] = {
@@ -49697,7 +49895,6 @@ _G.pg.base.item_data_statistics[41321] = {
 	icon = "SquareIcon/xili",
 	id = 41321,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49718,6 +49915,7 @@ _G.pg.base.item_data_statistics[41321] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41322] = {
@@ -49727,7 +49925,6 @@ _G.pg.base.item_data_statistics[41322] = {
 	icon = "SquareIcon/shiyu",
 	id = 41322,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49748,6 +49945,7 @@ _G.pg.base.item_data_statistics[41322] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41323] = {
@@ -49757,7 +49955,6 @@ _G.pg.base.item_data_statistics[41323] = {
 	icon = "SquareIcon/xuefeng",
 	id = 41323,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49778,6 +49975,7 @@ _G.pg.base.item_data_statistics[41323] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41324] = {
@@ -49787,7 +49985,6 @@ _G.pg.base.item_data_statistics[41324] = {
 	icon = "SquareIcon/yangyan",
 	id = 41324,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49808,6 +50005,7 @@ _G.pg.base.item_data_statistics[41324] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41325] = {
@@ -49817,7 +50015,6 @@ _G.pg.base.item_data_statistics[41325] = {
 	icon = "SquareIcon/buzhihuo",
 	id = 41325,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49838,6 +50035,7 @@ _G.pg.base.item_data_statistics[41325] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41326] = {
@@ -49847,7 +50045,6 @@ _G.pg.base.item_data_statistics[41326] = {
 	icon = "SquareIcon/yefen",
 	id = 41326,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49868,6 +50065,7 @@ _G.pg.base.item_data_statistics[41326] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41327] = {
@@ -49877,7 +50075,6 @@ _G.pg.base.item_data_statistics[41327] = {
 	icon = "SquareIcon/chuchun",
 	id = 41327,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49898,6 +50095,7 @@ _G.pg.base.item_data_statistics[41327] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41328] = {
@@ -49907,7 +50105,6 @@ _G.pg.base.item_data_statistics[41328] = {
 	icon = "SquareIcon/ruoye",
 	id = 41328,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49928,6 +50125,7 @@ _G.pg.base.item_data_statistics[41328] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41329] = {
@@ -49937,7 +50135,6 @@ _G.pg.base.item_data_statistics[41329] = {
 	icon = "SquareIcon/chushuang",
 	id = 41329,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49958,6 +50155,7 @@ _G.pg.base.item_data_statistics[41329] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41330] = {
@@ -49967,7 +50165,6 @@ _G.pg.base.item_data_statistics[41330] = {
 	icon = "SquareIcon/youming",
 	id = 41330,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -49988,6 +50185,7 @@ _G.pg.base.item_data_statistics[41330] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41331] = {
@@ -49997,7 +50195,6 @@ _G.pg.base.item_data_statistics[41331] = {
 	icon = "SquareIcon/ximu",
 	id = 41331,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50018,6 +50215,7 @@ _G.pg.base.item_data_statistics[41331] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41332] = {
@@ -50027,7 +50225,6 @@ _G.pg.base.item_data_statistics[41332] = {
 	icon = "SquareIcon/heichao",
 	id = 41332,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50048,6 +50245,7 @@ _G.pg.base.item_data_statistics[41332] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41333] = {
@@ -50057,7 +50255,6 @@ _G.pg.base.item_data_statistics[41333] = {
 	icon = "SquareIcon/qinchao",
 	id = 41333,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50078,6 +50275,7 @@ _G.pg.base.item_data_statistics[41333] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41334] = {
@@ -50087,7 +50285,6 @@ _G.pg.base.item_data_statistics[41334] = {
 	icon = "SquareIcon/xizhang",
 	id = 41334,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50108,6 +50305,7 @@ _G.pg.base.item_data_statistics[41334] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41335] = {
@@ -50117,7 +50315,6 @@ _G.pg.base.item_data_statistics[41335] = {
 	icon = "SquareIcon/changliang",
 	id = 41335,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50138,6 +50335,7 @@ _G.pg.base.item_data_statistics[41335] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41336] = {
@@ -50147,7 +50345,6 @@ _G.pg.base.item_data_statistics[41336] = {
 	icon = "SquareIcon/wushiling",
 	id = 41336,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50168,6 +50365,7 @@ _G.pg.base.item_data_statistics[41336] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41337] = {
@@ -50177,7 +50375,6 @@ _G.pg.base.item_data_statistics[41337] = {
 	icon = "SquareIcon/awuwei",
 	id = 41337,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50198,6 +50395,7 @@ _G.pg.base.item_data_statistics[41337] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41338] = {
@@ -50207,7 +50405,6 @@ _G.pg.base.item_data_statistics[41338] = {
 	icon = "SquareIcon/zuishang",
 	id = 41338,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50228,6 +50425,7 @@ _G.pg.base.item_data_statistics[41338] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41339] = {
@@ -50237,7 +50435,6 @@ _G.pg.base.item_data_statistics[41339] = {
 	icon = "SquareIcon/sanwei",
 	id = 41339,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50258,6 +50455,7 @@ _G.pg.base.item_data_statistics[41339] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41340] = {
@@ -50267,7 +50465,6 @@ _G.pg.base.item_data_statistics[41340] = {
 	icon = "SquareIcon/guying",
 	id = 41340,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50288,6 +50485,7 @@ _G.pg.base.item_data_statistics[41340] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41341] = {
@@ -50297,7 +50495,6 @@ _G.pg.base.item_data_statistics[41341] = {
 	icon = "SquareIcon/jiagu",
 	id = 41341,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50318,6 +50515,7 @@ _G.pg.base.item_data_statistics[41341] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41342] = {
@@ -50327,7 +50525,6 @@ _G.pg.base.item_data_statistics[41342] = {
 	icon = "SquareIcon/qingye",
 	id = 41342,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50348,6 +50545,7 @@ _G.pg.base.item_data_statistics[41342] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41343] = {
@@ -50357,7 +50555,6 @@ _G.pg.base.item_data_statistics[41343] = {
 	icon = "SquareIcon/yili",
 	id = 41343,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50378,6 +50575,7 @@ _G.pg.base.item_data_statistics[41343] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41344] = {
@@ -50387,7 +50585,6 @@ _G.pg.base.item_data_statistics[41344] = {
 	icon = "SquareIcon/miaogao",
 	id = 41344,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50408,6 +50605,7 @@ _G.pg.base.item_data_statistics[41344] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41345] = {
@@ -50417,7 +50615,6 @@ _G.pg.base.item_data_statistics[41345] = {
 	icon = "SquareIcon/nazhi",
 	id = 41345,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50438,6 +50635,7 @@ _G.pg.base.item_data_statistics[41345] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41346] = {
@@ -50447,7 +50645,6 @@ _G.pg.base.item_data_statistics[41346] = {
 	icon = "SquareIcon/zubing",
 	id = 41346,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50468,6 +50665,7 @@ _G.pg.base.item_data_statistics[41346] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41347] = {
@@ -50477,7 +50675,6 @@ _G.pg.base.item_data_statistics[41347] = {
 	icon = "SquareIcon/gaoxiong",
 	id = 41347,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50498,6 +50695,7 @@ _G.pg.base.item_data_statistics[41347] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41348] = {
@@ -50507,7 +50705,6 @@ _G.pg.base.item_data_statistics[41348] = {
 	icon = "SquareIcon/aidang",
 	id = 41348,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50528,6 +50725,7 @@ _G.pg.base.item_data_statistics[41348] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41349] = {
@@ -50537,7 +50735,6 @@ _G.pg.base.item_data_statistics[41349] = {
 	icon = "SquareIcon/moye",
 	id = 41349,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50558,6 +50755,7 @@ _G.pg.base.item_data_statistics[41349] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41350] = {
@@ -50567,7 +50765,6 @@ _G.pg.base.item_data_statistics[41350] = {
 	icon = "SquareIcon/niaohai",
 	id = 41350,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50588,6 +50785,7 @@ _G.pg.base.item_data_statistics[41350] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41351] = {
@@ -50597,7 +50795,6 @@ _G.pg.base.item_data_statistics[41351] = {
 	icon = "SquareIcon/jingang",
 	id = 41351,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50618,6 +50815,7 @@ _G.pg.base.item_data_statistics[41351] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41352] = {
@@ -50627,7 +50825,6 @@ _G.pg.base.item_data_statistics[41352] = {
 	icon = "SquareIcon/birui",
 	id = 41352,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50648,6 +50845,7 @@ _G.pg.base.item_data_statistics[41352] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41353] = {
@@ -50657,7 +50855,6 @@ _G.pg.base.item_data_statistics[41353] = {
 	icon = "SquareIcon/zhenming",
 	id = 41353,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50678,6 +50875,7 @@ _G.pg.base.item_data_statistics[41353] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41354] = {
@@ -50687,7 +50885,6 @@ _G.pg.base.item_data_statistics[41354] = {
 	icon = "SquareIcon/wudao",
 	id = 41354,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50708,6 +50905,7 @@ _G.pg.base.item_data_statistics[41354] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41355] = {
@@ -50717,7 +50915,6 @@ _G.pg.base.item_data_statistics[41355] = {
 	icon = "SquareIcon/tiancheng",
 	id = 41355,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50738,6 +50935,7 @@ _G.pg.base.item_data_statistics[41355] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41356] = {
@@ -50747,7 +50945,6 @@ _G.pg.base.item_data_statistics[41356] = {
 	icon = "SquareIcon/fusang",
 	id = 41356,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50768,6 +50965,7 @@ _G.pg.base.item_data_statistics[41356] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41357] = {
@@ -50777,7 +50975,6 @@ _G.pg.base.item_data_statistics[41357] = {
 	icon = "SquareIcon/shancheng",
 	id = 41357,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50798,6 +50995,7 @@ _G.pg.base.item_data_statistics[41357] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41358] = {
@@ -50807,7 +51005,6 @@ _G.pg.base.item_data_statistics[41358] = {
 	icon = "SquareIcon/yishi",
 	id = 41358,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50828,6 +51025,7 @@ _G.pg.base.item_data_statistics[41358] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41359] = {
@@ -50837,7 +51035,6 @@ _G.pg.base.item_data_statistics[41359] = {
 	icon = "SquareIcon/rixiang",
 	id = 41359,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50858,6 +51055,7 @@ _G.pg.base.item_data_statistics[41359] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41360] = {
@@ -50867,7 +51065,6 @@ _G.pg.base.item_data_statistics[41360] = {
 	icon = "SquareIcon/changmen",
 	id = 41360,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50888,6 +51085,7 @@ _G.pg.base.item_data_statistics[41360] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41361] = {
@@ -50897,7 +51095,6 @@ _G.pg.base.item_data_statistics[41361] = {
 	icon = "SquareIcon/luao",
 	id = 41361,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50918,6 +51115,7 @@ _G.pg.base.item_data_statistics[41361] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41362] = {
@@ -50927,7 +51125,6 @@ _G.pg.base.item_data_statistics[41362] = {
 	icon = "SquareIcon/jiahezhanlie",
 	id = 41362,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50948,6 +51145,7 @@ _G.pg.base.item_data_statistics[41362] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41363] = {
@@ -50957,7 +51155,6 @@ _G.pg.base.item_data_statistics[41363] = {
 	icon = "SquareIcon/feiying",
 	id = 41363,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -50978,6 +51175,7 @@ _G.pg.base.item_data_statistics[41363] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41364] = {
@@ -50987,7 +51185,6 @@ _G.pg.base.item_data_statistics[41364] = {
 	icon = "SquareIcon/sunying",
 	id = 41364,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51008,6 +51205,7 @@ _G.pg.base.item_data_statistics[41364] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41365] = {
@@ -51017,7 +51215,6 @@ _G.pg.base.item_data_statistics[41365] = {
 	icon = "SquareIcon/fengxiang",
 	id = 41365,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51038,6 +51235,7 @@ _G.pg.base.item_data_statistics[41365] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41366] = {
@@ -51047,7 +51245,6 @@ _G.pg.base.item_data_statistics[41366] = {
 	icon = "SquareIcon/xiangfeng",
 	id = 41366,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51068,6 +51265,7 @@ _G.pg.base.item_data_statistics[41366] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41367] = {
@@ -51077,7 +51275,6 @@ _G.pg.base.item_data_statistics[41367] = {
 	icon = "SquareIcon/longxiang",
 	id = 41367,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51098,6 +51295,7 @@ _G.pg.base.item_data_statistics[41367] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41368] = {
@@ -51107,7 +51305,6 @@ _G.pg.base.item_data_statistics[41368] = {
 	icon = "SquareIcon/chicheng",
 	id = 41368,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51128,6 +51325,7 @@ _G.pg.base.item_data_statistics[41368] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41369] = {
@@ -51137,7 +51335,6 @@ _G.pg.base.item_data_statistics[41369] = {
 	icon = "SquareIcon/jiahe",
 	id = 41369,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51158,6 +51355,7 @@ _G.pg.base.item_data_statistics[41369] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41370] = {
@@ -51167,7 +51365,6 @@ _G.pg.base.item_data_statistics[41370] = {
 	icon = "SquareIcon/canglong",
 	id = 41370,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51188,6 +51385,7 @@ _G.pg.base.item_data_statistics[41370] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41371] = {
@@ -51197,7 +51395,6 @@ _G.pg.base.item_data_statistics[41371] = {
 	icon = "SquareIcon/feilong",
 	id = 41371,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51218,6 +51415,7 @@ _G.pg.base.item_data_statistics[41371] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41372] = {
@@ -51227,7 +51425,6 @@ _G.pg.base.item_data_statistics[41372] = {
 	icon = "SquareIcon/xianghe",
 	id = 41372,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51248,6 +51445,7 @@ _G.pg.base.item_data_statistics[41372] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41373] = {
@@ -51257,7 +51455,6 @@ _G.pg.base.item_data_statistics[41373] = {
 	icon = "SquareIcon/ruihe",
 	id = 41373,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51278,6 +51475,7 @@ _G.pg.base.item_data_statistics[41373] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41374] = {
@@ -51287,7 +51485,6 @@ _G.pg.base.item_data_statistics[41374] = {
 	icon = "SquareIcon/dafeng",
 	id = 41374,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51308,6 +51505,7 @@ _G.pg.base.item_data_statistics[41374] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41375] = {
@@ -51317,7 +51515,6 @@ _G.pg.base.item_data_statistics[41375] = {
 	icon = "SquareIcon/mingshi",
 	id = 41375,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51338,6 +51535,7 @@ _G.pg.base.item_data_statistics[41375] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41376] = {
@@ -51347,7 +51545,6 @@ _G.pg.base.item_data_statistics[41376] = {
 	icon = "SquareIcon/z1",
 	id = 41376,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51368,6 +51565,7 @@ _G.pg.base.item_data_statistics[41376] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41377] = {
@@ -51377,7 +51575,6 @@ _G.pg.base.item_data_statistics[41377] = {
 	icon = "SquareIcon/z23",
 	id = 41377,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51398,6 +51595,7 @@ _G.pg.base.item_data_statistics[41377] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41378] = {
@@ -51407,7 +51605,6 @@ _G.pg.base.item_data_statistics[41378] = {
 	icon = "SquareIcon/Z25",
 	id = 41378,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51428,6 +51625,7 @@ _G.pg.base.item_data_statistics[41378] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41379] = {
@@ -51437,7 +51635,6 @@ _G.pg.base.item_data_statistics[41379] = {
 	icon = "SquareIcon/kenisibao",
 	id = 41379,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51458,6 +51655,7 @@ _G.pg.base.item_data_statistics[41379] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41380] = {
@@ -51467,7 +51665,6 @@ _G.pg.base.item_data_statistics[41380] = {
 	icon = "SquareIcon/kaersilue",
 	id = 41380,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51488,6 +51685,7 @@ _G.pg.base.item_data_statistics[41380] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41381] = {
@@ -51497,7 +51695,6 @@ _G.pg.base.item_data_statistics[41381] = {
 	icon = "SquareIcon/kelong",
 	id = 41381,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51518,6 +51715,7 @@ _G.pg.base.item_data_statistics[41381] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41382] = {
@@ -51527,7 +51725,6 @@ _G.pg.base.item_data_statistics[41382] = {
 	icon = "SquareIcon/laibixi",
 	id = 41382,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51548,6 +51745,7 @@ _G.pg.base.item_data_statistics[41382] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41383] = {
@@ -51557,7 +51755,6 @@ _G.pg.base.item_data_statistics[41383] = {
 	icon = "SquareIcon/xipeierhaijunshangjiang",
 	id = 41383,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51578,6 +51775,7 @@ _G.pg.base.item_data_statistics[41383] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41384] = {
@@ -51587,7 +51785,6 @@ _G.pg.base.item_data_statistics[41384] = {
 	icon = "SquareIcon/ougen",
 	id = 41384,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51608,6 +51805,7 @@ _G.pg.base.item_data_statistics[41384] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41385] = {
@@ -51617,7 +51815,6 @@ _G.pg.base.item_data_statistics[41385] = {
 	icon = "SquareIcon/deyizhi",
 	id = 41385,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51638,6 +51835,7 @@ _G.pg.base.item_data_statistics[41385] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41386] = {
@@ -51647,7 +51845,6 @@ _G.pg.base.item_data_statistics[41386] = {
 	icon = "SquareIcon/sipeibojue",
 	id = 41386,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51668,6 +51865,7 @@ _G.pg.base.item_data_statistics[41386] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41387] = {
@@ -51677,7 +51875,6 @@ _G.pg.base.item_data_statistics[41387] = {
 	icon = "SquareIcon/shaenhuosite",
 	id = 41387,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51698,6 +51895,7 @@ _G.pg.base.item_data_statistics[41387] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41388] = {
@@ -51707,7 +51905,6 @@ _G.pg.base.item_data_statistics[41388] = {
 	icon = "SquareIcon/genaisennao",
 	id = 41388,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51728,6 +51925,7 @@ _G.pg.base.item_data_statistics[41388] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41389] = {
@@ -51737,7 +51935,6 @@ _G.pg.base.item_data_statistics[41389] = {
 	icon = "SquareIcon/tierbici",
 	id = 41389,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51758,6 +51955,7 @@ _G.pg.base.item_data_statistics[41389] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41390] = {
@@ -51767,7 +51965,6 @@ _G.pg.base.item_data_statistics[41390] = {
 	icon = "SquareIcon/qibolin",
 	id = 41390,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51788,6 +51985,7 @@ _G.pg.base.item_data_statistics[41390] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41391] = {
@@ -51797,7 +51995,6 @@ _G.pg.base.item_data_statistics[41391] = {
 	icon = "SquareIcon/anshan",
 	id = 41391,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51818,6 +52015,7 @@ _G.pg.base.item_data_statistics[41391] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41392] = {
@@ -51827,7 +52025,6 @@ _G.pg.base.item_data_statistics[41392] = {
 	icon = "SquareIcon/fushun",
 	id = 41392,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51848,6 +52045,7 @@ _G.pg.base.item_data_statistics[41392] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41393] = {
@@ -51857,7 +52055,6 @@ _G.pg.base.item_data_statistics[41393] = {
 	icon = "SquareIcon/changchun",
 	id = 41393,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51878,6 +52075,7 @@ _G.pg.base.item_data_statistics[41393] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41394] = {
@@ -51887,7 +52085,6 @@ _G.pg.base.item_data_statistics[41394] = {
 	icon = "SquareIcon/taiyuan",
 	id = 41394,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51908,6 +52105,7 @@ _G.pg.base.item_data_statistics[41394] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41395] = {
@@ -51917,7 +52115,6 @@ _G.pg.base.item_data_statistics[41395] = {
 	icon = "SquareIcon/yixian",
 	id = 41395,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51938,6 +52135,7 @@ _G.pg.base.item_data_statistics[41395] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41396] = {
@@ -51947,7 +52145,6 @@ _G.pg.base.item_data_statistics[41396] = {
 	icon = "SquareIcon/ninghai",
 	id = 41396,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51968,6 +52165,7 @@ _G.pg.base.item_data_statistics[41396] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41397] = {
@@ -51977,7 +52175,6 @@ _G.pg.base.item_data_statistics[41397] = {
 	icon = "SquareIcon/pinghai",
 	id = 41397,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -51998,6 +52195,7 @@ _G.pg.base.item_data_statistics[41397] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41398] = {
@@ -52007,7 +52205,6 @@ _G.pg.base.item_data_statistics[41398] = {
 	icon = "SquareIcon/afuleer",
 	id = 41398,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52028,6 +52225,7 @@ _G.pg.base.item_data_statistics[41398] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41399] = {
@@ -52037,7 +52235,6 @@ _G.pg.base.item_data_statistics[41399] = {
 	icon = "SquareIcon/beili",
 	id = 41399,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52058,6 +52255,7 @@ _G.pg.base.item_data_statistics[41399] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41400] = {
@@ -52067,7 +52265,6 @@ _G.pg.base.item_data_statistics[41400] = {
 	icon = "SquareIcon/z19",
 	id = 41400,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52088,6 +52285,7 @@ _G.pg.base.item_data_statistics[41400] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41401] = {
@@ -52097,7 +52295,6 @@ _G.pg.base.item_data_statistics[41401] = {
 	icon = "SquareIcon/z20",
 	id = 41401,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52118,6 +52315,7 @@ _G.pg.base.item_data_statistics[41401] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41402] = {
@@ -52127,7 +52325,6 @@ _G.pg.base.item_data_statistics[41402] = {
 	icon = "SquareIcon/z21",
 	id = 41402,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52148,6 +52345,7 @@ _G.pg.base.item_data_statistics[41402] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41403] = {
@@ -52157,7 +52355,6 @@ _G.pg.base.item_data_statistics[41403] = {
 	icon = "SquareIcon/Z46",
 	id = 41403,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52178,6 +52375,7 @@ _G.pg.base.item_data_statistics[41403] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41404] = {
@@ -52187,7 +52385,6 @@ _G.pg.base.item_data_statistics[41404] = {
 	icon = "SquareIcon/shenfeng",
 	id = 41404,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52208,6 +52405,7 @@ _G.pg.base.item_data_statistics[41404] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41405] = {
@@ -52217,7 +52415,6 @@ _G.pg.base.item_data_statistics[41405] = {
 	icon = "SquareIcon/songfeng",
 	id = 41405,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52238,6 +52435,7 @@ _G.pg.base.item_data_statistics[41405] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41406] = {
@@ -52247,7 +52445,6 @@ _G.pg.base.item_data_statistics[41406] = {
 	icon = "SquareIcon/muyue",
 	id = 41406,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52268,6 +52465,7 @@ _G.pg.base.item_data_statistics[41406] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41407] = {
@@ -52277,7 +52475,6 @@ _G.pg.base.item_data_statistics[41407] = {
 	icon = "SquareIcon/ruyue",
 	id = 41407,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52298,6 +52495,7 @@ _G.pg.base.item_data_statistics[41407] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41408] = {
@@ -52307,7 +52505,6 @@ _G.pg.base.item_data_statistics[41408] = {
 	icon = "SquareIcon/maoyue",
 	id = 41408,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52328,6 +52525,7 @@ _G.pg.base.item_data_statistics[41408] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41409] = {
@@ -52337,7 +52535,6 @@ _G.pg.base.item_data_statistics[41409] = {
 	icon = "SquareIcon/shuiwuyue",
 	id = 41409,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52358,6 +52555,7 @@ _G.pg.base.item_data_statistics[41409] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41410] = {
@@ -52367,7 +52565,6 @@ _G.pg.base.item_data_statistics[41410] = {
 	icon = "SquareIcon/wenyue",
 	id = 41410,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52388,6 +52585,7 @@ _G.pg.base.item_data_statistics[41410] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41411] = {
@@ -52397,7 +52595,6 @@ _G.pg.base.item_data_statistics[41411] = {
 	icon = "SquareIcon/changyue",
 	id = 41411,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52418,6 +52615,7 @@ _G.pg.base.item_data_statistics[41411] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41412] = {
@@ -52427,7 +52625,6 @@ _G.pg.base.item_data_statistics[41412] = {
 	icon = "SquareIcon/sanriyue",
 	id = 41412,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52448,6 +52645,7 @@ _G.pg.base.item_data_statistics[41412] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41413] = {
@@ -52457,7 +52655,6 @@ _G.pg.base.item_data_statistics[41413] = {
 	icon = "SquareIcon/jiangfeng",
 	id = 41413,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52478,6 +52675,7 @@ _G.pg.base.item_data_statistics[41413] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41414] = {
@@ -52487,7 +52685,6 @@ _G.pg.base.item_data_statistics[41414] = {
 	icon = "SquareIcon/xinyue_jp",
 	id = 41414,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52508,6 +52705,7 @@ _G.pg.base.item_data_statistics[41414] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41415] = {
@@ -52517,7 +52715,6 @@ _G.pg.base.item_data_statistics[41415] = {
 	icon = "SquareIcon/chunyue",
 	id = 41415,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52538,6 +52735,7 @@ _G.pg.base.item_data_statistics[41415] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41416] = {
@@ -52547,7 +52745,6 @@ _G.pg.base.item_data_statistics[41416] = {
 	icon = "SquareIcon/xiaoyue",
 	id = 41416,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52568,6 +52765,7 @@ _G.pg.base.item_data_statistics[41416] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41417] = {
@@ -52577,7 +52775,6 @@ _G.pg.base.item_data_statistics[41417] = {
 	icon = "SquareIcon/ladefute",
 	id = 41417,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52598,6 +52795,7 @@ _G.pg.base.item_data_statistics[41417] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41418] = {
@@ -52607,7 +52805,6 @@ _G.pg.base.item_data_statistics[41418] = {
 	icon = "SquareIcon/jiejinsi",
 	id = 41418,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52628,6 +52825,7 @@ _G.pg.base.item_data_statistics[41418] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41419] = {
@@ -52637,7 +52835,6 @@ _G.pg.base.item_data_statistics[41419] = {
 	icon = "SquareIcon/nigulasi",
 	id = 41419,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52658,6 +52855,7 @@ _G.pg.base.item_data_statistics[41419] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41420] = {
@@ -52667,7 +52865,6 @@ _G.pg.base.item_data_statistics[41420] = {
 	icon = "SquareIcon/lishiman",
 	id = 41420,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52688,6 +52885,7 @@ _G.pg.base.item_data_statistics[41420] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41421] = {
@@ -52697,7 +52895,6 @@ _G.pg.base.item_data_statistics[41421] = {
 	icon = "SquareIcon/huonululu",
 	id = 41421,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52718,6 +52915,7 @@ _G.pg.base.item_data_statistics[41421] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41422] = {
@@ -52727,7 +52925,6 @@ _G.pg.base.item_data_statistics[41422] = {
 	icon = "SquareIcon/shengluyisi",
 	id = 41422,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52748,6 +52945,7 @@ _G.pg.base.item_data_statistics[41422] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41423] = {
@@ -52757,7 +52955,6 @@ _G.pg.base.item_data_statistics[41423] = {
 	icon = "SquareIcon/qiubite",
 	id = 41423,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52778,6 +52975,7 @@ _G.pg.base.item_data_statistics[41423] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41424] = {
@@ -52787,7 +52985,6 @@ _G.pg.base.item_data_statistics[41424] = {
 	icon = "SquareIcon/zexi",
 	id = 41424,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52808,6 +53005,7 @@ _G.pg.base.item_data_statistics[41424] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41425] = {
@@ -52817,7 +53015,6 @@ _G.pg.base.item_data_statistics[41425] = {
 	icon = "SquareIcon/chuannei",
 	id = 41425,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52838,6 +53035,7 @@ _G.pg.base.item_data_statistics[41425] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41426] = {
@@ -52847,7 +53045,6 @@ _G.pg.base.item_data_statistics[41426] = {
 	icon = "SquareIcon/shentong",
 	id = 41426,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52868,6 +53065,7 @@ _G.pg.base.item_data_statistics[41426] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41427] = {
@@ -52877,7 +53075,6 @@ _G.pg.base.item_data_statistics[41427] = {
 	icon = "SquareIcon/nake",
 	id = 41427,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52898,6 +53095,7 @@ _G.pg.base.item_data_statistics[41427] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41428] = {
@@ -52907,7 +53105,6 @@ _G.pg.base.item_data_statistics[41428] = {
 	icon = "SquareIcon/pufeng",
 	id = 41428,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52928,6 +53125,7 @@ _G.pg.base.item_data_statistics[41428] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41429] = {
@@ -52937,7 +53135,6 @@ _G.pg.base.item_data_statistics[41429] = {
 	icon = "SquareIcon/jifeng",
 	id = 41429,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52958,6 +53155,7 @@ _G.pg.base.item_data_statistics[41429] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41430] = {
@@ -52967,7 +53165,6 @@ _G.pg.base.item_data_statistics[41430] = {
 	icon = "SquareIcon/bangfeng",
 	id = 41430,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -52988,6 +53185,7 @@ _G.pg.base.item_data_statistics[41430] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41431] = {
@@ -52997,7 +53195,6 @@ _G.pg.base.item_data_statistics[41431] = {
 	icon = "SquareIcon/gufeng",
 	id = 41431,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53018,6 +53215,7 @@ _G.pg.base.item_data_statistics[41431] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41432] = {
@@ -53027,7 +53225,6 @@ _G.pg.base.item_data_statistics[41432] = {
 	icon = "SquareIcon/sanli",
 	id = 41432,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53048,6 +53245,7 @@ _G.pg.base.item_data_statistics[41432] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41433] = {
@@ -53057,7 +53255,6 @@ _G.pg.base.item_data_statistics[41433] = {
 	icon = "SquareIcon/aheye",
 	id = 41433,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53078,6 +53275,7 @@ _G.pg.base.item_data_statistics[41433] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41434] = {
@@ -53087,7 +53285,6 @@ _G.pg.base.item_data_statistics[41434] = {
 	icon = "SquareIcon/wudi",
 	id = 41434,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53108,6 +53305,7 @@ _G.pg.base.item_data_statistics[41434] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41435] = {
@@ -53117,7 +53315,6 @@ _G.pg.base.item_data_statistics[41435] = {
 	icon = "SquareIcon/huoqiangshou",
 	id = 41435,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53138,6 +53335,7 @@ _G.pg.base.item_data_statistics[41435] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41436] = {
@@ -53147,7 +53345,6 @@ _G.pg.base.item_data_statistics[41436] = {
 	icon = "SquareIcon/feiji",
 	id = 41436,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53168,6 +53365,7 @@ _G.pg.base.item_data_statistics[41436] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41437] = {
@@ -53177,7 +53375,6 @@ _G.pg.base.item_data_statistics[41437] = {
 	icon = "SquareIcon/yamaijia",
 	id = 41437,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53198,6 +53395,7 @@ _G.pg.base.item_data_statistics[41437] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41438] = {
@@ -53207,7 +53405,6 @@ _G.pg.base.item_data_statistics[41438] = {
 	icon = "SquareIcon/mengbiliai",
 	id = 41438,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53228,6 +53425,7 @@ _G.pg.base.item_data_statistics[41438] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41439] = {
@@ -53237,7 +53435,6 @@ _G.pg.base.item_data_statistics[41439] = {
 	icon = "SquareIcon/danfo",
 	id = 41439,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53258,6 +53455,7 @@ _G.pg.base.item_data_statistics[41439] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41440] = {
@@ -53267,7 +53465,6 @@ _G.pg.base.item_data_statistics[41440] = {
 	icon = "SquareIcon/zhaochao",
 	id = 41440,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53288,6 +53485,7 @@ _G.pg.base.item_data_statistics[41440] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41441] = {
@@ -53297,7 +53495,6 @@ _G.pg.base.item_data_statistics[41441] = {
 	icon = "SquareIcon/dachao",
 	id = 41441,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53318,6 +53515,7 @@ _G.pg.base.item_data_statistics[41441] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41442] = {
@@ -53327,7 +53525,6 @@ _G.pg.base.item_data_statistics[41442] = {
 	icon = "SquareIcon/manchao",
 	id = 41442,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53348,6 +53545,7 @@ _G.pg.base.item_data_statistics[41442] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41443] = {
@@ -53357,7 +53555,6 @@ _G.pg.base.item_data_statistics[41443] = {
 	icon = "SquareIcon/huangchao",
 	id = 41443,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53378,6 +53575,7 @@ _G.pg.base.item_data_statistics[41443] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41444] = {
@@ -53387,7 +53585,6 @@ _G.pg.base.item_data_statistics[41444] = {
 	icon = "SquareIcon/beierfasite_younv",
 	id = 41444,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53408,6 +53605,7 @@ _G.pg.base.item_data_statistics[41444] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41445] = {
@@ -53417,7 +53615,6 @@ _G.pg.base.item_data_statistics[41445] = {
 	icon = "SquareIcon/I19",
 	id = 41445,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53438,6 +53635,7 @@ _G.pg.base.item_data_statistics[41445] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41446] = {
@@ -53447,7 +53645,6 @@ _G.pg.base.item_data_statistics[41446] = {
 	icon = "SquareIcon/I26",
 	id = 41446,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53468,6 +53665,7 @@ _G.pg.base.item_data_statistics[41446] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41447] = {
@@ -53477,7 +53675,6 @@ _G.pg.base.item_data_statistics[41447] = {
 	icon = "SquareIcon/I58",
 	id = 41447,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53498,6 +53695,7 @@ _G.pg.base.item_data_statistics[41447] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41448] = {
@@ -53507,7 +53705,6 @@ _G.pg.base.item_data_statistics[41448] = {
 	icon = "SquareIcon/U81",
 	id = 41448,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53528,6 +53725,7 @@ _G.pg.base.item_data_statistics[41448] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41449] = {
@@ -53537,7 +53735,6 @@ _G.pg.base.item_data_statistics[41449] = {
 	icon = "SquareIcon/tiaoyu",
 	id = 41449,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53558,6 +53755,7 @@ _G.pg.base.item_data_statistics[41449] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41450] = {
@@ -53567,7 +53765,6 @@ _G.pg.base.item_data_statistics[41450] = {
 	icon = "SquareIcon/U47",
 	id = 41450,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53588,6 +53785,7 @@ _G.pg.base.item_data_statistics[41450] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41451] = {
@@ -53597,7 +53795,6 @@ _G.pg.base.item_data_statistics[41451] = {
 	icon = "SquareIcon/U557",
 	id = 41451,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53618,6 +53815,7 @@ _G.pg.base.item_data_statistics[41451] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41452] = {
@@ -53627,7 +53825,6 @@ _G.pg.base.item_data_statistics[41452] = {
 	icon = "SquareIcon/Z35",
 	id = 41452,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53648,6 +53845,7 @@ _G.pg.base.item_data_statistics[41452] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41453] = {
@@ -53657,7 +53855,6 @@ _G.pg.base.item_data_statistics[41453] = {
 	icon = "SquareIcon/z18",
 	id = 41453,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53678,6 +53875,7 @@ _G.pg.base.item_data_statistics[41453] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41454] = {
@@ -53687,7 +53885,6 @@ _G.pg.base.item_data_statistics[41454] = {
 	icon = "SquareIcon/kaixuan",
 	id = 41454,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53708,6 +53905,7 @@ _G.pg.base.item_data_statistics[41454] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41455] = {
@@ -53717,7 +53915,6 @@ _G.pg.base.item_data_statistics[41455] = {
 	icon = "SquareIcon/fuerban",
 	id = 41455,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53738,6 +53935,7 @@ _G.pg.base.item_data_statistics[41455] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41456] = {
@@ -53747,7 +53945,6 @@ _G.pg.base.item_data_statistics[41456] = {
 	icon = "SquareIcon/aimierbeierding",
 	id = 41456,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53768,6 +53965,7 @@ _G.pg.base.item_data_statistics[41456] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41457] = {
@@ -53777,7 +53975,6 @@ _G.pg.base.item_data_statistics[41457] = {
 	icon = "SquareIcon/xukufu",
 	id = 41457,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53798,6 +53995,7 @@ _G.pg.base.item_data_statistics[41457] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41458] = {
@@ -53807,7 +54005,6 @@ _G.pg.base.item_data_statistics[41458] = {
 	icon = "SquareIcon/lemaer",
 	id = 41458,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53828,6 +54025,7 @@ _G.pg.base.item_data_statistics[41458] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41459] = {
@@ -53837,7 +54035,6 @@ _G.pg.base.item_data_statistics[41459] = {
 	icon = "SquareIcon/dunkeerke",
 	id = 41459,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53858,6 +54055,7 @@ _G.pg.base.item_data_statistics[41459] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41460] = {
@@ -53867,7 +54065,6 @@ _G.pg.base.item_data_statistics[41460] = {
 	icon = "SquareIcon/rangbaer",
 	id = 41460,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53888,6 +54085,7 @@ _G.pg.base.item_data_statistics[41460] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41461] = {
@@ -53897,7 +54095,6 @@ _G.pg.base.item_data_statistics[41461] = {
 	icon = "SquareIcon/masazhusai",
 	id = 41461,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53918,6 +54115,7 @@ _G.pg.base.item_data_statistics[41461] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41462] = {
@@ -53927,7 +54125,6 @@ _G.pg.base.item_data_statistics[41462] = {
 	icon = "SquareIcon/bushi",
 	id = 41462,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53948,6 +54145,7 @@ _G.pg.base.item_data_statistics[41462] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41463] = {
@@ -53957,7 +54155,6 @@ _G.pg.base.item_data_statistics[41463] = {
 	icon = "SquareIcon/banrenma",
 	id = 41463,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -53978,6 +54175,7 @@ _G.pg.base.item_data_statistics[41463] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41464] = {
@@ -53987,7 +54185,6 @@ _G.pg.base.item_data_statistics[41464] = {
 	icon = "SquareIcon/aisaikesi",
 	id = 41464,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54008,6 +54205,7 @@ _G.pg.base.item_data_statistics[41464] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41465] = {
@@ -54017,7 +54215,6 @@ _G.pg.base.item_data_statistics[41465] = {
 	icon = "SquareIcon/daqinghuayu",
 	id = 41465,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54038,6 +54235,7 @@ _G.pg.base.item_data_statistics[41465] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41466] = {
@@ -54047,7 +54245,6 @@ _G.pg.base.item_data_statistics[41466] = {
 	icon = "SquareIcon/lumang",
 	id = 41466,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54068,6 +54265,7 @@ _G.pg.base.item_data_statistics[41466] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41467] = {
@@ -54077,7 +54275,6 @@ _G.pg.base.item_data_statistics[41467] = {
 	icon = "SquareIcon/mengfeisi",
 	id = 41467,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54098,6 +54295,7 @@ _G.pg.base.item_data_statistics[41467] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41468] = {
@@ -54107,7 +54305,6 @@ _G.pg.base.item_data_statistics[41468] = {
 	icon = "SquareIcon/niukasier",
 	id = 41468,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54128,6 +54325,7 @@ _G.pg.base.item_data_statistics[41468] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41469] = {
@@ -54137,7 +54335,6 @@ _G.pg.base.item_data_statistics[41469] = {
 	icon = "SquareIcon/huobi",
 	id = 41469,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54158,6 +54355,7 @@ _G.pg.base.item_data_statistics[41469] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41470] = {
@@ -54167,7 +54365,6 @@ _G.pg.base.item_data_statistics[41470] = {
 	icon = "SquareIcon/keerke",
 	id = 41470,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54188,6 +54385,7 @@ _G.pg.base.item_data_statistics[41470] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41471] = {
@@ -54197,7 +54395,6 @@ _G.pg.base.item_data_statistics[41471] = {
 	icon = "SquareIcon/mingniabolisi",
 	id = 41471,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54218,6 +54415,7 @@ _G.pg.base.item_data_statistics[41471] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41472] = {
@@ -54227,7 +54425,6 @@ _G.pg.base.item_data_statistics[41472] = {
 	icon = "SquareIcon/heizewude",
 	id = 41472,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54248,6 +54445,7 @@ _G.pg.base.item_data_statistics[41472] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41473] = {
@@ -54257,7 +54455,6 @@ _G.pg.base.item_data_statistics[41473] = {
 	icon = "SquareIcon/kangkede",
 	id = 41473,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54278,6 +54475,7 @@ _G.pg.base.item_data_statistics[41473] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41474] = {
@@ -54287,7 +54485,6 @@ _G.pg.base.item_data_statistics[41474] = {
 	icon = "SquareIcon/qifeng",
 	id = 41474,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54308,6 +54505,7 @@ _G.pg.base.item_data_statistics[41474] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41475] = {
@@ -54317,7 +54515,6 @@ _G.pg.base.item_data_statistics[41475] = {
 	icon = "SquareIcon/juanbo",
 	id = 41475,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54338,6 +54535,7 @@ _G.pg.base.item_data_statistics[41475] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41476] = {
@@ -54347,7 +54545,6 @@ _G.pg.base.item_data_statistics[41476] = {
 	icon = "SquareIcon/tianlangxing",
 	id = 41476,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54368,6 +54565,7 @@ _G.pg.base.item_data_statistics[41476] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41477] = {
@@ -54377,7 +54575,6 @@ _G.pg.base.item_data_statistics[41477] = {
 	icon = "SquareIcon/kulasuo",
 	id = 41477,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54398,6 +54595,7 @@ _G.pg.base.item_data_statistics[41477] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41478] = {
@@ -54407,7 +54605,6 @@ _G.pg.base.item_data_statistics[41478] = {
 	icon = "SquareIcon/biaoyu",
 	id = 41478,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54428,6 +54625,7 @@ _G.pg.base.item_data_statistics[41478] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41479] = {
@@ -54437,7 +54635,6 @@ _G.pg.base.item_data_statistics[41479] = {
 	icon = "SquareIcon/jinboli",
 	id = 41479,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54458,6 +54655,7 @@ _G.pg.base.item_data_statistics[41479] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41480] = {
@@ -54467,7 +54665,6 @@ _G.pg.base.item_data_statistics[41480] = {
 	icon = "SquareIcon/malani",
 	id = 41480,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54488,6 +54685,7 @@ _G.pg.base.item_data_statistics[41480] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41481] = {
@@ -54497,7 +54695,6 @@ _G.pg.base.item_data_statistics[41481] = {
 	icon = "SquareIcon/zhuiganzhe",
 	id = 41481,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54518,6 +54715,7 @@ _G.pg.base.item_data_statistics[41481] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41498] = {
@@ -54527,7 +54725,6 @@ _G.pg.base.item_data_statistics[41498] = {
 	icon = "SquareIcon/haiwangxing",
 	id = 41498,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54548,6 +54745,7 @@ _G.pg.base.item_data_statistics[41498] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41499] = {
@@ -54557,7 +54755,6 @@ _G.pg.base.item_data_statistics[41499] = {
 	icon = "SquareIcon/junzhu",
 	id = 41499,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54578,6 +54775,7 @@ _G.pg.base.item_data_statistics[41499] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41500] = {
@@ -54587,7 +54785,6 @@ _G.pg.base.item_data_statistics[41500] = {
 	icon = "SquareIcon/yichui",
 	id = 41500,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54608,6 +54805,7 @@ _G.pg.base.item_data_statistics[41500] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41501] = {
@@ -54617,7 +54815,6 @@ _G.pg.base.item_data_statistics[41501] = {
 	icon = "SquareIcon/chuyun",
 	id = 41501,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54638,6 +54835,7 @@ _G.pg.base.item_data_statistics[41501] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41502] = {
@@ -54647,7 +54845,6 @@ _G.pg.base.item_data_statistics[41502] = {
 	icon = "SquareIcon/luoen",
 	id = 41502,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54668,6 +54865,7 @@ _G.pg.base.item_data_statistics[41502] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41503] = {
@@ -54677,7 +54875,6 @@ _G.pg.base.item_data_statistics[41503] = {
 	icon = "SquareIcon/luyijiushi",
 	id = 41503,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54698,6 +54895,7 @@ _G.pg.base.item_data_statistics[41503] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41601] = {
@@ -54707,7 +54905,6 @@ _G.pg.base.item_data_statistics[41601] = {
 	icon = "SquareIcon/gin",
 	id = 41601,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54728,6 +54925,7 @@ _G.pg.base.item_data_statistics[41601] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41602] = {
@@ -54737,7 +54935,6 @@ _G.pg.base.item_data_statistics[41602] = {
 	icon = "SquareIcon/kin",
 	id = 41602,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54758,6 +54955,7 @@ _G.pg.base.item_data_statistics[41602] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41603] = {
@@ -54767,7 +54965,6 @@ _G.pg.base.item_data_statistics[41603] = {
 	icon = "SquareIcon/kaxin",
 	id = 41603,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54788,6 +54985,7 @@ _G.pg.base.item_data_statistics[41603] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41604] = {
@@ -54797,7 +54995,6 @@ _G.pg.base.item_data_statistics[41604] = {
 	icon = "SquareIcon/tangsi",
 	id = 41604,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54818,6 +55015,7 @@ _G.pg.base.item_data_statistics[41604] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41605] = {
@@ -54827,7 +55025,6 @@ _G.pg.base.item_data_statistics[41605] = {
 	icon = "SquareIcon/gelideli",
 	id = 41605,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54848,6 +55045,7 @@ _G.pg.base.item_data_statistics[41605] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41606] = {
@@ -54857,7 +55055,6 @@ _G.pg.base.item_data_statistics[41606] = {
 	icon = "SquareIcon/keleiwen",
 	id = 41606,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54878,6 +55075,7 @@ _G.pg.base.item_data_statistics[41606] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41607] = {
@@ -54887,7 +55085,6 @@ _G.pg.base.item_data_statistics[41607] = {
 	icon = "SquareIcon/maikaoer",
 	id = 41607,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54908,6 +55105,7 @@ _G.pg.base.item_data_statistics[41607] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41608] = {
@@ -54917,7 +55115,6 @@ _G.pg.base.item_data_statistics[41608] = {
 	icon = "SquareIcon/moli",
 	id = 41608,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54938,6 +55135,7 @@ _G.pg.base.item_data_statistics[41608] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41609] = {
@@ -54947,7 +55145,6 @@ _G.pg.base.item_data_statistics[41609] = {
 	icon = "SquareIcon/fulaiche",
 	id = 41609,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54968,6 +55165,7 @@ _G.pg.base.item_data_statistics[41609] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41610] = {
@@ -54977,7 +55175,6 @@ _G.pg.base.item_data_statistics[41610] = {
 	icon = "SquareIcon/aosiben",
 	id = 41610,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -54998,6 +55195,7 @@ _G.pg.base.item_data_statistics[41610] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41611] = {
@@ -55007,7 +55205,6 @@ _G.pg.base.item_data_statistics[41611] = {
 	icon = "SquareIcon/saqieer",
 	id = 41611,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55028,6 +55225,7 @@ _G.pg.base.item_data_statistics[41611] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41612] = {
@@ -55037,7 +55235,6 @@ _G.pg.base.item_data_statistics[41612] = {
 	icon = "SquareIcon/aolike",
 	id = 41612,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55058,6 +55255,7 @@ _G.pg.base.item_data_statistics[41612] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41613] = {
@@ -55067,7 +55265,6 @@ _G.pg.base.item_data_statistics[41613] = {
 	icon = "SquareIcon/fute",
 	id = 41613,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55088,6 +55285,7 @@ _G.pg.base.item_data_statistics[41613] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41614] = {
@@ -55097,7 +55295,6 @@ _G.pg.base.item_data_statistics[41614] = {
 	icon = "SquareIcon/sipengsi",
 	id = 41614,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55118,6 +55315,7 @@ _G.pg.base.item_data_statistics[41614] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41615] = {
@@ -55127,7 +55325,6 @@ _G.pg.base.item_data_statistics[41615] = {
 	icon = "SquareIcon/bensen",
 	id = 41615,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55148,6 +55345,7 @@ _G.pg.base.item_data_statistics[41615] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41616] = {
@@ -55157,7 +55355,6 @@ _G.pg.base.item_data_statistics[41616] = {
 	icon = "SquareIcon/lafei",
 	id = 41616,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55178,6 +55375,7 @@ _G.pg.base.item_data_statistics[41616] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41617] = {
@@ -55187,7 +55385,6 @@ _G.pg.base.item_data_statistics[41617] = {
 	icon = "SquareIcon/ximusi",
 	id = 41617,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55208,6 +55405,7 @@ _G.pg.base.item_data_statistics[41617] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41618] = {
@@ -55217,7 +55415,6 @@ _G.pg.base.item_data_statistics[41618] = {
 	icon = "SquareIcon/haman",
 	id = 41618,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55238,6 +55435,7 @@ _G.pg.base.item_data_statistics[41618] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41619] = {
@@ -55247,7 +55445,6 @@ _G.pg.base.item_data_statistics[41619] = {
 	icon = "SquareIcon/aierdeliqi",
 	id = 41619,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55268,6 +55465,7 @@ _G.pg.base.item_data_statistics[41619] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41620] = {
@@ -55277,7 +55475,6 @@ _G.pg.base.item_data_statistics[41620] = {
 	icon = "SquareIcon/aomaha",
 	id = 41620,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55298,6 +55495,7 @@ _G.pg.base.item_data_statistics[41620] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41621] = {
@@ -55307,7 +55505,6 @@ _G.pg.base.item_data_statistics[41621] = {
 	icon = "SquareIcon/luoli",
 	id = 41621,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55328,6 +55525,7 @@ _G.pg.base.item_data_statistics[41621] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41622] = {
@@ -55337,7 +55535,6 @@ _G.pg.base.item_data_statistics[41622] = {
 	icon = "SquareIcon/bulukelin",
 	id = 41622,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55358,6 +55555,7 @@ _G.pg.base.item_data_statistics[41622] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41623] = {
@@ -55367,7 +55565,6 @@ _G.pg.base.item_data_statistics[41623] = {
 	icon = "SquareIcon/feinikesi",
 	id = 41623,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55388,6 +55585,7 @@ _G.pg.base.item_data_statistics[41623] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41624] = {
@@ -55397,7 +55595,6 @@ _G.pg.base.item_data_statistics[41624] = {
 	icon = "SquareIcon/hailunna",
 	id = 41624,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55418,6 +55615,7 @@ _G.pg.base.item_data_statistics[41624] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41625] = {
@@ -55427,7 +55625,6 @@ _G.pg.base.item_data_statistics[41625] = {
 	icon = "SquareIcon/yatelanda",
 	id = 41625,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55448,6 +55645,7 @@ _G.pg.base.item_data_statistics[41625] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41626] = {
@@ -55457,7 +55655,6 @@ _G.pg.base.item_data_statistics[41626] = {
 	icon = "SquareIcon/zhunuo",
 	id = 41626,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55478,6 +55675,7 @@ _G.pg.base.item_data_statistics[41626] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41627] = {
@@ -55487,7 +55685,6 @@ _G.pg.base.item_data_statistics[41627] = {
 	icon = "SquareIcon/shengdiyage",
 	id = 41627,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55508,6 +55705,7 @@ _G.pg.base.item_data_statistics[41627] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41628] = {
@@ -55517,7 +55715,6 @@ _G.pg.base.item_data_statistics[41628] = {
 	icon = "SquareIcon/kelifulan",
 	id = 41628,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55538,6 +55735,7 @@ _G.pg.base.item_data_statistics[41628] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41629] = {
@@ -55547,7 +55745,6 @@ _G.pg.base.item_data_statistics[41629] = {
 	icon = "SquareIcon/gelunbiya",
 	id = 41629,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55568,6 +55765,7 @@ _G.pg.base.item_data_statistics[41629] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41630] = {
@@ -55577,7 +55775,6 @@ _G.pg.base.item_data_statistics[41630] = {
 	icon = "SquareIcon/pengsakela",
 	id = 41630,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55598,6 +55795,7 @@ _G.pg.base.item_data_statistics[41630] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41631] = {
@@ -55607,7 +55805,6 @@ _G.pg.base.item_data_statistics[41631] = {
 	icon = "SquareIcon/yanhucheng",
 	id = 41631,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55628,6 +55825,7 @@ _G.pg.base.item_data_statistics[41631] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41632] = {
@@ -55637,7 +55835,6 @@ _G.pg.base.item_data_statistics[41632] = {
 	icon = "SquareIcon/beianpudun",
 	id = 41632,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55658,6 +55855,7 @@ _G.pg.base.item_data_statistics[41632] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41633] = {
@@ -55667,7 +55865,6 @@ _G.pg.base.item_data_statistics[41633] = {
 	icon = "SquareIcon/zhijiage",
 	id = 41633,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55688,6 +55885,7 @@ _G.pg.base.item_data_statistics[41633] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41634] = {
@@ -55697,7 +55895,6 @@ _G.pg.base.item_data_statistics[41634] = {
 	icon = "SquareIcon/xiusidun",
 	id = 41634,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55718,6 +55915,7 @@ _G.pg.base.item_data_statistics[41634] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41635] = {
@@ -55727,7 +55925,6 @@ _G.pg.base.item_data_statistics[41635] = {
 	icon = "SquareIcon/botelan",
 	id = 41635,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55748,6 +55945,7 @@ _G.pg.base.item_data_statistics[41635] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41636] = {
@@ -55757,7 +55955,6 @@ _G.pg.base.item_data_statistics[41636] = {
 	icon = "SquareIcon/bolisi",
 	id = 41636,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55778,6 +55975,7 @@ _G.pg.base.item_data_statistics[41636] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41637] = {
@@ -55787,7 +55985,6 @@ _G.pg.base.item_data_statistics[41637] = {
 	icon = "SquareIcon/asituoliya",
 	id = 41637,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55808,6 +56005,7 @@ _G.pg.base.item_data_statistics[41637] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41638] = {
@@ -55817,7 +56015,6 @@ _G.pg.base.item_data_statistics[41638] = {
 	icon = "SquareIcon/kunxi",
 	id = 41638,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55838,6 +56035,7 @@ _G.pg.base.item_data_statistics[41638] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41639] = {
@@ -55847,7 +56045,6 @@ _G.pg.base.item_data_statistics[41639] = {
 	icon = "SquareIcon/wensensi",
 	id = 41639,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55868,6 +56065,7 @@ _G.pg.base.item_data_statistics[41639] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41640] = {
@@ -55877,7 +56075,6 @@ _G.pg.base.item_data_statistics[41640] = {
 	icon = "SquareIcon/weiqita",
 	id = 41640,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55898,6 +56095,7 @@ _G.pg.base.item_data_statistics[41640] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41641] = {
@@ -55907,7 +56105,6 @@ _G.pg.base.item_data_statistics[41641] = {
 	icon = "SquareIcon/neihuada",
 	id = 41641,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55928,6 +56125,7 @@ _G.pg.base.item_data_statistics[41641] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41642] = {
@@ -55937,7 +56135,6 @@ _G.pg.base.item_data_statistics[41642] = {
 	icon = "SquareIcon/ekelahema",
 	id = 41642,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55958,6 +56155,7 @@ _G.pg.base.item_data_statistics[41642] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41643] = {
@@ -55967,7 +56165,6 @@ _G.pg.base.item_data_statistics[41643] = {
 	icon = "SquareIcon/binxifaniya",
 	id = 41643,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -55988,6 +56185,7 @@ _G.pg.base.item_data_statistics[41643] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41644] = {
@@ -55997,7 +56195,6 @@ _G.pg.base.item_data_statistics[41644] = {
 	icon = "SquareIcon/yalisangna",
 	id = 41644,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56018,6 +56215,7 @@ _G.pg.base.item_data_statistics[41644] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41645] = {
@@ -56027,7 +56225,6 @@ _G.pg.base.item_data_statistics[41645] = {
 	icon = "SquareIcon/tiannaxi",
 	id = 41645,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56048,6 +56245,7 @@ _G.pg.base.item_data_statistics[41645] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41646] = {
@@ -56057,7 +56255,6 @@ _G.pg.base.item_data_statistics[41646] = {
 	icon = "SquareIcon/jialifuniya",
 	id = 41646,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56078,6 +56275,7 @@ _G.pg.base.item_data_statistics[41646] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41647] = {
@@ -56087,7 +56285,6 @@ _G.pg.base.item_data_statistics[41647] = {
 	icon = "SquareIcon/keluoladuo",
 	id = 41647,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56108,6 +56305,7 @@ _G.pg.base.item_data_statistics[41647] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41648] = {
@@ -56117,7 +56315,6 @@ _G.pg.base.item_data_statistics[41648] = {
 	icon = "SquareIcon/malilan",
 	id = 41648,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56138,6 +56335,7 @@ _G.pg.base.item_data_statistics[41648] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41649] = {
@@ -56147,7 +56345,6 @@ _G.pg.base.item_data_statistics[41649] = {
 	icon = "SquareIcon/xifujiniya",
 	id = 41649,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56168,6 +56365,7 @@ _G.pg.base.item_data_statistics[41649] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41650] = {
@@ -56177,7 +56375,6 @@ _G.pg.base.item_data_statistics[41650] = {
 	icon = "SquareIcon/beikaluolaina",
 	id = 41650,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56198,6 +56395,7 @@ _G.pg.base.item_data_statistics[41650] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41651] = {
@@ -56207,7 +56405,6 @@ _G.pg.base.item_data_statistics[41651] = {
 	icon = "SquareIcon/huashengdun",
 	id = 41651,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56228,6 +56425,7 @@ _G.pg.base.item_data_statistics[41651] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41652] = {
@@ -56237,7 +56435,6 @@ _G.pg.base.item_data_statistics[41652] = {
 	icon = "SquareIcon/nandaketa",
 	id = 41652,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56258,6 +56455,7 @@ _G.pg.base.item_data_statistics[41652] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41653] = {
@@ -56267,7 +56465,6 @@ _G.pg.base.item_data_statistics[41653] = {
 	icon = "SquareIcon/changdao",
 	id = 41653,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56288,6 +56485,7 @@ _G.pg.base.item_data_statistics[41653] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41654] = {
@@ -56297,7 +56495,6 @@ _G.pg.base.item_data_statistics[41654] = {
 	icon = "SquareIcon/boge",
 	id = 41654,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56318,6 +56515,7 @@ _G.pg.base.item_data_statistics[41654] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41655] = {
@@ -56327,7 +56525,6 @@ _G.pg.base.item_data_statistics[41655] = {
 	icon = "SquareIcon/lanli",
 	id = 41655,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56348,6 +56545,7 @@ _G.pg.base.item_data_statistics[41655] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41656] = {
@@ -56357,7 +56555,6 @@ _G.pg.base.item_data_statistics[41656] = {
 	icon = "SquareIcon/liekexingdun",
 	id = 41656,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56378,6 +56575,7 @@ _G.pg.base.item_data_statistics[41656] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41657] = {
@@ -56387,7 +56585,6 @@ _G.pg.base.item_data_statistics[41657] = {
 	icon = "SquareIcon/salatuojia",
 	id = 41657,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56408,6 +56605,7 @@ _G.pg.base.item_data_statistics[41657] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41658] = {
@@ -56417,7 +56615,6 @@ _G.pg.base.item_data_statistics[41658] = {
 	icon = "SquareIcon/tujizhe",
 	id = 41658,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56438,6 +56635,7 @@ _G.pg.base.item_data_statistics[41658] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41659] = {
@@ -56447,7 +56645,6 @@ _G.pg.base.item_data_statistics[41659] = {
 	icon = "SquareIcon/yuekecheng",
 	id = 41659,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56468,6 +56665,7 @@ _G.pg.base.item_data_statistics[41659] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41660] = {
@@ -56477,7 +56675,6 @@ _G.pg.base.item_data_statistics[41660] = {
 	icon = "SquareIcon/qiye",
 	id = 41660,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56498,6 +56695,7 @@ _G.pg.base.item_data_statistics[41660] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41661] = {
@@ -56507,7 +56705,6 @@ _G.pg.base.item_data_statistics[41661] = {
 	icon = "SquareIcon/dahuangfeng",
 	id = 41661,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56528,6 +56725,7 @@ _G.pg.base.item_data_statistics[41661] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41662] = {
@@ -56537,7 +56735,6 @@ _G.pg.base.item_data_statistics[41662] = {
 	icon = "SquareIcon/hufeng",
 	id = 41662,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56558,6 +56755,7 @@ _G.pg.base.item_data_statistics[41662] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41663] = {
@@ -56567,7 +56765,6 @@ _G.pg.base.item_data_statistics[41663] = {
 	icon = "SquareIcon/zaoshen",
 	id = 41663,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56588,6 +56785,7 @@ _G.pg.base.item_data_statistics[41663] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41664] = {
@@ -56597,7 +56795,6 @@ _G.pg.base.item_data_statistics[41664] = {
 	icon = "SquareIcon/nvjiang",
 	id = 41664,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56618,6 +56815,7 @@ _G.pg.base.item_data_statistics[41664] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41665] = {
@@ -56627,7 +56825,6 @@ _G.pg.base.item_data_statistics[41665] = {
 	icon = "SquareIcon/akasita",
 	id = 41665,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56648,6 +56845,7 @@ _G.pg.base.item_data_statistics[41665] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41666] = {
@@ -56657,7 +56855,6 @@ _G.pg.base.item_data_statistics[41666] = {
 	icon = "SquareIcon/rexin",
 	id = 41666,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56678,6 +56875,7 @@ _G.pg.base.item_data_statistics[41666] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41667] = {
@@ -56687,7 +56885,6 @@ _G.pg.base.item_data_statistics[41667] = {
 	icon = "SquareIcon/xiaolietuquan",
 	id = 41667,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56708,6 +56905,7 @@ _G.pg.base.item_data_statistics[41667] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41668] = {
@@ -56717,7 +56915,6 @@ _G.pg.base.item_data_statistics[41668] = {
 	icon = "SquareIcon/dadouquan",
 	id = 41668,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56738,6 +56935,7 @@ _G.pg.base.item_data_statistics[41668] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41669] = {
@@ -56747,7 +56945,6 @@ _G.pg.base.item_data_statistics[41669] = {
 	icon = "SquareIcon/huixing",
 	id = 41669,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56768,6 +56965,7 @@ _G.pg.base.item_data_statistics[41669] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41670] = {
@@ -56777,7 +56975,6 @@ _G.pg.base.item_data_statistics[41670] = {
 	icon = "SquareIcon/xinyue",
 	id = 41670,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56798,6 +56995,7 @@ _G.pg.base.item_data_statistics[41670] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41671] = {
@@ -56807,7 +57005,6 @@ _G.pg.base.item_data_statistics[41671] = {
 	icon = "SquareIcon/xiaotiane",
 	id = 41671,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56828,6 +57025,7 @@ _G.pg.base.item_data_statistics[41671] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41672] = {
@@ -56837,7 +57035,6 @@ _G.pg.base.item_data_statistics[41672] = {
 	icon = "SquareIcon/huti",
 	id = 41672,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56858,6 +57055,7 @@ _G.pg.base.item_data_statistics[41672] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41673] = {
@@ -56867,7 +57065,6 @@ _G.pg.base.item_data_statistics[41673] = {
 	icon = "SquareIcon/mingyunnvshen",
 	id = 41673,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56888,6 +57085,7 @@ _G.pg.base.item_data_statistics[41673] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41674] = {
@@ -56897,7 +57095,6 @@ _G.pg.base.item_data_statistics[41674] = {
 	icon = "SquareIcon/gelunweier",
 	id = 41674,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56918,6 +57115,7 @@ _G.pg.base.item_data_statistics[41674] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41675] = {
@@ -56927,7 +57125,6 @@ _G.pg.base.item_data_statistics[41675] = {
 	icon = "SquareIcon/yinghuochong",
 	id = 41675,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56948,6 +57145,7 @@ _G.pg.base.item_data_statistics[41675] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41676] = {
@@ -56957,7 +57155,6 @@ _G.pg.base.item_data_statistics[41676] = {
 	icon = "SquareIcon/biaoqiang",
 	id = 41676,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -56978,6 +57175,7 @@ _G.pg.base.item_data_statistics[41676] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41677] = {
@@ -56987,7 +57185,6 @@ _G.pg.base.item_data_statistics[41677] = {
 	icon = "SquareIcon/tianhou",
 	id = 41677,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57008,6 +57205,7 @@ _G.pg.base.item_data_statistics[41677] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41678] = {
@@ -57017,7 +57215,6 @@ _G.pg.base.item_data_statistics[41678] = {
 	icon = "SquareIcon/xixuegui",
 	id = 41678,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57038,6 +57235,7 @@ _G.pg.base.item_data_statistics[41678] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41679] = {
@@ -57047,7 +57245,6 @@ _G.pg.base.item_data_statistics[41679] = {
 	icon = "SquareIcon/liande",
 	id = 41679,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57068,6 +57265,7 @@ _G.pg.base.item_data_statistics[41679] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41680] = {
@@ -57077,7 +57275,6 @@ _G.pg.base.item_data_statistics[41680] = {
 	icon = "SquareIcon/ajilisi",
 	id = 41680,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57098,6 +57295,7 @@ _G.pg.base.item_data_statistics[41680] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41681] = {
@@ -57107,7 +57305,6 @@ _G.pg.base.item_data_statistics[41681] = {
 	icon = "SquareIcon/ajiakesi",
 	id = 41681,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57128,6 +57325,7 @@ _G.pg.base.item_data_statistics[41681] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41682] = {
@@ -57137,7 +57335,6 @@ _G.pg.base.item_data_statistics[41682] = {
 	icon = "SquareIcon/xiefeierde",
 	id = 41682,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57158,6 +57355,7 @@ _G.pg.base.item_data_statistics[41682] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41683] = {
@@ -57167,7 +57365,6 @@ _G.pg.base.item_data_statistics[41683] = {
 	icon = "SquareIcon/aidingbao",
 	id = 41683,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57188,6 +57385,7 @@ _G.pg.base.item_data_statistics[41683] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41684] = {
@@ -57197,7 +57395,6 @@ _G.pg.base.item_data_statistics[41684] = {
 	icon = "SquareIcon/beierfasite",
 	id = 41684,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57218,6 +57415,7 @@ _G.pg.base.item_data_statistics[41684] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41685] = {
@@ -57227,7 +57425,6 @@ _G.pg.base.item_data_statistics[41685] = {
 	icon = "SquareIcon/aruituosha",
 	id = 41685,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57248,6 +57445,7 @@ _G.pg.base.item_data_statistics[41685] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41686] = {
@@ -57257,7 +57455,6 @@ _G.pg.base.item_data_statistics[41686] = {
 	icon = "SquareIcon/jialadiya",
 	id = 41686,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57278,6 +57475,7 @@ _G.pg.base.item_data_statistics[41686] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41687] = {
@@ -57287,7 +57485,6 @@ _G.pg.base.item_data_statistics[41687] = {
 	icon = "SquareIcon/ouruola",
 	id = 41687,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57308,6 +57505,7 @@ _G.pg.base.item_data_statistics[41687] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41688] = {
@@ -57317,7 +57515,6 @@ _G.pg.base.item_data_statistics[41688] = {
 	icon = "SquareIcon/lundun",
 	id = 41688,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57338,6 +57535,7 @@ _G.pg.base.item_data_statistics[41688] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41689] = {
@@ -57347,7 +57545,6 @@ _G.pg.base.item_data_statistics[41689] = {
 	icon = "SquareIcon/shiluopujun",
 	id = 41689,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57368,6 +57565,7 @@ _G.pg.base.item_data_statistics[41689] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41690] = {
@@ -57377,7 +57575,6 @@ _G.pg.base.item_data_statistics[41690] = {
 	icon = "SquareIcon/kente",
 	id = 41690,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57398,6 +57595,7 @@ _G.pg.base.item_data_statistics[41690] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41691] = {
@@ -57407,7 +57605,6 @@ _G.pg.base.item_data_statistics[41691] = {
 	icon = "SquareIcon/safuke",
 	id = 41691,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57428,6 +57625,7 @@ _G.pg.base.item_data_statistics[41691] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41692] = {
@@ -57437,7 +57635,6 @@ _G.pg.base.item_data_statistics[41692] = {
 	icon = "SquareIcon/nuofuke",
 	id = 41692,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57458,6 +57655,7 @@ _G.pg.base.item_data_statistics[41692] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41693] = {
@@ -57467,7 +57665,6 @@ _G.pg.base.item_data_statistics[41693] = {
 	icon = "SquareIcon/duosaitejun",
 	id = 41693,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57488,6 +57685,7 @@ _G.pg.base.item_data_statistics[41693] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41694] = {
@@ -57497,7 +57695,6 @@ _G.pg.base.item_data_statistics[41694] = {
 	icon = "SquareIcon/yueke",
 	id = 41694,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57518,6 +57715,7 @@ _G.pg.base.item_data_statistics[41694] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41695] = {
@@ -57527,7 +57725,6 @@ _G.pg.base.item_data_statistics[41695] = {
 	icon = "SquareIcon/aikesaite",
 	id = 41695,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57548,6 +57745,7 @@ _G.pg.base.item_data_statistics[41695] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41696] = {
@@ -57557,7 +57755,6 @@ _G.pg.base.item_data_statistics[41696] = {
 	icon = "SquareIcon/susaikesi",
 	id = 41696,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57578,6 +57775,7 @@ _G.pg.base.item_data_statistics[41696] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41697] = {
@@ -57587,7 +57785,6 @@ _G.pg.base.item_data_statistics[41697] = {
 	icon = "SquareIcon/shengwang",
 	id = 41697,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57608,6 +57805,7 @@ _G.pg.base.item_data_statistics[41697] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41698] = {
@@ -57617,7 +57815,6 @@ _G.pg.base.item_data_statistics[41698] = {
 	icon = "SquareIcon/fanji",
 	id = 41698,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57638,6 +57835,7 @@ _G.pg.base.item_data_statistics[41698] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41699] = {
@@ -57647,7 +57845,6 @@ _G.pg.base.item_data_statistics[41699] = {
 	icon = "SquareIcon/hude",
 	id = 41699,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57668,6 +57865,7 @@ _G.pg.base.item_data_statistics[41699] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41700] = {
@@ -57677,7 +57875,6 @@ _G.pg.base.item_data_statistics[41700] = {
 	icon = "SquareIcon/yilishabai",
 	id = 41700,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57698,6 +57895,7 @@ _G.pg.base.item_data_statistics[41700] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41701] = {
@@ -57707,7 +57905,6 @@ _G.pg.base.item_data_statistics[41701] = {
 	icon = "SquareIcon/yanzhan",
 	id = 41701,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57728,6 +57925,7 @@ _G.pg.base.item_data_statistics[41701] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41702] = {
@@ -57737,7 +57935,6 @@ _G.pg.base.item_data_statistics[41702] = {
 	icon = "SquareIcon/naerxun",
 	id = 41702,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57758,6 +57955,7 @@ _G.pg.base.item_data_statistics[41702] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41703] = {
@@ -57767,7 +57965,6 @@ _G.pg.base.item_data_statistics[41703] = {
 	icon = "SquareIcon/luodeni",
 	id = 41703,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57788,6 +57985,7 @@ _G.pg.base.item_data_statistics[41703] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41704] = {
@@ -57797,7 +57995,6 @@ _G.pg.base.item_data_statistics[41704] = {
 	icon = "SquareIcon/weiershiqinwang",
 	id = 41704,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57818,6 +58015,7 @@ _G.pg.base.item_data_statistics[41704] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41705] = {
@@ -57827,7 +58025,6 @@ _G.pg.base.item_data_statistics[41705] = {
 	icon = "SquareIcon/yuekegongjue",
 	id = 41705,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57848,6 +58045,7 @@ _G.pg.base.item_data_statistics[41705] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41706] = {
@@ -57857,7 +58055,6 @@ _G.pg.base.item_data_statistics[41706] = {
 	icon = "SquareIcon/jingjishen",
 	id = 41706,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57878,6 +58075,7 @@ _G.pg.base.item_data_statistics[41706] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41707] = {
@@ -57887,7 +58085,6 @@ _G.pg.base.item_data_statistics[41707] = {
 	icon = "SquareIcon/dujiaoshou",
 	id = 41707,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57908,6 +58105,7 @@ _G.pg.base.item_data_statistics[41707] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41708] = {
@@ -57917,7 +58115,6 @@ _G.pg.base.item_data_statistics[41708] = {
 	icon = "SquareIcon/huangjiafangzhou",
 	id = 41708,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57938,6 +58135,7 @@ _G.pg.base.item_data_statistics[41708] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41709] = {
@@ -57947,7 +58145,6 @@ _G.pg.base.item_data_statistics[41709] = {
 	icon = "SquareIcon/guanghui",
 	id = 41709,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57968,6 +58165,7 @@ _G.pg.base.item_data_statistics[41709] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41710] = {
@@ -57977,7 +58175,6 @@ _G.pg.base.item_data_statistics[41710] = {
 	icon = "SquareIcon/shengli",
 	id = 41710,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -57998,6 +58195,7 @@ _G.pg.base.item_data_statistics[41710] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41711] = {
@@ -58007,7 +58205,6 @@ _G.pg.base.item_data_statistics[41711] = {
 	icon = "SquareIcon/guangrong",
 	id = 41711,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58028,6 +58225,7 @@ _G.pg.base.item_data_statistics[41711] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41712] = {
@@ -58037,7 +58235,6 @@ _G.pg.base.item_data_statistics[41712] = {
 	icon = "SquareIcon/heianjie",
 	id = 41712,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58058,6 +58255,7 @@ _G.pg.base.item_data_statistics[41712] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41713] = {
@@ -58067,7 +58265,6 @@ _G.pg.base.item_data_statistics[41713] = {
 	icon = "SquareIcon/kongbu",
 	id = 41713,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58088,6 +58285,7 @@ _G.pg.base.item_data_statistics[41713] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41714] = {
@@ -58097,7 +58295,6 @@ _G.pg.base.item_data_statistics[41714] = {
 	icon = "SquareIcon/abeikelongbi",
 	id = 41714,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58118,6 +58315,7 @@ _G.pg.base.item_data_statistics[41714] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41715] = {
@@ -58127,7 +58325,6 @@ _G.pg.base.item_data_statistics[41715] = {
 	icon = "SquareIcon/chuixue",
 	id = 41715,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58148,6 +58345,7 @@ _G.pg.base.item_data_statistics[41715] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41716] = {
@@ -58157,7 +58355,6 @@ _G.pg.base.item_data_statistics[41716] = {
 	icon = "SquareIcon/lingbo",
 	id = 41716,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58178,6 +58375,7 @@ _G.pg.base.item_data_statistics[41716] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41717] = {
@@ -58187,7 +58385,6 @@ _G.pg.base.item_data_statistics[41717] = {
 	icon = "SquareIcon/xiao",
 	id = 41717,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58208,6 +58405,7 @@ _G.pg.base.item_data_statistics[41717] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41718] = {
@@ -58217,7 +58415,6 @@ _G.pg.base.item_data_statistics[41718] = {
 	icon = "SquareIcon/lei",
 	id = 41718,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58238,6 +58435,7 @@ _G.pg.base.item_data_statistics[41718] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41719] = {
@@ -58247,7 +58445,6 @@ _G.pg.base.item_data_statistics[41719] = {
 	icon = "SquareIcon/dian",
 	id = 41719,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58268,6 +58465,7 @@ _G.pg.base.item_data_statistics[41719] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41720] = {
@@ -58277,7 +58475,6 @@ _G.pg.base.item_data_statistics[41720] = {
 	icon = "SquareIcon/bailu",
 	id = 41720,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58298,6 +58495,7 @@ _G.pg.base.item_data_statistics[41720] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41721] = {
@@ -58307,7 +58505,6 @@ _G.pg.base.item_data_statistics[41721] = {
 	icon = "SquareIcon/xili",
 	id = 41721,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58328,6 +58525,7 @@ _G.pg.base.item_data_statistics[41721] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41722] = {
@@ -58337,7 +58535,6 @@ _G.pg.base.item_data_statistics[41722] = {
 	icon = "SquareIcon/shiyu",
 	id = 41722,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58358,6 +58555,7 @@ _G.pg.base.item_data_statistics[41722] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41723] = {
@@ -58367,7 +58565,6 @@ _G.pg.base.item_data_statistics[41723] = {
 	icon = "SquareIcon/xuefeng",
 	id = 41723,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58388,6 +58585,7 @@ _G.pg.base.item_data_statistics[41723] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41724] = {
@@ -58397,7 +58595,6 @@ _G.pg.base.item_data_statistics[41724] = {
 	icon = "SquareIcon/yangyan",
 	id = 41724,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58418,6 +58615,7 @@ _G.pg.base.item_data_statistics[41724] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41725] = {
@@ -58427,7 +58625,6 @@ _G.pg.base.item_data_statistics[41725] = {
 	icon = "SquareIcon/buzhihuo",
 	id = 41725,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58448,6 +58645,7 @@ _G.pg.base.item_data_statistics[41725] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41726] = {
@@ -58457,7 +58655,6 @@ _G.pg.base.item_data_statistics[41726] = {
 	icon = "SquareIcon/yefen",
 	id = 41726,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58478,6 +58675,7 @@ _G.pg.base.item_data_statistics[41726] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41727] = {
@@ -58487,7 +58685,6 @@ _G.pg.base.item_data_statistics[41727] = {
 	icon = "SquareIcon/chuchun",
 	id = 41727,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58508,6 +58705,7 @@ _G.pg.base.item_data_statistics[41727] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41728] = {
@@ -58517,7 +58715,6 @@ _G.pg.base.item_data_statistics[41728] = {
 	icon = "SquareIcon/ruoye",
 	id = 41728,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58538,6 +58735,7 @@ _G.pg.base.item_data_statistics[41728] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41729] = {
@@ -58547,7 +58745,6 @@ _G.pg.base.item_data_statistics[41729] = {
 	icon = "SquareIcon/chushuang",
 	id = 41729,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58568,6 +58765,7 @@ _G.pg.base.item_data_statistics[41729] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41730] = {
@@ -58577,7 +58775,6 @@ _G.pg.base.item_data_statistics[41730] = {
 	icon = "SquareIcon/youming",
 	id = 41730,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58598,6 +58795,7 @@ _G.pg.base.item_data_statistics[41730] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41731] = {
@@ -58607,7 +58805,6 @@ _G.pg.base.item_data_statistics[41731] = {
 	icon = "SquareIcon/ximu",
 	id = 41731,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58628,6 +58825,7 @@ _G.pg.base.item_data_statistics[41731] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41732] = {
@@ -58637,7 +58835,6 @@ _G.pg.base.item_data_statistics[41732] = {
 	icon = "SquareIcon/heichao",
 	id = 41732,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58658,6 +58855,7 @@ _G.pg.base.item_data_statistics[41732] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41733] = {
@@ -58667,7 +58865,6 @@ _G.pg.base.item_data_statistics[41733] = {
 	icon = "SquareIcon/qinchao",
 	id = 41733,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58688,6 +58885,7 @@ _G.pg.base.item_data_statistics[41733] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41734] = {
@@ -58697,7 +58895,6 @@ _G.pg.base.item_data_statistics[41734] = {
 	icon = "SquareIcon/xizhang",
 	id = 41734,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58718,6 +58915,7 @@ _G.pg.base.item_data_statistics[41734] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41735] = {
@@ -58727,7 +58925,6 @@ _G.pg.base.item_data_statistics[41735] = {
 	icon = "SquareIcon/changliang",
 	id = 41735,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58748,6 +58945,7 @@ _G.pg.base.item_data_statistics[41735] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41736] = {
@@ -58757,7 +58955,6 @@ _G.pg.base.item_data_statistics[41736] = {
 	icon = "SquareIcon/wushiling",
 	id = 41736,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58778,6 +58975,7 @@ _G.pg.base.item_data_statistics[41736] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41737] = {
@@ -58787,7 +58985,6 @@ _G.pg.base.item_data_statistics[41737] = {
 	icon = "SquareIcon/awuwei",
 	id = 41737,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58808,6 +59005,7 @@ _G.pg.base.item_data_statistics[41737] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41738] = {
@@ -58817,7 +59015,6 @@ _G.pg.base.item_data_statistics[41738] = {
 	icon = "SquareIcon/zuishang",
 	id = 41738,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58838,6 +59035,7 @@ _G.pg.base.item_data_statistics[41738] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41739] = {
@@ -58847,7 +59045,6 @@ _G.pg.base.item_data_statistics[41739] = {
 	icon = "SquareIcon/sanwei",
 	id = 41739,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58868,6 +59065,7 @@ _G.pg.base.item_data_statistics[41739] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41740] = {
@@ -58877,7 +59075,6 @@ _G.pg.base.item_data_statistics[41740] = {
 	icon = "SquareIcon/guying",
 	id = 41740,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58898,6 +59095,7 @@ _G.pg.base.item_data_statistics[41740] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41741] = {
@@ -58907,7 +59105,6 @@ _G.pg.base.item_data_statistics[41741] = {
 	icon = "SquareIcon/jiagu",
 	id = 41741,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58928,6 +59125,7 @@ _G.pg.base.item_data_statistics[41741] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41742] = {
@@ -58937,7 +59135,6 @@ _G.pg.base.item_data_statistics[41742] = {
 	icon = "SquareIcon/qingye",
 	id = 41742,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58958,6 +59155,7 @@ _G.pg.base.item_data_statistics[41742] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41743] = {
@@ -58967,7 +59165,6 @@ _G.pg.base.item_data_statistics[41743] = {
 	icon = "SquareIcon/yili",
 	id = 41743,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -58988,6 +59185,7 @@ _G.pg.base.item_data_statistics[41743] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41744] = {
@@ -58997,7 +59195,6 @@ _G.pg.base.item_data_statistics[41744] = {
 	icon = "SquareIcon/miaogao",
 	id = 41744,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59018,6 +59215,7 @@ _G.pg.base.item_data_statistics[41744] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41745] = {
@@ -59027,7 +59225,6 @@ _G.pg.base.item_data_statistics[41745] = {
 	icon = "SquareIcon/nazhi",
 	id = 41745,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59048,6 +59245,7 @@ _G.pg.base.item_data_statistics[41745] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41746] = {
@@ -59057,7 +59255,6 @@ _G.pg.base.item_data_statistics[41746] = {
 	icon = "SquareIcon/zubing",
 	id = 41746,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59078,6 +59275,7 @@ _G.pg.base.item_data_statistics[41746] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41747] = {
@@ -59087,7 +59285,6 @@ _G.pg.base.item_data_statistics[41747] = {
 	icon = "SquareIcon/gaoxiong",
 	id = 41747,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59108,6 +59305,7 @@ _G.pg.base.item_data_statistics[41747] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41748] = {
@@ -59117,7 +59315,6 @@ _G.pg.base.item_data_statistics[41748] = {
 	icon = "SquareIcon/aidang",
 	id = 41748,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59138,6 +59335,7 @@ _G.pg.base.item_data_statistics[41748] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41749] = {
@@ -59147,7 +59345,6 @@ _G.pg.base.item_data_statistics[41749] = {
 	icon = "SquareIcon/moye",
 	id = 41749,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59168,6 +59365,7 @@ _G.pg.base.item_data_statistics[41749] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41750] = {
@@ -59177,7 +59375,6 @@ _G.pg.base.item_data_statistics[41750] = {
 	icon = "SquareIcon/niaohai",
 	id = 41750,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59198,6 +59395,7 @@ _G.pg.base.item_data_statistics[41750] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41751] = {
@@ -59207,7 +59405,6 @@ _G.pg.base.item_data_statistics[41751] = {
 	icon = "SquareIcon/jingang",
 	id = 41751,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59228,6 +59425,7 @@ _G.pg.base.item_data_statistics[41751] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41752] = {
@@ -59237,7 +59435,6 @@ _G.pg.base.item_data_statistics[41752] = {
 	icon = "SquareIcon/birui",
 	id = 41752,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59258,6 +59455,7 @@ _G.pg.base.item_data_statistics[41752] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41753] = {
@@ -59267,7 +59465,6 @@ _G.pg.base.item_data_statistics[41753] = {
 	icon = "SquareIcon/zhenming",
 	id = 41753,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59288,6 +59485,7 @@ _G.pg.base.item_data_statistics[41753] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41754] = {
@@ -59297,7 +59495,6 @@ _G.pg.base.item_data_statistics[41754] = {
 	icon = "SquareIcon/wudao",
 	id = 41754,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59318,6 +59515,7 @@ _G.pg.base.item_data_statistics[41754] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41755] = {
@@ -59327,7 +59525,6 @@ _G.pg.base.item_data_statistics[41755] = {
 	icon = "SquareIcon/tiancheng",
 	id = 41755,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59348,6 +59545,7 @@ _G.pg.base.item_data_statistics[41755] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41756] = {
@@ -59357,7 +59555,6 @@ _G.pg.base.item_data_statistics[41756] = {
 	icon = "SquareIcon/fusang",
 	id = 41756,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59378,6 +59575,7 @@ _G.pg.base.item_data_statistics[41756] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41757] = {
@@ -59387,7 +59585,6 @@ _G.pg.base.item_data_statistics[41757] = {
 	icon = "SquareIcon/shancheng",
 	id = 41757,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59408,6 +59605,7 @@ _G.pg.base.item_data_statistics[41757] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41758] = {
@@ -59417,7 +59615,6 @@ _G.pg.base.item_data_statistics[41758] = {
 	icon = "SquareIcon/yishi",
 	id = 41758,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59438,6 +59635,7 @@ _G.pg.base.item_data_statistics[41758] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41759] = {
@@ -59447,7 +59645,6 @@ _G.pg.base.item_data_statistics[41759] = {
 	icon = "SquareIcon/rixiang",
 	id = 41759,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59468,6 +59665,7 @@ _G.pg.base.item_data_statistics[41759] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41760] = {
@@ -59477,7 +59675,6 @@ _G.pg.base.item_data_statistics[41760] = {
 	icon = "SquareIcon/changmen",
 	id = 41760,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59498,6 +59695,7 @@ _G.pg.base.item_data_statistics[41760] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41761] = {
@@ -59507,7 +59705,6 @@ _G.pg.base.item_data_statistics[41761] = {
 	icon = "SquareIcon/luao",
 	id = 41761,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59528,6 +59725,7 @@ _G.pg.base.item_data_statistics[41761] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41762] = {
@@ -59537,7 +59735,6 @@ _G.pg.base.item_data_statistics[41762] = {
 	icon = "SquareIcon/jiahezhanlie",
 	id = 41762,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59558,6 +59755,7 @@ _G.pg.base.item_data_statistics[41762] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41763] = {
@@ -59567,7 +59765,6 @@ _G.pg.base.item_data_statistics[41763] = {
 	icon = "SquareIcon/feiying",
 	id = 41763,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59588,6 +59785,7 @@ _G.pg.base.item_data_statistics[41763] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41764] = {
@@ -59597,7 +59795,6 @@ _G.pg.base.item_data_statistics[41764] = {
 	icon = "SquareIcon/sunying",
 	id = 41764,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59618,6 +59815,7 @@ _G.pg.base.item_data_statistics[41764] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41765] = {
@@ -59627,7 +59825,6 @@ _G.pg.base.item_data_statistics[41765] = {
 	icon = "SquareIcon/fengxiang",
 	id = 41765,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59648,6 +59845,7 @@ _G.pg.base.item_data_statistics[41765] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41766] = {
@@ -59657,7 +59855,6 @@ _G.pg.base.item_data_statistics[41766] = {
 	icon = "SquareIcon/xiangfeng",
 	id = 41766,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59678,6 +59875,7 @@ _G.pg.base.item_data_statistics[41766] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41767] = {
@@ -59687,7 +59885,6 @@ _G.pg.base.item_data_statistics[41767] = {
 	icon = "SquareIcon/longxiang",
 	id = 41767,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59708,6 +59905,7 @@ _G.pg.base.item_data_statistics[41767] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41768] = {
@@ -59717,7 +59915,6 @@ _G.pg.base.item_data_statistics[41768] = {
 	icon = "SquareIcon/chicheng",
 	id = 41768,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59738,6 +59935,7 @@ _G.pg.base.item_data_statistics[41768] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41769] = {
@@ -59747,7 +59945,6 @@ _G.pg.base.item_data_statistics[41769] = {
 	icon = "SquareIcon/jiahe",
 	id = 41769,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59768,6 +59965,7 @@ _G.pg.base.item_data_statistics[41769] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41770] = {
@@ -59777,7 +59975,6 @@ _G.pg.base.item_data_statistics[41770] = {
 	icon = "SquareIcon/canglong",
 	id = 41770,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59798,6 +59995,7 @@ _G.pg.base.item_data_statistics[41770] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41771] = {
@@ -59807,7 +60005,6 @@ _G.pg.base.item_data_statistics[41771] = {
 	icon = "SquareIcon/feilong",
 	id = 41771,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59828,6 +60025,7 @@ _G.pg.base.item_data_statistics[41771] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41772] = {
@@ -59837,7 +60035,6 @@ _G.pg.base.item_data_statistics[41772] = {
 	icon = "SquareIcon/xianghe",
 	id = 41772,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59858,6 +60055,7 @@ _G.pg.base.item_data_statistics[41772] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41773] = {
@@ -59867,7 +60065,6 @@ _G.pg.base.item_data_statistics[41773] = {
 	icon = "SquareIcon/ruihe",
 	id = 41773,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59888,6 +60085,7 @@ _G.pg.base.item_data_statistics[41773] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41774] = {
@@ -59897,7 +60095,6 @@ _G.pg.base.item_data_statistics[41774] = {
 	icon = "SquareIcon/dafeng",
 	id = 41774,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59918,6 +60115,7 @@ _G.pg.base.item_data_statistics[41774] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41775] = {
@@ -59927,7 +60125,6 @@ _G.pg.base.item_data_statistics[41775] = {
 	icon = "SquareIcon/mingshi",
 	id = 41775,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59948,6 +60145,7 @@ _G.pg.base.item_data_statistics[41775] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41776] = {
@@ -59957,7 +60155,6 @@ _G.pg.base.item_data_statistics[41776] = {
 	icon = "SquareIcon/z1",
 	id = 41776,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -59978,6 +60175,7 @@ _G.pg.base.item_data_statistics[41776] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41777] = {
@@ -59987,7 +60185,6 @@ _G.pg.base.item_data_statistics[41777] = {
 	icon = "SquareIcon/z23",
 	id = 41777,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60008,6 +60205,7 @@ _G.pg.base.item_data_statistics[41777] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41778] = {
@@ -60017,7 +60215,6 @@ _G.pg.base.item_data_statistics[41778] = {
 	icon = "SquareIcon/Z25",
 	id = 41778,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60038,6 +60235,7 @@ _G.pg.base.item_data_statistics[41778] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41779] = {
@@ -60047,7 +60245,6 @@ _G.pg.base.item_data_statistics[41779] = {
 	icon = "SquareIcon/kenisibao",
 	id = 41779,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60068,6 +60265,7 @@ _G.pg.base.item_data_statistics[41779] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41780] = {
@@ -60077,7 +60275,6 @@ _G.pg.base.item_data_statistics[41780] = {
 	icon = "SquareIcon/kaersilue",
 	id = 41780,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60098,6 +60295,7 @@ _G.pg.base.item_data_statistics[41780] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41781] = {
@@ -60107,7 +60305,6 @@ _G.pg.base.item_data_statistics[41781] = {
 	icon = "SquareIcon/kelong",
 	id = 41781,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60128,6 +60325,7 @@ _G.pg.base.item_data_statistics[41781] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41782] = {
@@ -60137,7 +60335,6 @@ _G.pg.base.item_data_statistics[41782] = {
 	icon = "SquareIcon/laibixi",
 	id = 41782,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60158,6 +60355,7 @@ _G.pg.base.item_data_statistics[41782] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41783] = {
@@ -60167,7 +60365,6 @@ _G.pg.base.item_data_statistics[41783] = {
 	icon = "SquareIcon/xipeierhaijunshangjiang",
 	id = 41783,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60188,6 +60385,7 @@ _G.pg.base.item_data_statistics[41783] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41784] = {
@@ -60197,7 +60395,6 @@ _G.pg.base.item_data_statistics[41784] = {
 	icon = "SquareIcon/ougen",
 	id = 41784,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60218,6 +60415,7 @@ _G.pg.base.item_data_statistics[41784] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41785] = {
@@ -60227,7 +60425,6 @@ _G.pg.base.item_data_statistics[41785] = {
 	icon = "SquareIcon/deyizhi",
 	id = 41785,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60248,6 +60445,7 @@ _G.pg.base.item_data_statistics[41785] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41786] = {
@@ -60257,7 +60455,6 @@ _G.pg.base.item_data_statistics[41786] = {
 	icon = "SquareIcon/sipeibojue",
 	id = 41786,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60278,6 +60475,7 @@ _G.pg.base.item_data_statistics[41786] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41787] = {
@@ -60287,7 +60485,6 @@ _G.pg.base.item_data_statistics[41787] = {
 	icon = "SquareIcon/shaenhuosite",
 	id = 41787,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60308,6 +60505,7 @@ _G.pg.base.item_data_statistics[41787] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41788] = {
@@ -60317,7 +60515,6 @@ _G.pg.base.item_data_statistics[41788] = {
 	icon = "SquareIcon/genaisennao",
 	id = 41788,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60338,6 +60535,7 @@ _G.pg.base.item_data_statistics[41788] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41789] = {
@@ -60347,7 +60545,6 @@ _G.pg.base.item_data_statistics[41789] = {
 	icon = "SquareIcon/tierbici",
 	id = 41789,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60368,6 +60565,7 @@ _G.pg.base.item_data_statistics[41789] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41790] = {
@@ -60377,7 +60575,6 @@ _G.pg.base.item_data_statistics[41790] = {
 	icon = "SquareIcon/qibolin",
 	id = 41790,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60398,6 +60595,7 @@ _G.pg.base.item_data_statistics[41790] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41791] = {
@@ -60407,7 +60605,6 @@ _G.pg.base.item_data_statistics[41791] = {
 	icon = "SquareIcon/anshan",
 	id = 41791,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60428,6 +60625,7 @@ _G.pg.base.item_data_statistics[41791] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41792] = {
@@ -60437,7 +60635,6 @@ _G.pg.base.item_data_statistics[41792] = {
 	icon = "SquareIcon/fushun",
 	id = 41792,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60458,6 +60655,7 @@ _G.pg.base.item_data_statistics[41792] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41793] = {
@@ -60467,7 +60665,6 @@ _G.pg.base.item_data_statistics[41793] = {
 	icon = "SquareIcon/changchun",
 	id = 41793,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60488,6 +60685,7 @@ _G.pg.base.item_data_statistics[41793] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41794] = {
@@ -60497,7 +60695,6 @@ _G.pg.base.item_data_statistics[41794] = {
 	icon = "SquareIcon/taiyuan",
 	id = 41794,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60518,6 +60715,7 @@ _G.pg.base.item_data_statistics[41794] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41795] = {
@@ -60527,7 +60725,6 @@ _G.pg.base.item_data_statistics[41795] = {
 	icon = "SquareIcon/yixian",
 	id = 41795,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60548,6 +60745,7 @@ _G.pg.base.item_data_statistics[41795] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41796] = {
@@ -60557,7 +60755,6 @@ _G.pg.base.item_data_statistics[41796] = {
 	icon = "SquareIcon/ninghai",
 	id = 41796,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60578,6 +60775,7 @@ _G.pg.base.item_data_statistics[41796] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41797] = {
@@ -60587,7 +60785,6 @@ _G.pg.base.item_data_statistics[41797] = {
 	icon = "SquareIcon/pinghai",
 	id = 41797,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60608,6 +60805,7 @@ _G.pg.base.item_data_statistics[41797] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41798] = {
@@ -60617,7 +60815,6 @@ _G.pg.base.item_data_statistics[41798] = {
 	icon = "SquareIcon/afuleer",
 	id = 41798,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60638,6 +60835,7 @@ _G.pg.base.item_data_statistics[41798] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41799] = {
@@ -60647,7 +60845,6 @@ _G.pg.base.item_data_statistics[41799] = {
 	icon = "SquareIcon/beili",
 	id = 41799,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60668,6 +60865,7 @@ _G.pg.base.item_data_statistics[41799] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41800] = {
@@ -60677,7 +60875,6 @@ _G.pg.base.item_data_statistics[41800] = {
 	icon = "SquareIcon/z19",
 	id = 41800,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60698,6 +60895,7 @@ _G.pg.base.item_data_statistics[41800] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41801] = {
@@ -60707,7 +60905,6 @@ _G.pg.base.item_data_statistics[41801] = {
 	icon = "SquareIcon/z20",
 	id = 41801,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60728,6 +60925,7 @@ _G.pg.base.item_data_statistics[41801] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41802] = {
@@ -60737,7 +60935,6 @@ _G.pg.base.item_data_statistics[41802] = {
 	icon = "SquareIcon/z21",
 	id = 41802,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60758,6 +60955,7 @@ _G.pg.base.item_data_statistics[41802] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41803] = {
@@ -60767,7 +60965,6 @@ _G.pg.base.item_data_statistics[41803] = {
 	icon = "SquareIcon/Z46",
 	id = 41803,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60788,6 +60985,7 @@ _G.pg.base.item_data_statistics[41803] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41804] = {
@@ -60797,7 +60995,6 @@ _G.pg.base.item_data_statistics[41804] = {
 	icon = "SquareIcon/shenfeng",
 	id = 41804,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60818,6 +61015,7 @@ _G.pg.base.item_data_statistics[41804] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41805] = {
@@ -60827,7 +61025,6 @@ _G.pg.base.item_data_statistics[41805] = {
 	icon = "SquareIcon/songfeng",
 	id = 41805,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60848,6 +61045,7 @@ _G.pg.base.item_data_statistics[41805] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41806] = {
@@ -60857,7 +61055,6 @@ _G.pg.base.item_data_statistics[41806] = {
 	icon = "SquareIcon/muyue",
 	id = 41806,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60878,6 +61075,7 @@ _G.pg.base.item_data_statistics[41806] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41807] = {
@@ -60887,7 +61085,6 @@ _G.pg.base.item_data_statistics[41807] = {
 	icon = "SquareIcon/ruyue",
 	id = 41807,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60908,6 +61105,7 @@ _G.pg.base.item_data_statistics[41807] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41808] = {
@@ -60917,7 +61115,6 @@ _G.pg.base.item_data_statistics[41808] = {
 	icon = "SquareIcon/maoyue",
 	id = 41808,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60938,6 +61135,7 @@ _G.pg.base.item_data_statistics[41808] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41809] = {
@@ -60947,7 +61145,6 @@ _G.pg.base.item_data_statistics[41809] = {
 	icon = "SquareIcon/shuiwuyue",
 	id = 41809,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60968,6 +61165,7 @@ _G.pg.base.item_data_statistics[41809] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41810] = {
@@ -60977,7 +61175,6 @@ _G.pg.base.item_data_statistics[41810] = {
 	icon = "SquareIcon/wenyue",
 	id = 41810,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -60998,6 +61195,7 @@ _G.pg.base.item_data_statistics[41810] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41811] = {
@@ -61007,7 +61205,6 @@ _G.pg.base.item_data_statistics[41811] = {
 	icon = "SquareIcon/changyue",
 	id = 41811,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61028,6 +61225,7 @@ _G.pg.base.item_data_statistics[41811] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41812] = {
@@ -61037,7 +61235,6 @@ _G.pg.base.item_data_statistics[41812] = {
 	icon = "SquareIcon/sanriyue",
 	id = 41812,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61058,6 +61255,7 @@ _G.pg.base.item_data_statistics[41812] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41813] = {
@@ -61067,7 +61265,6 @@ _G.pg.base.item_data_statistics[41813] = {
 	icon = "SquareIcon/jiangfeng",
 	id = 41813,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61088,6 +61285,7 @@ _G.pg.base.item_data_statistics[41813] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41814] = {
@@ -61097,7 +61295,6 @@ _G.pg.base.item_data_statistics[41814] = {
 	icon = "SquareIcon/xinyue_jp",
 	id = 41814,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61118,6 +61315,7 @@ _G.pg.base.item_data_statistics[41814] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41815] = {
@@ -61127,7 +61325,6 @@ _G.pg.base.item_data_statistics[41815] = {
 	icon = "SquareIcon/chunyue",
 	id = 41815,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61148,6 +61345,7 @@ _G.pg.base.item_data_statistics[41815] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41816] = {
@@ -61157,7 +61355,6 @@ _G.pg.base.item_data_statistics[41816] = {
 	icon = "SquareIcon/xiaoyue",
 	id = 41816,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61178,6 +61375,7 @@ _G.pg.base.item_data_statistics[41816] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41817] = {
@@ -61187,7 +61385,6 @@ _G.pg.base.item_data_statistics[41817] = {
 	icon = "SquareIcon/ladefute",
 	id = 41817,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61208,6 +61405,7 @@ _G.pg.base.item_data_statistics[41817] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41818] = {
@@ -61217,7 +61415,6 @@ _G.pg.base.item_data_statistics[41818] = {
 	icon = "SquareIcon/jiejinsi",
 	id = 41818,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61238,6 +61435,7 @@ _G.pg.base.item_data_statistics[41818] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41819] = {
@@ -61247,7 +61445,6 @@ _G.pg.base.item_data_statistics[41819] = {
 	icon = "SquareIcon/nigulasi",
 	id = 41819,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61268,6 +61465,7 @@ _G.pg.base.item_data_statistics[41819] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41820] = {
@@ -61277,7 +61475,6 @@ _G.pg.base.item_data_statistics[41820] = {
 	icon = "SquareIcon/lishiman",
 	id = 41820,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61298,6 +61495,7 @@ _G.pg.base.item_data_statistics[41820] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41821] = {
@@ -61307,7 +61505,6 @@ _G.pg.base.item_data_statistics[41821] = {
 	icon = "SquareIcon/huonululu",
 	id = 41821,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61328,6 +61525,7 @@ _G.pg.base.item_data_statistics[41821] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41822] = {
@@ -61337,7 +61535,6 @@ _G.pg.base.item_data_statistics[41822] = {
 	icon = "SquareIcon/shengluyisi",
 	id = 41822,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61358,6 +61555,7 @@ _G.pg.base.item_data_statistics[41822] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41823] = {
@@ -61367,7 +61565,6 @@ _G.pg.base.item_data_statistics[41823] = {
 	icon = "SquareIcon/qiubite",
 	id = 41823,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61388,6 +61585,7 @@ _G.pg.base.item_data_statistics[41823] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41824] = {
@@ -61397,7 +61595,6 @@ _G.pg.base.item_data_statistics[41824] = {
 	icon = "SquareIcon/zexi",
 	id = 41824,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61418,6 +61615,7 @@ _G.pg.base.item_data_statistics[41824] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41825] = {
@@ -61427,7 +61625,6 @@ _G.pg.base.item_data_statistics[41825] = {
 	icon = "SquareIcon/chuannei",
 	id = 41825,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61448,6 +61645,7 @@ _G.pg.base.item_data_statistics[41825] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41826] = {
@@ -61457,7 +61655,6 @@ _G.pg.base.item_data_statistics[41826] = {
 	icon = "SquareIcon/shentong",
 	id = 41826,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61478,6 +61675,7 @@ _G.pg.base.item_data_statistics[41826] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41827] = {
@@ -61487,7 +61685,6 @@ _G.pg.base.item_data_statistics[41827] = {
 	icon = "SquareIcon/nake",
 	id = 41827,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61508,6 +61705,7 @@ _G.pg.base.item_data_statistics[41827] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41828] = {
@@ -61517,7 +61715,6 @@ _G.pg.base.item_data_statistics[41828] = {
 	icon = "SquareIcon/pufeng",
 	id = 41828,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61538,6 +61735,7 @@ _G.pg.base.item_data_statistics[41828] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41829] = {
@@ -61547,7 +61745,6 @@ _G.pg.base.item_data_statistics[41829] = {
 	icon = "SquareIcon/jifeng",
 	id = 41829,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61568,6 +61765,7 @@ _G.pg.base.item_data_statistics[41829] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41830] = {
@@ -61577,7 +61775,6 @@ _G.pg.base.item_data_statistics[41830] = {
 	icon = "SquareIcon/bangfeng",
 	id = 41830,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61598,6 +61795,7 @@ _G.pg.base.item_data_statistics[41830] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41831] = {
@@ -61607,7 +61805,6 @@ _G.pg.base.item_data_statistics[41831] = {
 	icon = "SquareIcon/gufeng",
 	id = 41831,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61628,6 +61825,7 @@ _G.pg.base.item_data_statistics[41831] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41832] = {
@@ -61637,7 +61835,6 @@ _G.pg.base.item_data_statistics[41832] = {
 	icon = "SquareIcon/sanli",
 	id = 41832,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61658,6 +61855,7 @@ _G.pg.base.item_data_statistics[41832] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41833] = {
@@ -61667,7 +61865,6 @@ _G.pg.base.item_data_statistics[41833] = {
 	icon = "SquareIcon/aheye",
 	id = 41833,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61688,6 +61885,7 @@ _G.pg.base.item_data_statistics[41833] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41834] = {
@@ -61697,7 +61895,6 @@ _G.pg.base.item_data_statistics[41834] = {
 	icon = "SquareIcon/wudi",
 	id = 41834,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61718,6 +61915,7 @@ _G.pg.base.item_data_statistics[41834] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41835] = {
@@ -61727,7 +61925,6 @@ _G.pg.base.item_data_statistics[41835] = {
 	icon = "SquareIcon/huoqiangshou",
 	id = 41835,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61748,6 +61945,7 @@ _G.pg.base.item_data_statistics[41835] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41836] = {
@@ -61757,7 +61955,6 @@ _G.pg.base.item_data_statistics[41836] = {
 	icon = "SquareIcon/feiji",
 	id = 41836,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61778,6 +61975,7 @@ _G.pg.base.item_data_statistics[41836] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41837] = {
@@ -61787,7 +61985,6 @@ _G.pg.base.item_data_statistics[41837] = {
 	icon = "SquareIcon/yamaijia",
 	id = 41837,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61808,6 +62005,7 @@ _G.pg.base.item_data_statistics[41837] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41838] = {
@@ -61817,7 +62015,6 @@ _G.pg.base.item_data_statistics[41838] = {
 	icon = "SquareIcon/mengbiliai",
 	id = 41838,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61838,6 +62035,7 @@ _G.pg.base.item_data_statistics[41838] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41839] = {
@@ -61847,7 +62045,6 @@ _G.pg.base.item_data_statistics[41839] = {
 	icon = "SquareIcon/danfo",
 	id = 41839,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61868,6 +62065,7 @@ _G.pg.base.item_data_statistics[41839] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41840] = {
@@ -61877,7 +62075,6 @@ _G.pg.base.item_data_statistics[41840] = {
 	icon = "SquareIcon/zhaochao",
 	id = 41840,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61898,6 +62095,7 @@ _G.pg.base.item_data_statistics[41840] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41841] = {
@@ -61907,7 +62105,6 @@ _G.pg.base.item_data_statistics[41841] = {
 	icon = "SquareIcon/dachao",
 	id = 41841,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61928,6 +62125,7 @@ _G.pg.base.item_data_statistics[41841] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41842] = {
@@ -61937,7 +62135,6 @@ _G.pg.base.item_data_statistics[41842] = {
 	icon = "SquareIcon/manchao",
 	id = 41842,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61958,6 +62155,7 @@ _G.pg.base.item_data_statistics[41842] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41843] = {
@@ -61967,7 +62165,6 @@ _G.pg.base.item_data_statistics[41843] = {
 	icon = "SquareIcon/huangchao",
 	id = 41843,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -61988,6 +62185,7 @@ _G.pg.base.item_data_statistics[41843] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41844] = {
@@ -61997,7 +62195,6 @@ _G.pg.base.item_data_statistics[41844] = {
 	icon = "SquareIcon/beierfasite_younv",
 	id = 41844,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62018,6 +62215,7 @@ _G.pg.base.item_data_statistics[41844] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41845] = {
@@ -62027,7 +62225,6 @@ _G.pg.base.item_data_statistics[41845] = {
 	icon = "SquareIcon/I19",
 	id = 41845,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62048,6 +62245,7 @@ _G.pg.base.item_data_statistics[41845] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41846] = {
@@ -62057,7 +62255,6 @@ _G.pg.base.item_data_statistics[41846] = {
 	icon = "SquareIcon/I26",
 	id = 41846,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62078,6 +62275,7 @@ _G.pg.base.item_data_statistics[41846] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41847] = {
@@ -62087,7 +62285,6 @@ _G.pg.base.item_data_statistics[41847] = {
 	icon = "SquareIcon/I58",
 	id = 41847,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62108,6 +62305,7 @@ _G.pg.base.item_data_statistics[41847] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41848] = {
@@ -62117,7 +62315,6 @@ _G.pg.base.item_data_statistics[41848] = {
 	icon = "SquareIcon/U81",
 	id = 41848,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62138,6 +62335,7 @@ _G.pg.base.item_data_statistics[41848] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41849] = {
@@ -62147,7 +62345,6 @@ _G.pg.base.item_data_statistics[41849] = {
 	icon = "SquareIcon/tiaoyu",
 	id = 41849,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62168,6 +62365,7 @@ _G.pg.base.item_data_statistics[41849] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41850] = {
@@ -62177,7 +62375,6 @@ _G.pg.base.item_data_statistics[41850] = {
 	icon = "SquareIcon/U47",
 	id = 41850,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62198,6 +62395,7 @@ _G.pg.base.item_data_statistics[41850] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41851] = {
@@ -62207,7 +62405,6 @@ _G.pg.base.item_data_statistics[41851] = {
 	icon = "SquareIcon/U557",
 	id = 41851,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62228,6 +62425,7 @@ _G.pg.base.item_data_statistics[41851] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41852] = {
@@ -62237,7 +62435,6 @@ _G.pg.base.item_data_statistics[41852] = {
 	icon = "SquareIcon/Z35",
 	id = 41852,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62258,6 +62455,7 @@ _G.pg.base.item_data_statistics[41852] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41853] = {
@@ -62267,7 +62465,6 @@ _G.pg.base.item_data_statistics[41853] = {
 	icon = "SquareIcon/z18",
 	id = 41853,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62288,6 +62485,7 @@ _G.pg.base.item_data_statistics[41853] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41854] = {
@@ -62297,7 +62495,6 @@ _G.pg.base.item_data_statistics[41854] = {
 	icon = "SquareIcon/kaixuan",
 	id = 41854,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62318,6 +62515,7 @@ _G.pg.base.item_data_statistics[41854] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41855] = {
@@ -62327,7 +62525,6 @@ _G.pg.base.item_data_statistics[41855] = {
 	icon = "SquareIcon/fuerban",
 	id = 41855,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62348,6 +62545,7 @@ _G.pg.base.item_data_statistics[41855] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41856] = {
@@ -62357,7 +62555,6 @@ _G.pg.base.item_data_statistics[41856] = {
 	icon = "SquareIcon/aimierbeierding",
 	id = 41856,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62378,6 +62575,7 @@ _G.pg.base.item_data_statistics[41856] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41857] = {
@@ -62387,7 +62585,6 @@ _G.pg.base.item_data_statistics[41857] = {
 	icon = "SquareIcon/xukufu",
 	id = 41857,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62408,6 +62605,7 @@ _G.pg.base.item_data_statistics[41857] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41858] = {
@@ -62417,7 +62615,6 @@ _G.pg.base.item_data_statistics[41858] = {
 	icon = "SquareIcon/lemaer",
 	id = 41858,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62438,6 +62635,7 @@ _G.pg.base.item_data_statistics[41858] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41859] = {
@@ -62447,7 +62645,6 @@ _G.pg.base.item_data_statistics[41859] = {
 	icon = "SquareIcon/dunkeerke",
 	id = 41859,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62468,6 +62665,7 @@ _G.pg.base.item_data_statistics[41859] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41860] = {
@@ -62477,7 +62675,6 @@ _G.pg.base.item_data_statistics[41860] = {
 	icon = "SquareIcon/rangbaer",
 	id = 41860,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62498,6 +62695,7 @@ _G.pg.base.item_data_statistics[41860] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41861] = {
@@ -62507,7 +62705,6 @@ _G.pg.base.item_data_statistics[41861] = {
 	icon = "SquareIcon/masazhusai",
 	id = 41861,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62528,6 +62725,7 @@ _G.pg.base.item_data_statistics[41861] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41862] = {
@@ -62537,7 +62735,6 @@ _G.pg.base.item_data_statistics[41862] = {
 	icon = "SquareIcon/bushi",
 	id = 41862,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62558,6 +62755,7 @@ _G.pg.base.item_data_statistics[41862] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41863] = {
@@ -62567,7 +62765,6 @@ _G.pg.base.item_data_statistics[41863] = {
 	icon = "SquareIcon/banrenma",
 	id = 41863,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62588,6 +62785,7 @@ _G.pg.base.item_data_statistics[41863] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41864] = {
@@ -62597,7 +62795,6 @@ _G.pg.base.item_data_statistics[41864] = {
 	icon = "SquareIcon/aisaikesi",
 	id = 41864,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62618,6 +62815,7 @@ _G.pg.base.item_data_statistics[41864] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41865] = {
@@ -62627,7 +62825,6 @@ _G.pg.base.item_data_statistics[41865] = {
 	icon = "SquareIcon/daqinghuayu",
 	id = 41865,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62648,6 +62845,7 @@ _G.pg.base.item_data_statistics[41865] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41866] = {
@@ -62657,7 +62855,6 @@ _G.pg.base.item_data_statistics[41866] = {
 	icon = "SquareIcon/lumang",
 	id = 41866,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62678,6 +62875,7 @@ _G.pg.base.item_data_statistics[41866] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41867] = {
@@ -62687,7 +62885,6 @@ _G.pg.base.item_data_statistics[41867] = {
 	icon = "SquareIcon/mengfeisi",
 	id = 41867,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62708,6 +62905,7 @@ _G.pg.base.item_data_statistics[41867] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41868] = {
@@ -62717,7 +62915,6 @@ _G.pg.base.item_data_statistics[41868] = {
 	icon = "SquareIcon/niukasier",
 	id = 41868,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62738,6 +62935,7 @@ _G.pg.base.item_data_statistics[41868] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41869] = {
@@ -62747,7 +62945,6 @@ _G.pg.base.item_data_statistics[41869] = {
 	icon = "SquareIcon/huobi",
 	id = 41869,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62768,6 +62965,7 @@ _G.pg.base.item_data_statistics[41869] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41870] = {
@@ -62777,7 +62975,6 @@ _G.pg.base.item_data_statistics[41870] = {
 	icon = "SquareIcon/keerke",
 	id = 41870,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62798,6 +62995,7 @@ _G.pg.base.item_data_statistics[41870] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41871] = {
@@ -62807,7 +63005,6 @@ _G.pg.base.item_data_statistics[41871] = {
 	icon = "SquareIcon/mingniabolisi",
 	id = 41871,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62828,6 +63025,7 @@ _G.pg.base.item_data_statistics[41871] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41872] = {
@@ -62837,7 +63035,6 @@ _G.pg.base.item_data_statistics[41872] = {
 	icon = "SquareIcon/heizewude",
 	id = 41872,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62858,6 +63055,7 @@ _G.pg.base.item_data_statistics[41872] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41873] = {
@@ -62867,7 +63065,6 @@ _G.pg.base.item_data_statistics[41873] = {
 	icon = "SquareIcon/kangkede",
 	id = 41873,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62888,6 +63085,7 @@ _G.pg.base.item_data_statistics[41873] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41874] = {
@@ -62897,7 +63095,6 @@ _G.pg.base.item_data_statistics[41874] = {
 	icon = "SquareIcon/qifeng",
 	id = 41874,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62918,6 +63115,7 @@ _G.pg.base.item_data_statistics[41874] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41875] = {
@@ -62927,7 +63125,6 @@ _G.pg.base.item_data_statistics[41875] = {
 	icon = "SquareIcon/juanbo",
 	id = 41875,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62948,6 +63145,7 @@ _G.pg.base.item_data_statistics[41875] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41876] = {
@@ -62957,7 +63155,6 @@ _G.pg.base.item_data_statistics[41876] = {
 	icon = "SquareIcon/tianlangxing",
 	id = 41876,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -62978,6 +63175,7 @@ _G.pg.base.item_data_statistics[41876] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41877] = {
@@ -62987,7 +63185,6 @@ _G.pg.base.item_data_statistics[41877] = {
 	icon = "SquareIcon/kulasuo",
 	id = 41877,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63008,6 +63205,7 @@ _G.pg.base.item_data_statistics[41877] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41878] = {
@@ -63017,7 +63215,6 @@ _G.pg.base.item_data_statistics[41878] = {
 	icon = "SquareIcon/biaoyu",
 	id = 41878,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63038,6 +63235,7 @@ _G.pg.base.item_data_statistics[41878] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41879] = {
@@ -63047,7 +63245,6 @@ _G.pg.base.item_data_statistics[41879] = {
 	icon = "SquareIcon/jinboli",
 	id = 41879,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63068,6 +63265,7 @@ _G.pg.base.item_data_statistics[41879] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41880] = {
@@ -63077,7 +63275,6 @@ _G.pg.base.item_data_statistics[41880] = {
 	icon = "SquareIcon/malani",
 	id = 41880,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63098,6 +63295,7 @@ _G.pg.base.item_data_statistics[41880] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41881] = {
@@ -63107,7 +63305,6 @@ _G.pg.base.item_data_statistics[41881] = {
 	icon = "SquareIcon/zhuiganzhe",
 	id = 41881,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63128,6 +63325,7 @@ _G.pg.base.item_data_statistics[41881] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41882] = {
@@ -63137,7 +63335,6 @@ _G.pg.base.item_data_statistics[41882] = {
 	icon = "SquareIcon/haiwangxing",
 	id = 41882,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63158,6 +63355,7 @@ _G.pg.base.item_data_statistics[41882] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41883] = {
@@ -63167,7 +63365,6 @@ _G.pg.base.item_data_statistics[41883] = {
 	icon = "SquareIcon/junzhu",
 	id = 41883,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63188,6 +63385,7 @@ _G.pg.base.item_data_statistics[41883] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41884] = {
@@ -63197,7 +63395,6 @@ _G.pg.base.item_data_statistics[41884] = {
 	icon = "SquareIcon/yichui",
 	id = 41884,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63218,6 +63415,7 @@ _G.pg.base.item_data_statistics[41884] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41885] = {
@@ -63227,7 +63425,6 @@ _G.pg.base.item_data_statistics[41885] = {
 	icon = "SquareIcon/chuyun",
 	id = 41885,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63248,6 +63445,7 @@ _G.pg.base.item_data_statistics[41885] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41886] = {
@@ -63257,7 +63455,6 @@ _G.pg.base.item_data_statistics[41886] = {
 	icon = "SquareIcon/luoen",
 	id = 41886,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63278,6 +63475,7 @@ _G.pg.base.item_data_statistics[41886] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41887] = {
@@ -63287,7 +63485,6 @@ _G.pg.base.item_data_statistics[41887] = {
 	icon = "SquareIcon/luyijiushi",
 	id = 41887,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63308,6 +63505,7 @@ _G.pg.base.item_data_statistics[41887] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41888] = {
@@ -63317,7 +63515,6 @@ _G.pg.base.item_data_statistics[41888] = {
 	icon = "SquareIcon/duwei",
 	id = 41888,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63338,6 +63535,7 @@ _G.pg.base.item_data_statistics[41888] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41889] = {
@@ -63347,7 +63545,6 @@ _G.pg.base.item_data_statistics[41889] = {
 	icon = "SquareIcon/aierwen",
 	id = 41889,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63368,6 +63565,7 @@ _G.pg.base.item_data_statistics[41889] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41890] = {
@@ -63377,7 +63575,6 @@ _G.pg.base.item_data_statistics[41890] = {
 	icon = "SquareIcon/beiqi",
 	id = 41890,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63398,6 +63595,7 @@ _G.pg.base.item_data_statistics[41890] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41891] = {
@@ -63407,7 +63605,6 @@ _G.pg.base.item_data_statistics[41891] = {
 	icon = "SquareIcon/sitanli",
 	id = 41891,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63428,6 +63625,7 @@ _G.pg.base.item_data_statistics[41891] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41892] = {
@@ -63437,7 +63635,6 @@ _G.pg.base.item_data_statistics[41892] = {
 	icon = "SquareIcon/simoli",
 	id = 41892,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63458,6 +63655,7 @@ _G.pg.base.item_data_statistics[41892] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41893] = {
@@ -63467,7 +63665,6 @@ _G.pg.base.item_data_statistics[41893] = {
 	icon = "SquareIcon/haerxibaoweier",
 	id = 41893,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63488,6 +63685,7 @@ _G.pg.base.item_data_statistics[41893] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41894] = {
@@ -63497,7 +63695,6 @@ _G.pg.base.item_data_statistics[41894] = {
 	icon = "SquareIcon/hailunna_younv",
 	id = 41894,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63518,6 +63715,7 @@ _G.pg.base.item_data_statistics[41894] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41895] = {
@@ -63527,7 +63725,6 @@ _G.pg.base.item_data_statistics[41895] = {
 	icon = "SquareIcon/shenghuan",
 	id = 41895,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63548,6 +63745,7 @@ _G.pg.base.item_data_statistics[41895] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41896] = {
@@ -63557,7 +63755,6 @@ _G.pg.base.item_data_statistics[41896] = {
 	icon = "SquareIcon/shengdiyage_younv",
 	id = 41896,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63578,6 +63775,7 @@ _G.pg.base.item_data_statistics[41896] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41897] = {
@@ -63587,7 +63785,6 @@ _G.pg.base.item_data_statistics[41897] = {
 	icon = "SquareIcon/bominghan",
 	id = 41897,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63608,6 +63805,7 @@ _G.pg.base.item_data_statistics[41897] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41898] = {
@@ -63617,7 +63815,6 @@ _G.pg.base.item_data_statistics[41898] = {
 	icon = "SquareIcon/biluokexi",
 	id = 41898,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63638,6 +63835,7 @@ _G.pg.base.item_data_statistics[41898] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41899] = {
@@ -63647,7 +63845,6 @@ _G.pg.base.item_data_statistics[41899] = {
 	icon = "SquareIcon/kelifulan_younv",
 	id = 41899,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63668,6 +63865,7 @@ _G.pg.base.item_data_statistics[41899] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41900] = {
@@ -63677,7 +63875,6 @@ _G.pg.base.item_data_statistics[41900] = {
 	icon = "SquareIcon/kelifulan_idol",
 	id = 41900,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63698,6 +63895,7 @@ _G.pg.base.item_data_statistics[41900] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41901] = {
@@ -63707,7 +63905,6 @@ _G.pg.base.item_data_statistics[41901] = {
 	icon = "SquareIcon/baerdimo",
 	id = 41901,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63728,6 +63925,7 @@ _G.pg.base.item_data_statistics[41901] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41902] = {
@@ -63737,7 +63935,6 @@ _G.pg.base.item_data_statistics[41902] = {
 	icon = "SquareIcon/alabama",
 	id = 41902,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63758,6 +63955,7 @@ _G.pg.base.item_data_statistics[41902] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41903] = {
@@ -63767,7 +63965,6 @@ _G.pg.base.item_data_statistics[41903] = {
 	icon = "SquareIcon/bangkeshan",
 	id = 41903,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63788,6 +63985,7 @@ _G.pg.base.item_data_statistics[41903] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41904] = {
@@ -63797,7 +63995,6 @@ _G.pg.base.item_data_statistics[41904] = {
 	icon = "SquareIcon/duli",
 	id = 41904,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63818,6 +64015,7 @@ _G.pg.base.item_data_statistics[41904] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41905] = {
@@ -63827,7 +64025,6 @@ _G.pg.base.item_data_statistics[41905] = {
 	icon = "SquareIcon/badan",
 	id = 41905,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63848,6 +64045,7 @@ _G.pg.base.item_data_statistics[41905] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41906] = {
@@ -63857,7 +64055,6 @@ _G.pg.base.item_data_statistics[41906] = {
 	icon = "SquareIcon/xianggelila",
 	id = 41906,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63878,6 +64075,7 @@ _G.pg.base.item_data_statistics[41906] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41907] = {
@@ -63887,7 +64085,6 @@ _G.pg.base.item_data_statistics[41907] = {
 	icon = "SquareIcon/jiqi",
 	id = 41907,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63908,6 +64105,7 @@ _G.pg.base.item_data_statistics[41907] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41908] = {
@@ -63917,7 +64115,6 @@ _G.pg.base.item_data_statistics[41908] = {
 	icon = "SquareIcon/huisheng",
 	id = 41908,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63938,6 +64135,7 @@ _G.pg.base.item_data_statistics[41908] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41909] = {
@@ -63947,7 +64145,6 @@ _G.pg.base.item_data_statistics[41909] = {
 	icon = "SquareIcon/yonggan",
 	id = 41909,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63968,6 +64165,7 @@ _G.pg.base.item_data_statistics[41909] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41910] = {
@@ -63977,7 +64175,6 @@ _G.pg.base.item_data_statistics[41910] = {
 	icon = "SquareIcon/lieren",
 	id = 41910,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -63998,6 +64195,7 @@ _G.pg.base.item_data_statistics[41910] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41911] = {
@@ -64007,7 +64205,6 @@ _G.pg.base.item_data_statistics[41911] = {
 	icon = "SquareIcon/nananpudun",
 	id = 41911,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64028,6 +64225,7 @@ _G.pg.base.item_data_statistics[41911] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41912] = {
@@ -64037,7 +64235,6 @@ _G.pg.base.item_data_statistics[41912] = {
 	icon = "SquareIcon/gelasige",
 	id = 41912,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64058,6 +64255,7 @@ _G.pg.base.item_data_statistics[41912] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41913] = {
@@ -64067,7 +64265,6 @@ _G.pg.base.item_data_statistics[41913] = {
 	icon = "SquareIcon/geluosite",
 	id = 41913,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64088,6 +64285,7 @@ _G.pg.base.item_data_statistics[41913] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41914] = {
@@ -64097,7 +64295,6 @@ _G.pg.base.item_data_statistics[41914] = {
 	icon = "SquareIcon/xiefeierde_idol",
 	id = 41914,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64118,6 +64315,7 @@ _G.pg.base.item_data_statistics[41914] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41915] = {
@@ -64127,7 +64325,6 @@ _G.pg.base.item_data_statistics[41915] = {
 	icon = "SquareIcon/daiduo",
 	id = 41915,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64148,6 +64345,7 @@ _G.pg.base.item_data_statistics[41915] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41916] = {
@@ -64157,7 +64355,6 @@ _G.pg.base.item_data_statistics[41916] = {
 	icon = "SquareIcon/heitaizi",
 	id = 41916,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64178,6 +64375,7 @@ _G.pg.base.item_data_statistics[41916] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41917] = {
@@ -64187,7 +64385,6 @@ _G.pg.base.item_data_statistics[41917] = {
 	icon = "SquareIcon/quejie",
 	id = 41917,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64208,6 +64405,7 @@ _G.pg.base.item_data_statistics[41917] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41918] = {
@@ -64217,7 +64415,6 @@ _G.pg.base.item_data_statistics[41918] = {
 	icon = "SquareIcon/qiaozhiwushi",
 	id = 41918,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64238,6 +64435,7 @@ _G.pg.base.item_data_statistics[41918] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41919] = {
@@ -64247,7 +64445,6 @@ _G.pg.base.item_data_statistics[41919] = {
 	icon = "SquareIcon/kewei",
 	id = 41919,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64268,6 +64465,7 @@ _G.pg.base.item_data_statistics[41919] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41921] = {
@@ -64277,7 +64475,6 @@ _G.pg.base.item_data_statistics[41921] = {
 	icon = "SquareIcon/pubo",
 	id = 41921,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64298,6 +64495,7 @@ _G.pg.base.item_data_statistics[41921] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41922] = {
@@ -64307,7 +64505,6 @@ _G.pg.base.item_data_statistics[41922] = {
 	icon = "SquareIcon/xiang",
 	id = 41922,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64328,6 +64525,7 @@ _G.pg.base.item_data_statistics[41922] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41923] = {
@@ -64337,7 +64535,6 @@ _G.pg.base.item_data_statistics[41923] = {
 	icon = "SquareIcon/xia",
 	id = 41923,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64358,6 +64555,7 @@ _G.pg.base.item_data_statistics[41923] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41924] = {
@@ -64367,7 +64565,6 @@ _G.pg.base.item_data_statistics[41924] = {
 	icon = "SquareIcon/qingbo",
 	id = 41924,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64388,6 +64585,7 @@ _G.pg.base.item_data_statistics[41924] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41925] = {
@@ -64397,7 +64595,6 @@ _G.pg.base.item_data_statistics[41925] = {
 	icon = "SquareIcon/guinu",
 	id = 41925,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64418,6 +64615,7 @@ _G.pg.base.item_data_statistics[41925] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41926] = {
@@ -64427,7 +64625,6 @@ _G.pg.base.item_data_statistics[41926] = {
 	icon = "SquareIcon/linggu",
 	id = 41926,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64448,6 +64645,7 @@ _G.pg.base.item_data_statistics[41926] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41927] = {
@@ -64457,7 +64655,6 @@ _G.pg.base.item_data_statistics[41927] = {
 	icon = "SquareIcon/nengdai",
 	id = 41927,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64478,6 +64675,7 @@ _G.pg.base.item_data_statistics[41927] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41928] = {
@@ -64487,7 +64685,6 @@ _G.pg.base.item_data_statistics[41928] = {
 	icon = "SquareIcon/birui_younv",
 	id = 41928,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64508,6 +64705,7 @@ _G.pg.base.item_data_statistics[41928] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41929] = {
@@ -64517,7 +64715,6 @@ _G.pg.base.item_data_statistics[41929] = {
 	icon = "SquareIcon/junhe",
 	id = 41929,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64538,6 +64735,7 @@ _G.pg.base.item_data_statistics[41929] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41930] = {
@@ -64547,7 +64745,6 @@ _G.pg.base.item_data_statistics[41930] = {
 	icon = "SquareIcon/longfeng",
 	id = 41930,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64568,6 +64765,7 @@ _G.pg.base.item_data_statistics[41930] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41931] = {
@@ -64577,7 +64775,6 @@ _G.pg.base.item_data_statistics[41931] = {
 	icon = "SquareIcon/chicheng_younv",
 	id = 41931,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64598,6 +64795,7 @@ _G.pg.base.item_data_statistics[41931] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41932] = {
@@ -64607,7 +64805,6 @@ _G.pg.base.item_data_statistics[41932] = {
 	icon = "SquareIcon/chicheng_idol",
 	id = 41932,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64628,6 +64825,7 @@ _G.pg.base.item_data_statistics[41932] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41933] = {
@@ -64637,7 +64835,6 @@ _G.pg.base.item_data_statistics[41933] = {
 	icon = "SquareIcon/I25",
 	id = 41933,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64658,6 +64855,7 @@ _G.pg.base.item_data_statistics[41933] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41934] = {
@@ -64667,7 +64865,6 @@ _G.pg.base.item_data_statistics[41934] = {
 	icon = "SquareIcon/I56",
 	id = 41934,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64688,6 +64885,7 @@ _G.pg.base.item_data_statistics[41934] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41935] = {
@@ -64697,7 +64895,6 @@ _G.pg.base.item_data_statistics[41935] = {
 	icon = "SquareIcon/I168",
 	id = 41935,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64718,6 +64915,7 @@ _G.pg.base.item_data_statistics[41935] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41936] = {
@@ -64727,7 +64925,6 @@ _G.pg.base.item_data_statistics[41936] = {
 	icon = "SquareIcon/I13",
 	id = 41936,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64748,6 +64945,7 @@ _G.pg.base.item_data_statistics[41936] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41937] = {
@@ -64757,7 +64955,6 @@ _G.pg.base.item_data_statistics[41937] = {
 	icon = "SquareIcon/Z2",
 	id = 41937,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64778,6 +64975,7 @@ _G.pg.base.item_data_statistics[41937] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41938] = {
@@ -64787,7 +64985,6 @@ _G.pg.base.item_data_statistics[41938] = {
 	icon = "SquareIcon/Z36",
 	id = 41938,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64808,6 +65005,7 @@ _G.pg.base.item_data_statistics[41938] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41939] = {
@@ -64817,7 +65015,6 @@ _G.pg.base.item_data_statistics[41939] = {
 	icon = "SquareIcon/xipeier_idol",
 	id = 41939,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64838,6 +65035,7 @@ _G.pg.base.item_data_statistics[41939] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41940] = {
@@ -64847,7 +65045,6 @@ _G.pg.base.item_data_statistics[41940] = {
 	icon = "SquareIcon/bisimai",
 	id = 41940,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64868,6 +65065,7 @@ _G.pg.base.item_data_statistics[41940] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41941] = {
@@ -64877,7 +65075,6 @@ _G.pg.base.item_data_statistics[41941] = {
 	icon = "SquareIcon/qibolin_younv",
 	id = 41941,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64898,6 +65095,7 @@ _G.pg.base.item_data_statistics[41941] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41942] = {
@@ -64907,7 +65105,6 @@ _G.pg.base.item_data_statistics[41942] = {
 	icon = "SquareIcon/U73",
 	id = 41942,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64928,6 +65125,7 @@ _G.pg.base.item_data_statistics[41942] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41943] = {
@@ -64937,7 +65135,6 @@ _G.pg.base.item_data_statistics[41943] = {
 	icon = "SquareIcon/U101",
 	id = 41943,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64958,6 +65155,7 @@ _G.pg.base.item_data_statistics[41943] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41944] = {
@@ -64967,7 +65165,6 @@ _G.pg.base.item_data_statistics[41944] = {
 	icon = "SquareIcon/U110",
 	id = 41944,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -64988,6 +65185,7 @@ _G.pg.base.item_data_statistics[41944] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41945] = {
@@ -64997,7 +65195,6 @@ _G.pg.base.item_data_statistics[41945] = {
 	icon = "SquareIcon/U522",
 	id = 41945,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65018,6 +65215,7 @@ _G.pg.base.item_data_statistics[41945] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41946] = {
@@ -65027,7 +65225,6 @@ _G.pg.base.item_data_statistics[41946] = {
 	icon = "SquareIcon/U556",
 	id = 41946,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65048,6 +65245,7 @@ _G.pg.base.item_data_statistics[41946] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41947] = {
@@ -65057,7 +65255,6 @@ _G.pg.base.item_data_statistics[41947] = {
 	icon = "SquareIcon/longqibing",
 	id = 41947,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65078,6 +65275,7 @@ _G.pg.base.item_data_statistics[41947] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41948] = {
@@ -65087,7 +65285,6 @@ _G.pg.base.item_data_statistics[41948] = {
 	icon = "SquareIcon/teluntuo",
 	id = 41948,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65108,6 +65305,7 @@ _G.pg.base.item_data_statistics[41948] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41949] = {
@@ -65117,7 +65315,6 @@ _G.pg.base.item_data_statistics[41949] = {
 	icon = "SquareIcon/zhala",
 	id = 41949,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65138,6 +65335,7 @@ _G.pg.base.item_data_statistics[41949] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41950] = {
@@ -65147,7 +65345,6 @@ _G.pg.base.item_data_statistics[41950] = {
 	icon = "SquareIcon/lituoliao",
 	id = 41950,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65168,6 +65365,7 @@ _G.pg.base.item_data_statistics[41950] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41951] = {
@@ -65177,7 +65375,6 @@ _G.pg.base.item_data_statistics[41951] = {
 	icon = "SquareIcon/jiafuerbojue",
 	id = 41951,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65198,6 +65395,7 @@ _G.pg.base.item_data_statistics[41951] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41952] = {
@@ -65207,7 +65405,6 @@ _G.pg.base.item_data_statistics[41952] = {
 	icon = "SquareIcon/kaisa",
 	id = 41952,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65228,6 +65425,7 @@ _G.pg.base.item_data_statistics[41952] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41953] = {
@@ -65237,7 +65435,6 @@ _G.pg.base.item_data_statistics[41953] = {
 	icon = "SquareIcon/juejiang",
 	id = 41953,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65258,6 +65455,7 @@ _G.pg.base.item_data_statistics[41953] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41954] = {
@@ -65267,7 +65465,6 @@ _G.pg.base.item_data_statistics[41954] = {
 	icon = "SquareIcon/edu",
 	id = 41954,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65288,6 +65485,7 @@ _G.pg.base.item_data_statistics[41954] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41955] = {
@@ -65297,7 +65495,6 @@ _G.pg.base.item_data_statistics[41955] = {
 	icon = "SquareIcon/jiasikenie_idol",
 	id = 41955,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65318,6 +65515,7 @@ _G.pg.base.item_data_statistics[41955] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41956] = {
@@ -65327,7 +65525,6 @@ _G.pg.base.item_data_statistics[41956] = {
 	icon = "SquareIcon/xiyatu",
 	id = 41956,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65348,6 +65545,7 @@ _G.pg.base.item_data_statistics[41956] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41957] = {
@@ -65357,7 +65555,6 @@ _G.pg.base.item_data_statistics[41957] = {
 	icon = "SquareIcon/zuozhiya",
 	id = 41957,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65378,6 +65575,7 @@ _G.pg.base.item_data_statistics[41957] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41958] = {
@@ -65387,7 +65585,6 @@ _G.pg.base.item_data_statistics[41958] = {
 	icon = "SquareIcon/beifeng",
 	id = 41958,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65408,6 +65605,7 @@ _G.pg.base.item_data_statistics[41958] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41959] = {
@@ -65417,7 +65615,6 @@ _G.pg.base.item_data_statistics[41959] = {
 	icon = "SquareIcon/wuqi",
 	id = 41959,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65438,6 +65635,7 @@ _G.pg.base.item_data_statistics[41959] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41960] = {
@@ -65447,7 +65645,6 @@ _G.pg.base.item_data_statistics[41960] = {
 	icon = "SquareIcon/feiteliedadi",
 	id = 41960,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65468,6 +65665,7 @@ _G.pg.base.item_data_statistics[41960] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[41961] = {
@@ -65477,7 +65675,6 @@ _G.pg.base.item_data_statistics[41961] = {
 	icon = "SquareIcon/jiasikenie",
 	id = 41961,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -65498,6 +65695,7 @@ _G.pg.base.item_data_statistics[41961] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42000] = {
@@ -65507,7 +65705,6 @@ _G.pg.base.item_data_statistics[42000] = {
 	icon = "Props/42000",
 	id = 42000,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "General Blueprint - Series 1",
@@ -65590,6 +65787,7 @@ _G.pg.base.item_data_statistics[42000] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42001] = {
@@ -65599,7 +65797,6 @@ _G.pg.base.item_data_statistics[42001] = {
 	icon = "Props/42001",
 	id = 42001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Neptune",
@@ -65625,6 +65822,7 @@ _G.pg.base.item_data_statistics[42001] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42002] = {
@@ -65634,7 +65832,6 @@ _G.pg.base.item_data_statistics[42002] = {
 	icon = "Props/42002",
 	id = 42002,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Monarch",
@@ -65660,6 +65857,7 @@ _G.pg.base.item_data_statistics[42002] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42003] = {
@@ -65669,7 +65867,6 @@ _G.pg.base.item_data_statistics[42003] = {
 	icon = "Props/42003",
 	id = 42003,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Ibuki",
@@ -65695,6 +65892,7 @@ _G.pg.base.item_data_statistics[42003] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42004] = {
@@ -65704,7 +65902,6 @@ _G.pg.base.item_data_statistics[42004] = {
 	icon = "Props/42004",
 	id = 42004,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Izumo",
@@ -65730,6 +65927,7 @@ _G.pg.base.item_data_statistics[42004] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42005] = {
@@ -65739,7 +65937,6 @@ _G.pg.base.item_data_statistics[42005] = {
 	icon = "Props/42005",
 	id = 42005,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Roon",
@@ -65765,6 +65962,7 @@ _G.pg.base.item_data_statistics[42005] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42006] = {
@@ -65774,7 +65972,6 @@ _G.pg.base.item_data_statistics[42006] = {
 	icon = "Props/42006",
 	id = 42006,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Saint Louis",
@@ -65800,6 +65997,7 @@ _G.pg.base.item_data_statistics[42006] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42010] = {
@@ -65809,7 +66007,6 @@ _G.pg.base.item_data_statistics[42010] = {
 	icon = "Props/42010",
 	id = 42010,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "General Blueprint - Series 2",
@@ -65932,6 +66129,7 @@ _G.pg.base.item_data_statistics[42010] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42011] = {
@@ -65941,7 +66139,6 @@ _G.pg.base.item_data_statistics[42011] = {
 	icon = "Props/42011",
 	id = 42011,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Seattle",
@@ -65967,6 +66164,7 @@ _G.pg.base.item_data_statistics[42011] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42012] = {
@@ -65976,7 +66174,6 @@ _G.pg.base.item_data_statistics[42012] = {
 	icon = "Props/42012",
 	id = 42012,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Georgia",
@@ -66002,6 +66199,7 @@ _G.pg.base.item_data_statistics[42012] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42013] = {
@@ -66011,7 +66209,6 @@ _G.pg.base.item_data_statistics[42013] = {
 	icon = "Props/42013",
 	id = 42013,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Kitakaze",
@@ -66037,6 +66234,7 @@ _G.pg.base.item_data_statistics[42013] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42014] = {
@@ -66046,7 +66244,6 @@ _G.pg.base.item_data_statistics[42014] = {
 	icon = "Props/42014",
 	id = 42014,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Azuma",
@@ -66072,6 +66269,7 @@ _G.pg.base.item_data_statistics[42014] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42015] = {
@@ -66081,7 +66279,6 @@ _G.pg.base.item_data_statistics[42015] = {
 	icon = "Props/42015",
 	id = 42015,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Friedrich der Große",
@@ -66107,6 +66304,7 @@ _G.pg.base.item_data_statistics[42015] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42016] = {
@@ -66116,7 +66314,6 @@ _G.pg.base.item_data_statistics[42016] = {
 	icon = "Props/42016",
 	id = 42016,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Gascogne",
@@ -66142,6 +66339,7 @@ _G.pg.base.item_data_statistics[42016] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42017] = {
@@ -66151,7 +66349,6 @@ _G.pg.base.item_data_statistics[42017] = {
 	icon = "Props/42017",
 	id = 42017,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Special General Blueprint - Series 2",
@@ -66194,6 +66391,7 @@ _G.pg.base.item_data_statistics[42017] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42020] = {
@@ -66203,7 +66401,6 @@ _G.pg.base.item_data_statistics[42020] = {
 	icon = "Props/42020",
 	id = 42020,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "General Blueprint - Series 3",
@@ -66366,6 +66563,7 @@ _G.pg.base.item_data_statistics[42020] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42021] = {
@@ -66375,7 +66573,6 @@ _G.pg.base.item_data_statistics[42021] = {
 	icon = "Props/42021",
 	id = 42021,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint – Cheshire",
@@ -66401,6 +66598,7 @@ _G.pg.base.item_data_statistics[42021] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42022] = {
@@ -66410,7 +66608,6 @@ _G.pg.base.item_data_statistics[42022] = {
 	icon = "Props/42022",
 	id = 42022,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Drake",
@@ -66436,6 +66633,7 @@ _G.pg.base.item_data_statistics[42022] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42023] = {
@@ -66445,7 +66643,6 @@ _G.pg.base.item_data_statistics[42023] = {
 	icon = "Props/42023",
 	id = 42023,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Mainz",
@@ -66471,6 +66668,7 @@ _G.pg.base.item_data_statistics[42023] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42024] = {
@@ -66480,7 +66678,6 @@ _G.pg.base.item_data_statistics[42024] = {
 	icon = "Props/42024",
 	id = 42024,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Odin",
@@ -66506,6 +66703,7 @@ _G.pg.base.item_data_statistics[42024] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42025] = {
@@ -66515,7 +66713,6 @@ _G.pg.base.item_data_statistics[42025] = {
 	icon = "Props/42025",
 	id = 42025,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Champagne",
@@ -66541,6 +66738,7 @@ _G.pg.base.item_data_statistics[42025] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42026] = {
@@ -66550,7 +66748,6 @@ _G.pg.base.item_data_statistics[42026] = {
 	icon = "Props/42026",
 	id = 42026,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Special General Blueprint - Series 3",
@@ -66603,6 +66800,7 @@ _G.pg.base.item_data_statistics[42026] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42030] = {
@@ -66612,7 +66810,6 @@ _G.pg.base.item_data_statistics[42030] = {
 	icon = "Props/42030",
 	id = 42030,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "General Blueprint - Series 4",
@@ -66805,6 +67002,7 @@ _G.pg.base.item_data_statistics[42030] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42031] = {
@@ -66814,7 +67012,6 @@ _G.pg.base.item_data_statistics[42031] = {
 	icon = "Props/42031",
 	id = 42031,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Anchorage ",
@@ -66840,6 +67037,7 @@ _G.pg.base.item_data_statistics[42031] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42032] = {
@@ -66849,7 +67047,6 @@ _G.pg.base.item_data_statistics[42032] = {
 	icon = "Props/42032",
 	id = 42032,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Hakuryuu ",
@@ -66875,6 +67072,7 @@ _G.pg.base.item_data_statistics[42032] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42033] = {
@@ -66884,7 +67082,6 @@ _G.pg.base.item_data_statistics[42033] = {
 	icon = "Props/42033",
 	id = 42033,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Ägir ",
@@ -66910,6 +67107,7 @@ _G.pg.base.item_data_statistics[42033] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42034] = {
@@ -66919,7 +67117,6 @@ _G.pg.base.item_data_statistics[42034] = {
 	icon = "Props/42034",
 	id = 42034,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - August von Parseval ",
@@ -66945,6 +67142,7 @@ _G.pg.base.item_data_statistics[42034] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42035] = {
@@ -66954,7 +67152,6 @@ _G.pg.base.item_data_statistics[42035] = {
 	icon = "Props/42035",
 	id = 42035,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Marco Polo ",
@@ -66980,6 +67177,7 @@ _G.pg.base.item_data_statistics[42035] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42036] = {
@@ -66989,7 +67187,6 @@ _G.pg.base.item_data_statistics[42036] = {
 	icon = "Props/42036",
 	id = 42036,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Special General Blueprint - Series 4",
@@ -67062,6 +67259,7 @@ _G.pg.base.item_data_statistics[42036] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42040] = {
@@ -67071,7 +67269,6 @@ _G.pg.base.item_data_statistics[42040] = {
 	icon = "Props/42040",
 	id = 42040,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "General Blueprint - Series 5",
@@ -67294,6 +67491,7 @@ _G.pg.base.item_data_statistics[42040] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42041] = {
@@ -67303,7 +67501,6 @@ _G.pg.base.item_data_statistics[42041] = {
 	icon = "Props/42041",
 	id = 42041,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Plymouth",
@@ -67329,6 +67526,7 @@ _G.pg.base.item_data_statistics[42041] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42042] = {
@@ -67338,7 +67536,6 @@ _G.pg.base.item_data_statistics[42042] = {
 	icon = "Props/42042",
 	id = 42042,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Prinz Rupprecht",
@@ -67364,6 +67561,7 @@ _G.pg.base.item_data_statistics[42042] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42043] = {
@@ -67373,7 +67571,6 @@ _G.pg.base.item_data_statistics[42043] = {
 	icon = "Props/42043",
 	id = 42043,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Harbin",
@@ -67399,6 +67596,7 @@ _G.pg.base.item_data_statistics[42043] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42044] = {
@@ -67408,7 +67606,6 @@ _G.pg.base.item_data_statistics[42044] = {
 	icon = "Props/42044",
 	id = 42044,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Chkalov",
@@ -67434,6 +67631,7 @@ _G.pg.base.item_data_statistics[42044] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42045] = {
@@ -67443,7 +67641,6 @@ _G.pg.base.item_data_statistics[42045] = {
 	icon = "Props/42045",
 	id = 42045,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Brest",
@@ -67469,6 +67666,7 @@ _G.pg.base.item_data_statistics[42045] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42046] = {
@@ -67478,7 +67676,6 @@ _G.pg.base.item_data_statistics[42046] = {
 	icon = "Props/42046",
 	id = 42046,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Special General Blueprint - Series 5",
@@ -67571,6 +67768,7 @@ _G.pg.base.item_data_statistics[42046] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42050] = {
@@ -67580,7 +67778,6 @@ _G.pg.base.item_data_statistics[42050] = {
 	icon = "Props/42050",
 	id = 42050,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "General Blueprint - Series 6",
@@ -67833,6 +68030,7 @@ _G.pg.base.item_data_statistics[42050] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42051] = {
@@ -67842,7 +68040,6 @@ _G.pg.base.item_data_statistics[42051] = {
 	icon = "Props/42051",
 	id = 42051,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Kearsarge",
@@ -67868,6 +68065,7 @@ _G.pg.base.item_data_statistics[42051] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42052] = {
@@ -67877,7 +68075,6 @@ _G.pg.base.item_data_statistics[42052] = {
 	icon = "Props/42052",
 	id = 42052,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Shimanto",
@@ -67903,6 +68100,7 @@ _G.pg.base.item_data_statistics[42052] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42053] = {
@@ -67912,7 +68110,6 @@ _G.pg.base.item_data_statistics[42053] = {
 	icon = "Props/42053",
 	id = 42053,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Felix Schultz",
@@ -67938,6 +68135,7 @@ _G.pg.base.item_data_statistics[42053] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42054] = {
@@ -67947,7 +68145,6 @@ _G.pg.base.item_data_statistics[42054] = {
 	icon = "Props/42054",
 	id = 42054,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Hindenburg",
@@ -67973,6 +68170,7 @@ _G.pg.base.item_data_statistics[42054] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42055] = {
@@ -67982,7 +68180,6 @@ _G.pg.base.item_data_statistics[42055] = {
 	icon = "Props/42055",
 	id = 42055,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Flandre",
@@ -68008,6 +68205,7 @@ _G.pg.base.item_data_statistics[42055] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42056] = {
@@ -68017,7 +68215,6 @@ _G.pg.base.item_data_statistics[42056] = {
 	icon = "Props/42056",
 	id = 42056,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Special General Blueprint - Series 6",
@@ -68130,6 +68327,7 @@ _G.pg.base.item_data_statistics[42056] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42060] = {
@@ -68139,7 +68337,6 @@ _G.pg.base.item_data_statistics[42060] = {
 	icon = "Props/42060",
 	id = 42060,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "General Blueprint - Series 7",
@@ -68422,6 +68619,7 @@ _G.pg.base.item_data_statistics[42060] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42061] = {
@@ -68431,7 +68629,6 @@ _G.pg.base.item_data_statistics[42061] = {
 	icon = "Props/42061",
 	id = 42061,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Halford",
@@ -68457,6 +68654,7 @@ _G.pg.base.item_data_statistics[42061] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42062] = {
@@ -68466,7 +68664,6 @@ _G.pg.base.item_data_statistics[42062] = {
 	icon = "Props/42062",
 	id = 42062,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Daisen",
@@ -68492,6 +68689,7 @@ _G.pg.base.item_data_statistics[42062] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42063] = {
@@ -68501,7 +68699,6 @@ _G.pg.base.item_data_statistics[42063] = {
 	icon = "Props/42063",
 	id = 42063,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Napoli",
@@ -68527,6 +68724,7 @@ _G.pg.base.item_data_statistics[42063] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42064] = {
@@ -68536,7 +68734,6 @@ _G.pg.base.item_data_statistics[42064] = {
 	icon = "Props/42064",
 	id = 42064,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Admiral Nakhimov",
@@ -68562,6 +68759,7 @@ _G.pg.base.item_data_statistics[42064] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42065] = {
@@ -68571,7 +68769,6 @@ _G.pg.base.item_data_statistics[42065] = {
 	icon = "Props/42065",
 	id = 42065,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Blueprint - Bayard",
@@ -68597,6 +68794,7 @@ _G.pg.base.item_data_statistics[42065] = {
 	usage_arg = {
 		10,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[42066] = {
@@ -68606,7 +68804,6 @@ _G.pg.base.item_data_statistics[42066] = {
 	icon = "Props/42066",
 	id = 42066,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Special General Blueprint - Series 7",
@@ -68739,6 +68936,7 @@ _G.pg.base.item_data_statistics[42066] = {
 			1,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43001] = {
@@ -68748,7 +68946,6 @@ _G.pg.base.item_data_statistics[43001] = {
 	icon = "SquareIcon/gin",
 	id = 43001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -68769,6 +68966,7 @@ _G.pg.base.item_data_statistics[43001] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43002] = {
@@ -68778,7 +68976,6 @@ _G.pg.base.item_data_statistics[43002] = {
 	icon = "SquareIcon/kin",
 	id = 43002,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -68799,6 +68996,7 @@ _G.pg.base.item_data_statistics[43002] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43003] = {
@@ -68808,7 +69006,6 @@ _G.pg.base.item_data_statistics[43003] = {
 	icon = "SquareIcon/duwei",
 	id = 43003,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -68829,6 +69026,7 @@ _G.pg.base.item_data_statistics[43003] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43004] = {
@@ -68838,7 +69036,6 @@ _G.pg.base.item_data_statistics[43004] = {
 	icon = "SquareIcon/kaxin",
 	id = 43004,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -68859,6 +69056,7 @@ _G.pg.base.item_data_statistics[43004] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43005] = {
@@ -68868,7 +69066,6 @@ _G.pg.base.item_data_statistics[43005] = {
 	icon = "SquareIcon/tangsi",
 	id = 43005,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -68889,6 +69086,7 @@ _G.pg.base.item_data_statistics[43005] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43006] = {
@@ -68898,7 +69096,6 @@ _G.pg.base.item_data_statistics[43006] = {
 	icon = "SquareIcon/gelideli",
 	id = 43006,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -68919,6 +69116,7 @@ _G.pg.base.item_data_statistics[43006] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43007] = {
@@ -68928,7 +69126,6 @@ _G.pg.base.item_data_statistics[43007] = {
 	icon = "SquareIcon/keleiwen",
 	id = 43007,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -68949,6 +69146,7 @@ _G.pg.base.item_data_statistics[43007] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43008] = {
@@ -68958,7 +69156,6 @@ _G.pg.base.item_data_statistics[43008] = {
 	icon = "SquareIcon/maikaoer",
 	id = 43008,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -68979,6 +69176,7 @@ _G.pg.base.item_data_statistics[43008] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43009] = {
@@ -68988,7 +69186,6 @@ _G.pg.base.item_data_statistics[43009] = {
 	icon = "SquareIcon/moli",
 	id = 43009,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69009,6 +69206,7 @@ _G.pg.base.item_data_statistics[43009] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43010] = {
@@ -69018,7 +69216,6 @@ _G.pg.base.item_data_statistics[43010] = {
 	icon = "SquareIcon/fulaiche",
 	id = 43010,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69039,6 +69236,7 @@ _G.pg.base.item_data_statistics[43010] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43011] = {
@@ -69048,7 +69246,6 @@ _G.pg.base.item_data_statistics[43011] = {
 	icon = "SquareIcon/aosiben",
 	id = 43011,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69069,6 +69266,7 @@ _G.pg.base.item_data_statistics[43011] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43012] = {
@@ -69078,7 +69276,6 @@ _G.pg.base.item_data_statistics[43012] = {
 	icon = "SquareIcon/saqieer",
 	id = 43012,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69099,6 +69296,7 @@ _G.pg.base.item_data_statistics[43012] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43013] = {
@@ -69108,7 +69306,6 @@ _G.pg.base.item_data_statistics[43013] = {
 	icon = "SquareIcon/aolike",
 	id = 43013,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69129,6 +69326,7 @@ _G.pg.base.item_data_statistics[43013] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43014] = {
@@ -69138,7 +69336,6 @@ _G.pg.base.item_data_statistics[43014] = {
 	icon = "SquareIcon/fute",
 	id = 43014,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69159,6 +69356,7 @@ _G.pg.base.item_data_statistics[43014] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43015] = {
@@ -69168,7 +69366,6 @@ _G.pg.base.item_data_statistics[43015] = {
 	icon = "SquareIcon/sipengsi",
 	id = 43015,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69189,6 +69386,7 @@ _G.pg.base.item_data_statistics[43015] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43016] = {
@@ -69198,7 +69396,6 @@ _G.pg.base.item_data_statistics[43016] = {
 	icon = "SquareIcon/bensen",
 	id = 43016,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69219,6 +69416,7 @@ _G.pg.base.item_data_statistics[43016] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43017] = {
@@ -69228,7 +69426,6 @@ _G.pg.base.item_data_statistics[43017] = {
 	icon = "SquareIcon/lafei",
 	id = 43017,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69249,6 +69446,7 @@ _G.pg.base.item_data_statistics[43017] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43018] = {
@@ -69258,7 +69456,6 @@ _G.pg.base.item_data_statistics[43018] = {
 	icon = "SquareIcon/ximusi",
 	id = 43018,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69279,6 +69476,7 @@ _G.pg.base.item_data_statistics[43018] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43019] = {
@@ -69288,7 +69486,6 @@ _G.pg.base.item_data_statistics[43019] = {
 	icon = "SquareIcon/haman",
 	id = 43019,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69309,6 +69506,7 @@ _G.pg.base.item_data_statistics[43019] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43020] = {
@@ -69318,7 +69516,6 @@ _G.pg.base.item_data_statistics[43020] = {
 	icon = "SquareIcon/aierdeliqi",
 	id = 43020,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69339,6 +69536,7 @@ _G.pg.base.item_data_statistics[43020] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43021] = {
@@ -69348,7 +69546,6 @@ _G.pg.base.item_data_statistics[43021] = {
 	icon = "SquareIcon/beili",
 	id = 43021,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69369,6 +69566,7 @@ _G.pg.base.item_data_statistics[43021] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43022] = {
@@ -69378,7 +69576,6 @@ _G.pg.base.item_data_statistics[43022] = {
 	icon = "SquareIcon/ladefute",
 	id = 43022,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69399,6 +69596,7 @@ _G.pg.base.item_data_statistics[43022] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43023] = {
@@ -69408,7 +69606,6 @@ _G.pg.base.item_data_statistics[43023] = {
 	icon = "SquareIcon/jiejinsi",
 	id = 43023,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69429,6 +69626,7 @@ _G.pg.base.item_data_statistics[43023] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43024] = {
@@ -69438,7 +69636,6 @@ _G.pg.base.item_data_statistics[43024] = {
 	icon = "SquareIcon/nigulasi",
 	id = 43024,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69459,6 +69656,7 @@ _G.pg.base.item_data_statistics[43024] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43025] = {
@@ -69468,7 +69666,6 @@ _G.pg.base.item_data_statistics[43025] = {
 	icon = "SquareIcon/bushi",
 	id = 43025,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69489,6 +69686,7 @@ _G.pg.base.item_data_statistics[43025] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43026] = {
@@ -69498,7 +69696,6 @@ _G.pg.base.item_data_statistics[43026] = {
 	icon = "SquareIcon/heizewude",
 	id = 43026,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69519,6 +69716,7 @@ _G.pg.base.item_data_statistics[43026] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43027] = {
@@ -69528,7 +69726,6 @@ _G.pg.base.item_data_statistics[43027] = {
 	icon = "SquareIcon/beiqi",
 	id = 43027,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69549,6 +69746,7 @@ _G.pg.base.item_data_statistics[43027] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43028] = {
@@ -69558,7 +69756,6 @@ _G.pg.base.item_data_statistics[43028] = {
 	icon = "SquareIcon/huobi",
 	id = 43028,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69579,6 +69776,7 @@ _G.pg.base.item_data_statistics[43028] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43029] = {
@@ -69588,7 +69786,6 @@ _G.pg.base.item_data_statistics[43029] = {
 	icon = "SquareIcon/keerke",
 	id = 43029,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69609,6 +69806,7 @@ _G.pg.base.item_data_statistics[43029] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43030] = {
@@ -69618,7 +69816,6 @@ _G.pg.base.item_data_statistics[43030] = {
 	icon = "SquareIcon/jinboli",
 	id = 43030,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69639,6 +69836,7 @@ _G.pg.base.item_data_statistics[43030] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43031] = {
@@ -69648,7 +69846,6 @@ _G.pg.base.item_data_statistics[43031] = {
 	icon = "SquareIcon/malani",
 	id = 43031,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69669,6 +69866,7 @@ _G.pg.base.item_data_statistics[43031] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43032] = {
@@ -69678,7 +69876,6 @@ _G.pg.base.item_data_statistics[43032] = {
 	icon = "SquareIcon/aierwen",
 	id = 43032,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69699,6 +69896,7 @@ _G.pg.base.item_data_statistics[43032] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43033] = {
@@ -69708,7 +69906,6 @@ _G.pg.base.item_data_statistics[43033] = {
 	icon = "SquareIcon/sitanli",
 	id = 43033,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69729,6 +69926,7 @@ _G.pg.base.item_data_statistics[43033] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43034] = {
@@ -69738,7 +69936,6 @@ _G.pg.base.item_data_statistics[43034] = {
 	icon = "SquareIcon/simoli",
 	id = 43034,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69759,6 +69956,7 @@ _G.pg.base.item_data_statistics[43034] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43035] = {
@@ -69768,7 +69966,6 @@ _G.pg.base.item_data_statistics[43035] = {
 	icon = "SquareIcon/aomaha",
 	id = 43035,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69789,6 +69986,7 @@ _G.pg.base.item_data_statistics[43035] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43036] = {
@@ -69798,7 +69996,6 @@ _G.pg.base.item_data_statistics[43036] = {
 	icon = "SquareIcon/luoli",
 	id = 43036,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69819,6 +70016,7 @@ _G.pg.base.item_data_statistics[43036] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43037] = {
@@ -69828,7 +70026,6 @@ _G.pg.base.item_data_statistics[43037] = {
 	icon = "SquareIcon/bulukelin",
 	id = 43037,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69849,6 +70046,7 @@ _G.pg.base.item_data_statistics[43037] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43038] = {
@@ -69858,7 +70056,6 @@ _G.pg.base.item_data_statistics[43038] = {
 	icon = "SquareIcon/feinikesi",
 	id = 43038,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69879,6 +70076,7 @@ _G.pg.base.item_data_statistics[43038] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43039] = {
@@ -69888,7 +70086,6 @@ _G.pg.base.item_data_statistics[43039] = {
 	icon = "SquareIcon/hailunna",
 	id = 43039,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69909,6 +70106,7 @@ _G.pg.base.item_data_statistics[43039] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43040] = {
@@ -69918,7 +70116,6 @@ _G.pg.base.item_data_statistics[43040] = {
 	icon = "SquareIcon/yatelanda",
 	id = 43040,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69939,6 +70136,7 @@ _G.pg.base.item_data_statistics[43040] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43041] = {
@@ -69948,7 +70146,6 @@ _G.pg.base.item_data_statistics[43041] = {
 	icon = "SquareIcon/zhunuo",
 	id = 43041,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69969,6 +70166,7 @@ _G.pg.base.item_data_statistics[43041] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43042] = {
@@ -69978,7 +70176,6 @@ _G.pg.base.item_data_statistics[43042] = {
 	icon = "SquareIcon/shengdiyage",
 	id = 43042,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -69999,6 +70196,7 @@ _G.pg.base.item_data_statistics[43042] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43043] = {
@@ -70008,7 +70206,6 @@ _G.pg.base.item_data_statistics[43043] = {
 	icon = "SquareIcon/kelifulan",
 	id = 43043,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70029,6 +70226,7 @@ _G.pg.base.item_data_statistics[43043] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43044] = {
@@ -70038,7 +70236,6 @@ _G.pg.base.item_data_statistics[43044] = {
 	icon = "SquareIcon/gelunbiya",
 	id = 43044,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70059,6 +70256,7 @@ _G.pg.base.item_data_statistics[43044] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43045] = {
@@ -70068,7 +70266,6 @@ _G.pg.base.item_data_statistics[43045] = {
 	icon = "SquareIcon/lishiman",
 	id = 43045,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70089,6 +70286,7 @@ _G.pg.base.item_data_statistics[43045] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43046] = {
@@ -70098,7 +70296,6 @@ _G.pg.base.item_data_statistics[43046] = {
 	icon = "SquareIcon/huonululu",
 	id = 43046,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70119,6 +70316,7 @@ _G.pg.base.item_data_statistics[43046] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43047] = {
@@ -70128,7 +70326,6 @@ _G.pg.base.item_data_statistics[43047] = {
 	icon = "SquareIcon/shengluyisi",
 	id = 43047,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70149,6 +70346,7 @@ _G.pg.base.item_data_statistics[43047] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43048] = {
@@ -70158,7 +70356,6 @@ _G.pg.base.item_data_statistics[43048] = {
 	icon = "SquareIcon/mengbiliai",
 	id = 43048,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70179,6 +70376,7 @@ _G.pg.base.item_data_statistics[43048] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43049] = {
@@ -70188,7 +70386,6 @@ _G.pg.base.item_data_statistics[43049] = {
 	icon = "SquareIcon/danfo",
 	id = 43049,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70209,6 +70406,7 @@ _G.pg.base.item_data_statistics[43049] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43050] = {
@@ -70218,7 +70416,6 @@ _G.pg.base.item_data_statistics[43050] = {
 	icon = "SquareIcon/mengfeisi",
 	id = 43050,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70239,6 +70436,7 @@ _G.pg.base.item_data_statistics[43050] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43051] = {
@@ -70248,7 +70446,6 @@ _G.pg.base.item_data_statistics[43051] = {
 	icon = "SquareIcon/kangkede",
 	id = 43051,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70269,6 +70466,7 @@ _G.pg.base.item_data_statistics[43051] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43052] = {
@@ -70278,7 +70476,6 @@ _G.pg.base.item_data_statistics[43052] = {
 	icon = "SquareIcon/hailunna_younv",
 	id = 43052,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70299,6 +70496,7 @@ _G.pg.base.item_data_statistics[43052] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43053] = {
@@ -70308,7 +70506,6 @@ _G.pg.base.item_data_statistics[43053] = {
 	icon = "SquareIcon/kelifulan_younv",
 	id = 43053,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70329,6 +70526,7 @@ _G.pg.base.item_data_statistics[43053] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43054] = {
@@ -70338,7 +70536,6 @@ _G.pg.base.item_data_statistics[43054] = {
 	icon = "SquareIcon/shengdiyage_younv",
 	id = 43054,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70359,6 +70556,7 @@ _G.pg.base.item_data_statistics[43054] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43055] = {
@@ -70368,7 +70566,6 @@ _G.pg.base.item_data_statistics[43055] = {
 	icon = "SquareIcon/shenghuan",
 	id = 43055,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70389,6 +70586,7 @@ _G.pg.base.item_data_statistics[43055] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43056] = {
@@ -70398,7 +70596,6 @@ _G.pg.base.item_data_statistics[43056] = {
 	icon = "SquareIcon/bominghan",
 	id = 43056,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70419,6 +70616,7 @@ _G.pg.base.item_data_statistics[43056] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43057] = {
@@ -70428,7 +70626,6 @@ _G.pg.base.item_data_statistics[43057] = {
 	icon = "SquareIcon/kelifulan_idol",
 	id = 43057,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70449,6 +70646,7 @@ _G.pg.base.item_data_statistics[43057] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43058] = {
@@ -70458,7 +70656,6 @@ _G.pg.base.item_data_statistics[43058] = {
 	icon = "SquareIcon/pengsakela",
 	id = 43058,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70479,6 +70676,7 @@ _G.pg.base.item_data_statistics[43058] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43059] = {
@@ -70488,7 +70686,6 @@ _G.pg.base.item_data_statistics[43059] = {
 	icon = "SquareIcon/yanhucheng",
 	id = 43059,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70509,6 +70706,7 @@ _G.pg.base.item_data_statistics[43059] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43060] = {
@@ -70518,7 +70716,6 @@ _G.pg.base.item_data_statistics[43060] = {
 	icon = "SquareIcon/beianpudun",
 	id = 43060,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70539,6 +70736,7 @@ _G.pg.base.item_data_statistics[43060] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43061] = {
@@ -70548,7 +70746,6 @@ _G.pg.base.item_data_statistics[43061] = {
 	icon = "SquareIcon/zhijiage",
 	id = 43061,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70569,6 +70766,7 @@ _G.pg.base.item_data_statistics[43061] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43062] = {
@@ -70578,7 +70776,6 @@ _G.pg.base.item_data_statistics[43062] = {
 	icon = "SquareIcon/xiusidun",
 	id = 43062,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70599,6 +70796,7 @@ _G.pg.base.item_data_statistics[43062] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43063] = {
@@ -70608,7 +70806,6 @@ _G.pg.base.item_data_statistics[43063] = {
 	icon = "SquareIcon/botelan",
 	id = 43063,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70629,6 +70826,7 @@ _G.pg.base.item_data_statistics[43063] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43064] = {
@@ -70638,7 +70836,6 @@ _G.pg.base.item_data_statistics[43064] = {
 	icon = "SquareIcon/bolisi",
 	id = 43064,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70659,6 +70856,7 @@ _G.pg.base.item_data_statistics[43064] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43065] = {
@@ -70668,7 +70866,6 @@ _G.pg.base.item_data_statistics[43065] = {
 	icon = "SquareIcon/asituoliya",
 	id = 43065,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70689,6 +70886,7 @@ _G.pg.base.item_data_statistics[43065] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43066] = {
@@ -70698,7 +70896,6 @@ _G.pg.base.item_data_statistics[43066] = {
 	icon = "SquareIcon/kunxi",
 	id = 43066,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70719,6 +70916,7 @@ _G.pg.base.item_data_statistics[43066] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43067] = {
@@ -70728,7 +70926,6 @@ _G.pg.base.item_data_statistics[43067] = {
 	icon = "SquareIcon/wensensi",
 	id = 43067,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70749,6 +70946,7 @@ _G.pg.base.item_data_statistics[43067] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43068] = {
@@ -70758,7 +70956,6 @@ _G.pg.base.item_data_statistics[43068] = {
 	icon = "SquareIcon/weiqita",
 	id = 43068,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70779,6 +70976,7 @@ _G.pg.base.item_data_statistics[43068] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43069] = {
@@ -70788,7 +70986,6 @@ _G.pg.base.item_data_statistics[43069] = {
 	icon = "SquareIcon/mingniabolisi",
 	id = 43069,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70809,6 +71006,7 @@ _G.pg.base.item_data_statistics[43069] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43070] = {
@@ -70818,7 +71016,6 @@ _G.pg.base.item_data_statistics[43070] = {
 	icon = "SquareIcon/baerdimo",
 	id = 43070,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70839,6 +71036,7 @@ _G.pg.base.item_data_statistics[43070] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43071] = {
@@ -70848,7 +71046,6 @@ _G.pg.base.item_data_statistics[43071] = {
 	icon = "SquareIcon/neihuada",
 	id = 43071,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70869,6 +71066,7 @@ _G.pg.base.item_data_statistics[43071] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43072] = {
@@ -70878,7 +71076,6 @@ _G.pg.base.item_data_statistics[43072] = {
 	icon = "SquareIcon/ekelahema",
 	id = 43072,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70899,6 +71096,7 @@ _G.pg.base.item_data_statistics[43072] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43073] = {
@@ -70908,7 +71106,6 @@ _G.pg.base.item_data_statistics[43073] = {
 	icon = "SquareIcon/binxifaniya",
 	id = 43073,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70929,6 +71126,7 @@ _G.pg.base.item_data_statistics[43073] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43074] = {
@@ -70938,7 +71136,6 @@ _G.pg.base.item_data_statistics[43074] = {
 	icon = "SquareIcon/yalisangna",
 	id = 43074,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70959,6 +71156,7 @@ _G.pg.base.item_data_statistics[43074] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43075] = {
@@ -70968,7 +71166,6 @@ _G.pg.base.item_data_statistics[43075] = {
 	icon = "SquareIcon/tiannaxi",
 	id = 43075,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -70989,6 +71186,7 @@ _G.pg.base.item_data_statistics[43075] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43076] = {
@@ -70998,7 +71196,6 @@ _G.pg.base.item_data_statistics[43076] = {
 	icon = "SquareIcon/jialifuniya",
 	id = 43076,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71019,6 +71216,7 @@ _G.pg.base.item_data_statistics[43076] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43077] = {
@@ -71028,7 +71226,6 @@ _G.pg.base.item_data_statistics[43077] = {
 	icon = "SquareIcon/keluoladuo",
 	id = 43077,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71049,6 +71246,7 @@ _G.pg.base.item_data_statistics[43077] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43078] = {
@@ -71058,7 +71256,6 @@ _G.pg.base.item_data_statistics[43078] = {
 	icon = "SquareIcon/malilan",
 	id = 43078,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71079,6 +71276,7 @@ _G.pg.base.item_data_statistics[43078] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43079] = {
@@ -71088,7 +71286,6 @@ _G.pg.base.item_data_statistics[43079] = {
 	icon = "SquareIcon/xifujiniya",
 	id = 43079,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71109,6 +71306,7 @@ _G.pg.base.item_data_statistics[43079] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43080] = {
@@ -71118,7 +71316,6 @@ _G.pg.base.item_data_statistics[43080] = {
 	icon = "SquareIcon/beikaluolaina",
 	id = 43080,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71139,6 +71336,7 @@ _G.pg.base.item_data_statistics[43080] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43081] = {
@@ -71148,7 +71346,6 @@ _G.pg.base.item_data_statistics[43081] = {
 	icon = "SquareIcon/huashengdun",
 	id = 43081,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71169,6 +71366,7 @@ _G.pg.base.item_data_statistics[43081] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43082] = {
@@ -71178,7 +71376,6 @@ _G.pg.base.item_data_statistics[43082] = {
 	icon = "SquareIcon/nandaketa",
 	id = 43082,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71199,6 +71396,7 @@ _G.pg.base.item_data_statistics[43082] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43083] = {
@@ -71208,7 +71406,6 @@ _G.pg.base.item_data_statistics[43083] = {
 	icon = "SquareIcon/masazhusai",
 	id = 43083,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71229,6 +71426,7 @@ _G.pg.base.item_data_statistics[43083] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43084] = {
@@ -71238,7 +71436,6 @@ _G.pg.base.item_data_statistics[43084] = {
 	icon = "SquareIcon/alabama",
 	id = 43084,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71259,6 +71456,7 @@ _G.pg.base.item_data_statistics[43084] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43085] = {
@@ -71268,7 +71466,6 @@ _G.pg.base.item_data_statistics[43085] = {
 	icon = "SquareIcon/changdao",
 	id = 43085,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71289,6 +71486,7 @@ _G.pg.base.item_data_statistics[43085] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43086] = {
@@ -71298,7 +71496,6 @@ _G.pg.base.item_data_statistics[43086] = {
 	icon = "SquareIcon/boge",
 	id = 43086,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71319,6 +71516,7 @@ _G.pg.base.item_data_statistics[43086] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43087] = {
@@ -71328,7 +71526,6 @@ _G.pg.base.item_data_statistics[43087] = {
 	icon = "SquareIcon/lanli",
 	id = 43087,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71349,6 +71546,7 @@ _G.pg.base.item_data_statistics[43087] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43088] = {
@@ -71358,7 +71556,6 @@ _G.pg.base.item_data_statistics[43088] = {
 	icon = "SquareIcon/liekexingdun",
 	id = 43088,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71379,6 +71576,7 @@ _G.pg.base.item_data_statistics[43088] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43089] = {
@@ -71388,7 +71586,6 @@ _G.pg.base.item_data_statistics[43089] = {
 	icon = "SquareIcon/salatuojia",
 	id = 43089,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71409,6 +71606,7 @@ _G.pg.base.item_data_statistics[43089] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43090] = {
@@ -71418,7 +71616,6 @@ _G.pg.base.item_data_statistics[43090] = {
 	icon = "SquareIcon/tujizhe",
 	id = 43090,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71439,6 +71636,7 @@ _G.pg.base.item_data_statistics[43090] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43091] = {
@@ -71448,7 +71646,6 @@ _G.pg.base.item_data_statistics[43091] = {
 	icon = "SquareIcon/yuekecheng",
 	id = 43091,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71469,6 +71666,7 @@ _G.pg.base.item_data_statistics[43091] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43092] = {
@@ -71478,7 +71676,6 @@ _G.pg.base.item_data_statistics[43092] = {
 	icon = "SquareIcon/qiye",
 	id = 43092,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71499,6 +71696,7 @@ _G.pg.base.item_data_statistics[43092] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43093] = {
@@ -71508,7 +71706,6 @@ _G.pg.base.item_data_statistics[43093] = {
 	icon = "SquareIcon/dahuangfeng",
 	id = 43093,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71529,6 +71726,7 @@ _G.pg.base.item_data_statistics[43093] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43094] = {
@@ -71538,7 +71736,6 @@ _G.pg.base.item_data_statistics[43094] = {
 	icon = "SquareIcon/hufeng",
 	id = 43094,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71559,6 +71756,7 @@ _G.pg.base.item_data_statistics[43094] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43095] = {
@@ -71568,7 +71766,6 @@ _G.pg.base.item_data_statistics[43095] = {
 	icon = "SquareIcon/aisaikesi",
 	id = 43095,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71589,6 +71786,7 @@ _G.pg.base.item_data_statistics[43095] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43096] = {
@@ -71598,7 +71796,6 @@ _G.pg.base.item_data_statistics[43096] = {
 	icon = "SquareIcon/bangkeshan",
 	id = 43096,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71619,6 +71816,7 @@ _G.pg.base.item_data_statistics[43096] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43097] = {
@@ -71628,7 +71826,6 @@ _G.pg.base.item_data_statistics[43097] = {
 	icon = "SquareIcon/duli",
 	id = 43097,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71649,6 +71846,7 @@ _G.pg.base.item_data_statistics[43097] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43098] = {
@@ -71658,7 +71856,6 @@ _G.pg.base.item_data_statistics[43098] = {
 	icon = "SquareIcon/badan",
 	id = 43098,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71679,6 +71876,7 @@ _G.pg.base.item_data_statistics[43098] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43099] = {
@@ -71688,7 +71886,6 @@ _G.pg.base.item_data_statistics[43099] = {
 	icon = "SquareIcon/xianggelila",
 	id = 43099,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71709,6 +71906,7 @@ _G.pg.base.item_data_statistics[43099] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43100] = {
@@ -71718,7 +71916,6 @@ _G.pg.base.item_data_statistics[43100] = {
 	icon = "SquareIcon/tiaoyu",
 	id = 43100,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71739,6 +71936,7 @@ _G.pg.base.item_data_statistics[43100] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43101] = {
@@ -71748,7 +71946,6 @@ _G.pg.base.item_data_statistics[43101] = {
 	icon = "SquareIcon/daqinghuayu",
 	id = 43101,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71769,6 +71966,7 @@ _G.pg.base.item_data_statistics[43101] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43102] = {
@@ -71778,7 +71976,6 @@ _G.pg.base.item_data_statistics[43102] = {
 	icon = "SquareIcon/jiqi",
 	id = 43102,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71799,6 +71996,7 @@ _G.pg.base.item_data_statistics[43102] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43103] = {
@@ -71808,7 +72006,6 @@ _G.pg.base.item_data_statistics[43103] = {
 	icon = "SquareIcon/zaoshen",
 	id = 43103,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71829,6 +72026,7 @@ _G.pg.base.item_data_statistics[43103] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43104] = {
@@ -71838,7 +72036,6 @@ _G.pg.base.item_data_statistics[43104] = {
 	icon = "SquareIcon/nvjiang",
 	id = 43104,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71859,6 +72056,7 @@ _G.pg.base.item_data_statistics[43104] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43105] = {
@@ -71868,7 +72066,6 @@ _G.pg.base.item_data_statistics[43105] = {
 	icon = "SquareIcon/akasita",
 	id = 43105,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71889,6 +72086,7 @@ _G.pg.base.item_data_statistics[43105] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43106] = {
@@ -71898,7 +72096,6 @@ _G.pg.base.item_data_statistics[43106] = {
 	icon = "SquareIcon/rexin",
 	id = 43106,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71919,6 +72116,7 @@ _G.pg.base.item_data_statistics[43106] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43107] = {
@@ -71928,7 +72126,6 @@ _G.pg.base.item_data_statistics[43107] = {
 	icon = "SquareIcon/xiaolietuquan",
 	id = 43107,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71949,6 +72146,7 @@ _G.pg.base.item_data_statistics[43107] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43108] = {
@@ -71958,7 +72156,6 @@ _G.pg.base.item_data_statistics[43108] = {
 	icon = "SquareIcon/dadouquan",
 	id = 43108,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -71979,6 +72176,7 @@ _G.pg.base.item_data_statistics[43108] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43109] = {
@@ -71988,7 +72186,6 @@ _G.pg.base.item_data_statistics[43109] = {
 	icon = "SquareIcon/huixing",
 	id = 43109,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72009,6 +72206,7 @@ _G.pg.base.item_data_statistics[43109] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43110] = {
@@ -72018,7 +72216,6 @@ _G.pg.base.item_data_statistics[43110] = {
 	icon = "SquareIcon/xinyue",
 	id = 43110,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72039,6 +72236,7 @@ _G.pg.base.item_data_statistics[43110] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43111] = {
@@ -72048,7 +72246,6 @@ _G.pg.base.item_data_statistics[43111] = {
 	icon = "SquareIcon/xiaotiane",
 	id = 43111,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72069,6 +72266,7 @@ _G.pg.base.item_data_statistics[43111] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43112] = {
@@ -72078,7 +72276,6 @@ _G.pg.base.item_data_statistics[43112] = {
 	icon = "SquareIcon/huti",
 	id = 43112,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72099,6 +72296,7 @@ _G.pg.base.item_data_statistics[43112] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43113] = {
@@ -72108,7 +72306,6 @@ _G.pg.base.item_data_statistics[43113] = {
 	icon = "SquareIcon/mingyunnvshen",
 	id = 43113,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72129,6 +72326,7 @@ _G.pg.base.item_data_statistics[43113] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43114] = {
@@ -72138,7 +72336,6 @@ _G.pg.base.item_data_statistics[43114] = {
 	icon = "SquareIcon/gelunweier",
 	id = 43114,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72159,6 +72356,7 @@ _G.pg.base.item_data_statistics[43114] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43115] = {
@@ -72168,7 +72366,6 @@ _G.pg.base.item_data_statistics[43115] = {
 	icon = "SquareIcon/yinghuochong",
 	id = 43115,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72189,6 +72386,7 @@ _G.pg.base.item_data_statistics[43115] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43116] = {
@@ -72198,7 +72396,6 @@ _G.pg.base.item_data_statistics[43116] = {
 	icon = "SquareIcon/yonggan",
 	id = 43116,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72219,6 +72416,7 @@ _G.pg.base.item_data_statistics[43116] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43117] = {
@@ -72228,7 +72426,6 @@ _G.pg.base.item_data_statistics[43117] = {
 	icon = "SquareIcon/lieren",
 	id = 43117,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72249,6 +72446,7 @@ _G.pg.base.item_data_statistics[43117] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43118] = {
@@ -72258,7 +72456,6 @@ _G.pg.base.item_data_statistics[43118] = {
 	icon = "SquareIcon/biaoqiang",
 	id = 43118,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72279,6 +72476,7 @@ _G.pg.base.item_data_statistics[43118] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43119] = {
@@ -72288,7 +72486,6 @@ _G.pg.base.item_data_statistics[43119] = {
 	icon = "SquareIcon/tianhou",
 	id = 43119,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72309,6 +72506,7 @@ _G.pg.base.item_data_statistics[43119] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43120] = {
@@ -72318,7 +72516,6 @@ _G.pg.base.item_data_statistics[43120] = {
 	icon = "SquareIcon/xixuegui",
 	id = 43120,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72339,6 +72536,7 @@ _G.pg.base.item_data_statistics[43120] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43121] = {
@@ -72348,7 +72546,6 @@ _G.pg.base.item_data_statistics[43121] = {
 	icon = "SquareIcon/qiubite",
 	id = 43121,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72369,6 +72566,7 @@ _G.pg.base.item_data_statistics[43121] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43122] = {
@@ -72378,7 +72576,6 @@ _G.pg.base.item_data_statistics[43122] = {
 	icon = "SquareIcon/zexi",
 	id = 43122,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72399,6 +72596,7 @@ _G.pg.base.item_data_statistics[43122] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43123] = {
@@ -72408,7 +72606,6 @@ _G.pg.base.item_data_statistics[43123] = {
 	icon = "SquareIcon/wudi",
 	id = 43123,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72429,6 +72626,7 @@ _G.pg.base.item_data_statistics[43123] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43124] = {
@@ -72438,7 +72636,6 @@ _G.pg.base.item_data_statistics[43124] = {
 	icon = "SquareIcon/huoqiangshou",
 	id = 43124,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72459,6 +72656,7 @@ _G.pg.base.item_data_statistics[43124] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43125] = {
@@ -72468,7 +72666,6 @@ _G.pg.base.item_data_statistics[43125] = {
 	icon = "SquareIcon/huisheng",
 	id = 43125,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72489,6 +72686,7 @@ _G.pg.base.item_data_statistics[43125] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43126] = {
@@ -72498,7 +72696,6 @@ _G.pg.base.item_data_statistics[43126] = {
 	icon = "SquareIcon/liande",
 	id = 43126,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72519,6 +72716,7 @@ _G.pg.base.item_data_statistics[43126] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43127] = {
@@ -72528,7 +72726,6 @@ _G.pg.base.item_data_statistics[43127] = {
 	icon = "SquareIcon/ajilisi",
 	id = 43127,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72549,6 +72746,7 @@ _G.pg.base.item_data_statistics[43127] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43128] = {
@@ -72558,7 +72756,6 @@ _G.pg.base.item_data_statistics[43128] = {
 	icon = "SquareIcon/ajiakesi",
 	id = 43128,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72579,6 +72776,7 @@ _G.pg.base.item_data_statistics[43128] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43129] = {
@@ -72588,7 +72786,6 @@ _G.pg.base.item_data_statistics[43129] = {
 	icon = "SquareIcon/nananpudun",
 	id = 43129,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72609,6 +72806,7 @@ _G.pg.base.item_data_statistics[43129] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43130] = {
@@ -72618,7 +72816,6 @@ _G.pg.base.item_data_statistics[43130] = {
 	icon = "SquareIcon/xiefeierde",
 	id = 43130,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72639,6 +72836,7 @@ _G.pg.base.item_data_statistics[43130] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43131] = {
@@ -72648,7 +72846,6 @@ _G.pg.base.item_data_statistics[43131] = {
 	icon = "SquareIcon/aidingbao",
 	id = 43131,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72669,6 +72866,7 @@ _G.pg.base.item_data_statistics[43131] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43132] = {
@@ -72678,7 +72876,6 @@ _G.pg.base.item_data_statistics[43132] = {
 	icon = "SquareIcon/beierfasite",
 	id = 43132,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72699,6 +72896,7 @@ _G.pg.base.item_data_statistics[43132] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43133] = {
@@ -72708,7 +72906,6 @@ _G.pg.base.item_data_statistics[43133] = {
 	icon = "SquareIcon/aruituosha",
 	id = 43133,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72729,6 +72926,7 @@ _G.pg.base.item_data_statistics[43133] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43134] = {
@@ -72738,7 +72936,6 @@ _G.pg.base.item_data_statistics[43134] = {
 	icon = "SquareIcon/jialadiya",
 	id = 43134,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72759,6 +72956,7 @@ _G.pg.base.item_data_statistics[43134] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43135] = {
@@ -72768,7 +72966,6 @@ _G.pg.base.item_data_statistics[43135] = {
 	icon = "SquareIcon/ouruola",
 	id = 43135,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72789,6 +72986,7 @@ _G.pg.base.item_data_statistics[43135] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43136] = {
@@ -72798,7 +72996,6 @@ _G.pg.base.item_data_statistics[43136] = {
 	icon = "SquareIcon/feiji",
 	id = 43136,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72819,6 +73016,7 @@ _G.pg.base.item_data_statistics[43136] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43137] = {
@@ -72828,7 +73026,6 @@ _G.pg.base.item_data_statistics[43137] = {
 	icon = "SquareIcon/yamaijia",
 	id = 43137,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72849,6 +73046,7 @@ _G.pg.base.item_data_statistics[43137] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43138] = {
@@ -72858,7 +73056,6 @@ _G.pg.base.item_data_statistics[43138] = {
 	icon = "SquareIcon/beierfasite_younv",
 	id = 43138,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72879,6 +73076,7 @@ _G.pg.base.item_data_statistics[43138] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43139] = {
@@ -72888,7 +73086,6 @@ _G.pg.base.item_data_statistics[43139] = {
 	icon = "SquareIcon/niukasier",
 	id = 43139,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72909,6 +73106,7 @@ _G.pg.base.item_data_statistics[43139] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43140] = {
@@ -72918,7 +73116,6 @@ _G.pg.base.item_data_statistics[43140] = {
 	icon = "SquareIcon/kulasuo",
 	id = 43140,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72939,6 +73136,7 @@ _G.pg.base.item_data_statistics[43140] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43141] = {
@@ -72948,7 +73146,6 @@ _G.pg.base.item_data_statistics[43141] = {
 	icon = "SquareIcon/biaoyu",
 	id = 43141,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72969,6 +73166,7 @@ _G.pg.base.item_data_statistics[43141] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43142] = {
@@ -72978,7 +73176,6 @@ _G.pg.base.item_data_statistics[43142] = {
 	icon = "SquareIcon/tianlangxing",
 	id = 43142,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -72999,6 +73196,7 @@ _G.pg.base.item_data_statistics[43142] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43143] = {
@@ -73008,7 +73206,6 @@ _G.pg.base.item_data_statistics[43143] = {
 	icon = "SquareIcon/quejie",
 	id = 43143,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73029,6 +73226,7 @@ _G.pg.base.item_data_statistics[43143] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43144] = {
@@ -73038,7 +73236,6 @@ _G.pg.base.item_data_statistics[43144] = {
 	icon = "SquareIcon/heitaizi",
 	id = 43144,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73059,6 +73256,7 @@ _G.pg.base.item_data_statistics[43144] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43145] = {
@@ -73068,7 +73266,6 @@ _G.pg.base.item_data_statistics[43145] = {
 	icon = "SquareIcon/xiefeierde_idol",
 	id = 43145,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73089,6 +73286,7 @@ _G.pg.base.item_data_statistics[43145] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43146] = {
@@ -73098,7 +73296,6 @@ _G.pg.base.item_data_statistics[43146] = {
 	icon = "SquareIcon/gelasige",
 	id = 43146,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73119,6 +73316,7 @@ _G.pg.base.item_data_statistics[43146] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43147] = {
@@ -73128,7 +73326,6 @@ _G.pg.base.item_data_statistics[43147] = {
 	icon = "SquareIcon/lundun",
 	id = 43147,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73149,6 +73346,7 @@ _G.pg.base.item_data_statistics[43147] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43148] = {
@@ -73158,7 +73356,6 @@ _G.pg.base.item_data_statistics[43148] = {
 	icon = "SquareIcon/shiluopujun",
 	id = 43148,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73179,6 +73376,7 @@ _G.pg.base.item_data_statistics[43148] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43149] = {
@@ -73188,7 +73386,6 @@ _G.pg.base.item_data_statistics[43149] = {
 	icon = "SquareIcon/kente",
 	id = 43149,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73209,6 +73406,7 @@ _G.pg.base.item_data_statistics[43149] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43150] = {
@@ -73218,7 +73416,6 @@ _G.pg.base.item_data_statistics[43150] = {
 	icon = "SquareIcon/safuke",
 	id = 43150,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73239,6 +73436,7 @@ _G.pg.base.item_data_statistics[43150] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43151] = {
@@ -73248,7 +73446,6 @@ _G.pg.base.item_data_statistics[43151] = {
 	icon = "SquareIcon/nuofuke",
 	id = 43151,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73269,6 +73466,7 @@ _G.pg.base.item_data_statistics[43151] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43152] = {
@@ -73278,7 +73476,6 @@ _G.pg.base.item_data_statistics[43152] = {
 	icon = "SquareIcon/duosaitejun",
 	id = 43152,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73299,6 +73496,7 @@ _G.pg.base.item_data_statistics[43152] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43153] = {
@@ -73308,7 +73506,6 @@ _G.pg.base.item_data_statistics[43153] = {
 	icon = "SquareIcon/yueke",
 	id = 43153,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73329,6 +73526,7 @@ _G.pg.base.item_data_statistics[43153] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43154] = {
@@ -73338,7 +73536,6 @@ _G.pg.base.item_data_statistics[43154] = {
 	icon = "SquareIcon/aikesaite",
 	id = 43154,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73359,6 +73556,7 @@ _G.pg.base.item_data_statistics[43154] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43155] = {
@@ -73368,7 +73566,6 @@ _G.pg.base.item_data_statistics[43155] = {
 	icon = "SquareIcon/susaikesi",
 	id = 43155,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73389,6 +73586,7 @@ _G.pg.base.item_data_statistics[43155] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43156] = {
@@ -73398,7 +73596,6 @@ _G.pg.base.item_data_statistics[43156] = {
 	icon = "SquareIcon/shengwang",
 	id = 43156,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73419,6 +73616,7 @@ _G.pg.base.item_data_statistics[43156] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43157] = {
@@ -73428,7 +73626,6 @@ _G.pg.base.item_data_statistics[43157] = {
 	icon = "SquareIcon/fanji",
 	id = 43157,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73449,6 +73646,7 @@ _G.pg.base.item_data_statistics[43157] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43158] = {
@@ -73458,7 +73656,6 @@ _G.pg.base.item_data_statistics[43158] = {
 	icon = "SquareIcon/hude",
 	id = 43158,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73479,6 +73676,7 @@ _G.pg.base.item_data_statistics[43158] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43159] = {
@@ -73488,7 +73686,6 @@ _G.pg.base.item_data_statistics[43159] = {
 	icon = "SquareIcon/yilishabai",
 	id = 43159,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73509,6 +73706,7 @@ _G.pg.base.item_data_statistics[43159] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43160] = {
@@ -73518,7 +73716,6 @@ _G.pg.base.item_data_statistics[43160] = {
 	icon = "SquareIcon/yanzhan",
 	id = 43160,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73539,6 +73736,7 @@ _G.pg.base.item_data_statistics[43160] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43161] = {
@@ -73548,7 +73746,6 @@ _G.pg.base.item_data_statistics[43161] = {
 	icon = "SquareIcon/naerxun",
 	id = 43161,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73569,6 +73766,7 @@ _G.pg.base.item_data_statistics[43161] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43162] = {
@@ -73578,7 +73776,6 @@ _G.pg.base.item_data_statistics[43162] = {
 	icon = "SquareIcon/luodeni",
 	id = 43162,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73599,6 +73796,7 @@ _G.pg.base.item_data_statistics[43162] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43163] = {
@@ -73608,7 +73806,6 @@ _G.pg.base.item_data_statistics[43163] = {
 	icon = "SquareIcon/qiaozhiwushi",
 	id = 43163,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73629,6 +73826,7 @@ _G.pg.base.item_data_statistics[43163] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43164] = {
@@ -73638,7 +73836,6 @@ _G.pg.base.item_data_statistics[43164] = {
 	icon = "SquareIcon/weiershiqinwang",
 	id = 43164,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73659,6 +73856,7 @@ _G.pg.base.item_data_statistics[43164] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43165] = {
@@ -73668,7 +73866,6 @@ _G.pg.base.item_data_statistics[43165] = {
 	icon = "SquareIcon/yuekegongjue",
 	id = 43165,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73689,6 +73886,7 @@ _G.pg.base.item_data_statistics[43165] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43166] = {
@@ -73698,7 +73896,6 @@ _G.pg.base.item_data_statistics[43166] = {
 	icon = "SquareIcon/jingjishen",
 	id = 43166,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73719,6 +73916,7 @@ _G.pg.base.item_data_statistics[43166] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43167] = {
@@ -73728,7 +73926,6 @@ _G.pg.base.item_data_statistics[43167] = {
 	icon = "SquareIcon/dujiaoshou",
 	id = 43167,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73749,6 +73946,7 @@ _G.pg.base.item_data_statistics[43167] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43168] = {
@@ -73758,7 +73956,6 @@ _G.pg.base.item_data_statistics[43168] = {
 	icon = "SquareIcon/banrenma",
 	id = 43168,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73779,6 +73976,7 @@ _G.pg.base.item_data_statistics[43168] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43169] = {
@@ -73788,7 +73986,6 @@ _G.pg.base.item_data_statistics[43169] = {
 	icon = "SquareIcon/zhuiganzhe",
 	id = 43169,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73809,6 +74006,7 @@ _G.pg.base.item_data_statistics[43169] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43170] = {
@@ -73818,7 +74016,6 @@ _G.pg.base.item_data_statistics[43170] = {
 	icon = "SquareIcon/huangjiafangzhou",
 	id = 43170,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73839,6 +74036,7 @@ _G.pg.base.item_data_statistics[43170] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43171] = {
@@ -73848,7 +74046,6 @@ _G.pg.base.item_data_statistics[43171] = {
 	icon = "SquareIcon/guanghui",
 	id = 43171,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73869,6 +74066,7 @@ _G.pg.base.item_data_statistics[43171] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43172] = {
@@ -73878,7 +74076,6 @@ _G.pg.base.item_data_statistics[43172] = {
 	icon = "SquareIcon/shengli",
 	id = 43172,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73899,6 +74096,7 @@ _G.pg.base.item_data_statistics[43172] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43173] = {
@@ -73908,7 +74106,6 @@ _G.pg.base.item_data_statistics[43173] = {
 	icon = "SquareIcon/kewei",
 	id = 43173,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73929,6 +74126,7 @@ _G.pg.base.item_data_statistics[43173] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43174] = {
@@ -73938,7 +74136,6 @@ _G.pg.base.item_data_statistics[43174] = {
 	icon = "SquareIcon/guangrong",
 	id = 43174,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73959,6 +74156,7 @@ _G.pg.base.item_data_statistics[43174] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43175] = {
@@ -73968,7 +74166,6 @@ _G.pg.base.item_data_statistics[43175] = {
 	icon = "SquareIcon/heianjie",
 	id = 43175,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -73989,6 +74186,7 @@ _G.pg.base.item_data_statistics[43175] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43176] = {
@@ -73998,7 +74196,6 @@ _G.pg.base.item_data_statistics[43176] = {
 	icon = "SquareIcon/kongbu",
 	id = 43176,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74019,6 +74216,7 @@ _G.pg.base.item_data_statistics[43176] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43177] = {
@@ -74028,7 +74226,6 @@ _G.pg.base.item_data_statistics[43177] = {
 	icon = "SquareIcon/abeikelongbi",
 	id = 43177,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74049,6 +74246,7 @@ _G.pg.base.item_data_statistics[43177] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43178] = {
@@ -74058,7 +74256,6 @@ _G.pg.base.item_data_statistics[43178] = {
 	icon = "SquareIcon/chuixue",
 	id = 43178,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74079,6 +74276,7 @@ _G.pg.base.item_data_statistics[43178] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43179] = {
@@ -74088,7 +74286,6 @@ _G.pg.base.item_data_statistics[43179] = {
 	icon = "SquareIcon/lingbo",
 	id = 43179,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74109,6 +74306,7 @@ _G.pg.base.item_data_statistics[43179] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43180] = {
@@ -74118,7 +74316,6 @@ _G.pg.base.item_data_statistics[43180] = {
 	icon = "SquareIcon/xiao",
 	id = 43180,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74139,6 +74336,7 @@ _G.pg.base.item_data_statistics[43180] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43181] = {
@@ -74148,7 +74346,6 @@ _G.pg.base.item_data_statistics[43181] = {
 	icon = "SquareIcon/xiang",
 	id = 43181,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74169,6 +74366,7 @@ _G.pg.base.item_data_statistics[43181] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43182] = {
@@ -74178,7 +74376,6 @@ _G.pg.base.item_data_statistics[43182] = {
 	icon = "SquareIcon/lei",
 	id = 43182,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74199,6 +74396,7 @@ _G.pg.base.item_data_statistics[43182] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43183] = {
@@ -74208,7 +74406,6 @@ _G.pg.base.item_data_statistics[43183] = {
 	icon = "SquareIcon/dian",
 	id = 43183,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74229,6 +74426,7 @@ _G.pg.base.item_data_statistics[43183] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43184] = {
@@ -74238,7 +74436,6 @@ _G.pg.base.item_data_statistics[43184] = {
 	icon = "SquareIcon/bailu",
 	id = 43184,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74259,6 +74456,7 @@ _G.pg.base.item_data_statistics[43184] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43185] = {
@@ -74268,7 +74466,6 @@ _G.pg.base.item_data_statistics[43185] = {
 	icon = "SquareIcon/xili",
 	id = 43185,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74289,6 +74486,7 @@ _G.pg.base.item_data_statistics[43185] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43186] = {
@@ -74298,7 +74496,6 @@ _G.pg.base.item_data_statistics[43186] = {
 	icon = "SquareIcon/shiyu",
 	id = 43186,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74319,6 +74516,7 @@ _G.pg.base.item_data_statistics[43186] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43187] = {
@@ -74328,7 +74526,6 @@ _G.pg.base.item_data_statistics[43187] = {
 	icon = "SquareIcon/xuefeng",
 	id = 43187,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74349,6 +74546,7 @@ _G.pg.base.item_data_statistics[43187] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43188] = {
@@ -74358,7 +74556,6 @@ _G.pg.base.item_data_statistics[43188] = {
 	icon = "SquareIcon/yangyan",
 	id = 43188,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74379,6 +74576,7 @@ _G.pg.base.item_data_statistics[43188] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43189] = {
@@ -74388,7 +74586,6 @@ _G.pg.base.item_data_statistics[43189] = {
 	icon = "SquareIcon/buzhihuo",
 	id = 43189,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74409,6 +74606,7 @@ _G.pg.base.item_data_statistics[43189] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43190] = {
@@ -74418,7 +74616,6 @@ _G.pg.base.item_data_statistics[43190] = {
 	icon = "SquareIcon/yefen",
 	id = 43190,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74439,6 +74636,7 @@ _G.pg.base.item_data_statistics[43190] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43191] = {
@@ -74448,7 +74646,6 @@ _G.pg.base.item_data_statistics[43191] = {
 	icon = "SquareIcon/chuchun",
 	id = 43191,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74469,6 +74666,7 @@ _G.pg.base.item_data_statistics[43191] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43192] = {
@@ -74478,7 +74676,6 @@ _G.pg.base.item_data_statistics[43192] = {
 	icon = "SquareIcon/ruoye",
 	id = 43192,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74499,6 +74696,7 @@ _G.pg.base.item_data_statistics[43192] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43193] = {
@@ -74508,7 +74706,6 @@ _G.pg.base.item_data_statistics[43193] = {
 	icon = "SquareIcon/chushuang",
 	id = 43193,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74529,6 +74726,7 @@ _G.pg.base.item_data_statistics[43193] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43194] = {
@@ -74538,7 +74736,6 @@ _G.pg.base.item_data_statistics[43194] = {
 	icon = "SquareIcon/youming",
 	id = 43194,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74559,6 +74756,7 @@ _G.pg.base.item_data_statistics[43194] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43195] = {
@@ -74568,7 +74766,6 @@ _G.pg.base.item_data_statistics[43195] = {
 	icon = "SquareIcon/ximu",
 	id = 43195,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74589,6 +74786,7 @@ _G.pg.base.item_data_statistics[43195] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43196] = {
@@ -74598,7 +74796,6 @@ _G.pg.base.item_data_statistics[43196] = {
 	icon = "SquareIcon/heichao",
 	id = 43196,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74619,6 +74816,7 @@ _G.pg.base.item_data_statistics[43196] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43197] = {
@@ -74628,7 +74826,6 @@ _G.pg.base.item_data_statistics[43197] = {
 	icon = "SquareIcon/qinchao",
 	id = 43197,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74649,6 +74846,7 @@ _G.pg.base.item_data_statistics[43197] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43198] = {
@@ -74658,7 +74856,6 @@ _G.pg.base.item_data_statistics[43198] = {
 	icon = "SquareIcon/shenfeng",
 	id = 43198,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74679,6 +74876,7 @@ _G.pg.base.item_data_statistics[43198] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43199] = {
@@ -74688,7 +74886,6 @@ _G.pg.base.item_data_statistics[43199] = {
 	icon = "SquareIcon/songfeng",
 	id = 43199,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74709,6 +74906,7 @@ _G.pg.base.item_data_statistics[43199] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43200] = {
@@ -74718,7 +74916,6 @@ _G.pg.base.item_data_statistics[43200] = {
 	icon = "SquareIcon/muyue",
 	id = 43200,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74739,6 +74936,7 @@ _G.pg.base.item_data_statistics[43200] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43201] = {
@@ -74748,7 +74946,6 @@ _G.pg.base.item_data_statistics[43201] = {
 	icon = "SquareIcon/ruyue",
 	id = 43201,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74769,6 +74966,7 @@ _G.pg.base.item_data_statistics[43201] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43202] = {
@@ -74778,7 +74976,6 @@ _G.pg.base.item_data_statistics[43202] = {
 	icon = "SquareIcon/maoyue",
 	id = 43202,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74799,6 +74996,7 @@ _G.pg.base.item_data_statistics[43202] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43203] = {
@@ -74808,7 +75006,6 @@ _G.pg.base.item_data_statistics[43203] = {
 	icon = "SquareIcon/shuiwuyue",
 	id = 43203,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74829,6 +75026,7 @@ _G.pg.base.item_data_statistics[43203] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43204] = {
@@ -74838,7 +75036,6 @@ _G.pg.base.item_data_statistics[43204] = {
 	icon = "SquareIcon/wenyue",
 	id = 43204,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74859,6 +75056,7 @@ _G.pg.base.item_data_statistics[43204] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43205] = {
@@ -74868,7 +75066,6 @@ _G.pg.base.item_data_statistics[43205] = {
 	icon = "SquareIcon/changyue",
 	id = 43205,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74889,6 +75086,7 @@ _G.pg.base.item_data_statistics[43205] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43206] = {
@@ -74898,7 +75096,6 @@ _G.pg.base.item_data_statistics[43206] = {
 	icon = "SquareIcon/sanriyue",
 	id = 43206,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74919,6 +75116,7 @@ _G.pg.base.item_data_statistics[43206] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43207] = {
@@ -74928,7 +75126,6 @@ _G.pg.base.item_data_statistics[43207] = {
 	icon = "SquareIcon/jiangfeng",
 	id = 43207,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74949,6 +75146,7 @@ _G.pg.base.item_data_statistics[43207] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43208] = {
@@ -74958,7 +75156,6 @@ _G.pg.base.item_data_statistics[43208] = {
 	icon = "SquareIcon/qingbo",
 	id = 43208,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -74979,6 +75176,7 @@ _G.pg.base.item_data_statistics[43208] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43209] = {
@@ -74988,7 +75186,6 @@ _G.pg.base.item_data_statistics[43209] = {
 	icon = "SquareIcon/xinyue_jp",
 	id = 43209,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75009,6 +75206,7 @@ _G.pg.base.item_data_statistics[43209] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43210] = {
@@ -75018,7 +75216,6 @@ _G.pg.base.item_data_statistics[43210] = {
 	icon = "SquareIcon/chunyue",
 	id = 43210,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75039,6 +75236,7 @@ _G.pg.base.item_data_statistics[43210] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43211] = {
@@ -75048,7 +75246,6 @@ _G.pg.base.item_data_statistics[43211] = {
 	icon = "SquareIcon/xiaoyue",
 	id = 43211,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75069,6 +75266,7 @@ _G.pg.base.item_data_statistics[43211] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43212] = {
@@ -75078,7 +75276,6 @@ _G.pg.base.item_data_statistics[43212] = {
 	icon = "SquareIcon/pufeng",
 	id = 43212,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75099,6 +75296,7 @@ _G.pg.base.item_data_statistics[43212] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43213] = {
@@ -75108,7 +75306,6 @@ _G.pg.base.item_data_statistics[43213] = {
 	icon = "SquareIcon/jifeng",
 	id = 43213,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75129,6 +75326,7 @@ _G.pg.base.item_data_statistics[43213] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43214] = {
@@ -75138,7 +75336,6 @@ _G.pg.base.item_data_statistics[43214] = {
 	icon = "SquareIcon/bangfeng",
 	id = 43214,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75159,6 +75356,7 @@ _G.pg.base.item_data_statistics[43214] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43215] = {
@@ -75168,7 +75366,6 @@ _G.pg.base.item_data_statistics[43215] = {
 	icon = "SquareIcon/gufeng",
 	id = 43215,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75189,6 +75386,7 @@ _G.pg.base.item_data_statistics[43215] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43216] = {
@@ -75198,7 +75396,6 @@ _G.pg.base.item_data_statistics[43216] = {
 	icon = "SquareIcon/zhaochao",
 	id = 43216,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75219,6 +75416,7 @@ _G.pg.base.item_data_statistics[43216] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43217] = {
@@ -75228,7 +75426,6 @@ _G.pg.base.item_data_statistics[43217] = {
 	icon = "SquareIcon/dachao",
 	id = 43217,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75249,6 +75446,7 @@ _G.pg.base.item_data_statistics[43217] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43218] = {
@@ -75258,7 +75456,6 @@ _G.pg.base.item_data_statistics[43218] = {
 	icon = "SquareIcon/manchao",
 	id = 43218,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75279,6 +75476,7 @@ _G.pg.base.item_data_statistics[43218] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43219] = {
@@ -75288,7 +75486,6 @@ _G.pg.base.item_data_statistics[43219] = {
 	icon = "SquareIcon/huangchao",
 	id = 43219,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75309,6 +75506,7 @@ _G.pg.base.item_data_statistics[43219] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43220] = {
@@ -75318,7 +75516,6 @@ _G.pg.base.item_data_statistics[43220] = {
 	icon = "SquareIcon/qifeng",
 	id = 43220,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75339,6 +75536,7 @@ _G.pg.base.item_data_statistics[43220] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43221] = {
@@ -75348,7 +75546,6 @@ _G.pg.base.item_data_statistics[43221] = {
 	icon = "SquareIcon/juanbo",
 	id = 43221,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75369,6 +75566,7 @@ _G.pg.base.item_data_statistics[43221] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43222] = {
@@ -75378,7 +75576,6 @@ _G.pg.base.item_data_statistics[43222] = {
 	icon = "SquareIcon/xia",
 	id = 43222,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75399,6 +75596,7 @@ _G.pg.base.item_data_statistics[43222] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43223] = {
@@ -75408,7 +75606,6 @@ _G.pg.base.item_data_statistics[43223] = {
 	icon = "SquareIcon/xizhang",
 	id = 43223,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75429,6 +75626,7 @@ _G.pg.base.item_data_statistics[43223] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43224] = {
@@ -75438,7 +75636,6 @@ _G.pg.base.item_data_statistics[43224] = {
 	icon = "SquareIcon/changliang",
 	id = 43224,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75459,6 +75656,7 @@ _G.pg.base.item_data_statistics[43224] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43225] = {
@@ -75468,7 +75666,6 @@ _G.pg.base.item_data_statistics[43225] = {
 	icon = "SquareIcon/wushiling",
 	id = 43225,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75489,6 +75686,7 @@ _G.pg.base.item_data_statistics[43225] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43226] = {
@@ -75498,7 +75696,6 @@ _G.pg.base.item_data_statistics[43226] = {
 	icon = "SquareIcon/guinu",
 	id = 43226,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75519,6 +75716,7 @@ _G.pg.base.item_data_statistics[43226] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43227] = {
@@ -75528,7 +75726,6 @@ _G.pg.base.item_data_statistics[43227] = {
 	icon = "SquareIcon/awuwei",
 	id = 43227,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75549,6 +75746,7 @@ _G.pg.base.item_data_statistics[43227] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43228] = {
@@ -75558,7 +75756,6 @@ _G.pg.base.item_data_statistics[43228] = {
 	icon = "SquareIcon/zuishang",
 	id = 43228,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75579,6 +75776,7 @@ _G.pg.base.item_data_statistics[43228] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43229] = {
@@ -75588,7 +75786,6 @@ _G.pg.base.item_data_statistics[43229] = {
 	icon = "SquareIcon/sanwei",
 	id = 43229,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75609,6 +75806,7 @@ _G.pg.base.item_data_statistics[43229] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43230] = {
@@ -75618,7 +75816,6 @@ _G.pg.base.item_data_statistics[43230] = {
 	icon = "SquareIcon/chuannei",
 	id = 43230,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75639,6 +75836,7 @@ _G.pg.base.item_data_statistics[43230] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43231] = {
@@ -75648,7 +75846,6 @@ _G.pg.base.item_data_statistics[43231] = {
 	icon = "SquareIcon/shentong",
 	id = 43231,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75669,6 +75866,7 @@ _G.pg.base.item_data_statistics[43231] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43232] = {
@@ -75678,7 +75876,6 @@ _G.pg.base.item_data_statistics[43232] = {
 	icon = "SquareIcon/nake",
 	id = 43232,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75699,6 +75896,7 @@ _G.pg.base.item_data_statistics[43232] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43233] = {
@@ -75708,7 +75906,6 @@ _G.pg.base.item_data_statistics[43233] = {
 	icon = "SquareIcon/aheye",
 	id = 43233,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75729,6 +75926,7 @@ _G.pg.base.item_data_statistics[43233] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43234] = {
@@ -75738,7 +75936,6 @@ _G.pg.base.item_data_statistics[43234] = {
 	icon = "SquareIcon/nengdai",
 	id = 43234,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75759,6 +75956,7 @@ _G.pg.base.item_data_statistics[43234] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43235] = {
@@ -75768,7 +75966,6 @@ _G.pg.base.item_data_statistics[43235] = {
 	icon = "SquareIcon/guying",
 	id = 43235,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75789,6 +75986,7 @@ _G.pg.base.item_data_statistics[43235] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43236] = {
@@ -75798,7 +75996,6 @@ _G.pg.base.item_data_statistics[43236] = {
 	icon = "SquareIcon/jiagu",
 	id = 43236,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75819,6 +76016,7 @@ _G.pg.base.item_data_statistics[43236] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43237] = {
@@ -75828,7 +76026,6 @@ _G.pg.base.item_data_statistics[43237] = {
 	icon = "SquareIcon/qingye",
 	id = 43237,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75849,6 +76046,7 @@ _G.pg.base.item_data_statistics[43237] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43238] = {
@@ -75858,7 +76056,6 @@ _G.pg.base.item_data_statistics[43238] = {
 	icon = "SquareIcon/yili",
 	id = 43238,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75879,6 +76076,7 @@ _G.pg.base.item_data_statistics[43238] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43239] = {
@@ -75888,7 +76086,6 @@ _G.pg.base.item_data_statistics[43239] = {
 	icon = "SquareIcon/miaogao",
 	id = 43239,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75909,6 +76106,7 @@ _G.pg.base.item_data_statistics[43239] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43240] = {
@@ -75918,7 +76116,6 @@ _G.pg.base.item_data_statistics[43240] = {
 	icon = "SquareIcon/nazhi",
 	id = 43240,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75939,6 +76136,7 @@ _G.pg.base.item_data_statistics[43240] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43241] = {
@@ -75948,7 +76146,6 @@ _G.pg.base.item_data_statistics[43241] = {
 	icon = "SquareIcon/zubing",
 	id = 43241,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75969,6 +76166,7 @@ _G.pg.base.item_data_statistics[43241] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43242] = {
@@ -75978,7 +76176,6 @@ _G.pg.base.item_data_statistics[43242] = {
 	icon = "SquareIcon/gaoxiong",
 	id = 43242,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -75999,6 +76196,7 @@ _G.pg.base.item_data_statistics[43242] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43243] = {
@@ -76008,7 +76206,6 @@ _G.pg.base.item_data_statistics[43243] = {
 	icon = "SquareIcon/aidang",
 	id = 43243,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76029,6 +76226,7 @@ _G.pg.base.item_data_statistics[43243] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43244] = {
@@ -76038,7 +76236,6 @@ _G.pg.base.item_data_statistics[43244] = {
 	icon = "SquareIcon/moye",
 	id = 43244,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76059,6 +76256,7 @@ _G.pg.base.item_data_statistics[43244] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43245] = {
@@ -76068,7 +76266,6 @@ _G.pg.base.item_data_statistics[43245] = {
 	icon = "SquareIcon/niaohai",
 	id = 43245,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76089,6 +76286,7 @@ _G.pg.base.item_data_statistics[43245] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43246] = {
@@ -76098,7 +76296,6 @@ _G.pg.base.item_data_statistics[43246] = {
 	icon = "SquareIcon/linggu",
 	id = 43246,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76119,6 +76316,7 @@ _G.pg.base.item_data_statistics[43246] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43247] = {
@@ -76128,7 +76326,6 @@ _G.pg.base.item_data_statistics[43247] = {
 	icon = "SquareIcon/jingang",
 	id = 43247,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76149,6 +76346,7 @@ _G.pg.base.item_data_statistics[43247] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43248] = {
@@ -76158,7 +76356,6 @@ _G.pg.base.item_data_statistics[43248] = {
 	icon = "SquareIcon/birui",
 	id = 43248,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76179,6 +76376,7 @@ _G.pg.base.item_data_statistics[43248] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43249] = {
@@ -76188,7 +76386,6 @@ _G.pg.base.item_data_statistics[43249] = {
 	icon = "SquareIcon/zhenming",
 	id = 43249,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76209,6 +76406,7 @@ _G.pg.base.item_data_statistics[43249] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43250] = {
@@ -76218,7 +76416,6 @@ _G.pg.base.item_data_statistics[43250] = {
 	icon = "SquareIcon/wudao",
 	id = 43250,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76239,6 +76436,7 @@ _G.pg.base.item_data_statistics[43250] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43251] = {
@@ -76248,7 +76446,6 @@ _G.pg.base.item_data_statistics[43251] = {
 	icon = "SquareIcon/tiancheng",
 	id = 43251,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76269,6 +76466,7 @@ _G.pg.base.item_data_statistics[43251] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43252] = {
@@ -76278,7 +76476,6 @@ _G.pg.base.item_data_statistics[43252] = {
 	icon = "SquareIcon/birui_younv",
 	id = 43252,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76299,6 +76496,7 @@ _G.pg.base.item_data_statistics[43252] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43253] = {
@@ -76308,7 +76506,6 @@ _G.pg.base.item_data_statistics[43253] = {
 	icon = "SquareIcon/fusang",
 	id = 43253,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76329,6 +76526,7 @@ _G.pg.base.item_data_statistics[43253] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43254] = {
@@ -76338,7 +76536,6 @@ _G.pg.base.item_data_statistics[43254] = {
 	icon = "SquareIcon/shancheng",
 	id = 43254,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76359,6 +76556,7 @@ _G.pg.base.item_data_statistics[43254] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43255] = {
@@ -76368,7 +76566,6 @@ _G.pg.base.item_data_statistics[43255] = {
 	icon = "SquareIcon/yishi",
 	id = 43255,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76389,6 +76586,7 @@ _G.pg.base.item_data_statistics[43255] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43256] = {
@@ -76398,7 +76596,6 @@ _G.pg.base.item_data_statistics[43256] = {
 	icon = "SquareIcon/rixiang",
 	id = 43256,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76419,6 +76616,7 @@ _G.pg.base.item_data_statistics[43256] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43257] = {
@@ -76428,7 +76626,6 @@ _G.pg.base.item_data_statistics[43257] = {
 	icon = "SquareIcon/changmen",
 	id = 43257,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76449,6 +76646,7 @@ _G.pg.base.item_data_statistics[43257] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43258] = {
@@ -76458,7 +76656,6 @@ _G.pg.base.item_data_statistics[43258] = {
 	icon = "SquareIcon/luao",
 	id = 43258,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76479,6 +76676,7 @@ _G.pg.base.item_data_statistics[43258] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43259] = {
@@ -76488,7 +76686,6 @@ _G.pg.base.item_data_statistics[43259] = {
 	icon = "SquareIcon/jiahezhanlie",
 	id = 43259,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76509,6 +76706,7 @@ _G.pg.base.item_data_statistics[43259] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43260] = {
@@ -76518,7 +76716,6 @@ _G.pg.base.item_data_statistics[43260] = {
 	icon = "SquareIcon/sanli",
 	id = 43260,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76539,6 +76736,7 @@ _G.pg.base.item_data_statistics[43260] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43261] = {
@@ -76548,7 +76746,6 @@ _G.pg.base.item_data_statistics[43261] = {
 	icon = "SquareIcon/junhe",
 	id = 43261,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76569,6 +76766,7 @@ _G.pg.base.item_data_statistics[43261] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43262] = {
@@ -76578,7 +76776,6 @@ _G.pg.base.item_data_statistics[43262] = {
 	icon = "SquareIcon/feiying",
 	id = 43262,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76599,6 +76796,7 @@ _G.pg.base.item_data_statistics[43262] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43263] = {
@@ -76608,7 +76806,6 @@ _G.pg.base.item_data_statistics[43263] = {
 	icon = "SquareIcon/sunying",
 	id = 43263,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76629,6 +76826,7 @@ _G.pg.base.item_data_statistics[43263] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43264] = {
@@ -76638,7 +76836,6 @@ _G.pg.base.item_data_statistics[43264] = {
 	icon = "SquareIcon/fengxiang",
 	id = 43264,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76659,6 +76856,7 @@ _G.pg.base.item_data_statistics[43264] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43265] = {
@@ -76668,7 +76866,6 @@ _G.pg.base.item_data_statistics[43265] = {
 	icon = "SquareIcon/xiangfeng",
 	id = 43265,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76689,6 +76886,7 @@ _G.pg.base.item_data_statistics[43265] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43266] = {
@@ -76698,7 +76896,6 @@ _G.pg.base.item_data_statistics[43266] = {
 	icon = "SquareIcon/longxiang",
 	id = 43266,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76719,6 +76916,7 @@ _G.pg.base.item_data_statistics[43266] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43267] = {
@@ -76728,7 +76926,6 @@ _G.pg.base.item_data_statistics[43267] = {
 	icon = "SquareIcon/longfeng",
 	id = 43267,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76749,6 +76946,7 @@ _G.pg.base.item_data_statistics[43267] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43268] = {
@@ -76758,7 +76956,6 @@ _G.pg.base.item_data_statistics[43268] = {
 	icon = "SquareIcon/chicheng",
 	id = 43268,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76779,6 +76976,7 @@ _G.pg.base.item_data_statistics[43268] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43269] = {
@@ -76788,7 +76986,6 @@ _G.pg.base.item_data_statistics[43269] = {
 	icon = "SquareIcon/jiahe",
 	id = 43269,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76809,6 +77006,7 @@ _G.pg.base.item_data_statistics[43269] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43270] = {
@@ -76818,7 +77016,6 @@ _G.pg.base.item_data_statistics[43270] = {
 	icon = "SquareIcon/canglong",
 	id = 43270,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76839,6 +77036,7 @@ _G.pg.base.item_data_statistics[43270] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43271] = {
@@ -76848,7 +77046,6 @@ _G.pg.base.item_data_statistics[43271] = {
 	icon = "SquareIcon/feilong",
 	id = 43271,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76869,6 +77066,7 @@ _G.pg.base.item_data_statistics[43271] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43272] = {
@@ -76878,7 +77076,6 @@ _G.pg.base.item_data_statistics[43272] = {
 	icon = "SquareIcon/xianghe",
 	id = 43272,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76899,6 +77096,7 @@ _G.pg.base.item_data_statistics[43272] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43273] = {
@@ -76908,7 +77106,6 @@ _G.pg.base.item_data_statistics[43273] = {
 	icon = "SquareIcon/ruihe",
 	id = 43273,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76929,6 +77126,7 @@ _G.pg.base.item_data_statistics[43273] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43274] = {
@@ -76938,7 +77136,6 @@ _G.pg.base.item_data_statistics[43274] = {
 	icon = "SquareIcon/dafeng",
 	id = 43274,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76959,6 +77156,7 @@ _G.pg.base.item_data_statistics[43274] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43275] = {
@@ -76968,7 +77166,6 @@ _G.pg.base.item_data_statistics[43275] = {
 	icon = "SquareIcon/chicheng_younv",
 	id = 43275,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -76989,6 +77186,7 @@ _G.pg.base.item_data_statistics[43275] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43276] = {
@@ -76998,7 +77196,6 @@ _G.pg.base.item_data_statistics[43276] = {
 	icon = "SquareIcon/chicheng_idol",
 	id = 43276,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77019,6 +77216,7 @@ _G.pg.base.item_data_statistics[43276] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43277] = {
@@ -77028,7 +77226,6 @@ _G.pg.base.item_data_statistics[43277] = {
 	icon = "SquareIcon/I19",
 	id = 43277,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77049,6 +77246,7 @@ _G.pg.base.item_data_statistics[43277] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43278] = {
@@ -77058,7 +77256,6 @@ _G.pg.base.item_data_statistics[43278] = {
 	icon = "SquareIcon/I26",
 	id = 43278,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77079,6 +77276,7 @@ _G.pg.base.item_data_statistics[43278] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43279] = {
@@ -77088,7 +77286,6 @@ _G.pg.base.item_data_statistics[43279] = {
 	icon = "SquareIcon/I58",
 	id = 43279,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77109,6 +77306,7 @@ _G.pg.base.item_data_statistics[43279] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43280] = {
@@ -77118,7 +77316,6 @@ _G.pg.base.item_data_statistics[43280] = {
 	icon = "SquareIcon/I25",
 	id = 43280,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77139,6 +77336,7 @@ _G.pg.base.item_data_statistics[43280] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43281] = {
@@ -77148,7 +77346,6 @@ _G.pg.base.item_data_statistics[43281] = {
 	icon = "SquareIcon/I56",
 	id = 43281,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77169,6 +77366,7 @@ _G.pg.base.item_data_statistics[43281] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43282] = {
@@ -77178,7 +77376,6 @@ _G.pg.base.item_data_statistics[43282] = {
 	icon = "SquareIcon/I168",
 	id = 43282,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77199,6 +77396,7 @@ _G.pg.base.item_data_statistics[43282] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43283] = {
@@ -77208,7 +77406,6 @@ _G.pg.base.item_data_statistics[43283] = {
 	icon = "SquareIcon/mingshi",
 	id = 43283,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77229,6 +77426,7 @@ _G.pg.base.item_data_statistics[43283] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43284] = {
@@ -77238,7 +77436,6 @@ _G.pg.base.item_data_statistics[43284] = {
 	icon = "SquareIcon/I13",
 	id = 43284,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77259,6 +77456,7 @@ _G.pg.base.item_data_statistics[43284] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43285] = {
@@ -77268,7 +77466,6 @@ _G.pg.base.item_data_statistics[43285] = {
 	icon = "SquareIcon/z1",
 	id = 43285,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77289,6 +77486,7 @@ _G.pg.base.item_data_statistics[43285] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43286] = {
@@ -77298,7 +77496,6 @@ _G.pg.base.item_data_statistics[43286] = {
 	icon = "SquareIcon/Z2",
 	id = 43286,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77319,6 +77516,7 @@ _G.pg.base.item_data_statistics[43286] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43287] = {
@@ -77328,7 +77526,6 @@ _G.pg.base.item_data_statistics[43287] = {
 	icon = "SquareIcon/z18",
 	id = 43287,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77349,6 +77546,7 @@ _G.pg.base.item_data_statistics[43287] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43288] = {
@@ -77358,7 +77556,6 @@ _G.pg.base.item_data_statistics[43288] = {
 	icon = "SquareIcon/z19",
 	id = 43288,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77379,6 +77576,7 @@ _G.pg.base.item_data_statistics[43288] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43289] = {
@@ -77388,7 +77586,6 @@ _G.pg.base.item_data_statistics[43289] = {
 	icon = "SquareIcon/z20",
 	id = 43289,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77409,6 +77606,7 @@ _G.pg.base.item_data_statistics[43289] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43290] = {
@@ -77418,7 +77616,6 @@ _G.pg.base.item_data_statistics[43290] = {
 	icon = "SquareIcon/z21",
 	id = 43290,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77439,6 +77636,7 @@ _G.pg.base.item_data_statistics[43290] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43291] = {
@@ -77448,7 +77646,6 @@ _G.pg.base.item_data_statistics[43291] = {
 	icon = "SquareIcon/z23",
 	id = 43291,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77469,6 +77666,7 @@ _G.pg.base.item_data_statistics[43291] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43292] = {
@@ -77478,7 +77676,6 @@ _G.pg.base.item_data_statistics[43292] = {
 	icon = "SquareIcon/Z25",
 	id = 43292,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77499,6 +77696,7 @@ _G.pg.base.item_data_statistics[43292] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43293] = {
@@ -77508,7 +77706,6 @@ _G.pg.base.item_data_statistics[43293] = {
 	icon = "SquareIcon/Z35",
 	id = 43293,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77529,6 +77726,7 @@ _G.pg.base.item_data_statistics[43293] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43294] = {
@@ -77538,7 +77736,6 @@ _G.pg.base.item_data_statistics[43294] = {
 	icon = "SquareIcon/Z36",
 	id = 43294,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77559,6 +77756,7 @@ _G.pg.base.item_data_statistics[43294] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43295] = {
@@ -77568,7 +77766,6 @@ _G.pg.base.item_data_statistics[43295] = {
 	icon = "SquareIcon/Z46",
 	id = 43295,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77589,6 +77786,7 @@ _G.pg.base.item_data_statistics[43295] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43296] = {
@@ -77598,7 +77796,6 @@ _G.pg.base.item_data_statistics[43296] = {
 	icon = "SquareIcon/kenisibao",
 	id = 43296,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77619,6 +77816,7 @@ _G.pg.base.item_data_statistics[43296] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43297] = {
@@ -77628,7 +77826,6 @@ _G.pg.base.item_data_statistics[43297] = {
 	icon = "SquareIcon/kaersilue",
 	id = 43297,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77649,6 +77846,7 @@ _G.pg.base.item_data_statistics[43297] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43298] = {
@@ -77658,7 +77856,6 @@ _G.pg.base.item_data_statistics[43298] = {
 	icon = "SquareIcon/kelong",
 	id = 43298,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77679,6 +77876,7 @@ _G.pg.base.item_data_statistics[43298] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43299] = {
@@ -77688,7 +77886,6 @@ _G.pg.base.item_data_statistics[43299] = {
 	icon = "SquareIcon/laibixi",
 	id = 43299,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77709,6 +77906,7 @@ _G.pg.base.item_data_statistics[43299] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43300] = {
@@ -77718,7 +77916,6 @@ _G.pg.base.item_data_statistics[43300] = {
 	icon = "SquareIcon/xipeierhaijunshangjiang",
 	id = 43300,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77739,6 +77936,7 @@ _G.pg.base.item_data_statistics[43300] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43301] = {
@@ -77748,7 +77946,6 @@ _G.pg.base.item_data_statistics[43301] = {
 	icon = "SquareIcon/ougen",
 	id = 43301,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77769,6 +77966,7 @@ _G.pg.base.item_data_statistics[43301] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43302] = {
@@ -77778,7 +77976,6 @@ _G.pg.base.item_data_statistics[43302] = {
 	icon = "SquareIcon/deyizhi",
 	id = 43302,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77799,6 +77996,7 @@ _G.pg.base.item_data_statistics[43302] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43303] = {
@@ -77808,7 +78006,6 @@ _G.pg.base.item_data_statistics[43303] = {
 	icon = "SquareIcon/sipeibojue",
 	id = 43303,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77829,6 +78026,7 @@ _G.pg.base.item_data_statistics[43303] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43304] = {
@@ -77838,7 +78036,6 @@ _G.pg.base.item_data_statistics[43304] = {
 	icon = "SquareIcon/xipeier_idol",
 	id = 43304,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77859,6 +78056,7 @@ _G.pg.base.item_data_statistics[43304] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43305] = {
@@ -77868,7 +78066,6 @@ _G.pg.base.item_data_statistics[43305] = {
 	icon = "SquareIcon/shaenhuosite",
 	id = 43305,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77889,6 +78086,7 @@ _G.pg.base.item_data_statistics[43305] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43306] = {
@@ -77898,7 +78096,6 @@ _G.pg.base.item_data_statistics[43306] = {
 	icon = "SquareIcon/genaisennao",
 	id = 43306,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77919,6 +78116,7 @@ _G.pg.base.item_data_statistics[43306] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43307] = {
@@ -77928,7 +78126,6 @@ _G.pg.base.item_data_statistics[43307] = {
 	icon = "SquareIcon/bisimai",
 	id = 43307,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77949,6 +78146,7 @@ _G.pg.base.item_data_statistics[43307] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43308] = {
@@ -77958,7 +78156,6 @@ _G.pg.base.item_data_statistics[43308] = {
 	icon = "SquareIcon/tierbici",
 	id = 43308,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -77979,6 +78176,7 @@ _G.pg.base.item_data_statistics[43308] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43309] = {
@@ -77988,7 +78186,6 @@ _G.pg.base.item_data_statistics[43309] = {
 	icon = "SquareIcon/qibolin",
 	id = 43309,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78009,6 +78206,7 @@ _G.pg.base.item_data_statistics[43309] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43310] = {
@@ -78018,7 +78216,6 @@ _G.pg.base.item_data_statistics[43310] = {
 	icon = "SquareIcon/qibolin_younv",
 	id = 43310,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78039,6 +78236,7 @@ _G.pg.base.item_data_statistics[43310] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43311] = {
@@ -78048,7 +78246,6 @@ _G.pg.base.item_data_statistics[43311] = {
 	icon = "SquareIcon/U81",
 	id = 43311,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78069,6 +78266,7 @@ _G.pg.base.item_data_statistics[43311] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43312] = {
@@ -78078,7 +78276,6 @@ _G.pg.base.item_data_statistics[43312] = {
 	icon = "SquareIcon/U47",
 	id = 43312,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78099,6 +78296,7 @@ _G.pg.base.item_data_statistics[43312] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43313] = {
@@ -78108,7 +78306,6 @@ _G.pg.base.item_data_statistics[43313] = {
 	icon = "SquareIcon/U557",
 	id = 43313,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78129,6 +78326,7 @@ _G.pg.base.item_data_statistics[43313] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43314] = {
@@ -78138,7 +78336,6 @@ _G.pg.base.item_data_statistics[43314] = {
 	icon = "SquareIcon/U556",
 	id = 43314,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78159,6 +78356,7 @@ _G.pg.base.item_data_statistics[43314] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43315] = {
@@ -78168,7 +78366,6 @@ _G.pg.base.item_data_statistics[43315] = {
 	icon = "SquareIcon/U73",
 	id = 43315,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78189,6 +78386,7 @@ _G.pg.base.item_data_statistics[43315] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43316] = {
@@ -78198,7 +78396,6 @@ _G.pg.base.item_data_statistics[43316] = {
 	icon = "SquareIcon/U101",
 	id = 43316,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78219,6 +78416,7 @@ _G.pg.base.item_data_statistics[43316] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43317] = {
@@ -78228,7 +78426,6 @@ _G.pg.base.item_data_statistics[43317] = {
 	icon = "SquareIcon/U522",
 	id = 43317,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78249,6 +78446,7 @@ _G.pg.base.item_data_statistics[43317] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43318] = {
@@ -78258,7 +78456,6 @@ _G.pg.base.item_data_statistics[43318] = {
 	icon = "SquareIcon/U110",
 	id = 43318,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78279,6 +78476,7 @@ _G.pg.base.item_data_statistics[43318] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43319] = {
@@ -78288,7 +78486,6 @@ _G.pg.base.item_data_statistics[43319] = {
 	icon = "SquareIcon/anshan",
 	id = 43319,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78309,6 +78506,7 @@ _G.pg.base.item_data_statistics[43319] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43320] = {
@@ -78318,7 +78516,6 @@ _G.pg.base.item_data_statistics[43320] = {
 	icon = "SquareIcon/fushun",
 	id = 43320,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78339,6 +78536,7 @@ _G.pg.base.item_data_statistics[43320] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43321] = {
@@ -78348,7 +78546,6 @@ _G.pg.base.item_data_statistics[43321] = {
 	icon = "SquareIcon/changchun",
 	id = 43321,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78369,6 +78566,7 @@ _G.pg.base.item_data_statistics[43321] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43322] = {
@@ -78378,7 +78576,6 @@ _G.pg.base.item_data_statistics[43322] = {
 	icon = "SquareIcon/taiyuan",
 	id = 43322,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78399,6 +78596,7 @@ _G.pg.base.item_data_statistics[43322] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43323] = {
@@ -78408,7 +78606,6 @@ _G.pg.base.item_data_statistics[43323] = {
 	icon = "SquareIcon/yixian",
 	id = 43323,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78429,6 +78626,7 @@ _G.pg.base.item_data_statistics[43323] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43324] = {
@@ -78438,7 +78636,6 @@ _G.pg.base.item_data_statistics[43324] = {
 	icon = "SquareIcon/ninghai",
 	id = 43324,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78459,6 +78656,7 @@ _G.pg.base.item_data_statistics[43324] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43325] = {
@@ -78468,7 +78666,6 @@ _G.pg.base.item_data_statistics[43325] = {
 	icon = "SquareIcon/pinghai",
 	id = 43325,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78489,6 +78686,7 @@ _G.pg.base.item_data_statistics[43325] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43326] = {
@@ -78498,7 +78696,6 @@ _G.pg.base.item_data_statistics[43326] = {
 	icon = "SquareIcon/longqibing",
 	id = 43326,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78519,6 +78716,7 @@ _G.pg.base.item_data_statistics[43326] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43327] = {
@@ -78528,7 +78726,6 @@ _G.pg.base.item_data_statistics[43327] = {
 	icon = "SquareIcon/teluntuo",
 	id = 43327,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78549,6 +78746,7 @@ _G.pg.base.item_data_statistics[43327] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43328] = {
@@ -78558,7 +78756,6 @@ _G.pg.base.item_data_statistics[43328] = {
 	icon = "SquareIcon/zhala",
 	id = 43328,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78579,6 +78776,7 @@ _G.pg.base.item_data_statistics[43328] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43329] = {
@@ -78588,7 +78786,6 @@ _G.pg.base.item_data_statistics[43329] = {
 	icon = "SquareIcon/lituoliao",
 	id = 43329,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78609,6 +78806,7 @@ _G.pg.base.item_data_statistics[43329] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43330] = {
@@ -78618,7 +78816,6 @@ _G.pg.base.item_data_statistics[43330] = {
 	icon = "SquareIcon/jiafuerbojue",
 	id = 43330,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78639,6 +78836,7 @@ _G.pg.base.item_data_statistics[43330] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43331] = {
@@ -78648,7 +78846,6 @@ _G.pg.base.item_data_statistics[43331] = {
 	icon = "SquareIcon/kaisa",
 	id = 43331,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78669,6 +78866,7 @@ _G.pg.base.item_data_statistics[43331] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43332] = {
@@ -78678,7 +78876,6 @@ _G.pg.base.item_data_statistics[43332] = {
 	icon = "SquareIcon/afuleer",
 	id = 43332,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78699,6 +78896,7 @@ _G.pg.base.item_data_statistics[43332] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43333] = {
@@ -78708,7 +78906,6 @@ _G.pg.base.item_data_statistics[43333] = {
 	icon = "SquareIcon/kaixuan",
 	id = 43333,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78729,6 +78926,7 @@ _G.pg.base.item_data_statistics[43333] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43334] = {
@@ -78738,7 +78936,6 @@ _G.pg.base.item_data_statistics[43334] = {
 	icon = "SquareIcon/fuerban",
 	id = 43334,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78759,6 +78956,7 @@ _G.pg.base.item_data_statistics[43334] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43335] = {
@@ -78768,7 +78966,6 @@ _G.pg.base.item_data_statistics[43335] = {
 	icon = "SquareIcon/lumang",
 	id = 43335,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78789,6 +78986,7 @@ _G.pg.base.item_data_statistics[43335] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43336] = {
@@ -78798,7 +78996,6 @@ _G.pg.base.item_data_statistics[43336] = {
 	icon = "SquareIcon/juejiang",
 	id = 43336,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78819,6 +79016,7 @@ _G.pg.base.item_data_statistics[43336] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43337] = {
@@ -78828,7 +79026,6 @@ _G.pg.base.item_data_statistics[43337] = {
 	icon = "SquareIcon/aimierbeierding",
 	id = 43337,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78849,6 +79046,7 @@ _G.pg.base.item_data_statistics[43337] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43338] = {
@@ -78858,7 +79056,6 @@ _G.pg.base.item_data_statistics[43338] = {
 	icon = "SquareIcon/xukufu",
 	id = 43338,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78879,6 +79076,7 @@ _G.pg.base.item_data_statistics[43338] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43339] = {
@@ -78888,7 +79086,6 @@ _G.pg.base.item_data_statistics[43339] = {
 	icon = "SquareIcon/lemaer",
 	id = 43339,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78909,6 +79106,7 @@ _G.pg.base.item_data_statistics[43339] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43340] = {
@@ -78918,7 +79116,6 @@ _G.pg.base.item_data_statistics[43340] = {
 	icon = "SquareIcon/edu",
 	id = 43340,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78939,6 +79136,7 @@ _G.pg.base.item_data_statistics[43340] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43341] = {
@@ -78948,7 +79146,6 @@ _G.pg.base.item_data_statistics[43341] = {
 	icon = "SquareIcon/dunkeerke",
 	id = 43341,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78969,6 +79166,7 @@ _G.pg.base.item_data_statistics[43341] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43342] = {
@@ -78978,7 +79176,6 @@ _G.pg.base.item_data_statistics[43342] = {
 	icon = "SquareIcon/rangbaer",
 	id = 43342,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -78999,6 +79196,7 @@ _G.pg.base.item_data_statistics[43342] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43343] = {
@@ -79008,7 +79206,6 @@ _G.pg.base.item_data_statistics[43343] = {
 	icon = "SquareIcon/jiasikenie_idol",
 	id = 43343,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79029,6 +79226,7 @@ _G.pg.base.item_data_statistics[43343] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43344] = {
@@ -79038,7 +79236,6 @@ _G.pg.base.item_data_statistics[43344] = {
 	icon = "SquareIcon/haiwangxing",
 	id = 43344,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79059,6 +79256,7 @@ _G.pg.base.item_data_statistics[43344] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43345] = {
@@ -79068,7 +79266,6 @@ _G.pg.base.item_data_statistics[43345] = {
 	icon = "SquareIcon/junzhu",
 	id = 43345,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79089,6 +79286,7 @@ _G.pg.base.item_data_statistics[43345] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43346] = {
@@ -79098,7 +79296,6 @@ _G.pg.base.item_data_statistics[43346] = {
 	icon = "SquareIcon/yichui",
 	id = 43346,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79119,6 +79316,7 @@ _G.pg.base.item_data_statistics[43346] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43347] = {
@@ -79128,7 +79326,6 @@ _G.pg.base.item_data_statistics[43347] = {
 	icon = "SquareIcon/chuyun",
 	id = 43347,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79149,6 +79346,7 @@ _G.pg.base.item_data_statistics[43347] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43348] = {
@@ -79158,7 +79356,6 @@ _G.pg.base.item_data_statistics[43348] = {
 	icon = "SquareIcon/luoen",
 	id = 43348,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79179,6 +79376,7 @@ _G.pg.base.item_data_statistics[43348] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43349] = {
@@ -79188,7 +79386,6 @@ _G.pg.base.item_data_statistics[43349] = {
 	icon = "SquareIcon/luyijiushi",
 	id = 43349,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79209,6 +79406,7 @@ _G.pg.base.item_data_statistics[43349] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43350] = {
@@ -79218,7 +79416,6 @@ _G.pg.base.item_data_statistics[43350] = {
 	icon = "SquareIcon/xiyatu",
 	id = 43350,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79239,6 +79436,7 @@ _G.pg.base.item_data_statistics[43350] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43351] = {
@@ -79248,7 +79446,6 @@ _G.pg.base.item_data_statistics[43351] = {
 	icon = "SquareIcon/zuozhiya",
 	id = 43351,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79269,6 +79466,7 @@ _G.pg.base.item_data_statistics[43351] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43352] = {
@@ -79278,7 +79476,6 @@ _G.pg.base.item_data_statistics[43352] = {
 	icon = "SquareIcon/beifeng",
 	id = 43352,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79299,6 +79496,7 @@ _G.pg.base.item_data_statistics[43352] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43353] = {
@@ -79308,7 +79506,6 @@ _G.pg.base.item_data_statistics[43353] = {
 	icon = "SquareIcon/wuqi",
 	id = 43353,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79329,6 +79526,7 @@ _G.pg.base.item_data_statistics[43353] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43354] = {
@@ -79338,7 +79536,6 @@ _G.pg.base.item_data_statistics[43354] = {
 	icon = "SquareIcon/feiteliedadi",
 	id = 43354,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79359,6 +79556,7 @@ _G.pg.base.item_data_statistics[43354] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43355] = {
@@ -79368,7 +79566,6 @@ _G.pg.base.item_data_statistics[43355] = {
 	icon = "SquareIcon/jiasikenie",
 	id = 43355,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79389,6 +79586,7 @@ _G.pg.base.item_data_statistics[43355] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43356] = {
@@ -79398,7 +79596,6 @@ _G.pg.base.item_data_statistics[43356] = {
 	icon = "SquareIcon/haerxibaoweier",
 	id = 43356,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79419,6 +79616,7 @@ _G.pg.base.item_data_statistics[43356] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43357] = {
@@ -79428,7 +79626,6 @@ _G.pg.base.item_data_statistics[43357] = {
 	icon = "SquareIcon/biluokexi",
 	id = 43357,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79449,6 +79646,7 @@ _G.pg.base.item_data_statistics[43357] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43358] = {
@@ -79458,7 +79656,6 @@ _G.pg.base.item_data_statistics[43358] = {
 	icon = "SquareIcon/geluosite",
 	id = 43358,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79479,6 +79676,7 @@ _G.pg.base.item_data_statistics[43358] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43359] = {
@@ -79488,7 +79686,6 @@ _G.pg.base.item_data_statistics[43359] = {
 	icon = "SquareIcon/daiduo",
 	id = 43359,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79509,6 +79706,7 @@ _G.pg.base.item_data_statistics[43359] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43360] = {
@@ -79518,7 +79716,6 @@ _G.pg.base.item_data_statistics[43360] = {
 	icon = "SquareIcon/pubo",
 	id = 43360,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79539,6 +79736,7 @@ _G.pg.base.item_data_statistics[43360] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43361] = {
@@ -79548,7 +79746,6 @@ _G.pg.base.item_data_statistics[43361] = {
 	icon = "SquareIcon/buli_super",
 	id = 43361,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79569,6 +79766,7 @@ _G.pg.base.item_data_statistics[43361] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43362] = {
@@ -79578,7 +79776,6 @@ _G.pg.base.item_data_statistics[43362] = {
 	icon = "SquareIcon/kubo",
 	id = 43362,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79599,6 +79796,7 @@ _G.pg.base.item_data_statistics[43362] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43363] = {
@@ -79608,7 +79806,6 @@ _G.pg.base.item_data_statistics[43363] = {
 	icon = "SquareIcon/mabuerheide",
 	id = 43363,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79629,6 +79826,7 @@ _G.pg.base.item_data_statistics[43363] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43364] = {
@@ -79638,7 +79836,6 @@ _G.pg.base.item_data_statistics[43364] = {
 	icon = "SquareIcon/linuo",
 	id = 43364,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79659,6 +79856,7 @@ _G.pg.base.item_data_statistics[43364] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43365] = {
@@ -79668,7 +79866,6 @@ _G.pg.base.item_data_statistics[43365] = {
 	icon = "SquareIcon/baerdimo_idol",
 	id = 43365,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79689,6 +79886,7 @@ _G.pg.base.item_data_statistics[43365] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43366] = {
@@ -79698,7 +79896,6 @@ _G.pg.base.item_data_statistics[43366] = {
 	icon = "SquareIcon/bulaimodun",
 	id = 43366,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79719,6 +79916,7 @@ _G.pg.base.item_data_statistics[43366] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43367] = {
@@ -79728,7 +79926,6 @@ _G.pg.base.item_data_statistics[43367] = {
 	icon = "SquareIcon/wuwei",
 	id = 43367,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79749,6 +79946,7 @@ _G.pg.base.item_data_statistics[43367] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43368] = {
@@ -79758,7 +79956,6 @@ _G.pg.base.item_data_statistics[43368] = {
 	icon = "SquareIcon/kasabulanka",
 	id = 43368,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79779,6 +79976,7 @@ _G.pg.base.item_data_statistics[43368] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43369] = {
@@ -79788,7 +79986,6 @@ _G.pg.base.item_data_statistics[43369] = {
 	icon = "SquareIcon/pulinsidun",
 	id = 43369,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79809,6 +80006,7 @@ _G.pg.base.item_data_statistics[43369] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43370] = {
@@ -79818,7 +80016,6 @@ _G.pg.base.item_data_statistics[43370] = {
 	icon = "SquareIcon/daqinghuayu_idol",
 	id = 43370,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79839,6 +80036,7 @@ _G.pg.base.item_data_statistics[43370] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43371] = {
@@ -79848,7 +80046,6 @@ _G.pg.base.item_data_statistics[43371] = {
 	icon = "SquareIcon/lansaiyu",
 	id = 43371,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79869,6 +80066,7 @@ _G.pg.base.item_data_statistics[43371] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43372] = {
@@ -79878,7 +80076,6 @@ _G.pg.base.item_data_statistics[43372] = {
 	icon = "SquareIcon/aisijimo",
 	id = 43372,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79899,6 +80096,7 @@ _G.pg.base.item_data_statistics[43372] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43373] = {
@@ -79908,7 +80106,6 @@ _G.pg.base.item_data_statistics[43373] = {
 	icon = "SquareIcon/yikaluosi",
 	id = 43373,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79929,6 +80126,7 @@ _G.pg.base.item_data_statistics[43373] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43374] = {
@@ -79938,7 +80136,6 @@ _G.pg.base.item_data_statistics[43374] = {
 	icon = "SquareIcon/daiduo_idol",
 	id = 43374,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79959,6 +80156,7 @@ _G.pg.base.item_data_statistics[43374] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43375] = {
@@ -79968,7 +80166,6 @@ _G.pg.base.item_data_statistics[43375] = {
 	icon = "SquareIcon/hemin",
 	id = 43375,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -79989,6 +80186,7 @@ _G.pg.base.item_data_statistics[43375] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43376] = {
@@ -79998,7 +80196,6 @@ _G.pg.base.item_data_statistics[43376] = {
 	icon = "SquareIcon/shengwang_younv",
 	id = 43376,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80019,6 +80216,7 @@ _G.pg.base.item_data_statistics[43376] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43377] = {
@@ -80028,7 +80226,6 @@ _G.pg.base.item_data_statistics[43377] = {
 	icon = "SquareIcon/yingyong",
 	id = 43377,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80049,6 +80246,7 @@ _G.pg.base.item_data_statistics[43377] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43378] = {
@@ -80058,7 +80256,6 @@ _G.pg.base.item_data_statistics[43378] = {
 	icon = "SquareIcon/hao",
 	id = 43378,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80079,6 +80276,7 @@ _G.pg.base.item_data_statistics[43378] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43379] = {
@@ -80088,7 +80286,6 @@ _G.pg.base.item_data_statistics[43379] = {
 	icon = "SquareIcon/yingxianzuo",
 	id = 43379,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80109,6 +80306,7 @@ _G.pg.base.item_data_statistics[43379] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43380] = {
@@ -80118,7 +80316,6 @@ _G.pg.base.item_data_statistics[43380] = {
 	icon = "SquareIcon/guanghui_idol",
 	id = 43380,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80139,6 +80336,7 @@ _G.pg.base.item_data_statistics[43380] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43381] = {
@@ -80148,7 +80346,6 @@ _G.pg.base.item_data_statistics[43381] = {
 	icon = "SquareIcon/guanghui_younv",
 	id = 43381,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80169,6 +80366,7 @@ _G.pg.base.item_data_statistics[43381] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43382] = {
@@ -80178,7 +80376,6 @@ _G.pg.base.item_data_statistics[43382] = {
 	icon = "SquareIcon/ying",
 	id = 43382,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80199,6 +80396,7 @@ _G.pg.base.item_data_statistics[43382] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43383] = {
@@ -80208,7 +80406,6 @@ _G.pg.base.item_data_statistics[43383] = {
 	icon = "SquareIcon/changbo",
 	id = 43383,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80229,6 +80426,7 @@ _G.pg.base.item_data_statistics[43383] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43384] = {
@@ -80238,7 +80436,6 @@ _G.pg.base.item_data_statistics[43384] = {
 	icon = "SquareIcon/huayue",
 	id = 43384,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80259,6 +80456,7 @@ _G.pg.base.item_data_statistics[43384] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43385] = {
@@ -80268,7 +80466,6 @@ _G.pg.base.item_data_statistics[43385] = {
 	icon = "SquareIcon/liangyue",
 	id = 43385,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80289,6 +80486,7 @@ _G.pg.base.item_data_statistics[43385] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43386] = {
@@ -80298,7 +80496,6 @@ _G.pg.base.item_data_statistics[43386] = {
 	icon = "SquareIcon/xiongye",
 	id = 43386,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80319,6 +80516,7 @@ _G.pg.base.item_data_statistics[43386] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43387] = {
@@ -80328,7 +80526,6 @@ _G.pg.base.item_data_statistics[43387] = {
 	icon = "SquareIcon/jiyi",
 	id = 43387,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80349,6 +80546,7 @@ _G.pg.base.item_data_statistics[43387] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43388] = {
@@ -80358,7 +80556,6 @@ _G.pg.base.item_data_statistics[43388] = {
 	icon = "SquareIcon/tuzuo",
 	id = 43388,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80379,6 +80576,7 @@ _G.pg.base.item_data_statistics[43388] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43389] = {
@@ -80388,7 +80586,6 @@ _G.pg.base.item_data_statistics[43389] = {
 	icon = "SquareIcon/qiansui",
 	id = 43389,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80409,6 +80606,7 @@ _G.pg.base.item_data_statistics[43389] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43390] = {
@@ -80418,7 +80616,6 @@ _G.pg.base.item_data_statistics[43390] = {
 	icon = "SquareIcon/qiandaitian",
 	id = 43390,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80439,6 +80636,7 @@ _G.pg.base.item_data_statistics[43390] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43391] = {
@@ -80448,7 +80646,6 @@ _G.pg.base.item_data_statistics[43391] = {
 	icon = "SquareIcon/xinnong",
 	id = 43391,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80469,6 +80666,7 @@ _G.pg.base.item_data_statistics[43391] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43392] = {
@@ -80478,7 +80676,6 @@ _G.pg.base.item_data_statistics[43392] = {
 	icon = "SquareIcon/jianye",
 	id = 43392,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80499,6 +80696,7 @@ _G.pg.base.item_data_statistics[43392] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43393] = {
@@ -80508,7 +80706,6 @@ _G.pg.base.item_data_statistics[43393] = {
 	icon = "SquareIcon/Z26",
 	id = 43393,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80529,6 +80726,7 @@ _G.pg.base.item_data_statistics[43393] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43394] = {
@@ -80538,7 +80736,6 @@ _G.pg.base.item_data_statistics[43394] = {
 	icon = "SquareIcon/U96",
 	id = 43394,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80559,6 +80756,7 @@ _G.pg.base.item_data_statistics[43394] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43395] = {
@@ -80568,7 +80766,6 @@ _G.pg.base.item_data_statistics[43395] = {
 	icon = "SquareIcon/dafeng_idol",
 	id = 43395,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80589,6 +80786,7 @@ _G.pg.base.item_data_statistics[43395] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43396] = {
@@ -80598,7 +80796,6 @@ _G.pg.base.item_data_statistics[43396] = {
 	icon = "SquareIcon/lisailiu",
 	id = 43396,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80619,6 +80816,7 @@ _G.pg.base.item_data_statistics[43396] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43397] = {
@@ -80628,7 +80826,6 @@ _G.pg.base.item_data_statistics[43397] = {
 	icon = "SquareIcon/jialisuoniye",
 	id = 43397,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80649,6 +80846,7 @@ _G.pg.base.item_data_statistics[43397] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43398] = {
@@ -80658,7 +80856,6 @@ _G.pg.base.item_data_statistics[43398] = {
 	icon = "SquareIcon/wokelan",
 	id = 43398,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80679,6 +80876,7 @@ _G.pg.base.item_data_statistics[43398] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43399] = {
@@ -80688,7 +80886,6 @@ _G.pg.base.item_data_statistics[43399] = {
 	icon = "SquareIcon/taertu",
 	id = 43399,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80709,6 +80906,7 @@ _G.pg.base.item_data_statistics[43399] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43400] = {
@@ -80718,7 +80916,6 @@ _G.pg.base.item_data_statistics[43400] = {
 	icon = "SquareIcon/beiyaen",
 	id = 43400,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80739,6 +80936,7 @@ _G.pg.base.item_data_statistics[43400] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43401] = {
@@ -80748,7 +80946,6 @@ _G.pg.base.item_data_statistics[43401] = {
 	icon = "SquareIcon/luoen_idol",
 	id = 43401,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80769,6 +80966,7 @@ _G.pg.base.item_data_statistics[43401] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43402] = {
@@ -80778,7 +80976,6 @@ _G.pg.base.item_data_statistics[43402] = {
 	icon = "SquareIcon/chaijun",
 	id = 43402,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80799,6 +80996,7 @@ _G.pg.base.item_data_statistics[43402] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43403] = {
@@ -80808,7 +81006,6 @@ _G.pg.base.item_data_statistics[43403] = {
 	icon = "SquareIcon/aoding",
 	id = 43403,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80829,6 +81026,7 @@ _G.pg.base.item_data_statistics[43403] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43404] = {
@@ -80838,7 +81036,6 @@ _G.pg.base.item_data_statistics[43404] = {
 	icon = "SquareIcon/meiyinci",
 	id = 43404,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80859,6 +81056,7 @@ _G.pg.base.item_data_statistics[43404] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43405] = {
@@ -80868,7 +81066,6 @@ _G.pg.base.item_data_statistics[43405] = {
 	icon = "SquareIcon/deleike",
 	id = 43405,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80889,6 +81086,7 @@ _G.pg.base.item_data_statistics[43405] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43406] = {
@@ -80898,7 +81096,6 @@ _G.pg.base.item_data_statistics[43406] = {
 	icon = "SquareIcon/xiangbin",
 	id = 43406,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80919,6 +81116,7 @@ _G.pg.base.item_data_statistics[43406] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43407] = {
@@ -80928,7 +81126,6 @@ _G.pg.base.item_data_statistics[43407] = {
 	icon = "SquareIcon/shengnvzhende",
 	id = 43407,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80949,6 +81146,7 @@ _G.pg.base.item_data_statistics[43407] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43408] = {
@@ -80958,7 +81156,6 @@ _G.pg.base.item_data_statistics[43408] = {
 	icon = "SquareIcon/edu_idol",
 	id = 43408,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -80979,6 +81176,7 @@ _G.pg.base.item_data_statistics[43408] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43409] = {
@@ -80988,7 +81186,6 @@ _G.pg.base.item_data_statistics[43409] = {
 	icon = "SquareIcon/aerjiliya",
 	id = 43409,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81009,6 +81206,7 @@ _G.pg.base.item_data_statistics[43409] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43410] = {
@@ -81018,7 +81216,6 @@ _G.pg.base.item_data_statistics[43410] = {
 	icon = "SquareIcon/gangute",
 	id = 43410,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81039,6 +81236,7 @@ _G.pg.base.item_data_statistics[43410] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43411] = {
@@ -81048,7 +81246,6 @@ _G.pg.base.item_data_statistics[43411] = {
 	icon = "SquareIcon/weiyan",
 	id = 43411,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81069,6 +81266,7 @@ _G.pg.base.item_data_statistics[43411] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43412] = {
@@ -81078,7 +81276,6 @@ _G.pg.base.item_data_statistics[43412] = {
 	icon = "SquareIcon/tashigan",
 	id = 43412,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81099,6 +81296,7 @@ _G.pg.base.item_data_statistics[43412] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43413] = {
@@ -81108,7 +81306,6 @@ _G.pg.base.item_data_statistics[43413] = {
 	icon = "SquareIcon/tashigan_idol",
 	id = 43413,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81129,6 +81326,7 @@ _G.pg.base.item_data_statistics[43413] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43414] = {
@@ -81138,7 +81336,6 @@ _G.pg.base.item_data_statistics[43414] = {
 	icon = "SquareIcon/qiabayefu",
 	id = 43414,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81159,6 +81356,7 @@ _G.pg.base.item_data_statistics[43414] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43415] = {
@@ -81168,7 +81366,6 @@ _G.pg.base.item_data_statistics[43415] = {
 	icon = "SquareIcon/shuixingjinian",
 	id = 43415,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81189,6 +81386,7 @@ _G.pg.base.item_data_statistics[43415] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43416] = {
@@ -81198,7 +81396,6 @@ _G.pg.base.item_data_statistics[43416] = {
 	icon = "SquareIcon/mingsike",
 	id = 43416,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81219,6 +81416,7 @@ _G.pg.base.item_data_statistics[43416] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43417] = {
@@ -81228,7 +81426,6 @@ _G.pg.base.item_data_statistics[43417] = {
 	icon = "SquareIcon/suweiailuoxiya",
 	id = 43417,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81249,6 +81446,7 @@ _G.pg.base.item_data_statistics[43417] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43418] = {
@@ -81258,7 +81456,6 @@ _G.pg.base.item_data_statistics[43418] = {
 	icon = "SquareIcon/shitelasai",
 	id = 43418,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81279,6 +81476,7 @@ _G.pg.base.item_data_statistics[43418] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43419] = {
@@ -81288,7 +81486,6 @@ _G.pg.base.item_data_statistics[43419] = {
 	icon = "SquareIcon/weixi",
 	id = 43419,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81309,6 +81506,7 @@ _G.pg.base.item_data_statistics[43419] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43420] = {
@@ -81318,7 +81516,6 @@ _G.pg.base.item_data_statistics[43420] = {
 	icon = "SquareIcon/haiyinlixi",
 	id = 43420,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81339,6 +81536,7 @@ _G.pg.base.item_data_statistics[43420] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43421] = {
@@ -81348,7 +81546,6 @@ _G.pg.base.item_data_statistics[43421] = {
 	icon = "SquareIcon/Z24",
 	id = 43421,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81369,6 +81566,7 @@ _G.pg.base.item_data_statistics[43421] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43422] = {
@@ -81378,7 +81576,6 @@ _G.pg.base.item_data_statistics[43422] = {
 	icon = "SquareIcon/Z28",
 	id = 43422,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81399,6 +81596,7 @@ _G.pg.base.item_data_statistics[43422] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43423] = {
@@ -81408,7 +81606,6 @@ _G.pg.base.item_data_statistics[43423] = {
 	icon = "SquareIcon/U37",
 	id = 43423,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81429,6 +81626,7 @@ _G.pg.base.item_data_statistics[43423] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43424] = {
@@ -81438,7 +81636,6 @@ _G.pg.base.item_data_statistics[43424] = {
 	icon = "SquareIcon/bola",
 	id = 43424,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81459,6 +81656,7 @@ _G.pg.base.item_data_statistics[43424] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43425] = {
@@ -81468,7 +81666,6 @@ _G.pg.base.item_data_statistics[43425] = {
 	icon = "SquareIcon/wenqinzuojiaobeidi",
 	id = 43425,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81489,6 +81686,7 @@ _G.pg.base.item_data_statistics[43425] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43426] = {
@@ -81498,7 +81696,6 @@ _G.pg.base.item_data_statistics[43426] = {
 	icon = "SquareIcon/zhaohe",
 	id = 43426,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81519,6 +81716,7 @@ _G.pg.base.item_data_statistics[43426] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43427] = {
@@ -81528,7 +81726,6 @@ _G.pg.base.item_data_statistics[43427] = {
 	icon = "SquareIcon/yingrui",
 	id = 43427,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81549,6 +81746,7 @@ _G.pg.base.item_data_statistics[43427] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43428] = {
@@ -81558,7 +81756,6 @@ _G.pg.base.item_data_statistics[43428] = {
 	icon = "SquareIcon/peineiluopo",
 	id = 43428,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81579,6 +81776,7 @@ _G.pg.base.item_data_statistics[43428] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43429] = {
@@ -81588,7 +81786,6 @@ _G.pg.base.item_data_statistics[43429] = {
 	icon = "SquareIcon/U410",
 	id = 43429,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81609,6 +81806,7 @@ _G.pg.base.item_data_statistics[43429] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43430] = {
@@ -81618,7 +81816,6 @@ _G.pg.base.item_data_statistics[43430] = {
 	icon = "SquareIcon/feilong_alter",
 	id = 43430,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81639,6 +81836,7 @@ _G.pg.base.item_data_statistics[43430] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[43431] = {
@@ -81648,7 +81846,6 @@ _G.pg.base.item_data_statistics[43431] = {
 	icon = "SquareIcon/niulunbao",
 	id = 43431,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81669,6 +81866,7 @@ _G.pg.base.item_data_statistics[43431] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[44001] = {
@@ -81678,7 +81876,6 @@ _G.pg.base.item_data_statistics[44001] = {
 	icon = "Props/manhanquanxi ",
 	id = 44001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift ",
@@ -81699,6 +81896,7 @@ _G.pg.base.item_data_statistics[44001] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[44002] = {
@@ -81708,7 +81906,6 @@ _G.pg.base.item_data_statistics[44002] = {
 	icon = "Props/manhanquanxi ",
 	id = 44002,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift",
@@ -81729,6 +81926,7 @@ _G.pg.base.item_data_statistics[44002] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[44011] = {
@@ -81738,7 +81936,6 @@ _G.pg.base.item_data_statistics[44011] = {
 	icon = "Props/manhanquanxi ",
 	id = 44011,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift",
@@ -81759,6 +81956,7 @@ _G.pg.base.item_data_statistics[44011] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[44012] = {
@@ -81768,7 +81966,6 @@ _G.pg.base.item_data_statistics[44012] = {
 	icon = "Props/manhanquanxi ",
 	id = 44012,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift",
@@ -81789,6 +81986,7 @@ _G.pg.base.item_data_statistics[44012] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[44013] = {
@@ -81798,7 +81996,6 @@ _G.pg.base.item_data_statistics[44013] = {
 	icon = "Props/manhanquanxi ",
 	id = 44013,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift",
@@ -81819,6 +82016,7 @@ _G.pg.base.item_data_statistics[44013] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[44014] = {
@@ -81828,7 +82026,6 @@ _G.pg.base.item_data_statistics[44014] = {
 	icon = "Props/manhanquanxi ",
 	id = 44014,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift",
@@ -81849,6 +82046,7 @@ _G.pg.base.item_data_statistics[44014] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[44015] = {
@@ -81858,7 +82056,6 @@ _G.pg.base.item_data_statistics[44015] = {
 	icon = "Props/manhanquanxi ",
 	id = 44015,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift",
@@ -81879,6 +82076,7 @@ _G.pg.base.item_data_statistics[44015] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[44016] = {
@@ -81888,7 +82086,6 @@ _G.pg.base.item_data_statistics[44016] = {
 	icon = "Props/manhanquanxi ",
 	id = 44016,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift",
@@ -81909,6 +82106,7 @@ _G.pg.base.item_data_statistics[44016] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[44017] = {
@@ -81918,7 +82116,6 @@ _G.pg.base.item_data_statistics[44017] = {
 	icon = "Props/manhanquanxi ",
 	id = 44017,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Valentine Gift",
@@ -81939,6 +82136,7 @@ _G.pg.base.item_data_statistics[44017] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[50001] = {
@@ -81948,7 +82146,6 @@ _G.pg.base.item_data_statistics[50001] = {
 	icon = "Props/suansukele",
 	id = 50001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Oxy-cola",
@@ -81974,6 +82171,7 @@ _G.pg.base.item_data_statistics[50001] = {
 	usage_arg = {
 		1000,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[50002] = {
@@ -81983,7 +82181,6 @@ _G.pg.base.item_data_statistics[50002] = {
 	icon = "Props/mizhilengqueshui",
 	id = 50002,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Secret Coolant",
@@ -82009,6 +82206,7 @@ _G.pg.base.item_data_statistics[50002] = {
 	usage_arg = {
 		2000,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[50003] = {
@@ -82018,7 +82216,6 @@ _G.pg.base.item_data_statistics[50003] = {
 	icon = "Props/yuleitianfuluo",
 	id = 50003,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Torpedo Tempura",
@@ -82044,6 +82241,7 @@ _G.pg.base.item_data_statistics[50003] = {
 	usage_arg = {
 		3000,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[50004] = {
@@ -82053,7 +82251,6 @@ _G.pg.base.item_data_statistics[50004] = {
 	icon = "Props/haijungali",
 	id = 50004,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Naval Curry",
@@ -82081,6 +82278,7 @@ _G.pg.base.item_data_statistics[50004] = {
 		1,
 		3600,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[50005] = {
@@ -82090,7 +82288,6 @@ _G.pg.base.item_data_statistics[50005] = {
 	icon = "Props/huangjialiaoli",
 	id = 50005,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Royal Gourmet",
@@ -82118,6 +82315,7 @@ _G.pg.base.item_data_statistics[50005] = {
 		2,
 		10800,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[50006] = {
@@ -82127,7 +82325,6 @@ _G.pg.base.item_data_statistics[50006] = {
 	icon = "Props/manhanquanxi",
 	id = 50006,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Full Course",
@@ -82155,6 +82352,7 @@ _G.pg.base.item_data_statistics[50006] = {
 		3,
 		21600,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59010] = {
@@ -82164,7 +82362,6 @@ _G.pg.base.item_data_statistics[59010] = {
 	icon = "Props/specialarmor_prt",
 	id = 59010,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Specialized Core ",
@@ -82185,6 +82382,7 @@ _G.pg.base.item_data_statistics[59010] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59488] = {
@@ -82194,7 +82392,6 @@ _G.pg.base.item_data_statistics[59488] = {
 	icon = "Props/xinwu_xinnong",
 	id = 59488,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shinano's Token",
@@ -82215,6 +82412,7 @@ _G.pg.base.item_data_statistics[59488] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59489] = {
@@ -82224,7 +82422,6 @@ _G.pg.base.item_data_statistics[59489] = {
 	icon = "Props/xinwu_youliang",
 	id = 59489,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Yura's Token",
@@ -82245,6 +82442,7 @@ _G.pg.base.item_data_statistics[59489] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59490] = {
@@ -82254,7 +82452,6 @@ _G.pg.base.item_data_statistics[59490] = {
 	icon = "Props/xinwu_daofeng",
 	id = 59490,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shimakaze's Token",
@@ -82275,6 +82472,7 @@ _G.pg.base.item_data_statistics[59490] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59503] = {
@@ -82284,7 +82482,6 @@ _G.pg.base.item_data_statistics[59503] = {
 	icon = "Props/skin_exchange_n",
 	id = 59503,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Campaign Outfit Voucher",
@@ -82597,6 +82794,7 @@ _G.pg.base.item_data_statistics[59503] = {
 		99999,
 		59551,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59504] = {
@@ -82606,7 +82804,6 @@ _G.pg.base.item_data_statistics[59504] = {
 	icon = "Props/59504",
 	id = 59504,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Item Box",
@@ -82659,6 +82856,7 @@ _G.pg.base.item_data_statistics[59504] = {
 			20,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59505] = {
@@ -82668,7 +82866,6 @@ _G.pg.base.item_data_statistics[59505] = {
 	icon = "Props/59505",
 	id = 59505,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Item Box II",
@@ -82761,6 +82958,7 @@ _G.pg.base.item_data_statistics[59505] = {
 			30,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59551] = {
@@ -82770,7 +82968,6 @@ _G.pg.base.item_data_statistics[59551] = {
 	icon = "Props/skin_780",
 	id = 59551,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Outfit Coupon (780)",
@@ -82796,6 +82993,7 @@ _G.pg.base.item_data_statistics[59551] = {
 		},
 		780,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59552] = {
@@ -82805,7 +83003,6 @@ _G.pg.base.item_data_statistics[59552] = {
 	icon = "Props/skin_1080",
 	id = 59552,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Outfit Coupon (1080)",
@@ -82831,6 +83028,7 @@ _G.pg.base.item_data_statistics[59552] = {
 		},
 		1080,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59553] = {
@@ -82840,7 +83038,6 @@ _G.pg.base.item_data_statistics[59553] = {
 	icon = "Props/skin_exchange_daofeng",
 	id = 59553,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Skin Voucher (Shimakaze)",
@@ -82893,6 +83090,7 @@ _G.pg.base.item_data_statistics[59553] = {
 		0,
 		59552,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59554] = {
@@ -82902,7 +83100,6 @@ _G.pg.base.item_data_statistics[59554] = {
 	icon = "Props/skin_exchange_huteng",
 	id = 59554,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Outfit Selection Voucher (Ulrich von Hutten)",
@@ -82943,6 +83140,7 @@ _G.pg.base.item_data_statistics[59554] = {
 		0,
 		59552,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59555] = {
@@ -82952,7 +83150,6 @@ _G.pg.base.item_data_statistics[59555] = {
 	icon = "Props/59555",
 	id = 59555,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Choose-Your-Own Gift Pack I",
@@ -82995,6 +83192,7 @@ _G.pg.base.item_data_statistics[59555] = {
 			15,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59556] = {
@@ -83004,7 +83202,6 @@ _G.pg.base.item_data_statistics[59556] = {
 	icon = "Props/59504",
 	id = 59556,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Choose-Your-Own Gift Pack II",
@@ -83057,6 +83254,7 @@ _G.pg.base.item_data_statistics[59556] = {
 			20,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59557] = {
@@ -83066,7 +83264,6 @@ _G.pg.base.item_data_statistics[59557] = {
 	icon = "Props/59505",
 	id = 59557,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Choose-Your-Own Gift Pack III",
@@ -83169,6 +83366,7 @@ _G.pg.base.item_data_statistics[59557] = {
 			30,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59558] = {
@@ -83178,7 +83376,6 @@ _G.pg.base.item_data_statistics[59558] = {
 	icon = "Props/skin_exchange_2024",
 	id = 59558,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Static Skin Voucher (2024)",
@@ -83711,16 +83908,16 @@ _G.pg.base.item_data_statistics[59558] = {
 		99999,
 		59551,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59559] = {
 	compose_number = 0,
-	display = "Can be opened to receive 1 Power of the Stars or Magical Wonders-themed gear skin of your choosing.",
+	display = "Can be used to receive 1 gear skin of your choosing from the Power of the Stars or the Magical Wonders set. Note: You may only possess up to 9 copies of any given gear skin.",
 	display_effect = "",
 	icon = "Props/appearanceboxshijiexunyou",
 	id = 59559,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Selection Gear Skin Box (Cruise Missions)",
@@ -84003,6 +84200,148 @@ _G.pg.base.item_data_statistics[59559] = {
 			1,
 		},
 	},
+	limit = {
+		{
+			9,
+			2001,
+			9,
+		},
+		{
+			9,
+			2002,
+			9,
+		},
+		{
+			9,
+			2003,
+			9,
+		},
+		{
+			9,
+			2004,
+			9,
+		},
+		{
+			9,
+			2005,
+			9,
+		},
+		{
+			9,
+			2006,
+			9,
+		},
+		{
+			9,
+			2007,
+			9,
+		},
+		{
+			9,
+			2008,
+			9,
+		},
+		{
+			9,
+			2009,
+			9,
+		},
+		{
+			9,
+			2010,
+			9,
+		},
+		{
+			9,
+			2011,
+			9,
+		},
+		{
+			9,
+			2012,
+			9,
+		},
+		{
+			9,
+			2013,
+			9,
+		},
+		{
+			9,
+			2014,
+			9,
+		},
+		{
+			9,
+			2015,
+			9,
+		},
+		{
+			9,
+			2016,
+			9,
+		},
+		{
+			9,
+			2017,
+			9,
+		},
+		{
+			9,
+			2018,
+			9,
+		},
+		{
+			9,
+			2019,
+			9,
+		},
+		{
+			9,
+			2020,
+			9,
+		},
+		{
+			9,
+			2021,
+			9,
+		},
+		{
+			9,
+			2022,
+			9,
+		},
+		{
+			9,
+			2023,
+			9,
+		},
+		{
+			9,
+			2024,
+			9,
+		},
+		{
+			9,
+			2025,
+			9,
+		},
+		{
+			9,
+			2026,
+			9,
+		},
+		{
+			9,
+			2027,
+			9,
+		},
+		{
+			9,
+			2028,
+			9,
+		},
+	},
 }
 
 _G.pg.base.item_data_statistics[59560] = {
@@ -84012,7 +84351,6 @@ _G.pg.base.item_data_statistics[59560] = {
 	icon = "Equips/96331",
 	id = 59560,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Fantastic Phoenix",
@@ -84049,6 +84387,7 @@ _G.pg.base.item_data_statistics[59560] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59711] = {
@@ -84058,7 +84397,6 @@ _G.pg.base.item_data_statistics[59711] = {
 	icon = "props/yizhounian",
 	id = 59711,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "New Dawn ",
@@ -84079,6 +84417,7 @@ _G.pg.base.item_data_statistics[59711] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59720] = {
@@ -84088,7 +84427,6 @@ _G.pg.base.item_data_statistics[59720] = {
 	icon = "Props/yaoqinghan",
 	id = 59720,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "1st Anniversary Invitation ",
@@ -84119,6 +84457,7 @@ _G.pg.base.item_data_statistics[59720] = {
 		108,
 		109,
 	},
+	limit = {},
 	open_ui = {
 		"login_year",
 		"t_first",
@@ -84132,7 +84471,6 @@ _G.pg.base.item_data_statistics[59721] = {
 	icon = "Props/yaoqinghan",
 	id = 59721,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "San Diego's Letter",
@@ -84153,6 +84491,7 @@ _G.pg.base.item_data_statistics[59721] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59722] = {
@@ -84162,7 +84501,6 @@ _G.pg.base.item_data_statistics[59722] = {
 	icon = "Props/yaoqinghan",
 	id = 59722,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Belfast's Letter",
@@ -84183,6 +84521,7 @@ _G.pg.base.item_data_statistics[59722] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59723] = {
@@ -84192,7 +84531,6 @@ _G.pg.base.item_data_statistics[59723] = {
 	icon = "Props/yaoqinghan",
 	id = 59723,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Takao's Letter",
@@ -84213,6 +84551,7 @@ _G.pg.base.item_data_statistics[59723] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59724] = {
@@ -84222,7 +84561,6 @@ _G.pg.base.item_data_statistics[59724] = {
 	icon = "Props/yaoqinghan",
 	id = 59724,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Warspite's Letter",
@@ -84243,6 +84581,7 @@ _G.pg.base.item_data_statistics[59724] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59725] = {
@@ -84252,7 +84591,6 @@ _G.pg.base.item_data_statistics[59725] = {
 	icon = "Props/yaoqinghan",
 	id = 59725,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Hood's Letter",
@@ -84273,6 +84611,7 @@ _G.pg.base.item_data_statistics[59725] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59726] = {
@@ -84282,7 +84621,6 @@ _G.pg.base.item_data_statistics[59726] = {
 	icon = "Props/yaoqinghan",
 	id = 59726,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Enterprise's Letter",
@@ -84303,6 +84641,7 @@ _G.pg.base.item_data_statistics[59726] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59727] = {
@@ -84312,7 +84651,6 @@ _G.pg.base.item_data_statistics[59727] = {
 	icon = "Props/yaoqinghan",
 	id = 59727,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Illustrious's Letter",
@@ -84333,6 +84671,7 @@ _G.pg.base.item_data_statistics[59727] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59728] = {
@@ -84342,7 +84681,6 @@ _G.pg.base.item_data_statistics[59728] = {
 	icon = "Props/yaoqinghan",
 	id = 59728,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prince of Wales's Letter",
@@ -84363,6 +84701,7 @@ _G.pg.base.item_data_statistics[59728] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59729] = {
@@ -84372,7 +84711,6 @@ _G.pg.base.item_data_statistics[59729] = {
 	icon = "Props/yaoqinghan",
 	id = 59729,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Atago's Letter",
@@ -84393,6 +84731,7 @@ _G.pg.base.item_data_statistics[59729] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59739] = {
@@ -84402,7 +84741,6 @@ _G.pg.base.item_data_statistics[59739] = {
 	icon = "Props/30000",
 	id = 59739,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "San Diego's Letter",
@@ -84423,6 +84761,7 @@ _G.pg.base.item_data_statistics[59739] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59740] = {
@@ -84432,7 +84771,6 @@ _G.pg.base.item_data_statistics[59740] = {
 	icon = "Props/30000",
 	id = 59740,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Belfast's Letter",
@@ -84453,6 +84791,7 @@ _G.pg.base.item_data_statistics[59740] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59741] = {
@@ -84462,7 +84801,6 @@ _G.pg.base.item_data_statistics[59741] = {
 	icon = "Props/30000",
 	id = 59741,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Takao's Letter",
@@ -84483,6 +84821,7 @@ _G.pg.base.item_data_statistics[59741] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59742] = {
@@ -84492,7 +84831,6 @@ _G.pg.base.item_data_statistics[59742] = {
 	icon = "Props/30000",
 	id = 59742,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Warspite's Letter",
@@ -84513,6 +84851,7 @@ _G.pg.base.item_data_statistics[59742] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59743] = {
@@ -84522,7 +84861,6 @@ _G.pg.base.item_data_statistics[59743] = {
 	icon = "Props/30000",
 	id = 59743,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Hood's Letter",
@@ -84543,6 +84881,7 @@ _G.pg.base.item_data_statistics[59743] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59744] = {
@@ -84552,7 +84891,6 @@ _G.pg.base.item_data_statistics[59744] = {
 	icon = "Props/30000",
 	id = 59744,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Enterprise's Letter",
@@ -84573,6 +84911,7 @@ _G.pg.base.item_data_statistics[59744] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59745] = {
@@ -84582,7 +84921,6 @@ _G.pg.base.item_data_statistics[59745] = {
 	icon = "Props/30000",
 	id = 59745,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Illustrious's Letter",
@@ -84603,6 +84941,7 @@ _G.pg.base.item_data_statistics[59745] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59746] = {
@@ -84612,7 +84951,6 @@ _G.pg.base.item_data_statistics[59746] = {
 	icon = "Props/30000",
 	id = 59746,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prince of Wales's Letter",
@@ -84633,6 +84971,7 @@ _G.pg.base.item_data_statistics[59746] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59747] = {
@@ -84642,7 +84981,6 @@ _G.pg.base.item_data_statistics[59747] = {
 	icon = "Props/30000",
 	id = 59747,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Atago's Letter",
@@ -84663,6 +85001,7 @@ _G.pg.base.item_data_statistics[59747] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59749] = {
@@ -84672,7 +85011,6 @@ _G.pg.base.item_data_statistics[59749] = {
 	icon = "Props/shanyaomaikefeng",
 	id = 59749,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 1,
 	name = "Sparkling Mic",
@@ -84695,6 +85033,7 @@ _G.pg.base.item_data_statistics[59749] = {
 		102174,
 	},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59750] = {
@@ -84704,7 +85043,6 @@ _G.pg.base.item_data_statistics[59750] = {
 	icon = "Props/shengye",
 	id = 59750,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "New Year's Gift ",
@@ -84731,6 +85069,7 @@ _G.pg.base.item_data_statistics[59750] = {
 		204,
 		205,
 	},
+	limit = {},
 	open_ui = {
 		"login_santa",
 		"t_santa",
@@ -84744,7 +85083,6 @@ _G.pg.base.item_data_statistics[59751] = {
 	icon = "Props/shengye",
 	id = 59751,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Cleveland ",
@@ -84765,6 +85103,7 @@ _G.pg.base.item_data_statistics[59751] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59752] = {
@@ -84774,7 +85113,6 @@ _G.pg.base.item_data_statistics[59752] = {
 	icon = "Props/shengye",
 	id = 59752,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Ning Hai ",
@@ -84795,6 +85133,7 @@ _G.pg.base.item_data_statistics[59752] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59753] = {
@@ -84804,7 +85143,6 @@ _G.pg.base.item_data_statistics[59753] = {
 	icon = "Props/shengye",
 	id = 59753,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Ping Hai ",
@@ -84825,6 +85163,7 @@ _G.pg.base.item_data_statistics[59753] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59754] = {
@@ -84834,7 +85173,6 @@ _G.pg.base.item_data_statistics[59754] = {
 	icon = "Props/shengye",
 	id = 59754,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Fubuki ",
@@ -84855,6 +85193,7 @@ _G.pg.base.item_data_statistics[59754] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59755] = {
@@ -84864,7 +85203,6 @@ _G.pg.base.item_data_statistics[59755] = {
 	icon = "Props/shengye",
 	id = 59755,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Edinburgh ",
@@ -84885,6 +85223,7 @@ _G.pg.base.item_data_statistics[59755] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59756] = {
@@ -84894,7 +85233,6 @@ _G.pg.base.item_data_statistics[59756] = {
 	icon = "Props/30000",
 	id = 59756,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Cleveland ",
@@ -84915,6 +85253,7 @@ _G.pg.base.item_data_statistics[59756] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59757] = {
@@ -84924,7 +85263,6 @@ _G.pg.base.item_data_statistics[59757] = {
 	icon = "Props/30000",
 	id = 59757,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Ning Hai ",
@@ -84945,6 +85283,7 @@ _G.pg.base.item_data_statistics[59757] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59758] = {
@@ -84954,7 +85293,6 @@ _G.pg.base.item_data_statistics[59758] = {
 	icon = "Props/30000",
 	id = 59758,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Ping Hai ",
@@ -84975,6 +85313,7 @@ _G.pg.base.item_data_statistics[59758] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59759] = {
@@ -84984,7 +85323,6 @@ _G.pg.base.item_data_statistics[59759] = {
 	icon = "Props/30000",
 	id = 59759,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Fubuki ",
@@ -85005,6 +85343,7 @@ _G.pg.base.item_data_statistics[59759] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59760] = {
@@ -85014,7 +85353,6 @@ _G.pg.base.item_data_statistics[59760] = {
 	icon = "Props/30000",
 	id = 59760,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Edinburgh ",
@@ -85035,6 +85373,7 @@ _G.pg.base.item_data_statistics[59760] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59762] = {
@@ -85044,7 +85383,6 @@ _G.pg.base.item_data_statistics[59762] = {
 	icon = "Props/yanzhandabaojian",
 	id = 59762,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 1,
 	name = "The Warrior's Prowess",
@@ -85067,6 +85405,7 @@ _G.pg.base.item_data_statistics[59762] = {
 		205124,
 	},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59773] = {
@@ -85076,7 +85415,6 @@ _G.pg.base.item_data_statistics[59773] = {
 	icon = "Props/linkstar",
 	id = 59773,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "San Diego Memorial star",
@@ -85097,6 +85435,7 @@ _G.pg.base.item_data_statistics[59773] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59774] = {
@@ -85106,7 +85445,6 @@ _G.pg.base.item_data_statistics[59774] = {
 	icon = "props/yizhounian",
 	id = 59774,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "New Dawn ",
@@ -85127,6 +85465,7 @@ _G.pg.base.item_data_statistics[59774] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59798] = {
@@ -85136,7 +85475,6 @@ _G.pg.base.item_data_statistics[59798] = {
 	icon = "props/erzhounian",
 	id = 59798,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "2nd Anniv Commemorative Coin",
@@ -85157,6 +85495,7 @@ _G.pg.base.item_data_statistics[59798] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59799] = {
@@ -85166,7 +85505,6 @@ _G.pg.base.item_data_statistics[59799] = {
 	icon = "props/sanzhounian",
 	id = 59799,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "3rd Anniv Commemorative Coin",
@@ -85187,6 +85525,7 @@ _G.pg.base.item_data_statistics[59799] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59840] = {
@@ -85196,7 +85535,6 @@ _G.pg.base.item_data_statistics[59840] = {
 	icon = "props/sizhounian",
 	id = 59840,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "4th Anniversary Coin",
@@ -85217,6 +85555,7 @@ _G.pg.base.item_data_statistics[59840] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59843] = {
@@ -85226,7 +85565,6 @@ _G.pg.base.item_data_statistics[59843] = {
 	icon = "Props/barbecueperfume",
 	id = 59843,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 1,
 	name = "Eau de Barbecue",
@@ -85249,6 +85587,7 @@ _G.pg.base.item_data_statistics[59843] = {
 		301874,
 	},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59844] = {
@@ -85258,7 +85597,6 @@ _G.pg.base.item_data_statistics[59844] = {
 	icon = "Props/symbolqinglong",
 	id = 59844,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 1,
 	name = "Seal of the Azure Dragon",
@@ -85282,6 +85620,7 @@ _G.pg.base.item_data_statistics[59844] = {
 		521014,
 	},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59845] = {
@@ -85291,7 +85630,6 @@ _G.pg.base.item_data_statistics[59845] = {
 	icon = "Props/symbolbaihu",
 	id = 59845,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 1,
 	name = "Seal of the White Tiger",
@@ -85315,6 +85653,7 @@ _G.pg.base.item_data_statistics[59845] = {
 		521034,
 	},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59846] = {
@@ -85324,7 +85663,6 @@ _G.pg.base.item_data_statistics[59846] = {
 	icon = "props/wuzhounian",
 	id = 59846,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "5th Anniversary Coin",
@@ -85345,6 +85683,7 @@ _G.pg.base.item_data_statistics[59846] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59848] = {
@@ -85354,7 +85693,6 @@ _G.pg.base.item_data_statistics[59848] = {
 	icon = "Props/barbecue_badge",
 	id = 59848,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Port Eating Contest 1st Place Prize",
@@ -85375,6 +85713,7 @@ _G.pg.base.item_data_statistics[59848] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59849] = {
@@ -85384,7 +85723,6 @@ _G.pg.base.item_data_statistics[59849] = {
 	icon = "props/liuzhounian",
 	id = 59849,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "6th Anniversary Coin",
@@ -85405,6 +85743,7 @@ _G.pg.base.item_data_statistics[59849] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59851] = {
@@ -85414,7 +85753,6 @@ _G.pg.base.item_data_statistics[59851] = {
 	icon = "Props/symbolxuanwu",
 	id = 59851,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 1,
 	name = "Seal of the Black Tortoise",
@@ -85438,6 +85776,7 @@ _G.pg.base.item_data_statistics[59851] = {
 		521044,
 	},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59853] = {
@@ -85447,7 +85786,6 @@ _G.pg.base.item_data_statistics[59853] = {
 	icon = "Props/electboostdevice",
 	id = 59853,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 1,
 	name = "Wattage Amplifier",
@@ -85470,6 +85808,7 @@ _G.pg.base.item_data_statistics[59853] = {
 		101994,
 	},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59900] = {
@@ -85479,7 +85818,6 @@ _G.pg.base.item_data_statistics[59900] = {
 	icon = "Props/shuju",
 	id = 59900,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Core Data",
@@ -85500,6 +85838,7 @@ _G.pg.base.item_data_statistics[59900] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59901] = {
@@ -85509,7 +85848,6 @@ _G.pg.base.item_data_statistics[59901] = {
 	icon = "Props/59901",
 	id = 59901,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Guild Contribution Directives ",
@@ -85530,6 +85868,7 @@ _G.pg.base.item_data_statistics[59901] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59902] = {
@@ -85539,7 +85878,6 @@ _G.pg.base.item_data_statistics[59902] = {
 	icon = "Props/59902",
 	id = 59902,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Guild Operation Orders ",
@@ -85560,6 +85898,7 @@ _G.pg.base.item_data_statistics[59902] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59906] = {
@@ -85569,7 +85908,6 @@ _G.pg.base.item_data_statistics[59906] = {
 	icon = "Props/yaoqinghan",
 	id = 59906,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "2st Anniversary Invitation ",
@@ -85600,6 +85938,7 @@ _G.pg.base.item_data_statistics[59906] = {
 		308,
 		309,
 	},
+	limit = {},
 	open_ui = {
 		"login_year",
 		"t_second",
@@ -85613,7 +85952,6 @@ _G.pg.base.item_data_statistics[59907] = {
 	icon = "Props/yaoqinghan",
 	id = 59907,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Washington's Letter",
@@ -85645,6 +85983,7 @@ _G.pg.base.item_data_statistics[59907] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59908] = {
@@ -85654,7 +85993,6 @@ _G.pg.base.item_data_statistics[59908] = {
 	icon = "Props/yaoqinghan",
 	id = 59908,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Belfast's Letter",
@@ -85686,6 +86024,7 @@ _G.pg.base.item_data_statistics[59908] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59909] = {
@@ -85695,7 +86034,6 @@ _G.pg.base.item_data_statistics[59909] = {
 	icon = "Props/yaoqinghan",
 	id = 59909,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Atago's Letter",
@@ -85727,6 +86065,7 @@ _G.pg.base.item_data_statistics[59909] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59910] = {
@@ -85736,7 +86075,6 @@ _G.pg.base.item_data_statistics[59910] = {
 	icon = "Props/yaoqinghan",
 	id = 59910,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Warspite's Letter",
@@ -85768,6 +86106,7 @@ _G.pg.base.item_data_statistics[59910] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59911] = {
@@ -85777,7 +86116,6 @@ _G.pg.base.item_data_statistics[59911] = {
 	icon = "Props/yaoqinghan",
 	id = 59911,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Hood's Letter",
@@ -85809,6 +86147,7 @@ _G.pg.base.item_data_statistics[59911] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59912] = {
@@ -85818,7 +86157,6 @@ _G.pg.base.item_data_statistics[59912] = {
 	icon = "Props/yaoqinghan",
 	id = 59912,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Enterprise's Letter",
@@ -85850,6 +86188,7 @@ _G.pg.base.item_data_statistics[59912] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59913] = {
@@ -85859,7 +86198,6 @@ _G.pg.base.item_data_statistics[59913] = {
 	icon = "Props/yaoqinghan",
 	id = 59913,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Illustrious's Letter",
@@ -85891,6 +86229,7 @@ _G.pg.base.item_data_statistics[59913] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59914] = {
@@ -85900,7 +86239,6 @@ _G.pg.base.item_data_statistics[59914] = {
 	icon = "Props/yaoqinghan",
 	id = 59914,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prince of Wales's Letter",
@@ -85932,6 +86270,7 @@ _G.pg.base.item_data_statistics[59914] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59915] = {
@@ -85941,7 +86280,6 @@ _G.pg.base.item_data_statistics[59915] = {
 	icon = "Props/yaoqinghan",
 	id = 59915,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "North Carolina's Letter",
@@ -85973,6 +86311,7 @@ _G.pg.base.item_data_statistics[59915] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59916] = {
@@ -85982,7 +86321,6 @@ _G.pg.base.item_data_statistics[59916] = {
 	icon = "Props/yaoqinghan",
 	id = 59916,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Washington",
@@ -86003,6 +86341,7 @@ _G.pg.base.item_data_statistics[59916] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59917] = {
@@ -86012,7 +86351,6 @@ _G.pg.base.item_data_statistics[59917] = {
 	icon = "Props/yaoqinghan",
 	id = 59917,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Belfast",
@@ -86033,6 +86371,7 @@ _G.pg.base.item_data_statistics[59917] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59918] = {
@@ -86042,7 +86381,6 @@ _G.pg.base.item_data_statistics[59918] = {
 	icon = "Props/yaoqinghan",
 	id = 59918,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Atago",
@@ -86063,6 +86401,7 @@ _G.pg.base.item_data_statistics[59918] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59919] = {
@@ -86072,7 +86411,6 @@ _G.pg.base.item_data_statistics[59919] = {
 	icon = "Props/yaoqinghan",
 	id = 59919,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Warspite",
@@ -86093,6 +86431,7 @@ _G.pg.base.item_data_statistics[59919] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59920] = {
@@ -86102,7 +86441,6 @@ _G.pg.base.item_data_statistics[59920] = {
 	icon = "Props/yaoqinghan",
 	id = 59920,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Hood",
@@ -86123,6 +86461,7 @@ _G.pg.base.item_data_statistics[59920] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59921] = {
@@ -86132,7 +86471,6 @@ _G.pg.base.item_data_statistics[59921] = {
 	icon = "Props/yaoqinghan",
 	id = 59921,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Enterprise",
@@ -86153,6 +86491,7 @@ _G.pg.base.item_data_statistics[59921] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59922] = {
@@ -86162,7 +86501,6 @@ _G.pg.base.item_data_statistics[59922] = {
 	icon = "Props/yaoqinghan",
 	id = 59922,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Illustrious",
@@ -86183,6 +86521,7 @@ _G.pg.base.item_data_statistics[59922] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59923] = {
@@ -86192,7 +86531,6 @@ _G.pg.base.item_data_statistics[59923] = {
 	icon = "Props/yaoqinghan",
 	id = 59923,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Prince of Wales",
@@ -86213,6 +86551,7 @@ _G.pg.base.item_data_statistics[59923] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59924] = {
@@ -86222,7 +86561,6 @@ _G.pg.base.item_data_statistics[59924] = {
 	icon = "Props/yaoqinghan",
 	id = 59924,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from North Carolina",
@@ -86243,6 +86581,7 @@ _G.pg.base.item_data_statistics[59924] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59939] = {
@@ -86252,7 +86591,6 @@ _G.pg.base.item_data_statistics[59939] = {
 	icon = "Props/yanzhandabaojian",
 	id = 59939,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "The Old Lady's Keepsake",
@@ -86273,6 +86611,7 @@ _G.pg.base.item_data_statistics[59939] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59940] = {
@@ -86282,7 +86621,6 @@ _G.pg.base.item_data_statistics[59940] = {
 	icon = "Props/nianhezhuang",
 	id = 59940,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "New Year's Tidings",
@@ -86311,6 +86649,7 @@ _G.pg.base.item_data_statistics[59940] = {
 		406,
 		407,
 	},
+	limit = {},
 	open_ui = {
 		"shrine_year",
 		"t_shrine",
@@ -86324,7 +86663,6 @@ _G.pg.base.item_data_statistics[59941] = {
 	icon = "Props/30000",
 	id = 59941,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Warspite's Gift",
@@ -86345,6 +86683,7 @@ _G.pg.base.item_data_statistics[59941] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59942] = {
@@ -86354,7 +86693,6 @@ _G.pg.base.item_data_statistics[59942] = {
 	icon = "Props/30000",
 	id = 59942,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Atago's Gift",
@@ -86375,6 +86713,7 @@ _G.pg.base.item_data_statistics[59942] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59943] = {
@@ -86384,7 +86723,6 @@ _G.pg.base.item_data_statistics[59943] = {
 	icon = "Props/30000",
 	id = 59943,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Illustrious's Gift",
@@ -86405,6 +86743,7 @@ _G.pg.base.item_data_statistics[59943] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59944] = {
@@ -86414,7 +86753,6 @@ _G.pg.base.item_data_statistics[59944] = {
 	icon = "Props/30000",
 	id = 59944,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shoukaku's Gift",
@@ -86435,6 +86773,7 @@ _G.pg.base.item_data_statistics[59944] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59945] = {
@@ -86444,7 +86783,6 @@ _G.pg.base.item_data_statistics[59945] = {
 	icon = "Props/30000",
 	id = 59945,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Zuikaku's Gift",
@@ -86465,6 +86803,7 @@ _G.pg.base.item_data_statistics[59945] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59946] = {
@@ -86474,7 +86813,6 @@ _G.pg.base.item_data_statistics[59946] = {
 	icon = "Props/30000",
 	id = 59946,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Montpelier's Gift",
@@ -86495,6 +86833,7 @@ _G.pg.base.item_data_statistics[59946] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59947] = {
@@ -86504,7 +86843,6 @@ _G.pg.base.item_data_statistics[59947] = {
 	icon = "Props/30000",
 	id = 59947,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Hood's Gift",
@@ -86525,6 +86863,7 @@ _G.pg.base.item_data_statistics[59947] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59948] = {
@@ -86534,7 +86873,6 @@ _G.pg.base.item_data_statistics[59948] = {
 	icon = "Props/nianhezhuang",
 	id = 59948,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Warspite's Tidings",
@@ -86555,6 +86893,7 @@ _G.pg.base.item_data_statistics[59948] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59949] = {
@@ -86564,7 +86903,6 @@ _G.pg.base.item_data_statistics[59949] = {
 	icon = "Props/nianhezhuang",
 	id = 59949,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Atago's Tidings",
@@ -86585,6 +86923,7 @@ _G.pg.base.item_data_statistics[59949] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59950] = {
@@ -86594,7 +86933,6 @@ _G.pg.base.item_data_statistics[59950] = {
 	icon = "Props/nianhezhuang",
 	id = 59950,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Illustrious's Tidings",
@@ -86615,6 +86953,7 @@ _G.pg.base.item_data_statistics[59950] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59951] = {
@@ -86624,7 +86963,6 @@ _G.pg.base.item_data_statistics[59951] = {
 	icon = "Props/nianhezhuang",
 	id = 59951,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shoukaku's Tidings",
@@ -86645,6 +86983,7 @@ _G.pg.base.item_data_statistics[59951] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59952] = {
@@ -86654,7 +86993,6 @@ _G.pg.base.item_data_statistics[59952] = {
 	icon = "Props/nianhezhuang",
 	id = 59952,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Zuikaku's Tidings",
@@ -86675,6 +87013,7 @@ _G.pg.base.item_data_statistics[59952] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59953] = {
@@ -86684,7 +87023,6 @@ _G.pg.base.item_data_statistics[59953] = {
 	icon = "Props/nianhezhuang",
 	id = 59953,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Montpelier's Tidings",
@@ -86705,6 +87043,7 @@ _G.pg.base.item_data_statistics[59953] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59954] = {
@@ -86714,7 +87053,6 @@ _G.pg.base.item_data_statistics[59954] = {
 	icon = "Props/nianhezhuang",
 	id = 59954,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Hood's Tidings",
@@ -86735,6 +87073,7 @@ _G.pg.base.item_data_statistics[59954] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[59955] = {
@@ -86744,7 +87083,6 @@ _G.pg.base.item_data_statistics[59955] = {
 	icon = "Props/yaoqinghan",
 	id = 59955,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Early Summer Invitation (2020) ",
@@ -86775,6 +87113,7 @@ _G.pg.base.item_data_statistics[59955] = {
 		508,
 		509,
 	},
+	limit = {},
 	open_ui = {
 		"login_year",
 		"t_third",
@@ -86788,7 +87127,6 @@ _G.pg.base.item_data_statistics[60011] = {
 	icon = "Props/54003",
 	id = 60011,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Super Skill Book",
@@ -86814,6 +87152,7 @@ _G.pg.base.item_data_statistics[60011] = {
 		1,
 		50,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60012] = {
@@ -86823,7 +87162,6 @@ _G.pg.base.item_data_statistics[60012] = {
 	icon = "Props/54003",
 	id = 60012,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Super Skill Book",
@@ -86849,6 +87187,7 @@ _G.pg.base.item_data_statistics[60012] = {
 		1,
 		50,
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[61001] = {
@@ -86858,7 +87197,6 @@ _G.pg.base.item_data_statistics[61001] = {
 	icon = "Props/tebiezuozhan",
 	id = 61001,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "High-Efficiency Combat Logistics Plan ",
@@ -86879,6 +87217,7 @@ _G.pg.base.item_data_statistics[61001] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60039] = {
@@ -86888,7 +87227,6 @@ _G.pg.base.item_data_statistics[60039] = {
 	icon = "Props/30000",
 	id = 60039,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Zuikaku",
@@ -86909,6 +87247,7 @@ _G.pg.base.item_data_statistics[60039] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60040] = {
@@ -86918,7 +87257,6 @@ _G.pg.base.item_data_statistics[60040] = {
 	icon = "Props/30000",
 	id = 60040,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Belfast",
@@ -86939,6 +87277,7 @@ _G.pg.base.item_data_statistics[60040] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60041] = {
@@ -86948,7 +87287,6 @@ _G.pg.base.item_data_statistics[60041] = {
 	icon = "Props/30000",
 	id = 60041,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Shoukaku",
@@ -86969,6 +87307,7 @@ _G.pg.base.item_data_statistics[60041] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60042] = {
@@ -86978,7 +87317,6 @@ _G.pg.base.item_data_statistics[60042] = {
 	icon = "Props/30000",
 	id = 60042,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Warspite",
@@ -86999,6 +87337,7 @@ _G.pg.base.item_data_statistics[60042] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60043] = {
@@ -87008,7 +87347,6 @@ _G.pg.base.item_data_statistics[60043] = {
 	icon = "Props/30000",
 	id = 60043,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Hood",
@@ -87029,6 +87367,7 @@ _G.pg.base.item_data_statistics[60043] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60044] = {
@@ -87038,7 +87377,6 @@ _G.pg.base.item_data_statistics[60044] = {
 	icon = "Props/30000",
 	id = 60044,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Enterprise",
@@ -87059,6 +87397,7 @@ _G.pg.base.item_data_statistics[60044] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60045] = {
@@ -87068,7 +87407,6 @@ _G.pg.base.item_data_statistics[60045] = {
 	icon = "Props/30000",
 	id = 60045,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Illustrious",
@@ -87089,6 +87427,7 @@ _G.pg.base.item_data_statistics[60045] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60046] = {
@@ -87098,7 +87437,6 @@ _G.pg.base.item_data_statistics[60046] = {
 	icon = "Props/30000",
 	id = 60046,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Prince of Wales",
@@ -87119,6 +87457,7 @@ _G.pg.base.item_data_statistics[60046] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60047] = {
@@ -87128,7 +87467,6 @@ _G.pg.base.item_data_statistics[60047] = {
 	icon = "Props/30000",
 	id = 60047,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Atago",
@@ -87149,6 +87487,7 @@ _G.pg.base.item_data_statistics[60047] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60048] = {
@@ -87158,7 +87497,6 @@ _G.pg.base.item_data_statistics[60048] = {
 	icon = "Props/yaoqinghan",
 	id = 60048,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Zuikaku",
@@ -87179,6 +87517,7 @@ _G.pg.base.item_data_statistics[60048] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60049] = {
@@ -87188,7 +87527,6 @@ _G.pg.base.item_data_statistics[60049] = {
 	icon = "Props/yaoqinghan",
 	id = 60049,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Belfast",
@@ -87209,6 +87547,7 @@ _G.pg.base.item_data_statistics[60049] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60050] = {
@@ -87218,7 +87557,6 @@ _G.pg.base.item_data_statistics[60050] = {
 	icon = "Props/yaoqinghan",
 	id = 60050,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Shoukaku",
@@ -87239,6 +87577,7 @@ _G.pg.base.item_data_statistics[60050] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60051] = {
@@ -87248,7 +87587,6 @@ _G.pg.base.item_data_statistics[60051] = {
 	icon = "Props/yaoqinghan",
 	id = 60051,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Warspite",
@@ -87269,6 +87607,7 @@ _G.pg.base.item_data_statistics[60051] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60052] = {
@@ -87278,7 +87617,6 @@ _G.pg.base.item_data_statistics[60052] = {
 	icon = "Props/yaoqinghan",
 	id = 60052,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Hood",
@@ -87299,6 +87637,7 @@ _G.pg.base.item_data_statistics[60052] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60053] = {
@@ -87308,7 +87647,6 @@ _G.pg.base.item_data_statistics[60053] = {
 	icon = "Props/yaoqinghan",
 	id = 60053,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Enterprise",
@@ -87329,6 +87667,7 @@ _G.pg.base.item_data_statistics[60053] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60054] = {
@@ -87338,7 +87677,6 @@ _G.pg.base.item_data_statistics[60054] = {
 	icon = "Props/yaoqinghan",
 	id = 60054,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Illustrious",
@@ -87359,6 +87697,7 @@ _G.pg.base.item_data_statistics[60054] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60055] = {
@@ -87368,7 +87707,6 @@ _G.pg.base.item_data_statistics[60055] = {
 	icon = "Props/yaoqinghan",
 	id = 60055,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Prince of Wales",
@@ -87389,6 +87727,7 @@ _G.pg.base.item_data_statistics[60055] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60056] = {
@@ -87398,7 +87737,6 @@ _G.pg.base.item_data_statistics[60056] = {
 	icon = "Props/yaoqinghan",
 	id = 60056,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Atago",
@@ -87419,6 +87757,7 @@ _G.pg.base.item_data_statistics[60056] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60059] = {
@@ -87428,7 +87767,6 @@ _G.pg.base.item_data_statistics[60059] = {
 	icon = "Props/yaoqinghan",
 	id = 60059,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "2nd Anniversary Invitation ",
@@ -87459,6 +87797,7 @@ _G.pg.base.item_data_statistics[60059] = {
 		608,
 		609,
 	},
+	limit = {},
 	open_ui = {
 		"login_year",
 	},
@@ -87471,7 +87810,6 @@ _G.pg.base.item_data_statistics[60060] = {
 	icon = "Props/yaoqinghan",
 	id = 60060,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "2nd Anniversary Invitation (Belfast)",
@@ -87503,6 +87841,7 @@ _G.pg.base.item_data_statistics[60060] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60061] = {
@@ -87512,7 +87851,6 @@ _G.pg.base.item_data_statistics[60061] = {
 	icon = "Props/yaoqinghan",
 	id = 60061,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "2nd Anniversary Invitation (Warspite)",
@@ -87544,6 +87882,7 @@ _G.pg.base.item_data_statistics[60061] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60062] = {
@@ -87553,7 +87892,6 @@ _G.pg.base.item_data_statistics[60062] = {
 	icon = "Props/yaoqinghan",
 	id = 60062,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "2nd Anniversary Invitation (Hood)",
@@ -87585,6 +87923,7 @@ _G.pg.base.item_data_statistics[60062] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60063] = {
@@ -87594,7 +87933,6 @@ _G.pg.base.item_data_statistics[60063] = {
 	icon = "Props/yaoqinghan",
 	id = 60063,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "2nd Anniversary Invitation (Enterprise)",
@@ -87626,6 +87964,7 @@ _G.pg.base.item_data_statistics[60063] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60064] = {
@@ -87635,7 +87974,6 @@ _G.pg.base.item_data_statistics[60064] = {
 	icon = "Props/yaoqinghan",
 	id = 60064,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "2nd Anniversary Invitation (Illustrious)",
@@ -87667,6 +88005,7 @@ _G.pg.base.item_data_statistics[60064] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60065] = {
@@ -87676,7 +88015,6 @@ _G.pg.base.item_data_statistics[60065] = {
 	icon = "Props/yaoqinghan",
 	id = 60065,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "2nd Anniversary Invitation (Prince of Wales)",
@@ -87708,6 +88046,7 @@ _G.pg.base.item_data_statistics[60065] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60066] = {
@@ -87717,7 +88056,6 @@ _G.pg.base.item_data_statistics[60066] = {
 	icon = "Props/yaoqinghan",
 	id = 60066,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "2nd Anniversary Invitation (Atago)",
@@ -87749,6 +88087,7 @@ _G.pg.base.item_data_statistics[60066] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60067] = {
@@ -87758,7 +88097,6 @@ _G.pg.base.item_data_statistics[60067] = {
 	icon = "Props/yaoqinghan",
 	id = 60067,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "2nd Anniversary Invitation (Washington)",
@@ -87790,6 +88128,7 @@ _G.pg.base.item_data_statistics[60067] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60068] = {
@@ -87799,7 +88138,6 @@ _G.pg.base.item_data_statistics[60068] = {
 	icon = "Props/yaoqinghan",
 	id = 60068,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "2nd Anniversary Invitation (North Carolina)",
@@ -87831,6 +88169,7 @@ _G.pg.base.item_data_statistics[60068] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60069] = {
@@ -87840,7 +88179,6 @@ _G.pg.base.item_data_statistics[60069] = {
 	icon = "Props/yaoqinghan",
 	id = 60069,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Belfast's Letter",
@@ -87861,6 +88199,7 @@ _G.pg.base.item_data_statistics[60069] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60070] = {
@@ -87870,7 +88209,6 @@ _G.pg.base.item_data_statistics[60070] = {
 	icon = "Props/yaoqinghan",
 	id = 60070,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Warspite's Letter",
@@ -87891,6 +88229,7 @@ _G.pg.base.item_data_statistics[60070] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60071] = {
@@ -87900,7 +88239,6 @@ _G.pg.base.item_data_statistics[60071] = {
 	icon = "Props/yaoqinghan",
 	id = 60071,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Hood's Letter",
@@ -87921,6 +88259,7 @@ _G.pg.base.item_data_statistics[60071] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60072] = {
@@ -87930,7 +88269,6 @@ _G.pg.base.item_data_statistics[60072] = {
 	icon = "Props/yaoqinghan",
 	id = 60072,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Enterprise's Letter",
@@ -87951,6 +88289,7 @@ _G.pg.base.item_data_statistics[60072] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60073] = {
@@ -87960,7 +88299,6 @@ _G.pg.base.item_data_statistics[60073] = {
 	icon = "Props/yaoqinghan",
 	id = 60073,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Illustrious's Letter",
@@ -87981,6 +88319,7 @@ _G.pg.base.item_data_statistics[60073] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60074] = {
@@ -87990,7 +88329,6 @@ _G.pg.base.item_data_statistics[60074] = {
 	icon = "Props/yaoqinghan",
 	id = 60074,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prince of Wales's Letter",
@@ -88011,6 +88349,7 @@ _G.pg.base.item_data_statistics[60074] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60075] = {
@@ -88020,7 +88359,6 @@ _G.pg.base.item_data_statistics[60075] = {
 	icon = "Props/yaoqinghan",
 	id = 60075,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Atago's Letter",
@@ -88041,6 +88379,7 @@ _G.pg.base.item_data_statistics[60075] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60076] = {
@@ -88050,7 +88389,6 @@ _G.pg.base.item_data_statistics[60076] = {
 	icon = "Props/yaoqinghan",
 	id = 60076,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Washington's Letter",
@@ -88071,6 +88409,7 @@ _G.pg.base.item_data_statistics[60076] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60077] = {
@@ -88080,7 +88419,6 @@ _G.pg.base.item_data_statistics[60077] = {
 	icon = "Props/yaoqinghan",
 	id = 60077,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "North Carolina's Letter",
@@ -88101,6 +88439,7 @@ _G.pg.base.item_data_statistics[60077] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60079] = {
@@ -88110,7 +88449,6 @@ _G.pg.base.item_data_statistics[60079] = {
 	icon = "Props/yaoqinghan",
 	id = 60079,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "三周年邀请函（恶毒）（不该看到）",
@@ -88142,6 +88480,7 @@ _G.pg.base.item_data_statistics[60079] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60080] = {
@@ -88151,7 +88490,6 @@ _G.pg.base.item_data_statistics[60080] = {
 	icon = "Props/yaoqinghan",
 	id = 60080,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "三周年邀请函（贝尔法斯特）（不该看到）",
@@ -88183,6 +88521,7 @@ _G.pg.base.item_data_statistics[60080] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60081] = {
@@ -88192,7 +88531,6 @@ _G.pg.base.item_data_statistics[60081] = {
 	icon = "Props/yaoqinghan",
 	id = 60081,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "三周年邀请函（光辉）（不该看到）",
@@ -88224,6 +88562,7 @@ _G.pg.base.item_data_statistics[60081] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60082] = {
@@ -88233,7 +88572,6 @@ _G.pg.base.item_data_statistics[60082] = {
 	icon = "Props/yaoqinghan",
 	id = 60082,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "三周年邀请函（胡德）（不该看到）",
@@ -88265,6 +88603,7 @@ _G.pg.base.item_data_statistics[60082] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60083] = {
@@ -88274,7 +88613,6 @@ _G.pg.base.item_data_statistics[60083] = {
 	icon = "Props/yaoqinghan",
 	id = 60083,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "三周年邀请函（企业）（不该看到）",
@@ -88306,6 +88644,7 @@ _G.pg.base.item_data_statistics[60083] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60084] = {
@@ -88315,7 +88654,6 @@ _G.pg.base.item_data_statistics[60084] = {
 	icon = "Props/yaoqinghan",
 	id = 60084,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "三周年邀请函（天狼星）（不该看到）",
@@ -88347,6 +88685,7 @@ _G.pg.base.item_data_statistics[60084] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60085] = {
@@ -88356,7 +88695,6 @@ _G.pg.base.item_data_statistics[60085] = {
 	icon = "Props/yaoqinghan",
 	id = 60085,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "三周年邀请函（鹬）（不该看到）",
@@ -88388,6 +88726,7 @@ _G.pg.base.item_data_statistics[60085] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60086] = {
@@ -88397,7 +88736,6 @@ _G.pg.base.item_data_statistics[60086] = {
 	icon = "Props/yaoqinghan",
 	id = 60086,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "三周年邀请函（鹤）（不该看到）",
@@ -88429,6 +88767,7 @@ _G.pg.base.item_data_statistics[60086] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60087] = {
@@ -88438,7 +88777,6 @@ _G.pg.base.item_data_statistics[60087] = {
 	icon = "Props/yaoqinghan",
 	id = 60087,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "三周年邀请函（厌战）（不该看到）",
@@ -88470,6 +88808,7 @@ _G.pg.base.item_data_statistics[60087] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60088] = {
@@ -88479,7 +88818,6 @@ _G.pg.base.item_data_statistics[60088] = {
 	icon = "Props/yaoqinghan",
 	id = 60088,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "恶毒的回礼（不该看到）",
@@ -88500,6 +88838,7 @@ _G.pg.base.item_data_statistics[60088] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60089] = {
@@ -88509,7 +88848,6 @@ _G.pg.base.item_data_statistics[60089] = {
 	icon = "Props/yaoqinghan",
 	id = 60089,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "贝尔法斯特的回礼（不该看到）",
@@ -88530,6 +88868,7 @@ _G.pg.base.item_data_statistics[60089] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60090] = {
@@ -88539,7 +88878,6 @@ _G.pg.base.item_data_statistics[60090] = {
 	icon = "Props/yaoqinghan",
 	id = 60090,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "光辉的回礼（不该看到）",
@@ -88560,6 +88898,7 @@ _G.pg.base.item_data_statistics[60090] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60091] = {
@@ -88569,7 +88908,6 @@ _G.pg.base.item_data_statistics[60091] = {
 	icon = "Props/yaoqinghan",
 	id = 60091,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "胡德的回礼（不该看到）",
@@ -88590,6 +88928,7 @@ _G.pg.base.item_data_statistics[60091] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60092] = {
@@ -88599,7 +88938,6 @@ _G.pg.base.item_data_statistics[60092] = {
 	icon = "Props/yaoqinghan",
 	id = 60092,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "企业的回礼（不该看到）",
@@ -88620,6 +88958,7 @@ _G.pg.base.item_data_statistics[60092] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60093] = {
@@ -88629,7 +88968,6 @@ _G.pg.base.item_data_statistics[60093] = {
 	icon = "Props/yaoqinghan",
 	id = 60093,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "天狼星的回礼（不该看到）",
@@ -88650,6 +88988,7 @@ _G.pg.base.item_data_statistics[60093] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60094] = {
@@ -88659,7 +88998,6 @@ _G.pg.base.item_data_statistics[60094] = {
 	icon = "Props/yaoqinghan",
 	id = 60094,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "鹬的回礼（不该看到）",
@@ -88680,6 +89018,7 @@ _G.pg.base.item_data_statistics[60094] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60095] = {
@@ -88689,7 +89028,6 @@ _G.pg.base.item_data_statistics[60095] = {
 	icon = "Props/yaoqinghan",
 	id = 60095,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "鹤的回礼（不该看到）",
@@ -88710,6 +89048,7 @@ _G.pg.base.item_data_statistics[60095] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60096] = {
@@ -88719,7 +89058,6 @@ _G.pg.base.item_data_statistics[60096] = {
 	icon = "Props/yaoqinghan",
 	id = 60096,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "厌战的回礼（不该看到）",
@@ -88740,6 +89078,7 @@ _G.pg.base.item_data_statistics[60096] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60097] = {
@@ -88749,7 +89088,6 @@ _G.pg.base.item_data_statistics[60097] = {
 	icon = "Props/yaoqinghan",
 	id = 60097,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "庆典邀请函（不该看到）",
@@ -88780,6 +89118,7 @@ _G.pg.base.item_data_statistics[60097] = {
 		708,
 		709,
 	},
+	limit = {},
 	open_ui = {
 		"login_year",
 		"t_third_jp",
@@ -88793,7 +89132,6 @@ _G.pg.base.item_data_statistics[60105] = {
 	icon = "Props/nianhezhuang2021",
 	id = 60105,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "New Year's Invitation",
@@ -88822,6 +89160,7 @@ _G.pg.base.item_data_statistics[60105] = {
 		806,
 		807,
 	},
+	limit = {},
 	open_ui = {
 		"shrine_year",
 		"t_shrine",
@@ -88835,7 +89174,6 @@ _G.pg.base.item_data_statistics[60106] = {
 	icon = "Props/nianhezhuang2021",
 	id = 60106,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Warspite's Gift (New Year 2021)",
@@ -88867,6 +89205,7 @@ _G.pg.base.item_data_statistics[60106] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60107] = {
@@ -88876,7 +89215,6 @@ _G.pg.base.item_data_statistics[60107] = {
 	icon = "Props/nianhezhuang2021",
 	id = 60107,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Atago's Gift (New Year 2021)",
@@ -88908,6 +89246,7 @@ _G.pg.base.item_data_statistics[60107] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60108] = {
@@ -88917,7 +89256,6 @@ _G.pg.base.item_data_statistics[60108] = {
 	icon = "Props/nianhezhuang2021",
 	id = 60108,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Illustrious's Gift (New Year 2021)",
@@ -88949,6 +89287,7 @@ _G.pg.base.item_data_statistics[60108] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60109] = {
@@ -88958,7 +89297,6 @@ _G.pg.base.item_data_statistics[60109] = {
 	icon = "Props/nianhezhuang2021",
 	id = 60109,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shoukaku's Gift (New Year 2021)",
@@ -88990,6 +89328,7 @@ _G.pg.base.item_data_statistics[60109] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60110] = {
@@ -88999,7 +89338,6 @@ _G.pg.base.item_data_statistics[60110] = {
 	icon = "Props/nianhezhuang2021",
 	id = 60110,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Zuikaku's Gift (New Year 2021)",
@@ -89031,6 +89369,7 @@ _G.pg.base.item_data_statistics[60110] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60111] = {
@@ -89040,7 +89379,6 @@ _G.pg.base.item_data_statistics[60111] = {
 	icon = "Props/nianhezhuang2021",
 	id = 60111,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Montpelier's Gift (New Year 2021)",
@@ -89072,6 +89410,7 @@ _G.pg.base.item_data_statistics[60111] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60112] = {
@@ -89081,7 +89420,6 @@ _G.pg.base.item_data_statistics[60112] = {
 	icon = "Props/nianhezhuang2021",
 	id = 60112,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Hood's Gift (New Year 2021)",
@@ -89113,6 +89451,7 @@ _G.pg.base.item_data_statistics[60112] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60113] = {
@@ -89122,7 +89461,6 @@ _G.pg.base.item_data_statistics[60113] = {
 	icon = "Props/nianhezhuang2021",
 	id = 60113,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Warspite's New Year Tidings",
@@ -89143,6 +89481,7 @@ _G.pg.base.item_data_statistics[60113] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60114] = {
@@ -89152,7 +89491,6 @@ _G.pg.base.item_data_statistics[60114] = {
 	icon = "Props/nianhezhuang2021",
 	id = 60114,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Atago's New Year Tidings",
@@ -89173,6 +89511,7 @@ _G.pg.base.item_data_statistics[60114] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60115] = {
@@ -89182,7 +89521,6 @@ _G.pg.base.item_data_statistics[60115] = {
 	icon = "Props/nianhezhuang2021",
 	id = 60115,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Illustrious's New Year Tidings",
@@ -89203,6 +89541,7 @@ _G.pg.base.item_data_statistics[60115] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60116] = {
@@ -89212,7 +89551,6 @@ _G.pg.base.item_data_statistics[60116] = {
 	icon = "Props/nianhezhuang2021",
 	id = 60116,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shoukaku's New Year Tidings",
@@ -89233,6 +89571,7 @@ _G.pg.base.item_data_statistics[60116] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60117] = {
@@ -89242,7 +89581,6 @@ _G.pg.base.item_data_statistics[60117] = {
 	icon = "Props/nianhezhuang2021",
 	id = 60117,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Zuikaku's New Year Tidings",
@@ -89263,6 +89601,7 @@ _G.pg.base.item_data_statistics[60117] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60118] = {
@@ -89272,7 +89611,6 @@ _G.pg.base.item_data_statistics[60118] = {
 	icon = "Props/nianhezhuang2021",
 	id = 60118,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Montpelier's New Year Tidings",
@@ -89293,6 +89631,7 @@ _G.pg.base.item_data_statistics[60118] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60119] = {
@@ -89302,7 +89641,6 @@ _G.pg.base.item_data_statistics[60119] = {
 	icon = "Props/nianhezhuang2021",
 	id = 60119,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Hood's New Year Tidings",
@@ -89323,6 +89661,7 @@ _G.pg.base.item_data_statistics[60119] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60129] = {
@@ -89332,7 +89671,6 @@ _G.pg.base.item_data_statistics[60129] = {
 	icon = "Props/henianka",
 	id = 60129,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Invitation (2021)",
@@ -89359,6 +89697,7 @@ _G.pg.base.item_data_statistics[60129] = {
 		904,
 		905,
 	},
+	limit = {},
 	open_ui = {
 		"greeting_year",
 		"t_greeting",
@@ -89372,7 +89711,6 @@ _G.pg.base.item_data_statistics[60130] = {
 	icon = "Props/henianka",
 	id = 60130,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Invitation (Taihou)",
@@ -89404,6 +89742,7 @@ _G.pg.base.item_data_statistics[60130] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60131] = {
@@ -89413,7 +89752,6 @@ _G.pg.base.item_data_statistics[60131] = {
 	icon = "Props/henianka",
 	id = 60131,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Invitation (Enterprise)",
@@ -89445,6 +89783,7 @@ _G.pg.base.item_data_statistics[60131] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60132] = {
@@ -89454,7 +89793,6 @@ _G.pg.base.item_data_statistics[60132] = {
 	icon = "Props/henianka",
 	id = 60132,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Invitation (Belfast)",
@@ -89486,6 +89824,7 @@ _G.pg.base.item_data_statistics[60132] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60133] = {
@@ -89495,7 +89834,6 @@ _G.pg.base.item_data_statistics[60133] = {
 	icon = "Props/henianka",
 	id = 60133,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Invitation (Ning Hai)",
@@ -89527,6 +89865,7 @@ _G.pg.base.item_data_statistics[60133] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60134] = {
@@ -89536,7 +89875,6 @@ _G.pg.base.item_data_statistics[60134] = {
 	icon = "Props/henianka",
 	id = 60134,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Invitation (Ping Hai)",
@@ -89568,6 +89906,7 @@ _G.pg.base.item_data_statistics[60134] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60135] = {
@@ -89577,7 +89916,6 @@ _G.pg.base.item_data_statistics[60135] = {
 	icon = "Props/henianka",
 	id = 60135,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Taihou)",
@@ -89598,6 +89936,7 @@ _G.pg.base.item_data_statistics[60135] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60136] = {
@@ -89607,7 +89946,6 @@ _G.pg.base.item_data_statistics[60136] = {
 	icon = "Props/henianka",
 	id = 60136,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Enterprise)",
@@ -89628,6 +89966,7 @@ _G.pg.base.item_data_statistics[60136] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60137] = {
@@ -89637,7 +89976,6 @@ _G.pg.base.item_data_statistics[60137] = {
 	icon = "Props/henianka",
 	id = 60137,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Belfast)",
@@ -89658,6 +89996,7 @@ _G.pg.base.item_data_statistics[60137] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60138] = {
@@ -89667,7 +90006,6 @@ _G.pg.base.item_data_statistics[60138] = {
 	icon = "Props/henianka",
 	id = 60138,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Ning Hai)",
@@ -89688,6 +90026,7 @@ _G.pg.base.item_data_statistics[60138] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60139] = {
@@ -89697,7 +90036,6 @@ _G.pg.base.item_data_statistics[60139] = {
 	icon = "Props/henianka",
 	id = 60139,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Ping Hai)",
@@ -89718,6 +90056,7 @@ _G.pg.base.item_data_statistics[60139] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60149] = {
@@ -89727,7 +90066,6 @@ _G.pg.base.item_data_statistics[60149] = {
 	icon = "Props/yaoqinghan",
 	id = 60149,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Early Summer Invitation 2021",
@@ -89757,6 +90095,7 @@ _G.pg.base.item_data_statistics[60149] = {
 		1007,
 		1008,
 	},
+	limit = {},
 	open_ui = {
 		"login_year",
 		"t_fourth",
@@ -89770,7 +90109,6 @@ _G.pg.base.item_data_statistics[60150] = {
 	icon = "Props/yaoqinghan",
 	id = 60150,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Atago's Letter",
@@ -89802,6 +90140,7 @@ _G.pg.base.item_data_statistics[60150] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60151] = {
@@ -89811,7 +90150,6 @@ _G.pg.base.item_data_statistics[60151] = {
 	icon = "Props/yaoqinghan",
 	id = 60151,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Montpelier's Letter",
@@ -89843,6 +90181,7 @@ _G.pg.base.item_data_statistics[60151] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60152] = {
@@ -89852,7 +90191,6 @@ _G.pg.base.item_data_statistics[60152] = {
 	icon = "Props/yaoqinghan",
 	id = 60152,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Takao's Letter",
@@ -89884,6 +90222,7 @@ _G.pg.base.item_data_statistics[60152] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60153] = {
@@ -89893,7 +90232,6 @@ _G.pg.base.item_data_statistics[60153] = {
 	icon = "Props/yaoqinghan",
 	id = 60153,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Hood's Letter",
@@ -89925,6 +90263,7 @@ _G.pg.base.item_data_statistics[60153] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60154] = {
@@ -89934,7 +90273,6 @@ _G.pg.base.item_data_statistics[60154] = {
 	icon = "Props/yaoqinghan",
 	id = 60154,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Enterprise's Letter",
@@ -89966,6 +90304,7 @@ _G.pg.base.item_data_statistics[60154] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60155] = {
@@ -89975,7 +90314,6 @@ _G.pg.base.item_data_statistics[60155] = {
 	icon = "Props/yaoqinghan",
 	id = 60155,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Swiftsure's Letter",
@@ -90007,6 +90345,7 @@ _G.pg.base.item_data_statistics[60155] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60156] = {
@@ -90016,7 +90355,6 @@ _G.pg.base.item_data_statistics[60156] = {
 	icon = "Props/yaoqinghan",
 	id = 60156,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prince of Wales's Letter",
@@ -90048,6 +90386,7 @@ _G.pg.base.item_data_statistics[60156] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60157] = {
@@ -90057,7 +90396,6 @@ _G.pg.base.item_data_statistics[60157] = {
 	icon = "Props/yaoqinghan",
 	id = 60157,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Warspite's Letter",
@@ -90089,6 +90427,7 @@ _G.pg.base.item_data_statistics[60157] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60158] = {
@@ -90098,7 +90437,6 @@ _G.pg.base.item_data_statistics[60158] = {
 	icon = "Props/yaoqinghan",
 	id = 60158,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Atago",
@@ -90119,6 +90457,7 @@ _G.pg.base.item_data_statistics[60158] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60159] = {
@@ -90128,7 +90467,6 @@ _G.pg.base.item_data_statistics[60159] = {
 	icon = "Props/yaoqinghan",
 	id = 60159,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Montpelier",
@@ -90149,6 +90487,7 @@ _G.pg.base.item_data_statistics[60159] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60160] = {
@@ -90158,7 +90497,6 @@ _G.pg.base.item_data_statistics[60160] = {
 	icon = "Props/yaoqinghan",
 	id = 60160,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Takao",
@@ -90179,6 +90517,7 @@ _G.pg.base.item_data_statistics[60160] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60161] = {
@@ -90188,7 +90527,6 @@ _G.pg.base.item_data_statistics[60161] = {
 	icon = "Props/yaoqinghan",
 	id = 60161,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Hood",
@@ -90209,6 +90547,7 @@ _G.pg.base.item_data_statistics[60161] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60162] = {
@@ -90218,7 +90557,6 @@ _G.pg.base.item_data_statistics[60162] = {
 	icon = "Props/yaoqinghan",
 	id = 60162,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Enterprise",
@@ -90239,6 +90577,7 @@ _G.pg.base.item_data_statistics[60162] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60163] = {
@@ -90248,7 +90587,6 @@ _G.pg.base.item_data_statistics[60163] = {
 	icon = "Props/yaoqinghan",
 	id = 60163,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Swiftsure",
@@ -90269,6 +90607,7 @@ _G.pg.base.item_data_statistics[60163] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60164] = {
@@ -90278,7 +90617,6 @@ _G.pg.base.item_data_statistics[60164] = {
 	icon = "Props/yaoqinghan",
 	id = 60164,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Prince of Wales",
@@ -90299,6 +90637,7 @@ _G.pg.base.item_data_statistics[60164] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60165] = {
@@ -90308,7 +90647,6 @@ _G.pg.base.item_data_statistics[60165] = {
 	icon = "Props/yaoqinghan",
 	id = 60165,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Warspite",
@@ -90329,6 +90667,7 @@ _G.pg.base.item_data_statistics[60165] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60166] = {
@@ -90338,7 +90677,6 @@ _G.pg.base.item_data_statistics[60166] = {
 	icon = "Props/yaoqinghan",
 	id = 60166,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "3rd Anniversary Invitation",
@@ -90369,6 +90707,7 @@ _G.pg.base.item_data_statistics[60166] = {
 		1108,
 		1109,
 	},
+	limit = {},
 	open_ui = {
 		"login_year",
 	},
@@ -90381,7 +90720,6 @@ _G.pg.base.item_data_statistics[60167] = {
 	icon = "Props/yaoqinghan",
 	id = 60167,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Belfast's Letter",
@@ -90413,6 +90751,7 @@ _G.pg.base.item_data_statistics[60167] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60168] = {
@@ -90422,7 +90761,6 @@ _G.pg.base.item_data_statistics[60168] = {
 	icon = "Props/yaoqinghan",
 	id = 60168,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Warspite's Letter",
@@ -90454,6 +90792,7 @@ _G.pg.base.item_data_statistics[60168] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60169] = {
@@ -90463,7 +90802,6 @@ _G.pg.base.item_data_statistics[60169] = {
 	icon = "Props/yaoqinghan",
 	id = 60169,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Hood's Letter",
@@ -90495,6 +90833,7 @@ _G.pg.base.item_data_statistics[60169] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60170] = {
@@ -90504,7 +90843,6 @@ _G.pg.base.item_data_statistics[60170] = {
 	icon = "Props/yaoqinghan",
 	id = 60170,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Enterprise's Letter",
@@ -90536,6 +90874,7 @@ _G.pg.base.item_data_statistics[60170] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60171] = {
@@ -90545,7 +90884,6 @@ _G.pg.base.item_data_statistics[60171] = {
 	icon = "Props/yaoqinghan",
 	id = 60171,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Illustrious's Letter",
@@ -90577,6 +90915,7 @@ _G.pg.base.item_data_statistics[60171] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60172] = {
@@ -90586,7 +90925,6 @@ _G.pg.base.item_data_statistics[60172] = {
 	icon = "Props/yaoqinghan",
 	id = 60172,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Le Malin's Letter",
@@ -90618,6 +90956,7 @@ _G.pg.base.item_data_statistics[60172] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60173] = {
@@ -90627,7 +90966,6 @@ _G.pg.base.item_data_statistics[60173] = {
 	icon = "Props/yaoqinghan",
 	id = 60173,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Sirius's Letter",
@@ -90659,6 +90997,7 @@ _G.pg.base.item_data_statistics[60173] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60174] = {
@@ -90668,7 +91007,6 @@ _G.pg.base.item_data_statistics[60174] = {
 	icon = "Props/yaoqinghan",
 	id = 60174,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "North Carolina's Letter",
@@ -90700,6 +91038,7 @@ _G.pg.base.item_data_statistics[60174] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60175] = {
@@ -90709,7 +91048,6 @@ _G.pg.base.item_data_statistics[60175] = {
 	icon = "Props/yaoqinghan",
 	id = 60175,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Washington's Letter",
@@ -90741,6 +91079,7 @@ _G.pg.base.item_data_statistics[60175] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60176] = {
@@ -90750,7 +91089,6 @@ _G.pg.base.item_data_statistics[60176] = {
 	icon = "Props/yaoqinghan",
 	id = 60176,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Belfast",
@@ -90771,6 +91109,7 @@ _G.pg.base.item_data_statistics[60176] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60177] = {
@@ -90780,7 +91119,6 @@ _G.pg.base.item_data_statistics[60177] = {
 	icon = "Props/yaoqinghan",
 	id = 60177,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Warspite",
@@ -90801,6 +91139,7 @@ _G.pg.base.item_data_statistics[60177] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60178] = {
@@ -90810,7 +91149,6 @@ _G.pg.base.item_data_statistics[60178] = {
 	icon = "Props/yaoqinghan",
 	id = 60178,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Hood",
@@ -90831,6 +91169,7 @@ _G.pg.base.item_data_statistics[60178] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60179] = {
@@ -90840,7 +91179,6 @@ _G.pg.base.item_data_statistics[60179] = {
 	icon = "Props/yaoqinghan",
 	id = 60179,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Enterprise",
@@ -90861,6 +91199,7 @@ _G.pg.base.item_data_statistics[60179] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60180] = {
@@ -90870,7 +91209,6 @@ _G.pg.base.item_data_statistics[60180] = {
 	icon = "Props/yaoqinghan",
 	id = 60180,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Illustrious",
@@ -90891,6 +91229,7 @@ _G.pg.base.item_data_statistics[60180] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60181] = {
@@ -90900,7 +91239,6 @@ _G.pg.base.item_data_statistics[60181] = {
 	icon = "Props/yaoqinghan",
 	id = 60181,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Le Malin",
@@ -90921,6 +91259,7 @@ _G.pg.base.item_data_statistics[60181] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60182] = {
@@ -90930,7 +91269,6 @@ _G.pg.base.item_data_statistics[60182] = {
 	icon = "Props/yaoqinghan",
 	id = 60182,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Sirius",
@@ -90951,6 +91289,7 @@ _G.pg.base.item_data_statistics[60182] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60183] = {
@@ -90960,7 +91299,6 @@ _G.pg.base.item_data_statistics[60183] = {
 	icon = "Props/yaoqinghan",
 	id = 60183,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from North Carolina",
@@ -90981,6 +91319,7 @@ _G.pg.base.item_data_statistics[60183] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60184] = {
@@ -90990,7 +91329,6 @@ _G.pg.base.item_data_statistics[60184] = {
 	icon = "Props/yaoqinghan",
 	id = 60184,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Gift from Washington",
@@ -91011,6 +91349,7 @@ _G.pg.base.item_data_statistics[60184] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60209] = {
@@ -91020,7 +91359,6 @@ _G.pg.base.item_data_statistics[60209] = {
 	icon = "Props/nianhezhuang2022",
 	id = 60209,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shoukaku's Gift (New Year 2022)",
@@ -91041,6 +91379,7 @@ _G.pg.base.item_data_statistics[60209] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60210] = {
@@ -91050,7 +91389,6 @@ _G.pg.base.item_data_statistics[60210] = {
 	icon = "Props/nianhezhuang2022",
 	id = 60210,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Zuikaku's Gift (New Year 2022)",
@@ -91071,6 +91409,7 @@ _G.pg.base.item_data_statistics[60210] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60211] = {
@@ -91080,7 +91419,6 @@ _G.pg.base.item_data_statistics[60211] = {
 	icon = "Props/nianhezhuang2022",
 	id = 60211,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Le Malin's Gift (New Year 2022)",
@@ -91101,6 +91439,7 @@ _G.pg.base.item_data_statistics[60211] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60212] = {
@@ -91110,7 +91449,6 @@ _G.pg.base.item_data_statistics[60212] = {
 	icon = "Props/nianhezhuang2022",
 	id = 60212,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Victorious' Gift (New Year 2022)",
@@ -91131,6 +91469,7 @@ _G.pg.base.item_data_statistics[60212] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60213] = {
@@ -91140,7 +91479,6 @@ _G.pg.base.item_data_statistics[60213] = {
 	icon = "Props/nianhezhuang2022",
 	id = 60213,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Tirpitz's Gift (New Year 2022)",
@@ -91161,6 +91499,7 @@ _G.pg.base.item_data_statistics[60213] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60214] = {
@@ -91170,7 +91509,6 @@ _G.pg.base.item_data_statistics[60214] = {
 	icon = "Props/nianhezhuang2022",
 	id = 60214,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Illustrious' Gift (New Year 2022)",
@@ -91191,6 +91529,7 @@ _G.pg.base.item_data_statistics[60214] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60215] = {
@@ -91200,7 +91539,6 @@ _G.pg.base.item_data_statistics[60215] = {
 	icon = "Props/nianhezhuang2022",
 	id = 60215,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Essex's Gift (New Year 2022)",
@@ -91221,6 +91559,7 @@ _G.pg.base.item_data_statistics[60215] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60216] = {
@@ -91230,7 +91569,6 @@ _G.pg.base.item_data_statistics[60216] = {
 	icon = "Props/nianhezhuang2022",
 	id = 60216,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "New Year's Invitation (New Year 2022)",
@@ -91259,6 +91597,7 @@ _G.pg.base.item_data_statistics[60216] = {
 		1306,
 		1307,
 	},
+	limit = {},
 	open_ui = {
 		"shrine_year",
 		"t_shrine",
@@ -91272,7 +91611,6 @@ _G.pg.base.item_data_statistics[60226] = {
 	icon = "Props/henianka2022",
 	id = 60226,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Invitation (2022)",
@@ -91301,6 +91639,7 @@ _G.pg.base.item_data_statistics[60226] = {
 		1401,
 		1403,
 	},
+	limit = {},
 	open_ui = {
 		"greeting_year",
 		"t_greeting",
@@ -91314,7 +91653,6 @@ _G.pg.base.item_data_statistics[60227] = {
 	icon = "Props/henianka2022",
 	id = 60227,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Taihou)",
@@ -91335,6 +91673,7 @@ _G.pg.base.item_data_statistics[60227] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60228] = {
@@ -91344,7 +91683,6 @@ _G.pg.base.item_data_statistics[60228] = {
 	icon = "Props/henianka2022",
 	id = 60228,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Enterprise)",
@@ -91365,6 +91703,7 @@ _G.pg.base.item_data_statistics[60228] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60229] = {
@@ -91374,7 +91713,6 @@ _G.pg.base.item_data_statistics[60229] = {
 	icon = "Props/henianka2022",
 	id = 60229,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Belfast)",
@@ -91395,6 +91733,7 @@ _G.pg.base.item_data_statistics[60229] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60230] = {
@@ -91404,7 +91743,6 @@ _G.pg.base.item_data_statistics[60230] = {
 	icon = "Props/henianka2022",
 	id = 60230,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Ning Hai)",
@@ -91425,6 +91763,7 @@ _G.pg.base.item_data_statistics[60230] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60231] = {
@@ -91434,7 +91773,6 @@ _G.pg.base.item_data_statistics[60231] = {
 	icon = "Props/henianka2022",
 	id = 60231,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Ping Hai)",
@@ -91455,6 +91793,7 @@ _G.pg.base.item_data_statistics[60231] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60232] = {
@@ -91464,7 +91803,6 @@ _G.pg.base.item_data_statistics[60232] = {
 	icon = "Props/henianka2022",
 	id = 60232,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Chang Chun)",
@@ -91485,6 +91823,7 @@ _G.pg.base.item_data_statistics[60232] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60233] = {
@@ -91494,7 +91833,6 @@ _G.pg.base.item_data_statistics[60233] = {
 	icon = "Props/henianka2022",
 	id = 60233,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Tai Yuan)",
@@ -91515,6 +91853,7 @@ _G.pg.base.item_data_statistics[60233] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60235] = {
@@ -91524,7 +91863,6 @@ _G.pg.base.item_data_statistics[60235] = {
 	icon = "Props/yaoqinghan",
 	id = 60235,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Early Summer Invitation (2022)",
@@ -91554,6 +91892,7 @@ _G.pg.base.item_data_statistics[60235] = {
 		1507,
 		1508,
 	},
+	limit = {},
 	open_ui = {
 		"login_year",
 		"t_fifth",
@@ -91567,7 +91906,6 @@ _G.pg.base.item_data_statistics[60236] = {
 	icon = "Props/yaoqinghan",
 	id = 60236,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Tirpitz's Gift (Early Summer 2022)",
@@ -91588,6 +91926,7 @@ _G.pg.base.item_data_statistics[60236] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60237] = {
@@ -91597,7 +91936,6 @@ _G.pg.base.item_data_statistics[60237] = {
 	icon = "Props/yaoqinghan",
 	id = 60237,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Graf Zeppelin's Gift (Early Summer 2022)",
@@ -91618,6 +91956,7 @@ _G.pg.base.item_data_statistics[60237] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60238] = {
@@ -91627,7 +91966,6 @@ _G.pg.base.item_data_statistics[60238] = {
 	icon = "Props/yaoqinghan",
 	id = 60238,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Washington's Gift (Early Summer 2022)",
@@ -91648,6 +91986,7 @@ _G.pg.base.item_data_statistics[60238] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60239] = {
@@ -91657,7 +91996,6 @@ _G.pg.base.item_data_statistics[60239] = {
 	icon = "Props/yaoqinghan",
 	id = 60239,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Hood's Gift (Early Summer 2022)",
@@ -91678,6 +92016,7 @@ _G.pg.base.item_data_statistics[60239] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60240] = {
@@ -91687,7 +92026,6 @@ _G.pg.base.item_data_statistics[60240] = {
 	icon = "Props/yaoqinghan",
 	id = 60240,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Yukikaze's Gift (Early Summer 2022)",
@@ -91708,6 +92046,7 @@ _G.pg.base.item_data_statistics[60240] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60241] = {
@@ -91717,7 +92056,6 @@ _G.pg.base.item_data_statistics[60241] = {
 	icon = "Props/yaoqinghan",
 	id = 60241,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Montpelier's Gift (Early Summer 2022)",
@@ -91738,6 +92076,7 @@ _G.pg.base.item_data_statistics[60241] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60242] = {
@@ -91747,7 +92086,6 @@ _G.pg.base.item_data_statistics[60242] = {
 	icon = "Props/yaoqinghan",
 	id = 60242,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Swiftsure's Gift (Early Summer 2022)",
@@ -91768,6 +92106,7 @@ _G.pg.base.item_data_statistics[60242] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60243] = {
@@ -91777,7 +92116,6 @@ _G.pg.base.item_data_statistics[60243] = {
 	icon = "Props/yaoqinghan",
 	id = 60243,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Le Malin's Gift (Early Summer 2022)",
@@ -91798,6 +92136,7 @@ _G.pg.base.item_data_statistics[60243] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60244] = {
@@ -91807,7 +92146,6 @@ _G.pg.base.item_data_statistics[60244] = {
 	icon = "Props/yaoqinghan",
 	id = 60244,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "4th Anniversary Invitation",
@@ -91837,6 +92175,7 @@ _G.pg.base.item_data_statistics[60244] = {
 		1607,
 		1608,
 	},
+	limit = {},
 	open_ui = {
 		"login_year",
 		"t_fourth_us",
@@ -91850,7 +92189,6 @@ _G.pg.base.item_data_statistics[60245] = {
 	icon = "Props/yaoqinghan",
 	id = 60245,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "U-96's Gift (4th Anniversary)",
@@ -91871,6 +92209,7 @@ _G.pg.base.item_data_statistics[60245] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60246] = {
@@ -91880,7 +92219,6 @@ _G.pg.base.item_data_statistics[60246] = {
 	icon = "Props/yaoqinghan",
 	id = 60246,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Essex's Gift (4th Anniversary)",
@@ -91901,6 +92239,7 @@ _G.pg.base.item_data_statistics[60246] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60247] = {
@@ -91910,7 +92249,6 @@ _G.pg.base.item_data_statistics[60247] = {
 	icon = "Props/yaoqinghan",
 	id = 60247,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Enterprise's Gift (4th Anniversary)",
@@ -91931,6 +92269,7 @@ _G.pg.base.item_data_statistics[60247] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60248] = {
@@ -91940,7 +92279,6 @@ _G.pg.base.item_data_statistics[60248] = {
 	icon = "Props/yaoqinghan",
 	id = 60248,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Hood's Gift (4th Anniversary)",
@@ -91961,6 +92299,7 @@ _G.pg.base.item_data_statistics[60248] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60249] = {
@@ -91970,7 +92309,6 @@ _G.pg.base.item_data_statistics[60249] = {
 	icon = "Props/yaoqinghan",
 	id = 60249,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Yukikaze's Gift (4th Anniversary)",
@@ -91991,6 +92329,7 @@ _G.pg.base.item_data_statistics[60249] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60250] = {
@@ -92000,7 +92339,6 @@ _G.pg.base.item_data_statistics[60250] = {
 	icon = "Props/yaoqinghan",
 	id = 60250,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Montpelier's Gift (4th Anniversary)",
@@ -92021,6 +92359,7 @@ _G.pg.base.item_data_statistics[60250] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60251] = {
@@ -92030,7 +92369,6 @@ _G.pg.base.item_data_statistics[60251] = {
 	icon = "Props/yaoqinghan",
 	id = 60251,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Swiftsure's Gift (4th Anniversary)",
@@ -92051,6 +92389,7 @@ _G.pg.base.item_data_statistics[60251] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60252] = {
@@ -92060,7 +92399,6 @@ _G.pg.base.item_data_statistics[60252] = {
 	icon = "Props/yaoqinghan",
 	id = 60252,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Le Malin's Gift (4th Anniversary)",
@@ -92081,6 +92419,7 @@ _G.pg.base.item_data_statistics[60252] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60276] = {
@@ -92090,7 +92429,6 @@ _G.pg.base.item_data_statistics[60276] = {
 	icon = "Props/nianhezhuang2023",
 	id = 60276,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "鸗的年贺状",
@@ -92111,6 +92449,7 @@ _G.pg.base.item_data_statistics[60276] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60277] = {
@@ -92120,7 +92459,6 @@ _G.pg.base.item_data_statistics[60277] = {
 	icon = "Props/nianhezhuang2023",
 	id = 60277,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Graf Zeppelin's Gift (New Year 2023)",
@@ -92141,6 +92479,7 @@ _G.pg.base.item_data_statistics[60277] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60278] = {
@@ -92150,7 +92489,6 @@ _G.pg.base.item_data_statistics[60278] = {
 	icon = "Props/nianhezhuang2023",
 	id = 60278,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Le Triomphant's Gift (New Year 2023)",
@@ -92171,6 +92509,7 @@ _G.pg.base.item_data_statistics[60278] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60279] = {
@@ -92180,7 +92519,6 @@ _G.pg.base.item_data_statistics[60279] = {
 	icon = "Props/nianhezhuang2023",
 	id = 60279,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Belfast's Gift (New Year 2023)",
@@ -92201,6 +92539,7 @@ _G.pg.base.item_data_statistics[60279] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60280] = {
@@ -92210,7 +92549,6 @@ _G.pg.base.item_data_statistics[60280] = {
 	icon = "Props/nianhezhuang2023",
 	id = 60280,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Zara's Gift (New Year 2023)",
@@ -92231,6 +92569,7 @@ _G.pg.base.item_data_statistics[60280] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60281] = {
@@ -92240,7 +92579,6 @@ _G.pg.base.item_data_statistics[60281] = {
 	icon = "Props/nianhezhuang2023",
 	id = 60281,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Illustrious's Gift (New Year 2023)",
@@ -92261,6 +92599,7 @@ _G.pg.base.item_data_statistics[60281] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60282] = {
@@ -92270,7 +92609,6 @@ _G.pg.base.item_data_statistics[60282] = {
 	icon = "Props/nianhezhuang2023",
 	id = 60282,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "South Dakota's Gift (New Year 2023)",
@@ -92291,6 +92629,7 @@ _G.pg.base.item_data_statistics[60282] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60283] = {
@@ -92300,7 +92639,6 @@ _G.pg.base.item_data_statistics[60283] = {
 	icon = "Props/nianhezhuang2023",
 	id = 60283,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "New Year's Invitation (New Year 2023)",
@@ -92329,6 +92667,7 @@ _G.pg.base.item_data_statistics[60283] = {
 		1807,
 		1808,
 	},
+	limit = {},
 	open_ui = {
 		"shrine_year",
 		"t_shrine",
@@ -92342,7 +92681,6 @@ _G.pg.base.item_data_statistics[60284] = {
 	icon = "Props/nianhezhuang2023",
 	id = 60284,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shoukaku's Gift (New Year 2023)",
@@ -92363,6 +92701,7 @@ _G.pg.base.item_data_statistics[60284] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60290] = {
@@ -92372,7 +92711,6 @@ _G.pg.base.item_data_statistics[60290] = {
 	icon = "Props/henianka2023",
 	id = 60290,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Invitation (2023)",
@@ -92402,6 +92740,7 @@ _G.pg.base.item_data_statistics[60290] = {
 		1907,
 		1908,
 	},
+	limit = {},
 	open_ui = {
 		"greeting_year",
 		"t_greeting",
@@ -92415,7 +92754,6 @@ _G.pg.base.item_data_statistics[60291] = {
 	icon = "Props/henianka2023",
 	id = 60291,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Taihou)",
@@ -92436,6 +92774,7 @@ _G.pg.base.item_data_statistics[60291] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60292] = {
@@ -92445,7 +92784,6 @@ _G.pg.base.item_data_statistics[60292] = {
 	icon = "Props/henianka2023",
 	id = 60292,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (U-110)",
@@ -92466,6 +92804,7 @@ _G.pg.base.item_data_statistics[60292] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60293] = {
@@ -92475,7 +92814,6 @@ _G.pg.base.item_data_statistics[60293] = {
 	icon = "Props/henianka2023",
 	id = 60293,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Alabama)",
@@ -92496,6 +92834,7 @@ _G.pg.base.item_data_statistics[60293] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60294] = {
@@ -92505,7 +92844,6 @@ _G.pg.base.item_data_statistics[60294] = {
 	icon = "Props/henianka2023",
 	id = 60294,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Chao Ho)",
@@ -92526,6 +92864,7 @@ _G.pg.base.item_data_statistics[60294] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60295] = {
@@ -92535,7 +92874,6 @@ _G.pg.base.item_data_statistics[60295] = {
 	icon = "Props/henianka2023",
 	id = 60295,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Ying Swei)",
@@ -92556,6 +92894,7 @@ _G.pg.base.item_data_statistics[60295] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60296] = {
@@ -92565,7 +92904,6 @@ _G.pg.base.item_data_statistics[60296] = {
 	icon = "Props/henianka2023",
 	id = 60296,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Chang Chun)",
@@ -92586,6 +92924,7 @@ _G.pg.base.item_data_statistics[60296] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60297] = {
@@ -92595,7 +92934,6 @@ _G.pg.base.item_data_statistics[60297] = {
 	icon = "Props/henianka2023",
 	id = 60297,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Tai Yuan)",
@@ -92616,6 +92954,7 @@ _G.pg.base.item_data_statistics[60297] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60298] = {
@@ -92625,7 +92964,6 @@ _G.pg.base.item_data_statistics[60298] = {
 	icon = "Props/henianka2023",
 	id = 60298,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Yat Sen)",
@@ -92646,6 +92984,7 @@ _G.pg.base.item_data_statistics[60298] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60316] = {
@@ -92655,7 +92994,6 @@ _G.pg.base.item_data_statistics[60316] = {
 	icon = "Props/yaoqinghan",
 	id = 60316,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Early Summer Invitation (2023)",
@@ -92685,6 +93023,7 @@ _G.pg.base.item_data_statistics[60316] = {
 		2007,
 		2008,
 	},
+	limit = {},
 	open_ui = {
 		"login_year",
 		"t_sixth",
@@ -92698,7 +93037,6 @@ _G.pg.base.item_data_statistics[60317] = {
 	icon = "Props/yaoqinghan",
 	id = 60317,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Taihou's Gift (Early Summer 2023)",
@@ -92719,6 +93057,7 @@ _G.pg.base.item_data_statistics[60317] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60318] = {
@@ -92728,7 +93067,6 @@ _G.pg.base.item_data_statistics[60318] = {
 	icon = "Props/yaoqinghan",
 	id = 60318,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Amagi's Gift (Early Summer 2023)",
@@ -92749,6 +93087,7 @@ _G.pg.base.item_data_statistics[60318] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60319] = {
@@ -92758,7 +93097,6 @@ _G.pg.base.item_data_statistics[60319] = {
 	icon = "Props/yaoqinghan",
 	id = 60319,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Washington's Gift (Early Summer 2023)",
@@ -92779,6 +93117,7 @@ _G.pg.base.item_data_statistics[60319] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60320] = {
@@ -92788,7 +93127,6 @@ _G.pg.base.item_data_statistics[60320] = {
 	icon = "Props/yaoqinghan",
 	id = 60320,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Chapayev's Gift (Early Summer 2023)",
@@ -92809,6 +93147,7 @@ _G.pg.base.item_data_statistics[60320] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60321] = {
@@ -92818,7 +93157,6 @@ _G.pg.base.item_data_statistics[60321] = {
 	icon = "Props/yaoqinghan",
 	id = 60321,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Illustrious's Gift (Early Summer 2023)",
@@ -92839,6 +93177,7 @@ _G.pg.base.item_data_statistics[60321] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60322] = {
@@ -92848,7 +93187,6 @@ _G.pg.base.item_data_statistics[60322] = {
 	icon = "Props/yaoqinghan",
 	id = 60322,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Graf Zeppelin's Gift (Early Summer 2023)",
@@ -92869,6 +93207,7 @@ _G.pg.base.item_data_statistics[60322] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60323] = {
@@ -92878,7 +93217,6 @@ _G.pg.base.item_data_statistics[60323] = {
 	icon = "Props/yaoqinghan",
 	id = 60323,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Pola's Gift (Early Summer 2023)",
@@ -92899,6 +93237,7 @@ _G.pg.base.item_data_statistics[60323] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60324] = {
@@ -92908,7 +93247,6 @@ _G.pg.base.item_data_statistics[60324] = {
 	icon = "Props/yaoqinghan",
 	id = 60324,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Le Malin's Gift (Early Summer 2023)",
@@ -92929,6 +93267,7 @@ _G.pg.base.item_data_statistics[60324] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60414] = {
@@ -92938,7 +93277,6 @@ _G.pg.base.item_data_statistics[60414] = {
 	icon = "Props/yaoqinghan",
 	id = 60414,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "5th Anniversary Invitation",
@@ -92968,6 +93306,7 @@ _G.pg.base.item_data_statistics[60414] = {
 		2107,
 		2108,
 	},
+	limit = {},
 	open_ui = {
 		"login_year",
 		"t_fifth_us",
@@ -92981,7 +93320,6 @@ _G.pg.base.item_data_statistics[60415] = {
 	icon = "Props/yaoqinghan",
 	id = 60415,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Richelieu's Gift (5th Anniversary)",
@@ -93002,6 +93340,7 @@ _G.pg.base.item_data_statistics[60415] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60416] = {
@@ -93011,7 +93350,6 @@ _G.pg.base.item_data_statistics[60416] = {
 	icon = "Props/yaoqinghan",
 	id = 60416,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Enterprise's Gift (5th Anniversary)",
@@ -93032,6 +93370,7 @@ _G.pg.base.item_data_statistics[60416] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60417] = {
@@ -93041,7 +93380,6 @@ _G.pg.base.item_data_statistics[60417] = {
 	icon = "Props/yaoqinghan",
 	id = 60417,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Essex's Gift (5th Anniversary)",
@@ -93062,6 +93400,7 @@ _G.pg.base.item_data_statistics[60417] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60418] = {
@@ -93071,7 +93410,6 @@ _G.pg.base.item_data_statistics[60418] = {
 	icon = "Props/yaoqinghan",
 	id = 60418,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Belfast's Gift (5th Anniversary)",
@@ -93092,6 +93430,7 @@ _G.pg.base.item_data_statistics[60418] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60419] = {
@@ -93101,7 +93440,6 @@ _G.pg.base.item_data_statistics[60419] = {
 	icon = "Props/yaoqinghan",
 	id = 60419,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Formidable's Gift (5th Anniversary)",
@@ -93122,6 +93460,7 @@ _G.pg.base.item_data_statistics[60419] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60420] = {
@@ -93131,7 +93470,6 @@ _G.pg.base.item_data_statistics[60420] = {
 	icon = "Props/yaoqinghan",
 	id = 60420,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Amagi's Gift (5th Anniversary)",
@@ -93152,6 +93490,7 @@ _G.pg.base.item_data_statistics[60420] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60421] = {
@@ -93161,7 +93500,6 @@ _G.pg.base.item_data_statistics[60421] = {
 	icon = "Props/yaoqinghan",
 	id = 60421,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Avrora's Gift (5th Anniversary)",
@@ -93182,6 +93520,7 @@ _G.pg.base.item_data_statistics[60421] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60422] = {
@@ -93191,7 +93530,6 @@ _G.pg.base.item_data_statistics[60422] = {
 	icon = "Props/yaoqinghan",
 	id = 60422,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Zara's Gift (5th Anniversary)",
@@ -93212,6 +93550,7 @@ _G.pg.base.item_data_statistics[60422] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60450] = {
@@ -93221,7 +93560,6 @@ _G.pg.base.item_data_statistics[60450] = {
 	icon = "Props/nianhezhuang2024",
 	id = 60450,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Kazagumo's Gift (New Year 2024)",
@@ -93242,6 +93580,7 @@ _G.pg.base.item_data_statistics[60450] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60451] = {
@@ -93251,7 +93590,6 @@ _G.pg.base.item_data_statistics[60451] = {
 	icon = "Props/nianhezhuang2024",
 	id = 60451,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Richelieu's Gift (New Year 2024)",
@@ -93272,6 +93610,7 @@ _G.pg.base.item_data_statistics[60451] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60452] = {
@@ -93281,7 +93620,6 @@ _G.pg.base.item_data_statistics[60452] = {
 	icon = "Props/nianhezhuang2024",
 	id = 60452,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "U-101's Gift (New Year 2024)",
@@ -93302,6 +93640,7 @@ _G.pg.base.item_data_statistics[60452] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60453] = {
@@ -93311,7 +93650,6 @@ _G.pg.base.item_data_statistics[60453] = {
 	icon = "Props/nianhezhuang2024",
 	id = 60453,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Formidable's Gift (New Year 2024)",
@@ -93332,6 +93670,7 @@ _G.pg.base.item_data_statistics[60453] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60454] = {
@@ -93341,7 +93680,6 @@ _G.pg.base.item_data_statistics[60454] = {
 	icon = "Props/nianhezhuang2024",
 	id = 60454,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shangri-La's Gift (New Year 2024)",
@@ -93362,6 +93700,7 @@ _G.pg.base.item_data_statistics[60454] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60455] = {
@@ -93371,7 +93710,6 @@ _G.pg.base.item_data_statistics[60455] = {
 	icon = "Props/nianhezhuang2024",
 	id = 60455,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Zara's Gift (New Year 2024)",
@@ -93392,6 +93730,7 @@ _G.pg.base.item_data_statistics[60455] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60456] = {
@@ -93401,7 +93740,6 @@ _G.pg.base.item_data_statistics[60456] = {
 	icon = "Props/nianhezhuang2024",
 	id = 60456,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Tashkent's Gift (New Year 2024)",
@@ -93422,6 +93760,7 @@ _G.pg.base.item_data_statistics[60456] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60457] = {
@@ -93431,7 +93770,6 @@ _G.pg.base.item_data_statistics[60457] = {
 	icon = "Props/nianhezhuang2024",
 	id = 60457,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "New Year's Invitation (2024)",
@@ -93460,6 +93798,7 @@ _G.pg.base.item_data_statistics[60457] = {
 		2306,
 		2307,
 	},
+	limit = {},
 	open_ui = {
 		"shrine_year",
 		"t_shrine",
@@ -93473,7 +93812,6 @@ _G.pg.base.item_data_statistics[60459] = {
 	icon = "Props/henianka2024",
 	id = 60459,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Taihou)",
@@ -93494,6 +93832,7 @@ _G.pg.base.item_data_statistics[60459] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60460] = {
@@ -93503,7 +93842,6 @@ _G.pg.base.item_data_statistics[60460] = {
 	icon = "Props/henianka2024",
 	id = 60460,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Yat Sen)",
@@ -93524,6 +93862,7 @@ _G.pg.base.item_data_statistics[60460] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60461] = {
@@ -93533,7 +93872,6 @@ _G.pg.base.item_data_statistics[60461] = {
 	icon = "Props/henianka2024",
 	id = 60461,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Hwah Jah)",
@@ -93554,6 +93892,7 @@ _G.pg.base.item_data_statistics[60461] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60462] = {
@@ -93563,7 +93902,6 @@ _G.pg.base.item_data_statistics[60462] = {
 	icon = "Props/henianka2024",
 	id = 60462,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Chen Hai)",
@@ -93584,6 +93922,7 @@ _G.pg.base.item_data_statistics[60462] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60463] = {
@@ -93593,7 +93932,6 @@ _G.pg.base.item_data_statistics[60463] = {
 	icon = "Props/henianka2024",
 	id = 60463,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Tai Yuan)",
@@ -93614,6 +93952,7 @@ _G.pg.base.item_data_statistics[60463] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60464] = {
@@ -93623,7 +93962,6 @@ _G.pg.base.item_data_statistics[60464] = {
 	icon = "Props/henianka2024",
 	id = 60464,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Charybdis)",
@@ -93644,6 +93982,7 @@ _G.pg.base.item_data_statistics[60464] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60465] = {
@@ -93653,7 +93992,6 @@ _G.pg.base.item_data_statistics[60465] = {
 	icon = "Props/henianka2024",
 	id = 60465,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (Bristol)",
@@ -93674,6 +94012,7 @@ _G.pg.base.item_data_statistics[60465] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60466] = {
@@ -93683,7 +94022,6 @@ _G.pg.base.item_data_statistics[60466] = {
 	icon = "Props/henianka2024",
 	id = 60466,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Festival Tidings (2024)",
@@ -93712,6 +94050,7 @@ _G.pg.base.item_data_statistics[60466] = {
 		2406,
 		2407,
 	},
+	limit = {},
 	open_ui = {
 		"greeting_year",
 		"t_greeting",
@@ -93725,7 +94064,6 @@ _G.pg.base.item_data_statistics[60491] = {
 	icon = "Props/yaoqinghan",
 	id = 60491,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Early Summer Invitation 2024",
@@ -93755,6 +94093,7 @@ _G.pg.base.item_data_statistics[60491] = {
 		2507,
 		2508,
 	},
+	limit = {},
 	open_ui = {
 		"login_year",
 		"t_seventh",
@@ -93768,7 +94107,6 @@ _G.pg.base.item_data_statistics[60492] = {
 	icon = "Props/yaoqinghan",
 	id = 60492,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Illustrious's Gift (Early Summer 2024)",
@@ -93789,6 +94127,7 @@ _G.pg.base.item_data_statistics[60492] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60493] = {
@@ -93798,7 +94137,6 @@ _G.pg.base.item_data_statistics[60493] = {
 	icon = "Props/yaoqinghan",
 	id = 60493,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Tosas Gift (Early Summer 2024)",
@@ -93819,6 +94157,7 @@ _G.pg.base.item_data_statistics[60493] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60494] = {
@@ -93828,7 +94167,6 @@ _G.pg.base.item_data_statistics[60494] = {
 	icon = "Props/yaoqinghan",
 	id = 60494,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Amagi's Gift (Early Summer 2024)",
@@ -93849,6 +94187,7 @@ _G.pg.base.item_data_statistics[60494] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60495] = {
@@ -93858,7 +94197,6 @@ _G.pg.base.item_data_statistics[60495] = {
 	icon = "Props/yaoqinghan",
 	id = 60495,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Sirius's Gift (Early Summer 2024)",
@@ -93879,6 +94217,7 @@ _G.pg.base.item_data_statistics[60495] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60496] = {
@@ -93888,7 +94227,6 @@ _G.pg.base.item_data_statistics[60496] = {
 	icon = "Props/yaoqinghan",
 	id = 60496,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Chapayev's Gift (Early Summer 2024)",
@@ -93909,6 +94247,7 @@ _G.pg.base.item_data_statistics[60496] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60497] = {
@@ -93918,7 +94257,6 @@ _G.pg.base.item_data_statistics[60497] = {
 	icon = "Props/yaoqinghan",
 	id = 60497,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Tashkent's Gift (Early Summer 2024)",
@@ -93939,6 +94277,7 @@ _G.pg.base.item_data_statistics[60497] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60498] = {
@@ -93948,7 +94287,6 @@ _G.pg.base.item_data_statistics[60498] = {
 	icon = "Props/yaoqinghan",
 	id = 60498,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Graf Zeppelin's Gift (Early Summer 2024)",
@@ -93969,6 +94307,7 @@ _G.pg.base.item_data_statistics[60498] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60499] = {
@@ -93978,7 +94317,6 @@ _G.pg.base.item_data_statistics[60499] = {
 	icon = "Props/yaoqinghan",
 	id = 60499,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Prinz Heinrich's Gift (Early Summer 2024)",
@@ -93999,6 +94337,7 @@ _G.pg.base.item_data_statistics[60499] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60500] = {
@@ -94008,7 +94347,6 @@ _G.pg.base.item_data_statistics[60500] = {
 	icon = "Props/yaoqinghan",
 	id = 60500,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "6th Anniversary Invitation",
@@ -94038,6 +94376,7 @@ _G.pg.base.item_data_statistics[60500] = {
 		2607,
 		2608,
 	},
+	limit = {},
 	open_ui = {
 		"login_year",
 		"t_sixth_us",
@@ -94051,7 +94390,6 @@ _G.pg.base.item_data_statistics[60501] = {
 	icon = "Props/yaoqinghan",
 	id = 60501,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Reno's Gift (6th Anniversary)",
@@ -94072,6 +94410,7 @@ _G.pg.base.item_data_statistics[60501] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60502] = {
@@ -94081,7 +94420,6 @@ _G.pg.base.item_data_statistics[60502] = {
 	icon = "Props/yaoqinghan",
 	id = 60502,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Bremerton's Gift (6th Anniversary)",
@@ -94102,6 +94440,7 @@ _G.pg.base.item_data_statistics[60502] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60503] = {
@@ -94111,7 +94450,6 @@ _G.pg.base.item_data_statistics[60503] = {
 	icon = "Props/yaoqinghan",
 	id = 60503,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Sirius's Gift (6th Anniversary)",
@@ -94132,6 +94470,7 @@ _G.pg.base.item_data_statistics[60503] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60504] = {
@@ -94141,7 +94480,6 @@ _G.pg.base.item_data_statistics[60504] = {
 	icon = "Props/yaoqinghan",
 	id = 60504,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Shoukaku's Gift (6th Anniversary)",
@@ -94162,6 +94500,7 @@ _G.pg.base.item_data_statistics[60504] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60505] = {
@@ -94171,7 +94510,6 @@ _G.pg.base.item_data_statistics[60505] = {
 	icon = "Props/yaoqinghan",
 	id = 60505,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Bismarck's Gift (6th Anniversary)",
@@ -94192,6 +94530,7 @@ _G.pg.base.item_data_statistics[60505] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60506] = {
@@ -94201,7 +94540,6 @@ _G.pg.base.item_data_statistics[60506] = {
 	icon = "Props/yaoqinghan",
 	id = 60506,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Sovetskaya Rossiya's Gift (6th Anniversary)",
@@ -94222,6 +94560,7 @@ _G.pg.base.item_data_statistics[60506] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60507] = {
@@ -94231,7 +94570,6 @@ _G.pg.base.item_data_statistics[60507] = {
 	icon = "Props/yaoqinghan",
 	id = 60507,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Jeanne d'Arc's Gift (6th Anniversary)",
@@ -94252,6 +94590,7 @@ _G.pg.base.item_data_statistics[60507] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[60508] = {
@@ -94261,7 +94600,6 @@ _G.pg.base.item_data_statistics[60508] = {
 	icon = "Props/yaoqinghan",
 	id = 60508,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Pola's Gift (6th Anniversary)",
@@ -94282,6 +94620,7 @@ _G.pg.base.item_data_statistics[60508] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[69959] = {
@@ -94291,7 +94630,6 @@ _G.pg.base.item_data_statistics[69959] = {
 	icon = "Props/30005",
 	id = 69959,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Mystery T5 Tech Pack",
@@ -94315,6 +94653,7 @@ _G.pg.base.item_data_statistics[69959] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81200] = {
@@ -94324,7 +94663,6 @@ _G.pg.base.item_data_statistics[81200] = {
 	icon = "Props/fudai9",
 	id = 81200,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Resplendent Night Lucky Bag I",
@@ -94381,6 +94719,7 @@ _G.pg.base.item_data_statistics[81200] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81201] = {
@@ -94390,7 +94729,6 @@ _G.pg.base.item_data_statistics[81201] = {
 	icon = "Props/fudai10",
 	id = 81201,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Resplendent Night Lucky Bag II",
@@ -94447,6 +94785,7 @@ _G.pg.base.item_data_statistics[81201] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81202] = {
@@ -94456,7 +94795,6 @@ _G.pg.base.item_data_statistics[81202] = {
 	icon = "Props/fudai11",
 	id = 81202,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Lucky Box 2024 A",
@@ -94513,6 +94851,7 @@ _G.pg.base.item_data_statistics[81202] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81203] = {
@@ -94522,7 +94861,6 @@ _G.pg.base.item_data_statistics[81203] = {
 	icon = "Props/fudai12",
 	id = 81203,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Lucky Box 2024 B",
@@ -94579,6 +94917,7 @@ _G.pg.base.item_data_statistics[81203] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81204] = {
@@ -94588,7 +94927,6 @@ _G.pg.base.item_data_statistics[81204] = {
 	icon = "Props/fudai13",
 	id = 81204,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Swimsuit Lucky Bag 2024",
@@ -94645,6 +94983,7 @@ _G.pg.base.item_data_statistics[81204] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81205] = {
@@ -94654,7 +94993,6 @@ _G.pg.base.item_data_statistics[81205] = {
 	icon = "Props/fudai14",
 	id = 81205,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Exquisite Lucky Envelope 2024",
@@ -94711,6 +95049,7 @@ _G.pg.base.item_data_statistics[81205] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81206] = {
@@ -94720,7 +95059,6 @@ _G.pg.base.item_data_statistics[81206] = {
 	icon = "Props/fudai15",
 	id = 81206,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Dreamland Lucky Bag A",
@@ -94777,6 +95115,7 @@ _G.pg.base.item_data_statistics[81206] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81207] = {
@@ -94786,7 +95125,6 @@ _G.pg.base.item_data_statistics[81207] = {
 	icon = "Props/fudai16",
 	id = 81207,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Dreamland Lucky Bag B",
@@ -94843,6 +95181,7 @@ _G.pg.base.item_data_statistics[81207] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81400] = {
@@ -94852,7 +95191,6 @@ _G.pg.base.item_data_statistics[81400] = {
 	icon = "Props/fudai84",
 	id = 81400,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Cyber City Lucky Box",
@@ -94909,6 +95247,7 @@ _G.pg.base.item_data_statistics[81400] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81401] = {
@@ -94918,7 +95257,6 @@ _G.pg.base.item_data_statistics[81401] = {
 	icon = "Props/fudai85",
 	id = 81401,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Adventurer's Lucky Chest",
@@ -94975,6 +95313,7 @@ _G.pg.base.item_data_statistics[81401] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81402] = {
@@ -94984,7 +95323,6 @@ _G.pg.base.item_data_statistics[81402] = {
 	icon = "Props/fudai86",
 	id = 81402,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Lavish Lucky Boombox",
@@ -95041,6 +95379,7 @@ _G.pg.base.item_data_statistics[81402] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81403] = {
@@ -95050,7 +95389,6 @@ _G.pg.base.item_data_statistics[81403] = {
 	icon = "Props/fudai87",
 	id = 81403,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "School Time Lucky Bag",
@@ -95107,6 +95445,7 @@ _G.pg.base.item_data_statistics[81403] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81404] = {
@@ -95116,7 +95455,6 @@ _G.pg.base.item_data_statistics[81404] = {
 	icon = "Props/fudai88",
 	id = 81404,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "High Speed Lucky Bag",
@@ -95173,6 +95511,7 @@ _G.pg.base.item_data_statistics[81404] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81405] = {
@@ -95182,7 +95521,6 @@ _G.pg.base.item_data_statistics[81405] = {
 	icon = "Props/fudai89",
 	id = 81405,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "6th Anniversary Lucky Barrel",
@@ -95239,6 +95577,7 @@ _G.pg.base.item_data_statistics[81405] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81406] = {
@@ -95248,7 +95587,6 @@ _G.pg.base.item_data_statistics[81406] = {
 	icon = "Props/fudai90",
 	id = 81406,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Halloween Lucky Box 2024",
@@ -95305,6 +95643,7 @@ _G.pg.base.item_data_statistics[81406] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81407] = {
@@ -95314,7 +95653,6 @@ _G.pg.base.item_data_statistics[81407] = {
 	icon = "Props/pack_2024_98",
 	id = 81407,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Choose-Your-Own Gift Pack I",
@@ -95356,6 +95694,7 @@ _G.pg.base.item_data_statistics[81407] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81408] = {
@@ -95365,7 +95704,6 @@ _G.pg.base.item_data_statistics[81408] = {
 	icon = "Props/pack_2024_198",
 	id = 81408,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Choose-Your-Own Gift Pack II",
@@ -95412,6 +95750,7 @@ _G.pg.base.item_data_statistics[81408] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81409] = {
@@ -95421,7 +95760,6 @@ _G.pg.base.item_data_statistics[81409] = {
 	icon = "Props/pack_2024_328",
 	id = 81409,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Choose-Your-Own Gift Pack III",
@@ -95483,6 +95821,7 @@ _G.pg.base.item_data_statistics[81409] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81410] = {
@@ -95492,7 +95831,6 @@ _G.pg.base.item_data_statistics[81410] = {
 	icon = "Props/pack_day1",
 	id = 81410,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Paid Pack (Day 1)",
@@ -95506,7 +95844,7 @@ _G.pg.base.item_data_statistics[81410] = {
 	time_limit = 0,
 	type = 17,
 	usage = "usage_drop",
-	usage_arg = "9346",
+	usage_arg = "904552",
 	virtual_type = 0,
 	display_icon = {
 		{
@@ -95524,6 +95862,7 @@ _G.pg.base.item_data_statistics[81410] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81411] = {
@@ -95533,7 +95872,6 @@ _G.pg.base.item_data_statistics[81411] = {
 	icon = "Props/pack_day2",
 	id = 81411,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Paid Pack (Day 2)",
@@ -95547,7 +95885,7 @@ _G.pg.base.item_data_statistics[81411] = {
 	time_limit = 0,
 	type = 17,
 	usage = "usage_drop",
-	usage_arg = "9347",
+	usage_arg = "904553",
 	virtual_type = 0,
 	display_icon = {
 		{
@@ -95560,6 +95898,7 @@ _G.pg.base.item_data_statistics[81411] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81412] = {
@@ -95569,7 +95908,6 @@ _G.pg.base.item_data_statistics[81412] = {
 	icon = "Props/pack_day3",
 	id = 81412,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Paid Pack (Day 3)",
@@ -95583,7 +95921,7 @@ _G.pg.base.item_data_statistics[81412] = {
 	time_limit = 0,
 	type = 17,
 	usage = "usage_drop",
-	usage_arg = "9348",
+	usage_arg = "904554",
 	virtual_type = 0,
 	display_icon = {
 		{
@@ -95601,6 +95939,7 @@ _G.pg.base.item_data_statistics[81412] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81413] = {
@@ -95610,7 +95949,6 @@ _G.pg.base.item_data_statistics[81413] = {
 	icon = "Props/pack_day4",
 	id = 81413,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Paid Pack (Day 4)",
@@ -95624,7 +95962,7 @@ _G.pg.base.item_data_statistics[81413] = {
 	time_limit = 0,
 	type = 17,
 	usage = "usage_drop",
-	usage_arg = "9349",
+	usage_arg = "904555",
 	virtual_type = 0,
 	display_icon = {
 		{
@@ -95642,6 +95980,7 @@ _G.pg.base.item_data_statistics[81413] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81414] = {
@@ -95651,7 +95990,6 @@ _G.pg.base.item_data_statistics[81414] = {
 	icon = "Props/pack_day5",
 	id = 81414,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Paid Pack (Day 5)",
@@ -95665,7 +96003,7 @@ _G.pg.base.item_data_statistics[81414] = {
 	time_limit = 0,
 	type = 17,
 	usage = "usage_drop",
-	usage_arg = "9350",
+	usage_arg = "904556",
 	virtual_type = 0,
 	display_icon = {
 		{
@@ -95678,6 +96016,7 @@ _G.pg.base.item_data_statistics[81414] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81415] = {
@@ -95687,7 +96026,6 @@ _G.pg.base.item_data_statistics[81415] = {
 	icon = "Props/pack_day6",
 	id = 81415,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Paid Pack (Day 6)",
@@ -95701,7 +96039,7 @@ _G.pg.base.item_data_statistics[81415] = {
 	time_limit = 0,
 	type = 17,
 	usage = "usage_drop",
-	usage_arg = "9351",
+	usage_arg = "904557",
 	virtual_type = 0,
 	display_icon = {
 		{
@@ -95719,6 +96057,7 @@ _G.pg.base.item_data_statistics[81415] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81416] = {
@@ -95728,7 +96067,6 @@ _G.pg.base.item_data_statistics[81416] = {
 	icon = "Props/pack_day7",
 	id = 81416,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Daily Paid Pack (Day 7)",
@@ -95742,7 +96080,7 @@ _G.pg.base.item_data_statistics[81416] = {
 	time_limit = 0,
 	type = 17,
 	usage = "usage_drop",
-	usage_arg = "9352",
+	usage_arg = "904558",
 	virtual_type = 0,
 	display_icon = {
 		{
@@ -95760,16 +96098,16 @@ _G.pg.base.item_data_statistics[81416] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81417] = {
 	compose_number = 0,
-	display = "Contains a random unowned Live2D skin of \"Black Friday Limited-time Rerun Outfits\" (Commanders that have owned all Live2D skins will get 1080 Gems instead), 2000x Coins, 1000x Oil, 20x Cognitive Chips.",
+	display = "Contains a random unowned Live2D skin of \"Black Friday Limited-time Rerun Outfits\" (Commanders that have owned all Live2D skins will get 1080 Gems instead)",
 	display_effect = "",
 	icon = "Props/fudai_L2d_new",
 	id = 81417,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Live2D Surprise Lucky Bag (2024)",
@@ -95879,6 +96217,7 @@ _G.pg.base.item_data_statistics[81417] = {
 			102134,
 		},
 	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81418] = {
@@ -95888,7 +96227,6 @@ _G.pg.base.item_data_statistics[81418] = {
 	icon = "Props/fudai92",
 	id = 81418,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Black Friday Lucky Bag (2024)",
@@ -95945,6 +96283,7 @@ _G.pg.base.item_data_statistics[81418] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99958] = {
@@ -95954,7 +96293,6 @@ _G.pg.base.item_data_statistics[99958] = {
 	icon = "Props/wuzhounian_us_invite",
 	id = 99958,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "5th Anniversary Invitation",
@@ -95975,6 +96313,7 @@ _G.pg.base.item_data_statistics[99958] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99960] = {
@@ -95984,7 +96323,6 @@ _G.pg.base.item_data_statistics[99960] = {
 	icon = "Props/54011",
 	id = 99960,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Escort Mission Lv. 10 Compensation Box",
@@ -96005,6 +96343,7 @@ _G.pg.base.item_data_statistics[99960] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99961] = {
@@ -96014,7 +96353,6 @@ _G.pg.base.item_data_statistics[99961] = {
 	icon = "Props/54011",
 	id = 99961,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Escort Mission Lv. 10 Compensation Box",
@@ -96035,6 +96373,7 @@ _G.pg.base.item_data_statistics[99961] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99962] = {
@@ -96044,7 +96383,6 @@ _G.pg.base.item_data_statistics[99962] = {
 	icon = "Props/54012",
 	id = 99962,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Escort Mission Lv. 25 Compensation Box",
@@ -96065,6 +96403,7 @@ _G.pg.base.item_data_statistics[99962] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99963] = {
@@ -96074,7 +96413,6 @@ _G.pg.base.item_data_statistics[99963] = {
 	icon = "Props/54012",
 	id = 99963,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Escort Mission Lv. 25 Compensation Box",
@@ -96095,6 +96433,7 @@ _G.pg.base.item_data_statistics[99963] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99964] = {
@@ -96104,7 +96443,6 @@ _G.pg.base.item_data_statistics[99964] = {
 	icon = "Props/54012",
 	id = 99964,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Escort Mission Lv. 35 Compensation Box",
@@ -96125,6 +96463,7 @@ _G.pg.base.item_data_statistics[99964] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99965] = {
@@ -96134,7 +96473,6 @@ _G.pg.base.item_data_statistics[99965] = {
 	icon = "Props/54012",
 	id = 99965,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Escort Mission Lv. 35 Compensation Box",
@@ -96155,6 +96493,7 @@ _G.pg.base.item_data_statistics[99965] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99966] = {
@@ -96164,7 +96503,6 @@ _G.pg.base.item_data_statistics[99966] = {
 	icon = "Props/54013",
 	id = 99966,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Escort Mission Lv. 50 Compensation Box",
@@ -96185,6 +96523,7 @@ _G.pg.base.item_data_statistics[99966] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99967] = {
@@ -96194,7 +96533,6 @@ _G.pg.base.item_data_statistics[99967] = {
 	icon = "Props/54013",
 	id = 99967,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Escort Mission Lv. 50 Compensation Box",
@@ -96215,6 +96553,7 @@ _G.pg.base.item_data_statistics[99967] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99968] = {
@@ -96224,7 +96563,6 @@ _G.pg.base.item_data_statistics[99968] = {
 	icon = "Props/54013",
 	id = 99968,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Escort Mission Lv. 75 Compensation Box",
@@ -96245,6 +96583,7 @@ _G.pg.base.item_data_statistics[99968] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99969] = {
@@ -96254,7 +96593,6 @@ _G.pg.base.item_data_statistics[99969] = {
 	icon = "Props/54013",
 	id = 99969,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Escort Mission Lv. 75 Compensation Box",
@@ -96275,6 +96613,7 @@ _G.pg.base.item_data_statistics[99969] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99970] = {
@@ -96284,7 +96623,6 @@ _G.pg.base.item_data_statistics[99970] = {
 	icon = "Props/54001",
 	id = 99970,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Advance Mission Lv. 10 Compensation Box",
@@ -96305,6 +96643,7 @@ _G.pg.base.item_data_statistics[99970] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99971] = {
@@ -96314,7 +96653,6 @@ _G.pg.base.item_data_statistics[99971] = {
 	icon = "Props/54002",
 	id = 99971,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Advance Mission Lv. 25 Compensation Box",
@@ -96335,6 +96673,7 @@ _G.pg.base.item_data_statistics[99971] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99972] = {
@@ -96344,7 +96683,6 @@ _G.pg.base.item_data_statistics[99972] = {
 	icon = "Props/54002",
 	id = 99972,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Advance Mission Lv. 35 Compensation Box",
@@ -96365,6 +96703,7 @@ _G.pg.base.item_data_statistics[99972] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99973] = {
@@ -96374,7 +96713,6 @@ _G.pg.base.item_data_statistics[99973] = {
 	icon = "Props/54003",
 	id = 99973,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Advance Mission Lv. 50 Compensation Box",
@@ -96395,6 +96733,7 @@ _G.pg.base.item_data_statistics[99973] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99974] = {
@@ -96404,7 +96743,6 @@ _G.pg.base.item_data_statistics[99974] = {
 	icon = "Props/54003",
 	id = 99974,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Advance Mission Lv. 70 Compensation Box",
@@ -96425,6 +96763,7 @@ _G.pg.base.item_data_statistics[99974] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99995] = {
@@ -96434,7 +96773,6 @@ _G.pg.base.item_data_statistics[99995] = {
 	icon = "props/giftbox",
 	id = 99995,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "\"Confluence of Nothingness\" Compensation",
@@ -96455,6 +96793,7 @@ _G.pg.base.item_data_statistics[99995] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[100011] = {
@@ -96464,7 +96803,6 @@ _G.pg.base.item_data_statistics[100011] = {
 	icon = "SquareIcon/lisailiu",
 	id = 100011,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Goddess of Light and Justice",
@@ -96485,6 +96823,7 @@ _G.pg.base.item_data_statistics[100011] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[100012] = {
@@ -96494,7 +96833,6 @@ _G.pg.base.item_data_statistics[100012] = {
 	icon = "SquareIcon/chicheng",
 	id = 100012,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Goddess of Fire and Purity",
@@ -96515,6 +96853,7 @@ _G.pg.base.item_data_statistics[100012] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[100013] = {
@@ -96524,7 +96863,6 @@ _G.pg.base.item_data_statistics[100013] = {
 	icon = "SquareIcon/kelaimengsuo",
 	id = 100013,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Goddess of Darkness and Conspiracy",
@@ -96545,6 +96883,7 @@ _G.pg.base.item_data_statistics[100013] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[100014] = {
@@ -96554,7 +96893,6 @@ _G.pg.base.item_data_statistics[100014] = {
 	icon = "SquareIcon/bisimaiZ",
 	id = 100014,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Goddess of Steel and Dragons",
@@ -96575,6 +96913,7 @@ _G.pg.base.item_data_statistics[100014] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[100015] = {
@@ -96584,7 +96923,6 @@ _G.pg.base.item_data_statistics[100015] = {
 	icon = "SquareIcon/weineituo",
 	id = 100015,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Goddess of Revivals and Baths",
@@ -96605,6 +96943,7 @@ _G.pg.base.item_data_statistics[100015] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[100016] = {
@@ -96614,7 +96953,6 @@ _G.pg.base.item_data_statistics[100016] = {
 	icon = "SquareIcon/huangjiacaifu",
 	id = 100016,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Goddess of Pioneering and Adventure",
@@ -96635,6 +96973,7 @@ _G.pg.base.item_data_statistics[100016] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[100017] = {
@@ -96644,7 +96983,6 @@ _G.pg.base.item_data_statistics[100017] = {
 	icon = "SquareIcon/tbniang1",
 	id = 100017,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Goddess of Order and Rules",
@@ -96665,6 +97003,7 @@ _G.pg.base.item_data_statistics[100017] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[100018] = {
@@ -96674,7 +97013,6 @@ _G.pg.base.item_data_statistics[100018] = {
 	icon = "SquareIcon/suweiaitongmengnew",
 	id = 100018,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Goddess of Unity and Toughness",
@@ -96695,6 +97033,7 @@ _G.pg.base.item_data_statistics[100018] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[100019] = {
@@ -96704,7 +97043,6 @@ _G.pg.base.item_data_statistics[100019] = {
 	icon = "SquareIcon/mingshi",
 	id = 100019,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Goddess of Luck and Riches",
@@ -96725,6 +97063,7 @@ _G.pg.base.item_data_statistics[100019] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[100020] = {
@@ -96734,7 +97073,6 @@ _G.pg.base.item_data_statistics[100020] = {
 	icon = "SquareIcon/yilishabai",
 	id = 100020,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Goddess of Desserts and Tea Parties",
@@ -96755,6 +97093,7 @@ _G.pg.base.item_data_statistics[100020] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[100021] = {
@@ -96764,7 +97103,6 @@ _G.pg.base.item_data_statistics[100021] = {
 	icon = "SquareIcon/yixian",
 	id = 100021,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Goddess of Peace and Protection",
@@ -96785,6 +97123,7 @@ _G.pg.base.item_data_statistics[100021] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[100022] = {
@@ -96794,7 +97133,6 @@ _G.pg.base.item_data_statistics[100022] = {
 	icon = "SquareIcon/salatuojia",
 	id = 100022,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Goddess of Beginnings and Ends",
@@ -96815,6 +97153,7 @@ _G.pg.base.item_data_statistics[100022] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[100023] = {
@@ -96824,7 +97163,6 @@ _G.pg.base.item_data_statistics[100023] = {
 	icon = "SquareIcon/qiye_dark",
 	id = 100023,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Goddess of War",
@@ -96845,6 +97183,7 @@ _G.pg.base.item_data_statistics[100023] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[100024] = {
@@ -96854,7 +97193,6 @@ _G.pg.base.item_data_statistics[100024] = {
 	icon = "SquareIcon/hailunna_alter",
 	id = 100024,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Goddess of Wisdom",
@@ -96875,6 +97213,7 @@ _G.pg.base.item_data_statistics[100024] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[100025] = {
@@ -96884,7 +97223,6 @@ _G.pg.base.item_data_statistics[100025] = {
 	icon = "SquareIcon/unknown2",
 	id = 100025,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Goddess of Joy",
@@ -96905,5 +97243,6 @@ _G.pg.base.item_data_statistics[100025] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 

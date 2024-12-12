@@ -3,16 +3,29 @@ pg.activity_banner = {
 	{
 		id = 1,
 		pic = "temp1",
+		time = "stop",
 		type = 2,
 		param = {
-			"scene dailylevel"
+			"scene charge",
+			{
+				wrap = 2
+			}
+		}
+	},
+	{
+		id = 2,
+		pic = "temp2",
+		type = 2,
+		param = {
+			"scene skinshop",
+			{}
 		},
 		time = {
 			{
 				{
 					2024,
 					12,
-					5
+					12
 				},
 				{
 					0,
@@ -24,7 +37,7 @@ pg.activity_banner = {
 				{
 					2024,
 					12,
-					11
+					19
 				},
 				{
 					23,
@@ -35,8 +48,182 @@ pg.activity_banner = {
 		}
 	},
 	{
-		id = 2,
-		pic = "temp2",
+		id = 3,
+		pic = "temp3",
+		time = "stop",
+		type = 2,
+		param = {
+			"scene skinshop",
+			{}
+		}
+	},
+	{
+		param = "5699",
+		id = 4,
+		pic = "temp4",
+		type = 3,
+		time = {
+			{
+				{
+					2024,
+					12,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					1,
+					8
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		param = "5700",
+		id = 5,
+		pic = "temp6",
+		type = 3,
+		time = {
+			{
+				{
+					2024,
+					12,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					12,
+					18
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		param = "5698",
+		id = 6,
+		pic = "temp5",
+		type = 3,
+		time = {
+			{
+				{
+					2024,
+					12,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					1,
+					8
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 7,
+		pic = "temp7",
+		type = 2,
+		param = {
+			"metacharacter"
+		},
+		time = {
+			{
+				{
+					2024,
+					12,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					1,
+					8
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 8,
+		pic = "temp8",
+		type = 2,
+		param = {
+			"crusing"
+		},
+		time = {
+			{
+				{
+					2024,
+					12,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					12,
+					19
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 9,
+		pic = "temp9",
 		type = 2,
 		param = {
 			"scene equip",
@@ -62,125 +249,7 @@ pg.activity_banner = {
 				{
 					2024,
 					12,
-					11
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		id = 3,
-		pic = "temp3",
-		time = "stop",
-		type = 2,
-		param = {
-			"scene skinshop",
-			{}
-		}
-	},
-	{
-		id = 4,
-		pic = "temp4",
-		time = "stop",
-		type = 2,
-		param = {
-			"scene get boat",
-			{
-				projectName = "new",
-				page = 1
-			}
-		}
-	},
-	{
-		id = 5,
-		pic = "temp5",
-		time = "stop",
-		type = 2,
-		param = {
-			"puzzle connect"
-		}
-	},
-	{
-		id = 6,
-		pic = "temp6",
-		time = "stop",
-		type = 2,
-		param = {
-			"TOLOVE_COLLAB_BACKHILL"
-		}
-	},
-	{
-		id = 7,
-		pic = "temp7",
-		type = 2,
-		param = {
-			"crusing"
-		},
-		time = {
-			{
-				{
-					2024,
-					12,
-					1
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					12,
-					11
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		id = 8,
-		pic = "temp8",
-		time = "stop",
-		type = 2,
-		param = {
-			"scene court yard"
-		}
-	},
-	{
-		id = 9,
-		pic = "temp9",
-		type = 2,
-		param = {
-			"dorm 3d select"
-		},
-		time = {
-			{
-				{
-					2024,
-					12,
-					1
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					12,
-					11
+					19
 				},
 				{
 					23,
@@ -192,10 +261,35 @@ pg.activity_banner = {
 	},
 	[90] = {
 		param = "",
-		time = "stop",
-		type = 9,
 		id = 90,
-		pic = "temp99"
+		pic = "temp99",
+		type = 9,
+		time = {
+			{
+				{
+					2024,
+					12,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					12,
+					19
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
 	},
 	[91] = {
 		param = "",
@@ -244,12 +338,14 @@ pg.activity_banner = {
 			1,
 			2,
 			3,
-			4,
-			5,
-			6,
 			7,
 			8,
 			9
+		},
+		[3] = {
+			4,
+			5,
+			6
 		},
 		[9] = {
 			90,
