@@ -164488,7 +164488,7 @@ _G.pg.base.item_virtual_data_statistics[65061] = {
 }
 
 _G.pg.base.item_virtual_data_statistics[65063] = {
-	display = "用于「星光下的余晖」活动的常规兑换，活动结束后将会消失",
+	display = "\"Substellar Crepuscule\" event currency. Will be removed after the event ends.",
 	drop_gold_max = 0,
 	drop_oil_max = 0,
 	icon = "Props/65063",

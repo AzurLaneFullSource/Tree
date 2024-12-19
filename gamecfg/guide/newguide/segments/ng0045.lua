@@ -14,15 +14,12 @@ return {
 				uiset = {}
 			},
 			ui = {
+				eventPath = "/OverlayCamera/Overlay/UIMain/LevelInfoSPUI(Clone)/panel/Difficulty/Normal/Switch",
 				path = "OverlayCamera/Overlay/UIMain/LevelInfoSPUI(Clone)/panel/Difficulty/Normal",
-				pathIndex = -1,
 				fingerPos = {
 					posY = -20,
 					posX = 120
-				},
-				onClick = function()
-					return
-				end
+				}
 			}
 		}
 	}

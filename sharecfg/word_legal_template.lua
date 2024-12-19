@@ -1530,6 +1530,15 @@ function temp()
 			},
 			z = {
 				u = {
+					n = {
+						a = {
+							m = {
+								i = {
+									this = true
+								}
+							}
+						}
+					},
 					y = {
 						a = {
 							this = true
@@ -1848,6 +1857,19 @@ function temp()
 											}
 										}
 									}
+								}
+							}
+						}
+					}
+				}
+			},
+			i = {
+				s = {
+					b = {
+						u = {
+							r = {
+								g = {
+									this = true
 								}
 							}
 						}
@@ -3811,6 +3833,23 @@ function temp()
 							}
 						}
 					}
+				},
+				t = {
+					z = {
+						[" "] = {
+							R = {
+								u = {
+									m = {
+										e = {
+											y = {
+												this = true
+											}
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -4009,6 +4048,17 @@ function temp()
 									h = {
 										a = {
 											n = {
+												this = true
+											}
+										}
+									}
+								}
+							},
+							[" "] = {
+								M = {
+									E = {
+										T = {
+											A = {
 												this = true
 											}
 										}
@@ -4255,6 +4305,11 @@ function temp()
 								this = true
 							}
 						}
+					}
+				},
+				s = {
+					e = {
+						this = true
 					}
 				}
 			}
@@ -6610,6 +6665,17 @@ function temp()
 							h = {
 								a = {
 									n = {
+										this = true
+									}
+								}
+							}
+						}
+					},
+					[" "] = {
+						M = {
+							E = {
+								T = {
+									A = {
 										this = true
 									}
 								}
@@ -9165,6 +9231,19 @@ function temp()
 						}
 					}
 				}
+			},
+			t = {
+				a = {
+					r = {
+						a = {
+							s = {
+								e = {
+									this = true
+								}
+							}
+						}
+					}
+				}
 			}
 		},
 		h = {
@@ -9475,6 +9554,9 @@ function temp()
 		},
 		["1"] = {
 			this = true,
+			["1"] = {
+				this = true
+			},
 			["6"] = {
 				this = true
 			},
@@ -9508,6 +9590,9 @@ function temp()
 			["8"] = {
 				this = true
 			}
+		},
+		["9"] = {
+			this = true
 		},
 		["3"] = {
 			["5"] = {
@@ -9544,6 +9629,11 @@ function temp()
 						}
 					}
 				}
+			}
+		},
+		["5"] = {
+			["2"] = {
+				this = true
 			}
 		},
 		e = {

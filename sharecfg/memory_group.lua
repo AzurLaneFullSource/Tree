@@ -5038,7 +5038,7 @@ pg.base.memory_group = {
 		icon = "title_event",
 		type = 2,
 		link_event = 5721,
-		title = "港区时尚特刊·节日特辑",
+		title = "Port Fashion Collection: Holiday Special",
 		memories = {
 			4121,
 			4122,

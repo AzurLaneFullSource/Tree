@@ -7150,7 +7150,7 @@ pg.base.ship_skin_template_18 = {
 	},
 	[900468] = {
 		ship_group = 900468,
-		name = "星之兽",
+		name = "Star Beast",
 		hand_id = 1,
 		bgm = "",
 		l2d_drag_rate = "",
@@ -7262,7 +7262,7 @@ pg.base.ship_skin_template_18 = {
 	},
 	[900469] = {
 		ship_group = 900469,
-		name = "审判机·「魔术师」",
+		name = "Arbiter: The Magician I",
 		hand_id = 1,
 		bgm = "",
 		l2d_drag_rate = "",
