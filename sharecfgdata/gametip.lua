@@ -27465,6 +27465,18 @@ _G.pg.base.gametip.notify_clock_button = {
 	tip = "Enable alarm",
 }
 
+_G.pg.base.gametip.skin_shop_nonuse_label = {
+	tip = "Do not apply discount",
+}
+
+_G.pg.base.gametip.skin_shop_use_label = {
+	tip = "Apply discount",
+}
+
+_G.pg.base.gametip.skin_shop_discount_item_link = {
+	tip = "<color=#92fc63>Discount coupon</color> <color=#ffea00>-$1</color>",
+}
+
 _G.pg.base.gametip.help_starLightAlbum = {
 	tip = {
 		{

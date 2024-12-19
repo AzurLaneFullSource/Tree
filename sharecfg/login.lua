@@ -1811,11 +1811,37 @@ pg.login = {
 	},
 	[61] = {
 		id = 61,
-		date = "stop",
 		op_play = 1,
 		login_static = "login",
 		login_cri = "",
 		bgm = "",
+		date = {
+			"timer",
+			{
+				{
+					2024,
+					12,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					12,
+					25
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
 		op_time = {
 			{
 				{
