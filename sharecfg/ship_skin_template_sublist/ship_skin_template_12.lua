@@ -834,36 +834,40 @@ pg.base.ship_skin_template_12 = {
 	[402111] = {
 		ship_group = 40211,
 		name = "Endurance Training (Gone Wrong)",
-		l2d_se = "",
 		hand_id = 1,
 		bgm = "",
-		illustrator2 = -1,
-		special_effects = "",
-		desc = "C-Commander... Huh? If we're training, I should call you Master...? M-Master... You don't have to stare. Let's just get started, please...",
-		group_index = 1,
 		l2d_drag_rate = "",
-		painting = "duyisibao_2",
-		gyro = 0,
-		rarity_bg = "",
-		l2d_ignore_drag = 0,
-		shop_type_id = 16,
-		prefab = "duyisibao_2",
-		main_UI_FX = "",
-		lip_smoothing = 0,
-		time = "",
-		voice_actor = 338,
-		illustrator = -1,
-		bg = "145",
+		illustrator2 = -1,
 		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 71082,
+		painting = "duyisibao_2",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 16,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "145",
 		spine_use_live2d = 0,
 		spine_action_offset = false,
-		lip_sync_gain = 0,
 		skin_type = 0,
-		live2d_offset_profile = "",
 		id = 402111,
 		voice_actor_2 = -1,
-		shop_id = 71082,
+		prefab = "duyisibao_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "C-Commander... Huh? If we're training, I should call you Master...? M-Master... You don't have to stare. Let's just get started, please...",
+		voice_actor = 338,
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
 		show_skin = "stand",
+		ship_l2d_id = "",
 		tag = {
 			6,
 			2
@@ -940,45 +944,6 @@ pg.base.ship_skin_template_12 = {
 				}
 			}
 		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			use_event = true
-		},
-		l2d_para_range = {
-			ParamAngleX = {
-				-20,
-				20
-			},
-			ParamEyeBallX = {
-				-0.6,
-				0.3
-			},
-			ParamEyeBallY = {
-				-0.5,
-				0.5
-			},
-			ParamBodyAngleX = {
-				-8,
-				8
-			},
-			ParamBodyAngleY = {
-				-5,
-				5
-			}
-		},
 		spine_offset = {
 			{
 				33.75,
@@ -986,12 +951,8 @@ pg.base.ship_skin_template_12 = {
 				0
 			},
 			{
-				0.99
+				0.49
 			}
-		},
-		ship_l2d_id = {
-			4021011,
-			4021012
 		}
 	},
 	[403010] = {

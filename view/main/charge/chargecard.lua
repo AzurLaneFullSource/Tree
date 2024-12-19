@@ -52,7 +52,9 @@ end
 function var0_0.update(arg0_2, arg1_2, arg2_2, arg3_2)
 	arg0_2.goods = arg1_2
 
-	setActive(arg0_2.shipIcon, false)
+	if not IsNil(arg0_2.shipIcon) then
+		setActive(arg0_2.shipIcon, false)
+	end
 
 	local var0_2 = arg1_2:isChargeType() and arg1_2:getShowType() ~= ""
 
@@ -248,6 +250,10 @@ function var0_0.updateCharge(arg0_3, arg1_3, arg2_3, arg3_3)
 end
 
 function var0_0.UpdateShipIcon(arg0_6, arg1_6)
+	if IsNil(arg0_6.shipIcon) then
+		return
+	end
+
 	setActive(arg0_6.shipIcon, true)
 
 	local var0_6 = arg0_6.shipIcon:Find("icon"):GetComponent(typeof(Image))

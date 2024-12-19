@@ -96666,7 +96666,7 @@ _G.pg.base.item_data_statistics[81410] = {
 	time_limit = 0,
 	type = 17,
 	usage = "usage_drop",
-	usage_arg = "904552",
+	usage_arg = "9346",
 	virtual_type = 0,
 	display_icon = {
 		{
@@ -96707,7 +96707,7 @@ _G.pg.base.item_data_statistics[81411] = {
 	time_limit = 0,
 	type = 17,
 	usage = "usage_drop",
-	usage_arg = "904553",
+	usage_arg = "9347",
 	virtual_type = 0,
 	display_icon = {
 		{
@@ -96743,7 +96743,7 @@ _G.pg.base.item_data_statistics[81412] = {
 	time_limit = 0,
 	type = 17,
 	usage = "usage_drop",
-	usage_arg = "904554",
+	usage_arg = "9348",
 	virtual_type = 0,
 	display_icon = {
 		{
@@ -96784,7 +96784,7 @@ _G.pg.base.item_data_statistics[81413] = {
 	time_limit = 0,
 	type = 17,
 	usage = "usage_drop",
-	usage_arg = "904555",
+	usage_arg = "9349",
 	virtual_type = 0,
 	display_icon = {
 		{
@@ -96825,7 +96825,7 @@ _G.pg.base.item_data_statistics[81414] = {
 	time_limit = 0,
 	type = 17,
 	usage = "usage_drop",
-	usage_arg = "904556",
+	usage_arg = "9350",
 	virtual_type = 0,
 	display_icon = {
 		{
@@ -96861,7 +96861,7 @@ _G.pg.base.item_data_statistics[81415] = {
 	time_limit = 0,
 	type = 17,
 	usage = "usage_drop",
-	usage_arg = "904557",
+	usage_arg = "9351",
 	virtual_type = 0,
 	display_icon = {
 		{
@@ -96902,7 +96902,7 @@ _G.pg.base.item_data_statistics[81416] = {
 	time_limit = 0,
 	type = 17,
 	usage = "usage_drop",
-	usage_arg = "904558",
+	usage_arg = "9352",
 	virtual_type = 0,
 	display_icon = {
 		{

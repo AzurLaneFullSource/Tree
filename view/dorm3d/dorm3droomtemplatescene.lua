@@ -1638,7 +1638,14 @@ function var0_0.Update(arg0_108)
 						end
 
 						if var0_114 then
-							setLocalPosition(arg2_114, arg0_111:GetLocalPosition(arg0_111:GetScreenPosition(var0_114.position), var1_111) + var1_114)
+							local var8_114 = var0_114.position
+							local var9_114 = var0_114:GetComponent(typeof(UnityEngine.Collider))
+
+							if var9_114 then
+								var8_114 = var9_114.bounds.center
+							end
+
+							setLocalPosition(arg2_114, arg0_111:GetLocalPosition(arg0_111:GetScreenPosition(var8_114), var1_111) + var1_114)
 						end
 
 						setActive(arg2_114, var0_114)

@@ -160304,6 +160304,35 @@ _G.pg.base.equip_data_statistics[170652] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[180000] = {
+	ammo = 3,
+	descrip = "默认装备",
+	icon = "1",
+	id = 180000,
+	name = "弗里茨副炮",
+	nationality = 4,
+	rarity = 1,
+	speciality = "<[LOCK]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 3,
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {
+		1,
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {},
+}
+
 _G.pg.base.equip_data_statistics[594017] = {
 	ammo = 2,
 	attribute_2 = "cannon",

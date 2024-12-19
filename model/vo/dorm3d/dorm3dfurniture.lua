@@ -135,6 +135,7 @@ function var0_0.SetViewedFlag(arg0_21)
 	local var0_21 = getProxy(PlayerProxy):getRawData().id
 
 	PlayerPrefs.SetInt(var0_21 .. "_dorm3dFurnitureViewed_" .. arg0_21, 1)
+	PlayerPrefs.Save()
 
 	return true
 end
@@ -155,6 +156,59 @@ function var0_0.IsTimelimitShopTip(arg0_22)
 
 			return var0_24:GetEndTime() > 0 and var0_24:InShopTime() and not _.detect(var0_23, function(arg0_25)
 				return arg0_25:GetConfigID() == arg0_24
+			end)
+		end)
+	end)
+end
+
+function var0_0.RecordLastTimelimitShopFurniture()
+	local var0_26 = getProxy(PlayerProxy):getRawData().id
+	local var1_26 = PlayerPrefs.GetInt(var0_26 .. "_dorm3dTimelimitFurniture", 0)
+	local var2_26 = var1_26
+	local var3_26 = underscore.values(getProxy(ApartmentProxy).roomData)
+
+	underscore.each(var3_26, function(arg0_27)
+		local var0_27 = pg.dorm3d_furniture_template.get_id_list_by_room_id[arg0_27:GetConfigID()] or {}
+
+		_.each(var0_27, function(arg0_28)
+			local var0_28 = Dorm3dFurniture.New({
+				configId = arg0_28
+			})
+
+			if var0_28:GetEndTime() > 0 and var0_28:InShopTime() then
+				var2_26 = math.max(var2_26, arg0_28)
+			end
+		end)
+	end)
+
+	if var2_26 <= var1_26 then
+		return
+	end
+
+	PlayerPrefs.SetInt(var0_26 .. "_dorm3dTimelimitFurniture", var2_26)
+	PlayerPrefs.Save()
+end
+
+function var0_0.IsOnceTimelimitShopTip()
+	local var0_29 = getProxy(PlayerProxy):getRawData().id
+	local var1_29 = PlayerPrefs.GetInt(var0_29 .. "_dorm3dTimelimitFurniture", 0)
+	local var2_29 = underscore.values(getProxy(ApartmentProxy).roomData)
+
+	return underscore.any(var2_29, function(arg0_30)
+		local var0_30 = arg0_30:GetFurnitures()
+		local var1_30 = pg.dorm3d_furniture_template.get_id_list_by_room_id[arg0_30:GetConfigID()] or {}
+
+		return _.any(var1_30, function(arg0_31)
+			if arg0_31 <= var1_29 then
+				return
+			end
+
+			local var0_31 = Dorm3dFurniture.New({
+				configId = arg0_31
+			})
+
+			return var0_31:GetEndTime() > 0 and var0_31:InShopTime() and not _.detect(var0_30, function(arg0_32)
+				return arg0_32:GetConfigID() == arg0_31
 			end)
 		end)
 	end)
