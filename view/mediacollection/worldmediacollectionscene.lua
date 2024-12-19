@@ -3,6 +3,7 @@ local var0_0 = class("WorldMediaCollectionScene", require("view.base.BaseUI"))
 var0_0.PAGE_MEMORTY = 1
 var0_0.PAGE_FILE = 2
 var0_0.PAGE_RECORD = 3
+var0_0.PAGE_ALBUM = 4
 
 function var0_0.getUIName(arg0_1)
 	return "WorldMediaCollectionUI"
@@ -29,7 +30,8 @@ end
 local var1_0 = {
 	import(".WorldMediaCollectionMemoryLayer"),
 	import(".WorldMediaCollectionRecordLayer"),
-	import(".WorldMediaCollectionFileLayer")
+	import(".WorldMediaCollectionFileLayer"),
+	import(".WorldMediaCollectionAlbumLayer")
 }
 
 function var0_0.GetCurrentPage(arg0_4)

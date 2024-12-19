@@ -1258,11 +1258,7 @@ function var9_0.SpawnNPC(arg0_63, arg1_63, arg2_63)
 		})
 	end
 
-	local var4_63 = var5_0.CreateBattleUnitData(var0_63, var1_63, arg2_63:GetIFF(), arg1_63.monsterTemplateID, nil, var3_63, arg1_63.extraInfo, nil, nil, nil, nil, arg1_63.level)
-
-	var4_63:SetMaster(arg2_63)
-	var4_63:InheritMasterAttr()
-
+	local var4_63 = var5_0.CreateBattleUnitData(var0_63, var1_63, arg2_63:GetIFF(), arg1_63.monsterTemplateID, nil, var3_63, arg1_63.extraInfo, nil, nil, nil, nil, arg1_63.level, arg2_63)
 	local var5_63 = var4_63:GetMaxHP()
 
 	var4_63:SetCurrentHP(var5_63)

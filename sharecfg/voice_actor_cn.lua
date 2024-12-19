@@ -1687,5 +1687,21 @@ pg.voice_actor_CN = {
 	[434] = {
 		code = 434,
 		actor_name = "Kaori Nazuka"
+	},
+	[435] = {
+		code = 435,
+		actor_name = "Ayumi Tsunematsu"
+	},
+	[436] = {
+		code = 436,
+		actor_name = "Satomi Arai"
+	},
+	[437] = {
+		code = 437,
+		actor_name = "Mai Kanno"
+	},
+	[438] = {
+		code = 438,
+		actor_name = "Momoka Terasawa"
 	}
 }

@@ -10755,6 +10755,72 @@ pg.auto_pilot_template = {
 			}
 		}
 	},
+	[70280] = {
+		id = 70280,
+		name = "2024鲁梅活动 原地小幅度随机移动",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 5,
+				param = {
+					Z1 = -3,
+					Z2 = 3,
+					X2 = 3,
+					moveCount = 240,
+					duration = -1,
+					X1 = -3,
+					stopCount = 60
+				}
+			}
+		}
+	},
+	[70281] = {
+		id = 70281,
+		name = "2024鲁梅活动 BOSS 飞出屏幕外",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 1,
+				param = {
+					x = 80,
+					z = 50
+				}
+			},
+			{
+				index = 2,
+				to = 1,
+				type = 0,
+				param = {
+					duration = -1
+				}
+			}
+		}
+	},
+	[70282] = {
+		id = 70282,
+		name = "2024鲁梅活动 EX 希佩尔移动",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 5,
+				param = {
+					Z1 = -25,
+					Z2 = 25,
+					X2 = 10,
+					moveCount = 240,
+					duration = -1,
+					X1 = -10,
+					stopCount = 0
+				}
+			}
+		}
+	},
 	[75001] = {
 		id = 75001,
 		name = "弹幕挑战1boss",

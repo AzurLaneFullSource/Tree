@@ -17,6 +17,8 @@ var0_0.REDUCE_COMMANDER_TIME = "usage_reduce_commander_time"
 var0_0.INVITATION = "usage_invitation"
 var0_0.SKIN_SELECT = "usage_drop_appointed_skinexchange"
 var0_0.SKIN_SHOP_DISCOUNT = "usage_skin_discount"
+var0_0.USAGE_SHOP_DISCOUNT = "usage_shop_discount"
 var0_0.RANDOM_SKIN = "usage_drop_random_skin"
+var0_0.USAGE_SKIN_EXP = "usage_skin_exp"
 
 return var0_0

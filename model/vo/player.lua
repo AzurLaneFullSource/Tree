@@ -208,6 +208,9 @@ function var0_0.Ctor(arg0_8, arg1_8)
 	arg0_8.attireInfo = {}
 	arg0_8.attireInfo[AttireConst.TYPE_ICON_FRAME] = arg0_8.iconFrame
 	arg0_8.attireInfo[AttireConst.TYPE_CHAT_FRAME] = arg0_8.chatFrame
+	arg0_8.activityMedalGroupList = {}
+
+	arg0_8:updateMedalList(arg1_8.activity_medals or {})
 end
 
 function var0_0.updateAttireFrame(arg0_9, arg1_9, arg2_9)
@@ -1015,6 +1018,22 @@ end
 
 function var0_0.IsStoreLevelMax(arg0_103)
 	return not pg.mail_storeroom[arg0_103.mailStoreLevel + 1]
+end
+
+function var0_0.updateMedalList(arg0_104, arg1_104)
+	for iter0_104, iter1_104 in ipairs(arg1_104) do
+		local var0_104 = iter1_104.key
+		local var1_104 = iter1_104.value
+		local var2_104 = pg.activity_medal_template[var0_104].group
+
+		arg0_104.activityMedalGroupList[var2_104] = arg0_104.activityMedalGroupList[var2_104] or ActivityMedalGroup.New(var2_104)
+
+		arg0_104.activityMedalGroupList[var2_104]:UpdateMedal(var0_104, var1_104)
+	end
+end
+
+function var0_0.getActivityMedalGroup(arg0_105)
+	return arg0_105.activityMedalGroupList
 end
 
 return var0_0

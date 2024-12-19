@@ -72,7 +72,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_595",
 			hidePaintObj = true,
-			say = "The second – I am $1. Obviously.",
+			say = "The second – I am {playername}. Obviously.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

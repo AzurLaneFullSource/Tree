@@ -269,12 +269,68 @@ function var0_0.GetSkinShopDiscountItemList(arg0_22)
 	return var0_22
 end
 
-function var0_0.SetLoveLetterRepairInfo(arg0_23, arg1_23, arg2_23)
-	arg0_23.loveLetterRepairDic[arg1_23] = arg2_23
+function var0_0.GetExclusiveDiscountItem4Shop(arg0_23, arg1_23)
+	local var0_23 = {}
+
+	for iter0_23, iter1_23 in pairs(arg0_23.data) do
+		if iter1_23.count > 0 and iter1_23:IsExclusiveDiscountType() and iter1_23:CanUseForShop(arg1_23) then
+			table.insert(var0_23, iter1_23)
+		end
+	end
+
+	return var0_23
 end
 
-function var0_0.GetLoveLetterRepairInfo(arg0_24, arg1_24)
-	return arg0_24.loveLetterRepairDic[arg1_24]
+function var0_0.SetLoveLetterRepairInfo(arg0_24, arg1_24, arg2_24)
+	arg0_24.loveLetterRepairDic[arg1_24] = arg2_24
+end
+
+function var0_0.GetLoveLetterRepairInfo(arg0_25, arg1_25)
+	return arg0_25.loveLetterRepairDic[arg1_25]
+end
+
+function var0_0.GetSellingPrice(arg0_26, arg1_26)
+	local var0_26 = getProxy(BagProxy)
+	local var1_26 = {}
+
+	for iter0_26, iter1_26 in pairs(arg1_26) do
+		local var2_26 = var0_26:RawGetItemById(iter1_26.id):GetPrice() or {}
+		local var3_26 = var2_26[1] or 0
+		local var4_26 = var2_26[2] or 0
+
+		if not var1_26[var3_26] then
+			var1_26[var3_26] = 0
+		end
+
+		var1_26[var3_26] = var1_26[var3_26] + var4_26 * iter1_26.count
+	end
+
+	local var5_26 = {}
+
+	for iter2_26, iter3_26 in pairs(var1_26) do
+		if iter2_26 > 0 and iter3_26 > 0 then
+			table.insert(var5_26, {
+				DROP_TYPE_RESOURCE,
+				iter2_26,
+				iter3_26
+			})
+		end
+	end
+
+	return var5_26
+end
+
+function var0_0.GetSkinExperienceItems(arg0_27)
+	local var0_27 = {}
+	local var1_27 = getProxy(BagProxy):getRawData()
+
+	for iter0_27, iter1_27 in pairs(var1_27) do
+		if iter1_27.count > 0 and iter1_27:IsSkinExperienceType() then
+			table.insert(var0_27, iter1_27)
+		end
+	end
+
+	return var0_27
 end
 
 return var0_0

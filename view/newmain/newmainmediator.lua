@@ -19,6 +19,8 @@ var0_0.REFRESH_VIEW = "NewMainMediator:REFRESH_VIEW"
 var0_0.OPEN_DORM_SELECT_LAYER = "NewMainMediator.OPEN_DORM_SELECT_LAYER"
 var0_0.OPEN_KINK_BUTTON_LAYER = "NewMainMediator.OPEN_KINK_BUTTON_LAYER"
 var0_0.OPEN_Compensate = "NewMainMediator:OPEN_Compensate"
+var0_0.ON_DROP = "NewMainMediator:ON_DROP"
+var0_0.ON_AWRADS = "NewMainMediator:ON_AWRADS"
 
 function var0_0.register(arg0_1)
 	arg0_1:bind(var0_0.GO_SINGLE_ACTIVITY, function(arg0_2, arg1_2)
@@ -179,7 +181,9 @@ function var0_0.listNotificationInterests(arg0_20)
 		GAME.CHANGE_LIVINGAREA_COVER_DONE,
 		CompensateProxy.UPDATE_ATTACHMENT_COUNT,
 		CompensateProxy.All_Compensate_Remove,
-		GAME.ACT_INSTAGRAM_CHAT_DONE
+		GAME.ACT_INSTAGRAM_CHAT_DONE,
+		NewMainMediator.ON_DROP,
+		NewMainMediator.ON_AWRADS
 	}
 
 	for iter0_20, iter1_20 in pairs(pg.redDotHelper:GetNotifyType()) do
@@ -233,6 +237,10 @@ function var0_0.handleNotification(arg0_21, arg1_21)
 		if arg0_21.viewComponent.theme then
 			arg0_21.viewComponent.theme:Refresh(var2_21)
 		end
+	elseif var0_21 == NewMainMediator.ON_DROP then
+		arg0_21.viewComponent:emit(BaseUI.ON_DROP, var1_21)
+	elseif var0_21 == NewMainMediator.ON_AWRADS then
+		arg0_21.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_21.items, var1_21.callback)
 	end
 
 	arg0_21.viewComponent:emit(var0_21, var1_21)

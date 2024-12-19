@@ -131,13 +131,17 @@ function var0_0.CanUseVoucherType(arg0_14)
 	return arg0_14:StaticCanUseVoucherType(var0_14)
 end
 
-function var0_0.StaticCanUseVoucherType(arg0_15, arg1_15)
-	if #arg1_15 <= 0 then
+function var0_0.ExistExclusiveDiscountItem(arg0_15)
+	return #getProxy(BagProxy):GetExclusiveDiscountItem4Shop(arg0_15.id) > 0
+end
+
+function var0_0.StaticCanUseVoucherType(arg0_16, arg1_16)
+	if #arg1_16 <= 0 then
 		return false
 	end
 
-	for iter0_15, iter1_15 in ipairs(arg1_15) do
-		if iter1_15:CanUseForShop(arg0_15.id) then
+	for iter0_16, iter1_16 in ipairs(arg1_16) do
+		if iter1_16:CanUseForShop(arg0_16.id) then
 			return true
 		end
 	end
@@ -145,77 +149,77 @@ function var0_0.StaticCanUseVoucherType(arg0_15, arg1_15)
 	return false
 end
 
-function var0_0.GetVoucherIdList(arg0_16)
-	local var0_16 = {}
-	local var1_16 = getProxy(BagProxy):GetSkinShopDiscountItemList()
+function var0_0.GetVoucherIdList(arg0_17)
+	local var0_17 = {}
+	local var1_17 = getProxy(BagProxy):GetSkinShopDiscountItemList()
 
-	for iter0_16, iter1_16 in pairs(var1_16) do
-		if iter1_16:CanUseForShop(arg0_16.id) then
-			table.insert(var0_16, iter1_16.id)
+	for iter0_17, iter1_17 in pairs(var1_17) do
+		if iter1_17:CanUseForShop(arg0_17.id) then
+			table.insert(var0_17, iter1_17.id)
 		end
 	end
 
-	return var0_16
+	return var0_17
 end
 
-function var0_0.getLimitCount(arg0_17)
-	local var0_17 = arg0_17:getConfig("limit_args") or {}
+function var0_0.getLimitCount(arg0_18)
+	local var0_18 = arg0_18:getConfig("limit_args") or {}
 
-	for iter0_17, iter1_17 in ipairs(var0_17) do
-		if iter1_17[1] == "time" then
-			return iter1_17[2]
+	for iter0_18, iter1_18 in ipairs(var0_18) do
+		if iter1_18[1] == "time" then
+			return iter1_18[2]
 		end
 	end
 
 	return 0
 end
 
-function var0_0.GetDiscountItem(arg0_18)
-	if arg0_18:IsItemDiscountType() then
+function var0_0.GetDiscountItem(arg0_19)
+	if arg0_19:IsItemDiscountType() then
 		return SkinCouponActivity.StaticGetItemConfig()
 	end
 
 	return nil
 end
 
-function var0_0.isLevelLimit(arg0_19, arg1_19, arg2_19)
-	local var0_19, var1_19 = arg0_19:getLevelLimit()
+function var0_0.isLevelLimit(arg0_20, arg1_20, arg2_20)
+	local var0_20, var1_20 = arg0_20:getLevelLimit()
 
-	if arg2_19 and var1_19 then
+	if arg2_20 and var1_20 then
 		return false
 	end
 
-	return var0_19 > 0 and arg1_19 < var0_19
+	return var0_20 > 0 and arg1_20 < var0_20
 end
 
-function var0_0.getLevelLimit(arg0_20)
-	local var0_20 = arg0_20:getConfig("limit_args")
+function var0_0.getLevelLimit(arg0_21)
+	local var0_21 = arg0_21:getConfig("limit_args")
 
-	for iter0_20, iter1_20 in ipairs(var0_20) do
-		if type(iter1_20) == "table" and iter1_20[1] == "level" then
-			return iter1_20[2], iter1_20[3]
+	for iter0_21, iter1_21 in ipairs(var0_21) do
+		if type(iter1_21) == "table" and iter1_21[1] == "level" then
+			return iter1_21[2], iter1_21[3]
 		end
 	end
 
 	return 0
 end
 
-function var0_0.isTimeLimit(arg0_21)
-	local var0_21 = arg0_21:getLimitCount()
+function var0_0.isTimeLimit(arg0_22)
+	local var0_22 = arg0_22:getLimitCount()
 
-	return var0_21 <= 0 or var0_21 < arg0_21.buyCount
+	return var0_22 <= 0 or var0_22 < arg0_22.buyCount
 end
 
-function var0_0.getSkinId(arg0_22)
-	if arg0_22.type == Goods.TYPE_SKIN then
-		return arg0_22:getConfig("effect_args")[1]
+function var0_0.getSkinId(arg0_23)
+	if arg0_23.type == Goods.TYPE_SKIN then
+		return arg0_23:getConfig("effect_args")[1]
 	end
 
 	assert(false)
 end
 
-function var0_0.getDropInfo(arg0_23)
-	local var0_23 = switch(arg0_23:getConfig("effect_args"), {
+function var0_0.getDropInfo(arg0_24)
+	local var0_24 = switch(arg0_24:getConfig("effect_args"), {
 		ship_bag_size = function()
 			return {
 				count = 1,
@@ -259,97 +263,97 @@ function var0_0.getDropInfo(arg0_23)
 			}
 		end
 	}, function()
-		if arg0_23:getConfig("genre") == ShopArgs.WorldCollection then
+		if arg0_24:getConfig("genre") == ShopArgs.WorldCollection then
 			return {
 				type = DROP_TYPE_WORLD_ITEM,
-				id = arg0_23:getConfig("effect_args")[1],
-				count = arg0_23:getConfig("num")
+				id = arg0_24:getConfig("effect_args")[1],
+				count = arg0_24:getConfig("num")
 			}
-		elseif arg0_23:getConfig("genre") == ShopArgs.CruiseSkin then
+		elseif arg0_24:getConfig("genre") == ShopArgs.CruiseSkin then
 			return {
 				type = DROP_TYPE_SKIN,
-				id = arg0_23:getConfig("effect_args")[1],
-				count = arg0_23:getConfig("num")
+				id = arg0_24:getConfig("effect_args")[1],
+				count = arg0_24:getConfig("num")
 			}
-		elseif arg0_23:getConfig("genre") == ShopArgs.CruiseGearSkin then
+		elseif arg0_24:getConfig("genre") == ShopArgs.CruiseGearSkin then
 			return {
 				type = DROP_TYPE_EQUIPMENT_SKIN,
-				id = arg0_23:getConfig("effect_args")[1],
-				count = arg0_23:getConfig("num")
+				id = arg0_24:getConfig("effect_args")[1],
+				count = arg0_24:getConfig("num")
 			}
 		else
 			return {
-				type = arg0_23:getConfig("type"),
-				id = arg0_23:getConfig("effect_args")[1],
-				count = arg0_23:getConfig("num")
+				type = arg0_24:getConfig("type"),
+				id = arg0_24:getConfig("effect_args")[1],
+				count = arg0_24:getConfig("num")
 			}
 		end
 	end)
 
-	return Drop.New(var0_23)
+	return Drop.New(var0_24)
 end
 
-function var0_0.GetDropList(arg0_31)
-	local var0_31 = {}
-	local var1_31 = Item.getConfigData(arg0_31:getConfig("effect_args")[1]).display_icon
+function var0_0.GetDropList(arg0_32)
+	local var0_32 = {}
+	local var1_32 = Item.getConfigData(arg0_32:getConfig("effect_args")[1]).display_icon
 
-	if type(var1_31) == "table" then
-		for iter0_31, iter1_31 in ipairs(var1_31) do
-			table.insert(var0_31, {
-				type = iter1_31[1],
-				id = iter1_31[2],
-				count = iter1_31[3]
+	if type(var1_32) == "table" then
+		for iter0_32, iter1_32 in ipairs(var1_32) do
+			table.insert(var0_32, {
+				type = iter1_32[1],
+				id = iter1_32[2],
+				count = iter1_32[3]
 			})
 		end
 	end
 
-	return var0_31
+	return var0_32
 end
 
-function var0_0.IsGroupLimit(arg0_32)
-	if arg0_32:getConfig("group") <= 0 then
+function var0_0.IsGroupLimit(arg0_33)
+	if arg0_33:getConfig("group") <= 0 then
 		return false
 	end
 
-	local var0_32 = arg0_32:getConfig("group_limit")
+	local var0_33 = arg0_33:getConfig("group_limit")
 
-	return var0_32 > 0 and var0_32 <= (arg0_32.groupCount or 0)
+	return var0_33 > 0 and var0_33 <= (arg0_33.groupCount or 0)
 end
 
-function var0_0.GetLimitDesc(arg0_33)
-	local var0_33 = arg0_33:getLimitCount()
-	local var1_33 = arg0_33.buyCount or 0
+function var0_0.GetLimitDesc(arg0_34)
+	local var0_34 = arg0_34:getLimitCount()
+	local var1_34 = arg0_34.buyCount or 0
 
-	if var0_33 > 0 then
-		return i18n("charge_limit_all", var0_33 - var1_33, var0_33)
+	if var0_34 > 0 then
+		return i18n("charge_limit_all", var0_34 - var1_34, var0_34)
 	end
 
-	local var2_33 = arg0_33:getConfig("group_limit")
+	local var2_34 = arg0_34:getConfig("group_limit")
 
-	if var2_33 > 0 then
-		local var3_33 = arg0_33:getConfig("group_type") or 0
+	if var2_34 > 0 then
+		local var3_34 = arg0_34:getConfig("group_type") or 0
 
-		if var3_33 == 1 then
-			return i18n("charge_limit_daily", var2_33 - arg0_33.groupCount, var2_33)
-		elseif var3_33 == 2 then
-			return i18n("charge_limit_weekly", var2_33 - arg0_33.groupCount, var2_33)
-		elseif var3_33 == 3 then
-			return i18n("charge_limit_monthly", var2_33 - arg0_33.groupCount, var2_33)
+		if var3_34 == 1 then
+			return i18n("charge_limit_daily", var2_34 - arg0_34.groupCount, var2_34)
+		elseif var3_34 == 2 then
+			return i18n("charge_limit_weekly", var2_34 - arg0_34.groupCount, var2_34)
+		elseif var3_34 == 3 then
+			return i18n("charge_limit_monthly", var2_34 - arg0_34.groupCount, var2_34)
 		end
 	end
 
 	return ""
 end
 
-function var0_0.GetGiftList(arg0_34)
-	if arg0_34:getConfig("genre") == ShopArgs.SkinShop then
-		local var0_34 = arg0_34:getSkinId()
+function var0_0.GetGiftList(arg0_35)
+	if arg0_35:getConfig("genre") == ShopArgs.SkinShop then
+		local var0_35 = arg0_35:getSkinId()
 
 		return ShipSkin.New({
-			id = var0_34
+			id = var0_35
 		}):GetRewardList()
 	else
-		return var0_0.super.GetGiftList(arg0_34)
+		return var0_0.super.GetGiftList(arg0_35)
 	end
 end
 

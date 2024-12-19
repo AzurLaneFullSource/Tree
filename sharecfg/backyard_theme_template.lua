@@ -4477,7 +4477,7 @@ pg.backyard_theme_template = {
 		new = 1,
 		icon = "xbthemeicon",
 		deblocking = 1,
-		order = 114,
+		order = 107,
 		ids = {
 			313001,
 			313002,
@@ -4512,7 +4512,7 @@ pg.backyard_theme_template = {
 		new = 1,
 		icon = "mlythemeicon",
 		deblocking = 1,
-		order = 115,
+		order = 108,
 		ids = {
 			314001,
 			314002,
@@ -4542,7 +4542,7 @@ pg.backyard_theme_template = {
 		new = 1,
 		icon = "gbthemeicon",
 		deblocking = 1,
-		order = 116,
+		order = 109,
 		ids = {
 			315001,
 			315002,
@@ -4574,7 +4574,7 @@ pg.backyard_theme_template = {
 		new = 1,
 		icon = "tolthemeicon",
 		deblocking = 1,
-		order = 117,
+		order = 110,
 		ids = {
 			316001,
 			316002,
@@ -4595,6 +4595,38 @@ pg.backyard_theme_template = {
 			316302,
 			316304,
 			316305
+		}
+	},
+	[117] = {
+		Cfg_1 = 5,
+		name = "Wilderness Safehouse",
+		hot = 1,
+		is_view = 1,
+		id = 117,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "The one and only place to catch your breath in a wilderness rife with danger.",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "ftthemeicon",
+		deblocking = 1,
+		order = 111,
+		ids = {
+			317001,
+			317002,
+			317101,
+			317102,
+			317103,
+			317104,
+			317105,
+			317106,
+			317108,
+			317109,
+			317110,
+			317301,
+			317302,
+			317303
 		}
 	},
 	all = {
@@ -4701,6 +4733,7 @@ pg.backyard_theme_template = {
 		113,
 		114,
 		115,
-		116
+		116,
+		117
 	}
 }

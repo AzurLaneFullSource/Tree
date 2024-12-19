@@ -136,4 +136,12 @@ function var0_0.sortGroup(arg0_13)
 	end)
 end
 
+function var0_0.GetTrophyPage(arg0_15)
+	return arg0_15._trophyList[1]:getConfig("page")
+end
+
+function var0_0.IsExpire(arg0_16)
+	return arg0_16._trophyList[1]:getConfig("is_out_of_print")
+end
+
 return var0_0

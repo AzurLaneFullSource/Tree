@@ -38,7 +38,7 @@ var0_0.Battle.BattleDataFunction = var0_0.Battle.BattleDataFunction or {}
 
 local var33_0 = var0_0.Battle.BattleDataFunction
 
-function var33_0.CreateBattleUnitData(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1, arg5_1, arg6_1, arg7_1, arg8_1, arg9_1, arg10_1, arg11_1)
+function var33_0.CreateBattleUnitData(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1, arg5_1, arg6_1, arg7_1, arg8_1, arg9_1, arg10_1, arg11_1, arg12_1)
 	local var0_1
 	local var1_1
 
@@ -86,6 +86,11 @@ function var33_0.CreateBattleUnitData(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1, ar
 	end
 
 	var0_1:SetTemplate(arg3_1, arg6_1, arg7_1)
+
+	if arg1_1 == var1_0.UnitType.MINION_UNIT then
+		var0_1:SetMaster(arg12_1)
+		var0_1:InheritMasterAttr()
+	end
 
 	local var2_1 = {}
 

@@ -96,7 +96,7 @@ pg.dorm3d_favor_trigger = {
 		is_repeat = 1,
 		type = 1,
 		id = 1011,
-		num = 10,
+		num = 40,
 		is_daily_max = 1
 	},
 	[1012] = {
@@ -105,7 +105,7 @@ pg.dorm3d_favor_trigger = {
 		is_repeat = 1,
 		type = 1,
 		id = 1012,
-		num = 20,
+		num = 40,
 		is_daily_max = 1
 	},
 	[1013] = {

@@ -70,45 +70,38 @@ function var0_0.updateSingle(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 			onButton(arg0_3, arg0_3.mask, function()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("eventshop_unlock_hint", var4_3))
 			end, SFX_PANEL)
-		elseif var3_3 == 1 or var3_3 == 2 or var3_3 == ShopArgs.LIMIT_ARGS_UNIQUE_SHIP then
+		else
 			setText(arg0_3.unexchangeTag, var4_3)
 
 			local var5_3 = ""
+			local var6_3 = var3_3 == ShopArgs.LIMIT_ARGS_SALE_START_TIME and "LOCK" or "LIMIT"
 
-			if var3_3 == 1 or var3_3 == ShopArgs.LIMIT_ARGS_UNIQUE_SHIP then
-				var5_3 = "LIMIT"
-			end
-
-			if var3_3 == 2 then
-				var5_3 = "LOCK"
-			end
-
-			setText(arg0_3.unexchangeTag:Find("sellout_tag_en"), var5_3)
+			setText(arg0_3.unexchangeTag:Find("sellout_tag_en"), var6_3)
 			setActive(arg0_3.unexchangeTag, true)
 		end
 	end
 
-	local var6_3 = Drop.New({
+	local var7_3 = Drop.New({
 		type = arg1_3:getConfig("commodity_type"),
 		id = arg1_3:getConfig("commodity_id"),
 		count = arg1_3:getConfig("num")
 	})
 
-	updateDrop(arg0_3.itemTF, var6_3)
+	updateDrop(arg0_3.itemTF, var7_3)
 	setActive(arg0_3.limitTimeSellTF, false)
 
 	if var0_3 then
-		local var7_3, var8_3, var9_3 = arg0_3.goodsVO:CheckTimeLimit()
+		local var8_3, var9_3, var10_3 = arg0_3.goodsVO:CheckTimeLimit()
 
-		setActive(arg0_3.limitTimeSellTF, var7_3 and var8_3)
+		setActive(arg0_3.limitTimeSellTF, var8_3 and var9_3)
 
-		if var7_3 and not var8_3 then
+		if var8_3 and not var9_3 then
 			setActive(arg0_3.mask, true)
 			setActive(arg0_3.sellEndTag, true)
 			removeOnButton(arg0_3.mask)
 			onButton(arg0_3, arg0_3.mask, function()
-				if var9_3 then
-					pg.TipsMgr.GetInstance():ShowTips(i18n("tip_build_ticket_exchange_expired", var6_3:getName()))
+				if var10_3 then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("tip_build_ticket_exchange_expired", var7_3:getName()))
 				end
 			end, SFX_PANEL)
 		end
@@ -123,28 +116,28 @@ function var0_0.updateSingle(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 
 	arg0_3.countTF.text = arg1_3:getConfig("resource_num")
 
-	local var10_3 = var6_3:getName() or "??"
+	local var11_3 = var7_3:getName() or "??"
 
-	if string.match(var10_3, "(%d+)") then
-		setText(arg0_3.nameTxt, shortenString(var10_3, 5))
+	if string.match(var11_3, "(%d+)") then
+		setText(arg0_3.nameTxt, shortenString(var11_3, 5))
 	else
-		setText(arg0_3.nameTxt, shortenString(var10_3, 6))
+		setText(arg0_3.nameTxt, shortenString(var11_3, 6))
 	end
 
-	local var11_3 = arg1_3:getConfig("num_limit")
+	local var12_3 = arg1_3:getConfig("num_limit")
 
-	if var11_3 == 0 then
+	if var12_3 == 0 then
 		arg0_3.limitCountTF.text = i18n("common_no_limit")
 	else
-		local var12_3 = arg1_3:GetPurchasableCnt()
+		local var13_3 = arg1_3:GetPurchasableCnt()
 
-		arg0_3.limitCountTF.text = math.max(var12_3, 0) .. "/" .. var11_3
+		arg0_3.limitCountTF.text = math.max(var13_3, 0) .. "/" .. var12_3
 	end
 
-	local var13_3 = var0_0.Color[arg2_3] or var0_0.DefaultColor
+	local var14_3 = var0_0.Color[arg2_3] or var0_0.DefaultColor
 
-	arg0_3.limitCountTF.color = arg3_3 or Color.New(unpack(var13_3))
-	arg0_3.limitCountLabelTF.color = arg3_3 or Color.New(unpack(var13_3))
+	arg0_3.limitCountTF.color = arg3_3 or Color.New(unpack(var14_3))
+	arg0_3.limitCountLabelTF.color = arg3_3 or Color.New(unpack(var14_3))
 	arg4_3 = arg4_3 or Color.New(0, 0, 0, 1)
 
 	if GetComponent(arg0_3.limitCountTF, typeof(Outline)) then

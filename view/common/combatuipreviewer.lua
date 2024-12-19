@@ -101,6 +101,12 @@ function var0_0.setCombatUI(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 
 	arg0_3.skillContainer = var0_3:Find("Skill_Activation/Root")
 	arg0_3.skill = var0_3:Find("Skill_Activation/mask")
+
+	local var6_3 = var0_3:Find("Stick/Area/BG/spine")
+
+	if var6_3 then
+		var6_3:GetComponent(typeof(SpineAnimUI)):SetAction("normal", 0)
+	end
 end
 
 function var0_0.load(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, arg5_4)
@@ -311,7 +317,7 @@ function var0_0.updatePopUp(arg0_21)
 	LeanTween.cancel(arg0_21.chatPop)
 
 	if arg0_21.chatPop.transform:GetComponent(typeof(Animation)) then
-		ys.Battle.BattleCharacter.ChatPopAnimation(arg0_21.chatPop, pg.ship_skin_words[100000].skill, 5)
+		ys.Battle.BattleCharacter.ChatPopAnimation(arg0_21.chatPop, pg.ship_skin_words[100000].skill, 4)
 	else
 		LeanTween.scale(rtf(arg0_21.chatPop.gameObject), Vector3.New(0, 0, 1), 0.1):setEase(LeanTweenType.easeInBack):setOnComplete(System.Action(function()
 			ys.Battle.BattleCharacter.ChatPop(arg0_21.chatPop, pg.ship_skin_words[100000].skill, 5)
@@ -335,17 +341,31 @@ function var0_0.updateSkillFloat(arg0_23)
 
 	arg0_23.skill.localScale = Vector3(1.5, 1.5, 0)
 
+	local var3_23 = var2_23:GetComponent(typeof(Animation))
+
+	if var3_23 then
+		local var4_23 = 1
+
+		while var3_23:GetClip("anim_skinui_skill_" .. var4_23) do
+			var4_23 = var4_23 + 1
+		end
+
+		if var4_23 > 1 then
+			var3_23:Play("anim_skinui_skill_" .. math.random(var4_23 - 1))
+		end
+	end
+
 	setText(findTF(var2_23, "skill/skill_name/Text"), HXSet.hxLan(pg.skill_data_template[9033].name))
 
-	local var3_23 = findTF(var2_23, "skill/icon_mask/icon")
-	local var4_23 = findTF(var2_23, "skill/skill_name")
+	local var5_23 = findTF(var2_23, "skill/icon_mask/icon")
+	local var6_23 = findTF(var2_23, "skill/skill_name")
 
-	var3_23:GetComponent(typeof(Image)).sprite = var1_23
+	var5_23:GetComponent(typeof(Image)).sprite = var1_23
 
-	local var5_23 = Color.New(1, 1, 1, 1)
+	local var7_23 = Color.New(1, 1, 1, 1)
 
-	var4_23:GetComponent(typeof(Image)).color = var5_23
-	findTF(var2_23, "skill"):GetComponent(typeof(Image)).color = var5_23
+	var6_23:GetComponent(typeof(Image)).color = var7_23
+	findTF(var2_23, "skill"):GetComponent(typeof(Image)).color = var7_23
 
 	var2_23:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg0_24)
 		setActive(arg0_23.skill, false)

@@ -48,7 +48,7 @@ function var0_0.GetShopID(arg0_7)
 		end
 	end
 
-	return var0_7[#var0_7]
+	return var0_7[#var0_7] or 0
 end
 
 function var0_0.CheckBuyLimit(arg0_8)

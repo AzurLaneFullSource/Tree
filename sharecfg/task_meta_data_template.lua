@@ -272,6 +272,11 @@ pg.task_meta_data_template = setmetatable({
 		100363,
 		100364,
 		100365,
+		100371,
+		100372,
+		100373,
+		100374,
+		100375,
 		200001,
 		200002,
 		200003,
@@ -379,7 +384,11 @@ pg.task_meta_data_template = setmetatable({
 		200271,
 		200272,
 		200273,
-		200274
+		200274,
+		200281,
+		200282,
+		200283,
+		200284
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2544,6 +2553,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100371] = {
+		target_id_2 = "970305",
+		sub_type = 180,
+		desc = "Win 1 battle with Admiral Hipper META in your fleet.",
+		id = 100371,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100372] = {
+		target_id_2 = "970305",
+		sub_type = 180,
+		desc = "Defeat a Lv. 30+ fleet with Admiral Hipper META in your fleet.",
+		id = 100372,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100373] = {
+		target_id_2 = "970305",
+		sub_type = 180,
+		desc = "Defeat a Lv. 55+ fleet with Admiral Hipper META in your fleet.",
+		id = 100373,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100374] = {
+		target_id_2 = "970305",
+		sub_type = 180,
+		desc = "Defeat a Lv. 80+ fleet with Admiral Hipper META in your fleet.",
+		id = 100374,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100375] = {
+		target_id_2 = "970305",
+		sub_type = 180,
+		desc = "Defeat a Lv. 100+ fleet with Admiral Hipper META in your fleet.",
+		id = 100375,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -3405,6 +3454,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Taihou META in your fleet.",
 		id = 200274,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200281] = {
+		target_id_2 = "970305",
+		sub_type = 302,
+		desc = "Win 1 Operation Siren battle with Admiral Hipper META in your fleet.",
+		id = 200281,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200282] = {
+		target_id_2 = "970305",
+		sub_type = 302,
+		desc = "Defeat a Lv. 70+ fleet in Operation Siren with Admiral Hipper META in your fleet.",
+		id = 200282,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200283] = {
+		target_id_2 = "970305",
+		sub_type = 302,
+		desc = "Defeat a Lv. 90+ fleet in Operation Siren with Admiral Hipper META in your fleet.",
+		id = 200283,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200284] = {
+		target_id_2 = "970305",
+		sub_type = 302,
+		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Admiral Hipper META in your fleet.",
+		id = 200284,
 		target_num = 1,
 		target_id = "100"
 	}

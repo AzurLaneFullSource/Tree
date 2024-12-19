@@ -191,11 +191,11 @@ function var0_0.confirm(arg0_15, arg1_15)
 
 		if type(var14_15) == "table" then
 			for iter0_15, iter1_15 in ipairs(var14_15) do
-				table.insert(var11_15, {
+				table.insert(var11_15, Drop.New({
 					type = iter1_15[1],
 					id = iter1_15[2],
 					count = iter1_15[3]
-				})
+				}))
 			end
 		end
 

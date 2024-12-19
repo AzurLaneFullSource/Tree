@@ -18,6 +18,8 @@ function var0_0.Ctor(arg0_1)
 		MainRemoveNpcSequence.New(),
 		MainReplaceFoodSequence.New(),
 		MainOverDueEquipmentSequence.New(),
+		MainSkinDiscountItemTipSequence.New(),
+		MainOverDueSkinDiscountItemSequence.New(),
 		MainOverDueAttireSequence.New(),
 		MainOverDueSkinSequence.New(),
 		MainGuildSequence.New(),

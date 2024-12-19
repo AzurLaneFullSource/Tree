@@ -154,9 +154,9 @@ function var0_0.UpdateGift(arg0_19, arg1_19, arg2_19, arg3_19)
 	})
 	local var7_19 = var6_19:GetShopID()
 
-	setActive(var0_19:Find("info/lack"), tobool(var7_19))
+	setActive(var0_19:Find("info/lack"), var7_19 ~= 0)
 
-	if var7_19 then
+	if var7_19 ~= 0 then
 		local var8_19 = CommonCommodity.New({
 			id = var7_19
 		}, Goods.TYPE_SHOPSTREET)

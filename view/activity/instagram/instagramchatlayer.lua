@@ -1044,7 +1044,7 @@ function var0_0.SetTopicPanel(arg0_52, arg1_52)
 
 				local var0_54 = arg1_52.topics[arg1_54 + 1]
 
-				setScrollText(arg2_54:Find("mask/name"), var0_54.name)
+				setScrollText(arg2_54:Find("mask/name"), HXSet.hxLan(var0_54.name))
 				SetActive(arg2_54:Find("lock"), not var0_54.active)
 				SetActive(arg2_54:Find("waiting"), var0_54.active and var0_54:isWaiting())
 				SetActive(arg2_54:Find("complete"), var0_54.active and var0_54:IsCompleted())

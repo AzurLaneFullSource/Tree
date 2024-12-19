@@ -387,6 +387,12 @@ pg.expedition_data_by_map = setmetatable({
 		1870002,
 		1870003,
 		1870004,
+		1880001,
+		1880002,
+		1880011,
+		1880012,
+		1880025,
+		1880026,
 		2100000,
 		2100001,
 		2100010,
@@ -21340,6 +21346,571 @@ pg.base.expedition_data_by_map = {
 			104,
 			105,
 			106
+		}
+	},
+	[1880001] = {
+		map = 1880001,
+		name = "星光下的余晖·上篇|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "story-ironblood-strong",
+		enter_story = "",
+		ani_name = "Map_1880001",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_part1",
+		default_background = "star_level_bg_595",
+		cloud_suffix = "",
+		default_bgm = "story-ironblood-strong",
+		uifx = "",
+		on_activity = 5711,
+		ui_type = 10,
+		bg = "Map_1880001",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 1880011,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				1880001,
+				1880021
+			},
+			{
+				1880002,
+				1880022
+			},
+			{
+				1880003,
+				1880023
+			}
+		},
+		story_id = {
+			107,
+			108,
+			109,
+			110,
+			111,
+			112,
+			113,
+			114,
+			115,
+			116,
+			117,
+			118,
+			119,
+			120,
+			121,
+			122,
+			123,
+			124,
+			125,
+			126,
+			127,
+			128,
+			129,
+			130,
+			131,
+			132,
+			133,
+			134,
+			135,
+			136,
+			137,
+			138,
+			139
+		}
+	},
+	[1880002] = {
+		map = 1880002,
+		name = "星光下的余晖·下篇|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "theme-starbeast",
+		enter_story = "",
+		ani_name = "Map_1880003",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_part2",
+		default_background = "star_level_bg_595",
+		cloud_suffix = "",
+		default_bgm = "story-ironblood-strong",
+		uifx = "",
+		on_activity = 5711,
+		ui_type = 10,
+		bg = "Map_1880003",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 1880012,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				1880004,
+				1880024
+			},
+			{
+				1880005,
+				1880025
+			},
+			{
+				1880006,
+				1880026
+			}
+		},
+		story_id = {
+			107,
+			108,
+			109,
+			110,
+			111,
+			112,
+			113,
+			114,
+			115,
+			116,
+			117,
+			118,
+			119,
+			120,
+			121,
+			122,
+			123,
+			124,
+			125,
+			126,
+			127,
+			128,
+			129,
+			130,
+			131,
+			132,
+			133,
+			134,
+			135,
+			136,
+			137,
+			138,
+			139
+		}
+	},
+	[1880011] = {
+		map = 1880011,
+		name = "星光下的余晖·上篇|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "story-ironblood-strong",
+		enter_story = "",
+		ani_name = "Map_1880001",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_part1",
+		default_background = "star_level_bg_595",
+		cloud_suffix = "",
+		default_bgm = "story-ironblood-strong",
+		uifx = "",
+		on_activity = 5711,
+		ui_type = 10,
+		bg = "Map_1880001",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 1880001,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				1880001,
+				1880021
+			},
+			{
+				1880002,
+				1880022
+			},
+			{
+				1880003,
+				1880023
+			}
+		},
+		story_id = {
+			107,
+			108,
+			109,
+			110,
+			111,
+			112,
+			113,
+			114,
+			115,
+			116,
+			117,
+			118,
+			119,
+			120,
+			121,
+			122,
+			123,
+			124,
+			125,
+			126,
+			127,
+			128,
+			129,
+			130,
+			131,
+			132,
+			133,
+			134,
+			135,
+			136,
+			137,
+			138,
+			139
+		}
+	},
+	[1880012] = {
+		map = 1880012,
+		name = "星光下的余晖·下篇|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "theme-starbeast",
+		enter_story = "",
+		ani_name = "Map_1880003",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_part2",
+		default_background = "star_level_bg_595",
+		cloud_suffix = "",
+		default_bgm = "story-ironblood-strong",
+		uifx = "",
+		on_activity = 5711,
+		ui_type = 10,
+		bg = "Map_1880003",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 1880002,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				1880004,
+				1880024
+			},
+			{
+				1880005,
+				1880025
+			},
+			{
+				1880006,
+				1880026
+			}
+		},
+		story_id = {
+			107,
+			108,
+			109,
+			110,
+			111,
+			112,
+			113,
+			114,
+			115,
+			116,
+			117,
+			118,
+			119,
+			120,
+			121,
+			122,
+			123,
+			124,
+			125,
+			126,
+			127,
+			128,
+			129,
+			130,
+			131,
+			132,
+			133,
+			134,
+			135,
+			136,
+			137,
+			138,
+			139
+		}
+	},
+	[1880025] = {
+		map = 1880025,
+		name = "星光下的余晖·SP|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 8,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "story-ironblood-light",
+		enter_story = "",
+		ani_name = "Map_1880004",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_sp",
+		default_background = "star_level_bg_595",
+		cloud_suffix = "",
+		default_bgm = "story-ironblood-strong",
+		uifx = "",
+		on_activity = 5711,
+		ui_type = 10,
+		bg = "Map_1880004",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 1880012,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				1880041
+			}
+		},
+		story_id = {
+			107,
+			108,
+			109,
+			110,
+			111,
+			112,
+			113,
+			114,
+			115,
+			116,
+			117,
+			118,
+			119,
+			120,
+			121,
+			122,
+			123,
+			124,
+			125,
+			126,
+			127,
+			128,
+			129,
+			130,
+			131,
+			132,
+			133,
+			134,
+			135,
+			136,
+			137,
+			138,
+			139
+		}
+	},
+	[1880026] = {
+		map = 1880026,
+		name = "星光下的余晖·EX|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 8,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "story-antix-past",
+		enter_story = "",
+		ani_name = "Map_1880002",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_ex",
+		default_background = "star_level_bg_595",
+		cloud_suffix = "",
+		default_bgm = "story-ironblood-strong",
+		uifx = "",
+		on_activity = 5711,
+		ui_type = 10,
+		bg = "Map_1880002",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 1880012,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				1880051,
+				1880052
+			}
+		},
+		story_id = {
+			107,
+			108,
+			109,
+			110,
+			111,
+			112,
+			113,
+			114,
+			115,
+			116,
+			117,
+			118,
+			119,
+			120,
+			121,
+			122,
+			123,
+			124,
+			125,
+			126,
+			127,
+			128,
+			129,
+			130,
+			131,
+			132,
+			133,
+			134,
+			135,
+			136,
+			137,
+			138,
+			139
 		}
 	},
 	[2100000] = {

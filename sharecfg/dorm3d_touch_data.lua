@@ -3,6 +3,7 @@ pg.dorm3d_touch_data = {
 	[101] = {
 		default_favor = 1001,
 		id = 101,
+		heartbeat_enter_anim = "",
 		heartbeat_enable = 1,
 		finish_action = "",
 		heartbeat_favor = {
@@ -26,6 +27,7 @@ pg.dorm3d_touch_data = {
 	[102] = {
 		default_favor = 1001,
 		id = 102,
+		heartbeat_enter_anim = "",
 		heartbeat_enable = 0,
 		finish_action = "Idle",
 		heartbeat_favor = {
@@ -49,6 +51,7 @@ pg.dorm3d_touch_data = {
 	[103] = {
 		default_favor = 1001,
 		id = 103,
+		heartbeat_enter_anim = "",
 		heartbeat_enable = 1,
 		finish_action = "Idle",
 		heartbeat_favor = {
@@ -72,6 +75,7 @@ pg.dorm3d_touch_data = {
 	[104] = {
 		default_favor = 1001,
 		id = 104,
+		heartbeat_enter_anim = "",
 		heartbeat_enable = 0,
 		finish_action = "Idle",
 		heartbeat_favor = {
@@ -95,6 +99,7 @@ pg.dorm3d_touch_data = {
 	[105] = {
 		default_favor = 1001,
 		id = 105,
+		heartbeat_enter_anim = "",
 		heartbeat_enable = 1,
 		finish_action = "Idle",
 		heartbeat_favor = {
@@ -118,6 +123,7 @@ pg.dorm3d_touch_data = {
 	[106] = {
 		default_favor = 1001,
 		id = 106,
+		heartbeat_enter_anim = "",
 		heartbeat_enable = 0,
 		finish_action = "Idle",
 		heartbeat_favor = {
@@ -141,6 +147,7 @@ pg.dorm3d_touch_data = {
 	[201] = {
 		default_favor = 1001,
 		id = 201,
+		heartbeat_enter_anim = "",
 		heartbeat_enable = 0,
 		finish_action = "Idle",
 		heartbeat_favor = {
@@ -164,6 +171,7 @@ pg.dorm3d_touch_data = {
 	[10100104] = {
 		default_favor = 1001,
 		id = 10100104,
+		heartbeat_enter_anim = "",
 		heartbeat_enable = 0,
 		finish_action = "Idle",
 		heartbeat_favor = {
@@ -187,6 +195,7 @@ pg.dorm3d_touch_data = {
 	[10100107] = {
 		default_favor = 1001,
 		id = 10100107,
+		heartbeat_enter_anim = "",
 		heartbeat_enable = 0,
 		finish_action = "Idle",
 		heartbeat_favor = {
@@ -210,6 +219,7 @@ pg.dorm3d_touch_data = {
 	[10100201] = {
 		default_favor = 1001,
 		id = 10100201,
+		heartbeat_enter_anim = "",
 		heartbeat_enable = 0,
 		finish_action = "Idle",
 		heartbeat_favor = {
@@ -233,6 +243,7 @@ pg.dorm3d_touch_data = {
 	[10100202] = {
 		default_favor = 1001,
 		id = 10100202,
+		heartbeat_enter_anim = "PayGoToSofaStart",
 		heartbeat_enable = 0,
 		finish_action = "Idle",
 		heartbeat_favor = {
@@ -250,12 +261,39 @@ pg.dorm3d_touch_data = {
 			}
 		},
 		ik_status = {
+			100210,
 			100210
+		}
+	},
+	[10100203] = {
+		default_favor = 1001,
+		id = 10100203,
+		heartbeat_enter_anim = "TLX_TD_shafa_idle_03",
+		heartbeat_enable = 1,
+		finish_action = "Idle",
+		heartbeat_favor = {
+			{
+				0,
+				1011
+			},
+			{
+				50,
+				1012
+			},
+			{
+				100,
+				1013
+			}
+		},
+		ik_status = {
+			100250,
+			100280
 		}
 	},
 	[10100303] = {
 		default_favor = 1001,
 		id = 10100303,
+		heartbeat_enter_anim = "",
 		heartbeat_enable = 0,
 		finish_action = "Idle",
 		heartbeat_favor = {
@@ -288,6 +326,7 @@ pg.dorm3d_touch_data = {
 		10100107,
 		10100201,
 		10100202,
+		10100203,
 		10100303
 	}
 }

@@ -234,7 +234,6 @@ function var0_0.OnPurchase(arg0_22, arg1_22, arg2_22)
 	local var3_22 = arg0_22.shop.activityId
 
 	arg0_22:emit(NewShopsMediator.ON_ACT_SHOPPING, var3_22, 1, arg1_22.id, arg2_22)
-	arg0_22:emit(NewShopsMediator.UR_EXCHANGE_TRACKING, var1_22)
 end
 
 function var0_0.OnClickCommodity(arg0_23, arg1_23, arg2_23)

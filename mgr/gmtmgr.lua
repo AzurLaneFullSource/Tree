@@ -66,12 +66,12 @@ function var0_0.showGMT(arg0_7, arg1_7)
 		arg0_7._gmtTimer:Start()
 	end
 
-	arg0_7.focusShowTip = true
-
-	arg0_7:onTimer()
+	arg0_7._triggerStop = false
 end
 
 function var0_0.showTip(arg0_8)
+	print(arg0_8._subTime)
+
 	local var0_8 = false
 
 	if arg0_8.focusShowTip then

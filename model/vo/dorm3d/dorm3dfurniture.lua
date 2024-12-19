@@ -70,44 +70,94 @@ function var0_0.GetAcesses(arg0_11)
 end
 
 function var0_0.GetShopID(arg0_12)
-	local var0_12 = arg0_12:getConfig("shop_id")
-	local var1_12 = getProxy(ApartmentProxy):GetFurnitureShopCount(arg0_12:GetConfigID())
-
-	return var0_12[1]
+	return arg0_12:getConfig("shop_id")[1] or 0
 end
 
 function var0_0.IsValuable(arg0_13)
 	return arg0_13:getConfig("is_exclusive") == 1
 end
 
-function var0_0.NeedViewTip(arg0_14)
-	local var0_14 = arg0_14 and {
-		getProxy(ApartmentProxy):getRoom(arg0_14)
+function var0_0.IsSpecial(arg0_14)
+	return arg0_14:getConfig("is_special") == 1
+end
+
+function var0_0.InShopTime(arg0_15)
+	local var0_15 = arg0_15:GetShopID()
+
+	if var0_15 == 0 then
+		return true
+	end
+
+	local var1_15 = pg.shop_template[var0_15]
+
+	return pg.TimeMgr.GetInstance():inTime(var1_15.time)
+end
+
+function var0_0.GetEndTime(arg0_16)
+	local var0_16 = arg0_16:GetShopID()
+
+	if var0_16 == 0 then
+		return 0
+	end
+
+	local var1_16 = pg.shop_template[var0_16].time
+
+	if var1_16 == "always" or var1_16 == "stop" then
+		return 0
+	end
+
+	return (pg.TimeMgr.GetInstance():parseTimeFromConfig(var1_16[2]))
+end
+
+function var0_0.NeedViewTip(arg0_17)
+	local var0_17 = arg0_17 and {
+		getProxy(ApartmentProxy):getRoom(arg0_17)
 	} or underscore.values(getProxy(ApartmentProxy).roomData)
 
-	return underscore.any(var0_14, function(arg0_15)
-		return underscore.any(arg0_15:GetFurnitures(), function(arg0_16)
-			return Dorm3dFurniture.GetViewedFlag(arg0_16:GetConfigID()) == 0
+	return underscore.any(var0_17, function(arg0_18)
+		return underscore.any(arg0_18:GetFurnitures(), function(arg0_19)
+			return Dorm3dFurniture.GetViewedFlag(arg0_19:GetConfigID()) == 0
 		end)
 	end)
 end
 
-function var0_0.GetViewedFlag(arg0_17)
-	local var0_17 = getProxy(PlayerProxy):getRawData().id
+function var0_0.GetViewedFlag(arg0_20)
+	local var0_20 = getProxy(PlayerProxy):getRawData().id
 
-	return PlayerPrefs.GetInt(var0_17 .. "_dorm3dFurnitureViewed_" .. arg0_17, 0)
+	return PlayerPrefs.GetInt(var0_20 .. "_dorm3dFurnitureViewed_" .. arg0_20, 0)
 end
 
-function var0_0.SetViewedFlag(arg0_18)
-	if var0_0.GetViewedFlag(arg0_18) > 0 then
+function var0_0.SetViewedFlag(arg0_21)
+	if var0_0.GetViewedFlag(arg0_21) > 0 then
 		return
 	end
 
-	local var0_18 = getProxy(PlayerProxy):getRawData().id
+	local var0_21 = getProxy(PlayerProxy):getRawData().id
 
-	PlayerPrefs.SetInt(var0_18 .. "_dorm3dFurnitureViewed_" .. arg0_18, 1)
+	PlayerPrefs.SetInt(var0_21 .. "_dorm3dFurnitureViewed_" .. arg0_21, 1)
 
 	return true
+end
+
+function var0_0.IsTimelimitShopTip(arg0_22)
+	local var0_22 = arg0_22 and {
+		getProxy(ApartmentProxy):getRoom(arg0_22)
+	} or underscore.values(getProxy(ApartmentProxy).roomData)
+
+	return underscore.any(var0_22, function(arg0_23)
+		local var0_23 = arg0_23:GetFurnitures()
+		local var1_23 = pg.dorm3d_furniture_template.get_id_list_by_room_id[arg0_23:GetConfigID()] or {}
+
+		return _.any(var1_23, function(arg0_24)
+			local var0_24 = Dorm3dFurniture.New({
+				configId = arg0_24
+			})
+
+			return var0_24:GetEndTime() > 0 and var0_24:InShopTime() and not _.detect(var0_23, function(arg0_25)
+				return arg0_25:GetConfigID() == arg0_24
+			end)
+		end)
+	end)
 end
 
 return var0_0

@@ -60,5 +60,5 @@ function var1_0.onBeforeTakeDamage(arg0_3, arg1_3, arg2_3, arg3_3)
 		end
 	end
 
-	arg3_3.damage = var1_3
+	arg3_3.damage = math.floor(var1_3)
 end

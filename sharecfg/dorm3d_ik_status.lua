@@ -59,7 +59,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[3] = {
 		base = 3,
@@ -119,7 +123,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[4] = {
 		base = 4,
@@ -178,7 +186,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[5] = {
 		base = 5,
@@ -239,7 +251,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[6] = {
 		base = 6,
@@ -300,7 +316,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[7] = {
 		base = 7,
@@ -351,7 +371,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[8] = {
 		base = 8,
@@ -412,7 +436,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100] = {
 		base = 100,
@@ -472,7 +500,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[101] = {
 		base = 101,
@@ -532,7 +564,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[102] = {
 		base = 102,
@@ -592,7 +628,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[103] = {
 		base = 103,
@@ -652,7 +692,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[104] = {
 		base = 104,
@@ -712,7 +756,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[105] = {
 		base = 105,
@@ -772,7 +820,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[106] = {
 		base = 106,
@@ -832,7 +884,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[107] = {
 		base = 107,
@@ -892,7 +948,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[108] = {
 		base = 108,
@@ -952,7 +1012,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[109] = {
 		base = 109,
@@ -1012,7 +1076,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110] = {
 		base = 110,
@@ -1072,7 +1140,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[111] = {
 		base = 111,
@@ -1132,7 +1204,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[112] = {
 		base = 112,
@@ -1192,7 +1268,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100110] = {
 		base = 100110,
@@ -1254,7 +1334,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100120] = {
 		base = 100120,
@@ -1306,7 +1390,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100130] = {
 		base = 100130,
@@ -1377,7 +1465,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100210] = {
 		base = 100210,
@@ -1439,7 +1531,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100220] = {
 		base = 100220,
@@ -1492,7 +1588,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100230] = {
 		base = 100230,
@@ -1536,7 +1636,11 @@ pg.dorm3d_ik_status = {
 		cloth_colliders = {},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100211] = {
 		base = 100211,
@@ -1589,7 +1693,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100221] = {
 		base = 100221,
@@ -1642,7 +1750,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100231] = {
 		base = 100231,
@@ -1695,7 +1807,355 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
+	},
+	[100250] = {
+		base = 100250,
+		camera_group = 10025,
+		character_action = "TLX_TD_shafa_idle_01",
+		ik_camera = "Cam100250",
+		id = 100250,
+		skin_id = 202201,
+		character_position = "Pos100250",
+		character_id = 20220,
+		ik_id = {
+			{
+				10025000,
+				0,
+				{
+					4,
+					0.3,
+					1046
+				}
+			},
+			{
+				10025001,
+				0,
+				{
+					4,
+					0.3,
+					1045,
+					100251
+				}
+			}
+		},
+		touch_data = {},
+		use_cloth = {
+			0,
+			1,
+			1,
+			1,
+			1
+		},
+		cloth_colliders = {
+			{
+				"Magica Capsule Collider (Bip001 L Thigh)",
+				1,
+				0.045,
+				0.07
+			},
+			{
+				"Magica Capsule Collider (Bip001 R Thigh)",
+				1,
+				0.045,
+				0.07
+			},
+			{
+				"Magica Capsule Collider (Bip001 Pelvis)",
+				1,
+				0.09,
+				0.09
+			}
+		},
+		head_track = {
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {
+			{
+				2001,
+				"XR_TD_shafa_idle_01"
+			}
 		}
+	},
+	[100260] = {
+		base = 100260,
+		camera_group = 10025,
+		character_action = "TLX_TD_shafa_idle_01",
+		ik_camera = "Cam100260",
+		id = 100260,
+		skin_id = 202201,
+		character_position = "Pos100260",
+		character_id = 20220,
+		ik_id = {
+			{
+				10026000,
+				0,
+				{
+					4,
+					0.3,
+					1045,
+					100251
+				}
+			}
+		},
+		touch_data = {},
+		use_cloth = {
+			0,
+			1,
+			1,
+			1,
+			1
+		},
+		cloth_colliders = {
+			{
+				"Magica Capsule Collider (Bip001 L Thigh)",
+				1,
+				0.045,
+				0.07
+			},
+			{
+				"Magica Capsule Collider (Bip001 R Thigh)",
+				1,
+				0.045,
+				0.07
+			},
+			{
+				"Magica Capsule Collider (Bip001 Pelvis)",
+				1,
+				0.09,
+				0.09
+			}
+		},
+		head_track = {
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {
+			{
+				2001,
+				"XR_TD_shafa_idle_01"
+			}
+		}
+	},
+	[100270] = {
+		base = 100270,
+		camera_group = 10025,
+		character_action = "TLX_TD_shafa_idle_01",
+		ik_camera = "Cam100270",
+		id = 100270,
+		skin_id = 202201,
+		character_position = "Pos100270",
+		character_id = 20220,
+		ik_id = {
+			{
+				10027000,
+				0,
+				{
+					4,
+					0.3,
+					1046
+				}
+			},
+			{
+				10027001,
+				0,
+				{
+					4,
+					0.3,
+					1047
+				}
+			}
+		},
+		touch_data = {},
+		use_cloth = {
+			0,
+			1,
+			1,
+			1,
+			1
+		},
+		cloth_colliders = {
+			{
+				"Magica Capsule Collider (Bip001 L Thigh)",
+				1,
+				0.045,
+				0.07
+			},
+			{
+				"Magica Capsule Collider (Bip001 R Thigh)",
+				1,
+				0.045,
+				0.07
+			},
+			{
+				"Magica Capsule Collider (Bip001 Pelvis)",
+				1,
+				0.09,
+				0.09
+			}
+		},
+		head_track = {
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {
+			{
+				2001,
+				"XR_TD_shafa_idle_01"
+			}
+		}
+	},
+	[100280] = {
+		base = 100280,
+		camera_group = 10026,
+		character_action = "TLX_TD_shafa_idle_03",
+		ik_camera = "Cam100280",
+		id = 100280,
+		skin_id = 202201,
+		character_position = "Pos100280",
+		character_id = 20220,
+		ik_id = {
+			{
+				10028000,
+				0,
+				{
+					4,
+					0.3,
+					1051
+				}
+			},
+			{
+				10028001,
+				0,
+				{
+					4,
+					0.3,
+					1052
+				}
+			}
+		},
+		touch_data = {
+			{
+				1002801,
+				0,
+				{
+					4,
+					0.3,
+					1050
+				}
+			}
+		},
+		use_cloth = {
+			0,
+			1,
+			1,
+			1,
+			1
+		},
+		cloth_colliders = {
+			{
+				"Magica Capsule Collider (Bip001 L Thigh)",
+				1,
+				0.045,
+				0.07
+			},
+			{
+				"Magica Capsule Collider (Bip001 R Thigh)",
+				1,
+				0.045,
+				0.07
+			},
+			{
+				"Magica Capsule Collider (Bip001 Pelvis)",
+				1,
+				0.09,
+				0.09
+			}
+		},
+		head_track = {
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
+	},
+	[100251] = {
+		base = 100251,
+		camera_group = 10027,
+		character_action = "TLX_TD_shafa_idle_02",
+		ik_camera = "Cam100251",
+		id = 100251,
+		skin_id = 202201,
+		character_position = "Pos100251",
+		character_id = 20220,
+		ik_id = {
+			{
+				10025100,
+				0,
+				{
+					4,
+					0.3,
+					1048
+				}
+			},
+			{
+				10025101,
+				0,
+				{
+					4,
+					0.3,
+					1049,
+					100250
+				}
+			}
+		},
+		touch_data = {},
+		use_cloth = {
+			0,
+			1,
+			1,
+			1,
+			1
+		},
+		cloth_colliders = {
+			{
+				"Magica Capsule Collider (Bip001 L Thigh)",
+				1,
+				0.045,
+				0.07
+			},
+			{
+				"Magica Capsule Collider (Bip001 R Thigh)",
+				1,
+				0.045,
+				0.07
+			},
+			{
+				"Magica Capsule Collider (Bip001 Pelvis)",
+				1,
+				0.09,
+				0.09
+			}
+		},
+		head_track = {
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100310] = {
 		base = 100310,
@@ -1756,7 +2216,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100320] = {
 		base = 100320,
@@ -1808,7 +2272,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100330] = {
 		base = 100330,
@@ -1869,7 +2337,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100410] = {
 		base = 100410,
@@ -1930,10 +2402,12 @@ pg.dorm3d_ik_status = {
 			}
 		},
 		head_track = {
-			1,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100420] = {
 		base = 100420,
@@ -1984,10 +2458,12 @@ pg.dorm3d_ik_status = {
 			}
 		},
 		head_track = {
-			1,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100430] = {
 		base = 100430,
@@ -2047,11 +2523,12 @@ pg.dorm3d_ik_status = {
 			}
 		},
 		head_track = {
-			1,
-			0,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100710] = {
 		base = 100710,
@@ -2121,10 +2598,12 @@ pg.dorm3d_ik_status = {
 			}
 		},
 		head_track = {
-			1,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100720] = {
 		base = 100720,
@@ -2175,10 +2654,12 @@ pg.dorm3d_ik_status = {
 			}
 		},
 		head_track = {
-			1,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100730] = {
 		base = 100730,
@@ -2229,10 +2710,12 @@ pg.dorm3d_ik_status = {
 			}
 		},
 		head_track = {
-			1,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100711] = {
 		base = 100711,
@@ -2292,10 +2775,12 @@ pg.dorm3d_ik_status = {
 			}
 		},
 		head_track = {
-			1,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100721] = {
 		base = 100721,
@@ -2346,10 +2831,12 @@ pg.dorm3d_ik_status = {
 			}
 		},
 		head_track = {
-			1,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[100731] = {
 		base = 100731,
@@ -2400,10 +2887,12 @@ pg.dorm3d_ik_status = {
 			}
 		},
 		head_track = {
-			1,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[115010] = {
 		base = 115010,
@@ -2446,7 +2935,11 @@ pg.dorm3d_ik_status = {
 		cloth_colliders = {},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[115020] = {
 		base = 115020,
@@ -2488,11 +2981,12 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
-			1,
-			0,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[115030] = {
 		base = 115030,
@@ -2534,11 +3028,12 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
-			1,
-			0,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[115040] = {
 		base = 115040,
@@ -2580,11 +3075,12 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
-			1,
-			0,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[115050] = {
 		base = 115050,
@@ -2626,11 +3122,12 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
-			1,
-			0,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[115060] = {
 		base = 115060,
@@ -2672,11 +3169,12 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
-			1,
-			0,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[115070] = {
 		base = 115070,
@@ -2718,11 +3216,12 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
-			1,
-			0,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[115080] = {
 		base = 115080,
@@ -2764,11 +3263,12 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
-			1,
-			0,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110110] = {
 		base = 100110,
@@ -2812,7 +3312,11 @@ pg.dorm3d_ik_status = {
 		cloth_colliders = {},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110120] = {
 		base = 100120,
@@ -2846,7 +3350,11 @@ pg.dorm3d_ik_status = {
 		cloth_colliders = {},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110130] = {
 		base = 100130,
@@ -2899,7 +3407,11 @@ pg.dorm3d_ik_status = {
 		cloth_colliders = {},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110210] = {
 		base = 100210,
@@ -2962,7 +3474,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110220] = {
 		base = 100220,
@@ -3016,7 +3532,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110230] = {
 		base = 100230,
@@ -3079,7 +3599,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110211] = {
 		base = 100211,
@@ -3133,7 +3657,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110221] = {
 		base = 100221,
@@ -3187,7 +3715,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110231] = {
 		base = 100231,
@@ -3241,7 +3773,11 @@ pg.dorm3d_ik_status = {
 		},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110310] = {
 		base = 100310,
@@ -3284,7 +3820,11 @@ pg.dorm3d_ik_status = {
 		cloth_colliders = {},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110320] = {
 		base = 100320,
@@ -3318,7 +3858,11 @@ pg.dorm3d_ik_status = {
 		cloth_colliders = {},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110330] = {
 		base = 100330,
@@ -3361,7 +3905,11 @@ pg.dorm3d_ik_status = {
 		cloth_colliders = {},
 		head_track = {
 			1
-		}
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110410] = {
 		base = 100410,
@@ -3404,10 +3952,12 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
-			1,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110420] = {
 		base = 100420,
@@ -3440,10 +3990,12 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
-			1,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110430] = {
 		base = 100430,
@@ -3485,11 +4037,12 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
-			1,
-			0,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110710] = {
 		base = 100710,
@@ -3532,10 +4085,12 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
-			1,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110720] = {
 		base = 100720,
@@ -3568,10 +4123,12 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
-			1,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110730] = {
 		base = 100730,
@@ -3604,10 +4161,12 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
-			1,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110711] = {
 		base = 100711,
@@ -3649,10 +4208,12 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
-			1,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110721] = {
 		base = 100721,
@@ -3685,10 +4246,12 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
-			1,
-			0,
-			0
-		}
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	[110731] = {
 		base = 100731,
@@ -3721,10 +4284,284 @@ pg.dorm3d_ik_status = {
 		},
 		cloth_colliders = {},
 		head_track = {
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
+	},
+	[110250] = {
+		base = 100250,
+		camera_group = 11025,
+		character_action = "TLX_TD_shafa_idle_01",
+		ik_camera = "Cam100250",
+		id = 110250,
+		skin_id = 202202,
+		character_position = "Pos100250",
+		character_id = 20220,
+		ik_id = {
+			{
+				11025000,
+				0,
+				{
+					4,
+					0.3,
+					1046
+				}
+			},
+			{
+				11025001,
+				0,
+				{
+					4,
+					0.3,
+					1045,
+					110251
+				}
+			}
+		},
+		touch_data = {},
+		use_cloth = {
 			1,
-			0,
-			0
+			1,
+			1,
+			1,
+			1,
+			1
+		},
+		cloth_colliders = {},
+		head_track = {
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {
+			{
+				2001,
+				"XR_TD_shafa_idle_01"
+			}
 		}
+	},
+	[110260] = {
+		base = 100260,
+		camera_group = 11025,
+		character_action = "TLX_TD_shafa_idle_01",
+		ik_camera = "Cam100260",
+		id = 110260,
+		skin_id = 202202,
+		character_position = "Pos100260",
+		character_id = 20220,
+		ik_id = {
+			{
+				11026000,
+				0,
+				{
+					4,
+					0.3,
+					1045,
+					110251
+				}
+			}
+		},
+		touch_data = {},
+		use_cloth = {
+			1,
+			1,
+			1,
+			1,
+			1
+		},
+		cloth_colliders = {
+			{
+				"Magica Capsule Collider (Bip001 L Thigh)",
+				1,
+				0.045,
+				0.07
+			},
+			{
+				"Magica Capsule Collider (Bip001 R Thigh)",
+				1,
+				0.045,
+				0.07
+			},
+			{
+				"Magica Capsule Collider (Bip001 Pelvis)",
+				1,
+				0.09,
+				0.09
+			}
+		},
+		head_track = {
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {
+			{
+				2001,
+				"XR_TD_shafa_idle_01"
+			}
+		}
+	},
+	[110270] = {
+		base = 100270,
+		camera_group = 11025,
+		character_action = "TLX_TD_shafa_idle_01",
+		ik_camera = "Cam100270",
+		id = 110270,
+		skin_id = 202202,
+		character_position = "Pos100270",
+		character_id = 20220,
+		ik_id = {
+			{
+				11027000,
+				0,
+				{
+					4,
+					0.3,
+					1046
+				}
+			},
+			{
+				11027001,
+				0,
+				{
+					4,
+					0.3,
+					1047
+				}
+			}
+		},
+		touch_data = {},
+		use_cloth = {
+			1,
+			1,
+			1,
+			1,
+			1,
+			1
+		},
+		cloth_colliders = {},
+		head_track = {
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {
+			{
+				2001,
+				"XR_TD_shafa_idle_01"
+			}
+		}
+	},
+	[110280] = {
+		base = 100280,
+		camera_group = 11026,
+		character_action = "TLX_TD_shafa_idle_03",
+		ik_camera = "Cam100280",
+		id = 110280,
+		skin_id = 202202,
+		character_position = "Pos100280",
+		character_id = 20220,
+		ik_id = {
+			{
+				11028000,
+				0,
+				{
+					4,
+					0.3,
+					1051
+				}
+			},
+			{
+				11028001,
+				0,
+				{
+					4,
+					0.3,
+					1052
+				}
+			}
+		},
+		touch_data = {
+			{
+				1002801,
+				0,
+				{
+					4,
+					0.3,
+					1050
+				}
+			}
+		},
+		use_cloth = {
+			1,
+			1,
+			1,
+			1,
+			1,
+			1
+		},
+		cloth_colliders = {},
+		head_track = {
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
+	},
+	[110251] = {
+		base = 100251,
+		camera_group = 11027,
+		character_action = "TLX_TD_shafa_idle_02",
+		ik_camera = "Cam100251",
+		id = 110251,
+		skin_id = 202202,
+		character_position = "Pos100251",
+		character_id = 20220,
+		ik_id = {
+			{
+				11025100,
+				0,
+				{
+					4,
+					0.3,
+					1048
+				}
+			},
+			{
+				11025101,
+				0,
+				{
+					4,
+					0.3,
+					1049,
+					110250
+				}
+			}
+		},
+		touch_data = {},
+		use_cloth = {
+			1,
+			1,
+			1,
+			1,
+			1,
+			1
+		},
+		cloth_colliders = {},
+		head_track = {
+			1
+		},
+		head_track = {
+			1
+		},
+		enter_scene_anim = {}
 	},
 	get_id_list_by_camera_group = {
 		{
@@ -3806,6 +4643,17 @@ pg.dorm3d_ik_status = {
 			100231,
 			110231
 		},
+		[10025] = {
+			100250,
+			100260,
+			100270
+		},
+		[10026] = {
+			100280
+		},
+		[10027] = {
+			100251
+		},
 		[10030] = {
 			100310,
 			100320,
@@ -3870,6 +4718,17 @@ pg.dorm3d_ik_status = {
 		},
 		[11073] = {
 			110731
+		},
+		[11025] = {
+			110250,
+			110260,
+			110270
+		},
+		[11026] = {
+			110280
+		},
+		[11027] = {
+			110251
 		}
 	},
 	get_id_list_by_base = {
@@ -3968,6 +4827,26 @@ pg.dorm3d_ik_status = {
 		[100231] = {
 			100231,
 			110231
+		},
+		[100250] = {
+			100250,
+			110250
+		},
+		[100260] = {
+			100260,
+			110260
+		},
+		[100270] = {
+			100270,
+			110270
+		},
+		[100280] = {
+			100280,
+			110280
+		},
+		[100251] = {
+			100251,
+			110251
 		},
 		[100310] = {
 			100310,
@@ -4072,6 +4951,11 @@ pg.dorm3d_ik_status = {
 		100211,
 		100221,
 		100231,
+		100250,
+		100260,
+		100270,
+		100280,
+		100251,
 		100310,
 		100320,
 		100330,
@@ -4112,6 +4996,11 @@ pg.dorm3d_ik_status = {
 		110730,
 		110711,
 		110721,
-		110731
+		110731,
+		110250,
+		110260,
+		110270,
+		110280,
+		110251
 	}
 }

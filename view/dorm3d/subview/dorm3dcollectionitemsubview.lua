@@ -48,6 +48,8 @@ function var0_0.OnLoaded(arg0_1)
 end
 
 function var0_0.OnInit(arg0_6)
+	arg0_6.dorm3dmainscene = pg.m02:retrieveMediator(Dorm3dRoomMediator.__cname):getViewComponent()
+
 	local var0_6 = getProxy(ApartmentProxy):getRoom(arg0_6.contextData.roomId)
 
 	arg0_6.unlockDic = var0_6.collectItemDic
@@ -65,39 +67,58 @@ function var0_0.OnInit(arg0_6)
 		end
 	}))
 	setText(arg0_6.rtInfo:Find("count"), string.format("<color=#2d1dfc>%d</color>/%d", table.getCount(arg0_6.unlockDic), #arg0_6.ids))
-	setText(arg0_6.rtInfo:Find("empty"), i18n("dorm3d_collect_nothing"))
 	arg0_6.itemList:align(#arg0_6.ids)
 	triggerToggle(arg0_6.itemList.container:GetChild(0), true)
 end
 
 function var0_0.UpdateDisplay(arg0_10, arg1_10, arg2_10)
-	local var0_10 = arg0_10.unlockDic[arg2_10]
+	local var0_10 = pg.dorm3d_collection_template[arg2_10]
+	local var1_10 = arg0_10.unlockDic[arg2_10]
 
-	setActive(arg0_10.rtInfo:Find("empty"), not var0_10)
+	setActive(arg0_10.rtInfo:Find("empty"), not var1_10)
 
-	local var1_10 = arg0_10.rtInfo:Find("content")
+	if not var1_10 then
+		local var2_10
 
-	setActive(var1_10, var0_10)
+		if not _.any(var0_10.model, function(arg0_11)
+			local var0_11
+			local var1_11, var2_11 = arg0_10.dorm3dmainscene:CheckSceneItemActiveByPath(arg0_11)
 
-	if not var0_10 then
+			var2_10 = var2_11
+
+			return var1_11
+		end) then
+			local var3_10 = Dorm3dFurniture.New({
+				configId = var2_10
+			}):GetName()
+
+			setText(arg0_10.rtInfo:Find("empty"), i18n("dorm3d_collect_block_by_furniture", var3_10))
+		else
+			setText(arg0_10.rtInfo:Find("empty"), i18n("dorm3d_collect_nothing"))
+		end
+	end
+
+	local var4_10 = arg0_10.rtInfo:Find("content")
+
+	setActive(var4_10, var1_10)
+
+	if not var1_10 then
 		return
 	end
 
-	local var2_10 = pg.dorm3d_collection_template[arg2_10]
+	GetImageSpriteFromAtlasAsync("dorm3dcollection/" .. var0_10.icon, "", var4_10:Find("icon"), true)
+	setText(var4_10:Find("name/Text"), var0_10.name)
+	setText(var4_10:Find("desc"), var0_10.desc)
+	setActive(var4_10:Find("favor"), var0_10.award > 0)
 
-	GetImageSpriteFromAtlasAsync("dorm3dcollection/" .. var2_10.icon, "", var1_10:Find("icon"), true)
-	setText(var1_10:Find("name/Text"), var2_10.name)
-	setText(var1_10:Find("desc"), var2_10.desc)
-	setActive(var1_10:Find("favor"), var2_10.award > 0)
+	if var0_10.award > 0 then
+		local var5_10 = pg.dorm3d_favor_trigger[var0_10.award].num
 
-	if var2_10.award > 0 then
-		local var3_10 = pg.dorm3d_favor_trigger[var2_10.award].num
-
-		setText(var1_10:Find("favor/Text"), i18n("dorm3d_collect_favor_plus") .. var3_10)
+		setText(var4_10:Find("favor/Text"), i18n("dorm3d_collect_favor_plus") .. var5_10)
 	end
 end
 
-function var0_0.OnDestroy(arg0_11)
+function var0_0.OnDestroy(arg0_12)
 	return
 end
 
