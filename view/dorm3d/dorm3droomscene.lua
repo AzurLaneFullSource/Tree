@@ -211,6 +211,9 @@ function var0_0.init(arg0_4)
 			arg0_4:ExitTouchMode()
 		end
 	end, "ui-dorm_back_v2")
+	onButton(arg0_4, var2_4:Find("btn_back_heartbeat"), function()
+		arg0_4:ExitHeartbeatMode()
+	end, "ui-dorm_back_v2")
 	onButton(arg0_4, var2_4:Find("btn_back/help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
@@ -230,62 +233,62 @@ function var0_0.init(arg0_4)
 	end, SFX_PANEL)
 
 	local function var3_4()
-		local var0_28 = arg0_4.apartment:GetConfigID()
-		local var1_28 = arg0_4.ladyDict[var0_28]
-		local var2_28 = var1_28.skinIdList
-		local var3_28 = var1_28.skinId
-		local var4_28 = {}
-		local var5_28 = {}
+		local var0_29 = arg0_4.apartment:GetConfigID()
+		local var1_29 = arg0_4.ladyDict[var0_29]
+		local var2_29 = var1_29.skinIdList
+		local var3_29 = var1_29.skinId
+		local var4_29 = {}
+		local var5_29 = {}
 
-		_.each(var2_28, function(arg0_29)
-			if ApartmentProxy.CheckUnlockConfig(pg.dorm3d_resource[arg0_29].unlock) then
-				table.insert(var4_28, arg0_29)
+		_.each(var2_29, function(arg0_30)
+			if ApartmentProxy.CheckUnlockConfig(pg.dorm3d_resource[arg0_30].unlock) then
+				table.insert(var4_29, arg0_30)
 			else
-				table.insert(var5_28, arg0_29)
+				table.insert(var5_29, arg0_30)
 			end
 		end)
 
-		local function var6_28(arg0_30, arg1_30)
-			local var0_30 = arg1_30 and var4_28 or var5_28
+		local function var6_29(arg0_31, arg1_31)
+			local var0_31 = arg1_31 and var4_29 or var5_29
 
-			UIItemList.StaticAlign(arg0_30, arg0_30:GetChild(0), #var0_30, function(arg0_31, arg1_31, arg2_31)
-				if arg0_31 ~= UIItemList.EventUpdate then
+			UIItemList.StaticAlign(arg0_31, arg0_31:GetChild(0), #var0_31, function(arg0_32, arg1_32, arg2_32)
+				if arg0_32 ~= UIItemList.EventUpdate then
 					return
 				end
 
-				local var0_31 = var0_30[arg1_31 + 1]
+				local var0_32 = var0_31[arg1_32 + 1]
 
-				setActive(arg2_31:Find("Selected"), var0_31 == var3_28)
-				setActive(arg2_31:Find("Lock"), not arg1_30)
+				setActive(arg2_32:Find("Selected"), var0_32 == var3_29)
+				setActive(arg2_32:Find("Lock"), not arg1_31)
 
-				if not arg1_30 then
-					setText(arg2_31:Find("Lock/Bar/Text"), pg.dorm3d_resource[var0_31].unlock_text)
+				if not arg1_31 then
+					setText(arg2_32:Find("Lock/Bar/Text"), pg.dorm3d_resource[var0_32].unlock_text)
 				end
 
-				arg0_4.loader:GetSpriteQuiet(string.format("dorm3dselect/apartment_skin_%d", var0_31), "", arg2_31:Find("Icon"))
-				onButton(arg0_4, arg2_31, function()
-					if not arg1_30 then
-						local var0_32, var1_32 = ApartmentProxy.CheckUnlockConfig(pg.dorm3d_resource[var0_31].unlock)
+				arg0_4.loader:GetSpriteQuiet(string.format("dorm3dselect/apartment_skin_%d", var0_32), "", arg2_32:Find("Icon"))
+				onButton(arg0_4, arg2_32, function()
+					if not arg1_31 then
+						local var0_33, var1_33 = ApartmentProxy.CheckUnlockConfig(pg.dorm3d_resource[var0_32].unlock)
 
-						pg.TipsMgr.GetInstance():ShowTips(var1_32)
+						pg.TipsMgr.GetInstance():ShowTips(var1_33)
 
 						return
 					end
 
-					if var0_31 == var3_28 then
+					if var0_32 == var3_29 then
 						return
 					end
 
-					local var2_32 = var0_31
+					local var2_33 = var0_32
 
 					seriesAsync({
-						function(arg0_33)
-							arg0_4:SetIKState(false, arg0_33)
-						end,
 						function(arg0_34)
-							arg0_4.SwitchCharacterSkin(var1_28, var0_28, var2_32)
-							arg0_4:SwitchIKConfig(var1_28, var1_28.ikConfig.id)
-							arg0_4:SetIKState(true, arg0_34)
+							arg0_4:SetIKState(false, arg0_34)
+						end,
+						function(arg0_35)
+							arg0_4.SwitchCharacterSkin(var1_29, var0_29, var2_33)
+							arg0_4:SwitchIKConfig(var1_29, var1_29.ikConfig.id)
+							arg0_4:SetIKState(true, arg0_35)
 						end,
 						var3_4
 					})
@@ -293,8 +296,8 @@ function var0_0.init(arg0_4)
 			end)
 		end
 
-		var6_28(var2_4:Find("Panel/BG/Scroll/Content/Unlock/List"), true)
-		var6_28(var2_4:Find("Panel/BG/Scroll/Content/Lock/List"), false)
+		var6_29(var2_4:Find("Panel/BG/Scroll/Content/Unlock/List"), true)
+		var6_29(var2_4:Find("Panel/BG/Scroll/Content/Lock/List"), false)
 	end
 
 	onButton(arg0_4, var2_4:Find("Right/Menu"), function()
@@ -317,8 +320,8 @@ function var0_0.init(arg0_4)
 	arg0_4.ikHand = var2_4:Find("Handler")
 
 	setActive(arg0_4.ikHand, false)
-	eachChild(arg0_4.ikHand, function(arg0_37)
-		setActive(arg0_37, false)
+	eachChild(arg0_4.ikHand, function(arg0_38)
+		setActive(arg0_38, false)
 	end)
 
 	local var4_4 = arg0_4.uiContianer:Find("accompany")
@@ -330,7 +333,7 @@ function var0_0.init(arg0_4)
 	arg0_4.unlockList = {}
 	arg0_4.rtFavorUp = arg0_4._tf:Find("Toast/favor_up")
 
-	arg0_4.rtFavorUp:GetComponent("DftAniEvent"):SetEndEvent(function(arg0_39)
+	arg0_4.rtFavorUp:GetComponent("DftAniEvent"):SetEndEvent(function(arg0_40)
 		setActive(arg0_4.rtFavorUp, false)
 
 		if #arg0_4.unlockList > 0 then
@@ -348,12 +351,12 @@ function var0_0.init(arg0_4)
 
 	local var5_4 = arg0_4.rtStaminaPop:GetComponent("DftAniEvent")
 
-	var5_4:SetTriggerEvent(function(arg0_40)
-		local var0_40, var1_40 = getProxy(ApartmentProxy):getStamina()
+	var5_4:SetTriggerEvent(function(arg0_41)
+		local var0_41, var1_41 = getProxy(ApartmentProxy):getStamina()
 
-		setText(arg0_4.rtStaminaPop:Find("Text"), string.format("%d/%d", var0_40, var1_40))
+		setText(arg0_4.rtStaminaPop:Find("Text"), string.format("%d/%d", var0_41, var1_41))
 	end)
-	var5_4:SetEndEvent(function(arg0_41)
+	var5_4:SetEndEvent(function(arg0_42)
 		setActive(arg0_4.rtStaminaPop, false)
 	end)
 	setActive(arg0_4.rtStaminaPop, false)
@@ -394,19 +397,19 @@ function var0_0.init(arg0_4)
 	arg0_4.rtRole = arg0_4.uiContianer:Find("watch/Role")
 
 	onButton(arg0_4, arg0_4.rtRole:Find("Talk"), function()
-		local var0_46 = arg0_4.ladyDict[arg0_4.apartment:GetConfigID()].ladyBaseZone
-		local var1_46 = arg0_4.apartment:getFurnitureTalking(arg0_4.room:GetConfigID(), var0_46)
+		local var0_47 = arg0_4.ladyDict[arg0_4.apartment:GetConfigID()].ladyBaseZone
+		local var1_47 = arg0_4.apartment:getFurnitureTalking(arg0_4.room:GetConfigID(), var0_47)
 
-		if #var1_46 == 0 then
+		if #var1_47 == 0 then
 			pg.TipsMgr.GetInstance():ShowTips("without topic")
 
 			return
 		end
 
-		arg0_4:DoTalk(var1_46[math.random(#var1_46)], function()
-			local var0_47 = getDorm3dGameset("drom3d_favir_trigger_talk")[1]
+		arg0_4:DoTalk(var1_47[math.random(#var1_47)], function()
+			local var0_48 = getDorm3dGameset("drom3d_favir_trigger_talk")[1]
 
-			arg0_4:emit(Dorm3dRoomMediator.TRIGGER_FAVOR, arg0_4.apartment.configId, var0_47)
+			arg0_4:emit(Dorm3dRoomMediator.TRIGGER_FAVOR, arg0_4.apartment.configId, var0_48)
 		end)
 	end, "ui-dorm_click_v2")
 	setText(arg0_4.rtRole:Find("Talk/bg/Text"), i18n("dorm3d_talk"))
@@ -426,42 +429,42 @@ function var0_0.init(arg0_4)
 	end, "ui-dorm_click_v2")
 	setText(arg0_4.rtRole:Find("Gift/bg/Text"), i18n("dorm3d_gift"))
 	onButton(arg0_4, arg0_4.rtRole:Find("MiniGame"), function()
-		local var0_51 = arg0_4.ladyDict[arg0_4.apartment:GetConfigID()]
-		local var1_51 = {}
+		local var0_52 = arg0_4.ladyDict[arg0_4.apartment:GetConfigID()]
+		local var1_52 = {}
 
-		table.insert(var1_51, function(arg0_52)
+		table.insert(var1_52, function(arg0_53)
 			arg0_4:SetAllBlackbloardValue("inLockLayer", true)
-			arg0_4:TempHideUI(true, arg0_52)
+			arg0_4:TempHideUI(true, arg0_53)
 		end)
 
-		if var0_51.ladyBaseZone ~= "Chair" then
-			table.insert(var1_51, function(arg0_53)
-				arg0_4:ShiftZone("Chair", arg0_53)
+		if var0_52.ladyBaseZone ~= "Chair" then
+			table.insert(var1_52, function(arg0_54)
+				arg0_4:ShiftZone("Chair", arg0_54)
 			end)
 		end
 
-		table.insert(var1_51, function(arg0_54)
+		table.insert(var1_52, function(arg0_55)
 			parallelAsync({
-				function(arg0_55)
-					var0_51:PlaySingleAction("SitStart", arg0_55)
-				end,
 				function(arg0_56)
-					arg0_4:ActiveStateCamera("talk", arg0_56)
+					var0_52:PlaySingleAction("SitStart", arg0_56)
+				end,
+				function(arg0_57)
+					arg0_4:ActiveStateCamera("talk", arg0_57)
 				end
-			}, arg0_54)
+			}, arg0_55)
 		end)
-		table.insert(var1_51, function(arg0_57)
+		table.insert(var1_52, function(arg0_58)
 			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataMiniGame(1))
 			arg0_4:EnableMiniGameCutIn()
 			arg0_4:emit(Dorm3dRoomMediator.OPEN_MINIGAME_WINDOW, {
 				isDorm3d = true
-			}, arg0_57)
+			}, arg0_58)
 		end)
-		table.insert(var1_51, function(arg0_58)
+		table.insert(var1_52, function(arg0_59)
 			arg0_4:DisableMiniGameCutIn()
-			var0_51:PlaySingleAction("SitEnd", arg0_58)
+			var0_52:PlaySingleAction("SitEnd", arg0_59)
 		end)
-		seriesAsync(var1_51, function()
+		seriesAsync(var1_52, function()
 			arg0_4:SetAllBlackbloardValue("inLockLayer", false)
 			arg0_4:TempHideUI(false)
 		end)
@@ -484,86 +487,86 @@ function var0_0.init(arg0_4)
 
 	local var7_4 = cloneTplTo(arg0_4.tplFloat, arg0_4.rtFloatPage, "lady")
 
-	eachChild(var7_4, function(arg0_63)
-		setActive(arg0_63, arg0_63.name == "walk")
+	eachChild(var7_4, function(arg0_64)
+		setActive(arg0_64, arg0_64.name == "walk")
 	end)
 
 	arg0_4._joystick = arg0_4._tf:Find("Stick")
 
 	setActive(arg0_4._joystick, false)
-	arg0_4._joystick:GetComponent(typeof(SlideController)):SetStickFunc(function(arg0_64)
-		arg0_4:emit(arg0_4.ON_STICK_MOVE, arg0_64)
+	arg0_4._joystick:GetComponent(typeof(SlideController)):SetStickFunc(function(arg0_65)
+		arg0_4:emit(arg0_4.ON_STICK_MOVE, arg0_65)
 	end)
 
 	arg0_4.povLayer = arg0_4._tf:Find("POVControl")
 
 	setActive(arg0_4.povLayer, false)
 	;(function()
-		local var0_65 = arg0_4.povLayer:Find("Move"):GetComponent(typeof(SlideController))
+		local var0_66 = arg0_4.povLayer:Find("Move"):GetComponent(typeof(SlideController))
 
-		var0_65:AddBeginDragFunc(function(arg0_66, arg1_66)
-			arg0_4:emit(arg0_4.ON_POV_STICK_MOVE_BEGIN, arg1_66)
+		var0_66:AddBeginDragFunc(function(arg0_67, arg1_67)
+			arg0_4:emit(arg0_4.ON_POV_STICK_MOVE_BEGIN, arg1_67)
 		end)
-		var0_65:SetStickFunc(function(arg0_67)
-			arg0_4:emit(arg0_4.ON_POV_STICK_MOVE, arg0_67)
+		var0_66:SetStickFunc(function(arg0_68)
+			arg0_4:emit(arg0_4.ON_POV_STICK_MOVE, arg0_68)
 		end)
-		var0_65:AddDragEndFunc(function(arg0_68, arg1_68)
-			arg0_4:emit(arg0_4.ON_POV_STICK_MOVE_END, arg1_68)
+		var0_66:AddDragEndFunc(function(arg0_69, arg1_69)
+			arg0_4:emit(arg0_4.ON_POV_STICK_MOVE_END, arg1_69)
 		end)
-		arg0_4.povLayer:Find("View"):GetComponent(typeof(SlideController)):SetStickFunc(function(arg0_69)
-			arg0_4:emit(arg0_4.ON_POV_STICK_VIEW, arg0_69)
+		arg0_4.povLayer:Find("View"):GetComponent(typeof(SlideController)):SetStickFunc(function(arg0_70)
+			arg0_4:emit(arg0_4.ON_POV_STICK_VIEW, arg0_70)
 		end)
 	end)()
 
 	arg0_4.ikControlLayer = var2_4:Find("ControlLayer")
 
 	;(function()
-		local var0_70
-		local var1_70 = arg0_4.ikControlLayer:GetComponent(typeof(SlideController))
+		local var0_71
+		local var1_71 = arg0_4.ikControlLayer:GetComponent(typeof(SlideController))
 
-		var1_70:AddBeginDragFunc(function(arg0_71, arg1_71)
-			local var0_71 = arg0_4.ladyDict[arg0_4.apartment:GetConfigID()]
-			local var1_71 = arg1_71.position
-			local var2_71 = CameraMgr.instance:Raycast(arg0_4.sceneRaycaster, var1_71)
+		var1_71:AddBeginDragFunc(function(arg0_72, arg1_72)
+			local var0_72 = arg0_4.ladyDict[arg0_4.apartment:GetConfigID()]
+			local var1_72 = arg1_72.position
+			local var2_72 = CameraMgr.instance:Raycast(arg0_4.sceneRaycaster, var1_72)
 
-			if var2_71.Length ~= 0 then
-				local var3_71 = var2_71[0].gameObject.transform
-				local var4_71 = table.keyof(var0_71.ladyColliders, var3_71)
+			if var2_72.Length ~= 0 then
+				local var3_72 = var2_72[0].gameObject.transform
+				local var4_72 = table.keyof(var0_72.ladyColliders, var3_72)
 
-				if var4_71 then
-					arg0_4:emit(var0_0.ON_BEGIN_DRAG_CHARACTER_BODY, var0_71, var4_71, var1_71)
+				if var4_72 then
+					arg0_4:emit(var0_0.ON_BEGIN_DRAG_CHARACTER_BODY, var0_72, var4_72, var1_72)
 
-					var0_70 = tobool(var0_71.ikHandler)
+					var0_71 = tobool(var0_72.ikHandler)
 
 					return
 				end
 			end
 		end)
-		var1_70:AddDragFunc(function(arg0_72, arg1_72)
-			local var0_72 = arg1_72.position
-			local var1_72 = arg0_4.ladyDict[arg0_4.apartment:GetConfigID()]
+		var1_71:AddDragFunc(function(arg0_73, arg1_73)
+			local var0_73 = arg1_73.position
+			local var1_73 = arg0_4.ladyDict[arg0_4.apartment:GetConfigID()]
 
-			if var1_72.ikHandler then
-				var1_72:emit(var0_0.ON_DRAG_CHARACTER_BODY, var1_72, var0_72)
+			if var1_73.ikHandler then
+				var1_73:emit(var0_0.ON_DRAG_CHARACTER_BODY, var1_73, var0_73)
 
 				return
 			end
 
-			if var0_70 then
+			if var0_71 then
 				return
 			end
 
-			local var2_72 = arg1_72.delta
+			local var2_73 = arg1_73.delta
 
-			arg0_4:emit(arg0_4.ON_STICK_MOVE, var2_72)
+			arg0_4:emit(arg0_4.ON_STICK_MOVE, var2_73)
 		end)
-		var1_70:AddDragEndFunc(function(arg0_73, arg1_73)
-			var0_70 = nil
+		var1_71:AddDragEndFunc(function(arg0_74, arg1_74)
+			var0_71 = nil
 
-			local var0_73 = arg0_4.ladyDict[arg0_4.apartment:GetConfigID()]
+			local var0_74 = arg0_4.ladyDict[arg0_4.apartment:GetConfigID()]
 
-			if var0_73.ikHandler then
-				var0_73:emit(var0_0.ON_RELEASE_CHARACTER_BODY, var0_73)
+			if var0_74.ikHandler then
+				var0_74:emit(var0_0.ON_RELEASE_CHARACTER_BODY, var0_74)
 
 				return
 			end
@@ -582,295 +585,295 @@ function var0_0.init(arg0_4)
 	arg0_4.uiStore = {}
 end
 
-function var0_0.BindEvent(arg0_75)
-	var0_0.super.BindEvent(arg0_75)
-	arg0_75:bind(arg0_75.CLICK_CHARACTER, function(arg0_76, arg1_76)
-		if arg0_75.uiState ~= "base" or not arg0_75.ladyDict[arg1_76].nowCanWatchState then
+function var0_0.BindEvent(arg0_76)
+	var0_0.super.BindEvent(arg0_76)
+	arg0_76:bind(arg0_76.CLICK_CHARACTER, function(arg0_77, arg1_77)
+		if arg0_76.uiState ~= "base" or not arg0_76.ladyDict[arg1_77].nowCanWatchState then
 			return
 		end
 
-		local var0_76 = {}
-		local var1_76 = arg0_75.ladyDict[arg1_76]
+		local var0_77 = {}
+		local var1_77 = arg0_76.ladyDict[arg1_77]
 
-		if var1_76:GetBlackboardValue("inPending") then
-			table.insert(var0_76, function(arg0_77)
-				var1_76:OutOfPending(arg1_76, arg0_77)
+		if var1_77:GetBlackboardValue("inPending") then
+			table.insert(var0_77, function(arg0_78)
+				var1_77:OutOfPending(arg1_77, arg0_78)
 			end)
 		else
-			table.insert(var0_76, function(arg0_78)
-				arg0_75:OutOfLazy(arg1_76, arg0_78)
+			table.insert(var0_77, function(arg0_79)
+				arg0_76:OutOfLazy(arg1_77, arg0_79)
 			end)
 		end
 
-		seriesAsync(var0_76, function()
-			if not arg0_75.room:isPersonalRoom() then
-				arg0_75:SetApartment(getProxy(ApartmentProxy):getApartment(arg1_76))
+		seriesAsync(var0_77, function()
+			if not arg0_76.room:isPersonalRoom() then
+				arg0_76:SetApartment(getProxy(ApartmentProxy):getApartment(arg1_77))
 			end
 
-			arg0_75:EnterWatchMode()
+			arg0_76:EnterWatchMode()
 		end)
 		pg.CriMgr.GetInstance():PlaySE_V3("ui-dorm_touch_v1")
 	end)
-	arg0_75:bind(arg0_75.CLICK_CONTACT, function(arg0_80, arg1_80)
-		arg0_75:TriggerContact(arg1_80)
+	arg0_76:bind(arg0_76.CLICK_CONTACT, function(arg0_81, arg1_81)
+		arg0_76:TriggerContact(arg1_81)
 	end)
-	arg0_75:bind(arg0_75.DISTANCE_TRIGGER, function(arg0_81, arg1_81, arg2_81)
-		if arg0_75.uiState == "base" then
-			arg0_75:CheckDistanceTalk(arg1_81, arg2_81)
+	arg0_76:bind(arg0_76.DISTANCE_TRIGGER, function(arg0_82, arg1_82, arg2_82)
+		if arg0_76.uiState == "base" then
+			arg0_76:CheckDistanceTalk(arg1_82, arg2_82)
 		end
 	end)
-	arg0_75:bind(arg0_75.WALK_DISTANCE_TRIGGER, function(arg0_82, arg1_82, arg2_82)
-		if arg0_75.apartment and arg0_75.apartment:GetConfigID() == arg1_82 then
-			existCall(arg0_75.walkNearCallback, arg2_82)
+	arg0_76:bind(arg0_76.WALK_DISTANCE_TRIGGER, function(arg0_83, arg1_83, arg2_83)
+		if arg0_76.apartment and arg0_76.apartment:GetConfigID() == arg1_83 then
+			existCall(arg0_76.walkNearCallback, arg2_83)
 		end
 	end)
-	arg0_75:bind(arg0_75.CHANGE_WATCH, function(arg0_83, arg1_83)
-		arg0_75.ladyDict[arg1_83]:ChangeCanWatchState()
+	arg0_76:bind(arg0_76.CHANGE_WATCH, function(arg0_84, arg1_84)
+		arg0_76.ladyDict[arg1_84]:ChangeCanWatchState()
 	end)
-	arg0_75:bind(arg0_75.ON_TOUCH_CHARACTER, function(arg0_84, arg1_84)
-		if not arg0_75.ladyDict[arg0_75.apartment:GetConfigID()]:GetBlackboardValue("inIK") then
+	arg0_76:bind(arg0_76.ON_TOUCH_CHARACTER, function(arg0_85, arg1_85)
+		if not arg0_76.ladyDict[arg0_76.apartment:GetConfigID()]:GetBlackboardValue("inIK") then
 			return
 		end
 
-		arg0_75:OnTouchCharacterBody(arg1_84)
+		arg0_76:OnTouchCharacterBody(arg1_85)
 	end)
-	arg0_75:bind(arg0_75.ON_IK_STATUS_CHANGED, function(arg0_85, arg1_85, arg2_85)
-		if not arg0_75.ladyDict[arg0_75.apartment:GetConfigID()]:GetBlackboardValue("inTouching") then
+	arg0_76:bind(arg0_76.ON_IK_STATUS_CHANGED, function(arg0_86, arg1_86, arg2_86)
+		if not arg0_76.ladyDict[arg0_76.apartment:GetConfigID()]:GetBlackboardValue("inTouching") then
 			return
 		end
 
-		arg0_75:DoTouch(arg1_85, arg2_85)
+		arg0_76:DoTouch(arg1_86, arg2_86)
 	end)
-	arg0_75:bind(arg0_75.ON_ENTER_SECTOR, function(arg0_86, arg1_86)
-		arg0_75.ladyDict[arg1_86]:ChangeCanWatchState()
+	arg0_76:bind(arg0_76.ON_ENTER_SECTOR, function(arg0_87, arg1_87)
+		arg0_76.ladyDict[arg1_87]:ChangeCanWatchState()
 	end)
-	arg0_75:bind(arg0_75.ON_CHANGE_DISTANCE, function(arg0_87, arg1_87, arg2_87)
-		arg0_75.ladyDict[arg1_87]:ChangeCanWatchState()
+	arg0_76:bind(arg0_76.ON_CHANGE_DISTANCE, function(arg0_88, arg1_88, arg2_88)
+		arg0_76.ladyDict[arg1_88]:ChangeCanWatchState()
 	end)
 end
 
-function var0_0.didEnter(arg0_88)
-	var0_0.super.didEnter(arg0_88)
-	arg0_88:UpdateZoneList()
+function var0_0.didEnter(arg0_89)
+	var0_0.super.didEnter(arg0_89)
+	arg0_89:UpdateZoneList()
 
-	arg0_88.resumeCallback = arg0_88.contextData.resumeCallback
-	arg0_88.contextData.resumeCallback = nil
+	arg0_89.resumeCallback = arg0_89.contextData.resumeCallback
+	arg0_89.contextData.resumeCallback = nil
 
-	arg0_88:SetUI(function()
-		arg0_88:didEnterCheck()
+	arg0_89:SetUI(function()
+		arg0_89:didEnterCheck()
 	end, "base")
 end
 
-function var0_0.FinishEnterResume(arg0_90)
-	if not arg0_90.resumeCallback then
+function var0_0.FinishEnterResume(arg0_91)
+	if not arg0_91.resumeCallback then
 		return
 	end
 
-	local var0_90 = arg0_90.resumeCallback
+	local var0_91 = arg0_91.resumeCallback
 
-	arg0_90.resumeCallback = nil
+	arg0_91.resumeCallback = nil
 
-	return var0_90()
+	return var0_91()
 end
 
-function var0_0.EnableJoystick(arg0_91, arg1_91)
-	setActive(arg0_91._joystick, arg1_91)
+function var0_0.EnableJoystick(arg0_92, arg1_92)
+	setActive(arg0_92._joystick, arg1_92)
 end
 
-function var0_0.EnablePOVLayer(arg0_92, arg1_92)
-	setActive(arg0_92.povLayer, arg1_92)
+function var0_0.EnablePOVLayer(arg0_93, arg1_93)
+	setActive(arg0_93.povLayer, arg1_93)
 
-	if not arg1_92 then
-		arg0_92:emit(arg0_92.ON_POV_STICK_MOVE_END)
+	if not arg1_93 then
+		arg0_93:emit(arg0_93.ON_POV_STICK_MOVE_END)
 	end
 end
 
-function var0_0.SetUIStore(arg0_93, arg1_93, ...)
-	table.insertto(arg0_93.uiStore, {
-		...
-	})
-	existCall(arg1_93)
-end
-
-function var0_0.SetUI(arg0_94, arg1_94, ...)
-	while rawget(arg0_94, "class") ~= var0_0 do
-		arg0_94 = getmetatable(arg0_94).__index
-	end
-
+function var0_0.SetUIStore(arg0_94, arg1_94, ...)
 	table.insertto(arg0_94.uiStore, {
 		...
 	})
+	existCall(arg1_94)
+end
 
-	for iter0_94, iter1_94 in ipairs(arg0_94.uiStore) do
-		if iter1_94 == "back" then
-			assert(#arg0_94.uiStack > 0)
+function var0_0.SetUI(arg0_95, arg1_95, ...)
+	while rawget(arg0_95, "class") ~= var0_0 do
+		arg0_95 = getmetatable(arg0_95).__index
+	end
 
-			arg0_94.uiState = table.remove(arg0_94.uiStack)
-		elseif iter1_94 == arg0_94.uiState and iter1_94 == "ik" then
+	table.insertto(arg0_95.uiStore, {
+		...
+	})
+
+	for iter0_95, iter1_95 in ipairs(arg0_95.uiStore) do
+		if iter1_95 == "back" then
+			assert(#arg0_95.uiStack > 0)
+
+			arg0_95.uiState = table.remove(arg0_95.uiStack)
+		elseif iter1_95 == arg0_95.uiState and iter1_95 == "ik" then
 			-- block empty
 		else
-			table.insert(arg0_94.uiStack, arg0_94.uiState)
+			table.insert(arg0_95.uiStack, arg0_95.uiState)
 
-			arg0_94.uiState = iter1_94
+			arg0_95.uiState = iter1_95
 		end
 	end
 
-	arg0_94.uiStore = {}
+	arg0_95.uiStore = {}
 
-	eachChild(arg0_94.uiContianer, function(arg0_95)
-		setActive(arg0_95, arg0_95.name == arg0_94.uiState)
+	eachChild(arg0_95.uiContianer, function(arg0_96)
+		setActive(arg0_96, arg0_96.name == arg0_95.uiState)
 	end)
-	arg0_94:EnablePOVLayer(arg0_94.uiState == "base" or arg0_94.uiState == "walk")
-	arg0_94:TempHideContact(arg0_94.uiState ~= "base")
-	arg0_94:SetFloatEnable(arg0_94.uiState == "walk")
-	setActive(arg0_94.rtFloatPage, arg0_94.uiState == "walk")
-	switch(arg0_94.uiState, {
+	arg0_95:EnablePOVLayer(arg0_95.uiState == "base" or arg0_95.uiState == "walk")
+	arg0_95:TempHideContact(arg0_95.uiState ~= "base")
+	arg0_95:SetFloatEnable(arg0_95.uiState == "walk")
+	setActive(arg0_95.rtFloatPage, arg0_95.uiState == "walk")
+	switch(arg0_95.uiState, {
 		base = function()
-			if not arg0_94.room:isPersonalRoom() then
-				arg0_94:SetApartment(nil)
+			if not arg0_95.room:isPersonalRoom() then
+				arg0_95:SetApartment(nil)
 			end
 
-			arg0_94:UpdateBtnState()
+			arg0_95:UpdateBtnState()
 		end,
 		watch = function()
-			eachChild(arg0_94.rtRole, function(arg0_98)
-				setActive(arg0_98, false)
+			eachChild(arg0_95.rtRole, function(arg0_99)
+				setActive(arg0_99, false)
 			end)
 
-			local var0_97 = underscore.filter({
+			local var0_98 = underscore.filter({
 				"Talk",
 				"Touch",
 				"Gift",
 				"MiniGame",
 				"Volleyball",
 				"Performance"
-			}, function(arg0_99)
-				return arg0_94:CheckSystemOpen(arg0_99)
+			}, function(arg0_100)
+				return arg0_95:CheckSystemOpen(arg0_100)
 			end)
-			local var1_97 = 0.05
+			local var1_98 = 0.05
 
-			for iter0_97, iter1_97 in ipairs(var0_97) do
-				LeanTween.delayedCall(var1_97, System.Action(function()
-					setActive(arg0_94.rtRole:Find(iter1_97), true)
+			for iter0_98, iter1_98 in ipairs(var0_98) do
+				LeanTween.delayedCall(var1_98, System.Action(function()
+					setActive(arg0_95.rtRole:Find(iter1_98), true)
 				end))
 
-				var1_97 = var1_97 + 0.066
+				var1_98 = var1_98 + 0.066
 			end
 
-			setActive(arg0_94.rtRole:Find("Gift/bg/Tip"), Dorm3dGift.NeedViewTip(arg0_94.apartment:GetConfigID()))
+			setActive(arg0_95.rtRole:Find("Gift/bg/Tip"), Dorm3dGift.NeedViewTip(arg0_95.apartment:GetConfigID()))
 		end,
 		ik = function()
-			setActive(arg0_94.uiContianer:Find("ik/Right/MenuSmall"), arg0_94.room:isPersonalRoom())
-			setActive(arg0_94.uiContianer:Find("ik/Right/Menu"), false)
+			setActive(arg0_95.uiContianer:Find("ik/Right/MenuSmall"), arg0_95.room:isPersonalRoom())
+			setActive(arg0_95.uiContianer:Find("ik/Right/Menu"), false)
 		end,
 		walk = function()
-			setText(arg0_94.uiContianer:Find("walk/dialogue/content"), i18n("dorm3d_removable", arg0_94.apartment:getConfig("name")))
+			setText(arg0_95.uiContianer:Find("walk/dialogue/content"), i18n("dorm3d_removable", arg0_95.apartment:getConfig("name")))
 		end
 	})
-	arg0_94:ActiveStateCamera(arg0_94.uiState, function()
-		if arg1_94 then
-			arg1_94()
-		elseif arg0_94.uiState == "base" then
-			arg0_94:CheckQueue()
+	arg0_95:ActiveStateCamera(arg0_95.uiState, function()
+		if arg1_95 then
+			arg1_95()
+		elseif arg0_95.uiState == "base" then
+			arg0_95:CheckQueue()
 		end
 	end)
 end
 
-function var0_0.EnterWatchMode(arg0_104, arg1_104)
-	local var0_104 = arg0_104.apartment:GetConfigID()
+function var0_0.EnterWatchMode(arg0_105, arg1_105)
+	local var0_105 = arg0_105.apartment:GetConfigID()
 
 	seriesAsync({
-		function(arg0_105)
-			arg0_104:emit(arg0_104.SHOW_BLOCK)
-			arg0_104.ladyDict[var0_104]:SetBlackboardValue("inWatchMode", true)
-			arg0_104:SetUI(arg0_105, "watch")
-		end,
 		function(arg0_106)
-			arg0_104:emit(arg0_104.HIDE_BLOCK)
+			arg0_105:emit(arg0_105.SHOW_BLOCK)
+			arg0_105.ladyDict[var0_105]:SetBlackboardValue("inWatchMode", true)
+			arg0_105:SetUI(arg0_106, "watch")
+		end,
+		function(arg0_107)
+			arg0_105:emit(arg0_105.HIDE_BLOCK)
 		end
 	})
 end
 
-function var0_0.ExitWatchMode(arg0_107)
-	local var0_107 = arg0_107.apartment:GetConfigID()
+function var0_0.ExitWatchMode(arg0_108)
+	local var0_108 = arg0_108.apartment:GetConfigID()
 
 	seriesAsync({
-		function(arg0_108)
-			arg0_107:emit(arg0_107.SHOW_BLOCK)
-			arg0_107:SetUI(arg0_108, "back")
-		end,
 		function(arg0_109)
-			arg0_107.ladyDict[var0_107]:SetBlackboardValue("inWatchMode", false)
-			arg0_107:emit(arg0_107.HIDE_BLOCK)
-			arg0_107:CheckQueue()
+			arg0_108:emit(arg0_108.SHOW_BLOCK)
+			arg0_108:SetUI(arg0_109, "back")
+		end,
+		function(arg0_110)
+			arg0_108.ladyDict[var0_108]:SetBlackboardValue("inWatchMode", false)
+			arg0_108:emit(arg0_108.HIDE_BLOCK)
+			arg0_108:CheckQueue()
 		end
 	})
 end
 
-function var0_0.SetInPending(arg0_110, arg1_110)
-	local var0_110 = arg0_110:GetBlackboardValue("groupId")
-	local var1_110 = pg.dorm3d_welcome[arg1_110]
+function var0_0.SetInPending(arg0_111, arg1_111)
+	local var0_111 = arg0_111:GetBlackboardValue("groupId")
+	local var1_111 = pg.dorm3d_welcome[arg1_111]
 
-	arg0_110:SetBlackboardValue("inPending", true)
-	arg0_110:ChangeCanWatchState()
-	arg0_110:EnableHeadIK(false)
+	arg0_111:SetBlackboardValue("inPending", true)
+	arg0_111:ChangeCanWatchState()
+	arg0_111:EnableHeadIK(false)
 
-	arg0_110.contextData.ladyZone[var0_110] = var1_110.area
-	arg0_110.ladyBaseZone = arg0_110.contextData.ladyZone[var0_110]
-	arg0_110.ladyActiveZone = var1_110.welcome_staypoint
+	arg0_111.contextData.ladyZone[var0_111] = var1_111.area
+	arg0_111.ladyBaseZone = arg0_111.contextData.ladyZone[var0_111]
+	arg0_111.ladyActiveZone = var1_111.welcome_staypoint
 
-	arg0_110:ChangeCharacterPosition()
+	arg0_111:ChangeCharacterPosition()
 
-	if var1_110.item_shield ~= "" then
-		arg0_110.hideItemDic = {}
+	if var1_111.item_shield ~= "" then
+		arg0_111.hideItemDic = {}
 
-		for iter0_110, iter1_110 in ipairs(var1_110.item_shield) do
-			local var2_110 = arg0_110.modelRoot:Find(iter1_110)
+		for iter0_111, iter1_111 in ipairs(var1_111.item_shield) do
+			local var2_111 = arg0_111.modelRoot:Find(iter1_111)
 
-			if not var2_110 then
-				warning(string.format("welcome:%d without hide item:%s", arg1_110, iter1_110))
+			if not var2_111 then
+				warning(string.format("welcome:%d without hide item:%s", arg1_111, iter1_111))
 			else
-				arg0_110.hideItemDic[iter1_110] = isActive(var2_110)
+				arg0_111.hideItemDic[iter1_111] = isActive(var2_111)
 
-				setActive(var2_110, false)
+				setActive(var2_111, false)
 			end
 		end
 	end
 
 	onNextTick(function()
-		if arg0_110.tfPendintItem then
-			setActive(arg0_110.tfPendintItem, true)
+		if arg0_111.tfPendintItem then
+			setActive(arg0_111.tfPendintItem, true)
 		end
 
-		arg0_110:SwitchAnim(var1_110.welcome_idle)
+		arg0_111:SwitchAnim(var1_111.welcome_idle)
 	end)
 
-	arg0_110.wakeUpTalkId = var1_110.welcome_talk
+	arg0_111.wakeUpTalkId = var1_111.welcome_talk
 end
 
-function var0_0.SetOutPending(arg0_112)
-	arg0_112:SetBlackboardValue("inPending", false)
-	arg0_112:ChangeCanWatchState()
-	arg0_112:EnableHeadIK(true)
+function var0_0.SetOutPending(arg0_113)
+	arg0_113:SetBlackboardValue("inPending", false)
+	arg0_113:ChangeCanWatchState()
+	arg0_113:EnableHeadIK(true)
 
-	arg0_112.wakeUpTalkId = nil
+	arg0_113.wakeUpTalkId = nil
 
-	if arg0_112.tfPendintItem then
-		setActive(arg0_112.tfPendintItem, false)
+	if arg0_113.tfPendintItem then
+		setActive(arg0_113.tfPendintItem, false)
 	end
 
-	if arg0_112.hideItemDic then
-		for iter0_112, iter1_112 in pairs(arg0_112.hideItemDic) do
-			setActive(arg0_112.modelRoot:Find(iter0_112), iter1_112)
+	if arg0_113.hideItemDic then
+		for iter0_113, iter1_113 in pairs(arg0_113.hideItemDic) do
+			setActive(arg0_113.modelRoot:Find(iter0_113), iter1_113)
 		end
 
-		arg0_112.hideItemDic = nil
+		arg0_113.hideItemDic = nil
 	end
 end
 
-function var0_0.IsModeInHidePending(arg0_113, arg1_113)
-	for iter0_113, iter1_113 in pairs(arg0_113.ladyDict) do
-		if iter1_113.hideItemDic and iter1_113.hideItemDic[arg1_113] ~= nil then
+function var0_0.IsModeInHidePending(arg0_114, arg1_114)
+	for iter0_114, iter1_114 in pairs(arg0_114.ladyDict) do
+		if iter1_114.hideItemDic and iter1_114.hideItemDic[arg1_114] ~= nil then
 			return true
 		end
 	end
@@ -878,508 +881,508 @@ function var0_0.IsModeInHidePending(arg0_113, arg1_113)
 	return false
 end
 
-function var0_0.EnterAccompanyMode(arg0_114, arg1_114)
-	local var0_114 = pg.dorm3d_accompany[arg1_114]
-	local var1_114
-	local var2_114
+function var0_0.EnterAccompanyMode(arg0_115, arg1_115)
+	local var0_115 = pg.dorm3d_accompany[arg1_115]
+	local var1_115
+	local var2_115
 
-	if var0_114.sceneInfo ~= "" then
-		var1_114, var2_114 = unpack(string.split(var0_114.sceneInfo, "|"))
+	if var0_115.sceneInfo ~= "" then
+		var1_115, var2_115 = unpack(string.split(var0_115.sceneInfo, "|"))
 	end
 
-	local var3_114 = {
+	local var3_115 = {
 		type = "timeline",
-		name = var0_114.timeline,
-		scene = var1_114,
-		sceneRoot = var2_114,
+		name = var0_115.timeline,
+		scene = var1_115,
+		sceneRoot = var2_115,
 		accompanys = {}
 	}
 
-	for iter0_114, iter1_114 in ipairs(var0_114.jump_trigger) do
-		local var4_114, var5_114 = unpack(iter1_114)
+	for iter0_115, iter1_115 in ipairs(var0_115.jump_trigger) do
+		local var4_115, var5_115 = unpack(iter1_115)
 
-		var3_114.accompanys[var4_114] = var5_114
+		var3_115.accompanys[var4_115] = var5_115
 	end
 
-	local var6_114, var7_114 = unpack(var0_114.favor)
+	local var6_115, var7_115 = unpack(var0_115.favor)
 
 	getProxy(ApartmentProxy):RecordAccompanyTime()
-	pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataAccompany(1, var0_114.ship_id, var0_114.performance_time, 0, var1_114 or arg0_114.artSceneInfo))
+	pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataAccompany(1, var0_115.ship_id, var0_115.performance_time, 0, var1_115 or arg0_115.artSceneInfo))
 
-	local var8_114 = {}
+	local var8_115 = {}
 
-	table.insert(var8_114, function(arg0_115)
-		arg0_114:SetUI(arg0_115, "blank", "accompany")
+	table.insert(var8_115, function(arg0_116)
+		arg0_115:SetUI(arg0_116, "blank", "accompany")
 	end)
-	table.insert(var8_114, function(arg0_116)
-		arg0_114.accompanyFavorCount = 0
-		arg0_114.accompanyFavorTimer = Timer.New(function()
-			arg0_114.accompanyFavorCount = arg0_114.accompanyFavorCount + 1
-		end, var6_114, -1)
+	table.insert(var8_115, function(arg0_117)
+		arg0_115.accompanyFavorCount = 0
+		arg0_115.accompanyFavorTimer = Timer.New(function()
+			arg0_115.accompanyFavorCount = arg0_115.accompanyFavorCount + 1
+		end, var6_115, -1)
 
-		arg0_114.accompanyFavorTimer:Start()
+		arg0_115.accompanyFavorTimer:Start()
 
-		arg0_114.accompanyPerformanceTimer = Timer.New(function()
-			arg0_114.canTriggerAccompanyPerformance = true
+		arg0_115.accompanyPerformanceTimer = Timer.New(function()
+			arg0_115.canTriggerAccompanyPerformance = true
 
-			warning(arg0_114.canTriggerAccompanyPerformance)
-		end, var0_114.performance_time, -1)
+			warning(arg0_115.canTriggerAccompanyPerformance)
+		end, var0_115.performance_time, -1)
 
-		arg0_114.accompanyPerformanceTimer:Start()
-		arg0_114:PlayTimeline(var3_114, function(arg0_119, arg1_119)
-			arg1_119()
-			arg0_116()
+		arg0_115.accompanyPerformanceTimer:Start()
+		arg0_115:PlayTimeline(var3_115, function(arg0_120, arg1_120)
+			arg1_120()
+			arg0_117()
 		end)
 	end)
-	seriesAsync(var8_114, function()
-		assert(arg0_114.accompanyFavorTimer)
-		arg0_114.accompanyFavorTimer:Stop()
+	seriesAsync(var8_115, function()
+		assert(arg0_115.accompanyFavorTimer)
+		arg0_115.accompanyFavorTimer:Stop()
 
-		arg0_114.accompanyFavorTimer = nil
+		arg0_115.accompanyFavorTimer = nil
 
-		assert(arg0_114.accompanyPerformanceTimer)
-		arg0_114.accompanyPerformanceTimer:Stop()
+		assert(arg0_115.accompanyPerformanceTimer)
+		arg0_115.accompanyPerformanceTimer:Stop()
 
-		arg0_114.accompanyPerformanceTimer = nil
-		arg0_114.canTriggerAccompanyPerformance = nil
+		arg0_115.accompanyPerformanceTimer = nil
+		arg0_115.canTriggerAccompanyPerformance = nil
 
-		local var0_120 = math.min(arg0_114.accompanyFavorCount, getProxy(ApartmentProxy):getStamina())
+		local var0_121 = math.min(arg0_115.accompanyFavorCount, getProxy(ApartmentProxy):getStamina())
 
-		if var0_120 > 0 then
-			local var1_120 = var7_114[var0_120]
+		if var0_121 > 0 then
+			local var1_121 = var7_115[var0_121]
 
-			warning(var1_120)
-			arg0_114:emit(Dorm3dRoomMediator.TRIGGER_FAVOR, arg0_114.apartment.configId, var1_120)
+			warning(var1_121)
+			arg0_115:emit(Dorm3dRoomMediator.TRIGGER_FAVOR, arg0_115.apartment.configId, var1_121)
 		end
 
-		local var2_120 = 0
-		local var3_120 = getProxy(ApartmentProxy):GetAccompanyTime()
+		local var2_121 = 0
+		local var3_121 = getProxy(ApartmentProxy):GetAccompanyTime()
 
-		if var3_120 then
-			var2_120 = pg.TimeMgr.GetInstance():GetServerTime() - var3_120
+		if var3_121 then
+			var2_121 = pg.TimeMgr.GetInstance():GetServerTime() - var3_121
 		end
 
-		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataAccompany(2, var0_114.ship_id, var0_114.performance_time, var2_120, var1_114 or arg0_114.artSceneInfo))
-		arg0_114:SetUI(nil, "back", "back")
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataAccompany(2, var0_115.ship_id, var0_115.performance_time, var2_121, var1_115 or arg0_115.artSceneInfo))
+		arg0_115:SetUI(nil, "back", "back")
 	end)
 end
 
-function var0_0.ExitAccompanyMode(arg0_121)
-	existCall(arg0_121.timelineFinishCall)
+function var0_0.ExitAccompanyMode(arg0_122)
+	existCall(arg0_122.timelineFinishCall)
 end
 
-function var0_0.EnterTouchMode(arg0_122)
-	if arg0_122.ladyDict[arg0_122.apartment:GetConfigID()]:GetBlackboardValue("inTouching") then
+function var0_0.EnterTouchMode(arg0_123)
+	if arg0_123.ladyDict[arg0_123.apartment:GetConfigID()]:GetBlackboardValue("inTouching") then
 		return
 	end
 
-	local var0_122 = arg0_122.ladyDict[arg0_122.apartment:GetConfigID()]
-	local var1_122 = arg0_122.room:getApartmentZoneConfig(var0_122.ladyBaseZone, "touch_id", arg0_122.apartment:GetConfigID())
+	local var0_123 = arg0_123.ladyDict[arg0_123.apartment:GetConfigID()]
+	local var1_123 = arg0_123.room:getApartmentZoneConfig(var0_123.ladyBaseZone, "touch_id", arg0_123.apartment:GetConfigID())
 
-	arg0_122.touchConfig = pg.dorm3d_touch_data[var1_122]
-	arg0_122.inTouchGame = arg0_122.touchConfig.heartbeat_enable > 0
+	arg0_123.touchConfig = pg.dorm3d_touch_data[var1_123]
+	arg0_123.inTouchGame = arg0_123.touchConfig.heartbeat_enable > 0
 
-	setActive(arg0_122.rtTouchGamePanel, arg0_122.inTouchGame)
+	setActive(arg0_123.rtTouchGamePanel, arg0_123.inTouchGame)
 
-	if arg0_122.inTouchGame then
-		arg0_122.touchCount = 0
-		arg0_122.touchLevel = 1
-		arg0_122.lastCount = 0
-		arg0_122.topCount = 0
+	if arg0_123.inTouchGame then
+		arg0_123.touchCount = 0
+		arg0_123.touchLevel = 1
+		arg0_123.lastCount = 0
+		arg0_123.topCount = 0
 
-		arg0_122:UpdateTouchGameDisplay()
-		setSlider(arg0_122.rtTouchGamePanel:Find("slider"), 0, 100, arg0_122.touchCount >= 200 and 100 or arg0_122.touchCount % 100)
-		quickPlayAnimation(arg0_122.rtTouchGamePanel, "anim_dorm3d_touch_in")
-		quickPlayAnimation(arg0_122.rtTouchGamePanel:Find("slider/icon"), "anim_dorm3d_touch_icon")
+		arg0_123:UpdateTouchGameDisplay()
+		setSlider(arg0_123.rtTouchGamePanel:Find("slider"), 0, 100, arg0_123.touchCount >= 200 and 100 or arg0_123.touchCount % 100)
+		quickPlayAnimation(arg0_123.rtTouchGamePanel, "anim_dorm3d_touch_in")
+		quickPlayAnimation(arg0_123.rtTouchGamePanel:Find("slider/icon"), "anim_dorm3d_touch_icon")
 
-		arg0_122.downTimer = Timer.New(function()
-			local var0_123 = pg.dorm3d_set.reduce_interaction.key_value_int
+		arg0_123.downTimer = Timer.New(function()
+			local var0_124 = pg.dorm3d_set.reduce_interaction.key_value_int
 
-			if arg0_122.touchLevel > 1 then
-				var0_123 = pg.dorm3d_set.reduce_heartbeat.key_value_int
+			if arg0_123.touchLevel > 1 then
+				var0_124 = pg.dorm3d_set.reduce_heartbeat.key_value_int
 			end
 
-			arg0_122:UpdateTouchCount(var0_123)
+			arg0_123:UpdateTouchCount(var0_124)
 		end, 1, -1)
 
-		arg0_122.downTimer:Start()
+		arg0_123.downTimer:Start()
 	end
 
-	local var2_122 = {}
+	local var2_123 = {}
 
-	table.insert(var2_122, function(arg0_124)
-		var0_122:SetBlackboardValue("inTouching", true)
-		arg0_122:emit(arg0_122.SHOW_BLOCK)
-		arg0_122:SetUI(arg0_124, "blank")
+	table.insert(var2_123, function(arg0_125)
+		var0_123:SetBlackboardValue("inTouching", true)
+		arg0_123:emit(arg0_123.SHOW_BLOCK)
+		arg0_123:SetUI(arg0_125, "blank")
 	end)
-	table.insert(var2_122, function(arg0_125)
-		local var0_125 = arg0_122.touchConfig.ik_status[1]
+	table.insert(var2_123, function(arg0_126)
+		local var0_126 = arg0_123.touchConfig.ik_status[1]
 
-		arg0_122:SwitchIKConfig(var0_122, var0_125)
-		setActive(arg0_122.uiContianer:Find("ik/btn_back"), true)
-		arg0_122:SetIKState(true, arg0_125)
+		arg0_123:SwitchIKConfig(var0_123, var0_126)
+		setActive(arg0_123.uiContianer:Find("ik/btn_back"), true)
+		arg0_123:SetIKState(true, arg0_126)
 	end)
-	table.insert(var2_122, function(arg0_126)
-		existCall(arg0_126)
+	table.insert(var2_123, function(arg0_127)
+		existCall(arg0_127)
 	end)
-	seriesAsync(var2_122, function()
+	seriesAsync(var2_123, function()
 		Shader.SetGlobalFloat("_ScreenClipOff", 0)
-		arg0_122:emit(arg0_122.HIDE_BLOCK)
+		arg0_123:emit(arg0_123.HIDE_BLOCK)
 	end)
 end
 
-function var0_0.ExitTouchMode(arg0_128)
-	local var0_128 = arg0_128.ladyDict[arg0_128.apartment:GetConfigID()]
+function var0_0.ExitTouchMode(arg0_129)
+	local var0_129 = arg0_129.ladyDict[arg0_129.apartment:GetConfigID()]
 
-	if not var0_128:GetBlackboardValue("inTouching") then
+	if not var0_129:GetBlackboardValue("inTouching") then
 		return
 	end
 
-	local var1_128 = {}
+	local var1_129 = {}
 
-	if arg0_128.inTouchGame then
-		table.insert(var1_128, function(arg0_129)
-			arg0_128:emit(arg0_128.SHOW_BLOCK)
-			quickPlayAnimation(arg0_128.rtTouchGamePanel, "anim_dorm3d_touch_out")
-			onDelayTick(arg0_129, 0.5)
+	if arg0_129.inTouchGame then
+		table.insert(var1_129, function(arg0_130)
+			arg0_129:emit(arg0_129.SHOW_BLOCK)
+			quickPlayAnimation(arg0_129.rtTouchGamePanel, "anim_dorm3d_touch_out")
+			onDelayTick(arg0_130, 0.5)
 		end)
-		table.insert(var1_128, function(arg0_130)
-			local var0_130 = 0
+		table.insert(var1_129, function(arg0_131)
+			local var0_131 = 0
 
-			for iter0_130, iter1_130 in ipairs(arg0_128.touchConfig.heartbeat_favor) do
-				if iter1_130[1] > arg0_128.topCount then
+			for iter0_131, iter1_131 in ipairs(arg0_129.touchConfig.heartbeat_favor) do
+				if iter1_131[1] > arg0_129.topCount then
 					break
 				else
-					var0_130 = iter1_130[2]
+					var0_131 = iter1_131[2]
 				end
 			end
 
-			if var0_130 > 0 then
-				arg0_128:emit(Dorm3dRoomMediator.TRIGGER_FAVOR, arg0_128.apartment.configId, var0_130)
-			end
-
-			arg0_128.touchCount = nil
-			arg0_128.touchLevel = nil
-			arg0_128.topCount = nil
-
-			if arg0_128.downTimer then
-				arg0_128.downTimer:Stop()
-
-				arg0_128.downTimer = nil
-			end
-
-			arg0_128.inTouchGame = false
-
-			setActive(arg0_128.rtTouchGamePanel, false)
-			Shader.SetGlobalFloat("_ScreenClipOff", 1)
-			arg0_130()
-		end)
-	else
-		table.insert(var1_128, function(arg0_131)
-			arg0_128:emit(arg0_128.SHOW_BLOCK)
-
-			local var0_131 = arg0_128.touchConfig.default_favor
-
 			if var0_131 > 0 then
-				arg0_128:emit(Dorm3dRoomMediator.TRIGGER_FAVOR, arg0_128.apartment.configId, var0_131)
+				arg0_129:emit(Dorm3dRoomMediator.TRIGGER_FAVOR, arg0_129.apartment.configId, var0_131)
 			end
 
+			arg0_129.touchCount = nil
+			arg0_129.touchLevel = nil
+			arg0_129.topCount = nil
+
+			if arg0_129.downTimer then
+				arg0_129.downTimer:Stop()
+
+				arg0_129.downTimer = nil
+			end
+
+			arg0_129.inTouchGame = false
+
+			setActive(arg0_129.rtTouchGamePanel, false)
 			Shader.SetGlobalFloat("_ScreenClipOff", 1)
 			arg0_131()
 		end)
+	else
+		table.insert(var1_129, function(arg0_132)
+			arg0_129:emit(arg0_129.SHOW_BLOCK)
+
+			local var0_132 = arg0_129.touchConfig.default_favor
+
+			if var0_132 > 0 then
+				arg0_129:emit(Dorm3dRoomMediator.TRIGGER_FAVOR, arg0_129.apartment.configId, var0_132)
+			end
+
+			Shader.SetGlobalFloat("_ScreenClipOff", 1)
+			arg0_132()
+		end)
 	end
 
-	table.insert(var1_128, function(arg0_132)
-		var0_128.ikConfig = {
-			character_position = var0_128.ladyBaseZone,
-			character_action = arg0_128.touchConfig.finish_action
+	table.insert(var1_129, function(arg0_133)
+		var0_129.ikConfig = {
+			character_position = var0_129.ladyBaseZone,
+			character_action = arg0_129.touchConfig.finish_action
 		}
 
-		arg0_128:SetIKState(false, arg0_132)
+		arg0_129:SetIKState(false, arg0_133)
 	end)
-	table.insert(var1_128, function(arg0_133)
-		var0_128.ikConfig = nil
-		arg0_128.scene.blockIK = nil
+	table.insert(var1_129, function(arg0_134)
+		var0_129.ikConfig = nil
+		arg0_129.scene.blockIK = nil
 
-		arg0_128:SetUI(arg0_133, "back")
+		arg0_129:SetUI(arg0_134, "back")
 	end)
-	seriesAsync(var1_128, function()
-		var0_128:SetBlackboardValue("inTouching", false)
-		arg0_128:emit(arg0_128.HIDE_BLOCK)
+	seriesAsync(var1_129, function()
+		var0_129:SetBlackboardValue("inTouching", false)
+		arg0_129:emit(arg0_129.HIDE_BLOCK)
 
-		arg0_128.touchConfig = nil
+		arg0_129.touchConfig = nil
 
-		local var0_134 = arg0_128.touchExitCall
+		local var0_135 = arg0_129.touchExitCall
 
-		arg0_128.touchExitCall = nil
+		arg0_129.touchExitCall = nil
 
-		existCall(var0_134)
+		existCall(var0_135)
 	end)
 end
 
-function var0_0.ChangeWalkScene(arg0_135, arg1_135, arg2_135)
-	local var0_135 = arg0_135.ladyDict[arg0_135.apartment:GetConfigID()]
+function var0_0.ChangeWalkScene(arg0_136, arg1_136, arg2_136)
+	local var0_136 = arg0_136.ladyDict[arg0_136.apartment:GetConfigID()]
 
 	seriesAsync({
-		function(arg0_136)
-			arg0_135:ChangeArtScene(arg1_135, arg0_136)
-		end,
 		function(arg0_137)
-			var0_135:ChangeSubScene(arg1_135, arg0_137)
+			arg0_136:ChangeArtScene(arg1_136, arg0_137)
 		end,
 		function(arg0_138)
-			arg0_135:emit(arg0_135.SHOW_BLOCK)
+			var0_136:ChangeSubScene(arg1_136, arg0_138)
+		end,
+		function(arg0_139)
+			arg0_136:emit(arg0_136.SHOW_BLOCK)
 
-			if arg1_135 == arg0_135.sceneInfo then
-				arg0_135:SetUI(arg0_138, "back")
-			elseif arg0_135.uiState ~= "walk" then
-				arg0_135:SetUI(arg0_138, "walk")
+			if arg1_136 == arg0_136.sceneInfo then
+				arg0_136:SetUI(arg0_139, "back")
+			elseif arg0_136.uiState ~= "walk" then
+				arg0_136:SetUI(arg0_139, "walk")
 			else
-				arg0_138()
+				arg0_139()
 			end
 		end
 	}, function()
-		arg0_135:emit(arg0_135.HIDE_BLOCK)
-		var0_135:SetBlackboardValue("inWalk", arg1_135 ~= arg0_135.sceneInfo)
-		existCall(arg2_135)
+		arg0_136:emit(arg0_136.HIDE_BLOCK)
+		var0_136:SetBlackboardValue("inWalk", arg1_136 ~= arg0_136.sceneInfo)
+		existCall(arg2_136)
 	end)
 end
 
-function var0_0.EnterWalkMode(arg0_140)
-	local var0_140 = arg0_140.apartment:GetConfigID()
-	local var1_140 = arg0_140.ladyDict[var0_140]
+function var0_0.EnterWalkMode(arg0_141)
+	local var0_141 = arg0_141.apartment:GetConfigID()
+	local var1_141 = arg0_141.ladyDict[var0_141]
 
 	seriesAsync({
-		function(arg0_141)
-			arg0_140:emit(arg0_140.SHOW_BLOCK)
-			arg0_140:HideCharacter(var0_140)
-			var1_140:SetBlackboardValue("inWalk", true)
-			arg0_140:SetUI(arg0_141, "walk")
-		end,
 		function(arg0_142)
-			arg0_140:emit(arg0_140.HIDE_BLOCK)
-			arg0_140:ChangeArtScene(arg0_140.walkInfo.scene .. "|" .. arg0_140.walkInfo.sceneRoot, arg0_142)
+			arg0_141:emit(arg0_141.SHOW_BLOCK)
+			arg0_141:HideCharacter(var0_141)
+			var1_141:SetBlackboardValue("inWalk", true)
+			arg0_141:SetUI(arg0_142, "walk")
 		end,
 		function(arg0_143)
-			arg0_140:LoadSubScene(arg0_140.walkInfo, arg0_143)
+			arg0_141:emit(arg0_141.HIDE_BLOCK)
+			arg0_141:ChangeArtScene(arg0_141.walkInfo.scene .. "|" .. arg0_141.walkInfo.sceneRoot, arg0_143)
+		end,
+		function(arg0_144)
+			arg0_141:LoadSubScene(arg0_141.walkInfo, arg0_144)
 		end
 	}, function()
 		return
 	end)
 end
 
-function var0_0.ExitWalkMode(arg0_145)
-	local var0_145 = arg0_145.apartment:GetConfigID()
-	local var1_145 = arg0_145.ladyDict[var0_145]
+function var0_0.ExitWalkMode(arg0_146)
+	local var0_146 = arg0_146.apartment:GetConfigID()
+	local var1_146 = arg0_146.ladyDict[var0_146]
 
 	seriesAsync({
-		function(arg0_146)
-			arg0_145:ChangeArtScene(arg0_145.walkLastSceneInfo, arg0_146)
-		end,
 		function(arg0_147)
-			arg0_145:UnloadSubScene(arg0_145.walkInfo, arg0_147)
+			arg0_146:ChangeArtScene(arg0_146.walkLastSceneInfo, arg0_147)
 		end,
 		function(arg0_148)
-			arg0_145:emit(arg0_145.SHOW_BLOCK)
-			arg0_145:SetUI(arg0_148, "back")
+			arg0_146:UnloadSubScene(arg0_146.walkInfo, arg0_148)
+		end,
+		function(arg0_149)
+			arg0_146:emit(arg0_146.SHOW_BLOCK)
+			arg0_146:SetUI(arg0_149, "back")
 		end
 	}, function()
-		arg0_145:emit(arg0_145.HIDE_BLOCK)
-		arg0_145:RevertCharacter(var0_145)
-		var1_145:SetBlackboardValue("inWalk", false)
+		arg0_146:emit(arg0_146.HIDE_BLOCK)
+		arg0_146:RevertCharacter(var0_146)
+		var1_146:SetBlackboardValue("inWalk", false)
 
-		local var0_149 = arg0_145.walkExitCall
+		local var0_150 = arg0_146.walkExitCall
 
-		arg0_145.walkExitCall = nil
-		arg0_145.walkLastSceneInfo = nil
-		arg0_145.walkInfo = nil
+		arg0_146.walkExitCall = nil
+		arg0_146.walkLastSceneInfo = nil
+		arg0_146.walkInfo = nil
 
-		existCall(var0_149)
+		existCall(var0_150)
 	end)
 end
 
-function var0_0.EnableMiniGameCutIn(arg0_150)
-	if not arg0_150.tfCutIn then
-		return
-	end
-
-	local var0_150 = arg0_150.rtExtraScreen:Find("MiniGameCutIn")
-
-	setActive(var0_150, true)
-
-	local var1_150 = GetOrAddComponent(var0_150:Find("bg/mask/cut_in"), "CameraRTUI")
-
-	setActive(var1_150, true)
-	pg.CameraRTMgr.GetInstance():Bind(var1_150, arg0_150.tfCutIn:Find("TestCamera"):GetComponent(typeof(Camera)))
-	quickPlayAnimator(arg0_150.modelCutIn.lady, "Idle")
-	quickPlayAnimator(arg0_150.modelCutIn.player, "Idle")
-	setActive(arg0_150.tfCutIn, true)
-end
-
-function var0_0.DisableMiniGameCutIn(arg0_151)
+function var0_0.EnableMiniGameCutIn(arg0_151)
 	if not arg0_151.tfCutIn then
 		return
 	end
 
 	local var0_151 = arg0_151.rtExtraScreen:Find("MiniGameCutIn")
+
+	setActive(var0_151, true)
+
 	local var1_151 = GetOrAddComponent(var0_151:Find("bg/mask/cut_in"), "CameraRTUI")
 
-	pg.CameraRTMgr.GetInstance():Clean(var1_151)
-	setActive(var0_151, false)
-	setActive(arg0_151.tfCutIn, false)
+	setActive(var1_151, true)
+	pg.CameraRTMgr.GetInstance():Bind(var1_151, arg0_151.tfCutIn:Find("TestCamera"):GetComponent(typeof(Camera)))
+	quickPlayAnimator(arg0_151.modelCutIn.lady, "Idle")
+	quickPlayAnimator(arg0_151.modelCutIn.player, "Idle")
+	setActive(arg0_151.tfCutIn, true)
 end
 
-function var0_0.SwitchIKConfig(arg0_152, arg1_152, arg2_152)
-	local var0_152 = pg.dorm3d_ik_status[arg2_152]
-
-	if var0_152.skin_id ~= arg1_152.skinId then
-		local var1_152 = pg.dorm3d_ik_status.get_id_list_by_base[var0_152.base]
-		local var2_152 = _.detect(var1_152, function(arg0_153)
-			return pg.dorm3d_ik_status[arg0_153].skin_id == arg1_152.skinId
-		end)
-
-		assert(var2_152, string.format("Missing Status Config By Skin: %s original Status: %s", arg1_152.skinId, arg2_152))
-
-		var0_152 = pg.dorm3d_ik_status[var2_152]
+function var0_0.DisableMiniGameCutIn(arg0_152)
+	if not arg0_152.tfCutIn then
+		return
 	end
 
-	arg1_152.ikConfig = var0_152
+	local var0_152 = arg0_152.rtExtraScreen:Find("MiniGameCutIn")
+	local var1_152 = GetOrAddComponent(var0_152:Find("bg/mask/cut_in"), "CameraRTUI")
+
+	pg.CameraRTMgr.GetInstance():Clean(var1_152)
+	setActive(var0_152, false)
+	setActive(arg0_152.tfCutIn, false)
 end
 
-function var0_0.SetIKState(arg0_154, arg1_154, arg2_154)
-	local var0_154 = arg0_154.ladyDict[arg0_154.apartment:GetConfigID()]
-	local var1_154 = {}
+function var0_0.SwitchIKConfig(arg0_153, arg1_153, arg2_153)
+	local var0_153 = pg.dorm3d_ik_status[arg2_153]
 
-	if arg1_154 then
-		table.insert(var1_154, function(arg0_155)
-			var0_154:SetBlackboardValue("inIK", true)
-			arg0_154:emit(arg0_154.SHOW_BLOCK)
-
-			local var0_155 = var0_154.ikConfig.camera_group
-
-			setActive(arg0_154.uiContianer:Find("ik/Right/btn_camera"), #pg.dorm3d_ik_status.get_id_list_by_camera_group[var0_155] > 1)
-			arg0_155()
+	if var0_153.skin_id ~= arg1_153.skinId then
+		local var1_153 = pg.dorm3d_ik_status.get_id_list_by_base[var0_153.base]
+		local var2_153 = _.detect(var1_153, function(arg0_154)
+			return pg.dorm3d_ik_status[arg0_154].skin_id == arg1_153.skinId
 		end)
 
-		if arg0_154.uiState ~= "ik" then
-			table.insert(var1_154, function(arg0_156)
-				arg0_154:SetUI(arg0_156, "ik")
+		assert(var2_153, string.format("Missing Status Config By Skin: %s original Status: %s", arg1_153.skinId, arg2_153))
+
+		var0_153 = pg.dorm3d_ik_status[var2_153]
+	end
+
+	arg1_153.ikConfig = var0_153
+end
+
+function var0_0.SetIKState(arg0_155, arg1_155, arg2_155)
+	local var0_155 = arg0_155.ladyDict[arg0_155.apartment:GetConfigID()]
+	local var1_155 = {}
+
+	if arg1_155 then
+		table.insert(var1_155, function(arg0_156)
+			var0_155:SetBlackboardValue("inIK", true)
+			arg0_155:emit(arg0_155.SHOW_BLOCK)
+
+			local var0_156 = var0_155.ikConfig.camera_group
+
+			setActive(arg0_155.uiContianer:Find("ik/Right/btn_camera"), #pg.dorm3d_ik_status.get_id_list_by_camera_group[var0_156] > 1)
+			arg0_156()
+		end)
+
+		if arg0_155.uiState ~= "ik" then
+			table.insert(var1_155, function(arg0_157)
+				arg0_155:SetUI(arg0_157, "ik")
 			end)
 		end
 
-		table.insert(var1_154, function(arg0_157)
+		table.insert(var1_155, function(arg0_158)
 			Shader.SetGlobalFloat("_ScreenClipOff", 0)
-			arg0_154.SetIKStatus(var0_154, var0_154.ikConfig, arg0_157)
+			arg0_155.SetIKStatus(var0_155, var0_155.ikConfig, arg0_158)
 		end)
-		table.insert(var1_154, function(arg0_158)
-			arg0_154:emit(arg0_154.HIDE_BLOCK)
-			arg0_158()
-		end)
-	else
-		assert(arg0_154.uiState == "ik")
-		table.insert(var1_154, function(arg0_159)
-			arg0_154:emit(arg0_154.SHOW_BLOCK)
-			Shader.SetGlobalFloat("_ScreenClipOff", 1)
+		table.insert(var1_155, function(arg0_159)
+			arg0_155:emit(arg0_155.HIDE_BLOCK)
 			arg0_159()
 		end)
+	else
+		assert(arg0_155.uiState == "ik")
+		table.insert(var1_155, function(arg0_160)
+			arg0_155:emit(arg0_155.SHOW_BLOCK)
+			Shader.SetGlobalFloat("_ScreenClipOff", 1)
+			arg0_160()
+		end)
 
-		local var2_154 = var0_154.skinIdList
+		local var2_155 = var0_155.skinIdList
 
-		if var0_154.skinId ~= var2_154[1] then
-			table.insert(var1_154, function(arg0_160)
-				local var0_160 = arg0_154.apartment:GetConfigID()
+		if var0_155.skinId ~= var2_155[1] then
+			table.insert(var1_155, function(arg0_161)
+				local var0_161 = arg0_155.apartment:GetConfigID()
 
-				arg0_154.SwitchCharacterSkin(var0_154, var0_160, var2_154[1], arg0_160)
+				arg0_155.SwitchCharacterSkin(var0_155, var0_161, var2_155[1], arg0_161)
 			end)
 		end
 
-		table.insert(var1_154, function(arg0_161)
-			warning(var0_154.ikConfig.character_action)
-			var0_154:ExitIKStatus(var0_154.ikConfig, arg0_161)
-			arg0_154.scene:ResetSceneItemAnimators()
+		table.insert(var1_155, function(arg0_162)
+			warning(var0_155.ikConfig.character_action)
+			var0_155:ExitIKStatus(var0_155.ikConfig, arg0_162)
+			arg0_155.scene:ResetSceneItemAnimators()
 		end)
-		table.insert(var1_154, function(arg0_162)
-			arg0_154:SetUI(arg0_162, "back")
+		table.insert(var1_155, function(arg0_163)
+			arg0_155:SetUI(arg0_163, "back")
 		end)
-		table.insert(var1_154, function(arg0_163)
-			var0_154:SetBlackboardValue("inIK", false)
-			arg0_154:emit(arg0_154.HIDE_BLOCK)
-			arg0_163()
+		table.insert(var1_155, function(arg0_164)
+			var0_155:SetBlackboardValue("inIK", false)
+			arg0_155:emit(arg0_155.HIDE_BLOCK)
+			arg0_164()
 		end)
 	end
 
-	seriesAsync(var1_154, arg2_154)
+	seriesAsync(var1_155, arg2_155)
 end
 
-function var0_0.TouchModeAction(arg0_164, arg1_164, arg2_164, ...)
-	return switch(arg2_164, {
-		function(arg0_165, arg1_165)
-			return function(arg0_166)
+function var0_0.TouchModeAction(arg0_165, arg1_165, arg2_165, ...)
+	return switch(arg2_165, {
+		function(arg0_166, arg1_166)
+			return function(arg0_167)
 				seriesAsync({
-					function(arg0_167)
-						arg0_164.RevertAllIKLayer(arg1_164, 0, arg0_167)
-					end,
 					function(arg0_168)
-						if not arg1_165 or arg1_165 == "" then
-							return arg0_168()
-						end
-
-						arg0_164:PlaySingleAction(arg1_165, arg0_168)
+						arg0_165.RevertAllIKLayer(arg1_165, 0, arg0_168)
 					end,
 					function(arg0_169)
-						arg0_164:SwitchIKConfig(arg1_164, arg0_165)
-						arg0_164:SetIKState(true, arg0_169)
+						if not arg1_166 or arg1_166 == "" then
+							return arg0_169()
+						end
+
+						arg0_165:PlaySingleAction(arg1_166, arg0_169)
 					end,
-					arg0_166
+					function(arg0_170)
+						arg0_165:SwitchIKConfig(arg1_165, arg0_166)
+						arg0_165:SetIKState(true, arg0_170)
+					end,
+					arg0_167
 				})
 			end
 		end,
 		function()
 			return function()
-				if arg0_164.ikSpecialCall then
-					local var0_171 = arg0_164.ikSpecialCall
+				if arg0_165.ikSpecialCall then
+					local var0_172 = arg0_165.ikSpecialCall
 
-					arg0_164.ikSpecialCall = nil
+					arg0_165.ikSpecialCall = nil
 
-					existCall(var0_171)
+					existCall(var0_172)
 				else
-					arg0_164:ExitTouchMode()
+					arg0_165:ExitTouchMode()
 				end
 			end
 		end,
-		function(arg0_172, arg1_172)
-			return function(arg0_173)
-				arg0_164.RevertAllIKLayer(arg1_164, arg0_172, function()
-					arg0_164:PlaySingleAction(arg1_172, arg0_173)
+		function(arg0_173, arg1_173)
+			return function(arg0_174)
+				arg0_165.RevertAllIKLayer(arg1_165, arg0_173, function()
+					arg0_165:PlaySingleAction(arg1_173, arg0_174)
 				end)
 			end
 		end,
-		function(arg0_175, arg1_175, arg2_175)
-			return function(arg0_176)
+		function(arg0_176, arg1_176, arg2_176)
+			return function(arg0_177)
 				seriesAsync({
-					function(arg0_177)
-						arg0_164.RevertAllIKLayer(arg1_164, arg0_175, arg0_177)
-					end,
 					function(arg0_178)
-						arg0_164:DoTalk(arg1_175, arg0_178)
+						arg0_165.RevertAllIKLayer(arg1_165, arg0_176, arg0_178)
 					end,
 					function(arg0_179)
-						if not arg2_175 or arg2_175 == 0 then
-							return arg0_179()
+						arg0_165:DoTalk(arg1_176, arg0_179)
+					end,
+					function(arg0_180)
+						if not arg2_176 or arg2_176 == 0 then
+							return arg0_180()
 						end
 
-						arg0_164:SwitchIKConfig(arg1_164, arg2_175)
-						arg0_164:SetIKState(true, arg0_179)
+						arg0_165:SwitchIKConfig(arg1_165, arg2_176)
+						arg0_165:SetIKState(true, arg0_180)
 					end,
-					arg0_176
+					arg0_177
 				})
 			end
 		end,
-		function(arg0_180, arg1_180, arg2_180, arg3_180)
-			return function(arg0_181)
-				arg0_164.RevertAllIKLayer(arg1_164, arg0_180, function()
-					arg0_164.scene:PlaySceneItemAnim(arg2_180, arg3_180)
-					arg0_164:PlaySingleAction(arg1_180, arg0_181)
+		function(arg0_181, arg1_181, arg2_181, arg3_181)
+			return function(arg0_182)
+				arg0_165.RevertAllIKLayer(arg1_165, arg0_181, function()
+					arg0_165.scene:PlaySceneItemAnim(arg2_181, arg3_181)
+					arg0_165:PlaySingleAction(arg1_181, arg0_182)
 				end)
 			end
 		end
@@ -1390,80 +1393,80 @@ function var0_0.TouchModeAction(arg0_164, arg1_164, arg2_164, ...)
 	end, ...)
 end
 
-function var0_0.OnTriggerIK(arg0_185, arg1_185)
-	local var0_185 = arg0_185.ladyDict[arg0_185.apartment:GetConfigID()]
+function var0_0.OnTriggerIK(arg0_186, arg1_186)
+	local var0_186 = arg0_186.ladyDict[arg0_186.apartment:GetConfigID()]
 
-	if not var0_185.ikConfig then
+	if not var0_186.ikConfig then
 		return
 	end
 
-	for iter0_185, iter1_185 in ipairs(var0_185.ikConfig.ik_id) do
-		local var1_185, var2_185, var3_185 = unpack(iter1_185)
+	for iter0_186, iter1_186 in ipairs(var0_186.ikConfig.ik_id) do
+		local var1_186, var2_186, var3_186 = unpack(iter1_186)
 
-		if var1_185 == arg1_185 then
-			arg0_185.scene.blockIK = true
+		if var1_186 == arg1_186 then
+			arg0_186.scene.blockIK = true
 
-			arg0_185:TouchModeAction(var0_185, unpack(var3_185))(function()
-				arg0_185.scene.enableIKTip = true
+			arg0_186:TouchModeAction(var0_186, unpack(var3_186))(function()
+				arg0_186.scene.enableIKTip = true
 
-				arg0_185:ResetIKTipTimer()
+				arg0_186:ResetIKTipTimer()
 
-				arg0_185.scene.blockIK = nil
+				arg0_186.scene.blockIK = nil
 			end)
 
 			return
 		end
 	end
 
-	assert(false, string.format("Missing %s callback in status %s", arg1_185, var0_185.ikConfig.id))
+	assert(false, string.format("Missing %s callback in status %s", arg1_186, var0_186.ikConfig.id))
 end
 
-function var0_0.OnTouchCharacterBody(arg0_187, arg1_187)
-	local var0_187 = arg0_187.ladyDict[arg0_187.apartment:GetConfigID()]
+function var0_0.OnTouchCharacterBody(arg0_188, arg1_188)
+	local var0_188 = arg0_188.ladyDict[arg0_188.apartment:GetConfigID()]
 
-	if not var0_187.ikConfig then
+	if not var0_188.ikConfig then
 		return
 	end
 
-	for iter0_187, iter1_187 in ipairs(var0_187.ikConfig.touch_data) do
-		local var1_187, var2_187, var3_187 = unpack(iter1_187)
-		local var4_187 = pg.dorm3d_ik_touch[var1_187]
+	for iter0_188, iter1_188 in ipairs(var0_188.ikConfig.touch_data) do
+		local var1_188, var2_188, var3_188 = unpack(iter1_188)
+		local var4_188 = pg.dorm3d_ik_touch[var1_188]
 
-		if var4_187.body == arg1_187 then
-			local var5_187 = var4_187.action_emote
+		if var4_188.body == arg1_188 then
+			local var5_188 = var4_188.action_emote
 
-			if #var5_187 > 0 then
-				var0_187:PlayFaceAnim(var5_187)
+			if #var5_188 > 0 then
+				var0_188:PlayFaceAnim(var5_188)
 			end
 
-			local var6_187 = var4_187.vibrate
+			local var6_188 = var4_188.vibrate
 
-			if type(var6_187) == "table" and VibrateMgr.Instance:IsSupport() then
-				local var7_187 = {}
-				local var8_187 = {}
-				local var9_187 = {}
+			if type(var6_188) == "table" and VibrateMgr.Instance:IsSupport() then
+				local var7_188 = {}
+				local var8_188 = {}
+				local var9_188 = {}
 
-				underscore.each(var6_187, function(arg0_188)
-					table.insert(var7_187, arg0_188[1])
-					table.insert(var8_187, arg0_188[2])
-					table.insert(var9_187, 1)
+				underscore.each(var6_188, function(arg0_189)
+					table.insert(var7_188, arg0_189[1])
+					table.insert(var8_188, arg0_189[2])
+					table.insert(var9_188, 1)
 				end)
 
 				if PLATFORM == PLATFORM_ANDROID then
-					VibrateMgr.Instance:VibrateWaveform(var7_187, var8_187)
+					VibrateMgr.Instance:VibrateWaveform(var7_188, var8_188)
 				elseif PLATFORM == PLATFORM_ANDROID then
-					VibrateMgr.Instance:VibrateWaveform(var7_187, var8_187, var9_187)
+					VibrateMgr.Instance:VibrateWaveform(var7_188, var8_188, var9_188)
 				end
 			end
 
-			arg0_187.scene.blockIK = true
+			arg0_188.scene.blockIK = true
 
-			arg0_187:TouchModeAction(var0_187, unpack(var3_187))(function()
-				arg0_187.scene.enableIKTip = true
+			arg0_188:TouchModeAction(var0_188, unpack(var3_188))(function()
+				arg0_188.scene.enableIKTip = true
 
-				arg0_187:ResetIKTipTimer()
+				arg0_188:ResetIKTipTimer()
 
-				arg0_187.scene.blockIK = nil
+				arg0_188.scene.blockIK = nil
 			end)
 
 			return
@@ -1471,371 +1474,385 @@ function var0_0.OnTouchCharacterBody(arg0_187, arg1_187)
 	end
 end
 
-function var0_0.UpdateTouchGameDisplay(arg0_190)
-	setActive(arg0_190.rtTouchGamePanel:Find("effect_bg"), arg0_190.touchLevel == 2)
-	setActive(arg0_190.rtTouchGamePanel:Find("slider/icon/beating"), arg0_190.touchLevel == 2)
+function var0_0.UpdateTouchGameDisplay(arg0_191)
+	setActive(arg0_191.rtTouchGamePanel:Find("effect_bg"), arg0_191.touchLevel == 2)
+	setActive(arg0_191.rtTouchGamePanel:Find("slider/icon/beating"), arg0_191.touchLevel == 2)
 
-	if arg0_190.touchLevel == 1 then
-		quickPlayAnimation(arg0_190.rtTouchGamePanel, "anim_dorm3d_touch_change_out")
-		quickPlayAnimation(arg0_190.rtTouchGamePanel:Find("slider/icon"), "anim_dorm3d_touch_icon")
-	elseif arg0_190.touchLevel == 2 then
-		quickPlayAnimation(arg0_190.rtTouchGamePanel, "anim_dorm3d_touch_change")
-		quickPlayAnimation(arg0_190.rtTouchGamePanel:Find("slider/icon"), "anim_dorm3d_touch_icon_1")
+	if arg0_191.touchLevel == 1 then
+		setActive(arg0_191.uiContianer:Find("ik/btn_back"), true)
+		setActive(arg0_191.uiContianer:Find("ik/btn_back_heartbeat"), false)
+		quickPlayAnimation(arg0_191.rtTouchGamePanel, "anim_dorm3d_touch_change_out")
+		quickPlayAnimation(arg0_191.rtTouchGamePanel:Find("slider/icon"), "anim_dorm3d_touch_icon")
+	elseif arg0_191.touchLevel == 2 then
+		setActive(arg0_191.uiContianer:Find("ik/btn_back"), false)
+		setActive(arg0_191.uiContianer:Find("ik/btn_back_heartbeat"), true)
+		quickPlayAnimation(arg0_191.rtTouchGamePanel, "anim_dorm3d_touch_change")
+		quickPlayAnimation(arg0_191.rtTouchGamePanel:Find("slider/icon"), "anim_dorm3d_touch_icon_1")
 		pg.CriMgr.GetInstance():PlaySE_V3("ui-dorm_heartbeat")
 	end
 end
 
-function var0_0.UpdateTouchCount(arg0_191, arg1_191)
-	if arg0_191.touchLevel > 1 then
-		arg1_191 = math.min(0, arg1_191)
+function var0_0.UpdateTouchCount(arg0_192, arg1_192)
+	if arg0_192.touchLevel > 1 then
+		arg1_192 = math.min(0, arg1_192)
 	end
 
-	arg0_191.touchCount = math.clamp(arg0_191.touchCount + arg1_191, 0, 100)
+	arg0_192.touchCount = math.clamp(arg0_192.touchCount + arg1_192, 0, 100)
 
-	if arg0_191.sliderLT and LeanTween.isTweening(arg0_191.sliderLT) then
-		LeanTween.cancel(arg0_191.sliderLT)
+	if arg0_192.sliderLT and LeanTween.isTweening(arg0_192.sliderLT) then
+		LeanTween.cancel(arg0_192.sliderLT)
 
-		arg0_191.sliderLT = nil
+		arg0_192.sliderLT = nil
 	end
 
-	setSlider(arg0_191.rtTouchGamePanel:Find("slider"), 0, 100, arg0_191.touchCount)
+	setSlider(arg0_192.rtTouchGamePanel:Find("slider"), 0, 100, arg0_192.touchCount)
 
-	local var0_191
+	local var0_192
 
-	if arg0_191.touchCount >= 100 then
-		var0_191 = 2
-	elseif arg0_191.touchCount <= 0 then
-		var0_191 = 1
+	if arg0_192.touchCount >= 100 then
+		var0_192 = 2
+	elseif arg0_192.touchCount <= 0 then
+		var0_192 = 1
 	end
 
-	if var0_191 and var0_191 ~= arg0_191.touchLevel then
-		if arg0_191.scene.blockIK then
+	if var0_192 and var0_192 ~= arg0_192.touchLevel then
+		if arg0_192.scene.blockIK then
 			return
 		end
 
-		arg0_191.touchLevel = var0_191
+		arg0_192.touchLevel = var0_192
 
-		local var1_191 = arg0_191.touchConfig.ik_status[var0_191]
+		local var1_192 = arg0_192.touchConfig.ik_status[var0_192]
 
-		if var1_191 then
-			if var0_191 > 1 then
-				arg0_191.touchCount = 200
-			elseif var0_191 == 1 then
-				arg0_191.touchCount = 0
+		if var1_192 then
+			if var0_192 > 1 then
+				arg0_192.touchCount = 200
+			elseif var0_192 == 1 then
+				arg0_192.touchCount = 0
 			end
 
-			local var2_191 = arg0_191.ladyDict[arg0_191.apartment:GetConfigID()]
+			local var2_192 = arg0_192.ladyDict[arg0_192.apartment:GetConfigID()]
 
 			seriesAsync({
-				function(arg0_192)
-					arg0_191:ShowBlackScreen(true, arg0_192)
-				end,
 				function(arg0_193)
-					arg0_191:SwitchIKConfig(var2_191, var1_191)
-					arg0_191:SetIKState(true, arg0_193)
-
-					if var0_191 > 1 and arg0_191.touchConfig.heartbeat_enter_anim ~= "" then
-						var2_191:SwitchAnim(arg0_191.touchConfig.heartbeat_enter_anim)
-					end
+					arg0_192:ShowBlackScreen(true, arg0_193)
 				end,
 				function(arg0_194)
-					arg0_191:ShowBlackScreen(false, arg0_194)
+					arg0_192:SwitchIKConfig(var2_192, var1_192)
+					arg0_192:SetIKState(true, arg0_194)
+
+					if var0_192 > 1 and arg0_192.touchConfig.heartbeat_enter_anim ~= "" then
+						var2_192:SwitchAnim(arg0_192.touchConfig.heartbeat_enter_anim)
+					end
+				end,
+				function(arg0_195)
+					arg0_192:ShowBlackScreen(false, arg0_195)
 				end
 			})
 		end
 
-		arg0_191:UpdateTouchCount(0)
-		arg0_191:UpdateTouchGameDisplay()
+		arg0_192:UpdateTouchCount(0)
+		arg0_192:UpdateTouchGameDisplay()
 	end
 
-	arg0_191.topCount = math.max(arg0_191.topCount, arg0_191.touchCount)
+	arg0_192.topCount = math.max(arg0_192.topCount, arg0_192.touchCount)
 end
 
-function var0_0.DoTouch(arg0_195, arg1_195, arg2_195)
-	if arg0_195.inTouchGame then
-		switch(arg2_195, {
+function var0_0.ExitHeartbeatMode(arg0_196)
+	if not arg0_196.touchLevel or arg0_196.touchLevel == 1 then
+		return
+	end
+
+	arg0_196.touchCount = 0
+
+	arg0_196:UpdateTouchCount(0)
+end
+
+function var0_0.DoTouch(arg0_197, arg1_197, arg2_197)
+	if arg0_197.inTouchGame then
+		switch(arg2_197, {
 			function()
-				arg0_195:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat.key_value_int)
+				arg0_197:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat.key_value_int)
 			end,
 			function()
-				arg0_195:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat.key_value_int)
+				arg0_197:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat.key_value_int)
 			end,
 			function()
-				arg0_195:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat.key_value_int)
+				arg0_197:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat.key_value_int)
 			end,
 			function()
-				arg0_195:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat_trriger.key_value_int)
+				arg0_197:UpdateTouchCount(pg.dorm3d_set.rapport_heartbeat_trriger.key_value_int)
 			end
 		})
 	end
 end
 
-function var0_0.DoTalk(arg0_200, arg1_200, arg2_200)
-	while rawget(arg0_200, "class") ~= var0_0 do
-		arg0_200 = getmetatable(arg0_200).__index
+function var0_0.DoTalk(arg0_202, arg1_202, arg2_202)
+	while rawget(arg0_202, "class") ~= var0_0 do
+		arg0_202 = getmetatable(arg0_202).__index
 	end
 
-	if arg0_200.apartment and arg0_200.ladyDict[arg0_200.apartment:GetConfigID()]:GetBlackboardValue("inTalking") then
-		errorMsg("Talking block:" .. arg1_200)
+	if arg0_202.apartment and arg0_202.ladyDict[arg0_202.apartment:GetConfigID()]:GetBlackboardValue("inTalking") then
+		errorMsg("Talking block:" .. arg1_202)
 
 		return
 	end
 
-	if not arg0_200.room:isPersonalRoom() then
-		local var0_200 = pg.dorm3d_dialogue_group[arg1_200].char_id
+	if not arg0_202.room:isPersonalRoom() then
+		local var0_202 = pg.dorm3d_dialogue_group[arg1_202].char_id
 
-		if arg0_200.apartment then
-			assert(arg0_200.apartment:GetConfigID() == var0_200)
+		if arg0_202.apartment then
+			assert(arg0_202.apartment:GetConfigID() == var0_202)
 		else
-			arg0_200:SetApartment(getProxy(ApartmentProxy):getApartment(var0_200))
+			arg0_202:SetApartment(getProxy(ApartmentProxy):getApartment(var0_202))
 		end
 	end
 
-	local var1_200 = arg0_200.ladyDict[arg0_200.apartment:GetConfigID()]
+	local var1_202 = arg0_202.ladyDict[arg0_202.apartment:GetConfigID()]
 
-	if arg1_200 == 10010 and not arg0_200.apartment.talkDic[arg1_200] then
-		arg0_200.firstTimelineTouch = true
-		arg0_200.firstMoveGuide = true
+	if arg1_202 == 10010 and not arg0_202.apartment.talkDic[arg1_202] then
+		arg0_202.firstTimelineTouch = true
+		arg0_202.firstMoveGuide = true
 	end
 
-	local var2_200 = {}
-	local var3_200 = arg0_200.ladyDict[arg0_200.apartment:GetConfigID()]
+	local var2_202 = {}
+	local var3_202 = arg0_202.ladyDict[arg0_202.apartment:GetConfigID()]
 
-	if var3_200:GetBlackboardValue("inPending") then
-		table.insert(var2_200, function(arg0_201)
-			arg0_200:OutOfLazy(arg0_200.apartment:GetConfigID(), arg0_201)
+	if var3_202:GetBlackboardValue("inPending") then
+		table.insert(var2_202, function(arg0_203)
+			arg0_202:OutOfLazy(arg0_202.apartment:GetConfigID(), arg0_203)
 		end)
 	end
 
-	local var4_200 = pg.dorm3d_dialogue_group[arg1_200]
-	local var5_200 = var4_200.performance_type == 1
-	local var6_200
+	local var4_202 = pg.dorm3d_dialogue_group[arg1_202]
+	local var5_202 = var4_202.performance_type == 1
+	local var6_202
 
-	table.insert(var2_200, function(arg0_202)
-		arg0_200:emit(arg0_200.SHOW_BLOCK)
-		var3_200:SetBlackboardValue(var5_200 and "inPerformance" or "inTalking", true)
-		arg0_200:emit(Dorm3dRoomMediator.DO_TALK, arg1_200, function(arg0_203)
-			var6_200 = arg0_203
+	table.insert(var2_202, function(arg0_204)
+		arg0_202:emit(arg0_202.SHOW_BLOCK)
+		var3_202:SetBlackboardValue(var5_202 and "inPerformance" or "inTalking", true)
+		arg0_202:emit(Dorm3dRoomMediator.DO_TALK, arg1_202, function(arg0_205)
+			var6_202 = arg0_205
 
-			arg0_202()
+			arg0_204()
 		end)
 	end)
-	table.insert(var2_200, function(arg0_204)
-		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataDialog(arg0_200.apartment.configId, arg0_200.apartment.level, arg1_200, var4_200.type, arg0_200.room:getZoneConfig(arg0_200.ladyDict[arg0_200.apartment:GetConfigID()].ladyBaseZone, "id"), var4_200.action_type, table.CastToString(var4_200.trigger_config), arg0_200.room:GetConfigID()))
+	table.insert(var2_202, function(arg0_206)
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataDialog(arg0_202.apartment.configId, arg0_202.apartment.level, arg1_202, var4_202.type, arg0_202.room:getZoneConfig(arg0_202.ladyDict[arg0_202.apartment:GetConfigID()].ladyBaseZone, "id"), var4_202.action_type, table.CastToString(var4_202.trigger_config), arg0_202.room:GetConfigID()))
 
 		if pg.NewGuideMgr.GetInstance():IsBusy() then
 			pg.NewGuideMgr.GetInstance():Pause()
 		end
 
-		arg0_200:SetUI(arg0_204, "blank")
+		arg0_202:SetUI(arg0_206, "blank")
 	end)
 
-	if var4_200.trigger_area and var4_200.trigger_area ~= "" then
-		table.insert(var2_200, function(arg0_205)
-			arg0_200:ShiftZone(var4_200.trigger_area, arg0_205)
+	if var4_202.trigger_area and var4_202.trigger_area ~= "" then
+		table.insert(var2_202, function(arg0_207)
+			arg0_202:ShiftZone(var4_202.trigger_area, arg0_207)
 		end)
 	end
 
-	if var4_200.performance_type == 0 then
-		table.insert(var2_200, function(arg0_206)
-			arg0_200:emit(arg0_200.HIDE_BLOCK)
-			pg.NewStoryMgr.GetInstance():ForceManualPlay(var4_200.story, function()
-				onDelayTick(arg0_206, 0.001)
+	if var4_202.performance_type == 0 then
+		table.insert(var2_202, function(arg0_208)
+			arg0_202:emit(arg0_202.HIDE_BLOCK)
+			pg.NewStoryMgr.GetInstance():ForceManualPlay(var4_202.story, function()
+				onDelayTick(arg0_208, 0.001)
 			end, true)
 		end)
-	elseif var4_200.performance_type == 1 then
-		table.insert(var2_200, function(arg0_208)
-			arg0_200:emit(arg0_200.HIDE_BLOCK)
-			arg0_200:PerformanceQueue(var4_200.story, arg0_208)
+	elseif var4_202.performance_type == 1 then
+		table.insert(var2_202, function(arg0_210)
+			arg0_202:emit(arg0_202.HIDE_BLOCK)
+			arg0_202:PerformanceQueue(var4_202.story, arg0_210)
 		end)
 	else
 		assert(false)
 	end
 
-	table.insert(var2_200, function(arg0_209)
-		arg0_200:emit(arg0_200.SHOW_BLOCK)
-		arg0_209()
+	table.insert(var2_202, function(arg0_211)
+		arg0_202:emit(arg0_202.SHOW_BLOCK)
+		arg0_211()
 	end)
-	table.insert(var2_200, function(arg0_210)
-		local var0_210 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(var4_200.story)
+	table.insert(var2_202, function(arg0_212)
+		local var0_212 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(var4_202.story)
 
-		if var0_210 then
-			local var1_210 = "1"
+		if var0_212 then
+			local var1_212 = "1"
 
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataStory(var0_210, var1_210))
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataStory(var0_212, var1_212))
 		end
 
-		if var6_200 and #var6_200 > 0 then
-			arg0_200:emit(Dorm3dRoomMediator.OPEN_DROP_LAYER, var6_200, arg0_210)
+		if var6_202 and #var6_202 > 0 then
+			arg0_202:emit(Dorm3dRoomMediator.OPEN_DROP_LAYER, var6_202, arg0_212)
 		else
-			arg0_210()
+			arg0_212()
 		end
 	end)
-	table.insert(var2_200, function(arg0_211)
+	table.insert(var2_202, function(arg0_213)
 		if pg.NewGuideMgr.GetInstance():IsPause() then
 			pg.NewGuideMgr.GetInstance():Resume()
 		end
 
-		arg0_200:emit(arg0_200.HIDE_BLOCK)
-		var3_200:SetBlackboardValue(var5_200 and "inPerformance" or "inTalking", false)
-		arg0_200:SetUI(arg0_211, "back")
+		arg0_202:emit(arg0_202.HIDE_BLOCK)
+		var3_202:SetBlackboardValue(var5_202 and "inPerformance" or "inTalking", false)
+		arg0_202:SetUI(arg0_213, "back")
 	end)
-	seriesAsync(var2_200, function()
-		if arg2_200 then
-			return arg2_200()
+	seriesAsync(var2_202, function()
+		if arg2_202 then
+			return arg2_202()
 		else
-			arg0_200:CheckQueue()
+			arg0_202:CheckQueue()
 		end
 	end)
 end
 
-function var0_0.DoTalkTouchOption(arg0_213, arg1_213, arg2_213, arg3_213)
-	local var0_213 = arg0_213.rtExtraScreen:Find("TalkTouchOption")
-	local var1_213
-	local var2_213 = var0_213:Find("content")
+function var0_0.DoTalkTouchOption(arg0_215, arg1_215, arg2_215, arg3_215)
+	local var0_215 = arg0_215.rtExtraScreen:Find("TalkTouchOption")
+	local var1_215
+	local var2_215 = var0_215:Find("content")
 
-	UIItemList.StaticAlign(var2_213, var2_213:Find("clickTpl"), #arg1_213.options, function(arg0_214, arg1_214, arg2_214)
-		arg1_214 = arg1_214 + 1
+	UIItemList.StaticAlign(var2_215, var2_215:Find("clickTpl"), #arg1_215.options, function(arg0_216, arg1_216, arg2_216)
+		arg1_216 = arg1_216 + 1
 
-		if arg0_214 == UIItemList.EventUpdate then
-			local var0_214 = arg1_213.options[arg1_214]
+		if arg0_216 == UIItemList.EventUpdate then
+			local var0_216 = arg1_215.options[arg1_216]
 
-			setAnchoredPosition(arg2_214, NewPos(unpack(var0_214.pos)))
-			onButton(arg0_213, arg2_214, function()
-				var1_213(var0_214.flag)
+			setAnchoredPosition(arg2_216, NewPos(unpack(var0_216.pos)))
+			onButton(arg0_215, arg2_216, function()
+				var1_215(var0_216.flag)
 			end, SFX_CONFIRM)
-			setActive(arg2_214, not table.contains(arg2_213, var0_214.flag))
+			setActive(arg2_216, not table.contains(arg2_215, var0_216.flag))
 		end
 	end)
-	setActive(var0_213, true)
+	setActive(var0_215, true)
 
-	function var1_213(arg0_216)
-		setActive(var0_213, false)
-		arg3_213(arg0_216)
+	function var1_215(arg0_218)
+		setActive(var0_215, false)
+		arg3_215(arg0_218)
 	end
 end
 
-function var0_0.DoTimelineOption(arg0_217, arg1_217, arg2_217)
-	local var0_217 = arg0_217.rtTimelineScreen:Find("TimelineOption")
-	local var1_217
-	local var2_217 = var0_217:Find("content")
+function var0_0.DoTimelineOption(arg0_219, arg1_219, arg2_219)
+	local var0_219 = arg0_219.rtTimelineScreen:Find("TimelineOption")
+	local var1_219
+	local var2_219 = var0_219:Find("content")
 
-	UIItemList.StaticAlign(var2_217, var2_217:Find("clickTpl"), #arg1_217, function(arg0_218, arg1_218, arg2_218)
-		arg1_218 = arg1_218 + 1
+	UIItemList.StaticAlign(var2_219, var2_219:Find("clickTpl"), #arg1_219, function(arg0_220, arg1_220, arg2_220)
+		arg1_220 = arg1_220 + 1
 
-		if arg0_218 == UIItemList.EventUpdate then
-			local var0_218 = arg1_217[arg1_218]
+		if arg0_220 == UIItemList.EventUpdate then
+			local var0_220 = arg1_219[arg1_220]
 
-			setText(arg2_218:Find("Text"), var0_218.content)
-			onButton(arg0_217, arg2_218, function()
-				var1_217(arg1_218)
+			setText(arg2_220:Find("Text"), var0_220.content)
+			onButton(arg0_219, arg2_220, function()
+				var1_219(arg1_220)
 			end, SFX_CONFIRM)
 		end
 	end)
-	setActive(var0_217, true)
+	setActive(var0_219, true)
 
-	function var1_217(arg0_220)
-		setActive(var0_217, false)
-		arg2_217(arg0_220)
+	function var1_219(arg0_222)
+		setActive(var0_219, false)
+		arg2_219(arg0_222)
 	end
 end
 
-function var0_0.DoTimelineTouch(arg0_221, arg1_221, arg2_221)
-	local var0_221 = arg0_221.rtTimelineScreen:Find("TimelineTouch")
-	local var1_221
-	local var2_221 = var0_221:Find("content")
+function var0_0.DoTimelineTouch(arg0_223, arg1_223, arg2_223)
+	local var0_223 = arg0_223.rtTimelineScreen:Find("TimelineTouch")
+	local var1_223
+	local var2_223 = var0_223:Find("content")
 
-	UIItemList.StaticAlign(var2_221, var2_221:Find("clickTpl"), #arg1_221, function(arg0_222, arg1_222, arg2_222)
-		arg1_222 = arg1_222 + 1
+	UIItemList.StaticAlign(var2_223, var2_223:Find("clickTpl"), #arg1_223, function(arg0_224, arg1_224, arg2_224)
+		arg1_224 = arg1_224 + 1
 
-		if arg0_222 == UIItemList.EventUpdate then
-			local var0_222 = arg1_221[arg1_222]
+		if arg0_224 == UIItemList.EventUpdate then
+			local var0_224 = arg1_223[arg1_224]
 
-			setAnchoredPosition(arg2_222, NewPos(unpack(var0_222.pos)))
-			onButton(arg0_221, arg2_222, function()
-				var1_221(arg1_222)
+			setAnchoredPosition(arg2_224, NewPos(unpack(var0_224.pos)))
+			onButton(arg0_223, arg2_224, function()
+				var1_223(arg1_224)
 			end, SFX_CONFIRM)
 
-			if arg0_221.firstTimelineTouch then
-				arg0_221.firstTimelineTouch = nil
+			if arg0_223.firstTimelineTouch then
+				arg0_223.firstTimelineTouch = nil
 
-				setActive(arg2_222:Find("finger"), true)
+				setActive(arg2_224:Find("finger"), true)
 			end
 		end
 	end)
-	setActive(var0_221, true)
+	setActive(var0_223, true)
 
-	function var1_221(arg0_224)
-		setActive(var0_221, false)
-		arg2_221(arg0_224)
+	function var1_223(arg0_226)
+		setActive(var0_223, false)
+		arg2_223(arg0_226)
 	end
 end
 
-function var0_0.DoShortWait(arg0_225, arg1_225)
-	local var0_225 = arg0_225.ladyDict[arg1_225]
-	local var1_225 = getProxy(ApartmentProxy):getApartment(arg1_225)
-	local var2_225 = arg0_225.room:getApartmentZoneConfig(var0_225.ladyBaseZone, "special_action", arg1_225)
-	local var3_225 = var2_225 and var2_225[math.random(#var2_225)] or nil
+function var0_0.DoShortWait(arg0_227, arg1_227)
+	local var0_227 = arg0_227.ladyDict[arg1_227]
+	local var1_227 = getProxy(ApartmentProxy):getApartment(arg1_227)
+	local var2_227 = arg0_227.room:getApartmentZoneConfig(var0_227.ladyBaseZone, "special_action", arg1_227)
+	local var3_227 = var2_227 and var2_227[math.random(#var2_227)] or nil
 
-	if not var3_225 then
+	if not var3_227 then
 		return
 	end
 
-	var0_225:PlaySingleAction(var3_225)
+	var0_227:PlaySingleAction(var3_227)
 end
 
-function var0_0.OutOfLazy(arg0_226, arg1_226, arg2_226)
-	local var0_226 = arg0_226.ladyDict[arg1_226]
-	local var1_226 = {}
+function var0_0.OutOfLazy(arg0_228, arg1_228, arg2_228)
+	local var0_228 = arg0_228.ladyDict[arg1_228]
+	local var1_228 = {}
 
-	if var0_226:GetBlackboardValue("inPending") then
-		table.insert(var1_226, function(arg0_227)
-			arg0_226.shiftLady = arg1_226
+	if var0_228:GetBlackboardValue("inPending") then
+		table.insert(var1_228, function(arg0_229)
+			arg0_228.shiftLady = arg1_228
 
-			arg0_226:ShiftZone(var0_226.ladyBaseZone, arg0_227)
+			arg0_228:ShiftZone(var0_228.ladyBaseZone, arg0_229)
 		end)
 	end
 
-	seriesAsync(var1_226, arg2_226)
+	seriesAsync(var1_228, arg2_228)
 end
 
-function var0_0.OutOfPending(arg0_228, arg1_228, arg2_228)
-	assert(arg0_228.wakeUpTalkId)
+function var0_0.OutOfPending(arg0_230, arg1_230, arg2_230)
+	assert(arg0_230.wakeUpTalkId)
 
-	local var0_228 = arg0_228.wakeUpTalkId
+	local var0_230 = arg0_230.wakeUpTalkId
 
 	seriesAsync({
-		function(arg0_229)
-			arg0_228:SetUI(arg0_229, "blank")
-		end,
-		function(arg0_230)
-			arg0_228.shiftLady = arg1_228
-
-			arg0_228:ShiftZone(arg0_228.ladyBaseZone, arg0_230)
-		end,
 		function(arg0_231)
-			arg0_228:DoTalk(var0_228, arg0_231)
+			arg0_230:SetUI(arg0_231, "blank")
+		end,
+		function(arg0_232)
+			arg0_230.shiftLady = arg1_230
+
+			arg0_230:ShiftZone(arg0_230.ladyBaseZone, arg0_232)
+		end,
+		function(arg0_233)
+			arg0_230:DoTalk(var0_230, arg0_233)
 		end
 	}, function()
-		arg0_228:SetUIStore(arg2_228, "back")
+		arg0_230:SetUIStore(arg2_230, "back")
 	end)
 end
 
-function var0_0.ChangeCanWatchState(arg0_233)
-	local var0_233
+function var0_0.ChangeCanWatchState(arg0_235)
+	local var0_235
 
-	if arg0_233:GetBlackboardValue("inPending") then
-		var0_233 = tobool(arg0_233:GetBlackboardValue("inDistance"))
+	if arg0_235:GetBlackboardValue("inPending") then
+		var0_235 = tobool(arg0_235:GetBlackboardValue("inDistance"))
 	else
-		local var1_233 = arg0_233:GetBlackboardValue("groupId")
+		local var1_235 = arg0_235:GetBlackboardValue("groupId")
 
-		var0_233 = tobool(arg0_233.activeLady[var1_233] and pg.NodeCanvasMgr.GetInstance():GetBlackboradValue("canWatch", arg0_233.ladyBlackboard))
+		var0_235 = tobool(arg0_235.activeLady[var1_235] and pg.NodeCanvasMgr.GetInstance():GetBlackboradValue("canWatch", arg0_235.ladyBlackboard))
 	end
 
-	if not arg0_233.nowCanWatchState or arg0_233.nowCanWatchState ~= var0_233 then
-		arg0_233.nowCanWatchState = var0_233
+	if not arg0_235.nowCanWatchState or arg0_235.nowCanWatchState ~= var0_235 then
+		arg0_235.nowCanWatchState = var0_235
 
-		arg0_233:ShowOrHideCanWatchMark(arg0_233.nowCanWatchState)
+		arg0_235:ShowOrHideCanWatchMark(arg0_235.nowCanWatchState)
 	end
 end
 
@@ -1854,192 +1871,192 @@ local var1_0 = {
 	}
 }
 
-function var0_0.HandleGameNotification(arg0_234, arg1_234, arg2_234)
-	local var0_234 = arg0_234.ladyDict[arg0_234.apartment:GetConfigID()]
+function var0_0.HandleGameNotification(arg0_236, arg1_236, arg2_236)
+	local var0_236 = arg0_236.ladyDict[arg0_236.apartment:GetConfigID()]
 
-	switch(arg1_234, {
+	switch(arg1_236, {
 		[EatFoodMediator.HIT_AREA] = function()
-			local var0_235, var1_235 = unpack(var1_0[arg2_234.index])
+			local var0_237, var1_237 = unpack(var1_0[arg2_236.index])
 
-			var0_234:PlaySingleAction(var0_235)
+			var0_236:PlaySingleAction(var0_237)
 
-			if arg0_234.tfCutIn then
-				quickPlayAnimator(arg0_234.modelCutIn.lady, var1_235)
-				quickPlayAnimator(arg0_234.modelCutIn.player, var1_235)
+			if arg0_236.tfCutIn then
+				quickPlayAnimator(arg0_236.modelCutIn.lady, var1_237)
+				quickPlayAnimator(arg0_236.modelCutIn.player, var1_237)
 			end
 		end,
 		[EatFoodMediator.RESULT] = function()
-			if arg2_234.win then
-				var0_234:PlaySingleAction("Face_XYX_victory")
-				var0_234:PlaySingleAction("minigame_win")
+			if arg2_236.win then
+				var0_236:PlaySingleAction("Face_XYX_victory")
+				var0_236:PlaySingleAction("minigame_win")
 			else
-				var0_234:PlaySingleAction("Face_XYX_lose")
-				var0_234:PlaySingleAction("minigame_lose")
+				var0_236:PlaySingleAction("Face_XYX_lose")
+				var0_236:PlaySingleAction("minigame_lose")
 			end
 
-			setActive(arg0_234.rtExtraScreen:Find("MiniGameCutIn"), false)
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataMiniGame(2, arg2_234.score))
+			setActive(arg0_236.rtExtraScreen:Find("MiniGameCutIn"), false)
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataMiniGame(2, arg2_236.score))
 		end,
 		[EatFoodMediator.LEAVE_GAME] = function()
-			if arg2_234 == false then
+			if arg2_236 == false then
 				pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataMiniGame(3))
 			end
 		end
 	})
 end
 
-function var0_0.PerformanceQueue(arg0_238, arg1_238, arg2_238)
-	local var0_238, var1_238 = pcall(function()
-		return require("GameCfg.dorm." .. arg1_238)
+function var0_0.PerformanceQueue(arg0_240, arg1_240, arg2_240)
+	local var0_240, var1_240 = pcall(function()
+		return require("GameCfg.dorm." .. arg1_240)
 	end)
 
-	if not var0_238 then
-		errorMsg("不存在表演ID对应的Lua:" .. arg1_238)
-		existCall(arg2_238)
+	if not var0_240 then
+		errorMsg("不存在表演ID对应的Lua:" .. arg1_240)
+		existCall(arg2_240)
 
 		return
 	end
 
-	warning(arg1_238)
+	warning(arg1_240)
 
-	local var2_238 = {}
+	local var2_240 = {}
 
-	table.insert(var2_238, function(arg0_240)
-		arg0_238:SetUI(arg0_240, "blank")
+	table.insert(var2_240, function(arg0_242)
+		arg0_240:SetUI(arg0_242, "blank")
 	end)
-	table.insertto(var2_238, underscore.map(var1_238, function(arg0_241)
-		return switch(arg0_241.type, {
-			function()
-				return function(arg0_243)
-					local var0_243 = unpack(arg0_241.params)
-
-					arg0_238:DoTalk(var0_243, arg0_243, true)
-				end
-			end,
+	table.insertto(var2_240, underscore.map(var1_240, function(arg0_243)
+		return switch(arg0_243.type, {
 			function()
 				return function(arg0_245)
-					arg0_238.touchExitCall = arg0_245
+					local var0_245 = unpack(arg0_243.params)
 
-					arg0_238:EnterTouchMode()
+					arg0_240:DoTalk(var0_245, arg0_245, true)
 				end
 			end,
 			function()
 				return function(arg0_247)
-					arg0_238.ladyDict[arg0_238.apartment:GetConfigID()]:PlaySingleAction(arg0_241.name, arg0_247)
+					arg0_240.touchExitCall = arg0_247
+
+					arg0_240:EnterTouchMode()
 				end
 			end,
 			function()
 				return function(arg0_249)
-					arg0_238:emit(arg0_238.PLAY_EXPRESSION, arg0_241)
-					arg0_249()
+					arg0_240.ladyDict[arg0_240.apartment:GetConfigID()]:PlaySingleAction(arg0_243.name, arg0_249)
 				end
 			end,
 			function()
 				return function(arg0_251)
-					arg0_238:ShiftZone(arg0_241.name, arg0_251)
+					arg0_240:emit(arg0_240.PLAY_EXPRESSION, arg0_243)
+					arg0_251()
 				end
 			end,
 			function()
 				return function(arg0_253)
-					arg0_238.contextData.timeIndex = arg0_241.params[1]
-
-					if arg0_238.artSceneInfo == arg0_238.sceneInfo then
-						arg0_238:SwitchDayNight(arg0_238.contextData.timeIndex)
-						onNextTick(function()
-							arg0_238:RefreshSlots()
-						end)
-					end
-
-					arg0_238:UpdateContactState()
-					onNextTick(arg0_253)
+					arg0_240:ShiftZone(arg0_243.name, arg0_253)
 				end
 			end,
 			function()
-				return function(arg0_256)
-					arg0_238:ActiveStateCamera(arg0_241.name, arg0_256)
+				return function(arg0_255)
+					arg0_240.contextData.timeIndex = arg0_243.params[1]
+
+					if arg0_240.artSceneInfo == arg0_240.sceneInfo then
+						arg0_240:SwitchDayNight(arg0_240.contextData.timeIndex)
+						onNextTick(function()
+							arg0_240:RefreshSlots()
+						end)
+					end
+
+					arg0_240:UpdateContactState()
+					onNextTick(arg0_255)
 				end
 			end,
 			function()
 				return function(arg0_258)
-					if arg0_241.name == "base" then
-						arg0_238:ChangeArtScene(arg0_238.sceneInfo, arg0_258)
-					else
-						local var0_258 = arg0_241.params.scene
-						local var1_258 = arg0_241.params.sceneRoot
-
-						arg0_238:ChangeArtScene(var0_258 .. "|" .. var1_258, arg0_258)
-					end
+					arg0_240:ActiveStateCamera(arg0_243.name, arg0_258)
 				end
 			end,
 			function()
 				return function(arg0_260)
-					local var0_260 = arg0_241.params.name
-
-					if arg0_241.name == "load" then
-						arg0_238.waitForTimeline = tobool(arg0_241.params.wait_timeline)
-
-						arg0_238:LoadTimelineScene(var0_260, true, arg0_260)
-					elseif arg0_241.name == "unload" then
-						arg0_238:UnloadTimelineScene(var0_260, true, arg0_260)
+					if arg0_243.name == "base" then
+						arg0_240:ChangeArtScene(arg0_240.sceneInfo, arg0_260)
 					else
-						assert(false)
+						local var0_260 = arg0_243.params.scene
+						local var1_260 = arg0_243.params.sceneRoot
+
+						arg0_240:ChangeArtScene(var0_260 .. "|" .. var1_260, arg0_260)
 					end
 				end
 			end,
 			function()
 				return function(arg0_262)
-					setActive(arg0_238.uiContianer:Find("walk/btn_back"), false)
+					local var0_262 = arg0_243.params.name
 
-					if arg0_241.name == "change" then
-						local var0_262 = arg0_241.params.scene
-						local var1_262 = arg0_241.params.sceneRoot
+					if arg0_243.name == "load" then
+						arg0_240.waitForTimeline = tobool(arg0_243.params.wait_timeline)
 
-						arg0_238.walkBornPoint = arg0_241.params.point or "Default"
+						arg0_240:LoadTimelineScene(var0_262, true, arg0_262)
+					elseif arg0_243.name == "unload" then
+						arg0_240:UnloadTimelineScene(var0_262, true, arg0_262)
+					else
+						assert(false)
+					end
+				end
+			end,
+			function()
+				return function(arg0_264)
+					setActive(arg0_240.uiContianer:Find("walk/btn_back"), false)
 
-						arg0_238:ChangeWalkScene(var0_262 .. "|" .. var1_262, arg0_262)
-					elseif arg0_241.name == "back" then
-						arg0_238.walkBornPoint = nil
+					if arg0_243.name == "change" then
+						local var0_264 = arg0_243.params.scene
+						local var1_264 = arg0_243.params.sceneRoot
 
-						arg0_238:ChangeWalkScene(arg0_238.sceneInfo, arg0_262)
-					elseif arg0_241.name == "set" then
-						local function var2_262()
-							local var0_263 = arg0_262
+						arg0_240.walkBornPoint = arg0_243.params.point or "Default"
 
-							arg0_262 = nil
+						arg0_240:ChangeWalkScene(var0_264 .. "|" .. var1_264, arg0_264)
+					elseif arg0_243.name == "back" then
+						arg0_240.walkBornPoint = nil
 
-							return existCall(var0_263)
+						arg0_240:ChangeWalkScene(arg0_240.sceneInfo, arg0_264)
+					elseif arg0_243.name == "set" then
+						local function var2_264()
+							local var0_265 = arg0_264
+
+							arg0_264 = nil
+
+							return existCall(var0_265)
 						end
 
-						for iter0_262, iter1_262 in pairs(arg0_241.params) do
-							switch(iter0_262, {
-								back_button_trigger = function(arg0_264)
-									onButton(arg0_238, arg0_238.uiContianer:Find("walk/btn_back"), var2_262, "ui-dorm_back_v2")
-									setActive(arg0_238.uiContianer:Find("walk/btn_back"), IsUnityEditor and arg0_264)
+						for iter0_264, iter1_264 in pairs(arg0_243.params) do
+							switch(iter0_264, {
+								back_button_trigger = function(arg0_266)
+									onButton(arg0_240, arg0_240.uiContianer:Find("walk/btn_back"), var2_264, "ui-dorm_back_v2")
+									setActive(arg0_240.uiContianer:Find("walk/btn_back"), IsUnityEditor and arg0_266)
 								end,
-								near_trigger = function(arg0_265)
-									if arg0_265 == true then
-										arg0_265 = 1.5
+								near_trigger = function(arg0_267)
+									if arg0_267 == true then
+										arg0_267 = 1.5
 									end
 
-									if arg0_265 then
-										function arg0_238.walkNearCallback(arg0_266)
-											if arg0_266 < arg0_265 then
-												arg0_238.walkNearCallback = nil
+									if arg0_267 then
+										function arg0_240.walkNearCallback(arg0_268)
+											if arg0_268 < arg0_267 then
+												arg0_240.walkNearCallback = nil
 
-												var2_262()
+												var2_264()
 											end
 										end
 									else
-										arg0_238.walkNearCallback = nil
+										arg0_240.walkNearCallback = nil
 									end
 								end
-							}, nil, iter1_262)
+							}, nil, iter1_264)
 						end
 
-						if arg0_238.firstMoveGuide then
-							setActive(arg0_238.povLayer:Find("Guide"), arg0_238.firstMoveGuide)
+						if arg0_240.firstMoveGuide then
+							setActive(arg0_240.povLayer:Find("Guide"), arg0_240.firstMoveGuide)
 
-							arg0_238.firstMoveGuide = nil
+							arg0_240.firstMoveGuide = nil
 						end
 					else
 						assert(false)
@@ -2047,23 +2064,23 @@ function var0_0.PerformanceQueue(arg0_238, arg1_238, arg2_238)
 				end
 			end,
 			function()
-				return function(arg0_268)
-					if arg0_241.name == "set" then
-						arg0_238:SwitchIKConfig(arg0_238, arg0_241.params.state)
-						setActive(arg0_238.uiContianer:Find("ik/btn_back"), not arg0_241.params.hide_back)
+				return function(arg0_270)
+					if arg0_243.name == "set" then
+						arg0_240:SwitchIKConfig(arg0_240, arg0_243.params.state)
+						setActive(arg0_240.uiContianer:Find("ik/btn_back"), not arg0_243.params.hide_back)
 
-						arg0_238.ikSpecialCall = arg0_268
+						arg0_240.ikSpecialCall = arg0_270
 
-						arg0_238:SetIKState(true)
-					elseif arg0_241.name == "back" then
-						local var0_268 = arg0_238.ladyDict[arg0_238.apartment:GetConfigID()]
+						arg0_240:SetIKState(true)
+					elseif arg0_243.name == "back" then
+						local var0_270 = arg0_240.ladyDict[arg0_240.apartment:GetConfigID()]
 
-						var0_268.ikConfig = arg0_241.params
+						var0_270.ikConfig = arg0_243.params
 
-						arg0_238:SetIKState(false, function()
-							var0_268.ikConfig = nil
+						arg0_240:SetIKState(false, function()
+							var0_270.ikConfig = nil
 
-							existCall(arg0_268)
+							existCall(arg0_270)
 						end)
 					else
 						assert(false)
@@ -2071,220 +2088,220 @@ function var0_0.PerformanceQueue(arg0_238, arg1_238, arg2_238)
 				end
 			end,
 			function()
-				return function(arg0_271)
-					arg0_238.blackSceneInfo = setmetatable(arg0_241.params or {}, {
+				return function(arg0_273)
+					arg0_240.blackSceneInfo = setmetatable(arg0_243.params or {}, {
 						__index = {
 							color = "#000000",
 							time = 0.3,
-							delay = arg0_241.name == "show" and 0 or 0.5
+							delay = arg0_243.name == "show" and 0 or 0.5
 						}
 					})
 
-					if arg0_241.name == "show" then
-						arg0_238:ShowBlackScreen(true, arg0_271)
-					elseif arg0_241.name == "hide" then
-						arg0_238:ShowBlackScreen(false, arg0_271)
+					if arg0_243.name == "show" then
+						arg0_240:ShowBlackScreen(true, arg0_273)
+					elseif arg0_243.name == "hide" then
+						arg0_240:ShowBlackScreen(false, arg0_273)
 					else
 						assert(false)
 					end
 
-					arg0_238.blackSceneInfo = nil
+					arg0_240.blackSceneInfo = nil
 				end
 			end
 		})
 	end))
-	table.insert(var2_238, function(arg0_272)
-		arg0_238:SetUI(arg0_272, "back")
+	table.insert(var2_240, function(arg0_274)
+		arg0_240:SetUI(arg0_274, "back")
 	end)
-	seriesAsync(var2_238, arg2_238)
+	seriesAsync(var2_240, arg2_240)
 end
 
-function var0_0.TriggerContact(arg0_273, arg1_273)
-	arg0_273:emit(Dorm3dRoomMediator.COLLECTION_ITEM, {
-		itemId = arg1_273,
-		roomId = arg0_273.room:GetConfigID(),
-		groupId = arg0_273.room:isPersonalRoom() and arg0_273.apartment:GetConfigID() or 0
+function var0_0.TriggerContact(arg0_275, arg1_275)
+	arg0_275:emit(Dorm3dRoomMediator.COLLECTION_ITEM, {
+		itemId = arg1_275,
+		roomId = arg0_275.room:GetConfigID(),
+		groupId = arg0_275.room:isPersonalRoom() and arg0_275.apartment:GetConfigID() or 0
 	})
 end
 
-function var0_0.UpdateContactState(arg0_274)
-	arg0_274:SetContactStateDic(arg0_274.room:getTriggerableCollectItemDic(arg0_274.contextData.timeIndex))
+function var0_0.UpdateContactState(arg0_276)
+	arg0_276:SetContactStateDic(arg0_276.room:getTriggerableCollectItemDic(arg0_276.contextData.timeIndex))
 end
 
-function var0_0.UpdateFavorDisplay(arg0_275)
-	local var0_275, var1_275 = getProxy(ApartmentProxy):getStamina()
+function var0_0.UpdateFavorDisplay(arg0_277)
+	local var0_277, var1_277 = getProxy(ApartmentProxy):getStamina()
 
-	setText(arg0_275.rtStaminaDisplay:Find("Text"), string.format("%d/%d", var0_275, var1_275))
-	setActive(arg0_275.rtStaminaDisplay, false)
+	setText(arg0_277.rtStaminaDisplay:Find("Text"), string.format("%d/%d", var0_277, var1_277))
+	setActive(arg0_277.rtStaminaDisplay, false)
 
-	if arg0_275.apartment then
-		setText(arg0_275.rtFavorLevel:Find("rank/Text"), arg0_275.apartment.level)
+	if arg0_277.apartment then
+		setText(arg0_277.rtFavorLevel:Find("rank/Text"), arg0_277.apartment.level)
 
-		local var2_275, var3_275 = arg0_275.apartment:getFavor()
+		local var2_277, var3_277 = arg0_277.apartment:getFavor()
 
-		setText(arg0_275.rtFavorLevel:Find("Text"), string.format("<color=#ff6698>%d</color>/%d", var2_275, var3_275))
+		setText(arg0_277.rtFavorLevel:Find("Text"), string.format("<color=#ff6698>%d</color>/%d", var2_277, var3_277))
 	end
 
-	setActive(arg0_275.rtFavorLevel:Find("red"), Dorm3dLevelLayer.IsShowRed())
+	setActive(arg0_277.rtFavorLevel:Find("red"), Dorm3dLevelLayer.IsShowRed())
 end
 
-function var0_0.UpdateBtnState(arg0_276)
-	local var0_276 = not arg0_276.room:isPersonalRoom() or arg0_276:CheckSystemOpen("Furniture")
-	local var1_276 = Dorm3dFurniture.IsTimelimitShopTip(arg0_276.room:GetConfigID())
+function var0_0.UpdateBtnState(arg0_278)
+	local var0_278 = not arg0_278.room:isPersonalRoom() or arg0_278:CheckSystemOpen("Furniture")
+	local var1_278 = Dorm3dFurniture.IsTimelimitShopTip(arg0_278.room:GetConfigID())
 
-	setActive(arg0_276.uiContianer:Find("base/left/btn_furniture/tipTimelimit"), var0_276 and var1_276)
+	setActive(arg0_278.uiContianer:Find("base/left/btn_furniture/tipTimelimit"), var0_278 and var1_278)
 
-	local var2_276 = Dorm3dFurniture.NeedViewTip(arg0_276.room:GetConfigID())
+	local var2_278 = Dorm3dFurniture.NeedViewTip(arg0_278.room:GetConfigID())
 
-	setActive(arg0_276.uiContianer:Find("base/left/btn_furniture/tip"), var0_276 and not var1_276 and var2_276)
-	setActive(arg0_276.uiContianer:Find("base/btn_back/main"), underscore(getProxy(ApartmentProxy):getRawData()):chain():values():filter(function(arg0_277)
-		return tobool(arg0_277)
-	end):any(function(arg0_278)
-		return #arg0_278:getSpecialTalking() > 0 or arg0_278:getIconTip() == "main"
+	setActive(arg0_278.uiContianer:Find("base/left/btn_furniture/tip"), var0_278 and not var1_278 and var2_278)
+	setActive(arg0_278.uiContianer:Find("base/btn_back/main"), underscore(getProxy(ApartmentProxy):getRawData()):chain():values():filter(function(arg0_279)
+		return tobool(arg0_279)
+	end):any(function(arg0_280)
+		return #arg0_280:getSpecialTalking() > 0 or arg0_280:getIconTip() == "main"
 	end):value())
-	setActive(arg0_276.uiContianer:Find("base/left/btn_collection/tip"), PlayerPrefs.GetInt("apartment_collection_item", 0) > 0 or PlayerPrefs.GetInt("apartment_collection_recall", 0) > 0)
+	setActive(arg0_278.uiContianer:Find("base/left/btn_collection/tip"), PlayerPrefs.GetInt("apartment_collection_item", 0) > 0 or PlayerPrefs.GetInt("apartment_collection_recall", 0) > 0)
 end
 
-function var0_0.AddUnlockDisplay(arg0_279, arg1_279)
-	table.insert(arg0_279.unlockList, arg1_279)
+function var0_0.AddUnlockDisplay(arg0_281, arg1_281)
+	table.insert(arg0_281.unlockList, arg1_281)
 
-	if not isActive(arg0_279.rtFavorUp) then
-		setText(arg0_279.rtFavorUp:Find("Text"), table.remove(arg0_279.unlockList, 1))
-		setActive(arg0_279.rtFavorUp, true)
+	if not isActive(arg0_281.rtFavorUp) then
+		setText(arg0_281.rtFavorUp:Find("Text"), table.remove(arg0_281.unlockList, 1))
+		setActive(arg0_281.rtFavorUp, true)
 	end
 end
 
-function var0_0.PopFavorTrigger(arg0_280, arg1_280)
-	local var0_280 = arg1_280.triggerId
-	local var1_280 = arg1_280.delta
-	local var2_280 = arg1_280.cost
-	local var3_280 = arg1_280.apartment
-	local var4_280 = pg.dorm3d_favor_trigger[var0_280]
+function var0_0.PopFavorTrigger(arg0_282, arg1_282)
+	local var0_282 = arg1_282.triggerId
+	local var1_282 = arg1_282.delta
+	local var2_282 = arg1_282.cost
+	local var3_282 = arg1_282.apartment
+	local var4_282 = pg.dorm3d_favor_trigger[var0_282]
 
-	if var4_280.is_repeat == 0 then
-		if var0_280 == getDorm3dGameset("drom3d_favir_trigger_onwer")[1] then
-			arg0_280:AddUnlockDisplay(i18n("dorm3d_own_favor"))
-		elseif var0_280 == getDorm3dGameset("drom3d_favir_trigger_propose")[1] then
-			arg0_280:AddUnlockDisplay(i18n("dorm3d_pledge_favor"))
+	if var4_282.is_repeat == 0 then
+		if var0_282 == getDorm3dGameset("drom3d_favir_trigger_onwer")[1] then
+			arg0_282:AddUnlockDisplay(i18n("dorm3d_own_favor"))
+		elseif var0_282 == getDorm3dGameset("drom3d_favir_trigger_propose")[1] then
+			arg0_282:AddUnlockDisplay(i18n("dorm3d_pledge_favor"))
 		else
-			arg0_280:AddUnlockDisplay(string.format("unknow favor trigger:%d unlock", var0_280))
+			arg0_282:AddUnlockDisplay(string.format("unknow favor trigger:%d unlock", var0_282))
 		end
-	elseif arg1_280.delta > 0 then
-		local var5_280, var6_280 = var3_280:getFavor()
-		local var7_280 = var5_280 + var1_280
+	elseif arg1_282.delta > 0 then
+		local var5_282, var6_282 = var3_282:getFavor()
+		local var7_282 = var5_282 + var1_282
 
-		setText(arg0_280.rtFavorUpDaily:Find("bg/Text"), string.format("<size=48>+%d</size>", var1_280))
-		setSlider(arg0_280.rtFavorUpDaily:Find("bg/slider"), 0, var6_280, var5_280)
-		setAnchoredPosition(arg0_280.rtFavorUpDaily:Find("bg"), arg1_280.isGift and NewPos(-354, 223) or NewPos(-208, 105))
+		setText(arg0_282.rtFavorUpDaily:Find("bg/Text"), string.format("<size=48>+%d</size>", var1_282))
+		setSlider(arg0_282.rtFavorUpDaily:Find("bg/slider"), 0, var6_282, var5_282)
+		setAnchoredPosition(arg0_282.rtFavorUpDaily:Find("bg"), arg1_282.isGift and NewPos(-354, 223) or NewPos(-208, 105))
 
-		local var8_280 = {}
-		local var9_280 = arg0_280.rtFavorUpDaily:Find("bg/effect")
+		local var8_282 = {}
+		local var9_282 = arg0_282.rtFavorUpDaily:Find("bg/effect")
 
-		eachChild(var9_280, function(arg0_281)
-			setActive(arg0_281, false)
+		eachChild(var9_282, function(arg0_283)
+			setActive(arg0_283, false)
 		end)
 
-		local var10_280
+		local var10_282
 
-		if var4_280.effect and var4_280.effect ~= "" then
-			var10_280 = var9_280:Find(var4_280.effect .. "(Clone)")
+		if var4_282.effect and var4_282.effect ~= "" then
+			var10_282 = var9_282:Find(var4_282.effect .. "(Clone)")
 
-			if not var10_280 then
-				table.insert(var8_280, function(arg0_282)
-					LoadAndInstantiateAsync("Dorm3D/Effect/Prefab/ExpressionUI", "uifx_dorm3d_yinfu01", function(arg0_283)
-						setParent(arg0_283, var9_280)
+			if not var10_282 then
+				table.insert(var8_282, function(arg0_284)
+					LoadAndInstantiateAsync("Dorm3D/Effect/Prefab/ExpressionUI", "uifx_dorm3d_yinfu01", function(arg0_285)
+						setParent(arg0_285, var9_282)
 
-						var10_280 = tf(arg0_283)
+						var10_282 = tf(arg0_285)
 
-						arg0_282()
+						arg0_284()
 					end)
 				end)
 			else
-				setActive(var10_280, true)
+				setActive(var10_282, true)
 			end
 		end
 
-		local var11_280 = arg0_280.rtFavorUpDaily:GetComponent("DftAniEvent")
+		local var11_282 = arg0_282.rtFavorUpDaily:GetComponent("DftAniEvent")
 
-		var11_280:SetTriggerEvent(function(arg0_284)
-			local var0_284 = GetComponent(arg0_280.rtFavorUpDaily:Find("bg/slider"), typeof(Slider))
+		var11_282:SetTriggerEvent(function(arg0_286)
+			local var0_286 = GetComponent(arg0_282.rtFavorUpDaily:Find("bg/slider"), typeof(Slider))
 
-			LeanTween.value(var5_280, var7_280, 0.5):setOnUpdate(System.Action_float(function(arg0_285)
-				var0_284.value = arg0_285
+			LeanTween.value(var5_282, var7_282, 0.5):setOnUpdate(System.Action_float(function(arg0_287)
+				var0_286.value = arg0_287
 			end)):setEase(LeanTweenType.easeInOutQuad):setDelay(0.165):setOnComplete(System.Action(function()
 				LeanTween.delayedCall(0.165, System.Action(function()
-					if arg0_280.exited then
+					if arg0_282.exited then
 						return
 					end
 
-					quickPlayAnimator(arg0_280.rtFavorUpDaily, "favor_out")
+					quickPlayAnimator(arg0_282.rtFavorUpDaily, "favor_out")
 				end))
 			end))
 			pg.CriMgr.GetInstance():PlaySE_V3("ui-dorm_progaress_bar")
 		end)
-		var11_280:SetEndEvent(function(arg0_288)
-			setActive(arg0_280.rtFavorUpDaily, false)
+		var11_282:SetEndEvent(function(arg0_290)
+			setActive(arg0_282.rtFavorUpDaily, false)
 		end)
-		seriesAsync(var8_280, function()
-			local var0_289 = arg0_280.ladyDict[var3_280:GetConfigID()]
+		seriesAsync(var8_282, function()
+			local var0_291 = arg0_282.ladyDict[var3_282:GetConfigID()]
 
-			setLocalPosition(arg0_280.rtFavorUpDaily, arg0_280:GetLocalPosition(arg0_280:GetScreenPosition(var0_289.ladyHeadCenter.position), arg0_280.rtFavorUpDaily.parent))
-			setActive(arg0_280.rtFavorUpDaily, true)
-			SetCompomentEnabled(arg0_280.rtFavorUpDaily, typeof(Animator), true)
-			quickPlayAnimator(arg0_280.rtFavorUpDaily, "favor_open")
+			setLocalPosition(arg0_282.rtFavorUpDaily, arg0_282:GetLocalPosition(arg0_282:GetScreenPosition(var0_291.ladyHeadCenter.position), arg0_282.rtFavorUpDaily.parent))
+			setActive(arg0_282.rtFavorUpDaily, true)
+			SetCompomentEnabled(arg0_282.rtFavorUpDaily, typeof(Animator), true)
+			quickPlayAnimator(arg0_282.rtFavorUpDaily, "favor_open")
 
-			if var2_280 > 0 then
-				local var1_289, var2_289 = getProxy(ApartmentProxy):getStamina()
+			if var2_282 > 0 then
+				local var1_291, var2_291 = getProxy(ApartmentProxy):getStamina()
 
-				setText(arg0_280.rtStaminaPop:Find("Text/Text (1)"), "-" .. var2_280)
-				setText(arg0_280.rtStaminaPop:Find("Text"), string.format("%d/%d", var1_289 + var2_280, var2_289))
-				setActive(arg0_280.rtStaminaPop, true)
+				setText(arg0_282.rtStaminaPop:Find("Text/Text (1)"), "-" .. var2_282)
+				setText(arg0_282.rtStaminaPop:Find("Text"), string.format("%d/%d", var1_291 + var2_282, var2_291))
+				setActive(arg0_282.rtStaminaPop, true)
 			end
 		end)
 	end
 end
 
-function var0_0.PopFavorLevelUp(arg0_290, arg1_290, arg2_290, arg3_290)
-	arg0_290.isLock = true
+function var0_0.PopFavorLevelUp(arg0_292, arg1_292, arg2_292, arg3_292)
+	arg0_292.isLock = true
 
 	LeanTween.delayedCall(0.33, System.Action(function()
-		arg0_290.isLock = false
+		arg0_292.isLock = false
 	end))
 
-	local var0_290 = math.floor(arg1_290.level / 10)
-	local var1_290 = math.fmod(arg1_290.level, 10)
+	local var0_292 = math.floor(arg1_292.level / 10)
+	local var1_292 = math.fmod(arg1_292.level, 10)
 
-	GetImageSpriteFromAtlasAsync("ui/favor_atlas", var1_290, arg0_290.rtLevelUpWindow:Find("panel/bg/item1/mark/level/digit2"))
-	GetImageSpriteFromAtlasAsync("ui/favor_atlas", var0_290, arg0_290.rtLevelUpWindow:Find("panel/bg/item1/mark/level/digit1"))
-	setActive(arg0_290.rtLevelUpWindow:Find("panel/bg/item1/mark/level/digit1"), var0_290 > 0)
+	GetImageSpriteFromAtlasAsync("ui/favor_atlas", var1_292, arg0_292.rtLevelUpWindow:Find("panel/bg/item1/mark/level/digit2"))
+	GetImageSpriteFromAtlasAsync("ui/favor_atlas", var0_292, arg0_292.rtLevelUpWindow:Find("panel/bg/item1/mark/level/digit1"))
+	setActive(arg0_292.rtLevelUpWindow:Find("panel/bg/item1/mark/level/digit1"), var0_292 > 0)
 
-	local var2_290
-	local var3_290
+	local var2_292
+	local var3_292
 
-	arg0_290.clientAward, var3_290 = Dorm3dIconHelper.SplitStory(arg1_290:getFavorConfig("levelup_client_item", arg1_290.level))
-	arg0_290.serverAward = arg2_290
+	arg0_292.clientAward, var3_292 = Dorm3dIconHelper.SplitStory(arg1_292:getFavorConfig("levelup_client_item", arg1_292.level))
+	arg0_292.serverAward = arg2_292
 
-	local var4_290 = arg0_290.rtLevelUpWindow:Find("panel/info/content/itemContent")
+	local var4_292 = arg0_292.rtLevelUpWindow:Find("panel/info/content/itemContent")
 
-	if not arg0_290.levelItemList then
-		arg0_290.levelItemList = UIItemList.New(var4_290, var4_290:Find("tpl"))
+	if not arg0_292.levelItemList then
+		arg0_292.levelItemList = UIItemList.New(var4_292, var4_292:Find("tpl"))
 
-		arg0_290.levelItemList:make(function(arg0_292, arg1_292, arg2_292)
-			local var0_292 = arg1_292 + 1
+		arg0_292.levelItemList:make(function(arg0_294, arg1_294, arg2_294)
+			local var0_294 = arg1_294 + 1
 
-			if arg0_292 == UIItemList.EventUpdate then
-				if arg1_292 < #arg0_290.serverAward then
-					updateDorm3dIcon(arg2_292, arg0_290.serverAward[var0_292])
-					onButton(arg0_290, arg2_292, function()
-						arg0_290:emit(BaseUI.ON_NEW_DROP, {
-							drop = arg0_290.serverAward[var0_292]
+			if arg0_294 == UIItemList.EventUpdate then
+				if arg1_294 < #arg0_292.serverAward then
+					updateDorm3dIcon(arg2_294, arg0_292.serverAward[var0_294])
+					onButton(arg0_292, arg2_294, function()
+						arg0_292:emit(BaseUI.ON_NEW_DROP, {
+							drop = arg0_292.serverAward[var0_294]
 						})
 					end, SFX_PANEL)
 				else
-					Dorm3dIconHelper.UpdateDorm3dIcon(arg2_292, arg0_290.clientAward[var0_292 - #arg0_290.serverAward])
-					onButton(arg0_290, arg2_292, function()
-						arg0_290:emit(Dorm3dRoomMediator.ON_DROP_CLIENT, {
-							data = arg0_290.clientAward[var0_292 - #arg0_290.serverAward]
+					Dorm3dIconHelper.UpdateDorm3dIcon(arg2_294, arg0_292.clientAward[var0_294 - #arg0_292.serverAward])
+					onButton(arg0_292, arg2_294, function()
+						arg0_292:emit(Dorm3dRoomMediator.ON_DROP_CLIENT, {
+							data = arg0_292.clientAward[var0_294 - #arg0_292.serverAward]
 						})
 					end, SFX_PANEL)
 				end
@@ -2292,194 +2309,194 @@ function var0_0.PopFavorLevelUp(arg0_290, arg1_290, arg2_290, arg3_290)
 		end)
 	end
 
-	arg0_290.levelItemList:align(#arg0_290.serverAward + #arg0_290.clientAward)
-	setActive(arg0_290.rtLevelUpWindow, true)
+	arg0_292.levelItemList:align(#arg0_292.serverAward + #arg0_292.clientAward)
+	setActive(arg0_292.rtLevelUpWindow, true)
 	pg.CriMgr.GetInstance():PlaySE_V3("ui-dorm_upgrade")
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_290.rtLevelUpWindow, {
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_292.rtLevelUpWindow, {
 		weight = LayerWeightConst.SECOND_LAYER,
 		groupName = LayerWeightConst.GROUP_DORM3D
 	})
 
-	function arg0_290.levelUpCallback()
-		arg0_290.levelUpCallback = nil
+	function arg0_292.levelUpCallback()
+		arg0_292.levelUpCallback = nil
 
-		if var3_290 then
-			arg0_290:PopNewStoryTip(var3_290)
+		if var3_292 then
+			arg0_292:PopNewStoryTip(var3_292)
 		end
 
-		existCall(arg3_290)
+		existCall(arg3_292)
 	end
 end
 
-function var0_0.PopNewStoryTip(arg0_296, arg1_296, arg2_296)
-	local var0_296 = arg0_296.uiContianer:Find("base/top/story_tip")
+function var0_0.PopNewStoryTip(arg0_298, arg1_298, arg2_298)
+	local var0_298 = arg0_298.uiContianer:Find("base/top/story_tip")
 
-	setActive(var0_296, true)
+	setActive(var0_298, true)
 	LeanTween.delayedCall(1, System.Action(function()
-		setActive(var0_296, false)
+		setActive(var0_298, false)
 	end))
-	setText(var0_296:Find("Text"), i18n("dorm3d_story_unlock_tip", pg.dorm3d_recall[arg1_296[2]].name))
-	existCall(arg2_296)
+	setText(var0_298:Find("Text"), i18n("dorm3d_story_unlock_tip", pg.dorm3d_recall[arg1_298[2]].name))
+	existCall(arg2_298)
 end
 
-function var0_0.UpdateZoneList(arg0_298)
-	local var0_298
+function var0_0.UpdateZoneList(arg0_300)
+	local var0_300
 
-	if arg0_298.room:isPersonalRoom() then
-		var0_298 = arg0_298.ladyDict[arg0_298.apartment:GetConfigID()].ladyBaseZone
+	if arg0_300.room:isPersonalRoom() then
+		var0_300 = arg0_300.ladyDict[arg0_300.apartment:GetConfigID()].ladyBaseZone
 	else
-		var0_298 = arg0_298:GetAttachedFurnitureName()
+		var0_300 = arg0_300:GetAttachedFurnitureName()
 	end
 
-	for iter0_298, iter1_298 in ipairs(arg0_298.zoneDatas) do
-		if iter1_298:GetWatchCameraName() == var0_298 then
-			setText(arg0_298.btnZone:Find("Text"), iter1_298:GetName())
-			setTextColor(arg0_298.rtZoneList:GetChild(iter0_298 - 1):Find("Name"), Color.NewHex("5CCAFF"))
+	for iter0_300, iter1_300 in ipairs(arg0_300.zoneDatas) do
+		if iter1_300:GetWatchCameraName() == var0_300 then
+			setText(arg0_300.btnZone:Find("Text"), iter1_300:GetName())
+			setTextColor(arg0_300.rtZoneList:GetChild(iter0_300 - 1):Find("Name"), Color.NewHex("5CCAFF"))
 		else
-			setTextColor(arg0_298.rtZoneList:GetChild(iter0_298 - 1):Find("Name"), Color.NewHex("FFFFFF99"))
+			setTextColor(arg0_300.rtZoneList:GetChild(iter0_300 - 1):Find("Name"), Color.NewHex("FFFFFF99"))
 		end
 	end
 end
 
-function var0_0.TalkingEventHandle(arg0_299, arg1_299)
-	local var0_299 = {}
-	local var1_299 = {}
-	local var2_299 = arg1_299.data
+function var0_0.TalkingEventHandle(arg0_301, arg1_301)
+	local var0_301 = {}
+	local var1_301 = {}
+	local var2_301 = arg1_301.data
 
-	if var2_299.op_list then
-		for iter0_299, iter1_299 in ipairs(var2_299.op_list) do
-			table.insert(var0_299, function(arg0_300)
-				local function var0_300()
-					local var0_301 = arg0_300
+	if var2_301.op_list then
+		for iter0_301, iter1_301 in ipairs(var2_301.op_list) do
+			table.insert(var0_301, function(arg0_302)
+				local function var0_302()
+					local var0_303 = arg0_302
 
-					arg0_300 = nil
+					arg0_302 = nil
 
-					return existCall(var0_301)
+					return existCall(var0_303)
 				end
 
-				switch(iter1_299.type, {
+				switch(iter1_301.type, {
 					action = function()
-						arg0_299.ladyDict[arg0_299.apartment:GetConfigID()]:PlaySingleAction(iter1_299.name, var0_300)
+						arg0_301.ladyDict[arg0_301.apartment:GetConfigID()]:PlaySingleAction(iter1_301.name, var0_302)
 					end,
 					item_action = function()
-						arg0_299.scene:PlaySceneItemAnim(iter1_299.id, iter1_299.name)
-						var0_300()
+						arg0_301.scene:PlaySceneItemAnim(iter1_301.id, iter1_301.name)
+						var0_302()
 					end,
 					timeline = function()
-						if arg0_299.inTouchGame then
-							setActive(arg0_299.rtTouchGamePanel, false)
+						if arg0_301.inTouchGame then
+							setActive(arg0_301.rtTouchGamePanel, false)
 						end
 
-						arg0_299:PlayTimeline(iter1_299, function(arg0_305, arg1_305)
-							setActive(arg0_299.rtTouchGamePanel, arg0_299.inTouchGame)
+						arg0_301:PlayTimeline(iter1_301, function(arg0_307, arg1_307)
+							setActive(arg0_301.rtTouchGamePanel, arg0_301.inTouchGame)
 
-							var1_299.notifiCallback = arg1_305
+							var1_301.notifiCallback = arg1_307
 
-							var0_300()
+							var0_302()
 						end)
 					end,
 					clickOption = function()
-						arg0_299:DoTalkTouchOption(iter1_299, arg1_299.flags, function(arg0_307)
-							var1_299.optionIndex = arg0_307
+						arg0_301:DoTalkTouchOption(iter1_301, arg1_301.flags, function(arg0_309)
+							var1_301.optionIndex = arg0_309
 
-							var0_300()
+							var0_302()
 						end)
 					end,
 					wait = function()
-						arg0_299.LTs = arg0_299.LTs or {}
+						arg0_301.LTs = arg0_301.LTs or {}
 
-						table.insert(arg0_299.LTs, LeanTween.delayedCall(iter1_299.time, System.Action(var0_300)).uniqueId)
+						table.insert(arg0_301.LTs, LeanTween.delayedCall(iter1_301.time, System.Action(var0_302)).uniqueId)
 					end,
 					expression = function()
-						arg0_299:emit(arg0_299.PLAY_EXPRESSION, iter1_299)
-						var0_300()
+						arg0_301:emit(arg0_301.PLAY_EXPRESSION, iter1_301)
+						var0_302()
 					end
 				}, function()
-					assert(false, "op type error:", iter1_299.type)
+					assert(false, "op type error:", iter1_301.type)
 				end)
 
-				if iter1_299.skip then
-					var0_300()
+				if iter1_301.skip then
+					var0_302()
 				end
 			end)
 		end
 	end
 
-	seriesAsync(var0_299, function()
-		if arg1_299.callbackData then
-			arg0_299:emit(Dorm3dRoomMediator.TALKING_EVENT_FINISH, arg1_299.callbackData.name, var1_299)
+	seriesAsync(var0_301, function()
+		if arg1_301.callbackData then
+			arg0_301:emit(Dorm3dRoomMediator.TALKING_EVENT_FINISH, arg1_301.callbackData.name, var1_301)
 		end
 	end)
 end
 
-function var0_0.CheckQueue(arg0_312)
-	if arg0_312.inGuide or arg0_312.uiState ~= "base" then
+function var0_0.CheckQueue(arg0_314)
+	if arg0_314.inGuide or arg0_314.uiState ~= "base" then
 		return
 	end
 
-	if arg0_312.room:GetConfigID() == 1 and arg0_312:CheckGuide() then
+	if arg0_314.room:GetConfigID() == 1 and arg0_314:CheckGuide() then
 		-- block empty
-	elseif arg0_312.room:isPersonalRoom() and arg0_312:CheckLevelUp() then
+	elseif arg0_314.room:isPersonalRoom() and arg0_314:CheckLevelUp() then
 		-- block empty
-	elseif arg0_312.apartment and arg0_312:CheckEnterDeal() then
+	elseif arg0_314.apartment and arg0_314:CheckEnterDeal() then
 		-- block empty
-	elseif arg0_312.apartment and arg0_312:CheckActiveTalk() then
+	elseif arg0_314.apartment and arg0_314:CheckActiveTalk() then
 		-- block empty
-	elseif arg0_312.apartment then
-		arg0_312:CheckFavorTrigger()
+	elseif arg0_314.apartment then
+		arg0_314:CheckFavorTrigger()
 	end
 
-	arg0_312.contextData.hasEnterCheck = true
+	arg0_314.contextData.hasEnterCheck = true
 end
 
-function var0_0.didEnterCheck(arg0_313)
-	local var0_313
+function var0_0.didEnterCheck(arg0_315)
+	local var0_315
 
-	if arg0_313.contextData.specialId then
-		var0_313 = arg0_313.contextData.specialId
-		arg0_313.contextData.specialId = nil
+	if arg0_315.contextData.specialId then
+		var0_315 = arg0_315.contextData.specialId
+		arg0_315.contextData.specialId = nil
 
-		arg0_313:DoTalk(var0_313, function()
-			arg0_313:closeView()
+		arg0_315:DoTalk(var0_315, function()
+			arg0_315:closeView()
 		end)
-	elseif not arg0_313.contextData.hasEnterCheck and arg0_313.apartment then
-		for iter0_313, iter1_313 in ipairs(arg0_313.apartment:getForceEnterTalking(arg0_313.room:GetConfigID())) do
-			var0_313 = iter1_313
+	elseif not arg0_315.contextData.hasEnterCheck and arg0_315.apartment then
+		for iter0_315, iter1_315 in ipairs(arg0_315.apartment:getForceEnterTalking(arg0_315.room:GetConfigID())) do
+			var0_315 = iter1_315
 
-			arg0_313:DoTalk(iter1_313)
+			arg0_315:DoTalk(iter1_315)
 
 			break
 		end
 	end
 
-	if var0_313 and pg.dorm3d_dialogue_group[var0_313].extend_loading > 0 then
-		arg0_313.contextData.hasEnterCheck = true
+	if var0_315 and pg.dorm3d_dialogue_group[var0_315].extend_loading > 0 then
+		arg0_315.contextData.hasEnterCheck = true
 
 		pg.SceneAnimMgr.GetInstance():RegisterDormNextCall(function()
-			arg0_313:FinishEnterResume()
+			arg0_315:FinishEnterResume()
 		end)
 	else
-		if arg0_313.apartment and arg0_313.contextData.pendingDic[arg0_313.apartment:GetConfigID()] then
-			arg0_313.contextData.hasEnterCheck = true
+		if arg0_315.apartment and arg0_315.contextData.pendingDic[arg0_315.apartment:GetConfigID()] then
+			arg0_315.contextData.hasEnterCheck = true
 		end
 
-		for iter2_313, iter3_313 in pairs(arg0_313.contextData.pendingDic) do
-			arg0_313.ladyDict[iter2_313]:SetInPending(iter3_313)
+		for iter2_315, iter3_315 in pairs(arg0_315.contextData.pendingDic) do
+			arg0_315.ladyDict[iter2_315]:SetInPending(iter3_315)
 		end
 
-		arg0_313.contextData.pendingDic = {}
+		arg0_315.contextData.pendingDic = {}
 
-		arg0_313:FinishEnterResume()
-		arg0_313:CheckQueue()
+		arg0_315:FinishEnterResume()
+		arg0_315:CheckQueue()
 	end
 end
 
-function var0_0.CheckGuide(arg0_316)
-	if arg0_316.ladyDict[arg0_316.apartment:GetConfigID()]:GetBlackboardValue("inPending") then
+function var0_0.CheckGuide(arg0_318)
+	if arg0_318.ladyDict[arg0_318.apartment:GetConfigID()]:GetBlackboardValue("inPending") then
 		return
 	end
 
-	for iter0_316, iter1_316 in ipairs({
+	for iter0_318, iter1_318 in ipairs({
 		{
 			name = "DORM3D_GUIDE_03",
 			active = function()
@@ -2495,29 +2512,29 @@ function var0_0.CheckGuide(arg0_316)
 		{
 			name = "DORM3D_GUIDE_05",
 			active = function()
-				return arg0_316:CheckSystemOpen("Furniture")
+				return arg0_318:CheckSystemOpen("Furniture")
 			end
 		},
 		{
 			name = "DORM3D_GUIDE_07",
 			active = function()
-				return arg0_316:CheckSystemOpen("DayNight")
+				return arg0_318:CheckSystemOpen("DayNight")
 			end
 		}
 	}) do
-		if not pg.NewStoryMgr.GetInstance():IsPlayed(iter1_316.name) and iter1_316.active() then
-			arg0_316:SetAllBlackbloardValue("inGuide", true)
+		if not pg.NewStoryMgr.GetInstance():IsPlayed(iter1_318.name) and iter1_318.active() then
+			arg0_318:SetAllBlackbloardValue("inGuide", true)
 
-			local function var0_316()
-				pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(2, pg.NewStoryMgr.GetInstance():StoryName2StoryId(iter1_316.name)))
-				arg0_316:SetAllBlackbloardValue("inGuide", false)
+			local function var0_318()
+				pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(2, pg.NewStoryMgr.GetInstance():StoryName2StoryId(iter1_318.name)))
+				arg0_318:SetAllBlackbloardValue("inGuide", false)
 			end
 
 			pg.m02:sendNotification(GAME.STORY_UPDATE, {
-				storyId = iter1_316.name
+				storyId = iter1_318.name
 			})
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(1, pg.NewStoryMgr.GetInstance():StoryName2StoryId(iter1_316.name)))
-			pg.NewGuideMgr.GetInstance():Play(iter1_316.name, nil, var0_316, var0_316)
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(1, pg.NewStoryMgr.GetInstance():StoryName2StoryId(iter1_318.name)))
+			pg.NewGuideMgr.GetInstance():Play(iter1_318.name, nil, var0_318, var0_318)
 
 			return true
 		end
@@ -2526,69 +2543,69 @@ function var0_0.CheckGuide(arg0_316)
 	return false
 end
 
-function var0_0.CheckFavorTrigger(arg0_322)
-	for iter0_322, iter1_322 in ipairs({
+function var0_0.CheckFavorTrigger(arg0_324)
+	for iter0_324, iter1_324 in ipairs({
 		{
 			triggerId = getDorm3dGameset("drom3d_favir_trigger_onwer")[1],
 			active = function()
-				local var0_323 = getProxy(CollectionProxy):getShipGroup(arg0_322.apartment.configId)
+				local var0_325 = getProxy(CollectionProxy):getShipGroup(arg0_324.apartment.configId)
 
-				return tobool(var0_323)
+				return tobool(var0_325)
 			end
 		},
 		{
 			triggerId = getDorm3dGameset("drom3d_favir_trigger_propose")[1],
 			active = function()
-				local var0_324 = getProxy(CollectionProxy):getShipGroup(arg0_322.apartment.configId)
+				local var0_326 = getProxy(CollectionProxy):getShipGroup(arg0_324.apartment.configId)
 
-				return var0_324 and var0_324.married > 0
+				return var0_326 and var0_326.married > 0
 			end
 		}
 	}) do
-		if arg0_322.apartment.triggerCountDic[iter1_322.triggerId] == 0 and iter1_322.active() then
-			arg0_322:emit(Dorm3dRoomMediator.TRIGGER_FAVOR, arg0_322.apartment.configId, iter1_322.triggerId)
+		if arg0_324.apartment.triggerCountDic[iter1_324.triggerId] == 0 and iter1_324.active() then
+			arg0_324:emit(Dorm3dRoomMediator.TRIGGER_FAVOR, arg0_324.apartment.configId, iter1_324.triggerId)
 		end
 	end
 end
 
-function var0_0.CheckEnterDeal(arg0_325)
-	if arg0_325.contextData.hasEnterCheck then
+function var0_0.CheckEnterDeal(arg0_327)
+	if arg0_327.contextData.hasEnterCheck then
 		return false
 	end
 
-	local var0_325 = arg0_325.apartment:GetConfigID()
-	local var1_325 = "dorm3d_enter_count_" .. var0_325
-	local var2_325 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d")
+	local var0_327 = arg0_327.apartment:GetConfigID()
+	local var1_327 = "dorm3d_enter_count_" .. var0_327
+	local var2_327 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d")
 
-	if PlayerPrefs.GetString("dorm3d_enter_count_day") ~= var2_325 then
-		PlayerPrefs.SetString("dorm3d_enter_count_day", var2_325)
-		PlayerPrefs.SetInt(var1_325, 1)
+	if PlayerPrefs.GetString("dorm3d_enter_count_day") ~= var2_327 then
+		PlayerPrefs.SetString("dorm3d_enter_count_day", var2_327)
+		PlayerPrefs.SetInt(var1_327, 1)
 	else
-		PlayerPrefs.SetInt(var1_325, PlayerPrefs.GetInt(var1_325, 0) + 1)
+		PlayerPrefs.SetInt(var1_327, PlayerPrefs.GetInt(var1_327, 0) + 1)
 	end
 
-	local var3_325 = arg0_325.apartment:getEnterTalking(arg0_325.room:GetConfigID())
+	local var3_327 = arg0_327.apartment:getEnterTalking(arg0_327.room:GetConfigID())
 
 	PlayerPrefs.SetString("DORM3D_DAILY_ENTER", pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d"))
 
-	if #var3_325 > 0 then
-		arg0_325:DoTalk(var3_325[math.random(#var3_325)])
+	if #var3_327 > 0 then
+		arg0_327:DoTalk(var3_327[math.random(#var3_327)])
 
 		return true
 	end
 end
 
-function var0_0.CheckActiveTalk(arg0_326)
-	local var0_326 = arg0_326.ladyDict[arg0_326.apartment:GetConfigID()]
+function var0_0.CheckActiveTalk(arg0_328)
+	local var0_328 = arg0_328.ladyDict[arg0_328.apartment:GetConfigID()]
 
-	if var0_326:GetBlackboardValue("inPending") then
+	if var0_328:GetBlackboardValue("inPending") then
 		return false
 	end
 
-	local var1_326 = arg0_326.apartment:getZoneTalking(arg0_326.room:GetConfigID(), var0_326.ladyBaseZone)
+	local var1_328 = arg0_328.apartment:getZoneTalking(arg0_328.room:GetConfigID(), var0_328.ladyBaseZone)
 
-	if #var1_326 > 0 then
-		arg0_326:DoTalk(var1_326[1])
+	if #var1_328 > 0 then
+		arg0_328:DoTalk(var1_328[1])
 
 		return true
 	else
@@ -2596,67 +2613,67 @@ function var0_0.CheckActiveTalk(arg0_326)
 	end
 end
 
-function var0_0.CheckDistanceTalk(arg0_327, arg1_327, arg2_327)
-	local var0_327 = arg0_327.ladyDict[arg1_327].ladyBaseZone
-	local var1_327 = getProxy(ApartmentProxy):getApartment(arg1_327)
+function var0_0.CheckDistanceTalk(arg0_329, arg1_329, arg2_329)
+	local var0_329 = arg0_329.ladyDict[arg1_329].ladyBaseZone
+	local var1_329 = getProxy(ApartmentProxy):getApartment(arg1_329)
 
-	for iter0_327, iter1_327 in ipairs(var1_327:getDistanceTalking(arg0_327.room:GetConfigID(), var0_327)) do
-		arg0_327:DoTalk(iter1_327)
+	for iter0_329, iter1_329 in ipairs(var1_329:getDistanceTalking(arg0_329.room:GetConfigID(), var0_329)) do
+		arg0_329:DoTalk(iter1_329)
 
 		return
 	end
 end
 
-function var0_0.CheckSystemOpen(arg0_328, arg1_328)
-	if arg0_328.room:isPersonalRoom() then
-		return switch(arg1_328, {
+function var0_0.CheckSystemOpen(arg0_330, arg1_330)
+	if arg0_330.room:isPersonalRoom() then
+		return switch(arg1_330, {
 			Talk = function()
-				local var0_329 = 1
+				local var0_331 = 1
 
-				return var0_329 <= arg0_328.apartment.level, i18n("apartment_level_unenough", var0_329)
+				return var0_331 <= arg0_330.apartment.level, i18n("apartment_level_unenough", var0_331)
 			end,
 			Touch = function()
-				local var0_330 = getDorm3dGameset("drom3d_touch_dialogue")[1]
+				local var0_332 = getDorm3dGameset("drom3d_touch_dialogue")[1]
 
-				return var0_330 <= arg0_328.apartment.level, i18n("apartment_level_unenough", var0_330)
+				return var0_332 <= arg0_330.apartment.level, i18n("apartment_level_unenough", var0_332)
 			end,
 			Gift = function()
-				local var0_331 = getDorm3dGameset("drom3d_gift_dialogue")[1]
+				local var0_333 = getDorm3dGameset("drom3d_gift_dialogue")[1]
 
-				return var0_331 <= arg0_328.apartment.level, i18n("apartment_level_unenough", var0_331)
+				return var0_333 <= arg0_330.apartment.level, i18n("apartment_level_unenough", var0_333)
 			end,
 			Volleyball = function()
 				return false
 			end,
 			Photo = function()
-				local var0_333 = getDorm3dGameset("drom3d_photograph_unlock")[1]
+				local var0_335 = getDorm3dGameset("drom3d_photograph_unlock")[1]
 
-				return var0_333 <= arg0_328.apartment.level, i18n("apartment_level_unenough", var0_333)
+				return var0_335 <= arg0_330.apartment.level, i18n("apartment_level_unenough", var0_335)
 			end,
 			Collection = function()
-				local var0_334 = getDorm3dGameset("drom3d_recall_unlock")[1]
+				local var0_336 = getDorm3dGameset("drom3d_recall_unlock")[1]
 
-				return var0_334 <= arg0_328.apartment.level, i18n("apartment_level_unenough", var0_334)
+				return var0_336 <= arg0_330.apartment.level, i18n("apartment_level_unenough", var0_336)
 			end,
 			Furniture = function()
-				local var0_335 = getDorm3dGameset("drom3d_furniture_unlock")[1]
+				local var0_337 = getDorm3dGameset("drom3d_furniture_unlock")[1]
 
-				return var0_335 <= arg0_328.apartment.level, i18n("apartment_level_unenough", var0_335)
+				return var0_337 <= arg0_330.apartment.level, i18n("apartment_level_unenough", var0_337)
 			end,
 			DayNight = function()
-				local var0_336 = getDorm3dGameset("drom3d_time_unlock")[1]
+				local var0_338 = getDorm3dGameset("drom3d_time_unlock")[1]
 
-				return var0_336 <= arg0_328.apartment.level, i18n("apartment_level_unenough", var0_336)
+				return var0_338 <= arg0_330.apartment.level, i18n("apartment_level_unenough", var0_338)
 			end,
 			Accompany = function()
-				local var0_337 = 1
+				local var0_339 = 1
 
-				return var0_337 <= arg0_328.apartment.level, i18n("apartment_level_unenough", var0_337)
+				return var0_339 <= arg0_330.apartment.level, i18n("apartment_level_unenough", var0_339)
 			end,
 			MiniGame = function()
-				local var0_338 = 1
+				local var0_340 = 1
 
-				return var0_338 <= arg0_328.apartment.level, i18n("apartment_level_unenough", var0_338)
+				return var0_340 <= arg0_330.apartment.level, i18n("apartment_level_unenough", var0_340)
 			end,
 			Invite = function()
 				return false
@@ -2668,12 +2685,12 @@ function var0_0.CheckSystemOpen(arg0_328, arg1_328)
 			return true
 		end)
 	else
-		return switch(arg1_328, {
+		return switch(arg1_330, {
 			Gift = function()
 				return false
 			end,
 			Volleyball = function()
-				return arg0_328.room:GetConfigID() == 4
+				return arg0_330.room:GetConfigID() == 4
 			end,
 			Furniture = function()
 				return false
@@ -2696,9 +2713,9 @@ function var0_0.CheckSystemOpen(arg0_328, arg1_328)
 	end
 end
 
-function var0_0.CheckLevelUp(arg0_350)
-	if arg0_350.apartment:canLevelUp() then
-		arg0_350:emit(Dorm3dRoomMediator.FAVOR_LEVEL_UP, arg0_350.apartment.configId)
+function var0_0.CheckLevelUp(arg0_352)
+	if arg0_352.apartment:canLevelUp() then
+		arg0_352:emit(Dorm3dRoomMediator.FAVOR_LEVEL_UP, arg0_352.apartment.configId)
 
 		return true
 	end
@@ -2706,102 +2723,102 @@ function var0_0.CheckLevelUp(arg0_350)
 	return false
 end
 
-function var0_0.GetIKTipsRootTF(arg0_351)
-	return arg0_351.ikTipsRoot
+function var0_0.GetIKTipsRootTF(arg0_353)
+	return arg0_353.ikTipsRoot
 end
 
-function var0_0.GetIKHandTF(arg0_352)
-	return arg0_352.ikHand
+function var0_0.GetIKHandTF(arg0_354)
+	return arg0_354.ikHand
 end
 
-function var0_0.CycleIKCameraGroup(arg0_353)
-	local var0_353 = arg0_353.ladyDict[arg0_353.apartment:GetConfigID()]
+function var0_0.CycleIKCameraGroup(arg0_355)
+	local var0_355 = arg0_355.ladyDict[arg0_355.apartment:GetConfigID()]
 
-	assert(var0_353:GetBlackboardValue("inIK"))
+	assert(var0_355:GetBlackboardValue("inIK"))
 	seriesAsync({
-		function(arg0_354)
-			arg0_353.RevertIKLayer(var0_353, 0, arg0_354)
+		function(arg0_356)
+			arg0_355.RevertIKLayer(var0_355, 0, arg0_356)
 		end,
-		function(arg0_355)
-			local var0_355 = var0_353.ikConfig
-			local var1_355 = var0_355.camera_group
-			local var2_355 = pg.dorm3d_ik_status.get_id_list_by_camera_group[var1_355]
-			local var3_355 = var2_355[table.indexof(var2_355, var0_355.id) % #var2_355 + 1]
+		function(arg0_357)
+			local var0_357 = var0_355.ikConfig
+			local var1_357 = var0_357.camera_group
+			local var2_357 = pg.dorm3d_ik_status.get_id_list_by_camera_group[var1_357]
+			local var3_357 = var2_357[table.indexof(var2_357, var0_357.id) % #var2_357 + 1]
 
-			arg0_353:SwitchIKConfig(var0_353, var3_355)
-			arg0_353:SetIKState(true)
+			arg0_355:SwitchIKConfig(var0_355, var3_357)
+			arg0_355:SetIKState(true)
 		end
 	})
 end
 
-function var0_0.TempHideUI(arg0_356, arg1_356, arg2_356)
-	local var0_356 = defaultValue(arg0_356.hideCount, 0)
+function var0_0.TempHideUI(arg0_358, arg1_358, arg2_358)
+	local var0_358 = defaultValue(arg0_358.hideCount, 0)
 
-	arg0_356.hideCount = var0_356 + (arg1_356 and 1 or -1)
+	arg0_358.hideCount = var0_358 + (arg1_358 and 1 or -1)
 
-	assert(arg0_356.hideCount >= 0)
+	assert(arg0_358.hideCount >= 0)
 
-	if arg0_356.hideCount * var0_356 > 0 then
-		return existCall(arg2_356)
-	elseif arg0_356.hideCount > 0 then
-		arg0_356:SetUI(arg2_356, "blank")
+	if arg0_358.hideCount * var0_358 > 0 then
+		return existCall(arg2_358)
+	elseif arg0_358.hideCount > 0 then
+		arg0_358:SetUI(arg2_358, "blank")
 	else
-		arg0_356:SetUI(arg2_356, "back")
+		arg0_358:SetUI(arg2_358, "back")
 	end
 end
 
-function var0_0.onBackPressed(arg0_357)
-	if arg0_357.exited or arg0_357.retainCount > 0 then
+function var0_0.onBackPressed(arg0_359)
+	if arg0_359.exited or arg0_359.retainCount > 0 then
 		-- block empty
-	elseif isActive(arg0_357.rtLevelUpWindow) then
-		triggerButton(arg0_357.rtLevelUpWindow:Find("bg"))
-	elseif arg0_357.uiState ~= "base" then
+	elseif isActive(arg0_359.rtLevelUpWindow) then
+		triggerButton(arg0_359.rtLevelUpWindow:Find("bg"))
+	elseif arg0_359.uiState ~= "base" then
 		-- block empty
 	else
-		arg0_357:closeView()
+		arg0_359:closeView()
 	end
 end
 
-function var0_0.willExit(arg0_358)
-	if arg0_358.downTimer then
-		arg0_358.downTimer:Stop()
+function var0_0.willExit(arg0_360)
+	if arg0_360.downTimer then
+		arg0_360.downTimer:Stop()
 
-		arg0_358.downTimer = nil
+		arg0_360.downTimer = nil
 	end
 
-	if arg0_358.LTs then
-		underscore.map(arg0_358.LTs, function(arg0_359)
-			LeanTween.cancel(arg0_359)
+	if arg0_360.LTs then
+		underscore.map(arg0_360.LTs, function(arg0_361)
+			LeanTween.cancel(arg0_361)
 		end)
 
-		arg0_358.LTs = nil
+		arg0_360.LTs = nil
 	end
 
-	if arg0_358.sliderLT then
-		LeanTween.cancel(arg0_358.sliderLT)
+	if arg0_360.sliderLT then
+		LeanTween.cancel(arg0_360.sliderLT)
 
-		arg0_358.sliderLT = nil
+		arg0_360.sliderLT = nil
 	end
 
-	for iter0_358, iter1_358 in pairs(arg0_358.ladyDict) do
-		iter1_358.wakeUpTalkId = nil
+	for iter0_360, iter1_360 in pairs(arg0_360.ladyDict) do
+		iter1_360.wakeUpTalkId = nil
 	end
 
-	if arg0_358.accompanyFavorTimer then
-		arg0_358.accompanyFavorTimer:Stop()
+	if arg0_360.accompanyFavorTimer then
+		arg0_360.accompanyFavorTimer:Stop()
 
-		arg0_358.accompanyFavorTimer = nil
+		arg0_360.accompanyFavorTimer = nil
 	end
 
-	if arg0_358.accompanyPerformanceTimer then
-		arg0_358.accompanyPerformanceTimer:Stop()
+	if arg0_360.accompanyPerformanceTimer then
+		arg0_360.accompanyPerformanceTimer:Stop()
 
-		arg0_358.accompanyPerformanceTimer = nil
+		arg0_360.accompanyPerformanceTimer = nil
 	end
 
-	arg0_358.canTriggerAccompanyPerformance = nil
+	arg0_360.canTriggerAccompanyPerformance = nil
 
-	var0_0.super.willExit(arg0_358)
+	var0_0.super.willExit(arg0_360)
 end
 
 return var0_0

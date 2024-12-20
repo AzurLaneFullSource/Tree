@@ -356,7 +356,7 @@ function var1_0.updateProgressBar(arg0_31)
 	arg0_31._progressBar.fillAmount = var0_31
 
 	if arg0_31._bgEff then
-		if arg0_31._progressInfo:GetCount() > 0 then
+		if arg0_31._progressInfo.GetCount and arg0_31._progressInfo:GetCount() > 0 then
 			arg0_31._bgEff:GetComponent(typeof(CanvasGroup)).alpha = 1
 		else
 			arg0_31._bgEff:GetComponent(typeof(CanvasGroup)).alpha = var0_31
