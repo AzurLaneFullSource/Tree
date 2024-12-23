@@ -678,7 +678,7 @@ return {
 			bgName = "star_level_bg_147",
 			hidePaintObj = true,
 			dir = 1,
-			actorName = "孟菲斯&{namecode:91:赤城}",
+			actorName = "Memphis&{namecode:91:赤城}",
 			side = 0,
 			say = "Commander?!",
 			typewriter = {
