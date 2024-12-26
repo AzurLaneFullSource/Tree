@@ -244,7 +244,7 @@ function var0_0.HandleBodyDrag(arg0_25, arg1_25)
 	if not var5_25 and var3_25:GetActionType() == Dorm3dIK.ACTION_TRIGGER.TOUCH_TARGET and var6_25 then
 		arg0_25.ikHandler = nil
 
-		existCall(arg0_25.onIKLayerDeactive, var0_25)
+		existCall(arg0_25.onIKLayerDeactive, var0_25, true)
 		table.insert(arg0_25.activeIKLayers, var3_25)
 		arg0_25:PlayIKAction(var0_25)
 
@@ -317,7 +317,7 @@ function var0_0.ReleaseDrag(arg0_27)
 
 	arg0_27.ikHandler = nil
 
-	existCall(arg0_27.onIKLayerDeactive, var0_27)
+	existCall(arg0_27.onIKLayerDeactive, var0_27, var2_27)
 
 	if var2_27 then
 		table.insert(arg0_27.activeIKLayers, var1_27)

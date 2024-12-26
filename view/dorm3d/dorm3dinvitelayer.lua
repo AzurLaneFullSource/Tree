@@ -136,7 +136,7 @@ function var0_0.ShowSelectPanel(arg0_11)
 					elseif var4_11[var0_12] == "room" then
 						pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_role_locked"))
 					elseif var4_11[var0_12] == "download" then
-						pg.TipsMgr.GetInstance():ShowTips("please exit and download character resource in build scene ~")
+						pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_guide_beach_tip"))
 					end
 				end, SFX_PANEL)
 				eachChild(arg2_12:Find("base/operation"), function(arg0_15)

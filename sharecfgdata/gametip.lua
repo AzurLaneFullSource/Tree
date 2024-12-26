@@ -27652,3 +27652,7 @@ _G.pg.base.gametip.dorm3d_noshiro_bed = {
 	tip = "Bedroom",
 }
 
+_G.pg.base.gametip.dorm3d_guide_beach_tip = {
+	tip = "Please download assets for the corresponding character first ",
+}
+

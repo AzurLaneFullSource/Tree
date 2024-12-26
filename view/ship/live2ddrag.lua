@@ -1282,6 +1282,10 @@ function var0_0.loadData(arg0_65)
 			arg0_65:setParameterValue(var0_65)
 			arg0_65:setTargetValue(var0_65)
 		end
+
+		if var0_65 == arg0_65.startValue and arg0_65._relationParameterList and #arg0_65._relationParameterList > 0 then
+			arg0_65:clearRelationValue()
+		end
 	end
 
 	if arg0_65.actionTrigger.type == Live2D.DRAG_CLICK_MANY then
@@ -1289,31 +1293,47 @@ function var0_0.loadData(arg0_65)
 	end
 end
 
-function var0_0.loadL2dFinal(arg0_66)
-	arg0_66.loadL2dStep = true
-end
+function var0_0.clearRelationValue(arg0_66)
+	if arg0_66._relationParameterList and #arg0_66._relationParameterList > 0 then
+		for iter0_66 = 1, #arg0_66._relationParameterList do
+			local var0_66 = arg0_66._relationParameterList[iter0_66]
 
-function var0_0.clearData(arg0_67)
-	if arg0_67.revert == -1 then
-		arg0_67.actionListIndex = 1
+			if var0_66.data.type == Live2D.relation_type_drag_x or var0_66.data.type == Live2D.relation_type_drag_y then
+				var0_66.value = var0_66.start or arg0_66.startValue or 0
+				var0_66.enable = true
+			end
 
-		arg0_67:setParameterValue(arg0_67.startValue)
-		arg0_67:setTargetValue(arg0_67.startValue)
+			arg0_66.offsetDragX, arg0_66.offsetDragY = arg0_66.startValue, arg0_66.startValue
+		end
 	end
 end
 
-function var0_0.setTriggerActionFlag(arg0_68, arg1_68)
-	arg0_68.isTriggerAtion = arg1_68
+function var0_0.loadL2dFinal(arg0_67)
+	arg0_67.loadL2dStep = true
 end
 
-function var0_0.dispose(arg0_69)
-	arg0_69._active = false
-	arg0_69._parameterCom = nil
-	arg0_69.parameterValue = arg0_69.startValue
-	arg0_69.parameterTargetValue = 0
-	arg0_69.parameterSmooth = 0
-	arg0_69.mouseInputDown = Vector2(0, 0)
-	arg0_69.live2dData = nil
+function var0_0.clearData(arg0_68)
+	if arg0_68.revert == -1 then
+		arg0_68.actionListIndex = 1
+
+		arg0_68:setParameterValue(arg0_68.startValue)
+		arg0_68:setTargetValue(arg0_68.startValue)
+		arg0_68:clearRelationValue()
+	end
+end
+
+function var0_0.setTriggerActionFlag(arg0_69, arg1_69)
+	arg0_69.isTriggerAtion = arg1_69
+end
+
+function var0_0.dispose(arg0_70)
+	arg0_70._active = false
+	arg0_70._parameterCom = nil
+	arg0_70.parameterValue = arg0_70.startValue
+	arg0_70.parameterTargetValue = 0
+	arg0_70.parameterSmooth = 0
+	arg0_70.mouseInputDown = Vector2(0, 0)
+	arg0_70.live2dData = nil
 end
 
 return var0_0
