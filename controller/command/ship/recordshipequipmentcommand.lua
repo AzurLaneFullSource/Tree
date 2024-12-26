@@ -88,18 +88,23 @@ function var0_0.execute(arg0_1, arg1_1)
 			end
 		end
 
-		local var18_1 = var11_1
+		local var18_1 = var6_1:GetSpWeapon()
+		local var19_1 = var11_1 and var11_1:GetConfigID() or 0
+		local var20_1 = var18_1 and var18_1:GetConfigID() or 0
+		local var21_1
 
-		if var11_1 and (not var11_1:IsReal() or var11_1:GetShipId() ~= nil and var11_1:GetShipId() ~= var6_1.id) then
-			local var19_1 = var1_0[var11_1:GetRarity()]
-			local var20_1 = string.format("<color=%s>%s+%s</color>", var19_1, var11_1:GetName(), var11_1:GetLevel() - 1)
+		if var11_1 and var19_1 ~= var20_1 then
+			var21_1 = var9_1:GetSameTypeSpWeapon(var11_1)
 
-			table.insert(var13_1, var20_1)
+			if not var21_1 or var21_1:GetConfigID() ~= var19_1 then
+				local var22_1 = var1_0[var11_1:GetRarity()]
+				local var23_1 = string.format("<color=%s>%s+%s</color>", var22_1, var11_1:GetName(), var11_1:GetLevel() - 1)
 
-			var18_1 = var9_1:GetSameTypeSpWeapon(var11_1)
+				table.insert(var13_1, var23_1)
+			end
 		end
 
-		local function var21_1(arg0_4)
+		local function var24_1(arg0_4)
 			local var0_4 = {}
 
 			for iter0_4, iter1_4 in ipairs(arg0_4) do
@@ -129,23 +134,23 @@ function var0_0.execute(arg0_1, arg1_1)
 
 			if not LOCK_SP_WEAPON then
 				table.insert(var0_4, function(arg0_7)
-					local var0_7 = var6_1:GetSpWeapon()
-
 					if var11_1 then
-						if not var18_1 then
-							pg.TipsMgr.GetInstance():ShowTips(i18n("ship_quick_change_noequip"))
+						if var19_1 ~= var20_1 then
+							if not var21_1 then
+								pg.TipsMgr.GetInstance():ShowTips(i18n("ship_quick_change_noequip"))
 
-							return
-						elseif not var0_7 or var0_7:GetUID() ~= var18_1:GetUID() then
-							arg0_1:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
-								spWeaponUid = var18_1:GetUID(),
-								shipId = var1_1,
-								callback = arg0_7
-							})
+								return
+							else
+								arg0_1:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
+									spWeaponUid = var21_1:GetUID(),
+									shipId = var1_1,
+									callback = arg0_7
+								})
 
-							return
+								return
+							end
 						end
-					elseif var0_7 then
+					elseif var18_1 then
 						arg0_1:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
 							shipId = var1_1,
 							callback = arg0_7
@@ -162,22 +167,22 @@ function var0_0.execute(arg0_1, arg1_1)
 		end
 
 		if #var13_1 > 0 then
-			local var22_1 = ""
+			local var25_1 = ""
 
 			if #var13_1 > 2 then
-				var22_1 = table.concat(_.slice(var13_1, 1, 2), "、") .. i18n("word_wait")
+				var25_1 = table.concat(_.slice(var13_1, 1, 2), "、") .. i18n("word_wait")
 			else
-				var22_1 = table.concat(var13_1, "、")
+				var25_1 = table.concat(var13_1, "、")
 			end
 
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("no_found_record_equipment", var22_1),
+				content = i18n("no_found_record_equipment", var25_1),
 				onYes = function()
-					var21_1(var10_1)
+					var24_1(var10_1)
 				end
 			})
 		else
-			var21_1(var10_1)
+			var24_1(var10_1)
 		end
 	end
 

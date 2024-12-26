@@ -44,6 +44,35 @@ pg.dorm3d_collection_template = setmetatable({
 			37,
 			38,
 			39
+		},
+		{
+			51,
+			52,
+			53,
+			54,
+			55,
+			56,
+			57,
+			58,
+			59,
+			60,
+			61,
+			62,
+			63,
+			64,
+			65,
+			66,
+			67,
+			68,
+			70,
+			72,
+			71,
+			76,
+			77,
+			78,
+			79,
+			74,
+			75
 		}
 	},
 	all = {
@@ -85,7 +114,34 @@ pg.dorm3d_collection_template = setmetatable({
 		36,
 		37,
 		38,
-		39
+		39,
+		51,
+		52,
+		53,
+		54,
+		55,
+		56,
+		57,
+		58,
+		59,
+		60,
+		61,
+		62,
+		63,
+		64,
+		65,
+		66,
+		67,
+		68,
+		70,
+		72,
+		71,
+		76,
+		77,
+		78,
+		79,
+		74,
+		75
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -907,6 +963,573 @@ pg.base.dorm3d_collection_template = {
 		},
 		vfx_prefab = {
 			"fbx/litmap04/pre_desklamp01/vfx_wupintishi01"
+		}
+	},
+	[51] = {
+		text = "dorm3d_noshiro_chair",
+		name = "Hanami Dango Plate",
+		award = 0,
+		time = 0,
+		id = 51,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item1",
+		desc = "The delectable dango rest quietly on a ceramic plate,\nperfectly complementing the tablecloth's design.\nEnjoy them with her later.",
+		model = {
+			"fbx/no_bake_pay_prop/livingroom/table/pre_db_tableware14"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/livingroom/table/pre_db_tableware14/vfx_wupintishi01"
+		}
+	},
+	[52] = {
+		text = "dorm3d_noshiro_chair",
+		name = "Tri-Color Mochi",
+		award = 0,
+		time = 0,
+		id = 52,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item2",
+		desc = "Green grass, white snow, peach blossoms;\nhealth, purity, protection;\nsoft and chewy, filled with her heartfelt wishes...",
+		model = {
+			"fbx/no_bake_pay_prop/livingroom/table/pre_db_tableware15"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/livingroom/table/pre_db_tableware15/vfx_wupintishi01"
+		}
+	},
+	[53] = {
+		text = "dorm3d_noshiro_bed",
+		name = "Opened Book",
+		award = 0,
+		time = 1,
+		id = 53,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item3",
+		desc = "A book on traditional Sakuran tea ceremonies,\nits corners slightly weathered.\nNoshiro appears to revisit this book often,\nleaving many neat notes on the last pages.",
+		model = {
+			"fbx/litmap_03/day/pre_db_book01"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_book01/vfx_wupintishi01"
+		}
+	},
+	[54] = {
+		text = "dorm3d_noshiro_bed",
+		name = "Bedding",
+		award = 0,
+		time = 0,
+		id = 54,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item4",
+		desc = "Neatly folded bedding.\nThe precise corners are a testament to its owner's diligence.",
+		model = {
+			"fbx/litmap_04/pre_db_quilt01"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_04/pre_db_quilt01/vfx_wupintishi01"
+		}
+	},
+	[55] = {
+		text = "dorm3d_noshiro_bed",
+		name = "Uniform",
+		award = 0,
+		time = 0,
+		id = 55,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item5",
+		desc = "The uniform hanging on the wall is the same as the one she is wearing.\nLooks like this is the outfit she likes the most.",
+		model = {
+			"fbx/litmap_03/pre_db_cloth02_01"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_cloth02_01/vfx_wupintishi01"
+		}
+	},
+	[56] = {
+		text = "dorm3d_noshiro_chair",
+		name = "Sakuran Sweets",
+		award = 0,
+		time = 0,
+		id = 56,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item6",
+		desc = "A beautifully arranged assortment of Sakuran sweets, each handmade by Noshiro.\nThough they may almost be too pretty to eat,\nbe sure to savor them later – lest her hard work will go to waste!",
+		model = {
+			"fbx/no_bake_pay_prop/livingroom/table/pre_db_tableware13"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/livingroom/table/pre_db_tableware13/vfx_wupintishi01"
+		}
+	},
+	[57] = {
+		text = "dorm3d_noshiro_chair",
+		name = "Wind Chime",
+		award = 0,
+		time = 0,
+		id = 57,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item7",
+		desc = "A wind chime hangs by the window,\nproducing a clear melody as the breeze passes through.\nAccording to Noshiro, it's one of the best ways to beat the summer heat.",
+		model = {
+			"fbx/litmap_03/pre_db_curtain04"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_curtain04/vfx_wupintishi01"
+		}
+	},
+	[58] = {
+		text = "dorm3d_noshiro_table",
+		name = "Wind Chime 2",
+		award = 0,
+		time = 0,
+		id = 58,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item8",
+		desc = "This wind chime produces a deeper tone than the glass one.\nNoshiro has purposefully hung it up elsewhereso the different notes interweave, creating a unique mood.",
+		model = {
+			"fbx/litmap_03/pre_db_decoration06"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_decoration06/vfx_wupintishi01"
+		}
+	},
+	[59] = {
+		text = "dorm3d_noshiro_table",
+		name = "Shopping Bag",
+		award = 0,
+		time = 0,
+		id = 59,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item9",
+		desc = "A paper bag bearing a coffee shop logo.\nNoshiro treats it with great care,\nmore than you'd expect for a regular paper bag.",
+		model = {
+			"fbx/litmap_03/pre_db_bag01"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_bag01/vfx_wupintishi01"
+		}
+	},
+	[60] = {
+		text = "dorm3d_noshiro_bed",
+		name = "Sakuran Kimono",
+		award = 0,
+		time = 0,
+		id = 60,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item10",
+		desc = "The gold-thread embroidery on this kimono's sleeves speaks of its elegance.\nIt's Noshiro's favorite.\nShe always conducts herself carefully when she wears it outside.",
+		model = {
+			"fbx/litmap_03/pre_db_frame06"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_frame06/vfx_wupintishi01"
+		}
+	},
+	[61] = {
+		text = "dorm3d_noshiro_chair",
+		name = "Preserved Flowers",
+		award = 0,
+		time = 0,
+		id = 61,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item11",
+		desc = "Yellow roses carefully preserved inside a bell jar.\nThe petals retain their vivid color even to this day.",
+		model = {
+			"fbx/litmap_03/day/pre_db_decoration07"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_decoration07/vfx_wupintishi01"
+		}
+	},
+	[62] = {
+		text = "dorm3d_noshiro_chair",
+		name = "Pine Bonsai",
+		award = 0,
+		time = 0,
+		id = 62,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item12",
+		desc = "A small pine tree bonsai.\nThe branches have been trimmed in a plain yet tasteful way.\nNoshiro tends to it daily, preserving its natural beauty in perfect form.",
+		model = {
+			"fbx/litmap_03/pre_db_bonsai03_01"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_bonsai03_01/vfx_wupintishi01"
+		}
+	},
+	[63] = {
+		text = "dorm3d_noshiro_chair",
+		name = "Water Ornament",
+		award = 0,
+		time = 0,
+		id = 63,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item13",
+		desc = "A Sakuran ornament that typically goes in the garden but, in this case, has been placed in a corner of the room.\nWhen water flows in, it produces a clear and pleasant sound.",
+		model = {
+			"fbx/litmap_03/pre_db_noshirohostel01_02"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_noshirohostel01_02/vfx_wupintishi01"
+		}
+	},
+	[64] = {
+		text = "dorm3d_noshiro_table",
+		name = "Sakuran Umbrella",
+		award = 0,
+		time = 0,
+		id = 64,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item14",
+		desc = "This folded umbrella rests against the wall.\nNoshiro often carries it with her when she goes outside.\nWhen it's raining, obviously.",
+		model = {
+			"fbx/litmap_03/pre_db_decoration05_01"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_decoration05_01/vfx_wupintishi01"
+		}
+	},
+	[65] = {
+		text = "dorm3d_noshiro_chair",
+		name = "Round Cushion",
+		award = 0,
+		time = 0,
+		id = 65,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item15",
+		desc = "A round cushion in a bright color.\nWhile it looks firm at a glance, it's surprisingly comfy to sit on.\nMaybe you should put one in your office too?",
+		model = {
+			"fbx/no_bake_pay_prop/livingroom/table/pre_db_chair08"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/livingroom/table/pre_db_chair08/vfx_wupintishi01"
+		}
+	},
+	[66] = {
+		text = "dorm3d_noshiro_table",
+		name = "Sushi Platter",
+		award = 0,
+		time = 0,
+		id = 66,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item16",
+		desc = "A tray lined with hand-formed sushi and other delicacies.\nEvery item is meticulously placed,\nand even the decorative elements are well-thought-out.\nSurprisingly, sushi rolls are even included.\nTurns out Noshiro isn't a stickler for tradition.",
+		model = {
+			"fbx/no_bake_pay_prop/diningroom/pre_db_tableware12_01"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/diningroom/pre_db_tableware12_01/vfx_wupintishi01"
+		}
+	},
+	[67] = {
+		text = "dorm3d_noshiro_chair",
+		name = "Cherry Blossom Branch",
+		award = 0,
+		time = 0,
+		id = 67,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item17",
+		desc = "A cherry blossom branch left on the table.\nThe pink petals almost glow on the branch, lending a touch of spring mood.",
+		model = {
+			"fbx/no_bake_pay_prop/livingroom/table/pre_db_flowers04"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/livingroom/table/pre_db_flowers04/vfx_wupintishi01"
+		}
+	},
+	[68] = {
+		text = "dorm3d_noshiro_bed",
+		name = "Stack of Books",
+		award = 0,
+		time = 0,
+		id = 68,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item18",
+		desc = "A stack of books piled atop one another.\nThe subjects covered range from tea ceremonies to flower arrangement and traditional etiquette.\nBased on where the bookmark is, Noshiro is studying a new flower arrangement technique.",
+		model = {
+			"fbx/litmap_03/pre_db_book04_01"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_book04_01/vfx_wupintishi01"
+		}
+	},
+	[70] = {
+		text = "dorm3d_noshiro_bed",
+		name = "Kettle",
+		award = 0,
+		time = 0,
+		id = 70,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item19",
+		desc = "An unremarkable kettle.\nNoshiro often uses it when making tea.\nDespite its signs of heavy use, it's still in good condition thanks to diligent care.",
+		model = {
+			"fbx/litmap_02/pre_db_tableware09"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/pre_db_tableware09/vfx_wupintishi01"
+		}
+	},
+	[72] = {
+		text = "dorm3d_noshiro_bed",
+		name = "Tied Hanging Scrolls",
+		award = 0,
+		time = 0,
+		id = 72,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item20",
+		desc = "These scrolls rest quietly in the corner of the study,\ntheir knots perfectly tied.\nThough not unfurled, they still convey Noshiro's meticulous care.",
+		model = {
+			"fbx/litmap_03/pre_db_cupboard08_01"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_cupboard08_01/vfx_wupintishi01"
+		}
+	},
+	[71] = {
+		text = "dorm3d_sirius_chair",
+		name = "Stone Lantern",
+		award = 0,
+		time = 1,
+		id = 71,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item21",
+		desc = "A lantern made of stone, inspired by traditional Sakuran garden lanterns.\nIt lends an air of tranquility to wherever it's placed.",
+		model = {
+			"fbx/litmap_03/day/pre_db_noshirohostel01_lamp02"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_noshirohostel01_lamp02/vfx_wupintishi01"
+		}
+	},
+	[76] = {
+		text = "dorm3d_noshiro_bed",
+		name = "Humidifier",
+		award = 0,
+		time = 2,
+		id = 76,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item24",
+		desc = "This white humidifier operates silently most of the time,\nonly sometimes making a faint hum.\nNoshiro placed it in a corner where it can slowly release moist air.\nShe says it's good for her skin.",
+		model = {
+			"fbx/litmap_03/night/pre_db_electrical08"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/night/pre_db_electrical08/vfx_wupintishi01"
+		}
+	},
+	[77] = {
+		text = "dorm3d_noshiro_bed",
+		name = "Skincare Oil",
+		award = 0,
+		time = 2,
+		id = 77,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item25",
+		desc = "The oil inside the bottle emits a delicate fragrance.\nAccording to Noshiro, it's extracted from camellias.\nIt's one of her favorite skincare products.",
+		model = {
+			"fbx/litmap_03/night/pre_db_cosmetic10"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/night/pre_db_cosmetic10/vfx_wupintishi01"
+		}
+	},
+	[78] = {
+		text = "dorm3d_noshiro_bed",
+		name = "Perfume Bottle",
+		award = 0,
+		time = 2,
+		id = 78,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item26",
+		desc = "A bottle of perfume with a simple design.\nLight softly reflects off its glass surface.\nUpon closer inspection, you notice that this is the very bottle you gifted her.",
+		model = {
+			"fbx/litmap_03/night/pre_db_cosmetic01_01/pre_db_cosmetic01c"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/night/pre_db_cosmetic01_01/pre_db_cosmetic01c/vfx_wupintishi01"
+		}
+	},
+	[79] = {
+		text = "dorm3d_noshiro_bed",
+		name = "Reed Diffuser",
+		award = 0,
+		time = 2,
+		id = 79,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item27",
+		desc = "A diffuser with a delicate fragrance.\nIts subtle aroma fills the room.\nIt's the scent that always lingers around Noshiro.",
+		model = {
+			"fbx/litmap_04/night/pre_db_cosmetic02a_01"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_04/night/pre_db_cosmetic02a_01/vfx_wupintishi01"
+		}
+	},
+	[74] = {
+		text = "dorm3d_noshiro_bed",
+		name = "Wooden Lantern",
+		award = 0,
+		time = 2,
+		id = 74,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item23",
+		desc = "A square, wooden lantern that's been placed in a corner.\nA soft light glows through the translucent paper.\nNoshiro picked this furnishing after careful deliberation.",
+		model = {
+			"fbx/litmap_03/night/pre_db_chandelier11_on"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/night/pre_db_chandelier11_on/vfx_wupintishi01"
+		}
+	},
+	[75] = {
+		text = "dorm3d_noshiro_chair",
+		name = "Floor Lamp",
+		award = 0,
+		time = 2,
+		id = 75,
+		room_id = 2,
+		icon = "3Ddrom_nengdai_item22",
+		desc = "An austere Sakuran-style floor lamp. It glows with a soft light.\nBeneath its shade hangs a delicate wind chime ornament.\nIt creates a quiet, serene space where you can spend a peaceful time with Noshiro.",
+		model = {
+			"fbx/no_bake_pay_prop/livingroom/pre_db_chandelier08_on"
+		},
+		unlock = {
+			1,
+			30221,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/livingroom/pre_db_chandelier08_on/vfx_wupintishi01"
 		}
 	}
 }

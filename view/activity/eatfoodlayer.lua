@@ -475,9 +475,11 @@ function var0_0.addScore(arg0_29, arg1_29, arg2_29, arg3_29)
 			var1_29 = false
 		end
 
-		arg0_29:emit(EatFoodMediator.GAME_HIT_AREA, {
+		arg0_29:emit(Dorm3dMiniGameMediator.GAME_OPERATION, {
+			operationCode = "GAME_HIT_AREA",
 			success = var1_29,
-			index = arg3_29
+			index = arg3_29,
+			miniGameId = var5_0
 		})
 		setActive(arg0_29.sceneScoreTf, true)
 	end
@@ -552,9 +554,11 @@ function var0_0.onGameOver(arg0_35, arg1_35)
 end
 
 function var0_0.showSettlement(arg0_37)
-	arg0_37:emit(EatFoodMediator.GAME_RESULT, {
+	arg0_37:emit(Dorm3dMiniGameMediator.GAME_OPERATION, {
+		operationCode = "GAME_RESULT",
 		win = arg0_37.scoreNum >= var28_0,
-		score = arg0_37.scoreNum
+		score = arg0_37.scoreNum,
+		miniGameId = var5_0
 	})
 	setActive(arg0_37.settlementUI, true)
 
@@ -603,7 +607,11 @@ end
 
 function var0_0.checkGameExit(arg0_42)
 	if not arg0_42.gameStartFlag then
-		arg0_42:emit(EatFoodMediator.GAME_CLOSE, true)
+		arg0_42:emit(Dorm3dMiniGameMediator.GAME_OPERATION, {
+			operationCode = "GAME_CLOSE",
+			doTrack = true,
+			miniGameId = var5_0
+		})
 		arg0_42:emit(var0_0.ON_BACK_PRESSED)
 	else
 		if arg0_42.gameStop then
@@ -616,7 +624,11 @@ function var0_0.checkGameExit(arg0_42)
 			pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_MSGBOX, {
 				contentText = i18n("mini_game_leave"),
 				onConfirm = function()
-					arg0_42:emit(EatFoodMediator.GAME_CLOSE, false)
+					arg0_42:emit(Dorm3dMiniGameMediator.GAME_OPERATION, {
+						operationCode = "GAME_CLOSE",
+						doTrack = false,
+						miniGameId = var5_0
+					})
 					arg0_42:emit(var0_0.ON_BACK_PRESSED)
 				end,
 				onClose = function()
@@ -627,7 +639,11 @@ function var0_0.checkGameExit(arg0_42)
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("mini_game_leave"),
 				onYes = function()
-					arg0_42:emit(EatFoodMediator.GAME_CLOSE, false)
+					arg0_42:emit(Dorm3dMiniGameMediator.GAME_OPERATION, {
+						operationCode = "GAME_CLOSE",
+						doTrack = false,
+						miniGameId = var5_0
+					})
 					arg0_42:emit(var0_0.ON_BACK_PRESSED)
 				end,
 				onNo = function()

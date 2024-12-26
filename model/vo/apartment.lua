@@ -106,7 +106,7 @@ function var0_0.GetSkinModelID(arg0_14, arg1_14)
 	local var0_14 = arg0_14:getConfig("skin_model")
 
 	if arg1_14 and arg1_14 ~= "" then
-		var0_14 = underscore.detect(pg.dorm3d_resource.get_id_list_by_ship_group[arg0_14.configId], function(arg0_15)
+		var0_14 = underscore.detect(pg.dorm3d_resource.get_id_list_by_ship_group[arg0_14.configId] or {}, function(arg0_15)
 			return table.contains(pg.dorm3d_resource[arg0_15].tags, arg1_14)
 		end)
 	end
@@ -127,7 +127,7 @@ function var0_0.GetSetCallCd(arg0_17)
 end
 
 function var0_0.getTalkingList(arg0_18, arg1_18)
-	return underscore.filter(pg.dorm3d_dialogue_group.get_id_list_by_char_id[arg0_18.configId], function(arg0_19)
+	return underscore.filter(pg.dorm3d_dialogue_group.get_id_list_by_char_id[arg0_18.configId] or {}, function(arg0_19)
 		local var0_19 = pg.dorm3d_dialogue_group[arg0_19]
 
 		return (not arg1_18.typeDic or tobool(arg1_18.typeDic[var0_19.type])) and (not arg1_18.roomId or var0_19.room_id == 0 or arg1_18.roomId == var0_19.room_id) and (not arg1_18.unplay or not arg0_18.talkDic[arg0_19]) and (not arg1_18.unlock or ApartmentProxy.CheckUnlockConfig(var0_19.unlock))
@@ -246,11 +246,9 @@ function var0_0.getGiftIds(arg0_35)
 end
 
 function var0_0.needDownload(arg0_36)
-	local var0_36, var1_36 = ApartmentRoom.New({
+	return #ApartmentRoom.New({
 		id = arg0_36:getConfig("bind_room")
-	}):getDownloadNameList()
-
-	return #var0_36 > 0 or #var1_36 > 0
+	}):getDownloadNameList() > 0
 end
 
 function var0_0.filterUnlockTalkList(arg0_37, arg1_37)

@@ -639,6 +639,24 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>Whatever happens, there will always be a cup of warm tea quietly waiting for you.</color>\nObtained by raising Intimacy Level with Sirius in Private Quarters.",
 		scene = {}
 	},
+	[1003] = {
+		time_limit_type = 0,
+		name = "Style of the Golden Sakura",
+		gain_by = "",
+		id = 1003,
+		time_second = 0,
+		desc = "<color=#ffffff>The golden sakura in flight symbolizes a proud yet calm heart.</color>\nReward for raising Noshiro's Intimacy in the Private Quarters.",
+		scene = {}
+	},
+	[1004] = {
+		time_limit_type = 0,
+		name = "Floral Rain, Homecoming Bird, and You",
+		gain_by = "",
+		id = 1004,
+		time_second = 0,
+		desc = "<color=#ffffff>From underneath the Sakuran parasol, a pair of eyes gazes at you lovingly.</color>\nReward for raising Noshiro's Intimacy in the Private Quarters.",
+		scene = {}
+	},
 	[10001] = {
 		time_limit_type = 0,
 		name = "Extreme Challenge - Gemini",
@@ -819,6 +837,8 @@ pg.item_data_frame = {
 		608,
 		1001,
 		1002,
+		1003,
+		1004,
 		10001,
 		10002,
 		10003,

@@ -13,14 +13,14 @@ function var0_0.UpdateActivity(arg0_2, arg1_2)
 
 	arg0_2.taskGroupList = {}
 
-	local var0_2 = arg0_2.activity:getNDay()
+	local var0_2 = pg.TimeMgr.GetInstance():GetServerOverWeek(arg0_2.activity:getStartTime())
 
 	for iter2_2, iter3_2 in ipairs(arg0_2.activity:getConfig("config_data")) do
 		local var1_2 = pg.battlepass_task_group[iter3_2]
 
 		arg0_2.taskGroupList[var1_2.group_mask] = {
 			task_group = var1_2.task_group,
-			isLock = var0_2 < var1_2.time
+			isLock = var0_2 < var1_2.group_mask
 		}
 	end
 

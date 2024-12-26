@@ -207,6 +207,7 @@ pg.furniture_data_template = setmetatable({
 			100055,
 			100056,
 			100058,
+			100059,
 			100064,
 			200001,
 			200002,
@@ -3434,6 +3435,7 @@ pg.furniture_data_template = setmetatable({
 			100055,
 			100056,
 			100058,
+			100059,
 			100064,
 			31101,
 			54104,
@@ -6550,7 +6552,8 @@ pg.furniture_data_template = setmetatable({
 			100054,
 			100055,
 			100056,
-			100058
+			100058,
+			100059
 		},
 		[2] = {
 			120,
@@ -9695,6 +9698,7 @@ pg.furniture_data_template = setmetatable({
 		100055,
 		100056,
 		100058,
+		100059,
 		100064,
 		200001,
 		200002,
@@ -23969,6 +23973,56 @@ pg.base.furniture_data_template = {
 					nil,
 					nil,
 					"houzhai_aixin"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[100059] = {
+		effect = "",
+		name = "Staff of Everbloom",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 0,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "This old staff holds the power to sprout flowers wherever it is placed.",
+		tag = 6,
+		icon = "huahaifazhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 100059,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"huahaifazhang",
+				"normal",
+				{
+					"action",
+					true,
+					nil,
+					nil,
+					"houzhai_huaban"
 				}
 			}
 		},

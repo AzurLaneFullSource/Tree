@@ -99,22 +99,54 @@ function var0_0.GetRevertTime(arg0_16)
 	return arg0_16:getConfig("back_time")
 end
 
-function var0_0.GetHeadTrackPath(arg0_17)
-	return arg0_17:getConfig("head_track")
+function var0_0.GetActionRevertTime(arg0_17)
+	return arg0_17:getConfig("action_back_time")
 end
 
-function var0_0.GetTriggerFaceAnim(arg0_18)
-	return arg0_18:getConfig("action_emote")
+function var0_0.GetHeadTrackPath(arg0_18)
+	return arg0_18:getConfig("head_track")
 end
 
-function var0_0.GetIKTipOffset(arg0_19)
-	local var0_19 = arg0_19:getConfig("tip_offset")
+function var0_0.GetTriggerFaceAnim(arg0_19)
+	return arg0_19:getConfig("action_emote")
+end
 
-	if type(var0_19) ~= "table" then
+function var0_0.GetIKTipOffset(arg0_20)
+	local var0_20 = arg0_20:getConfig("tip_offset")
+
+	if type(var0_20) ~= "table" then
 		return Vector2.zero
 	end
 
-	return Vector2.New(unpack(var0_19))
+	return Vector2.New(unpack(var0_20))
+end
+
+function var0_0.GetTimelineAction(arg0_21)
+	local var0_21 = arg0_21:getConfig("timeline_action")
+
+	if type(var0_21) ~= "table" then
+		return
+	end
+
+	local var1_21 = {
+		intParameter = 0,
+		floatParameter = 0,
+		stringParameter = var0_21[1]
+	}
+
+	switch(var0_21[1], {
+		TimelineIKStart = function(arg0_22)
+			var1_21.intParameter = arg0_22
+		end,
+		TimelineSelect = function(arg0_23)
+			var1_21.intParameter = arg0_23
+		end,
+		TimelinePlayOnTime = function(arg0_24)
+			var1_21.floatParameter = arg0_24
+		end
+	}, nil, unpack(var0_21, 2))
+
+	return var1_21
 end
 
 return var0_0

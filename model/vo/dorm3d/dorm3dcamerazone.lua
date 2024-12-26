@@ -7,11 +7,16 @@ end
 function var0_0.Ctor(arg0_2, arg1_2)
 	var0_0.super.Ctor(arg0_2, arg1_2)
 
-	arg0_2.regulaAnims = _.map(arg0_2:GetRegularAnimIDList(), function(arg0_3)
-		return Dorm3dCameraAnim.New({
-			configId = arg0_3
-		})
-	end)
+	arg0_2.regulaShipAnimsdDic = {}
+
+	for iter0_2, iter1_2 in ipairs(arg0_2:GetRegularAnimIDList()) do
+		arg0_2.regulaShipAnimsdDic[iter1_2[1]] = _.map(iter1_2[2], function(arg0_3)
+			return Dorm3dCameraAnim.New({
+				configId = arg0_3
+			})
+		end)
+	end
+
 	arg0_2.specialFurnitureDic = {}
 	arg0_2.specialAnims = _.map(arg0_2:GetSpecialFurnitureIDList(), function(arg0_4)
 		local var0_4 = arg0_4[1]
@@ -42,8 +47,8 @@ function var0_0.GetRegularAnimIDList(arg0_8)
 	return arg0_8:getConfig("regular_anim") or {}
 end
 
-function var0_0.GetRegularAnims(arg0_9)
-	return arg0_9.regulaAnims
+function var0_0.GetRegularAnimsByShipId(arg0_9, arg1_9)
+	return arg0_9.regulaShipAnimsdDic[arg1_9] or {}
 end
 
 function var0_0.GetSpecialFurnitureIDList(arg0_10)

@@ -287,45 +287,47 @@ function var0_0.PendingRandom(arg0_41, arg1_41)
 	local var0_41 = {}
 
 	for iter0_41, iter1_41 in ipairs(arg1_41) do
-		if underscore.detect(pg.dorm3d_rooms[arg0_41].character_welcome, function(arg0_42)
+		local var1_41 = underscore.detect(pg.dorm3d_rooms[arg0_41].character_welcome, function(arg0_42)
 			return arg0_42[1] == iter1_41
-		end)[2] > math.random() * 10000 then
+		end)
+
+		if var1_41 and var1_41[2] > math.random() * 10000 then
 			var0_41[iter1_41] = {}
 		end
 	end
 
 	for iter2_41, iter3_41 in ipairs(pg.dorm3d_welcome.get_id_list_by_room_id[arg0_41] or {}) do
-		local var1_41 = pg.dorm3d_welcome[iter3_41]
+		local var2_41 = pg.dorm3d_welcome[iter3_41]
 
-		if var0_41[var1_41.ship_id] then
-			table.insert(var0_41[var1_41.ship_id], iter3_41)
+		if var0_41[var2_41.ship_id] then
+			table.insert(var0_41[var2_41.ship_id], iter3_41)
 		end
 	end
 
-	local var2_41 = {}
+	local var3_41 = {}
 
 	for iter4_41, iter5_41 in pairs(var0_41) do
-		local var3_41 = 0
 		local var4_41 = 0
+		local var5_41 = 0
 
 		for iter6_41, iter7_41 in ipairs(iter5_41) do
-			var4_41 = var4_41 + pg.dorm3d_welcome[iter7_41].weight
+			var5_41 = var5_41 + pg.dorm3d_welcome[iter7_41].weight
 		end
 
-		local var5_41 = math.random() * var4_41
+		local var6_41 = math.random() * var5_41
 
 		for iter8_41, iter9_41 in ipairs(iter5_41) do
-			var3_41 = var3_41 + pg.dorm3d_welcome[iter9_41].weight
+			var4_41 = var4_41 + pg.dorm3d_welcome[iter9_41].weight
 
-			if var5_41 < var3_41 then
-				var2_41[iter4_41] = iter9_41
+			if var6_41 < var4_41 then
+				var3_41[iter4_41] = iter9_41
 
 				break
 			end
 		end
 	end
 
-	return var2_41
+	return var3_41
 end
 
 return var0_0

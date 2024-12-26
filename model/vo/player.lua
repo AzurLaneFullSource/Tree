@@ -29,36 +29,49 @@ end
 
 function var0_0.isMetaShipNeedToTrans(arg0_5)
 	local var0_5 = MetaCharacterConst.GetMetaShipGroupIDByConfigID(arg0_5)
+	local var1_5 = getProxy(BayProxy):getMetaShipByGroupId(var0_5)
+	local var2_5 = getProxy(MetaCharacterProxy):getMetaIDMark(arg0_5)
+	local var3_5 = var2_5 and var2_5 > 0
 
-	return getProxy(BayProxy):getMetaShipByGroupId(var0_5) and true or false
+	return (var1_5 or var3_5) and true or false
 end
 
 function var0_0.metaShip2Res(arg0_6)
 	local var0_6 = MetaCharacterConst.GetMetaShipGroupIDByConfigID(arg0_6)
-	local var1_6 = getProxy(BayProxy):getMetaShipByGroupId(var0_6):getMetaCharacter():getSpecialMaterialInfoToMaxStar()
-	local var2_6 = var1_6.itemID
-	local var3_6 = var1_6.count <= getProxy(BagProxy):getItemCountById(var2_6)
-	local var4_6
+	local var1_6 = getProxy(BayProxy):getMetaShipByGroupId(var0_6)
+	local var2_6
+	local var3_6
 
-	if var3_6 then
-		var4_6 = pg.ship_transform[var0_6].common_item
+	if not var1_6 then
+		var3_6 = false
 	else
-		var4_6 = pg.ship_transform[var0_6].exclusive_item
+		local var4_6 = var1_6:getMetaCharacter():getSpecialMaterialInfoToMaxStar()
+		local var5_6 = var4_6.itemID
+
+		var3_6 = var4_6.count <= getProxy(BagProxy):getItemCountById(var5_6)
 	end
 
-	local var5_6 = {}
+	local var6_6
 
-	for iter0_6, iter1_6 in ipairs(var4_6) do
-		local var6_6 = {
+	if var3_6 then
+		var6_6 = pg.ship_transform[var0_6].common_item
+	else
+		var6_6 = pg.ship_transform[var0_6].exclusive_item
+	end
+
+	local var7_6 = {}
+
+	for iter0_6, iter1_6 in ipairs(var6_6) do
+		local var8_6 = {
 			type = iter1_6[1],
 			id = iter1_6[2],
 			count = iter1_6[3]
 		}
 
-		table.insert(var5_6, var6_6)
+		table.insert(var7_6, var8_6)
 	end
 
-	return var5_6
+	return var7_6
 end
 
 function var0_0.getSkinTicket(arg0_7)

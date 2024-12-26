@@ -164607,6 +164607,30 @@ _G.pg.base.item_virtual_data_statistics[65067] = {
 	combination_display = {},
 }
 
+_G.pg.base.item_virtual_data_statistics[65068] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "Props/skinTicket",
+	id = 65068,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Rental Outfit Voucher",
+	order = 0,
+	rarity = 4,
+	replace_item = 0,
+	shop_id = 1,
+	time_limit = 0,
+	type = 98,
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
 _G.pg.base.item_virtual_data_statistics[65500] = {
 	display = "A commemorative medal issued by the Iron Blood Resistance celebrating your triumph over the Star Beast.\n—Our world shall not perish. Not today, not ever.",
 	drop_gold_max = 0,
@@ -164815,6 +164839,30 @@ _G.pg.base.item_virtual_data_statistics[65508] = {
 	shop_id = -1,
 	time_limit = 0,
 	type = 0,
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
+_G.pg.base.item_virtual_data_statistics[65509] = {
+	display = "A currency earned during the \"Commission Exchange Plan Ⅳ\" event. Removed after the event ends.",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "Props/commission_pt",
+	id = 65509,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Commission Merits",
+	order = 0,
+	rarity = 2,
+	replace_item = 0,
+	shop_id = -1,
+	time_limit = 0,
+	type = 98,
 	virtual_type = 0,
 	display_icon = {},
 	price = {},
@@ -171675,6 +171723,63 @@ _G.pg.base.item_virtual_data_statistics[86208] = {
 		{
 			401111,
 			1500,
+		},
+	},
+}
+
+_G.pg.base.item_virtual_data_statistics[86209] = {
+	display = "不会被看到",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "Props/clothIcon",
+	id = 86209,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Game Night Skin B",
+	order = 0,
+	rarity = 4,
+	replace_item = 0,
+	shop_id = -1,
+	time_limit = 0,
+	type = 98,
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			307084,
+			1000,
+		},
+		{
+			699021,
+			1000,
+		},
+		{
+			799021,
+			1000,
+		},
+		{
+			199051,
+			1100,
+		},
+		{
+			399071,
+			1100,
+		},
+		{
+			899041,
+			1600,
+		},
+		{
+			402102,
+			1600,
+		},
+		{
+			303061,
+			1600,
 		},
 	},
 }

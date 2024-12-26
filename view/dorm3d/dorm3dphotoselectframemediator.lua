@@ -3,11 +3,12 @@ local var0_0 = class("Dorm3dPhotoSelectFrameMediator", import("view.base.Context
 var0_0.CONFIRMFRAME = "Dorm3dPhotoSelectFrameMediator:CONFIRMFRAME"
 
 function var0_0.register(arg0_1)
-	arg0_1:bind(var0_0.CONFIRMFRAME, function(arg0_2, arg1_2, arg2_2, arg3_2)
+	arg0_1:bind(var0_0.CONFIRMFRAME, function(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2)
 		arg0_1:sendNotification(var0_0.CONFIRMFRAME, {
 			selectFrameId = arg1_2,
 			imagePos = arg2_2,
-			imageScale = arg3_2
+			imageScale = arg3_2,
+			specialPosDic = arg4_2
 		})
 	end)
 end

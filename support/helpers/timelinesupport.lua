@@ -70,7 +70,7 @@ function var0_0.InitSubtitle(arg0_9, arg1_9)
 
 					local var1_11 = pg.dorm3d_subtitle[var0_11].subtitle
 
-					return (string.gsub(var1_11, "$dorm3d", arg1_9))
+					return (HXSet.hxLan(string.gsub(var1_11, "$dorm3d", arg1_9)))
 				end
 
 				Lens.Gameplay.Tools.SubtitleMixer.func = var0_10
@@ -87,7 +87,7 @@ function var0_0.InitSubtitle(arg0_9, arg1_9)
 					end
 
 					local var3_12 = pg.dorm3d_subtitle[var2_12].subtitle
-					local var4_12 = string.gsub(var3_12, "$dorm3d", arg1_9)
+					local var4_12 = HXSet.hxLan(string.gsub(var3_12, "$dorm3d", arg1_9))
 
 					ReflectionHelp.RefSetField(var1_12:GetType(), "subtitle", var1_12, var4_12)
 				end)

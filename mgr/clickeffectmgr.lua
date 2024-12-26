@@ -6,11 +6,11 @@ local var0_0 = pg.ClickEffectMgr
 var0_0.CONFIG = {
 	NORMAL = {
 		"ui",
-		"ClickEffect"
+		"clickeffect"
 	},
 	DORM3D = {
-		"dorm3d/effect/prefab/ui",
-		"vfx_ui_dianji01"
+		"ui",
+		"clickeffectdorm"
 	}
 }
 

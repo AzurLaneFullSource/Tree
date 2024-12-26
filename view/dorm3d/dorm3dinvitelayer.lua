@@ -168,29 +168,33 @@ function var0_0.ShowSelectPanel(arg0_11)
 end
 
 function var0_0.UpdateSelectableCard(arg0_17, arg1_17, arg2_17, arg3_17)
-	GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_%d_%d", arg2_17, arg0_17.contextData.roomId), "", arg1_17:Find("Image"))
+	local var0_17 = Apartment.New({
+		ship_group = arg2_17
+	}):GetSkinModelID(arg0_17.room:getConfig("tag"))
+
+	GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_%d", var0_17), "", arg1_17:Find("Image"))
 	GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_name_%d", arg2_17), "", arg1_17:Find("name"))
 
-	local var0_17 = getProxy(ApartmentProxy):getApartment(arg2_17)
-	local var1_17 = not var0_17 or var0_17:needDownload()
+	local var1_17 = getProxy(ApartmentProxy):getApartment(arg2_17)
+	local var2_17 = not var1_17 or var1_17:needDownload()
 
-	setActive(arg1_17:Find("lock"), var1_17)
-	setActive(arg1_17:Find("mask"), var1_17)
-	setActive(arg1_17:Find("unlock"), not var1_17)
-	setActive(arg1_17:Find("favor_level"), var0_17)
+	setActive(arg1_17:Find("lock"), var2_17)
+	setActive(arg1_17:Find("mask"), var2_17)
+	setActive(arg1_17:Find("unlock"), not var2_17)
+	setActive(arg1_17:Find("favor_level"), var1_17)
 
-	if var0_17 then
-		setText(arg1_17:Find("favor_level/Text"), var0_17.level)
+	if var1_17 then
+		setText(arg1_17:Find("favor_level/Text"), var1_17.level)
 	end
 
 	onToggle(arg0_17, arg1_17, function(arg0_18)
 		arg3_17(arg0_18)
 
 		if arg0_18 then
-			if not var0_17 then
+			if not var1_17 then
 				pg.TipsMgr.GetInstance():ShowTips(string.format("need unlock apartment{%d}", arg2_17))
 				triggerToggle(arg1_17, false)
-			elseif var0_17:needDownload() then
+			elseif var1_17:needDownload() then
 				pg.TipsMgr.GetInstance():ShowTips(string.format("need download resource{%d}", arg2_17))
 				triggerToggle(arg1_17, false)
 			end
@@ -203,32 +207,35 @@ function var0_0.HideSelectPanel(arg0_19)
 	setActive(arg0_19.rtSelectPanel, false)
 end
 
-function var0_0.didEnter(arg0_20)
-	arg0_20.room = getProxy(ApartmentProxy):getRoom(arg0_20.contextData.roomId)
-	arg0_20.selectIds = underscore.filter(arg0_20.contextData.groupIds or {}, function(arg0_21)
-		return arg0_20.room.unlockCharacter[arg0_21] and tobool(getProxy(ApartmentProxy):getApartment(arg0_21)) and not Apartment.New({
-			ship_group = arg0_21
-		}):needDownload()
-	end)
-	arg0_20.contextData.groupIds = nil
-
-	arg0_20:ShowInvitePanel()
+function var0_0.UpdateRoom(arg0_20, arg1_20)
+	arg0_20.room = arg1_20
 end
 
-function var0_0.onBackPressed(arg0_22)
-	if isActive(arg0_22.rtSelectPanel) then
-		arg0_22:HideSelectPanel()
-		arg0_22:ShowInvitePanel()
+function var0_0.didEnter(arg0_21)
+	arg0_21.selectIds = underscore.filter(arg0_21.contextData.groupIds or {}, function(arg0_22)
+		return arg0_21.room.unlockCharacter[arg0_22] and tobool(getProxy(ApartmentProxy):getApartment(arg0_22)) and not Apartment.New({
+			ship_group = arg0_22
+		}):needDownload()
+	end)
+	arg0_21.contextData.groupIds = nil
+
+	arg0_21:ShowInvitePanel()
+end
+
+function var0_0.onBackPressed(arg0_23)
+	if isActive(arg0_23.rtSelectPanel) then
+		arg0_23:HideSelectPanel()
+		arg0_23:ShowInvitePanel()
 	else
-		arg0_22:closeView()
+		arg0_23:closeView()
 	end
 end
 
-function var0_0.willExit(arg0_23)
-	if isActive(arg0_23.rtSelectPanel) then
-		arg0_23:HideSelectPanel()
+function var0_0.willExit(arg0_24)
+	if isActive(arg0_24.rtSelectPanel) then
+		arg0_24:HideSelectPanel()
 	else
-		arg0_23:HideInvitePanel()
+		arg0_24:HideInvitePanel()
 	end
 end
 

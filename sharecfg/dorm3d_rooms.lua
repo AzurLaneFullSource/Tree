@@ -12,6 +12,7 @@ pg.dorm3d_rooms = {
 		room = "Sirius",
 		invite_mark = "",
 		id = 1,
+		room_bgm = "story-room-sirius",
 		character = {
 			20220
 		},
@@ -35,8 +36,7 @@ pg.dorm3d_rooms = {
 		furniture_zones = {
 			1001,
 			1002,
-			1003,
-			1004
+			1003
 		},
 		recall_list = {
 			1,
@@ -77,28 +77,111 @@ pg.dorm3d_rooms = {
 			}
 		}
 	},
-	[4] = {
-		id = 4,
+	{
+		invite_cost = "",
+		invite_banner = "",
+		type = 2,
+		resource_name = "Nengdai_DB",
+		assets_prefix = "Nengdai",
+		tag = "",
+		scene_info = "map_noshirohostel_01|Nengdai_DB/Noshirohostel",
 		in_map = "floor_1",
-		room = "Beach",
-		resource_name = "",
-		assets_prefix = "Beach",
+		room = "Noshiro",
+		invite_mark = "",
+		id = 2,
+		room_bgm = "story-room-noshiro",
+		character = {
+			30221
+		},
+		character_pay = {},
+		character_welcome = {
+			{
+				30221,
+				0
+			}
+		},
+		character_range = {
+			1
+		},
+		unlock_item = {},
+		default_zone = {
+			{
+				30221,
+				"Chair"
+			}
+		},
+		furniture_zones = {
+			2001,
+			2002,
+			2003
+		},
+		recall_list = {
+			21,
+			22,
+			23,
+			31
+		},
+		ar_anim = {
+			{
+				30221,
+				{
+					2001,
+					2002,
+					2003,
+					2004,
+					2005,
+					2006,
+					2007,
+					2008,
+					2009,
+					2010,
+					2011,
+					2012,
+					2013,
+					2101,
+					2102,
+					2103,
+					2104,
+					2201,
+					2202,
+					2203,
+					2204,
+					2301,
+					2302,
+					2303,
+					2304
+				}
+			}
+		}
+	},
+	[4] = {
 		tag = "beach",
 		type = 1,
-		scene_info = "map_beach_02|Common/Beach",
+		scene_info = "map_beach_02|Beach",
+		resource_name = "Beach",
+		assets_prefix = "Beach",
+		in_map = "floor_1",
+		room = "Beach",
+		id = 4,
+		room_bgm = "story-room-sirius",
 		character = {},
 		character_pay = {
-			20220
+			20220,
+			30221
 		},
 		character_welcome = {
 			{
 				20220,
 				1000
+			},
+			{
+				30221,
+				0
 			}
 		},
 		character_range = {
 			0,
-			1
+			2
 		},
 		unlock_item = {
 			{
@@ -111,6 +194,10 @@ pg.dorm3d_rooms = {
 			{
 				20220,
 				"Tianlangxing"
+			},
+			{
+				30221,
+				"Nengdai"
 			}
 		},
 		furniture_zones = {},
@@ -119,6 +206,10 @@ pg.dorm3d_rooms = {
 			{
 				20220,
 				270110
+			},
+			{
+				30221,
+				270111
 			}
 		},
 		invite_banner = {
@@ -128,11 +219,25 @@ pg.dorm3d_rooms = {
 					"banner_beach1",
 					"banner_beach2"
 				}
+			},
+			{
+				30221,
+				{
+					"banner_beach3"
+				}
 			}
 		},
 		invite_mark = {
 			{
 				20220,
+				{
+					1,
+					5,
+					6
+				}
+			},
+			{
+				30221,
 				{
 					1,
 					5,
@@ -150,6 +255,16 @@ pg.dorm3d_rooms = {
 					4004,
 					4005
 				}
+			},
+			{
+				30221,
+				{
+					4201,
+					4202,
+					4203,
+					4204,
+					4205
+				}
 			}
 		}
 	},
@@ -157,17 +272,18 @@ pg.dorm3d_rooms = {
 		invite_cost = "",
 		invite_banner = "",
 		default_zone = "",
-		resource_name = "",
+		resource_name = "Bathroom",
 		assets_prefix = "Bathroom",
 		ar_anim = "",
 		recall_list = "",
 		type = 1,
-		tag = "",
+		room_bgm = "story-room-sirius",
 		in_map = "floor_1",
 		room = "Bath",
 		invite_mark = "",
 		id = 5,
 		furniture_zones = "",
+		tag = "",
 		scene_info = "",
 		character = {
 			20220
@@ -194,12 +310,14 @@ pg.dorm3d_rooms = {
 	get_id_list_by_in_map = {
 		floor_1 = {
 			1,
+			2,
 			4,
 			5
 		}
 	},
 	all = {
 		1,
+		2,
 		4,
 		5
 	}

@@ -95412,6 +95412,52 @@ _G.pg.base.item_data_statistics[69959] = {
 	limit = {},
 }
 
+_G.pg.base.item_data_statistics[80003] = {
+	compose_number = 0,
+	display = "使用后可获得舰艇攻击教材T3*1、舰艇防御教材T3*1、舰艇辅助教材T3*1",
+	display_effect = "",
+	icon = "Props/54002",
+	id = 80003,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "舰船教材T3捆绑包*1 ",
+	open_directly = 1,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 17,
+	usage = "usage_drop",
+	usage_arg = "998000",
+	virtual_type = 0,
+	display_icon = {
+		{
+			2,
+			16003,
+			1,
+		},
+		{
+			2,
+			16013,
+			1,
+		},
+		{
+			2,
+			16023,
+			1,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+
 _G.pg.base.item_data_statistics[81200] = {
 	compose_number = 0,
 	display = "Contains 1x random skin (Resplendent Night I), 2x Special General Blueprints - Series 6, 2024x Gems, 50x Cognitive Chips, 20x Wisdom Cubes, 100x Decor Tokens, and 10x Quick Finishers.",
@@ -96004,6 +96050,72 @@ _G.pg.base.item_data_statistics[81208] = {
 	shiptrans_id = {},
 	combination_display = {},
 	limit = {},
+}
+
+_G.pg.base.item_data_statistics[81209] = {
+	compose_number = 0,
+	display = "Contains 1x random skin (Game Night Lucky Bag B), 2x Special General Blueprints - Series 7, 2025x Gems, 50x Cognitive Chips, 20x Wisdom Cubes, 100x Decor Tokens, and 10x Quick Finishers.",
+	display_effect = "",
+	icon = "Props/fudai20",
+	id = 81209,
+	is_world = 0,
+	limit = "[]",
+	link_id = 0,
+	max_num = 0,
+	name = "Game Night Lucky Bag B",
+	open_directly = 1,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 17,
+	usage = "usage_drop",
+	usage_arg = "998311",
+	virtual_type = 0,
+	display_icon = {
+		{
+			2,
+			86209,
+			1,
+		},
+		{
+			1,
+			14,
+			2025,
+		},
+		{
+			2,
+			42066,
+			2,
+		},
+		{
+			2,
+			15008,
+			50,
+		},
+		{
+			2,
+			20001,
+			20,
+		},
+		{
+			2,
+			15003,
+			10,
+		},
+		{
+			1,
+			6,
+			100,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
 }
 
 _G.pg.base.item_data_statistics[81400] = {

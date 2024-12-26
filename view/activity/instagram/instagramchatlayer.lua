@@ -743,13 +743,7 @@ function var0_0.SetEmoji(arg0_35, arg1_35, arg2_35)
 			local var0_36 = arg0_36:GetComponent("Animator")
 
 			if var0_36 then
-				var0_36.enabled = false
-			end
-
-			local var1_36 = arg0_36:GetComponent("CriManaEffectUI")
-
-			if var1_36 then
-				var1_36:Pause(true)
+				var0_36.enabled = true
 			end
 
 			setParent(arg0_36, arg1_35, false)

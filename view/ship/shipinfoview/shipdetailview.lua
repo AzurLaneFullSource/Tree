@@ -877,11 +877,21 @@ function var0_0.UpdateRecordSpWeapons(arg0_69, arg1_69)
 		if var0_70 then
 			UpdateSpWeaponSlot(var1_70, var0_70)
 
-			local var3_70 = not var0_70:IsReal() or var0_70:GetShipId() ~= nil and var0_70:GetShipId() ~= arg0_69:GetShipVO().id
+			local var3_70 = arg0_69:GetShipVO():GetSpWeapon()
+			local var4_70 = var3_70 and var3_70:GetConfigID() or 0
+			local var5_70 = var0_70:GetConfigID() ~= var4_70
 
-			setActive(var1_70:Find("Icon/tip"), var3_70)
+			if var5_70 then
+				local var6_70 = getProxy(EquipmentProxy):GetSameTypeSpWeapon(var0_70)
 
-			if var3_70 then
+				if var6_70 and var6_70:GetConfigID() == var0_70:GetConfigID() then
+					var5_70 = false
+				end
+			end
+
+			setActive(var1_70:Find("Icon/tip"), var5_70)
+
+			if var5_70 then
 				onButton(arg0_69, var1_70, function()
 					pg.TipsMgr.GetInstance():ShowTips(i18n("ship_quick_change_nofreeequip"))
 				end, SFX_PANEL)

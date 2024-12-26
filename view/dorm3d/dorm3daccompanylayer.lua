@@ -43,16 +43,19 @@ function var0_0.didEnter(arg0_6)
 			if var0_7 then
 				local var1_7 = pg.dorm3d_accompany[var0_7]
 				local var2_7, var3_7 = ApartmentProxy.CheckUnlockConfig(var1_7.unlock)
+				local var4_7 = getProxy(ApartmentProxy):getRoom(var1_7.resource_room)
 
 				GetImageSpriteFromAtlasAsync("dorm3daccompany/" .. var1_7.image, "", arg2_7:Find("Image"))
 				setGray(arg2_7:Find("Image"), not var2_7, false)
 				setActive(arg2_7:Find("Image/mask"), not var2_7)
 				onButton(arg0_6, arg2_7:Find("Image"), function()
-					if var2_7 then
+					if not var2_7 then
+						pg.TipsMgr.GetInstance():ShowTips(var3_7)
+					elseif var4_7:needDownload() then
+						pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_accompany_not_download", var4_7:getConfig("room")))
+					else
 						arg0_6.contextData.confirmFunc(var0_7)
 						arg0_6:closeView()
-					else
-						pg.TipsMgr.GetInstance():ShowTips(var3_7)
 					end
 				end, SFX_CONFIRM)
 				setText(arg0_6.rtPanel:Find("window/Text"), i18n("dorm3d_collection_cost_tip"))

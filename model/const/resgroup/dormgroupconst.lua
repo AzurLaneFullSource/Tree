@@ -94,10 +94,11 @@ function var0_0.DormDownload(arg0_5)
 				var0_0.ExtraDownload(var1_7.dataList[1], var1_7.onFinish)
 			end)
 			table.insert(var0_5, function(arg0_8, arg1_8)
-				pg.m02:sendNotification(var0_0.NotifyDormDownloadFinish, var0_0.DormDownloadLock.roomId)
+				local var0_8 = var0_0.DormDownloadLock.roomId
 
 				var0_0.DormDownloadLock = nil
 
+				pg.m02:sendNotification(var0_0.NotifyDormDownloadFinish, var0_8)
 				arg0_8(arg1_8)
 			end)
 		end
@@ -137,30 +138,20 @@ function var0_0.ExtraDownload(arg0_9, arg1_9)
 		var2_9.isPauseUpdateD = false
 
 		warning("----------------------Tag 单组下载完成,调用groupComplete----------------------")
-
-		if pg.dorm3d_rooms[var0_0.DormDownloadLock.roomId].type == 2 then
-			local var0_12 = pg.dorm3d_rooms[var0_0.DormDownloadLock.roomId].character[1]
-
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataDownload(var0_12, 1))
-		end
-
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataDownload(var0_0.DormDownloadLock.roomId, 1))
 		arg1_9(true)
 	end
 
 	local var6_9
 
 	local function var7_9(arg0_13, arg1_13)
-		if pg.dorm3d_rooms[var0_0.DormDownloadLock.roomId].type == 2 then
-			local var0_13 = pg.dorm3d_rooms[var0_0.DormDownloadLock.roomId].character[1]
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataDownload(var0_0.DormDownloadLock.roomId, 2))
 
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataDownload(var0_13, 1))
-		end
-
-		local function var1_13()
+		local function var0_13()
 			var0_0.ExtraDownload(arg0_9, arg1_9)
 		end
 
-		local function var2_13()
+		local function var1_13()
 			var2_9.isPauseUpdateD = false
 
 			arg1_9()
@@ -170,9 +161,9 @@ function var0_0.ExtraDownload(arg0_9, arg1_9)
 			modal = true,
 			locked = true,
 			content = i18n("file_down_mgr_error", arg0_13, arg1_13),
-			onYes = var1_13,
-			onNo = var2_13,
-			onClose = var2_13,
+			onYes = var0_13,
+			onNo = var1_13,
+			onClose = var1_13,
 			weight = LayerWeightConst.TOP_LAYER
 		})
 	end
@@ -212,28 +203,48 @@ function var0_0.GetDownloadList()
 	return var0_17
 end
 
+local var1_0 = {
+	room = "dorm3d/scenesres/scenes/",
+	apartment = "dorm3d/character/"
+}
+local var2_0
+
 function var0_0.GetDownloadResourceDic()
-	local var0_18 = {}
+	if not var2_0 then
+		var2_0 = {}
 
-	for iter0_18, iter1_18 in ipairs(DormGroupConst.GetDownloadList()) do
-		local var1_18 = "common"
+		for iter0_18, iter1_18 in ipairs(pg.dorm3d_rooms.all) do
+			local var0_18 = string.lower(pg.dorm3d_rooms[iter1_18].resource_name)
 
-		for iter2_18, iter3_18 in ipairs({
-			"assets/dorm3d/character"
-		}) do
-			if string.find(iter1_18, iter3_18) then
-				var1_18 = string.split(string.gsub(iter1_18, iter3_18, ""), "/")[1]
+			var2_0[var0_18] = true
+		end
+	end
+
+	local var1_18 = {}
+
+	for iter2_18, iter3_18 in ipairs(DormGroupConst.GetDownloadList()) do
+		local var2_18 = "common"
+
+		for iter4_18, iter5_18 in pairs(var1_0) do
+			local var3_18, var4_18 = string.find(iter3_18, iter5_18)
+
+			if var4_18 then
+				local var5_18 = string.split(string.sub(iter3_18, var4_18 + 1), "/")[1]
+
+				if var2_0[var5_18] then
+					var2_18 = iter4_18 .. "_" .. var5_18
+				end
 
 				break
 			end
 		end
 
-		var0_18[var1_18] = var0_18[var1_18] or {}
+		var1_18[var2_18] = var1_18[var2_18] or {}
 
-		table.insert(var0_18[var1_18], iter1_18)
+		table.insert(var1_18[var2_18], iter3_18)
 	end
 
-	return var0_18
+	return var1_18
 end
 
 function var0_0.DelDir(arg0_19)
@@ -278,6 +289,12 @@ function var0_0.DelDir(arg0_19)
 		end
 
 		var0_0.GetDormMgr():DelFile(var9_19)
+	end
+end
+
+function var0_0.DelRoom(arg0_20, arg1_20)
+	for iter0_20, iter1_20 in ipairs(arg1_20) do
+		var0_0.DelDir(var1_0[iter1_20] .. arg0_20)
 	end
 end
 

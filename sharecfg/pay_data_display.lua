@@ -62,6 +62,8 @@ pg.pay_data_display = setmetatable({
 		79,
 		82,
 		83,
+		84,
+		85,
 		1000,
 		1001,
 		1002,
@@ -6468,6 +6470,234 @@ pg.base.pay_data_display = {
 			{
 				2,
 				81200,
+				1
+			}
+		}
+	},
+	[84] = {
+		name = "Game Night Lucky Bag B",
+		limit_group = 0,
+		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
+		type = 1,
+		subject = "Game Night Lucky Bag B",
+		limit_arg = 1,
+		name_display = "Game Night Lucky Bag B",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 2999,
+		id = 84,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai20",
+		skin_inquire_relation = 86209,
+		id_str = "com.yostaren.azurlane.luckybag47",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains items, resources, and a random skin.",
+		airijp_id = "com.yostaren.azurlane.luckybag47",
+		extra_service_item = {
+			{
+				2,
+				86209,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					12,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					1,
+					8
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86209,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81209,
+				1
+			}
+		}
+	},
+	[85] = {
+		name = "Resplendent Night Lucky Bag II Rerun",
+		limit_group = 0,
+		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
+		type = 1,
+		subject = "Resplendent Night Lucky Bag II Rerun",
+		limit_arg = 1,
+		name_display = "Resplendent Night Lucky Bag II Rerun",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 2999,
+		id = 85,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai10",
+		skin_inquire_relation = 86201,
+		id_str = "com.yostaren.azurlane.luckybag48",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains items, resources, and a random skin.",
+		airijp_id = "com.yostaren.azurlane.luckybag48",
+		extra_service_item = {
+			{
+				2,
+				86201,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					12,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					1,
+					8
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86201,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81201,
 				1
 			}
 		}

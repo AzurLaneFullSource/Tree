@@ -91,10 +91,16 @@ function var0_0.addTranDrop(arg0_8, arg1_8)
 		end
 	end
 
+	for iter2_8, iter3_8 in ipairs(arg0_8) do
+		if iter3_8.type == DROP_TYPE_SHIP and Ship.isMetaShipByConfigID(iter3_8.id) and not Player.isMetaShipNeedToTrans(iter3_8.id) then
+			getProxy(MetaCharacterProxy):setMetaIDMark(iter3_8.id)
+		end
+	end
+
 	local var2_8 = {}
 
-	for iter2_8, iter3_8 in ipairs(arg0_8) do
-		local var3_8, var4_8 = iter3_8:DropTrans(var1_8, arg1_8)
+	for iter4_8, iter5_8 in ipairs(arg0_8) do
+		local var3_8, var4_8 = iter5_8:DropTrans(var1_8, arg1_8)
 
 		if var3_8 then
 			table.insert(var2_8, var3_8)

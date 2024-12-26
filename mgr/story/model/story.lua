@@ -58,7 +58,6 @@ function var0_0.Ctor(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2, arg5_2)
 	for iter0_2, iter1_2 in ipairs(arg1_2.placeholder or {}) do
 		local var0_2 = var0_0.PlaceholderMap[iter1_2] or 0
 
-		warning(var0_2)
 		assert(var0_2 > 0, iter1_2)
 
 		arg0_2.placeholder = bit.bor(arg0_2.placeholder, var0_2)
