@@ -8,7 +8,7 @@ return {
 	hideAuto = true,
 	scripts = {
 		{
-			say = "This tea set is for me? I'm so flattered. Oh, you're too generous, {dorm3d}.",
+			say = "This tea set is for me? I'm so flattered. Oh, you're too generous, Master.",
 			actorName = 20220,
 			typewriter = {
 				speed = 0.05,

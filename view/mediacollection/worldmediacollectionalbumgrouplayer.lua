@@ -34,14 +34,16 @@ function var0_0.OnInit(arg0_2)
 	setText(arg0_2:findTF("top/title/text"), i18n("word_limited_activity"))
 	setText(arg0_2:findTF("top/expireCheckBox/text"), i18n("word_show_expire_content"))
 
-	arg0_2.hideExpireBtn = arg0_2:findTF("top/expireCheckBox/click")
-	arg0_2.hideExpireCheckBox = arg0_2:findTF("top/expireCheckBox/checkBox/check")
-	arg0_2.hideExpire = false
+	arg0_2.showExpireBtn = arg0_2:findTF("top/expireCheckBox/click")
+	arg0_2.showExpireCheckBox = arg0_2:findTF("top/expireCheckBox/checkBox/check")
+	arg0_2.showExpire = true
 
-	onButton(arg0_2, arg0_2.hideExpireBtn, function()
-		arg0_2.hideExpire = not arg0_2.hideExpire
+	onButton(arg0_2, arg0_2.showExpireBtn, function()
+		arg0_2.showExpire = not arg0_2.showExpire
 
-		setActive(arg0_2.hideExpireCheckBox, arg0_2.hideExpire)
+		arg0_2:ExpireFilter()
+		arg0_2:UpdateView()
+		setActive(arg0_2.showExpireCheckBox, arg0_2.showExpire)
 	end)
 
 	arg0_2.rectAnchorX = arg0_2:findTF("GroupRect").anchoredPosition.x
@@ -72,7 +74,8 @@ function var0_0.onUpdateAlbumGroup(arg0_9, arg1_9, arg2_9)
 
 	arg0_9.albumGroupInfos[arg2_9] = var0_9
 
-	setActive(tf(arg2_9):Find("expireMask"), ActivityMedalGroup.GetMedalGroupStateByID(var0_9.id) < 1)
+	arg0_9.loader:GetSpriteQuiet(var0_9.entrance_picture, "", tf(arg2_9):Find("BG"))
+	setActive(tf(arg2_9):Find("expireMask"), ActivityMedalGroup.GetMedalGroupStateByID(var0_9.id) < ActivityMedalGroup.STATE_ACTIVE)
 end
 
 function var0_0.Return2MemoryGroup(arg0_10)
@@ -119,13 +122,28 @@ function var0_0.GetIndexRatio(arg0_12, arg1_12)
 	return var0_12
 end
 
-function var0_0.UpdateView(arg0_13)
-	local var0_13 = WorldMediaCollectionScene.WorldRecordLock()
+function var0_0.ExpireFilter(arg0_13)
+	local var0_13 = {}
 
-	setAnchoredPosition(arg0_13:findTF("GroupRect"), {
-		x = var0_13 and 0 or arg0_13.rectAnchorX
+	for iter0_13, iter1_13 in ipairs(pg.activity_medal_group.all) do
+		local var1_13 = pg.activity_medal_group[iter1_13]
+		local var2_13 = ActivityMedalGroup.GetMedalGroupStateByID(var1_13.id)
+
+		if arg0_13.showExpire or var2_13 >= ActivityMedalGroup.STATE_ACTIVE then
+			table.insert(var0_13, var1_13)
+		end
+	end
+
+	arg0_13.albumGroups = var0_13
+end
+
+function var0_0.UpdateView(arg0_14)
+	local var0_14 = WorldMediaCollectionScene.WorldRecordLock()
+
+	setAnchoredPosition(arg0_14:findTF("GroupRect"), {
+		x = var0_14 and 0 or arg0_14.rectAnchorX
 	})
-	arg0_13.albumGroupList:SetTotalCount(#arg0_13.albumGroups, 0)
+	arg0_14.albumGroupList:SetTotalCount(#arg0_14.albumGroups, 0)
 end
 
 return var0_0

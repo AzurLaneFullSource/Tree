@@ -1,11 +1,10 @@
 pg = pg or {}
 pg.activity_medal_group = {
 	[5711] = {
-		ui_prefab = "未定",
-		entrance_picture = "未定",
+		id = 5711,
+		entrance_picture = "medalAlbum/5711",
 		is_out_of_print = 0,
 		group_name = "星光下的余晖（占坑配置）",
-		id = 5711,
 		activity_medal_ids = {
 			571101,
 			571102,
@@ -32,6 +31,10 @@ pg.activity_medal_group = {
 					21042
 				}
 			}
+		},
+		ui_prefab = {
+			scene = "StarLightMedalAlbumView",
+			mediator = "MedalAlbumTemplateMediator"
 		},
 		item_show = {
 			{

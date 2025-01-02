@@ -197,7 +197,7 @@ function var0_0.SkillHrzPop(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
 
 	var5_7.localScale = var0_0.SKILL_FLOAT_SCALE
 
-	setText(findTF(var5_7, "skill/skill_name/Text"), HXSet.hxLan(arg1_7))
+	setText(findTF(var5_7, "skill/skill_name/Text"), SwitchSpecialChar(HXSet.hxLan(arg1_7)))
 
 	local var6_7 = findTF(var5_7, "skill/icon_mask/icon")
 	local var7_7 = findTF(var5_7, "skill/skill_name")

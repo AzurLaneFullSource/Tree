@@ -489,10 +489,10 @@ pg.item_data_frame = {
 	[333] = {
 		time_limit_type = 0,
 		name = "Starlight From Beyond",
-		gain_by = "星光下的余晖",
+		gain_by = "Substellar Crepuscule",
 		id = 333,
 		time_second = 0,
-		desc = "Obtained from an upcoming event.",
+		desc = "<color=#ffffff>\"Everything in the cosmos falls under the stars' brilliant gaze.\"</color>\nGiven to Commanders who participated in the Substellar Crepuscule event.",
 		scene = {}
 	},
 	[406] = {
