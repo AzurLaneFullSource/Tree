@@ -6,7 +6,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.level = arg1_1.skill_lv or arg1_1.lv or arg1_1.level
 	arg0_1.exp = arg1_1.skill_exp or arg1_1.exp
 	arg0_1.maxLevel = arg0_1:getConfig("max_level")
-	arg0_1.buff = require("GameCfg.buff.buff_" .. arg0_1.id)
+	arg0_1.buff = pg.buffCfg["buff_" .. arg0_1.id]
 	arg0_1.shipId = arg2_1
 end
 
@@ -84,7 +84,7 @@ function var0_0.GetIcon(arg0_13)
 	local var0_13 = arg0_13:GetDisplayId()
 
 	if var0_13 ~= arg0_13.id then
-		return require("GameCfg.buff.buff_" .. var0_13).icon
+		return pg.buffCfg["buff_" .. var0_13].icon
 	else
 		return arg0_13.buff.icon
 	end

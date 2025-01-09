@@ -665,7 +665,7 @@ function var0_0.MakeBuff(arg0_59, arg1_59)
 	local var0_59 = getSkillConfig(arg1_59)
 	local var1_59 = var0_59.effect_list[1].arg_list.skill_id
 	local var2_59 = var0_59.effect_list[1].arg_list.time
-	local var3_59 = require("GameCfg.skill.skill_" .. var1_59)
+	local var3_59 = pg.skillCfg["skill_" .. var1_59]
 
 	if arg0_59.buffTimer then
 		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_59.buffTimer)

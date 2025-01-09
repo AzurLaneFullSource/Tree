@@ -2603,11 +2603,9 @@ function cancelColorRich(arg0_174)
 end
 
 function getSkillConfig(arg0_175)
-	local var0_175 = require("GameCfg.buff.buff_" .. arg0_175)
+	local var0_175 = pg.buffCfg["buff_" .. arg0_175]
 
 	if not var0_175 then
-		warning("找不到技能配置: " .. arg0_175)
-
 		return
 	end
 

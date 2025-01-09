@@ -657,6 +657,9 @@ end
 function var0_0.activeAlways(arg0_50)
 	if getProxy(ChapterProxy):getMapById(arg0_50:getConfig("map")):isActivity() then
 		local var0_50 = arg0_50:GetBindActID()
+
+		warning(var0_50)
+
 		local var1_50 = pg.activity_template[var0_50]
 
 		if type(var1_50.config_client) == "table" then

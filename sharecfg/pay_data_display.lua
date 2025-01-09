@@ -160,6 +160,7 @@ pg.pay_data_display = setmetatable({
 		2038,
 		2039,
 		2040,
+		2041,
 		5011,
 		5012,
 		5013,
@@ -8155,7 +8156,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "Fair Winds Cruise Pass",
 		show_group = "",
-		type_order = 4,
+		type_order = 6,
 		extra_service = 4,
 		money = 999,
 		id = 1019,
@@ -15044,7 +15045,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "Premium Winter Gift Pack",
 		show_group = "",
-		type_order = 0,
+		type_order = 4,
 		extra_service = 3,
 		money = 3699,
 		id = 2040,
@@ -15140,6 +15141,105 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40053,
+				1
+			}
+		}
+	},
+	[2041] = {
+		name = "Outfit Pack (Kronshtadt)",
+		limit_group = 0,
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		subject = "Outfit Pack (Kronshtadt)",
+		limit_arg = 1,
+		name_display = "Outfit Pack (Kronshtadt)",
+		show_group = "",
+		type_order = 5,
+		extra_service = 3,
+		money = 1799,
+		id = 2041,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		sub_display = "",
+		picture = "huteng_package",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack19",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains an Outfit Voucher, Wisdom Cubes, T2 EXP Data Packs, and more.",
+		airijp_id = "com.yostaren.azurlane.pack19",
+		extra_service_item = {
+			{
+				2,
+				59561,
+				1
+			},
+			{
+				2,
+				20001,
+				40
+			},
+			{
+				1,
+				1,
+				30000
+			},
+			{
+				2,
+				16502,
+				50
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					1,
+					9
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					1,
+					15
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				59561,
+				1
+			},
+			{
+				2,
+				20001,
+				40
+			},
+			{
+				2,
+				16502,
+				50
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40050,
 				1
 			}
 		}

@@ -7233,6 +7233,33 @@ _G.pg.base.shop_template[43049] = {
 	},
 }
 
+_G.pg.base.shop_template[43050] = {
+	collaboration_skin_time = "",
+	desc = "Exchange 8000 Merit for Soobrazitelny",
+	discount = 0,
+	genre = "arena_shop",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 43050,
+	limit_args2 = "",
+	num = 1,
+	order = 4,
+	resource_num = 8000,
+	resource_type = 3,
+	tag = 0,
+	time = "always",
+	time_second = 0,
+	type = 4,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		701091,
+	},
+}
+
 _G.pg.base.shop_template[50002] = {
 	collaboration_skin_time = "",
 	desc = "Spend 50 Gems to buy 1 Quick Build item",
@@ -14122,6 +14149,234 @@ _G.pg.base.shop_template[60571] = {
 	},
 }
 
+_G.pg.base.shop_template[60575] = {
+	collaboration_skin_time = "",
+	desc = "880钻石购买限时建造补给(0109约克城II版本)",
+	discount = 0,
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60575,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	resource_num = 880,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			1,
+		},
+	},
+	effect_args = {
+		40138,
+	},
+	time = {
+		{
+			{
+				2025,
+				1,
+				9,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				1,
+				15,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[60576] = {
+	collaboration_skin_time = "",
+	desc = "120钻石购买限时攻略补给(0109约克城II版本)",
+	discount = 0,
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60576,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	resource_num = 120,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			5,
+		},
+	},
+	effect_args = {
+		40117,
+	},
+	time = {
+		{
+			{
+				2025,
+				1,
+				9,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				1,
+				15,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[60577] = {
+	collaboration_skin_time = "",
+	desc = "500钻石购买家具币礼包(0109约克城II版本)",
+	discount = 0,
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60577,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	resource_num = 500,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			2,
+		},
+	},
+	effect_args = {
+		40106,
+	},
+	time = {
+		{
+			{
+				2025,
+				1,
+				9,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				1,
+				15,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[60578] = {
+	collaboration_skin_time = "",
+	desc = "300钻石购买心智单元礼包(0109约克城II版本)",
+	discount = 0,
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60578,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	resource_num = 300,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			2,
+		},
+	},
+	effect_args = {
+		40119,
+	},
+	time = {
+		{
+			{
+				2025,
+				1,
+				9,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				1,
+				15,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
 _G.pg.base.shop_template[61001] = {
 	collaboration_skin_time = "",
 	desc = "Spend 200 Gems to increase dock capacity by 10 (when dock capacity is between 0-1999)",
@@ -14876,7 +15131,7 @@ _G.pg.base.shop_template[70008] = {
 
 _G.pg.base.shop_template[70009] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Midsummer March",
+	desc = "Buy skin - Summer March",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -34821,10 +35076,11 @@ _G.pg.base.shop_template[70667] = {
 	id = 70667,
 	limit_args2 = "",
 	num = 1,
-	order = 100,
+	order = 250,
 	resource_num = 1180,
 	resource_type = 14,
-	tag = 1,
+	tag = 0,
+	time = "always",
 	time_second = 0,
 	type = 6,
 	type_order = 0,
@@ -34832,32 +35088,6 @@ _G.pg.base.shop_template[70667] = {
 	limit_args = {},
 	effect_args = {
 		718011,
-	},
-	time = {
-		{
-			{
-				2024,
-				11,
-				14,
-			},
-			{
-				0,
-				0,
-				0,
-			},
-		},
-		{
-			{
-				2024,
-				12,
-				4,
-			},
-			{
-				23,
-				59,
-				59,
-			},
-		},
 	},
 }
 
@@ -34873,10 +35103,11 @@ _G.pg.base.shop_template[70668] = {
 	id = 70668,
 	limit_args2 = "",
 	num = 1,
-	order = 100,
+	order = 250,
 	resource_num = 880,
 	resource_type = 14,
-	tag = 1,
+	tag = 0,
+	time = "always",
 	time_second = 0,
 	type = 6,
 	type_order = 0,
@@ -34884,32 +35115,6 @@ _G.pg.base.shop_template[70668] = {
 	limit_args = {},
 	effect_args = {
 		701101,
-	},
-	time = {
-		{
-			{
-				2024,
-				11,
-				14,
-			},
-			{
-				0,
-				0,
-				0,
-			},
-		},
-		{
-			{
-				2024,
-				12,
-				4,
-			},
-			{
-				23,
-				59,
-				59,
-			},
-		},
 	},
 }
 
@@ -34925,10 +35130,11 @@ _G.pg.base.shop_template[70669] = {
 	id = 70669,
 	limit_args2 = "",
 	num = 1,
-	order = 100,
+	order = 250,
 	resource_num = 880,
 	resource_type = 14,
-	tag = 1,
+	tag = 0,
+	time = "always",
 	time_second = 0,
 	type = 6,
 	type_order = 0,
@@ -34936,32 +35142,6 @@ _G.pg.base.shop_template[70669] = {
 	limit_args = {},
 	effect_args = {
 		707011,
-	},
-	time = {
-		{
-			{
-				2024,
-				11,
-				14,
-			},
-			{
-				0,
-				0,
-				0,
-			},
-		},
-		{
-			{
-				2024,
-				12,
-				4,
-			},
-			{
-				23,
-				59,
-				59,
-			},
-		},
 	},
 }
 
@@ -34977,10 +35157,11 @@ _G.pg.base.shop_template[70670] = {
 	id = 70670,
 	limit_args2 = "",
 	num = 1,
-	order = 100,
+	order = 250,
 	resource_num = 780,
 	resource_type = 14,
-	tag = 1,
+	tag = 0,
+	time = "always",
 	time_second = 0,
 	type = 6,
 	type_order = 0,
@@ -34988,32 +35169,6 @@ _G.pg.base.shop_template[70670] = {
 	limit_args = {},
 	effect_args = {
 		701091,
-	},
-	time = {
-		{
-			{
-				2024,
-				11,
-				14,
-			},
-			{
-				0,
-				0,
-				0,
-			},
-		},
-		{
-			{
-				2024,
-				12,
-				4,
-			},
-			{
-				23,
-				59,
-				59,
-			},
-		},
 	},
 }
 
@@ -35029,10 +35184,11 @@ _G.pg.base.shop_template[70671] = {
 	id = 70671,
 	limit_args2 = "",
 	num = 1,
-	order = 100,
+	order = 250,
 	resource_num = 780,
 	resource_type = 14,
-	tag = 1,
+	tag = 0,
+	time = "always",
 	time_second = 0,
 	type = 6,
 	type_order = 0,
@@ -35040,32 +35196,6 @@ _G.pg.base.shop_template[70671] = {
 	limit_args = {},
 	effect_args = {
 		705061,
-	},
-	time = {
-		{
-			{
-				2024,
-				11,
-				14,
-			},
-			{
-				0,
-				0,
-				0,
-			},
-		},
-		{
-			{
-				2024,
-				12,
-				4,
-			},
-			{
-				23,
-				59,
-				59,
-			},
-		},
 	},
 }
 
@@ -35081,10 +35211,11 @@ _G.pg.base.shop_template[70672] = {
 	id = 70672,
 	limit_args2 = "",
 	num = 1,
-	order = 100,
+	order = 250,
 	resource_num = 1180,
 	resource_type = 14,
-	tag = 1,
+	tag = 0,
+	time = "always",
 	time_second = 0,
 	type = 6,
 	type_order = 0,
@@ -35092,32 +35223,6 @@ _G.pg.base.shop_template[70672] = {
 	limit_args = {},
 	effect_args = {
 		702042,
-	},
-	time = {
-		{
-			{
-				2024,
-				11,
-				14,
-			},
-			{
-				0,
-				0,
-				0,
-			},
-		},
-		{
-			{
-				2024,
-				12,
-				4,
-			},
-			{
-				23,
-				59,
-				59,
-			},
-		},
 	},
 }
 
@@ -35133,10 +35238,11 @@ _G.pg.base.shop_template[70673] = {
 	id = 70673,
 	limit_args2 = "",
 	num = 1,
-	order = 100,
+	order = 250,
 	resource_num = 880,
 	resource_type = 14,
-	tag = 1,
+	tag = 0,
+	time = "always",
 	time_second = 0,
 	type = 6,
 	type_order = 0,
@@ -35144,32 +35250,6 @@ _G.pg.base.shop_template[70673] = {
 	limit_args = {},
 	effect_args = {
 		703012,
-	},
-	time = {
-		{
-			{
-				2024,
-				11,
-				14,
-			},
-			{
-				0,
-				0,
-				0,
-			},
-		},
-		{
-			{
-				2024,
-				12,
-				4,
-			},
-			{
-				23,
-				59,
-				59,
-			},
-		},
 	},
 }
 
@@ -35185,10 +35265,11 @@ _G.pg.base.shop_template[70674] = {
 	id = 70674,
 	limit_args2 = "",
 	num = 1,
-	order = 100,
+	order = 250,
 	resource_num = 880,
 	resource_type = 14,
-	tag = 1,
+	tag = 0,
+	time = "always",
 	time_second = 0,
 	type = 6,
 	type_order = 0,
@@ -35196,32 +35277,6 @@ _G.pg.base.shop_template[70674] = {
 	limit_args = {},
 	effect_args = {
 		702012,
-	},
-	time = {
-		{
-			{
-				2024,
-				11,
-				14,
-			},
-			{
-				0,
-				0,
-				0,
-			},
-		},
-		{
-			{
-				2024,
-				12,
-				4,
-			},
-			{
-				23,
-				59,
-				59,
-			},
-		},
 	},
 }
 
@@ -35237,10 +35292,11 @@ _G.pg.base.shop_template[70675] = {
 	id = 70675,
 	limit_args2 = "",
 	num = 1,
-	order = 100,
+	order = 250,
 	resource_num = 1080,
 	resource_type = 14,
-	tag = 1,
+	tag = 0,
+	time = "always",
 	time_second = 0,
 	type = 6,
 	type_order = 0,
@@ -35248,32 +35304,6 @@ _G.pg.base.shop_template[70675] = {
 	limit_args = {},
 	effect_args = {
 		701023,
-	},
-	time = {
-		{
-			{
-				2024,
-				11,
-				14,
-			},
-			{
-				0,
-				0,
-				0,
-			},
-		},
-		{
-			{
-				2024,
-				12,
-				4,
-			},
-			{
-				23,
-				59,
-				59,
-			},
-		},
 	},
 }
 
@@ -39802,9 +39832,9 @@ _G.pg.base.shop_template[70775] = {
 	time = {
 		{
 			{
-				2024,
-				11,
-				14,
+				2025,
+				1,
+				9,
 			},
 			{
 				0,
@@ -39814,9 +39844,9 @@ _G.pg.base.shop_template[70775] = {
 		},
 		{
 			{
-				2024,
-				12,
-				4,
+				2025,
+				1,
+				15,
 			},
 			{
 				23,
@@ -39854,9 +39884,9 @@ _G.pg.base.shop_template[70776] = {
 	time = {
 		{
 			{
-				2024,
-				11,
-				14,
+				2025,
+				1,
+				9,
 			},
 			{
 				0,
@@ -39866,9 +39896,9 @@ _G.pg.base.shop_template[70776] = {
 		},
 		{
 			{
-				2024,
-				12,
-				4,
+				2025,
+				1,
+				15,
 			},
 			{
 				23,
@@ -39906,9 +39936,9 @@ _G.pg.base.shop_template[70777] = {
 	time = {
 		{
 			{
-				2024,
-				11,
-				14,
+				2025,
+				1,
+				9,
 			},
 			{
 				0,
@@ -39918,9 +39948,9 @@ _G.pg.base.shop_template[70777] = {
 		},
 		{
 			{
-				2024,
-				12,
-				4,
+				2025,
+				1,
+				15,
 			},
 			{
 				23,
@@ -39958,9 +39988,9 @@ _G.pg.base.shop_template[70778] = {
 	time = {
 		{
 			{
-				2024,
-				11,
-				14,
+				2025,
+				1,
+				9,
 			},
 			{
 				0,
@@ -39970,9 +40000,9 @@ _G.pg.base.shop_template[70778] = {
 		},
 		{
 			{
-				2024,
-				12,
-				4,
+				2025,
+				1,
+				15,
 			},
 			{
 				23,
@@ -40010,9 +40040,9 @@ _G.pg.base.shop_template[70779] = {
 	time = {
 		{
 			{
-				2024,
-				11,
-				14,
+				2025,
+				1,
+				9,
 			},
 			{
 				0,
@@ -40022,9 +40052,9 @@ _G.pg.base.shop_template[70779] = {
 		},
 		{
 			{
-				2024,
-				12,
-				4,
+				2025,
+				1,
+				15,
 			},
 			{
 				23,
@@ -40047,7 +40077,7 @@ _G.pg.base.shop_template[70780] = {
 	id = 70780,
 	limit_args2 = "",
 	num = 1,
-	order = 250,
+	order = 300,
 	resource_num = 1180,
 	resource_type = 14,
 	tag = 0,
@@ -40074,7 +40104,7 @@ _G.pg.base.shop_template[70781] = {
 	id = 70781,
 	limit_args2 = "",
 	num = 1,
-	order = 250,
+	order = 300,
 	resource_num = 880,
 	resource_type = 14,
 	tag = 0,
@@ -40101,7 +40131,7 @@ _G.pg.base.shop_template[70782] = {
 	id = 70782,
 	limit_args2 = "",
 	num = 1,
-	order = 250,
+	order = 300,
 	resource_num = 880,
 	resource_type = 14,
 	tag = 0,
@@ -40128,7 +40158,7 @@ _G.pg.base.shop_template[70783] = {
 	id = 70783,
 	limit_args2 = "",
 	num = 1,
-	order = 250,
+	order = 300,
 	resource_num = 880,
 	resource_type = 14,
 	tag = 0,
@@ -40155,7 +40185,7 @@ _G.pg.base.shop_template[70784] = {
 	id = 70784,
 	limit_args2 = "",
 	num = 1,
-	order = 250,
+	order = 300,
 	resource_num = 1180,
 	resource_type = 14,
 	tag = 0,
@@ -40182,7 +40212,7 @@ _G.pg.base.shop_template[70785] = {
 	id = 70785,
 	limit_args2 = "",
 	num = 1,
-	order = 250,
+	order = 300,
 	resource_num = 880,
 	resource_type = 14,
 	tag = 0,
@@ -40209,7 +40239,7 @@ _G.pg.base.shop_template[70786] = {
 	id = 70786,
 	limit_args2 = "",
 	num = 1,
-	order = 250,
+	order = 300,
 	resource_num = 880,
 	resource_type = 14,
 	tag = 0,
@@ -40236,7 +40266,7 @@ _G.pg.base.shop_template[70788] = {
 	id = 70788,
 	limit_args2 = "",
 	num = 1,
-	order = 250,
+	order = 300,
 	resource_num = 780,
 	resource_type = 14,
 	tag = 0,
@@ -40263,7 +40293,7 @@ _G.pg.base.shop_template[70789] = {
 	id = 70789,
 	limit_args2 = "",
 	num = 1,
-	order = 250,
+	order = 300,
 	resource_num = 980,
 	resource_type = 14,
 	tag = 0,
@@ -40290,7 +40320,7 @@ _G.pg.base.shop_template[70790] = {
 	id = 70790,
 	limit_args2 = "",
 	num = 1,
-	order = 250,
+	order = 300,
 	resource_num = 1180,
 	resource_type = 14,
 	tag = 0,
@@ -40317,7 +40347,7 @@ _G.pg.base.shop_template[70791] = {
 	id = 70791,
 	limit_args2 = "",
 	num = 1,
-	order = 250,
+	order = 300,
 	resource_num = 800,
 	resource_type = 14,
 	tag = 0,
@@ -40344,7 +40374,7 @@ _G.pg.base.shop_template[70792] = {
 	id = 70792,
 	limit_args2 = "",
 	num = 1,
-	order = 250,
+	order = 300,
 	resource_num = 800,
 	resource_type = 14,
 	tag = 0,
@@ -45118,9 +45148,9 @@ _G.pg.base.shop_template[70910] = {
 	time = {
 		{
 			{
-				2024,
-				11,
-				14,
+				2025,
+				1,
+				9,
 			},
 			{
 				0,
@@ -45130,9 +45160,9 @@ _G.pg.base.shop_template[70910] = {
 		},
 		{
 			{
-				2024,
-				12,
-				4,
+				2025,
+				1,
+				15,
 			},
 			{
 				23,
@@ -45378,9 +45408,9 @@ _G.pg.base.shop_template[70915] = {
 	time = {
 		{
 			{
-				2024,
-				11,
-				14,
+				2025,
+				1,
+				9,
 			},
 			{
 				0,
@@ -45390,9 +45420,9 @@ _G.pg.base.shop_template[70915] = {
 		},
 		{
 			{
-				2024,
-				12,
-				4,
+				2025,
+				1,
+				15,
 			},
 			{
 				23,
@@ -65920,6 +65950,162 @@ _G.pg.base.shop_template[90308] = {
 				2025,
 				1,
 				8,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[90312] = {
+	collaboration_skin_time = "",
+	desc = "250109限时皮肤体验：约克城II泳装",
+	discount = 0,
+	genre = "skin_shop_timelimit",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 90312,
+	limit_args2 = "",
+	num = 1,
+	order = 1,
+	resource_num = 1,
+	resource_type = 459,
+	tag = 0,
+	time_second = 172800,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		107101,
+	},
+	time = {
+		{
+			{
+				2025,
+				1,
+				9,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				1,
+				15,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[90313] = {
+	collaboration_skin_time = "",
+	desc = "250109限时皮肤体验：北安普敦II泳装",
+	discount = 0,
+	genre = "skin_shop_timelimit",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 90313,
+	limit_args2 = "",
+	num = 1,
+	order = 2,
+	resource_num = 1,
+	resource_type = 459,
+	tag = 0,
+	time_second = 172800,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		103261,
+	},
+	time = {
+		{
+			{
+				2025,
+				1,
+				9,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				1,
+				15,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[90314] = {
+	collaboration_skin_time = "",
+	desc = "250109限时皮肤体验：大黄蜂II泳装",
+	discount = 0,
+	genre = "skin_shop_timelimit",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 90314,
+	limit_args2 = "",
+	num = 1,
+	order = 3,
+	resource_num = 1,
+	resource_type = 459,
+	tag = 0,
+	time_second = 172800,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		107121,
+	},
+	time = {
+		{
+			{
+				2025,
+				1,
+				9,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				1,
+				15,
 			},
 			{
 				23,

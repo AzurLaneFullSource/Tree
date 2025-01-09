@@ -481,6 +481,10 @@ pg.expedition_data_by_map = setmetatable({
 		2100422,
 		2100431,
 		2100432,
+		2100441,
+		2100442,
+		2100451,
+		2100452,
 		2200000,
 		2200010,
 		2200020,
@@ -15544,7 +15548,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4607,
+		on_activity = 5749,
 		ui_type = 1,
 		bg = "Map_1700001",
 		story_id = "",
@@ -15602,7 +15606,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4607,
+		on_activity = 5749,
 		ui_type = 1,
 		bg = "Map_1700002",
 		story_id = "",
@@ -15660,7 +15664,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4607,
+		on_activity = 5749,
 		ui_type = 1,
 		bg = "Map_1700003",
 		story_id = "",
@@ -15718,7 +15722,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4607,
+		on_activity = 5749,
 		ui_type = 1,
 		bg = "Map_1700004",
 		story_id = "",
@@ -15761,7 +15765,7 @@ pg.base.expedition_data_by_map = {
 	},
 	[1700025] = {
 		map = 1700025,
-		name = "Parallel Superimposition·SP|| ||CHAPTER EX||E.X.",
+		name = "Parallel Superimposition - SP|| ||CHAPTER EX||E.X.",
 		level_limit = 1,
 		type = 8,
 		anchor = "",
@@ -15777,7 +15781,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4607,
+		on_activity = 5749,
 		ui_type = 1,
 		bg = "Map_1700005",
 		story_id = "",
@@ -15811,7 +15815,7 @@ pg.base.expedition_data_by_map = {
 	},
 	[1700026] = {
 		map = 1700026,
-		name = "Parallel Superimposition·EX|| ||CHAPTER EX||E.X.",
+		name = "Parallel Superimposition - EX|| ||CHAPTER EX||E.X.",
 		level_limit = 1,
 		type = 8,
 		anchor = "",
@@ -15827,7 +15831,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4607,
+		on_activity = 5749,
 		ui_type = 1,
 		bg = "Map_1700005",
 		story_id = "",
@@ -26055,7 +26059,7 @@ pg.base.expedition_data_by_map = {
 		destory_icon_suffix = "blue",
 		story_inactive_color = "",
 		animtor = 1,
-		bind_map = 1600011,
+		bind_map = 2100431,
 		clouds_pos = {
 			{
 				332,
@@ -26105,7 +26109,7 @@ pg.base.expedition_data_by_map = {
 		destory_icon_suffix = "blue",
 		story_inactive_color = "",
 		animtor = 1,
-		bind_map = 1600012,
+		bind_map = 2100432,
 		clouds_pos = {
 			{
 				332,
@@ -26155,7 +26159,7 @@ pg.base.expedition_data_by_map = {
 		destory_icon_suffix = "blue",
 		story_inactive_color = "",
 		animtor = 1,
-		bind_map = 1600001,
+		bind_map = 2100421,
 		clouds_pos = {
 			{
 				332,
@@ -26205,7 +26209,207 @@ pg.base.expedition_data_by_map = {
 		destory_icon_suffix = "blue",
 		story_inactive_color = "",
 		animtor = 1,
-		bind_map = 1600002,
+		bind_map = 2100422,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100441] = {
+		map = 2100441,
+		name = "Abyssal Refrain - Pt. 1|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "battle-deepecho",
+		enter_story = "SHENDUHUIYIN1",
+		ani_name = "Map_1610001",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "",
+		default_background = "",
+		cloud_suffix = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1610001",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 2100451,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100442] = {
+		map = 2100442,
+		name = "Abyssal Refrain - Pt. 2|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "deepblue-image",
+		enter_story = "SHENDUHUIYIN16",
+		ani_name = "Map_1610002",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "",
+		default_background = "",
+		cloud_suffix = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1610002",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 2100452,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100451] = {
+		map = 2100451,
+		name = "Abyssal Refrain - Pt. 1|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "battle-deepecho",
+		enter_story = "SHENDUHUIYIN1",
+		ani_name = "Map_1610003",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "",
+		default_background = "",
+		cloud_suffix = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1610003",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 2100441,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100452] = {
+		map = 2100452,
+		name = "Abyssal Refrain - Pt. 2|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "deepblue-image",
+		enter_story = "SHENDUHUIYIN16",
+		ani_name = "Map_1610004",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "",
+		default_background = "",
+		cloud_suffix = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1610004",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 2100442,
 		clouds_pos = {
 			{
 				332,

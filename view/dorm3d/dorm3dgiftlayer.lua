@@ -285,7 +285,7 @@ function var0_0.ConfirmGiveGifts(arg0_28)
 	if arg0_28.apartment:isMaxFavor() then
 		table.insert(var0_28, function(arg0_29)
 			pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_MSGBOX, {
-				contentText = "apartment level is max, are you continue ?",
+				contentText = i18n("dorm3d_gift_favor_max"),
 				onConfirm = arg0_29
 			})
 		end)

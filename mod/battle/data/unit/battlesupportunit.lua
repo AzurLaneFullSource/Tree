@@ -79,7 +79,7 @@ function var7_0.setWeapon(arg0_2, arg1_2)
 	local var13_2 = arg0_2._tmpData.fix_equip_list
 
 	for iter4_2, iter5_2 in ipairs(var13_2) do
-		if iter5_2 and iter5_2 ~= -1 then
+		if iter5_2 and iter5_2 ~= -1 and var1_0.GetWeaponPropertyDataFromID(iter5_2).type == var4_0.EquipmentType.INTERCEPT_AIRCRAFT then
 			local var14_2 = var2_2[iter4_2 + var12_2] or 1
 
 			arg0_2:AddWeapon(iter5_2, nil, nil, var14_2, iter4_2 + var12_2):SetFixedFlag()

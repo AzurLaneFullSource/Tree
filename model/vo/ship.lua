@@ -896,8 +896,12 @@ function var0_0.getAttachmentPrefab(arg0_63)
 	for iter0_63, iter1_63 in ipairs(arg0_63.equipments) do
 		if iter1_63 and iter1_63:hasSkinOrbit() then
 			local var1_63 = iter1_63:getSkinId()
+			local var2_63 = var7_0[var1_63]
 
-			var0_63[var1_63] = var7_0[var1_63]
+			var0_63[var1_63] = {
+				config = var2_63,
+				index = iter0_63
+			}
 		end
 	end
 
@@ -1560,7 +1564,7 @@ function var0_0.getShipSkillEffects(arg0_109)
 
 	for iter0_109, iter1_109 in ipairs(var1_109) do
 		local var2_109 = arg0_109:RemapSkillId(iter1_109)
-		local var3_109 = require("GameCfg.buff.buff_" .. var2_109)
+		local var3_109 = pg.buffCfg["buff_" .. var2_109]
 
 		arg0_109:FilterActiveSkill(var0_109, var3_109, arg0_109.skills[iter1_109])
 	end
@@ -1577,7 +1581,7 @@ function var0_0.getEquipmentSkillEffects(arg0_110)
 		local var3_110 = iter1_110 and iter1_110:getConfig("skill_id")[1]
 
 		if var3_110 then
-			var2_110 = require("GameCfg.buff.buff_" .. var3_110)
+			var2_110 = pg.buffCfg["buff_" .. var3_110]
 		end
 
 		arg0_110:FilterActiveSkill(var0_110, var2_110)
@@ -1589,7 +1593,7 @@ function var0_0.getEquipmentSkillEffects(arg0_110)
 		local var2_111
 
 		if var1_111 > 0 then
-			var2_111 = require("GameCfg.buff.buff_" .. var1_111)
+			var2_111 = pg.buffCfg["buff_" .. var1_111]
 		end
 
 		arg0_110:FilterActiveSkill(var0_110, var2_111)
