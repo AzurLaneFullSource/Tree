@@ -496,26 +496,26 @@ pg.emoji_template = {
 	},
 	{
 		achieve = 1,
-		item_desc = "聊天表情：准备万全，可以在表情选项的「默认」选项卡中找到并发出此表情。",
-		item_name = "聊天表情：准备万全",
+		item_desc = "Sticker: Fully Prepared. This sticker can be found in the default tab of the chat stickers menu.",
+		item_name = "Sticker: Fully Prepared",
 		id = 39,
 		index = 85,
 		icon = "",
 		pic = "39",
-		desc = "<color=#92fc63>[准备万全]</color>",
+		desc = "<color=#92fc63>[Fully Prepared]</color>",
 		type = {
 			1
 		}
 	},
 	{
 		achieve = 1,
-		item_desc = "聊天表情：再等等，可以在表情选项的「默认」选项卡中找到并发出此表情。",
-		item_name = "聊天表情：再等等",
+		item_desc = "Sticker: Just a Minute. This sticker can be found in the default tab of the chat stickers menu.",
+		item_name = "Sticker: Just a Minute",
 		id = 40,
 		index = 86,
 		icon = "",
 		pic = "40",
-		desc = "<color=#92fc63>[再等等]</color>",
+		desc = "<color=#92fc63>[Just a Minute]</color>",
 		type = {
 			1
 		}
@@ -2251,13 +2251,13 @@ pg.emoji_template = {
 	},
 	[1041] = {
 		achieve = 1,
-		item_desc = "聊天表情：惊，可以在表情选项的「默认」选项卡中找到并发出此表情。",
-		item_name = "聊天表情：惊",
+		item_desc = "Sticker: Shocked. This sticker can be found in the default tab of the chat stickers menu.",
+		item_name = "Sticker: Shocked",
 		id = 1041,
 		index = 87,
 		icon = "",
 		pic = "1041",
-		desc = "<color=#92fc63>[惊]</color>",
+		desc = "<color=#92fc63>[Shocked]</color>",
 		type = {
 			1
 		}

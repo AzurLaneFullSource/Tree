@@ -385,6 +385,8 @@ function var0_0.changeSpecialIdle(arg0_40, arg1_40)
 end
 
 function var0_0.SetAction(arg0_41, arg1_41, arg2_41, arg3_41)
+	print("播放动作1" .. arg1_41)
+
 	local var0_41, var1_41 = arg0_41:getMultipFaceFlag()
 
 	if var0_41 then
@@ -398,6 +400,8 @@ function var0_0.SetAction(arg0_41, arg1_41, arg2_41, arg3_41)
 	if not arg1_41 then
 		return
 	end
+
+	print("播放动作2" .. arg1_41)
 
 	arg1_41 = arg1_41 == arg0_41:getNormalName() and arg0_41._idleName and arg0_41._idleName or arg1_41
 
@@ -425,7 +429,6 @@ end
 function var0_0.SetActionWithFinishCallback(arg0_43, arg1_43, arg2_43, arg3_43, arg4_43, arg5_43)
 	arg0_43.inAction = true
 
-	print("播放动作" .. arg1_43)
 	arg0_43:SetAction(arg1_43, arg2_43, arg4_43)
 
 	if arg0_43.mainSpineAnim then
@@ -444,6 +447,8 @@ end
 
 function var0_0.SetOnceAction(arg0_45, arg1_45, arg2_45, arg3_45, arg4_45)
 	arg0_45:SetActionWithFinishCallback(arg1_45, 0, function()
+		arg0_45.lockLayer = false
+
 		arg0_45:SetMainAction(arg0_45:getIdleName(), 0)
 
 		if arg2_45 then
@@ -454,6 +459,8 @@ function var0_0.SetOnceAction(arg0_45, arg1_45, arg2_45, arg3_45, arg4_45)
 			arg3_45()
 		end
 	end)
+
+	arg0_45.lockLayer = true
 end
 
 function var0_0.SetMainAction(arg0_48, arg1_48, arg2_48)
