@@ -19,7 +19,10 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.timelimitTag = findTF(arg0_1.tr, "bg/timelimit")
 	arg0_1.timelimitTimeTxt = findTF(arg0_1.tr, "bg/timelimit_time")
 	arg0_1.shareFlag = findTF(arg0_1.tr, "bg/share")
+	arg0_1.changeSkinTF = findTF(arg0_1.tr, "bg/change_skin")
+	arg0_1.changeSkinToggle = ChangeSkinToggle.New(findTF(arg0_1.changeSkinTF, "ToggleUI"))
 
+	setActive(arg0_1.changeSkinTF, false)
 	setActive(arg0_1.timelimitTag, false)
 	setActive(arg0_1.timelimitTimeTxt, false)
 
@@ -85,30 +88,39 @@ function var0_0.updateSkin(arg0_2, arg1_2, arg2_2)
 end
 
 function var0_0.updateData(arg0_6, arg1_6, arg2_6, arg3_6)
-	if arg0_6.ship ~= arg1_6 or arg0_6.skin ~= arg2_6 or arg0_6.own ~= arg3_6 then
+	if arg0_6.ship ~= arg1_6 or arg0_6.skin ~= arg2_6 or arg0_6.own ~= arg3_6 or arg0_6.skinId ~= arg2_6.id then
 		arg0_6.ship = arg1_6
 		arg0_6.skin = arg2_6
 		arg0_6.own = arg3_6
+		arg0_6.skinId = arg0_6.skin.id
+
+		local var0_6 = ShipGroup.GetChangeSkinData(arg0_6.skin.id)
+
+		setActive(arg0_6.changeSkinTF, var0_6 and true or false)
+
+		if var0_6 then
+			arg0_6.changeSkinToggle:setShipData(arg0_6.skin.id, arg0_6.ship.id)
+		end
 
 		setActive(arg0_6.nameBar, true)
 		setActive(arg0_6.effectBar, false)
 		setText(arg0_6.name, shortenString(arg2_6.name, 7))
 
-		local var0_6 = arg0_6.skin.id == arg0_6.ship:getConfig("skin_id")
-		local var1_6 = ShipSkin.IsShareSkin(arg0_6.ship, arg0_6.skin.id)
-		local var2_6 = false
+		local var1_6 = arg0_6.skin.id == arg0_6.ship:getConfig("skin_id")
+		local var2_6 = ShipSkin.IsShareSkin(arg0_6.ship, arg0_6.skin.id)
+		local var3_6 = false
 
-		if var1_6 then
-			var2_6 = ShipSkin.CanUseShareSkinForShip(arg0_6.ship, arg0_6.skin.id)
+		if var2_6 then
+			var3_6 = ShipSkin.CanUseShareSkinForShip(arg0_6.ship, arg0_6.skin.id)
 		end
 
-		setActive(arg0_6.shareFlag, var1_6)
+		setActive(arg0_6.shareFlag, var2_6)
 
-		local var3_6 = not var0_6 and not arg3_6 or var1_6 and not var2_6
+		local var4_6 = not var1_6 and not arg3_6 or var2_6 and not var3_6
 
-		setActive(arg0_6.bgMark, var3_6)
+		setActive(arg0_6.bgMark, var4_6)
 
-		if var3_6 then
+		if var4_6 then
 			setActive(arg0_6.picNotBuy, false)
 			setActive(arg0_6.picActivity, false)
 			setActive(arg0_6.picPropose, false)
@@ -128,7 +140,7 @@ function var0_0.updateData(arg0_6, arg1_6, arg2_6, arg3_6)
 				return var0_8.commodity_type == DROP_TYPE_SKIN and var0_8.commodity_id == arg0_6.skin.id
 			end)) then
 				setActive(arg0_6.picActivity, true)
-			elseif var1_6 and not var2_6 then
+			elseif var2_6 and not var3_6 then
 				setActive(arg0_6.picShare, true)
 			else
 				setActive(arg0_6.picActivity, true)
@@ -146,19 +158,19 @@ function var0_0.updateData(arg0_6, arg1_6, arg2_6, arg3_6)
 		end)
 		arg0_6:flushSkin()
 
-		local var4_6 = getProxy(ShipSkinProxy):getSkinById(arg0_6.skin.id)
-		local var5_6 = var4_6 and var4_6:isExpireType() and not var4_6:isExpired()
+		local var5_6 = getProxy(ShipSkinProxy):getSkinById(arg0_6.skin.id)
+		local var6_6 = var5_6 and var5_6:isExpireType() and not var5_6:isExpired()
 
-		setActive(arg0_6.timelimitTag, var5_6)
-		setActive(arg0_6.timelimitTimeTxt, var5_6)
+		setActive(arg0_6.timelimitTag, var6_6)
+		setActive(arg0_6.timelimitTimeTxt, var6_6)
 
 		if arg0_6.skinTimer then
 			arg0_6.skinTimer:Stop()
 		end
 
-		if var5_6 then
+		if var6_6 then
 			arg0_6.skinTimer = Timer.New(function()
-				local var0_10 = skinTimeStamp(var4_6:getRemainTime())
+				local var0_10 = skinTimeStamp(var5_6:getRemainTime())
 
 				setText(arg0_6.timelimitTimeTxt:Find("Text"), var0_10)
 			end, 1, -1)

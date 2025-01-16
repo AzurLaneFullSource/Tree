@@ -21,6 +21,7 @@ var0_0.OPEN_KINK_BUTTON_LAYER = "NewMainMediator.OPEN_KINK_BUTTON_LAYER"
 var0_0.OPEN_Compensate = "NewMainMediator:OPEN_Compensate"
 var0_0.ON_DROP = "NewMainMediator:ON_DROP"
 var0_0.ON_AWRADS = "NewMainMediator:ON_AWRADS"
+var0_0.CHANGE_SKIN_TOGGLE = "NewMainMediator:CHANGE_SKIN_TOGGLE"
 
 function var0_0.register(arg0_1)
 	arg0_1:bind(var0_0.GO_SINGLE_ACTIVITY, function(arg0_2, arg1_2)
@@ -146,10 +147,16 @@ function var0_0.register(arg0_1)
 	arg0_1:bind(var0_0.OPEN_KINK_BUTTON_LAYER, function(arg0_19, arg1_19)
 		arg0_1:addSubLayers(arg1_19)
 	end)
+	arg0_1:bind(var0_0.CHANGE_SKIN_TOGGLE, function(arg0_20, arg1_20)
+		local var0_20 = ShipGroup.GetChangeSkinGroupId(arg1_20.skin_id)
+		local var1_20 = ShipGroup.GetChangeSkinNextId(arg1_20.ship_id)
+
+		arg0_1:sendNotification(GAME.CHANGE_SKIN_AB, arg1_20)
+	end)
 end
 
-function var0_0.listNotificationInterests(arg0_20)
-	local var0_20 = {
+function var0_0.listNotificationInterests(arg0_21)
+	local var0_21 = {
 		GAME.REMOVE_LAYERS,
 		GAME.GET_GUILD_INFO_DONE,
 		GAME.GET_GUILD_CHAT_LIST_DONE,
@@ -166,6 +173,10 @@ function var0_0.listNotificationInterests(arg0_20)
 		GAME.LOAD_LAYERS,
 		GAME.GUILD_GET_USER_INFO_DONE,
 		GAME.GET_PUBLIC_GUILD_USER_DATA_DONE,
+		GAME.PLAY_CHANGE_SKIN_OUT,
+		GAME.PLAY_CHANGE_SKIN_IN,
+		GAME.PLAY_CHANGE_SKIN_FINISH,
+		GAME.CHANGE_SKIN_EXCHANGE,
 		NotificationProxy.FRIEND_REQUEST_ADDED,
 		NotificationProxy.FRIEND_REQUEST_REMOVED,
 		FriendProxy.FRIEND_NEW_MSG,
@@ -186,64 +197,79 @@ function var0_0.listNotificationInterests(arg0_20)
 		NewMainMediator.ON_AWRADS
 	}
 
-	for iter0_20, iter1_20 in pairs(pg.redDotHelper:GetNotifyType()) do
-		for iter2_20, iter3_20 in pairs(iter1_20) do
-			if not table.contains(var0_20, iter3_20) then
-				table.insert(var0_20, iter3_20)
+	for iter0_21, iter1_21 in pairs(pg.redDotHelper:GetNotifyType()) do
+		for iter2_21, iter3_21 in pairs(iter1_21) do
+			if not table.contains(var0_21, iter3_21) then
+				table.insert(var0_21, iter3_21)
 			end
 		end
 	end
 
-	return var0_20
+	return var0_21
 end
 
-function var0_0.handleNotification(arg0_21, arg1_21)
-	local var0_21 = arg1_21:getName()
-	local var1_21 = arg1_21:getBody()
+function var0_0.handleNotification(arg0_22, arg1_22)
+	local var0_22 = arg1_22:getName()
+	local var1_22 = arg1_22:getBody()
 
-	pg.redDotHelper:Notify(var0_21)
+	pg.redDotHelper:Notify(var0_22)
 
-	if var0_21 == GAME.ON_OPEN_INS_LAYER then
-		arg0_21.viewComponent:emit(var0_0.SKIP_INS)
-	elseif var0_21 == NotificationProxy.FRIEND_REQUEST_ADDED or var0_21 == NotificationProxy.FRIEND_REQUEST_REMOVED or var0_21 == FriendProxy.FRIEND_NEW_MSG or var0_21 == FriendProxy.FRIEND_UPDATED or var0_21 == ChatProxy.NEW_MSG or var0_21 == GuildProxy.NEW_MSG_ADDED or var0_21 == GAME.GET_GUILD_INFO_DONE or var0_21 == GAME.GET_GUILD_CHAT_LIST_DONE then
-		arg0_21.viewComponent:emit(GAME.ANY_CHAT_MSG_UPDATE)
-	elseif var0_21 == GAME.BEGIN_STAGE_DONE then
-		arg0_21:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_21)
-	elseif var0_21 == ChapterProxy.CHAPTER_TIMESUP then
+	if var0_22 == GAME.ON_OPEN_INS_LAYER then
+		arg0_22.viewComponent:emit(var0_0.SKIP_INS)
+	elseif var0_22 == NotificationProxy.FRIEND_REQUEST_ADDED or var0_22 == NotificationProxy.FRIEND_REQUEST_REMOVED or var0_22 == FriendProxy.FRIEND_NEW_MSG or var0_22 == FriendProxy.FRIEND_UPDATED or var0_22 == ChatProxy.NEW_MSG or var0_22 == GuildProxy.NEW_MSG_ADDED or var0_22 == GAME.GET_GUILD_INFO_DONE or var0_22 == GAME.GET_GUILD_CHAT_LIST_DONE then
+		arg0_22.viewComponent:emit(GAME.ANY_CHAT_MSG_UPDATE)
+	elseif var0_22 == GAME.BEGIN_STAGE_DONE then
+		arg0_22:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_22)
+	elseif var0_22 == ChapterProxy.CHAPTER_TIMESUP then
 		MainChapterTimeUpSequence.New():Execute()
-	elseif var0_21 == TechnologyConst.UPDATE_REDPOINT_ON_TOP then
+	elseif var0_22 == TechnologyConst.UPDATE_REDPOINT_ON_TOP then
 		MainTechnologySequence.New():Execute(function()
 			return
 		end)
-	elseif var0_21 == GAME.FETCH_NPC_SHIP_DONE then
-		arg0_21.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_21.items, var1_21.callback)
-	elseif var0_21 == var0_0.REFRESH_VIEW then
-		arg0_21.viewComponent:setVisible(false)
-		arg0_21.viewComponent:setVisible(true)
-	elseif var0_21 == GAME.CONFIRM_GET_SHIP then
-		arg0_21:addSubLayers(Context.New({
+	elseif var0_22 == GAME.FETCH_NPC_SHIP_DONE then
+		arg0_22.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_22.items, var1_22.callback)
+	elseif var0_22 == var0_0.REFRESH_VIEW then
+		arg0_22.viewComponent:setVisible(false)
+		arg0_22.viewComponent:setVisible(true)
+	elseif var0_22 == GAME.CONFIRM_GET_SHIP then
+		arg0_22:addSubLayers(Context.New({
 			mediator = BuildShipRemindMediator,
 			viewComponent = BuildShipRemindLayer,
 			data = {
-				ships = var1_21.ships
+				ships = var1_22.ships
 			},
-			onRemoved = var1_21.callback
+			onRemoved = var1_22.callback
 		}))
-	elseif var0_21 == GAME.CHANGE_LIVINGAREA_COVER_DONE then
-		arg0_21.viewComponent:emit(NewMainScene.UPDATE_COVER)
-	elseif var0_21 == GAME.ACT_INSTAGRAM_CHAT_DONE and var1_21.operation == ActivityConst.INSTAGRAM_CHAT_ACTIVATE_TOPIC then
-		local var2_21 = arg0_21.viewComponent:GetFlagShip()
+	elseif var0_22 == GAME.CHANGE_LIVINGAREA_COVER_DONE then
+		arg0_22.viewComponent:emit(NewMainScene.UPDATE_COVER)
+	elseif var0_22 == GAME.ACT_INSTAGRAM_CHAT_DONE and var1_22.operation == ActivityConst.INSTAGRAM_CHAT_ACTIVATE_TOPIC then
+		local var2_22 = arg0_22.viewComponent:GetFlagShip()
 
-		if arg0_21.viewComponent.theme then
-			arg0_21.viewComponent.theme:Refresh(var2_21)
+		if arg0_22.viewComponent.theme then
+			arg0_22.viewComponent.theme:Refresh(var2_22)
 		end
-	elseif var0_21 == NewMainMediator.ON_DROP then
-		arg0_21.viewComponent:emit(BaseUI.ON_DROP, var1_21)
-	elseif var0_21 == NewMainMediator.ON_AWRADS then
-		arg0_21.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_21.items, var1_21.callback)
+	elseif var0_22 == NewMainMediator.ON_DROP then
+		arg0_22.viewComponent:emit(BaseUI.ON_DROP, var1_22)
+	elseif var0_22 == NewMainMediator.ON_AWRADS then
+		arg0_22.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_22.items, var1_22.callback)
+	elseif var0_22 == GAME.PLAY_CHANGE_SKIN_OUT then
+		arg0_22.viewComponent:FoldPanels(true)
+		arg0_22.viewComponent:SetEffectPanelVisible(false)
+		arg0_22.viewComponent:PlayChangeSkinActionOut(var1_22)
+	elseif var0_22 == GAME.PLAY_CHANGE_SKIN_IN then
+		arg0_22.viewComponent:PlayChangeSkinActionIn(var1_22)
+	elseif var0_22 == GAME.PLAY_CHANGE_SKIN_FINISH then
+		arg0_22.viewComponent:SetEffectPanelVisible(true)
+		arg0_22.viewComponent:FoldPanels(false)
+	elseif var0_22 == GAME.CHANGE_SKIN_EXCHANGE then
+		local var3_22 = arg0_22.viewComponent:GetFlagShip()
+
+		if arg0_22.viewComponent then
+			arg0_22.viewComponent:UpdateFlagShip(var3_22, var1_22)
+		end
 	end
 
-	arg0_21.viewComponent:emit(var0_21, var1_21)
+	arg0_22.viewComponent:emit(var0_22, var1_22)
 end
 
 return var0_0

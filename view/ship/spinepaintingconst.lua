@@ -56,5 +56,18 @@ var0_0.ship_drag_datas = {
 		}
 	}
 }
+var0_0.ship_action_extend = {
+	jianwu_3 = {
+		"login",
+		"touch_body",
+		"touch_head",
+		"touch_special"
+	}
+}
+var0_0.ship_effect_action_able = {
+	jianwu_3 = {
+		"login"
+	}
+}
 
 return var0_0

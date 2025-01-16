@@ -473,7 +473,7 @@ pg.emoji_template = {
 		item_desc = "Sticker: Go to Sleep. This sticker can be found in the default tab of the chat stickers menu.",
 		item_name = "Sticker: Go to Sleep",
 		id = 37,
-		index = 77,
+		index = 83,
 		icon = "",
 		pic = "37",
 		desc = "<color=#92fc63>[Go to Sleep]</color>",
@@ -486,7 +486,7 @@ pg.emoji_template = {
 		item_desc = "Sticker: Asleep. This sticker can be found in the default tab of the chat stickers menu.",
 		item_name = "Sticker: Asleep",
 		id = 38,
-		index = 78,
+		index = 84,
 		icon = "",
 		pic = "38",
 		desc = "<color=#92fc63>[Asleep]</color>",
@@ -494,7 +494,33 @@ pg.emoji_template = {
 			1
 		}
 	},
-	[41] = {
+	{
+		achieve = 1,
+		item_desc = "聊天表情：准备万全，可以在表情选项的「默认」选项卡中找到并发出此表情。",
+		item_name = "聊天表情：准备万全",
+		id = 39,
+		index = 85,
+		icon = "",
+		pic = "39",
+		desc = "<color=#92fc63>[准备万全]</color>",
+		type = {
+			1
+		}
+	},
+	{
+		achieve = 1,
+		item_desc = "聊天表情：再等等，可以在表情选项的「默认」选项卡中找到并发出此表情。",
+		item_name = "聊天表情：再等等",
+		id = 40,
+		index = 86,
+		icon = "",
+		pic = "40",
+		desc = "<color=#92fc63>[再等等]</color>",
+		type = {
+			1
+		}
+	},
+	{
 		achieve = 0,
 		item_desc = "",
 		item_name = "",
@@ -507,7 +533,7 @@ pg.emoji_template = {
 			2
 		}
 	},
-	[42] = {
+	{
 		achieve = 0,
 		item_desc = "",
 		item_name = "",
@@ -520,7 +546,7 @@ pg.emoji_template = {
 			2
 		}
 	},
-	[43] = {
+	{
 		achieve = 0,
 		item_desc = "",
 		item_name = "",
@@ -533,7 +559,7 @@ pg.emoji_template = {
 			2
 		}
 	},
-	[44] = {
+	{
 		achieve = 0,
 		item_desc = "",
 		item_name = "",
@@ -546,7 +572,7 @@ pg.emoji_template = {
 			2
 		}
 	},
-	[45] = {
+	{
 		achieve = 0,
 		item_desc = "",
 		item_name = "",
@@ -559,7 +585,7 @@ pg.emoji_template = {
 			2
 		}
 	},
-	[46] = {
+	{
 		achieve = 0,
 		item_desc = "",
 		item_name = "",
@@ -572,7 +598,7 @@ pg.emoji_template = {
 			2
 		}
 	},
-	[47] = {
+	{
 		achieve = 0,
 		item_desc = "",
 		item_name = "",
@@ -585,7 +611,7 @@ pg.emoji_template = {
 			2
 		}
 	},
-	[48] = {
+	{
 		achieve = 0,
 		item_desc = "",
 		item_name = "",
@@ -598,7 +624,7 @@ pg.emoji_template = {
 			2
 		}
 	},
-	[49] = {
+	{
 		achieve = 0,
 		item_desc = "",
 		item_name = "",
@@ -611,7 +637,7 @@ pg.emoji_template = {
 			2
 		}
 	},
-	[50] = {
+	{
 		achieve = 0,
 		item_desc = "",
 		item_name = "",
@@ -624,7 +650,7 @@ pg.emoji_template = {
 			2
 		}
 	},
-	[51] = {
+	{
 		achieve = 0,
 		item_desc = "",
 		item_name = "",
@@ -637,7 +663,7 @@ pg.emoji_template = {
 			2
 		}
 	},
-	[52] = {
+	{
 		achieve = 0,
 		item_desc = "",
 		item_name = "",
@@ -2223,6 +2249,19 @@ pg.emoji_template = {
 			2
 		}
 	},
+	[1041] = {
+		achieve = 1,
+		item_desc = "聊天表情：惊，可以在表情选项的「默认」选项卡中找到并发出此表情。",
+		item_name = "聊天表情：惊",
+		id = 1041,
+		index = 87,
+		icon = "",
+		pic = "1041",
+		desc = "<color=#92fc63>[惊]</color>",
+		type = {
+			1
+		}
+	},
 	all = {
 		1,
 		2,
@@ -2262,6 +2301,8 @@ pg.emoji_template = {
 		36,
 		37,
 		38,
+		39,
+		40,
 		41,
 		42,
 		43,
@@ -2394,6 +2435,7 @@ pg.emoji_template = {
 		372,
 		373,
 		374,
-		375
+		375,
+		1041
 	}
 }

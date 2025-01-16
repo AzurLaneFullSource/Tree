@@ -45,10 +45,11 @@ function var0_0.OnInit(arg0_2)
 		arg0_2:UpdateView()
 		setActive(arg0_2.showExpireCheckBox, arg0_2.showExpire)
 	end)
+	triggerButton(arg0_2.showExpireBtn)
 
 	arg0_2.rectAnchorX = arg0_2:findTF("GroupRect").anchoredPosition.x
 
-	arg0_2:UpdateView()
+	arg0_2:UpdateView(arg0_2.showExpireBtn)
 end
 
 function var0_0.onInitAlbumGroup(arg0_7, arg1_7)

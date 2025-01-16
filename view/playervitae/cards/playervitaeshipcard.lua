@@ -157,7 +157,7 @@ function var0_0.OnUpdate(arg0_15, arg1_15, arg2_15, arg3_15, arg4_15, arg5_15)
 	local var0_15 = arg3_15[arg2_15]
 	local var1_15 = getProxy(BayProxy):RawGetShipById(var0_15)
 
-	if not arg0_15.displayShip or arg0_15.displayShip.skinId ~= var1_15.skinId or arg0_15.displayShip.id ~= var1_15.id then
+	if not arg0_15.displayShip or arg0_15.displayShipSkinId ~= var1_15.skinId or arg0_15.displayShip.id ~= var1_15.id then
 		arg0_15:UpdateShip(var1_15)
 	end
 
@@ -181,6 +181,7 @@ end
 
 function var0_0.UpdateShip(arg0_17, arg1_17)
 	arg0_17.displayShip = arg1_17
+	arg0_17.displayShipSkinId = arg1_17:getSkinId()
 	arg0_17.lvTxt.text = "Lv." .. arg1_17.level
 
 	local var0_17 = arg1_17:getMaxStar()

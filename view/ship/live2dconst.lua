@@ -66,33 +66,91 @@ function var0_0.GetDragActionIndexName(arg0_11, arg1_11, arg2_11)
 	return "l2d_drag_" .. tostring(arg0_11) .. "_" .. tostring(arg1_11) .. "_" .. tostring(arg2_11) .. "_action_index"
 end
 
-function var0_0.ClearLive2dSave(arg0_12, arg1_12)
-	if not arg0_12 or not arg1_12 then
+var0_0.RELATION_DRAG_X = "drag_x"
+var0_0.RELATION_DRAG_Y = "drag_y"
+var0_0.RELATION_DRAG_NAME_LIST = {
+	var0_0.RELATION_DRAG_X,
+	var0_0.RELATION_DRAG_Y
+}
+
+function var0_0.SetRelationData(arg0_12, arg1_12, arg2_12, arg3_12)
+	local var0_12 = var0_0.GetRelationName()
+	local var1_12 = string.gsub(var0_12, "%$1", arg0_12)
+	local var2_12 = string.gsub(var1_12, "%$2", arg1_12)
+	local var3_12 = string.gsub(var2_12, "%$3", arg2_12)
+
+	for iter0_12 = 1, #var0_0.RELATION_DRAG_NAME_LIST do
+		local var4_12 = var0_0.RELATION_DRAG_NAME_LIST[iter0_12]
+		local var5_12 = var3_12 .. var4_12
+
+		PlayerPrefs.SetFloat(var5_12, arg3_12[var4_12])
+	end
+end
+
+function var0_0.GetRelationData(arg0_13, arg1_13, arg2_13)
+	local var0_13 = var0_0.GetRelationName()
+	local var1_13 = string.gsub(var0_13, "%$1", arg0_13)
+	local var2_13 = string.gsub(var1_13, "%$2", arg1_13)
+	local var3_13 = string.gsub(var2_13, "%$3", arg2_13)
+	local var4_13 = {}
+
+	for iter0_13 = 1, #var0_0.RELATION_DRAG_NAME_LIST do
+		local var5_13 = var0_0.RELATION_DRAG_NAME_LIST[iter0_13]
+		local var6_13 = var3_13 .. var5_13
+
+		var4_13[var5_13] = PlayerPrefs.GetFloat(var6_13) ~= nil and PlayerPrefs.GetFloat(var6_13) or 0
+	end
+
+	return var4_13
+end
+
+function var0_0.GetRelationName(arg0_14, arg1_14, arg2_14)
+	return "l2d_relation_$1_$2_$3_"
+end
+
+function var0_0.ClearLive2dSave(arg0_15, arg1_15)
+	if not arg0_15 or not arg1_15 then
 		warning("skinId 或 shipId 不能为空")
 
 		return
 	end
 
-	if not pg.ship_skin_template[arg0_12] then
-		warning("找不到skinId" .. tostring(arg0_12) .. " 清理失败")
+	if not pg.ship_skin_template[arg0_15] then
+		warning("找不到skinId" .. tostring(arg0_15) .. " 清理失败")
 
 		return
 	end
 
-	local var0_12 = pg.ship_skin_template[arg0_12].ship_l2d_id
+	local var0_15 = pg.ship_skin_template[arg0_15].ship_l2d_id
 
-	if var0_12 and #var0_12 > 0 then
-		Live2dConst.SaveL2dIdle(arg0_12, arg1_12, 0)
-		Live2dConst.SaveL2dAction(arg0_12, arg1_12, 0)
+	if var0_15 and #var0_15 > 0 then
+		Live2dConst.SaveL2dIdle(arg0_15, arg1_15, 0)
+		Live2dConst.SaveL2dAction(arg0_15, arg1_15, 0)
 
-		for iter0_12, iter1_12 in ipairs(var0_12) do
-			if pg.ship_l2d[iter1_12] then
-				local var1_12 = pg.ship_l2d[iter1_12].start_value or 0
+		for iter0_15, iter1_15 in ipairs(var0_15) do
+			local var1_15 = pg.ship_l2d[iter1_15]
 
-				Live2dConst.SaveDragData(iter1_12, arg0_12, arg1_12, var1_12)
-				Live2dConst.SetDragActionIndex(iter1_12, arg0_12, arg1_12, 1)
+			if var1_15 then
+				local var2_15 = var1_15.start_value or 0
+
+				Live2dConst.SaveDragData(iter1_15, arg0_15, arg1_15, var2_15)
+				Live2dConst.SetDragActionIndex(iter1_15, arg0_15, arg1_15, 1)
+
+				if var1_15.relation_parameter and var1_15.relation_parameter.list then
+					local var3_15 = var0_0.GetRelationName()
+					local var4_15 = string.gsub(var3_15, "%$1", iter1_15)
+					local var5_15 = string.gsub(var4_15, "%$2", arg0_15)
+					local var6_15 = string.gsub(var5_15, "%$3", arg1_15)
+
+					for iter2_15 = 1, #var0_0.RELATION_DRAG_NAME_LIST do
+						local var7_15 = var0_0.RELATION_DRAG_NAME_LIST[iter2_15]
+						local var8_15 = var6_15 .. var7_15
+
+						PlayerPrefs.SetFloat(var8_15, 0)
+					end
+				end
 			else
-				warning(tostring(iter1_12) .. "不存在，不清理该dragid")
+				warning(tostring(iter1_15) .. "不存在，不清理该dragid")
 			end
 		end
 	end

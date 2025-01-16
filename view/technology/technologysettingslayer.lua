@@ -6,6 +6,7 @@ var0_0.TEC_PAGE_CATCHUP_TARGET2 = 3
 var0_0.TEC_PAGE_CATCHUP_TARGET3 = 4
 var0_0.TEC_PAGE_CATCHUP_TARGET4 = 5
 var0_0.TEC_PAGE_CATCHUP_TARGET5 = 6
+var0_0.TEC_PAGE_CATCHUP_TARGET6 = 7
 var0_0.TEC_PAGE_CATCHUP_ACT = 99
 var0_0.PANEL_INTO_TIME = 0.15
 var0_0.SELECT_TENDENCY_FADE_TIME = 0.3
@@ -15,9 +16,10 @@ var0_0.CATCHUP_CLASSES = {
 	import("view.technology.TargetCatchup.TargetCatchupPanel2"),
 	import("view.technology.TargetCatchup.TargetCatchupPanel3"),
 	import("view.technology.TargetCatchup.TargetCatchupPanel4"),
-	import("view.technology.TargetCatchup.TargetCatchupPanel5")
+	import("view.technology.TargetCatchup.TargetCatchupPanel5"),
+	import("view.technology.TargetCatchup.TargetCatchupPanel6")
 }
-var0_0.CATCHUP_VERSION = 5
+var0_0.CATCHUP_VERSION = 6
 
 function var0_0.getUIName(arg0_1)
 	return "TechnologySettingsUI"

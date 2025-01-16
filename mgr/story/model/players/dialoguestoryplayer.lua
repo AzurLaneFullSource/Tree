@@ -1408,6 +1408,8 @@ function var0_0.UpdateContent(arg0_102, arg1_102, arg2_102)
 		arg2_102()
 	end
 
+	setActive(arg0_102.dialoguePanel, not arg1_102:ShouldHideDialogue())
+
 	for iter0_102, iter1_102 in ipairs(arg0_102.tags) do
 		setActive(iter1_102, iter0_102 == arg1_102:GetTag())
 	end

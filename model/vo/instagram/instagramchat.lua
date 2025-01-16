@@ -120,7 +120,7 @@ function var0_0.SortTopicList(arg0_10)
 end
 
 function var0_0.SetBackgrounds(arg0_12)
-	arg0_12.skins = arg0_12:getDisplayableSkinList()
+	arg0_12.skins = ShipGroup.GetDisplayableSkinList(arg0_12.characterId)
 
 	local var0_12 = getProxy(CollectionProxy):getGroups()[arg0_12.characterId]
 
@@ -148,28 +148,6 @@ end
 
 function var0_0.GetPaintingId(arg0_14)
 	return ShipGroup.getDefaultShipConfig(arg0_14.characterId).skin_id
-end
-
-function var0_0.getDisplayableSkinList(arg0_15)
-	local var0_15 = {}
-
-	local function var1_15(arg0_16)
-		return arg0_16.skin_type == ShipSkin.SKIN_TYPE_OLD or arg0_16.skin_type == ShipSkin.SKIN_TYPE_NOT_HAVE_HIDE and not getProxy(ShipSkinProxy):hasSkin(arg0_16.id)
-	end
-
-	local function var2_15(arg0_17)
-		return getProxy(ShipSkinProxy):InShowTime(arg0_17)
-	end
-
-	for iter0_15, iter1_15 in ipairs(pg.ship_skin_template.all) do
-		local var3_15 = pg.ship_skin_template[iter1_15]
-
-		if var3_15.ship_group == arg0_15.characterId and var3_15.no_showing ~= "1" and not var1_15(var3_15) and var2_15(var3_15.id) then
-			table.insert(var0_15, var3_15)
-		end
-	end
-
-	return var0_15
 end
 
 return var0_0

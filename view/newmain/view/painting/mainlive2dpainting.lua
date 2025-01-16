@@ -41,6 +41,12 @@ function var0_0.OnLoad(arg0_4, arg1_4)
 	arg0_4.live2dChar = Live2D.New(var0_4, function(arg0_5)
 		arg0_4:AdJustOrderInLayer(arg0_5)
 		arg1_4()
+
+		if arg0_4._initTriggerAction then
+			arg0_4:TriggerEvent(arg0_4._initTriggerAction)
+
+			arg0_4._initTriggerAction = nil
+		end
 	end)
 	arg0_4.shipGroup = getProxy(CollectionProxy):getShipGroup(arg0_4.ship.groupId)
 
@@ -245,59 +251,81 @@ function var0_0.RemoveSeTimer(arg0_20)
 	end
 end
 
-function var0_0.OnDisplayWorld(arg0_21)
+function var0_0.PlayChangeSkinActionIn(arg0_21, arg1_21)
+	if arg0_21.live2dChar:IsLoaded() then
+		arg0_21:TriggerEvent("event_login")
+	else
+		arg0_21._initTriggerAction = "event_login"
+	end
+
+	if arg1_21 and arg1_21.callback then
+		arg1_21.callback({
+			flag = true
+		})
+	end
+end
+
+function var0_0.PlayChangeSkinActionOut(arg0_22, arg1_22)
+	if arg1_22 and arg1_22.callback then
+		arg1_22.callback({
+			flag = true
+		})
+	end
+end
+
+function var0_0.OnDisplayWorld(arg0_23)
 	return
 end
 
-function var0_0.OnPuase(arg0_22)
-	arg0_22:RemoveScreenChangeTimer()
-	arg0_22:ResetContainerPosition()
+function var0_0.OnPuase(arg0_24)
+	arg0_24:RemoveScreenChangeTimer()
+	arg0_24:ResetContainerPosition()
 
-	arg0_22.actionWaiting = false
+	arg0_24.actionWaiting = false
 
-	arg0_22.live2dChar:SetVisible(false)
+	arg0_24.live2dChar:SetVisible(false)
 end
 
-function var0_0.OnUpdateShip(arg0_23, arg1_23)
-	if arg1_23 then
-		arg0_23.live2dChar:updateShip(arg1_23)
+function var0_0.OnUpdateShip(arg0_25, arg1_25)
+	if arg1_25 then
+		arg0_25.live2dChar:updateShip(arg1_25)
 	end
 end
 
-function var0_0.SetContainerVisible(arg0_24, arg1_24)
-	setActive(arg0_24.live2dContainer, arg1_24)
+function var0_0.SetContainerVisible(arg0_26, arg1_26)
+	setActive(arg0_26.live2dContainer, arg1_26)
 end
 
-function var0_0.OnResume(arg0_25)
-	arg0_25:SetContainerVisible(true)
-	arg0_25:AddScreenChangeTimer()
-	arg0_25:UpdateContainerPosition()
-	arg0_25.live2dChar:SetVisible(true)
-	arg0_25.live2dChar:UpdateAtomSource()
+function var0_0.OnResume(arg0_27)
+	arg0_27:SetContainerVisible(true)
+	arg0_27:AddScreenChangeTimer()
+	arg0_27:UpdateContainerPosition()
+	arg0_27.live2dChar:SetVisible(true)
+	arg0_27.live2dChar:UpdateAtomSource()
 end
 
-function var0_0.Dispose(arg0_26)
-	var0_0.super.Dispose(arg0_26)
-	arg0_26:RemoveSeTimer()
-	arg0_26:RemoveScreenChangeTimer()
+function var0_0.Dispose(arg0_28)
+	var0_0.super.Dispose(arg0_28)
+	arg0_28:RemoveSeTimer()
+	arg0_28:RemoveScreenChangeTimer()
 
-	if arg0_26.eventTrigger then
-		ClearEventTrigger(arg0_26.eventTrigger)
+	if arg0_28.eventTrigger then
+		ClearEventTrigger(arg0_28.eventTrigger)
 	end
 end
 
-function var0_0.GetOffset(arg0_27)
-	return arg0_27.live2dContainer.localPosition.x
+function var0_0.GetOffset(arg0_29)
+	return arg0_29.live2dContainer.localPosition.x
 end
 
-function var0_0.GetCenterPos(arg0_28)
-	return arg0_28.live2dContainer.position
+function var0_0.GetCenterPos(arg0_30)
+	return arg0_30.live2dContainer.position
 end
 
-function var0_0.IslimitYPos(arg0_29)
-	local var0_29 = arg0_29.ship:getPainting()
+function var0_0.IslimitYPos(arg0_31)
+	local var0_31 = arg0_31.ship:getPainting()
 
-	return var0_29 == "biaoqiang" or var0_29 == "z23" or var0_29 == "lafei" or var0_29 == "lingbo" or var0_29 == "mingshi" or var0_29 == "xuefeng"
+	return var0_31 == "biaoqiang" or var0_31 == "z23" or var0_31 == "lafei" or var0_31 == "lingbo" or var0_31 == "mingshi" or var0_31 == "xuefeng"
 end
 
 return var0_0

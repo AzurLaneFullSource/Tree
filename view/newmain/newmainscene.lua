@@ -237,117 +237,146 @@ function var0_0.SwitchToNextShip(arg0_30)
 	end
 end
 
-function var0_0.OnVisible(arg0_31)
-	local var0_31 = arg0_31.themes[arg0_31:GetThemeStyle()]
+function var0_0.UpdateFlagShip(arg0_31, arg1_31, arg2_31)
+	if arg0_31.paintingView:IsLoading() or arg0_31.bgView:IsLoading() or not arg0_31.theme then
+		return
+	end
 
-	if not (not arg0_31.theme or var0_31 ~= arg0_31.theme) then
-		arg0_31:Refresh()
-	else
-		arg0_31:UnloadTheme()
-		arg0_31:SetUp(true)
+	local var0_31 = arg2_31.callback
+
+	arg0_31.bgView:Refresh(arg1_31)
+	arg0_31:PlayBgm(arg1_31)
+	arg0_31.paintingView:SetOnceLoadedCall(var0_31)
+	arg0_31.paintingView:Refresh(arg1_31, arg0_31.theme:GetPaintingOffset(arg1_31))
+	arg0_31.effectView:Refresh(arg1_31)
+	arg0_31.theme:OnSwitchToNextShip(arg1_31)
+end
+
+function var0_0.PlayChangeSkinActionOut(arg0_32, arg1_32)
+	arg0_32.paintingView:PlayChangeSkinActionOut(arg1_32)
+end
+
+function var0_0.PlayChangeSkinActionIn(arg0_33, arg1_33)
+	arg0_33.paintingView:PlayChangeSkinActionIn(arg1_33)
+end
+
+function var0_0.SetEffectPanelVisible(arg0_34, arg1_34)
+	if arg0_34.theme then
+		arg0_34.theme:SetEffectPanelVisible(arg1_34)
 	end
 end
 
-function var0_0.Refresh(arg0_32)
-	arg0_32.mainCG.blocksRaycasts = false
+function var0_0.OnVisible(arg0_35)
+	local var0_35 = arg0_35.themes[arg0_35:GetThemeStyle()]
+
+	if not (not arg0_35.theme or var0_35 ~= arg0_35.theme) then
+		arg0_35:Refresh()
+	else
+		arg0_35:UnloadTheme()
+		arg0_35:SetUp(true)
+	end
+end
+
+function var0_0.Refresh(arg0_36)
+	arg0_36.mainCG.blocksRaycasts = false
 
 	seriesAsync({
-		function(arg0_33)
-			arg0_32.awakeSequenceView:Execute(arg0_33)
+		function(arg0_37)
+			arg0_36.awakeSequenceView:Execute(arg0_37)
 		end,
-		function(arg0_34)
-			arg0_32.isInit = true
+		function(arg0_38)
+			arg0_36.isInit = true
 
-			arg0_32:ShowOrHideResUI(arg0_32.theme:ApplyDefaultResUI())
+			arg0_36:ShowOrHideResUI(arg0_36.theme:ApplyDefaultResUI())
 
-			local var0_34 = arg0_32:GetFlagShip()
+			local var0_38 = arg0_36:GetFlagShip()
 
-			arg0_32.bgView:Refresh(var0_34)
-			arg0_32.paintingView:Refresh(var0_34, arg0_32.theme:GetPaintingOffset(var0_34))
-			arg0_32.effectView:Refresh(var0_34)
-			arg0_32.theme:Refresh(var0_34)
-			arg0_32:PlayBgm(var0_34)
+			arg0_36.bgView:Refresh(var0_38)
+			arg0_36.paintingView:Refresh(var0_38, arg0_36.theme:GetPaintingOffset(var0_38))
+			arg0_36.effectView:Refresh(var0_38)
+			arg0_36.theme:Refresh(var0_38)
+			arg0_36:PlayBgm(var0_38)
 			pg.redDotHelper:Refresh()
-			arg0_34()
+			arg0_38()
 		end,
-		function(arg0_35)
-			arg0_32.sequenceView:Execute(arg0_35)
+		function(arg0_39)
+			arg0_36.sequenceView:Execute(arg0_39)
 		end
 	}, function()
-		arg0_32:SetUpSilentChecker()
-		arg0_32:emit(var0_0.ON_ENTER_DONE)
+		arg0_36:SetUpSilentChecker()
+		arg0_36:emit(var0_0.ON_ENTER_DONE)
 
-		arg0_32.mainCG.blocksRaycasts = true
+		arg0_36.mainCG.blocksRaycasts = true
 	end)
 end
 
-function var0_0.OnDisVisible(arg0_37)
-	arg0_37:FoldPanels(false)
-	arg0_37.paintingView:Disable()
-	arg0_37.bgView:Disable()
-	arg0_37.sequenceView:Disable()
-	arg0_37.awakeSequenceView:Disable()
-	arg0_37.theme:Disable()
+function var0_0.OnDisVisible(arg0_41)
+	arg0_41:FoldPanels(false)
+	arg0_41.paintingView:Disable()
+	arg0_41.bgView:Disable()
+	arg0_41.sequenceView:Disable()
+	arg0_41.awakeSequenceView:Disable()
+	arg0_41.theme:Disable()
 	pg.redDotHelper:Disable()
-	arg0_37.buffDescPage:Disable()
-	arg0_37.silentChecker:Disable()
-	arg0_37.calibrationPage:Destroy()
-	arg0_37.calibrationPage:Reset()
-	arg0_37.skinExperienceDisplayPage:Destroy()
-	arg0_37.skinExperienceDisplayPage:Reset()
-	arg0_37.liveAreaPage:Destroy()
-	arg0_37.liveAreaPage:Reset()
+	arg0_41.buffDescPage:Disable()
+	arg0_41.silentChecker:Disable()
+	arg0_41.calibrationPage:Destroy()
+	arg0_41.calibrationPage:Reset()
+	arg0_41.skinExperienceDisplayPage:Destroy()
+	arg0_41.skinExperienceDisplayPage:Reset()
+	arg0_41.liveAreaPage:Destroy()
+	arg0_41.liveAreaPage:Reset()
 
-	arg0_37.isInit = false
+	arg0_41.isInit = false
 
-	arg0_37:RevertSleepTimeout()
+	arg0_41:RevertSleepTimeout()
 end
 
-function var0_0.UnloadTheme(arg0_38)
-	if arg0_38.theme then
-		arg0_38.theme:Destroy()
-		arg0_38.theme:Reset()
+function var0_0.UnloadTheme(arg0_42)
+	if arg0_42.theme then
+		arg0_42.theme:Destroy()
+		arg0_42.theme:Reset()
 
-		arg0_38.theme = nil
+		arg0_42.theme = nil
 	end
 end
 
-function var0_0.ExitCalibrationView(arg0_39)
-	if arg0_39.calibrationPage and arg0_39.calibrationPage:GetLoaded() and arg0_39.calibrationPage:isShowing() then
-		triggerButton(arg0_39.calibrationPage.backBtn)
+function var0_0.ExitCalibrationView(arg0_43)
+	if arg0_43.calibrationPage and arg0_43.calibrationPage:GetLoaded() and arg0_43.calibrationPage:isShowing() then
+		triggerButton(arg0_43.calibrationPage.backBtn)
 	end
 end
 
-function var0_0.ExitSilentView(arg0_40)
-	if arg0_40.silentView and arg0_40.silentView:GetLoaded() and arg0_40.silentView:isShowing() then
-		arg0_40:FoldPanels(false)
-		arg0_40.silentView:Destroy()
-		arg0_40.silentView:Reset()
+function var0_0.ExitSilentView(arg0_44)
+	if arg0_44.silentView and arg0_44.silentView:GetLoaded() and arg0_44.silentView:isShowing() then
+		arg0_44:FoldPanels(false)
+		arg0_44.silentView:Destroy()
+		arg0_44.silentView:Reset()
 	end
 end
 
-function var0_0.GameLogout(arg0_41)
-	arg0_41:ExitCalibrationView()
-	arg0_41:ExitSilentView()
+function var0_0.GameLogout(arg0_45)
+	arg0_45:ExitCalibrationView()
+	arg0_45:ExitSilentView()
 end
 
-function var0_0.onBackPressed(arg0_42)
+function var0_0.onBackPressed(arg0_46)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	if arg0_42.silentView and arg0_42.silentView:GetLoaded() and arg0_42.silentView:isShowing() then
-		arg0_42:ExitSilentView()
+	if arg0_46.silentView and arg0_46.silentView:GetLoaded() and arg0_46.silentView:isShowing() then
+		arg0_46:ExitSilentView()
 
 		return
 	end
 
-	if arg0_42.liveAreaPage and arg0_42.liveAreaPage:GetLoaded() and arg0_42.liveAreaPage:isShowing() then
-		arg0_42.liveAreaPage:Hide()
+	if arg0_46.liveAreaPage and arg0_46.liveAreaPage:GetLoaded() and arg0_46.liveAreaPage:isShowing() then
+		arg0_46.liveAreaPage:Hide()
 
 		return
 	end
 
-	if arg0_42.calibrationPage and arg0_42.calibrationPage:GetLoaded() and arg0_42.calibrationPage:isShowing() then
-		triggerButton(arg0_42.calibrationPage._parentTf)
+	if arg0_46.calibrationPage and arg0_46.calibrationPage:GetLoaded() and arg0_46.calibrationPage:isShowing() then
+		triggerButton(arg0_46.calibrationPage._parentTf)
 
 		return
 	end
@@ -356,61 +385,61 @@ function var0_0.onBackPressed(arg0_42)
 	pg.PushNotificationMgr.GetInstance():PushAll()
 end
 
-function var0_0.willExit(arg0_43)
-	arg0_43.bgView:Dispose()
+function var0_0.willExit(arg0_47)
+	arg0_47.bgView:Dispose()
 
-	arg0_43.bgView = nil
+	arg0_47.bgView = nil
 
-	if arg0_43.calibrationPage then
-		arg0_43.calibrationPage:Destroy()
+	if arg0_47.calibrationPage then
+		arg0_47.calibrationPage:Destroy()
 
-		arg0_43.calibrationPage = nil
+		arg0_47.calibrationPage = nil
 	end
 
-	if arg0_43.silentView then
-		arg0_43.silentView:Destroy()
+	if arg0_47.silentView then
+		arg0_47.silentView:Destroy()
 
-		arg0_43.silentView = nil
+		arg0_47.silentView = nil
 	end
 
-	arg0_43.paintingView:Dispose()
+	arg0_47.paintingView:Dispose()
 
-	arg0_43.paintingView = nil
+	arg0_47.paintingView = nil
 
-	arg0_43.liveAreaPage:Destroy()
+	arg0_47.liveAreaPage:Destroy()
 
-	arg0_43.liveAreaPage = nil
+	arg0_47.liveAreaPage = nil
 
-	arg0_43.sequenceView:Dispose()
+	arg0_47.sequenceView:Dispose()
 
-	arg0_43.sequenceView = nil
+	arg0_47.sequenceView = nil
 
-	arg0_43.awakeSequenceView:Dispose()
+	arg0_47.awakeSequenceView:Dispose()
 
-	arg0_43.awakeSequenceView = nil
+	arg0_47.awakeSequenceView = nil
 
-	arg0_43.effectView:Dispose()
+	arg0_47.effectView:Dispose()
 
-	arg0_43.effectView = nil
+	arg0_47.effectView = nil
 
 	pg.redDotHelper:Dispose()
 
 	pg.redDotHelper = nil
 
-	arg0_43.buffDescPage:Destroy()
+	arg0_47.buffDescPage:Destroy()
 
-	arg0_43.buffDescPage = nil
+	arg0_47.buffDescPage = nil
 
-	arg0_43.silentChecker:Dispose()
+	arg0_47.silentChecker:Dispose()
 
-	arg0_43.silentChecker = nil
+	arg0_47.silentChecker = nil
 
-	arg0_43.skinExperienceDisplayPage:Destroy()
+	arg0_47.skinExperienceDisplayPage:Destroy()
 
-	arg0_43.skinExperienceDisplayPage = nil
+	arg0_47.skinExperienceDisplayPage = nil
 
-	arg0_43:UnloadTheme()
-	arg0_43:RevertSleepTimeout()
+	arg0_47:UnloadTheme()
+	arg0_47:RevertSleepTimeout()
 end
 
 return var0_0

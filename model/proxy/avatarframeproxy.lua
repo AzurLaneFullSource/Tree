@@ -5,166 +5,167 @@ var0_0.FRAME_TASK_TIME_OUT = "frame task time out"
 
 function var0_0.register(arg0_1)
 	arg0_1.avatarFrames = {}
-	arg0_1.actTasks = {}
 end
 
-function var0_0.initListData(arg0_2, arg1_2, arg2_2, arg3_2)
+function var0_0.clearData(arg0_2)
 	arg0_2.avatarFrames = {}
+end
 
-	local var0_2 = {}
-	local var1_2 = {}
+function var0_0.initListData(arg0_3, arg1_3, arg2_3, arg3_3)
+	local var0_3 = {}
+	local var1_3 = {}
 
-	for iter0_2, iter1_2 in ipairs(arg2_2) do
-		local var2_2 = arg0_2:createAvatarFrameTask(arg1_2, iter1_2)
+	for iter0_3, iter1_3 in ipairs(arg2_3) do
+		local var2_3 = arg0_3:createAvatarFrameTask(arg1_3, iter1_3)
 
-		table.insert(var0_2, var2_2)
+		table.insert(var0_3, var2_3)
 	end
 
-	if arg3_2 and #arg3_2 then
-		for iter2_2, iter3_2 in ipairs(arg3_2) do
-			local var3_2 = arg0_2:createAvatarFrameTask(arg1_2, {
-				id = iter3_2
+	if arg3_3 and #arg3_3 then
+		for iter2_3, iter3_3 in ipairs(arg3_3) do
+			local var3_3 = arg0_3:createAvatarFrameTask(arg1_3, {
+				id = iter3_3
 			})
 
-			var3_2:setTaskFinish()
-			table.insert(var1_2, var3_2)
+			var3_3:setTaskFinish()
+			table.insert(var1_3, var3_3)
 		end
 	end
 
-	table.insert(arg0_2.avatarFrames, {
-		actId = arg1_2,
-		tasks = var0_2,
+	table.insert(arg0_3.avatarFrames, {
+		actId = arg1_3,
+		tasks = var0_3,
 		finish_tasks = finishTask
 	})
 end
 
-function var0_0.update(arg0_3, arg1_3, arg2_3)
-	for iter0_3, iter1_3 in ipairs(arg2_3) do
-		arg0_3:updateAvatarTask(arg1_3, iter1_3)
-	end
-
-	arg0_3.facade:sendNotification(var0_0.FRAME_TASK_UPDATED)
-end
-
-function var0_0.addData(arg0_4, arg1_4, arg2_4)
+function var0_0.update(arg0_4, arg1_4, arg2_4)
 	for iter0_4, iter1_4 in ipairs(arg2_4) do
-		local var0_4 = arg0_4:createAvatarFrameTask(arg1_4, iter1_4)
-
-		arg0_4:addAvatarTask(arg1_4, var0_4)
+		arg0_4:updateAvatarTask(arg1_4, iter1_4)
 	end
 
 	arg0_4.facade:sendNotification(var0_0.FRAME_TASK_UPDATED)
 end
 
-function var0_0.removeData(arg0_5, arg1_5, arg2_5)
+function var0_0.addData(arg0_5, arg1_5, arg2_5)
 	for iter0_5, iter1_5 in ipairs(arg2_5) do
-		arg0_5:removeAvatarTask(arg1_5, iter1_5.id)
+		local var0_5 = arg0_5:createAvatarFrameTask(arg1_5, iter1_5)
+
+		arg0_5:addAvatarTask(arg1_5, var0_5)
 	end
 
 	arg0_5.facade:sendNotification(var0_0.FRAME_TASK_UPDATED)
 end
 
-function var0_0.createAvatarFrameTask(arg0_6, arg1_6, arg2_6)
-	local var0_6 = pg.activity_template[arg1_6].config_id
-
-	return (AvatarFrameTask.New(arg1_6, var0_6, arg2_6))
-end
-
-function var0_0.updateAvatarTask(arg0_7, arg1_7, arg2_7)
-	for iter0_7 = 1, #arg0_7.avatarFrames do
-		if arg0_7.avatarFrames[iter0_7].actId == arg1_7 then
-			local var0_7 = arg0_7.avatarFrames[iter0_7]
-
-			for iter1_7 = #var0_7.tasks, 1, -1 do
-				if var0_7.tasks[iter1_7].id == arg2_7.id then
-					var0_7.tasks[iter1_7]:updateProgress(arg2_7.progress)
-				end
-			end
-		end
+function var0_0.removeData(arg0_6, arg1_6, arg2_6)
+	for iter0_6, iter1_6 in ipairs(arg2_6) do
+		arg0_6:removeAvatarTask(arg1_6, iter1_6.id)
 	end
+
+	arg0_6.facade:sendNotification(var0_0.FRAME_TASK_UPDATED)
 end
 
-function var0_0.addAvatarTask(arg0_8, arg1_8, arg2_8)
+function var0_0.createAvatarFrameTask(arg0_7, arg1_7, arg2_7)
+	local var0_7 = pg.activity_template[arg1_7].config_id
+
+	return (AvatarFrameTask.New(arg1_7, var0_7, arg2_7))
+end
+
+function var0_0.updateAvatarTask(arg0_8, arg1_8, arg2_8)
 	for iter0_8 = 1, #arg0_8.avatarFrames do
 		if arg0_8.avatarFrames[iter0_8].actId == arg1_8 then
 			local var0_8 = arg0_8.avatarFrames[iter0_8]
 
 			for iter1_8 = #var0_8.tasks, 1, -1 do
 				if var0_8.tasks[iter1_8].id == arg2_8.id then
-					table.remove(var0_8.tasks, iter1_8)
+					var0_8.tasks[iter1_8]:updateProgress(arg2_8.progress)
 				end
 			end
-
-			table.insert(var0_8.tasks, arg2_8)
 		end
 	end
 end
 
-function var0_0.removeAvatarTask(arg0_9, arg1_9, arg2_9)
+function var0_0.addAvatarTask(arg0_9, arg1_9, arg2_9)
 	for iter0_9 = 1, #arg0_9.avatarFrames do
 		if arg0_9.avatarFrames[iter0_9].actId == arg1_9 then
 			local var0_9 = arg0_9.avatarFrames[iter0_9]
 
 			for iter1_9 = #var0_9.tasks, 1, -1 do
-				if var0_9.tasks[iter1_9].id == arg2_9 then
+				if var0_9.tasks[iter1_9].id == arg2_9.id then
 					table.remove(var0_9.tasks, iter1_9)
+				end
+			end
+
+			table.insert(var0_9.tasks, arg2_9)
+		end
+	end
+end
+
+function var0_0.removeAvatarTask(arg0_10, arg1_10, arg2_10)
+	for iter0_10 = 1, #arg0_10.avatarFrames do
+		if arg0_10.avatarFrames[iter0_10].actId == arg1_10 then
+			local var0_10 = arg0_10.avatarFrames[iter0_10]
+
+			for iter1_10 = #var0_10.tasks, 1, -1 do
+				if var0_10.tasks[iter1_10].id == arg2_10 then
+					table.remove(var0_10.tasks, iter1_10)
 				end
 			end
 		end
 	end
 end
 
-function var0_0.getAvatarFrameById(arg0_10, arg1_10)
-	for iter0_10 = 1, #arg0_10.avatarFrames do
-		if arg0_10.avatarFrames[iter0_10].actId == arg1_10 then
-			return Clone(arg0_10.avatarFrames[iter0_10])
+function var0_0.getAvatarFrameById(arg0_11, arg1_11)
+	for iter0_11 = 1, #arg0_11.avatarFrames do
+		if arg0_11.avatarFrames[iter0_11].actId == arg1_11 then
+			return Clone(arg0_11.avatarFrames[iter0_11])
 		end
 	end
 
 	return nil
 end
 
-function var0_0.getAllAvatarFrame(arg0_11)
-	return Clone(arg0_11.avatarFrames)
+function var0_0.getAllAvatarFrame(arg0_12)
+	return Clone(arg0_12.avatarFrames)
 end
 
-function var0_0.getCanReceiveCount(arg0_12)
-	local var0_12 = 0
+function var0_0.getCanReceiveCount(arg0_13)
+	local var0_13 = 0
 
-	for iter0_12 = 1, #arg0_12.avatarFrames do
-		local var1_12 = arg0_12.avatarFrames[iter0_12]
+	for iter0_13 = 1, #arg0_13.avatarFrames do
+		local var1_13 = arg0_13.avatarFrames[iter0_13]
 
-		for iter1_12, iter2_12 in ipairs(var1_12.tasks) do
-			if iter2_12:getTaskStatus() == 1 then
-				var0_12 = var0_12 + 1
+		for iter1_13, iter2_13 in ipairs(var1_13.tasks) do
+			if iter2_13:getTaskStatus() == 1 then
+				var0_13 = var0_13 + 1
 			end
 		end
 	end
 
-	return var0_12
+	return var0_13
 end
 
-function var0_0.clearTimeOut(arg0_13)
-	if not arg0_13.avatarFrames or #arg0_13.avatarFrames == 0 then
+function var0_0.clearTimeOut(arg0_14)
+	if not arg0_14.avatarFrames or #arg0_14.avatarFrames == 0 then
 		return
 	end
 
-	local var0_13 = false
+	local var0_14 = false
 
-	for iter0_13 = #arg0_13.avatarFrames, 1, -1 do
-		local var1_13 = arg0_13.avatarFrames[iter0_13].actId
-		local var2_13 = getProxy(ActivityProxy):getActivityById(var1_13)
+	for iter0_14 = #arg0_14.avatarFrames, 1, -1 do
+		local var1_14 = arg0_14.avatarFrames[iter0_14].actId
+		local var2_14 = getProxy(ActivityProxy):getActivityById(var1_14)
 
-		if not var2_13 or var2_13:isEnd() then
-			table.remove(arg0_13.avatarFrames, iter0_13)
+		if not var2_14 or var2_14:isEnd() then
+			table.remove(arg0_14.avatarFrames, iter0_14)
 
-			var0_13 = true
+			var0_14 = true
 		end
 	end
 
-	if var0_13 then
-		arg0_13.facade:sendNotification(var0_0.FRAME_TASK_UPDATED)
-		arg0_13.facade:sendNotification(var0_0.FRAME_TASK_TIME_OUT)
+	if var0_14 then
+		arg0_14.facade:sendNotification(var0_0.FRAME_TASK_UPDATED)
+		arg0_14.facade:sendNotification(var0_0.FRAME_TASK_TIME_OUT)
 	end
 end
 

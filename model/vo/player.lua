@@ -341,7 +341,16 @@ function var0_0.updateResources(arg0_21, arg1_21)
 end
 
 function var0_0.getPainting(arg0_22)
-	local var0_22 = pg.ship_skin_template[arg0_22.skinId]
+	local var0_22
+
+	if ShipGroup.GetChangeSkinData(arg0_22.skinId) then
+		local var1_22 = ShipGroup.GetChangeSkinGroupId(arg0_22.skinId)
+		local var2_22 = ShipGroup.GetStoreChangeSkinId(var1_22, arg0_22.character)
+
+		var0_22 = pg.ship_skin_template[var2_22]
+	else
+		var0_22 = pg.ship_skin_template[arg0_22.skinId]
+	end
 
 	return var0_22 and var0_22.painting or "unknown"
 end

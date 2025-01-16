@@ -69,8 +69,23 @@ function var0_0.didEnter(arg0_3)
 		if arg0_7 == UIItemList.EventUpdate then
 			GetImageSpriteFromAtlasAsync("extra_page/" .. arg0_3.style .. "/i_" .. var0_7, "", arg2_7:Find("unselected/icon"))
 			GetImageSpriteFromAtlasAsync("extra_page/" .. arg0_3.style .. "/i_" .. var0_7, "", arg2_7:Find("selected/icon"))
+
+			if arg1_7 == 5 then
+				arg2_7:Find("unselected/icon"):GetComponent("Image"):SetNativeSize()
+
+				arg2_7:Find("unselected/icon"):GetComponent("Image").rectTransform.sizeDelta = Vector2(96, 228)
+				arg2_7:Find("unselected/icon"):GetComponent("Image").rectTransform.anchoredPosition = Vector2(0, -20)
+			end
+
 			onToggle(arg0_3, arg2_7, function(arg0_8)
 				if arg0_8 and arg0_3.selectTarget ~= arg1_7 then
+					if arg1_7 == 5 then
+						arg2_7:Find("unselected/icon"):GetComponent("Image"):SetNativeSize()
+
+						arg2_7:Find("unselected/icon"):GetComponent("Image").rectTransform.sizeDelta = Vector2(96, 228)
+						arg2_7:Find("unselected/icon"):GetComponent("Image").rectTransform.anchoredPosition = Vector2(0, -20)
+					end
+
 					LeanTween.cancel(arg0_3.print)
 
 					if arg0_3.rtName then

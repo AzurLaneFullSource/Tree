@@ -7,34 +7,35 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var1_1 = var0_1.shipId
 	local var2_1 = var0_1.skinId
 	local var3_1 = var0_1.hideTip
+	local var4_1 = ShipGroup.GetChangeSkinMainId(var2_1)
 
 	pg.ConnectionMgr.GetInstance():Send(12202, {
 		ship_id = var1_1,
-		skin_id = var2_1
+		skin_id = var4_1
 	}, 12203, function(arg0_2)
 		if arg0_2.result == 0 then
 			local var0_2 = getProxy(BayProxy)
 			local var1_2 = var0_2:getShipById(var1_1)
+			local var2_2 = var4_1 or 0
 
-			var1_2.skinId = var2_1 or 0
-
-			if var1_2.skinId == 0 then
-				var1_2.skinId = var1_2:getConfig("skin_id")
+			if var2_2 == 0 then
+				var2_2 = var1_2:getConfig("skin_id")
 			end
 
-			if not var1_2.skinId or var1_2.skinId == 0 then
-				var1_2.skinId = var1_2:getConfig("skin_id")
+			if not var2_2 or var2_2 == 0 then
+				var2_2 = var1_2:getConfig("skin_id")
 			end
 
+			var1_2:updateSkinId(var2_2)
 			var0_2:updateShip(var1_2)
 
-			local var2_2 = getProxy(PlayerProxy)
-			local var3_2 = var2_2:getData()
+			local var3_2 = getProxy(PlayerProxy)
+			local var4_2 = var3_2:getData()
 
-			if var3_2.character == var1_1 then
-				var3_2.skinId = var1_2.skinId
+			if var4_2.character == var1_1 then
+				var4_2.skinId = var1_2:getSkinId()
 
-				var2_2:updatePlayer(var3_2)
+				var3_2:updatePlayer(var4_2)
 			end
 
 			arg0_1:sendNotification(var0_0.SKIN_UPDATED, {

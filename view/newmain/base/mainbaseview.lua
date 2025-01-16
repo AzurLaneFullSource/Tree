@@ -29,16 +29,20 @@ function var0_0.GetDirection(arg0_6)
 	return Vector2.zero
 end
 
-function var0_0.Dispose(arg0_7)
-	arg0_7.exited = true
+function var0_0.SetVisible(arg0_7, arg1_7)
+	setActive(arg0_7._tf, arg1_7)
+end
 
-	arg0_7:disposeEvent()
+function var0_0.Dispose(arg0_8)
+	arg0_8.exited = true
 
-	if arg0_7.foldableHelper then
-		pg.DelegateInfo.Dispose(arg0_7)
-		arg0_7.foldableHelper:Dispose()
+	arg0_8:disposeEvent()
 
-		arg0_7.foldableHelper = nil
+	if arg0_8.foldableHelper then
+		pg.DelegateInfo.Dispose(arg0_8)
+		arg0_8.foldableHelper:Dispose()
+
+		arg0_8.foldableHelper = nil
 	end
 end
 

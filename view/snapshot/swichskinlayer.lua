@@ -82,80 +82,90 @@ function var0_0.Flush(arg0_15, arg1_15)
 		setActive(arg0_15.skinContainer:GetChild(iter1_15), false)
 	end
 
-	local var0_15 = arg0_15.skinContainer.childCount
+	local var0_15 = getProxy(ShipSkinProxy)
+	local var1_15 = arg0_15.skinContainer.childCount
 
 	for iter2_15, iter3_15 in ipairs(arg1_15) do
-		local var1_15 = arg0_15.skinContainer:GetChild(iter2_15 - 1)
-		local var2_15 = arg0_15.skinCardMap[var1_15]
+		local var2_15 = arg0_15.skinContainer:GetChild(iter2_15 - 1)
+		local var3_15 = arg0_15.skinCardMap[var2_15]
 
-		if not var2_15 then
-			var2_15 = ShipSkinCard.New(var1_15.gameObject)
-			arg0_15.skinCardMap[var1_15] = var2_15
+		if not var3_15 then
+			var3_15 = ShipSkinCard.New(var2_15.gameObject)
+			arg0_15.skinCardMap[var2_15] = var3_15
 		end
 
-		local var3_15 = arg0_15.shipVO:getRemouldSkinId() == iter3_15.id and arg0_15.shipVO:isRemoulded()
-		local var4_15 = arg0_15.shipVO:proposeSkinOwned(iter3_15) or table.contains(arg0_15.skinList, iter3_15.id) or var3_15 or iter3_15.skin_type == ShipSkin.SKIN_TYPE_OLD
+		local var4_15 = arg0_15.shipVO:getRemouldSkinId() == iter3_15.id and arg0_15.shipVO:isRemoulded()
+		local var5_15 = arg0_15.shipVO:proposeSkinOwned(iter3_15) or table.contains(arg0_15.skinList, iter3_15.id) or var4_15 or iter3_15.skin_type == ShipSkin.SKIN_TYPE_OLD or var0_15:hasSkin(iter3_15.id)
 
-		var2_15:updateData(arg0_15.shipVO, iter3_15, var4_15)
-		var2_15:updateUsing(arg0_15.shipVO.skinId == iter3_15.id)
-		removeOnButton(var1_15)
+		var3_15:updateData(arg0_15.shipVO, iter3_15, var5_15)
 
-		local var5_15 = arg0_15.shipVO:getRemouldSkinId() == iter3_15.id and arg0_15.shipVO:isRemoulded()
-		local var6_15 = (arg0_15.shipVO:proposeSkinOwned(iter3_15) or table.contains(arg0_15.skinList, iter3_15.id) or var5_15) and 1 or 0
-		local var7_15 = iter3_15.shop_id > 0 and pg.shop_template[iter3_15.shop_id] or nil
-		local var8_15 = var7_15 and not pg.TimeMgr.GetInstance():inTime(var7_15.time)
-		local var9_15 = iter3_15.id == arg0_15.shipVO.skinId
-		local var10_15 = iter3_15.id == arg0_15.shipVO:getConfig("skin_id") or var6_15 >= 1 or iter3_15.skin_type == ShipSkin.SKIN_TYPE_OLD
-		local var11_15 = getProxy(ShipSkinProxy):InForbiddenSkinListAndShow(iter3_15.id)
+		local var6_15 = arg0_15.shipVO:useSkin(iter3_15.id)
 
-		onToggle(arg0_15, var2_15.hideObjToggleTF, function(arg0_16)
-			PlayerPrefs.SetInt("paint_hide_other_obj_" .. var2_15.paintingName, arg0_16 and 1 or 0)
-			var2_15:flushSkin()
+		var3_15:updateUsing(var6_15)
+		removeOnButton(var2_15)
+
+		local var7_15 = arg0_15.shipVO:getRemouldSkinId() == iter3_15.id and arg0_15.shipVO:isRemoulded()
+		local var8_15 = (arg0_15.shipVO:proposeSkinOwned(iter3_15) or table.contains(arg0_15.skinList, iter3_15.id) or var7_15) and 1 or 0
+		local var9_15 = iter3_15.shop_id > 0 and pg.shop_template[iter3_15.shop_id] or nil
+		local var10_15 = var9_15 and not pg.TimeMgr.GetInstance():inTime(var9_15.time)
+		local var11_15 = iter3_15.id == arg0_15.shipVO.skinId
+		local var12_15 = iter3_15.id == arg0_15.shipVO:getConfig("skin_id") or var8_15 >= 1 or iter3_15.skin_type == ShipSkin.SKIN_TYPE_OLD or var0_15:hasSkin(iter3_15.id)
+		local var13_15 = getProxy(ShipSkinProxy):InForbiddenSkinListAndShow(iter3_15.id)
+
+		onToggle(arg0_15, var3_15.hideObjToggleTF, function(arg0_16)
+			PlayerPrefs.SetInt("paint_hide_other_obj_" .. var3_15.paintingName, arg0_16 and 1 or 0)
+			var3_15:flushSkin()
 			arg0_15:emit(SwichSkinMediator.UPDATE_SKINCONFIG, arg0_15.shipVO.skinId)
 		end, SFX_PANEL)
-		onButton(arg0_15, var1_15, function()
-			if var9_15 then
+		onButton(arg0_15, var3_15.changeSkinTF, function(arg0_17)
+			local var0_17 = ShipGroup.GetChangeSkinNextId(iter3_15.id)
+			local var1_17 = ShipGroup.GetChangeSkinGroupId(iter3_15.id)
+
+			ShipGroup.SetShipChangeSkin(arg0_15.shipVO.id, var1_17, var0_17, true)
+		end, SFX_PANEL)
+		onButton(arg0_15, var2_15, function()
+			if var11_15 then
 				arg0_15:back()
 			elseif ShipSkin.IsShareSkin(arg0_15.shipVO, iter3_15.id) and not ShipSkin.CanUseShareSkinForShip(arg0_15.shipVO, iter3_15.id) then
 				-- block empty
-			elseif var10_15 then
+			elseif var12_15 then
 				arg0_15:emit(SwichSkinMediator.CHANGE_SKIN, arg0_15.shipVO.id, iter3_15.id == arg0_15.shipVO:getConfig("skin_id") and 0 or iter3_15.id)
 				arg0_15:back()
-			elseif var7_15 then
-				if var8_15 or var11_15 then
+			elseif var9_15 then
+				if var10_15 or var13_15 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_skin_out_of_stock"))
 				else
-					local var0_17 = Goods.Create({
-						shop_id = var7_15.id
+					local var0_18 = Goods.Create({
+						shop_id = var9_15.id
 					}, Goods.TYPE_SKIN)
 
-					if var0_17:isDisCount() and var0_17:IsItemDiscountType() then
-						arg0_15:emit(SwichSkinMediator.BUY_ITEM_BY_ACT, var7_15.id, 1)
+					if var0_18:isDisCount() and var0_18:IsItemDiscountType() then
+						arg0_15:emit(SwichSkinMediator.BUY_ITEM_BY_ACT, var9_15.id, 1)
 					else
-						local var1_17 = var0_17:GetPrice()
-						local var2_17 = i18n("text_buy_fashion_tip", var1_17, iter3_15.name)
+						local var1_18 = var0_18:GetPrice()
+						local var2_18 = i18n("text_buy_fashion_tip", var1_18, iter3_15.name)
 
 						pg.MsgboxMgr.GetInstance():ShowMsgBox({
-							content = var2_17,
+							content = var2_18,
 							onYes = function()
-								arg0_15:emit(SwichSkinMediator.BUY_ITEM, var7_15.id, 1)
+								arg0_15:emit(SwichSkinMediator.BUY_ITEM, var9_15.id, 1)
 							end
 						})
 					end
 				end
 			end
 		end)
-		setActive(var1_15, true)
+		setActive(var2_15, true)
 	end
 end
 
-function var0_0.getGroupSkinList(arg0_19, arg1_19)
-	return getProxy(ShipSkinProxy):GetAllSkinForShip(arg0_19.shipVO)
+function var0_0.getGroupSkinList(arg0_20, arg1_20)
+	return getProxy(ShipSkinProxy):GetAllSkinForShip(arg0_20.shipVO)
 end
 
-function var0_0.willExit(arg0_20)
-	for iter0_20, iter1_20 in pairs(arg0_20.skinCardMap) do
-		iter1_20:clear()
+function var0_0.willExit(arg0_21)
+	for iter0_21, iter1_21 in pairs(arg0_21.skinCardMap) do
+		iter1_21:clear()
 	end
 end
 

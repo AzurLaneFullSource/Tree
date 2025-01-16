@@ -19,6 +19,10 @@ function var0_0.GetDefaultValue(arg0_3)
 end
 
 function var0_0.OnSwitch(arg0_4, arg1_4)
+	if ShipGroup.GetChangeSkinData(arg0_4.ship.skinId) and true or false then
+		getProxy(SettingsProxy):setCharacterSetting(arg0_4.ship.id, SHIP_FLAG_L2D, arg1_4)
+	end
+
 	getProxy(SettingsProxy):setCharacterSetting(arg0_4.ship.id, SHIP_FLAG_SP, arg1_4)
 
 	return true

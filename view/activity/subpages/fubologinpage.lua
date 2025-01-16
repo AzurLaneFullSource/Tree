@@ -1,0 +1,25 @@
+local var0_0 = class("FuboLoginPage", import(".TemplatePage.LoginTemplatePage"))
+
+function var0_0.OnFirstFlush(arg0_1)
+	setActive(arg0_1.item, false)
+	arg0_1.itemList:make(function(arg0_2, arg1_2, arg2_2)
+		if arg0_2 == UIItemList.EventUpdate then
+			local var0_2 = arg0_1:findTF("container/item", arg2_2)
+			local var1_2 = arg0_1.config.front_drops[arg1_2 + 1]
+			local var2_2 = Drop.Create(var1_2)
+
+			updateDrop(var0_2, var2_2)
+			onButton(arg0_1, arg2_2, function()
+				arg0_1:emit(BaseUI.ON_DROP, var2_2)
+			end, SFX_PANEL)
+
+			local var3_2 = arg0_1:findTF("got", arg2_2)
+
+			arg0_1:findTF("container", arg2_2):GetComponent(typeof(CanvasGroup)).alpha = arg1_2 < arg0_1.nday and 0.5 or 1
+
+			setActive(var3_2, arg1_2 < arg0_1.nday)
+		end
+	end)
+end
+
+return var0_0

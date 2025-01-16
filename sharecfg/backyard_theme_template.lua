@@ -4629,6 +4629,43 @@ pg.backyard_theme_template = {
 			317303
 		}
 	},
+	[118] = {
+		Cfg_1 = 5,
+		name = "Spring-Seeker in the Snow",
+		hot = 1,
+		is_view = 1,
+		id = 118,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "Let us cross the snow, seeking the plum blossoms that arrive on the spring breeze.",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "cj7themeicon",
+		deblocking = 1,
+		order = 112,
+		ids = {
+			318001,
+			318002,
+			318101,
+			318102,
+			318103,
+			318104,
+			318105,
+			318106,
+			318109,
+			318110,
+			318111,
+			318112,
+			318113,
+			318114,
+			318115,
+			318301,
+			318302,
+			318303,
+			318304
+		}
+	},
 	all = {
 		1,
 		2,
@@ -4734,6 +4771,7 @@ pg.backyard_theme_template = {
 		114,
 		115,
 		116,
-		117
+		117,
+		118
 	}
 }

@@ -164,15 +164,29 @@ function var0_0.SetRoom(arg0_9, arg1_9)
 end
 
 function var0_0.preload(arg0_10, arg1_10)
+	tolua.loadassembly("MagicaCloth")
+	tolua.loadassembly("ParadoxNotion")
+
+	for iter0_10, iter1_10 in pairs({
+		_MonoManager = "ParadoxNotion.Services.MonoManager",
+		MagicaPhysicsManager = "MagicaCloth.MagicaPhysicsManager"
+	}) do
+		if not GameObject.Find(iter0_10) then
+			local var0_10 = GameObject.New(iter0_10)
+
+			GetOrAddComponent(var0_10, typeof(iter1_10))
+		end
+	end
+
 	arg0_10.room = getProxy(ApartmentProxy):getRoom(arg0_10.contextData.roomId)
 	arg0_10.sceneInfo = string.lower(arg0_10.room:getConfig("scene_info"))
 	arg0_10.artSceneInfo = arg0_10.sceneInfo
 	arg0_10.subSceneInfo = arg0_10.sceneInfo
 
-	local var0_10, var1_10 = unpack(string.split(arg0_10.sceneInfo, "|"))
-	local var2_10 = {
+	local var1_10, var2_10 = unpack(string.split(arg0_10.sceneInfo, "|"))
+	local var3_10 = {
 		function(arg0_11)
-			SceneOpMgr.Inst:LoadSceneAsync(string.lower("dorm3d/scenesres/scenes/" .. var1_10 .. "/" .. var0_10 .. "_scene"), var0_10, LoadSceneMode.Additive, function(arg0_12, arg1_12)
+			SceneOpMgr.Inst:LoadSceneAsync(string.lower("dorm3d/scenesres/scenes/" .. var2_10 .. "/" .. var1_10 .. "_scene"), var1_10, LoadSceneMode.Additive, function(arg0_12, arg1_12)
 				SceneManager.SetActiveScene(arg0_12)
 
 				local var0_12 = getSceneRootTFDic(arg0_12).MainCamera
@@ -185,14 +199,14 @@ function var0_0.preload(arg0_10, arg1_10)
 			end)
 		end,
 		function(arg0_13)
-			SceneOpMgr.Inst:LoadSceneAsync(string.lower("dorm3d/scenesres/scenes/" .. var1_10 .. "/" .. var0_10 .. "_base_scene"), var0_10 .. "_base", LoadSceneMode.Additive, arg0_13)
+			SceneOpMgr.Inst:LoadSceneAsync(string.lower("dorm3d/scenesres/scenes/" .. var2_10 .. "/" .. var1_10 .. "_base_scene"), var1_10 .. "_base", LoadSceneMode.Additive, arg0_13)
 		end
 	}
 
-	table.insert(var2_10, function(arg0_14)
+	table.insert(var3_10, function(arg0_14)
 		arg0_10:LoadCharacter(arg0_10.contextData.groupIds, arg0_14)
 	end)
-	seriesAsync(var2_10, arg1_10)
+	seriesAsync(var3_10, arg1_10)
 end
 
 function var0_0.init(arg0_15)
@@ -446,7 +460,6 @@ function var0_0.initScene(arg0_40)
 	arg0_40.resTF = GameObject.Find("Res").transform
 
 	tolua.loadassembly("Cinemachine")
-	tolua.loadassembly("MagicaCloth")
 
 	local var3_40 = GameObject.Find("CM Cameras").transform
 

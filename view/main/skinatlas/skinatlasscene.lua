@@ -218,7 +218,7 @@ function var0_0.GetSkinList(arg0_30, arg1_30, arg2_30)
 	local var1_30 = getProxy(ShipSkinProxy):GetOwnSkins()
 
 	for iter0_30, iter1_30 in pairs(var1_30) do
-		if (arg1_30 == var0_0.PAGE_ALL or iter1_30:IsType(arg1_30)) and not iter1_30:IsDefault() and iter1_30:IsMatchKey(arg2_30) and arg0_30:MatchIndex(iter1_30) then
+		if (arg1_30 == var0_0.PAGE_ALL or iter1_30:IsType(arg1_30)) and not iter1_30:IsDefault() and iter1_30:IsMatchKey(arg2_30) and arg0_30:MatchIndex(iter1_30) and iter1_30:MatchChangeSkinMain() then
 			table.insert(var0_30, iter1_30)
 		end
 	end
@@ -256,51 +256,54 @@ function var0_0.OnInitItem(arg0_34, arg1_34)
 	onButton(arg0_34, var0_34._tf, function()
 		arg0_34.previewPage:ExecuteAction("Show", var0_34.skin, var0_34.index)
 	end, SFX_PANEL)
+	onButton(arg0_34, var0_34.changeSkinUI, function()
+		var0_34:changeSkinNext()
+	end, SFX_PANEL)
 
 	arg0_34.cards[arg1_34] = var0_34
 end
 
-function var0_0.OnUpdateItem(arg0_36, arg1_36, arg2_36)
-	if not arg0_36.cards[arg2_36] then
-		arg0_36:OnInitItem(arg2_36)
+function var0_0.OnUpdateItem(arg0_37, arg1_37, arg2_37)
+	if not arg0_37.cards[arg2_37] then
+		arg0_37:OnInitItem(arg2_37)
 	end
 
-	arg0_36.cards[arg2_36]:Update(arg0_36.displays[arg1_36 + 1], arg1_36 + 1)
+	arg0_37.cards[arg2_37]:Update(arg0_37.displays[arg1_37 + 1], arg1_37 + 1)
 end
 
-function var0_0.onBackPressed(arg0_37)
-	if arg0_37.previewPage and arg0_37.previewPage:GetLoaded() and arg0_37.previewPage:isShowing() then
-		if arg0_37.previewPage:IsShowSelectShipView() then
-			arg0_37.previewPage:CloseSelectShipView()
+function var0_0.onBackPressed(arg0_38)
+	if arg0_38.previewPage and arg0_38.previewPage:GetLoaded() and arg0_38.previewPage:isShowing() then
+		if arg0_38.previewPage:IsShowSelectShipView() then
+			arg0_38.previewPage:CloseSelectShipView()
 
 			return
 		end
 
-		arg0_37.previewPage:Hide()
+		arg0_38.previewPage:Hide()
 
 		return
 	end
 
-	var0_0.super.onBackPressed(arg0_37)
+	var0_0.super.onBackPressed(arg0_38)
 end
 
-function var0_0.willExit(arg0_38)
-	for iter0_38, iter1_38 in pairs(arg0_38.cards) do
-		iter1_38:Dispose()
+function var0_0.willExit(arg0_39)
+	for iter0_39, iter1_39 in pairs(arg0_39.cards) do
+		iter1_39:Dispose()
 	end
 
-	arg0_38.cards = nil
+	arg0_39.cards = nil
 
-	if arg0_38.rollingCircleRect then
-		arg0_38.rollingCircleRect:Dispose()
+	if arg0_39.rollingCircleRect then
+		arg0_39.rollingCircleRect:Dispose()
 
-		arg0_38.rollingCircleRect = nil
+		arg0_39.rollingCircleRect = nil
 	end
 
-	if arg0_38.previewPage then
-		arg0_38.previewPage:Destroy()
+	if arg0_39.previewPage then
+		arg0_39.previewPage:Destroy()
 
-		arg0_38.previewPage = nil
+		arg0_39.previewPage = nil
 	end
 end
 

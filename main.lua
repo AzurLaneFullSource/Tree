@@ -338,6 +338,9 @@ local function var1_0(arg0_12)
 		end,
 		function(arg0_42)
 			pg.GMTMgr.GetInstance():Init(arg0_42)
+		end,
+		function(arg0_43)
+			pg.ChangeSkinMgr.GetInstance():Init(arg0_43)
 		end
 	}, arg0_12)
 end
@@ -347,24 +350,24 @@ local var2_0 = os.clock()
 seriesAsync({
 	var0_0,
 	var1_0
-}, function(arg0_43)
+}, function(arg0_44)
 	pg.SdkMgr.GetInstance():QueryWithProduct()
 	print("loading cost: " .. os.clock() - var2_0)
 	VersionMgr.Inst:DestroyUI()
 
-	local var0_43 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
+	local var0_44 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
 
-	if not IsNil(var0_43) then
-		Object.Destroy(var0_43)
+	if not IsNil(var0_44) then
+		Object.Destroy(var0_44)
 	end
 
 	Screen.sleepTimeout = SleepTimeout.SystemSetting
 
 	pg.UIMgr.GetInstance():displayLoadingBG(true)
 
-	if arg0_43 then
-		pg.UIMgr.GetInstance():Loading(arg0_43)
-		error(arg0_43)
+	if arg0_44 then
+		pg.UIMgr.GetInstance():Loading(arg0_44)
+		error(arg0_44)
 
 		return
 	end

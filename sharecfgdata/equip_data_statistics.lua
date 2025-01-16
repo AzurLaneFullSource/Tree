@@ -18514,7 +18514,7 @@ _G.pg.base.equip_data_statistics[3791] = {
 _G.pg.base.equip_data_statistics[3800] = {
 	ammo = 10,
 	attribute_1 = "durability",
-	descrip = "No description",
+	descrip = "I know 'tis not the snow, for I can smell its fragrance.",
 	icon = "3800",
 	id = 3800,
 	name = "Plum-Petal Poetry",
@@ -122812,6 +122812,49 @@ _G.pg.base.equip_data_statistics[74032] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[74033] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 74033,
+	name = "全弹发射-朱雀III",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		74033,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
 _G.pg.base.equip_data_statistics[74041] = {
 	ammo = 10,
 	descrip = "Barrage",
@@ -123267,6 +123310,59 @@ _G.pg.base.equip_data_statistics[74152] = {
 	name = "全弹发射-济安II",
 	weapon_id = {
 		74152,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[74161] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 74161,
+	name = "全弹发射-海容级I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		74161,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[74162] = {
+	base = 74161,
+	id = 74162,
+	name = "全弹发射-海容级II",
+	weapon_id = {
+		74162,
 	},
 	hidden_skill_id = {},
 }
@@ -131383,6 +131479,59 @@ _G.pg.base.equip_data_statistics[80412] = {
 	name = "专属弹幕-杜伊斯堡II",
 	weapon_id = {
 		61712,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[80421] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 80421,
+	name = "专属弹幕-建武I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170671,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80422] = {
+	base = 80421,
+	id = 80422,
+	name = "专属弹幕-建武II",
+	weapon_id = {
+		170672,
 	},
 	hidden_skill_id = {},
 }
@@ -159147,6 +159296,120 @@ _G.pg.base.equip_data_statistics[150591] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[150600] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "Next to the words, \"The Great Adventure Where We Celebrate the Port Fashion Show\", you can see traces of certain other words that have been erased: \"Where We Topple Chien Wu and Take Back the Treasure.\"",
+	icon = "150600",
+	id = 150600,
+	name = "Fu Po's Battleplan",
+	nationality = 5,
+	rarity = 4,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "200",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		60810,
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"PRAN",
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150601] = {
+	base = 150600,
+	id = 150601,
+	value_1 = "230",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150602] = {
+	base = 150600,
+	id = 150602,
+	value_1 = "260",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150603] = {
+	base = 150600,
+	id = 150603,
+	value_1 = "290",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150604] = {
+	base = 150600,
+	id = 150604,
+	value_1 = "320",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150605] = {
+	base = 150600,
+	id = 150605,
+	value_1 = "350",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150606] = {
+	base = 150600,
+	id = 150606,
+	value_1 = "380",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150607] = {
+	base = 150600,
+	id = 150607,
+	value_1 = "410",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150608] = {
+	base = 150600,
+	id = 150608,
+	value_1 = "440",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150609] = {
+	base = 150600,
+	id = 150609,
+	value_1 = "470",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150610] = {
+	base = 150600,
+	id = 150610,
+	value_1 = "500",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150611] = {
+	anti_siren = 100,
+	base = 150600,
+	id = 150611,
+	value_1 = "530",
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[170001] = {
 	ammo = 10,
 	descrip = "Barrage",
@@ -160300,6 +160563,112 @@ _G.pg.base.equip_data_statistics[170652] = {
 	name = "专属弹幕-z52II",
 	weapon_id = {
 		170652,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[170681] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 170681,
+	name = "全弹发射-伏波I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170681,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[170682] = {
+	base = 170681,
+	id = 170682,
+	name = "全弹发射-伏波II",
+	weapon_id = {
+		170682,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[170691] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 170691,
+	name = "全弹发射-长风I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170691,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[170692] = {
+	base = 170691,
+	id = 170692,
+	name = "全弹发射-长风II",
+	weapon_id = {
+		170692,
 	},
 	hidden_skill_id = {},
 }
