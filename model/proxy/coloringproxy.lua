@@ -50,7 +50,7 @@ function var0_0.netUpdateData(arg0_2, arg1_2)
 
 		var2_5:setDrops(var3_5)
 
-		if var1_5 > 0 and #var3_5 > 0 then
+		if tobool(var0_2[var0_5]) then
 			var2_5:setState(ColorGroup.StateAchieved)
 		elseif var0_5 < arg1_2.id or var2_5:isAllFill() then
 			var2_5:setState(ColorGroup.StateFinish)
