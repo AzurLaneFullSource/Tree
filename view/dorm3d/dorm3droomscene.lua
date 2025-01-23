@@ -1586,8 +1586,6 @@ function var0_0.OnTriggerIK(arg0_196, arg1_196)
 	arg0_196.blockIK = true
 
 	arg0_196:TouchModeAction(var0_196, unpack(var3_196))(function()
-		arg0_196.enableIKTip = true
-
 		arg0_196:ResetIKTipTimer()
 
 		arg0_196.blockIK = nil
@@ -1639,8 +1637,6 @@ function var0_0.OnTouchCharacterBody(arg0_198, arg1_198)
 			arg0_198.blockIK = true
 
 			arg0_198:TouchModeAction(var0_198, unpack(var3_198))(function()
-				arg0_198.enableIKTip = true
-
 				arg0_198:ResetIKTipTimer()
 
 				arg0_198.blockIK = nil

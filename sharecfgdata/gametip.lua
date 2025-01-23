@@ -27328,7 +27328,7 @@ _G.pg.base.gametip.child2_shop_benefit_sure = {
 }
 
 _G.pg.base.gametip.child2_shop_benefit_sure2 = {
-	tip = "目前已持有此状态，继续购买不会产生效果，是否继续？",
+	tip = "This status is already in effect, purchasing it again won't have any additional effects. Continue?",
 }
 
 _G.pg.base.gametip.world_file_tip = {
@@ -27971,7 +27971,7 @@ _G.pg.base.gametip.dorm3d_gift_favor_max = {
 }
 
 _G.pg.base.gametip.dorm3d_gift_favor_exceed = {
-	tip = "赠送后会溢出$1点契合度，是否确定赠送",
+	tip = "After giving this gift, the $1 Intimacy Pt that surpass the max limit will be nulled. Continue?",
 }
 
 _G.pg.base.gametip.please_input_1_99 = {
@@ -28076,6 +28076,6 @@ _G.pg.base.gametip.child2_schedule_target = {
 }
 
 _G.pg.base.gametip.child2_shop_point_sure = {
-	tip = "购买后行动力将超出上限，是否继续购买",
+	tip = "With this purchase, the action points that surpass the max limit will be nulled. Continue?",
 }
 

@@ -48,7 +48,7 @@ function var0_0.InitItem(arg0_6, arg1_6, arg2_6)
 	local var1_6 = arg0_6.endingList[var0_6]
 	local var2_6 = pg.child2_ending[var1_6]
 
-	setText(arg2_6:Find("name"), var2_6.name)
+	setScrollText(arg2_6:Find("name_mask/name"), var2_6.name)
 	LoadImageSpriteAsync("neweducateicon/" .. var2_6.pic_preview, arg2_6:Find("Image"))
 	setActive(arg2_6:Find("complete"), table.contains(arg0_6.completeList, var1_6))
 	onButton(arg0_6, arg2_6, function()

@@ -14,7 +14,7 @@ return {
 			hidePaintObj = true,
 			actorName = "Navi",
 			side = 2,
-			say = "Hey, $1, look at that girl. She's just standing there with her stuffed animal. Do you think something's on her mind?",
+			say = "Hey, {tb}, look at that girl. She's just standing there with her stuffed animal. Do you think something's on her mind?",
 			bgm = "qe-ova-1",
 			typewriter = {
 				speed = 0.05,
