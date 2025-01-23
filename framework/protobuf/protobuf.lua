@@ -276,11 +276,11 @@ local function var31_0(arg0_6)
 		local var2_6 = arg0_6.message_type
 
 		return function(arg0_9)
-			local var0_9 = var2_6._concrete_class()
+			result = var2_6._concrete_class()
 
-			var0_9._SetListener(arg0_9._listener_for_children)
+			result._SetListener(arg0_9._listener_for_children)
 
-			return var0_9
+			return result
 		end
 	end
 
@@ -328,6 +328,7 @@ local function var34_0(arg0_14)
 		var0_15._is_present_in_parent = false
 		var0_15._listener = var16_0.NullMessageListener()
 		var0_15._listener_for_children = var16_0.Listener(var0_15)
+		var0_15._is_message_exist = false
 
 		return var0_0(var0_15, arg0_14)
 	end
@@ -405,9 +406,8 @@ local function var37_0(arg0_22, arg1_22)
 end
 
 local function var38_0(arg0_25, arg1_25)
-	local var0_25 = arg0_25.name:upper() .. "_FIELD_NUMBER"
-
-	arg1_25._member[var0_25] = arg0_25.number
+	constant_name = arg0_25.name:upper() .. "_FIELD_NUMBER"
+	arg1_25._member[constant_name] = arg0_25.number
 
 	if arg0_25.label == var18_0.LABEL_REPEATED then
 		var35_0(arg0_25, arg1_25)
@@ -576,18 +576,18 @@ local function var46_0(arg0_43, arg1_43)
 	end
 
 	function arg1_43._member.HasField(arg0_44, arg1_44)
-		local var0_44 = var0_43[arg1_44]
+		field = var0_43[arg1_44]
 
-		if var0_44 == nil then
+		if field == nil then
 			var3_0("Protocol message has no singular \"" .. arg1_44 .. "\" field.")
 		end
 
-		if var0_44.cpp_type == var18_0.CPPTYPE_MESSAGE then
-			local var1_44 = arg0_44._fields[var0_44]
+		if field.cpp_type == var18_0.CPPTYPE_MESSAGE then
+			value = arg0_44._fields[field]
 
-			return var1_44 ~= nil and var1_44._is_present_in_parent
+			return value ~= nil and value._is_present_in_parent
 		else
-			return arg0_44._fields[var0_44] ~= nil
+			return arg0_44._fields[field] ~= nil
 		end
 	end
 end
@@ -649,9 +649,9 @@ local function var51_0(arg0_53)
 		end
 
 		if arg1_54.cpp_type == var18_0.CPPTYPE_MESSAGE then
-			local var0_54 = arg0_54._fields[arg1_54]
+			value = arg0_54._fields[arg1_54]
 
-			return var0_54 ~= nil and var0_54._is_present_in_parent
+			return value ~= nil and value._is_present_in_parent
 		else
 			return arg0_54._fields[arg1_54]
 		end
@@ -750,6 +750,8 @@ local function var56_0(arg0_68, arg1_68)
 	local function var3_68(arg0_69, arg1_69, arg2_69, arg3_69)
 		arg1_68._member._Modified(arg0_69)
 
+		arg0_69._is_message_exist = true
+
 		local var0_69 = arg0_69._fields
 		local var1_69
 		local var2_69
@@ -845,37 +847,33 @@ local function var57_0(arg0_72, arg1_72)
 
 		for iter0_74, iter1_74 in var4_0(var0_72) do
 			if not arg1_72._member.HasField(arg0_74, iter1_74.name) then
-				var0_74[#var0_74 + 1] = iter1_74.name
+				var7_0.insert(var0_74, iter1_74.name)
 			end
 		end
-
-		local var1_74
-		local var2_74
-		local var3_74
 
 		for iter2_74, iter3_74 in arg1_72._member.ListFields(arg0_74) do
 			if iter2_74.cpp_type == var18_0.CPPTYPE_MESSAGE then
 				if iter2_74.is_extension then
-					var1_74 = io:format("(%s)", iter2_74.full_name)
+					name = var8_0.format("(%s)", iter2_74.full_name)
 				else
-					var1_74 = iter2_74.name
+					name = iter2_74.name
 				end
 
 				if iter2_74.label == var18_0.LABEL_REPEATED then
 					for iter4_74, iter5_74 in var4_0(iter3_74) do
-						local var4_74 = io:format("%s[%d].", var1_74, iter4_74)
-						local var5_74 = iter5_74:FindInitializationErrors()
+						prefix = var8_0.format("%s[%d].", name, iter4_74)
+						sub_errors = iter5_74:FindInitializationErrors()
 
-						for iter6_74, iter7_74 in var4_0(var5_74) do
-							var0_74[#var0_74 + 1] = var4_74 .. iter7_74
+						for iter6_74, iter7_74 in var4_0(sub_errors) do
+							var0_74[#var0_74 + 1] = prefix .. iter7_74
 						end
 					end
 				else
-					local var6_74 = var1_74 .. "."
-					local var7_74 = iter3_74:FindInitializationErrors()
+					prefix = name .. "."
+					sub_errors = iter3_74:FindInitializationErrors()
 
-					for iter8_74, iter9_74 in var4_0(var7_74) do
-						var0_74[#var0_74 + 1] = var6_74 .. iter9_74
+					for iter8_74, iter9_74 in var4_0(sub_errors) do
+						var0_74[#var0_74 + 1] = prefix .. iter9_74
 					end
 				end
 			end
@@ -897,14 +895,14 @@ local function var58_0(arg0_75)
 
 		for iter0_76, iter1_76 in var5_0(arg1_76._fields) do
 			if iter0_76.label == var0_75 or iter0_76.cpp_type == var1_75 then
-				local var1_76 = var0_76[iter0_76]
+				field_value = var0_76[iter0_76]
 
-				if var1_76 == nil then
-					var1_76 = iter0_76._default_constructor(arg0_76)
-					var0_76[iter0_76] = var1_76
+				if field_value == nil then
+					field_value = iter0_76._default_constructor(arg0_76)
+					var0_76[iter0_76] = field_value
 				end
 
-				var1_76:MergeFrom(iter1_76)
+				field_value:MergeFrom(iter1_76)
 			else
 				arg0_76._fields[iter0_76] = iter1_76
 			end

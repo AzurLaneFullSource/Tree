@@ -2,8 +2,10 @@ local var0_0 = string
 local var1_0 = table
 local var2_0 = ipairs
 local var3_0 = assert
-local var4_0 = require("pb")
-local var5_0 = require("wire_format")
+local var4_0 = uint64
+local var5_0 = type
+local var6_0 = require("pb")
+local var7_0 = require("wire_format")
 
 module("encoder")
 
@@ -24,27 +26,7 @@ function _VarintSize(arg0_1)
 		return 4
 	end
 
-	if arg0_1 <= 34359738367 then
-		return 5
-	end
-
-	if arg0_1 <= 4398046511103 then
-		return 6
-	end
-
-	if arg0_1 <= 562949953421311 then
-		return 7
-	end
-
-	if arg0_1 <= 7.20575940379279e+16 then
-		return 8
-	end
-
-	if arg0_1 <= 9.22337203685478e+18 then
-		return 9
-	end
-
-	return 10
+	return 5
 end
 
 function _SignedVarintSize(arg0_2)
@@ -68,136 +50,229 @@ function _SignedVarintSize(arg0_2)
 		return 4
 	end
 
-	if arg0_2 <= 34359738367 then
+	return 5
+end
+
+function _VarintSize64(arg0_3)
+	local var0_3 = 0
+	local var1_3 = 0
+
+	if var5_0(arg0_3) == "number" then
+		var1_3 = arg0_3
+	else
+		var1_3, var0_3 = var4_0.new(arg0_3):tonum2()
+	end
+
+	if var0_3 == 0 then
+		if var1_3 <= 127 then
+			return 1
+		end
+
+		if var1_3 <= 16383 then
+			return 2
+		end
+
+		if var1_3 <= 2097151 then
+			return 3
+		end
+
+		if var1_3 <= 268435455 then
+			return 4
+		end
+
 		return 5
-	end
+	else
+		if var0_3 <= 7 then
+			return 5
+		end
 
-	if arg0_2 <= 4398046511103 then
-		return 6
-	end
+		if var0_3 <= 1023 then
+			return 6
+		end
 
-	if arg0_2 <= 562949953421311 then
-		return 7
-	end
+		if var0_3 <= 131071 then
+			return 7
+		end
 
-	if arg0_2 <= 7.20575940379279e+16 then
-		return 8
-	end
+		if var0_3 <= 16777215 then
+			return 8
+		end
 
-	if arg0_2 <= 9.22337203685478e+18 then
-		return 9
-	end
+		if var0_3 <= 2147483647 then
+			return 9
+		end
 
-	return 10
+		return 10
+	end
 end
 
-function _TagSize(arg0_3)
-	return _VarintSize(var5_0.PackTag(arg0_3, 0))
+function _SignedVarintSize64(arg0_4)
+	local var0_4 = 0
+	local var1_4 = 0
+	local var2_4 = 0
+
+	if var5_0(arg0_4) == "number" then
+		var2_4 = arg0_4
+		var0_4 = arg0_4 < 0 and 1 or 0
+	else
+		var2_4, var1_4 = int64.new(arg0_4):tonum2()
+		var0_4 = var1_4 > 2147483647 and 1 or 0
+	end
+
+	if var0_4 == 1 then
+		return 10
+	end
+
+	if var1_4 == 0 then
+		if var2_4 <= 127 then
+			return 1
+		end
+
+		if var2_4 <= 16383 then
+			return 2
+		end
+
+		if var2_4 <= 2097151 then
+			return 3
+		end
+
+		if var2_4 <= 268435455 then
+			return 4
+		end
+
+		return 5
+	else
+		if var1_4 <= 7 then
+			return 5
+		end
+
+		if var1_4 <= 1023 then
+			return 6
+		end
+
+		if var1_4 <= 131071 then
+			return 7
+		end
+
+		if var1_4 <= 16777215 then
+			return 8
+		end
+
+		if var1_4 <= 2147483647 then
+			return 9
+		end
+
+		return 10
+	end
 end
 
-function _SimpleSizer(arg0_4)
-	return function(arg0_5, arg1_5, arg2_5)
-		local var0_5 = _TagSize(arg0_5)
+function _TagSize(arg0_5)
+	return _VarintSize(var7_0.PackTag(arg0_5, 0))
+end
 
-		if arg2_5 then
-			local var1_5 = _VarintSize
+function _SimpleSizer(arg0_6)
+	return function(arg0_7, arg1_7, arg2_7)
+		local var0_7 = _TagSize(arg0_7)
 
-			return function(arg0_6)
-				local var0_6 = 0
+		if arg2_7 then
+			local var1_7 = _VarintSize
 
-				for iter0_6, iter1_6 in var2_0(arg0_6) do
-					var0_6 = var0_6 + arg0_4(iter1_6)
-				end
-
-				return var0_6 + var1_5(var0_6) + var0_5
-			end
-		elseif arg1_5 then
-			return function(arg0_7)
-				local var0_7 = var0_5 * #arg0_7
-
-				for iter0_7, iter1_7 in var2_0(arg0_7) do
-					var0_7 = var0_7 + arg0_4(iter1_7)
-				end
-
-				return var0_7
-			end
-		else
 			return function(arg0_8)
-				return var0_5 + arg0_4(arg0_8)
+				local var0_8 = 0
+
+				for iter0_8, iter1_8 in var2_0(arg0_8) do
+					var0_8 = var0_8 + arg0_6(iter1_8)
+				end
+
+				return var0_8 + var1_7(var0_8) + var0_7
+			end
+		elseif arg1_7 then
+			return function(arg0_9)
+				local var0_9 = var0_7 * #arg0_9
+
+				for iter0_9, iter1_9 in var2_0(arg0_9) do
+					var0_9 = var0_9 + arg0_6(iter1_9)
+				end
+
+				return var0_9
+			end
+		else
+			return function(arg0_10)
+				return var0_7 + arg0_6(arg0_10)
 			end
 		end
 	end
 end
 
-function _ModifiedSizer(arg0_9, arg1_9)
-	return function(arg0_10, arg1_10, arg2_10)
-		local var0_10 = _TagSize(arg0_10)
+function _ModifiedSizer(arg0_11, arg1_11)
+	return function(arg0_12, arg1_12, arg2_12)
+		local var0_12 = _TagSize(arg0_12)
 
-		if arg2_10 then
-			local var1_10 = _VarintSize
+		if arg2_12 then
+			local var1_12 = _VarintSize
 
-			return function(arg0_11)
-				local var0_11 = 0
-
-				for iter0_11, iter1_11 in var2_0(arg0_11) do
-					var0_11 = var0_11 + arg0_9(arg1_9(iter1_11))
-				end
-
-				return var0_11 + var1_10(var0_11) + var0_10
-			end
-		elseif arg1_10 then
-			return function(arg0_12)
-				local var0_12 = var0_10 * #arg0_12
-
-				for iter0_12, iter1_12 in var2_0(arg0_12) do
-					var0_12 = var0_12 + arg0_9(arg1_9(iter1_12))
-				end
-
-				return var0_12
-			end
-		else
 			return function(arg0_13)
-				return var0_10 + arg0_9(arg1_9(arg0_13))
+				local var0_13 = 0
+
+				for iter0_13, iter1_13 in var2_0(arg0_13) do
+					var0_13 = var0_13 + arg0_11(arg1_11(iter1_13))
+				end
+
+				return var0_13 + var1_12(var0_13) + var0_12
+			end
+		elseif arg1_12 then
+			return function(arg0_14)
+				local var0_14 = var0_12 * #arg0_14
+
+				for iter0_14, iter1_14 in var2_0(arg0_14) do
+					var0_14 = var0_14 + arg0_11(arg1_11(iter1_14))
+				end
+
+				return var0_14
+			end
+		else
+			return function(arg0_15)
+				return var0_12 + arg0_11(arg1_11(arg0_15))
 			end
 		end
 	end
 end
 
-function _FixedSizer(arg0_14)
-	return function(arg0_15, arg1_15, arg2_15)
-		local var0_15 = _TagSize(arg0_15)
+function _FixedSizer(arg0_16)
+	return function(arg0_17, arg1_17, arg2_17)
+		local var0_17 = _TagSize(arg0_17)
 
-		if arg2_15 then
-			local var1_15 = _VarintSize
-
-			return function(arg0_16)
-				local var0_16 = #arg0_16 * arg0_14
-
-				return var0_16 + var1_15(var0_16) + var0_15
-			end
-		elseif arg1_15 then
-			local var2_15 = arg0_14 + var0_15
-
-			return function(arg0_17)
-				return #arg0_17 * var2_15
-			end
-		else
-			local var3_15 = arg0_14 + var0_15
+		if arg2_17 then
+			local var1_17 = _VarintSize
 
 			return function(arg0_18)
-				return var3_15
+				local var0_18 = #arg0_18 * arg0_16
+
+				return var0_18 + var1_17(var0_18) + var0_17
+			end
+		elseif arg1_17 then
+			local var2_17 = arg0_16 + var0_17
+
+			return function(arg0_19)
+				return #arg0_19 * var2_17
+			end
+		else
+			local var3_17 = arg0_16 + var0_17
+
+			return function(arg0_20)
+				return var3_17
 			end
 		end
 	end
 end
 
 Int32Sizer = _SimpleSizer(_SignedVarintSize)
-Int64Sizer = _SimpleSizer(var4_0.signed_varint_size)
+Int64Sizer = _SimpleSizer(_SignedVarintSize64)
 EnumSizer = Int32Sizer
 UInt32Sizer = _SimpleSizer(_VarintSize)
-UInt64Sizer = _SimpleSizer(var4_0.varint_size)
-SInt32Sizer = _ModifiedSizer(_SignedVarintSize, var5_0.ZigZagEncode32)
-SInt64Sizer = SInt32Sizer
+UInt64Sizer = _SimpleSizer(_VarintSize64)
+SInt32Sizer = _ModifiedSizer(_VarintSize, var7_0.ZigZagEncode32)
+SInt64Sizer = _ModifiedSizer(_VarintSize64, var7_0.ZigZagEncode32)
 Fixed32Sizer = _FixedSizer(4)
 SFixed32Sizer = Fixed32Sizer
 FloatSizer = Fixed32Sizer
@@ -206,357 +281,357 @@ SFixed64Sizer = Fixed64Sizer
 DoubleSizer = Fixed64Sizer
 BoolSizer = _FixedSizer(1)
 
-function StringSizer(arg0_19, arg1_19, arg2_19)
-	local var0_19 = _TagSize(arg0_19)
-	local var1_19 = _VarintSize
+function StringSizer(arg0_21, arg1_21, arg2_21)
+	local var0_21 = _TagSize(arg0_21)
+	local var1_21 = _VarintSize
 
-	var3_0(not arg2_19)
+	var3_0(not arg2_21)
 
-	if arg1_19 then
-		return function(arg0_20)
-			local var0_20 = var0_19 * #arg0_20
+	if arg1_21 then
+		return function(arg0_22)
+			local var0_22 = var0_21 * #arg0_22
 
-			for iter0_20, iter1_20 in var2_0(arg0_20) do
-				local var1_20 = #iter1_20
+			for iter0_22, iter1_22 in var2_0(arg0_22) do
+				local var1_22 = #iter1_22
 
-				var0_20 = var0_20 + var1_19(var1_20) + var1_20
+				var0_22 = var0_22 + var1_21(var1_22) + var1_22
 			end
 
-			return var0_20
+			return var0_22
 		end
 	else
-		return function(arg0_21)
-			local var0_21 = #arg0_21
-
-			return var0_19 + var1_19(var0_21) + var0_21
-		end
-	end
-end
-
-function BytesSizer(arg0_22, arg1_22, arg2_22)
-	local var0_22 = _TagSize(arg0_22)
-	local var1_22 = _VarintSize
-
-	var3_0(not arg2_22)
-
-	if arg1_22 then
 		return function(arg0_23)
-			local var0_23 = var0_22 * #arg0_23
+			local var0_23 = #arg0_23
 
-			for iter0_23, iter1_23 in var2_0(arg0_23) do
-				local var1_23 = #iter1_23
-
-				var0_23 = var0_23 + var1_22(var1_23) + var1_23
-			end
-
-			return var0_23
-		end
-	else
-		return function(arg0_24)
-			local var0_24 = #arg0_24
-
-			return var0_22 + var1_22(var0_24) + var0_24
+			return var0_21 + var1_21(var0_23) + var0_23
 		end
 	end
 end
 
-function MessageSizer(arg0_25, arg1_25, arg2_25)
-	local var0_25 = _TagSize(arg0_25)
-	local var1_25 = _VarintSize
+function BytesSizer(arg0_24, arg1_24, arg2_24)
+	local var0_24 = _TagSize(arg0_24)
+	local var1_24 = _VarintSize
 
-	var3_0(not arg2_25)
+	var3_0(not arg2_24)
 
-	if arg1_25 then
+	if arg1_24 then
+		return function(arg0_25)
+			local var0_25 = var0_24 * #arg0_25
+
+			for iter0_25, iter1_25 in var2_0(arg0_25) do
+				local var1_25 = #iter1_25
+
+				var0_25 = var0_25 + var1_24(var1_25) + var1_25
+			end
+
+			return var0_25
+		end
+	else
 		return function(arg0_26)
-			local var0_26 = var0_25 * #arg0_26
+			local var0_26 = #arg0_26
 
-			for iter0_26, iter1_26 in var2_0(arg0_26) do
-				local var1_26 = iter1_26:ByteSize()
+			return var0_24 + var1_24(var0_26) + var0_26
+		end
+	end
+end
 
-				var0_26 = var0_26 + var1_25(var1_26) + var1_26
+function MessageSizer(arg0_27, arg1_27, arg2_27)
+	local var0_27 = _TagSize(arg0_27)
+	local var1_27 = _VarintSize
+
+	var3_0(not arg2_27)
+
+	if arg1_27 then
+		return function(arg0_28)
+			local var0_28 = var0_27 * #arg0_28
+
+			for iter0_28, iter1_28 in var2_0(arg0_28) do
+				local var1_28 = iter1_28:ByteSize()
+
+				var0_28 = var0_28 + var1_27(var1_28) + var1_28
 			end
 
-			return var0_26
+			return var0_28
 		end
 	else
-		return function(arg0_27)
-			local var0_27 = arg0_27:ByteSize()
+		return function(arg0_29)
+			local var0_29 = arg0_29:ByteSize()
 
-			return var0_25 + var1_25(var0_27) + var0_27
+			return var0_27 + var1_27(var0_29) + var0_29
 		end
 	end
 end
 
-local var6_0 = var4_0.varint_encoder
-local var7_0 = var4_0.signed_varint_encoder
-local var8_0 = var4_0.varint_encoder64
-local var9_0 = var4_0.signed_varint_encoder64
+local var8_0 = var6_0.varint_encoder
+local var9_0 = var6_0.signed_varint_encoder
+local var10_0 = var6_0.varint_encoder64
+local var11_0 = var6_0.signed_varint_encoder64
 
-function _VarintBytes(arg0_28)
-	local var0_28 = {}
+function _VarintBytes(arg0_30)
+	local var0_30 = {}
 
-	local function var1_28(arg0_29)
-		var0_28[#var0_28 + 1] = arg0_29
+	local function var1_30(arg0_31)
+		var0_30[#var0_30 + 1] = arg0_31
 	end
 
-	var7_0(var1_28, arg0_28)
+	var9_0(var1_30, arg0_30)
 
-	return var1_0.concat(var0_28)
+	return var1_0.concat(var0_30)
 end
 
-function TagBytes(arg0_30, arg1_30)
-	return _VarintBytes(var5_0.PackTag(arg0_30, arg1_30))
+function TagBytes(arg0_32, arg1_32)
+	return _VarintBytes(var7_0.PackTag(arg0_32, arg1_32))
 end
 
-function _SimpleEncoder(arg0_31, arg1_31, arg2_31)
-	return function(arg0_32, arg1_32, arg2_32)
-		if arg2_32 then
-			local var0_32 = TagBytes(arg0_32, var5_0.WIRETYPE_LENGTH_DELIMITED)
-			local var1_32 = var6_0
-
-			return function(arg0_33, arg1_33)
-				arg0_33(var0_32)
-
-				local var0_33 = 0
-
-				for iter0_33, iter1_33 in var2_0(arg1_33) do
-					var0_33 = var0_33 + arg2_31(iter1_33)
-				end
-
-				var1_32(arg0_33, var0_33)
-
-				for iter2_33 in arg1_33 do
-					arg1_31(arg0_33, iter2_33)
-				end
-			end
-		elseif arg1_32 then
-			local var2_32 = TagBytes(arg0_32, arg0_31)
-
-			return function(arg0_34, arg1_34)
-				for iter0_34, iter1_34 in var2_0(arg1_34) do
-					arg0_34(var2_32)
-					arg1_31(arg0_34, iter1_34)
-				end
-			end
-		else
-			local var3_32 = TagBytes(arg0_32, arg0_31)
+function _SimpleEncoder(arg0_33, arg1_33, arg2_33)
+	return function(arg0_34, arg1_34, arg2_34)
+		if arg2_34 then
+			local var0_34 = TagBytes(arg0_34, var7_0.WIRETYPE_LENGTH_DELIMITED)
+			local var1_34 = var8_0
 
 			return function(arg0_35, arg1_35)
-				arg0_35(var3_32)
-				arg1_31(arg0_35, arg1_35)
+				arg0_35(var0_34)
+
+				local var0_35 = 0
+
+				for iter0_35, iter1_35 in var2_0(arg1_35) do
+					var0_35 = var0_35 + arg2_33(iter1_35)
+				end
+
+				var1_34(arg0_35, var0_35)
+
+				for iter2_35 in arg1_35 do
+					arg1_33(arg0_35, iter2_35)
+				end
+			end
+		elseif arg1_34 then
+			local var2_34 = TagBytes(arg0_34, arg0_33)
+
+			return function(arg0_36, arg1_36)
+				for iter0_36, iter1_36 in var2_0(arg1_36) do
+					arg0_36(var2_34)
+					arg1_33(arg0_36, iter1_36)
+				end
+			end
+		else
+			local var3_34 = TagBytes(arg0_34, arg0_33)
+
+			return function(arg0_37, arg1_37)
+				arg0_37(var3_34)
+				arg1_33(arg0_37, arg1_37)
 			end
 		end
 	end
 end
 
-function _ModifiedEncoder(arg0_36, arg1_36, arg2_36, arg3_36)
-	return function(arg0_37, arg1_37, arg2_37)
-		if arg2_37 then
-			local var0_37 = TagBytes(arg0_37, var5_0.WIRETYPE_LENGTH_DELIMITED)
-			local var1_37 = var6_0
-
-			return function(arg0_38, arg1_38)
-				arg0_38(var0_37)
-
-				local var0_38 = 0
-
-				for iter0_38, iter1_38 in var2_0(arg1_38) do
-					var0_38 = var0_38 + arg2_36(arg3_36(iter1_38))
-				end
-
-				var1_37(arg0_38, var0_38)
-
-				for iter2_38, iter3_38 in var2_0(arg1_38) do
-					arg1_36(arg0_38, arg3_36(iter3_38))
-				end
-			end
-		elseif arg1_37 then
-			local var2_37 = TagBytes(arg0_37, arg0_36)
-
-			return function(arg0_39, arg1_39)
-				for iter0_39, iter1_39 in var2_0(arg1_39) do
-					arg0_39(var2_37)
-					arg1_36(arg0_39, arg3_36(iter1_39))
-				end
-			end
-		else
-			local var3_37 = TagBytes(arg0_37, arg0_36)
+function _ModifiedEncoder(arg0_38, arg1_38, arg2_38, arg3_38)
+	return function(arg0_39, arg1_39, arg2_39)
+		if arg2_39 then
+			local var0_39 = TagBytes(arg0_39, var7_0.WIRETYPE_LENGTH_DELIMITED)
+			local var1_39 = var8_0
 
 			return function(arg0_40, arg1_40)
-				arg0_40(var3_37)
-				arg1_36(arg0_40, arg3_36(arg1_40))
-			end
-		end
-	end
-end
+				arg0_40(var0_39)
 
-function _StructPackEncoder(arg0_41, arg1_41, arg2_41)
-	return function(arg0_42, arg1_42, arg2_42)
-		local var0_42 = var4_0.struct_pack
+				local var0_40 = 0
 
-		if arg2_42 then
-			local var1_42 = TagBytes(arg0_42, var5_0.WIRETYPE_LENGTH_DELIMITED)
-			local var2_42 = var6_0
+				for iter0_40, iter1_40 in var2_0(arg1_40) do
+					var0_40 = var0_40 + arg2_38(arg3_38(iter1_40))
+				end
 
-			return function(arg0_43, arg1_43)
-				arg0_43(var1_42)
-				var2_42(arg0_43, #arg1_43 * arg1_41)
+				var1_39(arg0_40, var0_40)
 
-				for iter0_43, iter1_43 in var2_0(arg1_43) do
-					var0_42(arg0_43, arg2_41, iter1_43)
+				for iter2_40, iter3_40 in var2_0(arg1_40) do
+					arg1_38(arg0_40, arg3_38(iter3_40))
 				end
 			end
-		elseif arg1_42 then
-			local var3_42 = TagBytes(arg0_42, arg0_41)
+		elseif arg1_39 then
+			local var2_39 = TagBytes(arg0_39, arg0_38)
 
-			return function(arg0_44, arg1_44)
-				for iter0_44, iter1_44 in var2_0(arg1_44) do
-					arg0_44(var3_42)
-					var0_42(arg0_44, arg2_41, iter1_44)
+			return function(arg0_41, arg1_41)
+				for iter0_41, iter1_41 in var2_0(arg1_41) do
+					arg0_41(var2_39)
+					arg1_38(arg0_41, arg3_38(iter1_41))
 				end
 			end
 		else
-			local var4_42 = TagBytes(arg0_42, arg0_41)
+			local var3_39 = TagBytes(arg0_39, arg0_38)
+
+			return function(arg0_42, arg1_42)
+				arg0_42(var3_39)
+				arg1_38(arg0_42, arg3_38(arg1_42))
+			end
+		end
+	end
+end
+
+function _StructPackEncoder(arg0_43, arg1_43, arg2_43)
+	return function(arg0_44, arg1_44, arg2_44)
+		local var0_44 = var6_0.struct_pack
+
+		if arg2_44 then
+			local var1_44 = TagBytes(arg0_44, var7_0.WIRETYPE_LENGTH_DELIMITED)
+			local var2_44 = var8_0
 
 			return function(arg0_45, arg1_45)
-				arg0_45(var4_42)
-				var0_42(arg0_45, arg2_41, arg1_45)
+				arg0_45(var1_44)
+				var2_44(arg0_45, #arg1_45 * arg1_43)
+
+				for iter0_45, iter1_45 in var2_0(arg1_45) do
+					var0_44(arg0_45, arg2_43, iter1_45)
+				end
+			end
+		elseif arg1_44 then
+			local var3_44 = TagBytes(arg0_44, arg0_43)
+
+			return function(arg0_46, arg1_46)
+				for iter0_46, iter1_46 in var2_0(arg1_46) do
+					arg0_46(var3_44)
+					var0_44(arg0_46, arg2_43, iter1_46)
+				end
+			end
+		else
+			local var4_44 = TagBytes(arg0_44, arg0_43)
+
+			return function(arg0_47, arg1_47)
+				arg0_47(var4_44)
+				var0_44(arg0_47, arg2_43, arg1_47)
 			end
 		end
 	end
 end
 
-Int32Encoder = _SimpleEncoder(var5_0.WIRETYPE_VARINT, var7_0, _SignedVarintSize)
-Int64Encoder = _SimpleEncoder(var5_0.WIRETYPE_VARINT, var9_0, _SignedVarintSize)
+Int32Encoder = _SimpleEncoder(var7_0.WIRETYPE_VARINT, var9_0, _SignedVarintSize)
+Int64Encoder = _SimpleEncoder(var7_0.WIRETYPE_VARINT, var11_0, _SignedVarintSize64)
 EnumEncoder = Int32Encoder
-UInt32Encoder = _SimpleEncoder(var5_0.WIRETYPE_VARINT, var6_0, _VarintSize)
-UInt64Encoder = _SimpleEncoder(var5_0.WIRETYPE_VARINT, var8_0, _VarintSize)
-SInt32Encoder = _ModifiedEncoder(var5_0.WIRETYPE_VARINT, var6_0, _VarintSize, var5_0.ZigZagEncode32)
-SInt64Encoder = _ModifiedEncoder(var5_0.WIRETYPE_VARINT, var8_0, _VarintSize, var5_0.ZigZagEncode64)
-Fixed32Encoder = _StructPackEncoder(var5_0.WIRETYPE_FIXED32, 4, var0_0.byte("I"))
-Fixed64Encoder = _StructPackEncoder(var5_0.WIRETYPE_FIXED64, 8, var0_0.byte("Q"))
-SFixed32Encoder = _StructPackEncoder(var5_0.WIRETYPE_FIXED32, 4, var0_0.byte("i"))
-SFixed64Encoder = _StructPackEncoder(var5_0.WIRETYPE_FIXED64, 8, var0_0.byte("q"))
-FloatEncoder = _StructPackEncoder(var5_0.WIRETYPE_FIXED32, 4, var0_0.byte("f"))
-DoubleEncoder = _StructPackEncoder(var5_0.WIRETYPE_FIXED64, 8, var0_0.byte("d"))
+UInt32Encoder = _SimpleEncoder(var7_0.WIRETYPE_VARINT, var8_0, _VarintSize)
+UInt64Encoder = _SimpleEncoder(var7_0.WIRETYPE_VARINT, var10_0, _VarintSize64)
+SInt32Encoder = _ModifiedEncoder(var7_0.WIRETYPE_VARINT, var8_0, _VarintSize, var7_0.ZigZagEncode32)
+SInt64Encoder = _ModifiedEncoder(var7_0.WIRETYPE_VARINT, var10_0, _VarintSize64, var7_0.ZigZagEncode64)
+Fixed32Encoder = _StructPackEncoder(var7_0.WIRETYPE_FIXED32, 4, var0_0.byte("I"))
+Fixed64Encoder = _StructPackEncoder(var7_0.WIRETYPE_FIXED64, 8, var0_0.byte("Q"))
+SFixed32Encoder = _StructPackEncoder(var7_0.WIRETYPE_FIXED32, 4, var0_0.byte("i"))
+SFixed64Encoder = _StructPackEncoder(var7_0.WIRETYPE_FIXED64, 8, var0_0.byte("q"))
+FloatEncoder = _StructPackEncoder(var7_0.WIRETYPE_FIXED32, 4, var0_0.byte("f"))
+DoubleEncoder = _StructPackEncoder(var7_0.WIRETYPE_FIXED64, 8, var0_0.byte("d"))
 
-function BoolEncoder(arg0_46, arg1_46, arg2_46)
-	local var0_46 = "\x00"
-	local var1_46 = "\x01"
+function BoolEncoder(arg0_48, arg1_48, arg2_48)
+	local var0_48 = "\x00"
+	local var1_48 = "\x01"
 
-	if arg2_46 then
-		local var2_46 = TagBytes(arg0_46, var5_0.WIRETYPE_LENGTH_DELIMITED)
-		local var3_46 = var6_0
-
-		return function(arg0_47, arg1_47)
-			arg0_47(var2_46)
-			var3_46(arg0_47, #arg1_47)
-
-			for iter0_47, iter1_47 in var2_0(arg1_47) do
-				if iter1_47 then
-					arg0_47(var1_46)
-				else
-					arg0_47(var0_46)
-				end
-			end
-		end
-	elseif arg1_46 then
-		local var4_46 = TagBytes(arg0_46, var5_0.WIRETYPE_VARINT)
-
-		return function(arg0_48, arg1_48)
-			for iter0_48, iter1_48 in var2_0(arg1_48) do
-				arg0_48(var4_46)
-
-				if iter1_48 then
-					arg0_48(var1_46)
-				else
-					arg0_48(var0_46)
-				end
-			end
-		end
-	else
-		local var5_46 = TagBytes(arg0_46, var5_0.WIRETYPE_VARINT)
+	if arg2_48 then
+		local var2_48 = TagBytes(arg0_48, var7_0.WIRETYPE_LENGTH_DELIMITED)
+		local var3_48 = var8_0
 
 		return function(arg0_49, arg1_49)
-			arg0_49(var5_46)
+			arg0_49(var2_48)
+			var3_48(arg0_49, #arg1_49)
 
-			if arg1_49 then
-				return arg0_49(var1_46)
+			for iter0_49, iter1_49 in var2_0(arg1_49) do
+				if iter1_49 then
+					arg0_49(var1_48)
+				else
+					arg0_49(var0_48)
+				end
 			end
-
-			return arg0_49(var0_46)
 		end
-	end
-end
+	elseif arg1_48 then
+		local var4_48 = TagBytes(arg0_48, var7_0.WIRETYPE_VARINT)
 
-function StringEncoder(arg0_50, arg1_50, arg2_50)
-	local var0_50 = TagBytes(arg0_50, var5_0.WIRETYPE_LENGTH_DELIMITED)
-	local var1_50 = var6_0
+		return function(arg0_50, arg1_50)
+			for iter0_50, iter1_50 in var2_0(arg1_50) do
+				arg0_50(var4_48)
 
-	var3_0(not arg2_50)
+				if iter1_50 then
+					arg0_50(var1_48)
+				else
+					arg0_50(var0_48)
+				end
+			end
+		end
+	else
+		local var5_48 = TagBytes(arg0_48, var7_0.WIRETYPE_VARINT)
 
-	if arg1_50 then
 		return function(arg0_51, arg1_51)
-			for iter0_51, iter1_51 in var2_0(arg1_51) do
-				arg0_51(var0_50)
-				var1_50(arg0_51, #iter1_51)
-				arg0_51(iter1_51)
-			end
-		end
-	else
-		return function(arg0_52, arg1_52)
-			arg0_52(var0_50)
-			var1_50(arg0_52, #arg1_52)
+			arg0_51(var5_48)
 
-			return arg0_52(arg1_52)
+			if arg1_51 then
+				return arg0_51(var1_48)
+			end
+
+			return arg0_51(var0_48)
 		end
 	end
 end
 
-function BytesEncoder(arg0_53, arg1_53, arg2_53)
-	local var0_53 = TagBytes(arg0_53, var5_0.WIRETYPE_LENGTH_DELIMITED)
-	local var1_53 = var6_0
+function StringEncoder(arg0_52, arg1_52, arg2_52)
+	local var0_52 = TagBytes(arg0_52, var7_0.WIRETYPE_LENGTH_DELIMITED)
+	local var1_52 = var8_0
 
-	var3_0(not arg2_53)
+	var3_0(not arg2_52)
 
-	if arg1_53 then
+	if arg1_52 then
+		return function(arg0_53, arg1_53)
+			for iter0_53, iter1_53 in var2_0(arg1_53) do
+				arg0_53(var0_52)
+				var1_52(arg0_53, #iter1_53)
+				arg0_53(iter1_53)
+			end
+		end
+	else
 		return function(arg0_54, arg1_54)
-			for iter0_54, iter1_54 in var2_0(arg1_54) do
-				arg0_54(var0_53)
-				var1_53(arg0_54, #iter1_54)
-				arg0_54(iter1_54)
-			end
-		end
-	else
-		return function(arg0_55, arg1_55)
-			arg0_55(var0_53)
-			var1_53(arg0_55, #arg1_55)
+			arg0_54(var0_52)
+			var1_52(arg0_54, #arg1_54)
 
-			return arg0_55(arg1_55)
+			return arg0_54(arg1_54)
 		end
 	end
 end
 
-function MessageEncoder(arg0_56, arg1_56, arg2_56)
-	local var0_56 = TagBytes(arg0_56, var5_0.WIRETYPE_LENGTH_DELIMITED)
-	local var1_56 = var6_0
+function BytesEncoder(arg0_55, arg1_55, arg2_55)
+	local var0_55 = TagBytes(arg0_55, var7_0.WIRETYPE_LENGTH_DELIMITED)
+	local var1_55 = var8_0
 
-	var3_0(not arg2_56)
+	var3_0(not arg2_55)
 
-	if arg1_56 then
-		return function(arg0_57, arg1_57)
-			for iter0_57, iter1_57 in var2_0(arg1_57) do
-				arg0_57(var0_56)
-				var1_56(arg0_57, iter1_57:ByteSize())
-				iter1_57:_InternalSerialize(arg0_57)
+	if arg1_55 then
+		return function(arg0_56, arg1_56)
+			for iter0_56, iter1_56 in var2_0(arg1_56) do
+				arg0_56(var0_55)
+				var1_55(arg0_56, #iter1_56)
+				arg0_56(iter1_56)
 			end
 		end
 	else
-		return function(arg0_58, arg1_58)
-			arg0_58(var0_56)
-			var1_56(arg0_58, arg1_58:ByteSize())
+		return function(arg0_57, arg1_57)
+			arg0_57(var0_55)
+			var1_55(arg0_57, #arg1_57)
 
-			return arg1_58:_InternalSerialize(arg0_58)
+			return arg0_57(arg1_57)
+		end
+	end
+end
+
+function MessageEncoder(arg0_58, arg1_58, arg2_58)
+	local var0_58 = TagBytes(arg0_58, var7_0.WIRETYPE_LENGTH_DELIMITED)
+	local var1_58 = var8_0
+
+	var3_0(not arg2_58)
+
+	if arg1_58 then
+		return function(arg0_59, arg1_59)
+			for iter0_59, iter1_59 in var2_0(arg1_59) do
+				arg0_59(var0_58)
+				var1_58(arg0_59, iter1_59:ByteSize())
+				iter1_59:_InternalSerialize(arg0_59)
+			end
+		end
+	else
+		return function(arg0_60, arg1_60)
+			arg0_60(var0_58)
+			var1_58(arg0_60, arg1_60:ByteSize())
+
+			return arg1_60:_InternalSerialize(arg0_60)
 		end
 	end
 end

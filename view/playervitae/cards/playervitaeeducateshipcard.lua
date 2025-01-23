@@ -17,7 +17,7 @@ function var0_0.Flush(arg0_2)
 	local var1_2 = VirtualEducateCharShip.New(var0_2:GetEducateCharacter())
 
 	setPaintingPrefabAsync(arg0_2.paintingTr, var1_2:getPainting(), "biandui")
-	arg0_2.nameTxt:SetText(i18n("secretary_special_name"))
+	arg0_2.nameTxt:SetText(var1_2.name)
 
 	arg0_2.ship = var1_2
 end

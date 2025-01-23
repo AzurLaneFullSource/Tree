@@ -10,7 +10,7 @@ function var0_0.init(arg0_2)
 	return
 end
 
-var0_0.normalSpeed = 150
+var0_0.normalSpeed = 15
 var0_0.normalScale = 0.5
 
 function var0_0.SetOnTransEdge(arg0_3, arg1_3)
@@ -85,7 +85,7 @@ function var0_0.updateLogic(arg0_8)
 	if arg0_8.state == var0_0.ShipState.Walk then
 		local var0_8 = arg0_8.currentPoint
 		local var1_8 = arg0_8.targetPoint
-		local var2_8 = 15
+		local var2_8 = arg0_8.normalSpeed
 		local var3_8 = Vector2.Distance(var0_8, var1_8) / var2_8
 
 		if arg0_8.posTable[arg0_8.currentPoint.id] == arg0_8 then

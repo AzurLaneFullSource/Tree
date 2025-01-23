@@ -63,6 +63,11 @@ function var0_0.addSkin(arg0_9, arg1_9)
 	arg0_9.prevNewSkin = arg1_9
 
 	arg0_9:addExpireTimer(arg1_9)
+
+	if arg1_9:getConfig("skin_type") == ShipSkin.SKIN_TYPE_TB then
+		NewEducateHelper.UpdateUnlockBySkinId(arg1_9.id)
+	end
+
 	arg0_9.facade:sendNotification(var0_0.SHIP_SKINS_UPDATE)
 end
 

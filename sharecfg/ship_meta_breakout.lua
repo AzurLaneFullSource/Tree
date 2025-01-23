@@ -74,6 +74,10 @@ pg.ship_meta_breakout = setmetatable({
 		9703052,
 		9703053,
 		9703054,
+		9703061,
+		9703062,
+		9703063,
+		9703064,
 		9704011,
 		9704012,
 		9704013,
@@ -1306,6 +1310,69 @@ pg.base.ship_meta_breakout = {
 		id = 9703054,
 		item1 = 21042,
 		pre_id = 9703053,
+		weapon_ids = {}
+	},
+	[9703061] = {
+		breakout_view = "Unlock Cinders of Hope - Bolzano/Main gun efficiency +5%",
+		gold = 500,
+		breakout_id = 9703062,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9703061,
+		item1 = 21043,
+		pre_id = 0,
+		weapon_ids = {
+			80431
+		}
+	},
+	[9703062] = {
+		breakout_view = "Torpedo base +1/Torpedo preload +1/Torpedo efficiency +10%",
+		gold = 1500,
+		breakout_id = 9703063,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9703062,
+		item1 = 21043,
+		pre_id = 9703061,
+		weapon_ids = {
+			106,
+			106
+		}
+	},
+	[9703063] = {
+		breakout_view = "Improve Cinders of Hope - Bolzano/Torpedo efficiency +15%",
+		gold = 2500,
+		breakout_id = 9703064,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9703063,
+		item1 = 21043,
+		pre_id = 9703062,
+		weapon_ids = {
+			80432
+		}
+	},
+	[9703064] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9703064,
+		item1 = 21043,
+		pre_id = 9703063,
 		weapon_ids = {}
 	},
 	[9704011] = {

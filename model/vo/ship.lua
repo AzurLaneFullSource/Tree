@@ -657,11 +657,11 @@ function var0_0.Ctor(arg0_49, arg1_49)
 
 	local var1_49 = arg1_49.state or {}
 
-	arg0_49.state = var1_49.state
-	arg0_49.state_info_1 = var1_49.state_info_1
-	arg0_49.state_info_2 = var1_49.state_info_2
-	arg0_49.state_info_3 = var1_49.state_info_3
-	arg0_49.state_info_4 = var1_49.state_info_4
+	arg0_49.state = var1_49.state or 0
+	arg0_49.state_info_1 = var1_49.state_info_1 or 0
+	arg0_49.state_info_2 = var1_49.state_info_2 or 0
+	arg0_49.state_info_3 = var1_49.state_info_3 or 0
+	arg0_49.state_info_4 = var1_49.state_info_4 or 0
 	arg0_49.equipmentSkins = {}
 	arg0_49.equipments = {}
 

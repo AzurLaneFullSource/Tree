@@ -52,7 +52,7 @@ function var0_0.init(arg0_3)
 	end, SFX_PANEL)
 	pg.UIMgr.GetInstance():OverlayPanel(arg0_3._tf, {
 		groupName = arg0_3:getGroupNameFromData(),
-		weight = arg0_3:getWeightFromData() + 2
+		weight = LayerWeightConst.SECOND_LAYER + 2
 	})
 end
 

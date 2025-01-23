@@ -2,13 +2,21 @@ local var0_0 = class("VirtualEducateCharShip", import("model.vo.Ship"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.educateCharId = arg1_1
+	arg0_1.templateConfig = pg.secretary_special_ship[arg1_1]
+
+	local var0_1
+
+	if arg0_1.templateConfig.unlock_type == EducateConst.SECRETARY_UNLCOK_TYPE_SHOP then
+		var0_1 = arg0_1.templateConfig.unlock[1]
+	end
 
 	var0_0.super.Ctor(arg0_1, {
-		id = 99999999,
-		configId = 999024
+		configId = 999024,
+		id = var0_1 or 99999999
 	})
 
-	arg0_1.templateConfig = pg.secretary_special_ship[arg1_1]
+	arg0_1.skinId = var0_1 or arg0_1.skinId
+	arg0_1.name = arg0_1.templateConfig.name
 end
 
 function var0_0.getPainting(arg0_2)

@@ -103,14 +103,28 @@ function var0_0.handleNotification(arg0_14, arg1_14)
 		local var3_14 = pg.shop_template[var1_14.id]
 
 		if var3_14 and (var3_14.genre == ShopArgs.SkinShop or var3_14.genre == ShopArgs.SkinShopTimeLimit) then
-			arg0_14:addSubLayers(Context.New({
-				mediator = NewSkinMediator,
-				viewComponent = NewSkinLayer,
-				data = {
-					skinId = var3_14.effect_args[1],
-					timeLimit = var3_14.genre == ShopArgs.SkinShopTimeLimit
-				}
-			}))
+			local var4_14 = var3_14.effect_args[1]
+
+			if pg.ship_skin_template[var4_14].skin_type == ShipSkin.SKIN_TYPE_TB then
+				arg0_14:addSubLayers(Context.New({
+					mediator = NewSkinTBMediator,
+					viewComponent = NewSkinTBLayer,
+					data = {
+						skinId = var3_14.effect_args[1],
+						timeLimit = var3_14.genre == ShopArgs.SkinShopTimeLimit
+					}
+				}))
+			else
+				arg0_14:addSubLayers(Context.New({
+					mediator = NewSkinMediator,
+					viewComponent = NewSkinLayer,
+					data = {
+						skinId = var3_14.effect_args[1],
+						timeLimit = var3_14.genre == ShopArgs.SkinShopTimeLimit
+					}
+				}))
+			end
+
 			arg0_14.viewComponent:OnShopping(var1_14.id)
 		end
 	elseif var0_14 == GAME.BUY_FURNITURE_DONE then

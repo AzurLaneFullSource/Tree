@@ -48,11 +48,12 @@ function var0_0.Ctor(arg0_2, arg1_2, arg2_2, arg3_2)
 	arg0_2.changeSkinUI = arg0_2._tf:Find("overlay/left/change_skin")
 	arg0_2.changeSkinToggle = ChangeSkinToggle.New(findTF(arg0_2.changeSkinUI, "toggle_ui"))
 	arg0_2.rightTr = arg0_2._tf:Find("overlay/right")
-	arg0_2.uiTagList = UIItemList.New(arg0_2._tf:Find("overlay/right/tags"), arg0_2._tf:Find("overlay/right/tags/tpl"))
-	arg0_2.charContainer = arg0_2._tf:Find("overlay/right/char")
+	arg0_2.uiTagList = UIItemList.New(arg0_2._tf:Find("overlay/right/container/tags_container/tags"), arg0_2._tf:Find("overlay/right/container/tags_container/tags/tpl"))
+	arg0_2.charContainer = arg0_2._tf:Find("overlay/right/container/char_container")
+	arg0_2.charTf = arg0_2._tf:Find("overlay/right/container/char_container/char")
 	arg0_2.furnitureContainer = arg0_2._tf:Find("overlay/right/fur")
-	arg0_2.charBg = arg0_2._tf:Find("overlay/right/bg/char")
-	arg0_2.furnitureBg = arg0_2._tf:Find("overlay/right/bg/furn")
+	arg0_2.charBg = arg0_2._tf:Find("overlay/right/container/char_container/bg/char")
+	arg0_2.furnitureBg = arg0_2._tf:Find("overlay/right/container/char_container/bg/furn")
 	arg0_2.switchPreviewBtn = arg0_2._tf:Find("overlay/right/switch")
 	arg0_2.obtainBtn = arg0_2._tf:Find("overlay/right/price/btn")
 	arg0_2.obtainBtnImg = arg0_2.obtainBtn:GetComponent(typeof(Image))
@@ -225,20 +226,28 @@ end
 function var0_0.FlushBG(arg0_19, arg1_19, arg2_19)
 	local var0_19 = arg0_19.skinId
 	local var1_19 = pg.ship_skin_template[var0_19]
-	local var2_19 = ShipGroup.getDefaultShipConfig(var1_19.ship_group)
-	local var3_19 = Ship.New({
-		id = 999,
-		configId = var2_19.id,
-		skin_id = var0_19
-	})
-	local var4_19 = var3_19:getShipBgPrint(true)
+	local var2_19
+
+	if var1_19.skin_type == ShipSkin.SKIN_TYPE_TB then
+		var2_19 = VirtualEducateCharShip.New(NewEducateHelper.GetSecIdBySkinId(var0_19))
+	else
+		local var3_19 = ShipGroup.getDefaultShipConfig(var1_19.ship_group)
+
+		var2_19 = Ship.New({
+			id = 999,
+			configId = var3_19.id,
+			skin_id = var0_19
+		})
+	end
+
+	local var4_19 = var2_19:getShipBgPrint(true)
 	local var5_19 = pg.ship_skin_template[var0_19].painting
 
 	if (arg0_19.isToggleShowBg or not checkABExist("painting/" .. var5_19 .. "_n")) and var1_19.bg_sp ~= "" then
 		var4_19 = var1_19.bg_sp
 	end
 
-	local var6_19 = var4_19 ~= var3_19:rarity2bgPrintForGet()
+	local var6_19 = var4_19 ~= var2_19:rarity2bgPrintForGet()
 
 	if var6_19 then
 		pg.DynamicBgMgr.GetInstance():LoadBg(arg0_19, var4_19, arg0_19.diffBg.parent, arg0_19.diffBg, function(arg0_20)
@@ -268,9 +277,13 @@ function var0_0.FlushName(arg0_22, arg1_22)
 
 	arg0_22.skinNameTxt.text = SwitchSpecialChar(var1_22.name, true)
 
-	local var2_22 = ShipGroup.getDefaultShipConfig(var1_22.ship_group)
+	if var1_22.skin_type == ShipSkin.SKIN_TYPE_TB then
+		arg0_22.shipNameTxt.text = NewEducateHelper.GetShipNameBySecId(NewEducateHelper.GetSecIdBySkinId(var0_22))
+	else
+		local var2_22 = ShipGroup.getDefaultShipConfig(var1_22.ship_group)
 
-	arg0_22.shipNameTxt.text = var2_22.name
+		arg0_22.shipNameTxt.text = var2_22.name
+	end
 end
 
 function var0_0.FlushPaintingToggle(arg0_23, arg1_23)
@@ -533,24 +546,34 @@ end
 
 function var0_0.LoadL2dPainting(arg0_39, arg1_39)
 	local var0_39 = arg0_39.skinId
-	local var1_39 = pg.ship_skin_template[var0_39].ship_group
-	local var2_39 = ShipGroup.getDefaultShipConfig(var1_39)
-	local var3_39 = Live2D.GenerateData({
-		ship = Ship.New({
+	local var1_39 = pg.ship_skin_template[var0_39].skin_type
+	local var2_39
+
+	if var1_39 == ShipSkin.SKIN_TYPE_TB then
+		var2_39 = VirtualEducateCharShip.New(NewEducateHelper.GetSecIdBySkinId(var0_39))
+	else
+		local var3_39 = pg.ship_skin_template[var0_39].ship_group
+		local var4_39 = ShipGroup.getDefaultShipConfig(var3_39)
+
+		var2_39 = Ship.New({
 			id = 999,
-			configId = var2_39.id,
+			configId = var4_39.id,
 			skin_id = var0_39
-		}),
+		})
+	end
+
+	local var5_39 = Live2D.GenerateData({
+		ship = var2_39,
 		scale = Vector3(52, 52, 52),
 		position = Vector3(0, 0, -1),
 		parent = arg0_39.live2dContainer
 	})
 
-	var3_39.shopPreView = true
+	var5_39.shopPreView = true
 
 	pg.UIMgr.GetInstance():LoadingOn()
 
-	arg0_39.live2dChar = Live2D.New(var3_39, function(arg0_40)
+	arg0_39.live2dChar = Live2D.New(var5_39, function(arg0_40)
 		arg0_40:IgonreReactPos(true)
 		arg0_39:CheckShowShopHxForL2d(arg0_40, arg1_39)
 
@@ -573,14 +596,24 @@ end
 
 function var0_0.LoadSpinePainting(arg0_42, arg1_42)
 	local var0_42 = arg0_42.skinId
-	local var1_42 = pg.ship_skin_template[var0_42].ship_group
-	local var2_42 = ShipGroup.getDefaultShipConfig(var1_42)
-	local var3_42 = SpinePainting.GenerateData({
-		ship = Ship.New({
+	local var1_42 = pg.ship_skin_template[var0_42].skin_type
+	local var2_42
+
+	if var1_42 == ShipSkin.SKIN_TYPE_TB then
+		var2_42 = VirtualEducateCharShip.New(NewEducateHelper.GetSecIdBySkinId(var0_42))
+	else
+		local var3_42 = pg.ship_skin_template[var0_42].ship_group
+		local var4_42 = ShipGroup.getDefaultShipConfig(var3_42)
+
+		var2_42 = Ship.New({
 			id = 999,
-			configId = var2_42.id,
+			configId = var4_42.id,
 			skin_id = var0_42
-		}),
+		})
+	end
+
+	local var5_42 = SpinePainting.GenerateData({
+		ship = var2_42,
 		position = Vector3(0, 0, 0),
 		parent = arg0_42.spTF,
 		effectParent = arg0_42.spBg
@@ -588,7 +621,7 @@ function var0_0.LoadSpinePainting(arg0_42, arg1_42)
 
 	pg.UIMgr.GetInstance():LoadingOn()
 
-	arg0_42.spinePainting = SpinePainting.New(var3_42, function(arg0_43)
+	arg0_42.spinePainting = SpinePainting.New(var5_42, function(arg0_43)
 		if arg0_42.paintingState and arg0_42.paintingState.id ~= arg1_42.id then
 			arg0_42:ClearSpinePainting()
 		end
@@ -708,11 +741,20 @@ end
 
 function var0_0.SwitchPreview(arg0_56, arg1_56, arg2_56, arg3_56)
 	local var0_56 = arg0_56.skinId
+
+	if pg.ship_skin_template[var0_56].skin_type == ShipSkin.SKIN_TYPE_TB then
+		setActive(arg0_56.charContainer, false)
+
+		return
+	end
+
+	setActive(arg0_56.charContainer, true)
+
 	local var1_56 = arg0_56.furnitureBg
 	local var2_56 = arg0_56.charBg
 
 	arg0_56:StartSwitchAnim(var1_56, var2_56, arg3_56 and 0.3 or 0, function()
-		setActive(arg0_56.charContainer, not arg2_56)
+		setActive(arg0_56.charTf, not arg2_56)
 		setActive(arg0_56.furnitureContainer, arg2_56)
 	end)
 
@@ -1087,7 +1129,7 @@ function var0_0.FlushChar(arg0_83, arg1_83, arg2_83)
 		arg0_83.spineChar.localPosition = Vector3(0, 0, 0)
 
 		pg.ViewUtils.SetLayer(arg0_83.spineChar, Layer.UI)
-		setParent(arg0_83.spineChar, arg0_83.charContainer)
+		setParent(arg0_83.spineChar, arg0_83.charTf)
 		arg0_84:GetComponent("SpineAnimUI"):SetAction("normal", 0)
 	end)
 end

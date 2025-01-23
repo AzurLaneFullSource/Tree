@@ -13,11 +13,11 @@ function var0_0.register(arg0_1)
 			groupId = arg1_2
 		})
 	end)
-	arg0_1:bind(var0_0.GIVE_GIFT, function(arg0_3, arg1_3)
+	arg0_1:bind(var0_0.GIVE_GIFT, function(arg0_3, arg1_3, arg2_3)
 		arg0_1:sendNotification(GAME.APARTMENT_GIVE_GIFT, {
-			count = 1,
 			groupId = arg0_1.viewComponent.apartment.configId,
-			giftId = arg1_3
+			giftId = arg1_3,
+			count = arg2_3
 		})
 	end)
 	arg0_1:bind(var0_0.DO_TALK, function(arg0_4, arg1_4, arg2_4)
@@ -53,7 +53,10 @@ function var0_0.register(arg0_1)
 			onRemoved = arg2_8
 		}))
 	end)
-	arg0_1.viewComponent:SetApartment(arg0_1.contextData.apartment)
+
+	local var0_1 = getProxy(ApartmentProxy):getApartment(arg0_1.contextData.groupId)
+
+	arg0_1.viewComponent:SetApartment(var0_1)
 end
 
 function var0_0.initNotificationHandleDic(arg0_9)

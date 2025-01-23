@@ -277,10 +277,11 @@ function var0_0._Init(arg0_23, arg1_23, arg2_23)
 	end
 end
 
-function var0_0.Play(arg0_24, arg1_24, arg2_24, arg3_24, arg4_24, arg5_24, arg6_24)
+function var0_0.Play(arg0_24, arg1_24, arg2_24, arg3_24, arg4_24, arg5_24, arg6_24, arg7_24)
 	table.insert(arg0_24.playQueue, {
 		arg1_24,
-		arg2_24
+		arg2_24,
+		arg7_24
 	})
 
 	if #arg0_24.playQueue == 1 then
@@ -293,6 +294,7 @@ function var0_0.Play(arg0_24, arg1_24, arg2_24, arg3_24, arg4_24, arg5_24, arg6_
 
 			local var0_25 = arg0_24.playQueue[1][1]
 			local var1_25 = arg0_24.playQueue[1][2]
+			local var2_25 = arg0_24.playQueue[1][3]
 
 			arg0_24:SoloPlay(var0_25, function(arg0_26, arg1_26)
 				if var1_25 then
@@ -301,7 +303,7 @@ function var0_0.Play(arg0_24, arg1_24, arg2_24, arg3_24, arg4_24, arg5_24, arg6_
 
 				table.remove(arg0_24.playQueue, 1)
 				var1_24()
-			end, arg3_24, arg4_24, arg5_24, arg6_24)
+			end, arg3_24, arg4_24, arg5_24, arg6_24, var2_25)
 		end
 
 		var1_24()
@@ -354,602 +356,606 @@ function var0_0.Stop(arg0_29)
 	end
 end
 
-function var0_0.PlayForWorld(arg0_30, arg1_30, arg2_30, arg3_30, arg4_30, arg5_30, arg6_30, arg7_30)
-	arg0_30.optionSelCodes = arg2_30 or {}
-	arg0_30.autoPlayFlag = arg6_30
-
-	arg0_30:Play(arg1_30, arg3_30, arg4_30, arg5_30, arg7_30, true)
+function var0_0.PlayForTb(arg0_30, arg1_30, arg2_30, arg3_30, arg4_30)
+	arg0_30:Play(arg1_30, arg3_30, arg4_30, false, false, true, arg2_30)
 end
 
-function var0_0.ForceAutoPlay(arg0_31, arg1_31, arg2_31, arg3_31, arg4_31)
-	arg0_31.autoPlayFlag = true
+function var0_0.PlayForWorld(arg0_31, arg1_31, arg2_31, arg3_31, arg4_31, arg5_31, arg6_31, arg7_31, arg8_31)
+	arg0_31.optionSelCodes = arg2_31 or {}
+	arg0_31.autoPlayFlag = arg6_31
 
-	local function var0_31(arg0_32, arg1_32)
-		arg2_31(arg0_32, arg1_32, arg0_31.isAutoPlay)
+	arg0_31:Play(arg1_31, arg3_31, arg4_31, arg5_31, arg7_31, true, arg8_31)
+end
+
+function var0_0.ForceAutoPlay(arg0_32, arg1_32, arg2_32, arg3_32, arg4_32, arg5_32)
+	arg0_32.autoPlayFlag = true
+
+	local function var0_32(arg0_33, arg1_33)
+		arg2_32(arg0_33, arg1_33, arg0_32.isAutoPlay)
 	end
 
-	arg0_31:Play(arg1_31, var0_31, arg3_31, arg4_31, true)
+	arg0_32:Play(arg1_32, var0_32, arg3_32, arg4_32, true, false, arg5_32)
 end
 
-function var0_0.ForceManualPlay(arg0_33, arg1_33, arg2_33, arg3_33, arg4_33)
-	arg0_33.banPlayFlag = true
+function var0_0.ForceManualPlay(arg0_34, arg1_34, arg2_34, arg3_34, arg4_34, arg5_34)
+	arg0_34.banPlayFlag = true
 
-	local function var0_33(arg0_34, arg1_34)
-		arg2_33(arg0_34, arg1_34, arg0_33.isAutoPlay)
+	local function var0_34(arg0_35, arg1_35)
+		arg2_34(arg0_35, arg1_35, arg0_34.isAutoPlay)
 	end
 
-	arg0_33:Play(arg1_33, var0_33, arg3_33, arg4_33, true)
+	arg0_34:Play(arg1_34, var0_34, arg3_34, arg4_34, true, false, arg5_34)
 end
 
-function var0_0.SeriesPlay(arg0_35, arg1_35, arg2_35, arg3_35, arg4_35, arg5_35, arg6_35)
-	local var0_35 = {}
+function var0_0.SeriesPlay(arg0_36, arg1_36, arg2_36, arg3_36, arg4_36, arg5_36, arg6_36, arg7_36)
+	local var0_36 = {}
 
-	for iter0_35, iter1_35 in ipairs(arg1_35) do
-		table.insert(var0_35, function(arg0_36)
-			arg0_35:SoloPlay(iter1_35, arg0_36, arg3_35, arg4_35, arg5_35, arg6_35)
+	for iter0_36, iter1_36 in ipairs(arg1_36) do
+		table.insert(var0_36, function(arg0_37)
+			arg0_36:SoloPlay(iter1_36, arg0_37, arg3_36, arg4_36, arg5_36, arg6_36, arg7_36)
 		end)
 	end
 
-	seriesAsync(var0_35, arg2_35)
+	seriesAsync(var0_36, arg2_36)
 end
 
-function var0_0.SoloPlay(arg0_37, arg1_37, arg2_37, arg3_37, arg4_37, arg5_37, arg6_37)
-	var11_0("Play Story:", arg1_37)
+function var0_0.SoloPlay(arg0_38, arg1_38, arg2_38, arg3_38, arg4_38, arg5_38, arg6_38, arg7_38)
+	var11_0("Play Story:", arg1_38)
 
-	local var0_37 = 1
+	local var0_38 = 1
 
-	local function var1_37(arg0_38, arg1_38)
-		var0_37 = var0_37 - 1
+	local function var1_38(arg0_39, arg1_39)
+		var0_38 = var0_38 - 1
 
-		if arg2_37 and var0_37 == 0 then
+		if arg2_38 and var0_38 == 0 then
 			onNextTick(function()
-				arg2_37(arg0_38, arg1_38)
+				arg2_38(arg0_39, arg1_39)
 			end)
 		end
 	end
 
-	local var2_37 = var13_0(arg1_37)
+	local var2_38 = var13_0(arg1_38)
 
-	if not var2_37 then
-		var1_37(false)
+	if not var2_38 then
+		var1_38(false)
 		var11_0("not exist story file")
 
 		return nil
 	end
 
-	if arg0_37:IsReView() then
-		arg3_37 = true
+	if arg0_38:IsReView() then
+		arg3_38 = true
 	end
 
-	arg0_37.storyScript = Story.New(var2_37, arg3_37, arg0_37.optionSelCodes, arg5_37, arg6_37)
+	arg0_38.storyScript = Story.New(var2_38, arg3_38, arg0_38.optionSelCodes, arg5_38, arg6_38, arg7_38)
 
-	if not arg0_37:CheckState() then
+	if not arg0_38:CheckState() then
 		var11_0("story state error")
-		var1_37(false)
+		var1_38(false)
 
 		return nil
 	end
 
-	if not arg0_37.storyScript:CanPlay() then
+	if not arg0_38.storyScript:CanPlay() then
 		var11_0("story cant be played")
-		var1_37(false)
+		var1_38(false)
 
 		return nil
 	end
 
-	arg0_37:ExecuteScript(var1_37)
+	arg0_38:ExecuteScript(var1_38)
 end
 
-function var0_0.ExecuteScript(arg0_40, arg1_40)
+function var0_0.ExecuteScript(arg0_41, arg1_41)
 	seriesAsync({
-		function(arg0_41)
-			arg0_40:CheckResDownload(arg0_40.storyScript, arg0_41)
-		end,
 		function(arg0_42)
+			arg0_41:CheckResDownload(arg0_41.storyScript, arg0_42)
+		end,
+		function(arg0_43)
 			originalPrint("start load story window...")
-			arg0_40:CheckAndLoadDialogue(arg0_40.storyScript, arg0_42)
+			arg0_41:CheckAndLoadDialogue(arg0_41.storyScript, arg0_43)
 		end
 	}, function()
 		originalPrint("enter story...")
-		arg0_40:OnStart()
+		arg0_41:OnStart()
 
-		local var0_43 = {}
+		local var0_44 = {}
 
-		arg0_40.currPlayer = nil
-		arg0_40.progress = 0
+		arg0_41.currPlayer = nil
+		arg0_41.progress = 0
 
-		for iter0_43, iter1_43 in ipairs(arg0_40.storyScript.steps) do
-			table.insert(var0_43, function(arg0_44)
-				arg0_40.progress = iter0_43
+		for iter0_44, iter1_44 in ipairs(arg0_41.storyScript.steps) do
+			table.insert(var0_44, function(arg0_45)
+				arg0_41.progress = iter0_44
 
-				arg0_40:SendNotification(GAME.STORY_NEXT)
+				arg0_41:SendNotification(GAME.STORY_NEXT)
 
-				local var0_44 = arg0_40.players[iter1_43:GetMode()]
+				local var0_45 = arg0_41.players[iter1_44:GetMode()]
 
-				arg0_40.currPlayer = var0_44
+				arg0_41.currPlayer = var0_45
 
-				var0_44:Play(arg0_40.storyScript, iter0_43, arg0_44)
+				var0_45:Play(arg0_41.storyScript, iter0_44, arg0_45)
 			end)
 		end
 
-		seriesAsync(var0_43, function()
-			arg0_40:OnEnd(arg1_40)
+		seriesAsync(var0_44, function()
+			arg0_41:OnEnd(arg1_41)
 		end)
 	end)
 end
 
-function var0_0.SendNotification(arg0_46, arg1_46, arg2_46)
-	pg.m02:sendNotification(arg1_46, arg2_46)
+function var0_0.SendNotification(arg0_47, arg1_47, arg2_47)
+	pg.m02:sendNotification(arg1_47, arg2_47)
 end
 
-function var0_0.CheckResDownload(arg0_47, arg1_47, arg2_47)
-	local var0_47 = arg0_47:_GetStoryPaintingsByName(arg1_47)
-	local var1_47 = table.concat(var0_47, ",")
+function var0_0.CheckResDownload(arg0_48, arg1_48, arg2_48)
+	local var0_48 = arg0_48:_GetStoryPaintingsByName(arg1_48)
+	local var1_48 = table.concat(var0_48, ",")
 
-	originalPrint("start download res " .. var1_47)
+	originalPrint("start download res " .. var1_48)
 
-	local var2_47 = {}
+	local var2_48 = {}
 
-	for iter0_47, iter1_47 in ipairs(var0_47) do
-		PaintingGroupConst.AddPaintingNameWithFilteMap(var2_47, iter1_47)
+	for iter0_48, iter1_48 in ipairs(var0_48) do
+		PaintingGroupConst.AddPaintingNameWithFilteMap(var2_48, iter1_48)
 	end
 
 	PaintingGroupConst.PaintingDownload({
 		isShowBox = true,
-		paintingNameList = var2_47,
-		finishFunc = arg2_47
+		paintingNameList = var2_48,
+		finishFunc = arg2_48
 	})
 end
 
-local function var15_0(arg0_48, arg1_48)
-	ResourceMgr.Inst:getAssetAsync("ui/" .. arg0_48, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_49)
-		arg1_48(arg0_49)
+local function var15_0(arg0_49, arg1_49)
+	ResourceMgr.Inst:getAssetAsync("ui/" .. arg0_49, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_50)
+		arg1_49(arg0_50)
 	end), true, true)
 end
 
-function var0_0.CheckAndLoadDialogue(arg0_50, arg1_50, arg2_50)
-	local var0_50 = arg1_50:GetDialogueStyleName()
+function var0_0.CheckAndLoadDialogue(arg0_51, arg1_51, arg2_51)
+	local var0_51 = arg1_51:GetDialogueStyleName()
 
-	if not arg0_50.dialogueContainer:Find(var0_50) then
-		var15_0("NewStoryDialogue" .. var0_50, function(arg0_51)
-			Object.Instantiate(arg0_51, arg0_50.dialogueContainer).name = var0_50
+	if not arg0_51.dialogueContainer:Find(var0_51) then
+		var15_0("NewStoryDialogue" .. var0_51, function(arg0_52)
+			Object.Instantiate(arg0_52, arg0_51.dialogueContainer).name = var0_51
 
-			arg2_50()
+			arg2_51()
 		end)
 	else
-		arg2_50()
+		arg2_51()
 	end
 end
 
-function var0_0.CheckState(arg0_52)
-	if arg0_52.state == var3_0 or arg0_52.state == var1_0 or arg0_52.state == var4_0 then
+function var0_0.CheckState(arg0_53)
+	if arg0_53.state == var3_0 or arg0_53.state == var1_0 or arg0_53.state == var4_0 then
 		return false
 	end
 
 	return true
 end
 
-function var0_0.RegistSkipBtn(arg0_53)
-	local function var0_53()
-		arg0_53:TrackingSkip()
-		arg0_53.storyScript:SkipAll()
-		arg0_53.currPlayer:NextOneImmediately()
+function var0_0.RegistSkipBtn(arg0_54)
+	local function var0_54()
+		arg0_54:TrackingSkip()
+		arg0_54.storyScript:SkipAll()
+		arg0_54.currPlayer:NextOneImmediately()
 	end
 
-	onButton(arg0_53, arg0_53.skipBtn, function()
-		if arg0_53:IsStopping() or arg0_53:IsPausing() then
+	onButton(arg0_54, arg0_54.skipBtn, function()
+		if arg0_54:IsStopping() or arg0_54:IsPausing() then
 			return
 		end
 
-		if not arg0_53.currPlayer:CanSkip() then
+		if not arg0_54.currPlayer:CanSkip() then
 			return
 		end
 
-		if arg0_53:IsReView() or arg0_53.storyScript:IsPlayed() or not arg0_53.storyScript:ShowSkipTip() then
-			var0_53()
+		if arg0_54:IsReView() or arg0_54.storyScript:IsPlayed() or not arg0_54.storyScript:ShowSkipTip() then
+			var0_54()
 
 			return
 		end
 
-		arg0_53:Puase()
+		arg0_54:Puase()
 
-		arg0_53.isOpenMsgbox = true
+		arg0_54.isOpenMsgbox = true
 
 		pg.MsgboxMgr:GetInstance():ShowMsgBox({
-			parent = rtf(arg0_53._tf:Find("front")),
+			parent = rtf(arg0_54._tf:Find("front")),
 			content = i18n("story_skip_confirm"),
 			onYes = function()
-				arg0_53:Resume()
-				var0_53()
+				arg0_54:Resume()
+				var0_54()
 			end,
 			onNo = function()
-				arg0_53.isOpenMsgbox = false
+				arg0_54.isOpenMsgbox = false
 
-				arg0_53:Resume()
+				arg0_54:Resume()
 			end,
 			weight = LayerWeightConst.TOP_LAYER
 		})
 	end, SFX_PANEL)
 end
 
-function var0_0.RegistAutoBtn(arg0_58)
-	onButton(arg0_58, arg0_58.autoBtn, function()
-		if arg0_58:IsStopping() or arg0_58:IsPausing() then
+function var0_0.RegistAutoBtn(arg0_59)
+	onButton(arg0_59, arg0_59.autoBtn, function()
+		if arg0_59:IsStopping() or arg0_59:IsPausing() then
 			return
 		end
 
-		if arg0_58.storyScript:GetAutoPlayFlag() then
-			arg0_58.storyScript:StopAutoPlay()
-			arg0_58.currPlayer:CancelAuto()
+		if arg0_59.storyScript:GetAutoPlayFlag() then
+			arg0_59.storyScript:StopAutoPlay()
+			arg0_59.currPlayer:CancelAuto()
 		else
-			arg0_58.storyScript:SetAutoPlay()
-			arg0_58.currPlayer:NextOne()
+			arg0_59.storyScript:SetAutoPlay()
+			arg0_59.currPlayer:NextOne()
 		end
 
-		if arg0_58.storyScript then
-			arg0_58:UpdateAutoBtn()
+		if arg0_59.storyScript then
+			arg0_59:UpdateAutoBtn()
 		end
 	end, SFX_PANEL)
 
-	local var0_58 = arg0_58:IsAutoPlay()
+	local var0_59 = arg0_59:IsAutoPlay()
 
-	if var0_58 then
-		arg0_58.storyScript:SetAutoPlay()
-		arg0_58:UpdateAutoBtn()
+	if var0_59 then
+		arg0_59.storyScript:SetAutoPlay()
+		arg0_59:UpdateAutoBtn()
 
-		arg0_58.autoPlayFlag = false
+		arg0_59.autoPlayFlag = false
 	end
 
-	arg0_58.banPlayFlag = false
-	arg0_58.isAutoPlay = var0_58
+	arg0_59.banPlayFlag = false
+	arg0_59.isAutoPlay = var0_59
 end
 
-function var0_0.RegistRecordBtn(arg0_60)
-	onButton(arg0_60, arg0_60.recordBtn, function()
-		if arg0_60.storyScript:GetAutoPlayFlag() then
+function var0_0.RegistRecordBtn(arg0_61)
+	onButton(arg0_61, arg0_61.recordBtn, function()
+		if arg0_61.storyScript:GetAutoPlayFlag() then
 			return
 		end
 
-		if not arg0_60.recordPanel:CanOpen() then
+		if not arg0_61.recordPanel:CanOpen() then
 			return
 		end
 
-		local var0_61 = "Show"
+		local var0_62 = "Show"
 
-		arg0_60.recordPanel[var0_61](arg0_60.recordPanel, arg0_60.recorder)
+		arg0_61.recordPanel[var0_62](arg0_61.recordPanel, arg0_61.recorder)
 	end, SFX_PANEL)
 end
 
-function var0_0.TriggerAutoBtn(arg0_62)
-	if not arg0_62:IsRunning() then
-		return
-	end
-
-	triggerButton(arg0_62.autoBtn)
-end
-
-function var0_0.TriggerSkipBtn(arg0_63)
+function var0_0.TriggerAutoBtn(arg0_63)
 	if not arg0_63:IsRunning() then
 		return
 	end
 
-	triggerButton(arg0_63.skipBtn)
+	triggerButton(arg0_63.autoBtn)
 end
 
-function var0_0.ForEscPress(arg0_64)
-	if arg0_64.recordPanel:IsShowing() then
-		arg0_64.recordPanel:Hide()
-	elseif arg0_64.currPlayer and arg0_64.currPlayer:WaitForEvent() or arg0_64.currPlayer and arg0_64.storyScript and arg0_64.storyScript.hideSkip then
+function var0_0.TriggerSkipBtn(arg0_64)
+	if not arg0_64:IsRunning() then
+		return
+	end
+
+	triggerButton(arg0_64.skipBtn)
+end
+
+function var0_0.ForEscPress(arg0_65)
+	if arg0_65.recordPanel:IsShowing() then
+		arg0_65.recordPanel:Hide()
+	elseif arg0_65.currPlayer and arg0_65.currPlayer:WaitForEvent() or arg0_65.currPlayer and arg0_65.storyScript and arg0_65.storyScript.hideSkip then
 		-- block empty
 	else
-		arg0_64:TriggerSkipBtn()
+		arg0_65:TriggerSkipBtn()
 	end
 end
 
-function var0_0.UpdatePlaySpeed(arg0_65, arg1_65)
-	if arg0_65:IsRunning() and arg0_65.storyScript then
-		arg0_65.storyScript:SetPlaySpeed(arg1_65)
-	end
-end
-
-function var0_0.GetPlaySpeed(arg0_66)
+function var0_0.UpdatePlaySpeed(arg0_66, arg1_66)
 	if arg0_66:IsRunning() and arg0_66.storyScript then
-		return arg0_66.storyScript:GetPlaySpeed()
+		arg0_66.storyScript:SetPlaySpeed(arg1_66)
 	end
 end
 
-function var0_0.OnStart(arg0_67)
-	arg0_67.recorder:Clear()
-	removeOnButton(arg0_67._go)
-	removeOnButton(arg0_67.skipBtn)
-	removeOnButton(arg0_67.autoBtn)
-	removeOnButton(arg0_67.recordBtn)
+function var0_0.GetPlaySpeed(arg0_67)
+	if arg0_67:IsRunning() and arg0_67.storyScript then
+		return arg0_67.storyScript:GetPlaySpeed()
+	end
+end
 
-	arg0_67.alphaImage.color = Color(0, 0, 0, arg0_67.storyScript:GetStoryAlpha())
+function var0_0.OnStart(arg0_68)
+	arg0_68.recorder:Clear()
+	removeOnButton(arg0_68._go)
+	removeOnButton(arg0_68.skipBtn)
+	removeOnButton(arg0_68.autoBtn)
+	removeOnButton(arg0_68.recordBtn)
 
-	setActive(arg0_67.recordBtn, not arg0_67.storyScript:ShouldHideRecord())
-	arg0_67:ClearStoryEventTriggerListener()
+	arg0_68.alphaImage.color = Color(0, 0, 0, arg0_68.storyScript:GetStoryAlpha())
 
-	local var0_67 = arg0_67.storyScript:GetAllStepDispatcherRecallName()
+	setActive(arg0_68.recordBtn, not arg0_68.storyScript:ShouldHideRecord())
+	arg0_68:ClearStoryEventTriggerListener()
 
-	if #var0_67 > 0 then
-		arg0_67.storyEventTriggerListener = StoryEventTriggerListener.New(var0_67)
+	local var0_68 = arg0_68.storyScript:GetAllStepDispatcherRecallName()
+
+	if #var0_68 > 0 then
+		arg0_68.storyEventTriggerListener = StoryEventTriggerListener.New(var0_68)
 	end
 
-	arg0_67.state = var3_0
+	arg0_68.state = var3_0
 
-	arg0_67:TrackingStart()
-	arg0_67:SendNotification(GAME.STORY_BEGIN, arg0_67.storyScript:GetName())
-	arg0_67:SendNotification(GAME.STORY_UPDATE, {
-		storyId = arg0_67.storyScript:GetName()
+	arg0_68:TrackingStart()
+	arg0_68:SendNotification(GAME.STORY_BEGIN, arg0_68.storyScript:GetName())
+	arg0_68:SendNotification(GAME.STORY_UPDATE, {
+		storyId = arg0_68.storyScript:GetName()
 	})
-	pg.DelegateInfo.New(arg0_67)
+	pg.DelegateInfo.New(arg0_68)
 
-	for iter0_67, iter1_67 in ipairs(arg0_67.players) do
-		iter1_67:StoryStart(arg0_67.storyScript)
+	for iter0_68, iter1_68 in ipairs(arg0_68.players) do
+		iter1_68:StoryStart(arg0_68.storyScript)
 	end
 
-	setActive(arg0_67._go, true)
-	arg0_67._tf:SetAsLastSibling()
-	setActive(arg0_67.skipBtn, not arg0_67.storyScript:ShouldHideSkip())
-	setActive(arg0_67.autoBtn, not arg0_67.storyScript:ShouldHideAutoBtn())
+	setActive(arg0_68._go, true)
+	arg0_68._tf:SetAsLastSibling()
+	setActive(arg0_68.skipBtn, not arg0_68.storyScript:ShouldHideSkip())
+	setActive(arg0_68.autoBtn, not arg0_68.storyScript:ShouldHideAutoBtn())
 
-	arg0_67.bgmVolumeValue = pg.CriMgr.GetInstance():getBGMVolume()
+	arg0_68.bgmVolumeValue = pg.CriMgr.GetInstance():getBGMVolume()
 
-	arg0_67:RegistSkipBtn()
-	arg0_67:RegistAutoBtn()
-	arg0_67:RegistRecordBtn()
+	arg0_68:RegistSkipBtn()
+	arg0_68:RegistAutoBtn()
+	arg0_68:RegistRecordBtn()
 end
 
-function var0_0.TrackingStart(arg0_68)
+function var0_0.TrackingStart(arg0_69)
 	if not getProxy(PlayerProxy) or not getProxy(PlayerProxy):getRawData() then
 		return
 	end
 
-	arg0_68.trackFlag = false
+	arg0_69.trackFlag = false
 
-	if not arg0_68.storyScript then
-		return
-	end
-
-	local var0_68 = arg0_68:StoryName2StoryId(arg0_68.storyScript:GetName())
-
-	if var0_68 and not arg0_68:GetPlayedFlag(var0_68) then
-		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildStoryStart(var0_68, 0))
-
-		arg0_68.trackFlag = true
-	end
-end
-
-function var0_0.TrackingSkip(arg0_69)
-	if not arg0_69.trackFlag or not arg0_69.storyScript then
+	if not arg0_69.storyScript then
 		return
 	end
 
 	local var0_69 = arg0_69:StoryName2StoryId(arg0_69.storyScript:GetName())
 
-	if var0_69 then
-		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildStorySkip(var0_69, arg0_69.progress or 0))
+	if var0_69 and not arg0_69:GetPlayedFlag(var0_69) then
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildStoryStart(var0_69, 0))
+
+		arg0_69.trackFlag = true
 	end
 end
 
-function var0_0.TrackingOption(arg0_70, arg1_70, arg2_70)
-	if not arg0_70.storyScript or not arg1_70 or not arg2_70 then
+function var0_0.TrackingSkip(arg0_70)
+	if not arg0_70.trackFlag or not arg0_70.storyScript then
 		return
 	end
 
 	local var0_70 = arg0_70:StoryName2StoryId(arg0_70.storyScript:GetName())
 
 	if var0_70 then
-		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildStoryOption(var0_70, arg1_70 .. "_" .. (arg2_70 or 0)))
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildStorySkip(var0_70, arg0_70.progress or 0))
 	end
 end
 
-function var0_0.ClearStoryEvent(arg0_71)
-	if arg0_71.storyEventTriggerListener then
-		arg0_71.storyEventTriggerListener:Clear()
+function var0_0.TrackingOption(arg0_71, arg1_71, arg2_71)
+	if not arg0_71.storyScript or not arg1_71 or not arg2_71 then
+		return
+	end
+
+	local var0_71 = arg0_71:StoryName2StoryId(arg0_71.storyScript:GetName())
+
+	if var0_71 then
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildStoryOption(var0_71, arg1_71 .. "_" .. (arg2_71 or 0)))
 	end
 end
 
-function var0_0.CheckStoryEvent(arg0_72, arg1_72)
+function var0_0.ClearStoryEvent(arg0_72)
 	if arg0_72.storyEventTriggerListener then
-		return arg0_72.storyEventTriggerListener:ExistCache(arg1_72)
+		arg0_72.storyEventTriggerListener:Clear()
+	end
+end
+
+function var0_0.CheckStoryEvent(arg0_73, arg1_73)
+	if arg0_73.storyEventTriggerListener then
+		return arg0_73.storyEventTriggerListener:ExistCache(arg1_73)
 	end
 
 	return false
 end
 
-function var0_0.GetStoryEventArg(arg0_73, arg1_73)
-	if not arg0_73:CheckStoryEvent(arg1_73) then
+function var0_0.GetStoryEventArg(arg0_74, arg1_74)
+	if not arg0_74:CheckStoryEvent(arg1_74) then
 		return nil
 	end
 
-	if arg0_73.storyEventTriggerListener and arg0_73.storyEventTriggerListener:ExistArg(arg1_73) then
-		return arg0_73.storyEventTriggerListener:GetArg(arg1_73)
+	if arg0_74.storyEventTriggerListener and arg0_74.storyEventTriggerListener:ExistArg(arg1_74) then
+		return arg0_74.storyEventTriggerListener:GetArg(arg1_74)
 	end
 
 	return nil
 end
 
-function var0_0.UpdateAutoBtn(arg0_74)
-	local var0_74 = arg0_74.storyScript:GetAutoPlayFlag()
+function var0_0.UpdateAutoBtn(arg0_75)
+	local var0_75 = arg0_75.storyScript:GetAutoPlayFlag()
 
-	arg0_74:ClearAutoBtn(var0_74)
+	arg0_75:ClearAutoBtn(var0_75)
 end
 
-function var0_0.ClearAutoBtn(arg0_75, arg1_75)
-	arg0_75.autoBtnImg.color = arg1_75 and var8_0 or var9_0
-	arg0_75.isAutoPlay = arg1_75
+function var0_0.ClearAutoBtn(arg0_76, arg1_76)
+	arg0_76.autoBtnImg.color = arg1_76 and var8_0 or var9_0
+	arg0_76.isAutoPlay = arg1_76
 
-	local var0_75 = arg1_75 and "Show" or "Hide"
+	local var0_76 = arg1_76 and "Show" or "Hide"
 
-	arg0_75.setSpeedPanel[var0_75](arg0_75.setSpeedPanel)
+	arg0_76.setSpeedPanel[var0_76](arg0_76.setSpeedPanel)
 end
 
-function var0_0.ClearStoryEventTriggerListener(arg0_76)
-	if arg0_76.storyEventTriggerListener then
-		arg0_76.storyEventTriggerListener:Dispose()
+function var0_0.ClearStoryEventTriggerListener(arg0_77)
+	if arg0_77.storyEventTriggerListener then
+		arg0_77.storyEventTriggerListener:Dispose()
 
-		arg0_76.storyEventTriggerListener = nil
+		arg0_77.storyEventTriggerListener = nil
 	end
 end
 
-function var0_0.Clear(arg0_77)
-	arg0_77.progress = 0
+function var0_0.Clear(arg0_78)
+	arg0_78.progress = 0
 
-	arg0_77:ClearStoryEventTriggerListener()
-	arg0_77.recorder:Clear()
-	arg0_77.recordPanel:Hide()
+	arg0_78:ClearStoryEventTriggerListener()
+	arg0_78.recorder:Clear()
+	arg0_78.recordPanel:Hide()
 
-	arg0_77.autoPlayFlag = false
-	arg0_77.banPlayFlag = false
+	arg0_78.autoPlayFlag = false
+	arg0_78.banPlayFlag = false
 
-	removeOnButton(arg0_77._go)
-	removeOnButton(arg0_77.skipBtn)
-	removeOnButton(arg0_77.recordBtn)
-	removeOnButton(arg0_77.autoBtn)
-	arg0_77:ClearAutoBtn(false)
+	removeOnButton(arg0_78._go)
+	removeOnButton(arg0_78.skipBtn)
+	removeOnButton(arg0_78.recordBtn)
+	removeOnButton(arg0_78.autoBtn)
+	arg0_78:ClearAutoBtn(false)
 
-	if isActive(arg0_77._go) then
-		pg.DelegateInfo.Dispose(arg0_77)
+	if isActive(arg0_78._go) then
+		pg.DelegateInfo.Dispose(arg0_78)
 	end
 
-	if arg0_77.setSpeedPanel then
-		arg0_77.setSpeedPanel:Clear()
+	if arg0_78.setSpeedPanel then
+		arg0_78.setSpeedPanel:Clear()
 	end
 
-	setActive(arg0_77.skipBtn, false)
-	setActive(arg0_77._go, false)
+	setActive(arg0_78.skipBtn, false)
+	setActive(arg0_78._go, false)
 
-	for iter0_77, iter1_77 in ipairs(arg0_77.players) do
-		iter1_77:StoryEnd(arg0_77.storyScript)
+	for iter0_78, iter1_78 in ipairs(arg0_78.players) do
+		iter1_78:StoryEnd(arg0_78.storyScript)
 	end
 
-	arg0_77.optionSelCodes = nil
+	arg0_78.optionSelCodes = nil
 
-	arg0_77:SendNotification(GAME.STORY_END)
+	arg0_78:SendNotification(GAME.STORY_END)
 
-	if arg0_77.isOpenMsgbox then
+	if arg0_78.isOpenMsgbox then
 		pg.MsgboxMgr:GetInstance():hide()
 	end
 
-	arg0_77:RevertBgmVolumeValue()
+	arg0_78:RevertBgmVolumeValue()
 end
 
-function var0_0.RevertBgmVolumeValue(arg0_78)
+function var0_0.RevertBgmVolumeValue(arg0_79)
 	pg.BgmMgr.GetInstance():ContinuePlay()
 
-	local var0_78 = pg.CriMgr.GetInstance():getBGMVolume()
+	local var0_79 = pg.CriMgr.GetInstance():getBGMVolume()
 
-	if arg0_78.bgmVolumeValue and arg0_78.bgmVolumeValue ~= var0_78 then
-		pg.CriMgr.GetInstance():setBGMVolume(arg0_78.bgmVolumeValue)
+	if arg0_79.bgmVolumeValue and arg0_79.bgmVolumeValue ~= var0_79 then
+		pg.CriMgr.GetInstance():setBGMVolume(arg0_79.bgmVolumeValue)
 	end
 
-	arg0_78.bgmVolumeValue = nil
+	arg0_79.bgmVolumeValue = nil
 end
 
-function var0_0.OnEnd(arg0_79, arg1_79)
-	arg0_79:Clear()
+function var0_0.OnEnd(arg0_80, arg1_80)
+	arg0_80:Clear()
 
-	if arg0_79.state == var3_0 or arg0_79.state == var5_0 then
-		arg0_79.state = var6_0
+	if arg0_80.state == var3_0 or arg0_80.state == var5_0 then
+		arg0_80.state = var6_0
 
-		local var0_79 = arg0_79.storyScript:GetNextScriptName()
+		local var0_80 = arg0_80.storyScript:GetNextScriptName()
 
-		if var0_79 and not arg0_79:IsReView() then
-			arg0_79.storyScript = nil
+		if var0_80 and not arg0_80:IsReView() then
+			arg0_80.storyScript = nil
 
-			arg0_79:Play(var0_79, arg1_79)
+			arg0_80:Play(var0_80, arg1_80)
 		else
-			local var1_79 = arg0_79.storyScript:GetBranchCode()
+			local var1_80 = arg0_80.storyScript:GetBranchCode()
 
-			arg0_79.storyScript = nil
+			arg0_80.storyScript = nil
 
-			if arg1_79 then
-				arg1_79(true, var1_79)
+			if arg1_80 then
+				arg1_80(true, var1_80)
 			end
 		end
 	else
-		arg0_79.state = var6_0
+		arg0_80.state = var6_0
 
-		local var2_79 = arg0_79.storyScript:GetBranchCode()
+		local var2_80 = arg0_80.storyScript:GetBranchCode()
 
-		if arg1_79 then
-			arg1_79(true, var2_79)
+		if arg1_80 then
+			arg1_80(true, var2_80)
 		end
 	end
 end
 
-function var0_0.OnSceneEnter(arg0_80, arg1_80)
-	if not arg0_80.scenes then
-		arg0_80.scenes = {}
+function var0_0.OnSceneEnter(arg0_81, arg1_81)
+	if not arg0_81.scenes then
+		arg0_81.scenes = {}
 	end
 
-	arg0_80.scenes[arg1_80.view] = true
+	arg0_81.scenes[arg1_81.view] = true
 end
 
-function var0_0.OnSceneExit(arg0_81, arg1_81)
-	if not arg0_81.scenes then
+function var0_0.OnSceneExit(arg0_82, arg1_82)
+	if not arg0_82.scenes then
 		return
 	end
 
-	arg0_81.scenes[arg1_81.view] = nil
+	arg0_82.scenes[arg1_82.view] = nil
 end
 
-function var0_0.IsReView(arg0_82)
-	local var0_82 = getProxy(ContextProxy):GetPrevContext(1)
+function var0_0.IsReView(arg0_83)
+	local var0_83 = getProxy(ContextProxy):GetPrevContext(1)
 
-	return arg0_82.scenes[WorldMediaCollectionScene.__cname] == true or var0_82 and var0_82.mediator == WorldMediaCollectionMediator
+	return arg0_83.scenes[WorldMediaCollectionScene.__cname] == true or var0_83 and var0_83.mediator == WorldMediaCollectionMediator
 end
 
-function var0_0.IsRunning(arg0_83)
-	return arg0_83.state == var3_0
+function var0_0.IsRunning(arg0_84)
+	return arg0_84.state == var3_0
 end
 
-function var0_0.IsStopping(arg0_84)
-	return arg0_84.state == var5_0
+function var0_0.IsStopping(arg0_85)
+	return arg0_85.state == var5_0
 end
 
-function var0_0.IsPausing(arg0_85)
-	return arg0_85.state == var4_0
+function var0_0.IsPausing(arg0_86)
+	return arg0_86.state == var4_0
 end
 
-function var0_0.IsAutoPlay(arg0_86)
-	if arg0_86.banPlayFlag then
+function var0_0.IsAutoPlay(arg0_87)
+	if arg0_87.banPlayFlag then
 		return false
 	end
 
-	return getProxy(SettingsProxy):GetStoryAutoPlayFlag() or arg0_86.autoPlayFlag == true
+	return getProxy(SettingsProxy):GetStoryAutoPlayFlag() or arg0_87.autoPlayFlag == true
 end
 
-function var0_0.GetRectSize(arg0_87)
-	return Vector2(arg0_87._tf.rect.width, arg0_87._tf.rect.height)
+function var0_0.GetRectSize(arg0_88)
+	return Vector2(arg0_88._tf.rect.width, arg0_88._tf.rect.height)
 end
 
-function var0_0.AddRecord(arg0_88, arg1_88)
-	arg0_88.recorder:Add(arg1_88)
+function var0_0.AddRecord(arg0_89, arg1_89)
+	arg0_89.recorder:Add(arg1_89)
 end
 
-function var0_0.Quit(arg0_89)
-	arg0_89.recorder:Dispose()
-	arg0_89.recordPanel:Dispose()
-	arg0_89.setSpeedPanel:Dispose()
+function var0_0.Quit(arg0_90)
+	arg0_90.recorder:Dispose()
+	arg0_90.recordPanel:Dispose()
+	arg0_90.setSpeedPanel:Dispose()
 
-	if arg0_89.currPlayer and arg0_89.currPlayer:WaitForEvent() then
-		arg0_89:Clear()
+	if arg0_90.currPlayer and arg0_90.currPlayer:WaitForEvent() then
+		arg0_90:Clear()
 	end
 
-	arg0_89.state = var7_0
-	arg0_89.storyScript = nil
-	arg0_89.currPlayer = nil
-	arg0_89.playQueue = {}
-	arg0_89.playedList = {}
-	arg0_89.scenes = {}
+	arg0_90.state = var7_0
+	arg0_90.storyScript = nil
+	arg0_90.currPlayer = nil
+	arg0_90.playQueue = {}
+	arg0_90.playedList = {}
+	arg0_90.scenes = {}
 end
 
-function var0_0.Fix(arg0_90)
-	local var0_90 = getProxy(PlayerProxy):getRawData():GetRegisterTime()
-	local var1_90 = pg.TimeMgr.GetInstance():parseTimeFromConfig({
+function var0_0.Fix(arg0_91)
+	local var0_91 = getProxy(PlayerProxy):getRawData():GetRegisterTime()
+	local var1_91 = pg.TimeMgr.GetInstance():parseTimeFromConfig({
 		{
 			2021,
 			4,
@@ -961,7 +967,7 @@ function var0_0.Fix(arg0_90)
 			0
 		}
 	})
-	local var2_90 = {
+	local var2_91 = {
 		10020,
 		10021,
 		10022,
@@ -972,55 +978,55 @@ function var0_0.Fix(arg0_90)
 		10027
 	}
 
-	if var0_90 <= var1_90 then
-		_.each(var2_90, function(arg0_91)
-			arg0_90.playedList[arg0_91] = true
+	if var0_91 <= var1_91 then
+		_.each(var2_91, function(arg0_92)
+			arg0_91.playedList[arg0_92] = true
 		end)
 	end
 
-	local var3_90 = 5001
-	local var4_90 = 5020
-	local var5_90 = getProxy(TaskProxy)
-	local var6_90 = 0
+	local var3_91 = 5001
+	local var4_91 = 5020
+	local var5_91 = getProxy(TaskProxy)
+	local var6_91 = 0
 
-	for iter0_90 = var3_90, var4_90, -1 do
-		if var5_90:getFinishTaskById(iter0_90) or var5_90:getTaskById(iter0_90) then
-			var6_90 = iter0_90
+	for iter0_91 = var3_91, var4_91, -1 do
+		if var5_91:getFinishTaskById(iter0_91) or var5_91:getTaskById(iter0_91) then
+			var6_91 = iter0_91
 
 			break
 		end
 	end
 
-	for iter1_90 = var6_90, var4_90, -1 do
-		local var7_90 = pg.task_data_template[iter1_90]
+	for iter1_91 = var6_91, var4_91, -1 do
+		local var7_91 = pg.task_data_template[iter1_91]
 
-		if var7_90 then
-			local var8_90 = var7_90.story_id
+		if var7_91 then
+			local var8_91 = var7_91.story_id
 
-			if var8_90 and #var8_90 > 0 and not arg0_90:IsPlayed(var8_90) then
-				arg0_90.playedList[var8_90] = true
+			if var8_91 and #var8_91 > 0 and not arg0_91:IsPlayed(var8_91) then
+				arg0_91.playedList[var8_91] = true
 			end
 		end
 	end
 
-	local var9_90 = getProxy(ActivityProxy):getActivityById(ActivityConst.JYHZ_ACTIVITY_ID)
+	local var9_91 = getProxy(ActivityProxy):getActivityById(ActivityConst.JYHZ_ACTIVITY_ID)
 
-	if var9_90 and not var9_90:isEnd() then
-		local var10_90 = _.flatten(var9_90:getConfig("config_data"))
-		local var11_90
+	if var9_91 and not var9_91:isEnd() then
+		local var10_91 = _.flatten(var9_91:getConfig("config_data"))
+		local var11_91
 
-		for iter2_90 = #var10_90, 1, -1 do
-			local var12_90 = pg.task_data_template[var10_90[iter2_90]].story_id
+		for iter2_91 = #var10_91, 1, -1 do
+			local var12_91 = pg.task_data_template[var10_91[iter2_91]].story_id
 
-			if var12_90 and #var12_90 > 0 then
-				local var13_90 = arg0_90:IsPlayed(var12_90)
+			if var12_91 and #var12_91 > 0 then
+				local var13_91 = arg0_91:IsPlayed(var12_91)
 
-				if var11_90 then
-					if not var13_90 then
-						arg0_90.playedList[var12_90] = true
+				if var11_91 then
+					if not var13_91 then
+						arg0_91.playedList[var12_91] = true
 					end
-				elseif var13_90 then
-					var11_90 = iter2_90
+				elseif var13_91 then
+					var11_91 = iter2_91
 				end
 			end
 		end

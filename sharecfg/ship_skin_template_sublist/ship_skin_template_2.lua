@@ -1,114 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_2 = {
-	[102051] = {
-		ship_group = 10205,
-		name = "New Year's Bluebird",
-		hand_id = 14,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 102051,
-		group_index = 1,
-		l2d_ignore_drag = 0,
-		painting = "hailunna_2",
-		shop_id = 70136,
-		illustrator = 7,
-		l2d_voice_calibrate = "",
-		shop_type_id = 2,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "101",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "hailunna_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "I... want to be part of the new year festivities too. Oh, you don't have to worry about me. I'm no longer the fledgling I once was.",
-		voice_actor = 34,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.06,
-					0.975,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.029,
-					1.029,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.045,
-					0.96,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				40,
-				{
-					{
-						"smoke",
-						{
-							-0.627,
-							2.291,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[102052] = {
 		ship_group = 10205,
 		name = "May I Have this Dance?",
@@ -13423,6 +13315,241 @@ pg.base.ship_skin_template_2 = {
 						{
 							-0.567,
 							2.333,
+							0.14
+						}
+					}
+				}
+			}
+		}
+	},
+	[103163] = {
+		ship_group = 10316,
+		name = "Evening Breeze Minuet",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 103163,
+		group_index = 3,
+		l2d_ignore_drag = 0,
+		painting = "baerdimo_5",
+		shop_id = 70418,
+		illustrator = -1,
+		shop_type_id = 7,
+		lip_smoothing = 0,
+		bg = "135",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "baerdimo_5",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Damn, that Bremerton... What did she make me wear this time... Even though I was the one to ask her for advice... Um... Ugh... This doesn't look too weird, right...?",
+		voice_actor = 191,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			1,
+			4
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.199,
+					1.124,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.195,
+					1.089,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.009,
+					0.012,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.567,
+							2.333,
+							0.14
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			login = 6.67,
+			touch = 0.66,
+			main_1 = 0.2,
+			propose = 0.4
+		}
+	},
+	[103164] = {
+		ship_group = 10316,
+		name = "Ace's Travel Journal",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 103164,
+		group_index = 4,
+		l2d_ignore_drag = 0,
+		painting = "baerdimo_3",
+		shop_id = 70525,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 2,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "142",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "1102",
+		voice_actor_2 = -1,
+		prefab = "baerdimo_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "\"Our meeting here must have been preordained by fate. Hail to you. I am a passing traveler by the name of Baltimore.\" ...Hahah, it's nothing. Just some lines I came up with to match my traditional getup. Did they do the trick, Commander?",
+		voice_actor = 191,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.176,
+					1.177,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.172,
+					1.204,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.009,
+					0.004,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.433,
+							2.437,
 							0.14
 						}
 					}

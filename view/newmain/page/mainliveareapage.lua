@@ -69,9 +69,14 @@ function var0_0.OnInit(arg0_7)
 			return
 		end
 
-		arg0_7:emit(NewMainMediator.GO_SCENE, SCENE.EDUCATE, {
-			isMainEnter = true
-		})
+		if LOCK_NEW_EDUCATE_SYSTEM then
+			arg0_7:emit(NewMainMediator.GO_SCENE, SCENE.EDUCATE, {
+				isMainEnter = true
+			})
+		else
+			arg0_7:emit(NewMainMediator.GO_SCENE, SCENE.NEW_EDUCATE_SELECT)
+		end
+
 		arg0_7:Hide()
 	end, SFX_MAIN)
 	onButton(arg0_7, arg0_7._islandBtn, function()
@@ -106,24 +111,28 @@ function var0_0.Show(arg0_16)
 		arg0_16._haremBtn:GetComponent(typeof(Image)).color = Color(1, 1, 1, 1)
 	end
 
-	if not pg.SystemOpenMgr.GetInstance():isOpenSystem(var0_16.level, "EducateMediator") then
+	local var1_16 = LOCK_NEW_EDUCATE_SYSTEM and "EducateMediator" or "NewEducateSelectMediator"
+
+	if not pg.SystemOpenMgr.GetInstance():isOpenSystem(var0_16.level, var1_16) then
 		arg0_16._educateBtn:GetComponent(typeof(Image)).color = Color(0.5, 0.5, 0.5, 1)
 	else
 		arg0_16._educateBtn:GetComponent(typeof(Image)).color = Color(1, 1, 1, 1)
 	end
 
-	local var1_16 = pg.SystemOpenMgr.GetInstance():isOpenSystem(var0_16.level, "SelectDorm3DMediator")
+	setActive(arg0_16._educateBtn:Find("tip"), NewEducateHelper.IsShowNewChildTip())
 
-	if not var1_16 then
+	local var2_16 = pg.SystemOpenMgr.GetInstance():isOpenSystem(var0_16.level, "SelectDorm3DMediator")
+
+	if not var2_16 then
 		arg0_16._dormBtn:GetComponent(typeof(Image)).color = Color(0.5, 0.5, 0.5, 1)
 	else
 		arg0_16._dormBtn:GetComponent(typeof(Image)).color = Color(1, 1, 1, 1)
 	end
 
 	;(function()
-		local var0_17 = var1_16 and Dorm3dGift.NeedViewTip()
-		local var1_17 = var1_16 and Dorm3dFurniture.NeedViewTip()
-		local var2_17 = var1_16 and Dorm3dFurniture.IsTimelimitShopTip()
+		local var0_17 = var2_16 and Dorm3dGift.NeedViewTip()
+		local var1_17 = var2_16 and Dorm3dFurniture.NeedViewTip()
+		local var2_17 = var2_16 and Dorm3dFurniture.IsTimelimitShopTip()
 
 		setActive(arg0_16._dormBtn:Find("tip"), not var2_17 and (var0_17 or var1_17))
 		setActive(arg0_16._dormBtn:Find("tagFurniture"), var2_17)

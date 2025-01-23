@@ -602,7 +602,7 @@ function var0_0.ShowResultUI(arg0_70, arg1_70)
 
 		setText(arg0_70.resultUI:Find("Panel/Text"), i18n("volleyball_end_tip", arg0_70.apartment:getConfig("name")))
 
-		if arg1_70 then
+		if arg1_70 and arg1_70.cost > 0 then
 			setActive(arg0_70.resultUI:Find("Panel/Award"), true)
 			setText(arg0_70.resultUI:Find("Panel/Award/Text"), i18n("volleyball_end_award", arg0_70.apartment:getConfig("name")))
 		else

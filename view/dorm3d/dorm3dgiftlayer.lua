@@ -208,6 +208,7 @@ function var0_0.UpdateGift(arg0_19, arg1_19, arg2_19, arg3_19)
 				},
 				tip = i18n("dorm3d_shop_gift_tip"),
 				drop = var6_19,
+				groupId = arg0_19.apartment:GetConfigID(),
 				onYes = function()
 					arg0_19:emit(GAME.SHOPPING, {
 						silentTip = true,
@@ -221,57 +222,87 @@ function var0_0.UpdateGift(arg0_19, arg1_19, arg2_19, arg3_19)
 
 	setActive(arg1_19:Find("mask"), var5_19)
 	setText(arg1_19:Find("mask/Image/Text"), i18n("dorm3d_already_gifted"))
-	onToggle(arg0_19, arg1_19, function(arg0_24)
-		if arg0_24 then
+
+	local function var15_19(arg0_24)
+		arg0_19.selectGiftCount = arg0_24
+
+		setText(arg1_19:Find("base/PageUtil/Text"), arg0_24)
+		setGray(arg1_19:Find("base/PageUtil/Add"), arg0_24 >= math.min(20, var1_19.count))
+		setGray(arg1_19:Find("base/PageUtil/Minus"), arg0_24 <= 1)
+	end
+
+	;(function()
+		local var0_25 = math.min(20, var1_19.count)
+
+		pressPersistTrigger(arg1_19:Find("base/PageUtil/Minus"), 0.5, function()
+			local var0_26 = arg0_19.selectGiftCount - 1
+
+			var0_26 = var0_26 <= 0 and arg0_19.selectGiftCount or var0_26
+
+			var15_19(var0_26)
+		end, nil, true, true, 0.1, SFX_PANEL)
+		pressPersistTrigger(arg1_19:Find("base/PageUtil/Add"), 0.5, function()
+			local var0_27 = arg0_19.selectGiftCount + 1
+
+			var0_27 = var0_27 > var0_25 and var0_25 or var0_27
+
+			var15_19(var0_27)
+		end, nil, true, true, 0.1, SFX_PANEL)
+	end)()
+	onToggle(arg0_19, arg1_19, function(arg0_28)
+		if arg0_28 then
 			arg0_19.selectGiftId = arg2_19
 
 			arg0_19:UpdateConfirmBtn()
+			var15_19(math.min(1, var1_19.count))
 		elseif arg0_19.selectGiftId == arg2_19 then
 			arg0_19.selectGiftId = nil
 
 			arg0_19:UpdateConfirmBtn()
 		end
+
+		setActive(arg1_19:Find("base/PageUtil"), arg0_28)
 	end, SFX_PANEL)
 	setToggleEnabled(arg1_19, not var5_19)
 	triggerToggle(arg1_19, arg3_19)
 end
 
-function var0_0.SingleUpdateGift(arg0_25, arg1_25)
-	local var0_25 = table.indexof(arg0_25.filterGiftIds, arg1_25)
+function var0_0.SingleUpdateGift(arg0_29, arg1_29)
+	local var0_29 = table.indexof(arg0_29.filterGiftIds, arg1_29)
 
-	if var0_25 > 0 then
-		arg0_25:UpdateGift(arg0_25.giftItemList.container:GetChild(var0_25 - 1), arg1_25, true)
+	if var0_29 > 0 then
+		arg0_29:UpdateGift(arg0_29.giftItemList.container:GetChild(var0_29 - 1), arg1_29, true)
 	end
 end
 
-function var0_0.OnGiftListScroll(arg0_26, arg1_26)
-	local var0_26 = arg0_26.rtGiftPanel:Find("content/view/container")
-	local var1_26 = GetComponent(var0_26, typeof(VerticalLayoutGroup))
-	local var2_26 = var0_26.rect.height
-	local var3_26 = var0_26:GetChild(0).rect.height + var1_26.spacing
-	local var4_26 = var0_26.anchoredPosition.y
-	local var5_26 = var4_26 + var2_26
-	local var6_26 = math.floor((var4_26 - var1_26.padding.top) / var3_26)
-	local var7_26 = math.ceil((var5_26 - var1_26.padding.top) / var3_26)
+function var0_0.OnGiftListScroll(arg0_30, arg1_30)
+	local var0_30 = arg0_30.rtGiftPanel:Find("content/view/container")
+	local var1_30 = GetComponent(var0_30, typeof(VerticalLayoutGroup))
+	local var2_30 = var0_30.rect.height
+	local var3_30 = var0_30:GetChild(0).rect.height + var1_30.spacing
+	local var4_30 = var0_30.anchoredPosition.y
+	local var5_30 = var4_30 + var2_30
+	local var6_30 = math.floor((var4_30 - var1_30.padding.top) / var3_30)
+	local var7_30 = math.ceil((var5_30 - var1_30.padding.top) / var3_30)
 
-	for iter0_26 = math.max(1, var6_26), math.min(#arg0_26.filterGiftIds, var7_26) do
-		local var8_26 = arg0_26.filterGiftIds[iter0_26]
+	for iter0_30 = math.max(1, var6_30), math.min(#arg0_30.filterGiftIds, var7_30) do
+		local var8_30 = arg0_30.filterGiftIds[iter0_30]
 
-		if not arg0_26.showedGiftRecords[var8_26] then
-			arg0_26.showedGiftRecords[var8_26] = true
+		if not arg0_30.showedGiftRecords[var8_30] then
+			arg0_30.showedGiftRecords[var8_30] = true
 
-			local var9_26 = Dorm3dGift.SetViewedFlag(var8_26)
+			local var9_30 = Dorm3dGift.SetViewedFlag(var8_30)
 		end
 	end
 end
 
-function var0_0.UpdateConfirmBtn(arg0_27)
-	setButtonEnabled(arg0_27.btnConfirm, tobool(arg0_27.selectGiftId))
+function var0_0.UpdateConfirmBtn(arg0_31)
+	setButtonEnabled(arg0_31.btnConfirm, tobool(arg0_31.selectGiftId))
 end
 
-function var0_0.ConfirmGiveGifts(arg0_28)
-	if arg0_28.proxy:getGiftCount(arg0_28.selectGiftId) == 0 then
-		if pg.dorm3d_gift[arg0_28.selectGiftId].ship_group_id > 0 and arg0_28.proxy:isGiveGiftDone(arg0_28.selectGiftId) then
+function var0_0.ConfirmGiveGifts(arg0_32)
+	if arg0_32.proxy:getGiftCount(arg0_32.selectGiftId) == 0 then
+		if pg.dorm3d_gift[arg0_32.selectGiftId].ship_group_id > 0 and arg0_32.proxy:isGiveGiftDone(arg0_32.selectGiftId) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_shop_gift_already_given"))
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_shop_gift_not_owned"))
@@ -280,167 +311,180 @@ function var0_0.ConfirmGiveGifts(arg0_28)
 		return
 	end
 
-	local var0_28 = {}
+	local var0_32 = {}
 
-	if arg0_28.apartment:isMaxFavor() then
-		table.insert(var0_28, function(arg0_29)
+	if arg0_32.apartment:isMaxFavor() then
+		table.insert(var0_32, function(arg0_33)
 			pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_MSGBOX, {
 				contentText = i18n("dorm3d_gift_favor_max"),
-				onConfirm = arg0_29
+				onConfirm = arg0_33
 			})
 		end)
+	else
+		local var1_32 = pg.dorm3d_gift[arg0_32.selectGiftId].favor_trigger_id
+		local var2_32 = pg.dorm3d_favor_trigger[var1_32]
+		local var3_32 = arg0_32.apartment.favor + var2_32.num * arg0_32.selectGiftCount - arg0_32.apartment:getMaxFavor()
+
+		if var3_32 > 0 then
+			table.insert(var0_32, function(arg0_34)
+				pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_MSGBOX, {
+					contentText = i18n("dorm3d_gift_favor_exceed", var3_32),
+					onConfirm = arg0_34
+				})
+			end)
+		end
 	end
 
-	seriesAsync(var0_28, function()
-		arg0_28:emit(Dorm3dGiftMediator.GIVE_GIFT, arg0_28.selectGiftId)
+	seriesAsync(var0_32, function()
+		arg0_32:emit(Dorm3dGiftMediator.GIVE_GIFT, arg0_32.selectGiftId, arg0_32.selectGiftCount)
 	end)
 end
 
-function var0_0.AfterGiveGift(arg0_31, arg1_31)
-	local var0_31 = arg1_31.giftId
-	local var1_31 = table.indexof(arg0_31.filterGiftIds, var0_31)
+function var0_0.AfterGiveGift(arg0_36, arg1_36)
+	local var0_36 = arg1_36.giftId
+	local var1_36 = table.indexof(arg0_36.filterGiftIds, var0_36)
 
-	if var1_31 > 0 then
-		local var2_31 = arg0_31.giftItemList.container:GetChild(var1_31 - 1)
+	if var1_36 > 0 then
+		local var2_36 = arg0_36.giftItemList.container:GetChild(var1_36 - 1)
 
-		quickPlayAnimation(var2_31, "anim_dorm3d_giftui_Select")
+		quickPlayAnimation(var2_36, "anim_dorm3d_giftui_Select")
 	end
 
-	local var3_31 = pg.dorm3d_gift[var0_31]
-	local var4_31 = {}
-	local var5_31 = Apartment.getGroupConfig(arg0_31.apartment.configId, var3_31.reply_dialogue_id)
+	local var3_36 = pg.dorm3d_gift[var0_36]
+	local var4_36 = {}
+	local var5_36 = Apartment.getGroupConfig(arg0_36.apartment.configId, var3_36.reply_dialogue_id)
 
-	if var5_31 and ApartmentProxy.CheckUnlockConfig(pg.dorm3d_dialogue_group[var5_31].unlock) then
-		table.insert(var4_31, function(arg0_32)
-			arg0_31:emit(Dorm3dGiftMediator.DO_TALK, var5_31, arg0_32)
+	if var5_36 and ApartmentProxy.CheckUnlockConfig(pg.dorm3d_dialogue_group[var5_36].unlock) then
+		table.insert(var4_36, function(arg0_37)
+			arg0_36:emit(Dorm3dGiftMediator.DO_TALK, var5_36, arg0_37)
 		end)
 	end
 
-	if var3_31.unlock_dialogue_id > 0 then
-		table.insert(var4_31, function(arg0_33)
+	if var3_36.unlock_dialogue_id > 0 then
+		table.insert(var4_36, function(arg0_38)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_gift_story_unlock"))
-			arg0_33()
+			arg0_38()
 		end)
 	end
 
-	seriesAsync(var4_31, function()
-		arg0_31:CheckLevelUp()
+	seriesAsync(var4_36, function()
+		arg0_36:CheckLevelUp()
 	end)
 end
 
-function var0_0.CheckLevelUp(arg0_35)
-	if arg0_35.apartment:canLevelUp() then
-		arg0_35:emit(Dorm3dRoomMediator.FAVOR_LEVEL_UP, arg0_35.apartment.configId)
+function var0_0.CheckLevelUp(arg0_40)
+	if arg0_40.apartment:canLevelUp() then
+		arg0_40:emit(Dorm3dRoomMediator.FAVOR_LEVEL_UP, arg0_40.apartment.configId)
 	end
 end
 
-function var0_0.OpenInfoWindow(arg0_36, arg1_36)
-	local var0_36 = arg0_36.rtInfoWindow:Find("panel")
+function var0_0.OpenInfoWindow(arg0_41, arg1_41)
+	local var0_41 = arg0_41.rtInfoWindow:Find("panel")
 
-	setText(var0_36:Find("title/Text"), i18n("words_information"))
-	updateDorm3dIcon(var0_36:Find("middle/Dorm3dIconTpl"), arg1_36)
+	setText(var0_41:Find("title/Text"), i18n("words_information"))
+	updateDorm3dIcon(var0_41:Find("middle/Dorm3dIconTpl"), arg1_41)
 
-	local var1_36 = arg1_36:getConfig("ship_group_id") ~= 0
+	local var1_41 = arg1_41:getConfig("ship_group_id") ~= 0
 
-	setActive(var0_36:Find("middle/Dorm3dIconTpl/mark"), var1_36)
-	setText(var0_36:Find("middle/Text"), "???")
-	onButton(arg0_36, var0_36:Find("bottom/btn_buy"), function()
+	setActive(var0_41:Find("middle/Dorm3dIconTpl/mark"), var1_41)
+	setText(var0_41:Find("middle/Text"), "???")
+	onButton(arg0_41, var0_41:Find("bottom/btn_buy"), function()
 		pg.TipsMgr.GetInstance():ShowTips("without shop config")
 	end, SFX_CONFIRM)
-	setActive(arg0_36.rtInfoWindow, true)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_36.rtInfoWindow, {
+	setActive(arg0_41.rtInfoWindow, true)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_41.rtInfoWindow, {
 		weight = LayerWeightConst.SECOND_LAYER,
 		groupName = LayerWeightConst.GROUP_DORM3D
 	})
 end
 
-function var0_0.HideInfoWindow(arg0_38)
-	setActive(arg0_38.rtInfoWindow, false)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_38.rtInfoWindow, arg0_38._tf)
+function var0_0.HideInfoWindow(arg0_43)
+	setActive(arg0_43.rtInfoWindow, false)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_43.rtInfoWindow, arg0_43._tf)
 end
 
-function var0_0.OpenLackWindow(arg0_39, arg1_39)
-	local var0_39 = arg0_39.rtLackWindow:Find("panel")
+function var0_0.OpenLackWindow(arg0_44, arg1_44)
+	local var0_44 = arg0_44.rtLackWindow:Find("panel")
 
-	setText(var0_39:Find("title/Text"), i18n("child_msg_title_detail"))
-	updateDorm3dIcon(var0_39:Find("middle/Dorm3dIconTpl"), arg1_39)
+	setText(var0_44:Find("title/Text"), i18n("child_msg_title_detail"))
+	updateDorm3dIcon(var0_44:Find("middle/Dorm3dIconTpl"), arg1_44)
 
-	local var1_39 = arg1_39:getConfig("ship_group_id") ~= 0
+	local var1_44 = arg1_44:getConfig("ship_group_id") ~= 0
 
-	setActive(var0_39:Find("middle/Dorm3dIconTpl/mark"), var1_39)
-	setText(var0_39:Find("middle/info/name"), arg1_39:getName())
-	setText(var0_39:Find("middle/info/count"), string.format("count:<color=#39bfff>%d</color>", arg1_39.count))
-	setText(var0_39:Find("middle/info/desc"), arg1_39:getConfig("display"))
-	setText(var0_39:Find("line/lack/Text"), "lack")
+	setActive(var0_44:Find("middle/Dorm3dIconTpl/mark"), var1_44)
+	setText(var0_44:Find("middle/info/name"), arg1_44:getName())
+	setText(var0_44:Find("middle/info/count"), string.format("count:<color=#39bfff>%d</color>", arg1_44.count))
+	setText(var0_44:Find("middle/info/desc"), arg1_44:getConfig("display"))
+	setText(var0_44:Find("line/lack/Text"), "lack")
 
-	local var2_39 = ItemTipPanel.GetDropLackConfig(arg1_39)
-	local var3_39 = var2_39 and var2_39.description or {}
-	local var4_39 = var0_39:Find("bottom/container")
+	local var2_44 = ItemTipPanel.GetDropLackConfig(arg1_44)
+	local var3_44 = var2_44 and var2_44.description or {}
+	local var4_44 = var0_44:Find("bottom/container")
 
-	UIItemList.StaticAlign(var4_39, var4_39:Find("tpl"), #var3_39, function(arg0_40, arg1_40, arg2_40)
-		arg1_40 = arg1_40 + 1
+	UIItemList.StaticAlign(var4_44, var4_44:Find("tpl"), #var3_44, function(arg0_45, arg1_45, arg2_45)
+		arg1_45 = arg1_45 + 1
 
-		if arg0_40 == UIItemList.EventUpdate then
-			local var0_40 = var3_39[arg1_40]
-			local var1_40, var2_40, var3_40 = unpack(var0_40)
+		if arg0_45 == UIItemList.EventUpdate then
+			local var0_45 = var3_44[arg1_45]
+			local var1_45, var2_45, var3_45 = unpack(var0_45)
 
-			setText(arg2_40:Find("Text"), var1_40)
-			setText(arg2_40:Find("btn_go/Text"), i18n("feast_res_window_go_label"))
+			setText(arg2_45:Find("Text"), var1_45)
+			setText(arg2_45:Find("btn_go/Text"), i18n("feast_res_window_go_label"))
 
-			local var4_40, var5_40, var6_40 = unpack(var2_39)
-			local var7_40, var8_40 = unpack(var5_40)
-			local var9_40 = #var7_40 > 0
+			local var4_45, var5_45, var6_45 = unpack(var2_44)
+			local var7_45, var8_45 = unpack(var5_45)
+			local var9_45 = #var7_45 > 0
 
-			if var6_40 and var6_40 ~= 0 then
-				var9_40 = var9_40 and getProxy(ActivityProxy):IsActivityNotEnd(var6_40)
+			if var6_45 and var6_45 ~= 0 then
+				var9_45 = var9_45 and getProxy(ActivityProxy):IsActivityNotEnd(var6_45)
 			end
 
-			setActive(arg2_40:Find("btn_go"), var9_40)
-			onButton(arg0_39, arg2_40:Find("btn_go"), function()
-				ItemTipPanel.ConfigGoScene(var7_40, var8_40, function()
-					arg0_39:closeView()
+			setActive(arg2_45:Find("btn_go"), var9_45)
+			onButton(arg0_44, arg2_45:Find("btn_go"), function()
+				ItemTipPanel.ConfigGoScene(var7_45, var8_45, function()
+					arg0_44:closeView()
 				end)
 			end, SFX_PANEL)
 		end
 	end)
-	setActive(arg0_39.rtLackWindow, true)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_39.rtLackWindow, {
+	setActive(arg0_44.rtLackWindow, true)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_44.rtLackWindow, {
 		weight = LayerWeightConst.SECOND_LAYER,
 		groupName = LayerWeightConst.GROUP_DORM3D
 	})
 end
 
-function var0_0.HideLackWindow(arg0_43)
-	setActive(arg0_43.rtLackWindow, false)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_43.rtLackWindow, arg0_43._tf)
+function var0_0.HideLackWindow(arg0_48)
+	setActive(arg0_48.rtLackWindow, false)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_48.rtLackWindow, arg0_48._tf)
 end
 
-function var0_0.onBackPressed(arg0_44)
-	if isActive(arg0_44.rtInfoWindow) then
-		arg0_44:HideInfoWindow()
+function var0_0.onBackPressed(arg0_49)
+	if isActive(arg0_49.rtInfoWindow) then
+		arg0_49:HideInfoWindow()
 
 		return
 	end
 
-	if isActive(arg0_44.rtLackWindow) then
-		arg0_44:HideLackWindow()
+	if isActive(arg0_49.rtLackWindow) then
+		arg0_49:HideLackWindow()
 
 		return
 	end
 
-	var0_0.super.onBackPressed(arg0_44)
+	var0_0.super.onBackPressed(arg0_49)
 end
 
-function var0_0.willExit(arg0_45)
-	if isActive(arg0_45.rtInfoWindow) then
-		arg0_45:HideInfoWindow()
+function var0_0.willExit(arg0_50)
+	if isActive(arg0_50.rtInfoWindow) then
+		arg0_50:HideInfoWindow()
 	end
 
-	if isActive(arg0_45.rtLackWindow) then
-		arg0_45:HideLackWindow()
+	if isActive(arg0_50.rtLackWindow) then
+		arg0_50:HideLackWindow()
 	end
 
-	pg.UIMgr.GetInstance():TempUnblurPanel(arg0_45.rtGiftPanel, arg0_45._tf)
+	pg.UIMgr.GetInstance():TempUnblurPanel(arg0_50.rtGiftPanel, arg0_50._tf)
 end
 
 return var0_0

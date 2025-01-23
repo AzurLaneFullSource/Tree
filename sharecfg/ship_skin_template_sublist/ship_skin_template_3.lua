@@ -1,241 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_3 = {
-	[103163] = {
-		ship_group = 10316,
-		name = "Evening Breeze Minuet",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 103163,
-		group_index = 3,
-		l2d_ignore_drag = 0,
-		painting = "baerdimo_5",
-		shop_id = 70418,
-		illustrator = -1,
-		shop_type_id = 7,
-		lip_smoothing = 0,
-		bg = "135",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "baerdimo_5",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Damn, that Bremerton... What did she make me wear this time... Even though I was the one to ask her for advice... Um... Ugh... This doesn't look too weird, right...?",
-		voice_actor = 191,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			1,
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.199,
-					1.124,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.195,
-					1.089,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.009,
-					0.012,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.567,
-							2.333,
-							0.14
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			login = 6.67,
-			touch = 0.66,
-			main_1 = 0.2,
-			propose = 0.4
-		}
-	},
-	[103164] = {
-		ship_group = 10316,
-		name = "Ace's Travel Journal",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 103164,
-		group_index = 4,
-		l2d_ignore_drag = 0,
-		painting = "baerdimo_3",
-		shop_id = 70525,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 2,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "142",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "1102",
-		voice_actor_2 = -1,
-		prefab = "baerdimo_3",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "\"Our meeting here must have been preordained by fate. Hail to you. I am a passing traveler by the name of Baltimore.\" ...Hahah, it's nothing. Just some lines I came up with to match my traditional getup. Did they do the trick, Commander?",
-		voice_actor = 191,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.176,
-					1.177,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.172,
-					1.204,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.009,
-					0.004,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.433,
-							2.437,
-							0.14
-						}
-					}
-				}
-			}
-		}
-	},
 	[103165] = {
 		ship_group = 10316,
 		name = "Finish Line Flagbearer",
@@ -6053,6 +5818,131 @@ pg.base.ship_skin_template_3 = {
 			1051726,
 			1051727,
 			1051728
+		}
+	},
+	[105173] = {
+		ship_group = 10517,
+		name = "Dancing in the Moonlight",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 105173,
+		group_index = 3,
+		l2d_ignore_drag = 0,
+		painting = "xinzexi_4",
+		shop_id = 71107,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 3,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "302",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "xinzexi_4",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Phew... It was really hard to cinch the ending, but I can handle anything! So, honey, did you like it? Hellooo, honey? Aww, are you so mesmerized that you can't speak? Hahaha!",
+		voice_actor = 273,
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			6,
+			2
+		},
+		live2d_offset = {
+			0,
+			40,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.693,
+					1.312,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.673,
+					1.297,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.819,
+					2.203,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.591,
+							2.488,
+							0
+						}
+					}
+				}
+			}
+		},
+		spine_offset = {
+			{
+				185.7,
+				-102.6,
+				0
+			},
+			{
+				0.46
+			}
 		}
 	},
 	[105178] = {
@@ -13174,6 +13064,206 @@ pg.base.ship_skin_template_3 = {
 							-0.49,
 							2.34,
 							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[107220] = {
+		ship_group = 10722,
+		name = "Independence",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 107220,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "duli",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "duli",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Independence-class light aircraft carrier – Independence, Hull Number CVL-22.",
+		voice_actor = 130,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.129,
+					0.685,
+					0
+				}
+			},
+			plane = {
+				{
+					1.465,
+					0.75,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.647,
+							2.225,
+							-0.25
+						}
+					}
+				}
+			}
+		}
+	},
+	[107221] = {
+		ship_group = 10722,
+		name = "Transfer Student From Afar",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 107221,
+		group_index = 1,
+		l2d_ignore_drag = 0,
+		painting = "duli_2",
+		shop_id = 70163,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 4,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "103",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "duli_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "So this is my new school, huh? Hmm... gotta put my stuff down first before checking in with the teacher.",
+		voice_actor = 130,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					0.924,
+					1.132,
+					0
+				}
+			},
+			plane = {
+				{
+					0.914,
+					1.198,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.573,
+							2.346,
+							-0.25
 						}
 					}
 				}

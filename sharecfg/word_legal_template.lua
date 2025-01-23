@@ -3804,17 +3804,19 @@ function temp()
 						u = {
 							n = {
 								this = true,
-								["("] = {
-									R = {
-										e = {
-											t = {
-												r = {
-													o = {
-														f = {
-															i = {
-																t = {
-																	[")"] = {
-																		this = true
+								[" "] = {
+									["("] = {
+										R = {
+											e = {
+												t = {
+													r = {
+														o = {
+															f = {
+																i = {
+																	t = {
+																		[")"] = {
+																			this = true
+																		}
 																	}
 																}
 															}
@@ -6802,7 +6804,30 @@ function temp()
 						J = {
 							a = {
 								h = {
-									this = true
+									this = true,
+									[" "] = {
+										["("] = {
+											R = {
+												e = {
+													t = {
+														r = {
+															o = {
+																f = {
+																	i = {
+																		t = {
+																			[")"] = {
+																				this = true
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
 								}
 							}
 						}

@@ -2397,6 +2397,12 @@ pg.skill_data_template = setmetatable({
 		801562,
 		801565,
 		801567,
+		801570,
+		801580,
+		801591,
+		801592,
+		801595,
+		801597,
 		901010,
 		901020,
 		902010,
@@ -146312,7 +146318,7 @@ pg.base.skill_data_template = {
 		id = 800531,
 		type = 1,
 		max_level = 1,
-		desc = "Every 9 times this ship fires her Main Guns: fires a special barrage.",
+		desc = "Activates All Out Assault every 9 times the Main Guns are fired.",
 		system_transform = {
 			[51] = 800535
 		},
@@ -146328,7 +146334,7 @@ pg.base.skill_data_template = {
 		id = 800532,
 		type = 1,
 		max_level = 1,
-		desc = "Every 6 times this ship fires her Main Guns: fires a special barrage.",
+		desc = "Activates All Out Assault every 6 times the Main Guns are fired.",
 		system_transform = {
 			[51] = 800537
 		},
@@ -149617,7 +149623,7 @@ pg.base.skill_data_template = {
 		id = 800881,
 		type = 3,
 		max_level = 1,
-		desc = "Every 9 times this ship fires her Main Guns: fires a special barrage.",
+		desc = "Activates All Out Assault every 9 times the Main Guns are fired.",
 		system_transform = {
 			[51] = 800885
 		},
@@ -149633,7 +149639,7 @@ pg.base.skill_data_template = {
 		id = 800882,
 		type = 3,
 		max_level = 1,
-		desc = "Every 6 times this ship fires her Main Guns: fires a special barrage.",
+		desc = "Activates All Out Assault every 6 times the Main Guns are fired.",
 		system_transform = {
 			[51] = 800887
 		},
@@ -149649,7 +149655,7 @@ pg.base.skill_data_template = {
 		id = 800885,
 		type = 3,
 		max_level = 1,
-		desc = "[Operation Siren]\nEvery 9 times this ship fires her Main Guns: fires a special barrage. Decreases this ship's DMG taken by 3.0% when fighting humanoid Siren fleets or Boss fleets.",
+		desc = "[Operation Siren]\nActivates All-Out Assault I every 9 times the Main Guns are fired. When fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 3.0%.",
 		system_transform = {
 			[51] = 800885
 		},
@@ -149665,7 +149671,7 @@ pg.base.skill_data_template = {
 		id = 800887,
 		type = 3,
 		max_level = 1,
-		desc = "[Operation Siren]\nEvery 6 times this ship fires her Main Guns: fires a special barrage. Decreases this ship's DMG taken by 8.0% when fighting humanoid Siren fleets or Boss fleets.",
+		desc = "[Operation Siren]\nActivates All-Out Assault II every 6 times the Main Guns are fired. When fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 8.0%.",
 		system_transform = {
 			[51] = 800887
 		},
@@ -153363,7 +153369,7 @@ pg.base.skill_data_template = {
 		id = 801261,
 		type = 3,
 		max_level = 1,
-		desc = "Every 9 times this ship fires her Main Guns: fires a special barrage.",
+		desc = "Activates All Out Assault every 9 times the Main Guns are fired.",
 		system_transform = {
 			[51] = 801265
 		},
@@ -153379,7 +153385,7 @@ pg.base.skill_data_template = {
 		id = 801262,
 		type = 3,
 		max_level = 1,
-		desc = "Every 6 times this ship fires her Main Guns: fires a special barrage.",
+		desc = "Activates All Out Assault every 6 times the Main Guns are fired.",
 		system_transform = {
 			[51] = 801267
 		},
@@ -156299,7 +156305,7 @@ pg.base.skill_data_template = {
 		id = 801561,
 		type = 3,
 		max_level = 1,
-		desc = "Every 9 times this ship fires her Main Guns: fires a special barrage.",
+		desc = "Activates All Out Assault every 9 times the Main Guns are fired.",
 		system_transform = {
 			[51] = 801565
 		},
@@ -156331,7 +156337,7 @@ pg.base.skill_data_template = {
 		id = 801565,
 		type = 3,
 		max_level = 1,
-		desc = "[Operation Siren]\nEvery 9 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 3.0%.",
+		desc = "[Operation Siren]\nActivates All-Out Assault I every 9 times the Main Guns are fired. When fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 3.0%.",
 		system_transform = {
 			[51] = 801565
 		},
@@ -156350,6 +156356,363 @@ pg.base.skill_data_template = {
 		desc = "[Operation Siren]\nEvery 6 times this ship fires her Main Guns: fires a special barrage. Inflicts the Coiling Flames status to enemies hit by this barrage. When fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 8.0%.",
 		system_transform = {
 			[51] = 801567
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801570] = {
+		desc_get = "",
+		name = "Flame and Fulminance",
+		id = 801570,
+		type = 1,
+		max_level = 10,
+		desc = "When this ship is attacked: $1 chance to activate a special slash attack (inflicts Armor Break to enemies hit; can only be triggered once every 10s). Every 15s: fires a $2 special barrage (DMG is based on the skill's level) that inflicts a special Burn ailment to enemies hit, dealing 50 DMG every 1.5s for 8s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[801580] = {
+		desc_get = "",
+		name = "The Lone Knight",
+		id = 801580,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's FP by $1 and RLD by $2. If your Vanguard consists only of this ship when the battle starts: increases this ship's EVA by $3 and AA by $4. The first time this ship's HP falls below 25.0% as a result of DMG taken: restores $3 HP.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"10.0%",
+				"30.0%"
+			},
+			{
+				"4.0%",
+				"10.0%"
+			},
+			{
+				"10.0%",
+				"20.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"10.0%",
+					"+2.2%"
+				},
+				{
+					"12.2%",
+					"+2.2%"
+				},
+				{
+					"14.4%",
+					"+2.2%"
+				},
+				{
+					"16.6%",
+					"+2.2%"
+				},
+				{
+					"18.8%",
+					"+2.2%"
+				},
+				{
+					"21.0%",
+					"+2.2%"
+				},
+				{
+					"23.2%",
+					"+2.2%"
+				},
+				{
+					"25.4%",
+					"+2.2%"
+				},
+				{
+					"27.6%",
+					"+2.4%"
+				},
+				{
+					"30.0%"
+				}
+			},
+			{
+				{
+					"4.0%",
+					"+0.6%"
+				},
+				{
+					"4.6%",
+					"+0.6%"
+				},
+				{
+					"5.2%",
+					"+0.8%"
+				},
+				{
+					"6.0%",
+					"+0.6%"
+				},
+				{
+					"6.6%",
+					"+0.6%"
+				},
+				{
+					"7.2%",
+					"+0.8%"
+				},
+				{
+					"8.0%",
+					"+0.6%"
+				},
+				{
+					"8.6%",
+					"+0.6%"
+				},
+				{
+					"9.2%",
+					"+0.8%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			}
+		}
+	},
+	[801591] = {
+		desc_get = "",
+		name = "Cinders of Hope - Bolzano I",
+		id = 801591,
+		type = 3,
+		max_level = 1,
+		desc = "Activates All Out Assault every 9 times the Main Guns are fired.",
+		system_transform = {
+			[51] = 801595
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801592] = {
+		desc_get = "",
+		name = "Cinders of Hope - Bolzano II",
+		id = 801592,
+		type = 3,
+		max_level = 1,
+		desc = "Activates All Out Assault every 6 times the Main Guns are fired.",
+		system_transform = {
+			[51] = 801597
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801595] = {
+		desc_get = "",
+		name = "Cinders of Hope - Bolzano I",
+		id = 801595,
+		type = 3,
+		max_level = 1,
+		desc = "[Operation Siren]\nActivates All-Out Assault I every 9 times the Main Guns are fired. When fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 3.0%.",
+		system_transform = {
+			[51] = 801595
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801597] = {
+		desc_get = "",
+		name = "Cinders of Hope - Bolzano II",
+		id = 801597,
+		type = 3,
+		max_level = 1,
+		desc = "[Operation Siren]\nActivates All-Out Assault II every 6 times the Main Guns are fired. When fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 8.0%.",
+		system_transform = {
+			[51] = 801597
 		},
 		world_death_mark = {
 			1

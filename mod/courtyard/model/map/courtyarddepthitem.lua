@@ -13,6 +13,9 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
 	arg0_1.initSizeY = arg4_1 or 0
 	arg0_1.sizeX = arg0_1.initSizeX
 	arg0_1.sizeY = arg0_1.initSizeY
+
+	assert(arg0_1.sizeX > 0 and arg0_1.sizeY > 0, "size 必须大于0============>" .. arg2_1)
+
 	arg0_1.posX = 0
 	arg0_1.posY = 0
 	arg0_1.maxX = 0

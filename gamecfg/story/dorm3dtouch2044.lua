@@ -17,6 +17,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			say = "You sure are excited about this...",
+			voice = "event:/dorm/drom3d_noshiro_other/drom3d_Noshiro_ik_furniture3_tone4",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -27,7 +28,7 @@ return {
 					op_list = {
 						{
 							param = "Play",
-							name = "shy",
+							name = "ND_FF_IK_zhuozi_ZJD_xiong_01-end",
 							time = 0,
 							type = "action",
 							skip = true

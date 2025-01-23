@@ -144,23 +144,27 @@ function var0_0.init(arg0_10)
 	arg0_10.switchBtn = arg0_10:findTF("blur_panel/adapt/switch_btn")
 	arg0_10.skinBtn = arg0_10:findTF("blur_panel/adapt/skin_btn")
 
-	local var0_10 = arg0_10:findTF("frame/bg/pages/scrollrect"):GetComponent("LScrollRect")
-	local var1_10 = arg0_10:findTF("frame/bg/pages/scrollRectSpecial")
+	local var0_10 = LOCK_SKIN_SHOP_ENTER and getProxy(PlayerProxy):getData().level < LOCK_SKIN_SHOP_ENTER_LEVEL
 
-	setActive(go(var0_10), true)
-	setActive(var1_10, false)
+	setActive(arg0_10.skinBtn, not var0_10)
+
+	local var1_10 = arg0_10:findTF("frame/bg/pages/scrollrect"):GetComponent("LScrollRect")
+	local var2_10 = arg0_10:findTF("frame/bg/pages/scrollRectSpecial")
+
+	setActive(go(var1_10), true)
+	setActive(var2_10, false)
 
 	arg0_10.pages = {
-		[var0_0.TYPE_ACTIVITY] = ActivityShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var0_10, var1_10),
-		[var0_0.TYPE_SHOP_STREET] = StreetShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var0_10),
-		[var0_0.TYPE_MILITARY_SHOP] = MilitaryShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var0_10),
-		[var0_0.TYPE_GUILD] = GuildShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var0_10),
-		[var0_0.TYPE_SHAM_SHOP] = ShamShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var0_10),
-		[var0_0.TYPE_FRAGMENT] = FragmentShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var0_10),
-		[var0_0.TYPE_META] = MetaShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var0_10),
-		[var0_0.TYPE_MEDAL] = MedalShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var0_10),
-		[var0_0.TYPE_QUOTA] = QuotaShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var0_10),
-		[var0_0.TYPE_MINI_GAME] = MiniGameShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var0_10)
+		[var0_0.TYPE_ACTIVITY] = ActivityShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var1_10, var2_10),
+		[var0_0.TYPE_SHOP_STREET] = StreetShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var1_10),
+		[var0_0.TYPE_MILITARY_SHOP] = MilitaryShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var1_10),
+		[var0_0.TYPE_GUILD] = GuildShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var1_10),
+		[var0_0.TYPE_SHAM_SHOP] = ShamShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var1_10),
+		[var0_0.TYPE_FRAGMENT] = FragmentShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var1_10),
+		[var0_0.TYPE_META] = MetaShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var1_10),
+		[var0_0.TYPE_MEDAL] = MedalShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var1_10),
+		[var0_0.TYPE_QUOTA] = QuotaShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var1_10),
+		[var0_0.TYPE_MINI_GAME] = MiniGameShopPage.New(arg0_10.pageContainer, arg0_10.event, arg0_10.contextData, var1_10)
 	}
 	arg0_10.contextData.singleWindow = ShopSingleWindow.New(arg0_10._tf, arg0_10.event)
 	arg0_10.contextData.multiWindow = ShopMultiWindow.New(arg0_10._tf, arg0_10.event)

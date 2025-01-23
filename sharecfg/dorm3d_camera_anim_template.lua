@@ -1215,6 +1215,66 @@ pg.dorm3d_camera_anim_template = {
 		furniture_id = 0,
 		finish_anim = 4201
 	},
+	[4301] = {
+		anim_time = 0,
+		unlock = "",
+		ship_group = 30221,
+		state = "ND_FF_IK_zhuozi_idle_01",
+		desc = "Sit",
+		staypoint = "Pos200610",
+		id = 4301,
+		pre_anim = 0,
+		zone = "2002",
+		icon = "camera_action3",
+		room = 2,
+		furniture_id = 222,
+		finish_anim = 4301
+	},
+	[4302] = {
+		anim_time = 0,
+		unlock = "",
+		ship_group = 30221,
+		state = "ND_FF_IK_zhuozi_idle_02",
+		desc = "Raise Feet",
+		staypoint = "Pos200611",
+		id = 4302,
+		pre_anim = 0,
+		zone = "2002",
+		icon = "camera_action5",
+		room = 2,
+		furniture_id = 222,
+		finish_anim = 4302
+	},
+	[4303] = {
+		anim_time = 0,
+		unlock = "",
+		ship_group = 30221,
+		state = "ND_FF_IK_zhuozi_ZJD_loop",
+		desc = "Lie Down",
+		staypoint = "Pos200620",
+		id = 4303,
+		pre_anim = 0,
+		zone = "2002",
+		icon = "camera_action8",
+		room = 2,
+		furniture_id = 222,
+		finish_anim = 4303
+	},
+	[4304] = {
+		anim_time = 0,
+		unlock = "",
+		ship_group = 30221,
+		state = "ND_FF_IK_zhuozi_ZJD_xiong_01-loop",
+		desc = "Lie on the Side",
+		staypoint = "Pos200621",
+		id = 4304,
+		pre_anim = 0,
+		zone = "2002",
+		icon = "camera_action12",
+		room = 2,
+		furniture_id = 222,
+		finish_anim = 4304
+	},
 	get_id_list_by_furniture_id = {
 		[0] = {
 			1001,
@@ -1320,6 +1380,12 @@ pg.dorm3d_camera_anim_template = {
 			2503,
 			2504,
 			2505
+		},
+		[222] = {
+			4301,
+			4302,
+			4303,
+			4304
 		}
 	},
 	all = {
@@ -1403,6 +1469,10 @@ pg.dorm3d_camera_anim_template = {
 		4202,
 		4203,
 		4204,
-		4205
+		4205,
+		4301,
+		4302,
+		4303,
+		4304
 	}
 }

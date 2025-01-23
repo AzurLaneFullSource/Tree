@@ -15,6 +15,7 @@ function var0_0.OnInit(arg0_2)
 	arg0_2.siteMaxValue = pg.child_resource[EducateChar.RES_SITE_ID].max_value
 
 	local var0_2 = findTF(arg0_2._go, "res"):GetComponent(typeof(Image))
+	local var1_2 = findTF(arg0_2._go, "res")
 
 	if arg0_2.contextData and arg0_2.contextData.showBg then
 		var0_2.enabled = true

@@ -626,7 +626,7 @@ function var0_0.UpdateIcon(arg0_58, arg1_58, arg2_58)
 	arg2_58()
 end
 
-function var0_0.UpdateOptionTxt(arg0_59, arg1_59, arg2_59, arg3_59)
+function var0_0.UpdateOptionTxt(arg0_59, arg1_59, arg2_59, arg3_59, arg4_59)
 	local var0_59 = arg2_59:GetComponent(typeof(LayoutElement))
 	local var1_59 = arg2_59:Find("content")
 
@@ -646,6 +646,14 @@ function var0_0.UpdateOptionTxt(arg0_59, arg1_59, arg2_59, arg3_59)
 
 		var0_59.preferredHeight = var1_59.rect.height
 	end
+
+	if var1_59:Find("type1") then
+		setActive(var1_59:Find("type1"), arg4_59 and arg4_59 == 1)
+	end
+
+	if var1_59:Find("type2") then
+		setActive(var1_59:Find("type2"), arg4_59 and arg4_59 == 2)
+	end
 end
 
 function var0_0.InitBranches(arg0_60, arg1_60, arg2_60, arg3_60, arg4_60)
@@ -664,7 +672,8 @@ function var0_0.InitBranches(arg0_60, arg1_60, arg2_60, arg3_60, arg4_60)
 			local var0_61 = arg2_61
 			local var1_61 = var1_60[arg1_61 + 1][1]
 			local var2_61 = var1_60[arg1_61 + 1][2]
-			local var3_61 = table.contains(var5_60, var2_61)
+			local var3_61 = var1_60[arg1_61 + 1][3]
+			local var4_61 = table.contains(var5_60, var2_61)
 
 			onButton(arg0_60, var0_61, function()
 				if arg0_60.pause or arg0_60.stop then
@@ -700,11 +709,11 @@ function var0_0.InitBranches(arg0_60, arg1_60, arg2_60, arg3_60, arg4_60)
 
 				arg0_60:HideBranchesWithoutSelected(arg2_60)
 			end, SFX_PANEL)
-			setButtonEnabled(var0_61, not var3_61)
+			setButtonEnabled(var0_61, not var4_61)
 
-			GetOrAddComponent(arg2_61, typeof(CanvasGroup)).alpha = var3_61 and 0.5 or 1
+			GetOrAddComponent(arg2_61, typeof(CanvasGroup)).alpha = var4_61 and 0.5 or 1
 
-			arg0_60:UpdateOptionTxt(var3_60, var0_61, var1_61)
+			arg0_60:UpdateOptionTxt(var3_60, var0_61, var1_61, var3_61)
 
 			if arg0_60.script:IsDialogueStyle2() then
 				setActive(var0_61, arg1_61 == 0)

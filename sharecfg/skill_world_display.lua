@@ -3135,14 +3135,14 @@ pg.skill_world_display = {
 	[800881] = {
 		desc_get = "",
 		id = 800881,
-		desc = "[Operation Siren]\nEvery 9 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: decreases your META ships' DMG taken by 3.0%",
+		desc = "[Operation Siren]\nActivates All-Out Assault I every 9 times the Main Guns are fired. When fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 3.0%.",
 		desc_get_add = {},
 		desc_add = {}
 	},
 	[800882] = {
 		desc_get = "",
 		id = 800882,
-		desc = "[Operation Siren]\nEvery 6 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: decreases your META ships' DMG taken by 8.0%",
+		desc = "[Operation Siren]\nActivates All-Out Assault II every 6 times the Main Guns are fired. When fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 8.0%.",
 		desc_get_add = {},
 		desc_add = {}
 	},
@@ -3419,7 +3419,7 @@ pg.skill_world_display = {
 	[801561] = {
 		desc_get = "",
 		id = 801561,
-		desc = "[Operation Siren]\nEvery 9 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 3.0%.",
+		desc = "[Operation Siren]\nActivates All-Out Assault I every 9 times the Main Guns are fired. When fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 3.0%.",
 		desc_get_add = {},
 		desc_add = {}
 	},
@@ -3427,6 +3427,20 @@ pg.skill_world_display = {
 		desc_get = "",
 		id = 801562,
 		desc = "[Operation Siren]\nEvery 6 times this ship fires her Main Guns: fires a special barrage. Inflicts the Coiling Flames status to enemies hit by this barrage. When fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 8.0%.",
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801591] = {
+		desc_get = "",
+		id = 801591,
+		desc = "[Operation Siren]\nActivates All-Out Assault I every 9 times the Main Guns are fired. When fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 3.0%.",
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801592] = {
+		desc_get = "",
+		id = 801592,
+		desc = "[Operation Siren]\nActivates All-Out Assault II every 6 times the Main Guns are fired. When fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 8.0%.",
 		desc_get_add = {},
 		desc_add = {}
 	},
@@ -3498,6 +3512,8 @@ pg.skill_world_display = {
 		801341,
 		801342,
 		801561,
-		801562
+		801562,
+		801591,
+		801592
 	}
 }

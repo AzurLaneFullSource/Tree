@@ -4,6 +4,8 @@ var0_0.STATE_PAINTING = 1
 var0_0.STATE_L2D = 2
 var0_0.STATE_SPINE_PAINTING = 3
 var0_0.STATE_EDUCATE_CHAR = 4
+var0_0.STATE_EDUCATE_SPINE = 5
+var0_0.STATE_EDUCATE_L2D = 6
 var0_0.MESH_POSITION_X_OFFSET = 145
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
@@ -19,7 +21,8 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 		MainMeshImagePainting.New(arg0_1._tf, arg0_1.event),
 		MainLive2dPainting.New(arg0_1._tf, arg0_1.event),
 		MainSpinePainting.New(arg0_1._tf, arg0_1.event, arg0_1._bgGo),
-		MainEducateCharPainting.New(arg0_1._tf, arg0_1.event)
+		MainEducateCharPainting.New(arg0_1._tf, arg0_1.event),
+		MainEducateSpinePainting.New(arg0_1._tf, arg0_1.event, arg0_1._bgGo)
 	}
 
 	arg0_1:Register()
@@ -256,14 +259,12 @@ function var0_0.GetAssistantStatus(arg0_27)
 	local var5_27 = var0_0.Live2dIsDownload(var4_27) and checkABExist(var4_27)
 	local var6_27 = var1_27:getCharacterSetting(arg0_27.id, SHIP_FLAG_BG)
 
-	if var1_27:getCharacterSetting(arg0_27.id, SHIP_FLAG_SP) and var3_27 then
-		return var0_0.STATE_SPINE_PAINTING, var6_27
-	elseif var1_27:getCharacterSetting(arg0_27.id, SHIP_FLAG_L2D) and var5_27 then
-		return var0_0.STATE_L2D, var6_27
-	elseif isa(arg0_27, VirtualEducateCharShip) then
-		return var0_0.STATE_EDUCATE_CHAR, var6_27
+	if var1_27:getCharacterSetting(arg0_27.id, SHIP_FLAG_L2D) and var5_27 then
+		return isa(arg0_27, VirtualEducateCharShip) and var0_0.STATE_EDUCATE_L2D or var0_0.STATE_L2D, var6_27
+	elseif var1_27:getCharacterSetting(arg0_27.id, SHIP_FLAG_SP) and var3_27 then
+		return isa(arg0_27, VirtualEducateCharShip) and var0_0.STATE_EDUCATE_SPINE or var0_0.STATE_SPINE_PAINTING, var6_27
 	else
-		return var0_0.STATE_PAINTING, var6_27
+		return isa(arg0_27, VirtualEducateCharShip) and var0_0.STATE_EDUCATE_CHAR or var0_0.STATE_PAINTING, var6_27
 	end
 end
 

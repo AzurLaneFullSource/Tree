@@ -173,6 +173,38 @@ pg.dorm3d_furniture_template = {
 			"banner_furniture121"
 		}
 	},
+	[122] = {
+		name = "Afternoon Dreamhome",
+		rarity = 4,
+		is_special = 0,
+		type = 5,
+		icon = "dorm3dIcon/3Ddrom_tianlangxing_PremiumFurniture2",
+		room_id = 1,
+		desc = "A comfortable reclining couch.\n Soft, fluffy, and comes with cushions and a blanket. A relaxing spot to take a nap at any time of the day.",
+		acesses = "",
+		model = "Pay_Siriushostel/pre_db_sh_chair02",
+		id = 122,
+		is_exclusive = 1,
+		scene_hides = "",
+		target_slots = {
+			100301
+		},
+		touch_id = {
+			{
+				20220,
+				10100202
+			}
+		},
+		shop_id = {
+			270103
+		},
+		unlock_tips = {
+			3
+		},
+		unlock_banners = {
+			"banner_furniture122"
+		}
+	},
 	[201] = {
 		name = "Fluffy Futon",
 		rarity = 3,
@@ -430,36 +462,38 @@ pg.dorm3d_furniture_template = {
 			"banner_furniture221"
 		}
 	},
-	[122] = {
-		name = "Afternoon Dreamhome",
-		rarity = 4,
+	[222] = {
+		name = "Podcast Table",
+		rarity = 3,
 		is_special = 0,
-		type = 5,
-		icon = "dorm3dIcon/3Ddrom_tianlangxing_PremiumFurniture2",
-		room_id = 1,
-		desc = "A comfortable reclining couch.\n Soft, fluffy, and comes with cushions and a blanket. A relaxing spot to take a nap at any time of the day.",
+		type = 6,
+		icon = "dorm3dIcon/3Ddrom_nengdai_PremiumFurniture2",
+		room_id = 2,
+		desc = "A spacious table full of joy and anticipation for great conversations.\nAll that remains is for two minds to meet.",
 		acesses = "",
-		model = "Pay_Siriushostel/pre_db_sh_chair02",
-		id = 122,
+		model = "Pay_Noshirohostel/pre_db_nh_diningroom01",
+		id = 222,
 		is_exclusive = 1,
-		scene_hides = "",
 		target_slots = {
-			100301
+			120203
 		},
 		touch_id = {
 			{
-				20220,
-				10100202
+				30221,
+				2200610
 			}
 		},
 		shop_id = {
-			270103
+			270202
 		},
 		unlock_tips = {
 			3
 		},
 		unlock_banners = {
-			"banner_furniture122"
+			"banner_furniture222"
+		},
+		scene_hides = {
+			"fbx/no_bake_pay_prop/diningroom"
 		}
 	},
 	[151] = {
@@ -558,6 +592,7 @@ pg.dorm3d_furniture_template = {
 			209,
 			210,
 			221,
+			222,
 			251
 		}
 	},
@@ -569,6 +604,7 @@ pg.dorm3d_furniture_template = {
 		5,
 		6,
 		121,
+		122,
 		201,
 		202,
 		203,
@@ -580,7 +616,7 @@ pg.dorm3d_furniture_template = {
 		209,
 		210,
 		221,
-		122,
+		222,
 		151,
 		251
 	}

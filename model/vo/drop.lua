@@ -167,17 +167,31 @@ function var0_0.InitSwitch()
 		end,
 		[DROP_TYPE_SKIN] = function(arg0_26)
 			local var0_26 = pg.ship_skin_template[arg0_26.id]
-			local var1_26, var2_26, var3_26 = ShipWordHelper.GetWordAndCV(arg0_26.id, ShipWordHelper.WORD_TYPE_DROP)
 
-			arg0_26.desc = var3_26
+			if var0_26.skin_type == ShipSkin.SKIN_TYPE_TB then
+				local var1_26, var2_26, var3_26 = EducateCharWordHelper.GetWordAndCV(NewEducateHelper.GetSecIdBySkinId(arg0_26.id), EducateCharWordHelper.WORD_KEY_LOGIN)
+
+				arg0_26.desc = var3_26
+			else
+				local var4_26, var5_26, var6_26 = ShipWordHelper.GetWordAndCV(arg0_26.id, ShipWordHelper.WORD_TYPE_DROP)
+
+				arg0_26.desc = var6_26
+			end
 
 			return var0_26
 		end,
 		[DROP_TYPE_SKIN_TIMELIMIT] = function(arg0_27)
 			local var0_27 = pg.ship_skin_template[arg0_27.id]
-			local var1_27, var2_27, var3_27 = ShipWordHelper.GetWordAndCV(arg0_27.id, ShipWordHelper.WORD_TYPE_DROP)
 
-			arg0_27.desc = var3_27
+			if var0_27.skin_type == ShipSKin.SKIN_TYPE_TB then
+				local var1_27, var2_27, var3_27 = EducateCharWordHelper.GetWordAndCV(NewEducateHelper.GetSecIdBySkinId(arg0_27.id), EducateCharWordHelper.WORD_KEY_LOGIN)
+
+				arg0_27.desc = var3_27
+			else
+				local var4_27, var5_27, var6_27 = ShipWordHelper.GetWordAndCV(arg0_27.id, ShipWordHelper.WORD_TYPE_DROP)
+
+				arg0_27.desc = var6_27
+			end
 
 			return var0_27
 		end,

@@ -30,6 +30,7 @@ function var0_0.findUI(arg0_5)
 	arg0_5.homeBtn = arg0_5:findTF("ui/home_btn/home_btn")
 
 	setText(arg0_5:findTF("Text", arg0_5.homeBtn), i18n("child_btn_home"))
+	setActive(arg0_5.homeBtn, false)
 
 	arg0_5.mapTF = arg0_5:findTF("map")
 	arg0_5.mapContent = arg0_5:findTF("content", arg0_5.mapTF)

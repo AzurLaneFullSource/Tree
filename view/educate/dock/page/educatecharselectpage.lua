@@ -7,7 +7,7 @@ end
 function var0_0.OnLoaded(arg0_2)
 	arg0_2.titleTxt = arg0_2:findTF("title/Text"):GetComponent(typeof(Text))
 	arg0_2.labelTxt = arg0_2:findTF("left/label/icon"):GetComponent(typeof(Image))
-	arg0_2.paintingTr = arg0_2:findTF("left/print/painting")
+	arg0_2.paintingTr = arg0_2:findTF("left/print/mask/painting")
 	arg0_2.scrollrect = arg0_2:findTF("list")
 	arg0_2.uiItemList = UIItemList.New(arg0_2:findTF("list/content"), arg0_2:findTF("list/content/tpl"))
 	arg0_2.dotUIItemList = UIItemList.New(arg0_2:findTF("list/dots"), arg0_2:findTF("list/dots/tpl"))
@@ -29,6 +29,8 @@ function var0_0.OnInit(arg0_3)
 		if not arg0_3.selectedId then
 			return
 		end
+
+		arg0_3:emit(EducateCharDockScene.ON_SELECTED, arg0_3.selectedId)
 
 		arg0_3.doAnim = true
 
@@ -84,7 +86,7 @@ end
 
 function var0_0.FlushPainting(arg0_12, arg1_12)
 	arg0_12:ReturnPainting()
-	setPaintingPrefab(arg0_12.paintingTr, arg1_12, "tb1")
+	setPaintingPrefabAsync(arg0_12.paintingTr, arg1_12, "tb1")
 
 	arg0_12.paintingName = arg1_12
 end
@@ -131,7 +133,7 @@ function var0_0.UpdateDots(arg0_15)
 end
 
 function var0_0.IsLockCard(arg0_17, arg1_17)
-	local var0_17 = getProxy(EducateProxy):GetSecretaryIDs()
+	local var0_17 = NewEducateHelper.GetAllUnlockSecretaryIds()
 
 	return not table.contains(var0_17, arg1_17)
 end
@@ -142,7 +144,7 @@ function var0_0.UpdateCard(arg0_18, arg1_18, arg2_18, arg3_18)
 
 	setPaintingPrefab(var0_18:Find("mask/painting"), var1_18.prefab, "tb")
 	setActive(var0_18:Find("lock"), arg0_18:IsLockCard(var1_18.id))
-	setText(var0_18:Find("lock/desc/Text"), var1_18.unlock_desc)
+	setScrollText(var0_18:Find("lock/desc/Text"), var1_18.unlock_desc)
 
 	local function var2_18()
 		setActive(var0_18:Find("tip"), getProxy(SettingsProxy):_ShouldEducateCharTip(arg2_18))
@@ -156,7 +158,7 @@ function var0_0.UpdateCard(arg0_18, arg1_18, arg2_18, arg3_18)
 		arg0_18.selectedId = arg2_18
 
 		arg0_18:UpdateDots()
-		arg0_18:FlushPainting(var1_18.prefab)
+		arg0_18:FlushPainting(var1_18.painting)
 
 		arg0_18.prevSelected = var0_18
 
