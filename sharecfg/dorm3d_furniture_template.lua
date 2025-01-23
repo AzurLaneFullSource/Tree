@@ -463,7 +463,7 @@ pg.dorm3d_furniture_template = {
 		}
 	},
 	[222] = {
-		name = "Podcast Table",
+		name = "Table for Two",
 		rarity = 3,
 		is_special = 0,
 		type = 6,
