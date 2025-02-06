@@ -9601,16 +9601,6 @@ end
 temp()
 
 function temp()
-	var1_0.安 = {
-		森 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var1_0.Z = {
 		u = {
 			i = {

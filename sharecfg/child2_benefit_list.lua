@@ -13740,7 +13740,7 @@ pg.base.child2_benefit_list = {
 	[3009] = {
 		rare = 4,
 		name = "Anchorage's Blessing",
-		desc = "When the turn starts, if Mood is less than 70, +20 Mood; if Mood is 70 or above, instead increase a random stat by +25.",
+		desc = "When the turn starts, if Mood is less than 70, +20 Mood; if Mood is 70 or above, instead increase all stats by +25.",
 		type = 2,
 		is_tip = 0,
 		item_icon_little = "",
@@ -13759,7 +13759,7 @@ pg.base.child2_benefit_list = {
 	},
 	[3010] = {
 		rare = 2,
-		name = "{namecode:491}的祝福",
+		name = "Jade's Blessing ",
 		desc = "（此条效果对玩家不显示）「实践」 + 30",
 		type = 2,
 		is_tip = 0,
@@ -13777,7 +13777,7 @@ pg.base.child2_benefit_list = {
 	},
 	[3011] = {
 		rare = 3,
-		name = "{namecode:491}的祝福",
+		name = "Jade's Blessing ",
 		desc = "（此条效果对玩家不显示）「实践」 + 50",
 		type = 2,
 		is_tip = 0,
@@ -13795,7 +13795,7 @@ pg.base.child2_benefit_list = {
 	},
 	[3012] = {
 		rare = 4,
-		name = "{namecode:491}的祝福",
+		name = "Jade's Blessing ",
 		desc = "Dexterity activities cost -50% Mood.",
 		type = 2,
 		is_tip = 0,
@@ -13875,7 +13875,7 @@ pg.base.child2_benefit_list = {
 	},
 	[3016] = {
 		rare = 2,
-		name = "{namecode:439}的祝福",
+		name = "Roon's Blessing ",
 		desc = "（此条效果对玩家不显示）「体能」 + 30",
 		type = 2,
 		is_tip = 0,
@@ -13893,7 +13893,7 @@ pg.base.child2_benefit_list = {
 	},
 	[3017] = {
 		rare = 3,
-		name = "{namecode:439}的祝福",
+		name = "Roon's Blessing ",
 		desc = "（此条效果对玩家不显示）「体能」 + 50",
 		type = 2,
 		is_tip = 0,
@@ -13911,7 +13911,7 @@ pg.base.child2_benefit_list = {
 	},
 	[3018] = {
 		rare = 4,
-		name = "{namecode:439}的祝福",
+		name = "Roon's Blessing ",
 		desc = "Fitness activities cost -50% Mood.",
 		type = 2,
 		is_tip = 0,

@@ -36,6 +36,8 @@ function var0_0.InitFashion(arg0_3)
 
 	arg0_3:RegisterShareToggle()
 	arg0_3:bind(ShipMainMediator.ON_NEXTSHIP_PREPARE, function(arg0_4, arg1_4)
+		arg0_3._lastSelectCard = nil
+
 		if arg0_3.isShareSkinFlag and arg1_4 and #arg0_3:GetShareSkins(arg1_4) <= 0 then
 			arg0_3.isShareSkinFlag = false
 		end
@@ -206,17 +208,18 @@ function var0_0.clickCell(arg0_15, arg1_15, arg2_15)
 		var1_15:updateUsing(arg0_15:GetShipVO().skinId == iter1_15.id)
 	end
 
-	local var2_15 = checkABExist("painting/" .. arg1_15.paintingName .. "_n")
+	local var2_15 = arg2_15.painting
+	local var3_15 = checkABExist("painting/" .. var2_15 .. "_n")
 
-	setActive(arg0_15.hideObjToggle, var2_15)
+	setActive(arg0_15.hideObjToggle, var3_15)
 
-	if var2_15 then
-		arg0_15.hideObjToggle.isOn = PlayerPrefs.GetInt("paint_hide_other_obj_" .. arg1_15.paintingName, 0) ~= 0
+	if var3_15 then
+		arg0_15.hideObjToggle.isOn = PlayerPrefs.GetInt("paint_hide_other_obj_" .. var2_15, 0) ~= 0
 
 		onToggle(arg0_15, arg0_15.hideObjToggleTF, function(arg0_16)
-			PlayerPrefs.SetInt("paint_hide_other_obj_" .. arg1_15.paintingName, arg0_16 and 1 or 0)
+			PlayerPrefs.SetInt("paint_hide_other_obj_" .. var2_15, arg0_16 and 1 or 0)
 			arg1_15:flushSkin()
-			arg0_15:emit(ShipViewConst.LOAD_PAINTING, arg1_15.paintingName, true)
+			arg0_15:emit(ShipViewConst.LOAD_PAINTING, var2_15, true)
 		end, SFX_PANEL)
 	end
 end

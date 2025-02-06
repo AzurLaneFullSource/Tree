@@ -146,6 +146,7 @@ end
 
 function var0_0.SetVisible(arg0_16, arg1_16)
 	setActive(arg0_16._spinePaintingData.effectParent, arg1_16)
+	pg.ViewUtils.SetLayer(arg0_16._tf, arg1_16 and Layer.UI or Layer.UIHidden)
 	setActiveViaLayer(arg0_16._spinePaintingData.effectParent, arg1_16)
 
 	if arg0_16._skeletonGraphic then

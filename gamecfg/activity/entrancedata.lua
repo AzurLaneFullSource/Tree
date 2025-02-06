@@ -258,21 +258,33 @@ return {
 	{
 		banner = "LanternFestival",
 		event = ActivityMediator.GO_MINI_GAME,
-		data = {
-			MainLanternFestivalBtn.LANTERNFESTIVAL_MINIGAME_ID
-		},
-		isShow = function()
-			local var0_21 = getProxy(ActivityProxy):getActivityById(ActivityConst.LANTERNFESTIVAL)
+		data = setmetatable({}, {
+			__index = function(arg0_21, arg1_21)
+				if arg1_21 == 1 then
+					local var0_21 = getProxy(ActivityProxy):getActivityById(ActivityConst.LANTERNFESTIVAL)
 
-			return var0_21 and not var0_21:isEnd()
-		end,
-		isTip = function()
+					if var0_21 and not var0_21:isEnd() then
+						arg0_21[arg1_21] = var0_21:getConfig("config_client").miniGame
+
+						return arg0_21[arg1_21]
+					end
+				end
+
+				return nil
+			end
+		}),
+		isShow = function()
 			local var0_22 = getProxy(ActivityProxy):getActivityById(ActivityConst.LANTERNFESTIVAL)
 
-			if var0_22 and not var0_22:isEnd() then
-				local var1_22 = getProxy(MiniGameProxy):GetHubByHubId(var0_22:getConfig("config_id"))
+			return var0_22 and not var0_22:isEnd()
+		end,
+		isTip = function()
+			local var0_23 = getProxy(ActivityProxy):getActivityById(ActivityConst.LANTERNFESTIVAL)
 
-				return var1_22.count > 0 and var1_22.usedtime < 7
+			if var0_23 and not var0_23:isEnd() then
+				local var1_23 = getProxy(MiniGameProxy):GetHubByHubId(var0_23:getConfig("config_id"))
+
+				return var1_23.count > 0 and var1_23.usedtime < 7
 			end
 		end
 	},
@@ -283,23 +295,23 @@ return {
 			11
 		},
 		isShow = function()
-			local var0_23 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
-			local var1_23 = _.detect(var0_23, function(arg0_24)
-				return arg0_24:getConfig("config_id") == 7
+			local var0_24 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
+			local var1_24 = _.detect(var0_24, function(arg0_25)
+				return arg0_25:getConfig("config_id") == 7
 			end)
 
-			return var1_23 and not var1_23:isEnd()
+			return var1_24 and not var1_24:isEnd()
 		end,
 		isTip = function()
-			local var0_25 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
-			local var1_25 = _.detect(var0_25, function(arg0_26)
-				return arg0_26:getConfig("config_id") == 7
+			local var0_26 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
+			local var1_26 = _.detect(var0_26, function(arg0_27)
+				return arg0_27:getConfig("config_id") == 7
 			end)
 
-			if var1_25 and not var1_25:isEnd() then
-				local var2_25 = getProxy(MiniGameProxy):GetHubByHubId(var1_25:getConfig("config_id"))
+			if var1_26 and not var1_26:isEnd() then
+				local var2_26 = getProxy(MiniGameProxy):GetHubByHubId(var1_26:getConfig("config_id"))
 
-				return var2_25 and var2_25.id == 7 and var2_25.count > 0
+				return var2_26 and var2_26.id == 7 and var2_26.count > 0
 			end
 		end
 	},
@@ -312,15 +324,15 @@ return {
 		isShow = function()
 			do return false end
 
-			local var0_27 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE)
-
-			return var0_27 and not var0_27:isEnd()
-		end,
-		isTip = function()
 			local var0_28 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE)
 
-			if var0_28 and not var0_28:isEnd() then
-				return var0_28:readyToAchieve()
+			return var0_28 and not var0_28:isEnd()
+		end,
+		isTip = function()
+			local var0_29 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE)
+
+			if var0_29 and not var0_29:isEnd() then
+				return var0_29:readyToAchieve()
 			end
 		end
 	},
@@ -331,14 +343,14 @@ return {
 			SCENE.DOA2_MEDAL_COLLECTION_SCENE
 		},
 		isShow = function()
-			local var0_29 = getProxy(ActivityProxy):getActivityById(ActivityConst.DOA_MEDAL_ACT_ID)
-
-			return var0_29 and not var0_29:isEnd()
-		end,
-		isTip = function()
 			local var0_30 = getProxy(ActivityProxy):getActivityById(ActivityConst.DOA_MEDAL_ACT_ID)
 
-			return Activity.IsActivityReady(var0_30)
+			return var0_30 and not var0_30:isEnd()
+		end,
+		isTip = function()
+			local var0_31 = getProxy(ActivityProxy):getActivityById(ActivityConst.DOA_MEDAL_ACT_ID)
+
+			return Activity.IsActivityReady(var0_31)
 		end
 	},
 	{
@@ -351,34 +363,34 @@ return {
 			}
 		},
 		isShow = function()
-			local var0_31 = 970705
-			local var1_31 = getProxy(MetaCharacterProxy):getMetaProgressVOByID(var0_31)
-
-			return var1_31 and var1_31:isInAct()
-		end,
-		isTip = function()
 			local var0_32 = 970705
 			local var1_32 = getProxy(MetaCharacterProxy):getMetaProgressVOByID(var0_32)
 
-			if var1_32:isPassType() then
+			return var1_32 and var1_32:isInAct()
+		end,
+		isTip = function()
+			local var0_33 = 970705
+			local var1_33 = getProxy(MetaCharacterProxy):getMetaProgressVOByID(var0_33)
+
+			if var1_33:isPassType() then
 				return false
 			end
 
-			if not var1_32:isShow() then
+			if not var1_33:isShow() then
 				return false
 			end
 
-			local var2_32 = false
+			local var2_33 = false
 
-			if var1_32.metaPtData then
-				var2_32 = var1_32.metaPtData:CanGetAward()
+			if var1_33.metaPtData then
+				var2_33 = var1_33.metaPtData:CanGetAward()
 			end
 
-			if var2_32 == false then
-				var2_32 = getProxy(MetaCharacterProxy):getRedTag(var0_32)
+			if var2_33 == false then
+				var2_33 = getProxy(MetaCharacterProxy):getRedTag(var0_33)
 			end
 
-			return var2_32
+			return var2_33
 		end
 	},
 	{

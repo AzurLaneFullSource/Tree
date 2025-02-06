@@ -1071,8 +1071,8 @@ end
 
 function var0_0.SetCameraLady(arg0_85, arg1_85)
 	arg0_85.cameraAim2.LookAt = arg1_85.ladyInterestRoot
-	arg0_85.cameras[var0_0.CAMERA.TALK].Follow = arg0_85.ladyInterest
-	arg0_85.cameras[var0_0.CAMERA.TALK].LookAt = arg0_85.ladyInterest
+	arg0_85.cameras[var0_0.CAMERA.TALK].Follow = arg1_85.ladyInterestRoot
+	arg0_85.cameras[var0_0.CAMERA.TALK].LookAt = arg1_85.ladyInterestRoot
 	arg0_85.cameraGift.Follow = arg0_85.ladyInterest
 	arg0_85.cameraGift.LookAt = arg0_85.ladyInterest
 	arg0_85.cameraRole2.LookAt = arg1_85.ladyInterestRoot

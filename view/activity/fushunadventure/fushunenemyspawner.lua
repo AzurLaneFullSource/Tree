@@ -68,7 +68,7 @@ function var0_0.Spawn(arg0_6)
 	local var2_6 = arg0_6:GetConfigByScore(arg0_6.score)
 
 	assert(var2_6)
-	ResourceMgr.Inst:getAssetAsync("FushunAdventure/" .. var2_6.name, "", function(arg0_7)
+	ResourceMgr.Inst:getAssetAsync("ui/fa_" .. var2_6.name, "", function(arg0_7)
 		local var0_7 = instantiate(arg0_7)
 
 		var0_7.transform:SetParent(arg0_6.parent, false)

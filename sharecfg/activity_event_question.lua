@@ -1,159 +1,159 @@
 pg = pg or {}
 pg.activity_event_question = {
-	[57] = {
-		answer_right = "Rise bombing",
-		answer_false1 = "Skip bombing",
-		question = "Which of the following is not a bombing technique used by bomber planes?",
+	[71] = {
+		answer_right = "The Southern Cross",
+		answer_false1 = "The South Pole Stars",
+		question = "In the southern hemisphere, where the North Star can't be seen, what constellation do sailors use to gauge their position?",
 		type = 1,
-		id = 57,
-		answer_false3 = "Level bombing",
+		id = 71,
+		answer_false3 = "Centaurus Alpha",
 		wrong_time = 30,
-		answer_false2 = "Dive bombing"
+		answer_false2 = "Sagittarius"
 	},
-	[58] = {
-		answer_right = "To show the distance to the target",
-		answer_false1 = "To show a gun's reload time",
-		question = "What is the role of a fire-control system?",
+	[72] = {
+		answer_right = "Potatoes",
+		answer_false1 = "Turkey",
+		question = "Which ingredient had a role in anti-submarine warfare?",
 		type = 1,
-		id = 58,
-		answer_false3 = "To show the time for onboard meals",
+		id = 72,
+		answer_false3 = "Bell peppers",
 		wrong_time = 30,
-		answer_false2 = "To show the current time"
+		answer_false2 = "Spinach"
 	},
-	[59] = {
-		answer_right = "Argus",
-		answer_false1 = "Langley",
-		question = "Which was the world's first aircraft carrier to feature a full-length flight deck?",
+	[73] = {
+		answer_right = "Seasickness",
+		answer_false1 = "Fires",
+		question = "What is outside the scope of damage control?",
 		type = 1,
-		id = 59,
-		answer_false3 = "Bogue",
+		id = 73,
+		answer_false3 = "Machine failure",
 		wrong_time = 30,
-		answer_false2 = "Chen Hai"
+		answer_false2 = "Flooding"
 	},
-	[60] = {
-		answer_right = "He 178",
-		answer_false1 = "Me 262",
-		question = "Which was the world's first jet aircraft?",
+	[74] = {
+		answer_right = "Long-range radio waves",
+		answer_false1 = "Carrier pigeons",
+		question = "When out at sea, what is the most reliable means of communicating with people on land?",
 		type = 1,
-		id = 60,
-		answer_false3 = "MiG-9",
+		id = 74,
+		answer_false3 = "A professional swimmer",
 		wrong_time = 30,
-		answer_false2 = "F9F"
+		answer_false2 = "Shells loaded with letters"
 	},
-	[61] = {
-		answer_right = "24",
-		answer_false1 = "28",
-		question = "How many Essex-class aircraft carriers were completed?",
+	[75] = {
+		answer_right = "Shell propellant",
+		answer_false1 = "Uniforms with the buttons removed",
+		question = "What should absolutely never be used as fuel in a steam boiler?",
 		type = 1,
-		id = 61,
-		answer_false3 = "25",
+		id = 75,
+		answer_false3 = "Fat that the cooks saved",
 		wrong_time = 30,
-		answer_false2 = "17"
+		answer_false2 = "A door with the handle removed"
 	},
-	[62] = {
-		answer_right = "Personnel Baskets",
-		answer_false1 = "Paragliders",
-		question = "What is the equipment that is used to transfer personnel between warships at sea?",
+	[76] = {
+		answer_right = "Sailing with paravanes",
+		answer_false1 = "Using omnidirectional sonar",
+		question = "What is ineffective in protecting merchant ships from submarine attacks?",
 		type = 1,
-		id = 62,
-		answer_false3 = "Torpedo tubes",
+		id = 76,
+		answer_false3 = "Intermittently adjusting the course",
 		wrong_time = 30,
-		answer_false2 = "Bomb racks"
+		answer_false2 = "Airborne surveillance"
 	},
-	[63] = {
-		answer_right = "Ice cream",
-		answer_false1 = "Pumpkin soup",
-		question = "What food can be made in an airborne single-seat aircraft?",
+	[77] = {
+		answer_right = "Red on starboard, green on port, white on aft",
+		answer_false1 = "Red on starboard, yellow on port",
+		question = "In what arrangement are navigation lights placed on a ship?",
 		type = 1,
-		id = 63,
-		answer_false3 = "Apple pie",
+		id = 77,
+		answer_false3 = "Red on bow, blue on aft",
 		wrong_time = 30,
-		answer_false2 = "Steak"
+		answer_false2 = "Green on bow, orange on aft, pink on mast"
 	},
-	[64] = {
-		answer_right = "9",
-		answer_false1 = "7",
-		question = "What is the maximum AP cost of using the Request Recon order in Operation Siren?",
+	[78] = {
+		answer_right = "Oceana",
+		answer_false1 = "TB",
+		question = "Which character was recently added to Project Identity?",
 		type = 2,
-		id = 64,
-		answer_false3 = "10",
+		id = 78,
+		answer_false3 = "Lurker",
 		wrong_time = 30,
-		answer_false2 = "8"
+		answer_false2 = "Explorer"
 	},
-	[65] = {
-		answer_right = "5000",
-		answer_false1 = "4000",
-		question = "Excluding events, how many Specialized Cores can you get every month?",
+	[79] = {
+		answer_right = "50%",
+		answer_false1 = "30%",
+		question = "How much damage does your fleet deal while affected by the Out of Ammo debuff?",
 		type = 2,
-		id = 65,
-		answer_false3 = "2000",
+		id = 79,
+		answer_false3 = "70%",
 		wrong_time = 30,
-		answer_false2 = "3000"
+		answer_false2 = "60%"
 	},
-	[66] = {
-		answer_right = "Circular Defense",
-		answer_false1 = "Double Line Advance",
-		question = "What is the name of the formation that boosts your AA during a sortie?",
+	[80] = {
+		answer_right = "60",
+		answer_false1 = "50",
+		question = "What is the max number of Data Keys that can be held in the War Archives?",
 		type = 2,
-		id = 66,
-		answer_false3 = "Funnel Assault",
+		id = 80,
+		answer_false3 = "70",
 		wrong_time = 30,
-		answer_false2 = "Single Line Assault"
+		answer_false2 = "40"
 	},
-	[67] = {
-		answer_right = "The Warrior's Prowess",
-		answer_false1 = "Sparkling Mic",
-		question = "What is the name of Warspite's retrofit item?",
+	[81] = {
+		answer_right = "Sorties in the main campaign ",
+		answer_false1 = "Playing a minigame",
+		question = "Which one of the following consumes Oil?",
 		type = 2,
-		id = 67,
-		answer_false3 = "Queen's Orders",
+		id = 81,
+		answer_false3 = "Participating in Exercises",
 		wrong_time = 30,
-		answer_false2 = "Eau de Barbecue"
+		answer_false2 = "Fighting in an Extreme Challenge"
 	},
-	[68] = {
-		answer_right = "Equipping Augment Modules",
-		answer_false1 = "Increasing a shipgirls's rarity",
-		question = "Which of the following does not affect your Oil cost on a sortie?",
+	[82] = {
+		answer_right = "200",
+		answer_false1 = "100",
+		question = "What is the currently highest reachable Commander Level? ",
 		type = 2,
-		id = 68,
-		answer_false3 = "Limit Breaking",
+		id = 82,
+		answer_false3 = "180",
 		wrong_time = 30,
-		answer_false2 = "Increasing a shipgirls's level"
+		answer_false2 = "150"
 	},
-	[69] = {
-		answer_right = "TB",
-		answer_false1 = "TC",
-		question = "What is the name of the AI assistant in Operation Siren?",
+	[83] = {
+		answer_right = "3",
+		answer_false1 = "1",
+		question = "How many times can the Dormitory be expanded? ",
 		type = 2,
-		id = 69,
-		answer_false3 = "TD",
+		id = 83,
+		answer_false3 = "5",
 		wrong_time = 30,
-		answer_false2 = "TP"
+		answer_false2 = "2"
 	},
-	[70] = {
-		answer_right = "Provide air support during battle",
-		answer_false1 = "Increase your Recon value",
-		question = "What does the Support Fleet feature in the main story mode do?",
+	[84] = {
+		answer_right = "EVA",
+		answer_false1 = "FP",
+		question = "Which stat is decreased when you use the Single Line Assault formation? ",
 		type = 2,
-		id = 70,
-		answer_false3 = "Increase your HP",
+		id = 84,
+		answer_false3 = "AA",
 		wrong_time = 30,
-		answer_false2 = "Increase your Airspace Control"
+		answer_false2 = "TRP"
 	},
 	all = {
-		57,
-		58,
-		59,
-		60,
-		61,
-		62,
-		63,
-		64,
-		65,
-		66,
-		67,
-		68,
-		69,
-		70
+		71,
+		72,
+		73,
+		74,
+		75,
+		76,
+		77,
+		78,
+		79,
+		80,
+		81,
+		82,
+		83,
+		84
 	}
 }

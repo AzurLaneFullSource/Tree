@@ -170,7 +170,7 @@ return {
 			actor = -2,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "Look, $1, these colors indeed complement each other well.",
+			say = "Look, {tb}, these colors indeed complement each other well.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -271,7 +271,7 @@ return {
 			actor = -2,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "What do you think, $1? It sounds quite interesting. Svirepy seems keen on the idea, too.",
+			say = "What do you think, {tb}? It sounds quite interesting. Svirepy seems keen on the idea, too.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

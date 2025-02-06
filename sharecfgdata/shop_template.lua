@@ -14686,6 +14686,234 @@ _G.pg.base.shop_template[60585] = {
 	},
 }
 
+_G.pg.base.shop_template[60589] = {
+	collaboration_skin_time = "",
+	desc = "880钻石购买限时建造补给(0206远汇点作战轻量化复刻版本)",
+	discount = 0,
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60589,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	resource_num = 880,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			1,
+		},
+	},
+	effect_args = {
+		40138,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				6,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				2,
+				12,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[60590] = {
+	collaboration_skin_time = "",
+	desc = "120钻石购买限时攻略补给(0206远汇点作战轻量化复刻版本)",
+	discount = 0,
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60590,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	resource_num = 120,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			5,
+		},
+	},
+	effect_args = {
+		40117,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				6,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				2,
+				12,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[60591] = {
+	collaboration_skin_time = "",
+	desc = "500钻石购买家具币礼包(0206远汇点作战轻量化复刻版本)",
+	discount = 0,
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60591,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	resource_num = 500,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			2,
+		},
+	},
+	effect_args = {
+		40106,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				6,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				2,
+				12,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[60592] = {
+	collaboration_skin_time = "",
+	desc = "300钻石购买心智单元礼包(0206远汇点作战轻量化复刻版本)",
+	discount = 0,
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60592,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	resource_num = 300,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			2,
+		},
+	},
+	effect_args = {
+		40119,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				6,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				2,
+				12,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
 _G.pg.base.shop_template[61001] = {
 	collaboration_skin_time = "",
 	desc = "Spend 200 Gems to increase dock capacity by 10 (when dock capacity is between 0-1999)",
@@ -38095,9 +38323,9 @@ _G.pg.base.shop_template[70727] = {
 	time = {
 		{
 			{
-				2024,
-				11,
-				14,
+				2025,
+				2,
+				6,
 			},
 			{
 				0,
@@ -38107,9 +38335,9 @@ _G.pg.base.shop_template[70727] = {
 		},
 		{
 			{
-				2024,
+				2025,
+				2,
 				12,
-				4,
 			},
 			{
 				23,
@@ -38147,9 +38375,9 @@ _G.pg.base.shop_template[70728] = {
 	time = {
 		{
 			{
-				2024,
-				12,
-				12,
+				2025,
+				2,
+				6,
 			},
 			{
 				0,
@@ -38159,9 +38387,9 @@ _G.pg.base.shop_template[70728] = {
 		},
 		{
 			{
-				2024,
+				2025,
+				2,
 				12,
-				18,
 			},
 			{
 				23,
@@ -38199,9 +38427,9 @@ _G.pg.base.shop_template[70729] = {
 	time = {
 		{
 			{
-				2024,
-				11,
-				14,
+				2025,
+				2,
+				6,
 			},
 			{
 				0,
@@ -38211,9 +38439,9 @@ _G.pg.base.shop_template[70729] = {
 		},
 		{
 			{
-				2024,
+				2025,
+				2,
 				12,
-				4,
 			},
 			{
 				23,
@@ -38251,9 +38479,9 @@ _G.pg.base.shop_template[70730] = {
 	time = {
 		{
 			{
-				2024,
-				11,
-				14,
+				2025,
+				2,
+				6,
 			},
 			{
 				0,
@@ -38263,9 +38491,9 @@ _G.pg.base.shop_template[70730] = {
 		},
 		{
 			{
-				2024,
+				2025,
+				2,
 				12,
-				4,
 			},
 			{
 				23,
@@ -38303,9 +38531,9 @@ _G.pg.base.shop_template[70731] = {
 	time = {
 		{
 			{
-				2024,
-				11,
-				14,
+				2025,
+				2,
+				6,
 			},
 			{
 				0,
@@ -38315,9 +38543,9 @@ _G.pg.base.shop_template[70731] = {
 		},
 		{
 			{
-				2024,
+				2025,
+				2,
 				12,
-				4,
 			},
 			{
 				23,
@@ -38355,9 +38583,9 @@ _G.pg.base.shop_template[70732] = {
 	time = {
 		{
 			{
-				2024,
-				11,
-				14,
+				2025,
+				2,
+				6,
 			},
 			{
 				0,
@@ -38367,9 +38595,9 @@ _G.pg.base.shop_template[70732] = {
 		},
 		{
 			{
-				2024,
+				2025,
+				2,
 				12,
-				4,
 			},
 			{
 				23,
@@ -38407,9 +38635,9 @@ _G.pg.base.shop_template[70733] = {
 	time = {
 		{
 			{
-				2024,
-				11,
-				14,
+				2025,
+				2,
+				6,
 			},
 			{
 				0,
@@ -38419,9 +38647,9 @@ _G.pg.base.shop_template[70733] = {
 		},
 		{
 			{
-				2024,
+				2025,
+				2,
 				12,
-				4,
 			},
 			{
 				23,
@@ -59876,7 +60104,7 @@ _G.pg.base.shop_template[90156] = {
 	num = 1,
 	order = 1,
 	resource_num = 1,
-	resource_type = 275,
+	resource_type = 471,
 	tag = 0,
 	time_second = 172800,
 	type = 6,
@@ -59889,9 +60117,9 @@ _G.pg.base.shop_template[90156] = {
 	time = {
 		{
 			{
-				2022,
-				8,
-				18,
+				2025,
+				2,
+				6,
 			},
 			{
 				0,
@@ -59901,9 +60129,9 @@ _G.pg.base.shop_template[90156] = {
 		},
 		{
 			{
-				2022,
-				8,
-				31,
+				2025,
+				2,
+				12,
 			},
 			{
 				23,
@@ -59928,7 +60156,7 @@ _G.pg.base.shop_template[90157] = {
 	num = 1,
 	order = 2,
 	resource_num = 1,
-	resource_type = 275,
+	resource_type = 471,
 	tag = 0,
 	time_second = 172800,
 	type = 6,
@@ -59941,9 +60169,9 @@ _G.pg.base.shop_template[90157] = {
 	time = {
 		{
 			{
-				2022,
-				8,
-				18,
+				2025,
+				2,
+				6,
 			},
 			{
 				0,
@@ -59953,9 +60181,9 @@ _G.pg.base.shop_template[90157] = {
 		},
 		{
 			{
-				2022,
-				8,
-				31,
+				2025,
+				2,
+				12,
 			},
 			{
 				23,
@@ -59980,7 +60208,7 @@ _G.pg.base.shop_template[90158] = {
 	num = 1,
 	order = 3,
 	resource_num = 1,
-	resource_type = 275,
+	resource_type = 471,
 	tag = 0,
 	time_second = 172800,
 	type = 6,
@@ -59993,9 +60221,9 @@ _G.pg.base.shop_template[90158] = {
 	time = {
 		{
 			{
-				2022,
-				8,
-				18,
+				2025,
+				2,
+				6,
 			},
 			{
 				0,
@@ -60005,9 +60233,9 @@ _G.pg.base.shop_template[90158] = {
 		},
 		{
 			{
-				2022,
-				8,
-				31,
+				2025,
+				2,
+				12,
 			},
 			{
 				23,

@@ -127,7 +127,7 @@ function var0_0.AttachOrbit(arg0_6, arg1_6)
 						var5_7:SetAsLastSibling()
 					end
 
-					SetActive(var3_7, arg0_6._visible)
+					SetActive(var5_7, arg0_6._visible)
 					arg0_6:sortAttachmentGO()
 				end
 			end), true, true)
