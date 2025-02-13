@@ -1,6 +1,232 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_18 = {
+	[900414] = {
+		ship_group = 900414,
+		name = "利物浦-神官",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 900414,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "liwupu_2",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "liwupu_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Zuihou-class aircraft carrier – Chitose.",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.92,
+					0.98,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.95,
+					1.03,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.008,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.14,
+					1.26,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.43,
+							2.24,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[900415] = {
+		ship_group = 900415,
+		name = "独角兽-见习神官",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 900415,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "dujiaoshou_10",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "dujiaoshou_10",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Zuihou-class aircraft carrier – Chitose.",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.92,
+					0.98,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.95,
+					1.03,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.008,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.14,
+					1.26,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.43,
+							2.24,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[900416] = {
 		ship_group = 900416,
 		name = "努比亚人-药剂师",
@@ -13031,232 +13257,6 @@ pg.base.ship_skin_template_18 = {
 		special_effects = "",
 		desc = "I'm getting all fired up! The name's Hiryuu, Hiryuu from the 2nd CarDiv. As a member of this fleet, I'll obey your orders. I do hope that you are qualified to lead us.",
 		voice_actor = 30,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					2.07,
-					1.53,
-					0
-				}
-			},
-			vicegun = {
-				{
-					2.1,
-					1.55,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.04,
-					-0.01,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					2.01,
-					1.56,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.56,
-							2.2,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[9707020] = {
-		ship_group = 970702,
-		name = "Ark Royal META",
-		hand_id = 1,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 9707020,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "huangjiafangzhou_alter",
-		shop_id = 0,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "huangjiafangzhou_alter",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Aircraft carrier Ark Royal, at your service. I hereby vow to lend you my strength for as long as you harbour honourable ambitions!",
-		voice_actor = 5,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					2.07,
-					1.53,
-					0
-				}
-			},
-			vicegun = {
-				{
-					2.1,
-					1.55,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.04,
-					-0.01,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					2.01,
-					1.56,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.56,
-							2.2,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[9707030] = {
-		ship_group = 970703,
-		name = "Souryuu META",
-		hand_id = 2,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 9707030,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "canglong_alter",
-		shop_id = 0,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "canglong_alter",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "I am Souryuu of the Sakura Empire's 2nd CarDiv. Let's skip the formalities and get to work right away.",
-		voice_actor = 15,
 		spine_offset = "",
 		change_skin = "",
 		rarity_bg = "",

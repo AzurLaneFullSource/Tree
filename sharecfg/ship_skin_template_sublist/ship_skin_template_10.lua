@@ -1,6 +1,234 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_10 = {
+	[305025] = {
+		ship_group = 30502,
+		name = "Vacation Offensive!",
+		hand_id = 14,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 305025,
+		group_index = 5,
+		l2d_ignore_drag = 0,
+		painting = "shancheng_8",
+		shop_id = 0,
+		illustrator = 22,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "shancheng_8",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Woah, even the air tastes totally different at this vacation spot! Milord, Milord, um, Akashi asked me to bottle up some of the air here for her! Want to give me a hand?",
+		voice_actor = 71,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.379,
+					1.013,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.348,
+					0.994,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.279,
+					0.995,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.496,
+							2.291,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[305026] = {
+		ship_group = 30502,
+		name = "Street Corner Offensive!",
+		hand_id = 14,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 305026,
+		group_index = 6,
+		l2d_ignore_drag = 0,
+		painting = "shancheng_6",
+		shop_id = 70251,
+		illustrator = 22,
+		l2d_voice_calibrate = "",
+		shop_type_id = 4,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "103",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "shancheng_6",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Uwaah! M-Milord?! I'm so, so sorry... You didn't get hurt, did you? Um... This is my school uniform. Fusou tailored it for me, hehe~ ... Awawa! I should head off to class now! See you later!",
+		voice_actor = 71,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.666,
+					0.827,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.632,
+					0.836,
+					0
+				}
+			},
+			torpedo = {
+				{
+					-0.007,
+					-0.001,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.675,
+					0.832,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.41,
+							2.36,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[305028] = {
 		ship_group = 30502,
 		name = "Bridal Attack!",
@@ -12877,206 +13105,6 @@ pg.base.ship_skin_template_10 = {
 				{
 					0,
 					0,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.64,
-							2.45,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[308020] = {
-		ship_group = 30802,
-		name = "I-26",
-		hand_id = 17,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 308020,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "I26",
-		shop_id = 0,
-		illustrator = 14,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "I26",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Type B1 cruiser submarine – I-26.",
-		voice_actor = 121,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.97,
-					0.24,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.97,
-					0.3,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.64,
-							2.45,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[308021] = {
-		ship_group = 30802,
-		name = "Deep-Sea Rabbit",
-		hand_id = 14,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 308021,
-		group_index = 1,
-		l2d_ignore_drag = 0,
-		painting = "I26_2",
-		shop_id = 70075,
-		illustrator = 14,
-		l2d_voice_calibrate = "",
-		shop_type_id = 4,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "103",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "I26_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Many secrets lie at the bottom of the ocean! Commander, let's go looking for them next time! It'll be like a field trip~ Heheh!",
-		voice_actor = 121,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.6,
-					0.19,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.65,
-					0.03,
 					0
 				}
 			}

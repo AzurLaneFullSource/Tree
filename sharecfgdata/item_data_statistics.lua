@@ -83046,6 +83046,36 @@ _G.pg.base.item_data_statistics[44002] = {
 	limit = {},
 }
 
+_G.pg.base.item_data_statistics[44003] = {
+	compose_number = 0,
+	display = "A Valentine Gift from $1",
+	display_effect = "",
+	icon = "Props/manhanquanxi ",
+	id = 44003,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Valentine Gift",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	price = "",
+	rarity = 8,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 23,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+
 _G.pg.base.item_data_statistics[44011] = {
 	compose_number = 0,
 	display = "A Valentine Gift from $1",

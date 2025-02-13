@@ -20,7 +20,8 @@ function var0_0.listNotificationInterests(arg0_4)
 		var0_0.UnlockStoryDone,
 		ActivityProxy.ACTIVITY_UPDATED,
 		GAME.SUBMIT_TASK_DONE,
-		GAME.SUBMIT_ACTIVITY_TASK_DONE
+		GAME.SUBMIT_ACTIVITY_TASK_DONE,
+		GAME.ACTIVITY_STORYUNLOCKED_DONE
 	}
 end
 
@@ -28,7 +29,7 @@ function var0_0.handleNotification(arg0_5, arg1_5)
 	local var0_5 = arg1_5:getName()
 	local var1_5 = arg1_5:getBody()
 
-	if var0_5 == var0_0.UnlockStoryDone then
+	if var0_5 == GAME.ACTIVITY_STORYUNLOCKED_DONE then
 		arg0_5.viewComponent:UpdataStoryState(var1_5)
 	elseif var0_5 == ActivityProxy.ACTIVITY_UPDATED then
 		if var1_5:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TownSkinStory then

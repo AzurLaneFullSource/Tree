@@ -19,7 +19,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			var0_2.data1 = var0_2.data1 - 1
 
 			getProxy(ActivityProxy):updateActivity(var0_2)
-			arg0_1:sendNotification(GhostSkinMediator.UnlockStoryDone, {
+			arg0_1:sendNotification(GAME.ACTIVITY_STORYUNLOCKED_DONE, {
 				storyId = var0_1.arg1
 			})
 		end

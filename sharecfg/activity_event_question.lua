@@ -61,7 +61,7 @@ pg.activity_event_question = {
 		answer_false2 = "Airborne surveillance"
 	},
 	[77] = {
-		answer_right = "Red on starboard, green on port, white on aft",
+		answer_right = "Red on port, green on starboard, white on aft",
 		answer_false1 = "Red on starboard, yellow on port",
 		question = "In what arrangement are navigation lights placed on a ship?",
 		type = 1,

@@ -1,6 +1,218 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_13 = {
+	[408092] = {
+		ship_group = 40809,
+		name = "How Heavy Are Those Barbells?",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 408092,
+		group_index = 2,
+		l2d_ignore_drag = 0,
+		painting = "u96_3",
+		shop_id = 70730,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 13,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "112",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "u96_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Mmgh... Guh... Ahhh! These things are heavier than they look... Oh, there you are. You work out too, do ya? Feel free to join me if you've not just come to tease me.",
+		voice_actor = 246,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.639,
+					0.717,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					-0.023,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.755,
+							2.025,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[408093] = {
+		ship_group = 40809,
+		name = "Wolfen Dolly",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 408093,
+		group_index = 3,
+		l2d_ignore_drag = 0,
+		painting = "u96_4",
+		shop_id = 71029,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 14,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "186",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "u96_4",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Sup. If it isn't our Commander. Got bored already because you shattered all your previous records? Or, did you run into some mechanical issues? ...Huh, you're here to ask for my support? Did the butterscotch get to your brain or what? Despite the way I look, I've been on the sidelines cheering you on this whole time.",
+		voice_actor = 246,
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			6,
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.639,
+					0.717,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					-0.023,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.755,
+							2.025,
+							0
+						}
+					}
+				}
+			}
+		},
+		spine_offset = {
+			{
+				179,
+				-409,
+				0
+			},
+			{
+				0.38
+			}
+		}
+	},
 	[408100] = {
 		ship_group = 40810,
 		name = "U-37",
@@ -13410,234 +13622,6 @@ pg.base.ship_skin_template_13 = {
 						{
 							-0.526,
 							2.461,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[602020] = {
-		ship_group = 60202,
-		name = "Giuseppe Garibaldi",
-		hand_id = 1,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 602020,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "zhusaipei",
-		shop_id = 0,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "zhusaipei",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Duca degli Abruzzi-class light cruiser – Giuseppe Garibaldi.",
-		voice_actor = 286,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.16,
-					1.08,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.15,
-					1.07,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.11,
-					1.31,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.81,
-							2.09,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[602021] = {
-		ship_group = 60202,
-		name = "Noble Ivory Plumes",
-		hand_id = 1,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 602021,
-		group_index = 1,
-		l2d_ignore_drag = 0,
-		painting = "zhusaipei_2",
-		shop_id = 70717,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 21,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "159",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "zhusaipei_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "I am the evil swan Odile! Where oh where is my prince? ...Oh, it's you, Commander. My lines aside, pretty good performance, right?",
-		voice_actor = 286,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.004,
-					0.957,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.016,
-					0.966,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					-0.025,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.999,
-					1.001,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.908,
-							1.813,
 							0
 						}
 					}

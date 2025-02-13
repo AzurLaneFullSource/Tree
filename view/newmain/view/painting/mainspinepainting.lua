@@ -110,7 +110,7 @@ function var0_0.InitSpecialTouch(arg0_6)
 								local var2_9 = var1_9.tf:InverseTransformPoint(var0_9)
 
 								if math.abs(var2_9.x) < var1_9.bound.x / 2 and math.abs(var2_9.y) < var1_9.bound.y / 2 then
-									arg0_6:OnPrepareTriggerEvent(var1_9.name)
+									arg0_6:PrepareTriggerAction(var1_9.name)
 									arg0_6:TriggerPersonalTask(var1_9.task)
 								end
 							end

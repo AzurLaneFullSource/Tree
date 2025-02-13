@@ -1,6 +1,206 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_11 = {
+	[308020] = {
+		ship_group = 30802,
+		name = "I-26",
+		hand_id = 17,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 308020,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "I26",
+		shop_id = 0,
+		illustrator = 14,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "I26",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Type B1 cruiser submarine – I-26.",
+		voice_actor = 121,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.97,
+					0.24,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.97,
+					0.3,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.64,
+							2.45,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[308021] = {
+		ship_group = 30802,
+		name = "Deep-Sea Rabbit",
+		hand_id = 14,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 308021,
+		group_index = 1,
+		l2d_ignore_drag = 0,
+		painting = "I26_2",
+		shop_id = 70075,
+		illustrator = 14,
+		l2d_voice_calibrate = "",
+		shop_type_id = 4,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "103",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "I26_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Many secrets lie at the bottom of the ocean! Commander, let's go looking for them next time! It'll be like a field trip~ Heheh!",
+		voice_actor = 121,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.6,
+					0.19,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.65,
+					0.03,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.64,
+							2.45,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[308022] = {
 		ship_group = 30802,
 		name = "Shortly Before the Fireworks",
@@ -13492,270 +13692,6 @@ pg.base.ship_skin_template_11 = {
 							-0.365,
 							2.31,
 							-0.081
-						}
-					}
-				}
-			}
-		}
-	},
-	[403030] = {
-		ship_group = 40303,
-		name = "Prinz Eugen",
-		hand_id = 1,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 403030,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "ougen",
-		shop_id = 0,
-		illustrator = 7,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "ougen",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Admiral Hipper-class Heavy Cruiser, Prinz Eugen",
-		voice_actor = 21,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					-0.53,
-					0.802,
-					0
-				}
-			},
-			vicegun = {
-				{
-					-0.235,
-					0.484,
-					0
-				},
-				{
-					0.847,
-					0.34,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.227,
-					0.408,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					-0.235,
-					0.484,
-					0
-				},
-				{
-					0.847,
-					0.34,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				70,
-				{
-					{
-						"smoke",
-						{
-							-0.531,
-							0.427,
-							0
-						}
-					}
-				}
-			},
-			{
-				30,
-				{
-					{
-						"smoke",
-						{
-							0.711,
-							0.361,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[403031] = {
-		ship_group = 40303,
-		name = "Unfading Smile",
-		hand_id = 1,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 403031,
-		group_index = 1,
-		l2d_ignore_drag = 0,
-		painting = "ougen_2",
-		shop_id = 70015,
-		illustrator = 30,
-		l2d_voice_calibrate = "",
-		shop_type_id = 6,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "106",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "ougen_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Relaxing on a float, gently licking my lips... is this really the most popular photo pose for the beach? Wales, you’re not teasing me again, are you?",
-		voice_actor = 21,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand2",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.42,
-					0.73,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.3,
-					0.09,
-					0
-				}
-			},
-			torpedo = {
-				{
-					1.42,
-					0.73,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.42,
-					0.73,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				70,
-				{
-					{
-						"smoke",
-						{
-							-0.531,
-							0.427,
-							0
-						}
-					}
-				}
-			},
-			{
-				30,
-				{
-					{
-						"smoke",
-						{
-							0.711,
-							0.361,
-							0
 						}
 					}
 				}

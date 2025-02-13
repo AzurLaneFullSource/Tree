@@ -303,9 +303,15 @@ function var0_0.SplitItemAndSkinExperienceItem(arg0_22, arg1_22)
 end
 
 function var0_0.IsSkinExperienceItem(arg0_23)
-	local var0_23 = arg0_23:getConfigTable()
+	local var0_23
 
-	return var0_23 and var0_23.usage == ItemUsage.USAGE_SKIN_EXP
+	if not isa(arg0_23, Drop) then
+		arg0_23 = Drop.New(arg0_23)
+	end
+
+	local var1_23 = arg0_23:getConfigTable()
+
+	return var1_23 and var1_23.usage == ItemUsage.USAGE_SKIN_EXP
 end
 
 function var0_0.ExistSkinExperienceItem(arg0_24, arg1_24)

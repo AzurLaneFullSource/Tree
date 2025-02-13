@@ -17,7 +17,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.nameTxt = arg1_1:Find("frame/Text"):GetComponent(typeof(Text))
 
 	arg0_1:Init()
-	setText(arg1_1:Find("frame/score/label"), i18n("2023Valentine_minigame_label1"))
+	setText(arg1_1:Find("frame/score/label"), i18n("Valentine_minigame_label1"))
 
 	arg0_1.nameTxt.text = getProxy(PlayerProxy):getRawData():GetName()
 
@@ -75,7 +75,7 @@ function var0_0.GetChatTxt(arg0_7, arg1_7)
 	end
 
 	if var0_7 then
-		return i18n("2023Valentine_minigame_" .. var0_7)
+		return i18n("2025Valentine_minigame_" .. var0_7)
 	else
 		return ""
 	end

@@ -1,6 +1,234 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_14 = {
+	[602020] = {
+		ship_group = 60202,
+		name = "Giuseppe Garibaldi",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 602020,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "zhusaipei",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "zhusaipei",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Duca degli Abruzzi-class light cruiser – Giuseppe Garibaldi.",
+		voice_actor = 286,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.16,
+					1.08,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.15,
+					1.07,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.11,
+					1.31,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.81,
+							2.09,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[602021] = {
+		ship_group = 60202,
+		name = "Noble Ivory Plumes",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 602021,
+		group_index = 1,
+		l2d_ignore_drag = 0,
+		painting = "zhusaipei_2",
+		shop_id = 70717,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 21,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "159",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "zhusaipei_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "I am the evil swan Odile! Where oh where is my prince? ...Oh, it's you, Commander. My lines aside, pretty good performance, right?",
+		voice_actor = 286,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			4
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.004,
+					0.957,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.016,
+					0.966,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					-0.025,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.999,
+					1.001,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.908,
+							1.813,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[603010] = {
 		ship_group = 60301,
 		name = "Trento",
@@ -13521,206 +13749,6 @@ pg.base.ship_skin_template_14 = {
 							-0.511,
 							2.474,
 							-0.18
-						}
-					}
-				}
-			}
-		}
-	},
-	[707010] = {
-		ship_group = 70701,
-		name = "Volga",
-		hand_id = 1,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 707010,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "fuerjia",
-		shop_id = 0,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "fuerjia",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Project 72-class aircraft carrier – Volga",
-		voice_actor = 307,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					2.102,
-					1.651,
-					0
-				}
-			},
-			plane = {
-				{
-					2.156,
-					1.781,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.461,
-							2.503,
-							-1.89
-						}
-					}
-				}
-			}
-		}
-	},
-	[707011] = {
-		ship_group = 70701,
-		name = "An Irresistible AR Adventure",
-		hand_id = 1,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 707011,
-		group_index = 1,
-		l2d_ignore_drag = 0,
-		painting = "fuerjia_2",
-		shop_id = 70669,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 12,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "154",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "1102",
-		voice_actor_2 = -1,
-		prefab = "fuerjia_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Volga here. I'm currently tracking an important witness. *gurgle* ...Is my stomach rumbling because this AR game requires so much stamina? Ugh, lost track of the witness just now...",
-		voice_actor = 307,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					2.211,
-					1.633,
-					0
-				}
-			},
-			plane = {
-				{
-					2.31,
-					2.08,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.506,
-							2.359,
-							-1.89
 						}
 					}
 				}

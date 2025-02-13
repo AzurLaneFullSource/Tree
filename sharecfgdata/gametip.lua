@@ -21622,16 +21622,16 @@ _G.pg.base.gametip["2023Valentine_minigame_c"] = {
 	tip = "Um, C-Commander, are you sure you want this? Why don't I go make another batch first...",
 }
 
-_G.pg.base.gametip["2023Valentine_minigame_label1"] = {
+_G.pg.base.gametip.Valentine_minigame_label1 = {
 	tip = "Score:",
 }
 
-_G.pg.base.gametip["2023Valentine_minigame_label2"] = {
-	tip = "Chocolates Needed",
+_G.pg.base.gametip.Valentine_minigame_label2 = {
+	tip = "Chocolates Needed:",
 }
 
-_G.pg.base.gametip["2023Valentine_minigame_label3"] = {
-	tip = "Chocolates:",
+_G.pg.base.gametip.Valentine_minigame_label3 = {
+	tip = "Progress:",
 }
 
 _G.pg.base.gametip.sort_energy = {
@@ -28077,5 +28077,21 @@ _G.pg.base.gametip.child2_schedule_target = {
 
 _G.pg.base.gametip.child2_shop_point_sure = {
 	tip = "With this purchase, the action points that surpass the max limit will be nulled. Continue?",
+}
+
+_G.pg.base.gametip["2025Valentine_minigame_s"] = {
+	tip = "Hooray! My new method worked this time! Commander, come taste this chocolate packed full of love! Heehee. Happy Valentine's!",
+}
+
+_G.pg.base.gametip["2025Valentine_minigame_a"] = {
+	tip = "Whoa... This turned out so pretty! You being here really makes a world of difference. Come on, try it! Taste the fruits of our labour!",
+}
+
+_G.pg.base.gametip["2025Valentine_minigame_b"] = {
+	tip = "It's finally done! It's a little different from how I pictured it, but it shouldn't be that bad since you helped me so much, right? Heehee!",
+}
+
+_G.pg.base.gametip["2025Valentine_minigame_c"] = {
+	tip = "Uhh... Is this flavour really passable? This isn't very passable for a Royal Maid... Let me give it another shot, Commander!",
 }
 

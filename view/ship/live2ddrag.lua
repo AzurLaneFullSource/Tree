@@ -101,6 +101,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.offsetDragTargetX = arg0_1.startValue
 	arg0_1.offsetDragTargetY = arg0_1.startValue
 	arg0_1._relationFlag = false
+	arg0_1.ableFlag = false
 
 	if arg0_1.relationParameter and arg0_1.relationParameter.list then
 		arg0_1._relationFlag = true

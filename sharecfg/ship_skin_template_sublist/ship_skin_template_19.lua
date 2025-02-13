@@ -1,6 +1,232 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_19 = {
+	[9707020] = {
+		ship_group = 970702,
+		name = "Ark Royal META",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 9707020,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "huangjiafangzhou_alter",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "huangjiafangzhou_alter",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Aircraft carrier Ark Royal, at your service. I hereby vow to lend you my strength for as long as you harbour honourable ambitions!",
+		voice_actor = 5,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					2.07,
+					1.53,
+					0
+				}
+			},
+			vicegun = {
+				{
+					2.1,
+					1.55,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.04,
+					-0.01,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					2.01,
+					1.56,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.56,
+							2.2,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[9707030] = {
+		ship_group = 970703,
+		name = "Souryuu META",
+		hand_id = 2,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 9707030,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "canglong_alter",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "canglong_alter",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "I am Souryuu of the Sakura Empire's 2nd CarDiv. Let's skip the formalities and get to work right away.",
+		voice_actor = 15,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					2.07,
+					1.53,
+					0
+				}
+			},
+			vicegun = {
+				{
+					2.1,
+					1.55,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.04,
+					-0.01,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					2.01,
+					1.56,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.56,
+							2.2,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[9707040] = {
 		ship_group = 970704,
 		name = "Béarn META",
@@ -12774,221 +13000,6 @@ pg.base.ship_skin_template_19 = {
 						{
 							-0.42,
 							2.26,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[11000060] = {
-		ship_group = 1100006,
-		name = "Murasaki",
-		hand_id = 14,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 11000060,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "zi_shanluan",
-		shop_id = 0,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "zi_shanluan",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "I'm Murasaki... from Hebijo Clandestine Girls' Academy. Umm... what is this place? I'd like to go home now... The outdoors are scary...",
-		voice_actor = 214,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.68,
-					1.03,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.13,
-					0.08,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.98,
-					1.64,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.46,
-							2.31,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[11000061] = {
-		ship_group = 1100006,
-		name = "The Shut-In Princess's Lament",
-		hand_id = 14,
-		bgm = "sk-az-story",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 11000061,
-		group_index = 1,
-		l2d_ignore_drag = 0,
-		painting = "zi_2_shanluan",
-		shop_id = 70933,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 6,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "164",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "1102",
-		voice_actor_2 = -1,
-		prefab = "zi_2_shanluan",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "When you're in a swimsuit, listening to the waves, eating ice cream, and playing a beach game... can't you say it counts as being on the beach, even if you're indoors?",
-		voice_actor = 214,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2,
-			5
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.68,
-					1.03,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.13,
-					0.08,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.98,
-					1.64,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.46,
-							2.31,
 							0
 						}
 					}

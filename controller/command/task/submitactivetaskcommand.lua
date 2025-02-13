@@ -111,6 +111,7 @@ function var0_0.submitActivity(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4)
 				for iter5_5, iter6_5 in ipairs(arg2_4) do
 					arg0_4:updateTaskBagData(iter6_5.id, arg1_4.act_id)
 					SubmitTaskCommand.OnSubmitSuccess(iter6_5)
+					getProxy(TaskProxy):removeSubmittingTask(iter6_5.id)
 				end
 
 				arg0_4:sendNotification(GAME.SUBMIT_ACTIVITY_TASK_DONE, {

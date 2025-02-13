@@ -782,6 +782,114 @@ pg.base.ship_skin_template_5 = {
 			}
 		}
 	},
+	[201372] = {
+		ship_group = 20137,
+		name = "The Modern-Day Clumsy Maid Escapade",
+		hand_id = 7,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 201372,
+		group_index = 2,
+		l2d_ignore_drag = 0,
+		painting = "nubiyaren_3",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 17,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "166",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "nubiyaren_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Uh, teehee! I was trying to make chocolate, then I slipped for some reason! ...Hang on a minute! How did I slip? Even a modern clumsy maid wouldn't blunder like that... Would she?!",
+		voice_actor = 402,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.6,
+					1.01,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.48,
+					1.272,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.513,
+							2.111,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[202010] = {
 		ship_group = 20201,
 		name = "Leander",
@@ -13756,132 +13864,6 @@ pg.base.ship_skin_template_5 = {
 							0.82,
 							2.19,
 							-0.4
-						}
-					}
-				}
-			}
-		}
-	},
-	[203060] = {
-		ship_group = 20306,
-		name = "Dorsetshire",
-		hand_id = 1,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 203060,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "duosaitejun",
-		shop_id = 0,
-		illustrator = 1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "duosaitejun",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Norfolk-class heavy cruiser, Dorsetshire, Hull Number 40\n<color=#fad545>Unlock build after receiving</color>",
-		voice_actor = 85,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					-0.57,
-					1.03,
-					0
-				}
-			},
-			vicegun = {
-				{
-					-0.57,
-					1.03,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.33,
-					0.29,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					-0.57,
-					1.03,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				70,
-				{
-					{
-						"smoke",
-						{
-							0.63,
-							0.61,
-							0.13
-						}
-					}
-				}
-			},
-			{
-				30,
-				{
-					{
-						"smoke",
-						{
-							-0.559,
-							1.16,
-							-0.52
 						}
 					}
 				}

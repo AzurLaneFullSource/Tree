@@ -503,6 +503,7 @@ function var0_0.UpdateMessageList(arg0_10, arg1_10, arg2_10, arg3_10, arg4_10, a
 					arg0_10:SetCharaMessageCardActive(var1_13, {
 						4
 					})
+					arg0_10:ClearEmoji(arg2_13:Find("charaMessageCard/emoji/emoticon"))
 					arg0_10:SetEmoji(arg2_13:Find("charaMessageCard/emoji/emoticon"), var3_0[tonumber(var0_13.param)].pic)
 
 					if arg3_10 and var0_10 and arg1_13 + 1 > var0_10 then
@@ -589,6 +590,7 @@ function var0_0.UpdateMessageList(arg0_10, arg1_10, arg2_10, arg3_10, arg4_10, a
 					arg0_10:SetPlayerMessageCardActive(var2_13, {
 						1
 					})
+					arg0_10:ClearEmoji(arg2_13:Find("playerReplyCard/emoji/emoticon"))
 					arg0_10:SetEmoji(arg2_13:Find("playerReplyCard/emoji/emoticon"), var3_0[tonumber(var0_13.param)].pic)
 				elseif var0_13.type == 5 then
 					arg0_10:SetPlayerMessageCardActive(var2_13, {
@@ -754,698 +756,706 @@ function var0_0.SetEmoji(arg0_35, arg1_35, arg2_35)
 	end)
 end
 
-function var0_0.UpdateOptionPanel(arg0_37, arg1_37, arg2_37)
-	local var0_37 = arg2_37[#arg2_37].option
+function var0_0.ClearEmoji(arg0_37, arg1_37)
+	eachChild(arg1_37, function(arg0_38)
+		local var0_38 = go(arg0_38)
 
-	if var0_37 and type(var0_37) == "table" then
-		arg0_37.shouldShowOption = true
-		arg0_37.optionCount = #var0_37
+		PoolMgr.GetInstance():ReturnPrefab("emoji/" .. var0_38.name, var0_38.name, var0_38)
+	end)
+end
 
-		arg0_37:SetOptionPanelActive(true)
-		arg0_37.optionList:make(function(arg0_38, arg1_38, arg2_38)
-			if arg0_38 == UIItemList.EventUpdate then
-				local var0_38 = var0_37[arg1_38 + 1]
+function var0_0.UpdateOptionPanel(arg0_39, arg1_39, arg2_39)
+	local var0_39 = arg2_39[#arg2_39].option
 
-				setText(arg2_38:Find("Text"), HXSet.hxLan(var0_38[2]))
-				onButton(arg0_37, arg2_38, function()
-					arg0_37:emit(InstagramChatMediator.REPLY, arg1_37.topicId, arg2_37[#arg2_37].id, var0_38[1])
+	if var0_39 and type(var0_39) == "table" then
+		arg0_39.shouldShowOption = true
+		arg0_39.optionCount = #var0_39
+
+		arg0_39:SetOptionPanelActive(true)
+		arg0_39.optionList:make(function(arg0_40, arg1_40, arg2_40)
+			if arg0_40 == UIItemList.EventUpdate then
+				local var0_40 = var0_39[arg1_40 + 1]
+
+				setText(arg2_40:Find("Text"), HXSet.hxLan(var0_40[2]))
+				onButton(arg0_39, arg2_40, function()
+					arg0_39:emit(InstagramChatMediator.REPLY, arg1_39.topicId, arg2_39[#arg2_39].id, var0_40[1])
 				end, SFX_PANEL)
 			end
 		end)
-		arg0_37.optionList:align(#var0_37)
+		arg0_39.optionList:align(#var0_39)
 	else
-		arg0_37:SetOptionPanelActive(false)
+		arg0_39:SetOptionPanelActive(false)
 
-		arg0_37.shouldShowOption = false
+		arg0_39.shouldShowOption = false
 	end
 end
 
-function var0_0.SetOptionPanelActive(arg0_40, arg1_40)
-	SetActive(arg0_40.optionPanel, arg1_40)
+function var0_0.SetOptionPanelActive(arg0_42, arg1_42)
+	SetActive(arg0_42.optionPanel, arg1_42)
 
-	local var0_40 = arg0_40:findTF("messageScroll/Viewport/Content", arg0_40.rightPanel):GetComponent(typeof(VerticalLayoutGroup))
-	local var1_40 = UnityEngine.RectOffset.New()
+	local var0_42 = arg0_42:findTF("messageScroll/Viewport/Content", arg0_42.rightPanel):GetComponent(typeof(VerticalLayoutGroup))
+	local var1_42 = UnityEngine.RectOffset.New()
 
-	var1_40.left = 0
-	var1_40.right = 0
-	var1_40.top = 0
+	var1_42.left = 0
+	var1_42.right = 0
+	var1_42.top = 0
 
-	local var2_40 = arg0_40:findTF("messageScroll/Scrollbar Vertical", arg0_40.rightPanel):GetComponent(typeof(RectTransform))
+	local var2_42 = arg0_42:findTF("messageScroll/Scrollbar Vertical", arg0_42.rightPanel):GetComponent(typeof(RectTransform))
 
-	if arg1_40 then
-		var1_40.bottom = 42 + 88 * arg0_40.optionCount
-		var2_40.sizeDelta = Vector2(arg0_40.messageScrollWidth, -var1_40.bottom)
+	if arg1_42 then
+		var1_42.bottom = 42 + 88 * arg0_42.optionCount
+		var2_42.sizeDelta = Vector2(arg0_42.messageScrollWidth, -var1_42.bottom)
 	else
-		var1_40.bottom = 50
-		var2_40.sizeDelta = Vector2(arg0_40.messageScrollWidth, 0)
+		var1_42.bottom = 50
+		var2_42.sizeDelta = Vector2(arg0_42.messageScrollWidth, 0)
 	end
 
-	var0_40.padding = var1_40
+	var0_42.padding = var1_42
 
-	scrollToBottom(arg0_40:findTF("messageScroll", arg0_40.rightPanel))
+	scrollToBottom(arg0_42:findTF("messageScroll", arg0_42.rightPanel))
 end
 
-function var0_0.SetFilterPanel(arg0_41)
-	arg0_41.readFilter = arg0_41.readFilter or var0_0.ReadType[1]
-	arg0_41.typeFilter = arg0_41.typeFilter or var0_0.TypeType[1]
-	arg0_41.campFilter = arg0_41.campFilter or {
+function var0_0.SetFilterPanel(arg0_43)
+	arg0_43.readFilter = arg0_43.readFilter or var0_0.ReadType[1]
+	arg0_43.typeFilter = arg0_43.typeFilter or var0_0.TypeType[1]
+	arg0_43.campFilter = arg0_43.campFilter or {
 		var0_0.CampIds[1]
 	}
 
-	local var0_41 = arg0_41:findTF("panel/filterScroll/Viewport/Content/read", arg0_41.filterUI)
-	local var1_41 = arg0_41:findTF("panel/filterScroll/Viewport/Content/type", arg0_41.filterUI)
-	local var2_41 = arg0_41:findTF("panel/filterScroll/Viewport/Content/camp", arg0_41.filterUI)
-	local var3_41 = UIItemList.New(var2_41, arg0_41:findTF("option", var2_41))
+	local var0_43 = arg0_43:findTF("panel/filterScroll/Viewport/Content/read", arg0_43.filterUI)
+	local var1_43 = arg0_43:findTF("panel/filterScroll/Viewport/Content/type", arg0_43.filterUI)
+	local var2_43 = arg0_43:findTF("panel/filterScroll/Viewport/Content/camp", arg0_43.filterUI)
+	local var3_43 = UIItemList.New(var2_43, arg0_43:findTF("option", var2_43))
 
-	onButton(arg0_41, arg0_41.filterBtn, function()
-		SetActive(arg0_41.filterUI, true)
-		pg.UIMgr.GetInstance():BlurPanel(arg0_41.filterUI, false, {
+	onButton(arg0_43, arg0_43.filterBtn, function()
+		SetActive(arg0_43.filterUI, true)
+		pg.UIMgr.GetInstance():BlurPanel(arg0_43.filterUI, false, {
 			weight = LayerWeightConst.SECOND_LAYER
 		})
 
-		for iter0_42, iter1_42 in ipairs(var0_0.ReadType) do
-			local var0_42 = var0_41:GetChild(iter0_42)
-			local var1_42 = arg0_41:findTF("selectedFrame", var0_42)
+		for iter0_44, iter1_44 in ipairs(var0_0.ReadType) do
+			local var0_44 = var0_43:GetChild(iter0_44)
+			local var1_44 = arg0_43:findTF("selectedFrame", var0_44)
 
-			SetActive(var1_42, arg0_41.readFilter == iter1_42)
-			onButton(arg0_41, var0_42, function()
-				for iter0_43, iter1_43 in ipairs(var0_0.ReadType) do
-					SetActive(arg0_41:findTF("selectedFrame", var0_41:GetChild(iter0_43)), false)
+			SetActive(var1_44, arg0_43.readFilter == iter1_44)
+			onButton(arg0_43, var0_44, function()
+				for iter0_45, iter1_45 in ipairs(var0_0.ReadType) do
+					SetActive(arg0_43:findTF("selectedFrame", var0_43:GetChild(iter0_45)), false)
 				end
 
-				SetActive(var1_42, true)
+				SetActive(var1_44, true)
 			end, SFX_PANEL)
 		end
 
-		for iter2_42, iter3_42 in ipairs(var0_0.TypeType) do
-			local var2_42 = var1_41:GetChild(iter2_42)
-			local var3_42 = arg0_41:findTF("selectedFrame", var2_42)
+		for iter2_44, iter3_44 in ipairs(var0_0.TypeType) do
+			local var2_44 = var1_43:GetChild(iter2_44)
+			local var3_44 = arg0_43:findTF("selectedFrame", var2_44)
 
-			SetActive(var3_42, arg0_41.typeFilter == iter3_42)
-			onButton(arg0_41, var2_42, function()
-				for iter0_44, iter1_44 in ipairs(var0_0.TypeType) do
-					SetActive(arg0_41:findTF("selectedFrame", var1_41:GetChild(iter0_44)), false)
+			SetActive(var3_44, arg0_43.typeFilter == iter3_44)
+			onButton(arg0_43, var2_44, function()
+				for iter0_46, iter1_46 in ipairs(var0_0.TypeType) do
+					SetActive(arg0_43:findTF("selectedFrame", var1_43:GetChild(iter0_46)), false)
 				end
 
-				SetActive(var3_42, true)
+				SetActive(var3_44, true)
 			end, SFX_PANEL)
 		end
 
-		var3_41:make(function(arg0_45, arg1_45, arg2_45)
-			if arg0_45 == UIItemList.EventUpdate then
-				setText(arg2_45:Find("Text"), i18n(var0_0.CampNames[arg1_45 + 1]))
+		var3_43:make(function(arg0_47, arg1_47, arg2_47)
+			if arg0_47 == UIItemList.EventUpdate then
+				setText(arg2_47:Find("Text"), i18n(var0_0.CampNames[arg1_47 + 1]))
 
-				local var0_45 = arg2_45:Find("selectedFrame")
+				local var0_47 = arg2_47:Find("selectedFrame")
 
-				SetActive(var0_45, _.contains(arg0_41.campFilter, var0_0.CampIds[arg1_45 + 1]))
-				onButton(arg0_41, arg2_45, function()
-					if arg1_45 == 0 then
-						SetActive(var0_45, true)
+				SetActive(var0_47, _.contains(arg0_43.campFilter, var0_0.CampIds[arg1_47 + 1]))
+				onButton(arg0_43, arg2_47, function()
+					if arg1_47 == 0 then
+						SetActive(var0_47, true)
 
-						for iter0_46 = 2, #var0_0.CampIds do
-							SetActive(arg0_41:findTF("selectedFrame", var2_41:GetChild(iter0_46 - 1)), false)
+						for iter0_48 = 2, #var0_0.CampIds do
+							SetActive(arg0_43:findTF("selectedFrame", var2_43:GetChild(iter0_48 - 1)), false)
 						end
 					else
-						SetActive(var0_45, not isActive(var0_45))
+						SetActive(var0_47, not isActive(var0_47))
 
-						local var0_46 = true
-						local var1_46 = true
+						local var0_48 = true
+						local var1_48 = true
 
-						for iter1_46 = 2, #var0_0.CampIds do
-							if not isActive(arg0_41:findTF("selectedFrame", var2_41:GetChild(iter1_46 - 1))) then
-								var0_46 = false
+						for iter1_48 = 2, #var0_0.CampIds do
+							if not isActive(arg0_43:findTF("selectedFrame", var2_43:GetChild(iter1_48 - 1))) then
+								var0_48 = false
 							end
 
-							if isActive(arg0_41:findTF("selectedFrame", var2_41:GetChild(iter1_46 - 1))) then
-								var1_46 = false
+							if isActive(arg0_43:findTF("selectedFrame", var2_43:GetChild(iter1_48 - 1))) then
+								var1_48 = false
 							end
 						end
 
-						if var0_46 then
-							SetActive(arg0_41:findTF("selectedFrame", var2_41:GetChild(0)), true)
+						if var0_48 then
+							SetActive(arg0_43:findTF("selectedFrame", var2_43:GetChild(0)), true)
 
-							for iter2_46 = 2, #var0_0.CampIds do
-								SetActive(arg0_41:findTF("selectedFrame", var2_41:GetChild(iter2_46 - 1)), false)
+							for iter2_48 = 2, #var0_0.CampIds do
+								SetActive(arg0_43:findTF("selectedFrame", var2_43:GetChild(iter2_48 - 1)), false)
 							end
-						elseif var1_46 then
-							SetActive(arg0_41:findTF("selectedFrame", var2_41:GetChild(0)), true)
+						elseif var1_48 then
+							SetActive(arg0_43:findTF("selectedFrame", var2_43:GetChild(0)), true)
 						else
-							SetActive(arg0_41:findTF("selectedFrame", var2_41:GetChild(0)), false)
+							SetActive(arg0_43:findTF("selectedFrame", var2_43:GetChild(0)), false)
 						end
 					end
 				end, SFX_PANEL)
 			end
 		end)
-		var3_41:align(#var0_0.CampIds)
+		var3_43:align(#var0_0.CampIds)
 	end, SFX_PANEL)
-	onButton(arg0_41, arg0_41:findTF("bg", arg0_41.filterUI), function()
-		arg0_41:CloseFilterPanel()
+	onButton(arg0_43, arg0_43:findTF("bg", arg0_43.filterUI), function()
+		arg0_43:CloseFilterPanel()
 	end, SFX_PANEL)
-	onButton(arg0_41, arg0_41:findTF("panel/bottom/close", arg0_41.filterUI), function()
-		arg0_41:CloseFilterPanel()
+	onButton(arg0_43, arg0_43:findTF("panel/bottom/close", arg0_43.filterUI), function()
+		arg0_43:CloseFilterPanel()
 	end, SFX_PANEL)
-	onButton(arg0_41, arg0_41:findTF("panel/bottom/ok", arg0_41.filterUI), function()
-		for iter0_49, iter1_49 in ipairs(var0_0.ReadType) do
-			local var0_49 = var0_41:GetChild(iter0_49)
-			local var1_49 = arg0_41:findTF("selectedFrame", var0_49)
+	onButton(arg0_43, arg0_43:findTF("panel/bottom/ok", arg0_43.filterUI), function()
+		for iter0_51, iter1_51 in ipairs(var0_0.ReadType) do
+			local var0_51 = var0_43:GetChild(iter0_51)
+			local var1_51 = arg0_43:findTF("selectedFrame", var0_51)
 
-			if isActive(var1_49) then
-				arg0_41.readFilter = iter1_49
+			if isActive(var1_51) then
+				arg0_43.readFilter = iter1_51
 			end
 		end
 
-		for iter2_49, iter3_49 in ipairs(var0_0.TypeType) do
-			local var2_49 = var1_41:GetChild(iter2_49)
-			local var3_49 = arg0_41:findTF("selectedFrame", var2_49)
+		for iter2_51, iter3_51 in ipairs(var0_0.TypeType) do
+			local var2_51 = var1_43:GetChild(iter2_51)
+			local var3_51 = arg0_43:findTF("selectedFrame", var2_51)
 
-			if isActive(var3_49) then
-				arg0_41.typeFilter = iter3_49
+			if isActive(var3_51) then
+				arg0_43.typeFilter = iter3_51
 			end
 		end
 
-		arg0_41.campFilter = {}
+		arg0_43.campFilter = {}
 
-		for iter4_49, iter5_49 in ipairs(var0_0.CampIds) do
-			local var4_49 = var2_41:GetChild(iter4_49 - 1)
-			local var5_49 = arg0_41:findTF("selectedFrame", var4_49)
+		for iter4_51, iter5_51 in ipairs(var0_0.CampIds) do
+			local var4_51 = var2_43:GetChild(iter4_51 - 1)
+			local var5_51 = arg0_43:findTF("selectedFrame", var4_51)
 
-			if isActive(var5_49) then
-				table.insert(arg0_41.campFilter, iter5_49)
+			if isActive(var5_51) then
+				table.insert(arg0_43.campFilter, iter5_51)
 			end
 		end
 
-		arg0_41:CloseFilterPanel()
-		arg0_41:SetFilterResult()
+		arg0_43:CloseFilterPanel()
+		arg0_43:SetFilterResult()
 	end, SFX_PANEL)
 end
 
-function var0_0.SetFilterResult(arg0_50)
-	local var0_50 = true
-	local var1_50 = false
+function var0_0.SetFilterResult(arg0_52)
+	local var0_52 = true
+	local var1_52 = false
 
-	if not arg0_50.readFilter then
-		arg0_50.readFilter = var0_0.ReadType[1]
-		arg0_50.typeFilter = var0_0.TypeType[1]
-		arg0_50.campFilter = {
+	if not arg0_52.readFilter then
+		arg0_52.readFilter = var0_0.ReadType[1]
+		arg0_52.typeFilter = var0_0.TypeType[1]
+		arg0_52.campFilter = {
 			var0_0.CampIds[1]
 		}
 	end
 
-	for iter0_50, iter1_50 in ipairs(arg0_50.chatList) do
-		local var2_50 = true
+	for iter0_52, iter1_52 in ipairs(arg0_52.chatList) do
+		local var2_52 = true
 
-		if arg0_50.readFilter ~= "all" then
-			local var3_50 = arg0_50.readFilter == "hasReaded" and 1 or 0
+		if arg0_52.readFilter ~= "all" then
+			local var3_52 = arg0_52.readFilter == "hasReaded" and 1 or 0
 
-			if iter1_50:GetCharacterEndFlag() ~= var3_50 then
-				var2_50 = false
+			if iter1_52:GetCharacterEndFlag() ~= var3_52 then
+				var2_52 = false
 			end
 		end
 
-		if arg0_50.typeFilter ~= "all" then
-			local var4_50 = arg0_50.typeFilter == "single" and 1 or 2
+		if arg0_52.typeFilter ~= "all" then
+			local var4_52 = arg0_52.typeFilter == "single" and 1 or 2
 
-			if iter1_50.type ~= var4_50 then
-				var2_50 = false
+			if iter1_52.type ~= var4_52 then
+				var2_52 = false
 			end
 		end
 
-		if not _.contains(arg0_50.campFilter, 0) and not _.contains(arg0_50.campFilter, iter1_50.nationality) then
-			var2_50 = false
+		if not _.contains(arg0_52.campFilter, 0) and not _.contains(arg0_52.campFilter, iter1_52.nationality) then
+			var2_52 = false
 		end
 
-		SetActive(arg0_50:findTF("main/leftPanel/charaScroll/Viewport/Content"):GetChild(iter0_50 - 1), var2_50)
+		SetActive(arg0_52:findTF("main/leftPanel/charaScroll/Viewport/Content"):GetChild(iter0_52 - 1), var2_52)
 
-		if var2_50 then
-			var0_50 = false
+		if var2_52 then
+			var0_52 = false
 		end
 
-		if arg0_50.currentChat and arg0_50.currentChat.characterId == iter1_50.characterId and var2_50 then
-			var1_50 = true
+		if arg0_52.currentChat and arg0_52.currentChat.characterId == iter1_52.characterId and var2_52 then
+			var1_52 = true
 		end
 	end
 
-	local var5_50 = arg0_50.readFilter == "all" and arg0_50.typeFilter == "all" and _.contains(arg0_50.campFilter, 0)
+	local var5_52 = arg0_52.readFilter == "all" and arg0_52.typeFilter == "all" and _.contains(arg0_52.campFilter, 0)
 
-	SetActive(arg0_50.isFiltered, not var5_50)
+	SetActive(arg0_52.isFiltered, not var5_52)
 
-	if var0_50 then
-		SetActive(arg0_50:findTF("charaScroll", arg0_50.leftPanel), false)
-		SetActive(arg0_50:findTF("main/noFilteredMessageBg"), true)
-		SetActive(arg0_50.rightPanel, false)
-		SetActive(arg0_50:findTF("main/rightNoMessageBg"), false)
+	if var0_52 then
+		SetActive(arg0_52:findTF("charaScroll", arg0_52.leftPanel), false)
+		SetActive(arg0_52:findTF("main/noFilteredMessageBg"), true)
+		SetActive(arg0_52.rightPanel, false)
+		SetActive(arg0_52:findTF("main/rightNoMessageBg"), false)
 	else
-		SetActive(arg0_50:findTF("charaScroll", arg0_50.leftPanel), true)
-		SetActive(arg0_50:findTF("main/noFilteredMessageBg"), false)
+		SetActive(arg0_52:findTF("charaScroll", arg0_52.leftPanel), true)
+		SetActive(arg0_52:findTF("main/noFilteredMessageBg"), false)
 
-		if var1_50 then
-			SetActive(arg0_50.rightPanel, true)
-			SetActive(arg0_50:findTF("main/rightNoMessageBg"), false)
+		if var1_52 then
+			SetActive(arg0_52.rightPanel, true)
+			SetActive(arg0_52:findTF("main/rightNoMessageBg"), false)
 		else
-			SetActive(arg0_50.rightPanel, false)
-			SetActive(arg0_50:findTF("main/rightNoMessageBg"), true)
+			SetActive(arg0_52.rightPanel, false)
+			SetActive(arg0_52:findTF("main/rightNoMessageBg"), true)
 
-			arg0_50.currentChat = nil
+			arg0_52.currentChat = nil
 
-			if arg0_50.cancelFrame then
-				arg0_50.cancelFrame()
+			if arg0_52.cancelFrame then
+				arg0_52.cancelFrame()
 
-				arg0_50.cancelFrame = nil
+				arg0_52.cancelFrame = nil
 			end
 		end
 	end
 end
 
-function var0_0.CloseFilterPanel(arg0_51)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_51.filterUI, arg0_51:findTF("subPages"))
-	SetActive(arg0_51.filterUI, false)
+function var0_0.CloseFilterPanel(arg0_53)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_53.filterUI, arg0_53:findTF("subPages"))
+	SetActive(arg0_53.filterUI, false)
 end
 
-function var0_0.SetTopicPanel(arg0_52, arg1_52)
-	SetActive(arg0_52:findTF("tip", arg0_52.topicBtn), arg1_52:GetCharacterEndFlagExceptCurrent() == 0)
-	onButton(arg0_52, arg0_52.topicBtn, function()
-		SetActive(arg0_52.topicUI, true)
-		pg.UIMgr.GetInstance():BlurPanel(arg0_52.topicUI, false, {
+function var0_0.SetTopicPanel(arg0_54, arg1_54)
+	SetActive(arg0_54:findTF("tip", arg0_54.topicBtn), arg1_54:GetCharacterEndFlagExceptCurrent() == 0)
+	onButton(arg0_54, arg0_54.topicBtn, function()
+		SetActive(arg0_54.topicUI, true)
+		pg.UIMgr.GetInstance():BlurPanel(arg0_54.topicUI, false, {
 			weight = LayerWeightConst.SECOND_LAYER
 		})
 
-		arg0_52.currentTopic = nil
+		arg0_54.currentTopic = nil
 
-		local var0_53 = UIItemList.New(arg0_52:findTF("panel/topicScroll/Viewport/Content", arg0_52.topicUI), arg0_52:findTF("panel/topicScroll/Viewport/Content/topic", arg0_52.topicUI))
+		local var0_55 = UIItemList.New(arg0_54:findTF("panel/topicScroll/Viewport/Content", arg0_54.topicUI), arg0_54:findTF("panel/topicScroll/Viewport/Content/topic", arg0_54.topicUI))
 
-		var0_53:make(function(arg0_54, arg1_54, arg2_54)
-			if arg0_54 == UIItemList.EventUpdate then
-				arg1_52:SortTopicList()
+		var0_55:make(function(arg0_56, arg1_56, arg2_56)
+			if arg0_56 == UIItemList.EventUpdate then
+				arg1_54:SortTopicList()
 
-				local var0_54 = arg1_52.topics[arg1_54 + 1]
+				local var0_56 = arg1_54.topics[arg1_56 + 1]
 
-				setScrollText(arg2_54:Find("mask/name"), HXSet.hxLan(var0_54.name))
-				SetActive(arg2_54:Find("lock"), not var0_54.active)
-				SetActive(arg2_54:Find("waiting"), var0_54.active and var0_54:isWaiting())
-				SetActive(arg2_54:Find("complete"), var0_54.active and var0_54:IsCompleted())
-				SetActive(arg2_54:Find("selectedFrame"), arg1_52.currentTopicId == var0_54.topicId)
-				SetActive(arg2_54:Find("selected"), arg1_52.currentTopicId == var0_54.topicId)
-				SetActive(arg2_54:Find("tip"), var0_54.active and not var0_54:IsCompleted())
+				setScrollText(arg2_56:Find("mask/name"), HXSet.hxLan(var0_56.name))
+				SetActive(arg2_56:Find("lock"), not var0_56.active)
+				SetActive(arg2_56:Find("waiting"), var0_56.active and var0_56:isWaiting())
+				SetActive(arg2_56:Find("complete"), var0_56.active and var0_56:IsCompleted())
+				SetActive(arg2_56:Find("selectedFrame"), arg1_54.currentTopicId == var0_56.topicId)
+				SetActive(arg2_56:Find("selected"), arg1_54.currentTopicId == var0_56.topicId)
+				SetActive(arg2_56:Find("tip"), var0_56.active and not var0_56:IsCompleted())
 
-				if arg1_52.currentTopicId == var0_54.topicId then
-					arg0_52.currentTopic = var0_54
+				if arg1_54.currentTopicId == var0_56.topicId then
+					arg0_54.currentTopic = var0_56
 				end
 
-				SetActive(arg2_54, var0_54.active)
+				SetActive(arg2_56, var0_56.active)
 
-				if var0_54.active then
-					onButton(arg0_52, arg2_54, function()
-						SetActive(arg2_54:Find("selectedFrame"), true)
+				if var0_56.active then
+					onButton(arg0_54, arg2_56, function()
+						SetActive(arg2_56:Find("selectedFrame"), true)
 
-						for iter0_55 = 1, #arg1_52.topics do
-							if iter0_55 ~= arg1_54 + 1 then
-								SetActive(arg0_52:findTF("selectedFrame", arg0_52:findTF("panel/topicScroll/Viewport/Content", arg0_52.topicUI):GetChild(iter0_55 - 1)), false)
+						for iter0_57 = 1, #arg1_54.topics do
+							if iter0_57 ~= arg1_56 + 1 then
+								SetActive(arg0_54:findTF("selectedFrame", arg0_54:findTF("panel/topicScroll/Viewport/Content", arg0_54.topicUI):GetChild(iter0_57 - 1)), false)
 							end
 						end
 
-						arg0_52.currentTopic = var0_54
+						arg0_54.currentTopic = var0_56
 					end, SFX_PANEL)
 				else
-					onButton(arg0_52, arg2_54, function()
-						pg.TipsMgr.GetInstance():ShowTips(var0_54.unlockDesc)
+					onButton(arg0_54, arg2_56, function()
+						pg.TipsMgr.GetInstance():ShowTips(var0_56.unlockDesc)
 					end, SFX_PANEL)
 				end
 			end
 		end)
-		var0_53:align(#arg1_52.topics)
+		var0_55:align(#arg1_54.topics)
 	end, SFX_PANEL)
-	onButton(arg0_52, arg0_52:findTF("bg", arg0_52.topicUI), function()
-		arg0_52:CloseTopicPanel()
+	onButton(arg0_54, arg0_54:findTF("bg", arg0_54.topicUI), function()
+		arg0_54:CloseTopicPanel()
 	end, SFX_PANEL)
-	onButton(arg0_52, arg0_52:findTF("panel/bottom/close", arg0_52.topicUI), function()
-		arg0_52:CloseTopicPanel()
+	onButton(arg0_54, arg0_54:findTF("panel/bottom/close", arg0_54.topicUI), function()
+		arg0_54:CloseTopicPanel()
 	end, SFX_PANEL)
-	onButton(arg0_52, arg0_52:findTF("panel/bottom/ok", arg0_52.topicUI), function()
-		arg0_52:emit(InstagramChatMediator.SET_CURRENT_TOPIC, arg0_52.currentTopic.topicId)
-		arg0_52:CloseTopicPanel()
+	onButton(arg0_54, arg0_54:findTF("panel/bottom/ok", arg0_54.topicUI), function()
+		arg0_54:emit(InstagramChatMediator.SET_CURRENT_TOPIC, arg0_54.currentTopic.topicId)
+		arg0_54:CloseTopicPanel()
 
-		local var0_59 = arg0_52.rightPanel:GetComponent(typeof(Animation))
+		local var0_61 = arg0_54.rightPanel:GetComponent(typeof(Animation))
 
-		var0_59:Stop()
-		var0_59:Play("anim_newinstagram_chat_right_in")
+		var0_61:Stop()
+		var0_61:Play("anim_newinstagram_chat_right_in")
 	end, SFX_PANEL)
 end
 
-function var0_0.CloseTopicPanel(arg0_60)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_60.topicUI, arg0_60:findTF("subPages"))
-	SetActive(arg0_60.topicUI, false)
+function var0_0.CloseTopicPanel(arg0_62)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_62.topicUI, arg0_62:findTF("subPages"))
+	SetActive(arg0_62.topicUI, false)
 end
 
-function var0_0.SetBackgroundPanel(arg0_61, arg1_61)
-	if arg1_61.type == 2 then
-		SetActive(arg0_61.backgroundBtn, false)
+function var0_0.SetBackgroundPanel(arg0_63, arg1_63)
+	if arg1_63.type == 2 then
+		SetActive(arg0_63.backgroundBtn, false)
 
 		return
 	end
 
-	SetActive(arg0_61.backgroundBtn, true)
+	SetActive(arg0_63.backgroundBtn, true)
 
-	local var0_61 = arg1_61:GetPaintingId()
+	local var0_63 = arg1_63:GetPaintingId()
 
-	onButton(arg0_61, arg0_61.backgroundBtn, function()
-		SetActive(arg0_61.backgroundUI, true)
-		pg.UIMgr.GetInstance():BlurPanel(arg0_61.backgroundUI, false, {
+	onButton(arg0_63, arg0_63.backgroundBtn, function()
+		SetActive(arg0_63.backgroundUI, true)
+		pg.UIMgr.GetInstance():BlurPanel(arg0_63.backgroundUI, false, {
 			weight = LayerWeightConst.SECOND_LAYER
 		})
 
-		arg0_61.currentBgId = nil
+		arg0_63.currentBgId = nil
 
-		local var0_62 = UIItemList.New(arg0_61:findTF("panel/backgroundScroll/Viewport/Content", arg0_61.backgroundUI), arg0_61:findTF("panel/backgroundScroll/Viewport/Content/background", arg0_61.backgroundUI))
+		local var0_64 = UIItemList.New(arg0_63:findTF("panel/backgroundScroll/Viewport/Content", arg0_63.backgroundUI), arg0_63:findTF("panel/backgroundScroll/Viewport/Content/background", arg0_63.backgroundUI))
 
-		var0_62:make(function(arg0_63, arg1_63, arg2_63)
-			if arg0_63 == UIItemList.EventUpdate then
-				local var0_63 = arg1_61.skins[arg1_63 + 1]
-				local var1_63 = 0
+		var0_64:make(function(arg0_65, arg1_65, arg2_65)
+			if arg0_65 == UIItemList.EventUpdate then
+				local var0_65 = arg1_63.skins[arg1_65 + 1]
+				local var1_65 = 0
 
-				if var0_63.id ~= var0_61 then
-					var1_63 = var0_63.id
+				if var0_65.id ~= var0_63 then
+					var1_65 = var0_65.id
 				end
 
-				local var2_63 = var0_63.painting
+				local var2_65 = var0_65.painting
 
-				LoadImageSpriteAsync("herohrzicon/" .. var2_63, arg2_63:Find("skinMask/skin"), false)
-				setScrollText(arg2_63:Find("skinMask/Panel/mask/Text"), var0_63.name)
+				LoadImageSpriteAsync("herohrzicon/" .. var2_65, arg2_65:Find("skinMask/skin"), false)
+				setScrollText(arg2_65:Find("skinMask/Panel/mask/Text"), var0_65.name)
 
-				local var3_63 = getProxy(ShipSkinProxy):hasSkin(var0_63.id) or var0_63.skin_type == ShipSkin.SKIN_TYPE_DEFAULT or var0_63.skin_type == ShipSkin.SKIN_TYPE_PROPOSE or var0_63.skin_type == ShipSkin.SKIN_TYPE_REMAKE
+				local var3_65 = getProxy(ShipSkinProxy):hasSkin(var0_65.id) or var0_65.skin_type == ShipSkin.SKIN_TYPE_DEFAULT or var0_65.skin_type == ShipSkin.SKIN_TYPE_PROPOSE or var0_65.skin_type == ShipSkin.SKIN_TYPE_REMAKE
 
-				SetActive(arg2_63:Find("lockFrame"), not var3_63)
-				SetActive(arg2_63:Find("selectedFrame"), arg1_61.skinId == var1_63)
-				SetActive(arg2_63:Find("selected"), arg1_61.skinId == var1_63)
+				SetActive(arg2_65:Find("lockFrame"), not var3_65)
+				SetActive(arg2_65:Find("selectedFrame"), arg1_63.skinId == var1_65)
+				SetActive(arg2_65:Find("selected"), arg1_63.skinId == var1_65)
 
-				if arg1_61.skinId == var1_63 then
-					arg0_61.currentBgId = var1_63
+				if arg1_63.skinId == var1_65 then
+					arg0_63.currentBgId = var1_65
 				end
 
-				onButton(arg0_61, arg2_63, function()
-					if var3_63 then
-						SetActive(arg2_63:Find("selectedFrame"), true)
+				onButton(arg0_63, arg2_65, function()
+					if var3_65 then
+						SetActive(arg2_65:Find("selectedFrame"), true)
 
-						for iter0_64 = 1, #arg1_61.skins do
-							if iter0_64 ~= arg1_63 + 1 then
-								local var0_64 = arg0_61:findTF("panel/backgroundScroll/Viewport/Content", arg0_61.backgroundUI):GetChild(iter0_64 - 1)
+						for iter0_66 = 1, #arg1_63.skins do
+							if iter0_66 ~= arg1_65 + 1 then
+								local var0_66 = arg0_63:findTF("panel/backgroundScroll/Viewport/Content", arg0_63.backgroundUI):GetChild(iter0_66 - 1)
 
-								SetActive(arg0_61:findTF("selectedFrame", var0_64), false)
+								SetActive(arg0_63:findTF("selectedFrame", var0_66), false)
 							end
 						end
 
-						arg0_61.currentBgId = var1_63
+						arg0_63.currentBgId = var1_65
 					else
 						pg.TipsMgr.GetInstance():ShowTips(i18n("juuschat_background_tip2"))
 					end
 				end, SFX_PANEL)
 			end
 		end)
-		var0_62:align(#arg1_61.skins)
+		var0_64:align(#arg1_63.skins)
 	end, SFX_PANEL)
-	onButton(arg0_61, arg0_61:findTF("bg", arg0_61.backgroundUI), function()
-		arg0_61:CloseBackgroundPanel()
+	onButton(arg0_63, arg0_63:findTF("bg", arg0_63.backgroundUI), function()
+		arg0_63:CloseBackgroundPanel()
 	end, SFX_PANEL)
-	onButton(arg0_61, arg0_61:findTF("panel/bottom/close", arg0_61.backgroundUI), function()
-		arg0_61:CloseBackgroundPanel()
+	onButton(arg0_63, arg0_63:findTF("panel/bottom/close", arg0_63.backgroundUI), function()
+		arg0_63:CloseBackgroundPanel()
 	end, SFX_PANEL)
-	onButton(arg0_61, arg0_61:findTF("panel/bottom/ok", arg0_61.backgroundUI), function()
-		arg0_61:emit(InstagramChatMediator.SET_CURRENT_BACKGROUND, arg1_61.characterId, arg0_61.currentBgId)
-		arg0_61:CloseBackgroundPanel()
+	onButton(arg0_63, arg0_63:findTF("panel/bottom/ok", arg0_63.backgroundUI), function()
+		arg0_63:emit(InstagramChatMediator.SET_CURRENT_BACKGROUND, arg1_63.characterId, arg0_63.currentBgId)
+		arg0_63:CloseBackgroundPanel()
 	end, SFX_PANEL)
 end
 
-function var0_0.CloseBackgroundPanel(arg0_68)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_68.backgroundUI, arg0_68:findTF("subPages"))
-	SetActive(arg0_68.backgroundUI, false)
+function var0_0.CloseBackgroundPanel(arg0_70)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_70.backgroundUI, arg0_70:findTF("subPages"))
+	SetActive(arg0_70.backgroundUI, false)
 end
 
-function var0_0.SetRedPacketPanel(arg0_69, arg1_69, arg2_69, arg3_69, arg4_69, arg5_69, arg6_69)
-	onButton(arg0_69, arg1_69, function()
-		SetActive(arg0_69.redPacketUI, true)
-		pg.UIMgr.GetInstance():BlurPanel(arg0_69.redPacketUI, false, {
+function var0_0.SetRedPacketPanel(arg0_71, arg1_71, arg2_71, arg3_71, arg4_71, arg5_71, arg6_71)
+	onButton(arg0_71, arg1_71, function()
+		SetActive(arg0_71.redPacketUI, true)
+		pg.UIMgr.GetInstance():BlurPanel(arg0_71.redPacketUI, false, {
 			weight = LayerWeightConst.SECOND_LAYER
 		})
-		setImageSprite(arg0_69:findTF("panel/charaBg/chara", arg0_69.redPacketUI), LoadSprite("qicon/" .. arg4_69), false)
+		setImageSprite(arg0_71:findTF("panel/charaBg/chara", arg0_71.redPacketUI), LoadSprite("qicon/" .. arg4_71), false)
 
-		if not arg3_69 then
-			SetActive(arg0_69:findTF("panel/panelBg", arg0_69.redPacketUI), true)
-			SetActive(arg0_69:findTF("panel/openImg", arg0_69.redPacketUI), false)
-			SetActive(arg0_69:findTF("panel/get", arg0_69.redPacketUI), true)
-			SetActive(arg0_69:findTF("panel/got", arg0_69.redPacketUI), false)
-			SetActive(arg0_69:findTF("panel/detail", arg0_69.redPacketUI), false)
-			setText(arg0_69:findTF("panel/get/titleBg/title", arg0_69.redPacketUI), arg2_69.desc)
-			onButton(arg0_69, arg0_69:findTF("panel/get/getBtn", arg0_69.redPacketUI), function()
-				arg0_69:emit(InstagramChatMediator.GET_REDPACKET, arg5_69, arg6_69, arg2_69.id)
+		if not arg3_71 then
+			SetActive(arg0_71:findTF("panel/panelBg", arg0_71.redPacketUI), true)
+			SetActive(arg0_71:findTF("panel/openImg", arg0_71.redPacketUI), false)
+			SetActive(arg0_71:findTF("panel/get", arg0_71.redPacketUI), true)
+			SetActive(arg0_71:findTF("panel/got", arg0_71.redPacketUI), false)
+			SetActive(arg0_71:findTF("panel/detail", arg0_71.redPacketUI), false)
+			setText(arg0_71:findTF("panel/get/titleBg/title", arg0_71.redPacketUI), arg2_71.desc)
+			onButton(arg0_71, arg0_71:findTF("panel/get/getBtn", arg0_71.redPacketUI), function()
+				arg0_71:emit(InstagramChatMediator.GET_REDPACKET, arg5_71, arg6_71, arg2_71.id)
 			end, SFX_PANEL)
 		else
-			arg0_69:UpdateRedPacketUI(arg2_69.id)
+			arg0_71:UpdateRedPacketUI(arg2_71.id)
 		end
 	end, SFX_PANEL)
-	onButton(arg0_69, arg0_69:findTF("bg", arg0_69.redPacketUI), function()
-		arg0_69:CloseRedPacketPanel()
+	onButton(arg0_71, arg0_71:findTF("bg", arg0_71.redPacketUI), function()
+		arg0_71:CloseRedPacketPanel()
 
-		if arg0_69.canFresh then
-			arg0_69.canFresh = false
+		if arg0_71.canFresh then
+			arg0_71.canFresh = false
 
-			local var0_72 = arg0_69.currentChat.currentTopic:GetDisplayWordList()
+			local var0_74 = arg0_71.currentChat.currentTopic:GetDisplayWordList()
 
-			if var0_72[#var0_72].type == 0 then
-				arg0_69:UpdateCharaList(false, false)
+			if var0_74[#var0_74].type == 0 then
+				arg0_71:UpdateCharaList(false, false)
 			else
-				arg0_69:UpdateCharaList(true, false)
+				arg0_71:UpdateCharaList(true, false)
 			end
 		end
 	end, SFX_PANEL)
 end
 
-function var0_0.UpdateRedPacketUI(arg0_73, arg1_73)
-	local var0_73 = var2_0[arg1_73]
+function var0_0.UpdateRedPacketUI(arg0_75, arg1_75)
+	local var0_75 = var2_0[arg1_75]
 
-	SetActive(arg0_73:findTF("panel/panelBg", arg0_73.redPacketUI), true)
-	SetActive(arg0_73:findTF("panel/openImg", arg0_73.redPacketUI), false)
-	SetActive(arg0_73:findTF("panel/get", arg0_73.redPacketUI), false)
-	SetActive(arg0_73:findTF("panel/got", arg0_73.redPacketUI), true)
-	SetActive(arg0_73:findTF("panel/detail", arg0_73.redPacketUI), false)
+	SetActive(arg0_75:findTF("panel/panelBg", arg0_75.redPacketUI), true)
+	SetActive(arg0_75:findTF("panel/openImg", arg0_75.redPacketUI), false)
+	SetActive(arg0_75:findTF("panel/get", arg0_75.redPacketUI), false)
+	SetActive(arg0_75:findTF("panel/got", arg0_75.redPacketUI), true)
+	SetActive(arg0_75:findTF("panel/detail", arg0_75.redPacketUI), false)
 
-	local var1_73 = Drop.Create(var0_73.content)
+	local var1_75 = Drop.Create(var0_75.content)
 
-	var1_73.count = 0
+	var1_75.count = 0
 
-	updateDrop(arg0_73:findTF("panel/got/item", arg0_73.redPacketUI), var1_73)
-	onButton(arg0_73, arg0_73:findTF("panel/got/item", arg0_73.redPacketUI), function()
-		arg0_73:emit(BaseUI.ON_DROP, var1_73)
+	updateDrop(arg0_75:findTF("panel/got/item", arg0_75.redPacketUI), var1_75)
+	onButton(arg0_75, arg0_75:findTF("panel/got/item", arg0_75.redPacketUI), function()
+		arg0_75:emit(BaseUI.ON_DROP, var1_75)
 	end, SFX_PANEL)
 
-	arg0_73:findTF("panel/got/item/icon_bg", arg0_73.redPacketUI):GetComponent(typeof(Image)).enabled = false
-	arg0_73:findTF("panel/got/item/icon_bg/frame", arg0_73.redPacketUI):GetComponent(typeof(Image)).enabled = false
+	arg0_75:findTF("panel/got/item/icon_bg", arg0_75.redPacketUI):GetComponent(typeof(Image)).enabled = false
+	arg0_75:findTF("panel/got/item/icon_bg/frame", arg0_75.redPacketUI):GetComponent(typeof(Image)).enabled = false
 
-	setText(arg0_73:findTF("panel/got/awardCount", arg0_73.redPacketUI), var0_73.content[3])
+	setText(arg0_75:findTF("panel/got/awardCount", arg0_75.redPacketUI), var0_75.content[3])
 
-	if var0_73.type == 1 then
-		SetActive(arg0_73:findTF("panel/got/detailBtn", arg0_73.redPacketUI), false)
+	if var0_75.type == 1 then
+		SetActive(arg0_75:findTF("panel/got/detailBtn", arg0_75.redPacketUI), false)
 	else
-		SetActive(arg0_73:findTF("panel/got/detailBtn", arg0_73.redPacketUI), true)
-		onButton(arg0_73, arg0_73:findTF("panel/got/detailBtn", arg0_73.redPacketUI), function()
-			SetActive(arg0_73:findTF("panel/panelBg", arg0_73.redPacketUI), false)
-			SetActive(arg0_73:findTF("panel/openImg", arg0_73.redPacketUI), true)
-			SetActive(arg0_73:findTF("panel/got", arg0_73.redPacketUI), false)
-			SetActive(arg0_73:findTF("panel/detail", arg0_73.redPacketUI), true)
+		SetActive(arg0_75:findTF("panel/got/detailBtn", arg0_75.redPacketUI), true)
+		onButton(arg0_75, arg0_75:findTF("panel/got/detailBtn", arg0_75.redPacketUI), function()
+			SetActive(arg0_75:findTF("panel/panelBg", arg0_75.redPacketUI), false)
+			SetActive(arg0_75:findTF("panel/openImg", arg0_75.redPacketUI), true)
+			SetActive(arg0_75:findTF("panel/got", arg0_75.redPacketUI), false)
+			SetActive(arg0_75:findTF("panel/detail", arg0_75.redPacketUI), true)
 
-			local var0_75 = 0
-			local var1_75 = 0
-			local var2_75 = UIItemList.New(arg0_73:findTF("panel/detail/detailScroll/Viewport/Content", arg0_73.redPacketUI), arg0_73:findTF("panel/detail/detailScroll/Viewport/Content/charaGetCard", arg0_73.redPacketUI))
+			local var0_77 = 0
+			local var1_77 = 0
+			local var2_77 = UIItemList.New(arg0_75:findTF("panel/detail/detailScroll/Viewport/Content", arg0_75.redPacketUI), arg0_75:findTF("panel/detail/detailScroll/Viewport/Content/charaGetCard", arg0_75.redPacketUI))
 
-			var2_75:make(function(arg0_76, arg1_76, arg2_76)
-				if arg0_76 == UIItemList.EventUpdate then
-					local var0_76 = var0_73.group_receive[arg1_76 + 1]
-					local var1_76 = var0_76[1]
-					local var2_76 = {
-						var0_76[2],
-						var0_76[3],
-						var0_76[4]
+			var2_77:make(function(arg0_78, arg1_78, arg2_78)
+				if arg0_78 == UIItemList.EventUpdate then
+					local var0_78 = var0_75.group_receive[arg1_78 + 1]
+					local var1_78 = var0_78[1]
+					local var2_78 = {
+						var0_78[2],
+						var0_78[3],
+						var0_78[4]
 					}
 
-					if var0_76[1] ~= 0 then
-						local var3_76 = "unknown"
+					if var0_78[1] ~= 0 then
+						local var3_78 = "unknown"
 
-						if var1_0[var1_76] then
-							var3_76 = var1_0[var1_76].sculpture
+						if var1_0[var1_78] then
+							var3_78 = var1_0[var1_78].sculpture
 						end
 
-						setImageSprite(arg2_76:Find("charaBg/chara"), LoadSprite("qicon/" .. var3_76), false)
+						setImageSprite(arg2_78:Find("charaBg/chara"), LoadSprite("qicon/" .. var3_78), false)
 					else
-						setImageSprite(arg2_76:Find("charaBg/chara"), GetSpriteFromAtlas("ui/InstagramUI_atlas", "txdi_3"), false)
+						setImageSprite(arg2_78:Find("charaBg/chara"), GetSpriteFromAtlas("ui/InstagramUI_atlas", "txdi_3"), false)
 					end
 
-					local var4_76 = Drop.Create(var2_76)
+					local var4_78 = Drop.Create(var2_78)
 
-					var4_76.count = 0
+					var4_78.count = 0
 
-					updateDrop(arg2_76:Find("item"), var4_76)
-					onButton(arg0_73, arg2_76:Find("item"), function()
-						arg0_73:emit(BaseUI.ON_DROP, var4_76)
+					updateDrop(arg2_78:Find("item"), var4_78)
+					onButton(arg0_75, arg2_78:Find("item"), function()
+						arg0_75:emit(BaseUI.ON_DROP, var4_78)
 					end, SFX_PANEL)
 
-					arg2_76:Find("item/icon_bg"):GetComponent(typeof(Image)).enabled = false
-					arg2_76:Find("item/icon_bg/frame"):GetComponent(typeof(Image)).enabled = false
+					arg2_78:Find("item/icon_bg"):GetComponent(typeof(Image)).enabled = false
+					arg2_78:Find("item/icon_bg/frame"):GetComponent(typeof(Image)).enabled = false
 
-					setText(arg2_76:Find("awardCount"), var0_76[4])
+					setText(arg2_78:Find("awardCount"), var0_78[4])
 
-					if var0_76[4] > var1_75 then
-						var0_75 = arg1_76
-						var1_75 = var0_76[4]
+					if var0_78[4] > var1_77 then
+						var0_77 = arg1_78
+						var1_77 = var0_78[4]
 					end
 				end
 			end)
-			var2_75:align(#var0_73.group_receive)
+			var2_77:align(#var0_75.group_receive)
 
-			for iter0_75 = 1, #var0_73.group_receive do
-				SetActive(arg0_73:findTF("charaBg/king", arg0_73:findTF("panel/detail/detailScroll/Viewport/Content", arg0_73.redPacketUI):GetChild(iter0_75 - 1)), var0_75 == iter0_75 - 1)
+			for iter0_77 = 1, #var0_75.group_receive do
+				SetActive(arg0_75:findTF("charaBg/king", arg0_75:findTF("panel/detail/detailScroll/Viewport/Content", arg0_75.redPacketUI):GetChild(iter0_77 - 1)), var0_77 == iter0_77 - 1)
 			end
 		end, SFX_PANEL)
 	end
 end
 
-function var0_0.CloseRedPacketPanel(arg0_78)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_78.redPacketUI, arg0_78:findTF("subPages"))
-	SetActive(arg0_78.redPacketUI, false)
+function var0_0.CloseRedPacketPanel(arg0_80)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_80.redPacketUI, arg0_80:findTF("subPages"))
+	SetActive(arg0_80.redPacketUI, false)
 end
 
-function var0_0.SetData(arg0_79)
-	local var0_79 = getProxy(InstagramChatProxy)
+function var0_0.SetData(arg0_81)
+	local var0_81 = getProxy(InstagramChatProxy)
 
-	arg0_79.chatList = var0_79:GetChatList()
+	arg0_81.chatList = var0_81:GetChatList()
 
-	var0_79:SortChatList()
+	var0_81:SortChatList()
 end
 
-function var0_0.willExit(arg0_80)
-	local var0_80 = arg0_80:findTF("paintingMask/painting", arg0_80.rightPanel)
+function var0_0.willExit(arg0_82)
+	local var0_82 = arg0_82:findTF("paintingMask/painting", arg0_82.rightPanel)
 
-	if arg0_80.paintingName then
-		retPaintingPrefab(var0_80, arg0_80.paintingName)
+	if arg0_82.paintingName then
+		retPaintingPrefab(var0_82, arg0_82.paintingName)
 
-		arg0_80.paintingName = nil
+		arg0_82.paintingName = nil
 	end
 
-	arg0_80:RemoveAllTimer()
+	arg0_82:RemoveAllTimer()
 end
 
-function var0_0.StartTimer(arg0_81, arg1_81, arg2_81)
-	local var0_81 = Timer.New(arg1_81, arg2_81, 1)
+function var0_0.StartTimer(arg0_83, arg1_83, arg2_83)
+	local var0_83 = Timer.New(arg1_83, arg2_83, 1)
 
-	var0_81:Start()
-	table.insert(arg0_81.timerList, var0_81)
+	var0_83:Start()
+	table.insert(arg0_83.timerList, var0_83)
 end
 
-function var0_0.RemoveAllTimer(arg0_82)
-	for iter0_82, iter1_82 in ipairs(arg0_82.timerList) do
-		iter1_82:Stop()
-	end
-
-	arg0_82.timerList = {}
-end
-
-function var0_0.StartTimer2(arg0_83, arg1_83, arg2_83)
-	arg0_83.timer = Timer.New(arg1_83, arg2_83, 1)
-
-	arg0_83.timer:Start()
-end
-
-function var0_0.SpeedUpMessage(arg0_84)
-	local var0_84 = pg.gameset.juuschat_dialogue_trigger_time.key_value / 1000
-	local var1_84 = pg.gameset.juuschat_entering_time.key_value / 1000
-
+function var0_0.RemoveAllTimer(arg0_84)
 	for iter0_84, iter1_84 in ipairs(arg0_84.timerList) do
-		if iter1_84.running then
-			if iter1_84.duration == var1_84 then
-				iter1_84.time = 0.05
-			elseif iter1_84.time - var0_84 < 0.05 then
-				iter1_84.time = 0.05
+		iter1_84:Stop()
+	end
 
-				arg0_84:StartTimer2(function()
-					arg0_84:SpeedUpWaiting()
+	arg0_84.timerList = {}
+end
+
+function var0_0.StartTimer2(arg0_85, arg1_85, arg2_85)
+	arg0_85.timer = Timer.New(arg1_85, arg2_85, 1)
+
+	arg0_85.timer:Start()
+end
+
+function var0_0.SpeedUpMessage(arg0_86)
+	local var0_86 = pg.gameset.juuschat_dialogue_trigger_time.key_value / 1000
+	local var1_86 = pg.gameset.juuschat_entering_time.key_value / 1000
+
+	for iter0_86, iter1_86 in ipairs(arg0_86.timerList) do
+		if iter1_86.running then
+			if iter1_86.duration == var1_86 then
+				iter1_86.time = 0.05
+			elseif iter1_86.time - var0_86 < 0.05 then
+				iter1_86.time = 0.05
+
+				arg0_86:StartTimer2(function()
+					arg0_86:SpeedUpWaiting()
 				end, 0.05)
 			else
-				iter1_84.time = iter1_84.time - var0_84
+				iter1_86.time = iter1_86.time - var0_86
 			end
 		end
 	end
 end
 
-function var0_0.SpeedUpWaiting(arg0_86)
-	local var0_86 = pg.gameset.juuschat_entering_time.key_value / 1000
+function var0_0.SpeedUpWaiting(arg0_88)
+	local var0_88 = pg.gameset.juuschat_entering_time.key_value / 1000
 
-	for iter0_86, iter1_86 in ipairs(arg0_86.timerList) do
-		if iter1_86.running and iter1_86.duration == var0_86 then
-			iter1_86.time = 0.05
+	for iter0_88, iter1_88 in ipairs(arg0_88.timerList) do
+		if iter1_88.running and iter1_88.duration == var0_88 then
+			iter1_88.time = 0.05
 
 			break
 		end
 	end
 end
 
-function var0_0.ChangeFresh(arg0_87)
-	arg0_87.canFresh = true
+function var0_0.ChangeFresh(arg0_89)
+	arg0_89.canFresh = true
 end
 
-function var0_0.ChangeCharaTextFunc(arg0_88, arg1_88, arg2_88)
-	local function var0_88(arg0_89, arg1_89)
-		if arg1_89:Find("id"):GetComponent(typeof(Text)).text == tostring(arg1_88) then
-			setText(arg1_89:Find("msg"), arg2_88)
-		end
-	end
-
-	arg0_88.charaList:each(var0_88)
-end
-
-function var0_0.ResetCharaTextFunc(arg0_90, arg1_90)
+function var0_0.ChangeCharaTextFunc(arg0_90, arg1_90, arg2_90)
 	local function var0_90(arg0_91, arg1_91)
 		if arg1_91:Find("id"):GetComponent(typeof(Text)).text == tostring(arg1_90) then
-			setText(arg1_91:Find("msg"), arg1_91:Find("displayWord"):GetComponent(typeof(Text)).text)
+			setText(arg1_91:Find("msg"), arg2_90)
 		end
 	end
 
 	arg0_90.charaList:each(var0_90)
 end
 
-function var0_0.SetEndAniEvent(arg0_92, arg1_92, arg2_92)
-	local var0_92 = arg1_92:GetComponent(typeof(DftAniEvent))
+function var0_0.ResetCharaTextFunc(arg0_92, arg1_92)
+	local function var0_92(arg0_93, arg1_93)
+		if arg1_93:Find("id"):GetComponent(typeof(Text)).text == tostring(arg1_92) then
+			setText(arg1_93:Find("msg"), arg1_93:Find("displayWord"):GetComponent(typeof(Text)).text)
+		end
+	end
 
-	if var0_92 then
-		var0_92:SetEndEvent(function()
-			arg2_92()
-			var0_92:SetEndEvent(nil)
+	arg0_92.charaList:each(var0_92)
+end
+
+function var0_0.SetEndAniEvent(arg0_94, arg1_94, arg2_94)
+	local var0_94 = arg1_94:GetComponent(typeof(DftAniEvent))
+
+	if var0_94 then
+		var0_94:SetEndEvent(function()
+			arg2_94()
+			var0_94:SetEndEvent(nil)
 		end)
 	end
 end
 
-function var0_0.onBackPressed(arg0_94)
-	if isActive(arg0_94.filterUI) then
-		arg0_94:CloseFilterPanel()
+function var0_0.onBackPressed(arg0_96)
+	if isActive(arg0_96.filterUI) then
+		arg0_96:CloseFilterPanel()
 
 		return
 	end
 
-	if isActive(arg0_94.topicUI) then
-		arg0_94:CloseTopicPanel()
+	if isActive(arg0_96.topicUI) then
+		arg0_96:CloseTopicPanel()
 
 		return
 	end
 
-	if isActive(arg0_94.backgroundUI) then
-		arg0_94:CloseBackgroundPanel()
+	if isActive(arg0_96.backgroundUI) then
+		arg0_96:CloseBackgroundPanel()
 
 		return
 	end
 
-	if isActive(arg0_94.redPacketUI) then
-		arg0_94:CloseRedPacketPanel()
+	if isActive(arg0_96.redPacketUI) then
+		arg0_96:CloseRedPacketPanel()
 
 		return
 	end
 
-	arg0_94:emit(InstagramChatMediator.CLOSE_ALL)
+	arg0_96:emit(InstagramChatMediator.CLOSE_ALL)
 end
 
 return var0_0

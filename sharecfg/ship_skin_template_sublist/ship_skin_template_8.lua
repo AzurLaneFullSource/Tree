@@ -1,6 +1,142 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_8 = {
+	[301291] = {
+		ship_group = 30129,
+		name = "World's Speediest Bunny Waitress",
+		hand_id = 14,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 301291,
+		group_index = 1,
+		l2d_ignore_drag = 0,
+		painting = "daofeng_4",
+		shop_id = 70589,
+		illustrator = -1,
+		shop_type_id = 16,
+		lip_smoothing = 0,
+		bg = "145",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "1102",
+		voice_actor_2 = -1,
+		prefab = "daofeng_4",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Hippity hoppity! Grab a glass and have a sippity! Whew, I must say, this outfit was tricky to get into. Still, you made an exquisite pick, Commander!",
+		voice_actor = 284,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			1,
+			2
+		},
+		live2d_offset = {
+			-20,
+			-90,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.188,
+					0.97,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.188,
+					0.97,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.014,
+					0.024,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.188,
+					0.97,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.43,
+							2.46,
+							0
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			use_event = true
+		},
+		l2d_para_range = {
+			ParamAngleX = {
+				-15,
+				30
+			}
+		}
+	},
 	[301292] = {
 		ship_group = 30129,
 		name = "The White Rabbit of Wonderland",
@@ -9484,6 +9620,121 @@ pg.base.ship_skin_template_8 = {
 			}
 		}
 	},
+	[301834] = {
+		ship_group = 30183,
+		name = "Heartmelting Warmth",
+		hand_id = 14,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 301834,
+		group_index = 4,
+		l2d_ignore_drag = 0,
+		painting = "changbo_5",
+		shop_id = 71113,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "109",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "changbo_5",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Commander? You stopped eating. Does it taste too bitter...? Oh no, if you don't like the chocolate I made, I... I-I can still make you happy in other ways!",
+		voice_actor = 233,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.158,
+					1.235,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.195,
+					1.262,
+					0
+				}
+			},
+			torpedo = {
+				{
+					-0.006,
+					0.013,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.26,
+					1.233,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.407,
+							2.408,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[301838] = {
 		ship_group = 30183,
 		name = "Waves of Eternal Love",
@@ -13279,234 +13530,6 @@ pg.base.ship_skin_template_8 = {
 							-0.661,
 							2.484,
 							-0.16
-						}
-					}
-				}
-			}
-		}
-	},
-	[302062] = {
-		ship_group = 30206,
-		name = "Boisterous Night on the Cruise",
-		hand_id = 6,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 302062,
-		group_index = 2,
-		l2d_ignore_drag = 0,
-		painting = "mingqu_3",
-		shop_id = 71012,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 7,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "146",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "1102",
-		voice_actor_2 = -1,
-		prefab = "mingqu_3",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Heheh♪ The brightest star in the venue, she with the power to shake the earth – none other than Natori, of course! Go on, Commander, and kneel before me~ \"Nuo ho ho, even the whippersnapper is amazed!\"",
-		voice_actor = 381,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.618,
-					1.599,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.593,
-					1.546,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.59,
-					1.557,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.661,
-							2.484,
-							-0.16
-						}
-					}
-				}
-			}
-		}
-	},
-	[302070] = {
-		ship_group = 30207,
-		name = "Yura",
-		hand_id = 14,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 302070,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "youliang",
-		shop_id = 0,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "youliang",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Nagara-class light cruiser number four – Yura.",
-		voice_actor = 287,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.328,
-					1,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.261,
-					1.019,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0.004,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.441,
-					1,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.25,
-							2.31,
-							0
 						}
 					}
 				}

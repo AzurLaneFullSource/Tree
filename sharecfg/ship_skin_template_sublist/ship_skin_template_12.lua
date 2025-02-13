@@ -1,6 +1,270 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_12 = {
+	[403030] = {
+		ship_group = 40303,
+		name = "Prinz Eugen",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 403030,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "ougen",
+		shop_id = 0,
+		illustrator = 7,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "ougen",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Admiral Hipper-class Heavy Cruiser, Prinz Eugen",
+		voice_actor = 21,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					-0.53,
+					0.802,
+					0
+				}
+			},
+			vicegun = {
+				{
+					-0.235,
+					0.484,
+					0
+				},
+				{
+					0.847,
+					0.34,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.227,
+					0.408,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					-0.235,
+					0.484,
+					0
+				},
+				{
+					0.847,
+					0.34,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.531,
+							0.427,
+							0
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							0.711,
+							0.361,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[403031] = {
+		ship_group = 40303,
+		name = "Unfading Smile",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 403031,
+		group_index = 1,
+		l2d_ignore_drag = 0,
+		painting = "ougen_2",
+		shop_id = 70015,
+		illustrator = 30,
+		l2d_voice_calibrate = "",
+		shop_type_id = 6,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "106",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "ougen_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Relaxing on a float, gently licking my lips... is this really the most popular photo pose for the beach? Wales, you’re not teasing me again, are you?",
+		voice_actor = 21,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand2",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.42,
+					0.73,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.3,
+					0.09,
+					0
+				}
+			},
+			torpedo = {
+				{
+					1.42,
+					0.73,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.42,
+					0.73,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.531,
+							0.427,
+							0
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							0.711,
+							0.361,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[403032] = {
 		ship_group = 40303,
 		name = "Profusion of Flowers",
@@ -13211,218 +13475,6 @@ pg.base.ship_skin_template_12 = {
 						}
 					}
 				}
-			}
-		}
-	},
-	[408092] = {
-		ship_group = 40809,
-		name = "How Heavy Are Those Barbells?",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 408092,
-		group_index = 2,
-		l2d_ignore_drag = 0,
-		painting = "u96_3",
-		shop_id = 70730,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 13,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "112",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "u96_3",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Mmgh... Guh... Ahhh! These things are heavier than they look... Oh, there you are. You work out too, do ya? Feel free to join me if you've not just come to tease me.",
-		voice_actor = 246,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.639,
-					0.717,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					-0.023,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.755,
-							2.025,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[408093] = {
-		ship_group = 40809,
-		name = "Wolfen Dolly",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 408093,
-		group_index = 3,
-		l2d_ignore_drag = 0,
-		painting = "u96_4",
-		shop_id = 71029,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 14,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "186",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "u96_4",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Sup. If it isn't our Commander. Got bored already because you shattered all your previous records? Or, did you run into some mechanical issues? ...Huh, you're here to ask for my support? Did the butterscotch get to your brain or what? Despite the way I look, I've been on the sidelines cheering you on this whole time.",
-		voice_actor = 246,
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			6,
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.639,
-					0.717,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					-0.023,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.755,
-							2.025,
-							0
-						}
-					}
-				}
-			}
-		},
-		spine_offset = {
-			{
-				179,
-				-409,
-				0
-			},
-			{
-				0.38
 			}
 		}
 	}

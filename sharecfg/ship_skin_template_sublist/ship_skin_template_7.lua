@@ -1,6 +1,107 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_7 = {
+	[207042] = {
+		ship_group = 20704,
+		name = "Guidance of the Spring Goddess",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 207042,
+		group_index = 2,
+		l2d_ignore_drag = 0,
+		painting = "shengli_3",
+		shop_id = 70486,
+		illustrator = 1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 3,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "144",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "shengli_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Are you preparing to hold an event for the port? Hehe, sounds like you could use my help. Don't worry, with someone as beautiful as me around, anything you do will surely be blessed with success!",
+		voice_actor = 94,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			4
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.322,
+					1.002,
+					0
+				}
+			},
+			plane = {
+				{
+					1.318,
+					1.008,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.366,
+							2.461,
+							-1.47
+						}
+					}
+				}
+			}
+		}
+	},
 	[207043] = {
 		ship_group = 20704,
 		name = "Upon Nights Brisk and Beautiful",
@@ -13388,142 +13489,6 @@ pg.base.ship_skin_template_7 = {
 			},
 			{
 				1.2
-			}
-		}
-	},
-	[301291] = {
-		ship_group = 30129,
-		name = "World's Speediest Bunny Waitress",
-		hand_id = 14,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 301291,
-		group_index = 1,
-		l2d_ignore_drag = 0,
-		painting = "daofeng_4",
-		shop_id = 70589,
-		illustrator = -1,
-		shop_type_id = 16,
-		lip_smoothing = 0,
-		bg = "145",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "1102",
-		voice_actor_2 = -1,
-		prefab = "daofeng_4",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Hippity hoppity! Grab a glass and have a sippity! Whew, I must say, this outfit was tricky to get into. Still, you made an exquisite pick, Commander!",
-		voice_actor = 284,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			1,
-			2
-		},
-		live2d_offset = {
-			-20,
-			-90,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.188,
-					0.97,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.188,
-					0.97,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.014,
-					0.024,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.188,
-					0.97,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.43,
-							2.46,
-							0
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			use_event = true
-		},
-		l2d_para_range = {
-			ParamAngleX = {
-				-15,
-				30
 			}
 		}
 	}
