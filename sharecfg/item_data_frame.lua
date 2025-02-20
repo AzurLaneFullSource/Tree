@@ -497,7 +497,7 @@ pg.item_data_frame = {
 	},
 	[334] = {
 		time_limit_type = 0,
-		name = "Stroke of God's Light",
+		name = "A Stroke of Divine Light: Bastion of Saintly Wings",
 		gain_by = "",
 		id = 334,
 		time_second = 0,
