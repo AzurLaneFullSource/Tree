@@ -3885,6 +3885,33 @@ _G.pg.base.shop_template[31144] = {
 	},
 }
 
+_G.pg.base.shop_template[31060] = {
+	collaboration_skin_time = "",
+	desc = "900物资兑换1个撒丁装备研发支援箱",
+	discount = 0,
+	genre = "shopping_street",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 31060,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	resource_num = 900,
+	resource_type = 1,
+	tag = 0,
+	time = "always",
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30207,
+	},
+}
+
 _G.pg.base.shop_template[31080] = {
 	collaboration_skin_time = "",
 	desc = "Exchange 7000 Coins for 1 Pleasure Cruise Gear Skin Box",
@@ -5907,6 +5934,33 @@ _G.pg.base.shop_template[33044] = {
 	limit_args = {},
 	effect_args = {
 		30044,
+	},
+}
+
+_G.pg.base.shop_template[33060] = {
+	collaboration_skin_time = "",
+	desc = "400功勋兑换1个撒丁装备研发支援箱",
+	discount = 0,
+	genre = "arena_shop",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 33060,
+	limit_args2 = "",
+	num = 1,
+	order = 9,
+	resource_num = 400,
+	resource_type = 3,
+	tag = 0,
+	time = "always",
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30207,
 	},
 }
 
@@ -41400,10 +41454,10 @@ _G.pg.base.shop_template[70819] = {
 	id = 70819,
 	limit_args2 = "",
 	num = 1,
-	order = 250,
+	order = 300,
 	resource_num = 1080,
 	resource_type = 14,
-	tag = 1,
+	tag = 0,
 	time = "always",
 	time_second = 0,
 	type = 6,
@@ -41427,10 +41481,10 @@ _G.pg.base.shop_template[70820] = {
 	id = 70820,
 	limit_args2 = "",
 	num = 1,
-	order = 250,
+	order = 300,
 	resource_num = 780,
 	resource_type = 14,
-	tag = 1,
+	tag = 0,
 	time = "always",
 	time_second = 0,
 	type = 6,
@@ -41454,10 +41508,10 @@ _G.pg.base.shop_template[70821] = {
 	id = 70821,
 	limit_args2 = "",
 	num = 1,
-	order = 250,
+	order = 300,
 	resource_num = 780,
 	resource_type = 14,
-	tag = 1,
+	tag = 0,
 	time = "always",
 	time_second = 0,
 	type = 6,
@@ -47461,7 +47515,7 @@ _G.pg.base.shop_template[70966] = {
 	id = 70966,
 	limit_args2 = "",
 	num = 1,
-	order = 100,
+	order = 250,
 	resource_num = 1100,
 	resource_type = 14,
 	tag = 1,
@@ -47477,8 +47531,8 @@ _G.pg.base.shop_template[70966] = {
 		{
 			{
 				2025,
-				1,
-				16,
+				2,
+				20,
 			},
 			{
 				0,
@@ -47490,7 +47544,7 @@ _G.pg.base.shop_template[70966] = {
 			{
 				2025,
 				2,
-				5,
+				26,
 			},
 			{
 				23,

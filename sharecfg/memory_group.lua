@@ -216,6 +216,7 @@ pg.memory_group = setmetatable({
 		316,
 		317,
 		318,
+		319,
 		501,
 		502,
 		503,
@@ -5113,6 +5114,23 @@ pg.base.memory_group = {
 			4172,
 			4173,
 			4174
+		}
+	},
+	[319] = {
+		id = 319,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 5809,
+		title = "Path of the Chosen",
+		memories = {
+			4191,
+			4192,
+			4193,
+			4194,
+			4195,
+			4196,
+			4197
 		}
 	},
 	[501] = {

@@ -17197,6 +17197,36 @@ _G.pg.base.item_data_statistics[30206] = {
 	limit = {},
 }
 
+_G.pg.base.item_data_statistics[30207] = {
+	compose_number = 0,
+	display = "Contains a random piece of Sardegna Empire gear.",
+	display_effect = "OpenBox",
+	icon = "Props/30207",
+	id = 30207,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Sardegna Empire Gear Development Pack",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 2,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 5,
+	usage = "usage_drop",
+	usage_arg = "30207",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+
 _G.pg.base.item_data_statistics[30301] = {
 	compose_number = 0,
 	display = "Stuck inside is a little slip of paper: \"Merry Christmas nya! Let's continue to work hard together nya!\" ",

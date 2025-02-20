@@ -20,6 +20,17 @@ return {
 				skill_id = 801540,
 				target = "TargetSelf"
 			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBattleBuffCount"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				skill_id = 801542,
+				countType = 801540
+			}
 		}
 	},
 	{},

@@ -10280,7 +10280,9 @@ _G.pg.base.spweapon_data_statistics[10940] = {
 	value_1_random = 0,
 	value_2 = 10,
 	value_2_random = 0,
-	usability = {},
+	usability = {
+		2,
+	},
 	skill_upgrade = {
 		{
 			0,

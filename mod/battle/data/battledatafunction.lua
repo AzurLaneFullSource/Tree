@@ -505,7 +505,7 @@ function var3_0.GetShipSkillTriggerCount(arg0_16, arg1_16)
 
 	for iter0_16, iter1_16 in ipairs(var4_16) do
 		table.insert(var5_16, {
-			id = iter1_16
+			id = iter1_16.buffID
 		})
 	end
 
