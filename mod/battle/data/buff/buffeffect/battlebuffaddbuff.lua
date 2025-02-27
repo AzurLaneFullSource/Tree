@@ -28,13 +28,14 @@ function var3_0.SetArgs(arg0_2, arg1_2, arg2_2)
 	arg0_2._isBuffStackByCheckTarget = var0_2.isBuffStackByCheckTarget
 	arg0_2._countType = var0_2.countType
 	arg0_2._weaponType = arg0_2._tempData.arg_list.weaponType
+	arg0_2._repeatCount = var0_2.repeat_count or 1
 end
 
 function var3_0.onUpdate(arg0_3, arg1_3, arg2_3, arg3_3)
 	local var0_3 = arg3_3.timeStamp
 
 	if var0_3 >= arg0_3._nextEffectTime then
-		arg0_3:attachBuff(arg0_3._buff_id, arg0_3._level, arg1_3)
+		arg0_3:attachBuff(arg0_3._buff_id, arg0_3._level, arg1_3, arg2_3)
 
 		arg0_3._nextEffectTime = var0_3 + arg0_3._time
 	end
@@ -48,7 +49,7 @@ function var3_0.onBulletHit(arg0_4, arg1_4, arg2_4, arg3_4)
 	local var0_4 = arg3_4.target
 
 	if (not arg0_4._weaponType or arg3_4.weaponType == arg0_4._weaponType) and var0_4:IsAlive() then
-		arg0_4:attachBuff(arg0_4._buff_id, arg0_4._level, var0_4)
+		arg0_4:attachBuff(arg0_4._buff_id, arg0_4._level, var0_4, arg2_4)
 	end
 end
 
@@ -63,7 +64,7 @@ function var3_0.onBulletCreate(arg0_5, arg1_5, arg2_5, arg3_5)
 	local var3_5 = arg0_5._tempData.arg_list.bulletTrigger
 
 	local function var4_5(arg0_6, arg1_6)
-		arg0_5:attachBuff(var1_5, var2_5, arg0_6)
+		arg0_5:attachBuff(var1_5, var2_5, arg0_6, arg2_5)
 	end
 
 	var0_5:SetBuffFun(var3_5, var4_5)
@@ -71,10 +72,10 @@ end
 
 function var3_0.onTrigger(arg0_7, arg1_7, arg2_7, arg3_7)
 	var3_0.super.onTrigger(arg0_7, arg1_7, arg2_7, arg3_7)
-	arg0_7:AddBuff(arg1_7, arg3_7)
+	arg0_7:AddBuff(arg1_7, arg3_7, arg2_7)
 end
 
-function var3_0.AddBuff(arg0_8, arg1_8, arg2_8)
+function var3_0.AddBuff(arg0_8, arg1_8, arg2_8, arg3_8)
 	if not arg0_8:commanderRequire(arg1_8, arg0_8._tempData.arg_list) then
 		return
 	end
@@ -93,7 +94,7 @@ function var3_0.AddBuff(arg0_8, arg1_8, arg2_8)
 				if arg0_8._isBuffStackByCheckTarget then
 					iter1_8:SetBuffStack(arg0_8._buff_id, arg0_8._level, var0_8)
 				else
-					arg0_8:attachBuff(arg0_8._buff_id, arg0_8._level, iter1_8)
+					arg0_8:attachBuff(arg0_8._buff_id, arg0_8._level, iter1_8, arg3_8)
 				end
 			end
 		end
@@ -101,12 +102,12 @@ function var3_0.AddBuff(arg0_8, arg1_8, arg2_8)
 		local var2_8 = arg0_8:getTargetList(arg1_8, arg0_8._target, arg0_8._tempData.arg_list, arg2_8)
 
 		for iter2_8, iter3_8 in ipairs(var2_8) do
-			arg0_8:attachBuff(arg0_8._buff_id, arg0_8._level, iter3_8)
+			arg0_8:attachBuff(arg0_8._buff_id, arg0_8._level, iter3_8, arg3_8)
 		end
 	end
 end
 
-function var3_0.attachBuff(arg0_9, arg1_9, arg2_9, arg3_9)
+function var3_0.attachBuff(arg0_9, arg1_9, arg2_9, arg3_9, arg4_9)
 	local var0_9 = var1_0.GetBuffTemplate(arg1_9).effect_list
 	local var1_9
 
@@ -122,7 +123,16 @@ function var3_0.attachBuff(arg0_9, arg1_9, arg2_9, arg3_9)
 
 	if var1_9 then
 		var1_9:SetCommander(arg0_9._commander)
-		arg3_9:AddBuff(var1_9)
+
+		local var2_9 = arg0_9._repeatCount
+
+		if var2_9 == -1 then
+			var2_9 = arg4_9:GetStack()
+		end
+
+		for iter0_9 = 1, var2_9 do
+			arg3_9:AddBuff(var1_9)
+		end
 	end
 end
 

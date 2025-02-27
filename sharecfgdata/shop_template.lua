@@ -3939,6 +3939,33 @@ _G.pg.base.shop_template[31080] = {
 	},
 }
 
+_G.pg.base.shop_template[31938] = {
+	collaboration_skin_time = "",
+	desc = "7000物资兑换1个埃及外观设备箱",
+	discount = 0,
+	genre = "shopping_street",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 31938,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	resource_num = 7000,
+	resource_type = 1,
+	tag = 0,
+	time = "always",
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30365,
+	},
+}
+
 _G.pg.base.shop_template[31939] = {
 	collaboration_skin_time = "",
 	desc = "7000物资兑换1个116春节25外观设备箱",
@@ -15015,6 +15042,234 @@ _G.pg.base.shop_template[60593] = {
 				2025,
 				2,
 				19,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[60597] = {
+	collaboration_skin_time = "",
+	desc = "880钻石购买限时建造补给(0227拉斐尔版本)",
+	discount = 0,
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60597,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	resource_num = 880,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			1,
+		},
+	},
+	effect_args = {
+		40138,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				27,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				3,
+				12,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[60598] = {
+	collaboration_skin_time = "",
+	desc = "120钻石购买限时攻略补给(0227拉斐尔版本)",
+	discount = 0,
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60598,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	resource_num = 120,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			5,
+		},
+	},
+	effect_args = {
+		40117,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				27,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				3,
+				12,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[60599] = {
+	collaboration_skin_time = "",
+	desc = "500钻石购买家具币礼包(0227拉斐尔版本)",
+	discount = 0,
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60599,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	resource_num = 500,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			2,
+		},
+	},
+	effect_args = {
+		40106,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				27,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				3,
+				12,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[60600] = {
+	collaboration_skin_time = "",
+	desc = "300钻石购买心智单元礼包(0227拉斐尔版本)",
+	discount = 0,
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60600,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	resource_num = 300,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			2,
+		},
+	},
+	effect_args = {
+		40119,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				27,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				3,
+				12,
 			},
 			{
 				23,
@@ -55020,6 +55275,318 @@ _G.pg.base.shop_template[71113] = {
 	},
 }
 
+_G.pg.base.shop_template[71114] = {
+	collaboration_skin_time = "",
+	desc = "购买皮肤:250227拉斐尔换装（L2D）",
+	discount = 0,
+	genre = "skin_shop",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 71114,
+	limit_args2 = "",
+	num = 1,
+	order = 5,
+	resource_num = 1180,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		605081,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				27,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				3,
+				12,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[71115] = {
+	collaboration_skin_time = "",
+	desc = "购买皮肤:250227巴拉卡少校换装（动态立绘）",
+	discount = 0,
+	genre = "skin_shop",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 71115,
+	limit_args2 = "",
+	num = 1,
+	order = 5,
+	resource_num = 980,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		608031,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				27,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				3,
+				12,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[71116] = {
+	collaboration_skin_time = "",
+	desc = "购买皮肤:250227焦苏埃·卡尔杜齐换装",
+	discount = 0,
+	genre = "skin_shop",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 71116,
+	limit_args2 = "",
+	num = 1,
+	order = 5,
+	resource_num = 780,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		601111,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				27,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				3,
+				12,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[71117] = {
+	collaboration_skin_time = "",
+	desc = "购买皮肤:250227巴托洛梅奥·科莱奥尼换装",
+	discount = 0,
+	genre = "skin_shop",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 71117,
+	limit_args2 = "",
+	num = 1,
+	order = 5,
+	resource_num = 780,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		602031,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				27,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				3,
+				12,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[71118] = {
+	collaboration_skin_time = "",
+	desc = "购买皮肤:250227济安换装（L2D）",
+	discount = 0,
+	genre = "skin_shop",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 71118,
+	limit_args2 = "",
+	num = 1,
+	order = 5,
+	resource_num = 1080,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		502092,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				27,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				3,
+				12,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[71119] = {
+	collaboration_skin_time = "",
+	desc = "购买皮肤:250227斯库拉换装（动态立绘）",
+	discount = 0,
+	genre = "skin_shop",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 71119,
+	limit_args2 = "",
+	num = 1,
+	order = 5,
+	resource_num = 980,
+	resource_type = 14,
+	tag = 2,
+	time_second = 0,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		202333,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				27,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				3,
+				12,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
 _G.pg.base.shop_template[90001] = {
 	collaboration_skin_time = "",
 	desc = "限时皮肤体验：光辉-永不落幕的茶会",
@@ -67448,6 +68015,162 @@ _G.pg.base.shop_template[90323] = {
 				2025,
 				2,
 				5,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[90327] = {
+	collaboration_skin_time = "",
+	desc = "250227限时皮肤体验：拉斐尔",
+	discount = 0,
+	genre = "skin_shop_timelimit",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 90327,
+	limit_args2 = "",
+	num = 1,
+	order = 1,
+	resource_num = 1,
+	resource_type = 475,
+	tag = 0,
+	time_second = 172800,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		605081,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				27,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				3,
+				12,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[90328] = {
+	collaboration_skin_time = "",
+	desc = "250227限时皮肤体验：济安",
+	discount = 0,
+	genre = "skin_shop_timelimit",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 90328,
+	limit_args2 = "",
+	num = 1,
+	order = 2,
+	resource_num = 1,
+	resource_type = 475,
+	tag = 0,
+	time_second = 172800,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		502092,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				27,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				3,
+				12,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[90329] = {
+	collaboration_skin_time = "",
+	desc = "250227限时皮肤体验：巴拉卡少校",
+	discount = 0,
+	genre = "skin_shop_timelimit",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 90329,
+	limit_args2 = "",
+	num = 1,
+	order = 3,
+	resource_num = 1,
+	resource_type = 475,
+	tag = 0,
+	time_second = 172800,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		608031,
+	},
+	time = {
+		{
+			{
+				2025,
+				2,
+				27,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2025,
+				3,
+				12,
 			},
 			{
 				23,

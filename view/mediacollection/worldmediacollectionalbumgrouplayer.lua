@@ -76,7 +76,10 @@ function var0_0.onUpdateAlbumGroup(arg0_9, arg1_9, arg2_9)
 	arg0_9.albumGroupInfos[arg2_9] = var0_9
 
 	arg0_9.loader:GetSpriteQuiet(var0_9.entrance_picture, "", tf(arg2_9):Find("BG"))
-	setActive(tf(arg2_9):Find("expireMask"), ActivityMedalGroup.GetMedalGroupStateByID(var0_9.id) < ActivityMedalGroup.STATE_ACTIVE)
+
+	local var1_9 = ActivityMedalGroup.IsMedalGroupCollectionGrey(var0_9.id) and ActivityMedalGroup.GetMedalGroupStateByID(var0_9.id) < ActivityMedalGroup.STATE_ACTIVE
+
+	setActive(tf(arg2_9):Find("expireMask"), var1_9)
 end
 
 function var0_0.Return2MemoryGroup(arg0_10)

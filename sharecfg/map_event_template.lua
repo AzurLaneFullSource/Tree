@@ -20887,6 +20887,145 @@ pg.map_event_template = {
 		},
 		effect = {}
 	},
+	[921] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 3,
+		preinstall = 3,
+		c_type = 0,
+		id = 921,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "",
+		address = {},
+		effect = {
+			{
+				"enemy",
+				{
+					{
+						1894301,
+						{
+							6,
+							3
+						}
+					},
+					{
+						1894302,
+						{
+							6,
+							5
+						}
+					},
+					{
+						1894303,
+						{
+							4,
+							3
+						}
+					},
+					{
+						1894304,
+						{
+							4,
+							5
+						}
+					}
+				}
+			}
+		}
+	},
+	[922] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 3,
+		preinstall = 3,
+		c_type = 0,
+		id = 922,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "lafeier_makeboluo",
+		address = {
+			1,
+			4
+		},
+		effect = {}
+	},
+	[923] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 2,
+		preinstall = 3,
+		c_type = 0,
+		id = 923,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "fazhen03",
+		address = {
+			2,
+			4
+		},
+		effect = {}
+	},
+	[924] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 3,
+		preinstall = 3,
+		c_type = 0,
+		id = 924,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "lafeier_bvb",
+		address = {
+			1,
+			5
+		},
+		effect = {}
+	},
+	[925] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 2,
+		preinstall = 3,
+		c_type = 0,
+		id = 925,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "fazhen03",
+		address = {
+			2,
+			5
+		},
+		effect = {}
+	},
+	[926] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 2,
+		preinstall = 3,
+		c_type = 0,
+		id = 926,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "fazhen03",
+		address = {
+			2,
+			5
+		},
+		effect = {}
+	},
 	all = {
 		20,
 		21,
@@ -21765,6 +21904,12 @@ pg.map_event_template = {
 		917,
 		918,
 		919,
-		920
+		920,
+		921,
+		922,
+		923,
+		924,
+		925,
+		926
 	}
 }

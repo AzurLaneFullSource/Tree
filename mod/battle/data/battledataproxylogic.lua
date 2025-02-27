@@ -340,10 +340,11 @@ function var0_0.HandleBuffPlacer(arg0_14, arg1_14, arg2_14)
 	end
 
 	if var1_14 then
-		local var2_14 = ys.Battle.BattleBuffUnit.New(arg0_14.buff_id, arg0_14.level, arg1_14)
+		local var2_14 = arg0_14.buff_level or arg0_14.level
+		local var3_14 = ys.Battle.BattleBuffUnit.New(arg0_14.buff_id, var2_14, arg1_14)
 
-		var2_14:SetOrb(arg1_14, arg0_14.level)
-		arg2_14:AddBuff(var2_14)
+		var3_14:SetOrb(arg1_14, arg0_14.level)
+		arg2_14:AddBuff(var3_14)
 	end
 end
 

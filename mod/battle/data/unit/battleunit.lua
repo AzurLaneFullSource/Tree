@@ -310,6 +310,7 @@ function var9_0.UpdateHP(arg0_22, arg1_22, arg2_22)
 
 	if not arg0_22:IsAlive() and var0_22 then
 		arg0_22:SetDeathReason(arg2_22.damageReason)
+		arg0_22:SetDeathSrcID(arg2_22.srcID)
 		arg0_22:DeadAction()
 	end
 
@@ -358,98 +359,106 @@ function var9_0.GetDeathReason(arg0_29)
 	return arg0_29._deathReason or var3_0.UnitDeathReason.KILLED
 end
 
-function var9_0.DispatchScorePoint(arg0_30, arg1_30)
-	arg0_30:DispatchEvent(var0_0.Event.New(var0_0.Battle.BattleUnitEvent.UPDATE_SCORE, {
-		score = arg1_30
+function var9_0.SetDeathSrcID(arg0_30, arg1_30)
+	arg0_30._deathSrcID = arg1_30
+end
+
+function var9_0.GetDeathSrcID(arg0_31)
+	return arg0_31._deathSrcID
+end
+
+function var9_0.DispatchScorePoint(arg0_32, arg1_32)
+	arg0_32:DispatchEvent(var0_0.Event.New(var0_0.Battle.BattleUnitEvent.UPDATE_SCORE, {
+		score = arg1_32
 	}))
 end
 
-function var9_0.SetTemplate(arg0_31, arg1_31, arg2_31)
-	arg0_31._tmpID = arg1_31
+function var9_0.SetTemplate(arg0_33, arg1_33, arg2_33)
+	arg0_33._tmpID = arg1_33
 end
 
-function var9_0.GetTemplateID(arg0_32)
-	return arg0_32._tmpID
+function var9_0.GetTemplateID(arg0_34)
+	return arg0_34._tmpID
 end
 
-function var9_0.SetOverrideLevel(arg0_33, arg1_33)
-	arg0_33._overrideLevel = arg1_33
+function var9_0.SetOverrideLevel(arg0_35, arg1_35)
+	arg0_35._overrideLevel = arg1_35
 end
 
-function var9_0.SetSkinId(arg0_34)
+function var9_0.SetSkinId(arg0_36)
 	return
 end
 
-function var9_0.SetGearScore(arg0_35, arg1_35)
-	arg0_35._GS = arg1_35
+function var9_0.SetGearScore(arg0_37, arg1_37)
+	arg0_37._GS = arg1_37
 end
 
-function var9_0.GetGearScore(arg0_36)
-	return arg0_36._GS or 0
+function var9_0.GetGearScore(arg0_38)
+	return arg0_38._GS or 0
 end
 
-function var9_0.GetSkinID(arg0_37)
-	return arg0_37._tmpID
+function var9_0.GetSkinID(arg0_39)
+	return arg0_39._tmpID
 end
 
-function var9_0.GetDefaultSkinID(arg0_38)
-	return arg0_38._tmpID
+function var9_0.GetDefaultSkinID(arg0_40)
+	return arg0_40._tmpID
 end
 
-function var9_0.GetSkinAttachmentInfo(arg0_39)
-	return arg0_39._orbitSkinIDList
+function var9_0.GetSkinAttachmentInfo(arg0_41)
+	return arg0_41._orbitSkinIDList
 end
 
-function var9_0.GetWeaponBoundBone(arg0_40)
-	return arg0_40._tmpData.bound_bone
+function var9_0.GetWeaponBoundBone(arg0_42)
+	return arg0_42._tmpData.bound_bone
 end
 
-function var9_0.ActionKeyOffsetUseable(arg0_41)
+function var9_0.ActionKeyOffsetUseable(arg0_43)
 	return true
 end
 
-function var9_0.RemoveRemoteBoundBone(arg0_42, arg1_42)
-	arg0_42._remoteBoundBone[arg1_42] = nil
+function var9_0.RemoveRemoteBoundBone(arg0_44, arg1_44)
+	arg0_44._remoteBoundBone[arg1_44] = nil
 end
 
-function var9_0.SetRemoteBoundBone(arg0_43, arg1_43, arg2_43, arg3_43)
-	local var0_43 = arg0_43._remoteBoundBone[arg1_43] or {}
+function var9_0.SetRemoteBoundBone(arg0_45, arg1_45, arg2_45, arg3_45)
+	local var0_45 = arg0_45._remoteBoundBone[arg1_45] or {}
 
-	var0_43[arg2_43] = arg3_43
-	arg0_43._remoteBoundBone[arg1_43] = var0_43
+	var0_45[arg2_45] = arg3_45
+	arg0_45._remoteBoundBone[arg1_45] = var0_45
 end
 
-function var9_0.GetRemoteBoundBone(arg0_44, arg1_44)
-	for iter0_44, iter1_44 in pairs(arg0_44._remoteBoundBone) do
-		local var0_44 = iter1_44[arg1_44]
+function var9_0.GetRemoteBoundBone(arg0_46, arg1_46)
+	for iter0_46, iter1_46 in pairs(arg0_46._remoteBoundBone) do
+		local var0_46 = iter1_46[arg1_46]
 
-		if var0_44 then
-			local var1_44 = var0_0.Battle.BattleTargetChoise.TargetFleetIndex(arg0_44, {
-				fleetPos = var0_44
+		if var0_46 then
+			local var1_46 = var0_0.Battle.BattleTargetChoise.TargetFleetIndex(arg0_46, {
+				fleetPos = var0_46
 			})[1]
 
-			if var1_44 and var1_44:IsAlive() then
-				local var2_44 = Clone(var1_44:GetPosition())
+			if var1_46 and var1_46:IsAlive() then
+				local var2_46 = Clone(var1_46:GetPosition())
 
-				var2_44:Set(var2_44.x, 1.5, var2_44.z)
+				var2_46:Set(var2_46.x, 1.5, var2_46.z)
 
-				return var2_44
+				return var2_46
 			end
 		end
 	end
 end
 
-function var9_0.GetLabelTag(arg0_45)
-	return arg0_45._labelTagList
+function var9_0.GetLabelTag(arg0_47)
+	return arg0_47._labelTagList
 end
 
-function var9_0.ContainsLabelTag(arg0_46, arg1_46)
-	if arg0_46._labelTagList == nil then
+function var9_0.ContainsLabelTag(arg0_48, arg1_48)
+	if arg0_48._labelTagList == nil then
 		return false
 	end
 
-	for iter0_46, iter1_46 in ipairs(arg1_46) do
-		if table.contains(arg0_46._labelTagList, iter1_46) then
+	for iter0_48, iter1_48 in ipairs(arg1_48) do
+		if table.contains(arg0_48._labelTagList, iter1_48) then
 			return true
 		end
 	end
@@ -457,358 +466,358 @@ function var9_0.ContainsLabelTag(arg0_46, arg1_46)
 	return false
 end
 
-function var9_0.AddLabelTag(arg0_47, arg1_47)
-	table.insert(arg0_47._labelTagList, arg1_47)
+function var9_0.AddLabelTag(arg0_49, arg1_49)
+	table.insert(arg0_49._labelTagList, arg1_49)
 
-	local var0_47 = var6_0.GetCurrent(arg0_47, "labelTag")
+	local var0_49 = var6_0.GetCurrent(arg0_49, "labelTag")
 
-	var0_47[arg1_47] = (var0_47[arg1_47] or 0) + 1
+	var0_49[arg1_49] = (var0_49[arg1_49] or 0) + 1
 end
 
-function var9_0.RemoveLabelTag(arg0_48, arg1_48)
-	for iter0_48, iter1_48 in ipairs(arg0_48._labelTagList) do
-		if iter1_48 == arg1_48 then
-			table.remove(arg0_48._labelTagList, iter0_48)
+function var9_0.RemoveLabelTag(arg0_50, arg1_50)
+	for iter0_50, iter1_50 in ipairs(arg0_50._labelTagList) do
+		if iter1_50 == arg1_50 then
+			table.remove(arg0_50._labelTagList, iter0_50)
 
-			local var0_48 = var6_0.GetCurrent(arg0_48, "labelTag")
+			local var0_50 = var6_0.GetCurrent(arg0_50, "labelTag")
 
-			var0_48[arg1_48] = var0_48[arg1_48] - 1
+			var0_50[arg1_50] = var0_50[arg1_50] - 1
 
 			break
 		end
 	end
 end
 
-function var9_0.setStandardLabelTag(arg0_49)
-	local var0_49 = "N_" .. arg0_49._tmpData.nationality
-	local var1_49 = "T_" .. arg0_49._tmpData.type
+function var9_0.setStandardLabelTag(arg0_51)
+	local var0_51 = "N_" .. arg0_51._tmpData.nationality
+	local var1_51 = "T_" .. arg0_51._tmpData.type
 
-	arg0_49:AddLabelTag(var0_49)
-	arg0_49:AddLabelTag(var1_49)
+	arg0_51:AddLabelTag(var0_51)
+	arg0_51:AddLabelTag(var1_51)
 end
 
-function var9_0.GetRarity(arg0_50)
+function var9_0.GetRarity(arg0_52)
 	return
 end
 
-function var9_0.GetIntimacy(arg0_51)
+function var9_0.GetIntimacy(arg0_53)
 	return 0
 end
 
-function var9_0.IsBoss(arg0_52)
+function var9_0.IsBoss(arg0_54)
 	return false
 end
 
-function var9_0.GetSpeedRatio(arg0_53)
-	return var4_0.GetSpeedRatio(arg0_53:GetSpeedExemptKey(), arg0_53._IFF)
+function var9_0.GetSpeedRatio(arg0_55)
+	return var4_0.GetSpeedRatio(arg0_55:GetSpeedExemptKey(), arg0_55._IFF)
 end
 
-function var9_0.GetSpeedExemptKey(arg0_54)
-	return arg0_54._speedExemptKey
+function var9_0.GetSpeedExemptKey(arg0_56)
+	return arg0_56._speedExemptKey
 end
 
-function var9_0.SetMoveCast(arg0_55, arg1_55)
-	arg0_55._moveCast = arg1_55
+function var9_0.SetMoveCast(arg0_57, arg1_57)
+	arg0_57._moveCast = arg1_57
 end
 
-function var9_0.IsMoveCast(arg0_56)
-	return arg0_56._moveCast
+function var9_0.IsMoveCast(arg0_58)
+	return arg0_58._moveCast
 end
 
-function var9_0.SetCrash(arg0_57, arg1_57)
-	arg0_57._isCrash = arg1_57
+function var9_0.SetCrash(arg0_59, arg1_59)
+	arg0_59._isCrash = arg1_59
 
-	if arg1_57 then
-		local var0_57 = var0_0.Battle.BattleBuffUnit.New(var5_0.SHIP_CLD_BUFF)
+	if arg1_59 then
+		local var0_59 = var0_0.Battle.BattleBuffUnit.New(var5_0.SHIP_CLD_BUFF)
 
-		arg0_57:AddBuff(var0_57)
+		arg0_59:AddBuff(var0_59)
 	else
-		arg0_57:RemoveBuff(var5_0.SHIP_CLD_BUFF)
+		arg0_59:RemoveBuff(var5_0.SHIP_CLD_BUFF)
 	end
 end
 
-function var9_0.IsCrash(arg0_58)
-	return arg0_58._isCrash
+function var9_0.IsCrash(arg0_60)
+	return arg0_60._isCrash
 end
 
-function var9_0.OverrideDeadFX(arg0_59, arg1_59)
-	arg0_59._deadFX = arg1_59
+function var9_0.OverrideDeadFX(arg0_61, arg1_61)
+	arg0_61._deadFX = arg1_61
 end
 
-function var9_0.GetDeadFX(arg0_60)
-	return arg0_60._deadFX
+function var9_0.GetDeadFX(arg0_62)
+	return arg0_62._deadFX
 end
 
-function var9_0.SetEquipment(arg0_61, arg1_61)
-	arg0_61._equipmentList = arg1_61
-	arg0_61._autoWeaponList = {}
-	arg0_61._manualTorpedoList = {}
-	arg0_61._chargeList = {}
-	arg0_61._AAList = {}
-	arg0_61._fleetAAList = {}
-	arg0_61._fleetRangeAAList = {}
-	arg0_61._hiveList = {}
-	arg0_61._totalWeapon = {}
+function var9_0.SetEquipment(arg0_63, arg1_63)
+	arg0_63._equipmentList = arg1_63
+	arg0_63._autoWeaponList = {}
+	arg0_63._manualTorpedoList = {}
+	arg0_63._chargeList = {}
+	arg0_63._AAList = {}
+	arg0_63._fleetAAList = {}
+	arg0_63._fleetRangeAAList = {}
+	arg0_63._hiveList = {}
+	arg0_63._totalWeapon = {}
 
-	arg0_61:setWeapon(arg1_61)
+	arg0_63:setWeapon(arg1_63)
 end
 
-function var9_0.GetEquipment(arg0_62)
-	return arg0_62._equipmentList
+function var9_0.GetEquipment(arg0_64)
+	return arg0_64._equipmentList
 end
 
-function var9_0.SetProficiencyList(arg0_63, arg1_63)
-	arg0_63._proficiencyList = arg1_63
+function var9_0.SetProficiencyList(arg0_65, arg1_65)
+	arg0_65._proficiencyList = arg1_65
 end
 
-function var9_0.SetSpWeapon(arg0_64, arg1_64)
-	arg0_64._spWeapon = arg1_64
+function var9_0.SetSpWeapon(arg0_66, arg1_66)
+	arg0_66._spWeapon = arg1_66
 end
 
-function var9_0.GetSpWeapon(arg0_65)
-	return arg0_65._spWeapon
+function var9_0.GetSpWeapon(arg0_67)
+	return arg0_67._spWeapon
 end
 
-function var9_0.setWeapon(arg0_66, arg1_66)
-	for iter0_66, iter1_66 in ipairs(arg1_66) do
-		local var0_66 = iter1_66.equipment.weapon_id
+function var9_0.setWeapon(arg0_68, arg1_68)
+	for iter0_68, iter1_68 in ipairs(arg1_68) do
+		local var0_68 = iter1_68.equipment.weapon_id
 
-		for iter2_66, iter3_66 in ipairs(var0_66) do
-			if iter3_66 ~= -1 then
-				local var1_66 = var0_0.Battle.BattleDataFunction.CreateWeaponUnit(iter3_66, arg0_66, nil, iter0_66)
+		for iter2_68, iter3_68 in ipairs(var0_68) do
+			if iter3_68 ~= -1 then
+				local var1_68 = var0_0.Battle.BattleDataFunction.CreateWeaponUnit(iter3_68, arg0_68, nil, iter0_68)
 
-				arg0_66._totalWeapon[#arg0_66._totalWeapon + 1] = var1_66
+				arg0_68._totalWeapon[#arg0_68._totalWeapon + 1] = var1_68
 
-				local var2_66 = var1_66:GetTemplateData().type
+				local var2_68 = var1_68:GetTemplateData().type
 
-				if var2_66 == var3_0.EquipmentType.MANUAL_TORPEDO then
-					arg0_66._manualTorpedoList[#arg0_66._manualTorpedoList + 1] = var1_66
+				if var2_68 == var3_0.EquipmentType.MANUAL_TORPEDO then
+					arg0_68._manualTorpedoList[#arg0_68._manualTorpedoList + 1] = var1_68
 
-					arg0_66._weaponQueue:AppendWeapon(var1_66)
-				elseif var2_66 == var3_0.EquipmentType.STRIKE_AIRCRAFT then
+					arg0_68._weaponQueue:AppendWeapon(var1_68)
+				elseif var2_68 == var3_0.EquipmentType.STRIKE_AIRCRAFT then
 					-- block empty
 				else
-					assert(#var0_66 < 2, "自动武器一组不允许配置多个")
-					arg0_66:AddAutoWeapon(var1_66)
+					assert(#var0_68 < 2, "自动武器一组不允许配置多个")
+					arg0_68:AddAutoWeapon(var1_68)
 				end
 
-				if var2_66 == var3_0.EquipmentType.INTERCEPT_AIRCRAFT or var2_66 == var3_0.EquipmentType.STRIKE_AIRCRAFT then
-					arg0_66._hiveList[#arg0_66._hiveList + 1] = var1_66
+				if var2_68 == var3_0.EquipmentType.INTERCEPT_AIRCRAFT or var2_68 == var3_0.EquipmentType.STRIKE_AIRCRAFT then
+					arg0_68._hiveList[#arg0_68._hiveList + 1] = var1_68
 				end
 
-				if var2_66 == var3_0.EquipmentType.ANTI_AIR then
-					arg0_66._AAList[#arg0_66._AAList + 1] = var1_66
+				if var2_68 == var3_0.EquipmentType.ANTI_AIR then
+					arg0_68._AAList[#arg0_68._AAList + 1] = var1_68
 				end
 			end
 		end
 	end
 end
 
-function var9_0.CheckWeaponInitial(arg0_67)
-	arg0_67._weaponQueue:CheckWeaponInitalCD()
+function var9_0.CheckWeaponInitial(arg0_69)
+	arg0_69._weaponQueue:CheckWeaponInitalCD()
 
-	if arg0_67._airAssistQueue then
-		arg0_67._airAssistQueue:CheckWeaponInitalCD()
+	if arg0_69._airAssistQueue then
+		arg0_69._airAssistQueue:CheckWeaponInitalCD()
 	end
 
-	arg0_67:DispatchEvent(var0_0.Event.New(var1_0.INIT_COOL_DOWN, {}))
+	arg0_69:DispatchEvent(var0_0.Event.New(var1_0.INIT_COOL_DOWN, {}))
 end
 
-function var9_0.FlushReloadingWeapon(arg0_68)
-	arg0_68._weaponQueue:FlushWeaponReloadRequire()
+function var9_0.FlushReloadingWeapon(arg0_70)
+	arg0_70._weaponQueue:FlushWeaponReloadRequire()
 
-	if arg0_68._airAssistQueue then
-		arg0_68._airAssistQueue:FlushWeaponReloadRequire()
+	if arg0_70._airAssistQueue then
+		arg0_70._airAssistQueue:FlushWeaponReloadRequire()
 	end
 end
 
-function var9_0.AddNewAutoWeapon(arg0_69, arg1_69)
-	local var0_69 = var7_0.CreateWeaponUnit(arg1_69, arg0_69)
+function var9_0.AddNewAutoWeapon(arg0_71, arg1_71)
+	local var0_71 = var7_0.CreateWeaponUnit(arg1_71, arg0_71)
 
-	arg0_69:AddAutoWeapon(var0_69)
-	arg0_69:DispatchEvent(var0_0.Event.New(var0_0.Battle.BattleBuffEvent.BUFF_EFFECT_NEW_WEAPON, {
-		weapon = var0_69
+	arg0_71:AddAutoWeapon(var0_71)
+	arg0_71:DispatchEvent(var0_0.Event.New(var0_0.Battle.BattleBuffEvent.BUFF_EFFECT_NEW_WEAPON, {
+		weapon = var0_71
 	}))
 
-	return var0_69
+	return var0_71
 end
 
-function var9_0.AddAutoWeapon(arg0_70, arg1_70)
-	arg0_70._autoWeaponList[#arg0_70._autoWeaponList + 1] = arg1_70
+function var9_0.AddAutoWeapon(arg0_72, arg1_72)
+	arg0_72._autoWeaponList[#arg0_72._autoWeaponList + 1] = arg1_72
 
-	arg0_70._weaponQueue:AppendWeapon(arg1_70)
+	arg0_72._weaponQueue:AppendWeapon(arg1_72)
 end
 
-function var9_0.RemoveAutoWeapon(arg0_71, arg1_71)
-	arg0_71._weaponQueue:RemoveWeapon(arg1_71)
+function var9_0.RemoveAutoWeapon(arg0_73, arg1_73)
+	arg0_73._weaponQueue:RemoveWeapon(arg1_73)
 
-	local var0_71 = 1
-	local var1_71 = #arg0_71._autoWeaponList
+	local var0_73 = 1
+	local var1_73 = #arg0_73._autoWeaponList
 
-	while var0_71 <= var1_71 do
-		if arg0_71._autoWeaponList[var0_71] == arg1_71 then
-			arg0_71:DispatchEvent(var0_0.Event.New(var1_0.REMOVE_WEAPON, {
-				weapon = arg1_71
+	while var0_73 <= var1_73 do
+		if arg0_73._autoWeaponList[var0_73] == arg1_73 then
+			arg0_73:DispatchEvent(var0_0.Event.New(var1_0.REMOVE_WEAPON, {
+				weapon = arg1_73
 			}))
-			table.remove(arg0_71._autoWeaponList, var0_71)
+			table.remove(arg0_73._autoWeaponList, var0_73)
 
 			break
 		end
 
-		var0_71 = var0_71 + 1
+		var0_73 = var0_73 + 1
 	end
 end
 
-function var9_0.RemoveAutoWeaponByWeaponID(arg0_72, arg1_72)
-	for iter0_72, iter1_72 in ipairs(arg0_72._autoWeaponList) do
-		if iter1_72:GetWeaponId() == arg1_72 then
-			iter1_72:Clear()
-			arg0_72:RemoveAutoWeapon(iter1_72)
+function var9_0.RemoveAutoWeaponByWeaponID(arg0_74, arg1_74)
+	for iter0_74, iter1_74 in ipairs(arg0_74._autoWeaponList) do
+		if iter1_74:GetWeaponId() == arg1_74 then
+			iter1_74:Clear()
+			arg0_74:RemoveAutoWeapon(iter1_74)
 
 			break
 		end
 	end
 end
 
-function var9_0.RemoveAllAutoWeapon(arg0_73)
-	local var0_73 = #arg0_73._autoWeaponList
+function var9_0.RemoveAllAutoWeapon(arg0_75)
+	local var0_75 = #arg0_75._autoWeaponList
 
-	while var0_73 > 0 do
-		local var1_73 = arg0_73._autoWeaponList[var0_73]
+	while var0_75 > 0 do
+		local var1_75 = arg0_75._autoWeaponList[var0_75]
 
-		var1_73:Clear()
-		arg0_73:RemoveAutoWeapon(var1_73)
+		var1_75:Clear()
+		arg0_75:RemoveAutoWeapon(var1_75)
 
-		var0_73 = var0_73 - 1
+		var0_75 = var0_75 - 1
 	end
 end
 
-function var9_0.AddFleetAntiAirWeapon(arg0_74, arg1_74)
+function var9_0.AddFleetAntiAirWeapon(arg0_76, arg1_76)
 	return
 end
 
-function var9_0.RemoveFleetAntiAirWeapon(arg0_75, arg1_75)
+function var9_0.RemoveFleetAntiAirWeapon(arg0_77, arg1_77)
 	return
 end
 
-function var9_0.AttachFleetRangeAAWeapon(arg0_76, arg1_76)
-	arg0_76._fleetRangeAA = arg1_76
+function var9_0.AttachFleetRangeAAWeapon(arg0_78, arg1_78)
+	arg0_78._fleetRangeAA = arg1_78
 
-	arg0_76:DispatchEvent(var0_0.Event.New(var1_0.CREATE_TEMPORARY_WEAPON, {
-		weapon = arg1_76
+	arg0_78:DispatchEvent(var0_0.Event.New(var1_0.CREATE_TEMPORARY_WEAPON, {
+		weapon = arg1_78
 	}))
 end
 
-function var9_0.DetachFleetRangeAAWeapon(arg0_77)
-	arg0_77:DispatchEvent(var0_0.Event.New(var1_0.REMOVE_WEAPON, {
-		weapon = arg0_77._fleetRangeAA
+function var9_0.DetachFleetRangeAAWeapon(arg0_79)
+	arg0_79:DispatchEvent(var0_0.Event.New(var1_0.REMOVE_WEAPON, {
+		weapon = arg0_79._fleetRangeAA
 	}))
 
-	arg0_77._fleetRangeAA = nil
+	arg0_79._fleetRangeAA = nil
 end
 
-function var9_0.GetFleetRangeAAWeapon(arg0_78)
-	return arg0_78._fleetRangeAA
+function var9_0.GetFleetRangeAAWeapon(arg0_80)
+	return arg0_80._fleetRangeAA
 end
 
-function var9_0.ShiftWeapon(arg0_79, arg1_79, arg2_79)
-	for iter0_79, iter1_79 in ipairs(arg1_79) do
-		arg0_79:RemoveAutoWeaponByWeaponID(iter1_79)
+function var9_0.ShiftWeapon(arg0_81, arg1_81, arg2_81)
+	for iter0_81, iter1_81 in ipairs(arg1_81) do
+		arg0_81:RemoveAutoWeaponByWeaponID(iter1_81)
 	end
 
-	for iter2_79, iter3_79 in ipairs(arg2_79) do
-		arg0_79:AddNewAutoWeapon(iter3_79):InitialCD()
-	end
-end
-
-function var9_0.ExpandWeaponMount(arg0_80, arg1_80)
-	if arg1_80 == "airAssist" then
-		var7_0.ExpandAllinStrike(arg0_80)
+	for iter2_81, iter3_81 in ipairs(arg2_81) do
+		arg0_81:AddNewAutoWeapon(iter3_81):InitialCD()
 	end
 end
 
-function var9_0.ReduceWeaponMount(arg0_81, arg1_81)
+function var9_0.ExpandWeaponMount(arg0_82, arg1_82)
+	if arg1_82 == "airAssist" then
+		var7_0.ExpandAllinStrike(arg0_82)
+	end
+end
+
+function var9_0.ReduceWeaponMount(arg0_83, arg1_83)
 	return
 end
 
-function var9_0.CeaseAllWeapon(arg0_82, arg1_82)
-	arg0_82._ceaseFire = arg1_82
+function var9_0.CeaseAllWeapon(arg0_84, arg1_84)
+	arg0_84._ceaseFire = arg1_84
 end
 
-function var9_0.IsCease(arg0_83)
-	return arg0_83._ceaseFire
+function var9_0.IsCease(arg0_85)
+	return arg0_85._ceaseFire
 end
 
-function var9_0.GetAllWeapon(arg0_84)
-	return arg0_84._totalWeapon
+function var9_0.GetAllWeapon(arg0_86)
+	return arg0_86._totalWeapon
 end
 
-function var9_0.GetTotalWeapon(arg0_85)
-	return arg0_85._weaponQueue:GetTotalWeaponUnit()
+function var9_0.GetTotalWeapon(arg0_87)
+	return arg0_87._weaponQueue:GetTotalWeaponUnit()
 end
 
-function var9_0.GetAutoWeapons(arg0_86)
-	return arg0_86._autoWeaponList
+function var9_0.GetAutoWeapons(arg0_88)
+	return arg0_88._autoWeaponList
 end
 
-function var9_0.GetChargeList(arg0_87)
-	return arg0_87._chargeList
+function var9_0.GetChargeList(arg0_89)
+	return arg0_89._chargeList
 end
 
-function var9_0.GetChargeQueue(arg0_88)
-	return arg0_88._weaponQueue:GetChargeWeaponQueue()
+function var9_0.GetChargeQueue(arg0_90)
+	return arg0_90._weaponQueue:GetChargeWeaponQueue()
 end
 
-function var9_0.GetAntiAirWeapon(arg0_89)
-	return arg0_89._AAList
+function var9_0.GetAntiAirWeapon(arg0_91)
+	return arg0_91._AAList
 end
 
-function var9_0.GetFleetAntiAirList(arg0_90)
-	return arg0_90._fleetAAList
+function var9_0.GetFleetAntiAirList(arg0_92)
+	return arg0_92._fleetAAList
 end
 
-function var9_0.GetFleetRangeAntiAirList(arg0_91)
-	return arg0_91._fleetRangeAAList
+function var9_0.GetFleetRangeAntiAirList(arg0_93)
+	return arg0_93._fleetRangeAAList
 end
 
-function var9_0.GetTorpedoList(arg0_92)
-	return arg0_92._manualTorpedoList
+function var9_0.GetTorpedoList(arg0_94)
+	return arg0_94._manualTorpedoList
 end
 
-function var9_0.GetTorpedoQueue(arg0_93)
-	return arg0_93._weaponQueue:GetManualTorpedoQueue()
+function var9_0.GetTorpedoQueue(arg0_95)
+	return arg0_95._weaponQueue:GetManualTorpedoQueue()
 end
 
-function var9_0.GetWeaponByIndex(arg0_94, arg1_94)
-	for iter0_94, iter1_94 in ipairs(arg0_94._totalWeapon) do
-		if iter1_94:GetEquipmentIndex() == arg1_94 then
-			return iter1_94
+function var9_0.GetWeaponByIndex(arg0_96, arg1_96)
+	for iter0_96, iter1_96 in ipairs(arg0_96._totalWeapon) do
+		if iter1_96:GetEquipmentIndex() == arg1_96 then
+			return iter1_96
 		end
 	end
 end
 
-function var9_0.GetHiveList(arg0_95)
-	return arg0_95._hiveList
+function var9_0.GetHiveList(arg0_97)
+	return arg0_97._hiveList
 end
 
-function var9_0.SetAirAssistList(arg0_96, arg1_96)
-	arg0_96._airAssistList = arg1_96
-	arg0_96._airAssistQueue = var0_0.Battle.ManualWeaponQueue.New(arg0_96:GetManualWeaponParallel()[var3_0.ManualWeaponIndex.AIR_ASSIST])
+function var9_0.SetAirAssistList(arg0_98, arg1_98)
+	arg0_98._airAssistList = arg1_98
+	arg0_98._airAssistQueue = var0_0.Battle.ManualWeaponQueue.New(arg0_98:GetManualWeaponParallel()[var3_0.ManualWeaponIndex.AIR_ASSIST])
 
-	for iter0_96, iter1_96 in ipairs(arg0_96._airAssistList) do
-		arg0_96._airAssistQueue:AppendWeapon(iter1_96)
+	for iter0_98, iter1_98 in ipairs(arg0_98._airAssistList) do
+		arg0_98._airAssistQueue:AppendWeapon(iter1_98)
 	end
 end
 
-function var9_0.GetAirAssistList(arg0_97)
-	return arg0_97._airAssistList
+function var9_0.GetAirAssistList(arg0_99)
+	return arg0_99._airAssistList
 end
 
-function var9_0.GetAirAssistQueue(arg0_98)
-	return arg0_98._airAssistQueue
+function var9_0.GetAirAssistQueue(arg0_100)
+	return arg0_100._airAssistQueue
 end
 
-function var9_0.GetManualWeaponParallel(arg0_99)
+function var9_0.GetManualWeaponParallel(arg0_101)
 	return {
 		1,
 		1,
@@ -816,1192 +825,1192 @@ function var9_0.GetManualWeaponParallel(arg0_99)
 	}
 end
 
-function var9_0.configWeaponQueueParallel(arg0_100)
-	local var0_100 = arg0_100:GetManualWeaponParallel()
+function var9_0.configWeaponQueueParallel(arg0_102)
+	local var0_102 = arg0_102:GetManualWeaponParallel()
 
-	arg0_100._weaponQueue:ConfigParallel(var0_100[var3_0.ManualWeaponIndex.CALIBRATION], var0_100[var3_0.ManualWeaponIndex.TORPEDO])
+	arg0_102._weaponQueue:ConfigParallel(var0_102[var3_0.ManualWeaponIndex.CALIBRATION], var0_102[var3_0.ManualWeaponIndex.TORPEDO])
 end
 
-function var9_0.ClearWeapon(arg0_101)
-	arg0_101._weaponQueue:ClearAllWeapon()
+function var9_0.ClearWeapon(arg0_103)
+	arg0_103._weaponQueue:ClearAllWeapon()
 
-	local var0_101 = arg0_101._airAssistList
+	local var0_103 = arg0_103._airAssistList
 
-	if var0_101 then
-		for iter0_101, iter1_101 in ipairs(var0_101) do
-			iter1_101:Clear()
+	if var0_103 then
+		for iter0_103, iter1_103 in ipairs(var0_103) do
+			iter1_103:Clear()
 		end
 	end
 end
 
-function var9_0.GetSpeed(arg0_102)
-	return arg0_102._move:GetSpeed()
+function var9_0.GetSpeed(arg0_104)
+	return arg0_104._move:GetSpeed()
 end
 
-function var9_0.GetPosition(arg0_103)
-	return arg0_103._move:GetPos()
+function var9_0.GetPosition(arg0_105)
+	return arg0_105._move:GetPos()
 end
 
-function var9_0.GetBornPosition(arg0_104)
-	return arg0_104._bornPos
+function var9_0.GetBornPosition(arg0_106)
+	return arg0_106._bornPos
 end
 
-function var9_0.GetCLDZCenterPosition(arg0_105)
-	local var0_105 = arg0_105._battleProxy.FrameIndex
+function var9_0.GetCLDZCenterPosition(arg0_107)
+	local var0_107 = arg0_107._battleProxy.FrameIndex
 
-	if arg0_105._zCenterFrame ~= var0_105 then
-		arg0_105._zCenterFrame = var0_105
+	if arg0_107._zCenterFrame ~= var0_107 then
+		arg0_107._zCenterFrame = var0_107
 
-		local var1_105 = arg0_105:GetCldBox()
+		local var1_107 = arg0_107:GetCldBox()
 
-		arg0_105._cldZCenterCache = (var1_105.min + var1_105.max) * 0.5
+		arg0_107._cldZCenterCache = (var1_107.min + var1_107.max) * 0.5
 	end
 
-	return arg0_105._cldZCenterCache
+	return arg0_107._cldZCenterCache
 end
 
-function var9_0.GetBeenAimedPosition(arg0_106)
-	local var0_106 = arg0_106:GetCLDZCenterPosition()
+function var9_0.GetBeenAimedPosition(arg0_108)
+	local var0_108 = arg0_108:GetCLDZCenterPosition()
 
-	if not var0_106 then
-		return var0_106
+	if not var0_108 then
+		return var0_108
 	end
 
-	local var1_106 = arg0_106:GetTemplate() and arg0_106:GetTemplate().aim_offset
+	local var1_108 = arg0_108:GetTemplate() and arg0_108:GetTemplate().aim_offset
 
-	if not var1_106 then
-		return var0_106
+	if not var1_108 then
+		return var0_108
 	end
 
-	local var2_106 = Vector3(var0_106.x + var1_106[1], var0_106.y + var1_106[2], var0_106.z + var1_106[3])
+	local var2_108 = Vector3(var0_108.x + var1_108[1], var0_108.y + var1_108[2], var0_108.z + var1_108[3])
 
-	arg0_106:biasAimPosition(var2_106)
+	arg0_108:biasAimPosition(var2_108)
 
-	return var2_106
+	return var2_108
 end
 
-function var9_0.biasAimPosition(arg0_107, arg1_107)
-	local var0_107 = var6_0.GetCurrent(arg0_107, "aimBias")
+function var9_0.biasAimPosition(arg0_109, arg1_109)
+	local var0_109 = var6_0.GetCurrent(arg0_109, "aimBias")
 
-	if var0_107 > 0 then
-		local var1_107 = var0_107 * 2
-		local var2_107 = math.random() * var1_107 - var0_107
-		local var3_107 = math.random() * var1_107 - var0_107
+	if var0_109 > 0 then
+		local var1_109 = var0_109 * 2
+		local var2_109 = math.random() * var1_109 - var0_109
+		local var3_109 = math.random() * var1_109 - var0_109
 
-		arg1_107:Set(arg1_107.x + var2_107, arg1_107.y, arg1_107.z + var3_107)
+		arg1_109:Set(arg1_109.x + var2_109, arg1_109.y, arg1_109.z + var3_109)
 	end
 
-	return arg1_107
+	return arg1_109
 end
 
-function var9_0.CancelFollowTeam(arg0_108)
-	arg0_108._move:CancelFormationCtrl()
+function var9_0.CancelFollowTeam(arg0_110)
+	arg0_110._move:CancelFormationCtrl()
 end
 
-function var9_0.UpdateFormationOffset(arg0_109, arg1_109)
-	arg0_109._move:SetFormationCtrlInfo(Vector3(arg1_109.x, arg1_109.y, arg1_109.z))
+function var9_0.UpdateFormationOffset(arg0_111, arg1_111)
+	arg0_111._move:SetFormationCtrlInfo(Vector3(arg1_111.x, arg1_111.y, arg1_111.z))
 end
 
-function var9_0.GetDistance(arg0_110, arg1_110)
-	local var0_110 = arg0_110._battleProxy.FrameIndex
+function var9_0.GetDistance(arg0_112, arg1_112)
+	local var0_112 = arg0_112._battleProxy.FrameIndex
 
-	if arg0_110._frame ~= var0_110 then
-		arg0_110._distanceBackup = {}
-		arg0_110._frame = var0_110
+	if arg0_112._frame ~= var0_112 then
+		arg0_112._distanceBackup = {}
+		arg0_112._frame = var0_112
 	end
 
-	local var1_110 = arg0_110._distanceBackup[arg1_110]
+	local var1_112 = arg0_112._distanceBackup[arg1_112]
 
-	if var1_110 == nil then
-		var1_110 = Vector3.Distance(arg0_110:GetPosition(), arg1_110:GetPosition())
-		arg0_110._distanceBackup[arg1_110] = var1_110
+	if var1_112 == nil then
+		var1_112 = Vector3.Distance(arg0_112:GetPosition(), arg1_112:GetPosition())
+		arg0_112._distanceBackup[arg1_112] = var1_112
 
-		arg1_110:backupDistance(arg0_110, var1_110)
+		arg1_112:backupDistance(arg0_112, var1_112)
 	end
 
-	return var1_110
+	return var1_112
 end
 
-function var9_0.backupDistance(arg0_111, arg1_111, arg2_111)
-	local var0_111 = arg0_111._battleProxy.FrameIndex
+function var9_0.backupDistance(arg0_113, arg1_113, arg2_113)
+	local var0_113 = arg0_113._battleProxy.FrameIndex
 
-	if arg0_111._frame ~= var0_111 then
-		arg0_111._distanceBackup = {}
-		arg0_111._frame = var0_111
+	if arg0_113._frame ~= var0_113 then
+		arg0_113._distanceBackup = {}
+		arg0_113._frame = var0_113
 	end
 
-	arg0_111._distanceBackup[arg1_111] = arg2_111
+	arg0_113._distanceBackup[arg1_113] = arg2_113
 end
 
-function var9_0.GetDirection(arg0_112)
-	return arg0_112._dir
+function var9_0.GetDirection(arg0_114)
+	return arg0_114._dir
 end
 
-function var9_0.SetBornPosition(arg0_113, arg1_113)
-	arg0_113._bornPos = arg1_113
+function var9_0.SetBornPosition(arg0_115, arg1_115)
+	arg0_115._bornPos = arg1_115
 end
 
-function var9_0.SetPosition(arg0_114, arg1_114)
-	arg0_114._move:SetPos(arg1_114)
+function var9_0.SetPosition(arg0_116, arg1_116)
+	arg0_116._move:SetPos(arg1_116)
 end
 
-function var9_0.IsMoving(arg0_115)
-	local var0_115 = arg0_115._move:GetSpeed()
+function var9_0.IsMoving(arg0_117)
+	local var0_117 = arg0_117._move:GetSpeed()
 
-	return var0_115.x ~= 0 or var0_115.z ~= 0
+	return var0_117.x ~= 0 or var0_117.z ~= 0
 end
 
-function var9_0.SetUncontrollableSpeedWithYAngle(arg0_116, arg1_116, arg2_116, arg3_116)
-	local var0_116 = math.deg2Rad * arg1_116
-	local var1_116 = Vector3(math.cos(var0_116), 0, math.sin(var0_116))
+function var9_0.SetUncontrollableSpeedWithYAngle(arg0_118, arg1_118, arg2_118, arg3_118)
+	local var0_118 = math.deg2Rad * arg1_118
+	local var1_118 = Vector3(math.cos(var0_118), 0, math.sin(var0_118))
 
-	arg0_116:SetUncontrollableSpeed(var1_116, arg2_116, arg3_116)
+	arg0_118:SetUncontrollableSpeed(var1_118, arg2_118, arg3_118)
 end
 
-function var9_0.SetUncontrollableSpeedWithDir(arg0_117, arg1_117, arg2_117, arg3_117)
-	local var0_117 = math.sqrt(arg1_117.x * arg1_117.x + arg1_117.z * arg1_117.z)
+function var9_0.SetUncontrollableSpeedWithDir(arg0_119, arg1_119, arg2_119, arg3_119)
+	local var0_119 = math.sqrt(arg1_119.x * arg1_119.x + arg1_119.z * arg1_119.z)
 
-	arg0_117:SetUncontrollableSpeed(arg1_117 / var0_117, arg2_117, arg3_117)
+	arg0_119:SetUncontrollableSpeed(arg1_119 / var0_119, arg2_119, arg3_119)
 end
 
-function var9_0.SetUncontrollableSpeed(arg0_118, arg1_118, arg2_118, arg3_118)
-	if not arg2_118 or not arg3_118 then
+function var9_0.SetUncontrollableSpeed(arg0_120, arg1_120, arg2_120, arg3_120)
+	if not arg2_120 or not arg3_120 then
 		return
 	end
 
-	arg0_118._move:SetForceMove(arg1_118, arg2_118, arg3_118, arg2_118 / arg3_118)
+	arg0_120._move:SetForceMove(arg1_120, arg2_120, arg3_120, arg2_120 / arg3_120)
 end
 
-function var9_0.ClearUncontrollableSpeed(arg0_119)
-	arg0_119._move:ClearForceMove()
+function var9_0.ClearUncontrollableSpeed(arg0_121)
+	arg0_121._move:ClearForceMove()
 end
 
-function var9_0.SetAdditiveSpeed(arg0_120, arg1_120)
-	arg0_120._move:UpdateAdditiveSpeed(arg1_120)
+function var9_0.SetAdditiveSpeed(arg0_122, arg1_122)
+	arg0_122._move:UpdateAdditiveSpeed(arg1_122)
 end
 
-function var9_0.RemoveAdditiveSpeed(arg0_121)
-	arg0_121._move:RemoveAdditiveSpeed()
+function var9_0.RemoveAdditiveSpeed(arg0_123)
+	arg0_123._move:RemoveAdditiveSpeed()
 end
 
-function var9_0.Boost(arg0_122, arg1_122, arg2_122, arg3_122, arg4_122, arg5_122)
-	arg0_122._move:SetForceMove(arg1_122, arg2_122, arg3_122, arg4_122, arg5_122)
+function var9_0.Boost(arg0_124, arg1_124, arg2_124, arg3_124, arg4_124, arg5_124)
+	arg0_124._move:SetForceMove(arg1_124, arg2_124, arg3_124, arg4_124, arg5_124)
 end
 
-function var9_0.ActiveUnstoppable(arg0_123, arg1_123)
-	arg0_123._move:ActiveUnstoppable(arg1_123)
+function var9_0.ActiveUnstoppable(arg0_125, arg1_125)
+	arg0_125._move:ActiveUnstoppable(arg1_125)
 end
 
-function var9_0.SetImmuneCommonBulletCLD(arg0_124)
-	arg0_124._immuneCommonBulletCLD = true
+function var9_0.SetImmuneCommonBulletCLD(arg0_126)
+	arg0_126._immuneCommonBulletCLD = true
 end
 
-function var9_0.IsImmuneCommonBulletCLD(arg0_125)
-	return arg0_125._immuneCommonBulletCLD
+function var9_0.IsImmuneCommonBulletCLD(arg0_127)
+	return arg0_127._immuneCommonBulletCLD
 end
 
-function var9_0.SetWeaponPreCastBound(arg0_126, arg1_126)
-	arg0_126._preCastBound = arg1_126
+function var9_0.SetWeaponPreCastBound(arg0_128, arg1_128)
+	arg0_128._preCastBound = arg1_128
 
-	arg0_126:UpdatePrecastMoveLimit()
+	arg0_128:UpdatePrecastMoveLimit()
 end
 
-function var9_0.EnterGCD(arg0_127, arg1_127, arg2_127)
-	if arg0_127._GCDTimerList[arg2_127] ~= nil then
+function var9_0.EnterGCD(arg0_129, arg1_129, arg2_129)
+	if arg0_129._GCDTimerList[arg2_129] ~= nil then
 		return
 	end
 
-	local function var0_127()
-		arg0_127:RemoveGCDTimer(arg2_127)
+	local function var0_129()
+		arg0_129:RemoveGCDTimer(arg2_129)
 	end
 
-	arg0_127._weaponQueue:QueueEnterGCD(arg2_127, arg1_127)
+	arg0_129._weaponQueue:QueueEnterGCD(arg2_129, arg1_129)
 
-	arg0_127._GCDTimerList[arg2_127] = pg.TimeMgr.GetInstance():AddBattleTimer("weaponGCD", 0, arg1_127, var0_127, true)
-
-	arg0_127:UpdatePrecastMoveLimit()
-end
-
-function var9_0.RemoveGCDTimer(arg0_129, arg1_129)
-	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_129._GCDTimerList[arg1_129])
-
-	arg0_129._GCDTimerList[arg1_129] = nil
+	arg0_129._GCDTimerList[arg2_129] = pg.TimeMgr.GetInstance():AddBattleTimer("weaponGCD", 0, arg1_129, var0_129, true)
 
 	arg0_129:UpdatePrecastMoveLimit()
 end
 
-function var9_0.UpdatePrecastMoveLimit(arg0_130)
-	arg0_130:UpdateMoveLimit()
+function var9_0.RemoveGCDTimer(arg0_131, arg1_131)
+	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_131._GCDTimerList[arg1_131])
+
+	arg0_131._GCDTimerList[arg1_131] = nil
+
+	arg0_131:UpdatePrecastMoveLimit()
 end
 
-function var9_0.UpdateMoveLimit(arg0_131)
-	local var0_131 = arg0_131:IsMoveAble()
-
-	arg0_131._move:SetStaticState(not var0_131)
+function var9_0.UpdatePrecastMoveLimit(arg0_132)
+	arg0_132:UpdateMoveLimit()
 end
 
-function var9_0.AddBuff(arg0_132, arg1_132, arg2_132)
-	local var0_132 = arg1_132:GetID()
-	local var1_132 = {
-		unit_id = arg0_132._uniqueID,
-		buff_id = var0_132
+function var9_0.UpdateMoveLimit(arg0_133)
+	local var0_133 = arg0_133:IsMoveAble()
+
+	arg0_133._move:SetStaticState(not var0_133)
+end
+
+function var9_0.AddBuff(arg0_134, arg1_134, arg2_134)
+	local var0_134 = arg1_134:GetID()
+	local var1_134 = {
+		unit_id = arg0_134._uniqueID,
+		buff_id = var0_134
 	}
-	local var2_132 = arg0_132:GetBuff(var0_132)
+	local var2_134 = arg0_134:GetBuff(var0_134)
 
-	if var2_132 then
-		local var3_132 = var2_132:GetLv()
-		local var4_132 = arg1_132:GetLv()
+	if var2_134 then
+		local var3_134 = var2_134:GetLv()
+		local var4_134 = arg1_134:GetLv()
 
-		if arg2_132 then
-			local var5_132 = arg0_132._buffStockList[var0_132] or {}
+		if arg2_134 then
+			local var5_134 = arg0_134._buffStockList[var0_134] or {}
 
-			table.insert(var5_132, arg1_132)
+			table.insert(var5_134, arg1_134)
 
-			arg0_132._buffStockList[var0_132] = var5_132
+			arg0_134._buffStockList[var0_134] = var5_134
 		else
-			var1_132.buff_level = math.max(var3_132, var4_132)
+			var1_134.buff_level = math.max(var3_134, var4_134)
 
-			if var4_132 <= var3_132 then
-				var2_132:Stack(arg0_132)
+			if var4_134 <= var3_134 then
+				var2_134:Stack(arg0_134)
 
-				var1_132.stack_count = var2_132:GetStack()
+				var1_134.stack_count = var2_134:GetStack()
 
-				arg0_132:DispatchEvent(var0_0.Event.New(var2_0.BUFF_STACK, var1_132))
+				arg0_134:DispatchEvent(var0_0.Event.New(var2_0.BUFF_STACK, var1_134))
 			else
-				arg0_132:DispatchEvent(var0_0.Event.New(var2_0.BUFF_CAST, var1_132))
-				arg0_132:RemoveBuff(var0_132)
+				arg0_134:DispatchEvent(var0_0.Event.New(var2_0.BUFF_CAST, var1_134))
+				arg0_134:RemoveBuff(var0_134)
 
-				arg0_132._buffList[var0_132] = arg1_132
+				arg0_134._buffList[var0_134] = arg1_134
 
-				arg1_132:Attach(arg0_132)
-				arg0_132:DispatchEvent(var0_0.Event.New(var2_0.BUFF_ATTACH, var1_132))
+				arg1_134:Attach(arg0_134)
+				arg0_134:DispatchEvent(var0_0.Event.New(var2_0.BUFF_ATTACH, var1_134))
 			end
 		end
 	else
-		arg0_132:DispatchEvent(var0_0.Event.New(var2_0.BUFF_CAST, var1_132))
+		arg0_134:DispatchEvent(var0_0.Event.New(var2_0.BUFF_CAST, var1_134))
 
-		arg0_132._buffList[var0_132] = arg1_132
+		arg0_134._buffList[var0_134] = arg1_134
 
-		arg1_132:Attach(arg0_132)
+		arg1_134:Attach(arg0_134)
 
-		var1_132.buff_level = arg1_132:GetLv()
+		var1_134.buff_level = arg1_134:GetLv()
 
-		arg0_132:DispatchEvent(var0_0.Event.New(var2_0.BUFF_ATTACH, var1_132))
+		arg0_134:DispatchEvent(var0_0.Event.New(var2_0.BUFF_ATTACH, var1_134))
 	end
 
-	arg0_132:TriggerBuff(var3_0.BuffEffectType.ON_BUFF_ADDED, {
-		buffID = var0_132
+	arg0_134:TriggerBuff(var3_0.BuffEffectType.ON_BUFF_ADDED, {
+		buffID = var0_134
 	})
 end
 
-function var9_0.SetBuffStack(arg0_133, arg1_133, arg2_133, arg3_133)
-	if arg3_133 <= 0 then
-		arg0_133:RemoveBuff(arg1_133)
+function var9_0.SetBuffStack(arg0_135, arg1_135, arg2_135, arg3_135)
+	if arg3_135 <= 0 then
+		arg0_135:RemoveBuff(arg1_135)
 	else
-		local var0_133 = arg0_133:GetBuff(arg1_133)
+		local var0_135 = arg0_135:GetBuff(arg1_135)
 
-		if var0_133 then
-			var0_133:UpdateStack(arg0_133, arg3_133)
+		if var0_135 then
+			var0_135:UpdateStack(arg0_135, arg3_135)
 
-			return var0_133
+			return var0_135
 		else
-			local var1_133 = var0_0.Battle.BattleBuffUnit.New(arg1_133, arg2_133)
+			local var1_135 = var0_0.Battle.BattleBuffUnit.New(arg1_135, arg2_135)
 
-			arg0_133:AddBuff(var1_133)
-			var1_133:UpdateStack(arg0_133, arg3_133)
+			arg0_135:AddBuff(var1_135)
+			var1_135:UpdateStack(arg0_135, arg3_135)
 
-			return var1_133
+			return var1_135
 		end
 	end
 end
 
-function var9_0.UpdateBuff(arg0_134, arg1_134)
-	local var0_134 = arg0_134._buffList
+function var9_0.UpdateBuff(arg0_136, arg1_136)
+	local var0_136 = arg0_136._buffList
 
-	for iter0_134, iter1_134 in pairs(var0_134) do
-		iter1_134:Update(arg0_134, arg1_134)
+	for iter0_136, iter1_136 in pairs(var0_136) do
+		iter1_136:Update(arg0_136, arg1_136)
 
-		if not arg0_134:IsAlive() then
+		if not arg0_136:IsAlive() then
 			break
 		end
 	end
 end
 
-function var9_0.ConsumeBuffStack(arg0_135, arg1_135, arg2_135)
-	local var0_135 = arg0_135:GetBuff(arg1_135)
+function var9_0.ConsumeBuffStack(arg0_137, arg1_137, arg2_137)
+	local var0_137 = arg0_137:GetBuff(arg1_137)
 
-	if var0_135 then
-		if not arg2_135 then
-			arg0_135:RemoveBuff(arg1_135)
+	if var0_137 then
+		if not arg2_137 then
+			arg0_137:RemoveBuff(arg1_137)
 		else
-			local var1_135 = var0_135:GetStack()
-			local var2_135 = math.max(0, var1_135 - arg2_135)
+			local var1_137 = var0_137:GetStack()
+			local var2_137 = math.max(0, var1_137 - arg2_137)
 
-			if var2_135 == 0 then
-				arg0_135:RemoveBuff(arg1_135)
+			if var2_137 == 0 then
+				arg0_137:RemoveBuff(arg1_137)
 			else
-				var0_135:UpdateStack(arg0_135, var2_135)
+				var0_137:UpdateStack(arg0_137, var2_137)
 			end
 		end
 	end
 end
 
-function var9_0.RemoveBuff(arg0_136, arg1_136, arg2_136)
-	if arg2_136 and arg0_136._buffStockList[arg1_136] then
-		local var0_136 = table.remove(arg0_136._buffStockList[arg1_136])
+function var9_0.RemoveBuff(arg0_138, arg1_138, arg2_138)
+	if arg2_138 and arg0_138._buffStockList[arg1_138] then
+		local var0_138 = table.remove(arg0_138._buffStockList[arg1_138])
 
-		if var0_136 then
-			var0_136:Clear()
+		if var0_138 then
+			var0_138:Clear()
 
 			return
 		end
 	end
 
-	local var1_136 = arg0_136:GetBuff(arg1_136)
+	local var1_138 = arg0_138:GetBuff(arg1_138)
 
-	if var1_136 then
-		var1_136:Remove()
+	if var1_138 then
+		var1_138:Remove()
 	end
 
-	arg0_136:TriggerBuff(var3_0.BuffEffectType.ON_BUFF_REMOVED, {
-		buffID = arg1_136
+	arg0_138:TriggerBuff(var3_0.BuffEffectType.ON_BUFF_REMOVED, {
+		buffID = arg1_138
 	})
 end
 
-function var9_0.ClearBuff(arg0_137)
-	local var0_137 = arg0_137._buffList
+function var9_0.ClearBuff(arg0_139)
+	local var0_139 = arg0_139._buffList
 
-	for iter0_137, iter1_137 in pairs(var0_137) do
-		iter1_137:Clear()
+	for iter0_139, iter1_139 in pairs(var0_139) do
+		iter1_139:Clear()
 	end
 
-	local var1_137 = arg0_137._buffStockList
+	local var1_139 = arg0_139._buffStockList
 
-	for iter2_137, iter3_137 in pairs(var1_137) do
-		for iter4_137, iter5_137 in pairs(iter3_137) do
-			iter5_137:Clear()
+	for iter2_139, iter3_139 in pairs(var1_139) do
+		for iter4_139, iter5_139 in pairs(iter3_139) do
+			iter5_139:Clear()
 		end
 	end
 end
 
-function var9_0.TriggerBuff(arg0_138, arg1_138, arg2_138)
-	var0_0.Battle.BattleBuffUnit.Trigger(arg0_138, arg1_138, arg2_138)
+function var9_0.TriggerBuff(arg0_140, arg1_140, arg2_140)
+	var0_0.Battle.BattleBuffUnit.Trigger(arg0_140, arg1_140, arg2_140)
 end
 
-function var9_0.GetBuffList(arg0_139)
-	return arg0_139._buffList
+function var9_0.GetBuffList(arg0_141)
+	return arg0_141._buffList
 end
 
-function var9_0.GetBuff(arg0_140, arg1_140)
-	arg0_140._buffList = arg0_140._buffList
+function var9_0.GetBuff(arg0_142, arg1_142)
+	arg0_142._buffList = arg0_142._buffList
 
-	return arg0_140._buffList[arg1_140]
+	return arg0_142._buffList[arg1_142]
 end
 
-function var9_0.DispatchSkillFloat(arg0_141, arg1_141, arg2_141, arg3_141)
-	local var0_141 = {
-		coverHrzIcon = arg3_141,
-		commander = arg2_141,
-		skillName = arg1_141
-	}
-
-	arg0_141:DispatchEvent(var0_0.Event.New(var1_0.SKILL_FLOAT, var0_141))
-end
-
-function var9_0.DispatchCutIn(arg0_142, arg1_142, arg2_142)
-	local var0_142 = {
-		caster = arg0_142,
-		skill = arg1_142
-	}
-
-	arg0_142:DispatchEvent(var0_0.Event.New(var1_0.CUT_INT, var0_142))
-end
-
-function var9_0.DispatchCastClock(arg0_143, arg1_143, arg2_143, arg3_143, arg4_143, arg5_143)
+function var9_0.DispatchSkillFloat(arg0_143, arg1_143, arg2_143, arg3_143)
 	local var0_143 = {
-		isActive = arg1_143,
-		buffEffect = arg2_143,
-		iconType = arg3_143,
-		interrupt = arg4_143,
-		reverse = arg5_143
+		coverHrzIcon = arg3_143,
+		commander = arg2_143,
+		skillName = arg1_143
 	}
 
-	arg0_143:DispatchEvent(var0_0.Event.New(var1_0.ADD_BUFF_CLOCK, var0_143))
+	arg0_143:DispatchEvent(var0_0.Event.New(var1_0.SKILL_FLOAT, var0_143))
 end
 
-function var9_0.SetAI(arg0_144, arg1_144)
-	local var0_144 = var7_0.GetAITmpDataFromID(arg1_144)
+function var9_0.DispatchCutIn(arg0_144, arg1_144, arg2_144)
+	local var0_144 = {
+		caster = arg0_144,
+		skill = arg1_144
+	}
 
-	arg0_144._autoPilotAI = var0_0.Battle.AutoPilot.New(arg0_144, var0_144), arg0_144._move:CancelFormationCtrl()
+	arg0_144:DispatchEvent(var0_0.Event.New(var1_0.CUT_INT, var0_144))
 end
 
-function var9_0.AddPhaseSwitcher(arg0_145, arg1_145)
-	arg0_145._phaseSwitcher = arg1_145
+function var9_0.DispatchCastClock(arg0_145, arg1_145, arg2_145, arg3_145, arg4_145, arg5_145)
+	local var0_145 = {
+		isActive = arg1_145,
+		buffEffect = arg2_145,
+		iconType = arg3_145,
+		interrupt = arg4_145,
+		reverse = arg5_145
+	}
+
+	arg0_145:DispatchEvent(var0_0.Event.New(var1_0.ADD_BUFF_CLOCK, var0_145))
 end
 
-function var9_0.GetPhaseSwitcher(arg0_146)
-	return arg0_146._phaseSwitcher
+function var9_0.SetAI(arg0_146, arg1_146)
+	local var0_146 = var7_0.GetAITmpDataFromID(arg1_146)
+
+	arg0_146._autoPilotAI = var0_0.Battle.AutoPilot.New(arg0_146, var0_146), arg0_146._move:CancelFormationCtrl()
 end
 
-function var9_0.StateChange(arg0_147, arg1_147, arg2_147)
-	arg0_147._unitState:ChangeState(arg1_147, arg2_147)
+function var9_0.AddPhaseSwitcher(arg0_147, arg1_147)
+	arg0_147._phaseSwitcher = arg1_147
 end
 
-function var9_0.UpdateAction(arg0_148)
-	local var0_148 = arg0_148:GetSpeed().x * arg0_148._IFF
+function var9_0.GetPhaseSwitcher(arg0_148)
+	return arg0_148._phaseSwitcher
+end
 
-	if arg0_148._oxyState and arg0_148._oxyState:GetCurrentDiveState() == var3_0.OXY_STATE.DIVE then
-		if var0_148 >= 0 then
-			arg0_148._unitState:ChangeState(var8_0.STATE_DIVE)
+function var9_0.StateChange(arg0_149, arg1_149, arg2_149)
+	arg0_149._unitState:ChangeState(arg1_149, arg2_149)
+end
+
+function var9_0.UpdateAction(arg0_150)
+	local var0_150 = arg0_150:GetSpeed().x * arg0_150._IFF
+
+	if arg0_150._oxyState and arg0_150._oxyState:GetCurrentDiveState() == var3_0.OXY_STATE.DIVE then
+		if var0_150 >= 0 then
+			arg0_150._unitState:ChangeState(var8_0.STATE_DIVE)
 		else
-			arg0_148._unitState:ChangeState(var8_0.STATE_DIVELEFT)
+			arg0_150._unitState:ChangeState(var8_0.STATE_DIVELEFT)
 		end
-	elseif var0_148 >= 0 then
-		arg0_148._unitState:ChangeState(var8_0.STATE_MOVE)
+	elseif var0_150 >= 0 then
+		arg0_150._unitState:ChangeState(var8_0.STATE_MOVE)
 	else
-		arg0_148._unitState:ChangeState(var8_0.STATE_MOVELEFT)
+		arg0_150._unitState:ChangeState(var8_0.STATE_MOVELEFT)
 	end
 end
 
-function var9_0.SetActionKeyOffset(arg0_149, arg1_149)
-	arg0_149._actionKeyOffset = arg1_149
+function var9_0.SetActionKeyOffset(arg0_151, arg1_151)
+	arg0_151._actionKeyOffset = arg1_151
 
-	arg0_149._unitState:FreshActionKeyOffset()
+	arg0_151._unitState:FreshActionKeyOffset()
 end
 
-function var9_0.GetActionKeyOffset(arg0_150)
-	return arg0_150._actionKeyOffset
+function var9_0.GetActionKeyOffset(arg0_152)
+	return arg0_152._actionKeyOffset
 end
 
-function var9_0.GetCurrentState(arg0_151)
-	return arg0_151._unitState:GetCurrentStateName()
+function var9_0.GetCurrentState(arg0_153)
+	return arg0_153._unitState:GetCurrentStateName()
 end
 
-function var9_0.NeedWeaponCache(arg0_152)
-	return arg0_152._unitState:NeedWeaponCache()
+function var9_0.NeedWeaponCache(arg0_154)
+	return arg0_154._unitState:NeedWeaponCache()
 end
 
-function var9_0.CharacterActionTriggerCallback(arg0_153)
-	arg0_153._unitState:OnActionTrigger()
+function var9_0.CharacterActionTriggerCallback(arg0_155)
+	arg0_155._unitState:OnActionTrigger()
 end
 
-function var9_0.CharacterActionEndCallback(arg0_154)
-	arg0_154._unitState:OnActionEnd()
+function var9_0.CharacterActionEndCallback(arg0_156)
+	arg0_156._unitState:OnActionEnd()
 end
 
-function var9_0.CharacterActionStartCallback(arg0_155)
+function var9_0.CharacterActionStartCallback(arg0_157)
 	return
 end
 
-function var9_0.DispatchChat(arg0_156, arg1_156, arg2_156, arg3_156)
-	if not arg1_156 or #arg1_156 == 0 then
+function var9_0.DispatchChat(arg0_158, arg1_158, arg2_158, arg3_158)
+	if not arg1_158 or #arg1_158 == 0 then
 		return
 	end
 
-	local var0_156 = {
-		content = HXSet.hxLan(arg1_156),
-		duration = arg2_156,
-		key = arg3_156
+	local var0_158 = {
+		content = HXSet.hxLan(arg1_158),
+		duration = arg2_158,
+		key = arg3_158
 	}
 
-	arg0_156:DispatchEvent(var0_0.Event.New(var1_0.POP_UP, var0_156))
+	arg0_158:DispatchEvent(var0_0.Event.New(var1_0.POP_UP, var0_158))
 end
 
-function var9_0.DispatchVoice(arg0_157, arg1_157)
-	local var0_157 = arg0_157:GetIntimacy()
-	local var1_157, var2_157, var3_157 = ShipWordHelper.GetWordAndCV(arg0_157:GetSkinID(), arg1_157, 1, true, var0_157)
+function var9_0.DispatchVoice(arg0_159, arg1_159)
+	local var0_159 = arg0_159:GetIntimacy()
+	local var1_159, var2_159, var3_159 = ShipWordHelper.GetWordAndCV(arg0_159:GetSkinID(), arg1_159, 1, true, var0_159)
 
-	if var2_157 then
-		local var4_157 = {
-			content = var2_157,
-			key = arg1_157
+	if var2_159 then
+		local var4_159 = {
+			content = var2_159,
+			key = arg1_159
 		}
 
-		arg0_157:DispatchEvent(var0_0.Event.New(var1_0.VOICE, var4_157))
+		arg0_159:DispatchEvent(var0_0.Event.New(var1_0.VOICE, var4_159))
 	end
 end
 
-function var9_0.GetHostileCldList(arg0_158)
-	return arg0_158._hostileCldList
+function var9_0.GetHostileCldList(arg0_160)
+	return arg0_160._hostileCldList
 end
 
-function var9_0.AppendHostileCld(arg0_159, arg1_159, arg2_159)
-	arg0_159._hostileCldList[arg1_159] = arg2_159
+function var9_0.AppendHostileCld(arg0_161, arg1_161, arg2_161)
+	arg0_161._hostileCldList[arg1_161] = arg2_161
 end
 
-function var9_0.RemoveHostileCld(arg0_160, arg1_160)
-	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_160._hostileCldList[arg1_160])
+function var9_0.RemoveHostileCld(arg0_162, arg1_162)
+	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_162._hostileCldList[arg1_162])
 
-	arg0_160._hostileCldList[arg1_160] = nil
+	arg0_162._hostileCldList[arg1_162] = nil
 end
 
-function var9_0.GetExtraInfo(arg0_161)
-	return arg0_161._extraInfo
+function var9_0.GetExtraInfo(arg0_163)
+	return arg0_163._extraInfo
 end
 
-function var9_0.GetTemplate(arg0_162)
+function var9_0.GetTemplate(arg0_164)
 	return nil
 end
 
-function var9_0.GetTemplateValue(arg0_163, arg1_163)
-	return arg0_163:GetTemplate()[arg1_163]
+function var9_0.GetTemplateValue(arg0_165, arg1_165)
+	return arg0_165:GetTemplate()[arg1_165]
 end
 
-function var9_0.GetUniqueID(arg0_164)
-	return arg0_164._uniqueID
+function var9_0.GetUniqueID(arg0_166)
+	return arg0_166._uniqueID
 end
 
-function var9_0.SetIFF(arg0_165, arg1_165)
-	arg0_165._IFF = arg1_165
+function var9_0.SetIFF(arg0_167, arg1_167)
+	arg0_167._IFF = arg1_167
 
-	if arg1_165 == var5_0.FRIENDLY_CODE then
-		arg0_165._dir = var3_0.UnitDir.RIGHT
-	elseif arg1_165 == var5_0.FOE_CODE then
-		arg0_165._dir = var3_0.UnitDir.LEFT
+	if arg1_167 == var5_0.FRIENDLY_CODE then
+		arg0_167._dir = var3_0.UnitDir.RIGHT
+	elseif arg1_167 == var5_0.FOE_CODE then
+		arg0_167._dir = var3_0.UnitDir.LEFT
 	end
 end
 
-function var9_0.GetIFF(arg0_166)
-	return arg0_166._IFF
+function var9_0.GetIFF(arg0_168)
+	return arg0_168._IFF
 end
 
-function var9_0.GetUnitType(arg0_167)
-	return arg0_167._type
+function var9_0.GetUnitType(arg0_169)
+	return arg0_169._type
 end
 
-function var9_0.GetHPRate(arg0_168)
-	return arg0_168._currentHPRate
+function var9_0.GetHPRate(arg0_170)
+	return arg0_170._currentHPRate
 end
 
-function var9_0.GetHP(arg0_169)
-	return arg0_169._currentHP, arg0_169:GetMaxHP()
+function var9_0.GetHP(arg0_171)
+	return arg0_171._currentHP, arg0_171:GetMaxHP()
 end
 
-function var9_0.GetCurrentHP(arg0_170)
-	return arg0_170._currentHP
+function var9_0.GetCurrentHP(arg0_172)
+	return arg0_172._currentHP
 end
 
-function var9_0.SetCurrentHP(arg0_171, arg1_171)
-	arg0_171._currentHP = arg1_171
-	arg0_171._currentHPRate = arg0_171._currentHP / arg0_171:GetMaxHP()
-	arg0_171._currentDMGRate = 1 - arg0_171._currentHPRate
+function var9_0.SetCurrentHP(arg0_173, arg1_173)
+	arg0_173._currentHP = arg1_173
+	arg0_173._currentHPRate = arg0_173._currentHP / arg0_173:GetMaxHP()
+	arg0_173._currentDMGRate = 1 - arg0_173._currentHPRate
 
-	var6_0.SetCurrent(arg0_171, "HPRate", arg0_171._currentHPRate)
-	var6_0.SetCurrent(arg0_171, "DMGRate", arg0_171._currentDMGRate)
+	var6_0.SetCurrent(arg0_173, "HPRate", arg0_173._currentHPRate)
+	var6_0.SetCurrent(arg0_173, "DMGRate", arg0_173._currentDMGRate)
 end
 
-function var9_0.GetAttr(arg0_172)
-	return var6_0.GetAttr(arg0_172)
+function var9_0.GetAttr(arg0_174)
+	return var6_0.GetAttr(arg0_174)
 end
 
-function var9_0.GetAttrByName(arg0_173, arg1_173)
-	return var6_0.GetCurrent(arg0_173, arg1_173)
+function var9_0.GetAttrByName(arg0_175, arg1_175)
+	return var6_0.GetCurrent(arg0_175, arg1_175)
 end
 
-function var9_0.GetMaxHP(arg0_174)
-	return arg0_174:GetAttrByName("maxHP")
+function var9_0.GetMaxHP(arg0_176)
+	return arg0_176:GetAttrByName("maxHP")
 end
 
-function var9_0.GetReload(arg0_175)
-	return arg0_175:GetAttrByName("loadSpeed")
+function var9_0.GetReload(arg0_177)
+	return arg0_177:GetAttrByName("loadSpeed")
 end
 
-function var9_0.GetTorpedoPower(arg0_176)
-	return arg0_176:GetAttrByName("torpedoPower")
+function var9_0.GetTorpedoPower(arg0_178)
+	return arg0_178:GetAttrByName("torpedoPower")
 end
 
-function var9_0.CanDoAntiSub(arg0_177)
-	return arg0_177:GetAttrByName("antiSubPower") > 0
+function var9_0.CanDoAntiSub(arg0_179)
+	return arg0_179:GetAttrByName("antiSubPower") > 0
 end
 
-function var9_0.IsShowHPBar(arg0_178)
+function var9_0.IsShowHPBar(arg0_180)
 	return false
 end
 
-function var9_0.IsAlive(arg0_179)
-	local var0_179 = arg0_179:GetCurrentHP()
+function var9_0.IsAlive(arg0_181)
+	local var0_181 = arg0_181:GetCurrentHP()
 
-	return arg0_179._aliveState and var0_179 > 0
+	return arg0_181._aliveState and var0_181 > 0
 end
 
-function var9_0.SetMainFleetUnit(arg0_180)
-	arg0_180._isMainFleetUnit = true
+function var9_0.SetMainFleetUnit(arg0_182)
+	arg0_182._isMainFleetUnit = true
 
-	arg0_180:SetMainUnitStatic(true)
+	arg0_182:SetMainUnitStatic(true)
 end
 
-function var9_0.IsMainFleetUnit(arg0_181)
-	return arg0_181._isMainFleetUnit
+function var9_0.IsMainFleetUnit(arg0_183)
+	return arg0_183._isMainFleetUnit
 end
 
-function var9_0.SetMainUnitStatic(arg0_182, arg1_182)
-	arg0_182._isMainStatic = arg1_182
+function var9_0.SetMainUnitStatic(arg0_184, arg1_184)
+	arg0_184._isMainStatic = arg1_184
 
-	arg0_182._move:SetStaticState(arg1_182)
+	arg0_184._move:SetStaticState(arg1_184)
 end
 
-function var9_0.SetMainUnitIndex(arg0_183, arg1_183)
-	arg0_183._mainUnitIndex = arg1_183
+function var9_0.SetMainUnitIndex(arg0_185, arg1_185)
+	arg0_185._mainUnitIndex = arg1_185
 end
 
-function var9_0.GetMainUnitIndex(arg0_184)
-	return arg0_184._mainUnitIndex or 1
+function var9_0.GetMainUnitIndex(arg0_186)
+	return arg0_186._mainUnitIndex or 1
 end
 
-function var9_0.IsMoveAble(arg0_185)
-	local var0_185 = table.getCount(arg0_185._GCDTimerList) > 0 or arg0_185._preCastBound
-	local var1_185 = var6_0.IsStun(arg0_185)
-	local var2_185 = arg0_185:IsMoveCast()
+function var9_0.IsMoveAble(arg0_187)
+	local var0_187 = table.getCount(arg0_187._GCDTimerList) > 0 or arg0_187._preCastBound
+	local var1_187 = var6_0.IsStun(arg0_187)
+	local var2_187 = arg0_187:IsMoveCast()
 
-	return not arg0_185._isMainStatic and (var2_185 or not var0_185) and not var1_185
+	return not arg0_187._isMainStatic and (var2_187 or not var0_187) and not var1_187
 end
 
-function var9_0.Reinforce(arg0_186)
-	arg0_186._isReinforcement = true
+function var9_0.Reinforce(arg0_188)
+	arg0_188._isReinforcement = true
 end
 
-function var9_0.IsReinforcement(arg0_187)
-	return arg0_187._isReinforcement
+function var9_0.IsReinforcement(arg0_189)
+	return arg0_189._isReinforcement
 end
 
-function var9_0.SetReinforceCastTime(arg0_188, arg1_188)
-	arg0_188._reinforceCastTime = arg1_188
+function var9_0.SetReinforceCastTime(arg0_190, arg1_190)
+	arg0_190._reinforceCastTime = arg1_190
 end
 
-function var9_0.GetReinforceCastTime(arg0_189)
-	return arg0_189._reinforceCastTime
+function var9_0.GetReinforceCastTime(arg0_191)
+	return arg0_191._reinforceCastTime
 end
 
-function var9_0.GetFleetVO(arg0_190)
+function var9_0.GetFleetVO(arg0_192)
 	return
 end
 
-function var9_0.SetFormationIndex(arg0_191, arg1_191)
+function var9_0.SetFormationIndex(arg0_193, arg1_193)
 	return
 end
 
-function var9_0.SetMaster(arg0_192)
+function var9_0.SetMaster(arg0_194)
 	return
 end
 
-function var9_0.GetMaster(arg0_193)
+function var9_0.GetMaster(arg0_195)
 	return nil
 end
 
-function var9_0.IsSpectre(arg0_194)
+function var9_0.IsSpectre(arg0_196)
 	return
 end
 
-function var9_0.Clear(arg0_195)
-	arg0_195._aliveState = false
+function var9_0.Clear(arg0_197)
+	arg0_197._aliveState = false
 
-	for iter0_195, iter1_195 in pairs(arg0_195._hostileCldList) do
-		arg0_195:RemoveHostileCld(iter0_195)
+	for iter0_197, iter1_197 in pairs(arg0_197._hostileCldList) do
+		arg0_197:RemoveHostileCld(iter0_197)
 	end
 
-	arg0_195:ClearWeapon()
-	arg0_195:ClearBuff()
+	arg0_197:ClearWeapon()
+	arg0_197:ClearBuff()
 
-	arg0_195._distanceBackup = {}
+	arg0_197._distanceBackup = {}
 end
 
-function var9_0.Dispose(arg0_196)
-	arg0_196._exposedList = nil
-	arg0_196._phaseSwitcher = nil
+function var9_0.Dispose(arg0_198)
+	arg0_198._exposedList = nil
+	arg0_198._phaseSwitcher = nil
 
-	arg0_196._weaponQueue:Dispose()
+	arg0_198._weaponQueue:Dispose()
 
-	if arg0_196._airAssistQueue then
-		arg0_196._airAssistQueue:Clear()
+	if arg0_198._airAssistQueue then
+		arg0_198._airAssistQueue:Clear()
 
-		arg0_196._airAssistQueue = nil
+		arg0_198._airAssistQueue = nil
 	end
 
-	arg0_196._equipmentList = nil
-	arg0_196._totalWeapon = nil
+	arg0_198._equipmentList = nil
+	arg0_198._totalWeapon = nil
 
-	local var0_196 = arg0_196._airAssistList
+	local var0_198 = arg0_198._airAssistList
 
-	if var0_196 then
-		for iter0_196, iter1_196 in ipairs(var0_196) do
-			iter1_196:Dispose()
+	if var0_198 then
+		for iter0_198, iter1_198 in ipairs(var0_198) do
+			iter1_198:Dispose()
 		end
 	end
 
-	for iter2_196, iter3_196 in ipairs(arg0_196._fleetAAList) do
-		iter3_196:Dispose()
+	for iter2_198, iter3_198 in ipairs(arg0_198._fleetAAList) do
+		iter3_198:Dispose()
 	end
 
-	for iter4_196, iter5_196 in ipairs(arg0_196._fleetRangeAAList) do
-		iter5_196:Dispose()
+	for iter4_198, iter5_198 in ipairs(arg0_198._fleetRangeAAList) do
+		iter5_198:Dispose()
 	end
 
-	local var1_196 = arg0_196._buffList
+	local var1_198 = arg0_198._buffList
 
-	for iter6_196, iter7_196 in pairs(var1_196) do
-		iter7_196:Dispose()
+	for iter6_198, iter7_198 in pairs(var1_198) do
+		iter7_198:Dispose()
 	end
 
-	local var2_196 = arg0_196._buffStockList
+	local var2_198 = arg0_198._buffStockList
 
-	for iter8_196, iter9_196 in pairs(var2_196) do
-		for iter10_196, iter11_196 in pairs(iter9_196) do
-			iter11_196:Clear()
+	for iter8_198, iter9_198 in pairs(var2_198) do
+		for iter10_198, iter11_198 in pairs(iter9_198) do
+			iter11_198:Clear()
 		end
 	end
 
-	arg0_196._fleetRangeAA = nil
-	arg0_196._aimBias = nil
-	arg0_196._buffList = nil
-	arg0_196._buffStockList = nil
-	arg0_196._cldZCenterCache = nil
-	arg0_196._remoteBoundBone = nil
+	arg0_198._fleetRangeAA = nil
+	arg0_198._aimBias = nil
+	arg0_198._buffList = nil
+	arg0_198._buffStockList = nil
+	arg0_198._cldZCenterCache = nil
+	arg0_198._remoteBoundBone = nil
 
-	arg0_196:RemoveSummonSickness()
-	var0_0.EventDispatcher.DetachEventDispatcher(arg0_196)
+	arg0_198:RemoveSummonSickness()
+	var0_0.EventDispatcher.DetachEventDispatcher(arg0_198)
 end
 
-function var9_0.InitCldComponent(arg0_197)
-	local var0_197 = arg0_197:GetTemplate().cld_box
-	local var1_197 = arg0_197:GetTemplate().cld_offset
-	local var2_197 = var1_197[1]
+function var9_0.InitCldComponent(arg0_199)
+	local var0_199 = arg0_199:GetTemplate().cld_box
+	local var1_199 = arg0_199:GetTemplate().cld_offset
+	local var2_199 = var1_199[1]
 
-	if arg0_197:GetDirection() == var3_0.UnitDir.LEFT then
-		var2_197 = var2_197 * -1
+	if arg0_199:GetDirection() == var3_0.UnitDir.LEFT then
+		var2_199 = var2_199 * -1
 	end
 
-	arg0_197._cldComponent = var0_0.Battle.BattleCubeCldComponent.New(var0_197[1], var0_197[2], var0_197[3], var2_197, var1_197[3] + var0_197[3] / 2)
+	arg0_199._cldComponent = var0_0.Battle.BattleCubeCldComponent.New(var0_199[1], var0_199[2], var0_199[3], var2_199, var1_199[3] + var0_199[3] / 2)
 end
 
-function var9_0.GetBoxSize(arg0_198)
-	return arg0_198._cldComponent:GetCldBoxSize()
+function var9_0.GetBoxSize(arg0_200)
+	return arg0_200._cldComponent:GetCldBoxSize()
 end
 
-function var9_0.GetCldBox(arg0_199)
-	return arg0_199._cldComponent:GetCldBox(arg0_199:GetPosition())
+function var9_0.GetCldBox(arg0_201)
+	return arg0_201._cldComponent:GetCldBox(arg0_201:GetPosition())
 end
 
-function var9_0.GetCldData(arg0_200)
-	return arg0_200._cldComponent:GetCldData()
+function var9_0.GetCldData(arg0_202)
+	return arg0_202._cldComponent:GetCldData()
 end
 
-function var9_0.ShiftCldComponent(arg0_201, arg1_201, arg2_201)
-	arg0_201:updateCldComponet(arg1_201, arg2_201)
+function var9_0.ShiftCldComponent(arg0_203, arg1_203, arg2_203)
+	arg0_203:updateCldComponet(arg1_203, arg2_203)
 end
 
-function var9_0.ResetCldComponent(arg0_202)
-	local var0_202 = arg0_202:GetTemplate().cld_box
-	local var1_202 = arg0_202:GetTemplate().cld_offset
+function var9_0.ResetCldComponent(arg0_204)
+	local var0_204 = arg0_204:GetTemplate().cld_box
+	local var1_204 = arg0_204:GetTemplate().cld_offset
 
-	arg0_202:updateCldComponet(var0_202, var1_202)
+	arg0_204:updateCldComponet(var0_204, var1_204)
 end
 
-function var9_0.updateCldComponet(arg0_203, arg1_203, arg2_203)
-	local var0_203 = arg2_203[1]
+function var9_0.updateCldComponet(arg0_205, arg1_205, arg2_205)
+	local var0_205 = arg2_205[1]
 
-	if arg0_203:GetDirection() == var3_0.UnitDir.LEFT then
-		var0_203 = var0_203 * -1
+	if arg0_205:GetDirection() == var3_0.UnitDir.LEFT then
+		var0_205 = var0_205 * -1
 	end
 
-	arg0_203._cldComponent:ResetOffset(var0_203, arg2_203[3] + arg1_203[3] / 2)
-	arg0_203._cldComponent:ResetSize(arg1_203[1], arg1_203[2], arg1_203[3])
+	arg0_205._cldComponent:ResetOffset(var0_205, arg2_205[3] + arg1_205[3] / 2)
+	arg0_205._cldComponent:ResetSize(arg1_205[1], arg1_205[2], arg1_205[3])
 end
 
-function var9_0.InitOxygen(arg0_204)
-	arg0_204._maxOxy = arg0_204:GetAttrByName("oxyMax")
-	arg0_204._currentOxy = arg0_204:GetAttrByName("oxyMax")
-	arg0_204._oxyRecovery = arg0_204:GetAttrByName("oxyRecovery")
-	arg0_204._oxyRecoveryBench = arg0_204:GetAttrByName("oxyRecoveryBench")
-	arg0_204._oxyRecoverySurface = arg0_204:GetAttrByName("oxyRecoverySurface")
-	arg0_204._oxyConsume = arg0_204:GetAttrByName("oxyCost")
-	arg0_204._oxyState = var0_0.Battle.OxyState.New(arg0_204)
+function var9_0.InitOxygen(arg0_206)
+	arg0_206._maxOxy = arg0_206:GetAttrByName("oxyMax")
+	arg0_206._currentOxy = arg0_206:GetAttrByName("oxyMax")
+	arg0_206._oxyRecovery = arg0_206:GetAttrByName("oxyRecovery")
+	arg0_206._oxyRecoveryBench = arg0_206:GetAttrByName("oxyRecoveryBench")
+	arg0_206._oxyRecoverySurface = arg0_206:GetAttrByName("oxyRecoverySurface")
+	arg0_206._oxyConsume = arg0_206:GetAttrByName("oxyCost")
+	arg0_206._oxyState = var0_0.Battle.OxyState.New(arg0_206)
 
-	arg0_204._oxyState:OnDiveState()
-	arg0_204:ConfigBubbleFX()
+	arg0_206._oxyState:OnDiveState()
+	arg0_206:ConfigBubbleFX()
 
-	return arg0_204._oxyState
+	return arg0_206._oxyState
 end
 
-function var9_0.UpdateOxygen(arg0_205, arg1_205)
-	if arg0_205._oxyState then
-		arg0_205._lastOxyUpdateStamp = arg0_205._lastOxyUpdateStamp or arg1_205
+function var9_0.UpdateOxygen(arg0_207, arg1_207)
+	if arg0_207._oxyState then
+		arg0_207._lastOxyUpdateStamp = arg0_207._lastOxyUpdateStamp or arg1_207
 
-		arg0_205._oxyState:UpdateOxygen()
+		arg0_207._oxyState:UpdateOxygen()
 
-		if arg0_205._oxyState:GetNextBubbleStamp() and arg1_205 > arg0_205._oxyState:GetNextBubbleStamp() then
-			arg0_205._oxyState:FlashBubbleStamp(arg1_205)
-			arg0_205:PlayFX(arg0_205._bubbleFX, true)
+		if arg0_207._oxyState:GetNextBubbleStamp() and arg1_207 > arg0_207._oxyState:GetNextBubbleStamp() then
+			arg0_207._oxyState:FlashBubbleStamp(arg1_207)
+			arg0_207:PlayFX(arg0_207._bubbleFX, true)
 		end
 
-		arg0_205._lastOxyUpdateStamp = arg1_205
+		arg0_207._lastOxyUpdateStamp = arg1_207
 
-		arg0_205:updateSonarExposeTag()
+		arg0_207:updateSonarExposeTag()
 	end
 end
 
-function var9_0.OxyRecover(arg0_206, arg1_206)
-	local var0_206
+function var9_0.OxyRecover(arg0_208, arg1_208)
+	local var0_208
 
-	if arg1_206 == var0_0.Battle.OxyState.STATE_FREE_BENCH then
-		var0_206 = arg0_206._oxyRecoveryBench
-	elseif arg1_206 == var0_0.Battle.OxyState.STATE_FREE_FLOAT then
-		var0_206 = arg0_206._oxyRecovery
+	if arg1_208 == var0_0.Battle.OxyState.STATE_FREE_BENCH then
+		var0_208 = arg0_208._oxyRecoveryBench
+	elseif arg1_208 == var0_0.Battle.OxyState.STATE_FREE_FLOAT then
+		var0_208 = arg0_208._oxyRecovery
 	else
-		var0_206 = arg0_206._oxyRecoverySurface
+		var0_208 = arg0_208._oxyRecoverySurface
 	end
 
-	local var1_206 = pg.TimeMgr.GetInstance():GetCombatTime() - arg0_206._lastOxyUpdateStamp
+	local var1_208 = pg.TimeMgr.GetInstance():GetCombatTime() - arg0_208._lastOxyUpdateStamp
 
-	arg0_206._currentOxy = math.min(arg0_206._maxOxy, arg0_206._currentOxy + var0_206 * var1_206)
+	arg0_208._currentOxy = math.min(arg0_208._maxOxy, arg0_208._currentOxy + var0_208 * var1_208)
 end
 
-function var9_0.OxyConsume(arg0_207)
-	local var0_207 = pg.TimeMgr.GetInstance():GetCombatTime() - arg0_207._lastOxyUpdateStamp
+function var9_0.OxyConsume(arg0_209)
+	local var0_209 = pg.TimeMgr.GetInstance():GetCombatTime() - arg0_209._lastOxyUpdateStamp
 
-	arg0_207._currentOxy = math.max(0, arg0_207._currentOxy - arg0_207._oxyConsume * var0_207)
+	arg0_209._currentOxy = math.max(0, arg0_209._currentOxy - arg0_209._oxyConsume * var0_209)
 end
 
-function var9_0.ChangeOxygenState(arg0_208, arg1_208)
-	arg0_208._oxyState:ChangeState(arg1_208)
+function var9_0.ChangeOxygenState(arg0_210, arg1_210)
+	arg0_210._oxyState:ChangeState(arg1_210)
 end
 
-function var9_0.ChangeWeaponDiveState(arg0_209)
-	for iter0_209, iter1_209 in ipairs(arg0_209._autoWeaponList) do
-		iter1_209:ChangeDiveState()
+function var9_0.ChangeWeaponDiveState(arg0_211)
+	for iter0_211, iter1_211 in ipairs(arg0_211._autoWeaponList) do
+		iter1_211:ChangeDiveState()
 	end
 end
 
-function var9_0.GetOxygenProgress(arg0_210)
-	return arg0_210._currentOxy / arg0_210._maxOxy
+function var9_0.GetOxygenProgress(arg0_212)
+	return arg0_212._currentOxy / arg0_212._maxOxy
 end
 
-function var9_0.GetCuurentOxygen(arg0_211)
-	return arg0_211._currentOxy or 0
+function var9_0.GetCuurentOxygen(arg0_213)
+	return arg0_213._currentOxy or 0
 end
 
-function var9_0.ConfigBubbleFX(arg0_212)
+function var9_0.ConfigBubbleFX(arg0_214)
 	return
 end
 
-function var9_0.SetDiveInvisible(arg0_213, arg1_213)
-	arg0_213._diveInvisible = arg1_213
+function var9_0.SetDiveInvisible(arg0_215, arg1_215)
+	arg0_215._diveInvisible = arg1_215
 
-	arg0_213:DispatchEvent(var0_0.Event.New(var1_0.SUBMARINE_VISIBLE))
-	arg0_213:DispatchEvent(var0_0.Event.New(var1_0.SUBMARINE_DETECTED))
-	arg0_213:dispatchDetectedTrigger()
+	arg0_215:DispatchEvent(var0_0.Event.New(var1_0.SUBMARINE_VISIBLE))
+	arg0_215:DispatchEvent(var0_0.Event.New(var1_0.SUBMARINE_DETECTED))
+	arg0_215:dispatchDetectedTrigger()
 end
 
-function var9_0.GetDiveInvisible(arg0_214)
-	return arg0_214._diveInvisible
+function var9_0.GetDiveInvisible(arg0_216)
+	return arg0_216._diveInvisible
 end
 
-function var9_0.GetOxygenVisible(arg0_215)
-	return arg0_215._oxyState and arg0_215._oxyState:GetBarVisible()
+function var9_0.GetOxygenVisible(arg0_217)
+	return arg0_217._oxyState and arg0_217._oxyState:GetBarVisible()
 end
 
-function var9_0.SetForceVisible(arg0_216)
-	arg0_216:DispatchEvent(var0_0.Event.New(var1_0.SUBMARINE_FORCE_DETECTED))
+function var9_0.SetForceVisible(arg0_218)
+	arg0_218:DispatchEvent(var0_0.Event.New(var1_0.SUBMARINE_FORCE_DETECTED))
 end
 
-function var9_0.Detected(arg0_217, arg1_217)
-	local var0_217
+function var9_0.Detected(arg0_219, arg1_219)
+	local var0_219
 
-	if arg0_217._exposedToSnoar == false and not arg0_217._exposedOverTimeStamp then
-		var0_217 = true
+	if arg0_219._exposedToSnoar == false and not arg0_219._exposedOverTimeStamp then
+		var0_219 = true
 	end
 
-	if arg1_217 then
-		arg0_217:updateExposeTimeStamp(arg1_217)
+	if arg1_219 then
+		arg0_219:updateExposeTimeStamp(arg1_219)
 	else
-		arg0_217._exposedToSnoar = true
+		arg0_219._exposedToSnoar = true
 	end
 
-	if var0_217 then
-		arg0_217:DispatchEvent(var0_0.Event.New(var1_0.SUBMARINE_DETECTED, {}))
-		arg0_217:dispatchDetectedTrigger()
+	if var0_219 then
+		arg0_219:DispatchEvent(var0_0.Event.New(var1_0.SUBMARINE_DETECTED, {}))
+		arg0_219:dispatchDetectedTrigger()
 	end
 end
 
-function var9_0.Undetected(arg0_218)
-	arg0_218._exposedToSnoar = false
+function var9_0.Undetected(arg0_220)
+	arg0_220._exposedToSnoar = false
 
-	arg0_218:updateExposeTimeStamp(var5_0.SUB_EXPOSE_LASTING_DURATION)
+	arg0_220:updateExposeTimeStamp(var5_0.SUB_EXPOSE_LASTING_DURATION)
 end
 
-function var9_0.RemoveSonarExpose(arg0_219)
-	arg0_219._exposedToSnoar = false
-	arg0_219._exposedOverTimeStamp = nil
+function var9_0.RemoveSonarExpose(arg0_221)
+	arg0_221._exposedToSnoar = false
+	arg0_221._exposedOverTimeStamp = nil
 end
 
-function var9_0.updateSonarExposeTag(arg0_220)
-	if arg0_220._exposedOverTimeStamp and not arg0_220._exposedToSnoar and pg.TimeMgr.GetInstance():GetCombatTime() > arg0_220._exposedOverTimeStamp then
-		arg0_220._exposedOverTimeStamp = nil
+function var9_0.updateSonarExposeTag(arg0_222)
+	if arg0_222._exposedOverTimeStamp and not arg0_222._exposedToSnoar and pg.TimeMgr.GetInstance():GetCombatTime() > arg0_222._exposedOverTimeStamp then
+		arg0_222._exposedOverTimeStamp = nil
 
-		arg0_220:DispatchEvent(var0_0.Event.New(var1_0.SUBMARINE_DETECTED, {
+		arg0_222:DispatchEvent(var0_0.Event.New(var1_0.SUBMARINE_DETECTED, {
 			detected = false
 		}))
-		arg0_220:dispatchDetectedTrigger()
+		arg0_222:dispatchDetectedTrigger()
 	end
 end
 
-function var9_0.updateExposeTimeStamp(arg0_221, arg1_221)
-	local var0_221 = pg.TimeMgr.GetInstance():GetCombatTime() + arg1_221
+function var9_0.updateExposeTimeStamp(arg0_223, arg1_223)
+	local var0_223 = pg.TimeMgr.GetInstance():GetCombatTime() + arg1_223
 
-	arg0_221._exposedOverTimeStamp = arg0_221._exposedOverTimeStamp or 0
-	arg0_221._exposedOverTimeStamp = var0_221 < arg0_221._exposedOverTimeStamp and arg0_221._exposedOverTimeStamp or var0_221
+	arg0_223._exposedOverTimeStamp = arg0_223._exposedOverTimeStamp or 0
+	arg0_223._exposedOverTimeStamp = var0_223 < arg0_223._exposedOverTimeStamp and arg0_223._exposedOverTimeStamp or var0_223
 end
 
-function var9_0.IsRunMode(arg0_222)
-	return arg0_222._oxyState and arg0_222._oxyState:GetRundMode()
+function var9_0.IsRunMode(arg0_224)
+	return arg0_224._oxyState and arg0_224._oxyState:GetRundMode()
 end
 
-function var9_0.GetDiveDetected(arg0_223)
-	return arg0_223:GetDiveInvisible() and (arg0_223._exposedOverTimeStamp or arg0_223._exposedToSnoar)
+function var9_0.GetDiveDetected(arg0_225)
+	return arg0_225:GetDiveInvisible() and (arg0_225._exposedOverTimeStamp or arg0_225._exposedToSnoar)
 end
 
-function var9_0.GetForceExpose(arg0_224)
-	return arg0_224._oxyState and arg0_224._oxyState:GetForceExpose()
+function var9_0.GetForceExpose(arg0_226)
+	return arg0_226._oxyState and arg0_226._oxyState:GetForceExpose()
 end
 
-function var9_0.dispatchDetectedTrigger(arg0_225)
-	if arg0_225:GetDiveDetected() then
-		arg0_225:TriggerBuff(var3_0.BuffEffectType.ON_SUB_DETECTED, {})
+function var9_0.dispatchDetectedTrigger(arg0_227)
+	if arg0_227:GetDiveDetected() then
+		arg0_227:TriggerBuff(var3_0.BuffEffectType.ON_SUB_DETECTED, {})
 	else
-		arg0_225:TriggerBuff(var3_0.BuffEffectType.ON_SUB_UNDETECTED, {})
+		arg0_227:TriggerBuff(var3_0.BuffEffectType.ON_SUB_UNDETECTED, {})
 	end
 end
 
-function var9_0.GetRaidDuration(arg0_226)
-	return arg0_226:GetAttrByName("oxyMax") / arg0_226:GetAttrByName("oxyCost")
+function var9_0.GetRaidDuration(arg0_228)
+	return arg0_228:GetAttrByName("oxyMax") / arg0_228:GetAttrByName("oxyCost")
 end
 
-function var9_0.EnterRaidRange(arg0_227)
-	if arg0_227:GetPosition().x > arg0_227._subRaidLine then
+function var9_0.EnterRaidRange(arg0_229)
+	if arg0_229:GetPosition().x > arg0_229._subRaidLine then
 		return true
 	else
 		return false
 	end
 end
 
-function var9_0.EnterRetreatRange(arg0_228)
-	if arg0_228:GetPosition().x < arg0_228._subRetreatLine then
+function var9_0.EnterRetreatRange(arg0_230)
+	if arg0_230:GetPosition().x < arg0_230._subRetreatLine then
 		return true
 	else
 		return false
 	end
 end
 
-function var9_0.GetOxyState(arg0_229)
-	return arg0_229._oxyState
+function var9_0.GetOxyState(arg0_231)
+	return arg0_231._oxyState
 end
 
-function var9_0.GetCurrentOxyState(arg0_230)
-	if not arg0_230._oxyState then
+function var9_0.GetCurrentOxyState(arg0_232)
+	if not arg0_232._oxyState then
 		return var3_0.OXY_STATE.FLOAT
 	else
-		return arg0_230._oxyState:GetCurrentDiveState()
+		return arg0_232._oxyState:GetCurrentDiveState()
 	end
 end
 
-function var9_0.InitAntiSubState(arg0_231, arg1_231, arg2_231)
-	arg0_231._antiSubVigilanceState = var0_0.Battle.AntiSubState.New(arg0_231)
+function var9_0.InitAntiSubState(arg0_233, arg1_233, arg2_233)
+	arg0_233._antiSubVigilanceState = var0_0.Battle.AntiSubState.New(arg0_233)
 
-	arg0_231:DispatchEvent(var0_0.Event.New(var1_0.INIT_ANIT_SUB_VIGILANCE, {
-		sonarRange = arg1_231
+	arg0_233:DispatchEvent(var0_0.Event.New(var1_0.INIT_ANIT_SUB_VIGILANCE, {
+		sonarRange = arg1_233
 	}))
 
-	return arg0_231._antiSubVigilanceState
+	return arg0_233._antiSubVigilanceState
 end
 
-function var9_0.GetAntiSubState(arg0_232)
-	return arg0_232._antiSubVigilanceState
+function var9_0.GetAntiSubState(arg0_234)
+	return arg0_234._antiSubVigilanceState
 end
 
-function var9_0.UpdateBlindInvisibleBySpectre(arg0_233)
-	local var0_233, var1_233 = arg0_233:IsSpectre()
+function var9_0.UpdateBlindInvisibleBySpectre(arg0_235)
+	local var0_235, var1_235 = arg0_235:IsSpectre()
 
-	if var1_233 <= var5_0.SPECTRE_UNIT_TYPE and var1_233 ~= var5_0.VISIBLE_SPECTRE_UNIT_TYPE then
-		arg0_233:SetBlindInvisible(true)
+	if var1_235 <= var5_0.SPECTRE_UNIT_TYPE and var1_235 ~= var5_0.VISIBLE_SPECTRE_UNIT_TYPE then
+		arg0_235:SetBlindInvisible(true)
 	else
-		arg0_233:SetBlindInvisible(false)
+		arg0_235:SetBlindInvisible(false)
 	end
 end
 
-function var9_0.SetBlindInvisible(arg0_234, arg1_234)
-	arg0_234._exposedList = arg1_234 and {} or nil
-	arg0_234._blindInvisible = arg1_234
+function var9_0.SetBlindInvisible(arg0_236, arg1_236)
+	arg0_236._exposedList = arg1_236 and {} or nil
+	arg0_236._blindInvisible = arg1_236
 
-	arg0_234:DispatchEvent(var0_0.Event.New(var1_0.BLIND_VISIBLE))
+	arg0_236:DispatchEvent(var0_0.Event.New(var1_0.BLIND_VISIBLE))
 end
 
-function var9_0.GetBlindInvisible(arg0_235)
-	return arg0_235._blindInvisible
+function var9_0.GetBlindInvisible(arg0_237)
+	return arg0_237._blindInvisible
 end
 
-function var9_0.GetExposed(arg0_236)
-	if not arg0_236._blindInvisible then
-		return true
-	end
-
-	for iter0_236, iter1_236 in pairs(arg0_236._exposedList) do
-		return true
-	end
-end
-
-function var9_0.AppendExposed(arg0_237, arg1_237)
-	if not arg0_237._blindInvisible then
-		return
-	end
-
-	local var0_237 = arg0_237._exposedList[arg1_237]
-
-	arg0_237._exposedList[arg1_237] = true
-
-	if not var0_237 then
-		arg0_237:DispatchEvent(var0_0.Event.New(var1_0.BLIND_EXPOSE))
-	end
-end
-
-function var9_0.RemoveExposed(arg0_238, arg1_238)
+function var9_0.GetExposed(arg0_238)
 	if not arg0_238._blindInvisible then
+		return true
+	end
+
+	for iter0_238, iter1_238 in pairs(arg0_238._exposedList) do
+		return true
+	end
+end
+
+function var9_0.AppendExposed(arg0_239, arg1_239)
+	if not arg0_239._blindInvisible then
 		return
 	end
 
-	arg0_238._exposedList[arg1_238] = nil
+	local var0_239 = arg0_239._exposedList[arg1_239]
 
-	arg0_238:DispatchEvent(var0_0.Event.New(var1_0.BLIND_EXPOSE))
-end
+	arg0_239._exposedList[arg1_239] = true
 
-function var9_0.SetWorldDeathMark(arg0_239)
-	arg0_239._worldDeathMark = true
-end
-
-function var9_0.GetWorldDeathMark(arg0_240)
-	return arg0_240._worldDeathMark
-end
-
-function var9_0.InitCloak(arg0_241)
-	arg0_241._cloak = var0_0.Battle.BattleUnitCloakComponent.New(arg0_241)
-
-	arg0_241:DispatchEvent(var0_0.Event.New(var1_0.INIT_CLOAK))
-
-	return arg0_241._cloak
-end
-
-function var9_0.CloakOnFire(arg0_242, arg1_242)
-	if arg0_242._cloak then
-		arg0_242._cloak:UpdateDotExpose(arg1_242)
+	if not var0_239 then
+		arg0_239:DispatchEvent(var0_0.Event.New(var1_0.BLIND_EXPOSE))
 	end
 end
 
-function var9_0.CloakExpose(arg0_243, arg1_243)
-	if arg0_243._cloak then
-		arg0_243._cloak:AppendExpose(arg1_243)
+function var9_0.RemoveExposed(arg0_240, arg1_240)
+	if not arg0_240._blindInvisible then
+		return
 	end
+
+	arg0_240._exposedList[arg1_240] = nil
+
+	arg0_240:DispatchEvent(var0_0.Event.New(var1_0.BLIND_EXPOSE))
 end
 
-function var9_0.StrikeExpose(arg0_244)
+function var9_0.SetWorldDeathMark(arg0_241)
+	arg0_241._worldDeathMark = true
+end
+
+function var9_0.GetWorldDeathMark(arg0_242)
+	return arg0_242._worldDeathMark
+end
+
+function var9_0.InitCloak(arg0_243)
+	arg0_243._cloak = var0_0.Battle.BattleUnitCloakComponent.New(arg0_243)
+
+	arg0_243:DispatchEvent(var0_0.Event.New(var1_0.INIT_CLOAK))
+
+	return arg0_243._cloak
+end
+
+function var9_0.CloakOnFire(arg0_244, arg1_244)
 	if arg0_244._cloak then
-		arg0_244._cloak:AppendStrikeExpose()
+		arg0_244._cloak:UpdateDotExpose(arg1_244)
 	end
 end
 
-function var9_0.BombardExpose(arg0_245)
+function var9_0.CloakExpose(arg0_245, arg1_245)
 	if arg0_245._cloak then
-		arg0_245._cloak:AppendBombardExpose()
+		arg0_245._cloak:AppendExpose(arg1_245)
 	end
 end
 
-function var9_0.UpdateCloak(arg0_246, arg1_246)
-	arg0_246._cloak:Update(arg1_246)
+function var9_0.StrikeExpose(arg0_246)
+	if arg0_246._cloak then
+		arg0_246._cloak:AppendStrikeExpose()
+	end
 end
 
-function var9_0.UpdateCloakConfig(arg0_247)
+function var9_0.BombardExpose(arg0_247)
 	if arg0_247._cloak then
-		arg0_247._cloak:UpdateCloakConfig()
-		arg0_247:DispatchEvent(var0_0.Event.New(var1_0.UPDATE_CLOAK_CONFIG))
+		arg0_247._cloak:AppendBombardExpose()
 	end
 end
 
-function var9_0.DispatchCloakStateUpdate(arg0_248)
-	if arg0_248._cloak then
-		arg0_248:DispatchEvent(var0_0.Event.New(var1_0.UPDATE_CLOAK_STATE))
+function var9_0.UpdateCloak(arg0_248, arg1_248)
+	arg0_248._cloak:Update(arg1_248)
+end
+
+function var9_0.UpdateCloakConfig(arg0_249)
+	if arg0_249._cloak then
+		arg0_249._cloak:UpdateCloakConfig()
+		arg0_249:DispatchEvent(var0_0.Event.New(var1_0.UPDATE_CLOAK_CONFIG))
 	end
 end
 
-function var9_0.GetCloak(arg0_249)
-	return arg0_249._cloak
-end
-
-function var9_0.AttachAimBias(arg0_250, arg1_250)
-	arg0_250._aimBias = arg1_250
-
-	arg0_250:DispatchEvent(var0_0.Event.New(var1_0.INIT_AIMBIAS))
-end
-
-function var9_0.DetachAimBias(arg0_251)
-	arg0_251:DispatchEvent(var0_0.Event.New(var1_0.REMOVE_AIMBIAS))
-	arg0_251._aimBias:RemoveCrew(arg0_251)
-
-	arg0_251._aimBias = nil
-end
-
-function var9_0.ExitSmokeArea(arg0_252)
-	arg0_252._aimBias:SmokeExitPause()
-end
-
-function var9_0.UpdateAimBiasSkillState(arg0_253)
-	if arg0_253._aimBias and arg0_253._aimBias:GetHost() == arg0_253 then
-		arg0_253._aimBias:UpdateSkillLock()
+function var9_0.DispatchCloakStateUpdate(arg0_250)
+	if arg0_250._cloak then
+		arg0_250:DispatchEvent(var0_0.Event.New(var1_0.UPDATE_CLOAK_STATE))
 	end
 end
 
-function var9_0.HostAimBias(arg0_254)
-	if arg0_254._aimBias then
-		arg0_254:DispatchEvent(var0_0.Event.New(var1_0.HOST_AIMBIAS))
+function var9_0.GetCloak(arg0_251)
+	return arg0_251._cloak
+end
+
+function var9_0.AttachAimBias(arg0_252, arg1_252)
+	arg0_252._aimBias = arg1_252
+
+	arg0_252:DispatchEvent(var0_0.Event.New(var1_0.INIT_AIMBIAS))
+end
+
+function var9_0.DetachAimBias(arg0_253)
+	arg0_253:DispatchEvent(var0_0.Event.New(var1_0.REMOVE_AIMBIAS))
+	arg0_253._aimBias:RemoveCrew(arg0_253)
+
+	arg0_253._aimBias = nil
+end
+
+function var9_0.ExitSmokeArea(arg0_254)
+	arg0_254._aimBias:SmokeExitPause()
+end
+
+function var9_0.UpdateAimBiasSkillState(arg0_255)
+	if arg0_255._aimBias and arg0_255._aimBias:GetHost() == arg0_255 then
+		arg0_255._aimBias:UpdateSkillLock()
 	end
 end
 
-function var9_0.GetAimBias(arg0_255)
-	return arg0_255._aimBias
+function var9_0.HostAimBias(arg0_256)
+	if arg0_256._aimBias then
+		arg0_256:DispatchEvent(var0_0.Event.New(var1_0.HOST_AIMBIAS))
+	end
 end
 
-function var9_0.SwitchSpine(arg0_256, arg1_256, arg2_256)
-	arg0_256:DispatchEvent(var0_0.Event.New(var1_0.SWITCH_SPINE, {
-		skin = arg1_256,
-		HPBarOffset = arg2_256
+function var9_0.GetAimBias(arg0_257)
+	return arg0_257._aimBias
+end
+
+function var9_0.SwitchSpine(arg0_258, arg1_258, arg2_258)
+	arg0_258:DispatchEvent(var0_0.Event.New(var1_0.SWITCH_SPINE, {
+		skin = arg1_258,
+		HPBarOffset = arg2_258
 	}))
 end
 
-function var9_0.Freeze(arg0_257)
-	for iter0_257, iter1_257 in ipairs(arg0_257._totalWeapon) do
-		iter1_257:StartJamming()
+function var9_0.Freeze(arg0_259)
+	for iter0_259, iter1_259 in ipairs(arg0_259._totalWeapon) do
+		iter1_259:StartJamming()
 	end
 
-	if arg0_257._airAssistList then
-		for iter2_257, iter3_257 in ipairs(arg0_257._airAssistList) do
-			iter3_257:StartJamming()
+	if arg0_259._airAssistList then
+		for iter2_259, iter3_259 in ipairs(arg0_259._airAssistList) do
+			iter3_259:StartJamming()
 		end
 	end
 end
 
-function var9_0.ActiveFreeze(arg0_258)
-	for iter0_258, iter1_258 in ipairs(arg0_258._totalWeapon) do
-		iter1_258:JammingEliminate()
+function var9_0.ActiveFreeze(arg0_260)
+	for iter0_260, iter1_260 in ipairs(arg0_260._totalWeapon) do
+		iter1_260:JammingEliminate()
 	end
 
-	if arg0_258._airAssistList then
-		for iter2_258, iter3_258 in ipairs(arg0_258._airAssistList) do
-			iter3_258:JammingEliminate()
+	if arg0_260._airAssistList then
+		for iter2_260, iter3_260 in ipairs(arg0_260._airAssistList) do
+			iter3_260:JammingEliminate()
 		end
 	end
 end
 
-function var9_0.ActiveWeaponSectorView(arg0_259, arg1_259, arg2_259)
-	local var0_259 = {
-		weapon = arg1_259,
-		isActive = arg2_259
+function var9_0.ActiveWeaponSectorView(arg0_261, arg1_261, arg2_261)
+	local var0_261 = {
+		weapon = arg1_261,
+		isActive = arg2_261
 	}
 
-	arg0_259:DispatchEvent(var0_0.Event.New(var1_0.WEAPON_SECTOR, var0_259))
+	arg0_261:DispatchEvent(var0_0.Event.New(var1_0.WEAPON_SECTOR, var0_261))
 end

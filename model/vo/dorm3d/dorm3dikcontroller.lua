@@ -10,6 +10,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.backTime = arg1_1.backTime
 	arg0_1.actionRevertTime = arg1_1.actionRevertTime
 	arg0_1.timelineActionEvent = arg1_1.timelineActionEvent
+	arg0_1.ignoreDrag = arg1_1.ignoreDrag
 end
 
 function var0_0.GetTriggerName(arg0_2)
@@ -46,6 +47,10 @@ end
 
 function var0_0.GetTimelineActionEvent(arg0_10)
 	return arg0_10.timelineActionEvent
+end
+
+function var0_0.IsIgnoreDrag(arg0_11)
+	return arg0_11.ignoreDrag
 end
 
 return var0_0

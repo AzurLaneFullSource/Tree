@@ -197,7 +197,7 @@ function var0_0.GetActions(arg0_16)
 			var4_16 = #var5_16:GetUsingSlots()
 		end
 
-		var0_16, var1_16, var2_16 = var3_16[var4_16], arg0_16.preheatAction[2], arg0_16.preheatAction[3]
+		var0_16, var1_16, var2_16, preheatOnlyHost = var3_16[var4_16], arg0_16.preheatAction[2], arg0_16.preheatAction[3], arg0_16.preheatAction[4]
 	end
 
 	local var6_16
@@ -214,7 +214,7 @@ function var0_0.GetActions(arg0_16)
 		var8_16[0] = true
 	end
 
-	return var6_16, var7_16, var8_16, var0_16, var1_16, arg0_16.tailAction
+	return var6_16, var7_16, var8_16, var0_16, var1_16, arg0_16.tailAction, preheatOnlyHost
 end
 
 function var0_0.OnAwake(arg0_17)

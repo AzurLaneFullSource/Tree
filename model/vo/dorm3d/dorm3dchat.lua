@@ -1,0 +1,196 @@
+local var0_0 = class("Dorm3dChat", import("..BaseVO"))
+local var1_0 = pg.dorm3d_ins_ship_group_template
+local var2_0 = pg.dorm3d_ins_chat_group
+
+function var0_0.Ctor(arg0_1, arg1_1)
+	arg0_1.characterId = arg1_1.ship_group
+	arg0_1.skinId = arg1_1.cur_back
+	arg0_1.care = arg1_1.care_flag
+	arg0_1.currentTopicId = arg1_1.cur_comm_id
+
+	arg0_1:SetTopics(arg1_1.comm_list)
+
+	arg0_1.currentTopic = arg0_1:GetTopic(arg0_1.currentTopicId)
+	arg0_1.characterConfig = var1_0[arg0_1.characterId]
+	arg0_1.name = arg0_1.characterConfig.name
+	arg0_1.sculpture = arg0_1.characterConfig.sculpture
+	arg0_1.groupBackground = arg0_1.characterConfig.background
+	arg0_1.type = arg0_1.characterConfig.type
+	arg0_1.skins = {}
+
+	if arg0_1.type == 1 then
+		arg0_1:SetBackgrounds()
+	end
+end
+
+function var0_0.SetTopics(arg0_2, arg1_2)
+	arg0_2.topics = {}
+	arg0_2.allTopicIds = var2_0.get_id_list_by_ship_group[arg0_2.characterId]
+
+	for iter0_2, iter1_2 in ipairs(arg0_2.allTopicIds) do
+		if var2_0[iter1_2].type == "1" then
+			local var0_2
+
+			for iter2_2, iter3_2 in ipairs(arg1_2) do
+				if iter3_2.id == iter1_2 then
+					var0_2 = iter3_2
+				end
+			end
+
+			local var1_2 = Dorm3dTopic.New(var2_0[iter1_2], var0_2)
+
+			table.insert(arg0_2.topics, var1_2)
+		end
+	end
+end
+
+function var0_0.GetTopic(arg0_3, arg1_3)
+	for iter0_3, iter1_3 in ipairs(arg0_3.topics) do
+		if iter1_3.topicId == arg1_3 then
+			return iter1_3
+		end
+	end
+
+	return nil
+end
+
+function var0_0.SetCurrentTopic(arg0_4, arg1_4)
+	arg0_4.currentTopicId = arg1_4
+	arg0_4.currentTopic = arg0_4:GetTopic(arg1_4)
+end
+
+function var0_0.GetCharacterEndFlag(arg0_5)
+	local var0_5 = 1
+
+	for iter0_5, iter1_5 in ipairs(arg0_5.topics) do
+		if iter1_5.active and not iter1_5:IsCompleted() then
+			var0_5 = 0
+
+			break
+		end
+	end
+
+	return var0_5
+end
+
+function var0_0.GetCharacterEndFlagExceptCurrent(arg0_6)
+	local var0_6 = 1
+
+	for iter0_6, iter1_6 in ipairs(arg0_6.topics) do
+		if iter1_6.topicId ~= arg0_6.currentTopicId and iter1_6.active and not iter1_6:IsCompleted() then
+			var0_6 = 0
+
+			break
+		end
+	end
+
+	return var0_6
+end
+
+function var0_0.GetLatestOperationTime(arg0_7)
+	local var0_7 = 0
+
+	for iter0_7, iter1_7 in ipairs(arg0_7.topics) do
+		if iter1_7.active and var0_7 < iter1_7.operationTime then
+			var0_7 = iter1_7.operationTime
+		end
+	end
+
+	return var0_7
+end
+
+function var0_0.SetCare(arg0_8, arg1_8)
+	arg0_8.care = arg1_8
+end
+
+function var0_0.SortTopicList(arg0_9)
+	table.sort(arg0_9.topics, function(arg0_10, arg1_10)
+		local var0_10 = arg0_10.active and 1 or 0
+		local var1_10 = arg1_10.active and 1 or 0
+
+		if var0_10 ~= var1_10 then
+			return var1_10 < var0_10
+		end
+
+		return arg0_10.topicId > arg1_10.topicId
+	end)
+end
+
+function var0_0.SetBackgrounds(arg0_11)
+	arg0_11.skins = arg0_11:getDisplayableSkinList()
+
+	local var0_11 = getProxy(CollectionProxy):getGroups()[arg0_11.characterId]
+
+	for iter0_11 = #arg0_11.skins, 1, -1 do
+		local var1_11 = arg0_11.skins[iter0_11]
+
+		if var1_11.skin_type == ShipSkin.SKIN_TYPE_PROPOSE and (not var0_11 or var0_11 and var0_11.married == 0) then
+			table.remove(arg0_11.skins, iter0_11)
+		end
+
+		if var1_11.skin_type == ShipSkin.SKIN_TYPE_REMAKE and (not var0_11 or var0_11 and not var0_11.trans) then
+			table.remove(arg0_11.skins, iter0_11)
+		end
+	end
+end
+
+function var0_0.GetPainting(arg0_12)
+	local var0_12 = ShipGroup.getDefaultShipConfig(arg0_12.characterId).skin_id
+	local var1_12 = pg.ship_skin_template[var0_12]
+
+	assert(var1_12, "ship_skin_template not exist: " .. var0_12)
+
+	return var1_12.painting
+end
+
+function var0_0.GetPaintingId(arg0_13)
+	return ShipGroup.getDefaultShipConfig(arg0_13.characterId).skin_id
+end
+
+function var0_0.getDisplayableSkinList(arg0_14)
+	local var0_14 = {}
+
+	local function var1_14(arg0_15)
+		return arg0_15.skin_type == ShipSkin.SKIN_TYPE_OLD or arg0_15.skin_type == ShipSkin.SKIN_TYPE_NOT_HAVE_HIDE and not getProxy(ShipSkinProxy):hasSkin(arg0_15.id)
+	end
+
+	local function var2_14(arg0_16)
+		return getProxy(ShipSkinProxy):InShowTime(arg0_16)
+	end
+
+	for iter0_14, iter1_14 in ipairs(pg.ship_skin_template.all) do
+		local var3_14 = pg.ship_skin_template[iter1_14]
+
+		if var3_14.ship_group == arg0_14.characterId and var3_14.no_showing ~= "1" and not var1_14(var3_14) and var2_14(var3_14.id) then
+			table.insert(var0_14, var3_14)
+		end
+	end
+
+	return var0_14
+end
+
+function var0_0.GetTopicsSortByActivateTime(arg0_17)
+	local var0_17 = Clone(arg0_17.topics)
+
+	table.sort(var0_17, function(arg0_18, arg1_18)
+		local var0_18 = arg0_18.active and 1 or 0
+		local var1_18 = arg1_18.active and 1 or 0
+
+		if var0_18 ~= var1_18 then
+			return var1_18 < var0_18
+		end
+
+		local var2_18 = arg0_18.operationTime
+		local var3_18 = arg1_18.operationTime
+
+		if var2_18 ~= var3_18 then
+			return var3_18 < var2_18
+		end
+
+		return arg0_18.topicId > arg1_18.topicId
+	end)
+
+	return var0_17
+end
+
+return var0_0

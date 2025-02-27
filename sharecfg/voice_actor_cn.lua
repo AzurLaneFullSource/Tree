@@ -1711,5 +1711,17 @@ pg.voice_actor_CN = {
 	[440] = {
 		code = 440,
 		actor_name = "Hinano Sakikawa"
+	},
+	[441] = {
+		code = 441,
+		actor_name = "Ayaka Asai"
+	},
+	[442] = {
+		code = 442,
+		actor_name = "Asaki Yuikawa"
+	},
+	[443] = {
+		code = 443,
+		actor_name = "Yuri Fujimoto"
 	}
 }

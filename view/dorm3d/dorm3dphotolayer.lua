@@ -338,6 +338,14 @@ function var0_0.didEnter(arg0_7)
 				NotificationMgr.Inst:PlayShutterSound()
 			end
 
+			getProxy(Dorm3dChatProxy):TriggerEvent({
+				{
+					value = 1,
+					event_type = 160,
+					ship_id = arg0_7.scene.apartment:GetConfigID()
+				}
+			})
+
 			local var0_35 = arg0_7.room:GetCameraZones()[arg0_7.zoneIndex]
 			local var1_35 = Dorm3dCameraAnim.New({
 				configId = arg0_7.animID
@@ -736,7 +744,7 @@ function var0_0.UpdateActionPanel(arg0_68)
 				arg0_68.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "ResetCurrentCharPoint", var7_77)
 			end
 
-			arg0_68.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "SyncCurrentInterestTransform")
+			arg0_68.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "SyncCurrentInterestSmooth")
 
 			if var0_77.index > #var0_77.animPlayList then
 				var6_73()
@@ -847,9 +855,7 @@ function var0_0.UpdateActionPanel(arg0_68)
 		var8_68()
 	end
 
-	local var10_68 = arg0_68.room:GetCameraZones()[arg0_68.zoneIndex]
-
-	local function var11_68(arg0_86, arg1_86)
+	local function var10_68(arg0_86, arg1_86)
 		local var0_86 = arg1_86:Find("Actions")
 		local var1_86 = arg0_86.anims
 
@@ -861,7 +867,7 @@ function var0_0.UpdateActionPanel(arg0_68)
 			arg1_87 = arg1_87 + 1
 
 			local var0_87 = var1_86[arg1_87]
-			local var1_87 = var10_68:CheckFurnitureIdInZone(arg0_86.furnitureId)
+			local var1_87 = var0_68:CheckFurnitureIdInZone(arg0_86.furnitureId)
 			local var2_87 = arg0_68.room:IsFurnitureSetIn(arg0_86.furnitureId)
 			local var3_87 = var1_87 and var2_87
 
@@ -916,7 +922,7 @@ function var0_0.UpdateActionPanel(arg0_68)
 		setActive(arg2_89:Find("Button/Lock"), not var2_89)
 		setActive(arg2_89:Find("Button/BG"), var2_89)
 
-		local var3_89 = var10_68:CheckFurnitureIdInZone(var0_89.furnitureId)
+		local var3_89 = var0_68:CheckFurnitureIdInZone(var0_89.furnitureId)
 		local var4_89
 
 		if var3_89 then
@@ -939,9 +945,9 @@ function var0_0.UpdateActionPanel(arg0_68)
 				arg0_68.settingSpecialFurnitureIndex = arg1_89
 			end
 
-			var11_68(var0_89, arg2_89, arg1_89)
 			var9_68()
 		end)
+		var10_68(var0_89, arg2_89)
 	end)
 	var9_68()
 	var6_68()
@@ -954,7 +960,7 @@ end
 function var0_0.GetAnimPlayList(arg0_93, arg1_93)
 	local var0_93 = arg1_93
 	local var1_93 = {}
-	local var2_93 = 10
+	local var2_93 = 100
 
 	while true do
 		local var3_93 = Dorm3dCameraAnim.New({
@@ -1383,7 +1389,7 @@ function var0_0.UpdateSkinList(arg0_127)
 							local var1_133 = var0_133.animPlayList[iter0_133]:GetStartPoint()
 
 							if #var1_133 > 0 then
-								arg0_127.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "ResetCharPoint", var1_133)
+								arg0_127.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "ResetCurrentCharPoint", var1_133)
 
 								break
 							end
@@ -1391,7 +1397,7 @@ function var0_0.UpdateSkinList(arg0_127)
 							if iter0_133 == 1 then
 								local var2_133 = arg0_127.room:GetCameraZones()[arg0_127.zoneIndex]
 
-								arg0_127.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "ResetCharPoint", var2_133:GetWatchCameraName())
+								arg0_127.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "ResetCurrentCharPoint", var2_133:GetWatchCameraName())
 							end
 						end
 

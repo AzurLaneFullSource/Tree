@@ -921538,7 +921538,7 @@ _G.pg.base.expedition_data_template[1882301] = {
 	limit_type = 1,
 	name = "Elite Fleet",
 	plot_type = 0,
-	scale = 80,
+	scale = 100,
 	sink_limit = 1,
 	time_limit = 120,
 	type = 95,
@@ -921616,7 +921616,7 @@ _G.pg.base.expedition_data_template[1882302] = {
 	limit_type = 1,
 	name = "Elite Fleet",
 	plot_type = 0,
-	scale = 80,
+	scale = 100,
 	sink_limit = 1,
 	time_limit = 120,
 	type = 95,
@@ -921694,7 +921694,7 @@ _G.pg.base.expedition_data_template[1882303] = {
 	limit_type = 1,
 	name = "Elite Fleet",
 	plot_type = 0,
-	scale = 80,
+	scale = 100,
 	sink_limit = 1,
 	time_limit = 120,
 	type = 95,
@@ -921772,7 +921772,7 @@ _G.pg.base.expedition_data_template[1882304] = {
 	limit_type = 1,
 	name = "Elite Fleet",
 	plot_type = 0,
-	scale = 80,
+	scale = 100,
 	sink_limit = 1,
 	time_limit = 120,
 	type = 95,
@@ -921850,7 +921850,7 @@ _G.pg.base.expedition_data_template[1882305] = {
 	limit_type = 1,
 	name = "Elite Fleet",
 	plot_type = 0,
-	scale = 80,
+	scale = 100,
 	sink_limit = 1,
 	time_limit = 120,
 	type = 95,
@@ -921928,7 +921928,7 @@ _G.pg.base.expedition_data_template[1882306] = {
 	limit_type = 1,
 	name = "Elite Fleet",
 	plot_type = 0,
-	scale = 80,
+	scale = 100,
 	sink_limit = 1,
 	time_limit = 120,
 	type = 95,
@@ -926460,6 +926460,12677 @@ _G.pg.base.expedition_data_template[1889005] = {
 	objective_3 = {
 		5,
 		150,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890001,
+	effect_prefab = "",
+	exp = 105,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1890001,
+	level = 21,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200381,
+		},
+		{
+			2,
+			17021,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890002,
+	effect_prefab = "",
+	exp = 121,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1890002,
+	level = 22,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200381,
+		},
+		{
+			2,
+			17021,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890003,
+	effect_prefab = "",
+	exp = 138,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1890003,
+	level = 23,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200381,
+		},
+		{
+			2,
+			17021,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890004,
+	effect_prefab = "",
+	exp = 105,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1890004,
+	level = 21,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200381,
+		},
+		{
+			2,
+			17011,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890005,
+	effect_prefab = "",
+	exp = 121,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1890005,
+	level = 22,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200381,
+		},
+		{
+			2,
+			17011,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890006,
+	effect_prefab = "",
+	exp = 138,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1890006,
+	level = 23,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200381,
+		},
+		{
+			2,
+			17011,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890007,
+	effect_prefab = "",
+	exp = 105,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1890007,
+	level = 21,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200381,
+		},
+		{
+			2,
+			17041,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890008,
+	effect_prefab = "",
+	exp = 121,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1890008,
+	level = 22,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200381,
+		},
+		{
+			2,
+			17041,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890009,
+	effect_prefab = "",
+	exp = 138,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1890009,
+	level = 23,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200381,
+		},
+		{
+			2,
+			17041,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890013,
+	effect_prefab = "",
+	exp = 181,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "batuoluomeiao",
+	icon_type = 2,
+	id = 1890013,
+	level = 25,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200368,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890101] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890001,
+	effect_prefab = "",
+	exp = 130,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1890101,
+	level = 26,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200382,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890102] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890002,
+	effect_prefab = "",
+	exp = 148,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1890102,
+	level = 27,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200382,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890103] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890003,
+	effect_prefab = "",
+	exp = 168,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1890103,
+	level = 28,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200382,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890104] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890004,
+	effect_prefab = "",
+	exp = 130,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1890104,
+	level = 26,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200382,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890105] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890005,
+	effect_prefab = "",
+	exp = 148,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1890105,
+	level = 27,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200382,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890106] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890006,
+	effect_prefab = "",
+	exp = 168,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1890106,
+	level = 28,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200382,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890107] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890007,
+	effect_prefab = "",
+	exp = 130,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1890107,
+	level = 26,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200382,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890108] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890008,
+	effect_prefab = "",
+	exp = 148,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1890108,
+	level = 27,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200382,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890109] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890009,
+	effect_prefab = "",
+	exp = 168,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1890109,
+	level = 28,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200382,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890113] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890113,
+	effect_prefab = "",
+	exp = 217,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "teluntuo_alter",
+	icon_type = 2,
+	id = 1890113,
+	level = 30,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200369,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890201] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1890001,
+	effect_prefab = "",
+	exp = 155,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1890201,
+	level = 31,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200383,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890202] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1890002,
+	effect_prefab = "",
+	exp = 176,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1890202,
+	level = 32,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200383,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890203] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1890003,
+	effect_prefab = "",
+	exp = 198,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1890203,
+	level = 33,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200383,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890204] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1890004,
+	effect_prefab = "",
+	exp = 155,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1890204,
+	level = 31,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200383,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890205] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1890005,
+	effect_prefab = "",
+	exp = 176,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1890205,
+	level = 32,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200383,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890206] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1890006,
+	effect_prefab = "",
+	exp = 198,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1890206,
+	level = 33,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200383,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890207] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1890007,
+	effect_prefab = "",
+	exp = 155,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1890207,
+	level = 31,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200383,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890208] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1890008,
+	effect_prefab = "",
+	exp = 176,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1890208,
+	level = 32,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200383,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890209] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1890009,
+	effect_prefab = "",
+	exp = 198,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1890209,
+	level = 33,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200383,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890213] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1890213,
+	effect_prefab = "",
+	exp = 254,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "boerzhanuo_alter",
+	icon_type = 2,
+	id = 1890213,
+	level = 35,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200370,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890301,
+	effect_prefab = "",
+	exp = 162,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1890301,
+	level = 24,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200368,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890302,
+	effect_prefab = "",
+	exp = 162,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1890302,
+	level = 24,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200368,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890303] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890303,
+	effect_prefab = "",
+	exp = 196,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1890303,
+	level = 29,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200369,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890304] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1890304,
+	effect_prefab = "",
+	exp = 196,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1890304,
+	level = 29,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200369,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890305] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1890305,
+	effect_prefab = "",
+	exp = 229,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1890305,
+	level = 34,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200370,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1890306] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1890306,
+	effect_prefab = "",
+	exp = 229,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1890306,
+	level = 34,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200370,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891001,
+	effect_prefab = "",
+	exp = 205,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1891001,
+	level = 41,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200384,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891002,
+	effect_prefab = "",
+	exp = 231,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1891002,
+	level = 42,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200384,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891003,
+	effect_prefab = "",
+	exp = 258,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1891003,
+	level = 43,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200384,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891004,
+	effect_prefab = "",
+	exp = 205,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1891004,
+	level = 41,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200384,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891005,
+	effect_prefab = "",
+	exp = 231,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1891005,
+	level = 42,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200384,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891006,
+	effect_prefab = "",
+	exp = 258,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1891006,
+	level = 43,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200384,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891007,
+	effect_prefab = "",
+	exp = 205,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1891007,
+	level = 41,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200384,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891008,
+	effect_prefab = "",
+	exp = 231,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1891008,
+	level = 42,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200384,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891009,
+	effect_prefab = "",
+	exp = 258,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1891009,
+	level = 43,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200384,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891013,
+	effect_prefab = "",
+	exp = 326,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "andelieyaduoliya_alter",
+	icon_type = 2,
+	id = 1891013,
+	level = 45,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200371,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891101] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891101,
+	effect_prefab = "",
+	exp = 255,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz1",
+	icon_type = 1,
+	id = 1891101,
+	level = 51,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200385,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891102] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891102,
+	effect_prefab = "",
+	exp = 286,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz1",
+	icon_type = 1,
+	id = 1891102,
+	level = 52,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200385,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891103] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891103,
+	effect_prefab = "",
+	exp = 318,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz1",
+	icon_type = 1,
+	id = 1891103,
+	level = 53,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200385,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891104] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891104,
+	effect_prefab = "",
+	exp = 255,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl1",
+	icon_type = 1,
+	id = 1891104,
+	level = 51,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200385,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891105] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891105,
+	effect_prefab = "",
+	exp = 286,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl1",
+	icon_type = 1,
+	id = 1891105,
+	level = 52,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200385,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891106] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891106,
+	effect_prefab = "",
+	exp = 318,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl1",
+	icon_type = 1,
+	id = 1891106,
+	level = 53,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200385,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891107] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891107,
+	effect_prefab = "",
+	exp = 255,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm1",
+	icon_type = 1,
+	id = 1891107,
+	level = 51,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200385,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891108] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891108,
+	effect_prefab = "",
+	exp = 286,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm1",
+	icon_type = 1,
+	id = 1891108,
+	level = 52,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200385,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891109] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891109,
+	effect_prefab = "",
+	exp = 318,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm1",
+	icon_type = 1,
+	id = 1891109,
+	level = 53,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200385,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891113] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891113,
+	effect_prefab = "",
+	exp = 399,
+	exp_commander = 1,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenboss25",
+	icon_type = 2,
+	id = 1891113,
+	level = 55,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 80,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200372,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891201] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1891101,
+	effect_prefab = "",
+	exp = 280,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz1",
+	icon_type = 1,
+	id = 1891201,
+	level = 56,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200386,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891202] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1891102,
+	effect_prefab = "",
+	exp = 313,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz1",
+	icon_type = 1,
+	id = 1891202,
+	level = 57,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200386,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891203] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1891103,
+	effect_prefab = "",
+	exp = 348,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz1",
+	icon_type = 1,
+	id = 1891203,
+	level = 58,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200386,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891204] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1891104,
+	effect_prefab = "",
+	exp = 280,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl1",
+	icon_type = 1,
+	id = 1891204,
+	level = 56,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200386,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891205] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1891105,
+	effect_prefab = "",
+	exp = 313,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl1",
+	icon_type = 1,
+	id = 1891205,
+	level = 57,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200386,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891206] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1891106,
+	effect_prefab = "",
+	exp = 348,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl1",
+	icon_type = 1,
+	id = 1891206,
+	level = 58,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200386,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891207] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1891107,
+	effect_prefab = "",
+	exp = 280,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm1",
+	icon_type = 1,
+	id = 1891207,
+	level = 56,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200386,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891208] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1891108,
+	effect_prefab = "",
+	exp = 313,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm1",
+	icon_type = 1,
+	id = 1891208,
+	level = 57,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200386,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891209] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1891109,
+	effect_prefab = "",
+	exp = 348,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm1",
+	icon_type = 1,
+	id = 1891209,
+	level = 58,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200386,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891213] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1891213,
+	effect_prefab = "",
+	exp = 435,
+	exp_commander = 1,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "gulite_special",
+	icon_type = 1,
+	id = 1891213,
+	level = 60,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56000,
+		},
+		{
+			2,
+			200373,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891301,
+	effect_prefab = "",
+	exp = 297,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "teluntuo_alter",
+	icon_type = 2,
+	id = 1891301,
+	level = 44,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 80,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200371,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891302,
+	effect_prefab = "",
+	exp = 297,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "boerzhanuo_alter",
+	icon_type = 2,
+	id = 1891302,
+	level = 44,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 80,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200371,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891303] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891303,
+	effect_prefab = "",
+	exp = 297,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kaisa_alter",
+	icon_type = 2,
+	id = 1891303,
+	level = 44,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 80,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200371,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891304] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1891304,
+	effect_prefab = "",
+	exp = 364,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenboss26",
+	icon_type = 2,
+	id = 1891304,
+	level = 54,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 50,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200372,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891305] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1891305,
+	effect_prefab = "",
+	exp = 398,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenboss26",
+	icon_type = 2,
+	id = 1891305,
+	level = 59,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 50,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200373,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1891306] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1891306,
+	effect_prefab = "",
+	exp = 398,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenboss25",
+	icon_type = 2,
+	id = 1891306,
+	level = 59,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 50,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200373,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892001,
+	effect_prefab = "",
+	exp = 355,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1892001,
+	level = 71,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200387,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892002,
+	effect_prefab = "",
+	exp = 396,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1892002,
+	level = 72,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200387,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892003,
+	effect_prefab = "",
+	exp = 438,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1892003,
+	level = 73,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200387,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892004,
+	effect_prefab = "",
+	exp = 355,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1892004,
+	level = 71,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200387,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892005,
+	effect_prefab = "",
+	exp = 396,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1892005,
+	level = 72,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200387,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892006,
+	effect_prefab = "",
+	exp = 438,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1892006,
+	level = 73,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200387,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892007,
+	effect_prefab = "",
+	exp = 355,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1892007,
+	level = 71,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200387,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892008,
+	effect_prefab = "",
+	exp = 396,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1892008,
+	level = 72,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200387,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892009,
+	effect_prefab = "",
+	exp = 438,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1892009,
+	level = 73,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200387,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892013,
+	effect_prefab = "",
+	exp = 544,
+	exp_commander = 1,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "batuoluomeiao",
+	icon_type = 2,
+	id = 1892013,
+	level = 75,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200374,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892101] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892001,
+	effect_prefab = "",
+	exp = 380,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1892101,
+	level = 76,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200388,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892102] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892002,
+	effect_prefab = "",
+	exp = 423,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1892102,
+	level = 77,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200388,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892103] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892003,
+	effect_prefab = "",
+	exp = 468,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1892103,
+	level = 78,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200388,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892104] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892004,
+	effect_prefab = "",
+	exp = 380,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1892104,
+	level = 76,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200388,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892105] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892005,
+	effect_prefab = "",
+	exp = 423,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1892105,
+	level = 77,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200388,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892106] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892006,
+	effect_prefab = "",
+	exp = 468,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1892106,
+	level = 78,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200388,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892107] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892007,
+	effect_prefab = "",
+	exp = 380,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1892107,
+	level = 76,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200388,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892108] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892008,
+	effect_prefab = "",
+	exp = 423,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1892108,
+	level = 77,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200388,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892109] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892009,
+	effect_prefab = "",
+	exp = 468,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1892109,
+	level = 78,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200388,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892113] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892113,
+	effect_prefab = "",
+	exp = 580,
+	exp_commander = 1,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "teluntuo_alter",
+	icon_type = 2,
+	id = 1892113,
+	level = 80,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200375,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892201] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1892001,
+	effect_prefab = "",
+	exp = 405,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1892201,
+	level = 81,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200389,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892202] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1892002,
+	effect_prefab = "",
+	exp = 451,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1892202,
+	level = 82,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200389,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892203] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1892003,
+	effect_prefab = "",
+	exp = 498,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1892203,
+	level = 83,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200389,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892204] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1892004,
+	effect_prefab = "",
+	exp = 405,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1892204,
+	level = 81,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200389,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892205] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1892005,
+	effect_prefab = "",
+	exp = 451,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1892205,
+	level = 82,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200389,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892206] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1892006,
+	effect_prefab = "",
+	exp = 498,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1892206,
+	level = 83,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200389,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892207] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1892007,
+	effect_prefab = "",
+	exp = 405,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1892207,
+	level = 81,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200389,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892208] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1892008,
+	effect_prefab = "",
+	exp = 451,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1892208,
+	level = 82,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200389,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892209] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1892009,
+	effect_prefab = "",
+	exp = 498,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1892209,
+	level = 83,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200389,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892213] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1892213,
+	effect_prefab = "",
+	exp = 616,
+	exp_commander = 2,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "boerzhanuo_alter",
+	icon_type = 2,
+	id = 1892213,
+	level = 85,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200376,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892301,
+	effect_prefab = "",
+	exp = 499,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1892301,
+	level = 74,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200374,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892302,
+	effect_prefab = "",
+	exp = 499,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1892302,
+	level = 74,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200374,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892303] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892303,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1892303,
+	level = 79,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200375,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892304] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-theme-sardinia",
+	difficulty = 2,
+	dungeon_id = 1892304,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1892304,
+	level = 79,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200375,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892305] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1892305,
+	effect_prefab = "",
+	exp = 567,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1892305,
+	level = 84,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200376,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1892306] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1892306,
+	effect_prefab = "",
+	exp = 567,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1892306,
+	level = 84,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200376,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893001,
+	effect_prefab = "",
+	exp = 455,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1893001,
+	level = 91,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200390,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893002,
+	effect_prefab = "",
+	exp = 506,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1893002,
+	level = 92,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200390,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893003,
+	effect_prefab = "",
+	exp = 558,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_qz",
+	icon_type = 1,
+	id = 1893003,
+	level = 93,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200390,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893004,
+	effect_prefab = "",
+	exp = 455,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1893004,
+	level = 91,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200390,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893005,
+	effect_prefab = "",
+	exp = 506,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1893005,
+	level = 92,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200390,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893006,
+	effect_prefab = "",
+	exp = 558,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_zl",
+	icon_type = 1,
+	id = 1893006,
+	level = 93,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200390,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893007,
+	effect_prefab = "",
+	exp = 455,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1893007,
+	level = 91,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200390,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893008,
+	effect_prefab = "",
+	exp = 506,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1893008,
+	level = 92,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200390,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893009,
+	effect_prefab = "",
+	exp = 558,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "jiaotang_white_hm",
+	icon_type = 1,
+	id = 1893009,
+	level = 93,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200390,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893013,
+	effect_prefab = "",
+	exp = 689,
+	exp_commander = 2,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "andelieyaduoliya_alter",
+	icon_type = 2,
+	id = 1893013,
+	level = 95,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200377,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893101] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893101,
+	effect_prefab = "",
+	exp = 480,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz1",
+	icon_type = 1,
+	id = 1893101,
+	level = 96,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200391,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893102] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893102,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz1",
+	icon_type = 1,
+	id = 1893102,
+	level = 97,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200391,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893103] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893103,
+	effect_prefab = "",
+	exp = 588,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz1",
+	icon_type = 1,
+	id = 1893103,
+	level = 98,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200391,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893104] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893104,
+	effect_prefab = "",
+	exp = 480,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl1",
+	icon_type = 1,
+	id = 1893104,
+	level = 96,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200391,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893105] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893105,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl1",
+	icon_type = 1,
+	id = 1893105,
+	level = 97,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200391,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893106] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893106,
+	effect_prefab = "",
+	exp = 588,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl1",
+	icon_type = 1,
+	id = 1893106,
+	level = 98,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200391,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893107] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893107,
+	effect_prefab = "",
+	exp = 480,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm1",
+	icon_type = 1,
+	id = 1893107,
+	level = 96,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200391,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893108] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893108,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm1",
+	icon_type = 1,
+	id = 1893108,
+	level = 97,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200391,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893109] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893109,
+	effect_prefab = "",
+	exp = 588,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm1",
+	icon_type = 1,
+	id = 1893109,
+	level = 98,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200391,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893113] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893113,
+	effect_prefab = "",
+	exp = 725,
+	exp_commander = 2,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenboss25",
+	icon_type = 2,
+	id = 1893113,
+	level = 100,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 80,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200378,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893201] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1893101,
+	effect_prefab = "",
+	exp = 505,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz1",
+	icon_type = 1,
+	id = 1893201,
+	level = 101,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200392,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893202] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1893102,
+	effect_prefab = "",
+	exp = 561,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz1",
+	icon_type = 1,
+	id = 1893202,
+	level = 102,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200392,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893203] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1893103,
+	effect_prefab = "",
+	exp = 618,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz1",
+	icon_type = 1,
+	id = 1893203,
+	level = 103,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200392,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893204] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1893104,
+	effect_prefab = "",
+	exp = 505,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl1",
+	icon_type = 1,
+	id = 1893204,
+	level = 101,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200392,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893205] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1893105,
+	effect_prefab = "",
+	exp = 561,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl1",
+	icon_type = 1,
+	id = 1893205,
+	level = 102,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200392,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893206] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1893106,
+	effect_prefab = "",
+	exp = 618,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl1",
+	icon_type = 1,
+	id = 1893206,
+	level = 103,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200392,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893207] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1893107,
+	effect_prefab = "",
+	exp = 505,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm1",
+	icon_type = 1,
+	id = 1893207,
+	level = 101,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200392,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893208] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1893108,
+	effect_prefab = "",
+	exp = 561,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm1",
+	icon_type = 1,
+	id = 1893208,
+	level = 102,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200392,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893209] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1893109,
+	effect_prefab = "",
+	exp = 618,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm1",
+	icon_type = 1,
+	id = 1893209,
+	level = 103,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200392,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893213] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1893213,
+	effect_prefab = "",
+	exp = 761,
+	exp_commander = 3,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "gulite_special",
+	icon_type = 1,
+	id = 1893213,
+	level = 105,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56000,
+		},
+		{
+			2,
+			200379,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893301,
+	effect_prefab = "",
+	exp = 634,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "teluntuo_alter",
+	icon_type = 2,
+	id = 1893301,
+	level = 94,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 80,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200377,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893302,
+	effect_prefab = "",
+	exp = 634,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "boerzhanuo_alter",
+	icon_type = 2,
+	id = 1893302,
+	level = 94,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 80,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200377,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893303] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893303,
+	effect_prefab = "",
+	exp = 634,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "boerzhanuo_alter",
+	icon_type = 2,
+	id = 1893303,
+	level = 94,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 80,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200377,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893304] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1893304,
+	effect_prefab = "",
+	exp = 668,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenboss26",
+	icon_type = 2,
+	id = 1893304,
+	level = 99,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 50,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200378,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893305] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1893305,
+	effect_prefab = "",
+	exp = 702,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenboss26",
+	icon_type = 2,
+	id = 1893305,
+	level = 104,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 50,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200379,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1893306] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1893306,
+	effect_prefab = "",
+	exp = 702,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenboss25",
+	icon_type = 2,
+	id = 1893306,
+	level = 104,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 50,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200379,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1894001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1894001,
+	effect_prefab = "",
+	exp = 530,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz7",
+	icon_type = 1,
+	id = 1894001,
+	level = 106,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200393,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1894002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1894002,
+	effect_prefab = "",
+	exp = 588,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz7",
+	icon_type = 1,
+	id = 1894002,
+	level = 107,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200393,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1894003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1894003,
+	effect_prefab = "",
+	exp = 648,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz7",
+	icon_type = 1,
+	id = 1894003,
+	level = 108,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200393,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1894004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1894004,
+	effect_prefab = "",
+	exp = 530,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl7",
+	icon_type = 1,
+	id = 1894004,
+	level = 106,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200393,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1894005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1894005,
+	effect_prefab = "",
+	exp = 588,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl7",
+	icon_type = 1,
+	id = 1894005,
+	level = 107,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200393,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1894006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1894006,
+	effect_prefab = "",
+	exp = 648,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl7",
+	icon_type = 1,
+	id = 1894006,
+	level = 108,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200393,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1894007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1894007,
+	effect_prefab = "",
+	exp = 530,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm7",
+	icon_type = 1,
+	id = 1894007,
+	level = 106,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200393,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1894008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1894008,
+	effect_prefab = "",
+	exp = 588,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm7",
+	icon_type = 1,
+	id = 1894008,
+	level = 107,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200393,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1894009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1894009,
+	effect_prefab = "",
+	exp = 648,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm7",
+	icon_type = 1,
+	id = 1894009,
+	level = 108,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200393,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1894013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1894013,
+	effect_prefab = "",
+	exp = 797,
+	exp_commander = 4,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "gulite_special",
+	icon_type = 1,
+	id = 1894013,
+	level = 110,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56000,
+		},
+		{
+			2,
+			200380,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1894301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1894301,
+	effect_prefab = "",
+	exp = 736,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kelaimengsuo",
+	icon_type = 2,
+	id = 1894301,
+	level = 109,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 80,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200380,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1894302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1894302,
+	effect_prefab = "",
+	exp = 736,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "feiteliedadi",
+	icon_type = 2,
+	id = 1894302,
+	level = 109,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 80,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200380,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1894303] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1894303,
+	effect_prefab = "",
+	exp = 736,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srjiaohuangjijia",
+	icon_type = 2,
+	id = 1894303,
+	level = 109,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 30,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200380,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1894304] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1894304,
+	effect_prefab = "",
+	exp = 736,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "shenpanjijia_zhipei",
+	icon_type = 2,
+	id = 1894304,
+	level = 109,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 80,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50186,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200380,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1895001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1895001,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenboss24_jijia",
+	icon_type = 2,
+	id = 1895001,
+	level = 125,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 150,
+	sink_limit = 1,
+	time_limit = 150,
+	type = 99,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		150,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1895002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1895002,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenboss24_jijia",
+	icon_type = 2,
+	id = 1895002,
+	level = 125,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 150,
+	sink_limit = 1,
+	time_limit = 150,
+	type = 99,
+	map_id = {
+		{
+			50188,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		150,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1896001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-shenguang-freely",
+	difficulty = 2,
+	dungeon_id = 1896001,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1896001,
+	level = 120,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 300,
+	type = 99,
+	map_id = {
+		{
+			50185,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1896002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-shenguang-holy",
+	difficulty = 2,
+	dungeon_id = 1896002,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1896002,
+	level = 120,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 300,
+	type = 99,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1896003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1896003,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1896003,
+	level = 135,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 300,
+	type = 99,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1896004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-thechariotVII",
+	difficulty = 2,
+	dungeon_id = 1896004,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1896004,
+	level = 135,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 300,
+	type = 99,
+	map_id = {
+		{
+			50187,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1896005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-underheaven",
+	difficulty = 2,
+	dungeon_id = 1896005,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1896005,
+	level = 135,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 300,
+	type = 99,
+	map_id = {
+		{
+			50138,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
 	},
 	bufficon = {},
 	expose_line = {},

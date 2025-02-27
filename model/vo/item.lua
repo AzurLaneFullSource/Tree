@@ -152,7 +152,7 @@ end
 
 function var0_0.StaticCombinationDisplay(arg0_22)
 	local var0_22 = _.map(arg0_22, function(arg0_23)
-		local var0_23 = string.format("%0.1f", arg0_23[2] / 100)
+		local var0_23 = string.format("%0.2f", arg0_23[2] / 100)
 		local var1_23 = ShipSkin.New({
 			id = arg0_23[1]
 		})

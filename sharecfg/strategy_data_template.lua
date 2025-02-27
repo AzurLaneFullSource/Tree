@@ -290,6 +290,11 @@ pg.strategy_data_template = setmetatable({
 		201197,
 		201198,
 		201199,
+		201250,
+		201270,
+		201276,
+		201281,
+		201287,
 		205001,
 		205002,
 		205003,
@@ -3508,6 +3513,61 @@ pg.base.strategy_data_template = {
 		icon = "200908",
 		buff_type = 0,
 		desc = "- Hard Mode Details -\nEnemies deal significantly more DMG. Their shells ignore shields and penetrate through targets.\n· When enemies perform certain unavoidable attacks, Admiral Hipper META will provide support.\n· The skills \"Operation Rainbow\" and \"Fiercer When Cornered\" are rendered ineffective.",
+		arg = {}
+	},
+	[201250] = {
+		buff_id = 201250,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201250,
+		icon = "200908",
+		buff_type = 0,
+		desc = "- Hard Mode Details -\n· The enemy deals significantly more DMG. When the enemy's HP percentage falls below 40%, their attack pattern changes and they gain significant damage reduction for 3s; when their HP percentage drops below 10%, they enter Last Stand mode.\n<color=#92fc63>· Your Vanguard's hitbox is reduced to only cover the frontmost ship of your Vanguard, and said hitbox becomes substantially smaller in size.</color>\n· When a ship in your fleet is hit, she becomes invulnerable for a while.\n· The skills \"Operation Rainbow\" and \"Fiercer When Cornered\" are rendered ineffective.",
+		arg = {}
+	},
+	[201270] = {
+		buff_id = 201270,
+		name = "Lattice of God's Light",
+		iconSize = "",
+		type = 10,
+		id = 201270,
+		icon = "201270",
+		buff_type = 0,
+		desc = "Once per battle, God's Light produces a shock wave that affects both foes and allies.\nIf the target is a Sardegna Empire unit: said unit recovers a little HP.\nIf not: said unit's EVA and SPD decreases for a while.",
+		arg = {}
+	},
+	[201276] = {
+		buff_id = 201276,
+		name = "Domain of Eternal Night",
+		iconSize = "",
+		type = 10,
+		id = 201276,
+		icon = "201276",
+		buff_type = 0,
+		desc = "During battle, the Banner of Eternal Night affects both foes and allies.\nIf the target is a META unit: said unit's DMG dealt increases.\nIf not: said unit's ACC decreases slightly and their burn DMG taken increases.",
+		arg = {}
+	},
+	[201281] = {
+		buff_id = 201281,
+		name = "Mode Change Area of The Chariot",
+		iconSize = "",
+		type = 10,
+		id = 201281,
+		icon = "201281",
+		buff_type = 0,
+		desc = "MECHArbiter: The Chariot VII dominates the battlefield.\nSiren units gain the Overclocked Shooting buff, i.e. RLD increases gradually as time passes.\nOther units have their DMG taken increased slightly.",
+		arg = {}
+	},
+	[201287] = {
+		buff_id = 201287,
+		name = "Aerial Support",
+		iconSize = "",
+		type = 10,
+		id = 201287,
+		icon = "201287",
+		buff_type = 0,
+		desc = "During battle, your fleet receives aerial support.",
 		arg = {}
 	},
 	[205001] = {

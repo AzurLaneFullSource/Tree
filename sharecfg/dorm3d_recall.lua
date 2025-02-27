@@ -147,8 +147,9 @@ pg.dorm3d_recall = {
 		image = "recall_31",
 		desc = "As you share a private moment, your hands join in a delicate touch, making your hearts race...",
 		unlock = {
-			3,
-			3022101
+			1,
+			30221,
+			1
 		}
 	},
 	get_id_list_by_story_id = {

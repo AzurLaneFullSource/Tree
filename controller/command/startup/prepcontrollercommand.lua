@@ -540,6 +540,9 @@ function var0_0.execute(arg0_1, arg1_1)
 	arg0_1.facade:registerCommand(GAME.APARTMENT_TRACK, Dorm3dTrackCommand)
 	arg0_1.facade:registerCommand(GAME.SELECT_DORM_ENTER, SelectDorm3dEnterCommand)
 	arg0_1.facade:registerCommand(GAME.DORM_SET_CALL, DormSetCallCommand)
+	arg0_1.facade:registerCommand(GAME.APARTMENT_INS_OP, ApartmentInstagramOpCommand)
+	arg0_1.facade:registerCommand(GAME.APARTMENT_CHAT_OP, Dorm3dChatCommand)
+	arg0_1.facade:registerCommand(GAME.DORM_RECORD_VISIT, Dorm3dRecordVisitCommand)
 end
 
 return var0_0

@@ -432,7 +432,7 @@ pg.dorm3d_furniture_template = {
 	},
 	[221] = {
 		name = "Tanuki Cushion",
-		rarity = 3,
+		rarity = 4,
 		is_special = 0,
 		type = 4,
 		icon = "dorm3dIcon/3Ddrom_nengdai_PremiumFurniture1",

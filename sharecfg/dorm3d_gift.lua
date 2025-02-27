@@ -17,6 +17,10 @@ pg.dorm3d_gift = {
 			{
 				30221,
 				20301
+			},
+			{
+				19903,
+				30301
 			}
 		},
 		shop_id = {},
@@ -30,6 +34,12 @@ pg.dorm3d_gift = {
 			},
 			{
 				30221,
+				{
+					"banner_nengdaigift"
+				}
+			},
+			{
+				19903,
 				{
 					"banner_nengdaigift"
 				}
@@ -53,6 +63,10 @@ pg.dorm3d_gift = {
 			{
 				30221,
 				20302
+			},
+			{
+				19903,
+				30302
 			}
 		},
 		shop_id = {
@@ -72,6 +86,12 @@ pg.dorm3d_gift = {
 			},
 			{
 				30221,
+				{
+					"banner_nengdaigift"
+				}
+			},
+			{
+				19903,
 				{
 					"banner_nengdaigift"
 				}
@@ -95,6 +115,10 @@ pg.dorm3d_gift = {
 			{
 				30221,
 				20303
+			},
+			{
+				19903,
+				30303
 			}
 		},
 		shop_id = {
@@ -111,6 +135,12 @@ pg.dorm3d_gift = {
 			},
 			{
 				30221,
+				{
+					"banner_nengdaigift"
+				}
+			},
+			{
+				19903,
 				{
 					"banner_nengdaigift"
 				}
@@ -181,7 +211,7 @@ pg.dorm3d_gift = {
 		ship_group_id = 30221,
 		display = "A simple design with a simple color scheme. Easy and comfortable to wear. \nThey fit perfectly around the heel and welcome your feet every time you put them on.",
 		rarity = 4,
-		unlock_dialogue_id = 10060,
+		unlock_dialogue_id = 29991,
 		id = 3022101,
 		icon = "dorm3dicon/3Ddrom_nengdai_FancyGift1",
 		name = "Sincere Loafers",

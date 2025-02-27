@@ -1,9 +1,7 @@
 pg = pg or {}
 pg.dorm3d_camera_zone_template = {
 	[1001] = {
-		move_range_horizonal = "",
 		name = "Bedroom",
-		move_range_vertical = "",
 		record_time = 60,
 		id = 1001,
 		room_id = 1,
@@ -66,9 +64,7 @@ pg.dorm3d_camera_zone_template = {
 		}
 	},
 	[1002] = {
-		move_range_horizonal = "",
 		name = "Dining Area",
-		move_range_vertical = "",
 		record_time = 60,
 		id = 1002,
 		room_id = 1,
@@ -127,9 +123,7 @@ pg.dorm3d_camera_zone_template = {
 		}
 	},
 	[1003] = {
-		move_range_horizonal = "",
 		name = "Living Area",
-		move_range_vertical = "",
 		record_time = 60,
 		id = 1003,
 		room_id = 1,
@@ -196,9 +190,7 @@ pg.dorm3d_camera_zone_template = {
 		}
 	},
 	[2001] = {
-		move_range_horizonal = "",
 		name = "Bedroom",
-		move_range_vertical = "",
 		record_time = 60,
 		id = 2001,
 		room_id = 2,
@@ -262,9 +254,7 @@ pg.dorm3d_camera_zone_template = {
 		}
 	},
 	[2002] = {
-		move_range_horizonal = "",
 		name = "Dining Area",
-		move_range_vertical = "",
 		record_time = 60,
 		id = 2002,
 		room_id = 2,
@@ -328,9 +318,7 @@ pg.dorm3d_camera_zone_template = {
 		}
 	},
 	[2003] = {
-		move_range_horizonal = "",
 		name = "Living Area",
-		move_range_vertical = "",
 		record_time = 60,
 		id = 2003,
 		room_id = 2,
@@ -394,9 +382,7 @@ pg.dorm3d_camera_zone_template = {
 		}
 	},
 	[4001] = {
-		move_range_horizonal = "",
 		name = "Beach Chair",
-		move_range_vertical = "",
 		record_time = 60,
 		id = 4001,
 		room_id = 4,
@@ -420,6 +406,16 @@ pg.dorm3d_camera_zone_template = {
 					4203,
 					4204,
 					4205
+				}
+			},
+			{
+				19903,
+				{
+					4401,
+					4402,
+					4403,
+					4404,
+					4405
 				}
 			}
 		},
@@ -453,9 +449,7 @@ pg.dorm3d_camera_zone_template = {
 		}
 	},
 	[4002] = {
-		move_range_horizonal = "",
 		name = "Beach Parasol",
-		move_range_vertical = "",
 		record_time = 60,
 		id = 4002,
 		room_id = 4,
@@ -479,6 +473,16 @@ pg.dorm3d_camera_zone_template = {
 					4203,
 					4204,
 					4205
+				}
+			},
+			{
+				19903,
+				{
+					4401,
+					4402,
+					4403,
+					4404,
+					4405
 				}
 			}
 		},

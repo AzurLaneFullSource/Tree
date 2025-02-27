@@ -2,11 +2,12 @@ pg = pg or {}
 pg.dorm3d_rooms = {
 	{
 		invite_cost = "",
-		invite_banner = "",
+		room_des = "",
 		type = 2,
 		resource_name = "Tianlangxing_DB",
 		assets_prefix = "Tianlangxing",
 		tag = "",
+		invite_banner = "",
 		scene_info = "map_siriushostel_01|Tianlangxing_DB/SiriusHostel",
 		in_map = "floor_1",
 		room = "Sirius",
@@ -79,11 +80,12 @@ pg.dorm3d_rooms = {
 	},
 	{
 		invite_cost = "",
-		invite_banner = "",
+		room_des = "",
 		type = 2,
 		resource_name = "Nengdai_DB",
 		assets_prefix = "Nengdai",
 		tag = "",
+		invite_banner = "",
 		scene_info = "map_noshirohostel_01|Nengdai_DB/Noshirohostel",
 		in_map = "floor_1",
 		room = "Noshiro",
@@ -156,10 +158,11 @@ pg.dorm3d_rooms = {
 	},
 	[4] = {
 		tag = "beach",
+		room_des = "沙滩、泳装、排球……尽情在海风中玩耍吧~",
 		type = 1,
-		scene_info = "map_beach_02|Beach",
 		resource_name = "Beach",
 		assets_prefix = "Beach",
+		scene_info = "map_beach_02|Beach",
 		in_map = "floor_1",
 		room = "Beach",
 		id = 4,
@@ -270,21 +273,22 @@ pg.dorm3d_rooms = {
 	},
 	[5] = {
 		invite_cost = "",
-		invite_banner = "",
+		recall_list = "",
 		default_zone = "",
 		resource_name = "Bathroom",
-		assets_prefix = "Bathroom",
-		ar_anim = "",
-		recall_list = "",
 		type = 1,
+		ar_anim = "",
 		room_bgm = "story-room-sirius",
+		invite_banner = "",
+		scene_info = "",
 		in_map = "floor_1",
 		room = "Bath",
 		invite_mark = "",
-		id = 5,
-		furniture_zones = "",
 		tag = "",
-		scene_info = "",
+		furniture_zones = "",
+		room_des = "",
+		assets_prefix = "Bathroom",
+		id = 5,
 		character = {
 			20220
 		},
@@ -296,8 +300,8 @@ pg.dorm3d_rooms = {
 			}
 		},
 		character_range = {
-			1,
-			3
+			0,
+			0
 		},
 		unlock_item = {
 			{

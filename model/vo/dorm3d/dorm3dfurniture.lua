@@ -108,13 +108,17 @@ function var0_0.GetEndTime(arg0_17)
 		return 0
 	end
 
-	local var1_17 = pg.shop_template[var0_17].time
+	local var1_17 = pg.shop_template[var0_17]
 
-	if var1_17 == "always" or var1_17 == "stop" then
+	assert(var1_17, "Missing shopCfg " .. (var0_17 or "NIL"))
+
+	local var2_17 = var1_17.time
+
+	if var2_17 == "always" or var2_17 == "stop" then
 		return 0
 	end
 
-	return (pg.TimeMgr.GetInstance():parseTimeFromConfig(var1_17[2]))
+	return (pg.TimeMgr.GetInstance():parseTimeFromConfig(var2_17[2]))
 end
 
 function var0_0.NeedViewTip(arg0_18)

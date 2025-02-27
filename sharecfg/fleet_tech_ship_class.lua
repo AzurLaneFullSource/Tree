@@ -2696,7 +2696,8 @@ pg.fleet_tech_ship_class = {
 		t_level = 5,
 		ships = {
 			60103,
-			60108
+			60108,
+			60111
 		}
 	},
 	[60103] = {
@@ -2745,6 +2746,17 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			60201,
 			60202
+		}
+	},
+	[60202] = {
+		shiptype = 2,
+		name = "Giussano Class",
+		nation = 6,
+		id = 60202,
+		t_level_1 = 132,
+		t_level = 7,
+		ships = {
+			60203
 		}
 	},
 	[60301] = {
@@ -2841,6 +2853,17 @@ pg.fleet_tech_ship_class = {
 			60507
 		}
 	},
+	[60505] = {
+		shiptype = 5,
+		name = "Raffaello",
+		nation = 6,
+		id = 60505,
+		t_level_1 = 1,
+		t_level = 8,
+		ships = {
+			60508
+		}
+	},
 	[60701] = {
 		shiptype = 7,
 		name = "Aquila Class",
@@ -2882,7 +2905,8 @@ pg.fleet_tech_ship_class = {
 		t_level_1 = 1,
 		t_level = 7,
 		ships = {
-			60802
+			60802,
+			60803
 		}
 	},
 	[70101] = {
@@ -3924,10 +3948,21 @@ pg.fleet_tech_ship_class = {
 		name = "Giulio Cesare META",
 		nation = 97,
 		id = 970507,
-		t_level_1 = 12,
+		t_level_1 = 6,
 		t_level = 3,
 		ships = {
 			970507
+		}
+	},
+	[970508] = {
+		shiptype = 5,
+		name = "Andrea Doria META",
+		nation = 97,
+		id = 970508,
+		t_level_1 = 15,
+		t_level = 3,
+		ships = {
+			970508
 		}
 	},
 	[970601] = {
@@ -4287,6 +4322,7 @@ pg.fleet_tech_ship_class = {
 		60104,
 		60105,
 		60201,
+		60202,
 		60301,
 		60302,
 		60303,
@@ -4295,6 +4331,7 @@ pg.fleet_tech_ship_class = {
 		60502,
 		60503,
 		60504,
+		60505,
 		60701,
 		60702,
 		60801,
@@ -4392,6 +4429,7 @@ pg.fleet_tech_ship_class = {
 		970505,
 		970506,
 		970507,
+		970508,
 		970601,
 		970602,
 		970603,

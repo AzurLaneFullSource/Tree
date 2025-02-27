@@ -1,5 +1,7 @@
 local var0_0 = class("StarLightMedalAlbumView", import("view.base.BaseUI"))
 
+var0_0.ICON_SCALE = 1.35
+
 function var0_0.SetMedalGroupData(arg0_1, arg1_1)
 	arg0_1.medalGroupList = arg1_1
 	arg0_1.currentMedalGroup = arg0_1.medalGroupList[arg0_1.GROUP_ID] or ActivityMedalGroup.New(arg0_1.GROUP_ID)
@@ -58,6 +60,9 @@ function var0_0.FindUI(arg0_5)
 	arg0_5.medalLock = arg0_5:findTF("Desk/medal")
 	arg0_5.trophyLock = arg0_5:findTF("Desk/trophy")
 	arg0_5.medalDetailView = MedalDetailPanel.New(arg0_5:findTF("DetailView"), arg0_5)
+
+	arg0_5.medalDetailView:SetIconScale(arg0_5.ICON_SCALE)
+
 	arg0_5.medalTaskView = MedalTaskPanel.New(arg0_5:findTF("TaskView"), arg0_5)
 end
 

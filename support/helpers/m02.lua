@@ -1115,7 +1115,7 @@ function updateItem(arg0_98, arg1_98, arg2_98)
 	if arg1_98:getConfig("type") == Item.LOVE_LETTER_TYPE then
 		assert(arg1_98.extra, "without extra data")
 
-		var3_98 = "SquareIcon/" .. ShipGroup.getDefaultSkin(arg1_98.extra).prefab
+		var3_98 = "SquareIcon/" .. ShipGroup.getDefaultSkin(arg1_98.extra).painting
 	end
 
 	GetImageSpriteFromAtlasAsync(var3_98, "", var2_98)
