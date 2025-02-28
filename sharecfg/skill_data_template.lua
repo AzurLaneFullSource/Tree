@@ -1262,6 +1262,7 @@ pg.skill_data_template = setmetatable({
 		150940,
 		150950,
 		150960,
+		150967,
 		150980,
 		150990,
 		18010,
@@ -104467,6 +104468,20 @@ pg.base.skill_data_template = {
 				}
 			}
 		}
+	},
+	[150967] = {
+		desc_get = "",
+		name = "超级艺术家-跨队效果",
+		id = 150967,
+		type = 1,
+		max_level = 10,
+		desc = "",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
 	},
 	[150980] = {
 		desc_get = "",

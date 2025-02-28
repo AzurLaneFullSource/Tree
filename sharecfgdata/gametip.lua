@@ -20170,7 +20170,7 @@ _G.pg.base.gametip.rename_input = {
 }
 
 _G.pg.base.gametip.avatar_task_level = {
-	tip = "Defeat the Boss Fleet of $3 $4 times with a $1 $2 in your fleet. $2 must remain afloat.",
+	tip = "Defeat the Boss Fleet of $3 $4 times with $1$2 in your fleet. $2 must remain afloat.",
 }
 
 _G.pg.base.gametip.avatar_upgrad_1 = {
@@ -20182,7 +20182,7 @@ _G.pg.base.gametip.avatar_upgrad_2 = {
 }
 
 _G.pg.base.gametip.avatar_upgrad_3 = {
-	tip = "max Limit Break",
+	tip = "max Limit Break ",
 }
 
 _G.pg.base.gametip.avatar_task_ship_1 = {
@@ -28003,7 +28003,7 @@ _G.pg.base.gametip.dorm3d_privatechat_favor = {
 }
 
 _G.pg.base.gametip.dorm3d_privatechat_furniture = {
-	tip = "Owned Furniture",
+	tip = "Furniture",
 }
 
 _G.pg.base.gametip.dorm3d_privatechat_visit = {

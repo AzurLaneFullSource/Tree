@@ -501,7 +501,7 @@ pg.item_data_frame = {
 		gain_by = "Paradiso of Shackled Light",
 		id = 334,
 		time_second = 0,
-		desc = "<color=#ffffff>\"Pick up the brush, and paint your own light.\"</color>\nGiven to Commanders who participated in the Paradiso of Shackled Light",
+		desc = "<color=#ffffff>\"Pick up the brush, and paint your own light.\"</color>\nGiven to Commanders who participated in the Paradiso of Shackled Light.",
 		scene = {}
 	},
 	[406] = {

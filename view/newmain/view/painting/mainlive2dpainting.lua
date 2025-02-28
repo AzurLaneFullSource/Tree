@@ -35,6 +35,8 @@ function var0_0.OnLoad(arg0_4, arg1_4)
 		parent = arg0_4.live2dContainer
 	})
 
+	arg0_4.actionWaiting = false
+
 	arg0_4:SetContainerVisible(true)
 
 	arg0_4.cg.blocksRaycasts = true

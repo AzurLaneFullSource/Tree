@@ -212427,12 +212427,15 @@ _G.pg.base.task_data_template[21265] = {
 	story_icon_shift = "",
 	story_id = "",
 	sub_type = 1020,
-	target_id = "1890051",
 	target_id_2 = "",
 	target_num = 1,
 	task_fold = 0,
 	type = 6,
 	visibility = 1,
+	target_id = {
+		1890051,
+		1890052,
+	},
 	open_need = {},
 	award_display = {
 		{

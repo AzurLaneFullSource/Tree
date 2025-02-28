@@ -12,7 +12,10 @@ return {
 			arg_list = {
 				buff_id = 150957,
 				repeat_count = -1,
-				target = "TargetFatalDamageSrc"
+				target = {
+					"TargetAllFoe",
+					"TargetFatalDamageSrc"
+				}
 			}
 		},
 		{

@@ -67,7 +67,7 @@ pg.item_data_battleui = {
 		display_icon = "ui_105",
 		is_unlock = 1,
 		rare = 3,
-		unlock = "Seasonal Missions S21",
+		unlock = "Cruise Missions S21",
 		id = 105,
 		icon = "105",
 		scene = {}
@@ -86,7 +86,7 @@ pg.item_data_battleui = {
 	},
 	[202] = {
 		key = "SkinNormal_20250227",
-		name = "Battle UI - Pharaoh",
+		name = "Pharaoh",
 		desc = "Hieroglyphs and gold emblazonings. They retell the legends of the Nile culture from time immemorial.",
 		display_icon = "ui_202",
 		is_unlock = 1,

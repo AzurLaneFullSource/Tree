@@ -46,7 +46,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "？？？",
+			actorName = "???",
 			bgName = "star_level_bg_303",
 			nameColor = "#A9F548FF",
 			dir = 1,
@@ -59,7 +59,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "？？？",
+			actorName = "???",
 			bgName = "star_level_bg_303",
 			nameColor = "#A9F548FF",
 			dir = 1,
@@ -215,6 +215,10 @@ return {
 				{
 					content = "(Beg for forgiveness.)",
 					flag = 1
+				},
+				{
+					content = "(Point out the flaw in the exhibition's tour route.)",
+					flag = 2
 				}
 			}
 		},
@@ -277,12 +281,6 @@ return {
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
-			},
-			options = {
-				{
-					content = "(Point out the flaw in the exhibition's tour route.)",
-					flag = 1
-				}
 			}
 		},
 		{

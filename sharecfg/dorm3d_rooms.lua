@@ -158,7 +158,7 @@ pg.dorm3d_rooms = {
 	},
 	[4] = {
 		tag = "beach",
-		room_des = "沙滩、泳装、排球……尽情在海风中玩耍吧~",
+		room_des = "The seaside, swimsuits, beach volleyball... Enjoy the beach sunshine!",
 		type = 1,
 		resource_name = "Beach",
 		assets_prefix = "Beach",
