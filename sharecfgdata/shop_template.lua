@@ -73089,6 +73089,39 @@ _G.pg.base.shop_template[260321] = {
 	},
 }
 
+_G.pg.base.shop_template[260331] = {
+	collaboration_skin_time = "",
+	desc = "宿舍280钻石购买画板",
+	discount = 0,
+	genre = "dorm3d_gift",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 260331,
+	limit_args2 = "",
+	num = 1,
+	order = 1,
+	resource_num = 280,
+	resource_type = 14,
+	tag = 0,
+	time = "always",
+	time_second = 0,
+	type = 27,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"count",
+			0,
+			1,
+		},
+	},
+	effect_args = {
+		1990301,
+	},
+}
+
 _G.pg.base.shop_template[270101] = {
 	collaboration_skin_time = "",
 	desc = "宿舍480钻石购买甜蜜心事",
@@ -73337,6 +73370,39 @@ _G.pg.base.shop_template[270201] = {
 	},
 }
 
+_G.pg.base.shop_template[270301] = {
+	collaboration_skin_time = "",
+	desc = "宿舍480钻石购买付费娱乐区",
+	discount = 0,
+	genre = "dorm3d_gift",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 270301,
+	limit_args2 = "",
+	num = 1,
+	order = 1,
+	resource_num = 480,
+	resource_type = 14,
+	tag = 0,
+	time = "always",
+	time_second = 0,
+	type = 26,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"count",
+			0,
+			1,
+		},
+	},
+	effect_args = {
+		321,
+	},
+}
+
 _G.pg.base.shop_template[270202] = {
 	collaboration_skin_time = "",
 	desc = "宿舍480钻石购买对坐之谈",
@@ -73407,6 +73473,31 @@ _G.pg.base.shop_template[270111] = {
 	group_limit = 0,
 	group_type = 0,
 	id = 270111,
+	limit_args2 = "",
+	num = 1,
+	order = 1,
+	resource_num = 800,
+	resource_type = 14,
+	tag = 0,
+	time = "always",
+	time_second = 0,
+	type = 32,
+	type_order = 0,
+	limit_args = {},
+}
+
+_G.pg.base.shop_template[270112] = {
+	collaboration_skin_time = "",
+	desc = "沙滩邀请安克雷奇解锁",
+	discount = 0,
+	discount_time = "always",
+	effect_args = "",
+	genre = "",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 270112,
 	limit_args2 = "",
 	num = 1,
 	order = 1,

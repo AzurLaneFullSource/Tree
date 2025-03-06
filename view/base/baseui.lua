@@ -91,6 +91,10 @@ function var0_0.load(arg0_13)
 
 	seriesAsync({
 		function(arg0_14)
+			if tobool(arg0_13:loadingQueue()) then
+				gcAll(true)
+			end
+
 			arg0_13:preload(arg0_14)
 		end,
 		function(arg0_15)

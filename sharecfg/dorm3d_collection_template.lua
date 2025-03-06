@@ -73,6 +73,36 @@ pg.dorm3d_collection_template = setmetatable({
 			79,
 			74,
 			75
+		},
+		{
+			101,
+			102,
+			103,
+			104,
+			105,
+			106,
+			107,
+			108,
+			109,
+			110,
+			111,
+			112,
+			113,
+			114,
+			115,
+			116,
+			117,
+			118,
+			119,
+			120,
+			121,
+			122,
+			123,
+			124,
+			125,
+			126,
+			127,
+			128
 		}
 	},
 	all = {
@@ -141,7 +171,35 @@ pg.dorm3d_collection_template = setmetatable({
 		78,
 		79,
 		74,
-		75
+		75,
+		101,
+		102,
+		103,
+		104,
+		105,
+		106,
+		107,
+		108,
+		109,
+		110,
+		111,
+		112,
+		113,
+		114,
+		115,
+		116,
+		117,
+		118,
+		119,
+		120,
+		121,
+		122,
+		123,
+		124,
+		125,
+		126,
+		127,
+		128
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -1530,6 +1588,594 @@ pg.base.dorm3d_collection_template = {
 		},
 		vfx_prefab = {
 			"fbx/no_bake_pay_prop/livingroom/pre_db_chandelier08_on/vfx_wupintishi01"
+		}
+	},
+	[101] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Balloons and Photo",
+		award = 0,
+		time = 0,
+		id = 101,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item1",
+		desc = "A framed photo decorated with carefully selected balloons.\nAnchorage loves this little combo.\nThe bunny bow is still crinkled from the last time she tied it.",
+		model = {
+			"fbx/litmap_02/pre_db_billboard14"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/pre_db_billboard14/vfx_wupintishi01"
+		}
+	},
+	[102] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Bunny Tea Set",
+		award = 0,
+		time = 0,
+		id = 102,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item2",
+		desc = "A bunny-themed teapot and tiny cups to match.\nAnchorage takes good care of them.",
+		model = {
+			"fbx/litmap_02/pre_db_ceram11_group01"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/pre_db_ceram11_group01/vfx_wupintishi01"
+		}
+	},
+	[103] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Wish List",
+		award = 0,
+		time = 0,
+		id = 103,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item3",
+		desc = "A chalkboard hanging on the wall.\nAnchorage often writes her little goals on it.\nSometimes, you can see cute little doodles.",
+		model = {
+			"fbx/litmap_02/pre_db_blackboard01"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/pre_db_blackboard01/vfx_wupintishi01"
+		}
+	},
+	[104] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Trove of Knowledge",
+		award = 0,
+		time = 0,
+		id = 104,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item4",
+		desc = "Fairy tale books are neatly arranged in the bookcase.\nAll of them are wrapped, labeled, and sorted \nunder Anchorage's personal system.",
+		model = {
+			"fbx/litmap_02/pre_db_book15_group01"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/pre_db_book15_group01/vfx_wupintishi01"
+		}
+	},
+	[105] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Castle Storage",
+		award = 0,
+		time = 0,
+		id = 105,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item5",
+		desc = "A file storage container modeled after a fairy-tale castle.\nAnchorage uses it to store various notes and important documents.",
+		model = {
+			"fbx/litmap_02/pre_db_cupboard18"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/pre_db_cupboard18/vfx_wupintishi01"
+		}
+	},
+	[106] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Classic Piano",
+		award = 0,
+		time = 0,
+		id = 106,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item6",
+		desc = "A classic piano in the corner of the room.\nThe last score that Anchorage was learning is open on it, \nwith careful notes taken here and there.",
+		model = {
+			"fbx/litmap_02/pre_db_musicalInstrument02"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/pre_db_musicalInstrument02/vfx_wupintishi01"
+		}
+	},
+	[107] = {
+		text = "dorm3d_Ankeleiqi_entertainmentarea",
+		name = "Crayon Drawing",
+		award = 0,
+		time = 0,
+		id = 107,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item7",
+		desc = "Some crayon art left on Anchorage's desk.\nIt depicts the most beautiful thing she's ever seen, \nwhich seems to be... the Commander?",
+		model = {
+			"fbx/litmap_02/pre_db_paper02_group01"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/pre_db_paper02_group01/vfx_wupintishi01"
+		}
+	},
+	[108] = {
+		text = "dorm3d_Ankeleiqi_bed",
+		name = "Alarm Clock",
+		award = 0,
+		time = 0,
+		id = 108,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item8",
+		desc = "An alarm clock with a traditional, if not plain, design.\nIt sits on Anchorage's nightstand, \nensuring that she never misses an important moment.",
+		model = {
+			"fbx/no_bake_pay_prop/bedroom/pre_db_clock02"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/bedroom/pre_db_clock02/vfx_wupintishi01"
+		}
+	},
+	[109] = {
+		text = "dorm3d_Ankeleiqi_bed",
+		name = "Storage Box",
+		award = 0,
+		time = 0,
+		id = 109,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item9",
+		desc = "A storage box with a cute design.\nAnchorage keeps all kinds of odds and ends inside.",
+		model = {
+			"fbx/litmap_02/pre_db_basket04_group01"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/pre_db_basket04_group01/vfx_wupintishi01"
+		}
+	},
+	[110] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Floatie",
+		award = 0,
+		time = 0,
+		id = 110,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item10",
+		desc = "A swim ring adorned with stars.\nAnchorage considers it a summer must-have.",
+		model = {
+			"fbx/litmap_02/pre_db_toy07"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/pre_db_toy07/vfx_wupintishi01"
+		}
+	},
+	[111] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Safety Knife",
+		award = 0,
+		time = 0,
+		id = 111,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item11",
+		desc = "A beginner's kitchen knife that won't cut through skin.\nAnchorage has been learning how to cut veggies, \nno doubt dreaming of making delicious dishes someday.",
+		model = {
+			"fbx/litmap_02/pre_db_kitchenware08_group01"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/pre_db_kitchenware08_group01/vfx_wupintishi01"
+		}
+	},
+	[112] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Fairy Tale Picture Book",
+		award = 0,
+		time = 0,
+		id = 112,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item12",
+		desc = "A hardcover picture book.\nAnchorage keeps it safely stored, \nthough you can see the traces of her rapt reading on the pages.",
+		model = {
+			"fbx/no_bake_pay_prop/livingroom/pre_db_book11a"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/livingroom/pre_db_book11a/vfx_wupintishi01"
+		}
+	},
+	[113] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Fluffy Plushie",
+		award = 0,
+		time = 0,
+		id = 113,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item13",
+		desc = "A penguin plushie wearing a little nightcap.\nAnchorage gives it pride of place on the sofa, \nperhaps hoping that the penguin will watch over her as she dreams.",
+		model = {
+			"fbx/no_bake_pay_prop/livingroom/pre_db_toy06"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/livingroom/pre_db_toy06/vfx_wupintishi01"
+		}
+	},
+	[114] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Cactus",
+		award = 0,
+		time = 0,
+		id = 114,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item14",
+		desc = "An adorable cactus.\nAnchorage has given it a colorful pot, \nadding some warmth to its life.",
+		model = {
+			"fbx/litmap_02/pre_db_flowerpot10"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/pre_db_flowerpot10/vfx_wupintishi01"
+		}
+	},
+	[115] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Kitchenware",
+		award = 0,
+		time = 0,
+		id = 115,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item15",
+		desc = "A kitchenware set for playing house.\nAnchorage has arranged them neatly on the wall.\nIt's a little early for her to start cooking for real...",
+		model = {
+			"fbx/litmap_02/pre_db_kitchenware01"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/pre_db_kitchenware01/vfx_wupintishi01"
+		}
+	},
+	[116] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Orca Chair",
+		award = 0,
+		time = 0,
+		id = 116,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item16",
+		desc = "A rocking chair made to look like a killer whale.\nIt's one of Anchorage's favorite places.",
+		model = {
+			"fbx/no_bake_pay_prop/livingroom/pre_db_chair16"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/livingroom/pre_db_chair16/vfx_wupintishi01"
+		}
+	},
+	[117] = {
+		text = "dorm3d_Ankeleiqi_bed",
+		name = "Basket",
+		award = 0,
+		time = 0,
+		id = 117,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item17",
+		desc = "A storage basket woven with rattan.\nAnchorage keeps her daily necessities in it.",
+		model = {
+			"fbx/litmap_02/pre_db_basket05"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/pre_db_basket05/vfx_wupintishi01"
+		}
+	},
+	[118] = {
+		text = "dorm3d_Ankeleiqi_bed",
+		name = "Whale Plushie",
+		award = 0,
+		time = 0,
+		id = 118,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item18",
+		desc = "A blue whale plushie with round eyes and a friendly smile.\nShe must like collecting plushies.\nWhy not bring her a few some time?",
+		model = {
+			"fbx/no_bake_pay_prop/bedroom/pre_db_toy10"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/bedroom/pre_db_toy10/vfx_wupintishi01"
+		}
+	},
+	[119] = {
+		text = "dorm3d_Ankeleiqi_entertainmentarea",
+		name = "Small Blackboard",
+		award = 0,
+		time = 0,
+		id = 119,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item19",
+		desc = "On the blackboard is Anchorage's cute handwriting.\nBut what is this equation supposed to mean, exactly...?",
+		model = {
+			"fbx/no_bake_pay_prop/entertainmentarea/pre_db_blackboard02"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/entertainmentarea/pre_db_blackboard02/vfx_wupintishi01"
+		}
+	},
+	[120] = {
+		text = "dorm3d_Ankeleiqi_entertainmentarea",
+		name = "Cube Cushion",
+		award = 0,
+		time = 0,
+		id = 120,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item20",
+		desc = "A light-blue cushion in the shape of a die.\nOne side features a cute manta ray, \nand its soft colors add a hint of peace to the room.",
+		model = {
+			"fbx/no_bake_pay_prop/entertainmentarea/pre_db_toy12"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/entertainmentarea/pre_db_toy12/vfx_wupintishi01"
+		}
+	},
+	[121] = {
+		text = "dorm3d_Ankeleiqi_entertainmentarea",
+		name = "Adorned Photos",
+		award = 0,
+		time = 0,
+		id = 121,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item21",
+		desc = "Rope and wooden clips hold up various beloved photos.\nEach of them is filled with warm memories of Anchorage.",
+		model = {
+			"fbx/litmap_02/pre_db_decoration12"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/pre_db_decoration12/vfx_wupintishi01"
+		}
+	},
+	[122] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Umbrella Stand",
+		award = 0,
+		time = 1,
+		id = 122,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item22",
+		desc = "A simple umbrella stand.\nAnchorage diligently stores her umbrellas inside, \nready for a rainy day.",
+		model = {
+			"fbx/litmap_02/day/pre_db_decoration11"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/day/pre_db_decoration11/vfx_wupintishi01"
+		}
+	},
+	[123] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Thermos",
+		award = 0,
+		time = 1,
+		id = 123,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item23",
+		desc = "A brightly-colored thermos bottle.\nWhen it's cold out, Anchorage puts a hot drink inside.",
+		model = {
+			"fbx/litmap_02/day/pre_db_tableware26"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/day/pre_db_tableware26/vfx_wupintishi01"
+		}
+	},
+	[124] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Stickers",
+		award = 0,
+		time = 1,
+		id = 124,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item24",
+		desc = "One sticker is a star, and the other is a manjuu.\nThey're put up in an inconspicuous place, \nbut it adds life to the room.",
+		model = {
+			"fbx/litmap_02/day/pre_db_cupboard19_01"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/day/pre_db_cupboard19_01/vfx_wupintishi01"
+		}
+	},
+	[125] = {
+		text = "dorm3d_Ankeleiqi_bed",
+		name = "Bedside Lamp",
+		award = 0,
+		time = 2,
+		id = 125,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item25",
+		desc = "A delicate bedside lamp.\nAnchorage sets it at the softest setting before bed, \nletting the warm light lull her into sweet dreams.",
+		model = {
+			"fbx/no_bake_pay_prop/bedroom/pre_db_desklamp03"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/bedroom/pre_db_desklamp03/vfx_wupintishi01"
+		}
+	},
+	[126] = {
+		text = "dorm3d_Ankeleiqi_bed",
+		name = "Whale Pendant Light",
+		award = 0,
+		time = 2,
+		id = 126,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item26",
+		desc = "A huge ceiling lamp shaped like a humpback whale.\nAnchorage gazes up at it from her bed, \nimagining herself deep in a dreamy underwater world.",
+		model = {
+			"fbx/no_bake/pre_db_anchoragehostel01_lamp01_night"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake/pre_db_anchoragehostel01_lamp01_night/vfx_wupintishi01"
+		}
+	},
+	[127] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Manjuu Mug",
+		award = 0,
+		time = 2,
+		id = 127,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item27",
+		desc = "A mug that looks like a manjuu.\nAnchorage's love for it is evident from \nhow she places it in the most conspicuous spot.",
+		model = {
+			"fbx/no_bake_pay_prop/livingroom/pre_db_tableware24"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/no_bake_pay_prop/livingroom/pre_db_tableware24/vfx_wupintishi01"
+		}
+	},
+	[128] = {
+		text = "dorm3d_Ankeleiqi_chair",
+		name = "Bath Towels",
+		award = 0,
+		time = 2,
+		id = 128,
+		room_id = 3,
+		icon = "3Ddrom_ankeleiqi_item28",
+		desc = "Perfectly folded bath towels.\nThey look like little clouds drifting across the sky together.",
+		model = {
+			"fbx/litmap_02/night/pre_db_towel01_group01"
+		},
+		unlock = {
+			1,
+			19903,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_02/night/pre_db_towel01_group01/vfx_wupintishi01"
 		}
 	}
 }

@@ -32,14 +32,22 @@ function var1_0.ConfigCallback(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4)
 	var1_0.super.ConfigCallback(arg0_4, arg1_4, var0_4, arg3_4, arg4_4)
 end
 
-function var1_0.Update(arg0_6)
+function var1_0.OnOverLoadChange(arg0_6, arg1_6)
+	var1_0.super.OnOverLoadChange(arg0_6, arg1_6)
+
+	if arg0_6._progressInfo:GetTotal() == arg0_6._progressInfo:GetCount() then
+		quickCheckAndPlayAnimator(arg0_6._skin, "weapon_button_into")
+	end
+end
+
+function var1_0.Update(arg0_7)
 	return
 end
 
-function var1_0.updateProgressBar(arg0_7)
+function var1_0.updateProgressBar(arg0_8)
 	return
 end
 
-function var1_0.OnfilledEffect(arg0_8)
+function var1_0.OnfilledEffect(arg0_9)
 	return
 end

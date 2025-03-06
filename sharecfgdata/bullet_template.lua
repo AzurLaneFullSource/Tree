@@ -167220,7 +167220,6 @@ _G.pg.base.bullet_template[167423] = {
 	},
 	attach_buff = {},
 	extra_param = {
-		barrageLowPriority = true,
 		gravity = -0.03,
 		randomOffsetX = 15,
 		randomOffsetZ = 15,
@@ -167284,7 +167283,6 @@ _G.pg.base.bullet_template[167424] = {
 	},
 	attach_buff = {},
 	extra_param = {
-		barrageLowPriority = true,
 		gravity = -0.02,
 		randomOffsetX = 15,
 		randomOffsetZ = 15,

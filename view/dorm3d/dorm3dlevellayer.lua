@@ -340,14 +340,14 @@ function var0_0.ShowTimeSelectWindow(arg0_29)
 	setText(var0_29:Find("bottom/toggle_lock/Text"), i18n("dorm3d_is_auto_time"))
 	onToggle(arg0_29, var0_29:Find("bottom/toggle_lock"), function(arg0_31)
 		if arg0_31 then
-			PlayerPrefs.SetInt(ApartmentProxy.GetTimePPName(), 0)
+			PlayerPrefs.SetInt(ApartmentProxy.GetTimePPName(arg0_29.contextData.roomId), 0)
 		else
-			PlayerPrefs.SetInt(ApartmentProxy.GetTimePPName(), arg0_29.contextData.timeIndex)
+			PlayerPrefs.SetInt(ApartmentProxy.GetTimePPName(arg0_29.contextData.roomId), arg0_29.contextData.timeIndex)
 		end
 
 		quickPlayAnimation(var0_29:Find("bottom/toggle_lock"), arg0_31 and "anim_dorm3d_timeselect_bottom_on" or "anim_dorm3d_timeselect_bottom_off")
 	end, SFX_PANEL)
-	triggerToggle(var0_29:Find("bottom/toggle_lock"), PlayerPrefs.GetInt(ApartmentProxy.GetTimePPName(), 1) == 0)
+	triggerToggle(var0_29:Find("bottom/toggle_lock"), PlayerPrefs.GetInt(ApartmentProxy.GetTimePPName(arg0_29.contextData.roomId), 1) == 0)
 	onButton(arg0_29, var0_29:Find("bottom/btn_confirm"), function()
 		warning(arg0_29.contextData.timeIndex, arg0_29.selectTimeIndex)
 		pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_day_night_switching" .. arg0_29.selectTimeIndex))
@@ -355,8 +355,8 @@ function var0_0.ShowTimeSelectWindow(arg0_29)
 		if arg0_29.contextData.timeIndex == arg0_29.selectTimeIndex then
 			return
 		else
-			if PlayerPrefs.GetInt(ApartmentProxy.GetTimePPName(), 1) ~= 0 then
-				PlayerPrefs.SetInt(ApartmentProxy.GetTimePPName(), arg0_29.selectTimeIndex)
+			if PlayerPrefs.GetInt(ApartmentProxy.GetTimePPName(arg0_29.contextData.roomId), 1) ~= 0 then
+				PlayerPrefs.SetInt(ApartmentProxy.GetTimePPName(arg0_29.contextData.roomId), arg0_29.selectTimeIndex)
 			end
 
 			triggerButton(arg0_29.rtTimeSelectWindow:Find("bg"))

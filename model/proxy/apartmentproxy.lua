@@ -231,10 +231,10 @@ function var0_0.GetTimeIndex(arg0_32)
 	return var0_32
 end
 
-function var0_0.GetTimePPName()
+function var0_0.GetTimePPName(arg0_33)
 	local var0_33 = getProxy(PlayerProxy):getRawData()
 
-	return "DORM3D_SCENE_LOCK_TIME_IN_PLAYER:" .. var0_33.id
+	return "DORM3D_SCENE_LOCK_TIME_IN_PLAYER:" .. var0_33.id .. "_ROOM_" .. arg0_33
 end
 
 function var0_0.CheckUnlockConfig(arg0_34)
@@ -334,6 +334,13 @@ function var0_0.PendingRandom(arg0_42, arg1_42)
 	end
 
 	return var3_42
+end
+
+function var0_0.CheckDeviceRAMEnough()
+	local var0_44 = SystemInfo.systemMemorySize
+	local var1_44 = getDorm3dGameset("drom3d_memory_limit")[1]
+
+	return var0_44 == 0 or var1_44 < var0_44
 end
 
 return var0_0

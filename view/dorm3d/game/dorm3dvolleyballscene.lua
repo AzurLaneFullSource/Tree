@@ -82,11 +82,10 @@ function var0_0.preload(arg0_8, arg1_8)
 
 	seriesAsync({
 		function(arg0_9)
-			pg.UIMgr.GetInstance():LoadingOn(false)
 			SceneOpMgr.Inst:LoadSceneAsync(string.lower("dorm3d/scenesres/scenes/" .. arg0_8.sceneRootName .. "/" .. arg0_8.sceneName .. "_scene"), arg0_8.sceneName, LoadSceneMode.Additive, function(arg0_10, arg1_10)
 				arg0_8:InitGameParam()
 				SceneManager.SetActiveScene(arg0_10)
-				onNextTick(arg0_9)
+				arg0_9()
 			end)
 		end,
 		function(arg0_11)
@@ -96,440 +95,457 @@ function var0_0.preload(arg0_8, arg1_8)
 			SceneOpMgr.Inst:LoadSceneAsync(string.lower("dorm3d/character/" .. var0_11 .. "/timeline/" .. var1_11 .. "/" .. var1_11 .. "_scene"), var1_11, LoadSceneMode.Additive, function(arg0_12, arg1_12)
 				arg0_11()
 			end)
-		end,
-		function(arg0_13)
-			pg.UIMgr.GetInstance():LoadingOff()
-			arg0_13()
-		end,
-		arg1_8
-	})
+		end
+	}, arg1_8)
 end
 
-function var0_0.InitGameParam(arg0_14)
-	var0_0.BallSpeed = arg0_14.volleyballCfg.BallSpeedParam[1]
-	var0_0.BallQTESpeed = arg0_14.volleyballCfg.BallSpeedParam[2]
-	var0_0.endScore = arg0_14.volleyballCfg.endScore
+function var0_0.InitGameParam(arg0_13)
+	var0_0.BallSpeed = arg0_13.volleyballCfg.BallSpeedParam[1]
+	var0_0.BallQTESpeed = arg0_13.volleyballCfg.BallSpeedParam[2]
+	var0_0.endScore = arg0_13.volleyballCfg.endScore
 end
 
-function var0_0.init(arg0_15)
-	arg0_15:initUI()
-	arg0_15:initScene()
-	arg0_15:BindEvent()
+function var0_0.init(arg0_14)
+	arg0_14:initUI()
+	arg0_14:initScene()
+	arg0_14:BindEvent()
 end
 
-function var0_0.initUI(arg0_16)
-	arg0_16.skipUI = arg0_16._tf:Find("SkipUI")
+function var0_0.initUI(arg0_15)
+	arg0_15.skipUI = arg0_15._tf:Find("SkipUI")
 
-	setActive(arg0_16.skipUI, false)
+	setActive(arg0_15.skipUI, false)
 
-	arg0_16.gameUI = arg0_16._tf:Find("GameUI")
+	arg0_15.gameUI = arg0_15._tf:Find("GameUI")
 
-	setText(arg0_16.gameUI:Find("Title/Text"), i18n("dorm3d_volleyball_title"))
+	setText(arg0_15.gameUI:Find("Title/Text"), i18n("dorm3d_volleyball_title"))
 
-	arg0_16.ourScoreTF = arg0_16.gameUI:Find("Score/Content/Left")
-	arg0_16.otherScoreTF = arg0_16.gameUI:Find("Score/Content/Right")
-	arg0_16.qteTF = arg0_16.gameUI:Find("QTE")
-	arg0_16.qteTriggerTF = arg0_16.gameUI:Find("QTE/animroot/Trigger")
+	arg0_15.ourScoreTF = arg0_15.gameUI:Find("Score/Content/Left")
+	arg0_15.otherScoreTF = arg0_15.gameUI:Find("Score/Content/Right")
+	arg0_15.qteTF = arg0_15.gameUI:Find("QTE")
+	arg0_15.qteTriggerTF = arg0_15.gameUI:Find("QTE/animroot/Trigger")
 
-	setActive(arg0_16.qteTF, false)
-	setActive(arg0_16.gameUI, false)
-
-	arg0_16.scoreUI = arg0_16._tf:Find("ScoreUI")
-
-	setActive(arg0_16.scoreUI, false)
-
-	arg0_16.endUI = arg0_16._tf:Find("EndUI")
-
-	setActive(arg0_16.endUI, false)
-
-	arg0_16.resultUI = arg0_16._tf:Find("ResultUI")
-
-	setActive(arg0_16.resultUI, false)
-	setText(arg0_16.resultUI:Find("AgainBtn/Text"), i18n("dorm3d_minigame_again"))
-	setText(arg0_16.resultUI:Find("CloseBtn/Text"), i18n("dorm3d_minigame_close"))
-
-	local var0_16 = arg0_16._tf:Find("Debug")
-
-	setActive(var0_16, false)
-
-	arg0_16.debugTimelineName = var0_16:Find("Timeline"):GetComponent(typeof(Text))
-	arg0_16.debugTrackName = var0_16:Find("Track"):GetComponent(typeof(Text))
-end
-
-function var0_0.BindEvent(arg0_17)
-	onButton(arg0_17, arg0_17.gameUI:Find("Title/BackBtn"), function()
-		arg0_17:onBackPressed()
-	end, SFX_CANCEL)
-	onButton(arg0_17, arg0_17.gameUI, function()
-		if not arg0_17.startQTEUI then
+	setActive(arg0_15.qteTF, false)
+	setActive(arg0_15.gameUI, false)
+	arg0_15.gameUI:Find("Count"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		if not arg0_15.isStartGame then
 			return
 		end
 
-		arg0_17:EndQTE()
+		arg0_15.isStartGame = false
+
+		setActive(arg0_15.gameUI:Find("Count"), false)
+		arg0_15:StartOneRound()
+		setActive(arg0_15.gameUI:Find("Score"), true)
 	end)
-	onButton(arg0_17, arg0_17.skipUI:Find("SkipBtn"), function()
-		setActive(arg0_17.skipUI, false)
-		arg0_17:StopPlayingTimeline()
-		arg0_17:StartGame()
-	end, SFX_PANEL)
-	onButton(arg0_17, arg0_17.endUI, function()
-		arg0_17:emit(Dorm3dGameMediatorTemplate.TRIGGER_FAVOR, arg0_17.apartment.configId)
-	end, SFX_PANEL)
-	onButton(arg0_17, arg0_17.resultUI:Find("AgainBtn"), function()
-		setActive(arg0_17.resultUI, false)
-		arg0_17:StartGame()
-	end, SFX_PANEL)
-	onButton(arg0_17, arg0_17.resultUI:Find("CloseBtn"), function()
-		arg0_17:closeView()
-	end, SFX_CANCEL)
-end
 
-function var0_0.initScene(arg0_24)
-	local var0_24 = SceneManager.GetSceneByName(arg0_24.sceneName):GetRootGameObjects()
+	arg0_15.scoreUI = arg0_15._tf:Find("ScoreUI")
 
-	table.IpairsCArray(var0_24, function(arg0_25, arg1_25)
-		if arg1_25.name == "[MainBlock]" then
-			arg0_24.modelRoot = tf(arg1_25):Find("[Model]/scene_root")
-			arg0_24.ballTF = arg0_24.modelRoot:Find("fbx/litmap05/pre_db_sportinggoods03")
-			arg0_24.ballTF.position = var0_0.BallInitPos
+	setActive(arg0_15.scoreUI, false)
 
-			setActive(arg0_24.ballTF, false)
-		elseif arg1_25.name == "MainCamera" then
-			arg0_24.mainCamera = arg1_25.transform
+	arg0_15.endUI = arg0_15._tf:Find("EndUI")
 
-			setActive(arg0_24.mainCamera, false)
-		elseif arg1_25.name == "PlayerCamera" then
-			arg0_24.ballCamera = arg1_25.transform
-			arg0_24.ballCameraComp = arg0_24.ballCamera:GetComponent(typeof(Camera))
+	setActive(arg0_15.endUI, false)
 
-			setActive(arg0_24.ballCamera, false)
-		elseif arg1_25.name == "TriggerPlane" then
-			setActive(arg1_25, false)
+	arg0_15.resultUI = arg0_15._tf:Find("ResultUI")
 
-			local var0_25 = tf(arg1_25):Find("BallCreate")
-			local var1_25 = var0_25:GetComponent(typeof(UnityEngine.MeshCollider)).sharedMesh
-
-			arg0_24.ballCreatePlane = Plane.New(var1_25.normals[0], -Vector3.Dot(var0_25.position, var1_25.normals[0]))
-
-			local var2_25 = tf(arg1_25):Find("BallQte")
-
-			setLocalPosition(var2_25, Vector3(arg0_24.volleyballCfg.BallQtePlane[1][1], arg0_24.volleyballCfg.BallQtePlane[1][2], arg0_24.volleyballCfg.BallQtePlane[1][3]))
-			setLocalEulerAngles(var2_25, Vector3(arg0_24.volleyballCfg.BallQtePlane[2][1], arg0_24.volleyballCfg.BallQtePlane[2][2], arg0_24.volleyballCfg.BallQtePlane[2][3]))
-
-			local var3_25 = var2_25:GetComponent(typeof(UnityEngine.MeshCollider)).sharedMesh
-
-			arg0_24.ballQtePlane = Plane.New(var3_25.normals[0], -Vector3.Dot(var2_25.position, var3_25.normals[0]))
-
-			local var4_25 = tf(arg1_25):Find("BallMiss")
-
-			setLocalPosition(var4_25, Vector3(arg0_24.volleyballCfg.BallMissPlane[1][1], arg0_24.volleyballCfg.BallMissPlane[1][2], arg0_24.volleyballCfg.BallMissPlane[1][3]))
-			setLocalEulerAngles(var4_25, Vector3(arg0_24.volleyballCfg.BallMissPlane[2][1], arg0_24.volleyballCfg.BallMissPlane[2][2], arg0_24.volleyballCfg.BallMissPlane[2][3]))
-
-			local var5_25 = var4_25:GetComponent(typeof(UnityEngine.MeshCollider)).sharedMesh
-
-			arg0_24.ballMissPlane = Plane.New(var5_25.normals[0], -Vector3.Dot(var4_25.position, var5_25.normals[0]))
-		end
-	end)
-	arg0_24:InitLightSettings()
-
-	local var1_24 = SceneManager.GetSceneByName(arg0_24.timelineSceneName):GetRootGameObjects()
-
-	arg0_24.totalDirectorList = {}
-
-	table.IpairsCArray(var1_24, function(arg0_26, arg1_26)
-		local var0_26 = tf(arg1_26):Find("[sequence]")
-
-		if IsNil(var0_26) then
+	setActive(arg0_15.resultUI, false)
+	setText(arg0_15.resultUI:Find("AgainBtn/Text"), i18n("dorm3d_minigame_again"))
+	setText(arg0_15.resultUI:Find("CloseBtn/Text"), i18n("dorm3d_minigame_close"))
+	arg0_15.scoreUI:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		if not arg0_15.isEndOneRound then
 			return
 		end
 
-		local var1_26 = var0_26:GetComponent(typeof(UnityEngine.Playables.PlayableDirector))
+		arg0_15.isEndOneRound = false
 
-		var1_26.playOnAwake = false
+		quickPlayAnimation(arg0_15.scoreUI, "Anim_Dorm3d_volleyball_score_out")
+		onDelayTick(function()
+			setActive(arg0_15.scoreUI, false)
+		end, 0.1)
 
-		local var2_26 = var0_26:GetComponentsInChildren(typeof(UnityEngine.Playables.PlayableDirector))
+		if arg0_15:CheckEndGame() then
+			arg0_15:EndGame()
+		else
+			setActive(arg0_15.gameUI, true)
+			arg0_15:StartOneRound()
+		end
+	end)
 
-		for iter0_26 = 0, var2_26.Length - 1 do
-			var2_26[iter0_26].playOnAwake = false
+	local var0_15 = arg0_15._tf:Find("Debug")
+
+	setActive(var0_15, false)
+
+	arg0_15.debugTimelineName = var0_15:Find("Timeline"):GetComponent(typeof(Text))
+	arg0_15.debugTrackName = var0_15:Find("Track"):GetComponent(typeof(Text))
+end
+
+function var0_0.BindEvent(arg0_19)
+	onButton(arg0_19, arg0_19.gameUI:Find("Title/BackBtn"), function()
+		arg0_19:onBackPressed()
+	end, SFX_CANCEL)
+	onButton(arg0_19, arg0_19.gameUI, function()
+		if not arg0_19.startQTEUI then
+			return
 		end
 
-		table.insert(arg0_24.totalDirectorList, {
-			name = arg1_26.name,
-			director = var1_26
+		arg0_19:EndQTE()
+	end)
+	onButton(arg0_19, arg0_19.skipUI:Find("SkipBtn"), function()
+		setActive(arg0_19.skipUI, false)
+		arg0_19:StopPlayingTimeline()
+		arg0_19:StartGame()
+	end, SFX_PANEL)
+	onButton(arg0_19, arg0_19.endUI, function()
+		arg0_19:emit(Dorm3dGameMediatorTemplate.TRIGGER_FAVOR, arg0_19.apartment.configId)
+	end, SFX_PANEL)
+	onButton(arg0_19, arg0_19.resultUI:Find("AgainBtn"), function()
+		setActive(arg0_19.resultUI, false)
+		arg0_19:StartGame()
+	end, SFX_PANEL)
+	onButton(arg0_19, arg0_19.resultUI:Find("CloseBtn"), function()
+		arg0_19:closeView()
+	end, SFX_CANCEL)
+end
+
+function var0_0.initScene(arg0_26)
+	local var0_26 = SceneManager.GetSceneByName(arg0_26.sceneName):GetRootGameObjects()
+
+	table.IpairsCArray(var0_26, function(arg0_27, arg1_27)
+		if arg1_27.name == "[MainBlock]" then
+			arg0_26.modelRoot = tf(arg1_27):Find("[Model]/scene_root")
+			arg0_26.ballTF = arg0_26.modelRoot:Find("fbx/litmap05/pre_db_sportinggoods03")
+			arg0_26.ballTF.position = var0_0.BallInitPos
+
+			setActive(arg0_26.ballTF, false)
+		elseif arg1_27.name == "MainCamera" then
+			arg0_26.mainCamera = arg1_27.transform
+
+			setActive(arg0_26.mainCamera, false)
+		elseif arg1_27.name == "PlayerCamera" then
+			arg0_26.ballCamera = arg1_27.transform
+			arg0_26.ballCameraComp = arg0_26.ballCamera:GetComponent(typeof(Camera))
+
+			setActive(arg0_26.ballCamera, false)
+		elseif arg1_27.name == "TriggerPlane" then
+			setActive(arg1_27, false)
+
+			local var0_27 = tf(arg1_27):Find("BallCreate")
+			local var1_27 = var0_27:GetComponent(typeof(UnityEngine.MeshCollider)).sharedMesh
+
+			arg0_26.ballCreatePlane = Plane.New(var1_27.normals[0], -Vector3.Dot(var0_27.position, var1_27.normals[0]))
+
+			local var2_27 = tf(arg1_27):Find("BallQte")
+
+			setLocalPosition(var2_27, Vector3(arg0_26.volleyballCfg.BallQtePlane[1][1], arg0_26.volleyballCfg.BallQtePlane[1][2], arg0_26.volleyballCfg.BallQtePlane[1][3]))
+			setLocalEulerAngles(var2_27, Vector3(arg0_26.volleyballCfg.BallQtePlane[2][1], arg0_26.volleyballCfg.BallQtePlane[2][2], arg0_26.volleyballCfg.BallQtePlane[2][3]))
+
+			local var3_27 = var2_27:GetComponent(typeof(UnityEngine.MeshCollider)).sharedMesh
+
+			arg0_26.ballQtePlane = Plane.New(var3_27.normals[0], -Vector3.Dot(var2_27.position, var3_27.normals[0]))
+
+			local var4_27 = tf(arg1_27):Find("BallMiss")
+
+			setLocalPosition(var4_27, Vector3(arg0_26.volleyballCfg.BallMissPlane[1][1], arg0_26.volleyballCfg.BallMissPlane[1][2], arg0_26.volleyballCfg.BallMissPlane[1][3]))
+			setLocalEulerAngles(var4_27, Vector3(arg0_26.volleyballCfg.BallMissPlane[2][1], arg0_26.volleyballCfg.BallMissPlane[2][2], arg0_26.volleyballCfg.BallMissPlane[2][3]))
+
+			local var5_27 = var4_27:GetComponent(typeof(UnityEngine.MeshCollider)).sharedMesh
+
+			arg0_26.ballMissPlane = Plane.New(var5_27.normals[0], -Vector3.Dot(var4_27.position, var5_27.normals[0]))
+		end
+	end)
+	arg0_26:InitLightSettings()
+
+	local var1_26 = SceneManager.GetSceneByName(arg0_26.timelineSceneName):GetRootGameObjects()
+
+	arg0_26.totalDirectorList = {}
+
+	local var2_26 = tolua.createinstance(typeof("BLHX.Rendering.FinalBlit"))
+
+	table.IpairsCArray(var1_26, function(arg0_28, arg1_28)
+		local var0_28 = tf(arg1_28):Find("[sequence]")
+
+		if IsNil(var0_28) then
+			return
+		end
+
+		local var1_28 = tf(arg1_28):Find("[camera]/MainCamera"):GetComponent("BLHX.Rendering.BuiltinAdditionalCameraData")
+
+		ReflectionHelp.RefSetField(typeof("BLHX.Rendering.BuiltinAdditionalCameraData"), "m_FinalBlit", var1_28, var2_26)
+
+		local var2_28 = var0_28:GetComponent(typeof(UnityEngine.Playables.PlayableDirector))
+
+		var2_28.playOnAwake = false
+
+		var2_28:Stop()
+
+		local var3_28 = var0_28:GetComponentsInChildren(typeof(UnityEngine.Playables.PlayableDirector), true)
+
+		for iter0_28 = 0, var3_28.Length - 1 do
+			var3_28[iter0_28].playOnAwake = false
+
+			var3_28[iter0_28]:Stop()
+		end
+
+		table.insert(arg0_26.totalDirectorList, {
+			name = arg1_28.name,
+			director = var2_28
 		})
-		setActive(arg1_26, false)
+		setActive(arg1_28, false)
 	end)
 end
 
-function var0_0.InitLightSettings(arg0_27)
-	arg0_27.globalVolume = GameObject.Find("GlobalVolume")
-	arg0_27.characterLight = GameObject.Find("CharacterLight")
+function var0_0.InitLightSettings(arg0_29)
+	arg0_29.globalVolume = GameObject.Find("GlobalVolume")
+	arg0_29.characterLight = GameObject.Find("CharacterLight")
 
-	local var0_27 = GameObject.Find("[Lighting]").transform
+	local var0_29 = GameObject.Find("[Lighting]").transform
 
-	table.IpairsCArray(var0_27:GetComponentsInChildren(typeof(Light)), function(arg0_28, arg1_28)
-		arg1_28.shadows = UnityEngine.LightShadows.None
+	table.IpairsCArray(var0_29:GetComponentsInChildren(typeof(Light)), function(arg0_30, arg1_30)
+		arg1_30.shadows = UnityEngine.LightShadows.None
 	end)
 end
 
-function var0_0.didEnter(arg0_29)
-	arg0_29:InitData()
-	setActive(arg0_29.skipUI, true)
-	arg0_29:PlayTimeline({
-		name = arg0_29:GetWeightTimeline("jinchang")
+function var0_0.didEnter(arg0_31)
+	arg0_31:InitData()
+	setActive(arg0_31.skipUI, true)
+	arg0_31:PlayTimeline({
+		name = arg0_31:GetWeightTimeline("jinchang")
 	}, function()
-		if not arg0_29.playingFlag then
-			setActive(arg0_29.skipUI, false)
-			arg0_29:StartGame()
+		if not arg0_31.playingFlag then
+			setActive(arg0_31.skipUI, false)
+			arg0_31:StartGame()
 		end
 	end)
 end
 
-function var0_0.InitData(arg0_31)
+function var0_0.InitData(arg0_33)
 	return
 end
 
-function var0_0.PlayTimeline(arg0_32, arg1_32, arg2_32)
-	arg0_32:StopPlayingTimeline()
-
-	local var0_32 = {}
-	local var1_32 = arg1_32.name
-	local var2_32 = arg1_32.track
-	local var3_32 = _.detect(arg0_32.totalDirectorList, function(arg0_33)
-		return arg0_33.name == var1_32
+function var0_0.PlayTimeline(arg0_34, arg1_34, arg2_34)
+	local var0_34 = arg1_34.name
+	local var1_34 = arg1_34.track
+	local var2_34 = _.detect(arg0_34.totalDirectorList, function(arg0_35)
+		return arg0_35.name == var0_34
 	end)
 
-	assert(var3_32, "Missing director " .. var1_32)
+	assert(var2_34, "Missing director " .. var0_34)
+	arg0_34:StopPlayingTimeline(tobool(var2_34))
 
-	if not var3_32 then
-		existCall(arg2_32)
+	if not var2_34 then
+		existCall(arg2_34)
 
 		return
 	end
 
-	arg0_32.playingDirector = var3_32.director
+	local var3_34 = {}
 
-	local var4_32 = arg0_32.playingDirector.transform
+	arg0_34.playingDirector = var2_34.director
 
-	arg0_32.debugTimelineName.text = var4_32.parent.name
+	local var4_34 = arg0_34.playingDirector.transform
 
-	table.insert(var0_32, function(arg0_34)
-		if arg1_32.time then
-			arg0_32.playingDirector.time = math.clamp(arg1_32.time, 0, arg0_32.playingDirector.duration)
+	arg0_34.debugTimelineName.text = var4_34.parent.name
+
+	table.insert(var3_34, function(arg0_36)
+		if arg1_34.time then
+			arg0_34.playingDirector.time = math.clamp(arg1_34.time, 0, arg0_34.playingDirector.duration)
 		end
 
-		TimelineSupport.InitTimeline(arg0_32.playingDirector)
+		TimelineSupport.InitTimeline(arg0_34.playingDirector)
 
-		local var0_34 = {}
+		local var0_36 = {}
 
-		GetOrAddComponent(var4_32, "DftCommonSignalReceiver"):SetCommonEvent(function(arg0_35)
-			switch(arg0_35.stringParameter, {
+		GetOrAddComponent(var4_34, "DftCommonSignalReceiver"):SetCommonEvent(function(arg0_37)
+			switch(arg0_37.stringParameter, {
 				TimelineRandomTrack = function()
-					arg0_32:DoTimelineRandomTrack(arg0_32.playingDirector)
+					arg0_34:DoTimelineRandomTrack(arg0_34.playingDirector)
 				end,
 				TimelineLoop = function()
-					arg0_32.playingDirector.time = arg0_35.floatParameter
+					arg0_34.playingDirector.time = arg0_37.floatParameter
 				end,
 				TimelineEnd = function()
-					var0_34.finish = true
+					var0_36.finish = true
 
-					arg0_32.playingDirector:Stop()
-					setActive(tf(arg0_32.playingDirector).parent, false)
+					arg0_34.playingDirector:Stop()
+					setActive(tf(arg0_34.playingDirector).parent, false)
 				end
 			}, function()
-				warning("other event trigger:" .. arg0_35.stringParameter)
+				warning("other event trigger:" .. arg0_37.stringParameter)
 			end)
 
-			if var0_34.finish then
-				arg0_32.timelineMark = var0_34
-				arg0_32.debugTimelineName.text = ""
-				arg0_32.debugTrackName.text = ""
+			if var0_36.finish then
+				arg0_34.timelineMark = var0_36
+				arg0_34.debugTimelineName.text = ""
+				arg0_34.debugTrackName.text = ""
 
-				arg0_34()
+				arg0_36()
 			end
 		end)
-		arg0_32.playingDirector:Evaluate()
-		arg0_32:DoTimelineRandomTrack(arg0_32.playingDirector)
-		setActive(tf(arg0_32.playingDirector).parent, true)
-		arg0_32.playingDirector:Play()
-		setActive(arg0_32.mainCamera, false)
+		arg0_34.playingDirector:Evaluate()
+		arg0_34:DoTimelineRandomTrack(arg0_34.playingDirector)
+		setActive(tf(arg0_34.playingDirector).parent, true)
+		arg0_34.playingDirector:Play()
+		setActive(arg0_34.mainCamera, false)
 
-		if arg0_32.activeDirectorInfo then
-			arg0_32.lastDirectorInfo = arg0_32.activeDirectorInfo
+		if arg0_34.activeDirectorInfo then
+			arg0_34.lastDirectorInfo = arg0_34.activeDirectorInfo
 		end
 
-		arg0_32.activeDirectorInfo = var3_32
+		arg0_34.activeDirectorInfo = var2_34
 	end)
-	seriesAsync(var0_32, function()
-		setActive(arg0_32.mainCamera, true)
+	seriesAsync(var3_34, function()
+		setActive(arg0_34.mainCamera, true)
 
-		arg0_32.playingDirector = nil
+		arg0_34.playingDirector = nil
 
-		local var0_40 = arg0_32.timelineMark
+		local var0_42 = arg0_34.timelineMark
 
-		arg0_32.timelineMark = nil
+		arg0_34.timelineMark = nil
 
-		existCall(arg2_32, var0_40)
+		existCall(arg2_34, var0_42)
 	end)
 end
 
-function var0_0.StopPlayingTimeline(arg0_41)
-	if arg0_41.playingDirector then
-		arg0_41.playingDirector:Stop()
-		setActive(tf(arg0_41.playingDirector).parent, false)
+function var0_0.StopPlayingTimeline(arg0_43, arg1_43)
+	if arg0_43.playingDirector then
+		arg0_43.playingDirector:Stop()
+		setActive(tf(arg0_43.playingDirector).parent, false)
 
-		arg0_41.debugTimelineName.text = ""
-		arg0_41.debugTrackName.text = ""
+		arg0_43.debugTimelineName.text = ""
+		arg0_43.debugTrackName.text = ""
+		arg0_43.playingDirector = nil
 
-		setActive(arg0_41.mainCamera, true)
+		if not arg1_43 then
+			setActive(arg0_43.mainCamera, true)
+		end
 	end
 end
 
-function var0_0.StartGame(arg0_42)
-	setActive(arg0_42.mainCamera, true)
+function var0_0.StartGame(arg0_44)
+	setActive(arg0_44.mainCamera, true)
 
-	arg0_42.playingFlag = true
-	arg0_42.gameResult = nil
-	arg0_42.ourScore, arg0_42.otherScore = 0, 0
+	arg0_44.playingFlag = true
+	arg0_44.gameResult = nil
+	arg0_44.ourScore, arg0_44.otherScore = 0, 0
 
-	setActive(arg0_42.gameUI, true)
-	setActive(arg0_42.gameUI:Find("Score"), false)
+	setActive(arg0_44.gameUI, true)
+	setActive(arg0_44.gameUI:Find("Score"), false)
 
-	local var0_42 = arg0_42.gameUI:Find("Count")
+	local var0_44 = arg0_44.gameUI:Find("Count")
 
-	setActive(var0_42, true)
+	setActive(var0_44, true)
 
-	local var1_42 = var0_42:GetComponent(typeof(DftAniEvent))
+	arg0_44.isStartGame = true
 
-	var1_42:SetEndEvent(function()
-		setActive(var0_42, false)
-		arg0_42:StartOneRound()
-		setActive(arg0_42.gameUI:Find("Score"), true)
-		var1_42:SetEndEvent(nil)
-	end)
 	pg.CriMgr.GetInstance():PlaySE_V3(var1_0)
 end
 
-function var0_0.UpdateGameScore(arg0_44)
-	setText(arg0_44.ourScoreTF, arg0_44.ourScore)
-	setText(arg0_44.otherScoreTF, arg0_44.otherScore)
+function var0_0.UpdateGameScore(arg0_45)
+	setText(arg0_45.ourScoreTF, arg0_45.ourScore)
+	setText(arg0_45.otherScoreTF, arg0_45.otherScore)
 end
 
-function var0_0.UpdateScoreTpl(arg0_45, arg1_45)
-	setText(arg1_45:Find("Left/Tens/Text"), 0)
-	setText(arg1_45:Find("Left/Units/Text"), arg0_45.ourScore % 10)
-	setText(arg1_45:Find("Right/Tens/Text"), 0)
-	setText(arg1_45:Find("Right/Units/Text"), arg0_45.otherScore % 10)
+function var0_0.UpdateScoreTpl(arg0_46, arg1_46)
+	setText(arg1_46:Find("Left/Tens/Text"), 0)
+	setText(arg1_46:Find("Left/Units/Text"), arg0_46.ourScore % 10)
+	setText(arg1_46:Find("Right/Tens/Text"), 0)
+	setText(arg1_46:Find("Right/Units/Text"), arg0_46.otherScore % 10)
 end
 
-function var0_0.StartOneRound(arg0_46)
-	arg0_46:UpdateGameScore()
+function var0_0.StartOneRound(arg0_47)
+	arg0_47:UpdateGameScore()
 
-	arg0_46.roundEndFlag = false
-	arg0_46.roundResult = nil
+	arg0_47.roundEndFlag = false
+	arg0_47.roundResult = nil
 
 	seriesAsync({
-		function(arg0_47)
-			arg0_46:FaQiuOP(arg0_47)
-		end,
 		function(arg0_48)
-			arg0_46:OneQTE()
+			arg0_47:FaQiuOP(arg0_48)
+		end,
+		function(arg0_49)
+			arg0_47:OneQTE()
 		end
 	})
 end
 
-function var0_0.OneQTE(arg0_49)
+function var0_0.OneQTE(arg0_50)
 	seriesAsync({
-		function(arg0_50)
-			arg0_49:StartQTE(arg0_50)
-		end,
 		function(arg0_51)
-			switch(arg0_49.qteResult, {
+			arg0_50:StartQTE(arg0_51)
+		end,
+		function(arg0_52)
+			switch(arg0_50.qteResult, {
 				[var0_0.QTE_RESULT.MISS] = function()
-					arg0_49:QteMissOP(function()
-						arg0_49.roundEndFlag = true
-						arg0_49.roundResult = var0_0.ROUND_RESULT.OTHER_WIN
+					arg0_50:QteMissOP(function()
+						arg0_50.roundEndFlag = true
+						arg0_50.roundResult = var0_0.ROUND_RESULT.OTHER_WIN
 
-						arg0_51()
+						arg0_52()
 					end)
 				end,
 				[var0_0.QTE_RESULT.HIT] = function()
-					arg0_49:QteHitOP(arg0_51)
+					arg0_50:QteHitOP(arg0_52)
 				end,
 				[var0_0.QTE_RESULT.PERFECT] = function()
-					arg0_49:QtePerfectOP(function()
-						arg0_49.roundEndFlag = true
-						arg0_49.roundResult = var0_0.ROUND_RESULT.OUR_WIN
+					arg0_50:QtePerfectOP(function()
+						arg0_50.roundEndFlag = true
+						arg0_50.roundResult = var0_0.ROUND_RESULT.OUR_WIN
 
-						arg0_51()
+						arg0_52()
 					end)
 				end
 			}, function()
-				assert(false, "unknow qte result" .. arg0_49.qteResult)
+				assert(false, "unknow qte result" .. arg0_50.qteResult)
 			end)
 		end
 	}, function()
-		if not arg0_49.roundEndFlag then
-			arg0_49:OneQTE()
+		if not arg0_50.roundEndFlag then
+			arg0_50:OneQTE()
 		else
-			arg0_49:EndOneRound()
+			arg0_50:EndOneRound()
 		end
 	end)
 end
 
-function var0_0.EndOneRound(arg0_59)
+function var0_0.EndOneRound(arg0_60)
 	pg.CriMgr.GetInstance():PlaySE_V3(var6_0)
 
-	local var0_59 = arg0_59.scoreUI:GetComponent(typeof(DftAniEvent))
+	arg0_60.isEndOneRound = true
 
-	var0_59:SetEndEvent(function()
-		quickPlayAnimation(arg0_59.scoreUI, "Anim_Dorm3d_volleyball_score_out")
-		onDelayTick(function()
-			setActive(arg0_59.scoreUI, false)
-		end, 0.1)
-
-		if arg0_59:CheckEndGame() then
-			arg0_59:EndGame()
-		else
-			setActive(arg0_59.gameUI, true)
-			arg0_59:StartOneRound()
-		end
-
-		var0_59:SetEndEvent(nil)
-	end)
-	setActive(arg0_59.gameUI, false)
-	arg0_59:UpdateScoreTpl(arg0_59.scoreUI:Find("ScoreTpl"))
-	setText(arg0_59.scoreUI:Find("ScoreTpl/Left/Units/new/newText"), arg0_59.ourScore % 10)
-	setText(arg0_59.scoreUI:Find("ScoreTpl/Right/Units/new/newText"), arg0_59.otherScore % 10)
-	switch(arg0_59.roundResult, {
+	setActive(arg0_60.gameUI, false)
+	arg0_60:UpdateScoreTpl(arg0_60.scoreUI:Find("ScoreTpl"))
+	setText(arg0_60.scoreUI:Find("ScoreTpl/Left/Units/new/newText"), arg0_60.ourScore % 10)
+	setText(arg0_60.scoreUI:Find("ScoreTpl/Right/Units/new/newText"), arg0_60.otherScore % 10)
+	switch(arg0_60.roundResult, {
 		[var0_0.ROUND_RESULT.OUR_WIN] = function()
-			arg0_59.ourScore = arg0_59.ourScore + 1
+			arg0_60.ourScore = arg0_60.ourScore + 1
 
-			setText(arg0_59.scoreUI:Find("ScoreTpl/Left/Units/new/newText"), arg0_59.ourScore % 10)
-			setActive(arg0_59.scoreUI, true)
-			quickPlayAnimation(arg0_59.scoreUI, "Anim_Dorm3d_volleyball_score_leftin")
+			setText(arg0_60.scoreUI:Find("ScoreTpl/Left/Units/new/newText"), arg0_60.ourScore % 10)
+			setActive(arg0_60.scoreUI, true)
+			quickPlayAnimation(arg0_60.scoreUI, "Anim_Dorm3d_volleyball_score_leftin")
 		end,
 		[var0_0.ROUND_RESULT.OTHER_WIN] = function()
-			arg0_59.otherScore = arg0_59.otherScore + 1
+			arg0_60.otherScore = arg0_60.otherScore + 1
 
-			setText(arg0_59.scoreUI:Find("ScoreTpl/Right/Units/new/newText"), arg0_59.otherScore % 10)
-			setActive(arg0_59.scoreUI, true)
-			quickPlayAnimation(arg0_59.scoreUI, "Anim_Dorm3d_volleyball_score_rightin")
+			setText(arg0_60.scoreUI:Find("ScoreTpl/Right/Units/new/newText"), arg0_60.otherScore % 10)
+			setActive(arg0_60.scoreUI, true)
+			quickPlayAnimation(arg0_60.scoreUI, "Anim_Dorm3d_volleyball_score_rightin")
 		end
 	}, function()
-		assert(false, "unknow round result" .. arg0_59.roundResult)
+		assert(false, "unknow round result" .. arg0_60.roundResult)
 	end)
 end
 
-function var0_0.CheckEndGame(arg0_65)
-	if arg0_65.ourScore >= var0_0.endScore then
-		arg0_65.gameResult = var0_0.GAME_RESULT.VICTORY
+function var0_0.CheckEndGame(arg0_64)
+	if arg0_64.ourScore >= var0_0.endScore then
+		arg0_64.gameResult = var0_0.GAME_RESULT.VICTORY
 
 		return true
 	end
 
-	if arg0_65.otherScore >= var0_0.endScore then
-		arg0_65.gameResult = var0_0.GAME_RESULT.DEFEAT
+	if arg0_64.otherScore >= var0_0.endScore then
+		arg0_64.gameResult = var0_0.GAME_RESULT.DEFEAT
 
 		return true
 	end
@@ -537,388 +553,389 @@ function var0_0.CheckEndGame(arg0_65)
 	return false
 end
 
-function var0_0.EndGame(arg0_66)
-	if arg0_66.gameResult == var0_0.GAME_RESULT.VICTORY then
+function var0_0.EndGame(arg0_65)
+	if arg0_65.gameResult == var0_0.GAME_RESULT.VICTORY then
 		pg.CriMgr.GetInstance():PlaySE_V3(var7_0)
 	end
 
 	seriesAsync({
-		function(arg0_67)
-			local var0_67 = arg0_66.gameResult == var0_0.GAME_RESULT.VICTORY and "shibai" or "shengli"
+		function(arg0_66)
+			local var0_66 = arg0_65.gameResult == var0_0.GAME_RESULT.VICTORY and "shibai" or "shengli"
 
-			arg0_66:PlayTimeline({
-				name = arg0_66:GetWeightTimeline(var0_67)
-			}, arg0_67)
+			arg0_65:PlayTimeline({
+				name = arg0_65:GetWeightTimeline(var0_66)
+			}, arg0_66)
 		end
 	}, function()
-		arg0_66:PlayTimeline({
-			name = arg0_66:GetWeightTimeline("daiji")
+		arg0_65:PlayTimeline({
+			name = arg0_65:GetWeightTimeline("daiji")
 		}, function()
 			return
 		end)
-		setActive(arg0_66.endUI, true)
-		setActive(arg0_66.endUI:Find("Title/Victory"), arg0_66.gameResult == var0_0.GAME_RESULT.VICTORY)
-		setActive(arg0_66.endUI:Find("Title/Defeat"), arg0_66.gameResult == var0_0.GAME_RESULT.DEFEAT)
-		arg0_66:UpdateScoreTpl(arg0_66.endUI:Find("ScoreTpl"))
+		setActive(arg0_65.endUI, true)
+		setActive(arg0_65.endUI:Find("Title/Victory"), arg0_65.gameResult == var0_0.GAME_RESULT.VICTORY)
+		setActive(arg0_65.endUI:Find("Title/Defeat"), arg0_65.gameResult == var0_0.GAME_RESULT.DEFEAT)
+		arg0_65:UpdateScoreTpl(arg0_65.endUI:Find("ScoreTpl"))
 	end)
 end
 
-function var0_0.ShowResultUI(arg0_70, arg1_70)
+function var0_0.ShowResultUI(arg0_69, arg1_69)
 	(function()
-		local var0_71 = arg0_70.contextData.roomId
-		local var1_71 = arg0_70.contextData.groupId
-		local var2_71 = arg0_70.contextData.groupIds or {
-			var1_71
+		local var0_70 = arg0_69.contextData.roomId
+		local var1_70 = arg0_69.contextData.groupId
+		local var2_70 = arg0_69.contextData.groupIds or {
+			var1_70
 		}
-		local var3_71 = table.concat(var2_71, ",")
-		local var4_71 = arg0_70.ourScore .. ":" .. arg0_70.otherScore
+		local var3_70 = table.concat(var2_70, ",")
+		local var4_70 = arg0_69.ourScore .. ":" .. arg0_69.otherScore
 
-		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataRoom(var0_71, 8, var3_71, var4_71))
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataRoom(var0_70, 8, var3_70, var4_70))
 	end)()
 	pg.CriMgr.GetInstance():PlaySE_V3(var8_0)
 	seriesAsync({
-		function(arg0_72)
-			quickPlayAnimation(arg0_70.endUI, "Anim_Dorm3d_volleyball_end_out")
+		function(arg0_71)
+			quickPlayAnimation(arg0_69.endUI, "Anim_Dorm3d_volleyball_end_out")
 			onDelayTick(function()
-				setActive(arg0_70.endUI, false)
+				setActive(arg0_69.endUI, false)
 			end, 0.1)
 
-			if arg0_70.gameResult == var0_0.GAME_RESULT.VICTORY then
-				arg0_70:PlayTimeline({
-					name = arg0_70:GetWeightTimeline("jiangli")
-				}, arg0_72)
+			if arg0_69.gameResult == var0_0.GAME_RESULT.VICTORY then
+				arg0_69:PlayTimeline({
+					name = arg0_69:GetWeightTimeline("jiangli")
+				}, arg0_71)
 			else
-				arg0_70:StopPlayingTimeline()
-				arg0_72()
+				arg0_69:StopPlayingTimeline()
+				arg0_71()
 			end
 		end
 	}, function()
-		gcAll(true)
-		setActive(arg0_70.resultUI, true)
+		setActive(arg0_69.resultUI, true)
 
-		local var0_74
+		local var0_73
 
-		var0_74 = arg0_70.gameResult == var0_0.GAME_RESULT.VICTORY and "Victory" or "Defeat"
+		var0_73 = arg0_69.gameResult == var0_0.GAME_RESULT.VICTORY and "Victory" or "Defeat"
 
-		setText(arg0_70.resultUI:Find("Panel/Text"), i18n("volleyball_end_tip", arg0_70.apartment:getConfig("name")))
+		setText(arg0_69.resultUI:Find("Panel/Text"), i18n("volleyball_end_tip", arg0_69.apartment:getConfig("name")))
 
-		if arg1_70 and arg1_70.cost > 0 then
-			setActive(arg0_70.resultUI:Find("Panel/Award"), true)
-			setText(arg0_70.resultUI:Find("Panel/Award/Text"), i18n("volleyball_end_award", arg0_70.apartment:getConfig("name")))
+		if arg1_69 and arg1_69.cost > 0 then
+			setActive(arg0_69.resultUI:Find("Panel/Award"), true)
+			setText(arg0_69.resultUI:Find("Panel/Award/Text"), i18n("volleyball_end_award", arg0_69.apartment:getConfig("name")))
 		else
-			setActive(arg0_70.resultUI:Find("Panel/Award"), false)
+			setActive(arg0_69.resultUI:Find("Panel/Award"), false)
 		end
+
+		gcAll()
 	end)
 end
 
-function var0_0.FaQiuOP(arg0_75, arg1_75)
-	arg0_75:PlayTimeline({
-		name = arg0_75:GetWeightTimeline("faqiu")
-	}, arg1_75)
+function var0_0.FaQiuOP(arg0_74, arg1_74)
+	arg0_74:PlayTimeline({
+		name = arg0_74:GetWeightTimeline("faqiu")
+	}, arg1_74)
 end
 
-function var0_0.StartQTE(arg0_76, arg1_76)
-	arg0_76.qteCallback = arg1_76
+function var0_0.StartQTE(arg0_75, arg1_75)
+	arg0_75.qteCallback = arg1_75
 
-	setActive(arg0_76.ballCamera, true)
-	setActive(arg0_76.mainCamera, false)
+	setActive(arg0_75.ballCamera, true)
+	setActive(arg0_75.mainCamera, false)
 
-	arg0_76.randomScreenPos = Vector2(math.random(var0_0.BallRandomDelat.Left, Screen.width - var0_0.BallRandomDelat.Right), math.random(var0_0.BallRandomDelat.Bottom, Screen.height - var0_0.BallRandomDelat.Top))
+	arg0_75.randomScreenPos = Vector2(math.random(var0_0.BallRandomDelat.Left, Screen.width - var0_0.BallRandomDelat.Right), math.random(var0_0.BallRandomDelat.Bottom, Screen.height - var0_0.BallRandomDelat.Top))
 
-	local var0_76 = arg0_76.ballCameraComp:ScreenPointToRay(arg0_76.randomScreenPos)
+	local var0_75 = arg0_75.ballCameraComp:ScreenPointToRay(arg0_75.randomScreenPos)
 
-	arg0_76.randomScale = math.random(var0_0.perfectScaleRandoms[1] * 10, arg0_76.perfectScaleRandoms[2] * 10) / 10
+	arg0_75.randomScale = math.random(var0_0.perfectScaleRandoms[1] * 10, arg0_75.perfectScaleRandoms[2] * 10) / 10
 
-	local var1_76 = (var0_0.perfectRadiusMax + var0_0.perfectRadiusMin) / 2 * arg0_76.randomScale / var0_0.triggerRadius
-	local var2_76 = arg0_76.ballQtePlane.distance + (arg0_76.ballMissPlane.distance - arg0_76.ballQtePlane.distance) * (1 - var1_76)
-	local var3_76, var4_76 = Plane.New(arg0_76.ballQtePlane.normal, var2_76):Raycast(var0_76)
+	local var1_75 = (var0_0.perfectRadiusMax + var0_0.perfectRadiusMin) / 2 * arg0_75.randomScale / var0_0.triggerRadius
+	local var2_75 = arg0_75.ballQtePlane.distance + (arg0_75.ballMissPlane.distance - arg0_75.ballQtePlane.distance) * (1 - var1_75)
+	local var3_75, var4_75 = Plane.New(arg0_75.ballQtePlane.normal, var2_75):Raycast(var0_75)
 
-	assert(var3_76, "retPerfect plane not in view")
+	assert(var3_75, "retPerfect plane not in view")
 
-	arg0_76.ballDir = (var0_76:GetPoint(var4_76) - var0_0.BallInitPos):Normalize()
+	arg0_75.ballDir = (var0_75:GetPoint(var4_75) - var0_0.BallInitPos):Normalize()
 
-	local var5_76 = Ray.New(arg0_76.ballDir, var0_0.BallInitPos)
-	local var6_76, var7_76 = arg0_76.ballQtePlane:Raycast(var5_76)
+	local var5_75 = Ray.New(arg0_75.ballDir, var0_0.BallInitPos)
+	local var6_75, var7_75 = arg0_75.ballQtePlane:Raycast(var5_75)
 
-	assert(var6_76, "qte plane not in view")
+	assert(var6_75, "qte plane not in view")
 
-	local var8_76 = var5_76:GetPoint(var7_76)
-	local var9_76, var10_76 = arg0_76.ballMissPlane:Raycast(var5_76)
+	local var8_75 = var5_75:GetPoint(var7_75)
+	local var9_75, var10_75 = arg0_75.ballMissPlane:Raycast(var5_75)
 
-	assert(var9_76, "miss plane not in view")
+	assert(var9_75, "miss plane not in view")
 
-	local var11_76 = var5_76:GetPoint(var10_76)
-	local var12_76 = 0
+	local var11_75 = var5_75:GetPoint(var10_75)
+	local var12_75 = 0
 
-	arg0_76.qteUITime = (var8_76 - var11_76):Magnitude() / var0_0.BallQTESpeed
-	arg0_76.ballTimer = Timer.New(function()
-		if var12_76 >= var10_76 then
-			arg0_76.ballTimer:Stop()
+	arg0_75.qteUITime = (var8_75 - var11_75):Magnitude() / var0_0.BallQTESpeed
+	arg0_75.ballTimer = Timer.New(function()
+		if var12_75 >= var10_75 then
+			arg0_75.ballTimer:Stop()
 
-			arg0_76.ballTimer = nil
+			arg0_75.ballTimer = nil
 
-			setActive(arg0_76.ballTF, false)
+			setActive(arg0_75.ballTF, false)
 
-			arg0_76.ballTF.position = var0_0.BallInitPos
+			arg0_75.ballTF.position = var0_0.BallInitPos
 
-			if arg0_76.startQTEUI then
-				setLocalScale(arg0_76.qteTriggerTF, {
+			if arg0_75.startQTEUI then
+				setLocalScale(arg0_75.qteTriggerTF, {
 					x = 0,
 					y = 0
 				})
-				arg0_76:EndQTE(var0_0.QTE_RESULT.MISS)
+				arg0_75:EndQTE(var0_0.QTE_RESULT.MISS)
 			end
-		elseif var12_76 >= var7_76 then
-			var12_76 = var12_76 + var0_0.BallQTESpeed
-			arg0_76.ballTF.position = var5_76:GetPoint(var12_76)
+		elseif var12_75 >= var7_75 then
+			var12_75 = var12_75 + var0_0.BallQTESpeed
+			arg0_75.ballTF.position = var5_75:GetPoint(var12_75)
 
-			if not arg0_76.startQTEUI then
-				arg0_76:StartQTEUI()
+			if not arg0_75.startQTEUI then
+				arg0_75:StartQTEUI()
 			end
 
-			arg0_76.curScale = arg0_76.curScale - 1 / arg0_76.qteUITime
+			arg0_75.curScale = arg0_75.curScale - 1 / arg0_75.qteUITime
 
-			setLocalScale(arg0_76.qteTriggerTF, {
-				x = arg0_76.curScale,
-				y = arg0_76.curScale
+			setLocalScale(arg0_75.qteTriggerTF, {
+				x = arg0_75.curScale,
+				y = arg0_75.curScale
 			})
 
-			arg0_76.curRadius = var0_0.triggerRadius * arg0_76.curScale
+			arg0_75.curRadius = var0_0.triggerRadius * arg0_75.curScale
 
-			if arg0_76.curScale < 0 then
-				arg0_76:EndQTE()
+			if arg0_75.curScale < 0 then
+				arg0_75:EndQTE()
 			end
 		else
-			var12_76 = var12_76 + var0_0.BallSpeed
-			arg0_76.ballTF.position = var5_76:GetPoint(var12_76)
+			var12_75 = var12_75 + var0_0.BallSpeed
+			arg0_75.ballTF.position = var5_75:GetPoint(var12_75)
 		end
 	end, 0.0166666666666667, -1)
 
-	setActive(arg0_76.ballTF, true)
-	arg0_76.ballTimer:Start()
+	setActive(arg0_75.ballTF, true)
+	arg0_75.ballTimer:Start()
 end
 
-function var0_0.StartQTEUI(arg0_78)
+function var0_0.StartQTEUI(arg0_77)
 	pg.CriMgr.GetInstance():PlaySE_V3(var2_0)
-	setLocalScale(arg0_78.qteTriggerTF, {
+	setLocalScale(arg0_77.qteTriggerTF, {
 		x = 1,
 		y = 1
 	})
-	eachChild(arg0_78.qteTF:Find("animroot/Result"), function(arg0_79)
-		setActive(arg0_79, false)
+	eachChild(arg0_77.qteTF:Find("animroot/Result"), function(arg0_78)
+		setActive(arg0_78, false)
 	end)
 
-	arg0_78.qteResult = nil
-	arg0_78.curRadius = var0_0.triggerRadius
-	arg0_78.curPerfectRadiusMax = var0_0.perfectRadiusMax * arg0_78.randomScale
-	arg0_78.curPerfectRadiusMin = var0_0.perfectRadiusMin * arg0_78.randomScale
+	arg0_77.qteResult = nil
+	arg0_77.curRadius = var0_0.triggerRadius
+	arg0_77.curPerfectRadiusMax = var0_0.perfectRadiusMax * arg0_77.randomScale
+	arg0_77.curPerfectRadiusMin = var0_0.perfectRadiusMin * arg0_77.randomScale
 
-	setLocalScale(arg0_78.qteTF:Find("animroot/Perfect"), {
-		x = arg0_78.randomScale,
-		y = arg0_78.randomScale
+	setLocalScale(arg0_77.qteTF:Find("animroot/Perfect"), {
+		x = arg0_77.randomScale,
+		y = arg0_77.randomScale
 	})
 
-	arg0_78.curScale = 1
+	arg0_77.curScale = 1
 
-	setLocalPosition(arg0_78.qteTF, LuaHelper.ScreenToLocal(arg0_78.qteTF.parent, arg0_78.randomScreenPos, pg.UIMgr.GetInstance().uiCameraComp))
-	setActive(arg0_78.qteTF, true)
+	setLocalPosition(arg0_77.qteTF, LuaHelper.ScreenToLocal(arg0_77.qteTF.parent, arg0_77.randomScreenPos, pg.UIMgr.GetInstance().uiCameraComp))
+	setActive(arg0_77.qteTF, true)
 
-	arg0_78.startQTEUI = true
+	arg0_77.startQTEUI = true
 end
 
-function var0_0.EndQTE(arg0_80, arg1_80)
-	arg0_80.startQTEUI = nil
+function var0_0.EndQTE(arg0_79, arg1_79)
+	arg0_79.startQTEUI = nil
 
-	setActive(arg0_80.mainCamera, true)
-	setActive(arg0_80.ballCamera, false)
+	setActive(arg0_79.mainCamera, true)
+	setActive(arg0_79.ballCamera, false)
 
-	if arg1_80 then
-		arg0_80.qteResult = arg1_80
-	elseif arg0_80.curRadius < var0_0.hitRadiusMin or arg0_80.curRadius > var0_0.hitRadiusMax then
-		arg0_80.qteResult = var0_0.QTE_RESULT.MISS
-	elseif arg0_80.curRadius <= arg0_80.curPerfectRadiusMax and arg0_80.curRadius >= arg0_80.curPerfectRadiusMin then
-		arg0_80.qteResult = var0_0.QTE_RESULT.PERFECT
+	if arg1_79 then
+		arg0_79.qteResult = arg1_79
+	elseif arg0_79.curRadius < var0_0.hitRadiusMin or arg0_79.curRadius > var0_0.hitRadiusMax then
+		arg0_79.qteResult = var0_0.QTE_RESULT.MISS
+	elseif arg0_79.curRadius <= arg0_79.curPerfectRadiusMax and arg0_79.curRadius >= arg0_79.curPerfectRadiusMin then
+		arg0_79.qteResult = var0_0.QTE_RESULT.PERFECT
 	else
-		arg0_80.qteResult = var0_0.QTE_RESULT.HIT
+		arg0_79.qteResult = var0_0.QTE_RESULT.HIT
 	end
 
-	eachChild(arg0_80.qteTF:Find("animroot/Result"), function(arg0_81)
-		setActive(arg0_81, arg0_81.name == arg0_80.qteResult)
+	eachChild(arg0_79.qteTF:Find("animroot/Result"), function(arg0_80)
+		setActive(arg0_80, arg0_80.name == arg0_79.qteResult)
 	end)
 
-	if arg0_80.ballTimer then
-		arg0_80.ballTimer:Stop()
+	if arg0_79.ballTimer then
+		arg0_79.ballTimer:Stop()
 
-		arg0_80.ballTimer = nil
+		arg0_79.ballTimer = nil
 
-		setActive(arg0_80.ballTF, false)
+		setActive(arg0_79.ballTF, false)
 
-		arg0_80.ballTF.position = var0_0.BallInitPos
+		arg0_79.ballTF.position = var0_0.BallInitPos
 	end
 
-	if arg0_80.qteCallback then
-		arg0_80.qteCallback()
+	if arg0_79.qteCallback then
+		arg0_79.qteCallback()
 
-		arg0_80.qteCallback = nil
+		arg0_79.qteCallback = nil
 	end
 
 	onDelayTick(function()
-		setActive(arg0_80.qteTF, false)
+		setActive(arg0_79.qteTF, false)
 	end, 1)
 end
 
-function var0_0.QteMissOP(arg0_83, arg1_83)
+function var0_0.QteMissOP(arg0_82, arg1_82)
 	pg.CriMgr.GetInstance():PlaySE_V3(var5_0)
-	arg0_83:PlayTimeline({
-		name = arg0_83:GetWeightTimeline("shiqiu")
+	arg0_82:PlayTimeline({
+		name = arg0_82:GetWeightTimeline("shiqiu")
+	}, arg1_82)
+end
+
+function var0_0.QteHitOP(arg0_83, arg1_83)
+	pg.CriMgr.GetInstance():PlaySE_V3(var3_0)
+	seriesAsync({
+		function(arg0_84)
+			arg0_83:PlayTimeline({
+				name = arg0_83:GetWeightTimeline("fly")
+			}, arg0_84)
+		end,
+		function(arg0_85)
+			arg0_83:PlayTimeline({
+				name = arg0_83:GetWeightTimeline("jieqiu")
+			}, arg0_85)
+		end
 	}, arg1_83)
 end
 
-function var0_0.QteHitOP(arg0_84, arg1_84)
-	pg.CriMgr.GetInstance():PlaySE_V3(var3_0)
-	seriesAsync({
-		function(arg0_85)
-			arg0_84:PlayTimeline({
-				name = arg0_84:GetWeightTimeline("fly")
-			}, arg0_85)
-		end,
-		function(arg0_86)
-			arg0_84:PlayTimeline({
-				name = arg0_84:GetWeightTimeline("jieqiu")
-			}, arg0_86)
-		end
-	}, arg1_84)
-end
-
-function var0_0.QtePerfectOP(arg0_87, arg1_87)
+function var0_0.QtePerfectOP(arg0_86, arg1_86)
 	pg.CriMgr.GetInstance():PlaySE_V3(var4_0)
 	seriesAsync({
-		function(arg0_88)
-			arg0_87:PlayTimeline({
-				name = arg0_87:GetWeightTimeline("max_fly")
-			}, arg0_88)
+		function(arg0_87)
+			arg0_86:PlayTimeline({
+				name = arg0_86:GetWeightTimeline("max_fly")
+			}, arg0_87)
 		end,
-		function(arg0_89)
-			arg0_87:PlayTimeline({
-				name = arg0_87:GetWeightTimeline("shouji")
-			}, arg0_89)
+		function(arg0_88)
+			arg0_86:PlayTimeline({
+				name = arg0_86:GetWeightTimeline("shouji")
+			}, arg0_88)
 		end
-	}, arg1_87)
+	}, arg1_86)
 end
 
-function var0_0.GetWeightTimeline(arg0_90, arg1_90)
-	local var0_90 = arg0_90.volleyballCfg[arg1_90]
+function var0_0.GetWeightTimeline(arg0_89, arg1_89)
+	local var0_89 = arg0_89.volleyballCfg[arg1_89]
 
-	assert(var0_90 ~= "", "volleyball cfg is empty string" .. arg1_90)
-	assert(#var0_90 ~= 0, "volleyball cfg is empty table:" .. arg1_90)
+	assert(var0_89 ~= "", "volleyball cfg is empty string" .. arg1_89)
+	assert(#var0_89 ~= 0, "volleyball cfg is empty table:" .. arg1_89)
 
-	local var1_90 = underscore.reduce(var0_90, 0, function(arg0_91, arg1_91)
-		return arg0_91 + arg1_91[2]
+	local var1_89 = underscore.reduce(var0_89, 0, function(arg0_90, arg1_90)
+		return arg0_90 + arg1_90[2]
 	end)
-	local var2_90 = math.random() * var1_90
-	local var3_90 = 0
+	local var2_89 = math.random() * var1_89
+	local var3_89 = 0
 
-	for iter0_90, iter1_90 in ipairs(var0_90) do
-		var3_90 = var3_90 + iter1_90[2]
+	for iter0_89, iter1_89 in ipairs(var0_89) do
+		var3_89 = var3_89 + iter1_89[2]
 
-		if var2_90 <= var3_90 then
-			return iter1_90[1]
+		if var2_89 <= var3_89 then
+			return iter1_89[1]
 		end
 	end
 end
 
-function var0_0.DoTimelineRandomTrack(arg0_92, arg1_92)
-	local var0_92 = {}
-	local var1_92 = TimelineHelper.GetTimelineTracks(arg1_92)
+function var0_0.DoTimelineRandomTrack(arg0_91, arg1_91)
+	local var0_91 = {}
+	local var1_91 = TimelineHelper.GetTimelineTracks(arg1_91)
 
-	for iter0_92 = 0, var1_92.Length - 1 do
-		local var2_92 = var1_92[iter0_92]
+	for iter0_91 = 0, var1_91.Length - 1 do
+		local var2_91 = var1_91[iter0_91]
 
-		if var2_92.name ~= "Markers" then
-			var2_92.muted = true
+		if var2_91.name ~= "Markers" then
+			var2_91.muted = true
 
-			table.insert(var0_92, var2_92)
+			table.insert(var0_91, var2_91)
 		end
 	end
 
-	if #var0_92 > 0 then
-		local var3_92 = var0_92[math.random(#var0_92)]
+	if #var0_91 > 0 then
+		local var3_91 = var0_91[math.random(#var0_91)]
 
-		underscore.each(var0_92, function(arg0_93)
-			if arg0_93.name == var3_92.name then
-				arg0_93.muted = false
+		underscore.each(var0_91, function(arg0_92)
+			if arg0_92.name == var3_91.name then
+				arg0_92.muted = false
 			end
 		end)
 
-		arg0_92.debugTrackName.text = var3_92.name
+		arg0_91.debugTrackName.text = var3_91.name
 	else
-		arg0_92.debugTrackName.text = "track cnt 0"
+		arg0_91.debugTrackName.text = "track cnt 0"
 	end
 end
 
-function var0_0.OnPause(arg0_94)
+function var0_0.OnPause(arg0_93)
+	if arg0_93.ballTimer then
+		arg0_93.ballTimer:Stop()
+	end
+
+	if arg0_93.playingDirector then
+		arg0_93.playingDirector:Pause()
+	end
+end
+
+function var0_0.OnResume(arg0_94)
 	if arg0_94.ballTimer then
-		arg0_94.ballTimer:Stop()
+		arg0_94.ballTimer:Start()
 	end
 
 	if arg0_94.playingDirector then
-		arg0_94.playingDirector:Pause()
+		arg0_94.playingDirector:Play()
 	end
 end
 
-function var0_0.OnResume(arg0_95)
-	if arg0_95.ballTimer then
-		arg0_95.ballTimer:Start()
-	end
-
-	if arg0_95.playingDirector then
-		arg0_95.playingDirector:Play()
-	end
-end
-
-function var0_0.onBackPressed(arg0_96)
-	if not arg0_96.playingFlag or isActive(arg0_96.gameUI:Find("Count")) or isActive(arg0_96.endUI) then
+function var0_0.onBackPressed(arg0_95)
+	if not arg0_95.playingFlag or isActive(arg0_95.gameUI:Find("Count")) or isActive(arg0_95.endUI) then
 		return
 	end
 
-	arg0_96:OnPause()
+	arg0_95:OnPause()
 	pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_MSGBOX, {
 		contentText = i18n("sure_exit_volleyball"),
 		onConfirm = function()
-			arg0_96:emit(var0_0.ON_BACK)
+			arg0_95:emit(var0_0.ON_BACK)
 		end,
 		onClose = function()
-			arg0_96:OnResume()
+			arg0_95:OnResume()
 		end
 	})
 end
 
-function var0_0.willExit(arg0_99)
-	arg0_99.loader:Clear()
+function var0_0.willExit(arg0_98)
+	arg0_98.loader:Clear()
 
-	if arg0_99.ballTimer then
-		arg0_99.ballTimer:Stop()
+	if arg0_98.ballTimer then
+		arg0_98.ballTimer:Stop()
 
-		arg0_99.ballTimer = nil
+		arg0_98.ballTimer = nil
 	end
 
-	local var0_99 = {
+	local var0_98 = {
 		{
-			path = string.lower("dorm3d/character/" .. arg0_99.timelineSceneRootName .. "/timeline/" .. arg0_99.timelineSceneName .. "/" .. arg0_99.timelineSceneName .. "_scene"),
-			name = arg0_99.timelineSceneName
+			path = string.lower("dorm3d/character/" .. arg0_98.timelineSceneRootName .. "/timeline/" .. arg0_98.timelineSceneName .. "/" .. arg0_98.timelineSceneName .. "_scene"),
+			name = arg0_98.timelineSceneName
 		},
 		{
-			path = string.lower("dorm3d/scenesres/scenes/common/" .. arg0_99.sceneRootName .. "/" .. arg0_99.sceneName .. "_scene"),
-			name = arg0_99.sceneName
+			path = string.lower("dorm3d/scenesres/scenes/common/" .. arg0_98.sceneRootName .. "/" .. arg0_98.sceneName .. "_scene"),
+			name = arg0_98.sceneName
 		}
 	}
-	local var1_99 = underscore.map(var0_99, function(arg0_100)
-		return function(arg0_101)
-			SceneOpMgr.Inst:UnloadSceneAsync(arg0_100.path, arg0_100.name, arg0_101)
+	local var1_98 = underscore.map(var0_98, function(arg0_99)
+		return function(arg0_100)
+			SceneOpMgr.Inst:UnloadSceneAsync(arg0_99.path, arg0_99.name, arg0_100)
 		end
 	end)
 
-	seriesAsync(var1_99, function()
+	seriesAsync(var1_98, function()
 		ReflectionHelp.RefSetProperty(typeof("UnityEngine.LightmapSettings"), "lightmaps", nil, nil)
 	end)
 end

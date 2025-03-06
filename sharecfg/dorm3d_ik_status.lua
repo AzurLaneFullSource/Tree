@@ -8196,7 +8196,7 @@ pg.dorm3d_ik_status = {
 				{
 					4,
 					0.3,
-					30209
+					30208
 				}
 			},
 			{
@@ -8205,7 +8205,7 @@ pg.dorm3d_ik_status = {
 				{
 					4,
 					0.3,
-					30207
+					30209
 				}
 			}
 		},
@@ -8223,8 +8223,8 @@ pg.dorm3d_ik_status = {
 		head_track = {
 			1,
 			0,
-			0,
-			0.1
+			0.06,
+			0.6
 		},
 		enter_scene_anim = {}
 	},
@@ -8245,7 +8245,7 @@ pg.dorm3d_ik_status = {
 				{
 					4,
 					0.3,
-					30209
+					30207
 				}
 			}
 		},
@@ -8280,25 +8280,25 @@ pg.dorm3d_ik_status = {
 		character_position = "Pos300310",
 		ik_id = {
 			{
-				30031000,
-				0,
-				{
-					4,
-					0.3,
-					30204
-				}
-			},
-			{
 				30031001,
 				0,
 				{
 					4,
 					0.3,
-					30205
+					30206
 				}
 			}
 		},
-		touch_data = {},
+		touch_data = {
+			{
+				3003322,
+				0,
+				{
+					7,
+					1990313
+				}
+			}
+		},
 		use_cloth = {
 			1,
 			1,
@@ -8361,8 +8361,8 @@ pg.dorm3d_ik_status = {
 		head_track = {
 			1,
 			0,
-			0,
-			0.1
+			0.06,
+			0.6
 		},
 		enter_scene_anim = {}
 	},
@@ -8383,7 +8383,7 @@ pg.dorm3d_ik_status = {
 				{
 					4,
 					0.3,
-					30206
+					30205
 				}
 			}
 		},
@@ -8436,7 +8436,16 @@ pg.dorm3d_ik_status = {
 				}
 			}
 		},
-		touch_data = {},
+		touch_data = {
+			{
+				3003322,
+				0,
+				{
+					7,
+					1990314
+				}
+			}
+		},
 		use_cloth = {
 			1,
 			1,
@@ -8472,15 +8481,6 @@ pg.dorm3d_ik_status = {
 		character_position = "Pos300411",
 		ik_id = {
 			{
-				30041100,
-				0,
-				{
-					4,
-					0.3,
-					30214
-				}
-			},
-			{
 				30041101,
 				0,
 				{
@@ -8490,7 +8490,16 @@ pg.dorm3d_ik_status = {
 				}
 			}
 		},
-		touch_data = {},
+		touch_data = {
+			{
+				3003322,
+				0,
+				{
+					7,
+					1990314
+				}
+			}
+		},
 		use_cloth = {
 			1,
 			1,
@@ -8504,8 +8513,8 @@ pg.dorm3d_ik_status = {
 		head_track = {
 			1,
 			0,
-			0,
-			0.1
+			0.06,
+			0.6
 		},
 		enter_scene_anim = {
 			{
@@ -8565,7 +8574,7 @@ pg.dorm3d_ik_status = {
 	},
 	[310110] = {
 		base = 300110,
-		camera_group = 31011,
+		camera_group = 30011,
 		character_action = "ab_chuang_idle_01",
 		ik_camera = "Cam310110",
 		character_id = 19903,
@@ -8575,7 +8584,7 @@ pg.dorm3d_ik_status = {
 		character_position = "Pos310110",
 		ik_id = {
 			{
-				31011000,
+				30011000,
 				0,
 				{
 					4,
@@ -8584,7 +8593,7 @@ pg.dorm3d_ik_status = {
 				}
 			},
 			{
-				31011001,
+				30011001,
 				0,
 				{
 					4,
@@ -8595,7 +8604,6 @@ pg.dorm3d_ik_status = {
 		},
 		touch_data = {},
 		use_cloth = {
-			1,
 			1,
 			1,
 			1,
@@ -8615,7 +8623,7 @@ pg.dorm3d_ik_status = {
 	},
 	[310111] = {
 		base = 300111,
-		camera_group = 31011,
+		camera_group = 30011,
 		character_action = "ab_chuang_idle_01",
 		ik_camera = "Cam310111",
 		character_id = 19903,
@@ -8625,7 +8633,7 @@ pg.dorm3d_ik_status = {
 		character_position = "Pos310111",
 		ik_id = {
 			{
-				31011100,
+				30011100,
 				0,
 				{
 					4,
@@ -8636,7 +8644,6 @@ pg.dorm3d_ik_status = {
 		},
 		touch_data = {},
 		use_cloth = {
-			1,
 			1,
 			1,
 			1,
@@ -8656,7 +8663,7 @@ pg.dorm3d_ik_status = {
 	},
 	[310112] = {
 		base = 300112,
-		camera_group = 31011,
+		camera_group = 30011,
 		character_action = "ab_chuang_idle_01",
 		ik_camera = "Cam310112",
 		character_id = 19903,
@@ -8666,7 +8673,7 @@ pg.dorm3d_ik_status = {
 		character_position = "Pos310112",
 		ik_id = {
 			{
-				31011200,
+				30011200,
 				0,
 				{
 					4,
@@ -8675,7 +8682,7 @@ pg.dorm3d_ik_status = {
 				}
 			},
 			{
-				31011201,
+				30011201,
 				0,
 				{
 					4,
@@ -8686,7 +8693,6 @@ pg.dorm3d_ik_status = {
 		},
 		touch_data = {},
 		use_cloth = {
-			1,
 			1,
 			1,
 			1,
@@ -8706,7 +8712,7 @@ pg.dorm3d_ik_status = {
 	},
 	[310210] = {
 		base = 300210,
-		camera_group = 31012,
+		camera_group = 30012,
 		character_action = "ab_shafa_idle_01",
 		ik_camera = "Cam310210",
 		character_id = 19903,
@@ -8716,7 +8722,7 @@ pg.dorm3d_ik_status = {
 		character_position = "Pos310210",
 		ik_id = {
 			{
-				31021000,
+				30021000,
 				0,
 				{
 					4,
@@ -8725,7 +8731,7 @@ pg.dorm3d_ik_status = {
 				}
 			},
 			{
-				31021001,
+				30021001,
 				0,
 				{
 					4,
@@ -8743,7 +8749,7 @@ pg.dorm3d_ik_status = {
 			1,
 			1,
 			1,
-			1
+			0
 		},
 		cloth_colliders = {},
 		head_track = {
@@ -8756,7 +8762,7 @@ pg.dorm3d_ik_status = {
 	},
 	[310211] = {
 		base = 300211,
-		camera_group = 31012,
+		camera_group = 30012,
 		character_action = "ab_shafa_idle_01",
 		ik_camera = "Cam310211",
 		character_id = 19903,
@@ -8766,27 +8772,26 @@ pg.dorm3d_ik_status = {
 		character_position = "Pos310211",
 		ik_id = {
 			{
-				31021100,
+				30021100,
+				0,
+				{
+					4,
+					0.3,
+					30208
+				}
+			},
+			{
+				30021101,
 				0,
 				{
 					4,
 					0.3,
 					30209
 				}
-			},
-			{
-				31021101,
-				0,
-				{
-					4,
-					0.3,
-					30207
-				}
 			}
 		},
 		touch_data = {},
 		use_cloth = {
-			1,
 			1,
 			1,
 			1,
@@ -8799,14 +8804,14 @@ pg.dorm3d_ik_status = {
 		head_track = {
 			1,
 			0,
-			0,
-			0.1
+			0.06,
+			0.6
 		},
 		enter_scene_anim = {}
 	},
 	[310212] = {
 		base = 300212,
-		camera_group = 31012,
+		camera_group = 30012,
 		character_action = "ab_shafa_idle_01",
 		ik_camera = "Cam310212",
 		character_id = 19903,
@@ -8816,18 +8821,17 @@ pg.dorm3d_ik_status = {
 		character_position = "Pos310212",
 		ik_id = {
 			{
-				31021200,
+				30021200,
 				0,
 				{
 					4,
 					0.3,
-					30209
+					30207
 				}
 			}
 		},
 		touch_data = {},
 		use_cloth = {
-			1,
 			1,
 			1,
 			1,
@@ -8847,7 +8851,7 @@ pg.dorm3d_ik_status = {
 	},
 	[310310] = {
 		base = 300310,
-		camera_group = 31013,
+		camera_group = 30013,
 		character_action = "ab_ditan_idle_01",
 		ik_camera = "Cam310310",
 		character_id = 19903,
@@ -8857,27 +8861,26 @@ pg.dorm3d_ik_status = {
 		character_position = "Pos310310",
 		ik_id = {
 			{
-				31031000,
+				30031001,
 				0,
 				{
 					4,
 					0.3,
-					30204
-				}
-			},
-			{
-				31031001,
-				0,
-				{
-					4,
-					0.3,
-					30205
+					30206
 				}
 			}
 		},
-		touch_data = {},
+		touch_data = {
+			{
+				3003322,
+				0,
+				{
+					7,
+					1990313
+				}
+			}
+		},
 		use_cloth = {
-			1,
 			1,
 			1,
 			1,
@@ -8897,7 +8900,7 @@ pg.dorm3d_ik_status = {
 	},
 	[310311] = {
 		base = 300311,
-		camera_group = 31013,
+		camera_group = 30013,
 		character_action = "ab_ditan_idle_01",
 		ik_camera = "Cam310311",
 		character_id = 19903,
@@ -8907,7 +8910,7 @@ pg.dorm3d_ik_status = {
 		character_position = "Pos310311",
 		ik_id = {
 			{
-				31031100,
+				30031100,
 				0,
 				{
 					4,
@@ -8916,7 +8919,7 @@ pg.dorm3d_ik_status = {
 				}
 			},
 			{
-				31031101,
+				30031101,
 				0,
 				{
 					4,
@@ -8933,21 +8936,20 @@ pg.dorm3d_ik_status = {
 			1,
 			1,
 			1,
-			1,
 			1
 		},
 		cloth_colliders = {},
 		head_track = {
 			1,
 			0,
-			0,
-			0.1
+			0.06,
+			0.6
 		},
 		enter_scene_anim = {}
 	},
 	[310312] = {
 		base = 300312,
-		camera_group = 31013,
+		camera_group = 30013,
 		character_action = "ab_ditan_idle_01",
 		ik_camera = "Cam310312",
 		character_id = 19903,
@@ -8957,12 +8959,12 @@ pg.dorm3d_ik_status = {
 		character_position = "Pos310312",
 		ik_id = {
 			{
-				31031201,
+				30031201,
 				0,
 				{
 					4,
 					0.3,
-					30206
+					30205
 				}
 			}
 		},
@@ -8972,12 +8974,11 @@ pg.dorm3d_ik_status = {
 				0,
 				{
 					7,
-					1990312
+					1990311
 				}
 			}
 		},
 		use_cloth = {
-			1,
 			1,
 			1,
 			1,
@@ -8997,7 +8998,7 @@ pg.dorm3d_ik_status = {
 	},
 	[310410] = {
 		base = 300410,
-		camera_group = 31014,
+		camera_group = 30014,
 		character_action = "ab_FF_ditan_1_idle_1",
 		ik_camera = "Cam310410",
 		character_id = 19903,
@@ -9007,7 +9008,7 @@ pg.dorm3d_ik_status = {
 		character_position = "Pos310410",
 		ik_id = {
 			{
-				31041000,
+				30041000,
 				0,
 				{
 					4,
@@ -9016,7 +9017,16 @@ pg.dorm3d_ik_status = {
 				}
 			}
 		},
-		touch_data = {},
+		touch_data = {
+			{
+				3003322,
+				0,
+				{
+					7,
+					1990314
+				}
+			}
+		},
 		use_cloth = {
 			1,
 			1,
@@ -9025,7 +9035,7 @@ pg.dorm3d_ik_status = {
 			1,
 			1,
 			1,
-			1
+			0
 		},
 		cloth_colliders = {},
 		head_track = {
@@ -9043,7 +9053,7 @@ pg.dorm3d_ik_status = {
 	},
 	[310411] = {
 		base = 300411,
-		camera_group = 31014,
+		camera_group = 30014,
 		character_action = "ab_FF_ditan_1_idle_1",
 		ik_camera = "Cam310411",
 		character_id = 19903,
@@ -9053,16 +9063,7 @@ pg.dorm3d_ik_status = {
 		character_position = "Pos310411",
 		ik_id = {
 			{
-				31041100,
-				0,
-				{
-					4,
-					0.3,
-					30214
-				}
-			},
-			{
-				31041101,
+				30041101,
 				0,
 				{
 					4,
@@ -9071,9 +9072,17 @@ pg.dorm3d_ik_status = {
 				}
 			}
 		},
-		touch_data = {},
+		touch_data = {
+			{
+				3003322,
+				0,
+				{
+					7,
+					1990314
+				}
+			}
+		},
 		use_cloth = {
-			1,
 			1,
 			1,
 			1,
@@ -9086,8 +9095,8 @@ pg.dorm3d_ik_status = {
 		head_track = {
 			1,
 			0,
-			0,
-			0.1
+			0.06,
+			0.6
 		},
 		enter_scene_anim = {
 			{
@@ -9098,7 +9107,7 @@ pg.dorm3d_ik_status = {
 	},
 	[310412] = {
 		base = 300412,
-		camera_group = 31014,
+		camera_group = 30014,
 		character_action = "ab_FF_ditan_2_idle_1",
 		ik_camera = "Cam310412",
 		character_id = 19903,
@@ -9108,7 +9117,7 @@ pg.dorm3d_ik_status = {
 		character_position = "Pos310412",
 		ik_id = {
 			{
-				31041200,
+				30041200,
 				0,
 				{
 					4,
@@ -9117,7 +9126,7 @@ pg.dorm3d_ik_status = {
 				}
 			},
 			{
-				31041201,
+				30041201,
 				0,
 				{
 					4,
@@ -9128,7 +9137,6 @@ pg.dorm3d_ik_status = {
 		},
 		touch_data = {},
 		use_cloth = {
-			1,
 			1,
 			1,
 			1,
@@ -9192,7 +9200,7 @@ pg.dorm3d_ik_status = {
 			1,
 			0,
 			0,
-			0.1
+			0.2
 		},
 		enter_scene_anim = {}
 	},
@@ -9548,39 +9556,31 @@ pg.dorm3d_ik_status = {
 		[30011] = {
 			300110,
 			300111,
-			300112
-		},
-		[30012] = {
-			300210,
-			300211,
-			300212
-		},
-		[30013] = {
-			300310,
-			300311,
-			300312
-		},
-		[30014] = {
-			300410,
-			300411,
-			300412
-		},
-		[31011] = {
+			300112,
 			310110,
 			310111,
 			310112
 		},
-		[31012] = {
+		[30012] = {
+			300210,
+			300211,
+			300212,
 			310210,
 			310211,
 			310212
 		},
-		[31013] = {
+		[30013] = {
+			300310,
+			300311,
+			300312,
 			310310,
 			310311,
 			310312
 		},
-		[31014] = {
+		[30014] = {
+			300410,
+			300411,
+			300412,
 			310410,
 			310411,
 			310412
