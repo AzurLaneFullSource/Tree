@@ -470,7 +470,7 @@ pg.base.dorm3d_ins_chat_group = {
 		name = "Reasons to Like",
 		id = 19903107,
 		type = "1",
-		unlock_desc = "Obtain a score of 1,000 in Anchorage's minigame.",
+		unlock_desc = "Obtain 3 points in Anchorage's minigame.",
 		content = {
 			272,
 			273,

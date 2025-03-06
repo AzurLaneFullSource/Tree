@@ -238,7 +238,7 @@ function var0_0.UpdateStick(arg0_22, arg1_22, arg2_22)
 			if arg2_22 ~= arg0_22.fingerId then
 				setActive(arg0_22._stickTailPS, false)
 			end
-		elseif arg2_22 > 0 and arg2_22 ~= arg0_22.fingerId then
+		elseif arg2_22 >= 0 and arg2_22 ~= arg0_22.fingerId then
 			setActive(arg0_22._stickTailPS, true)
 		end
 	end

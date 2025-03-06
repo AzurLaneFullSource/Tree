@@ -28059,7 +28059,7 @@ _G.pg.base.gametip.dorm3d_privatechat_ins = {
 }
 
 _G.pg.base.gametip.dorm3d_privatechat_new_topics = {
-	tip = "New Post from $1",
+	tip = "New Post from \n$1",
 }
 
 _G.pg.base.gametip.dorm3d_privatechat_nonew_topics = {
