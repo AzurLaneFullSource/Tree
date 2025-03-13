@@ -1,5 +1,79 @@
 pg = pg or {}
 pg.enemy_data_statistics_379 = {
+	[212018] = {
+		cannon = 0,
+		reload = 150,
+		speed_growth = 0,
+		cannon_growth = 0,
+		base = 90295,
+		air = 53,
+		durability_growth = 89780,
+		dodge = 6,
+		antiaircraft = 41,
+		speed = 18,
+		luck = 0,
+		reload_growth = 0,
+		dodge_growth = 70,
+		battle_unit_type = 60,
+		antisub = 0,
+		hit = 7,
+		antisub_growth = 0,
+		air_growth = 4256,
+		antiaircraft_growth = 3276,
+		torpedo = 0,
+		durability = 224,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		hit_growth = 105,
+		armor = 0,
+		fog_fx = "",
+		id = 212018,
+		world_enhancement = {
+			1.2,
+			1.5,
+			1.4,
+			0.5,
+			0.1,
+			1.6,
+			0.1
+		},
+		bound_bone = {
+			cannon = {
+				{
+					-0.5,
+					0.5,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.5,
+					0.8,
+					0
+				},
+				{
+					-0.5,
+					0.8,
+					0
+				}
+			},
+			plane = {
+				{
+					-0.5,
+					0.5,
+					0
+				}
+			}
+		},
+		equipment_list = {
+			1100016,
+			1100166,
+			2200766,
+			2200771,
+			2200776
+		}
+	},
 	[212101] = {
 		cannon = 6,
 		reload = 150,
@@ -1359,58 +1433,6 @@ pg.enemy_data_statistics_379 = {
 			1100248,
 			1100393,
 			1100363
-		},
-		random_equipment_list = {
-			{
-				2021105
-			}
-		},
-		random_nub = {
-			1
-		}
-	},
-	[212211] = {
-		cannon = 11,
-		reload = 150,
-		speed_growth = 0,
-		cannon_growth = 912,
-		base = 90303,
-		air = 0,
-		durability_growth = 52500,
-		dodge = 16,
-		speed = 24,
-		luck = 0,
-		battle_unit_type = 55,
-		reload_growth = 0,
-		dodge_growth = 200,
-		antiaircraft_growth = 4440,
-		antisub = 0,
-		hit = 13,
-		antisub_growth = 0,
-		air_growth = 0,
-		luck_growth = 0,
-		torpedo = 34,
-		durability = 131,
-		armor_growth = 0,
-		torpedo_growth = 2736,
-		antiaircraft = 56,
-		hit_growth = 189,
-		armor = 0,
-		fog_fx = "",
-		id = 212211,
-		world_enhancement = {
-			2,
-			5.5,
-			1.3,
-			0,
-			1,
-			1,
-			0
-		},
-		equipment_list = {
-			1100248,
-			1100118,
-			1100498
 		},
 		random_equipment_list = {
 			{

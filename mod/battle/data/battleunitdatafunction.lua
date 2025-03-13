@@ -552,8 +552,6 @@ function var33_0.GetPlayerUnitDurabilityExtraAddition(arg0_28, arg1_28)
 end
 
 function var33_0.GetSkillDataTemplate(arg0_29)
-	assert(var21_0[arg0_29] ~= nil, ">>skill_data_template<< 找不到技能配置：id = " .. arg0_29)
-
 	return var21_0[arg0_29]
 end
 
@@ -688,12 +686,18 @@ function var33_0.GetWords(arg0_42, arg1_42, arg2_42)
 end
 
 function var33_0.SkillTranform(arg0_43, arg1_43)
-	local var0_43 = var33_0.GetSkillDataTemplate(arg1_43).system_transform
+	local var0_43 = var33_0.GetSkillDataTemplate(arg1_43)
 
-	if var0_43[arg0_43] == nil then
+	if not var0_43 then
+		return arg1_43
+	end
+
+	local var1_43 = var0_43.system_transform
+
+	if var1_43[arg0_43] == nil then
 		return arg1_43
 	else
-		return var0_43[arg0_43]
+		return var1_43[arg0_43]
 	end
 end
 

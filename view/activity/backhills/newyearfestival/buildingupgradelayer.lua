@@ -40,21 +40,25 @@ function var0_0.Set(arg0_7, arg1_7, arg2_7)
 	local var1_7 = #var0_7.buff
 	local var2_7 = arg1_7.data1KeyValueList[2][arg2_7] or 1
 	local var3_7 = var0_7.material[var2_7]
+	local var4_7 = var1_7 <= var2_7
+	local var5_7 = 0
+	local var6_7 = false
 
-	assert(#var3_7 == 1)
+	if not var4_7 then
+		var5_7 = var3_7[1][2]
 
-	local var4_7 = var3_7[1][2]
-	local var5_7 = arg1_7.data1KeyValueList[1][var4_7] or 0
-	local var6_7 = var1_7 <= var2_7
-	local var7_7 = var6_7 or var5_7 >= var3_7[1][3]
+		local var7_7 = arg1_7.data1KeyValueList[1][var5_7] or 0
+
+		var6_7 = var4_7 or var7_7 >= var3_7[1][3]
+	end
 
 	setText(arg0_7:findTF("window/top/name"), var0_7.name)
 	setText(arg0_7:findTF("window/top/name/lv"), "Lv." .. var2_7)
 	setScrollText(arg0_7:findTF("window/frame/describe/text"), var0_7.desc)
 	setText(arg0_7:findTF("window/frame/content/title/lv/current"), "Lv." .. var2_7)
-	setActive(arg0_7:findTF("window/frame/content/title/lv/next"), not var6_7)
+	setActive(arg0_7:findTF("window/frame/content/title/lv/next"), not var4_7)
 
-	if not var6_7 then
+	if not var4_7 then
 		setText(arg0_7:findTF("window/frame/content/title/lv/next"), "Lv." .. var2_7 + 1)
 	end
 
@@ -63,26 +67,26 @@ function var0_0.Set(arg0_7, arg1_7, arg2_7)
 
 	assert(var9_7, "Can't Find benefit_buff_template Config ID: " .. var8_7)
 	setText(arg0_7:findTF("window/frame/content/preview/current"), var9_7.desc)
-	setActive(arg0_7:findTF("window/frame/content/preview/arrow"), not var6_7)
-	setActive(arg0_7:findTF("window/frame/content/preview/next"), not var6_7)
+	setActive(arg0_7:findTF("window/frame/content/preview/arrow"), not var4_7)
+	setActive(arg0_7:findTF("window/frame/content/preview/next"), not var4_7)
 
-	if not var6_7 then
+	if not var4_7 then
 		local var10_7 = var0_7.buff[var2_7 + 1]
 		local var11_7 = pg.benefit_buff_template[var10_7]
 
 		assert(var11_7, "Can't Find benefit_buff_template Config ID: " .. var10_7)
 		setText(arg0_7:findTF("window/frame/content/preview/next"), var11_7.desc)
+		arg0_7.loader:GetSprite(Item.getConfigData(var5_7).icon, "", arg0_7:findTF("window/frame/costback/icon"))
 	end
 
-	arg0_7.loader:GetSprite(Item.getConfigData(var4_7).icon, "", arg0_7:findTF("window/frame/costback/icon"))
-	setText(arg0_7:findTF("window/frame/costback/cost"), var0_7.material[var2_7] or 0)
+	setText(arg0_7:findTF("window/frame/costback/cost"), not var4_7 and var0_7.material[var2_7][1][3] or 0)
 	onButton(arg0_7, arg0_7.btnUpgrade, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("building_upgrade_tip"),
 			onYes = function()
-				if var6_7 then
+				if var4_7 then
 					return
-				elseif var7_7 then
+				elseif var6_7 then
 					arg0_7:emit(BuildingUpgradeMediator.ACTIVITY_OPERATION, {
 						cmd = 1,
 						activity_id = arg0_7.activity.id,
@@ -94,8 +98,8 @@ function var0_0.Set(arg0_7, arg1_7, arg2_7)
 			end
 		})
 	end)
-	setGray(arg0_7.btnUpgrade, var6_7)
-	setButtonEnabled(arg0_7.btnUpgrade, not var6_7)
+	setGray(arg0_7.btnUpgrade, var4_7)
+	setButtonEnabled(arg0_7.btnUpgrade, not var4_7)
 end
 
 function var0_0.willExit(arg0_10)

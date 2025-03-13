@@ -2426,6 +2426,13 @@ pg.skill_data_template = setmetatable({
 		801632,
 		801635,
 		801637,
+		801640,
+		801650,
+		801660,
+		801671,
+		801672,
+		801675,
+		801677,
 		901010,
 		901020,
 		902010,
@@ -2457,6 +2464,7 @@ pg.skill_data_template = setmetatable({
 		902270,
 		902280,
 		902290,
+		902300,
 		1010140,
 		1010390,
 		1010410,
@@ -2529,6 +2537,10 @@ pg.skill_data_template = setmetatable({
 		1019110,
 		1014070,
 		1014090,
+		1010260,
+		1013020,
+		1011560,
+		1010960,
 		1090010,
 		1090020,
 		1090030,
@@ -2565,7 +2577,8 @@ pg.skill_data_template = setmetatable({
 		1090350,
 		1090360,
 		1090380,
-		1090390
+		1090390,
+		1090400
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -13928,7 +13941,7 @@ pg.base.skill_data_template = {
 		id = 10040,
 		type = 3,
 		max_level = 10,
-		desc = "When this ship fires its Main Guns: 4.0% chance to increase the Speed of your entire fleet and increase the EVA of your Vanguard by $1 for 8s.",
+		desc = "When this ship fires her weapons: 4.0% chance to increase the SPD of your entire fleet and increase the EVA of your Vanguard by $1 for 8s.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -15428,7 +15441,7 @@ pg.base.skill_data_template = {
 		id = 10260,
 		type = 1,
 		max_level = 10,
-		desc = "When this ship fires its Main or Secondary Guns: 20.0% chance to increase this ship's FP by $1 for 8s.",
+		desc = "When this ship fires her weapons: 20.0% chance to increase this ship's FP by $1 for 8s.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -101177,8 +101190,8 @@ pg.base.skill_data_template = {
 		id = 150670,
 		type = 1,
 		max_level = 10,
-		system_transform = "",
 		desc = "Grants this ship the Thunderheart. Every time this ship fires her Main Guns: Thunderheart gains 1 counter. \nEvery time Thunderheart gains 1 counter: performs a $1 special attack (DMG is based on the skill's level) that inflicts the Thunderseal status on enemies hit. \nWhen the topmost ship in your Main Fleet fires her Main Guns or launches an airstrike: removes all Thunderseal statuses; enemies who had their Thunderseal statuses removed by this effect take $2 more DMG for 10s (this effect does not stack).",
+		system_transform = {},
 		world_death_mark = {
 			1
 		},
@@ -101274,8 +101287,8 @@ pg.base.skill_data_template = {
 		id = 150680,
 		type = 3,
 		max_level = 10,
-		system_transform = "",
 		desc = "Increases this ship's FP and TRP by $1. Every time the Thunderheart gains 3 counters: increases this ship's AA by $2 (can be stacked up to 5 times; upon reaching the stack limit, this ship gains a special Anti-Air Gun). While this ship is afloat, for the first 5 battles of each sortie fought by a fleet this ship is NOT in: 25s after the battle starts, launches a supporting barrage (DMG is based on the skill's level).",
+		system_transform = {},
 		world_death_mark = {
 			1
 		},
@@ -101380,8 +101393,8 @@ pg.base.skill_data_template = {
 		id = 150690,
 		type = 2,
 		max_level = 10,
-		system_transform = "",
 		desc = "Decreases this ship's DMG taken by $1. Every time the Thunderheart gains 6 counters: restores 1.0% of this ship's max HP. Every 2 times this HP recovery effect activates, performs a special slashing attack (DMG and range are based on the skill's level). The first 3 times this slashing attack is performed each battle: the ship in your fleet with the lowest current HP percentage recovers 2.0% of her max HP.\nGrants this ship the Flagship Cover skill; while this ship is afloat: decreases your Flagship's DMG taken by $2. If there are multiple ships in your fleet with the Flagship Cover skill, only the one with the strongest effect activates.",
+		system_transform = {},
 		world_death_mark = {
 			1
 		},
@@ -101486,8 +101499,8 @@ pg.base.skill_data_template = {
 		id = 150700,
 		type = 3,
 		max_level = 10,
-		system_transform = "",
 		desc = "Z52黄跨队占用",
+		system_transform = {},
 		world_death_mark = {
 			1
 		},
@@ -101500,8 +101513,8 @@ pg.base.skill_data_template = {
 		id = 150710,
 		type = 1,
 		max_level = 10,
-		system_transform = "",
 		desc = "When the battle starts, and every 15s: summons a $1 Pterosaur-model ornithopter that lasts for 12s. The ornithopter fights in the battle (DMG is based on the skill's level) and increases this ship's AA by $2 and Evasion Rate by $3 for 12s.",
+		system_transform = {},
 		world_death_mark = {
 			1
 		},
@@ -101642,8 +101655,8 @@ pg.base.skill_data_template = {
 		id = 150720,
 		type = 3,
 		max_level = 10,
-		system_transform = "",
 		desc = "Increases this ship's FP and TRP by $1. Every 20s: fires a $2 special barrage (DMG is based on the skill's level). When the fleet this ship is in gains the Out of Ammo debuff: decreases the DMG reduction effect of this debuff by $3 for this ship alone.",
+		system_transform = {},
 		world_death_mark = {
 			1
 		},
@@ -104272,7 +104285,7 @@ pg.base.skill_data_template = {
 		id = 150950,
 		type = 2,
 		max_level = 10,
-		desc = "Reduces this ship's shelling DMG taken by $1.\nShips in your fleet gain Pearlescent Paint every time they take DMG equal to 20.0% of their max HP combined. If an allied ship sinks an enemy ship with the Jet-Black Paint debuff, that ship receives Pearlescent Paint stacks equal to the number of Jet-Black Paint applied to the defeated enemy.\nAs long as Raffaello remains afloat, each time an ally gains Pearlescent Paint, that ship gains a barrier that can negate DMG equal to 1.0% of Raffaello's max HP, lasting for the duration of Pearlescent Paint (Pearlescent Paint stacks up to 3 times, and lasts for 10s. The barrier does not stack. Subsequent applications of Pearlescent Paint will refresh the duration of the barrier).\nWhen a ship in your fleet accumulates 3 stacks of Pearlescent Paint, that ship receives Artist's Blessing, increasing her DMG dealt by $2 for 10s; additionally, gives Raffaello 1 stack of Pearlescent Paint. If the recipient of Artist's Blessing is a Sardegna Empire ship: further increases that ship's DMG dealt by $2.",
+		desc = "Reduces this ship's shelling DMG taken by $1.\nWhenever a ship in your fleet accumulates DMG taken equal to 20.0% of her Max HP: that ship gains 1 stack of Pearlescent Paint. If an allied ship sinks an enemy ship with the Jet-Black Paint debuff, that ship receives Pearlescent Paint stacks equal to the number of Jet-Black Paint applied to the defeated enemy.\nAs long as Raffaello remains afloat, each time an ally gains Pearlescent Paint, that ship gains a barrier that can negate DMG equal to 1.0% of Raffaello's Max HP, lasting for the duration of Pearlescent Paint (Pearlescent Paint stacks up to 3 times, and lasts for 10s. The barrier does not stack. Subsequent applications of Pearlescent Paint will refresh the duration of the barrier).\nWhen a ship in your fleet accumulates 3 stacks of Pearlescent Paint, that ship receives Artist's Blessing, increasing her DMG dealt by $2 for 10s; additionally, gives Raffaello 1 stack of Pearlescent Paint. If the recipient of Artist's Blessing is a Sardegna Empire ship: further increases that ship's DMG dealt by $2.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -158615,6 +158628,289 @@ pg.base.skill_data_template = {
 		desc_get_add = {},
 		desc_add = {}
 	},
+	[801640] = {
+		desc_get = "",
+		name = "Torching Strike",
+		id = 801640,
+		type = 1,
+		max_level = 10,
+		desc = "Every 5s: performs a $1 special bombing (DMG is based on the skill's level) that inflicts a special Burn for 5s to enemies hit. This Burn inflicts 150 DMG every second and decreases the target's AA by 3.0%.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[801650] = {
+		desc_get = "",
+		name = "Shadowed Dreams",
+		id = 801650,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's AVI and ACC by $1. When this ship finished preparing an airstrike: launches a $2 special barrage (DMG is based on the skill's level); every time this barrage hits an enemy: increases this ship's AVI and ACC by 2.0% (can be stacked up to 5 times; improves this barrage upon reaching max stacks).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[801660] = {
+		desc_get = "",
+		name = "Operation Ghost",
+		id = 801660,
+		type = 2,
+		max_level = 10,
+		desc = "Every 18s: deploys a shield (lasting 10s) capable of negating up to 8 enemy shells around the frontmost ship of your Vanguard. When the battle starts: decreases this ship's DMG taken by $1; when the shield effect of this skill activates, further decreases this ship's DMG taken by $1 (DMG reduction effect can be stacked up to 4 times).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.5%",
+				"5.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.5%",
+					"+0.3%"
+				},
+				{
+					"1.8%",
+					"+0.3%"
+				},
+				{
+					"2.1%",
+					"+0.4%"
+				},
+				{
+					"2.5%",
+					"+0.3%"
+				},
+				{
+					"2.8%",
+					"+0.3%"
+				},
+				{
+					"3.1%",
+					"+0.4%"
+				},
+				{
+					"3.5%",
+					"+0.4%"
+				},
+				{
+					"3.9%",
+					"+0.4%"
+				},
+				{
+					"4.3%",
+					"+0.7%"
+				},
+				{
+					"5.0%"
+				}
+			}
+		}
+	},
+	[801671] = {
+		desc_get = "",
+		name = "Ashen Might - Hornet I",
+		id = 801671,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 5.0%.",
+		system_transform = {
+			[51] = 801675
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801672] = {
+		desc_get = "",
+		name = "Ashen Might - Hornet II",
+		id = 801672,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 8.0%.",
+		system_transform = {
+			[51] = 801677
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801675] = {
+		desc_get = "",
+		name = "Ashen Might - Hornet I",
+		id = 801675,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 5.0%.",
+		system_transform = {
+			[51] = 801675
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801677] = {
+		desc_get = "",
+		name = "Ashen Might - Hornet II",
+		id = 801677,
+		type = 1,
+		max_level = 1,
+		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 8.0%.",
+		system_transform = {
+			[51] = 801677
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
 	[901010] = {
 		desc_get = "",
 		name = "Special Slash - Spread",
@@ -158663,7 +158959,7 @@ pg.base.skill_data_template = {
 		id = 902020,
 		type = 3,
 		max_level = 1,
-		desc = "Once per battle, when this ship's HP falls below 50.0% as a result of DMG taken: increases this ship's FP by 20 for 20s.",
+		desc = "Once per battle, when the wearer's HP falls below 50.0% as a result of DMG taken: increases the wearer's FP by 20 for 20s.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -159042,6 +159338,20 @@ pg.base.skill_data_template = {
 		type = 3,
 		max_level = 1,
 		desc = "When equipped by a ship: increases that ship's Dive Bomber gear slot efficiency by 15%.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[902300] = {
+		desc_get = "",
+		name = "Torpedo Boost - Critical",
+		id = 902300,
+		type = 3,
+		max_level = 1,
+		desc = "Increases this ship's Torpedo Crit Rate by 10.0%.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -168034,6 +168344,664 @@ pg.base.skill_data_template = {
 			}
 		}
 	},
+	[1010260] = {
+		desc_get = "",
+		name = "Armageddon Cannon+",
+		id = 1010260,
+		type = 1,
+		max_level = 10,
+		desc = "When this ship fires her weapons: 20.0% chance to increase this ship's FP by $1 and Crit Rate by $2 for 8s and fire a $3 special barrage (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"30.0%",
+				"60.0%"
+			},
+			{
+				"15.0%",
+				"30.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"30.0%",
+					"+3.3%"
+				},
+				{
+					"33.3%",
+					"+3.3%"
+				},
+				{
+					"36.6%",
+					"+3.3%"
+				},
+				{
+					"39.9%",
+					"+3.3%"
+				},
+				{
+					"43.2%",
+					"+3.3%"
+				},
+				{
+					"46.5%",
+					"+3.3%"
+				},
+				{
+					"49.8%",
+					"+3.3%"
+				},
+				{
+					"53.1%",
+					"+3.3%"
+				},
+				{
+					"56.4%",
+					"+3.6%"
+				},
+				{
+					"60.0%"
+				}
+			},
+			{
+				{
+					"15.0%",
+					"+1.6%"
+				},
+				{
+					"16.6%",
+					"+1.6%"
+				},
+				{
+					"18.2%",
+					"+1.6%"
+				},
+				{
+					"19.8%",
+					"+1.6%"
+				},
+				{
+					"21.4%",
+					"+1.6%"
+				},
+				{
+					"23.0%",
+					"+1.6%"
+				},
+				{
+					"24.6%",
+					"+1.8%"
+				},
+				{
+					"26.4%",
+					"+1.8%"
+				},
+				{
+					"28.2%",
+					"+1.8%"
+				},
+				{
+					"30.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[1013020] = {
+		desc_get = "",
+		name = "Lod Obstrel+",
+		id = 1013020,
+		type = 1,
+		max_level = 10,
+		desc = "When the battle starts, if there is another Northern Parliament ship in your fleet: increases this ship's Crit Rate by $1 and Crit DMG by $2. When this ship fires her Main Guns: increases this ship's FP by 7.5% (can be stacked up to 2 times) and, with a $3 chance, fires a $4 special barrage (DMG is based on the skill's level); after this FP buff has activated 2 times, the barrage's activation chance increases by 25.0%.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"10.0%"
+			},
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"45.0%",
+				"75.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+0.5%"
+				},
+				{
+					"6.5%",
+					"+0.5%"
+				},
+				{
+					"7.0%",
+					"+0.5%"
+				},
+				{
+					"7.5%",
+					"+0.5%"
+				},
+				{
+					"8.0%",
+					"+0.5%"
+				},
+				{
+					"8.5%",
+					"+0.5%"
+				},
+				{
+					"9.0%",
+					"+1%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"45.0%",
+					"+3.3%"
+				},
+				{
+					"48.3%",
+					"+3.3%"
+				},
+				{
+					"51.6%",
+					"+3.3%"
+				},
+				{
+					"54.9%",
+					"+3.3%"
+				},
+				{
+					"58.2%",
+					"+3.3%"
+				},
+				{
+					"61.5%",
+					"+3.3%"
+				},
+				{
+					"64.8%",
+					"+3.3%"
+				},
+				{
+					"68.1%",
+					"+3.3%"
+				},
+				{
+					"71.4%",
+					"+3.6%"
+				},
+				{
+					"75.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[1011560] = {
+		desc_get = "",
+		name = "2,700 Pounds of Justice+",
+		id = 1011560,
+		type = 1,
+		max_level = 10,
+		desc = "During battle, changes this ship's Main Gun ammunition type to Super-Heavy AP. When this ship's Main Guns hit an enemy, the DMG dealt to the enemy is increased based on the distance from this ship (up to $1). When this ship fires her Main Guns: $1 chance to fire a $2 special barrage (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"20.0%",
+				"50.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"20.0%",
+					"+3.3%"
+				},
+				{
+					"23.3%",
+					"+3.3%"
+				},
+				{
+					"26.6%",
+					"+3.3%"
+				},
+				{
+					"29.9%",
+					"+3.3%"
+				},
+				{
+					"33.2%",
+					"+3.3%"
+				},
+				{
+					"36.5%",
+					"+3.3%"
+				},
+				{
+					"39.8%",
+					"+3.3%"
+				},
+				{
+					"43.1%",
+					"+3.3%"
+				},
+				{
+					"46.4%",
+					"+3.6%"
+				},
+				{
+					"50.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[1010960] = {
+		desc_get = "",
+		name = "Special Lead Ship+",
+		id = 1010960,
+		type = 3,
+		max_level = 10,
+		desc = "Increases your DDs' FP and EVA by $1 and TRP by $2 and increases this ship's torpedo Crit DMG by $3. When this ship fires her torpedoes: $4 chance to fire another wave of torpedoes. Every 15s: fires a $5 barrage (DMG is based on the skill's level).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"15%",
+				"30.0%"
+			},
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"20.0%",
+				"50.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"15.0%",
+					"+1.6%"
+				},
+				{
+					"16.6%",
+					"+1.6%"
+				},
+				{
+					"18.2%",
+					"+1.6%"
+				},
+				{
+					"19.8%",
+					"+1.6%"
+				},
+				{
+					"21.4%",
+					"+1.6%"
+				},
+				{
+					"23.0%",
+					"+1.6%"
+				},
+				{
+					"24.6%",
+					"+1.8%"
+				},
+				{
+					"26.4%",
+					"+1.8%"
+				},
+				{
+					"28.2%",
+					"+1.8%"
+				},
+				{
+					"30.0%"
+				}
+			},
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"20.0%",
+					"+3.3%"
+				},
+				{
+					"23.3%",
+					"+3.3%"
+				},
+				{
+					"26.6%",
+					"+3.3%"
+				},
+				{
+					"29.9%",
+					"+3.3%"
+				},
+				{
+					"33.2%",
+					"+3.3%"
+				},
+				{
+					"36.5%",
+					"+3.3%"
+				},
+				{
+					"39.8%",
+					"+3.3%"
+				},
+				{
+					"43.1%",
+					"+3.3%"
+				},
+				{
+					"46.4%",
+					"+3.6%"
+				},
+				{
+					"50.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
 	[1090010] = {
 		desc_get = "",
 		name = "Fleet Carrier - Glorious",
@@ -172696,6 +173664,148 @@ pg.base.skill_data_template = {
 			}
 		},
 		desc_add = {
+			{
+				{
+					"20.0%",
+					"+2.2%"
+				},
+				{
+					"22.2%",
+					"+2.2%"
+				},
+				{
+					"24.4%",
+					"+2.2%"
+				},
+				{
+					"26.6%",
+					"+2.2%"
+				},
+				{
+					"28.8%",
+					"+2.2%"
+				},
+				{
+					"31.0%",
+					"+2.2%"
+				},
+				{
+					"33.2%",
+					"+2.2%"
+				},
+				{
+					"35.4%",
+					"+2.2%"
+				},
+				{
+					"37.6%",
+					"+2.4%"
+				},
+				{
+					"40.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[1090400] = {
+		desc_get = "",
+		name = "Full Firepower - Köln",
+		id = 1090400,
+		type = 1,
+		max_level = 10,
+		desc = "Every 20s: $1 chance to increase this ship's FP by $2 for 10s; when this effect activates: fires a $3 special barrage (DMG is based on the skill's level; barrage pattern is determined at random).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"50.0%",
+				"80.0%"
+			},
+			{
+				"20.0%",
+				"40.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"50.0%",
+					"+3.3%"
+				},
+				{
+					"53.3%",
+					"+3.3%"
+				},
+				{
+					"56.6%",
+					"+3.3%"
+				},
+				{
+					"59.9%",
+					"+3.3%"
+				},
+				{
+					"63.2%",
+					"+3.3%"
+				},
+				{
+					"66.5%",
+					"+3.3%"
+				},
+				{
+					"69.8%",
+					"+3.3%"
+				},
+				{
+					"73.1%",
+					"+3.3%"
+				},
+				{
+					"76.4%",
+					"+3.6%"
+				},
+				{
+					"80%"
+				}
+			},
 			{
 				{
 					"20.0%",

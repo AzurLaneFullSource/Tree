@@ -1,5 +1,40 @@
 pg = pg or {}
 pg.enemy_data_statistics_249 = {
+	[15901017] = {
+		cannon = 8,
+		reload = 150,
+		speed_growth = 0,
+		cannon_growth = 310,
+		pilot_ai_template_id = 10002,
+		air = 0,
+		battle_unit_type = 65,
+		dodge = 0,
+		base = 90636,
+		durability_growth = 2200,
+		antiaircraft = 0,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 10,
+		luck = 0,
+		hit = 8,
+		antisub_growth = 0,
+		air_growth = 0,
+		antiaircraft_growth = 0,
+		torpedo = 30,
+		durability = 66,
+		armor_growth = 0,
+		torpedo_growth = 2300,
+		luck_growth = 0,
+		hit_growth = 120,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 15901017,
+		equipment_list = {
+			1005681,
+			1005686
+		}
+	},
 	[15901101] = {
 		cannon = 6,
 		reload = 150,
@@ -1243,54 +1278,6 @@ pg.enemy_data_statistics_249 = {
 			893304,
 			893305,
 			893306
-		}
-	},
-	[15901302] = {
-		cannon = 120,
-		name = "Up-Armored Queen",
-		hit_growth = 210,
-		speed_growth = 0,
-		fog_fx = "",
-		air = 165,
-		speed = 20,
-		dodge = 11,
-		antisub = 0,
-		cannon_growth = 0,
-		reload = 150,
-		reload_growth = 0,
-		dodge_growth = 156,
-		icon = "srcv0",
-		luck = 8,
-		hit = 14,
-		antisub_growth = 0,
-		air_growth = 0,
-		torpedo = 0,
-		base = 90635,
-		durability = 22800,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		durability_growth = 0,
-		antiaircraft = 240,
-		id = 15901302,
-		battle_unit_type = 95,
-		scale = 300,
-		specific_fx_scale = {
-			nuofukedanchuan_buff_01 = 1.8
-		},
-		appear_fx = {
-			"nuofukedanchuan_buff_01",
-			"appearQ"
-		},
-		equipment_list = {
-			893401,
-			893402,
-			893403,
-			893407,
-			893408,
-			893409
 		}
 	}
 }

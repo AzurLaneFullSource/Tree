@@ -3337,37 +3337,35 @@ pg.base.ship_skin_template_14 = {
 	[605081] = {
 		ship_group = 60508,
 		name = "Protector of Love and Beauty",
+		l2d_se = "",
 		hand_id = 1,
 		bgm = "",
-		gyro = 0,
 		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 605081,
-		group_index = 1,
-		l2d_ignore_drag = 0,
-		painting = "lafeier_2",
-		shop_id = 71114,
-		illustrator = -1,
-		shop_type_id = 27,
-		lip_smoothing = 0,
-		bg = "303",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "lafeier_2",
-		l2d_se = "",
-		main_UI_FX = "",
 		special_effects = "",
 		desc = "Heheh! You were not invited to this place, and as its guardian, I must punish you by... Oh, wait, wait, stop! This angle... This outline... It's simply perfect! Turning you into stone would be a waste, so just stay here and let me observe you every day!",
-		voice_actor = 441,
-		spine_offset = "",
+		group_index = 1,
+		gyro = 0,
+		painting = "lafeier_2",
 		change_skin = "",
 		rarity_bg = "",
+		l2d_ignore_drag = 0,
+		shop_type_id = 27,
+		prefab = "lafeier_2",
+		main_UI_FX = "",
+		lip_smoothing = 0,
 		time = "",
-		l2d_para_range = "",
+		voice_actor = 441,
+		spine_offset = "",
+		bg = "303",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
 		lip_sync_gain = 0,
+		skin_type = 0,
+		shop_id = 71114,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		id = 605081,
 		show_skin = "stand",
 		tag = {
 			1,
@@ -3467,6 +3465,16 @@ pg.base.ship_skin_template_14 = {
 		l2d_voice_calibrate = {
 			use_event = true
 		},
+		l2d_para_range = {
+			ParamAngleX = {
+				-15,
+				20
+			},
+			ParamAngleY = {
+				-20,
+				20
+			}
+		},
 		ship_l2d_id = {
 			60508101,
 			60508102,
@@ -3490,6 +3498,11 @@ pg.base.ship_skin_template_14 = {
 			60508120,
 			60508121,
 			60508122
+		},
+		l2d_drag_rate = {
+			0.75,
+			1,
+			1
 		}
 	},
 	[607010] = {

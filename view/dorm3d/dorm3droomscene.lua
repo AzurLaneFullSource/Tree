@@ -1711,14 +1711,20 @@ function var0_0.OnTouchCharacterBody(arg0_200, arg1_200)
 				local var9_200 = {}
 
 				underscore.each(var6_200, function(arg0_201)
-					table.insert(var7_200, arg0_201[1])
+					local var0_201 = arg0_201[1]
+
+					if PLATFORM == PLATFORM_IPHONEPLAYER then
+						var0_201 = var0_201 / 1000
+					end
+
+					table.insert(var7_200, var0_201)
 					table.insert(var8_200, arg0_201[2])
 					table.insert(var9_200, 1)
 				end)
 
 				if PLATFORM == PLATFORM_ANDROID then
 					VibrateMgr.Instance:VibrateWaveform(var7_200, var8_200)
-				elseif PLATFORM == PLATFORM_ANDROID then
+				elseif PLATFORM == PLATFORM_IPHONEPLAYER then
 					VibrateMgr.Instance:VibrateWaveform(var7_200, var8_200, var9_200)
 				end
 			end

@@ -1,5 +1,48 @@
 pg = pg or {}
 pg.enemy_data_statistics_275 = {
+	[16404201] = {
+		cannon = 130,
+		reload = 150,
+		speed_growth = 0,
+		cannon_growth = 1200,
+		base = 90730,
+		air = 0,
+		durability_growth = 246400,
+		dodge = 18,
+		antiaircraft = 280,
+		speed = 20,
+		luck = 20,
+		reload_growth = 0,
+		dodge_growth = 156,
+		battle_unit_type = 90,
+		antisub = 0,
+		hit = 20,
+		antisub_growth = 0,
+		air_growth = 0,
+		antiaircraft_growth = 2800,
+		torpedo = 195,
+		durability = 10050,
+		armor_growth = 0,
+		torpedo_growth = 3080,
+		luck_growth = 0,
+		hit_growth = 210,
+		armor = 0,
+		fog_fx = "",
+		id = 16404201,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		appear_fx = {
+			"heisewuqi_stg"
+		},
+		equipment_list = {}
+	},
 	[16404202] = {
 		cannon = 154,
 		reload = 150,
@@ -1233,48 +1276,6 @@ pg.enemy_data_statistics_275 = {
 		equipment_list = {
 			1100550,
 			1100585
-		}
-	},
-	[16500004] = {
-		cannon = 35,
-		reload = 150,
-		speed_growth = 0,
-		cannon_growth = 2000,
-		battle_unit_type = 60,
-		air = 0,
-		base = 90746,
-		dodge = 0,
-		durability_growth = 33600,
-		antiaircraft = 40,
-		speed = 10,
-		reload_growth = 0,
-		dodge_growth = 0,
-		luck = 0,
-		antisub = 0,
-		hit = 10,
-		antisub_growth = 0,
-		air_growth = 0,
-		antiaircraft_growth = 1200,
-		torpedo = 0,
-		durability = 650,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		hit_growth = 144,
-		armor = 0,
-		fog_fx = "",
-		id = 16500004,
-		specific_fx_scale = {
-			yuanchou_gongjian = 0.04
-		},
-		appear_fx = {
-			"appearsmall",
-			"yuanchou_gongjian"
-		},
-		equipment_list = {
-			1100050,
-			1100915,
-			1100920
 		}
 	}
 }

@@ -4254,7 +4254,7 @@ function getSurveyUrl(arg0_293)
 			elseif var2_293 == PLATFORM_IPHONEPLAYER then
 				var1_293 = var0_293.ios_url
 			end
-		elseif PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
+		elseif PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_KR then
 			var1_293 = var0_293.main_url
 		end
 	else
@@ -4286,7 +4286,7 @@ function getSurveyUrl(arg0_293)
 		end
 	end
 
-	warning(var12_293)
+	originalPrint("survey url", tostring(var12_293))
 
 	return var12_293
 end

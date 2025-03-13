@@ -1,5 +1,44 @@
 pg = pg or {}
 pg.enemy_data_statistics_238 = {
+	[15603903] = {
+		cannon = 160,
+		reload = 150,
+		rarity = 2,
+		cannon_growth = 0,
+		torpedo = 0,
+		air = 0,
+		durability_growth = 0,
+		dodge = 0,
+		antiaircraft = 0,
+		luck = 0,
+		hit_growth = 120,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 9999,
+		antisub_growth = 0,
+		air_growth = 0,
+		speed_growth = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		speed = 10,
+		armor = 0,
+		id = 15603903,
+		antiaircraft_growth = 0,
+		antisub = 0,
+		fog_fx = "",
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 8925,
+				LV = 1
+			}
+		}
+	},
 	[15604001] = {
 		cannon = 8,
 		battle_unit_type = 25,
@@ -1311,45 +1350,6 @@ pg.enemy_data_statistics_238 = {
 			1001026,
 			1001031,
 			1001036
-		},
-		buff_list = {}
-	},
-	[15700004] = {
-		cannon = 35,
-		luck_growth = 0,
-		hit_growth = 144,
-		speed_growth = 0,
-		pilot_ai_template_id = 20004,
-		air = 0,
-		speed = 15,
-		dodge = 0,
-		id = 15700004,
-		cannon_growth = 2000,
-		fog_fx = "",
-		reload_growth = 0,
-		dodge_growth = 0,
-		luck = 0,
-		reload = 150,
-		hit = 10,
-		antisub_growth = 0,
-		air_growth = 0,
-		torpedo = 0,
-		base = 90432,
-		durability = 650,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		antiaircraft = 40,
-		battle_unit_type = 60,
-		armor = 0,
-		durability_growth = 33600,
-		bubble_fx = "",
-		antisub = 0,
-		antiaircraft_growth = 1200,
-		specific_fx_scale = {},
-		equipment_list = {
-			1001041,
-			1001046,
-			1001051
 		},
 		buff_list = {}
 	}

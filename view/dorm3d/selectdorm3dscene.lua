@@ -36,6 +36,7 @@ function var0_0.init(arg0_2)
 	onButton(arg0_2, arg0_2.insBtn.root, function()
 		arg0_2:emit(SelectDorm3DMediator.OPEN_INS_LAYER, arg0_2.insBtn.IsNewPhoneCall())
 	end)
+	setActive(arg0_2.rtMain:Find("btn_ins"), not DORM_LOCK_INS)
 
 	arg0_2.rtStamina = arg0_2.rtMain:Find("stamina")
 	arg0_2.rtRes = arg0_2.rtMain:Find("res")

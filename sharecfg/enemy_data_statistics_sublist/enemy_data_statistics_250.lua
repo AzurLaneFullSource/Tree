@@ -1,5 +1,53 @@
 pg = pg or {}
 pg.enemy_data_statistics_250 = {
+	[15901302] = {
+		cannon = 120,
+		name = "Up-Armored Queen",
+		hit_growth = 210,
+		speed_growth = 0,
+		fog_fx = "",
+		air = 165,
+		speed = 20,
+		dodge = 11,
+		antisub = 0,
+		cannon_growth = 0,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 156,
+		icon = "srcv0",
+		luck = 8,
+		hit = 14,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90635,
+		durability = 22800,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 240,
+		id = 15901302,
+		battle_unit_type = 95,
+		scale = 300,
+		specific_fx_scale = {
+			nuofukedanchuan_buff_01 = 1.8
+		},
+		appear_fx = {
+			"nuofukedanchuan_buff_01",
+			"appearQ"
+		},
+		equipment_list = {
+			893401,
+			893402,
+			893403,
+			893407,
+			893408,
+			893409
+		}
+	},
 	[15901303] = {
 		cannon = 186,
 		name = "Vision of Vanguard",
@@ -1062,47 +1110,6 @@ pg.enemy_data_statistics_250 = {
 			1000747,
 			1000752,
 			1000757
-		}
-	},
-	[15902124] = {
-		cannon = 78,
-		reload = 150,
-		speed_growth = 0,
-		cannon_growth = 3400,
-		battle_unit_type = 65,
-		air = 0,
-		base = 90251,
-		dodge = 11,
-		durability_growth = 65600,
-		antiaircraft = 106,
-		speed = 14,
-		reload_growth = 0,
-		dodge_growth = 136,
-		luck = 0,
-		antiaircraft_growth = 4680,
-		hit = 25,
-		antisub_growth = 0,
-		air_growth = 0,
-		antisub = 0,
-		torpedo = 0,
-		durability = 6630,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		hit_growth = 280,
-		armor = 0,
-		fog_fx = "",
-		id = 15902124,
-		equipment_list = {
-			1000777,
-			1000782,
-			1000787
-		},
-		buff_list = {
-			{
-				ID = 50510,
-				LV = 3
-			}
 		}
 	}
 }

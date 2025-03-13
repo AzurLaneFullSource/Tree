@@ -24,7 +24,7 @@ return {
 			},
 			arg_list = {
 				attr = "damageRatioBullet",
-				number = 0.03
+				number = 0.05
 			}
 		}
 	}

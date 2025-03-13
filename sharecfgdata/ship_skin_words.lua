@@ -77101,6 +77101,68 @@ _G.pg.base.ship_skin_words[9707050] = {
 	couple_encourage = {},
 }
 
+_G.pg.base.ship_skin_words[9707060] = {
+	battle = "Let's go when you're ready!",
+	detail = "Staring into space? Hey, no I wasn't! ...Alright, fine, I was. But I was just thinking about what's happened the past few years... and about my sisters.",
+	drop_descrip = "You're the Commander of the fleet? Nice meetin' you! I'm Hornet, the youngest among the Yorktown class. I may not be as amazing as my big sisters, but I'm still pretty capable... probably!",
+	expedition = "Zzz... Seems a commission got completed... That's nice... Wait, crap! We gotta go and welcome them back!",
+	feeling1 = "Having broken through the Veil, what awaits us is an even bleaker reality...",
+	feeling2 = "Weekend plans? None for the moment. Uhh... Go and watch a movie with my sisters? Man, I'd be stoked to, but... won't it feel kinda weird between us?",
+	feeling3 = "Commander, this port of yours – it's a very heartwarming place. Hey, tell me more about my sisters! With both of them here, there must be cool stuff happening all the time, right? I wanna know about 'em!",
+	feeling4 = "Commander... Is it possible all my experiences here are just another layer to the Veil? I guess as long as it makes me this happy, there's nothing wrong with it...",
+	feeling5 = "Pfft... I just said it in the spur of the moment last time, and you seriously had the R&D team research it? Want my help? I'm an expert at using META powers to create explosions! ...Hm? I'll get myself suspended if I do that? It was just a joke... Ahahaha!",
+	headtouch = "What's up? If it's my hat you like, wanna hold it?",
+	home = "Commander, let me come along on the next sortie! I'll perform as great as my sisters... probably!",
+	hp_warning = "Crap... I'm in hot water now!",
+	id = 9707060,
+	login = "Commander, I was thinking about going for a run since the weather's nice. Wanna come with me?",
+	lose = "The situation's disadvantageous... Retreat! Fall back!",
+	mail = "Final move: Council Mail Saturation!",
+	main = "Commander, you want some iced coffee? No need to bother with adding ice cubes, I'll just use my META powers!|Commander, I baked this pineapple pizza using my META powers. Want a slice?|Man... A port where you can just eat and sleep without a care... This place really is paradise.",
+	mission = "Get it together, Commander! You've got lots of stuff to do today!",
+	mission_complete = "Missiooon complete! Let's kick back with some cold sodas!",
+	profile = "I'm Hornet, with the Council's 7th Special Dispatch Fleet and third ship of the Yorktown class. This is my original identity and the story that was decided for me since birth. Even though I'm the youngest among the Yorktown class, I've never actually met any of my \"sisters\"... Isn't that weird?",
+	propose = "You know... I don't care all that much about the Veil or my role now that you're aware of them. At the very least, my heart is always telling me that the present is real, and that's enough for me. I'm going to take today as an opportunity to start a new life – a life with you! Wherever you go, I'll always be right behind you, Commander!",
+	skill = "Doolittle Raid META, take off!",
+	touch = "Don't worry, I've got a control device so the META corrosion doesn't seep out. You can even touch my jacket if you wanna check. Or my shorts, or my boots!",
+	touch2 = "Huh?! Wait, wait, I, uhh, need time to mentally prepare! ...O-okay, I'm ready!",
+	unlock = "You're the Commander of the fleet? Nice meetin' you! I'm Hornet, the youngest among the Yorktown class. I may not be as amazing as my big sisters, but I'm still pretty capable... probably!",
+	upgrade = "Awesome! One step closer to my sisters!",
+	voice_key = 970706,
+	voice_key_2 = -1,
+	vote = "",
+	win_mvp = "Heheh! How's THAT for a magnificent victory?",
+	couple_encourage = {
+		{
+			{
+				970603,
+			},
+			1,
+			" I finally found you! That's another story mission of mine to scratch off the list!",
+			0,
+		},
+		{
+			{
+				10705,
+				10710,
+				10706,
+			},
+			1,
+			" Yorktown! Enty! I'm so glad we could meet!",
+			0,
+		},
+		{
+			{
+				10707,
+				10712,
+			},
+			2,
+			" Behold the terrifying power of the mighty Hornet!",
+			0,
+		},
+	},
+}
+
 _G.pg.base.ship_skin_words[9708010] = {
 	battle = "No hard feelings, but we're enemies after all~",
 	couple_encourage = "",

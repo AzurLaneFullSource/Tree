@@ -324,6 +324,7 @@ pg.memory_group = setmetatable({
 		605,
 		606,
 		607,
+		608,
 		1000,
 		1001,
 		1002,
@@ -6991,6 +6992,23 @@ pg.base.memory_group = {
 			4185,
 			4186,
 			4187
+		}
+	},
+	[608] = {
+		id = 608,
+		subtype = 0,
+		icon = "title_chara_mojiaduoer",
+		type = 3,
+		link_event = 0,
+		title = "Warmth in the Storm",
+		memories = {
+			4251,
+			4252,
+			4253,
+			4254,
+			4255,
+			4256,
+			4257
 		}
 	},
 	[1000] = {

@@ -166,6 +166,10 @@ pg.ship_meta_breakout = setmetatable({
 		9707052,
 		9707053,
 		9707054,
+		9707061,
+		9707062,
+		9707063,
+		9707064,
 		9708011,
 		9708012,
 		9708013,
@@ -2864,6 +2868,75 @@ pg.base.ship_meta_breakout = {
 		id = 9707054,
 		item1 = 21041,
 		pre_id = 9707053,
+		weapon_ids = {}
+	},
+	[9707061] = {
+		breakout_view = "Unlock Ashen Might - Hornet/All fighters +1/Aircraft efficiency +3%",
+		gold = 1000,
+		breakout_id = 9707062,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9707061,
+		item1 = 21045,
+		pre_id = 0,
+		weapon_ids = {
+			60081,
+			54014
+		}
+	},
+	[9707062] = {
+		breakout_view = "Hangar capacity +1/All Dive Bombers +1/Aircraft efficiency +5%",
+		gold = 3000,
+		breakout_id = 9707063,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9707062,
+		item1 = 21045,
+		pre_id = 9707061,
+		weapon_ids = {
+			60082,
+			54014,
+			60082,
+			54014
+		}
+	},
+	[9707063] = {
+		breakout_view = "Improve Ashen Might - Hornet/All aircraft +1/Aircraft efficiency +7%",
+		gold = 10000,
+		breakout_id = 9707064,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9707063,
+		item1 = 21045,
+		pre_id = 9707062,
+		weapon_ids = {
+			60083,
+			54015,
+			60083,
+			54015
+		}
+	},
+	[9707064] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9707064,
+		item1 = 21045,
+		pre_id = 9707063,
 		weapon_ids = {}
 	},
 	[9708011] = {

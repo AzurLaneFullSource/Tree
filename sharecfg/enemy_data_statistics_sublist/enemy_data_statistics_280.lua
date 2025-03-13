@@ -1,5 +1,48 @@
 pg = pg or {}
 pg.enemy_data_statistics_280 = {
+	[16503102] = {
+		cannon = 38,
+		reload = 150,
+		speed_growth = 0,
+		cannon_growth = 936,
+		battle_unit_type = 55,
+		air = 0,
+		base = 90249,
+		dodge = 11,
+		durability_growth = 30400,
+		antiaircraft = 156,
+		speed = 24,
+		reload_growth = 0,
+		dodge_growth = 162,
+		luck = 0,
+		antisub = 0,
+		hit = 14,
+		antisub_growth = 0,
+		air_growth = 0,
+		antiaircraft_growth = 3744,
+		torpedo = 76,
+		durability = 3570,
+		armor_growth = 0,
+		torpedo_growth = 3366,
+		luck_growth = 0,
+		hit_growth = 210,
+		armor = 0,
+		fog_fx = "",
+		id = 16503102,
+		specific_fx_scale = {
+			yuanchou_kandao = 0.04
+		},
+		appear_fx = {
+			"appearQ",
+			"yuanchou_kandao"
+		},
+		equipment_list = {
+			1000683,
+			1000688,
+			1000693,
+			1000698
+		}
+	},
 	[16503103] = {
 		cannon = 54,
 		reload = 150,
@@ -1254,60 +1297,6 @@ pg.enemy_data_statistics_280 = {
 			1101099,
 			1101104,
 			1101109
-		}
-	},
-	[16504203] = {
-		cannon = 210,
-		name = "La Galissonnière Mechanicus Pawn - Striker",
-		type = 5,
-		speed_growth = 0,
-		pilot_ai_template_id = 10001,
-		air = 0,
-		fog_fx = "",
-		dodge = 11,
-		speed = 20,
-		luck = 18,
-		antisub = 0,
-		reload_growth = 0,
-		dodge_growth = 156,
-		antiaircraft_growth = 3600,
-		reload = 150,
-		hit = 32,
-		antisub_growth = 0,
-		air_growth = 0,
-		cannon_growth = 2500,
-		base = 90442,
-		icon_type = 5,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		antiaircraft = 235,
-		hit_growth = 210,
-		armor = 0,
-		durability = 23200,
-		torpedo = 0,
-		id = 16504203,
-		durability_growth = 368400,
-		luck_growth = 0,
-		battle_unit_type = 90,
-		specific_fx_scale = {
-			yuanchou_liandao = 0.04
-		},
-		appear_fx = {
-			"appearQ",
-			"yuanchou_liandao"
-		},
-		equipment_list = {
-			1101094,
-			1101114,
-			1101119,
-			1101124,
-			1101099
-		},
-		buff_list = {
-			{
-				ID = 50500,
-				LV = 5
-			}
 		}
 	}
 }

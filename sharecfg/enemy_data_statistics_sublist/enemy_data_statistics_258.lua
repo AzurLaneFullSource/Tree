@@ -1,5 +1,47 @@
 pg = pg or {}
 pg.enemy_data_statistics_258 = {
+	[16003301] = {
+		cannon = 240,
+		name = "Le Mars' Phantom",
+		type = 5,
+		speed_growth = 0,
+		hit_growth = 330,
+		air = 0,
+		durability = 86200,
+		armor = 0,
+		antisub = 0,
+		reload = 150,
+		luck_growth = 0,
+		battle_unit_type = 95,
+		dodge_growth = 196,
+		antisub_growth = 0,
+		air_growth = 0,
+		base = 90668,
+		icon_type = 5,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		speed = 16,
+		luck = 25,
+		id = 16003301,
+		scale = 180,
+		cannon_growth = 0,
+		pilot_ai_template_id = 10001,
+		fog_fx = "",
+		dodge = 14,
+		reload_growth = 0,
+		hit = 38,
+		torpedo = 130,
+		durability_growth = 0,
+		antiaircraft = 260,
+		antiaircraft_growth = 0,
+		armor_type = 3,
+		specific_fx_scale = {},
+		appear_fx = {
+			"bossguangxiao",
+			"appearQ"
+		},
+		equipment_list = {}
+	},
 	[16003302] = {
 		cannon = 160,
 		name = "Hermes' Phantom",
@@ -1097,46 +1139,6 @@ pg.enemy_data_statistics_258 = {
 			680016,
 			680017,
 			680018
-		}
-	},
-	[16100104] = {
-		cannon = 24,
-		reload = 150,
-		speed_growth = 0,
-		cannon_growth = 2016,
-		pilot_ai_template_id = 10001,
-		air = 0,
-		battle_unit_type = 60,
-		dodge = 7,
-		base = 90513,
-		durability_growth = 41600,
-		antiaircraft = 35,
-		reload_growth = 0,
-		dodge_growth = 102,
-		speed = 18,
-		luck = 0,
-		hit = 14,
-		antisub_growth = 0,
-		air_growth = 0,
-		antiaircraft_growth = 2880,
-		torpedo = 33,
-		durability = 780,
-		armor_growth = 0,
-		torpedo_growth = 2763,
-		luck_growth = 0,
-		hit_growth = 210,
-		armor = 0,
-		id = 16100104,
-		fog_fx = "",
-		antisub = 0,
-		appear_fx = {
-			"appearQ"
-		},
-		equipment_list = {
-			680015,
-			680019,
-			680020,
-			680021
 		}
 	}
 }
