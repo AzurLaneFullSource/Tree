@@ -751261,6 +751261,7 @@ _G.pg.base.bullet_template[3055008] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		mainFilter = true,
 		diveFilter = {
 			2,
 		},
@@ -751603,6 +751604,7 @@ _G.pg.base.bullet_template[3055014] = {
 		},
 	},
 	extra_param = {
+		mainFilter = true,
 		diveFilter = {
 			2,
 		},
@@ -751649,8 +751651,8 @@ _G.pg.base.bullet_template[3055015] = {
 	acceleration = {},
 	cld_box = {
 		8,
-		6,
-		6,
+		8,
+		8,
 	},
 	cld_offset = {
 		0,

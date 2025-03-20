@@ -50,27 +50,26 @@ function var0_0.setCombatUI(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 	arg0_3.buttonContainer = var0_3:Find("Weapon_button_container")
 
 	for iter0_3 = 1, 3 do
-		local var1_3 = ys.Battle.BattleState.GetCombatSkinKey()
-		local var2_3
+		local var1_3
 
-		if ys.Battle["BattleWeaponButton" .. var1_3] then
-			var2_3 = ys.Battle["BattleWeaponButton" .. var1_3].New()
+		if ys.Battle["BattleWeaponButton" .. arg0_3.skinKey] then
+			var1_3 = ys.Battle["BattleWeaponButton" .. arg0_3.skinKey].New()
 		else
-			var2_3 = ys.Battle.BattleWeaponButton.New()
+			var1_3 = ys.Battle.BattleWeaponButton.New()
 		end
 
-		local var3_3 = cloneTplTo(var0_3:Find("Weapon_button_progress"), arg0_3.buttonContainer)
+		local var2_3 = cloneTplTo(var0_3:Find("Weapon_button_progress"), arg0_3.buttonContainer)
 
 		skinName = "Skill_" .. iter0_3
 
-		local var4_3 = {}
+		local var3_3 = {}
 
-		ys.Battle.BattleSkillView.SetSkillButtonPreferences(var3_3, iter0_3)
-		var2_3:ConfigSkin(var3_3)
-		var2_3:SwitchIcon(iter0_3, arg4_3)
-		var2_3:SwitchIconEffect(iter0_3, arg4_3)
-		var2_3:SetTextActive(true)
-		var2_3:SetToCombatUIPreview(iter0_3 > 1)
+		ys.Battle.BattleSkillView.SetSkillButtonPreferences(var2_3, iter0_3)
+		var1_3:ConfigSkin(var2_3)
+		var1_3:SwitchIcon(iter0_3, arg4_3)
+		var1_3:SwitchIconEffect(iter0_3, arg4_3)
+		var1_3:SetTextActive(true)
+		var1_3:SetToCombatUIPreview(iter0_3 > 1)
 	end
 
 	arg0_3.heroBar = arg2_3.transform
@@ -99,21 +98,21 @@ function var0_0.setCombatUI(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 
 	setActive(arg0_3.bossHPBar, true)
 
-	local var5_3 = arg0_3.bossHPBar:Find("bloodBarContainer")
-	local var6_3 = var5_3.childCount - 1
+	local var4_3 = arg0_3.bossHPBar:Find("bloodBarContainer")
+	local var5_3 = var4_3.childCount - 1
 
-	for iter1_3 = 0, var6_3 do
-		var5_3:GetChild(iter1_3):GetComponent(typeof(Image)).fillAmount = 1
+	for iter1_3 = 0, var5_3 do
+		var4_3:GetChild(iter1_3):GetComponent(typeof(Image)).fillAmount = 1
 		iter1_3 = iter1_3 + 1
 	end
 
 	arg0_3.skillContainer = var0_3:Find("Skill_Activation/Root")
 	arg0_3.skill = var0_3:Find("Skill_Activation/mask")
 
-	local var7_3 = var0_3:Find("Stick/Area/BG/spine")
+	local var6_3 = var0_3:Find("Stick/Area/BG/spine")
 
-	if var7_3 then
-		var7_3:GetComponent(typeof(SpineAnimUI)):SetAction("normal", 0)
+	if var6_3 then
+		var6_3:GetComponent(typeof(SpineAnimUI)):SetAction("normal", 0)
 	end
 
 	arg0_3.stick = var0_3:Find("Stick/Area/Stick")
@@ -444,7 +443,9 @@ function var0_0.updateStick(arg0_26)
 		end
 
 		if arg0_26._stickMoveCount >= var10_0 then
-			setActive(arg0_26.stickTail, false)
+			if arg0_26.stickTail then
+				setActive(arg0_26.stickTail, false)
+			end
 
 			arg0_26.stick.localPosition = Vector3.zero
 			arg0_26._stickMoveCount = nil
@@ -454,7 +455,9 @@ function var0_0.updateStick(arg0_26)
 		arg0_26._stickStopCount = arg0_26._stickStopCount + 1
 
 		if arg0_26._stickStopCount >= var11_0 then
-			setActive(arg0_26.stickTail, true)
+			if arg0_26.stickTail then
+				setActive(arg0_26.stickTail, true)
+			end
 
 			local var11_26 = math.random() * 2 * math.pi
 			local var12_26 = math.random(var13_0, var14_0)

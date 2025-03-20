@@ -617,12 +617,6 @@ function var0_0.InitSwitch()
 						pg.TipsMgr.GetInstance():ShowTips(i18n("coupon_repeat_tip", var0_102))
 
 						return nil
-					elseif SkinCouponActivity.StaticOwnAllSkin() then
-						if arg0_99.count > 1 then
-							pg.TipsMgr.GetInstance():ShowTips(i18n("coupon_repeat_tip", var0_102))
-						end
-
-						return SkinCouponActivity.StaticGetEquivalentRes(), nil
 					else
 						return arg0_99, nil
 					end
@@ -854,7 +848,7 @@ function var0_0.InitSwitch()
 					end
 				end,
 				[13] = function()
-					SkinCouponActivity.AddSkinCoupon(arg0_117.id)
+					SkinCouponActivity.AddSkinCoupon(arg0_117.id, arg0_117.count)
 				end,
 				[14] = function()
 					local var0_129 = nowWorld():GetBossProxy()

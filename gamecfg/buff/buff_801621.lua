@@ -15,7 +15,8 @@ return {
 		{
 			type = "BattleBuffAddAttr",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				attr = "igniteReduce",
@@ -25,7 +26,8 @@ return {
 		{
 			type = "BattleBuffAddAttr",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				attr = "hammerDamagePrevent",
@@ -59,7 +61,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -69,7 +72,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "hammerDamagePrevent",
@@ -104,7 +108,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -114,7 +119,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "hammerDamagePrevent",
@@ -149,7 +155,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -159,7 +166,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "hammerDamagePrevent",
@@ -194,7 +202,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -204,7 +213,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "hammerDamagePrevent",
@@ -239,7 +249,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -249,7 +260,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "hammerDamagePrevent",
@@ -284,7 +296,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -294,7 +307,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "hammerDamagePrevent",
@@ -329,7 +343,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -339,7 +354,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "hammerDamagePrevent",
@@ -374,7 +390,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -384,7 +401,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "hammerDamagePrevent",
@@ -419,7 +437,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -429,7 +448,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "hammerDamagePrevent",
@@ -464,7 +484,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -474,7 +495,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "hammerDamagePrevent",

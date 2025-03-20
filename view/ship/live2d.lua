@@ -738,7 +738,7 @@ function var0_0.SetVisible(arg0_36, arg1_36)
 			arg0_36._physics.enabled = true
 		end
 
-		arg0_36:setReactPos(true)
+		arg0_36:setReactPos(false)
 
 		arg0_36.cubismModelCom.enabled = true
 	else

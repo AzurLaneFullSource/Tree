@@ -71,7 +71,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	SkinCouponMsgBox.New(pg.UIMgr.GetInstance().OverlayMain):ExecuteAction("Show", {
 		skinName = var9_1.skinName,
 		price = var5_1,
-		itemConfig = SkinCouponActivity.StaticGetItemConfig(),
+		drop = SkinCouponActivity.StaticGetItemDrop(),
 		onYes = var10_1
 	})
 end
