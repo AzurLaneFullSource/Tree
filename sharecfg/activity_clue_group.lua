@@ -42,7 +42,7 @@ pg.activity_clue_group = setmetatable({
 pg.base = pg.base or {}
 pg.base.activity_clue_group = {
 	{
-		title = "Valley Hospital (Part 1)",
+		title = "Valley Hospital \n(Part 1)",
 		type = 1,
 		id = 1,
 		task_id = "21613",
@@ -55,7 +55,7 @@ pg.base.activity_clue_group = {
 		}
 	},
 	{
-		title = "Valley Hospital (Part 2)",
+		title = "Valley Hospital \n(Part 2)",
 		type = 1,
 		id = 2,
 		task_id = "21613",
@@ -71,7 +71,7 @@ pg.base.activity_clue_group = {
 		title = "Medical Center",
 		type = 1,
 		id = 3,
-		task_id = "21611",
+		task_id = "21613",
 		pic = "3",
 		unlock_jump = {
 			{
@@ -99,7 +99,7 @@ pg.base.activity_clue_group = {
 		}
 	},
 	{
-		title = "Medical Center (Underground)",
+		title = "Medical Center \n(Underground)",
 		type = 1,
 		id = 5,
 		task_id = "21612",
@@ -167,7 +167,7 @@ pg.base.activity_clue_group = {
 		}
 	},
 	{
-		title = "Inpatient Building (Underground)",
+		title = "Inpatient Building \n(Underground)",
 		type = 1,
 		id = 9,
 		task_id = "21607",
@@ -184,7 +184,7 @@ pg.base.activity_clue_group = {
 		}
 	},
 	{
-		title = "Research Center",
+		title = "Research\nCenter",
 		type = 1,
 		id = 10,
 		task_id = "21609",
@@ -200,7 +200,7 @@ pg.base.activity_clue_group = {
 		}
 	},
 	{
-		title = "Research Center (Underground)",
+		title = "Research Center \n(Underground)",
 		type = 1,
 		id = 11,
 		task_id = "21610",
@@ -234,7 +234,7 @@ pg.base.activity_clue_group = {
 		}
 	},
 	{
-		title = "Recuperation Center (Underground)",
+		title = "Recuperation Center \n(Underground)",
 		type = 1,
 		id = 13,
 		task_id = "21607",
@@ -268,7 +268,7 @@ pg.base.activity_clue_group = {
 		}
 	},
 	{
-		title = "Logistics Center (Underground)",
+		title = "Logistics Center \n(Underground)",
 		type = 1,
 		id = 15,
 		task_id = "21608",
@@ -301,7 +301,7 @@ pg.base.activity_clue_group = {
 		}
 	},
 	{
-		title = "Parking Lot (Underground)",
+		title = "Parking Lot \n(Underground)",
 		type = 1,
 		id = 17,
 		task_id = "21610",
@@ -427,7 +427,7 @@ pg.base.activity_clue_group = {
 		title = "Rear Entrance",
 		type = 1,
 		id = 24,
-		task_id = "21613",
+		task_id = "21611",
 		pic = "24",
 		unlock_jump = {
 			{
