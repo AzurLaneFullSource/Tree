@@ -366,6 +366,8 @@ function var0_0.addActivityFleet(arg0_26, arg1_26, arg2_26)
 			var7_26.fleetType = iter1_26.id >= Fleet.SUBMARINE_FLEET_ID and FleetType.Submarine or FleetType.Normal
 		elseif var6_26.type == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
 			var7_26.fleetType = iter1_26.id >= Fleet.SUBMARINE_FLEET_ID and FleetType.Submarine or FleetType.Normal
+		elseif var6_26.type == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE_VARIABLE then
+			var7_26.fleetType = iter1_26.id >= Fleet.MEGA_SUBMARINE_FLEET_OFFSET and FleetType.Submarine or FleetType.Normal
 		else
 			local var8_26 = {
 				id = iter1_26.id
@@ -404,6 +406,9 @@ function var0_0.addActivityFleet(arg0_26, arg1_26, arg2_26)
 		var10_26 = 0
 		var11_26 = 0
 	elseif var6_26.type == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
+		var10_26 = 0
+		var11_26 = 0
+	elseif var6_26.type == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE_VARIABLE then
 		var10_26 = 0
 		var11_26 = 0
 	end
@@ -508,51 +513,65 @@ function var0_0.recommendActivityFleet(arg0_33, arg1_33, arg2_33)
 		end
 	end
 
-	if arg2_33 >= Fleet.SUBMARINE_FLEET_ID then
-		if not var0_33:isFull() then
-			var2_33(TeamType.Submarine, TeamType.SubmarineMax - #var0_33.subShips)
+	local function var3_33(arg0_35)
+		local var0_35 = TeamType.VanguardMax - #arg0_35.vanguardShips
+		local var1_35 = TeamType.MainMax - #arg0_35.mainShips
+
+		if var0_35 > 0 then
+			var2_33(TeamType.Vanguard, var0_35)
 		end
+
+		if var1_35 > 0 then
+			var2_33(TeamType.Main, var1_35)
+		end
+	end
+
+	local function var4_33(arg0_36)
+		if not arg0_36:isFull() then
+			var2_33(TeamType.Submarine, TeamType.SubmarineMax - #arg0_36.subShips)
+		end
+	end
+
+	if getProxy(ActivityProxy):getActivityById(arg1_33):getConfig("type") == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE_VARIABLE then
+		if arg2_33 >= Fleet.MEGA_SUBMARINE_FLEET_OFFSET then
+			var4_33(var0_33)
+		else
+			var3_33(var0_33)
+		end
+	elseif arg2_33 >= Fleet.SUBMARINE_FLEET_ID then
+		var4_33(var0_33)
 	else
-		local var3_33 = TeamType.VanguardMax - #var0_33.vanguardShips
-		local var4_33 = TeamType.MainMax - #var0_33.mainShips
-
-		if var3_33 > 0 then
-			var2_33(TeamType.Vanguard, var3_33)
-		end
-
-		if var4_33 > 0 then
-			var2_33(TeamType.Main, var4_33)
-		end
+		var3_33(var0_33)
 	end
 
 	arg0_33:updateActivityFleet(arg1_33, arg2_33, var0_33)
 end
 
-function var0_0.GetBossRushFleets(arg0_35, arg1_35, arg2_35)
-	local var0_35 = {}
-	local var1_35 = arg0_35:getActivityFleets()[arg1_35]
+function var0_0.GetBossRushFleets(arg0_37, arg1_37, arg2_37)
+	local var0_37 = {}
+	local var1_37 = arg0_37:getActivityFleets()[arg1_37]
 
-	table.Foreach(arg2_35, function(arg0_36, arg1_36)
-		local var0_36 = arg0_36 == #arg2_35
+	table.Foreach(arg2_37, function(arg0_38, arg1_38)
+		local var0_38 = arg0_38 == #arg2_37
 
-		if not var1_35[arg1_36] then
-			local var1_36 = var0_36 and FleetType.Submarine or FleetType.Normal
+		if not var1_37[arg1_38] then
+			local var1_38 = var0_38 and FleetType.Submarine or FleetType.Normal
 
-			var1_35[arg1_36] = TypedFleet.New({
-				id = arg1_36,
+			var1_37[arg1_38] = TypedFleet.New({
+				id = arg1_38,
 				ship_list = {},
-				fleetType = var1_36
+				fleetType = var1_38
 			})
 		end
 
-		local var2_36 = var1_35[arg1_36]
+		local var2_38 = var1_37[arg1_38]
 
-		var2_36:RemoveUnusedItems()
+		var2_38:RemoveUnusedItems()
 
-		var0_35[arg0_36] = var2_36
+		var0_37[arg0_38] = var2_38
 	end)
 
-	return var0_35
+	return var0_37
 end
 
 return var0_0

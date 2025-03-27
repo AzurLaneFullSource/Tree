@@ -90,6 +90,7 @@ pg.pay_data_display = setmetatable({
 		1018,
 		1019,
 		1020,
+		1021,
 		2001,
 		2002,
 		2003,
@@ -170,6 +171,9 @@ pg.pay_data_display = setmetatable({
 		2042,
 		2043,
 		2044,
+		2045,
+		2046,
+		2047,
 		5011,
 		5012,
 		5013,
@@ -193,7 +197,8 @@ pg.pay_data_display = setmetatable({
 		152,
 		153,
 		154,
-		155
+		155,
+		156
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -8864,6 +8869,82 @@ pg.base.pay_data_display = {
 		limit_args = {},
 		drop_item = {}
 	},
+	[1021] = {
+		name = "Fair Winds Cruise Pass 2025.4",
+		limit_group = 0,
+		descrip_extra = "You must complete certain missions to obtain these rewards.",
+		type = 0,
+		subject = "Fair Winds Cruise Pass",
+		limit_arg = 1,
+		name_display = "Fair Winds Cruise Pass",
+		show_group = "",
+		type_order = 6,
+		extra_service = 4,
+		money = 999,
+		id = 1021,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "battlepass_1",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.passport24",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Purchase to immediately gain 1,500 Progress Points, and also unlock additional Fair Winds Cruise rewards.",
+		airijp_id = "com.yostaren.azurlane.passport24",
+		extra_service_item = {
+			{
+				1,
+				4022,
+				1500
+			},
+			{
+				8,
+				65086,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					4,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					5,
+					31
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				8,
+				59599,
+				1500
+			}
+		},
+		sub_display = {
+			7022,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
 	[2001] = {
 		name = "PR Construction Pack - Series 1",
 		limit_group = 1,
@@ -16111,6 +16192,232 @@ pg.base.pay_data_display = {
 			}
 		}
 	},
+	[2045] = {
+		name = "Battle UI Pack - Genetic Origin",
+		limit_group = 104,
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		subject = "Battle UI Pack - Genetic Origin",
+		limit_arg = 0,
+		name_display = "Battle UI Pack - Genetic Origin",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 1199,
+		id = 2045,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui4",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack22",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a new combat UI theme.",
+		airijp_id = "com.yostaren.azurlane.pack22",
+		extra_service_item = {
+			{
+				31,
+				203,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					3,
+					27
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					4,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				203,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[2046] = {
+		name = "Battle UI Pack - Genetic Origin (Basic)",
+		limit_group = 104,
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		subject = "Battle UI Pack - Genetic Origin (Basic)",
+		limit_arg = 1,
+		name_display = "Battle UI Pack - Genetic Origin (Basic)",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 1199,
+		id = 2046,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui4",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack22",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a new combat UI theme.",
+		airijp_id = "com.yostaren.azurlane.pack22",
+		extra_service_item = {
+			{
+				31,
+				203,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					3,
+					27
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					4,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				203,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40057,
+				1
+			}
+		}
+	},
+	[2047] = {
+		name = "Battle UI Pack - Genetic Origin (Premium)",
+		limit_group = 104,
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		subject = "Battle UI Pack - Genetic Origin (Premium)",
+		limit_arg = 1,
+		name_display = "Battle UI Pack - Genetic Origin (Premium)",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 3699,
+		id = 2047,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui4",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack23",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a new combat UI theme and Gems x 3,060.",
+		airijp_id = "com.yostaren.azurlane.pack23",
+		extra_service_item = {
+			{
+				31,
+				203,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					3,
+					27
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					4,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				203,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40058,
+				1
+			}
+		}
+	},
 	[5011] = {
 		name = "Daily Paid Pack (Day 1)",
 		limit_group = 0,
@@ -18598,6 +18905,120 @@ pg.base.pay_data_display = {
 			{
 				2,
 				81422,
+				1
+			}
+		}
+	},
+	[156] = {
+		name = "Hospital Adventure Lucky Bag",
+		limit_group = 0,
+		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
+		type = 1,
+		subject = "Hospital Adventure Lucky Bag",
+		limit_arg = 1,
+		name_display = "Hospital Adventure Lucky Bag",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 2999,
+		id = 156,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai94",
+		skin_inquire_relation = 86414,
+		id_str = "com.yostaren.azurlane.luckybag54",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a random character outfit and a large amount of supplies ",
+		airijp_id = "com.yostaren.azurlane.luckybag54",
+		extra_service_item = {
+			{
+				2,
+				86414,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					3,
+					27
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					4,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86414,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81423,
 				1
 			}
 		}

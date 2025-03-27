@@ -238,7 +238,7 @@ function var0_0.Preload(arg0_6)
 				var0_0.addCommanderBuffRes(var38_6)
 				var0_0.addChapterBuffRes(var37_6)
 			end
-		elseif arg0_6.contextData.system == SYSTEM_HP_SHARE_ACT_BOSS or arg0_6.contextData.system == SYSTEM_ACT_BOSS or arg0_6.contextData.system == SYSTEM_ACT_BOSS_SP or arg0_6.contextData.system == SYSTEM_BOSS_EXPERIMENT or arg0_6.contextData.system == SYSTEM_BOSS_SINGLE then
+		elseif arg0_6.contextData.system == SYSTEM_HP_SHARE_ACT_BOSS or arg0_6.contextData.system == SYSTEM_ACT_BOSS or arg0_6.contextData.system == SYSTEM_ACT_BOSS_SP or arg0_6.contextData.system == SYSTEM_BOSS_EXPERIMENT or arg0_6.contextData.system == SYSTEM_BOSS_SINGLE or arg0_6.contextData.system == SYSTEM_BOSS_SINGLE_VARIABLE then
 			local var39_6 = getProxy(FleetProxy):getActivityFleets()[arg0_6.contextData.actId]
 			local var40_6 = var39_6[arg0_6.contextData.mainFleetId]
 
@@ -252,274 +252,290 @@ function var0_0.Preload(arg0_6)
 				var0_0.addCommanderBuffRes(var40_6:buildBattleBuffList())
 			end
 
-			local var42_6 = var39_6[arg0_6.contextData.mainFleetId + 10]
+			local var42_6 = arg0_6.contextData.system == SYSTEM_BOSS_SINGLE_VARIABLE and Fleet.MEGA_SUBMARINE_FLEET_OFFSET or 10
+			local var43_6 = var39_6[arg0_6.contextData.mainFleetId + var42_6]
 
-			if var42_6 then
-				local var43_6 = var42_6:getTeamByName(TeamType.Submarine)
+			if var43_6 then
+				local var44_6 = var43_6:getTeamByName(TeamType.Submarine)
 
-				for iter40_6, iter41_6 in ipairs(var43_6) do
+				for iter40_6, iter41_6 in ipairs(var44_6) do
 					table.insert(var23_6, var1_6:getShipById(iter41_6))
 				end
 
-				var0_0.addCommanderBuffRes(var42_6:buildBattleBuffList())
+				var0_0.addCommanderBuffRes(var43_6:buildBattleBuffList())
 			end
 
 			if arg0_6.contextData.system == SYSTEM_ACT_BOSS_SP then
-				local var44_6 = getProxy(ActivityProxy):GetActivityBossRuntime(arg0_6.contextData.actId).buffIds
-				local var45_6 = _.map(var44_6, function(arg0_7)
+				local var45_6 = getProxy(ActivityProxy):GetActivityBossRuntime(arg0_6.contextData.actId).buffIds
+				local var46_6 = _.map(var45_6, function(arg0_7)
 					return ActivityBossBuff.New({
 						configId = arg0_7
 					}):GetBuffID()
 				end)
 
-				var0_0.addChapterBuffRes(var45_6)
+				var0_0.addChapterBuffRes(var46_6)
 			end
 
 			if arg0_6.contextData.system == SYSTEM_BOSS_SINGLE then
-				local var46_6 = getProxy(ActivityProxy):getActivityById(arg0_6.contextData.actId)
+				local var47_6 = getProxy(ActivityProxy):getActivityById(arg0_6.contextData.actId)
 
-				var0_0.addChapterBuffRes(var46_6:GetBuffIdsByStageId(arg0_6.contextData.stageId))
-			end
-		elseif arg0_6.contextData.system == SYSTEM_BOSS_RUSH or arg0_6.contextData.system == SYSTEM_BOSS_RUSH_EX then
-			local var47_6 = getProxy(ActivityProxy):getActivityById(arg0_6.contextData.actId):GetSeriesData()
-
-			assert(var47_6)
-
-			local var48_6 = var47_6:GetStaegLevel() + 1
-			local var49_6 = var47_6:GetFleetIds()
-			local var50_6 = var49_6[var48_6]
-			local var51_6 = var49_6[#var49_6]
-
-			if var47_6:GetMode() == BossRushSeriesData.MODE.SINGLE then
-				var50_6 = var49_6[1]
+				var0_0.addChapterBuffRes(var47_6:GetBuffIdsByStageId(arg0_6.contextData.stageId))
 			end
 
-			local var52_6 = getProxy(FleetProxy):getActivityFleets()[arg0_6.contextData.actId]
-			local var53_6 = var52_6[var50_6]
-			local var54_6 = var52_6[var51_6]
+			if arg0_6.contextData.system == SYSTEM_BOSS_SINGLE_VARIABLE then
+				local var48_6 = getProxy(ActivityProxy):getActivityById(arg0_6.contextData.actId)
 
-			if var53_6 then
-				local var55_6 = var53_6:GetRawShipIds()
+				var0_0.addChapterBuffRes(var48_6:GetBuffIdsByStageId(arg0_6.contextData.stageId))
 
-				for iter42_6, iter43_6 in ipairs(var55_6) do
-					table.insert(var23_6, var1_6:getShipById(iter43_6))
+				local var49_6 = pg.strategy_data_template
+				local var50_6 = {}
+
+				for iter42_6, iter43_6 in ipairs(arg0_6.contextData.variableBuffList) do
+					table.insert(var50_6, var49_6[iter43_6].buff_id)
 				end
 
-				var0_0.addCommanderBuffRes(var53_6:buildBattleBuffList())
+				var0_0.addChapterBuffRes(var50_6)
+			end
+		elseif arg0_6.contextData.system == SYSTEM_BOSS_RUSH or arg0_6.contextData.system == SYSTEM_BOSS_RUSH_EX then
+			local var51_6 = getProxy(ActivityProxy):getActivityById(arg0_6.contextData.actId):GetSeriesData()
+
+			assert(var51_6)
+
+			local var52_6 = var51_6:GetStaegLevel() + 1
+			local var53_6 = var51_6:GetFleetIds()
+			local var54_6 = var53_6[var52_6]
+			local var55_6 = var53_6[#var53_6]
+
+			if var51_6:GetMode() == BossRushSeriesData.MODE.SINGLE then
+				var54_6 = var53_6[1]
 			end
 
-			if var54_6 then
-				local var56_6 = var54_6:GetRawShipIds()
+			local var56_6 = getProxy(FleetProxy):getActivityFleets()[arg0_6.contextData.actId]
+			local var57_6 = var56_6[var54_6]
+			local var58_6 = var56_6[var55_6]
 
-				for iter44_6, iter45_6 in ipairs(var56_6) do
+			if var57_6 then
+				local var59_6 = var57_6:GetRawShipIds()
+
+				for iter44_6, iter45_6 in ipairs(var59_6) do
 					table.insert(var23_6, var1_6:getShipById(iter45_6))
 				end
 
-				var0_0.addCommanderBuffRes(var54_6:buildBattleBuffList())
+				var0_0.addCommanderBuffRes(var57_6:buildBattleBuffList())
 			end
-		elseif arg0_6.contextData.system == SYSTEM_LIMIT_CHALLENGE then
-			local var57_6 = FleetProxy.CHALLENGE_FLEET_ID
-			local var58_6 = FleetProxy.CHALLENGE_SUB_FLEET_ID
-			local var59_6 = getProxy(FleetProxy)
-			local var60_6 = var59_6:getFleetById(var57_6)
-			local var61_6 = var59_6:getFleetById(var58_6)
 
-			if var60_6 then
-				local var62_6 = var60_6:GetRawShipIds()
+			if var58_6 then
+				local var60_6 = var58_6:GetRawShipIds()
 
-				for iter46_6, iter47_6 in ipairs(var62_6) do
+				for iter46_6, iter47_6 in ipairs(var60_6) do
 					table.insert(var23_6, var1_6:getShipById(iter47_6))
 				end
 
-				var0_0.addCommanderBuffRes(var60_6:buildBattleBuffList())
+				var0_0.addCommanderBuffRes(var58_6:buildBattleBuffList())
 			end
+		elseif arg0_6.contextData.system == SYSTEM_LIMIT_CHALLENGE then
+			local var61_6 = FleetProxy.CHALLENGE_FLEET_ID
+			local var62_6 = FleetProxy.CHALLENGE_SUB_FLEET_ID
+			local var63_6 = getProxy(FleetProxy)
+			local var64_6 = var63_6:getFleetById(var61_6)
+			local var65_6 = var63_6:getFleetById(var62_6)
 
-			if var61_6 then
-				local var63_6 = var61_6:GetRawShipIds()
+			if var64_6 then
+				local var66_6 = var64_6:GetRawShipIds()
 
-				for iter48_6, iter49_6 in ipairs(var63_6) do
+				for iter48_6, iter49_6 in ipairs(var66_6) do
 					table.insert(var23_6, var1_6:getShipById(iter49_6))
 				end
 
-				var0_0.addCommanderBuffRes(var61_6:buildBattleBuffList())
+				var0_0.addCommanderBuffRes(var64_6:buildBattleBuffList())
 			end
-
-			local var64_6 = LimitChallengeConst.GetChallengeIDByStageID(arg0_6.contextData.stageId)
-			local var65_6 = AcessWithinNull(pg.expedition_constellation_challenge_template[var64_6], "buff_id")
 
 			if var65_6 then
-				var0_0.addEnemyBuffRes(var65_6)
+				local var67_6 = var65_6:GetRawShipIds()
+
+				for iter50_6, iter51_6 in ipairs(var67_6) do
+					table.insert(var23_6, var1_6:getShipById(iter51_6))
+				end
+
+				var0_0.addCommanderBuffRes(var65_6:buildBattleBuffList())
+			end
+
+			local var68_6 = LimitChallengeConst.GetChallengeIDByStageID(arg0_6.contextData.stageId)
+			local var69_6 = AcessWithinNull(pg.expedition_constellation_challenge_template[var68_6], "buff_id")
+
+			if var69_6 then
+				var0_0.addEnemyBuffRes(var69_6)
 			end
 		elseif arg0_6.contextData.system == SYSTEM_GUILD then
-			local var66_6 = getProxy(GuildProxy):getRawData():GetActiveEvent():GetBossMission()
-			local var67_6 = var66_6:GetMainFleet()
-			local var68_6 = var67_6:GetShips()
+			local var70_6 = getProxy(GuildProxy):getRawData():GetActiveEvent():GetBossMission()
+			local var71_6 = var70_6:GetMainFleet()
+			local var72_6 = var71_6:GetShips()
 
-			for iter50_6, iter51_6 in ipairs(var68_6) do
-				if iter51_6 and iter51_6.ship then
-					table.insert(var23_6, iter51_6.ship)
-				end
-			end
-
-			var0_0.addCommanderBuffRes(var67_6:BuildBattleBuffList())
-
-			local var69_6 = var66_6:GetSubFleet()
-			local var70_6 = var69_6:GetShips()
-
-			for iter52_6, iter53_6 in ipairs(var70_6) do
+			for iter52_6, iter53_6 in ipairs(var72_6) do
 				if iter53_6 and iter53_6.ship then
 					table.insert(var23_6, iter53_6.ship)
 				end
 			end
 
-			var0_0.addCommanderBuffRes(var69_6:BuildBattleBuffList())
-		elseif arg0_6.contextData.system == SYSTEM_CHALLENGE then
-			local var71_6 = getProxy(ChallengeProxy):getUserChallengeInfo(arg0_6.contextData.mode)
-			local var72_6 = var71_6:getRegularFleet()
+			var0_0.addCommanderBuffRes(var71_6:BuildBattleBuffList())
 
-			ships = var72_6:getShips(false)
+			local var73_6 = var70_6:GetSubFleet()
+			local var74_6 = var73_6:GetShips()
 
-			for iter54_6, iter55_6 in ipairs(ships) do
-				table.insert(var23_6, iter55_6)
+			for iter54_6, iter55_6 in ipairs(var74_6) do
+				if iter55_6 and iter55_6.ship then
+					table.insert(var23_6, iter55_6.ship)
+				end
 			end
 
-			var0_0.addCommanderBuffRes(var72_6:buildBattleBuffList())
+			var0_0.addCommanderBuffRes(var73_6:BuildBattleBuffList())
+		elseif arg0_6.contextData.system == SYSTEM_CHALLENGE then
+			local var75_6 = getProxy(ChallengeProxy):getUserChallengeInfo(arg0_6.contextData.mode)
+			local var76_6 = var75_6:getRegularFleet()
 
-			local var73_6 = var71_6:getSubmarineFleet()
-
-			ships = var73_6:getShips(false)
+			ships = var76_6:getShips(false)
 
 			for iter56_6, iter57_6 in ipairs(ships) do
 				table.insert(var23_6, iter57_6)
 			end
 
-			var0_0.addCommanderBuffRes(var73_6:buildBattleBuffList())
-		elseif arg0_6.contextData.system == SYSTEM_WORLD_BOSS then
-			local var74_6 = nowWorld():GetBossProxy()
-			local var75_6 = var74_6:GetFleet(arg0_6.contextData.bossId)
-			local var76_6 = var1_6:getSortShipsByFleet(var75_6)
+			var0_0.addCommanderBuffRes(var76_6:buildBattleBuffList())
 
-			for iter58_6, iter59_6 in ipairs(var76_6) do
+			local var77_6 = var75_6:getSubmarineFleet()
+
+			ships = var77_6:getShips(false)
+
+			for iter58_6, iter59_6 in ipairs(ships) do
 				table.insert(var23_6, iter59_6)
 			end
 
-			local var77_6 = var74_6:GetBossById(arg0_6.contextData.bossId)
+			var0_0.addCommanderBuffRes(var77_6:buildBattleBuffList())
+		elseif arg0_6.contextData.system == SYSTEM_WORLD_BOSS then
+			local var78_6 = nowWorld():GetBossProxy()
+			local var79_6 = var78_6:GetFleet(arg0_6.contextData.bossId)
+			local var80_6 = var1_6:getSortShipsByFleet(var79_6)
 
-			if var77_6 and var77_6:IsSelf() then
-				local var78_6, var79_6, var80_6 = var74_6.GetSupportValue()
+			for iter60_6, iter61_6 in ipairs(var80_6) do
+				table.insert(var23_6, iter61_6)
+			end
 
-				if var78_6 then
+			local var81_6 = var78_6:GetBossById(arg0_6.contextData.bossId)
+
+			if var81_6 and var81_6:IsSelf() then
+				local var82_6, var83_6, var84_6 = var78_6.GetSupportValue()
+
+				if var82_6 then
 					var0_0.addChapterAuraRes({
 						{
 							level = 1,
-							id = var80_6
+							id = var84_6
 						}
 					})
 				end
 			end
 		elseif arg0_6.contextData.system == SYSTEM_WORLD then
-			local var81_6 = nowWorld()
-			local var82_6 = var81_6:GetActiveMap()
-			local var83_6 = var82_6:GetFleet()
+			local var85_6 = nowWorld()
+			local var86_6 = var85_6:GetActiveMap()
+			local var87_6 = var86_6:GetFleet()
 
-			for iter60_6, iter61_6 in ipairs(var83_6:GetShipVOs(true)) do
-				table.insert(var23_6, iter61_6)
+			for iter62_6, iter63_6 in ipairs(var87_6:GetShipVOs(true)) do
+				table.insert(var23_6, iter63_6)
 			end
 
-			local var84_6, var85_6 = var82_6:getFleetBattleBuffs(var83_6)
+			local var88_6, var89_6 = var86_6:getFleetBattleBuffs(var87_6)
 
-			var0_0.addCommanderBuffRes(var85_6)
-			var0_0.addChapterBuffRes(var84_6)
+			var0_0.addCommanderBuffRes(var89_6)
+			var0_0.addChapterBuffRes(var88_6)
 
-			local var86_6 = var82_6:GetChapterAuraBuffs()
+			local var90_6 = var86_6:GetChapterAuraBuffs()
 
-			var0_0.addChapterAuraRes(var86_6)
+			var0_0.addChapterAuraRes(var90_6)
 
-			local var87_6 = var82_6:GetChapterAidBuffs()
-			local var88_6 = {}
+			local var91_6 = var86_6:GetChapterAidBuffs()
+			local var92_6 = {}
 
-			for iter62_6, iter63_6 in pairs(var87_6) do
-				for iter64_6, iter65_6 in ipairs(iter63_6) do
-					table.insert(var88_6, iter65_6)
+			for iter64_6, iter65_6 in pairs(var91_6) do
+				for iter66_6, iter67_6 in ipairs(iter65_6) do
+					table.insert(var92_6, iter67_6)
 				end
 			end
 
-			var0_0.addChapterAuraRes(var88_6)
+			var0_0.addChapterAuraRes(var92_6)
 
-			if var81_6:GetSubAidFlag() == true then
-				local var89_6 = var82_6:GetSubmarineFleet()
-				local var90_6 = var89_6:GetTeamShipVOs(TeamType.Submarine, false)
+			if var85_6:GetSubAidFlag() == true then
+				local var93_6 = var86_6:GetSubmarineFleet()
+				local var94_6 = var93_6:GetTeamShipVOs(TeamType.Submarine, false)
 
-				for iter66_6, iter67_6 in ipairs(var90_6) do
-					table.insert(var23_6, iter67_6)
+				for iter68_6, iter69_6 in ipairs(var94_6) do
+					table.insert(var23_6, iter69_6)
 				end
 
-				local var91_6, var92_6 = var82_6:getFleetBattleBuffs(var89_6)
+				local var95_6, var96_6 = var86_6:getFleetBattleBuffs(var93_6)
 
-				var0_0.addCommanderBuffRes(var92_6)
-				var0_0.addChapterBuffRes(var91_6)
+				var0_0.addCommanderBuffRes(var96_6)
+				var0_0.addChapterBuffRes(var95_6)
 			end
 
-			local var93_6 = var82_6:GetCell(var83_6.row, var83_6.column):GetStageEnemy()
+			local var97_6 = var86_6:GetCell(var87_6.row, var87_6.column):GetStageEnemy()
 
-			var0_0.addChapterBuffRes(table.mergeArray(var93_6:GetBattleLuaBuffs(), var82_6:GetBattleLuaBuffs(WorldMap.FactionEnemy, var93_6)))
+			var0_0.addChapterBuffRes(table.mergeArray(var97_6:GetBattleLuaBuffs(), var86_6:GetBattleLuaBuffs(WorldMap.FactionEnemy, var97_6)))
 		elseif arg0_6.contextData.mainFleetId then
-			local var94_6 = getProxy(FleetProxy):getFleetById(arg0_6.contextData.mainFleetId)
+			local var98_6 = getProxy(FleetProxy):getFleetById(arg0_6.contextData.mainFleetId)
 
-			assert(var94_6)
+			assert(var98_6)
 
-			local var95_6 = var1_6:getShipsByFleet(var94_6)
+			local var99_6 = var1_6:getShipsByFleet(var98_6)
 
-			for iter68_6, iter69_6 in ipairs(var95_6) do
-				table.insert(var23_6, iter69_6)
+			for iter70_6, iter71_6 in ipairs(var99_6) do
+				table.insert(var23_6, iter71_6)
 			end
 		end
 
-		local var96_6 = {}
+		local var100_6 = {}
 
 		if arg0_6.contextData.rivalId then
-			local var97_6 = getProxy(MilitaryExerciseProxy):getRivalById(arg0_6.contextData.rivalId)
+			local var101_6 = getProxy(MilitaryExerciseProxy):getRivalById(arg0_6.contextData.rivalId)
 
-			assert(var97_6, "rival id >>>> " .. arg0_6.contextData.rivalId)
+			assert(var101_6, "rival id >>>> " .. arg0_6.contextData.rivalId)
 
-			local var98_6 = var97_6:getShips()
+			local var102_6 = var101_6:getShips()
 
-			for iter70_6, iter71_6 in ipairs(var98_6) do
-				table.insert(var23_6, iter71_6)
+			for iter72_6, iter73_6 in ipairs(var102_6) do
+				table.insert(var23_6, iter73_6)
 
-				var96_6[iter71_6] = true
+				var100_6[iter73_6] = true
 			end
 		end
 
 		if BATTLE_DEBUG and BATTLE_FREE_SUBMARINE then
-			local var99_6 = getProxy(FleetProxy):getFleetById(11)
-			local var100_6 = var99_6:getTeamByName(TeamType.Submarine)
+			local var103_6 = getProxy(FleetProxy):getFleetById(11)
+			local var104_6 = var103_6:getTeamByName(TeamType.Submarine)
 
-			for iter72_6, iter73_6 in ipairs(var100_6) do
-				table.insert(var23_6, var1_6:getShipById(iter73_6))
+			for iter74_6, iter75_6 in ipairs(var104_6) do
+				table.insert(var23_6, var1_6:getShipById(iter75_6))
 			end
 
-			var0_0.addCommanderBuffRes(var99_6:buildBattleBuffList())
+			var0_0.addCommanderBuffRes(var103_6:buildBattleBuffList())
 		end
 
 		if arg0_6.contextData.system == SYSTEM_CARDPUZZLE then
-			local var101_6 = arg0_6.contextData.cards
+			local var105_6 = arg0_6.contextData.cards
 
-			for iter74_6, iter75_6 in ipairs(var101_6) do
-				local var102_6 = ys.Battle.BattleDataFunction.GetPuzzleCardDataTemplate(iter75_6).effect[1]
-				local var103_6 = ys.Battle.BattleDataFunction.GetCardRes(var102_6)
+			for iter76_6, iter77_6 in ipairs(var105_6) do
+				local var106_6 = ys.Battle.BattleDataFunction.GetPuzzleCardDataTemplate(iter77_6).effect[1]
+				local var107_6 = ys.Battle.BattleDataFunction.GetCardRes(var106_6)
 
-				for iter76_6, iter77_6 in ipairs(var103_6) do
-					var0_6:AddPreloadResource(iter77_6)
+				for iter78_6, iter79_6 in ipairs(var107_6) do
+					var0_6:AddPreloadResource(iter79_6)
 				end
 			end
 
-			for iter78_6, iter79_6 in ipairs(arg0_6.contextData.cardPuzzleFleet) do
-				local var104_6 = iter79_6:getConfig("id")
-				local var105_6 = ys.Battle.BattleDataFunction.GetPuzzleShipDataTemplate(var104_6)
+			for iter80_6, iter81_6 in ipairs(arg0_6.contextData.cardPuzzleFleet) do
+				local var108_6 = iter81_6:getConfig("id")
+				local var109_6 = ys.Battle.BattleDataFunction.GetPuzzleShipDataTemplate(var108_6)
 
-				var0_6:AddPreloadCV(var105_6.skin_id)
-				var0_6:AddPreloadResource(var0_6.GetShipResource(var105_6.id, var105_6.skin_id, true))
+				var0_6:AddPreloadCV(var109_6.skin_id)
+				var0_6:AddPreloadResource(var0_6.GetShipResource(var109_6.id, var109_6.skin_id, true))
 			end
 
 			var0_6:AddPreloadResource(var0_6.GetUIPath("CardTowerCardCombat"))
@@ -527,169 +543,169 @@ function var0_0.Preload(arg0_6)
 		end
 
 		if arg0_6.contextData.prefabFleet then
-			local var106_6 = arg0_6.contextData.prefabFleet.main_unitList
-			local var107_6 = arg0_6.contextData.prefabFleet.vanguard_unitList
-			local var108_6 = arg0_6.contextData.prefabFleet.submarine_unitList
+			local var110_6 = arg0_6.contextData.prefabFleet.main_unitList
+			local var111_6 = arg0_6.contextData.prefabFleet.vanguard_unitList
+			local var112_6 = arg0_6.contextData.prefabFleet.submarine_unitList
 
-			if var106_6 then
-				for iter80_6, iter81_6 in ipairs(var106_6) do
-					local var109_6 = {
-						configId = iter81_6.configId,
+			if var110_6 then
+				for iter82_6, iter83_6 in ipairs(var110_6) do
+					local var113_6 = {
+						configId = iter83_6.configId,
 						equipments = {},
-						skinId = iter81_6.skinId,
-						buffs = iter81_6.skills
+						skinId = iter83_6.skinId,
+						buffs = iter83_6.skills
 					}
-					local var110_6 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter81_6.configId)
-					local var111_6 = math.max(#iter81_6.equipment, #var110_6.default_equip_list)
+					local var114_6 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter83_6.configId)
+					local var115_6 = math.max(#iter83_6.equipment, #var114_6.default_equip_list)
 
-					for iter82_6 = 1, var111_6 do
-						var109_6.equipments[iter82_6] = iter81_6.equipment[iter82_6] or false
+					for iter84_6 = 1, var115_6 do
+						var113_6.equipments[iter84_6] = iter83_6.equipment[iter84_6] or false
 					end
 
-					function var109_6.getActiveEquipments(arg0_8)
+					function var113_6.getActiveEquipments(arg0_8)
 						return arg0_8.equipments
 					end
 
-					table.insert(var23_6, var109_6)
+					table.insert(var23_6, var113_6)
 				end
 			end
 
-			if var107_6 then
-				for iter83_6, iter84_6 in ipairs(var107_6) do
-					local var112_6 = {
-						configId = iter84_6.configId,
+			if var111_6 then
+				for iter85_6, iter86_6 in ipairs(var111_6) do
+					local var116_6 = {
+						configId = iter86_6.configId,
 						equipments = {},
-						skinId = iter84_6.skinId,
-						buffs = iter84_6.skills
+						skinId = iter86_6.skinId,
+						buffs = iter86_6.skills
 					}
-					local var113_6 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter84_6.configId)
-					local var114_6 = math.max(#iter84_6.equipment, #var113_6.default_equip_list)
+					local var117_6 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter86_6.configId)
+					local var118_6 = math.max(#iter86_6.equipment, #var117_6.default_equip_list)
 
-					for iter85_6 = 1, var114_6 do
-						var112_6.equipments[iter85_6] = iter84_6.equipment[iter85_6] or false
+					for iter87_6 = 1, var118_6 do
+						var116_6.equipments[iter87_6] = iter86_6.equipment[iter87_6] or false
 					end
 
-					function var112_6.getActiveEquipments(arg0_9)
+					function var116_6.getActiveEquipments(arg0_9)
 						return arg0_9.equipments
 					end
 
-					table.insert(var23_6, var112_6)
+					table.insert(var23_6, var116_6)
 				end
 			end
 
-			if var108_6 then
-				for iter86_6, iter87_6 in ipairs(var108_6) do
-					local var115_6 = {
-						configId = iter87_6.configId,
+			if var112_6 then
+				for iter88_6, iter89_6 in ipairs(var112_6) do
+					local var119_6 = {
+						configId = iter89_6.configId,
 						equipments = {},
-						skinId = iter87_6.skinId,
-						buffs = iter87_6.skills
+						skinId = iter89_6.skinId,
+						buffs = iter89_6.skills
 					}
-					local var116_6 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter87_6.configId)
-					local var117_6 = math.max(#iter87_6.equipment, #var116_6.default_equip_list)
+					local var120_6 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter89_6.configId)
+					local var121_6 = math.max(#iter89_6.equipment, #var120_6.default_equip_list)
 
-					for iter88_6 = 1, var117_6 do
-						var115_6.equipments[iter88_6] = iter87_6.equipment[iter88_6] or false
+					for iter90_6 = 1, var121_6 do
+						var119_6.equipments[iter90_6] = iter89_6.equipment[iter90_6] or false
 					end
 
-					function var115_6.getActiveEquipments(arg0_10)
+					function var119_6.getActiveEquipments(arg0_10)
 						return arg0_10.equipments
 					end
 
-					table.insert(var23_6, var115_6)
+					table.insert(var23_6, var119_6)
 				end
 			end
 		end
 
-		for iter89_6, iter90_6 in ipairs(var23_6) do
-			var0_6:AddPreloadCV(iter90_6.skinId)
+		for iter91_6, iter92_6 in ipairs(var23_6) do
+			var0_6:AddPreloadCV(iter92_6.skinId)
 
-			local var118_6 = true
+			local var122_6 = true
 
-			if var96_6[iter90_6] == true then
-				var118_6 = false
+			if var100_6[iter92_6] == true then
+				var122_6 = false
 			end
 
-			var0_6:AddPreloadResource(var0_6.GetShipResource(iter90_6.configId, iter90_6.skinId, var118_6))
+			var0_6:AddPreloadResource(var0_6.GetShipResource(iter92_6.configId, iter92_6.skinId, var122_6))
 
-			local var119_6 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter90_6.configId)
+			local var123_6 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter92_6.configId)
 
-			for iter91_6, iter92_6 in ipairs(iter90_6:getActiveEquipments()) do
-				local var120_6
-				local var121_6
-				local var122_6 = 0
+			for iter93_6, iter94_6 in ipairs(iter92_6:getActiveEquipments()) do
+				local var124_6
+				local var125_6
+				local var126_6 = 0
 
-				if not iter92_6 then
-					var120_6 = var119_6.default_equip_list[iter91_6]
+				if not iter94_6 then
+					var124_6 = var123_6.default_equip_list[iter93_6]
 				else
-					var120_6 = iter92_6.configId
-					var122_6 = iter92_6.skinId
+					var124_6 = iter94_6.configId
+					var126_6 = iter94_6.skinId
 				end
 
-				if var120_6 then
-					local var123_6 = ys.Battle.BattleDataFunction.GetWeaponDataFromID(var120_6).weapon_id
+				if var124_6 then
+					local var127_6 = ys.Battle.BattleDataFunction.GetWeaponDataFromID(var124_6).weapon_id
 
-					if #var123_6 > 0 then
-						for iter93_6, iter94_6 in ipairs(var123_6) do
-							var0_6:AddPreloadResource(var0_6.GetWeaponResource(iter94_6, var122_6))
+					if #var127_6 > 0 then
+						for iter95_6, iter96_6 in ipairs(var127_6) do
+							var0_6:AddPreloadResource(var0_6.GetWeaponResource(iter96_6, var126_6))
 						end
 					else
-						var0_6:AddPreloadResource(var0_6.GetEquipResource(var120_6, var122_6, arg0_6.contextData.system))
+						var0_6:AddPreloadResource(var0_6.GetEquipResource(var124_6, var126_6, arg0_6.contextData.system))
 					end
 				end
 			end
 
-			for iter95_6, iter96_6 in ipairs(var119_6.depth_charge_list) do
-				local var124_6 = ys.Battle.BattleDataFunction.GetWeaponDataFromID(iter96_6).weapon_id
+			for iter97_6, iter98_6 in ipairs(var123_6.depth_charge_list) do
+				local var128_6 = ys.Battle.BattleDataFunction.GetWeaponDataFromID(iter98_6).weapon_id
 
-				for iter97_6, iter98_6 in ipairs(var124_6) do
-					var0_6:AddPreloadResource(var0_6.GetWeaponResource(iter98_6))
+				for iter99_6, iter100_6 in ipairs(var128_6) do
+					var0_6:AddPreloadResource(var0_6.GetWeaponResource(iter100_6))
 				end
 			end
 
-			for iter99_6, iter100_6 in ipairs(var119_6.fix_equip_list) do
-				local var125_6 = ys.Battle.BattleDataFunction.GetWeaponDataFromID(iter100_6).weapon_id
+			for iter101_6, iter102_6 in ipairs(var123_6.fix_equip_list) do
+				local var129_6 = ys.Battle.BattleDataFunction.GetWeaponDataFromID(iter102_6).weapon_id
 
-				for iter101_6, iter102_6 in ipairs(var125_6) do
-					var0_6:AddPreloadResource(var0_6.GetWeaponResource(iter102_6))
+				for iter103_6, iter104_6 in ipairs(var129_6) do
+					var0_6:AddPreloadResource(var0_6.GetWeaponResource(iter104_6))
 				end
 			end
 
-			local var126_6 = iter90_6.GetSpWeapon and iter90_6:GetSpWeapon()
+			local var130_6 = iter92_6.GetSpWeapon and iter92_6:GetSpWeapon()
 
-			if var126_6 then
-				var0_6:AddPreloadResource(var0_6.GetSpWeaponResource(var126_6:GetConfigID(), arg0_6.contextData.system))
+			if var130_6 then
+				var0_6:AddPreloadResource(var0_6.GetSpWeaponResource(var130_6:GetConfigID(), arg0_6.contextData.system))
 			end
 
-			local var127_6 = ys.Battle.BattleDataFunction.GetBuffBulletRes(iter90_6.configId, iter90_6.skills, arg0_6.contextData.system, iter90_6.skinId, var126_6)
+			local var131_6 = ys.Battle.BattleDataFunction.GetBuffBulletRes(iter92_6.configId, iter92_6.skills, arg0_6.contextData.system, iter92_6.skinId, var130_6)
 
-			for iter103_6, iter104_6 in pairs(var127_6) do
-				var0_6:AddPreloadResource(iter104_6)
+			for iter105_6, iter106_6 in pairs(var131_6) do
+				var0_6:AddPreloadResource(iter106_6)
 			end
 
-			if iter90_6.buffs then
-				var0_6:AddPreloadResource(ys.Battle.BattleDataFunction.GetBuffListRes(iter90_6.buffs, arg0_6.contextData.system, iter90_6.skinId))
+			if iter92_6.buffs then
+				var0_6:AddPreloadResource(ys.Battle.BattleDataFunction.GetBuffListRes(iter92_6.buffs, arg0_6.contextData.system, iter92_6.skinId))
 			end
 		end
 	end
 
-	local var128_6 = pg.expedition_data_template[arg0_6.contextData.stageId]
-	local var129_6
+	local var132_6 = pg.expedition_data_template[arg0_6.contextData.stageId]
+	local var133_6
 
-	if arg0_6.contextData.system == SYSTEM_WORLD and var128_6.difficulty == ys.Battle.BattleConst.Difficulty.WORLD then
-		local var130_6 = nowWorld():GetActiveMap().config.expedition_map_id
+	if arg0_6.contextData.system == SYSTEM_WORLD and var132_6.difficulty == ys.Battle.BattleConst.Difficulty.WORLD then
+		local var134_6 = nowWorld():GetActiveMap().config.expedition_map_id
 
-		var0_6:AddPreloadResource(var0_6.GetMapResource(var130_6))
+		var0_6:AddPreloadResource(var0_6.GetMapResource(var134_6))
 	else
-		for iter105_6, iter106_6 in ipairs(var128_6.map_id) do
-			var0_6:AddPreloadResource(var0_6.GetMapResource(iter106_6[1]))
+		for iter107_6, iter108_6 in ipairs(var132_6.map_id) do
+			var0_6:AddPreloadResource(var0_6.GetMapResource(iter108_6[1]))
 		end
 	end
 
-	local var131_6 = pg.expedition_data_template[arg0_6.contextData.stageId].dungeon_id
-	local var132_6, var133_6 = var0_6.GetStageResource(var131_6)
+	local var135_6 = pg.expedition_data_template[arg0_6.contextData.stageId].dungeon_id
+	local var136_6, var137_6 = var0_6.GetStageResource(var135_6)
 
-	var0_6:AddPreloadResource(var132_6)
+	var0_6:AddPreloadResource(var136_6)
 	var0_6:AddPreloadResource(var0_6.GetCommonResource())
 	var0_6:AddPreloadResource(var0_6.GetBuffResource())
 
@@ -697,33 +713,33 @@ function var0_0.Preload(arg0_6)
 		var0_0.addGlobalBuffRes()
 	end
 
-	for iter107_6, iter108_6 in ipairs(var133_6) do
-		var0_6:AddPreloadCV(iter108_6)
+	for iter109_6, iter110_6 in ipairs(var137_6) do
+		var0_6:AddPreloadCV(iter110_6)
 	end
 
-	local function var134_6()
+	local function var138_6()
 		SetActive(arg0_6._loadingAnima, false)
 		SetActive(arg0_6._finishAnima, true)
 
 		arg0_6._finishAnima:GetComponent("Animator").enabled = true
 	end
 
-	local var135_6 = 0
+	local var139_6 = 0
 
-	local function var136_6(arg0_12)
+	local function var140_6(arg0_12)
 		local var0_12
-		local var1_12 = var135_6 == 0 and 0 or arg0_12 / var135_6
+		local var1_12 = var139_6 == 0 and 0 or arg0_12 / var139_6
 
 		arg0_6._loadingProgress.value = var1_12
 		arg0_6._loadingText.text = string.format("%.2f", var1_12 * 100) .. "%"
 		arg0_6._loadingAnima.anchoredPosition = Vector2(var1_12 * var0_0.LOADING_ANIMA_DISTANCE, arg0_6._loadingAnimaPosY)
 	end
 
-	local var137_6 = pg.UIMgr.GetInstance():GetMainCamera()
+	local var141_6 = pg.UIMgr.GetInstance():GetMainCamera()
 
-	setActive(var137_6, true)
+	setActive(var141_6, true)
 
-	var135_6 = var0_6:StartPreload(var134_6, var136_6)
+	var139_6 = var0_6:StartPreload(var138_6, var140_6)
 	arg0_6._tipsText.text = pg.server_language[math.random(#pg.server_language)].content
 end
 

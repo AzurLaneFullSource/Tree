@@ -18,6 +18,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			say = "Anchorage... likes it!",
+			voice = "event:/dorm/drom3d_Anchorage_other/drom3d_Anchorage_ik_furniture1_tone5",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -28,7 +29,7 @@ return {
 					op_list = {
 						{
 							param = "Play",
-							name = "ab_shuohua_gandong_01",
+							name = "ab_FF_chuang_2_xiong_01-start",
 							time = 0,
 							type = "action",
 							skip = true

@@ -12,7 +12,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -22,7 +23,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "dodgeRateExtra",
@@ -36,7 +38,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -46,7 +49,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "dodgeRateExtra",
@@ -60,7 +64,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -70,7 +75,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "dodgeRateExtra",
@@ -84,7 +90,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -94,7 +101,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "dodgeRateExtra",
@@ -108,7 +116,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -118,7 +127,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "dodgeRateExtra",
@@ -132,7 +142,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -142,7 +153,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "dodgeRateExtra",
@@ -156,7 +168,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -166,7 +179,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "dodgeRateExtra",
@@ -180,7 +194,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -190,7 +205,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "dodgeRateExtra",
@@ -204,7 +220,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -214,7 +231,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "dodgeRateExtra",
@@ -228,7 +246,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "igniteReduce",
@@ -238,7 +257,8 @@ return {
 			{
 				type = "BattleBuffAddAttr",
 				trigger = {
-					"onAttach"
+					"onAttach",
+					"onRemove"
 				},
 				arg_list = {
 					attr = "dodgeRateExtra",

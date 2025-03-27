@@ -1723,5 +1723,17 @@ pg.voice_actor_CN = {
 	[443] = {
 		code = 443,
 		actor_name = "Yuri Fujimoto"
+	},
+	[444] = {
+		code = 444,
+		actor_name = "Anna Nagase"
+	},
+	[445] = {
+		code = 445,
+		actor_name = "Sae Hiratsuka"
+	},
+	[446] = {
+		code = 446,
+		actor_name = "Azusa Tachibana"
 	}
 }

@@ -292,6 +292,11 @@ pg.task_meta_data_template = setmetatable({
 		100403,
 		100404,
 		100405,
+		100411,
+		100412,
+		100413,
+		100414,
+		100415,
 		200001,
 		200002,
 		200003,
@@ -415,7 +420,11 @@ pg.task_meta_data_template = setmetatable({
 		200311,
 		200312,
 		200313,
-		200314
+		200314,
+		200321,
+		200322,
+		200323,
+		200324
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2740,6 +2749,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100411] = {
+		target_id_2 = "970509",
+		sub_type = 180,
+		desc = "Win 1 battle with Nevada META in your fleet.",
+		id = 100411,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100412] = {
+		target_id_2 = "970509",
+		sub_type = 180,
+		desc = "Defeat a Lv. 30+ fleet with Nevada META in your fleet.",
+		id = 100412,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100413] = {
+		target_id_2 = "970509",
+		sub_type = 180,
+		desc = "Defeat a Lv. 55+ fleet with Nevada META in your fleet.",
+		id = 100413,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100414] = {
+		target_id_2 = "970509",
+		sub_type = 180,
+		desc = "Defeat a Lv. 80+ fleet with Nevada META in your fleet.",
+		id = 100414,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100415] = {
+		target_id_2 = "970509",
+		sub_type = 180,
+		desc = "Defeat a Lv. 100+ fleet with Nevada META in your fleet.",
+		id = 100415,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -3729,6 +3778,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "Defeat a lv. 100+ fleet in Operation Siren with Hornet META in your fleet.",
 		id = 200314,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200321] = {
+		target_id_2 = "970509",
+		sub_type = 302,
+		desc = "Win 1 Operation Siren battle with Nevada META in your fleet.",
+		id = 200321,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200322] = {
+		target_id_2 = "970509",
+		sub_type = 302,
+		desc = "Defeat a lv. 70+ fleet in Operation Siren with Nevada META in your fleet.",
+		id = 200322,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200323] = {
+		target_id_2 = "970509",
+		sub_type = 302,
+		desc = "Defeat a lv. 90+ fleet in Operation Siren with Nevada META in your fleet.",
+		id = 200323,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200324] = {
+		target_id_2 = "970509",
+		sub_type = 302,
+		desc = "Defeat a lv. 100+ fleet in Operation Siren with Nevada META in your fleet.",
+		id = 200324,
 		target_num = 1,
 		target_id = "100"
 	}

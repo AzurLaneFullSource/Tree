@@ -55,10 +55,26 @@ var0_0.DEFAULT_NAME_BOSS_SINGLE_ACT = {
 	[14] = i18n("ship_formationUI_fleetName_sp_ss"),
 	[15] = i18n("ship_formationUI_fleetName_extra_ss")
 }
+var0_0.DEFAULT_NAME_BOSS_SINGLE_VARIABLE_ACT = {
+	i18n("ship_formationUI_fleetName_1"),
+	i18n("ship_formationUI_fleetName_2"),
+	i18n("ship_formationUI_fleetName_3"),
+	i18n("ship_formationUI_fleetName_4"),
+	i18n("ship_formationUI_fleetName_5"),
+	i18n("ship_formationUI_fleetName_6"),
+	i18n("ship_formationUI_fleetName_7"),
+	i18n("ship_formationUI_fleetName_8"),
+	i18n("ship_formationUI_fleetName_9"),
+	i18n("ship_formationUI_fleetName_10"),
+	i18n("ship_formationUI_fleetName_11"),
+	i18n("ship_formationUI_fleetName_12"),
+	(i18n("ship_formationUI_fleetName_13"))
+}
 var0_0.REGULAR_FLEET_ID = 1
 var0_0.REGULAR_FLEET_NUMS = 6
 var0_0.SUBMARINE_FLEET_ID = 11
 var0_0.SUBMARINE_FLEET_NUMS = 4
+var0_0.MEGA_SUBMARINE_FLEET_OFFSET = 100
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.id = arg1_1.id

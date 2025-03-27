@@ -19,7 +19,7 @@ function var1_0.OnTotalChange(arg0_1, arg1_1)
 		arg0_1:OnUnSelect()
 	else
 		if arg0_1._progressInfo:GetTotal() == arg0_1._progressInfo:GetCount() then
-			SetActive(arg0_1._filled:Find("gizmos/animroot"))
+			SetActive(arg0_1._filled:Find("gizmos"))
 		end
 
 		arg0_1:OnCountChange()
@@ -38,7 +38,7 @@ end
 function var1_0.ConfigSkin(arg0_2, arg1_2)
 	var1_0.super.ConfigSkin(arg0_2, arg1_2)
 
-	arg0_2._glowEff = arg0_2._filled:Find("gizmos/animroot")
+	arg0_2._glowEff = arg0_2._filled:Find("gizmos")
 end
 
 function var1_0.OnCountChange(arg0_3)

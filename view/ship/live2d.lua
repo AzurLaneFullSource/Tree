@@ -21,8 +21,6 @@ var0_0.DRAG_CLICK_PARAMETER = 9
 var0_0.DRAG_ANIMATION_PLAY = 10
 var0_0.DRAG_CLICK_RANGE = 11
 var0_0.DRAG_EXTEND_ACTION_RULE = 12
-var0_0.DRAG_ANIMATION_PLAY = 10
-var0_0.DRAG_CLICK_RANGE = 11
 var0_0.ON_ACTION_PLAY = 1
 var0_0.ON_ACTION_DRAG_CLICK = 2
 var0_0.ON_ACTION_CHANGE_IDLE = 3
@@ -248,7 +246,7 @@ local function var14_0(arg0_14, arg1_14, arg2_14)
 		local var6_14 = arg2_14.react
 		local var7_14 = var4_14.idle_focus
 		local var8_14 = var9_0(arg0_14)
-		local var9_14 = var8_14
+		local var9_14
 		local var10_14 = false
 
 		if not var1_14 or var1_14 == "" then
@@ -266,7 +264,9 @@ local function var14_0(arg0_14, arg1_14, arg2_14)
 				arg0_14:changeIdleIndex(var4_14.idle and var4_14.idle or 0)
 			end
 
-			if var11_0(arg0_14, var1_14, var5_14 or false) then
+			var9_14 = var11_0(arg0_14, var1_14, var5_14 or false)
+
+			if var9_14 then
 				print("id = " .. var0_14 .. " 触发成功")
 				arg0_14:onListenerHandle(Live2D.ON_ACTION_PLAY, {
 					action = var1_14
@@ -282,8 +282,6 @@ local function var14_0(arg0_14, arg1_14, arg2_14)
 			elseif var1_14 == "idle" then
 				arg0_14:live2dActionChange(false)
 			end
-
-			var9_14 = actionPlaySuccess
 		end
 
 		if var2_14 then
@@ -362,10 +360,6 @@ local function var15_0(arg0_15, arg1_15)
 		for iter0_15, iter1_15 in ipairs(arg0_15._listenerParameters) do
 			arg0_15._listenerParametersValue[iter1_15.name] = iter1_15.Value
 		end
-
-		arg0_15:onListenerHandle(Live2D.ON_ACTION_PARAMETER, {
-			values = arg0_15._listenerParametersValue
-		})
 	else
 		arg0_15._listenerStepIndex = arg0_15._listenerStepIndex - 1
 	end
@@ -443,7 +437,7 @@ local function var16_0(arg0_16)
 				var14_0(arg0_16, arg0_17, arg1_17)
 				var13_0(arg0_16, arg0_17, arg1_17)
 			end)
-			arg0_16.liveCom:AddParameterValue(var1_16.parameterName, var1_16.startValue, var6_0[var0_16.mode])
+			arg0_16.liveCom:AddParameterValue(var1_16.parameterName, var1_16.startValue, var6_0[var1_16.mode])
 
 			if var0_16.relation_parameter and var0_16.relation_parameter.list then
 				local var3_16 = var0_16.relation_parameter.list
@@ -1135,70 +1129,80 @@ function var0_0.changeParamaterValue(arg0_61, arg1_61, arg2_61)
 	end
 end
 
-function var0_0.Dispose(arg0_62)
-	if arg0_62.state == var0_0.STATE_INITED then
-		if arg0_62._go then
-			Destroy(arg0_62._go)
-		end
-
-		arg0_62.liveCom.FinishAction = nil
-		arg0_62.liveCom.EventAction = nil
-	end
-
-	arg0_62:saveLive2dData()
-	arg0_62.liveCom:SetMouseInputActions(nil, nil)
-
-	arg0_62._readlyToStop = false
-	arg0_62.state = var0_0.STATE_DISPOSE
-
-	pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg0_62.live2dRequestId)
-
-	arg0_62.live2dRequestId = nil
-
-	if arg0_62.drags then
+function var0_0.changeDragParameter(arg0_62, arg1_62, arg2_62)
+	if arg0_62:IsLoaded() and arg0_62.drags then
 		for iter0_62 = 1, #arg0_62.drags do
-			arg0_62.drags[iter0_62]:dispose()
+			if arg0_62.drags[iter0_62].parameterName and arg0_62.drags[iter0_62].parameterName == arg1_62 then
+				arg0_62.drags[iter0_62]:setTargetValue(arg2_62)
+			end
+		end
+	end
+end
+
+function var0_0.Dispose(arg0_63)
+	if arg0_63.state == var0_0.STATE_INITED then
+		if arg0_63._go then
+			Destroy(arg0_63._go)
 		end
 
-		arg0_62.drags = {}
+		arg0_63.liveCom.FinishAction = nil
+		arg0_63.liveCom.EventAction = nil
 	end
 
-	if arg0_62.live2dData.gyro == 1 then
+	arg0_63:saveLive2dData()
+	arg0_63.liveCom:SetMouseInputActions(nil, nil)
+
+	arg0_63._readlyToStop = false
+	arg0_63.state = var0_0.STATE_DISPOSE
+
+	pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg0_63.live2dRequestId)
+
+	arg0_63.live2dRequestId = nil
+
+	if arg0_63.drags then
+		for iter0_63 = 1, #arg0_63.drags do
+			arg0_63.drags[iter0_63]:dispose()
+		end
+
+		arg0_63.drags = {}
+	end
+
+	if arg0_63.live2dData.gyro == 1 then
 		Input.gyro.enabled = false
 	end
 
-	if arg0_62.live2dData then
-		arg0_62.live2dData:Clear()
+	if arg0_63.live2dData then
+		arg0_63.live2dData:Clear()
 
-		arg0_62.live2dData = nil
+		arg0_63.live2dData = nil
 	end
 
-	arg0_62:live2dActionChange(false)
+	arg0_63:live2dActionChange(false)
 
-	if arg0_62.timer then
-		arg0_62.timer:Stop()
+	if arg0_63.timer then
+		arg0_63.timer:Stop()
 
-		arg0_62.timer = nil
-	end
-end
-
-function var0_0.UpdateAtomSource(arg0_63)
-	arg0_63.updateAtom = true
-end
-
-function var0_0.AtomSouceFresh(arg0_64)
-	local var0_64 = pg.CriMgr.GetInstance():getAtomSource(pg.CriMgr.C_VOICE)
-	local var1_64 = arg0_64._go:GetComponent("CubismCriSrcMouthInput")
-	local var2_64 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Framework.MouthMovement.CubismCriSrcMouthInput"), "Analyzer", var1_64)
-
-	var0_64:AttachToAnalyzer(var2_64)
-
-	if arg0_64.updateAtom then
-		arg0_64.updateAtom = false
+		arg0_63.timer = nil
 	end
 end
 
-function var0_0.addKeyBoard(arg0_65)
+function var0_0.UpdateAtomSource(arg0_64)
+	arg0_64.updateAtom = true
+end
+
+function var0_0.AtomSouceFresh(arg0_65)
+	local var0_65 = pg.CriMgr.GetInstance():getAtomSource(pg.CriMgr.C_VOICE)
+	local var1_65 = arg0_65._go:GetComponent("CubismCriSrcMouthInput")
+	local var2_65 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Framework.MouthMovement.CubismCriSrcMouthInput"), "Analyzer", var1_65)
+
+	var0_65:AttachToAnalyzer(var2_65)
+
+	if arg0_65.updateAtom then
+		arg0_65.updateAtom = false
+	end
+end
+
+function var0_0.addKeyBoard(arg0_66)
 	return
 end
 

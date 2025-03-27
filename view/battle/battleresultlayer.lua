@@ -257,7 +257,7 @@ function var0_0.didEnter(arg0_12)
 		groupName = LayerWeightConst.GROUP_COMBAT
 	})
 
-	if arg0_12.contextData.system ~= SYSTEM_BOSS_RUSH and arg0_12.contextData.system ~= SYSTEM_BOSS_RUSH_EX and arg0_12.contextData.system ~= SYSTEM_ACT_BOSS and arg0_12.contextData.system ~= SYSTEM_BOSS_SINGLE then
+	if arg0_12.contextData.system ~= SYSTEM_BOSS_RUSH and arg0_12.contextData.system ~= SYSTEM_BOSS_RUSH_EX and arg0_12.contextData.system ~= SYSTEM_ACT_BOSS and arg0_12.contextData.system ~= SYSTEM_BOSS_SINGLE and arg0_12.contextData.system ~= SYSTEM_BOSS_SINGLE_VARIABLE then
 		ys.Battle.BattleCameraUtil.GetInstance().ActiveMainCemera(false)
 	end
 
@@ -479,8 +479,12 @@ function var0_0.showRewardInfo(arg0_23)
 				if getProxy(ContextProxy):getCurrentContext():getContextByMediator(ContinuousOperationMediator) then
 					getProxy(ChapterProxy):AddActBossRewards(var7_25)
 				end
-			elseif arg0_23.contextData.system == SYSTEM_BOSS_SINGLE and getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossSingleContinuousOperationMediator) then
-				getProxy(ChapterProxy):AddBossSingleRewards(var7_25)
+			elseif arg0_23.contextData.system == SYSTEM_BOSS_SINGLE then
+				if getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossSingleContinuousOperationMediator) then
+					getProxy(ChapterProxy):AddBossSingleRewards(var7_25)
+				end
+			elseif arg0_23.contextData.system == SYSTEM_BOSS_SINGLE_VARIABLE then
+				-- block empty
 			end
 
 			arg0_23:emit(BaseUI.ON_AWARD, {

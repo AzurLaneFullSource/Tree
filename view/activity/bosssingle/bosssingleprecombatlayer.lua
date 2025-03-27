@@ -22,6 +22,7 @@ function var0_0.init(arg0_3)
 	arg0_3._formationLogic = BaseFormation.New(arg0_3._tf, arg0_3._heroContainer, arg0_3._heroInfo, arg0_3._gridTFs)
 
 	arg0_3:Register()
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
 end
 
 function var0_0.CommonInit(arg0_4)
@@ -478,7 +479,7 @@ function var0_0.didEnter(arg0_36)
 
 			arg0_36:uiExitAnimating()
 			LeanTween.delayedCall(0.3, System.Action(function()
-				arg0_36:emit(var0_0.ON_CLOSE)
+				arg0_36:closeView()
 			end))
 		end)
 	end, SFX_CANCEL)
@@ -529,7 +530,6 @@ function var0_0.didEnter(arg0_36)
 		arg0_36._formationLogic:SwitchToPreviewMode()
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_36._tf)
 	setActive(arg0_36._autoToggle, true)
 	onToggle(arg0_36, arg0_36._autoToggle, function(arg0_51)
 		arg0_36:emit(BossSinglePreCombatMediator.ON_AUTO, {
@@ -598,11 +598,13 @@ function var0_0.displayFleetInfo(arg0_55)
 	var1_0.tweenNumText(arg0_55._vanguardGS, var1_55)
 	var1_0.tweenNumText(arg0_55._mainGS, var2_55)
 	var1_0.tweenNumText(arg0_55._subGS, var3_55)
-	setText(arg0_55._fleetNameText, Fleet.DEFAULT_NAME_BOSS_SINGLE_ACT[arg0_55._currentFleetVO.id])
+
+	local var7_55 = getProxy(ActivityProxy):getActivityById(arg0_55.contextData.actId):getConfig("type") == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE_VARIABLE and Fleet.DEFAULT_NAME_BOSS_SINGLE_VARIABLE_ACT or Fleet.DEFAULT_NAME_BOSS_SINGLE_ACT
+
+	setText(arg0_55._fleetNameText, var7_55[arg0_55._currentFleetVO.id])
 	setText(arg0_55._fleetNumText, arg0_55._currentFleetVO.id)
 
-	local var7_55 = arg0_55.contextData.stageId
-	local var8_55 = getProxy(ActivityProxy):getActivityById(arg0_55.contextData.actId)
+	local var8_55 = arg0_55.contextData.stageId
 	local var9_55 = pg.battle_cost_template[var5_55].oil_cost > 0
 	local var10_55 = 0
 	local var11_55 = 0

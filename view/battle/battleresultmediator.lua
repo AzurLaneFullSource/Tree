@@ -38,7 +38,7 @@ function var0_0.register(arg0_1)
 
 		arg0_1.viewComponent:setChallengeInfo(var9_1, var8_1:userSeaonExpire(arg0_1.contextData.mode))
 	else
-		if var5_1 == SYSTEM_SCENARIO or var5_1 == SYSTEM_ROUTINE or var5_1 == SYSTEM_ACT_BOSS or var5_1 == SYSTEM_BOSS_SINGLE or var5_1 == SYSTEM_HP_SHARE_ACT_BOSS or var5_1 == SYSTEM_SUB_ROUTINE or var5_1 == SYSTEM_WORLD then
+		if var5_1 == SYSTEM_SCENARIO or var5_1 == SYSTEM_ROUTINE or var5_1 == SYSTEM_ACT_BOSS or var5_1 == SYSTEM_BOSS_SINGLE or var5_1 == SYSTEM_BOSS_SINGLE_VARIABLE or var5_1 == SYSTEM_HP_SHARE_ACT_BOSS or var5_1 == SYSTEM_SUB_ROUTINE or var5_1 == SYSTEM_WORLD then
 			local var10_1 = _.detect(BuffHelper.GetBuffsByActivityType(ActivityConst.ACTIVITY_TYPE_BUFF), function(arg0_2)
 				return arg0_2:getConfig("benefit_type") == "rookie_battle_exp"
 			end)
@@ -154,7 +154,7 @@ function var0_0.register(arg0_1)
 		-- block empty
 	elseif var5_1 == SYSTEM_CARDPUZZLE then
 		-- block empty
-	elseif var5_1 == SYSTEM_HP_SHARE_ACT_BOSS or var5_1 == SYSTEM_ACT_BOSS or var5_1 == SYSTEM_BOSS_SINGLE or var5_1 == SYSTEM_BOSS_EXPERIMENT then
+	elseif var5_1 == SYSTEM_HP_SHARE_ACT_BOSS or var5_1 == SYSTEM_ACT_BOSS or var5_1 == SYSTEM_BOSS_SINGLE or var5_1 == SYSTEM_BOSS_SINGLE_VARIABLE or var5_1 == SYSTEM_BOSS_EXPERIMENT then
 		local var28_1 = arg0_1.contextData.actId
 
 		if var5_1 == SYSTEM_HP_SHARE_ACT_BOSS then
@@ -494,7 +494,7 @@ function var0_0.register(arg0_1)
 			return
 		elseif var5_1 == SYSTEM_CARDPUZZLE then
 			-- block empty
-		elseif var5_1 == SYSTEM_BOSS_SINGLE then
+		elseif var5_1 == SYSTEM_BOSS_SINGLE or var5_1 == SYSTEM_BOSS_SINGLE_VARIABLE then
 			local var55_6, var56_6 = var0_6:getContextByMediator(PreCombatMediator)
 
 			if var55_6 then
@@ -673,8 +673,10 @@ function var0_0.register(arg0_1)
 			system = arg0_1.contextData.system,
 			actId = arg0_1.contextData.actId,
 			rivalId = arg0_1.contextData.rivalId,
+			variableBuffList = arg0_1.contextData.variableBuffList,
 			continuousBattleTimes = arg0_1.contextData.continuousBattleTimes,
-			totalBattleTimes = arg0_1.contextData.totalBattleTimes
+			totalBattleTimes = arg0_1.contextData.totalBattleTimes,
+			useVariableTicket = arg0_1.contextData.useVariableTicket
 		})
 	end)
 	arg0_1:bind(var0_0.PRE_BATTLE_FAIL_EXIT, function(arg0_26)

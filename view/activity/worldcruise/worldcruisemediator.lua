@@ -84,10 +84,13 @@ function var0_0.handleNotification(arg0_11, arg1_11)
 			arg0_11.viewComponent:setActivity(var1_11)
 			arg0_11.viewComponent:UpdatePhase()
 			arg0_11.viewComponent:UpdateAwardPage()
+			arg0_11.viewComponent:UpdateTaskPage()
+			arg0_11.viewComponent:UpdateView()
 		end
 	elseif var0_11 == GAME.CRUSING_CMD_DONE then
 		arg0_11.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_11.awards)
 		arg0_11.viewComponent:UpdateAwardPage()
+		arg0_11.viewComponent:UpdateView()
 	elseif var0_11 == PlayerProxy.UPDATED then
 		arg0_11.viewComponent:setPlayer(var1_11)
 		arg0_11.viewComponent:UpdateRes()
@@ -104,6 +107,7 @@ function var0_0.handleNotification(arg0_11, arg1_11)
 		end
 	elseif var0_11 == GAME.SUBMIT_TASK_DONE or var0_11 == GAME.SUBMIT_ACTIVITY_TASK_DONE then
 		arg0_11.viewComponent:UpdateTaskPage()
+		arg0_11.viewComponent:UpdateView()
 	elseif var0_11 == GAME.SHOPPING_DONE then
 		arg0_11.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_11.awards)
 	elseif var0_11 == ShopsProxy.CRUISE_SHOP_UPDATED then

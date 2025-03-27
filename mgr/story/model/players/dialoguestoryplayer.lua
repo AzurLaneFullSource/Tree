@@ -711,6 +711,12 @@ function var0_0.UpdateLive2dPainting(arg0_53, arg1_53, arg2_53, arg3_53, arg4_53
 			if var1_56 and var1_56 ~= "" and var1_56 > 0 then
 				arg0_56:changeIdleIndex(var1_56)
 			end
+
+			local var2_56 = arg1_53:GetL2dParams()
+
+			if var2_56 then
+				arg0_56:changeDragParameter(var2_56.name, var2_56.value)
+			end
 		end
 
 		arg4_53()

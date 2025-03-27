@@ -152,13 +152,17 @@ function var0_0.bindEvent(arg0_2)
 		}))
 	end)
 	arg0_2:bind(var0_0.BEGIN_STAGE_PROXY, function(arg0_16, arg1_16)
+		local var0_16 = arg0_2.contextData.useTicket and 1 or 0
+
 		arg0_2:sendNotification(GAME.BEGIN_STAGE, {
 			stageId = arg0_2.contextData.stageId,
 			mainFleetId = arg1_16.curFleetId,
 			system = arg0_2.contextData.system,
 			actId = arg0_2.contextData.actId,
+			variableBuffList = arg0_2.contextData.buffList,
 			continuousBattleTimes = arg1_16.continuousBattleTimes,
-			totalBattleTimes = arg1_16.continuousBattleTimes
+			totalBattleTimes = arg1_16.continuousBattleTimes,
+			useVariableTicket = var0_16
 		})
 	end)
 end
@@ -227,7 +231,7 @@ function var0_0.handleNotification(arg0_23, arg1_23)
 				hideNo = true,
 				content = i18n("battle_preCombatMediator_timeout"),
 				onYes = function()
-					arg0_23.viewComponent:emit(BaseUI.ON_CLOSE)
+					arg0_23.viewComponent:closeView()
 				end
 			})
 		end
