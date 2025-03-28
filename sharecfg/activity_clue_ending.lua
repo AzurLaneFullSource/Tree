@@ -220,7 +220,7 @@ pg.base.activity_clue_ending = {
 		type = 1,
 		group = 2,
 		title = "Important Info - 1",
-		title2 = "Supernatural Development – 1",
+		title2 = "Supernatural \nDevelopment – 1",
 		desc = "The situation inside Valley Hospital was far more complicated than I had imagined.\nAt the same time as I located Miller beneath the research center, a haunting truth came to light: The hospital's reasons for inviting her here were by no means benevolent.\nBy collating the multitude of evidence I'd gathered, I became sure that the hospital – with the support of Akagi, the representative of the Sakura Empire's Tenko Group – was conducting supernatural research using a bloodkin as a test subject. Furthermore, Miller was the subject at the core of it.\nThe bloodkin, as an ancient race steeped in mystery and only found in legends, show shocking, superhuman potential. Although the research into activating these powers is proceeding at a slow pace, the results it has already yielded are more than enough to prove that an abnormal source of power is hidden within the bloodkin. However, this reckless dive into the paranormal came at a fitting price – many of the hospital's nurses have begun exhibiting symptoms of a mental disorder known as \"enthrallment.\"\nAccording to the experiment reports, this condition is both similar and dissimilar to the traditional control hierarchy of the bloodkin. Theoretically, those of higher rank have complete control over those of lower rank, but according to Miller, those who have been enthralled do not seem to obey her. Could this be why she is still imprisoned here?",
 		clue = {
 			1,
@@ -288,7 +288,7 @@ pg.base.activity_clue_ending = {
 		type = 1,
 		group = 2,
 		title = "Important Info - 2",
-		title2 = "Supernatural Development – 2",
+		title2 = "Supernatural \nDevelopment – 2",
 		desc = "The photograph I found under Santa Fe's pillow and the worry she expressed both hinted at a disturbing fact: That the rescue mission being prepared by intelligence agencies across the world exists in name only, and in fact, their true aim is to get all this supernatural research under their control.\nIn a situation as deeply complex as this, I must choose my allies very carefully.\nJust then, an uncomfortable thought dawned on me. The nurses who have undergone enthrallment are abnormally attracted to me, and yet, Suzuya from the logistics center maintained a surprisingly calm demeanor. After observing her routine, it turns out that she has been intentionally avoiding involvement with other enthralled nurses. Very interestingly, just as I have been keeping an eye on her, she has been keeping an eye on me.\nAs my investigation progressed, one new clue after the next cropped up: What looked like a Tenko Group communication badge that I found under a cherry tree, and a huge credit card bill addressed to Suzuya I found in the mailbox at the main entrance – this led me to a single conclusion: Suzuya's backer is none other than Akagi, the Tenko Group representative who controls the hospital from the shadows. Suzuya immediately knew I had arrived at the truth, and Akagi used her as an intermediary to propose a highly secret meeting between us.\nMy decision to accept or refuse her invitation will surely lead to drastic changes.",
 		clue = {
 			28,
@@ -338,7 +338,7 @@ pg.base.activity_clue_ending = {
 		type = 1,
 		group = 2,
 		title = "Important Info - 3",
-		title2 = "Supernatural Development – 3",
+		title2 = "Supernatural \nDevelopment – 3",
 		desc = "Late in the night, I had my clandestine meeting under Suzuya's guidance. At last, I managed to personally meet the mysterious billionaire pulling the strings of Valley Hospital.\nThe contents of our meeting, however, were completely unlike anything I'd imagined.\nWhile it is true that Akagi has been spearheading this series of supernatural research, Miller was in fact turned into the thrall of a superior being long, long ago. Although this research has temporarily stripped her of her freedom, the ultimate goal with it is to destroy the hierarchical structure of the bloodkin. Once they succeed, she will supposedly gain true freedom for the first time ever.\nIn addition, Akagi suggested a proposal to let me see this happen firsthand – she will grant me the highest decision-making authority on the hospital's board of directors, along with wealth and status befitting such a position.\nAs the leader of the Tenko Group, she told me all her ambitions without reserve or omission. These supernatural studies are conducted not just for the Tenko Group to achieve a worldwide hegemony, but also to realize a personal wish of hers – to use the bloodkin's power of control to guarantee the fidelity of the one she loves.\nSeeing the burning passion in her eyes as she spoke, I couldn't help but gulp.\nAfter weighing the costs and benefits, I accepted her proposal. As a display of loyalty, I disclosed to her all the information I'd gained throughout my investigation – the undercover agents Eagle, Stremitelny, and Santa Fe. Miller's current state. The enthrallment of the nurses.\nAnd so, all the pieces on the board had fallen under our control.",
 		clue = {
 			35,

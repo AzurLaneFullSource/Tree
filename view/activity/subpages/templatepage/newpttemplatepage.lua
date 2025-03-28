@@ -2,6 +2,7 @@ local var0_0 = class("NewPtTemplatePage", import("view.base.BaseActivityPage"))
 
 var0_0.OFFSET = 0.00042
 var0_0.SHOW_COUNT = 8
+var0_0.AWARD_OFFSET = 1e-05
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.bg = arg0_1:findTF("AD")
@@ -121,7 +122,7 @@ function var0_0.UpdateNextAward(arg0_11, arg1_11)
 	arg1_11 = math.min(arg1_11, 1)
 
 	for iter0_11, iter1_11 in pairs(arg0_11.importantPos) do
-		if arg1_11 < iter1_11.pos then
+		if arg1_11 + var0_0.AWARD_OFFSET < iter1_11.pos then
 			setActive(arg0_11.sptf, true)
 			arg0_11:UpdateAward(iter1_11.index - 1, arg0_11.spAward)
 
