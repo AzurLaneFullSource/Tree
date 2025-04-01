@@ -607935,6 +607935,136 @@ _G.pg.base.weapon_property[630078] = {
 	},
 }
 
+_G.pg.base.weapon_property[630081] = {
+	action_index = "attack",
+	aim_type = 1,
+	angle = 40,
+	attack_attribute = 1,
+	attack_attribute_ratio = 100,
+	auto_aftercast = 0,
+	axis_angle = 0,
+	charge_param = "",
+	corrected = 110,
+	damage = 20,
+	effect_move = 0,
+	expose = 0,
+	fire_fx = "CAFire",
+	fire_fx_loop_type = 1,
+	fire_sfx = "battle/cannon-203mm",
+	id = 630081,
+	initial_over_heat = 0,
+	min_range = 0,
+	queue = 1,
+	range = 70,
+	recover_time = 0,
+	reload_max = 150,
+	search_type = 1,
+	shakescreen = 0,
+	spawn_bound = "cannon",
+	suppress = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	bullet_ID = {
+		710041,
+	},
+	barrage_ID = {
+		710029,
+	},
+	oxy_type = {
+		1,
+	},
+	search_condition = {
+		1,
+	},
+	precast_param = {},
+}
+
+_G.pg.base.weapon_property[630082] = {
+	aim_type = 1,
+	base = 1009,
+	damage = 100,
+	fire_fx = "CAFire",
+	fire_sfx = "battle/cannon-main",
+	id = 630082,
+	queue = 3,
+	range = 120,
+	reload_max = 6000,
+	suppress = 1,
+	bullet_ID = {
+		710043,
+	},
+	barrage_ID = {
+		710030,
+	},
+}
+
+_G.pg.base.weapon_property[630083] = {
+	action_index = "",
+	aim_type = 0,
+	base = 1009,
+	damage = 500,
+	id = 630083,
+	initial_over_heat = 0,
+	queue = 1,
+	range = 120,
+	reload_max = 6000,
+	suppress = 0,
+	type = 1,
+	bullet_ID = {
+		710047,
+	},
+	barrage_ID = {
+		710022,
+	},
+}
+
+_G.pg.base.weapon_property[630084] = {
+	action_index = "",
+	aim_type = 0,
+	base = 1003,
+	damage = 500,
+	id = 630084,
+	queue = 2,
+	range = 120,
+	reload_max = 6000,
+	suppress = 0,
+	bullet_ID = {
+		710048,
+		710048,
+		710048,
+		710048,
+		710048,
+		710048,
+	},
+	barrage_ID = {
+		710023,
+		710024,
+		710025,
+		710026,
+		710027,
+		710028,
+	},
+}
+
+_G.pg.base.weapon_property[630085] = {
+	action_index = "",
+	aim_type = 0,
+	base = 1009,
+	damage = 10,
+	id = 630085,
+	queue = 1,
+	reload_max = 6000,
+	suppress = 0,
+	bullet_ID = {
+		710049,
+		710050,
+	},
+	barrage_ID = {
+		710032,
+		710033,
+	},
+}
+
 _G.pg.base.weapon_property[630101] = {
 	action_index = "attack",
 	aim_type = 1,

@@ -72,6 +72,8 @@ pg.box_data_template = setmetatable({
 		10130,
 		10131,
 		10132,
+		10133,
+		10134,
 		20001
 	}
 }, confHX)
@@ -636,6 +638,22 @@ pg.base.box_data_template = {
 		effect_arg = 1,
 		icon = "event8",
 		effect_id = 901884
+	},
+	[10133] = {
+		id = 10133,
+		name = "线索",
+		type = 1,
+		effect_arg = 1,
+		icon = "event9",
+		effect_id = 905423
+	},
+	[10134] = {
+		id = 10134,
+		name = "线索",
+		type = 1,
+		effect_arg = 1,
+		icon = "event9",
+		effect_id = 905425
 	},
 	[20001] = {
 		id = 20001,

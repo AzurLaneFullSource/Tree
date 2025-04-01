@@ -880,7 +880,26 @@ function var0_0.DisplayBossSingleTotalReward(arg0_33, arg1_33)
 		mediator = BossSingleTotalRewardPanelMediator,
 		viewComponent = BossSingleTotalRewardPanel,
 		data = {
+			onConfirm = function()
+				arg0_33.viewComponent:emit(BaseUI.ON_BACK)
+			end,
 			onClose = function()
+				local var0_35 = getProxy(ContextProxy):getContextByMediator(ClueMapMediator)
+
+				if var0_35 then
+					var0_35.cleanChild = true
+
+					warning("ClueMapMediator")
+				end
+
+				local var1_35 = getProxy(ContextProxy):getContextByMediator(BossSinglePreCombatMediator)
+
+				if var1_35 then
+					var1_35.skipBack = true
+
+					warning("BossSinglePreCombatMediator")
+				end
+
 				arg0_33.viewComponent:emit(BaseUI.ON_BACK)
 			end,
 			stopReason = arg1_33,
@@ -892,7 +911,7 @@ function var0_0.DisplayBossSingleTotalReward(arg0_33, arg1_33)
 	}))
 end
 
-function var0_0.GetResultView(arg0_35)
+function var0_0.GetResultView(arg0_36)
 	var0_0.RESULT_VIEW_TRANSFORM = var0_0.RESULT_VIEW_TRANSFORM or {
 		[SYSTEM_CHALLENGE] = BattleChallengeResultLayer,
 		[SYSTEM_DODGEM] = BattleDodgemResultLayer,
@@ -908,7 +927,7 @@ function var0_0.GetResultView(arg0_35)
 		[SYSTEM_CARDPUZZLE] = BattleAirFightResultLayer
 	}
 
-	return var0_0.RESULT_VIEW_TRANSFORM[arg0_35] or BattleResultLayer
+	return var0_0.RESULT_VIEW_TRANSFORM[arg0_36] or BattleResultLayer
 end
 
 return var0_0

@@ -1,29 +1,32 @@
 pg = pg or {}
 pg.activity_link_button = {
 	{
-		param = "5871",
+		param = "5879",
 		name = "event_all",
 		type = 3,
 		text_pic = "text_event_all",
 		id = 1,
 		group_id = 1,
-		pic = "event_all",
+		pic = "event_aprilFool",
 		order = 1,
+		time = {
+			"default",
+			5879
+		}
+	},
+	{
+		param = "5871",
+		name = "event_all",
+		type = 3,
+		text_pic = "text_event_all",
+		id = 2,
+		group_id = 1,
+		pic = "event_all",
+		order = 2,
 		time = {
 			"default",
 			5871
 		}
-	},
-	{
-		param = "0",
-		name = "event_all",
-		time = "stop",
-		text_pic = "text_event_all",
-		type = 3,
-		pic = "event_all_1",
-		id = 2,
-		group_id = 1,
-		order = 2
 	},
 	[9] = {
 		param = "0",

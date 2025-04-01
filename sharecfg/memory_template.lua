@@ -3403,6 +3403,9 @@ pg.memory_template = setmetatable({
 		4269,
 		4270,
 		4271,
+		4281,
+		4282,
+		4283,
 		10011,
 		10012,
 		10013,
@@ -41022,6 +41025,39 @@ pg.base.memory_template = {
 		story = "SHENGULAIXIN11",
 		id = 4271,
 		icon = "memory_shengulaixin2",
+		is_open = 0
+	},
+	[4281] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "The Three Sisters' Resolve",
+		condition = "Begin \"The Bulin Brigade in: Down with the Megacorp!\" event.",
+		story = "BULIZHANDUIDAPOGANGQUWEIJI1",
+		id = 4281,
+		icon = "memory_bulizhanduidapogangquweiji",
+		is_open = 0
+	},
+	[4282] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "Cave Exploring",
+		condition = "Collect all Clues.",
+		story = "BULIZHANDUIDAPOGANGQUWEIJI2",
+		id = 4282,
+		icon = "memory_bulizhanduidapogangquweiji",
+		is_open = 0
+	},
+	[4283] = {
+		type = 2,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "Mighty Muffin Bulin Brigade",
+		condition = "Enter special battle.",
+		story = "1360006",
+		id = 4283,
+		icon = "memory_bulizhanduidapogangquweiji",
 		is_open = 0
 	},
 	[10011] = {

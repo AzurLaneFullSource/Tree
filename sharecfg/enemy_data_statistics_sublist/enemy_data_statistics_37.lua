@@ -1,5 +1,52 @@
 pg = pg or {}
 pg.enemy_data_statistics_37 = {
+	[611] = {
+		cannon = 22,
+		speed = 16,
+		battle_unit_type = 60,
+		speed_growth = 0,
+		pilot_ai_template_id = 10001,
+		air = 0,
+		rarity = 4,
+		dodge = 9,
+		id = 611,
+		cannon_growth = 2000,
+		fog_fx = "",
+		reload_growth = 0,
+		dodge_growth = 126,
+		luck = 0,
+		star = 5,
+		hit = 14,
+		antisub_growth = 0,
+		air_growth = 0,
+		reload = 150,
+		base = 90206,
+		durability = 580,
+		armor_growth = 0,
+		torpedo_growth = 3456,
+		luck_growth = 0,
+		hit_growth = 210,
+		armor = 0,
+		torpedo = 42,
+		durability_growth = 28200,
+		antisub = 0,
+		antiaircraft = 44,
+		antiaircraft_growth = 3600,
+		appear_fx = {
+			"bossguangxiao",
+			"appearQ"
+		},
+		hp_bar = {
+			200,
+			4
+		},
+		equipment_list = {
+			100201,
+			311072,
+			311075,
+			311076
+		}
+	},
 	[612] = {
 		cannon = 24,
 		battle_unit_type = 65,
@@ -1374,44 +1421,5 @@ pg.enemy_data_statistics_37 = {
 		equipment_list = {
 			300011
 		}
-	},
-	[705] = {
-		cannon = 0,
-		name = "Extreme Torpedo Boat - Defender",
-		antiaircraft_growth = 0,
-		speed_growth = 0,
-		air_growth = 0,
-		air = 0,
-		luck = 0,
-		id = 705,
-		reload = 150,
-		luck_growth = 0,
-		battle_unit_type = 40,
-		dodge_growth = 0,
-		star = 1,
-		antisub_growth = 0,
-		rarity = 1,
-		base = 90070,
-		durability = 30510,
-		armor_growth = 0,
-		torpedo_growth = 14000,
-		speed = 15,
-		armor = 0,
-		antisub = 0,
-		wave_fx = "danchuanlanghuaxiao2",
-		cannon_growth = 0,
-		pilot_ai_template_id = 20017,
-		fog_fx = "",
-		dodge = 0,
-		reload_growth = 0,
-		hit = 85,
-		torpedo = 800,
-		durability_growth = 910000,
-		antiaircraft = 0,
-		hit_growth = 0,
-		appear_fx = {
-			"appearsmall"
-		},
-		equipment_list = {}
 	}
 }

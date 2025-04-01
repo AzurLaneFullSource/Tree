@@ -277,7 +277,7 @@ return {
 			actor = 702070,
 			side = 0,
 			bgName = "star_level_bg_308",
-			actorName = "伏罗希洛夫&{namecode:91:赤城}",
+			actorName = "Voroshilov & Akagi",
 			dir = 1,
 			hideOther = true,
 			nameColor = "#A9F548FF",
