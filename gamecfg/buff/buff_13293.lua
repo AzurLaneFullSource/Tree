@@ -532,7 +532,7 @@ return {
 			}
 		}
 	},
-	time = 1,
+	time = 0.1,
 	name = "",
 	init_effect = "",
 	picture = "",

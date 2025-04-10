@@ -262,7 +262,7 @@ return {
 	},
 	init_effect = "jinengchufared",
 	name = "",
-	time = 1,
+	time = 0.1,
 	color = "blue",
 	picture = "",
 	desc = "",

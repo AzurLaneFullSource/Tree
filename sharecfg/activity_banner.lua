@@ -1,16 +1,16 @@
 pg = pg or {}
 pg.activity_banner = {
 	{
-		param = "5879",
+		param = "5885",
 		id = 1,
-		pic = "temp12",
+		pic = "temp2",
 		type = 3,
 		time = {
 			{
 				{
 					2025,
 					4,
-					1
+					10
 				},
 				{
 					0,
@@ -22,7 +22,7 @@ pg.activity_banner = {
 				{
 					2025,
 					4,
-					7
+					23
 				},
 				{
 					23,
@@ -34,20 +34,21 @@ pg.activity_banner = {
 	},
 	{
 		id = 2,
-		pic = "temp2",
+		pic = "temp3",
 		type = 2,
 		param = {
-			"scene charge",
+			"scene equip",
 			{
-				wrap = 2
+				designPage = 2,
+				warp = "WARP_TO_DESIGN"
 			}
 		},
 		time = {
 			{
 				{
 					2025,
-					3,
-					27
+					4,
+					10
 				},
 				{
 					0,
@@ -59,7 +60,7 @@ pg.activity_banner = {
 				{
 					2025,
 					4,
-					9
+					23
 				},
 				{
 					23,
@@ -71,41 +72,6 @@ pg.activity_banner = {
 	},
 	{
 		id = 3,
-		pic = "temp3",
-		type = 2,
-		param = {
-			"scene skinshop",
-			{}
-		},
-		time = {
-			{
-				{
-					2025,
-					3,
-					27
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					4,
-					9
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		id = 4,
 		pic = "temp4",
 		type = 2,
 		param = {
@@ -143,7 +109,7 @@ pg.activity_banner = {
 	},
 	{
 		param = "5871",
-		id = 5,
+		id = 4,
 		pic = "temp5",
 		type = 3,
 		time = {
@@ -174,7 +140,7 @@ pg.activity_banner = {
 		}
 	},
 	{
-		id = 6,
+		id = 5,
 		pic = "temp6",
 		type = 2,
 		param = {
@@ -212,7 +178,7 @@ pg.activity_banner = {
 		}
 	},
 	{
-		id = 7,
+		id = 6,
 		pic = "temp7",
 		type = 2,
 		param = {
@@ -249,7 +215,7 @@ pg.activity_banner = {
 		}
 	},
 	{
-		id = 8,
+		id = 7,
 		pic = "temp8",
 		type = 2,
 		param = {
@@ -283,7 +249,7 @@ pg.activity_banner = {
 		}
 	},
 	{
-		id = 9,
+		id = 8,
 		pic = "temp1",
 		type = 2,
 		param = {
@@ -320,7 +286,7 @@ pg.activity_banner = {
 		}
 	},
 	{
-		id = 10,
+		id = 9,
 		pic = "temp9",
 		type = 2,
 		param = {
@@ -473,17 +439,16 @@ pg.activity_banner = {
 	get_id_list_by_type = {
 		[3] = {
 			1,
-			5
+			4
 		},
 		[2] = {
 			2,
 			3,
-			4,
+			5,
 			6,
 			7,
 			8,
-			9,
-			10
+			9
 		},
 		[9] = {
 			90,
@@ -515,7 +480,6 @@ pg.activity_banner = {
 		7,
 		8,
 		9,
-		10,
 		90,
 		91,
 		95,

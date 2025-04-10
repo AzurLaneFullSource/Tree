@@ -1576,12 +1576,12 @@ function var6_0.SetPopup(arg0_129, arg1_129, arg2_129, arg3_129)
 		if var0_129 then
 			var0_129:Play("popup_out")
 			arg0_129._popGO:GetComponent("DftAniEvent"):SetEndEvent(function(arg0_130)
-				arg0_129.ChatPopAnimation(arg0_129._popGO, arg1_129, arg2_129)
+				arg0_129.ChatPopAnimation(arg0_129._popGO, arg2_129)
 			end)
 		else
 			LeanTween.cancel(arg0_129._popGO)
 			LeanTween.scale(rtf(arg0_129._popGO.gameObject), Vector3.New(0, 0, 1), 0.1):setEase(LeanTweenType.easeInBack):setOnComplete(System.Action(function()
-				arg0_129.ChatPop(arg0_129._popGO, arg1_129, arg2_129)
+				arg0_129.ChatPop(arg0_129._popGO, arg2_129)
 			end))
 		end
 	else
@@ -1589,24 +1589,23 @@ function var6_0.SetPopup(arg0_129, arg1_129, arg2_129, arg3_129)
 		arg0_129._popTF = arg0_129._popGO.transform
 
 		if arg0_129._popGO.transform:GetComponent(typeof(Animation)) then
-			arg0_129.ChatPopAnimation(arg0_129._popGO, arg1_129, arg2_129)
+			arg0_129.ChatPopAnimation(arg0_129._popGO, arg2_129)
 		else
 			arg0_129._popTF.localScale = Vector3(0, 0, 0)
 
-			arg0_129.ChatPop(arg0_129._popGO, arg1_129, arg2_129)
+			arg0_129.ChatPop(arg0_129._popGO, arg2_129)
 		end
 	end
 
+	var6_0.setChatText(arg0_129._popGO, arg1_129)
 	SetActive(arg0_129._popGO, true)
 end
 
-function var6_0.ChatPopAnimation(arg0_132, arg1_132, arg2_132)
-	var6_0.setChatText(arg0_132, arg1_132)
-
+function var6_0.ChatPopAnimation(arg0_132, arg1_132)
 	local var0_132 = arg0_132.transform:GetComponent(typeof(Animation))
 
 	var0_132:Play("popup_in")
-	LeanTween.delayedCall(arg0_132.gameObject, arg2_132, System.Action(function()
+	LeanTween.delayedCall(arg0_132.gameObject, arg1_132, System.Action(function()
 		var0_132:Play("popup_out")
 		arg0_132:GetComponent("DftAniEvent"):SetEndEvent(function(arg0_134)
 			SetActive(arg0_132, false)
@@ -1614,12 +1613,11 @@ function var6_0.ChatPopAnimation(arg0_132, arg1_132, arg2_132)
 	end))
 end
 
-function var6_0.ChatPop(arg0_135, arg1_135, arg2_135)
-	arg2_135 = arg2_135 or 2.5
+function var6_0.ChatPop(arg0_135, arg1_135)
+	arg1_135 = arg1_135 or 2.5
 
-	var6_0.setChatText(arg0_135, arg1_135)
 	LeanTween.scale(rtf(arg0_135.gameObject), Vector3.New(1, 1, 1), 0.3):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
-		LeanTween.scale(rtf(arg0_135.gameObject), Vector3.New(0, 0, 1), 0.3):setEase(LeanTweenType.easeInBack):setDelay(arg2_135):setOnComplete(System.Action(function()
+		LeanTween.scale(rtf(arg0_135.gameObject), Vector3.New(0, 0, 1), 0.3):setEase(LeanTweenType.easeInBack):setDelay(arg1_135):setOnComplete(System.Action(function()
 			SetActive(arg0_135, false)
 		end))
 	end))

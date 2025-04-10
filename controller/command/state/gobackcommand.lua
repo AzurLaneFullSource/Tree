@@ -20,6 +20,7 @@ function var0_0.execute(arg0_1, arg1_1)
 		end
 
 		var4_1:extendData(var0_1)
+		SCENE.SetSceneInfo(var4_1, var4_1.scene)
 		arg0_1:sendNotification(GAME.LOAD_SCENE, {
 			isBack = true,
 			prevContext = var3_1,

@@ -16276,7 +16276,7 @@ _G.pg.base.shop_template[61019] = {
 
 _G.pg.base.shop_template[70001] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Illusory Happiness",
+	desc = "购买皮肤:虚幻的幸福",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16328,7 +16328,7 @@ _G.pg.base.shop_template[70001] = {
 
 _G.pg.base.shop_template[70002] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Beach Rhapsody",
+	desc = "购买皮肤:沙滩狂想曲",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16355,7 +16355,7 @@ _G.pg.base.shop_template[70002] = {
 
 _G.pg.base.shop_template[70003] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Paradise Amaryllis",
+	desc = "购买皮肤:乐园的彼岸花",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16382,7 +16382,7 @@ _G.pg.base.shop_template[70003] = {
 
 _G.pg.base.shop_template[70004] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Eternal Killing Stone",
+	desc = "购买皮肤:常夏的杀生石",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16409,7 +16409,7 @@ _G.pg.base.shop_template[70004] = {
 
 _G.pg.base.shop_template[70005] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Shining Beauty",
+	desc = "购买皮肤:照耀太阳的淑女",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16436,7 +16436,7 @@ _G.pg.base.shop_template[70005] = {
 
 _G.pg.base.shop_template[70006] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Attack, I-490!",
+	desc = "购买皮肤:进击，伊490！",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16463,7 +16463,7 @@ _G.pg.base.shop_template[70006] = {
 
 _G.pg.base.shop_template[70007] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Seven Seas",
+	desc = "购买皮肤:七海的憩日",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16490,7 +16490,7 @@ _G.pg.base.shop_template[70007] = {
 
 _G.pg.base.shop_template[70008] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Future Beach",
+	desc = "购买皮肤:未来的海滨上将",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16517,7 +16517,7 @@ _G.pg.base.shop_template[70008] = {
 
 _G.pg.base.shop_template[70009] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Summer March",
+	desc = "购买皮肤:盛夏进行曲",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16569,7 +16569,7 @@ _G.pg.base.shop_template[70009] = {
 
 _G.pg.base.shop_template[70010] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Summer",
+	desc = "购买皮肤:游兴之夏",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16596,7 +16596,7 @@ _G.pg.base.shop_template[70010] = {
 
 _G.pg.base.shop_template[70011] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Windsor Sun",
+	desc = "购买皮肤:阳光照耀着温莎",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16623,7 +16623,7 @@ _G.pg.base.shop_template[70011] = {
 
 _G.pg.base.shop_template[70012] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Little Summer War",
+	desc = "购买皮肤:小小的夏日战争",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16650,7 +16650,7 @@ _G.pg.base.shop_template[70012] = {
 
 _G.pg.base.shop_template[70013] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Moon Rabbit",
+	desc = "购买皮肤:月宫玉兔（2020.1.14国服下架）",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16702,7 +16702,7 @@ _G.pg.base.shop_template[70013] = {
 
 _G.pg.base.shop_template[70014] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Osmanthus Rabbit",
+	desc = "购买皮肤:桂花玉兔（2020.1.14国服下架）",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16754,7 +16754,7 @@ _G.pg.base.shop_template[70014] = {
 
 _G.pg.base.shop_template[70015] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Unfading Smile",
+	desc = "购买皮肤:永不褪色的笑容",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16781,7 +16781,7 @@ _G.pg.base.shop_template[70015] = {
 
 _G.pg.base.shop_template[70016] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Summer's Appetite",
+	desc = "购买皮肤:食欲之夏",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16808,7 +16808,7 @@ _G.pg.base.shop_template[70016] = {
 
 _G.pg.base.shop_template[70017] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Shouhou: Halloween",
+	desc = "购买皮肤:万圣节·祥凤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16835,7 +16835,7 @@ _G.pg.base.shop_template[70017] = {
 
 _G.pg.base.shop_template[70018] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Cleveland: Halloween",
+	desc = "购买皮肤:万圣节·克利夫兰",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16862,7 +16862,7 @@ _G.pg.base.shop_template[70018] = {
 
 _G.pg.base.shop_template[70019] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Ayanami: Halloween",
+	desc = "购买皮肤:万圣节·绫波",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16889,7 +16889,7 @@ _G.pg.base.shop_template[70019] = {
 
 _G.pg.base.shop_template[70020] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Kagerou: Halloween",
+	desc = "购买皮肤:万圣节·阳炎",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16916,7 +16916,7 @@ _G.pg.base.shop_template[70020] = {
 
 _G.pg.base.shop_template[70021] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Illustrious: Tea Party",
+	desc = "购买皮肤:下午茶光辉",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16943,7 +16943,7 @@ _G.pg.base.shop_template[70021] = {
 
 _G.pg.base.shop_template[70022] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Ikazuchi: Tea Party",
+	desc = "购买皮肤:下午茶雷",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16970,7 +16970,7 @@ _G.pg.base.shop_template[70022] = {
 
 _G.pg.base.shop_template[70023] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Inazuma: Tea Party",
+	desc = "购买皮肤:下午茶电",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -16997,7 +16997,7 @@ _G.pg.base.shop_template[70023] = {
 
 _G.pg.base.shop_template[70024] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Eldridge: Christmas",
+	desc = "购买皮肤:埃尔德里奇圣诞皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -17024,7 +17024,7 @@ _G.pg.base.shop_template[70024] = {
 
 _G.pg.base.shop_template[70025] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Enterprise: Christmas",
+	desc = "购买皮肤:企业圣诞皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -17051,7 +17051,7 @@ _G.pg.base.shop_template[70025] = {
 
 _G.pg.base.shop_template[70026] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Yamashiro: Christmas",
+	desc = "购买皮肤:山城圣诞皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -17078,7 +17078,7 @@ _G.pg.base.shop_template[70026] = {
 
 _G.pg.base.shop_template[70027] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Cygnet: Christmas",
+	desc = "购买皮肤:小天鹅圣诞皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -17105,7 +17105,7 @@ _G.pg.base.shop_template[70027] = {
 
 _G.pg.base.shop_template[70028] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - San Diego: Christmas",
+	desc = "购买皮肤:圣地亚哥圣诞皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -17132,7 +17132,7 @@ _G.pg.base.shop_template[70028] = {
 
 _G.pg.base.shop_template[70029] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Mutsuki: Christmas",
+	desc = "购买皮肤:睦月圣诞皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -17159,7 +17159,7 @@ _G.pg.base.shop_template[70029] = {
 
 _G.pg.base.shop_template[70030] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Atago: Spring Festival",
+	desc = "购买皮肤:爱宕春节皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -17186,7 +17186,7 @@ _G.pg.base.shop_template[70030] = {
 
 _G.pg.base.shop_template[70031] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Souryuu: Spring Festival",
+	desc = "购买皮肤:苍龙春节皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -17213,7 +17213,7 @@ _G.pg.base.shop_template[70031] = {
 
 _G.pg.base.shop_template[70032] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Akagi: Spring Festival",
+	desc = "购买皮肤:赤城春节皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -17240,7 +17240,7 @@ _G.pg.base.shop_template[70032] = {
 
 _G.pg.base.shop_template[70033] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Kaga: Spring Festival",
+	desc = "购买皮肤:加贺春节皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -17267,7 +17267,7 @@ _G.pg.base.shop_template[70033] = {
 
 _G.pg.base.shop_template[70034] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Laffey: Spring Festival",
+	desc = "购买皮肤:拉菲春节皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -17294,7 +17294,7 @@ _G.pg.base.shop_template[70034] = {
 
 _G.pg.base.shop_template[70035] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Akashi: Spring Festival",
+	desc = "购买皮肤:明石春节皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -17321,7 +17321,7 @@ _G.pg.base.shop_template[70035] = {
 
 _G.pg.base.shop_template[70036] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Prinz Eugen: Spring Festival",
+	desc = "购买皮肤:欧根春节皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -17348,7 +17348,7 @@ _G.pg.base.shop_template[70036] = {
 
 _G.pg.base.shop_template[70037] = {
 	collaboration_skin_time = "",
-	desc = "Buy skin - Yuudachi: Spring Festival",
+	desc = "购买皮肤:夕立春节皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -18684,7 +18684,7 @@ _G.pg.base.shop_template[70079] = {
 
 _G.pg.base.shop_template[70080] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:德意志泳装",
+	desc = "购买皮肤:德意志泳装（2020.1.14国服下架）",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -18765,7 +18765,7 @@ _G.pg.base.shop_template[70082] = {
 
 _G.pg.base.shop_template[70083] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:昆西泳装",
+	desc = "购买皮肤:昆西泳装（2021.4.8版本其他服常驻国服未常驻）",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -21327,7 +21327,7 @@ _G.pg.base.shop_template[70170] = {
 
 _G.pg.base.shop_template[70173] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤：陆奥",
+	desc = "购买皮肤：陆奥战国皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -21593,7 +21593,7 @@ _G.pg.base.shop_template[70181] = {
 
 _G.pg.base.shop_template[70182] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤：布什皮肤",
+	desc = "购买皮肤：布什小画家",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -22476,7 +22476,7 @@ _G.pg.base.shop_template[70210] = {
 
 _G.pg.base.shop_template[70211] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤：克利夫兰常服机车",
+	desc = "购买皮肤：克利夫兰机车",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -22663,7 +22663,7 @@ _G.pg.base.shop_template[70216] = {
 
 _G.pg.base.shop_template[70217] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤：企业常服机车",
+	desc = "购买皮肤：企业机车",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -26840,7 +26840,7 @@ _G.pg.base.shop_template[70346] = {
 
 _G.pg.base.shop_template[70347] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:卷波常服",
+	desc = "购买皮肤:卷波泳装",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -31951,7 +31951,7 @@ _G.pg.base.shop_template[70526] = {
 
 _G.pg.base.shop_template[70527] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:阿斯托里亚兔女郎（2021.4.8版本国服未上）",
+	desc = "购买皮肤:阿斯托里亚兔女郎",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -40257,7 +40257,7 @@ _G.pg.base.shop_template[70756] = {
 
 _G.pg.base.shop_template[70757] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:220929信浓赛车",
+	desc = "购买皮肤:240118信浓赛车",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -42556,7 +42556,7 @@ _G.pg.base.shop_template[70830] = {
 
 _G.pg.base.shop_template[70831] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:230323伏罗希洛夫皮肤",
+	desc = "购买皮肤:230323伏罗希洛夫温泉",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -42608,7 +42608,7 @@ _G.pg.base.shop_template[70831] = {
 
 _G.pg.base.shop_template[70832] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:230323库尔斯克皮肤",
+	desc = "购买皮肤:230323库尔斯克温泉",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -42660,7 +42660,7 @@ _G.pg.base.shop_template[70832] = {
 
 _G.pg.base.shop_template[70833] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:230323塞瓦斯托波尔皮肤",
+	desc = "购买皮肤:230323塞瓦斯托波尔温泉",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -42712,7 +42712,7 @@ _G.pg.base.shop_template[70833] = {
 
 _G.pg.base.shop_template[70834] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:230323威严皮肤",
+	desc = "购买皮肤:230323威严温泉",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -42764,7 +42764,7 @@ _G.pg.base.shop_template[70834] = {
 
 _G.pg.base.shop_template[70835] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:230323的里雅斯特皮肤",
+	desc = "购买皮肤:230323的里雅斯特温泉",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -42816,7 +42816,7 @@ _G.pg.base.shop_template[70835] = {
 
 _G.pg.base.shop_template[70836] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:230323霞飞皮肤",
+	desc = "购买皮肤:230323霞飞温泉",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -42868,7 +42868,7 @@ _G.pg.base.shop_template[70836] = {
 
 _G.pg.base.shop_template[70837] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:230323美因茨皮肤",
+	desc = "购买皮肤:230323美因茨温泉",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -44844,7 +44844,7 @@ _G.pg.base.shop_template[70874] = {
 
 _G.pg.base.shop_template[70890] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:克莱蒙梭运动（L2D）",
+	desc = "购买皮肤:230817克莱蒙梭运动（L2D）",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -44896,7 +44896,7 @@ _G.pg.base.shop_template[70890] = {
 
 _G.pg.base.shop_template[70891] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:吉尚运动",
+	desc = "购买皮肤:230817吉尚运动",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -44948,7 +44948,7 @@ _G.pg.base.shop_template[70891] = {
 
 _G.pg.base.shop_template[70892] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:伴儿维运动（动态）",
+	desc = "购买皮肤:230817伴儿维运动（动态）",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -45000,7 +45000,7 @@ _G.pg.base.shop_template[70892] = {
 
 _G.pg.base.shop_template[70893] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:里昂运动",
+	desc = "购买皮肤:230817里昂运动",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -45052,7 +45052,7 @@ _G.pg.base.shop_template[70893] = {
 
 _G.pg.base.shop_template[70894] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:絮弗伦运动",
+	desc = "购买皮肤:230817絮弗伦运动",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -45104,7 +45104,7 @@ _G.pg.base.shop_template[70894] = {
 
 _G.pg.base.shop_template[70895] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:凯尔圣运动（动态）",
+	desc = "购买皮肤:230817凯尔圣运动（动态）",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -45156,7 +45156,7 @@ _G.pg.base.shop_template[70895] = {
 
 _G.pg.base.shop_template[70896] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:西弗吉尼亚皮肤",
+	desc = "购买皮肤:230817西弗吉尼亚皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -45208,7 +45208,7 @@ _G.pg.base.shop_template[70896] = {
 
 _G.pg.base.shop_template[70897] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:企业泳装（L2D）",
+	desc = "购买皮肤:230817企业泳装（L2D）",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -45260,7 +45260,7 @@ _G.pg.base.shop_template[70897] = {
 
 _G.pg.base.shop_template[70898] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:海伦娜泳装（L2D）",
+	desc = "购买皮肤:230817海伦娜泳装（L2D）",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -48952,7 +48952,7 @@ _G.pg.base.shop_template[70983] = {
 
 _G.pg.base.shop_template[70984] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤：240229艾伦·萨姆纳皮肤",
+	desc = "购买皮肤：240229艾伦・萨姆纳皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -50980,7 +50980,7 @@ _G.pg.base.shop_template[71023] = {
 
 _G.pg.base.shop_template[71024] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤：240627约克公爵皮",
+	desc = "购买皮肤：240627约克公爵皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -51032,7 +51032,7 @@ _G.pg.base.shop_template[71024] = {
 
 _G.pg.base.shop_template[71025] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤：240627光辉皮",
+	desc = "购买皮肤：240627光辉皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -55429,7 +55429,7 @@ _G.pg.base.shop_template[71110] = {
 
 _G.pg.base.shop_template[71111] = {
 	collaboration_skin_time = "",
-	desc = "购买皮肤:250123贞德皮肤",
+	desc = "购买皮肤:250123圣女贞德皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -55533,7 +55533,7 @@ _G.pg.base.shop_template[71112] = {
 
 _G.pg.base.shop_template[71113] = {
 	collaboration_skin_time = "",
-	desc = "0213长波情人节皮肤",
+	desc = "购买皮肤:250213长波情人节皮肤",
 	discount = 0,
 	genre = "skin_shop",
 	group = 0,
@@ -73949,6 +73949,63 @@ _G.pg.base.shop_template[106017] = {
 				2025,
 				4,
 				1,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2034,
+				10,
+				1,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+
+_G.pg.base.shop_template[106018] = {
+	collaboration_skin_time = "",
+	desc = "通行证复刻-星云子弹(蓝)",
+	discount = 0,
+	genre = "cruise_gearskin",
+	group = 10,
+	group_buy_count = 1,
+	group_limit = 4,
+	group_type = 3,
+	id = 106018,
+	limit_args2 = "",
+	num = 1,
+	order = 1,
+	resource_num = 100,
+	resource_type = 14,
+	tag = 0,
+	time_second = 0,
+	type = 9,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			9,
+		},
+	},
+	effect_args = {
+		2013,
+	},
+	time = {
+		{
+			{
+				2025,
+				4,
+				10,
 			},
 			{
 				0,

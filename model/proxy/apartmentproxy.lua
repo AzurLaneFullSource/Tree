@@ -64,6 +64,7 @@ function var0_0.timeCall(arg0_5)
 
 			arg0_5:sendNotification(var0_0.ZERO_HOUR_REFRESH)
 			arg0_5:InitGiftDaily()
+			var0_0.RefreshGiftDailyTip()
 		end
 	}
 end
@@ -336,11 +337,24 @@ function var0_0.PendingRandom(arg0_42, arg1_42)
 	return var3_42
 end
 
-function var0_0.CheckDeviceRAMEnough()
-	local var0_44 = SystemInfo.systemMemorySize
-	local var1_44 = getDorm3dGameset("drom3d_memory_limit")[1]
+function var0_0.RefreshGiftDailyTip()
+	for iter0_44, iter1_44 in pairs(pg.dorm3d_shop_template.all) do
+		local var0_44 = pg.dorm3d_shop_template[iter1_44]
 
-	return var0_44 == 0 or var1_44 < var0_44
+		if pg.shop_template[var0_44.shop_id[1]].group ~= 0 then
+			local var1_44 = getProxy(PlayerProxy):getRawData().id
+
+			PlayerPrefs.SetInt(var1_44 .. "_dorm3dGiftWeekViewed_" .. var0_44.item_id, 0)
+			PlayerPrefs.SetInt(var1_44 .. "_dorm3dGiftWeekRefreshTimeStamp", pg.TimeMgr.GetInstance():GetServerTime())
+		end
+	end
+end
+
+function var0_0.CheckDeviceRAMEnough()
+	local var0_45 = SystemInfo.systemMemorySize
+	local var1_45 = getDorm3dGameset("drom3d_memory_limit")[1]
+
+	return var0_45 == 0 or var1_45 < var0_45
 end
 
 return var0_0

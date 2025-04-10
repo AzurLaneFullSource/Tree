@@ -83,7 +83,7 @@ function var0_0.ExitRoutineSystem(arg0_5, arg1_5)
 end
 
 function var0_0.ExitScenarioSystem(arg0_6, arg1_6)
-	if arg1_6.needHelpMessage then
+	if arg1_6.needHelpMessage or arg1_6.score == ys.Battle.BattleConst.BattleScore.C then
 		getProxy(ChapterProxy):StopAutoFight(ChapterConst.AUTOFIGHT_STOP_REASON.BATTLE_FAILED)
 	end
 

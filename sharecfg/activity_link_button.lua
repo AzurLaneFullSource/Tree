@@ -7,7 +7,7 @@ pg.activity_link_button = {
 		text_pic = "text_event_all",
 		id = 1,
 		group_id = 1,
-		pic = "event_aprilFool",
+		pic = "event_all",
 		order = 1,
 		time = {
 			"default",

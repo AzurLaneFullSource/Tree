@@ -599,7 +599,7 @@ function var0_0.UpdateViewFurnitureItem(arg0_63, arg1_63)
 				content = {
 					icon = "<icon name=" .. var11_63:GetResIcon() .. " w=1.1 h=1.1/>",
 					off = var13_63,
-					cost = "x" .. var15_63.count,
+					cost = var15_63.count,
 					old = var14_63,
 					name = var1_63.template:GetName()
 				},

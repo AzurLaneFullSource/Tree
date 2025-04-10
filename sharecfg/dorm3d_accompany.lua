@@ -54,7 +54,7 @@ pg.dorm3d_accompany = {
 		timeline = "Xiangban_shinei_ND",
 		sceneInfo = "map_noshirohostel_02|Nengdai_DB/NoshiroHostel",
 		favor = {
-			10,
+			300,
 			{
 				1015,
 				1016,
@@ -74,7 +74,7 @@ pg.dorm3d_accompany = {
 		timeline = "Xiangban_shatan_ND",
 		sceneInfo = "map_beach_02|Beach",
 		favor = {
-			10,
+			300,
 			{
 				1015,
 				1016,
@@ -98,7 +98,7 @@ pg.dorm3d_accompany = {
 		timeline = "Xiangban_shinei_Ab",
 		sceneInfo = "map_anchoragehostel_02|Ankeleiqi_DB/Anchoragehostel",
 		favor = {
-			10,
+			300,
 			{
 				1015,
 				1016,
@@ -118,7 +118,7 @@ pg.dorm3d_accompany = {
 		timeline = "Xiangban_shatan_Ab",
 		sceneInfo = "map_beach_02|Beach",
 		favor = {
-			10,
+			300,
 			{
 				1015,
 				1016,

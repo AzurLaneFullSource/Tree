@@ -327,112 +327,108 @@ function var0_0.getRarity(arg0_29)
 	assert(false)
 end
 
-function var0_0.getExchangePrice(arg0_30)
+function var0_0.upgrade(arg0_30)
 	assert(false)
 end
 
-function var0_0.upgrade(arg0_31)
-	assert(false)
+function var0_0.getTeamType(arg0_31)
+	return TeamType.GetTeamFromShipType(arg0_31:getShipType())
 end
 
-function var0_0.getTeamType(arg0_32)
-	return TeamType.GetTeamFromShipType(arg0_32:getShipType())
-end
+function var0_0.getMaxConfigId(arg0_32)
+	local var0_32 = pg.ship_data_template
+	local var1_32
 
-function var0_0.getMaxConfigId(arg0_33)
-	local var0_33 = pg.ship_data_template
-	local var1_33
+	for iter0_32 = 4, 1, -1 do
+		local var2_32 = tonumber(arg0_32.groupId .. iter0_32)
 
-	for iter0_33 = 4, 1, -1 do
-		local var2_33 = tonumber(arg0_33.groupId .. iter0_33)
-
-		if var0_33[var2_33] then
-			var1_33 = var2_33
+		if var0_32[var2_32] then
+			var1_32 = var2_32
 
 			break
 		end
 	end
 
-	return var1_33
+	return var1_32
 end
 
-function var0_0.fateSkillChange(arg0_34, arg1_34)
-	if not arg0_34.skillChangeList then
-		arg0_34.skillChangeList = arg0_34:isBluePrintShip() and arg0_34:getBluePrint():getChangeSkillList() or {}
+function var0_0.fateSkillChange(arg0_33, arg1_33)
+	if not arg0_33.skillChangeList then
+		arg0_33.skillChangeList = arg0_33:isBluePrintShip() and arg0_33:getBluePrint():getChangeSkillList() or {}
 	end
 
-	for iter0_34, iter1_34 in ipairs(arg0_34.skillChangeList) do
-		if iter1_34[1] == arg1_34 and arg0_34.skills[iter1_34[2]] then
-			return iter1_34[2]
+	for iter0_33, iter1_33 in ipairs(arg0_33.skillChangeList) do
+		if iter1_33[1] == arg1_33 and arg0_33.skills[iter1_33[2]] then
+			return iter1_33[2]
 		end
 	end
 
-	return arg1_34
+	return arg1_33
 end
 
-function var0_0.getSkillList(arg0_35)
-	local var0_35 = pg.ship_data_template[arg0_35.configId]
-	local var1_35 = Clone(var0_35.buff_list_display)
-	local var2_35 = Clone(var0_35.buff_list)
-	local var3_35 = pg.ship_data_trans[arg0_35.groupId]
-	local var4_35 = 0
+function var0_0.getSkillList(arg0_34)
+	local var0_34 = pg.ship_data_template[arg0_34.configId]
+	local var1_34 = Clone(var0_34.buff_list_display)
+	local var2_34 = Clone(var0_34.buff_list)
+	local var3_34 = pg.ship_data_trans[arg0_34.groupId]
+	local var4_34 = 0
 
-	if var3_35 and var3_35.skill_id ~= 0 then
-		local var5_35 = var3_35.skill_id
-		local var6_35 = pg.transform_data_template[var5_35]
+	if var3_34 and var3_34.skill_id ~= 0 then
+		local var5_34 = var3_34.skill_id
+		local var6_34 = pg.transform_data_template[var5_34]
 
-		if arg0_35.transforms[var5_35] and var6_35.skill_id ~= 0 then
-			table.insert(var2_35, var6_35.skill_id)
+		if arg0_34.transforms[var5_34] and var6_34.skill_id ~= 0 then
+			table.insert(var2_34, var6_34.skill_id)
 		end
 	end
 
-	local var7_35 = {}
+	local var7_34 = {}
 
-	for iter0_35, iter1_35 in ipairs(var1_35) do
-		for iter2_35, iter3_35 in ipairs(var2_35) do
-			if iter1_35 == iter3_35 then
-				table.insert(var7_35, arg0_35:fateSkillChange(iter1_35))
+	for iter0_34, iter1_34 in ipairs(var1_34) do
+		for iter2_34, iter3_34 in ipairs(var2_34) do
+			if iter1_34 == iter3_34 then
+				table.insert(var7_34, arg0_34:fateSkillChange(iter1_34))
 			end
 		end
 	end
 
-	return var7_35
+	return var7_34
 end
 
-function var0_0.getDisplaySkillIds(arg0_36)
-	return _.map(pg.ship_data_template[arg0_36.configId].buff_list_display, function(arg0_37)
-		return arg0_36:fateSkillChange(arg0_37)
+function var0_0.getDisplaySkillIds(arg0_35)
+	return _.map(pg.ship_data_template[arg0_35.configId].buff_list_display, function(arg0_36)
+		return arg0_35:fateSkillChange(arg0_36)
 	end)
 end
 
-function var0_0.getSkillIndex(arg0_38, arg1_38)
-	local var0_38 = arg0_38:getSkillList()
+function var0_0.getSkillIndex(arg0_37, arg1_37)
+	local var0_37 = arg0_37:getSkillList()
 
-	for iter0_38, iter1_38 in ipairs(var0_38) do
-		if arg1_38 == iter1_38 then
-			return iter0_38
+	for iter0_37, iter1_37 in ipairs(var0_37) do
+		if arg1_37 == iter1_37 then
+			return iter0_37
 		end
 	end
 end
 
-function var0_0.IsBgmSkin(arg0_39)
-	local var0_39 = arg0_39:GetSkinConfig()
+function var0_0.IsBgmSkin(arg0_38)
+	local var0_38 = arg0_38:GetSkinConfig()
 
-	return table.contains(var0_39.tag, ShipSkin.WITH_BGM)
+	return table.contains(var0_38.tag, ShipSkin.WITH_BGM)
 end
 
-function var0_0.GetSkinBgm(arg0_40)
-	if arg0_40:IsBgmSkin() then
-		return arg0_40:GetSkinConfig().bgm
+function var0_0.GetSkinBgm(arg0_39)
+	if arg0_39:IsBgmSkin() then
+		return arg0_39:GetSkinConfig().bgm
 	end
 end
 
-function var0_0.GetConfigId(arg0_41)
-	return arg0_41.configId
+function var0_0.GetConfigId(arg0_40)
+	return arg0_40.configId
 end
 
-function var0_0.GetDefaultCards(arg0_42)
-	return arg0_42:getConfig("default_card")
+function var0_0.GetDefaultCards(arg0_41)
+	return arg0_41:getConfig("default_card")
 end
 
 return var0_0

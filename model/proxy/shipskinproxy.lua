@@ -543,9 +543,10 @@ function var0_0.HasFashion(arg0_41, arg1_41)
 end
 
 function var0_0.GetEncoreSkins(arg0_42)
-	local var0_42 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)
+	local var0_42 = {}
+	local var1_42 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)
 
-	local function var1_42(arg0_43)
+	local function var2_42(arg0_43)
 		local var0_43 = arg0_43:getConfig("config_client")
 
 		if var0_43 and var0_43[1] and type(var0_43[1]) == "table" then
@@ -555,21 +556,27 @@ function var0_0.GetEncoreSkins(arg0_42)
 		end
 	end
 
-	for iter0_42, iter1_42 in ipairs(var0_42) do
-		if iter1_42:getDataConfig("type") == 5 and not var1_42(iter1_42) then
-			return iter1_42:getConfig("config_data")
+	for iter0_42, iter1_42 in ipairs(var1_42) do
+		if iter1_42:getDataConfig("type") == 5 and not var2_42(iter1_42) then
+			for iter2_42, iter3_42 in ipairs(iter1_42:getConfig("config_data")) do
+				table.insert(var0_42, iter3_42)
+			end
 		end
 	end
 
-	local var2_42 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SKIN_COUPON_COUNTING)
+	local var3_42 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SKIN_COUPON_COUNTING)
 
-	for iter2_42, iter3_42 in ipairs(var2_42) do
-		if iter3_42 and not iter3_42:isEnd() then
-			return iter3_42:getConfig("config_data")[2]
+	for iter4_42, iter5_42 in ipairs(var3_42) do
+		if iter5_42 and not iter5_42:isEnd() then
+			for iter6_42, iter7_42 in ipairs(iter5_42:getConfig("config_data")[2]) do
+				if not table.contains(var0_42, iter7_42) then
+					table.insert(var0_42, iter7_42)
+				end
+			end
 		end
 	end
 
-	return {}
+	return var0_42
 end
 
 function var0_0.GetOwnSkins(arg0_44)

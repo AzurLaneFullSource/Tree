@@ -1070,7 +1070,7 @@ function var9_0.AddBuff(arg0_134, arg1_134, arg2_134)
 		else
 			var1_134.buff_level = math.max(var3_134, var4_134)
 
-			if var4_134 <= var3_134 then
+			if var2_134:IsForceStack() or var4_134 <= var3_134 then
 				var2_134:Stack(arg0_134)
 
 				var1_134.stack_count = var2_134:GetStack()

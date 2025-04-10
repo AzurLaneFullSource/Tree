@@ -7,9 +7,8 @@ return {
 			},
 			arg_list = {
 				minTargetNumber = 1,
-				skill_id = 151071,
-				time = 1,
 				target = "TargetSelf",
+				skill_id = 151071,
 				check_target = {
 					"TargetSelf",
 					"TargetShipTag"
@@ -26,9 +25,8 @@ return {
 			},
 			arg_list = {
 				minTargetNumber = 1,
-				skill_id = 151072,
-				time = 1,
 				target = "TargetSelf",
+				skill_id = 151072,
 				check_target = {
 					"TargetSelf",
 					"TargetShipTag"

@@ -164141,6 +164141,61 @@ _G.pg.base.bullet_template[165503] = {
 	extra_param = {},
 }
 
+_G.pg.base.bullet_template[165504] = {
+	alert_fx = "",
+	ammo_type = 2,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 165504,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "battle/sink",
+	modle_ID = "xiefeierdezhuanwuzidan",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 10,
+	type = 1,
+	velocity = 28,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		10,
+		2,
+		3,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
 _G.pg.base.bullet_template[165511] = {
 	alert_fx = "",
 	ammo_type = 6,

@@ -413,26 +413,29 @@ end
 function var3_0.TargetAllHarm(arg0_27, arg1_27, arg2_27)
 	local var0_27 = {}
 	local var1_27
-	local var2_27 = ys.Battle.BattleDataProxy.GetInstance()
+	local var2_27 = arg0_27:GetIFF()
+	local var3_27 = ys.Battle.BattleDataProxy.GetInstance()
 
 	if arg2_27 then
-		var1_27 = arg2_27
-	else
-		local var3_27 = arg0_27:GetIFF()
+		var1_27 = {}
 
-		if var3_27 == var0_0.FRIENDLY_CODE then
-			var1_27 = var2_27:GetFoeShipList()
-		elseif var3_27 == var0_0.FOE_CODE then
-			var1_27 = var2_27:GetFriendlyShipList()
+		for iter0_27, iter1_27 in ipairs(arg2_27) do
+			if iter1_27:GetIFF() * var2_27 == -1 then
+				table.insert(var1_27, iter1_27)
+			end
 		end
+	elseif var2_27 == var0_0.FRIENDLY_CODE then
+		var1_27 = var3_27:GetFoeShipList()
+	elseif var2_27 == var0_0.FOE_CODE then
+		var1_27 = var3_27:GetFriendlyShipList()
 	end
 
-	local var4_27, var5_27, var6_27, var7_27 = var2_27:GetFieldBound()
+	local var4_27, var5_27, var6_27, var7_27 = var3_27:GetFieldBound()
 
 	if var1_27 then
-		for iter0_27, iter1_27 in pairs(var1_27) do
-			if iter1_27:IsAlive() and var7_27 > iter1_27:GetPosition().x and iter1_27:GetCurrentOxyState() ~= ys.Battle.BattleConst.OXY_STATE.DIVE then
-				var0_27[#var0_27 + 1] = iter1_27
+		for iter2_27, iter3_27 in pairs(var1_27) do
+			if iter3_27:IsAlive() and var7_27 > iter3_27:GetPosition().x and iter3_27:GetCurrentOxyState() ~= ys.Battle.BattleConst.OXY_STATE.DIVE then
+				var0_27[#var0_27 + 1] = iter3_27
 			end
 		end
 	end
@@ -443,26 +446,29 @@ end
 function var3_0.TargetAllFoe(arg0_28, arg1_28, arg2_28)
 	local var0_28 = {}
 	local var1_28
-	local var2_28 = ys.Battle.BattleDataProxy.GetInstance()
+	local var2_28 = arg0_28:GetIFF()
+	local var3_28 = ys.Battle.BattleDataProxy.GetInstance()
 
 	if arg2_28 then
-		var1_28 = arg2_28
-	else
-		local var3_28 = arg0_28:GetIFF()
+		var1_28 = {}
 
-		if var3_28 == var0_0.FRIENDLY_CODE then
-			var1_28 = var2_28:GetFoeShipList()
-		elseif var3_28 == var0_0.FOE_CODE then
-			var1_28 = var2_28:GetFriendlyShipList()
+		for iter0_28, iter1_28 in ipairs(arg2_28) do
+			if iter1_28:GetIFF() * var2_28 == -1 then
+				table.insert(var1_28, iter1_28)
+			end
 		end
+	elseif var2_28 == var0_0.FRIENDLY_CODE then
+		var1_28 = var3_28:GetFoeShipList()
+	elseif var2_28 == var0_0.FOE_CODE then
+		var1_28 = var3_28:GetFriendlyShipList()
 	end
 
-	local var4_28, var5_28, var6_28, var7_28 = var2_28:GetFieldBound()
+	local var4_28, var5_28, var6_28, var7_28 = var3_28:GetFieldBound()
 
 	if var1_28 then
-		for iter0_28, iter1_28 in pairs(var1_28) do
-			if iter1_28:IsAlive() and var7_28 > iter1_28:GetPosition().x then
-				var0_28[#var0_28 + 1] = iter1_28
+		for iter2_28, iter3_28 in pairs(var1_28) do
+			if iter3_28:IsAlive() and var7_28 > iter3_28:GetPosition().x then
+				var0_28[#var0_28 + 1] = iter3_28
 			end
 		end
 	end
@@ -473,26 +479,29 @@ end
 function var3_0.TargetFoeUncloak(arg0_29, arg1_29, arg2_29)
 	local var0_29 = {}
 	local var1_29
-	local var2_29 = ys.Battle.BattleDataProxy.GetInstance()
+	local var2_29 = arg0_29:GetIFF()
+	local var3_29 = ys.Battle.BattleDataProxy.GetInstance()
 
 	if arg2_29 then
-		var1_29 = arg2_29
-	else
-		local var3_29 = arg0_29:GetIFF()
+		var1_29 = {}
 
-		if var3_29 == var0_0.FRIENDLY_CODE then
-			var1_29 = var2_29:GetFoeShipList()
-		elseif var3_29 == var0_0.FOE_CODE then
-			var1_29 = var2_29:GetFriendlyShipList()
+		for iter0_29, iter1_29 in ipairs(arg2_29) do
+			if iter1_29:GetIFF() * var2_29 == -1 then
+				table.insert(var1_29, iter1_29)
+			end
 		end
+	elseif var2_29 == var0_0.FRIENDLY_CODE then
+		var1_29 = var3_29:GetFoeShipList()
+	elseif var2_29 == var0_0.FOE_CODE then
+		var1_29 = var3_29:GetFriendlyShipList()
 	end
 
-	local var4_29, var5_29, var6_29, var7_29 = var2_29:GetFieldBound()
+	local var4_29, var5_29, var6_29, var7_29 = var3_29:GetFieldBound()
 
 	if var1_29 then
-		for iter0_29, iter1_29 in pairs(var1_29) do
-			if iter1_29:IsAlive() and var7_29 > iter1_29:GetPosition().x and not var1_0.IsCloak(iter1_29) and iter1_29:GetCurrentOxyState() ~= ys.Battle.BattleConst.OXY_STATE.DIVE then
-				var0_29[#var0_29 + 1] = iter1_29
+		for iter2_29, iter3_29 in pairs(var1_29) do
+			if iter3_29:IsAlive() and var7_29 > iter3_29:GetPosition().x and not var1_0.IsCloak(iter3_29) and iter3_29:GetCurrentOxyState() ~= ys.Battle.BattleConst.OXY_STATE.DIVE then
+				var0_29[#var0_29 + 1] = iter3_29
 			end
 		end
 	end
@@ -539,7 +548,7 @@ function var3_0.TargetHarmNearest(arg0_32, arg1_32, arg2_32)
 
 	local var0_32 = arg1_32.range or 9999999999
 	local var1_32
-	local var2_32 = arg2_32 or var3_0.TargetFoeUncloak(arg0_32)
+	local var2_32 = arg2_32 and var3_0.TargetFoeUncloak(arg0_32, arg1_32, arg2_32) or var3_0.TargetFoeUncloak(arg0_32)
 
 	for iter0_32, iter1_32 in ipairs(var2_32) do
 		local var3_32 = arg0_32:GetDistance(iter1_32)
@@ -558,7 +567,10 @@ end
 function var3_0.TargetHarmFarthest(arg0_33, arg1_33, arg2_33)
 	local var0_33 = 0
 	local var1_33
-	local var2_33 = arg2_33 or var3_0.TargetFoeUncloak(arg0_33)
+
+	arg1_33 = arg1_33 or {}
+
+	local var2_33 = arg2_33 and var3_0.TargetFoeUncloak(arg0_33, arg1_33, arg2_33) or var3_0.TargetFoeUncloak(arg0_33)
 
 	for iter0_33, iter1_33 in ipairs(var2_33) do
 		local var3_33 = arg0_33:GetDistance(iter1_33)
@@ -575,7 +587,9 @@ function var3_0.TargetHarmFarthest(arg0_33, arg1_33, arg2_33)
 end
 
 function var3_0.TargetHarmRandom(arg0_34, arg1_34, arg2_34)
-	local var0_34 = arg2_34 or var3_0.TargetFoeUncloak(arg0_34)
+	arg1_34 = arg1_34 or {}
+
+	local var0_34 = arg2_34 and var3_0.TargetFoeUncloak(arg0_34, arg1_34, arg2_34) or var3_0.TargetFoeUncloak(arg0_34)
 
 	if #var0_34 > 0 then
 		local var1_34 = math.random(#var0_34)
@@ -589,7 +603,9 @@ function var3_0.TargetHarmRandom(arg0_34, arg1_34, arg2_34)
 end
 
 function var3_0.TargetHarmRandomByWeight(arg0_35, arg1_35, arg2_35)
-	local var0_35 = arg2_35 or var3_0.TargetFoeUncloak(arg0_35)
+	arg1_35 = arg1_35 or {}
+
+	local var0_35 = arg2_35 and var3_0.TargetFoeUncloak(arg0_35, arg1_35, arg2_35) or var3_0.TargetFoeUncloak(arg0_35)
 	local var1_35 = {}
 	local var2_35 = -9999
 

@@ -243,7 +243,7 @@ return {
 			}
 		},
 		{
-			actor = 100011,
+			actor = 100020,
 			side = 0,
 			bgName = "star_level_bg_148",
 			actorName = "Universal Bulin&Specialized Bulin Custom MKIII",
