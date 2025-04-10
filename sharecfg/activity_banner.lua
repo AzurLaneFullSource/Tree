@@ -288,38 +288,13 @@ pg.activity_banner = {
 	{
 		id = 9,
 		pic = "temp9",
+		time = "stop",
 		type = 2,
 		param = {
 			"scene level",
 			{
 				open_remaster = true,
 				isSP = true
-			}
-		},
-		time = {
-			{
-				{
-					2025,
-					3,
-					27
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					4,
-					10
-				},
-				{
-					23,
-					59,
-					59
-				}
 			}
 		}
 	},
