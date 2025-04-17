@@ -5,7 +5,7 @@ function var0_0.GetEventName(arg0_1)
 end
 
 function var0_0.GetActivity(arg0_2)
-	local var0_2 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_ZPROJECT)
+	local var0_2 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_BOSSRUSH)
 
 	return (_.detect(var0_2, function(arg0_3)
 		return not arg0_3:isEnd()
@@ -31,10 +31,8 @@ function var0_0.IsShowTip(arg0_6)
 end
 
 function var0_0.CustomOnClick(arg0_7)
-	local var0_7 = arg0_7:GetActivity()
-
-	if var0_7 then
-		arg0_7:emit(NewMainMediator.SKIP_ACTIVITY_MAP, var0_7.id)
+	if arg0_7:GetActivity() then
+		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.BOSSRUSH_MAIN)
 	end
 end
 
