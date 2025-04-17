@@ -159,17 +159,17 @@ function var0_0.ExitWorldSystem(arg0_10, arg1_10)
 end
 
 function var0_0.ResultRushBossSystem(arg0_11, arg1_11)
-	local var0_11 = getProxy(ContextProxy):GetPrevContext(1)
-	local var1_11 = var0_11:getContextByMediator(BossRushPreCombatMediator)
+	local var0_11 = getProxy(ContextProxy)
+	local var1_11, var2_11 = var0_11:getContextByMediator(BossRushPreCombatMediator)
 
 	if var1_11 then
-		var0_11:removeChild(var1_11)
+		var2_11:removeChild(var1_11)
 	end
 
-	local var2_11 = var0_11:getContextByMediator(BossRushFleetSelectMediator)
+	local var3_11, var4_11 = var0_11:getContextByMediator(BossRushFleetSelectMediator)
 
-	if var2_11 then
-		var0_11:removeChild(var2_11)
+	if var3_11 then
+		var4_11:removeChild(var3_11)
 	end
 
 	if not (arg1_11.score > ys.Battle.BattleConst.BattleScore.C) and arg1_11.system == SYSTEM_BOSS_RUSH_EX then

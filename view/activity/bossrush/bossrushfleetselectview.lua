@@ -234,10 +234,7 @@ function var0_0.didEnter(arg0_7)
 			end
 
 			local var0_26 = var10_7[arg1_26 + 1]
-			local var1_26 = {
-				type = var0_26[1],
-				id = var0_26[2]
-			}
+			local var1_26 = Drop.Create(var0_26)
 
 			updateDrop(arg2_26, var1_26)
 			onButton(arg0_7, arg2_26, function()
@@ -254,10 +251,7 @@ function var0_0.didEnter(arg0_7)
 			end
 
 			local var0_28 = var12_7[arg1_28 + 1]
-			local var1_28 = {
-				type = var0_28[1],
-				id = var0_28[2]
-			}
+			local var1_28 = Drop.Create(var0_28)
 
 			updateDrop(arg2_28, var1_28)
 			onButton(arg0_7, arg2_28, function()

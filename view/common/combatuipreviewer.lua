@@ -330,7 +330,8 @@ function var0_0.updatePopUp(arg0_21)
 		ys.Battle.BattleCharacter.ChatPopAnimation(arg0_21.chatPop, pg.ship_skin_words[100000].skill, 4)
 	else
 		LeanTween.scale(rtf(arg0_21.chatPop.gameObject), Vector3.New(0, 0, 1), 0.1):setEase(LeanTweenType.easeInBack):setOnComplete(System.Action(function()
-			ys.Battle.BattleCharacter.ChatPop(arg0_21.chatPop, pg.ship_skin_words[100000].skill, 5)
+			ys.Battle.BattleCharacter.ChatPop(arg0_21.chatPop, 5)
+			ys.Battle.BattleCharacter.setChatText(arg0_21.chatPop, pg.ship_skin_words[100000].skill)
 		end))
 	end
 end

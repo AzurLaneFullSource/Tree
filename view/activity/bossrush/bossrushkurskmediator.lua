@@ -72,6 +72,7 @@ function var0_0.listNotificationInterests(arg0_9)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		GAME.SUBMIT_TASK_DONE,
+		GAME.SUBMIT_ACTIVITY_TASK_DONE,
 		GAME.BEGIN_STAGE_DONE,
 		BossRushTotalRewardPanelMediator.ON_WILL_EXIT
 	}
@@ -100,8 +101,8 @@ function var0_0.handleNotification(arg0_10, arg1_10)
 				arg0_10.viewComponent:UpdateView()
 			end
 		end
-	elseif var0_10 == GAME.SUBMIT_TASK_DONE then
-		arg0_10.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_10, function()
+	elseif var0_10 == GAME.SUBMIT_ACTIVITY_TASK_DONE then
+		arg0_10.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_10.awards, function()
 			arg0_10.viewComponent:UpdateTasks(var2_10)
 		end)
 	elseif var0_10 == BossRushTotalRewardPanelMediator.ON_WILL_EXIT then

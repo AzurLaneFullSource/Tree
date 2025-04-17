@@ -262,6 +262,16 @@ function var0_0.GetNormalShopSkinIDList()
 			if not table.contains(var0_21, var1_21) then
 				table.insert(var0_21, var1_21)
 			end
+
+			if ShipGroup.IsChangeSkin(var1_21) then
+				local var2_21 = ShipGroup.GetAllChangeSkinIds(var1_21)
+
+				for iter2_21, iter3_21 in ipairs(var2_21) do
+					if not table.contains(var0_21, iter3_21) then
+						table.insert(var0_21, iter3_21)
+					end
+				end
+			end
 		end
 	end
 
@@ -283,6 +293,16 @@ function var0_0.GetActShopSkinIDList()
 
 			if not table.contains(var0_23, var1_23) then
 				table.insert(var0_23, var1_23)
+			end
+
+			if ShipGroup.IsChangeSkin(var1_23) then
+				local var2_23 = ShipGroup.GetAllChangeSkinIds(var1_23)
+
+				for iter2_23, iter3_23 in ipairs(var2_23) do
+					if not table.contains(var0_23, iter3_23) then
+						table.insert(var0_23, iter3_23)
+					end
+				end
 			end
 		end
 	end
